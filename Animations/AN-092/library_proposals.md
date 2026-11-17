@@ -12,3 +12,7 @@
 - `a92Pt` / `a92Head` / `a92Reach` -> world body points for `person` (head, shoulders, reachable hand), useful for props held in hands.
 - `a92Turban` + `head: 'none'` -> a `judge` costume preset with `turbanTilt` / `turbanOff` fields.
 - `a92Cow` -> a small flat cow (no cow in the Library yet).
+
+## v2 additions (proposals only)
+- facePalm: palm drawn over a person's face after the head (sleeve from the shoulder, mitt on the nose), progress 0..1 (a92FacePalm).
+- balancedCaption: the caption wrap with balanced line breaks (no orphan words), as in KD-013 and AN-092.

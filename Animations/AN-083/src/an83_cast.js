@@ -2,7 +2,8 @@
 // World 2000 x 1230, ground y 900. Zone A x 0-800 (thirst), zone B x 900-1700 (meeting). Library person + costume presets.
 const AN83_GR = 900, AN83_WW = 2000, AN83_VW = 1000, AN83_VH = 1230, AN83_DUR = 169.9;   // plan: duration 165.407 + end_hold 4.5
 const AN83_DL = [-26, -60], AN83_DR = [38, -60];
-const AN83_INSET = [1380, 330, 230];   // verse inset centre (world) and radius
+const AN83_INSET = [520, 352, 318];   // verse inset centre and radius, PANEL space (view 1000 x 1230): drawn over the world, the sun hidden
+const AN83_INW = [1354, 410];          // where the inset sits in the world during the verses (camera x 1340, zoom 1.45), for gazes
 const AN83_PAL = {
   maan: { robe: C.blue, dot: NAVY, sash: C.yellow, cape: null, hc: C.white, hd: C.blue },
   man2: { robe: '#8a501a', dot: '#5b3010', cape: null, hc: C.red, hd: '#a8160f' },
@@ -22,39 +23,54 @@ const an83HL = (t, keys) => an83St(t, keys, 0.28, AN83_DL, 0.1);
 const an83HR = (t, keys) => an83St(t, keys, 0.28, AN83_DR, 0.1);
 // piecewise path with per-segment ease: [[t, v, ease]]
 function an83Path(t, keys) { if (t <= keys[0][0]) return keys[0][1]; for (let i = 1; i < keys.length; i++) if (t <= keys[i][0]) { const [t0, v0] = keys[i - 1], [t1, v1, e] = keys[i]; return K.lerp(v0, v1, K.ease[e || 'lin'](K.clamp((t - t0) / (t1 - t0)))); } return keys[keys.length - 1][1]; }
-// person walk: leg phase from distance, amplitude from speed (stride matches the swing so feet do not skate)
-function an83Walk(xf, t, s = 1, amp = 0.85) { const x = xf(t), v = Math.abs(speed(xf, t)); return { x, ph: x / (29 * amp * s), amp: amp * K.clamp(v / 22) }; }
+// person walk: leg phase from distance, amplitude from speed (stride matches the swing so feet do not skate).
+// Position snaps hidden by a camera cut (AN83_SNAPS) are measured one-sided so legs do not flail on the frames around a cut.
+const AN83_SNAPS = [80.2355];
+function an83Walk(xf, t, s = 1, amp = 0.85) { const x = xf(t); let v; const c = AN83_SNAPS.find((k) => Math.abs(t - k) < 0.06);
+  v = c == null ? Math.abs(speed(xf, t)) : Math.abs(t < c ? (xf(t) - xf(t - 0.05)) / 0.05 : (xf(t + 0.05) - xf(t)) / 0.05); return { x, ph: x / (29 * amp * s), amp: amp * K.clamp(v / 22) }; }
 const an83Hd = (x, s = 1, y = AN83_GR) => [x, y - 195 * s];
 const an83Gz = (P, to) => lookAt(an83HeadW(P), to);
 const an83Talk = (t, list, k = 1, ph = 0) => talk(t, list, ph) * k;
 const an83Lid = (P, t, v) => { P.lid = Math.max(v, P.noBlink ? 0 : blink(t, P.seed)); };
 
-// ---------- position tracks ----------
+// ---------- position tracks (v2 blocking: men as a tight cluster, Ma'an between, a clear gap, then the girls; man2 and girl3 a step upstage) ----------
 const AN83_MXA = (t) => an83Path(t, [[0.44, -80], [6.0, 520], [8.8, 650], [10.3, 700, 'out'], [11.0, 700], [11.4, 720, 'inOut']]);
-const AN83_MXB = (t) => an83Path(t, [[20.0, 900], [23.4, 1180, 'out'], [29.02, 1180], [30.9, 1300, 'inOut'], [70.4, 1300], [71.0, 1300], [71.35, 1335, 'inOut'], [72.95, 1335], [73.45, 1480, 'inOut'], [74.9, 1480], [75.4, 1580, 'inOut'], [75.9, 1580], [77.2, 1380, 'inOut'], [80.23, 1380]]);
-const AN83_MXC = (t) => an83Path(t, [[107.95, 1300], [108.7, 1260, 'inOut'], [159.9, 1260], [160.6, 1232, 'in'], [169.9, 930]]);
-const an83MX = (t) => t < 20 ? AN83_MXA(t) : t < 80.24 ? AN83_MXB(t) : t < 90.45 ? 1200 : AN83_MXC(t);
-const AN83_1A = (t) => an83Path(t, [[0.9, -260], [6.0, 370], [10.43, 600, 'out']]), AN83_1B = (t) => an83Path(t, [[20.0, 770], [23.55, 1040, 'out'], [29.3, 1040], [31.0, 1150, 'inOut'], [160.3, 1150], [160.9, 1124, 'in'], [169.9, 830]]);
-const AN83_2A = (t) => an83Path(t, [[1.4, -390], [6.0, 250], [10.57, 490, 'out']]), AN83_2B = (t) => an83Path(t, [[20.0, 670], [22.0, 850], [22.5, 868, 'out'], [23.7, 940, 'inOut'], [29.5, 940], [31.3, 1050, 'inOut'], [160.0, 1050], [160.6, 1024, 'in'], [163.6, 850], [164.1, 838, 'out'], [164.5, 838], [169.9, 730, 'in']]);
+const AN83_MXB = (t) => an83Path(t, [[20.0, 900], [23.4, 1180, 'out'], [29.02, 1180], [30.9, 1270, 'inOut'], [54.3, 1270], [54.8, 1315, 'inOut'], [59.5, 1315], [60.2, 1270, 'inOut']]);
+// S16: Ma'an last to leave, a turn and a wave at 164.4, then up the dune
+const AN83_MXC = (t) => an83Path(t, [[107.95, 1270], [108.7, 1250, 'inOut'], [159.9, 1250], [160.6, 1232, 'in'], [164.3, 1050], [164.45, 1044, 'out'], [165.3, 1044], [165.7, 1030, 'in'], [169.9, 900]]);
+const an83MX = (t) => t < 20 ? AN83_MXA(t) : t < 90.45 ? AN83_MXB(t) : AN83_MXC(t);
+const AN83_1A = (t) => an83Path(t, [[0.9, -260], [6.0, 370], [10.43, 600, 'out']]);
+// S5 the huntsmen hurry round BEHIND Ma'an and girl1 (upstage) to girl2 and girl3, and back
+const AN83_1B = (t) => an83Path(t, [[20.0, 770], [23.55, 1040, 'out'], [29.3, 1040], [31.0, 1160, 'inOut'], [37.9, 1160], [39.75, 1665, 'inOut'], [44.85, 1665], [47.6, 1160, 'inOut'], [160.1, 1160], [160.7, 1140, 'in'], [166.0, 900], [169.9, 790]]);
+const AN83_2A = (t) => an83Path(t, [[1.4, -390], [6.0, 250], [10.57, 490, 'out']]);
+const AN83_2B = (t) => an83Path(t, [[20.0, 670], [22.0, 850], [22.5, 868, 'out'], [23.7, 940, 'inOut'], [29.5, 940], [31.3, 1100, 'inOut'], [38.0, 1100], [40.35, 1850, 'inOut'], [44.9, 1850], [48.3, 1100, 'inOut'], [159.95, 1100], [160.5, 1080, 'in'], [165.15, 820], [165.5, 812, 'out'], [166.2, 812], [169.9, 690, 'in']]);
 const an83X1 = (t) => t < 20 ? AN83_1A(t) : AN83_1B(t), an83X2 = (t) => t < 20 ? AN83_2A(t) : AN83_2B(t);
-// receding into the distance (S16): y up the dune and smaller
-const an83Rec = (t, t0) => K.ease.inOut(K.clamp((t - t0) / 9.2));
+// depth (y offset, negative = upstage): man2 half behind man1; both run upstage in S5
+const AN83_1Y = (t) => an83Path(t, [[37.9, 0], [38.3, -40, 'inOut'], [39.3, -40], [39.75, -6, 'inOut'], [44.85, -6], [45.3, -40, 'inOut'], [47.1, -40], [47.6, 0, 'inOut']]);
+const AN83_2Y = (t) => t < 20 ? 0 : an83Path(t, [[20, -12], [38.0, -12], [38.4, -52, 'inOut'], [39.8, -52], [40.35, -4, 'inOut'], [44.9, -4], [45.4, -52, 'inOut'], [47.8, -52], [48.3, -12, 'inOut']]);
+// receding up the dune (S16): 0..1 by 166.0
+const an83Rec = (t, t0) => K.ease.inOut(K.clamp((t - t0) / (166.0 - t0)));
 // girls: lip of the front dune, entrance paths and later marks
 function an83LipY(x) { return an83Path(x, [[1450, 902], [1520, 860], [1560, 850], [1680, 856], [2010, 870]]); }
 const AN83_GIRL = [   // [rise start, crest time, flat time, xa (behind), xc (crest), mark x]
-  [23.5, 24.5, 27.0, 1610, 1545, 1430], [24.0, 25.0, 27.6, 1700, 1640, 1530], [24.4, 25.4, 28.2, 1790, 1730, 1630]];
+  [23.5, 24.5, 27.0, 1610, 1545, 1420], [24.0, 25.0, 27.6, 1700, 1640, 1510], [24.4, 25.4, 28.2, 1790, 1730, 1568]];
+const AN83_R = 1385;
+const AN83_RCV = [72.16, 74.2, 76.72];   // the bundle lands in each girl's hands on the counted word   // S8: each girl comes to this spot in front of Ma'an (1270) to receive her ten arrows
 const AN83_GX = [
-  (t) => an83Path(t, [[27.0, 1430], [85.4, 1430], [100.4, 1430], [101.0, 1470, 'inOut'], [107.5, 1470], [108.4, 1400, 'inOut'], [121.4, 1400], [122.2, 1470, 'inOut'], [142.9, 1470], [143.4, 1455, 'inOut'], [144.3, 1455], [145.4, 1520, 'inOut']]),
-  (t) => an83Path(t, [[27.6, 1530], [38.3, 1530], [39.25, 1215, 'inOut'], [43.75, 1215], [45.2, 1530, 'inOut'], [86.6, 1530], [87.2, 1500, 'inOut'], [100.4, 1500], [101.0, 1540, 'inOut'], [121.9, 1540], [122.8, 1400, 'inOut'], [135.0, 1400], [135.8, 1540, 'inOut'], [142.9, 1540], [143.4, 1500, 'inOut'], [144.3, 1500], [145.5, 1620, 'inOut']]),
-  (t) => an83Path(t, [[28.2, 1630], [28.35, 1630], [28.9, 1578, 'inOut'], [33.0, 1578], [33.6, 1630, 'inOut'], [38.4, 1630], [39.3, 1105, 'inOut'], [43.85, 1105], [45.4, 1630, 'inOut'], [86.6, 1630], [87.2, 1582, 'inOut'], [100.4, 1582], [101.0, 1605, 'inOut'], [107.4, 1605], [108.2, 1620, 'inOut'], [135.34, 1620], [136.1, 1410, 'inOut'], [144.3, 1410], [144.9, 1420, 'inOut']]),
+  (t) => an83Path(t, [[27.0, 1420], [70.5, 1420], [71.1, AN83_R, 'inOut'], [72.4, AN83_R], [73.0, 1445, 'inOut'], [80.235, 1445], [80.236, 1425], [100.4, 1425], [101.0, 1460, 'inOut'], [107.5, 1460], [108.3, 1425, 'inOut'], [160.4, 1425], [161.6, 1440, 'inOut']]),
+  (t) => an83Path(t, [[27.6, 1510], [38.3, 1510], [39.0, 1560, 'inOut'], [44.8, 1560], [45.5, 1510, 'inOut'], [72.6, 1510], [73.5, AN83_R, 'inOut'], [74.4, AN83_R], [75.0, 1520, 'inOut'], [80.235, 1520], [80.236, 1505], [86.7, 1505], [87.2, 1490, 'inOut'], [100.4, 1490], [101.0, 1530, 'inOut'], [107.5, 1530], [108.3, 1505, 'inOut'], [160.5, 1505], [161.7, 1560, 'inOut']]),
+  (t) => an83Path(t, [[28.2, 1568], [38.4, 1568], [39.4, 1750, 'inOut'], [44.85, 1750], [45.9, 1568, 'inOut'], [74.8, 1568], [75.7, AN83_R, 'inOut'], [77.0, AN83_R], [77.7, 1595, 'inOut'], [80.235, 1595], [80.236, 1580], [86.7, 1580], [87.2, 1555, 'inOut'], [100.4, 1555], [101.0, 1600, 'inOut'], [107.4, 1600], [108.2, 1580, 'inOut'], [160.6, 1580], [161.8, 1680, 'inOut']]),
 ];
-// y offset toward the camera when a girl steps forward to recite
+// y offset toward the camera: the reciter steps forward (S12-S14); depth offsets (girl3 a step upstage, the S8 queue steps back upstage);
+// S16 the girls come forward into the right foreground
+const AN83_FG = (t) => AN83_B(t, 160.4, 1.8);
 const AN83_GY = [
-  (t) => 35 * (AN83_B(t, 107.5, 0.9) - AN83_B(t, 121.4, 0.8)),
-  (t) => 35 * (AN83_B(t, 121.9, 0.9) - AN83_B(t, 135.0, 0.8)),
-  (t) => 35 * (AN83_B(t, 135.34, 0.76) - AN83_B(t, 144.3, 0.6)),
+  (t) => 25 * (AN83_B(t, 107.5, 0.9) - AN83_B(t, 121.4, 0.8)) + an83Path(t, [[72.4, 0], [73.0, -30, 'inOut'], [80.235, -30], [80.236, 0]]) + 60 * AN83_FG(t),
+  (t) => 25 * (AN83_B(t, 121.9, 0.9) - AN83_B(t, 135.0, 0.8)) + an83Path(t, [[74.4, 0], [75.0, -30, 'inOut'], [80.235, -30], [80.236, 0]]) + 75 * AN83_FG(t),
+  (t) => 25 * (AN83_B(t, 135.34, 0.76) - AN83_B(t, 144.3, 0.6)) + an83Path(t, [[28.2, -12], [38.4, -12], [39.4, 0, 'inOut'], [44.85, 0], [45.9, -12, 'inOut'], [74.8, -12], [75.7, 0, 'inOut'], [77.0, 0], [77.7, -30, 'inOut'], [80.235, -30], [80.236, -8], [160.6, -8], [161.8, 0, 'inOut']]) + 50 * AN83_FG(t),
 ];
 const AN83_GS = [0.9, 0.86, 0.8];
+const AN83_GSK = (t) => 1 + 0.27 * AN83_FG(t);   // girls' foreground scale in S16
 
 // ---------- the frame state ----------
 let AN83_MEMO = { t: -1, F: null };
@@ -73,12 +89,11 @@ function an83Maan(t) {
   const P = { costume: 'bedouin', pal: AN83_PAL.maan, age: 0.3, s: 1, y: AN83_GR, seed: 31, mouth: 'closed', brow: 0 };
   const W = an83Walk(an83MX, t, 1, t < 6.5 ? 0.9 : 0.7); Object.assign(P, W);
   // facing
-  let tf; if (t < 20) tf = turnFlip(t, [[0, 1], [11.0, -1]], 0.35); else if (t < 70.4) tf = turnFlip(t, [[0, 1], [49.4, -1]], 0.35); else tf = turnFlip(t, [[0, 1], [159.85, -1]], 0.4);
+  let tf; if (t < 20) tf = turnFlip(t, [[0, 1], [11.0, -1]], 0.35); else if (t < 70.4) tf = turnFlip(t, [[0, 1], [49.4, -1]], 0.35); else tf = turnFlip(t, [[0, 1], [159.85, -1], [164.4, 1], [165.3, -1]], 0.35);
   P.dir = tf.dir; P.sq = 1 - 0.04 * tf.sink;
-  if (t >= 72.95 && t < 80.24) P.y = AN83_GR + 25 * AN83_B(t, 72.95, 0.4);
-  if (t >= 160.6) { const r = an83Rec(t, 160.6); P.y = AN83_GR - 46 * r; P.s = 1 - 0.32 * r; }
+  if (t >= 160.6) { const r = an83Rec(t, 160.6); P.y = AN83_GR - 60 * r; P.s = 1 - 0.45 * r; }
   const g1h = an83Hd(AN83_GX[0](t), 0.9, AN83_GR + AN83_GY[0](t)), g2h = an83Hd(AN83_GX[1](t), 0.86, AN83_GR + AN83_GY[1](t)), g3h = an83Hd(AN83_GX[2](t), 0.8, AN83_GR + AN83_GY[2](t));
-  const m1h = an83Hd(an83X1(t), 0.98), m2h = an83Hd(an83X2(t), 0.95), IN = [AN83_INSET[0], AN83_INSET[1] + 40];
+  const m1h = an83Hd(an83X1(t), 0.98), m2h = an83Hd(an83X2(t), 0.95), IN = [AN83_INW[0], AN83_INW[1] + 40];
   let hL = AN83_DL, hR = AN83_DR, lid = 0, gz = null;
   if (t < 11.4) {   // S1 the walk in the heat
     P.tip = an83St(t, [[0, 0.04], [7.0, 0, 1.2]]); P.mouth = t < 7 ? 'smile' : t < 10.32 ? (t > 9 ? 'o' : 'closed') : 'frown';
@@ -106,9 +121,10 @@ function an83Maan(t) {
     if (t >= 39.2) { P.tip = -0.04 * AN83_B(t, 39.2, 0.6); lid = 0.8 * AN83_B(t, 39.4, 0.5); gz = [P.x + 30, 560]; }
   } else if (t < 49.0) {   // S5 drinking, thanks, no purse
     P.handover = t < 44.6 ? 'skin' : null;
-    if (t < 43.14) { P.tip = -0.06; lid = 1; P.drop = -4 + 3 * countedBeats(t, [40.45, 40.9, 41.35, 41.8, 42.25, 42.7]).accent; P.sq = t < 41.86 ? 0.96 : K.lerp(0.96, 1.03, AN83_B(t, 41.86, 1.2)); P.noBlink = true; }
-    else if (t < 43.96) { P.tip = -0.06 * (1 - AN83_B(t, 43.14, 0.4)); P.mouth = 'smile'; P.sq = 1.03 * breathe(t, 2, 0.03); gz = g1h; P.eyes = 'wide'; }
-    else { gz = g1h; P.mouth = 'smile'; P.sq = 1 + 0.03 * (1 - AN83_B(t, 44, 2)); }
+    if (t < 43.14) { P.tip = -0.04; lid = 1; P.noBlink = true; P.mouth = 'closed'; gz = null; P.gaze = [0.3, -0.2];
+      P.sq = K.lerp(0.97, 1.02, AN83_B(t, 40.3, 2.8)) - 0.025 * [40.6, 41.55, 42.5].reduce((a, c) => a + pulse(t, c, 0.32), 0); P.drop = 3 * [40.6, 41.55, 42.5].reduce((a, c) => a + pulse(t, c, 0.32), 0); }
+    else if (t < 43.96) { P.tip = -0.04 * (1 - AN83_B(t, 43.14, 0.4)); P.mouth = 'smile'; P.sq = 1.04 - 0.04 * AN83_B(t, 43.5, 0.45); P.drop = 4 * AN83_B(t, 43.45, 0.3); gz = g1h; P.eyes = t < 43.5 ? 'wide' : 'open'; lid = t < 43.4 ? 0.6 * (1 - AN83_B(t, 43.14, 0.26)) : 0; }
+    else { gz = g1h; P.mouth = 'smile'; P.sq = 1 + 0.01 * (1 - AN83_B(t, 44, 2)); }
     if (t >= 44.0 && t < 45.0) P.tip = 0.08 * Math.sin(Math.PI * (t - 44.0) / 1.0);
     if (t >= 45.14) { P.brow = -0.3; P.talk = an83Talk(t, [[45.14, 46.3]], 0.4); if (t > 46.3) P.mouth = 'smile'; }
     hR = an83HR(t, [[44.6, AN83_DR], [45.14, [4, -122]], [45.7, [62, -104]], [46.6, AN83_DR], [47.58, [14, -84], 0.18], [48.2, AN83_DR]]);
@@ -129,19 +145,19 @@ function an83Maan(t) {
     hR = an83HR(t, [[60.1, AN83_DR], [60.7, [16, -160]], [62.6, AN83_DR]]);
     if (t >= 63.36) { P.tip = -0.04 * pulse(t, 63.36, 0.4); P.quiverGrab = true; gz = an83W(P, -24, -118); P.mouth = 'smile'; P.brow = -0.5; }
     if (t >= 69.9) { P.mouth = 'smile'; gz = m2h; hR = [52, -196]; P.holdArrow = true; P.quiverGrab = false; }
-  } else if (t < 80.24) {   // S8 ten arrows to each girl
+  } else if (t < 80.24) {   // S8 ten arrows to each girl: he stays left, each girl comes to AN83_R in turn
     P.mouth = 'smile'; P.brow = -0.3;
-    const tgt = t < 72.95 ? g1h : t < 74.9 ? g2h : g3h; gz = tgt;
-    if (t < 71.42) gz = an83W(P, 20, -110);
+    const gi = t < 72.5 ? 0 : t < 74.8 ? 1 : 2, tgt = [g1h, g2h, g3h][gi]; gz = tgt;
+    if ([70.42, 72.5, 74.9].some((c, k) => an83In(t, c, c + 0.9))) gz = an83W(P, 30, -128);   // counting the arrows out
     P.count = true;
-    if (t >= 76.72) { gz = [P.x, 700]; }
-    if (t >= 77.5 && t < 79.0) { P.quiverUp = true; P.sq = 1 + 0.03 * pulse(t, 78.7, 0.3); }
-    if (t >= 79.0) gz = [P.x, 420];
+    if (t >= 76.9) gz = m2h;
+    if (t >= 77.5 && t < 79.0) { P.quiverUp = true; P.sq = 1 + 0.03 * pulse(t, 78.7, 0.3); gz = null; P.gaze = [0.2, -0.1]; P.mouth = 'smile'; P.brow = -0.6; }
+    if (t >= 79.0) gz = [P.x + 120, 420];
   } else if (t < 90.45) {   // S9 off-screen left
     gz = g1h; P.mouth = 'smile';
   } else if (t < 100.18) {   // S10 caught
     P.mouth = 'smile'; P.brow = -0.5; gz = g1h;
-    if (t < 92.0) { hR = an83HR(t, [[90.45, AN83_DR], [90.62, [8, -170], 0.2], [91.8, AN83_DR]]); if (t >= 90.65 && t < 91.15) { gz = null; P.gaze = [0, 0.05]; } P.noBlink = t < 91.15; }
+    if (t < 92.3) { P.eyes = t < 90.7 ? 'wide' : 'open'; P.noBlink = true; P.brow = t < 90.7 ? -0.7 : -0.3; P.mouth = t < 90.7 ? 'o' : 'smile'; if (t >= 90.56) { gz = null; P.gaze = gazePlan(t, [[90.56, an83Gz(P, g1h)], [90.7, an83Gz(P, g1h)], [90.95, [0, 0.08]]], 0.22); } hR = an83HR(t, [[90.45, AN83_DR], [91.2, PERSON_HANDS.hush.R, 0.2], [92.1, AN83_DR]]); P.tip = -0.03 * AN83_B(t, 91.3, 0.3); }
     if (t >= 94.86 && t < 99.5) gz = [AN83_GX[0](t) + 40, 520];
     if (t >= 99.5) { lid = 0.4; gz = [P.x + 30, 900]; hR = an83HR(t, [[99.4, AN83_DR], [99.55, [34, -194]]]); hR = [hR[0] + 5 * Math.sin(t * 14), hR[1]]; }
   } else if (t < 107.9) {   // S11 waiting politely
@@ -156,7 +172,7 @@ function an83Maan(t) {
     hR = an83HR(t, [[107.9, AN83_DR], [119.56, [4, -122]], [121.6, AN83_DR], [131.2, [22, -176]], [132.9, AN83_DR]]);
     if (an83In(t, 131.4, 132.8)) hR = [hR[0] + 4 * Math.sin(t * 12), hR[1]];
     if (t >= 143.46) { P.drop = 6 * AN83_B(t, 143.46, 0.4); lid = 0.6; P.mouth = 'closed'; }
-  } else if (t < 158.3) {   // S15 moved; recognised by his gift
+  } else if (t < 158.5) {   // S15 moved; recognised by his gift
     P.mouth = 'smile';
     if (t < 145.6) { lid = 0.4; P.drop = 6 * (1 - AN83_B(t, 145.2, 0.5)); P.mouth = 'closed'; gz = [P.x + 40, 880]; P.sq = breathe(t, 3, 0.02); }
     else { gz = gazePlan(t, [[145.6, g1h], [146.3, g1h], [146.85, g2h], [147.35, g3h], [148.0, g1h], [148.7, an83Hd(AN83_GX[0](t) - 35, 0.9, 1000)], [149.6, g1h], [151.0, [P.x + 200, 640]], [151.7, g1h], [154.3, [P.x + 60, 420]], [155.3, g1h], [156.3, [P.x + 10, 900]], [157.0, g1h], [157.5, m1h]], 0.2); if (t < 152) P.wet = true; }
@@ -169,10 +185,11 @@ function an83Maan(t) {
     if (an83In(t, 156.9, 157.5)) P.sq = 1 + 0.03 * pulse(t, 156.9, 0.5);
   } else {   // S16 farewell
     P.mouth = 'smile'; gz = t < 160.6 ? g1h : null;
-    hR = an83HR(t, [[158.3, AN83_DR], [159.5, [64, -196]], [160.5, AN83_DR]]);
+    hR = an83HR(t, [[158.5, AN83_DR], [159.5, [64, -196]], [160.5, AN83_DR]]);
     if (an83In(t, 159.6, 160.4)) hR = [hR[0] + 10 * Math.sin(t * 14), hR[1]];
     if (t >= 159.0 && t < 159.5) P.quiverSling = AN83_B(t, 159.0, 0.5);
-    if (!gz) P.gaze = [-1, 0.1];
+    if (t >= 164.4 && t < 165.3) { gz = null; P.gaze = [1, 0]; hR = an83HR(t, [[164.4, AN83_DR], [164.55, [64, -196], 0.15], [165.0, [64, -196]], [165.25, AN83_DR]]); if (t < 165.0) hR = [hR[0] + 9 * Math.sin(t * 15), hR[1]]; }
+    if (!gz && !(t >= 164.4 && t < 165.3)) P.gaze = [-1, 0.1];
     if (t > 160.0 && t < 160.9) P.gaze = [1, 0];   // a warm look back over the shoulder
   }
   P.handL = hL; P.handR = hR;
@@ -184,8 +201,9 @@ function an83Maan(t) {
 // ===================== HUNTSMAN 1 (loyal, slightly smug) =====================
 function an83Man1(t) {
   const P = { costume: 'bedouin', age: 0.45, s: 0.98, y: AN83_GR, seed: 41, mouth: 'closed' };
-  Object.assign(P, an83Walk(an83X1, t, 0.98, 0.75)); const tf = turnFlip(t, [[0, 1], [160.1, -1]], 0.4); P.dir = tf.dir; P.sq = 1 - 0.04 * tf.sink;
-  if (t >= 160.9) { const r = an83Rec(t, 160.9); P.y = AN83_GR - 46 * r; P.s = 0.98 * (1 - 0.32 * r); }
+  Object.assign(P, an83Walk(an83X1, t, 0.98, 0.75)); const tf = turnFlip(t, [[0, 1], [39.45, -1], [47.55, 1], [160.1, -1]], 0.4); P.dir = tf.dir; P.sq = 1 - 0.04 * tf.sink;
+  if (t >= 20) P.y = AN83_GR + AN83_1Y(t);
+  if (t >= 160.7) { const r = an83Rec(t, 160.7); P.y = AN83_GR - 60 * r; P.s = 0.98 * (1 - 0.45 * r); }
   const Mh = an83Hd(an83MX(t)), m2h = an83Hd(an83X2(t), 0.95), g1h = an83Hd(AN83_GX[0](t), 0.9), g2h = an83Hd(AN83_GX[1](t), 0.86);
   let gz = Mh, lid = 0, hL = AN83_DL, hR = AN83_DR;
   if (t < 11.4) { P.tip = 0.03 * (1 - AN83_B(t, 7, 2)); if (t > 8.8) lid = 0.3; if (t >= 10.43) { P.mouth = 'frown'; lid = 0.4; } }
@@ -207,15 +225,15 @@ function an83Man1(t) {
     if (t >= 27.2) { P.mouth = 'smile'; gz = an83Hd(AN83_GX[0](t) - 30, 0.9, 960); }
   } else if (t < 49.0) {
     gz = t < 37.4 ? g1h : t < 38.6 ? Mh : g2h; P.mouth = 'smile';
-    if (t >= 38.3 && t < 39.6) { hL = an83HL(t, [[38.3, AN83_DL], [38.5, [92, -150]]]); hR = an83HR(t, [[38.3, AN83_DR], [38.5, [100, -170]]]); }
-    if (t >= 39.4 && t < 43.6) P.drinkSkin = 1;
-    if (t >= 40.9 && t < 42.4) { P.tip = -0.05; lid = 1; P.noBlink = true; P.drop = -4; }
-    if (t >= 42.4 && t < 43.1) { hR = [20, -172]; hR = [hR[0] + 6 * Math.sin(t * 20), hR[1]]; P.mouth = 'smile'; }
-    if (t >= 43.6) gz = Mh;
+    if (an83In(t, 37.9, 39.75)) { gz = [P.x + 300, 700]; P.mouth = 'open'; P.tip = 0.06; }
+    if (t >= 39.4 && t < 40.0) { hL = an83HL(t, [[39.4, AN83_DL], [39.6, [92, -150]]]); hR = an83HR(t, [[39.4, AN83_DR], [39.6, [100, -170]]]); }
+    if (t >= 40.5 && t < 44.3) { P.tip = -0.05; lid = 1; P.noBlink = true; P.drop = -4; }
+    if (an83In(t, 44.85, 47.6)) { gz = [P.x - 300, 760]; P.mouth = 'smile'; }
+    if (t >= 47.6) gz = Mh;
   } else if (t < 60.1) {
     gz = Mh; P.mouth = 'closed';
     if (t >= 54.44) { gz = gazePlan(t, [[54.44, m2h], [55.0, [P.x + 30, 900]], [55.7, an83W(P, 40, -200)], [57.4, Mh]], 0.15); P.mouth = 'frown'; }
-    if (t >= 55.7 && t < 57.4) { P.purse = true; hR = [40, -176]; if (t > 56.0 && t < 56.6) hR = [40, -176 + 10 * Math.sin((t - 56.0) * 21)]; if (t > 56.6) { P.wink = 'L'; P.look = 0.7; } }
+    if (t >= 55.4 && t < 57.6) { P.purse = true; hR = an83HR(t, [[55.4, [40, -150]], [55.62, [64, -206], 0.2]]); if (t > 55.95 && t < 56.55) hR = [hR[0], hR[1] + 14 * Math.sin((t - 55.95) * 21)]; if (t > 56.6) { hR = an83HR(t, [[56.6, [64, -206]], [56.75, [44, -200], 0.2]]); P.wink = 'L'; P.look = 0.7; P.tip = 0.06; gz = an83W(P, 40, -214); } }
   } else if (t < 70.4) {
     gz = Mh; P.mouth = 'closed';
     if (t >= 64.3 && t < 65.84) { P.tip = 0.1 * AN83_B(t, 64.3, 0.4); gz = an83W(an83Maan(t), -20, -118); }
@@ -225,15 +243,15 @@ function an83Man1(t) {
     if (t < 80.24) { hL = [22, -105]; hR = [-18, -112]; lid = 0.3; P.tip = 0.04 * pulse(t, 76.8, 0.4); }
     if (t >= 96.56 && t < 98.2) { hL = an83HL(t, [[96.5, AN83_DL], [96.65, [96, -152]]]); hR = an83HR(t, [[96.5, AN83_DR], [96.65, [80, -152], 0.15], [96.9, [12, -142], 0.4], [97.45, [70, -150], 0.1], [97.65, [12, -142], 0.35]]); gz = [P.x + 300, 600]; P.mouth = 'closed'; }
     if (t >= 102.24 && t < 103.9) { P.tip = 0.1 * AN83_B(t, 102.3, 0.4) * (1 - AN83_B(t, 103.6, 0.3)); gz = g1h; }
-  } else if (t < 158.3) {
+  } else if (t < 158.5) {
     lid = 0.3; P.mouth = 'smile'; const r = t < 121.6 ? 0 : t < 135.2 ? 1 : 2, rx = AN83_GX[r](t);
-    gz = gazePlan(t, [[107.9, an83Hd(rx, 0.9, 935)], [111.0, [AN83_INSET[0], AN83_INSET[1] + 30]], [121.8, an83Hd(rx, 0.86, 935)], [125.2, [AN83_INSET[0], AN83_INSET[1] + 30]], [135.6, an83Hd(rx, 0.8, 935)], [137.8, [AN83_INSET[0], AN83_INSET[1] + 30]], [144.3, Mh], [146.5, g1h]], 0.35);
+    gz = gazePlan(t, [[107.9, an83Hd(rx, 0.9, 935)], [111.0, [AN83_INW[0], AN83_INW[1] + 30]], [121.8, an83Hd(rx, 0.86, 935)], [125.2, [AN83_INW[0], AN83_INW[1] + 30]], [135.6, an83Hd(rx, 0.8, 935)], [137.8, [AN83_INW[0], AN83_INW[1] + 30]], [144.3, Mh], [146.5, g1h]], 0.35);
     P.tip = 0.03 * [114.2, 128.4, 140.2].reduce((a, c) => a + pulse(t, c, 0.5), 0);
     if (t >= 143.46 && t < 145) { lid = 0.6; P.mouth = 'closed'; }
     if (t >= 157.54) { hR = an83HR(t, [[157.5, AN83_DR], [157.6, [4, -122], 0.2]]); P.brow = t < 158.0 ? 0.6 : 0; P.mouth = t < 158.0 ? 'o' : 'smile'; gz = Mh; lid = 0; }
   } else {
     P.mouth = 'smile'; gz = t < 160.1 ? g1h : null; hR = t < 158.9 ? [4, -122] : AN83_DR;
-    if (t >= 163.7 && t < 164.6) { hR = an83L(P, an83X2(t) + 20, P.y - 150 * P.s); P.eyes = 'wide'; }
+    if (t >= 165.25 && t < 166.1) { hR = an83L(P, an83X2(t) + 20, P.y - 150 * P.s); P.eyes = 'wide'; }
     if (!gz) P.gaze = [-1, 0.1];
   }
   P.handL = hL; P.handR = hR; if (gz) P.gaze = an83Gz(P, gz);
@@ -244,8 +262,9 @@ function an83Man1(t) {
 // ===================== HUNTSMAN 2 (the clown: reacts biggest and late) =====================
 function an83Man2(t) {
   const P = { costume: 'bedouin', pal: AN83_PAL.man2, age: 0.15, s: 0.95, y: AN83_GR, seed: 53, mouth: 'closed' };
-  Object.assign(P, an83Walk(an83X2, t, 0.95, 0.75)); const tf = turnFlip(t, [[0, 1], [159.95, -1]], 0.4); P.dir = tf.dir; P.sq = 1 - 0.04 * tf.sink;
-  if (t >= 160.6) { const r = an83Rec(t, 160.6); P.y = AN83_GR - 46 * r; P.s = 0.95 * (1 - 0.32 * r); }
+  Object.assign(P, an83Walk(an83X2, t, 0.95, 0.75)); const tf = turnFlip(t, [[0, 1], [40.05, -1], [48.25, 1], [159.95, -1]], 0.4); P.dir = tf.dir; P.sq = 1 - 0.04 * tf.sink;
+  if (t >= 20) P.y = AN83_GR + AN83_2Y(t);
+  if (t >= 160.5) { const r = an83Rec(t, 160.5); P.y = AN83_GR - 12 - 60 * r; P.s = 0.95 * (1 - 0.45 * r); }
   const Mh = an83Hd(an83MX(t)), m1h = an83Hd(an83X1(t), 0.98), g1h = an83Hd(AN83_GX[0](t), 0.9), g3h = an83Hd(AN83_GX[2](t), 0.8);
   let gz = Mh, lid = 0, hL = AN83_DL, hR = AN83_DR;
   if (t < 11.4) {
@@ -267,15 +286,16 @@ function an83Man2(t) {
     if (t >= 27.0) P.mouth = 'smile';
   } else if (t < 49.0) {
     gz = t < 37.4 ? g1h : t < 38.6 ? Mh : g3h; P.mouth = 'smile';
-    if (t >= 38.4 && t < 39.7) { hL = an83HL(t, [[38.4, AN83_DL], [38.6, [92, -150]]]); hR = an83HR(t, [[38.4, AN83_DR], [38.6, [100, -170]]]); }
-    if (t >= 39.5 && t < 43.7) P.drinkSkin = 1;
-    if (t >= 40.95 && t < 42.3) { P.tip = -0.05; P.noBlink = true; lid = 0.85 + 0.15 * Math.sin(t * 25); P.mouth = 'open'; P.splash = true; }
-    if (t >= 42.3 && t < 43.1) { P.mouth = 'open'; P.talk = 0.4 + 0.6 * Math.abs(Math.sin(t * 15)); lid = 0.5; }
-    if (t >= 43.7) gz = Mh;
+    if (an83In(t, 38.0, 40.35)) { gz = [P.x + 300, 700]; P.mouth = 'open'; P.tip = 0.08; }
+    if (t >= 40.0 && t < 40.6) { hL = an83HL(t, [[40.0, AN83_DL], [40.2, [92, -150]]]); hR = an83HR(t, [[40.0, AN83_DR], [40.2, [100, -170]]]); }
+    if (t >= 41.0 && t < 43.4) { P.tip = -0.05; lid = 1; P.noBlink = true; P.drop = -4; }
+    if (t >= 43.4 && t < 44.45) { P.tip = -0.05; P.noBlink = true; lid = 0.85 + 0.15 * Math.sin(t * 25); P.mouth = 'open'; P.splash = true; }
+    if (an83In(t, 44.9, 48.3)) { gz = [P.x - 300, 760]; P.mouth = 'smile'; }
+    if (t >= 48.3) gz = Mh;
   } else if (t < 60.1) {
     gz = Mh; P.mouth = 'closed';
     if (t >= 54.5) { gz = gazePlan(t, [[54.5, m1h], [55.05, [P.x + 30, 900]], [55.8, m1h], [56.9, Mh]], 0.15); P.mouth = 'frown'; }
-    if (t >= 56.84 && t < 58.4) { hL = an83HL(t, [[56.84, [-60, -100]], [57.4, [-60, -110]]]); hR = an83HR(t, [[56.84, [60, -100]], [57.4, [50, -160]]]); P.brow = -0.5; P.mouth = 'smile'; P.drop = -6 * pulse(t, 57.5, 0.6); if (t >= 57.4) P.bowUp = AN83_B(t, 57.4, 0.25); }
+    if (t >= 57.49 && t < 58.9) { hL = an83HL(t, [[57.49, PERSON_HANDS.armsOut.L, 0.18]]); hR = an83HR(t, [[57.49, [60, -196], 0.18]]); P.brow = -0.6; P.mouth = 'smile'; P.drop = -8 * pulse(t, 57.55, 0.6); P.sq = 1 - 0.04 * pulse(t, 57.55, 0.6); P.bowUp = AN83_B(t, 57.49, 0.2); gz = null; P.gaze = [0.1, 0.05]; }
   } else if (t < 70.4) {
     gz = Mh; P.mouth = 'closed';
     if (t >= 64.4 && t < 65.84) { P.tip = 0.12 * AN83_B(t, 64.4, 0.4); gz = an83W(an83Maan(t), -20, -118); }
@@ -286,16 +306,16 @@ function an83Man2(t) {
     if (t >= 77.6 && t < 79.2) { hR = an83HR(t, [[77.6, AN83_DR], [77.75, [22, -214], 0.12]]); lid = 0.6; P.mouth = 'open'; P.drop = 4 * pulse(t, 77.8, 0.3); }
     if (t >= 96.96 && t < 98.6) { hL = an83HL(t, [[96.9, AN83_DL], [97.05, [96, -152]]]); hR = an83HR(t, [[96.9, AN83_DR], [97.05, [80, -152], 0.15], [97.3, [12, -142], 0.4], [97.85, [70, -150], 0.1], [98.05, [12, -142], 0.35]]); gz = [P.x + 300, 600]; P.mouth = 'closed'; }
     if (t >= 102.24 && t < 103.9) { P.tip = 0.14 * AN83_B(t, 102.4, 0.4) * (1 - AN83_B(t, 103.6, 0.3)); hR = an83HR(t, [[102.3, AN83_DR], [102.5, [42, -200]], [103.7, AN83_DR]]); gz = g1h; }
-  } else if (t < 158.3) {
+  } else if (t < 158.5) {
     lid = 0.3; P.mouth = 'smile'; const r = t < 121.6 ? 0 : t < 135.2 ? 1 : 2, rx = AN83_GX[r](t);
-    gz = gazePlan(t, [[107.9, an83Hd(rx, 0.9, 935)], [111.3, [AN83_INSET[0], AN83_INSET[1] + 30]], [122.1, an83Hd(rx, 0.86, 935)], [125.5, [AN83_INSET[0], AN83_INSET[1] + 30]], [135.8, an83Hd(rx, 0.8, 935)], [138.0, [AN83_INSET[0], AN83_INSET[1] + 30]], [144.3, Mh], [146.8, g3h]], 0.35);
+    gz = gazePlan(t, [[107.9, an83Hd(rx, 0.9, 935)], [111.3, [AN83_INW[0], AN83_INW[1] + 30]], [122.1, an83Hd(rx, 0.86, 935)], [125.5, [AN83_INW[0], AN83_INW[1] + 30]], [135.8, an83Hd(rx, 0.8, 935)], [138.0, [AN83_INW[0], AN83_INW[1] + 30]], [144.3, Mh], [146.8, g3h]], 0.35);
     P.tip = 0.03 * [115.0, 129.0, 141.0].reduce((a, c) => a + pulse(t, c, 0.5), 0);
     if (t >= 143.46 && t < 145) { lid = 0.6; P.mouth = 'closed'; }
     if (t >= 157.6) { hL = [22, -105]; hR = [-18, -112]; P.brow = t < 158.05 ? 0.6 : 0; P.mouth = t < 158.05 ? 'frown' : 'smile'; gz = Mh; lid = 0; }
   } else {
     P.mouth = 'smile'; gz = t < 159.95 ? g1h : null; if (t < 158.9) { hL = [22, -105]; hR = [-18, -112]; }
     if (!gz) P.gaze = an83In(t, 162.9, 163.55) ? [1, 0] : [-1, 0.1];
-    if (t >= 163.5 && t < 164.6) { P.tip = 0.28 * pulse(t, 163.6, 0.9); P.sq = anticipate(t, 163.5, 0.1, 0.06); P.eyes = 'wide'; P.mouth = 'o'; hL = [-80, -150]; hR = [80, -150]; P.trip = true; }
+    if (t >= 165.15 && t < 166.2) { P.tip = 0.28 * pulse(t, 165.25, 0.9); P.sq = anticipate(t, 165.15, 0.1, 0.06); P.eyes = 'wide'; P.mouth = 'o'; hL = [-80, -150]; hR = [80, -150]; P.trip = true; }
   }
   P.handL = hL; P.handR = hR; if (gz) P.gaze = an83Gz(P, gz);
   if (P.noBlink) P.lid = lid; else an83Lid(P, t, lid);
@@ -310,18 +330,16 @@ function an83Girl(t, i) {
   // position: rising over the dune lip, then the marks
   if (t < E[1]) { const u = K.clamp((t - E[0]) / (E[1] - E[0])); P.x = K.lerp(E[3], E[4], u); P.y = an83LipY(E[4]) + 230 * (1 - K.ease.out(u)); P.behind = true; P.ph = P.x / (29 * 0.8 * s); P.amp = t > E[0] ? 0.8 : 0; }
   else if (t < E[2]) { const xf = (tt) => K.lerp(E[4], E[5], K.ease.inOut(K.clamp((tt - E[1]) / (E[2] - E[1])))), x = xf(t); P.x = x; P.y = K.lerp(an83LipY(E[4]), AN83_GR, K.clamp((E[4] - x) / (E[4] - E[5]))); Object.assign(P, an83Walk(xf, t, s, i === 2 ? 0.7 : 0.8)); P.y = K.lerp(an83LipY(E[4]), AN83_GR, K.clamp((E[4] - P.x) / (E[4] - E[5]))); }
-  else { Object.assign(P, an83Walk(AN83_GX[i], t, s, i === 2 ? 0.65 : 0.75)); P.y = AN83_GR + AN83_GY[i](t); }
+  else { Object.assign(P, an83Walk(AN83_GX[i], t, s, i === 2 ? 0.65 : 0.75)); P.y = AN83_GR + AN83_GY[i](t); if (t > 160) { P.s = s * AN83_GSK(t); P.ph = P.x / (29 * 0.75 * P.s); } }
   P.hidden = t < E[0];
   // facing
-  const turns = [[[0, -1], [59.5, 1], [69.95, -1], [85.5, 1], [89.9, -1], [100.3, 1], [107.3, -1]], [[0, -1], [59.75, 1], [70.1, -1]], [[0, -1]]][i];
+  const turns = [[[0, -1], [59.5, 1], [69.95, -1], [85.5, 1], [89.9, -1], [100.3, 1], [107.3, -1]], [[0, -1], [38.3, 1], [44.75, -1], [59.75, 1], [70.1, -1]], [[0, -1], [38.45, 1], [44.8, -1]]][i];
   const tf = turnFlip(t, turns, 0.35); P.dir = tf.dir; P.sq = 1 - 0.04 * tf.sink;
   // walking back to the line facing the right way, then facing left again (g2, g3 after the drink)
-  if ((i === 1 && an83In(t, 43.75, 45.2)) || (i === 2 && an83In(t, 43.85, 45.4))) P.dir = 1;
-  if ((i === 1 && an83In(t, 135.0, 135.8)) || (i === 0 && an83In(t, 121.4, 122.2)) || (i === 1 && an83In(t, 144.3, 145.5)) || (i === 0 && an83In(t, 144.3, 145.4))) P.dir = 1;
-  const F = { Mh: an83Hd(an83MX(t), 1, t >= 72.95 && t < 80.24 ? 925 : 900), m1h: an83Hd(an83X1(t), 0.98), m2h: an83Hd(an83X2(t), 0.95) };
+  const F = { Mh: an83Hd(an83MX(t), 1, 900), m1h: an83Hd(an83X1(t), 0.98), m2h: an83Hd(an83X2(t), 0.95) };
   const gh = [0, 1, 2].map((k) => an83Hd(AN83_GX[k](t), AN83_GS[k], AN83_GR + AN83_GY[k](t)));
-  let gz = F.Mh, lid = 0, hL = AN83_DL, hR = AN83_DR; P.bundle = t >= [71.42, 73.5, 75.5][i] ? 'both' : null;
-  const IN = [AN83_INSET[0], AN83_INSET[1] + 30];
+  let gz = F.Mh, lid = 0, hL = AN83_DL, hR = AN83_DR; P.bundle = t >= AN83_RCV[i] ? 'both' : null;
+  const IN = [AN83_INW[0], AN83_INW[1] + 30];
   if (t < 29.0) {   // S3 entrance
     gz = i === 1 && an83In(t, 24.5, 26.6) ? gh[2] : [P.x - 200, 820];
     if (i === 1) P.talk = an83Talk(t, [[24.6, 26.4]], 0.5);
@@ -335,8 +353,9 @@ function an83Girl(t, i) {
     if (i > 0 && t >= 38.3) { gz = i === 1 ? F.m1h : F.m2h; }
   } else if (t < 49.0) {   // S5
     gz = F.Mh;
-    if (i === 1 && t < 43.75) { gz = F.m1h; if (an83In(t, 41.4, 42.6)) { hR = [10, -172]; P.mouth = 'smile'; } }
-    if (i === 2 && t < 43.85) { gz = F.m2h; if (an83In(t, 41.3, 42.6)) { P.mouth = 'open'; P.talk = 0.5 + 0.5 * Math.abs(Math.sin(t * 15)); } }
+    if (i === 0 && t < 44.0) { gz = F.Mh; P.mouth = 'smile'; if (t >= 43.14) P.sq *= 1 + 0.03 * pulse(t, 43.2, 0.5); }
+    if (i === 1 && t < 44.75) { gz = F.m1h; if (an83In(t, 43.6, 44.5)) { hR = [10, -172]; P.mouth = 'smile'; } }
+    if (i === 2 && t < 44.8) { gz = F.m2h; if (an83In(t, 43.5, 44.5)) { P.mouth = 'open'; P.talk = 0.5 + 0.5 * Math.abs(Math.sin(t * 15)); P.tip = -0.05; } }
     if (t >= 46.38 && t < 47.6) {
       if (i === 0) P.look = 0.9 * Math.sin((t - 46.38) * 11);
       if (i === 1) { hR = [64, -170 + 14 * Math.sin(t * 20)]; }
@@ -349,25 +368,21 @@ function an83Girl(t, i) {
   } else if (t < 70.4) {   // S7
     gz = i === 0 && t < 69.9 ? (t >= 64.3 ? F.Mh : [P.x + 200, 820]) : F.Mh; if (i === 1 && t < 69.9) gz = [P.x + 200, 800];
     if (i === 2) gz = F.Mh;
-  } else if (t < 80.24) {   // S8 receiving
-    gz = F.Mh;
-    const tr = [71.42, 73.5, 75.5][i];
-    if (t >= tr - 0.3 && t < tr + 0.25) { hL = [80, -150]; hR = [92, -165]; }
-    if (t >= tr + 0.25) { hL = AN83_GH; hR = [20, -90]; P.bundleDip = 8 * Math.exp(-(t - tr - 0.25) * 5) * Math.cos((t - tr - 0.25) * 12); }
-    if (i === 0 && an83In(t, 71.5, 72.3)) P.eyes = 'wide';
-    if (i === 1 && t >= 73.9 && t < 74.7) { hL = an83HL(t, [[73.9, [18, -118]], [74.05, [-6, -168]]]); P.bundle = 'R'; P.slip = AN83_B(t, 74.0, 0.2) * (1 - AN83_B(t, 74.25, 0.15)); if (t > 74.25) { hR = [26, -128]; P.eyes = 'wide'; } }
-    if (i === 2 && t >= 75.5) { P.sq *= 0.95 + 0.05 * AN83_B(t, 76.3, 0.6); gz = t < 76.0 ? F.Mh : t < 76.7 ? an83W(P, 30, -200) : F.Mh; hL = [6, -110]; hR = [22, -104]; }
-    if (t >= 76.72) gz = [P.x, 900 - 230 * s];
-  } else if (t < 88.0) {   // S9 the gold, the name dawns
-    const st = [0, 0.13, 0.26][i];
-    gz = an83W(P, 24, -190); P.eyes = 'wide'; P.drop = 5 * AN83_B(t, 80.3 + st, 0.3);
-    if (i === 1 && t >= 82.1 && t < 83.3) { P.tap = true; P.eyes = 'open'; }
-    if (i === 1 && t >= 82.9) gz = gh[0];
-    if (i === 2 && t >= 83.34 && t < 84.7) { P.holdUp = AN83_B(t, 83.34, 0.4); P.wink = 'L'; P.mouth = 'o'; gz = [P.x - 20, 560]; P.eyes = 'open'; }
-    if (t >= 84.04) { P.drop = 5 * (1 - AN83_B(t, 84.05, 0.3)); P.eyes = 'open'; P.noBlink = t < 84.9;
-      gz = gazePlan(t, [[84.04, i === 0 ? gh[1] : i === 1 ? gh[0] : gh[1]], [84.75 + st, [1150, 700]]], 0.25); }
-    if (i === 0 && t >= 85.44) { gz = gh[1]; P.tip = 0.08 * AN83_B(t, 85.8, 0.3); hR = an83L(P, AN83_GX[1](t) - 26, 795); P.bundle = 'L'; hL = [18, -118]; }
-    if (i > 0 && t >= 86.76) { gz = gh[0]; P.tip = (i === 1 ? 0.08 : 0.1) * AN83_B(t, 86.8, 0.3); if (i === 2) P.y -= 8 * AN83_B(t, 86.9, 0.3); }
+  } else if (t < 80.24) {   // S8 receiving: she comes to AN83_R, both hands come up, the bundle crosses a gap, her hands dip
+    const tr = AN83_RCV[i]; gz = F.Mh;
+    if (t >= tr - 0.75 && t < tr) { hL = an83HL(t, [[tr - 0.75, AN83_DL], [tr - 0.55, [52, -146]]]); hR = an83HR(t, [[tr - 0.75, AN83_DR], [tr - 0.55, [62, -156]]]); gz = an83W(an83Maan(t), 80, -170); P.eyes = 'wide'; P.mouth = 'o'; }
+    if (t >= tr) { const d = t - tr, dip = 12 * Math.exp(-d * 6) * Math.cos(d * 13); hL = [AN83_GH[0], AN83_GH[1] + dip]; hR = [AN83_GH[0] + 10, AN83_GH[1] + 6 + dip]; P.bundleDip = dip; P.sq *= 1 - 0.03 * pulse(t, tr, 0.4); if (d < 0.9) { gz = an83W(P, 30, -200); P.mouth = 'o'; P.eyes = 'wide'; } }
+    if (t >= 77.5) { gz = F.Mh; P.mouth = 'open'; P.talk = 0.4 + 0.4 * Math.abs(Math.sin(t * 13 + i)); if (t > 78.9) { P.mouth = 'smile'; P.talk = 0; } }
+  } else if (t < 88.0) {   // S9 they examine the gold, look at each other, the name dawns
+    const st = [0, 0.1, 0.2][i], bh = an83W(P, 30, -200);
+    gz = t < 80.24 + st ? [P.x + 40 * P.dir, 700] : bh; P.eyes = 'wide'; P.drop = 6 * AN83_B(t, 80.24 + st, 0.25);
+    if (i === 1 && t >= 81.6 && t < 84.04) { P.eyeArrow = AN83_B(t, 81.6, 0.4); P.bundle = 'L'; hL = [18, -118]; gz = an83W(P, 46, -232); P.drop = 6 * (1 - P.eyeArrow); P.eyes = 'open'; P.wink = t > 82.0 ? 'L' : undefined; P.mouth = 'o'; }
+    if (i === 0 && t >= 82.6 && t < 83.4) { P.tap = true; P.eyes = 'open'; }
+    if (i === 2 && t >= 82.9 && t < 84.0) { P.holdUp = AN83_B(t, 82.9, 0.4) * (1 - AN83_B(t, 83.75, 0.25)); P.mouth = 'o'; gz = [P.x - 20, 560]; P.eyes = 'open'; }
+    if (t >= 84.04) { P.drop = 6 * (1 - AN83_B(t, 84.05, 0.3)); P.eyes = 'wide'; P.noBlink = t < 84.9; P.brow = -0.7 * (1 - AN83_B(t, 85.1, 0.4)); P.mouth = t < 85.0 ? 'o' : 'smile';
+      gz = gazePlan(t, [[84.04, i === 0 ? gh[1] : i === 1 ? gh[0] : gh[1]], [84.6 + st, i === 0 ? gh[2] : gh[0]]], 0.25); }
+    if (i === 0 && t >= 85.44) { gz = gh[1]; P.sq *= 1 + 0.03 * pulse(t, 85.44, 0.5); P.tip = 0.08 * AN83_B(t, 85.85, 0.3); hR = an83HR(t, [[85.8, AN83_DR], [85.95, an83L(P, AN83_GX[1](t) - 20, 798), 0.2]]); P.bundle = 'L'; hL = [18, -118]; }
+    if (i > 0 && t >= 86.0) { gz = gh[0]; P.tip = (i === 1 ? 0.09 : 0.11) * AN83_B(t, 86.05, 0.3); if (i === 2) P.y -= 10 * AN83_B(t, 86.1, 0.3); }
   } else if (t < 100.18) {   // S10 only Ma'an does this
     if (i === 0) {
       P.talk = an83Talk(t, [[88.57, 89.84], [92.45, 94.68], [95.27, 98.6]], 0.7); P.bundle = 'L'; hL = [18, -118]; P.arrowR = true; gz = t < 89.84 ? gh[1] : F.Mh;
@@ -375,8 +390,9 @@ function an83Girl(t, i) {
       if (an83In(t, 89.84, 90.2)) P.sq *= 1 + 0.03 * Math.sin(Math.PI * (t - 89.84) / 0.36);
       if (t >= 94.86) { P.aR = [K.lerp(0.3, 2.65, AN83_B(t, 94.86, 0.5)), K.lerp(0.2, 2.85, AN83_B(t, 94.86, 0.5))]; gz = an83W(P, ...an83HandL(1, null, P.aR)); gz = [gz[0], gz[1] - 80]; }
     } else {
-      gz = t < 92.06 ? gh[0] : gazePlan(t, [[92.06, F.Mh], [92.6, an83W(P, 24, -190)], [93.1, F.Mh], [94.0, [AN83_GX[0](t), 560]]], 0.15);
-      if (t >= 92.06 && t < 94.0) { P.eyes = 'wide'; P.mouth = 'o'; if (i === 1) { hL = [-34, -180]; hR = [34, -180]; P.bundle = 'tuck'; } else { hL = [6, -176]; hR = [20, -170]; P.bundle = 'face'; } }
+      const g0 = 90.56 + i * 0.1;   // the gasp, staggered 3 and 6 frames after the name
+      gz = t < g0 ? gh[0] : gazePlan(t, [[g0, F.Mh], [92.6, an83W(P, 24, -190)], [93.1, F.Mh], [94.0, [AN83_GX[0](t), 560]]], 0.12);
+      if (t >= g0 && t < 93.2) { P.eyes = 'wide'; P.noBlink = true; P.mouth = 'o'; P.bundle = 'tuck'; const H = i === 1 ? PERSON_HANDS.mouthCover : PERSON_HANDS.cheeks; hL = an83HL(t, [[g0, AN83_DL], [g0 + 0.01, H.L, 0.15]]); hR = an83HR(t, [[g0, AN83_DR], [g0 + 0.01, H.R, 0.15]]); P.sq *= 1 + 0.03 * pulse(t, g0, 0.4); }
     }
   } else if (t < 107.9) {   // S11 the huddle
     const ctr = [1520, 800];
@@ -398,7 +414,7 @@ function an83Girl(t, i) {
         P.aR = [an83St(t, [[107.9, 0.3], [108.9, 2.05, 1.1], [116.54, 1.5, 0.6], [118.1, 2.05, 0.6], [119.56, 0.4, 0.6]]), an83St(t, [[107.9, 0.15], [108.9, 2.4, 1.1], [116.54, 1.55, 0.6], [118.1, 2.4, 0.6], [119.56, 0.2, 0.6]])];
         if (t < 107.9 + 1.0) P.aR = null; gz = t >= 116.54 && t < 118.1 ? [P.x - 500, 700] : t >= 110.6 ? IN : F.Mh; if (t >= 119.56) gz = F.Mh;
         if (t >= 121.34) P.tip = 0.1 * pulse(t, 121.34, 0.5); }
-      else if (t >= 143.46) { hR = an83L(P, AN83_GX[2](t) + 14, AN83_GR + AN83_GY[2](t) - 150 * 0.8); lid = 0.6; P.mouth = 'closed'; gz = gh[2]; }
+      else if (t >= 143.46) { lid = 0.6; P.mouth = 'closed'; gz = gh[2]; P.drop = 4; }
     }
     if (i === 1) {
       if (rec === 1) { P.talk = an83Talk(t, [[122.69, 126.0], [126.53, 131.2], [131.71, 135.34]], 0.8); gz = t > 124.38 && t < 131.2 ? IN : F.Mh;
@@ -415,19 +431,19 @@ function an83Girl(t, i) {
         gz = t < 137.16 ? [P.x - 40, 960] : IN; if (t >= 137.16) hR = an83HR(t, [[137.16, AN83_DR], [137.5, [60, -104]], [142.9, AN83_DR]]); if (t >= 143.46) { lid = 0.6; gz = [P.x - 40, 960]; } }
     }
     if (t >= 142.52 && i > 0 && rec !== i) P.mouth = 'closed';
-  } else if (t < 158.3) {   // S15
+  } else if (t < 158.5) {   // S15
     gz = F.Mh; P.bundle = 'both'; hL = AN83_GH; hR = [20, -90];
     if (t < 145.6) { lid = 0.4; P.mouth = 'closed'; }
     if (t >= 147.76 && t < 148.64) { if (i === 2) { P.bundle = 'face'; hL = [6, -176]; hR = [20, -170]; } if (i === 1) { P.bundle = 'L'; hR = an83HR(t, [[147.8, AN83_DR], [147.95, [100, -150], 0.15], [148.3, AN83_DR]]); gz = gh[0]; } }
     if (i === 0 && t >= 148.64 && t < 150.3) { P.bundle = 'L'; hL = [18, -118]; hR = an83HR(t, [[148.64, [30, -112]], [148.8, [-24, -132]]]); if (t > 149.0) hR = [hR[0], hR[1] + 5 * Math.sin(t * 20)]; gz = an83W(P, -40, -128); }
     if (i === 0 && t >= 152.76 && t < 154.2) { P.bundle = 'L'; hL = [18, -118]; hR = an83HR(t, [[152.76, [30, -112]], [152.9, [32, -206]], [153.4, [100, -150]]]); if (an83In(t, 153.0, 153.35)) hR = [hR[0], hR[1] + 4 * Math.sin(t * 40)]; }
     if (t >= 154.54) { const st = 154.54 + i * 0.1; P.lift = 30 * AN83_B(t, st, 0.25) * (1 - AN83_B(t, 155.6, 0.5)); gz = [P.x - 30, 560]; if (t > 155.6) gz = F.Mh; }
-    if (t >= 156.3 && t < 158.3) gz = t < 157.5 ? an83W(an83Maan(t), 0, -40) : F.m1h;
+    if (t >= 156.3 && t < 158.5) gz = t < 157.5 ? an83W(an83Maan(t), 0, -40) : F.m1h;
   } else {   // S16 farewell
     gz = t < 162.4 ? F.Mh : [Math.min(F.Mh[0], 1100), 760]; P.bundle = 'both'; hL = AN83_GH; hR = [20, -90];
     const wave = (a, b, big) => { if (t >= a && t < b) { P.bundle = 'L'; hR = an83HR(t, [[a, [20, -90]], [a + 0.2, big ? [70, -205] : [56, -176]], [b - 0.3, big ? [70, -205] : [56, -176]], [b, [20, -90]]]); if (t < b - 0.3) hR = [hR[0] + (big ? 14 : 7) * Math.sin(t * 14 + i), hR[1]]; } };
     if (i === 1) { wave(160.28, 161.8, true); wave(163.5, 165.3, true); P.talk = an83Talk(t, [[162.0, 162.6]], 0.6); }
-    if (i === 2) { wave(160.6, 161.7, false); wave(163.6, 165.6, false); if (t >= 161.84 && t < 162.4) { P.bundle = 'L'; hR = an83HR(t, [[161.84, [30, -112]], [162.0, [-30, -196], 0.3]]); } }
+    if (i === 2) { wave(160.6, 161.7, false); wave(163.6, 165.6, false); if (t >= 162.0 && t < 162.6) { P.bundle = 'L'; hR = an83HR(t, [[162.0, [30, -112]], [162.15, [-30, -196], 0.3]]); } }
     if (i === 0) { wave(163.7, 165.9, false); }
     if (t >= 160.28 && t < 161.8 && i === 0) P.mouth = 'smile';
   }
@@ -440,7 +456,7 @@ function an83Girl(t, i) {
   if (P.noBlink) P.lid = lid; else an83Lid(P, t, lid);
   return P;
 }
-const AN83_GH = [10, -96];
+const AN83_GH = [10, -82];
 
 // ===================== PROPS CARRIED AND HANDED OVER =====================
 // Fills F.pre[key] (drawn before that figure: slung behind the body), F.post[key] (after it: in the hands) and F.top (after everyone:
@@ -491,22 +507,23 @@ function an83Props(t, F) {
   const inGirlHands = (i, l, fill, tilt = 0.15) => { const P = g[i], w = lw(P, l); post['g' + i].push((c) => an83Skin(c, w[0], w[1], { fill, tilt: P.dir > 0 ? tilt : Math.PI - tilt, s: P.s, slosh: 0.5 * Math.sin(t * 6) })); both(P, w, 14); return w; };
   const unsling = (i, a, d, fill, to = [52, -142]) => { const u = an83Ov(K.clamp((t - a) / d), 0.12), l = an83Lerp(SL, to, u); return inGirlHands(i, l, fill, K.lerp(-0.35, 0.15, u)); };
   // girl 1 -> Ma'an
-  const f1 = t < 40.4 ? 1 : t < 43.14 ? K.lerp(1, 0.45, (t - 40.4) / 2.74) : 0.45;
+  const f1 = t < 40.4 ? 1 : t < 43.14 ? K.lerp(1, 0.2, (t - 40.4) / 2.74) : 0.2;
   if (t < 33.74 || t >= 45.4) slungGirl(0, f1);
   else if (t < 36.72) unsling(0, 33.8, 1.0, 1);
   else if (t < 37.4) inGirlHands(0, an83Lerp([52, -142], [100, -168], AN83_B(t, 36.72, 0.35)), 1);
   else if (t < 44.6) {   // with Ma'an
     const gw = lw(g[0], [100, -168]);
     let l = [62, -150 + 12 * Math.exp(-(t - 37.6) * 6) * (t > 37.6 ? 1 : 0)], tilt = 0.15;
-    if (t >= 39.2 && t < 43.14) { const u = AN83_B(t, 39.2, 0.8); l = an83Lerp(l, [40, -228], u); tilt = K.lerp(0.15, 2.45, u); }
-    if (t >= 43.14) { const u = AN83_B(t, 43.14, 0.5); l = an83Lerp([40, -228], [62, -146], u); tilt = K.lerp(2.45, 0.15, u); }
+    const SIP = [78, -214], ST = 2.75;   // the skin held up beside the mouth in 3/4, neck to the lips, eyes clear
+    if (t >= 39.4 && t < 43.14) { const u = AN83_B(t, 39.4, 0.6); l = an83Lerp(l, SIP, u); tilt = K.lerp(0.15, ST, u); }
+    if (t >= 43.14) { const u = AN83_B(t, 43.14, 0.5); l = an83Lerp(SIP, [62, -146], u); tilt = K.lerp(ST, 0.15, u); }
     let w = lw(M, l); if (t < 37.7) w = an83Lerp(gw, w, AN83_B(t, 37.4, 0.3));
     if (t >= 44.2) { const gb = lw(g[0], [52, -142]); w = an83Lerp(lw(M, [62, -146]), gb, AN83_B(t, 44.2, 0.4)); }
     top.push((c) => an83Skin(c, w[0], w[1], { fill: f1, tilt: M.dir > 0 ? tilt : Math.PI - tilt, s: 1, slosh: 0.6 * Math.sin(t * 7) }));
     if (t >= 37.4 && t < 44.4) both(M, w, 16); if (t < 37.55 || t >= 44.2) both(g[0], w, 14);
   } else inGirlHands(0, an83Lerp([52, -142], SL, AN83_B(t, 44.8, 0.6)), f1, -0.2);
   // girls 2 and 3 -> the huntsmen
-  for (const [i, Mn, T0, Th, Td0, Td1, Tb, Tbk, hi] of [[1, m1, 38.3, 39.25, 40.9, 42.4, 43.3, 43.75, false], [2, m2, 38.4, 39.35, 40.95, 42.3, 43.4, 43.85, true]]) {
+  for (const [i, Mn, T0, Th, Td0, Td1, Tb, Tbk, hi] of [[1, m1, 38.3, 39.75, 40.4, 44.25, 44.4, 44.75, false], [2, m2, 38.45, 40.35, 40.9, 44.4, 44.45, 44.85, true]]) {
     const fl = t < Td0 + 0.3 ? 1 : t < Td1 ? K.lerp(1, 0.6, (t - Td0 - 0.3) / (Td1 - Td0 - 0.3)) : 0.6;
     if (t < T0 || t >= Tbk + 0.55) slungGirl(i, fl);
     else if (t < Th) unsling(i, T0, 0.6, 1);
@@ -528,7 +545,7 @@ function an83Props(t, F) {
     if (t >= 159.0) { const u = AN83_B(t, 159.0, 0.5), l = [K.lerp(QF[0], QB[0], u), K.lerp(QF[1], QB[1], u) - 30 * Math.sin(Math.PI * u), K.lerp(QF[2], QB[2], u)]; return { l, back: u > 0.5, grab: true }; }
     return { l: QF, back: false };
   };
-  const nIn = t < 70.42 ? 6 : t < 72.2 ? 4 : t < 74.3 ? 2 : 0, op = t < 64.4 ? 0 : AN83_B(t, 64.4, 0.4);
+  const nIn = t < 70.42 ? 6 : t < 72.5 ? 4 : t < 74.9 ? 2 : 0, op = t < 64.4 ? 0 : AN83_B(t, 64.4, 0.4);
   if (M.quiverUp) {   // held upside down by its bottom: empty
     setH(M, 1, lw(M, [64, -176])); const h = an83HandW(M, 1); setH(M, -1, lw(M, [40, -128 + 6 * Math.max(0, Math.sin((t - 78.1) * 20)) * (an83In(t, 78.1, 78.7) ? 1 : 0)]));
     post.M.push((c) => an83Quiver(c, h[0], h[1] + 116, { rot: Math.PI + 0.1 * Math.sin(t * 6), open: 1, n: 0 }));
@@ -540,17 +557,16 @@ function an83Props(t, F) {
   }
   // ---- Ma'an holds up the first gold arrow (69.9-70.4) ----
   if (M.holdArrow) { const h = an83HandW(M, 1); post.M.push((c) => an83Arrow(c, h[0] + 6, h[1] - 64, -Math.PI / 2 - 0.15, { glint: K.clamp((t - 69.95) / 0.4) })); }
-  // ---- counting out the bundles (S8) ----
-  if (t >= 70.42 && t < 76.0) {
-    const B3 = [[70.42, 71.42, 71.7, 0], [72.2, 73.5, 73.78, 1], [74.3, 75.5, 75.78, 2]];
-    for (const [c0, h0, h1, gi] of B3) {
-      if (t < c0 || t >= h1) continue; const n = Math.min(10, 1 + Math.floor((t - c0) / ((h0 - c0 - 0.15) / 10)));
-      M.handL = an83HL(t, [[c0, [30, -126]], [h0 - 0.2, [92, -160], 0.2]]);
-      if (t < h0 - 0.2) { const k = Math.floor((t - c0) / 0.1) % 2; M.handR = k ? [QF[0] + 8, QF[1] - 10] : [26, -128]; }
-      else M.handR = [104, -186];
+  // ---- counting out the bundles (S8): he counts ten into his left hand, holds it out, it crosses the gap into her raised hands ----
+  if (t >= 70.42 && t < 76.72) {
+    const B3 = [[70.42, 71.75, 0], [72.5, 73.8, 1], [74.9, 76.3, 2]];
+    for (const [c0, h0, gi] of B3) {
+      const R = AN83_RCV[gi]; if (t < c0 || t >= R) continue; const n = Math.min(5, 1 + Math.floor((t - c0) / ((h0 - 0.35 - c0) / 5)));
+      M.handL = an83HL(t, [[c0, [30, -126]], [h0 - 0.35, [70, -156], 0.25]]);
+      if (t < h0 - 0.35) { const k = Math.floor((t - c0) / 0.1) % 2; M.handR = k ? [QF[0] + 8, QF[1] - 10] : [26, -128]; }
       let w = an83HandW(M, -1); w = [w[0], w[1] - 4];
-      if (t >= h0) { const P = g[gi], gw = an83Lerp(an83HandW(P, -1), an83HandW(P, 1), 0.5); w = an83Lerp(w, gw, AN83_B(t, h0, h1 - h0)); }
-      const s = 1.2; top.push((c) => an83Bundle(c, w[0], w[1], n, { s, rot: 0.45 * Math.sign(M.dir) }));
+      if (t >= h0) { const P = g[gi], gw = an83Lerp(an83HandW(P, -1), an83HandW(P, 1), 0.5); w = an83Lerp(w, gw, AN83_B(t, h0, R - h0)); w[1] -= 26 * Math.sin(Math.PI * K.clamp((t - h0) / (R - h0))); }
+      const s = 1.2; top.push((c) => an83Bundle(c, w[0], w[1], n, { s, rot: 0.3 * Math.sign(M.dir) }));
     }
   }
   // ---- the girls' bundles and single arrows ----
@@ -558,21 +574,32 @@ function an83Props(t, F) {
     const P = g[i]; if (!P.bundle) continue;
     if (P.lift) { P.handL = [P.handL[0], P.handL[1] - P.lift]; P.handR = [P.handR[0], P.handR[1] - P.lift]; }
     const hl = an83HandW(P, -1), hr = an83HandW(P, 1);
-    let w = P.bundle === 'L' ? hl : P.bundle === 'R' ? hr : an83Lerp(hl, hr, 0.5), rot = 0.55 * Math.sign(P.dir);
-    if (P.bundle === 'tuck') { w = lw(P, [-28, -118]); rot = -0.3 * P.dir; }
+    let w = P.bundle === 'L' ? hl : P.bundle === 'R' ? hr : an83Lerp(hl, hr, 0.5), rot = 0.22 * Math.sign(P.dir);
+    if (P.bundle === 'tuck') { w = lw(P, [-24, -112]); rot = -0.35 * P.dir; }
     if (P.bundle === 'face') { w = lw(P, [14, -150]); rot = 0.1 * Math.sign(P.dir); }
-    w = [w[0], w[1] + (P.bundleDip || 0) + 34 * (P.slip || 0)]; rot += 0.5 * (P.slip || 0) * P.dir;
-    const gl = (k) => { let v = 0; const wave = (t0) => { const d = t - (t0 + i * 0.2 + k * 0.04); return d > 0 && d < 0.35 ? d / 0.35 : 0; };
-      v = Math.max(wave(76.75), wave(160.4), wave(161.0)); for (let e = 166.6; e < AN83_DUR; e += 1.2) v = Math.max(v, wave(e)); if (i === 1 && an83In(t, 82.25, 82.9)) v = Math.max(v, k === 3 ? (t - 82.25) / 0.65 : 0); return v; };
-    const nb = P.holdUp || P.arrowR || P.earArrow ? 9 : 10;
-    (P.bundle === 'face' ? post : post)['g' + i].push((c) => an83Bundle(c, w[0], w[1], nb, { s: P.s * 1.3, rot, glints: gl }));
-    if (i === 1 && P.tap) { const tip = [w[0] + Math.cos(-Math.PI / 2 + rot) * 80 * P.s, w[1] + Math.sin(-Math.PI / 2 + rot) * 80 * P.s]; setH(P, 1, [tip[0] + 6 * P.dir, tip[1] + 10 - 8 * Math.max(0, Math.sin((t - 82.2) * 18))]); F.tapAt = tip; }
+    w = [w[0], w[1] + (P.bundle === 'both' ? 0 : P.bundleDip || 0)];
+    // one slow glint at a time, cycling girl1 -> girl2 -> girl3 every 2.4 s from 76.7 to the end (plus the S16 waves)
+    const gl = (k) => { let v = 0; const wave = (t0) => { const d = t - t0; return d > 0 && d < 0.45 ? d / 0.45 : 0; };
+      if (t >= 76.7) { const n = Math.floor((t - 76.7) / 2.4), t0 = 76.7 + n * 2.4; if (n % 3 === i && k === (n * 2 + 1) % 5) v = wave(t0); }
+      if (i === 0 && k === 2 && an83In(t, 82.6, 83.3)) v = Math.max(v, (t - 82.6) / 0.7); return v; };
+    const nb = P.holdUp || P.arrowR || P.earArrow || P.eyeArrow ? 9 : 10;
+    post['g' + i].push((c) => an83Bundle(c, w[0], w[1], nb, { s: P.s * 1.25, rot, glints: gl }));
+    if (i === 0 && P.tap) { const a = -Math.PI / 2 + rot + 0.08, tip = [w[0] + Math.cos(a) * 66 * P.s * 1.25, w[1] + Math.sin(a) * 66 * P.s * 1.25]; setH(P, 1, [tip[0] + 10 * P.dir, tip[1] + 14 - 10 * Math.max(0, Math.sin((t - 82.6) * 18))]); F.tapAt = tip; }
+    // girl2 lifts one arrow to eye level and tilts it; a patch of gold light on her face
+    if (i === 1 && P.eyeArrow) { const e = P.eyeArrow, h0 = lw(P, an83Lerp([30, -120], [52, -186], e)); setH(P, 1, h0); const h = an83HandW(P, 1), ang = -Math.PI / 2 + P.dir * (0.25 + 0.35 * Math.sin((t - 81.6) * 2.4)), tip = [h[0] + Math.cos(ang) * 70 * P.s, h[1] + Math.sin(ang) * 70 * P.s];
+      post.g1.push((c) => { an83Arrow(c, tip[0], tip[1], ang, { s: P.s * 1.1, len: 100, head: 1.9, fl: 0.6, flc: CREAM, glint: K.clamp((t - 82.2) / 0.5) });
+        const hd = an83HeadW(P); c.save(); c.globalAlpha = 0.5 * e; c.fillStyle = dotPat(c, C.yellow, 7, 0.5); c.beginPath(); c.ellipse(hd[0] + 10 * P.dir, hd[1] + 4, 26 * P.s, 20 * P.s, 0, 0, 7); c.fill(); c.restore(); }); }
   }
   { const P = g[0]; if (P.arrowR) { const h = an83HandW(P, 1); let ang = -Math.PI / 2 + 0.25 * Math.sin(t * 13) * (t < 89.84 ? 1 : 0); if (t >= 89.84 && t < 94.86) ang = K.lerp(-Math.PI / 2, P.dir > 0 ? 0 : Math.PI, AN83_B(t, 89.95, 0.3)); if (t >= 94.86) ang = K.lerp(P.dir > 0 ? 0 : Math.PI, -Math.PI / 2, AN83_B(t, 94.86, 0.5));
-    const reach = t >= 94.86 ? K.lerp(62, 112, AN83_B(t, 94.86, 0.5)) : 62, tip = [h[0] + Math.cos(ang) * reach * P.s, h[1] + Math.sin(ang) * reach * P.s]; F.g1Tip = tip; post.g0.push((c) => an83Arrow(c, tip[0], tip[1], ang, { s: P.s, glint: t >= 99.5 ? K.clamp((t - 99.5) / 0.6) : 0 })); } }
-  { const P = g[2]; if (P.holdUp) { P.aR = [K.lerp(0.3, 2.55, P.holdUp), K.lerp(0.2, 2.85, P.holdUp)]; P.handR = null; const h = an83HandW(P, 1), tip = [h[0], h[1] - 62 * P.s]; F.g3Tip = tip; post.g2.push((c) => an83Arrow(c, tip[0], tip[1], -Math.PI / 2, { s: P.s, glint: K.clamp((t - 83.8) / 0.6) })); }
-    if (t >= 161.84) { P.earArrow = true; if (t < 162.25) { const h = an83HandW(P, 1); post.g2.push((c) => an83Arrow(c, h[0] - 30 * P.dir, h[1] - 50 * P.s, -Math.PI / 2 - 0.5 * P.dir, { s: P.s })); }
-      else post.g2.push(loc(P, (c) => an83Arrow(c, -26, -262, -Math.PI / 2 - 0.45, { s: 0.9 }))); } }
+    const reach = t >= 94.86 ? K.lerp(62, 112, AN83_B(t, 94.86, 0.5)) : 62, tip = [h[0] + Math.cos(ang) * reach * P.s, h[1] + Math.sin(ang) * reach * P.s]; F.g1Tip = tip; post.g0.push((c) => an83Arrow(c, tip[0], tip[1], ang, { s: P.s * 1.1, len: 100, head: 2.0, fl: 0.6, flc: CREAM, glint: t >= 99.5 ? K.clamp((t - 99.5) / 0.6) : 0 })); } }
+  { const P = g[2]; if (P.holdUp) { P.aR = [K.lerp(0.3, 2.55, P.holdUp), K.lerp(0.2, 2.85, P.holdUp)]; P.handR = null; const h = an83HandW(P, 1), tip = [h[0], h[1] - 66 * P.s]; F.g3Tip = tip; post.g2.push((c) => an83Arrow(c, tip[0], tip[1], -Math.PI / 2, { s: P.s * 1.1, len: 100, head: 1.9, fl: 0.6, flc: CREAM, glint: K.clamp((t - 83.2) / 0.6) })); }
+    if (t >= 162.0) { P.earArrow = true; if (t < 162.45) { const h = an83HandW(P, 1); post.g2.push((c) => an83Arrow(c, h[0] - 30 * P.dir, h[1] - 50 * P.s, -Math.PI / 2 - 0.5 * P.dir, { s: P.s, len: 100, head: 1.8, fl: 0.6, flc: CREAM })); }
+      else post.g2.push(loc(P, (c) => an83Arrow(c, -26, -266, -Math.PI / 2 - 0.45, { s: 0.9, len: 100, head: 1.8, fl: 0.6, flc: CREAM }))); } }
   // ---- the purse (man1, 55.7-57.4) ----
-  if (m1.purse) { const h = an83HandW(m1, 1), up = AN83_B(t, 55.85, 0.2); post.m1.push((c) => an83Purse(c, h[0], h[1] + 4, Math.PI * up, { s: m1.s, open: up })); }
+  if (m1.purse) { const h = an83HandW(m1, 1), up = AN83_B(t, 55.62, 0.22) * (1 - 0.7 * AN83_B(t, 56.6, 0.2)); top.push((c) => an83Purse(c, h[0], h[1] + 4, Math.PI * up * (m1.dir > 0 ? 1 : -1), { s: 1.15 * m1.s, open: up })); F.purseMouth = [h[0], h[1] + 4 - 4 * up]; }
+  // the moth and the dust that fall out of the empty purse (56.0-57.3)
+  if (an83In(t, 55.95, 57.4)) { const h = F.purseMouth || an83HandW(m1, 1), u = (t - 55.95) / 1.45;
+    top.push((c) => { c.save(); c.globalAlpha = Math.min(1, (57.4 - t) / 0.3); for (let k = 0; k < 6; k++) { const v = K.clamp(u * 1.6 - k * 0.08); if (v <= 0 || v >= 1) continue; c.globalAlpha = 0.7 * (1 - v); shape(c, ell(h[0] + (k - 2.5) * 6 + 18 * v * Math.sin(k * 2.1), h[1] + 8 + 90 * v, 5 + 7 * v, 5 + 7 * v, 10), '#e8d8a8', { lw: 2, seed: 900 + k }); }
+      c.globalAlpha = 1; const mx = h[0] + 26 * Math.sin(u * 9), my = h[1] + 16 + 120 * u - 30 * Math.abs(Math.sin(u * 14)), fl = Math.abs(Math.sin(t * 26));
+      for (const sd of [-1, 1]) shape(c, an83Close([[mx, my], [mx + sd * 18, my - 10 * fl - 4], [mx + sd * 15, my + 7]]), '#d8c8a8', { lw: 2.5, seed: 905 }); shape(c, ell(mx, my, 3.5, 8, 10), '#6a5a4a', { lw: 2 }); c.restore(); }); }
 }

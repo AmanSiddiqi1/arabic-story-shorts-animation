@@ -20,3 +20,13 @@ Decisions the plan left open or the measured set changed:
 - The S10 inset (104.12-105.32) shows the door and the empty floor of seat A at zoom 1.3 in a circle top left.
 - Two-shots are framed lower than the plan (y 790-805 instead of 730) so the faces and the cup sit in the middle of the panel; the S13 icons are placed in the top band of that framing.
 - Lamps are drawn by the story (palaceHall `lamps: []`) so they can sway when the wide balloon passes (89.9, 90.4).
+
+## v2 (Fable round-1 revision, 2026-11-18)
+- Meal places widened so the offered cup has clear space on both sides: stranger 455 (was 500), caliph 615 (was 600); tray stand moved to the caliph's side (592, 868); cup on the stand at (566, 866), set aside to (668, 946). The seated arms (reach 53/59) only meet near x 530-550, so the cup is held at the caliph's reach limit (about x 545, base y 868, bowl at the stranger's chest height) rather than exactly on the centre line.
+- The shoulder clasp at 150.66 is now a hand clasp between the two (the shoulders are out of reach at the wider spacing).
+- Two-shot framing: zoom 2.8-3.2 (camera y 796-812) instead of 2.1-2.7 at y 795; the S13 icon row sits at world y 640, x 424-574, above the stranger and left of the caliph's crown.
+- The refusal: right hand to chest with a small bow (117.94), left hand takes the chest (119.5), right hand rises as an upright open palm (`a99Palm`) about 40 units short of the cup (120.06-122.3); the caliph withdraws the cup 40 units at 122.0 before his brows go up at 122.35.
+- S14 cloud: drawn in its own local coordinates (scale 1): a bust of the stranger drinking, the lamp going dark with a puff, the line knotting; then (142.04) a strip of the hall with door, four seats, throne and his small figure sliding from the honour seat to the door under a dashed arrow pointing left.
+- Ending: medium tracking shot as he rises and bows (159.4-162.1), scholars bow with stagger (proud tip 0.36, longest), they sit back down at 163.5-163.9; wide for the walk (162.9-165.2); push to the doorway (zoom 2.0) for the turn, temple tap, lamp and bow; he walks out through the arch (drawn behind the wall, shrinking slightly into the light, no alpha); cut at 169.6 to the last image: the hall with the bright empty doorway and the untouched cup large in the right foreground (panel overlay), one glint at 170.2, THE END on top.
+- Servant at the end: he sets the chest down at x 560 to the stranger's right and stays kneeling, bowing, out of the doorway shots; he and the chest are not in the last image (the cut implies the gift went with the guest).
+- The S10 inset (empty spot by the door) is removed; the stranger's glance toward the door at 104.12 stays.

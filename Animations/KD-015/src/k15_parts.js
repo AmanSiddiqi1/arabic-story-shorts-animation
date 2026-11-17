@@ -62,7 +62,8 @@ function k15Shard(ctx, x, y, rot, sz, seed, big, honey) {
 // ---------- goat (kinds goat, kid, cow) ----------
 // k15Goat(ctx, o): side-view farm animal, feet at (x, y), facing dir. o: {s, dir, kind, ph, amp, head (0 up .. 1 graze), chew, fat, lid, hop, col, alpha, bleat}
 function k15Goat(ctx, o) {
-  const cow = o.kind === 'cow', kid = o.kind === 'kid', s = (o.s || 1) * (kid ? 0.55 : 1), dir = o.dir || 1, ph = o.ph || 0, amp = o.amp || 0, hd = o.head || 0;
+  const s0 = o.s == null ? 1 : o.s; if (s0 <= 0.001) return;   // v3: a pop scale of 0 must not read as full size
+  const cow = o.kind === 'cow', kid = o.kind === 'kid', s = s0 * (kid ? 0.55 : 1), dir = o.dir || 1, ph = o.ph || 0, amp = o.amp || 0, hd = o.head || 0;
   const bw = cow ? 70 : 52, bh = (cow ? 34 : 26) * (1 + (o.fat || 0) * 0.18), leg = cow ? 58 : kid ? 66 : 54, by = -leg - bh * 0.7 - (o.hop || 0);
   const col = o.col || (cow ? C.white : C.white), patch = cow ? C.black : '#8a501a';
   ctx.save(); if (o.alpha != null) ctx.globalAlpha *= o.alpha; ctx.translate(o.x, o.y); ctx.scale(dir * s, s);

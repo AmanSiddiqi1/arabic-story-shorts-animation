@@ -94,6 +94,6 @@ function a92S5(ctx, t, cam) {
 }
 function a92O5(ctx, t, P, S, r, L) {
   if (a92In(t, 38.2, 40.4) && r.K5) { const h = P(...a92Head(r.K5)); L.arr([h[0] + 10, h[1] - 300], [h[0], h[1] - 90], 38.2, 40.4, { width: 18, bend: -0.2 }); L.lab('A KURDISH STRANGER', 500, h[1] - 330, 38.2, 40.4, { size: 46 }); }
-  if (a92In(t, 40.5, 41.7)) L.word('YOINK!', 780, 330, 40.5, 41.7, 96, { rot: -0.1 });
+  if (a92In(t, 40.5, 41.7)) L.word('YOINK!', 330, 220, 40.5, 41.7, 96, { rot: -0.1 });
   if (a92In(t, 44.7, 46.4)) L.word('MINE!', 760, 300, 44.7, 46.4, 100, { rot: 0.06, fill: C.red });
 }

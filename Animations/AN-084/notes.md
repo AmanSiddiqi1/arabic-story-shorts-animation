@@ -18,3 +18,5 @@ Decisions the plan left open or that the measured set changed:
 - Sound: exactly the plan's 11 cue times, each under 0.25 s (whoosh dur 0.22; the 162.5 coin clink is two short tones instead of the 0.8 s 'ding'), all inside measured gaps; bed 0.5 as in the template.
 
 Skipped (small): the crown slipping over one eye at 147.12 (no separate crown field); the vase tipping in the S5 cloud; courtier A offering the basket at 173.8; cheek puffing (no field: shown with sq 1.03 and lid).
+
+v2 (revision 1, see review/revision_1.md): tags moved to panel units (desert column right edge scale 0.8, hall column left edge scale 0.68, row in panel units); donkey stops at 1920; desert sun camera-fixed on the left third from 50.4; new cuts at 130.13 / 130.95 / 131.85 / 135.95; throne tip about 14 degrees; ending restaged (bags at hips, walk to the arch, donkey turned out behind the wall). The drought/emir cloud kept at x 1720 as in v1.

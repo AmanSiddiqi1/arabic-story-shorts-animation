@@ -8,9 +8,10 @@ const A45_ST = 26 * 1.25;   // walk stride at s 1.25
 const a45Thief = (o) => ({ ...A45_TH, y: 900, lid: 0.45, brow: -0.4, ...o });
 const a45Purse0 = (x, s = 1.15) => [x - 26 * s, 900 - 76 * s];
 // draw a person with an optional purse on the sash
-function a45Draw(ctx, P, purse) { person(ctx, P); if (purse != null) { const [px, py] = a45Purse0(P.x, P.s); a45Purse(ctx, px, py, P.s, purse); } }
-// monkey sitting on the thief's right shoulder
-const a45Shoulder = (T) => [T.x + 60 * (T.dir || 1) + (T.tip || 0) * 200, T.y - 178 + (T.drop || 0) * 1.25 + Math.abs(Math.sin(T.ph || 0)) * 3 * (T.amp || 0)];
+function a45Draw(ctx, P, purse) { if (P.handRW && P.handR) P.handR = null; if (P.handLW && P.handL) P.handL = null;   /* v2: a world hand target always wins (v1 silently ignored it when a local pose was also set) */
+  person(ctx, P); if (purse != null) { const [px, py] = a45Purse0(P.x, P.s); a45Purse(ctx, px, py, P.s, purse); } }
+// monkey sitting on the thief's right shoulder (v2: farther out and higher, drawn behind his head, so his face stays clear)
+const a45Shoulder = (T) => [T.x + 95 * (T.dir || 1) + (T.tip || 0) * 200, T.y - 205 + (T.drop || 0) * 1.25 + Math.abs(Math.sin(T.ph || 0)) * 3 * (T.amp || 0)];
 const a45MonkeyBase = (o) => ({ s: 0.7, dir: 1, y: 900, fez: true, mouth: 'smile', ...o });
 // the two-finger signal: two short finger strokes at a hand point
 function a45Signal(ctx, x, y, p) { if (p <= 0) return; const k = Math.sin(Math.PI * K.clamp(p)); seg(ctx, x + 6, y - 8, x + 26 + 10 * k, y - 22 - 4 * k, 5, C.white, 2.5); seg(ctx, x + 8, y - 2, x + 30 + 10 * k, y - 8 - 2 * k, 5, C.white, 2.5); }
@@ -32,8 +33,8 @@ function a45Monkey1(t, T) {
   const sh = a45Shoulder(T); let M = a45MonkeyBase({ x: sh[0], y: sh[1], gaze: [0.3, 0.3] });
   if (t < 3.6) return null;
   if (t < 3.9) { const u = A45B(t, 3.6, 0.3, 'out'); M = { ...M, x: T.x + 40, y: K.lerp(T.y - 40, sh[1] - 6, u), eyes: 'wide', behind: true }; return M; }
-  if (t < 4.75) { M.sq = landSquash(t, 3.9, 0.12); M.gaze = t < 4.4 ? [-0.5, 0.2] : [0.6, 0.6]; M.ph = t * 3; return M; }
-  if (t < 4.9) { M.sq = anticipate(t, 4.75, 0.15, 0.14); return M; }
+  if (t < 4.75) { M.behind = true; M.sq = landSquash(t, 3.9, 0.12); M.gaze = t < 4.4 ? [-0.5, 0.2] : [0.6, 0.6]; M.ph = t * 3; return M; }
+  if (t < 4.9) { M.behind = true; M.sq = anticipate(t, 4.75, 0.15, 0.14); return M; }
   if (t < 5.4) { const f = A45B(t, 4.9, 0.5, 'lin'); const [x, h] = hop(t, 4.9, 0.5, sh[0], 560, 120); M = { ...M, x, y: K.lerp(sh[1], 900, f * f) - h, sq: 1.12, gaze: [0.4, 0.8] }; return M; }
   M = { ...M, x: 560, y: 900, sq: landSquash(t, 5.4, 0.15), gaze: lookAt([560, 790], a45Eye(T)), ph: t * 2 };
   if (t >= 5.75 && t < 6.85) { const a = (t - 5.75) * 9; M.handR = [42 + Math.cos(a) * 12, -196 + Math.sin(a) * 12]; M.gaze = [0.5, -0.8]; M.tilt = Math.sin(a) * 0.08; }
@@ -112,10 +113,11 @@ function a45S2(ctx, t, cam) {
   if (t >= 19.72) { const pu = a45Purse0(A45_ON2[0]), u = A45B(t, 19.72, 0.6); T.handRW = [K.lerp(tx + 40, pu[0] - 26, u) + Math.sin(t * 30) * 3 * u, K.lerp(800, pu[1], u)]; T.tip = 0.08 * u; T.lid = 0.5; }
   if (T.lid < 0.9 && !T.noBlink) a45Lid(T, t, 11);
   if (t > 11.2 && t < 13.4) a45Draw(ctx, pass, 0.3);
+  const onSh = M && t >= 10.75 && t < 15.48; if (onSh) a45Monkey(ctx, M);
   a45Draw(ctx, T); if (t >= 14.6 && t < 15.5) a45Signal(ctx, tx + 52, 812, (t - 14.6) / 0.6);
   dustBurst(ctx, A45_POT, 840, t - 16.08, 5, 6, 12, 30, 0.45, 5);
   on.forEach((P, i) => a45Draw(ctx, P, i === 0 ? 1 : 0.4 - i * 0.1));
-  if (M) a45Monkey(ctx, M);
+  if (M && !onSh) a45Monkey(ctx, M);
   if (t >= 16.92 && t < 17.7) on.forEach((P, i) => a45EyeLine(ctx, a45Eye(P), [M.x, M.y - 100], (t - 16.92 - i * 0.1) / 0.4 * (t < 17.5 ? 1 : 1 - (t - 17.5) / 0.2)));
   return { T, M, on };
 }
@@ -151,7 +153,7 @@ function a45SellerS3(t) {
   return { P, shirt };
 }
 function a45S3(ctx, t, cam) {
-  const u = kfn(t, [[30.68, 0.15], [31.4, 0.3]]); a45SetA(ctx, t, cam, u);
+  const u = kfn(t, [[30.55, 0.15], [32.05, 0.3]], 'lin'); a45SetA(ctx, t, cam, u);   // v2: the sky eases over 1.5 s (note 11)
   // post shadow stretches with the sun
   ctx.save(); ctx.globalAlpha = 0.25; ctx.fillStyle = NAVY2; const L = 60 + 160 * K.clamp((u - 0.15) / 0.15); ctx.beginPath(); ctx.moveTo(950, 900); ctx.lineTo(990, 900); ctx.lineTo(990 + L, 930); ctx.lineTo(950 + L, 930); ctx.fill(); ctx.restore();
   a45Stool(ctx, 1420, 900, 1.25);
@@ -179,8 +181,8 @@ function a45O3(ctx, t, P, S, r, L) {
   if (a45In(t, 23.58, 25.2)) { const h = P(...a45Head(r.Sl)); L.arr([h[0] + 230, h[1] - 170], [h[0] + 60, h[1] - 50], 23.58, 25.2, { width: 18, bend: -0.2 }); L.lab('SELLER', h[0] + 250, h[1] - 210, 23.58, 25.2, { size: 50 }); }
   if (a45In(t, 27.9, 29.0)) L.word('OLD CLOTHES!', 640, 230, 27.9, 29.0, 72, { rot: -0.05 });
   if (a45In(t, 28.0, 31.0)) { const m = P(r.Sl.x + 10, a45Head(r.Sl)[1] + 26); soundArcs(ctx, m[0] - 40, m[1], -1, t); }
-  if (t >= 34.14) { const k = A45B(t, 34.14, 0.35); S.box(ctx, 640, 120, 320, 120, k, { fill: C.white, lw: 7, seed: 8 }); if (k > 0.5) { const b = t > 34.45 ? -Math.abs(Math.sin((t - 34.45) * 9)) * 12 * Math.exp(-(t - 34.45) * 4) : 0;
-    ctx.save(); ctx.font = K.font(64, BF, 400); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = C.black; ctx.fillText('SOLD:', 760, 182); ctx.fillStyle = C.red; ctx.fillText('0', 880, 182 + b); ctx.restore(); } }
+  if (t >= 34.14) { const k = A45B(t, 34.14, 0.35), b = t > 34.45 ? -Math.abs(Math.sin((t - 34.45) * 9)) * 12 * Math.exp(-(t - 34.45) * 4) : 0;
+    a45PopBox(ctx, S, 640, 120, 320, 120, k, { fill: C.white, lw: 7, seed: 8 }, (c) => { c.font = K.font(64, BF, 400); c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillStyle = C.black; c.fillText('SOLD:', 760, 182); c.fillStyle = C.red; c.fillText('0', 880, 182 + b); }); }
 }
 
 // ---------- S4 (34.8-42.0): tired, the bundle, the rest, eyes at the edge ----------
@@ -208,8 +210,12 @@ function a45S4(ctx, t, cam) {
   a45Draw(ctx, P); if (shirt) a45Shirt(ctx, shirt[0], shirt[1], 0.85, { rot: shirt[2], sway: shirt[3] });
   if (t >= 34.92 && t < 36.0) a45Sweat(ctx, sx + 40, a45Head(P)[1] - 20, (t - 35.2) / 0.8);
   if (t >= 36.25 && t < 36.9) { const k = (t - 36.25) / 0.65, m = a45Head(P); ctx.save(); ctx.globalAlpha = 1 - k; shape(ctx, ell(m[0] + 30 + 40 * k, m[1] + 40 - 20 * k, 14 + 14 * k, 10 + 8 * k, 12), C.white, { lw: 3, seed: 92 }); ctx.restore(); }
-  // the eyes at the left edge
-  if (t >= 41.6) { const k = K.ease.back(K.clamp((t - 41.6) / 0.3)), x0 = cam.x - 500 / cam.zoom + 40; ctx.save(); ctx.translate(x0, 820); ctx.scale(k, k); peekEyes(ctx, 0, 0, 1, false); peekEyes(ctx, 10, 62, 1, t > 41.85 && t < 41.92); ctx.restore(); }
+  // v2 (note 6): the thief leans out from behind the stall post at the left edge (as in S3), the monkey's head and fez pop up above him
+  let T = null, M = null;
+  if (t >= 41.55) { const x0 = cam.x - 500 / cam.zoom, k = K.ease.back(K.clamp((t - 41.55) / 0.3)), px = x0 - 60 + 70 * k;
+    T = a45Thief({ x: px, seed: 11, tip: 0.22 * k, lid: 0.45, brow: -0.4, gaze: lookAt([px, 650], [1250, 840]), handR: [30, -150] });
+    const km = K.ease.back(K.clamp((t - 41.72) / 0.22)); M = a45MonkeyBase({ x: px + 62, y: 900 - 262 + 80 * (1 - km), tip: 0.15, gaze: lookAt([px, 600], [1250, 840]), handL: [-40, -60], handR: [40, -60] });
+    if (km > 0) a45Monkey(ctx, M); a45Draw(ctx, T); a45Post(ctx, x0); }
   return { Sl: P, B };
 }
 function a45O4(ctx, t, P, S, r, L) {
@@ -254,9 +260,10 @@ function a45S5(ctx, t, cam) {
   if (t >= 53.62) { Sl.eyes = 'wide'; Sl.lid = null; }
   if (Sl.lid != null && Sl.lid < 0.9) a45Lid(Sl, t, 23);
   a45Bundle(ctx, 1220, 902, { s: 0.9 });
+  if (t < 45.74) a45Monkey(ctx, M);
   a45Draw(ctx, T); if (t >= 45.4 && t < 45.74) a45Signal(ctx, T.x + 52, 812, (t - 45.4) / 0.34);
   a45Draw(ctx, Sl);
-  a45Monkey(ctx, M);
+  if (t >= 45.74) a45Monkey(ctx, M);
   if (t >= 47.0 && t < 47.7) a45Juggle(ctx, M.x - 4, M.y - 150, t, 47.0, 150, 46);
   if (t >= 47.7 && t < 48.0) fig(ctx, M.x - 6, K.lerp(M.y - 300, M.y - 0.7 * 220, A45B(t, 47.7, 0.2)), 12);
   if (M.nose) { const nx = M.x - 0.7 * 6, ny = M.y - 0.7 * 135 - 40; fig(ctx, nx + Math.sin(t * 4) * 4, ny, 13, Math.sin(t * 4) * 0.3); }
@@ -279,14 +286,18 @@ function a45S6(ctx, t, cam) {
   let bx = 1220, by = 902, bBehind = false, bShow = true, bsq = 1, btilt = 0;
   if (t < 56.48) { T.gaze = look(t, a45Eye(T), [[54.2, [1400, 660]], [55.78, [1220, 840]], [56.0, [1400, 660]], [56.22, [1220, 840]]], 0.07); }
   if (t >= 56.48 && t < 58.16) { const u = A45B(t, 56.48, 1.0); T.handRW = [K.lerp(1150, A45_KNOT[0], u), K.lerp(800, A45_KNOT[1], u)]; T.tip = 0.1 * u; T.drop = -4 * u; T.gaze = look(t, a45Eye(T), [[56.48, [1220, 820]], [57.2, [1420, 640]], [57.5, [1220, 820]]], 0.07); if (t > 57.56) { bsq = 0.95; btilt = -0.04; } }
-  if (t >= 57.9 && t < 58.16) { Sl.tip = -0.08; Sl.handL = [-95, -130]; Sl.talk = 0.9; T.eyes = 'wide'; T.lid = null; T.gaze = lookAt(a45Eye(T), a45Head(Sl)); }
+  // v2 false alarm (note 2): the laugh subsides, the seller's gaze drifts halfway to centre for 6 frames, the thief freezes; the monkey flips and the gaze snaps back
+  const a45Drift = t >= 57.62 && t < 57.95;
+  if (a45Drift) { Sl.talk = 0.1; Sl.mouth = 'closed'; Sl.sq = 1; Sl.tip = 0.06; Sl.gaze = [K.lerp(1, 0.05, A45B(t, 57.62, 0.12)), 0.05]; T.eyes = 'wide'; T.lid = null; T.gaze = lookAt(a45Eye(T), a45Head(Sl)); T.tip = 0.1; T.drop = -4; }
   if (t >= 58.16 && t < 59.62) { const u = A45B(t, 58.16, 0.8); bx = K.lerp(1220, 1112, u); by = K.lerp(902, 840, u) - 40 * Math.sin(Math.PI * u); T.handRW = [bx + 20, by - 96]; T.handLW = [bx - 30, by - 70]; T.tip = 0.1 * (1 - u) - 0.04 * u; btilt = swing(t, 58.96, 0.15); T.gaze = lookAt(a45Eye(T), a45Head(Sl)); T.lid = 0.45; T.eyes = null; }
+  if (t >= 57.95 && t < 58.3) Sl.talk = Math.abs(Math.sin(t * 12)) * 0.9;
   if (t >= 59.62) { bBehind = true; bx = tx - 6; by = 845; T.handL = [-26, -88]; T.handR = [26, -90]; T.mouth = t < 60.5 ? 'o' : 'closed'; T.gaze = t < 60.4 ? [0.1, -1] : lookAt(a45Eye(T), a45Head(Sl)); T.lid = 0.45; T.eyes = null; T.tip = -0.03; }
   if (t >= 60.5 && t < 61.5) { const k = ((t - 60.5) % 0.25) / 0.25; T.drop = -6 * Math.sin(Math.PI * k); T.sq = 1.02; T.ph = Math.floor((t - 60.5) / 0.25) * Math.PI + Math.PI / 2 * Math.sin(Math.PI * k); T.amp = 1; }
   if (t >= 62.26 && t < 62.8) { T.handR = PERSON_HANDS.hush.R; T.gaze = lookAt(a45Eye(T), [M.x, M.y - 100]); T.mouth = 'closed'; }
   if (t >= 62.6) { bShow = true; }
   if (t >= 61.0 && t < 62.6) Sl.handR = t > 62.2 ? [64 + 10 * Math.sin(t * 16), -196] : Sl.handR;
   if (t >= 62.9) { Sl.handR = [64 + 12 * Math.sin(t * 16), -196]; Sl.gaze = lookAt(a45Eye(Sl), [M.x, 800]); Sl.tip = 0.04; }
+  if (t >= 57.95 && t < 58.35) { const u = A45B(t, 57.95, 0.4); M.rot = -2 * Math.PI * u; M.lift = 70 * Math.sin(Math.PI * u); M.sq = 1.06; M.tip = 0; }
   // monkey bow and scamper
   if (t >= 62.6 && t < 63.0) { M.tip = 0.3 * pulse(t, 62.6, 0.4); M.handR = [30, -200]; M.fezUp = 14 * pulse(t, 62.6, 0.4); M.handL = [-30, -80]; M.mouth = 'smile'; M.gaze = [-0.8, 0.3]; }
   if (t >= 63.0) { M.x = kfn(t, [[63.0, A45_MX - 50], [63.4, 900]], 'in'); M.lift = 30 * Math.abs(Math.sin((t - 63.0) * 16)); M.handL = [-40, -60]; M.handR = [40, -60]; M.mouth = 'smile'; }
@@ -296,8 +307,10 @@ function a45S6(ctx, t, cam) {
   a45Draw(ctx, T);
   if (!bBehind && t >= 58.16) { a45Bundle(ctx, bx, by, { s: 0.88, tilt: btilt }); a45Hand(ctx, bx + 20, by - 96); }
   if (t >= 56.6 && t < 58.16) a45Hand(ctx, T.handRW[0], T.handRW[1]);
-  if (t >= 57.9 && t < 58.4) a45Sweat(ctx, tx + 46, a45Head(T)[1] - 30, (t - 57.9) / 0.5);
+  if (t >= 57.62 && t < 58.3) a45Sweat(ctx, tx + 46, a45Head(T)[1] - 30, (t - 57.62) / 0.68);
   a45Draw(ctx, Sl); a45Monkey(ctx, M);
+  // the seller's eye line to the monkey stays alive (faint) through the reach and the lift; it breaks during the drift
+  if (t >= 54.2 && t < 59.1 && !a45Drift) { const nx = M.x - 0.7 * 6, ny = M.y - 0.7 * 135 - 40 - (M.lift || 0); a45EyeLine(ctx, a45Eye(Sl), [nx, ny], (t < 54.6 ? 1 : 0.45) * (t > 58.8 ? (59.1 - t) / 0.3 : 1)); }
   if (t < 63.0) { const nx = M.x - 0.7 * 6, ny = M.y - 0.7 * 135 - 40; if (t < 62.6) fig(ctx, nx + Math.sin(t * 4) * 4, ny, 13, Math.sin(t * 4) * 0.3); }
   return { T, Sl, M };
 }

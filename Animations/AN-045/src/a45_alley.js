@@ -15,8 +15,9 @@ function a45S7(ctx, t, cam) {
   const W = walk(A45_TX7, t, { stride: A45_ST }), tx = A45_TX7(t), T = a45Thief({ ...W, seed: 11, gaze: [0.9, 0], mouth: 'closed' });
   const M = a45Monkey7(t); let B = null;   // {x, y, s, open, sq, held}
   if (t < 65.7) { T.handLW = [tx - 40, 800]; B = { x: tx - 52, y: 850, s: 0.75, front: true }; T.gaze = (t > 63.9 && t < 64.15) || (t > 64.35 && t < 64.6) ? [1, -0.1] : [-0.8, 0]; T.tilt = (t > 63.9 && t < 64.15) || (t > 64.35 && t < 64.6) ? 0.1 : 0; }
-  if (t >= 65.7 && t < 66.6) { const u = A45B(t, 65.72, 0.3); B = { x: tx + 30, y: K.lerp(840, 640, u), s: 0.75, front: true }; T.handLW = [tx - 10, B.y - 30]; T.handRW = [tx + 70, B.y - 30]; T.mouth = 'smile'; T.eyes = 'wide'; T.lid = null; T.brow = -0.7; T.gaze = lookAt(a45Eye(T), [B.x, B.y - 60]); M.gaze = lookAt([M.x, M.y - 100], [B.x, B.y - 60]); }
-  if (t >= 66.6 && t < 68.4) { const u = A45B(t, 66.6, 0.3); B = { x: tx + 8, y: K.lerp(640, 850, u), s: 0.75, front: true }; T.handLW = [tx - 40, 790]; T.handRW = [tx + 52, 790];
+  // v2 (note 11): the bundle stays hugged at chest height, so his eyes are free for the look-around
+  if (t >= 65.7 && t < 66.6) { const u = A45B(t, 65.72, 0.3); B = { x: tx + 30, y: K.lerp(850, 832, u) - 10 * Math.sin(Math.PI * u), s: 0.75, front: true }; T.handLW = [tx - 10, B.y - 30]; T.handRW = [tx + 70, B.y - 30]; T.mouth = 'smile'; T.eyes = 'wide'; T.lid = null; T.brow = -0.7; T.gaze = lookAt(a45Eye(T), [B.x, B.y - 60]); M.gaze = lookAt([M.x, M.y - 100], [B.x, B.y - 60]); }
+  if (t >= 66.6 && t < 68.4) { const u = A45B(t, 66.6, 0.3); B = { x: tx + 8, y: K.lerp(832, 845, u), s: 0.75, front: true }; T.handLW = [tx - 40, 790]; T.handRW = [tx + 52, 790];
     T.gaze = t < 67.12 ? [0.3, 0.2] : look(t, a45Eye(T), [[67.12, [100, 650]], [67.28, [900, 650]], [67.44, [500, 250]]], 0.07); T.tilt = t >= 67.12 && t < 67.6 ? (t < 67.28 ? -0.08 : t < 67.44 ? 0.08 : 0) : 0;
     if (t >= 67.64) { T.sq = 1 - 0.03 * pulse(t, 67.7, 0.6); T.drop = 5 * A45B(t, 67.7, 0.4); T.gaze = [0.2, 0.3]; } }
   if (t >= 68.4) { if (t < 68.75) { const u = A45B(t, 68.4, 0.35); B = { x: K.lerp(tx + 8, A45_CR[0], u), y: K.lerp(850, A45_CR[1] + 2, u) - 30 * Math.sin(Math.PI * u), s: 0.75, front: true }; T.handRW = [B.x, B.y - 60]; T.handLW = [B.x - 50, B.y - 40]; }
@@ -72,15 +73,21 @@ function a45S8(ctx, t, cam) {
   a45RichDrape(ctx, 410, 590, A45_CR[1], 74, drape, t);
   if (t >= 76.42 && t < 77.3) for (let i = 0; i < 3; i++) { const u = K.clamp((t - 76.42 - i * 0.25) / 0.35); if (u > 0 && u < 1) star(ctx, 440 + i * 60, 850 + (i % 2) * 14, 18 * Math.sin(Math.PI * u), C.white, u * 3); }
   a45Draw(ctx, T); a45Monkey(ctx, M);
-  if (t >= 74.48 && t < 75.2) { const h = T.handRW; shape(ctx, K.rectPts(h[0] - 26, h[1] - 30, 52, 40), C.red, { lw: 4, seed: 94, dot: C.yellow, pitch: 8, rad: 0.3, da: 0.7 }); }
+  if (t >= 74.48 && t < 75.2) { const h = T.handRW, pts = K.rectPts(h[0] - 30, h[1] - 34, 60, 46); a45ClothFill(ctx, pts, 'rich', 1); a45Fringe(ctx, [h[0] - 30, h[1] + 12], [h[0] + 30, h[1] + 12], 1); }
   if (polish) a45Hand(ctx, T.handRW[0], T.handRW[1]);
   if (t >= 72.5 && t < 73.4) { const h = a45Head(T); bulb(ctx, h[0] + 80, h[1] - 90, K.clamp((t - 72.5) / 0.3)); }
-  // the round cutaway on the bundle: the same rags inside
-  if (t >= 80.58 && t < 83.4) { const p = t < 83.2 ? K.clamp((t - 80.58) / 0.2) : 1 - K.clamp((t - 83.2) / 0.2); a45Inset(ctx, 500, 770, 92, p, (c) => { c.fillStyle = '#3a2a1a'; c.fillRect(380, 650, 240, 240); a45Rags(c, 500, 830, 0.85, { shirt: true }); }); }
   return { T, M };
 }
+// v2: the "dear" coin stack sits fully inside the panel beside the cloth; the cutaway lives on the free wall (upper right) with a
+//   yellow leader from the knot, so the finished bundle stays visible under OUTSIDE: FANCY (note 1)
+const A45_CUT = [815, 235, 124];
 function a45O8(ctx, t, P, S, r, L) {
-  if (a45In(t, 77.4, 78.7)) { const c = P(250, 600); a45CoinPile(ctx, c[0], c[1], 6, 1.3); L.arr([c[0] + 70, c[1] - 10], [c[0] + 70, c[1] - 120], 77.5, 78.7, { width: 16, bend: 0 }); }
-  if (a45In(t, 79.82, 83.2)) { const b = P(430, 700); L.lab('OUTSIDE: FANCY', b[0] - 90, 250, 79.82, 83.2, { size: 46 }); L.arr([b[0] - 120, 290], [b[0] - 10, b[1] - 10], 79.9, 83.2, { width: 16, bend: 0.2 }); }
-  if (a45In(t, 80.7, 83.2)) { const b = P(590, 770); L.lab('INSIDE: RAGS', 770, 1000, 80.7, 83.2, { size: 46, fill: C.yellow }); L.arr([760, 960], [b[0] + 10, b[1] + 20], 80.8, 83.2, { width: 16, bend: -0.2 }); }
+  if (a45In(t, 77.4, 78.7)) { const k = K.ease.back(K.clamp((t - 77.4) / 0.25)); ctx.save(); ctx.globalAlpha = a45Fade(t, 77.4, 78.7, 0.15); ctx.translate(165, 560); ctx.scale(k, k);
+      for (let i = 0; i < 6; i++) a45Coin(ctx, (i % 2) * 6 - 3, -i * 22, 28); ctx.restore(); L.arr([235, 560], [235, 410], 77.5, 78.7, { width: 18, bend: 0 }); }
+  if (a45In(t, 79.82, 83.2)) { L.lab('OUTSIDE: FANCY', 420, 170, 79.82, 83.2, { size: 50 }); const b = P(506, 742); L.arr([470, 215], [b[0], b[1] - 8], 79.9, 83.2, { width: 16, bend: 0.12 }); }
+  if (t >= 80.58 && t < 83.4) { const p = t < 83.2 ? K.clamp((t - 80.58) / 0.2) : 1 - K.clamp((t - 83.2) / 0.2), [cx, cy, cr] = A45_CUT, kn = P(516, 724);
+    const e = [cx - (cr + 8) * 0.99, cy + (cr + 8) * 0.12], u = K.clamp(p * 1.4);   // the leader meets the circle on its lower left, clear of the label below it
+    ctx.save(); ctx.globalAlpha = K.clamp(p * 2); seg(ctx, kn[0], kn[1], K.lerp(kn[0], e[0], u), K.lerp(kn[1], e[1], u), 11, C.black, 2); seg(ctx, kn[0], kn[1], K.lerp(kn[0], e[0], u), K.lerp(kn[1], e[1], u), 5, C.yellow, 1.5); ctx.restore();
+    a45Inset(ctx, cx, cy, cr, p, (c) => { c.fillStyle = '#3a2a1a'; c.fillRect(cx - cr, cy - cr, 2 * cr, 2 * cr); a45Rags(c, cx, cy + 70, 0.95, { shirt: true }); }); }
+  if (a45In(t, 80.7, 83.2)) L.lab('INSIDE: RAGS', A45_CUT[0], A45_CUT[1] + A45_CUT[2] + 62, 80.7, 83.2, { size: 46, fill: C.yellow });
 }

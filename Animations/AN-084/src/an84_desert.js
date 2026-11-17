@@ -1,5 +1,5 @@
 // ===== AN-084 desert half (S1-S6, 0.0-89.64): the hunt, the meeting, the drought cloud, the price ladder, the donkey threat, the ride off =====
-// Strip world 2400 x 1230, ground y 900. Horse (Ma'an) faces right at x 1560, donkey (Bedouin) faces left at x 1850.
+// Strip world 2400 x 1230, ground y 900. Horse (Ma'an) faces right at x 1560, donkey (Bedouin) faces left at x 1920 (v2: 70 further right so the two muzzles are truly nose to nose).
 const AN84_SW = 2400, AN84_HS = 1.0, AN84_DS = 0.9, AN84_MPS = 0.95, AN84_BPS = 0.9;
 // Ma'an: one face in both halves (caliph body: full black beard, age 0.3, blue robe); desert = red head cloth, no cape
 const AN84_MAAN_D = { costume: 'caliph', age: 0.3, seed: 11, pal: { robe: C.blue, dot: NAVY, head: 'keffiyeh', hc: C.red, hd: '#ff8a7a', cape: null, belly: 0, trim: C.yellow, sash: C.yellow } };
@@ -7,12 +7,10 @@ const AN84_MAAN_P = { costume: 'caliph', age: 0.3, seed: 11, pal: { robe: C.blue
 const AN84_BED = { costume: 'bedouin', age: 0.5, seed: 23, pal: { shoes: 'bare' } };
 // price ladder in the desert: pops on the spoken numbers (1000 and 500 on measured onsets), column right-aligned at strip x 2000
 const AN84_POPS_D = [51.09, 57.94, 65.04, 67.04, 68.88, 70.26, 72.48];
-const AN84_COLY = [282, 326, 370, 414, 458, 502, 546];   // a diagonal staircase: each new (smaller) price one step down toward the gap between the faces
-const an84ColD = (i) => [1900 - i * 36, AN84_COLY[i]];
 
 // ---------- travel ----------
 const an84HX = (t) => (t < 86.5 ? kfn(t, [[2.75, 300], [3.3, 370], [3.8, 500], [7.2, 1490], [7.8, 1550], [8.3, 1560]], 'lin') : kfn(t, [[86.75, 1560], [88.5, 2760]], 'in'));
-const an84DX = (t) => kfn(t, [[8.96, 2380], [11.86, 1850]], 'out');
+const an84DX = (t) => kfn(t, [[8.96, 2380], [11.86, 1920]], 'out');
 const an84GX = (t) => kfn(t, [[2.5, 560], [4.0, 900], [6.66, 1720], [7.0, 1880]], 'lin');
 const AN84_FALLS_H = [...footfalls(an84HX, 2.75, 8.3, GAIT.horse * AN84_HS), ...footfalls(an84HX, 86.75, 88.5, GAIT.horse * AN84_HS)];
 const AN84_FALLS_D = footfalls(an84DX, 8.96, 11.86, GAIT.donkey * AN84_DS);
@@ -20,7 +18,7 @@ const AN84_BOUNDS = [2.9, 3.62, 4.3, 4.9, 5.45, 5.95, 6.4, 6.8];   // gazelle la
 
 // ---------- the horse ----------
 function an84HorseD(t) {
-  const W = walk(an84HX, t, { stride: GAIT.horse * AN84_HS }), P = { ...W, y: 900, s: AN84_HS, dir: 1, pal: 0, seed: 31, earL: 0.6, earR: 0.6 };
+  const W = walk(an84HX, t, { stride: GAIT.horse * AN84_HS }), lane = an84E(t, 86.45, 0.5), P = { ...W, y: 900 + 34 * lane, s: AN84_HS * (1 + 0.06 * lane), dir: 1, pal: 0, seed: 31, earL: 0.6, earR: 0.6 };   // v2: nearer lane for the gallop past the donkey
   P.gallop = K.clamp(W.amp * 2.2 - 0.6);
   P.rear = 0.35 * pulse(t, 2.35, 0.55) + 0.3 * pulse(t, 86.2, 0.55);
   if (P.gallop > 0.2) { P.earL = P.earR = -0.5; P.tailUp = 0.8 * P.gallop; }
@@ -41,7 +39,7 @@ const an84MoneyRub = (t) => [44 + 4 * Math.sin(t * 24), -140 + 2 * Math.cos(t * 
 function an84MaanD(t, head, bedHead, gazelleHead, cloud) {
   const P = { ...AN84_MAAN_D, s: AN84_MPS, mouth: 'closed', brow: 0 };
   const R = an84Track(t, [[0.3, 2.55, [22, -222]], [2.6, 4.6, [100, -150]], [8.35, 9.5, [62, -100]], [15.2, 16.3, [58, -205]], [17.58, 18.3, [100, -150]], [18.3, 19.7, [62, -104]],
-    [33.75, 36.3, [10, -172]], [38.8, 40.7, (tt) => [18 + 6 * Math.sin(tt * 7), -148]], [42.64, 44.5, [8, -170]], [45.58, 46.6, an84MoneyRub], [46.6, 47.5, [100, -160]],
+    [33.75, 36.3, [10, -172]], [38.8, 40.7, (tt) => [18 + 6 * Math.sin(tt * 7), -148]], [45.58, 46.6, an84MoneyRub], [46.6, 47.5, [100, -160]],
     [53.62, 54.8, (tt) => [70 + 16 * Math.sin(tt * 9), -140]], [54.8, 56.4, (tt) => [72, -142 + 40 * K.ease.inOut(K.clamp((tt - 54.8) / 1.4))]],
     an84Press(59.5), an84Press(61.4), an84Press(66.6), an84Press(68.2), an84Press(69.7), an84Press(71.1), [73.46, 76.9, [72, -146]],
     [84.12, 86.5, (tt) => [56, -88 - 22 * Math.abs(Math.sin(tt * 9))]], [86.96, 88.6, (tt) => [60 + 8 * Math.sin(tt * 12), -198]]], AN84_REINS.R);
@@ -70,7 +68,7 @@ function an84MaanD(t, head, bedHead, gazelleHead, cloud) {
   if (an84In(t, 33.75, 36.3)) { P.lid = 0.4; P.brow = -0.3; }
   if (an84In(t, 38.8, 41.0)) { P.mouth = 'smile'; P.lid = 0.3; }
   if (an84In(t, 41.02, 42.6)) P.tip = 0.08 * an84Env(t, 41.02, 42.6, 0.3);
-  if (an84In(t, 42.64, 44.5)) { P.wink = an84In(t, 42.8, 43.25) ? 'R' : undefined; P.mouth = 'smile'; P.lid = 0.15; }
+
   if (an84In(t, 45.58, 48.0)) { P.brow = -0.5; P.tilt = 0.05; }
   if (an84In(t, 51.44, 52.24)) { P.tip = -0.1 * an84Env(t, 51.44, 52.24, 0.12); P.mouth = 'o'; P.brow = -1; P.eyes = 'wide'; }
   if (an84In(t, 52.24, 53.62)) { P.lid = 0.5; P.sq = 1.03; }
@@ -83,6 +81,7 @@ function an84MaanD(t, head, bedHead, gazelleHead, cloud) {
   if (an84In(t, 81.78, 84.12)) { P.eyes = t < 82.4 ? 'wide' : 'open'; P.lid = t < 82.4 ? 0 : 0.5; P.brow = -0.6; P.sq = 1.03; P.lurch = 0.025 * Math.sin(t * 55) * K.clamp((t - 82.2) / 1.2); P.mouth = 'smile'; }
   if (an84In(t, 84.12, 89.7)) { P.mouth = 'open'; P.lid = 0.9; P.tip = -0.12 * an84Env(t, 84.12, 86.6, 0.2); P.lurch = 0.03 * Math.sin(t * 50); if (t > 86.6) { P.lid = 0.3; P.mouth = 'smile'; } }
   P.talk = talk(t, AN84_M_TALK, 0.4) * 0.8; if (an84In(t, 84.12, 86.6)) P.talk = 0;
+  an84Aside(P, t, 42.64);   // the SHH aside (same pose function as the throne wink at 130.13)
   if (P.lid == null || P.lid < 0.9) P.lid = Math.max(P.lid || 0, blink(t, 11));
   return P;
 }
@@ -101,6 +100,7 @@ function an84DonkeyD(t) {
   if (t >= 59.4 && t < 74.1) { P.earL = P.earR = 0.55 - 1.1 * droop; P.sag = droop * 0.6; }
   if (an84In(t, 74.1, 80.42)) { P.earL = P.earR = 1; P.lid = 0.1; }
   if (an84In(t, 80.42, 84.12)) { P.earL = P.earR = 1; P.neck = 0.5; P.mouth = 'grit'; P.lid = 0.3; }
+  if (an84In(t, 86.7, 87.9)) { P.earL = P.earR = -0.9; P.lid = 0.6; P.tip = -0.04 * an84Env(t, 86.7, 87.9, 0.2); }   // ears flat as the horse thunders past
   if (an84In(t, 85.0, 86.6)) { P.headTurn = 0.9 * an84Env(t, 85.2, 86.6, 0.25); P.earL = 0.9 * Math.sin((t - 85) * 5); P.earR = -P.earL; P.lid = 0; }
   if (t >= 88.4) { P.headTurn = 0.9 * an84E(t, 88.4, 0.4); P.earL = P.earR = 0.8; P.lid = 0; }
   P.lid = Math.max(P.lid || 0, blink(t, 41));
@@ -130,7 +130,7 @@ function an84BedD(t, head, maanHead, cloud, tagHead) {
   if (an84In(t, 56.38, 57.94)) g = gazePlan(t, [[56.38, lookAt(head, tagHead || head)], [56.8, lookAt(head, maanHead)], [57.2, [0.7, 0.7]], [57.6, lookAt(head, maanHead)]], 0.07);
   if (an84In(t, 67.04, 67.6)) g = [0.7, 0.7];
   if (an84In(t, 85.6, 86.4)) g = [0.7, 0.7];
-  if (t >= 86.5) g = [1, -0.1];
+  if (t >= 86.5) g = lookAt(head, [maanHead[0] + 60, maanHead[1]]);   // follows the horse as it gallops past
   P.gaze = g;
   if (an84In(t, 8.9, 11.86)) { P.lid = 0.3; P.bob = 3 * Math.abs(Math.sin(t * 8)); }
   P.lurch = lurch(t, 11.86, 0.22);
@@ -155,7 +155,8 @@ function an84BedD(t, head, maanHead, cloud, tagHead) {
   if (an84In(t, 78.32, 83.32)) { P.lid = 0.4; P.brow = 0.5; P.mouth = 'smile'; }
   if (an84In(t, 83.32, 84.6)) { P.brow = -0.8; P.lid = 0.4; P.tilt = 0.08; }
   if (an84In(t, 84.6, 86.5)) { P.brow = -0.7; P.mouth = 'o'; }
-  if (an84In(t, 86.9, 88.2)) { P.lid = 0.7; P.mouth = 'o'; }
+  if (an84In(t, 86.9, 88.2)) { P.lid = 0.7; P.mouth = 'o'; P.tilt = -0.06 * an84Env(t, 87.3, 88.1, 0.15); }
+  if (an84In(t, 88.0, 88.9)) { P.lid = 1; P.sq = 1 - 0.04 * Math.abs(Math.sin((t - 88.0) * 14)); P.drop = 4 * Math.abs(Math.sin((t - 88.0) * 14)); }   // coughs in the dust
   if (an84In(t, 88.2, 89.7)) { P.mouth = 'open'; }
   P.talk = talk(t, AN84_B_TALK, 1.3) * 0.75;
   if (P.lid == null || P.lid < 0.9) P.lid = Math.max(P.lid || 0, blink(t, 23));

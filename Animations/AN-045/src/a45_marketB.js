@@ -17,7 +17,7 @@ function a45S9(ctx, t, cam) {
   const tx = A45_TX9(t), W = walk(A45_TX9, t, { stride: A45_ST }); W.amp *= 0.7;
   const T = a45Thief({ ...W, x: tx, seed: 11, mouth: 'smile', brow: -0.6, lid: 0.25, gaze: [0.8, 0], drop: -4 });
   let bun = { x: A45_CRB[0], y: A45_CRB[1], held: false };
-  if (t < 87.64) { bun = { x: tx + 40, y: 790 - 6 * Math.abs(Math.sin(W.ph)), held: true }; T.handLW = [tx + 0, bun.y + 6]; T.handRW = [tx + 80, bun.y + 6]; }
+  if (t < 87.64) { bun = { x: tx + 40, y: 812 - 6 * Math.abs(Math.sin(W.ph)), held: true }; T.handLW = [tx + 0, bun.y + 6]; T.handRW = [tx + 80, bun.y + 6]; }
   else if (t < 88.0) { const u = A45B(t, 87.64, 0.36); bun = { x: K.lerp(tx + 40, A45_CRB[0], u), y: K.lerp(790, A45_CRB[1], u) - 30 * Math.sin(Math.PI * u), held: true }; T.handLW = [bun.x - 40, bun.y + 6]; T.handRW = [bun.x + 40, bun.y + 6]; }
   else if (t < 89.2) { const k = A45B(t, 88.0, 0.3, 'out'); T.sq = anticipate(t, 87.85, 0.15, 0.06); T.aL = [K.lerp(0.3, 2.3, k), K.lerp(0.1, 2.6, k)]; T.aR = T.aL; T.gaze = [0.4, 0.3]; }
   const sh = a45Shoulder(T); let M;
@@ -33,8 +33,13 @@ function a45S9(ctx, t, cam) {
     if (t >= 93.68 + i * 0.12 && t < 95.6) { P.tilt = [0.15, -0.12, 0.1][i]; P.gaze = lookAt(a45Eye(P), [A45_SIGNX, 600]); if (i === 2) P.handR = [24 + 6 * Math.sin(t * 20), -228]; if (i === 1) P.mouth = 'o'; }
     return P; });
   // the strange rule
-  if (t >= 89.2 && t < 90.0) { T.handR = PERSON_HANDS.cupMouth.R; T.talk = 0.9 * Math.abs(Math.sin(t * 10)); T.brow = -0.7; }
-  if (t >= 90.0 && t < 91.5) { T.handL = PERSON_HANDS.palmsUp.L; T.handR = PERSON_HANDS.palmsUp.R; T.talk = 0.5 * Math.abs(Math.sin(t * 9)); }
+  // v2 (note 8): the friendliest salesman in the market: smile, friendly brows, short talk pulses on the cue words, a showman sweep, a confiding lean
+  if (t >= 86.4 && t < 98.8) { T.mouth = 'smile'; T.brow = -0.2; T.lid = 0.1; T.sq = (T.sq || 1) * 1.04; }
+  const a45Pulse9 = (a) => (t >= a && t < a + 0.32 ? 0.7 * Math.sin(Math.PI * (t - a) / 0.32) : 0);
+  if (t >= 87.64 && t < 88.0) T.talk = a45Pulse9(87.64);
+  if (t >= 89.2 && t < 90.0) { const k = A45B(t, 89.2, 0.3); T.handR = [K.lerp(60, 112, k), K.lerp(-100, -160, k)]; T.handL = [-70, -130]; T.talk = a45Pulse9(89.2) + a45Pulse9(89.55); T.gaze = lookAt(a45Eye(T), [A45_CRB[0], A45_CRB[1] - 60]); T.tip = 0.03; }
+  if (t >= 90.0 && t < 90.72) { T.handL = PERSON_HANDS.palmsUp.L; T.handR = PERSON_HANDS.palmsUp.R; T.talk = a45Pulse9(90.0); T.gaze = [0.6, 0]; }
+  if (t >= 90.72 && t < 91.56) { const k = A45B(t, 90.72, 0.25); T.tip = 0.08 * k; T.handR = PERSON_HANDS.cupMouth.R; T.handL = [-28, -80]; T.lid = 0.35; T.talk = a45Pulse9(90.8); T.gaze = [0.8, 0.1]; }
   if (t >= 91.56 && t < 93.1) { T.handR = PERSON_HANDS.pointUp.R; T.brow = 0.6; T.mouth = 'closed'; T.gaze = [0.6, 0]; T.lid = 0.3; }
   if (t >= 93.1 && t < 95.7) { T.handR = PERSON_HANDS.pointFwd.R; T.mouth = 'smile'; T.gaze = lookAt(a45Eye(T), [A45_SIGNX, 600]); }
   // the reach and the slap
@@ -46,7 +51,7 @@ function a45S9(ctx, t, cam) {
   if (T.lid < 0.9) a45Lid(T, t, 11);
   a45Sign(ctx, A45_SIGNX, 900, { rise: t < 93.08 ? 0 : A45B(t, 93.08, 0.4, 'out'), swing: swing(t, 93.5, 0.12, 1.6, 3), flip: t < 94.4 ? 0 : A45B(t, 94.4, 0.17), t });
   if (!bun.held) a45Bundle(ctx, bun.x, bun.y, { s: 0.85, wrap: 'rich', glint: t >= 88.48 && t < 89.3 ? (t - 88.48) / 0.8 : 0, tassel: swing(t, 88.0, 0.4), sq: t >= 96.56 ? impactSquash(t, 96.56, 0.9) : 1 });
-  a45Draw(ctx, T); a45Monkey(ctx, M);
+  if (t < 87.64) a45Monkey(ctx, M); a45Draw(ctx, T); if (t >= 87.64) a45Monkey(ctx, M);
   if (bun.held) { a45Bundle(ctx, bun.x, bun.y, { s: 0.85, wrap: 'rich', tassel: Math.sin(t * 5) * 0.2 }); a45Hand(ctx, T.handLW[0], T.handLW[1]); a45Hand(ctx, T.handRW[0], T.handRW[1]); }
   if (t >= 96.56 && t < 97.85) a45Hand(ctx, 480, 742);
   on.forEach((P, i) => a45Draw(ctx, P));
@@ -57,8 +62,7 @@ function a45O9(ctx, t, P, S, r, L) {
   if (a45In(t, 86.9, 88.6)) L.lab('ANOTHER MARKET', 500, 190, 86.9, 88.6, { size: 52, fill: C.yellow });
   if (a45In(t, 89.2, 90.0)) { const m = P(...a45Head(r.T)); soundArcs(ctx, m[0] + 70, m[1] + 30, 1, t); }
   if (t >= 89.96 && t < 98.7) { const k = A45B(t, 89.96, 0.35), b = P(A45_CRB[0], A45_CRB[1]), x = 300, y = 250; ctx.save(); ctx.globalAlpha = a45Fade(t, 89.96, 98.7, 0.2);
-    S.box(ctx, x - 130, y - 70, 260, 140, k, { fill: C.white, lw: 7, seed: 9 });
-    if (k > 0.6) { const n = t < 90.72 ? 10 : Math.max(3, Math.round(10 - 7 * A45B(t, 90.72, 0.5, 'lin'))); a45Coin(ctx, x - 60, y, 30); ctx.font = K.font(90, BF, 400); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = n === 3 ? C.red : C.black; ctx.fillText(String(n), x + 40, y + 6); }
+    a45PopBox(ctx, S, x - 130, y - 70, 260, 140, k, { fill: C.white, lw: 7, seed: 9 }, (c) => { const n = t < 90.72 ? 10 : Math.max(3, Math.round(10 - 7 * A45B(t, 90.72, 0.5, 'lin'))); a45Coin(c, x - 60, y, 30); c.font = K.font(90, BF, 400); c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillStyle = n === 3 ? C.red : C.black; c.fillText(String(n), x + 40, y + 6); });
     ctx.restore(); }
   if (a45In(t, 90.9, 93.0)) L.stamp('ONLY 3 COINS', 330, 400, 90.9, 93.0, 54, { rot: -0.06 });
   if (a45In(t, 97.9, 98.7)) { const h = r.T.x + 1.25 * 86, p = P(h, 900 - 1.25 * 112); a45Coin(ctx, p[0] + 60, p[1] - 140, 22); L.arr([p[0] + 60, p[1] - 110], [p[0] + 14, p[1] - 20], 97.95, 98.7, { width: 14, bend: 0 }); }
@@ -67,7 +71,7 @@ function a45O9(ctx, t, P, S, r, L) {
 // ---------- S10 (98.7-105.0): what the crowd imagines ----------
 function a45Cup(ctx, x, y, s) { shape(ctx, [[x - 30 * s, y - 70 * s], [x + 30 * s, y - 70 * s], [x + 20 * s, y - 30 * s], [x + 6 * s, y - 20 * s], [x + 6 * s, y - 6 * s], [x + 22 * s, y], [x - 22 * s, y], [x - 6 * s, y - 6 * s], [x - 6 * s, y - 20 * s], [x - 20 * s, y - 30 * s]], A45_GOLD, { lw: 4, seed: 95, dot: C.red, pitch: 7, rad: 0.25, da: 0.4 }); }
 function a45Treasure(c, t, t0, x, y, s, grow) { const it = (k) => K.ease.back(K.clamp((t - t0 - k * 0.15) / 0.2));
-  a45CoinPile(c, x, y, Math.round(10 * grow), s * 1.2 * Math.sqrt(grow)); if (it(0) > 0) star(c, x - 90 * s, y - 110 * s - 40 * it(0), 30 * s * it(0), C.blue, 0.3); if (it(1) > 0) a45Cup(c, x + 80 * s, y - 70 * s - 40 * it(1), s * 1.3 * it(1)); if (it(2) > 0) star(c, x, y - 170 * s - 40 * it(2), 26 * s * it(2), C.red); }
+  a45Heap(c, x, y + 4, Math.round(15 * grow), 15 * s * Math.sqrt(grow)); if (it(0) > 0) star(c, x - 90 * s, y - 110 * s - 40 * it(0), 30 * s * it(0), C.blue, 0.3); if (it(1) > 0) a45Cup(c, x + 80 * s, y - 70 * s - 40 * it(1), s * 1.3 * it(1)); if (it(2) > 0) star(c, x, y - 170 * s - 40 * it(2), 26 * s * it(2), C.red); }
 function a45S10(ctx, t, cam) {
   a45SetB(ctx, t, cam);
   const T = a45Thief({ x: 350, seed: 11, mouth: 'closed', lid: 0.45, brow: -0.4, gaze: [0, 0.05], handL: [-28, -80], handR: [28, -80] });
@@ -85,9 +89,9 @@ function a45S10(ctx, t, cam) {
   a45Draw(ctx, T); a45Monkey(ctx, M); on.forEach((P) => a45Draw(ctx, P));
   // the thought cloud over the crowd
   const p = K.clamp((t - 100.5) / 0.5);
-  thoughtCloud(ctx, 660, 380, 580, 380, t, { p, tail: [790, 600], bg: C.yellow, scale: 0.5, at: [500, 820], inside: (c) => {
-    const op = A45B(t, 102.08, 0.9, 'lin'); a45Bundle(c, 500, 900, { s: 1.4, wrap: 'rich', open: op, contents: t < 103.06 ? 'none' : 'none' });
-    if (t >= 103.06) a45Treasure(c, t, 103.06, 500, 900, 1.2, t < 103.66 ? 1 : 1 + A45B(t, 103.66, 0.4, 'out'));
+  thoughtCloud(ctx, 660, 380, 580, 380, t, { p, tail: [790, 600], bg: C.yellow, scale: 0.85, at: [500, 800], inside: (c) => {   // v2: contents 1.7x (note 5)
+    const op = A45B(t, 102.08, 0.9, 'lin'); a45Bundle(c, 500, 900, { s: 1.1, wrap: 'rich', open: op, contents: t < 103.06 ? 'none' : 'none' });
+    if (t >= 103.06) a45Treasure(c, t, 103.06, 500, 900, 1.05, t < 103.66 ? 1 : 1 + A45B(t, 103.66, 0.4, 'out'));
     if (t >= 103.66) for (let i = 0; i < 3; i++) { const u = ((t - 103.66) * 1.5 + i / 3) % 1; star(c, 380 + i * 120, 700 - (i % 2) * 60, 26 * Math.sin(Math.PI * u), C.white); } } });
   return { T, M, on };
 }
@@ -130,17 +134,19 @@ function a45S11(ctx, t, cam) {
   coins.forEach(([x, y]) => a45Coin(ctx, x, y, 14));
   if (t >= 109.64 && t < 111.4) heart(ctx, 500, 640 - 30 * A45B(t, 109.64, 0.5), 30 * K.ease.back(K.clamp((t - 109.64) / 0.3)));
   // the buyer's thought cloud: 3 coins -> the bundle -> 30 coins
-  const cp = t < 114.34 ? K.clamp((t - 111.56) / 0.5) : 1 - K.clamp((t - 114.34) / 0.35);
-  if (t >= 111.56 && t < 114.8) thoughtCloud(ctx, 640, 330, 540, 370, t, { p: cp, tail: [a45Head(B)[0] + 10, a45Head(B)[1] - 60], bg: C.yellow, scale: 0.6, at: [500, 820], inside: (c) => {
-    for (let i = 0; i < 3; i++) if (t > 113.06 + i * 0.15) a45Coin(c, 230 + i * 50, 860 - K.clamp((t - 113.06 - i * 0.15) / 0.12) * 0, 26);
-    if (t > 113.2) { seg(c, 400, 860, 540, 860, 14, C.red, 4); shape(c, [[540, 830], [590, 860], [540, 890]], C.red, { lw: 4 }); }
-    if (t < 113.6) a45Bundle(c, 720, 930, { s: 1.0, wrap: 'rich' });
-    else { const g = A45B(t, 113.6, 0.6, 'out'); a45CoinPile(c, 720, 960, Math.round(3 + 27 * g), 1.4); c.font = K.font(90, BF, 400); c.textAlign = 'center'; c.fillStyle = C.red; c.lineWidth = 10; c.strokeStyle = C.black; const n = String(Math.round(3 + 27 * g)); c.strokeText(n, 880, 760); c.fillText(n, 880, 760); } } });
+  // v2 (note 5): a bigger cloud, the row 1.3x, the running total inside and centred above the heap; the final 30 holds 0.65 s
+  const cp = t < 114.6 ? K.clamp((t - 111.56) / 0.5) : 1 - K.clamp((t - 114.6) / 0.3);
+  if (t >= 111.56 && t < 114.95) thoughtCloud(ctx, 560, 400, 620, 400, t, { p: cp, tail: [a45Head(B)[0] - 10, a45Head(B)[1] - 70], bg: C.yellow, scale: 0.78, at: [500, 820], inside: (c) => {
+    for (let i = 0; i < 3; i++) if (t > 113.06 + i * 0.15) a45Coin(c, 225 + i * 62, 870, 34);
+    if (t > 113.2) { seg(c, 400, 870, 515, 870, 16, C.red, 4); shape(c, [[515, 836], [570, 870], [515, 904]], C.red, { lw: 4 }); }
+    if (t < 113.6) a45Bundle(c, 700, 960, { s: 1.25, wrap: 'rich' });
+    else { const g = A45B(t, 113.6, 0.35, 'out'), n = Math.round(3 + 27 * g); a45Heap(c, 700, 1000, n, 22); c.font = K.font(110, BF, 400); c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillStyle = C.red; c.lineWidth = 12; c.strokeStyle = C.black; c.lineJoin = 'round'; c.strokeText(String(n), 700, 765); c.fillText(String(n), 700, 765); } } });
   return { T, M, B };
 }
 function a45O11(ctx, t, P, S, r, L) {
-  if (a45In(t, 107.02, 108.6)) { const h = P(...a45Head(r.B)); L.arr([h[0] + 120, h[1] - 200], [h[0] + 40, h[1] - 60], 107.02, 108.6, { width: 18, bend: -0.2 }); L.lab('BUYER', Math.min(h[0] + 150, 880), h[1] - 240, 107.02, 108.6, { size: 50 }); }
-  if (a45In(t, 118.02, 119.2)) L.stamp('NOT CHECKED', 440, 240, 118.02, 119.4, 58, { rot: -0.08, icon: (c, x, y) => { a45EyeIcon(c, x, y, 30); seg(c, x - 30, y + 26, x + 30, y - 26, 7, C.red, 2); } });
+  // v2 (note 4): BUYER on the free left of the top band, NOT CHECKED in the clear sky top-left, both clear of the NO PEEKING sign
+  if (a45In(t, 107.02, 108.6)) { const h = P(...a45Head(r.B)); L.lab('BUYER', 250, 110, 107.02, 108.6, { size: 50 }); L.arr([250, 150], [h[0] - 50, h[1] - 70], 107.1, 108.6, { width: 16, bend: 0.6 }); }
+  if (a45In(t, 118.02, 119.2)) L.stamp('NOT CHECKED', 290, 150, 118.02, 119.4, 58, { rot: -0.08, icon: (c, x, y) => { a45EyeIcon(c, x, y, 30); seg(c, x - 30, y + 26, x + 30, y - 26, 7, C.red, 2); } });
 }
 
 // ---------- S12 (119.2-125.3): the walk home ----------
@@ -159,11 +165,14 @@ function a45S12(ctx, t, cam) {
   a45Draw(ctx, B); a45Bundle(ctx, bx, bunY, { s: 0.8, wrap: 'rich', tassel: Math.sin(W.ph) * 0.3 }); a45Hand(ctx, B.handLW[0], B.handLW[1], 1.3); a45Hand(ctx, B.handRW[0], B.handRW[1], 1.3);
   // the profit cloud trails above him (a beat late)
   const lx = A45_BX12(t - 0.1), cp = K.clamp((t - 122.22) / 0.5);
-  if (t >= 122.22) thoughtCloud(ctx, lx - 20, 330, 440, 300, t, { p: cp, tail: [lx, 600], bg: C.yellow, scale: 0.45, at: [500, 800], inside: (c) => {
-    const k = A45B(t, 123.3, 0.5); person(c, { ...A45_BUYER, x: 360, y: 950, s: 1.15, mouth: 'smile', handLW: [460 - 20 * k, 760], handRW: [470 - 20 * k, 780] });
-    person(c, { costume: 'caliph', x: 650, y: 950, s: 1.15, dir: -1, mouth: 'smile', handRW: [560, 780] }); a45Bundle(c, K.lerp(470, 560, k), 830, { s: 0.7, wrap: 'rich' });
-    for (let i = 0; i < 6; i++) { const u = K.clamp((t - 124.08 - i * 0.07) / 0.35); if (u > 0) a45Coin(c, K.lerp(650, 360 + (i - 2.5) * 16, u), K.lerp(700, 800, u) - 120 * Math.sin(Math.PI * u), 18); }
-    if (t >= 124.68) a45CoinPile(c, 250, 960, Math.round(6 + 24 * A45B(t, 124.68, 0.5, 'out')), 1.6); } });
+  // v2 (note 5): simplified to bundle -> big coin heap with a plus, everything at least 110 px on screen
+  const cxl = Math.min(lx - 20, cam.x + 160 / cam.zoom);   // keep the cloud inside the panel as he walks off right
+  if (t >= 122.22) thoughtCloud(ctx, cxl, 340, 560, 360, t, { p: cp, tail: [lx, 600], bg: C.yellow, scale: 0.6, at: [500, 820], inside: (c) => {
+    const k = K.ease.back(K.clamp((t - 123.32) / 0.3)); a45Bundle(c, 290, 930, { s: 1.4, wrap: 'rich', tassel: Math.sin(t * 4) * 0.2 });
+    if (t >= 123.32) { c.save(); c.globalAlpha = K.clamp(k); seg(c, 450, 860, 520, 860, 18, C.red, 4); shape(c, [[520, 822], [580, 860], [520, 898]], C.red, { lw: 4 }); c.restore(); }
+    if (t >= 124.08) { const g = A45B(t, 124.08, 0.6, 'out'); a45Heap(c, 720, 990, Math.round(6 + 24 * g), 26);
+      c.font = K.font(230, BF, 400); c.textAlign = 'center'; c.textBaseline = 'middle'; c.lineJoin = 'round'; c.lineWidth = 16; c.strokeStyle = C.black; c.fillStyle = C.red; const q = K.ease.back(K.clamp((t - 124.68) / 0.3));
+      if (q > 0) { c.save(); c.translate(575, 720); c.scale(q, q); c.strokeText('+', 0, 0); c.fillText('+', 0, 0); c.restore(); } } } });
   return { B };
 }
 function a45O12() {}

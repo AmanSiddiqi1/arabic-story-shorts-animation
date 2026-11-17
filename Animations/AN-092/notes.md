@@ -16,3 +16,5 @@ Decisions the plan left open or the measured set changed:
 - The judge is the `physician` preset with navy robe and `head: 'none'`; his large turban is drawn by the story (a92Turban) from one keyed table (tilt 66.42, slip 89.52, straighten 98.62, roll off 144.24).
 - Recap card: busts at s 2.2 cropped by the panel bottom (x 300 and 700), bag at (500, 960) s 2.2, food row under it.
 - Page turn to the recap is a yellow page sweep 155.0-155.56 covering the cut at 155.28; the tale opens and closes through a thought cloud growing from / shrinking into Ali's head.
+
+v2 (Fable round 1, see review/revision_1.md): captions use a story copy of the Library caption with balanced wraps (src/a92_sub.js, story.json subtitle 'scene'); the food reveal 128.3-135.9 is its own composition (a92Insert, identity camera); camera cuts use two keys with the same time; Ja'far's upstage spot is behind the right diwan end (A92_JUP, diwan redrawn over his legs).

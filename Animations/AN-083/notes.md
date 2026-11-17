@@ -20,3 +20,10 @@ Decisions the plan left open or that the measured set changed:
 - S16 the men recede (y up 46, scale down 32 %) to x 730-930 so they stay small on the left of the last frame.
 - Sound: the plan's nine cues, retimed into measured silences: whoosh 6.4, pop 11.95 (the drop lands), whoosh 19.85, pop 59.7, chime 60.15, chime 85.0, pop 88.25 (plan 87.8 is inside speech; pause is 88.06-88.62), chime 121.7, chime 165.45.
 - Skipped: headcloth tail flick (no Library field); girl3 "corrects her number" (she is already number 3); hand stack/bounce kept small.
+
+## v2 (revise from fable_review_1, see review/revision_1.md)
+- Re-blocked: m2 1100 (y -12), m1 1160, Ma'an 1270, girls 1420 / 1510 / 1568 (g3 y -12). Verses: no position swaps, reciter steps forward 25.
+- Camera: `an83Ck` keys put feet at 85 % of the panel; S9 zoom 2.4-2.55; S15/S16 cut moved 158.3 -> 158.5.
+- S5: men run upstage to girl2/girl3 (37.9-40.4) and back (44.85-48.3); S6 Ma'an steps aside to 1315 (54.3-60.2) for the purse gag.
+- S8: girls queue to x 1385; bundle landings 72.16 / 74.2 / 76.72 (AN83_RCV). Position snaps at the 80.24 cut use one-sided walk speed (AN83_SNAPS).
+- Insets: panel space, centre (520, 352), r 318; gaze target AN83_INW. Sun faded in AN83_SUNOFF windows; sunset at panel (300, 470).

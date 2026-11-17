@@ -26,6 +26,9 @@ function a45Purse(ctx, x, y, s = 1, fat = 0) { const r = (12 + fat * 7) * s;
   shape(ctx, [[x - r * 0.5, y - r * 1.1], [x + r * 0.5, y - r * 1.1], [x + r, y], [x + r * 0.8, y + r * 0.8], [x - r * 0.8, y + r * 0.8], [x - r, y]], A45_BROWN, { lw: 3.5, seed: 61, dot: A45_BROWND, pitch: 6, rad: 0.3, da: 0.5 });
   seg(ctx, x - r * 0.55, y - r * 1.05, x + r * 0.55, y - r * 1.05, 3 * s, C.yellow, 2); }
 
+// v2: a lettering box whose content pops in together with it (no empty frame while the box grows); p 0..1, draw(ctx) paints the content
+function a45PopBox(ctx, S, x, y, w, h, p, o, draw) { const k = K.ease.back(K.clamp(p * 1.3)); if (k <= 0.01) return; ctx.save(); ctx.translate(x + w / 2, y + h / 2); ctx.scale(k, k); ctx.translate(-x - w / 2, -y - h / 2);
+  S.box(ctx, x, y, w, h, 1, o); draw(ctx); ctx.restore(); }
 // ---------- coins ----------
 function a45Coin(ctx, x, y, r = 14, sx = 1) { ctx.save(); ctx.translate(x, y); ctx.scale(Math.max(0.15, Math.abs(sx)), 1);
   shape(ctx, ell(0, 0, r, r, 18), C.yellow, { lw: Math.max(2.5, r * 0.24), seed: 71 }); ctx.fillStyle = C.red; ctx.beginPath(); ctx.arc(0, 0, r * 0.28, 0, 7); ctx.fill(); ctx.restore(); }
@@ -33,6 +36,8 @@ function a45Coin(ctx, x, y, r = 14, sx = 1) { ctx.save(); ctx.translate(x, y); c
 function a45CoinPile(ctx, x, y, n, s = 1) { const r = 14 * s; let k = 0, row = 0;
   while (k < n) { const m = Math.max(1, 7 - row * 2 + (row === 0 && n > 20 ? 2 : 0)); for (let i = 0; i < m && k < n; i++, k++) a45Coin(ctx, x + (i - (m - 1) / 2) * r * 1.6 + (row % 2) * r * 0.4, y - r - row * r * 1.25, r); row++; if (row > 8) row = 8; } }
 
+// a wide heap for the thought clouds: rows of 8, 7, 6 ... coins, bottom row first (v2; a45CoinPile grows a thin column past 20 coins)
+function a45Heap(ctx, x, y, n, r = 14) { let k = 0; for (let row = 0; k < n && row < 8; row++) { const m = 8 - row; for (let i = 0; i < m && k < n; i++, k++) a45Coin(ctx, x + (i - (m - 1) / 2) * r * 1.7, y - r - row * r * 1.35, r); } }
 // ---------- old clothes ----------
 function a45Patch(ctx, x, y, w, h, col) { shape(ctx, K.rectPts(x - w / 2, y - h / 2, w, h), col, { lw: 3, seed: 62 }); ctx.save(); ctx.setLineDash([4, 4]); ctx.lineWidth = 2; ctx.strokeStyle = C.black; ctx.strokeRect(x - w / 2 + 4, y - h / 2 + 4, w - 8, h - 8); ctx.restore(); }
 // the holed shirt, centre (x, y), 160 x 150 at s 1. o: {rot, eye: [gx, gy] (an eye seen through the hole), sway}
@@ -45,8 +50,9 @@ function a45Shirt(ctx, x, y, s = 1, o = {}) { ctx.save(); ctx.translate(x, y); c
   a45Patch(ctx, -22, 30, 30, 26, A45_BROWN); a45Patch(ctx, 58, -34, 18, 16, A45_OLIVE);
   seg(ctx, -40, 66, -10, 70, 3, A45_GREYD, 1); // frayed hem
   for (let i = 0; i < 5; i++) seg(ctx, -40 + i * 18, 72, -42 + i * 18, 80 + (i % 2) * 4, 2, A45_GREYD, 1);
-  const [hx, hy] = A45_HOLE; ctx.fillStyle = '#2b2620'; ctx.beginPath(); ctx.ellipse(hx, hy, 15, 13, 0.2, 0, 7); ctx.fill(); ctx.lineWidth = 3; ctx.strokeStyle = C.black; ctx.stroke();
-  if (o.eye) { shape(ctx, ell(hx, hy, 11, 10, 14), C.white, { lw: 2.5, seed: 2 }); ctx.fillStyle = C.black; ctx.beginPath(); ctx.arc(hx + o.eye[0] * 4, hy + o.eye[1] * 3, 4.5, 0, 7); ctx.fill(); }
+  const [hx, hy] = o.hole || A45_HOLE, hk = o.holeK || 1; ctx.fillStyle = '#2b2620'; ctx.beginPath(); ctx.ellipse(hx, hy, 15 * hk, 13 * hk, 0.2, 0, 7); ctx.fill(); ctx.lineWidth = 3; ctx.strokeStyle = C.black; ctx.stroke();
+  if (o.eye) { shape(ctx, ell(hx, hy, 11 * hk, 10 * hk, 14), C.white, { lw: 2.5, seed: 2 }); ctx.fillStyle = C.black; ctx.beginPath(); ctx.arc(hx + o.eye[0] * 4 * hk, hy + o.eye[1] * 3 * hk, 4.5 * hk, 0, 7); ctx.fill();
+    if (o.eyeLid > 0) { ctx.save(); ctx.beginPath(); ctx.ellipse(hx, hy, 11 * hk, 10 * hk, 0, 0, 7); ctx.clip(); ctx.fillStyle = C.skin; ctx.fillRect(hx - 12 * hk, hy - 11 * hk, 24 * hk, 21 * hk * o.eyeLid); ctx.lineWidth = 3; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.moveTo(hx - 12 * hk, hy - 11 * hk + 21 * hk * o.eyeLid); ctx.lineTo(hx + 12 * hk, hy - 11 * hk + 21 * hk * o.eyeLid); ctx.stroke(); ctx.restore(); } }
   ctx.restore(); }
 // the drab heap (ground point x, y): robe, trousers, cap, sock and the shirt on top
 function a45Rags(ctx, x, y, s = 1, o = {}) { ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
@@ -62,10 +68,12 @@ function a45Rags(ctx, x, y, s = 1, o = {}) { ctx.save(); ctx.translate(x, y); ct
 // a45Bundle(ctx, x, y, o): ground point (x, y). o: {s: 1, wrap: 'plain' | 'rich', open: 0..1 (four corners fall one at a time), contents: 'rags' | 'treasure' | 'none',
 //   sq, tilt, peek: 0..1 (one corner lifted, a sleeve hanging out), tassel (swing radians), glint: 0..1, t}
 function a45ClothFill(ctx, pts, wrap, s) {
+  // v2: the pattern covers the cloth's own bounding box (v1 used a fixed box at the origin, so the yellow diamonds never showed)
+  const xs = pts.map((q) => q[0]), ys = pts.map((q) => q[1]), x0 = Math.min(...xs) - 10, y0 = Math.min(...ys) - 10, bw = Math.max(...xs) - x0 + 20, bh = Math.max(...ys) - y0 + 20;
   ctx.save(); K.poly(ctx, pts, true); ctx.fillStyle = wrap === 'rich' ? C.red : A45_GREY; ctx.fill(); ctx.clip();
-  if (wrap === 'rich') { ctx.strokeStyle = C.yellow; ctx.lineWidth = 4 * s; const [bx, by, bw, bh] = [-400, -400, 800, 800]; for (let d = -800; d < 800; d += 30 * s) { ctx.beginPath(); ctx.moveTo(bx + d, by); ctx.lineTo(bx + d + 800, by + 800); ctx.moveTo(bx + d + 800, by); ctx.lineTo(bx + d, by + 800); ctx.stroke(); }
-    ctx.fillStyle = dotPat(ctx, '#a8160f', 8, 0.25); ctx.globalAlpha = 0.45; ctx.fillRect(-400, -400, 800, 800); }
-  else { ctx.fillStyle = dotPat(ctx, A45_GREYD, 9, 0.28); ctx.globalAlpha = 0.5; ctx.fillRect(-400, -400, 800, 800); }
+  if (wrap === 'rich') { ctx.strokeStyle = C.yellow; ctx.lineWidth = 4 * s; const L = bw + bh, st = 34 * s; for (let d = -L; d < L; d += st) { ctx.beginPath(); ctx.moveTo(x0 + d, y0); ctx.lineTo(x0 + d + L, y0 + L); ctx.moveTo(x0 + d + L, y0); ctx.lineTo(x0 + d, y0 + L); ctx.stroke(); }
+    ctx.fillStyle = dotPat(ctx, '#a8160f', 8, 0.25); ctx.globalAlpha = 0.45; ctx.fillRect(x0, y0, bw, bh); }
+  else { ctx.fillStyle = dotPat(ctx, A45_GREYD, 9, 0.28); ctx.globalAlpha = 0.5; ctx.fillRect(x0, y0, bw, bh); }
   ctx.restore(); ink(ctx, pts.concat([pts[0]]), 5 * s, 68); }
 function a45Fringe(ctx, a, b, s) { const n = Math.max(2, Math.round(Math.hypot(b[0] - a[0], b[1] - a[1]) / (10 * s)));
   for (let i = 0; i <= n; i++) { const x = K.lerp(a[0], b[0], i / n), y = K.lerp(a[1], b[1], i / n); seg(ctx, x, y, x, y + 14 * s, 3 * s, A45_GOLD, 1.2); } }
@@ -87,7 +95,7 @@ function a45Bundle(ctx, x, y, o = {}) {
       seg(ctx, tx, ty, ex, ey, 3.5 * s, A45_GOLD, 1.5); shape(ctx, [[ex - 7 * s, ey - 4 * s], [ex + 7 * s, ey - 4 * s], [ex + 10 * s, ey + 16 * s], [ex - 10 * s, ey + 16 * s]], A45_GOLD, { lw: 3, seed: 73 }); }
     if (o.peek > 0) { const p = K.clamp(o.peek), cx = x + W * 0.9, cy = y - H * 0.55;
       const sl = [[cx - 6 * s, cy], [cx + 14 * s + 30 * s * p, cy + 6 * s], [cx + 22 * s + 26 * s * p, cy + 70 * s * p + 10 * s], [cx + 2 * s + 26 * s * p, cy + 74 * s * p + 10 * s], [cx - 4 * s, cy + 16 * s]];
-      if (p > 0.3) { const sw = Math.sin(t * 5) * 4 * s * p; a45ClothFill(ctx, sl.map(([a, b], i) => [a + (i > 1 ? sw : 0), b]), 'plain', s); a45Patch(ctx, cx + 14 * s + 26 * s * p, cy + 50 * s * p, 14 * s, 12 * s, A45_BROWN); }
+      if (p > 0.3 && o.peekSleeve !== false) { const sw = Math.sin(t * 5) * 4 * s * p; a45ClothFill(ctx, sl.map(([a, b], i) => [a + (i > 1 ? sw : 0), b]), 'plain', s); a45Patch(ctx, cx + 14 * s + 26 * s * p, cy + 50 * s * p, 14 * s, 12 * s, A45_BROWN); }
       shape(ctx, [[cx - 24 * s, cy - 20 * s], [cx + 6 * s, cy - 30 * s - 40 * s * p], [cx + 24 * s + 10 * s * p, cy - 10 * s]], wrap === 'rich' ? C.red : A45_GREY, { lw: 4 * s, seed: 74 }); }
   } else {
     // open: the cloth lies flat, contents on it, corners falling one at a time (back, left, right, front)
@@ -130,6 +138,13 @@ function a45Balloon(ctx, cx, cy, w, h, tail, p, inner) { const k = K.ease.back(K
   shape(ctx, pts, C.white, { lw: 7, seed: 77 });
   if (inner) { ctx.save(); K.poly(ctx, pts, true); ctx.clip(); inner(ctx); ctx.restore(); }
   ctx.restore(); }
+// v2: a red "no" ring with a single diagonal (the icon underneath stays readable)
+function a45NoRing(ctx, x, y, r, p) { if (p <= 0) return; const k = K.clamp(p); ctx.save(); ctx.lineCap = 'round'; ctx.lineWidth = 12; ctx.strokeStyle = C.red; ctx.beginPath(); ctx.arc(x, y, r, -Math.PI / 2, -Math.PI / 2 + 2 * Math.PI * K.clamp(k * 1.5)); ctx.stroke();
+  if (k > 0.6) { const u = K.clamp((k - 0.6) / 0.4), a = -Math.PI * 0.75; ctx.beginPath(); ctx.moveTo(x + Math.cos(a) * r, y + Math.sin(a) * r); ctx.lineTo(x + Math.cos(a) * r * (1 - 2 * u), y + Math.sin(a) * r * (1 - 2 * u)); ctx.stroke(); } ctx.restore(); }
+// a grey patched sleeve hanging from (x, y) (top), length L, swing radians
+function a45Sleeve(ctx, x, y, L, sw = 0) { ctx.save(); ctx.translate(x, y); ctx.rotate(sw); const pts = [[-16, 0], [16, 0], [20, L * 0.6], [18, L], [-18, L], [-20, L * 0.6]];
+  ctx.save(); K.poly(ctx, pts, true); ctx.fillStyle = A45_GREY; ctx.fill(); ctx.clip(); ctx.fillStyle = dotPat(ctx, A45_GREYD, 9, 0.28); ctx.globalAlpha = 0.5; ctx.fillRect(-30, -10, 60, L + 20); ctx.restore(); ink(ctx, pts.concat([pts[0]]), 5, 63);
+  a45Patch(ctx, 0, L * 0.55, 24, 20, A45_BROWN); seg(ctx, -16, L - 2, 16, L - 2, 3, A45_GREYD, 1); ctx.restore(); }
 // a red X over an icon
 function a45Cross(ctx, x, y, r, p) { if (p <= 0) return; const k = K.clamp(p); seg(ctx, x - r, y - r, x - r + 2 * r * K.clamp(k * 2), y - r + 2 * r * K.clamp(k * 2), 12, C.red, 3);
   if (k > 0.5) seg(ctx, x + r, y - r, x + r - 2 * r * K.clamp(k * 2 - 1), y - r + 2 * r * K.clamp(k * 2 - 1), 12, C.red, 3); }

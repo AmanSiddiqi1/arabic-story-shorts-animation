@@ -1,6 +1,7 @@
 // ===== AN-092: the palace at night (S1-S3 the frame story, S13 the laugh and the gift, S15 asleep) =====
 // palaceHall (blue wall, no throne) + a night view in the door and window + a navy wash; diwan on the dais (seat top 812).
 const A92_DX = 760;   // the Caliph's seat on the diwan (x); dais top 860
+const A92_CLAPY = -96;   // v2: clap height (hand local y) in front of the seated Caliph's chest
 function a92Night(c) { c.fillStyle = NAVY2; c.fillRect(0, 300, 1000, 640); c.save(); c.globalAlpha = 0.9; stars(c, { w: 1000, h: 900, n: 140, seed: 9 }); c.restore();
   shape(c, ell(878, 392, 24, 24, 20), '#fff3a0', { lw: 4, seed: 450 }); shape(c, ell(888, 386, 20, 20, 18), NAVY2, { lw: 0 });
   shape(c, [[-10, 860], [300, 860], [300, 930], [-10, 930]], '#2a3f7a', { lw: 4, seed: 451 }); }
@@ -38,8 +39,10 @@ function a92S1(ctx, t, cam) {
     C1 = a92CaliphSit({ lid: 0.35, brow: -0.4, mouth: 'frown' });
     C1.sit = up; C1.lie = 1 - up; C1.x = K.lerp(800, A92_DX, up); C1.y = K.lerp(812, 860, up); if (up < 1) C1.dir = 1;
     C1.sq = (up < 1 ? 1 : settleTo(t, 4.76, 0.96, 1, 0.35)) * (1 - 0.04 * pulse(t, 4.9, 0.6));
-    C1.gaze = [0.2, -0.5]; if (t < 5.4) { C1.handL = PERSON_HANDS.headHold.L; }
-    if (t >= 5.3 && t < 6.2) { C1.gaze = lookAt(a92Eye(C1), [150, 720]); const c = Math.max(pulse(t, 5.3, 0.22), pulse(t, 5.55, 0.22)); C1.handL = [-50 + 44 * c, -138]; C1.handR = [50 - 44 * c, -138]; C1.mouth = 'open'; C1.brow = 0.3; C1.lid = 0.1; }
+    C1.gaze = [0.2, -0.5]; if (t < 4.85) { C1.handL = PERSON_HANDS.headHold.L; }
+    // v2: the clap is two clear hand contacts in front of the chest (4.98, 5.24), the pop effect at 5.3
+    if (t >= 4.85 && t < 5.5) { const c = Math.max(pulse(t, 4.88, 0.2), pulse(t, 5.14, 0.2)); C1.handL = [-46 + 40 * c, A92_CLAPY]; C1.handR = [46 - 40 * c, A92_CLAPY]; C1.mouth = 'open'; C1.brow = 0.3; C1.lid = 0.1; C1.gaze = [-0.4, 0.2]; }
+    if (t >= 5.3 && t < 6.2) { C1.gaze = lookAt(a92Eye(C1), [150, 720]); C1.mouth = 'open'; C1.brow = 0.3; C1.lid = 0.1; }
     if (t >= 6.2) C1.gaze = lookAt(a92Eye(C1), [A92_JX1(t), 700]);
     if (t >= 8.0 && t < 8.9) { C1.handR = PERSON_HANDS.pointUp.R; C1.gaze = [-0.4, -0.9]; C1.mouth = 'closed'; C1.talk = 0.4 * Math.abs(Math.sin(t * 10)); }
     if (t >= 8.9 && t < 9.4) { C1.mouth = 'smile'; C1.gaze = [-0.4, -0.9]; C1.lid = 0.15; }
@@ -52,6 +55,9 @@ function a92S1(ctx, t, cam) {
     person(ctx, C1);
     if (up > 0.5) shape(ctx, [[A92_DX - 70, 812], [A92_DX - 60, 790], [A92_DX + 60, 786], [A92_DX + 74, 812]], C.blue, { lw: 5, seed: 405, dot: C.yellow, pitch: 9, rad: 0.2, da: 0.4 });   // blanket on the lap
   }
+  // clap impact lines at the two contacts
+  for (const tc of [4.98, 5.24]) { const d = t - tc; if (d < 0 || d > 0.2) continue; const c = a92Pt(C1, 0, A92_CLAPY), k = d / 0.2; ctx.save(); ctx.globalAlpha = 1 - k;
+    for (let i = 0; i < 6; i++) { const a = -Math.PI / 2 + (i - 2.5) * 0.5, r0 = 26 + 24 * k, r1 = r0 + 18; seg(ctx, c[0] + Math.cos(a) * r0, c[1] + Math.sin(a) * r0, c[0] + Math.cos(a) * r1, c[1] + Math.sin(a) * r1, 4, C.white, 1.5); } ctx.restore(); }
   if (t >= 6.3) person(ctx, a92Jafar1(t));
   for (const f of A92_JF1) dustBurst(ctx, f.x, 900, t - f.t, 3, 4, 8, 18, 0.35, Math.round(f.t * 10));
   return { C1 };
@@ -77,7 +83,10 @@ const cam_z = (r) => r.z || 1.35;
 
 // ---------- S2 (12.34-23.98): the idea, Ali in the cloud, Ali walks in and sits ----------
 const A92_AX2 = (t) => kfn(t, [[20.28, 60], [21.28, 330]], 'out');
-const A92_JX2 = (t) => kfn(t, [[21.3, 470], [21.8, 545]]);
+const A92_JX2 = (t) => kfn(t, [[20.4, 470], [21.5, A92_JUP[0]]]);   // v2: Ja'far steps back behind the diwan end as Ali comes in
+const A92_JUP = [872, 862];   // Ja'far's upstage spot behind the right end of the diwan (his legs hidden by the diwan)
+// Ja'far behind the diwan: draw him, then the diwan again over his legs (call before the Caliph is drawn)
+function a92JafarBehind(ctx, J) { person(ctx, J); if (J.x > 560) a92Diwan(ctx, 580, 930, 860); }
 const A92_AF2 = footfalls(A92_AX2, 20.28, 21.3, 28);
 function a92Ali2(t) {
   if (t < 20.28) return null;
@@ -90,12 +99,13 @@ function a92Ali2(t) {
 function a92S2(ctx, t, cam) {
   a92Palace(ctx, t);
   const C1 = a92CaliphSit({ lid: 0.35, brow: -0.4, mouth: 'frown', gaze: [-0.6, -0.2] });
-  const J = { ...A92_JAFAR, x: A92_JX2(t), y: 900, dir: 1, gaze: [0.6, -0.5] };
+  const J = { ...A92_JAFAR, ...walk(A92_JX2, t, { stride: 28 }), y: K.lerp(900, A92_JUP[1], A92B(t, 20.4, 1.1)), dir: 1, gaze: [0.6, -0.5] };
   // Ja'far's idea
   if (t < 13.78) { J.handR = PERSON_HANDS.pointUp.R; J.mouth = 'smile'; J.brow = -0.5; J.eyes = t < 12.8 ? 'wide' : 'open'; const [, h] = hop(t, 12.34, 0.3, 0, 0, 14); J.y = 900 - h; J.sq = landSquash(t, 12.64, 0.12); }
   else if (t < 19.4) { J.handR = PERSON_HANDS.pointUp.R; J.talk = talk(t, [[13.8, 15.6], [16.2, 18.4]]); J.gaze = lookAt(a92Eye(J), [300, 380]); J.mouth = 'smile'; }
   else if (t < 21.3) { J.gaze = lookAt(a92Eye(J), [150, 700]); const c = Math.max(pulse(t, 19.9, 0.2), pulse(t, 20.15, 0.2)); J.handL = [-50 + 44 * c, -138]; J.handR = [50 - 44 * c, -138]; }
-  else { J.handL = PERSON_HANDS.palmsUp.L; J.handR = PERSON_HANDS.palmsUp.R; J.gaze = lookAt(a92Eye(J), [330, 760]); if (t >= 22.62) { J.handL = PERSON_HANDS.clasp.L; J.handR = PERSON_HANDS.clasp.R; J.gaze = lookAt(a92Eye(J), [A92_DX, 640]); } }
+  if (t >= 20.4 && t < 21.5) { J.handL = PERSON_HANDS.armsOut.L; J.handR = null; J.gaze = [-1, 0.1]; }   // waves Ali forward as he steps back
+  if (t >= 21.5) { J.handL = PERSON_HANDS.clasp.L; J.handR = PERSON_HANDS.clasp.R; J.gaze = lookAt(a92Eye(J), [330, 760]); if (t >= 22.62) J.gaze = lookAt(a92Eye(J), [A92_DX, 640]); }
   J.x += 0; a92Blink(J, t);
   // the Caliph: interest grows, then he sends for Ali
   if (t >= 13.78) C1.gaze = lookAt(a92Eye(C1), [300, 380]);
@@ -103,10 +113,11 @@ function a92S2(ctx, t, cam) {
   if (t >= 19.4 && t < 20.3) { C1.drop = 8 * (pulse(t, 19.4, 0.3) + pulse(t, 19.7, 0.3)); C1.handR = PERSON_HANDS.pointFwd.R; C1.gaze = lookAt(a92Eye(C1), [150, 700]); }
   const A = a92Ali2(t);
   if (t >= 20.3) { C1.gaze = lookAt(a92Eye(C1), A ? a92Eye(A) : [150, 700]); C1.tip = 0.06; }
-  if (t >= 23.3) { C1.handR = t < 23.6 ? PERSON_HANDS.palmsUp.R : PERSON_HANDS.chin.R; C1.lid = 0.25; C1.tip = 0.03; }
+  if (t >= 22.62) { C1.tip = 0.06 + 0.1 * A92B(t, 22.62, 0.4) - 0.07 * A92B(t, 23.6, 0.4); C1.drop = 6 * A92B(t, 22.62, 0.4); C1.brow = -0.5; C1.lid = 0.1; }   // v2: leans in toward Ali
+  if (t >= 23.3) { C1.handR = t < 23.6 ? PERSON_HANDS.palmsUp.R : PERSON_HANDS.chin.R; C1.lid = 0.25; }
   a92Blink(C1, t);
+  a92JafarBehind(ctx, J);
   a92Pillow(ctx, 630, 812, 1); person(ctx, C1); shape(ctx, [[A92_DX - 70, 812], [A92_DX - 60, 790], [A92_DX + 60, 786], [A92_DX + 74, 812]], C.blue, { lw: 5, seed: 405, dot: C.yellow, pitch: 9, rad: 0.2, da: 0.4 });
-  person(ctx, J);
   if (A) person(ctx, A);
   for (const f of A92_AF2) dustBurst(ctx, f.x, 900, t - f.t, 3, 4, 8, 18, 0.35, Math.round(f.t * 10));
   return { C1, J, A };
@@ -137,9 +148,10 @@ function a92S3(ctx, t, cam) {
   A.handR = PERSON_HANDS.pointUp.R; if (t >= 24.8) A.gaze = [0.3, -0.8];
   a92Blink(A, t);
   const C1 = a92CaliphSit({ lid: 0.15, brow: -0.4, mouth: 'closed', tip: 0.06 + 0.04 * A92B(t, 25.0, 0.6) }); C1.gaze = lookAt(a92Eye(C1), a92Eye(A)); a92Blink(C1, t);
-  const J = { ...A92_JAFAR, x: 545, y: 900, dir: 1, handL: PERSON_HANDS.clasp.L, handR: PERSON_HANDS.clasp.R, tilt: 0.08 * A92B(t, 25.0, 0.5) }; J.gaze = lookAt(a92Eye(J), a92Eye(A)); a92Blink(J, t);
+  const J = { ...A92_JAFAR, x: A92_JUP[0], y: A92_JUP[1], dir: 1, handL: PERSON_HANDS.clasp.L, handR: PERSON_HANDS.clasp.R, tilt: 0.08 * A92B(t, 25.0, 0.5) }; J.gaze = lookAt(a92Eye(J), a92Eye(A)); a92Blink(J, t);
+  a92JafarBehind(ctx, J);
   a92Pillow(ctx, 630, 812, 1); person(ctx, C1); shape(ctx, [[A92_DX - 70, 812], [A92_DX - 60, 790], [A92_DX + 60, 786], [A92_DX + 74, 812]], C.blue, { lw: 5, seed: 405, dot: C.yellow, pitch: 9, rad: 0.2, da: 0.4 });
-  person(ctx, J); person(ctx, A);
+  person(ctx, A);
   return { A, C1 };
 }
 function a92O3(ctx, t, P, S, r, L) {
@@ -151,13 +163,19 @@ function a92O3(ctx, t, P, S, r, L) {
 }
 
 // ---------- S13 (144.92-155.28): the tale cloud shrinks back; the Caliph laughs; the purse ----------
-const A92_JX13 = (t) => kfn(t, [[153.0, 545], [153.5, 430]]);
+const A92_JX13 = (t) => kfn(t, [[151.5, 935], [152.5, 545], [153.0, 545], [153.5, 430]]);   // v2: from behind the diwan end to Ali with the purse
 function a92S13(ctx, t, cam) {
   a92Palace(ctx, t);
   const C1 = a92CaliphSit({ mouth: 'closed', brow: -0.3, lid: 0.8 });
-  if (t < 145.3) { C1.sq = 0.93; C1.x += tremble(t, 2, 8); C1.mouth = 'closed'; C1.cheeks = true; }
-  const la = a92Laugh(t, 145.3, 1, 2.2), lb = a92Laugh(t, 148.4, 0.55, 1.4);
-  if (t >= 145.3) { const q = t >= 148.4 ? lb : la; Object.assign(C1, q); C1.mouth = 'open'; C1.brow = -0.6; C1.handL = t < 147.5 ? [-70 + 8 * Math.sin(t * 15), -60] : null; }
+  if (t < 145.3) { C1.sq = 0.93 - 0.02 * Math.sin(t * 40); C1.x += tremble(t, 3, 9); C1.mouth = 'closed'; C1.cheeks = true; C1.lid = 0.6; C1.brow = 0.4; }   // puffed, trembling
+  // v2: the big laugh, twice the v1 amplitude: head thrown back and rocking at 2.5 Hz, shoulders bouncing, arms up then slapping the diwan
+  const la = a92Laugh(t, 145.3, 2, 2.4), lb = a92Laugh(t, 148.4, 1.1, 1.4);
+  if (t >= 145.3) { const q = t >= 148.4 ? lb : la; Object.assign(C1, q); C1.mouth = 'open'; C1.talk = Math.max(C1.talk, 0.75); C1.brow = -0.6; C1.lid = 0.85; C1.noBlink = true;
+    const d = t - 145.3, bounce = Math.abs(Math.sin(d * 2.5 * Math.PI * 2)) * Math.exp(-d / 3); C1.drop = (C1.drop || 0) + 8 * bounce;
+    if (t < 146.5) { C1.handL = PERSON_HANDS.armsOut.L; C1.handR = PERSON_HANDS.armsOut.R; C1.aL = null; }
+    else if (t < 148.16) { const sl = Math.abs(Math.sin((t - 146.5) * 2.5 * Math.PI)); C1.handRW = [A92_DX + 70, 800 - 40 * sl]; C1.handL = [-60, -120 + 30 * sl]; }
+    else if (t < 149.0) { C1.handR = [18, -196]; C1.wet = true; }
+    else if (t < 150.5) { const sl = Math.abs(Math.sin((t - 149.0) * 2.5 * Math.PI)); C1.handRW = [A92_DX + 70, 802 - 26 * sl]; C1.wet = t < 150.0; } }
   if (t >= 148.16 && t < 149.0) { C1.handR = [18, -196]; C1.wet = true; }
   if (t >= 150.5) { C1.tip = 0.03; C1.talk = 0; C1.mouth = 'smile'; C1.lid = 0.3; C1.sq = 1; C1.drop = 0; }
   if (t >= 152.4 && t < 153.3) { C1.handR = PERSON_HANDS.pointFwd.R; C1.talk = 0.4 * Math.abs(Math.sin(t * 12)); }
@@ -169,7 +187,7 @@ function a92S13(ctx, t, cam) {
   if (t >= 149.62 && t < 150.96) { const d = t - 149.62; if (d < 0.4) A.handR = [70, -150 + 40 * A92B(t, 149.62, 0.3)]; else { const b = Math.sin((d - 0.4) * 18); A.handL = [-10 + 14 * b, -120]; A.handR = [10 - 14 * b, -116]; } A.brow = -0.5; }
   if (t >= 150.96 && t < 151.9) { A.tip = 0.12 * pulse(t, 150.96, 0.9); A.handR = PERSON_HANDS.chest.R; A.lid = 0.5; }
   // the purse: in Ja'far's hands, then in Ali's
-  const J = { ...A92_JAFAR, ...walk(A92_JX13, t, { stride: 28 }), y: 900, dir: 1, mouth: 'smile', lid: 0.4 };
+  const J = { ...A92_JAFAR, ...walk(A92_JX13, t, { stride: 28 }), y: K.lerp(A92_JUP[1], 900, A92B(t, 151.5, 1.0)), dir: t >= 151.5 && t < 153.6 ? -1 : 1, mouth: 'smile', lid: 0.4 };
   J.gaze = lookAt(a92Eye(J), a92Eye(C1));
   if (t >= 147.0 && t < 151.5) { J.handL = PERSON_HANDS.mouthCover.L; J.handR = PERSON_HANDS.mouthCover.R; J.lid = 0.6; J.x += tremble(t + 0.13, 1.5, 5); J.sq = 1 + 0.02 * Math.sin(t * 31); }
   let purse = null;
@@ -181,17 +199,19 @@ function a92S13(ctx, t, cam) {
     J.gaze = lookAt(a92Eye(J), purse);
   }
   a92Blink(A, t); if (t < 147 || t >= 151.5) a92Blink(J, t);
+  const jBack = t < 151.9; if (jBack) a92JafarBehind(ctx, J);
   a92Pillow(ctx, 630, 812, 1); person(ctx, C1); shape(ctx, [[A92_DX - 70, 812], [A92_DX - 60, 790], [A92_DX + 60, 786], [A92_DX + 74, 812]], C.blue, { lw: 5, seed: 405, dot: C.yellow, pitch: 9, rad: 0.2, da: 0.4 });
-  person(ctx, A); person(ctx, J);
+  person(ctx, A); if (!jBack) person(ctx, J);
   if (purse) a92Purse(ctx, purse[0], purse[1], 0.9, { glint: t >= 153.58 ? pulse(t, 153.7, 0.5) + pulse(t, 154.0, 0.4) : 0 });
   if (t >= 154.34 && t < 155.28) { const u = K.clamp((t - 154.34) / 0.55), cx = purse[0] + 40 * u, cy = purse[1] - 60 - 110 * Math.sin(Math.PI * u) + 50 * u * u; shape(ctx, ell(cx, cy, 10, 10 * Math.abs(Math.cos(t * 20)) + 2, 12), C.yellow, { lw: 3, seed: 470 }); }
   return { C1, A, J };
 }
 function a92O13(ctx, t, P, S, r, L) {
-  if (r.C1) { const h = P(...a92Head(r.C1)); if (t < 145.3) a92Scribble(ctx, h[0], h[1] - 200, t, { s: 0.7 * (1 + 0.15 * Math.sin(t * 20)) }); else a92Scribble(ctx, h[0], h[1] - 200, t, { s: 0.7, burst: K.clamp((t - 145.3) / 0.7) }); }
-  if (a92In(t, 145.4, 149.4)) L.word('HA HA HA!', 300, 260, 145.4, 149.4, 92, { rot: -0.08 });
+  if (r.C1) { const h = P(...a92Head(r.C1)); if (t < 145.3) a92Scribble(ctx, h[0], h[1] - 190, t, { s: 0.8 * (1 + 0.15 * Math.sin(t * 20)) }); else if (t < 146.1) { a92Scribble(ctx, h[0], h[1] - 190, t, { s: 0.8, burst: K.clamp((t - 145.3) / 0.6) }); dustBurst(ctx, h[0], h[1] - 190, t - 145.3, 10, 8, 18, 120, 0.5, 31); } }
+  // v2: HA HA HA! over the Caliph (open wall right of centre, clear of his crown), a second smaller wave at 148.4
+  if (r.C1) { const h = P(...a92Head(r.C1)); if (a92In(t, 145.4, 148.3)) L.word('HA HA HA!', Math.min(h[0] - 20, 760), h[1] - 330, 145.4, 148.3, 100, { rot: -0.08 }); if (a92In(t, 148.45, 150.3)) L.word('HA HA!', Math.min(h[0] + 10, 780), h[1] - 300, 148.45, 150.3, 76, { rot: 0.06 }); }
   // the tale cloud shrinks back into Ali's head (inside: the last court picture)
-  if (t < 145.62 && r.A) { const h = P(...a92Head(r.A)), u = K.ease.out(K.clamp((t - 144.92) / 0.7)), w = K.lerp(4200, 120, u), c = [K.lerp(500, h[0] + 60, u), K.lerp(615, h[1] - 150, u)];
+  if (t < 145.62 && r.A) { const h = P(...a92Head(r.A)), u = K.ease.out(K.clamp((t - 144.92) / 0.32)), w = K.lerp(4200, 120, u), c = [K.lerp(500, h[0] + 60, u), K.lerp(615, h[1] - 150, u)];
     thoughtCloud(ctx, c[0], c[1], w, w * 0.8, t, { p: 1, tail: [h[0] + 10, h[1] - 60], fill: C.white, scale: w / 1300, at: [470, 680], inside: (k) => { a92CourtSet(k, 144.9); a92Desk(k); } }); }
 }
 

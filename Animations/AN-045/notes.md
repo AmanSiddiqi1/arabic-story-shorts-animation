@@ -18,3 +18,11 @@ Decisions the plan left open or the measured set changed:
 - S14 balloon: the seller is a black silhouette (canvas filter brightness 0) with the Library monkey on his shoulder.
 - S17: the wife walks round to the buyer (720 -> 520) after the last word and lays her hand on his shoulder at 168.4; he sinks onto a stool at x 400 (landing 167.72, thud 167.75).
 - Sound: exactly the plan's seven cues (pop 3.9, whoosh 21.05, pop 41.9, whoosh 63.35, thud 68.75, thud 167.75, chime 168.5).
+
+## v2 (Fable round 1) decisions
+- S8 cutaway in panel space at (815, 235) r 124 with a yellow leader from the knot to its lower-left edge; camera 1.6 at (500, 710). Thief not moved (his head is clear of the OUTSIDE arrow at x 470).
+- S6 zoom 1.5 (review suggested about 1.25; 1.25 left the figures small on a phone) centre (1325, 700), drifting to 1265 as he tiptoes out; monkey stays in frame to 61.6.
+- S17 end framing zoom 1.72-1.78 at (465, 722) (review suggested 1.35-1.45; at that zoom the floor was still about 37% of the panel). The held shirt uses a hole moved to the sleeve (A45_HOLE17) only in S17, so the hole can sit over one eye while the other eye and mouth stay visible.
+- `a45Draw`: a world hand target (handLW/handRW) now always wins over a local pose; in v1 several reaches were silently ignored because a default handL/handR was also set (S11 108.9, S13 carry, S17 bundle).
+- The rich cloth now shows its yellow diamonds everywhere (v1 pattern-box bug), which also covers note 11's "plain red rectangle".
+- S16 sun dropped; S14 rap on the bundle moved to 138.2-138.9 so the shrug lands on 138.9.

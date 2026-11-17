@@ -62,25 +62,29 @@ function an83Quiver(ctx, x, y, o = {}) {
   ctx.restore();
 }
 
-// ---------- gold arrow: (x, y) = head tip, ang = pointing direction. o: {s, len 120, glint 0..1, plain (no gold)} ----------
+// ---------- gold arrow: (x, y) = head tip, ang = pointing direction. o: {s, len 120, glint 0..1, plain (no gold), head (head size multiplier), fl (fletching size multiplier)} ----------
 function an83Arrow(ctx, x, y, ang, o = {}) {
-  const s = o.s || 1, L = o.len || 120;
+  const s = o.s || 1, L = o.len || 120, hs = o.head || 1, fl = o.fl ?? 1;
   ctx.save(); ctx.translate(x, y); ctx.rotate(ang); ctx.scale(s, s);
-  seg(ctx, -L, 0, -18, 0, 6, AN83_SHAFT, 2.5);
-  for (const sd of [-1, 1]) shape(ctx, an83Close([[-L + 2, 0], [-L + 28, 0], [-L + 22, sd * 4], [-L - 2, sd * 11]]), C.red, { lw: 2.5, seed: 850 });
+  seg(ctx, -L, 0, -18 * hs, 0, 6, AN83_SHAFT, 2.5);
+  if (fl > 0) for (const sd of [-1, 1]) shape(ctx, an83Close([[-L + 2, 0], [-L + 2 + 26 * fl, 0], [-L + 2 + 20 * fl, sd * 4 * fl], [-L - 2 * fl, sd * 11 * fl]]), o.flc || C.red, { lw: 2.5, seed: 850 });
+  ctx.save(); ctx.scale(hs, hs);
   const hd = an83Close([[0, 0], [-26, -8], [-20, 0], [-26, 8]]);
-  shape(ctx, hd, o.plain ? STONE : C.yellow, { lw: 3, seed: 851, dot: o.plain ? STONED : C.red, pitch: 5, rad: 0.22, da: 0.6 });
-  if (!o.plain) seg(ctx, -5, -1, -20, -5, 2.5, C.white, 0);
-  ctx.restore();
-  if (o.glint > 0) { const k = Math.sin(Math.PI * K.clamp(o.glint)); if (k > 0.05) star(ctx, x - Math.cos(ang) * 10 * s, y - Math.sin(ang) * 10 * s, 15 * s * k, C.white, o.glint * 2); }
+  shape(ctx, hd, o.plain ? STONE : C.yellow, { lw: 3 / Math.sqrt(hs), seed: 851, dot: o.plain ? STONED : (hs > 1.4 ? null : C.red), pitch: 5, rad: 0.22, da: 0.6 });
+  if (!o.plain && o.facet !== false) seg(ctx, -5, -1.5, -19, -5, hs > 1.4 ? 2 : 2.5, C.white, 0);
+  ctx.restore(); ctx.restore();
+  if (o.glint > 0) { const k = Math.sin(Math.PI * K.clamp(o.glint)); if (k > 0.05) star(ctx, x - Math.cos(ang) * 10 * s * hs, y - Math.sin(ang) * 10 * s * hs, 15 * s * k * Math.max(1, hs * 0.8), C.white, o.glint * 2); }
 }
-// bundle of n arrows tied at (x, y), heads up (ang -PI/2 + rot). o: {s, rot, spread, glints: fn(i) -> 0..1}
+// bundle of n arrows tied at (x, y) (the holding hand), HEADS UP and fanned above the hand: big flat gold heads on top,
+// small cream fletching below the hand. o: {s, rot, spread, glints: fn(i) -> 0..1}
 function an83Bundle(ctx, x, y, n, o = {}) {
-  const s = o.s || 1, k = Math.min(Math.max(0, Math.round(n)), 7), base = -Math.PI / 2 + (o.rot || 0), spr = o.spread ?? 0.34;
+  const s = o.s || 1, k = Math.min(Math.max(0, Math.round(n)), 5), base = -Math.PI / 2 + (o.rot || 0), spr = o.spread ?? 1.15;
   if (k <= 0) return;
-  for (let i = 0; i < k; i++) { const a = base + (k > 1 ? (i / (k - 1) - 0.5) * spr * Math.min(1, k / 5) : 0), tip = [x + Math.cos(a) * 62 * s, y + Math.sin(a) * 62 * s];
-    an83Arrow(ctx, tip[0], tip[1], a, { s: s * 0.95, glint: o.glints ? o.glints(i) : 0 }); }
-  ctx.save(); ctx.translate(x, y); ctx.rotate(base + Math.PI / 2); shape(ctx, an83Close([[-12 * s, -6 * s], [12 * s, -6 * s], [12 * s, 5 * s], [-12 * s, 5 * s]]), C.red, { lw: 3, seed: 852 }); ctx.restore();
+  // a sheaf: five arrows fanned wide, heads staggered in two rows so each gold head reads; the centre one last (in front)
+  const order = [0, 4, 1, 3, 2].filter((i) => i < k);
+  for (const i of order) { const u = k > 1 ? i / (k - 1) - 0.5 : 0, a = base + u * spr * Math.min(1, k / 5), r = (i % 2 ? 58 : 70) * s, tip = [x + Math.cos(a) * r, y + Math.sin(a) * r];
+    an83Arrow(ctx, tip[0], tip[1], a, { s: s * 0.95, len: r / (s * 0.95) + 30, head: 1.55, fl: 0.45, flc: CREAM, facet: i === 2, glint: o.glints ? o.glints(i) : 0 }); }
+  ctx.save(); ctx.translate(x, y); ctx.rotate(base + Math.PI / 2); shape(ctx, an83Close([[-10 * s, -5 * s], [10 * s, -5 * s], [10 * s, 4 * s], [-10 * s, 4 * s]]), C.red, { lw: 3, seed: 852 }); ctx.restore();
 }
 // bow: grip at (x, y), stave along the local y axis (150 long), belly toward +x. o: {s, pull (string drawn back toward -x)}
 function an83Bow(ctx, x, y, rot, o = {}) {
@@ -92,11 +96,13 @@ function an83Bow(ctx, x, y, rot, o = {}) {
   seg(ctx, 20, -10, 28, 10, 10, C.red, 2.5);
   ctx.restore();
 }
-// purse (drawstring pouch): (x, y) = neck; hangs along +y rotated by rot. o: {open, s}
+// purse (drawstring pouch): (x, y) = neck; hangs along +y rotated by rot. o: {open, s}. Gathered frill above a yellow cord with dangling ends.
 function an83Purse(ctx, x, y, rot = 0, o = {}) {
   const s = o.s || 1; ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s);
-  shape(ctx, an83Close([[-8, 0], [8, 0], [22, 18], [26, 38], [16, 50], [-16, 50], [-26, 38], [-22, 18]]), '#c8481a', { lw: 4, seed: 860, dot: '#7a2410', pitch: 7, rad: 0.25, da: 0.5 });
-  seg(ctx, -11, 6, 11, 6, 6, C.yellow, 2.5); if (o.open) shape(ctx, ell(0, -2, 11 * o.open, 4, 12), C.black, { lw: 2 });
+  shape(ctx, an83Close([[-9, 4], [9, 4], [20, 16], [30, 34], [30, 50], [20, 60], [-20, 60], [-30, 50], [-30, 34], [-20, 16]]), '#c8481a', { lw: 4, seed: 860, dot: '#7a2410', pitch: 7, rad: 0.25, da: 0.5 });
+  shape(ctx, an83Close([[-9, 6], [-16, -8], [-8, -3], [-3, -12], [3, -3], [9, -12], [12, -2], [17, -8], [9, 6]]), '#e2672a', { lw: 3, seed: 863 });
+  if (o.open) shape(ctx, ell(0, -6, 10 * o.open, 3.5, 12), C.black, { lw: 1.5 });
+  seg(ctx, -12, 6, 12, 6, 6, C.yellow, 2.5); seg(ctx, 10, 6, 18, 22, 4, C.yellow, 2); seg(ctx, 12, 6, 24, 18, 4, C.yellow, 2);
   ctx.restore();
 }
 // coin (icon or falling piece)

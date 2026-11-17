@@ -18,3 +18,8 @@ Decisions the plan left open or that the measured set changed:
 - S11 is dawn-yellow, plain day from the cut at 113.7 (hides the dawn/day cross-fade). S16 sky dusk 0.5 to night 0.72 after the last word.
 - Wipe at 11.0 is a slanted yellow halftone band revealing the summit; irises at 50.3 and 64.7; dissolve 99.2-99.65; LATER card 106.78-107.58 "ANOTHER DAY...".
 - Skipped: the empty nest swaying at 172.6 is off-screen in the final mountain framing (the nest still sways in code); the fan eye spots reflected in the sparrow's pupils (9.90); per-feather fan stagger is by distance from the centre, not one frame per feather.
+
+v2 (Fable round 1, see review/revision_1.md):
+- Stone post moved 540 -> 440 (summit bake) so the peacock stands in the open at x 650 during the election; the sparrow flies to his place by the throne at 28.65 (not 32.76).
+- All birds drawn through `a46bird` (large badge `a46medal`, wing cover, glint, canvas-filter tints for the two fighters). Peacock gained `headFlip` and `tapF`; cage gained `bars`/`thin`/`dx`; net 'bag' gained `ground`/`light`, 'thrown' is see-through with trailing weights.
+- S11-S15 one sky (u 0.3). S15 is drawn on a plain sky + ground (no glade). S16 sun placed via `a46glade(..., { sunAt })`; S16 camFn gives the 0.9 s cut-in following the cage.

@@ -7,3 +7,10 @@
 - `spear` (guard spear with tassel), `huntingBow`, `scroll` (rolled / open ledger).
 - `insetCircle` (round recall inset with brush ring), `glint`, `sweatDrop`.
 - Helpers: `riderPt(seat, dir, s, hx, hy)` (world point of a rider's body-local hand target), `gestureTrack(t, list, rest)` (eased hand-target segments).
+
+## v2 additions (revision 1)
+- `an84ColP` / `an84RowP` + `an84Tag` struck state: a screen-space (panel-unit) price-tag ladder that camera pushes never crop, with a "struck but legible" state (dimmed paper-yellow, digits redrawn over a thin slash). Candidate `priceLadder` overlay.
+- `an84Aside(P, t, t0, d)`: setup/payoff pose function (finger to lips, wink, corner smile to the lens) reused for a recognition beat.
+- `an84Grin`: visible grin over a full black beard (the Library's white arc is thin at phone size).
+- `an84Palace`: far palace silhouette (dome between two towers) for desert horizons.
+- `an84Cucumber(..., bite)`: bitten food via an even-odd clip.

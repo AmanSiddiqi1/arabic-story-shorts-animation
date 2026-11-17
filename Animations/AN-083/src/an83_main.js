@@ -1,26 +1,33 @@
 // ===== AN-083 main: set, camera, effects, verse insets, the gold insert, lettering, transition, sound =====
 // ---------- camera (world view 1000 x 1230; keys from the plan, paired for holds; 0.01 s pairs are cuts) ----------
+// v2: every hold longer than 2 s puts the feet at about 85 % of the panel height (AN83_FY) and is tight enough that heads read on a phone.
+const AN83_FY = (z, f = 0.85) => AN83_GR - (f * AN83_VH - 615) / z;
+const an83Ck = (t, x, z, f) => [t, { x, y: AN83_FY(z, f), zoom: z }];
 const AN83_CAM = [
-  [0, { x: 500, y: 640, zoom: 1.0 }], [0.4, { x: 500, y: 640, zoom: 1.0 }], [6.0, { x: 560, y: 680, zoom: 1.15 }], [7.0, { x: 560, y: 680, zoom: 1.15 }], [10.8, { x: 700, y: 720, zoom: 1.45 }],
-  [11.4, { x: 690, y: 735, zoom: 1.6 }], [15.8, { x: 690, y: 735, zoom: 1.6 }], [17.0, { x: 700, y: 745, zoom: 1.9 }], [18.3, { x: 700, y: 745, zoom: 1.9 }], [19.6, { x: 720, y: 720, zoom: 2.1 }], [19.99, { x: 720, y: 720, zoom: 2.1 }],
-  [20.0, { x: 1000, y: 700, zoom: 1.2 }], [23.2, { x: 1000, y: 700, zoom: 1.2 }], [24.6, { x: 1330, y: 690, zoom: 1.05 }], [29.0, { x: 1330, y: 690, zoom: 1.05 }],
-  [29.9, { x: 1370, y: 715, zoom: 1.5 }], [36.3, { x: 1370, y: 715, zoom: 1.5 }], [38.3, { x: 1370, y: 725, zoom: 1.8 }], [39.99, { x: 1370, y: 725, zoom: 1.8 }],
-  [40.0, { x: 1300, y: 690, zoom: 2.0 }], [43.9, { x: 1300, y: 690, zoom: 2.0 }], [45.2, { x: 1400, y: 715, zoom: 1.45 }], [48.99, { x: 1400, y: 715, zoom: 1.45 }],
-  [49.0, { x: 1330, y: 720, zoom: 1.6 }], [49.36, { x: 1330, y: 720, zoom: 1.6 }], [50.6, { x: 1170, y: 720, zoom: 1.6 }], [58.8, { x: 1170, y: 720, zoom: 1.6 }], [59.9, { x: 1300, y: 715, zoom: 1.4 }], [60.09, { x: 1300, y: 715, zoom: 1.4 }],
-  [60.1, { x: 1300, y: 700, zoom: 2.1 }], [64.3, { x: 1300, y: 700, zoom: 2.1 }], [65.6, { x: 1290, y: 770, zoom: 2.4 }], [69.89, { x: 1290, y: 770, zoom: 2.4 }],
-  [69.9, { x: 1220, y: 715, zoom: 1.4 }], [70.39, { x: 1220, y: 715, zoom: 1.4 }],
-  [70.4, { x: 1400, y: 715, zoom: 1.35 }], [71.4, { x: 1400, y: 715, zoom: 1.35 }], [72.9, { x: 1440, y: 715, zoom: 1.35 }], [74.9, { x: 1500, y: 715, zoom: 1.35 }], [76.7, { x: 1480, y: 715, zoom: 1.3 }], [80.23, { x: 1480, y: 715, zoom: 1.3 }],
-  [80.24, { x: 1530, y: 720, zoom: 1.7 }], [84.5, { x: 1530, y: 720, zoom: 1.95 }], [90.4, { x: 1530, y: 720, zoom: 1.95 }], [90.55, { x: 1300, y: 705, zoom: 2.0 }], [92.0, { x: 1300, y: 705, zoom: 2.0 }],
-  [92.7, { x: 1400, y: 715, zoom: 1.3 }], [97.9, { x: 1400, y: 715, zoom: 1.3 }], [99.4, { x: 1470, y: 650, zoom: 1.8 }], [100.17, { x: 1470, y: 650, zoom: 1.8 }],
-  [100.18, { x: 1420, y: 715, zoom: 1.3 }], [107.89, { x: 1420, y: 715, zoom: 1.3 }],
-  [107.9, { x: 1430, y: 715, zoom: 1.9 }], [110.3, { x: 1430, y: 715, zoom: 1.9 }], [111.6, { x: 1400, y: 600, zoom: 1.15 }], [121.6, { x: 1420, y: 600, zoom: 1.15 }], [135.2, { x: 1435, y: 600, zoom: 1.15 }],
-  [141.2, { x: 1430, y: 600, zoom: 1.15 }], [143.4, { x: 1420, y: 560, zoom: 1.3 }], [144.05, { x: 1420, y: 560, zoom: 1.3 }],
-  [144.06, { x: 1300, y: 705, zoom: 2.0 }], [148.6, { x: 1300, y: 705, zoom: 2.0 }], [150.4, { x: 1390, y: 715, zoom: 1.4 }], [151.7, { x: 1340, y: 700, zoom: 1.2 }], [158.29, { x: 1340, y: 700, zoom: 1.2 }],
-  [158.3, { x: 1480, y: 715, zoom: 1.5 }], [162.4, { x: 1480, y: 715, zoom: 1.5 }], [165.1, { x: 1250, y: 640, zoom: 1.0 }], [AN83_DUR, { x: 1250, y: 640, zoom: 1.0 }]];
+  [0, { x: 500, y: 640, zoom: 1.0 }], [0.4, { x: 500, y: 640, zoom: 1.0 }], an83Ck(6.0, 560, 1.3), an83Ck(7.0, 590, 1.3), an83Ck(10.8, 650, 1.75),
+  an83Ck(11.6, 630, 2.0), an83Ck(15.8, 630, 2.0), an83Ck(17.0, 650, 2.1), an83Ck(18.3, 655, 2.1), an83Ck(19.6, 680, 2.25), an83Ck(19.99, 680, 2.25),
+  an83Ck(20.0, 990, 1.3), an83Ck(23.2, 990, 1.3), [24.6, { x: 1330, y: 690, zoom: 1.05 }], [29.0, { x: 1330, y: 690, zoom: 1.05 }],
+  an83Ck(29.9, 1345, 1.6), an83Ck(37.4, 1345, 1.6), an83Ck(38.7, 1440, 1.5), an83Ck(39.99, 1440, 1.5),
+  an83Ck(40.0, 1335, 2.3), an83Ck(43.99, 1335, 2.3), an83Ck(44.0, 1690, 1.6), an83Ck(44.79, 1690, 1.6),
+  an83Ck(44.8, 1345, 1.75), an83Ck(48.99, 1345, 1.75),
+  an83Ck(49.0, 1290, 1.75), an83Ck(49.4, 1290, 1.75), an83Ck(50.5, 1200, 1.75), an83Ck(54.3, 1200, 1.75), an83Ck(54.9, 1140, 2.0), an83Ck(58.8, 1140, 2.0), an83Ck(59.9, 1300, 1.5), an83Ck(60.09, 1300, 1.5),
+  an83Ck(60.1, 1275, 2.1), an83Ck(64.3, 1275, 2.1), [65.6, { x: 1260, y: 770, zoom: 2.4 }], [69.89, { x: 1260, y: 770, zoom: 2.4 }],
+  an83Ck(69.9, 1215, 1.6), an83Ck(70.39, 1215, 1.6),
+  an83Ck(70.4, 1330, 1.75), an83Ck(72.5, 1330, 1.75), an83Ck(73.6, 1390, 1.45), an83Ck(80.23, 1390, 1.45),
+  an83Ck(80.24, 1500, 2.4), an83Ck(84.5, 1495, 2.55), an83Ck(90.4, 1495, 2.55), an83Ck(90.55, 1330, 2.0), an83Ck(92.0, 1330, 2.0),
+  an83Ck(92.7, 1400, 1.5), an83Ck(97.9, 1400, 1.5), [99.4, { x: 1440, y: 650, zoom: 1.8 }], [100.17, { x: 1440, y: 650, zoom: 1.8 }],
+  an83Ck(100.18, 1440, 1.6), an83Ck(107.89, 1440, 1.6),
+  an83Ck(107.9, 1430, 1.9), an83Ck(110.3, 1430, 1.9), an83Ck(111.6, 1340, 1.45), an83Ck(141.2, 1340, 1.45), an83Ck(143.4, 1400, 1.6), an83Ck(144.05, 1400, 1.6),
+  an83Ck(144.06, 1290, 2.0), an83Ck(148.6, 1290, 2.0), an83Ck(150.4, 1360, 1.55), an83Ck(151.7, 1345, 1.5), an83Ck(158.49, 1345, 1.5),
+  an83Ck(158.5, 1400, 1.6), an83Ck(160.6, 1400, 1.6), [165.1, { x: 1250, y: 640, zoom: 1.0 }], [AN83_DUR, { x: 1250, y: 640, zoom: 1.0 }]];
 function an83Cam(t) { const c = K.camAt(AN83_CAM, t), z = c.zoom; return { x: K.clamp(c.x, 500 / z, AN83_WW - 500 / z), y: K.clamp(c.y, 615 / z, AN83_VH - 615 / z), zoom: z }; }
 const an83P = (x, y, c) => [500 + (x - c.x) * c.zoom, 615 + (y - c.y) * c.zoom];
 const an83Insert = (t) => t >= 65.84 && t < 69.9;
-const AN83_U = () => 0.25, AN83_WARM = (t) => kfn(t, [[162.44, 0], [165.1, 1]], 'inOut');
+const AN83_SUNSET = [300, 470];   // panel point where the sun sits at the end (just above the far dune at the final framing)
+const AN83_U = () => 0.25, AN83_WARM = (t) => kfn(t, [[161.6, 0], [165.1, 1]], 'inOut');
+// the sun fades out whenever an inset or a sky icon row needs that corner
+const AN83_SUNOFF = [[79.0, 80.24], [110.28, 121.65], [124.38, 135.25], [137.16, 144.6], [154.2, 158.5]];
+const an83SunA = (t) => AN83_SUNOFF.reduce((a, [p, q]) => Math.min(a, 1 - K.clamp(Math.min((t - p + 0.3) / 0.3, (q + 0.3 - t) / 0.3))), 1);
 // footfall dust (sampled once)
 const AN83_FALLS = [...footfalls(AN83_MXA, 0.5, 10.3, 29 * 0.8), ...footfalls(AN83_MXB, 20.0, 23.4, 29 * 0.7).map((f) => ({ ...f, big: true })), ...footfalls(an83X1, 20.0, 23.55, 29 * 0.75 * 0.98), ...footfalls(an83X2, 20.0, 23.7, 29 * 0.75 * 0.95)];
 
@@ -30,11 +37,12 @@ function an83Sky(ctx, t, cam) {
   ctx.save(); ctx.globalAlpha = 0.28 * (1 - K.clamp((u - 0.25) / 0.17)); const g = ctx.createLinearGradient(0, 0, 0, 900); g.addColorStop(0, '#fffaf0'); g.addColorStop(1, '#ffe9a0'); ctx.fillStyle = g; ctx.fillRect(0, 0, AN83_WW, 900); ctx.restore();
   { const w = AN83_WARM(t); if (w > 0) { ctx.save(); ctx.globalAlpha = 0.8 * w; const g2 = ctx.createLinearGradient(0, 0, 0, 900); g2.addColorStop(0, '#ffcf7a'); g2.addColorStop(1, '#ff9a4a'); ctx.fillStyle = g2; ctx.fillRect(0, 0, AN83_WW, 900); ctx.restore(); } }
   // the sun stays in the top left of the frame (sky-locked); it sinks and warms at the end
-  const k = AN83_WARM(t), px = K.lerp(170, 250, k), py = K.lerp(175, 330, k), sw = [cam.x + (px - 500) / cam.zoom, cam.y + (py - 615) / cam.zoom];
-  const pulseS = 1 + 0.12 * pulse(t, 3.0, 1.0);
-  ctx.save(); ctx.translate(sw[0], sw[1]); ctx.scale(pulseS / cam.zoom, pulseS / cam.zoom); sun(ctx, 0, 0, t);
+  const k = AN83_WARM(t), px = K.lerp(170, AN83_SUNSET[0], k), py = K.lerp(175, AN83_SUNSET[1], k), sw = [cam.x + (px - 500) / cam.zoom, cam.y + (py - 615) / cam.zoom], sa = an83SunA(t);
+  const pulseS = (1 + 0.12 * pulse(t, 3.0, 1.0)) * (1 + 0.15 * k);
+  if (sa > 0.01) { ctx.save(); ctx.globalAlpha *= sa; ctx.translate(sw[0], sw[1]); ctx.scale(pulseS / cam.zoom, pulseS / cam.zoom); sun(ctx, 0, 0, t);
+  if (k > 0) { ctx.save(); ctx.globalAlpha *= 0.7 * k; ctx.fillStyle = '#ff7a1a'; ctx.beginPath(); ctx.arc(0, 0, 66, 0, 7); ctx.fill(); ctx.restore(); }
   if (t < 30) { ctx.globalAlpha = 0.5 * (1 - K.clamp((t - 23) / 6)); ctx.lineWidth = 6; ctx.strokeStyle = C.white; for (let i = 0; i < 2; i++) { const r = 130 + ((t * 40 + i * 50) % 100); ctx.globalAlpha *= 1; ctx.beginPath(); ctx.arc(0, 0, r, 0, 7); ctx.stroke(); } }
-  ctx.restore();
+  ctx.restore(); }
 }
 function an83Girls(ctx, F, behind) { for (const P of F.g) if (!P.hidden && !!P.behind === behind) an83Draw(ctx, F, P); }
 function an83Draw(ctx, F, P) { const k = P === F.M ? 'M' : P === F.m1 ? 'm1' : P === F.m2 ? 'm2' : 'g' + F.g.indexOf(P); for (const f of F.pre[k]) f(ctx); person(ctx, P); for (const f of F.post[k]) f(ctx); }
@@ -65,39 +73,31 @@ function an83Fx(ctx, t, F, cam) {
   // sweat drop from Ma'an's chin (10.5-11.1)
   if (an83In(t, 10.5, 11.2)) { const h = an83HeadW(M); an83Drop(ctx, h[0] + 6 * M.dir, fallY(t, 10.55, 11.15, h[1] + 40, AN83_GR - 6), 7); }
   // the one drop that misses (11.5-11.95), a puff where it lands
-  if (an83In(t, 11.5, 12.4)) { const h = an83HeadW(m1), x0 = h[0] + 40 * m1.dir; if (t < 11.95) an83Drop(ctx, x0 + 18 * m1.dir * K.clamp((t - 11.5) / 0.45), fallY(t, 11.5, 11.95, h[1] - 50, AN83_GR - 8), 9); else dustBurst(ctx, x0 + 18 * m1.dir, AN83_GR - 6, t - 11.95, 5, 4, 10, 26, 0.45, 7); }
+  if (an83In(t, 11.4, 12.4)) { const h = an83HeadW(m1), x0 = h[0] + 30 * m1.dir; if (t < 11.95) { const y = fallY(t, 11.4, 11.95, h[1] - 90, AN83_GR - 8), x = x0 + 22 * m1.dir * K.clamp((t - 11.4) / 0.55); an83Drop(ctx, x, y, 8, '#4a90e8'); shape(ctx, ell(x - 2.5, y - 3, 2.2, 3.2, 8), C.white, { lw: 0 }); }
+    else { dustBurst(ctx, x0 + 22 * m1.dir, AN83_GR - 6, t - 11.95, 5, 4, 10, 26, 0.45, 7); ctx.save(); ctx.globalAlpha = 0.8 * (1 - K.clamp((t - 11.95) / 0.4)); ctx.lineWidth = 3; ctx.strokeStyle = '#7a4212'; ctx.beginPath(); ctx.ellipse(x0 + 22 * m1.dir, AN83_GR - 2, 10 + 40 * (t - 11.95), 4 + 8 * (t - 11.95), 0, 0, 7); ctx.stroke(); ctx.restore(); } }
   // Ma'an drinks: a drop runs down his chin; man2's splash
-  if (an83In(t, 41.0, 42.1)) { const h = an83HeadW(M); an83Drop(ctx, h[0] + 4 * M.dir, h[1] + 30 + 40 * K.clamp((t - 41.0) / 1.1), 6); }
+  if (an83In(t, 43.3, 44.1)) { const h = an83HeadW(M); an83Drop(ctx, h[0] + 16 * M.dir, fallY(t, 43.3, 44.1, h[1] + 22, h[1] + 200), 6, '#4a90e8'); }
   if (m2.splash) { const h = an83HeadW(m2); for (let i = 0; i < 6; i++) { const u = ((t * 1.7 + i / 6) % 1), a = -Math.PI / 2 + (i - 2.5) * 0.45; an83Drop(ctx, h[0] + Math.cos(a) * (30 + 50 * u), h[1] - 40 + 60 * u * u + Math.sin(a) * 30 * (1 - u), 6); } }
   // Ma'an's satisfied breath (43.3-43.9)
   if (an83In(t, 43.3, 43.95)) { const h = an83HeadW(M), u = (t - 43.3) / 0.65; ctx.save(); ctx.globalAlpha = Math.sin(Math.PI * u) * 0.9; cloudFlat(ctx, h[0] + (40 + 50 * u) * M.dir, h[1] + 10 - 20 * u, 0.25 + 0.2 * u); ctx.restore(); }
-  // under-glow of the gold on the girls' chins (S9)
-  if (an83In(t, 80.3, 88.0)) for (const P of g) { const h = an83HeadW(P); ctx.save(); ctx.globalAlpha = 0.4 * an83Fade(t, 80.3, 88.0, 0.4); ctx.fillStyle = dotPat(ctx, C.yellow, 8, 0.45); ctx.beginPath(); ctx.ellipse(h[0], h[1] + 36, 46 * P.s, 26 * P.s, 0, 0, 7); ctx.fill(); ctx.restore(); }
   // the tapped tip rings (82.2-83.3)
-  if (F.tapAt && an83In(t, 82.25, 83.3)) soundArcs(ctx, F.tapAt[0] + 14, F.tapAt[1] - 10, 1, t, C.white);
+  if (F.tapAt && an83In(t, 82.7, 83.4)) soundArcs(ctx, F.tapAt[0] + 14, F.tapAt[1] - 10, 1, t, C.white);
   // girl3 holds an arrow to the sun (83.6-84.7)
-  if (F.g3Tip && t >= 83.6) an83Glow(ctx, F.g3Tip[0], F.g3Tip[1] - 6, 60, t, an83Fade(t, 83.6, 84.7, 0.2));
+  if (F.g3Tip && t >= 83.2) an83Glow(ctx, F.g3Tip[0], F.g3Tip[1] + 60, 50, t, an83Fade(t, 83.2, 84.0, 0.2));
   // the raised arrow (94.9-100.18): glow, the big burst on "gold"
-  if (F.g1Tip && t >= 95.2 && t < 100.18) an83Glow(ctx, F.g1Tip[0], F.g1Tip[1] - 14, t >= 99.5 ? 70 + 30 * pulse(t, 99.5, 0.7) : 58, t, an83Fade(t, 95.2, 100.18, 0.3) * (t >= 98.1 ? 1 : 0.6));
+  if (F.g1Tip && t >= 95.2 && t < 100.18) an83Glow(ctx, F.g1Tip[0], F.g1Tip[1] + 70, t >= 99.5 ? 70 + 30 * pulse(t, 99.5, 0.7) : 58, t, an83Fade(t, 95.2, 100.18, 0.3) * (t >= 98.1 ? 1 : 0.6));
   // three open hands and a heart above the girls (93.52-94.8)
   if (an83In(t, 93.52, 94.85)) { ctx.save(); ctx.globalAlpha = an83Fade(t, 93.52, 94.85, 0.15); for (let i = 0; i < 3; i++) { const k = K.ease.back(K.clamp((t - 93.55 - i * 0.12) / 0.25)); if (k > 0) an83HandIcon(ctx, 1450 + i * 75, 560, 1.3 * k); } const k = K.ease.back(K.clamp((t - 94.0) / 0.3)); if (k > 0) heart(ctx, 1525, 470, 34 * k); ctx.restore(); }
   // counting off: badges 1, 2, 3 over the raised hands (105.0-106.0)
   if (an83In(t, 104.96, 106.1)) for (let i = 0; i < 3; i++) { const st = 105.0 + i * 0.3; if (t < st + 0.05) continue; const h = an83HandW(g[i], 1); ctx.save(); ctx.globalAlpha = an83Fade(t, st, 106.1, 0.12); if (an83Badge(ctx, h[0], h[1] - 60, 30, (t - st) / 0.25, C.yellow)) { ctx.font = `44px ${BF}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = C.black; ctx.fillText(String(i + 1), h[0], h[1] - 58); } ctx.restore(); }
   // the scroll of verses (105.92-107.3)
   if (an83In(t, 105.92, 107.4)) { ctx.save(); ctx.globalAlpha = an83Fade(t, 105.92, 107.4, 0.15); an83Scroll(ctx, 1540, 545, 220, (t - 105.95) / 0.4, (t - 106.4) / 0.8); ctx.restore(); }
-  // musical notes rising from each reciter into her inset
-  for (const [a, b, i] of [[110.3, 112.4, 0], [124.4, 126.5, 1], [137.2, 139.3, 2]]) if (an83In(t, a, b)) { const h = an83HeadW(g[i]); for (let k = 0; k < 3; k++) { const u = K.clamp((t - a - k * 0.35) / 1.2); if (u <= 0 || u >= 1) continue; ctx.save(); ctx.globalAlpha = Math.sin(Math.PI * u); note(ctx, K.lerp(h[0] - 20, AN83_INSET[0] + 20 * (k - 1), u) + 14 * Math.sin(u * 9 + k), K.lerp(h[1] - 70, AN83_INSET[1] + AN83_INSET[2] + 10, u), 0.9, [C.red, C.blue, C.black][i]); ctx.restore(); } }
-  // the verse insets
-  const I = AN83_INSET, op = (a, b) => K.clamp((t - a) / 0.5) * K.clamp((b - t) / 0.3);
-  if (an83In(t, 110.28, 121.65)) an83Inset(ctx, I[0], I[1], I[2], op(110.28, 121.65), C.yellow, (c) => an83Verse1(c, t), '#fff3c8');
-  if (an83In(t, 124.38, 135.25)) an83Inset(ctx, I[0], I[1], I[2], op(124.38, 135.25), C.red, (c) => an83Verse2(c, t), '#ffe1c8');
-  if (an83In(t, 137.16, 144.6)) an83Inset(ctx, I[0], I[1], I[2], op(137.16, 144.6), C.blue, (c) => an83Verse3(c, t), '#e4efff');
   // the memory of the water (148.64-150.4): a small frozen inset beside girl1's skin
   if (an83In(t, 148.64, 150.45)) { const P = g[0], w = an83W(P, -40, -128); an83Inset(ctx, w[0] - 150, w[1] - 150, 110, K.clamp((t - 148.64) / 0.35) * K.clamp((150.45 - t) / 0.3), C.yellow, (c) => an83Memory(c, t), '#f6e2a8'); }
 }
 
 // ---------- verse insets (each in its own 460 x 460 space, ground y 380) ----------
-const AN83_VZ = (c, f) => { c.save(); c.translate(230, 390); c.scale(1.3, 1.3); c.translate(-230, -390); f(); c.restore(); };
+const AN83_VZ = (c, f, z = 1.7, dx = 0) => { c.save(); c.translate(230, 390); c.scale(z, z); c.translate(-230 + dx, -390); f(); c.restore(); };
 const AN83_HELM = (c, P) => { const h = an83HeadW(P), s = P.s; shape(c, an83Close([[h[0] - 38 * s, h[1] - 6 * s], [h[0] - 34 * s, h[1] - 34 * s], [h[0], h[1] - 50 * s], [h[0] + 34 * s, h[1] - 34 * s], [h[0] + 38 * s, h[1] - 6 * s]]), STONE, { lw: 4, seed: 890, dot: STONED, pitch: 5, rad: 0.2, da: 0.5 }); seg(c, h[0], h[1] - 50 * s, h[0], h[1] - 64 * s, 5, C.red, 2); };
 function an83InsetGround(c, col = '#edc65a') { shape(c, an83Close([[-10, 380], [470, 380], [470, 470], [-10, 470]]), col, { lw: 5, seed: 891, dot: C.red, pitch: 10, rad: 0.18, da: 0.35 }); }
 function an83Verse1(c, t) {
@@ -117,14 +117,14 @@ function an83Verse1(c, t) {
   else { W.x = walkX(t); Object.assign(W, { ph: W.x / (29 * 0.6 * s), amp: 0.6 * K.clamp(Math.abs(speed(walkX, t)) / 20) }); W.handR = t > 118.9 ? an83St(t, [[118.9, AN83_DR], [119.0, [60, -100]]], 0.25, AN83_DR) : AN83_DR; W.handL = [-30, -110]; }
   person(c, W); AN83_HELM(c, W);
   if (t < 118.06) { const h = an83HandW(W, -1); if (t >= 112.9) an83Bow(c, h[0], h[1], Math.PI, { s: 0.45, pull: t < 113.5 ? 16 * AN83_B(t, 113.0, 0.4) : 0 }); else an83Bow(c, h[0] - 4, h[1] - 20, -0.3, { s: 0.45 }); }
-  else { const h = an83HandW(W, -1); an83Bow(c, h[0], h[1] - 10, 0.3, { s: 0.45 }); if (t < 119.3) { const r = an83HandW(W, 1); an83Arrow(c, r[0] + 26, r[1] + 6, Math.PI * 0.15, { s: 0.45, glint: K.clamp((t - 118.8) / 0.4) }); } }
+  else { const h = an83HandW(W, -1); an83Bow(c, h[0], h[1] - 10, 0.3, { s: 0.45 }); if (t < 119.3) { const r = an83HandW(W, 1); an83Arrow(c, r[0] + 34, r[1] + 8, Math.PI * 0.15, { s: 0.6, head: 1.8, fl: 0.8, glint: K.clamp((t - 118.8) / 0.4) }); } }
   // the arrow's flight on a dotted gold arc, then bread and a coin
   const hh = an83Lerp(an83HandW(P1, -1), an83HandW(P1, 1), 0.5), A = [285, 300], Bp = [215, 150], Cc = [hh[0] + 6, hh[1] - 4];
   if (t >= 113.5 && t < 114.68) { const u = K.clamp((t - 113.5) / 1.18), q = (k) => [(1 - k) * (1 - k) * A[0] + 2 * (1 - k) * k * Bp[0] + k * k * Cc[0], (1 - k) * (1 - k) * A[1] + 2 * (1 - k) * k * Bp[1] + k * k * Cc[1]];
     c.save(); c.fillStyle = C.yellow; c.strokeStyle = C.black; c.lineWidth = 2; for (let k = 0; k < u; k += 0.06) { const p = q(k); c.beginPath(); c.arc(p[0], p[1], 4, 0, 7); c.fill(); c.stroke(); } c.restore();
-    const p = q(u), p2 = q(Math.min(1, u + 0.02)); an83Arrow(c, p[0], p[1], Math.atan2(p2[1] - p[1], p2[0] - p[0]), { s: 0.5 }); }
-  if (t >= 114.68) { const h = hh; if (t < 115.2) an83Arrow(c, h[0] + 4, h[1] - 26, -Math.PI / 2 + 0.3, { s: 0.5, glint: (t - 114.68) / 0.5 });
-    else { const k = K.ease.back(K.clamp((t - 115.2) / 0.3)); an83Bread(c, h[0] + 6, h[1] - 14, 0.8 * k); an83Coin(c, h[0] - 16, h[1] - 34, 13 * k, t * 3); } }
+    const p = q(u), p2 = q(Math.min(1, u + 0.02)); an83Arrow(c, p[0], p[1], Math.atan2(p2[1] - p[1], p2[0] - p[0]), { s: 0.7, head: 1.7, fl: 0.8 }); }
+  if (t >= 114.68) { const h = hh; if (t < 115.2) an83Arrow(c, h[0] + 4, h[1] - 36, -Math.PI / 2 + 0.3, { s: 0.7, head: 1.8, fl: 0.8, glint: (t - 114.68) / 0.5 });
+    else { const k = K.ease.back(K.clamp((t - 115.2) / 0.3)); an83Bread(c, h[0] + 8, h[1] - 18, 1.35 * k); an83Coin(c, h[0] - 20, h[1] - 50, 21 * k, t * 3); } }
   });
 }
 function an83Verse2(c, t) {
@@ -133,27 +133,32 @@ function an83Verse2(c, t) {
   c.fillStyle = dotPat(c, '#e2701a', 12, 0.2); c.fillRect(0, 0, 460, 460);
   AN83_VZ(c, () => {
   an83InsetGround(c, dusk > 0.5 ? '#c98a3a' : '#edc65a');
-  const s = 0.55, app = K.ease.back(K.clamp((t - 125.4) / 0.4));
+  const s = 0.55, app = 1, F2 = {};
   // friend (left) and foe (right)
   const fr = K.ease.back(K.clamp((t - 128.88) / 0.35)), fo = K.ease.back(K.clamp((t - 130.22) / 0.35));
   if (fr > 0.01) { const P = { costume: 'villager', s: 0.52 * fr, x: 118, y: 380, dir: 1, seed: 96, mouth: 'open', talk: 0.5 + 0.5 * Math.abs(Math.sin(t * 14)), aL: [-2.5, -2.8], aR: [2.5, 2.8], gaze: [0.5, -0.6] }; person(c, P); }
-  if (fo > 0.01) { const br = an83St(t, [[130.22, 0.8], [130.6, -0.5, 0.5]]), sp = an83St(t, [[130.22, 0], [130.6, 0.52, 0.5]]); const P = { costume: 'bedouin', pal: { robe: '#3a3a4a', dot: '#1a1a24', cape: '#5a2a1a', hc: C.black, hd: '#3a3a4a' }, age: 0.4, s: 0.52 * fo, x: 342, y: 380, dir: -1, seed: 97, brow: br, mouth: t > 130.7 ? 'o' : 'frown', handR: [40, -120], handL: [-40, -100], gaze: [-0.6, -0.5] };
-    person(c, P); const h = an83HandW(P, 1); c.save(); c.translate(h[0], h[1]); c.rotate(-0.15 - sp); seg(c, 0, 60, 0, -150, 6, '#7a4212', 2.5); shape(c, an83Close([[0, -175], [-9, -148], [9, -148]]), STONE, { lw: 2.5 }); c.restore(); }
+  const catchK = AN83_B(t, 130.55, 0.4);   // the foe drops his guard and cups his hands
+  if (fo > 0.01) { const br = an83St(t, [[130.22, 0.9], [130.55, -0.6, 0.4]]); const P = { costume: 'bedouin', pal: { robe: '#3a3a4a', dot: '#1a1a24', cape: '#5a2a1a', hc: C.black, hd: '#3a3a4a' }, age: 0.4, s: 0.52 * fo, x: 342, y: 380, dir: -1, seed: 97, brow: br, mouth: t > 130.6 ? 'o' : 'frown', eyes: t > 130.6 ? 'wide' : 'open', handR: an83Lerp([40, -120], [44, -112], catchK), handL: an83Lerp([-40, -100], [30, -106], catchK), gaze: [-0.6, -0.5] };
+    // the spear: held, then planted upright behind him
+    const h = an83HandW(P, 1), sp = an83Lerp([h[0], h[1]], [392, 300], catchK); c.save(); c.translate(sp[0], sp[1]); c.rotate(-0.15 * (1 - catchK)); seg(c, 0, 60 + 20 * catchK, 0, -150, 6, '#7a4212', 2.5); shape(c, an83Close([[0, -175], [-9, -148], [9, -148]]), STONE, { lw: 2.5 }); c.restore();
+    person(c, P); F2.foeHands = an83Lerp(an83HandW(P, -1), an83HandW(P, 1), 0.5);
+    if (catchK > 0.9) { const hh = F2.foeHands; for (let k = 0; k < Math.min(4, Math.floor((t - 130.95) / 0.25) + 1); k++) an83Coin(c, hh[0] - 8 + k * 6, hh[1] - 6 - k * 5, 9, k); } }
+  if (fr > 0.01) F2.friendHands = an83HandW({ costume: 'villager', s: 0.52 * fr, x: 118, y: 380, dir: 1, aL: [-2.5, -2.8], aR: [2.5, 2.8] }, 1);
   // the giver
   if (app > 0.01) { const P = { costume: 'bedouin', pal: AN83_PAL.maan, age: 0.3, s: s * app, x: 230, y: 380, dir: 1, seed: 98, mouth: 'smile' }; if (t >= 126.76) { const u = AN83_B(t, 126.76, 0.4); P.handL = an83Lerp(AN83_DL, [-95, -150], u); P.handR = an83Lerp(AN83_DR, [95, -150], u); }
     an83Local(c, P, (k) => an83Quiver(k, 30, -190, { rot: 0.4, n: 6, open: 1 })); person(c, P); AN83_HELM(c, P);
     // the shower of gold to both sides, without a break
     if (t >= 128.12) { const hl = an83HandW(P, -1), hr = an83HandW(P, 1);
-      for (let k = 0; k < 80; k++) { const t0 = 128.12 + k * 0.11; if (t0 > t) break; const u = (t - t0) / 0.75; if (u >= 1) continue; const L = k % 2 === 0, from = L ? hl : hr, to = L ? [128, 300] : [332, 300], x = K.lerp(from[0], to[0], u), y = K.lerp(from[1], to[1], u) - 120 * Math.sin(Math.PI * u);
-        if (k % 4 < 2) an83Coin(c, x, y, 10, t * 8 + k); else an83Arrow(c, x, y, L ? Math.PI + 0.6 * (u - 0.5) * 2 : 0.6 * (u - 0.5) * 2, { s: 0.36 }); } } }
-  const lab = (txt, x, y, a) => { if (t < a) return; c.save(); c.globalAlpha = K.clamp((t - a) / 0.2); c.font = `34px ${BF}`; c.textAlign = 'center'; c.lineWidth = 6; c.strokeStyle = C.black; c.fillStyle = C.white; c.strokeText(txt, x, y); c.fillText(txt, x, y); c.restore(); };
-  lab('FRIEND', 118, 215, 129.0); lab('FOE', 342, 215, 130.35);
-  });
+      for (let k = 0; k < 80; k++) { const t0 = 128.12 + k * 0.11; if (t0 > t) break; const u = (t - t0) / 0.75; if (u >= 1) continue; const L = k % 2 === 0, from = L ? hl : hr, to = L ? (F2.friendHands || [128, 300]) : (F2.foeHands || [332, 300]), x = K.lerp(from[0], to[0], u), y = K.lerp(from[1], to[1], u) - 120 * Math.sin(Math.PI * u);
+        if (k % 4 < 2) an83Coin(c, x, y, 15, t * 8 + k); else an83Arrow(c, x, y, L ? Math.PI + 0.6 * (u - 0.5) * 2 : 0.6 * (u - 0.5) * 2, { s: 0.5, head: 1.7, fl: 0.7 }); } } }
+  const lab = (txt, x, y, a) => { if (t < a) return; c.save(); c.globalAlpha = K.clamp((t - a) / 0.2); c.font = `30px ${BF}`; c.textAlign = 'center'; c.lineWidth = 6; c.strokeStyle = C.black; c.fillStyle = C.white; c.strokeText(txt, x, y); c.fillText(txt, x, y); c.restore(); };
+  lab('FRIEND', 140, 205, 129.0); lab('FOE', 330, 205, 130.35);
+  }, 1.45);
 }
 function an83Verse3(c, t) {
   c.fillStyle = dotPat(c, '#9cc4ff', 12, 0.22); c.fillRect(0, 0, 460, 460);
   AN83_VZ(c, () => { an83InsetGround(c, '#e6c27a');
-  const app = K.clamp((t - 138.0) / 0.4); if (app <= 0) return;
+  const app = 1;
   c.save(); c.globalAlpha = app;
   const kn = AN83_B(t, 141.2, 0.4), bow = AN83_B(t, 142.9, 0.5);
   const D = { costume: 'physician', age: 0.8, s: 0.52, x: 140, y: 380, dir: 1, seed: 99, kneel: kn, handR: t < 141.2 ? (t > 139.2 ? [60, -104] : AN83_DR) : [86, -120], handL: t < 141.2 ? AN83_DL : [70, -110], gaze: [0.7, 0.4], lid: Math.max(bow, blink(t, 99)), drop: 6 * bow };
@@ -165,15 +170,15 @@ function an83Verse3(c, t) {
   // the bandage round the soldier's arm (red cloth cross before)
   const ah = an83HandW(Sd, -1), ar = an83Lerp(an83W(Sd, -31, -132 + 4), ah, 0.55);
   if (t < 141.5) { seg(c, ar[0] - 7, ar[1] - 7, ar[0] + 7, ar[1] + 7, 4, C.red, 0); seg(c, ar[0] + 7, ar[1] - 7, ar[0] - 7, ar[1] + 7, 4, C.red, 0); }
-  else { const n = Math.min(4, Math.floor((t - 141.5) / 0.22) + 1); for (let k = 0; k < n; k++) seg(c, ar[0] - 9, ar[1] - 9 + k * 5, ar[0] + 9, ar[1] - 5 + k * 5, 6, C.white, 2); }
+  else { const n = Math.min(4, Math.floor((t - 141.5) / 0.22) + 1); for (let k = 0; k < n; k++) seg(c, ar[0] - 13, ar[1] - 12 + k * 7, ar[0] + 13, ar[1] - 7 + k * 7, 9, C.white, 2.5); }
   person(c, D);
   // the golden arrowhead drops into his palm
-  if (t >= 139.36) { const h = an83HandW(D, 1), y = t < 139.86 ? fallY(t, 139.36, 139.86, 60, h[1] - 8) : h[1] - 8; if (t < 141.2) { c.save(); c.translate(h[0], y); c.rotate(Math.PI / 2); shape(c, an83Close([[0, 0], [-16, -6], [-12, 0], [-16, 6]]), C.yellow, { lw: 2.5, seed: 893, dot: C.red, pitch: 4, rad: 0.22, da: 0.6 }); c.restore(); if (t < 140.3) star(c, h[0] + 8, y - 10, 9 * Math.sin(Math.PI * K.clamp((t - 139.86) / 0.4)), C.white); } }
+  if (t >= 139.36) { const h = an83HandW(D, 1), y = t < 139.86 ? fallY(t, 139.36, 139.86, 60, h[1] - 8) : h[1] - 8; if (t < 141.2) { c.save(); c.translate(h[0], y); c.rotate(Math.PI / 2); c.scale(1.9, 1.9); shape(c, an83Close([[0, 0], [-16, -6], [-12, 0], [-16, 6]]), C.yellow, { lw: 2, seed: 893 }); seg(c, -3, -1, -12, -3.5, 1.5, C.white, 0); c.restore(); if (t < 140.6) star(c, h[0] + 8, y - 14, 14 * Math.sin(Math.PI * K.clamp((t - 139.86) / 0.6)), C.white); } }
   // the shroud with one flower
   const sh = K.clamp((t - 142.52) / 0.5); if (sh > 0) { c.save(); c.globalAlpha *= sh; shape(c, an83Close([[300, 380], [300, 356], [372, 356], [372, 380]]), '#a8741a', { lw: 4, seed: 894 }); shape(c, an83Close([[294, 356], [294, 330], [378, 330], [378, 356]]), C.white, { lw: 4, seed: 895 }); seg(c, 300, 343, 372, 343, 2, '#c9bfa6', 0);
     const fy = t < 142.7 ? 260 : settleTo(t, 142.7, 260, 322, 0.5, 0.06); seg(c, 336, fy + 4, 356, fy + 2, 3, '#2b7a38', 0); for (let k = 0; k < 5; k++) { const a = k / 5 * Math.PI * 2; shape(c, ell(336 + Math.cos(a) * 6, fy + Math.sin(a) * 6, 5, 5, 8), C.red, { lw: 1.5 }); } shape(c, ell(336, fy, 3.5, 3.5, 8), C.yellow, { lw: 1 }); c.restore(); }
   c.restore();
-  });
+  }, 1.6, -18);
 }
 function an83Memory(c, t) {   // the S4 handover as one frozen frame, in a 220 x 220 space
   c.fillStyle = dotPat(c, '#e8b25a', 9, 0.3); c.fillRect(0, 0, 220, 220); shape(c, an83Close([[-5, 190], [225, 190], [225, 230], [-5, 230]]), '#edc65a', { lw: 4, seed: 896 });
@@ -187,18 +192,19 @@ function an83InsertDraw(ctx, t) {
   const g = ctx.createLinearGradient(0, 0, 0, 1230); g.addColorStop(0, '#fffaf0'); g.addColorStop(1, '#ffd96a'); ctx.fillStyle = g; ctx.fillRect(0, 0, 1000, 1230);
   ctx.save(); ctx.globalAlpha = 0.25; ctx.fillStyle = dotPat(ctx, C.blue, 14, 0.25); ctx.fillRect(0, 0, 1000, 1230); ctx.restore();
   sun(ctx, 170, 170, t); an83Heat(ctx, 0, 1000, 1100, t, 0.6);
-  const S3 = 6.0, rim = 800, glow = AN83_B(t, 68.84, 0.3);
+  const S3 = 6.0, rim = 800, glow = AN83_B(t, 69.12, 0.25);
   // the first arrow: nock first, the head last (it hangs head down from his fingers)
-  const tipY = an83Path(t, [[65.84, rim + 560], [67.22, rim + 4], [67.6, rim - 170, 'out'], [67.8, rim - 170], [68.84, rim - 300, 'inOut']]), tailY = tipY - 120 * S3;
-  if (glow > 0) an83Glow(ctx, 500, tipY - 70, 420, t, glow);
+  // v2: the head stays hidden in the quiver until the word: slow rise, a hesitation at 67.8, 6 frames of stillness, then it clears the rim on "al-dhahab" 69.22
+  const AL = 180, tipY = an83Path(t, [[65.84, rim + 740], [66.2, rim + 720, 'inOut'], [67.8, rim + 450, 'inOut'], [68.0, rim + 452], [68.7, rim + 275, 'inOut'], [68.9, rim + 275], [69.22, rim - 50, 'out'], [69.8, rim - 130, 'inOut']]), tailY = tipY - AL * S3;
+  if (glow > 0) an83Glow(ctx, 500, Math.min(rim - 120, tipY - 140), 420, t, glow);
   // four more heads rise in a fan behind it
   ctx.save(); ctx.beginPath(); ctx.rect(0, 0, 1000, rim + 6); ctx.clip();
-  for (let k = 0; k < 4; k++) { const st = 68.9 + k * 0.1, u = AN83_B(t, st, 0.5, 'out'); if (u <= 0) continue; const a = -Math.PI / 2 + [-0.5, -0.22, 0.22, 0.5][k], tip = [500 + Math.cos(a) * (40 + 420 * u), rim + 120 + Math.sin(a) * (40 + 420 * u)];
-    an83Arrow(ctx, tip[0], tip[1], a, { s: 3.2, glint: K.clamp((t - st - 0.4) / 0.4) }); }
+  for (let k = 0; k < 4; k++) { const st = 69.25 + k * 0.08, u = AN83_B(t, st, 0.4, 'out'); if (u <= 0) continue; const a = -Math.PI / 2 + [-0.5, -0.22, 0.22, 0.5][k], tip = [500 + Math.cos(a) * (40 + 420 * u), rim + 120 + Math.sin(a) * (40 + 420 * u)];
+    an83Arrow(ctx, tip[0], tip[1], a, { s: 3.2, head: 1.5, glint: K.clamp((t - st - 0.3) / 0.4) }); }
   ctx.restore();
   an83Quiver(ctx, 500, rim, { s: S3, open: 1, n: 0 });
   ctx.save(); ctx.beginPath(); ctx.rect(0, 0, 1000, rim + 10); ctx.clip();
-  an83Arrow(ctx, 500, tipY, Math.PI / 2, { s: S3, glint: K.clamp((t - 68.84) / 0.5) });
+  an83Arrow(ctx, 500, tipY, Math.PI / 2, { s: S3, len: AL, head: 1.6, glint: K.clamp((t - 69.22) / 0.5) });
   ctx.restore();
   // his hand on the shaft, the blue sleeve coming in from the left
   const hy = tailY + 60 * S3;
@@ -207,19 +213,29 @@ function an83InsertDraw(ctx, t) {
 }
 
 // ---------- panel-space lettering, counters and icons ----------
+// ---------- the verse insets, in PANEL space (centre AN83_INSET, radius 300); the sun is faded out while one is open ----------
+function an83Insets(ctx, t, cam) {
+  const F = an83F(t), g = F.g, I = AN83_INSET, op = (a, b) => K.clamp((t - a) / 0.5) * K.clamp((b - t) / 0.3);
+  // musical notes rising from each reciter into her inset
+  for (const [a, b, i] of [[110.3, 112.4, 0], [124.4, 126.5, 1], [137.2, 139.3, 2]]) if (an83In(t, a, b)) { const h = an83P(...an83HeadW(g[i]), cam); for (let k = 0; k < 3; k++) { const u = K.clamp((t - a - k * 0.35) / 1.2); if (u <= 0 || u >= 1) continue; ctx.save(); ctx.globalAlpha = Math.sin(Math.PI * u); note(ctx, K.lerp(h[0] - 20, I[0] + 40 * (k - 1), u) + 14 * Math.sin(u * 9 + k), K.lerp(h[1] - 90, I[1] + I[2] + 10, u), 1.2, [C.red, C.blue, C.black][i]); ctx.restore(); } }
+  const sc = (c, f) => { c.save(); c.scale(2 * I[2] / 460, 2 * I[2] / 460); f(c); c.restore(); };
+  if (an83In(t, 110.28, 121.65)) an83Inset(ctx, I[0], I[1], I[2], op(110.28, 121.65), C.yellow, (c) => sc(c, (c2) => an83Verse1(c2, t)), '#fff3c8');
+  if (an83In(t, 124.38, 135.25)) an83Inset(ctx, I[0], I[1], I[2], op(124.38, 135.25), C.red, (c) => sc(c, (c2) => an83Verse2(c2, t)), '#ffe1c8');
+  if (an83In(t, 137.16, 144.6)) an83Inset(ctx, I[0], I[1], I[2], op(137.16, 144.6), C.blue, (c) => sc(c, (c2) => an83Verse3(c2, t)), '#e4efff');
+}
 function an83Over(ctx, t, cam, S) {
   const F = an83F(t), P = (x, y) => an83P(x, y, cam);
   const lab = (txt, x, y, a, b, o = {}) => { if (t < a || t >= b) return; ctx.save(); ctx.globalAlpha = an83Fade(t, a, b, 0.2); S.label(ctx, txt, x, y, AN83_B(t, a, 0.35), { size: 46, align: 'center', ...o }); ctx.restore(); };
   const arr = (a0, a1, a, b, o = {}) => { if (t < a || t >= b) return; ctx.save(); ctx.globalAlpha = an83Fade(t, a, b, 0.2); S.arrow(ctx, a0, a1, AN83_B(t, a, 0.4), { width: 18, ...o }); ctx.restore(); };
   const word = (txt, x, y, a, b, size = 80, o = {}) => { if (t < a || t >= b) return; ctx.save(); ctx.globalAlpha = an83Fade(t, a, b, 0.15); sfx(ctx, txt, x, y, size, K.clamp((t - a) / 0.25), o); ctx.restore(); };
   if (an83Insert(t)) {   // GOLD! in the insert
-    if (t >= 68.84) { ctx.save(); ctx.globalAlpha = an83Fade(t, 68.84, 69.9, 0.12); S.emphasis(ctx, 690, 330, 150, AN83_B(t, 68.84, 0.35), { word: 'GOLD!', wx: 0.9, wy: 0.6 }); ctx.restore(); }
+    if (t >= 69.22) { ctx.save(); ctx.globalAlpha = an83Fade(t, 69.22, 69.9, 0.08); S.emphasis(ctx, 690, 330, 150, AN83_B(t, 69.22, 0.3), { word: 'GOLD!', wx: 0.9, wy: 0.6 }); ctx.restore(); }
     return;
   }
   // S1 the name
   if (t < 3.2) { const h = P(...an83HeadW(F.M)); lab("MA'AN", h[0] + 40, h[1] - 175, 1.0, 3.0); arr([h[0] + 30, h[1] - 140], [h[0] + 6, h[1] - 60], 1.1, 3.0); }
   // S2 NO WATER!
-  { const p = P((F.m1.x + F.m2.x) / 2, 530); word('NO WATER!', p[0], Math.max(250, p[1]), 16.25, 17.6, 84, { rot: -0.06, fill: C.red }); }
+  lab('NO WATER!', 620, 300, 16.25, 17.6, { size: 60, fill: C.yellow });
   // S3 counter 1 2 3 and WATER!
   if (an83In(t, 23.9, 26.5)) { const n = t < 24.35 ? 1 : t < 24.8 ? 2 : 3; ctx.save(); ctx.globalAlpha = an83Fade(t, 23.9, 26.5, 0.2); S.counter(ctx, n, 840, 170, K.clamp((t - 23.9) / 0.3), { size: 96 }); ctx.restore(); }
   if (an83In(t, 26.6, 28.6)) { const s0 = P(...an83W(F.g[0], -38, -126)); lab('WATER!', s0[0] - 150, s0[1] - 190, 26.6, 28.6, { fill: '#9cc4ff' }); arr([s0[0] - 120, s0[1] - 150], [s0[0] - 20, s0[1] - 30], 26.7, 28.6); }
@@ -228,29 +244,30 @@ function an83Over(ctx, t, cam, S) {
   // S6 the coin he asks for, NO COINS!
   if (an83In(t, 52.0, 54.35)) { const h = an83HandW(F.M, 1), p = P(h[0], h[1] - 70); ctx.save(); ctx.globalAlpha = an83Fade(t, 52.0, 54.35, 0.2); const k = K.ease.back(K.clamp((t - 52.0) / 0.3)); if (k > 0) an83Coin(ctx, p[0], p[1] - 4 * Math.sin(t * 5), 34 * k, 0); ctx.restore();
     const g = P(1430, 640); arr([p[0] + 50, p[1] - 10], [Math.min(940, g[0]), p[1] - 30], 52.6, 54.35, { bend: -0.3, width: 14 }); }
-  word('NO COINS!', 500, 250, 57.4, 58.9, 88, { rot: 0.06, fill: C.red });
+  lab('NO COINS!', 500, 300, 57.4, 59.0, { size: 60, fill: C.yellow });
   // S8 the counter 10, 20, 30 and its label
   if (an83In(t, 72.1, 80.24)) { const cb = countedBeats(t, [72.16, 74.2, 76.72]); const n = cb.n * 10; if (n > 0) { ctx.save(); ctx.globalAlpha = an83Fade(t, 72.1, 80.24, 0.25); const sc = 1 + 0.25 * cb.accent * (cb.n === 3 ? 1.5 : 1) - 0.08 * cb.dip; ctx.translate(820, 160); ctx.scale(sc, sc); S.counter(ctx, n, 0, 0, 1, { size: 104 }); ctx.restore(); } }
   lab('30 GOLDEN ARROWS', 700, 300, 76.75, 79.0, { size: 44, fill: C.yellow });
-  // S8 coin crossed, arrow ticked above Ma'an (79.02-80.24)
-  if (an83In(t, 79.02, 80.24)) { const h = P(...an83HeadW(F.M)), y = Math.max(200, h[1] - 220); ctx.save(); ctx.globalAlpha = an83Fade(t, 79.02, 80.24, 0.15);
-    if (t < 79.6) { an83Badge(ctx, h[0], y, 60, (t - 79.02) / 0.2); an83Coin(ctx, h[0], y, 34, 0); an83Cross(ctx, h[0], y, 1, (t - 79.2) / 0.3); }
-    else { an83Badge(ctx, h[0], y, 60, (t - 79.6) / 0.2); an83Arrow(ctx, h[0] + 32, y - 32, -Math.PI / 4, { s: 0.65 }); an83Tick(ctx, h[0] + 30, y + 30, 0.8, (t - 79.8) / 0.3); } ctx.restore(); }
+  // S8 "instead of money": coin crossed (left) and golden arrow ticked (right), side by side in the sky (79.02-80.24; the sun is faded out)
+  if (an83In(t, 79.02, 80.24)) { const y = 300; ctx.save(); ctx.globalAlpha = an83Fade(t, 79.02, 80.24, 0.12);
+    if (an83Badge(ctx, 320, y, 95, (t - 79.02) / 0.22)) { an83Coin(ctx, 320, y, 56, 0); an83Cross(ctx, 320, y, 1.3, (t - 79.15) / 0.25); }
+    if (an83Badge(ctx, 680, y, 95, (t - 79.2) / 0.22)) { an83Arrow(ctx, 735, y - 55, -Math.PI / 4, { s: 1.0, len: 110, head: 1.9, fl: 0.8 }); an83Tick(ctx, 670, y + 45, 1.1, (t - 79.4) / 0.3); }
+    ctx.restore(); }
   // S10 the name
-  if (an83In(t, 90.56, 92.2)) { const h = P(...an83HeadW(F.M)); lab("MA'AN BIN ZAIDAH!", Math.max(330, Math.min(670, h[0])), Math.max(160, h[1] - 330), 90.6, 92.2, { size: 54, fill: C.yellow }); arr([h[0] + 60, Math.max(200, h[1] - 280)], [h[0] + 20, h[1] - 130], 90.7, 92.2); }
+  if (an83In(t, 90.56, 92.2)) { const h = P(...an83HeadW(F.M)); lab("MA'AN BIN ZAIDAH!", Math.max(390, Math.min(700, h[0] + 60)), Math.max(160, h[1] - 330), 90.6, 92.2, { size: 54, fill: C.yellow }); arr([h[0] + 60, Math.max(200, h[1] - 280)], [h[0] + 20, h[1] - 130], 90.7, 92.2); }
   // S12-S14 the small reciter tags
   for (const [txt, a, b, i] of [['FIRST', 109.56, 111.5, 0], ['SECOND', 123.7, 125.5, 1], ['THIRD', 136.2, 138.0, 2]]) if (an83In(t, a, b)) { const p = P(F.g[i].x, F.g[i].y); lab(txt, p[0] - 150, p[1] - 70, a, b, { size: 40, fill: [C.yellow, '#ff8a7a', '#9cc4ff'][i] }); }
-  // S15 the sky icons: robe crossed, golden arrow ticked, attendants crossed
-  if (an83In(t, 154.2, 158.3)) { ctx.save(); ctx.globalAlpha = an83Fade(t, 154.2, 158.3, 0.25); const y = 300;
-    if (an83Badge(ctx, 500, y, 78, (t - 154.25) / 0.3)) { an83Arrow(ctx, 545, y - 45, -Math.PI / 4, { s: 0.8 }); an83Tick(ctx, 530, y + 40, 0.9, (t - 154.6) / 0.3); }
-    const mh = P(...an83HeadW(F.M)); if (t > 154.7) { S.arrow(ctx, [470, y + 80], [mh[0] + 20, mh[1] - 70], AN83_B(t, 154.7, 0.4), { width: 14, bend: 0.2 }); }
-    if (t >= 156.2 && an83Badge(ctx, 250, y + 20, 64, (t - 156.2) / 0.3)) { an83RobeIcon(ctx, 250, y + 20, 0.9); an83Cross(ctx, 250, y + 20, 0.8, (t - 156.6) / 0.3); }
-    if (t >= 157.54 && an83Badge(ctx, 750, y + 20, 64, (t - 157.54) / 0.3)) { an83PeopleIcon(ctx, 750, y + 22, 0.9); an83Cross(ctx, 750, y + 20, 0.8, (t - 157.8) / 0.3); }
+  // S15 the sky icons: robe crossed (156.44), golden arrow ticked, attendants crossed (157.54); the sun is faded out; held to the cut at 158.5
+  if (an83In(t, 154.2, 158.5)) { ctx.save(); ctx.globalAlpha = an83Fade(t, 154.2, 158.5, 0.15); const y = 300;
+    if (an83Badge(ctx, 500, y, 84, (t - 154.25) / 0.3)) { an83Arrow(ctx, 548, y - 48, -Math.PI / 4, { s: 0.85, len: 110, head: 1.9, fl: 0.8 }); an83Tick(ctx, 530, y + 40, 0.9, (t - 154.6) / 0.3); }
+    const mh = P(...an83HeadW(F.M)); if (t > 154.7) { S.arrow(ctx, [470, y + 86], [mh[0] + 20, mh[1] - 70], AN83_B(t, 154.7, 0.4), { width: 14, bend: 0.2 }); }
+    if (t >= 156.0 && an83Badge(ctx, 250, y + 20, 72, (t - 156.0) / 0.25)) { an83RobeIcon(ctx, 250, y + 20, 1.0); an83Cross(ctx, 250, y + 20, 0.9, (t - 156.44) / 0.25); }
+    if (t >= 157.1 && an83Badge(ctx, 750, y + 20, 72, (t - 157.1) / 0.25)) { an83PeopleIcon(ctx, 750, y + 22, 1.0); an83Cross(ctx, 750, y + 20, 0.9, (t - 157.54) / 0.25); }
     ctx.restore(); }
 }
 
 // ---------- the scene ----------
-const AN83_SHAKE = (t) => K.spring(t, 68.84, 4, 14, 7) + K.spring(t, 90.56, 3, 14, 7) + 2 * K.spring(t, 163.62, 1, 14, 7);
+const AN83_SHAKE = (t) => K.spring(t, 69.22, 4, 14, 7) + K.spring(t, 90.56, 3, 14, 7) + 2 * K.spring(t, 165.3, 1, 14, 7);
 const SCENE = {
   duration: AN83_DUR,
   draw(ctx, W, H, t, S) {
@@ -264,6 +281,7 @@ const SCENE = {
     else { ctx.save(); K.camera(ctx, AN83_VW, AN83_VH, cam); an83World(ctx, t, cam); ctx.restore(); }
     // whip pan to the caught prince (90.4-90.56)
     if (t >= 90.4 && t < 90.6) { const u = (t - 90.4) / 0.2; ctx.save(); ctx.globalAlpha = 0.85 * Math.sin(Math.PI * u); ctx.fillStyle = C.white; const r = K.rng(90); for (let i = 0; i < 26; i++) ctx.fillRect(-100 + r() * 1100 + u * 300, r() * 1230, 220 + r() * 300, 6 + r() * 8); ctx.restore(); }
+    if (!an83Insert(t)) an83Insets(ctx, t, cam);
     an83Over(ctx, t, cam, S);
     if (t >= 19.7 && t < 20.3) S.transition(ctx, AN83_VW, AN83_VH, (t - 19.7) / 0.6, { caption: 'LATER...' });
     if (t >= 165.2) S.title(ctx, 'THE END', 640, 360, AN83_B(t, 165.2, 0.8), { size: 92, align: 'center' });

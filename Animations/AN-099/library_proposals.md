@@ -9,3 +9,8 @@
 7. `templeTap` pose: hand target body-local [38, -206] with a 10-unit out-and-in tap (used by the caliph 57.4, the stranger 136.52 and 166.5).
 8. Small icons (`a99Icon`): patched robe, equals, book (empty / full), moth, oil lamp (lit, out, smoke), coin, purse, star, crescent, compass; `a99Cross` red strike.
 9. Rig helpers (`src/a99_rig.js`): `a99Loc` / `a99W` (world <-> body-local for the costumed person, including sit, lean, tip, sq), `a99Arm` (arm tracks in angle space from IK targets), `a99HandW` (world hand position for held props). Candidate for `cast/people.js` as `personLocal`, `personWorld`, `personHandW`.
+
+## Added in v2 (Fable round-1 revision)
+10. `openPalm` (`a99Palm`): an upright open palm (fingers up) drawn over a person's hand, for a polite refusal or "stop"; scale about 1 at person s 0.72.
+11. Guide rules (for `Animation_Capabilities_Guide.md`, from the Fable review): an offered object stops at chest height between two front-facing figures and never overlaps the receiver's head; a refusal needs an upright palm between the object and the body. A thought cloud holds one large subject at a time (`thoughtCloud` with `scale: 1, at: [0, 0]` and local drawing), never a miniature of the whole set.
+12. Seated two-shot framing note: for two seated `person` figures at s 0.72-0.8, zoom about 3.0 with the camera centre about 20 units below the heads' midpoint (heads in the upper half, hands in the centre, a thin band of cloth below).

@@ -163,3 +163,7 @@ function a99Balloon(ctx, x, y, w, h, t, o = {}) {
   ctx.restore();
   if (o.mark) a99Badge(ctx, X + W * 0.4, y - H * 0.36, o.mark, o.markP ?? 1, 26 * Math.max(0.7, sc));
 }
+// open palm, fingers up (a polite refusal), centred on the hand at (x, y); s about 1 at the stranger's scale
+function a99Palm(ctx, x, y, s = 1) { if (s <= 0.02) return; ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  shape(ctx, [[-9, 9], [-11, -6], [-10, -19], [-6, -20], [-5, -10], [-4, -23], [0, -24], [1, -11], [2, -22], [6, -22], [6, -10], [8, -18], [12, -17], [11, -4], [15, -8], [18, -5], [10, 8], [5, 12], [-5, 12]], C.white, { lw: 3.5, seed: 471, dot: C.skin, pitch: 5, rad: 0.3 });
+  ctx.restore(); }

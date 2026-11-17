@@ -51,7 +51,7 @@ const k15jarCentre = (J) => k15JarPoint(J, 0, 80);
 const K15STICKL = 210, K15STICKG = 0.24;
 const K15BOYD = (t) => (t < 126.5 || t >= 139.44 ? 0 : settleTo(t, 126.5, 0, 1, 0.6, 0.1));   // v2: the dream father and son sink to the man's arm height for the swing
 const K15CROSS = 130.24;
-const K15TOP = [40, -196], K15TOPA = -1.47, K15END = [80, -215], K15ENDA = -0.4, K15SWD = 0.36, K15HIT = 130.1;   // v2 raise / swing poses (local grip, stick angle)
+const K15TOP = [76, -192], K15TOPA = -1.53, K15END = [80, -215], K15ENDA = -0.4, K15SWD = 0.36, K15HIT = 130.1;   // v2 raise / swing poses (local grip, stick angle)
 function k15stick(t, P) {
   // returns {grip: [x, y] world (pre-acting), a, two (left hand on it too)} or a floor pose {floor: true, x0, x1}
   if (t < 116.9) return { floor: true, x0: 470, y: 892, a: 0 };
@@ -126,7 +126,7 @@ function k15asc(t) {
     if (t >= 23.6 && t < 27.89) { lidX = 0.4; tgt = [600, 840]; P.mouth = 'smile'; }
     if (t >= 27.89 && t < 32.9) { tgt = [K15HOOK[0] + 4, 470]; P.brow = -0.6 * k15e(t, 28.13, 0.4); P.tilt = -0.06 * k15e(t, 28.13, 0.5); P.drop = -7 * k15e(t, 28.13, 0.4); P.mouth = 'smile'; lidX = 0;   // v2: looks up, then points at the jar
       if (k15in(t, 29.16, 32.96)) { P.talk = talk(t, [[29.16, 29.84], [30.43, 31.5], [31.54, 32.9]]); P.mouth = 'open'; }
-      if (t >= 30.2) { const b = 10 * (k15tap(t, [31.54], 0.3) + k15tap(t, [32.1], 0.3)); P.handR = k15kv(t, [[30.2, [44, -80]], [30.6, [PERSON_HANDS.pointUp.R[0], PERSON_HANDS.pointUp.R[1]]]]).map((v, i) => v - (i ? b : 0)); P.handL = k15kv(t, [[30.2, [-44, -80]], [30.6, [-6, -120]]]); }
+      if (t >= 30.2) { const b = 10 * (k15tap(t, [31.54], 0.3) + k15tap(t, [32.1], 0.3)); P.handL = k15kv(t, [[30.2, [-44, -80]], [30.6, [-84, -188]]]).map((v, i) => v - (i ? b * 0.6 : 0)); P.handR = k15kv(t, [[30.2, [44, -80]], [30.6, [6, -120]]]); }   // v3: the arm on the jar's side goes straight up and points; the other hand on the chest
       if (k15in(t, 32.3, 32.9)) P.mouth = 'o'; }
     if (t >= 32.9 && t < 41.65) {   // the first dream: eyes drift up right; hands rub; counts on the fingers
       tgt = gazePlan(t, [[32.9, [K15HOOK[0], 470]], [33.6, [640, 420]], [34.4, [700, 440]], [35.1, [700, 470]], [37.7, [700, 480]], [38.3, [620, 330]], [39.44, [700, 470]]], 0.12);
@@ -205,7 +205,7 @@ function k15asc(t) {
       if (t >= 149.5) P.mouth = 'closed';
       P.drop = 4 * k15e(t, 145.6, 1.6); P.handL = [-40, -82];
       if (t >= 149.86 && t < 153.7) { tgt = [K15SEATX - 30, 700 + 140 * (((t - 149.86) / 0.68) % 1)]; noBlink = false; }
-      if (t >= 154.16) { P.wet = 0.5; tgt = gazePlan(t, [[154.16, [430, 890]], [155.4, [470, 892]], [157.3, k15L2W(P, [60, -150])], [159.5, [520, 890]], [160.1, [620, 420]], [161.16, [518, 362]], [162.16, [746, 650]], [163.44, [772, 340]], [164.7, [K15HOOK[0], 320]], [165.9, [K15HOOK[0], 460]]], 0.25);
+      if (t >= 154.16) { P.wet = 0.5; tgt = gazePlan(t, [[154.16, [430, 890]], [155.4, [470, 892]], [157.3, k15L2W(P, [60, -150])], [159.5, [520, 890]], [160.1, [620, 420]], [161.16, [518, 362]], [162.16, [746, 650]], [163.44, [546, 700]], [164.7, [K15HOOK[0], 320]], [165.9, [K15HOOK[0], 460]]], 0.25);
         P.drop = 4 + 12 * k15e(t, 154.16, 0.6); P.brow = -0.75; P.mouth = 'closed'; noBlink = false; }
       if (t >= 157.3) { P.drop = 4 + 10 * (1 - k15e(t, 157.3, 0.6)); P.brow = 0.4; }
       if (k15in(t, 157.31, 159.4)) { tgt = k15L2W(P, [80, -175]); }   // v2: looks at the stick in his hand
@@ -271,7 +271,9 @@ const K15D2S = 1.5, K15D2 = (x, y) => [600 + (x - 600) * K15D2S, 566 + (y - 548)
 const K15GOATS = [[525, 548], [640, 548], [755, 548]];
 const K15MID = [[585, 508], [700, 508], [800, 508]];
 const K15BACK = [[520, 470], [585, 468], [650, 471], [715, 468], [780, 470], [840, 468]];
-const K15COWS = [[575, 506], [740, 506]];
+const K15COWS = [[630, 548], [734, 548]];   // v3: hooves on the field line, both left of the post
+const K15FRONT2 = [532];   // v3: the one front goat that stays (x after 'abi'u', 53.78); the other two trot out, which leaves room for the cows
+const k15FrontX = (i, tt) => { const [x] = K15GOATS[i]; return i < 1 ? K.lerp(x, K15FRONT2[i], k15e(tt, 53.78, 0.8)) : x + kfn(tt, [[53.78 + i * 0.1, 0], [55.3 + i * 0.1, 560]], 'in'); };
 function k15d3(c, t) { const f = 1 - k15e(t, 86.0, 1.6), g = 1 + 0.45 * f; c.translate(700, 566 + 22 * f); c.scale(g, g); c.translate(-700, -566); }   // v2 stage-3 dream scale
 function k15dream(c, t) {
   // ---- stage 1: the stall, the coins, the abacus ----
@@ -294,20 +296,21 @@ function k15dream(c, t) {
     const gone = (i) => t >= 63.6 + i * 0.08, GC = '#d6cebd';
     const trot = (x, i, t0) => x + kfn(t, [[t0 + i * 0.1, 0], [t0 + 1.5 + i * 0.1, 560]], 'in');
     // back row (6) pops at 52.22, trots out right on "abi'u" (53.78)
-    if (t >= 52.22) K15BACK.forEach(([x, y], i) => { if (gone(i)) return; const k = k15pop(t, 52.22 + i * 0.05, 0.25); const W = walk((tt) => x + kfn(tt, [[53.78 + i * 0.1, 0], [55.3 + i * 0.1, 560]], 'in'), t, { stride: 10 });
+    if (t >= 52.22) K15BACK.forEach(([x, y], i) => { if (gone(i) || t < 52.22 + i * 0.05) return; const k = k15pop(t, 52.22 + i * 0.05, 0.25); const W = walk((tt) => x + kfn(tt, [[53.78 + i * 0.1, 0], [55.3 + i * 0.1, 560]], 'in'), t, { stride: 10 });
       if (W.x > 1000) return; k15Goat(c, { x: W.x, y, s: 0.4 * k, kind: 'goat', ph: W.ph, amp: W.amp, head: t < 53.78 ? 0.5 + 0.5 * Math.sin(t * 2 + i) : 0, t, col: GC }); });
     // middle row: the kids, grown on "yakburu" (51.64); they trot out too
-    if (t >= 49.32) K15GOATS.forEach(([x0, y0], i) => { const ka = 49.32 + i * 0.2, kk = k15pop(t, ka, 0.3), grow = k15e(t, 51.64, 0.35), m = K15MID[i];
+    if (t >= 49.32) K15GOATS.forEach(([x0, y0], i) => { const ka = 49.32 + i * 0.2; if (t < ka) return; const kk = k15pop(t, ka, 0.3), grow = k15e(t, 51.64, 0.35), m = K15MID[i];
       const hop = t > 50.66 && t < 51.4 ? 16 * Math.abs(Math.sin((t - 50.66 - i * 0.12) * 9)) : 0;
       const bx = K.lerp(x0 + 52, m[0], grow), by = K.lerp(y0 + 4, m[1], grow), W = walk((tt) => K.lerp(x0 + 52, m[0], k15e(tt, 51.64, 0.35)) + kfn(tt, [[53.9 + i * 0.1, 0], [55.4 + i * 0.1, 560]], 'in'), t, { stride: 10 });
       if (W.x > 1000) return; k15Goat(c, { x: t >= 53.9 ? W.x : bx, y: by, s: 0.55 * kk * K.lerp(1, 0.85, grow), kind: grow > 0.5 ? 'goat' : 'kid', hop, t, ph: t >= 53.9 ? W.ph : (t - ka) * 20, amp: t >= 53.9 ? W.amp : t < ka + 0.6 ? 0.4 : 0, head: 0.2, lid: 0, dir: 1, col: GC }); });
     // the cows drop into the clear space behind the front goats, larger, one lazy blink each
     if (t >= 55.6) K15COWS.forEach(([x, y], i) => { if (gone(i + 9)) return; const land = 55.88 + i * 0.12, yy = t < land ? K.lerp(150, y, K.clamp((t - 55.6) / (land - 55.6)) ** 2) : y - rebound(t, land, 12, 0.25);
-      k15Goat(c, { x, y: yy, s: 0.64, kind: 'cow', lid: 0.25 + 0.75 * pulse(t, 56.9 + i * 0.5, 0.6), chew: Math.abs(Math.sin(t * 5 + i)), t, head: 0.15, dir: i ? 1 : -1 }); });
+      k15Goat(c, { x, y: yy, s: 0.52, kind: 'cow', lid: 0.25 + 0.75 * pulse(t, 56.9 + i * 0.5, 0.6), chew: Math.abs(Math.sin(t * 5 + i)), t, head: 0.15, dir: -1 }); });
     // the three front goats
-    if (t >= 46.5) K15GOATS.forEach(([x, y], i) => { if (gone(i + 6)) return; const a = 46.5 + i * 0.15, k = k15pop(t, a, 0.25); const hopy = 14 * pulse(t, a, 0.3) + 10 * pulse(t, 55.9, 0.35);
-      k15Goat(c, { x, y, s: 0.55 * k, kind: 'goat', head: k15in(t, 47.3, 49.4) ? 0.5 + 0.5 * Math.sin((t - 47.3) * 3 + i * 2) : k15in(t, 49.4, 50.6) ? 0 : 0.3 + 0.3 * Math.sin(t * 1.3 + i), fat: k15e(t, 47.3, 1.9) * (1 - k15e(t, 49.3, 0.2)), hop: hopy, t, bleat: pulse(t, a + 0.1, 0.5), chew: Math.abs(Math.sin(t * 6 + i)), dir: i === 2 ? -1 : 1, col: GC }); });
-    for (let i = 0; i < 11; i++) { const a = 63.6 + i * 0.08; if (t >= a && t < a + 0.35) { const P0 = i < 6 ? K15BACK[i] : i < 9 ? K15GOATS[i - 6] : K15COWS[i - 9]; k15PopRing(c, P0[0], P0[1] - 40, 40, t - a); } }
+    if (t >= 46.5) K15GOATS.forEach(([x0, y], i) => { if (gone(i + 6)) return; const a = 46.5 + i * 0.15; if (t < a) return; const k = k15pop(t, a, 0.25); const hopy = 14 * pulse(t, a, 0.3) + 10 * pulse(t, 55.9, 0.35);
+      const W = walk((tt) => k15FrontX(i, tt), t, { stride: 10 }), x = W.x; if (x > 1000) return; const moving = t >= 53.78 && (i > 0 || t < 54.58);
+      k15Goat(c, { x, y, s: 0.55 * k * K.lerp(1, 0.82, k15e(t, 53.78, 0.8)), ph: W.ph, amp: moving ? W.amp : 0, kind: 'goat', head: k15in(t, 47.3, 49.4) ? 0.5 + 0.5 * Math.sin((t - 47.3) * 3 + i * 2) : k15in(t, 49.4, 50.6) ? 0 : 0.3 + 0.3 * Math.sin(t * 1.3 + i), fat: k15e(t, 47.3, 1.9) * (1 - k15e(t, 49.3, 0.2)), hop: hopy, t, bleat: pulse(t, a + 0.1, 0.5), chew: Math.abs(Math.sin(t * 6 + i)), dir: i > 0 ? (t >= 53.78 || i === 1 ? 1 : -1) : moving ? -1 : 1, col: GC }); });
+    for (let i = 0; i < 11; i++) { const a = 63.6 + i * 0.08; if (t >= a && t < a + 0.35) { if (i === 7 || i === 8) continue; const P0 = i < 6 ? K15BACK[i] : i < 9 ? [K15FRONT2[0], K15GOATS[0][1]] : K15COWS[i - 9]; k15PopRing(c, P0[0], P0[1] - 40, 40, t - a); } }
     c.restore();
   }
   // the moon ticks across three times
@@ -529,7 +532,7 @@ function k15drawWorld(ctx, t) {
       ctx.ellipse(hd[0] - 19 * s9, hd[1] + 9 * s9, 8 * s9, 5.5 * s9, 0, 0, 7); ctx.ellipse(hd[0] + 19 * s9, hd[1] + 9 * s9, 8 * s9, 5.5 * s9, 0, 0, 7); ctx.fill(); ctx.beginPath(); ctx.ellipse(hd[0], hd[1] - 21 * s9, 17 * s9, 4.5 * s9 * Math.min(1, fl * 1.3), 0, 0, 7); ctx.fill(); ctx.restore(); }
     if (k15in(t, 112.7, 113.6)) { steam(ctx, hd[0] - 52 * P.s, hd[1] - 10, (t - 112.7) * 1.5); steam(ctx, hd[0] + 52 * P.s, hd[1] - 10, (t - 112.7) * 1.5 + 0.3); }
     if (k15in(t, 29.6, 31.3)) for (const k of [0, 1]) { const ph = ((t - 29.6) * 2 + k * 0.5) % 1; ctx.save(); ctx.globalAlpha = Math.sin(Math.PI * ph); star(ctx, hd[0] + (k ? 58 : -58) * P.s * 0.8, hd[1] - 30, 9, C.white, t); ctx.restore(); }
-    if (k15in(t, 30.45, 32.9) && P.handR) { const hp = k15L2W(P, k15clampL(1, P.handR)), jc2 = k15jarCentre(k15jar(t)), an = Math.atan2(jc2[1] - hp[1], jc2[0] - hp[0]), L = 22 * P.s * k15e(t, 30.45, 0.15);   // v2: the index finger points at the jar
+    if (k15in(t, 30.45, 32.9) && P.handL) { const hp = k15L2W(P, k15clampL(-1, P.handL)), jc2 = k15jarCentre(k15jar(t)), an = Math.atan2(jc2[1] - hp[1], jc2[0] - hp[0]), L = 26 * P.s * k15e(t, 30.45, 0.15);   // v2: the index finger points at the jar
       seg(ctx, hp[0] + Math.cos(an) * 8 * P.s, hp[1] + Math.sin(an) * 8 * P.s, hp[0] + Math.cos(an) * (8 * P.s + L), hp[1] + Math.sin(an) * (8 * P.s + L), 8, C.white, 3); }
     if (k15in(t, 119.86, 121.6)) soundArcs(ctx, hd[0] + 50 * P.s, hd[1] + 10, 1, t, C.black);
     k15goo(ctx, t, P, hd);
@@ -550,11 +553,11 @@ function k15ghosts(ctx, t) {   // v2: 1.6x larger, on the empty wall between the
     ctx.save(); ctx.globalAlpha = 0.6 * fin * out;
     if (kind === 'coins') k15Coins(ctx, x, y, 15, 1.9);
     if (kind === 'goat') k15Goat(ctx, { x: x - 10, y, s: 1.15, kind: 'goat', t, bleat: pulse(t, a + 0.1, 0.5) });
-    if (kind === 'field') { const r = k15e(t, a, 0.6); k15Field(ctx, x - 78, x + 78 - 90 * r, y, 1, 42); }
+    if (kind === 'field') { k15Field(ctx, x - 76, x + 76, y, 1, 46); seg(ctx, x - 70, y + 35, x + 70, y + 35, 2, K15GRASSD, 0); for (let k = 0; k < 5; k++) k15Wheat(ctx, x - 56 + k * 28, y, 30, 2 * Math.sin(t * 2 + k)); }   // v3: a patch as wide as the coin pile, furrows and five wheat ears, on the empty wall right of his head
     ctx.restore(); ctx.save(); ctx.globalAlpha *= out; k15X(ctx, x, K15GHOSTX[i], 72, k15e(t, a, 0.35)); ctx.restore();
   });
 }
-const K15GHOSTS = [[518, 402, 161.16, 'coins'], [746, 728, 162.16, 'goat'], [772, 318, 163.44, 'field']], K15GHOSTX = [362, 652, 340];
+const K15GHOSTS = [[518, 402, 161.16, 'coins'], [746, 728, 162.16, 'goat'], [546, 700, 163.44, 'field']], K15GHOSTX = [362, 652, 704];
 
 // ---------- camera ----------
 const K15CAM = [
@@ -605,7 +608,7 @@ function k15overlays(ctx, t, cam, S, W) {
   k15lbl(ctx, S, 'THE PALACE', P(780, 280), t, 102.04, 103.5, { size: 44 }); k15arrow(ctx, S, P(800, 300), P(870, 380), t, 102.1, 103.5, { bend: 0.1 });
   // S6
   if (k15in(t, 109.18, 110.6)) { const q = P(470, 380); ctx.save(); ctx.globalAlpha *= 1 - k15e(t, 110.35, 0.25); S.label(ctx, 'NO!', q[0], q[1], K.clamp((t - 109.18) / 0.3), { size: 60, balloon: true, align: 'center' }); ctx.restore(); }
-  k15lbl(ctx, S, 'NOT REAL', [745, 575], t, 114.92, 116.2, { size: 50, fill: C.red, color: C.white }); k15arrow(ctx, S, [822, 536], [852, 292], t, 113.5, 116.2, { bend: 0.15 });   // v2: clear of the border, pointing at the boy
+  k15lbl(ctx, S, 'NOT REAL', [768, 575], t, 114.92, 116.2, { size: 50, fill: C.red, color: C.white }); k15arrow(ctx, S, [845, 536], [858, 292], t, 113.5, 116.2, { bend: 0.15 });   // v2: clear of the border, pointing at the boy
   k15lbl(ctx, S, 'STICK', P(560, 790), t, 117.36, 118.45, { size: 48 }); k15arrow(ctx, S, P(560, 815), P(520, 870), t, 117.4, 118.45, { bend: -0.1 });
   // S7
   if (k15in(t, 128.0, 130.0)) { const st = W.A.ST; if (!st.floor) { const [, tp] = k15stickPts(st), bj = k15JarPoint(J, 62, 90); const a = P(...tp), b = P(...bj); ctx.save(); ctx.setLineDash([6, 8]); ctx.lineWidth = 4; ctx.strokeStyle = C.red; ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke(); ctx.restore(); } }

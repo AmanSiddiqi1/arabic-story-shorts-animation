@@ -6,8 +6,8 @@ const A92_GR = [['house', 850, 560], ['school', 850, 450], ['baghdad', 850, 340]
 function a92Ghost(ctx, t, list, x0, o) {
   if (t < 163.7) return; const rise = K.ease.out(K.clamp((t - 163.7) / 0.5)), cr = t >= 165.42 ? K.clamp((t - 165.42) / 0.9) : 0;
   list.forEach(([kind, x, y], i) => { const wide = kind === 'baghdad' || kind === 'basra' || kind === 'army';
-    if (cr <= 0) { a92Tile(ctx, x, y + 400 * (1 - rise), kind, { size: 105, wide, ghost: true, ga: 0.5, t, p: 1, label: kind === 'baghdad' ? 'BAGHDAD' : kind === 'basra' ? 'BASRA' : null }); return; }
-    const r = K.rng(800 + i + x0); for (let k = 0; k < 14; k++) { const a = r() * 6.28, d = cr * (60 + r() * 140); ctx.save(); ctx.globalAlpha = 0.5 * (1 - cr); ctx.fillStyle = C.black; ctx.beginPath(); ctx.arc(x + (r() - 0.5) * 100 + Math.cos(a) * d + cr * 120 * (x < 500 ? -1 : 1), y + (r() - 0.5) * 100 + Math.sin(a) * d - cr * 60, 6 * (1 - cr) + 2, 0, 7); ctx.fill(); ctx.restore(); } });
+    if (cr <= 0) { a92Tile(ctx, x, y + 400 * (1 - rise), kind, { size: 105, wide, ghost: true, ga: 0.9, t, p: 1, label: kind === 'baghdad' ? 'BAGHDAD' : kind === 'basra' ? 'BASRA' : null }); return; }
+    const r = K.rng(800 + i + x0); for (let k = 0; k < 14; k++) { const a = r() * 6.28, d = cr * (60 + r() * 140); ctx.save(); ctx.globalAlpha = 0.8 * (1 - cr); ctx.fillStyle = C.black; ctx.beginPath(); ctx.arc(x + (r() - 0.5) * 100 + Math.cos(a) * d + cr * 120 * (x < 500 ? -1 : 1), y + (r() - 0.5) * 100 + Math.sin(a) * d - cr * 60, 6 * (1 - cr) + 2, 0, 7); ctx.fill(); ctx.restore(); } });
 }
 function a92S14(ctx, t, cam) {
   a92Card(ctx);
@@ -37,10 +37,13 @@ function a92S14(ctx, t, cam) {
   if (t >= 156.72 && KB.s > 0.05) { person(ctx, KB); }
   if (t >= 156.87 && AB.s > 0.05) { person(ctx, AB); }
   const sw = t >= 158.86 ? swing(t, 158.86, 0.12, 1.6, 2.5) : 0;
-  a92Bag(ctx, bx, fall, { s: 2.2, sx: bsx, sq: (t < 155.6 ? 1.08 : landSquash(t, 155.6, 0.2)) * (tug ? 1 / Math.sqrt(bsx) : 1), bulge: tug ? bsx - 1 : 0, rot: sw, open: t >= 162.26 ? settleTo(t, 162.26, 0, 1, 0.4, 0.15) : 0 });
+  const bs = K.lerp(3.5, 2.2, A92B(t, 156.6, 0.35));   // v2: the bag alone is 1.6x bigger, then settles to 2.2 as the busts pop in
+  a92Bag(ctx, bx, fall, { s: bs, sx: bsx, sq: (t < 155.6 ? 1.08 : landSquash(t, 155.6, 0.2)) * (tug ? 1 / Math.sqrt(bsx) : 1), bulge: tug ? bsx - 1 : 0, rot: sw, open: t >= 162.26 ? settleTo(t, 162.26, 0, 1, 0.4, 0.15) : 0 });
   // the four foods pop out into a neat row
-  [['bread', 430], ['cheese', 480], ['olive', 520], ['lemon', 565]].forEach(([k, x], i) => { const t0 = 162.84 + i * 0.12; if (t < t0) return; const u = K.clamp((t - t0) / 0.3), y = K.lerp(840, 1075, u) - 80 * Math.sin(Math.PI * u);
-    if (k === 'olive') for (let j = 0; j < 3; j++) a92Food(ctx, 'olive', x - 10 + j * 10, y + (j % 2) * 4, 1.7); else a92Food(ctx, k, x, y, 1.7); });
+  // v2: the four foods pop out one after another into a clear arc above the bag, each 70+ units wide
+  [['bread', 300, 590, 3.0], ['cheese', 420, 520, 5.0], ['olive', 580, 520, 3.6], ['lemon', 700, 590, 3.4]].forEach(([k, x, yT, sc], i) => { const t0 = 162.84 + i * 0.22; if (t < t0) return; const u = K.ease.out(K.clamp((t - t0) / 0.35)), px = K.lerp(500, x, u), y = K.lerp(830, yT, u) - 120 * Math.sin(Math.PI * u), k2 = 0.4 + 0.6 * u;
+    shape(ctx, ell(px, y - 22 * k2, 66 * k2, 58 * k2, 26), C.white, { lw: 5, seed: 560 + i });   // a white disc behind each food, so the yellow lemon reads on the yellow card
+    if (k === 'olive') for (let j = 0; j < 3; j++) a92Food(ctx, 'olive', px - 34 + j * 34, y + (j % 2) * 10, sc * k2, j); else a92Food(ctx, k, px, y, sc * k2); });
   if (t >= 166.28) { const u = K.clamp((t - 166.28) / 0.3); ctx.save(); ctx.globalAlpha = 0.8 * Math.sin(Math.PI * u); seg(ctx, 545 + 40 * u, 1040, 552 + 40 * u, 1057, 3, C.white, 0); ctx.restore(); }
   return { KB, AB };
 }

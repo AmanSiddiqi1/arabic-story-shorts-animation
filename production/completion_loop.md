@@ -26,3 +26,4 @@ python3 tools/cloud/cloud.py list               # runs still going / finished bu
 - sync_public.py / make_public.py / cloud.py submit need a fully clean tracked tree, so Opus revisions run in waves of up to 3; commit, push, sync and submit only between waves (when no Opus agent is editing).
 - Owner attention (subtitle text): AN-001 English at 161.12-166.86 drops 'with him', 'he' ambiguous (Fable review 1).
 - Owner attention (subtitle text): AN-014 stray comma in English at 28.65; AN-040 English mixes 'it'/'he' for the animals (Fable review 1).
+- Owner attention: KD-015 v3 (last round) - check one-goat/cow layout 54-63 s, narrow stick-to-jar gap 128-130 s, point at 30.6-32.9 s.

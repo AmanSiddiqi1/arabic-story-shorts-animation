@@ -7,3 +7,10 @@
 - `insetCircle` (an83Inset): iris open, dotted coloured rim, inner draw space.
 - `heatShimmer` (an83Heat), `goldGlow` (an83Glow), `groundShadow` (an83Shadow, stretches in late light), crossed `spears` silhouette.
 - Person helpers: `an83W`/`an83L` (local <-> world incl. lean, tip, squash), `an83HandL`/`an83HandW` (true hand position from IK, reach-limited), `an83Local` (draw props in a figure's space). Useful for any prop handover.
+
+## v2 additions (from fable_review_1)
+- `arrowBundle` heads-up sheaf: five arrows fanned wide above the grip, heads staggered in two rows, `head` size multiplier and small cream fletching (`an83Bundle`, `an83Arrow` options `head`, `fl`, `flc`, `facet`). Proposed as `arrowBundle({ up: true })`.
+- Panel-space `insetCircle` rule: draw insets after the world in panel coordinates, fade the sun (`an83SunA` windows) while open; inner content zoomed about its ground point (`AN83_VZ(c, f, zoom, dx)`).
+- Camera helper `an83Ck(t, x, zoom)` putting feet at a fixed fraction of the panel height (`AN83_FY`).
+- "Reveal insert" pattern (an83InsertDraw): plain gradient, one arm from the frame edge, one prop, radial burst on the cue word.
+- Drawstring `purse` with gathered frill and cord ends; falling dust and moth for "empty purse".

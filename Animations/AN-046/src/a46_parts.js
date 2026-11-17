@@ -68,7 +68,7 @@ function a46peaRaw(ctx, P) {
   const ph = (P.ph || 0) * Math.sign(dir), amp = P.amp || 0;
   [[-8, 0], [8, Math.PI]].forEach(([hx, o2], k) => {
     if (sit > 0.5) { const tp = k ? (P.tap || 0) * 9 : 0; seg(ctx, hx, hipY - 4, hx + 26, hipY + 10 - tp, 7, col(A46_PEA.legs), 2.5); seg(ctx, hx + 26, hipY + 10 - tp, hx + 42, hipY + 12 - tp * 1.4, 5, col(A46_PEA.legs), 2); return; }
-    const sw = Math.sin(ph + o2) * amp, fx = hx + 24 * sw, lift = Math.max(0, Math.cos(ph + o2)) * 16 * amp, fy = -lift * (1 - sit);
+    const sw = Math.sin(ph + o2) * amp, fx = hx + 24 * sw, lift = Math.max(0, Math.cos(ph + o2)) * 16 * amp + (k ? 0 : 16 * (P.tapF || 0)), fy = -lift * (1 - sit);   // v2: tapF lifts the near foot
     const kx = (hx + fx) / 2 + 12, ky = (hipY + fy) / 2;
     seg(ctx, hx, hipY, kx, ky, 8, col(A46_PEA.legs), 2.5); seg(ctx, kx, ky, fx, fy, 7, col(A46_PEA.legs), 2.5);
     for (const tx of [16, 6, -10]) seg(ctx, fx, fy, fx + tx, fy + 2, 4, col(A46_PEA.legs), 1.5);
@@ -86,7 +86,7 @@ function a46peaRaw(ctx, P) {
   if (!sil) { neckPath(); ctx.lineWidth = 24; ctx.strokeStyle = dotPat(ctx, A46_PEA.dot, 8, 0.22); ctx.globalAlpha *= 0.5; ctx.stroke(); }
   ctx.restore();
   if (P.gulp > 0 && P.gulp < 1) { const u = 1 - P.gulp, q = [(1 - u) * (1 - u) * (Sh[0] - 6) + 2 * u * (1 - u) * Cn[0] + u * u * H[0], (1 - u) * (1 - u) * (Sh[1] + 14) + 2 * u * (1 - u) * Cn[1] + u * u * H[1]]; shape(ctx, ell(q[0] + 3, q[1], 17, 15, 14), col(A46_PEA.body), { lw: 4, seed: 9 }); }
-  ctx.save(); ctx.translate(H[0], H[1]); ctx.rotate((P.headRot || 0) + bow * 0.5 + pr * 1.4);
+  ctx.save(); ctx.translate(H[0], H[1]); ctx.rotate((P.headRot || 0) + bow * 0.5 + pr * 1.4); if (P.headFlip) ctx.scale(-1, 1);   // v2: headFlip = looks behind himself
   // crest: five dotted stalks, swaying with P.crest (callers lag it behind the head)
   const cr = P.crest || 0;
   for (let i = 0; i < 5; i++) { const a = -Math.PI / 2 - 0.5 + i * 0.22 + cr, L2 = 34 - Math.abs(i - 2) * 3, ex = -2 + Math.cos(a) * L2, ey = -14 + Math.sin(a) * L2;
@@ -212,20 +212,20 @@ function a46net(ctx, st, o = {}) {
     return;
   }
   if (st === 'bag') {   // the snap: the spread corners rise and close into a sack
-    const k = K.clamp(o.k ?? 1), wob = o.wob || 0, n = 22, pts = [], cy0 = y - 2, rx0 = (o.w ?? 280) / 2, cy1 = y - 90, rx1 = 78, ry1 = 88;
+    const k = K.clamp(o.k ?? 1), wob = o.wob || 0, n = 22, pts = [], cy0 = y - 2, rx0 = (o.w ?? 280) / 2, rx1 = o.ground ? 92 : 78, ry1 = o.ground ? 62 : 88, cy1 = o.ground ? y - 60 : y - 90;
     for (let i = 0; i < n; i++) { const a = i / n * Math.PI * 2, bulge = 1 + 0.08 * Math.sin(a * 3 + wob * 9) * (wob ? 1 : 0);
       const p0 = [x + Math.cos(a) * rx0, cy0 + Math.sin(a) * 9], p1 = [x + Math.cos(a) * rx1 * bulge, cy1 + Math.sin(a) * ry1 * bulge - (Math.sin(a) < -0.8 ? 26 : 0)];
       pts.push(a46lp(p0, p1, k)); }
     if (o.inside && k > 0.5) { ctx.save(); K.poly(ctx, pts, true); ctx.clip(); o.inside(ctx); ctx.restore(); }
-    ctx.save(); ctx.globalAlpha *= 0.3 + 0.25 * k; K.poly(ctx, pts, true); ctx.fillStyle = '#d9c08a'; ctx.fill(); ctx.restore();
-    a46mesh(ctx, pts, 14, 2.4); a46rope(ctx, pts.concat([pts[0]]), 3);
+    ctx.save(); ctx.globalAlpha *= o.light ? 0.12 : 0.3 + 0.25 * k; K.poly(ctx, pts, true); ctx.fillStyle = '#d9c08a'; ctx.fill(); ctx.restore();
+    if (o.light) a46mesh(ctx, pts, 24, 2.2, 0.9, '#e8d9a8'); else a46mesh(ctx, pts, 14, 2.4); a46rope(ctx, pts.concat([pts[0]]), 3);
     if (k > 0.6) { const top = a46lp([x, cy0], [x, cy1 - ry1 - 26], k); a46rope(ctx, [[top[0], top[1] + 6], ...(o.rope || [[top[0] + 40, top[1] - 10]])], 4); }
     return pts;
   }
   if (st === 'thrown') {
     const r = o.r ?? 160, rot = o.rot || 0, pts = []; for (let i = 0; i < 24; i++) { const a = i / 24 * Math.PI * 2; const q = [Math.cos(a) * r, Math.sin(a) * r * 0.42 + Math.sin(a * 5 + rot * 4) * 6]; pts.push([x + q[0] * Math.cos(rot) - q[1] * Math.sin(rot), y + q[0] * Math.sin(rot) + q[1] * Math.cos(rot)]); }
-    ctx.save(); ctx.globalAlpha *= 0.3; K.poly(ctx, pts, true); ctx.fillStyle = '#d9c08a'; ctx.fill(); ctx.restore(); a46mesh(ctx, pts, 15, 2.4); a46rope(ctx, pts.concat([pts[0]]), 3);
-    for (let i = 0; i < 6; i++) { const p = pts[i * 4]; shape(ctx, ell(p[0], p[1] + 6, 7, 7, 10), STONED, { lw: 3, seed: 120 + i }); }
+    ctx.save(); ctx.globalAlpha *= 0.12; K.poly(ctx, pts, true); ctx.fillStyle = '#d9c08a'; ctx.fill(); ctx.restore(); a46mesh(ctx, pts, o.pitch ?? 30, 2.4, 0.9, '#e8d9a8'); a46rope(ctx, pts.concat([pts[0]]), 3.5);
+    const tr = o.trail || [0, 0]; for (let i = 0; i < 8; i++) { const p = pts[i * 3]; seg(ctx, p[0], p[1], p[0] + tr[0], p[1] + tr[1] + 8, 2.5, '#c9a27a', 1.5); shape(ctx, ell(p[0] + tr[0], p[1] + tr[1] + 14, 7, 7, 10), STONED, { lw: 3, seed: 120 + i }); }
     return;
   }
   if (st === 'draped') {
@@ -246,16 +246,16 @@ function a46meshShadow(ctx, x, y, w, a) { if (w <= 2 || a <= 0) return; const p 
 // ---------- the bird cage: domed wire cage, base centre (x, y), 170 x 200 at s 1. part 'back' | 'front' ----------
 function a46cage(ctx, x, y, s, part, o = {}) {
   ctx.save(); ctx.translate(x, y); if (o.rot) ctx.rotate(o.rot); ctx.scale(s, s);
-  const W = 85, top = -196, sh = -128, bars = [-78, -52, -26, 0, 26, 52, 78], door = K.clamp(o.door || 0, 0, 1.9);
+  const W = 85, top = -196, sh = -128, bars = o.bars || [-78, -52, -26, 0, 26, 52, 78], door = K.clamp(o.door || 0, 0, 1.9), bw = o.thin ? [3.5, 1.6] : [5, 2.2];
   const bar = (bx, w, colr) => { ctx.beginPath(); ctx.moveTo(bx, -14); ctx.lineTo(bx, sh); ctx.quadraticCurveTo(bx, top, 0, top); ctx.lineWidth = w; ctx.strokeStyle = colr; ctx.stroke(); };
   ctx.lineCap = 'round';
   if (part === 'back') {
     ctx.save(); ctx.globalAlpha *= 0.55; for (const bx of bars) bar(bx * 0.9 + 9, 3, '#3a3a4a'); ctx.restore();
     shape(ctx, [[-W - 6, 0], [W + 6, 0], [W + 2, -16], [-W - 2, -16]], WOOD, { lw: 4.5, seed: 81, dot: '#7a4e12', pitch: 7, rad: 0.2, da: 0.5 });
   } else {
-    const dx0 = -30, dx1 = 30, dTop = -104, open = door > 0.05;
-    for (const bx of bars) { if (open && bx > dx0 && bx < dx1) { ctx.beginPath(); ctx.moveTo(bx, dTop); ctx.lineTo(bx, sh); ctx.quadraticCurveTo(bx, top, 0, top); ctx.lineWidth = 5; ctx.strokeStyle = C.black; ctx.stroke(); ctx.lineWidth = 2.2; ctx.strokeStyle = STONE2; ctx.stroke(); continue; }
-      bar(bx, 5, C.black); bar(bx, 2.2, STONE2); }
+    const dx0 = o.dx ?? -30, dx1 = dx0 + 60, dTop = -104, open = door > 0.05;
+    for (const bx of bars) { if (open && bx > dx0 && bx < dx1) { ctx.beginPath(); ctx.moveTo(bx, dTop); ctx.lineTo(bx, sh); ctx.quadraticCurveTo(bx, top, 0, top); ctx.lineWidth = bw[0]; ctx.strokeStyle = C.black; ctx.stroke(); ctx.lineWidth = bw[1]; ctx.strokeStyle = STONE2; ctx.stroke(); continue; }
+      bar(bx, bw[0], C.black); bar(bx, bw[1], STONE2); }
     ctx.lineWidth = 7; ctx.strokeStyle = C.black; for (const hy of [-60, sh]) { ctx.beginPath(); ctx.ellipse(0, hy, W, 9, 0, 0, Math.PI); ctx.stroke(); }
     ctx.lineWidth = 3.5; ctx.strokeStyle = C.yellow; for (const hy of [-60, sh]) { ctx.beginPath(); ctx.ellipse(0, hy, W, 9, 0, 0, Math.PI); ctx.stroke(); }
     const lw = (dx1 - dx0) * Math.cos(door), lx1 = dx0 + lw;
@@ -316,3 +316,43 @@ function a46tick(ctx, x, y, r, p) { if (p <= 0) return; const k = K.ease.back(K.
 function a46dots(ctx, pts, p, col = C.black, r = 5) { const q = K.trim(pts, K.clamp(p)); if (q.length < 2) return; const L = K.pathLen(q); for (let d = 0; d < L; d += 22) { const u = d / K.pathLen(pts); const pt = K.trim(pts, u); const e = pt[pt.length - 1]; ctx.beginPath(); ctx.arc(e[0], e[1], r, 0, 7); ctx.fillStyle = col; ctx.fill(); } }
 // comic lettering word (sfx) in world units with pop
 function a46word(ctx, text, x, y, size, p, o = {}) { if (p <= 0) return; sfx(ctx, text, x, y, size, K.clamp(p), o); }
+
+// ---------- v2: the minister's badge, drawn over the Library sparrow at about a quarter of his height ----------
+// a46medal: medal centre (x, y), the two ribbon tails above it; k scale (1 = on a sparrow of s 1), limp 0..1 (lying in the dust)
+function a46medal(ctx, x, y, k = 1, rot = 0, o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(k, k);
+  const lp = K.clamp(o.limp || 0);
+  shape(ctx, [[-5, -6], [-11 - lp * 7, -21 + lp * 12], [-3 - lp * 5, -22 + lp * 12], [1, -8]], C.blue, { lw: 2.5, seed: 44 });
+  shape(ctx, [[5, -6], [11 + lp * 7, -21 + lp * 12], [3 + lp * 5, -22 + lp * 12], [-1, -8]], C.red, { lw: 2.5, seed: 45 });
+  shape(ctx, ell(0, 0, 9.5, 9.5, 16), C.yellow, { lw: 3, seed: 46, dot: '#ff9a2a', pitch: 4, rad: 0.2, da: 0.5 }); star(ctx, 0, 0, 5.5, C.red);
+  ctx.restore();
+}
+const A46_CHEST = [17, -25];   // medal centre in sparrow-local units
+// the transform the acting wrapper + Library sparrow apply (feet at x, y)
+function a46spXf(ctx, P) { const s = P.s || 1, dir = P.dir ?? 1, sq = P.sq ?? 1, tip = P.tip || 0;
+  ctx.translate(P.x, P.y); if (tip) ctx.rotate(tip * Math.sign(dir || 1)); if (sq !== 1) ctx.scale(1 + (1 - sq) * 0.7, sq);
+  ctx.translate(P.shake || 0, 0); if (P.rot) ctx.rotate(P.rot); ctx.scale(dir * s, s); }
+const a46chest = (P) => { const s = P.s || 1, dir = P.dir ?? 1; return [P.x + dir * s * A46_CHEST[0], P.y + s * A46_CHEST[1] * (P.sq ?? 1)]; };
+// every bird of this film goes through a46bird: badge (large), cover (0..1 the wing pressed over the badge), glint (0..1), tint (canvas filter)
+function a46bird(ctx, P) {
+  const badge = P.kind === 'sparrow' && P.badge && !P.silhouette;
+  if (P.tint) { ctx.save(); ctx.filter = P.tint; }
+  bird(ctx, badge || P.tint ? { ...P, badge: false } : P);
+  if (P.tint) ctx.restore();
+  if (!badge) return;
+  ctx.save(); if (P.alpha != null) ctx.globalAlpha *= P.alpha; a46spXf(ctx, P);
+  a46medal(ctx, A46_CHEST[0], A46_CHEST[1], 1.15, P.fly ? 0.25 * (P.flap || 0) : 0);
+  const cv = K.clamp(P.cover || 0);
+  if (cv > 0.02) { const pal = SPARROW_PAL[P.pal || 0] || SPARROW_PAL[0]; ctx.save(); ctx.translate(-4, -40); ctx.rotate(K.lerp(-0.6, 0.62, cv)); shape(ctx, ell(14, 0, 27, 11, 16), pal.wing, { lw: 4, seed: 6 });
+    for (const sx of [2, 12, 22]) seg(ctx, sx, -4, sx - 5, 7, 3, pal.streak, 0); ctx.restore(); }
+  ctx.restore();
+  if (P.glint > 0 && P.glint < 1) { const c = a46chest(P); a46glint(ctx, c[0] + 4, c[1] - 4, 24 * (P.s || 1), P.glint); }
+}
+// the person drawn again over the bush from the belt up (waist-deep in the bush)
+function a46upper(ctx, P, beltY, draw) { ctx.save(); ctx.beginPath(); ctx.rect(-3000, -3000, 9000, beltY + 3000); ctx.clip(); draw(ctx, P); ctx.restore(); }
+// the absent friend: a dashed sparrow outline (feet at x, y, facing dir)
+function a46ghostSp(ctx, x, y, s, dir, a) {
+  if (a <= 0) return; ctx.save(); ctx.globalAlpha *= a; ctx.translate(x, y); ctx.scale(dir * s, s); ctx.setLineDash([7, 6]); ctx.lineWidth = 3.5; ctx.strokeStyle = C.black; ctx.fillStyle = 'rgba(255,250,240,0.35)';
+  for (const p of [ell(0, -32, 31, 24, 22), ell(24, -54, 18, 17, 18), [[-22, -38], [-52, -58], [-56, -46], [-24, -28]]]) { K.poly(ctx, p, true); ctx.fill(); ctx.stroke(); }
+  ctx.restore();
+}

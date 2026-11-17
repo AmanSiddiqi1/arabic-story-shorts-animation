@@ -8,7 +8,8 @@ const a46GardenL = () => bake('a46garden', 1000, 1230, (c) => { hillTrees(c, { s
 function a46garden(ctx, t, u) { skyCycle(ctx, u, { t, hills: true }); cloudFlat(ctx, 620 + ((t * 6) % 600), 200, 0.7); ctx.drawImage(a46GardenL(), 0, 0, 1000, 1230); }
 
 // ---------- summit (rockyHill top terrace) ----------
-const A46_THRONE = { x0: 720, x1: 900, top: 790, back: 600 }, A46_POST = { x: 540, top: 800 }, A46_LEDGE = { x0: 40, x1: 300, top: 810 };
+// v2: post moved left (540 -> 440) so the peacock stands in the open between it and the throne
+const A46_THRONE = { x0: 720, x1: 900, top: 790, back: 600 }, A46_POST = { x: 440, top: 800 }, A46_LEDGE = { x0: 40, x1: 300, top: 810 };
 function a46peaks(c, y0, s, col) { for (const [px, h, w] of [[120, 250, 300], [380, 200, 260], [640, 290, 330], [900, 230, 280]]) { const base = y0; shape(c, [[px - w / 2, base], [px, base - h * s], [px + w / 2, base]], col, { lw: 6, seed: 200 + px }); shape(c, [[px - w * 0.12, base - h * s * 0.76], [px, base - h * s], [px + w * 0.12, base - h * s * 0.76], [px + w * 0.04, base - h * s * 0.7], [px - w * 0.03, base - h * s * 0.78]], C.white, { lw: 4, seed: 210 + px }); } }
 const a46SummitBack = () => bake('a46summitB', 1000, 1230, (c) => {
   a46peaks(c, 1235, 1, '#7d8bb8');
@@ -30,8 +31,8 @@ const a46SummitL = () => bake('a46summitF', 1000, 1230, (c) => {
   shape(c, [[A46_POST.x - 34, 904], [A46_POST.x - 28, A46_POST.top + 6], [A46_POST.x - 18, A46_POST.top], [A46_POST.x + 20, A46_POST.top + 2], [A46_POST.x + 30, A46_POST.top + 8], [A46_POST.x + 34, 904]], A46_ROCKL, { lw: 6, seed: 226, dot: A46_ROCKD, pitch: 9, rad: 0.2, da: 0.4 });
   for (const [x, r] of [[330, 14], [460, 10], [650, 12], [960, 16]]) shape(c, ell(x, 896, r * 1.5, r * 0.7, 12), A46_ROCKD, { lw: 4, seed: 230 + x });
 });
-function a46summit(ctx, t, u) {
-  skyCycle(ctx, u, { t, hills: false });
+function a46summit(ctx, t, u, o = {}) {
+  skyCycle(ctx, u, { t, hills: false, sun: o.sun });
   ctx.drawImage(a46SummitBack(), 0, 0, 1000, 1230);
   cloudFlat(ctx, ((t * 9) % 1300) - 150, 1020, 1.1);
   ctx.drawImage(a46SummitL(), 0, 0, 1000, 1230);
@@ -60,7 +61,9 @@ const a46HideBush = () => bake('a46bush', 1600, 1230, (c) => bush(c, { x: A46_BU
 function a46glade(ctx, t, u, o = {}) {
   ctx.fillStyle = '#d9a441'; ctx.fillRect(-600, 1225, 2800, 900);   // ground skirt for wide pull-outs
   ctx.save(); ctx.fillStyle = dayCycle(u).a === 'night' ? NAVY2 : C.blue; ctx.fillRect(-600, -900, 2800, 905); ctx.restore();
-  skyCycle(ctx, u, { t, w: 1600, hills: true });
+  if (o.sunAt) { const d = skyCycle(ctx, u, { t, w: 1600, hills: false, sun: false }); sun(ctx, o.sunAt[0], o.sunAt[1], t);   // v2: the sun placed by the scene (S16)
+    for (const [bx, by, br, col] of d.hills) { ctx.beginPath(); ctx.ellipse(bx, by, br, br * 0.5, 0, Math.PI, 0); ctx.fillStyle = col; ctx.fill(); ctx.lineWidth = 6; ctx.strokeStyle = C.black; ctx.stroke(); } }
+  else skyCycle(ctx, u, { t, w: 1600, hills: true });
   if (o.clouds !== false) cloudFlat(ctx, 300 + ((t * 5) % 1400), 190, 0.75);
   ctx.drawImage(a46GladeL(), 0, 0, 1600, 1230);
 }
