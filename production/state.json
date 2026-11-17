@@ -41,10 +41,6 @@
 "value": "6"
 },
 {
-"key": "pause_planning",
-"value": "1"
-},
-{
 "key": "campaign_start_meter",
 "value": "1"
 },
@@ -53,15 +49,19 @@
 "value": "3"
 },
 {
-"key": "only_ids",
-"value": "AN-001,AN-014,AN-040,AN-041,AN-045,AN-046,AN-083,AN-084,AN-092,AN-097,AN-098,AN-099,AN-104,AN-105,AN-108,AN-111,AN-112,AN-113,AN-124,AN-134,AN-135,AN-138,AN-140,AN-145,AN-146,AN-149,AN-151"
-},
-{
 "key": "hold_prefixes",
 "value": ""
 },
 {
+"key": "only_ids",
+"value": "KD-005,KD-007,KD-008,KD-010,KD-011,KD-013,KD-014,KD-015,KD-016,KD-017,KD-019,KD-022,KD-026,KD-031,AN-001,AN-014,AN-040,AN-041,AN-045,AN-046,AN-083,AN-084,AN-092,AN-097,AN-098,AN-099,AN-104,AN-105,AN-108,AN-111,AN-112,AN-113,AN-124,AN-134,AN-135,AN-138,AN-140,AN-145,AN-146,AN-149,AN-151"
+},
+{
 "key": "pause_production",
+"value": "0"
+},
+{
+"key": "pause_planning",
 "value": "1"
 }
 ],
@@ -4062,6 +4062,48 @@
 "msg": "117 stories imported",
 "story_id": null,
 "t": "2026-11-17T15:45:28"
+},
+{
+"id": 572,
+"kind": "cloud-render",
+"msg": "v1: PASS run 44069419611 commit f4e36f1d8a",
+"story_id": "KD-008",
+"t": "2026-11-17T19:48:49"
+},
+{
+"id": 573,
+"kind": "cloud-render",
+"msg": "v1: PASS run 44071940001 commit 2a1634f626",
+"story_id": "KD-011",
+"t": "2026-11-17T19:48:50"
+},
+{
+"id": 574,
+"kind": "cloud-render",
+"msg": "v1: PASS run 44071940001 commit 2a1634f626",
+"story_id": "KD-016",
+"t": "2026-11-17T19:48:52"
+},
+{
+"id": 575,
+"kind": "config",
+"msg": "only_ids=KD-005,KD-007,KD-008,KD-010,KD-011,KD-013,KD-014,KD-015,KD-016,KD-017,KD-019,KD-022,KD-026,KD-031,AN-001,AN-014,AN-040,AN-041,AN-045,AN-046,AN-083,AN-084,AN-092,AN-097,AN-098,AN-099,AN-104,AN-105,AN-108,AN-111,AN-112,AN-113,AN-124,AN-134,AN-135,AN-138,AN-140,AN-145,AN-146,AN-149,AN-151",
+"story_id": null,
+"t": "2026-11-17T19:49:18"
+},
+{
+"id": 576,
+"kind": "config",
+"msg": "pause_production=0",
+"story_id": null,
+"t": "2026-11-17T19:49:18"
+},
+{
+"id": 577,
+"kind": "config",
+"msg": "pause_planning=1",
+"story_id": null,
+"t": "2026-11-17T19:49:19"
 }
 ],
 "plans": [
@@ -5609,18 +5651,8 @@
 "path": "Animations/KD-005/renders/KD-005_v1.mp4",
 "qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 163.3}, \"end_hold\": 4.0, \"decode\": \"OK\", \"lufs\": -15.0, \"sync\": {\"lag_ms\": 0, \"corr\": 0.997}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-16T18:38:51\"}",
 "sha": null,
-"status": "PASS",
-"story_id": "KD-005",
-"version": "v1"
-},
-{
-"created": "2026-11-17T00:37:42",
-"duration": 174.467,
-"path": "Animations/KD-008/renders/KD-008_v1.mp4",
-"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 174.467}, \"end_hold\": 4.01, \"decode\": \"OK\", \"lufs\": -15.0, \"sync\": {\"lag_ms\": 0, \"corr\": 0.999}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T00:37:42\"}",
-"sha": null,
 "status": "SUPERSEDED",
-"story_id": "KD-008",
+"story_id": "KD-005",
 "version": "v1"
 },
 {
@@ -5629,18 +5661,8 @@
 "path": "Animations/KD-010/renders/KD-010_v1.mp4",
 "qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 169.833}, \"end_hold\": 3.0, \"decode\": \"OK\", \"lufs\": -14.8, \"sync\": {\"lag_ms\": 0, \"corr\": 0.997}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T09:20:54\"}",
 "sha": null,
-"status": "PASS",
-"story_id": "KD-010",
-"version": "v1"
-},
-{
-"created": "2026-11-17T09:28:41",
-"duration": 161.0,
-"path": "Animations/KD-011/renders/KD-011_v1.mp4",
-"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 161.0}, \"end_hold\": 3.49, \"decode\": \"OK\", \"lufs\": -15.1, \"sync\": {\"lag_ms\": 0, \"corr\": 0.997}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T09:28:41\"}",
-"sha": null,
 "status": "SUPERSEDED",
-"story_id": "KD-011",
+"story_id": "KD-010",
 "version": "v1"
 },
 {
@@ -5671,16 +5693,6 @@
 "sha": null,
 "status": "SUPERSEDED",
 "story_id": "KD-015",
-"version": "v1"
-},
-{
-"created": "2026-11-17T10:01:03",
-"duration": 164.7,
-"path": "Animations/KD-016/renders/KD-016_v1.mp4",
-"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 164.7}, \"end_hold\": 2.97, \"decode\": \"OK\", \"lufs\": -15.2, \"sync\": {\"lag_ms\": 0, \"corr\": 0.997}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T10:01:03\"}",
-"sha": null,
-"status": "SUPERSEDED",
-"story_id": "KD-016",
 "version": "v1"
 },
 {
@@ -5971,6 +5983,36 @@
 "sha": null,
 "status": "SUPERSEDED",
 "story_id": "AN-151",
+"version": "v1"
+},
+{
+"created": "2026-11-17T19:48:49",
+"duration": 174.467,
+"path": "Animations/KD-008/renders/KD-008_v1.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 174.467}, \"end_hold\": 4.01, \"decode\": \"OK\", \"lufs\": -15.0, \"sync\": {\"lag_ms\": 0, \"corr\": 0.999}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T11:10:38\", \"cloud_run\": \"44069419611\", \"cloud_commit\": \"f4e36f1d8aea5841b205c51d6f0de54b361589f1\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "KD-008",
+"version": "v1"
+},
+{
+"created": "2026-11-17T19:48:50",
+"duration": 161.0,
+"path": "Animations/KD-011/renders/KD-011_v1.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 161.0}, \"end_hold\": 3.49, \"decode\": \"OK\", \"lufs\": -15.1, \"sync\": {\"lag_ms\": 0, \"corr\": 0.997}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T11:22:06\", \"cloud_run\": \"44071940001\", \"cloud_commit\": \"2a1634f6261c6b2672fff7afccd14e8e6c6d779e\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "KD-011",
+"version": "v1"
+},
+{
+"created": "2026-11-17T19:48:52",
+"duration": 164.7,
+"path": "Animations/KD-016/renders/KD-016_v1.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 164.7}, \"end_hold\": 2.97, \"decode\": \"OK\", \"lufs\": -15.2, \"sync\": {\"lag_ms\": 0, \"corr\": 0.997}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T11:23:23\", \"cloud_run\": \"44071940001\", \"cloud_commit\": \"2a1634f6261c6b2672fff7afccd14e8e6c6d779e\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "KD-016",
 "version": "v1"
 }
 ],

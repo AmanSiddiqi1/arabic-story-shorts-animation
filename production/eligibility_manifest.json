@@ -1,0 +1,278 @@
+{
+ "purpose": "Fixed scope of the 2026-11-17 completion loop (Fable-Opus four-stage workflow: v1 render -> Fable review -> Opus revise/v2 -> optional review2/v3). Only stories with an implemented animation (Animations/<ID>/build.py + render.mjs, implcheck PASS). Do not add stories to this file during the loop.",
+ "created": "2026-11-17",
+ "source_commit": "b5f0d8c86859eaad535e1eb14d84060403be9c59",
+ "rule": "implemented = build.py + render.mjs + qc/implcheck.json PASS; 43 found. Progress is tracked in production.db (tasks/renders/reviews), exported to production/state.json.",
+ "in_loop": [
+  {
+   "id": "KD-005",
+   "title": "The Raven and the Snake"
+  },
+  {
+   "id": "KD-007",
+   "title": "The Three Fish"
+  },
+  {
+   "id": "KD-008",
+   "title": "The Tortoise and the Two Ducks"
+  },
+  {
+   "id": "KD-010",
+   "title": "The Louse and the Flea"
+  },
+  {
+   "id": "KD-011",
+   "title": "The Rats and the Iron"
+  },
+  {
+   "id": "KD-013",
+   "title": "The Ascetic and the Thieves"
+  },
+  {
+   "id": "KD-014",
+   "title": "The Mouse Marries Only a Mouse"
+  },
+  {
+   "id": "KD-015",
+   "title": "The Ascetic, the Ghee, and the Honey"
+  },
+  {
+   "id": "KD-016",
+   "title": "The Dove, the Fox, and the Crane"
+  },
+  {
+   "id": "KD-017",
+   "title": "The Hesitant Thief"
+  },
+  {
+   "id": "KD-019",
+   "title": "The Seagull and the Crab"
+  },
+  {
+   "id": "KD-022",
+   "title": "The Ignorant Physician"
+  },
+  {
+   "id": "KD-026",
+   "title": "The Thief and the Devil"
+  },
+  {
+   "id": "KD-031",
+   "title": "The Pair of Hoopoes and the Treasure"
+  },
+  {
+   "id": "AN-001",
+   "title": "The Bull and the Ass"
+  },
+  {
+   "id": "AN-014",
+   "title": "The Envious Man and the Envied"
+  },
+  {
+   "id": "AN-040",
+   "title": "The Cat and the Crow"
+  },
+  {
+   "id": "AN-041",
+   "title": "The Fox and the Crow"
+  },
+  {
+   "id": "AN-045",
+   "title": "The Thief and His Monkey"
+  },
+  {
+   "id": "AN-046",
+   "title": "The Sparrow and the Peacock"
+  },
+  {
+   "id": "AN-083",
+   "title": "MA'AN THE SON OF ZAIDAH AND THE THREE GIRLS"
+  },
+  {
+   "id": "AN-084",
+   "title": "MA'AN SON OF ZAIDAH AND THE BADAWI"
+  },
+  {
+   "id": "AN-092",
+   "title": "ALI THE PERSIAN"
+  },
+  {
+   "id": "AN-097",
+   "title": "GENEROUS DEALING OF YAHYA BIN KHALID THE BARMECIDE WITH MANSUR"
+  },
+  {
+   "id": "AN-098",
+   "title": "GENEROUS DEALING OF YAHYA SON OF KHALID WITH A MAN WHO FORGED A LETTER IN HIS NAME"
+  },
+  {
+   "id": "AN-099",
+   "title": "CALIPH AL-MAAMUN AND THE STRANGE SCHOLAR"
+  },
+  {
+   "id": "AN-104",
+   "title": "THE MAN WHO STOLE THE DISH OF GOLD WHEREIN THE DOG ATE"
+  },
+  {
+   "id": "AN-105",
+   "title": "THE SHARPER OF ALEXANDRIA AND THE CHIEF OF POLICE"
+  },
+  {
+   "id": "AN-108",
+   "title": "THE CHIEF OF THE KUS POLICE AND THE SHARPER"
+  },
+  {
+   "id": "AN-111",
+   "title": "THE DEVOUT ISRAELITE"
+  },
+  {
+   "id": "AN-112",
+   "title": "ABU HASSAN AL-ZIYADI AND THE KHORASAN MAN"
+  },
+  {
+   "id": "AN-113",
+   "title": "THE POOR MAN AND HIS FRIEND IN NEED"
+  },
+  {
+   "id": "AN-124",
+   "title": "AL-MUTALAMMIS AND HIS WIFE UMAYMAH"
+  },
+  {
+   "id": "AN-134",
+   "title": "THE CALIPH AL HAKIM AND THE MERCHANT"
+  },
+  {
+   "id": "AN-135",
+   "title": "KING KISRA ANUSHIRWAN AND THE VILLAGE DAMSEL"
+  },
+  {
+   "id": "AN-138",
+   "title": "YAHYA BIN KHALID AND THE POOR MAN"
+  },
+  {
+   "id": "AN-140",
+   "title": "THE SONS OF YAHYA BIN KHALID AND SAID BIN SALIM"
+  },
+  {
+   "id": "AN-145",
+   "title": "AL-MAAMUN AND THE PYRAMIDS OF EGYPT"
+  },
+  {
+   "id": "AN-146",
+   "title": "THE THIEF AND THE MERCHANT"
+  },
+  {
+   "id": "AN-149",
+   "title": "THE SCHOOLMASTER WHO FELL IN LOVE BY REPORT"
+  },
+  {
+   "id": "AN-151",
+   "title": "THE ILLITERATE WHO SET UP FOR A SCHOOLMASTER"
+  }
+ ],
+ "approved_subtitle_refresh_only": [
+  {
+   "id": "KD-009",
+   "title": "The Monkey and the Carpenter",
+   "note": "owner-approved before the 2026-11-17 English subtitle audit; creative content stays as approved; only a subtitle-refresh re-render (no Fable review) is needed, low priority"
+  },
+  {
+   "id": "KD-012",
+   "title": "The Hare and the Elephants",
+   "note": "owner-approved before the 2026-11-17 English subtitle audit; creative content stays as approved; only a subtitle-refresh re-render (no Fable review) is needed, low priority"
+  }
+ ],
+ "excluded": {
+  "older_films_outside_pipeline": [
+   "KD-001",
+   "KD-002",
+   "KD-003",
+   "KD-004",
+   "KD-006"
+  ],
+  "plans_only_no_animation": [
+   "AN-036",
+   "AN-038",
+   "AN-039",
+   "AN-042",
+   "AN-043",
+   "AN-044",
+   "AN-075",
+   "AN-082",
+   "AN-085",
+   "AN-086",
+   "AN-087",
+   "AN-088",
+   "AN-089",
+   "AN-090",
+   "AN-095",
+   "AN-103",
+   "AN-107",
+   "AN-109",
+   "AN-114",
+   "AN-116",
+   "AN-119",
+   "AN-123",
+   "AN-125",
+   "AN-126",
+   "AN-127",
+   "AN-131",
+   "AN-132",
+   "AN-133",
+   "AN-136",
+   "AN-137",
+   "AN-141",
+   "AN-142",
+   "AN-143",
+   "AN-144",
+   "AN-148",
+   "AN-152",
+   "AN-153",
+   "AN-154",
+   "AN-155",
+   "AN-156",
+   "AN-158",
+   "AN-161",
+   "AN-162",
+   "AN-163",
+   "AN-169",
+   "AN-170",
+   "AN-172",
+   "AN-173",
+   "AN-174",
+   "AN-175",
+   "AN-176",
+   "AN-177",
+   "AN-178",
+   "AN-179",
+   "AN-180",
+   "AN-181",
+   "AN-182",
+   "AN-183",
+   "AN-184",
+   "AN-185",
+   "AN-186",
+   "AN-187",
+   "AN-188",
+   "AN-189",
+   "AN-190",
+   "AN-223",
+   "AN-224",
+   "AN-225",
+   "AN-226",
+   "AN-227",
+   "AN-228",
+   "AN-229",
+   "AN-235",
+   "AN-248"
+  ],
+  "experiments": [
+   "Animations/lark-and-the-elephant-fable-experiment"
+  ],
+  "note": "No new animations are created for excluded stories."
+ },
+ "counts": {
+  "implemented": 43,
+  "in_loop": 41,
+  "approved_refresh_only": 2
+ }
+}
