@@ -22,6 +22,17 @@ These rules apply **only to this series** (this repository: Arabic Story Shorts,
 - `kit.js`, `sound.js` and `halftone-pop.js` are the Creator OS engine and style module, **kept unchanged** and **not stored in this repository**: they come from https://github.com/kevinbadi/claude-motion-faceless-skills (MIT), cloned beside this folder (`~/Downloads/Claude Code/claude-motion-faceless-skills`) and found by `Library/engine.py` (or `$MOTION_STYLES`). Never copy them back in (`.gitignore` blocks them). New stories take characters, props, effects and sets from `Library/`. A story's own code is its scene file(s): staging, acting, camera, timing and sound. Use the style's own primitives (title, label, arrow, box, counter, emphasis, transition, finish) and call `finish` last every frame.
 - Phone legibility: headlines >= 44 px, labels >= 28 px at 1280x720 scale; no em or en dashes in on-screen text.
 
+## Cloud rendering (default for production renders)
+Normal renders run on **GitHub Actions** (free standard `ubuntu-24.04` runners), not on this Mac. Full guide: [tools/cloud/README.md](tools/cloud/README.md). The runner executes the same `build.py` -> `render.mjs` -> `tools/production/qc.py`; nothing in the animation engine changed.
+1. Develop locally (stills, contact sheet, `implcheck.py`; short test clips only). 2. Commit and **push to `main`** (the cloud renders exactly the pushed source; `submit` refuses a dirty or unpushed tree).
+3. `python3 tools/cloud/cloud.py inputs <ID>` (once per story: narration MP3 goes to the `narration-inputs` Release, never into Git), then `python3 tools/cloud/cloud.py submit <ID> [<ID>...] [--version vN]`.
+4. `python3 tools/cloud/cloud.py status <run> --watch`, then `fetch <run>`: MP4 -> `Animations/<ID>/renders/<ID>_<version>.mp4`, QC json -> `qc/`, result recorded in production.db. `cloud.py list` re-finds runs after an interrupted session.
+5. If a film FAILS (the fetch prints the report and log path): fix the source, push, submit again with the next version. Automated QC is technical only; the Fable visual review is still required.
+6. Only after the owner approves a film: `cloud.py publish <ID> --run <run> --version vN --approved` creates the Release asset `<ID>-vN` (not in Git history).
+- Limits to respect: one run at a time, max 2 films render at once, 60 min per film, <= 8 films per submit; **more than 3 films needs the owner's OK first** (`--yes`); never loop on a deterministic failure (same source failing twice is refused); never use `--force/--override` without the owner's say-so. Artifact quota is 500 MB and a film is about 220 MB: fetch promptly, `fetch --purge` or `purge` afterwards.
+- Never commit MP4s, frames or narration recordings (`.gitignore`, `check_staged.py`). Where the runner reads the narration from is described in [tools/cloud/README.md](tools/cloud/README.md).
+- The local `render_queue.py` / `render.mjs` path remains only as a **fallback** for troubleshooting or when GitHub is unsuitable.
+
 ## Layout
 - Animation in the **top two-thirds** (panel at x 54..1026, y 54..1250). The **bottom third is a plain caption panel** (x 54..1026, y 1296..1862) holding only the subtitles.
 - Subtitles: the **Arabic script verbatim** (diacritics included), large, right-to-left, centred; the **English translation below it, smaller, in blue (Bangers)**. Default Arabic font: **Noto Naskh Arabic 700**. (The Thief story also exists in Cairo and Scheherazade New.) Embed fonts as base64 so renders work offline.
@@ -39,7 +50,7 @@ These rules apply **only to this series** (this repository: Arabic Story Shorts,
 
 ## Working rules
 - **Protect approved outputs.** Never render over a story's MP4/HTML without a backup; use `--out` and a scratch frames folder for tests. **Do not delete the frames folder until ffmpeg has printed "ffmpeg exit"** (the first Lark render was truncated that way).
-- Check changes with stills and a contact sheet (`sh.sh`) before a full render (about 6-7 minutes with 3 workers).
+- Check changes with stills and a contact sheet (`sh.sh`) before submitting a full render to the cloud (locally a full render is about 6-7 minutes with 3 workers; local full renders are now the fallback only).
 - Rendering uses the shared **Lemo-Opuscar** library (Playwright, Chromium and the Python venv for PIL), a sibling of the repository folder (on this account `~/Downloads/Claude Code/lemo-opuscar`; on another account, for example `~/Developer/lemo-opuscar`). The scripts find it from their own location (or `$LIB` / `$LEMO_PY`). Never modify it or `git pull` it.
 - No dependency outside this project folder: not `other project folders`, not other projects, not temporary folders. The only shared dependencies are `Library/` (inside this project), Lemo-Opuscar for rendering and the claude-motion-faceless-skills engine. The project does not use `/Users/Shared/ArabicStoryShorts` (the `<second-account>` account is reserved for another project).
 - **Back up with `tools/backup.sh "what changed"`** (checks remote and branch, runs the regression test, refuses media and credentials, never force-pushes, reports whether local and GitHub match). Never force-push or rewrite history.

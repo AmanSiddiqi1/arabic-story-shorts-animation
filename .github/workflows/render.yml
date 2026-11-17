@@ -1,0 +1,128 @@
+name: Render films
+
+# Cloud rendering of finished animation source. NEVER runs on push: it is started explicitly with
+#   python3 tools/cloud/cloud.py submit KD-008 ...        (wraps `gh workflow run`)
+# Limits: at most 2 renders at a time (matrix max-parallel), 1 batch run at a time (concurrency group), 60 min per film,
+# at most 1 automatic retry (transient failures only), batch size and 24 h run limits enforced in tools/cloud/plan.py.
+on:
+  workflow_dispatch:
+    inputs:
+      stories:    {description: 'Story ids, space separated (KD-008 AN-001 ...)', required: true, type: string}
+      version:    {description: 'Version label of this render (v1, v2 ...)', required: true, default: 'v1', type: string}
+      request_id: {description: 'Unique id so the client can find this run', required: false, default: '', type: string}
+      force:      {description: 'Re-render even if an identical render already exists', required: false, default: false, type: boolean}
+      large_ok:   {description: 'Confirm a batch larger than 3 stories', required: false, default: false, type: boolean}
+
+run-name: "render [${{ inputs.request_id }}] ${{ inputs.stories }} ${{ inputs.version }}"
+
+permissions:
+  contents: read     # check out the repo, read the narration inputs release
+  actions: read      # plan job lists existing artifacts / recent runs (duplicate + usage guards)
+
+# One batch run at a time; a second submission waits (GitHub keeps ONE pending run and cancels older pending ones,
+# so the client refuses to submit while a run is active). Together with max-parallel this is the hard 2-render cap.
+concurrency:
+  group: render-queue
+  cancel-in-progress: false
+
+env:
+  GH_TOKEN: ${{ github.token }}
+
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    if: github.actor == github.repository_owner
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      count: ${{ steps.plan.outputs.count }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: plan
+        env:
+          STORIES: ${{ inputs.stories }}
+          VERSION: ${{ inputs.version }}
+          FORCE: ${{ inputs.force && '--force' || '' }}
+          LARGE: ${{ inputs.large_ok && '--large-ok' || '' }}
+        run: python3 tools/cloud/plan.py --stories "$STORIES" --version "$VERSION" $FORCE $LARGE
+
+  render:
+    needs: plan
+    if: needs.plan.outputs.count != '0'
+    runs-on: ubuntu-24.04            # standard GitHub-hosted runner (free tier); never a larger/paid runner
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: 2                # the two-render limit
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    name: render ${{ matrix.id }} ${{ matrix.version }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pinned engine repositories
+        run: |
+          set -e
+          fetch() { # repo sha dir
+            for i in 1 2 3; do
+              rm -rf "$3"; mkdir -p "$3"; git -C "$3" init -q
+              git -C "$3" remote add origin "https://github.com/$1.git"
+              git -C "$3" fetch -q --depth 1 origin "$2" && git -C "$3" checkout -q FETCH_HEAD && return 0
+              sleep 10
+            done; return 1
+          }
+          fetch "$(jq -r .lemo_opuscar.repo tools/cloud/deps.json)" "$(jq -r .lemo_opuscar.sha tools/cloud/deps.json)" "$RUNNER_TEMP/lemo-opuscar"
+          fetch "$(jq -r .motion_skills.repo tools/cloud/deps.json)" "$(jq -r .motion_skills.sha tools/cloud/deps.json)" "$RUNNER_TEMP/claude-motion-faceless-skills"
+          echo "LIB=$RUNNER_TEMP/lemo-opuscar" >> "$GITHUB_ENV"
+          echo "MOTION_STYLES=$RUNNER_TEMP/claude-motion-faceless-skills/skills/motion-styles" >> "$GITHUB_ENV"
+
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+
+      - name: Playwright library
+        working-directory: ${{ runner.temp }}/lemo-opuscar
+        run: npm ci --omit=dev --no-audit --no-fund
+
+      - name: Cache browser
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-headless-shell-1.63.0-${{ runner.os }}
+
+      - name: Chromium and ffmpeg
+        working-directory: ${{ runner.temp }}/lemo-opuscar
+        run: |
+          set -e
+          for i in 1 2 3; do npx playwright-core install --with-deps chromium-headless-shell && break || sleep 15; done
+          sudo apt-get install -y -qq ffmpeg || { sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg; }
+          ffmpeg -hide_banner -version | head -1; ffmpeg -hide_banner -encoders 2>/dev/null | grep -c libx264
+
+      - name: Render, check and report ${{ matrix.id }}
+        env:
+          NARRATION_REPO: ${{ secrets.NARRATION_REPO }}     # only when the narration lives in a private repository
+          NARRATION_TOKEN: ${{ secrets.NARRATION_TOKEN }}   # fine-grained, read-only (Contents: read) on that one repository
+          SID: ${{ matrix.id }}
+          VERSION: ${{ matrix.version }}
+          FP: ${{ matrix.fp }}
+        run: python3 tools/cloud/render_one.py "$SID" --version "$VERSION" --fp "$FP" --out "$RUNNER_TEMP/out"
+
+      - name: Upload MP4 and QC report (temporary, 3 days)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: ${{ runner.temp }}/out/*
+          retention-days: 3
+          compression-level: 0
+          if-no-files-found: error
+
+      - name: Upload failure diagnostics (no video)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: FAILED-${{ matrix.id }}-${{ matrix.version }}-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/out/*.json
+            ${{ runner.temp }}/out/*.md
+            ${{ runner.temp }}/out/*.log
+          retention-days: 3
+          if-no-files-found: ignore

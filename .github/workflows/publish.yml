@@ -1,0 +1,65 @@
+name: Publish approved film
+
+# Saves a QC-passed cloud render as a GitHub Release asset (outside Git history). Started explicitly, after the film was
+# reviewed and approved:  python3 tools/cloud/cloud.py publish KD-008 --run <run id> --version v1 --approved
+on:
+  workflow_dispatch:
+    inputs:
+      story:   {description: 'Story id (KD-008)', required: true, type: string}
+      run_id:  {description: 'Render run id that produced the film', required: true, type: string}
+      version: {description: 'Version label (v1)', required: true, default: 'v1', type: string}
+
+run-name: "publish ${{ inputs.story }} ${{ inputs.version }} (run ${{ inputs.run_id }})"
+
+permissions:
+  contents: write    # create the release (and its tag); nothing else
+  actions: read      # download the artifact of the render run
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    if: github.actor == github.repository_owner
+    env:
+      GH_TOKEN: ${{ github.token }}
+      STORY: ${{ inputs.story }}
+      VERSION: ${{ inputs.version }}
+      RUN_ID: ${{ inputs.run_id }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - name: Download and verify the render
+        run: |
+          set -euo pipefail
+          [[ "$STORY" =~ ^(KD|AN)-[0-9]{3}$ ]] && [[ "$VERSION" =~ ^v[0-9]{1,3}$ ]] && [[ "$RUN_ID" =~ ^[0-9]+$ ]]
+          mkdir dl
+          gh run download "$RUN_ID" --pattern "render-$STORY-$VERSION-*" --dir dl
+          d=$(ls -d dl/render-"$STORY"-"$VERSION"-* | head -1)
+          python3 - "$d" "$STORY" "$VERSION" <<'PY'
+          import hashlib, json, subprocess, sys, pathlib
+          d, sid, ver = pathlib.Path(sys.argv[1]), sys.argv[2], sys.argv[3]
+          m = json.loads((d / 'manifest.json').read_text())
+          assert m['story'] == sid and m['version'] == ver, 'manifest is for another film'
+          assert m['result'] == 'PASS' and m['qc']['result'] == 'PASS' and not m['qc']['fails'], 'QC did not pass'
+          mp4 = d / m['mp4']['file']; h = hashlib.sha256(mp4.read_bytes()).hexdigest()
+          assert h == m['mp4']['sha256'], 'MP4 checksum differs from the manifest'
+          subprocess.check_call(['git', 'merge-base', '--is-ancestor', m['commit'], 'origin/main'])   # source of this film is in main
+          print('verified', sid, ver, m['commit'][:10], m['mp4']['bytes'], 'bytes')
+          PY
+          echo "DIR=$d" >> "$GITHUB_ENV"
+      - name: Create the release
+        run: |
+          set -euo pipefail
+          tag="$STORY-$VERSION"
+          commit=$(jq -r .commit "$DIR/manifest.json")
+          notes="Cloud render of $STORY $VERSION, QC PASS.
+          Source commit: $commit
+          Render run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/$RUN_ID
+          MP4 sha256: $(jq -r .mp4.sha256 "$DIR/manifest.json")
+          Automated checks are technical only; the film was approved by the owner before publishing."
+          gh release create "$tag" "$DIR/${STORY}_${VERSION}.mp4" "$DIR/${STORY}_${VERSION}.qc.json" "$DIR/manifest.json#${STORY}_${VERSION}.manifest.json" \
+            --target "$commit" --title "$STORY $VERSION" --notes "$notes"
