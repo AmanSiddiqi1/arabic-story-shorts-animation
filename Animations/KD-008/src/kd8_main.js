@@ -4,6 +4,7 @@ const KD8_SHOTS = [[0, KD8_SC_POND], [109.6, KD8_SC_AIR], [125.98, KD8_SC_VIL], 
 const kd8Shot = (t) => { let s = KD8_SHOTS[0][1]; for (const [a, sc] of KD8_SHOTS) if (t >= a) s = sc; return s; };
 const kd8Cam = (sc, t) => { const c = K.camAt(sc.cam, t), z = c.zoom; return { x: K.clamp(c.x, 500 / z, sc.ww - 500 / z), y: K.clamp(c.y, 615 / z, sc.wh - 615 / z), zoom: z }; };
 const kd8Pan = (x, y, c) => [500 + (x - c.x) * c.zoom, 615 + (y - c.y) * c.zoom];
+const KD8_WISH = [760, 960], KD8_BALLOON = [290, 1020];   // panel spots: the wish cloud below duck B; I AM NOT A lower left of her
 const kd8In = (t, a, b) => K.clamp(Math.min((t - a) / 0.3, (b - t) / 0.25));    // pop in / fade out
 // ---------- small drawn icons ----------
 function kd8NoMouth(ctx, x, y, s, p) { const k = K.ease.back(K.clamp(p)); if (k <= 0) return; ctx.save(); ctx.translate(x, y); ctx.scale(k * s, k * s);
@@ -11,11 +12,18 @@ function kd8NoMouth(ctx, x, y, s, p) { const k = K.ease.back(K.clamp(p)); if (k 
   ctx.lineCap = 'round'; ctx.strokeStyle = C.red; ctx.lineWidth = 14; ctx.beginPath(); ctx.moveTo(-50, -44); ctx.lineTo(50, 44); ctx.moveTo(50, -44); ctx.lineTo(-50, 44); ctx.stroke(); ctx.restore(); }
 function kd8Drop(ctx, x, y, s, crossed) { ctx.save(); ctx.translate(x, y); ctx.scale(s, s); shape(ctx, [[0, -40], [22, -2], [18, 18], [0, 26], [-18, 18], [-22, -2]], C.blue, { lw: 5, seed: 43, dot: C.white, pitch: 6, rad: 0.2, da: 0.5 });
   if (crossed) { ctx.lineCap = 'round'; ctx.strokeStyle = C.red; ctx.lineWidth = 10; ctx.beginPath(); ctx.moveTo(-34, -40); ctx.lineTo(34, 34); ctx.stroke(); } ctx.restore(); }
+// speech balloon whose tail points at a panel point (her mouth); the style's balloon tail always points down-left
+function kd8Balloon(ctx, txt, x, y, p, tip) { const k = K.ease.back(K.clamp(p * 1.6)); if (k <= 0) return; ctx.save(); ctx.font = K.font(76, BF, 400); const w = Math.max(240, ctx.measureText('I AM NOT A').width + 90), h = 124; ctx.restore();
+  const a = Math.atan2(tip[1] - y, tip[0] - x), e = [x + Math.cos(a) * w * 0.38, y + Math.sin(a) * h * 0.38], n = [-Math.sin(a) * 22, Math.cos(a) * 22], d = Math.hypot(tip[0] - e[0], tip[1] - e[1]), end = [e[0] + (tip[0] - e[0]) * Math.min(1, 150 / d) * 0.85, e[1] + (tip[1] - e[1]) * Math.min(1, 150 / d) * 0.85];
+  ctx.save(); ctx.translate(x, y); ctx.scale(k, k); ctx.translate(-x, -y);
+  shape(ctx, [[e[0] + n[0], e[1] + n[1]], end, [e[0] - n[0], e[1] - n[1]]], C.white, { lw: 6, seed: 61 }); shape(ctx, ell(x, y, w / 2, h / 2, 40), C.white, { lw: 7, seed: 62 });
+  ctx.fillStyle = C.white; ctx.beginPath(); ctx.moveTo(e[0] + n[0] * 0.7, e[1] + n[1] * 0.7); ctx.lineTo(e[0] - n[0] * 0.7, e[1] - n[1] * 0.7); ctx.lineTo(x, y); ctx.fill();
+  ctx.font = K.font(76, BF, 400); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = C.black; ctx.fillText(txt, x, y + 4); ctx.restore(); }
 // thought-cloud pictures (cloud-centred units)
 function kd8CloudStory(c, t) {   // S1: river, mountains, far city
-  const r = K.clamp((t - 15.26) / 0.7); if (r > 0) { const pts = []; for (let i = 0; i <= 30 * r; i++) { const x = -260 + i * 14; pts.push([x, 70 + Math.sin(i * 0.5) * 18]); } c.save(); c.lineCap = 'round'; c.lineJoin = 'round'; c.strokeStyle = C.black; c.lineWidth = 30; K.poly(c, pts); c.stroke(); c.strokeStyle = C.blue; c.lineWidth = 20; K.poly(c, pts); c.stroke(); c.restore(); }
-  const m = K.ease.back(K.clamp((t - 16.06) / 0.5)); if (m > 0) for (const [mx, mh, sd] of [[-150, 120, 1], [-40, 150, 2], [60, 110, 3]]) { const h = mh * m; shape(c, [[mx - 80, 40], [mx, 40 - h], [mx + 80, 40]], '#8a7aa6', { lw: 5, seed: 200 + sd }); shape(c, [[mx - 22, 40 - h * 0.72], [mx, 40 - h], [mx + 22, 40 - h * 0.72]], C.white, { lw: 4, seed: 210 + sd }); }
-  const f = K.ease.back(K.clamp((t - 18.02) / 0.5)); if (f > 0) { c.save(); c.setLineDash([6, 10]); c.lineWidth = 5; c.strokeStyle = C.black; c.beginPath(); c.moveTo(120, 90); c.quadraticCurveTo(180, 60, 210, 10); c.stroke(); c.restore();
+  const r = K.clamp((t - 14.2) / 1.4); if (r > 0.04) { const pts = []; for (let i = 0; i <= 30 * r; i++) { const x = -260 + i * 14; pts.push([x, 70 + Math.sin(i * 0.5) * 18]); } c.save(); c.lineCap = 'round'; c.lineJoin = 'round'; c.strokeStyle = C.black; c.lineWidth = 30; K.poly(c, pts); c.stroke(); c.strokeStyle = C.blue; c.lineWidth = 20; K.poly(c, pts); c.stroke(); c.restore(); }
+  const m = K.ease.back(K.clamp((t - 16.06) / 0.5)); if (m > 0.01) for (const [mx, mh, sd] of [[-150, 120, 1], [-40, 150, 2], [60, 110, 3]]) { const h = mh * m; shape(c, [[mx - 80, 40], [mx, 40 - h], [mx + 80, 40]], '#8a7aa6', { lw: 5, seed: 200 + sd }); shape(c, [[mx - 22, 40 - h * 0.72], [mx, 40 - h], [mx + 22, 40 - h * 0.72]], C.white, { lw: 4, seed: 210 + sd }); }
+  const f = K.ease.back(K.clamp((t - 18.02) / 0.5)); if (f > 0.01) { c.save(); c.setLineDash([6, 10]); c.lineWidth = 5; c.strokeStyle = C.black; c.beginPath(); c.moveTo(120, 90); c.quadraticCurveTo(180, 60, 210, 10); c.stroke(); c.restore();
     for (const [bx, bh] of [[190, 40], [216, 60], [240, 34]]) shape(c, [[bx - 12, 10], [bx - 12, 10 - bh * f], [bx + 12, 10 - bh * f], [bx + 12, 10]], C.yellow, { lw: 4, seed: 220 + bx }); shape(c, ell(216, -50 - 8 * f, 12 * f, 12 * f, 12), C.yellow, { lw: 4, seed: 225 }); }
 }
 function kd8CloudLake(c, t, big = 1, hills = 0, fish = 0) {   // the lake beyond the hills (S2 small, S3)
@@ -26,12 +34,12 @@ function kd8CloudLake(c, t, big = 1, hills = 0, fish = 0) {   // the lake beyond
 }
 function kd8Board(c, t) {   // S4 plan board: the stick, two ducks, the tortoise in the middle, the flight to the lake
   const draw = K.clamp((t - 67.94) / 1.0), lift = K.ease.inOut(K.clamp((t - 76.02) / 1.6)), land = K.ease.inOut(K.clamp((t - 79.08) / 0.9));
-  const ox = K.lerp(0, 60, land) + lift * 20, oy = -lift * 60 + land * 40, a = [-280 + ox, -10 + oy], b = [280 + ox, -10 + oy];
+  const ox = K.lerp(0, 40, land) + lift * 15, oy = -lift * 60 + land * 40, a = [-130 + ox, -10 + oy], b = [240 + ox, -10 + oy];
   if (t > 75.3) { c.save(); c.setLineDash([8, 12]); c.lineWidth = 5; c.strokeStyle = C.black; c.beginPath(); c.moveTo(-180, 60); c.quadraticCurveTo(0, -150, 230, 70); c.stroke(); c.restore(); }
   if (t > 79.0) shape(c, ell(220, 150, 150, 40, 24), C.blue, { lw: 5, seed: 250, dot: C.white, pitch: 8, rad: 0.15, da: 0.6 });
   const p = K.trim([a, b], draw); if (p.length > 1) kd8Stick(c, p[0], p[p.length - 1], 0);
   const dk = (tt) => K.ease.back(K.clamp((t - tt) / 0.35));
-  for (const [i, tt] of [[0, 70.68], [1, 70.9]]) { const k = dk(tt); if (k > 0) kd8Duck(c, { x: (i ? b[0] : a[0]) - 130, y: -10 + oy + 40, s: 1.0 * k, pal: i, fly: t > 76.0, flap: Math.sin(t * 9 + i * 2), neck: 0.6, clamp: true, dir: 1 }); }
+  for (const [i, tt] of [[0, 69.06], [1, 69.4]]) { const k = dk(tt); if (k > 0) kd8Duck(c, { x: (i ? b[0] : a[0]) - 130, y: -10 + oy + 40, s: 1.0 * k, pal: i, fly: t > 76.0, flap: Math.sin(t * 9 + i * 2), neck: 0.6, clamp: true, dir: 1 }); }
   const tk = dk(73.96); if (tk > 0) { const P = kd8TortHang({ ...KD8_HANG, s: 0.85 * tk, legSw: t * 2 }, [(a[0] + b[0]) / 2, -4 + oy]); kd8Tort(c, P); kd8Tort(c, { ...P, pass: 'beak' }); }
 }
 function kd8CloudLecture(c, t) {   // S8: herself, big and stern, lecturing tiny bowed villagers; then a winged tortoise, crossed out
@@ -44,8 +52,9 @@ function kd8CloudLecture(c, t) {   // S8: herself, big and stern, lecturing tiny
 function kd8WorldFx(ctx, t, sc) {
   if (sc === KD8_SC_POND) {
     if (t > 13.6 && t < 19.3) { const p = K.clamp((t - 13.92) / 0.6) * (t > 19.0 ? 1 - (t - 19.0) / 0.3 : 1); thoughtCloud(ctx, 600, 500, 540, 300, t, { p, tail: [600, 800], inside: kd8CloudStory, scale: 1, at: [0, 0] }); }
-    if (t > 35.3 && t < 36.7) { const T = kd8TortGeo(kd8TortPond(t)).head; thoughtCloud(ctx, 730, 520, 380, 230, t, { p: K.clamp((t - 35.42) / 0.4) * (t > 36.45 ? (36.7 - t) / 0.25 : 1), tail: [T[0] + 30, T[1] - 40], scale: 0.55, at: [0, 0], inside: (c, tt) => { kd8CloudLake(c, tt, 0.6, 1);
-      c.save(); c.setLineDash([10, 14]); c.lineWidth = 7; c.strokeStyle = C.black; c.beginPath(); c.moveTo(-330, 140); c.quadraticCurveTo(-120, -160, 60, 40); c.stroke(); c.restore(); } }); }
+    if (t > 35.3 && t < 36.7) { const T = kd8TortGeo(kd8TortPond(t)).head; thoughtCloud(ctx, T[0] + 40, T[1] - 200, 300, 190, t, { p: K.clamp((t - 35.42) / 0.4) * (t > 36.45 ? (36.7 - t) / 0.25 : 1), tail: [T[0] + 30, T[1] - 40], scale: 0.55, at: [0, 0], inside: (c, tt) => {   // far hills and a question (the lake is only named at 43.54)
+      for (const [hx, sd] of [[-150, 1], [-20, 2], [110, 3]]) shape(c, ell(hx, 120, 120, 100, 24), GREEN, { lw: 6, seed: 240 + sd, dot: GREEND, pitch: 8, rad: 0.2 });
+      c.font = K.font(120, BF, 400); c.textAlign = 'center'; c.textBaseline = 'middle'; c.lineWidth = 16; c.strokeStyle = C.black; c.strokeText('?', 0, -50); c.fillStyle = C.yellow; c.fillText('?', 0, -50); } }); }
     if (t > 43.4 && t < 50.2) { const p = K.clamp((t - 43.54) / 0.5) * (t > 49.56 ? Math.max(0, 1 - (t - 49.56) / 0.6) : 1), big = K.ease.back(K.clamp((t - 44.2) / 0.5)) * 0.6 + 0.4, hl = K.ease.out(K.clamp((t - 45.76) / 0.6)), fish = K.clamp((t - 48.2) / 1.0);
       thoughtCloud(ctx, 520, 420, 600, 340, t, { p, tail: [560, 760], scale: 1, at: [0, 0], inside: (c, tt) => { kd8CloudLake(c, tt, big, hl, fish); if (hl > 0) { const hp = K.clamp((tt - 46.0) / 0.8); S0.arrow(c, [-250, 90], [-250 + 300 * hp, 90 - 160 * Math.sin(Math.PI * Math.min(1, hp)) + 0], hp, { bend: 0.3, width: 14 }); } } }); }
     if (t > 67.8 && t < 81.2) { const p = K.clamp((t - 67.94) / 0.5) * (t > 80.6 ? Math.max(0, 1 - (t - 80.6) / 0.5) : 1); thoughtCloud(ctx, 510, 420, 860, 500, t, { p, tail: [650, 760], scale: 0.95, at: [0, 0], inside: kd8Board }); }
@@ -56,6 +65,7 @@ function kd8WorldFx(ctx, t, sc) {
       const tx = 450, ty = 770, hitU = 0.55, x = u < hitU ? K.lerp(sx, tx, u / hitU) : K.lerp(tx, sx, (u - hitU) * 0.8), y = u < hitU ? K.lerp(sy, ty, u / hitU) : ty - 120 * (u - hitU);
       ctx.save(); ctx.globalAlpha = u > 0.8 ? (1 - u) / 0.2 : 1; shape(ctx, ell(x, y, 46, 32, 20), C.white, { lw: 5, seed: 280 + i }); ctx.font = K.font(40, BF, 400); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = C.black; ctx.fillText(['?', '!', '?!', '!!'][i], x, y + 2); ctx.restore(); }
   }
+  if (sc === KD8_SC_AIR && t > 122.12 && t < 123.3) { const R = KD8_LAST_RIG; for (const [D, k] of [[R.A, 0], [R.B, 1]]) { const h = kd8DuckGeo(D).head, t0 = 122.12 + k * 0.133; if (t > t0) sfx(ctx, '!', h[0] + (k ? 30 : -10), h[1] - 80, 64, (t - t0) / 0.15, { rot: k ? 0.15 : -0.15 }); } }
   if (sc === KD8_SC_AIR && t > 148.66 && t < 151.4) { const R = KD8_LAST_RIG, h = kd8TortGeo(R.T).head, u = (t - 148.7) / 2.6; ctx.save(); ctx.globalAlpha = K.clamp(1.4 - u * 1.3); kd8NoMouth(ctx, h[0] - 120, h[1] - 60 - u * 120, 0.42 * (u > 0.9 ? 1 + (u - 0.9) * 4 : 1), 1); ctx.restore(); }
 }
 // lettering, labels, counters (panel space)
@@ -76,23 +86,23 @@ function kd8Over(ctx, t, sc, cam, S) {
     if (t > 64.88 && t < 66.6) { const p = K.clamp((t - 64.88) / 0.4) * kd8In(t, 64.88, 66.6), a = P(740, 640); S.label(ctx, 'STICK', a[0], a[1], p, { size: 48, align: 'center' }); S.arrow(ctx, [a[0], a[1] + 30], P(740, 760), p, { bend: 0.1 }); }
     if (t > 65.68 && t < 66.9) { const a = P(560, 700); sfx(ctx, 'STRONG!', a[0], a[1], 62, (t - 65.68) / 0.25, { rot: 0.08 }); }
     if (t > 79.88 && t < 81.0) S.label(ctx, 'THE LAKE', 760, 290, K.clamp((t - 79.88) / 0.4) * kd8In(t, 79.88, 81.0), { size: 46, align: 'center' });
-    if (t > 82.07 && t < 83.9) { const a = P(330, 690); sfx(ctx, 'YAY!', a[0], a[1], 80, (t - 82.07) / 0.25, { rot: -0.12 }); }
+    if (t > 82.07 && t < 83.9) { const h = kd8TortGeo(kd8TortPond(t)).head, a = P(h[0], h[1] - 150); sfx(ctx, 'YAY!', a[0], Math.max(110, a[1]), 84, (t - 82.07) / 0.25, { rot: -0.12 }); }
     if (t > 88.14 && t < 90.7) { const p = K.clamp((t - 88.14) / 0.4) * kd8In(t, 88.14, 90.7); S.counter(ctx, 1, 230, 220, p, { size: 90 }); S.label(ctx, 'ONE RULE', 560, 210, p, { size: 56, align: 'center' }); if (t > 88.6) S.emphasis(ctx, 560, 190, 210, K.clamp((t - 88.6) / 0.5), { word: '!', wx: 0.9, wy: 0.4 }); }
-    if (t > 97.22 && t < 98.8) { const p = K.clamp((t - 97.22) / 0.35) * kd8In(t, 97.22, 98.8), a = P(690, 820); S.label(ctx, 'YOU FALL!', a[0] + 30, a[1] - 120, p, { size: 52, align: 'center' }); S.arrow(ctx, [a[0] + 120, a[1] - 90], P(700, 930), p, { bend: 0.1 }); }
+    if (t > 97.22 && t < 98.8) { const p = K.clamp((t - 97.22) / 0.35) * kd8In(t, 97.22, 98.8), a = P(470, 1190); S.label(ctx, 'YOU FALL!', a[0], a[1], p, { size: 52, align: 'center' }); S.arrow(ctx, [a[0] + 60, a[1] - 50], P(KD8_PEB[0] - 22, KD8_PEB[1] + 4), p, { bend: 0.2 }); }
     if (t > 101.64 && t < 102.85) { const h = kd8TortGeo(kd8TortPond(t)).head, a = P(h[0] - 20, h[1] - 110); sfx(ctx, 'MM HM!', a[0], a[1], 64, (t - 101.64) / 0.25, { rot: -0.06 }); }
     if (t > 105.44 && t < 106.6) sfx(ctx, 'CHOMP!', 330, 300, 84, (t - 105.44) / 0.2, { rot: -0.1 });
   }
   if (sc === KD8_SC_AIR) {
-    if (t > 115.04 && t < 116.4) sfx(ctx, 'UP! UP!', 500, 1080, 76, (t - 115.04) / 0.25, { rot: -0.06 });
+    if (t > 115.04 && t < 116.4) sfx(ctx, 'UP! UP!', 480, 200, 76, (t - 115.04) / 0.25, { rot: -0.06 });
     if (t > 124.74 && t < 125.98) sfx(ctx, 'MMM!', 760, 860, 70, (t - 124.74) / 0.25, { rot: 0.08 });
-    if (t > 144.2 && t < 145.5) sfx(ctx, 'MMPH!', 760, 900, 78, (t - 144.2) / 0.2, { rot: 0.1 });
-    if (t > 145.06 && t < 148.66) { const p = K.clamp((t - 145.06) / 0.5); thoughtCloud(ctx, 250, 300, 460, 340, t, { p, tail: [430, 600], scale: 0.8, at: [70, 10], inside: kd8CloudLecture }); }
+    if (t > 144.2 && t < 145.5) sfx(ctx, 'MMPH!', 250, 700, 78, (t - 144.2) / 0.2, { rot: -0.1 });
+    if (t > 145.06 && t < 148.66) { const p = K.clamp((t - 145.06) / 0.5); thoughtCloud(ctx, KD8_WISH[0], KD8_WISH[1], 400, 300, t, { p, tail: [600, 700], scale: 0.7, at: [70, 10], inside: kd8CloudLecture }); }
     if (t > 155.06 && t < 161.9) { const words = ['I', 'AM', 'NOT', 'A'], ts = [155.06, 155.5, 155.86, 156.14], n = ts.filter((x) => t >= x).length, txt = words.slice(0, n).join(' ');
-      ctx.save(); ctx.globalAlpha = t > 160.9 ? Math.max(0, (161.9 - t)) : 1; S.label(ctx, txt, 770, 820, K.clamp((t - 155.06) / 0.3), { size: 58, balloon: true, align: 'center' }); ctx.restore(); }
+      ctx.save(); ctx.globalAlpha = t > 160.82 ? K.clamp((161.2 - t) / 0.38) : 1; const R = KD8_LAST_RIG, m = R ? P(...kd8TortGeo(R.T).mouth) : [500, 500]; kd8Balloon(ctx, txt, KD8_BALLOON[0], KD8_BALLOON[1], K.clamp((t - 155.06) / 0.3), m); ctx.restore(); }
   }
   if (sc === KD8_SC_VIL) {
     if (t > 133.02 && t < 133.8) { const a = P(600, 560); sfx(ctx, 'LOOK!', a[0], a[1], 84, (t - 133.02) / 0.2, { rot: -0.1 }); }
-    if (t > 137.04 && t < 139.6) for (const [i, word, x0] of [[0, 'HA', 640], [1, 'HA', 720], [2, 'HA!', 800]]) { const u = (t - 137.04 - i * 0.2), a = P(x0 - 480, 470 - u * 50); if (u > 0) sfx(ctx, word, a[0] + Math.sin(u * 8 + i) * 10, a[1], 64, u / 0.25, { rot: Math.sin(u * 6 + i) * 0.15 }); }
+    if (t > 137.04 && t < 141.0) for (const [i, word, x0, y0] of [[0, 'HA', 250, 560], [1, 'HA', 860, 560], [2, 'HA!', 560, 525]]) { const u = (t - 137.04 - i * 0.45), a = P(x0, y0 - u * 12); if (u > 0) { ctx.save(); ctx.globalAlpha = K.clamp((141.0 - t) / 0.4); sfx(ctx, word, a[0] + Math.sin(u * 8 + i) * 8, a[1], 96, u / 0.22, { rot: Math.sin(u * 6 + i) * 0.12 }); ctx.restore(); } }
   }
   if (sc === KD8_SC_UP) { const a = [190, 1000], b = [470, 600], p = K.clamp((t - 134.0) / 0.5); S.arrow(ctx, a, b, p, { bend: -0.15, width: 26 }); if (t < 134.6) sfx(ctx, 'LOOK!', 300, 900, 80, 1, { rot: -0.1 }); }
   if (sc === KD8_SC_LAKE) {

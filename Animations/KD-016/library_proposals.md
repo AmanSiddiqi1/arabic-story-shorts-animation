@@ -6,3 +6,6 @@
 4. **waterBand / reeds / snag / distance tick** (set pieces: `kd16Water` back + front strip that hides wading legs, `kd16Reeds` with wind bend and shake, `kd16Snag` driftwood perch, `kd16Tick`). Candidate generic `riverSide` set with `palmTree`.
 5. **windStreaks** (effect, `kd16Wind`): streaks from L, R or T; reeds/plumes take a matching bend value.
 6. **fightCloud** (effect, `kd16Fight`): scuffle cloud with stars, feathers, a tail and a leg poking out; grows then fades.
+7. **heronPinned** (v2, `kd16HeronPinned` + `kd16PinnedHeadW`): a long-necked bird knocked over on its side: body lying, legs folded up and back with a kick (`ph/amp`), neck along the ground, head kept upright on screen; fields `shame` 0..1 (head sinks, beak drops), `neckLen`, `crest`, `beak`, `eyes` + acting fields. Pair with a predator's forepaws drawn over it (see `kd16PinPaw`).
+8. **heron tuck, v2** (`kd16Heron` with `tuck` > 0.75): the wing becomes a rounded wrap with a wingtip and crest tips poking out behind, so the head and neck are fully hidden (half tuck at 0.35 unchanged).
+9. **loss counter** and **tear camera link** (from the v1 review): CHICKS counter counting down; a falling tear carrying the camera between two places on one set.

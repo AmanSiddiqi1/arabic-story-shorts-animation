@@ -8,7 +8,7 @@ function k11FallingBar(t) {   // world [x, y, rot] of the top ingot while it is 
   if (t < 7.3) return [265 + 2 * Math.sin(t * 30) * K.clamp(7.0 - t), 745, 0.15 * Math.sin((t - 6.72) * 22) * K.clamp(7.1 - t)];
   const u = K11B(t, 7.3, 0.15, 'in'); return [K.lerp(265, 160, u), K.lerp(746, 690, u) - 30 * Math.sin(Math.PI * u), 0];
 }
-function k11cartDraw(ctx, t) {
+function k11cartDraw(ctx, t, o = {}) {
   const sc = k11sc(t); if (![1, 2, 4].includes(sc)) return;
   const x = K11CARTX(t), inn = K11CARTIN(t), hd = sc === 4 ? -1 : 1;
   const lift = sc === 1 ? (t < 3.8 ? 0 : -blend(t, 3.8, 4.1, 0, 62)) : sc === 2 ? (k11in(t, 14.2, 15.3) ? 0 : -62) : (k11in(t, 29.9, 31.72) ? -62 : 0);
@@ -19,8 +19,9 @@ function k11cartDraw(ctx, t) {
     k11Stack(cc, bx, by + sag, { n: off ? 14 : 15, glint: gl, gv: 1 - ((t - 4.44) / 0.1) % 1 });
     if (sold) { cc.save(); cc.translate(bx, by - 60); cc.rotate(-0.2); const k = K.ease.back(K11B(t, 29.9, 0.2)); cc.scale(k, k); shape(cc, K.rectPts(-80, -26, 160, 52), C.paper, { lw: 0 }); cc.strokeStyle = C.red; cc.lineWidth = 7; cc.strokeRect(-78, -24, 156, 48);
       cc.font = K.font(46, BF, 400); cc.textAlign = 'center'; cc.textBaseline = 'middle'; cc.fillStyle = C.red; cc.fillText('SOLD!', 0, 2); cc.restore(); } } });
-  if (inn > 0.02) { ctx.save(); ctx.beginPath(); ctx.rect(K11SD.x0, K11SD.top, K11SD.x1 - K11SD.x0, K11SD.bottom - K11SD.top + 2); ctx.clip(); draw(ctx); ctx.restore(); }
-  else draw(ctx);
+  if (inn > 0.02) { if (o.inside) draw(ctx); }   // called from the doorway (clipped there, drawn before the door leaves)
+  else if (!o.inside) draw(ctx);
+  if (o.inside) return;
   const fb = k11FallingBar(t); if (fb) { ctx.save(); ctx.translate(fb[0], fb[1]); ctx.rotate(fb[2]); k11Ingot(ctx, -22, 11, 44, 22, {}); ctx.restore(); }
 }
 // ---------- the storeroom door state on the street ----------
@@ -31,12 +32,16 @@ function k11storeState(t) {
     if (t > 20.7) glint = 0; }
   if (sc >= 3 && sc <= 4) { inside = t < 29.44 ? 'full' : 'empty'; if (sc === 4) { bar = 1 - K11B(t, 28.4, 0.2) + K11B(t, 32.3, 0.2); lock = t < 28.4 || t > 32.3 ? 1 : 0; open = K11B(t, 28.6, 0.5, 'out') - K11B(t, 31.9, 0.35, 'in'); glint = pulse(t, 27.5, 0.4); } }
   if (sc >= 5) { inside = 'empty'; if (sc === 7) sw = swing(t, 56.2, 0.35, 1.8, 3) + swing(t, 56.42, 0.25, 1.8, 3); }
-  return { open: K.clamp(open), bar: K.clamp(bar), lock, lockSw: sw, lockGlint: glint, inside: (c) => { if (inside !== 'bare') k11StoreInside(c, inside); else { c.save(); c.fillStyle = 'rgba(255,220,140,0.12)'; c.fillRect(K11SD.x0, K11SD.top, 190, 260); c.restore(); } } };
+  const cartIn = [1, 2, 4].includes(sc) && K11CARTIN(t) > 0.02;
+  return { open: K.clamp(open), bar: K.clamp(bar), lock, lockSw: sw, lockGlint: glint, inside: (c) => { if (inside === 'empty' || (inside === 'full' && !cartIn)) k11StoreInside(c, inside); else { c.save(); c.fillStyle = 'rgba(255,220,140,0.12)'; c.fillRect(K11SD.x0, K11SD.top, 190, 260); c.restore(); }
+    if (cartIn) k11cartDraw(c, t, { inside: true }); } };
 }
 
 // ---------- picture clouds ----------
 // the lie: the stack in the storeroom, the door locked, five rats in bibs eat it all. mode 'lie' (S6), 'loop' (S14), 'confess' (S16)
 const K11RATS = [[300, 0], [390, 1], [470, 2], [560, 0], [640, 1]];
+const K11FED = [190, 330, 470, 610, 750];          // where the fed rats sit after the meal (lie cloud, from 53.34)
+const K11MEAL = [[120, 900], [230, 900], [450, 900 - 22 * 1.6 * 3], [670, 900], [780, 900]];   // mid-meal spread in the reduced clouds
 function k11LieInside(c, t, mode) {
   shape(c, [[-100, 300], [1100, 300], [1100, 905], [-100, 905]], CREAM, { lw: 0, dot: '#e2c68a', pitch: 14, rad: 0.2, da: 0.4 });
   shape(c, [[-100, 900], [1100, 900], [1100, 1200], [-100, 1200]], '#c98a3a', { lw: 6, seed: 140 });
@@ -55,12 +60,16 @@ function k11LieInside(c, t, mode) {
       if (i === 0) P.sniff = 0.5 + 0.5 * Math.sin(t * 10);
       if (t > 51.7) { const th = 51.7 + stagger(i, 0.1), top = 900 - 22 * 1.6 * Math.max(1, Math.ceil(n / 5)) - 4, [, lift] = hop(t, th, 0.35, 0, 0, 70); const f = K11B(t, th, 0.35); x = x0 + (450 - x0) * 0.45 * f; y = K.lerp(900, top, f) - lift; P.x = x; P.amp = 0; P.sq = landSquash(t, th + 0.35, 0.15); }
       if (t > 52.44) { const top = 900 - 22 * 1.6 * Math.max(0, Math.ceil(n / 5)); y = Math.min(900, top + (n ? 0 : 0)); P.sit = 1; P.chew = (t * 4 + i * 0.3) % 1; }
-      if (t > 53.34) { P.roll = K11B(t, 53.34 + stagger(i, 0.06), 0.3); P.sit = 0; P.chew = 0; P.eyes = 'shut'; y = 900; P.sq = 0.85; }
-      if (i === 2 && k11in(t, 54.1, 54.5)) { P.mouth = 'open'; P.talk = 1; } }
-    else if (mode === 'loop') { x = x0 + (450 - x0) * 0.45; y = 900 - 22 * 1.6 * 3; P.sit = 1; P.chew = (t * 4 + i * 0.3) % 1; }
-    else { x = x0 + (450 - x0) * 0.45; y = 900 - 22 * 1.6 * 3; P.sit = 1; P.gaze = [0, 0.1];
-      if (t > 125.6) { P.sit = 0; P.shrug = 1; const u = K11B(t, 125.9 + stagger(i, 0.08), 0.6, 'in'); x = K.lerp(x, 1200, u); y = K.lerp(y, 900, K.clamp(u * 3)); Object.assign(P, walk((tt) => K.lerp(x0 + (450 - x0) * 0.45, 1200, K11B(tt, 125.9 + stagger(i, 0.08), 0.6, 'in')), t, { stride: GAIT.rat * 0.75 })); P.dir = 1; } }
+      if (t > 53.34) { const u = K11B(t, 53.34 + stagger(i, 0.05), 0.35, 'out'), [, lift] = hop(t, 53.34 + stagger(i, 0.05), 0.35, 0, 0, 40);
+        x = K.lerp(x0 + (450 - x0) * 0.45, K11FED[i], u); y = K.lerp(y, 900, u) - lift; P.sit = 1; P.chew = 0; P.sq = K.lerp(1, 0.84, u); P.s = K.lerp(0.75, 0.85, u); P.tailCurl = 0.8; P.dir = i < 2 ? 1 : -1; P.eyes = 'open'; P.mouth = 'smile';
+        if (i === 1) { P.chew = 0.25 + 0.25 * Math.sin(t * 16); }                       // pats its belly
+        if (i === 4) { P.chew = 0.6 + 0.4 * Math.sin(t * 12); P.eyes = 'shut'; P.mouth = 'closed'; }   // the straggler licks a paw
+        if (i === 2 && t > 54.1) { P.sq = 0.84 - 0.12 * pulse(t, 54.2, 0.3); P.mouth = 'open'; P.eyes = 'shut'; } } }
+    else if (mode === 'loop') { [x, y] = K11MEAL[i]; P.sit = 1; P.chew = (t * 4 + i * 0.3) % 1; P.dir = i < 2 || i === 2 ? 1 : -1; P.sq = 0.92; }
+    else { [x, y] = K11MEAL[i]; P.sit = 1; P.gaze = [0, 0.1]; P.dir = i < 3 ? 1 : -1; const x0m = x, y0m = y;
+      if (t > 125.6) { P.sit = 0; P.shrug = 1; const u = K11B(t, 125.9 + stagger(i, 0.08), 0.6, 'in'); x = K.lerp(x0m, 1200, u); y = K.lerp(y0m, 900, K.clamp(u * 3)); Object.assign(P, walk((tt) => K.lerp(x0m, 1200, K11B(tt, 125.9 + stagger(i, 0.08), 0.6, 'in')), t, { stride: GAIT.rat * 0.75 })); P.dir = 1; } }
     P.x = x; P.y = y; rat(c, P);
+    if (mode !== 'lie' && i !== 2 && P.sit === 1 && !P.shrug) { const d = P.dir; c.save(); c.translate(x + d * 64 * P.s, y - 44 * P.s); c.rotate(-0.5 * d); k11Ingot(c, -16, 8, 32, 16, { bite: 0.6 }); c.restore(); }
   });
 }
 // the true picture (S16): the cart rolls to the buyer, SOLD, coins to the friend (a replay of S4 with the same drawings)
@@ -116,7 +125,11 @@ function k11cloud(ctx, t, x, y, w, h, tIn, tOut, tail, inside, o = {}) {
 }
 
 // ---------- world draw ----------
-function k11person(ctx, P) { if (P.on === false) return; person(ctx, P);
+function k11person(ctx, P) { if (P.on === false) return;
+  if (P.din > 0) { const d = P.din; ctx.save(); ctx.beginPath(); ctx.rect(K11MDOOR.x0 + 4, 640, K11MDOOR.x1 - K11MDOOR.x0 - 8, 263); ctx.clip();
+    const Q = { ...P, din: 0, x: K.lerp(P.x, K11MDOOR.cx, d), y: P.y - 24 * d, s: (P.s || 1) * (1 - 0.16 * d) }; person(ctx, Q);
+    ctx.fillStyle = 'rgba(20,20,20,' + (0.55 * d).toFixed(3) + ')'; ctx.fillRect(K11MDOOR.x0, 640, K11MDOOR.x1 - K11MDOOR.x0, 263); ctx.restore(); return; }
+  person(ctx, P);
   if (P.blush) { const [hx, hy] = k11head(P); k11Blush(ctx, hx, hy + 6 * (P.s || 1), P.blush); }
   if (P.wetSweat) { const [hx, hy] = k11head(P); k11Sweat(ctx, hx - 40 * Math.sign(P.dir || 1), hy - 20 + ((P.wetSweat * 0) + 0), 1.1); } }
 function k11drawStreet(ctx, t) {
@@ -129,34 +142,37 @@ function k11drawStreet(ctx, t) {
   // mouse hole at the wall foot
   shape(ctx, townArchPts(612, 640, 884, 901, 'round', 8), C.black, { lw: 0 });
   if (sc === 11) k11Sandals(ctx, 760, 902);
-  if (sc === 18) k11Nail(ctx, 795, 906, 0.15);
+  if (sc === 18) k11Nail(ctx, 748, 904, 0.12);
   if (sc === 5 && t < 34.56) { /* bundle on the staff while walking */ }
   // back lane
   const pass = k11passers(t); pass.filter((p) => p.lane === 0).forEach((p) => person(ctx, p));
   // the real rat (behind the people)
   const R = k11realRat(t); if (R) { ctx.save(); if (sc === 5) { ctx.beginPath(); ctx.rect(626, 0, 600, 1230); ctx.clip(); } rat(ctx, R); ctx.restore();
-    if (sc === 18 && k11in(t, 157.8, 158.3)) star(ctx, R.x - 30, R.y - 50, 18, C.yellow, t * 6); }
+    if (sc === 18 && k11in(t, 157.6, 158.2)) star(ctx, 752, 878, 16 + 6 * Math.exp(-(t - 157.6) * 8), C.yellow, t * 6); }
   k11cartDraw(ctx, t);
   // bundle dropped on arrival (S5) / on the staff (S2 from 8.94, S3, S5 walk)
   const M = k11merchant(t), F = k11friend(t), B = k11boy(t), BY = k11buyer(t);
   if (sc === 2 && k11in(t, 13.3, 21.3)) k11BundleGround(ctx, 300, 902, landSquash(t, 13.45, 0.3));
   if (sc === 5 && t >= 34.56) k11BundleGround(ctx, K11MX(t) - 60, 902, landSquash(t, 34.75, 0.3));
-  const mOn = !(sc === 4 || (sc === 3 && t > 23.75) || sc === 6 || (sc === 9 && t > 69.75) || (sc === 10 && t < 77.0));
-  if (sc === 3) M.alpha = K.clamp((23.75 - t) / 0.3); if (sc === 9) { M.alpha = K.clamp((69.75 - t) / 0.25); B.alpha = M.alpha; } if (sc === 10) M.alpha = K.clamp((t - 77.0) / 0.2);
-  const hug = sc === 17 && k11in(t, 141.44, 143.3), order = [];
+  const mOn = !(sc === 4 || (sc === 3 && t > 23.75) || sc === 6 || (sc === 10 && t < 77.0));
+  if (sc === 3) M.alpha = K.clamp((23.75 - t) / 0.3); if (sc === 10) M.alpha = K.clamp((t - 77.0) / 0.2);
+  const order = [], boyBack = (sc === 17 && k11in(t, 141.44, 144.0)) || B.din > 0;   // behind the father in the hug and the swap; in the doorway
+  const ballW = (sc === 8 && t < 67.3) ? K11BALL(t) : null;
   if (BY.on) order.push([BY.x, () => person(ctx, BY)]);
   if (F.on) order.push([F.x + 1, () => k11person(ctx, F)]);
-  if (B.on && !hug) order.push([B.x, () => k11person(ctx, B)]);
+  if (B.on) order.push([boyBack ? -9999 : B.x, () => { if (sc === 8 || sc === 9) { const b = K11BALL(t);
+    if (t >= 67.3) { if (B.din > 0) { ctx.save(); ctx.beginPath(); ctx.rect(K11MDOOR.x0 + 4, 640, K11MDOOR.x1 - K11MDOOR.x0 - 8, 263); ctx.clip(); const d = B.din; k11Ball(ctx, K.lerp(b[0], K11MDOOR.cx + 23, d), b[1] - 24 * d, 16 * (1 - 0.16 * d), 0); ctx.restore(); }
+      k11person(ctx, B); if (!(B.din > 0)) k11Ball(ctx, b[0], b[1], 16, 0); return; } }
+    k11person(ctx, B); }]);
   if (mOn) order.push([M.x - 0.5, () => { k11person(ctx, M); const [hx, hy] = k11hand(M, 1);
     if (k11bundleOn(t)) { const [lx, ly] = k11hand(M, 0); k11Bundle(ctx, lx, ly, M.dir, swing(t, sc === 3 ? 21.8 : sc === 5 ? 32.7 : 9.0, 0.5, 1.3, 1.2) + 0.12 * Math.sin(t * 7) * (M.amp || 0)); }
     if (sc === 8) k11Basket(ctx, k11hand(M, 0)[0], k11hand(M, 0)[1] + 18, 0.9); }]);
   order.sort((p, q) => p[0] - q[0]);
   for (const [, f] of order) f();
-  if (hug) k11person(ctx, B);
   // props in hands
   if (sc === 2 && k11in(t, 20.7, 21.7)) { const [hx, hy] = k11hand(F, 1); k11Key(ctx, hx, hy - 30, 0.2, 1, pulse(t, 21.0, 0.5)); }
   if (sc === 4) k11purseS4(ctx, t, F, BY);
-  if (sc === 8 || (sc === 9 && t < 69.9)) { const b = K11BALL(t); k11Ball(ctx, b[0], b[1], 16, b[2]); }
+  if (ballW) k11Ball(ctx, ballW[0], ballW[1], 16, ballW[2]);
   if (sc === 17) k11purseS17(ctx, t, F, M, B);
   // front lane
   pass.filter((p) => p.lane > 0).forEach((p) => person(ctx, p));
@@ -190,7 +206,7 @@ function k11drawHouse(ctx, t) {
   if (t > 71.25) { const u = K11B(t, 71.5, 0.9, 'inOut'); k11Tray(ctx, 540, K.lerp(780, 856, u) - (t < 71.5 ? 0 : 0), { bread: t < 72.58 ? 1 : K.clamp(1 - (t - 72.58) / 3), dates: t < 73 ? 4 : 2 }); }
   k11person(ctx, B); k11person(ctx, M);
   if (k11in(t, 72.58, 73.6)) for (let i = 0; i < 3; i++) { const d = ((t * 2.2 + i / 3) % 1); ctx.fillStyle = '#e8b25a'; ctx.beginPath(); ctx.arc(640 + 20 * (i - 1) + 10 * d, 790 + 100 * d * d, 4, 0, 7); ctx.fill(); }
-  if (k11in(t, 72.58, 75.8)) { const c = Math.sin(t * 14), [hx, hy] = k11head(B); for (const sd of [-1, 1]) if (c * sd > 0.2 || t > 73.36) shape(ctx, ell(hx + sd * 20, hy + 14, 8 + 3 * Math.abs(c), 7, 10), C.skin, { lw: 2.5, seed: 77 }); }
+  if (k11in(t, 72.58, 74.8)) { const c = Math.sin(t * 14), [hx, hy] = k11head(B); for (const sd of [-1, 1]) if (c * sd > 0.2) shape(ctx, ell(hx + sd * 24, hy + 30, 6 + 3 * Math.abs(c), 5, 10), C.skin, { lw: 2.5, seed: 77 }); }
 }
 function k11drawWorld(ctx, t) {
   const w = k11world(t);
@@ -209,11 +225,6 @@ function k11drawWorld(ctx, t) {
       k11cloud(ctx, t, 500, 310, 420, 300, 124.66, 999, k11head(F), t < 127.78 ? (c, tt) => k11LieInside(c, tt, 'confess') : (c, tt) => k11TrueInside(c, tt), { scale: 0.4, bg: t < 127.78 ? undefined : '#efdcae' });
       if (k11in(t, 125.6, 127.6)) { const k = K.ease.back(K11B(t, 125.6, 0.25)); ctx.save(); ctx.translate(500, 310); ctx.scale(k, k); seg(ctx, -110, -90, 110, 90, 22, C.red, 5); seg(ctx, -110, 90, 110, -90, 22, C.red, 5); ctx.restore(); }
       ctx.restore(); }
-    if (sc === 16 && k11in(t, 133.18, 136.74)) { const a = K.clamp((136.6 - t) / 0.3);
-      ctx.save(); ctx.globalAlpha *= a; const k1 = K.ease.back(K11B(t, 133.18, 0.3)); ctx.save(); ctx.translate(380, 330); ctx.scale(k1, k1); k11Stack(ctx, 0, 0, { rows: [3, 2, 1], n: 6, s: 1.2 }); ctx.restore();
-      if (t > 134.0) sfx(ctx, 'OR', 500, 290, 70, K11B(t, 134.0, 0.25), { fill: C.white });
-      if (t > 134.26) { const n = Math.round(6 + 15 * K11B(t, 134.94, 0.6)); const k2 = K.ease.back(K11B(t, 134.26, 0.3)); ctx.save(); ctx.translate(620, 330); ctx.scale(k2 * 1.4, k2 * 1.4); k11Coins(ctx, 0, 0, n, 11); ctx.restore(); }
-      ctx.restore(); }
     if (sc === 18 && k11in(t, 155.0, 156.8)) { const u = K11B(t, 155.0, 1.8); bird(ctx, { x: K.lerp(1050, 150, u), y: 260 + 30 * Math.sin(u * 3), s: 0.4, kind: 'hawk', fly: true, flap: Math.sin(t * 7), dir: -1 }); }
   }
 }
@@ -224,9 +235,9 @@ const K11CAM = [
   [8.02, { x: 480, y: 705, zoom: 1.45 }], [10.3, { x: 480, y: 705, zoom: 1.45 }], [11.0, { x: 520, y: 705, zoom: 1.45 }], [13.6, { x: 520, y: 705, zoom: 1.45 }], [14.6, { x: 560, y: 715, zoom: 1.35 }], [16.6, { x: 560, y: 715, zoom: 1.35 }], [17.6, { x: 470, y: 705, zoom: 1.45 }], [19.85, { x: 480, y: 705, zoom: 1.45 }], [20.4, { x: 485, y: 705, zoom: 1.6 }], [21.7, { x: 485, y: 705, zoom: 1.6 }],
   [22.8, { x: 500, y: 640, zoom: 1.0 }], [24.11, { x: 500, y: 640, zoom: 1.0 }],
   [24.12, { x: 560, y: 705, zoom: 1.55 }], [28.0, { x: 560, y: 705, zoom: 1.55 }], [28.8, { x: 440, y: 705, zoom: 1.3 }], [31.0, { x: 450, y: 705, zoom: 1.3 }], [31.5, { x: 540, y: 695, zoom: 1.8 }], [32.59, { x: 540, y: 695, zoom: 1.8 }],
-  [32.6, { x: 420, y: 700, zoom: 1.15 }], [34.6, { x: 420, y: 700, zoom: 1.15 }], [35.4, { x: 470, y: 705, zoom: 1.45 }], [41.5, { x: 470, y: 705, zoom: 1.45 }], [43.6, { x: 600, y: 695, zoom: 2.0 }], [44.0, { x: 600, y: 695, zoom: 2.0 }], [44.4, { x: 470, y: 705, zoom: 1.45 }], [45.81, { x: 470, y: 705, zoom: 1.45 }],
+  [32.6, { x: 420, y: 700, zoom: 1.15 }], [34.6, { x: 420, y: 700, zoom: 1.15 }], [35.4, { x: 470, y: 705, zoom: 1.45 }], [41.6, { x: 470, y: 705, zoom: 1.45 }], [42.6, { x: 500, y: 735, zoom: 1.75 }], [44.0, { x: 500, y: 735, zoom: 1.75 }], [44.4, { x: 470, y: 705, zoom: 1.45 }], [45.81, { x: 470, y: 705, zoom: 1.45 }],
   [45.82, { x: 560, y: 690, zoom: 1.25 }], [47.6, { x: 560, y: 690, zoom: 1.25 }], [48.2, { x: 560, y: 600, zoom: 1.2 }], [53.6, { x: 560, y: 600, zoom: 1.2 }], [54.3, { x: 560, y: 680, zoom: 1.25 }], [54.71, { x: 560, y: 680, zoom: 1.25 }],
-  [54.72, { x: 330, y: 685, zoom: 1.8 }], [56.8, { x: 330, y: 685, zoom: 1.8 }], [57.4, { x: 380, y: 705, zoom: 1.25 }], [59.5, { x: 380, y: 705, zoom: 1.25 }], [61.0, { x: 340, y: 710, zoom: 1.6 }], [62.39, { x: 320, y: 710, zoom: 1.6 }],
+  [54.72, { x: 235, y: 685, zoom: 1.8 }], [56.8, { x: 235, y: 685, zoom: 1.8 }], [57.4, { x: 380, y: 705, zoom: 1.25 }], [59.5, { x: 380, y: 705, zoom: 1.25 }], [61.0, { x: 340, y: 710, zoom: 1.6 }], [62.39, { x: 320, y: 710, zoom: 1.6 }],
   [62.4, { x: -600, y: 705, zoom: 1.2 }], [64.6, { x: -600, y: 705, zoom: 1.2 }], [65.6, { x: -600, y: 755, zoom: 1.6 }], [67.77, { x: -600, y: 755, zoom: 1.6 }],
   [67.78, { x: -560, y: 745, zoom: 1.5 }], [69.6, { x: -380, y: 745, zoom: 1.5 }], [69.89, { x: -380, y: 745, zoom: 1.5 }], [69.9, { x: 480, y: 740, zoom: 1.8 }], [76.99, { x: 500, y: 760, zoom: 1.8 }],
 ];
@@ -234,11 +245,11 @@ const K11CAM2 = [
   [81.28, { x: 380, y: 705, zoom: 1.6 }], [88.91, { x: 400, y: 700, zoom: 1.7 }],
   [88.92, { x: 450, y: 705, zoom: 1.45 }], [90.6, { x: 450, y: 705, zoom: 1.45 }], [91.2, { x: 470, y: 600, zoom: 1.2 }], [98.0, { x: 470, y: 600, zoom: 1.2 }], [98.8, { x: 450, y: 705, zoom: 1.45 }], [98.97, { x: 450, y: 705, zoom: 1.45 }],
   [98.98, { x: 450, y: 705, zoom: 1.45 }], [106.11, { x: 450, y: 705, zoom: 1.45 }],
-  [106.12, { x: 450, y: 705, zoom: 1.45 }], [108.2, { x: 330, y: 710, zoom: 1.9 }], [109.6, { x: 330, y: 710, zoom: 1.9 }], [110.4, { x: 500, y: 590, zoom: 1.1 }], [116.5, { x: 500, y: 590, zoom: 1.1 }], [117.23, { x: 530, y: 650, zoom: 1.45 }],
+  [106.12, { x: 450, y: 705, zoom: 1.45 }], [108.2, { x: 450, y: 712, zoom: 1.8 }], [109.6, { x: 450, y: 712, zoom: 1.8 }], [110.4, { x: 500, y: 590, zoom: 1.1 }], [116.5, { x: 500, y: 590, zoom: 1.1 }], [117.23, { x: 530, y: 650, zoom: 1.45 }],
   [117.24, { x: 470, y: 690, zoom: 2.1 }], [122.75, { x: 455, y: 690, zoom: 2.4 }],
   [122.76, { x: 450, y: 690, zoom: 1.4 }], [124.4, { x: 450, y: 690, zoom: 1.4 }], [125.0, { x: 470, y: 560, zoom: 1.15 }], [131.0, { x: 470, y: 560, zoom: 1.15 }], [131.6, { x: 450, y: 680, zoom: 1.55 }], [132.6, { x: 450, y: 680, zoom: 1.55 }], [133.2, { x: 470, y: 560, zoom: 1.15 }], [135.5, { x: 470, y: 560, zoom: 1.15 }], [136.1, { x: 450, y: 690, zoom: 1.6 }], [136.73, { x: 450, y: 690, zoom: 1.6 }],
   [136.74, { x: 300, y: 705, zoom: 1.25 }], [138.4, { x: 420, y: 705, zoom: 1.25 }], [140.6, { x: 450, y: 705, zoom: 1.25 }], [141.4, { x: 570, y: 725, zoom: 1.8 }], [143.0, { x: 570, y: 725, zoom: 1.8 }], [143.8, { x: 470, y: 705, zoom: 1.45 }], [148.23, { x: 480, y: 705, zoom: 1.45 }],
-  [148.24, { x: 530, y: 735, zoom: 1.5 }], [151.0, { x: 530, y: 735, zoom: 1.5 }], [156.5, { x: 520, y: 640, zoom: 1.05 }], [161.0, { x: 520, y: 640, zoom: 1.05 }],
+  [148.24, { x: 530, y: 735, zoom: 1.5 }], [151.0, { x: 530, y: 735, zoom: 1.5 }], [156.5, { x: 520, y: 640, zoom: 1.05 }], [157.2, { x: 520, y: 640, zoom: 1.05 }], [157.75, { x: 640, y: 740, zoom: 1.4 }], [161.0, { x: 640, y: 740, zoom: 1.4 }],
 ];
 function k11camAt(t) {
   let c;
@@ -271,13 +282,13 @@ function k11overlays(ctx, t, cam, S) {
   if (k11in(t, 23.02, 24.3)) { const m = Math.min(3, 1 + Math.floor((t - 23.02) / 0.36)), d = ((t - 23.02) / 0.36) % 1; ctx.save(); ctx.globalAlpha *= k11fo(t, 24.3, 0.25);
     S.counter(ctx, m, 560, 200 - 6 * Math.exp(-d * 8), K11B(t, 23.02, 0.25), { size: 72 }); S.label(ctx, 'MONTHS', 360, 210, K11B(t, 23.1, 0.3), { align: 'center', size: 46, fill: C.white }); shape(ctx, [...K.circlePts(680, 190, 26, 26, 20, -1.2, 2.4)], C.yellow, { lw: 4, seed: 9 }); ctx.restore(); }
   // S4
-  if (k11in(t, 27.38, 28.0)) { const [x, y] = P(fh[0], fh[1] - 95); ctx.save(); ctx.globalAlpha *= k11fo(t, 28.0, 0.2); const k = K.ease.back(K11B(t, 27.38, 0.2)); ctx.translate(x, y); ctx.scale(k, k); k11Coin(ctx, -20, 0, 22, 0); sfx(ctx, '?', 26, -4, 60, 1, { fill: C.white }); ctx.restore(); }
+  if (k11in(t, 27.98, 28.7)) { const [x, y] = P(fh[0], fh[1] - 95); ctx.save(); ctx.globalAlpha *= k11fo(t, 28.7, 0.2); const k = K.ease.back(K11B(t, 27.98, 0.2)); ctx.translate(x, y); ctx.scale(k, k); k11Coin(ctx, -20, 0, 22, 0); sfx(ctx, '?', 26, -4, 60, 1, { fill: C.white }); ctx.restore(); }
   // S5: the merchant's question balloon
   if (k11in(t, 35.64, 36.7)) { const [x, y] = P(mh[0], mh[1]); ctx.save(); ctx.globalAlpha *= k11fo(t, 36.7, 0.2); bubble(ctx, x - 20, y - 190, 210, 130, x + 10, y - 50, K11B(t, 35.64, 0.3), ''); if (t > 35.8) { k11Ingot(ctx, x - 80, y - 170, 60, 30, {}); sfx(ctx, '?', x + 40, y - 190, 70, K11B(t, 35.8, 0.2), { fill: C.red }); } ctx.restore(); }
   // S6
   if (k11in(t, 48.7, 49.6)) { const [x, y] = P(420, 330); k11lbl(ctx, S, 'IRON', x, y, t, 48.7, 49.6, { size: 44 }); k11arrow(ctx, S, [x + 30, y + 25], P(510, 440), t, 48.8, 49.6, { bend: -0.2 }); }
   if (k11in(t, 52.6, 53.4)) { const [x, y] = P(600, 270); k11word(ctx, 'CRUNCH!', x, y, t, 52.6, 53.4, 80); }
-  if (k11in(t, 54.1, 54.7)) { const [x, y] = P(700, 300); k11word(ctx, 'BURP!', x, y, t, 54.1, 54.7, 78, { fill: GREEN2 }); }
+  if (k11in(t, 54.1, 54.7)) { const [x, y] = P(545, 392); k11word(ctx, 'BURP!', x, y, t, 54.1, 54.7, 64, { fill: GREEN2 }); }   // over the middle fed rat
   // S8
   if (k11in(t, 65.62, 67.1)) { const [x, y] = P(bh[0], bh[1] - 60); k11lbl(ctx, S, "THE FRIEND'S SON", Math.min(720, Math.max(280, x)), y - 110, t, 65.62, 67.1, { size: 42 }); k11arrow(ctx, S, [Math.min(720, Math.max(280, x)), y - 80], [x, y + 10], t, 65.7, 67.1, { bend: 0.1 }); }
   // S9
@@ -301,14 +312,20 @@ function k11overlays(ctx, t, cam, S) {
   if (k11in(t, 114.58, 117.3)) { const [x, y] = P(735, 470); k11lbl(ctx, S, 'HAWKS CARRY BOYS', Math.min(780, x), y + 0, t, 114.6, 117.3, { size: 40 }); }
   // S15
   if (k11in(t, 121.1, 122.76)) { const [x, y] = P(fh[0], fh[1] - 110); k11lbl(ctx, S, 'HE KNOWS!', Math.min(760, x + 30), Math.max(130, y - 50), t, 121.1, 122.76, { size: 48, fill: C.red, color: C.white }); }
+  // S16: "the iron OR its full price" in one paper box, gone before the handshake push-in
+  if (k11in(t, 133.0, 135.6)) { ctx.save(); ctx.globalAlpha *= k11fo(t, 135.6, 0.3); S.box(ctx, 160, 120, 680, 270, K11B(t, 133.0, 0.3), { fill: C.paper, dot: '#e2c68a', pitch: 10, lw: 9, seed: 31 });
+    if (t > 133.18) { const k1 = K.ease.back(K11B(t, 133.18, 0.3)); ctx.save(); ctx.translate(295, 345); ctx.scale(k1 * 1.9, k1 * 1.9); k11Stack(ctx, 0, 0, { rows: [3, 2, 1], n: 6 }); ctx.restore(); }
+    if (t > 134.0) sfx(ctx, 'OR', 500, 262, 96, K11B(t, 134.0, 0.2), { fill: C.yellow });
+    if (t > 134.26) { const n = Math.round(6 + 15 * K11B(t, 134.94, 0.6)), k2 = K.ease.back(K11B(t, 134.26, 0.3)); ctx.save(); ctx.translate(705, 330); ctx.scale(k2 * 1.75, k2 * 1.75); k11Coins(ctx, 0, 0, n, 11); ctx.restore(); }
+    ctx.restore(); }
   // S17
   if (k11in(t, 139.02, 140.4)) { const [x, y] = P(bh[0], bh[1] - 60); k11lbl(ctx, S, 'SAFE!', x - 40, y - 120, t, 139.02, 140.4, { size: 54, fill: C.white }); k11arrow(ctx, S, [x - 40, y - 90], [x, y], t, 139.1, 140.4, { bend: 0.15 }); }
   if (k11in(t, 141.44, 143.0)) { const [x, y] = P(K11FX(t) - 20, 640); const u = (t - 141.44) / 1.56; heart(ctx, x, y - 160 * u, 34 + 10 * Math.sin(t * 8), { alpha: 1 - u * u }); }
-  if (k11in(t, 147.8, 148.6)) { const [x, y] = P(450, 600); ctx.save(); ctx.translate(x, y - 40); ctx.rotate(-0.12); const k = K.ease.back(K11B(t, 147.8, 0.15)); ctx.scale(k, k); ctx.globalAlpha *= k11fo(t, 148.6, 0.2); shape(ctx, K.rectPts(-200, -46, 400, 92), C.paper, { lw: 0 }); ctx.strokeStyle = C.red; ctx.lineWidth = 9; ctx.strokeRect(-196, -42, 392, 84); ctx.font = K.font(64, BF, 400); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = C.red; ctx.fillText('PAID IN FULL!', 0, 4); ctx.restore(); }
+  if (k11in(t, 147.7, 148.22)) { const [x, y] = P(450, 600); ctx.save(); ctx.translate(x, y - 40); ctx.rotate(-0.12); const k = K.ease.back(K11B(t, 147.7, 0.15)); ctx.scale(k, k); ctx.globalAlpha *= k11fo(t, 148.22, 0.18); shape(ctx, K.rectPts(-200, -46, 400, 92), C.paper, { lw: 0 }); ctx.strokeStyle = C.red; ctx.lineWidth = 9; ctx.strokeRect(-196, -42, 392, 84); ctx.font = K.font(64, BF, 400); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = C.red; ctx.fillText('PAID IN FULL!', 0, 4); ctx.restore(); }
   // S18
-  if (k11in(t, 157.8, 158.5)) { const R = k11realRat(t); if (R) { const [x, y] = P(R.x, R.y - 60); k11word(ctx, 'TINK!', x - 60, y - 40, t, 157.8, 158.5, 56, { fill: C.white }); } }
-  if (k11in(t, 158.25, 159.3)) { const R = k11realRat(t); const [x, y] = P(R ? R.x : 900, 820); k11word(ctx, 'OW!', Math.min(900, x + 40), y - 110, t, 158.25, 159.3, 60, { fill: C.red }); }
-  if (t >= 158.6) S.title(ctx, 'THE END', 500, 230, K11B(t, 158.6, 0.8), { size: 84, align: 'center' });
+  if (k11in(t, 157.6, 158.2)) { const [x, y] = P(805, 790); k11word(ctx, 'TINK!', Math.min(860, x), y - 40, t, 157.6, 158.2, 64, { fill: C.white }); }
+  if (k11in(t, 158.2, 158.8)) { const [x, y] = P(800, 800); k11word(ctx, 'OW!', Math.min(880, x + 20), y - 40, t, 158.2, 158.8, 72, { fill: C.red }); }
+  if (t >= 159.3) S.title(ctx, 'THE END', 500, 230, K11B(t, 159.3, 0.8), { size: 84, align: 'center' });
 }
 
 // panel-only shake: IMPOSSIBLE! (and a tiny one on the door slam)
@@ -342,8 +359,8 @@ const SCENE = {
     k.play('whoosh', 98.55, { dur: 0.35, gain: 0.3 });                                   // hawk away, cloud pops (gap 98.40-99.75)
     k.play('paper', 127.6, { gain: 0.25 });                                              // the cloud page flips (gap 127.40-128.29)
     k.play('chime', 136.35, { note: 'C6', gain: 0.4 });                                  // forgiven (gap 135.92-137.14)
-    k.play('tick', 157.8, { gain: 0.45 }); k.play('pop', 158.3, { pitch: 1.4, gain: 0.3 });   // TINK! OW! (after the last word)
-    k.play('stamp', 158.6, { gain: 0.45 }); k.play('chime', 158.75, { note: 'C6', gain: 0.55 });
+    k.play('tick', 157.62, { gain: 0.45 }); k.play('pop', 158.22, { pitch: 1.4, gain: 0.3 });   // TINK! OW! (after the last word, 157.24)
+    k.play('stamp', 159.3, { gain: 0.45 }); k.play('chime', 159.45, { note: 'C6', gain: 0.55 });
   },
 };
 window.SCENE = SCENE;

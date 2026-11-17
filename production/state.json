@@ -4104,6 +4104,167 @@
 "msg": "pause_planning=1",
 "story_id": null,
 "t": "2026-11-17T19:49:19"
+},
+{
+"id": 578,
+"kind": "claim",
+"msg": "review claimed (fable)",
+"story_id": "KD-008",
+"t": "2026-11-17T19:53:02"
+},
+{
+"id": 579,
+"kind": "claim",
+"msg": "review claimed (fable)",
+"story_id": "KD-011",
+"t": "2026-11-17T19:53:02"
+},
+{
+"id": 580,
+"kind": "claim",
+"msg": "review claimed (fable)",
+"story_id": "KD-016",
+"t": "2026-11-17T19:53:02"
+},
+{
+"id": 581,
+"kind": "agent",
+"msg": "review agent a6b31ada4d1ddf362",
+"story_id": "KD-008",
+"t": "2026-11-17T19:53:33"
+},
+{
+"id": 582,
+"kind": "agent",
+"msg": "review agent a95884df4e85e5e55",
+"story_id": "KD-011",
+"t": "2026-11-17T19:53:34"
+},
+{
+"id": 583,
+"kind": "agent",
+"msg": "review agent abdf4f1107148efe1",
+"story_id": "KD-016",
+"t": "2026-11-17T19:53:34"
+},
+{
+"id": 584,
+"kind": "done",
+"msg": "review review 1: REVISE (claude-fable-5-2)",
+"story_id": "KD-011",
+"t": "2026-11-17T20:32:19"
+},
+{
+"id": 585,
+"kind": "claim",
+"msg": "revise claimed (opus)",
+"story_id": "KD-011",
+"t": "2026-11-17T20:32:19"
+},
+{
+"id": 586,
+"kind": "done",
+"msg": "review review 1: REVISE (claude-fable-5-2)",
+"story_id": "KD-008",
+"t": "2026-11-17T20:32:24"
+},
+{
+"id": 587,
+"kind": "done",
+"msg": "review review 1: REVISE (claude-fable-5-2)",
+"story_id": "KD-016",
+"t": "2026-11-17T20:32:25"
+},
+{
+"id": 588,
+"kind": "claim",
+"msg": "revise claimed (opus)",
+"story_id": "KD-008",
+"t": "2026-11-17T20:32:25"
+},
+{
+"id": 589,
+"kind": "claim",
+"msg": "revise claimed (opus)",
+"story_id": "KD-016",
+"t": "2026-11-17T20:32:25"
+},
+{
+"id": 590,
+"kind": "agent",
+"msg": "revise agent a022471932cde3876",
+"story_id": "KD-011",
+"t": "2026-11-17T20:32:51"
+},
+{
+"id": 591,
+"kind": "agent",
+"msg": "revise agent a56c507dee1eb7cd1",
+"story_id": "KD-008",
+"t": "2026-11-17T20:32:52"
+},
+{
+"id": 592,
+"kind": "agent",
+"msg": "revise agent ae719e5e06d7388d2",
+"story_id": "KD-016",
+"t": "2026-11-17T20:32:52"
+},
+{
+"id": 593,
+"kind": "cloud-render",
+"msg": "v1: PASS run 44077712491 commit 4cdf8fe19e",
+"story_id": "KD-019",
+"t": "2026-11-17T20:40:33"
+},
+{
+"id": 594,
+"kind": "cloud-render",
+"msg": "v1: PASS run 44077712491 commit 4cdf8fe19e",
+"story_id": "KD-022",
+"t": "2026-11-17T20:43:42"
+},
+{
+"id": 595,
+"kind": "cloud-render",
+"msg": "v1: PASS run 44077712491 commit 4cdf8fe19e",
+"story_id": "KD-015",
+"t": "2026-11-17T20:46:40"
+},
+{
+"id": 596,
+"kind": "cloud-render",
+"msg": "v1: PASS run 44077712491 commit 4cdf8fe19e",
+"story_id": "KD-017",
+"t": "2026-11-17T20:50:46"
+},
+{
+"id": 597,
+"kind": "cloud-render",
+"msg": "v1: PASS run 44077712491 commit 4cdf8fe19e",
+"story_id": "KD-014",
+"t": "2026-11-17T20:57:20"
+},
+{
+"id": 598,
+"kind": "cloud-render",
+"msg": "v1: PASS run 44077712491 commit 4cdf8fe19e",
+"story_id": "KD-007",
+"t": "2026-11-17T21:08:00"
+},
+{
+"id": 599,
+"kind": "cloud-render",
+"msg": "v1: PASS run 44077712491 commit 4cdf8fe19e",
+"story_id": "KD-013",
+"t": "2026-11-17T21:19:05"
+},
+{
+"id": 600,
+"kind": "cloud-render",
+"msg": "v1: PASS run 44077712491 commit 4cdf8fe19e",
+"story_id": "KD-010",
+"t": "2026-11-17T21:33:19"
 }
 ],
 "plans": [
@@ -5636,16 +5797,6 @@
 "version": "v3"
 },
 {
-"created": "2026-11-16T18:22:36",
-"duration": 171.9,
-"path": "Animations/KD-007/renders/KD-007_v1.mp4",
-"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 171.9}, \"end_hold\": 3.5, \"decode\": \"OK\", \"lufs\": -15.0, \"sync\": {\"lag_ms\": 0, \"corr\": 0.998}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-16T18:22:36\"}",
-"sha": null,
-"status": "SUPERSEDED",
-"story_id": "KD-007",
-"version": "v1"
-},
-{
 "created": "2026-11-16T18:38:51",
 "duration": 163.3,
 "path": "Animations/KD-005/renders/KD-005_v1.mp4",
@@ -5653,76 +5804,6 @@
 "sha": null,
 "status": "SUPERSEDED",
 "story_id": "KD-005",
-"version": "v1"
-},
-{
-"created": "2026-11-17T09:20:54",
-"duration": 169.833,
-"path": "Animations/KD-010/renders/KD-010_v1.mp4",
-"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 169.833}, \"end_hold\": 3.0, \"decode\": \"OK\", \"lufs\": -14.8, \"sync\": {\"lag_ms\": 0, \"corr\": 0.997}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T09:20:54\"}",
-"sha": null,
-"status": "SUPERSEDED",
-"story_id": "KD-010",
-"version": "v1"
-},
-{
-"created": "2026-11-17T09:36:07",
-"duration": 166.0,
-"path": "Animations/KD-013/renders/KD-013_v1.mp4",
-"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 166.0}, \"end_hold\": 3.46, \"decode\": \"OK\", \"lufs\": -15.1, \"sync\": {\"lag_ms\": 0, \"corr\": 0.998}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T09:36:07\"}",
-"sha": null,
-"status": "SUPERSEDED",
-"story_id": "KD-013",
-"version": "v1"
-},
-{
-"created": "2026-11-17T09:44:14",
-"duration": 168.0,
-"path": "Animations/KD-014/renders/KD-014_v1.mp4",
-"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 168.0}, \"end_hold\": 2.99, \"decode\": \"OK\", \"lufs\": -15.2, \"sync\": {\"lag_ms\": 0, \"corr\": 0.998}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T09:44:14\"}",
-"sha": null,
-"status": "SUPERSEDED",
-"story_id": "KD-014",
-"version": "v1"
-},
-{
-"created": "2026-11-17T09:52:51",
-"duration": 171.133,
-"path": "Animations/KD-015/renders/KD-015_v1.mp4",
-"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 171.133}, \"end_hold\": 2.99, \"decode\": \"OK\", \"lufs\": -14.8, \"sync\": {\"lag_ms\": 0, \"corr\": 0.998}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T09:52:51\"}",
-"sha": null,
-"status": "SUPERSEDED",
-"story_id": "KD-015",
-"version": "v1"
-},
-{
-"created": "2026-11-17T10:09:46",
-"duration": 169.2,
-"path": "Animations/KD-017/renders/KD-017_v1.mp4",
-"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 169.2}, \"end_hold\": 2.99, \"decode\": \"OK\", \"lufs\": -15.1, \"sync\": {\"lag_ms\": 0, \"corr\": 0.999}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T10:09:46\"}",
-"sha": null,
-"status": "SUPERSEDED",
-"story_id": "KD-017",
-"version": "v1"
-},
-{
-"created": "2026-11-17T10:19:14",
-"duration": 177.433,
-"path": "Animations/KD-019/renders/KD-019_v1.mp4",
-"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 177.433}, \"end_hold\": 2.99, \"decode\": \"OK\", \"lufs\": -15.1, \"sync\": {\"lag_ms\": 0, \"corr\": 0.999}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T10:19:14\"}",
-"sha": null,
-"status": "SUPERSEDED",
-"story_id": "KD-019",
-"version": "v1"
-},
-{
-"created": "2026-11-17T10:28:13",
-"duration": 174.9,
-"path": "Animations/KD-022/renders/KD-022_v1.mp4",
-"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 174.9}, \"end_hold\": 3.41, \"decode\": \"OK\", \"lufs\": -15.2, \"sync\": {\"lag_ms\": 0, \"corr\": 0.998}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T10:28:13\"}",
-"sha": null,
-"status": "SUPERSEDED",
-"story_id": "KD-022",
 "version": "v1"
 },
 {
@@ -6014,6 +6095,86 @@
 "status": "PASS",
 "story_id": "KD-016",
 "version": "v1"
+},
+{
+"created": "2026-11-17T20:40:33",
+"duration": 177.433,
+"path": "Animations/KD-019/renders/KD-019_v1.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 177.433}, \"end_hold\": 2.99, \"decode\": \"OK\", \"lufs\": -15.1, \"sync\": {\"lag_ms\": 0, \"corr\": 0.999}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T12:34:49\", \"cloud_run\": \"44077712491\", \"cloud_commit\": \"4cdf8fe19e02f964b8ef9ecad1bc9840dca240d9\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "KD-019",
+"version": "v1"
+},
+{
+"created": "2026-11-17T20:43:42",
+"duration": 174.9,
+"path": "Animations/KD-022/renders/KD-022_v1.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 174.9}, \"end_hold\": 3.41, \"decode\": \"OK\", \"lufs\": -15.2, \"sync\": {\"lag_ms\": 0, \"corr\": 0.998}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T12:34:16\", \"cloud_run\": \"44077712491\", \"cloud_commit\": \"4cdf8fe19e02f964b8ef9ecad1bc9840dca240d9\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "KD-022",
+"version": "v1"
+},
+{
+"created": "2026-11-17T20:46:40",
+"duration": 171.133,
+"path": "Animations/KD-015/renders/KD-015_v1.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 171.133}, \"end_hold\": 2.99, \"decode\": \"OK\", \"lufs\": -14.8, \"sync\": {\"lag_ms\": 0, \"corr\": 0.998}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T12:23:13\", \"cloud_run\": \"44077712491\", \"cloud_commit\": \"4cdf8fe19e02f964b8ef9ecad1bc9840dca240d9\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "KD-015",
+"version": "v1"
+},
+{
+"created": "2026-11-17T20:50:46",
+"duration": 169.2,
+"path": "Animations/KD-017/renders/KD-017_v1.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 169.2}, \"end_hold\": 2.99, \"decode\": \"OK\", \"lufs\": -15.1, \"sync\": {\"lag_ms\": 0, \"corr\": 0.999}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T12:23:30\", \"cloud_run\": \"44077712491\", \"cloud_commit\": \"4cdf8fe19e02f964b8ef9ecad1bc9840dca240d9\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "KD-017",
+"version": "v1"
+},
+{
+"created": "2026-11-17T20:57:20",
+"duration": 168.0,
+"path": "Animations/KD-014/renders/KD-014_v1.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 168.0}, \"end_hold\": 2.99, \"decode\": \"OK\", \"lufs\": -15.2, \"sync\": {\"lag_ms\": 0, \"corr\": 0.998}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T12:15:15\", \"cloud_run\": \"44077712491\", \"cloud_commit\": \"4cdf8fe19e02f964b8ef9ecad1bc9840dca240d9\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "KD-014",
+"version": "v1"
+},
+{
+"created": "2026-11-17T21:08:00",
+"duration": 171.9,
+"path": "Animations/KD-007/renders/KD-007_v1.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 171.9}, \"end_hold\": 3.5, \"decode\": \"OK\", \"lufs\": -15.0, \"sync\": {\"lag_ms\": 0, \"corr\": 0.998}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T12:02:22\", \"cloud_run\": \"44077712491\", \"cloud_commit\": \"4cdf8fe19e02f964b8ef9ecad1bc9840dca240d9\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "KD-007",
+"version": "v1"
+},
+{
+"created": "2026-11-17T21:19:05",
+"duration": 166.0,
+"path": "Animations/KD-013/renders/KD-013_v1.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 166.0}, \"end_hold\": 3.46, \"decode\": \"OK\", \"lufs\": -15.1, \"sync\": {\"lag_ms\": 0, \"corr\": 0.998}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T12:12:40\", \"cloud_run\": \"44077712491\", \"cloud_commit\": \"4cdf8fe19e02f964b8ef9ecad1bc9840dca240d9\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "KD-013",
+"version": "v1"
+},
+{
+"created": "2026-11-17T21:33:19",
+"duration": 169.833,
+"path": "Animations/KD-010/renders/KD-010_v1.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 169.833}, \"end_hold\": 3.0, \"decode\": \"OK\", \"lufs\": -14.8, \"sync\": {\"lag_ms\": 0, \"corr\": 0.997}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-17T12:04:11\", \"cloud_run\": \"44077712491\", \"cloud_commit\": \"4cdf8fe19e02f964b8ef9ecad1bc9840dca240d9\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "KD-010",
+"version": "v1"
 }
 ],
 "reviews": [
@@ -6051,6 +6212,33 @@
 "path": "Animations/KD-012/review/fable_review_2.md",
 "round": 2,
 "story_id": "KD-012",
+"verdict": "REVISE"
+},
+{
+"agent_id": "a95884df4e85e5e55",
+"created": "2026-11-17T20:32:19",
+"model": "claude-fable-5-2",
+"path": "Animations/KD-011/review/fable_review_1.md",
+"round": 1,
+"story_id": "KD-011",
+"verdict": "REVISE"
+},
+{
+"agent_id": "a6b31ada4d1ddf362",
+"created": "2026-11-17T20:32:24",
+"model": "claude-fable-5-2",
+"path": "Animations/KD-008/review/fable_review_1.md",
+"round": 1,
+"story_id": "KD-008",
+"verdict": "REVISE"
+},
+{
+"agent_id": "abdf4f1107148efe1",
+"created": "2026-11-17T20:32:25",
+"model": "claude-fable-5-2",
+"path": "Animations/KD-016/review/fable_review_1.md",
+"round": 1,
+"story_id": "KD-016",
 "verdict": "REVISE"
 }
 ],
@@ -11612,6 +11800,90 @@
 "started": "2026-11-17T14:17:09",
 "status": "done",
 "story_id": "AN-151"
+},
+{
+"agent_id": "a6b31ada4d1ddf362",
+"attempt": 1,
+"finished": "2026-11-17T20:32:24",
+"id": 180,
+"model": "fable",
+"notes": null,
+"outputs": "review 1: REVISE",
+"pid": null,
+"stage": "review",
+"started": "2026-11-17T19:53:02",
+"status": "done",
+"story_id": "KD-008"
+},
+{
+"agent_id": "a95884df4e85e5e55",
+"attempt": 1,
+"finished": "2026-11-17T20:32:19",
+"id": 181,
+"model": "fable",
+"notes": null,
+"outputs": "review 1: REVISE",
+"pid": null,
+"stage": "review",
+"started": "2026-11-17T19:53:02",
+"status": "done",
+"story_id": "KD-011"
+},
+{
+"agent_id": "abdf4f1107148efe1",
+"attempt": 1,
+"finished": "2026-11-17T20:32:25",
+"id": 182,
+"model": "fable",
+"notes": null,
+"outputs": "review 1: REVISE",
+"pid": null,
+"stage": "review",
+"started": "2026-11-17T19:53:02",
+"status": "done",
+"story_id": "KD-016"
+},
+{
+"agent_id": "a022471932cde3876",
+"attempt": 1,
+"finished": null,
+"id": 183,
+"model": "opus",
+"notes": null,
+"outputs": null,
+"pid": null,
+"stage": "revise",
+"started": "2026-11-17T20:32:19",
+"status": "running",
+"story_id": "KD-011"
+},
+{
+"agent_id": "a56c507dee1eb7cd1",
+"attempt": 1,
+"finished": null,
+"id": 184,
+"model": "opus",
+"notes": null,
+"outputs": null,
+"pid": null,
+"stage": "revise",
+"started": "2026-11-17T20:32:25",
+"status": "running",
+"story_id": "KD-008"
+},
+{
+"agent_id": "ae719e5e06d7388d2",
+"attempt": 1,
+"finished": null,
+"id": 185,
+"model": "opus",
+"notes": null,
+"outputs": null,
+"pid": null,
+"stage": "revise",
+"started": "2026-11-17T20:32:25",
+"status": "running",
+"story_id": "KD-016"
 }
 ],
 "usage_log": [

@@ -15,19 +15,24 @@ const SNAG = [1300, 630], HFISH = 1190, HTALK = 1110, HRIVER = 1040;    // measu
 const DR = [466, 334], DOVESNAG = [1262, 558];                                                 // the dove standing on the right rim of the nest
 const chickHome = (i) => [NX + (i - 1) * 32, NY - 49];
 const HATCH = [9.98, 10.22, 10.5], EGGS = [6.66, 6.92, 7.18];
-const THROW = [{ i: 0, nudge: 37.1, tip: 37.55, catch: 38.18 }, { i: 1, nudge: 46.14, tip: 46.9, catch: 47.68 }];
+// v2: the chick waits at the rim (tip..fall) looking back, then falls (fall..catch)
+const THROW = [{ i: 0, nudge: 37.1, tip: 37.55, fall: 37.9, catch: 38.5 }, { i: 1, nudge: 46.15, tip: 46.85, fall: 47.2, catch: 47.9 }];
+// v2: the pinned pose (147.52 on). The fox stands at PIN.x; his near paw rests on the heron, whose body sits under it (KD16_PIN_H)
+const KD16_PIN = { x: 800, y: 906, s: 0.8, dir: 1, sit: 0.15 };
+const kd16PinXY = () => { const paw = foxBody(KD16_PIN, 203, -74); return [paw[0] + 62, Math.min(paw[1] + 70, 900)]; };
+const heronHeadW = (t) => { const h = heronP(t); return h.pinned ? kd16PinnedHeadW(h) : kd16HeronHeadW(h); };
 
 // ---------- time of day: u (0 dawn, 0.25 noon, 0.5 dusk, 0.75 night) ----------
-const U = (t) => kfn(t, [[0, 0.27], [7.68, 0.27], [8.0, 0.5], [8.25, 0.74], [8.75, 0.8], [9.04, 1.28], [17.79, 1.28], [17.8, 1.02], [40.4, 1.1], [40.41, 1.25], [79.0, 1.3], [80.0, 2.04], [99.3, 2.12], [99.31, 2.27], [150, 2.36], [156.4, 2.37], [160.0, 2.5]], 'inOut');
+const U = (t) => kfn(t, [[0, 0.27], [7.68, 0.27], [8.0, 0.5], [8.25, 0.74], [8.75, 0.8], [9.04, 1.28], [17.79, 1.28], [17.8, 1.02], [40.4, 1.1], [40.41, 1.25], [79.0, 1.3], [80.0, 2.04], [106.84, 2.12], [108.6, 2.27], [150, 2.36], [156.4, 2.37], [160.0, 2.5]], 'inOut');
 const sunAt = (u) => { const v = ((((u % 1) + 1) % 1) + 0.04) / 0.58; if (v < 0 || v > 1) return null; return [700 + Math.cos(Math.PI * v) * 640, 860 - Math.sin(Math.PI * v) * 700]; };
 const moonAt = (u) => { const v = ((((u - 0.46) % 1) + 1) % 1) / 0.58; if (v < 0 || v > 1) return null; return [700 + Math.cos(Math.PI * v) * 640, 860 - Math.sin(Math.PI * v) * 700]; };
 
 // ---------- the fox ----------
 const FX = (t) => {
   if (t < 41) return kfn(t, [[19.62, -230], [20.52, 200], [26.26, 200], [26.9, 275], [30.2, 275], [30.9, 225], [39.1, 225], [40.0, -260]]);
-  if (t < 60) return kfn(t, [[41.1, -260], [42.04, 225], [47.9, 225], [48.7, -260]]);
+  if (t < 60) return kfn(t, [[41.1, -260], [42.04, 225], [48.1, 225], [48.8, -260]]);
   if (t < 99.3) return kfn(t, [[79.72, -260], [81.8, 225], [91.56, 225], [91.85, 278], [92.6, 255], [92.66, 255], [93.0, 80], [93.35, 262], [94.2, 250]]);
-  if (t < 158) return kfn(t, [[105.92, 250], [107.9, 640], [111.68, 640], [112.3, 700], [121.18, 700], [121.8, 760], [134.68, 760], [135.3, 820], [145.64, 820], [146.3, 900]]);
+  if (t < 158) return kfn(t, [[105.92, 250], [107.9, 640], [111.68, 640], [112.3, 700], [121.18, 700], [121.8, 760], [134.68, 760], [135.3, 820], [145.64, 820], [146.3, 880]]);
   return kfn(t, [[158.16, 1230], [160.6, -260]], 'lin');
 };
 const foxOn = (t) => inR(t, 19.5, 40.05) || inR(t, 41.0, 48.8) || inR(t, 79.6, 157.2) || inR(t, 158.1, 160.7);
@@ -59,10 +64,11 @@ function foxP(t) {
     if (t >= 27.12) { P.sit = settleTo(t, 27.12, 0, 1.25, 0.45); P.reach = bl(t, 27.12, 27.5, 0, 1); P.headUp = -0.35; P.mouth = 'closed'; P.lid = 0; look(nestPt); }
     if (t >= 28.98 && t < 30.3) { const k = pul(t, 28.98, 0.3) + pul(t, 29.4, 0.3); P.mouth = k > 0.2 ? 'open' : 'closed'; P.talk = k; P.headUp = -0.35 - 0.15 * k; P.ears = 0.6 + 0.4 * k; }
     if (t >= 30.2) { P.sit = bl(t, 30.2, 30.9, 1.25, 0.4); P.reach = bl(t, 30.2, 30.6, 1, 0); P.plant = t > 30.5; P.mouth = 'smile'; P.brow = 0.5; P.ears = 0; P.headUp = -0.35; }
-    if (t >= 37.4 && t < 39.1) { P.mouth = t < 38.18 ? 'open' : 'closed'; P.headUp = -0.35 + 0.25 * ramp(t, 37.6, 38.1); P.y = GR - hop(t, 38.08, 0.25, 0, 0, 20)[1]; if (t > 38.18 && t < 38.3) P.lid = 1; }
+    if (t >= 37.6 && t < 39.1) { P.mouth = t < 38.5 ? 'open' : 'closed'; P.headUp = -0.35 + 0.25 * ramp(t, 38.0, 38.45); P.y = GR - hop(t, 38.28, 0.25, 0, 0, 20)[1]; if (t > 38.5 && t < 38.64) P.lid = 1;
+      if (t >= 38.62) { P.drop = 8 * pul(t, 38.66, 0.3); P.sq = 1 - 0.05 * pul(t, 38.66, 0.3); P.headUp = -0.1; } }   // the snap, then a small gulp
     if (t >= 39.1) { P.sit = bl(t, 39.1, 39.3, 0.4, 0); P.plant = false; P.headUp = -0.05; P.tailUp = 0.9; P.mouth = 'closed'; P.lid = 0.3; look([P.x - 300, GR - 60]); }
     if (t >= 30.9 && t < 37.4) look(nestPt);
-    P.tuft = t >= 38.18 ? 1 : 0;
+    P.tuft = t >= 38.5 ? 1 : 0;
     return P;
   }
   // ----- S4: the second visit, half the effort -----
@@ -71,9 +77,9 @@ function foxP(t) {
     if (t >= 42.04) { P.sit = bl(t, 42.04, 42.5, 0, 0.4); P.plant = true; P.headUp = bl(t, 42.04, 42.5, 0, -0.35); P.talk = 0.4 * pul(t, 42.3, 0.3); }
     if (t >= 42.8 && t < 44.0) { P.talk = 0.8 * pul(t, 42.8, 0.35); P.mouth = 'open'; P.plant = false; P.raise = 0.6 * pul(t, 42.9, 0.9); if (t > 43.2) P.mouth = 'smile'; }
     if (t >= 44.66 && t < 45.6) { P.plant = false; P.raise = 0.35 * (pul(t, 44.66, 0.3) + pul(t, 45.0, 0.3)); if (t < 44.8) P.gaze = [0, 0.05]; }
-    if (t >= 47.4) { P.mouth = t < 47.68 ? 'open' : 'closed'; }
-    if (t >= 47.9) { P.sit = bl(t, 47.9, 48.05, 0.4, 0); P.plant = false; P.headUp = 0; look([P.x - 300, GR - 60]); }
-    P.tuft = t >= 47.68 ? 1 : 0;
+    if (t >= 47.5) { P.mouth = t < 47.9 ? 'open' : 'closed'; if (t > 47.9 && t < 48.02) P.lid = 1; P.drop = 6 * pul(t, 47.95, 0.25); }
+    if (t >= 48.1) { P.sit = bl(t, 48.1, 48.25, 0.4, 0); P.plant = false; P.headUp = 0; look([P.x - 300, GR - 60]); }
+    P.tuft = t >= 47.9 ? 1 : 0;
     return P;
   }
   // ----- S7: the third visit and the dare -----
@@ -103,21 +109,22 @@ function foxP(t) {
     return P;
   }
   // ----- S8 - S11: the river -----
-  const heronHead = kd16HeronHeadW(heronP(t));
+  const heronHead = heronHeadW(t);
   P.tailUp = 0.35; look(heronHead);
   if (t < 105.92) {   // still at the palm, waiting with the sweet face
     P.x = 250; P.sit = 0.4; P.plant = true; P.mouth = 'smile'; P.ears = -0.3; P.headUp = -0.35; P.lid = 0.2; look([NX, NY - 50]);
     P.tailUp = 0.35 + 0.18 * Math.sign(Math.sin(t * Math.PI * 2)) * 0.5;
-    if (t >= 103.94) { P.headUp = bl(t, 103.94, 104.6, -0.35, 0); P.mouth = 'closed'; P.lid = 0.6; P.brow = 1; P.ears = 0.2; look([HRIVER, 700]); }
+    if (t >= 104.4) { P.headUp = bl(t, 104.4, 104.75, -0.35, 0); look([HRIVER, 700]);
+      if (t >= 104.6) { P.mouth = 'closed'; P.lid = bl(t, 104.6, 104.8, 0.2, 0.6); P.brow = bl(t, 104.6, 104.8, 0, 1); P.ears = 0.2; P.lick = ramp(t, 104.8, 105.2); } }
   } else if (t < 107.9) { P.drop = 10; P.headUp = 0.05; P.lid = 0.5; P.brow = 1; }
   else {
     P.sit = settleTo(t, 107.9, 0, 0.4, 0.35); P.plant = true; P.mouth = 'smile'; P.ears = -0.3; P.lid = 0.15; P.headUp = -0.25;
-    if (t >= 109.66 && t < 111.6) { P.plant = false; P.raise = 0.5 + 0.4 * Math.abs(Math.sin((t - 109.66) * 9)); P.drop = 10 * pul(t, 110.4, 0.6); }
-    if (t >= 110.58 && t < 111.3) { P.mouth = 'open'; P.talk = 0.2; P.lid = 0.5; P.brow = 1; }   // the heron is looking at the stars
+    if (t >= 109.66 && t < 111.6) { P.plant = false; P.raise = t < 110.6 ? 0.3 + 0.65 * Math.max(pul(t, 109.7, 0.28), pul(t, 110.0, 0.28), pul(t, 110.3, 0.28)) : bl(t, 110.6, 111.0, 0.3, 0.9);
+      P.mouth = 'smile'; P.talk = 0; P.lid = 0.15; P.brow = -0.4; P.ears = -0.4; P.headUp = -0.3 + 0.06 * Math.sin(t * 6); }   // v2: applause with a sweet face, no fangs
     if (t >= 111.68 && t < 113.5) { P.plant = false; P.raise = 0.9; }
     if (t >= 113.8 && t < 115.0) { P.plant = false; P.raise = 0.5 + 0.4 * Math.sin((t - 113.8) * 4); }
     if (t >= 116.26 && t < 118.0) { P.plant = false; P.reach = 0.6 * ramp(t, 116.26, 116.6); }
-    if (t >= 118.8 && t < 119.5) { P.talk = 0.4; P.mouth = 'open'; P.ears = -0.5; look([760, GR]); }
+    if (t >= 118.8 && t < 119.5) { P.talk = 0; P.mouth = 'smile'; P.ears = -0.5; P.lid = 0.2; P.headUp = -0.25 + 0.35 * pul(t, 118.82, 0.4); P.plant = false; P.raise = 0.85 * pul(t, 119.05, 0.32); }
     if (t >= 119.5 && t < 121.18) { P.plant = false; P.raise = 0.85; P.headUp = -0.5; P.gaze = [0.3, -1]; }
     if (t >= 121.18 && t < 122.0) { P.tip = 0.06; }
     if (t >= 122.76 && t < 124.3) { P.plant = false; P.raise = 0.7; P.talk = 0.4 + 0.3 * Math.abs(Math.sin(t * 8)); P.brow = -0.4; }
@@ -126,16 +133,18 @@ function foxP(t) {
     if (t >= 133.66 && t < 134.3) { P.mouth = 'open'; P.talk = 0.15; P.wet = false; P.lid = 0.4; P.brow = 1; }
     if (t >= 134.68) { P.sq = bl(t, 134.68, 135.3, 1, 0.92); P.drop = bl(t, 134.68, 135.3, 0, 10); }
     if (t >= 137.94) { P.raise = 0; P.plant = true; P.tailUp = 0.35; P.lid = 0; P.noBlink = true; }
-    if (t >= 143.14) { P.mouth = 'open'; P.talk = 0; P.brow = 1; P.lid = 0.3; P.ears = 1; }
-    if (t >= 143.64 && t < 145.64) { P.sit = bl(t, 143.64, 144.2, 0.4, 0.1); P.plant = false; P.sq = anticipate(t, 143.64, 0.5, 0.15) < 1 && t < 143.9 ? anticipate(t, 143.64, 0.5, 0.15) : 0.85; P.drop = 22; P.tailUp = 0.3 + 0.1 * Math.sin(t * 22); P.x += 3 * Math.sin(t * 18) * ramp(t, 144.2, 144.5); }
+    if (t >= 137.94 && t < 142.8) { P.mouth = 'smile'; P.lid = 0.1; P.ears = -0.3; P.brow = 0; }
+    if (t >= 142.8) { P.mouth = 'closed'; P.talk = 0; P.lid = bl(t, 142.8, 143.2, 0.1, 0.6); P.brow = bl(t, 142.8, 143.2, 0, 1); P.ears = bl(t, 142.8, 143.3, -0.3, 0.85); P.lick = ramp(t, 142.95, 143.3); }
+    if (t >= 143.3 && t < 145.64) { P.sit = bl(t, 143.3, 143.9, 0.4, 0.12); P.plant = t < 143.6; P.sq = bl(t, 143.3, 143.9, 1, 0.86); P.drop = bl(t, 143.3, 143.9, 0, 22); P.headUp = bl(t, 143.3, 143.9, -0.25, 0.05);
+      P.tailUp = 0.3; P.ph = t * 9; P.amp = 0; P.mouth = 'closed'; P.lid = 0.6; P.brow = 1; P.ears = 0.85; P.noBlink = true; look(heronHead); }
     if (t >= 145.64 && t < 147.52) { const [, hy] = hop(t, 145.64, 0.66, 0, 0, 90); P.y = GR - hy + 6; P.sit = 0; P.sq = t < 145.9 ? 1.15 : 1; P.reach = 1; P.mouth = 'open'; P.drop = 0; P.headUp = 0.1; }
-    if (t >= 147.52) { P.x = 925; P.y = GR + 4; P.sit = 0.32; P.reach = 1; P.plant = false; P.mouth = 'smile'; P.lid = 0.4; P.brow = 0.6; P.ears = -0.2; P.tailUp = 0.9; P.sq = 1 + 0.03 * Math.sin(t * 9) * (1 - ramp(t, 147.5, 149)); P.noBlink = false;
-      P.drop = bl(t, 148.74, 149.3, 0, 20); P.headUp = bl(t, 148.74, 149.3, 0, 0.35); look(heronHead); }
+    if (t >= 147.52) { P.x = KD16_PIN.x; P.y = KD16_PIN.y; P.sit = KD16_PIN.sit; P.reach = 1; P.plant = false; P.mouth = 'smile'; P.lid = 0.4; P.brow = 0.6; P.ears = -0.2; P.tailUp = 0.9; P.sq = 1 + 0.03 * Math.sin(t * 9) * (1 - ramp(t, 147.5, 149)); P.noBlink = false;
+      P.drop = 0; P.headUp = bl(t, 148.74, 149.3, 0, 0.18); look(heronHead); }
     if (t >= 150.3 && t < 156.44) { P.talk = 0.3 + 0.3 * Math.abs(Math.sin(t * 8)); P.mouth = 'smile'; }
     if (t >= 151.8 && t < 153.16) { P.headUp = bl(t, 151.8, 152.1, 0.35, -0.3); P.drop = 0; look([NX, NY - 60]); }
-    if (t >= 153.16 && t < 154.4) { P.drop = 20; P.headUp = 0.35; P.reach = 1 + 0.08 * (pul(t, 153.3, 0.2) + pul(t, 153.8, 0.2)); }
+    if (t >= 153.16 && t < 154.4) { P.drop = 0; P.headUp = 0.18; P.reach = 1 + 0.08 * (pul(t, 153.3, 0.2) + pul(t, 153.8, 0.2)); }
     if (t >= 155.34) { P.talk = 0; P.mouth = 'smile'; P.ears = -0.6; P.lid = 0; }
-    if (t >= 156.44) { P.drop = bl(t, 156.44, 156.9, 20, 40); P.headUp = 0.6; }
+    if (t >= 156.44) { P.drop = bl(t, 156.44, 156.9, 0, 30); P.headUp = bl(t, 156.44, 156.9, 0.18, 0.6); }
   }
   if (t >= 158.1) { Object.assign(P, walk(xf, t, { stride: 26 }), { y: GR, sit: 0, reach: 0, raise: 0, plant: false, lid: 0.6, mouth: 'smile', talk: 0, drop: 0, headUp: -0.05, brow: 0, ears: 0, tailUp: 0.55, sq: 1, noBlink: false });
     P.dir = -1; look([P.x - 300, GR - 40]); if (inR(t, 159.1, 159.6)) { P.headUp = -0.4; look([NX, NY - 40]); }
@@ -145,7 +154,7 @@ function foxP(t) {
 }
 
 // ---------- the heron ----------
-const HX = (t) => t < 99.3 ? kfn(t, [[54.9, HFISH], [55.94, HTALK]]) : HRIVER;
+const HX = (t) => t < 99.3 ? kfn(t, [[54.9, HFISH], [55.94, HTALK], [80.0, HTALK], [80.8, 1060]]) : HRIVER;   // v2: an off-screen step back in S7
 function heronP(t) {
   const P = { x: HX(t), y: 925, s: 0.9, dir: -1, neck: 0.2, lift: 1, crest: 0, bob: 0 };
   const swayOn = Math.sin(t * 1.3) * 0.04;
@@ -172,11 +181,11 @@ function heronP(t) {
     if (t >= 68.9 && t < 69.7) { P.headRot = -0.4; lookHead([PALM.x, 600]); }
     if (t >= 71.26 && t < 72.86) { P.tip = 0.1 * ramp(t, 71.26, 71.6); P.neck = 0.65; lookHead(gazePlan(t, [[71.26, [P.x - 300, 500]], [71.45, [P.x + 300, 500]], [71.65, DOVESNAG]], 0.07)); }
     if (t >= 71.84 && t < 72.86) { P.wing = 0.75; P.talk = 0.25 * Math.abs(Math.sin(t * 10)); P.lid = 0.4; }
-    if (t >= 72.86 && t < 74.76) { P.puff = settleTo(t, 72.86, 0, 1, 0.4); P.neck = 1; P.headRot = 0.35; P.crest = 1; P.tip = -0.04; }
+    if (t >= 72.86 && t < 74.76) { P.puff = settleTo(t, 72.86, 0, 1, 0.4); P.neck = 1; P.headRot = bl(t, 72.86, 73.2, -0.05, -0.3); P.crest = 1; P.tip = -0.06; P.lid = 0.3; }   // v2: chest out, head high
     if (t >= 74.76 && t < 76.2) { const k = Math.sin((t - 74.76) * 9) * (1 - ramp(t, 75.8, 76.2)); P.headRot = 0.1 + 0.25 * k; P.tip = 0.03 * k; P.wing = 0.35; P.brow = 0.7; P.talk = 0.4 * Math.abs(k); }
     if (t >= 76.2 && t < 77.86) { P.talk = 0.4 * Math.abs(Math.sin(t * 8)) * (t < 77.6 ? 1 : 0); }
     if (t >= 77.86 && t < 79.3) { P.headRot = 0.1 + 0.5 * pul(t, 78.2, 0.9); P.neck = 0.75 - 0.3 * pul(t, 78.2, 0.9); P.lid = 0.5; P.puff = 0.4; }
-    if (t >= 79.3) { P.neck = 0.6; P.crest = 0.2; lookHead([NX, NY - 40]); P.wing = 0.4 * pul(t, 85.48, 0.6); }
+    if (t >= 79.3) { P.neck = 0.6; P.crest = 0.2; lookHead([NX, NY - 40]); P.wing = 0.4 * pul(t, 85.48, 0.6); if (t >= 80.0 && t < 80.9) { Object.assign(P, walk(HX, t, { stride: 13 })); P.dir = -1; } }
     return P;
   }
   // S8 - S11 at the river spot HRIVER
@@ -187,7 +196,11 @@ function heronP(t) {
   if (t >= 109.66 && t < 110.58) { lookHead([P.x + 20, 520]); P.headRot = -0.3; }
   if (t >= 110.58 && t < 113.8) { P.puff = settleTo(t, 110.58, 0, 1, 0.4); P.crest = 1; P.lid = 0.5; P.headRot = -0.15 + 0.5 * pul(t, 111.0, 0.6); P.gaze = t < 111.3 ? [0, 0.3] : P.gaze; }
   if (t >= 113.8 && t < 118.08) { P.puff = 0.6; P.crest = 0.4; P.plume = 0.6 + 0.15 * Math.sin(t * 14); P.lid = t >= 114.94 ? 0.6 : 0.2; lookHead([P.x + 400, 600]); }
-  if (t >= 118.08 && t < 119.6) { P.neck = 0.95; P.headRot = settleTo(t, 118.08, 0, -0.45, 0.4); P.lid = 0.4; P.puff = 0.6; P.plume = 0.3 * swing(t, 118.3, 1, 2, 3); }
+  if (t >= 118.08 && t < 119.6) {   // v2: the head swings down and away from the wind (screen left), holds, then back up, proud
+    const k = E.inOut(ramp(t, 118.08, 118.36)) * (1 - E.inOut(ramp(t, 118.86, 119.5)));
+    P.neck = lerp(0.75, 0.2, k); P.headRot = lerp(-0.05, 0.6, k); P.lid = lerp(0.2, 0.7, k); P.puff = lerp(0.6, 0.8, ramp(t, 118.86, 119.5)); P.crest = 0.4;
+    P.plume = 0.7 * (E.inOut(ramp(t, 118.08, 118.36)) - E.inOut(ramp(t, 118.16, 118.46))) - 0.6 * (E.inOut(ramp(t, 118.86, 119.5)) - E.inOut(ramp(t, 118.96, 119.6))); }
+  if (t >= 119.6 && t < 121.9) { P.puff = 0.8; P.crest = 0.6; P.headRot = -0.15; P.lid = 0.5; if (t >= 120.9) { P.eyes = 'shut'; P.headRot = -0.25; } }   // proud, eyes shut while the fox steps closer
   if (t >= 124.44 && t < 127.3) { P.headRot = 0.4 * Math.sin((t - 124.44) * 4.2); P.plume = 0.7 * Math.sin(t * 13); P.crest = 0.6 * Math.sin(t * 9); P.lid = 0.3; }
   if (t >= 127.3 && t < 127.82) { P.wing = 0.25 * pul(t, 127.3, 0.5); P.plume = swing(t, 127.3, 0.5, 2, 3); }
   if (t >= 127.82 && t < 138.68) { P.lid = 0.4; P.crest = 0.8; P.puff = 0.7; P.wing = settleTo(t, 127.82, 0, 0.45, 0.35); P.talk = 0.5 * Math.abs(Math.sin(t * 8)) * (inR(t, 128.0, 132.4) ? 1 : 0); }
@@ -202,15 +215,18 @@ function heronP(t) {
     if (t >= 142.44) { P.tuck = 1; P.lift = bl(t, 142.44, 143.0, 0, 1); P.bob = 2 * Math.sin(t * 2.4); P.sq = breathe(t, 2, 0.02); }
     if (t >= 144.58 && t < 145.64) { P.lift = 1 - 0.6 * (pul(t, 144.6, 0.25) + pul(t, 144.95, 0.25)); }
   }
-  if (t >= 147.52) {   // pinned
-    P.tuck = t < 148.0 ? 1 : bl(t, 148.0, 148.25, 1, 0.42); P.lift = 0.5; P.wing = 0; P.x = 930; P.rot = 1.3; P.sq = 0.9; P.amp = 0.4; P.ph = t * 9 * (1 - ramp(t, 148, 149.5)); P.eyes = 'wide'; P.crest = -1; P.beak = 0.6; P.noBlink = true; P.neck = 0.45; P.puff = 0;
-    lookHead(fh); if (inR(t, 148.5, 148.67)) P.gaze = [0, 0.05];
-    if (t >= 154.38) { P.eyes = 'open'; P.lid = bl(t, 154.38, 154.9, 0, 0.55); P.gaze = [0.6, 0.8]; P.headRot = bl(t, 154.38, 155.0, 0, 0.45); P.beak = 0.1; }
+  if (t >= 147.52) {   // v2: pinned on his side above the water, head upright, legs folded up and back (kd16HeronPinned)
+    const [px, py] = kd16PinXY(), Q = { pinned: true, x: px, y: py, s: 0.9, dir: 1, eyes: 'wide', crest: -0.35, beak: 0.6 * (1 - ramp(t, 149.0, 149.6)) + 0.1, noBlink: true,
+      headRot: -0.05 + 0.04 * Math.sin(t * 1.7), amp: 0.55 * (1 - ramp(t, 148.0, 149.5)), ph: t * 14, shame: 0 };
+    Q.gaze = lookAt(kd16PinnedHeadW(Q), foxEye(foxP0(t)));
+    if (inR(t, 149.5, 149.67)) Q.gaze = [0, 0.05];   // one look to camera
+    if (t >= 154.38) { Q.eyes = 'open'; Q.lid = bl(t, 154.38, 154.9, 0, 0.55); Q.gaze = [0.7, 0.8]; Q.shame = bl(t, 154.38, 155.0, 0, 1); Q.beak = 0; }
+    return Q;
   }
   return P;
 }
 function foxHeadW(t) { const P = foxP0(t); return foxHeadPt(P, 0, 0); }
-function foxP0(t) { return foxP._cache && foxP._cache.t === t ? foxP._cache.P : { x: FX(t), y: GR, s: 0.8, dir: 1, sit: 0.4 }; }
+function foxP0(t) { return foxP._cache && foxP._cache.t === t ? foxP._cache.P : t >= 147.52 && t < 157.2 ? { ...KD16_PIN, headUp: 0.18, drop: 0 } : { x: FX(t), y: GR, s: 0.8, dir: 1, sit: 0.4 }; }
 
 // ---------- the dove ----------
 const flyArc = (t, a, b, A, Bp, h) => { const u = E.inOut(ramp(t, a, b)); return [lerp(A[0], Bp[0], u), lerp(A[1], Bp[1], u) - h * Math.sin(Math.PI * u)]; };
@@ -264,6 +280,7 @@ function doveP(t) {
   // ----- S2: the threat -----
   if (t < 30.9) {
     P.lid = 1; P.sq = 0.95; P.drop = 6; P.noBlink = true;
+    if (t >= 22.5 && t < 24.0) { P.lid = 0; P.eyes = 'wide'; P.drop = 6 + 8 * E.out(ramp(t, 22.5, 22.62)); P.headRot = 0.45 * E.out(ramp(t, 22.5, 22.62)); P.sq = 1.06 - 0.1 * ramp(t, 22.5, 22.7); P.puff = 0.6 * pul(t, 22.5, 0.5); lookAtPt([FX(t) + 80, GR - 60]); P.x += 3 * Math.sin(t * 60) * pul(t, 22.5, 0.3); }   // v2: the start
     if (t >= 24.0) { P.lid = 0; P.eyes = 'wide'; P.sq = settleTo(t, 24.0, 0.95, 0.9, 0.25); P.drop = 0; P.puff = settleTo(t, 24.0, 0, 0.8, 0.3); lookAtPt(foxPt); P.headRot = 0.35; P.noBlink = false; }
     if (t >= 25.4) { P.gaze = lookAt(doveEye(P), chickHome(0)); }
     if (t >= 26.3) lookAtPt(foxPt);
@@ -284,9 +301,9 @@ function doveP(t) {
   }
   // ----- S4: the second chick, the grief -----
   if (t < 51.7) {
-    P.x = DR[0] - (NX + 30 > 0 ? (DR[0] - NX - 30) * pul(t, 46.14, 1.6) : 0); P.wet = t >= 46.14; lookAtPt(foxPt); P.drop = 8; P.sag = 0.3;
+    P.x = lerp(DR[0], NX + 30, ramp(t, 46.15, 46.45) * (1 - ramp(t, 47.6, 48.0))); P.wet = t >= 46.14; lookAtPt(foxPt); P.drop = 8; P.sag = 0.3;
     if (t >= 44.12) { P.sq = bl(t, 44.12, 44.5, 1, 0.92); P.drop = 14; P.headRot = 0.3; }
-    if (t >= 46.14) { P.sag = -0.7 * ramp(t, 46.2, 46.5) * (1 - ramp(t, 46.95, 47.3)); P.lid = 1; P.headRot = -0.45; }
+    if (t >= 46.15) { P.sq = 1; P.sag = -0.7 * ramp(t, 46.25, 46.55) * (1 - ramp(t, 46.95, 47.3)); P.lid = 1; P.headRot = -0.45; P.drop = 4; P.eyes = 'open'; }   // v2: the same pose as at 37.1
     if (t >= 47.3) { P.headRot = 0.2; P.drop = 14; P.lid = Math.max(0.5, blink(t, 4)); lookAtPt(chickHome(1)); }
     if (t >= 48.8) { P.drop = bl(t, 48.8, 49.6, 14, 22); P.headRot = bl(t, 48.8, 49.6, 0.2, 0.55); P.lid = t < 49.4 ? bl(t, 48.8, 49.2, 0.5, 1) : 0.6; P.x = DR[0] + tremble(t, 2, 10); P.sag = 0.8; lookAtPt(chickHome(2)); }
     if (t >= 50.08) { P.headRot = settleTo(t, 50.08, 0.55, -0.6, 0.35); P.beak = 1.7; P.eyes = 'shut'; P.sag = -0.85; P.drop = 0; P.lid = 0; }
@@ -312,10 +329,11 @@ function doveP(t) {
     if (t >= 66.64 && t < 66.8) P.lid = 1;
     if (t >= 68.9 && t < 69.7) { lookAtPt(gazePlan(t, [[68.9, [PALM.x, 880]], [69.3, [PALM.x, 360]]], 0.2)); P.eyes = t > 69.3 ? 'wide' : 'open'; }
     if (t >= 69.7 && t < 71.26) { P.beak = 0.8; P.eyes = 'wide'; if (inR(t, 70.6, 70.75)) P.lid = 1; }
-    if (t >= 73.88 && t < 74.9) { P.chest = settleTo(t, 73.88, 0, 1, 0.3); P.drop = -6; P.headRot = 0.2; P.tip = 0.12 * Math.sin((t - 73.88) * 11) * (1 - ramp(t, 74.3, 74.9)); P.x += 6 * Math.sin((t - 73.88) * 9) * (1 - ramp(t, 74.3, 74.9)); P.sag = -0.5 * pul(t, 74.0, 0.5); }
-    if (t >= 74.9 && t < 76.24) { P.chest = bl(t, 74.9, 75.3, 1, 0.3); }
+    if (t >= 75.32 && t < 76.24) {   // v2: the first try at the BRAVE pose wobbles, she nearly falls off the snag, one wing flails
+      const w = ramp(t, 75.32, 75.5) * (1 - ramp(t, 75.95, 76.24)); P.chest = w; P.sq = lerp(1, 1.15, w); P.drop = -6 * w;
+      P.tip = w * (0.12 * Math.sin((t - 75.32) * 10) + 0.22 * pul(t, 75.55, 0.4)); P.x += 10 * Math.sin((t - 75.32) * 9) * w; P.sag = -1.1 * pul(t, 75.5, 0.45); P.eyes = t > 75.55 && t < 75.95 ? 'wide' : 'open'; }
     if (t >= 76.24 && t < 77.0) { lookAtPt([NX, NY - 60]); P.brow = 0.6; P.headRot = -0.2; }
-    if (t >= 77.0 && t < 78.9) { P.brow = 0.6; P.lid = 0.2; P.sq = settleTo(t, 77.0, 1, 0.96, 0.3); P.sag = 0.15; P.headRot = 0.35 * pul(t, 77.3, 0.4); }
+    if (t >= 77.0 && t < 78.9) { P.brow = 0.8; P.lid = 0.2; P.chest = settleTo(t, 77.0, 0, 1, 0.35); P.drop = -8; P.headRot = 0.25; P.puff = 0.3; }   // v2: the second try holds
     if (t >= 78.9) { const [x, y] = flyArc(t, 78.9, 79.7, per, [DR[0], DR[1]], 120); Object.assign(P, { x, y, fly: true, flap: Math.sin(t * 22), dir: -1, lid: 0 }); lookAtPt([NX, NY - 40]); }
     return P;
   }
@@ -337,14 +355,17 @@ function doveP(t) {
   // ----- S8 - S11 -----
   P.x = DR[0]; P.y = DR[1]; P.chest = 0.8; P.drop = -6; P.headRot = 0.25; lookAtPt([FX(t) + 80, GR - 110]);
   if (t < 103.94) { P.lid = 0.62; P.beak = 0.5 * Math.abs(Math.sin(t * 8)) * (t > 99.44 && t < 105.9 ? 1 : 0); P.noBlink = true; }
-  if (t >= 102.84 && t < 105.5) { P.sag = -0.9 * ramp(t, 102.84, 103.1); P.dir = 1; P.beak = 0.5 * Math.abs(Math.sin(t * 8)); P.lid = 0.62; }
-  if (t >= 105.5 && t < 108) { P.dir = -1; P.eyes = 'wide'; P.lid = 0; P.sq = 0.93; P.chest = 0; P.drop = 4; P.sag = -0.6; P.headRot = 0.1; lookAtPt([FX(t) + 80, GR - 110]); P.noBlink = false; }
+  if (t >= 102.84 && t < 105.3) { P.sag = -0.9 * ramp(t, 102.84, 103.1); P.dir = 1; P.beak = 0.5 * Math.abs(Math.sin(t * 8)); P.lid = 0.62; }
+  if (t >= 105.3 && t < 108) { P.dir = -1; P.eyes = t < 105.45 ? 'open' : 'wide'; P.lid = bl(t, 105.3, 105.45, 0.62, 0); P.sq = bl(t, 105.3, 105.6, 1, 0.92); P.chest = bl(t, 105.3, 105.5, 0.8, 0); P.drop = bl(t, 105.3, 105.6, -6, 8); P.sag = bl(t, 105.45, 105.75, 0, -0.95); P.headRot = bl(t, 105.3, 105.6, 0.25, 0.45); P.beak = 0;
+    P.wet = t > 105.7; lookAtPt([FX(t) + 80, GR - 110]); P.noBlink = true; }   // v2: eyes open, she looks down, wing to the beak, too late
   if (t >= 108) { P.chest = 0; P.drop = 4; P.dir = 1; P.eyes = 'open'; P.lid = 0.2; P.wet = false; lookAtPt([HRIVER, 640]); }
   if (t >= 135.22 && t < 137.2) { const f = Math.sin((t - 135.22) * 18); P.sag = -0.8 + 0.4 * f; P.y = DR[1] - 14 * Math.abs(Math.sin((t - 135.22) * 6)); P.beak = 1.4; P.fly = false; }
   if (t >= 145.64 && t < 152.34) { P.sag = 0; P.eyes = 'wide'; lookAtPt([HRIVER, 800]); }
   if (t >= 152.34) { P.sag = 0.4; P.eyes = 'open'; P.lid = 0.3; P.noBlink = true; lookAtPt([HRIVER, 800]); }
   if (t >= 158.9 && t < 160.4) { P.chest = settleTo(t, 158.9, 0, 1, 0.4); P.drop = -8; P.headRot = 0.3; P.brow = 0.8; P.sag = 0.1; P.lid = 0.1; P.dir = -1; lookAtPt([FX(t) + 60, GR - 110]); }
-  if (t >= 160.4) { P.dir = 1; P.chest = bl(t, 160.4, 160.9, 1, 0); P.drop = bl(t, 160.72, 161.6, -8, 14); P.headRot = bl(t, 160.72, 161.6, 0.3, 0.5); P.lid = t < 161.6 ? bl(t, 161.0, 161.5, 0.1, 1) : 0.6; P.wet = true; P.sag = bl(t, 160.9, 161.6, 0.1, -0.35); lookAtPt([HRIVER, 905]); }
+  if (t >= 160.4) { P.dir = 1; P.chest = bl(t, 160.4, 160.9, 1, 0); P.drop = bl(t, 160.72, 161.4, -8, 4); P.headRot = 0.3; P.lid = 0.3; P.wet = true; P.sag = 0.1; P.brow = 0; lookAtPt([HRIVER, 905]); P.noBlink = true;
+    if (t >= 161.6) { P.dir = t < 161.9 ? 1 : -1; P.x = lerp(DR[0], DR[0] + 8, E.inOut(ramp(t, 161.6, 162.6))); P.drop = bl(t, 161.6, 163.0, 4, 18); P.headRot = bl(t, 161.6, 163.0, 0.3, 0.6); P.sag = bl(t, 162.0, 163.0, 0.1, 0.75);
+      P.lid = t < 162.5 ? bl(t, 161.6, 162.0, 0.3, 0.45) : t < 163.4 ? bl(t, 162.5, 162.8, 0.45, 1) : bl(t, 163.4, 163.8, 1, 0.55); lookAtPt(chickHome(2)); P.sq = breathe(t, 3, 0.02); } }   // v2: head sinks, long blink, wing over the last chick
   return P;
 }
 function doveCarry(ctx, P, t) {
@@ -359,6 +380,7 @@ function chickState(t, i) {
   const th = THROW.find((q) => q.i === i);
   if (th && t >= th.nudge) {
     if (t < th.tip) { const u = E.inOut(ramp(t, th.nudge + 0.1, th.tip)); return { x: lerp(hx, NX - 66, u), y: hy - 6 * Math.sin(Math.PI * u), gx: 1, gy: -1, wide: true, rot: -0.3 * u, layer: 'front' }; }
+    if (t < th.fall) return { x: NX - 66, y: hy - 2 * Math.abs(Math.sin(t * 24)), gx: 1, gy: -0.5, wide: true, open: 0.5, rot: -0.3 + 0.06 * Math.sin(t * 22), layer: 'front' };   // v2: looks back at her
     return null;   // falling or caught: drawn by the fall code
   }
   const k = { x: hx, y: hy, gx: 0, gy: 0, wide: false, open: 0, cw: 0, i };
@@ -372,7 +394,8 @@ function chickState(t, i) {
     if (t >= 15.32) { k.open = 0; k.gx = 0.8; k.gy = -0.5; k.x += 4; }
     if (i === 1 && t >= 16.52 && t < 17.3) { k.y -= 14 * pul(t, 16.52, 0.75); k.open = pul(t, 16.7, 0.2) > 0 ? 1 : 0; }
   } else if (t < 30.9) {
-    k.shut = t < 24.0; if (t >= 24.0) { k.wide = true; k.gx = -0.7; k.gy = 0.6; }
+    k.shut = t < 22.5; if (t >= 24.0) { k.wide = true; k.gx = -0.7; k.gy = 0.6; }
+    if (t >= 22.5 && t < 24.0) { k.wide = true; k.gx = -0.5; k.gy = 1; k.y += 12 * E.out(ramp(t, 22.5 + i * 0.1, 22.65 + i * 0.1)); }   // v2: the start, a staggered duck
     if (t >= 24.64 && i !== 0) { k.gx = (chickHome(0)[0] - hx) < 0 ? -1 : 1; k.gy = 0; }
     if (i === 0 && t >= 24.64) k.cw = 0.4;
     if (t >= 25.4 && t < 26.6) { const d = 25.4 + stagger(i, 0.12); k.y += 24 * pul(t, d, 1.0); }
@@ -386,7 +409,8 @@ function chickState(t, i) {
     if (t >= 88.62 && t < 91.5) { k.y -= 6; k.gx = -0.6; k.gy = 1; k.brave = 1; }
     if (t >= 94.5 && t < 96.0) k.wide = true;
     if (t >= 95.2 && t < 95.9) { k.y -= 10; k.raspberry = pul(t, 95.2, 0.7); } }
-  else { k.gx = 0.8; k.gy = 0.5; if (t >= 145.64 && t < 160.5) { k.wide = true; k.y += 4; } if (t >= 160.72) { k.x += 8 * ramp(t, 160.72, 161.4); k.gx = 1; k.gy = -1; } }
+  else { k.gx = 0.8; k.gy = 0.5; if (t >= 105.4 && t < 107) { k.y += 12 * ramp(t, 105.4, 105.6) * (1 - ramp(t, 106.6, 107)); k.wide = true; k.gx = -0.6; k.gy = 0.8; }
+    if (t >= 145.64 && t < 160.5) { k.wide = true; k.y += 4; } if (t >= 162.4) { k.x += 16 * E.inOut(ramp(t, 162.4, 163.2)); k.y -= 6 * E.inOut(ramp(t, 162.4, 163.2)); k.gx = 1; k.gy = -1; k.shut = t > 163.6; } }
   k.layer = 'mid'; return k;
 }
 const DOVE_X = (t) => doveP(t).x;
@@ -401,9 +425,9 @@ function drawChickK(ctx, k, t) {
 }
 // falling chick: rim (NX-66, NY-50) to the fox mouth
 function fallingChicks(ctx, t, fP) {
-  for (const th of THROW) { if (t < th.tip || t >= th.catch) continue;
-    const m = fP ? foxMouth(fP) : [315, 777], a = [NX - 66, NY - 50], u = ramp(t, th.tip, th.catch);
-    const x = lerp(a[0], m[0], u), y = fallY(t, th.tip, th.catch, a[1], m[1] - 10);
+  for (const th of THROW) { if (t < th.fall || t >= th.catch) continue;
+    const m = fP ? foxMouth(fP) : [315, 777], a = [NX - 66, NY - 50], u = ramp(t, th.fall, th.catch);
+    const x = lerp(a[0], m[0], u), y = fallY(t, th.fall, th.catch, a[1], m[1] - 10);
     kd16Chick(ctx, x, y, { flap: t * 30, wide: true, gx: th.i === 1 ? 1 : 0.4, gy: -1, open: Math.abs(Math.sin(t * 9)) * 0.8, rot: 0.25 * Math.sin(t * 12) }); }
 }
 
@@ -456,36 +480,31 @@ function drawWorld(ctx, t, cam) {
   if (inR(t, 21.24, 22.2)) soundArcs(ctx, NX + 20, NY - 70, 1, t, C.white);
   // snag and heron
   kd16Snag(ctx, SNAG[0], SNAG[1]);
-  const hP = heronP(t); if (t < 157.2) { kd16Heron(ctx, hP); }
-  // fox
-  let fP = null; if (foxOn(t)) { fP = foxP(t); foxP._cache = { t, P: fP }; fox(ctx, fP);
-    if (fP.tuft) { const [mx, my] = foxMouth(fP); kd16Chick(ctx, mx - 4, my - 4, { tuft: true }); }
-    if (fP.feather) { const [mx, my] = foxHeadPt(fP, 74, -4); ctx.save(); ctx.translate(mx, my - 8); ctx.rotate(-0.5 + 0.2 * Math.sin(t * 9)); shape(ctx, ell(0, 0, 16, 6, 12), '#b9c4dc', { lw: 3, seed: 5 }); ctx.restore(); }
-    if (fP.belly) { const [bx, by] = foxBody(fP, 10, -66); shape(ctx, ell(bx, by, 52, 22, 20), CREAM, { lw: 4.5, seed: 77 }); }
-    if (inR(t, 158.6, 159.4)) feather(ctx, t, { t0: 158.6, t1: 159.4, a: foxHeadPt(fP, 74, -12), b: [foxHeadPt(fP, 74, -12)[0] + 40, GR - 4], col: '#b9c4dc' });
-    if (inR(t, 79.72, 81.8)) { const [ex, ey] = foxHeadPt(fP, 30, -60); note(ctx, ex + 20 * Math.sin(t * 3), ey - ((t * 50) % 60), 0.7, C.black); }
-    for (const f of FOXFALLS) if (t >= f.t && t < f.t + 0.5) dustBurst(ctx, f.x + 40, GR - 4, t - f.t, 3, 6, 11, 22, 0.45, Math.round(f.t * 10));
-    if (inR(t, 91.7, 92.8)) dustBurst(ctx, PALM.x - 30, GR - 10, t - 91.9, 5, 8, 16, 40, 0.8, 3);
-    if (inR(t, 94.2, 95.2)) dustBurst(ctx, fP.x - 20, GR - 8, t - 94.2, 10, 10, 30, 110, 0.7, 5);
+  const hP = heronP(t), pinned = !!hP.pinned && t < 157.2; if (t < 157.2 && !hP.pinned) { kd16Heron(ctx, hP); }
+  // fox (while the heron is pinned, the pair is drawn after the front water strip: heron, far paw, fox)
+  let fP = null; if (foxOn(t) && pinned) { fP = foxP(t); foxP._cache = { t, P: fP }; }
+  if (foxOn(t) && !pinned) { fP = foxP(t); foxP._cache = { t, P: fP }; fox(ctx, fP); kd16FoxExtras(ctx, fP, t);
   }
   fallingChicks(ctx, t, foxOn(t) ? fP : null);
+  if (inR(t, 22.55, 24.2)) feather(ctx, t, { t0: 22.55, t1: 24.2, a: [DR[0] - 6, DR[1] - 46], b: [DR[0] + 70, DR[1] + 200], col: C.white });   // v2: one feather shakes loose
   // the big tear (51.1 to 51.75) and the tear on the beak (58.6)
   if (inR(t, 51.1, 51.75)) { const u = ramp(t, 51.1, 51.75), x = lerp(NX + 50, HFISH - 40, E.out(u)), y = fallY(t, 51.1, 51.75, NY - 50, SURF); kd16Tear(ctx, x, y, 1.6); }
   if (inR(t, 58.6, 59.0)) { const hh = kd16HeronHeadW(hP), tipx = hh[0] - 76 * 0.9, tipy = hh[1] + 10, u = ramp(t, 58.6, 59.0); kd16Tear(ctx, lerp(NX + 40, tipx, u), lerp(NY - 60, tipy, u) - 120 * Math.sin(Math.PI * u), 1.1); }
   if (inR(t, 59.0, 59.6)) { const hh = kd16HeronHeadW(hP); kd16Tear(ctx, hh[0] - 72 * 0.9, hh[1] + 4, 1.0); }
   // water front strip (hides legs), ripples, near reeds
   kd16Water(ctx, t, { front: true });
+  if (pinned) { fox(ctx, fP); kd16FoxExtras(ctx, fP, t); kd16HeronPinned(ctx, hP); kd16PinPaw(ctx, fP); }
   ripple(ctx, HFISH - 40, SURF + 4, 51.75, t, 1.4); ripple(ctx, HFISH - 40, SURF + 4, 52.0, t, 0.9);
   if (t < 51.75) ripple(ctx, HFISH - 160, SURF + 4, 4.75, t, 0.8);
   for (const f of HERONFALLS) ripple(ctx, f.x - 10, SURF + 4, f.t, t, 0.7);
   if (inR(t, 121.4, 140)) ripple(ctx, 820, SURF + 4, 121.6, t, 0.5);
-  if (t >= 145.6 && t < 150) { ripple(ctx, 1000, SURF + 4, 146.3, t, 1.6); ripple(ctx, 1080, SURF + 4, 146.6, t, 1.2); drops(ctx, 1000, SURF - 120, t, 4); }
-  if (t >= 156) { ripple(ctx, HRIVER, SURF + 4, 159.52, t, 1.4); }
+  if (t >= 145.6 && t < 150) { ripple(ctx, 1000, SURF + 4, 146.3, t, 1.6); ripple(ctx, 1080, SURF + 4, 146.6, t, 1.2); if (t < 148.2) drops(ctx, 1000, SURF - 120, t, 4); }
+  if (t >= 156) { const rx = kd16PinXY()[0]; ripple(ctx, rx, SURF + 4, 159.52, t, 1.6); ripple(ctx, rx + 30, SURF + 4, 160.3, t, 1.2); ripple(ctx, rx - 20, SURF + 4, 161.1, t, 0.9); }
   kd16Reeds(ctx, t, 1360, 1415, { bend, seed: 63, n: 3, shake: shakeR });
   // drifting feathers
-  if (t >= 146.3) for (let i = 0; i < 4; i++) feather(ctx, t, { t0: 146.4 + i * 0.4, t1: 149.0 + i * 0.6, a: [980 + i * 30, 660 - i * 20], b: [930 + i * 50, SURF - 4], col: '#b9c4dc' });
+  if (t >= 146.3 && t < 148.7) for (let i = 0; i < 4; i++) feather(ctx, t, { t0: 146.4 + i * 0.25, t1: 147.9 + i * 0.25, a: [1060 + i * 40, 680 - i * 20], b: [1180 + i * 45, SURF - 4], col: '#b9c4dc' });   // v2: they drift right, away from the fox's face, and land by 148.7
   if (t >= 157.42) for (let i = 0; i < 3; i++) feather(ctx, t, { t0: 157.5 + i * 0.15, t1: 159.5 + i * 0.3, a: [1340 + i * 25, 640], b: [1300 + i * 40, 500 - i * 30], col: '#b9c4dc' });
-  if (t >= 159.6) { const u = ramp(t, 160.16, DUR), fx = lerp(960, 1150, u), fy = t < 160.16 ? lerp(560, SURF - 2, ramp(t, 159.6, 160.16)) : SURF - 2 + 2 * Math.sin(t * 2); ctx.save(); ctx.translate(fx, fy); ctx.rotate(t < 160.16 ? 0.7 * Math.sin(t * 6) : 0.1 * Math.sin(t * 1.5)); ctx.scale(1.6, 1.6); shape(ctx, ell(0, 0, 18, 6, 12), '#b9c4dc', { lw: 3, seed: 5 }); seg(ctx, -18, 0, 8, 0, 1, '#6b7fa6', 1); ctx.restore(); }
+  if (t >= 159.4) { const u = ramp(t, 160.4, DUR), fx = lerp(1000, 1160, u) + 30 * Math.sin(ramp(t, 159.4, 160.4) * 6), fy = t < 160.4 ? lerp(640, SURF - 4, E.inOut(ramp(t, 159.4, 160.4))) : SURF - 4 + 3 * Math.sin(t * 2); ctx.save(); ctx.translate(fx, fy); ctx.rotate(t < 160.4 ? 0.6 * Math.sin(t * 5) : 0.1 * Math.sin(t * 1.5)); ctx.scale(3.2, 3.2); shape(ctx, ell(0, 0, 18, 6, 12), '#b9c4dc', { lw: 3, seed: 5 }); seg(ctx, -18, 0, 8, 0, 1, '#6b7fa6', 1); ctx.restore(); }
   // world-space effects: thought clouds, fight cloud
   thoughtClouds(ctx, t, dv);
   if (inR(t, 146.3, 147.9)) kd16Fight(ctx, 975, 800, t, ramp(t, 146.3, 146.45) * 1.0, ramp(t, 147.4, 147.9));
@@ -495,6 +514,25 @@ function drawWorld(ctx, t, cam) {
   if (d.warm > 0.01) { ctx.save(); ctx.globalAlpha = 0.1 * d.warm; ctx.fillStyle = '#e2701a'; ctx.fillRect(0, 0, WW, WH); ctx.restore(); }
   LIFE.t = null;
 }
+function kd16FoxExtras(ctx, fP, t) {
+  if (fP.tuft) { const [mx, my] = foxMouth(fP); kd16Chick(ctx, mx - 4, my - 4, { tuft: true }); }
+  if (fP.lick > 0 && fP.lick < 1) { const u = fP.lick, [lx, ly] = foxHeadPt(fP, 22 + 24 * u, 20 + 2 * Math.sin(Math.PI * u)); ctx.save(); ctx.translate(lx, ly); ctx.rotate((fP.headUp || 0) * (fP.dir ?? 1)); shape(ctx, ell(0, 4, 8, 5.5, 12), C.red, { lw: 2.5, seed: 13 }); ctx.restore(); }   // v2: one slow lick
+  if (fP.feather) { const [mx, my] = foxHeadPt(fP, 74, -4); ctx.save(); ctx.translate(mx, my - 8); ctx.rotate(-0.5 + 0.2 * Math.sin(t * 9)); shape(ctx, ell(0, 0, 16, 6, 12), '#b9c4dc', { lw: 3, seed: 5 }); ctx.restore(); }
+  if (fP.belly) { const [bx, by] = foxBody(fP, 10, -66); shape(ctx, ell(bx, by, 52, 22, 20), CREAM, { lw: 4.5, seed: 77 }); }
+  if (inR(t, 158.6, 159.4)) feather(ctx, t, { t0: 158.6, t1: 159.4, a: foxHeadPt(fP, 74, -12), b: [foxHeadPt(fP, 74, -12)[0] + 40, GR - 4], col: '#b9c4dc' });
+  if (inR(t, 79.72, 81.8)) { const [ex, ey] = foxHeadPt(fP, 30, -60); note(ctx, ex + 20 * Math.sin(t * 3), ey - ((t * 50) % 60), 0.7, C.black); }
+  for (const f of FOXFALLS) if (t >= f.t && t < f.t + 0.5) dustBurst(ctx, f.x + 40, GR - 4, t - f.t, 3, 6, 11, 22, 0.45, Math.round(f.t * 10));
+  if (inR(t, 91.7, 92.8)) dustBurst(ctx, PALM.x - 30, GR - 10, t - 91.9, 5, 8, 16, 40, 0.8, 3);
+  if (inR(t, 94.2, 95.2)) dustBurst(ctx, fP.x - 20, GR - 8, t - 94.2, 10, 10, 30, 110, 0.7, 5);
+  // v2: applause ticks at the raised paw (109.7-110.6) and the clap on the heron's answer (119.05)
+  for (const c of [109.84, 110.14, 110.44, 119.2]) if (inR(t, c, c + 0.14)) { const r = fP.raise || 0, [px, py] = foxBody(fP, 50 + 60 * r, -102 - 30 * r), k = ramp(t, c, c + 0.14);
+    ctx.save(); ctx.globalAlpha *= 1 - k; for (const a of [-2.2, -1.6, -1.0]) seg(ctx, px + Math.cos(a) * (24 + 14 * k), py + Math.sin(a) * (24 + 14 * k), px + Math.cos(a) * (42 + 14 * k), py + Math.sin(a) * (42 + 14 * k), 5, C.white, 3); ctx.restore(); }
+}
+// v2: the fox's far forepaw on the pinned heron (drawn between the heron and the fox)
+function kd16PinPaw(ctx, F) {   // v2: both forepaws pressed on the pinned heron (drawn over him): far paw, then near paw
+  const s = F.s || 0.8, r = F.reach ?? 1;
+  for (const [a, b, col] of [[[146, -88], [172, -90], FOXD], [[150, -80], [K.lerp(66, 195, r), K.lerp(-12, -74, r)], FOXC]]) { const A = foxBody(F, ...a), B2 = foxBody(F, ...b), Cp = foxBody(F, b[0] + 8, b[1]);
+    seg(ctx, A[0], A[1], B2[0], B2[1], 18 * s, col, 4.5 * s); shape(ctx, ell(Cp[0], Cp[1], 20 * s, 9 * s, 12), C.black, { lw: 3 * s, seed: 3 }); } }
 function kd16Tear(ctx, x, y, s) { ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.beginPath(); ctx.moveTo(0, -11); ctx.quadraticCurveTo(6, -3, 6, 2); ctx.arc(0, 2, 6, 0, Math.PI); ctx.quadraticCurveTo(-6, -3, 0, -11); ctx.fillStyle = TEAR; ctx.fill(); ctx.lineWidth = 2.5; ctx.strokeStyle = C.black; ctx.stroke(); ctx.fillStyle = C.white; ctx.beginPath(); ctx.arc(-2, 1, 1.8, 0, 7); ctx.fill(); ctx.restore(); }
 const windBend = (t) => {
   let b = 0;
@@ -543,14 +581,29 @@ function thoughtClouds(ctx, t, dv) {
 const CK = [[0, 700, 615, 1.0], [0.5, 700, 615, 1.0], [1.5, 430, 590, 1.15], [2.0, 430, 590, 1.15], [2.8, 390, 360, 1.9], [3.5, 390, 360, 1.9], [4.7, 760, 615, 1.0], [5.5, 760, 615, 1.0], [6.3, 390, 300, 2.6],
   [11.3, 390, 300, 2.6], [11.8, 400, 330, 1.9], [15.3, 400, 330, 1.9], [17.79, 390, 300, 2.5],
   [17.8, 430, 590, 1.15], [21.8, 430, 590, 1.15], [22.5, 390, 380, 1.8], [23.62, 390, 380, 1.8], [23.92, 260, 760, 1.9], [24.3, 260, 760, 1.9], [24.9, 430, 590, 1.15], [27.0, 430, 590, 1.15], [27.6, 330, 640, 1.45], [30.89, 330, 640, 1.45],
-  [30.9, 395, 300, 2.6], [37.45, 395, 300, 2.6], [38.2, 430, 590, 1.15], [40.0, 430, 590, 1.15],
-  [48.8, 430, 590, 1.15], [49.4, 395, 300, 2.6], [51.0, 395, 300, 2.6], [51.75, 1140, 760, 1.7], [52.1, 1140, 760, 1.7], [53.0, 760, 520, 1.05], [55.9, 760, 520, 1.05], [56.6, 760, 500, 1.1],
-  [59.6, 760, 500, 1.1], [60.8, 1137, 590, 1.9], [68.9, 1137, 590, 1.9], [69.15, 430, 590, 1.15], [69.5, 430, 590, 1.15], [69.75, 1137, 590, 1.9], [72.8, 1137, 590, 1.9], [73.3, 1160, 590, 2.15], [78.8, 1160, 590, 2.15], [79.6, 700, 560, 1.15],
-  [80.0, 430, 590, 1.15], [84.6, 430, 590, 1.15], [85.2, 700, 600, 1.0], [86.1, 700, 600, 1.0], [86.9, 400, 340, 2.3], [88.4, 400, 340, 2.3], [89.0, 430, 590, 1.15], [94.4, 430, 590, 1.15], [94.6, 260, 760, 2.0], [96.9, 260, 760, 2.0], [97.6, 320, 640, 1.5], [99.29, 320, 640, 1.5],
-  [99.3, 395, 360, 1.9], [102.84, 395, 360, 1.9], [104.6, 720, 600, 1.05], [105.9, 720, 600, 1.05], [107.9, 790, 640, 1.3], [108.7, 830, 700, 1.7], [115.9, 830, 700, 1.7], [116.6, 840, 700, 1.85],
-  [119.2, 840, 700, 1.85], [124.4, 870, 700, 1.8], [125.0, 880, 690, 1.5], [127.0, 880, 690, 1.5], [127.8, 885, 700, 1.75], [132.6, 885, 700, 1.75], [133.2, 900, 710, 1.9], [135.0, 900, 710, 1.9], [135.4, 720, 560, 1.05], [136.6, 720, 560, 1.05], [137.2, 910, 720, 1.85],
-  [138.4, 930, 720, 1.8], [144.6, 930, 720, 2.0], [145.64, 930, 720, 2.0], [146.3, 975, 740, 1.9], [148.0, 975, 740, 1.9], [148.7, 1040, 770, 2.1], [151.8, 1040, 770, 2.1], [152.3, 720, 560, 1.05], [152.7, 720, 560, 1.05], [153.2, 1040, 770, 2.1],
-  [156.44, 1040, 770, 2.1], [157.1, 1137, 430, 1.9], [158.16, 1137, 430, 1.9], [159.0, 700, 615, 1.0], [DUR, 700, 615, 1.0]];
+  // v2: the first drop: the camera follows the chick down to the catch (37.9-38.5), holds on the fox, then opens out
+  [30.9, 395, 300, 2.6], [37.9, 395, 300, 2.6], [38.5, 300, 660, 1.7], [39.2, 300, 660, 1.7], [40.0, 430, 590, 1.15],
+  // v2: the second drop: cut in for the nudge (46.15), cut back out for the fall (47.2)
+  [46.14, 430, 590, 1.15], [46.15, 395, 300, 2.6], [47.19, 395, 300, 2.6], [47.2, 430, 590, 1.15],
+  [48.8, 430, 590, 1.15], [49.4, 395, 300, 2.6], [51.0, 395, 300, 2.6], [51.75, 1140, 760, 1.7], [52.1, 1140, 760, 1.7],
+  // v2: the wide shots holding the heron sit further right (heron fully in frame)
+  [53.0, 850, 615, 1.0], [55.9, 850, 615, 1.0], [56.6, 860, 600, 1.03], [59.6, 860, 600, 1.03],
+  // v2: the lesson two-shot is lower so the water shows
+  [60.8, 1137, 625, 1.9], [68.9, 1137, 625, 1.9], [69.15, 430, 590, 1.15], [69.5, 430, 590, 1.15], [69.75, 1137, 640, 1.9], [72.8, 1137, 640, 1.9], [73.3, 1160, 650, 2.15], [78.8, 1160, 650, 2.15], [79.6, 700, 560, 1.15],
+  [80.0, 430, 590, 1.15], [84.6, 430, 590, 1.15], [85.2, 700, 615, 1.0], [86.1, 700, 615, 1.0], [86.9, 400, 340, 2.3], [88.4, 400, 340, 2.3], [89.0, 430, 590, 1.15], [94.4, 430, 590, 1.15], [94.6, 260, 760, 2.0], [96.9, 260, 760, 2.0], [97.6, 320, 640, 1.5], [99.29, 320, 640, 1.5],
+  // v2 (note 4): arrow and pan to the heron, cut to the fox (mask drops), cut to the nest (too late), wide as he trots off
+  [99.3, 395, 360, 1.9], [102.84, 395, 360, 1.9], [104.0, 800, 640, 1.3], [104.39, 800, 640, 1.3], [104.4, 263, 760, 1.9], [105.29, 263, 760, 1.9], [105.3, 395, 360, 1.85], [106.83, 395, 360, 1.85],
+  [106.84, 560, 640, 1.15], [107.9, 760, 660, 1.3], [108.7, 835, 740, 1.45],
+  // v2 (note 9): the river two-shot shifted right and down, a little wider, so both figures have margin
+  [112.0, 835, 740, 1.45], [112.6, 870, 740, 1.55], [115.9, 870, 740, 1.55], [116.6, 880, 740, 1.7],
+  [119.2, 880, 740, 1.7], [124.4, 900, 740, 1.7], [125.0, 900, 720, 1.45], [127.0, 900, 720, 1.45], [127.8, 905, 740, 1.7], [132.6, 905, 740, 1.7], [133.2, 920, 750, 1.85], [135.0, 920, 750, 1.85], [135.4, 720, 560, 1.05], [136.6, 720, 560, 1.05], [137.2, 945, 750, 1.8],
+  // v2 (note 3): still, then a slow push in on the pair through the crouch
+  [138.4, 945, 750, 1.75], [143.3, 945, 750, 1.75], [145.5, 945, 750, 1.9], [145.64, 945, 750, 1.9], [146.3, 960, 760, 1.85], [148.0, 970, 780, 1.8],
+  // v2 (note 1): the pinned pair
+  [148.7, 1000, 850, 1.95], [151.8, 1000, 850, 1.95], [152.3, 720, 560, 1.05], [152.7, 720, 560, 1.05], [153.2, 1000, 850, 1.95],
+  [156.44, 1000, 850, 1.95], [157.1, 1137, 430, 1.9], [158.16, 1137, 430, 1.9], [159.0, 700, 615, 1.0], [159.62, 700, 615, 1.0],
+  // v2 (note 5): toward the river, then one slow move up to the nest
+  [160.3, 975, 700, 1.2], [161.4, 975, 700, 1.2], [163.2, 425, 345, 1.8], [DUR, 425, 345, 1.8]];
 const CAM = CK.map(([t, x, y, zoom]) => [t, { x, y, zoom }]);
 const camAt = (t) => { const c = K.camAt(CAM, t), z = c.zoom; return { x: cl(c.x, 500 / z, WW - 500 / z), y: cl(c.y, 615 / z, WH - 615 / z), zoom: z }; };
 
@@ -564,8 +617,8 @@ function overlays(ctx, t, cam, S) {
   arr(P(300, 880), P(300, 380), 2.0, 3.6, { color: C.yellow, width: 22, bend: 0.02, dur: 0.6 });
   if (t >= 2.1 && t < 3.6) { const [x, y] = P(250, 560); lab('HIGH UP!', cl(x, 160, 840), cl(y, 120, 1100), 2.1, 3.6); }
   // CHICKS counter
-  if ((t >= 10.58 && t < 51.7) || (t >= 79.3 && t < 99.3)) { const n = t < 38.68 ? 3 : t < 48.18 ? 2 : 1, lastFlip = t < 38.68 ? 10.58 : t < 48.18 ? 38.68 : t < 79.3 ? 48.18 : 79.3;
-    ctx.save(); ctx.globalAlpha = t < 79.3 ? 1 - ramp(t, 51.4, 51.7) : 1 - ramp(t, 99.0, 99.3); S.label(ctx, 'CHICKS', 150, 112, t < 79.3 ? ramp(t, 10.58, 11.0) : ramp(t, 79.3, 79.7), { size: 34, align: 'center', tilt: -0.02 }); S.counter(ctx, n, 150, 220, ramp(t, lastFlip, lastFlip + 0.35), { size: 66, color: n < 3 ? C.red : C.black }); ctx.restore(); }
+  if ((t >= 10.58 && t < 51.7) || (t >= 79.3 && t < 106.84)) { const n = t < 38.9 ? 3 : t < 48.18 ? 2 : 1, lastFlip = t < 38.9 ? 10.58 : t < 48.18 ? 38.9 : t < 79.3 ? 48.18 : 79.3;
+    ctx.save(); ctx.globalAlpha = t < 79.3 ? 1 - ramp(t, 51.4, 51.7) : 1 - ramp(t, 106.44, 106.84); S.label(ctx, 'CHICKS', 150, 112, t < 79.3 ? ramp(t, 10.58, 11.0) : ramp(t, 79.3, 79.7), { size: 34, align: 'center', tilt: -0.02 }); S.counter(ctx, n, 150, 220, ramp(t, lastFlip, lastFlip + 0.35), { size: 66, color: n < 3 ? C.red : C.black }); ctx.restore(); }
   // ONE CHICK!
   if (t >= 24.64 && t < 26.4) { const f = foxP._cache && foxP._cache.t === t ? foxP._cache.P : foxP(t), paw = foxBody(f, 110, -150), ch = chickHome(0);
     arr(P(paw[0], paw[1]), P(ch[0] - 10, ch[1] + 20), 24.64, 26.4, { color: C.yellow, width: 18, bend: -0.12 }); lab('ONE CHICK!', P(150, 560)[0], P(150, 560)[1], 24.7, 26.4); }
@@ -582,19 +635,20 @@ function overlays(ctx, t, cam, S) {
   // the height arrow again on the whip pan (68.9)
   arr(P(300, 880), P(300, 380), 68.95, 69.7, { color: C.yellow, width: 22, bend: 0.02, dur: 0.4 });
   // COME UP!
-  arr(P(PALM.x + 60, NY + 40), P(PALM.x + 60, 820), 88.62, 90.8, { color: C.yellow, width: 22, bend: -0.04, dur: 0.6 });
+  arr(P(PALM.x + 60, 820), P(PALM.x + 60, NY + 40), 88.62, 90.8, { color: C.yellow, width: 22, bend: -0.04, dur: 0.75 });   // v2: up, like the words
   if (t >= 88.8 && t < 90.8) { const [x, y] = P(PALM.x + 230, 560); lab('COME UP!', cl(x, 180, 830), cl(y, 120, 1100), 88.8, 90.8); }
   { const [x, y] = P(250, 830); word('THUD!', cl(x + 120, 160, 840), cl(y - 120, 140, 1100), 94.25, 1.1, 100); }
   // THE HERON across the panel (102.84)
-  if (t >= 102.84 && t < 105.4) { const dv = doveP(t), [ax, ay] = P(dv.x + 50, dv.y - 50), hh = kd16HeronHeadW(heronP(t)), [bx, by] = P(hh[0] - 20, hh[1] + 40);
-    arr([ax, ay], [bx, by], 102.84, 105.4, { color: '#4a86f0', width: 22, bend: -0.12, dur: 1.4 }); if (t > 103.6) { const [lx, ly] = P(hh[0] - 40, hh[1] - 120); lab('THE HERON', cl(lx, 170, 830), cl(ly, 110, 1100), 103.6, 105.4); } }
+  if (t >= 102.84 && t < 104.4) { const dv = doveP(t), [ax, ay] = P(dv.x + 50, dv.y - 50), hh = kd16HeronHeadW(heronP(t)), [bx, by] = P(hh[0] - 20, hh[1] + 40);
+    arr([ax, ay], [bx, by], 102.84, 104.4, { color: '#4a86f0', width: 22, bend: -0.12, dur: 1.1 }); if (t > 103.5) { const [lx, ly] = P(hh[0] - 40, hh[1] - 120); lab('THE HERON', cl(lx, 170, 830), cl(ly, 110, 1100), 103.5, 104.4); } }
   // WIND (114.94) and the four winds (125.72)
-  kd16Wind(ctx, t, 'R', (inR(t, 113.8, 119.2) ? ramp(t, 113.8, 114.2) * (1 - ramp(t, 118.8, 119.2)) : 0) + (inR(t, 124.44, 127.3) ? 1 - ramp(t, 127.0, 127.3) : 0), [0, 250, 1000, 600]);
+  kd16Wind(ctx, t, 'R', (inR(t, 113.8, 119.0) ? ramp(t, 113.8, 114.2) * (1 - ramp(t, 118.6, 119.0)) : 0) + (inR(t, 124.44, 127.3) ? 1 - ramp(t, 127.0, 127.3) : 0), [0, 250, 1000, 600]);
   kd16Wind(ctx, t, 'L', inR(t, 124.44, 127.3) ? ramp(t, 124.44, 124.8) * (1 - ramp(t, 127.0, 127.3)) : 0, [0, 300, 1000, 500]);
   kd16Wind(ctx, t, 'T', inR(t, 125.0, 127.3) ? ramp(t, 125.0, 125.4) * (1 - ramp(t, 127.0, 127.3)) : 0, [200, 0, 600, 700]);
   if (t >= 114.94 && t < 117.0) { const hh = kd16HeronHeadW(heronP(t)), [hx, hy] = P(hh[0], hh[1]); arr([1000, hy - 40], [hx + 70, hy - 20], 114.94, 117.0, { color: C.white, width: 22, bend: 0.08 }); lab('WIND', 880, cl(hy - 140, 110, 1100), 115.0, 117.0); }
   if (t >= 125.72 && t < 127.3) { const hh = kd16HeronHeadW(heronP(t)), [hx, hy] = P(hh[0], hh[1] + 80); const k = E.inOut(ramp(t, 125.72, 126.6)), r0 = 420, r1 = 170;
     for (let i = 0; i < 4; i++) { const a = i * Math.PI / 2 + 0.6 * k, r = lerp(r0, r1, k); arr([hx + Math.cos(a) * (r + 150), hy + Math.sin(a) * (r + 150) * 0.8], [hx + Math.cos(a) * r, hy + Math.sin(a) * r * 0.8], 125.72, 127.3, { color: C.white, width: 18, bend: 0.2, dur: 0.3 }); } }
+  if (t >= 118.2 && t < 118.95) { const hh = kd16HeronHeadW(heronP(t)), [hx, hy] = P(hh[0], hh[1]); arr([hx + 150, hy - 90], [hx + 40, hy + 10], 118.2, 118.95, { color: C.yellow, width: 16, bend: -0.35, dur: 0.25 }); }   // v2: where he puts his head
   // the dove's unheard warning (135.22)
   if (t >= 135.22 && t < 136.6) { const dv = doveP(t), [bx, by] = P(...doveBeak(dv)); ctx.save(); ctx.globalAlpha = 1 - ramp(t, 136.2, 136.6); soundArcs(ctx, bx + 10, by, 1, t, C.white); ctx.restore(); }
   // POUNCE!

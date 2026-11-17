@@ -42,7 +42,7 @@ let kd16Heron = function (ctx, P) {
   ctx.restore();
   // neck + head
   const [hx, hy] = kd16HeronHead(P), sx = 48 + pf * 4, sy = -224 + bob;
-  const c1 = [sx + 30 * (1 - tk), sy - 18 - 10 * tk], c2 = [hx - 34 * (1 - tk) + 10 * tk, hy + 30 * (1 - tk)];
+  const c1 = [sx + 30 * (1 - tk) - 10 * tk * tk, sy - 18 - 10 * tk + 18 * tk * tk], c2 = [hx - 34 * (1 - tk) + 10 * tk, hy + 30 * (1 - tk)];
   const np = K.bezier([sx, sy], c1, c2, [hx, hy + 6], 24);
   ctx.save(); ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.beginPath(); np.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
   ctx.strokeStyle = C.black; ctx.lineWidth = 22; ctx.stroke(); ctx.strokeStyle = KD16_HC.neck; ctx.lineWidth = 12; ctx.stroke();
@@ -63,17 +63,71 @@ let kd16Heron = function (ctx, P) {
     ctx.restore();
   }
   // near wing: a long feather blade; lifted it reads as a hand (rotation about the shoulder root)
-  const wg = K.clamp(P.wing || 0, 0, 1.2), wa = wg * 1.95 - 0.12 * (1 - tk) - 0.05;
-  ctx.save(); ctx.translate(36, -214 + bob); ctx.rotate(wa);
-  const wl = 122 * (1 + 0.08 * tk), wh = 34 * (1 + 0.5 * tk);
-  const wp = [[6, -8], [-30, -wh * 0.95], [-wl * 0.7, -wh * 0.7], [-wl, -4], [-wl * 0.72, wh * 0.55], [-30, wh * 0.85], [6, 10]];
-  shape(ctx, wp, KD16_HC.wing, { lw: 5, seed: 46, dot: KD16_HC.wingTip, pitch: 8, rad: 0.16, da: 0.35 });
-  for (const f of [0.55, 0.75]) seg(ctx, -wl * f, -wh * 0.3, -wl * f - 22, wh * 0.25, 2, KD16_HC.wingTip, 1.5);
-  shape(ctx, [[-wl * 0.78, -wh * 0.5], [-wl, -4], [-wl * 0.78, wh * 0.4]], KD16_HC.wingTip, { lw: 0 });
-  ctx.restore();
+  // v2: at a deep tuck (eased tuck > 0.75) the wing becomes a rounded wrap over the front of the body that hides the head and the neck loop
+  const wg = K.clamp(P.wing || 0, 0, 1.2), wa = wg * 1.95 - 0.12 * (1 - tk) - 0.05, cov = K.clamp((tk - 0.75) / 0.25);
+  if (cov <= 0) {
+    ctx.save(); ctx.translate(36, -214 + bob); ctx.rotate(wa);
+    const wl = 122 * (1 + 0.08 * tk), wh = 34 * (1 + 0.5 * tk);
+    const wp = [[6, -8], [-30, -wh * 0.95], [-wl * 0.7, -wh * 0.7], [-wl, -4], [-wl * 0.72, wh * 0.55], [-30, wh * 0.85], [6, 10]];
+    shape(ctx, wp, KD16_HC.wing, { lw: 5, seed: 46, dot: KD16_HC.wingTip, pitch: 8, rad: 0.16, da: 0.35 });
+    for (const f of [0.55, 0.75]) seg(ctx, -wl * f, -wh * 0.3, -wl * f - 22, wh * 0.25, 2, KD16_HC.wingTip, 1.5);
+    shape(ctx, [[-wl * 0.78, -wh * 0.5], [-wl, -4], [-wl * 0.78, wh * 0.4]], KD16_HC.wingTip, { lw: 0 });
+    ctx.restore();
+  } else {
+    const k = 0.88 + 0.12 * K.ease.out(cov), cx = 6, cy = -214 + bob, rx = 86 * k, ry = 52 * k;
+    ctx.save(); ctx.translate(cx, cy); ctx.rotate(0.12 * Math.sin(wa));
+    shape(ctx, [[-rx - 26, -16], [-rx - 50, -4], [-rx - 24, 12]], KD16_HC.wingTip, { lw: 4, seed: 47 });   // wing tip out behind
+    shape(ctx, ell(0, 0, rx, ry, 30), KD16_HC.wing, { lw: 5.5, seed: 46, dot: KD16_HC.wingTip, pitch: 8, rad: 0.16, da: 0.35 });
+    for (const f of [-0.35, 0, 0.35]) { ctx.save(); ctx.lineCap = 'round'; ctx.strokeStyle = KD16_HC.wingTip; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(rx * 0.9, 0, rx * (1.05 + f * 0.25), Math.PI * 0.82, Math.PI * 1.12); ctx.stroke(); ctx.restore(); }
+    for (const [k2, l] of [[0, 30], [1, 22]]) seg(ctx, -rx * 0.55 + k2 * 10, -ry * 0.85, -rx * 0.55 + k2 * 10 - 22, -ry * 0.85 - l, 4, C.black, 0);   // crest tip poking out behind
+    ctx.restore();
+  }
   ctx.restore();
 };
 kd16Heron = acting(kd16Heron, () => KD16_HC.neck);
+
+// ---------- pinned heron (v2): the heron knocked over and lying on its side, legs folded up and back, neck along the ground ----------
+// P: {x, y (ground under the body), s, dir (+1 = head to the right), headRot (0 beak level, + down), shame 0..1 (head sinks, beak drops),
+//     crest -1..1, beak 0..1, ph/amp (leg kick), eyes} + shared acting fields (gaze, lid, wet, sq, tip). Head stays upright on screen.
+let kd16HeronPinned = function (ctx, P) {   // body centre (0,-42); legs end near (-96,-176)
+  const s = P.s || 1, dir = P.dir ?? 1, amp = P.amp || 0, ph = P.ph || 0, sh = K.clamp(P.shame || 0);
+  ctx.save(); ctx.translate(P.x, P.y); ctx.scale(dir * s, s);
+  // legs: together, folded up and back from the hip, a little kick
+  for (const [o, col] of [[[-8, -4], '#d9a800'], [[0, 0], KD16_HC.legs]]) {
+    const k = Math.sin(ph + (o[0] ? 1.4 : 0)) * amp, hip = [-40 + o[0], -60 + o[1]], kn = [-58 + o[0] + 12 * k, -132 + o[1] - 4 * k], ft = [-96 + o[0] + 18 * k, -176 + o[1] + 10 * k];
+    seg(ctx, hip[0], hip[1], kn[0], kn[1], 7, col, 3); seg(ctx, kn[0], kn[1], ft[0], ft[1], 7, col, 3);
+    for (const a of [-0.5, 0.1, 0.7]) seg(ctx, ft[0], ft[1], ft[0] - 20 * Math.cos(a), ft[1] - 20 * Math.sin(a), 4, col, 2);
+  }
+  // tail, body, folded wing
+  shape(ctx, [[-66, -58], [-118, -66], [-120, -48], [-64, -36]], KD16_HC.wingTip, { lw: 4, seed: 41 });
+  shape(ctx, ell(0, -42, 82, 42, 30), KD16_HC.body, { lw: 6, seed: 42, dot: KD16_HC.dot, pitch: 9, rad: 0.16, da: 0.45 });
+  shape(ctx, ell(18, -22, 52, 16, 20), '#c9d4e8', { lw: 0 });
+  ctx.save(); ctx.translate(46, -58); ctx.rotate(0.06);
+  const wp = [[6, -10], [-30, -24], [-90, -20], [-122, -4], [-90, 12], [-30, 16], [6, 10]];
+  shape(ctx, wp, KD16_HC.wing, { lw: 5, seed: 46, dot: KD16_HC.wingTip, pitch: 8, rad: 0.16, da: 0.35 });
+  for (const f of [0.55, 0.75]) seg(ctx, -122 * f, -8, -122 * f - 20, 10, 2, KD16_HC.wingTip, 1.5);
+  shape(ctx, [[-96, -14], [-122, -4], [-96, 8]], KD16_HC.wingTip, { lw: 0 });
+  ctx.restore();
+  // neck along the ground to the right, head upright
+  const hx = (P.neckLen ?? 150) - 10 * sh, hy = -60 + 22 * sh, sx = 60, sy = -50;
+  const np = K.bezier([sx, sy], [96, -26], [hx - 40, hy + 30], [hx, hy + 6], 24);
+  ctx.save(); ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.beginPath(); np.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
+  ctx.strokeStyle = C.black; ctx.lineWidth = 22; ctx.stroke(); ctx.strokeStyle = KD16_HC.neck; ctx.lineWidth = 12; ctx.stroke();
+  ctx.strokeStyle = '#3a4766'; ctx.lineWidth = 3; ctx.setLineDash([5, 9]); ctx.stroke(); ctx.restore();
+  ctx.save(); ctx.translate(hx, hy); ctx.rotate((P.headRot || 0) + 0.5 * sh);
+  const cr = K.clamp(P.crest ?? -1, -1, 1);
+  for (const [k, l] of [[0, 62], [1, 50]]) { const a = Math.PI - 0.22 + cr * 0.62 + k * 0.16; seg(ctx, -16, -8, -16 + Math.cos(a) * l, -8 + Math.sin(a) * l, 4, C.black, 0); }
+  const ob = K.clamp(P.beak || 0, 0, 1.4);
+  shape(ctx, [[14, -8], [96, -2 - ob * 8], [14, 2]], KD16_HC.beak, { lw: 3.5, seed: 43 });
+  if (ob > 0.06) shape(ctx, [[14, 2], [89, 4 + ob * 14], [14, 9]], '#e0a800', { lw: 3.5, seed: 44 }); else seg(ctx, 16, 2, 91, -1, 1, C.black, 0.6);
+  shape(ctx, ell(0, 0, 24, 18, 22), C.white, { lw: 5, seed: 45 });
+  shape(ctx, [[-22, -8], [-6, -18], [16, -16], [20, -10], [-2, -9], [-20, -1]], KD16_HC.cap, { lw: 0 });
+  eyeAt(ctx, 7, -3, P.eyes || 'open', 0.7);
+  if (P.brow) { ctx.save(); ctx.lineWidth = 4.5; ctx.lineCap = 'round'; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.moveTo(-4, -16 - P.brow * 2); ctx.lineTo(16, -13 + P.brow * 4); ctx.stroke(); ctx.restore(); }
+  ctx.restore(); ctx.restore();
+};
+kd16HeronPinned = acting(kd16HeronPinned, () => KD16_HC.neck);
+function kd16PinnedHeadW(P) { const sh = K.clamp(P.shame || 0), s = P.s || 1, d = P.dir ?? 1; return [P.x + ((P.neckLen ?? 150) - 10 * sh) * s * d, P.y + (-60 + 22 * sh) * s]; }
 
 // ---------- free chick (the nest chick as a standalone prop): falls, flaps stub wings, or shows as a tuft ----------
 // o: {flap (radians phase, or null), rot, gx, gy, wide, open, cw, s, tuft (only the top shows, in a fox's jaws)}

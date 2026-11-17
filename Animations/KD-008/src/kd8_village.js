@@ -1,24 +1,24 @@
 // ===== KD-008 the village (S8 ground 125.98-133.8 and 137-141.25; S10 162.58-166), the low-angle shot (133.8-136), the lake (S11) =====
-const kd8RigX = (t) => t < 150 ? kfn(t, [[125.98, 40], [141.25, 640]], 'lin') : kfn(t, [[162.58, 600], [166.0, 760]], 'lin');
-const KD8_RIGY = 250, KD8_RIGS = 0.36;
+const kd8RigX = (t) => t < 150 ? kfn(t, [[125.98, 340], [141.25, 640]], 'lin') : kfn(t, [[162.58, 600], [166.0, 760]], 'lin');
+const KD8_RIGY = 370, KD8_RIGS = 0.36;
 // the flying rig drawn small in a ground shot: rig centre (500, 520) of the air world lands on (x, y)
 function kd8RigSmall(ctx, t, x, y, sc, empty) { const R = kd8AirRig(t); ctx.save(); ctx.translate(x, y); ctx.scale(sc, sc); ctx.translate(-500, -520); kd8DrawRig(ctx, empty ? { ...R, T: null, bite: false } : R); ctx.restore(); return R; }
 function kd8Villagers(t) {
   const s10 = t >= 162.58, rx = kd8RigX(t), rig = [rx, KD8_RIGY + 40];
   const C0 = kd8Pose(t, { x: 400, y: 900, s: 1.3, costume: 'servant', child: true, mouth: 'smile', look: 0, tilt: 0 }, [
     [127.92, { mouth: 'closed', look: 0.3, drop: 6 }], [128.6, { mouth: 'o', tilt: -0.2, drop: 0, eyes: 'wide' }], [129.72, { handRW: [520, 780], eyes: 'open' }, 0.3], [130.3, { handRW: null, handR: PERSON_HANDS.pointUp.R }],
-    [131.0, { handR: null }], [137.04, { mouth: 'open', handR: PERSON_HANDS.pointUp.R, eyes: 'open' }], [139.48, { mouth: 'open' }],
-    [162.58, { x: 640, mouth: 'o', handR: null, eyes: 'wide', tilt: 0 }], [163.2, { x: 660 }, 0.6]]);
+    [131.0, { handR: null }], [137.04, { mouth: 'open', handR: PERSON_HANDS.pointUp.R, eyes: 'squint', tilt: -0.22 }], [139.48, { mouth: 'open' }],
+    [162.58, { x: 640, mouth: 'o', handR: null, eyes: 'wide', tilt: 0 }], [163.2, { x: 660 }, 0.6], [163.86, { x: 688, lean: 0.14, tilt: 0.32, eyes: 'shut', mouth: 'frown', handL: PERSON_HANDS.cheeks.L, handR: PERSON_HANDS.cheeks.R }, 0.45]]);
   const M = kd8Pose(t, { x: 560, y: 900, s: 1.3, costume: 'villager', hold: 'stick', mouth: 'closed', lean: 0, look: 0, tilt: 0 }, [
     [130.26, { look: -0.5, tilt: 0.1 }, 0.25], [130.6, { look: 0, tilt: -0.15, hold: null }], [131.69, { lean: -0.09, handR: PERSON_HANDS.cupMouth.R, brow: -0.5 }, 0.4],
     [133.02, { handR: null, aR: [2.45, 2.85], mouth: 'open', lean: -0.04 }, 0.15], [137.04, { mouth: 'open', aR: null, handR: PERSON_HANDS.pointUp.R, brow: 0 }], [139.48, { tilt: -0.18 }],
     [162.58, { mouth: 'o', handR: null, aR: null, tilt: 0, look: 0.6, eyes: 'wide', lean: 0, hold: null }], [163.65, { drop: 16, lid: 0.6, eyes: 'open', mouth: 'frown', look: 0, handR: PERSON_HANDS.chest.R }, 0.8]]);
   const W = kd8Pose(t, { x: 730, y: 900, s: 1.3, costume: 'villageWoman', mouth: 'closed', look: 0, tilt: 0 }, [
-    [130.45, { look: -0.5 }, 0.25], [130.9, { look: 0, tilt: -0.12 }], [137.04, { handR: PERSON_HANDS.mouthCover.R, mouth: 'smile' }], [139.48, { handR: PERSON_HANDS.shield.R, tilt: -0.18, mouth: 'smile' }],
+    [130.45, { look: -0.5 }, 0.25], [130.9, { look: 0, tilt: -0.12 }], [137.04, { handR: PERSON_HANDS.mouthCover.R, mouth: 'smile', eyes: 'squint', tilt: -0.2 }], [139.48, { handR: PERSON_HANDS.mouthCover.R, tilt: -0.26, mouth: 'smile' }],
     [162.58, { handR: null, tilt: 0, look: 0.6, mouth: 'o', eyes: 'wide' }], [163.86, { handR: PERSON_HANDS.mouthCover.R, handL: PERSON_HANDS.mouthCover.L, look: 0.2, drop: 8 }, 0.5]]);
   // sweeping, the ball, laughing shoulders
   if (t < 130.6) M.lean = 0.06 * Math.sin(t * 5);
-  if (t > 137.04 && t < 141.3) { W.drop = 4 * Math.abs(Math.sin(t * 13)); M.drop = 3 * Math.abs(Math.sin(t * 11 + 1)); C0.y = 900 - 16 * Math.abs(Math.sin(t * 8)); }
+  if (t > 137.04 && t < 141.3) { W.drop = 6 * Math.abs(Math.sin(t * 13)); W.tilt += 0.06 * Math.sin(t * 13); M.drop = 3 * Math.abs(Math.sin(t * 11 + 1)); C0.y = 900 - 16 * Math.abs(Math.sin(t * 8)); C0.tilt += 0.08 * Math.sin(t * 8 + 1); }
   for (const P of [C0, M, W]) P.noBlink = s10 && t < 163.6;
   if (s10 && t > 162.9 && t < 163.1) for (const P of [C0, M, W]) P.lid = 1;   // one blink each in the stillness
   // gaze: the shadow, the rig, the place behind the houses
@@ -30,27 +30,32 @@ function kd8Villagers(t) {
   C0.gaze = gz(C0); M.gaze = gz(M); W.gaze = gz(W);
   return [C0, M, W];
 }
+function kd8Onlookers(t) {
+  const X1 = (u) => kfn(u, [[138.5, -60], [139.4, 215]], 'out'), X2 = (u) => kfn(u, [[138.8, 1080], [139.7, 860]], 'out'), rig = [kd8RigX(t), KD8_RIGY + 40];
+  const O1 = { ...walk(X1, t, { stride: 12, amp: 60 }), y: 1060, s: 1.5, costume: 'carpenter', mouth: 'open', eyes: 'squint', handL: PERSON_HANDS.hipsHands.L, handR: PERSON_HANDS.hipsHands.R };
+  const O2 = { ...walk(X2, t, { stride: 12, amp: 60 }), y: 1075, s: 1.45, dir: -1, costume: 'oldWoman', mouth: 'open', eyes: 'squint', handR: PERSON_HANDS.pointUp.R };
+  for (const [P, t0, f] of [[O1, 139.4, 10], [O2, 139.7, 12.5]]) { const k = K.clamp((t - t0 + 0.6) / 0.5); P.tilt = -0.28 * k + 0.07 * Math.sin(t * f); P.drop = 6 * k * Math.abs(Math.sin(t * f)); P.y -= 5 * k * Math.abs(Math.sin(t * f + 1)); P.gaze = lookAt([P.x, P.y - 300], rig); }
+  return [O1, O2];
+}
 const kd8ShadowX = (t) => kfn(t, [[126.6, -150], [127.92, 420], [129.6, 900], [131.0, 1250]], 'lin');
-const KD8_VIL_CAM = [[125.98, { x: 500, y: 660, zoom: 1.1 }], [128.4, { x: 500, y: 660, zoom: 1.1 }], [129.6, { x: 500, y: 760, zoom: 1.5 }], [131.0, { x: 560, y: 740, zoom: 1.6 }], [133.8, { x: 560, y: 740, zoom: 1.6 }],
-  [137.0, { x: 560, y: 740, zoom: 1.45 }], [138.4, { x: 520, y: 680, zoom: 1.1 }], [139.5, { x: 520, y: 680, zoom: 1.1 }], [141.2, { x: 600, y: 320, zoom: 1.9 }],
+const KD8_VIL_CAM = [[125.98, { x: 500, y: 720, zoom: 1.2 }], [128.4, { x: 500, y: 720, zoom: 1.2 }], [129.6, { x: 500, y: 760, zoom: 1.5 }], [131.0, { x: 560, y: 740, zoom: 1.6 }], [133.8, { x: 560, y: 740, zoom: 1.6 }],
+  [137.0, { x: 550, y: 720, zoom: 1.2 }], [139.6, { x: 550, y: 720, zoom: 1.2 }], [141.2, { x: 600, y: 390, zoom: 1.9 }],
   [162.58, { x: 580, y: 760, zoom: 1.3 }], [164.3, { x: 580, y: 760, zoom: 1.3 }], [165.6, { x: 600, y: 540, zoom: 1.15 }], [166.0, { x: 600, y: 540, zoom: 1.15 }]];
 const KD8_SC_VIL = { ww: KD8_VW, wh: KD8_VH, cam: KD8_VIL_CAM,
   draw(ctx, t) {
     ctx.drawImage(kd8VillageBack(), 0, 0, KD8_VW, KD8_VH); cloudFlat(ctx, 200 + ((t * 6) % 1100), 200, 0.7);
     const s10 = t >= 162.58;
     // dust over the roof of the last house, after the fall (rising, then settling)
-    if (s10) { ctx.save(); ctx.beginPath(); ctx.rect(0, 0, KD8_VW, 592); ctx.clip(); for (let i = 0; i < 4; i++) { const u = K.clamp((t - 162.0 - i * 0.2) / 3.6), r = 30 + u * 70; ctx.globalAlpha = 0.85 * (1 - u); shape(ctx, ell(840 + i * 22 - 30, 600 - u * 200 - i * 20, r, r * 0.8, 18), SANDL, { lw: 4, seed: 160 + i }); } ctx.restore(); }
-    // onlookers in the window and the doorway (138.5)
-    if (t > 138.5 && !s10) { const k = K.ease.back(K.clamp((t - 138.5) / 0.4)), k2 = K.ease.back(K.clamp((t - 138.8) / 0.4));
-      ctx.save(); ctx.beginPath(); ctx.rect(220, 600, 64, 70); ctx.clip(); person(ctx, { x: 252, y: 600 + 200 - 80 * k, s: 0.5, costume: 'oldWoman', mouth: 'open', gaze: [0.3, -0.8], tilt: -0.1, drop: 3 * Math.abs(Math.sin(t * 12)) }); ctx.restore();
-      ctx.save(); ctx.beginPath(); ctx.rect(805, 754, 110, 150); ctx.clip(); person(ctx, { x: 860 + 60 * (1 - k2), y: 904, s: 0.8, costume: 'carpenter', mouth: 'open', gaze: [-0.4, -0.8], handR: PERSON_HANDS.pointUp.R, drop: 3 * Math.abs(Math.sin(t * 10)) }); ctx.restore(); }
+    if (s10) { for (let i = 0; i < 5; i++) { const u = K.clamp((t - 162.06 - i * 0.18) / 3.4), r = 46 + u * 95; ctx.save(); ctx.globalAlpha = 0.92 * (1 - u * 0.85); shape(ctx, ell(820 + (i - 2) * 38, 660 - u * (210 + i * 25), r, r * 0.8, 18), SANDL, { lw: 5, seed: 160 + i, dot: SAND, pitch: 9, rad: 0.25, da: 0.5 }); ctx.restore(); }
+      const [a, b, top, o] = KD8_VHOUSES[2]; kd8House(ctx, a, b, top, 904, o); }
     // the rig crossing the sky, its shadow on the lane
-    if (!s10) { kd8RigSmall(ctx, t, kd8RigX(t), KD8_RIGY, KD8_RIGS); if (t < 131.2) halftoneShadow(ctx, kd8ShadowX(t), 965, 110, 0.45); }
+    if (!s10) { kd8RigSmall(ctx, t, kd8RigX(t), KD8_RIGY, KD8_RIGS); if (t < 131.2) { const sx = kd8ShadowX(t); ctx.save(); ctx.globalAlpha = 0.22; ctx.fillStyle = C.black; ctx.beginPath(); ctx.ellipse(sx, 965, 150, 60, 0, 0, 7); ctx.fill(); ctx.restore(); halftoneShadow(ctx, sx, 965, 150, 1); } }
     else { const R = kd8RigSmall(ctx, t, kd8RigX(t), 220, 0.4, true);
       if (t > 164.3) { const mid = [kd8RigX(t), 220 + 4]; ctx.save(); ctx.globalAlpha = 0.6 * (1 - K.clamp((t - 165.0) / 1.0)); ctx.setLineDash([8, 14]); ctx.lineWidth = 4; ctx.strokeStyle = C.white; ctx.beginPath(); ctx.moveTo(mid[0], mid[1]); ctx.lineTo(mid[0], mid[1] + 160 * K.clamp((t - 164.3) / 0.8)); ctx.stroke(); ctx.restore(); } }
     const [C0, M, W] = kd8Villagers(t);
     if (s10) person(ctx, C0);
     person(ctx, M); person(ctx, W); if (!s10) person(ctx, C0);
+    if (!s10 && t > 138.5) for (const O of kd8Onlookers(t)) person(ctx, O);
     // jar on her head (not after the fall) and the ball
     if (!s10 && t < 137.0) shape(ctx, [[714, 582], [746, 582], [756, 550], [742, 528], [718, 528], [704, 550]], KD8_MUD, { lw: 4, seed: 170, dot: KD8_MUDD, pitch: 6, rad: 0.25, da: 0.4 });
     if (!s10) { let bx = 460, by = 900 - 12 - Math.abs(Math.sin(t * 6)) * 50; if (t > 127.92) { by = 888 - Math.abs(Math.sin(t * 9)) * 30 * Math.exp(-(t - 127.92) * 2); } if (t > 128.6) bx = 460 + (t - 128.6) * 160; if (bx < 1100) shape(ctx, ell(bx, by, 12, 12, 14), C.red, { lw: 3.5, seed: 171, dot: C.yellow, pitch: 5, rad: 0.3 }); }

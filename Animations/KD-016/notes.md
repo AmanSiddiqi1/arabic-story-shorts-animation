@@ -15,3 +15,9 @@ Decisions the plan left open or that were changed after measuring the set:
 - **Time of day** (`dayCycle` presets, arc mirrored so the sun rises on the right): day 0-7.68, a full day/night in 7.68-9.04, dawn for S2-S3, day S4-S6, one night in 79-80, dawn S7, day S8-S10, dusk from 156.4.
 - **Sound**: exactly the plan's eleven cues (all in narration gaps).
 - The heron's per-eye cross-eye at 58.6 uses `gaze` toward the beak (no per-eye pupils exist).
+
+## v2 (Fable review 1), decisions
+- Pinned pose: Fable asked for the neck to the right and the legs up-left; with the fox on the left this put the legs under the fox's chest. Kept the head to the right (upright, eye looking back at the fox) but made the legs fold up and back nearly vertical, and drew the heron OVER the fox with both forepaws redrawn on top (`kd16PinPaw`). Fox at x 800 (KD16_PIN), heron derived from the paw (kd16PinXY). The fox's muzzle sits about 40-70 units above-left of the heron's body, not directly over the head (head under the muzzle was tried on paper and collides with the fox's jaw and arms).
+- S7: the heron takes an off-screen step from 1110 to 1060 (80.0-80.8) so the 85.2 wide holds him fully; the fox's tail tip is cut in that shot (both cannot fit at z 1.0).
+- River two-shot widened (z 1.45-1.7 instead of 1.7-1.9) because shifting right only would cut the fox.
+- Ending: the dove turns to the last chick (dir -1) at 161.9 so her bowed head and wing cover it on screen; THE END stays upper right (does not cover her).

@@ -26,3 +26,7 @@
 ## Pipeline friction
 - `sh.sh` writes stills into Animations/KD-011/stills/ (git-ignored).
 - `person` acting wrapper copies P when it auto-blinks, so P.hands is lost on blink frames; story sets explicit lids (blink) so props in hands stay attached.
+
+## v2 (revise, Fable review 1)
+- See review/revision_1.md. Decisions: hug with the boy on screen-left of the kneeling father (no lift), boy drawn behind the father 141.44-144.0; S9 walk-in uses a doorway clip + depth (`P.din`, k11person) instead of a fade; the cart is drawn inside the storeroom door (`k11cartDraw(..., {inside: true})` from the door's inside callback) whenever it is in; OR/coins graphic is a panel-space box overlay; S18 camera ends at x 640, zoom 1.4; THE END at 159.3.
+- Friend's padlock look now 27.38-28.0, coin/"?" 27.98-28.7.

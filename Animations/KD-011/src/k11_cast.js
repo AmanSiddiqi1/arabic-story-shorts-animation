@@ -39,12 +39,12 @@ const k11loc = (P, w) => [(w[0] - P.x) / (P.s || 1) * Math.sign(P.dir || 1), (w[
 
 // ---------- merchant ----------
 const K11MX = (t) => kfn(t, [[0, -150], [0.3, -150], [3.7, 330], [8.01, 330],
-  [8.02, 400], [12.0, 400], [12.3, 425], [13.84, 425], [14.35, 405], [15.3, 690], [16.6, 690], [17.5, 330], [19.55, 330], [19.9, 395], [21.7, 395],   // S2
+  [8.02, 400], [12.0, 400], [12.3, 425], [13.84, 425], [14.35, 405], [15.3, 690], [15.6, 690], [16.5, 345], [17.5, 330], [19.55, 330], [19.9, 395], [21.7, 395],   // S2
   [23.6, 120],                                                       // S3 away up the road
   [32.6, 120], [34.5, 340], [45.3, 340], [45.8, 395],                // S5 back
   [45.82, 640], [54.7, 640],                                         // S6 storeroom
-  [54.72, 300], [60.4, 300], [60.85, 470], [61.1, 470], [62.39, 280], // S7 (walks off under the LATER card)
-  [62.4, -1150], [63.24, -1150], [64.5, -720], [66.85, -720], [67.2, -660], [67.78, -660], [69.6, -345], [69.88, -345],   // S8, S9 street
+  [54.72, 300], [60.4, 300], [60.75, 395], [61.1, 395], [62.39, 280], // S7 (walks off under the LATER card)
+  [62.4, -1150], [63.24, -1150], [64.5, -720], [66.85, -720], [67.2, -660], [67.78, -660], [69.25, -445], [69.6, -335], [69.88, -335],   // S8, S9 street
   [69.9, 90], [70.9, 380], [71.25, 440], [73.2, 440], [73.6, 390], [76.98, 390],   // S9 interior
   [77.0, -330], [78.52, -330], [81.26, 260],                         // S10
   [81.28, 300], [136.72, 300],                                       // S11-S16
@@ -53,11 +53,11 @@ const K11MX = (t) => kfn(t, [[0, -150], [0.3, -150], [3.7, 330], [8.01, 330],
 function k11MYS(t) { if (k11in(t, 21.7, 24.12)) { const u = K.ease.inOut(K.clamp((t - 21.7) / 1.9)); return [K.lerp(900, 812, u), K.lerp(K11MS, 0.47, u)]; }
   if (k11in(t, 32.6, 34.6)) { const u = K.ease.inOut(K.clamp((t - 32.6) / 1.9)); return [K.lerp(812, 900, u), K.lerp(0.47, K11MS, u)]; } return [900, K11MS]; }
 const K11MD = (t) => K11MX(t) - (k11in(t, 21.7, 24.12) || k11in(t, 32.6, 34.6) ? 3.3 * (900 - k11MYS(t)[0])   : 0);   // walk distance incl. depth
-const K11MFALLS = [...footfalls(K11MD, 0.3, 3.7, 26), ...footfalls(K11MX, 14.35, 15.3, 26), ...footfalls(K11MX, 61.62 + 1.62, 64.5, 26), ...footfalls(K11MX, 78.52, 81.26, 26), ...footfalls(K11MX, 136.74, 138.2, 26)];
+const K11MFALLS = [...footfalls(K11MD, 0.3, 3.7, 26), ...footfalls(K11MX, 14.35, 15.3, 26), ...footfalls(K11MX, 15.6, 16.5, 26), ...footfalls(K11MX, 61.62 + 1.62, 64.5, 26), ...footfalls(K11MX, 78.52, 81.26, 26), ...footfalls(K11MX, 136.74, 138.2, 26)];
 function k11merchant(t) {
   const sc = k11sc(t), [y, s] = k11MYS(t), x = K11MX(t), v = speed(K11MX, t), w = walk(K11MD, t, { stride: 26 * s });
   const P = { x, y, s, costume: 'merchant', dir: 1, ph: w.ph, amp: K.clamp(w.amp * 1.3), seed: 11, mouth: 'closed', lid: 0.25 };
-  if (sc === 6 || k11in(t, 16.6, 17.45) || k11in(t, 21.55, 24.12) || k11in(t, 61.0, 61.62)) P.dir = -1;
+  if (sc === 6 || k11in(t, 15.55, 17.45) || k11in(t, 21.55, 24.12) || k11in(t, 61.0, 61.62)) P.dir = -1;
   if (sc === 6) P.dir = -1;
   // ---- gaze targets (world points), the head follows big moves
   const F = K11FX(t), fh = [F, 900 - 190 * K11FS];
@@ -84,7 +84,7 @@ function k11merchant(t) {
     if (k11in(t, 12.12, 13.3)) { P.handRW = [K11HANDS(t), 770]; P.tip = 0.06; P.mouth = 'smile'; P.lid = 0.15; }
     if (k11in(t, 13.3, 14.35)) { P.handR = k11step(t, [[13.3, null], [13.34, PERSON_HANDS.palmsUp.R], [13.6, [90, -175]]], 0.18, K11REST.R); P.handL = PERSON_HANDS.palmsUp.L; P.brow = -0.5; P.tilt = 0.08; g = t < 13.6 ? [230, 820] : [515, 760]; }
     if (k11in(t, 14.35, 15.3)) { P.handL = [-40, -84]; P.handR = [-20, -84]; P.tip = 0.1; g = [x + 200, 860]; P.dir = 1; P.handLW = [x - 6, 830]; P.handRW = [x + 6, 832]; P.handL = null; P.handR = null; }
-    if (k11in(t, 15.3, 16.6)) { P.handR = k11step(t, [[15.3, null], [15.42, PERSON_HANDS.chest.R], [16.0, PERSON_HANDS.pointDown.R]], 0.18, K11REST.R); P.drop = 6 * pulse(t, 16.0, 0.3); }
+    if (k11in(t, 15.3, 16.6)) { P.handR = k11step(t, [[15.3, null], [15.42, PERSON_HANDS.chest.R], [16.0, PERSON_HANDS.pointDown.R]], 0.18, K11REST.R); P.drop = 6 * pulse(t, 16.0, 0.3); g = [515, 800]; }
     if (k11in(t, 16.6, 17.5)) g = [515, 760];
     if (t >= 17.5) { P.mouth = 'smile'; }
     if (k11in(t, 19.0, 19.85)) { P.lid = 0.1; P.brow = -0.2; }
@@ -101,6 +101,7 @@ function k11merchant(t) {
     if (k11in(t, 35.64, 36.6)) { P.handR = PERSON_HANDS.pointFwd.R; P.mouth = 'smile'; P.talk = talk(t, [[35.7, 36.5]]); }
     if (k11in(t, 36.6, 41.4)) { P.lid = 0.15; P.brow = t > 40.24 ? -0.5 : -0.1; P.tilt = t > 40.24 ? 0.1 : 0; P.mouth = t > 38.9 ? 'closed' : 'smile'; P.handR = PERSON_HANDS.chin.R; P.handL = PERSON_HANDS.folded.L; }
     if (k11in(t, 41.4, 44.42)) { P.handR = PERSON_HANDS.chin.R; P.brow = -0.3; P.tilt = 0.06; }
+    if (k11in(t, 42.9, 44.42)) { P.handR = k11step(t, [[42.9, PERSON_HANDS.chin.R], [43.05, PERSON_HANDS.palmsUp.R]], 0.2); P.tip = 0.07 * K11B(t, 42.9, 0.3, 'out'); P.brow = -0.7; P.tilt = 0; }
     if (k11in(t, 44.42, 45.24)) { P.handL = PERSON_HANDS.palmsUp.L; P.handR = PERSON_HANDS.palmsUp.R; P.tip = 0.08; P.brow = -0.6; P.talk = talk(t, [[44.5, 45.2]]); }
     if (t >= 45.24) { P.tip = 0.1 * pulse(t, 45.24, 0.6); P.tilt = -0.08 * pulse(t, 45.3, 0.5); g = [515, 760]; }
   }
@@ -120,26 +121,27 @@ function k11merchant(t) {
     if (k11in(t, 58.14, 58.76)) { P.handR = PERSON_HANDS.pointFwd.R; P.sq = anticipate(t, 58.14, 0.15, 0.05); P.brow = 0.6; P.handR = [K.lerp(40, 100, K11B(t, 58.2, 0.3, 'out')), -150]; }
     if (k11in(t, 58.76, 59.54)) { P.handR = k11step(t, [[58.76, [100, -150]], [58.9, [40, -120]]], 0.3); P.brow = blend(t, 58.76, 59.3, 0.6, 0); }
     if (k11in(t, 59.54, 60.38)) { P.handR = PERSON_HANDS.chin.R; P.brow = -0.2; g = gazePlan(t, [[59.54, [x - 40, 560]], [59.8, [x - 120, 600]], [60.05, [x - 30, 540]]], 0.07); }
-    if (t >= 60.38) { P.drop = 7 * pulse(t, 60.4, 0.35); g = t < 60.6 ? [135, 700] : fh; if (k11in(t, 60.75, 61.05)) P.handRW = [K11FX(t) - 40, 750]; P.mouth = t > 61.05 ? 'smile' : 'closed'; if (t > 61.05) g = [-100, 700]; }
+    if (t >= 60.38) { P.drop = 7 * pulse(t, 60.4, 0.35); g = t < 60.6 ? [135, 700] : fh; if (k11in(t, 60.7, 61.05)) P.handRW = [K11FX(t) - 42, 752]; P.mouth = t > 61.05 ? 'smile' : 'closed'; if (t > 61.05) g = [-100, 700]; }
   }
   // ---- S8: strolls in with a basket, humming; stops the ball, waves back, hands the ball over, the idea
   if (sc === 8) {
     g = [x + 300, 700]; P.handL = [-30, -100]; P.mouth = t < 64.6 ? 'smile' : 'closed'; P.lid = 0.2;
     if (t > 64.47) g = [K11BALL(t)[0], 860];
     if (k11in(t, 66.08, 66.8)) { g = [K11BX(t), 800]; P.mouth = 'smile'; }
-    if (k11in(t, 66.8, 67.78)) { P.drop = 22 * pulse(t, 66.85, 0.9); P.tip = 0.12 * pulse(t, 66.85, 0.9); P.handR = [80, -100 + 40 * pulse(t, 66.85, 0.9)]; g = t < 67.35 ? [K11BX(t), 800] : (t < 67.55 ? [1000, 700] : [K11BX(t), 800]); P.mouth = 'smile'; P.lid = t > 67.55 ? 0.35 : 0.1; }
+    if (k11in(t, 66.8, 67.78)) { P.drop = 22 * pulse(t, 66.85, 0.9); P.tip = 0.12 * pulse(t, 66.85, 0.9); P.handR = [80, -100 + 40 * pulse(t, 66.85, 0.9)]; g = t < 67.35 ? [K11BX(t), 800] : (t < 67.55 ? [1000, 700] : [K11BX(t), 800]); P.mouth = 'smile'; P.lid = t > 67.55 ? 0.35 : 0.1;
+      if (t >= 67.35) { P.handR = null; P.handRW = k11joint(t); } }
   }
   // ---- S9: leads the boy by the hand; tray; kneels; finger; wait here; hush and wink
   if (sc === 9) {
     P.mouth = 'smile'; P.lid = 0.15; g = [K11BX(t), 800];
-    if (t < 69.9) { P.handR = [56, -108]; }
+    if (t < 69.9) { P.handRW = k11joint(t); P.mouth = 'smile'; g = [K11BX(t), 790]; P.din = k11din(t, 'merchant'); }
     else {
       if (t < 71.25) { g = gazePlan(t, [[69.9, [640, 800]]]); }
       if (k11in(t, 71.25, 72.6)) { P.handLW = [520 - 10, 760 + 80 * K11B(t, 71.5, 0.9, 'inOut')]; P.handRW = [565, 762 + 80 * K11B(t, 71.5, 0.9, 'inOut')]; P.drop = 10; P.tip = 0.08; g = [540, 860]; }
       if (t >= 72.6) { P.kneel = blend(t, 73.36, 73.9, 0, 1); }
-      if (k11in(t, 73.9, 75.08)) { P.handR = PERSON_HANDS.pointUp.R; P.brow = -0.2; P.mouth = 'closed'; }
-      if (k11in(t, 75.08, 75.8)) { P.handR = k11step(t, [[75.08, [70, -120]], [75.4, [100, -90]]], 0.2); P.mouth = 'closed'; }
-      if (t >= 75.8) { P.handR = PERSON_HANDS.hush.R; if (k11in(t, 76.1, 76.55)) P.wink = 'R'; P.mouth = 'smile'; }
+      if (k11in(t, 73.9, 74.75)) { P.handR = PERSON_HANDS.pointUp.R; P.brow = -0.2; P.mouth = 'smile'; }
+      if (k11in(t, 74.75, 75.8)) { P.handR = k11step(t, [[74.75, PERSON_HANDS.pointUp.R], [74.9, [92, -150]]], 0.18); P.mouth = 'smile'; P.drop = 4 * pulse(t, 75.1, 0.3); }
+      if (t >= 75.8) { P.handR = PERSON_HANDS.hush.R; if (k11in(t, 75.8, 76.2)) P.wink = 'R'; P.mouth = 'smile'; }
     }
   }
   // ---- S10: out of his door, straightens the turban, the mask goes on, measured steps, hands behind
@@ -210,6 +212,8 @@ function k11merchant(t) {
     if (k11in(t, 155.24, 155.82)) g = [430, 900];
     if (k11in(t, 155.82, 157.3)) { P.drop = 2 * Math.sin(t * 28) * K.clamp(157.3 - t); g = fh; }
     if (t > 157.3) g = [K11RATX(t), 900];
+    if (k11in(t, 158.4, 158.85)) { g = fh; P.brow = -0.4; }
+    if (t > 159.3) P.drop = 2 * Math.sin(t * 26) * K.clamp(160.3 - t);
   }
   if (k11bundleOn(t)) P.handL = [-26, -172];
   if (P.gaze == null) P.gaze = lookAt(k11head(P), g);
@@ -219,14 +223,14 @@ function k11merchant(t) {
 const k11bundleOn = (t) => k11in(t, 8.94, 13.3) || k11in(t, 21.3, 23.75) || k11in(t, 32.6, 34.56);
 
 // ---------- friend ----------
-const K11FX = (t) => kfn(t, [[0, 695], [11.3, 695], [11.95, 600], [12.12, 600], [12.35, 585], [13.84, 585], [14.15, 650], [14.3, 650], [14.75, 760], [16.0, 760], [16.55, 625], [17.4, 625], [17.8, 600], [19.55, 600], [19.9, 575], [21.7, 575], [24.11, 575],
+const K11FX = (t) => kfn(t, [[0, 695], [11.3, 695], [11.95, 600], [12.12, 600], [12.35, 585], [13.84, 585], [14.15, 650], [14.3, 650], [14.95, 860], [16.0, 860], [16.55, 640], [17.4, 640], [17.8, 600], [19.55, 600], [19.9, 575], [21.7, 575], [24.11, 575],
   [24.12, 695], [24.6, 640], [27.9, 640], [28.4, 575], [30.24, 575], [30.5, 550], [32.6, 550],          // S4
   [32.61, 695], [35.0, 695], [35.5, 600], [45.24, 600], [45.8, 560],                                                    // S5
-  [45.82, 800], [54.71, 800], [54.72, 600], [61.62, 600],                                                               // S6, S7
+  [45.82, 800], [54.71, 800], [54.72, 600], [60.3, 600], [60.7, 560], [61.62, 560],                                                               // S6, S7
   [77.0, 640], [79.92, 640], [80.35, 700], [80.75, 630], [81.27, 650],                                                  // S10 pacing
   [81.28, 640], [82.25, 420], [88.91, 420],                                                                              // S11
   [88.92, 600], [102.62, 600], [102.9, 545], [105.2, 545], [105.6, 590], [106.12, 600], [136.73, 600],                  // S12-S16
-  [136.74, 620], [143.3, 620], [144.0, 545], [148.23, 545], [148.24, 630], [161, 630]]);
+  [136.74, 620], [143.6, 620], [144.2, 545], [148.23, 545], [148.24, 630], [161, 630]]);
 const K11FTURN = [[0, -1], [80.18, 1], [80.6, -1], [80.95, 1]];
 const K11HANDS = (t) => (K11MX(t) + K11FX(t)) / 2;   // where their hands meet
 function k11friend(t) {
@@ -235,7 +239,7 @@ function k11friend(t) {
   const M = K11MX(t), [my, ms] = k11MYS(t), mh = [M, my - 195 * ms];
   let g = mh, on = true;
   if (sc === 1 || (sc === 2 && t < 11.3)) on = false;
-  if (sc === 2 && t >= 14.3 && t < 14.75) P.dir = 1;
+  if (sc === 2 && t >= 14.3 && t < 14.95) P.dir = 1;
   if (sc === 4 && t < 24.12) on = false;
   if (sc === 5 && t < 35.0) on = false;
   if ([8, 9].includes(sc)) on = false;
@@ -264,8 +268,8 @@ function k11friend(t) {
     P.dir = -1; g = [x - 60, 820]; P.mouth = 'closed';
     if (k11in(t, 24.12, 25.6)) { P.handR = [70, -150]; P.handL = [50, -175]; g = [x - 70, 740]; P.mouth = t < 24.9 ? 'smile' : 'o'; if (t > 24.95) { g = [x - 70 + 40 * (t - 24.95), 740 - 160 * (t - 24.95)]; P.lid = pulse(t, 25.1, 0.4); } }
     if (k11in(t, 25.6, 27.38)) { P.handL = PERSON_HANDS.palmsUp.L; P.handR = PERSON_HANDS.palmsUp.R; P.brow = -0.7; P.mouth = 'frown'; P.sq = blend(t, 25.62, 26.0, 1, 0.96); g = [x, 820]; }
-    if (k11in(t, 27.38, 27.92)) { P.brow = -0.5; P.mouth = 'closed'; P.noBlink = true; P.lid = 0; g = gazePlan(t, [[27.38, [x + 40, 600]], [27.5, [600, 720]], [27.62, [560, 760]], [27.74, [515, 790]]], 0.07); }
-    if (k11in(t, 27.92, 29.44)) { g = gazePlan(t, [[27.92, [0, 700]], [28.05, [1000, 700]], [28.2, [0, 700]], [28.4, [515, 790]], [28.95, [K11BUYX(t), 700]]], 0.07); P.drop = -4; P.handR = t < 28.9 ? [80, -110] : [70, -170 + 12 * Math.sin(t * 20)]; }
+    if (k11in(t, 27.38, 28.0)) { P.brow = -0.5; P.mouth = 'closed'; P.noBlink = true; P.lid = 0; P.handL = PERSON_HANDS.palmsUp.L; P.handR = PERSON_HANDS.palmsUp.R; P.sq = 0.96; g = gazePlan(t, [[27.38, [515, 778]]], 0.12); }
+    if (k11in(t, 28.0, 29.44)) { g = gazePlan(t, [[28.0, [0, 700]], [28.12, [1000, 700]], [28.24, [0, 700]], [28.4, [515, 790]], [28.95, [K11BUYX(t), 700]]], 0.07); P.drop = -4; P.handR = t < 28.9 ? [80, -110] : [70, -170 + 12 * Math.sin(t * 20)]; }
     if (k11in(t, 29.44, 30.24)) { g = [x + 120, 650]; P.lid = 0.3; P.handR = [60, -120]; }
     if (k11in(t, 30.24, 31.02)) { P.handR = [100, -120 + 6 * [30.4, 30.62, 30.84].reduce((s, h) => s + pulse(t, h, 0.15), 0)]; g = [455, 790]; P.mouth = 'smile'; }
     if (k11in(t, 31.02, 31.72)) { P.handR = [60, -122 + 10 * Math.sin((t - 31.02) * 18) * K.clamp(31.6 - t)]; P.mouth = 'smile'; g = [x + 40, 800]; P.eyes = 'wide'; }
@@ -368,8 +372,12 @@ function k11friend(t) {
     if (t > 138.3) { g = [K11BX(t), 820]; }
     if (k11in(t, 139.0, 140.42)) { P.eyes = t < 139.1 ? 'wide' : 'open'; P.mouth = 'open'; P.handL = PERSON_HANDS.armsOut.L; P.handR = PERSON_HANDS.armsOut.R; P.brow = -0.8; P.wet = true; }
     if (k11in(t, 140.42, 141.44)) { P.kneel = settleTo(t, 140.42, 0, 1, 0.3); P.handL = PERSON_HANDS.armsOut.L; P.handR = PERSON_HANDS.armsOut.R; P.wet = true; P.mouth = 'open'; P.sq = landSquash(t, 140.7, 0.1); }
-    if (k11in(t, 141.44, 143.3)) { P.kneel = blend(t, 141.6, 142.1, 1, 0); P.handL = [40, -120]; P.handR = [50, -130]; P.wet = true; P.mouth = 'smile'; P.lid = t > 142.7 ? 0 : 0.6; P.sq = impactSquash(t, 141.44, 0.9);
-      const tf = turnFlip(t, [[0, -1], [142.0, 1], [142.45, -1]], 0.4); P.dir = tf.dir; if (t > 142.7) { P.mouth = 'open'; P.eyes = 'wide'; P.lid = 0; } }
+    if (k11in(t, 141.44, 143.3)) { const B = K11BX(t), hy = K11HUGY;   // kneeling hug: the boy beside him, both faces clear
+      P.kneel = 1; P.dir = -1; P.wet = 0.5; P.mouth = 'smile'; P.brow = -0.3; g = [B, hy];
+      P.handLW = [B - 20, 874 + 3 * Math.sin(t * 5)]; P.handRW = [B - 24, 850];   // on the boy's back, below his face
+      P.sq = 1 - 0.06 * pulse(t, 141.6, 0.4); P.lid = Math.max(0.15, K11B(t, 142.45, 0.3, 'inOut'));
+      if (k11in(t, 142.95, 143.15)) P.mouth = 'open'; }
+    if (k11in(t, 143.3, 143.8)) P.kneel = 1 - K11B(t, 143.3, 0.35, 'inOut');
     if (k11in(t, 143.3, 144.84)) { P.handR = t < 143.8 ? [10, -118] : [70, -126]; P.mouth = 'smile'; g = mh; }
     if (k11in(t, 144.84, 146.34)) { P.handR = [95, -136]; P.handL = [60, -130]; g = [455, 770]; P.mouth = 'smile'; }
     if (k11in(t, 146.34, 147.12)) { P.handR = [100, -130]; g = mh; }
@@ -386,7 +394,9 @@ function k11friend(t) {
     if (k11in(t, 153.4, 155.24)) { g = [700, 300]; P.look = 0.2; }
     if (k11in(t, 155.24, 155.82)) g = [630, 905];
     if (t >= 155.82) { P.handL = [-90, -150]; g = t < 156.0 ? [800, 320] : [530, 820]; }
-    if (t > 157.3) g = [K11RATX(t), 900];
+    if (t > 157.3) g = [K11RATX(t) - 30, 880];
+    if (k11in(t, 158.4, 158.85)) { g = mh; P.brow = -0.4; }
+    if (t > 159.3) { P.drop = 2 * Math.sin(t * 26 + 1) * K.clamp(160.3 - t); P.mouth = 'open'; }
   }
   if (P.gaze == null) P.gaze = lookAt(k11head(P), g);
   P.lid = Math.max(P.lid ?? 0, P.noBlink ? 0 : blink(t, P.seed));
@@ -394,15 +404,23 @@ function k11friend(t) {
 }
 
 // ---------- the boy ----------
-const K11BX = (t) => kfn(t, [[0, -150], [64.47, -150], [65.6, -470], [66.08, -470], [66.8, -470], [67.2, -545], [67.78, -545], [69.6, -275], [69.88, -275],
+const K11BX = (t) => kfn(t, [[0, -150], [64.47, -150], [65.6, -470], [66.08, -470], [66.8, -470], [67.2, -528], [67.78, -528], [69.25, -312], [69.88, -312],
   [69.9, 150], [70.9, 640], [76.98, 640],
-  [136.74, -10], [138.2, 320], [138.3, 320], [139.0, 545], [143.3, 545], [143.6, 650], [148.23, 650], [148.24, 530], [161, 530]]);
+  [136.74, -10], [138.2, 320], [138.3, 320], [139.0, 545], [143.3, 545], [143.9, 650], [148.23, 650], [148.24, 530], [161, 530]]);
 const K11BALL = (t) => {   // [x, y, rot] of the ball: bounced, gets away, rolls to the merchant, handed back, carried
   if (t < 66.08) { const u = ((t - 64.47) / 0.42) % 1, x = K11BX(t) - 30; return [x, 900 - 16 - 90 * 4 * u * (1 - u) - 60, t * 6]; }
   if (t < 66.85) { const u = K11B(t, 66.08, 0.6, 'out'); return [K.lerp(K11BX(t) - 30, -705 + 30, u), 884 - 18 * Math.abs(Math.sin(u * 7)) * (1 - u), -u * 12]; }
-  if (t < 67.3) { const u = K11B(t, 66.9, 0.4, 'inOut'); return [K.lerp(-675, K11BX(t) - 40, u), K.lerp(884, 790, u) - 40 * Math.sin(Math.PI * u), 0]; }
-  return [K11BX(t) - 22, 800, 0];
+  if (t < 67.3) { const u = K11B(t, 66.9, 0.4, 'inOut'); return [K.lerp(-675, K11BX(t) + 23, u), K.lerp(884, 826, u) - 40 * Math.sin(Math.PI * u), 0]; }
+  return [K11BX(t) + 23, 826, 0];   // under the arm away from the merchant (S8 handL, S9 handR: both on the +x side)
 };
+// where the merchant's right hand holds the boy's hand (S8 from 67.35, S9 street); the joined hands swing with the stroll
+function k11joint(t) { const mx = K11MX(t), bx = K11BX(t), a = K.clamp(Math.abs(speed(K11MX, t)) / 70), ph = K11MX(t) / 26;
+  return [Math.min(mx + 66, (mx + bx) / 2 + 6) + 10 * a * Math.sin(ph), 836 - 6 * a * Math.abs(Math.cos(ph))]; }
+// depth into the merchant's doorway (S9 street): 0 outside .. 1 inside (the figure is clipped to the doorway)
+const k11din = (t, who) => (k11sc(t) !== 9 || t >= 69.9 ? 0 : who === 'boy' ? K11B(t, 69.25, 0.5, 'inOut') : K11B(t, 69.6, 0.3, 'inOut'));
+const K11HUGY = 760;   // between the boy's head (y 781) and the kneeling father's head (y 735) during the hug
+// the boy's bread: from his hand up to his father's mouth (S17 142.6..143.3)
+const k11bread = (t) => { const u = K11B(t, 142.6, 0.3, 'inOut'), fx = K11FX(t); return [K.lerp(fx - 40, fx - 22, u), K.lerp(800, 756, u)]; };   // the kneeling father's mouth is about (fx - 20, 755)   // head height of the boy and the kneeling father during the hug
 function k11boy(t) {
   const sc = k11sc(t), x = K11BX(t), w = walk(K11BX, t, { stride: 12 });
   const P = { x, y: 900, s: 1, child: true, costume: 'villager', pal: K11BPAL, dir: -1, ph: w.ph, amp: K.clamp(w.amp * 1.6), seed: 37, mouth: 'smile', on: false };
@@ -412,23 +430,27 @@ function k11boy(t) {
     if (t < 66.08) { P.handR = [70, -60 - 30 * Math.abs(Math.sin((t - 64.47) / 0.42 * Math.PI))]; }
     if (k11in(t, 66.08, 66.85)) { P.mouth = 'o'; P.eyes = 'wide'; }
     if (k11in(t, 66.3, 66.9)) { g = mh; P.mouth = 'smile'; P.aR = [2.4, 2.8 + 0.3 * Math.sin(t * 18)]; }
-    if (t >= 66.9) { g = t < 67.35 ? [K11BALL(t)[0], K11BALL(t)[1]] : mh; P.handR = [60, -80]; P.handL = [50, -70]; P.mouth = 'smile'; } }
+    if (t >= 66.9) { g = t < 67.35 ? [K11BALL(t)[0], K11BALL(t)[1]] : mh; P.handR = [60, -80]; P.handL = [50, -70]; P.mouth = 'smile'; }
+    if (t >= 67.3) { const b = K11BALL(t); P.handL = null; P.handLW = [b[0] + 4, b[1] + 14]; }
+    if (t >= 67.5) { P.handR = null; P.handRW = k11joint(t); P.mouth = 'smile'; } }
   if (sc === 9) { P.on = true; P.dir = t < 69.9 ? 1 : 1; P.mouth = 'smile';
-    if (t < 69.9) { P.handL = [-60, -70 + 14 * Math.sin(t * 9)]; P.handR = [50, -80]; g = [x + 200, 700]; }
+    if (t < 69.9) { const b = K11BALL(t); P.handLW = k11joint(t); P.handRW = [b[0] + 4, b[1] + 14]; P.mouth = 'smile'; P.din = k11din(t, 'boy'); }
     else { g = gazePlan(t, [[69.9, [300, 500]], [70.3, [700, 380]], [70.65, [900, 600]], [71.0, [560, 760]]], 0.12);
       if (t > 70.9) { P.sit = blend(t, 70.9, 71.1, 0, 1); P.seat = 'floor'; P.sq = landSquash(t, 71.1, 0.14); P.dir = -1; }
       if (k11in(t, 71.5, 72.58)) { g = [530, 860]; P.eyes = t > 72.0 ? 'wide' : 'open'; P.mouth = 'o'; }
-      if (k11in(t, 72.58, 73.36)) { const c = Math.sin(t * 14); P.handL = [40, -72 + 10 * c]; P.handR = [50, -76 - 10 * c]; P.lid = 0.6; P.mouth = c > 0 ? 'closed' : 'smile'; P.cheek = c; }
-      if (k11in(t, 73.36, 75.08)) { g = [K11MX(t), 790]; P.handL = [30, -60]; P.handR = [40, -64]; P.mouth = 'closed'; P.cheek = 0.6; }
-      if (k11in(t, 75.08, 75.8)) { P.drop = 8 * (pulse(t, 75.2, 0.25) + pulse(t, 75.5, 0.25)); g = [K11MX(t), 790]; P.cheek = 0.6; P.mouth = 'closed'; }
-      if (t >= 75.8) { g = [K11MX(t), 790]; P.lid = pulse(t, 76.2, 0.35); if (t > 76.5) P.mouth = 'open'; } } }
+      if (k11in(t, 72.58, 73.36)) { const c = Math.sin(t * 14); P.handL = [40, -72 + 10 * c]; P.handR = [50, -76 - 10 * c]; P.eyes = 'shut'; P.lid = 0; P.mouth = 'smile'; P.cheek = c; }
+      if (k11in(t, 73.36, 77.0)) { g = [K11MX(t), 790]; P.handL = [30, -60]; P.handR = [40, -64]; P.mouth = 'smile'; P.cheek = 0.6; }
+      if (k11in(t, 74.85, 75.6)) { P.drop = 9 * (pulse(t, 74.95, 0.28) + pulse(t, 75.3, 0.28)); P.tip = 0.04 * (pulse(t, 74.95, 0.28) + pulse(t, 75.3, 0.28)); }
+      if (k11in(t, 76.2, 76.6)) { P.eyes = 'shut'; P.lid = 0; P.mouth = 'open'; P.noBlink = true; P.sq = 0.97; }
+      if (t >= 76.6) P.mouth = 'open'; } }
   if (sc === 17) { P.on = true; P.dir = 1; g = [700, 760];
     if (t < 138.3) { const [, lift] = hop(t, Math.floor((t - 136.74) / 0.36) * 0.36 + 136.74, 0.36, 0, 0, 10); P.y -= lift; P.handL = [-56, -78]; P.handR = [60, -90]; }
     if (k11in(t, 138.3, 139.1)) { P.handL = PERSON_HANDS.armsOut.L; P.handR = PERSON_HANDS.armsOut.R; P.mouth = 'open'; g = [K11FX(t), 740]; }
     if (k11in(t, 139.1, 141.44)) { P.handL = PERSON_HANDS.armsOut.L; P.handR = PERSON_HANDS.armsOut.R; g = [K11FX(t), 760]; }
-    if (k11in(t, 141.44, 143.3)) { const tf = turnFlip(t, [[0, -1], [142.0, 1], [142.45, -1]], 0.4), fx = K11FX(t);
-      P.x = fx + 28 * -tf.dir; P.y = 900 - 70 * blend(t, 141.6, 142.1, 0.3, 1) * (t < 143.1 ? 1 : 0); P.dir = -tf.dir; P.handL = [60, -90]; P.handR = [70, -100]; P.legSwing = swing(t, 141.6, 0.5);
-      if (t > 142.7) { P.handR = [90, -120]; P.mouth = 'smile'; } g = [fx, 720]; }
+    if (k11in(t, 141.44, 143.3)) { const fx = K11FX(t);
+      P.dir = 1; P.mouth = 'open'; P.handL = [-44, -74]; P.handRW = [fx - 6, 774];   // round his father's neck P.sq = 1 - 0.05 * pulse(t, 141.6, 0.4); g = [fx, K11HUGY];
+      if (k11in(t, 141.75, 142.6)) { P.eyes = 'shut'; P.lid = 0; P.noBlink = true; }
+      if (t >= 142.6) { P.handRW = k11bread(t); P.mouth = 'smile'; } }
     if (k11in(t, 143.3, 147.0)) { P.dir = -1; g = [455, 770]; P.mouth = 'smile'; }
     if (t >= 147.4) { P.dir = -1; Object.assign(P, K11PROMISE); P.mouth = 'smile'; g = [K11FX(t), 730]; } }
   if (sc === 18) { P.on = true; P.sit = 1; P.seat = 'bench'; P.dir = 1; P.mouth = 'smile'; g = [430, 700]; P.y = 900 - 24 + 24; P.handL = [-30, -60]; P.handR = [30, -60];
@@ -458,26 +480,28 @@ function k11passers(t) {
   const sc = k11sc(t), out = [];
   if (sc === 1 || sc === 7) {
     const ax = K11PAX(t), bx = K11PBX(t), wa = walk(K11PAX, t, { stride: 20 }), wb = walk(K11PBX, t, { stride: 22 });
-    const A = { x: ax, y: 880, s: 0.85, costume: 'villager', pal: { robe: C.blue, dot: '#0d2f80' }, dir: speed(K11PAX, t) < 0 ? -1 : 1, ph: wa.ph, amp: K.clamp(wa.amp * 1.4), seed: 51, mouth: 'closed', handR: [20, -210], lane: 0 };
-    const B = { x: bx, y: sc === 1 ? 930 : 880, s: sc === 1 ? 1.05 : 0.85, costume: 'villageWoman', dir: speed(K11PBX, t) < 0 ? -1 : 1, ph: wb.ph, amp: K.clamp(wb.amp * 1.4), seed: 53, mouth: 'closed', handL: [-50, -100], lane: sc === 1 ? 2 : 0 };
+    const A = { x: ax, y: 880, s: 0.85, costume: 'villager', pal: { robe: '#7a4212', dot: '#5b3010', head: 'cap', hc: GREEN, hd: GREEND, band: C.yellow, beard: 'short' }, dir: speed(K11PAX, t) < 0 ? -1 : 1, ph: wa.ph, amp: K.clamp(wa.amp * 1.4), seed: 51, mouth: 'closed', handR: [20, -210], lane: 0 };
+    const B = { x: bx, y: 880, s: 0.85, costume: 'villageWoman', dir: speed(K11PBX, t) < 0 ? -1 : 1, ph: wb.ph, amp: K.clamp(wb.amp * 1.4), seed: 53, mouth: 'closed', handL: [-50, -100], lane: 0 };
     if (sc === 1) { A.gaze = k11in(t, 2.4, 2.9) ? lookAt(k11head(A), [230, 800]) : [-1, 0]; B.gaze = [1, 0]; B.drop = 6 * pulse(t, 2.3, 0.4); }
     else { A.dir = 1; B.dir = 1; const turn = (i) => K11B(t, 57.2 + stagger(i, 0.13), 0.3, 'inOut'); const mx = K11MX(t), fx = K11FX(t);
       A.gaze = t > 57.2 ? lookAt(k11head(A), [K.lerp(mx, fx, turn(0) * (t > 58.14 ? 0 : 1)), 720]) : [1, 0]; B.gaze = t > 57.2 ? lookAt(k11head(B), [K.lerp(mx, fx, turn(1) * (t > 58.14 ? 0 : 1)), 720]) : [1, 0];
       if (t > 58.14 && t < 59.5) { A.mouth = 'o'; B.mouth = 'o'; B.handR = PERSON_HANDS.mouthCover.R; }
       if (t > 60.38) { A.drop = 6 * pulse(t, 60.5, 0.35); B.drop = 6 * pulse(t, 60.62, 0.35); } }
     out.push(A, B);
-    if (sc === 1) { const cx = K11PCX(t), wc = walk(K11PCX, t, { stride: 22 }); out.push({ x: cx, y: 915, s: 0.9, costume: 'villager', pal: { robe: GREEN2, dot: GREEN, beard: 'none' }, dir: -1, ph: wc.ph, amp: 1, seed: 55, mouth: 'o', tip: 0.1, handL: [60, -150], handR: [70, -140], lane: 1, gaze: [-1, 0] }); }
+    if (sc === 1) { const cx = K11PCX(t), wc = walk(K11PCX, t, { stride: 22 }); out.push({ x: cx, y: 870, s: 0.8, costume: 'villager', pal: { robe: GREEN2, dot: GREEN, beard: 'none' }, dir: -1, ph: wc.ph, amp: 1, seed: 55, mouth: 'o', tip: 0.1, handL: [60, -150], handR: [70, -140], lane: 0, gaze: [-1, 0] }); }
   }
   return out;
 }
 // ---------- the real rat (S5 into its hole, S18 to the nail and away) ----------
-const K11RATX = (t) => (t < 100 ? kfn(t, [[42.3, 920], [43.3, 640]], 'lin') : kfn(t, [[152.72, 1080], [153.38, 790], [157.5, 790], [157.6, 800], [158.3, 1100]], 'lin'));
+const K11RATX = (t) => (t < 100 ? kfn(t, [[42.3, 920], [43.3, 640]], 'lin') : kfn(t, [[152.72, 1080], [153.38, 800], [158.75, 800], [159.45, 1200]], 'lin'));
 function k11realRat(t) {
   const sc = k11sc(t); if (sc === 5 && k11in(t, 42.3, 43.35)) { const w = walk(K11RATX, t, { stride: GAIT.rat * 0.5 }); return { ...w, y: 902, s: 0.5, dir: -1, tailUp: 0.2, sniff: 0.3 }; }
-  if (sc === 18 && t > 152.72) { const w = walk(K11RATX, t, { stride: GAIT.rat * 0.5 }), P = { ...w, y: 905, s: 0.5, dir: t < 157.6 ? -1 : 1 };
-    if (k11in(t, 153.38, 157.5)) { P.sniff = 0.5 + 0.5 * Math.sin(t * 9); P.sit = t > 156.6 ? K11B(t, 156.6, 0.3) : 0; }
-    if (k11in(t, 157.5, 157.8)) { P.chew = 1; P.sit = 1; }
-    if (t >= 157.8) { P.ears = -1; P.eyes = t < 158.3 ? 'x' : 'open'; P.sit = t < 158.0 ? 1 : 0; P.y -= Math.abs(Math.sin((t - 157.8) * 10)) * 18; }
+  if (sc === 18 && t > 152.72) { const w = walk(K11RATX, t, { stride: GAIT.rat * 0.6 }), P = { ...w, y: 905, s: 0.6, dir: t < 158.75 ? -1 : 1 };
+    if (k11in(t, 153.38, 157.3)) { P.sniff = 0.5 + 0.5 * Math.sin(t * 9); P.sit = k11in(t, 156.4, 157.1) ? 1 - K11B(t, 156.9, 0.2) : 0; if (t > 156.4 && t < 156.9) P.sit = K11B(t, 156.4, 0.25); }
+    if (k11in(t, 157.3, 157.6)) { P.sniff = 1; P.rot = -0.12 * K11B(t, 157.3, 0.15); }   // head down to the nail
+    if (k11in(t, 157.6, 158.2)) { P.mouth = 'open'; P.rot = -0.12; P.sq = 1 - 0.22 * Math.exp(-(t - 157.6) * 9); P.eyes = t > 157.68 ? 'x' : 'open'; P.ears = -1; P.shake = t < 157.9 ? t : 0; }
+    if (k11in(t, 158.2, 158.75)) { const [, lift] = hop(t, 158.2, 0.32, 0, 0, 26); P.y -= lift; P.x += 26 * K11B(t, 158.2, 0.32, 'out'); P.sit = 1; P.chew = 1; P.ears = -1; P.mouth = 'o'; P.eyes = 'wide'; }
+    if (t >= 158.75) { P.x += 26; P.ears = -0.5; P.tailUp = 0.8; }
     return P; }
   return null;
 }

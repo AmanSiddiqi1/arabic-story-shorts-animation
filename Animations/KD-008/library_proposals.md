@@ -5,3 +5,7 @@
 - `kd8Pose`: keyed pose track with settle/overshoot per field (numbers settle, arrays ease, strings switch). (src/kd8_rig.js)
 - `pond` set with level and cracks (`kd8Pond`, `kd8Water`, `kd8Reeds`), `kd8House` flat-roofed mud house, `kd8Patchwork` aerial fields, `kd8VillageFar`. (src/kd8_sets.js)
 - Props/effects: stick (`kd8Stick`, `kd8StickPt`), pebble, snail, fish, water spray, steam puffs, sweat drop. (src/kd8_cast.js)
+- (v2) `fitCam` camera helper: cap zoom/centre so a list of named points (bill tips, eyes, rider head) stays inside the panel with a margin (Fable review 1, notes 2-4, 8).
+- (v2) `carryRig` release curve: `KD8_UNLOAD` / `KD8_DROP` in src/kd8_air.js (carriers spring up on unload, the load sinks with a guaranteed visible gap).
+- (v2) `aimedBalloon`: speech balloon whose tail points at a given speaker point (`kd8Balloon`, src/kd8_main.js); the style's balloon tail is fixed down-left.
+- (v2) Mirrored set extension for pans past a baked set edge (draw the bake again flipped at x + width; src/kd8_air.js).

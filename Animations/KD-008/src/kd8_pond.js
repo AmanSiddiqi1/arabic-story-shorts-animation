@@ -48,10 +48,11 @@ function kd8TortPond(t) {
   if (t > 98.76 && t < 102.0) { const nd = 0.55 * pulse(t, 99.65, 0.6) + 0.25 * pulse(t, 100.94, 0.35) + 0.25 * pulse(t, 101.64, 0.35); P.nAng = (P.nAng || 0) + nd; P.mouth = t > 100.8 ? 'tight' : P.mouth; }
   // joy: heavy hops and a turn
   if (t > 81.3 && t < 84.24) { const h1 = hop(t, 82.07, 0.55, 0, 0, 30)[1], h2 = hop(t, 83.42, 0.4, 0, 0, 16)[1]; P.y -= h1 + h2; P.sq = anticipate(t, 81.75, 0.3, 0.1) * landSquash(t, 82.62) * landSquash(t, 83.82, 0.1);
-    const tf = turnFlip(t, [[0, 1], [82.1, -1], [83.45, 1]], 0.5); P.dir = tf.dir; P.ph = t * 9; P.amp = t > 83.2 ? 0.5 : 0; }
+    P.ph = t * 9; P.amp = t > 83.2 ? 0.5 : 0; P.nAng = (P.nAng || 0) - 0.25 * (pulse(t, 81.9, 0.9) + pulse(t, 83.3, 0.7)); }   // head high on each hop
   if (t > 101.64 && t < 102.3) P.sq = 1 - 0.03 * pulse(t, 101.8, 0.35);   // the pat on the shell
   return P;
 }
+const KD8_PEB = [672, 1092];   // where the demo pebble lands (in front of everyone, on the dry pond floor)
 const KD8_DFALL = [{ x: 640, y: 930, s: 1.15, dir: -1 }, { x: 800, y: 945, s: 1.15, pal: 1, dir: -1 }];
 function kd8TortGazePond(t, P, D) {
   D = D || KD8_DFALL; const g = kd8TortGeo(P).head;
@@ -64,13 +65,14 @@ function kd8TortGazePond(t, P, D) {
     [66.6, [520, 930]], [67.9, (u) => [K.lerp(320, 720, K.clamp((u - 67.9) / 1.6)), 400]], [70.68, [330, 380]], [71.3, () => kd8DuckHead(D[0])], [73.1, [P.x + 260, 930]], [74.9, [520, 380]],
     [75.3, (u) => [K.lerp(520, 700, K.clamp((u - 75.3) / 2)), K.lerp(380, 300, K.clamp((u - 75.3) / 2))]], [77.6, [560, 0]], [79.0, [760, 420]], [80.0, () => kd8DuckHead(D[0])],
     [84.24, () => kd8DuckHead(D[0])], [87.1, () => kd8DuckHead(D[0])], [90.92, [P.x + 260, 950]], [91.6, () => kd8DuckHead(D[0])], [92.4, () => kd8DuckHead(D[1])],
-    [93.4, [200, 700]], [94.2, [800, 760]], [94.9, [240, 760]], [95.6, () => kd8DuckHead(D[1])], [96.6, [690, 940]], [98.76, () => kd8DuckHead(D[0])]], 0.12);
+    [93.4, [200, 700]], [94.2, [800, 760]], [94.9, [240, 760]], [95.3, () => kd8DuckHead(D[1])], [96.5, KD8_PEB], [98.76, () => kd8DuckHead(D[0])]], 0.12);
   return P;
 }
 // ---------- ducks: A (white, leader) and B (mallard, eager) ----------
 const kd8DuckHead = (D) => kd8DuckGeo(D).head;
 const KD8_AX = (t) => kfn(t, [[8.06, 610], [9.6, 560], [39.9, 560], [40.4, 730], [40.62, 730], [41.3, 690], [61.8, 690], [62.7, 840], [63.6, 840], [64.24, 840], [64.9, 760], [84.9, 760], [85.6, 720]]);
-const KD8_BX = (t) => kfn(t, [[8.06, 760], [9.6, 700], [39.9, 700], [40.5, 830], [61.8, 830], [62.7, 700], [64.3, 700], [64.9, 940], [66.4, 940], [67.0, 950], [84.9, 950], [85.7, 900]]);
+const KD8_BX = (t) => kfn(t, [[8.06, 760], [9.6, 700], [39.9, 700], [40.5, 830], [61.8, 830], [62.7, 700], [64.3, 700], [64.9, 940], [66.4, 940], [67.0, 950], [84.9, 950], [85.7, 900], [94.7, 900], [95.25, 780], [98.8, 780], [99.5, 900]]);
+const KD8_BY = (t) => kfn(t, [[94.7, 945], [95.25, 1100], [98.8, 1100], [99.5, 945]]);
 function kd8Bird(t) { const u = K.clamp((t - 3.6) / 1.4); return [K.lerp(560, 880, u) + Math.sin(u * 9) * 20, K.lerp(560, 452, K.ease.out(u)) - Math.sin(u * Math.PI) * 60]; }
 const kd8SunPos = (t) => { if (t < 20.5 || t > 22.2) return [700, 200]; const u = ((t - 20.5) / 1.7 * 3) % 1; return [K.lerp(-120, 1120, u), 340 - 240 * Math.sin(Math.PI * u)]; };
 const kd8Leaf = (t) => { const u = K.clamp((t - 28.6) / 1.3); return [808 - 60 * u + Math.sin(u * 12) * 18, K.lerp(830, 985, u)]; };
@@ -97,7 +99,7 @@ function kd8DucksPond(t, T) {
       [64.5, { neck: 1 }], [64.95, { neck: 0 }, 0.4], [65.68, { tip: -0.1 }, 0.2], [66.2, { tip: 0 }], [67.05, { neck: 1 }, 0.4], [67.55, { neck: 0 }], [70.75, { wing: 2.4 }], [71.2, { wing: 0 }],
       [71.4, { wing: 2.75 }], [72.8, { wing: 0 }], [75.4, { wing: 1.9, wingF: 1.9, sq: 1.06 }], [77.4, { wing: 0, wingF: 0, sq: 1 }],
       [84.4, { brow: 0.4 }], [85.1, { tip: 0.05 }], [92.4, { wing: 1.7, wingF: 1.7, clamp: true, sq: 1.04 }, 0.3], [93.3, { wing: 0, wingF: 0, clamp: false, sq: 1 }],
-      [95.66, { clamp: true }], [96.42, { bill: 0.9, clamp: false }, 0.1], [97.0, { bill: 0 }], [99.0, { tip: 0 }],
+      [95.25, { clamp: true, headRot: -0.22 }, 0.25], [96.42, { bill: 1, clamp: false, headRot: 0.05 }, 0.08], [97.0, { bill: 0 }], [99.0, { tip: 0 }],
     ];
     const P = kd8Pose(t, base, keys);
     // flight in (S1, S3), swimming (S1), standing (S3 on)
@@ -108,7 +110,7 @@ function kd8DucksPond(t, T) {
         P.ph = t * 6; }
     } else {
       if (t < land3) { const p = kd8FlyIn(t, A ? 39.6 : 39.75, land3, A ? [1150, 200] : [1200, 300], [X(land3), A ? 930 : 945]); Object.assign(P, { x: p[0], y: p[1], fly: true, flap: Math.sin(t * 15 + i * 2.1), neck: 0.2 }); }
-      else { P.y = A ? 930 : 945; Object.assign(P, walk(X, t, { stride: 10, amp: 60 })); P.sq *= landSquash(t, land3, 0.18);
+      else { P.y = A ? 930 : KD8_BY(t); Object.assign(P, walk(X, t, { stride: 10, amp: 60 })); P.sq *= landSquash(t, land3, 0.18);
         // facing: they pace (cross), pick the branch up facing left
         if (t > 61.8 && t < 62.75) P.dir = A ? 1 : -1;
         if (t > 64.24 && t < 64.9) P.dir = A ? -1 : 1;
@@ -124,11 +126,11 @@ function kd8DucksPond(t, T) {
   for (const i of [0, 1]) { const A = i === 0, P = out[i], O = out[1 - i], hd = kd8DuckGeo(P).head;
     P.gaze = kd8Gaze(t, hd, A ? [[0, [400, 800]], [6.4, tg], [13.92, [600, 380]], [14.6, tg], [40.5, tg], [43.6, [520, 380]], [44.4, tg], [45.76, [1000, 700]], [46.6, tg], [55.6, [hd[0] + 80, hd[1] + 40]], [56.4, tg],
       [61.28, [hd[0], hd[1] - 120]], [61.5, [hd[0] - 100, hd[1] - 60]], [61.65, [hd[0] + 120, hd[1] - 100]], [62.0, [1000, 900]], [63.6, [900, 900]], [64.24, [880, 920]], [65.0, () => kd8DuckHead(O)],
-      [65.4, [800, 820]], [67.9, [520, 380]], [68.6, tg], [69.5, [520, 380]], [70.2, tg], [79.0, tg], [87.1, tg], [96.42, [690, 940]], [97.6, tg]]
+      [65.4, [800, 820]], [67.9, [520, 380]], [68.6, tg], [69.5, [520, 380]], [70.2, tg], [79.0, tg], [87.1, tg], [95.3, [680, 910]], [96.5, KD8_PEB], [97.6, tg]]
       : [[0, [400, 800]], [6.4, tg], [13.92, () => kd8DuckHead(O)], [14.6, tg], [15.9, [600, 300]], [16.9, tg], [40.6, () => kd8DuckHead(O)], [41.7, tg], [43.6, [520, 380]], [45.0, tg],
       [53.9, [hd[0] + 60, hd[1] + 50]], [55.3, [hd[0], hd[1] - 120]], [56.2, tg], [59.0, () => kd8DuckHead(O)], [59.8, tg],
       [61.28, [hd[0] - 80, hd[1] - 120]], [61.45, [hd[0] + 100, hd[1] - 80]], [61.6, [hd[0], hd[1] - 140]], [62.9, [hd[0] - 60, hd[1] - 200]], [63.44, [880, 915]], [64.9, () => kd8DuckHead(O)], [65.4, [700, 820]],
-      [67.9, [520, 380]], [68.8, tg], [70.6, [520, 380]], [71.4, tg], [75.3, [600, 320]], [77.5, tg], [87.3, [hd[0] - 60, hd[1] - 30]], [87.8, tg], [96.42, [690, 860]], [96.8, [690, 940]], [97.6, tg]], 0.1);
+      [67.9, [520, 380]], [68.8, tg], [70.6, [520, 380]], [71.4, tg], [75.3, [600, 320]], [77.5, tg], [87.3, [hd[0] - 60, hd[1] - 30]], [87.8, tg], [95.3, [hd[0] - 100, hd[1] - 20]], [96.42, KD8_PEB], [97.6, tg]], 0.1);
   }
   return out;
 }
@@ -139,10 +141,11 @@ function kd8StickPond(t, D) {
   return { ends: [[429, 916], [1029, 916]], sag: 0 };                                       // laid in front of her
 }
 // ---------- S6: the bite and the grip (102.9 - 109.6): ducks over the two ends, facing right ----------
+const KD8_S6BX = 720;   // duck B stands a little further right so the bite insert frames her head without B's body
 function kd8S6(t) {
   const clampU = K.clamp((t - 106.8) / 0.5), clampB = K.clamp((t - 107.05) / 0.5);
   const A = { x: 130, y: 900, s: 1.3, pal: 0, dir: 1, neck: 0.12 * K.ease.inOut(clampU), clamp: t > 106.9, wing: 0, wingF: 0 };
-  const B = { x: 640, y: 900, s: 1.3, pal: 1, dir: 1, neck: 0.12 * K.ease.inOut(clampB), clamp: t > 107.15, wing: 0, wingF: 0 };
+  const B = { x: KD8_S6BX, y: 900, s: 1.3, pal: 1, dir: 1, neck: 0.12 * K.ease.inOut(clampB), clamp: t > 107.15, wing: 0, wingF: 0 };
   // wings spread and beat (107.82 - 109.6), crouch before the first beat
   if (t > 107.6) { for (const [D, ph] of [[A, 0], [B, 2.1]]) { const on = K.clamp((t - 107.82 - ph * 0.05) / 0.3); D.wing = on * (1.6 + 0.9 * Math.sin((t - 107.82) * 13 + ph)); D.wingF = D.wing + 0.15; D.sq = anticipate(t, 107.55, 0.3, 0.08); } }
   if (t > 106.8) { A.headRot = 0.25 * kd8Nod(t, 107.5, 0.4); B.headRot = 0.25 * kd8Nod(t, 107.7, 0.4); }
@@ -151,8 +154,9 @@ function kd8S6(t) {
   const mid = kd8StickPt(st[0], st[1], sag, 0.5);
   const tk = kd8Pose(t, { s: 1.3, dir: 1, nAng: -1.15, headRot: -0.15, mouth: 'closed', brow: 0.2, lid: 0 },
     [[103.2, { nAng: -1.0 }, 0.3], [104.0, { mouth: 'open', open: 1, brow: 0.35, nAng: -1.2 }, 0.4], [105.44, { mouth: 'closed', lid: 0.5, sq: 0.94 }, 0.08], [105.6, { lid: 0, sq: 1 }, 0.3], [107.8, { brow: -0.4, eyes: 'wide' }]]);
-  let target = [mid[0], mid[1] + (bit ? 0 : 28 + 12 * (1 - K.clamp((t - 103.24) / 1.2)))];
-  if (!bit && t > 104.6) target = [mid[0], mid[1] + K.lerp(28, 0, K.clamp((t - 104.6) / 0.84))];
+  // the stick is at mouth height in front of her face from the start; she leans in (x) and bites on العصا
+  let target = [mid[0], mid[1]];
+  if (!bit) target = [mid[0] - 34 * (1 - K.ease.inOut(K.clamp((t - 103.24) / 2.0))), mid[1] + 4];
   const T = kd8TortToMouth(tk, target, 900, 1.3);
   if (T.y < 900) T.y = 900, T.x = T.x;   // on the ground here
   T.gaze = t > 107.8 ? [Math.sin((t - 107.8) * 5) > 0 ? -0.9 : 0.9, -0.3] : lookAt(kd8TortGeo(T).head, mid);
@@ -165,9 +169,9 @@ const KD8_POND_CAM = [[0, { x: 500, y: 640, zoom: 1.0 }], [1.0, { x: 500, y: 640
   [40.8, { x: 580, y: 830, zoom: 1.85 }], [43.54, { x: 580, y: 830, zoom: 1.85 }], [45.1, { x: 540, y: 700, zoom: 1.3 }], [49.0, { x: 540, y: 700, zoom: 1.3 }], [49.6, { x: 580, y: 830, zoom: 1.85 }],
   [56.8, { x: 580, y: 830, zoom: 1.85 }], [57.4, { x: 430, y: 880, zoom: 2.0 }], [60.0, { x: 450, y: 880, zoom: 1.9 }],
   [61.3, { x: 600, y: 820, zoom: 1.5 }], [63.4, { x: 650, y: 830, zoom: 1.55 }], [64.24, { x: 700, y: 830, zoom: 1.55 }], [66.4, { x: 700, y: 830, zoom: 1.55 }], [67.6, { x: 540, y: 620, zoom: 1.15 }],
-  [80.9, { x: 540, y: 620, zoom: 1.15 }], [81.4, { x: 580, y: 830, zoom: 1.6 }], [84.24, { x: 580, y: 830, zoom: 1.6 }], [87.1, { x: 580, y: 830, zoom: 1.6 }], [90.0, { x: 600, y: 830, zoom: 1.9 }],
-  [96.9, { x: 600, y: 830, zoom: 1.9 }], [97.4, { x: 650, y: 870, zoom: 1.9 }], [98.6, { x: 650, y: 870, zoom: 1.9 }], [99.4, { x: 500, y: 840, zoom: 2.4 }], [102.89, { x: 500, y: 840, zoom: 2.4 }],
-  [102.9, { x: 470, y: 760, zoom: 2.8 }], [105.7, { x: 470, y: 760, zoom: 2.6 }], [106.8, { x: 420, y: 760, zoom: 1.4 }], [109.6, { x: 420, y: 760, zoom: 1.4 }]];
+  [80.9, { x: 540, y: 620, zoom: 1.15 }], [81.4, { x: 470, y: 830, zoom: 1.6 }], [84.24, { x: 470, y: 830, zoom: 1.6 }], [85.2, { x: 580, y: 830, zoom: 1.6 }], [87.1, { x: 580, y: 830, zoom: 1.6 }], [90.0, { x: 600, y: 830, zoom: 1.9 }],
+  [94.6, { x: 600, y: 830, zoom: 1.9 }], [95.25, { x: 575, y: 800, zoom: 1.4 }], [98.7, { x: 575, y: 800, zoom: 1.4 }], [99.4, { x: 500, y: 840, zoom: 2.4 }], [102.89, { x: 500, y: 840, zoom: 2.4 }],
+  [102.9, { x: 425, y: 750, zoom: 3.0 }], [105.7, { x: 430, y: 750, zoom: 2.9 }], [106.8, { x: 450, y: 760, zoom: 1.4 }], [109.6, { x: 450, y: 760, zoom: 1.4 }]];
 const KD8_SC_POND = { ww: KD8_VW, wh: KD8_VH, cam: KD8_POND_CAM,
   draw(ctx, t) {
     const hot = t >= KD8_HOT;
@@ -196,9 +200,9 @@ const KD8_SC_POND = { ww: KD8_VW, wh: KD8_VH, cam: KD8_POND_CAM,
     if (D) { const order = D[0].y <= D[1].y ? [0, 1] : [1, 0]; for (const i of order) kd8Duck(ctx, D[i]); }
     if (t >= 64.9 && t < 67.6) kd8Stick(ctx, S.ends[0], S.ends[1], S.sag);
     // pebble: held in B's bill, dropped on تكلمتِ, bounces once
-    if (D && t > 95.6 && t < 102.9) { const B = D[1], g = kd8Grip(B); let px = g[0], py = g[1] + 12, sq = 1;
-      if (t >= 96.42) { const gy = 948; py = Math.min(gy, fallY(t, 96.42, 97.2, g[1] + 12, gy)); if (t >= 97.2) { py = gy - rebound(t, 97.2, 22, 0.32); sq = impactSquash(t, 97.2, 0.7); } }
-      kd8Pebble(ctx, px, py, 1.3, sq); dustBurst(ctx, px, 950, t - 97.2, 6, 6, 14, 34, 0.6, 9); }
+    if (D && t > 95.25 && t < 99.6) { const B = D[1], g = kd8Grip(B); let px = g[0], py = g[1] + 12, sq = 1;
+      if (t >= 96.42) { px = KD8_PEB[0]; const gy = KD8_PEB[1]; py = Math.min(gy, fallY(t, 96.42, 97.2, g[1] + 12, gy)); if (t >= 97.2) { py = gy - rebound(t, 97.2, 22, 0.32); sq = impactSquash(t, 97.2, 0.7); } }
+      ctx.save(); if (t < 95.5) { const k = K.ease.back(K.clamp((t - 95.25) / 0.25)); ctx.translate(px, py); ctx.scale(k, k); ctx.translate(-px, -py); } kd8Pebble(ctx, px, py, 1.5, sq); ctx.restore(); dustBurst(ctx, px, KD8_PEB[1] + 2, t - 97.2, 7, 7, 16, 40, 0.6, 9); }
     kd8Reeds(ctx, t, hot ? K.clamp((t - 28.68) / 1.2) : 0, true);
     if (t > 28.5 && t < 30.2) { const l = kd8Leaf(t); shape(ctx, ell(l[0], l[1], 14, 6, 10), '#c9a24a', { lw: 3, seed: 97 }); }
     // spray on landing, dust on her footfalls and the hard steps

@@ -15,3 +15,10 @@ Film length 174.452 s = MP3 170.452 s + 4.0 s held ending (plan). Plan inputs ch
 - A very soft thud (gain 0.15) at 162.75 inside the measured silence 162.59-163.65 (plan warning 4); no other impact sound.
 - The man keeps his turban at 163.86 (the villager costume has no removable cap): head sinks, eyes break away, hand to chest.
 - Dropped for time: the songbird double take is a turn only (no beak open); the falling HA HA letters at 161.8; the leaf skitter (a leaf falls only).
+
+## v2 (Fable review 1) decisions
+- Release 154.26: ducks jump 74 world px (back-eased, 5 frames); she hangs and sinks 30 + 62 px (KD8_DROP), so the head-to-stick sky gap grows from about 40 to 110 px. I AM NOT A uses a story-local balloon (kd8Balloon) lower left with its tail aimed at her mouth.
+- Air close-ups capped at zoom 1.32 (both duck heads and bill tips inside); a gentler push to 1.6 is kept for the forgetting beat 148.66-150.3; pull-out to 1.15 at 152.1-153.18.
+- Pebble demo: duck B steps onto the dry pond floor in front (x 780, y 1100) at 94.7-95.25, presents the pebble, drops it at 96.42 onto (672, 1092), steps back 98.8-99.5. Duck A stays put.
+- Bite insert: duck B stands at x 720 in S6 (and lifts off from there) so the 3.0x insert holds only her head and the stick.
+- Village: rig crosses at y 370 starting x 340; laugh shot zoom 1.2 with two walk-in onlookers (carpenter, old woman) replacing the window/doorway cameos; S10 dust drawn behind the redrawn last house.
