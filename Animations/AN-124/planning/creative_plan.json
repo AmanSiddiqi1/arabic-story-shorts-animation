@@ -1,0 +1,3090 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-124",
+ "title": "Al-Mutalammis and His Wife Umaymah",
+ "duration": 171.61,
+ "end_hold": 4.5,
+ "logline": "A poet who fled a king comes home after years, on the very night his wife, believing him dead, is being married to another man; a verse answered by a verse reunites them, and the new groom steps aside with grace.",
+ "moral": "Faithful love outlasts absence and rumour, and true generosity is knowing when to step aside.",
+ "tone": "Tender and bittersweet with one long suspense (will he be recognised, will the groom fight?), a warm release and a light comic button. No villain on screen after the first 5 seconds.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.0,
+   "kind": "setup",
+   "cue": {
+    "word": "هرب",
+    "t": 0.0
+   },
+   "summary": "The poet flees the king on a camel, by night."
+  },
+  {
+   "id": "B2",
+   "t": 9.22,
+   "kind": "emotion",
+   "cue": {
+    "word": "انتظرته",
+    "t": 9.22
+   },
+   "summary": "Umaymah waits at the tent post, marking the years."
+  },
+  {
+   "id": "B3",
+   "t": 19.66,
+   "kind": "inciting",
+   "cue": {
+    "word": "مات",
+    "t": 19.66
+   },
+   "summary": "The rumour spreads: he is dead."
+  },
+  {
+   "id": "B4",
+   "t": 27.72,
+   "kind": "rising",
+   "cue": {
+    "word": "رفضت",
+    "t": 27.72
+   },
+   "summary": "She refuses to remarry."
+  },
+  {
+   "id": "B5",
+   "t": 50.12,
+   "kind": "turn",
+   "cue": {
+    "word": "وافقت",
+    "t": 50.12
+   },
+   "summary": "Under pressure she gives one reluctant nod."
+  },
+  {
+   "id": "B6",
+   "t": 67.22,
+   "kind": "surprise",
+   "cue": {
+    "word": "عاد",
+    "t": 67.22
+   },
+   "summary": "On the wedding night he rises over the dune: alive."
+  },
+  {
+   "id": "B7",
+   "t": 82.46,
+   "kind": "reveal",
+   "cue": {
+    "word": "ميتًا",
+    "t": 82.46
+   },
+   "summary": "The children tell him he is dead and his wife is marrying."
+  },
+  {
+   "id": "B8",
+   "t": 92.3,
+   "kind": "suspense",
+   "cue": {
+    "word": "يعرفه",
+    "t": 92.3
+   },
+   "summary": "He enters covered; a guest stares, then looks away."
+  },
+  {
+   "id": "B9",
+   "t": 103.6,
+   "kind": "emotion",
+   "cue": {
+    "word": "تنهدت",
+    "t": 103.6
+   },
+   "summary": "She sighs and begins a verse."
+  },
+  {
+   "id": "B10",
+   "t": 121.8,
+   "kind": "climax",
+   "cue": {
+    "word": "فأجابها",
+    "t": 121.8
+   },
+   "summary": "He answers in verse across the feast: I am near."
+  },
+  {
+   "id": "B11",
+   "t": 129.68,
+   "kind": "reveal",
+   "cue": {
+    "word": "عرفت",
+    "t": 129.68
+   },
+   "summary": "She knows his voice; the cloth comes down."
+  },
+  {
+   "id": "B12",
+   "t": 137.8,
+   "kind": "suspense",
+   "cue": {
+    "word": "يغضب",
+    "t": 137.8
+   },
+   "summary": "The groom rises: a held breath, then a smile."
+  },
+  {
+   "id": "B13",
+   "t": 147.86,
+   "kind": "resolution",
+   "cue": {
+    "word": "وانصرف",
+    "t": 147.86
+   },
+   "summary": "He gives up his place and leaves without looking back."
+  },
+  {
+   "id": "B14",
+   "t": 168.78,
+   "kind": "moral",
+   "cue": {
+    "word": "لعودتهما",
+    "t": 168.78
+   },
+   "summary": "The wedding night becomes the night of their reunion."
+  }
+ ],
+ "cast": [
+  {
+   "id": "mutalammis",
+   "name": "al-Mutalammis, the poet",
+   "library": "person",
+   "base": "person costume:'bedouin' (keffiyeh + agal, cream dotted robe, brown cloak)",
+   "look": "Default bedouin colours, black moustache and short beard; age 0 in S1, age 0.35 (grey in the beard) and one blue patch on the robe from S7. Uses the planned faceCover field (head cloth across the face) in S9-S13. s 1.0.",
+   "new": false
+  },
+  {
+   "id": "umaymah",
+   "name": "Umaymah, his wife",
+   "library": "person",
+   "base": "person costume:'lady'",
+   "look": "White veil with yellow band, blue robe (catalogue 'lady'). From S6 (the wedding) add pal {sash: red, band: yellow, jewel: red}: the same woman, dressed up, not a new costume. s 0.96.",
+   "new": false
+  },
+  {
+   "id": "king",
+   "name": "King al-Numan",
+   "library": "person",
+   "base": "person costume:'caliph'",
+   "look": "Catalogue caliph (crown turban, red robe), seen small (s 0.5) on the city wall for 2.5 s only.",
+   "new": false
+  },
+  {
+   "id": "camel",
+   "name": "the poet's camel",
+   "library": "camel",
+   "base": "camel pal 0 with saddle: true",
+   "look": "Sand camel with the red rug saddle; s 0.62 on the road, s 0.7 in the camp.",
+   "new": false
+  },
+  {
+   "id": "rider",
+   "name": "a passing horseman",
+   "library": "person",
+   "base": "person costume:'servant' via rideOn on the horse",
+   "look": "Small and far (s 0.4): the news that never comes.",
+   "new": false
+  },
+  {
+   "id": "horse",
+   "name": "the horseman's horse",
+   "library": "horse",
+   "base": "horse pal 1 (bay)",
+   "look": "Trot along the far dune, s 0.4.",
+   "new": false
+  },
+  {
+   "id": "gossipA",
+   "name": "whispering neighbour",
+   "library": "person",
+   "base": "person costume:'villager'",
+   "look": "Green villager; later reused as guestA is NOT wanted: keep him a separate palette (pal robe brown).",
+   "new": false
+  },
+  {
+   "id": "gossipB",
+   "name": "listening neighbour",
+   "library": "person",
+   "base": "person costume:'beanSeller'",
+   "look": "Plain cap and apron colours, age 0.5.",
+   "new": false
+  },
+  {
+   "id": "father",
+   "name": "Umaymah's father",
+   "library": "person",
+   "base": "person costume:'bedouin', age 0.75, hold:'stick'",
+   "look": "Old bedouin: white beard, stoop, pal {cape: navy, robe: paper} so he never reads as the poet.",
+   "new": false
+  },
+  {
+   "id": "mother",
+   "name": "Umaymah's mother",
+   "library": "person",
+   "base": "person costume:'oldWoman'",
+   "look": "Catalogue oldWoman without the stick.",
+   "new": false
+  },
+  {
+   "id": "suitor1",
+   "name": "first suitor",
+   "library": "person",
+   "base": "person costume:'prince' with pal {robe: yellow, dot: red} and a small turban instead of the crown if pal.hc allows; otherwise costume:'merchant' pal red",
+   "look": "Young, eager, carries a necklace.",
+   "new": false
+  },
+  {
+   "id": "suitor2",
+   "name": "second suitor",
+   "library": "person",
+   "base": "person costume:'merchant' (blue)",
+   "look": "Catalogue merchant with a cloth bolt (packLoad 'bolt').",
+   "new": false
+  },
+  {
+   "id": "groom",
+   "name": "the new groom",
+   "library": "person",
+   "base": "person costume:'merchant' with the catalogue 'merchant pal' colours (green robe, yellow turban)",
+   "look": "Kind round face, black beard, a red flower in his sash (small scene-drawn prop). He must be likeable from his first frame (45.14).",
+   "new": false
+  },
+  {
+   "id": "drummerA",
+   "name": "drummer",
+   "library": "person",
+   "base": "person costume:'servant', sit:1, seat:'floor'",
+   "look": "Red cap; hand drum r 34 on his knee.",
+   "new": false
+  },
+  {
+   "id": "drummerB",
+   "name": "second drummer",
+   "library": "person",
+   "base": "person costume:'villager' age 0.55, sit:1, seat:'floor'",
+   "look": "Grey beard; plays off the beat from drummerA.",
+   "new": false
+  },
+  {
+   "id": "guestA",
+   "name": "seated guest",
+   "library": "person",
+   "base": "person costume:'carpenter', sit:1, seat:'floor'",
+   "look": "Yellow sleeves.",
+   "new": false
+  },
+  {
+   "id": "guestB",
+   "name": "the singer",
+   "library": "person",
+   "base": "person costume:'villageWoman', sit:1, seat:'floor'",
+   "look": "Yellow headscarf, red dress; the one who nearly recognises him.",
+   "new": false
+  },
+  {
+   "id": "boy",
+   "name": "camp boy",
+   "library": "person",
+   "base": "person costume:'servant', child:true",
+   "look": "Bold.",
+   "new": false
+  },
+  {
+   "id": "girl",
+   "name": "camp girl",
+   "library": "person",
+   "base": "person costume:'maiden', child:true",
+   "look": "Shy and sharp-eyed; she is the first to guess.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "road",
+   "library": "desertRoad",
+   "description": "desertRoad(ctx, {w: 2400, camX, city: 'left', preset: 'night' or u 0.75, palms: [900, 1500], rocks: true}); ground y 900. The king stands on the city wall top above the gate (take R.city.gate and the wall top from the anchors; approximate, measure on the set). The camel leaves the track at x about 1500 and climbs the mid dune layer (draw it between the mid and near dune passes, y about 800, approximate).",
+   "new": false
+  },
+  {
+   "id": "camp",
+   "library": null,
+   "description": "desertCamp (planned name, AN-044): a bedouin camp, world 1600 x 1230, ground y 900, built on skyCycle(u) + the desertRoad dune layers with road: false. Parts: (1) big black goat-hair tent with an open front, x 520..1080: three front poles at x 560, 800, 1040 (8 wide) from y 900 up to y 520, 470, 520; roof a sagging black band 40 thick with a red and white stripe along its lower edge, running pole top to pole top and down by guy ropes to pegs at x 440 and x 1160; inside back wall navy with blue dots; floor carpet red with yellow dots x 540..1060, y 895..930; two floorCushions 100 x 30 at x 740 and 860 (seat top y 870: person y 870 with sit 1, seat 'bench'). (2) small closed tent left, x 120..400, peak (260, 600), optional lit door slit. (3) three far tent silhouettes on the mid dune at x 1250, 1380, 1500 (60 wide), option farLit 0..1. (4) fire ring at x 1220: 6 stones in a 90-wide arc, 3 flame tongues up to 70 high, flame 0..1, flicker from K.noise(t). (5) palmTree at x 1420, h 430. (6) lamp string: rope from (560, 520) sagging to (800, 500), (1040, 520) and on to the palm at (1400, 500), with 7 hangingLamp at even spacing; option lamps = number lit (0..7) or an array of 0..1. (7) tally post = the front left pole (x 560); tallyMarks drawn at y 640..760. (8) front pass (layer 'front'): the three front poles and a dune lip across x 1250..1600 with its top at y 860, to rise from behind. Horizon gap for arrivals at about (1500, 840). Options: u, lamps, fire, farLit, deco 0..1 (small red, white and yellow flags on the rope between lamps), layer 'back' / 'front'. Returns anchors {ground, tent {x0, x1, poles, ridge}, cushions [{x, sitY}], post {x, top}, lamps [{x, y}], fire {x, y}, lip, palm}.",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "scroll",
+   "library": null,
+   "description": "scroll (planned name): the poet's verse. Rolled: 46 x 14 paper tube with yellow end caps. Open: 70 x 46 paper sheet with 3 wavy lines and a tiny camel doodle (12 px) in the corner; fields open 0..1, rot. Carried in a hand (P.hands) or tucked in the sash (only the end shows).",
+   "new": true
+  },
+  {
+   "id": "verse",
+   "library": null,
+   "description": "verseRibbon (planned name, AN-103): spoken poetry as a paper band 34 wide following a bezier from the speaker's mouth; squiggle lines of 'writing' appear along it with draw-on 0..1; the end can curl (one 30-radius loop) and it can fade from the tail. Three colours of edge: red (Umaymah), blue (the poet), yellow (the groom). No real words are written on it.",
+   "new": true
+  },
+  {
+   "id": "lamps",
+   "library": "hangingLamp",
+   "description": "Seven hangingLamp(ctx, x, y, t, {lit}) on the camp rope; each with its own lit value and swing(); a yellow halftone disc r 60 on the carpet under each lit lamp.",
+   "new": false
+  },
+  {
+   "id": "drum",
+   "library": "drum",
+   "description": "Library drum at r 34, hole 0, as a hand drum held on the knee by each drummer; squash 8 % on each hit.",
+   "new": false
+  },
+  {
+   "id": "tally",
+   "library": null,
+   "description": "tallyMarks(ctx, x, y, n): n short scratched strokes (each 22 high, 6 apart, slightly irregular from K.rng seed) in groups of five with the fifth across, white on the dark pole. n = 6 then 7. Scene-drawn, tiny.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 9.1,
+   "paragraphs": [
+    1
+   ],
+   "set": "road",
+   "cast": [
+    "mutalammis",
+    "camel",
+    "king"
+   ],
+   "summary": "Night flight. The poet gallops out of the king's city on his camel; the king points after him from the wall; the rider shrinks into the dunes and the sky wheels through days and nights.",
+   "camera": {
+    "shot": "establishing",
+    "move": "track",
+    "notes": "desertRoad strip w 2400, city 'left'. Start camX 0 (city gate at left third), track right with the camel to camX 700 by 5.0, then hold while the camel walks away from the camera into the far dunes (scale 0.62 to 0.2). Zoom 1.0 throughout; no push-in."
+   },
+   "composition": "City wall and gate fill the left 35 % at the start; king small on the wall top (head at about y 470, measure on the set) so the eye reads him as power far away. Camel runs along the track at ground y 900, rider head near y 520. From 5.06 the camel is on the mid dune line (y about 800) going right and getting smaller; moon top right.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 1.2,
+     "cue": {
+      "word": "هرب",
+      "t": 0.0
+     },
+     "who": "camel",
+     "action": "bursts out of the city gate at a fast pace, left to right, dust at every footfall",
+     "acting": "neck stretched forward (neck 0.6), ears back, eyes wide; pacing gait from walk(xf, t, {stride: GAIT.camel * 0.62}) so the feet never slide",
+     "library": "camel + walk + footfalls + dustBurst"
+    },
+    {
+     "t": 0.42,
+     "end": 2.2,
+     "cue": {
+      "word": "الشاعر",
+      "t": 0.42
+     },
+     "who": "mutalammis",
+     "action": "rides bent low over the hump, one hand on the saddle, the other holding a rolled verse scroll against his chest",
+     "acting": "gaze back over his shoulder toward the wall [-1, -0.1], brow raised (-0.5), mouth 'o'; lurch forward on each stride, keffiyeh tail trailing 2 frames late",
+     "library": "rideOn(ctx, 'camel', C, {costume: 'bedouin', lurch}) ; handL to chest (PERSON_HANDS.chest.L)"
+    },
+    {
+     "t": 1.2,
+     "end": 2.2,
+     "cue": {
+      "word": "المتلمس",
+      "t": 1.2
+     },
+     "who": "lettering",
+     "action": "name label AL-MUTALAMMIS, THE POET with a short arrow to the rider; fades by 2.4",
+     "acting": "label sits above and behind the rider, never over the face",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 2.5,
+     "end": 4.0,
+     "cue": {
+      "word": "الملك",
+      "t": 2.62
+     },
+     "who": "king",
+     "action": "appears on the wall top above the gate and throws one arm out, pointing after the rider",
+     "acting": "angry V brow (0.9), mouth open, tip 0.1 forward; anticipation dip 0.2 s before the arm snaps out (settleTo overshoot)",
+     "library": "person {costume: 'caliph', s: 0.5, aR angle forward} + anticipate + settleTo"
+    },
+    {
+     "t": 3.1,
+     "end": 4.6,
+     "cue": {
+      "word": "النعمان",
+      "t": 3.16
+     },
+     "who": "lettering",
+     "action": "label KING AL-NUMAN beside the king, arrow down to him",
+     "acting": "small label (>= 28 px), clear of his crown",
+     "library": "S.label"
+    },
+    {
+     "t": 4.3,
+     "end": 5.0,
+     "cue": {
+      "word": "المنذر",
+      "t": 4.24
+     },
+     "who": "camera",
+     "action": "the track right leaves the wall and the pointing king off the left edge",
+     "acting": "the threat stays behind; the open dark desert takes over the frame",
+     "library": "CAM keys in pairs"
+    },
+    {
+     "t": 5.0,
+     "end": 6.9,
+     "cue": {
+      "word": "وغاب",
+      "t": 5.06
+     },
+     "who": "camel",
+     "action": "turns away from the track up onto the far dune and shrinks (s 0.62 to 0.2), crossing the ridge",
+     "acting": "rider looks back once at 6.0 (headTurn of the rider: gaze [-1, 0]) then forward; slower walk now, the panic is over",
+     "library": "camel s keyed + walk"
+    },
+    {
+     "t": 6.3,
+     "end": 7.0,
+     "cue": {
+      "word": "أهله",
+      "t": 6.38
+     },
+     "who": "fx",
+     "action": "small thought cloud above the tiny rider: Umaymah's face in a medallion, one beat only",
+     "acting": "tells who he leaves behind before we meet her; cloud pops trail first",
+     "library": "thoughtCloud {scale 0.3} with portraitMedallion(umaymah)"
+    },
+    {
+     "t": 6.9,
+     "end": 8.8,
+     "cue": {
+      "word": "زمنًا",
+      "t": 6.92
+     },
+     "who": "set",
+     "action": "the sky wheels: night, day, night, day, night (u from 0.75 through 2.75) while the empty dune ridge stays still; his footprints fade",
+     "acting": "the only motion is the sky and a drifting moon and sun; stillness after the chase",
+     "library": "skyCycle(ctx, u) with u = kfn(t, [[6.9, 0.75], [8.8, 2.75]])"
+    },
+    {
+     "t": 7.7,
+     "end": 9.1,
+     "cue": {
+      "word": "طويلًا",
+      "t": 7.76
+     },
+     "who": "lettering",
+     "action": "counter in the panel corner ticks YEAR 1, YEAR 2, YEAR 3 with each turn of the sky",
+     "acting": "counter top left, small",
+     "library": "S.counter"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 1.2,
+     "text": "AL-MUTALAMMIS, THE POET"
+    },
+    {
+     "t": 3.1,
+     "text": "KING AL-NUMAN"
+    },
+    {
+     "t": 7.8,
+     "text": "YEAR 3"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 9.1,
+    "label": "YEARS LATER..."
+   }
+  },
+  {
+   "id": "S2",
+   "start": 9.1,
+   "end": 21.54,
+   "paragraphs": [
+    1
+   ],
+   "set": "camp",
+   "cast": [
+    "umaymah",
+    "rider",
+    "horse",
+    "gossipA",
+    "gossipB"
+   ],
+   "summary": "The camp by day. Umaymah stands at the tent post watching the horizon; a rider passes without news; two neighbours whisper that the poet is dead.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Camp world 1600 wide. Open on the big tent at camera x 800, zoom 1.0; slow push to zoom 1.35 centred x 760, y 700 by 16.4. At 17.2 reframe (0.5 s ease) to x 520 to include the two gossips left of the tent, keeping Umaymah in frame on the right."
+   },
+   "composition": "Umaymah at x 640 by the tally post (x 560), facing right toward the horizon gap at (1500, 840). The rider crosses on the mid dune behind the tent line (y 840, small, s 0.4). Gossips at x 300 and 390, heads about y 680, in front of the small tent.",
+   "actions": [
+    {
+     "t": 9.2,
+     "end": 10.2,
+     "cue": {
+      "word": "انتظرته",
+      "t": 9.22
+     },
+     "who": "umaymah",
+     "action": "stands at the tent post, one hand on the pole, the other shading her eyes, scanning the horizon",
+     "acting": "gaze far right [1, -0.1] with slow saccades (gazePlan 0.07) along the dune line; breathe(); brow raised -0.4",
+     "library": "person {costume: 'lady'} + handRW on the pole + gazePlan"
+    },
+    {
+     "t": 10.1,
+     "end": 11.0,
+     "cue": {
+      "word": "زوجته",
+      "t": 10.16
+     },
+     "who": "lettering",
+     "action": "label UMAYMAH, HIS WIFE with an arrow",
+     "acting": "above her head, clear of the veil",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 10.9,
+     "end": 11.9,
+     "cue": {
+      "word": "أميمة",
+      "t": 10.94
+     },
+     "who": "umaymah",
+     "action": "scratches one more tally mark on the post with a small stone (the 7th mark)",
+     "acting": "eyes drop to the post, lid 0.3, mouth closed; the arm does one short stroke with a 0.15 s anticipation",
+     "library": "handRW to the post at y 700; tallyMarks n 6 to 7"
+    },
+    {
+     "t": 11.8,
+     "end": 12.7,
+     "cue": {
+      "word": "بقلق",
+      "t": 11.92
+     },
+     "who": "umaymah",
+     "action": "both hands clasp at her chest; she rocks a little on her feet",
+     "acting": "wet: false yet; brow -0.7 (worried), tremble amplitude 1, sq pulses 0.98",
+     "library": "PERSON_HANDS.clasp + tremble"
+    },
+    {
+     "t": 12.7,
+     "end": 14.2,
+     "cue": {
+      "word": "يصلها",
+      "t": 13.54
+     },
+     "who": "rider",
+     "action": "a horseman trots along the far dune from right to left",
+     "acting": "Umaymah sees him: gaze snaps to him, she rises on her toes (sq 1.04), takes two quick steps forward, hand half raised",
+     "library": "horse pal 1 + rideOn servant, s 0.4; walk for both"
+    },
+    {
+     "t": 14.3,
+     "end": 15.2,
+     "cue": {
+      "word": "خبر",
+      "t": 14.68
+     },
+     "who": "rider",
+     "action": "does not slow; passes behind the tent and is gone at the left",
+     "acting": "her raised hand stops in the air, then sinks; head follows him all the way left then drops 6 px",
+     "library": "gaze plan follows the rider; settleTo on the arm"
+    },
+    {
+     "t": 15.2,
+     "end": 16.3,
+     "cue": {
+      "word": "يطمئنها",
+      "t": 15.22
+     },
+     "who": "umaymah",
+     "action": "turns back to the empty horizon, shoulders down",
+     "acting": "lid 0.45, mouth 'frown', tip -0.04; one slow blink",
+     "library": "lid ramp + blink"
+    },
+    {
+     "t": 16.5,
+     "end": 17.4,
+     "cue": {
+      "word": "حتى",
+      "t": 16.46
+     },
+     "who": "camera",
+     "action": "reframe left to bring in two neighbours by the small tent",
+     "acting": "they have been there, backs half turned, since the scene began (so they do not pop in)",
+     "library": "CAM key pair"
+    },
+    {
+     "t": 17.3,
+     "end": 18.2,
+     "cue": {
+      "word": "شاع",
+      "t": 17.46
+     },
+     "who": "gossipA",
+     "action": "leans to the other and whispers behind a cupped hand",
+     "acting": "gaze flicks toward Umaymah and away (mask: they stop when she might look); eyebrows up",
+     "library": "PERSON_HANDS.cupMouth, tip 0.12"
+    },
+    {
+     "t": 18.1,
+     "end": 19.0,
+     "cue": {
+      "word": "الناس",
+      "t": 18.22
+     },
+     "who": "gossipB",
+     "action": "nods slowly, then shakes his head; a picture balloon rises between them",
+     "acting": "listener reaction 4 frames after the whisper (stagger); hand to chin",
+     "library": "PERSON_HANDS.chin + iconBalloon pop"
+    },
+    {
+     "t": 19.5,
+     "end": 20.3,
+     "cue": {
+      "word": "مات",
+      "t": 19.66
+     },
+     "who": "fx",
+     "action": "in the balloon: the poet's portrait medallion, then a soft grey wash over it and a small question mark turning into a plain X",
+     "acting": "no grave, no body; the X is drawn on in 4 frames. Umaymah, at the edge of frame, hears: head turns 10 degrees, eyes close",
+     "library": "iconBalloon + portraitMedallion + X"
+    },
+    {
+     "t": 20.2,
+     "end": 21.5,
+     "cue": {
+      "word": "يعود",
+      "t": 20.98
+     },
+     "who": "umaymah",
+     "action": "turns her back on the whisperers and puts her palm flat on the tally post",
+     "acting": "wet eyes on, one tear; mouth set, not crying aloud; holds",
+     "library": "wet: true, lid 0.5"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 10.1,
+     "text": "UMAYMAH, HIS WIFE"
+    },
+    {
+     "t": 13.6,
+     "text": "NEWS?"
+    },
+    {
+     "t": 19.7,
+     "text": "DEAD?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 21.54
+   }
+  },
+  {
+   "id": "S3",
+   "start": 21.54,
+   "end": 30.1,
+   "paragraphs": [
+    2
+   ],
+   "set": "camp",
+   "cast": [
+    "umaymah",
+    "suitor1"
+   ],
+   "summary": "Close on Umaymah inside the tent mouth holding the poet's verse scroll; a first suitor offers a gift and she refuses.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Zoom 1.7 on Umaymah at x 700, camera y 720. Locked off; the acting carries it. At 26.6 a small pan (40 units right) admits the suitor."
+   },
+   "composition": "Umaymah left of centre, head at about panel y 420. The scroll at chest height. Suitor enters from the right edge and stops at x 900, so the refusal reads right to left.",
+   "actions": [
+    {
+     "t": 21.6,
+     "end": 22.5,
+     "cue": {
+      "word": "كانت",
+      "t": 21.54
+     },
+     "who": "umaymah",
+     "action": "sits on a cushion in the tent mouth and unrolls a small scroll on her knee",
+     "acting": "gaze down at the scroll, soft smile starting, lid 0.25",
+     "library": "person {sit: 1, seat: 'bench'} on floorCushion; scroll prop"
+    },
+    {
+     "t": 22.5,
+     "end": 23.3,
+     "cue": {
+      "word": "أميمة",
+      "t": 22.52
+     },
+     "who": "scroll",
+     "action": "the scroll shows wavy lines of verse and a tiny drawn camel: his writing",
+     "acting": "a glint runs along the lines once",
+     "library": "scroll (planned) lines 3"
+    },
+    {
+     "t": 23.3,
+     "end": 24.6,
+     "cue": {
+      "word": "تحب",
+      "t": 23.34
+     },
+     "who": "umaymah",
+     "action": "presses the scroll to her chest with both hands and closes her eyes",
+     "acting": "lid 1 for 0.5 s, smile, tip -0.05 (leans back into the memory), sq 1.02 breath in",
+     "library": "PERSON_HANDS.chest both hands"
+    },
+    {
+     "t": 24.6,
+     "end": 26.5,
+     "cue": {
+      "word": "حبًا",
+      "t": 24.66
+     },
+     "who": "fx",
+     "action": "a red heart pops above the scroll, pulses twice (on 24.66 and 25.42) and stays small beside her",
+     "acting": "heart never covers her face; pulse = 1 + 0.15 * pulse(t, ...)",
+     "library": "Library heart prop (catalogue props) + pulse"
+    },
+    {
+     "t": 26.6,
+     "end": 27.6,
+     "cue": {
+      "word": "ولذلك",
+      "t": 26.66
+     },
+     "who": "suitor1",
+     "action": "a well-dressed young man walks in from the right holding out a necklace on both palms",
+     "acting": "eager smile, brows up, small bow (tip 0.12) as he stops",
+     "library": "person {costume: 'prince', pal other colours} + walk + PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 27.6,
+     "end": 28.6,
+     "cue": {
+      "word": "رفضت",
+      "t": 27.72
+     },
+     "who": "umaymah",
+     "action": "one hand comes up flat between them; she turns her head away and hugs the scroll with the other arm",
+     "acting": "anticipation: a tiny lean toward him first (2 frames), then away tip -0.1; brow 0.4 firm, eyes shut one beat then on the scroll",
+     "library": "PERSON_HANDS.shield (R) + anticipate"
+    },
+    {
+     "t": 28.6,
+     "end": 29.4,
+     "cue": {
+      "word": "تتزوج",
+      "t": 28.78
+     },
+     "who": "suitor1",
+     "action": "the necklace droops on his palms; his smile falls",
+     "acting": "mouth 'o' then 'frown', gaze from her face down to the necklace",
+     "library": "settleTo on the hands dropping 12 units"
+    },
+    {
+     "t": 29.3,
+     "end": 30.1,
+     "cue": {
+      "word": "غيره",
+      "t": 29.44
+     },
+     "who": "suitor1",
+     "action": "backs out the way he came, still facing her",
+     "acting": "two short backward steps, head low; the heart beside her gives one more small pulse as he leaves",
+     "library": "walk backwards (dir kept)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 27.8,
+     "text": "NO!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 30.1
+   }
+  },
+  {
+   "id": "S4",
+   "start": 30.1,
+   "end": 43.5,
+   "paragraphs": [
+    2
+   ],
+   "set": "camp",
+   "cast": [
+    "umaymah",
+    "father",
+    "mother"
+   ],
+   "summary": "Her father and mother come to her at the tent and argue for a new life: the horizon is empty, no word has come, the tally on the post is long.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "Three figures: zoom 1.3, camera x 700, y 700, drifting 30 units right over the scene. At 39.6 push to 1.6 on the tally post and Umaymah's hand (x 600, y 720), back out is not needed (cut)."
+   },
+   "composition": "Umaymah centre (x 700) standing, scroll in her hand. Father enters left (x 560), mother right (x 850): she is boxed in, a visual of pressure. Tally post at x 560 just behind the father; horizon gap far right.",
+   "actions": [
+    {
+     "t": 30.2,
+     "end": 31.0,
+     "cue": {
+      "word": "لكن",
+      "t": 30.22
+     },
+     "who": "father",
+     "action": "walks in from the left with a stick, stops close to her",
+     "acting": "grey beard, stooped (age 0.75); kind but firm: brow 0.2, gaze on her",
+     "library": "person {costume: 'bedouin', age 0.75, hold: 'stick', pal brown cloak} + walk"
+    },
+    {
+     "t": 30.9,
+     "end": 31.8,
+     "cue": {
+      "word": "أهلها",
+      "t": 30.98
+     },
+     "who": "mother",
+     "action": "comes in from the right, hands already out to her daughter",
+     "acting": "worried brow -0.6, head tilted; arrives 6 frames after the father (stagger)",
+     "library": "person {costume: 'oldWoman'} + walk + PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 31.7,
+     "end": 32.6,
+     "cue": {
+      "word": "قالوا",
+      "t": 31.78
+     },
+     "who": "father",
+     "action": "speaks: free hand opens toward her, then turns palm up",
+     "acting": "talk 0.7 on the word stresses; Umaymah's gaze goes to him, lid 0.3, scroll held tighter",
+     "library": "talk + PERSON_HANDS.palmsUp (one hand)"
+    },
+    {
+     "t": 33.5,
+     "end": 34.4,
+     "cue": {
+      "word": "تبدأ",
+      "t": 33.82
+     },
+     "who": "father",
+     "action": "points with the stick toward the left, away from the horizon, where the sun is coming up",
+     "acting": "his gaze follows his own pointing; she does not look there",
+     "library": "aL angle + stick; skyCycle u toward 0.08 (morning glow at left)"
+    },
+    {
+     "t": 34.3,
+     "end": 35.8,
+     "cue": {
+      "word": "حياة",
+      "t": 34.38
+     },
+     "who": "fx",
+     "action": "a picture balloon over the father: a new small tent with a rising sun beside it",
+     "acting": "balloon pops over the father's side, clear of all three faces",
+     "library": "iconBalloon single (tent + sun icon)"
+    },
+    {
+     "t": 35.9,
+     "end": 36.6,
+     "cue": {
+      "word": "وإن",
+      "t": 35.86
+     },
+     "who": "mother",
+     "action": "takes Umaymah's free hand in both of hers",
+     "acting": "gaze up into her face, mouth talking softly (talk 0.4)",
+     "library": "handLW / handRW to Umaymah's hand point"
+    },
+    {
+     "t": 36.6,
+     "end": 37.9,
+     "cue": {
+      "word": "الانتظار",
+      "t": 36.66
+     },
+     "who": "mother",
+     "action": "one hand leaves hers and sweeps slowly across the empty horizon on the right",
+     "acting": "Umaymah's eyes follow the sweep to the horizon gap: nothing there; her brow -0.7",
+     "library": "aR sweep keyed; gazePlan for Umaymah"
+    },
+    {
+     "t": 37.8,
+     "end": 39.0,
+     "cue": {
+      "word": "فائدة",
+      "t": 37.92
+     },
+     "who": "set",
+     "action": "on the far dune a single dust devil turns and dies; no rider",
+     "acting": "the empty answer to the mother's gesture; a held second where only the dust moves",
+     "library": "dustBurst on the mid dune, small"
+    },
+    {
+     "t": 39.7,
+     "end": 40.5,
+     "cue": {
+      "word": "انقطعت",
+      "t": 39.82
+     },
+     "who": "fx",
+     "action": "the balloon changes to a messenger on a horse; the icon is cut through by a red line",
+     "acting": "icon swap with a 2-frame flash; father shakes his head once",
+     "library": "iconBalloon (horse silhouette, struck)"
+    },
+    {
+     "t": 40.4,
+     "end": 41.5,
+     "cue": {
+      "word": "أخبار",
+      "t": 40.44
+     },
+     "who": "umaymah",
+     "action": "looks down at the scroll in her hand; her thumb moves over it",
+     "acting": "lid 0.5, wet eyes, mouth closed; she has no answer",
+     "library": "wet: true; hand prop follow"
+    },
+    {
+     "t": 41.5,
+     "end": 42.6,
+     "cue": {
+      "word": "كل",
+      "t": 41.62
+     },
+     "who": "camera",
+     "action": "push in on the tent post: the father taps the tally marks with his stick, one, two, three",
+     "acting": "three taps on 41.62, 42.12, 42.64 (the words each, those, years); marks hop 2 units at each tap",
+     "library": "countedBeats on the three onsets; tallyMarks n 7"
+    },
+    {
+     "t": 42.6,
+     "end": 43.5,
+     "cue": {
+      "word": "السنوات",
+      "t": 42.64
+     },
+     "who": "lettering",
+     "action": "counter beside the post: 7 YEARS",
+     "acting": "hold to the cut; Umaymah's hand comes to rest on the marks beside the stick",
+     "library": "S.counter"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 42.7,
+     "text": "7 YEARS"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 43.5
+   }
+  },
+  {
+   "id": "S5",
+   "start": 43.5,
+   "end": 54.9,
+   "paragraphs": [
+    3
+   ],
+   "set": "camp",
+   "cast": [
+    "umaymah",
+    "father",
+    "mother",
+    "suitor1",
+    "suitor2",
+    "groom"
+   ],
+   "summary": "Suitors line up with gifts; the parents close in; she finally gives one small nod and looks back at the horizon.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide zoom 1.05 at camera x 880 for the line of suitors (43.5-47.4); from 47.4 push in to a medium on Umaymah between her parents (zoom 1.6, x 700, y 720) reaching it at 50.0; hold; at 52.4 a slow 40-unit pan right toward the horizon she looks at."
+   },
+   "composition": "Umaymah at x 700 in the tent mouth; suitors queue to the right at x 900, 1010, 1120 facing left, each with a gift. Parents step in from behind her at 47.4. The groom is the third in line and the calmest.",
+   "actions": [
+    {
+     "t": 43.5,
+     "end": 44.4,
+     "cue": {
+      "word": "كثر",
+      "t": 43.5
+     },
+     "who": "suitor1",
+     "action": "the first suitor pops into place at the head of a queue, gift held out",
+     "acting": "each arrival: hop in with landSquash, a different gift (necklace, cloth bolt, small chest)",
+     "library": "person {costume: 'prince'} + hop + landSquash"
+    },
+    {
+     "t": 44.4,
+     "end": 45.1,
+     "cue": {
+      "word": "الذين",
+      "t": 44.54
+     },
+     "who": "suitor2",
+     "action": "the second lands behind him, peers round the first one's shoulder",
+     "acting": "impatient: tapping foot (raise pulse), brow 0.3",
+     "library": "person {costume: 'merchant'} + stagger(1)"
+    },
+    {
+     "t": 45.1,
+     "end": 45.8,
+     "cue": {
+      "word": "طلبوا",
+      "t": 45.14
+     },
+     "who": "groom",
+     "action": "the third arrives last and simply stands, hands folded, a flower in his sash",
+     "acting": "calm smile, patient blink; he alone does not push forward: marks him as the decent man for the ending",
+     "library": "person {costume: 'merchant', pal green robe, yellow turban} + PERSON_HANDS.folded"
+    },
+    {
+     "t": 45.7,
+     "end": 46.4,
+     "cue": {
+      "word": "يدها",
+      "t": 45.8
+     },
+     "who": "lettering",
+     "action": "counter over the queue: SUITORS 1, 2, 3",
+     "acting": "ticks with the three landings, final value shown at 45.8",
+     "library": "S.counter"
+    },
+    {
+     "t": 46.9,
+     "end": 47.6,
+     "cue": {
+      "word": "واستمر",
+      "t": 46.9
+     },
+     "who": "father",
+     "action": "steps in at her left shoulder",
+     "acting": "closer than in S4 (gap 70 units, was 140)",
+     "library": "walk 2 steps"
+    },
+    {
+     "t": 47.5,
+     "end": 48.4,
+     "cue": {
+      "word": "ضغط",
+      "t": 47.58
+     },
+     "who": "mother",
+     "action": "steps in at her right shoulder; both parents lean their heads toward her",
+     "acting": "Umaymah is squeezed: sq 0.94, shoulders up, gaze down; parents tip 0.1 toward her from both sides",
+     "library": "tip + sq (pressure as a physical squeeze)"
+    },
+    {
+     "t": 48.4,
+     "end": 49.4,
+     "cue": {
+      "word": "عليها",
+      "t": 48.78
+     },
+     "who": "father",
+     "action": "taps the ground with his stick twice; mother nods along",
+     "acting": "taps at 48.78 and 49.2; each tap is a 3-unit hop of the scroll in her hand",
+     "library": "kick() on two tap times"
+    },
+    {
+     "t": 49.9,
+     "end": 50.8,
+     "cue": {
+      "word": "وافقت",
+      "t": 50.12
+     },
+     "who": "umaymah",
+     "action": "one small nod, eyes shut",
+     "acting": "anticipation: head lifts 4 px and holds 0.2 s (she almost refuses), then drops 10 px; lid 1; no smile",
+     "library": "head drop keyed + lid"
+    },
+    {
+     "t": 50.8,
+     "end": 51.6,
+     "cue": {
+      "word": "أخيرًا",
+      "t": 50.86
+     },
+     "who": "mother",
+     "action": "claps her hands together in relief and hugs her shoulder; father straightens and breathes out",
+     "acting": "parents' smiles against her closed face; the suitors in the background straighten their turbans",
+     "library": "PERSON_HANDS.clasp; sq 1.03 on the father"
+    },
+    {
+     "t": 51.6,
+     "end": 52.4,
+     "cue": {
+      "word": "وهي",
+      "t": 51.6
+     },
+     "who": "umaymah",
+     "action": "opens her eyes; they are wet",
+     "acting": "wet: true, lid 0.4, brow -0.7",
+     "library": "wet"
+    },
+    {
+     "t": 52.4,
+     "end": 53.7,
+     "cue": {
+      "word": "غير",
+      "t": 52.42
+     },
+     "who": "umaymah",
+     "action": "her head turns back to the horizon gap one more time while her parents talk to the groom",
+     "acting": "gaze far right; hand goes to her chest over the scroll tucked in her sash",
+     "library": "lookAt horizon + PERSON_HANDS.chest"
+    },
+    {
+     "t": 53.8,
+     "end": 54.9,
+     "cue": {
+      "word": "قرارها",
+      "t": 54.1
+     },
+     "who": "scroll",
+     "action": "the scroll end shows above her sash; her fingers close on it",
+     "acting": "small insert by push to zoom 1.9 for the last second: the object that will matter at the wedding",
+     "library": "CAM key"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 45.8,
+     "text": "SUITORS: 3"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 46.63,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 54.9
+   }
+  },
+  {
+   "id": "S6",
+   "start": 54.9,
+   "end": 65.04,
+   "paragraphs": [
+    3
+   ],
+   "set": "camp",
+   "cast": [
+    "umaymah",
+    "groom",
+    "drummerA",
+    "drummerB",
+    "guestA",
+    "guestB"
+   ],
+   "summary": "Night falls on the camp; the lamp string lights one lamp at a time; guests gather, drums and song begin. Umaymah sits beside the groom, still.",
+   "camera": {
+    "shot": "wide",
+    "move": "crane",
+    "notes": "Start high on the sky (camera y 520, zoom 1.0, x 800) as it turns to night, crane down to y 700 by 57.6; hold the wide wedding tableau; slight drift right 30 units to the end."
+   },
+   "composition": "The big tent open in the centre: groom seated at x 740, Umaymah at x 860 on cushions under the lamp string. Drummers seated on the ground left at x 330 and 430; two guests right at x 1150 and 1240. The right edge of the frame (x 1300+) is left dark and empty: that is where he will come from.",
+   "actions": [
+    {
+     "t": 55.0,
+     "end": 56.0,
+     "cue": {
+      "word": "حددوا",
+      "t": 54.94
+     },
+     "who": "set",
+     "action": "the sky turns from dusk to night (u 0.45 to 0.72); stars fade in",
+     "acting": "the tents darken to silhouettes",
+     "library": "skyCycle u keyed"
+    },
+    {
+     "t": 56.0,
+     "end": 57.4,
+     "cue": {
+      "word": "ليلة",
+      "t": 56.06
+     },
+     "who": "lamps",
+     "action": "seven lamps on the string light one by one from left to right (every 0.18 s), each with a small flare",
+     "acting": "warm discs appear on the carpet under each lamp",
+     "library": "hangingLamp {lit} x7 with stagger(i); desertCamp lamps n"
+    },
+    {
+     "t": 56.8,
+     "end": 57.8,
+     "cue": {
+      "word": "للزفاف",
+      "t": 56.74
+     },
+     "who": "lettering",
+     "action": "title label THE WEDDING NIGHT over the tent roof",
+     "acting": "pops on the word, gone by 59.0",
+     "library": "S.title small"
+    },
+    {
+     "t": 57.8,
+     "end": 58.8,
+     "cue": {
+      "word": "واجتمع",
+      "t": 57.82
+     },
+     "who": "drummerA",
+     "action": "two drummers walk in from the left and sit down on the ground with hand drums",
+     "acting": "they arrive one after the other (stagger 8 frames), sit with a small bounce",
+     "library": "person {sit: 1, seat: 'floor'} + walk"
+    },
+    {
+     "t": 58.7,
+     "end": 59.5,
+     "cue": {
+      "word": "الناس",
+      "t": 58.76
+     },
+     "who": "guestA",
+     "action": "two guests walk in from the tent's right side and sit; one waves to the groom",
+     "acting": "the groom waves back, beaming; Umaymah does not turn her head",
+     "library": "person costumes villager / villageWoman + PERSON_HANDS.wave"
+    },
+    {
+     "t": 59.4,
+     "end": 60.4,
+     "cue": {
+      "word": "الحي",
+      "t": 59.48
+     },
+     "who": "fx",
+     "action": "the fire at x 1220 catches and far tents on the dune show lit door slits",
+     "acting": "the whole neighbourhood is awake",
+     "library": "desertCamp fire 0 to 1, farLit"
+    },
+    {
+     "t": 60.5,
+     "end": 61.3,
+     "cue": {
+      "word": "وسمعت",
+      "t": 60.56
+     },
+     "who": "camera",
+     "action": "settle on the wide tableau",
+     "acting": "everything in place: groom smiling at the guests, bride looking at her hands",
+     "library": "CAM hold"
+    },
+    {
+     "t": 61.7,
+     "end": 62.5,
+     "cue": {
+      "word": "الغناء",
+      "t": 61.8
+     },
+     "who": "guestB",
+     "action": "a guest throws her head back and sings; notes rise from her",
+     "acting": "mouth open, lid 0.8, hand on chest; notes on seeded S-paths",
+     "library": "talk 1 + musicNotes (planned)"
+    },
+    {
+     "t": 62.4,
+     "end": 63.3,
+     "cue": {
+      "word": "والدفوف",
+      "t": 62.52
+     },
+     "who": "drummerA",
+     "action": "both drummers strike: alternate hands on the drum heads, heads bobbing off the beat from each other",
+     "acting": "strike cycle: lift, whip down, rebound; drum skin squashes 8 %; steady beat every 0.4 s from 62.52 on",
+     "library": "drum {r: 34} held with handLW/handRW + countedBeats (0.4 s grid)"
+    },
+    {
+     "t": 63.3,
+     "end": 64.1,
+     "cue": {
+      "word": "من",
+      "t": 63.32
+     },
+     "who": "lettering",
+     "action": "DUM! TAK! over the drummers, alternating with the hits (two pops only)",
+     "acting": "lettering above the drums, not on faces",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 64.0,
+     "end": 65.0,
+     "cue": {
+      "word": "الخيام",
+      "t": 63.68
+     },
+     "who": "umaymah",
+     "action": "in the middle of it all she sits with her head low; her hand rests on the scroll in her sash",
+     "acting": "the one still figure in a moving picture: no bob, lid 0.5, gaze down; a slow blink",
+     "library": "sit on cushion; noBlink off, lid 0.5"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 56.8,
+     "text": "THE WEDDING NIGHT"
+    },
+    {
+     "t": 63.3,
+     "text": "DUM! TAK!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "whip",
+    "t": 65.04
+   }
+  },
+  {
+   "id": "S7",
+   "start": 65.04,
+   "end": 73.3,
+   "paragraphs": [
+    4
+   ],
+   "set": "camp",
+   "cast": [
+    "mutalammis",
+    "camel"
+   ],
+   "summary": "The same night, at the dark right edge of the camp: the poet's camel rises over the dune lip. He dismounts, sees the lamps, hears the drums.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Whip from the tent to the right end of the camp (camera x 1250, zoom 1.15). Hold as the camel rises over the lip; at 70.3 pan left 180 units to put the distant lamp string in the left of frame with him on the right (over-his-shoulder feeling)."
+   },
+   "composition": "Dune lip (front pass) across the right third, top y 860. The camel comes up behind it at x 1500 so head, then hump, then legs appear. Tent lamps are small and warm at frame left; he is dark blue-grey in moonlight on the right.",
+   "actions": [
+    {
+     "t": 65.1,
+     "end": 66.4,
+     "cue": {
+      "word": "وفي",
+      "t": 65.04
+     },
+     "who": "lettering",
+     "action": "label THAT VERY NIGHT... top left",
+     "acting": "a label, not a transition card: time is continuous here",
+     "library": "S.label"
+    },
+    {
+     "t": 66.4,
+     "end": 67.2,
+     "cue": {
+      "word": "نفسها",
+      "t": 66.48
+     },
+     "who": "camel",
+     "action": "the tip of a keffiyeh, then a camel's head, rises behind the dune lip",
+     "acting": "reveal by rising from behind the front lip; slow tired pace (amp 0.5)",
+     "library": "desertCamp front lip + camel walk"
+    },
+    {
+     "t": 67.2,
+     "end": 68.2,
+     "cue": {
+      "word": "عاد",
+      "t": 67.22
+     },
+     "who": "mutalammis",
+     "action": "full figure on the camel crests the lip: older, dusty, the same cream robe with a patch",
+     "acting": "age 0.35 (grey in the beard), lid 0.4 tired, gaze ahead; head lags the camel's bob",
+     "library": "rideOn(ctx, 'camel', C, {costume: 'bedouin', age: 0.35})"
+    },
+    {
+     "t": 68.0,
+     "end": 69.0,
+     "cue": {
+      "word": "المتلمس",
+      "t": 68.06
+     },
+     "who": "lettering",
+     "action": "arrow and label HE IS ALIVE!",
+     "acting": "pops beside him and is gone in 1 s",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 69.1,
+     "end": 70.3,
+     "cue": {
+      "word": "سفره",
+      "t": 69.22
+     },
+     "who": "camel",
+     "action": "stops and kneels: front legs fold, then the rear; the rider lurches and steps off",
+     "acting": "camel grumble (talk 0.4), chew after it settles; he dismounts with a small landSquash and pats its neck",
+     "library": "camel kneel 0 to 1 over 0.9 s + lurch + landSquash"
+    },
+    {
+     "t": 70.3,
+     "end": 71.2,
+     "cue": {
+      "word": "ورأى",
+      "t": 70.34
+     },
+     "who": "mutalammis",
+     "action": "straightens and sees the lights; stops dead",
+     "acting": "gaze snaps left to the lamp string (lookAt), eyes wide, brow -0.6; a 0.3 s freeze where only the pupils move along the string",
+     "library": "lookAt + saccades"
+    },
+    {
+     "t": 70.9,
+     "end": 72.0,
+     "cue": {
+      "word": "الزينة",
+      "t": 70.88
+     },
+     "who": "camera",
+     "action": "pan left so the lamps and tiny dancing silhouettes share the frame with him",
+     "acting": "we see what he sees over his shoulder",
+     "library": "CAM key pair"
+    },
+    {
+     "t": 72.0,
+     "end": 73.2,
+     "cue": {
+      "word": "وسمع",
+      "t": 72.12
+     },
+     "who": "mutalammis",
+     "action": "cups a hand to his ear; two music notes drift to him from the tent",
+     "acting": "head tilts toward the sound, a puzzled half smile: a feast? for whom?",
+     "library": "PERSON_HANDS.cupEar + musicNotes path toward him"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 65.1,
+     "text": "THAT VERY NIGHT..."
+    },
+    {
+     "t": 68.0,
+     "text": "HE IS ALIVE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 73.3
+   }
+  },
+  {
+   "id": "S8",
+   "start": 73.3,
+   "end": 85.9,
+   "paragraphs": [
+    4
+   ],
+   "set": "camp",
+   "cast": [
+    "mutalammis",
+    "boy",
+    "girl",
+    "camel"
+   ],
+   "summary": "Two children playing by the fire tell the stranger the news in pictures: Umaymah, wife of the dead poet, is marrying another man. He hears his own death announced.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Medium three-figure shot near the fire: zoom 1.5, camera x 1230, y 740. From 79.2 slow push to zoom 1.9 on his face (x 1300, y 690), balloon kept in frame top left."
+   },
+   "composition": "Children at x 1160 and 1210 beside the fire (x 1220 moved back a layer), he at x 1330 kneeling to their height so all three heads are in one band (y about 720-760). The picture balloon sits top left of the panel, over the children, never over his face.",
+   "actions": [
+    {
+     "t": 73.3,
+     "end": 74.3,
+     "cue": {
+      "word": "سأل",
+      "t": 73.32
+     },
+     "who": "mutalammis",
+     "action": "walks to two children and kneels on one knee to their height",
+     "acting": "gentle: brow -0.3, small smile; the children stop their game (a ball rolling to a stop)",
+     "library": "person kneel 1 + walk"
+    },
+    {
+     "t": 74.3,
+     "end": 75.1,
+     "cue": {
+      "word": "صبيانًا",
+      "t": 74.36
+     },
+     "who": "boy",
+     "action": "the boy and the girl look up at the stranger; the girl half hides behind the boy",
+     "acting": "boy bold (chin up), girl shy (lid 0.3, peeks): two personalities",
+     "library": "person {costume: 'servant', child: true} and {costume: 'maiden', child: true}"
+    },
+    {
+     "t": 75.4,
+     "end": 76.6,
+     "cue": {
+      "word": "سبب",
+      "t": 75.48
+     },
+     "who": "mutalammis",
+     "action": "points back at the lamps and drums and opens his palm: what is this for?",
+     "acting": "gaze to the tent, then back to the boy; eyebrows up",
+     "library": "PERSON_HANDS.pointFwd then palmsUp"
+    },
+    {
+     "t": 77.1,
+     "end": 78.0,
+     "cue": {
+      "word": "فأخبروه",
+      "t": 77.14
+     },
+     "who": "boy",
+     "action": "cups his hands round his mouth and announces it, bouncing on his toes",
+     "acting": "talk 0.9, hop on each stress; proud to know the news",
+     "library": "PERSON_HANDS.cupMouth + hop"
+    },
+    {
+     "t": 78.3,
+     "end": 79.1,
+     "cue": {
+      "word": "أميمة",
+      "t": 78.38
+     },
+     "who": "fx",
+     "action": "picture balloon, frame 1: Umaymah's portrait with a bridal band",
+     "acting": "his face lights: he knows that face; hand goes to his chest",
+     "library": "iconBalloon strip + portraitMedallion(umaymah)"
+    },
+    {
+     "t": 79.9,
+     "end": 80.9,
+     "cue": {
+      "word": "المتلمس",
+      "t": 80.0
+     },
+     "who": "fx",
+     "action": "frame 2: a portrait of a man in a keffiyeh, his own face",
+     "acting": "he blinks, leans in at his own picture; the girl looks from the picture to him and back (first hint, she says nothing)",
+     "library": "portraitMedallion(mutalammis) ; girl gazePlan"
+    },
+    {
+     "t": 82.3,
+     "end": 83.0,
+     "cue": {
+      "word": "ميتًا",
+      "t": 82.46
+     },
+     "who": "fx",
+     "action": "the plain X from the gossip balloon lands on his portrait",
+     "acting": "he looks to camera for half a second (the one lens stare of the film), then pats his own chest and arm as if to check",
+     "library": "gaze [0, 0.05]; hand pats (2 quick)"
+    },
+    {
+     "t": 83.1,
+     "end": 84.1,
+     "cue": {
+      "word": "تتزوج",
+      "t": 83.14
+     },
+     "who": "fx",
+     "action": "frame 3: the groom's portrait slides in beside Umaymah's with a ring between them",
+     "acting": "his smile is gone; mouth 'o'",
+     "library": "iconBalloon frame 3"
+    },
+    {
+     "t": 84.1,
+     "end": 84.8,
+     "cue": {
+      "word": "رجلًا",
+      "t": 84.22
+     },
+     "who": "girl",
+     "action": "tugs the boy's sleeve and points at the stranger's face",
+     "acting": "she has seen it; the boy shrugs her off",
+     "library": "handLW to the boy's sleeve"
+    },
+    {
+     "t": 84.8,
+     "end": 85.9,
+     "cue": {
+      "word": "آخر",
+      "t": 84.88
+     },
+     "who": "mutalammis",
+     "action": "sinks from one knee to sitting on his heel; his hand falls from his chest",
+     "acting": "wet eyes, brow -0.8, sq 0.95; hold on his face",
+     "library": "kneel + sq + wet"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 77.2,
+     "text": "A WEDDING!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 85.9
+   }
+  },
+  {
+   "id": "S9",
+   "start": 85.9,
+   "end": 93.6,
+   "paragraphs": [
+    5
+   ],
+   "set": "camp",
+   "cast": [
+    "mutalammis",
+    "guestA",
+    "guestB",
+    "drummerA",
+    "drummerB"
+   ],
+   "summary": "Shock and hurt; then he pulls his head cloth across his face and walks in among the guests. Nobody knows him.",
+   "camera": {
+    "shot": "medium",
+    "move": "track",
+    "notes": "Medium on him (zoom 1.6) through the shock; from 88.5 track left with his walk from x 1330 to x 1190, easing out to zoom 1.25 so the seated guests and the tent come into frame."
+   },
+   "composition": "He moves right to left toward the light. Guests seated at x 1150 and 1240 with their backs three-quarter to him; he stops standing behind and between them at x 1195, a head above them, in half shadow.",
+   "actions": [
+    {
+     "t": 85.9,
+     "end": 86.8,
+     "cue": {
+      "word": "دهش",
+      "t": 85.9
+     },
+     "who": "mutalammis",
+     "action": "jolts upright to standing as if struck",
+     "acting": "settleTo overshoot, eyes wide, both hands half up, sq 1.06 then 0.97; no blink for 0.8 s",
+     "library": "settleTo + P.noBlink"
+    },
+    {
+     "t": 86.8,
+     "end": 87.6,
+     "cue": {
+      "word": "الشاعر",
+      "t": 86.8
+     },
+     "who": "mutalammis",
+     "action": "his eyes run over the lamps, the drums, the tent",
+     "acting": "saccades left, left, up (gazePlan 0.07): taking it in",
+     "library": "gazePlan"
+    },
+    {
+     "t": 87.6,
+     "end": 88.5,
+     "cue": {
+      "word": "وتألم",
+      "t": 87.64
+     },
+     "who": "mutalammis",
+     "action": "one hand closes on his chest; his head drops",
+     "acting": "lid 0.6, wet, mouth 'frown'; slow breath (sq 0.97 to 1.0)",
+     "library": "PERSON_HANDS.chest + painPulse (planned, soft, one ring only)"
+    },
+    {
+     "t": 88.5,
+     "end": 89.4,
+     "cue": {
+      "word": "ثم",
+      "t": 88.48
+     },
+     "who": "mutalammis",
+     "action": "lifts the loose end of his head cloth and draws it across his face",
+     "acting": "decision: head comes level, brow sets; only the eyes show above the cloth",
+     "library": "person faceCover 0 to 1 (planned pose)"
+    },
+    {
+     "t": 89.4,
+     "end": 90.3,
+     "cue": {
+      "word": "دخل",
+      "t": 89.48
+     },
+     "who": "mutalammis",
+     "action": "walks toward the feast with his shoulders rounded like any tired traveller",
+     "acting": "slow walk, tip 0.06, gaze down then up to find her",
+     "library": "walk + footfalls (no dust on the carpet)"
+    },
+    {
+     "t": 90.2,
+     "end": 91.2,
+     "cue": {
+      "word": "الحاضرين",
+      "t": 90.28
+     },
+     "who": "guestA",
+     "action": "the drum beat carries on; a guest shuffles aside on the ground to make room without looking up",
+     "acting": "he is just another guest: nobody stops",
+     "library": "sit floor + small x shift"
+    },
+    {
+     "t": 91.2,
+     "end": 92.2,
+     "cue": {
+      "word": "دون",
+      "t": 91.28
+     },
+     "who": "guestB",
+     "action": "the singer glances over her shoulder at him, straight at his covered face",
+     "acting": "suspense beat: her gaze holds on him for 0.5 s; he freezes, eyes down",
+     "library": "lookAt + freeze (only pupils move)"
+    },
+    {
+     "t": 92.2,
+     "end": 93.0,
+     "cue": {
+      "word": "يعرفه",
+      "t": 92.3
+     },
+     "who": "guestB",
+     "action": "shrugs and turns back to clap with the drums",
+     "acting": "relief: his shoulders drop 4 px; one long blink above the cloth",
+     "library": "PERSON_HANDS.palmsUp shrug + blink"
+    },
+    {
+     "t": 93.0,
+     "end": 93.6,
+     "cue": {
+      "word": "أحد",
+      "t": 93.06
+     },
+     "who": "mutalammis",
+     "action": "his eyes lift past the guests toward the tent",
+     "acting": "gaze up-left to the dais; leads the cut to what he sees",
+     "library": "lookAt(umaymah)"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 93.6
+   }
+  },
+  {
+   "id": "S10",
+   "start": 93.6,
+   "end": 108.64,
+   "paragraphs": [
+    5
+   ],
+   "set": "camp",
+   "cast": [
+    "umaymah",
+    "groom",
+    "mutalammis",
+    "drummerA",
+    "drummerB"
+   ],
+   "summary": "From among the guests he sees Umaymah beside the cheerful groom: she is the only sad face at her own wedding. When the groom moves closer she sighs and begins to recite a verse.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot(groom, umaymah) at zoom 1.45 (camera x 800, y 730); from 97.5 push to zoom 1.9 on Umaymah alone (x 860), back to the two-shot by 101.6 for the groom's approach; from 105.2 ease out to zoom 1.2 so the verse ribbon has room to unroll to the left over the guests."
+   },
+   "composition": "Groom at x 740, Umaymah at x 860, both seated on cushions (sitY about 870), lamps above them. The hooded poet is a small dark figure at the right edge of the wide framing (x 1195) so the audience always knows where he is. The ribbon unrolls up and to the right from her mouth, above heads.",
+   "actions": [
+    {
+     "t": 93.7,
+     "end": 94.6,
+     "cue": {
+      "word": "رأى",
+      "t": 93.66
+     },
+     "who": "mutalammis",
+     "action": "at frame right, his covered head lifts: he has found her",
+     "acting": "eyes wide above the cloth; a single step forward, stopped",
+     "library": "lookAt + anticipate (checked step)"
+    },
+    {
+     "t": 94.6,
+     "end": 95.4,
+     "cue": {
+      "word": "أميمة",
+      "t": 94.62
+     },
+     "who": "umaymah",
+     "action": "seated under the lamps in her wedding band and red sash, hands in her lap",
+     "acting": "gaze down, lid 0.5, still",
+     "library": "person {costume: 'lady', pal band yellow, sash red, sit: 1, seat: 'bench'}"
+    },
+    {
+     "t": 95.4,
+     "end": 96.5,
+     "cue": {
+      "word": "قرب",
+      "t": 95.38
+     },
+     "who": "groom",
+     "action": "beside her the groom laughs with a guest and claps to the drum",
+     "acting": "head bobbing on the beat, wide smile, gaze on the drummers",
+     "library": "person laugh (planned helper) + clap on the 0.4 s grid"
+    },
+    {
+     "t": 96.5,
+     "end": 97.5,
+     "cue": {
+      "word": "الجديد",
+      "t": 96.54
+     },
+     "who": "lettering",
+     "action": "label THE NEW GROOM with an arrow",
+     "acting": "above him, clear of the lamps",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 97.5,
+     "end": 98.4,
+     "cue": {
+      "word": "وكانت",
+      "t": 97.52
+     },
+     "who": "camera",
+     "action": "push in on Umaymah alone",
+     "acting": "the noise of the picture falls away to one still face",
+     "library": "CAM"
+    },
+    {
+     "t": 98.4,
+     "end": 99.3,
+     "cue": {
+      "word": "حزينة",
+      "t": 98.44
+     },
+     "who": "umaymah",
+     "action": "her eyes are wet; a tear gathers and she turns her face a little away from the groom",
+     "acting": "wet: true, brow -0.8, mouth small frown; a slow blink that almost stays shut",
+     "library": "wet + lid ramp"
+    },
+    {
+     "t": 99.3,
+     "end": 100.7,
+     "cue": {
+      "word": "رغم",
+      "t": 99.28
+     },
+     "who": "drummerA",
+     "action": "behind and around her the drums and clapping go on (blurred shapes at the frame edges)",
+     "acting": "contrast: beat motion at the edges, stillness in the middle",
+     "library": "countedBeats grid continues"
+    },
+    {
+     "t": 100.8,
+     "end": 101.7,
+     "cue": {
+      "word": "وعندما",
+      "t": 100.82
+     },
+     "who": "camera",
+     "action": "back out to the two-shot",
+     "acting": "",
+     "library": "twoShot"
+    },
+    {
+     "t": 101.7,
+     "end": 102.6,
+     "cue": {
+      "word": "اقترب",
+      "t": 101.72
+     },
+     "who": "groom",
+     "action": "shuffles his cushion closer and holds out a flower from his sash",
+     "acting": "kind, a little shy: brow -0.3, smile, gaze on her face",
+     "library": "x 740 to 780 + handRW offering"
+    },
+    {
+     "t": 102.6,
+     "end": 103.5,
+     "cue": {
+      "word": "منها",
+      "t": 103.06
+     },
+     "who": "umaymah",
+     "action": "does not take it; her shoulders rise",
+     "acting": "leans away tip -0.06, gaze stays down on her lap",
+     "library": "tip"
+    },
+    {
+     "t": 103.5,
+     "end": 105.2,
+     "cue": {
+      "word": "تنهدت",
+      "t": 103.6
+     },
+     "who": "umaymah",
+     "action": "a long sigh: shoulders up, hold, then all the way down; a small breath puff leaves her mouth",
+     "acting": "sq 1.04 for 0.5 s, then 0.95, settle 1.0; lid 1 during the out-breath. The groom's hand with the flower stops in the air",
+     "library": "sq keyed + cloud puff (small)"
+    },
+    {
+     "t": 105.2,
+     "end": 106.1,
+     "cue": {
+      "word": "وأخذت",
+      "t": 105.26
+     },
+     "who": "umaymah",
+     "action": "lifts her head and looks up past the lamps at the night sky; draws the scroll from her sash",
+     "acting": "gaze up-right [0.5, -0.8], lid 0.2, mouth opens",
+     "library": "lookAt sky + scroll"
+    },
+    {
+     "t": 106.1,
+     "end": 107.3,
+     "cue": {
+      "word": "تردد",
+      "t": 106.12
+     },
+     "who": "verse",
+     "action": "she recites: a paper ribbon with lines of writing unrolls from her lips up into the air",
+     "acting": "talk 0.6 on word stresses; the ribbon writes on with the syllables (draw-on 0 to 0.35)",
+     "library": "verseRibbon (planned) from her mouth point"
+    },
+    {
+     "t": 107.3,
+     "end": 108.6,
+     "cue": {
+      "word": "بيتًا",
+      "t": 106.76
+     },
+     "who": "drummerA",
+     "action": "the drummers' hands slow and stop on the skins; heads turn to her one by one",
+     "acting": "stagger 5 frames per head; the groom lowers the flower to his knee and listens",
+     "library": "stagger + lookAt(umaymah)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 96.5,
+     "text": "THE NEW GROOM"
+    },
+    {
+     "t": 103.7,
+     "text": "SIGH..."
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 108.64
+   }
+  },
+  {
+   "id": "S11",
+   "start": 108.64,
+   "end": 119.0,
+   "paragraphs": [
+    6
+   ],
+   "set": "camp",
+   "cast": [
+    "umaymah",
+    "mutalammis",
+    "groom"
+   ],
+   "summary": "Her verse made visible: where is my absent husband, in what far land, if he lives? The answer to every picture is standing ten steps away.",
+   "camera": {
+    "shot": "medium",
+    "move": "drift",
+    "notes": "Umaymah at frame left third (zoom 1.5, camera x 960, y 660), the thought cloud filling the upper centre and right; slow drift right 60 units so that by 117.9 the hooded poet at x 1195 is inside the right edge of the frame, directly under the cloud."
+   },
+   "composition": "Dramatic irony in one frame: her ribbon rises into a cloud that asks WHERE? while the man himself stands under it. Cloud 420 x 260 at about world (1050, 430). Keep her face and his eyes both visible; guests are dark heads along the bottom.",
+   "actions": [
+    {
+     "t": 108.7,
+     "end": 109.5,
+     "cue": {
+      "word": "تساءلت",
+      "t": 108.64
+     },
+     "who": "umaymah",
+     "action": "sings the line to the sky, scroll held open in both hands though she does not read it",
+     "acting": "gaze up, talk 0.7, wet eyes shining; head sways 3 px with the metre",
+     "library": "talk + sway"
+    },
+    {
+     "t": 109.5,
+     "end": 110.4,
+     "cue": {
+      "word": "أميمة",
+      "t": 109.54
+     },
+     "who": "verse",
+     "action": "the ribbon curls upward and its end opens into a thought cloud",
+     "acting": "trail bubbles first, then the cloud (0.4 s)",
+     "library": "verseRibbon into thoughtCloud {p}"
+    },
+    {
+     "t": 110.4,
+     "end": 111.2,
+     "cue": {
+      "word": "بيتها",
+      "t": 110.48
+     },
+     "who": "lettering",
+     "action": "small label HER VERSE with an arrow to the ribbon",
+     "acting": "the Arabic says 'in her verse line'; the label makes clear she is reciting, not at home",
+     "library": "S.label"
+    },
+    {
+     "t": 111.2,
+     "end": 112.5,
+     "cue": {
+      "word": "أين",
+      "t": 111.22
+     },
+     "who": "fx",
+     "action": "in the cloud: the poet's silhouette in black with a large question mark",
+     "acting": "question mark pops with overshoot on the word",
+     "library": "thoughtCloud inside: person silhouette (flat black fill) + '?'"
+    },
+    {
+     "t": 112.5,
+     "end": 113.9,
+     "cue": {
+      "word": "زوجها",
+      "t": 112.54
+     },
+     "who": "mutalammis",
+     "action": "at the right, the hooded man's hand rises toward her and stops halfway",
+     "acting": "tremble amplitude 1.5; eyes fixed on her; he almost speaks",
+     "library": "tremble + handR raise checked"
+    },
+    {
+     "t": 114.0,
+     "end": 115.1,
+     "cue": {
+      "word": "وفي",
+      "t": 114.0
+     },
+     "who": "fx",
+     "action": "the cloud picture changes: far dunes, a tiny camel walking away under a sun",
+     "acting": "cross-fade inside the cloud; the tiny camel uses walk()",
+     "library": "camel silhouette s 0.15 + desert dunes in the cloud"
+    },
+    {
+     "t": 115.1,
+     "end": 116.4,
+     "cue": {
+      "word": "أرض",
+      "t": 115.14
+     },
+     "who": "fx",
+     "action": "the dunes in the cloud slide further and further (three layers recede), the camel shrinks to a dot",
+     "acting": "distance as motion, on the word far",
+     "library": "parallax keyed inside the cloud"
+    },
+    {
+     "t": 116.4,
+     "end": 117.8,
+     "cue": {
+      "word": "يعيش",
+      "t": 116.46
+     },
+     "who": "umaymah",
+     "action": "her voice drops; her head lowers from the sky to the scroll",
+     "acting": "talk 0.4, lid 0.5; a tear falls onto the scroll",
+     "library": "wet + tear drop"
+    },
+    {
+     "t": 117.8,
+     "end": 119.0,
+     "cue": {
+      "word": "حيًا",
+      "t": 117.88
+     },
+     "who": "fx",
+     "action": "in the cloud the dot becomes a small flickering lamp flame with a question mark; it wavers as if it may go out",
+     "acting": "the guests are still; the groom looks at his flower; under the cloud the hooded man lowers the cloth from his mouth by a finger's width",
+     "library": "flame flicker seeded; faceCover 1 to 0.8"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 110.5,
+     "text": "HER VERSE"
+    },
+    {
+     "t": 111.3,
+     "text": "WHERE?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 119.0
+   }
+  },
+  {
+   "id": "S12",
+   "start": 119.0,
+   "end": 129.68,
+   "paragraphs": [
+    6
+   ],
+   "set": "camp",
+   "cast": [
+    "mutalammis",
+    "umaymah",
+    "groom",
+    "guestA",
+    "guestB"
+   ],
+   "summary": "He cannot keep silent. From the back of the crowd his own verse unrolls across the feast to her: he is near, and he never forgot her.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "Start medium on him (zoom 1.7, camera x 1195, y 690). When the ribbon leaves his mouth (121.8) pan left with its leading end across the guests' heads to Umaymah (camera x 900 by 126.5), widening to zoom 1.3 so both ends of the ribbon and both faces are in frame at 126.5."
+   },
+   "composition": "The ribbon is the eye line: it travels right to left about 330 units at head height plus an arc (peak y 560), passes over the turning heads, and stops just short of her. Her question cloud is still fading above; his ribbon cuts under it.",
+   "actions": [
+    {
+     "t": 119.0,
+     "end": 120.0,
+     "cue": {
+      "word": "لم",
+      "t": 119.06
+     },
+     "who": "mutalammis",
+     "action": "his chest fills; his fists close at his sides",
+     "acting": "anticipation: sq 0.95 crouch of the shoulders, eyes shut one beat",
+     "library": "anticipate"
+    },
+    {
+     "t": 120.0,
+     "end": 121.4,
+     "cue": {
+      "word": "المتلمس",
+      "t": 119.98
+     },
+     "who": "mutalammis",
+     "action": "takes one step forward between the seated guests and lifts his chin",
+     "acting": "eyes open on her, brow level; the cloth still across his mouth but slipping",
+     "library": "walk one step + settleTo"
+    },
+    {
+     "t": 121.4,
+     "end": 121.8,
+     "cue": {
+      "word": "يصمت",
+      "t": 121.47
+     },
+     "who": "fx",
+     "action": "her cloud's wavering flame steadies and brightens",
+     "acting": "a one-beat hint before he speaks",
+     "library": "flame amplitude keyed"
+    },
+    {
+     "t": 121.8,
+     "end": 123.2,
+     "cue": {
+      "word": "فأجابها",
+      "t": 121.8
+     },
+     "who": "verse",
+     "action": "he speaks through the cloth: a second ribbon, blue-edged, unrolls from him toward her",
+     "acting": "talk 0.8 (seen as the cloth puffing 3 px on each stress); one hand opens toward her",
+     "library": "verseRibbon {col blue} draw-on; faceCover puff"
+    },
+    {
+     "t": 123.2,
+     "end": 124.2,
+     "cue": {
+      "word": "ببيت",
+      "t": 123.3
+     },
+     "who": "guestA",
+     "action": "seated heads turn toward the voice behind them, one after another",
+     "acting": "stagger 4 frames each; mouths 'o'; the drummers' hands hang over the drums",
+     "library": "stagger + lookAt(mutalammis)"
+    },
+    {
+     "t": 124.2,
+     "end": 124.9,
+     "cue": {
+      "word": "شعره",
+      "t": 124.2
+     },
+     "who": "camera",
+     "action": "pan left with the travelling end of the ribbon",
+     "acting": "",
+     "library": "CAM keys"
+    },
+    {
+     "t": 124.9,
+     "end": 125.5,
+     "cue": {
+      "word": "يقول",
+      "t": 124.88
+     },
+     "who": "umaymah",
+     "action": "her head comes up from the scroll",
+     "acting": "gaze snaps toward the sound before the head turns (eyes lead, head follows 3 frames late)",
+     "library": "gazePlan + head turn lag"
+    },
+    {
+     "t": 125.5,
+     "end": 126.5,
+     "cue": {
+      "word": "إنه",
+      "t": 125.48
+     },
+     "who": "verse",
+     "action": "the ribbon end reaches her and curls once, gently, in front of her hands",
+     "acting": "her old cloud above pops silently and is gone",
+     "library": "verseRibbon draw-on 1, curl"
+    },
+    {
+     "t": 126.5,
+     "end": 127.5,
+     "cue": {
+      "word": "قريب",
+      "t": 126.5
+     },
+     "who": "lettering",
+     "action": "a bold arrow from the ribbon back along its length to him with the words RIGHT HERE!",
+     "acting": "arrow draws on along the ribbon in 0.4 s; lettering near him, not on her",
+     "library": "S.arrow + S.emphasis"
+    },
+    {
+     "t": 127.5,
+     "end": 128.5,
+     "cue": {
+      "word": "وإنه",
+      "t": 127.5
+     },
+     "who": "umaymah",
+     "action": "frozen: scroll slipping from her fingers, eyes wide and wet",
+     "acting": "no blink; breath held (sq 1.03)",
+     "library": "P.noBlink, eyes 'wide'"
+    },
+    {
+     "t": 128.5,
+     "end": 129.6,
+     "cue": {
+      "word": "حبها",
+      "t": 128.56
+     },
+     "who": "fx",
+     "action": "the small red heart from S3 pops on the ribbon's curled end and pulses",
+     "acting": "the same heart drawing and size as at 24.66: setup and payoff",
+     "library": "Library heart prop + pulse"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 126.6,
+     "text": "RIGHT HERE!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 121.32,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 129.68
+   }
+  },
+  {
+   "id": "S13",
+   "start": 129.68,
+   "end": 137.0,
+   "paragraphs": [
+    7
+   ],
+   "set": "camp",
+   "cast": [
+    "umaymah",
+    "mutalammis",
+    "groom"
+   ],
+   "summary": "She knows the voice. The cloth falls from his face. Between them the groom looks from one to the other and understands.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot(umaymah, mutalammis, margin 120) with the groom between and a little lower (he stays seated): zoom about 1.35, camera x 1000, y 700. From 132.7 push to a close on the groom (zoom 1.9, x 760, y 720)."
+   },
+   "composition": "A triangle: Umaymah standing at x 860 (left), the poet walking in to x 1040 (right), the seated groom's head lower between them at x 760 in the foreground left. Their eye line passes over his head.",
+   "actions": [
+    {
+     "t": 129.7,
+     "end": 130.8,
+     "cue": {
+      "word": "عرفت",
+      "t": 129.68
+     },
+     "who": "umaymah",
+     "action": "rises from her cushion in one movement",
+     "acting": "sit 1 to 0 over 0.5 s with anticipation (a 3 px dip first); mouth 'o', hands out",
+     "library": "sit blend + anticipate + settleTo"
+    },
+    {
+     "t": 130.8,
+     "end": 131.5,
+     "cue": {
+      "word": "أميمة",
+      "t": 130.86
+     },
+     "who": "scroll",
+     "action": "the scroll drops from her hand and rolls open on the carpet",
+     "acting": "fallY and one small bounce; it shows the same lines and tiny camel as in S3",
+     "library": "fallY + rebound"
+    },
+    {
+     "t": 131.5,
+     "end": 132.0,
+     "cue": {
+      "word": "صوت",
+      "t": 131.54
+     },
+     "who": "mutalammis",
+     "action": "pulls the cloth down from his face",
+     "acting": "faceCover 1 to 0 in 0.3 s; under it: wet eyes and a smile that is not sure it is allowed",
+     "library": "faceCover (planned)"
+    },
+    {
+     "t": 132.0,
+     "end": 132.7,
+     "cue": {
+      "word": "زوجها",
+      "t": 132.0
+     },
+     "who": "umaymah",
+     "action": "both hands fly to her cheeks, then reach toward him",
+     "acting": "wet eyes, the first real smile of the film, brow -0.5; tremble 1",
+     "library": "PERSON_HANDS.cheeks then reachBoth"
+    },
+    {
+     "t": 132.7,
+     "end": 133.8,
+     "cue": {
+      "word": "وفهم",
+      "t": 132.74
+     },
+     "who": "groom",
+     "action": "his head turns from her, to the stranger, to her again",
+     "acting": "three saccade snaps with holds (gazePlan 0.07), flower still in his hand",
+     "library": "gazePlan"
+    },
+    {
+     "t": 133.8,
+     "end": 135.3,
+     "cue": {
+      "word": "العريس",
+      "t": 133.88
+     },
+     "who": "camera",
+     "action": "push in close on the groom's face",
+     "acting": "the film now belongs to him for a few seconds",
+     "library": "CAM"
+    },
+    {
+     "t": 135.3,
+     "end": 136.4,
+     "cue": {
+      "word": "حقيقة",
+      "t": 135.38
+     },
+     "who": "groom",
+     "action": "looks down at the fallen scroll with its tiny camel, then up at the dusty traveller's camel-rider robe",
+     "acting": "brow rises (-0.7), mouth 'o': he has put it together",
+     "library": "lookAt scroll, lookAt poet"
+    },
+    {
+     "t": 136.4,
+     "end": 137.0,
+     "cue": {
+      "word": "حدث",
+      "t": 136.5
+     },
+     "who": "groom",
+     "action": "closes his mouth; his face goes unreadable",
+     "acting": "lid 0.4, mouth closed, brow 0: the audience cannot tell yet what he will do",
+     "library": "hold"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 130.0,
+     "text": "THAT VOICE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 137.0
+   }
+  },
+  {
+   "id": "S14",
+   "start": 137.0,
+   "end": 150.32,
+   "paragraphs": [
+    7
+   ],
+   "set": "camp",
+   "cast": [
+    "groom",
+    "umaymah",
+    "mutalammis",
+    "guestA",
+    "drummerA"
+   ],
+   "summary": "A held breath: will he fight? He stands, smiles, speaks a few gracious lines, puts his flower in the poet's hand and walks out of the feast without looking back.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Start medium three-shot (zoom 1.4, camera x 900, y 710); slow pull out to zoom 1.05 by 146.2 so his whole walk off to the left edge is in frame, the couple left standing in the centre."
+   },
+   "composition": "Groom stands at x 760 between and in front of them, Umaymah x 860, poet x 1000. He exits to the LEFT (away from where the poet entered), passing the drummers at x 330-430, and leaves the frame at x 80.",
+   "actions": [
+    {
+     "t": 137.0,
+     "end": 137.8,
+     "cue": {
+      "word": "لم",
+      "t": 137.08
+     },
+     "who": "groom",
+     "action": "rises slowly to his feet; his hand goes to his sash",
+     "acting": "suspense: guests lean back (tip -0.08, staggered); the poet shifts half a step in front of Umaymah",
+     "library": "sit 1 to 0 slow + ensemble stagger"
+    },
+    {
+     "t": 137.8,
+     "end": 138.9,
+     "cue": {
+      "word": "يغضب",
+      "t": 137.8
+     },
+     "who": "groom",
+     "action": "the hand comes out of the sash holding only the flower; his face opens into a rueful smile",
+     "acting": "brow -0.4, mouth 'smile', a breath out (sq 0.97 to 1.0); the guests breathe with him",
+     "library": "settleTo"
+    },
+    {
+     "t": 138.9,
+     "end": 139.5,
+     "cue": {
+      "word": "ولم",
+      "t": 138.98
+     },
+     "who": "guestA",
+     "action": "the guests' shoulders drop; one drummer wipes his brow",
+     "acting": "release after the held beat, each on his own delay",
+     "library": "stagger"
+    },
+    {
+     "t": 139.5,
+     "end": 141.1,
+     "cue": {
+      "word": "يخاصمهما",
+      "t": 139.54
+     },
+     "who": "groom",
+     "action": "shows both open palms to the couple and shakes his head: no quarrel",
+     "acting": "gaze from the poet to Umaymah, warm",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 141.1,
+     "end": 142.6,
+     "cue": {
+      "word": "أنشد",
+      "t": 141.44
+     },
+     "who": "verse",
+     "action": "he too speaks in verse: a short yellow ribbon unrolls from him and bows in the middle like a bridge between the two",
+     "acting": "talk 0.6; one hand on his chest",
+     "library": "verseRibbon {col yellow, short}"
+    },
+    {
+     "t": 142.6,
+     "end": 143.8,
+     "cue": {
+      "word": "تدل",
+      "t": 142.72
+     },
+     "who": "groom",
+     "action": "bows to the poet, hand on heart",
+     "acting": "tip 0.2 and back; the poet returns the bow 6 frames later, smaller",
+     "library": "tip + PERSON_HANDS.chest"
+    },
+    {
+     "t": 144.3,
+     "end": 145.3,
+     "cue": {
+      "word": "سيتنحى",
+      "t": 144.44
+     },
+     "who": "groom",
+     "action": "takes one clear step back out of the space between them and gestures with an open arm: the place is yours",
+     "acting": "the gap between husband and wife is now empty; their eyes meet across it",
+     "library": "walk backward one step + PERSON_HANDS.armsOut (one arm)"
+    },
+    {
+     "t": 145.3,
+     "end": 146.2,
+     "cue": {
+      "word": "ثم",
+      "t": 145.3
+     },
+     "who": "groom",
+     "action": "puts his wedding flower into the poet's hand and closes the poet's fingers on it",
+     "acting": "a pat on the hand; smallest nod to Umaymah",
+     "library": "handRW to the poet's hand; flower follows hand A then hand B (handOver)"
+    },
+    {
+     "t": 146.2,
+     "end": 147.8,
+     "cue": {
+      "word": "ترك",
+      "t": 146.28
+     },
+     "who": "groom",
+     "action": "turns and walks left through the guests, who part for him",
+     "acting": "upright, unhurried walk; a drummer reaches up and he touches the man's shoulder in passing",
+     "library": "walk + footfalls"
+    },
+    {
+     "t": 147.8,
+     "end": 149.4,
+     "cue": {
+      "word": "وانصرف",
+      "t": 147.86
+     },
+     "who": "groom",
+     "action": "at the edge of the lamp light he lifts one hand in a wave without turning round and walks out of frame",
+     "acting": "the back-of-hand wave; guests' heads follow him (lookAt), then turn back to the couple",
+     "library": "PERSON_HANDS.wave (aR up) + exit"
+    },
+    {
+     "t": 149.4,
+     "end": 150.3,
+     "cue": {
+      "word": "يعود",
+      "t": 149.7
+     },
+     "who": "set",
+     "action": "the lamp nearest his exit swings once from his passing and settles",
+     "acting": "an empty place where he was; damped swing",
+     "library": "hangingLamp + swing()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 137.9,
+     "text": "NO ANGER"
+    },
+    {
+     "t": 144.5,
+     "text": "THE PLACE IS YOURS"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 150.32
+   }
+  },
+  {
+   "id": "S15",
+   "start": 150.32,
+   "end": 163.8,
+   "paragraphs": [
+    8
+   ],
+   "set": "camp",
+   "cast": [
+    "mutalammis",
+    "umaymah",
+    "guestA",
+    "guestB"
+   ],
+   "summary": "Husband and wife close the last steps between them. She shows him the tally post; he gives her the flower; they sit together where the wedding pair sat.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot(mutalammis, umaymah) zoom 1.5 at camera x 900; at 153.8 a quick pan left to the tally post (x 560) and back at 156.6; from 158.3 slow push to zoom 1.8 as they sit."
+   },
+   "composition": "They meet at x 900 and 960. The tally post at x 560 is reached by a pan, with her arm leading the eye. They finish seated on the two cushions (x 760 and 860) under the centre lamps, heads at the same height.",
+   "actions": [
+    {
+     "t": 150.3,
+     "end": 151.3,
+     "cue": {
+      "word": "عاد",
+      "t": 150.32
+     },
+     "who": "mutalammis",
+     "action": "walks the last three steps to her",
+     "acting": "slow, eyes on her; he is still holding the flower in a half closed hand",
+     "library": "walk + footfalls"
+    },
+    {
+     "t": 151.3,
+     "end": 152.4,
+     "cue": {
+      "word": "المتلمس",
+      "t": 151.28
+     },
+     "who": "umaymah",
+     "action": "meets him: stops a hand's breadth away and looks up into his face, at the grey in his beard",
+     "acting": "gaze travels over his face (gazePlan: eyes, beard, eyes); wet, smiling",
+     "library": "gazePlan"
+    },
+    {
+     "t": 152.4,
+     "end": 153.4,
+     "cue": {
+      "word": "أميمة",
+      "t": 152.52
+     },
+     "who": "umaymah",
+     "action": "takes his hands in both of hers",
+     "acting": "hands meet at one world point; both shoulders drop; a shared slow blink",
+     "library": "handLW / handRW to a shared point + PERSON_HANDS.clasp"
+    },
+    {
+     "t": 153.8,
+     "end": 154.6,
+     "cue": {
+      "word": "غياب",
+      "t": 153.84
+     },
+     "who": "umaymah",
+     "action": "leads him by the hand and points to the tent post covered in tally marks",
+     "acting": "camera pans with her pointing arm; his eyes follow",
+     "library": "PERSON_HANDS.pointFwd + CAM pan"
+    },
+    {
+     "t": 154.5,
+     "end": 155.6,
+     "cue": {
+      "word": "ظنه",
+      "t": 154.48
+     },
+     "who": "mutalammis",
+     "action": "runs his fingers down the seven marks; his mouth opens",
+     "acting": "brow -0.7, wet; counter 7 YEARS reappears beside the post",
+     "library": "handRW along the post + S.counter"
+    },
+    {
+     "t": 155.6,
+     "end": 156.6,
+     "cue": {
+      "word": "نهاية",
+      "t": 155.64
+     },
+     "who": "fx",
+     "action": "the gossip balloon from S2 (his portrait under the X) pops up small beside the post, and the X cracks and falls off the portrait",
+     "acting": "the rumour undone in the same picture that started it; the portrait now smiles",
+     "library": "iconBalloon + X falls with fallY"
+    },
+    {
+     "t": 156.6,
+     "end": 157.3,
+     "cue": {
+      "word": "حياته",
+      "t": 156.52
+     },
+     "who": "camera",
+     "action": "pan back to the pair",
+     "acting": "",
+     "library": "CAM"
+    },
+    {
+     "t": 157.4,
+     "end": 158.3,
+     "cue": {
+      "word": "وبقي",
+      "t": 157.4
+     },
+     "who": "mutalammis",
+     "action": "opens his hand and offers her the flower",
+     "acting": "a shy bow of the head; she laughs silently and takes it",
+     "library": "handOver (planned motion)"
+    },
+    {
+     "t": 158.3,
+     "end": 159.6,
+     "cue": {
+      "word": "الزوجان",
+      "t": 158.32
+     },
+     "who": "umaymah",
+     "action": "they sit down together on the two cushions, she tucks the flower into her band",
+     "acting": "sit 0 to 1 for both, 5 frames apart; landing bounce of the cushions",
+     "library": "sit blend + landSquash small"
+    },
+    {
+     "t": 159.7,
+     "end": 160.6,
+     "cue": {
+      "word": "راحة",
+      "t": 159.94
+     },
+     "who": "mutalammis",
+     "action": "leans back with a long breath out, shoulders loose for the first time",
+     "acting": "lid 0.5 contented, smile; sq 1.03 to 0.98",
+     "library": "breathe + lid"
+    },
+    {
+     "t": 160.6,
+     "end": 161.5,
+     "cue": {
+      "word": "وسرور",
+      "t": 160.6
+     },
+     "who": "umaymah",
+     "action": "leans her head toward his shoulder and smiles at the guests",
+     "acting": "gaze to camera side, mouth 'smile', no wet eyes now",
+     "library": "tip 0.07 toward him"
+    },
+    {
+     "t": 162.0,
+     "end": 162.8,
+     "cue": {
+      "word": "زال",
+      "t": 162.06
+     },
+     "who": "guestB",
+     "action": "the singer throws up her hands and starts the song again; the drummers lift their hands",
+     "acting": "anticipation of the first new beat: all four guests inhale together, then off the beat from each other",
+     "library": "anticipate + musicNotes"
+    },
+    {
+     "t": 162.8,
+     "end": 163.8,
+     "cue": {
+      "word": "سوء",
+      "t": 162.78
+     },
+     "who": "drummerA",
+     "action": "the first drum beat lands; lamps flare a little brighter",
+     "acting": "DUM! and the picture is alive again",
+     "library": "countedBeats restart at 163.3 grid"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 154.6,
+     "text": "7 YEARS"
+    },
+    {
+     "t": 163.4,
+     "text": "DUM!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 163.8
+   }
+  },
+  {
+   "id": "S16",
+   "start": 163.8,
+   "end": 176.1,
+   "paragraphs": [
+    8
+   ],
+   "set": "camp",
+   "cast": [
+    "mutalammis",
+    "umaymah",
+    "drummerA",
+    "drummerB",
+    "guestA",
+    "guestB",
+    "boy",
+    "girl",
+    "camel"
+   ],
+   "summary": "Pull out to the whole camp: the same lamps, drums and guests, now a feast for the right couple. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "From the two-shot (zoom 1.6, x 810) pull out and crane up to the full camp wide (zoom 0.95, camera x 800, y 640) by 170.4; hold for THE END."
+   },
+   "composition": "Final tableau: couple seated centre under the lamp string; drummers left, guests right, the two children dancing in front at x 1000-1080; the poet's camel kneeling and chewing at the far right by the fire; moon above the tent ridge at (800, 250). Title THE END in the sky band above the tent, clear of all heads.",
+   "actions": [
+    {
+     "t": 163.9,
+     "end": 164.9,
+     "cue": {
+      "word": "وصارت",
+      "t": 163.82
+     },
+     "who": "camera",
+     "action": "begin the pull out from the pair",
+     "acting": "",
+     "library": "CAM keys"
+    },
+    {
+     "t": 164.9,
+     "end": 165.9,
+     "cue": {
+      "word": "ليلة",
+      "t": 165.02
+     },
+     "who": "lamps",
+     "action": "all seven lamps swing gently in time and glow at full",
+     "acting": "light discs on the carpet pulse with the drum",
+     "library": "hangingLamp + swing"
+    },
+    {
+     "t": 165.9,
+     "end": 166.7,
+     "cue": {
+      "word": "الزفاف",
+      "t": 165.46
+     },
+     "who": "boy",
+     "action": "the two children run in and dance in front of the couple",
+     "acting": "the girl points at the poet and nods at the boy: told you",
+     "library": "child persons + hop on the beat"
+    },
+    {
+     "t": 166.7,
+     "end": 167.9,
+     "cue": {
+      "word": "بدت",
+      "t": 166.74
+     },
+     "who": "fx",
+     "action": "for one beat the colour drains: lamps dim to half and the guests hold still, a memory of the sad feast",
+     "acting": "0.5 s only, on the words 'had seemed sad'; Umaymah glances down",
+     "library": "lamp lit 1 to 0.5 to 1; night tint +0.15"
+    },
+    {
+     "t": 167.9,
+     "end": 168.8,
+     "cue": {
+      "word": "يومًا",
+      "t": 168.18
+     },
+     "who": "umaymah",
+     "action": "she looks up from her lap to him and the light comes back",
+     "acting": "the lamps return as her smile does: she causes it",
+     "library": "lookAt(mutalammis) + lamps"
+    },
+    {
+     "t": 168.8,
+     "end": 170.1,
+     "cue": {
+      "word": "لعودتهما",
+      "t": 168.78
+     },
+     "who": "fx",
+     "action": "the heart pops above the pair, large this time, with a few music notes around it",
+     "acting": "third and last use of the heart (24.66, 128.56, here)",
+     "library": "heart + musicNotes"
+    },
+    {
+     "t": 170.2,
+     "end": 171.3,
+     "cue": {
+      "word": "بعضهما",
+      "t": 170.44
+     },
+     "who": "camel",
+     "action": "the camel at the right lifts its head from chewing and grumbles along with the song",
+     "acting": "small comic button: guests near it laugh",
+     "library": "camel kneel 1, talk 0.6, chew"
+    },
+    {
+     "t": 171.5,
+     "end": 176.1,
+     "who": "lettering",
+     "action": "THE END over the sky above the tent; the tableau keeps breathing (drum beat, lamp swing, blinks) to the last frame",
+     "acting": "held 4.5 s after the audio; no new action after 172.5",
+     "library": "S.title"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 171.6,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 171.75,
+     "kind": "chime"
+    },
+    {
+     "t": 172.6,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 176.1
+   }
+  }
+ ],
+ "ending": {
+  "t": 171.5,
+  "description": "After the last word (ends 171.34) the wide camp tableau holds: the couple seated together under the lit lamp string, guests drumming, children dancing, the camel chewing by the fire, moon over the tent. THE END (Bangers, >= 44 px) pops at 171.5 in the sky above the tent and is held to 176.1 with idle life only (blinks, lamp swing, drum hands)."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "هرب الشاعر المتلمس من الملك النعمان بن المنذر،|وغاب عن أهله زمنًا طويلًا.|انتظرته زوجته أميمة بقلق، ولم يصلها منه خبر يطمئنها،|حتى شاع بين الناس أنه مات ولن يعود.",
+   "en": "The poet al-Mutalammis fled King al-Numan|and remained away for a long time.|His wife Umaymah waited anxiously|until people began to believe he was dead."
+  },
+  {
+   "p": 2,
+   "ar": "كانت أميمة تحب زوجها حبًا كبيرًا،|ولذلك رفضت أن تتزوج غيره.|لكن أهلها قالوا إن عليها أن تبدأ حياة جديدة،|وإن الانتظار لا فائدة منه بعدما انقطعت أخبار الرجل كل تلك السنوات.",
+   "en": "Umaymah loved him deeply|and refused to remarry.|Her relatives urged her to begin anew,|arguing that years without news made further waiting hopeless."
+  },
+  {
+   "p": 3,
+   "ar": "كثر الذين طلبوا يدها،|واستمر ضغط أهلها عليها حتى وافقت أخيرًا، وهي غير مطمئنة إلى قرارها.|حددوا ليلة للزفاف، واجتمع الناس في الحي،|وسمعت أصوات الغناء والدفوف من الخيام.",
+   "en": "Many suitors came.|Finally she agreed reluctantly,|and the family arranged a wedding.|Songs and drums sounded through the camp on the appointed night."
+  },
+  {
+   "p": 4,
+   "ar": "وفي تلك الليلة نفسها عاد المتلمس من سفره،|ورأى الزينة وسمع الفرح.|سأل صبيانًا عن سبب الاحتفال،|فأخبروه أن أميمة، زوجة المتلمس الذي يظنونه ميتًا، تتزوج رجلًا آخر.",
+   "en": "On that very night al-Mutalammis returned|and saw the celebration.|Children told him that Umaymah,|the wife of the man everyone thought dead, was marrying someone else."
+  },
+  {
+   "p": 5,
+   "ar": "دهش الشاعر وتألم، ثم دخل بين الحاضرين دون أن يعرفه أحد.|رأى أميمة قرب العريس الجديد، وكانت حزينة رغم الاحتفال.|وعندما اقترب العريس منها، تنهدت وأخذت تردد بيتًا من الشعر.",
+   "en": "Shocked and hurt, the poet entered unnoticed among the guests.|He saw Umaymah grieving beside her new groom,|and she began to recite a sorrowful verse."
+  },
+  {
+   "p": 6,
+   "ar": "تساءلت أميمة في بيتها أين أصبح زوجها الغائب،|وفي أي أرض بعيدة يعيش إن كان حيًا.|لم يستطع المتلمس أن يصمت، فأجابها ببيت من شعره|يقول إنه قريب، وإنه لم ينس حبها.",
+   "en": "Umaymah wondered aloud in verse|where her absent husband might be.|Al-Mutalammis answered with his own verse:|he was close at hand and had never forgotten her."
+  },
+  {
+   "p": 7,
+   "ar": "عرفت أميمة صوت زوجها،|وفهم العريس الجديد حقيقة ما حدث.|لم يغضب الرجل ولم يخاصمهما، بل أنشد كلمات تدل على أنه سيتنحى،|ثم ترك لهما المكان وانصرف دون أن يعود.",
+   "en": "Umaymah recognized her husband’s voice.|The new groom understood at once|and, without quarreling, spoke graciously|and withdrew, leaving the reunited couple alone."
+  },
+  {
+   "p": 8,
+   "ar": "عاد المتلمس إلى أميمة بعد غياب ظنه الناس نهاية حياته.|وبقي الزوجان معًا في راحة وسرور بعد أن زال سوء الفهم،|وصارت ليلة الزفاف التي بدت حزينة يومًا لعودتهما إلى بعضهما.",
+   "en": "After an absence everyone mistook for death,|al-Mutalammis and Umaymah were together again.|The wedding night became the night of their reunion."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "desertCamp",
+   "description": "Bedouin camp, 1600 wide: open big tent with three poles and a carpet, small tent, far tents, fire, palm, lamp string, front dune lip; day, dusk and night by skyCycle. Reuses the planned name from AN-044 (same drawing with options; this film adds the lamp string, deco flags and the tally post). Full dimensions in sets.camp.",
+   "reusable": true,
+   "effort": "L",
+   "implementation": "New function desertCamp(ctx, o) in the story (later Library/sets/towns.js) following the towns.js pattern: bake the static back layer per option set (skyCycle is live, so bake dunes + tents without sky, or bake per u step), draw lamps and fire live with o.t, and a second call with layer: 'front' for the poles and the dune lip. Dunes: call desertRoad with road: false and sky: false, or copy its three dune polygons. Tent roof: one filled quadratic-curve band (K brush outline) in C.black with dot shading in blue; stripe trim as alternating red and white rects clipped to the band's lower edge. Return the anchors object."
+  },
+  {
+   "type": "effect",
+   "name": "verseRibbon",
+   "description": "Poetry made visible (planned in AN-103): a paper band that unrolls from the speaker along a curve with squiggle writing, can curl at the end and feed a thought cloud.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "verseRibbon(ctx, pts, t, {p, w: 34, col, curl, fade, seed}): sample a cubic bezier through pts into about 40 points; draw the band as a polygon offset +-w/2 along the normals up to arc fraction p (paper fill, black brush edge, coloured thin inner line); writing = for each of 2 rows a polyline of small seeded zigzags (K.rng) clipped to the band; curl = continue the path as a spiral of radius 30 for the last 8 % ; fade = alpha ramp from the tail. Pure function of t through p."
+  },
+  {
+   "type": "pose",
+   "name": "person faceCover",
+   "description": "Planned opt-in field faceCover 0..1 (AN-075, AN-087): a flap of the head cloth drawn across the lower face from the far side, hiding mouth and nose at 1 while the eyes stay visible; puff bulges it 3 px with breath or speech.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "In the person head draw (cast/people.js), after the face and before the headwear outline: a quadrilateral in the headwear colour (pal.hc, with hd dots) from the far cheek across to the near jaw, its top edge at eye-bottom height, slid in by faceCover; add 2 fold lines. Here the eyes must stay uncovered (the acting from 88.5 to 131.5 is eyes only). Default 0 keeps the regression identical."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "description": "Planned wordless picture balloon (single and strip mode). Icons needed here: portraitMedallion (planned: a person's head in a yellow-rimmed circle r 40) of the poet, Umaymah and the groom; a plain X that can be drawn on, crack and fall; a ring; a tent with a sun; a horse silhouette with a strike line.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "iconBalloon(ctx, x, y, w, h, t, {p, tail, frames: [fn], strip}) using the style's box/balloon primitive for the outline; each frame callback draws in a 100 x 100 cell. portraitMedallion(ctx, x, y, r, personP): clip a circle, call person() scaled so the head fills it, then the yellow rim. The X is two brush strokes with draw-on; falling uses fallY and rot."
+  },
+  {
+   "type": "effect",
+   "name": "musicNotes",
+   "description": "Planned: quaver glyphs rising from a point on seeded S-paths, rocking and fading (the song at 61.8, the notes that reach the poet at 72.1, the restart at 162).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "musicNotes(ctx, x, y, t, {t0, n, seed, col, to}): for i < n a note born at t0 + i * 0.25 follows x + sin path, y - 90 * age; glyph = filled ellipse 14 x 10 rotated -0.3, stem 30, flag curve; alpha by age; optional target point 'to' bends the path."
+  },
+  {
+   "type": "prop",
+   "name": "scroll + tallyMarks",
+   "description": "The two small story objects: the poet's verse scroll (planned scroll with an open state and a camel doodle) and the tally of years scratched on the tent post.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "scroll: rounded rects and three sine polylines; open state scales the sheet height by open; the doodle is 5 strokes. tallyMarks: n seeded strokes with ctx.lineCap round, every fifth diagonal across the previous four."
+  }
+ ],
+ "owner_questions": [
+  "SCRIPT: the English is a shortened translation in several paragraphs (P1 omits 'no news reached her to reassure her' and 'would not return'; P3 omits 'her family kept pressing' and 'the people gathered'; P7 omits 'left without returning'; P8 omits 'the couple stayed together in comfort and joy after the misunderstanding cleared'); both are kept verbatim as supplied.",
+  "SCRIPT: in P6 the Arabic 'في بيتها' is staged as 'in her verse' (as the English says), not 'in her house'; default: label HER VERSE and the recital stays at the wedding.",
+  "The poet covers his face with his head cloth to enter unrecognised (the script only says nobody knew him); default: keep the face cover from 88.5 to 131.5.",
+  "The rumour of his death is shown as his portrait under a plain X in a picture balloon, with no grave or body; default: keep it this soft.",
+  "Added small inventions to carry the story without words: a tally of 7 years on the tent post (the script says 'all those years', no number), a verse scroll keepsake, a passing horseman who brings no news, a flower the groom hands to the poet; default: keep all four, counter reads 7 YEARS.",
+  "The verses are shown as ribbons of squiggle writing, with no invented lines of poetry on screen; default: no readable verse text.",
+  "English comic lettering added (NEWS?, DEAD?, NO!, HE IS ALIVE!, WHERE?, RIGHT HERE!, THAT VOICE!, NO ANGER, THE PLACE IS YOURS, DUM! TAK!); default: keep, about 20 items including labels.",
+  "The setting is a bedouin tent camp (the script says 'the tents') and the poet travels by camel; default: desert camp, not a town house."
+ ],
+ "implementation_notes": [
+  "Start from Library/template; scenes S2-S16 all use one world (desertCamp 1600 x 1230) with a keyed camera, so characters keep continuous positions: Umaymah's cushion x 860, groom's x 740, tally post x 560, drummers x 330 / 430, guests x 1150 / 1240, fire x 1220, the poet's entry from the right edge and the groom's exit to the left edge.",
+  "Word cues: build CUE from timing.json with w(p, n); every action's cue word and time are in creative_plan.json. Narration has no pauses of 0.6 s or more, and the word timings show only two real gaps (46.36-46.90 and 121.16-121.47), so only 4 quiet effects are listed: a pop at 46.63 (suitors), a chime at 121.3 (the breath before his answer), and a chime at 171.75 plus one soft drum thud at 172.6 after the last word. Do not add more; the picture carries the rhythm (drum hands, lamp pulses).",
+  "Set LIFE.t = t each frame for auto-blinks; give explicit lids where the plan names them (the held shock at 85.9, the freeze at 127.5) and use P.noBlink there.",
+  "Eyes-only acting from 88.5 to 131.5 (face covered): use lookAt / gazePlan, lid, brow and head drop; make the eye whites read at phone size (he is at least 240 px tall on screen in his key shots S9 and S12).",
+  "Seated wedding pair: person({y: cushion.sitY, sit: 1, seat: 'bench'}) on scene-drawn cushions; floor guests use seat: 'floor'. Standing up is the sit blend back to 0 with anticipate() and settleTo().",
+  "Drum beat: one onset grid of 0.4 s from 62.52 to 107.3 (hands stop by 108.2) and again from 163.3 to the end; drive both drummers (drummerB half a beat late), the groom's clapping, head bobs and the lamp-disc pulse from the same list (countedBeats). No drum sound effects on the grid: the narration is continuous.",
+  "Night look: skyCycle u 0.72 for S6-S16 with dayCycle(u).night to tint the dunes and tents; keep faces at full paper white inside the lamp discs so expressions stay legible. S2-S5 run at u 0.25 (S2), 0.2 (S3), 0.08 to 0.2 (S4), 0.3 (S5).",
+  "The heart is the Library heart prop (catalogue props 'fig, worm, heart'); use it exactly three times (24.66, 128.56, 168.78).",
+  "Camera: clamp as in the template; world is 1600 wide in the camp, so clamp x to [500 / z, 1600 - 500 / z]. Use twoShot() for S10, S13, S15. Apply shake nowhere: this film has no impacts.",
+  "The LATER card at 9.1 hides the cut from the road set to the camp set (camera key pair at the card's covered midpoint).",
+  "Subtitles: chunks_ar.txt and chunks_en.txt from the subtitles array (| marks); Arabic in Noto Naskh Arabic 700, English in blue Bangers below."
+ ],
+ "warnings": [
+  "desertCamp is a large new set (effort L) and almost the whole film plays on it; build and still-check it first.",
+  "The narration never pauses for 0.6 s; only 4 effects are planned (two inside the narration, two after it). If either inner one touches a word in the real audio, drop it rather than move it.",
+  "The person figure is front-facing only: 'looking back', 'turning away' and walking off are done with gaze, head offset, tip and travel direction, not a profile. The groom's exit wave with his back turned must be read from the arm and the travel, since a back view does not exist.",
+  "faceCover must leave both eyes clear; if the planned Library field hides the eyes at 1, cap it at about 0.7 here.",
+  "Three verse ribbons plus thought cloud in S11-S12 can crowd the frame: keep her cloud in the upper right, his ribbon at head height, and remove the cloud by 126.5.",
+  "Twelve seated or standing people appear in the wedding wide; keep guests to four plus two drummers and two children, each with a different delay, so nothing moves in unison."
+ ]
+}

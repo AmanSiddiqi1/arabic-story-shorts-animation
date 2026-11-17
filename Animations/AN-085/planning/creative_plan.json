@@ -1,0 +1,2834 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-085",
+ "title": "The City of Labtayt",
+ "duration": 171.36,
+ "end_hold": 3.0,
+ "logline": "A tower stays sealed under twenty-four locks, one from every king, until a new king from another house ignores his advisers, opens it, and finds stone riders and a written warning that comes true the same year.",
+ "moral": "A warning kept by generations deserves a hearing; some doors cannot be closed again once opened.",
+ "tone": "A legend told with a straight face: ritual and mystery in the first half, a cold reveal in the middle, wonder in the treasure hall, and a quiet, rueful ending. Humour is small and comes from the bystanders (the guard, the nobles, a curious child), never from the conquest.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 9.66,
+   "kind": "setup",
+   "cue": {
+    "word": "مغلق",
+    "t": 9.66
+   },
+   "summary": "A sealed tower in the citadel of Labtayt."
+  },
+  {
+   "id": "B2",
+   "t": 19.98,
+   "kind": "setup",
+   "cue": {
+    "word": "أربعة",
+    "t": 19.98
+   },
+   "summary": "Every king adds a lock: the counter reaches 24."
+  },
+  {
+   "id": "B3",
+   "t": 25.24,
+   "kind": "suspense",
+   "cue": {
+    "word": "يخفيه",
+    "t": 25.24
+   },
+   "summary": "Nobody knows what the tower hides; kings look away from it."
+  },
+  {
+   "id": "B4",
+   "t": 37.04,
+   "kind": "inciting",
+   "cue": {
+    "word": "ملك",
+    "t": 37.04
+   },
+   "summary": "A new king from another family arrives."
+  },
+  {
+   "id": "B5",
+   "t": 46.54,
+   "kind": "turn",
+   "cue": {
+    "word": "وقرر",
+    "t": 46.54
+   },
+   "summary": "He decides to open the door."
+  },
+  {
+   "id": "B6",
+   "t": 51.78,
+   "kind": "rising",
+   "cue": {
+    "word": "منعه",
+    "t": 51.78
+   },
+   "summary": "The elders try to stop him; he refuses advice."
+  },
+  {
+   "id": "B7",
+   "t": 69.82,
+   "kind": "rising",
+   "cue": {
+    "word": "لم",
+    "t": 69.82
+   },
+   "summary": "He refuses their gold as well."
+  },
+  {
+   "id": "B8",
+   "t": 74.06,
+   "kind": "suspense",
+   "cue": {
+    "word": "كلها",
+    "t": 74.06
+   },
+   "summary": "All the locks come off: counter back to 0."
+  },
+  {
+   "id": "B9",
+   "t": 77.98,
+   "kind": "reveal",
+   "cue": {
+    "word": "تماثيل",
+    "t": 77.98
+   },
+   "summary": "Stone Arab riders on horses and camels with swords and spears."
+  },
+  {
+   "id": "B10",
+   "t": 90.02,
+   "kind": "surprise",
+   "cue": {
+    "word": "تحذيرًا",
+    "t": 90.02
+   },
+   "summary": "The written warning: an army like these riders, and the fall of the land."
+  },
+  {
+   "id": "B11",
+   "t": 104.86,
+   "kind": "emotion",
+   "cue": {
+    "word": "فتح",
+    "t": 104.86
+   },
+   "summary": "Fear, and the door is already open."
+  },
+  {
+   "id": "B12",
+   "t": 110.74,
+   "kind": "climax",
+   "cue": {
+    "word": "طارق",
+    "t": 110.74
+   },
+   "summary": "The living army arrives in the statues' formation, led by Tariq ibn Ziyad; the crown falls."
+  },
+  {
+   "id": "B13",
+   "t": 120.12,
+   "kind": "reveal",
+   "cue": {
+    "word": "كنوزًا",
+    "t": 120.12
+   },
+   "summary": "The treasure hall and its wonders: crowns, books, instruments, the mirror, the table."
+  },
+  {
+   "id": "B14",
+   "t": 154.88,
+   "kind": "resolution",
+   "cue": {
+    "word": "الخليفة",
+    "t": 154.88
+   },
+   "summary": "The treasures go to the Caliph al-Walid."
+  },
+  {
+   "id": "B15",
+   "t": 165.16,
+   "kind": "moral",
+   "cue": {
+    "word": "بتحذير",
+    "t": 165.16
+   },
+   "summary": "The tower is remembered for a warning heard too late."
+  }
+ ],
+ "cast": [
+  {
+   "id": "kingNew",
+   "name": "the new king",
+   "library": "person",
+   "base": "person costume:'caliph' (king) recoloured",
+   "look": "Green robe with yellow dots, yellow sash, tall pointed gold crown with a red jewel (pal hc yellow, jewel red), short black beard, age 0.15, s 0.8. Loses crown and cape from S10 on.",
+   "new": false
+  },
+  {
+   "id": "oldKing",
+   "name": "the earlier kings",
+   "library": "person",
+   "base": "person costume:'caliph', palette and age variants",
+   "look": "One figure reused as five kings: robes red, blue, green-grey, yellow, brown; ages 0.9, 0.2, 0.5, 0.1, 0.8; all wear the SAME round three-point crown (the old house). Drawn pale (dream wash, alpha 0.55) when they are memories.",
+   "new": false
+  },
+  {
+   "id": "adviser1",
+   "name": "the vizier (chief elder)",
+   "library": "person",
+   "base": "person costume:'vizier'",
+   "look": "Navy robe, red cape, white turban with pin, grey pointed beard, age 0.7, s 0.8.",
+   "new": false
+  },
+  {
+   "id": "adviser2",
+   "name": "the noble",
+   "library": "person",
+   "base": "person costume:'merchant' recoloured",
+   "look": "Red-brown robe, yellow sash, big white turban with a jewelled pin, black beard, age 0.5; bare-headed after 66.84.",
+   "new": false
+  },
+  {
+   "id": "guard",
+   "name": "the door guard",
+   "library": "person",
+   "base": "person costume:'servant'",
+   "look": "Red flat cap, white tunic, red sash, moustache, holds a spear drawn by the scene; age 0.2 then 0.6 after the LATER card.",
+   "new": false
+  },
+  {
+   "id": "townsfolk",
+   "name": "townspeople",
+   "library": "person",
+   "base": "person costume:'villager' and 'villageWoman'",
+   "look": "Two or three stock presets, s 0.8 near, s 0.35 in the wide.",
+   "new": false
+  },
+  {
+   "id": "child",
+   "name": "the curious child",
+   "library": "person",
+   "base": "person costume:'servant', child:true",
+   "look": "Small figure, red cap; returns with a friend (maiden child) at the end.",
+   "new": false
+  },
+  {
+   "id": "tariq",
+   "name": "Tariq ibn Ziyad",
+   "library": "person",
+   "base": "person costume:'bedouin' recoloured, mounted",
+   "look": "White robe, red sash, white head cloth with a black band, black beard, age 0.3; rides a white horse; curved sword at the hip (sheathed). Calm and dignified; never comic.",
+   "new": false
+  },
+  {
+   "id": "riders",
+   "name": "the Arab riders (stone, then living)",
+   "library": "person",
+   "base": "person costume:'bedouin' palette variants as mountedRider",
+   "look": "Five riders with fixed poses R1..R5: R1 horse, sword raised; R2 camel, spear upright; R3 horse, spear forward; R4 camel, sword at shoulder; R5 horse, spear upright. Robes paper, yellow, blue, red-brown, white. As statues they are one grey stone tone with blue dot shading and no blinking.",
+   "new": false
+  },
+  {
+   "id": "horse",
+   "name": "horse",
+   "library": null,
+   "base": "new side-view quadruped",
+   "look": "Blocky comic horse, 3 palettes (bay, white, black), saddle cloth option. See new_assets.",
+   "new": true
+  },
+  {
+   "id": "camel",
+   "name": "camel",
+   "library": null,
+   "base": "planned asset camel (AN-044)",
+   "look": "The planned one-humped camel, about 400 x 370 at s 1, with the planned rider field and camelLoad for the caravan.",
+   "new": true
+  },
+  {
+   "id": "caliph",
+   "name": "Caliph al-Walid",
+   "library": "person",
+   "base": "person costume:'caliph' default colours",
+   "look": "The preset as drawn in the catalogue (red robe, blue cape, crown turban, grey beard), age 0.6, seated on a bench throne.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "hillCity",
+   "library": null,
+   "description": "NEW, reusable walled city on a hill. World 1600 x 1230, ground y 900. Library sky + hillTrees behind. Plain x 900..1600. City wall: band y 640..900 from x 0 to 900, paper stone with brown block lines, crenellations 40 wide every 80; gate arch at x 500 (140 wide, 190 tall, two leaves that open); small gate towers either side to y 560. Behind the wall 9 flat-roofed houses in three rising rows (tops y 600, 520, 450), yellow, paper and red-dot walls, small blue windows, two domes. Citadel on top: wall y 380..450 from x 380 to 800; the tower at x 570..710 from y 250 to 450, NAVY with blue dots (the only dark building), crenellated, with a small arched door at its foot and a window slit at y 300. Option {locks, open} draws the small door state; option flag.",
+   "new": true
+  },
+  {
+   "id": "towerDoor",
+   "library": null,
+   "description": "NEW close view of the tower front. World 1000 x 1230, ground y 900. Navy stone wall with blue Ben-Day dots and block lines fills x 120..880 up to y 120 (crenellations above, sky behind); paved ground. Door: arch x 350..650, sill y 900, spring line y 520, arch top y 380; two brown plank leaves with black iron bands, a 6 px gap between; a stone step 30 high in front. Fields: locks 0..24 (padlocks on a 6 x 4 grid, slot centres x 390 + 44*col, y 530 + 80*row; each padlock 34 wide x 44 tall: yellow body, black shackle arc, keyhole dot; lock 1 is 1.4x and sits on a chain across the middle), open 0..1 (leaves rotate inward as two parallelograms narrowing to 20 % width, showing a black interior), ivy 0..1, time u for skyCycle, heap n (fallen locks pile at x 700..820). Exposes lockSlot(i) and fallen-lock positions.",
+   "new": true
+  },
+  {
+   "id": "towerChamber",
+   "library": null,
+   "description": "NEW interior of the tower, reusable as any vault or crypt. World 1000 x 1230, floor y 900. Dark navy wall with large stone blocks, three shallow arched niches on the back wall (tops y 300), floor of paper flagstones in perspective bands. Doorway: bright arch at the left, x 40..260, top y 400. Field open 0..1 gives the light: a paper-yellow wedge on the floor from the doorway toward x 960 and a pale vertical band on the back wall; everything outside the wedge is drawn at 35 % brightness (multiply navy). Low plinth: top y 860, x 330..960. Scroll niche in the left wall at (160, 560), 90 x 120. Seeded dust motes inside the wedge.",
+   "new": true
+  },
+  {
+   "id": "palaceHall",
+   "library": null,
+   "description": "PLANNED palaceHall (AN-045, AN-095, KD-017, KD-031), used in two dressings. Treasury: three arches on the back wall, shelf at y 520 (x 180..660), worktable at x 680..920 top y 760, a double door at the left that opens toward the viewer. Throne bay (S13): one arch, a bench throne with cushions at x 620, carpet.",
+   "new": true
+  },
+  {
+   "id": "desertRoad",
+   "library": null,
+   "description": "PLANNED desertRoad travel strip (AN-044, AN-095): scrolling dunes, a foreground palm trunk used for the wipe at 154.66.",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "locks",
+   "library": null,
+   "description": "padlock(ctx, x, y, {s, shut, rust}) and the lock grid of towerDoor: yellow body 34 x 30 with rounded corners, black shackle arc 14 radius (open = shackle rotated 40 degrees), keyhole. Reusable for any locked chest or door.",
+   "new": true
+  },
+  {
+   "id": "scroll",
+   "library": null,
+   "description": "PLANNED scroll (AN-095): paper sheet 90 x 120 between two brown rollers, open 0..1, squiggle lines only (never readable text).",
+   "new": true
+  },
+  {
+   "id": "chest",
+   "library": null,
+   "description": "Treasure chest 170 x 110 (brown planks, yellow bands, domed lid with open 0..1) holding the planned coinPile; part of treasureHoard.",
+   "new": true
+  },
+  {
+   "id": "crown",
+   "library": null,
+   "description": "PLANNED crownProp (AN-046) with shape variants: 0 round three-point (old house), 1 tall pointed with red jewel (new king), 2..6 for the shelf (band with pearls, spiked, domed, small circlet, dented).",
+   "new": true
+  },
+  {
+   "id": "treasure",
+   "library": null,
+   "description": "NEW treasureHoard module, one small function per item so later palace stories reuse them: coin mound (planned coinPile at 260 wide), gem chest (open box with 9 diamond shapes in red, blue, green), vessels (ewer 60 x 130, bowl 110 x 50, cup 40 x 60, yellow with red dot shading), books (stack of 5 slabs 110 x 24 in red, blue, brown plus one open book with a page flip field), instruments (alembic: flask circle r 34 with a 90 long downward beak on a tripod; astrolabe: brass disc r 40 with a rotating pointer and ring; the planned balanceScale; tongs).",
+   "new": true
+  },
+  {
+   "id": "mirror",
+   "library": null,
+   "description": "Great mirror: oval glass 260 x 380 in a gold frame 18 thick with 8 red studs, on a two-foot stand; content(ctx) callback drawn clipped inside the glass; cover cloth as a keyed red polygon. Part of treasureHoard.",
+   "new": true
+  },
+  {
+   "id": "table",
+   "library": null,
+   "description": "The precious table: top 320 x 26 gold with a green inlay band and a row of 9 small pearls, four turned legs 150 tall with red and blue stones, on a carpet 380 x 20. Always shown empty and with no figure near its centre. Part of treasureHoard.",
+   "new": true
+  },
+  {
+   "id": "weapons",
+   "library": null,
+   "description": "PLANNED sword (AN-082) drawn curved, 150 long, plus a spear: shaft 300 long x 6 brown, leaf tip 40 x 18, small red pennant option. Both take a stone flag for the statues.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 10.92,
+   "paragraphs": [
+    1
+   ],
+   "set": "hillCity",
+   "cast": [
+    "townsfolk"
+   ],
+   "summary": "Establishing: the walled city of Labtayt on its hill; the camera climbs to the citadel and finds one dark tower with a chained door.",
+   "camera": {
+    "shot": "establishing",
+    "move": "crane",
+    "notes": "Keys: 0.0 {x:500,y:760,zoom:1.0}; hold to 2.0; ease to {x:560,y:560,zoom:1.5} by 6.6; hold; ease to {x:640,y:470,zoom:2.3} by 9.2 (tower fills the frame, door at lower centre); hold to 10.92."
+   },
+   "composition": "Wide: city wall along y 640..900 with the gate at x 500; houses step up the hill; citadel on top, tower at x 570..710 rising to y 250, clearly taller than everything. The tower is the only navy shape among yellow and paper houses so the eye lands on it. Two tiny townsfolk (s 0.35) on the road at x 300 and 380 give scale.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 2.0,
+     "cue": {
+      "word": "تحكي",
+      "t": 0.0
+     },
+     "who": "set",
+     "action": "hillCity fades up from paper through a fat brush-border wipe; two birds (songbird, s 0.5) cross the sky left to right",
+     "acting": "calm opening, slow cloud drift, sun at (820,170)",
+     "library": "bake(hillCity) + sun + cloudFlat + songbird {fly:true}"
+    },
+    {
+     "t": 1.1,
+     "end": 2.0,
+     "cue": {
+      "word": "قديمة",
+      "t": 1.14
+     },
+     "who": "lettering",
+     "action": "S.label top-left \"AN OLD TALE\" on a yellow box",
+     "acting": "pops with a 10 % overshoot",
+     "library": "S.label / settleTo"
+    },
+    {
+     "t": 2.5,
+     "end": 3.5,
+     "cue": {
+      "word": "مدينة",
+      "t": 2.56
+     },
+     "who": "townsfolk",
+     "action": "two tiny townsfolk walk up the road toward the gate; a flag on the gate tower flaps",
+     "acting": "walk with real leg phase, the second one 0.3 s behind",
+     "library": "person {costume:'villager'} + walk(), stagger"
+    },
+    {
+     "t": 3.5,
+     "end": 5.2,
+     "cue": {
+      "word": "الأندلس",
+      "t": 3.52
+     },
+     "who": "lettering",
+     "action": "S.title \"AL-ANDALUS\" small, then at 5.36 the big headline \"LABTAYT\" drops in above the city",
+     "acting": "headline lands with a 2-frame squash; flag reacts",
+     "library": "S.title, settleTo"
+    },
+    {
+     "t": 5.36,
+     "end": 6.6,
+     "cue": {
+      "word": "لبطائط",
+      "t": 5.36
+     },
+     "who": "camera",
+     "action": "crane up the hill toward the citadel begins; houses slide down out of frame",
+     "acting": "eased move, ends on a hold in the 6.6 pause",
+     "library": "CAM keys"
+    },
+    {
+     "t": 7.9,
+     "end": 8.6,
+     "cue": {
+      "word": "قلعة",
+      "t": 7.98
+     },
+     "who": "fx",
+     "action": "S.arrow from the right points at the citadel wall, label \"THE CITADEL\"",
+     "acting": "arrow draws on in 0.3 s",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 9.2,
+     "end": 9.66,
+     "cue": {
+      "word": "برج",
+      "t": 9.26
+     },
+     "who": "camera",
+     "action": "push in to the tower; the sky behind it darkens one step (skyCycle u 0.25 to 0.4)",
+     "acting": "push ends exactly on the word sealed",
+     "library": "CAM keys + skyCycle"
+    },
+    {
+     "t": 9.66,
+     "end": 10.9,
+     "cue": {
+      "word": "مغلق",
+      "t": 9.66
+     },
+     "who": "set",
+     "action": "a heavy chain swings across the tower door and one big padlock snaps shut on it; red stamp lettering SEALED slams on at an angle",
+     "acting": "chain uses swing() to settle; 3-unit panel-only shake on the snap",
+     "library": "towerDoor {locks:1} drawn small on hillCity; swing(); S.emphasis"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 1.14,
+     "text": "AN OLD TALE"
+    },
+    {
+     "t": 5.36,
+     "text": "LABTAYT"
+    },
+    {
+     "t": 9.9,
+     "text": "SEALED"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 6.75,
+     "kind": "whoosh"
+    },
+    {
+     "t": 10.7,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "zoom",
+    "t": 10.92,
+    "label": ""
+   }
+  },
+  {
+   "id": "S2",
+   "start": 10.92,
+   "end": 22.64,
+   "paragraphs": [
+    1
+   ],
+   "set": "towerDoor",
+   "cast": [
+    "oldKing",
+    "guard"
+   ],
+   "summary": "The lock montage: king after king walks up, hangs one more lock and is gone. The counter climbs to 24.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Keys: 10.92 {x:500,y:640,zoom:1.15}; hold to 18.2; ease to {x:500,y:650,zoom:1.6} by 21.8 on the lock grid; hold to 22.64."
+   },
+   "composition": "Door centred (x 350..650, sill y 900, arch top y 380). Kings act on the left third (x 230) facing the door, the guard stands at x 800. The lock grid (6 columns x 4 rows inside x 368..632, y 500..800) is the star: nothing ever stands in front of it. Counter top-right inside the panel.",
+   "actions": [
+    {
+     "t": 10.92,
+     "end": 11.5,
+     "cue": {
+      "word": "كلما",
+      "t": 10.92
+     },
+     "who": "oldKing",
+     "action": "king No. 1 (red robe, white beard, age 0.9) stands by the door with his hand on lock No. 1; he sags",
+     "acting": "lid 0.6, stoop, slow breathe(); gaze on the lock",
+     "library": "person {costume:'caliph', age:0.9, handRW: lock point} + breathe"
+    },
+    {
+     "t": 11.56,
+     "end": 12.3,
+     "cue": {
+      "word": "مات",
+      "t": 11.56
+     },
+     "who": "oldKing",
+     "action": "no death shown: his crown lifts off his head and floats up while he fades to a paper silhouette (alpha 1 to 0 in 0.6 s)",
+     "acting": "crown rises 120 units with a small rock; soft, not comic",
+     "library": "alpha field; crownProp drawn by the scene"
+    },
+    {
+     "t": 12.38,
+     "end": 13.3,
+     "cue": {
+      "word": "وجاء",
+      "t": 12.38
+     },
+     "who": "oldKing",
+     "action": "king No. 2 (blue robe, black beard, age 0.2) walks in from the left under the floating crown; it drops onto his head",
+     "acting": "walk() in, anticipate dip as the crown lands, sq 0.94 then settle; eyes up to the crown then to the door",
+     "library": "person {costume:'caliph', pal:{robe:blue}, age:0.2} + walk + landSquash"
+    },
+    {
+     "t": 14.4,
+     "end": 15.5,
+     "cue": {
+      "word": "وضع",
+      "t": 14.86
+     },
+     "who": "oldKing",
+     "action": "he pulls a new padlock from his sash, lifts it high (anticipation) and hangs it on the door",
+     "acting": "arm angles aR up for the lift, then handRW to the grid slot; proud brow, small nod after",
+     "library": "aR angles then handRW; anticipate()"
+    },
+    {
+     "t": 15.56,
+     "end": 16.1,
+     "cue": {
+      "word": "قفلًا",
+      "t": 15.56
+     },
+     "who": "fx",
+     "action": "lock No. 2 snaps shut: 8 % squash, tiny star glint; counter \"LOCKS 2\" pops top-right",
+     "acting": "struck-object reaction on the lock",
+     "library": "S.counter; towerDoor {locks:2}"
+    },
+    {
+     "t": 16.2,
+     "end": 17.6,
+     "cue": {
+      "word": "آخر",
+      "t": 16.18
+     },
+     "who": "oldKing",
+     "action": "fast relay: kings 3, 4, 5 (green, yellow, purple-brown robes; ages 0.5, 0.1, 0.8) each cross-fade in at the same mark, one arm already raised, and hang a lock; one lock every 0.45 s",
+     "acting": "same hanging pose reused so it reads as ritual; beards alternate black, grey, white",
+     "library": "palette variants of one caliph preset; countedBeats for the dips"
+    },
+    {
+     "t": 17.2,
+     "end": 18.2,
+     "cue": {
+      "word": "باب",
+      "t": 17.18
+     },
+     "who": "guard",
+     "action": "the guard at the right counts on his fingers, loses count, shrugs",
+     "acting": "gaze follows each new lock (saccades), palmsUp shrug, brow raised",
+     "library": "person {costume:'servant'} + gazePlan(.., 0.07) + PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 18.26,
+     "end": 19.9,
+     "cue": {
+      "word": "حتى",
+      "t": 18.26
+     },
+     "who": "fx",
+     "action": "the locks now fill row by row by themselves (kings reduced to a quick strip of 6 crown icons sliding along the top); counter runs 6 to 20",
+     "acting": "each lock pops with a 2-frame scale overshoot; rows fill left to right",
+     "library": "towerDoor {locks:n} with n from kfn; S.counter"
+    },
+    {
+     "t": 19.98,
+     "end": 21.7,
+     "cue": {
+      "word": "أربعة",
+      "t": 19.98
+     },
+     "who": "fx",
+     "action": "counter 21, 22, 23 on the syllables, then 24 lands with the word and the last lock snaps into the bottom-right slot",
+     "acting": "counter digits squash on each change; the whole door shudders 2 units on 24",
+     "library": "S.counter; countedBeats"
+    },
+    {
+     "t": 21.82,
+     "end": 22.6,
+     "cue": {
+      "word": "قفلًا",
+      "t": 21.82
+     },
+     "who": "lettering",
+     "action": "S.emphasis \"24 LOCKS!\" under the counter; the guard looks at the camera, eyes wide",
+     "acting": "one deliberate look to lens (gaze [0,0.05]), lid 0, held 0.5 s",
+     "library": "S.emphasis; gaze [0,0.05]"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 15.6,
+     "text": "CLICK!"
+    },
+    {
+     "t": 21.82,
+     "text": "24 LOCKS!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 15.56,
+     "kind": "click"
+    },
+    {
+     "t": 21.82,
+     "kind": "click"
+    },
+    {
+     "t": 22.5,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 22.64,
+    "label": ""
+   }
+  },
+  {
+   "id": "S3",
+   "start": 22.64,
+   "end": 35.88,
+   "paragraphs": [
+    2
+   ],
+   "set": "towerDoor",
+   "cast": [
+    "townsfolk",
+    "child",
+    "oldKing",
+    "guard"
+   ],
+   "summary": "Nobody knows what is inside. Kings pass the door with their eyes turned away, and nobody else is allowed near.",
+   "camera": {
+    "shot": "full",
+    "move": "drift",
+    "notes": "Keys: 22.64 {x:500,y:620,zoom:1.0} (whole tower front); slow drift right to {x:540,y:630,zoom:1.1} by 30; ease to {x:620,y:660,zoom:1.35} by 33.4 for the guard and child; hold."
+   },
+   "composition": "Door in the middle with all 24 locks. People pass on the ground line y 900 at s 0.8. A big thought-style \"?\" sits over the tower top, not over any face.",
+   "actions": [
+    {
+     "t": 22.64,
+     "end": 23.7,
+     "cue": {
+      "word": "لم",
+      "t": 22.64
+     },
+     "who": "townsfolk",
+     "action": "a villager and a village woman walk past from the right, slow down in front of the door and look up at it",
+     "acting": "heads tilt back, gaze up-left to the door top; she slows first, he bumps to a stop behind her",
+     "library": "person {costume:'villager'} / {costume:'villageWoman'} + walk + lookAt"
+    },
+    {
+     "t": 24.2,
+     "end": 25.2,
+     "cue": {
+      "word": "يعرف",
+      "t": 24.2
+     },
+     "who": "townsfolk",
+     "action": "they look at each other and both shrug",
+     "acting": "mutual gaze, palmsUp, negative brow; shrugs 4 frames apart",
+     "library": "PERSON_HANDS.palmsUp, stagger"
+    },
+    {
+     "t": 25.24,
+     "end": 26.5,
+     "cue": {
+      "word": "يخفيه",
+      "t": 25.24
+     },
+     "who": "fx",
+     "action": "a large \"?\" pops over the tower; inside the dark window slit at y 300 two tiny white glints blink once",
+     "acting": "the glints are the only movement for 0.5 s (suspense by stillness)",
+     "library": "S.label \"?\"; two dots with blink()"
+    },
+    {
+     "t": 26.6,
+     "end": 28.0,
+     "cue": {
+      "word": "وكان",
+      "t": 26.6
+     },
+     "who": "townsfolk",
+     "action": "the couple hurry off left; the child (s 0.62) who was hidden behind them stays, staring",
+     "acting": "child gaze fixed on the door, mouth o",
+     "library": "person {costume:'servant', child:true}"
+    },
+    {
+     "t": 28.1,
+     "end": 29.0,
+     "cue": {
+      "word": "السابقون",
+      "t": 28.1
+     },
+     "who": "oldKing",
+     "action": "three earlier kings cross right to left in a row as pale figures (dream wash, alpha 0.55), crowns on, spaced 150 apart",
+     "acting": "not in step: phases offset; each keeps his chin up",
+     "library": "walk + dream wash + alpha"
+    },
+    {
+     "t": 29.06,
+     "end": 30.9,
+     "cue": {
+      "word": "يتركونه",
+      "t": 29.06
+     },
+     "who": "oldKing",
+     "action": "as each king passes the door he turns his eyes away from it; the middle one shields his face with his sleeve",
+     "acting": "gaze flips to the far side exactly at the door line; shield gesture on No. 2",
+     "library": "gazePlan; PERSON_HANDS.shield"
+    },
+    {
+     "t": 31.0,
+     "end": 32.8,
+     "cue": {
+      "word": "يدخلونه",
+      "t": 31.86
+     },
+     "who": "oldKing",
+     "action": "the last king stops, reaches a hand toward a lock, hesitates 0.4 s, pulls it back and walks on",
+     "acting": "reach, tremble(1) in the hand, head shake, long blink",
+     "library": "PERSON_HANDS.reach + tremble + settleTo"
+    },
+    {
+     "t": 32.9,
+     "end": 34.2,
+     "cue": {
+      "word": "يسمحون",
+      "t": 33.38
+     },
+     "who": "child",
+     "action": "the child tiptoes to the door and stretches up toward the lowest lock",
+     "acting": "sneak steps, tongue-out concentration (mouth smile), gaze on the lock",
+     "library": "walk (sneak option) + reach"
+    },
+    {
+     "t": 34.22,
+     "end": 35.0,
+     "cue": {
+      "word": "لغيرهم",
+      "t": 34.22
+     },
+     "who": "guard",
+     "action": "the guard steps in and blocks with a flat palm; the child freezes",
+     "acting": "guard brow 0.8, arm straight out (pointFwd as a stop hand); child sq 0.9 flinch",
+     "library": "PERSON_HANDS.pointFwd; sq"
+    },
+    {
+     "t": 35.02,
+     "end": 35.85,
+     "cue": {
+      "word": "بفتحه",
+      "t": 35.02
+     },
+     "who": "child",
+     "action": "the child runs off right with dust; the guard dusts his hands and plants himself in front of the door",
+     "acting": "runInPlace wind-up 0.2 s then exit; guard folded arms",
+     "library": "runInPlace, dustBurst, PERSON_HANDS.folded"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 25.3,
+     "text": "?"
+    },
+    {
+     "t": 34.3,
+     "text": "NO ENTRY!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 22.64,
+     "kind": "pop"
+    },
+    {
+     "t": 35.02,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 35.88,
+    "label": "YEARS LATER..."
+   }
+  },
+  {
+   "id": "S4",
+   "start": 35.88,
+   "end": 48.88,
+   "paragraphs": [
+    2,
+    3
+   ],
+   "set": "towerDoor",
+   "cast": [
+    "kingNew",
+    "guard",
+    "adviser1",
+    "adviser2"
+   ],
+   "summary": "A new king from another family arrives, studies the locks and decides to open the door.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Keys: 37.0 {x:420,y:640,zoom:1.2}; hold to 42.3; ease to {x:470,y:600,zoom:1.7} by 45.8 (king head and the lock grid share the frame); 46.5 start push to {x:360,y:560,zoom:2.4} on his face by 47.8; hold."
+   },
+   "composition": "The new king enters from the LEFT (every old king left that way) and stops at x 250 facing the door. He is visibly a different house: green robe, yellow dots, a tall pointed gold crown with a red jewel, short black beard, age 0.15. Advisers trail behind at x 90 and 150, half in frame.",
+   "actions": [
+    {
+     "t": 35.88,
+     "end": 37.0,
+     "cue": {
+      "word": "ثم",
+      "t": 35.88
+     },
+     "who": "fx",
+     "action": "S.transition card \"YEARS LATER...\" covers the panel; under it the door gains ivy on its frame and the guard gets a grey moustache (age 0.6)",
+     "acting": "camera and cast swapped at the covered midpoint",
+     "library": "S.transition; CAM key pair 0.01 s apart"
+    },
+    {
+     "t": 36.6,
+     "end": 37.4,
+     "cue": {
+      "word": "جاء",
+      "t": 36.6
+     },
+     "who": "kingNew",
+     "action": "the new king strides in from the left, fast and upright",
+     "acting": "walk() with amp 1.1, chin up, gaze straight ahead at the door, small smile",
+     "library": "person {costume:'caliph', pal:{robe:GREEN, dot:yellow, hc:yellow, jewel:red}, age:0.15} + walk + footfalls"
+    },
+    {
+     "t": 37.42,
+     "end": 38.3,
+     "cue": {
+      "word": "جديد",
+      "t": 37.42
+     },
+     "who": "lettering",
+     "action": "S.label \"THE NEW KING\" with a short arrow to him; he stops with a settle and his cape swings on",
+     "acting": "settleTo on the stop; cape follow-through 3 frames late",
+     "library": "S.label + S.arrow; swing"
+    },
+    {
+     "t": 38.62,
+     "end": 40.4,
+     "cue": {
+      "word": "أسرة",
+      "t": 38.62
+     },
+     "who": "fx",
+     "action": "two small shield badges pop above: left a red shield with the old crown shape (crossed out by a brush stroke at 39.78), right a green shield with the new pointed crown",
+     "acting": "the green badge bounces once; the guard looks from badge to king",
+     "library": "iconBalloon-style badges drawn by the scene"
+    },
+    {
+     "t": 40.76,
+     "end": 42.2,
+     "cue": {
+      "word": "حكمت",
+      "t": 40.76
+     },
+     "who": "guard",
+     "action": "the guard bows and steps aside to the right, uncovering the door",
+     "acting": "bow = tip 0.25 then back; sidestep two steps; keeps one eye on the king",
+     "library": "tip, walk"
+    },
+    {
+     "t": 42.36,
+     "end": 43.3,
+     "cue": {
+      "word": "نظر",
+      "t": 42.36
+     },
+     "who": "kingNew",
+     "action": "the king looks the door up and down",
+     "acting": "gazePlan: top row of locks, sweep down the four rows, back up; head tilt follows by 4 px",
+     "library": "look()/gazePlan"
+    },
+    {
+     "t": 45.04,
+     "end": 46.4,
+     "cue": {
+      "word": "الأقفال",
+      "t": 45.04
+     },
+     "who": "fx",
+     "action": "each row of locks glints in turn as his eyes pass; counter \"24\" ghosts in beside the grid",
+     "acting": "saccade timing: one row per 0.3 s",
+     "library": "gazePlan(...,0.07); S.counter"
+    },
+    {
+     "t": 46.54,
+     "end": 47.8,
+     "cue": {
+      "word": "وقرر",
+      "t": 46.54
+     },
+     "who": "kingNew",
+     "action": "decision: chin hand, eyes narrow, then a slow one-sided smile; camera pushes in",
+     "acting": "PERSON_HANDS.chin, lid 0.35, brow 0.5, mouth smile; advisers behind exchange a worried glance",
+     "library": "PERSON_HANDS.chin; push-in"
+    },
+    {
+     "t": 47.84,
+     "end": 48.85,
+     "cue": {
+      "word": "فتح",
+      "t": 47.84
+     },
+     "who": "kingNew",
+     "action": "he snaps his arm out and points at the door",
+     "acting": "anticipation pull-back 0.2 s then pointFwd with overshoot; brow 1",
+     "library": "anticipate + PERSON_HANDS.pointFwd + settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 37.42,
+     "text": "THE NEW KING"
+    },
+    {
+     "t": 48.3,
+     "text": "OPEN IT!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 35.88,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 48.88,
+    "label": ""
+   }
+  },
+  {
+   "id": "S5",
+   "start": 48.88,
+   "end": 63.7,
+   "paragraphs": [
+    3
+   ],
+   "set": "towerDoor",
+   "cast": [
+    "kingNew",
+    "adviser1",
+    "adviser2",
+    "guard"
+   ],
+   "summary": "The elders try to stop him: earlier kings had a reason. He will not listen.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "track",
+    "notes": "twoShot(king head, adviser1 head, {margin:140}) from 48.88; at 54.2 ease wider to include the pale old kings above the door (zoom 1.15, y 560); at 58.6 ease back to the two-shot; 61.6 push to zoom 1.9 on the king."
+   },
+   "composition": "King at x 330 facing left toward the advisers at x 130 (vizier, navy robe, grey beard, age 0.7) and x 210 a step behind (merchant preset recoloured red-brown as a noble, age 0.5). The door is behind the king on the right so he literally stands between them and it. Faces stay above y 760.",
+   "actions": [
+    {
+     "t": 48.88,
+     "end": 49.9,
+     "cue": {
+      "word": "حاول",
+      "t": 48.88
+     },
+     "who": "adviser1",
+     "action": "the vizier hurries in front of the king with both palms up",
+     "acting": "quick three-step walk, armsOut then palms to the king; brow -0.6 (worried), gaze on the king",
+     "library": "person {costume:'vizier', age:0.7} + walk + PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 49.96,
+     "end": 51.1,
+     "cue": {
+      "word": "كبار",
+      "t": 49.96
+     },
+     "who": "adviser2",
+     "action": "the second noble arrives beside him, shaking his head",
+     "acting": "head shake as x offsets of 4 px three times; clasp hands",
+     "library": "person {costume:'merchant', pal:{robe:brown}} + PERSON_HANDS.clasp"
+    },
+    {
+     "t": 51.78,
+     "end": 52.3,
+     "cue": {
+      "word": "منعه",
+      "t": 51.78
+     },
+     "who": "adviser1",
+     "action": "the vizier catches the king by the sleeve",
+     "acting": "handRW to the king sleeve point; king glances down at the hand, then up, annoyed (brow 0.7)",
+     "library": "handRW world target"
+    },
+    {
+     "t": 52.34,
+     "end": 53.7,
+     "cue": {
+      "word": "وقالوا",
+      "t": 52.34
+     },
+     "who": "adviser1",
+     "action": "he lets go and talks, one finger raised",
+     "acting": "talk 0.8, PERSON_HANDS.pointUp, king listens with lid 0.4 (bored)",
+     "library": "talk + pointUp"
+    },
+    {
+     "t": 54.18,
+     "end": 55.7,
+     "cue": {
+      "word": "الملوك",
+      "t": 54.18
+     },
+     "who": "fx",
+     "action": "above the door the three earlier kings appear as a pale row (dream wash) looking down at the scene",
+     "acting": "they fade in one by one 5 frames apart; the vizier points up at them",
+     "library": "dream wash + alpha + stagger"
+    },
+    {
+     "t": 55.74,
+     "end": 57.4,
+     "cue": {
+      "word": "تركوه",
+      "t": 55.74
+     },
+     "who": "fx",
+     "action": "the pale kings all turn their heads away from the door together, each a few frames apart, repeating the look-away from S3",
+     "acting": "callback pose: same shield gesture on the middle one",
+     "library": "gazePlan; PERSON_HANDS.shield"
+    },
+    {
+     "t": 57.46,
+     "end": 58.5,
+     "cue": {
+      "word": "لسبب",
+      "t": 57.46
+     },
+     "who": "adviser2",
+     "action": "the noble taps his temple and then points at the locks: a \"!\" pops over the grid",
+     "acting": "pointUp at his own head then pointFwd; eyes wide",
+     "library": "PERSON_HANDS.pointUp/pointFwd; S.label \"!\""
+    },
+    {
+     "t": 58.58,
+     "end": 59.8,
+     "cue": {
+      "word": "لكنه",
+      "t": 58.58
+     },
+     "who": "kingNew",
+     "action": "the pale kings vanish as the king waves a hand through the air as if brushing them off",
+     "acting": "wave gesture with follow-through; eyes shut for the wave (lid 1), chin up",
+     "library": "PERSON_HANDS.wave + lid"
+    },
+    {
+     "t": 60.12,
+     "end": 61.5,
+     "cue": {
+      "word": "يقبل",
+      "t": 60.12
+     },
+     "who": "kingNew",
+     "action": "he turns his back on them (dir flips with a squeeze) and folds his arms; the advisers droop",
+     "acting": "turnFlip; folded arms; advisers tip 0.1 forward, brows up, look at each other",
+     "library": "turnFlip + PERSON_HANDS.folded"
+    },
+    {
+     "t": 61.64,
+     "end": 62.6,
+     "cue": {
+      "word": "وأصر",
+      "t": 61.64
+     },
+     "who": "kingNew",
+     "action": "he stamps a foot: dust, the lock grid rattles 2 units",
+     "acting": "anticipate lift then stamp, sq 0.92 on contact; brow 1, mouth frown",
+     "library": "anticipate + dustBurst + kick on the locks"
+    },
+    {
+     "t": 62.66,
+     "end": 63.65,
+     "cue": {
+      "word": "على",
+      "t": 62.66
+     },
+     "who": "kingNew",
+     "action": "he marches two steps toward the door, finger out",
+     "acting": "walk; advisers reach after him and stop short",
+     "library": "walk + PERSON_HANDS.reach"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 52.5,
+     "text": "WAIT!"
+    },
+    {
+     "t": 61.7,
+     "text": "STOMP!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 61.64,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 63.7,
+    "label": ""
+   }
+  },
+  {
+   "id": "S6",
+   "start": 63.7,
+   "end": 74.76,
+   "paragraphs": [
+    4
+   ],
+   "set": "towerDoor",
+   "cast": [
+    "kingNew",
+    "adviser1",
+    "adviser2",
+    "guard"
+   ],
+   "summary": "The nobles offer their own gold. He refuses and orders every lock off: the counter runs back down to zero.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Keys: 63.7 {x:400,y:660,zoom:1.3}; hold to 71.5; ease to {x:500,y:650,zoom:1.55} on the door by 72.7; hold to 74.76."
+   },
+   "composition": "The chest is set down at x 250 between the kneeling nobles (x 110, 180) and the king (x 380, facing left). At 71.6 the guard works on the door at x 680, off the grid, so every falling lock is seen.",
+   "actions": [
+    {
+     "t": 63.7,
+     "end": 64.6,
+     "cue": {
+      "word": "عرض",
+      "t": 63.7
+     },
+     "who": "adviser2",
+     "action": "the noble drags in a treasure chest and throws the lid open; gold light rays fan up",
+     "acting": "heave with tip 0.15, then armsOut presenting; goldGlow rays pulse",
+     "library": "treasureHoard.chest {open:1} + goldGlow"
+    },
+    {
+     "t": 65.14,
+     "end": 65.8,
+     "cue": {
+      "word": "الرجال",
+      "t": 65.14
+     },
+     "who": "adviser1",
+     "action": "both nobles kneel",
+     "acting": "kneel 0 to 1 in 0.4 s, 5 frames apart; clasp hands, gaze up at the king",
+     "library": "person kneel + PERSON_HANDS.clasp + stagger"
+    },
+    {
+     "t": 65.86,
+     "end": 66.8,
+     "cue": {
+      "word": "أموالهم",
+      "t": 65.86
+     },
+     "who": "adviser1",
+     "action": "the vizier pulls a fat purse from his robe and adds it; coins spill",
+     "acting": "reachBoth toward the king; 6 coins hop out on seeded arcs",
+     "library": "coinPile + hop arcs"
+    },
+    {
+     "t": 66.84,
+     "end": 68.0,
+     "cue": {
+      "word": "وكنوزهم",
+      "t": 66.84
+     },
+     "who": "adviser2",
+     "action": "the noble takes off his own jewelled turban pin and necklace and lays them on the pile",
+     "acting": "bare-headed for the rest of the scene (small comic sacrifice); hopeful smile",
+     "library": "pal override hc; scene-drawn necklace"
+    },
+    {
+     "t": 68.7,
+     "end": 69.7,
+     "cue": {
+      "word": "غير",
+      "t": 68.7
+     },
+     "who": "kingNew",
+     "action": "the king looks at the gold: his eyes reflect a yellow glint for half a second, the nobles lean in with hope",
+     "acting": "gaze down to the chest, brows up, a held beat; nobles tip 0.08 toward him",
+     "library": "lookAt + settleTo"
+    },
+    {
+     "t": 69.82,
+     "end": 71.0,
+     "cue": {
+      "word": "لم",
+      "t": 69.82
+     },
+     "who": "kingNew",
+     "action": "he shuts his eyes, turns his head away and pushes the air with a flat palm; the chest lid drops shut by itself",
+     "acting": "lid 1, chin up, shield-style palm; nobles sag (sq 0.95), glow snaps off",
+     "library": "PERSON_HANDS.shield; goldGlow off"
+    },
+    {
+     "t": 71.64,
+     "end": 72.6,
+     "cue": {
+      "word": "فأمر",
+      "t": 71.64
+     },
+     "who": "kingNew",
+     "action": "he claps twice and points at the door; the guard jumps to it with a big key ring",
+     "acting": "two claps as hand targets meeting; guard hop of surprise then runs",
+     "library": "hop + walk"
+    },
+    {
+     "t": 72.66,
+     "end": 73.3,
+     "cue": {
+      "word": "بنزع",
+      "t": 72.66
+     },
+     "who": "fx",
+     "action": "locks fly off the door row by row, top row first, each on a short arc to a growing heap at x 700..820 on the ground; counter runs 24, 18, 12",
+     "acting": "each lock: 2-frame squash, arc with fallY, small bounce (rebound)",
+     "library": "towerDoor {locks:n} + fallY + rebound; S.counter"
+    },
+    {
+     "t": 73.34,
+     "end": 74.0,
+     "cue": {
+      "word": "الأقفال",
+      "t": 73.34
+     },
+     "who": "fx",
+     "action": "counter 6, 3, 1; the nobles hide their eyes one after the other",
+     "acting": "PERSON_HANDS.mouthCover on one, cheeks on the other",
+     "library": "PERSON_HANDS.cheeks / mouthCover"
+    },
+    {
+     "t": 74.06,
+     "end": 74.75,
+     "cue": {
+      "word": "كلها",
+      "t": 74.06
+     },
+     "who": "fx",
+     "action": "the last lock (the first one from S1, biggest) falls and lands on top of the heap: counter 0 turns red; the chain slides off",
+     "acting": "3-unit panel-only shake; everybody freezes, eyes on the bare door",
+     "library": "S.counter; impactSquash"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 70.0,
+     "text": "NO!"
+    },
+    {
+     "t": 74.1,
+     "text": "CLANK!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 74.06,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 74.76,
+    "label": ""
+   }
+  },
+  {
+   "id": "S7",
+   "start": 74.76,
+   "end": 85.06,
+   "paragraphs": [
+    4
+   ],
+   "set": "towerChamber",
+   "cast": [
+    "kingNew",
+    "adviser1",
+    "riders",
+    "horse",
+    "camel"
+   ],
+   "summary": "The door opens. Inside: stone riders on horses and camels, armed with swords and spears, standing in silence.",
+   "camera": {
+    "shot": "full",
+    "move": "pan",
+    "notes": "Keys: 74.76 {x:500,y:640,zoom:1.25} looking at the dark doorway from inside; 77.0 start a slow pan right and pull to {x:560,y:600,zoom:1.0} by 80.0 as the light uncovers the statues; 82.3 ease to {x:640,y:480,zoom:1.6} along the raised blades; hold from 84.6."
+   },
+   "composition": "Seen from INSIDE the tower: the doorway is a bright arch at the left (x 40..260). The chamber is navy with stone blocks. Statue group on a low plinth (top y 860) from x 330 to 960: front row horse, camel, horse at x 430, 640, 850 (s 0.8), back row camel and horse at x 540, 760 (s 0.65, y 830, darker). All face LEFT toward the door, so they seem to look at whoever enters.",
+   "actions": [
+    {
+     "t": 74.76,
+     "end": 75.9,
+     "cue": {
+      "word": "وعندما",
+      "t": 74.76
+     },
+     "who": "set",
+     "action": "black screen with a thin vertical line of light at the left that widens: the two door leaves swing inward",
+     "acting": "the light wedge on the floor grows with the door angle; dust motes (seeded) drift in it",
+     "library": "towerChamber {open: 0..1}; clip wedge"
+    },
+    {
+     "t": 75.96,
+     "end": 76.9,
+     "cue": {
+      "word": "فتح",
+      "t": 75.96
+     },
+     "who": "kingNew",
+     "action": "the king stands as a black silhouette in the bright doorway, hand still on the door",
+     "acting": "silhouette = person drawn then filled black; long shadow on the floor toward camera right",
+     "library": "groundShadow-style long shadow"
+    },
+    {
+     "t": 76.98,
+     "end": 77.9,
+     "cue": {
+      "word": "وجد",
+      "t": 76.98
+     },
+     "who": "kingNew",
+     "action": "he steps in and stops dead; his colours return as he leaves the glare; the vizier peeks round the door frame behind him",
+     "acting": "walk two steps, settle, eyes wide, mouth o; vizier shows only head and one hand (peek)",
+     "library": "walk + settleTo; peek by draw order behind the door leaf"
+    },
+    {
+     "t": 77.98,
+     "end": 78.8,
+     "cue": {
+      "word": "تماثيل",
+      "t": 77.98
+     },
+     "who": "fx",
+     "action": "the light wedge reaches the first statue: a stone horse and rider appear from the hooves up; label \"STATUES\"",
+     "acting": "reveal by the moving edge of light, not a fade",
+     "library": "clip to the light wedge; statueTint; S.label"
+    },
+    {
+     "t": 78.82,
+     "end": 80.1,
+     "cue": {
+      "word": "لفرسان",
+      "t": 78.82
+     },
+     "who": "riders",
+     "action": "pan right: the light uncovers rider after rider, five in two rows, all the same grey stone with dot shading",
+     "acting": "completely still (no blink, P.noBlink) so the stillness is eerie; only dust moves",
+     "library": "mountedRider + statueTint, noBlink"
+    },
+    {
+     "t": 80.64,
+     "end": 81.3,
+     "cue": {
+      "word": "خيول",
+      "t": 80.64
+     },
+     "who": "horse",
+     "action": "a short arrow and the word HORSES at the front horse; its stone mane has a chipped corner",
+     "acting": "arrow pops on the word",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 81.36,
+     "end": 82.2,
+     "cue": {
+      "word": "وجمال",
+      "t": 81.36
+     },
+     "who": "camel",
+     "action": "second arrow and CAMELS at the camel between them",
+     "acting": "the king, small at the left, turns his head from one to the other",
+     "library": "S.arrow + S.label; gazePlan"
+    },
+    {
+     "t": 82.28,
+     "end": 83.3,
+     "cue": {
+      "word": "يحملون",
+      "t": 82.28
+     },
+     "who": "camera",
+     "action": "ease up to the raised arms",
+     "acting": "slow, respectful move",
+     "library": "CAM keys"
+    },
+    {
+     "t": 83.4,
+     "end": 84.0,
+     "cue": {
+      "word": "السيوف",
+      "t": 83.4
+     },
+     "who": "fx",
+     "action": "a glint runs along each of the three curved stone swords in turn",
+     "acting": "star glint 3 frames each, left to right",
+     "library": "sword glint"
+    },
+    {
+     "t": 84.06,
+     "end": 85.0,
+     "cue": {
+      "word": "والرماح",
+      "t": 84.06
+     },
+     "who": "fx",
+     "action": "the two tall spears catch the light at their tips; the king takes one step BACK",
+     "acting": "the first backward step he has taken in the film; brow -0.5",
+     "library": "spear tips; walk backwards (dir kept)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 78.0,
+     "text": "STATUES"
+    },
+    {
+     "t": 80.64,
+     "text": "HORSES"
+    },
+    {
+     "t": 81.36,
+     "text": "CAMELS"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 74.76,
+     "kind": "creak"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 85.06,
+    "label": ""
+   }
+  },
+  {
+   "id": "S8",
+   "start": 85.06,
+   "end": 100.86,
+   "paragraphs": [
+    5
+   ],
+   "set": "towerChamber",
+   "cast": [
+    "kingNew",
+    "adviser1",
+    "riders",
+    "horse",
+    "camel"
+   ],
+   "summary": "A written sheet on the wall. The king reads it, and we see what it says: these statues ride as a living army and the crown falls.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Keys: 85.06 {x:250,y:600,zoom:1.6} (king and the scroll niche); 88.5 push to {x:230,y:560,zoom:2.2}; 91.4 the thoughtCloud opens and the camera eases out to {x:480,y:520,zoom:1.15} so the cloud (centre 600,380, r about 300) and the king below-left both read; hold to 100.86."
+   },
+   "composition": "A stone niche in the left wall at x 160, y 560 holds the scroll (paper colour, the only light thing in the room). King at x 330 facing left. The prophecy plays inside a thought cloud in the upper right two-thirds; the real statues stay dim under it so the match is visible.",
+   "actions": [
+    {
+     "t": 85.06,
+     "end": 86.0,
+     "cue": {
+      "word": "رأى",
+      "t": 85.06
+     },
+     "who": "kingNew",
+     "action": "the king notices something pale on the wall and turns to it",
+     "acting": "gaze snaps left first, head follows 3 frames later; turnFlip",
+     "library": "gazePlan + turnFlip"
+    },
+    {
+     "t": 86.48,
+     "end": 87.4,
+     "cue": {
+      "word": "صحيفة",
+      "t": 86.48
+     },
+     "who": "fx",
+     "action": "the scroll in the niche glows paper-white; arrow and label \"A WARNING\"",
+     "acting": "soft halo pulse, arrow pops",
+     "library": "scroll + skyLight-style halo; S.arrow"
+    },
+    {
+     "t": 87.46,
+     "end": 88.4,
+     "cue": {
+      "word": "مكتوبة",
+      "t": 87.46
+     },
+     "who": "kingNew",
+     "action": "he lifts it down with both hands and unrolls it: rows of squiggle lines (no readable text)",
+     "acting": "reachBoth to the niche then hands apart; the scroll unrolls with a small bounce",
+     "library": "handLW/handRW + scroll {open:0..1}"
+    },
+    {
+     "t": 88.5,
+     "end": 90.0,
+     "cue": {
+      "word": "فقرأ",
+      "t": 88.5
+     },
+     "who": "kingNew",
+     "action": "he reads: pupils travel right to left along three lines",
+     "acting": "gazePlan in saccades, right to left (Arabic reading direction), lips move slightly (talk 0.2)",
+     "library": "gazePlan(...,0.07)"
+    },
+    {
+     "t": 90.02,
+     "end": 91.3,
+     "cue": {
+      "word": "تحذيرًا",
+      "t": 90.02
+     },
+     "who": "kingNew",
+     "action": "his eyes stop, widen; the scroll shakes in his hands",
+     "acting": "lid 0, brow -0.8, tremble(2) on the hands only",
+     "library": "tremble"
+    },
+    {
+     "t": 91.44,
+     "end": 93.2,
+     "cue": {
+      "word": "إن",
+      "t": 91.44
+     },
+     "who": "fx",
+     "action": "thoughtCloud pops from the scroll: inside it a small tower door swings open",
+     "acting": "trail bubbles first, then the cloud (0.4 s)",
+     "library": "thoughtCloud {at, scale}"
+    },
+    {
+     "t": 93.24,
+     "end": 94.6,
+     "cue": {
+      "word": "سيجلب",
+      "t": 93.24
+     },
+     "who": "fx",
+     "action": "out of the little door in the cloud ride the five riders, same poses as the statues but in full colour and moving",
+     "acting": "horses gallop cycle, camels a slower lope; spears bob",
+     "library": "mountedRider + walk on horse/camel inside the cloud"
+    },
+    {
+     "t": 94.72,
+     "end": 96.2,
+     "cue": {
+      "word": "يشبه",
+      "t": 94.72
+     },
+     "who": "fx",
+     "action": "match beat: a dashed line links each living rider in the cloud to its statue below; the statues flash colour for 4 frames each, in turn",
+     "acting": "the king looks up at the cloud, down at the statue, up again",
+     "library": "S.arrow dashed; statueTint amount 1 to 0 to 1"
+    },
+    {
+     "t": 96.26,
+     "end": 97.0,
+     "cue": {
+      "word": "الفرسان",
+      "t": 96.26
+     },
+     "who": "riders",
+     "action": "for one beat the stone eyes of the front rider seem to gleam (two white dots), then nothing",
+     "acting": "held 6 frames; king flinches (sq 0.93)",
+     "library": "scene-drawn glints"
+    },
+    {
+     "t": 97.06,
+     "end": 98.8,
+     "cue": {
+      "word": "وسيكون",
+      "t": 97.06
+     },
+     "who": "fx",
+     "action": "inside the cloud the riders reach a tiny hill city (hillCity at scale 0.2)",
+     "acting": "city bobs as hooves land (kick)",
+     "library": "bake(hillCity) reused small + footfalls/kick"
+    },
+    {
+     "t": 99.22,
+     "end": 99.8,
+     "cue": {
+      "word": "سقوط",
+      "t": 99.22
+     },
+     "who": "fx",
+     "action": "the crown on top of the little city tips, falls and bounces away; the flag drops",
+     "acting": "fallY + rebound; the real king grabs his own crown with one hand",
+     "library": "fallY, rebound; PERSON_HANDS.headHold"
+    },
+    {
+     "t": 99.8,
+     "end": 100.85,
+     "cue": {
+      "word": "البلاد",
+      "t": 99.8
+     },
+     "who": "kingNew",
+     "action": "the cloud pops; the scroll slips from his fingers and rocks to the floor",
+     "acting": "featherFall-style sway on the scroll; his arms stay frozen in the reading pose",
+     "library": "featherFall motion on scroll"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 86.5,
+     "text": "A WARNING"
+    },
+    {
+     "t": 99.3,
+     "text": "THE FALL!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 85.06,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 100.86,
+    "label": ""
+   }
+  },
+  {
+   "id": "S9",
+   "start": 100.86,
+   "end": 106.12,
+   "paragraphs": [
+    5
+   ],
+   "set": "towerDoor",
+   "cast": [
+    "kingNew",
+    "adviser1",
+    "adviser2",
+    "guard"
+   ],
+   "summary": "Outside, everyone is terrified. Too late: the door already stands wide open.",
+   "camera": {
+    "shot": "full",
+    "move": "pull-out",
+    "notes": "Keys: 100.86 {x:420,y:640,zoom:1.5} on the huddle; from 102.6 pull out to {x:500,y:600,zoom:1.0} by 104.9 to show the open black doorway and the lock heap; hold."
+   },
+   "composition": "Door leaves open inward: a black arch with two faint grey horse heads just visible inside. Nobles and guard huddle at x 160..300, the king alone in the doorway at x 500, small against the dark. Lock heap at x 700..820.",
+   "actions": [
+    {
+     "t": 100.86,
+     "end": 101.7,
+     "cue": {
+      "word": "ارتعب",
+      "t": 100.86
+     },
+     "who": "adviser1",
+     "action": "the three witnesses clutch each other, shaking",
+     "acting": "tremble(3), cheeks / headHold / mouthCover, eyes wide, three different reactions",
+     "library": "tremble + PERSON_HANDS"
+    },
+    {
+     "t": 101.72,
+     "end": 102.5,
+     "cue": {
+      "word": "الحاضرون",
+      "t": 101.72
+     },
+     "who": "guard",
+     "action": "the guard tries to push one door leaf shut; it swings back open by itself",
+     "acting": "heave with tip 0.2, leaf returns with swing(); he backs off",
+     "library": "towerDoor {open} + swing"
+    },
+    {
+     "t": 102.62,
+     "end": 103.4,
+     "cue": {
+      "word": "لكن",
+      "t": 102.62
+     },
+     "who": "camera",
+     "action": "pull out to the whole tower front",
+     "acting": "eased",
+     "library": "CAM keys"
+    },
+    {
+     "t": 103.44,
+     "end": 104.4,
+     "cue": {
+      "word": "الباب",
+      "t": 103.44
+     },
+     "who": "fx",
+     "action": "arrow to the open doorway, label \"OPEN\"; one loose lock rolls off the heap and tips over",
+     "acting": "tiny slow roll and settle",
+     "library": "S.arrow + S.label; settleTo"
+    },
+    {
+     "t": 104.86,
+     "end": 106.1,
+     "cue": {
+      "word": "فتح",
+      "t": 104.86
+     },
+     "who": "kingNew",
+     "action": "the king turns from the dark to the camera and gulps",
+     "acting": "look to lens (gaze [0,0.05]), a held beat, gulp as a small drop pulse, then eyes slide back to the door",
+     "library": "gaze [0,0.05]; drop pulse"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 103.5,
+     "text": "OPEN"
+    },
+    {
+     "t": 105.3,
+     "text": "TOO LATE!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 104.86,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 106.12,
+    "label": ""
+   }
+  },
+  {
+   "id": "S10",
+   "start": 106.12,
+   "end": 118.92,
+   "paragraphs": [
+    6
+   ],
+   "set": "hillCity",
+   "cast": [
+    "tariq",
+    "riders",
+    "horse",
+    "camel",
+    "kingNew",
+    "townsfolk"
+   ],
+   "summary": "The same year: the living army arrives, led by Tariq ibn Ziyad, in exactly the statues' formation. The king loses his crown and the army rides in through the gate.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Keys: 106.12 {x:500,y:700,zoom:1.0}; 108.0 track with the riders from {x:760,y:740,zoom:1.3} to {x:520,y:740,zoom:1.3} by 113.3; 115.3 ease to {x:430,y:660,zoom:1.6} on the gate and the king on the wall; 117.0 pull to zoom 1.2 for the entry."
+   },
+   "composition": "hillCity from the plain: wall and gate in the left half (gate x 300 in this framing: pan the baked set), open ground on the right. The army enters from the RIGHT moving left, the same direction the statues faced. Tariq in front at s 0.85 on a horse; five riders behind in the statue arrangement plus a back row of 4 darker copies at s 0.5 for depth.",
+   "actions": [
+    {
+     "t": 106.12,
+     "end": 107.1,
+     "cue": {
+      "word": "تقول",
+      "t": 106.12
+     },
+     "who": "fx",
+     "action": "S.label \"THE LEGEND SAYS...\" on a yellow box; the open tower on the citadel is visible, small, door black",
+     "acting": "the story frame is stated so the film does not claim it as fact",
+     "library": "S.label"
+    },
+    {
+     "t": 108.02,
+     "end": 108.9,
+     "cue": {
+      "word": "جيشًا",
+      "t": 108.02
+     },
+     "who": "riders",
+     "action": "spear tips rise over the right edge of the frame, then the first horses",
+     "acting": "tips first (anticipation), dust low behind",
+     "library": "mountedRider + walk on horse; dustBurst on footfalls"
+    },
+    {
+     "t": 108.96,
+     "end": 109.8,
+     "cue": {
+      "word": "عربيًا",
+      "t": 108.96
+     },
+     "who": "riders",
+     "action": "the five riders are in frame in the exact statue layout: horse, camel, horse in front, camel and horse behind; a pale stone copy of the statue pose flashes over them for 6 frames",
+     "acting": "the match-cut payoff: same silhouettes, now in colour and moving",
+     "library": "statueTint flash; same pose constants as S7"
+    },
+    {
+     "t": 109.82,
+     "end": 110.7,
+     "cue": {
+      "word": "بقيادة",
+      "t": 109.82
+     },
+     "who": "tariq",
+     "action": "the leader rides out ahead of the line on a white horse",
+     "acting": "upright, calm, gaze on the city; his horse walks, does not gallop",
+     "library": "person {costume:'bedouin', pal:{robe:white, sash:red, hc:white}} as mountedRider + horse {pal:1}"
+    },
+    {
+     "t": 110.74,
+     "end": 112.0,
+     "cue": {
+      "word": "طارق",
+      "t": 110.74
+     },
+     "who": "lettering",
+     "action": "S.label \"TARIQ IBN ZIYAD\" with an arrow to him; he raises one hand and the line halts",
+     "acting": "aR up; riders stop in a concertina (bumpChain), camels last",
+     "library": "S.label + S.arrow; bumpChain"
+    },
+    {
+     "t": 112.14,
+     "end": 113.2,
+     "cue": {
+      "word": "وصل",
+      "t": 112.14
+     },
+     "who": "fx",
+     "action": "S.label \"AL-ANDALUS\" on the city; small white sails sit on a strip of blue at the far right horizon",
+     "acting": "sails only as flat triangles (how they came)",
+     "library": "S.label; flat shapes"
+    },
+    {
+     "t": 114.3,
+     "end": 115.4,
+     "cue": {
+      "word": "السنة",
+      "t": 114.3
+     },
+     "who": "lettering",
+     "action": "S.emphasis \"THE SAME YEAR!\" stamps on",
+     "acting": "stamp with 2-frame squash",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 115.5,
+     "end": 116.5,
+     "cue": {
+      "word": "هزم",
+      "t": 115.5
+     },
+     "who": "kingNew",
+     "action": "no battle is drawn: the king, on the wall above the gate, sees the army; a great dust cloud rolls across the plain and hides the riders for a moment",
+     "acting": "he clutches the parapet, eyes wide, tremble(2)",
+     "library": "fightCloud used as a dust wall, no figures in it"
+    },
+    {
+     "t": 116.52,
+     "end": 117.0,
+     "cue": {
+      "word": "الملك",
+      "t": 116.52
+     },
+     "who": "kingNew",
+     "action": "his crown tumbles off his head, bounces down the wall and rolls on the ground, exactly as on the scroll",
+     "acting": "fallY + two rebounds; he reaches after it and misses, then ducks out of sight behind the parapet",
+     "library": "crownProp + fallY + rebound; PERSON_HANDS.reach"
+    },
+    {
+     "t": 117.08,
+     "end": 117.85,
+     "cue": {
+      "word": "ودخل",
+      "t": 117.08
+     },
+     "who": "tariq",
+     "action": "the gate swings open; Tariq rides in at a walk",
+     "acting": "horse walk with footfalls; he looks up at the tower as he passes",
+     "library": "walk + footfalls + lookAt"
+    },
+    {
+     "t": 117.9,
+     "end": 118.9,
+     "cue": {
+      "word": "المدينة",
+      "t": 117.9
+     },
+     "who": "riders",
+     "action": "the riders follow in single file through the gate; two townsfolk watch from a roof",
+     "acting": "spacing 150; townsfolk heads turn to follow",
+     "library": "walk; gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 106.2,
+     "text": "THE LEGEND SAYS..."
+    },
+    {
+     "t": 110.8,
+     "text": "TARIQ IBN ZIYAD"
+    },
+    {
+     "t": 114.3,
+     "text": "THE SAME YEAR!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 116.52,
+     "kind": "clank"
+    },
+    {
+     "t": 117.08,
+     "kind": "creak"
+    }
+   ],
+   "transition_out": {
+    "type": "wipe",
+    "t": 118.92,
+    "label": ""
+   }
+  },
+  {
+   "id": "S11",
+   "start": 118.92,
+   "end": 138.04,
+   "paragraphs": [
+    6,
+    7
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "tariq",
+    "riders"
+   ],
+   "summary": "The treasure hall: gold, jewels, vessels, crowns, old books and strange instruments said to change metals.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Keys: 118.92 {x:300,y:680,zoom:1.3} at the doorway; 120.1 pull to {x:500,y:640,zoom:1.0}; then a slow left-to-right pan with stops: 122.0 {x:330,y:700,zoom:1.7} gold; 123.6 {x:500,y:700,zoom:1.7} gems and vessels; 127.7 {x:330,y:560,zoom:1.7} crowns shelf; 129.2 {x:560,y:560,zoom:1.8} books; 131.3 {x:790,y:660,zoom:1.9} instruments; hold there to 138.04."
+   },
+   "composition": "palaceHall, treasury variant: three arches on the back wall, a shelf at y 520 from x 180 to 660, floor y 900. Left floor: coin mound (x 200..460). Centre floor: gem chest and vessels (x 420..640). Shelf: seven crowns then a stack of books. Right: a worktable (top y 760, x 680..920) with the instruments. Tariq and two men on foot stay small at the left edge (s 0.7) so the objects are the stars.",
+   "actions": [
+    {
+     "t": 118.92,
+     "end": 119.5,
+     "cue": {
+      "word": "ووجد",
+      "t": 118.92
+     },
+     "who": "tariq",
+     "action": "a tall double door opens toward us: Tariq and two riders on foot stand in the doorway, lit yellow from inside",
+     "acting": "all three faces lit from below-front; they stop together, the two behind a few frames later",
+     "library": "palaceHall {door}; stagger"
+    },
+    {
+     "t": 120.12,
+     "end": 120.8,
+     "cue": {
+      "word": "كنوزًا",
+      "t": 120.12
+     },
+     "who": "fx",
+     "action": "the hall lights up: goldGlow rays from the floor, every treasure pile appears as a dark shape first and then pops into colour left to right",
+     "acting": "pops 3 frames apart; the men shade their eyes",
+     "library": "goldGlow; PERSON_HANDS.shield"
+    },
+    {
+     "t": 120.86,
+     "end": 121.7,
+     "cue": {
+      "word": "عظيمة",
+      "t": 120.86
+     },
+     "who": "lettering",
+     "action": "S.emphasis \"TREASURE!\"",
+     "acting": "kept above the piles, not over faces",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 122.04,
+     "end": 122.6,
+     "cue": {
+      "word": "الذهب",
+      "t": 122.04
+     },
+     "who": "fx",
+     "action": "push to the coin mound: coins slide down it, one rolls toward the camera and falls flat; label \"GOLD\"",
+     "acting": "seeded slides, settle wobble",
+     "library": "coinPile + settleTo; S.label"
+    },
+    {
+     "t": 122.66,
+     "end": 124.3,
+     "cue": {
+      "word": "والحجارة",
+      "t": 122.66
+     },
+     "who": "fx",
+     "action": "the gem chest: red, blue and green stones each flash a star in turn; label \"JEWELS\"",
+     "acting": "glints staggered 4 frames",
+     "library": "treasureHoard.gems; S.label"
+    },
+    {
+     "t": 124.38,
+     "end": 126.2,
+     "cue": {
+      "word": "والأواني",
+      "t": 124.38
+     },
+     "who": "fx",
+     "action": "three vessels (tall ewer, wide bowl, cup) ring like bells as a rider taps one with a fingernail: small arcs",
+     "acting": "struck-object reaction: 5 % squash, arcs from the rim",
+     "library": "treasureHoard.vessels; soundArcs"
+    },
+    {
+     "t": 127.2,
+     "end": 128.3,
+     "cue": {
+      "word": "تيجان",
+      "t": 127.7
+     },
+     "who": "fx",
+     "action": "camera rises to the shelf: seven crowns in a row, each a different shape; a counter ticks 1 to 7 along them",
+     "acting": "each crown hops 3 units as it is counted",
+     "library": "crownProp x7 variants; S.counter; countedBeats"
+    },
+    {
+     "t": 128.36,
+     "end": 129.1,
+     "cue": {
+      "word": "كثيرة",
+      "t": 128.36
+     },
+     "who": "fx",
+     "action": "the fourth crown on the shelf is the old-dynasty crown shape from S2; the last is the pointed crown of the new king, dented",
+     "acting": "no lettering; a quiet visual callback",
+     "library": "crownProp variants"
+    },
+    {
+     "t": 129.22,
+     "end": 130.3,
+     "cue": {
+      "word": "وكتب",
+      "t": 129.22
+     },
+     "who": "fx",
+     "action": "pan to the book stack: the top book opens by itself, pages turn, dust puffs out",
+     "acting": "page flip as 4 alternating wedges; dustBurst",
+     "library": "treasureHoard.books; dustBurst"
+    },
+    {
+     "t": 130.4,
+     "end": 131.2,
+     "cue": {
+      "word": "قديمة",
+      "t": 130.4
+     },
+     "who": "riders",
+     "action": "a rider leans in and sneezes from the dust: the pages flutter",
+     "acting": "head back (anticipation), forward snap, sq 0.94",
+     "library": "anticipate; lettering"
+    },
+    {
+     "t": 131.26,
+     "end": 132.4,
+     "cue": {
+      "word": "وأدوات",
+      "t": 131.26
+     },
+     "who": "fx",
+     "action": "pan to the worktable: an alembic (round flask with a long beak), a brass astrolabe disc, a balance scale, tongs",
+     "acting": "the astrolabe pointer turns slowly, the scale pans rock",
+     "library": "treasureHoard.instruments; balanceScale"
+    },
+    {
+     "t": 132.44,
+     "end": 133.2,
+     "cue": {
+      "word": "عجيبة",
+      "t": 132.44
+     },
+     "who": "tariq",
+     "action": "Tariq bends to look into the flask: his eye appears huge through the glass",
+     "acting": "magnified eye drawn inside the flask circle, blinks once",
+     "library": "inset circle clip + eye2"
+    },
+    {
+     "t": 134.38,
+     "end": 135.4,
+     "cue": {
+      "word": "الرواية",
+      "t": 134.38
+     },
+     "who": "fx",
+     "action": "small yellow tag \"SO THE TALE SAYS\" on the table edge",
+     "acting": "keeps the claim as legend",
+     "library": "S.label"
+    },
+    {
+     "t": 135.46,
+     "end": 136.6,
+     "cue": {
+      "word": "قدرتها",
+      "t": 135.46
+     },
+     "who": "fx",
+     "action": "a grey lump of metal drops into the flask; it bubbles (three circles rising)",
+     "acting": "bubbles seeded, flask wobbles",
+     "library": "scene-drawn circles; tremble"
+    },
+    {
+     "t": 136.7,
+     "end": 138.0,
+     "cue": {
+      "word": "تحويل",
+      "t": 136.7
+     },
+     "who": "fx",
+     "action": "a drop falls from the beak into a dish and lands as a gold coin with a star: arrow \"LEAD\" to \"GOLD?\"",
+     "acting": "the question mark stays (legend, not fact); the rider and Tariq look at each other",
+     "library": "S.arrow + S.label; coin"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 120.9,
+     "text": "TREASURE!"
+    },
+    {
+     "t": 122.1,
+     "text": "GOLD"
+    },
+    {
+     "t": 122.8,
+     "text": "JEWELS"
+    },
+    {
+     "t": 130.6,
+     "text": "ACHOO!"
+    },
+    {
+     "t": 136.9,
+     "text": "GOLD?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 118.92,
+     "kind": "creak"
+    },
+    {
+     "t": 124.38,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "whip",
+    "t": 138.04,
+    "label": ""
+   }
+  },
+  {
+   "id": "S12",
+   "start": 138.04,
+   "end": 150.26,
+   "paragraphs": [
+    7
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "tariq",
+    "riders"
+   ],
+   "summary": "Two last wonders: a great mirror said to show far-off lands, and a precious table attributed to Solomon (the table only, no figure).",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Keys: 138.04 {x:330,y:600,zoom:1.4} on the covered mirror; 141.4 push to {x:330,y:560,zoom:2.0} into the glass; 145.0 whip right to {x:720,y:680,zoom:1.5} on the table; 147.1 slow push to zoom 1.8; hold from 149.2."
+   },
+   "composition": "A second bay of palaceHall. Mirror: oval glass 260 wide x 380 tall in a gold frame on a stand, centre (330, 560), under a red cloth at first. Table: at x 560..880, top y 760, on a low carpet, lit by a soft cone from above. Tariq (on foot, s 0.8) at x 130 by the mirror; one rider at x 940 by the table.",
+   "actions": [
+    {
+     "t": 138.04,
+     "end": 139.1,
+     "cue": {
+      "word": "ووجدوا",
+      "t": 138.04
+     },
+     "who": "tariq",
+     "action": "Tariq takes the corner of a red cloth that covers a tall shape",
+     "acting": "gaze up along the shape; anticipation tug back",
+     "library": "handRW to the cloth corner; anticipate"
+    },
+    {
+     "t": 139.86,
+     "end": 140.5,
+     "cue": {
+      "word": "مرآة",
+      "t": 139.86
+     },
+     "who": "fx",
+     "action": "he pulls: the cloth slides off as a folding red shape and the great mirror stands revealed; his own reflection looks back",
+     "acting": "cloth as a 4-point polygon collapsing downward (no cloth simulation); the reflection copies him 2 frames late",
+     "library": "mirrorFields-style copy; keyed polygon"
+    },
+    {
+     "t": 140.56,
+     "end": 141.3,
+     "cue": {
+      "word": "كبيرة",
+      "t": 140.56
+     },
+     "who": "lettering",
+     "action": "label \"THE GREAT MIRROR\"; a glint sweeps across the glass",
+     "acting": "diagonal white band, 6 frames",
+     "library": "S.label; clip band"
+    },
+    {
+     "t": 141.34,
+     "end": 142.6,
+     "cue": {
+      "word": "قيل",
+      "t": 141.34
+     },
+     "who": "fx",
+     "action": "push in; the reflection ripples (two rings) and fades",
+     "acting": "rings from the centre, the tag \"IT IS SAID\" under the frame",
+     "library": "ripple; S.label"
+    },
+    {
+     "t": 142.62,
+     "end": 143.7,
+     "cue": {
+      "word": "تُظهر",
+      "t": 142.62
+     },
+     "who": "fx",
+     "action": "inside the glass: a sea with a small ship rocking (skyCycle day)",
+     "acting": "ship rocks on a sine; Tariq leans closer, mouth o",
+     "library": "clip to the oval; flat shapes; tip"
+    },
+    {
+     "t": 143.74,
+     "end": 144.4,
+     "cue": {
+      "word": "البلاد",
+      "t": 143.74
+     },
+     "who": "fx",
+     "action": "the picture in the glass wipes to a desert with dunes and two palms",
+     "acting": "horizontal wipe inside the oval",
+     "library": "palmTree (planned) small; clip"
+    },
+    {
+     "t": 144.42,
+     "end": 145.5,
+     "cue": {
+      "word": "البعيدة",
+      "t": 144.42
+     },
+     "who": "fx",
+     "action": "wipes again to a far domed city at night with stars; Tariq waves at it, nobody waves back; he looks at his hand",
+     "acting": "small dry joke by acting only",
+     "library": "nightCity inside the clip; PERSON_HANDS.wave"
+    },
+    {
+     "t": 145.58,
+     "end": 146.3,
+     "cue": {
+      "word": "وطاولة",
+      "t": 145.58
+     },
+     "who": "camera",
+     "action": "whip pan right to the table: gold top, emerald-green inlay band, legs set with red and blue stones, standing in a cone of light",
+     "acting": "the whip settles with a small overshoot",
+     "library": "CAM keys; skyLight cone"
+    },
+    {
+     "t": 146.4,
+     "end": 147.0,
+     "cue": {
+      "word": "ثمينة",
+      "t": 146.4
+     },
+     "who": "fx",
+     "action": "stars glint along the rim one after another; the rider beside it lowers his eyes",
+     "acting": "respectful stillness; hands clasped",
+     "library": "glints; PERSON_HANDS.clasp"
+    },
+    {
+     "t": 147.08,
+     "end": 148.2,
+     "cue": {
+      "word": "نُسبت",
+      "t": 147.08
+     },
+     "who": "fx",
+     "action": "small tag \"SO IT WAS SAID\"; slow push in on the empty table",
+     "acting": "nothing and nobody is placed on or behind the table",
+     "library": "S.label"
+    },
+    {
+     "t": 148.32,
+     "end": 150.2,
+     "cue": {
+      "word": "سليمان",
+      "t": 148.32
+     },
+     "who": "lettering",
+     "action": "label \"THE TABLE OF SOLOMON\"; the light cone brightens a step and holds",
+     "acting": "calm hold; Tariq joins at the left edge, hand on chest",
+     "library": "S.label; PERSON_HANDS.chest"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 140.6,
+     "text": "THE GREAT MIRROR"
+    },
+    {
+     "t": 148.4,
+     "text": "THE TABLE OF SOLOMON"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 139.86,
+     "kind": "whoosh"
+    },
+    {
+     "t": 145.58,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "wipe",
+    "t": 150.26,
+    "label": ""
+   }
+  },
+  {
+   "id": "S13",
+   "start": 150.26,
+   "end": 157.44,
+   "paragraphs": [
+    8
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "camel",
+    "riders",
+    "caliph"
+   ],
+   "summary": "A camel caravan carries the treasure east to the Caliph al-Walid.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Keys: 150.26 {x:500,y:700,zoom:1.1} tracking the caravan (world scrolls); 154.5 the foreground palm wipes the frame and the camera is at {x:500,y:600,zoom:1.3} in the throne bay; hold."
+   },
+   "composition": "First half: three camels in line walking LEFT to RIGHT (the first rightward travel in the film: the treasure leaves), loaded with the chest, the wrapped mirror and the table under a cloth, a drover on foot in front. Second half after a foreground wipe: the caliph seated at x 620 on a bench throne, the goods laid at x 200..450.",
+   "actions": [
+    {
+     "t": 150.26,
+     "end": 151.4,
+     "cue": {
+      "word": "أرسلت",
+      "t": 150.26
+     },
+     "who": "camel",
+     "action": "the caravan sets off: three loaded camels, each a beat after the one in front, rope between them going taut",
+     "acting": "bumpChain in reverse (start-up stagger), loads sway with the walk",
+     "library": "camel + walk + rope (lead); camelLoad"
+    },
+    {
+     "t": 151.5,
+     "end": 152.3,
+     "cue": {
+      "word": "الكنوز",
+      "t": 151.5
+     },
+     "who": "fx",
+     "action": "small labels on the loads as they pass: a crown icon, a mirror icon, a table icon",
+     "acting": "icons pop over each camel in turn",
+     "library": "iconBalloon strip"
+    },
+    {
+     "t": 152.38,
+     "end": 153.6,
+     "cue": {
+      "word": "كما",
+      "t": 152.38
+     },
+     "who": "fx",
+     "action": "a dotted route draws itself along the bottom of the panel from a tower icon to a dome icon; tag \"AS THE TALE TELLS\"",
+     "acting": "route dots appear at walking pace",
+     "library": "S.arrow dotted; S.label"
+    },
+    {
+     "t": 154.3,
+     "end": 154.9,
+     "cue": {
+      "word": "إلى",
+      "t": 154.66
+     },
+     "who": "fx",
+     "action": "a foreground palm trunk wipes across: behind it the scene becomes the caliph's hall",
+     "acting": "costume-change-behind-a-wipe technique used for a scene change",
+     "library": "foreground wipe"
+    },
+    {
+     "t": 154.88,
+     "end": 155.6,
+     "cue": {
+      "word": "الخليفة",
+      "t": 154.88
+     },
+     "who": "caliph",
+     "action": "the caliph sits on a low throne; drovers set the chest down before him",
+     "acting": "sit 1 on bench, upright, age 0.6; gaze down to the chest",
+     "library": "person {costume:'caliph', sit:1, seat:'bench'}"
+    },
+    {
+     "t": 155.68,
+     "end": 157.4,
+     "cue": {
+      "word": "الوليد",
+      "t": 155.68
+     },
+     "who": "lettering",
+     "action": "label \"CALIPH AL-WALID\"; he leans forward and lifts the lid: gold light on his face, brows up",
+     "acting": "lean 0.1, small smile, then he looks past the gold to the wrapped mirror",
+     "library": "S.label; goldGlow; lookAt"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 155.7,
+     "text": "CALIPH AL-WALID"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 154.66,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 157.44,
+    "label": ""
+   }
+  },
+  {
+   "id": "S14",
+   "start": 157.44,
+   "end": 174.36,
+   "paragraphs": [
+    8
+   ],
+   "set": "towerDoor",
+   "cast": [
+    "kingNew",
+    "oldKing",
+    "child"
+   ],
+   "summary": "Back to the tower: 24 empty hooks, an open door, and a king without a crown who understood the warning only afterwards. THE END.",
+   "camera": {
+    "shot": "full",
+    "move": "pull-out",
+    "notes": "Keys: 157.44 {x:500,y:640,zoom:1.5} on the open doorway; 162.4 ease out to {x:500,y:600,zoom:1.0}; 166.2 push to {x:420,y:700,zoom:1.7} on the king and the scroll; 169.0 ease out to {x:500,y:560,zoom:1.0}; hold to the end."
+   },
+   "composition": "towerDoor at dusk (skyCycle u 0.45): leaves open, chamber empty and black, a pile of rusty locks at x 700..820 with ivy growing over it. The former king sits on the door step at x 430, bare-headed, the scroll across his knees. Above the door the pale earlier kings return for the moral.",
+   "actions": [
+    {
+     "t": 157.44,
+     "end": 158.3,
+     "cue": {
+      "word": "أما",
+      "t": 157.44
+     },
+     "who": "set",
+     "action": "dissolve to the tower at dusk; a breeze moves one door leaf a few degrees",
+     "acting": "slow swing(); long shadows",
+     "library": "towerDoor {open:1} + skyCycle 0.45 + swing"
+    },
+    {
+     "t": 158.4,
+     "end": 159.2,
+     "cue": {
+      "word": "البرج",
+      "t": 158.4
+     },
+     "who": "kingNew",
+     "action": "the former king sits alone on the step, no crown, cape gone, looking at the ground",
+     "acting": "sit 0.5 on the step, lid 0.5, stoop, slow breathe()",
+     "library": "person sit:0.5 (step drawn by the set), pal without crown"
+    },
+    {
+     "t": 159.7,
+     "end": 160.5,
+     "cue": {
+      "word": "مغلقًا",
+      "t": 159.7
+     },
+     "who": "fx",
+     "action": "ghost image: for a moment the door is shut again with all 24 locks, drawn pale over the open doorway",
+     "acting": "alpha 0 to 0.6 to 0 across 1.6 s",
+     "library": "towerDoor {open:0, locks:24} at alpha"
+    },
+    {
+     "t": 160.56,
+     "end": 162.3,
+     "cue": {
+      "word": "أجيالًا",
+      "t": 160.56
+     },
+     "who": "oldKing",
+     "action": "the pale earlier kings appear above the door in a row of five, one per generation, each holding his lock",
+     "acting": "fade in right to left 4 frames apart; they look down at him, not angry, sad (brow -0.4)",
+     "library": "dream wash; stagger"
+    },
+    {
+     "t": 162.92,
+     "end": 164.3,
+     "cue": {
+      "word": "ارتبط",
+      "t": 162.92
+     },
+     "who": "child",
+     "action": "the child from S3, now with a friend, stops at a safe distance and points at the tower, whispering",
+     "acting": "cupMouth whisper, the friend eyes wide; the story is being passed on",
+     "library": "person child:true x2; PERSON_HANDS.cupMouth / pointFwd"
+    },
+    {
+     "t": 165.16,
+     "end": 166.1,
+     "cue": {
+      "word": "بتحذير",
+      "t": 165.16
+     },
+     "who": "fx",
+     "action": "the scroll on the king's knees glows faintly; label \"THE WARNING\"",
+     "acting": "halo pulse as in S8",
+     "library": "scroll; S.label"
+    },
+    {
+     "t": 166.62,
+     "end": 167.4,
+     "cue": {
+      "word": "يسمعه",
+      "t": 166.62
+     },
+     "who": "kingNew",
+     "action": "he cups a hand to his ear, far too late, then lets it drop",
+     "acting": "PERSON_HANDS.cupEar for 0.5 s, then the arm falls with follow-through",
+     "library": "PERSON_HANDS.cupEar; settleTo"
+    },
+    {
+     "t": 167.92,
+     "end": 168.9,
+     "cue": {
+      "word": "الجديد",
+      "t": 167.92
+     },
+     "who": "kingNew",
+     "action": "he looks up at the pale kings; they turn away one by one and fade",
+     "acting": "shame ending pattern: look up, eyes break away, head drops",
+     "library": "gazePlan; alpha"
+    },
+    {
+     "t": 169.4,
+     "end": 170.3,
+     "cue": {
+      "word": "بعد",
+      "t": 169.4
+     },
+     "who": "fx",
+     "action": "the last loose lock on the heap clicks shut by itself on nothing",
+     "acting": "the only movement in a still frame",
+     "library": "padlock {shut:0..1}"
+    },
+    {
+     "t": 170.38,
+     "end": 171.1,
+     "cue": {
+      "word": "الأوان",
+      "t": 170.38
+     },
+     "who": "lettering",
+     "action": "S.emphasis \"TOO LATE.\" in black on yellow, lower left of the picture panel",
+     "acting": "no bounce: it simply appears",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 171.4,
+     "end": 174.36,
+     "who": "lettering",
+     "action": "THE END title over the dusk tower; first stars come out (skyCycle to 0.6); the king stays seated, one slow blink",
+     "acting": "held 3 s after the last word",
+     "library": "S.title; skyCycle; blink"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 165.2,
+     "text": "THE WARNING"
+    },
+    {
+     "t": 170.4,
+     "text": "TOO LATE."
+    },
+    {
+     "t": 171.5,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 171.25,
+     "kind": "click"
+    },
+    {
+     "t": 171.6,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 174.36,
+    "label": ""
+   }
+  }
+ ],
+ "ending": {
+  "t": 171.4,
+  "description": "After the last word (171.08) the picture holds on the dusk tower: open door, ivy on the lock heap, the former king seated on the step with the scroll. TOO LATE. stays from 170.38; THE END title pops at 171.5 above the tower and the first stars come out. One soft chime at 171.6. Film ends at 174.36."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "تحكي رواية قديمة عن مدينة في الأندلس اسمها لبطائط،|كانت فيها قلعة ذات برج مغلق.|كلما مات ملك وجاء ملك جديد،|وضع قفلًا آخر على باب البرج، حتى صار عليه أربعة وعشرون قفلًا.",
+   "en": "An old tale speaks of Labtayt,|a city in al-Andalus with a sealed tower.|Each new king added a lock|until its door held twenty-four."
+  },
+  {
+   "p": 2,
+   "ar": "لم يكن أحد يعرف ما يخفيه البرج.|وكان الملوك السابقون يتركونه مغلقًا، فلا يدخلونه ولا يسمحون لغيرهم بفتحه.|ثم جاء ملك جديد من أسرة غير الأسرة التي حكمت من قبله.",
+   "en": "No one knew what lay inside.|Earlier rulers had kept it sealed,|until a new king from another family took power."
+  },
+  {
+   "p": 3,
+   "ar": "نظر الملك الجديد إلى الأقفال الكثيرة، وقرر فتح الباب.|حاول كبار رجال الدولة منعه،|وقالوا إن الملوك السابقين تركوه مغلقًا لسبب مهم.|لكنه لم يقبل نصيحتهم وأصر على الدخول.",
+   "en": "The new king decided to open the tower.|His advisers warned that previous kings|must have had a reason to keep it shut,|but he insisted."
+  },
+  {
+   "p": 4,
+   "ar": "عرض عليه الرجال أموالهم وكنوزهم إذا غير رأيه.|لم ينفع العرض، فأمر بنزع الأقفال كلها.|وعندما فتح الباب، وجد تماثيل لفرسان عرب|على خيول وجمال، يحملون السيوف والرماح.",
+   "en": "His nobles even offered him wealth to change his mind.|He refused, removed the locks,|and found figures of Arab riders|bearing swords and spears."
+  },
+  {
+   "p": 5,
+   "ar": "رأى الملك صحيفة مكتوبة، فقرأ فيها تحذيرًا|يقول إن فتح البرج سيجلب جيشًا يشبه أولئك الفرسان،|وسيكون سببًا في سقوط البلاد.|ارتعب الحاضرون، لكن الباب كان قد فتح بالفعل.",
+   "en": "A written warning said|opening the tower would bring an army like the riders shown|and lead to the country’s fall.|The witnesses were frightened, but the door was already open."
+  },
+  {
+   "p": 6,
+   "ar": "تقول الحكاية إن جيشًا عربيًا بقيادة طارق بن زياد|وصل إلى الأندلس في السنة نفسها.|هزم الملك ودخل المدينة،|ووجد فيها كنوزًا عظيمة من الذهب والحجارة الكريمة والأواني النفيسة.",
+   "en": "The legend says that in that same year|an Arab army led by Tariq ibn Ziyad reached al-Andalus,|defeated the king|and discovered immense treasure."
+  },
+  {
+   "p": 7,
+   "ar": "كانت هناك تيجان كثيرة، وكتب قديمة،|وأدوات عجيبة تتحدث الرواية عن قدرتها على تحويل المعادن.|ووجدوا أيضًا مرآة كبيرة قيل إنها تُظهر صور البلاد البعيدة،|وطاولة ثمينة نُسبت إلى سليمان عليه السلام.",
+   "en": "Among the treasures were crowns, old books,|marvelous instruments,|a mirror said to show distant lands,|and a precious table attributed to Solomon."
+  },
+  {
+   "p": 8,
+   "ar": "أرسلت الكنوز، كما تروي القصة، إلى الخليفة الوليد بن عبد الملك.|أما البرج الذي ظل مغلقًا أجيالًا طويلة،|فقد ارتبط في ذاكرة الناس بتحذير|لم يسمعه الملك الجديد إلا بعد فوات الأوان.",
+   "en": "The treasures were sent, the tale says, to Caliph al-Walid.|The tower, sealed for generations,|became remembered for a warning|the new king heeded too late."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "horse",
+   "description": "Side-view comic horse for this and any rider, caravan or farm story. About 380 wide x 300 tall at s 1 (back at 190, ears at 300), feet at (x, y), facing dir. Palettes: 0 bay (brown, black mane), 1 white (paper with blue dots), 2 black. Fields: ph, amp (walk and gallop), rear 0..1, headDown, talk (neigh), mane and tail follow-through, saddle (cloth colour), plus the shared acting fields. Exposes saddlePoint and bob for a rider.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Build like the Library deer and lion: rounded-box body 240 x 110, neck quad rising 110 at 55 degrees, wedge head 110 x 60 with one eye (eye2), nostril, two pointed ears; four two-segment legs driven by walk(posFn, t) (gallop = pairs offset by 0.5 phase with amp 1.3); mane as 5 overlapping brush triangles along the neck, tail as a tapering brush stroke using swing(). Halftone shading with the existing dot fill. Wrap with acting() and add a registry entry."
+  },
+  {
+   "type": "pose",
+   "name": "mountedRider",
+   "description": "A person seated on a mount (horse, planned camel, later donkey): rideOn(mountFn, mountP, personP, {weapon}). The rider is drawn from the hips up (front-facing torso and head as the Library person, clipped at the saddle line), one flat leg shape hanging on the near side with a stirrup, hips at the mount saddlePoint, following its bob with a 2-frame lag and lurching on a stop. weapon: sword or spear in the raised hand via aR angles.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Draw order: far-side nothing, mount, then ctx.save + clip rect above the saddle line + person(ctx, {...P, x: sx, y: sy + 130*s}) + restore, then a near-side leg (rounded rect 26 x 80 in the robe colour plus shoe) and the saddle cloth edge over the cut. Uses the existing lurch idea from the Monkey film (guide section 6, passenger riding a carrier). Matches the planned camel rider field; implement once and use for both."
+  },
+  {
+   "type": "effect",
+   "name": "statueTint",
+   "description": "Draw any Library character or group as carved stone: one grey-paper tone with blue-grey dot shading, black outlines kept, no blinking; amount 0..1 cross-fades between stone and full colour (used for the statue-to-army match).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Bake the group once to an offscreen canvas with bake(); copy it through ctx.filter = 'grayscale(1) contrast(0.85) brightness(1.05)', then multiply a flat #cfc7b4 rectangle with globalCompositeOperation 'multiply' clipped by 'destination-in' to the group alpha, and overlay the Halftone Pop dot pattern at 20 %. For amount between 0 and 1 draw the colour bake under it and the stone bake at alpha = amount. Pure function of the pose, so deterministic. Related to the planned stoneFigure (AN-082) and ghostForm: share the bake-and-tint helper."
+  },
+  {
+   "type": "set",
+   "name": "hillCity",
+   "description": "Walled hill city with gate, stepped houses, citadel and one dark tower (dimensions under sets). Reusable for any city, siege, arrival or \"once in a city\" opening; options: gate open, flag, tower door state, time of day.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Rectangles and arcs only: wall band with a crenellation loop, houses from a seeded table of [x, top, w, colour], domes as half circles, block lines with K.rng seeded strokes. Bake once per state with bake(); sky via skyCycle behind."
+  },
+  {
+   "type": "set",
+   "name": "towerDoor",
+   "description": "Close view of a great locked door in a stone tower with fields locks 0..24, open 0..1, ivy, heap, time of day (dimensions under sets). Reusable as any palace, treasury or prison door.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Bake the wall; draw leaves and locks live. Leaves: two quads whose inner edges move toward the jambs with open (width factor 1 to 0.2) with black behind. padlock() is a rounded rect plus an arc; the grid is a loop over lockSlot(i). Falling locks are scene sprites using fallY and rebound from each slot to a heap slot."
+  },
+  {
+   "type": "set",
+   "name": "towerChamber",
+   "description": "Dark vault interior lit by a wedge of light from a doorway, with a plinth and a wall niche (dimensions under sets). Reusable for crypts, cellars, treasure vaults and caves with a door.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Bake the lit version of the room; each frame draw it, then draw a navy rectangle at alpha 0.65 with the light wedge polygon cut out (evenodd clip, as in the Fox film head-into-hole clip). Characters and statues are drawn before the darkness layer so they are revealed by the wedge edge. Dust motes: 30 seeded dots drifting with K.noise, drawn only inside the wedge."
+  },
+  {
+   "type": "prop",
+   "name": "treasureHoard",
+   "description": "Module of palace treasure items: chest, gem chest, vessels, books, instruments (alembic, astrolabe, tongs), the great mirror with a content callback, and the jewelled table (dimensions under props). Uses the planned coinPile, crownProp, balanceScale and goldGlow.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "One function per item from rectangles, ellipses and diamonds in the palette (yellow with red dot shading for gold, flat red, blue and green for stones). Mirror: ctx.save, ellipse clip, content(ctx), restore, then frame and a diagonal glint band."
+  },
+  {
+   "type": "prop",
+   "name": "padlock",
+   "description": "Single padlock with shut 0..1 and rust option; also drawn by towerDoor.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rounded rect body, shackle arc rotated about its right foot when open, keyhole circle plus wedge."
+  }
+ ],
+ "owner_questions": [
+  "Tariq ibn Ziyad is shown as a calm, dignified mounted figure with a name label (default: shown, face visible, never comic); confirm, or ask for him to be seen only from behind or at a distance.",
+  "The table attributed to Solomon (peace be upon him) is shown as an empty jewelled table in a cone of light with the label \"THE TABLE OF SOLOMON\" and no figure of the prophet anywhere (default); confirm the label wording.",
+  "The defeat of the king is softened: no battle or wounded people, only a dust cloud, the crown falling from the wall and the king ducking out of sight (default); confirm.",
+  "The death of each earlier king is shown only as the crown lifting off and the figure fading (default); confirm.",
+  "The king and his court are dressed with the Library caliph, vizier and merchant presets recoloured (the story does not name them); a more European Visigothic look would need a new costume preset (default: recoloured existing presets).",
+  "Invented bystanders not in the script: a door guard, a curious child and two townspeople, plus the end image of the former king sitting on the tower step (default: included).",
+  "Invented English lettering: SEALED, 24 LOCKS!, NO ENTRY!, OPEN IT!, WAIT!, NO!, TOO LATE!, THE SAME YEAR!, TREASURE!, ACHOO!, GOLD?, and the legend tags (THE LEGEND SAYS..., SO THE TALE SAYS, IT IS SAID) that keep the story framed as a tale (default: included).",
+  "The alchemy instruments show a grey lump becoming a gold coin with the label \"GOLD?\" and the tag \"SO THE TALE SAYS\" (default: shown as a claim of the tale, with the question mark)."
+ ],
+ "implementation_notes": [
+  "Copy Library/template to Animations/AN-085; build timing.json from planning/inputs/timeline.json and use the word times given here (all cue.t values are word starts on the final MP3).",
+  "Subtitles: write chunks_ar.txt and chunks_en.txt from the subtitles array (| marks) and verify against story/script.json by program.",
+  "Direction of travel carries meaning: old kings and the new king enter from the LEFT; the statues face LEFT; the army rides right to left in the same poses; the treasure leaves left to RIGHT. Keep it consistent.",
+  "Define the five rider poses once (RIDERS = [{mount, x, y, s, weapon, aR, pal}...]) and use the same table for the statues (S7, S8), the thought cloud (S8) and the army (S10) so the match is exact.",
+  "Lock counter: one function lockCount(t) from kfn keys (1 at 9.9; 2 at 15.56; 5 at 17.6; 20 at 19.9; 21, 22, 23 at 20.2, 20.8, 21.3; 24 at 21.82; down from 24 at 72.66 to 0 at 74.06) drives the door, the counter and the click sounds.",
+  "The narration has almost no pauses (only 6.6-6.9, 10.52-10.92, 22.36-22.64 and after 171.08). Every other effect is placed on a word boundary: keep them under 120 ms, at gain 0.25 or less, and drop any that masks a consonant when you listen.",
+  "Set LIFE.t = t each frame for automatic blinks, but give the stone riders noBlink and no gaze changes; their stillness is the effect.",
+  "Use panel-only shake for the lock snaps and the crown bounce; the caption panel never moves.",
+  "Earlier kings as memories: draw with the planned dream wash at alpha 0.55 above the door (y 150..360) so they never cover faces or the lock grid.",
+  "S7 reveal: draw statues, then the darkness layer with the wedge cut out; animate the wedge far edge from x 260 (74.76) to x 520 (78.0), x 760 (79.4), x 980 (80.1).",
+  "Keep all faces and key action above world y 900 and inside the picture panel; lettering sits in the upper third or in empty wall, never on a face.",
+  "Labels obey phone legibility: headlines at least 44 px and labels at least 28 px at 1280 x 720 scale; no en or em dashes.",
+  "Grow the Library afterwards: horse, mountedRider, statueTint, hillCity, towerDoor, towerChamber, treasureHoard, padlock; run node Library/tests/regression.mjs and rebuild the catalogue."
+ ],
+ "warnings": [
+  "New asset load is above the usual four (horse, mountedRider, statueTint, three sets, treasureHoard). If time is short: reuse towerDoor with open 1 and a darkness layer instead of a separate towerChamber, and show hillCity only as a baked backdrop without options.",
+  "The planned camel, palaceHall, desertRoad, scroll, coinPile, crownProp, sword, goldGlow, dream wash and thoughtCloud are reused by name; several are not in Library yet and must be built or taken from the story that builds them first.",
+  "The person figure is front-facing only, so riders are a front-facing torso on a side-view mount; test a still of one mounted rider early (S7 at 80.0) before building the rest.",
+  "Religious and historical sensitivity: no figure of the prophet Solomon; Tariq and the Caliph are shown respectfully; the conquest is shown without violence. See owner_questions.",
+  "Sound effects mostly sit on word boundaries because the narration is continuous; they are optional and must be checked by ear.",
+  "S11 is 19.1 s in one hall: the pan with six stops must keep one new object arriving every 1.5 s as storyboarded."
+ ]
+}

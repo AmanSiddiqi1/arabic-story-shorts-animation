@@ -1,0 +1,108 @@
+{
+ "story_id": "AN-132",
+ "title": "THE SIMPLETON AND THE SHARPER",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T15:06:04",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a91717aa36a87c55a.jsonl",
+ "agent_id": "a91717aa36a87c55a",
+ "model_messages": {
+  "claude-fable-5-2": 22
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "a423b01d16a0db56701ce1cd77052b6e35cf0d6d88585d7bb2be8a37901b25cc",
+  "paragraphs": 8,
+  "segments": [
+   "AN-132-P01-S01",
+   "AN-132-P01-S02",
+   "AN-132-P01-S03",
+   "AN-132-P01-S04",
+   "AN-132-P01-S05",
+   "AN-132-P01-S06",
+   "AN-132-P01-S07",
+   "AN-132-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-132_THE_SIMPLETON_AND_THE_SHARPER_full_slowed.mp3",
+  "sha256": "31723c416c42ddba57b55316593a22a365da8be667d470cfa3c2551e57bad14c",
+  "duration": 175.853
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-132_THE_SIMPLETON_AND_THE_SHARPER_full_slowed.mp3.words.json",
+  "sha256": "bb990c1465e39b0488622b5c6eff1d9569f3d60f57a7e664b1a558afff61f82f",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.992
+ },
+ "library_rev": "5a93429",
+ "scenes": 17,
+ "actions": 164,
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "rope (lead)",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "poofTransform",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "wineCup",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "purse",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "smallBowl",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "spiralEyes",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person carrying a load on the back",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "sneak / tiptoe gait",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The narration has only four pauses of 0.6 s or more, so the film is nearly silent apart from the voice: comedy must come from timing and faces.",
+  "P6 subtitle chunks: the English puts the charity before the fear and the Arabic the reverse, so chunk 2 and 3 of P6 do not match clause for clause.",
+  "Front facing person: walking in profile along a road with a rope behind is the hardest staging here; check stills at 5, 30, 40 and 52 s first.",
+  "Tale cloud figures are small (scale 0.5); verify on a phone sized still that the old mother, the cup and the donkey with the cap read.",
+  "S16 is a 14 s close two-shot: keep the donkey acting (ear, eye, look to camera) so it does not go static."
+ ]
+}

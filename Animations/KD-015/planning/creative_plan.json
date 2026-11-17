@@ -1,0 +1,2284 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "KD-015",
+ "title": "The Ascetic, the Ghee, and the Honey",
+ "duration": 168.144,
+ "end_hold": 3.0,
+ "logline": "A poor ascetic sits under his nearly full jar of ghee and honey, dreams it into a fortune, a house, a wife and a son, gets angry at the imaginary boy, swings a real stick and smashes the real jar over his own head.",
+ "moral": "Do not build castles on what you have not earned yet: a daydream can cost you the real thing in your hand. (Shown, not written on screen.)",
+ "tone": "Gentle comedy with a slow fuse. Warm and modest at first, giddier as the dream swells, one beat of real suspense under the jar, a big slapstick burst, then a quiet, rueful ending.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.42,
+   "kind": "setup",
+   "cue": {
+    "word": "ناسك",
+    "t": 0.42
+   },
+   "summary": "A modest ascetic in a tiny house."
+  },
+  {
+   "id": "B2",
+   "t": 12.9,
+   "kind": "setup",
+   "cue": {
+    "word": "جرّة",
+    "t": 12.9
+   },
+   "summary": "He saves what he does not eat in a clay jar hanging from the ceiling."
+  },
+  {
+   "id": "B3",
+   "t": 18.88,
+   "kind": "setup",
+   "cue": {
+    "word": "تقريبًا.",
+    "t": 18.88
+   },
+   "summary": "Days pass; the jar is almost full."
+  },
+  {
+   "id": "B4",
+   "t": 24.52,
+   "kind": "suspense",
+   "cue": {
+    "word": "الجرّة",
+    "t": 24.52
+   },
+   "summary": "He sits directly under the jar: the danger is planted."
+  },
+  {
+   "id": "B5",
+   "t": 33.6,
+   "kind": "inciting",
+   "cue": {
+    "word": "بعتهما",
+    "t": 33.6
+   },
+   "summary": "'If I sold them...': the first thought cloud opens."
+  },
+  {
+   "id": "B6",
+   "t": 46.5,
+   "kind": "rising",
+   "cue": {
+    "word": "الماعز.",
+    "t": 46.5
+   },
+   "summary": "Coins become goats; goats multiply; cows and a wide field."
+  },
+  {
+   "id": "B7",
+   "t": 72.18,
+   "kind": "rising",
+   "cue": {
+    "word": "بيتًا",
+    "t": 72.18
+   },
+   "summary": "Harvest, a big house, furniture, admiration: a rich man."
+  },
+  {
+   "id": "B8",
+   "t": 81.54,
+   "kind": "comic",
+   "cue": {
+    "word": "يكبر",
+    "t": 81.54
+   },
+   "summary": "The dream grows every moment until it is bigger than the room."
+  },
+  {
+   "id": "B9",
+   "t": 92.8,
+   "kind": "rising",
+   "cue": {
+    "word": "ولدًا",
+    "t": 92.8
+   },
+   "summary": "A wife, a clever son, the king's palace."
+  },
+  {
+   "id": "B10",
+   "t": 108.46,
+   "kind": "turn",
+   "cue": {
+    "word": "يسمع",
+    "t": 108.46
+   },
+   "summary": "The imaginary son disobeys."
+  },
+  {
+   "id": "B11",
+   "t": 111.12,
+   "kind": "emotion",
+   "cue": {
+    "word": "غضب",
+    "t": 111.12
+   },
+   "summary": "Real anger at something that never happened."
+  },
+  {
+   "id": "B12",
+   "t": 117.36,
+   "kind": "suspense",
+   "cue": {
+    "word": "عصا",
+    "t": 117.36
+   },
+   "summary": "He grabs the real stick."
+  },
+  {
+   "id": "B13",
+   "t": 129.12,
+   "kind": "comic",
+   "cue": {
+    "word": "وضرب",
+    "t": 129.12
+   },
+   "summary": "The swing passes through the picture."
+  },
+  {
+   "id": "B14",
+   "t": 135.56,
+   "kind": "climax",
+   "cue": {
+    "word": "أصابت",
+    "t": 135.56
+   },
+   "summary": "The stick hits the real jar above his head."
+  },
+  {
+   "id": "B15",
+   "t": 139.44,
+   "kind": "surprise",
+   "cue": {
+    "word": "انكسرت",
+    "t": 139.44
+   },
+   "summary": "The jar and the dream burst together."
+  },
+  {
+   "id": "B16",
+   "t": 144.04,
+   "kind": "comic",
+   "cue": {
+    "word": "وجهه",
+    "t": 144.04
+   },
+   "summary": "Ghee and honey land on his face."
+  },
+  {
+   "id": "B17",
+   "t": 148.26,
+   "kind": "emotion",
+   "cue": {
+    "word": "مذهولًا،",
+    "t": 148.26
+   },
+   "summary": "He sits stunned, dripping."
+  },
+  {
+   "id": "B18",
+   "t": 161.16,
+   "kind": "moral",
+   "cue": {
+    "word": "مال",
+    "t": 161.16
+   },
+   "summary": "No money, no goats, no field; even the honey is gone."
+  }
+ ],
+ "cast": [
+  {
+   "id": "ascetic",
+   "name": "the ascetic",
+   "library": "person",
+   "base": "person kind:'owner' with costume preset 'ascetic'",
+   "look": "Thin older man, s 1.5. Small wrapped white turban with a short tail that can lag, grey-white pointed beard, plain off-white robe with one blue patch on the shoulder and one on the knee, bare feet. Sits cross-legged for most of the film.",
+   "new": false
+  },
+  {
+   "id": "dreamSelf",
+   "name": "his dream self",
+   "library": "person",
+   "base": "same figure at s 0.62 inside the thought cloud; preset 'ascetic', then preset 'richMan' from 78.0",
+   "look": "richMan: big yellow turban with a red jewel, yellow robe with red sash, beard combed.",
+   "new": false
+  },
+  {
+   "id": "dreamWife",
+   "name": "the imagined wife",
+   "library": "person",
+   "base": "person kind:'wife', s 0.62, inside the cloud",
+   "look": "Library wife with a blue headscarf and red dress (the planned villageWoman look).",
+   "new": false
+  },
+  {
+   "id": "dreamSon",
+   "name": "the imagined son",
+   "library": "person",
+   "base": "planned 'person child option' (s 0.4 in the cloud, head 1.25x), grows to s 0.62 with a moustache for the palace beat",
+   "look": "Small boy in a blue tunic and red cap; cheeky.",
+   "new": false
+  },
+  {
+   "id": "admirers",
+   "name": "three neighbours",
+   "library": "person",
+   "base": "planned 'villager' variants x3 at s 0.55 inside the cloud",
+   "look": "Three tunic colours (blue, red, green), one turban, two caps, different heights.",
+   "new": false
+  },
+  {
+   "id": "goats",
+   "name": "the dream goats",
+   "library": null,
+   "base": "new 'goat' figure",
+   "look": "Small white and brown goats with back-curved horns, chin beard, short up-tail; kids at half size without horns.",
+   "new": true
+  },
+  {
+   "id": "cows",
+   "name": "the dream cows",
+   "library": null,
+   "base": "'goat' figure with kind:'cow'",
+   "look": "Wide white body with black patches, short horns, pink muzzle, long tail with a tuft.",
+   "new": true
+  }
+ ],
+ "sets": [
+  {
+   "id": "hutRoom",
+   "library": null,
+   "description": "One-room mud hut in cutaway, with sky around it, a door at the left, a window at the right, a ceiling beam with a hook, a mat and a lamp niche; day and dusk palettes. Full dimensions in new_assets.",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "jar",
+   "library": null,
+   "description": "hangingJar: clay jar on a rope with fill level, sway, drip, crack and burst states.",
+   "new": true
+  },
+  {
+   "id": "stick",
+   "library": null,
+   "description": "Planned prop 'stick' (KD-008): straight brown staff 180 long, 12 thick, slightly knobbed top.",
+   "new": true
+  },
+  {
+   "id": "bowls",
+   "library": null,
+   "description": "smallBowl x2: 34 wide clay bowls, one with yellow ghee, one with amber honey.",
+   "new": true
+  },
+  {
+   "id": "coinPile",
+   "library": null,
+   "description": "Planned prop 'coinPile' (AN-095): yellow discs with black rims stacked in a mound, n = number of coins.",
+   "new": true
+  },
+  {
+   "id": "dreamProps",
+   "library": null,
+   "description": "Flat pictogram props drawn only inside the thought cloud: stall, abacus, moonTick, field, sheaf, sack, loaf, house, furniture, bundle, slate, palace.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 20.6,
+   "paragraphs": [
+    1
+   ],
+   "set": "hutRoom",
+   "cast": [
+    "ascetic"
+   ],
+   "summary": "Daytime. The small hut in cutaway. The ascetic comes home with two tiny bowls, eats a little, pours the rest into the clay jar hanging from the ceiling. Days flick past in the window and the jar fills to almost full.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Keys: 0-2.5 {x:500,y:600,zoom:1.0} whole hut with sky around it; 3.3-8 ease to {x:430,y:640,zoom:1.35}; hold; 11.1-12.5 ease to {x:400,y:590,zoom:1.6} (jar and pouring hands); 15.2 ease back to {x:470,y:610,zoom:1.3} so the window and the jar share the frame for the day montage."
+   },
+   "composition": "Hut cutaway centred, sky on both sides and above the flat roof so it reads as one small house. Jar hangs left of centre at world (360, 505); window at right (690..830, 400..540). The ascetic's face stays above y 760. The day counter sits top right, never over the jar.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 2.5,
+     "cue": {
+      "word": "عاش",
+      "t": 0.0
+     },
+     "who": "set",
+     "action": "establishing hold on the tiny hut: sun on its arc, one cloud drifting, the jar already hanging inside on its rope, swaying 2 degrees",
+     "acting": "none (empty room, life from the sway and the cloud)",
+     "library": "hutRoom + dayCycle + sun + cloudFlat + swing()"
+    },
+    {
+     "t": 0.5,
+     "end": 2.3,
+     "cue": {
+      "word": "ناسك",
+      "t": 0.42
+     },
+     "who": "ascetic",
+     "action": "walks up outside from the left and reaches the door",
+     "acting": "calm small steps, eyes ahead (gaze [1, 0.1]), blinks",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' + walk(X,t) + footfalls"
+    },
+    {
+     "t": 1.4,
+     "end": 2.4,
+     "cue": {
+      "word": "بيت",
+      "t": 1.4
+     },
+     "who": "lettering",
+     "action": "label box 'A SMALL HOUSE' with an arrow to the roof, pops and leaves by 2.5",
+     "acting": "label only",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 2.6,
+     "end": 3.3,
+     "cue": {
+      "word": "وكان",
+      "t": 3.31
+     },
+     "who": "set",
+     "action": "the door leaf swings open (pause 2.52-3.31)",
+     "acting": "door overshoots and settles",
+     "library": "hutRoom {door:0..1} + settleTo"
+    },
+    {
+     "t": 3.3,
+     "end": 5.4,
+     "cue": {
+      "word": "يحصل",
+      "t": 3.98
+     },
+     "who": "ascetic",
+     "action": "steps inside holding one tiny bowl in each hand, stops at x 470",
+     "acting": "content half smile, eyes go down to the bowls (lookAt bowls)",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {handL, handR} + walk + lookAt"
+    },
+    {
+     "t": 6.0,
+     "end": 6.7,
+     "cue": {
+      "word": "قليل",
+      "t": 6.0
+     },
+     "who": "bowls",
+     "action": "the two bowls tip toward camera: they are nearly empty, a thin line in each",
+     "acting": "he shrugs a little, brow raised (brow -0.4): only a little",
+     "library": "smallBowl {fill:0.25}"
+    },
+    {
+     "t": 7.0,
+     "end": 8.4,
+     "cue": {
+      "word": "السمن",
+      "t": 7.06
+     },
+     "who": "lettering",
+     "action": "labels pop on their words: 'GHEE' (yellow bowl) at 7.06, 'HONEY' (amber bowl) at 7.64",
+     "acting": "he lifts each bowl a few px on its word",
+     "library": "S.label x2"
+    },
+    {
+     "t": 8.5,
+     "end": 10.9,
+     "cue": {
+      "word": "يأكل",
+      "t": 8.52
+     },
+     "who": "ascetic",
+     "action": "dips two fingers, eats one small mouthful, pats his stomach on 'needs'",
+     "acting": "eyes shut in pleasure (lid 0.8) for 0.5 s, chew, small smile; one pat only: a modest man",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {handR:PERSON_HANDS.cupMouth, then chest}"
+    },
+    {
+     "t": 11.0,
+     "end": 12.5,
+     "cue": {
+      "word": "ويضع",
+      "t": 11.12
+     },
+     "who": "ascetic",
+     "action": "steps to x 470 beside the jar, rises on tiptoe and pours the rest of both bowls into the jar mouth",
+     "acting": "anticipate dip 0.2 s, stretch sq 1.05, eyes on the jar mouth; tongue-tip concentration (mouth 'o')",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {aR:[2.45,2.85]} + anticipate + lookAt"
+    },
+    {
+     "t": 12.9,
+     "end": 14.6,
+     "cue": {
+      "word": "جرّة",
+      "t": 12.9
+     },
+     "who": "jar",
+     "action": "the jar takes the pour: dips 6 px on its rope, swings and settles; arrow and label 'CLAY JAR'; a level mark inside the cutaway window rises to 0.1",
+     "acting": "follow-through: he watches it swing, head following 2 frames late",
+     "library": "hangingJar {fill, swingA} + swing() + S.arrow"
+    },
+    {
+     "t": 14.75,
+     "end": 15.1,
+     "who": "ascetic",
+     "action": "walks back to his mat and sits (in the 14.70-15.17 gap)",
+     "acting": "relaxed, sq settle",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {sit:1}"
+    },
+    {
+     "t": 15.2,
+     "end": 17.0,
+     "cue": {
+      "word": "مرور",
+      "t": 15.84
+     },
+     "who": "set",
+     "action": "days fly: the window sky runs day, night, day, night (5 cycles in 3 s); a DAY counter top right spins 1 to 30",
+     "acting": "he repeats a tiny ghost of the pour on each day (arm up, down)",
+     "library": "dayCycle (in the window and the outside sky) + S.counter"
+    },
+    {
+     "t": 17.1,
+     "end": 18.2,
+     "cue": {
+      "word": "امتلأت",
+      "t": 17.12
+     },
+     "who": "jar",
+     "action": "the level climbs in steps with each day: 0.1 to 0.9; the jar hangs lower and heavier (rope stretches 10 px, sway slows)",
+     "acting": "weight: slower, smaller swing as it fills",
+     "library": "hangingJar {fill:0.1..0.9}"
+    },
+    {
+     "t": 18.3,
+     "end": 20.3,
+     "cue": {
+      "word": "تقريبًا.",
+      "t": 18.88
+     },
+     "who": "lettering",
+     "action": "arrow to the level line near the rim and headline 'ALMOST FULL!'; one golden drip beads on the rim and hangs there",
+     "acting": "he looks up at it, pleased, and nods once",
+     "library": "S.title/S.emphasis + S.arrow + lookAt"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 1.4,
+     "text": "A SMALL HOUSE"
+    },
+    {
+     "t": 7.06,
+     "text": "GHEE"
+    },
+    {
+     "t": 7.64,
+     "text": "HONEY"
+    },
+    {
+     "t": 12.9,
+     "text": "CLAY JAR"
+    },
+    {
+     "t": 18.88,
+     "text": "ALMOST FULL!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 2.9,
+     "kind": "pop (door)"
+    },
+    {
+     "t": 14.9,
+     "kind": "soft chime (the pour settles)"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 20.6,
+    "label": "ONE EVENING..."
+   }
+  },
+  {
+   "id": "S2",
+   "start": 20.6,
+   "end": 41.65,
+   "paragraphs": [
+    2
+   ],
+   "set": "hutRoom",
+   "cast": [
+    "ascetic"
+   ],
+   "summary": "Evening light. He sits exactly under the full jar, looks up, speaks about selling it, and the first small thought cloud appears: the jar on a market stall turning into coins. He starts counting on his fingers.",
+   "camera": {
+    "shot": "medium",
+    "move": "tilt",
+    "notes": "Under the transition card cut to {x:400,y:640,zoom:1.5}. 24.1-26.8 slow tilt up and down the rope: {x:380,y:520,zoom:1.7} at 25.3 then back to {x:400,y:620,zoom:1.5} by 27.5 (jar, then head: the vertical danger line). 32.9-35 ease out to {x:520,y:560,zoom:1.2} to make room for the cloud at the right."
+   },
+   "composition": "Ascetic seated at x 350 facing right, jar directly above his turban (gap about 90 units). The cloud opens in the empty upper right (centre 700, 400; 380 x 300). Dusk palette: orange window, lamp glow disc in the wall niche at (600, 560).",
+   "actions": [
+    {
+     "t": 20.9,
+     "end": 22.2,
+     "cue": {
+      "word": "مساء،",
+      "t": 21.56
+     },
+     "who": "set",
+     "action": "evening version of the room: window sky orange to red, the niche lamp lights with a soft yellow halftone disc",
+     "acting": "none",
+     "library": "hutRoom {pal:'dusk', lamp:1} + dayCycle held at dusk"
+    },
+    {
+     "t": 22.4,
+     "end": 23.6,
+     "cue": {
+      "word": "جلس",
+      "t": 22.69
+     },
+     "who": "ascetic",
+     "action": "lowers himself onto the mat, legs crossed, straight under the jar",
+     "acting": "small grunt of comfort: sq 0.94 then settle, lid 0.4, shoulders drop",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {sit:0..1} + landSquash + settleTo"
+    },
+    {
+     "t": 24.1,
+     "end": 25.2,
+     "cue": {
+      "word": "الجرّة",
+      "t": 24.52
+     },
+     "who": "jar",
+     "action": "the jar sways slowly right above him; a drip of honey beads at the rim, stretches, and holds",
+     "acting": "suspense plant: the audience notices where it hangs before he does",
+     "library": "hangingJar {swingA:0.03, drip:0.6}"
+    },
+    {
+     "t": 25.3,
+     "end": 27.5,
+     "cue": {
+      "word": "فوق",
+      "t": 26.18
+     },
+     "who": "fx",
+     "action": "a dotted plumb line with a small arrowhead drops from the jar (26.18 'above') and lands on the top of his turban (26.84 'his head'); no text",
+     "acting": "he does not notice; one slow blink",
+     "library": "S.arrow (dashed) + K.beat"
+    },
+    {
+     "t": 27.9,
+     "end": 29.0,
+     "cue": {
+      "word": "نظر",
+      "t": 27.89
+     },
+     "who": "ascetic",
+     "action": "tips his head back and looks straight up at the jar",
+     "acting": "gaze [0.1,-1], brows raised (brow -0.5), mouth opens slowly into a smile",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' + look(gazePlan) + tip -0.05"
+    },
+    {
+     "t": 29.2,
+     "end": 30.9,
+     "cue": {
+      "word": "«كم",
+      "t": 30.0
+     },
+     "who": "ascetic",
+     "action": "speaks: points up at the jar with the right hand, left palm open",
+     "acting": "talk on the syllables, eyes shining (2 sparkle ticks beside the eyes), leaning back a little",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {talk, handR:PERSON_HANDS.pointUp, handL:PERSON_HANDS.palmsUp}"
+    },
+    {
+     "t": 31.5,
+     "end": 32.8,
+     "cue": {
+      "word": "السمن",
+      "t": 31.54
+     },
+     "who": "jar",
+     "action": "the jar gleams: two glints, the level line pulses yellow (ghee, 31.54) then amber (honey, 32.10)",
+     "acting": "he licks his lips once",
+     "library": "hangingJar {glint} + pulse"
+    },
+    {
+     "t": 32.9,
+     "end": 34.3,
+     "cue": {
+      "word": "بعتهما",
+      "t": 33.6
+     },
+     "who": "fx",
+     "action": "three thought bubbles rise from his head (0.12 s apart), then the first small cloud pops open at the upper right",
+     "acting": "eyes leave the jar and drift up right to the cloud (saccade), lids half down: dreaming begins",
+     "library": "thoughtCloud {box:[510,250,380,300], open:0..1} + stagger"
+    },
+    {
+     "t": 34.4,
+     "end": 35.0,
+     "cue": {
+      "word": "السوق،",
+      "t": 34.52
+     },
+     "who": "dreamProps",
+     "action": "inside the cloud: a market stall with the jar on its counter and a striped awning",
+     "acting": "none (icon), pops with 10 % overshoot",
+     "library": "thoughtCloud inside: dreamProps.stall + hangingJar (small, no rope)"
+    },
+    {
+     "t": 35.1,
+     "end": 36.3,
+     "cue": {
+      "word": "لحصلت",
+      "t": 35.08
+     },
+     "who": "coinPile",
+     "action": "the dream jar flips into a fountain of coins that stack into a pile on the stall",
+     "acting": "his eyebrows jump with each coin burst; hands rub together",
+     "library": "coinPile {n:0..12} + hop arcs"
+    },
+    {
+     "t": 36.4,
+     "end": 37.5,
+     "cue": {
+      "word": "مال",
+      "t": 36.36
+     },
+     "who": "fx",
+     "action": "counter 'COINS' rolls 0 to 100 inside the cloud; extra coins overflow on 'plenty' (36.82)",
+     "acting": "grin widens to full smile",
+     "library": "S.counter + coinPile {n:20}"
+    },
+    {
+     "t": 37.7,
+     "end": 39.3,
+     "cue": {
+      "word": "يحسب",
+      "t": 38.84
+     },
+     "who": "ascetic",
+     "action": "starts counting on his fingers: right index taps left fingers one, two, three",
+     "acting": "tongue-tip concentration, eyes up-right in the cloud, head nods on each tap (0.1 s dip before each)",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {handL, handR} + countedBeats"
+    },
+    {
+     "t": 39.4,
+     "end": 40.4,
+     "cue": {
+      "word": "الأرباح",
+      "t": 39.44
+     },
+     "who": "dreamProps",
+     "action": "abacus beads slide across in the cloud in time with his taps; the coin pile doubles",
+     "acting": "none",
+     "library": "dreamProps.abacus + coinPile"
+    },
+    {
+     "t": 40.5,
+     "end": 41.3,
+     "cue": {
+      "word": "خياله.",
+      "t": 40.48
+     },
+     "who": "lettering",
+     "action": "small label 'IN HIS HEAD' with an arrow to the cloud; the cloud outline shimmers (dashed for 3 frames) to mark it as imaginary",
+     "acting": "he sighs happily, eyes closed (lid 1)",
+     "library": "S.label + S.arrow"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 40.48,
+     "text": "IN HIS HEAD"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 22.5,
+     "kind": "soft thud (sits)"
+    },
+    {
+     "t": 27.7,
+     "kind": "tiny drip tick"
+    },
+    {
+     "t": 41.65,
+     "kind": "pop (cloud grows)"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 41.65
+   }
+  },
+  {
+   "id": "S3",
+   "start": 41.65,
+   "end": 62.4,
+   "paragraphs": [
+    3
+   ],
+   "set": "hutRoom",
+   "cast": [
+    "ascetic",
+    "goats",
+    "cows"
+   ],
+   "summary": "Dream stage 1. The cloud grows and the coins turn into goats, the goats have kids and multiply, half are sold for cows and a wide green field. He smiles with closed eyes while the real jar sways above him.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "41.65 cloud box grows to stage 2 (centre 640,400; 600 x 420). Camera 42-44 eases to {x:600,y:470,zoom:1.45}: the cloud fills most of the panel, his head and the jar stay in the lower left corner. 58.6-59.4 ease back to {x:420,y:620,zoom:1.6} on him for 'he smiled'."
+   },
+   "composition": "Dream ground line inside the cloud at world y 560. Goats enter from the cloud's right, face left toward the coin pile at the cloud's left. Real ascetic small at lower left (head at 350, 715) looking up-right into it; the jar is always in frame above him.",
+   "actions": [
+    {
+     "t": 42.0,
+     "end": 43.6,
+     "cue": {
+      "word": "قال",
+      "t": 42.0
+     },
+     "who": "ascetic",
+     "action": "hand on chin, thinking; the cloud swells to stage 2 with a soft bounce",
+     "acting": "eyes up-right into the cloud, slow nod; talk small (inner voice: lips barely move)",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {handR:PERSON_HANDS.chin} + thoughtCloud {box stage 2} + settleTo"
+    },
+    {
+     "t": 43.8,
+     "end": 45.3,
+     "cue": {
+      "word": "«سأشتري",
+      "t": 43.76
+     },
+     "who": "coinPile",
+     "action": "a hand-shaped arrow sweeps the coin pile to the cloud's right edge: paid",
+     "acting": "he mimes handing money over with his right hand",
+     "library": "coinPile slide + S.arrow"
+    },
+    {
+     "t": 45.5,
+     "end": 46.4,
+     "cue": {
+      "word": "المال",
+      "t": 45.46
+     },
+     "who": "coinPile",
+     "action": "coins shrink away in a row (5, 3, 1) as the price",
+     "acting": "none",
+     "library": "coinPile {n}"
+    },
+    {
+     "t": 46.5,
+     "end": 47.2,
+     "cue": {
+      "word": "الماعز.",
+      "t": 46.5
+     },
+     "who": "goats",
+     "action": "three goats pop in one after another (0.15 s apart), each with a hop and a bleat mark",
+     "acting": "goats: bright eyes, tails flick; staggered, never in unison",
+     "library": "goat x3 + stagger + hop + landSquash"
+    },
+    {
+     "t": 47.3,
+     "end": 49.2,
+     "cue": {
+      "word": "أشهر",
+      "t": 48.68
+     },
+     "who": "fx",
+     "action": "a small calendar moon crosses the top of the cloud three times (months), the goats graze; bellies grow rounder",
+     "acting": "goats graze out of phase; he tilts his head, patient smile",
+     "library": "dreamProps.moonTick + goat {graze, fat:0..1}"
+    },
+    {
+     "t": 49.4,
+     "end": 50.6,
+     "cue": {
+      "word": "ستولد",
+      "t": 49.32
+     },
+     "who": "goats",
+     "action": "pop, pop, pop: a kid appears beside each goat and wobbles on new legs",
+     "acting": "kids: sq 0.85 then stretch, big eyes; mothers turn heads to them (lookAt)",
+     "library": "goat {s:0.5, kind:'kid'} + hop + tremble"
+    },
+    {
+     "t": 50.7,
+     "end": 51.3,
+     "cue": {
+      "word": "صغار،",
+      "t": 50.66
+     },
+     "who": "goats",
+     "action": "the kids bounce in a little chain",
+     "acting": "ears flap as follow-through",
+     "library": "hop chain"
+    },
+    {
+     "t": 51.4,
+     "end": 52.9,
+     "cue": {
+      "word": "ويكبر",
+      "t": 51.32
+     },
+     "who": "fx",
+     "action": "the herd doubles twice (6, 12): rows fill the cloud back to front, smaller with depth; counter 'GOATS' 3, 6, 12; the cloud stretches 8 % wider to hold them",
+     "acting": "he counts them with a bobbing finger, mouth moving",
+     "library": "goat rows (3 depth scales) + S.counter + thoughtCloud grow"
+    },
+    {
+     "t": 53.0,
+     "end": 54.9,
+     "cue": {
+      "word": "أبيع",
+      "t": 53.78
+     },
+     "who": "goats",
+     "action": "half the herd trots out of the cloud's right edge; coins hop back in on 'some' (54.30)",
+     "acting": "the remaining goats watch them go, then look back",
+     "library": "goat walk + coinPile"
+    },
+    {
+     "t": 55.2,
+     "end": 56.7,
+     "cue": {
+      "word": "أبقارًا",
+      "t": 55.88
+     },
+     "who": "cows",
+     "action": "two fat cows drop in from above with a bounce (55.88), chewing",
+     "acting": "cows: lazy lid 0.5, jaw chew, tail swish; goats hop aside",
+     "library": "goat {kind:'cow'} + fallY + impactSquash"
+    },
+    {
+     "t": 56.8,
+     "end": 57.5,
+     "cue": {
+      "word": "وحقلًا",
+      "t": 56.8
+     },
+     "who": "dreamProps",
+     "action": "a green field unrolls under them like a carpet from left to right with furrow lines",
+     "acting": "none",
+     "library": "dreamProps.field {w:0..1}"
+    },
+    {
+     "t": 57.6,
+     "end": 58.8,
+     "cue": {
+      "word": "واسعًا.»",
+      "t": 57.58
+     },
+     "who": "fx",
+     "action": "'wide': the field keeps unrolling and pushes the cloud's right edge out to the panel border; the cloud is now clearly bigger than the room",
+     "acting": "he spreads both arms wide to show the size",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {handL/handR: PERSON_HANDS.armsOut} + thoughtCloud grow"
+    },
+    {
+     "t": 59.0,
+     "end": 60.3,
+     "cue": {
+      "word": "ابتسم",
+      "t": 58.98
+     },
+     "who": "ascetic",
+     "action": "camera back on him: a huge smile, eyes closed, rocking gently side to side",
+     "acting": "lid 1, mouth 'smile', tip oscillates plus/minus 0.04 (breathe), hands clasped on the chest",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {handR:PERSON_HANDS.clasp} + breathe"
+    },
+    {
+     "t": 60.5,
+     "end": 61.9,
+     "cue": {
+      "word": "يتخيل",
+      "t": 60.46
+     },
+     "who": "jar",
+     "action": "his rocking brushes nothing, but the jar above keeps its slow sway and the hanging drip finally falls past his nose; he does not notice",
+     "acting": "irony: eyes stay shut, he only wrinkles his nose",
+     "library": "hangingJar {drip} + fallY"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 62.4,
+     "kind": "chime (dream goes on)"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 62.4
+   }
+  },
+  {
+   "id": "S4",
+   "start": 62.4,
+   "end": 84.15,
+   "paragraphs": [
+    4
+   ],
+   "set": "hutRoom",
+   "cast": [
+    "ascetic",
+    "dreamSelf",
+    "admirers",
+    "cows"
+   ],
+   "summary": "Dream stage 2. A little dream version of himself sows the field, harvests, piles up food and money, a big house builds itself and fills with furniture, neighbours admire the rich man. The cloud swells until it almost fills the panel.",
+   "camera": {
+    "shot": "wide",
+    "move": "zoom",
+    "notes": "62.9-64 ease to {x:560,y:440,zoom:1.5} (cloud stage 3: centre 540,400; 820 x 520). 71-73 drift up 40 units as the house rises. 79.7-82.7 pull out in three small steps on 'dream' 80.74, 'grows' 81.54, 'moment' 82.70 to {x:500,y:600,zoom:1.05} while the cloud grows a step each time to stage 4 (x 70..970, y 90..690)."
+   },
+   "composition": "Inside the cloud, left to right: field (x 180..560), house plot (x 600..860). The dream self is about 150 units tall. The real jar now overlaps the cloud's lower left and is drawn in front of it with a 6 px paper halo so it always reads.",
+   "actions": [
+    {
+     "t": 62.9,
+     "end": 63.9,
+     "cue": {
+      "word": "قال:",
+      "t": 63.58
+     },
+     "who": "ascetic",
+     "action": "opens one eye, raises a finger: one more idea",
+     "acting": "wink 'R' open then both eyes up to the cloud, sly brow -0.4",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {wink, handR:PERSON_HANDS.pointUp}"
+    },
+    {
+     "t": 64.0,
+     "end": 65.2,
+     "cue": {
+      "word": "«سأزرع",
+      "t": 64.02
+     },
+     "who": "dreamSelf",
+     "action": "the dream self walks along the field throwing seed in arcs from a pouch",
+     "acting": "proud chest, steps timed to the throws; seeds are 3 dots per throw on arcs",
+     "library": "person 'ascetic' small (s 0.62) + walk + hop arcs for seeds"
+    },
+    {
+     "t": 65.4,
+     "end": 66.2,
+     "cue": {
+      "word": "الحقل",
+      "t": 65.36
+     },
+     "who": "dreamProps",
+     "action": "rows of sprouts pop up behind him in a wave, then shoot up to golden wheat",
+     "acting": "wheat tips sway (secondary motion)",
+     "library": "dreamProps.field {crop:0..1} + stagger"
+    },
+    {
+     "t": 66.3,
+     "end": 67.6,
+     "cue": {
+      "word": "المحصول،",
+      "t": 66.88
+     },
+     "who": "dreamSelf",
+     "action": "sweeps an arm: the wheat jumps into three tied sheaves that stack themselves",
+     "acting": "he dusts his hands",
+     "library": "dreamProps.sheaf x3 + hop + landSquash"
+    },
+    {
+     "t": 67.8,
+     "end": 69.3,
+     "cue": {
+      "word": "ويصبح",
+      "t": 67.74
+     },
+     "who": "dreamProps",
+     "action": "sheaves flip into sacks and round loaves on 'food' (69.42 the loaves steam)",
+     "acting": "the real ascetic's stomach pats twice: now he wants more than he needs",
+     "library": "dreamProps.sack, loaf"
+    },
+    {
+     "t": 70.2,
+     "end": 70.9,
+     "cue": {
+      "word": "ومال.",
+      "t": 70.2
+     },
+     "who": "coinPile",
+     "action": "the coin pile returns three times taller; counter jumps 100 to 1000",
+     "acting": "dream self stands on tiptoe to see the top",
+     "library": "coinPile {n:40} + S.counter"
+    },
+    {
+     "t": 71.0,
+     "end": 72.6,
+     "cue": {
+      "word": "بيتًا",
+      "t": 72.18
+     },
+     "who": "dreamProps",
+     "action": "a house builds itself block by block: 6 wall blocks, door, roof slab, each with a pop and a 4 px settle",
+     "acting": "the real ascetic leans forward (tip 0.06), mouth open",
+     "library": "dreamProps.house {build:0..1} + stagger + settleTo"
+    },
+    {
+     "t": 72.7,
+     "end": 73.6,
+     "cue": {
+      "word": "كبيرًا،",
+      "t": 72.72
+     },
+     "who": "dreamProps",
+     "action": "'big': a second storey and a dome stack on top; the cloud's top lobe bulges up to hold it",
+     "acting": "he tips his head back to see the top of it",
+     "library": "dreamProps.house {storeys:2} + thoughtCloud grow"
+    },
+    {
+     "t": 73.7,
+     "end": 75.3,
+     "cue": {
+      "word": "أثاثًا",
+      "t": 74.58
+     },
+     "who": "dreamProps",
+     "action": "the house front opens like a doll's house: carpet rolls out, a chair, a low table, a hanging brass lamp pop in on 'furniture'",
+     "acting": "none",
+     "library": "dreamProps.furniture (chair, table, lamp, carpet) + stagger"
+    },
+    {
+     "t": 75.4,
+     "end": 76.4,
+     "cue": {
+      "word": "جميلًا،",
+      "t": 75.4
+     },
+     "who": "fx",
+     "action": "sparkle ticks on each piece; the lamp lights",
+     "acting": "he sighs, hand on cheek",
+     "library": "S.emphasis sparkles"
+    },
+    {
+     "t": 76.5,
+     "end": 77.9,
+     "cue": {
+      "word": "الناس",
+      "t": 77.18
+     },
+     "who": "admirers",
+     "action": "three neighbours walk in from the cloud's right, stop, and look up at the house",
+     "acting": "each differs: one points, one covers his mouth, one bows; staggered 4 frames",
+     "library": "villager x3 (s 0.55) + walk + stagger + PERSON_HANDS.pointUp / mouthCover"
+    },
+    {
+     "t": 78.0,
+     "end": 79.2,
+     "cue": {
+      "word": "رجل",
+      "t": 78.64
+     },
+     "who": "dreamSelf",
+     "action": "costume change in a puff: big turban and yellow robe; he steps out on the doorstep, hands on hips",
+     "acting": "chin up, lid 0.5 (smug), chest out (sq 1.04)",
+     "library": "person costume preset 'richMan' + PERSON_HANDS.hipsHands"
+    },
+    {
+     "t": 79.3,
+     "end": 79.7,
+     "cue": {
+      "word": "غني.»",
+      "t": 79.28
+     },
+     "who": "lettering",
+     "action": "burst 'RICH!' above the house, clear of every face",
+     "acting": "the real ascetic copies the hands-on-hips pose while still sitting",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 80.0,
+     "end": 81.4,
+     "cue": {
+      "word": "حلمه",
+      "t": 80.74
+     },
+     "who": "fx",
+     "action": "the cloud grows a step and its edge bumps the real lamp niche, which rattles",
+     "acting": "the real room starts to feel crowded: he does not look at it at all",
+     "library": "thoughtCloud grow + tremble on set detail"
+    },
+    {
+     "t": 81.5,
+     "end": 82.6,
+     "cue": {
+      "word": "يكبر",
+      "t": 81.54
+     },
+     "who": "fx",
+     "action": "second and third growth steps (81.54, 82.70): the cloud covers the window and most of the wall; only he, the mat, the stick on the floor and the jar remain of the real room",
+     "acting": "he gazes up into it, tiny under his own dream",
+     "library": "thoughtCloud {box stage 4} + settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 79.28,
+     "text": "RICH!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 84.15,
+     "kind": "pop (new lobe)"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 84.15
+   }
+  },
+  {
+   "id": "S5",
+   "start": 84.15,
+   "end": 104.58,
+   "paragraphs": [
+    5
+   ],
+   "set": "hutRoom",
+   "cast": [
+    "ascetic",
+    "dreamSelf",
+    "dreamWife",
+    "dreamSon",
+    "admirers"
+   ],
+   "summary": "Dream stage 3. The dream will not stop: a wife, a clever baby son, lessons in reading and sums, the son grown up walking into the king's palace while people cheer.",
+   "camera": {
+    "shot": "wide",
+    "move": "drift",
+    "notes": "Hold {x:500,y:560,zoom:1.15}; slow drift right 30 units over the scene. 99-102 ease to {x:620,y:430,zoom:1.4} toward the palace side, 103.6 back to {x:480,y:580,zoom:1.15} for the father's pride."
+   },
+   "composition": "Cloud at stage 4. Family group inside the dream house doorway area at world x 300..560, feet on y 600, so the dream son stands just to the right of the real jar (jar at 360, 505). The palace slides in at the cloud's right (x 700..940).",
+   "actions": [
+    {
+     "t": 84.5,
+     "end": 85.9,
+     "cue": {
+      "word": "يتوقف",
+      "t": 85.14
+     },
+     "who": "fx",
+     "action": "the cloud seems to settle (shrinks 3 %), then a brand new lobe puffs out on top",
+     "acting": "he had started to lie back; he sits up again, eyes wide: more!",
+     "library": "thoughtCloud {lobe} + anticipate"
+    },
+    {
+     "t": 86.0,
+     "end": 87.6,
+     "cue": {
+      "word": "خياله",
+      "t": 86.0
+     },
+     "who": "dreamProps",
+     "action": "house and field slide left and shrink to make room, like pages being pushed aside",
+     "acting": "none",
+     "library": "dreamProps layout shift"
+    },
+    {
+     "t": 87.8,
+     "end": 89.5,
+     "cue": {
+      "word": "تخيل",
+      "t": 87.78
+     },
+     "who": "ascetic",
+     "action": "closes his eyes and tilts his head, hands clasped",
+     "acting": "lid 1, dreamy smile, slow sway",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {handR:PERSON_HANDS.clasp}"
+    },
+    {
+     "t": 89.6,
+     "end": 90.6,
+     "cue": {
+      "word": "تزوج،",
+      "t": 89.62
+     },
+     "who": "dreamWife",
+     "action": "the wife pops in beside the rich dream self; a small heart rises between them",
+     "acting": "she smiles, he puffs up; they look at each other (lookAt both ways)",
+     "library": "person {kind:'wife'} (s 0.62) + heart + lookAt"
+    },
+    {
+     "t": 91.1,
+     "end": 91.8,
+     "cue": {
+      "word": "زوجته",
+      "t": 91.1
+     },
+     "who": "dreamWife",
+     "action": "she turns to him holding a wrapped bundle",
+     "acting": "soft eyes (lid 0.3), rocking the bundle",
+     "library": "person {kind:'wife', handL, handR} + dreamProps.bundle"
+    },
+    {
+     "t": 91.9,
+     "end": 92.7,
+     "cue": {
+      "word": "أنجبت",
+      "t": 91.86
+     },
+     "who": "dreamSon",
+     "action": "the bundle hops out of her arms and unfolds into a small boy with a little cap",
+     "acting": "boy lands with a squash, arms up: ta-da",
+     "library": "person child option (s 0.4) + hop + landSquash"
+    },
+    {
+     "t": 92.8,
+     "end": 94.2,
+     "cue": {
+      "word": "ذكيًا.",
+      "t": 93.5
+     },
+     "who": "dreamSon",
+     "action": "'clever': a small star lights over his head and he pushes up imaginary glasses",
+     "acting": "bright wide eyes, quick blinks; parents look down at him proudly",
+     "library": "S.emphasis star + lookAt"
+    },
+    {
+     "t": 94.3,
+     "end": 95.7,
+     "cue": {
+      "word": "قال:",
+      "t": 94.48
+     },
+     "who": "ascetic",
+     "action": "the real ascetic speaks, wagging a teaching finger",
+     "acting": "talk, brow raised, proud chin",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {talk, handR:PERSON_HANDS.pointUp}"
+    },
+    {
+     "t": 95.8,
+     "end": 96.9,
+     "cue": {
+      "word": "«سأعلم",
+      "t": 95.8
+     },
+     "who": "dreamSelf",
+     "action": "dream father points at a slate on a stand",
+     "acting": "boy sits cross-legged, looking up at the slate",
+     "library": "dreamProps.slate + person {handR:PERSON_HANDS.pointFwd}"
+    },
+    {
+     "t": 97.0,
+     "end": 97.9,
+     "cue": {
+      "word": "القراءة",
+      "t": 97.02
+     },
+     "who": "dreamProps",
+     "action": "slate shows three simple letter strokes A B C that tick on one by one (reading)",
+     "acting": "boy's head follows each tick",
+     "library": "dreamProps.slate {mode:'letters', n}"
+    },
+    {
+     "t": 98.0,
+     "end": 99.0,
+     "cue": {
+      "word": "والحساب،",
+      "t": 97.96
+     },
+     "who": "dreamProps",
+     "action": "slate flips to '2 + 2 = 4' (arithmetic); the boy's hand shoots up",
+     "acting": "boy: arm up fast with overshoot, bouncing",
+     "library": "dreamProps.slate {mode:'sum'} + settleTo"
+    },
+    {
+     "t": 99.2,
+     "end": 100.2,
+     "cue": {
+      "word": "يكبر",
+      "t": 99.76
+     },
+     "who": "dreamSon",
+     "action": "he grows up in three stretch pops: 0.4, 0.5, 0.62 scale, a small moustache on the last",
+     "acting": "each pop: sq 1.1 then settle; parents step back",
+     "library": "person child to adult (s keyed) + settleTo"
+    },
+    {
+     "t": 100.3,
+     "end": 101.4,
+     "cue": {
+      "word": "سيعمل",
+      "t": 100.28
+     },
+     "who": "dreamSon",
+     "action": "the grown son walks right toward a palace front that slides in: arch, dome, two flags",
+     "acting": "upright walk, scroll under his arm",
+     "library": "walk + dreamProps.palace"
+    },
+    {
+     "t": 101.6,
+     "end": 102.8,
+     "cue": {
+      "word": "الملك،",
+      "t": 102.04
+     },
+     "who": "dreamProps",
+     "action": "a small crown icon flashes above the palace arch; a guard spear tips aside to let him in; arrow label 'THE PALACE'",
+     "acting": "son bows at the arch",
+     "library": "dreamProps.palace {crown:1} + S.label"
+    },
+    {
+     "t": 102.9,
+     "end": 104.4,
+     "cue": {
+      "word": "الناس",
+      "t": 103.6
+     },
+     "who": "admirers",
+     "action": "the three neighbours cheer and throw their caps; the real ascetic wipes a proud tear",
+     "acting": "caps on staggered arcs; real ascetic: wet eyes, hand on chest, chin trembling",
+     "library": "villager x3 + hop arcs; person {kind:'owner'} + costume preset 'ascetic' {wet:true, handR:PERSON_HANDS.chest}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 102.04,
+     "text": "THE PALACE"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 104.58
+   }
+  },
+  {
+   "id": "S6",
+   "start": 104.58,
+   "end": 125.4,
+   "paragraphs": [
+    6
+   ],
+   "set": "hutRoom",
+   "cast": [
+    "ascetic",
+    "dreamSelf",
+    "dreamSon"
+   ],
+   "summary": "The dream turns sour. The imagined boy refuses to listen. The real ascetic gets truly angry about a picture, gropes for the real stick beside him without taking his eyes off the cloud, and shouts his threat, shaking the stick: its tip passes just under the real jar.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "104.6-106 ease to {x:430,y:560,zoom:1.5}: the dream son and the real jar side by side in the upper half, the real ascetic below. 111.1-112.5 push in to his face {x:370,y:690,zoom:2.2}; 116.2 ease down-right to {x:440,y:780,zoom:1.9} for the hand finding the stick; 119.2 back out to {x:420,y:600,zoom:1.45} for the shout so jar, stick and cloud are all in frame."
+   },
+   "composition": "The dream boy (small again) stands at world (500, 600) inside the cloud, back turned to the dream father at (620, 600). The real jar hangs at (360, 505), between the real man's head and the dream boy: the stick must travel past it. The real stick lies on the floor at x 430..610, y 892.",
+   "actions": [
+    {
+     "t": 105.0,
+     "end": 106.2,
+     "cue": {
+      "word": "تخيل",
+      "t": 106.24
+     },
+     "who": "fx",
+     "action": "the palace and crowd pop like soap bubbles; the cloud's colour cools from yellow dots to blue dots",
+     "acting": "the real ascetic's smile slips to a flat mouth, one brow up",
+     "library": "thoughtCloud {tint} + pop particles"
+    },
+    {
+     "t": 106.3,
+     "end": 107.4,
+     "cue": {
+      "word": "ابنه",
+      "t": 107.46
+     },
+     "who": "dreamSon",
+     "action": "the boy is small again, standing in front of the dream father",
+     "acting": "boy looks away to the side, lid 0.5: bored",
+     "library": "person child option"
+    },
+    {
+     "t": 108.1,
+     "end": 109.1,
+     "cue": {
+      "word": "يسمع",
+      "t": 108.46
+     },
+     "who": "dreamSelf",
+     "action": "dream father wags his finger and talks",
+     "acting": "talk, brow 0.5",
+     "library": "person 'richMan' {talk, handR:PERSON_HANDS.pointUp}"
+    },
+    {
+     "t": 109.2,
+     "end": 110.0,
+     "cue": {
+      "word": "كلامه",
+      "t": 109.18
+     },
+     "who": "dreamSon",
+     "action": "the boy turns his back, folds his arms and lifts his nose; a small balloon 'NO!'",
+     "acting": "turnFlip with a squeeze, chin up, eyes shut",
+     "library": "turnFlip + PERSON_HANDS.folded + S.label balloon"
+    },
+    {
+     "t": 110.1,
+     "end": 111.0,
+     "cue": {
+      "word": "يومًا.",
+      "t": 109.96
+     },
+     "who": "dreamSon",
+     "action": "he taps one foot",
+     "acting": "foot tap 3 times; dream father's jaw drops",
+     "library": "kick on a beat list"
+    },
+    {
+     "t": 111.1,
+     "end": 112.6,
+     "cue": {
+      "word": "غضب",
+      "t": 111.12
+     },
+     "who": "ascetic",
+     "action": "push in on the real face: brows snap into a V, red Ben-Day dots climb from the neck to the turban",
+     "acting": "brow 1, flush 0..1 over 1 s, lid 0.2, mouth 'frown', a tremble of 2 px",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {brow:1, flush} + tremble"
+    },
+    {
+     "t": 112.7,
+     "end": 113.3,
+     "cue": {
+      "word": "هذا",
+      "t": 112.92
+     },
+     "who": "fx",
+     "action": "two steam puffs from his ears",
+     "acting": "nostrils flare (mouth 'o' short)",
+     "library": "dustBurst recoloured white as steam"
+    },
+    {
+     "t": 113.5,
+     "end": 115.5,
+     "cue": {
+      "word": "يحدث",
+      "t": 114.92
+     },
+     "who": "lettering",
+     "action": "arrow from the angry face to the cloud with label 'NOT REAL'; the cloud outline flickers dashed and the boy becomes see-through (alpha 0.6) for 0.4 s",
+     "acting": "he ignores it completely: eyes locked on the picture",
+     "library": "S.label + S.arrow + alpha"
+    },
+    {
+     "t": 116.3,
+     "end": 117.3,
+     "cue": {
+      "word": "وأمسك",
+      "t": 116.26
+     },
+     "who": "ascetic",
+     "action": "without looking down, his right hand pats the floor: once on the mat, once on nothing, then lands on the stick",
+     "acting": "eyes never leave the cloud; blind grope: tap, tap, grab",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {handR targets} + gropeTap pattern"
+    },
+    {
+     "t": 117.4,
+     "end": 118.4,
+     "cue": {
+      "word": "عصا",
+      "t": 117.36
+     },
+     "who": "stick",
+     "action": "fingers close; the stick lifts 20 px; arrow and label 'STICK'",
+     "acting": "a 2-frame squeeze of the fist",
+     "library": "stick + PERSON_HANDS.grip + S.arrow"
+    },
+    {
+     "t": 118.5,
+     "end": 119.2,
+     "cue": {
+      "word": "بجانبه.",
+      "t": 118.48
+     },
+     "who": "ascetic",
+     "action": "rises from sitting onto his knees, now 40 units nearer the jar",
+     "acting": "anticipate dip, then up; back straight with anger",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {sit:1..0, kneel:0..1} + anticipate"
+    },
+    {
+     "t": 119.3,
+     "end": 121.4,
+     "cue": {
+      "word": "بصوت",
+      "t": 120.12
+     },
+     "who": "ascetic",
+     "action": "shouts at the cloud: mouth wide, sound arcs toward the dream boy",
+     "acting": "mouth 'open', talk 1, tip 0.08 forward, the turban tail lags 2 frames",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {talk:1} + sound arcs (ripple)"
+    },
+    {
+     "t": 121.5,
+     "end": 123.2,
+     "cue": {
+      "word": "عصاني،",
+      "t": 122.44
+     },
+     "who": "dreamSon",
+     "action": "the dream boy peeks over his shoulder and sticks out his tongue",
+     "acting": "one eye open (wink), tongue out, shoulders shrug",
+     "library": "person child {wink, mouth:'tongue'}"
+    },
+    {
+     "t": 123.3,
+     "end": 124.4,
+     "cue": {
+      "word": "فسأؤدبه",
+      "t": 123.3
+     },
+     "who": "ascetic",
+     "action": "shakes the stick at the cloud twice; on the second shake its tip passes 15 units under the jar, which rocks in the draught: a silent near miss",
+     "acting": "sharp wrist shakes with overshoot; he does not look up; the jar's rope creaks into a wider sway",
+     "library": "stick + strike-cycle near miss + hangingJar {swingA:0.08}"
+    },
+    {
+     "t": 124.5,
+     "end": 125.3,
+     "cue": {
+      "word": "العصا!»",
+      "t": 125.1
+     },
+     "who": "stick",
+     "action": "he thrusts the stick forward, level with the boy's picture; emphasis lines on the stick",
+     "acting": "arm locked, knuckles forward, glare",
+     "library": "stick + S.emphasis"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 109.18,
+     "text": "NO!"
+    },
+    {
+     "t": 114.92,
+     "text": "NOT REAL"
+    },
+    {
+     "t": 117.36,
+     "text": "STICK"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 125.4
+   }
+  },
+  {
+   "id": "S7",
+   "start": 125.4,
+   "end": 145.58,
+   "paragraphs": [
+    7
+   ],
+   "set": "hutRoom",
+   "cast": [
+    "ascetic",
+    "dreamSon"
+   ],
+   "summary": "The climax. He raises the stick, swings through the dream boy (the picture only ripples), winds up for a bigger blow, and the upswing cracks the real jar above his head. It bursts, the whole dream pops with it, and ghee and honey fall on his face and clothes.",
+   "camera": {
+    "shot": "medium",
+    "move": "shake",
+    "notes": "125.4 {x:420,y:580,zoom:1.45}. 125.7-127.6 slow tilt up with the rising stick to {x:400,y:520,zoom:1.6}. 133.9-134.7 whip up to the jar {x:370,y:500,zoom:2.3}. 135.56 panel-only shake (8 px, 0.35 s). 138.1 hold. 139.44 cut wide {x:440,y:600,zoom:1.3} for the burst. 141.3-144 follow the falling blob down to his face {x:370,y:700,zoom:1.9}. 144.04 second small shake."
+   },
+   "composition": "Stick tip, jar and face stack vertically at x 330..420. During the wind-up the jar is centre frame and the stick tip enters from the lower right. For the burst the cloud's burst dots fill the frame edges while shards fly from the jar centre.",
+   "actions": [
+    {
+     "t": 125.7,
+     "end": 127.5,
+     "cue": {
+      "word": "رفع",
+      "t": 125.68
+     },
+     "who": "ascetic",
+     "action": "slowly raises the stick with both eyes on the dream boy",
+     "acting": "long anticipation: arm rises over 1.8 s, body leans back (tip -0.08), lid 0.3, jaw set",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {aR:[1.2..2.6]} + stick"
+    },
+    {
+     "t": 127.6,
+     "end": 128.4,
+     "cue": {
+      "word": "العصا",
+      "t": 127.6
+     },
+     "who": "stick",
+     "action": "the tip comes to rest in the air a hand's width from the jar's belly; a small dotted gap marker shows how close",
+     "acting": "suspense by stillness: only the stick tip quivers (1 px)",
+     "library": "stick + tremble + S.arrow (tiny)"
+    },
+    {
+     "t": 128.5,
+     "end": 129.1,
+     "cue": {
+      "word": "الهواء،",
+      "t": 128.44
+     },
+     "who": "jar",
+     "action": "the jar sways toward the tip and away again; its drip stretches",
+     "acting": "the audience sees it, he does not; the dream boy sticks his tongue out again",
+     "library": "hangingJar {swingA} + swing()"
+    },
+    {
+     "t": 129.1,
+     "end": 129.9,
+     "cue": {
+      "word": "وضرب",
+      "t": 129.12
+     },
+     "who": "ascetic",
+     "action": "SWISH: he whips the stick down through the dream boy",
+     "acting": "ease-in whip, body follows through forward (tip 0.12), turban tail trails",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' + strike cycle; speed lines"
+    },
+    {
+     "t": 130.0,
+     "end": 131.1,
+     "cue": {
+      "word": "بها",
+      "t": 130.56
+     },
+     "who": "dreamSon",
+     "action": "the picture only ripples like water and re-forms, unharmed, still with folded arms",
+     "acting": "boy alpha wobbles 0.5 to 1, a little smirk; the stick thuds on the mat instead (dust puff)",
+     "library": "ripple + alpha + dustBurst"
+    },
+    {
+     "t": 131.2,
+     "end": 132.5,
+     "cue": {
+      "word": "يضرب",
+      "t": 131.98
+     },
+     "who": "lettering",
+     "action": "arrow and label 'IMAGINARY SON' on the picture (131.98 'striking', 133.04 'imaginary')",
+     "acting": "the ascetic stares at his stick, then at the boy: even angrier, flush full",
+     "library": "S.label + S.arrow + flush 1"
+    },
+    {
+     "t": 132.6,
+     "end": 133.7,
+     "cue": {
+      "word": "الخيالي.",
+      "t": 133.04
+     },
+     "who": "ascetic",
+     "action": "he gathers himself: both hands on the stick, a deep crouch on his knees",
+     "acting": "anticipate: sq 0.9 for 0.5 s, shoulders down, eyes narrowed on the boy",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {handL, handR: PERSON_HANDS.grip} + anticipate"
+    },
+    {
+     "t": 133.8,
+     "end": 134.7,
+     "cue": {
+      "word": "لكن",
+      "t": 134.28
+     },
+     "who": "ascetic",
+     "action": "'But': the great upswing begins, the stick whips up over his head; camera whips up to the waiting jar",
+     "acting": "stretch sq 1.06, arms to full height [2.45, 2.85]",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {aL, aR} + stick"
+    },
+    {
+     "t": 134.8,
+     "end": 135.5,
+     "cue": {
+      "word": "العصا",
+      "t": 134.72
+     },
+     "who": "stick",
+     "action": "the stick tip rises into frame toward the jar in 5 frames",
+     "acting": "none; speed lines on the stick",
+     "library": "stick"
+    },
+    {
+     "t": 135.56,
+     "end": 136.3,
+     "cue": {
+      "word": "أصابت",
+      "t": 135.56
+     },
+     "who": "jar",
+     "action": "CRACK: the tip strikes the jar's belly; 2-frame white flash, panel shake, the jar jumps 10 px on its rope; first crack line",
+     "acting": "he freezes with arms up, eyes still forward",
+     "library": "hangingJar {crack:0.3} + contact flash + panel-only shake"
+    },
+    {
+     "t": 136.4,
+     "end": 138.0,
+     "cue": {
+      "word": "الحقيقية",
+      "t": 136.94
+     },
+     "who": "lettering",
+     "action": "arrow and label 'REAL JAR'; the crack crawls across the belly in three jumps, a first golden bead oozes out",
+     "acting": "his eyes slide slowly up (gaze [0,-1]), brows from V to raised: realisation; the flush drains",
+     "library": "S.label + hangingJar {crack:0.3..1} + gazePlan"
+    },
+    {
+     "t": 138.1,
+     "end": 139.3,
+     "cue": {
+      "word": "رأسه!",
+      "t": 138.56
+     },
+     "who": "ascetic",
+     "action": "held beat: he looks at the jar, then straight at the camera, and gulps",
+     "acting": "look to camera gaze [0,0.05], one gulp (drop pulse), no blink",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' + comedy beat (hold, realise, look to camera, gulp)"
+    },
+    {
+     "t": 139.44,
+     "end": 140.5,
+     "cue": {
+      "word": "انكسرت",
+      "t": 139.44
+     },
+     "who": "jar",
+     "action": "SMASH: the jar bursts into 9 shards flying outward and down; the rope stub with the neck ring swings wildly; in the same frame the whole thought cloud bursts into dots that scatter off the panel",
+     "acting": "he flinches: sq 0.88, eyes shut, shoulders up",
+     "library": "hangingJar {broken:1, shards} + thoughtCloud {pop} + fallY"
+    },
+    {
+     "t": 140.6,
+     "end": 141.2,
+     "cue": {
+      "word": "الجرّة،",
+      "t": 140.58
+     },
+     "who": "jar",
+     "action": "shards land and skid on the floor around him with small bounces",
+     "acting": "none",
+     "library": "shards: fallY + rebound"
+    },
+    {
+     "t": 141.3,
+     "end": 143.9,
+     "cue": {
+      "word": "السمن",
+      "t": 142.2
+     },
+     "who": "fx",
+     "action": "one big blob hangs for 0.5 s where the jar was (yellow ghee swirled with amber honey), then drops, stretching as it falls",
+     "acting": "he opens one eye and looks up at it: too late",
+     "library": "gooSpill {blob, stretch} + fallY"
+    },
+    {
+     "t": 144.04,
+     "end": 144.8,
+     "cue": {
+      "word": "وجهه",
+      "t": 144.04
+     },
+     "who": "fx",
+     "action": "SPLAT on his turban and face: a crown of drops, then it slides down over the eyes, beard and shoulders",
+     "acting": "impact squash sq 0.85, then rebound; mouth a flat line",
+     "library": "gooSpill {splat, cover:0..1} + impactSquash + rebound"
+    },
+    {
+     "t": 144.9,
+     "end": 145.5,
+     "cue": {
+      "word": "وثيابه.",
+      "t": 144.88
+     },
+     "who": "ascetic",
+     "action": "streaks run down the robe front; he lowers the stick an inch at a time",
+     "acting": "eyes blink open through the goo, wide and blank",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {goo:0.6..1}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 129.12,
+     "text": "SWISH!"
+    },
+    {
+     "t": 131.98,
+     "text": "IMAGINARY SON"
+    },
+    {
+     "t": 135.56,
+     "text": "CRACK!"
+    },
+    {
+     "t": 136.94,
+     "text": "REAL JAR"
+    },
+    {
+     "t": 139.44,
+     "text": "SMASH!"
+    },
+    {
+     "t": 144.04,
+     "text": "SPLAT!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 134.0,
+     "kind": "whoosh (the upswing)"
+    },
+    {
+     "t": 139.4,
+     "kind": "short quiet crash at the word boundary"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 145.58
+   }
+  },
+  {
+   "id": "S8",
+   "start": 145.58,
+   "end": 171.14,
+   "paragraphs": [
+    8
+   ],
+   "set": "hutRoom",
+   "cast": [
+    "ascetic"
+   ],
+   "summary": "Aftermath. He sits down stunned, dripping. He looks at the shards, then at the stick in his hand. The dream items appear one last time as dotted ghosts and are crossed out: money, goats, field, and finally the honey itself. THE END.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "145.6 {x:380,y:690,zoom:1.9} on the dripping face. 153.7-155.4 tilt down to the shards {x:420,y:820,zoom:1.8}; 157.3-158 over to the stick hand {x:440,y:760,zoom:2.0}. 159.4-160.4 pull out to {x:500,y:600,zoom:1.15}: the bare room, the empty rope, the small man. Hold to the end; THE END card from 168.2."
+   },
+   "composition": "Final wide: ascetic small at lower left on his mat in a yellow puddle, shards around him, the rope stub swinging above. The upper right, where the dream was, is empty wall: the ghost icons appear there in a row at y 380 (x 520, 680, 840).",
+   "actions": [
+    {
+     "t": 145.6,
+     "end": 147.6,
+     "cue": {
+      "word": "جلس",
+      "t": 145.58
+     },
+     "who": "ascetic",
+     "action": "sinks from his knees back down to sitting; the stick arm drops to his lap",
+     "acting": "slow, heavy: sq 0.92 settle, shoulders slump, eyes wide and unfocused (gaze [0,0])",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' {kneel:1..0, sit:0..1, goo:1} + settleTo"
+    },
+    {
+     "t": 147.7,
+     "end": 149.7,
+     "cue": {
+      "word": "مذهولًا،",
+      "t": 148.26
+     },
+     "who": "ascetic",
+     "action": "stunned hold: only two slow blinks and a tiny sway",
+     "acting": "lid 0, then blink at 148.4 and 149.4; mouth small 'o'",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' + blink + breathe"
+    },
+    {
+     "t": 149.9,
+     "end": 151.2,
+     "cue": {
+      "word": "والسمن",
+      "t": 149.86
+     },
+     "who": "fx",
+     "action": "a yellow drip (ghee, 149.86) then an amber drip (honey, 150.54) slide off his turban tail",
+     "acting": "his eyes follow each drop down past his nose",
+     "library": "gooSpill {drips} + fallY + lookAt"
+    },
+    {
+     "t": 151.3,
+     "end": 153.0,
+     "cue": {
+      "word": "يقطران",
+      "t": 151.34
+     },
+     "who": "fx",
+     "action": "drip, drip, drip from his hair and beard into the puddle on a steady 0.45 s beat; small 'DRIP' lettering beside the puddle once",
+     "acting": "each drop lands with a tiny ring; his beard tip twitches",
+     "library": "gooSpill {drips} + ripple + S.label"
+    },
+    {
+     "t": 153.7,
+     "end": 155.3,
+     "cue": {
+      "word": "نظر",
+      "t": 153.72
+     },
+     "who": "ascetic",
+     "action": "lowers his head and looks at the floor",
+     "acting": "gaze down [0.4, 1], head drop, brows raised and worried (brow -0.6)",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' + gazePlan"
+    },
+    {
+     "t": 155.4,
+     "end": 157.2,
+     "cue": {
+      "word": "الجرّة",
+      "t": 155.4
+     },
+     "who": "jar",
+     "action": "the shards in close view: one still rocks; the biggest shard holds a last spoonful of honey that runs out into the mat",
+     "acting": "arrow label 'THE JAR' over the pieces",
+     "library": "hangingJar shards + S.label + swing()"
+    },
+    {
+     "t": 157.3,
+     "end": 158.5,
+     "cue": {
+      "word": "العصا",
+      "t": 157.94
+     },
+     "who": "ascetic",
+     "action": "lifts the stick and looks at it",
+     "acting": "gaze to the stick, eyebrows knit, a long look",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' + lookAt(stick)"
+    },
+    {
+     "t": 158.6,
+     "end": 159.3,
+     "cue": {
+      "word": "يده.",
+      "t": 158.76
+     },
+     "who": "stick",
+     "action": "a blob of honey slides down the stick onto his hand",
+     "acting": "he winces",
+     "library": "stick + gooSpill"
+    },
+    {
+     "t": 159.4,
+     "end": 160.0,
+     "who": "stick",
+     "action": "he lets the stick fall; it clatters once on the floor (pause 159.30-160.08)",
+     "acting": "fingers open slowly, hand stays hanging",
+     "library": "stick + fallY + rebound"
+    },
+    {
+     "t": 160.1,
+     "end": 161.1,
+     "cue": {
+      "word": "يبقَ",
+      "t": 160.48
+     },
+     "who": "fx",
+     "action": "camera pulls out; three dotted ghost outlines fade up on the empty wall: coin pile, goat, field",
+     "acting": "he looks up at them with wet eyes",
+     "library": "dreamProps ghosts {alpha 0.5, dashed}; person {kind:'owner'} + costume preset 'ascetic' {wet:true}"
+    },
+    {
+     "t": 161.16,
+     "end": 162.1,
+     "cue": {
+      "word": "مال",
+      "t": 161.16
+     },
+     "who": "coinPile",
+     "action": "the ghost coins get a red X and pop into dots",
+     "acting": "a small flinch",
+     "library": "S.emphasis X + pop"
+    },
+    {
+     "t": 162.16,
+     "end": 163.3,
+     "cue": {
+      "word": "ماعز",
+      "t": 162.16
+     },
+     "who": "goats",
+     "action": "the ghost goat bleats once silently, gets its red X and pops",
+     "acting": "his head sinks a little lower",
+     "library": "goat ghost + X + pop"
+    },
+    {
+     "t": 163.44,
+     "end": 164.6,
+     "cue": {
+      "word": "حقل؛",
+      "t": 163.44
+     },
+     "who": "dreamProps",
+     "action": "the ghost field rolls up like a carpet, X, pop",
+     "acting": "shoulders drop again",
+     "library": "dreamProps.field ghost + X"
+    },
+    {
+     "t": 164.7,
+     "end": 165.8,
+     "cue": {
+      "word": "اختفى",
+      "t": 164.86
+     },
+     "who": "jar",
+     "action": "arrow up to the empty rope and neck ring, still swinging, smaller each swing",
+     "acting": "he looks up at it",
+     "library": "hangingJar {broken} + swing() + S.arrow"
+    },
+    {
+     "t": 165.9,
+     "end": 166.9,
+     "cue": {
+      "word": "العسل",
+      "t": 165.9
+     },
+     "who": "fx",
+     "action": "one last honey drop gathers on the rope stub and falls",
+     "acting": "his eyes follow it all the way down",
+     "library": "gooSpill drip + fallY"
+    },
+    {
+     "t": 167.0,
+     "end": 167.8,
+     "cue": {
+      "word": "جمعه.",
+      "t": 167.0
+     },
+     "who": "ascetic",
+     "action": "the drop lands on the tip of his nose; he goes cross-eyed at it, then sighs",
+     "acting": "gaze crossed to the nose, lid 0.4, long exhale (sq 0.96)",
+     "library": "person {kind:'owner'} + costume preset 'ascetic' + gaze"
+    },
+    {
+     "t": 168.2,
+     "end": 171.1,
+     "who": "lettering",
+     "action": "THE END card in the upper right where the dream used to be; he sits small under it, one slow blink, the rope still ticking",
+     "acting": "held ending; no smile",
+     "library": "S.title 'THE END' + blink + swing()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 151.34,
+     "text": "DRIP"
+    },
+    {
+     "t": 155.4,
+     "text": "THE JAR"
+    },
+    {
+     "t": 168.2,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 153.4,
+     "kind": "drip tick"
+    },
+    {
+     "t": 159.7,
+     "kind": "thud (stick drops)"
+    },
+    {
+     "t": 168.0,
+     "kind": "soft chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 171.14
+   }
+  }
+ ],
+ "ending": {
+  "t": 167.78,
+  "description": "After the last word (167.78) hold the wide shot of the bare room: the ascetic small on his mat in the puddle, a drop on his nose, the empty rope ticking above. 'THE END' pops at 168.2 in the upper right where the dream was and holds to 171.14. No moral text on screen."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "عاش ناسك في بيت صغير،|وكان يحصل كل يوم على قليل من السمن والعسل.|يأكل ما يحتاج إليه، ويضع الباقي في جرّة من الفخار.|ومع مرور الأيام، امتلأت الجرّة تقريبًا.",
+   "en": "An ascetic lived in a small house|and received a little ghee and honey each day.|He ate what he needed and put the rest in a clay jar.|As the days passed, the jar became almost full."
+  },
+  {
+   "p": 2,
+   "ar": "ذات مساء، جلس الناسك تحت الجرّة المعلقة فوق رأسه.|نظر إليها وقال: «كم فيها من السمن والعسل!|لو بعتهما في السوق، لحصلت على مال كثير.»|وبدأ يحسب الأرباح في خياله.",
+   "en": "One evening, the ascetic sat beneath the jar hanging above his head.|He looked at it and said, “There is so much ghee and honey in there!|If I sold them at the market, I would get plenty of money.”|He began calculating imaginary profits."
+  },
+  {
+   "p": 3,
+   "ar": "قال في نفسه: «سأشتري بهذا المال بعض الماعز.|وبعد أشهر ستولد لها صغار، ويكبر القطيع.|ثم أبيع بعضه، وأشتري أبقارًا وحقلًا واسعًا.»|ابتسم وهو يتخيل ذلك.",
+   "en": "He thought, “With that money I will buy some goats.|After a few months, they will have young, and the herd will grow.|Then I will sell some and buy cows and a wide field.”|He smiled as he imagined it."
+  },
+  {
+   "p": 4,
+   "ar": "ثم قال: «سأزرع الحقل وأجمع المحصول،|ويصبح عندي طعام ومال.|سأبني بيتًا كبيرًا، وأشتري أثاثًا جميلًا، ويعرف الناس أنني رجل غني.»|كان حلمه يكبر كل لحظة.",
+   "en": "Then he said, “I will plant the field and gather the harvest.|I will have food and money.|I will build a big house, buy beautiful furniture, and everyone will know I am a rich man.”|His dream grew with every moment."
+  },
+  {
+   "p": 5,
+   "ar": "لم يتوقف خياله عند ذلك.|تخيل أنه تزوج، وأن زوجته أنجبت ولدًا ذكيًا.|قال: «سأعلم ابني القراءة والحساب،|وعندما يكبر سيعمل في قصر الملك، ويفتخر الناس به.»",
+   "en": "His imagination did not stop there.|He pictured himself married, with a clever son.|“I will teach my son reading and arithmetic,” he said.|“When he grows up, he will work in the king’s palace, and people will be proud of him.”"
+  },
+  {
+   "p": 6,
+   "ar": "ثم تخيل أن ابنه لم يسمع كلامه يومًا.|غضب الناسك من هذا الموقف الذي لم يحدث أصلًا،|وأمسك عصا كانت بجانبه.|قال بصوت مرتفع: «وإذا عصاني، فسأؤدبه بهذه العصا!»",
+   "en": "Then he imagined that one day his son disobeyed him.|The ascetic became angry at something that had never even happened,|and grabbed a stick beside him.|“And if he disobeys me,” he shouted, “I will punish him with this stick!”"
+  },
+  {
+   "p": 7,
+   "ar": "رفع العصا في الهواء،|وضرب بها كأنه يضرب ابنه الخيالي.|لكن العصا أصابت الجرّة الحقيقية فوق رأسه!|انكسرت الجرّة، وسقط السمن والعسل على وجهه وثيابه.",
+   "en": "He raised the stick|and swung it as though striking his imaginary son.|But the stick hit the real jar above his head!|The jar broke, and the ghee and honey spilled onto his face and clothes."
+  },
+  {
+   "p": 8,
+   "ar": "جلس الناسك مذهولًا، والسمن والعسل يقطران من شعره.|نظر إلى قطع الجرّة على الأرض، ثم إلى العصا في يده.|لم يبقَ مال ولا ماعز ولا حقل؛|بل اختفى حتى العسل الذي جمعه.",
+   "en": "The ascetic sat stunned as ghee and honey dripped from his hair.|He looked at the broken pieces on the ground and then at the stick in his hand.|There was no money, no goats, no field;|even the honey he had saved was gone."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "hutRoom",
+   "reusable": true,
+   "effort": "M",
+   "description": "Poor one-room hut in cutaway for hermits, woodcutters, old women. World 1000 x 1230. Outside: sky (dayCycle) and ground at y 900. Walls x 110..890 (26 thick), flat roof slab y 210..250 with six round beam ends, ceiling y 250, floor y 900. Door opening in the left wall y 620..900 with a leaf that swings (door 0..1). Window in the back wall x 690..830, y 400..540 showing the sky. Ceiling hook at (360, 250). Woven mat x 240..480 on the floor. Lamp niche at (600, 560) with lamp 0..1. Palettes 'day' (ochre wall, blue dots) and 'dusk' (orange wall, red dot shading).",
+   "implementation": "Bake two layers with bake(): back (sky hole for the window is left transparent, wall fill, dots via the style's halftone fill, beams, niche, mat) and front (wall edges, roof slab). Draw dayCycle or sky() first, then back, actors, front. Door leaf is a skewed rectangle scaled in x by the door field. Model it on houseRoom + houseRoof."
+  },
+  {
+   "type": "prop",
+   "name": "hangingJar",
+   "reusable": true,
+   "effort": "M",
+   "description": "Clay jar on a rope: body 130 wide x 150 tall (ellipse belly, 60 wide neck, rim ring, two small ear handles), terracotta with red dot shading and a black brush outline. Rope from the hook to the neck, about 180 long. Fields: x, y (hook point), len, swingA (radians), fill 0..1 (shown through an oval cutaway window 70 x 90 on the belly: yellow lower band for ghee, amber top band for honey, level line), drip 0..1 (bead on the rim), glint, crack 0..1 (zigzag crack growing across the belly), broken (0 or 1: only the neck ring on the rope remains), shards (time since the burst).",
+   "implementation": "One function hangingJar(ctx, P). Rotate about the hook by swingA (drive with swing() or a sine). Belly = K ellipse path; cutaway window = clipped rectangle bands. Crack = polyline of 7 seeded points revealed by crack. Shards = 9 fixed polygons cut from the belly outline; after the burst each flies with a seeded velocity, fallY gravity, rebound once on y 896 and rests (pure function of time since the burst)."
+  },
+  {
+   "type": "character",
+   "name": "goat",
+   "reusable": true,
+   "effort": "M",
+   "description": "Small side-view goat, about 150 wide x 130 high at s 1. Fields: x, y, s, dir, ph/amp (walk), graze 0..1, fat 0..1, talk, kind ('goat', 'kid' = no horns, big head; 'cow' = body 1.5x wider, black patches, short horns, tuft tail), pal (white, brown, black), plus the shared acting fields.",
+   "implementation": "Follow the deer drawing's structure (body rounded box, four legs with ph, neck and head) with shorter legs; horns as two tapered arcs, beard a small triangle. Register with acting() in registry.js once approved."
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (ascetic, richMan)",
+   "reusable": true,
+   "effort": "M",
+   "description": "Two more presets for the planned person costume layer. ascetic: small white wrapped turban with a tail (tail angle field for lag), grey-white pointed beard, off-white robe with two blue patches, bare feet. richMan: big yellow turban with red jewel, yellow robe, red sash. Extra optional fields used here: flush 0..1 (planned expression), goo 0..1 (yellow and amber overlay on turban, face sides, beard and shoulders with 4 drip tails), mouth 'tongue'.",
+   "implementation": "Draw the costume over the Library person after the body and before the face (turban replaces the owner's nightcap; beard is a path under the mouth). goo = clipped blobs keyed by the field; drips are small teardrops below it. Keep defaults off so the Thief film is unchanged."
+  },
+  {
+   "type": "pose",
+   "name": "person kneel / sit",
+   "reusable": true,
+   "effort": "M",
+   "description": "Planned pose (AN-095, KD-009). sit 0..1: robe folds into a cross-legged base about 150 wide x 60 high (at s 1), torso lowers by about 95; kneel 0..1: torso lowers by about 60 on folded shins. Arms, head and all gestures keep working.",
+   "implementation": "Offset the torso origin by the field and replace the leg drawing with a rounded trapezoid (sit) or folded shin shape (kneel); hand targets stay figure-local."
+  },
+  {
+   "type": "character",
+   "name": "person child option",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned (KD-011): child on the person figure, small scale with head 1.25x, no facial hair. Here also grows in three steps to adult scale.",
+   "implementation": "Scale parameter plus head factor; moustache flag on at the last step."
+  },
+  {
+   "type": "character",
+   "name": "villager",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned (KD-005 and others): tunic colour, headwear and height variants of the person; three are used small inside the cloud.",
+   "implementation": "Costume layer parameters."
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "reusable": true,
+   "effort": "M",
+   "description": "Planned (6 stories). Here it must also: grow through four box stages (380x300, 600x420, 820x520, 900x600) with a bounce, sprout an extra lobe, change tint (yellow dots to blue dots), flicker to a dashed outline, and pop into dots. Content is clipped to the cloud. Trail of three bubbles from the thinker's head.",
+   "implementation": "thoughtCloud(ctx, {box, open, tint, dashed, pop}, drawInside): outline = union of 9-12 circles along the box's rounded rectangle (seeded radii); fill paper white with light dots; ctx.clip() then drawInside(ctx) in box-local coordinates. pop: replace by 60 seeded dots flying outward for 0.5 s."
+  },
+  {
+   "type": "effect",
+   "name": "gooSpill",
+   "reusable": true,
+   "effort": "S",
+   "description": "Thick liquid: a blob (radius 55, yellow with amber swirl) that hangs, stretches and falls; splat crown of 8 drops; steady drips with landing rings; a floor puddle that grows to 220 wide.",
+   "implementation": "Blob = circle stretched in y by fall speed (fallY); splat = seeded drops on short arcs; drips = teardrops on a period list; puddle = flat ellipse with a highlight."
+  },
+  {
+   "type": "prop",
+   "name": "dreamProps",
+   "reusable": true,
+   "effort": "M",
+   "description": "A module of flat pictograms, each 80 to 260 units, used inside the cloud: stall (counter and striped awning), abacus (frame with 2 rows of 5 beads), moonTick, field (strip with furrows, w 0..1, crop 0..1, can roll up), sheaf, sack, loaf, house (build 0..1 from 6 blocks, door, roof; storeys 1 or 2; dome; open front), furniture (chair, table, lamp, carpet), bundle, slate (modes letters and sum), palace (arch, dome, 2 flags, crown).",
+   "implementation": "One function per pictogram using K rectangles, arcs and the style's flat fills; all take (ctx, x, y, s, fields). Ghost mode = dashed outline, alpha 0.5, no fill."
+  },
+  {
+   "type": "prop",
+   "name": "stick, coinPile, smallBowl",
+   "reusable": true,
+   "effort": "S",
+   "description": "stick (planned KD-008): 180 x 12 staff drawn from grip point and angle. coinPile (planned AN-095): mound of n coins. smallBowl: 34 wide bowl with fill colour and level.",
+   "implementation": "Simple K shapes; the stick takes (x, y, angle) so it follows the hand target."
+  },
+  {
+   "type": "effect",
+   "name": "dayCycle",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned (4 stories): sky running day, dusk, night, dawn with sun and moon on arcs; used outside the hut and in its window for the 'days passed' montage (5 cycles in 3 s) and held at dusk afterwards.",
+   "implementation": "Blend sky presets by phase; sun and moon on a circle about the horizon centre."
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned (KD-008): red Ben-Day dots climbing the face from the neck, with optional steam puffs.",
+   "implementation": "Clipped dot fill over the head shape, height keyed by flush."
+  }
+ ],
+ "owner_questions": [
+  "The narration says he strikes 'as though striking his imaginary son'; default: the stick only passes through a picture that ripples and re-forms, the boy is never shown hurt, and he stays cheeky (tongue out).",
+  "The imagined son is drawn as a small boy during the disobedience (he had just been shown grown up at the palace); default: he is small again, as 'one day his son disobeyed him' reads as a childhood moment.",
+  "Added English lettering not in the script: A SMALL HOUSE, GHEE, HONEY, CLAY JAR, ALMOST FULL!, IN HIS HEAD, RICH!, THE PALACE, NO!, NOT REAL, STICK, SWISH!, IMAGINARY SON, CRACK!, REAL JAR, SMASH!, SPLAT!, DRIP, THE JAR, THE END; default: keep all (20 items, mostly labels).",
+  "Additions beyond the script inside the dream: a market stall, an abacus, three admiring neighbours, a slate with A B C and 2 + 2 = 4, the son sticking out his tongue; default: keep, they only illustrate narrated ideas.",
+  "The moral is not written on screen; default: the crossed-out ghost icons and the last drop carry it, followed by THE END only.",
+  "The jar burst needs one short crash sound, but P7 has no pause of 0.6 s; default: a quiet short crash at 139.40 (the boundary before 'broke'), and only a whoosh at 134.0; the CRACK and SPLAT are visual only."
+ ],
+ "implementation_notes": [
+  "All times are seconds on the final MP3 (168.14 s); the film is 171.14 s (end_hold 3.0). Use w(p, n) word cues from timing.json; the cue words and times in this file are the script words from timeline.md.",
+  "Coordinates are a proposed layout in the 1000 x 1230 world (floor y 900). They are approximate: tune on stills, but keep the vertical stack jar (360, 505) over the seated head (about 350, 715) with a gap near 90 units, and keep the dream son's picture just right of the jar.",
+  "Draw order per frame: dayCycle sky, hutRoom back, lamp glow, thoughtCloud (with its clipped contents), hangingJar (with a 6 px paper halo while it overlaps the cloud), ascetic, stick, gooSpill, shards, hutRoom front, labels, then S.finish last.",
+  "The jar is the film's metronome: it always sways (swing() or a slow sine, amplitude 0.02 to 0.08 rad). Its amplitude rises at 123.3 (near miss) and 128.5; after the burst the rope stub swings with damped swing().",
+  "The thought cloud is one object with keyed box stages: stage 1 at 33.6, stage 2 at 41.65, stage 3 at 62.9, stage 4 in three steps at 80.74, 81.54, 82.70, extra lobe at 85.14, tint change at 105.0, pop at 139.44. Everything inside is drawn in box-local coordinates so it scales with the box.",
+  "Set LIFE.t = t each frame for auto-blinks; give the ascetic explicit lid values in the dreamy passages (lid 1 with no blink) and suppress blinks during the held look to camera 138.1-139.3.",
+  "Gaze: use look()/gazePlan with targets jar (360, 505), cloud centre, bowls, stick, shards, camera. Use the 0.07 saccade ease when he counts (37.7-40.4).",
+  "Stick physics: hold it by PERSON_HANDS.grip and pass the hand's world position and an angle to stick(). Swing 1 (129.12) follows the Fox strike cycle: lift, ease-in whip, damped rebound on the mat. The fatal hit is the upswing of swing 2: contact at 135.56 with the tip at the jar belly (about 400, 540).",
+  "Panel-only shake at 135.56 and 144.04 (translate inside the panel clip so the caption panel never moves).",
+  "Lettering never covers a face or the jar; place bursts in the wall space right of x 520 or below y 780. No en or em dashes.",
+  "Sound: only the listed effects, SND master 0.6. Real pauses are 2.52-3.31, 14.70-15.17, 20.32-20.89, 22.28-22.69, 27.52-27.89, 41.30-42.00, 61.90-62.88, 83.90-84.44, 133.74-134.28, 153.04-153.72, 159.30-160.08 and after 167.78.",
+  "Subtitles: 4 chunks per paragraph as marked in 'subtitles'; show each chunk from its first word's start to the next chunk's first word.",
+  "Crowds are cheap: goats are one figure repeated in 3 depth rows with seeded phase offsets; never animate them in unison (stagger)."
+ ],
+ "warnings": [
+  "Four of eight scenes play inside the thought cloud at small scale: figures there are about 150 world units tall; at zoom 1.4 that is over 200 px on screen, but check phone legibility on stills, and keep dream pictograms bold and few on screen at once.",
+  "The sit and kneel poses and the costume layer do not exist yet in the Library; this film cannot be staged without them. Build and approve them first (they are shared with AN-095, KD-009, KD-010).",
+  "P7 has no pause long enough for effects; the crash at 139.40 sits on a word boundary and must be short (under 0.2 s) and quiet, or dropped if it touches the word.",
+  "Stage 4 of the cloud hides the window and lamp; make sure the room still reads as the same hut (keep the mat, floor line and roof beam visible).",
+  "The asset list is long (hutRoom, hangingJar, goat, dreamProps, gooSpill plus planned shared assets); dreamProps can be cut down to stall, field, house, slate and palace if time is short."
+ ]
+}

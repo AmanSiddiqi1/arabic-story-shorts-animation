@@ -1,0 +1,2670 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-127",
+ "title": "Mus'ab bin al-Zubayr and Ayishah His Wife",
+ "duration": 179.814,
+ "end_hold": 0.18,
+ "logline": "A young noble sends a clever go-between to describe the woman he hopes to marry, marries her despite a teasing warning, and learns with all Medina that his bride is proudly, openly in love with him.",
+ "moral": "Affection between husband and wife is nothing to be ashamed of; a frank answer can end an argument without quarrel.",
+ "tone": "Light, warm, teasing comedy of manners. Everything intimate stays behind a curtain, a door or shutters and is shown only as hearts, a moving moon and the faces of the people outside.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 1.88,
+   "kind": "setup",
+   "cue": {
+    "word": "التقى",
+    "t": 1.88
+   },
+   "summary": "Musab meets clever Izzah in Medina."
+  },
+  {
+   "id": "B2",
+   "t": 14.98,
+   "kind": "inciting",
+   "cue": {
+    "word": "تزورها",
+    "t": 14.98
+   },
+   "summary": "He sends her to look at Ayishah before he proposes."
+  },
+  {
+   "id": "B3",
+   "t": 25.5,
+   "kind": "rising",
+   "cue": {
+    "word": "بتقرير",
+    "t": 25.5
+   },
+   "summary": "Izzah returns with an absurdly long report."
+  },
+  {
+   "id": "B4",
+   "t": 38.48,
+   "kind": "comic",
+   "cue": {
+    "word": "جريء",
+    "t": 38.48
+   },
+   "summary": "The report turns frank; Musab blushes."
+  },
+  {
+   "id": "B5",
+   "t": 50.86,
+   "kind": "comic",
+   "cue": {
+    "word": "كبيرتان",
+    "t": 50.86
+   },
+   "summary": "Big feet, and the joke that he will struggle to keep up."
+  },
+  {
+   "id": "B6",
+   "t": 66.1,
+   "kind": "turn",
+   "cue": {
+    "word": "يتراجع",
+    "t": 66.1
+   },
+   "summary": "He takes it seriously and still chooses her."
+  },
+  {
+   "id": "B7",
+   "t": 70.8,
+   "kind": "reveal",
+   "cue": {
+    "word": "عائشة",
+    "t": 70.8
+   },
+   "summary": "The wedding: Ayishah is seen at last; the curtain closes."
+  },
+  {
+   "id": "B8",
+   "t": 87.54,
+   "kind": "rising",
+   "cue": {
+    "word": "مجلس",
+    "t": 87.54
+   },
+   "summary": "Izzah gathers the bride and the women of Quraysh."
+  },
+  {
+   "id": "B9",
+   "t": 106.2,
+   "kind": "emotion",
+   "cue": {
+    "word": "زوجها",
+    "t": 106.2
+   },
+   "summary": "Her love verses curl round Musab in front of everyone."
+  },
+  {
+   "id": "B10",
+   "t": 125.2,
+   "kind": "comic",
+   "cue": {
+    "word": "متكررة",
+    "t": 125.2
+   },
+   "summary": "The wedding night from outside: hearts while the moon crosses the sky."
+  },
+  {
+   "id": "B11",
+   "t": 131.7,
+   "kind": "comic",
+   "cue": {
+    "word": "وقوته",
+    "t": 131.7
+   },
+   "summary": "Next morning a woman praises his vigor."
+  },
+  {
+   "id": "B12",
+   "t": 137.28,
+   "kind": "suspense",
+   "cue": {
+    "word": "سمعت",
+    "t": 137.28
+   },
+   "summary": "A visitor overhears from the front room."
+  },
+  {
+   "id": "B13",
+   "t": 153.44,
+   "kind": "climax",
+   "cue": {
+    "word": "تخجلين",
+    "t": 153.44
+   },
+   "summary": "She confronts Ayishah: are you not ashamed?"
+  },
+  {
+   "id": "B14",
+   "t": 166.56,
+   "kind": "resolution",
+   "cue": {
+    "word": "ورغبة",
+    "t": 166.56
+   },
+   "summary": "Ayishah answers without apology."
+  },
+  {
+   "id": "B15",
+   "t": 178.88,
+   "kind": "moral",
+   "cue": {
+    "word": "عقوبة",
+    "t": 178.88
+   },
+   "summary": "No quarrel and no punishment: the tale ends on her frank answer."
+  }
+ ],
+ "cast": [
+  {
+   "id": "musab",
+   "name": "Mus'ab bin al-Zubayr",
+   "library": "person",
+   "base": "person costume:'merchant' recoloured as the reusable variant 'noble'",
+   "look": "young nobleman, age 0.15: short black beard, white turban with a blue band and red jewel, blue dotted robe, gold sash, yellow trim; s 1.25",
+   "new": false
+  },
+  {
+   "id": "izzah",
+   "name": "Izzah, the clever go-between",
+   "library": "person",
+   "base": "person costume:'villageWoman' with pal overrides",
+   "look": "age 0.45, green robe with dark green dots, yellow headscarf, red sash; sly half lids, one raised brow is her resting face; s 1.2",
+   "new": false
+  },
+  {
+   "id": "ayishah",
+   "name": "Ayishah bint Talhah",
+   "library": "person",
+   "base": "person costume:'lady' with pal overrides + bigFeet option",
+   "look": "tall (s 1.3), white veil with a gold band and red jewel, red dress with yellow trim (the film's only large red figure), bright eyes, large yellow slippers (feet 1.5x) as the running callback",
+   "new": false
+  },
+  {
+   "id": "guests",
+   "name": "four women of Quraysh",
+   "library": "person",
+   "base": "person costumes 'lady', 'maiden', 'villageWoman', 'oldWoman' with four palettes",
+   "look": "four guests told apart by colour and age: blue lady (age 0.3), yellow maiden (age 0), purple villageWoman (age 0.5), brown oldWoman (age 0.8); s 1.1; never move in unison",
+   "new": false
+  },
+  {
+   "id": "neighbour",
+   "name": "the woman who knows Musab",
+   "library": "person",
+   "base": "person costume:'villageWoman' pal orange/brown",
+   "look": "age 0.45, orange robe, white scarf, carries a basket; teasing face",
+   "new": false
+  },
+  {
+   "id": "visitor",
+   "name": "the visiting lady",
+   "library": "person",
+   "base": "person costume:'lady' pal purple",
+   "look": "age 0.5, purple dress, pale blue veil, very proper posture; the film's shocked witness",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "medinaStreet",
+   "library": "marketStreet",
+   "description": "Medina street by day: marketStreet({palette:'clear', stalls:[{x:210, kind:'cloth'}]}) at w 1000. The palace facade on the right plays Talhah's house; use A.palace.door and A.palace.balcony anchors.",
+   "new": false
+  },
+  {
+   "id": "nightStreet",
+   "library": "marketStreet",
+   "description": "The same street and facade at night and at dawn: palette 'cold', palace 'lit', time of day keyed with u; balcony shutters close. Ground y 900.",
+   "new": false
+  },
+  {
+   "id": "coupleHome",
+   "library": "palaceHall",
+   "description": "The couple's house: palaceHall variant 'merchant', wall 'ochre', no coin desk; its curtain (0..1) on the right is the door of the private room; window pane shows the time of day; one or two stools and a small table.",
+   "new": false
+  },
+  {
+   "id": "majlis",
+   "library": "palaceHall",
+   "description": "Izzah's reception room: palaceHall variant 'palace', wall 'ochre', throne and dais off, carpet, lamps lit, five floor cushions and a tray; the door arch at the left frames Musab.",
+   "new": false
+  }
+ ],
+ "props": [
+  {
+   "id": "scroll",
+   "library": null,
+   "description": "Planned scroll with wavy lines; here with len 0..1 up to 900 units so it reaches the ground and rolls on.",
+   "new": true
+  },
+  {
+   "id": "iconBalloon",
+   "library": null,
+   "description": "Planned wordless picture balloon; icons for this film: face, eyes, nose, smile, slippers, bolt, arm, blush, heart.",
+   "new": true
+  },
+  {
+   "id": "verseRibbon",
+   "library": null,
+   "description": "Planned poetry ribbon that unrolls along a curve, carries heart and kiss icons, and curls round Musab.",
+   "new": true
+  },
+  {
+   "id": "floorCushion",
+   "library": null,
+   "description": "Planned loose floor cushion, five used in the majlis.",
+   "new": true
+  },
+  {
+   "id": "foodTray",
+   "library": null,
+   "description": "Planned brass tray with cups.",
+   "new": true
+  },
+  {
+   "id": "portraitMedallion",
+   "library": null,
+   "description": "Planned round portrait of a person head; used for Musab in balloons and Ayishah with a crown.",
+   "new": true
+  },
+  {
+   "id": "heart",
+   "library": "heart",
+   "description": "Library heart(ctx, x, y, r): the film's discreet sign for everything that happens behind curtains and shutters.",
+   "new": false
+  },
+  {
+   "id": "cat",
+   "library": "cat",
+   "description": "Library black cat on the roof line in S10, the only witness of the wedding night.",
+   "new": false
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 13.6,
+   "paragraphs": [
+    1
+   ],
+   "set": "medinaStreet",
+   "cast": [
+    "musab",
+    "izzah"
+   ],
+   "summary": "Medina street. Young noble Musab walks in and meets clever Izzah; he confides that he is thinking of marrying Ayishah, who appears as a veiled question in his thought cloud.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Open wide on the whole street (zoom 1.0, centre 500,640), hold 1.8 s, then ease to a two-shot (twoShot of the two heads, margin 150, about zoom 1.45) by 5.0. At 9.6 drift up 60 units to give the thought cloud room."
+   },
+   "composition": "Musab stops at x 330, Izzah at x 540, both feet y 900, s 1.25. House front and stall at left behind Musab; the noble house (marketStreet palace facade, door anchor A.palace.door) stays visible at the right edge as the goal. Thought cloud centre (520, 360), 480 x 330, above and between the heads; never over a face.",
+   "actions": [
+    {
+     "t": 0.0,
+     "cue": {
+      "word": "المدينة",
+      "t": 0.2
+     },
+     "who": "set",
+     "action": "street at morning, a dove crosses the sky left to right, awning stripes sway",
+     "acting": "calm establishing; label MEDINA pops top-left at 0.3 and leaves at 2.6",
+     "library": "marketStreet({palette:'clear', stalls:[{x:210, kind:'cloth'}], u:0.12}) + bird({kind:'dove', fly:true}) + S.label"
+    },
+    {
+     "t": 1.3,
+     "cue": {
+      "word": "التقى",
+      "t": 1.88
+     },
+     "who": "musab",
+     "action": "walks in from the left (x -80 to 330), stops with a small settle",
+     "acting": "chin up, easy stride, gaze ahead then to Izzah; overshoot and settle on the stop",
+     "library": "walk(MX,t) + footfalls + settleTo"
+    },
+    {
+     "t": 2.6,
+     "cue": {
+      "word": "مصعب",
+      "t": 2.6
+     },
+     "who": "lettering",
+     "action": "name tag MUSAB with an arrow to him for 1.6 s",
+     "acting": "tag sits above the turban, not on the face",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 3.6,
+     "cue": {
+      "word": "امرأة",
+      "t": 4.1
+     },
+     "who": "izzah",
+     "action": "steps out of the house door at left-centre and turns to him (x 600 to 540)",
+     "acting": "small quick steps, head tilt of greeting, smile",
+     "library": "person({costume:'villageWoman', pal:IZZAH}) + walk"
+    },
+    {
+     "t": 4.96,
+     "cue": {
+      "word": "ذكية",
+      "t": 4.96
+     },
+     "who": "izzah",
+     "action": "taps her temple once, a small sparkle pops beside her head",
+     "acting": "one raised brow (brow -0.4), half lid, knowing smirk; blink after the tap",
+     "library": "handR: PERSON_HANDS.chin.R moved to temple; sparkle = 4-point star shape"
+    },
+    {
+     "t": 6.5,
+     "cue": {
+      "word": "عزة",
+      "t": 6.82
+     },
+     "who": "lettering",
+     "action": "name tag IZZAH with arrow, 1.3 s",
+     "acting": "pops with 10% overshoot",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 8.08,
+     "cue": {
+      "word": "أخبرها",
+      "t": 8.08
+     },
+     "who": "musab",
+     "action": "leans in, cups a hand by his mouth to confide",
+     "acting": "tip 0.07 toward her, gaze flicks left and right first (saccade) then to her",
+     "library": "PERSON_HANDS.cupMouth + gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 8.4,
+     "cue": {
+      "word": "أخبرها",
+      "t": 8.08
+     },
+     "who": "izzah",
+     "action": "cups her ear and leans in to listen",
+     "acting": "eyes on him, tip 0.05, nod on the stress",
+     "library": "PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 9.64,
+     "cue": {
+      "word": "يفكر",
+      "t": 9.64
+     },
+     "who": "fx",
+     "action": "thought cloud pops above them (trail from Musab first, then the cloud)",
+     "acting": "Musab gaze up into the cloud [0.3,-1], hand to chin",
+     "library": "thoughtCloud(ctx, 520, 360, 480, 330, t, {tail:[350, 600], bg:C.yellow})"
+    },
+    {
+     "t": 10.54,
+     "cue": {
+      "word": "الزواج",
+      "t": 10.54
+     },
+     "who": "fx",
+     "action": "inside the cloud: two small figures side by side under one heart (tiny Musab and a veiled lady)",
+     "acting": "heart beats once (scale 1 to 1.2 to 1)",
+     "library": "thoughtCloud inside: person x2 at s 0.5 + heart(ctx, x, y, 30)"
+    },
+    {
+     "t": 11.42,
+     "cue": {
+      "word": "عائشة",
+      "t": 11.42
+     },
+     "who": "fx",
+     "action": "the lady in the cloud grows to fill it; her face is hidden by a white veil panel with a big blue ? on it",
+     "acting": "Musab sighs: sq 0.97 then 1, lid 0.4 dreamy, small smile",
+     "library": "cloud inside: person({costume:'lady'}) + paper rectangle over the face + '?' in Bangers"
+    },
+    {
+     "t": 12.3,
+     "cue": {
+      "word": "بنت",
+      "t": 12.22
+     },
+     "who": "lettering",
+     "action": "name tag AYISHAH under the cloud, 1.2 s",
+     "acting": "tag in blue box",
+     "library": "S.box"
+    },
+    {
+     "t": 12.8,
+     "cue": {
+      "word": "طلحة",
+      "t": 12.6
+     },
+     "who": "izzah",
+     "action": "looks up at the cloud, then at him, eyebrows up, pleased",
+     "acting": "gaze eases cloud to Musab; smile widens",
+     "library": "look(T, head, plan)"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 7.8,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 13.6
+   }
+  },
+  {
+   "id": "S2",
+   "start": 13.6,
+   "end": 23.26,
+   "paragraphs": [
+    1
+   ],
+   "set": "medinaStreet",
+   "cast": [
+    "musab",
+    "izzah"
+   ],
+   "summary": "He asks her to visit Ayishah and describe her before he proposes. Izzah accepts the mission and marches to the noble house.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pan",
+    "notes": "Hold the two-shot to 14.9, then widen (zoom 1.15) and pan right with Izzah to the palace door, keeping Musab at the left edge of frame."
+   },
+   "composition": "Musab stays at x 330. Izzah walks x 540 to the door (A.palace.door.cx, stand on A.palace.door.bottom). The cloud shrinks and follows her as a small pinned bubble (r 60) above her head: the question she carries.",
+   "actions": [
+    {
+     "t": 13.6,
+     "cue": {
+      "word": "وطلب",
+      "t": 13.6
+     },
+     "who": "musab",
+     "action": "both palms together, a small pleading bow toward her",
+     "acting": "brow raised (-0.5), hopeful smile, tip 0.08",
+     "library": "PERSON_HANDS.clasp"
+    },
+    {
+     "t": 14.98,
+     "cue": {
+      "word": "تزورها",
+      "t": 14.98
+     },
+     "who": "musab",
+     "action": "points at the noble house on the right; a dotted arrow draws from Izzah to its door",
+     "acting": "gaze follows his own finger then back to her",
+     "library": "PERSON_HANDS.pointFwd + S.arrow (dashed)"
+    },
+    {
+     "t": 15.3,
+     "cue": {
+      "word": "تزورها",
+      "t": 14.98
+     },
+     "who": "izzah",
+     "action": "turns her head to the house, nods twice",
+     "acting": "gaze to the door, quick nods (drop 6 px twice)",
+     "library": "lookAt"
+    },
+    {
+     "t": 16.8,
+     "cue": {
+      "word": "تصف",
+      "t": 16.8
+     },
+     "who": "musab",
+     "action": "mimes: frames his own face with both hands, then a hand from head to toe",
+     "acting": "earnest, a little shy; blink twice",
+     "library": "PERSON_HANDS.cheeks then handR keyed down"
+    },
+    {
+     "t": 17.7,
+     "cue": {
+      "word": "شكلها",
+      "t": 17.7
+     },
+     "who": "fx",
+     "action": "the cloud shrinks to a small bubble with the veiled ? and hops over to sit above Izzah",
+     "acting": "bubble squashes on landing",
+     "library": "thoughtCloud scale key + landSquash"
+    },
+    {
+     "t": 18.56,
+     "cue": {
+      "word": "وصفاتها",
+      "t": 18.56
+     },
+     "who": "izzah",
+     "action": "salutes with two fingers, tucks a rolled blank scroll under her arm",
+     "acting": "confident smirk, wink to camera side",
+     "library": "P.wink:'R' + scroll prop at hand (P.hands)"
+    },
+    {
+     "t": 19.64,
+     "cue": {
+      "word": "قبل",
+      "t": 19.64
+     },
+     "who": "musab",
+     "action": "holds up one finger: first the report, then the proposal; a tiny ring icon waits greyed out beside him",
+     "acting": "serious brow, then smile",
+     "library": "PERSON_HANDS.pointUp + ring icon (yellow circle, alpha 0.4)"
+    },
+    {
+     "t": 20.52,
+     "cue": {
+      "word": "يتقدم",
+      "t": 20.52
+     },
+     "who": "izzah",
+     "action": "walks briskly to the palace door with the bubble bobbing above her",
+     "acting": "anticipation dip before the first step; arms swing; no sliding",
+     "library": "anticipate + walk(IX,t) + footfalls"
+    },
+    {
+     "t": 21.34,
+     "cue": {
+      "word": "إليها",
+      "t": 21.34
+     },
+     "who": "set",
+     "action": "palace door opens a crack, warm light inside",
+     "acting": "door eases 0 to 0.6",
+     "library": "marketStreet palaceDoor: 0.6, palace:'lit'"
+    },
+    {
+     "t": 22.3,
+     "who": "izzah",
+     "action": "slips in through the door; it shuts behind her",
+     "acting": "last look back at Musab with a thumbs up before vanishing",
+     "library": "draw order: Izzah behind door leaf; palaceDoor to 0"
+    },
+    {
+     "t": 22.5,
+     "who": "musab",
+     "action": "left alone: rocks on his heels, fingers drumming, looks at the door",
+     "acting": "gaze fixed on the door, one slow blink, breathing idle",
+     "library": "breathe + lookAt"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 22.4,
+     "text": "KNOCK KNOCK!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 22.7,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "wipe",
+    "t": 23.26
+   }
+  },
+  {
+   "id": "S3",
+   "start": 23.26,
+   "end": 39.54,
+   "paragraphs": [
+    2
+   ],
+   "set": "medinaStreet",
+   "cast": [
+    "musab",
+    "izzah"
+   ],
+   "summary": "Izzah returns with a very long report. She praises face, eyes, nose and smile as icons, then the report turns frank: she whispers it and Musab blushes.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Start medium-wide on the door (zoom 1.2) as she comes out, track her back to Musab, then two-shot zoom 1.5 from 27.0; slow push to 1.65 by 37.5 on his reaction."
+   },
+   "composition": "Izzah returns to x 540, Musab at x 330. The scroll unrolls downward from her hands (top y 640) to the ground and then rolls left along the ground past his feet. Icon balloon centre (560, 330), 420 x 260, tail to Izzah. Faces stay clear at y 560..640.",
+   "actions": [
+    {
+     "t": 23.26,
+     "cue": {
+      "word": "ذهبت",
+      "t": 23.26
+     },
+     "who": "set",
+     "action": "the door: a short time-skip, the sun jumps a little along its arc and the door reopens",
+     "acting": "no card; a quick 0.5 s sky shift",
+     "library": "marketStreet u 0.12 to 0.2, palaceDoor 0 to 0.7"
+    },
+    {
+     "t": 24.7,
+     "cue": {
+      "word": "وعادت",
+      "t": 24.7
+     },
+     "who": "izzah",
+     "action": "strides back from the door to Musab carrying a fat scroll",
+     "acting": "pleased with herself, chin up, quick steps",
+     "library": "walk + footfalls"
+    },
+    {
+     "t": 24.9,
+     "cue": {
+      "word": "وعادت",
+      "t": 24.7
+     },
+     "who": "musab",
+     "action": "spins round to her, hops once with impatience",
+     "acting": "eyes wide then eager smile; hop with landing squash",
+     "library": "hop + landSquash"
+    },
+    {
+     "t": 25.5,
+     "cue": {
+      "word": "بتقرير",
+      "t": 25.5
+     },
+     "who": "izzah",
+     "action": "presents the scroll with both hands",
+     "acting": "small bow, sly lid 0.3",
+     "library": "handLW/handRW on the scroll"
+    },
+    {
+     "t": 26.3,
+     "cue": {
+      "word": "مفصل",
+      "t": 26.3
+     },
+     "who": "izzah",
+     "action": "lets it drop: the scroll unrolls to the ground, bounces and keeps rolling along the ground past Musab",
+     "acting": "Musab follows the rolling end with his eyes, then looks to camera for two frames",
+     "library": "scroll({len: 0..1}) keyed with fallY + rebound; lookAt"
+    },
+    {
+     "t": 27.06,
+     "cue": {
+      "word": "مدحت",
+      "t": 27.06
+     },
+     "who": "izzah",
+     "action": "clears her throat, one finger up, starts reading; icon balloon pops",
+     "acting": "talk mouth on stresses, reading gaze moves down the scroll",
+     "library": "iconBalloon(ctx, 560, 330, 420, 260, t, {tail:[560, 560]}) + P.talk"
+    },
+    {
+     "t": 28.76,
+     "cue": {
+      "word": "وجه",
+      "t": 28.76
+     },
+     "who": "fx",
+     "action": "icon 1: an oval face outline with a sparkle",
+     "acting": "pops with overshoot; Musab nods",
+     "library": "iconBalloon icon 'face'"
+    },
+    {
+     "t": 30.16,
+     "cue": {
+      "word": "وعينيها",
+      "t": 30.16
+     },
+     "who": "fx",
+     "action": "icon 2: two large lashes-and-pupil eyes that blink once",
+     "acting": "Musab own eyes widen, smile",
+     "library": "iconBalloon icon 'eyes'"
+    },
+    {
+     "t": 31.22,
+     "cue": {
+      "word": "وأنفها",
+      "t": 31.22
+     },
+     "who": "fx",
+     "action": "icon 3: a neat small nose line; Izzah taps her own nose",
+     "acting": "Musab touches his own nose without noticing",
+     "library": "iconBalloon icon 'nose' + PERSON_HANDS.chin raised"
+    },
+    {
+     "t": 32.2,
+     "cue": {
+      "word": "وابتسامتها",
+      "t": 32.2
+     },
+     "who": "fx",
+     "action": "icon 4: a red smile with a glint; four ticks now sit in a row under the balloon",
+     "acting": "Musab mirrors the smile, lid 0.3 dreamy",
+     "library": "iconBalloon icon 'smile' + tick row (S.counter 4/4)"
+    },
+    {
+     "t": 33.54,
+     "cue": {
+      "word": "ثم",
+      "t": 33.54
+     },
+     "who": "izzah",
+     "action": "pulls more scroll through her hands, looks both ways",
+     "acting": "saccade left, right; lowers her voice (shoulders up)",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 34.98,
+     "cue": {
+      "word": "قامتَها",
+      "t": 34.98
+     },
+     "who": "izzah",
+     "action": "shows height with a flat hand above her own head, then leans to his ear and whispers behind her hand",
+     "acting": "tip 0.1 toward him, cupMouth; the icon balloon is replaced by a balloon filled with squiggle lines only",
+     "library": "PERSON_HANDS.cupMouth + iconBalloon with wavy lines"
+    },
+    {
+     "t": 36.64,
+     "cue": {
+      "word": "جسدها",
+      "t": 36.64
+     },
+     "who": "musab",
+     "action": "eyes go wide; cheeks turn pink, turban tip quivers",
+     "acting": "eyes wide, mouth o, soft flush rises, tremble 1.5",
+     "library": "flush(soft) + tremble + eyes:'wide'"
+    },
+    {
+     "t": 37.54,
+     "cue": {
+      "word": "بتفصيل",
+      "t": 37.54
+     },
+     "who": "fx",
+     "action": "the squiggle balloon keeps growing; a paper strip stamped FRANK! slaps across it",
+     "acting": "stamp lands with 2-frame squash",
+     "library": "S.emphasis / box rotated -6 deg"
+    },
+    {
+     "t": 38.48,
+     "cue": {
+      "word": "جريء",
+      "t": 38.48
+     },
+     "who": "musab",
+     "action": "covers his mouth with one hand, glances to camera, then fans himself",
+     "acting": "gaze [0,0.05] one beat, then back to her; blink",
+     "library": "PERSON_HANDS.mouthCover + look to camera"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 26.5,
+     "text": "FWIP!"
+    },
+    {
+     "t": 37.6,
+     "text": "FRANK!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 39.54
+   }
+  },
+  {
+   "id": "S4",
+   "start": 39.54,
+   "end": 46.12,
+   "paragraphs": [
+    2
+   ],
+   "set": "medinaStreet",
+   "cast": [
+    "musab",
+    "izzah"
+   ],
+   "summary": "Her mission was not wealth or lineage, only beauty: two icons are crossed out and one is circled.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Hold the two-shot at zoom 1.5, camera centre lifted 40 units so three icon cards fit above the heads."
+   },
+   "composition": "Three icon cards in a row at y 330: x 330 coin purse, x 520 family tree, x 710 mirror with a heart. Each card 150 x 150, paper with black border. Izzah points at each in turn.",
+   "actions": [
+    {
+     "t": 39.54,
+     "cue": {
+      "word": "لم",
+      "t": 39.54
+     },
+     "who": "izzah",
+     "action": "rolls the scroll shut with a snap and tucks it away",
+     "acting": "matter of fact, small shrug",
+     "library": "scroll len 1 to 0"
+    },
+    {
+     "t": 40.76,
+     "cue": {
+      "word": "مهمتها",
+      "t": 40.76
+     },
+     "who": "izzah",
+     "action": "counts on her fingers, looking up at the empty space where the cards will pop",
+     "acting": "gaze up, talk mouth",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 42.44,
+     "cue": {
+      "word": "ثروتها",
+      "t": 42.44
+     },
+     "who": "fx",
+     "action": "card 1 pops: a coin purse; a red X strikes through it",
+     "acting": "X drawn in 4 frames; card shakes 3 px",
+     "library": "coinPile/purse icon + red X"
+    },
+    {
+     "t": 43.6,
+     "cue": {
+      "word": "نسبها",
+      "t": 43.6
+     },
+     "who": "fx",
+     "action": "card 2 pops: a small family tree (three linked medallions); red X",
+     "acting": "Izzah waves it away with the back of her hand",
+     "library": "portraitMedallion x3 tiny + red X"
+    },
+    {
+     "t": 45.26,
+     "cue": {
+      "word": "جمالها",
+      "t": 45.26
+     },
+     "who": "fx",
+     "action": "card 3 pops: a hand mirror with a heart; a yellow circle and a tick draw round it",
+     "acting": "both look at card 3; Musab nods three times, hand on chest",
+     "library": "mirror icon + heart + S.emphasis ring"
+    },
+    {
+     "t": 45.5,
+     "cue": {
+      "word": "جمالها",
+      "t": 45.26
+     },
+     "who": "musab",
+     "action": "hand to chest, satisfied sigh",
+     "acting": "lid 0.5, smile, sq 0.97",
+     "library": "PERSON_HANDS.chest"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 46.12
+   }
+  },
+  {
+   "id": "S5",
+   "start": 46.12,
+   "end": 61.08,
+   "paragraphs": [
+    3
+   ],
+   "set": "medinaStreet",
+   "cast": [
+    "musab",
+    "izzah"
+   ],
+   "summary": "One more note: Ayishah has big feet. Then Izzah jokes that he may struggle to keep up with her after the wedding, shown as a tiny Musab puffing behind a striding bride in a thought cloud.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "tilt",
+    "notes": "Two-shot zoom 1.45. At 49.4 tilt down 90 units to include both pairs of feet and the slippers; at 53.0 tilt back up and widen to 1.3 for the cloud."
+   },
+   "composition": "Slipper icon balloon low and right of Izzah (centre 720, 520). Joke cloud centre (500, 330), 520 x 340, trail from Izzah. Inside the cloud a ground line with the bride at s 0.55 walking right and Musab jogging behind.",
+   "actions": [
+    {
+     "t": 46.12,
+     "cue": {
+      "word": "قالت",
+      "t": 46.12
+     },
+     "who": "izzah",
+     "action": "raises a finger: one more thing",
+     "acting": "half lid, mischievous; Musab leans in again",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 49.48,
+     "cue": {
+      "word": "قدمي",
+      "t": 49.48
+     },
+     "who": "izzah",
+     "action": "points down at the ground; balloon pops with a pair of very large yellow slippers",
+     "acting": "gaze down; slippers land with a squash",
+     "library": "iconBalloon icon 'slippers' (two rounded shoes 150 long) + landSquash"
+    },
+    {
+     "t": 50.86,
+     "cue": {
+      "word": "كبيرتان",
+      "t": 50.86
+     },
+     "who": "fx",
+     "action": "the slippers grow 1.4x with a double-headed measuring arrow and BIG! lettering",
+     "acting": "Musab looks at the slippers, then down at his own small shoes, then back",
+     "library": "S.arrow double + S.emphasis; gazePlan"
+    },
+    {
+     "t": 51.3,
+     "cue": {
+      "word": "كبيرتان",
+      "t": 50.86
+     },
+     "who": "musab",
+     "action": "lifts one foot to compare, wobbles, sets it down",
+     "acting": "brow up, balance wobble (tip +-0.05), shrug: fine by me",
+     "library": "P.tip keyed + settleTo"
+    },
+    {
+     "t": 51.92,
+     "cue": {
+      "word": "وأضافت",
+      "t": 51.92
+     },
+     "who": "izzah",
+     "action": "elbows him lightly in the ribs",
+     "acting": "wink toward him, grin; he rocks sideways from the nudge and back",
+     "library": "P.wink:'L' + handRW to his side; Musab x kick 10 px"
+    },
+    {
+     "t": 53.7,
+     "cue": {
+      "word": "مزحة",
+      "t": 53.7
+     },
+     "who": "fx",
+     "action": "joke cloud pops from Izzah; HA HA! beside her",
+     "acting": "she laughs: shoulders bounce twice",
+     "library": "thoughtCloud(ctx, 500, 330, 520, 340, t, {tail:[560, 600]})"
+    },
+    {
+     "t": 55.6,
+     "cue": {
+      "word": "مصعبًا",
+      "t": 55.6
+     },
+     "who": "fx",
+     "action": "in the cloud: the bride strides briskly to the right, tiny Musab jogs behind her",
+     "acting": "bride chin up, long steps; Musab arms pumping",
+     "library": "cloud inside: person({costume:'lady'}) + person({costume:'noble'}) with walk()"
+    },
+    {
+     "t": 57.18,
+     "cue": {
+      "word": "صعوبة",
+      "t": 57.18
+     },
+     "who": "fx",
+     "action": "cloud Musab falls behind, sweat drops fly, tongue out, turban slipping",
+     "acting": "cloud Musab sq 0.92, tip 0.2; three sweat drops",
+     "library": "sweat = 3 blue drops on seeded arcs"
+    },
+    {
+     "t": 58.42,
+     "cue": {
+      "word": "مجاراة",
+      "t": 58.42
+     },
+     "who": "fx",
+     "action": "the cloud bride looks back over her shoulder, beckons, a small heart above her; cloud Musab puffs PHEW!",
+     "acting": "bride smile; he bends, hands on knees",
+     "library": "heart + PERSON_HANDS.wave"
+    },
+    {
+     "t": 59.3,
+     "cue": {
+      "word": "رغبتها",
+      "t": 59.16
+     },
+     "who": "musab",
+     "action": "the real Musab watches the cloud, gulps, tugs his collar",
+     "acting": "eyes wide, drop pulse 6 px (gulp), one sweat drop",
+     "library": "P.drop pulse + lookAt cloud"
+    },
+    {
+     "t": 60.3,
+     "cue": {
+      "word": "الزواج",
+      "t": 60.3
+     },
+     "who": "izzah",
+     "action": "wipes a tear of laughter; the cloud pops away",
+     "acting": "eyes shut smiling (lid 1), then opens on him",
+     "library": "cloud p 1 to 0"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 50.9,
+     "text": "BIG!"
+    },
+    {
+     "t": 53.9,
+     "text": "HA HA!"
+    },
+    {
+     "t": 58.6,
+     "text": "PHEW!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 61.08
+   }
+  },
+  {
+   "id": "S6",
+   "start": 61.08,
+   "end": 68.22,
+   "paragraphs": [
+    3
+   ],
+   "set": "medinaStreet",
+   "cast": [
+    "musab",
+    "izzah"
+   ],
+   "summary": "Musab takes it seriously, thinks hard, then decides: his choice stands.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Push in on Musab alone (zoom 1.5 to 2.0, head at panel centre-left) through 64.3; at 65.7 snap wider (zoom 1.4) to include Izzah and the house as he points."
+   },
+   "composition": "Musab head near (330, 610). In the wide part the palace door is at the right third; his pointing arm makes a line to it. The grey ring icon from S2 returns beside him and turns gold.",
+   "actions": [
+    {
+     "t": 61.08,
+     "cue": {
+      "word": "أخذ",
+      "t": 61.08
+     },
+     "who": "musab",
+     "action": "smile fades; hand to chin, looks at the ground",
+     "acting": "brow lowers (0.5), lid 0.3, gaze [0.2, 0.8]",
+     "library": "PERSON_HANDS.chin"
+    },
+    {
+     "t": 62.64,
+     "cue": {
+      "word": "كلامها",
+      "t": 62.64
+     },
+     "who": "musab",
+     "action": "eyes dart: slippers, scroll, the house, back",
+     "acting": "saccades with holds, one slow blink",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 63.48,
+     "cue": {
+      "word": "بجدية",
+      "t": 63.48
+     },
+     "who": "izzah",
+     "action": "her grin drops; she watches him, worried she went too far",
+     "acting": "brow -0.5, hands clasp, leans to see his face",
+     "library": "PERSON_HANDS.clasp"
+    },
+    {
+     "t": 64.36,
+     "cue": {
+      "word": "لكنه",
+      "t": 64.36
+     },
+     "who": "musab",
+     "action": "head lifts, takes a breath",
+     "acting": "anticipation: sq 0.95 then stretch 1.04, eyes open full",
+     "library": "anticipate"
+    },
+    {
+     "t": 66.1,
+     "cue": {
+      "word": "يتراجع",
+      "t": 66.1
+     },
+     "who": "musab",
+     "action": "plants his feet and points firmly at the noble house",
+     "acting": "chin up, brow set, smile returns; arm snaps out with overshoot",
+     "library": "PERSON_HANDS.pointFwd + settleTo"
+    },
+    {
+     "t": 67.28,
+     "cue": {
+      "word": "اختياره",
+      "t": 67.28
+     },
+     "who": "fx",
+     "action": "the ring icon turns from grey to gold with a glint; YES! pops",
+     "acting": "Izzah claps twice and laughs with relief",
+     "library": "ring alpha 0.4 to 1 + sparkle"
+    },
+    {
+     "t": 67.6,
+     "cue": {
+      "word": "اختياره",
+      "t": 67.28
+     },
+     "who": "izzah",
+     "action": "claps, small hop",
+     "acting": "eyes shut smile, hop 14 px",
+     "library": "hop + landSquash"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 67.3,
+     "text": "YES!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 68.22
+   }
+  },
+  {
+   "id": "S7",
+   "start": 68.22,
+   "end": 81.2,
+   "paragraphs": [
+    4
+   ],
+   "set": "coupleHome",
+   "cast": [
+    "musab",
+    "ayishah"
+   ],
+   "summary": "The wedding. Ayishah is finally seen: tall, bright eyed, with famously large slippers. The two stand close, hearts rise, and the house curtain discreetly closes on them.",
+   "camera": {
+    "shot": "full",
+    "move": "push-in",
+    "notes": "Full room (zoom 1.05) for the reveal, push to a two-shot zoom 1.5 by 71.6; from 77.2 pull back to 1.15 so the curtain alcove on the right is in frame."
+   },
+   "composition": "Musab at x 400, Ayishah enters from the door (A.door) and stops at x 560, s 1.3 (slightly taller than his 1.25). Curtain alcove at the right (A.curtain, approximate x 850..960, measure on the set). Hearts rise from between them at (480, 540).",
+   "actions": [
+    {
+     "t": 68.22,
+     "cue": {
+      "word": "تزوج",
+      "t": 68.22
+     },
+     "who": "set",
+     "action": "their home: lamps lit, a garland of small red and yellow flags across the top, window showing afternoon",
+     "acting": "label THE WEDDING pops top centre for 2.2 s",
+     "library": "palaceHall({variant:'merchant', wall:'ochre', curtain:0, u:0.3, desk:false}) + flag garland + S.title small"
+    },
+    {
+     "t": 69.0,
+     "cue": {
+      "word": "مصعب",
+      "t": 69.96
+     },
+     "who": "musab",
+     "action": "stands in a fresh robe with a gold sash, smoothing his turban",
+     "acting": "nervous: blink twice, gaze on the door",
+     "library": "person({costume:'noble'})"
+    },
+    {
+     "t": 70.8,
+     "cue": {
+      "word": "عائشة",
+      "t": 70.8
+     },
+     "who": "ayishah",
+     "action": "enters through the door and lifts her veil edge: the first real look at her",
+     "acting": "bright wide eyes, red smile, chin level; a sparkle by the eyes",
+     "library": "person({costume:'lady', pal:AYISHAH}) + walk"
+    },
+    {
+     "t": 71.0,
+     "cue": {
+      "word": "عائشة",
+      "t": 70.8
+     },
+     "who": "fx",
+     "action": "arrow tag AYISHAH; a second small arrow points down at her large yellow slippers peeking under the hem",
+     "acting": "callback to the report; no lettering on the face",
+     "library": "S.label + S.arrow; pal.shoes yellow, feet drawn 1.5x (bigFeet)"
+    },
+    {
+     "t": 71.62,
+     "cue": {
+      "word": "بالفعل",
+      "t": 71.62
+     },
+     "who": "musab",
+     "action": "takes her hand; the gold ring pops between the hands",
+     "acting": "both smile, mutual gaze, small bow to each other",
+     "library": "handRW / handLW meet at (480, 700) + ring icon"
+    },
+    {
+     "t": 74.08,
+     "cue": {
+      "word": "الحكاية",
+      "t": 74.08
+     },
+     "who": "set",
+     "action": "a corner tag THE TALE SAYS... slides in top-left (the narrator stepping back)",
+     "acting": "tag in blue box, small",
+     "library": "S.box"
+    },
+    {
+     "t": 76.3,
+     "cue": {
+      "word": "الزوجية",
+      "t": 76.3
+     },
+     "who": "musab",
+     "action": "they turn to face each other, one step closer each",
+     "acting": "gaze locked, lids soften to 0.3",
+     "library": "walk short + lookAt"
+    },
+    {
+     "t": 78.1,
+     "cue": {
+      "word": "بقرب",
+      "t": 78.1
+     },
+     "who": "ayishah",
+     "action": "she closes the last gap herself: foreheads nearly touch; one heart rises",
+     "acting": "she leads (tip 0.06 toward him); he blinks, delighted",
+     "library": "heart(ctx, 480, 540, 26) rising with K.noise sway"
+    },
+    {
+     "t": 79.44,
+     "cue": {
+      "word": "ورغبة",
+      "t": 79.44
+     },
+     "who": "fx",
+     "action": "hearts multiply (5), drifting up; hand in hand they walk right toward the curtained alcove",
+     "acting": "she tugs him along, he follows with a hop step",
+     "library": "walk + hearts on seeded paths"
+    },
+    {
+     "t": 80.5,
+     "cue": {
+      "word": "متبادلة",
+      "t": 80.5
+     },
+     "who": "set",
+     "action": "the curtain sweeps shut behind them; one last heart squeezes out over the curtain rod",
+     "acting": "curtain overshoots and sways (swing)",
+     "library": "palaceHall curtain 0 to 1 + swing"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 80.6,
+     "text": "SWISH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 81.2,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S8",
+   "start": 81.2,
+   "end": 92.2,
+   "paragraphs": [
+    4
+   ],
+   "set": "majlis",
+   "cast": [
+    "izzah",
+    "ayishah",
+    "guests"
+   ],
+   "summary": "After the wedding Izzah holds a gathering at her house for the bride and the women of Quraysh: guests arrive, cushions fill, trays come out.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Under the LATER card cut to the majlis. Start on the door at left (zoom 1.25) as Izzah welcomes, pan right across the room to the cushions by 88.5, settle wide (zoom 1.05)."
+   },
+   "composition": "Door arch at the left (A.door). Carpet centre. Four floor cushions in an arc at x 420, 560, 700, 840, y 900; a fifth, larger red cushion at x 630 slightly back (y 880) for the bride. Guests at s 1.1 seated on the floor. Izzah stands by the door at x 240.",
+   "actions": [
+    {
+     "t": 81.2,
+     "cue": {
+      "word": "وبعد",
+      "t": 81.2
+     },
+     "who": "set",
+     "action": "Izzah's reception room: three arches, lamps, carpet, cushions, a brass tray on a low cloth",
+     "acting": "label IZZAH'S HOUSE for 2 s",
+     "library": "palaceHall({variant:'palace', wall:'ochre', throne:false, dais:false, cushions:false}) + floorCushion x5 + foodTray"
+    },
+    {
+     "t": 83.28,
+     "cue": {
+      "word": "دعت",
+      "t": 83.28
+     },
+     "who": "izzah",
+     "action": "at the open door, sweeps one arm inward: welcome, welcome",
+     "acting": "big hostess smile, bow of the head, talk mouth",
+     "library": "PERSON_HANDS.armsOut (one side) + P.talk"
+    },
+    {
+     "t": 84.66,
+     "cue": {
+      "word": "العروس",
+      "t": 84.66
+     },
+     "who": "ayishah",
+     "action": "enters first, greeted with both hands by Izzah; arrow tag THE BRIDE",
+     "acting": "radiant, chin up; Izzah gaze drops to the big slippers and back with a private grin",
+     "library": "walk + S.label"
+    },
+    {
+     "t": 85.44,
+     "cue": {
+      "word": "ونساء",
+      "t": 85.44
+     },
+     "who": "guests",
+     "action": "two guests enter after her, chatting, different heights and colours",
+     "acting": "never in step: second guest 0.25 s behind, heads turned to each other",
+     "library": "person({costume:'lady'/'maiden'/'villageWoman', pal}) + walk + stagger"
+    },
+    {
+     "t": 86.4,
+     "cue": {
+      "word": "قريش",
+      "t": 86.4
+     },
+     "who": "guests",
+     "action": "two more guests arrive; tag WOMEN OF QURAYSH over the group for 1.5 s",
+     "acting": "one waves to the bride, one admires the lamps (gaze up)",
+     "library": "PERSON_HANDS.wave + lookAt"
+    },
+    {
+     "t": 87.54,
+     "cue": {
+      "word": "مجلس",
+      "t": 87.54
+     },
+     "who": "guests",
+     "action": "the guests sit down on the cushions one after another, left to right",
+     "acting": "staggered sit 0 to 1 over 0.5 s each, small settle",
+     "library": "sit: 0..1, seat:'floor' + stagger(i)"
+    },
+    {
+     "t": 88.52,
+     "cue": {
+      "word": "بيتها",
+      "t": 88.52
+     },
+     "who": "ayishah",
+     "action": "sits on the red cushion in the middle",
+     "acting": "smooths her dress, smiles round the circle",
+     "library": "sit:1, seat:'floor'"
+    },
+    {
+     "t": 89.24,
+     "cue": {
+      "word": "للاحتفال",
+      "t": 89.24
+     },
+     "who": "izzah",
+     "action": "carries a tray in and sets it down; two small flags of the garland flutter",
+     "acting": "careful steps, tongue-tip concentration, then a flourish",
+     "library": "foodTray at handLW/handRW + walk"
+    },
+    {
+     "t": 90.36,
+     "cue": {
+      "word": "والاجتماع",
+      "t": 90.36
+     },
+     "who": "guests",
+     "action": "guests lean in to each other, chatter balloons with three dots pop and fade over two of them",
+     "acting": "heads turn in pairs; one laughs behind her hand",
+     "library": "PERSON_HANDS.mouthCover + small balloons"
+    },
+    {
+     "t": 91.5,
+     "who": "camera",
+     "action": "settles on the bride as she puts her cup down and gathers herself to rise",
+     "acting": "her gaze goes to the door side; anticipation dip",
+     "library": "anticipate"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 91.8,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 92.2
+   }
+  },
+  {
+   "id": "S9",
+   "start": 92.2,
+   "end": 113.48,
+   "paragraphs": [
+    5
+   ],
+   "set": "majlis",
+   "cast": [
+    "ayishah",
+    "musab",
+    "guests",
+    "izzah"
+   ],
+   "summary": "Ayishah stands and recites verses of love and kisses. Musab is close by at the doorway. Her verse ribbon drifts past the guests and curls round him: everyone can see who the poem is about.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Medium on Ayishah rising (zoom 1.5) to 95.0; pull out and pan left to reveal Musab in the doorway at 96.3 (zoom 1.1, both in frame via twoShot margin 120); hold wide for the ribbon; push to her face (zoom 1.7) at 105.2; back to wide by 110.0."
+   },
+   "composition": "Ayishah stands at x 630, the guests seated at x 420, 560, 700, 840 below her eye line. Musab stands just outside the door arch at x 150 (drawn through palaceHall behind/outside so the arch frames him). The verse ribbon leaves her raised hand at (680, 560), arcs over the guests at y 420 and ends round Musab.",
+   "actions": [
+    {
+     "t": 92.2,
+     "cue": {
+      "word": "وقفت",
+      "t": 92.2
+     },
+     "who": "ayishah",
+     "action": "rises from the cushion in one smooth move",
+     "acting": "anticipation dip then sit 1 to 0 with a 4% stretch; chin up",
+     "library": "sit keyed + anticipate + settleTo"
+    },
+    {
+     "t": 93.32,
+     "cue": {
+      "word": "عائشة",
+      "t": 93.32
+     },
+     "who": "guests",
+     "action": "all four guests look up at her, the last one a beat late; chatter balloons vanish",
+     "acting": "staggered head lifts; one sets her cup down",
+     "library": "lookAt + stagger(i)"
+    },
+    {
+     "t": 94.28,
+     "cue": {
+      "word": "المجلس",
+      "t": 94.28
+     },
+     "who": "ayishah",
+     "action": "steps onto the carpet centre, one hand rises like a reciter",
+     "acting": "eyes half closed, composed breath",
+     "library": "aR raised angle [2.4] + breathe"
+    },
+    {
+     "t": 96.26,
+     "cue": {
+      "word": "مصعب",
+      "t": 96.26
+     },
+     "who": "musab",
+     "action": "revealed standing in the doorway, leaning on the arch, arms folded, listening",
+     "acting": "soft smile, gaze on her only; arrow tag MUSAB, NEARBY",
+     "library": "PERSON_HANDS.folded + palaceHall({behind}) + S.label"
+    },
+    {
+     "t": 97.68,
+     "cue": {
+      "word": "منها",
+      "t": 97.68
+     },
+     "who": "ayishah",
+     "action": "her eyes flick to the door and back to the guests; tiny smile",
+     "acting": "2-frame saccade to Musab, lid 0.3",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 98.22,
+     "cue": {
+      "word": "وأنشدت",
+      "t": 98.22
+     },
+     "who": "ayishah",
+     "action": "begins to recite: a paper ribbon of verse unrolls from her hand into the air",
+     "acting": "talk mouth on stresses, hand sways with the metre",
+     "library": "verseRibbon(ctx, pts, {len:0..1}) + P.talk"
+    },
+    {
+     "t": 99.6,
+     "cue": {
+      "word": "أبياتًا",
+      "t": 99.6
+     },
+     "who": "guests",
+     "action": "guests sway gently to the rhythm, each on her own phase",
+     "acting": "eyes follow the ribbon tip; one rests chin on hand",
+     "library": "K.noise sway per seed + PERSON_HANDS.chin"
+    },
+    {
+     "t": 100.68,
+     "cue": {
+      "word": "الحب",
+      "t": 100.68
+     },
+     "who": "fx",
+     "action": "red hearts ride along the ribbon",
+     "acting": "three hearts pop in sequence along the band",
+     "library": "verseRibbon icons: heart"
+    },
+    {
+     "t": 101.18,
+     "cue": {
+      "word": "والقبل",
+      "t": 101.18
+     },
+     "who": "fx",
+     "action": "small red lip marks follow the hearts; MWAH! in small lettering near the ribbon end",
+     "acting": "the youngest guest gasps and covers her mouth, the oldest grins",
+     "library": "verseRibbon icons: 'kiss' (two red arcs) + PERSON_HANDS.mouthCover"
+    },
+    {
+     "t": 101.88,
+     "cue": {
+      "word": "أظهرت",
+      "t": 101.88
+     },
+     "who": "fx",
+     "action": "the ribbon tip wanders left across the room, over the guests heads, toward the door",
+     "acting": "four heads turn to follow it, staggered",
+     "library": "verseRibbon path keyed + lookAt"
+    },
+    {
+     "t": 103.54,
+     "cue": {
+      "word": "كلماتها",
+      "t": 103.54
+     },
+     "who": "musab",
+     "action": "the ribbon reaches him and curls once round his shoulders",
+     "acting": "he straightens, surprised, then pleased; soft flush",
+     "library": "verseRibbon curl + flush(soft) + settleTo"
+    },
+    {
+     "t": 105.22,
+     "cue": {
+      "word": "تفكر",
+      "t": 105.22
+     },
+     "who": "ayishah",
+     "action": "close on her: gaze slides to the door while she recites; a small thought bubble with Musab portrait pops by her temple",
+     "acting": "lid 0.35, smile at one corner",
+     "library": "portraitMedallion r 50 in a small thoughtCloud"
+    },
+    {
+     "t": 106.2,
+     "cue": {
+      "word": "زوجها",
+      "t": 106.2
+     },
+     "who": "musab",
+     "action": "points at himself: me?; a heart pops over his head",
+     "acting": "brows up, grin, look to camera for one beat",
+     "library": "PERSON_HANDS.chest + heart"
+    },
+    {
+     "t": 107.82,
+     "cue": {
+      "word": "عندما",
+      "t": 107.82
+     },
+     "who": "guests",
+     "action": "guests look from her to him and back, like a tennis match",
+     "acting": "heads left, right, left with stagger; knowing smiles",
+     "library": "gazePlan per guest"
+    },
+    {
+     "t": 109.56,
+     "cue": {
+      "word": "الجمال",
+      "t": 109.56
+     },
+     "who": "fx",
+     "action": "ribbon icons change to a flower and a star as she speaks of beauty",
+     "acting": "she gestures to the room, eyes still sliding to the door",
+     "library": "verseRibbon icons"
+    },
+    {
+     "t": 110.28,
+     "cue": {
+      "word": "والمودة",
+      "t": 110.28
+     },
+     "who": "izzah",
+     "action": "Izzah, standing at the right, nudges the nearest guest and nods at the couple",
+     "acting": "told-you-so smirk, wink",
+     "library": "P.wink:'R'"
+    },
+    {
+     "t": 111.92,
+     "cue": {
+      "word": "النساء",
+      "t": 111.92
+     },
+     "who": "guests",
+     "action": "two guests giggle behind their hands; HEE HEE! small above them",
+     "acting": "shoulders bounce, eyes shut",
+     "library": "PERSON_HANDS.mouthCover"
+    },
+    {
+     "t": 112.5,
+     "cue": {
+      "word": "الحاضرات",
+      "t": 112.5
+     },
+     "who": "ayishah",
+     "action": "finishes with a small bow; the ribbon rolls itself up into her hand",
+     "acting": "satisfied, unembarrassed",
+     "library": "verseRibbon len 1 to 0"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 101.3,
+     "text": "MWAH!"
+    },
+    {
+     "t": 112.0,
+     "text": "HEE HEE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "iris",
+    "t": 113.48
+   }
+  },
+  {
+   "id": "S10",
+   "start": 113.48,
+   "end": 126.22,
+   "paragraphs": [
+    6
+   ],
+   "set": "nightStreet",
+   "cast": [
+    "musab",
+    "ayishah"
+   ],
+   "summary": "Flashback to the wedding night, told from outside the house: the window glows, hearts puff out again and again while the moon crosses the whole sky.",
+   "camera": {
+    "shot": "establishing",
+    "move": "drift",
+    "notes": "Exterior of the house at night (zoom 1.1 centred on the balcony window), slow drift up 50 units over the scene; no figures in close-up."
+   },
+   "composition": "The noble house facade (marketStreet palace) at centre-right; lit balcony window at A.palace.balcony (cx, cy). Moon on its arc top-left to top-right. Hearts leave the window at (cx, cy - 30). A black cat sits on the roof line at the left as the only witness.",
+   "actions": [
+    {
+     "t": 113.48,
+     "cue": {
+      "word": "لم",
+      "t": 113.48
+     },
+     "who": "set",
+     "action": "iris opens on the house at night, stars, moon low at the left; tag THE WEDDING NIGHT",
+     "acting": "quiet street, lamp flicker",
+     "library": "marketStreet({palette:'cold', palace:'lit', u:0.62, t}) + S.label"
+    },
+    {
+     "t": 115.52,
+     "cue": {
+      "word": "الحكاية",
+      "t": 115.52
+     },
+     "who": "fx",
+     "action": "the balcony shutters swing closed from inside; two silhouetted hands pull them",
+     "acting": "shutters overshoot and settle",
+     "library": "townWindow shutters 0 to 1"
+    },
+    {
+     "t": 117.0,
+     "cue": {
+      "word": "الحميم",
+      "t": 117.0
+     },
+     "who": "fx",
+     "action": "a single heart slips out between the shutters and floats up",
+     "acting": "the cat on the roof watches it go by (gaze follows)",
+     "library": "heart + cat({sit:1}) + lookAt"
+    },
+    {
+     "t": 119.76,
+     "cue": {
+      "word": "تذكر",
+      "t": 119.76
+     },
+     "who": "set",
+     "action": "the moon begins to slide across the sky; the lamp in the window dims and brightens",
+     "acting": "time passing in one continuous move",
+     "library": "u keyed 0.62 to 0.95 over 6 s"
+    },
+    {
+     "t": 121.26,
+     "cue": {
+      "word": "أمضى",
+      "t": 121.26
+     },
+     "who": "fx",
+     "action": "heart burst 1 from the window (three hearts)",
+     "acting": "cat ears prick, head tilts",
+     "library": "hearts on seeded arcs"
+    },
+    {
+     "t": 122.56,
+     "cue": {
+      "word": "الزفاف",
+      "t": 122.56
+     },
+     "who": "fx",
+     "action": "the window lamp flickers; heart burst 2 (four hearts)",
+     "acting": "cat looks to camera, deadpan, slow blink",
+     "library": "cat gaze [0,0.05] + lid"
+    },
+    {
+     "t": 124.32,
+     "cue": {
+      "word": "لقاءات",
+      "t": 124.32
+     },
+     "who": "fx",
+     "action": "heart burst 3 (five hearts), the moon is now past the top of its arc",
+     "acting": "cat covers its eyes with a paw",
+     "library": "cat lick pose reused as paw-over-eyes"
+    },
+    {
+     "t": 125.2,
+     "cue": {
+      "word": "متكررة",
+      "t": 125.2
+     },
+     "who": "fx",
+     "action": "AGAIN! pops by the window; heart burst 4 as the moon sinks at the right; the cat gives up and curls to sleep",
+     "acting": "smallest reaction last (falling reaction rule)",
+     "library": "S.emphasis + cat crouch, lid 1 + zzz"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 125.3,
+     "text": "AGAIN!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 126.22
+   }
+  },
+  {
+   "id": "S11",
+   "start": 126.22,
+   "end": 134.3,
+   "paragraphs": [
+    6
+   ],
+   "set": "nightStreet",
+   "cast": [
+    "musab",
+    "neighbour"
+   ],
+   "summary": "Next morning the sun is up, Musab steps out fresh and springy, and a woman who knows him praises his energy and strength.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Same facade at dawn turning to morning. Medium on the door (zoom 1.4); push to a two-shot of Musab and the neighbour (zoom 1.6) by 129.5."
+   },
+   "composition": "Musab comes out of the palace door and stands on the step (A.palace.door.bottom) at door cx. The neighbour stands in the street at door cx - 230, looking up at him a little. Sun rising at top-left.",
+   "actions": [
+    {
+     "t": 126.22,
+     "cue": {
+      "word": "وفي",
+      "t": 126.22
+     },
+     "who": "set",
+     "action": "the sky rolls from night to bright morning; the sun pops up; the cat stretches and leaves",
+     "acting": "one continuous sky move over 1.2 s",
+     "library": "marketStreet u 0.95 to 0.1 (through dawn), palette 'clear'"
+    },
+    {
+     "t": 127.58,
+     "cue": {
+      "word": "التالي",
+      "t": 127.58
+     },
+     "who": "musab",
+     "action": "the door opens; Musab steps out, stretches both arms up, rolls his shoulders",
+     "acting": "bright eyes, big smile; stretch sq 1.06 then settle",
+     "library": "palaceDoor 0 to 0.8 + aL/aR raised + settleTo"
+    },
+    {
+     "t": 128.28,
+     "cue": {
+      "word": "أثنت",
+      "t": 128.28
+     },
+     "who": "neighbour",
+     "action": "a woman passing with a basket stops and looks him over",
+     "acting": "brows up, impressed pout",
+     "library": "person({costume:'villageWoman', pal:NEIGHBOUR, age:0.45}) + walk"
+    },
+    {
+     "t": 128.98,
+     "cue": {
+      "word": "امرأة",
+      "t": 128.98
+     },
+     "who": "musab",
+     "action": "notices her, waves a cheerful good morning",
+     "acting": "gaze to her, wave",
+     "library": "PERSON_HANDS.wave"
+    },
+    {
+     "t": 130.8,
+     "cue": {
+      "word": "نشاطه",
+      "t": 130.8
+     },
+     "who": "neighbour",
+     "action": "mimes his energy: quick little running arms; a balloon pops with a bolt icon",
+     "acting": "talk mouth, teasing eyes",
+     "library": "iconBalloon icon 'bolt' + P.talk"
+    },
+    {
+     "t": 131.0,
+     "cue": {
+      "word": "نشاطه",
+      "t": 130.8
+     },
+     "who": "musab",
+     "action": "does one springy hop on the step",
+     "acting": "anticipation crouch, hop 30 px, landing squash",
+     "library": "anticipate + hop + landSquash"
+    },
+    {
+     "t": 131.7,
+     "cue": {
+      "word": "وقوته",
+      "t": 131.7
+     },
+     "who": "neighbour",
+     "action": "flexes one arm at him; second icon: a flexed arm; STRONG! lettering",
+     "acting": "grin, nod",
+     "library": "iconBalloon icon 'arm' + S.emphasis"
+    },
+    {
+     "t": 132.96,
+     "cue": {
+      "word": "تلك",
+      "t": 132.96
+     },
+     "who": "musab",
+     "action": "flexes back for half a second, then realises what she means: eyes wide, soft flush",
+     "acting": "look to camera one beat, lid snap open",
+     "library": "flush(soft) + gaze [0,0.05]"
+    },
+    {
+     "t": 133.5,
+     "cue": {
+      "word": "الليلة",
+      "t": 133.34
+     },
+     "who": "neighbour",
+     "action": "points up at the shuttered balcony and winks; one late heart drifts out of it",
+     "acting": "wink; he scratches the back of his head, sheepish grin",
+     "library": "P.wink:'L' + PERSON_HANDS.pointUp + heart"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 131.8,
+     "text": "STRONG!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 134.3
+   }
+  },
+  {
+   "id": "S12",
+   "start": 134.3,
+   "end": 150.3,
+   "paragraphs": [
+    7
+   ],
+   "set": "coupleHome",
+   "cast": [
+    "visitor",
+    "ayishah",
+    "musab"
+   ],
+   "summary": "Another day: a lady visitor waits in the front room while the couple are behind the curtain. Hearts and sound arcs drift out; she hears everything and cannot believe it of a woman of such rank.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Front room wide (zoom 1.1) with the visitor left of centre and the closed curtain at the right; slow push toward the visitor (zoom 1.6) from 142.3 to 148.5; the curtain edge stays in frame at the right."
+   },
+   "composition": "Visitor seated on a stool at x 420 (A.stools[0].sitY), a cup in her hand, small table beside her. Curtain alcove closed at the right (A.curtain). Hearts and arcs come from the curtain top at about (880, 560). Rank balloon above the visitor at (430, 330).",
+   "actions": [
+    {
+     "t": 134.3,
+     "cue": {
+      "word": "وفي",
+      "t": 134.3
+     },
+     "who": "set",
+     "action": "the couple's front room by day; tag ANOTHER DAY",
+     "acting": "window shows noon",
+     "library": "palaceHall({variant:'merchant', wall:'ochre', curtain:1, u:0.25, stools:[420]})"
+    },
+    {
+     "t": 135.62,
+     "cue": {
+      "word": "مناسبة",
+      "t": 135.62
+     },
+     "who": "visitor",
+     "action": "sits waiting with a cup, looking round the room politely",
+     "acting": "idle: sips, blinks, foot taps",
+     "library": "person({costume:'lady', pal:VISITOR, age:0.5, sit:1, seat:'stool'}) + breathe"
+    },
+    {
+     "t": 137.28,
+     "cue": {
+      "word": "سمعت",
+      "t": 137.28
+     },
+     "who": "fx",
+     "action": "three white sound arcs pulse out from the curtain toward her",
+     "acting": "her cup stops halfway to her mouth",
+     "library": "soundArcs(ctx, 860, 600, -1, t)"
+    },
+    {
+     "t": 137.76,
+     "cue": {
+      "word": "امرأة",
+      "t": 137.76
+     },
+     "who": "visitor",
+     "action": "freezes; only her pupils slide toward the curtain",
+     "acting": "suspense by stillness: gaze [1, 0], no blink",
+     "library": "P.noBlink + gaze"
+    },
+    {
+     "t": 138.6,
+     "cue": {
+      "word": "أصوات",
+      "t": 138.6
+     },
+     "who": "fx",
+     "action": "a heart pops over the curtain rod, then two more; the curtain hem ripples",
+     "acting": "curtain sways (swing), hearts bob",
+     "library": "heart + swing"
+    },
+    {
+     "t": 139.22,
+     "cue": {
+      "word": "عائشة",
+      "t": 139.22
+     },
+     "who": "visitor",
+     "action": "cups her ear without meaning to, leans toward the curtain",
+     "acting": "tip 0.08, brows climbing",
+     "library": "PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 140.7,
+     "cue": {
+      "word": "لقائها",
+      "t": 140.7
+     },
+     "who": "fx",
+     "action": "bigger heart burst and a small OH! in red at the curtain top",
+     "acting": "visitor jolts: cup tips and one drop flies",
+     "library": "hearts + S.emphasis small; cup rot key"
+    },
+    {
+     "t": 141.48,
+     "cue": {
+      "word": "بزوجها",
+      "t": 141.48
+     },
+     "who": "visitor",
+     "action": "both hands to her cheeks, eyes wide, mouth o",
+     "acting": "flush rises, turban of the veil quivers (tremble 1.5)",
+     "library": "PERSON_HANDS.cheeks + eyes:'wide' + flush(soft)"
+    },
+    {
+     "t": 142.32,
+     "cue": {
+      "word": "استغربت",
+      "t": 142.32
+     },
+     "who": "visitor",
+     "action": "looks to camera: can you believe this?",
+     "acting": "one deliberate lens stare, then back to the curtain",
+     "library": "gaze [0, 0.05]"
+    },
+    {
+     "t": 145.08,
+     "cue": {
+      "word": "امرأة",
+      "t": 145.08
+     },
+     "who": "fx",
+     "action": "a thought balloon pops over the visitor: Ayishah portrait wearing a small crown, on a pedestal",
+     "acting": "the visitor points at the balloon, then at the curtain, back and forth",
+     "library": "thoughtCloud + portraitMedallion + crown shape + pedestal box"
+    },
+    {
+     "t": 146.56,
+     "cue": {
+      "word": "مكانة",
+      "t": 146.56
+     },
+     "who": "fx",
+     "action": "the pedestal in the balloon grows taller; tag LADY OF RANK",
+     "acting": "visitor measures the height with a flat hand",
+     "library": "S.box in the cloud"
+    },
+    {
+     "t": 149.0,
+     "cue": {
+      "word": "الصراحة",
+      "t": 149.0
+     },
+     "who": "fx",
+     "action": "a last heart floats from the curtain straight into the thought balloon and lands on the crowned portrait; ?! pops",
+     "acting": "visitor slumps on the stool, fanning herself with her hand",
+     "library": "heart path keyed + S.emphasis"
+    },
+    {
+     "t": 149.8,
+     "who": "set",
+     "action": "the curtain rod rings jingle; the curtain starts to open",
+     "acting": "visitor snaps upright, grabs her cup, pretends to sip",
+     "library": "curtain 1 to 0.7 + settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 140.8,
+     "text": "OH!"
+    },
+    {
+     "t": 149.1,
+     "text": "?!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 150.0,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 150.3
+   }
+  },
+  {
+   "id": "S13",
+   "start": 150.3,
+   "end": 157.44,
+   "paragraphs": [
+    7
+   ],
+   "set": "coupleHome",
+   "cast": [
+    "visitor",
+    "ayishah",
+    "musab"
+   ],
+   "summary": "Musab leaves, whistling. The visitor turns on Ayishah: are you not ashamed, with me in the house?",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pan",
+    "notes": "Widen to the whole room (zoom 1.1) as Musab crosses right to left and exits by the door; then two-shot on the women (zoom 1.5) from 152.7."
+   },
+   "composition": "Musab walks from the curtain (x 860) across the back of the room to the door at the left (A.door) passing behind the seated visitor. Ayishah comes to x 640 facing left; visitor rises at x 420 facing right. Eye lines level.",
+   "actions": [
+    {
+     "t": 150.3,
+     "cue": {
+      "word": "وسألتها",
+      "t": 150.3
+     },
+     "who": "musab",
+     "action": "steps out from the curtain straightening his turban, a spring in his step",
+     "acting": "content smile, eyes half shut; notices the visitor, small polite nod",
+     "library": "walk + PERSON_HANDS.headHold"
+    },
+    {
+     "t": 151.42,
+     "cue": {
+      "word": "خروج",
+      "t": 151.42
+     },
+     "who": "musab",
+     "action": "walks out through the door whistling (two music notes), the door closes behind him",
+     "acting": "never slides; visitor head turns to follow him out, staggered a beat late",
+     "library": "walk + footfalls + musicNotes + palaceHall doorOpen"
+    },
+    {
+     "t": 152.0,
+     "cue": {
+      "word": "مصعب",
+      "t": 152.0
+     },
+     "who": "ayishah",
+     "action": "comes out from the curtain tidying her veil, perfectly calm, big slippers first",
+     "acting": "serene smile, chin level, blink",
+     "library": "walk + PERSON_HANDS.headHold"
+    },
+    {
+     "t": 152.72,
+     "cue": {
+      "word": "ألا",
+      "t": 152.72
+     },
+     "who": "visitor",
+     "action": "stands up sharply, finger raised",
+     "acting": "brow V (0.8), mouth open, sit 1 to 0 with overshoot",
+     "library": "sit keyed + PERSON_HANDS.pointUp + settleTo"
+    },
+    {
+     "t": 153.44,
+     "cue": {
+      "word": "تخجلين",
+      "t": 153.44
+     },
+     "who": "visitor",
+     "action": "shakes the finger at her, other hand on hip; small speech balloon with a red blushing face icon and ?",
+     "acting": "talk mouth, flush still on her own cheeks",
+     "library": "iconBalloon icon 'blush' + PERSON_HANDS.hipsHands"
+    },
+    {
+     "t": 154.92,
+     "cue": {
+      "word": "وأنا",
+      "t": 154.92
+     },
+     "who": "visitor",
+     "action": "points at herself with both hands",
+     "acting": "indignant, brows up in the middle",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 155.84,
+     "cue": {
+      "word": "البيت",
+      "t": 155.84
+     },
+     "who": "visitor",
+     "action": "sweeps a hand round the room: in the house!",
+     "acting": "gaze follows the hand, then pins Ayishah",
+     "library": "PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 156.8,
+     "who": "ayishah",
+     "action": "listens, head a little to one side, not a flicker of shame; a slow blink",
+     "acting": "the pause before the answer: only a blink and a growing smile",
+     "library": "blink + head tilt 4 px"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 157.08,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 157.44
+   }
+  },
+  {
+   "id": "S14",
+   "start": 157.44,
+   "end": 173.38,
+   "paragraphs": [
+    8
+   ],
+   "set": "coupleHome",
+   "cast": [
+    "ayishah",
+    "visitor"
+   ],
+   "summary": "Ayishah answers without apology: a wife should show her husband all the affection and desire she can, and she hides it neither by day nor by night.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Two-shot zoom 1.5 to 160.3, then a slow push on Ayishah (zoom 1.9, head at panel centre) through 166.6; back to the two-shot for the day and night icons at 171.3."
+   },
+   "composition": "Ayishah at x 640 facing left, the visitor at x 420. Answer balloon above Ayishah (centre 660, 320, 380 x 240). Sun icon pops at the left of her head (x 520, y 380), moon icon at the right (x 800, y 380); the window pane behind shows day then night for one beat each.",
+   "actions": [
+    {
+     "t": 157.44,
+     "cue": {
+      "word": "أجابتها",
+      "t": 157.44
+     },
+     "who": "ayishah",
+     "action": "lifts her chin and steps one pace forward",
+     "acting": "calm, warm, direct gaze into the visitor eyes; no blush",
+     "library": "walk short + lookAt"
+    },
+    {
+     "t": 159.34,
+     "cue": {
+      "word": "اعتذار",
+      "t": 159.34
+     },
+     "who": "ayishah",
+     "action": "opens both palms: nothing to apologise for; a small card SORRY is struck out with a red X",
+     "acting": "shrug with a smile; visitor blinks twice",
+     "library": "PERSON_HANDS.palmsUp + S.box + red X"
+    },
+    {
+     "t": 160.34,
+     "cue": {
+      "word": "ينبغي",
+      "t": 160.34
+     },
+     "who": "ayishah",
+     "action": "raises a teaching finger",
+     "acting": "brow slightly up, talk mouth",
+     "library": "PERSON_HANDS.pointUp + P.talk"
+    },
+    {
+     "t": 162.3,
+     "cue": {
+      "word": "المرأة",
+      "t": 162.3
+     },
+     "who": "ayishah",
+     "action": "hand to her own chest",
+     "acting": "sincere, lid 0.2",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 163.0,
+     "cue": {
+      "word": "لزوجها",
+      "t": 163.0
+     },
+     "who": "fx",
+     "action": "answer balloon pops with Musab portrait medallion",
+     "acting": "her gaze flicks to the door he left by",
+     "library": "iconBalloon + portraitMedallion"
+    },
+    {
+     "t": 165.74,
+     "cue": {
+      "word": "مودة",
+      "t": 165.74
+     },
+     "who": "fx",
+     "action": "a heart joins the portrait in the balloon",
+     "acting": "visitor mouth closes, brows relax a notch",
+     "library": "iconBalloon icon 'heart'"
+    },
+    {
+     "t": 166.56,
+     "cue": {
+      "word": "ورغبة",
+      "t": 166.56
+     },
+     "who": "fx",
+     "action": "the heart doubles and beats; Ayishah both arms open wide",
+     "acting": "big unapologetic smile; visitor leans back from the force of it (tip -0.06)",
+     "library": "PERSON_HANDS.armsOut + heart scale pulse"
+    },
+    {
+     "t": 167.48,
+     "cue": {
+      "word": "وأضافت",
+      "t": 167.48
+     },
+     "who": "ayishah",
+     "action": "holds up two fingers: and another thing",
+     "acting": "playful now",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 170.32,
+     "cue": {
+      "word": "تخفي",
+      "t": 170.32
+     },
+     "who": "ayishah",
+     "action": "mimes hiding behind her veil edge for a second, then throws it open: not me",
+     "acting": "peek then reveal with a laugh",
+     "library": "handR across face then PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 171.38,
+     "cue": {
+      "word": "نهارًا",
+      "t": 171.38
+     },
+     "who": "fx",
+     "action": "sun icon pops at her left; the window pane turns bright day",
+     "acting": "she points at it",
+     "library": "sun() small + palaceHall u 0.25"
+    },
+    {
+     "t": 172.74,
+     "cue": {
+      "word": "ليلًا",
+      "t": 172.74
+     },
+     "who": "fx",
+     "action": "moon icon pops at her right; the window pane turns to night with stars",
+     "acting": "she points the other way; visitor head goes sun, moon, Ayishah",
+     "library": "moon shape + palaceHall u 0.72 + gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 166.7,
+     "text": "SO THERE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 173.38
+   }
+  },
+  {
+   "id": "S15",
+   "start": 173.38,
+   "end": 179.99,
+   "paragraphs": [
+    8
+   ],
+   "set": "coupleHome",
+   "cast": [
+    "ayishah",
+    "visitor",
+    "musab"
+   ],
+   "summary": "The frank answer ends the tale: no quarrel, no punishment. The visitor gives up, laughs, and the two women sit down to tea; Musab peeks back in. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "From the two-shot pull out slowly to the full room (zoom 1.05) by 178.5; hold for THE END."
+   },
+   "composition": "Visitor and Ayishah sit on two stools at x 420 and x 600 with the small table between. Two cancelled icons pop above them at y 330 (x 420 crossed swords, x 600 a gavel), each with a red X. Musab head and one hand appear round the door at the left at 179.0. THE END title in the upper third, clear of all faces.",
+   "actions": [
+    {
+     "t": 173.38,
+     "cue": {
+      "word": "بهذا",
+      "t": 173.38
+     },
+     "who": "visitor",
+     "action": "opens her mouth to argue, finds nothing, shuts it",
+     "acting": "mouth o then closed, eyes side to side",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 175.0,
+     "cue": {
+      "word": "الصريح",
+      "t": 175.0
+     },
+     "who": "visitor",
+     "action": "throws up her hands, then laughs",
+     "acting": "shrug, eyes shut, shoulders bounce",
+     "library": "PERSON_HANDS.palmsUp + sq pulse"
+    },
+    {
+     "t": 175.7,
+     "cue": {
+      "word": "تنتهي",
+      "t": 175.7
+     },
+     "who": "ayishah",
+     "action": "laughs with her and offers the cup back",
+     "acting": "warm, equal; they sit down together",
+     "library": "sit 0 to 1, seat:'stool'"
+    },
+    {
+     "t": 177.7,
+     "cue": {
+      "word": "خصام",
+      "t": 177.7
+     },
+     "who": "fx",
+     "action": "icon of two crossed swords pops and is crossed out",
+     "acting": "both glance up at it and nod",
+     "library": "two crossed bars + red X"
+    },
+    {
+     "t": 178.88,
+     "cue": {
+      "word": "عقوبة",
+      "t": 178.88
+     },
+     "who": "fx",
+     "action": "icon of a judge gavel pops and is crossed out",
+     "acting": "visitor clinks her cup against Ayishah cup",
+     "library": "gavel shape + red X"
+    },
+    {
+     "t": 179.3,
+     "cue": {
+      "word": "عقوبة",
+      "t": 178.88
+     },
+     "who": "musab",
+     "action": "peeks round the door: head and a hand; Ayishah sees him and a heart pops between them across the room",
+     "acting": "he grins and waves; she smiles sideways; visitor rolls her eyes fondly",
+     "library": "palaceHall doorOpen 0.5 + PERSON_HANDS.wave + heart"
+    },
+    {
+     "t": 179.9,
+     "who": "lettering",
+     "action": "THE END title pops and holds to 183.3; hearts drift slowly; everyone keeps breathing and blinking",
+     "acting": "held ending, small idle motion only",
+     "library": "S.title"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 179.9,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 179.9,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 179.99
+   }
+  }
+ ],
+ "ending": {
+  "t": 179.9,
+  "description": "After the last word (179.64) the two women sit over tea with the two cancelled icons (quarrel, punishment) above them, Musab waving from the door and one heart between husband and wife. THE END pops at 180.0 and holds to 183.3 with idle breathing, blinks and slowly drifting hearts."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "في المدينة المنورة التقى مصعب بن الزبير امرأة ذكية اسمها عزة.|أخبرها أنه يفكر في الزواج من عائشة بنت طلحة،|وطلب منها أن تزورها، ثم تصف له شكلها وصفاتها قبل أن يتقدم إليها.",
+   "en": "In Medina, Musab bin al-Zubayr met a clever woman called Izzah.|Considering marriage to Ayishah daughter of Talhah,|he asked Izzah to visit and describe her."
+  },
+  {
+   "p": 2,
+   "ar": "ذهبت عزة وعادت بتقرير مفصل.|مدحت وجه عائشة وعينيها وأنفها وابتسامتها،|ثم وصفت قامتَها وأعضاء جسدها بتفصيل جريء.|لم تكن مهمتها السؤال عن ثروتها أو نسبها، بل عن جمالها.",
+   "en": "Izzah returned with a detailed report|praising Ayishah’s face, eyes, and figure,|including unusually frank physical descriptions.|Her assignment had been to assess beauty."
+  },
+  {
+   "p": 3,
+   "ar": "قالت عزة أيضًا إن قدمي عائشة كبيرتان،|وأضافت مزحة توحي بأن مصعبًا قد يجد صعوبة في مجاراة رغبتها بعد الزواج.|أخذ مصعب كلامها بجدية، لكنه لم يتراجع عن اختياره.",
+   "en": "Izzah noted Ayishah’s large feet|and joked that Musab might struggle to match her passion after marriage.|He did not abandon his plan."
+  },
+  {
+   "p": 4,
+   "ar": "تزوج مصعب عائشة بالفعل.|وتروي الحكاية أن حياتهما الزوجية بدأت بقرب شديد ورغبة متبادلة.|وبعد الزواج دعت عزة العروس ونساء من قريش إلى مجلس في بيتها للاحتفال والاجتماع.",
+   "en": "Musab married Ayishah.|The tale says their married life began with strong mutual desire.|Afterward Izzah invited the bride and women of Quraysh to a gathering."
+  },
+  {
+   "p": 5,
+   "ar": "وقفت عائشة في المجلس، وكان مصعب قريبًا منها،|وأنشدت أبياتًا في الحب والقبل.|أظهرت كلماتها أنها تفكر في زوجها حتى عندما تتحدث عن الجمال والمودة أمام النساء الحاضرات.",
+   "en": "At the gathering, with Musab nearby,|Ayishah recited verses about love and kisses,|suggesting her husband was on her mind even among the guests."
+  },
+  {
+   "p": 6,
+   "ar": "لم تخف الحكاية الجانب الحميم من علاقتهما؛|بل تذكر أن مصعبًا أمضى ليلة الزفاف معها في لقاءات متكررة.|وفي اليوم التالي أثنت امرأة تعرفه على نشاطه وقوته في تلك الليلة.",
+   "en": "The narrative is frank about their intimacy,|saying they spent their wedding night together repeatedly.|The following day a woman praised Musab’s vigor."
+  },
+  {
+   "p": 7,
+   "ar": "وفي مناسبة أخرى سمعت امرأة أصوات عائشة أثناء لقائها بزوجها.|استغربت أن تتصرف امرأة صاحبة مكانة معروفة بتلك الصراحة،|وسألتها بعد خروج مصعب: ألا تخجلين من هذا وأنا في البيت؟",
+   "en": "On another occasion a woman overheard Ayishah during an intimate encounter.|Surprised by such openness from a woman of rank,|she questioned her afterward."
+  },
+  {
+   "p": 8,
+   "ar": "أجابتها عائشة بلا اعتذار: ينبغي أن تعبر المرأة لزوجها عما تستطيع من مودة ورغبة.|وأضافت أنها لا تخفي ذلك نهارًا ولا ليلًا.|بهذا الجواب الصريح تنتهي الحكاية دون خصام أو عقوبة.",
+   "en": "Ayishah answered unapologetically that a wife should show her husband affection and desire.|She did so by day and night, she said.|The tale ends there."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "person costume preset 'noble' (pal variant of merchant)",
+   "description": "Young nobleman: the merchant preset with a smaller white turban, blue band, short beard (age 0.15), gold sash. Reusable for any emir, governor, suitor or young lord.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "No new drawing: COSTUME entry copying 'merchant' with pal {robe: blue, dot: dark blue, sash: yellow, hc: white, band: blue, jewel: red} and belly width reduced; age default 0.15."
+  },
+  {
+   "type": "pose",
+   "name": "person bigFeet",
+   "description": "Opt-in foot scale (default 1) so shoes draw 1.5x long and peek from under a long robe; Ayishah running callback.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "One multiplier on the shoe ellipse width in person feet drawing, off by default (regression safe); pal.shoes yellow."
+  },
+  {
+   "type": "prop",
+   "name": "iconBalloon",
+   "description": "Planned wordless picture balloon (single mode). New icons for this film: face, eyes, nose, smile, slippers, bolt, arm, blush, heart; plus a squiggle-only state for the whispered part.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Rounded balloon path with tail (K path + black brush border, paper fill, blue Ben-Day dots), pop p 0..1 with overshoot; icons are 5 to 12 flat shapes each drawn in a 100 x 100 box."
+  },
+  {
+   "type": "prop",
+   "name": "verseRibbon",
+   "description": "Planned poetry ribbon: paper band 46 wide with squiggle lines, unrolling along a keyed polyline (len 0..1), carrying icons (heart, kiss, flower, star) every 90 units, able to make one loop of radius 70 round a figure and roll up again.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Sample a Catmull-Rom curve through keyed points; draw offset quads up to len; wavy black line down the middle; icons placed at arc-length steps; the loop is drawn in two passes (behind and in front of Musab)."
+  },
+  {
+   "type": "prop",
+   "name": "scroll (long)",
+   "description": "Planned scroll with wavy lines, len 0..1 up to 900 units, with a rolled end that falls, bounces and rolls along the ground.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Paper rectangle from the hands down to the ground with wavy lines every 26 units, a roll circle r 18 at the free end; fallY + rebound for the drop, then x keyed along the ground with the strip laid flat."
+  },
+  {
+   "type": "prop",
+   "name": "floorCushion, foodTray, portraitMedallion",
+   "description": "Planned small props reused under their planned names (five cushions, one tray with cups, round portraits of Musab and of Ayishah with a crown).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As specified by the plans that introduced them; portraitMedallion clips a person head at s 0.5 into a yellow-rimmed circle r 50."
+  },
+  {
+   "type": "expression",
+   "name": "flush (soft option)",
+   "description": "Planned soft blush: pink cheek dots only, 0..1, no steam. Used on Musab (36.64, 103.54, 132.96) and the visitor (141.48).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Two clipped circles of red Ben-Day dots on the cheeks with alpha from the field."
+  },
+  {
+   "type": "effect",
+   "name": "musicNotes",
+   "description": "Planned rising quaver glyphs; two notes for Musab whistling at 151.42.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned: glyphs on seeded S-paths that rock and fade."
+  }
+ ],
+ "owner_questions": [
+  "SCRIPT: the English is a condensed translation in several paragraphs (P1 omits \"before he proposes\", P2 omits the nose, the smile, and wealth or lineage, P3 omits \"Musab took her words seriously\", P7 omits the quoted question \"Are you not ashamed of this while I am in the house?\"); both languages are kept verbatim as supplied.",
+  "All intimacy is staged off screen (curtain, closed shutters, hearts, the moon crossing the sky, the reactions of a cat and of the visitor); default: nothing more explicit than a heart is ever drawn.",
+  "The frank physical description in P2 is shown as a whisper and a balloon of squiggle lines with a FRANK! stamp, not as pictures; default: keep it wordless.",
+  "The joke in P3 is softened to a thought cloud of Musab puffing behind a briskly striding bride; default: keep this \"keeping up\" metaphor.",
+  "Ayishah is drawn with a visible face under a white veil and with large yellow slippers as a running gag from the \"large feet\" line; default: keep, since the script states it, but it can be dropped after S5.",
+  "These are named historical figures (Musab bin al-Zubayr, Ayishah bint Talhah); default: drawn as generic Library comic figures with name tags, in a respectful, affectionate tone.",
+  "Added background business not in the script: a roof cat watching the wedding night, Musab whistling as he leaves, Musab peeking round the door at THE END, the women sharing tea; default: keep.",
+  "Invented English lettering: KNOCK KNOCK!, FWIP!, FRANK!, BIG!, HA HA!, PHEW!, YES!, SWISH!, MWAH!, HEE HEE!, AGAIN!, STRONG!, OH!, ?!, SO THERE!; default: keep all, AGAIN! and OH! are the first to cut if the owner wants it tamer.",
+  "S10 and S11 show the wedding night as a flashback after the majlis, following the script order, with a tag THE WEDDING NIGHT; default: follow the script order rather than move it next to the wedding."
+ ],
+ "implementation_notes": [
+  "Start from Library/template. Word cues: w(p, n) from timing.json; every cue in this plan is the start time of the named Arabic word in planning/inputs/timeline.md.",
+  "Sets are Library calls: marketStreet (medinaStreet, nightStreet) and palaceHall (coupleHome = variant 'merchant', majlis = variant 'palace'). Take all positions from the returned anchors (A.palace.door, A.palace.balcony, A.door, A.curtain, A.stools); the x values in this plan are approximate, measure on the set.",
+  "People: person({costume, pal, age}) with LIFE.t = t for automatic blinks; explicit lid values need a hand blink (Math.max(lid, blink(t, seed))). Every figure always has a gaze target (lookAt / look / gazePlan).",
+  "Walks use walk(fnX, t) + footfalls so feet never slide; sits are sit 0..1 with settleTo; hops use anticipate + hop + landSquash.",
+  "The curtain of palaceHall merchant (curtain 0..1) is the private room. Draw the couple before the curtain layer so they are hidden when it closes, then hearts after it. If the set draws the curtain inside its baked pass, use the behind/front split or redraw the curtain strip from the anchor after the cast.",
+  "S9: draw Musab through the door arch with the palaceHall behind(ctx) callback so the arch frames him; the verseRibbon loop needs a back pass before him and a front pass after him.",
+  "S10: no person is drawn. Only the facade, shutters, lamp flicker, hearts, moon (u keyed 0.62 to 0.95) and the Library cat. S11 continues the same u through dawn to 0.1.",
+  "Thought clouds: thoughtCloud with scale so the figures inside are at least 110 px on screen (cloud 520 x 340 at zoom 1.3 with figures at s 0.55).",
+  "Lettering diet: 15 comic words plus name tags; no lettering over a face; no en or em dashes. Tags (MEDINA, MUSAB, IZZAH, AYISHAH, THE WEDDING, IZZAH'S HOUSE, WOMEN OF QURAYSH, THE WEDDING NIGHT, ANOTHER DAY, LADY OF RANK) use S.label / S.box at 28 px or more.",
+  "Sound: 6 quiet effects only, in the listed pauses (7.8 pop, 22.7 whoosh, 91.8 chime, 150.0 pop, 157.08 pop) and after the last word (180.3 chime); SND master 0.6. The narration is dense, so do not add more.",
+  "One LATER card at 81.2 (after the wedding, before the gathering) with the camera cut hidden at its midpoint. Other scene changes are wipes, an iris into the night flashback and a dissolve to morning.",
+  "Panel shake only inside the picture panel; call the style finish last every frame."
+ ],
+ "warnings": [
+  "Adult theme: the script speaks openly about a married couple's intimacy. The staging is deliberately discreet; do not add anything more explicit when implementing.",
+  "The narration has only four pauses of 0.6 s or more, so sound effects are few.",
+  "The palaceHall merchant curtain is narrow (about 110 wide); if two figures do not hide behind it, widen it with the curtain geometry option or let them exit past its edge.",
+  "Six women share two costume families; keep the palettes far apart (red Ayishah, green Izzah, purple visitor, orange neighbour, blue/yellow/purple-grey/brown guests) and use name tags on first appearance.",
+  "S9 is 21 s in one room: the camera plan (close, reveal, wide, close, wide) and the travelling ribbon must carry it.",
+  "Coordinator 2026-11-16: capped at the 3-minute limit (end_hold 3.5 -> 0.18 s; 5 times past 180 s pulled to 179.9)."
+ ]
+}

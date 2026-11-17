@@ -1,0 +1,129 @@
+{
+ "story_id": "AN-092",
+ "title": "ALI THE PERSIAN",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T13:55:41",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a55e7c76e320d24ad.jsonl",
+ "agent_id": "a55e7c76e320d24ad",
+ "model_messages": {
+  "claude-fable-5-2": 29
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "5b819599f83f1402fcf578a940584fa644f08cf26a933b0da01545dae415223c",
+  "paragraphs": 7,
+  "segments": [
+   "AN-092-P01-S01",
+   "AN-092-P01-S02",
+   "AN-092-P01-S03",
+   "AN-092-P01-S04",
+   "AN-092-P01-S06",
+   "AN-092-P01-S07",
+   "AN-092-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-092_ALI_THE_PERSIAN_full_slowed.mp3",
+  "sha256": "adc2773b03c273eefe2a4b0f25a43fca80f1051ca29d8b2690f06ac967aaa977",
+  "duration": 167.67
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-092_ALI_THE_PERSIAN_full_slowed.mp3.words.json",
+  "sha256": "564595e14f9c7c59d299a9ac8a4e0b9ea76e5ea1439a7bd67a2d342512d96cf5",
+  "manifest_status": "REUSED CURRENT TIMINGS",
+  "script_match": 1.0
+ },
+ "library_rev": "959278e",
+ "scenes": 15,
+ "actions": 159,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "palaceHall (night option)",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "palaceHall (variant courtRoom)",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "marketStreet",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "leatherBag",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "claimTiles",
+   "effort": "L"
+  },
+  {
+   "type": "effect",
+   "name": "claimPile",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "crowdDots",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "bagFood (bread, cheese, olives, lemon)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "diwan",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "purse",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (judge)",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "worryScribble",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person laugh",
+   "effort": "S"
+  },
+  {
+   "type": "camera",
+   "name": "taleZoom",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "paragraph(s) removed from audio by design: AN-092-P01-S05; no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Three new sets plus the tile set is at the upper end of the asset budget; palaceHall and marketStreet are shared with many other planned films, so build them as Library candidates.",
+  "Lettering count is about 24 including labels; if the reviewer finds it busy, drop YOINK!, THAT'S ALL! and the second FALSE! first.",
+  "Tile icons risk being unreadable at phone size, especially the two cities; rely on the BAGHDAD and BASRA labels and keep shapes bold.",
+  "The first English subtitle chunk of P7 ends on \"animals—only\" because the script joins the two words with a dash; the checker requires the verbatim token.",
+  "English and Arabic chunks do not always carry the same phrase at the same moment because the English is a condensed translation (for example P1 chunk 4 and P6 chunks 1-2).",
+  "The person figure is front-facing only: the tug of war and the walk-ins rely on lean (tip), hand targets and gaze rather than profile poses.",
+  "Paragraph 5 is absent; the jump from 96.70 to 97.06 is only 0.36 s, so the slam must land exactly there."
+ ]
+}

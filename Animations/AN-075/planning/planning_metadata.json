@@ -1,0 +1,113 @@
+{
+ "story_id": "AN-075",
+ "title": "THE HERMITS",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T13:21:12",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-ae864d9103cbfe2b0.jsonl",
+ "agent_id": "ae864d9103cbfe2b0",
+ "model_messages": {
+  "claude-fable-5-2": 18
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "0367b844a65378bb52c891ce168535237ef173e8eefefd24bc7fef864ecb0ced",
+  "paragraphs": 8,
+  "segments": [
+   "AN-075-P01-S01",
+   "AN-075-P01-S02",
+   "AN-075-P01-S03",
+   "AN-075-P01-S04",
+   "AN-075-P01-S05",
+   "AN-075-P01-S06",
+   "AN-075-P01-S07",
+   "AN-075-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-075_THE_HERMITS_full_slowed.mp3",
+  "sha256": "9c5861bcfed0114df04e4e62bbb86815d741e31d615358ae4192f0b7001b95ba",
+  "duration": 174.587
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-075_THE_HERMITS_full_slowed.mp3.words.json",
+  "sha256": "12f8c65cf8ccb52e75e23e11fab23b8de43f84cf5f593ff50c8694c1a776af34",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.996
+ },
+ "library_rev": "959278e",
+ "scenes": 16,
+ "actions": 188,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "sheep",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "dove (bird kind)",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "rockyHill (terrace view: hermitLedge)",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "burrowChamber (rock palette: caveInterior)",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "hunterShadow (true-nature wall shadow)",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "angelLight",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "skyLight",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "featherFall",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person faceCover",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "bread, prayerBeads, cookPot, smallBowl",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "hutRoom, pond (small spring)",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "sneak",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The film is dense (eight paragraphs, two tales, five sets in 175 s). If a vignette in S15 (159.5-167.8) feels rushed, drop the wolf gag at 164.12 first.",
+  "The front-facing person cannot show a true profile; the cover-the-face beat (99.24) and the embrace (150.78) depend on the new faceCover field and world hand targets reading clearly at phone size. Check both with stills before the full render.",
+  "The Library den() may include the bones of the lion story; they must not appear on the shepherd's mountain.",
+  "The narration is almost continuous: the only real pauses are 2.92-3.74 and 19.56-20.64. Every other effect is placed exactly on a word boundary and must be very short (under 0.2 s) and quiet, or be dropped if it touches a word when heard.",
+  "The word at 169.66 (في) has an interpolated time; no action is cued to it."
+ ]
+}

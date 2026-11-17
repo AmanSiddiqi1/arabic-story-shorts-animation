@@ -1,0 +1,2798 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-041",
+ "title": "The Fox and the Crow",
+ "duration": 164.809,
+ "end_hold": 3.0,
+ "logline": "A hungry fox climbs to a crow's nest with sweet words of friendship, hoping she will fetch him food; the wary crow answers every promise with a reason not to trust him, and he goes home alone, beaten by a better mind.",
+ "moral": "Judge an offer of friendship by what the friend has done, not by what he says; and know the limits of your own strength.",
+ "tone": "A dry comedy of manners on a mountain top: a charming liar whose belly, tongue and shadow keep giving him away, and a small calm bird who is never fooled. Light, never cruel; the fox ends rueful, not punished.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 4.98,
+   "kind": "setup",
+   "cue": {
+    "word": "الجوع",
+    "t": 4.98
+   },
+   "summary": "The fox is hungry: empty bone, growling belly."
+  },
+  {
+   "id": "B2",
+   "t": 8.48,
+   "kind": "setup",
+   "cue": {
+    "word": "غراب",
+    "t": 8.48
+   },
+   "summary": "High above, the crow lands on her nest among the rocks (crane up the mountain)."
+  },
+  {
+   "id": "B3",
+   "t": 16.52,
+   "kind": "inciting",
+   "cue": {
+    "word": "طعام",
+    "t": 16.52
+   },
+   "summary": "The fox's thought: the crow can reach food he cannot. A plan forms."
+  },
+  {
+   "id": "B4",
+   "t": 32.66,
+   "kind": "rising",
+   "cue": {
+    "word": "صديقين",
+    "t": 32.66
+   },
+   "summary": "He offers friendship: a heart floats over the chasm."
+  },
+  {
+   "id": "B5",
+   "t": 38.84,
+   "kind": "reveal",
+   "cue": {
+    "word": "الطعام",
+    "t": 38.84
+   },
+   "summary": "Mask off: in his private thought the food outweighs the heart."
+  },
+  {
+   "id": "B6",
+   "t": 47.78,
+   "kind": "suspense",
+   "cue": {
+    "word": "يصطاد",
+    "t": 47.78
+   },
+   "summary": "'You hunt birds': his shadow on the rock shows the hunter."
+  },
+  {
+   "id": "B7",
+   "t": 57.54,
+   "kind": "turn",
+   "cue": {
+    "word": "الكلمات",
+    "t": 57.54
+   },
+   "summary": "'Pretty words are not enough': she bursts the heart."
+  },
+  {
+   "id": "B8",
+   "t": 73.8,
+   "kind": "rising",
+   "cue": {
+    "word": "برغوث",
+    "t": 73.8
+   },
+   "summary": "He tries a tale: the flea and the mouse who helped each other."
+  },
+  {
+   "id": "B9",
+   "t": 94.52,
+   "kind": "surprise",
+   "cue": {
+    "word": "ذئبًا",
+    "t": 94.52
+   },
+   "summary": "She knows his past: he tricked the wolf who lived with him."
+  },
+  {
+   "id": "B10",
+   "t": 113.0,
+   "kind": "rising",
+   "cue": {
+    "word": "يخدعها",
+    "t": 113.0
+   },
+   "summary": "Her tale of the old falcon who turned from force to trickery."
+  },
+  {
+   "id": "B11",
+   "t": 120.68,
+   "kind": "comic",
+   "cue": {
+    "word": "حيلة",
+    "t": 120.68
+   },
+   "summary": "The falcon's smile and the fox's smile are the same: SAME TRICK."
+  },
+  {
+   "id": "B12",
+   "t": 130.72,
+   "kind": "comic",
+   "cue": {
+    "word": "مشكلة",
+    "t": 130.72
+   },
+   "summary": "The sparrow who copied the eagle is stuck in the wool."
+  },
+  {
+   "id": "B13",
+   "t": 139.96,
+   "kind": "climax",
+   "cue": {
+    "word": "عشي.",
+    "t": 139.96
+   },
+   "summary": "The warning: know your limit, stay away from my nest."
+  },
+  {
+   "id": "B14",
+   "t": 152.04,
+   "kind": "emotion",
+   "cue": {
+    "word": "والغضب.",
+    "t": 152.04
+   },
+   "summary": "The fox leaves, sad and then angry."
+  },
+  {
+   "id": "B15",
+   "t": 159.78,
+   "kind": "moral",
+   "cue": {
+    "word": "مكرًا",
+    "t": 159.78
+   },
+   "summary": "He admits it: she is craftier than he is."
+  },
+  {
+   "id": "B16",
+   "t": 163.82,
+   "kind": "resolution",
+   "cue": {
+    "word": "كهفه.",
+    "t": 163.82
+   },
+   "summary": "He returns alone to his cave, still hungry."
+  }
+ ],
+ "cast": [
+  {
+   "id": "fox",
+   "name": "the fox",
+   "library": "fox",
+   "base": "Library fox, default palette",
+   "look": "Orange fox, s 0.8 in the two-shots. Thin and tired at the start (head low, ears down), charming when he performs (smile, raised brows, wagging tail), and a different, flat face when the crow cannot see him. Fields used: ph/amp (walk), sit, plant, raise, reach, mouth, brow, ears, tailUp, talk plus gaze, lid, wet, sq, tip.",
+   "new": false
+  },
+  {
+   "id": "crow",
+   "name": "the crow",
+   "library": "bird",
+   "base": "Library bird kind:'crow'",
+   "look": "Black crow, s 1.2, dir -1 on the nest rim. Small, still and economical: she acts with head angle (headRot), one-eyed side looks, lid, crest and a pointing wing (sag -0.8). Fields: fly, flap, headRot, drop, sag, beak, crest, sq plus gaze, lid.",
+   "new": false
+  },
+  {
+   "id": "flea",
+   "name": "the flea (fox tale)",
+   "library": null,
+   "base": "planned 'insect' figure, kind 'flea'",
+   "look": "Red-brown flea drawn oversize inside the cloud (body 40 x 28 at s 1): oval body, big back legs for hopping, two eyes, antennae, optional bundle on a stick. Fields: hop via helpers, raise, ant, mouth, talk plus shared acting fields.",
+   "new": true
+  },
+  {
+   "id": "mouse",
+   "name": "the mouse (fox tale)",
+   "library": null,
+   "base": "planned 'rat' figure, pal 1 used as a mouse, s 0.75",
+   "look": "Light grey mouse with large pink ears; fields ph/amp, sit, sniff, raise, mouth.",
+   "new": true
+  },
+  {
+   "id": "merchant",
+   "name": "the merchant (fox tale)",
+   "library": "person",
+   "base": "person costume:'merchant', seat 'floor'",
+   "look": "Library merchant preset, asleep sitting on the floor (sit 1, lid 1) beside his coins; then jumps up and hops away scratching his nose.",
+   "new": false
+  },
+  {
+   "id": "wolf",
+   "name": "the wolf (crow memory)",
+   "library": "fox",
+   "base": "Library fox figure with a new wolf palette, s 1.25",
+   "look": "Grey body, darker grey back and tail, cream muzzle and chest, black tail tip, ears 10 % shorter and wider, heavier brow. Trusting and slow. Only seen inside the blue memory cloud.",
+   "new": true
+  },
+  {
+   "id": "falcon",
+   "name": "the falcon (crow tale)",
+   "library": null,
+   "base": "planned bird kind 'hawk', pal 0 falcon",
+   "look": "Brown falcon, cream barred chest, eye stripe, hooked beak, heavy brow, s 1.5 against the small birds. Needs an age field 0..1: feathers mix to grey, brow droops, hunch.",
+   "new": true
+  },
+  {
+   "id": "smallBirds",
+   "name": "three small birds (crow tale)",
+   "library": "bird",
+   "base": "Library bird kinds 'y', 'r', 'b' at s 0.7",
+   "look": "Yellow, red and blue birds on one branch, 65 units apart, each with its own reaction and delay.",
+   "new": false
+  },
+  {
+   "id": "sparrow",
+   "name": "the sparrow (crow tale)",
+   "library": "bird",
+   "base": "Library bird kind 'lark' at s 0.55 (reads as a sparrow)",
+   "look": "The small brown lark figure, crest used for pride.",
+   "new": false
+  },
+  {
+   "id": "eagle",
+   "name": "the eagle (crow tale)",
+   "library": null,
+   "base": "planned bird kind 'hawk' with an eagle palette (pal 2), s 2.2",
+   "look": "Dark brown body, white head and tail, yellow hooked beak and feet. One swoop only.",
+   "new": true
+  }
+ ],
+ "sets": [
+  {
+   "id": "rockyHill",
+   "library": null,
+   "new": true,
+   "description": "The planned rockyHill, built tall for this film: one world 1000 wide x 2300 high, a bare grey rock mountain (the grey of the Library den rock, blue Ben-Day shading on the left faces, black brush outline, a few crack lines and dry tufts). FOOT: ground y 2100 (Library ground colours), cave mouth a navy arch x 200..460, 230 high, in the rock face (same drawing style as the Library den arch; den's bones on the ground, one bone as a prop). RAMPS: ledge A y 1700 (x 480..1000), ledge B y 1300 (x 0..540), drawn as flat steps with a pale top edge; they are only passed by the crane and are the path the fox takes. TOP: terrace y 900, x 0..600, with a rock wall behind its left part (x 60..330, y 480..900, flat pale grey, used for the hunter shadow); CHASM x 600..690, dark navy, falling out of view; nest PINNACLE x 690..890, flat top y 610, with the Library nest at (790, 610) between two small standing rocks (x 700 and 880, 70 high). Above y 480 open sky. Sky by skyCycle, drawn in panel space behind the world: u 0.12 at the start, 0.25 by S5, 0.38 in S11, 0.46 in S12. All numbers are the design; adjust by eye on the first stills."
+  }
+ ],
+ "props": [
+  {
+   "id": "nest",
+   "library": "nestDraw",
+   "description": "Library nest with 3 eggs at (790, 610); the crow perches on its rim.",
+   "new": false
+  },
+  {
+   "id": "heart",
+   "library": "heart",
+   "description": "Library heart: the fox's offer of friendship. First heart r 34 (burst at 57.54), second r 44 (sinks into the chasm at 142.44); small copies in clouds.",
+   "new": false
+  },
+  {
+   "id": "fig",
+   "library": "fig",
+   "description": "Library fig: the food in the fox's thoughts.",
+   "new": false
+  },
+  {
+   "id": "worm",
+   "library": "worm",
+   "description": "Library worm: the small birds' food in the falcon tale.",
+   "new": false
+  },
+  {
+   "id": "bone",
+   "library": null,
+   "description": "One clean bone (the Library den bone drawing reused as a movable prop, 70 long); also the shared bone in the wolf memory (110 long with a little red meat).",
+   "new": true
+  },
+  {
+   "id": "coinPile",
+   "library": null,
+   "description": "Planned coinPile: a mound of 12 yellow discs (r 12, black outline, red dot shading), one coin can be taken.",
+   "new": true
+  },
+  {
+   "id": "sheep",
+   "library": null,
+   "description": "Simple side-view sheep: wool body from 7 overlapping white circles (about 200 x 130), black face and four thin legs, a chew field and a head turn; two wool curls that can hold a bird's feet. A copy at s 0.45 is the lamb.",
+   "new": true
+  },
+  {
+   "id": "pebble",
+   "library": null,
+   "description": "Small grey stones (r 5..9) that fall into the chasm with fallY.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 12.38,
+   "paragraphs": [
+    1
+   ],
+   "set": "rockyHill",
+   "cast": [
+    "fox",
+    "crow"
+   ],
+   "summary": "Morning at the foot of a bare grey mountain. The thin fox comes out of his cave, his belly growls, he finds only a clean bone. Then the camera cranes up the whole rock face to the top, where the crow lands on her nest between the rocks.",
+   "camera": {
+    "shot": "establishing",
+    "move": "crane",
+    "notes": "0-2.4 medium on the cave mouth: centre (420, 1930), zoom 1.35. 2.4-3.4 ease out to zoom 1.0, centre (500, 1700), so the rock face rises out of the top of the panel. Hold to 6.8. 6.9-9.4 crane straight up the face (centre y 1700 to 640, x 500 to 560, zoom 1.0 to 1.25), passing ledge A and ledge B, to arrive on the nest pinnacle. Hold to 12.38."
+   },
+   "composition": "Cave zone: cave mouth at x 200..460, ground y 2100, fox in front of it at (430, 2100) facing right, his head near panel centre. Top zone: nest at (790, 610) right of centre, sky fills the upper left, the empty terrace bottom left (the fox will stand there later).",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 0.9,
+     "cue": {
+      "word": "كان",
+      "t": 0.0
+     },
+     "who": "set",
+     "action": "sky at dayCycle u 0.12 (morning); two eyes blink in the dark cave mouth",
+     "acting": "the eyes open one after the other (lid 1 to 0), look left, then right",
+     "library": "skyCycle(ctx, 0.12); eye2 pair inside the cave clip"
+    },
+    {
+     "t": 0.3,
+     "end": 1.9,
+     "cue": {
+      "word": "ثعلب",
+      "t": 0.3
+     },
+     "who": "fox",
+     "action": "walks out of the cave to (430, 2100), slow and low",
+     "acting": "thin and tired: head low (tip 0.05), ears -0.4, lid 0.35, tail down (tailUp 0), slow walk amp 0.6",
+     "library": "fox {...walk(FX, t), ears, lid, tailUp} + footfalls for small dust"
+    },
+    {
+     "t": 1.94,
+     "end": 2.6,
+     "cue": {
+      "word": "كهف",
+      "t": 1.94
+     },
+     "who": "fox",
+     "action": "stops and stretches, a long yawn",
+     "acting": "sq 1.06 stretch then settle, mouth 'open' 0.4 s, eyes shut on the yawn (lid 1)",
+     "library": "fox {mouth:'open', sq} + settleTo"
+    },
+    {
+     "t": 2.4,
+     "end": 3.4,
+     "cue": {
+      "word": "جبل،",
+      "t": 2.9
+     },
+     "who": "camera",
+     "action": "pulls back: the cave is a small hole at the foot of a tall bare mountain",
+     "acting": "the fox becomes small under the rock face",
+     "library": "CAM keys in pairs"
+    },
+    {
+     "t": 3.55,
+     "end": 4.2,
+     "who": "fox",
+     "action": "his belly growls in the pause: the belly bulges twice, he looks down at it",
+     "acting": "sq 0.95, 1.03, 0.95 on the growl; gaze [0.2, 1]; ears flick back; three small sound arcs at the belly",
+     "library": "fox {sq, gaze} + soundArcs at (430, 2030)"
+    },
+    {
+     "t": 4.24,
+     "end": 5.5,
+     "cue": {
+      "word": "ويعاني",
+      "t": 4.24
+     },
+     "who": "fox",
+     "action": "puts a paw on the belly, then sniffs at the one bone on the ground and noses it over: clean",
+     "acting": "brow -0.5 (worried), mouth 'frown', raise 0.6 then head down; the bone rocks and settles (swing)",
+     "library": "fox {raise, mouth:'frown', brow} ; prop bone with swing()"
+    },
+    {
+     "t": 4.98,
+     "end": 6.4,
+     "cue": {
+      "word": "الجوع",
+      "t": 4.98
+     },
+     "who": "bone",
+     "action": "the bone rolls a quarter turn and lies still; nothing on it",
+     "acting": "a single 'empty' glint is not drawn: the bone stays dull",
+     "library": "scene prop: Library den bone drawing"
+    },
+    {
+     "t": 5.56,
+     "end": 6.6,
+     "cue": {
+      "word": "كثيرًا.",
+      "t": 5.56
+     },
+     "who": "fox",
+     "action": "sags and sits, a long sigh",
+     "acting": "sit 0 to 0.6, sq 0.94, lid 0.5, ears -1, wet false (hungry, not crying); one breath puff",
+     "library": "fox {sit, plant:true, sq} + breathe"
+    },
+    {
+     "t": 6.8,
+     "end": 7.5,
+     "cue": {
+      "word": "وكان",
+      "t": 6.8
+     },
+     "who": "fox",
+     "action": "one ear turns up toward a sound above, then the head lifts",
+     "acting": "ear first (ears -1 to 1 in 0.2 s), then gaze [0.3, -1], lid opens to 0",
+     "library": "fox {ears, gaze} ; soundArcs high on the face of the rock at (700, 1500)"
+    },
+    {
+     "t": 7.0,
+     "end": 9.4,
+     "cue": {
+      "word": "فوق",
+      "t": 7.46
+     },
+     "who": "camera",
+     "action": "cranes up the rock face from the fox to the summit",
+     "acting": "the fox drops out of the bottom of the panel; ledges pass; the sky opens",
+     "library": "CAM keys (ease in-out)"
+    },
+    {
+     "t": 8.3,
+     "end": 9.3,
+     "cue": {
+      "word": "غراب",
+      "t": 8.48
+     },
+     "who": "crow",
+     "action": "flies in from the upper left and lands on the rim of the nest",
+     "acting": "fly true, flap 0.9, then feet forward, wings up as a brake, landing squash sq 0.88 and settle; two twigs of the nest hop",
+     "library": "bird {kind:'crow', fly, flap} on a bezier path; landSquash"
+    },
+    {
+     "t": 9.88,
+     "end": 10.9,
+     "cue": {
+      "word": "عش",
+      "t": 9.88
+     },
+     "who": "nest",
+     "action": "the nest is shown: three eggs; an arrow and label point at it",
+     "acting": "the crow looks down into the nest (headRot 0.3), tidies one twig with her beak",
+     "library": "nestDraw(c, 790, 610, {nb:1, eggs:3}) ; S.arrow + S.label"
+    },
+    {
+     "t": 10.44,
+     "end": 11.8,
+     "cue": {
+      "word": "بين",
+      "t": 10.44
+     },
+     "who": "crow",
+     "action": "settles and looks out over the rocks on both sides, alert",
+     "acting": "gaze plan: left rocks, right rocks (saccades, gazePlan ease 0.07), crest slight, blink",
+     "library": "bird {gaze, crest} + gazePlan"
+    },
+    {
+     "t": 11.85,
+     "end": 12.38,
+     "who": "crow",
+     "action": "ruffles her feathers and sits",
+     "acting": "sq 1.05 then 0.95, a small shake (tremble 2 for 0.3 s)",
+     "library": "bird {sq} + tremble"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 3.6,
+     "text": "GRRR..."
+    },
+    {
+     "t": 9.9,
+     "text": "NEST"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 3.62,
+     "kind": "low rumble (belly)"
+    },
+    {
+     "t": 11.9,
+     "kind": "soft feather ruffle"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 12.38
+   }
+  },
+  {
+   "id": "S2",
+   "start": 12.38,
+   "end": 21.54,
+   "paragraphs": [
+    1
+   ],
+   "set": "rockyHill",
+   "cast": [
+    "fox",
+    "crow"
+   ],
+   "summary": "Back at the cave. The fox looks up at the summit and thinks: the crow can fly to food that he cannot reach. Inside a thought cloud a small crow lands on a high crag and takes a fig, while a small fox jumps for it and falls short. A sly idea arrives.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Cut to the cave zone: centre (480, 1800), zoom 1.15, so the fox (lower left) and the cloud (upper right) share the panel. 18.6-20.2 slow push to zoom 1.4 on the fox's face as the idea forms."
+   },
+   "composition": "Fox sits at (300, 2100) facing right, looking up right. Thought cloud centre (600, 1560), 520 x 360, tail to the fox's head (about 400, 1960). The cloud never covers his face.",
+   "actions": [
+    {
+     "t": 12.38,
+     "end": 13.2,
+     "cue": {
+      "word": "فكر",
+      "t": 12.38
+     },
+     "who": "fox",
+     "action": "sits looking up at the summit, one paw to the chin",
+     "acting": "gaze [0.5, -1], raise 0.5 (paw near the muzzle), head tilt, one slow blink",
+     "library": "fox {sit:0.6, plant:true, raise, gaze}"
+    },
+    {
+     "t": 13.2,
+     "end": 14.0,
+     "cue": {
+      "word": "الثعلب",
+      "t": 13.04
+     },
+     "who": "fx",
+     "action": "the trail of three bubbles pops up from his head, then the cloud opens",
+     "acting": "bubbles first, cloud overshoots 10 % and settles",
+     "library": "thoughtCloud(ctx, 600, 1560, 520, 360, t, {p, tail:[400, 1960], inside, scale:0.45, bg: C.yellow})"
+    },
+    {
+     "t": 14.08,
+     "end": 14.7,
+     "cue": {
+      "word": "الغراب",
+      "t": 14.08
+     },
+     "who": "crow",
+     "action": "inside the cloud: a small crow flies across",
+     "acting": "easy wingbeats, no effort",
+     "library": "bird {kind:'crow', fly:true, flap} drawn by inside()"
+    },
+    {
+     "t": 14.68,
+     "end": 16.2,
+     "cue": {
+      "word": "يستطيع",
+      "t": 14.68
+     },
+     "who": "crow",
+     "action": "inside the cloud: she rises to the tip of a tall crag where a fig tree branch hangs with three figs, and lands",
+     "acting": "a dotted flight line is drawn behind her so the height reads",
+     "library": "inside(): crag = grey column, branch; fig(c, x, y, 16) x3; dotted line with K helpers"
+    },
+    {
+     "t": 16.52,
+     "end": 17.1,
+     "cue": {
+      "word": "طعام",
+      "t": 16.52
+     },
+     "who": "fig",
+     "action": "inside the cloud: she plucks a fig; it shines",
+     "acting": "the fig pops 20 % bigger with a star glint; the real fox's eyes widen and he swallows",
+     "library": "fig() + S.emphasis star; fox {eyes wide via lid 0, sq 0.97 gulp}"
+    },
+    {
+     "t": 17.18,
+     "end": 18.5,
+     "cue": {
+      "word": "لا",
+      "t": 17.18
+     },
+     "who": "fox",
+     "action": "inside the cloud: a small fox at the foot of the crag jumps for the figs and falls far short, twice",
+     "acting": "anticipate crouch, hop to a third of the height, landSquash; the second hop is lower",
+     "library": "fox s 0.35 inside(): anticipate + hop + landSquash"
+    },
+    {
+     "t": 18.58,
+     "end": 19.5,
+     "cue": {
+      "word": "هو",
+      "t": 18.58
+     },
+     "who": "fox",
+     "action": "the real fox points a paw at himself and droops",
+     "acting": "raise 1 toward his chest, ears -0.6, mouth 'frown'",
+     "library": "fox {raise, ears, mouth:'frown'}"
+    },
+    {
+     "t": 19.62,
+     "end": 20.36,
+     "cue": {
+      "word": "إليه.",
+      "t": 19.62
+     },
+     "who": "fox",
+     "action": "the frown turns: one ear comes up, the eyes narrow, a slow sly smile",
+     "acting": "lid 0.45, brow 0.5, mouth 'smile', tail tip flicks twice (tailUp 0.3 to 0.7)",
+     "library": "fox {lid, brow, mouth:'smile', tailUp}"
+    },
+    {
+     "t": 20.4,
+     "end": 20.9,
+     "who": "fx",
+     "action": "the cloud pops; inside it, at the last moment, the small crow drops the fig to the small fox",
+     "acting": "the picture of his plan in one image, 0.4 s, then pop",
+     "library": "thoughtCloud p to 0; fig on fallY inside()"
+    },
+    {
+     "t": 20.9,
+     "end": 21.54,
+     "who": "fox",
+     "action": "gets up and trots off to the right, up the first ramp, out of the panel",
+     "acting": "anticipate dip, then a quick eager trot, tail high",
+     "library": "fox {...walk(FX2, t)} + footfalls + dustBurst"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 17.6,
+     "text": "TOO HIGH!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 20.45,
+     "kind": "pop"
+    },
+    {
+     "t": 21.1,
+     "kind": "light trot taps"
+    }
+   ],
+   "transition_out": {
+    "type": "wipe",
+    "t": 21.54
+   }
+  },
+  {
+   "id": "S3",
+   "start": 21.54,
+   "end": 42.7,
+   "paragraphs": [
+    2
+   ],
+   "set": "rockyHill",
+   "cast": [
+    "fox",
+    "crow"
+   ],
+   "summary": "The summit. The fox trots up the last ramp onto the terrace opposite the nest. A chasm separates them. He bows, greets her sweetly and offers friendship: a heart floats between them. Then, face turned away from her, his real thought shows: a big fig and bone, a tiny heart. His belly growls again and gives him away.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Start wide on the top zone: centre (480, 760), zoom 1.05 while he climbs in. From 23.9 the standing two-shot world window: camera centre about (520, 700), zoom 1.2; fox on the terrace left (feet 380, 900, s 0.8, dir 1), crow on the nest pinnacle right (nest 790, 610; crow s 1.2, dir -1), the 90-unit chasm between them always visible. 36.4-37.4 push to the fox alone: centre (430, 760), zoom 1.7. 41.2-42.5 ease back to the two-shot."
+   },
+   "composition": "Fox enters bottom left, stops with his toes 30 units from the terrace edge (x 600). Crow on the nest rim, higher than his head by about 200 units, so he always looks up and she looks down. The heart floats over the chasm at (640, 640).",
+   "actions": [
+    {
+     "t": 21.54,
+     "end": 23.4,
+     "cue": {
+      "word": "ذهب",
+      "t": 21.54
+     },
+     "who": "fox",
+     "action": "trots up the last ramp from the lower left to the terrace, (−80, 1010) to (380, 900)",
+     "acting": "eager trot amp 1, tail up, eyes fixed on the nest (lookAt)",
+     "library": "fox {...walk(FX3, t), gaze: lookAt(head, nest)} + footfalls + dustBurst"
+    },
+    {
+     "t": 22.2,
+     "end": 23.2,
+     "cue": {
+      "word": "الثعلب",
+      "t": 22.2
+     },
+     "who": "crow",
+     "action": "hears the steps: head snaps toward him, she rises off the eggs",
+     "acting": "crest 0.8, eyes wide for 0.3 s, body low over the nest (sq 0.92), one wing half open over the eggs (sag -0.4)",
+     "library": "bird {kind:'crow', crest, sag, sq}"
+    },
+    {
+     "t": 23.2,
+     "end": 23.9,
+     "cue": {
+      "word": "الغراب",
+      "t": 23.2
+     },
+     "who": "fox",
+     "action": "stops short at the edge: two pebbles roll off into the chasm",
+     "acting": "landSquash stop, sq 0.93 then settle; he glances down the gap (gaze [0.6, 1]) then up at her",
+     "library": "settleTo ; pebble props on fallY"
+    },
+    {
+     "t": 23.96,
+     "end": 25.3,
+     "cue": {
+      "word": "وسلم",
+      "t": 23.96
+     },
+     "who": "fox",
+     "action": "bows: front legs slide forward, head dips, then one paw lifts in greeting",
+     "acting": "tip 0.12 bow, lid 0.6, mouth 'smile', then raise 1 and wave twice",
+     "library": "fox {tip, raise, mouth:'smile'} + anticipate"
+    },
+    {
+     "t": 25.34,
+     "end": 26.3,
+     "cue": {
+      "word": "بلطف،",
+      "t": 25.34
+     },
+     "who": "fox",
+     "action": "tail wags, head tilted, the sweetest face he has",
+     "acting": "tailUp swings 0.4..0.9 (4 Hz for 0.8 s), brow -0.4, lid 0.3",
+     "library": "fox {tailUp, brow, lid}"
+    },
+    {
+     "t": 25.4,
+     "end": 26.3,
+     "cue": {
+      "word": "بلطف،",
+      "t": 25.34
+     },
+     "who": "crow",
+     "action": "does not answer the wave: sinks lower and looks at him with one eye",
+     "acting": "head turned side on (headRot -0.2), lid 0.35, no blink for 1 s (noBlink) then one slow blink",
+     "library": "bird {headRot, lid, noBlink}"
+    },
+    {
+     "t": 27.04,
+     "end": 28.1,
+     "cue": {
+      "word": "قال:",
+      "t": 27.04
+     },
+     "who": "fox",
+     "action": "sits down politely and begins to speak",
+     "acting": "sit 0.4, plant true, talk on the syllables, paw to chest",
+     "library": "fox {sit:0.4, plant:true, talk, raise:0.5}"
+    },
+    {
+     "t": 28.18,
+     "end": 29.2,
+     "cue": {
+      "word": "«نحن",
+      "t": 28.18
+     },
+     "who": "fox",
+     "action": "points at himself, then across at her: 'we are neighbours'",
+     "acting": "paw to chest on 28.18, reach 0.7 toward the nest on 28.52; gaze up at her",
+     "library": "fox {raise, reach}"
+    },
+    {
+     "t": 29.22,
+     "end": 30.9,
+     "cue": {
+      "word": "زمن",
+      "t": 29.7
+     },
+     "who": "fox",
+     "action": "sweeps the paw down the mountain toward his cave far below and back up to her nest",
+     "acting": "one long arc with the paw; a dotted line from the cave direction to the nest draws and fades",
+     "library": "fox {reach} ; dotted arc drawn by the scene"
+    },
+    {
+     "t": 31.28,
+     "end": 32.6,
+     "cue": {
+      "word": "أتمنى",
+      "t": 31.28
+     },
+     "who": "fox",
+     "action": "both ears up, leans forward over the edge with hope",
+     "acting": "tip 0.08, ears 1, brow -0.5, talk",
+     "library": "fox {tip, ears, brow, talk}"
+    },
+    {
+     "t": 32.66,
+     "end": 33.7,
+     "cue": {
+      "word": "صديقين",
+      "t": 32.66
+     },
+     "who": "heart",
+     "action": "a red heart pops from the fox and floats to the middle of the chasm",
+     "acting": "pops with overshoot, bobs slowly (breathe); the crow's eye follows it, unmoved",
+     "library": "heart(c, x, y, 34) on a kfn path + settleTo"
+    },
+    {
+     "t": 34.28,
+     "end": 36.5,
+     "cue": {
+      "word": "يساعد",
+      "t": 34.28
+     },
+     "who": "fox",
+     "action": "mimes helping: lifts an imaginary thing up to her with both front paws, then pats his chest",
+     "acting": "raise 1, reach 0.5, nod on 34.94 and 35.60, mouth 'smile'",
+     "library": "fox {raise, reach, talk}"
+    },
+    {
+     "t": 35.6,
+     "end": 36.6,
+     "cue": {
+      "word": "الآخر».",
+      "t": 35.6
+     },
+     "who": "crow",
+     "action": "tilts her head the other way; a tiny step back on the nest rim",
+     "acting": "headRot 0.25, lid 0.4, x +12; she keeps the wing over the eggs",
+     "library": "bird {headRot, lid, sag}"
+    },
+    {
+     "t": 36.7,
+     "end": 37.8,
+     "cue": {
+      "word": "لكنه",
+      "t": 36.7
+     },
+     "who": "fox",
+     "action": "push-in: he turns his face away from her toward the viewer and the smile drops",
+     "acting": "mask off: gaze [-0.6, 0.1], lid 0.5, mouth 'closed', brow 0.4",
+     "library": "fox {gaze, lid, mouth, brow} (mask on / mask off, guide section 9)"
+    },
+    {
+     "t": 37.86,
+     "end": 38.8,
+     "cue": {
+      "word": "يفكر",
+      "t": 37.86
+     },
+     "who": "fx",
+     "action": "a small thought cloud opens on the side she cannot see (upper left)",
+     "acting": "only the viewer sees it",
+     "library": "thoughtCloud(ctx, 250, 520, 330, 240, t, {p, tail:[430, 770], inside, scale:0.5, bg: C.yellow})"
+    },
+    {
+     "t": 38.84,
+     "end": 39.5,
+     "cue": {
+      "word": "الطعام",
+      "t": 38.84
+     },
+     "who": "fig",
+     "action": "inside the cloud: a big fig and a meaty bone appear, shining",
+     "acting": "they pop one after the other; the fox's tongue tip shows for 6 frames",
+     "library": "fig() + bone drawn by inside(); tongue = small red rounded shape at the muzzle tip drawn by the scene"
+    },
+    {
+     "t": 39.5,
+     "end": 41.2,
+     "cue": {
+      "word": "أكثر",
+      "t": 39.5
+     },
+     "who": "heart",
+     "action": "inside the cloud: a pair of scales: the food side drops heavily, a tiny heart on the other side flies up",
+     "acting": "the beam tips with a bounce (settleTo); the tiny heart wobbles",
+     "library": "inside(): beam + two pans from lines and arcs; heart(c, x, y, 10)"
+    },
+    {
+     "t": 41.3,
+     "end": 42.0,
+     "who": "fox",
+     "action": "his belly growls again, loudly: he clamps a paw over it and snaps the smile back on toward her",
+     "acting": "sq pulse, eyes wide then a forced grin (mouth 'smile', brow -0.6), a sweat drop",
+     "library": "fox {sq, raise, mouth:'smile'} + soundArcs ; cloud pops at 41.25"
+    },
+    {
+     "t": 42.0,
+     "end": 42.7,
+     "who": "crow",
+     "action": "one eye narrows; the floating heart sinks a little",
+     "acting": "lid 0.55, crest flat, head forward and down toward him",
+     "library": "bird {lid, crest, headRot}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 41.4,
+     "text": "GRRR!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 41.4,
+     "kind": "low rumble (belly)"
+    },
+    {
+     "t": 42.2,
+     "kind": "soft tick"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 42.7
+   }
+  },
+  {
+   "id": "S4",
+   "start": 42.7,
+   "end": 61.22,
+   "paragraphs": [
+    3
+   ],
+   "set": "rockyHill",
+   "cast": [
+    "fox",
+    "crow"
+   ],
+   "summary": "The crow's careful answer. 'You hunt birds': on the rock wall behind the smiling fox his shadow shows a hunter with open jaws. 'I could be your prey': she shrinks, and his tongue slips out by itself. 'How can I trust you?' 'Pretty words are not enough': she pecks the floating heart and it bursts.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "The standing two-shot, drifting 20 units toward the crow over the scene. 46.8-49.6 widen to zoom 1.05, centre (470, 690), so the rock wall behind the fox (x 60..330, y 480..880) is in the picture for the shadow. Back to zoom 1.2 by 50.6."
+   },
+   "composition": "The shadow is cast on the wall left of the fox, about 1.6 times his size. The crow is upper right. The heart still floats at (640, 660).",
+   "actions": [
+    {
+     "t": 42.7,
+     "end": 43.8,
+     "cue": {
+      "word": "نظر",
+      "t": 42.7
+     },
+     "who": "crow",
+     "action": "leans out over the nest rim and looks him up and down",
+     "acting": "gaze plan: his face, his teeth, his paws, his face (saccades); lid 0.4",
+     "library": "bird {gaze} + gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 44.54,
+     "end": 45.2,
+     "cue": {
+      "word": "بحذر",
+      "t": 44.54
+     },
+     "who": "crow",
+     "action": "draws back half a step, body side on, ready to fly",
+     "acting": "x +14, wings a little open (sag -0.3), crest 0.5",
+     "library": "bird {sag, crest}"
+    },
+    {
+     "t": 45.24,
+     "end": 46.0,
+     "cue": {
+      "word": "وقال:",
+      "t": 45.24
+     },
+     "who": "crow",
+     "action": "opens her beak to speak",
+     "acting": "beak opens on the syllables, head forward",
+     "library": "bird {beak}"
+    },
+    {
+     "t": 46.04,
+     "end": 47.0,
+     "cue": {
+      "word": "«أنت",
+      "t": 46.04
+     },
+     "who": "crow",
+     "action": "throws a wing out, pointing straight at him",
+     "acting": "sag -0.8 (the bird point from the guide), head high",
+     "library": "bird {sag:-0.8, headRot}"
+    },
+    {
+     "t": 47.04,
+     "end": 48.5,
+     "cue": {
+      "word": "يصطاد",
+      "t": 47.78
+     },
+     "who": "fx",
+     "action": "on the wall behind the fox his shadow grows into a hunter: jaws open, teeth, a paw raised",
+     "acting": "the real fox keeps smiling and sees nothing; the shadow is 2 frames late on his small moves",
+     "library": "hunterShadow: the fox drawn into an offscreen canvas with pose {mouth:'open', brow:1, ears:1, raise:1}, filled flat black with source-in, scaled 1.6, clipped to the wall"
+    },
+    {
+     "t": 48.54,
+     "end": 50.0,
+     "cue": {
+      "word": "الطيور،",
+      "t": 48.54
+     },
+     "who": "fx",
+     "action": "three small bird shapes flee along the wall in front of the shadow's jaws, then the shadow shrinks back to normal",
+     "acting": "the shadow snaps at them once; the fox's real tail gives one flick",
+     "library": "songbird silhouettes (black) on kfn paths; shadow scale 1.6 to 1.0"
+    },
+    {
+     "t": 50.14,
+     "end": 51.3,
+     "cue": {
+      "word": "وأنا",
+      "t": 50.14
+     },
+     "who": "crow",
+     "action": "folds the wing back onto her own chest: 'and I am a bird'",
+     "acting": "sag to 0.3 on the chest, head down a little, blink",
+     "library": "bird {sag, headRot}"
+    },
+    {
+     "t": 51.4,
+     "end": 53.2,
+     "cue": {
+      "word": "فريستك.",
+      "t": 52.44
+     },
+     "who": "crow",
+     "action": "shrinks small and low, a gulp",
+     "acting": "sq 0.85, crest flat, eyes wide 0.5 s, a small tremble",
+     "library": "bird {sq:0.85, crest:0} + tremble"
+    },
+    {
+     "t": 52.44,
+     "end": 53.6,
+     "cue": {
+      "word": "فريستك.",
+      "t": 52.44
+     },
+     "who": "fox",
+     "action": "his tongue slips out and licks his lips by itself; he notices and slaps a paw over his mouth",
+     "acting": "tongue 8 frames, then eyes wide, raise 1 to the muzzle, a guilty smile",
+     "library": "fox {raise} ; tongue drawn by the scene"
+    },
+    {
+     "t": 54.12,
+     "end": 55.8,
+     "cue": {
+      "word": "كيف",
+      "t": 54.12
+     },
+     "who": "crow",
+     "action": "head tilted far over, wings half open, asking",
+     "acting": "headRot 0.4, sag -0.4 both sides, gaze into his eyes; a question mark pops over the chasm",
+     "library": "bird {headRot, sag} ; S.emphasis '?'"
+    },
+    {
+     "t": 55.2,
+     "end": 56.3,
+     "cue": {
+      "word": "إليك؟",
+      "t": 55.18
+     },
+     "who": "fox",
+     "action": "the innocent look: sits straight, paw on the heart side of his chest, eyes big",
+     "acting": "sit 0.5, raise 0.7, brow -0.7, lid 0",
+     "library": "fox {sit, plant:true, raise, brow}"
+    },
+    {
+     "t": 56.34,
+     "end": 57.5,
+     "cue": {
+      "word": "لا",
+      "t": 56.34
+     },
+     "who": "crow",
+     "action": "shakes her head twice",
+     "acting": "headRot -0.25, 0.25, -0.15, 0 over 1 s; eyes shut on the first shake",
+     "library": "bird {headRot} keyed"
+    },
+    {
+     "t": 57.54,
+     "end": 58.9,
+     "cue": {
+      "word": "الكلمات",
+      "t": 57.54
+     },
+     "who": "heart",
+     "action": "the floating heart drifts toward her; she pecks it once and it bursts into halftone dots",
+     "acting": "anticipation: head back 0.2 s, jab (headRot 0.5, drop), the heart puckers then bursts; the fox flinches",
+     "library": "bird {headRot, drop} ; heart() then dustBurst in red"
+    },
+    {
+     "t": 59.06,
+     "end": 60.3,
+     "cue": {
+      "word": "أصدق",
+      "t": 59.66
+     },
+     "who": "crow",
+     "action": "folds both wings tight and lifts her beak",
+     "acting": "sag 0, head up (headRot -0.2), lid 0.5",
+     "library": "bird {sag:0, headRot, lid}"
+    },
+    {
+     "t": 60.42,
+     "end": 61.22,
+     "cue": {
+      "word": "نيتك».",
+      "t": 60.42
+     },
+     "who": "crow",
+     "action": "turns her head away from him",
+     "acting": "headRot away, one eye still on him from the side",
+     "library": "bird {headRot, gaze}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 58.3,
+     "text": "POP!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 56.0,
+     "kind": "soft tick"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 61.22
+   }
+  },
+  {
+   "id": "S5",
+   "start": 61.22,
+   "end": 72.1,
+   "paragraphs": [
+    4
+   ],
+   "set": "rockyHill",
+   "cast": [
+    "fox",
+    "crow"
+   ],
+   "summary": "The fox does not give up. He shakes off the burst heart, steps right to the edge and makes his speech: friendship is good for everyone, and he swears to be a faithful neighbour. The crow preens and half listens.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Two-shot; 64.5-67.6 slow push to zoom 1.35 centred between them (540, 720). Hold. 71.4-72.1 ease up and left to make room for the story cloud: centre (500, 600), zoom 1.1."
+   },
+   "composition": "The fox takes the left half and leans across the gap; the crow stays high on the right, small and still against his large gestures.",
+   "actions": [
+    {
+     "t": 61.22,
+     "end": 62.7,
+     "cue": {
+      "word": "لم",
+      "t": 61.22
+     },
+     "who": "fox",
+     "action": "blinks at the red dots falling into the chasm, watches them go down",
+     "acting": "gaze follows down, ears -0.5, two blinks",
+     "library": "fox {gaze, ears} + blink"
+    },
+    {
+     "t": 62.78,
+     "end": 63.7,
+     "cue": {
+      "word": "يتراجع",
+      "t": 62.78
+     },
+     "who": "fox",
+     "action": "shakes himself from nose to tail and stands up straight again",
+     "acting": "a damped shake (tip ±0.05, 3 swings), ears back up to 1, tailUp 0.8",
+     "library": "fox {tip, ears, tailUp} + swing"
+    },
+    {
+     "t": 63.72,
+     "end": 64.5,
+     "cue": {
+      "word": "الثعلب.",
+      "t": 63.72
+     },
+     "who": "fox",
+     "action": "steps forward until his toes are on the very edge; a pebble drops",
+     "acting": "x 380 to 420 with walk; landSquash; he does not look down this time",
+     "library": "fox {...walk} ; pebble fallY"
+    },
+    {
+     "t": 64.5,
+     "end": 66.1,
+     "cue": {
+      "word": "قال",
+      "t": 64.5
+     },
+     "who": "fox",
+     "action": "starts the speech: clears his throat, one paw up like an orator",
+     "acting": "raise 1, chest out (sq 1.04), talk, lid 0.3",
+     "library": "fox {raise, sq, talk}"
+    },
+    {
+     "t": 66.18,
+     "end": 67.6,
+     "cue": {
+      "word": "الصداقة",
+      "t": 66.18
+     },
+     "who": "heart",
+     "action": "a new heart pops, bigger than the first, between them",
+     "acting": "it pulses twice on 66.18 and 66.88",
+     "library": "heart(c, 640, 640, 44) + pulse"
+    },
+    {
+     "t": 66.88,
+     "end": 68.3,
+     "cue": {
+      "word": "الجميع،",
+      "t": 67.64
+     },
+     "who": "fox",
+     "action": "sweeps the paw wide across the whole view: everyone",
+     "acting": "reach 1 swept left to right, head follows, mouth 'smile'",
+     "library": "fox {reach, gaze}"
+    },
+    {
+     "t": 67.0,
+     "end": 68.3,
+     "cue": {
+      "word": "تنفع",
+      "t": 66.88
+     },
+     "who": "crow",
+     "action": "preens one wing, watching him over it",
+     "acting": "headRot 0.5 into the wing, lid 0.5, gaze stays on him",
+     "library": "bird {headRot, sag, gaze}"
+    },
+    {
+     "t": 68.36,
+     "end": 69.8,
+     "cue": {
+      "word": "ووعد",
+      "t": 68.36
+     },
+     "who": "fox",
+     "action": "sits, shuts his eyes and lays a paw on his chest: the vow",
+     "acting": "sit 0.6, plant true, raise 0.7, lid 1, head up",
+     "library": "fox {sit, plant:true, raise, lid:1}"
+    },
+    {
+     "t": 70.3,
+     "end": 71.0,
+     "cue": {
+      "word": "جارًا",
+      "t": 70.3
+     },
+     "who": "fox",
+     "action": "opens one eye a crack to see whether it is working",
+     "acting": "the peek: lid 0.75 for 0.5 s, gaze at her, then shut again when she looks",
+     "library": "fox {lid, gaze} (the peek, guide section 9)"
+    },
+    {
+     "t": 71.1,
+     "end": 72.1,
+     "cue": {
+      "word": "مخلصًا.",
+      "t": 71.1
+     },
+     "who": "crow",
+     "action": "stops preening and stares; she saw the peek",
+     "acting": "head level, lid 0.3, crest 0.3; the big heart sags a few units",
+     "library": "bird {lid, crest}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 70.5,
+     "text": "TRUST ME!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 72.1
+   }
+  },
+  {
+   "id": "S6",
+   "start": 72.1,
+   "end": 82.34,
+   "paragraphs": [
+    4
+   ],
+   "set": "rockyHill",
+   "cast": [
+    "fox",
+    "crow",
+    "flea",
+    "mouse",
+    "merchant"
+   ],
+   "summary": "The fox tells a tale, shown in a paper-white story cloud whose tail goes to his mouth: a shivering flea is taken in by a mouse; later the flea repays her: he bites a sleeping merchant, who jumps up and hops away scratching, and the mouse takes a coin from his pile.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Centre (480, 470), zoom 1.35: the cloud fills the upper two thirds of the panel; the fox's head (lower left) and the crow (right edge) stay in the picture as teller and listener."
+   },
+   "composition": "Story cloud centre (400, 300), 560 x 380 world units (about 750 px wide on screen), tail to the fox's muzzle (520, 770). Inside, a floor line; the mouse hole on the left, the merchant and his coin pile on the right. The flea is drawn oversize (about 45 px on screen) so it reads.",
+   "actions": [
+    {
+     "t": 72.1,
+     "end": 73.1,
+     "cue": {
+      "word": "حكى",
+      "t": 72.72
+     },
+     "who": "fx",
+     "action": "the story cloud opens from the fox's mouth: bubbles, then the cloud",
+     "acting": "paper background so it differs from his yellow thought clouds",
+     "library": "thoughtCloud(ctx, 400, 300, 560, 380, t, {p, tail, inside, scale, at, bg: C.paper, tail:[520, 770], scale:0.55})"
+    },
+    {
+     "t": 72.72,
+     "end": 73.7,
+     "cue": {
+      "word": "حكى",
+      "t": 72.72
+     },
+     "who": "fox",
+     "action": "tells it with a paw raised, eyes on the crow",
+     "acting": "talk, raise 0.8, brow -0.3",
+     "library": "fox {talk, raise}"
+    },
+    {
+     "t": 73.8,
+     "end": 74.5,
+     "cue": {
+      "word": "برغوث",
+      "t": 73.8
+     },
+     "who": "flea",
+     "action": "inside: a flea hops in from the left in three small hops, shivering, a tiny bundle on a stick",
+     "acting": "hop arcs with landSquash; tremble between hops; antennae down",
+     "library": "new insect {kind:'flea'} + hop + tremble"
+    },
+    {
+     "t": 74.6,
+     "end": 75.5,
+     "cue": {
+      "word": "ساعدته",
+      "t": 74.6
+     },
+     "who": "mouse",
+     "action": "inside: a mouse looks out of her hole, sees him, waves him in",
+     "acting": "ears up, sniff, one paw waves; friendly",
+     "library": "new rat {pal:1, sniff, raise} at the hole"
+    },
+    {
+     "t": 75.58,
+     "end": 76.2,
+     "cue": {
+      "word": "فأرة،",
+      "t": 75.58
+     },
+     "who": "flea",
+     "action": "inside: the flea hops into the hole; a small heart pops over it",
+     "acting": "one big happy hop",
+     "library": "hop + heart(c, x, y, 12)"
+    },
+    {
+     "t": 76.26,
+     "end": 77.4,
+     "cue": {
+      "word": "فرد",
+      "t": 76.26
+     },
+     "who": "flea",
+     "action": "inside: the flea comes out, stands tall and salutes the mouse: his turn",
+     "acting": "antennae up, raise 1, chest out",
+     "library": "insect {raise:1, ant:1}"
+    },
+    {
+     "t": 77.48,
+     "end": 78.1,
+     "cue": {
+      "word": "الجميل",
+      "t": 77.48
+     },
+     "who": "merchant",
+     "action": "inside: the view slides right: a fat merchant asleep on the floor beside a pile of coins, one hand on it",
+     "acting": "sit 'floor', lid 1, slow breathing, the hand rests on the pile",
+     "library": "person {costume:'merchant', sit:1, seat:'floor', lid:1, handRW: pile} + breathe ; coinPile"
+    },
+    {
+     "t": 78.14,
+     "end": 79.3,
+     "cue": {
+      "word": "وساعدها",
+      "t": 78.14
+     },
+     "who": "flea",
+     "action": "inside: the flea takes a huge leap onto the merchant's nose; the mouse waits at the left with only her eyes showing",
+     "acting": "anticipate crouch, long hop arc, lands on the nose",
+     "library": "anticipate + hop"
+    },
+    {
+     "t": 79.34,
+     "end": 80.1,
+     "cue": {
+      "word": "على",
+      "t": 79.34
+     },
+     "who": "merchant",
+     "action": "inside: bite: the merchant's eyes fly open, he jumps to his feet and hops away to the right, scratching his nose",
+     "acting": "sit 1 to 0 in 4 frames, sq 1.12 stretch, handR to the nose, hops off out of the cloud",
+     "library": "person {sit, handR: nose, sq} + hop ; S.emphasis star at the nose"
+    },
+    {
+     "t": 80.2,
+     "end": 80.7,
+     "cue": {
+      "word": "نقود",
+      "t": 80.2
+     },
+     "who": "mouse",
+     "action": "inside: the mouse dashes to the pile and takes one big coin in both paws",
+     "acting": "fast scuttle (walk amp 1), the coin glints",
+     "library": "rat {...walk} ; coin from coinPile"
+    },
+    {
+     "t": 80.78,
+     "end": 82.0,
+     "cue": {
+      "word": "بيت",
+      "t": 81.12
+     },
+     "who": "mouse",
+     "action": "inside: mouse and flea meet in the middle; the flea hops onto the coin; both grin out at the listener",
+     "acting": "small bounce in turn, never together",
+     "library": "rat {mouth:'smile'} ; insect {mouth:'smile'}"
+    },
+    {
+     "t": 81.52,
+     "end": 82.34,
+     "cue": {
+      "word": "تاجر.",
+      "t": 81.52
+     },
+     "who": "fox",
+     "action": "the real fox spreads a paw toward the cloud: you see?",
+     "acting": "reach 0.8, mouth 'smile', eyebrows up, tail wag",
+     "library": "fox {reach, mouth:'smile', tailUp}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 79.5,
+     "text": "OUCH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 82.34
+   }
+  },
+  {
+   "id": "S7",
+   "start": 82.34,
+   "end": 103.32,
+   "paragraphs": [
+    5
+   ],
+   "set": "rockyHill",
+   "cast": [
+    "fox",
+    "crow",
+    "wolf"
+   ],
+   "summary": "The crow has listened but is not persuaded: she sweeps the story cloud away with a wing. 'Friends may help each other, but you tricked a wolf who lived with you.' Her memory cloud (blue) shows the fox and a wolf sharing the cave; while the wolf sleeps the fox creeps away with their bone. The real fox sweats. 'How would I be safe near you?' She points at the gap that protects her.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pan",
+    "notes": "82.34-88.6 the standing two-shot (zoom 1.2). 92.6-93.9 ease to the cloud framing: centre (520, 450), zoom 1.3 (cloud upper left, crow right, the fox's head at the bottom edge). 99.4-100.4 pan down and right to centre (600, 760), zoom 1.35 for the gap."
+   },
+   "composition": "Memory cloud centre (390, 300), 540 x 370, tail to the crow's head (770, 530). The real fox sits small at the lower left under the cloud, so his reactions read against it.",
+   "actions": [
+    {
+     "t": 82.34,
+     "end": 84.0,
+     "cue": {
+      "word": "استمع",
+      "t": 82.34
+     },
+     "who": "crow",
+     "action": "has been listening: head tilted, one eye on the cloud where mouse and flea still hold the coin",
+     "acting": "headRot 0.3, slow blink, no smile",
+     "library": "bird {headRot, lid}"
+    },
+    {
+     "t": 84.14,
+     "end": 85.7,
+     "cue": {
+      "word": "القصة،",
+      "t": 85.06
+     },
+     "who": "fox",
+     "action": "waits, grinning, tail wagging, sure it worked",
+     "acting": "tailUp swing, brow -0.5, leans in (tip 0.06)",
+     "library": "fox {tailUp, tip, mouth:'smile'}"
+    },
+    {
+     "t": 85.76,
+     "end": 87.4,
+     "cue": {
+      "word": "لكنه",
+      "t": 85.76
+     },
+     "who": "crow",
+     "action": "a long flat look at him",
+     "acting": "lid 0.5, crest 0, 1 s without a blink; the fox's wag slows and stops",
+     "library": "bird {lid, noBlink} ; fox tailUp settles"
+    },
+    {
+     "t": 87.46,
+     "end": 88.6,
+     "cue": {
+      "word": "يقتنع.",
+      "t": 87.84
+     },
+     "who": "crow",
+     "action": "sweeps a wing through the story cloud: it tears into bubbles and is gone",
+     "acting": "anticipation back 0.15 s, swipe (sag -0.9), follow-through; mouse and flea blink out",
+     "library": "bird {sag} ; thoughtCloud p to 0 with dustBurst puffs"
+    },
+    {
+     "t": 88.68,
+     "end": 89.6,
+     "cue": {
+      "word": "أجاب:",
+      "t": 88.68
+     },
+     "who": "crow",
+     "action": "begins her answer, calm",
+     "acting": "beak on the syllables, head level",
+     "library": "bird {beak}"
+    },
+    {
+     "t": 89.7,
+     "end": 91.8,
+     "cue": {
+      "word": "الصديق",
+      "t": 91.2
+     },
+     "who": "crow",
+     "action": "one small nod: true, friends may help",
+     "acting": "headRot 0.15 down and back, wing opens a little, palm-up",
+     "library": "bird {headRot, sag:-0.3}"
+    },
+    {
+     "t": 91.0,
+     "end": 92.5,
+     "cue": {
+      "word": "صديقه،",
+      "t": 91.88
+     },
+     "who": "fox",
+     "action": "nods eagerly with her, ears up",
+     "acting": "three quick nods (tip 0.05), mouth 'smile'",
+     "library": "fox {tip, ears}"
+    },
+    {
+     "t": 92.6,
+     "end": 93.9,
+     "cue": {
+      "word": "لكنك",
+      "t": 92.6
+     },
+     "who": "crow",
+     "action": "the wing stops and points at him: 'but you'",
+     "acting": "sag -0.8 snap, crest 0.7, head forward; the fox freezes in mid nod",
+     "library": "bird {sag:-0.8, crest}"
+    },
+    {
+     "t": 93.96,
+     "end": 95.2,
+     "cue": {
+      "word": "ذئبًا",
+      "t": 94.52
+     },
+     "who": "fx",
+     "action": "her memory cloud opens (blue): inside the fox's cave, the fox and a big grey wolf sit side by side over one large bone",
+     "acting": "blue halftone wash marks the past",
+     "library": "thoughtCloud(ctx, 390, 300, 540, 370, t, {p, tail, inside, scale, at, bg: C.blue, tail:[770, 530], scale:0.5}) + dream wash"
+    },
+    {
+     "t": 95.26,
+     "end": 96.5,
+     "cue": {
+      "word": "عاش",
+      "t": 95.26
+     },
+     "who": "wolf",
+     "action": "inside: the wolf yawns, lies down and sleeps, trusting; the fox pretends to sleep with one eye on the bone",
+     "acting": "wolf sit 1, lid 1, breathing; fox lid 0.8 with gaze on the bone",
+     "library": "fox figure with wolf palette {s:1.25, sit:1, lid:1} + breathe"
+    },
+    {
+     "t": 96.54,
+     "end": 98.0,
+     "cue": {
+      "word": "قبل.",
+      "t": 96.54
+     },
+     "who": "fox",
+     "action": "inside: the small fox gets up on tiptoe, takes the bone in his mouth and creeps out of the cloud to the left",
+     "acting": "slow high steps (walk amp 0.5), ears flat, looks back once",
+     "library": "fox {...walk} with the bone drawn at the muzzle"
+    },
+    {
+     "t": 98.12,
+     "end": 99.5,
+     "cue": {
+      "word": "صداقته،",
+      "t": 98.62
+     },
+     "who": "wolf",
+     "action": "inside: the wolf wakes, finds the empty floor, looks left and right and then out at the real fox, eyes wet",
+     "acting": "lid opens, saccades, ears down, wet true, a small '?'",
+     "library": "wolf {wet:true, ears:-1} + gazePlan"
+    },
+    {
+     "t": 97.1,
+     "end": 99.5,
+     "cue": {
+      "word": "إذا",
+      "t": 97.08
+     },
+     "who": "fox",
+     "action": "the real fox: caught. Ears flat, eyes darting, a stiff grin, one sweat drop",
+     "acting": "ears -1, gaze saccades left and right, mouth 'smile' but brow -0.8, sq 0.95",
+     "library": "fox {ears, gaze, sq} + gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 99.64,
+     "end": 100.5,
+     "cue": {
+      "word": "فكيف",
+      "t": 99.64
+     },
+     "who": "fx",
+     "action": "the memory cloud folds away; camera pans to the gap",
+     "acting": "cloud p to 0 in 0.4 s",
+     "library": "thoughtCloud p"
+    },
+    {
+     "t": 100.58,
+     "end": 101.4,
+     "cue": {
+      "word": "أحفظ",
+      "t": 100.58
+     },
+     "who": "crow",
+     "action": "wraps both wings around herself and the nest",
+     "acting": "sag 0.4 (wings forward and closed), sq 0.93, head low over the eggs",
+     "library": "bird {sag, sq}"
+    },
+    {
+     "t": 101.48,
+     "end": 102.1,
+     "cue": {
+      "word": "نفسي",
+      "t": 101.48
+     },
+     "who": "crow",
+     "action": "looks down into the chasm, then at him",
+     "acting": "gaze [−0.4, 1] then lookAt fox",
+     "library": "bird {gaze} + lookAt"
+    },
+    {
+     "t": 102.14,
+     "end": 103.32,
+     "cue": {
+      "word": "بالقرب",
+      "t": 102.14
+     },
+     "who": "fx",
+     "action": "a double arrow spans the chasm between his toes and her rock; a label points to her side",
+     "acting": "the fox looks down the drop and pulls his toes back 20 units",
+     "library": "S.arrow double + S.label ; fox x 420 to 400"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 87.9,
+     "text": "SWISH!"
+    },
+    {
+     "t": 102.3,
+     "text": "SAFE HERE"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 103.32
+   }
+  },
+  {
+   "id": "S8",
+   "start": 103.32,
+   "end": 122.48,
+   "paragraphs": [
+    6
+   ],
+   "set": "rockyHill",
+   "cast": [
+    "fox",
+    "crow",
+    "falcon",
+    "smallBirds"
+   ],
+   "summary": "The crow's first tale, in a paper story cloud from her beak: a strong falcon bullies three small birds and takes their worm. He grows old and weak: grey, drooping, a feather falls. So he puts on a sweet smile, calls them close and eats their food by trickery. Back in the two-shot she compares: the old falcon's smile and the fox's smile are the same.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "103.3-104.9 ease from the gap to the cloud framing: centre (520, 450), zoom 1.3. Hold through the tale. 115.7-116.6 ease back to the two-shot (zoom 1.2). 120.2-121.2 push to zoom 1.5 on the fox's face with the falcon medallion beside it: centre (400, 720)."
+   },
+   "composition": "Story cloud centre (390, 300), 540 x 370, tail to the crow's beak (760, 540). Inside: one horizontal branch across the cloud at two thirds height; the falcon on the right half, the three small birds on the left half, 65 units apart.",
+   "actions": [
+    {
+     "t": 103.32,
+     "end": 104.9,
+     "cue": {
+      "word": "ثم",
+      "t": 103.32
+     },
+     "who": "crow",
+     "action": "settles herself, lifts her head: now her story",
+     "acting": "sq 1.04 then settle, beak opens, wing lifts",
+     "library": "bird {sq, beak, sag:-0.3}"
+    },
+    {
+     "t": 104.94,
+     "end": 106.1,
+     "cue": {
+      "word": "حكى",
+      "t": 104.94
+     },
+     "who": "fx",
+     "action": "her story cloud opens (paper), with a bare branch across it",
+     "acting": "bubbles from her beak, then the cloud",
+     "library": "thoughtCloud(ctx, 390, 300, 540, 370, t, {p, tail, inside, scale, at, bg: C.paper, tail:[760, 540], scale:0.55})"
+    },
+    {
+     "t": 106.16,
+     "end": 107.1,
+     "cue": {
+      "word": "صقر",
+      "t": 106.16
+     },
+     "who": "falcon",
+     "action": "inside: a big falcon drops onto the right of the branch; the branch dips and springs",
+     "acting": "wings wide as he lands, chest out, heavy brow; the three small birds on the left bounce with the branch",
+     "library": "new bird kind 'hawk' pal 0 {s:1.5, fly then land, puff:1} ; branch spring ; kick() on the small birds"
+    },
+    {
+     "t": 107.18,
+     "end": 107.8,
+     "cue": {
+      "word": "يظلم",
+      "t": 107.18
+     },
+     "who": "falcon",
+     "action": "inside: he sidesteps along the branch and shoves the small birds; they squeeze together",
+     "acting": "three sidesteps, a shoulder bump; the small ones lean away in turn (stagger)",
+     "library": "hawk {x keyed} ; bird kinds 'y','r','b' {tip, sq} + stagger(i)"
+    },
+    {
+     "t": 107.86,
+     "end": 108.4,
+     "cue": {
+      "word": "الطيور",
+      "t": 107.86
+     },
+     "who": "smallBirds",
+     "action": "inside: the red bird holds a worm; the falcon snatches it out of her beak",
+     "acting": "jab and pull; the red bird's eyes wide; the yellow one hides behind the blue one",
+     "library": "worm(c, x, y, t) carried ; bird {eyes wide}"
+    },
+    {
+     "t": 108.5,
+     "end": 109.5,
+     "cue": {
+      "word": "بقوته.",
+      "t": 108.5
+     },
+     "who": "falcon",
+     "action": "inside: he swallows the worm and spreads both wings: the small birds are blown back along the branch",
+     "acting": "head back gulp, wings out (sag -1), sq 1.08; the small birds slide and cling, feathers ruffled",
+     "library": "hawk {sag:-1, sq} ; small birds x keyed with stagger"
+    },
+    {
+     "t": 109.56,
+     "end": 110.8,
+     "cue": {
+      "word": "وعندما",
+      "t": 109.56
+     },
+     "who": "set",
+     "action": "inside: time passes in the cloud: its sky turns from day to dusk and back to a pale day",
+     "acting": "a quick day cycle only inside the cloud; the branch grows one dead twig",
+     "library": "skyCycle(c, u) inside(), u 0.2 to 1.2 over 1.2 s"
+    },
+    {
+     "t": 110.88,
+     "end": 111.4,
+     "cue": {
+      "word": "كبر",
+      "t": 110.88
+     },
+     "who": "falcon",
+     "action": "inside: the falcon is old: grey feathers, drooping brow, hunched",
+     "acting": "age 0 to 1: body colour mixes to grey (mixHex), sq 0.92, head low, lid 0.5",
+     "library": "hawk {age:1, sq, lid}"
+    },
+    {
+     "t": 111.42,
+     "end": 112.2,
+     "cue": {
+      "word": "وضعف،",
+      "t": 111.42
+     },
+     "who": "falcon",
+     "action": "inside: he tries to spread his wings: they shake, sag, and one feather falls",
+     "acting": "wings to half then drop with a tremble; a single feather rocks down past the branch",
+     "library": "hawk {sag} + tremble ; featherFall (one feather)"
+    },
+    {
+     "t": 111.5,
+     "end": 112.2,
+     "cue": {
+      "word": "وضعف،",
+      "t": 111.42
+     },
+     "who": "smallBirds",
+     "action": "inside: the three small birds notice: they stand up straight and look at each other",
+     "acting": "gazes cross, one hop closer to the middle (not in unison)",
+     "library": "bird {gaze} + stagger"
+    },
+    {
+     "t": 112.26,
+     "end": 113.0,
+     "cue": {
+      "word": "صار",
+      "t": 112.26
+     },
+     "who": "falcon",
+     "action": "inside: he glances at them from the side, then puts on a sweet smile and a soft half-closed eye",
+     "acting": "lid 0.6, brow -0.6, the head tilts; this exact face is the one the fox wore at 25.34",
+     "library": "hawk {lid:0.6, brow:-0.6, headRot:0.2}"
+    },
+    {
+     "t": 113.0,
+     "end": 113.9,
+     "cue": {
+      "word": "يخدعها",
+      "t": 113.0
+     },
+     "who": "falcon",
+     "action": "inside: he beckons with one shaky wing; the small birds come closer, the blue one carrying a worm",
+     "acting": "small friendly wing flaps; the birds sidestep toward him in turn",
+     "library": "hawk {sag:-0.4 pulses} ; small birds x keyed ; worm"
+    },
+    {
+     "t": 113.92,
+     "end": 114.8,
+     "cue": {
+      "word": "ليأكل",
+      "t": 113.92
+     },
+     "who": "falcon",
+     "action": "inside: he points with his beak at the sky behind them; they all turn to look; he takes the worm",
+     "acting": "their heads turn away together for once (the trick), his head darts",
+     "library": "bird {dir flip via turnFlip, gaze} ; hawk {headRot, drop}"
+    },
+    {
+     "t": 114.9,
+     "end": 115.7,
+     "cue": {
+      "word": "طعامها.",
+      "t": 114.9
+     },
+     "who": "smallBirds",
+     "action": "inside: they turn back: the worm is gone, the falcon chews with his eyes shut",
+     "acting": "three different reactions: beak open, wings up, head tilt",
+     "library": "bird {beak, sag, headRot} per bird"
+    },
+    {
+     "t": 115.72,
+     "end": 116.6,
+     "cue": {
+      "word": "قال",
+      "t": 115.72
+     },
+     "who": "camera",
+     "action": "back to the two-shot; the cloud shrinks to a round medallion holding only the smiling old falcon",
+     "acting": "the medallion drifts down toward the fox",
+     "library": "CAM keys ; thoughtCloud w,h keyed to 200 x 170"
+    },
+    {
+     "t": 116.66,
+     "end": 118.5,
+     "cue": {
+      "word": "«أخشى",
+      "t": 117.4
+     },
+     "who": "crow",
+     "action": "speaks straight to him, wings held close",
+     "acting": "beak, lid 0.4, a small step back on the rim on 117.40 (fear)",
+     "library": "bird {beak, lid}"
+    },
+    {
+     "t": 119.14,
+     "end": 120.1,
+     "cue": {
+      "word": "صداقتك",
+      "t": 119.14
+     },
+     "who": "crow",
+     "action": "points a wing at the heart he made (the big one, still floating low)",
+     "acting": "sag -0.8; the heart shivers",
+     "library": "bird {sag:-0.8} ; heart tremble"
+    },
+    {
+     "t": 120.18,
+     "end": 121.2,
+     "cue": {
+      "word": "حيلة",
+      "t": 120.68
+     },
+     "who": "fx",
+     "action": "the falcon medallion stops beside the fox's head: two faces, the same half-closed eye and smile; an equals sign between them",
+     "acting": "the fox still wears the smile; the two faces blink together once",
+     "library": "medallion at (250, 700) ; S.emphasis '=' ; S.label"
+    },
+    {
+     "t": 121.28,
+     "end": 122.48,
+     "cue": {
+      "word": "الصقر».",
+      "t": 121.76
+     },
+     "who": "fox",
+     "action": "the fox's eyes slide to the medallion, he sees it, and the smile drops off his face",
+     "acting": "gaze to the left, eyes wide, mouth 'closed', ears -0.6; the medallion pops",
+     "library": "fox {gaze, mouth:'closed', ears} ; thoughtCloud p to 0"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 108.6,
+     "text": "MINE!"
+    },
+    {
+     "t": 120.7,
+     "text": "SAME TRICK"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 122.48
+   }
+  },
+  {
+   "id": "S9",
+   "start": 122.48,
+   "end": 132.3,
+   "paragraphs": [
+    7
+   ],
+   "set": "rockyHill",
+   "cast": [
+    "fox",
+    "crow",
+    "sparrow",
+    "eagle"
+   ],
+   "summary": "Her second tale, shorter: a little sparrow watches a mighty eagle swoop and carry off a lamb. He puffs up and copies it on a full-grown sheep: his feet tangle in the wool and he is stuck fast, flapping, in big trouble.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "The cloud framing again: centre (520, 450), zoom 1.3. The fox's head stays at the bottom edge as the listener."
+   },
+   "composition": "Story cloud centre (390, 300), 540 x 370, tail to the crow's beak. Inside: a green hill line; the sparrow on a stone at the left; the sheep in the middle, the lamb to its right.",
+   "actions": [
+    {
+     "t": 122.48,
+     "end": 124.1,
+     "cue": {
+      "word": "ذكر",
+      "t": 122.48
+     },
+     "who": "crow",
+     "action": "lifts one more feather like a finger: one more thing",
+     "acting": "a single primary raised (sag -0.5), head tilt, beak",
+     "library": "bird {sag, headRot, beak}"
+    },
+    {
+     "t": 124.22,
+     "end": 125.4,
+     "cue": {
+      "word": "أيضًا",
+      "t": 124.84
+     },
+     "who": "fx",
+     "action": "a new story cloud opens: a green hill, a sheep and a lamb grazing",
+     "acting": "pop with overshoot",
+     "library": "thoughtCloud(ctx, 390, 300, 540, 370, t, {p, tail, inside, scale, at, bg: C.paper, tail:[760, 540], scale:0.55})"
+    },
+    {
+     "t": 125.46,
+     "end": 126.3,
+     "cue": {
+      "word": "عصفورًا",
+      "t": 125.46
+     },
+     "who": "sparrow",
+     "action": "inside: a tiny sparrow on a stone looks up at the sky",
+     "acting": "head back, eyes wide and shining",
+     "library": "bird {kind:'lark', s:0.55, headRot:-0.4}"
+    },
+    {
+     "t": 126.38,
+     "end": 127.9,
+     "cue": {
+      "word": "تقليد",
+      "t": 127.3
+     },
+     "who": "eagle",
+     "action": "inside: a huge eagle swoops across the cloud, takes the lamb in his feet without slowing and carries it up and out",
+     "acting": "a clean arc; the lamb only looks surprised; a wind line follows; the sheep's wool blows",
+     "library": "hawk kind pal 2 (eagle) {s:2.2, fly:true, flap} on a bezier ; sheep prop small copy as the lamb"
+    },
+    {
+     "t": 127.98,
+     "end": 129.1,
+     "cue": {
+      "word": "قوي،",
+      "t": 128.52
+     },
+     "who": "sparrow",
+     "action": "inside: the sparrow puffs his chest to twice its size, spreads his wings like the eagle and takes off",
+     "acting": "sq 1.15, crest up, a tiny flex; anticipate crouch then up",
+     "library": "bird {sq, crest, sag:-1} + anticipate + hop"
+    },
+    {
+     "t": 129.2,
+     "end": 130.3,
+     "cue": {
+      "word": "فوقع",
+      "t": 129.2
+     },
+     "who": "sparrow",
+     "action": "inside: he dives on the full-grown sheep, lands on its back and pulls up with all his strength: nothing moves",
+     "acting": "three heaves (sq 1.1, 0.95); the sheep goes on chewing and does not notice",
+     "library": "bird {fly, flap:1.4, sq} ; sheep {chew}"
+    },
+    {
+     "t": 130.42,
+     "end": 131.4,
+     "cue": {
+      "word": "مشكلة",
+      "t": 130.72
+     },
+     "who": "sparrow",
+     "action": "inside: he tries to leave: his feet are tangled in the wool; he flaps harder and harder, stuck",
+     "acting": "flap 1.6, body stretches up (sq 1.15) and snaps back; two wool curls hold his feet",
+     "library": "bird {flap, sq} ; wool curls drawn by the sheep prop"
+    },
+    {
+     "t": 131.54,
+     "end": 132.3,
+     "cue": {
+      "word": "كبيرة.",
+      "t": 131.54
+     },
+     "who": "sparrow",
+     "action": "inside: he hangs upside down from the wool, worn out, eyes spinning; the sheep finally looks round at him",
+     "acting": "rot to hanging with swing(); eyes 'x' is too strong: use lid 0.6 and a dizzy star",
+     "library": "bird {rot} + swing ; sheep head turn"
+    },
+    {
+     "t": 131.6,
+     "end": 132.3,
+     "cue": {
+      "word": "كبيرة.",
+      "t": 131.54
+     },
+     "who": "fox",
+     "action": "the real fox, at the bottom edge, swallows and looks at his own paws",
+     "acting": "gaze down, ears -0.5",
+     "library": "fox {gaze, ears}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 130.8,
+     "text": "STUCK!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 132.3
+   }
+  },
+  {
+   "id": "S10",
+   "start": 132.3,
+   "end": 143.94,
+   "paragraphs": [
+    7
+   ],
+   "set": "rockyHill",
+   "cast": [
+    "fox",
+    "crow"
+   ],
+   "summary": "The warning. The crow stands tall on the nest rim: know the limits of your strength (the edge crumbles under the fox's paw and he jumps back) and stay away from my nest (wings spread over the eggs). 'I will not drop my guard for your promises': he holds up the sagging heart one last time; she shuts her eyes and shakes her head; the heart sinks into the chasm.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Two-shot from slightly lower: centre (540, 720), zoom 1.2, so she towers. 138.2-139.6 push toward the nest: centre (700, 640), zoom 1.6 (eggs visible). 140.5 back to the two-shot."
+   },
+   "composition": "The crow is the tallest thing in the panel for the first time (standing, wings out). The fox is lower left and smaller in pose (sitting, ears down).",
+   "actions": [
+    {
+     "t": 132.3,
+     "end": 133.2,
+     "cue": {
+      "word": "ثم",
+      "t": 132.3
+     },
+     "who": "fx",
+     "action": "the sparrow cloud pops",
+     "acting": "pop; one wool curl floats down and away",
+     "library": "thoughtCloud p to 0"
+    },
+    {
+     "t": 133.22,
+     "end": 134.4,
+     "cue": {
+      "word": "للثعلب:",
+      "t": 133.6
+     },
+     "who": "crow",
+     "action": "stands up on the rim to her full height, facing him",
+     "acting": "sq 1.08, crest 1, wings a little out, eyes hard (lid 0.3)",
+     "library": "bird {sq, crest, sag:-0.3}"
+    },
+    {
+     "t": 134.46,
+     "end": 136.0,
+     "cue": {
+      "word": "الأفضل",
+      "t": 135.16
+     },
+     "who": "crow",
+     "action": "speaks slowly, tapping the rock with one foot on each phrase",
+     "acting": "foot taps at 134.46 and 135.16; beak; head steady",
+     "library": "bird {beak} ; small dustBurst at the foot"
+    },
+    {
+     "t": 136.12,
+     "end": 137.2,
+     "cue": {
+      "word": "حدود",
+      "t": 136.7
+     },
+     "who": "set",
+     "action": "a dotted line appears along the terrace edge under the fox's toes",
+     "acting": "it draws from left to right toward the drop",
+     "library": "S.arrow or dashed line + S.label"
+    },
+    {
+     "t": 137.28,
+     "end": 138.2,
+     "cue": {
+      "word": "قوتك،",
+      "t": 137.28
+     },
+     "who": "fox",
+     "action": "he tests the edge with one paw: the lip crumbles, three pebbles fall, he springs back a full step",
+     "acting": "reach 0.5 down, then startle: sq 1.1, hop back to x 350, landSquash, ears flat, tail puffed",
+     "library": "fox {reach} + hop + landSquash ; pebbles fallY ; dustBurst"
+    },
+    {
+     "t": 138.22,
+     "end": 139.5,
+     "cue": {
+      "word": "تبتعد",
+      "t": 138.98
+     },
+     "who": "crow",
+     "action": "throws a wing out, pointing away down the mountain: go",
+     "acting": "sag -0.9, head follows the wing, beak wide",
+     "library": "bird {sag:-0.9, beak}"
+    },
+    {
+     "t": 139.56,
+     "end": 140.5,
+     "cue": {
+      "word": "عشي.",
+      "t": 139.96
+     },
+     "who": "crow",
+     "action": "spreads both wings like a roof over the nest: the three eggs show under them",
+     "acting": "wings wide and forward, body low over the eggs, eyes on him",
+     "library": "bird {sag:-1, sq:0.94} ; nestDraw eggs 3"
+    },
+    {
+     "t": 140.52,
+     "end": 141.3,
+     "cue": {
+      "word": "لن",
+      "t": 140.52
+     },
+     "who": "fox",
+     "action": "last try: he noses the low, sagging heart up toward her with a weak smile",
+     "acting": "raise 0.6, brow -0.8, mouth 'smile' small, ears half",
+     "library": "fox {raise, brow} ; heart y keyed up 30 units"
+    },
+    {
+     "t": 141.34,
+     "end": 142.4,
+     "cue": {
+      "word": "حذري",
+      "t": 141.72
+     },
+     "who": "crow",
+     "action": "plants both feet, shuts her eyes and shakes her head once, slowly",
+     "acting": "lid 1, headRot 0.25 to -0.25 to 0 over 1 s",
+     "library": "bird {lid:1, headRot}"
+    },
+    {
+     "t": 142.44,
+     "end": 143.94,
+     "cue": {
+      "word": "وعودك».",
+      "t": 143.12
+     },
+     "who": "heart",
+     "action": "the heart loses its air: it shrinks, wrinkles and sinks down into the chasm out of sight",
+     "acting": "a slow falling-leaf path; the fox's eyes follow it down, his ears follow his eyes",
+     "library": "heart() s 44 to 16 on a sway path ; fox {gaze, ears:-1}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 136.9,
+     "text": "YOUR LIMIT"
+    },
+    {
+     "t": 139.9,
+     "text": "KEEP OUT!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 143.94
+   }
+  },
+  {
+   "id": "S11",
+   "start": 143.94,
+   "end": 161.02,
+   "paragraphs": [
+    8
+   ],
+   "set": "rockyHill",
+   "cast": [
+    "fox",
+    "crow"
+   ],
+   "summary": "The fox gives up. He turns and walks away, first sad (head low, wet eyes), then angry (a stamp, a kicked pebble, red in the face). The crow calls after him: why? He stops, looks back over the terrace and admits it: he found her craftier than himself. She answers with a small bow.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "track",
+    "notes": "143.9-148.5 two-shot. 148.6-152.8 the camera tracks left with the walking fox (centre x 540 to 330, zoom 1.3), the crow sliding to the right edge but staying in the panel. 152.8-155.9 ease back to the two-shot, wider (zoom 1.1) because they are now far apart. 157.4-160.3 push to zoom 1.3."
+   },
+   "composition": "The fox walks from x 350 to x 150 and stops; turned back, his eye line runs up and right across the whole panel to her. The sky has warmed toward late afternoon (dayCycle u 0.38).",
+   "actions": [
+    {
+     "t": 143.94,
+     "end": 145.6,
+     "cue": {
+      "word": "فقد",
+      "t": 143.94
+     },
+     "who": "fox",
+     "action": "stares at the empty chasm where the heart went; his whole body lets go",
+     "acting": "sq 0.93, ears -1, tailUp 0, lid 0.5, a long breath out",
+     "library": "fox {sq, ears, tailUp, lid} + breathe"
+    },
+    {
+     "t": 145.66,
+     "end": 147.7,
+     "cue": {
+      "word": "الأمل",
+      "t": 146.38
+     },
+     "who": "fox",
+     "action": "looks up at her once more: she has not moved; he looks down",
+     "acting": "gaze up (lookAt nest) 0.8 s, then [0, 1]; one slow blink",
+     "library": "fox {gaze} + lookAt"
+    },
+    {
+     "t": 147.76,
+     "end": 148.5,
+     "cue": {
+      "word": "الغراب،",
+      "t": 147.76
+     },
+     "who": "crow",
+     "action": "stands guard, wings folded now, watching",
+     "acting": "still; only the pupils follow him (suspense by stillness)",
+     "library": "bird {gaze: lookAt fox}"
+    },
+    {
+     "t": 148.58,
+     "end": 149.8,
+     "cue": {
+      "word": "وابتعد",
+      "t": 148.58
+     },
+     "who": "fox",
+     "action": "turns around and walks away to the left",
+     "acting": "the turn with a squeeze (turnFlip), then a slow walk amp 0.6, head low",
+     "library": "turnFlip(t, [148.6], 0.5) + fox {...walk(FX11, t)} + footfalls"
+    },
+    {
+     "t": 149.9,
+     "end": 151.3,
+     "cue": {
+      "word": "يظهر",
+      "t": 150.78
+     },
+     "who": "fox",
+     "action": "sad: head hanging, wet eyes, the tail drags a line in the dust",
+     "acting": "tip 0.08, wet true, lid 0.5, ears -1; a thin drag line follows the tail tip",
+     "library": "fox {tip, wet:true, lid} ; drag line drawn by the scene"
+    },
+    {
+     "t": 151.36,
+     "end": 152.0,
+     "cue": {
+      "word": "الحزن",
+      "t": 151.36
+     },
+     "who": "fox",
+     "action": "one tear drop falls and makes a dot on the rock",
+     "acting": "a single drop on fallY, a small ring where it lands",
+     "library": "tear drawn by the scene + ripple ring"
+    },
+    {
+     "t": 152.04,
+     "end": 152.8,
+     "cue": {
+      "word": "والغضب.",
+      "t": 152.04
+     },
+     "who": "fox",
+     "action": "angry: he stamps, kicks a pebble off the terrace and goes red, two puffs of steam at the ears",
+     "acting": "brow 1, ears 1, mouth 'open' growl, sq 0.94 on the stamp; red dots climb the face",
+     "library": "fox {brow:1, mouth:'open'} + flush (planned expression) ; pebble on an arc"
+    },
+    {
+     "t": 152.84,
+     "end": 153.9,
+     "cue": {
+      "word": "سأله",
+      "t": 152.84
+     },
+     "who": "crow",
+     "action": "hops to the near corner of the nest and calls after him, head tilted",
+     "acting": "one hop (hop + landSquash), headRot 0.35, beak open, sound arcs toward him",
+     "library": "bird {headRot, beak} + hop ; soundArcs"
+    },
+    {
+     "t": 153.94,
+     "end": 155.9,
+     "cue": {
+      "word": "سبب",
+      "t": 154.84
+     },
+     "who": "fox",
+     "action": "stops in mid step, one paw in the air; an ear turns back first",
+     "acting": "walk freezes (amp to 0 with settle), raise 0.5, the near ear turns toward her before the head",
+     "library": "fox {raise, ears} ; settleTo"
+    },
+    {
+     "t": 155.94,
+     "end": 157.4,
+     "cue": {
+      "word": "فأجابه",
+      "t": 155.94
+     },
+     "who": "fox",
+     "action": "turns back to face her; the anger runs out of him; he sits",
+     "acting": "turnFlip, flush fades over 0.8 s, brow to 0, sit 0.5",
+     "library": "turnFlip + fox {sit, plant:true}"
+    },
+    {
+     "t": 157.46,
+     "end": 159.1,
+     "cue": {
+      "word": "وجده",
+      "t": 158.36
+     },
+     "who": "fox",
+     "action": "points a paw up at her across the whole terrace",
+     "acting": "reach 0.8, gaze lookAt nest, mouth small, a rueful half smile begins",
+     "library": "fox {reach, gaze, mouth:'smile'}"
+    },
+    {
+     "t": 159.14,
+     "end": 160.3,
+     "cue": {
+      "word": "مكرًا",
+      "t": 159.78
+     },
+     "who": "fx",
+     "action": "an arrow from his paw to the crow with the label CRAFTIER!; on 'than me' he taps his own chest",
+     "acting": "arrow draws along his eye line; the label sits above her, clear of her face",
+     "library": "S.arrow + S.label ; fox {raise:1}"
+    },
+    {
+     "t": 159.8,
+     "end": 160.9,
+     "cue": {
+      "word": "منه.",
+      "t": 160.34
+     },
+     "who": "crow",
+     "action": "puffs her chest a little and gives a short bow with one wing across her front",
+     "acting": "sq 1.05, headRot 0.3 dip, lid 0.4, crest 0.5; no gloating",
+     "library": "bird {sq, headRot, sag:0.3}"
+    },
+    {
+     "t": 160.4,
+     "end": 161.02,
+     "cue": {
+      "word": "منه.",
+      "t": 160.34
+     },
+     "who": "fox",
+     "action": "nods once to her, stands and turns away for good",
+     "acting": "small nod (tip 0.04), then turnFlip",
+     "library": "fox {tip} + turnFlip"
+    },
+    {
+     "t": 160.75,
+     "end": 161.02,
+     "cue": {
+      "word": "منه.",
+      "t": 160.34
+     },
+     "who": "fx",
+     "action": "the transition card LATER... starts to wipe in over the terrace",
+     "acting": "card runs 160.75-161.55 in all, covered midpoint 161.15",
+     "library": "S.transition(..., {caption: 'LATER...'})"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 152.2,
+     "text": "GRRR!"
+    },
+    {
+     "t": 153.2,
+     "text": "WHY?"
+    },
+    {
+     "t": 159.8,
+     "text": "CRAFTIER!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 161.02,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S12",
+   "start": 161.02,
+   "end": 167.81,
+   "paragraphs": [
+    8
+   ],
+   "set": "rockyHill",
+   "cast": [
+    "fox",
+    "crow"
+   ],
+   "summary": "Dusk at the foot of the mountain. The fox comes down the last ramp alone, looks back up once at the tiny crow on the summit against the orange sky, and goes into his cave. In the dark only his two eyes show. His belly growls. THE END.",
+   "camera": {
+    "shot": "establishing",
+    "move": "pull-out",
+    "notes": "The LATER card covers 160.75-161.55 (cut to the cave zone under its midpoint). 161.55 on: centre (480, 1850), zoom 1.2. 162.6-163.6 ease out to zoom 0.95, centre (500, 1620), so the rock face and the small summit silhouette are in the top of the panel. Hold to the end."
+   },
+   "composition": "Cave mouth lower left (x 200..460, ground y 2100). The fox enters from the right and walks left into the cave. The summit crow is a 30 px black silhouette at the top right. THE END sits in the upper middle of the panel, on the rock face, clear of the cave.",
+   "actions": [
+    {
+     "t": 161.02,
+     "end": 161.55,
+     "cue": {
+      "word": "ثم",
+      "t": 161.02
+     },
+     "who": "fx",
+     "action": "the LATER... card (begun at 160.75 in S11) is at full cover at 161.15 and clears by 161.55",
+     "acting": "the camera and the sky change under its covered midpoint (dayCycle u 0.46, dusk)",
+     "library": "S.transition(..., {caption: 'LATER...'}) ; CAM cut at the covered midpoint"
+    },
+    {
+     "t": 161.55,
+     "end": 162.7,
+     "cue": {
+      "word": "عاد",
+      "t": 161.72
+     },
+     "who": "fox",
+     "action": "walks down the last ramp from the right to the cave mouth, alone, slowly",
+     "acting": "walk amp 0.6, head low, tail low; long dusk shadow in front of him",
+     "library": "fox {dir:-1, ...walk(FX12, t)} + footfalls"
+    },
+    {
+     "t": 162.78,
+     "end": 163.4,
+     "cue": {
+      "word": "وحده",
+      "t": 162.78
+     },
+     "who": "fox",
+     "action": "stops and looks back up over his shoulder at the summit",
+     "acting": "head up, gaze [0.6, -1], ears half up, one blink",
+     "library": "fox {gaze, ears}"
+    },
+    {
+     "t": 162.9,
+     "end": 163.6,
+     "cue": {
+      "word": "وحده",
+      "t": 162.78
+     },
+     "who": "crow",
+     "action": "far above, a tiny black crow silhouette sits on the summit against the orange sky and settles onto her nest",
+     "acting": "one small wing fold",
+     "library": "bird {kind:'crow', s:0.25} as a silhouette"
+    },
+    {
+     "t": 163.46,
+     "end": 164.5,
+     "cue": {
+      "word": "كهفه.",
+      "t": 163.82
+     },
+     "who": "fox",
+     "action": "turns and walks into the cave; the dark takes him from the nose back, the tail last",
+     "acting": "clipped at the cave edge (head into a hole); the tail tip flicks once and is gone",
+     "library": "fox clipped by the cave mouth (evenodd clip) + walk"
+    },
+    {
+     "t": 164.6,
+     "end": 165.2,
+     "who": "fox",
+     "action": "in the dark, two eyes open and look out; the belly growls one more time; the eyes shut slowly",
+     "acting": "eyes only; the growl makes them blink wide, then the lids come down",
+     "library": "eye2 pair in the cave clip + soundArcs"
+    },
+    {
+     "t": 165.0,
+     "end": 167.81,
+     "who": "lettering",
+     "action": "THE END title on the rock face, held to the end",
+     "acting": "standard title entrance with settle; first stars come out above the summit",
+     "library": "S.title 'THE END' ; skyCycle stars"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 164.7,
+     "text": "GRRR..."
+    },
+    {
+     "t": 165.0,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 164.7,
+     "kind": "low rumble (belly)"
+    },
+    {
+     "t": 165.05,
+     "kind": "soft chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 167.81
+   }
+  }
+ ],
+ "ending": {
+  "t": 165.0,
+  "description": "Dusk. The fox has gone into his cave; two eyes in the dark, one last belly growl in the silence after the last word (164.7), the eyes close, and THE END holds on the rock face from 165.0 to 167.81 while the first stars come out over the tiny crow on the summit."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان ثعلب يعيش في كهف على جبل، ويعاني الجوع كثيرًا.|وكان فوق الجبل غراب له عش بين الصخور.|فكر الثعلب أن الغراب يستطيع الوصول إلى طعام لا يستطيع هو الوصول إليه.",
+   "en": "A hungry fox lived in a cave on a mountain.|A crow nested high among the rocks.|The fox thought the bird could reach food he could not reach."
+  },
+  {
+   "p": 2,
+   "ar": "ذهب الثعلب إلى الغراب وسلم عليه بلطف،|ثم قال: «نحن جاران منذ زمن طويل.|أتمنى أن نصبح صديقين وأن يساعد أحدنا الآخر».|لكنه كان يفكر في الطعام أكثر من الصداقة.",
+   "en": "The fox greeted the crow warmly|and proposed friendship|and mutual help.|But food, not friendship, was foremost in his mind."
+  },
+  {
+   "p": 3,
+   "ar": "نظر الغراب إليه بحذر وقال:|«أنت حيوان يصطاد الطيور، وأنا طائر قد أصبح فريستك.|كيف أطمئن إليك؟|لا تكفي الكلمات الجميلة حتى أصدق نيتك».",
+   "en": "The crow answered cautiously:|“You hunt birds, and I could become your prey.|How can I trust you?|Pleasant words cannot prove your intentions.”"
+  },
+  {
+   "p": 4,
+   "ar": "لم يتراجع الثعلب.|قال إن الصداقة تنفع الجميع، ووعد بأن يكون جارًا مخلصًا.|ثم حكى قصة برغوث ساعدته فأرة،|فرد لها الجميل وساعدها على أخذ نقود من بيت تاجر.",
+   "en": "The fox insisted|that friendship benefits everyone.|He told of a flea sheltered by a mouse|who later repaid the favor by helping her take a merchant’s coins."
+  },
+  {
+   "p": 5,
+   "ar": "استمع الغراب إلى القصة، لكنه لم يقتنع.|أجاب: «قد يساعد الصديق صديقه،|لكنك خدعت ذئبًا عاش معك من قبل.|إذا لم تحفظ صداقته، فكيف أحفظ أنا نفسي بالقرب منك؟»",
+   "en": "The crow listened but was unconvinced.|“Friends may help one another,” he said,|“but you betrayed a wolf who lived with you.|How could I be safe near you?”"
+  },
+  {
+   "p": 6,
+   "ar": "ثم حكى الغراب عن صقر كان يظلم الطيور بقوته.|وعندما كبر وضعف، صار يخدعها ليأكل من طعامها.|قال الغراب: «أخشى أن تكون صداقتك مثل حيلة ذلك الصقر».",
+   "en": "The crow told of a powerful falcon who oppressed other birds,|then when old and weak resorted to trickery to take their food.|“Your offer reminds me of him,” he said."
+  },
+  {
+   "p": 7,
+   "ar": "ذكر الغراب أيضًا عصفورًا حاول تقليد نسر قوي، فوقع في مشكلة كبيرة.|ثم قال للثعلب: «من الأفضل أن تعرف حدود قوتك،|وأن تبتعد عن عشي. لن أترك حذري بسبب وعودك».",
+   "en": "The crow also recalled a sparrow ruined by trying to imitate an eagle.|He warned the fox to respect his limits|and stay away from the nest."
+  },
+  {
+   "p": 8,
+   "ar": "فقد الثعلب الأمل في كسب الغراب، وابتعد وهو يظهر الحزن والغضب.|سأله الغراب عن سبب ذلك،|فأجابه بأنه وجده أشد مكرًا منه.|ثم عاد الثعلب وحده إلى كهفه.",
+   "en": "The fox lost hope and left, looking upset.|When the crow asked why,|the fox replied that the crow was craftier than himself.|He returned alone to his cave."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "rockyHill",
+   "description": "Tall bare mountain (1000 x 2300): cave at the foot, two ramps, a top terrace, a chasm and a nest pinnacle. Reuses the planned name; parameters should allow other lairs and cliffs (which ledges, cave on/off, pinnacle on/off).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Bake once with bake(): polygons for the rock mass and ledges, K halftone dot fill on shaded faces, brush outlines; cave arch as in sets den; return anchor points {cave, ledgeA, ledgeB, terraceEdge, wall, nest}."
+  },
+  {
+   "type": "character",
+   "name": "hawk (bird kind)",
+   "description": "Planned bird of prey kind on the Library bird: pal 0 falcon, pal 2 eagle (dark body, white head). This film adds an age field 0..1 (grey mix, drooping brow, hunch) and uses puff, sag, headRot, beak, lid, brow.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "New entry in BIRD with a hooked beak path, heavy brow line and barred chest; age via mixHex(body, grey, age) and a head drop; opt-in, default bird kinds unchanged."
+  },
+  {
+   "type": "character",
+   "name": "insect (kinds louse, flea)",
+   "description": "Planned small-creature figure; this film uses kind 'flea' only, inside a cloud.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Oval body, six legs as short strokes with large back legs, eye2 eyes, antennae lines; hops with hop() and landSquash()."
+  },
+  {
+   "type": "character",
+   "name": "rat",
+   "description": "Planned rat used as a mouse (pal 1, s 0.75) inside a cloud: sniff, raise, walk, smile.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "As planned by the other stories; here only a side view scuttle, a wave and carrying a coin."
+  },
+  {
+   "type": "character",
+   "name": "wolf",
+   "description": "The Library fox figure with a wolf palette and s 1.25 (as the planned jackal is a fox palette).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Optional pal field on fox (default unchanged): grey body, dark saddle, cream muzzle, black tail tip, ear scale 0.9 x 1.15."
+  },
+  {
+   "type": "prop",
+   "name": "sheep",
+   "description": "Simple sheep and lamb for the sparrow tale; reusable for shepherd stories.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Circles for wool, rounded rect face, line legs; chew = jaw offset; wool curls drawn after the bird so they overlap its feet."
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "description": "Planned coin mound with a removable coin.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Seeded stack of discs with K.rng; coin(c, x, y, r)."
+  },
+  {
+   "type": "effect",
+   "name": "hunterShadow",
+   "description": "A character's cast shadow on a wall that shows a different pose from the character (his true nature): flat black silhouette, scaled, 2 frames late.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Draw the same cast function with another pose into an offscreen canvas, fill black with globalCompositeOperation 'source-in', draw scaled and clipped to the wall polygon at alpha 0.85."
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "description": "Planned anger flush: red dots climbing the face and two steam puffs (152.04-156.8).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Red halftone clip over the head box rising with a 0..1 value; two small puff arcs at the ears."
+  },
+  {
+   "type": "effect",
+   "name": "featherFall",
+   "description": "Planned feather that rocks down; one grey feather at 111.42 inside the cloud.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Leaf-shaped path on a seeded sway curve."
+  }
+ ],
+ "owner_questions": [
+  "The script only says the flea helped the mouse take a merchant's coins; I show the traditional way (the flea bites the sleeping merchant, who hops away scratching, and the mouse takes one coin). Default: shown this way, comic and harmless.",
+  "The script only says the fox deceived a wolf who lived with him; I show the fox creeping away with their shared bone while the wolf sleeps (not the pit of the original tale). Default: the bone version.",
+  "The script only says the sparrow fell into big trouble copying an eagle; I show the traditional version softened: the eagle carries off a lamb (unharmed, surprised), the sparrow gets his feet stuck in a sheep's wool; no shepherd, no capture. Default: this version.",
+  "Additions beyond the script: the fox's growling belly (three times, including the last image), his hunter shadow on the rock, his tongue slipping out, and a heart that stands for his offer of friendship (burst by the crow, later sinking into the chasm). Default: all kept.",
+  "Invented English lettering: GRRR..., NEST, TOO HIGH!, POP!, TRUST ME!, OUCH!, SWISH!, SAFE HERE, MINE!, SAME TRICK, STUCK!, YOUR LIMIT, KEEP OUT!, WHY?, CRAFTIER!, LATER..., THE END. Default: all used (17 items; cut TRUST ME!, SWISH! and MINE! first if a leaner look is wanted).",
+  "The crow is played as a mother on a nest with three eggs (the script says only 'her nest' / 'my nest'), and is referred to as 'she' in the plan although the English text says 'he'. Default: eggs shown, no gendered lettering on screen."
+ ],
+ "implementation_notes": [
+  "World is 1000 x 2300 (not the template's 1230 high): set WH = 2300 and clamp the camera with it. Two working zones: the top (terrace ground y 900, as in the template) and the foot (ground y 2100). Only S1 (crane), S2 and S12 use the foot.",
+  "Draw the sky with skyCycle in panel space before the world transform (so it fills any camera position), with u keyed by kfn: 0 s 0.12, 61 s 0.25, 144 s 0.38, 160.7 s 0.38, 161.2 s 0.46. Tint the rock a little warmer with dayCycle(u).warm.",
+  "Set LIFE.t = t each frame for automatic blinks; characters with an explicit lid need hand blinks (Math.max(lid, blink(t, seed))).",
+  "Every cue time in the JSON is the start of the named word in timing.json; use w(p, n) or the literal times. Anticipation starts up to 0.4 s before the cue where an action says so.",
+  "Story clouds use the Library thoughtCloud for told tales as well as thoughts: yellow fill for the fox's private thoughts (S2, S3), paper for told tales (S6, S8, S9), blue with a halftone wash for the crow's memory of the wolf (S7). Tail always to the teller's head or beak. Clouds stay in the upper left; they must never cover the fox's or the crow's face. Figures inside at least 110 px on screen (use scale 0.5 to 0.55 and oversize the flea).",
+  "The fox faces right (dir 1) in the top zone except when he walks away (S11) and in S12 (dir -1). Use turnFlip for every turn. All walks through walk(posFn, t) with footfalls for dust; no sliding.",
+  "Gap discipline: the fox's toes never pass x 600 and the crow never leaves the pinnacle; the chasm stays visible in every two-shot. It is the picture of the crow's caution.",
+  "Mask on / mask off (guide section 9): the fox's flat face appears only when his head is turned from the crow (36.7-41.2) and in the peek at 70.3.",
+  "Sound: narration is the soundtrack. Effects only at the listed times, all in real pauses (3.48-4.24, 11.82-12.38, 20.36-21.54, 41.20-42.70, 55.86-56.34, after 164.56); master 0.6. From 42.7 to 164.5 there are almost no gaps: the comic lettering there is silent.",
+  "Lettering: Bangers, labels at least 28 px and headlines at least 44 px at 1280x720 scale, never over a face; no dashes.",
+  "Panel-only shake is not needed except a 2-frame, 3-unit bump when the edge crumbles (137.28) and on the angry stamp (152.04).",
+  "After approval move rockyHill, the hawk kind, the wolf palette, sheep, coinPile and hunterShadow into Library/ (opt-in, defaults unchanged) and run node Library/tests/regression.mjs."
+ ],
+ "warnings": [
+  "Paragraphs 3 to 8 are almost continuous speech (no pause of 0.6 s after 42.7 s), so nearly all sound effects sit in the first 43 s and at the very end. Do not add effects under the words.",
+  "This is a talking story: two characters stand still for two minutes. The plan keeps it moving with three story clouds, the heart, the shadow and the gap; if the clouds are cut or simplified the film will go static.",
+  "S6 packs a whole inset story into 8.5 s (73.8-82.3); it must be staged very simply (one floor line, left to right) or it will not read on a phone.",
+  "The hawk kind, rat and insect are planned by other stories but not in the Library yet; if they are built first elsewhere, use those drawings and names.",
+  "The crane in S1 passes 1060 world units in 2.5 s; keep the rock face detail sparse so it does not strobe at 30 fps.",
+  "Time of day moves from morning to dusk across one conversation; this is a mood device, not narrated. The single LATER card is at 160.75-161.55 over the words 'then he returned'."
+ ]
+}

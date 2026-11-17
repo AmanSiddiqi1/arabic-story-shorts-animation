@@ -1,0 +1,93 @@
+{
+ "story_id": "AN-014",
+ "title": "The Envious Man and the Envied",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T12:38:46",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a13c424e1dfad91eb.jsonl",
+ "agent_id": "a13c424e1dfad91eb",
+ "model_messages": {
+  "claude-fable-5-2": 22
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "71666064a8a15e0677bbe3c1313e55654ef760caa4ee210e15cba0e864145147",
+  "paragraphs": 8,
+  "segments": [
+   "AN-014-P01-S01",
+   "AN-014-P01-S02",
+   "AN-014-P01-S03",
+   "AN-014-P01-S04",
+   "AN-014-P01-S05",
+   "AN-014-P01-S06",
+   "AN-014-P01-S07",
+   "AN-014-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-014_The_Envious_Man_and_the_Envied_full_slowed.mp3",
+  "sha256": "d6fc2ed8ccd09250857873b91e7ad63279adf9f9d299449e4755b983a07703ee",
+  "duration": 170.003
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-014_The_Envious_Man_and_the_Envied_full_slowed.mp3.words.json",
+  "sha256": "e95e59e68a01db6acc0a16f94ad3f7ccaa30a84715222b473b82323687ac5889",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.991
+ },
+ "library_rev": "7721db2",
+ "scenes": 20,
+ "actions": 165,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "cat",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "shrineYard",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "wellCavern",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (sultan, princess, jinn pair)",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "windSpirit (dark palette) as evilSpirit",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "brazier",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "spiralEyes",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "M"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Many assets here are planned names from other stories (person costume layer, village, countryRoad, palaceHall, iconBalloon, thoughtCloud, dayCycle, inset circle, flush, spiralEyes, windSpirit, oilLamp, rope, purse, bindle, runInPlace, person kneel/sit). If they are not in Library when this film is built, they must be built here first: the total drawing load is then large (L).",
+  "Five sets and thirteen cast entries is a lot for 170 s; the people are all one figure with costumes, which keeps it feasible.",
+  "Only eight narration pauses exist, so the shove, the spirit exit and the rescue have no sound effect; they must read from picture alone.",
+  "The LATER... card overlaps the first two words of paragraph 6 (106.36 to about 107.9); the sultan entrance is cued at 108.6 so nothing is hidden.",
+  "S11 and S12 hold one cutaway for 24 s; the balloons, the two jinn acting and the listening man must keep something changing every 1-2 s."
+ ]
+}

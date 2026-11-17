@@ -1,0 +1,110 @@
+{
+ "story_id": "KD-010",
+ "title": "The Louse and the Flea",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T11:58:50",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a8c96691d2e2cd857.jsonl",
+ "agent_id": "a8c96691d2e2cd857",
+ "model_messages": {
+  "claude-fable-5-2": 19
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "d7421aba47eaebb9ddd0226ac639d427025b76e312be237736b7bc8042935a65",
+  "paragraphs": 8,
+  "segments": [
+   "KD-010-P01-S01",
+   "KD-010-P01-S02",
+   "KD-010-P01-S03",
+   "KD-010-P01-S04",
+   "KD-010-P01-S05",
+   "KD-010-P01-S06",
+   "KD-010-P01-S07",
+   "KD-010-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/KD-010_The_Louse_and_the_Flea_full_slowed.mp3",
+  "sha256": "bfb609e941c4906953f65fb900fb9e03bbbf67872b61bff8ae781288e0d0aba1",
+  "duration": 166.836
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/KD-010_The_Louse_and_the_Flea_full_slowed.mp3.words.json",
+  "sha256": "9984bd90d4c6371ab7cd284a4ffd699a643273e9ecd46d74137f7bcfd8bdc496",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.995
+ },
+ "library_rev": "5fc1ffb",
+ "scenes": 16,
+ "actions": 181,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "insect (kinds louse, flea)",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "bedchamber",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "bedMacro",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "person lie / sit up in bed",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (bedouin, vizier, merchant, beanSeller, lady, trader)",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "macroLens",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "sleepMeter",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "lampLight",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "oilLamp, bindle, bigHand",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "dayCycle",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "OWNER: how the louse is \"got rid of\" (139.24). Planned as a discreet flick out of the window ending in a star twinkle, no squashing shown. The script only says he got rid of her; confirm this gentler reading.",
+  "OWNER: the SLEEP meter is an added visual device (not in the script) used to make \"before he was fully asleep\" visible. Confirm it is welcome; without it the giant half-open eye carries the beat alone.",
+  "OWNER: the flea has a brief remorse beat (lowered antennae at the empty nook, one look back). The script is neutral about his feelings; confirm, or play him simply relieved.",
+  "Six new or planned assets are needed before staging (insect, bedchamber, bedMacro, person lie, lampLight, macroLens); the insect figure is the large one. The two sets are the main drawing cost.",
+  "Narration has few pauses, so the biggest physical beats (leap, bite, fall, flick) have no sound effect; the animation must carry them.",
+  "Person skin in the Library is white: the giant hand must use the same fill and outline as the person figure hands so the room and macro views match.",
+  "P8 subtitle order: the English chunk 1 begins \"When everything became quiet\" while the Arabic chunk 1 ends with it; both are kept in one chunk so the pairing is still correct."
+ ]
+}

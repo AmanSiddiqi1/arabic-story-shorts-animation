@@ -1,0 +1,149 @@
+{
+ "story_id": "AN-103",
+ "title": "HARUN AL-RASHID AND THE DAMSEL AND ABU NOWAS",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T14:06:12",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a5be6216ab882e6cc.jsonl",
+ "agent_id": "a5be6216ab882e6cc",
+ "model_messages": {
+  "claude-fable-5-2": 24
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "d71cb814503ade4d892dd2feba303ad07f9d6026f81a2e76ce60dbb9c99d59d8",
+  "paragraphs": 8,
+  "segments": [
+   "AN-103-P01-S01",
+   "AN-103-P01-S02",
+   "AN-103-P01-S03",
+   "AN-103-P01-S04",
+   "AN-103-P01-S05",
+   "AN-103-P01-S06",
+   "AN-103-P01-S07",
+   "AN-103-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-103_HARUN_AL_RASHID_AND_THE_DAMSEL_AND_ABU_NOWAS_full_slowed.mp3",
+  "sha256": "6d2564e03eccdf9d59525fa460f2ee79f1fe161eac8a5f3b2faccede4124dff5",
+  "duration": 168.25
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-103_HARUN_AL_RASHID_AND_THE_DAMSEL_AND_ABU_NOWAS_full_slowed.mp3.words.json",
+  "sha256": "0786ed84199d41c6af7a45b08e7ff216c321b484ca7f49595a7da3bfbbb2d5c7",
+  "manifest_status": "SUCCESS; METADATA MISMATCH",
+  "script_match": 1.0
+ },
+ "library_rev": "2e7a9d0",
+ "scenes": 17,
+ "actions": 178,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "person costume presets (poet)",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "bedchamber",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "palaceHall (night option)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "oud",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "candle",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "spear, sword",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "wineCup",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "coinPile, purse, foodTray, necklace, scroll",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "honourRobe",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person hairVeil",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person youth option",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person laugh",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "sneak",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "musicNotes",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "verseRibbon",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "inset circle",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The English subtitle text is a condensed translation: it omits details that the Arabic narrates (the two candles and hair in P1, the dark room, long hair and WHAT IS THIS? in P5, the blue robe and the contest in P6, the frightening joke in P7, the laughter, the thousand dinars and the departure in P8). Both are kept verbatim; the picture follows the Arabic.",
+  "Because the English is shorter, its chunks do not always line up with what the Arabic chunk says at that moment (notably P5 and P6).",
+  "S9 (14.3 s) depends on the poem cloud reading clearly on a phone: keep it large (640 x 430) and uncluttered.",
+  "About 30 pieces of lettering is above the usual lettering diet (8 to 12); counters and labels carry much of the court intrigue, but trim in review if busy.",
+  "Mature themes (an uninvited kiss, wine, a purchased woman, infatuation) are staged lightly; see owner_questions.",
+  "A single LATER card is used (40.7, NEXT MORNING...); the later time jumps (the evening visit at 99.6, after the drinks at 117.88) use a wipe and a dissolve with the window sky changing."
+ ]
+}

@@ -1,0 +1,73 @@
+{
+ "story_id": "AN-119",
+ "title": "ABU NOWAS WITH THE THREE BOYS AND THE CALIPH HARUN AL-RASHID",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T14:44:02",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-adfde7f8eb094c54a.jsonl",
+ "agent_id": "adfde7f8eb094c54a",
+ "model_messages": {
+  "claude-fable-5-2": 19
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "d66e23cae1a16149a6b5a32d574728e6515320f2f48d1ff37e36eb4cbd01d32e",
+  "paragraphs": 8,
+  "segments": [
+   "AN-119-P01-S01",
+   "AN-119-P01-S02",
+   "AN-119-P01-S03",
+   "AN-119-P01-S04",
+   "AN-119-P01-S05",
+   "AN-119-P01-S06",
+   "AN-119-P01-S07",
+   "AN-119-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-119_ABU_NOWAS_WITH_THE_THREE_BOYS_AND_THE_CALIPH_HARUN_AL_RASHID_full_slowed.mp3",
+  "sha256": "c01ffd3a26273009aaf394f56a61cd53e162008e59e4bbe59d34dac9feba58ec",
+  "duration": 171.423
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-119_ABU_NOWAS_WITH_THE_THREE_BOYS_AND_THE_CALIPH_HARUN_AL_RASHID_full_slowed.mp3.words.json",
+  "sha256": "65394b5083b6aad3a919a5704ff9d382c09451f595e69001c7272fe5c1033c81",
+  "manifest_status": "SUCCESS; METADATA MISMATCH",
+  "script_match": 1.0
+ },
+ "library_rev": "5a93429",
+ "scenes": 17,
+ "actions": 144,
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "packSaddle",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person plainShirt look",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "judgeTurban (loose)",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon icons (path, veiled heads, scimitar, struck)",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Mature source: the story is softened in pictures (see owner_questions) while the narration and subtitles remain verbatim, including the words wine, flirtation, kissed, procurers, strip and execute. The owner should confirm this is acceptable for the channel's audience.",
+  "Depends on planned assets that are not in Library yet: person presets 'poet' and 'executioner', verseRibbon, iconBalloon, bathScreen, goblet, foodTray, purse, coinPile, scroll, flush, headwear offset, person laugh, sneak gait, rope lead, honourRobe flourish, goldGlow. If one is missing, build it in the story under the planned name.",
+  "No pauses in the narration: the film will be nearly free of sound effects; that is intended.",
+  "The person figure is front-facing only: the donkey act is played upright (ears with hands, bray, hoof tap), not on all fours.",
+  "Ten characters on four sets is a large human cast for one film; all are costume variants of one figure and no new set is needed, but staging time is high (17 scenes, about 140 keyed actions)."
+ ]
+}

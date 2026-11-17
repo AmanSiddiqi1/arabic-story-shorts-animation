@@ -1,0 +1,2885 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-082",
+ "title": "Hatim of the Tribe of Tayy",
+ "duration": 161.593,
+ "end_hold": 3.0,
+ "logline": "A king jokes at the grave of the most generous man in Arabia that his guests are hungry; that night the dead host serves him his own camel, and the next day the host's son arrives with a new one.",
+ "moral": "True generosity outlives the generous: Hatim was a host even after his death, and mockery of the good is answered with more good.",
+ "tone": "A ghost story told as a warm comedy of manners: eerie blue nights, a smug king slowly humbled, no horror and no blood; the last feeling is wonder.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 2.62,
+   "kind": "setup",
+   "cue": {
+    "word": "بكرمه",
+    "t": 2.62
+   },
+   "summary": "Hatim, the most generous of the Arabs, feeds every guest."
+  },
+  {
+   "id": "B2",
+   "t": 11.56,
+   "kind": "setup",
+   "cue": {
+    "word": "تمثالين",
+    "t": 11.56
+   },
+   "summary": "He dies and is buried on a mountain between two stone figures."
+  },
+  {
+   "id": "B3",
+   "t": 18.62,
+   "kind": "suspense",
+   "cue": {
+    "word": "بكاء",
+    "t": 18.62
+   },
+   "summary": "Travellers in the valley hear wailing all night."
+  },
+  {
+   "id": "B4",
+   "t": 40.28,
+   "kind": "inciting",
+   "cue": {
+    "word": "وضحك.",
+    "t": 40.28
+   },
+   "summary": "King Zu al-Kuraa hears whose grave it is, and laughs."
+  },
+  {
+   "id": "B5",
+   "t": 50.74,
+   "kind": "comic",
+   "cue": {
+    "word": "أين",
+    "t": 50.74
+   },
+   "summary": "The mock invitation: we are your hungry guests, where is the meal?"
+  },
+  {
+   "id": "B6",
+   "t": 57.08,
+   "kind": "suspense",
+   "cue": {
+    "word": "يحدث",
+    "t": 57.08
+   },
+   "summary": "He sleeps by the grave; something comes down from it."
+  },
+  {
+   "id": "B7",
+   "t": 61.7,
+   "kind": "turn",
+   "cue": {
+    "word": "استيقظ",
+    "t": 61.7
+   },
+   "summary": "He wakes in terror shouting for his she-camel."
+  },
+  {
+   "id": "B8",
+   "t": 70.62,
+   "kind": "rising",
+   "cue": {
+    "word": "تسقط",
+    "t": 70.62
+   },
+   "summary": "The camel collapses and cannot be saved."
+  },
+  {
+   "id": "B9",
+   "t": 80.78,
+   "kind": "comic",
+   "cue": {
+    "word": "شبعوا.",
+    "t": 80.78
+   },
+   "summary": "So the hungry guests roast her and eat their fill: the meal he asked for."
+  },
+  {
+   "id": "B10",
+   "t": 90.04,
+   "kind": "reveal",
+   "cue": {
+    "word": "سيفًا.",
+    "t": 90.04
+   },
+   "summary": "The dream: Hatim with a sword, sorry to have nothing for his guest."
+  },
+  {
+   "id": "B11",
+   "t": 97.12,
+   "kind": "climax",
+   "cue": {
+    "word": "ضرب",
+    "t": 97.12
+   },
+   "summary": "In the dream Hatim strikes the camel: he served the king his own mount."
+  },
+  {
+   "id": "B12",
+   "t": 113.24,
+   "kind": "surprise",
+   "cue": {
+    "word": "ناقة",
+    "t": 113.24
+   },
+   "summary": "Next day a stranger arrives leading another she-camel."
+  },
+  {
+   "id": "B13",
+   "t": 124.1,
+   "kind": "reveal",
+   "cue": {
+    "word": "عدي",
+    "t": 124.1
+   },
+   "summary": "He is Adi, son of Hatim, come to replace the camel."
+  },
+  {
+   "id": "B14",
+   "t": 131.16,
+   "kind": "emotion",
+   "cue": {
+    "word": "دهش",
+    "t": 131.16
+   },
+   "summary": "The king is astonished: who told you?"
+  },
+  {
+   "id": "B15",
+   "t": 145.46,
+   "kind": "resolution",
+   "cue": {
+    "word": "وأمره",
+    "t": 145.46
+   },
+   "summary": "Hatim ordered his son in a dream to repay the guest."
+  },
+  {
+   "id": "B16",
+   "t": 156.58,
+   "kind": "moral",
+   "cue": {
+    "word": "كرم",
+    "t": 156.58
+   },
+   "summary": "The king rides on, thinking of a generosity that death did not end."
+  }
+ ],
+ "cast": [
+  {
+   "id": "hatim",
+   "name": "Hatim al-Tayy",
+   "library": "person",
+   "base": "person costume:'bedouin', age 0.6",
+   "look": "White robe with blue dots, YELLOW keffiyeh (pal.hc yellow, band black), grey beard, kind eyes. s 0.95 alive; as a vision s 1.15 drawn through ghostForm (pale blue tint, alpha 0.85, wavy hem, no feet).",
+   "new": false
+  },
+  {
+   "id": "king",
+   "name": "King Zu al-Kuraa of Himyar",
+   "library": "person",
+   "base": "person costume:'caliph', age 0.35 (black beard)",
+   "look": "Red robe, blue cape, turban crown. s 0.9. Smug half lids at first; the crown is his comic accessory (glints, hops, sits askew).",
+   "new": false
+  },
+  {
+   "id": "comp1",
+   "name": "first companion (sturdy, practical)",
+   "library": "person",
+   "base": "person costume:'servant', pal {robe: green}",
+   "look": "Green tunic, red flat cap, moustache. s 0.88. Steady, polite, a little embarrassed by his king.",
+   "new": false
+  },
+  {
+   "id": "comp2",
+   "name": "second companion (thin, nervous)",
+   "library": "person",
+   "base": "person costume:'villager', age 0.2, pal {robe: brown}",
+   "look": "Brown tunic, white wrapped cap. s 0.84. Sees the danger first, reacts first, eats fastest.",
+   "new": false
+  },
+  {
+   "id": "adi",
+   "name": "Adi son of Hatim",
+   "library": "person",
+   "base": "person costume:'bedouin', age 0.1",
+   "look": "The same white robe and YELLOW keffiyeh as his father (so the kinship reads without words), black short beard, blue sash. s 0.9.",
+   "new": false
+  },
+  {
+   "id": "traveler1",
+   "name": "old traveller",
+   "library": "person",
+   "base": "person costume:'villager', age 0.75, hold:'stick'",
+   "look": "Stooped old man, green tunic. Guest in S1 and frightened sleeper in S3.",
+   "new": false
+  },
+  {
+   "id": "traveler2",
+   "name": "boy traveller",
+   "library": "person",
+   "base": "person costume:'servant', child:true",
+   "look": "Small boy with a red cap. Guest in S1, sleeper in S3.",
+   "new": false
+  },
+  {
+   "id": "tribesman1",
+   "name": "tribesman of Tayy",
+   "library": "person",
+   "base": "person costume:'bedouin' default",
+   "look": "Default bedouin (white keffiyeh), s 0.7 on the ledge.",
+   "new": false
+  },
+  {
+   "id": "tribesman2",
+   "name": "tribesman of Tayy",
+   "library": "person",
+   "base": "person costume:'bedouin', pal {robe: blue-grey}, age 0.5",
+   "look": "Second bedouin in another robe colour, s 0.7.",
+   "new": false
+  },
+  {
+   "id": "kingCamel",
+   "name": "the king's she-camel",
+   "library": null,
+   "base": "planned camel (AN-044), pal 0 sandy",
+   "look": "Sandy camel with a red saddle cloth and yellow tassels, s 0.85. Needs the new couch, fall and thrash fields.",
+   "new": true
+  },
+  {
+   "id": "compCamel",
+   "name": "the companions' camel",
+   "library": null,
+   "base": "planned camel, pal 2 brown",
+   "look": "Darker brown, plain saddle, carries two riders in S13 and S14.",
+   "new": true
+  },
+  {
+   "id": "giftCamel",
+   "name": "the new she-camel",
+   "library": null,
+   "base": "planned camel, pal 1 cream",
+   "look": "Cream white, red tassels, yellow halter, long lashes, s 0.88: visibly finer than the one lost.",
+   "new": true
+  }
+ ],
+ "sets": [
+  {
+   "id": "hatimCamp",
+   "library": null,
+   "description": "The planned desertCamp (AN-044) by day with one tent only: tent on the left (mouth at x 300, ridge y 520), carpet mat x 480..820 on ground y 900, a jug and tray by the tent, Library sky day, sun and far dunes. World 1000 x 1230.",
+   "new": true
+  },
+  {
+   "id": "graveValley",
+   "library": null,
+   "description": "New set, world 1600 x 1230, ground y 900. Sky from skyCycle (dusk 0.45, night 0.72, first light 0.9). The planned mountain (KD-014) without snow cap or face fills the right: apex (1250, 110), base x 700..1600 at y 880. In front of it a rock ledge (spur): flat top at y 600 from x 1100 to x 1560, a walkable ramp from the ground at x 1000 up to (1100, 600), vertical rock face with dot shading below the top. On the ledge: grave mound 150 wide x 34 high centred x 1330, graveMarker (planned, AN-095; slab 44 x 80) standing behind the mound at x 1330, stoneFigure at x 1180 and x 1480 (feet y 600). Valley floor anchors: camel tether x 170, comp1 mat x 420, fire x 560 (planned desertCamp fire with a level field 0..1), comp2 mat x 700, king carpet hips (880, 892), travellers mats (S3) x 760 and x 900. Bake the rock and ground once per sky state; fire, glow and mist are live.",
+   "new": true
+  },
+  {
+   "id": "desertRoad",
+   "library": null,
+   "description": "The planned desertRoad travel strip (AN-095, AN-044): scrolling dunes in two parallax layers, ground y 900, small landmarks (rock, thorn bush, milestone) on a loop of 1400 units, sky from skyCycle (morning 0.08 to noon 0.25). Addition for this film: a far copy of the graveValley mountain with ledge and two statue ticks at 40 % scale on the left horizon (70 % scale in the final shot), on its own slow parallax layer.",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "stoneFigure",
+   "library": null,
+   "description": "Standing stone figure 150 tall x 64 wide at s 1 on a 76 x 22 plinth: a plain veiled robed shape (trapezoid body 60 to 44 wide and 96 high, round head r 22 under a hood line that falls to the shoulders), no face, grey with blue Ben-Day shading on the right side and two crack lines. Fields: rock (radians, for walking it into place), glow 0..1 (blue rim light at night, yellow in the final shot).",
+   "new": true
+  },
+  {
+   "id": "graveMarker",
+   "library": null,
+   "description": "Planned graveMarker (AN-095): rounded stone slab 44 x 80 with two carved lines, plus this film's earth mound (ellipse cap 150 x 34, brown with dark dots).",
+   "new": true
+  },
+  {
+   "id": "foodTray",
+   "library": null,
+   "description": "Planned foodTray (KD-011): brass tray with bread and dates; also a jug (60 tall) for the pour in S1.",
+   "new": true
+  },
+  {
+   "id": "smallBowl",
+   "library": null,
+   "description": "Planned smallBowl with its upturned state; used empty by the king (50.2) and by Hatim (93.18).",
+   "new": true
+  },
+  {
+   "id": "sword",
+   "library": null,
+   "description": "Straight sword 150 long: tapering white blade 14 wide with a blue edge line, yellow cross guard 44 wide, black grip 26. Fields: angle, glint 0..1 (four point star at the tip). Drawn at the hand from P.hands.",
+   "new": true
+  },
+  {
+   "id": "roastSpit",
+   "library": null,
+   "description": "Two forked sticks 90 tall set 150 apart over the fire with a spit bar carrying four brown meat chunks (rounded 26 x 20 boxes with red dot shading); field turn (radians) rolls the chunks; plus loose skewers (thin 70 long sticks with 0..3 chunks) for eating and for the pile.",
+   "new": true
+  },
+  {
+   "id": "rope",
+   "library": null,
+   "description": "Planned rope (lead) between a hand and a camel halter that sags or goes taut with the distance.",
+   "new": true
+  },
+  {
+   "id": "saddle",
+   "library": null,
+   "description": "The dead camel's saddle and red cloth as a separate object (about 150 x 90), from the planned camelLoad family: carried by comp2, dropped at 130.46.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 5.0,
+   "paragraphs": [
+    1
+   ],
+   "set": "hatimCamp",
+   "cast": [
+    "hatim",
+    "traveler1",
+    "traveler2"
+   ],
+   "summary": "Hatim alive: the host at his tent mouth feeds two dusty travellers. Plants his costume (yellow keffiyeh), his open-arms welcome pose and the GUESTS FED counter, all of which pay off later.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Start x 500, y 700, zoom 1.25; ease to zoom 1.5 centred on Hatim (x 430, y 720) from 3.4 to 4.8."
+   },
+   "composition": "Tent on the left third (mouth at x 300), carpet mat x 480..820 at ground y 900, Hatim at x 400 facing right, travellers enter from the right edge. Faces sit at y 640..720. Counter top right of the panel.",
+   "actions": [
+    {
+     "t": 0.0,
+     "cue": {
+      "word": "كان",
+      "t": 0.0
+     },
+     "who": "hatim",
+     "action": "Stands at the tent mouth (x 400, s 0.95), both arms open in welcome. This exact pose returns in the last scene.",
+     "acting": "Big smile, gaze toward the right edge where guests will come, slow blink, breathe().",
+     "library": "person {costume:'bedouin', pal, age:0.6, handL/handR: PERSON_HANDS.armsOut} + breathe, blink"
+    },
+    {
+     "t": 0.32,
+     "cue": {
+      "word": "حاتم",
+      "t": 0.32
+     },
+     "who": "lettering",
+     "action": "Label box HATIM AL-TAYY with an arrow to him pops in above his head (top left, not over the face); clears at 2.4.",
+     "acting": "Pop with a 10 % overshoot.",
+     "library": "style label + arrow, settleTo"
+    },
+    {
+     "t": 0.9,
+     "cue": {
+      "word": "الطائي",
+      "t": 0.9
+     },
+     "who": "traveler1",
+     "action": "Old traveller shuffles in from the right edge to x 640, stooped, leaning on a stick.",
+     "acting": "Tired: lid 0.5, tip 0.08, gaze on the ground then up to Hatim.",
+     "library": "person {costume:'villager', age:0.75, hold:'stick'} + walk(), footfalls dust"
+    },
+    {
+     "t": 1.62,
+     "cue": {
+      "word": "مشهورًا",
+      "t": 1.62
+     },
+     "who": "hatim",
+     "action": "Turns to the tent, comes back with a food tray and holds it out with both hands to the old man.",
+     "acting": "Anticipation dip 0.2 s before the reach; eyes on the guest, brows raised kindly (brow -0.3).",
+     "library": "person handLW/handRW on foodTray; anticipate(), lookAt()"
+    },
+    {
+     "t": 2.62,
+     "cue": {
+      "word": "بكرمه",
+      "t": 2.62
+     },
+     "who": "traveler2",
+     "action": "A boy runs in behind the old man (x 740); Hatim pours from a jug into a small bowl for him. Counter GUESTS FED ticks 1 then 2 (2.62, 3.1).",
+     "acting": "Boy: eyes wide, small hop of joy (hop 14, landSquash). Hatim bends to his height (tip 0.12).",
+     "library": "person {costume:'servant', child:true}; hop(), landSquash(); style counter"
+    },
+    {
+     "t": 3.42,
+     "cue": {
+      "word": "بين",
+      "t": 3.42
+     },
+     "who": "traveler1",
+     "action": "Both guests sit on the carpet and eat; the old man looks up at Hatim, chewing.",
+     "acting": "Sit blend 0..1 over 0.4 s staggered 0.15 s; grateful smile, wet eyes on the old man.",
+     "library": "person sit:1, seat:'floor'; stagger()"
+    },
+    {
+     "t": 3.82,
+     "cue": {
+      "word": "العرب.",
+      "t": 3.82
+     },
+     "who": "hatim",
+     "action": "Hand on chest, small bow to his guests; holds, content.",
+     "acting": "Lid 0.3, smile, head drop 6 px then level (settleTo).",
+     "library": "PERSON_HANDS.chest, settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.32,
+     "text": "HATIM AL-TAYY"
+    },
+    {
+     "t": 2.62,
+     "text": "GUESTS FED: 2"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 5.0
+   }
+  },
+  {
+   "id": "S2",
+   "start": 5.0,
+   "end": 13.8,
+   "paragraphs": [
+    1
+   ],
+   "set": "graveValley",
+   "cast": [
+    "tribesman1",
+    "tribesman2"
+   ],
+   "summary": "After his death: dusk on the mountain. Two tribesmen finish the grave on the rock ledge and set a stone figure at each side of it.",
+   "camera": {
+    "shot": "establishing",
+    "move": "crane",
+    "notes": "Start low on the valley floor (x 1100, y 760, zoom 1.25), crane up from 8.2 to 9.0 to the ledge (x 1330, y 520, zoom 1.6); from 12.6 pull out to zoom 1.0 (x 1100, y 615) so the whole mountain and the empty valley are seen."
+   },
+   "composition": "Ledge top at y 600 (x 1100..1560), grave mound centred x 1330, statues land at x 1180 and x 1480. Mountain apex (1250, 110) above. Tribesmen are small (s 0.7) so the statues (150 tall) read as large.",
+   "actions": [
+    {
+     "t": 5.0,
+     "cue": {
+      "word": "وبعد",
+      "t": 5.08
+     },
+     "who": "set",
+     "action": "Dissolve from the bright tent to the mountain; the sky runs from day to dusk (skyCycle u 0.25 to 0.45 over 1.2 s).",
+     "acting": "The warmth drains from the picture: this is the only dissolve in the film.",
+     "library": "skyCycle(ctx, u), kfn"
+    },
+    {
+     "t": 5.72,
+     "cue": {
+      "word": "موته",
+      "t": 5.72
+     },
+     "who": "tribesman1",
+     "action": "Two tribesmen stand at a fresh earth mound on the ledge, heads bowed.",
+     "acting": "Head drop, lid 0.6, wet eyes; they do not move in unison (0.2 s apart).",
+     "library": "person {costume:'bedouin'} wet, lid; stagger()"
+    },
+    {
+     "t": 6.36,
+     "cue": {
+      "word": "دفنه",
+      "t": 6.36
+     },
+     "who": "tribesman2",
+     "action": "Kneels and pats the last earth onto the mound; the grave marker stone is pushed upright behind it and settles.",
+     "acting": "Slow, careful hands (reachBoth); marker overshoots 4 degrees and settles.",
+     "library": "person kneel:1, PERSON_HANDS.reachBoth; settleTo; graveMarker"
+    },
+    {
+     "t": 7.44,
+     "cue": {
+      "word": "قومه",
+      "t": 7.44
+     },
+     "who": "tribesman1",
+     "action": "Wipes one eye with the back of his hand, then looks out over the valley.",
+     "acting": "One tear, long blink, a breath.",
+     "library": "handR to the eye (armTo), wet:true, breathe()"
+    },
+    {
+     "t": 8.2,
+     "cue": {
+      "word": "فوق",
+      "t": 8.2
+     },
+     "who": "camera",
+     "action": "Crane up the rock face to the ledge so the height of the burial place is felt.",
+     "acting": "Eased move, 0.8 s, lands on the grave.",
+     "library": "CAM keys"
+    },
+    {
+     "t": 8.66,
+     "cue": {
+      "word": "جبل،",
+      "t": 8.66
+     },
+     "who": "lettering",
+     "action": "Arrow and label HATIM'S GRAVE point at the mound from the upper left; clears at 10.6.",
+     "acting": "Pop on the word.",
+     "library": "style label + arrow"
+    },
+    {
+     "t": 9.16,
+     "cue": {
+      "word": "ووضعوا",
+      "t": 9.16
+     },
+     "who": "tribesman1",
+     "action": "Both men walk a tall stone figure in from the left edge of the ledge, rocking it corner to corner, and set it down at x 1180.",
+     "acting": "Effort: tip 0.15 against the load, sq 0.94 on each shove; a small dust ring where it lands (visual only).",
+     "library": "stoneFigure {rock}; walk(); dustBurst; impactSquash on the statue"
+    },
+    {
+     "t": 10.74,
+     "end": 11.4,
+     "cue": {
+      "word": "قبره",
+      "t": 10.74
+     },
+     "who": "set",
+     "action": "The camera settles with the grave centred between the first statue and the empty place on the right.",
+     "acting": "A beat of asymmetry that the second statue will complete.",
+     "library": "CAM keys"
+    },
+    {
+     "t": 11.56,
+     "cue": {
+      "word": "تمثالين",
+      "t": 11.56
+     },
+     "who": "tribesman2",
+     "action": "The second figure is set down at x 1480. Small 1 and 2 pop over the statues.",
+     "acting": "Same rocking walk, a little quicker; both men step back and look.",
+     "library": "stoneFigure; style counter or two labels"
+    },
+    {
+     "t": 12.84,
+     "cue": {
+      "word": "الحجر.",
+      "t": 12.84
+     },
+     "who": "tribesman1",
+     "action": "The men bow to the grave and walk off down the ramp; the two stone figures stand guard alone as the sky darkens.",
+     "acting": "Exit staggered; statues get a thin blue rim light (glow 0 to 0.4).",
+     "library": "walk(), footfalls; stoneFigure glow; skyCycle u 0.45 to 0.6"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 8.66,
+     "text": "HATIM'S GRAVE"
+    },
+    {
+     "t": 11.56,
+     "text": "1  2"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 13.8
+   }
+  },
+  {
+   "id": "S3",
+   "start": 13.8,
+   "end": 22.56,
+   "paragraphs": [
+    1
+   ],
+   "set": "graveValley",
+   "cast": [
+    "traveler1",
+    "traveler2"
+   ],
+   "summary": "Night in the valley under the grave. The old traveller and the boy from S1 bed down, hear the wailing from the ledge and sit up all night clinging to each other.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Start medium on the travellers (x 820, y 780, zoom 1.5); pull out at 16.9 to zoom 1.0 (x 1100, y 615) so the dark ledge and statues are above them; hold."
+   },
+   "composition": "Travellers on mats at x 760 and x 900, ground y 900, lower left. Ledge and statues upper right, moon upper left at (760, 170). Sound arcs travel on the diagonal from the grave to the sleepers.",
+   "actions": [
+    {
+     "t": 13.8,
+     "cue": {
+      "word": "كان",
+      "t": 13.8
+     },
+     "who": "set",
+     "action": "Full night: stars, moon, navy ground tint; statues in blue rim light.",
+     "acting": "Still and quiet.",
+     "library": "skyCycle u 0.72; dayCycle(u).night tint"
+    },
+    {
+     "t": 14.44,
+     "cue": {
+      "word": "المسافرون",
+      "t": 14.44
+     },
+     "who": "traveler1",
+     "action": "The old man and the boy walk in from the left with bundles, the boy dragging his feet.",
+     "acting": "Boy yawns (mouth o, lid 0.7); old man pats his head.",
+     "library": "walk(), footfalls; person child:true"
+    },
+    {
+     "t": 16.0,
+     "cue": {
+      "word": "ينامون",
+      "t": 16.0
+     },
+     "who": "traveler2",
+     "action": "They lie down on their mats; eyes close; three small Z rise from the boy.",
+     "acting": "lie 0..1 over 0.5 s, boy first; lid 1; breathe() on both.",
+     "library": "person lie:1, lid:1; breathe()"
+    },
+    {
+     "t": 16.94,
+     "cue": {
+      "word": "الوادي",
+      "t": 16.94
+     },
+     "who": "camera",
+     "action": "Pull out to the wide shot: two small sleepers under the big dark ledge.",
+     "acting": "Eased 0.6 s.",
+     "library": "CAM keys"
+    },
+    {
+     "t": 17.48,
+     "cue": {
+      "word": "يسمعون",
+      "t": 17.48
+     },
+     "who": "fx",
+     "action": "Sound arcs leave the grave and travel down to the sleepers; the old man opens one eye.",
+     "acting": "Only the one eye moves (suspense by stillness).",
+     "library": "sound arcs drawn at the source and travelling (Lark soundArcs pattern); person wink:'R' with lid 1"
+    },
+    {
+     "t": 18.62,
+     "cue": {
+      "word": "بكاء",
+      "t": 18.62
+     },
+     "who": "lettering",
+     "action": "Wavy WAAAH... rises from the grave in blue (not over any face); the old man sits up and cups an ear toward the ledge.",
+     "acting": "Sit-up overshoots and settles; gaze on the grave.",
+     "library": "PERSON_HANDS.cupEar; settleTo; lookAt()"
+    },
+    {
+     "t": 19.24,
+     "cue": {
+      "word": "غريبًا",
+      "t": 19.24
+     },
+     "who": "traveler2",
+     "action": "The boy sits bolt upright and grabs the old man; both tremble.",
+     "acting": "Eyes wide, mouth o, sq 0.9; tremble(t, 2).",
+     "library": "tremble(); handLW on the old man"
+    },
+    {
+     "t": 20.26,
+     "cue": {
+      "word": "طوال",
+      "t": 20.26
+     },
+     "who": "set",
+     "action": "Time lapse: the moon slides across the sky (u 0.68 to 0.8) while the two sit frozen with one blanket pulled up to their noses; the arcs keep coming.",
+     "acting": "Only their pupils follow the arcs; blinks suppressed.",
+     "library": "skyCycle with kfn; gazePlan saccades"
+    },
+    {
+     "t": 20.84,
+     "cue": {
+      "word": "الليل.",
+      "t": 20.84
+     },
+     "who": "traveler1",
+     "action": "Both turn their eyes to the lens and gulp.",
+     "acting": "The one look to camera of the first act: gaze [0, 0.05], small head drop pulse.",
+     "library": "gaze [0, 0.05]; pulse()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 16.2,
+     "text": "Z Z Z"
+    },
+    {
+     "t": 18.62,
+     "text": "WAAAH..."
+    }
+   ],
+   "sfx": [
+    {
+     "t": 22.0,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 22.56
+   }
+  },
+  {
+   "id": "S4",
+   "start": 22.56,
+   "end": 30.2,
+   "paragraphs": [
+    2
+   ],
+   "set": "graveValley",
+   "cast": [
+    "king",
+    "comp1",
+    "comp2",
+    "kingCamel"
+   ],
+   "summary": "Another evening. King Zu al-Kuraa rides his she-camel into the valley, chin high, with two companions on foot; they stop under the ledge to camp.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Start at the left of the set (x 520, y 650, zoom 1.1) following the camel; pan right from 27.4 to 28.6 to x 1000 so the ledge, grave and statues come into frame above the party; hold."
+   },
+   "composition": "Camel enters from the left edge and stops at x 620 (it is later tethered at x 170). King rides at camel height (head near y 520). Companions trail at x -80 and -200 behind. Labels in the sky top left.",
+   "actions": [
+    {
+     "t": 22.56,
+     "cue": {
+      "word": "مر",
+      "t": 22.56
+     },
+     "who": "kingCamel",
+     "action": "The she-camel paces in from the left with the king riding, tassels and tail swinging a beat late.",
+     "acting": "Pacing gait from walk(); head bob; slow blink with long lashes.",
+     "library": "camel {ph, amp, rider} via walk(); footfalls with soft dust"
+    },
+    {
+     "t": 23.2,
+     "cue": {
+      "word": "ملك",
+      "t": 23.2
+     },
+     "who": "king",
+     "action": "The king sits tall behind the hump, one hand on the saddle horn, crown glinting once.",
+     "acting": "Chin up, lid 0.4 (smug), small smile; he bobs a beat after the camel.",
+     "library": "person {costume:'caliph', age:0.35, sit:1, seat:'bench'}; rider follows the camel with lurch()"
+    },
+    {
+     "t": 24.68,
+     "cue": {
+      "word": "حمير",
+      "t": 24.68
+     },
+     "who": "lettering",
+     "action": "Label box KING OF HIMYAR pops top left.",
+     "acting": "Pop.",
+     "library": "style label"
+    },
+    {
+     "t": 26.38,
+     "cue": {
+      "word": "ذو",
+      "t": 26.38
+     },
+     "who": "lettering",
+     "action": "The label changes to ZU AL-KURAA with an arrow to the king; clears at 28.4.",
+     "acting": "Pop; arrow tip above the crown.",
+     "library": "style label + arrow"
+    },
+    {
+     "t": 27.42,
+     "cue": {
+      "word": "بذلك",
+      "t": 27.42
+     },
+     "who": "camera",
+     "action": "Pan right: the ledge with the grave and the two statues rises into frame above the riders.",
+     "acting": "The king does not look up; comp2 does.",
+     "library": "CAM keys"
+    },
+    {
+     "t": 28.78,
+     "cue": {
+      "word": "مع",
+      "t": 28.78
+     },
+     "who": "comp1",
+     "action": "The two companions walk in behind: comp1 sturdy with a bundle on his shoulder, comp2 thin, glancing up at the statues and stepping closer to comp1.",
+     "acting": "comp1 gaze ahead, steady; comp2 gaze plan statue, comp1, statue; shoulders up.",
+     "library": "person {costume:'servant'} and {costume:'villager', age:0.2}; walk(), footfalls; gazePlan"
+    },
+    {
+     "t": 29.14,
+     "cue": {
+      "word": "أصحابه.",
+      "t": 29.14
+     },
+     "who": "kingCamel",
+     "action": "The camel stops and folds down to the couched position; the king steps off with a little hop.",
+     "acting": "Stop with lurch; couch 0..1 over 0.6 s front knees first; king hop 20 with landSquash at 29.9.",
+     "library": "camel couch (new field); lurch(); hop(), landSquash()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 24.68,
+     "text": "KING OF HIMYAR"
+    },
+    {
+     "t": 26.38,
+     "text": "ZU AL-KURAA"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 30.2
+   }
+  },
+  {
+   "id": "S5",
+   "start": 30.2,
+   "end": 42.26,
+   "paragraphs": [
+    2
+   ],
+   "set": "graveValley",
+   "cast": [
+    "king",
+    "comp1",
+    "comp2"
+   ],
+   "summary": "The king hears the wailing and asks; comp1 whispers that it comes from the side of the grave of Hatim. The king looks up at the mountain, and laughs.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "tilt",
+    "notes": "twoShot(king, comp1) at zoom 1.5 (centre near x 800, y 730); tilt up to the grave at 36.6 (x 1250, y 540, zoom 1.4), hold to 39.6; cut back to a medium close on the king (x 800, y 700, zoom 1.9) for the laugh, with the companions cropped in at frame left."
+   },
+   "composition": "King at x 840 facing right (toward the ledge), comp1 at x 720, comp2 at x 640 half behind comp1. Keep all three heads in frame for the laugh so that the two who do not laugh are seen.",
+   "actions": [
+    {
+     "t": 30.38,
+     "cue": {
+      "word": "سمع",
+      "t": 30.38
+     },
+     "who": "fx",
+     "action": "Sound arcs come down from the grave; the king stops mid step and tilts his head.",
+     "acting": "Head tilt 5 px toward the sound, then PERSON_HANDS.cupEar.",
+     "library": "sound arcs; PERSON_HANDS.cupEar; anticipate()"
+    },
+    {
+     "t": 31.44,
+     "cue": {
+      "word": "الصوت،",
+      "t": 31.44
+     },
+     "who": "comp2",
+     "action": "Small blue WAAAH... over the ledge; comp2 flinches and trembles.",
+     "acting": "sq 0.92, eyes wide, tremble(t, 1.5).",
+     "library": "tremble(); settleTo"
+    },
+    {
+     "t": 32.08,
+     "cue": {
+      "word": "فسأل",
+      "t": 32.08
+     },
+     "who": "king",
+     "action": "The king turns to comp1 with both palms up: what is that?",
+     "acting": "brow -0.5 (raised), talk 0.7, gaze on comp1; comp1 looks back (eye contact).",
+     "library": "PERSON_HANDS.palmsUp; lookAt() both ways"
+    },
+    {
+     "t": 34.0,
+     "cue": {
+      "word": "أخبروه",
+      "t": 34.0
+     },
+     "who": "comp1",
+     "action": "comp1 leans in and whispers behind a cupped hand.",
+     "acting": "tip 0.1 toward the king, lid 0.3, talk 0.5; glances once at the ledge.",
+     "library": "PERSON_HANDS.cupMouth; gazePlan"
+    },
+    {
+     "t": 35.44,
+     "cue": {
+      "word": "يأتي",
+      "t": 35.44
+     },
+     "who": "comp1",
+     "action": "He raises his arm and points up at the ledge; comp2 nods fast behind him.",
+     "acting": "Arm angle for a big readable shape (aR about [2.45, 2.85] toward the ledge); comp2 three quick nods.",
+     "library": "person aR angles; pulse() nods"
+    },
+    {
+     "t": 36.78,
+     "cue": {
+      "word": "قبر",
+      "t": 36.78
+     },
+     "who": "camera",
+     "action": "Tilt up to the grave between its statues; arrow and label HATIM'S GRAVE again, as planted in S2.",
+     "acting": "Hold 0.8 s on the still stones.",
+     "library": "CAM keys; style label + arrow"
+    },
+    {
+     "t": 37.92,
+     "cue": {
+      "word": "نظر",
+      "t": 37.92
+     },
+     "who": "king",
+     "action": "The king looks up at the mountain. For one second only his pupils move, from one statue to the grave to the other statue.",
+     "acting": "Stillness; gazePlan with 0.07 ease (saccades); no blink.",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 39.76,
+     "cue": {
+      "word": "الجبل",
+      "t": 39.76
+     },
+     "who": "king",
+     "action": "Cut back to the king: the corner of his mouth twitches into a smirk.",
+     "acting": "mouth 'smile' ramp with brow -0.4 (sly), anticipation dip 0.3 s before the laugh.",
+     "library": "anticipate(); person mouth, brow"
+    },
+    {
+     "t": 40.28,
+     "cue": {
+      "word": "وضحك.",
+      "t": 40.28
+     },
+     "who": "king",
+     "action": "He throws his head back and laughs, shoulders bouncing; HA HA HA! pops beside him (not over the companions).",
+     "acting": "Head back 8 px, mouth open, sq oscillating 1.0 to 0.95 at 6 Hz for 1.2 s, lid 1 on the peaks.",
+     "library": "person talk:1, sq; pulse()"
+    },
+    {
+     "t": 40.9,
+     "cue": {
+      "word": "وضحك.",
+      "t": 40.28
+     },
+     "who": "comp2",
+     "action": "The companions do not laugh: comp2 looks from the king to the grave; comp1 gives a thin polite smile and looks at his feet.",
+     "acting": "comp2 brow -0.6, mouth frown; comp1 lid 0.5. Reactions 4 and 9 frames after the laugh.",
+     "library": "stagger(); gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 31.44,
+     "text": "WAAAH..."
+    },
+    {
+     "t": 36.78,
+     "text": "HATIM'S GRAVE"
+    },
+    {
+     "t": 40.4,
+     "text": "HA HA HA!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 41.8,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 42.26
+   }
+  },
+  {
+   "id": "S6",
+   "start": 42.26,
+   "end": 53.2,
+   "paragraphs": [
+    3
+   ],
+   "set": "graveValley",
+   "cast": [
+    "king",
+    "comp1",
+    "comp2"
+   ],
+   "summary": "The joke: the king swaggers to the foot of the ledge and calls up to the dead host that his guests are hungry and asks where dinner is. The grave gives no answer.",
+   "camera": {
+    "shot": "full",
+    "move": "tilt",
+    "notes": "Low angle: x 1020, y 660, zoom 1.25, with the king small at lower left and the grave high at upper right. Push to zoom 1.6 on the king at 49.2 for the belly and bowl business; at 52.0 tilt up to the statues (x 1330, y 500, zoom 1.7)."
+   },
+   "composition": "King at x 930 (foot of the ramp, x 1000) facing right and up; companions behind at x 760 and x 690. The diagonal king to grave is the eye line of the whole scene.",
+   "actions": [
+    {
+     "t": 42.26,
+     "cue": {
+      "word": "قال",
+      "t": 42.26
+     },
+     "who": "king",
+     "action": "The king strides three steps to the foot of the ramp.",
+     "acting": "Chest out (sq 1.04), arms swinging.",
+     "library": "walk(), footfalls"
+    },
+    {
+     "t": 43.56,
+     "cue": {
+      "word": "مازحًا:",
+      "t": 43.56
+     },
+     "who": "king",
+     "action": "He winks back at his men: watch this.",
+     "acting": "wink 'R', smirk; comp1 answers with a forced half smile, comp2 with none.",
+     "library": "person wink:'R'; stagger()"
+    },
+    {
+     "t": 45.18,
+     "cue": {
+      "word": "حاتم،",
+      "t": 45.18
+     },
+     "who": "king",
+     "action": "Cups both hands to his mouth and calls up to the grave.",
+     "acting": "tip -0.1 (leans back to shout upward), talk 1, gaze on the marker.",
+     "library": "PERSON_HANDS.cupMouth both hands; lookAt()"
+    },
+    {
+     "t": 46.94,
+     "cue": {
+      "word": "ضيوفك",
+      "t": 46.94
+     },
+     "who": "king",
+     "action": "Sweeps both arms wide over himself and his men: we are your guests.",
+     "acting": "Arms out with overshoot; comp2 holds up both hands and shakes his head (not me).",
+     "library": "PERSON_HANDS.armsOut, settleTo; comp2 PERSON_HANDS.shield"
+    },
+    {
+     "t": 47.98,
+     "cue": {
+      "word": "الليلة،",
+      "t": 47.98
+     },
+     "who": "king",
+     "action": "Points down at the ground twice: tonight, here.",
+     "acting": "Two short jabs.",
+     "library": "PERSON_HANDS.pointDown; pulse()"
+    },
+    {
+     "t": 49.46,
+     "cue": {
+      "word": "أصابنا",
+      "t": 49.46
+     },
+     "who": "king",
+     "action": "Pats his belly with both hands and pulls a mock sad face.",
+     "acting": "mouth frown, brow -0.8, lid 0.4; belly pats as sq pulses 0.97.",
+     "library": "handL/handR on the belly (body local about [±14, -110]); pulse()"
+    },
+    {
+     "t": 50.2,
+     "cue": {
+      "word": "الجوع.",
+      "t": 50.2
+     },
+     "who": "king",
+     "action": "Takes an empty bowl from his sash and turns it upside down: one crumb falls out.",
+     "acting": "Eyes follow the crumb down, then flick up to the grave.",
+     "library": "smallBowl upturned; fallY for the crumb; gazePlan"
+    },
+    {
+     "t": 50.74,
+     "cue": {
+      "word": "أين",
+      "t": 50.74
+     },
+     "who": "king",
+     "action": "Palms up, he looks left and right in a show of searching: where is it?",
+     "acting": "Saccades left, right, up; shrug (shoulders 4 px).",
+     "library": "PERSON_HANDS.palmsUp; gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 52.22,
+     "cue": {
+      "word": "الضيوف؟»",
+      "t": 52.22
+     },
+     "who": "camera",
+     "action": "Tilt up to the grave. Nothing moves. One pebble rolls off the ledge and ticks down the rock.",
+     "acting": "Suspense by stillness; the statues seem to look down (they have no eyes: it is the angle).",
+     "library": "CAM keys; fallY for the pebble"
+    },
+    {
+     "t": 52.7,
+     "cue": {
+      "word": "الضيوف؟»",
+      "t": 52.22
+     },
+     "who": "comp2",
+     "action": "In the corner of the frame comp2 tugs comp1 by the sleeve and nods toward the way out.",
+     "acting": "Small, fast; comp1 shrugs.",
+     "library": "handRW on the sleeve"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 53.2
+   }
+  },
+  {
+   "id": "S7",
+   "start": 53.2,
+   "end": 60.78,
+   "paragraphs": [
+    3
+   ],
+   "set": "graveValley",
+   "cast": [
+    "king",
+    "comp1",
+    "comp2"
+   ],
+   "summary": "The king beds down nearest the grave and sleeps, pleased with himself. The fire dies. A thin blue mist comes down from the grave to the sleeper.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide at x 1100, y 615, zoom 1.0 (frame x 600..1600: comp2, the king, ramp, ledge, grave); from 58.2 push in slowly on the king to zoom 1.5 (x 900, y 760)."
+   },
+   "composition": "King lies on a carpet with hips at (880, 892), head toward the left. comp2 on a mat at x 700; comp1 and the fire (x 560) are at the frame edge; the camel is off frame left at x 170. Grave upper right.",
+   "actions": [
+    {
+     "t": 53.34,
+     "cue": {
+      "word": "ثم",
+      "t": 53.34
+     },
+     "who": "king",
+     "action": "Night falls (u 0.5 to 0.72 in 0.8 s). The king yawns hugely and stretches.",
+     "acting": "mouth o, lids sinking, arms up by angle (aL/aR about [±2.45, ±2.85]).",
+     "library": "skyCycle kfn; person aL/aR"
+    },
+    {
+     "t": 53.82,
+     "cue": {
+      "word": "نام",
+      "t": 53.82
+     },
+     "who": "king",
+     "action": "He lies down on the carpet and pulls a blanket to his chin.",
+     "acting": "lie 0..1 over 0.5 s, lid 1, a satisfied smile.",
+     "library": "person lie:1, lid:1; blanket drawn by the scene"
+    },
+    {
+     "t": 54.66,
+     "cue": {
+      "word": "القبر،",
+      "t": 54.66
+     },
+     "who": "camera",
+     "action": "Wide: the sleeper is directly under the grave on its ledge.",
+     "acting": "The composition says: close to it.",
+     "library": "CAM keys"
+    },
+    {
+     "t": 55.32,
+     "cue": {
+      "word": "ولم",
+      "t": 55.32
+     },
+     "who": "comp2",
+     "action": "comp2 lies with one eye open on the grave; comp1 is already snoring at the frame edge.",
+     "acting": "wink 'L' with lid 1 (the Thief peek); pupil on the marker.",
+     "library": "person lie:1, wink:'L'"
+    },
+    {
+     "t": 56.06,
+     "cue": {
+      "word": "يتوقع",
+      "t": 56.06
+     },
+     "who": "set",
+     "action": "The fire burns down to embers; Z Z Z rises from the king.",
+     "acting": "Fire level 1 to 0.3; the warm light circle shrinks.",
+     "library": "fire field; kfn"
+    },
+    {
+     "t": 57.08,
+     "cue": {
+      "word": "يحدث",
+      "t": 57.08
+     },
+     "who": "fx",
+     "action": "A thin wisp of blue mist rises from the grave marker; the statues take a blue rim.",
+     "acting": "Slow; two tapering bands on a bezier, 30 % opacity.",
+     "library": "ghostForm mist stage; stoneFigure glow"
+    },
+    {
+     "t": 57.62,
+     "cue": {
+      "word": "شيء",
+      "t": 57.62
+     },
+     "who": "fx",
+     "action": "The mist slides down the ramp toward the sleepers; comp2 shuts his open eye tight and pulls the blanket over his head.",
+     "acting": "comp2: lid 1, sq 0.9, a tremble under the blanket.",
+     "library": "bezier path with kfn; tremble()"
+    },
+    {
+     "t": 58.9,
+     "cue": {
+      "word": "كلامه.",
+      "t": 58.9
+     },
+     "who": "king",
+     "action": "The mist reaches the king and curls round his head; his smile goes, his brow knits, his lids quiver.",
+     "acting": "mouth closed then frown, brow -0.6, lid 1 with a 2 px quiver; breathing quickens.",
+     "library": "person brow, mouth; breathe() at double rate"
+    },
+    {
+     "t": 60.3,
+     "who": "fx",
+     "action": "Hold on the frowning sleeper in the pause; a single low thud from off frame left.",
+     "acting": "Nothing else moves.",
+     "library": "score(): one quiet thud"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 56.2,
+     "text": "Z Z Z"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 60.3,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 60.78
+   }
+  },
+  {
+   "id": "S8",
+   "start": 60.78,
+   "end": 72.9,
+   "paragraphs": [
+    4
+   ],
+   "set": "graveValley",
+   "cast": [
+    "king",
+    "comp1",
+    "comp2",
+    "kingCamel"
+   ],
+   "summary": "The king wakes in terror and shouts to save his she-camel. The men run to her and find her collapsing and thrashing.",
+   "camera": {
+    "shot": "close",
+    "move": "whip",
+    "notes": "Smash cut to a close up of the king (x 860, y 800, zoom 2.4); pull to zoom 1.5 as he sits up; at 66.9 whip pan left (0.25 s) to the camel at x 170 (x 500, y 700, zoom 1.15); panel-only shake on the fall at 71.0."
+   },
+   "composition": "King at hips (880, 892). Camel tethered at x 170 facing right. Men run right to left and stop at x 420 and x 500, so the camel has the left half of the frame for the fall.",
+   "actions": [
+    {
+     "t": 60.78,
+     "cue": {
+      "word": "فجأة",
+      "t": 60.78
+     },
+     "who": "king",
+     "action": "Close up: his eyes snap open.",
+     "acting": "eyes 'wide', noBlink, pupils small; 2 frame white flash on the cut.",
+     "library": "person eyes wide, noBlink:true"
+    },
+    {
+     "t": 61.7,
+     "cue": {
+      "word": "استيقظ",
+      "t": 61.7
+     },
+     "who": "king",
+     "action": "He bolts upright; the blanket flies off.",
+     "acting": "lie 1 to 0 into sit in 0.2 s with a 10 % overshoot; blanket on a fallY arc.",
+     "library": "settleTo; person sit:1, seat:'floor'"
+    },
+    {
+     "t": 62.94,
+     "cue": {
+      "word": "مذعورًا،",
+      "t": 62.94
+     },
+     "who": "king",
+     "action": "He shakes, hands to his head, and for a moment stares straight at the lens.",
+     "acting": "tremble(t, 3), wet eyes, PERSON_HANDS.headHold, gaze [0, 0.05] for 0.5 s.",
+     "library": "tremble(); PERSON_HANDS.headHold"
+    },
+    {
+     "t": 63.84,
+     "cue": {
+      "word": "وصاح",
+      "t": 63.84
+     },
+     "who": "king",
+     "action": "He shouts with a hand cupped to his mouth; MY CAMEL! bursts above him.",
+     "acting": "talk 1, tip 0.12 forward, brow -1.",
+     "library": "PERSON_HANDS.cupMouth; style emphasis"
+    },
+    {
+     "t": 65.12,
+     "cue": {
+      "word": "بأصحابه",
+      "t": 65.12
+     },
+     "who": "comp2",
+     "action": "The companions wake: comp2 at once (he was hardly asleep), comp1 groggy, two beats later.",
+     "acting": "comp2 sits up in 3 frames; comp1 one eye, then the other, rubs his face.",
+     "library": "stagger(); wink then lid ramp"
+    },
+    {
+     "t": 66.36,
+     "cue": {
+      "word": "ينقذوا",
+      "t": 66.36
+     },
+     "who": "king",
+     "action": "The king shakes comp1 by the shoulder with one hand and points hard to the left with the other.",
+     "acting": "Point by arm angle so it reads; gaze left.",
+     "library": "person aL angle, handRW on comp1"
+    },
+    {
+     "t": 66.98,
+     "cue": {
+      "word": "ناقته.",
+      "t": 66.98
+     },
+     "who": "camera",
+     "action": "Whip pan left to the she-camel: standing, swaying, legs splayed, eyes rolling.",
+     "acting": "Camel sways on a 1.2 Hz sine, neck low, tip 0.06 either way.",
+     "library": "CAM keys; camel sway via tip"
+    },
+    {
+     "t": 68.0,
+     "cue": {
+      "word": "أسرع",
+      "t": 68.0
+     },
+     "who": "comp1",
+     "action": "The two men wind up on the spot and sprint toward her, dust behind.",
+     "acting": "Run in place 0.3 s then release; arms pumping; comp2 a stride ahead.",
+     "library": "runInPlace; walk() at run amplitude; footfalls, dustBurst"
+    },
+    {
+     "t": 69.48,
+     "cue": {
+      "word": "فوجدوها",
+      "t": 69.48
+     },
+     "who": "comp2",
+     "action": "They skid to a stop a body length from her, arms flung up.",
+     "acting": "lurch on the stop; PERSON_HANDS.shield; eyes wide.",
+     "library": "lurch(); PERSON_HANDS.shield"
+    },
+    {
+     "t": 70.62,
+     "cue": {
+      "word": "تسقط",
+      "t": 70.62
+     },
+     "who": "kingCamel",
+     "action": "Her knees buckle; she teeters and crashes onto her side. THUD! in the dust column.",
+     "acting": "Front knees fold first, held brink 0.15 s, then fall 0..1 with acceleration; 2 frame deep squash, rebound, settle; panel shake.",
+     "library": "camel fall (new field); fallY, impactSquash, rebound; dustBurst; panel-only shake"
+    },
+    {
+     "t": 71.28,
+     "cue": {
+      "word": "وتضطرب",
+      "t": 71.28
+     },
+     "who": "kingCamel",
+     "action": "She thrashes: legs kick the air, the neck whips up and drops.",
+     "acting": "thrash 1: legs on a 5 Hz seeded cycle, dust on every kick.",
+     "library": "camel thrash (new field); K.noise; dustBurst"
+    },
+    {
+     "t": 72.2,
+     "cue": {
+      "word": "بشدة.",
+      "t": 72.2
+     },
+     "who": "king",
+     "action": "The king runs in at the right edge and stops with both hands on his cheeks as she heaves hardest.",
+     "acting": "PERSON_HANDS.cheeks, mouth o, wet eyes; comp2 jumps back a step.",
+     "library": "walk(); PERSON_HANDS.cheeks; hop()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 63.9,
+     "text": "MY CAMEL!"
+    },
+    {
+     "t": 70.9,
+     "text": "THUD!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 72.9
+   }
+  },
+  {
+   "id": "S9",
+   "start": 72.9,
+   "end": 81.68,
+   "paragraphs": [
+    4
+   ],
+   "set": "graveValley",
+   "cast": [
+    "king",
+    "comp1",
+    "comp2",
+    "kingCamel"
+   ],
+   "summary": "They cannot save her. The slaughter is not shown: the camera goes up to the grave and comes down to a blazing fire and a roasting spit. The hungry guests eat until they are full, and the GUESTS FED counter from S1 ticks again.",
+   "camera": {
+    "shot": "wide",
+    "move": "tilt",
+    "notes": "x 480, y 700, zoom 1.2 on the fallen camel and the men; at 75.4 tilt and pan up right to the grave (x 1330, y 520, zoom 1.5), hold 1.2 s; at 76.9 come down to the camp fire (x 640, y 760, zoom 1.4) and hold."
+   },
+   "composition": "Camel on her side at x 170..420. After the tilt the camp is re-dressed: fire at x 560 with the spit over it, the three men seated round it at x 420, 700 and 820; an empty saddle and coiled rope sit at the frame edge (x 330) in place of the camel.",
+   "actions": [
+    {
+     "t": 72.94,
+     "cue": {
+      "word": "لم",
+      "t": 72.94
+     },
+     "who": "comp1",
+     "action": "The two companions get their arms under her neck and shoulder and heave.",
+     "acting": "Anticipation crouch, then stretch; she lifts 20 units and sags back.",
+     "library": "PERSON_HANDS.reachBoth; anticipate(); settleTo"
+    },
+    {
+     "t": 73.7,
+     "cue": {
+      "word": "يستطيعوا",
+      "t": 73.7
+     },
+     "who": "comp2",
+     "action": "A second, weaker heave; her kicking fades and her eyelids sink.",
+     "acting": "camel thrash 1 to 0.15, lid 0.7; comp2 lets go first.",
+     "library": "camel thrash, lid"
+    },
+    {
+     "t": 74.52,
+     "cue": {
+      "word": "إنقاذها،",
+      "t": 74.52
+     },
+     "who": "comp1",
+     "action": "comp1 turns to the king with empty palms and shakes his head; the king lowers his head and nods once.",
+     "acting": "King: slow head drop, wet eyes, long blink (grief to resolve pattern).",
+     "library": "PERSON_HANDS.palmsUp; wet, lid"
+    },
+    {
+     "t": 75.56,
+     "cue": {
+      "word": "فذبحوها",
+      "t": 75.56
+     },
+     "who": "camera",
+     "action": "The camera leaves them: it tilts up to the grave and the two statues under the moon and holds there for the word.",
+     "acting": "The act itself is never on screen; no knife, no blood.",
+     "library": "CAM keys"
+    },
+    {
+     "t": 77.04,
+     "cue": {
+      "word": "وشووا",
+      "t": 77.04
+     },
+     "who": "set",
+     "action": "Tilt down to the camp: the fire is blazing again and comp1 turns a spit of meat over it; smoke curls up toward the ledge.",
+     "acting": "Fire level 0.3 to 1; spit angle from t; three wavy heat lines.",
+     "library": "roastSpit turn; fire field"
+    },
+    {
+     "t": 77.92,
+     "cue": {
+      "word": "لحمها",
+      "t": 77.92
+     },
+     "who": "king",
+     "action": "The king sits apart with his arms folded; his nose lifts toward the smell in spite of himself.",
+     "acting": "PERSON_HANDS.folded, gaze slides to the spit and away, twice.",
+     "library": "PERSON_HANDS.folded; gazePlan"
+    },
+    {
+     "t": 78.68,
+     "cue": {
+      "word": "وأكلوا",
+      "t": 78.68
+     },
+     "who": "comp2",
+     "action": "All three eat from skewers: comp2 fast, comp1 steadily, the king a first small bite and then a big one.",
+     "acting": "Alternating cheek puffs (chew) out of phase; the king lid 0.5 then eyebrows up (it is good).",
+     "library": "chew as cheek pulses; stagger()"
+    },
+    {
+     "t": 80.2,
+     "cue": {
+      "word": "حتى",
+      "t": 80.2
+     },
+     "who": "fx",
+     "action": "Bare skewers pile up beside the fire; the counter GUESTS FED returns top right and ticks 3, 4, 5.",
+     "acting": "One tick per man, 0.2 s apart.",
+     "library": "style counter (same place and look as S1)"
+    },
+    {
+     "t": 80.78,
+     "cue": {
+      "word": "شبعوا.",
+      "t": 80.78
+     },
+     "who": "king",
+     "action": "They lean back and pat full bellies. The king, mid pat, looks up at the grave and stops.",
+     "acting": "Hand freezes on the belly; pupils go up to the marker; mouth closes. He has just been fed by Hatim and half knows it.",
+     "library": "lookAt(); hold"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 80.2,
+     "text": "GUESTS FED: 5"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 81.68
+   }
+  },
+  {
+   "id": "S10",
+   "start": 81.68,
+   "end": 86.3,
+   "paragraphs": [
+    5
+   ],
+   "set": "graveValley",
+   "cast": [
+    "king",
+    "comp1",
+    "comp2"
+   ],
+   "summary": "By the fire the men ask what frightened him; the king begins to tell his dream.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Three-shot at the fire (x 640, y 770, zoom 1.6); push in on the king from 85.4 to zoom 2.3 as the dream wash creeps in from the panel edges."
+   },
+   "composition": "King at x 820 facing left, comp1 at x 420 and comp2 at x 700 both turned to him, all seated on the ground; the fire between them at x 560 lights the faces from below.",
+   "actions": [
+    {
+     "t": 81.68,
+     "cue": {
+      "word": "سألوه",
+      "t": 81.68
+     },
+     "who": "comp1",
+     "action": "Both companions lean toward the king; comp1 opens a hand: what was it?",
+     "acting": "tip 0.1, brow -0.4, talk 0.6; eye contact both ways.",
+     "library": "person sit:1, seat:'floor'; PERSON_HANDS.palmsUp; lookAt()"
+    },
+    {
+     "t": 83.76,
+     "cue": {
+      "word": "عما",
+      "t": 83.76
+     },
+     "who": "comp2",
+     "action": "comp2 acts out the king waking: hands to his head, a silent scream.",
+     "acting": "A quick copy of the 62.94 pose (comic echo), then a shrug.",
+     "library": "PERSON_HANDS.headHold"
+    },
+    {
+     "t": 84.2,
+     "cue": {
+      "word": "أخافه،",
+      "t": 84.2
+     },
+     "who": "king",
+     "action": "The king shivers at the memory, pulls the blanket round his shoulders and glances up at the grave.",
+     "acting": "tremble(t, 1), gaze up right then back to the fire.",
+     "library": "tremble(); gazePlan"
+    },
+    {
+     "t": 85.48,
+     "cue": {
+      "word": "فقال",
+      "t": 85.48
+     },
+     "who": "king",
+     "action": "He raises one finger and starts to speak, eyes on the fire.",
+     "acting": "PERSON_HANDS.pointUp, talk 0.7, lid 0.3. The blue dream wash starts at the panel corners at 85.9.",
+     "library": "PERSON_HANDS.pointUp; dream wash strength 0..1"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "iris",
+    "t": 86.3
+   }
+  },
+  {
+   "id": "S11",
+   "start": 86.3,
+   "end": 99.4,
+   "paragraphs": [
+    5
+   ],
+   "set": "graveValley",
+   "cast": [
+    "hatim",
+    "king",
+    "kingCamel"
+   ],
+   "summary": "The dream, full panel under the blue dream wash: Hatim rises from his grave with a sword, comes to the sleeping king, shows him an empty bowl (he has nothing to give his guest), then turns and strikes the camel.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Dream camera, slightly floating (2 px sine): x 1100, y 615, zoom 1.0 while he rises and comes down; medium two-shot of Hatim and the king at zoom 1.6 (x 900, y 720) from 91.0; at 96.6 the dream folds space: the camel is simply there at x 1150, no pan needed; flash at 97.2."
+   },
+   "composition": "Dream version of S7: king asleep at (880, 892). Hatim descends the ramp from the grave (1330, 600) to x 990. In the dream the camel stands at x 1150 on the ramp foot, facing left, so that host, guest and camel share one frame.",
+   "actions": [
+    {
+     "t": 86.34,
+     "cue": {
+      "word": "إنه",
+      "t": 86.34
+     },
+     "who": "fx",
+     "action": "Iris into the dream: blue halftone wash and dotted vignette over the night valley; the king asleep, small, below the grave.",
+     "acting": "Wash strength 1; everything a little slower than life.",
+     "library": "dream wash"
+    },
+    {
+     "t": 87.24,
+     "cue": {
+      "word": "رأى",
+      "t": 87.24
+     },
+     "who": "fx",
+     "action": "The grave marker glows and the mist gathers into a tall column over the mound.",
+     "acting": "Column grows 0..260 units in 0.4 s.",
+     "library": "ghostForm mist stage"
+    },
+    {
+     "t": 87.7,
+     "cue": {
+      "word": "حاتمًا",
+      "t": 87.7
+     },
+     "who": "hatim",
+     "action": "Hatim rises out of the grave: the same yellow keffiyeh and white robe as in S1, now pale blue and with a wavy hem instead of feet.",
+     "acting": "alpha 0 to 0.85, s 1.15 (larger than life), calm sad face, lid 0.3, no blink.",
+     "library": "person {costume:'bedouin', pal, age:0.6} through ghostForm {alpha, hem}"
+    },
+    {
+     "t": 88.62,
+     "cue": {
+      "word": "المنام",
+      "t": 88.62
+     },
+     "who": "hatim",
+     "action": "He glides down the ramp toward the sleeper, hem trailing a beat behind.",
+     "acting": "No walk cycle: a smooth kfn path with a 6 px float; gaze on the king.",
+     "library": "kfn path; ghostForm hem lag"
+    },
+    {
+     "t": 89.32,
+     "cue": {
+      "word": "يحمل",
+      "t": 89.32
+     },
+     "who": "hatim",
+     "action": "His right arm lifts from his side.",
+     "acting": "Slow anticipation, 0.6 s.",
+     "library": "person aR angle"
+    },
+    {
+     "t": 90.04,
+     "cue": {
+      "word": "سيفًا.",
+      "t": 90.04
+     },
+     "who": "hatim",
+     "action": "A sword is in his raised hand, upright, with a four point glint.",
+     "acting": "Glint pops on the word and fades in 0.3 s; the dream king (still lying) opens his eyes wide.",
+     "library": "sword prop at P.hands; person hold; eyes 'wide'"
+    },
+    {
+     "t": 91.14,
+     "cue": {
+      "word": "أخبره",
+      "t": 91.14
+     },
+     "who": "hatim",
+     "action": "He stops over the king and speaks down to him, the free hand on his chest.",
+     "acting": "tip 0.1, talk 0.6, brow -0.5 (regret, not anger).",
+     "library": "PERSON_HANDS.chest (left); lookAt()"
+    },
+    {
+     "t": 93.18,
+     "cue": {
+      "word": "لا",
+      "t": 93.18
+     },
+     "who": "hatim",
+     "action": "He shakes his head slowly and turns an empty bowl upside down: nothing falls out.",
+     "acting": "The exact mirror of the joke at 50.2; gaze follows where the crumb would have fallen.",
+     "library": "smallBowl upturned; head shake as 6 px x pulses"
+    },
+    {
+     "t": 93.9,
+     "cue": {
+      "word": "طعامًا",
+      "t": 93.9
+     },
+     "who": "king",
+     "action": "The dream king sits up on his elbows, looking from the bowl to the sword.",
+     "acting": "Saccades bowl, sword, face; mouth o; sq 0.94.",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 95.56,
+     "cue": {
+      "word": "لضيفه،",
+      "t": 95.56
+     },
+     "who": "hatim",
+     "action": "He opens his hand toward the king and bows his head a little: my guest.",
+     "acting": "The host's honour: lid 0.5, small bow, then his eyes go to the camel.",
+     "library": "PERSON_HANDS.reach; settleTo"
+    },
+    {
+     "t": 96.68,
+     "cue": {
+      "word": "ثم",
+      "t": 96.68
+     },
+     "who": "hatim",
+     "action": "He turns to the camel and lifts the sword over his head in both hands.",
+     "acting": "Turn with a squeeze (not a sliver); 0.4 s wind up, arms by angle for a big clear shape; camel eyes wide, ears back.",
+     "library": "turnFlip(); person aL/aR about [±2.45, ±2.85]; anticipate()"
+    },
+    {
+     "t": 97.12,
+     "cue": {
+      "word": "ضرب",
+      "t": 97.12
+     },
+     "who": "hatim",
+     "action": "The sword whips down. A white flash covers the contact for 2 frames; SWISH! on the arc.",
+     "acting": "Ease in on the swing, no contact drawn, no blood.",
+     "library": "strike cycle pattern (lift, whip down); 2 frame flash; style emphasis"
+    },
+    {
+     "t": 97.74,
+     "cue": {
+      "word": "الناقة",
+      "t": 97.74
+     },
+     "who": "kingCamel",
+     "action": "Out of the flash the camel is a dark silhouette whose knees buckle, the same fall the men saw at 70.62.",
+     "acting": "Fall 0..0.6 only (the dream ends before she lands).",
+     "library": "camel fall drawn as a flat silhouette"
+    },
+    {
+     "t": 98.26,
+     "cue": {
+      "word": "بسيفه.",
+      "t": 98.26
+     },
+     "who": "hatim",
+     "action": "Hatim lowers the sword, looks back at the king with a small nod (your meal), and fades with the wash.",
+     "acting": "alpha 0.85 to 0, wash strength 1 to 0 by 99.3.",
+     "library": "ghostForm alpha; dream wash"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 97.2,
+     "text": "SWISH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "iris",
+    "t": 99.4
+   }
+  },
+  {
+   "id": "S12",
+   "start": 99.4,
+   "end": 101.74,
+   "paragraphs": [
+    5
+   ],
+   "set": "graveValley",
+   "cast": [
+    "king",
+    "comp1",
+    "comp2"
+   ],
+   "summary": "Back at the fire: the companions are amazed, and comp2 looks at the skewer in his hand.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "Same three-shot as S10 (x 640, y 770, zoom 1.6)."
+   },
+   "composition": "As S10. The sky behind the ledge has begun to pale (u 0.9).",
+   "actions": [
+    {
+     "t": 99.54,
+     "cue": {
+      "word": "تعجب",
+      "t": 99.54
+     },
+     "who": "comp1",
+     "action": "The companions stare at the king, mouths open, comp2 a few frames after comp1.",
+     "acting": "mouth o, brow -0.8, sq 1.04 then settle.",
+     "library": "stagger(); settleTo"
+    },
+    {
+     "t": 100.3,
+     "cue": {
+      "word": "الرجال",
+      "t": 100.3
+     },
+     "who": "comp2",
+     "action": "comp2 slowly looks down at the half eaten skewer in his hand, then up at the grave, and gulps; comp1 covers his mouth.",
+     "acting": "gazePlan skewer, grave; head drop pulse on the gulp.",
+     "library": "gazePlan; PERSON_HANDS.mouthCover"
+    },
+    {
+     "t": 101.12,
+     "cue": {
+      "word": "الحلم.",
+      "t": 101.12
+     },
+     "who": "king",
+     "action": "All three turn their heads to the grave; the statues are black shapes against the first light.",
+     "acting": "Three gazes on one point; no one speaks.",
+     "library": "lookAt(); skyCycle u 0.9 to 1"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 101.74,
+    "label": "NEXT MORNING"
+   }
+  },
+  {
+   "id": "S13",
+   "start": 101.74,
+   "end": 108.7,
+   "paragraphs": [
+    6
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "king",
+    "comp1",
+    "comp2",
+    "compCamel"
+   ],
+   "summary": "Morning on the road. The king, who has no mount now, rides squeezed in behind comp1 on the one remaining camel; comp2 walks beside them carrying the dead camel's saddle.",
+   "camera": {
+    "shot": "full",
+    "move": "track",
+    "notes": "Tracking shot moving right with the camel, zoom 1.2, camel held left of centre (panel x about 420); the mountain with the grave shrinks on the left horizon."
+   },
+   "composition": "Camel at ground y 900, riders heads near y 560. comp2 walks at camel x + 230 (ahead, right). Far mountain (40 % scale) at the left third of the horizon with two tiny statue ticks on its shoulder.",
+   "actions": [
+    {
+     "t": 101.74,
+     "cue": {
+      "word": "في",
+      "t": 101.74
+     },
+     "who": "fx",
+     "action": "The NEXT MORNING card covers the cut (card from 101.3 to 102.3; set and camera change at its covered midpoint).",
+     "acting": "Standard transition card.",
+     "library": "S.transition(..., {caption: 'NEXT MORNING'})"
+    },
+    {
+     "t": 103.32,
+     "cue": {
+      "word": "الصباح",
+      "t": 103.32
+     },
+     "who": "set",
+     "action": "Morning sky, low sun on the right, long shadows.",
+     "acting": "skyCycle u 0.08.",
+     "library": "skyCycle; desertRoad strip"
+    },
+    {
+     "t": 104.0,
+     "cue": {
+      "word": "تابع",
+      "t": 104.0
+     },
+     "who": "compCamel",
+     "action": "A brown camel paces to the right along the road.",
+     "acting": "walk() pacing gait; the load makes her head bob deeper than the she-camel in S4.",
+     "library": "camel {pal:2, ph, amp} via walk(); footfalls"
+    },
+    {
+     "t": 104.78,
+     "cue": {
+      "word": "الملك",
+      "t": 104.78
+     },
+     "who": "king",
+     "action": "The king is the passenger: wedged behind comp1 behind the hump, crown slightly askew, holding on to comp1 with both hands.",
+     "acting": "lid 0.5, mouth flat (dignity dented); he bobs a beat late and higher than comp1.",
+     "library": "person sit:1, seat:'bench'; handLW/handRW on comp1; lurch()"
+    },
+    {
+     "t": 106.02,
+     "cue": {
+      "word": "راكبًا",
+      "t": 106.02
+     },
+     "who": "comp1",
+     "action": "comp1 rides in front with the rein, glancing back with an awkward grin.",
+     "acting": "Grin, quick look back, eyes front again.",
+     "library": "gazePlan"
+    },
+    {
+     "t": 107.3,
+     "cue": {
+      "word": "أحد",
+      "t": 107.3
+     },
+     "who": "king",
+     "action": "The king looks back over his shoulder at the shrinking mountain.",
+     "acting": "Gaze left for a full second, brow -0.3 (thinking, not smug: the first change in him).",
+     "library": "lookAt() to the far mountain"
+    },
+    {
+     "t": 107.78,
+     "cue": {
+      "word": "أصحابه.",
+      "t": 107.78
+     },
+     "who": "comp2",
+     "action": "comp2 trudges alongside with the saddle on his back, a sweat drop flying off at each step.",
+     "acting": "tip 0.12 under the load; drops timed to footfalls.",
+     "library": "walk(), footfalls; kick()"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 108.7
+   }
+  },
+  {
+   "id": "S14",
+   "start": 108.7,
+   "end": 120.9,
+   "paragraphs": [
+    6
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "king",
+    "comp1",
+    "comp2",
+    "compCamel",
+    "adi",
+    "giftCamel"
+   ],
+   "summary": "Hours later a man comes toward them leading a fine she-camel. He asks for King Zu al-Kuraa; the companions point at the passenger.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Keep tracking through the time lapse; stop with the camel at 110.6 (x fixed, zoom 1.1); as Adi arrives ease to zoom 1.35 framing both groups (party left, Adi and the gift camel right)."
+   },
+   "composition": "Party on the left half facing right; Adi enters from the right horizon and stops at panel x about 700 with the gift camel behind him at x + 220. Leave the sky above Adi clear for his label in S15.",
+   "actions": [
+    {
+     "t": 108.76,
+     "cue": {
+      "word": "وبعد",
+      "t": 108.76
+     },
+     "who": "set",
+     "action": "Time lapse: the sun climbs to noon (u 0.08 to 0.25 in 1.6 s), shadows shorten, the road scrolls faster.",
+     "acting": "The walk cycles keep their phase from distance, so no sliding.",
+     "library": "skyCycle kfn; walk()"
+    },
+    {
+     "t": 109.8,
+     "cue": {
+      "word": "ساعات",
+      "t": 109.8
+     },
+     "who": "lettering",
+     "action": "Small caption box HOURS LATER top left for 1.2 s.",
+     "acting": "Pop.",
+     "library": "style box"
+    },
+    {
+     "t": 110.6,
+     "cue": {
+      "word": "رأوا",
+      "t": 110.6
+     },
+     "who": "comp1",
+     "action": "comp1 shades his eyes with a hand and points ahead; the camel stops and the king bumps into his back.",
+     "acting": "Hand to brow (here the salute shape is wanted); lurch on both riders, the king later and bigger.",
+     "library": "handR to brow; PERSON_HANDS.pointFwd; lurch()"
+    },
+    {
+     "t": 111.34,
+     "cue": {
+      "word": "رجلًا",
+      "t": 111.34
+     },
+     "who": "adi",
+     "action": "A small figure appears on the right horizon in the heat shimmer and grows as he walks toward them.",
+     "acting": "s 0.3 to 0.85 along a kfn path; shimmer as 3 wavy lines at his feet.",
+     "library": "person {costume:'bedouin', age:0.1, pal as Hatim} + walk()"
+    },
+    {
+     "t": 112.64,
+     "cue": {
+      "word": "يقود",
+      "t": 112.64
+     },
+     "who": "adi",
+     "action": "He is leading something on a rope; the rope sags and tightens as he walks.",
+     "acting": "Lead hand forward, rope sag from the distance between hand and halter.",
+     "library": "rope (lead); handRW"
+    },
+    {
+     "t": 113.24,
+     "cue": {
+      "word": "ناقة",
+      "t": 113.24
+     },
+     "who": "giftCamel",
+     "action": "The other she-camel: cream white with red tassels and a yellow halter, stepping lightly. Arrow and label NEW CAMEL.",
+     "acting": "Light pacing gait, head high, long lash blink; one glint on the halter.",
+     "library": "camel {pal:1} via walk(); style label + arrow"
+    },
+    {
+     "t": 113.76,
+     "cue": {
+      "word": "أخرى.",
+      "t": 113.76
+     },
+     "who": "king",
+     "action": "The king's eyes go wide at the animal, then narrow at the stranger.",
+     "acting": "eyes wide then lid 0.4; comp2 puts the saddle down.",
+     "library": "gazePlan; settleTo"
+    },
+    {
+     "t": 114.84,
+     "cue": {
+      "word": "سألهم",
+      "t": 114.84
+     },
+     "who": "adi",
+     "action": "The man stops, hand on chest in greeting, then asks with an open hand.",
+     "acting": "Small bow; talk 0.6; brow -0.3.",
+     "library": "PERSON_HANDS.chest, then palmsUp (right)"
+    },
+    {
+     "t": 116.54,
+     "cue": {
+      "word": "الملك",
+      "t": 116.54
+     },
+     "who": "adi",
+     "action": "He looks from face to face for a king: comp2, comp1, and past the rumpled passenger.",
+     "acting": "Saccades across the three faces; skips the king.",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 118.08,
+     "cue": {
+      "word": "فقالوا",
+      "t": 118.08
+     },
+     "who": "comp1",
+     "action": "Both companions point at the man behind comp1: comp1 with a thumb over his shoulder, comp2 with a whole arm.",
+     "acting": "Staggered 5 frames; comp2 grins.",
+     "library": "person aR angles; stagger()"
+    },
+    {
+     "t": 119.42,
+     "cue": {
+      "word": "إنه",
+      "t": 119.42
+     },
+     "who": "king",
+     "action": "The king slides down off the camel, lands, straightens his crown and puts his chest out.",
+     "acting": "hop with landSquash at 119.9; crown settles a beat late; sq 1.05 as he draws himself up at 120.2.",
+     "library": "hop(), landSquash(); settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 109.8,
+     "text": "HOURS LATER"
+    },
+    {
+     "t": 113.3,
+     "text": "NEW CAMEL"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 120.9
+   }
+  },
+  {
+   "id": "S15",
+   "start": 120.9,
+   "end": 131.1,
+   "paragraphs": [
+    7
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "king",
+    "comp1",
+    "comp2",
+    "adi",
+    "giftCamel"
+   ],
+   "summary": "The stranger names himself: Adi, the son of Hatim. He has brought this she-camel in place of the one the king lost.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "twoShot(king, adi, {margin}) at about zoom 1.7, drifting 20 units right over the scene; widen to zoom 1.45 at 126.4 to let the gift camel step in between and behind them."
+   },
+   "composition": "King left (panel x about 330) facing right, Adi right (x about 670) facing left; gift camel behind Adi, her head arriving between the two men at y 620. Companions small at the far left edge.",
+   "actions": [
+    {
+     "t": 120.9,
+     "cue": {
+      "word": "قال",
+      "t": 120.9
+     },
+     "who": "adi",
+     "action": "Adi steps forward into the two-shot.",
+     "acting": "Two steps, straight back, eyes on the king.",
+     "library": "walk(); twoShot()"
+    },
+    {
+     "t": 122.58,
+     "cue": {
+      "word": "الرجل:",
+      "t": 122.58
+     },
+     "who": "adi",
+     "action": "Hand on his chest as he begins.",
+     "acting": "talk 0.6; calm, level brow.",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 124.1,
+     "cue": {
+      "word": "عدي",
+      "t": 124.1
+     },
+     "who": "lettering",
+     "action": "Label ADI with an arrow pops above him.",
+     "acting": "Pop.",
+     "library": "style label + arrow"
+    },
+    {
+     "t": 124.62,
+     "cue": {
+      "word": "ابن",
+      "t": 124.62
+     },
+     "who": "fx",
+     "action": "A small picture balloon pops beside Adi showing the face of Hatim in the same yellow keffiyeh: like father, like son.",
+     "acting": "Balloon on the side away from the king; pops on the name and stays 2 s.",
+     "library": "iconBalloon (single) with the hatim head"
+    },
+    {
+     "t": 124.9,
+     "cue": {
+      "word": "ابن",
+      "t": 124.62
+     },
+     "who": "king",
+     "action": "Double take: the king looks at the balloon, at Adi, and his crown jumps.",
+     "acting": "Head jerk back 6 px, eyes wide, brow -1; crown hop 10 with a late settle.",
+     "library": "settleTo; gazePlan"
+    },
+    {
+     "t": 125.5,
+     "cue": {
+      "word": "الطائي.",
+      "t": 125.5
+     },
+     "who": "comp2",
+     "action": "At the left edge the companions gasp one after the other; comp2 ducks behind the brown camel.",
+     "acting": "mouth o; comp2 sq 0.9 and only his eyes show over the hump.",
+     "library": "stagger(); draw order"
+    },
+    {
+     "t": 126.58,
+     "cue": {
+      "word": "جئت",
+      "t": 126.58
+     },
+     "who": "adi",
+     "action": "Adi draws the rope in and the white she-camel steps forward between them.",
+     "acting": "Rope goes taut then sags; three light steps.",
+     "library": "rope (lead); camel walk()"
+    },
+    {
+     "t": 127.7,
+     "cue": {
+      "word": "أعطيك",
+      "t": 127.7
+     },
+     "who": "adi",
+     "action": "He holds the rope out to the king on both open hands, with a bow of the head.",
+     "acting": "PERSON_HANDS.reachBoth toward the king; lid 0.4; holds the offer.",
+     "library": "PERSON_HANDS.reachBoth; settleTo"
+    },
+    {
+     "t": 128.68,
+     "cue": {
+      "word": "الناقة",
+      "t": 128.68
+     },
+     "who": "giftCamel",
+     "action": "The she-camel lowers her head to the king, blinks her long lashes and sniffs his crown.",
+     "acting": "Neck down, slow blink, a small nudge that tips the crown 5 degrees.",
+     "library": "camel neck / headDown; blink()"
+    },
+    {
+     "t": 130.46,
+     "cue": {
+      "word": "ناقتك».",
+      "t": 130.46
+     },
+     "who": "comp2",
+     "action": "comp2 drops the old saddle on the sand beside the new camel; a curved arrow jumps from the empty saddle to her back.",
+     "acting": "Saddle lands with a small squash (visual only); the arrow draws on in 0.3 s.",
+     "library": "impactSquash on the saddle; style arrow"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 124.1,
+     "text": "ADI"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 131.1
+   }
+  },
+  {
+   "id": "S16",
+   "start": 131.1,
+   "end": 140.5,
+   "paragraphs": [
+    7
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "king",
+    "comp1",
+    "comp2",
+    "adi",
+    "giftCamel"
+   ],
+   "summary": "The king is astonished: how could Adi know what happened in the night, and who told him?",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on the king (zoom 1.9) with Adi kept in at frame right; slow push to zoom 2.2 by 136.7; hold dead still through the pause 137.3 to 138.3; then return to the two-shot (zoom 1.7)."
+   },
+   "composition": "King at panel x about 380, Adi at x about 760, the camel's head between them and above. The round inset appears upper left over empty sky.",
+   "actions": [
+    {
+     "t": 131.16,
+     "cue": {
+      "word": "دهش",
+      "t": 131.16
+     },
+     "who": "king",
+     "action": "The king rears back in astonishment.",
+     "acting": "mouth o, brow -1, sq 1.06 then settle; the crown hops again.",
+     "library": "settleTo; pulse()"
+    },
+    {
+     "t": 132.48,
+     "cue": {
+      "word": "الملك",
+      "t": 132.48
+     },
+     "who": "king",
+     "action": "His eyes dart: the camel, Adi, back toward the far mountain, Adi.",
+     "acting": "Saccades with 2 frame snaps and holds.",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 133.0,
+     "cue": {
+      "word": "وسأله:",
+      "t": 133.0
+     },
+     "who": "king",
+     "action": "He steps closer with both palms up.",
+     "acting": "One step; tip 0.08 toward Adi.",
+     "library": "walk(); PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 133.92,
+     "cue": {
+      "word": "«كيف",
+      "t": 133.92
+     },
+     "who": "lettering",
+     "action": "One ? pops above the king (clear of both faces).",
+     "acting": "Single mark only.",
+     "library": "style emphasis"
+    },
+    {
+     "t": 134.7,
+     "cue": {
+      "word": "عرفت",
+      "t": 134.7
+     },
+     "who": "king",
+     "action": "He talks fast, one hand chopping the air.",
+     "acting": "talk 0.9; hand pulses on the word stresses.",
+     "library": "handR pulse()"
+    },
+    {
+     "t": 135.68,
+     "cue": {
+      "word": "حدث",
+      "t": 135.68
+     },
+     "who": "fx",
+     "action": "He jerks a thumb back toward the mountain; a round inset opens upper left showing last night: the camp fire under the ledge.",
+     "acting": "Inset irises open in 0.25 s with the dream wash tint to mark the past; it closes at 137.2.",
+     "library": "inset circle; dream wash; graveValley drawn inside"
+    },
+    {
+     "t": 136.72,
+     "cue": {
+      "word": "الليل؟",
+      "t": 136.72
+     },
+     "who": "comp1",
+     "action": "Behind the king the companions nod hard: yes, how?",
+     "acting": "Nods out of phase.",
+     "library": "pulse(); stagger()"
+    },
+    {
+     "t": 137.8,
+     "who": "adi",
+     "action": "In the pause Adi only smiles a little and blinks once. Nothing else moves.",
+     "acting": "The stillness before the answer; one blink.",
+     "library": "blink at a fixed time"
+    },
+    {
+     "t": 138.26,
+     "cue": {
+      "word": "ومن",
+      "t": 138.26
+     },
+     "who": "king",
+     "action": "The king leans in with a hand cupped to his ear.",
+     "acting": "tip 0.12, PERSON_HANDS.cupEar.",
+     "library": "PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 138.86,
+     "cue": {
+      "word": "أخبرك؟»",
+      "t": 138.86
+     },
+     "who": "king",
+     "action": "Then points straight at Adi: who told you? Holds the point.",
+     "acting": "Arm by angle; eyebrows up; Adi keeps his calm smile.",
+     "library": "person aR angle; hold"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 133.92,
+     "text": "?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 137.8,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 140.5
+   }
+  },
+  {
+   "id": "S17",
+   "start": 140.5,
+   "end": 151.0,
+   "paragraphs": [
+    8
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "king",
+    "adi",
+    "giftCamel",
+    "hatim"
+   ],
+   "summary": "Adi answers: his father came to him in a dream and ordered him to repay his guest for the camel. A thought cloud shows it. The king understands whose guest he was.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "Two-shot at zoom 1.5 lowered in the frame (camera y 640) so the upper half of the panel is free for the cloud; the cloud is 520 x 330 centred at panel (560, 330)."
+   },
+   "composition": "Men in the lower half (heads near panel y 640), cloud above with its trail to Adi. Inside the cloud figures are at least 110 px tall.",
+   "actions": [
+    {
+     "t": 140.74,
+     "cue": {
+      "word": "أجاب",
+      "t": 140.74
+     },
+     "who": "adi",
+     "action": "Adi lifts an open hand and begins to answer.",
+     "acting": "talk 0.6; gaze on the king, then up as he remembers.",
+     "library": "PERSON_HANDS.palmsUp (right); gazePlan"
+    },
+    {
+     "t": 142.84,
+     "cue": {
+      "word": "أباه",
+      "t": 142.84
+     },
+     "who": "fx",
+     "action": "The thought cloud pops above Adi (trail first): inside, Adi asleep on a mat in a tent.",
+     "acting": "Cloud p 0..1 in 0.35 s.",
+     "library": "thoughtCloud(ctx, x, y, 520, 330, t, {p, tail, inside, scale: 0.5}); person lie:1"
+    },
+    {
+     "t": 143.4,
+     "cue": {
+      "word": "ظهر",
+      "t": 143.4
+     },
+     "who": "hatim",
+     "action": "In the cloud Hatim appears at the bedside in his pale blue form. No sword this time.",
+     "acting": "alpha 0 to 0.85; gentle face; the yellow keffiyeh matches the sleeper's.",
+     "library": "ghostForm inside the cloud"
+    },
+    {
+     "t": 144.64,
+     "cue": {
+      "word": "المنام،",
+      "t": 144.64
+     },
+     "who": "fx",
+     "action": "The dream wash tints the cloud; the sleeping Adi opens his eyes.",
+     "acting": "lid 1 to 0, eyes wide.",
+     "library": "dream wash clipped to the cloud"
+    },
+    {
+     "t": 145.46,
+     "cue": {
+      "word": "وأمره",
+      "t": 145.46
+     },
+     "who": "hatim",
+     "action": "Hatim points with a straight arm: go.",
+     "acting": "Commanding point by arm angle, brow level; holds through the long word.",
+     "library": "person aR angle"
+    },
+    {
+     "t": 147.56,
+     "cue": {
+      "word": "يعوض",
+      "t": 147.56
+     },
+     "who": "fx",
+     "action": "In the cloud a camel silhouette appears where he points, with an arrow from it to a small crown.",
+     "acting": "Arrow draws on in 0.3 s; the crown is the king in one icon.",
+     "library": "camel silhouette; style arrow"
+    },
+    {
+     "t": 148.22,
+     "cue": {
+      "word": "ضيفه",
+      "t": 148.22
+     },
+     "who": "king",
+     "action": "Outside the cloud the king touches his own chest: his guest, me.",
+     "acting": "PERSON_HANDS.chest, brow -0.6, eyes beginning to shine (wet).",
+     "library": "PERSON_HANDS.chest; wet:true"
+    },
+    {
+     "t": 149.22,
+     "cue": {
+      "word": "الناقة",
+      "t": 149.22
+     },
+     "who": "adi",
+     "action": "In the cloud Adi jumps up, takes a rope and leads the camel out of the side of the cloud.",
+     "acting": "hop up from lying, then walk; the cloud figures exit toward the real camel.",
+     "library": "hop(); walk()"
+    },
+    {
+     "t": 150.24,
+     "cue": {
+      "word": "ذبحها.",
+      "t": 150.24
+     },
+     "who": "king",
+     "action": "The cloud closes. The king looks down at his hands, ashamed of last night's joke.",
+     "acting": "Shame pattern: eyes break away, head drops, lid 0.6.",
+     "library": "thoughtCloud p 1..0; head drop"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 151.0
+   }
+  },
+  {
+   "id": "S18",
+   "start": 151.0,
+   "end": 164.59,
+   "paragraphs": [
+    8
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "king",
+    "comp1",
+    "comp2",
+    "adi",
+    "giftCamel",
+    "hatim"
+   ],
+   "summary": "The king takes the new she-camel and rides on, thinking. Far behind him, on the mountain, the host stands at his grave with open arms one more time. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Two-shot (zoom 1.5) for the handover; from 154.1 pull out and back to a wide (zoom 1.0) with the king riding right in the lower right and the far mountain enlarged to fill the upper left (draw the mountain layer at 70 % scale for this shot); hold from 157 to the end."
+   },
+   "composition": "End frame: king on the white camel at panel x about 720 moving right, head turned back; mountain upper left with the ledge, two statues and the small figure of Hatim between them at about 110 px tall; counter top right; THE END title centred in the upper sky, clear of the mountain figure and the king.",
+   "actions": [
+    {
+     "t": 151.14,
+     "cue": {
+      "word": "أخذ",
+      "t": 151.14
+     },
+     "who": "king",
+     "action": "The king takes the rope in both hands and bows his head to Adi: the man who mocked the host is now the grateful guest.",
+     "acting": "Hands to the rope by world targets; head bow 8 px, lid 0.5, a small true smile.",
+     "library": "handLW/handRW on the rope; settleTo"
+    },
+    {
+     "t": 152.62,
+     "cue": {
+      "word": "الناقة",
+      "t": 152.62
+     },
+     "who": "giftCamel",
+     "action": "The she-camel nuzzles his shoulder; he pats her neck.",
+     "acting": "Nudge moves him 4 px; he laughs once, softly (not the S5 laugh).",
+     "library": "camel headDown; handRW on the neck"
+    },
+    {
+     "t": 153.26,
+     "cue": {
+      "word": "الجديدة،",
+      "t": 153.26
+     },
+     "who": "adi",
+     "action": "Adi puts his hand on his chest and steps back; the companions cheer quietly, comp2 with a little hop.",
+     "acting": "Father's gesture from S1 (hand on chest, small bow); stagger on the companions.",
+     "library": "PERSON_HANDS.chest; hop(), landSquash(); stagger()"
+    },
+    {
+     "t": 154.14,
+     "cue": {
+      "word": "وظل",
+      "t": 154.14
+     },
+     "who": "king",
+     "action": "The camel couches, the king mounts, she rises and walks off to the right; the camera pulls out.",
+     "acting": "couch 1 at 153.7, mount, couch 0 by 154.9 (rear first, rider lurches forward then back).",
+     "library": "camel couch; rider; lurch(); walk()"
+    },
+    {
+     "t": 155.56,
+     "cue": {
+      "word": "يفكر",
+      "t": 155.56
+     },
+     "who": "king",
+     "action": "Riding, he turns his head back toward the mountain, hand at his chin.",
+     "acting": "Gaze far left and up; PERSON_HANDS.chin; slow blink.",
+     "library": "PERSON_HANDS.chin; lookAt()"
+    },
+    {
+     "t": 156.58,
+     "cue": {
+      "word": "كرم",
+      "t": 156.58
+     },
+     "who": "set",
+     "action": "Warm yellow light grows on the far ledge and its two statues.",
+     "acting": "Halftone light cone from the top of the frame, strength 0..0.7 in 0.6 s.",
+     "library": "skyLight style cone (yellow dots) or K glow"
+    },
+    {
+     "t": 157.08,
+     "cue": {
+      "word": "حاتم",
+      "t": 157.08
+     },
+     "who": "hatim",
+     "action": "Between the statues the pale figure of Hatim stands with both arms open: the welcome pose of the first frame.",
+     "acting": "alpha 0 to 0.6; smile; the pose is the S1 pose exactly.",
+     "library": "ghostForm; PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 158.88,
+     "cue": {
+      "word": "تنته",
+      "t": 158.88
+     },
+     "who": "fx",
+     "action": "The counter GUESTS FED returns top right and ticks from 5 to 6, then its number becomes three dots.",
+     "acting": "Tick on the word; dots at 159.7: the tale is not over.",
+     "library": "style counter"
+    },
+    {
+     "t": 160.54,
+     "cue": {
+      "word": "بموته.",
+      "t": 160.54
+     },
+     "who": "hatim",
+     "action": "Hatim puts his hand on his chest, bows, and fades, leaving the two statues in the warm light; the king faces forward again, smiling, and rides on.",
+     "acting": "alpha 0.6 to 0 by 161.4; king lid 0.3, smile.",
+     "library": "ghostForm alpha; PERSON_HANDS.chest"
+    },
+    {
+     "t": 161.6,
+     "who": "lettering",
+     "action": "THE END in Bangers, centred in the upper sky; held to 164.59 while the camel keeps walking and the light stays on the grave.",
+     "acting": "Title pop with overshoot; soft chime in the silence.",
+     "library": "style title; finish last"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 158.88,
+     "text": "GUESTS FED: 6..."
+    },
+    {
+     "t": 161.6,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 162.0,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 164.59
+   }
+  }
+ ],
+ "ending": {
+  "t": 161.6,
+  "description": "Wide held shot: the king rides right on the white she-camel, the far mountain with the grave and two statues glows warm in the upper left, the GUESTS FED counter shows 6 and three dots. THE END pops at 161.6 and is held to 164.59 with one soft chime at 162.0; the camel keeps walking so the hold is alive."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان حاتم الطائي مشهورًا بكرمه بين العرب.|وبعد موته دفنه قومه فوق جبل، ووضعوا قرب قبره تمثالين من الحجر.|كان المسافرون الذين ينامون في الوادي يسمعون بكاء غريبًا طوال الليل.",
+   "en": "Hatim al-Tayy was famous for generosity.|After his death he was buried on a mountain, with two stone figures nearby.|Travelers heard strange nighttime wailing in the valley."
+  },
+  {
+   "p": 2,
+   "ar": "مر ملك من ملوك حمير اسمه ذو الكلاع بذلك الوادي مع أصحابه.|سمع الصوت، فسأل عنه. أخبروه أنه يأتي من جهة قبر حاتم.|نظر الملك إلى الجبل وضحك.",
+   "en": "A Himyarite king named Zu al-Kuraa passed through with companions.|Told the sound came from Hatim’s grave,|he looked toward the mountain and laughed."
+  },
+  {
+   "p": 3,
+   "ar": "قال الملك مازحًا: «يا حاتم،|نحن ضيوفك هذه الليلة، وقد أصابنا الجوع.|أين طعام الضيوف؟»|ثم نام قرب القبر، ولم يتوقع أن يحدث شيء بسبب كلامه.",
+   "en": "Jokingly, the king called to Hatim:|“We are your hungry guests tonight.|Where is our meal?”|He then slept near the grave."
+  },
+  {
+   "p": 4,
+   "ar": "فجأة استيقظ مذعورًا، وصاح بأصحابه أن ينقذوا ناقته.|أسرع الرجال فوجدوها تسقط وتضطرب بشدة.|لم يستطيعوا إنقاذها، فذبحوها وشووا لحمها وأكلوا منها حتى شبعوا.",
+   "en": "He woke terrified and shouted to save his she-camel.|The men found it collapsing.|Unable to save it, they slaughtered, roasted and ate the meat."
+  },
+  {
+   "p": 5,
+   "ar": "سألوه عما أخافه، فقال إنه رأى حاتمًا في المنام يحمل سيفًا.|أخبره حاتم أنه لا يملك طعامًا يقدمه لضيفه،|ثم ضرب الناقة بسيفه. تعجب الرجال من الحلم.",
+   "en": "Asked what frightened him, the king said Hatim had appeared in a dream carrying a sword,|regretted having no food for his guest|and struck the camel."
+  },
+  {
+   "p": 6,
+   "ar": "في الصباح تابع الملك سفره راكبًا مع أحد أصحابه.|وبعد ساعات رأوا رجلًا قادمًا يقود ناقة أخرى.|سألهم الرجل عن الملك ذي الكلاع، فقالوا له إنه بينهم.",
+   "en": "In the morning the king rode with a companion.|Hours later they met a man leading another she-camel|and asking for the king."
+  },
+  {
+   "p": 7,
+   "ar": "قال الرجل: «أنا عدي ابن حاتم الطائي.|جئت أعطيك هذه الناقة بدلًا من ناقتك».|دهش الملك وسأله: «كيف عرفت بما حدث لنا في الليل؟ ومن الذي أخبرك؟»",
+   "en": "The man said, “I am Adi, Hatim’s son.|I have brought a camel to replace yours.”|Amazed, the king asked how he knew."
+  },
+  {
+   "p": 8,
+   "ar": "أجاب عدي أن أباه ظهر له في المنام،|وأمره أن يعوض ضيفه عن الناقة التي ذبحها.|أخذ الملك الناقة الجديدة،|وظل يفكر في كرم حاتم الذي لم تنته حكايته بموته.",
+   "en": "Adi said his father had appeared in a dream|and told him to replace the guest’s camel.|The king accepted it,|marveling that Hatim’s generosity seemed to continue after death."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "graveValley",
+   "description": "Valley floor camp ground under a rock ledge that carries a grave between two statues, with the planned mountain behind (see sets for every coordinate). Reusable for any tomb, shrine or hermit ledge on a hillside.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "bake() one layer per sky state: skyCycle, planned mountain polygon, ledge as a polygon (ramp + flat top + face) filled grey-brown with S dot shading and a fat brush outline, ground(). Live layers: fire level, statue glow, mist. Give the anchors as exported constants."
+  },
+  {
+   "type": "prop",
+   "name": "stoneFigure",
+   "description": "Faceless veiled stone statue on a plinth, 150 tall, with rock and glow fields.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Four flat shapes (plinth box, trapezoid, circle, hood path) with one outline pass, K halftone on the shaded half, two short crack strokes; glow = a second outline pass offset 3 px in blue or yellow at the given alpha; rock = rotate about a plinth corner."
+  },
+  {
+   "type": "pose",
+   "name": "camel couch / fall / thrash / rider",
+   "description": "Optional fields on the planned camel (AN-044): couch 0..1 (legs fold, body lowers about 150 units, front knees first going down and rear first getting up), fall 0..1 (rotation onto her side about the feet with the legs stiffening), thrash 0..1 (legs kicking on a seeded 5 Hz cycle and the neck whipping), plus a returned rider anchor (seat point and bob) for one or two riders. If the planned camel already has equivalent fields, use those names.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "couch: blend leg segment angles to folded and translate the body down; fall: ctx.rotate(fall * 1.45) about the feet with fallY timing, impactSquash and rebound from motion.js; thrash: per-leg angle = K.noise or sin(t * 31 + i) * thrash; rider anchor returned as P.seat like P.hands on the person. All default 0, so the standing camel is unchanged."
+  },
+  {
+   "type": "effect",
+   "name": "ghostForm",
+   "description": "Draws any Library character as a vision: pale blue tint, alpha, a wavy hem instead of legs and feet, a soft halftone halo, and an earlier mist stage (two tapering bands on a bezier that gather into a column). Used for Hatim in the dream (S11), in the thought cloud (S17) and at the end (S18), and for the mist in S7.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Draw the person into an offscreen canvas, fill blue (#1d5bd0 at 35 %) with globalCompositeOperation 'source-atop', erase below the knees with a sine-edged mask whose phase is a function of t (hem lag = phase offset), composite at alpha. Halo: K halftone disc behind. Mist: two stroked bezier bands with tapering width. Pure function of t."
+  },
+  {
+   "type": "prop",
+   "name": "sword, roastSpit",
+   "description": "The dream sword with a glint, and the camp spit with meat chunks and loose skewers (see props).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Simple polygons and boxes with the brush outline; glint from the style emphasis star; the spit turn is a horizontal squash of each chunk by cos(turn)."
+  }
+ ],
+ "owner_questions": [
+  "The slaughter of the camel (75.56) is not shown: the camera tilts up to the grave and comes down to the roasting fire; default: keep it off screen, no knife and no blood.",
+  "In the dream the sword strike (97.12) is covered by a 2 frame white flash with the word SWISH! and the camel is seen only as a buckling silhouette; default: keep this softened version.",
+  "A GUESTS FED counter is invented (2 in the opening, 5 after the roast, 6 and three dots at the end) to make the moral visible; default: included.",
+  "The opening five seconds show Hatim alive feeding an old man and a boy, which the script only implies with the word generosity; default: included.",
+  "A blue mist comes down from the grave to the sleeping king before he wakes (57.08 to 59.8), which the script does not mention; default: included as foreshadowing of the dream.",
+  "At the end a faint figure of Hatim stands at his grave with open arms and fades (157.08 to 161.4); default: included, it can be reduced to the warm light alone.",
+  "The two stone figures are drawn as plain faceless veiled shapes (the old sources describe statues of maidens); default: faceless.",
+  "The king rides behind a companion on one camel in the morning, played for gentle comedy (crown askew), as the reading of the phrase about riding with one of his companions; default: included.",
+  "On-screen names follow the supplied English text: HATIM AL-TAYY, ZU AL-KURAA, KING OF HIMYAR, ADI; default: these spellings.",
+  "Invented comic lettering: WAAAH..., Z Z Z, HA HA HA!, MY CAMEL!, THUD!, SWISH!, NEW CAMEL, HOURS LATER, one question mark; default: all included."
+ ],
+ "implementation_notes": [
+  "Word cues: every cue.t in this file is the start time of that script word in planning/inputs/timeline.json; use w(p, n) from timing.json rather than literals. The words ذو (26.38) and ذي (117.08) and ابن (124.62) have interpolated times: cue on the following word.",
+  "Set LIFE.t = t each frame so that everyone blinks; give explicit lid values where this plan sets them and add blink() by hand there. Suppress blinks during the stillness beats (37.92 to 38.9, 60.78 to 62.9, 137.3 to 138.3).",
+  "graveValley is 1600 wide: clamp the camera with WW = 1600. At zoom 1.0 the panel shows 1000 x 1230 world units, so the widest shots (x 600..1600) hold comp2, the king, the ramp and the whole ledge; the camel at x 170 is reached only by the whip pan at 66.98.",
+  "Riders: seat a person with sit:1, seat:'bench' at the camel rider anchor and apply the camel bob with a 2 to 3 frame delay (lurch() on stops). Two riders in S13 and S14: comp1 in front of the hump, the king behind it.",
+  "The scene change at 101.74 goes under the transition card: put the camera and set switch at the covered midpoint of the card.",
+  "Setup and payoff pairs must use identical poses: armsOut welcome (0.0 and 157.08), hand on chest bow (3.82, 153.26 by Adi, 160.54), empty bowl turned over (50.2 by the king, 93.18 by Hatim), the fall (70.62 and its silhouette at 97.74), the waking scream (62.94 and its imitation at 83.76).",
+  "Sound: only five effects, all in the listed pauses or after the last word: whoosh 22.0 (a low breathy wail), pop 41.8, thud 60.3, pop 137.8, chime 162.0; SND master 0.6. THUD! at 70.9 and SWISH! at 97.2 are lettering only, with no sound, because the narrator is speaking.",
+  "Lettering never covers a face; labels sit in the sky. The counter is drawn in panel space top right, in the same place each time, hidden between its three uses.",
+  "Thought cloud in S17: thoughtCloud with scale 0.5 so the figures inside are about 110 px; lower the two-shot to keep the cloud inside the picture panel and off the heads.",
+  "Use panel-only shake for the fall at 70.62 (0.3 s, 6 px) so the caption panel never moves. Call finish last in every frame.",
+  "Subtitles: the chunk marks are in the subtitles array; copy them to chunks_ar.txt and chunks_en.txt and verify against the script by program."
+ ],
+ "warnings": [
+  "The camel is a planned asset (AN-044) that is not in Library yet; this film depends on it and adds couch, fall, thrash and a rider anchor. Build the camel first and keep the new fields off by default.",
+  "The person figure is front facing only: looking back over the shoulder (107.3, 155.56) is done with gaze and a small head offset, and lying figures show the face to the viewer.",
+  "Person arms are short (about 74 units): overhead sword and pointing poses must use arm angles (aL/aR), not hand targets, to read at phone size.",
+  "The film implies an animal death. Staging keeps it off screen, but the fall and thrashing (70.62 to 73.7) must stay comic-book broad, not distressing: dust and lettering, no close up of the animal's face while she is down.",
+  "S11 shows the camel in the dream standing near the king although the real camel is tethered at x 170; this is deliberate dream geography and is why the scene is under the wash.",
+  "ghostForm uses an offscreen canvas and compositing: check that it renders identically in headless Chrome and stays a pure function of t."
+ ]
+}

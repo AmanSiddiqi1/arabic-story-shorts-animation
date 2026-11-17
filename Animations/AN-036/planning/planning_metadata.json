@@ -1,0 +1,123 @@
+{
+ "story_id": "AN-036",
+ "title": "The Water-Fowl and the Tortoise",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T12:44:57",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a5d894333f34e8d61.jsonl",
+ "agent_id": "a5d894333f34e8d61",
+ "model_messages": {
+  "claude-fable-5-2": 20
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "e68885c4251da12bc5516692c1f2ee5c8ac5f2f036a2683eadc5a28e34f84993",
+  "paragraphs": 8,
+  "segments": [
+   "AN-036-P01-S01",
+   "AN-036-P01-S02",
+   "AN-036-P01-S03",
+   "AN-036-P01-S04",
+   "AN-036-P01-S05",
+   "AN-036-P01-S06",
+   "AN-036-P01-S07",
+   "AN-036-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-036_The_Water_Fowl_and_the_Tortoise_full_slowed.mp3",
+  "sha256": "49507883bce32324b52778d811123eeed0bfd556e8b2d4e2cd067e39cfe0b3ca",
+  "duration": 170.676
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-036_The_Water_Fowl_and_the_Tortoise_full_slowed.mp3.words.json",
+  "sha256": "231b9d2df9d180cd0b83a4b4deca0c8b9b4940b1bcc8a8a79cf888c05f2118bc",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "7721db2",
+ "scenes": 19,
+ "actions": 161,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "duck",
+   "effort": "L"
+  },
+  {
+   "type": "pose",
+   "name": "duck dabble (upend)",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "hawk (bird kind)",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "tortoise acting head, bite and dangle",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "person lie / sit up in bed",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "riverShore",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "bones",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "featherFall",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "dayCycle",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "groundShadow",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "splash",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "weakFlight",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Four library additions this film depends on are planned but not built: duck, hawk bird kind, tortoise acting head, thoughtCloud. If the duck is not ready, the Library bird (kind 'y' recoloured white, s 1.6) is a weak fallback: it cannot swim-pose or dabble.",
+  "The Library tortoise is small and its face is simple; without the planned head fields the long dialogue S6-S11 will not read. Fallback: the Library turtle on land (it already has talk, brow, mouth).",
+  "The ending is a death with no consoling moral; the staging is restrained but the film is sad. See owner_questions.",
+  "P8 has no pause between 'escape' (161.50-162.06) and 'killed him' (162.06), so the strike has no sound effect; the flash and shake must carry it.",
+  "Lettering count (16) is above the guide's 8-12; the HOME / OLD HOME / NEW HOME labels are the ones that matter for telling the two rivers apart."
+ ]
+}

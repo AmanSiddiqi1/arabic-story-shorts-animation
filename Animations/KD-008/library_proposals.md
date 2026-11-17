@@ -1,0 +1,7 @@
+# KD-008 library proposals (story-local in src/, not yet in Library/)
+- `kd8Tort` -> `tortoiseActor`: side-view tortoise with an acting head on a long neck (neck, nAng, headRot, mouth closed/smile/frown/o/open/yawn/tight, talk, brow, puff, flush), hide, walk legs, dangle/reach/legUp legs that follow world directions, footUp, rot; `pass: 'beak'` redraws the upper head over a held stick; `kd8TortGeo` gives head and mouth in world units. (src/kd8_cast.js)
+- `duck` (pal 0 white, 1 mallard): neck bend, headRot, bill/talk, clamp, gesture wing angles (wing, wingF), fly/flap, swim (clipped at the waterline), waddle legs; `kd8DuckGeo` bill tip. (src/kd8_cast.js)
+- `carryRig` helpers: `kd8Grips` (fixed-length bar between two grips), `kd8TortToMouth` (neck stretch then lift-off), `kd8TortHang`, `kd8DrawRig`. (src/kd8_rig.js)
+- `kd8Pose`: keyed pose track with settle/overshoot per field (numbers settle, arrays ease, strings switch). (src/kd8_rig.js)
+- `pond` set with level and cracks (`kd8Pond`, `kd8Water`, `kd8Reeds`), `kd8House` flat-roofed mud house, `kd8Patchwork` aerial fields, `kd8VillageFar`. (src/kd8_sets.js)
+- Props/effects: stick (`kd8Stick`, `kd8StickPt`), pebble, snail, fish, water spray, steam puffs, sweat drop. (src/kd8_cast.js)

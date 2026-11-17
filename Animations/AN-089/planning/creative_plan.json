@@ -1,0 +1,3163 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-089",
+ "title": "Isaac of Mosul",
+ "duration": 168.89,
+ "end_hold": 3.5,
+ "logline": "A court musician rides a mystery basket up to a hidden salon, lies about who he is, and ends up carrying the caliph there in a second basket, where one careless word turns a secret visit into a royal wedding.",
+ "moral": "Curiosity can open an unexpected door, a secret is safest with a loyal friend, and the truth slips out in the end.",
+ "tone": "Light romantic comedy of disguise: playful, warm, a little conspiratorial; the one grave moment (the caliph's death) is shown quietly with an empty throne.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.0,
+   "kind": "setup",
+   "cue": {
+    "word": "خرج",
+    "t": 0.0
+   },
+   "summary": "Isaac the musician leaves the caliph's gathering at night."
+  },
+  {
+   "id": "B2",
+   "t": 9.58,
+   "kind": "inciting",
+   "cue": {
+    "word": "سلة",
+    "t": 9.58
+   },
+   "summary": "A big basket hangs on ropes from a high window."
+  },
+  {
+   "id": "B3",
+   "t": 17.64,
+   "kind": "comic",
+   "cue": {
+    "word": "الجلوس",
+    "t": 17.64
+   },
+   "summary": "Curious and tipsy, he sits in it."
+  },
+  {
+   "id": "B4",
+   "t": 21.22,
+   "kind": "surprise",
+   "cue": {
+    "word": "يرفعونه",
+    "t": 21.22
+   },
+   "summary": "Servants haul him up, taking him for an expected guest."
+  },
+  {
+   "id": "B5",
+   "t": 33.38,
+   "kind": "rising",
+   "cue": {
+    "word": "دخلت",
+    "t": 33.38
+   },
+   "summary": "A young lady enters and asks how he came."
+  },
+  {
+   "id": "B6",
+   "t": 43.46,
+   "kind": "turn",
+   "cue": {
+    "word": "أخفى",
+    "t": 43.46
+   },
+   "summary": "He hides his real trade and claims to be a merchant."
+  },
+  {
+   "id": "B7",
+   "t": 57.6,
+   "kind": "rising",
+   "cue": {
+    "word": "ينسى",
+    "t": 57.6
+   },
+   "summary": "He returns night after night and forgets the time."
+  },
+  {
+   "id": "B8",
+   "t": 65.88,
+   "kind": "suspense",
+   "cue": {
+    "word": "فغضب",
+    "t": 65.88
+   },
+   "summary": "He leaves court without leave; the caliph is angry."
+  },
+  {
+   "id": "B9",
+   "t": 79.18,
+   "kind": "turn",
+   "cue": {
+    "word": "أعجب",
+    "t": 79.18
+   },
+   "summary": "The confession delights the caliph, who wants to come."
+  },
+  {
+   "id": "B10",
+   "t": 92.08,
+   "kind": "comic",
+   "cue": {
+    "word": "صعدا",
+    "t": 92.08
+   },
+   "summary": "Disguised, the two rise in two baskets."
+  },
+  {
+   "id": "B11",
+   "t": 106.6,
+   "kind": "climax",
+   "cue": {
+    "word": "ناداه",
+    "t": 106.6
+   },
+   "summary": "The caliph calls Isaac by his real name and orders him to sing."
+  },
+  {
+   "id": "B12",
+   "t": 117.76,
+   "kind": "reveal",
+   "cue": {
+    "word": "الخليفة",
+    "t": 117.76
+   },
+   "summary": "The lady realises the guest is the caliph and withdraws."
+  },
+  {
+   "id": "B13",
+   "t": 126.56,
+   "kind": "reveal",
+   "cue": {
+    "word": "الحسن",
+    "t": 126.56
+   },
+   "summary": "The house is Hasan bin Sahl's; she is his daughter Khadijah."
+  },
+  {
+   "id": "B14",
+   "t": 139.42,
+   "kind": "emotion",
+   "cue": {
+    "word": "طلب",
+    "t": 139.42
+   },
+   "summary": "The caliph asks for her hand and sets a great dowry."
+  },
+  {
+   "id": "B15",
+   "t": 154.22,
+   "kind": "resolution",
+   "cue": {
+    "word": "السر",
+    "t": 154.22
+   },
+   "summary": "Isaac keeps the secret until the caliph's death."
+  },
+  {
+   "id": "B16",
+   "t": 167.2,
+   "kind": "moral",
+   "cue": {
+    "word": "زواج",
+    "t": 167.2
+   },
+   "summary": "The secret visit became a wedding in the palace."
+  }
+ ],
+ "cast": [
+  {
+   "id": "isaac",
+   "name": "Isaac of Mosul, court musician",
+   "library": "person",
+   "base": "person costume:'merchant' with pal {robe green, dot dark green, hc yellow} (the MERCHANT PAL cell of people.png)",
+   "look": "Green robe, yellow turban with red jewel, black beard, age 0.25; always carries the oud. Old version: age 0.95 (white beard, stoop). s 1.0.",
+   "new": false
+  },
+  {
+   "id": "mamun",
+   "name": "Caliph al-Ma'mun",
+   "library": "person",
+   "base": "person costume:'caliph' with age 0.25 (black beard); disguise = costume:'merchant' with pal {robe red, dot dark red, hc white, jewel blue}",
+   "look": "Crown on turban, red robe, blue cape in court. In disguise he keeps the red robe and beard (so the audience always knows him) but wears a plain white turban, no cape, no crown. s 1.05.",
+   "new": false
+  },
+  {
+   "id": "khadijah",
+   "name": "Khadijah, the young lady of the house",
+   "library": "person",
+   "base": "person costume:'lady'",
+   "look": "Blue robe with yellow trim, white veil with gold band, age 0. At the wedding add pal jewel gold circlet. s 0.95.",
+   "new": false
+  },
+  {
+   "id": "maidA",
+   "name": "maid with candle (lead)",
+   "library": "person",
+   "base": "person costume:'maiden'",
+   "look": "Yellow dotted dress, hair buns, red band. s 0.9.",
+   "new": false
+  },
+  {
+   "id": "maidB",
+   "name": "maid with candle (second)",
+   "library": "person",
+   "base": "person costume:'maiden' with pal {robe red, dot dark red}",
+   "look": "Same figure in red so the two are told apart. s 0.9.",
+   "new": false
+  },
+  {
+   "id": "servantA",
+   "name": "house servant at the rope",
+   "library": "person",
+   "base": "person costume:'servant'",
+   "look": "Red cap, white tunic, moustache; seen mostly from the chest up in the window.",
+   "new": false
+  },
+  {
+   "id": "servantB",
+   "name": "second servant at the rope",
+   "library": "person",
+   "base": "person costume:'servant' with pal {hc blue}",
+   "look": "Blue cap; reacts a beat after servantA.",
+   "new": false
+  },
+  {
+   "id": "hasan",
+   "name": "Hasan bin Sahl, the father",
+   "library": "person",
+   "base": "person costume:'vizier' with age 0.7",
+   "look": "Navy robe, red cape, tall white turban with feather, grey beard. s 1.0.",
+   "new": false
+  },
+  {
+   "id": "childA",
+   "name": "listening child",
+   "library": "person",
+   "base": "person costume:'servant', child:true",
+   "look": "Small boy seated on the floor.",
+   "new": false
+  },
+  {
+   "id": "childB",
+   "name": "second listening child",
+   "library": "person",
+   "base": "person costume:'maiden', child:true",
+   "look": "Small girl seated on the floor.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "court",
+   "library": null,
+   "new": true,
+   "description": "palaceHall (planned by AN-084), full palace variant, world 1000 x 1230, floor y 900: blue dotted back wall with three pointed arches (tops y 330), open door arch on the left (x 40..250, top y 480) showing the sky by skyCycle, dais x 560..900 with top y 860 carrying the planned throne at x 730, red runner carpet, checker floor, two hanging lamps at (330, 300) and (670, 300), one wall lamp above the throne at (730, 380) with a flame field. Options used here: lamps lit, garland swags (S19), a cushion at x 420 (S7)."
+  },
+  {
+   "id": "salon",
+   "library": null,
+   "new": true,
+   "description": "palaceHall drawn with option variant \"salon\" (same function as court, no dais or throne, warmer wall: red-brown with yellow dot shading and a yellow tile band at y 760..800): left arch x 40..250 is the balcony opening onto the night sky (sill at floor level y 900, the basket arrives here), right arch x 760..940 (top y 480) is the inner door, patterned carpet x 200..800, three floor cushions 130 x 40 at x 300/330, 440/470 and 660, low table 120 x 50 at x 540 carrying the candle. Night by default (navy overlay 0.2 outside the candle discs); day option for S18."
+  },
+  {
+   "id": "alley",
+   "library": null,
+   "new": true,
+   "description": "nightAlley (new): a tall lane for vertical action. World 1000 wide, from y -900 (top) to y 1230; ground y 900 (Library ground in dark brown with blue dot shade). Right: the house wall x 380..1000 from y -900 to 900, navy-blue with brick ticks and blue Ben-Day dots, two dark shuttered windows at y 250 and y -100, a closed door x 760..900 at ground level. High window x 560..800, y -640..-400 (sill y -400), lit yellow with a halftone halo r 260 and a curtain edge. A wooden beam with a pulley sticks out above it from (820, -700) to (270, -700); ropes hang from it at x 470 and (S10 only) x 290. Left: a dark silhouette wall x 0..140. Behind: Library nightCity skyline strip at y 500..900 and a skyCycle sky with the moon at about (210, -620). Option dawn (S16) switches the sky to skyCycle u 1.0 and lightens the wall."
+  }
+ ],
+ "props": [
+  {
+   "id": "basket",
+   "library": null,
+   "new": true,
+   "description": "hangingBasket (new): woven carrying basket big enough for a seated adult. Rim 210 wide, base 160 wide, 150 tall, yellow-brown with brown weave diagonals and red dot shade, thick black brush rim. Four ropes from the rim to a knot 170 above it, then one rope to the beam. Fields: x, y (base centre), swingA, dip, taut 0..1 (rope sag to straight), flowers (S19), front/back passes so a seated person can be drawn inside."
+  },
+  {
+   "id": "basket2",
+   "library": null,
+   "new": true,
+   "description": "second instance of hangingBasket on the rope at x 290 (S10)."
+  },
+  {
+   "id": "oud",
+   "library": null,
+   "new": true,
+   "description": "oud (new): short-necked lute, pear body 70 x 95 in brown with a yellow face, round sound hole, bent-back peg head, 4 string lines; total 150 long. Fields x, y, rot, strum (string wobble 0..1). Held under an arm, across the chest, on a knee or hidden behind the back."
+  },
+  {
+   "id": "candle",
+   "library": null,
+   "new": true,
+   "description": "candle (new, small): brass stick 60 tall with a drip pan, white candle with h 15..120, flame 22 tall on a seeded flicker, optional halftone light disc r 150 (planned lampLight). Carried by the maids and standing on the salon table."
+  },
+  {
+   "id": "throne",
+   "library": null,
+   "new": true,
+   "description": "throne (planned by AN-084): high-backed, seat 48 above its base, 150 wide, back 300 high with a pointed arch and finial. The crown can rest on the seat (S9, S17)."
+  },
+  {
+   "id": "crownGhost",
+   "library": null,
+   "new": true,
+   "description": "crownProp (planned by AN-046): gold three-point crown drawn solid or as a dashed ghost; here it lowers onto the plain turban at 117.76 and turns solid."
+  },
+  {
+   "id": "dowryChest",
+   "library": null,
+   "new": true,
+   "description": "Wooden chest 170 x 110 with yellow bands and a hinged lid (open 0..1) filled by the planned coinPile (fill 0..1) with the planned goldGlow behind it."
+  },
+  {
+   "id": "scroll",
+   "library": null,
+   "new": true,
+   "description": "scroll (planned by AN-095): small paper roll 60 x 80 with squiggle lines, held in one hand; can lie on the floor."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 6.4,
+   "paragraphs": [
+    1
+   ],
+   "set": "court",
+   "cast": [
+    "isaac",
+    "mamun"
+   ],
+   "summary": "The caliph's evening gathering. Isaac plays a last chord on his oud, bows to al-Ma'mun on the throne and walks out through the left door arch into the night.",
+   "camera": {
+    "shot": "establishing",
+    "move": "pan",
+    "notes": "Start wide on the whole hall (x 500, y 640, zoom 1.0) for the title, then from 2.1 pan left with Isaac to the door arch (x 330, y 700, zoom 1.3)."
+   },
+   "composition": "Throne on the dais right of centre (throne x 730, seat on dais top y 860). Isaac starts standing at x 420 facing the caliph, oud held across his chest. Door arch at the far left (x 40..250) shows navy sky and a moon. Faces at y 620..700.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 2.6,
+     "cue": {
+      "word": "خرج",
+      "t": 0.0
+     },
+     "who": "lettering",
+     "action": "S.title \"ISAAC OF MOSUL\" drops in over the top of the hall (y 150..300), holds, leaves at 2.6",
+     "acting": "title must not cover either head",
+     "library": "style title primitive"
+    },
+    {
+     "t": 0.0,
+     "end": 1.2,
+     "cue": {
+      "word": "خرج",
+      "t": 0.0
+     },
+     "who": "isaac",
+     "action": "strums the oud: right hand sweeps across the strings three times, body sways",
+     "acting": "eyes shut in pleasure (lid 0.8), smile, tip 0.04 swaying with the strum",
+     "library": "person {costume:'merchant', pal green/yellow, handRW on oud strings} + breathe()"
+    },
+    {
+     "t": 0.44,
+     "end": 1.8,
+     "cue": {
+      "word": "الموسيقي",
+      "t": 0.44
+     },
+     "who": "fx",
+     "action": "three music notes rise from the oud; label MUSICIAN with an arrow to Isaac",
+     "acting": "notes drift up and right, fade by 1.6",
+     "library": "musicNotes (new) + style label/arrow"
+    },
+    {
+     "t": 1.3,
+     "end": 2.1,
+     "cue": {
+      "word": "إسحاق",
+      "t": 1.3
+     },
+     "who": "isaac",
+     "action": "lowers the oud, bows deeply to the throne",
+     "acting": "anticipate 0.15 s, lean 0.5, head drop, eyes down then up to the caliph",
+     "library": "person lean + anticipate() + settleTo()"
+    },
+    {
+     "t": 1.5,
+     "cue": {
+      "word": "إسحاق",
+      "t": 1.3
+     },
+     "who": "mamun",
+     "action": "seated on the throne, nods and lifts one hand in farewell",
+     "acting": "content smile, lid 0.3, gaze on Isaac (lookAt), small nod at 1.8",
+     "library": "person {costume:'caliph', age 0.25, sit:1, seat:'bench'} + PERSON_HANDS.wave"
+    },
+    {
+     "t": 2.12,
+     "end": 5.9,
+     "cue": {
+      "word": "الموصلي",
+      "t": 2.12
+     },
+     "who": "isaac",
+     "action": "turns (dir flips with a squeeze) and walks left toward the door arch, oud slung under his arm",
+     "acting": "light step, gaze ahead to the door, a last glance back at 2.9",
+     "library": "walk(IX, t) + footfalls + turnFlip"
+    },
+    {
+     "t": 3.04,
+     "end": 4.6,
+     "cue": {
+      "word": "ليلًا",
+      "t": 3.04
+     },
+     "who": "set",
+     "action": "the moon in the door arch brightens with a soft halftone ring; small label NIGHT near the arch",
+     "acting": "stars twinkle (seeded)",
+     "library": "skyCycle(u 0.72) clipped to the arch + style label"
+    },
+    {
+     "t": 4.6,
+     "end": 6.0,
+     "cue": {
+      "word": "الخليفة",
+      "t": 4.6
+     },
+     "who": "mamun",
+     "action": "label THE CALIPH with an arrow pops beside the throne; he strokes his beard watching Isaac go",
+     "acting": "gaze follows Isaac (gazePlan), brow -0.2",
+     "library": "style label + PERSON_HANDS.chin"
+    },
+    {
+     "t": 5.36,
+     "end": 6.2,
+     "cue": {
+      "word": "المأمون",
+      "t": 5.36
+     },
+     "who": "isaac",
+     "action": "steps through the arch and is gone (clipped by the arch edge); the hall holds with the caliph alone",
+     "acting": "robe hem last to leave",
+     "library": "evenodd clip at arch edge"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 6.3,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 6.4
+   }
+  },
+  {
+   "id": "S2",
+   "start": 6.4,
+   "end": 14.6,
+   "paragraphs": [
+    1
+   ],
+   "set": "alley",
+   "cast": [
+    "isaac"
+   ],
+   "summary": "A dark lane. Isaac strolls in, notices something, and the camera discovers a big basket hanging on ropes; it climbs the ropes to a lit window far above and comes back down.",
+   "camera": {
+    "shot": "wide",
+    "move": "crane",
+    "notes": "Ground framing (x 430, y 640, zoom 1.25) until 11.9; crane up the rope 11.98..13.9 to the window (x 600, y -480, zoom 1.25); drop back to the ground 13.95..14.6 with an ease-out."
+   },
+   "composition": "Tall set: ground y 900, house wall x 380..1000 rising to y -900, window x 560..800 at y -640..-400, beam above it carrying the rope at x 470. Basket hangs with its base at y 860, rim at y 710. Isaac enters from the left edge and stops at x 230. Basket is dark until he notices it, then its yellow weave lights up.",
+   "actions": [
+    {
+     "t": 6.72,
+     "end": 8.7,
+     "cue": {
+      "word": "وفي",
+      "t": 6.72
+     },
+     "who": "isaac",
+     "action": "walks in from the left, humming, oud under his arm",
+     "acting": "relaxed, gaze wandering up at the stars, slight sway (tip +-0.03 at 0.7 Hz) from the evening",
+     "library": "walk + footfalls; dustBurst very small"
+    },
+    {
+     "t": 7.42,
+     "end": 9.2,
+     "cue": {
+      "word": "زقاق",
+      "t": 7.42
+     },
+     "who": "set",
+     "action": "label DARK ALLEY at the top left; walls are navy silhouettes with blue dots, an empty lane",
+     "acting": "only his face and the far window are bright",
+     "library": "style label"
+    },
+    {
+     "t": 8.06,
+     "end": 8.8,
+     "cue": {
+      "word": "مظلم",
+      "t": 8.06
+     },
+     "who": "fx",
+     "action": "night tint deepens for a moment (navy overlay 0.25) so the next reveal reads",
+     "acting": "keep Isaac's eyes white and readable",
+     "library": "ctx overlay, dayCycle night value"
+    },
+    {
+     "t": 8.78,
+     "end": 9.5,
+     "cue": {
+      "word": "لمح",
+      "t": 8.78
+     },
+     "who": "isaac",
+     "action": "stops short mid-step: a two-frame saccade right, then head tilts",
+     "acting": "eyes wide, brow -0.6, sq 0.94 then settle; a small \"!\" tick above the turban",
+     "library": "gazePlan(t, plan, 0.07) + settleTo"
+    },
+    {
+     "t": 9.58,
+     "end": 10.9,
+     "cue": {
+      "word": "سلة",
+      "t": 9.58
+     },
+     "who": "basket",
+     "action": "the basket is revealed: weave lights up from dark, it sways gently on the rope",
+     "acting": "damped swing about 3 degrees",
+     "library": "hangingBasket (new) {swingA: swing(t, ...)}"
+    },
+    {
+     "t": 10.16,
+     "end": 11.9,
+     "cue": {
+      "word": "كبيرة",
+      "t": 10.16
+     },
+     "who": "lettering",
+     "action": "label BIG BASKET with an arrow; two small size brackets flick open at its sides",
+     "acting": "brackets open with overshoot",
+     "library": "style label/arrow + box"
+    },
+    {
+     "t": 10.88,
+     "end": 12.0,
+     "cue": {
+      "word": "معلقة",
+      "t": 10.88
+     },
+     "who": "isaac",
+     "action": "creeps two steps closer, looks at the knot, then his eyes run up the rope",
+     "acting": "gaze goes from basket to straight up (gaze [0.2,-1]), head tilts back, mouth o",
+     "library": "gazePlan + person headTilt"
+    },
+    {
+     "t": 11.98,
+     "end": 13.2,
+     "cue": {
+      "word": "بحبال",
+      "t": 11.98
+     },
+     "who": "camera",
+     "action": "crane up the four ropes to the knot and along the single rope, past dark shutters",
+     "acting": "rope has a slow seeded sway; one star glint passes",
+     "library": "CAM keys in pairs"
+    },
+    {
+     "t": 13.22,
+     "end": 13.9,
+     "cue": {
+      "word": "نافذة",
+      "t": 13.22
+     },
+     "who": "set",
+     "action": "the high window arrives in frame, glowing yellow with a halftone halo; a curtain edge stirs",
+     "acting": "warm against the blue wall",
+     "library": "nightAlley window glow (new set)"
+    },
+    {
+     "t": 13.94,
+     "end": 14.6,
+     "cue": {
+      "word": "عالية",
+      "t": 13.94
+     },
+     "who": "lettering",
+     "action": "a vertical double arrow beside the wall with label SO HIGH!; camera drops back to Isaac",
+     "acting": "on the way down the rope whips past",
+     "library": "style arrow/label"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 14.6
+   }
+  },
+  {
+   "id": "S3",
+   "start": 14.6,
+   "end": 25.8,
+   "paragraphs": [
+    1
+   ],
+   "set": "alley",
+   "cast": [
+    "isaac",
+    "servantA",
+    "servantB"
+   ],
+   "summary": "Curiosity (and the evening's drink) win: Isaac circles the basket, hops in and sits. The rope jerks tight, two servants haul at the window, and he is hoisted up the wall, clutching the rim.",
+   "camera": {
+    "shot": "medium",
+    "move": "crane",
+    "notes": "Medium on Isaac and the basket (x 400, y 700, zoom 1.6) to 19.3; pull to zoom 1.2 on the jerk; from 21.22 the camera rides up with the basket to the window (y -420) arriving 24.6."
+   },
+   "composition": "Isaac left of the basket, then inside it: draw basket back, Isaac (seat floor, feet at basket base y 850), basket front. Servants are seen from the chest up inside the window frame, hands on the rope over the beam.",
+   "actions": [
+    {
+     "t": 14.8,
+     "end": 15.9,
+     "cue": {
+      "word": "دفعه",
+      "t": 14.8
+     },
+     "who": "isaac",
+     "action": "walks once round the basket, peering in, a finger on his chin",
+     "acting": "gaze into the basket, brow -0.5, leans over the rim (lean 0.3)",
+     "library": "walk + PERSON_HANDS.chin"
+    },
+    {
+     "t": 15.88,
+     "end": 16.5,
+     "cue": {
+      "word": "الفضول",
+      "t": 15.88
+     },
+     "who": "fx",
+     "action": "a big \"?\" pops above him and wobbles (curiosity)",
+     "acting": "he looks up at it, then at the window",
+     "library": "style emphasis"
+    },
+    {
+     "t": 16.42,
+     "end": 17.3,
+     "cue": {
+      "word": "والشراب",
+      "t": 16.42
+     },
+     "who": "isaac",
+     "action": "small woozy sway and one hiccup: body tips back then forward, turban slips and he pushes it straight",
+     "acting": "lid 0.45, lopsided smile, cheeks flushed (two red dot patches)",
+     "library": "tip keyed +-0.06, sq pulse 1.05; lettering HIC!"
+    },
+    {
+     "t": 17.28,
+     "end": 17.7,
+     "cue": {
+      "word": "إلى",
+      "t": 17.28
+     },
+     "who": "isaac",
+     "action": "decides: quick look left and right, crouch",
+     "acting": "saccades left, right, then a grin; anticipate crouch sq 0.88",
+     "library": "gazePlan 0.07 + anticipate()"
+    },
+    {
+     "t": 17.64,
+     "end": 18.2,
+     "cue": {
+      "word": "الجلوس",
+      "t": 17.64
+     },
+     "who": "isaac",
+     "action": "hops over the rim into the basket",
+     "acting": "stretch on take-off, arc 110 high, knees up, oud held clear",
+     "library": "hop() + landSquash()"
+    },
+    {
+     "t": 18.14,
+     "end": 19.3,
+     "cue": {
+      "word": "فيها",
+      "t": 18.14
+     },
+     "who": "basket",
+     "action": "takes his weight: dips 16 units, creaks, swings and settles; Isaac sits cross-legged, only chest and head above the rim",
+     "acting": "he pats the rim, pleased with himself, looks up",
+     "library": "hangingBasket {dip, swingA} + person {sit:1, seat:'floor'}"
+    },
+    {
+     "t": 19.3,
+     "end": 20.0,
+     "cue": {
+      "word": "فإذا",
+      "t": 19.3
+     },
+     "who": "basket",
+     "action": "the rope snaps taut with a jerk; basket hops 30 units and stops",
+     "acting": "Isaac: eyes wide, mouth o, both hands grab the rim (grip), turban jumps a frame late",
+     "library": "rope straight-line state + lurch(); PERSON_HANDS.grip via handLW/handRW"
+    },
+    {
+     "t": 20.0,
+     "end": 21.2,
+     "cue": {
+      "word": "بخدم",
+      "t": 20.0
+     },
+     "who": "servantA",
+     "action": "quick cut-in framing of the window (inset circle at top right, r 190): two servants haul the rope hand over hand",
+     "acting": "servantA leans back on each pull, tongue out with effort; servantB a beat late (stagger)",
+     "library": "inset circle (planned) + person {costume:'servant'} arm angles aL/aR alternating"
+    },
+    {
+     "t": 21.22,
+     "end": 24.2,
+     "cue": {
+      "word": "يرفعونه",
+      "t": 21.22
+     },
+     "who": "camera",
+     "action": "the lift: basket rises in five pulls (each a 0.12 s surge and a small drop back), camera rides with it",
+     "acting": "Isaac looks down (gulp, sq 0.95), then up; the ground and his dropped slipper shrink below",
+     "library": "kfn stepped rise with ease-out per pull + CAM keys"
+    },
+    {
+     "t": 22.24,
+     "end": 23.5,
+     "cue": {
+      "word": "ظانين",
+      "t": 22.24
+     },
+     "who": "servantB",
+     "action": "iconBalloon from the window as it nears: a robed guest silhouette with a tick",
+     "acting": "servantB nods to servantA: \"it is him\"",
+     "library": "iconBalloon (planned) single mode"
+    },
+    {
+     "t": 23.54,
+     "end": 24.3,
+     "cue": {
+      "word": "زائر",
+      "t": 23.54
+     },
+     "who": "lettering",
+     "action": "label THE GUEST? with an arrow down to Isaac in the basket",
+     "acting": "Isaac points at himself, puzzled, then shrugs (palmsUp)",
+     "library": "style label + PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 24.22,
+     "end": 25.3,
+     "cue": {
+      "word": "منتظر",
+      "t": 24.22
+     },
+     "who": "isaac",
+     "action": "the basket reaches the sill and stops; servants bow and hold out welcoming hands; Isaac smiles weakly and waves",
+     "acting": "two blinks, a relieved breath, look to camera for 6 frames",
+     "library": "blink + PERSON_HANDS.wave; gaze [0,0.05]"
+    },
+    {
+     "t": 25.4,
+     "end": 25.8,
+     "who": "basket",
+     "action": "servants swing the basket in through the window; the empty rope swings",
+     "acting": "last thing seen: the oud neck going over the sill",
+     "library": "swing()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 16.6,
+     "text": "HIC!"
+    },
+    {
+     "t": 21.3,
+     "text": "HEAVE!"
+    },
+    {
+     "t": 22.0,
+     "text": "HO!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 25.6,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 25.8
+   }
+  },
+  {
+   "id": "S4",
+   "start": 25.8,
+   "end": 33.2,
+   "paragraphs": [
+    2
+   ],
+   "set": "salon",
+   "cast": [
+    "isaac",
+    "maidA",
+    "maidB"
+   ],
+   "summary": "Inside. Two maids with candles receive Isaac at the balcony arch and lead him across the floor; the camera pulls back to show a splendid hall and he gapes.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "Start tight on the left arch (x 260, y 700, zoom 1.7); track right with the walk from 30.0; pull out to the full hall (x 500, y 640, zoom 1.0) on 31.82."
+   },
+   "composition": "Left arch (x 40..250) is the balcony opening with night sky; Isaac steps down from the sill at x 190. Maids enter from the right and stop at x 330 and 400. Procession: maidA leads, Isaac, maidB behind, heading to the cushions at x 330/470.",
+   "actions": [
+    {
+     "t": 26.44,
+     "end": 27.3,
+     "cue": {
+      "word": "استقبلته",
+      "t": 26.44
+     },
+     "who": "isaac",
+     "action": "steps out of the basket over the sill into the room, straightening his robe",
+     "acting": "unsteady first step (tip 0.05), then composed; gaze sweeping the room",
+     "library": "hop small + settleTo"
+    },
+    {
+     "t": 27.32,
+     "end": 28.3,
+     "cue": {
+      "word": "خادمات",
+      "t": 27.32
+     },
+     "who": "maidA",
+     "action": "two maids glide in from the right, one a little behind the other, and bow",
+     "acting": "never in unison: maidB bows 5 frames late; polite smiles, eyes down then up at him",
+     "library": "person {costume:'maiden'} / second with pal red robe; walk + stagger()"
+    },
+    {
+     "t": 28.26,
+     "end": 29.2,
+     "cue": {
+      "word": "يحملن",
+      "t": 28.26
+     },
+     "who": "candle",
+     "action": "each maid holds a candlestick up in her near hand",
+     "acting": "flames flicker (seeded), arms via angles so the pose reads",
+     "library": "candle (new) at P.hands + handLW"
+    },
+    {
+     "t": 29.24,
+     "end": 30.0,
+     "cue": {
+      "word": "الشموع",
+      "t": 29.24
+     },
+     "who": "fx",
+     "action": "two warm halftone light discs (r 150) bloom round the candles and lift the dark off the wall; label CANDLES",
+     "acting": "Isaac squints, then smiles in the light",
+     "library": "lampLight (planned) + style label"
+    },
+    {
+     "t": 30.0,
+     "end": 31.8,
+     "cue": {
+      "word": "وقدنه",
+      "t": 30.0
+     },
+     "who": "maidA",
+     "action": "turns and leads; Isaac follows, maidB falls in behind; light discs travel with them",
+     "acting": "Isaac keeps glancing back at the window, then ahead",
+     "library": "walk + footfalls for all three, different stride phases"
+    },
+    {
+     "t": 31.82,
+     "end": 32.6,
+     "cue": {
+      "word": "قاعة",
+      "t": 31.82
+     },
+     "who": "camera",
+     "action": "pull out: arches, lamps, carpet, cushions and a low table appear",
+     "acting": "the three become small in a grand room",
+     "library": "CAM keys"
+    },
+    {
+     "t": 32.54,
+     "end": 33.2,
+     "cue": {
+      "word": "فاخرة",
+      "t": 32.54
+     },
+     "who": "fx",
+     "action": "star glints run across lamps, carpet trim and cushions; Isaac stops with his jaw dropped",
+     "acting": "mouth open, eyes wide, turban slips again",
+     "library": "goldGlow glints (planned) strength 0.4"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 32.6,
+     "text": "WOW!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 33.2
+   }
+  },
+  {
+   "id": "S5",
+   "start": 33.2,
+   "end": 49.72,
+   "paragraphs": [
+    2
+   ],
+   "set": "salon",
+   "cast": [
+    "isaac",
+    "khadijah",
+    "maidA",
+    "maidB"
+   ],
+   "summary": "The young lady of the house enters and asks how he got here. Isaac acts out the basket story, then hides his oud behind his back and claims to be a merchant from the Baghdad market.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot(isaac, khadijah, margin 150) about zoom 1.5; slow push to 1.75 by 43.4; hold."
+   },
+   "composition": "Isaac at x 380 facing right, the lady at x 650 facing left, a low table with a candle between them at x 520. Maids stand back at x 120 and 200, small, holding candles, watching like an audience. Balloons go in the upper third above the arches, never over a face.",
+   "actions": [
+    {
+     "t": 33.38,
+     "end": 34.5,
+     "cue": {
+      "word": "دخلت",
+      "t": 33.38
+     },
+     "who": "khadijah",
+     "action": "enters through the right arch with small quick steps and stops",
+     "acting": "upright, curious not afraid: brow -0.3, gaze straight at Isaac, veil ends lag 2 frames",
+     "library": "person {costume:'lady'} + walk"
+    },
+    {
+     "t": 34.5,
+     "end": 36.5,
+     "cue": {
+      "word": "سيدة",
+      "t": 34.5
+     },
+     "who": "lettering",
+     "action": "label THE LADY OF THE HOUSE with an arrow",
+     "acting": "pops with overshoot",
+     "library": "style label/arrow"
+    },
+    {
+     "t": 35.2,
+     "end": 35.9,
+     "cue": {
+      "word": "شابة",
+      "t": 35.2
+     },
+     "who": "isaac",
+     "action": "snaps upright, straightens his turban, bows with a hand on his chest",
+     "acting": "flustered blink pair, then a charming smile",
+     "library": "PERSON_HANDS.chest + lean"
+    },
+    {
+     "t": 35.82,
+     "end": 37.1,
+     "cue": {
+      "word": "وسألته",
+      "t": 35.82
+     },
+     "who": "khadijah",
+     "action": "asks: one hand opens toward him",
+     "acting": "talk on her words, head tilt, brow raised",
+     "library": "talk + PERSON_HANDS.palmsUp (one hand)"
+    },
+    {
+     "t": 37.12,
+     "end": 39.4,
+     "cue": {
+      "word": "كيف",
+      "t": 37.12
+     },
+     "who": "fx",
+     "action": "her iconBalloon: a little house with a big \"?\"",
+     "acting": "she glances at the window then back at him",
+     "library": "iconBalloon (planned)"
+    },
+    {
+     "t": 38.7,
+     "end": 39.5,
+     "cue": {
+      "word": "منزلها",
+      "t": 38.7
+     },
+     "who": "khadijah",
+     "action": "points down at her own floor: \"my house\"",
+     "acting": "firm, a small stamp of emphasis",
+     "library": "PERSON_HANDS.pointDown"
+    },
+    {
+     "t": 39.58,
+     "end": 41.6,
+     "cue": {
+      "word": "قص",
+      "t": 39.58
+     },
+     "who": "isaac",
+     "action": "tells it with his whole body: mimes sitting down, then both fists hauling a rope upward",
+     "acting": "big, comic, eyes on her to see if she believes it",
+     "library": "arm angles aL/aR alternating (the HEAVE pose from S3 = setup and payoff)"
+    },
+    {
+     "t": 41.66,
+     "end": 43.2,
+     "cue": {
+      "word": "السلة",
+      "t": 41.66
+     },
+     "who": "fx",
+     "action": "his iconBalloon: the basket with a tiny Isaac going up an arrow",
+     "acting": "the lady hides a laugh behind her hand; maids exchange a look",
+     "library": "iconBalloon + PERSON_HANDS.mouthCover"
+    },
+    {
+     "t": 42.28,
+     "end": 43.4,
+     "cue": {
+      "word": "لكنه",
+      "t": 42.28
+     },
+     "who": "isaac",
+     "action": "stops mid-gesture; eyes slide to the oud in his other hand",
+     "acting": "saccade to the oud, then to camera",
+     "library": "gazePlan 0.07"
+    },
+    {
+     "t": 43.46,
+     "end": 44.6,
+     "cue": {
+      "word": "أخفى",
+      "t": 43.46
+     },
+     "who": "oud",
+     "action": "he slides the oud behind his back; its round body and neck still stick out on both sides",
+     "acting": "innocent whistle face (mouth o), looking at the ceiling",
+     "library": "draw oud before the person; handLW behind"
+    },
+    {
+     "t": 44.14,
+     "end": 45.5,
+     "cue": {
+      "word": "عمله",
+      "t": 44.14
+     },
+     "who": "lettering",
+     "action": "small tag MUSICIAN beside him gets a red cross through it",
+     "acting": "he sees the tag and waves it away",
+     "library": "style label + emphasis X"
+    },
+    {
+     "t": 45.56,
+     "end": 47.4,
+     "cue": {
+      "word": "وقال",
+      "t": 45.56
+     },
+     "who": "isaac",
+     "action": "puffs his chest, a hand on it",
+     "acting": "talk, chin up, over-confident smile",
+     "library": "PERSON_HANDS.chest, sq 1.04"
+    },
+    {
+     "t": 47.52,
+     "end": 49.6,
+     "cue": {
+      "word": "تاجر",
+      "t": 47.52
+     },
+     "who": "fx",
+     "action": "his iconBalloon: coin sack and scales; label MERCHANT!",
+     "acting": "he nods too many times",
+     "library": "iconBalloon + style label"
+    },
+    {
+     "t": 48.5,
+     "end": 49.72,
+     "cue": {
+      "word": "سوق",
+      "t": 48.5
+     },
+     "who": "khadijah",
+     "action": "one eyebrow up, a slow knowing smile; her gaze drops to the oud neck sticking out, then back to his face",
+     "acting": "she lets it pass: small nod, gestures him to a cushion",
+     "library": "brow -0.6, mouth 'smile', gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 45.0,
+     "text": "SHH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 49.72,
+    "label": "NEXT NIGHT..."
+   }
+  },
+  {
+   "id": "S6",
+   "start": 49.72,
+   "end": 60.2,
+   "paragraphs": [
+    4
+   ],
+   "set": "salon",
+   "cast": [
+    "isaac",
+    "khadijah"
+   ],
+   "summary": "Night 2 and night 3: the basket goes up again and again. In the hall Isaac and the lady sit over verse and talk while the candle burns down to a stub and the sky in the arch turns to dawn.",
+   "camera": {
+    "shot": "wide",
+    "move": "whip",
+    "notes": "Opens under the LATER card on the alley basket rising (shown through an inset panel, see actions), whips to the salon at 56.3; then a slow push from zoom 1.3 to 1.5 on the pair."
+   },
+   "composition": "49.72..56.3 uses the alley drawing full frame (ground view, x 430, y 300, zoom 1.1) for two quick lifts; from 56.3 the salon: Isaac seated on the cushion at x 400, the lady on hers at x 640, table and tall candle at x 520, the left arch sky visible at the frame edge.",
+   "actions": [
+    {
+     "t": 49.72,
+     "end": 52.2,
+     "cue": {
+      "word": "عاد",
+      "t": 49.72
+     },
+     "who": "basket",
+     "action": "card NEXT NIGHT... clears on the alley: Isaac already in the basket, going up fast, waving",
+     "acting": "eager grin, no fear this time; three quick pulls",
+     "library": "transition caption + alley set + stepped rise"
+    },
+    {
+     "t": 52.36,
+     "end": 53.7,
+     "cue": {
+      "word": "الليلة",
+      "t": 52.36
+     },
+     "who": "lettering",
+     "action": "counter NIGHT 2 stamps on beside a crescent moon icon",
+     "acting": "moon icon ticks fatter",
+     "library": "style counter"
+    },
+    {
+     "t": 53.76,
+     "end": 55.2,
+     "cue": {
+      "word": "ثم",
+      "t": 53.76
+     },
+     "who": "basket",
+     "action": "jump cut: basket at the ground again, Isaac hops in without looking (he knows the way)",
+     "acting": "hop with a flourish, oud first",
+     "library": "hop() + landSquash()"
+    },
+    {
+     "t": 55.24,
+     "end": 56.4,
+     "cue": {
+      "word": "ليلة",
+      "t": 55.24
+     },
+     "who": "lettering",
+     "action": "counter flips to NIGHT 3; the basket shoots up out of frame",
+     "acting": "whip-blur streaks follow it up",
+     "library": "style counter + whip"
+    },
+    {
+     "t": 56.5,
+     "end": 57.6,
+     "cue": {
+      "word": "وصار",
+      "t": 56.5
+     },
+     "who": "isaac",
+     "action": "salon: seated cross-legged, chin on his hand, listening to her recite",
+     "acting": "soft eyes (lid 0.35), slow nods, gaze fixed on her",
+     "library": "person {sit:1, seat:'floor'} + PERSON_HANDS.chin + breathe"
+    },
+    {
+     "t": 56.6,
+     "end": 58.0,
+     "cue": {
+      "word": "وصار",
+      "t": 56.5
+     },
+     "who": "khadijah",
+     "action": "seated, reciting from a small scroll with one hand raised",
+     "acting": "talk, eyes moving along the lines then up to him",
+     "library": "person {costume:'lady', sit:1, seat:'floor'} + scroll (planned prop)"
+    },
+    {
+     "t": 57.6,
+     "end": 59.6,
+     "cue": {
+      "word": "ينسى",
+      "t": 57.6
+     },
+     "who": "candle",
+     "action": "time-lapse: the tall candle on the table melts from 120 high to a 15 stub with wax drips",
+     "acting": "flame stays the same size, sinking",
+     "library": "candle {h keyed by kfn}"
+    },
+    {
+     "t": 58.08,
+     "end": 59.9,
+     "cue": {
+      "word": "الوقت",
+      "t": 58.08
+     },
+     "who": "set",
+     "action": "the sky in the left arch runs night to dawn (moon sets, yellow rises); a label HOURS LATER",
+     "acting": "stars fade",
+     "library": "skyCycle(u 0.75 -> 1.02) clipped to the arch"
+    },
+    {
+     "t": 59.06,
+     "end": 60.2,
+     "cue": {
+      "word": "يجلس",
+      "t": 59.06
+     },
+     "who": "isaac",
+     "action": "still seated in exactly the same pose, then notices the dawn light on his sleeve: double take at the arch",
+     "acting": "eyes snap wide, hands to cheeks",
+     "library": "settleTo + PERSON_HANDS.cheeks"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 59.8,
+     "text": "OH NO!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 60.2
+   }
+  },
+  {
+   "id": "S7",
+   "start": 60.2,
+   "end": 71.18,
+   "paragraphs": [
+    4
+   ],
+   "set": "court",
+   "cast": [
+    "isaac",
+    "mamun",
+    "servantA"
+   ],
+   "summary": "At court one evening Isaac tiptoes out behind the caliph's back. Al-Ma'mun turns to an empty cushion, reddens, and has him fetched; Isaac stands trembling before the throne.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide hall (x 500, y 660, zoom 1.1) for the sneak; push to the caliph (x 700, y 660, zoom 1.6) on 65.88; at 67.9 a whip returns to a two-shot (zoom 1.4) with Isaac in front of the dais."
+   },
+   "composition": "Caliph on the throne (x 730) looking right at a servant offering a tray. Isaac's cushion at x 420 with the door arch behind him at the left. After the whip: Isaac at x 480 facing the throne, shoulders up.",
+   "actions": [
+    {
+     "t": 60.32,
+     "end": 61.6,
+     "cue": {
+      "word": "وفي",
+      "t": 60.32
+     },
+     "who": "set",
+     "action": "court at evening: lamps lit, caliph in talk with a servant; Isaac on his cushion checks the moon in the door arch",
+     "acting": "Isaac: saccades between the caliph and the door",
+     "library": "palaceHall court dressing + gazePlan 0.07"
+    },
+    {
+     "t": 61.7,
+     "end": 62.5,
+     "cue": {
+      "word": "الزيارات",
+      "t": 61.7
+     },
+     "who": "fx",
+     "action": "small thought cloud over Isaac: the basket",
+     "acting": "he smiles at it, cloud pops",
+     "library": "thoughtCloud w 200 h 140, scale 0.22"
+    },
+    {
+     "t": 62.58,
+     "end": 64.5,
+     "cue": {
+      "word": "ترك",
+      "t": 62.58
+     },
+     "who": "isaac",
+     "action": "rises and tiptoes to the door: high knees, a hold on each toe, oud hugged tight",
+     "acting": "eyes locked on the caliph's back, hush finger to his own lips",
+     "library": "sneak gait (planned) on walk() + PERSON_HANDS.hush"
+    },
+    {
+     "t": 63.8,
+     "end": 64.6,
+     "cue": {
+      "word": "المأمون",
+      "t": 63.8
+     },
+     "who": "mamun",
+     "action": "laughs at something the servant says, not looking",
+     "acting": "head back, lid 0.8 (dramatic irony)",
+     "library": "person laugh (planned helper)"
+    },
+    {
+     "t": 64.5,
+     "end": 65.8,
+     "cue": {
+      "word": "بغير",
+      "t": 64.5
+     },
+     "who": "lettering",
+     "action": "label NO PERMISSION! with an arrow at Isaac as he slips through the arch",
+     "acting": "label shakes once",
+     "library": "style label/arrow"
+    },
+    {
+     "t": 65.14,
+     "end": 65.9,
+     "cue": {
+      "word": "إذن",
+      "t": 65.14
+     },
+     "who": "mamun",
+     "action": "turns to speak to Isaac: sees the empty cushion; a dashed outline of Isaac blinks there",
+     "acting": "gaze snaps to the cushion, then the door; smile drops",
+     "library": "gazePlan + dashed ghost outline"
+    },
+    {
+     "t": 65.88,
+     "end": 67.6,
+     "cue": {
+      "word": "فغضب",
+      "t": 65.88
+     },
+     "who": "mamun",
+     "action": "anger: stands up from the throne, fists down",
+     "acting": "brow 1, flush climbing the face, two steam puffs, crown jumps",
+     "library": "flush (planned expression) + sit 1 -> 0 + anticipate"
+    },
+    {
+     "t": 67.7,
+     "end": 68.5,
+     "cue": {
+      "word": "واستدعاه",
+      "t": 67.7
+     },
+     "who": "mamun",
+     "action": "thrusts an arm at the door: \"bring him!\"; servantA runs out",
+     "acting": "talk, sharp point, servant's legs spin before he goes",
+     "library": "PERSON_HANDS.pointFwd + runInPlace (planned)"
+    },
+    {
+     "t": 68.58,
+     "end": 69.7,
+     "cue": {
+      "word": "ليسأله",
+      "t": 68.58
+     },
+     "who": "isaac",
+     "action": "after a whip: Isaac stands before the dais, knees knocking",
+     "acting": "tremble, wet eyes, gaze up at the caliph then down, turban low",
+     "library": "tremble() + wet + shoulders up"
+    },
+    {
+     "t": 69.74,
+     "end": 70.3,
+     "cue": {
+      "word": "سبب",
+      "t": 69.74
+     },
+     "who": "mamun",
+     "action": "leans down from the dais, hands on hips",
+     "acting": "brow 1 easing to 0.6, a \"?\" beside his head",
+     "library": "PERSON_HANDS.hipsHands + lean 0.25"
+    },
+    {
+     "t": 70.28,
+     "end": 71.18,
+     "cue": {
+      "word": "غيابه",
+      "t": 70.28
+     },
+     "who": "fx",
+     "action": "between them: the empty-cushion icon with \"?\" in an iconBalloon from the caliph",
+     "acting": "Isaac gulps (sq pulse 0.95)",
+     "library": "iconBalloon"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 66.2,
+     "text": "GRRR!"
+    },
+    {
+     "t": 67.9,
+     "text": "FETCH HIM!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 71.18
+   }
+  },
+  {
+   "id": "S8",
+   "start": 71.18,
+   "end": 84.6,
+   "paragraphs": [
+    5
+   ],
+   "set": "court",
+   "cast": [
+    "isaac",
+    "mamun"
+   ],
+   "summary": "Isaac whispers the whole secret. A thought cloud shows the basket, the lady, verse and music; the caliph's scowl melts into delight and he points at himself: take me too.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot(isaac, mamun) zoom 1.6, heads at about y 640; cloud sits above them (centre 500, 330); push to 1.8 on 82.56."
+   },
+   "composition": "The caliph has stepped down: Isaac at x 400, caliph at x 620, close. Thought cloud 520 x 330 centred (500, 330) with its trail to Isaac. Nobody else in frame (private).",
+   "actions": [
+    {
+     "t": 71.18,
+     "end": 72.8,
+     "cue": {
+      "word": "أخبر",
+      "t": 71.18
+     },
+     "who": "isaac",
+     "action": "looks left and right, then leans in and cups a hand to whisper",
+     "acting": "saccades, then gaze on the caliph's ear; talk small",
+     "library": "gazePlan 0.07 + PERSON_HANDS.cupMouth + tip 0.08"
+    },
+    {
+     "t": 73.5,
+     "end": 74.3,
+     "cue": {
+      "word": "المأمون",
+      "t": 73.5
+     },
+     "who": "mamun",
+     "action": "arms folded, one ear turned",
+     "acting": "brow 0.6, lid 0.3, gaze sideways at Isaac",
+     "library": "PERSON_HANDS.folded"
+    },
+    {
+     "t": 74.28,
+     "end": 74.9,
+     "cue": {
+      "word": "سر",
+      "t": 74.28
+     },
+     "who": "isaac",
+     "action": "hush finger: label SECRET with a small lock icon",
+     "acting": "eyes wide, serious",
+     "library": "PERSON_HANDS.hush + style label"
+    },
+    {
+     "t": 74.82,
+     "end": 75.5,
+     "cue": {
+      "word": "السلة",
+      "t": 74.82
+     },
+     "who": "fx",
+     "action": "thought cloud pops (trail first); inside, the basket rises up a wall with tiny Isaac",
+     "acting": "caliph's eyes go to the cloud",
+     "library": "thoughtCloud(ctx, 500, 330, 520, 330, t, {inside})"
+    },
+    {
+     "t": 75.44,
+     "end": 77.6,
+     "cue": {
+      "word": "والسيدة",
+      "t": 75.44
+     },
+     "who": "fx",
+     "action": "cloud content changes: the lady, with a soft glow",
+     "acting": "caliph's folded arms loosen",
+     "library": "thoughtCloud inside: khadijah figure >= 110 px"
+    },
+    {
+     "t": 77.68,
+     "end": 78.3,
+     "cue": {
+      "word": "الشعر",
+      "t": 77.68
+     },
+     "who": "fx",
+     "action": "in the cloud she holds a scroll: three lines of verse squiggles appear",
+     "acting": "caliph's brow drops to 0",
+     "library": "scroll prop + squiggle lines"
+    },
+    {
+     "t": 78.3,
+     "end": 79.2,
+     "cue": {
+      "word": "والموسيقى",
+      "t": 78.3
+     },
+     "who": "fx",
+     "action": "music notes spill out of the cloud edge into the room",
+     "acting": "both men's heads follow one note",
+     "library": "musicNotes (new)"
+    },
+    {
+     "t": 79.18,
+     "end": 80.9,
+     "cue": {
+      "word": "أعجب",
+      "t": 79.18
+     },
+     "who": "mamun",
+     "action": "the melt: scowl to wonder, then a wide smile; he unfolds his arms",
+     "acting": "brow 1 -> -0.5 over 0.8 s, flush fades, a long blink, leans in",
+     "library": "kfn on brow + settleTo"
+    },
+    {
+     "t": 80.94,
+     "end": 81.7,
+     "cue": {
+      "word": "الخليفة",
+      "t": 80.94
+     },
+     "who": "mamun",
+     "action": "claps his hands once and laughs",
+     "acting": "crown bounces a frame late",
+     "library": "PERSON_HANDS.clasp + person laugh"
+    },
+    {
+     "t": 81.7,
+     "end": 82.5,
+     "cue": {
+      "word": "بحكايته",
+      "t": 81.7
+     },
+     "who": "isaac",
+     "action": "sags with relief, wipes his brow",
+     "acting": "long exhale (sq 0.96 -> 1), wet eyes clear",
+     "library": "breathe + hand to forehead"
+    },
+    {
+     "t": 82.56,
+     "end": 83.5,
+     "cue": {
+      "word": "وطلب",
+      "t": 82.56
+     },
+     "who": "mamun",
+     "action": "points at Isaac, at the cloud, then jabs both thumbs at his own chest",
+     "acting": "eager as a boy, brows up",
+     "library": "PERSON_HANDS.pointFwd -> pointUp -> chest"
+    },
+    {
+     "t": 83.54,
+     "end": 84.6,
+     "cue": {
+      "word": "مرافقته",
+      "t": 83.54
+     },
+     "who": "isaac",
+     "action": "double take: \"you?\"; the cloud pops",
+     "acting": "eyes wide, hands half up, then a helpless smile",
+     "library": "settleTo + PERSON_HANDS.palmsUp"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 80.2,
+     "text": "OHO!"
+    },
+    {
+     "t": 83.0,
+     "text": "ME TOO!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 84.6
+   }
+  },
+  {
+   "id": "S9",
+   "start": 84.6,
+   "end": 88.4,
+   "paragraphs": [
+    5
+   ],
+   "set": "court",
+   "cast": [
+    "isaac",
+    "mamun"
+   ],
+   "summary": "They agree to hide their names: the caliph lifts off his crown and takes a plain turban and robe; both put a finger to their lips.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "Same two-shot, zoom 1.7, locked off so the costume swap reads."
+   },
+   "composition": "Caliph centre right (x 620), Isaac left (x 400). The crown is set on the throne seat behind them, visible at the right edge.",
+   "actions": [
+    {
+     "t": 84.72,
+     "end": 86.2,
+     "cue": {
+      "word": "اتفقا",
+      "t": 84.72
+     },
+     "who": "mamun",
+     "action": "they nod together and clasp hands",
+     "acting": "conspirators: both glance at the door first",
+     "library": "handLW/handRW meeting at a world point"
+    },
+    {
+     "t": 86.32,
+     "end": 87.0,
+     "cue": {
+      "word": "إخفاء",
+      "t": 86.32
+     },
+     "who": "mamun",
+     "action": "lifts the crown off with both hands; a star puff covers him for 6 frames and he stands in a plain turban and plain red robe",
+     "acting": "he checks himself, pleased; Isaac inspects him and tucks in a stray jewel",
+     "library": "poof burst then person {costume:'merchant', pal red robe, white turban}"
+    },
+    {
+     "t": 86.98,
+     "end": 88.3,
+     "cue": {
+      "word": "اسميهما",
+      "t": 86.98
+     },
+     "who": "lettering",
+     "action": "two name tags pop above their heads reading \"?\" and \"?\"",
+     "acting": "both hush at the same word, Isaac 3 frames late",
+     "library": "style label + PERSON_HANDS.hush"
+    },
+    {
+     "t": 88.0,
+     "end": 88.4,
+     "who": "mamun",
+     "action": "winks at the camera",
+     "acting": "one eye, small smile",
+     "library": "person wink:'R'"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 87.2,
+     "text": "SHH!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 88.3,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 88.4
+   }
+  },
+  {
+   "id": "S10",
+   "start": 88.4,
+   "end": 94.5,
+   "paragraphs": [
+    5
+   ],
+   "set": "alley",
+   "cast": [
+    "isaac",
+    "mamun"
+   ],
+   "summary": "Night in the alley: two baskets now. Each man sits in one and they are hauled up side by side, the caliph enjoying it far more than Isaac.",
+   "camera": {
+    "shot": "wide",
+    "move": "crane",
+    "notes": "Ground wide (x 400, y 640, zoom 1.2); from 92.08 crane up with the baskets to the window (y -420)."
+   },
+   "composition": "Basket 1 on the rope at x 470 (Isaac), basket 2 on a second rope at x 290 (the disguised caliph). Moon at upper left of the tall sky.",
+   "actions": [
+    {
+     "t": 88.72,
+     "end": 89.6,
+     "cue": {
+      "word": "وجلس",
+      "t": 88.72
+     },
+     "who": "isaac",
+     "action": "both men step up to their baskets and climb in: Isaac neatly, the caliph with a heave and a wobble",
+     "acting": "caliph delighted, looking at everything; Isaac anxious, steadying him",
+     "library": "hop() + landSquash(), stagger 0.25 s"
+    },
+    {
+     "t": 89.52,
+     "end": 90.8,
+     "cue": {
+      "word": "كل",
+      "t": 89.52
+     },
+     "who": "lettering",
+     "action": "counters 1 and 2 pop over the baskets",
+     "acting": "each basket dips as its counter lands",
+     "library": "style counter"
+    },
+    {
+     "t": 90.84,
+     "end": 91.4,
+     "cue": {
+      "word": "سلة",
+      "t": 90.84
+     },
+     "who": "basket2",
+     "action": "the caliph's basket swings and bumps Isaac's; both rock",
+     "acting": "caliph giggles into his hand, Isaac hushes him",
+     "library": "swing() coupled + PERSON_HANDS.hush"
+    },
+    {
+     "t": 91.34,
+     "end": 92.0,
+     "cue": {
+      "word": "ثم",
+      "t": 91.34
+     },
+     "who": "basket",
+     "action": "both ropes go taut one after the other",
+     "acting": "two lurches, two turbans jumping",
+     "library": "lurch()"
+    },
+    {
+     "t": 92.08,
+     "end": 93.6,
+     "cue": {
+      "word": "صعدا",
+      "t": 92.08
+     },
+     "who": "camera",
+     "action": "the double lift: baskets rise in alternating pulls so they pass each other by a head each time",
+     "acting": "caliph waves at the shrinking ground, Isaac grips the rim",
+     "library": "stepped kfn per basket, offset 0.2 s"
+    },
+    {
+     "t": 93.0,
+     "end": 93.9,
+     "cue": {
+      "word": "المنزل",
+      "t": 93.0
+     },
+     "who": "set",
+     "action": "the lit window comes into frame above; a hand beckons from it",
+     "acting": "both look up, faces lit warm",
+     "library": "window glow + person hand"
+    },
+    {
+     "t": 93.82,
+     "end": 94.5,
+     "cue": {
+      "word": "الليل",
+      "t": 93.82
+     },
+     "who": "fx",
+     "action": "moon and stars brighten behind them as they reach the sill",
+     "acting": "held half second silhouette of two baskets against the moon",
+     "library": "skyCycle night"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 92.2,
+     "text": "UP!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 94.5
+   }
+  },
+  {
+   "id": "S11",
+   "start": 94.5,
+   "end": 101.4,
+   "paragraphs": [
+    6
+   ],
+   "set": "salon",
+   "cast": [
+    "isaac",
+    "mamun",
+    "khadijah"
+   ],
+   "summary": "The lady welcomes her two guests, seats them, and entertains them with verse and song; notes fill the hall and the disguised caliph is enchanted.",
+   "camera": {
+    "shot": "wide",
+    "move": "drift",
+    "notes": "Wide on the three (x 500, y 660, zoom 1.25) drifting right to favour the lady by 100.4."
+   },
+   "composition": "Guests seated on cushions at x 300 (the caliph) and x 440 (Isaac), the lady standing then seated at x 680. Candle table at x 560. Notes rise into the arches.",
+   "actions": [
+    {
+     "t": 94.5,
+     "end": 96.3,
+     "cue": {
+      "word": "رحبت",
+      "t": 94.5
+     },
+     "who": "khadijah",
+     "action": "bows her head in welcome with a hand on her chest, then opens an arm to the cushions",
+     "acting": "warm smile, gaze passes from Isaac to the stranger and lingers a moment",
+     "library": "PERSON_HANDS.chest -> reach"
+    },
+    {
+     "t": 96.32,
+     "end": 97.0,
+     "cue": {
+      "word": "السيدة",
+      "t": 96.32
+     },
+     "who": "mamun",
+     "action": "sits down heavily on his cushion, looking round the hall like a tourist",
+     "acting": "gaze roams the arches, mouth o; Isaac tugs his sleeve to sit properly",
+     "library": "sit 0 -> 1 seat 'floor' + settleTo"
+    },
+    {
+     "t": 97.08,
+     "end": 98.4,
+     "cue": {
+      "word": "بالضيفين",
+      "t": 97.08
+     },
+     "who": "lettering",
+     "action": "label TWO GUESTS with a small bracket over both",
+     "acting": "bracket draws left to right",
+     "library": "style label + box"
+    },
+    {
+     "t": 98.72,
+     "end": 100.3,
+     "cue": {
+      "word": "وأسمعتهما",
+      "t": 98.72
+     },
+     "who": "khadijah",
+     "action": "unrolls her scroll and recites, one hand keeping the rhythm",
+     "acting": "talk, eyes half shut on the long vowels",
+     "library": "scroll + talk + arm angle beat"
+    },
+    {
+     "t": 99.5,
+     "end": 100.4,
+     "cue": {
+      "word": "شعرًا",
+      "t": 99.5
+     },
+     "who": "fx",
+     "action": "verse squiggle lines float from the scroll toward the guests",
+     "acting": "caliph leans forward to catch them",
+     "library": "style squiggle lines on a path"
+    },
+    {
+     "t": 100.4,
+     "end": 101.4,
+     "cue": {
+      "word": "وغناء",
+      "t": 100.4
+     },
+     "who": "fx",
+     "action": "she sings: notes replace the lines and swirl up; both guests sway, out of phase",
+     "acting": "caliph: eyes shut, blissful; Isaac: one eye on the caliph",
+     "library": "musicNotes + tip sway + wink-style one eye open"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 98.4,
+     "kind": "chime"
+    },
+    {
+     "t": 101.2,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 101.4
+   }
+  },
+  {
+   "id": "S12",
+   "start": 101.4,
+   "end": 111.2,
+   "paragraphs": [
+    6
+   ],
+   "set": "salon",
+   "cast": [
+    "isaac",
+    "mamun",
+    "khadijah"
+   ],
+   "summary": "Isaac sweats to keep the secret, but the caliph, carried away, calls him by his real name and orders him to sing. Everything stops.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on the two guests (x 380, y 680, zoom 1.7); on 106.6 widen to include the lady (zoom 1.3); snap push on Isaac at 108.0."
+   },
+   "composition": "Caliph at x 300 half rising, Isaac at x 440, the lady at x 680 with her scroll lowered. The speech balloon sits high between the men, tail to the caliph.",
+   "actions": [
+    {
+     "t": 101.72,
+     "end": 103.2,
+     "cue": {
+      "word": "حاول",
+      "t": 101.72
+     },
+     "who": "isaac",
+     "action": "sits rigid, eyes flicking between the caliph and the lady, a finger rising to his lips",
+     "acting": "saccades, one sweat bead, tight smile",
+     "library": "gazePlan 0.07 + PERSON_HANDS.hush"
+    },
+    {
+     "t": 103.28,
+     "end": 104.5,
+     "cue": {
+      "word": "المحافظة",
+      "t": 103.28
+     },
+     "who": "isaac",
+     "action": "nudges the caliph with an elbow and shakes his head a millimetre",
+     "acting": "eyebrows pleading",
+     "library": "handRW to the caliph's arm"
+    },
+    {
+     "t": 104.52,
+     "end": 105.8,
+     "cue": {
+      "word": "السر",
+      "t": 104.52
+     },
+     "who": "lettering",
+     "action": "tag SECRET with the lock icon floats above Isaac, wobbling",
+     "acting": "he glances up at it protectively",
+     "library": "style label"
+    },
+    {
+     "t": 105.14,
+     "end": 106.5,
+     "cue": {
+      "word": "لكن",
+      "t": 105.14
+     },
+     "who": "mamun",
+     "action": "swept up by the song: rocks, slaps his knee, starts to rise",
+     "acting": "eyes shut, huge smile, forgets himself",
+     "library": "sit 1 -> 0.4 + tip sway"
+    },
+    {
+     "t": 105.84,
+     "end": 106.6,
+     "cue": {
+      "word": "المأمون",
+      "t": 105.84
+     },
+     "who": "mamun",
+     "action": "label reads THE \"MERCHANT\" over him with quote marks",
+     "acting": "ironic tag, small",
+     "library": "style label"
+    },
+    {
+     "t": 106.6,
+     "end": 107.9,
+     "cue": {
+      "word": "ناداه",
+      "t": 106.6
+     },
+     "who": "mamun",
+     "action": "throws an arm round toward Isaac and calls out: speech balloon ISAAC!",
+     "acting": "talk wide, pointing straight at him",
+     "library": "style box as speech balloon + PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 107.96,
+     "end": 109.1,
+     "cue": {
+      "word": "الحقيقي",
+      "t": 107.96
+     },
+     "who": "isaac",
+     "action": "freeze: the SECRET tag cracks in two and drops; his hands clamp his turban",
+     "acting": "eyes wide, pupils tiny, no blink (noBlink) for 1 s",
+     "library": "PERSON_HANDS.headHold + settleTo"
+    },
+    {
+     "t": 109.16,
+     "end": 109.8,
+     "cue": {
+      "word": "وأمره",
+      "t": 109.16
+     },
+     "who": "mamun",
+     "action": "the royal gesture: stands tall and points down at the oud, every inch a caliph",
+     "acting": "chin up, brow 0.5, the voice of command; his plain turban does not hide it",
+     "library": "sit -> 0 + PERSON_HANDS.pointDown, sq 1.05"
+    },
+    {
+     "t": 109.86,
+     "end": 110.7,
+     "cue": {
+      "word": "بالغناء",
+      "t": 109.86
+     },
+     "who": "lettering",
+     "action": "second balloon SING!",
+     "acting": "Isaac lifts the oud like a shield",
+     "library": "speech balloon + PERSON_HANDS.shield"
+    },
+    {
+     "t": 110.8,
+     "end": 111.2,
+     "who": "khadijah",
+     "action": "the scroll slips from her fingers; all three hold still, only pupils moving",
+     "acting": "suspense by stillness; caliph realises last and covers his mouth",
+     "library": "gaze only + PERSON_HANDS.mouthCover"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 106.7,
+     "text": "ISAAC!"
+    },
+    {
+     "t": 109.9,
+     "text": "SING!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 111.1,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 111.2
+   }
+  },
+  {
+   "id": "S13",
+   "start": 111.2,
+   "end": 121.2,
+   "paragraphs": [
+    6
+   ],
+   "set": "salon",
+   "cast": [
+    "isaac",
+    "mamun",
+    "khadijah"
+   ],
+   "summary": "The lady understands: the \"ordinary guest\" is the caliph himself. A ghost crown settles on his plain turban. She bows quickly and hurries out; the two men are left looking at each other.",
+   "camera": {
+    "shot": "close",
+    "move": "pull-out",
+    "notes": "Close on the lady (x 680, y 640, zoom 2.0) from 111.5; pull out to a wide three-shot (zoom 1.2) on 117.7; stays wide for her exit."
+   },
+   "composition": "Her small thought cloud at upper right (centre 760, 330, 300 x 200). The crown appears above the caliph at x 300. Exit through the right arch (x 760..940).",
+   "actions": [
+    {
+     "t": 111.52,
+     "end": 112.9,
+     "cue": {
+      "word": "أدركت",
+      "t": 111.52
+     },
+     "who": "khadijah",
+     "action": "slow realisation: eyes go from Isaac to the stranger",
+     "acting": "lid lifts 0.3 -> 0, brow -0.6, mouth parts",
+     "library": "gazePlan (slow ease)"
+    },
+    {
+     "t": 112.96,
+     "end": 113.7,
+     "cue": {
+      "word": "عندئذ",
+      "t": 112.96
+     },
+     "who": "fx",
+     "action": "a small \"!\" above her veil",
+     "acting": "one blink",
+     "library": "style emphasis"
+    },
+    {
+     "t": 114.26,
+     "end": 115.1,
+     "cue": {
+      "word": "الرجل",
+      "t": 114.26
+     },
+     "who": "camera",
+     "action": "her eye line: a dotted arrow from her eyes to the stranger",
+     "acting": "he gives a tiny guilty wave",
+     "library": "style arrow dashed + PERSON_HANDS.wave"
+    },
+    {
+     "t": 115.1,
+     "end": 116.5,
+     "cue": {
+      "word": "ظنته",
+      "t": 115.1
+     },
+     "who": "fx",
+     "action": "her thought cloud: the stranger as a plain merchant with a coin sack",
+     "acting": "what she believed",
+     "library": "thoughtCloud small, scale 0.25"
+    },
+    {
+     "t": 115.94,
+     "end": 117.5,
+     "cue": {
+      "word": "ضيفًا",
+      "t": 115.94
+     },
+     "who": "lettering",
+     "action": "tag ORDINARY GUEST under the cloud, then a red line strikes it out",
+     "acting": "strike on 116.58",
+     "library": "style label + line"
+    },
+    {
+     "t": 117.76,
+     "end": 118.5,
+     "cue": {
+      "word": "الخليفة",
+      "t": 117.76
+     },
+     "who": "crownGhost",
+     "action": "pull out: a dashed ghost crown lowers onto his turban and turns solid gold with a glint; label THE CALIPH!",
+     "acting": "he shrugs with an apologetic smile; Isaac covers his eyes",
+     "library": "crownProp ghost (planned) + goldGlow glint + style label"
+    },
+    {
+     "t": 118.58,
+     "end": 119.5,
+     "cue": {
+      "word": "نفسه",
+      "t": 118.58
+     },
+     "who": "khadijah",
+     "action": "gasp: hands to cheeks, a step back",
+     "acting": "eyes wide, sq 0.94 then up; flush of embarrassment",
+     "library": "PERSON_HANDS.cheeks + anticipate"
+    },
+    {
+     "t": 119.6,
+     "end": 120.7,
+     "cue": {
+      "word": "فانصرفت",
+      "t": 119.6
+     },
+     "who": "khadijah",
+     "action": "bows fast and low, turns and hurries out through the right arch, veil streaming",
+     "acting": "eyes down, quick small steps; the scroll is left on the floor",
+     "library": "lean + turnFlip + walk (fast) + veil lag"
+    },
+    {
+     "t": 120.8,
+     "end": 121.2,
+     "who": "mamun",
+     "action": "the men look at the empty arch, then at each other; caliph mouths \"oops\", Isaac drops his face in his hand",
+     "acting": "comedy hold",
+     "library": "gazePlan + PERSON_HANDS.headHold"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 118.7,
+     "text": "GASP!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 121.0,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 121.2
+   }
+  },
+  {
+   "id": "S14",
+   "start": 121.2,
+   "end": 131.5,
+   "paragraphs": [
+    7
+   ],
+   "set": "salon",
+   "cast": [
+    "mamun",
+    "isaac",
+    "maidA"
+   ],
+   "summary": "The caliph asks a maid whose house this is. Answer cards appear: the owner is Hasan bin Sahl, and the lady is his daughter Khadijah.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Medium (x 420, y 600, zoom 1.4) leaving the upper half free for two portrait circles."
+   },
+   "composition": "Caliph (crown ghost now solid, still in the plain robe) at x 360, maid at x 560 facing him, Isaac small at x 180. Portrait circles r 120 at (330, 300) for Hasan and (670, 300) for Khadijah, joined by an arrow.",
+   "actions": [
+    {
+     "t": 121.72,
+     "end": 123.4,
+     "cue": {
+      "word": "سأل",
+      "t": 121.72
+     },
+     "who": "mamun",
+     "action": "turns to the maid who has crept in, and sweeps a hand round the hall",
+     "acting": "gentle now, brows up; talk",
+     "library": "PERSON_HANDS.palmsUp (one hand sweeping)"
+    },
+    {
+     "t": 123.46,
+     "end": 124.6,
+     "cue": {
+      "word": "صاحب",
+      "t": 123.46
+     },
+     "who": "fx",
+     "action": "his iconBalloon: a house with \"?\"",
+     "acting": "maid curtsies, eyes huge at the crown",
+     "library": "iconBalloon"
+    },
+    {
+     "t": 124.7,
+     "end": 126.5,
+     "cue": {
+      "word": "فعلم",
+      "t": 124.7
+     },
+     "who": "maidA",
+     "action": "answers, pointing up",
+     "acting": "talk, a nervous double blink",
+     "library": "talk + PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 126.56,
+     "end": 128.3,
+     "cue": {
+      "word": "الحسن",
+      "t": 126.56
+     },
+     "who": "fx",
+     "action": "portrait circle 1 irises open: a grey-bearded vizier; name plate HASAN BIN SAHL",
+     "acting": "plate letters land on \"الحسن\", \"بن\", \"سهل\"",
+     "library": "inset circle (planned) + style label"
+    },
+    {
+     "t": 127.38,
+     "end": 128.7,
+     "cue": {
+      "word": "سهل",
+      "t": 127.38
+     },
+     "who": "mamun",
+     "action": "recognition: he knows the man. Eyebrows shoot up, a hand to his beard",
+     "acting": "look to camera 6 frames",
+     "library": "PERSON_HANDS.chin + gaze [0,0.05]"
+    },
+    {
+     "t": 128.8,
+     "end": 129.6,
+     "cue": {
+      "word": "السيدة",
+      "t": 128.8
+     },
+     "who": "fx",
+     "action": "portrait circle 2 irises open: the lady",
+     "acting": "she is shown calm, as when she recited",
+     "library": "inset circle"
+    },
+    {
+     "t": 129.66,
+     "end": 130.5,
+     "cue": {
+      "word": "ابنته",
+      "t": 129.66
+     },
+     "who": "lettering",
+     "action": "an arrow from Hasan to her with the word DAUGHTER",
+     "acting": "arrow draws on",
+     "library": "style arrow/label"
+    },
+    {
+     "t": 130.52,
+     "end": 131.5,
+     "cue": {
+      "word": "خديجة",
+      "t": 130.52
+     },
+     "who": "lettering",
+     "action": "name plate KHADIJAH under her portrait, with a small heart beside the caliph's head",
+     "acting": "he smiles to himself; Isaac notices and grins",
+     "library": "style label + heart()"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 131.5
+   }
+  },
+  {
+   "id": "S15",
+   "start": 131.5,
+   "end": 144.54,
+   "paragraphs": [
+    7
+   ],
+   "set": "salon",
+   "cast": [
+    "mamun",
+    "hasan",
+    "isaac"
+   ],
+   "summary": "Hasan bin Sahl is summoned and hurries in. Is your daughter married? No. The caliph asks for her hand and names a great dowry: a chest that fills with gold.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot(mamun, hasan) zoom 1.5; push to 1.7 on 139.42; drop the frame slightly at 142.4 to hold the chest on the floor (y 900) in view."
+   },
+   "composition": "Caliph at x 380 facing right, Hasan enters from the right arch and stops at x 640. Isaac at x 180 as the witness. The dowry chest appears on the floor between them at x 510.",
+   "actions": [
+    {
+     "t": 131.74,
+     "end": 132.7,
+     "cue": {
+      "word": "استدعاه",
+      "t": 131.74
+     },
+     "who": "hasan",
+     "action": "hurries in from the right arch, robe hem flying, and stops dead at the sight of the caliph in his own house",
+     "acting": "eyes wide, turban askew, then a deep bow",
+     "library": "person {costume:'vizier', age 0.7} walk fast + settleTo + lean"
+    },
+    {
+     "t": 132.72,
+     "end": 133.6,
+     "cue": {
+      "word": "وسأله",
+      "t": 132.72
+     },
+     "who": "mamun",
+     "action": "raises him with a friendly hand and asks",
+     "acting": "kind smile, talk",
+     "library": "handRW toward Hasan"
+    },
+    {
+     "t": 133.6,
+     "end": 136.2,
+     "cue": {
+      "word": "هل",
+      "t": 133.6
+     },
+     "who": "fx",
+     "action": "his iconBalloon: the lady's portrait, two linked rings and \"?\"",
+     "acting": "Hasan looks at the balloon, then at his feet, then up",
+     "library": "iconBalloon strip"
+    },
+    {
+     "t": 135.18,
+     "end": 136.2,
+     "cue": {
+      "word": "ابنته",
+      "t": 135.18
+     },
+     "who": "hasan",
+     "action": "puzzled by the question, strokes his beard",
+     "acting": "brow -0.4",
+     "library": "PERSON_HANDS.chin"
+    },
+    {
+     "t": 136.26,
+     "end": 137.8,
+     "cue": {
+      "word": "فلما",
+      "t": 136.26
+     },
+     "who": "hasan",
+     "action": "shakes his head and opens both palms",
+     "acting": "talk, honest eyes",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 137.9,
+     "end": 139.3,
+     "cue": {
+      "word": "غير",
+      "t": 137.9
+     },
+     "who": "lettering",
+     "action": "in the balloon the rings get a red cross; tag NOT MARRIED",
+     "acting": "caliph's smile grows; Isaac nudges the air with an elbow",
+     "library": "style emphasis X + label"
+    },
+    {
+     "t": 139.42,
+     "end": 140.0,
+     "cue": {
+      "word": "طلب",
+      "t": 139.42
+     },
+     "who": "mamun",
+     "action": "draws himself up, hand on his heart, and bows his head slightly to Hasan",
+     "acting": "sincere: lid 0.2, steady gaze; anticipation breath before",
+     "library": "PERSON_HANDS.chest + anticipate"
+    },
+    {
+     "t": 140.04,
+     "end": 140.7,
+     "cue": {
+      "word": "يدها",
+      "t": 140.04
+     },
+     "who": "fx",
+     "action": "a red heart pops above them; Hasan's knees give, he clasps his hands in joy",
+     "acting": "Hasan: wet eyes, huge smile, bows three quick times",
+     "library": "heart() + PERSON_HANDS.clasp + wet"
+    },
+    {
+     "t": 140.72,
+     "end": 142.3,
+     "cue": {
+      "word": "وحدد",
+      "t": 140.72
+     },
+     "who": "mamun",
+     "action": "claps twice: a chest thumps down between them",
+     "acting": "chest lands with landSquash and dust",
+     "library": "dowryChest (coinPile planned) + landSquash"
+    },
+    {
+     "t": 142.38,
+     "end": 143.0,
+     "cue": {
+      "word": "مهرًا",
+      "t": 142.38
+     },
+     "who": "dowryChest",
+     "action": "the lid swings open; gold coins rise in a growing heap with rays",
+     "acting": "Hasan shields his eyes; Isaac's jaw drops",
+     "library": "coinPile fill 0 -> 1 + goldGlow"
+    },
+    {
+     "t": 143.02,
+     "end": 144.54,
+     "cue": {
+      "word": "كبيرًا",
+      "t": 143.02
+     },
+     "who": "lettering",
+     "action": "counter beside the chest spins up through big numbers and ends on label A GREAT DOWRY",
+     "acting": "coins keep toppling over the rim",
+     "library": "style counter + label"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 140.2,
+     "text": "YES!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 144.54
+   }
+  },
+  {
+   "id": "S16",
+   "start": 144.54,
+   "end": 152.5,
+   "paragraphs": [
+    8
+   ],
+   "set": "alley",
+   "cast": [
+    "mamun",
+    "isaac"
+   ],
+   "summary": "Dawn in the alley. The caliph and Isaac walk away from the house; the caliph stops, turns and asks him to tell no one. Isaac seals his lips.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Ground level only (the tall part of the set is not used): track left with the walk (zoom 1.3), then settle into a two-shot (zoom 1.6) at 147.7."
+   },
+   "composition": "They walk right to left away from the wall; the empty basket hangs behind them at x 470. Dawn sky (yellow low, blue above). Stop positions: Isaac at x 210 on the left facing right, the caliph at x 360 facing left.",
+   "actions": [
+    {
+     "t": 144.54,
+     "end": 147.6,
+     "cue": {
+      "word": "غادر",
+      "t": 144.54
+     },
+     "who": "mamun",
+     "action": "the two walk out of the house shadow side by side, caliph ahead, crown back on, humming",
+     "acting": "spring in his step; Isaac half a pace behind, yawning",
+     "library": "walk + footfalls, two different stride lengths; person {costume:'caliph'}"
+    },
+    {
+     "t": 145.86,
+     "end": 147.7,
+     "cue": {
+      "word": "المأمون",
+      "t": 145.86
+     },
+     "who": "set",
+     "action": "sky goes from night to dawn behind the roofs; the basket swings in the breeze",
+     "acting": "long shadows",
+     "library": "skyCycle(u 0.9 -> 1.03)"
+    },
+    {
+     "t": 146.9,
+     "end": 147.7,
+     "cue": {
+      "word": "إسحاق",
+      "t": 146.9
+     },
+     "who": "isaac",
+     "action": "looks back over his shoulder at the basket and smiles",
+     "acting": "fond, lid 0.4",
+     "library": "gazePlan + headTilt"
+    },
+    {
+     "t": 147.74,
+     "end": 150.1,
+     "cue": {
+      "word": "وطلب",
+      "t": 147.74
+     },
+     "who": "mamun",
+     "action": "stops, turns to Isaac (turn with a squeeze), lays a hand on his shoulder",
+     "acting": "serious but warm, gaze locked",
+     "library": "turnFlip + handRW to Isaac's shoulder"
+    },
+    {
+     "t": 150.18,
+     "end": 150.9,
+     "cue": {
+      "word": "ألا",
+      "t": 150.18
+     },
+     "who": "mamun",
+     "action": "finger to his lips",
+     "acting": "brow 0.3, slow nod",
+     "library": "PERSON_HANDS.hush"
+    },
+    {
+     "t": 150.9,
+     "end": 152.0,
+     "cue": {
+      "word": "أحدًا",
+      "t": 150.9
+     },
+     "who": "lettering",
+     "action": "tag TELL NO ONE between them, with the lock icon from before, now whole again",
+     "acting": "lock clicks shut",
+     "library": "style label"
+    },
+    {
+     "t": 152.06,
+     "end": 152.5,
+     "cue": {
+      "word": "جرى",
+      "t": 152.06
+     },
+     "who": "isaac",
+     "action": "draws a finger across his lips and puts a hand on his chest",
+     "acting": "solemn nod, then both smile",
+     "library": "handR path across the mouth -> PERSON_HANDS.chest"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 151.0,
+     "text": "SHH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 152.5
+   }
+  },
+  {
+   "id": "S17",
+   "start": 152.5,
+   "end": 157.2,
+   "paragraphs": [
+    8
+   ],
+   "set": "court",
+   "cast": [
+    "isaac"
+   ],
+   "summary": "Isaac keeps the secret as years pass: his beard turns grey while the sky wheels in the door arch. Then the throne stands empty with the crown resting on it and a lamp flame goes out.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "Medium on Isaac near the door arch (x 300, y 680, zoom 1.5) while he ages; pan right 155.4..156.0 to the empty throne (x 730, y 700, zoom 1.5)."
+   },
+   "composition": "Isaac stands at x 300 with his oud, the door arch sky behind him cycling day and night. The throne at x 730: crown on the seat, a wall lamp above it.",
+   "actions": [
+    {
+     "t": 152.64,
+     "end": 154.2,
+     "cue": {
+      "word": "حفظ",
+      "t": 152.64
+     },
+     "who": "isaac",
+     "action": "stands with a finger on his lips, lock tag at his shoulder; the arch sky spins through days and nights",
+     "acting": "gentle smile, eyes forward",
+     "library": "skyCycle(u fast, 6 turns) clipped to the arch + PERSON_HANDS.hush"
+    },
+    {
+     "t": 153.54,
+     "end": 155.3,
+     "cue": {
+      "word": "إسحاق",
+      "t": 153.54
+     },
+     "who": "isaac",
+     "action": "ages in place: age 0.25 -> 0.95 (beard and brows grey then white, slight stoop)",
+     "acting": "blinks slow down; the hush finger never drops",
+     "library": "person age keyed by kfn"
+    },
+    {
+     "t": 154.22,
+     "end": 155.4,
+     "cue": {
+      "word": "السر",
+      "t": 154.22
+     },
+     "who": "lettering",
+     "action": "counter YEARS runs up beside the lock tag",
+     "acting": "lock stays shut",
+     "library": "style counter"
+    },
+    {
+     "t": 155.44,
+     "end": 156.0,
+     "cue": {
+      "word": "وفاة",
+      "t": 155.44
+     },
+     "who": "camera",
+     "action": "pan to the throne: empty, the crown resting on the seat",
+     "acting": "old Isaac turns his head to look, hand lowers",
+     "library": "CAM keys"
+    },
+    {
+     "t": 156.04,
+     "end": 157.2,
+     "cue": {
+      "word": "الخليفة",
+      "t": 156.04
+     },
+     "who": "set",
+     "action": "the wall lamp above the throne dims and goes out with one thin smoke wisp; old Isaac bows his head",
+     "acting": "wet eyes, long blink, a breath",
+     "library": "oilLamp (planned) flame 1 -> 0 + wet + lid"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 157.2
+   }
+  },
+  {
+   "id": "S18",
+   "start": 157.2,
+   "end": 163.6,
+   "paragraphs": [
+    8
+   ],
+   "set": "salon",
+   "cast": [
+    "isaac",
+    "childA",
+    "childB"
+   ],
+   "summary": "Old Isaac at last tells the story to two wide-eyed children. In his thought cloud the strange basket rises again and the unforgettable evenings replay.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Medium (x 500, y 560, zoom 1.25): old Isaac low in the frame, the cloud filling the upper half."
+   },
+   "composition": "Old Isaac seated on a cushion at x 300 with the oud on his knee; two children sit on the floor at x 560 and 660 looking up. Thought cloud 560 x 360 centred (560, 300). Daylight in the arch.",
+   "actions": [
+    {
+     "t": 157.2,
+     "end": 157.7,
+     "cue": {
+      "word": "ثم",
+      "t": 156.9
+     },
+     "who": "isaac",
+     "action": "sits, the lock tag at his shoulder springs open and falls away",
+     "acting": "smile returns, eyes bright",
+     "library": "style label + person sit"
+    },
+    {
+     "t": 157.68,
+     "end": 158.6,
+     "cue": {
+      "word": "روى",
+      "t": 157.68
+     },
+     "who": "isaac",
+     "action": "begins to tell: one hand lifts, storyteller's sweep",
+     "acting": "talk, gaze moving between the two children",
+     "library": "person {age 0.95, sit:1, seat:'floor'} + arm angle"
+    },
+    {
+     "t": 158.02,
+     "end": 159.3,
+     "cue": {
+      "word": "كيف",
+      "t": 158.02
+     },
+     "who": "childA",
+     "action": "children lean in, one a beat after the other",
+     "acting": "mouths o, chins on fists",
+     "library": "person {child:true, costume:'servant'/'maiden', sit:1, seat:'floor'} + stagger"
+    },
+    {
+     "t": 158.66,
+     "end": 159.3,
+     "cue": {
+      "word": "قادته",
+      "t": 158.66
+     },
+     "who": "fx",
+     "action": "thought cloud pops over him",
+     "acting": "trail bubbles first",
+     "library": "thoughtCloud(ctx, 560, 300, 560, 360, t, {inside})"
+    },
+    {
+     "t": 159.36,
+     "end": 160.8,
+     "cue": {
+      "word": "سلة",
+      "t": 159.36
+     },
+     "who": "basket",
+     "action": "in the cloud: young Isaac in the basket rising past the wall to the lit window",
+     "acting": "children's eyes follow it up",
+     "library": "alley drawing at scale 0.3 inside the cloud"
+    },
+    {
+     "t": 159.96,
+     "end": 161.3,
+     "cue": {
+      "word": "غريبة",
+      "t": 159.96
+     },
+     "who": "lettering",
+     "action": "tag STRANGE BASKET with an arrow, inside the top of the cloud",
+     "acting": "old Isaac mimes the rope pull (the HEAVE pose once more)",
+     "library": "style label + arm angles"
+    },
+    {
+     "t": 161.38,
+     "end": 162.6,
+     "cue": {
+      "word": "لقاءات",
+      "t": 161.38
+     },
+     "who": "fx",
+     "action": "cloud changes: the salon with the lady reciting and two seated guests, notes drifting",
+     "acting": "childB claps",
+     "library": "salon drawing at scale 0.3 + musicNotes"
+    },
+    {
+     "t": 162.72,
+     "end": 163.6,
+     "cue": {
+      "word": "تُنسى",
+      "t": 162.72
+     },
+     "who": "fx",
+     "action": "hearts and notes drift out of the cloud; old Isaac closes his eyes, remembering",
+     "acting": "lid 0.8, slow sway",
+     "library": "heart() + musicNotes + tip sway"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "zoom",
+    "t": 163.6
+   }
+  },
+  {
+   "id": "S19",
+   "start": 163.6,
+   "end": 172.39,
+   "paragraphs": [
+    8
+   ],
+   "set": "court",
+   "cast": [
+    "mamun",
+    "khadijah",
+    "isaac",
+    "hasan"
+   ],
+   "summary": "The cloud opens into the palace: the secret visit has become a wedding. The caliph and Khadijah stand side by side under the central arch, Hasan beams, young Isaac plays the oud. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Zoom through the cloud into the court (zoom 1.8 on the couple) and pull out to the full hall (zoom 1.0) by 168.0; hold for THE END."
+   },
+   "composition": "Couple centre under the middle arch (caliph x 440, Khadijah x 560), Hasan at x 760, Isaac at x 220 playing. Garland swag across the three arches, hearts and notes above. An empty basket trimmed with flowers sits in the left door arch. THE END lettering across the top (y 130..300), clear of all heads.",
+   "actions": [
+    {
+     "t": 163.84,
+     "end": 164.4,
+     "cue": {
+      "word": "وكيف",
+      "t": 163.84
+     },
+     "who": "camera",
+     "action": "the cloud grows to fill the frame and becomes the scene",
+     "acting": "white flash 2 frames on the edge passing",
+     "library": "thoughtCloud p scale-up + CAM zoom"
+    },
+    {
+     "t": 164.32,
+     "end": 165.2,
+     "cue": {
+      "word": "تحولت",
+      "t": 164.32
+     },
+     "who": "set",
+     "action": "match: the salon in the cloud cross-fades to the palace court dressed for a feast (garlands, lit lamps)",
+     "acting": "colours warm up",
+     "library": "palaceHall court + garland arcs"
+    },
+    {
+     "t": 165.16,
+     "end": 166.6,
+     "cue": {
+      "word": "الزيارة",
+      "t": 165.16
+     },
+     "who": "basket",
+     "action": "the basket sits in the door arch with flowers in it; small tag SECRET VISIT with an arrow to it",
+     "acting": "one flower drops",
+     "library": "hangingBasket on the floor + style label/arrow"
+    },
+    {
+     "t": 166.66,
+     "end": 167.3,
+     "cue": {
+      "word": "إلى",
+      "t": 166.66
+     },
+     "who": "camera",
+     "action": "pull out along a dotted arrow from the basket to the couple",
+     "acting": "arrow draws as the camera moves",
+     "library": "style arrow + CAM keys"
+    },
+    {
+     "t": 167.2,
+     "end": 168.0,
+     "cue": {
+      "word": "زواج",
+      "t": 167.2
+     },
+     "who": "khadijah",
+     "action": "the couple revealed: she in her veil with a gold circlet, he in crown and red robe; they turn to each other",
+     "acting": "shy smile from her, proud warm smile from him; eye contact (lookAt both ways)",
+     "library": "person lady + pal jewel gold; person caliph; lookAt"
+    },
+    {
+     "t": 167.76,
+     "end": 168.9,
+     "cue": {
+      "word": "في",
+      "t": 167.76
+     },
+     "who": "fx",
+     "action": "label ROYAL WEDDING, a heart above the couple, petals drifting down",
+     "acting": "Hasan dabs an eye and claps",
+     "library": "style label + heart() + seeded petals"
+    },
+    {
+     "t": 168.04,
+     "end": 172.0,
+     "cue": {
+      "word": "القصر",
+      "t": 168.04
+     },
+     "who": "isaac",
+     "action": "young Isaac strikes up the oud; notes dance across the hall",
+     "acting": "eyes shut, big smile, the same strum as the first shot of the film",
+     "library": "same strum cycle as S1 (bookend) + musicNotes"
+    },
+    {
+     "t": 168.9,
+     "end": 172.39,
+     "who": "lettering",
+     "action": "THE END drops in and holds to 172.39; Isaac opens one eye to the camera and winks",
+     "acting": "couple keep breathing and blinking through the hold",
+     "library": "S.title THE END + wink:'L' + breathe + blink"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 169.1,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 172.39
+   }
+  }
+ ],
+ "ending": {
+  "t": 168.9,
+  "description": "After the last word (ends 168.70) THE END drops in over the wedding tableau in the palace and holds to 172.39: the couple under the centre arch, Hasan clapping, Isaac playing the same strum as the opening shot and winking to camera, petals and notes drifting."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "خرج الموسيقي إسحاق الموصلي ليلًا من مجلس الخليفة المأمون.|وفي زقاق مظلم لمح سلة كبيرة معلقة بحبال من نافذة|عالية. دفعه الفضول والشراب إلى الجلوس|فيها، فإذا بخدم البيت يرفعونه ظانين أنه زائر منتظر.",
+   "en": "One night musician Isaac of Mosul|noticed a large basket hanging from an upper window.|Curious and affected by wine, he climbed in;|servants raised him, mistaking him for an expected visitor."
+  },
+  {
+   "p": 2,
+   "ar": "استقبلته خادمات يحملن الشموع، وقدنه إلى قاعة فاخرة.|دخلت سيدة شابة وسألته كيف وصل إلى منزلها.|قص عليها خبر السلة، لكنه أخفى عمله الحقيقي،|وقال إنه تاجر من سوق بغداد.",
+   "en": "Servants led him into a splendid hall,|where a young woman asked how he had arrived.|Isaac explained the basket but concealed his profession,|claiming to be a Baghdad merchant."
+  },
+  {
+   "p": 4,
+   "ar": "عاد إسحاق في الليلة التالية، ثم في ليلة ثالثة،|وصار ينسى الوقت حين يجلس عندها.|وفي إحدى الزيارات ترك مجلس المأمون بغير إذن،|فغضب الخليفة واستدعاه ليسأله عن سبب غيابه.",
+   "en": "Isaac returned on two more nights,|becoming so absorbed|that he once left al-Ma’mun’s gathering without permission.|The angry caliph demanded an explanation."
+  },
+  {
+   "p": 5,
+   "ar": "أخبر إسحاق المأمون سر السلة والسيدة التي تحب الشعر والموسيقى.|أعجب الخليفة بحكايته وطلب مرافقته.|اتفقا على إخفاء اسميهما،|وجلس كل واحد في سلة، ثم صعدا إلى المنزل في الليل.",
+   "en": "In private, Isaac described the remarkable hostess.|The caliph wished to meet her,|so they hid their identities|and rose to the house in two baskets."
+  },
+  {
+   "p": 6,
+   "ar": "رحبت السيدة بالضيفين وأسمعتهما شعرًا وغناء.|حاول إسحاق المحافظة على السر، لكن المأمون ناداه باسمه الحقيقي وأمره بالغناء.|أدركت السيدة عندئذ أن الرجل الذي ظنته ضيفًا عاديًا|هو الخليفة نفسه، فانصرفت.",
+   "en": "The hostess entertained them with verse and song,|until al-Ma’mun accidentally addressed Isaac by name and title.|Realizing the other visitor was the caliph,|she withdrew."
+  },
+  {
+   "p": 7,
+   "ar": "سأل المأمون عن صاحب المنزل،|فعلم أنه الحسن بن سهل، وأن السيدة ابنته خديجة.|استدعاه وسأله هل تزوجت ابنته،|فلما علم أنها غير متزوجة طلب يدها، وحدد لها مهرًا كبيرًا.",
+   "en": "Al-Ma’mun learned the house belonged to Hasan bin Sahl|and the woman was his daughter Khadijah.|He asked to marry her|and promised a substantial marriage settlement."
+  },
+  {
+   "p": 8,
+   "ar": "غادر المأمون مع إسحاق، وطلب منه ألا يخبر أحدًا بما جرى.|حفظ إسحاق السر حتى وفاة الخليفة،|ثم روى كيف قادته سلة غريبة إلى لقاءات لا تُنسى،|وكيف تحولت الزيارة السرية إلى زواج في القصر.",
+   "en": "The caliph told Isaac to keep the affair secret.|Isaac did so until al-Ma’mun’s death,|then recounted how a strange basket led to extraordinary meetings|and a royal marriage."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "palaceHall",
+   "description": "The planned arched interior (AN-084, AN-045, AN-095...) with two dressings used here: \"court\" (dais, throne, door arch with sky) and \"salon\" (balcony arch, inner door, cushions, low table, warm wall).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "One function palaceHall(ctx, o) baked once per dressing with bake(): fillRect wall + style dots, three pointed arches as two quadratic curves each, evenodd clip for the open arch showing skyCycle, checker floor from y 900 as skewed quads, dais as a box, carpet strip, lamps as small shapes with an optional lit disc. Options: variant, dais, throne, cushions[], table, garlands, night."
+  },
+  {
+   "type": "set",
+   "name": "nightAlley",
+   "description": "Tall night lane with a high lit window, beam and pulley, for vertical lifts; dawn option. Reusable for any balcony, window, rope or night-street scene.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "bake() a 1000 x 2130 canvas (y -900..1230, drawn with a +900 offset): navy wall rect with seeded brick ticks and blue dots, shutters as rects, window as a yellow rect with halftone halo (style dots in a radial clip), beam as a brown box with a pulley circle, Library nightCity strip and skyCycle behind. Ropes and baskets are drawn live. The camera y simply goes negative for the crane."
+  },
+  {
+   "type": "prop",
+   "name": "hangingBasket",
+   "description": "Person-sized woven basket on ropes with swing, dip and taut fields, front and back passes, optional flowers.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Trapezoid path with weave lines clipped to it, brush rim ellipse (back half in the back pass, front half and body in the front pass). Ropes: 4 lines to a knot then a polyline to the beam point; taut blends a sagging quadratic to a straight line. Passenger: person {sit:1, seat:\"floor\"} drawn between the passes at the basket base + 10, moving and rotating with the basket (ctx.translate/rotate about the knot)."
+  },
+  {
+   "type": "prop",
+   "name": "oud",
+   "description": "The musician's lute, 150 long, with a strum wobble.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Ellipse/pear path body, rect neck, angled peg head, 4 lines; strum offsets the line midpoints by a seeded sine. Positioned from P.hands (person returns hand positions)."
+  },
+  {
+   "type": "prop",
+   "name": "candle",
+   "description": "Candlestick with melt height, flicker and optional light disc.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rects and a teardrop flame scaled by K.noise flicker; drips as small circles; light disc reuses the planned lampLight (yellow halftone disc r 150)."
+  },
+  {
+   "type": "effect",
+   "name": "musicNotes",
+   "description": "n quaver glyphs released from a point that rise on seeded S-paths, rock and fade; colour black with a yellow or red head.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "musicNotes(ctx, x, y, t - t0, {n, seed, spread, rise}): each note = filled ellipse head + stem + flag, position from K.rng(seed + i) path, alpha from age. Pure function of t."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "description": "The planned wordless picture balloon (AN-014, AN-036...), single and strip modes, for house?, basket, merchant, rings?.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rounded white box with a brush outline and a tail to the speaker; callback draws 1 to 3 flat icons; pop with overshoot. Place with a clear-of-faces check by hand."
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "description": "The planned round picture-in-picture with an iris (9 stories): servants at the window (S3), portraits of Hasan and Khadijah (S14).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "ctx.arc clip in panel space, draw the sub-scene with its own camera, brush ring outline; iris = radius eased 0 -> r."
+  },
+  {
+   "type": "prop",
+   "name": "throne",
+   "description": "Planned throne (AN-084).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Box seat, tall back with pointed arch path, finial circle, red cushion; crown may be drawn on the seat."
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "description": "Planned coin mound (AN-041, AN-045, AN-084) inside a simple chest with a hinged lid, with the planned goldGlow.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Chest = two rects + lid quad rotated about the back hinge; coinPile fill 0..1 as seeded yellow ellipses stacked in a mound; goldGlow rays behind."
+  },
+  {
+   "type": "prop",
+   "name": "crownProp",
+   "description": "Planned gold crown, solid or dashed ghost (AN-046).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Three-point polygon with circles; ghost = setLineDash stroke only."
+  },
+  {
+   "type": "motion",
+   "name": "sneak",
+   "description": "The planned tiptoe option for walk() (AN-045, AN-075, KD-026), used 62.58..64.5.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "walk() variant: higher knee amplitude and a 0.12 s hold at each toe contact, phase still from distance travelled."
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "description": "The planned anger flush (7 stories) on the caliph at 65.88; a mild two-patch version for Isaac's cheeks at 16.42.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Red Ben-Day dots clipped to the face circle rising from chin to brow with level 0..1, two steam puffs at 1."
+  }
+ ],
+ "owner_questions": [
+  "Wine: the script says curiosity and drink pushed him into the basket; default chosen is a mild woozy sway, flushed cheeks and one HIC! with no cup or bottle shown. Confirm or remove the HIC!.",
+  "The caliph's death (155.44) is shown only as an empty throne with the crown on the seat and a lamp going out; no body or funeral. Confirm.",
+  "Staging addition: the proposal to Hasan bin Sahl (131.7 to 144.5) is staged in Hasan's own hall the same night, so that \"he left with Isaac\" follows in order; the script does not say where he was summoned. Confirm.",
+  "Staging addition: the old Isaac tells the tale to two children (157.7 on); the script only says he later told it. Confirm the listeners.",
+  "The disguised caliph keeps his red robe and beard and only swaps crown and cape for a plain turban, so viewers can follow him. Confirm this light disguise.",
+  "Invented English lettering to confirm: HIC!, HEAVE!, HO!, WOW!, SHH!, OH NO!, GRRR!, FETCH HIM!, OHO!, ME TOO!, UP!, ISAAC!, SING!, GASP!, YES!, plus labels (BIG BASKET, THE GUEST?, NIGHT 2, NIGHT 3, NO PERMISSION!, SECRET, TELL NO ONE, A GREAT DOWRY, ROYAL WEDDING).",
+  "The English subtitle for paragraph 1 leaves out the caliph's gathering and the alley that the Arabic narrates (0 to 9 s), so its first chunk stays on screen a long time; default is to keep the supplied English verbatim."
+ ],
+ "implementation_notes": [
+  "Paragraph 3 is absent by design: paragraphs are 1, 2, 4, 5, 6, 7, 8. Do not renumber; timing.json keeps the same numbers.",
+  "All cue times are word starts from planning/inputs/timeline.md on the final MP3 (168.89 s). Film length 172.39 s (end_hold 3.5).",
+  "Three baked sets only: palaceHall(\"court\"), palaceHall(\"salon\"), nightAlley. The alley is taller than the standard world: its camera clamp must allow y from -900 + 615/zoom to 1230 - 615/zoom.",
+  "Basket lift = one function liftY(t, t0, t1, pulls) returning the base y from 860 to -400 in stepped pulls (surge 0.12 s, drop back 6 units); basket, passenger, rope taut value and camera all read it. Reuse for S3, S6 (fast), S10 (two baskets offset 0.2 s) and the S18 cloud.",
+  "Passenger in a basket: person {sit:1, seat:\"floor\"} between the basket back and front passes; hands on the rim with handLW/handRW world targets.",
+  "Set LIFE.t = t each frame so every figure blinks; add hand blinks where lid is set. Use noBlink during the freeze at 107.96..109.1.",
+  "Every character always has a gaze target (lookAt / gazePlan). Listeners watch the speaker; saccades (ease 0.07) for sneaking and nervous beats.",
+  "The disguise swap at 86.32 is a costume switch under a 6-frame star puff (dustBurst + stars); the reverse (crown back) happens with the crownGhost at 117.76; from S16 he is costume caliph again.",
+  "Use arm angles (aL/aR) for the HEAVE rope pose and the strum so they read at phone size; that pose is set up in S3, replayed by Isaac in S5 and by old Isaac in S18.",
+  "Balloons, clouds, labels and portrait circles live in the upper part of the panel and must never cover a face; lettering sizes: headlines >= 44 px, labels >= 28 px at 1280x720 scale; no dashes.",
+  "Sound: only the eight listed effects, all in narration pauses or after the last word, SND master 0.6.",
+  "Apply any shake inside the panel clip only (template); the caption panel never moves.",
+  "When approved, move palaceHall, nightAlley, hangingBasket, oud, candle and musicNotes into Library/ with registry entries, then run node Library/tests/regression.mjs."
+ ],
+ "warnings": [
+  "Subtitle P6 chunk 2 is 12 Arabic words and P8 chunk 1 is 11: check the Arabic font size fits the caption panel in three lines at most.",
+  "The English translation is a summary and does not track the Arabic sentence by sentence; English chunks are placed at the nearest matching Arabic chunk.",
+  "The tall alley set needs negative camera y; check the template camAt clamp.",
+  "S5 is 16.5 s in one two-shot: the icon balloons and the oud-hiding gag must carry it; keep the push-in moving.",
+  "Seated figures inside a basket must not show feet through the weave: draw order back pass, person, front pass.",
+  "Sfx are limited to the pauses listed in timeline.md; do not add effects elsewhere without checking word ends in timeline.json."
+ ]
+}

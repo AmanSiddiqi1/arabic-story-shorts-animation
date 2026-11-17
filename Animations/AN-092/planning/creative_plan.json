@@ -1,0 +1,2817 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-092",
+ "title": "Ali the Persian",
+ "duration": 167.67,
+ "end_hold": 3.0,
+ "logline": "To cheer a sleepless Caliph, Ali the Persian tells how a stranger claimed his little lunch bag in court, how the two of them swore it held herds, cities and armies, and how the judge simply had it opened.",
+ "moral": "A simple look at the facts ends a quarrel that no amount of clever argument could; wild claims collapse the moment someone checks.",
+ "tone": "Light courtroom farce inside a warm bedtime frame: escalating absurdity played straight, a deadpan judge, a quiet punchline of bread, cheese, olives and one lemon.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 3.44,
+   "kind": "setup",
+   "cue": {
+    "word": "النوم",
+    "t": 3.44
+   },
+   "summary": "The Caliph cannot sleep and wants a story to make him laugh."
+  },
+  {
+   "id": "B2",
+   "t": 20.28,
+   "kind": "setup",
+   "cue": {
+    "word": "فحضر",
+    "t": 20.28
+   },
+   "summary": "Ali the Persian arrives and sits before the Caliph; the tale begins."
+  },
+  {
+   "id": "B3",
+   "t": 28.8,
+   "kind": "setup",
+   "cue": {
+    "word": "كيسًا",
+    "t": 28.8
+   },
+   "summary": "Plant: one small leather bag of provisions."
+  },
+  {
+   "id": "B4",
+   "t": 39.56,
+   "kind": "inciting",
+   "cue": {
+    "word": "وانتزع",
+    "t": 39.56
+   },
+   "summary": "A stranger snatches the bag in the market and claims it."
+  },
+  {
+   "id": "B5",
+   "t": 52.92,
+   "kind": "rising",
+   "cue": {
+    "word": "محتويات",
+    "t": 52.92
+   },
+   "summary": "The judge asks the claimant what is inside."
+  },
+  {
+   "id": "B6",
+   "t": 60.62,
+   "kind": "comic",
+   "cue": {
+    "word": "خيمتين",
+    "t": 60.62
+   },
+   "summary": "The list goes absurd: tents, rugs, cattle, camels, lions, whole rooms."
+  },
+  {
+   "id": "B7",
+   "t": 76.86,
+   "kind": "turn",
+   "cue": {
+    "word": "لكنه",
+    "t": 76.86
+   },
+   "summary": "Ali, stunned, decides to answer with a bigger exaggeration."
+  },
+  {
+   "id": "B8",
+   "t": 87.86,
+   "kind": "comic",
+   "cue": {
+    "word": "بغداد",
+    "t": 87.86
+   },
+   "summary": "Ali claims a house, a school, a garden, Baghdad, Basra, armies and thousands of witnesses."
+  },
+  {
+   "id": "B9",
+   "t": 97.06,
+   "kind": "climax",
+   "cue": {
+    "word": "نفد",
+    "t": 97.06
+   },
+   "summary": "The judge runs out of patience: a bottomless sea, or a meeting place for all mankind?"
+  },
+  {
+   "id": "B10",
+   "t": 116.64,
+   "kind": "suspense",
+   "cue": {
+    "word": "بفتحه",
+    "t": 116.64
+   },
+   "summary": "He orders the bag opened; everyone leans in."
+  },
+  {
+   "id": "B11",
+   "t": 130.82,
+   "kind": "reveal",
+   "cue": {
+    "word": "خبز",
+    "t": 130.82
+   },
+   "summary": "Inside: bread, a little cheese, olives and one lemon."
+  },
+  {
+   "id": "B12",
+   "t": 139.96,
+   "kind": "resolution",
+   "cue": {
+    "word": "وانصرف،",
+    "t": 139.96
+   },
+   "summary": "Ali throws the bag at his rival's feet and walks out, leaving the judge with the absurdity."
+  },
+  {
+   "id": "B13",
+   "t": 144.92,
+   "kind": "emotion",
+   "cue": {
+    "word": "انفجر",
+    "t": 144.92
+   },
+   "summary": "The Caliph bursts out laughing and rewards Ali."
+  },
+  {
+   "id": "B14",
+   "t": 162.26,
+   "kind": "moral",
+   "cue": {
+    "word": "بكشف",
+    "t": 162.26
+   },
+   "summary": "A simple look inside exposed two unbelievable claims."
+  }
+ ],
+ "cast": [
+  {
+   "id": "caliph",
+   "name": "Caliph Harun al-Rashid",
+   "library": "person",
+   "base": "person costume:'caliph'",
+   "look": "Catalogue caliph: red robe, blue cape, crown over a white turban, grey beard (age 0.6). Uses lie, sit (seat bench), the laugh pose.",
+   "new": false
+  },
+  {
+   "id": "jafar",
+   "name": "Ja'far the vizier",
+   "library": "person",
+   "base": "person costume:'vizier'",
+   "look": "Catalogue vizier: navy robe, red cape, tall white turban with a feather, grey chin beard.",
+   "new": false
+  },
+  {
+   "id": "ali",
+   "name": "Ali the Persian",
+   "library": "person",
+   "base": "person costume:'merchant' with pal {robe green, dot dark green, hc yellow, sash yellow}",
+   "look": "The \"merchant pal\" figure in people.png: green robe, yellow turban with a red jewel and feather, black beard, age 0.2. Friendly, quick eyes. The same figure in the palace and inside his tale.",
+   "new": false
+  },
+  {
+   "id": "kurd",
+   "name": "the Kurdish stranger (the claimant)",
+   "library": "person",
+   "base": "person costume:'villager' with pal {robe red, dot dark red, sash yellow, hc dark brown, band yellow}, s 1.08",
+   "look": "Burly, a head-width broader than Ali through scale; red robe, wide yellow sash, dark wrapped turban, full black moustache, age 0.3. Bold and shameless rather than villainous; no caricature.",
+   "new": false
+  },
+  {
+   "id": "judge",
+   "name": "the judge (qadi)",
+   "library": "person",
+   "base": "person costume:'physician' with pal {robe navy, dot blue, hc white, sash white}, age 0.8",
+   "look": "Old, grey beard, large white turban (drawn 1.2x so it can slip and roll), dark robe. Seated on a bench behind a low desk for most of the film. Saved as the reusable preset \"judge\".",
+   "new": true
+  },
+  {
+   "id": "seller",
+   "name": "the stallkeeper",
+   "library": "person",
+   "base": "person costume:'beanSeller'",
+   "look": "Catalogue beanSeller behind the fruit stall.",
+   "new": false
+  },
+  {
+   "id": "onlookers",
+   "name": "three onlookers",
+   "library": "person",
+   "base": "person costumes 'villager', 'villageWoman', 'servant'",
+   "look": "Catalogue presets with different heights (s 0.8 to 0.95) and reaction delays. Three in the market; the villager and the villageWoman only in court.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "palaceNight",
+   "library": null,
+   "description": "The planned palaceHall (blue dotted back wall, three pointed arches, door arch at the left x 40..250, dais x 560..900 top y 860, checker floor, two lamps) with a new night option: night sky, moon and stars in the arches (skyCycle u 0.72), lamps lit with a halftone glow, a navy wash over walls and floor. The diwan stands on the dais.",
+   "new": true
+  },
+  {
+   "id": "openRoad",
+   "library": "hillTrees",
+   "description": "Existing Library pieces: sky (day), sun, cloudFlat, hillTrees, ground; the hill trees scroll for the walk in place.",
+   "new": false
+  },
+  {
+   "id": "marketStreet",
+   "library": null,
+   "description": "The planned marketStreet with one stall (here fruit and bread): a row of flat house fronts with arched doors and awnings at the back (roof line about y 420), ground at y 900, stall at x 600..860 (counter top y 800, striped awning top y 560).",
+   "new": true
+  },
+  {
+   "id": "courtRoom",
+   "library": null,
+   "description": "Day variant of palaceHall dressed as a court: plain pale wall with three arches (daylight), no carpet; a centre dais x 360..640 top y 820 with a bench and a low desk (desk top y 760, x 400..600); deeper floor in front down to y 1230 for the bag stool at (500, 1000). Blank wall above x 80..300 and x 680..940 for the claim piles.",
+   "new": true
+  },
+  {
+   "id": "recapCard",
+   "library": null,
+   "description": "A flat graphic card for the moral: process yellow field with blue Ben-Day dots and the standard panel border; no scenery.",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "bag",
+   "library": null,
+   "description": "leatherBag: small brown drawstring pouch, 70 px tall x 60 wide at s 1, with a shoulder strap (optional), fields open 0..1 (mouth), bulge, sq, limp 0..1, strapTo (world point).",
+   "new": true
+  },
+  {
+   "id": "bagStool",
+   "library": "seatStool",
+   "description": "The Library stool used as a stand for the bag in court, with a cloth for the food.",
+   "new": false
+  },
+  {
+   "id": "tiles",
+   "library": null,
+   "description": "claimTiles: square paper tiles with a fat black border, each holding one flat icon: cup, comb, cloth (small); tent, rug, cow, calf, sheep, camel, lion (Library lion), room; house, school, garden, cityBaghdad, cityBasra, army, crowd. Options: size, wide (double width), badge (\"x2\"), ghost (pale, dashed).",
+   "new": true
+  },
+  {
+   "id": "bread",
+   "library": null,
+   "description": "bagFood bread: round flatbread 46 px with a few dark spots (planned name bread).",
+   "new": true
+  },
+  {
+   "id": "cheese",
+   "library": null,
+   "description": "bagFood cheese: small pale yellow wedge 22 px.",
+   "new": true
+  },
+  {
+   "id": "olives",
+   "library": null,
+   "description": "bagFood olives: five dark green ovals 10 px with a highlight.",
+   "new": true
+  },
+  {
+   "id": "lemon",
+   "library": null,
+   "description": "bagFood lemon: yellow lemon 24 px with pointed ends and red dot shading.",
+   "new": true
+  },
+  {
+   "id": "purse",
+   "library": null,
+   "description": "The planned purse: fat red drawstring purse 60 px with two or three coins showing.",
+   "new": true
+  },
+  {
+   "id": "diwan",
+   "library": null,
+   "description": "Low couch for the Caliph: 360 wide, seat top 48 above its base line (so sit with seat bench fits), rolled arm and pillow at the left end, striped cushions, a blanket drawn over the lying figure.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 12.34,
+   "paragraphs": [
+    1
+   ],
+   "set": "palaceNight",
+   "cast": [
+    "caliph",
+    "jafar"
+   ],
+   "summary": "Night in the palace. The Caliph cannot sleep; he sits up and asks his vizier Ja'far for a story to make him laugh and lift his worry.",
+   "camera": {
+    "shot": "establishing",
+    "move": "drift",
+    "notes": "Start full world (x 500, y 615, zoom 1.0), drift right and in to (640, 700, 1.25) by 4.2; hold; ease to (590, 720, 1.35) at 6.5 so the door arch (x 40..250) stays in frame for Ja'far's entrance."
+   },
+   "composition": "Diwan on the dais, centre x 740, seat top y 812. Caliph lies on it head to the left (x 640). Moon in the middle arch (x 500, y 300). Door arch far left. Ja'far stops at x 470, y 900. Worry scribble above the Caliph at (740, 520).",
+   "actions": [
+    {
+     "t": 0.0,
+     "who": "set",
+     "action": "Night hall: moon and stars in the three arches, both lamps flicker (seeded), blue night wash on walls and floor.",
+     "acting": "Calm, still room so the restless Caliph is the only thing moving.",
+     "library": "palaceHall night option; skyCycle u 0.72 inside the arches"
+    },
+    {
+     "t": 0.26,
+     "cue": {
+      "word": "يستطع",
+      "t": 0.26
+     },
+     "who": "caliph",
+     "action": "Lies on the diwan under a blanket, eyes wide open at the ceiling.",
+     "acting": "lie 1, lid 0, pupils slide along the ceiling in 2-frame saccades; brow -0.4; noBlink for the first second.",
+     "library": "person {costume:'caliph', lie:1}; gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 1.0,
+     "cue": {
+      "word": "الخليفة",
+      "t": 1.0
+     },
+     "who": "lettering",
+     "action": "Label with a short arrow: CALIPH HARUN AL-RASHID.",
+     "acting": "Placed top left of the panel, clear of his face.",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 2.2,
+     "cue": {
+      "word": "الرشيد",
+      "t": 2.36
+     },
+     "who": "caliph",
+     "action": "Turns over with a huff and punches the pillow; the blanket bump follows a beat late.",
+     "acting": "squeeze flip (sq 0.9 then 1), brow +0.5, mouth frown; pillow squashes and springs back (landSquash).",
+     "library": "settleTo, landSquash"
+    },
+    {
+     "t": 3.2,
+     "cue": {
+      "word": "النوم",
+      "t": 3.44
+     },
+     "who": "caliph",
+     "action": "Squeezes his eyes shut, holds; one eye pops open again, then the other.",
+     "acting": "lid 1 at 3.2; wink 'R' open at 3.6; both open at 3.78; pupils roll up (gaze [0,-1]).",
+     "library": "person wink + lid ramp"
+    },
+    {
+     "t": 4.16,
+     "cue": {
+      "word": "ليلة،",
+      "t": 4.16
+     },
+     "who": "caliph",
+     "action": "Gives up: sits up on the diwan, blanket slides to his lap, hand to his head.",
+     "acting": "lie 1 to 0 with sit 1 (seat bench) over 0.6 s, overshoot and settle; headHold hand; a sigh (sq 0.96 pulse); lid 0.35.",
+     "library": "lie, sit, seat:'bench', PERSON_HANDS.headHold, settleTo"
+    },
+    {
+     "t": 5.5,
+     "cue": {
+      "word": "فطلب",
+      "t": 5.5
+     },
+     "who": "caliph",
+     "action": "Claps twice toward the door to summon his vizier.",
+     "acting": "gaze to the door arch (lookAt), two quick claps with handLW/handRW meeting in front of the chest; the clap pop sits in the pause just before the word.",
+     "library": "handLW/handRW, lookAt"
+    },
+    {
+     "t": 6.3,
+     "cue": {
+      "word": "وزيره",
+      "t": 6.54
+     },
+     "who": "jafar",
+     "action": "Ja'far hurries in through the door arch and skids to a stop.",
+     "acting": "walk from x 120 to 470 in 0.9 s, footfalls with small dust; lurch forward on the stop (tip 0.1 then settle); cape lags.",
+     "library": "person {costume:'vizier'}; walk, footfalls, settleTo"
+    },
+    {
+     "t": 7.26,
+     "cue": {
+      "word": "جعفر",
+      "t": 7.26
+     },
+     "who": "jafar",
+     "action": "Bows, hand on chest. Label: VIZIER JA'FAR.",
+     "acting": "tip 0.16, lid 0.6 on the bow, then eyes up to the Caliph (lookAt).",
+     "library": "PERSON_HANDS.chest; S.label"
+    },
+    {
+     "t": 8.0,
+     "cue": {
+      "word": "قصة",
+      "t": 8.0
+     },
+     "who": "fx",
+     "action": "Icon balloon from the Caliph: a story scroll.",
+     "acting": "Caliph points at the balloon (pointUp); Ja'far's eyes follow it.",
+     "library": "iconBalloon (planned): round balloon 150 px, tail to the speaker"
+    },
+    {
+     "t": 8.9,
+     "cue": {
+      "word": "تضحكه",
+      "t": 8.9
+     },
+     "who": "fx",
+     "action": "The scroll icon swaps to a laughing face; the Caliph tries the smile himself and it collapses.",
+     "acting": "mouth 'smile' for 0.5 s, then frown; brow -0.6; Ja'far nods once.",
+     "library": "iconBalloon content swap with a pop"
+    },
+    {
+     "t": 9.92,
+     "cue": {
+      "word": "وتخفف",
+      "t": 9.92
+     },
+     "who": "fx",
+     "action": "A black scribble cloud (his worry) hangs over the Caliph's head and pulses; he bats at it and it drifts back.",
+     "acting": "lid 0.4, head drop 6 px, slow hand wave (wave gesture); scribble pulses 0.9..1.1 on the word at 11.36.",
+     "library": "worryScribble (new effect): seeded scribble strokes in a 110 px blob"
+    },
+    {
+     "t": 11.0,
+     "cue": {
+      "word": "الهم.",
+      "t": 11.36
+     },
+     "who": "jafar",
+     "action": "Ja'far strokes his beard and thinks, eyes up and to the side.",
+     "acting": "chin gesture, gaze saccades up-left, up-right; one slow blink; weight shifts foot to foot (breathe).",
+     "library": "PERSON_HANDS.chin, gazePlan ease 0.07, breathe"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 1.0,
+     "text": "CALIPH HARUN AL-RASHID"
+    },
+    {
+     "t": 7.26,
+     "text": "VIZIER JA'FAR"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 5.3,
+     "kind": "pop",
+     "note": "the first clap, in the pause 5.06-5.50"
+    },
+    {
+     "t": 12.08,
+     "kind": "chime",
+     "note": "Ja'far's idea, in the pause 11.80-12.34"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 12.34
+   }
+  },
+  {
+   "id": "S2",
+   "start": 12.34,
+   "end": 23.98,
+   "paragraphs": [
+    1
+   ],
+   "set": "palaceNight",
+   "cast": [
+    "caliph",
+    "jafar",
+    "ali"
+   ],
+   "summary": "Ja'far proposes Ali the Persian, the man who knows funny tales. Ali is summoned, arrives, bows and sits before the Caliph.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Hold (590, 720, 1.35). At 13.6 ease up-left to (500, 600, 1.2) to hold Ja'far and his thought cloud. At 20.0 back to (480, 740, 1.3) for the entrance; 22.62 push to the two-shot of Ali and the Caliph (twoShot, margin 150)."
+   },
+   "composition": "Thought cloud 400 x 280 centred (300, 330), tail to Ja'far's head (470, 680). Ali sits on a floor cushion at x 330, y 900. Ja'far steps back to x 545. Caliph on the diwan looks down-left at Ali: a clear diagonal eye line.",
+   "actions": [
+    {
+     "t": 12.34,
+     "cue": {
+      "word": "اقترح",
+      "t": 12.34
+     },
+     "who": "jafar",
+     "action": "The idea lands: finger up, a small hop.",
+     "acting": "pointUp, eyes wide then bright smile; hop 14 px with landSquash; brow -0.5.",
+     "library": "PERSON_HANDS.pointUp, hop, landSquash"
+    },
+    {
+     "t": 13.78,
+     "cue": {
+      "word": "استدعاء",
+      "t": 13.78
+     },
+     "who": "fx",
+     "action": "Thought cloud from Ja'far: a small Ali inside, mid-story.",
+     "acting": "Trail bubbles pop first, then the cloud; Caliph's eyes go to it.",
+     "library": "thoughtCloud(ctx, 300, 330, 400, 280, t, {scale 0.55}); figure about 130 px tall on screen"
+    },
+    {
+     "t": 14.58,
+     "cue": {
+      "word": "رجل",
+      "t": 14.58
+     },
+     "who": "ali",
+     "action": "Inside the cloud Ali gestures wide while telling a tale.",
+     "acting": "armsOut then pointUp, talk 0.8, mouth 'smile'.",
+     "library": "person {costume:'merchant', pal green robe, yellow turban}"
+    },
+    {
+     "t": 15.88,
+     "cue": {
+      "word": "الحكايات",
+      "t": 15.88
+     },
+     "who": "fx",
+     "action": "Two tiny listeners inside the cloud rock with laughter.",
+     "acting": "Listeners (child-scale villagers) bob out of phase, never in unison.",
+     "library": "person {child:true} x2, stagger"
+    },
+    {
+     "t": 16.78,
+     "cue": {
+      "word": "الطريفة",
+      "t": 16.78
+     },
+     "who": "caliph",
+     "action": "The Caliph leans forward, interested; the worry scribble shrinks by half.",
+     "acting": "tip 0.08, brow -0.5 (raised), lid 0.1; scribble scale 1 to 0.5.",
+     "library": "tip, brow"
+    },
+    {
+     "t": 18.52,
+     "cue": {
+      "word": "علي",
+      "t": 18.52
+     },
+     "who": "lettering",
+     "action": "Label under the cloud figure: ALI THE PERSIAN.",
+     "acting": "Pops on the name.",
+     "library": "S.label"
+    },
+    {
+     "t": 19.4,
+     "cue": {
+      "word": "الفارسي،",
+      "t": 18.94
+     },
+     "who": "caliph",
+     "action": "Nods twice and points to the door: bring him. Ja'far turns and claps; the cloud pops away.",
+     "acting": "two nods (head drop 8 px), pointFwd toward the door; cloud retreats bubble by bubble.",
+     "library": "PERSON_HANDS.pointFwd; thoughtCloud p 1 to 0"
+    },
+    {
+     "t": 20.28,
+     "cue": {
+      "word": "فحضر",
+      "t": 20.28
+     },
+     "who": "ali",
+     "action": "Ali walks in through the door arch, brisk and cheerful.",
+     "acting": "walk x 130 to 330 in 1.0 s, footfalls; gaze on the Caliph; slight bounce (amp 1).",
+     "library": "walk, footfalls, lookAt"
+    },
+    {
+     "t": 21.3,
+     "cue": {
+      "word": "علي",
+      "t": 21.3
+     },
+     "who": "ali",
+     "action": "Stops and bows, hand on chest; Ja'far presents him with open palms.",
+     "acting": "tip 0.14, lid 0.5 then up; Ja'far palmsUp, steps back to x 545.",
+     "library": "PERSON_HANDS.chest, palmsUp"
+    },
+    {
+     "t": 21.76,
+     "cue": {
+      "word": "وجلس",
+      "t": 21.76
+     },
+     "who": "ali",
+     "action": "Sits cross-legged on the cushion.",
+     "acting": "small anticipation dip, sit 0 to 1 over 0.5 s, settle with overshoot; robe hem settles a beat late.",
+     "library": "sit, seat:'floor', anticipate, settleTo"
+    },
+    {
+     "t": 22.62,
+     "cue": {
+      "word": "أمام",
+      "t": 22.62
+     },
+     "who": "camera",
+     "action": "Push in to the two-shot: Ali looking up, the Caliph looking down.",
+     "acting": "Both gazes locked (lookAt both ways); Ja'far at the edge with clasped hands.",
+     "library": "twoShot"
+    },
+    {
+     "t": 23.3,
+     "cue": {
+      "word": "الخليفة.",
+      "t": 23.12
+     },
+     "who": "caliph",
+     "action": "Waves \"go on\" and settles back, chin on his fist.",
+     "acting": "palmsUp flick, then chin gesture; lid 0.25; the scribble still hovers, small.",
+     "library": "PERSON_HANDS.palmsUp, chin"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 18.52,
+     "text": "ALI THE PERSIAN"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 23.98
+   }
+  },
+  {
+   "id": "S3",
+   "start": 23.98,
+   "end": 26.78,
+   "paragraphs": [
+    2
+   ],
+   "set": "palaceNight",
+   "cast": [
+    "ali",
+    "caliph",
+    "jafar"
+   ],
+   "summary": "Ali begins his tale; a thought cloud grows from his head and swallows the panel: we enter the story he tells.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "From the two-shot push to Ali alone (330, 760, 1.9) by 25.4; from 26.0 the cloud expands past the panel edges, covering the cut."
+   },
+   "composition": "Ali centre, head at about y 700 world. The cloud starts at (420, 480) and grows to cover the full panel by 26.78.",
+   "actions": [
+    {
+     "t": 23.98,
+     "cue": {
+      "word": "قال",
+      "t": 23.98
+     },
+     "who": "ali",
+     "action": "Inhales, raises a finger and starts to speak.",
+     "acting": "anticipate (sq 0.95), pointUp, talk 0.8, eyes to the Caliph then up into memory (gaze [0.3,-0.8]).",
+     "library": "anticipate, PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 25.0,
+     "cue": {
+      "word": "علي",
+      "t": 25.48
+     },
+     "who": "caliph",
+     "action": "In the edge of frame the Caliph leans in; Ja'far tilts his head.",
+     "acting": "tip 0.06, lookAt Ali; seeded blinks.",
+     "library": "lookAt, blink"
+    },
+    {
+     "t": 26.02,
+     "cue": {
+      "word": "إنه",
+      "t": 26.02
+     },
+     "who": "fx",
+     "action": "Thought cloud grows from Ali's head and expands to fill the panel. Small banner inside: ALI'S TALE.",
+     "acting": "Trail bubbles, then the cloud scales from 0.3 to 4 with ease-in; its yellow inside becomes the day sky of the next scene (match colours).",
+     "library": "thoughtCloud with w,h animated (taleZoom)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 26.3,
+     "text": "ALI'S TALE"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "zoom",
+    "t": 26.78,
+    "label": "ALI'S TALE"
+   }
+  },
+  {
+   "id": "S4",
+   "start": 26.78,
+   "end": 33.06,
+   "paragraphs": [
+    2
+   ],
+   "set": "openRoad",
+   "cast": [
+    "ali"
+   ],
+   "summary": "Inside the tale: Ali on the road with one small leather bag that holds his provisions.",
+   "camera": {
+    "shot": "medium",
+    "move": "track",
+    "notes": "Camera fixed on Ali (500, 730, 1.5) while the hills and trees scroll left behind him; ease in to 1.75 on the bag at 28.8, back to 1.5 at 31.0."
+   },
+   "composition": "Ali at x 480, y 900, facing right, walking in place. The bag hangs on a strap at his near hip (x 455, y 790), 70 px tall. Arrow and label come from the upper left.",
+   "actions": [
+    {
+     "t": 26.78,
+     "cue": {
+      "word": "سافر",
+      "t": 26.78
+     },
+     "who": "ali",
+     "action": "Walks along the road; the landscape scrolls.",
+     "acting": "walk driven by the scroll distance (no sliding), arms swing, chin up, humming smile; seeded blinks.",
+     "library": "walk(scrollX, t), footfalls, dustBurst"
+    },
+    {
+     "t": 27.44,
+     "cue": {
+      "word": "يومًا",
+      "t": 27.44
+     },
+     "who": "set",
+     "action": "Sun high, one cloud drifting, hill trees in slow parallax, dust puffs on each footfall.",
+     "acting": "Light, open, carefree: the opposite of the courtroom to come.",
+     "library": "sky, sun, cloudFlat, hillTrees, ground"
+    },
+    {
+     "t": 28.8,
+     "cue": {
+      "word": "كيسًا",
+      "t": 28.8
+     },
+     "who": "bag",
+     "action": "Arrow and label on the bag: SMALL LEATHER BAG.",
+     "acting": "The bag swings on its strap with each step (swing, small amplitude).",
+     "library": "leatherBag (new prop); S.arrow, S.label; swing"
+    },
+    {
+     "t": 30.04,
+     "cue": {
+      "word": "صغيرًا",
+      "t": 30.04
+     },
+     "who": "ali",
+     "action": "Lifts the bag on one palm to show how small it is.",
+     "acting": "handRW to the bag, raise to chest height, gaze down at it, eyebrows up; it fits in his hand.",
+     "library": "handRW"
+    },
+    {
+     "t": 31.02,
+     "cue": {
+      "word": "فيه",
+      "t": 31.02
+     },
+     "who": "fx",
+     "action": "Icon balloon: a single loaf. He pats his belly.",
+     "acting": "smile, lid 0.3 (content); balloon pops on the word, gone by 32.3.",
+     "library": "iconBalloon with bread"
+    },
+    {
+     "t": 32.6,
+     "cue": {
+      "word": "زاده.",
+      "t": 31.64
+     },
+     "who": "ali",
+     "action": "Pats the bag twice, lets it drop back to his hip and strides on.",
+     "acting": "two pats (hand pulse), the bag bounces (landSquash); a happy skip-step.",
+     "library": "pulse, landSquash, hop"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 28.8,
+     "text": "SMALL LEATHER BAG"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 32.7,
+     "kind": "pop",
+     "note": "the pat on the bag, in the pause 32.34-33.06"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 33.06
+   }
+  },
+  {
+   "id": "S5",
+   "start": 33.06,
+   "end": 46.68,
+   "paragraphs": [
+    2
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "ali",
+    "kurd",
+    "seller",
+    "onlookers"
+   ],
+   "summary": "In the market of a strange city a stranger grabs Ali, tears the bag from him and shouts to the crowd that it is his.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Wide (450, 700, 1.15) as Ali walks in; at 35.4 pan left a little to (400, 720, 1.3) to show the stranger arriving behind him; 39.5 tighten to (430, 740, 1.6) for the tug; 41.7 pull out to (500, 690, 1.1) to take in the crowd."
+   },
+   "composition": "Stall at x 600..860 with the seller behind it at x 730. Ali stops at x 520 facing right, bag on his hip toward screen left (x 480, y 790). The stranger enters from the left edge and stops at x 360. Onlookers end at x 110, 215 and 900. Keep the bag in the centre third for the whole scene.",
+   "actions": [
+    {
+     "t": 33.06,
+     "cue": {
+      "word": "وبينما",
+      "t": 33.06
+     },
+     "who": "ali",
+     "action": "Walks into the market from the left toward the stall.",
+     "acting": "walk x -80 to 520 in 1.1 s, footfalls; head turns to the wares (lookAt stall).",
+     "library": "walk, footfalls"
+    },
+    {
+     "t": 34.16,
+     "cue": {
+      "word": "يشتري",
+      "t": 34.16
+     },
+     "who": "ali",
+     "action": "Stops at the stall and picks up a pomegranate; the seller praises his goods.",
+     "acting": "handRW to the fruit, sniffs it (head dip); seller palmsUp, talk 0.6, smile. Ali's back is half turned to the bag.",
+     "library": "person {costume:'beanSeller'}; handRW, PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 35.56,
+     "cue": {
+      "word": "مدينة",
+      "t": 35.56
+     },
+     "who": "kurd",
+     "action": "The stranger walks in from the left, slows, and his eyes lock on the bag.",
+     "acting": "walk then slow to a stop at x 300; gaze snaps to the bag (lookAt bag) while Ali looks at the fruit: we see it before Ali does.",
+     "library": "person {costume:'villager', pal red robe, yellow sash, dark turban, s 1.08}; walk, gazePlan"
+    },
+    {
+     "t": 36.26,
+     "cue": {
+      "word": "غريبة،",
+      "t": 36.26
+     },
+     "who": "kurd",
+     "action": "Two creeping steps closer; a glance left, a glance right; his hand rises.",
+     "acting": "sneak steps to x 360 (knees bent, tip 0.08), 2-frame saccades left and right, brow +0.6.",
+     "library": "sneak (planned motion) or walk with low amp; gazePlan ease 0.07"
+    },
+    {
+     "t": 36.98,
+     "cue": {
+      "word": "أمسك",
+      "t": 36.98
+     },
+     "who": "kurd",
+     "action": "Grabs Ali by the shoulder.",
+     "acting": "handRW lands on Ali's shoulder; Ali jolts (sq 1.1 then settle), eyes wide, the pomegranate pops out of his hand and the seller catches it.",
+     "library": "handRW, settleTo, hop for the fruit"
+    },
+    {
+     "t": 38.2,
+     "cue": {
+      "word": "رجل",
+      "t": 38.2
+     },
+     "who": "lettering",
+     "action": "Label with arrow on the newcomer: A KURDISH STRANGER.",
+     "acting": "Ali turns his head to him (gaze), mouth o.",
+     "library": "S.label, S.arrow"
+    },
+    {
+     "t": 39.56,
+     "cue": {
+      "word": "وانتزع",
+      "t": 39.56
+     },
+     "who": "kurd",
+     "action": "Yanks the bag: a short tug of war, the strap stretching between them.",
+     "acting": "both lean away (tip -0.15 each), tremble 2 px, strap drawn as a taut line that lengthens 30 px; Ali two hands on the strap (grip).",
+     "library": "PERSON_HANDS.grip, tremble, handLW/handRW on the strap"
+    },
+    {
+     "t": 40.64,
+     "cue": {
+      "word": "الكيس",
+      "t": 40.64
+     },
+     "who": "bag",
+     "action": "The strap slips from Ali's hands; the stranger swings the bag up over his head. YOINK!",
+     "acting": "Ali stumbles back two steps (follow-through, arms wheeling); stranger aR raised, grin; bag swings on (swing).",
+     "library": "swing, settleTo; lettering"
+    },
+    {
+     "t": 41.72,
+     "cue": {
+      "word": "وادعى",
+      "t": 41.72
+     },
+     "who": "kurd",
+     "action": "Turns to the street and shouts, hand cupped at his mouth.",
+     "acting": "cupMouth, talk 1, brow +0.8, chest out (sq 1.04).",
+     "library": "PERSON_HANDS.cupMouth"
+    },
+    {
+     "t": 42.96,
+     "cue": {
+      "word": "أمام",
+      "t": 42.96
+     },
+     "who": "onlookers",
+     "action": "Three passers-by hurry in and form a half ring.",
+     "acting": "each arrives 0.13 s after the last (stagger), different walks; heads turn to the shouter.",
+     "library": "person villager, villageWoman, servant; walk, stagger"
+    },
+    {
+     "t": 44.04,
+     "cue": {
+      "word": "أنه",
+      "t": 44.04
+     },
+     "who": "kurd",
+     "action": "Holds the bag high, points at it, then jabs his thumb at his own chest. MINE!",
+     "acting": "pointUp at the bag, then chest gesture on the word at 44.70; smug lid 0.3.",
+     "library": "PERSON_HANDS.pointUp, chest"
+    },
+    {
+     "t": 45.52,
+     "cue": {
+      "word": "الحقيقي.",
+      "t": 45.52
+     },
+     "who": "ali",
+     "action": "Ali protests to the crowd with open arms; the onlookers' eyes go back and forth; the seller shrugs.",
+     "acting": "armsOut then palmsUp, brow -0.6, talk 0.8; onlooker gazes ping-pong on a gazePlan; seller palmsUp shrug.",
+     "library": "PERSON_HANDS.armsOut, palmsUp, gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 38.2,
+     "text": "A KURDISH STRANGER"
+    },
+    {
+     "t": 40.5,
+     "text": "YOINK!"
+    },
+    {
+     "t": 44.7,
+     "text": "MINE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 46.68,
+    "label": "TO THE JUDGE!"
+   }
+  },
+  {
+   "id": "S6",
+   "start": 46.68,
+   "end": 58.54,
+   "paragraphs": [
+    3
+   ],
+   "set": "courtRoom",
+   "cast": [
+    "judge",
+    "kurd",
+    "ali",
+    "onlookers"
+   ],
+   "summary": "Before the judge. The bag is set on a stool between the two men; the judge asks the claimant what is inside and he starts with sensible things.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "The LATER card covers a cut to the full court (500, 615, 1.0). 51.0 ease to (480, 700, 1.2). 53.8 short push to the bag (500, 900, 2.2), back to (480, 700, 1.2) at 54.9."
+   },
+   "composition": "Symmetrical: judge centre on the dais (x 500, dais top y 820, head near y 590). Bag on a stool front centre (x 500, floor y 1000, bag top y 880). Stranger at x 190, Ali at x 810, both at y 930 facing in. Two onlookers at the back edges (x 60 and 940, s 0.8). The empty wall above each claimant (x 80..300 and x 680..940, y 60..570) is kept free for the claim piles.",
+   "actions": [
+    {
+     "t": 46.9,
+     "cue": {
+      "word": "احتكم",
+      "t": 46.68
+     },
+     "who": "camera",
+     "action": "The card clears on the full courtroom; the judge sits writing on a scroll.",
+     "acting": "Judge: sit 1 on a bench behind a low desk, eyes down, quill hand moving; calm.",
+     "library": "person {costume:'physician', pal dark robe, big white turban, age 0.8, sit:1, seat:'bench'}"
+    },
+    {
+     "t": 47.6,
+     "cue": {
+      "word": "الخصمان",
+      "t": 48.48
+     },
+     "who": "kurd",
+     "action": "The two rivals shuffle in from the left, both gripping the bag, glaring at each other.",
+     "acting": "sideways steps in step-and-drag rhythm, each pulls the bag 10 px his way in turn; brows +0.7; neither looks where he is going.",
+     "library": "walk, handLW/handRW on the bag"
+    },
+    {
+     "t": 49.66,
+     "cue": {
+      "word": "القاضي،",
+      "t": 49.66
+     },
+     "who": "judge",
+     "action": "The judge looks up over his scroll, one brow raised. Label: THE JUDGE.",
+     "acting": "head lifts, gaze to the pair, brow -0.5; quill stops.",
+     "library": "gazePlan; S.label"
+    },
+    {
+     "t": 50.4,
+     "cue": {
+      "word": "القاضي،",
+      "t": 49.66
+     },
+     "who": "bag",
+     "action": "The stranger sets the bag on the stool; both men step back to their sides without taking their eyes off it.",
+     "acting": "bag lands with a small squash; Ali walks to x 810, stranger to x 190, both gazes locked on the bag (lookAt).",
+     "library": "seatStool, landSquash, walk, lookAt"
+    },
+    {
+     "t": 51.16,
+     "cue": {
+      "word": "فسأل",
+      "t": 51.16
+     },
+     "who": "judge",
+     "action": "Points at the claimant on the left and questions him.",
+     "acting": "pointFwd toward screen left, talk 0.7, level brow.",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 52.92,
+     "cue": {
+      "word": "محتويات",
+      "t": 52.92
+     },
+     "who": "judge",
+     "action": "Points down at the bag: what is in it?",
+     "acting": "pointDown; a small question mark pops over the bag.",
+     "library": "PERSON_HANDS.pointDown; iconBalloon \"?\""
+    },
+    {
+     "t": 53.8,
+     "cue": {
+      "word": "الكيس.",
+      "t": 53.8
+     },
+     "who": "camera",
+     "action": "Short push to the bag alone on its stool: tiny, plain, tied shut.",
+     "acting": "Hold through the pause so the size registers.",
+     "library": "CAM keys in pairs"
+    },
+    {
+     "t": 54.9,
+     "cue": {
+      "word": "بدأ",
+      "t": 54.9
+     },
+     "who": "kurd",
+     "action": "Steps forward and starts counting on his fingers, honest-faced.",
+     "acting": "one step (hop 8 px), pointUp with the hand ticking per item, mouth talk 0.6, brow -0.3 (innocent).",
+     "library": "PERSON_HANDS.pointUp, countedBeats"
+    },
+    {
+     "t": 56.12,
+     "cue": {
+      "word": "يعدد",
+      "t": 56.12
+     },
+     "who": "fx",
+     "action": "Three small plain tiles pop in a neat row just above the bag: a cup, a comb, a folded cloth.",
+     "acting": "Small (60 px), tidy, each with a soft pop of scale; they fit the bag.",
+     "library": "claimTiles small set; pop-in with settleTo"
+    },
+    {
+     "t": 57.48,
+     "cue": {
+      "word": "معقولة،",
+      "t": 57.48
+     },
+     "who": "judge",
+     "action": "Nods twice and writes it down; Ali folds his arms and rolls his eyes.",
+     "acting": "judge nods (8 px), quill moves; Ali folded arms, gaze arcs up and round.",
+     "library": "PERSON_HANDS.folded, gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 49.66,
+     "text": "THE JUDGE"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 58.54
+   }
+  },
+  {
+   "id": "S7",
+   "start": 58.54,
+   "end": 73.96,
+   "paragraphs": [
+    3
+   ],
+   "set": "courtRoom",
+   "cast": [
+    "judge",
+    "kurd",
+    "ali",
+    "onlookers"
+   ],
+   "summary": "The claimant's list runs wild: two tents, two rugs, a cow, two calves, sheep, camels, lions, even whole rooms, all \"inside\" the little bag. A pile of picture tiles grows above him.",
+   "camera": {
+    "shot": "wide",
+    "move": "tilt",
+    "notes": "Wide (500, 640, 1.05) so the bag and the growing pile share the frame; drift up to (480, 560, 1.05) as the pile grows; at 70.96 tilt down the bubble trail to the bag (500, 880, 1.9); hold through the pause."
+   },
+   "composition": "Stranger's pile: 100 px tiles, two columns at x 90..300, four rows from y 470 up to y 60, joined to the bag's mouth by a three-bubble trail. The three small sensible tiles get pushed aside. The judge sits between the pile and Ali; every tile lands in his eye line.",
+   "actions": [
+    {
+     "t": 58.54,
+     "cue": {
+      "word": "ثم",
+      "t": 58.54
+     },
+     "who": "kurd",
+     "action": "A sly smile; a sideways glance at Ali; a deep breath.",
+     "acting": "mouth 'smile', lid 0.35, gaze flicks to Ali and back; anticipate (sq 1.06 inhale).",
+     "library": "anticipate, gazePlan"
+    },
+    {
+     "t": 59.24,
+     "cue": {
+      "word": "زعم",
+      "t": 59.24
+     },
+     "who": "kurd",
+     "action": "Throws both arms up and proclaims.",
+     "acting": "aL/aR raised (about [2.45, 2.85]), talk 1, on tiptoe (sq 1.05).",
+     "library": "person aL/aR angles"
+    },
+    {
+     "t": 60.62,
+     "cue": {
+      "word": "خيمتين",
+      "t": 60.62
+     },
+     "who": "fx",
+     "action": "Tile 1 pops above the bag on a bubble trail: a tent with an \"x2\" badge. The judge's nod freezes halfway.",
+     "acting": "tile scales in with overshoot; judge head stops mid-nod, eyes come up slowly.",
+     "library": "claimPile + claimTiles tent"
+    },
+    {
+     "t": 61.56,
+     "cue": {
+      "word": "وبساطين",
+      "t": 61.56
+     },
+     "who": "fx",
+     "action": "Tile 2: two rolled rugs, \"x2\". The judge's quill stops.",
+     "acting": "lands beside tile 1 with a small squash; the three sensible tiles are shoved off to the right and fade.",
+     "library": "claimTiles rug"
+    },
+    {
+     "t": 62.78,
+     "cue": {
+      "word": "وبقرة",
+      "t": 62.78
+     },
+     "who": "fx",
+     "action": "Tile 3: a cow, mouth open in a moo.",
+     "acting": "row two; judge brow -0.6, quill hand lowers.",
+     "library": "claimTiles cow (planned cow at s 0.25 if it exists)"
+    },
+    {
+     "t": 63.9,
+     "cue": {
+      "word": "وعجلين",
+      "t": 63.9
+     },
+     "who": "fx",
+     "action": "Tile 4: two calves. Ali's folded arms come apart.",
+     "acting": "Ali arms drop, mouth o, gaze up to the pile.",
+     "library": "claimTiles calf"
+    },
+    {
+     "t": 65.1,
+     "cue": {
+      "word": "وأغنامًا",
+      "t": 65.1
+     },
+     "who": "fx",
+     "action": "Tile 5: three woolly sheep. The onlookers lean in.",
+     "acting": "onlookers tip 0.08, staggered.",
+     "library": "claimTiles sheep (planned sheep if it exists)"
+    },
+    {
+     "t": 66.42,
+     "cue": {
+      "word": "وجمالًا",
+      "t": 66.42
+     },
+     "who": "fx",
+     "action": "Tile 6: camels. The pile sways; the judge's head tilts back to follow its height.",
+     "acting": "pile swing (amp 0.03 rad, damped); judge gaze [−0.5,−0.8], turban tips back 4 degrees.",
+     "library": "claimTiles camel (planned camel if it exists); swing"
+    },
+    {
+     "t": 67.5,
+     "cue": {
+      "word": "وسباعًا،",
+      "t": 67.5
+     },
+     "who": "fx",
+     "action": "Tile 7: a roaring lion. The sheep tile beside it trembles; an onlooker covers her mouth.",
+     "acting": "lion roar pulse 0.6 s; sheep tile tremble; villageWoman mouthCover.",
+     "library": "Library lion at s 0.26 {roar}; tremble; PERSON_HANDS.mouthCover"
+    },
+    {
+     "t": 68.8,
+     "cue": {
+      "word": "بل",
+      "t": 68.8
+     },
+     "who": "kurd",
+     "action": "Finger up: and even...",
+     "acting": "pointUp, stretch on tiptoe (sq 1.08), eyes gleam, a held half-second.",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 69.32,
+     "cue": {
+      "word": "وغرفًا",
+      "t": 69.32
+     },
+     "who": "fx",
+     "action": "Tile 8, the biggest: whole rooms (an arched room with a door and a window) drops on top; the pile buckles and wobbles.",
+     "acting": "heavy landSquash through the whole pile (stagger down the rows), swing follows; judge's mouth opens.",
+     "library": "claimTiles room; landSquash, stagger, swing"
+    },
+    {
+     "t": 70.96,
+     "cue": {
+      "word": "داخل",
+      "t": 70.96
+     },
+     "who": "camera",
+     "action": "Tilt down the bubble trail from the top of the pile to the bag.",
+     "acting": "A steady slide so the eye measures the pile against the bag.",
+     "library": "CAM keys"
+    },
+    {
+     "t": 71.72,
+     "cue": {
+      "word": "الكيس",
+      "t": 71.72
+     },
+     "who": "bag",
+     "action": "Arrow and label at the bag: IN THIS SMALL BAG?!",
+     "acting": "The bag sits tiny and still; label pops on the word at 72.22.",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 73.2,
+     "cue": {
+      "word": "الصغير.",
+      "t": 72.22
+     },
+     "who": "ali",
+     "action": "In the pause: Ali, frozen, looks slowly from the top of the pile down to the bag and back; one blink.",
+     "acting": "suspense by stillness: only pupils move (gazePlan), then a single slow blink at 73.6.",
+     "library": "gazePlan, lid"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 72.22,
+     "text": "IN THIS SMALL BAG?!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 73.45,
+     "kind": "pop",
+     "note": "Ali's blink take, in the pause 72.94-73.96"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 73.96
+   }
+  },
+  {
+   "id": "S8",
+   "start": 73.96,
+   "end": 96.7,
+   "paragraphs": [
+    4
+   ],
+   "set": "courtRoom",
+   "cast": [
+    "judge",
+    "kurd",
+    "ali",
+    "onlookers"
+   ],
+   "summary": "Ali is stunned, then decides to out-lie the liar: his bag holds an old house, a school, a garden, Baghdad, Basra, armies of soldiers and thousands of witnesses. His pile grows bigger than his rival's.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Cut to Ali medium (780, 720, 1.7) for the shock; 76.86 push to 2.0 on the decision; 80.44 pull out to the wide (500, 600, 1.02) and hold while his pile builds; small eases toward each new tile."
+   },
+   "composition": "Ali's pile on the right, deliberately larger: 125 px tiles, two columns at x 680..940, rows from y 470 up; the two city tiles and the army and crowd tiles are double width (250). It tops out at y 40, above the stranger's pile (top y 60) and wider. Tiny crowd heads then spill left along the top of the panel. Judge in the centre swivels between the piles.",
+   "actions": [
+    {
+     "t": 73.96,
+     "cue": {
+      "word": "صُعق",
+      "t": 73.96
+     },
+     "who": "ali",
+     "action": "Jolt of shock: he stretches up, hands to his cheeks.",
+     "acting": "sq 1.12 then settle, cheeks gesture, eyes wide (lid 0), mouth o.",
+     "library": "PERSON_HANDS.cheeks, settleTo"
+    },
+    {
+     "t": 74.86,
+     "cue": {
+      "word": "علي",
+      "t": 74.86
+     },
+     "who": "ali",
+     "action": "His eyes climb the rival's pile to the top and come down again.",
+     "acting": "gazePlan in three holds (bottom, top, bag); head follows 4 px late.",
+     "library": "gazePlan"
+    },
+    {
+     "t": 75.74,
+     "cue": {
+      "word": "المبالغة،",
+      "t": 75.74
+     },
+     "who": "kurd",
+     "action": "Cutaway inside the same frame: the stranger, arms folded, rocking on his heels, very pleased.",
+     "acting": "folded, lid 0.4, smile, slow rock (tip plus or minus 0.04).",
+     "library": "PERSON_HANDS.folded"
+    },
+    {
+     "t": 76.86,
+     "cue": {
+      "word": "لكنه",
+      "t": 76.86
+     },
+     "who": "ali",
+     "action": "Push in: Ali's eyes narrow, a smile creeps in, he pushes up his sleeves.",
+     "acting": "lid 0.35, brow +0.4, smile grows over 0.8 s; hands to forearms one after the other.",
+     "library": "handL/handR targets"
+    },
+    {
+     "t": 78.16,
+     "cue": {
+      "word": "رد",
+      "t": 78.16
+     },
+     "who": "ali",
+     "action": "Steps forward, finger raised.",
+     "acting": "one firm step (hop 10 px, landSquash), pointUp, chin up.",
+     "library": "hop, landSquash, PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 79.84,
+     "cue": {
+      "word": "أكبر.",
+      "t": 79.84
+     },
+     "who": "lettering",
+     "action": "Burst beside Ali: EVEN BIGGER!",
+     "acting": "Placed left of him, clear of his face; the stranger's smile falters a little.",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 80.44,
+     "cue": {
+      "word": "قال",
+      "t": 80.44
+     },
+     "who": "camera",
+     "action": "Pull out to the full court; Ali addresses the judge with open arms.",
+     "acting": "armsOut, talk 0.9; judge turns to him warily.",
+     "library": "CAM keys; PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 82.06,
+     "cue": {
+      "word": "كيسه",
+      "t": 82.06
+     },
+     "who": "ali",
+     "action": "Points down at the bag, then taps his chest: my bag.",
+     "acting": "pointDown on the word, chest gesture 0.5 s later.",
+     "library": "PERSON_HANDS.pointDown, chest"
+    },
+    {
+     "t": 83.4,
+     "cue": {
+      "word": "بيتًا",
+      "t": 83.4
+     },
+     "who": "fx",
+     "action": "Ali's tile 1 (bigger tiles than his rival's): an old house with a cracked wall and a crooked door; a brick drops off on the next word.",
+     "acting": "bubble trail from the bag swings to the right side; tile pops with overshoot; brick falls with fallY at 83.96.",
+     "library": "claimPile side R, tile 125 px; fallY"
+    },
+    {
+     "t": 84.68,
+     "cue": {
+      "word": "ومدرسة",
+      "t": 84.68
+     },
+     "who": "fx",
+     "action": "Tile 2: a school (arched front, a slate, three pupils' heads).",
+     "acting": "lands beside the house; judge's head turns from left pile to right.",
+     "library": "claimTiles school"
+    },
+    {
+     "t": 85.84,
+     "cue": {
+      "word": "وحديقة",
+      "t": 85.84
+     },
+     "who": "fx",
+     "action": "Tile 3: a garden (a tree, flowers, a small fountain).",
+     "acting": "row two; fountain arc animates.",
+     "library": "claimTiles garden using Library tree at small scale"
+    },
+    {
+     "t": 86.84,
+     "cue": {
+      "word": "ومدينة",
+      "t": 86.84
+     },
+     "who": "ali",
+     "action": "Wind-up: both arms swing wide for the big one.",
+     "acting": "anticipate (sq 0.94), arms back, then up.",
+     "library": "anticipate, aL/aR"
+    },
+    {
+     "t": 87.86,
+     "cue": {
+      "word": "بغداد",
+      "t": 87.86
+     },
+     "who": "fx",
+     "action": "Double-width tile slams on: the city of Baghdad (domes, a minaret, the round wall), labelled BAGHDAD.",
+     "acting": "heavy landSquash; panel-only shake 3 px; the stranger's lids fly open.",
+     "library": "claimTiles cityBaghdad; panel shake"
+    },
+    {
+     "t": 89.52,
+     "cue": {
+      "word": "البصرة،",
+      "t": 89.52
+     },
+     "who": "fx",
+     "action": "Another double tile: the city of Basra (palms, a river, boats), labelled BASRA. The judge's turban slips.",
+     "acting": "pile sways; judge turban tilts 8 degrees, he grabs it (headHold).",
+     "library": "claimTiles cityBasra; swing"
+    },
+    {
+     "t": 90.16,
+     "cue": {
+      "word": "وجيوشًا",
+      "t": 90.16
+     },
+     "who": "fx",
+     "action": "Tile: an army, a row of spearmen with a banner.",
+     "acting": "banner waves (sine); stranger's arms unfold.",
+     "library": "claimTiles army"
+    },
+    {
+     "t": 91.72,
+     "cue": {
+      "word": "الجنود،",
+      "t": 91.72
+     },
+     "who": "fx",
+     "action": "Six tiny soldiers march out of the army tile along the top of Ali's pile.",
+     "acting": "identical icons, phase-offset steps, spears bobbing; stranger's jaw drops (mouth o).",
+     "library": "small soldier icon repeated; walk phase from distance"
+    },
+    {
+     "t": 92.44,
+     "cue": {
+      "word": "وآلاف",
+      "t": 92.44
+     },
+     "who": "fx",
+     "action": "The top tile bursts into dozens of tiny heads that fill the upper right and spill along the top of the panel; a counter races up to 1000s.",
+     "acting": "heads pop in seeded order (about 60 dots with two-dot eyes); counter eases 1 to 999 then flips to \"1000s\".",
+     "library": "crowdDots (K.rng seeded); S.counter"
+    },
+    {
+     "t": 93.46,
+     "cue": {
+      "word": "الناس",
+      "t": 93.46
+     },
+     "who": "judge",
+     "action": "The judge sinks behind his desk until only his eyes and turban show; the quill falls.",
+     "acting": "sit lower (y +40), lid 0, gaze up-right at the crowd; quill drops with fallY.",
+     "library": "fallY"
+    },
+    {
+     "t": 94.62,
+     "cue": {
+      "word": "يشهدون",
+      "t": 94.62
+     },
+     "who": "fx",
+     "action": "Every tiny head raises a hand and points at Ali: witnesses.",
+     "acting": "hands go up in a staggered wave from right to left.",
+     "library": "stagger"
+    },
+    {
+     "t": 96.0,
+     "cue": {
+      "word": "ملكه.",
+      "t": 96.0
+     },
+     "who": "ali",
+     "action": "Thumbs to his chest, chin high, a huge smug smile. The rival's pile droops and his arms fall.",
+     "acting": "chest gesture, lid 0.4, mouth 'smile'; left pile tips 0.06 rad; stranger sq 0.95.",
+     "library": "PERSON_HANDS.chest"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 79.84,
+     "text": "EVEN BIGGER!"
+    },
+    {
+     "t": 87.86,
+     "text": "BAGHDAD"
+    },
+    {
+     "t": 89.52,
+     "text": "BASRA"
+    },
+    {
+     "t": 93.2,
+     "text": "1000s"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 96.7
+   }
+  },
+  {
+   "id": "S9",
+   "start": 96.7,
+   "end": 118.88,
+   "paragraphs": [
+    6
+   ],
+   "set": "courtRoom",
+   "cast": [
+    "judge",
+    "kurd",
+    "ali",
+    "onlookers"
+   ],
+   "summary": "The judge's patience runs out. He slams the desk, both piles collapse, and he asks whether this bag is a bottomless sea or a place where all mankind gathers. Then he orders it opened.",
+   "camera": {
+    "shot": "medium",
+    "move": "shake",
+    "notes": "Slam on (500, 660, 1.3) with a 5 px panel-only shake at 96.9; hold on the judge with both claimants at the frame edges; 108.3 ease up to (500, 520, 1.2) for his balloon; 114.82 back down; 117.46 pull out to the full court (500, 615, 1.0)."
+   },
+   "composition": "Judge centre. His balloon (460 x 330) at (500, 300), tail to his head, directly above the bag so the idea hangs over the real thing. Claimants shrink at x 190 and 810.",
+   "actions": [
+    {
+     "t": 96.9,
+     "cue": {
+      "word": "نفد",
+      "t": 97.06
+     },
+     "who": "judge",
+     "action": "Rises behind the desk and slams both palms down. ENOUGH!",
+     "acting": "arms up (anticipation from 96.4), slam at 96.9, panel shake; brow +1, mouth open.",
+     "library": "handLW/handRW to the desk; panel-only shake"
+    },
+    {
+     "t": 97.3,
+     "cue": {
+      "word": "نفد",
+      "t": 97.06
+     },
+     "who": "fx",
+     "action": "Both piles jump and collapse: tiles tumble, pop and vanish; the tiny heads and soldiers blink out; dust.",
+     "acting": "tiles fall with fallY and seeded spin, pop out in stagger over 1.2 s; bubble trails burst last.",
+     "library": "fallY, stagger, dustBurst"
+    },
+    {
+     "t": 98.62,
+     "cue": {
+      "word": "صبر",
+      "t": 98.62
+     },
+     "who": "judge",
+     "action": "Straightens his crooked turban; the bag, shaken by the slam, hops and settles on its stool; the two men flinch.",
+     "acting": "headHold to turban; bag hop 12 px with landSquash; both claimants shield gesture, sq 0.92.",
+     "library": "PERSON_HANDS.headHold, shield; hop, landSquash"
+    },
+    {
+     "t": 99.82,
+     "cue": {
+      "word": "وقال",
+      "t": 99.82
+     },
+     "who": "judge",
+     "action": "Stands and wags a finger at both.",
+     "acting": "sit 1 to 0 with settle; pointUp wagging (plus or minus 0.2 rad at 3 Hz), talk 0.9.",
+     "library": "sit, settleTo, PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 101.88,
+     "cue": {
+      "word": "أحدًا",
+      "t": 101.88
+     },
+     "who": "judge",
+     "action": "Cups an ear and shakes his head: no one has ever heard the like.",
+     "acting": "cupEar, head shake (x plus or minus 5 px twice), lid 0.3.",
+     "library": "PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 103.76,
+     "cue": {
+      "word": "ادعاءات",
+      "t": 103.76
+     },
+     "who": "judge",
+     "action": "Throws an open palm at one man, then at the other.",
+     "acting": "palmsUp left on this word, right on the next; both men study their shoes (gaze [0,1]).",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 105.44,
+     "cue": {
+      "word": "الغرابة.",
+      "t": 105.44
+     },
+     "who": "judge",
+     "action": "Rubs his temples with a long blink.",
+     "acting": "headHold both hands, lid 1 for 0.5 s, sigh (sq 0.96).",
+     "library": "PERSON_HANDS.headHold"
+    },
+    {
+     "t": 106.64,
+     "cue": {
+      "word": "سأل",
+      "t": 106.64
+     },
+     "who": "judge",
+     "action": "Points a finger at each man at once; they straighten up like schoolboys; an onlooker hides a laugh.",
+     "acting": "aL and aR out to both sides; claimants sq 1.04, hands clasped; onlooker mouthCover, shoulders shake.",
+     "library": "aL/aR; PERSON_HANDS.clasp, mouthCover"
+    },
+    {
+     "t": 108.3,
+     "cue": {
+      "word": "هل",
+      "t": 108.62
+     },
+     "who": "fx",
+     "action": "In the pause a large balloon opens from the judge above the bag.",
+     "acting": "trail first, then the balloon; all eyes go up to it.",
+     "library": "thoughtCloud or iconBalloon 460 x 330 at (500, 300)"
+    },
+    {
+     "t": 109.68,
+     "cue": {
+      "word": "بحر",
+      "t": 109.68
+     },
+     "who": "fx",
+     "action": "Inside the balloon: the open bag as a sea, waves across its mouth, a tiny boat rocking, a fish jumping.",
+     "acting": "waves scroll, boat bobs (sine), fish arc once.",
+     "library": "river() wave pattern clipped to the bag mouth"
+    },
+    {
+     "t": 110.2,
+     "cue": {
+      "word": "بلا",
+      "t": 110.2
+     },
+     "who": "fx",
+     "action": "A sailor drops an anchor; the chain runs down and down inside the bag and never reaches a bottom.",
+     "acting": "chain scrolls endlessly; a small depth counter climbs; the boat sailor scratches his head.",
+     "library": "S.counter; scrolling dashed line"
+    },
+    {
+     "t": 111.98,
+     "cue": {
+      "word": "مكان",
+      "t": 111.98
+     },
+     "who": "fx",
+     "action": "The balloon wipes to the second idea: the bag as a hall with a small door, a line of tiny people walking in.",
+     "acting": "queue of 8 dot people, phase-offset steps, disappearing into the door.",
+     "library": "crowdDots walking; clip at the door"
+    },
+    {
+     "t": 113.66,
+     "cue": {
+      "word": "الناس",
+      "t": 113.66
+     },
+     "who": "fx",
+     "action": "The bag in the balloon bulges; heads pop out of its mouth like a full basket.",
+     "acting": "bulge sq 1.15 pulses, 12 heads pop with stagger on the word at 114.08.",
+     "library": "leatherBag bulge field; stagger"
+    },
+    {
+     "t": 114.82,
+     "cue": {
+      "word": "ثم",
+      "t": 114.82
+     },
+     "who": "judge",
+     "action": "The balloon bursts; the judge drops back onto his bench and takes a long breath.",
+     "acting": "sit 0 to 1 heavy, settle; lid 1 for 0.3 s; shoulders down.",
+     "library": "sit, settleTo"
+    },
+    {
+     "t": 115.82,
+     "cue": {
+      "word": "أمرهما",
+      "t": 115.82
+     },
+     "who": "judge",
+     "action": "Points straight down at the bag and holds the stare.",
+     "acting": "pointDown, level brow, no blink for 1 s.",
+     "library": "PERSON_HANDS.pointDown"
+    },
+    {
+     "t": 116.64,
+     "cue": {
+      "word": "بفتحه",
+      "t": 116.64
+     },
+     "who": "lettering",
+     "action": "Burst over the desk: OPEN IT!",
+     "acting": "Clear of the judge's face, above the bag.",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 117.46,
+     "cue": {
+      "word": "أمام",
+      "t": 117.46
+     },
+     "who": "camera",
+     "action": "Pull out to the whole court: onlookers lean in, every eye line meets on the bag; the stranger gulps, Ali shrugs.",
+     "acting": "onlookers tip 0.1 staggered; stranger throat gulp (head dip 4 px), sweat drop; Ali palmsUp, calm.",
+     "library": "lookAt for all; PERSON_HANDS.palmsUp"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 97.0,
+     "text": "ENOUGH!"
+    },
+    {
+     "t": 116.64,
+     "text": "OPEN IT!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 96.88,
+     "kind": "thud",
+     "note": "the slam, in the gap 96.70-97.06"
+    },
+    {
+     "t": 108.25,
+     "kind": "pop",
+     "note": "the balloon opening, in the pause 107.90-108.62"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 118.88
+   }
+  },
+  {
+   "id": "S10",
+   "start": 118.88,
+   "end": 128.3,
+   "paragraphs": [
+    7
+   ],
+   "set": "courtRoom",
+   "cast": [
+    "judge",
+    "kurd",
+    "ali",
+    "onlookers"
+   ],
+   "summary": "Ali opens the bag. Everyone leans in. No city, no animal, no army.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "From the wide, push slowly to the bag and the faces around it (510, 860, 1.7) by 121.0; at 121.84 tighten to (500, 900, 2.3); at 124.3 ease up to (500, 780, 1.6) so the ghost tiles above the bag are in frame."
+   },
+   "composition": "Bag centre on the stool; Ali at its right (x 610), the stranger leaning in from the left (x 380), the judge's head above and behind (x 500, y 640). Ghost tiles appear one at a time at (500, 640).",
+   "actions": [
+    {
+     "t": 118.88,
+     "cue": {
+      "word": "فتح",
+      "t": 118.88
+     },
+     "who": "ali",
+     "action": "Walks to the bag, pushing up his sleeves.",
+     "acting": "walk x 810 to 610 in 1.0 s, footfalls; calm, half smile.",
+     "library": "walk, footfalls"
+    },
+    {
+     "t": 120.0,
+     "cue": {
+      "word": "علي",
+      "t": 120.62
+     },
+     "who": "ali",
+     "action": "Takes the drawstring in both hands and unties it slowly.",
+     "acting": "handLW/handRW on the cord; three small pulls; gaze on the knot.",
+     "library": "handLW/handRW"
+    },
+    {
+     "t": 120.62,
+     "cue": {
+      "word": "علي",
+      "t": 120.62
+     },
+     "who": "onlookers",
+     "action": "Everybody leans in: onlookers, the stranger, the judge half out of his seat.",
+     "acting": "tip 0.1, each a few frames apart (stagger); stranger trembles, one sweat drop; judge sit 0.6.",
+     "library": "stagger, tremble"
+    },
+    {
+     "t": 121.0,
+     "cue": {
+      "word": "الكيس،",
+      "t": 121.0
+     },
+     "who": "bag",
+     "action": "The mouth of the bag loosens and falls open. A held beat.",
+     "acting": "open 0 to 1 over 0.4 s with settle; then only pupils move, all on the bag.",
+     "library": "leatherBag open field; settleTo"
+    },
+    {
+     "t": 121.84,
+     "cue": {
+      "word": "فلم",
+      "t": 121.84
+     },
+     "who": "camera",
+     "action": "Tight on the open mouth: dark inside, nothing comes out but a crumb puff.",
+     "acting": "one small dust puff rises and fades.",
+     "library": "dustBurst"
+    },
+    {
+     "t": 123.24,
+     "cue": {
+      "word": "يجد",
+      "t": 123.24
+     },
+     "who": "judge",
+     "action": "The judge peers in from above; his pupils sweep left and right. Nothing.",
+     "acting": "saccades (gazePlan ease 0.07), brows rise, then level.",
+     "library": "gazePlan"
+    },
+    {
+     "t": 124.48,
+     "cue": {
+      "word": "مدينة",
+      "t": 124.48
+     },
+     "who": "fx",
+     "action": "A pale dashed ghost of the BAGHDAD tile appears above the bag and gets a red X.",
+     "acting": "ghost alpha 0.45; X stamps in 3 frames with overshoot.",
+     "library": "claimTiles with ghost option; red X strokes"
+    },
+    {
+     "t": 126.02,
+     "cue": {
+      "word": "حيوانًا",
+      "t": 126.02
+     },
+     "who": "fx",
+     "action": "Ghost of the camel and lion tiles; red X.",
+     "acting": "the previous ghost slides left and fades to 0.2.",
+     "library": "claimTiles ghost"
+    },
+    {
+     "t": 127.66,
+     "cue": {
+      "word": "جيشًا.",
+      "t": 127.66
+     },
+     "who": "fx",
+     "action": "Ghost of the army tile; red X. Both claimants look away at opposite corners of the ceiling.",
+     "acting": "Ali and the stranger: gaze up and out, mouths small, mirrored; ghosts fade out together.",
+     "library": "claimTiles ghost; gaze"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 128.3
+   }
+  },
+  {
+   "id": "S11",
+   "start": 128.3,
+   "end": 136.22,
+   "paragraphs": [
+    7
+   ],
+   "set": "courtRoom",
+   "cast": [
+    "judge",
+    "kurd",
+    "ali"
+   ],
+   "summary": "What the bag really holds: bread, a little cheese, olives and one lemon, laid out one by one.",
+   "camera": {
+    "shot": "insert",
+    "move": "static",
+    "notes": "Insert on the stool top and the bag (500, 900, 2.3), a cloth spread beside the bag; faces of the three men cropped at the nose line above, eyes visible. At 135.44 a small pan left with the rolling lemon."
+   },
+   "composition": "Row on the cloth from left to right: bread (x 420), cheese (x 480), olives (x 535), lemon (x 590), all at about y 990. A counter sits top right of the panel. Eyes of the judge, the stranger and Ali form a row above, all looking down.",
+   "actions": [
+    {
+     "t": 128.3,
+     "cue": {
+      "word": "لم",
+      "t": 128.3
+     },
+     "who": "ali",
+     "action": "Reaches into the bag; his hand disappears and rummages; the bag wiggles.",
+     "acting": "hand clipped at the bag mouth; bag sq wobble; his eyes up in thought.",
+     "library": "handRW; clip region; tremble"
+    },
+    {
+     "t": 129.54,
+     "cue": {
+      "word": "داخله",
+      "t": 129.54
+     },
+     "who": "camera",
+     "action": "Hold tight on the cloth so each item gets its own beat.",
+     "acting": "The three pairs of eyes above follow Ali's hand.",
+     "library": "lookAt hand"
+    },
+    {
+     "t": 130.82,
+     "cue": {
+      "word": "خبز",
+      "t": 130.82
+     },
+     "who": "bread",
+     "action": "Out comes a round flatbread, set down on the cloth. Counter: 1.",
+     "acting": "lands with a soft squash; three pairs of eyes drop to it.",
+     "library": "bagFood bread; landSquash; S.counter"
+    },
+    {
+     "t": 131.44,
+     "cue": {
+      "word": "وقليل",
+      "t": 131.44
+     },
+     "who": "ali",
+     "action": "Pinches finger and thumb: just a little.",
+     "acting": "hand raised, 6 px gap, one eye narrowed (wink half).",
+     "library": "handR target near the face"
+    },
+    {
+     "t": 132.76,
+     "cue": {
+      "word": "الجبن",
+      "t": 132.76
+     },
+     "who": "cheese",
+     "action": "A tiny wedge of cheese. Counter: 2.",
+     "acting": "placed with two fingers; the judge's brow lifts.",
+     "library": "bagFood cheese"
+    },
+    {
+     "t": 133.52,
+     "cue": {
+      "word": "وزيتون",
+      "t": 133.52
+     },
+     "who": "olives",
+     "action": "Five olives roll out; one rolls off toward the edge and Ali stops it with a finger. Counter: 3.",
+     "acting": "olives roll with seeded offsets and settle; finger stop is a small comic beat.",
+     "library": "bagFood olives; K.rng offsets"
+    },
+    {
+     "t": 134.58,
+     "cue": {
+      "word": "وحبة",
+      "t": 134.58
+     },
+     "who": "ali",
+     "action": "Turns the bag upside down and shakes it.",
+     "acting": "anticipation lift, two shakes; the stranger's eyes widen with a last hope.",
+     "library": "anticipate, pulse"
+    },
+    {
+     "t": 135.44,
+     "cue": {
+      "word": "ليمون.",
+      "t": 135.44
+     },
+     "who": "lemon",
+     "action": "One lemon drops out, bounces twice and rolls slowly left until it bumps the stranger's shoe. Counter: 4. THAT'S ALL!",
+     "acting": "two decaying bounces (hop), roll with rotation; the bag hangs limp in Ali's hand.",
+     "library": "bagFood lemon; hop; S.counter"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 135.9,
+     "text": "THAT'S ALL!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 136.22
+   }
+  },
+  {
+   "id": "S12",
+   "start": 136.22,
+   "end": 144.92,
+   "paragraphs": [
+    7
+   ],
+   "set": "courtRoom",
+   "cast": [
+    "judge",
+    "kurd",
+    "ali",
+    "onlookers"
+   ],
+   "summary": "Ali tosses the bag at his rival's feet and walks out, leaving the judge alone with the absurdity of the quarrel.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Cut to the wide (500, 680, 1.1); the bag is tied again in Ali's hand (the food went back in under the cut). From 140.76 a slow push toward the judge (470, 680, 1.6), keeping the stranger and the bag in frame."
+   },
+   "composition": "Ali right of centre (x 610), stranger at x 300, bag lands at (330, 930). Ali exits frame right. Judge centre above. The final image is a triangle: judge, stranger, bag.",
+   "actions": [
+    {
+     "t": 136.22,
+     "cue": {
+      "word": "ألقى",
+      "t": 136.22
+     },
+     "who": "ali",
+     "action": "Weighs the retied bag in one hand and looks at his rival, deadpan.",
+     "acting": "bag bobs twice on the palm; lid 0.3, mouth closed.",
+     "library": "handRW; pulse"
+    },
+    {
+     "t": 137.74,
+     "cue": {
+      "word": "علي",
+      "t": 137.74
+     },
+     "who": "ali",
+     "action": "Back-swing, then an underarm toss.",
+     "acting": "anticipate (arm back, sq 0.95), release on the next word.",
+     "library": "anticipate"
+    },
+    {
+     "t": 138.02,
+     "cue": {
+      "word": "الكيس",
+      "t": 138.02
+     },
+     "who": "bag",
+     "action": "The bag arcs across the floor and lands at the stranger's feet.",
+     "acting": "arc 0.6 s, impact squash, dust; the stranger hops back half a step.",
+     "library": "hop path, impactSquash, dustBurst"
+    },
+    {
+     "t": 139.18,
+     "cue": {
+      "word": "خصمه",
+      "t": 139.18
+     },
+     "who": "kurd",
+     "action": "Stares down at the bag, then up at Ali, mouth small.",
+     "acting": "gaze down, hold, gaze up; brow -0.6; shoulders drop (sq 0.96).",
+     "library": "gazePlan"
+    },
+    {
+     "t": 139.96,
+     "cue": {
+      "word": "وانصرف،",
+      "t": 139.96
+     },
+     "who": "ali",
+     "action": "Dusts his hands twice, turns and walks out to the right, chin up.",
+     "acting": "two hand brushes, turn with squeeze, walk x 610 to 1100, footfalls; onlookers' heads follow him out (stagger).",
+     "library": "walk, footfalls, lookAt"
+    },
+    {
+     "t": 140.76,
+     "cue": {
+      "word": "تاركًا",
+      "t": 140.76
+     },
+     "who": "camera",
+     "action": "Slow push toward the judge as Ali leaves the frame.",
+     "acting": "The room goes quiet: only blinks.",
+     "library": "CAM keys"
+    },
+    {
+     "t": 141.78,
+     "cue": {
+      "word": "القاضي",
+      "t": 141.78
+     },
+     "who": "judge",
+     "action": "Looks at the doorway, then at the stranger, then at the bag.",
+     "acting": "three gaze holds of 0.3 s (gazePlan), head follows late.",
+     "library": "gazePlan"
+    },
+    {
+     "t": 142.66,
+     "cue": {
+      "word": "يواجه",
+      "t": 142.66
+     },
+     "who": "kurd",
+     "action": "Picks the bag up by two fingers, tries a small hopeful smile and shrugs.",
+     "acting": "handRW to the bag, lift; mouth 'smile' that wavers; palmsUp with the free hand.",
+     "library": "handRW, PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 143.36,
+     "cue": {
+      "word": "سخافة",
+      "t": 143.36
+     },
+     "who": "judge",
+     "action": "A slow facepalm; then his eyes slide to the camera through his fingers.",
+     "acting": "headHold one hand, lid 0.5, gaze [0, 0.05]: the film's one look into the lens.",
+     "library": "PERSON_HANDS.headHold; look to camera"
+    },
+    {
+     "t": 144.24,
+     "cue": {
+      "word": "النزاع.",
+      "t": 144.24
+     },
+     "who": "judge",
+     "action": "His head sinks onto the desk and his turban rolls off; the stranger tiptoes away to the left.",
+     "acting": "head drop with a small squash, turban rolls 40 px and rocks (swing); stranger sneak steps.",
+     "library": "swing; sneak (planned) or slow walk"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "zoom",
+    "t": 144.92
+   }
+  },
+  {
+   "id": "S13",
+   "start": 144.92,
+   "end": 155.28,
+   "paragraphs": [
+    8
+   ],
+   "set": "palaceNight",
+   "cast": [
+    "caliph",
+    "jafar",
+    "ali"
+   ],
+   "summary": "Back in the palace: the Caliph explodes with laughter at the ending and rewards Ali with a generous gift.",
+   "camera": {
+    "shot": "medium",
+    "move": "shake",
+    "notes": "The tale cloud shrinks back into Ali's head at 144.92 revealing the two-shot (540, 740, 1.35); 2 px panel shake pulses with the first laughs; 152.4 ease to include Ja'far (520, 740, 1.25)."
+   },
+   "composition": "Same placement as S2: Ali on the cushion at x 330, Caliph on the diwan at x 740, Ja'far at x 545. HA HA HA! goes in the open wall space top left, never over a face. The purse travels right to left across the centre.",
+   "actions": [
+    {
+     "t": 144.92,
+     "cue": {
+      "word": "انفجر",
+      "t": 144.92
+     },
+     "who": "fx",
+     "action": "The tale cloud shrinks into Ali's head; the Caliph is holding it in, cheeks puffed.",
+     "acting": "Caliph sq 0.93, lid 0.8, shoulders trembling (tremble 2 px, 8 Hz).",
+     "library": "taleZoom reversed; tremble"
+    },
+    {
+     "t": 145.3,
+     "cue": {
+      "word": "انفجر",
+      "t": 144.92
+     },
+     "who": "caliph",
+     "action": "He bursts: head back, mouth wide, rocking back on the diwan and slapping the cushion. HA HA HA! The worry scribble pops for good.",
+     "acting": "laugh pose: tip -0.2 rocking at 2.5 Hz, talk 1 cycling, lid 0.7, turban jiggles a beat late; scribble bursts into dots.",
+     "library": "person laugh (planned pose) or tip + talk cycle"
+    },
+    {
+     "t": 147.0,
+     "cue": {
+      "word": "هارون",
+      "t": 147.0
+     },
+     "who": "jafar",
+     "action": "Ja'far laughs behind his hand, shoulders shaking.",
+     "acting": "mouthCover, lid 0.6, tremble 1.5 px at 5 Hz, out of phase with the Caliph.",
+     "library": "PERSON_HANDS.mouthCover, tremble"
+    },
+    {
+     "t": 148.16,
+     "cue": {
+      "word": "ضاحكًا",
+      "t": 148.16
+     },
+     "who": "caliph",
+     "action": "Wipes a tear and a second, smaller wave of laughter takes him.",
+     "acting": "wet eyes, hand to the eye, then a shorter rock (amp halved).",
+     "library": "wet, handR target"
+    },
+    {
+     "t": 149.62,
+     "cue": {
+      "word": "وصل",
+      "t": 149.62
+     },
+     "who": "ali",
+     "action": "Ali mimes the last move of his story: drops an invisible bag and dusts his hands, grinning.",
+     "acting": "hand opens downward, two brushes; smile, brows up.",
+     "library": "handL/handR targets"
+    },
+    {
+     "t": 150.96,
+     "cue": {
+      "word": "نهاية",
+      "t": 150.96
+     },
+     "who": "ali",
+     "action": "Bows from his seat, hand on chest.",
+     "acting": "tip 0.12, lid 0.5, then back up.",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 152.4,
+     "cue": {
+      "word": "وأعطاه",
+      "t": 152.4
+     },
+     "who": "caliph",
+     "action": "Still chuckling, waves Ja'far forward.",
+     "acting": "pointFwd toward Ali, smile, small aftershock laughs.",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 153.0,
+     "cue": {
+      "word": "هدية",
+      "t": 153.58
+     },
+     "who": "jafar",
+     "action": "Steps forward carrying a fat purse in both hands.",
+     "acting": "two steps to x 420 (walk), the purse held low: it is heavy.",
+     "library": "walk; purse (planned prop)"
+    },
+    {
+     "t": 153.58,
+     "cue": {
+      "word": "هدية",
+      "t": 153.58
+     },
+     "who": "purse",
+     "action": "The purse lands in Ali's raised hands, which dip under the weight; coins glint.",
+     "acting": "reachBoth; hands drop 14 px and recover (settleTo); two glints.",
+     "library": "PERSON_HANDS.reachBoth, settleTo"
+    },
+    {
+     "t": 154.34,
+     "cue": {
+      "word": "سخية.",
+      "t": 154.34
+     },
+     "who": "ali",
+     "action": "Eyes wide at the weight; a coin pops out and he catches it. Behind him the Caliph yawns hugely.",
+     "acting": "Ali lid 0, mouth o then smile; coin hop arc; Caliph long yawn (mouth open, lid 0.8, stretch sq 1.05).",
+     "library": "hop for the coin"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 145.4,
+     "text": "HA HA HA!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "page-turn",
+    "t": 155.28
+   }
+  },
+  {
+   "id": "S14",
+   "start": 155.28,
+   "end": 166.6,
+   "paragraphs": [
+    8
+   ],
+   "set": "recapCard",
+   "cast": [
+    "kurd",
+    "ali"
+   ],
+   "summary": "The moral as one clean graphic: the quarrel over the small bag ended not by a complicated ruling but by simply looking inside, which exposed two unbelievable claims.",
+   "camera": {
+    "shot": "full",
+    "move": "zoom",
+    "notes": "Flat graphic card, camera (500, 615, 1.0); a small zoom to 1.15 on the bag at 162.26; back to 1.0 at 163.7 for the two piles."
+   },
+   "composition": "Bag centre (500, 760), drawn 2x. Head-and-shoulder busts of the stranger (x 190, y 900) and Ali (x 810, y 900). Scroll and scale drop in from the top centre (500, 330). Food row under the bag at y 900. Ghost piles rise behind each bust.",
+   "actions": [
+    {
+     "t": 155.28,
+     "cue": {
+      "word": "وهكذا",
+      "t": 155.28
+     },
+     "who": "camera",
+     "action": "Page turn to a flat yellow card with blue dots; the small bag drops into the centre.",
+     "acting": "bag fall and landSquash; nothing else on the card.",
+     "library": "S.box / flat fill + Ben-Day dots; fallY, landSquash"
+    },
+    {
+     "t": 156.72,
+     "cue": {
+      "word": "انتهت",
+      "t": 156.72
+     },
+     "who": "fx",
+     "action": "Busts of the two rivals pop in on either side, each with one hand on the bag.",
+     "acting": "stranger first, Ali 0.15 s later; both brows +0.7.",
+     "library": "person at s 1.4 clipped at the chest"
+    },
+    {
+     "t": 157.68,
+     "cue": {
+      "word": "خصومة",
+      "t": 157.68
+     },
+     "who": "bag",
+     "action": "A last tug: the bag stretches left, then right, like rubber; then both let go.",
+     "acting": "sq and x offset in two beats; hands release on the word at 158.86, the bag settles (swing).",
+     "library": "leatherBag stretch; swing"
+    },
+    {
+     "t": 159.58,
+     "cue": {
+      "word": "لا",
+      "t": 159.58
+     },
+     "who": "fx",
+     "action": "A long scroll unrolls from the top, filling with scribbled lines, with a balance scale beside it.",
+     "acting": "scroll length grows 0 to 420 px; scale pans see-saw.",
+     "library": "balanceScale, scroll (planned prop names)"
+    },
+    {
+     "t": 160.84,
+     "cue": {
+      "word": "معقد،",
+      "t": 160.84
+     },
+     "who": "fx",
+     "action": "Red X over the scroll and scale; they roll up and whisk away upward.",
+     "acting": "X in 3 frames; exit with ease-in.",
+     "library": "red X strokes"
+    },
+    {
+     "t": 162.26,
+     "cue": {
+      "word": "بكشف",
+      "t": 162.26
+     },
+     "who": "bag",
+     "action": "The drawstring unties itself and the bag opens. Arrow and label: JUST LOOK INSIDE.",
+     "acting": "open 0 to 1 with settle; arrow from the upper right.",
+     "library": "leatherBag open; S.arrow, S.label"
+    },
+    {
+     "t": 162.84,
+     "cue": {
+      "word": "بسيط",
+      "t": 162.84
+     },
+     "who": "fx",
+     "action": "Bread, cheese, olives and the lemon pop out into a neat row.",
+     "acting": "stagger 0.12 s each, small hops.",
+     "library": "bagFood; stagger, hop"
+    },
+    {
+     "t": 163.7,
+     "cue": {
+      "word": "فضح",
+      "t": 163.7
+     },
+     "who": "fx",
+     "action": "The two ghost piles of claims rise behind the busts, the left one smaller than the right.",
+     "acting": "ghost alpha 0.5, rise 0.5 s; busts glance up at their own piles.",
+     "library": "claimPile ghost"
+    },
+    {
+     "t": 164.44,
+     "cue": {
+      "word": "ادعاءين",
+      "t": 164.44
+     },
+     "who": "lettering",
+     "action": "Stamp FALSE! on the left pile, then on the right.",
+     "acting": "second stamp 0.4 s after the first; each with a scale thump.",
+     "library": "S.emphasis as a red stamp, rotated 8 degrees"
+    },
+    {
+     "t": 165.42,
+     "cue": {
+      "word": "لا",
+      "t": 165.42
+     },
+     "who": "fx",
+     "action": "Both piles crumble into dots and blow away; the two busts look away from each other, embarrassed.",
+     "acting": "dots drift on seeded noise; busts gaze outward, lid 0.5, head drop.",
+     "library": "K.noise drift; gaze"
+    },
+    {
+     "t": 166.28,
+     "cue": {
+      "word": "تصديقهما.",
+      "t": 166.28
+     },
+     "who": "camera",
+     "action": "Small push on the open bag and its four foods.",
+     "acting": "A highlight slides across the lemon.",
+     "library": "CAM keys"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 162.3,
+     "text": "JUST LOOK INSIDE"
+    },
+    {
+     "t": 164.44,
+     "text": "FALSE!"
+    },
+    {
+     "t": 164.84,
+     "text": "FALSE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 166.6
+   }
+  },
+  {
+   "id": "S15",
+   "start": 166.6,
+   "end": 170.67,
+   "paragraphs": [
+    8
+   ],
+   "set": "palaceNight",
+   "cast": [
+    "caliph",
+    "jafar",
+    "ali"
+   ],
+   "summary": "Closing image: the sleepless Caliph has finally fallen asleep, smiling. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Start (640, 720, 1.3) on the diwan, pull out slowly to the full hall (500, 615, 1.0) by 169.5."
+   },
+   "composition": "Caliph asleep on the diwan (as in the first shot, but eyes shut and smiling). Ja'far at x 545 with a finger to his lips. Ali tiptoeing toward the door arch at the left with his purse. THE END in the upper centre, over the moonlit arches, clear of all faces.",
+   "actions": [
+    {
+     "t": 166.6,
+     "cue": {
+      "word": "تصديقهما.",
+      "t": 166.28
+     },
+     "who": "caliph",
+     "action": "The Caliph lies asleep on the diwan, smiling; the blanket rises and falls.",
+     "acting": "lie 1, lid 1, mouth 'smile', breathe amp 0.02; no worry scribble.",
+     "library": "lie, breathe"
+    },
+    {
+     "t": 167.0,
+     "cue": {
+      "word": "تصديقهما.",
+      "t": 166.28
+     },
+     "who": "jafar",
+     "action": "Ja'far puts a finger to his lips; Ali tiptoes toward the door with the purse.",
+     "acting": "hush gesture, gaze to Ali; Ali sneak steps x 330 to 180, looking back once with a smile.",
+     "library": "PERSON_HANDS.hush; sneak or slow walk"
+    },
+    {
+     "t": 167.67,
+     "who": "lettering",
+     "action": "THE END, held to 170.67.",
+     "acting": "Title pops with the standard style animation; a soft chime after the last word.",
+     "library": "S.title"
+    },
+    {
+     "t": 169.0,
+     "who": "fx",
+     "action": "Small \"Z z z\" letters drift up from the Caliph; one lamp dims.",
+     "acting": "three letters, seeded drift; lamp glow 1 to 0.5.",
+     "library": "lettering glyphs on a sine path"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 167.67,
+     "text": "THE END"
+    },
+    {
+     "t": 169.0,
+     "text": "Z z z"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 167.6,
+     "kind": "chime",
+     "note": "after the last word (167.40)"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 170.67
+   }
+  }
+ ],
+ "ending": {
+  "t": 167.67,
+  "description": "After the last word (167.40) THE END pops over the moonlit hall and holds to 170.67: the Caliph asleep and smiling on his diwan, Ja'far hushing, Ali tiptoeing out with his purse, small Z z z letters, one lamp dimming."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "لم يستطع الخليفة هارون الرشيد النوم ذات ليلة،|فطلب من وزيره جعفر قصة تضحكه وتخفف عنه الهم.|اقترح جعفر استدعاء رجل يعرف الحكايات الطريفة اسمه علي الفارسي،|فحضر علي وجلس أمام الخليفة.",
+   "en": "One sleepless night Caliph Harun al-Rashid|asked Ja’far for an amusing story.|Ja’far brought Ali the Persian,|a man known for entertaining tales."
+  },
+  {
+   "p": 2,
+   "ar": "قال علي إنه سافر يومًا يحمل كيسًا جلديًا صغيرًا فيه زاده.|وبينما كان يشتري من سوق مدينة غريبة،|أمسك به رجل كردي وانتزع الكيس منه،|وادعى أمام الناس أنه صاحبه الحقيقي.",
+   "en": "Ali recalled traveling with a small leather bag of provisions.|At a market,|a Kurdish stranger seized it|and loudly claimed ownership."
+  },
+  {
+   "p": 3,
+   "ar": "احتكم الخصمان إلى القاضي،|فسأل المدعي عن محتويات الكيس. بدأ الرجل يعدد أشياء معقولة،|ثم زعم أن فيه خيمتين وبساطين وبقرة وعجلين|وأغنامًا وجمالًا وسباعًا، بل وغرفًا كاملة داخل الكيس الصغير.",
+   "en": "They appeared before a judge,|who asked the claimant to describe the contents.|The man listed tents, rugs, cattle,|camels, wild beasts, and even rooms."
+  },
+  {
+   "p": 4,
+   "ar": "صُعق علي من المبالغة، لكنه رد بمبالغة أكبر.|قال إن كيسه يحوي بيتًا قديمًا ومدرسة وحديقة|ومدينة بغداد ومدينة البصرة، وجيوشًا من الجنود،|وآلاف الناس الذين يشهدون أنه ملكه.",
+   "en": "Astonished, Ali retaliated with a grander inventory:|houses, a school, gardens,|Baghdad, Basra, armies,|and thousands of witnesses—all supposedly in his bag."
+  },
+  {
+   "p": 6,
+   "ar": "نفد صبر القاضي، وقال إن أحدًا لم يسمع قط ادعاءات بهذه الغرابة.|سأل الرجلين: هل هذا الكيس بحر بلا قرار|أم مكان يجتمع فيه الناس جميعًا؟|ثم أمرهما بفتحه أمام المجلس.",
+   "en": "The judge finally asked|whether this was a bottomless sea|or a place containing all humanity.|He ordered the bag opened before the court."
+  },
+  {
+   "p": 7,
+   "ar": "فتح علي الكيس، فلم يجد فيه أحد مدينة ولا حيوانًا ولا جيشًا.|لم يكن داخله إلا خبز وقليل من الجبن وزيتون وحبة ليمون.|ألقى علي الكيس أمام خصمه وانصرف، تاركًا القاضي يواجه سخافة النزاع.",
+   "en": "The bag contained no cities or animals—only|bread, cheese, olives, and a lemon.|Ali dropped it before his rival and walked away."
+  },
+  {
+   "p": 8,
+   "ar": "انفجر هارون الرشيد ضاحكًا حين وصل علي إلى نهاية قصته،|وأعطاه هدية سخية.|وهكذا انتهت خصومة الكيس الصغير، لا بحكم معقد،|بل بكشف بسيط فضح ادعاءين لا يمكن تصديقهما.",
+   "en": "Harun al-Rashid laughed heartily at the ending|and rewarded Ali.|A simple inspection|had exposed both men’s absurd claims."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "palaceHall (night option)",
+   "description": "Night lighting for the planned palaceHall: moon and stars in the arches, lit lamps, navy wash.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Add a night 0..1 option to the planned palaceHall: draw skyCycle(ctx, 0.72) clipped to the arch openings, mixHex the wall and floor colours toward NAVY2 by night, draw each lamp with a radial halftone glow (K dots) and a seeded 2 % flicker. Bake once per night value."
+  },
+  {
+   "type": "set",
+   "name": "palaceHall (variant courtRoom)",
+   "description": "Plain day court: three arches, centre dais with bench and low desk, deep front floor, blank side walls.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Variant flag on palaceHall: skip carpet, lamps and door; dais as a filled rect x 360..640, y 820..900 with a brush border; bench (rect 200 x 48) and desk (rect 200 x 60, top y 760) as separate draw calls so the judge sits between them; checker floor extended to y 1230."
+  },
+  {
+   "type": "set",
+   "name": "marketStreet",
+   "description": "The planned market street with one stall (fruit and bread here).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Flat house fronts (rects with arched doors, awnings as striped quads) baked over sky(day) and ground(); the stall is a separate function (counter, striped awning on two poles, goods as circles) so it can be restocked per story."
+  },
+  {
+   "type": "prop",
+   "name": "leatherBag",
+   "description": "Small drawstring pouch with open, bulge, limp and strap fields; the star prop of the film.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "A rounded sack path (bezier) in brown with red dot shading, a gathered neck and cord; open blends the neck from pinched to an oval mouth with a dark inside; bulge scales the belly; limp lowers and flattens it; strap is a 6 px line to strapTo. Origin at the base centre; supports sq."
+  },
+  {
+   "type": "prop",
+   "name": "claimTiles",
+   "description": "Seventeen flat icon tiles (see props) with size, wide, badge and ghost options.",
+   "reusable": true,
+   "effort": "L",
+   "implementation": "One function tile(ctx, x, y, kind, {size, wide, badge, ghost, t}): paper square with a tapering brush border, icon drawn from simple shapes in the palette (tent = triangle with a flap; rug = two rolled rects; room = arch, door, window; house = cracked wall, crooked door; school = arched front and slate; garden = Library tree at s 0.2 plus a fountain arc; cities = domes, a minaret, round wall or palms and boats; army = five spearmen as capsule bodies with dot heads and a banner; crowd = rows of dot heads). Animals use the planned cow, sheep and camel at small scale if they exist by then, otherwise simple side-view silhouettes; the lion is the Library lion at s 0.26. ghost: alpha 0.45 and a dashed border."
+  },
+  {
+   "type": "effect",
+   "name": "claimPile",
+   "description": "A wobbling stack of tiles tied to the bag by a three-bubble trail: add tiles on cue times, sway, droop, collapse.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "pile(ctx, t, {side, tiles: [[t0, kind, opts]...], x0, y0, cols, size}): each tile scales in with settleTo from its cue time and sits on a 2-column grid growing upward; the whole pile rotates about its base by swing() restarted at every new tile; landSquash runs down the rows with stagger; collapse(t0) lets every tile fall with fallY and a seeded spin, then pop. The trail is three circles from the bag mouth to the pile base."
+  },
+  {
+   "type": "effect",
+   "name": "crowdDots",
+   "description": "Dozens of tiny heads (dot with two eye dots, optional raised hand) for thousands of witnesses and the queue in the judge's balloon.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Seeded positions from K.rng in a region; each head pops at t0 + i * 0.02; hand is a 2 px line raised on a cue; walking variant moves along a line with phase-offset bob."
+  },
+  {
+   "type": "prop",
+   "name": "bagFood (bread, cheese, olives, lemon)",
+   "description": "The four real contents of the bag, small and plain.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Four tiny functions from circles, an ellipse and a wedge path with black outlines and dot shading; each takes x, y, s, rot."
+  },
+  {
+   "type": "prop",
+   "name": "diwan",
+   "description": "Low couch with rolled arm, pillow, striped cushions and a blanket overlay for a lying figure.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rect base with turned feet, seat line 48 above the base, rolled arm as a circle plus rect at the left; blanket is a separate rounded quad drawn after the lying person with a bump that follows the body (and breathe())."
+  },
+  {
+   "type": "prop",
+   "name": "purse",
+   "description": "The planned fat coin purse.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rounded pouch in red with a yellow cord and three coin discs at the mouth; glints as 4-point stars on cue."
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (judge)",
+   "description": "A judge preset: the physician figure with a navy robe, a large white turban that can tilt and roll off, age 0.8.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Add 'judge' to the COSTUME table (copy physician, pal navy robe, turban scale 1.2) plus an opt-in field turbanTilt (radians) and turbanOff (draws no headwear so the scene can draw the rolling turban)."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "description": "The planned round balloon with one icon and a tail to the speaker (scroll, laughing face, loaf, question mark).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Circle or cloud() with a tail triangle; inside(c) callback draws the icon; pops in with settleTo."
+  },
+  {
+   "type": "effect",
+   "name": "worryScribble",
+   "description": "A small black scribble cloud over a worried head that can pulse, shrink and burst.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Twelve seeded looping strokes (K.rng) inside a 110 px blob, redrawn with a slow K.noise wobble; scale and alpha fields; burst = strokes fly out as dots."
+  },
+  {
+   "type": "pose",
+   "name": "person laugh",
+   "description": "The planned laugh pose: head back, mouth wide, rocking, eyes squeezed.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "A helper laugh(t, t0, amp) returning {tip, talk, lid, sq} cycling at 2.5 Hz with decay; works seated."
+  },
+  {
+   "type": "camera",
+   "name": "taleZoom",
+   "description": "Enter and leave a told story through the teller's thought cloud growing to fill the panel.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "thoughtCloud with w and h animated from 300 to 4000 over 0.75 s (ease-in), fill matched to the next scene's sky; the scene switch happens when the cloud covers the panel; reversed for the return."
+  }
+ ],
+ "owner_questions": [
+  "The rival is shown as a neutral, burly villager variant and labelled A KURDISH STRANGER as in the script (default); say if you prefer the label A STRANGER.",
+  "Invented comic lettering (YOINK!, MINE!, EVEN BIGGER!, ENOUGH!, OPEN IT!, THAT'S ALL!, FALSE!, HA HA HA!, Z z z) and labels are added as visual lettering only (default: keep).",
+  "Addition beyond the script: the Caliph yawns at the gift and is asleep and smiling in the last shot, paying off his sleepless night (default: keep).",
+  "The English subtitles of paragraphs 4 and 7 contain an em dash; the plan keeps the script verbatim and the default is to show a comma in its place on screen, because the series rule forbids dashes in on-screen text.",
+  "The \"sensible things\" at 56-58 s are not named in the script; the plan shows a cup, a comb and a folded cloth (default: keep these generic items).",
+  "Paragraph 5 was removed from the audio, so the film goes straight from Ali's list to the judge losing patience with no bridging picture invented (default).",
+  "After the reveal the food goes back into the bag under the cut at 136.22, so Ali throws a tied, full bag at his rival's feet (default); the alternative is to leave the food on the stool and throw the empty bag."
+ ],
+ "implementation_notes": [
+  "Start from Library/template; world 1000 x 1230, ground y 900; in courtRoom the bag stool stands in the foreground at floor y 1000 and the claimants at y 930.",
+  "Cue everything from timing.json word times; all cue times in this plan are the word starts listed in planning/inputs/timeline.md. Paragraph numbers are 1, 2, 3, 4, 6, 7, 8 (5 was removed on purpose).",
+  "Set LIFE.t = t every frame for auto-blinks; give every figure a gaze target on every beat (lookAt or gazePlan). Groups never move in unison: use stagger().",
+  "The two claim piles are the film: build claimPile first and check stills at 61, 67, 70, 88, 93 and 96 s. The right pile must read as clearly bigger than the left (125 px tiles and double-width tiles against 100 px).",
+  "Keep the bag visible and in the same screen place (centre front) through S6 to S10 so the contrast between pile and bag always reads.",
+  "Panel-only shake for the slam at 96.9 and the Baghdad tile at 87.86; the caption panel never moves.",
+  "Tile icons are small: draw them at tile size with 4 to 5 px outlines and at most three colours each; test legibility at phone size. City tiles carry the labels BAGHDAD and BASRA in Bangers at 28 px or more.",
+  "The judge's turban business (tilt at 66.4, slip at 89.5, straighten at 98.6, roll off at 144.2) is one running gag; keep the values in one keyed table.",
+  "Sound: only the six listed effects, all in measured gaps (5.06-5.50, 11.80-12.34, 32.34-33.06, 72.94-73.96, 96.70-97.06, 107.90-108.62) and after the last word; master 0.6.",
+  "Subtitles: write chunks_ar.txt and chunks_en.txt from the subtitles array; for display only, replace the em dash in the English of P4 and P7 if the owner confirms.",
+  "One look into the lens only (the judge at 143.36).",
+  "When cow, sheep and camel are in the Library, the tile icons should call them at small scale instead of the simple silhouettes."
+ ],
+ "warnings": [
+  "Three new sets plus the tile set is at the upper end of the asset budget; palaceHall and marketStreet are shared with many other planned films, so build them as Library candidates.",
+  "Lettering count is about 24 including labels; if the reviewer finds it busy, drop YOINK!, THAT'S ALL! and the second FALSE! first.",
+  "Tile icons risk being unreadable at phone size, especially the two cities; rely on the BAGHDAD and BASRA labels and keep shapes bold.",
+  "The first English subtitle chunk of P7 ends on \"animals—only\" because the script joins the two words with a dash; the checker requires the verbatim token.",
+  "English and Arabic chunks do not always carry the same phrase at the same moment because the English is a condensed translation (for example P1 chunk 4 and P6 chunks 1-2).",
+  "The person figure is front-facing only: the tug of war and the walk-ins rely on lean (tip), hand targets and gaze rather than profile poses.",
+  "Paragraph 5 is absent; the jump from 96.70 to 97.06 is only 0.36 s, so the slam must land exactly there."
+ ]
+}

@@ -1,0 +1,108 @@
+{
+ "story_id": "AN-151",
+ "title": "THE ILLITERATE WHO SET UP FOR A SCHOOLMASTER",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T16:33:33",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a0e329e510b866662.jsonl",
+ "agent_id": "a0e329e510b866662",
+ "model_messages": {
+  "claude-fable-5-2": 22
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "136fed8beb0046d80fb90ec70347d82947838d2d1297b623627a03e5e12732e0",
+  "paragraphs": 8,
+  "segments": [
+   "AN-151-P01-S01",
+   "AN-151-P01-S02",
+   "AN-151-P01-S03",
+   "AN-151-P01-S04",
+   "AN-151-P01-S05",
+   "AN-151-P01-S06",
+   "AN-151-P01-S07",
+   "AN-151-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-151_THE_ILLITERATE_WHO_SET_UP_FOR_A_SCHOOLMASTER_full_slowed.mp3",
+  "sha256": "972478e6bdd2f6f868f13759ba907f23186eb033f40ddfab5642081ec1e58523",
+  "duration": 169.528
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-151_THE_ILLITERATE_WHO_SET_UP_FOR_A_SCHOOLMASTER_full_slowed.mp3.words.json",
+  "sha256": "dcd213f9e53887038e008abb6201484f1d06fd6179889bc91f5fa12ed4c54939",
+  "manifest_status": "SUCCESS; METADATA MISMATCH",
+  "script_match": 1.0
+ },
+ "library_rev": "5a93429",
+ "scenes": 17,
+ "actions": 191,
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "bigTurban",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "letterSheet",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "writingTablet",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "quilt",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "candleSnuffer",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "schoolRoom",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "townStreet fronts (school front, mosque front)",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "letterWorld (with letterFrame)",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "handOver",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "sneak",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "worryScribble",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Dense narration with no real pauses: effects are limited to six. Resist adding more.",
+  "The person figure is front-facing only: the head shake (65.86) and nods must be acted with gaze swings, body tip, head drop and the lagging turban.",
+  "bigTurban is 180 wide: at zoom above 1.9 keep the camera centre low enough that its top (about 330 above the feet) stays inside the panel.",
+  "S9 to S11 handle grief and a mourning custom; keep the mime light and the children's crying brief (89.8 to 92.5).",
+  "schoolRoom window and door positions are specified, not measured: check them against the palaceHall merchant anchors and move the wall tablets if they collide."
+ ]
+}

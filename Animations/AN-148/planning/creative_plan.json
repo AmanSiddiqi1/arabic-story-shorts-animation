@@ -1,0 +1,3093 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-148",
+ "title": "The Devotee Prince",
+ "duration": 173.42,
+ "end_hold": 4.0,
+ "logline": "Harun al-Rashid's sixteen-year-old son gives up the palace for a wool robe and a bricklayer's wage in Basra, and dies unknown on bare earth with a royal ruby still unspent in his pocket.",
+ "moral": "Rank and riches end in the same plain grave; the prince owned wealth and chose not to use it.",
+ "tone": "Quiet, tender and dignified, with light warmth in the middle (the bird that snubs the caliph, the worker who refuses a raise). No jokes after the third Saturday; the death is gentle and shown without distress.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 2.7,
+   "kind": "setup",
+   "cue": {
+    "word": "ابن",
+    "t": 2.7
+   },
+   "summary": "A caliph's son of sixteen, ill at ease among gold."
+  },
+  {
+   "id": "B2",
+   "t": 10.88,
+   "kind": "rising",
+   "cue": {
+    "word": "يزور",
+    "t": 10.88
+   },
+   "summary": "He visits graves and sees that rank does not mark them."
+  },
+  {
+   "id": "B3",
+   "t": 26.6,
+   "kind": "inciting",
+   "cue": {
+    "word": "الصوف.",
+    "t": 26.6
+   },
+   "summary": "His father finds him in coarse wool; courtiers disapprove; he is scolded."
+  },
+  {
+   "id": "B4",
+   "t": 43.94,
+   "kind": "surprise",
+   "cue": {
+    "word": "فنزل",
+    "t": 43.94
+   },
+   "summary": "The bird he calls comes to his hand, and (50.52) refuses the caliph's."
+  },
+  {
+   "id": "B5",
+   "t": 56.22,
+   "kind": "turn",
+   "cue": {
+    "word": "وقرر",
+    "t": 56.22
+   },
+   "summary": "He takes it as a sign and decides to leave Baghdad."
+  },
+  {
+   "id": "B6",
+   "t": 66.58,
+   "kind": "rising",
+   "cue": {
+    "word": "بناء",
+    "t": 66.58
+   },
+   "summary": "In Basra he lays bricks for one dirham and one daniq, stops for prayer, eats with the small coin and gives away the big one."
+  },
+  {
+   "id": "B7",
+   "t": 99.1,
+   "kind": "comic",
+   "cue": {
+    "word": "رفض",
+    "t": 99.1
+   },
+   "summary": "Abu Amir offers double pay; the worker pushes the extra back."
+  },
+  {
+   "id": "B8",
+   "t": 107.34,
+   "kind": "suspense",
+   "cue": {
+    "word": "الثالث",
+    "t": 107.34
+   },
+   "summary": "Third Saturday: the worker does not come."
+  },
+  {
+   "id": "B9",
+   "t": 119.52,
+   "kind": "emotion",
+   "cue": {
+    "word": "لبنة",
+    "t": 119.52
+   },
+   "summary": "He lies ill on bare earth with a brick for a pillow and makes two requests."
+  },
+  {
+   "id": "B10",
+   "t": 129.28,
+   "kind": "climax",
+   "cue": {
+    "word": "مات",
+    "t": 129.28
+   },
+   "summary": "He dies quietly."
+  },
+  {
+   "id": "B11",
+   "t": 140.0,
+   "kind": "reveal",
+   "cue": {
+    "word": "ياقوتة",
+    "t": 140.0
+   },
+   "summary": "A precious ruby in the wool robe."
+  },
+  {
+   "id": "B12",
+   "t": 146.8,
+   "kind": "reveal",
+   "cue": {
+    "word": "عرف",
+    "t": 146.8
+   },
+   "summary": "Harun recognises his wife's gift to their son."
+  },
+  {
+   "id": "B13",
+   "t": 152.44,
+   "kind": "emotion",
+   "cue": {
+    "word": "بكى",
+    "t": 152.44
+   },
+   "summary": "Father and mother weep."
+  },
+  {
+   "id": "B14",
+   "t": 161.4,
+   "kind": "resolution",
+   "cue": {
+    "word": "القبر",
+    "t": 161.4
+   },
+   "summary": "Harun rides to the plain grave in Basra."
+  },
+  {
+   "id": "B15",
+   "t": 167.56,
+   "kind": "moral",
+   "cue": {
+    "word": "الياقوتة",
+    "t": 167.56
+   },
+   "summary": "The unused ruby stays as a witness to wealth owned and never spent."
+  }
+ ],
+ "cast": [
+  {
+   "id": "prince",
+   "name": "the devotee prince",
+   "library": "person",
+   "base": "person costume:\"prince\" (S1, S2), then new preset costume:\"devotee\" (wool robe)",
+   "look": "Age 0, clean-shaven, black hair. Palace: blue knee robe, small crown. From S3: coarse brown wool robe to the ankle (robe #b08a5a, dots #7a5a36), rope belt, one darker patch pocket on the left chest, white skull cap, bare feet. Slim, s 1.0.",
+   "new": false
+  },
+  {
+   "id": "caliph",
+   "name": "Harun al-Rashid",
+   "library": "person",
+   "base": "person costume:\"caliph\"",
+   "look": "Preset as in the catalogue: red robe, blue cape, crown turban, full beard, age 0.45; s 1.08 so he is a little bigger than his son.",
+   "new": false
+  },
+  {
+   "id": "abuAmir",
+   "name": "Abu Amir",
+   "library": "person",
+   "base": "person costume:\"merchant\" with pal overrides (the \"merchant pal\" look in people.png)",
+   "look": "Green robe, yellow turban with a red jewel, black beard, round belly, age 0.35; warm and quick. s 1.0.",
+   "new": false
+  },
+  {
+   "id": "queen",
+   "name": "the prince's mother",
+   "library": "person",
+   "base": "person costume:\"lady\", age 0.4",
+   "look": "Lady preset with a red robe (pal robe C.red, dot #a8160f) so she matches the caliph; white veil with a jewel.",
+   "new": false
+  },
+  {
+   "id": "vizier",
+   "name": "vizier",
+   "library": "person",
+   "base": "person costume:\"vizier\"",
+   "look": "Preset.",
+   "new": false
+  },
+  {
+   "id": "courtier",
+   "name": "courtier",
+   "library": "person",
+   "base": "person costume:\"merchant\" with pal {robe purple #7a3fa0, hc C.yellow}",
+   "look": "Second court figure, plump, disapproving.",
+   "new": false
+  },
+  {
+   "id": "servant",
+   "name": "palace servant",
+   "library": "person",
+   "base": "person costume:\"servant\"",
+   "look": "Preset, carries a tray.",
+   "new": false
+  },
+  {
+   "id": "foreman",
+   "name": "Basra foreman",
+   "library": "person",
+   "base": "person costume:\"villager\" with pal {robe #c98a2b}",
+   "look": "Ochre villager, age 0.4.",
+   "new": false
+  },
+  {
+   "id": "beggar",
+   "name": "poor man",
+   "library": "person",
+   "base": "person costume:\"villager\", age 0.9, pal {robe #9a9080, shoes \"bare\"}",
+   "look": "Old, grey, sits on the floor.",
+   "new": false
+  },
+  {
+   "id": "neighbour",
+   "name": "neighbour",
+   "library": "person",
+   "base": "person costume:\"villager\" (preset green)",
+   "look": "Preset.",
+   "new": false
+  },
+  {
+   "id": "dove",
+   "name": "the white bird",
+   "library": "bird",
+   "base": "bird kind:\"dove\", pal 0",
+   "look": "White dove, s 0.9; the same bird returns at the death and at the grave.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "palaceHall",
+   "library": "palaceHall",
+   "description": "palaceHall({variant:\"palace\", wall:\"paper\"}) with throne anchor HALL.throne and the open door arch on the left.",
+   "new": false
+  },
+  {
+   "id": "baghdadStreet",
+   "library": "marketStreet",
+   "description": "marketStreet({palette:\"clear\", stalls:[], palace:true}): the street in front of the palace facade. The bird perches on the crenellated top of the palace wall (read from the catalogue at roughly y 330; approximate, measure on the set anchors).",
+   "new": false
+  },
+  {
+   "id": "desertRoad",
+   "library": "desertRoad",
+   "description": "desertRoad({w:2400}) with city:\"left\" for the Baghdad gate (S6, S16) and without a city at u 0.4 for the last journey (S18).",
+   "new": false
+  },
+  {
+   "id": "basraSite",
+   "library": "marketStreet",
+   "description": "marketStreet({alley:true}) as a plain Basra back street, plus the new brickWall prop (x 250..670), a brick stack at x 180, one palmTree at x 90 and the new minaret rising behind the wall at x 820.",
+   "new": false
+  },
+  {
+   "id": "abuAmirYard",
+   "library": "villageYard",
+   "description": "villageYard with the cottage at the right as Abu Amir's house, tree:false, forest hidden by a low sky tint if it reads too rural (or replace the forest row with townFarCity); the yard wall is the new brickWall with a gap, x 180..600.",
+   "new": false
+  },
+  {
+   "id": "hutRoom",
+   "library": "hutRoom",
+   "description": "hutRoom({palette:\"dusk\", doorSide:\"right\", mattress:false, mat:false, jar:false, lamp:0.6}): bare floor at y 900, lamp niche, window on the evening sky.",
+   "new": false
+  },
+  {
+   "id": "graveyard",
+   "library": null,
+   "description": "NEW shared set graveyard(ctx, o): ground y 900, skyCycle sky (u), a low mud boundary wall across the back (top y 800, 14 thick cap), two rows of identical graveMarkers (back row y 840 at s 0.7, x 120, 300, 480, 660, 840; front row y 900 at s 1, x 210, 500, 790), two thorn tufts, one leaning palm at x 930. Options: fresh:{x} (darker new mound replacing a front marker), hut:{x0,x1,top} (mud hut exterior with a townDoor and one townWindow; when used the markers at x >= x0 - 60 are dropped), u. Returns anchors {ground, markers:[{x,y,s}], wall, hut:{door}}.",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "brickWall",
+   "library": null,
+   "description": "NEW brickWall(ctx, x0, x1, baseY, {courses:7, build:0..1, gap:0..1, seed}): running-bond clay bricks 60 x 28 with 4 mortar joints, red-brown #b5522d with red dot shading and black outline. build reveals bricks in laying order (left to right, bottom up); the newest brick drops 20 units with a squash. gap cuts a V-shaped hole (up to 4 bricks wide, 4 courses deep) that closes from the bottom as gap goes 1 to 0, with 5 loose bricks on the ground. A single brick(ctx, x, y, rot) is exported for the stack, the pillow and the hands.",
+   "new": true
+  },
+  {
+   "id": "graveMarker",
+   "library": null,
+   "description": "Planned name (AN-095): plain grave. Here: earth mound 150 x 36 (half ellipse, ochre-brown, dot shading) with a rounded headstone 46 wide x 70 high at its left end; no inscription. fresh:true gives darker earth and three small clods.",
+   "new": true
+  },
+  {
+   "id": "ruby",
+   "library": null,
+   "description": "Planned jewels (red cut gem): hexagonal brilliant, 44 wide x 38 high in the hand (drawn up to 3x in close shots), red #e2231a with a darker lower facet, white table highlight, black outline; used with the planned goldGlow tinted red.",
+   "new": true
+  },
+  {
+   "id": "coins",
+   "library": null,
+   "description": "Planned coinPile in its silver palette: single coins. Dirham r 26, daniq r 12, both off-white #e9e6dc with a grey rim line; a small heap of gold for the tray in S1 and inside the thought cloud.",
+   "new": true
+  },
+  {
+   "id": "trowel",
+   "library": null,
+   "description": "Mason's trowel: diamond steel blade 46 x 26 (grey-white), short brown handle 30; held in the hand or lying on the wall.",
+   "new": true
+  },
+  {
+   "id": "minaret",
+   "library": null,
+   "description": "Simple minaret: cream shaft 46 wide rising from behind the alley wall to y 240, balcony ring 80 wide at y 300, small blue dome and yellow finial on top. Should be the same drawing as the minaret of the planned mosqueCourt.",
+   "new": true
+  },
+  {
+   "id": "smallProps",
+   "library": null,
+   "description": "Planned small props under their planned names: purse, bread (round loaf r 22), waterJug, foodTray (tray for the coins in S1), crownProp (icon and in the hand), bindle, folded cloth.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0,
+   "end": 10.14,
+   "paragraphs": [
+    1
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "caliph",
+    "prince",
+    "servant"
+   ],
+   "summary": "The palace: Harun on the throne, his 16-year-old son standing apart, turning his back on a tray of gold and gazing out of the door.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Start wide on the whole hall {x:500,y:640,zoom:1.0}; from 2.7 ease to the prince {x:400,y:700,zoom:1.5} by 4.8; from 8.4 drift left with him toward the door {x:300,y:700,zoom:1.4}."
+   },
+   "composition": "Caliph seated on HALL.throne (right third, about x 760). Prince stands at x 430, s 1.0, facing the door arch on the left (day sky outside). Servant enters from the right edge and stops at x 580. Heads between y 620 and 700, well above the caption panel.",
+   "actions": [
+    {
+     "t": 0,
+     "end": 1.3,
+     "cue": {
+      "word": "كان",
+      "t": 0.0
+     },
+     "who": "caliph",
+     "action": "sits on the throne, one hand on the armrest, strokes his beard once",
+     "acting": "calm, proud: lid 0.25, gaze toward the prince via lookAt, slow blink",
+     "library": "palaceHall({variant:\"palace\"}) + person {costume:\"caliph\", sit:1, seat:\"bench\", y:HALL.throne.sitY, handR:PERSON_HANDS.chin}"
+    },
+    {
+     "t": 0.38,
+     "end": 1.38,
+     "cue": {
+      "word": "للخليفة",
+      "t": 0.38
+     },
+     "who": "lettering",
+     "action": "title THE DEVOTEE PRINCE pops in at the top of the panel and leaves by 2.6",
+     "acting": "title primitive, overshoot in, slide out up; never over a face",
+     "library": "style title()"
+    },
+    {
+     "t": 2.5,
+     "end": 3.7,
+     "cue": {
+      "word": "ابن",
+      "t": 2.7
+     },
+     "who": "prince",
+     "action": "is revealed by the push-in: a slim youth in princely blue with a small crown, standing with his back half turned to the throne",
+     "acting": "gaze out of the door [-1,-0.1], lid 0.3 (pensive), shoulders low (lean 0.04), breathe()",
+     "library": "person {costume:\"prince\", age:0, dir:-1} + breathe"
+    },
+    {
+     "t": 3.92,
+     "end": 5.12,
+     "cue": {
+      "word": "السادسة",
+      "t": 3.92
+     },
+     "who": "lettering",
+     "action": "label AGE 16 with a short arrow to the prince",
+     "acting": "label pops with overshoot, holds 1.4 s",
+     "library": "label() + arrow()"
+    },
+    {
+     "t": 5.52,
+     "end": 6.92,
+     "cue": {
+      "word": "لكنه",
+      "t": 6.12
+     },
+     "who": "servant",
+     "action": "walks in from the right with a tray heaped with coins and a spare crown, bows and offers it",
+     "acting": "eager smile, gaze on the prince, tip 0.15 bow on arrival, tray bobs one frame late (lag)",
+     "library": "person {costume:\"servant\"} + walk(xf,t) + footfalls; coinPile on a tray via handLW/handRW"
+    },
+    {
+     "t": 7.3,
+     "end": 8.3,
+     "cue": {
+      "word": "يجد",
+      "t": 7.3
+     },
+     "who": "prince",
+     "action": "glances at the tray, then looks away; raises one open palm: no thanks",
+     "acting": "gaze snaps to tray then back to the door (2-frame saccade), brow -0.4, mouth closed, head shake via shake field",
+     "library": "person handR: PERSON_HANDS.shield.R; anticipate()"
+    },
+    {
+     "t": 7.78,
+     "end": 8.78,
+     "cue": {
+      "word": "راحته",
+      "t": 7.78
+     },
+     "who": "servant",
+     "action": "straightens, puzzled, looks to the caliph for help",
+     "acting": "eyes wide, gaze flips to the throne, sq 0.96 settle",
+     "library": "lookAt"
+    },
+    {
+     "t": 8.62,
+     "end": 9.92,
+     "cue": {
+      "word": "حياة",
+      "t": 8.82
+     },
+     "who": "prince",
+     "action": "walks slowly left toward the bright door arch, away from throne and gold",
+     "acting": "head a little down, gaze [-1,0.2], small steps (amp 0.6)",
+     "library": "walk(xf,t,{stride}) + footfalls"
+    },
+    {
+     "t": 9.38,
+     "end": 10.14,
+     "cue": {
+      "word": "القصور.",
+      "t": 9.38
+     },
+     "who": "caliph",
+     "action": "leans forward on the throne watching him go, hand leaves the armrest",
+     "acting": "brow raised (-0.6), gaze follows the prince with lookAt, tip 0.06",
+     "library": "lookAt, tip"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.3,
+     "text": "THE DEVOTEE PRINCE"
+    },
+    {
+     "t": 3.92,
+     "text": "AGE 16"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 5.74,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 10.14
+   }
+  },
+  {
+   "id": "S2",
+   "start": 10.14,
+   "end": 21.78,
+   "paragraphs": [
+    1
+   ],
+   "set": "graveyard",
+   "cast": [
+    "prince"
+   ],
+   "summary": "Dusk among plain graves: the prince walks in, kneels and thinks. In his thought cloud a crown and a coin heap sink into two graves identical to all the others.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide {x:500,y:660,zoom:1.0} while he walks in; from 13.1 push to {x:560,y:640,zoom:1.35} keeping him and the cloud (upper right) in frame; hold to the end."
+   },
+   "composition": "Graves in two rows (back y 840, front y 900). Prince enters from the left, stops at x 330 before the front grave at x 500. Thought cloud centre (680, 420), 420 x 300, tail to his head. Low wall and dusk sky behind.",
+   "actions": [
+    {
+     "t": 10.14,
+     "end": 11.34,
+     "cue": {
+      "word": "كان",
+      "t": 10.14
+     },
+     "who": "set",
+     "action": "cut to the graveyard at dusk: long shadows, identical mounds with small headstones, a low mud wall",
+     "acting": "skyCycle u 0.45; two far birds drift across (songbird fly, tiny) so the frame is never dead",
+     "library": "graveyard({u:0.45}) new set; songbird {fly:true}"
+    },
+    {
+     "t": 10.48,
+     "end": 12.08,
+     "cue": {
+      "word": "يزور",
+      "t": 10.88
+     },
+     "who": "prince",
+     "action": "walks in from the left among the graves, still in palace blue but with the crown held in his hand, not on his head",
+     "acting": "slow walk amp 0.6, gaze moves from grave to grave (lookAt each marker in turn)",
+     "library": "walk + footfalls; lookAt"
+    },
+    {
+     "t": 12.26,
+     "end": 13.16,
+     "cue": {
+      "word": "كثيرًا",
+      "t": 12.26
+     },
+     "who": "prince",
+     "action": "stops at a grave, lowers himself to his knees",
+     "acting": "anticipate() dip then kneel 0->1 over 0.7 s, settle sq 0.97",
+     "library": "person kneel; anticipate; landSquash"
+    },
+    {
+     "t": 13.14,
+     "end": 14.34,
+     "cue": {
+      "word": "ويتأمل",
+      "t": 13.14
+     },
+     "who": "fx",
+     "action": "thought cloud pops above him: empty at first",
+     "acting": "trail bubbles first, then the cloud; his gaze lifts [0.4,-0.6], lid 0.35",
+     "library": "thoughtCloud(ctx, 680, 420, 420, 300, t, {tail, inside})"
+    },
+    {
+     "t": 15.38,
+     "end": 16.18,
+     "cue": {
+      "word": "أصحاب",
+      "t": 15.38
+     },
+     "who": "fx",
+     "action": "inside the cloud: a caliph figure with a big crown stands on the left",
+     "acting": "figure at about 120 px on screen, proud pose (hipsHands)",
+     "library": "person {costume:\"caliph\", pal other colours} inside thoughtCloud"
+    },
+    {
+     "t": 15.9,
+     "end": 16.7,
+     "cue": {
+      "word": "السلطان",
+      "t": 15.9
+     },
+     "who": "fx",
+     "action": "inside the cloud: a fat merchant with a coin heap appears on the right",
+     "acting": "coinPile pops with overshoot, merchant pats his belly",
+     "library": "person {costume:\"merchant\"} + coinPile inside the cloud"
+    },
+    {
+     "t": 16.66,
+     "end": 17.76,
+     "cue": {
+      "word": "والمال",
+      "t": 16.66
+     },
+     "who": "fx",
+     "action": "both figures sink straight down and fade; in their places two plain graveMarkers rise",
+     "acting": "sink 0.6 s ease-in, markers rise with a small landSquash; crown and coins shrink to nothing",
+     "library": "kfn alpha + y; graveMarker"
+    },
+    {
+     "t": 17.96,
+     "end": 19.36,
+     "cue": {
+      "word": "قبور",
+      "t": 17.96
+     },
+     "who": "fx",
+     "action": "a third plain marker appears between them; an arrow sweeps across all three: they are exactly alike",
+     "acting": "markers bob once in turn (stagger), the cloud itself breathes",
+     "library": "arrow(); stagger(i)"
+    },
+    {
+     "t": 18.96,
+     "end": 20.16,
+     "cue": {
+      "word": "يميزها",
+      "t": 19.16
+     },
+     "who": "prince",
+     "action": "lowers his eyes from the cloud to the real grave, lays the crown on the ground beside him and bows his head",
+     "acting": "gaze [0.2,0.6], lid 0.55, slow blink, wet false (thoughtful, not sad), cloud pops away",
+     "library": "person handRW to the crown on the ground; lid, gaze"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 21.2,
+     "kind": "soft thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 21.78
+   }
+  },
+  {
+   "id": "S3",
+   "start": 21.78,
+   "end": 36.28,
+   "paragraphs": [
+    2
+   ],
+   "set": "baghdadStreet",
+   "cast": [
+    "caliph",
+    "prince",
+    "vizier",
+    "courtier"
+   ],
+   "summary": "Outside the palace: Harun passes with two courtiers and stops short at his son in a rough wool robe. The courtiers wince and whisper; the father scolds.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Open on the caliph group entering from the right {x:640,y:680,zoom:1.15}; pan left with them to a two-shot of father and son {x:470,y:690,zoom:1.45} at 25.1; widen to include the courtiers at 28.8 {x:540,y:690,zoom:1.2}; push in on father and son at 33.9 {zoom:1.5}."
+   },
+   "composition": "Palace facade on the right (MARKET.palace), street ground y 900. Prince sits on the palace step edge at about x 300 mending a sandal strap, facing right. Caliph stops at x 520; vizier x 680 and courtier x 790 behind him, staggered depths (y 900, 906). Battlements top left of frame kept clear for the bird in S4.",
+   "actions": [
+    {
+     "t": 21.78,
+     "end": 23.58,
+     "cue": {
+      "word": "مر",
+      "t": 21.78
+     },
+     "who": "caliph",
+     "action": "strides in from the right with the vizier and a courtier one and two steps behind",
+     "acting": "chin up, gaze ahead [-1,0], robe trim sways; followers out of step (stagger)",
+     "library": "marketStreet({palette:\"clear\", stalls:[]}) + walk + footfalls for three people, stagger(i)"
+    },
+    {
+     "t": 23.08,
+     "end": 23.88,
+     "cue": {
+      "word": "بابنه",
+      "t": 23.08
+     },
+     "who": "prince",
+     "action": "sits low on the step in a coarse brown wool robe, bare feet, no crown, quietly threading a sandal strap",
+     "acting": "calm, gaze down on his hands, lid 0.4, small hand motion every 0.5 s",
+     "library": "person {costume:\"devotee\", sit:0.5} (new preset)"
+    },
+    {
+     "t": 24.78,
+     "end": 25.68,
+     "cue": {
+      "word": "يرتدي",
+      "t": 25.08
+     },
+     "who": "caliph",
+     "action": "stops dead: follow-through lurch, turban wobbles",
+     "acting": "eyes wide, brow -1, sq 0.94 then settle, gaze locked on the robe (lookAt chest)",
+     "library": "lurch(t,tStop); landSquash"
+    },
+    {
+     "t": 25.7,
+     "end": 27.0,
+     "cue": {
+      "word": "ثوبًا",
+      "t": 25.7
+     },
+     "who": "lettering",
+     "action": "WOOL! with an arrow to the rough robe; three scratchy hatch marks flicker on the cloth",
+     "acting": "label pop; hatch marks are 3 short black strokes, seeded",
+     "library": "label() + arrow()"
+    },
+    {
+     "t": 26.6,
+     "end": 27.4,
+     "cue": {
+      "word": "الصوف.",
+      "t": 26.6
+     },
+     "who": "prince",
+     "action": "looks up and rises to his feet respectfully, hands folded",
+     "acting": "sit 0.5 -> 0 with anticipate, gaze up to his father, mild smile",
+     "library": "person handL/handR: PERSON_HANDS.folded; lookAt"
+    },
+    {
+     "t": 28.64,
+     "end": 29.84,
+     "cue": {
+      "word": "بعض",
+      "t": 28.84
+     },
+     "who": "vizier",
+     "action": "leans to the courtier and whispers behind his hand",
+     "acting": "gaze side to the courtier then back to the prince, brow 0.5, tip 0.1",
+     "library": "person {costume:\"vizier\", handR: PERSON_HANDS.cupMouth.R}"
+    },
+    {
+     "t": 30.48,
+     "end": 31.78,
+     "cue": {
+      "word": "هيئته",
+      "t": 30.48
+     },
+     "who": "courtier",
+     "action": "covers his mouth, then points at the wool robe with a flat disapproving hand",
+     "acting": "eyes wide then lid 0.5 (disdain), head shake, a small sweat drop",
+     "library": "person {costume:\"merchant\", pal green} handR: PERSON_HANDS.pointFwd.R"
+    },
+    {
+     "t": 32.14,
+     "end": 33.14,
+     "cue": {
+      "word": "مكانة",
+      "t": 32.34
+     },
+     "who": "vizier",
+     "action": "gestures from the prince up to the caliph's crown: an icon balloon shows a crown with a crack",
+     "acting": "balloon above the courtiers, never over a face; pops 0.2 s",
+     "library": "speech balloon box with crownProp icon"
+    },
+    {
+     "t": 33.06,
+     "end": 33.96,
+     "cue": {
+      "word": "الخليفة،",
+      "t": 33.06
+     },
+     "who": "caliph",
+     "action": "glances back at the whisperers, then his face darkens",
+     "acting": "gaze flick right then back, brow 0 -> 0.8 over 0.4 s, mouth frown",
+     "library": "gaze saccade; brow"
+    },
+    {
+     "t": 33.56,
+     "end": 34.96,
+     "cue": {
+      "word": "فعاتبه",
+      "t": 33.86
+     },
+     "who": "caliph",
+     "action": "scolds: steps in, wags a finger, the other hand sweeps down the robe",
+     "acting": "anticipate() lean back then tip 0.1 forward, talk 0.8, brow 1; finger wag 3 beats",
+     "library": "person handR: PERSON_HANDS.pointUp.R keyed wag; talk; anticipate"
+    },
+    {
+     "t": 35.08,
+     "end": 36.08,
+     "cue": {
+      "word": "أبوه.",
+      "t": 35.08
+     },
+     "who": "prince",
+     "action": "takes the scolding without flinching: lowers his eyes once, then lifts them past his father to the wall top",
+     "acting": "gaze [0,0.4] then slowly up-left, lid 0.3, no squash (unshaken); courtiers lean in to listen",
+     "library": "lookAt battlement; listeners tip 0.05"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 26.6,
+     "text": "WOOL!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 36.02,
+     "kind": "chirp"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 36.28
+   }
+  },
+  {
+   "id": "S4",
+   "start": 36.28,
+   "end": 51.1,
+   "paragraphs": [
+    2,
+    3
+   ],
+   "set": "baghdadStreet",
+   "cast": [
+    "prince",
+    "caliph",
+    "dove",
+    "vizier",
+    "courtier"
+   ],
+   "summary": "The answer without words: the youth points to a bird on the palace wall, calls it, and it flies down to his hand. Asked to perch on the caliph's hand, it will not.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "tilt",
+    "notes": "Tilt up from the two-shot to the battlements at 38.3 {x:420,y:470,zoom:1.3}; follow the dove down to the hand by 44.8 {x:420,y:660,zoom:1.7}; widen to both hands at 46.9 {x:470,y:670,zoom:1.5}; tiny push on the empty royal hand at 50.5."
+   },
+   "composition": "Prince x 330 facing right, caliph x 560 facing left, about 230 apart so two raised hands and the bird fit between them at y 640 to 700. Dove perches on the battlement top (approximate y 330 at x 250, measure on MARKET.palace or the house roof line). Courtiers at the right edge, half cropped.",
+   "actions": [
+    {
+     "t": 37.34,
+     "end": 38.34,
+     "cue": {
+      "word": "أشار",
+      "t": 37.64
+     },
+     "who": "prince",
+     "action": "raises his arm and points up to the wall top",
+     "acting": "anticipate() small dip, arm straight via handRW to the bird, gaze up-left, slight smile",
+     "library": "person handRW: bird position; anticipate"
+    },
+    {
+     "t": 38.6,
+     "end": 39.6,
+     "cue": {
+      "word": "طائر",
+      "t": 38.6
+     },
+     "who": "dove",
+     "action": "a white dove sits on the battlement, preening, then cocks its head down at them",
+     "acting": "headRot tilt left-right, blink, small hop along the wall",
+     "library": "bird {kind:\"dove\", pal:0} + hop"
+    },
+    {
+     "t": 39.46,
+     "end": 40.36,
+     "cue": {
+      "word": "سور",
+      "t": 39.66
+     },
+     "who": "caliph",
+     "action": "follows the pointing finger and looks up, puzzled; courtiers look up too, one beat late",
+     "acting": "gaze up via lookAt, brow -0.5, finger wag frozen mid-air then drops",
+     "library": "lookAt; stagger for the courtiers"
+    },
+    {
+     "t": 40.9,
+     "end": 42.3,
+     "cue": {
+      "word": "دعا",
+      "t": 40.9
+     },
+     "who": "prince",
+     "action": "calls the bird: opens his hand palm up at shoulder height and makes a soft beckon",
+     "acting": "mouth o (a soft call), two small note() marks rise from him, gaze on the bird",
+     "library": "person handR: PERSON_HANDS.palmsUp.R; note()"
+    },
+    {
+     "t": 43.04,
+     "end": 43.84,
+     "cue": {
+      "word": "الطائر",
+      "t": 43.04
+     },
+     "who": "dove",
+     "action": "crouches, spreads its wings",
+     "acting": "sq 0.85 anticipation, gaze down to the hand",
+     "library": "bird sq; anticipate"
+    },
+    {
+     "t": 43.94,
+     "end": 44.94,
+     "cue": {
+      "word": "فنزل",
+      "t": 43.94
+     },
+     "who": "dove",
+     "action": "flies down in a soft arc to his open hand",
+     "acting": "flap fast then glide, path a bezier from wall to hand (about 0.9 s), tail feathers follow",
+     "library": "bird {fly:true, flap: Math.sin(t*14)} along kfn bezier"
+    },
+    {
+     "t": 44.94,
+     "end": 45.84,
+     "cue": {
+      "word": "يده،",
+      "t": 45.04
+     },
+     "who": "dove",
+     "action": "lands on his fingers: small squash, wings fold, hand dips and recovers",
+     "acting": "landSquash on the bird, hand dips 10 units and settles; prince smiles, lid 0.2",
+     "library": "landSquash; settle"
+    },
+    {
+     "t": 45.94,
+     "end": 46.74,
+     "cue": {
+      "word": "يده،",
+      "t": 45.04
+     },
+     "who": "vizier",
+     "action": "mouth falls open; the courtier grips his sleeve",
+     "acting": "eyes wide, mouth o, both gaze on the bird",
+     "library": "person eyes:\"wide\", mouth:\"o\""
+    },
+    {
+     "t": 46.56,
+     "end": 47.56,
+     "cue": {
+      "word": "طلب",
+      "t": 46.86
+     },
+     "who": "prince",
+     "action": "turns the bird toward his father and nods to it: go to him",
+     "acting": "gaze from bird to father's hand, small forward tip 0.05, other hand indicates the caliph",
+     "library": "person handL: PERSON_HANDS.pointFwd.L; lookAt"
+    },
+    {
+     "t": 47.78,
+     "end": 48.78,
+     "cue": {
+      "word": "يقف",
+      "t": 48.08
+     },
+     "who": "caliph",
+     "action": "holds out his jewelled hand, palm up, confident",
+     "acting": "chin up, mouth smile, lid 0.2, sleeve trim swings (secondary)",
+     "library": "person handL: PERSON_HANDS.palmsUp.L"
+    },
+    {
+     "t": 48.74,
+     "end": 49.64,
+     "cue": {
+      "word": "على",
+      "t": 48.54
+     },
+     "who": "dove",
+     "action": "looks at the royal hand, leans toward it, then leans back",
+     "acting": "headRot toward the hand, sq 1.05 stretch then back to 1, two quick blinks",
+     "library": "bird headRot keyed; blink"
+    },
+    {
+     "t": 49.0,
+     "end": 50.0,
+     "cue": {
+      "word": "أبيه",
+      "t": 49.3
+     },
+     "who": "dove",
+     "action": "turns its back on the caliph's hand and tucks its head against the prince's wrist",
+     "acting": "turnFlip, puff 0.4, lid 0.6 content",
+     "library": "turnFlip; bird puff"
+    },
+    {
+     "t": 49.96,
+     "end": 50.56,
+     "cue": {
+      "word": "فلم",
+      "t": 49.96
+     },
+     "who": "caliph",
+     "action": "the royal hand stays empty; his fingers curl slowly, smile fades",
+     "acting": "gaze drops to his own empty palm, brow -0.3 -> 0.2, lid 0.4; courtiers exchange a look",
+     "library": "gaze, lid, mouth keyed"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 43.94,
+     "text": "TWEET!"
+    },
+    {
+     "t": 50.52,
+     "text": "NOPE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 51.1
+   }
+  },
+  {
+   "id": "S5",
+   "start": 51.1,
+   "end": 57.64,
+   "paragraphs": [
+    3
+   ],
+   "set": "baghdadStreet",
+   "cast": [
+    "prince",
+    "caliph",
+    "dove"
+   ],
+   "summary": "The youth reads it as a sign: the bird comes to plain wool, not to gold. He lets it fly and makes his decision.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Close on the prince and the dove {x:340,y:650,zoom:1.9}; slow push to 2.1 until 56.2; the caliph is a blurred edge at frame right (half figure)."
+   },
+   "composition": "Prince head at about y 640 centre-left; dove on his hand at right of his face. Label A SIGN in the top band, clear of both.",
+   "actions": [
+    {
+     "t": 51.1,
+     "end": 52.1,
+     "cue": {
+      "word": "تقول",
+      "t": 51.1
+     },
+     "who": "prince",
+     "action": "lifts the dove to eye level and studies it",
+     "acting": "gaze on the bird, lid 0.3, slow blink, breathe",
+     "library": "lookAt"
+    },
+    {
+     "t": 52.1,
+     "end": 53.0,
+     "cue": {
+      "word": "الحكاية",
+      "t": 52.1
+     },
+     "who": "fx",
+     "action": "two small icons pop side by side over the bird: a crown with a red X, a wool patch with a tick",
+     "acting": "icons 70 units, pop with overshoot, hold 1.6 s",
+     "library": "box() + crownProp icon; simple tick and cross strokes"
+    },
+    {
+     "t": 53.56,
+     "end": 54.46,
+     "cue": {
+      "word": "الابن",
+      "t": 53.56
+     },
+     "who": "prince",
+     "action": "eyes widen a little: he understands",
+     "acting": "lid 0.3 -> 0, brow -0.4, sq 1.03 lift",
+     "library": "lid, brow keyed"
+    },
+    {
+     "t": 54.58,
+     "end": 55.58,
+     "cue": {
+      "word": "ذلك",
+      "t": 54.78
+     },
+     "who": "lettering",
+     "action": "A SIGN with a small star burst",
+     "acting": "label pop",
+     "library": "label() + emphasis"
+    },
+    {
+     "t": 56.22,
+     "end": 57.52,
+     "cue": {
+      "word": "وقرر",
+      "t": 56.22
+     },
+     "who": "prince",
+     "action": "sets his jaw, nods once, and tosses the dove gently upward; it flies off over the wall",
+     "acting": "anticipate() dip before the nod; gaze follows the bird up, then levels straight ahead, brow 0.3 (resolved)",
+     "library": "anticipate; bird fly path; lookAt"
+    },
+    {
+     "t": 56.92,
+     "end": 57.52,
+     "cue": {
+      "word": "وقرر",
+      "t": 56.22
+     },
+     "who": "caliph",
+     "action": "reaches a hand after his son as the youth turns away",
+     "acting": "tip 0.08, mouth o, gaze on the prince",
+     "library": "person handL: PERSON_HANDS.reach.L"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 55.3,
+     "text": "A SIGN"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 57.64
+   }
+  },
+  {
+   "id": "S6",
+   "start": 57.64,
+   "end": 63.22,
+   "paragraphs": [
+    3
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "prince",
+    "dove"
+   ],
+   "summary": "He walks out of the Baghdad gate with nothing, the domes and gold shrinking behind him.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Track right with the walker along the strip: camX from 0 to 500 between 57.6 and 62.0, zoom 1.1, y 680; the city gate slides off the left edge."
+   },
+   "composition": "desertRoad with city:\"left\" (gate at the left end). Prince small-medium (s 0.9) walking right at one third from the left; dove high above, leading. Dune lip in front at the bottom.",
+   "actions": [
+    {
+     "t": 57.64,
+     "end": 59.04,
+     "cue": {
+      "word": "ترك",
+      "t": 57.64
+     },
+     "who": "prince",
+     "action": "walks out through the city gate onto the sand road, wool robe, bare feet, empty hands",
+     "acting": "steady walk amp 0.8, gaze ahead [1,0], robe hem swings behind the step",
+     "library": "desertRoad({w:2400, city:\"left\", camX}) + walk + footfalls"
+    },
+    {
+     "t": 58.04,
+     "end": 59.04,
+     "cue": {
+      "word": "بغداد",
+      "t": 58.04
+     },
+     "who": "lettering",
+     "action": "BAGHDAD label on the gate with an arrow, left behind as the camera tracks",
+     "acting": "label fixed in world space so it slides away",
+     "library": "label()"
+    },
+    {
+     "t": 58.56,
+     "end": 59.56,
+     "cue": {
+      "word": "والعيش",
+      "t": 58.86
+     },
+     "who": "dove",
+     "action": "the dove flies ahead of him along the road",
+     "acting": "flap sin(t*10), small vertical drift (K.noise)",
+     "library": "bird {kind:\"dove\", fly:true}"
+    },
+    {
+     "t": 59.8,
+     "end": 60.7,
+     "cue": {
+      "word": "بعيدًا",
+      "t": 59.8
+     },
+     "who": "prince",
+     "action": "glances back once over his shoulder at the gate",
+     "acting": "head turn: gaze [-1,0] for 0.6 s, lid 0.4, then forward again; walk never stops",
+     "library": "gaze keyed"
+    },
+    {
+     "t": 60.76,
+     "end": 61.96,
+     "cue": {
+      "word": "زخارف",
+      "t": 60.86
+     },
+     "who": "fx",
+     "action": "behind him, three gold glints on the palace domes wink out one by one",
+     "acting": "goldGlow strength 1 -> 0, staggered 0.3 s apart",
+     "library": "goldGlow (planned) on townFarCity domes"
+    },
+    {
+     "t": 61.52,
+     "end": 62.32,
+     "cue": {
+      "word": "الحكم.",
+      "t": 61.52
+     },
+     "who": "prince",
+     "action": "small against the dunes, keeps walking toward the right edge as the LATER card wipes in",
+     "acting": "footprints stay behind him as dots (footfalls positions)",
+     "library": "footfalls marks; transition()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 58.04,
+     "text": "BAGHDAD"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 62.6,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 63.22,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S7",
+   "start": 63.22,
+   "end": 73.6,
+   "paragraphs": [
+    4
+   ],
+   "set": "basraSite",
+   "cast": [
+    "prince",
+    "foreman"
+   ],
+   "summary": "Basra: the prince is now a builder. He lays bricks on a rising wall and names his small wage: one dirham and one daniq.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide on the site {x:500,y:680,zoom:1.05}; at 67.9 push to the prince and the foreman {x:520,y:690,zoom:1.5} for the wage; hold."
+   },
+   "composition": "brickWall from x 250 to 670, base y 900 (7 courses of 28 = 196 high when complete). Prince at x 440 behind the low part, facing right; brick stack at x 180; foreman enters at x 760. Coins shown large in a counter box top right (x 700..940, y 380..520).",
+   "actions": [
+    {
+     "t": 63.22,
+     "end": 64.22,
+     "cue": {
+      "word": "وصل",
+      "t": 63.22
+     },
+     "who": "set",
+     "action": "LATER card clears onto a Basra building site: alley wall, palm top, a half-built brick wall",
+     "acting": "card wipes off left; dust motes",
+     "library": "marketStreet({alley:true}) + palmTree + brickWall({build:0.35})"
+    },
+    {
+     "t": 64.9,
+     "end": 66.1,
+     "cue": {
+      "word": "البصرة",
+      "t": 64.9
+     },
+     "who": "lettering",
+     "action": "BASRA label in the top band",
+     "acting": "label pop, holds 1.5 s",
+     "library": "label()"
+    },
+    {
+     "t": 65.56,
+     "end": 66.56,
+     "cue": {
+      "word": "وعمل",
+      "t": 65.56
+     },
+     "who": "prince",
+     "action": "lifts a brick from the stack with both hands",
+     "acting": "anticipate() knee dip, brick carried at chest, gaze on the wall",
+     "library": "person handLW/handRW to the brick; anticipate"
+    },
+    {
+     "t": 66.38,
+     "end": 67.38,
+     "cue": {
+      "word": "بناء",
+      "t": 66.58
+     },
+     "who": "prince",
+     "action": "sets the brick on the top course and taps it level with the trowel handle",
+     "acting": "brick lands with landSquash and a small dust puff; tongue-tip concentration (mouth closed, brow 0.2)",
+     "library": "brickWall build key + dustBurst; landSquash"
+    },
+    {
+     "t": 67.04,
+     "end": 67.94,
+     "cue": {
+      "word": "الجدران.",
+      "t": 67.04
+     },
+     "who": "prince",
+     "action": "lays two more bricks in rhythm; the course completes",
+     "acting": "strikeCycle style rhythm at 0.45 s per brick, head bobs with each",
+     "library": "brickWall build 0.35 -> 0.5; kfn"
+    },
+    {
+     "t": 68.56,
+     "end": 69.56,
+     "cue": {
+      "word": "يشترط",
+      "t": 68.86
+     },
+     "who": "foreman",
+     "action": "walks in holding out a fat purse",
+     "acting": "generous smile, belly forward, gaze on the prince",
+     "library": "person {costume:\"villager\", pal ochre} + walk; purse (planned)"
+    },
+    {
+     "t": 69.52,
+     "end": 70.42,
+     "cue": {
+      "word": "أجرًا",
+      "t": 69.52
+     },
+     "who": "prince",
+     "action": "wipes his hands, holds up two fingers apart: only a little",
+     "acting": "gaze on the foreman, mild smile, head tilt",
+     "library": "person handR: PERSON_HANDS.pointUp.R (pinch gesture keyed)"
+    },
+    {
+     "t": 70.74,
+     "end": 71.94,
+     "cue": {
+      "word": "درهمًا",
+      "t": 70.94
+     },
+     "who": "fx",
+     "action": "counter box: one large silver coin drops in with the label 1 DIRHAM",
+     "acting": "coin spins edge-on to flat (scale x), lands with a bounce",
+     "library": "counter()/box() + coinPile single, silver palette"
+    },
+    {
+     "t": 72.0,
+     "end": 73.2,
+     "cue": {
+      "word": "ودانقًا،",
+      "t": 72.2
+     },
+     "who": "fx",
+     "action": "a much smaller coin drops beside it: 1 DANIQ",
+     "acting": "small coin about 45 % the size; bounces twice",
+     "library": "coinPile single small"
+    },
+    {
+     "t": 73.1,
+     "end": 73.6,
+     "cue": {
+      "word": "ودانقًا،",
+      "t": 72.2
+     },
+     "who": "foreman",
+     "action": "looks from the fat purse to the two little coins, shrugs, pockets the purse",
+     "acting": "brow -0.8, shoulders up (armsOut), gaze flips purse, coins, prince",
+     "library": "person PERSON_HANDS.armsOut"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 64.9,
+     "text": "BASRA"
+    },
+    {
+     "t": 70.94,
+     "text": "1 DIRHAM"
+    },
+    {
+     "t": 72.2,
+     "text": "1 DANIQ"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 73.6
+   }
+  },
+  {
+   "id": "S8",
+   "start": 73.6,
+   "end": 83.06,
+   "paragraphs": [
+    4
+   ],
+   "set": "basraSite",
+   "cast": [
+    "prince",
+    "foreman",
+    "beggar"
+   ],
+   "summary": "The call to prayer: he puts the trowel down mid-brick and goes. Afterwards the small coin buys his bread and the big coin goes into a poor man's hand.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "Medium on the prince at the wall {x:470,y:690,zoom:1.5}; at 75.4 tilt-pan up right to the minaret and its sound arcs {x:640,y:520,zoom:1.2}; at 78.0 cut in to a medium of the prince at the wall end {x:640,y:700,zoom:1.6}; pan right with the dirham to the beggar at 81.1."
+   },
+   "composition": "Minaret top rises behind the alley wall at x 820 (balcony about y 300, approximate). After prayer the prince stands at x 560; beggar sits on the ground at x 800 (sit floor), hand out. Counter box with the two coins stays top left and empties coin by coin.",
+   "actions": [
+    {
+     "t": 73.6,
+     "end": 74.6,
+     "cue": {
+      "word": "ويطلب",
+      "t": 73.6
+     },
+     "who": "prince",
+     "action": "in the middle of setting a brick, stops and raises one hand: one condition",
+     "acting": "gaze to the foreman, brick held in the other hand",
+     "library": "person handR: PERSON_HANDS.pointUp.R"
+    },
+    {
+     "t": 75.1,
+     "end": 76.7,
+     "cue": {
+      "word": "الأذان",
+      "t": 75.4
+     },
+     "who": "fx",
+     "action": "sound arcs spread from the minaret balcony; the prince's head turns to them",
+     "acting": "soundArcs in yellow, three rings; his gaze snaps up-right, lid opens",
+     "library": "soundArcs(ctx, 820, 300, -1, t) + minaret (new prop)"
+    },
+    {
+     "t": 76.0,
+     "end": 76.8,
+     "cue": {
+      "word": "الأذان",
+      "t": 75.4
+     },
+     "who": "lettering",
+     "action": "PRAYER TIME label beside the minaret",
+     "acting": "label pop",
+     "library": "label()"
+    },
+    {
+     "t": 75.92,
+     "end": 77.02,
+     "cue": {
+      "word": "للصلاة",
+      "t": 76.12
+     },
+     "who": "prince",
+     "action": "lays the trowel on the wall, dusts his palms and walks off toward the minaret",
+     "acting": "no hurry but no delay: anticipate then walk amp 0.8; trowel rocks once and settles",
+     "library": "walk + footfalls; trowel settle via pulse"
+    },
+    {
+     "t": 77.04,
+     "end": 77.84,
+     "cue": {
+      "word": "الجماعة.",
+      "t": 77.24
+     },
+     "who": "foreman",
+     "action": "and two silhouetted worshippers cross the back in the same direction, out of step",
+     "acting": "villagers as flat silhouettes at s 0.6 behind the wall top, stagger(i)",
+     "library": "person silhouettes (alpha, flat black) + stagger"
+    },
+    {
+     "t": 77.7,
+     "end": 78.7,
+     "cue": {
+      "word": "ينفق",
+      "t": 78.0
+     },
+     "who": "prince",
+     "action": "back at the wall end, holds the two coins on his open palm and looks at them",
+     "acting": "gaze down at the palm, lid 0.3",
+     "library": "person handRW; coin drawings"
+    },
+    {
+     "t": 79.26,
+     "end": 80.26,
+     "cue": {
+      "word": "الدانق",
+      "t": 79.26
+     },
+     "who": "fx",
+     "action": "the small coin hops from the counter box and turns into a round loaf with a pop",
+     "acting": "coin arc 0.4 s, pop star, loaf appears in his other hand",
+     "library": "kfn arc + emphasis pop; bread prop"
+    },
+    {
+     "t": 80.14,
+     "end": 80.94,
+     "cue": {
+      "word": "طعامه",
+      "t": 80.24
+     },
+     "who": "prince",
+     "action": "takes one modest bite of the loaf",
+     "acting": "chew: cheek squash 2 beats, eyes shut for one beat (content)",
+     "library": "person mouth open/closed keyed"
+    },
+    {
+     "t": 80.7,
+     "end": 81.9,
+     "cue": {
+      "word": "ويتصدق",
+      "t": 81.1
+     },
+     "who": "prince",
+     "action": "turns to a beggar sitting by the wall and places the big silver coin in his hand",
+     "acting": "bends at the waist (tip 0.18), gaze on the beggar's face, warm smile",
+     "library": "person handRW to the beggar's palm; tip"
+    },
+    {
+     "t": 82.26,
+     "end": 83.06,
+     "cue": {
+      "word": "بالدرهم.",
+      "t": 82.26
+     },
+     "who": "beggar",
+     "action": "stares at the big coin, then up at the youth, hand to his heart",
+     "acting": "eyes wide then wet true, smile, sq 1.04 lift",
+     "library": "person {costume:\"villager\", age:0.9, sit:1, seat:\"floor\"} handL: PERSON_HANDS.chest.L"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 76.0,
+     "text": "PRAYER TIME"
+    },
+    {
+     "t": 82.26,
+     "text": "CHARITY"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 83.06
+   }
+  },
+  {
+   "id": "S9",
+   "start": 83.06,
+   "end": 94.14,
+   "paragraphs": [
+    5
+   ],
+   "set": "abuAmirYard",
+   "cast": [
+    "abuAmir",
+    "prince"
+   ],
+   "summary": "Abu Amir hires him to mend the broken wall of his house, and watches with growing admiration: perfect courses, and no food or water all day.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide yard {x:500,y:680,zoom:1.05}; 87.7 push to the broken wall and the two men {x:470,y:700,zoom:1.4}; 90.5 push to Abu Amir's face reacting {x:640,y:660,zoom:1.8}; 92.7 widen to both {zoom:1.4}."
+   },
+   "composition": "villageYard cottage on the right (VYARD door). The yard wall (brickWall with a V gap) runs x 180..600. Prince works at x 380; Abu Amir stands at x 680 near his door, facing left. Sun arcs overhead during the scene.",
+   "actions": [
+    {
+     "t": 83.06,
+     "end": 84.66,
+     "cue": {
+      "word": "استأجره",
+      "t": 83.06
+     },
+     "who": "abuAmir",
+     "action": "comes out of his door, spots the young builder passing with his trowel and beckons him over",
+     "acting": "friendly, round, quick: wave, smile, gaze on the prince",
+     "library": "villageYard({door}) + person {costume:\"merchant\", pal green/yellow turban} handR: PERSON_HANDS.wave.R"
+    },
+    {
+     "t": 85.4,
+     "end": 86.4,
+     "cue": {
+      "word": "رجل",
+      "t": 85.4
+     },
+     "who": "prince",
+     "action": "walks in from the left with the trowel and a small bundle, stops with a nod",
+     "acting": "walk amp 0.8, respectful nod (head dip)",
+     "library": "walk + footfalls; bindle"
+    },
+    {
+     "t": 86.48,
+     "end": 87.68,
+     "cue": {
+      "word": "أبو",
+      "t": 86.68
+     },
+     "who": "lettering",
+     "action": "ABU AMIR name label with an arrow",
+     "acting": "label pop; holds 1.6 s",
+     "library": "label() + arrow()"
+    },
+    {
+     "t": 87.52,
+     "end": 88.52,
+     "cue": {
+      "word": "لترميم",
+      "t": 87.72
+     },
+     "who": "abuAmir",
+     "action": "points at the yard wall: a jagged gap with fallen bricks at its foot",
+     "acting": "handRW to the gap, gaze to the gap then to the prince, talk 0.6",
+     "library": "brickWall({gap:1}) + person pointFwd"
+    },
+    {
+     "t": 88.62,
+     "end": 89.62,
+     "cue": {
+      "word": "جدار",
+      "t": 88.62
+     },
+     "who": "prince",
+     "action": "kneels at the gap and starts fitting bricks; the gap begins to close from the bottom",
+     "acting": "kneel 0.6, hands alternate, gaze on the work",
+     "library": "person kneel; brickWall gap 1 -> 0.6"
+    },
+    {
+     "t": 89.54,
+     "end": 90.54,
+     "cue": {
+      "word": "بيته،",
+      "t": 89.54
+     },
+     "who": "set",
+     "action": "the sun slides along its arc: hours pass while the gap keeps closing",
+     "acting": "skyCycle u 0.15 -> 0.4 over the scene; shadows lengthen",
+     "library": "villageYard({sun}) keyed with kfn"
+    },
+    {
+     "t": 90.5,
+     "end": 91.6,
+     "cue": {
+      "word": "فأعجبه",
+      "t": 90.5
+     },
+     "who": "abuAmir",
+     "action": "bends to sight along the finished courses, runs a finger along a dead straight mortar line",
+     "acting": "eyes wide then lid 0.3 with a slow nod, brow -0.6, mouth o then smile",
+     "library": "person handRW along the wall top; tip 0.12"
+    },
+    {
+     "t": 91.62,
+     "end": 92.62,
+     "cue": {
+      "word": "إتقانه",
+      "t": 91.62
+     },
+     "who": "fx",
+     "action": "a ruler-straight dashed line and a small tick flash along the new courses",
+     "acting": "dashed line draws left to right in 0.5 s",
+     "library": "K line dash + tick strokes"
+    },
+    {
+     "t": 92.4,
+     "end": 93.6,
+     "cue": {
+      "word": "وصيامه.",
+      "t": 92.7
+     },
+     "who": "abuAmir",
+     "action": "offers a loaf and a water jug at midday; the youth smiles and declines with a raised palm",
+     "acting": "Abu Amir puzzled then touched: hand to chest, lid 0.3; prince gaze kind, head shake small",
+     "library": "person PERSON_HANDS.shield for the prince; bread + waterJug props"
+    },
+    {
+     "t": 93.3,
+     "end": 94.14,
+     "cue": {
+      "word": "وصيامه.",
+      "t": 92.7
+     },
+     "who": "lettering",
+     "action": "FASTING label over the untouched loaf and jug",
+     "acting": "label pop",
+     "library": "label()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 86.68,
+     "text": "ABU AMIR"
+    },
+    {
+     "t": 92.9,
+     "text": "FASTING"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 94.14
+   }
+  },
+  {
+   "id": "S10",
+   "start": 94.14,
+   "end": 105.28,
+   "paragraphs": [
+    5
+   ],
+   "set": "abuAmirYard",
+   "cast": [
+    "abuAmir",
+    "prince"
+   ],
+   "summary": "Evening: Abu Amir tries to pay double. The youth takes exactly one dirham and one daniq, pushes the rest back, and is at the wall again the next Saturday.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Two-shot {x:520,y:690,zoom:1.6}; push to the hands and coins at 96.4 {x:520,y:720,zoom:2.1}; back out at 99.1 {zoom:1.5}; at 101.0 a quick sky sweep (day passes) then wide {zoom:1.1}."
+   },
+   "composition": "Prince x 420 facing right, Abu Amir x 620 facing left; the exchange of hands at x 520, y 730. Finished wall behind them. Dusk tint.",
+   "actions": [
+    {
+     "t": 94.14,
+     "end": 95.14,
+     "cue": {
+      "word": "حاول",
+      "t": 94.14
+     },
+     "who": "abuAmir",
+     "action": "pulls out his purse and counts coins into his own palm, grinning",
+     "acting": "gaze down on the coins, tongue-out concentration, belly bounce",
+     "library": "purse (planned) + coinPile silver"
+    },
+    {
+     "t": 94.98,
+     "end": 95.88,
+     "cue": {
+      "word": "يعطيه",
+      "t": 94.98
+     },
+     "who": "abuAmir",
+     "action": "holds out a double handful: two big coins and two small",
+     "acting": "arm extends with overshoot, eyebrows up, generous smile",
+     "library": "person handLW/handRW"
+    },
+    {
+     "t": 96.44,
+     "end": 97.64,
+     "cue": {
+      "word": "مضاعفًا،",
+      "t": 96.44
+     },
+     "who": "lettering",
+     "action": "X2 badge pops over the coins",
+     "acting": "emphasis burst, 1.2 s",
+     "library": "emphasis()/label()"
+    },
+    {
+     "t": 97.82,
+     "end": 98.62,
+     "cue": {
+      "word": "لكن",
+      "t": 97.82
+     },
+     "who": "prince",
+     "action": "looks at the heap and tilts his head",
+     "acting": "gaze on the coins, lid 0.3, no greed: pupils steady (contrast with a coin-eyes gag avoided)",
+     "library": "gaze"
+    },
+    {
+     "t": 98.9,
+     "end": 99.9,
+     "cue": {
+      "word": "رفض",
+      "t": 99.1
+     },
+     "who": "prince",
+     "action": "picks out one big and one small coin with finger and thumb",
+     "acting": "careful pinch, two beats, gaze on each coin in turn",
+     "library": "person handRW keyed"
+    },
+    {
+     "t": 99.74,
+     "end": 100.74,
+     "cue": {
+      "word": "الزيادة.",
+      "t": 99.74
+     },
+     "who": "prince",
+     "action": "closes Abu Amir's fingers over the rest and gently pushes the hand back",
+     "acting": "soft smile, eyes on Abu Amir, tip 0.05 forward",
+     "library": "person handLW on Abu Amir's fist"
+    },
+    {
+     "t": 100.64,
+     "end": 101.04,
+     "cue": {
+      "word": "الزيادة.",
+      "t": 99.74
+     },
+     "who": "abuAmir",
+     "action": "stares at his own full fist, then at the youth walking away; scratches his turban",
+     "acting": "eyes wide, mouth o, then a slow admiring smile, lid 0.3",
+     "library": "person PERSON_HANDS.headHold"
+    },
+    {
+     "t": 100.92,
+     "end": 101.92,
+     "cue": {
+      "word": "وعاد",
+      "t": 101.02
+     },
+     "who": "set",
+     "action": "sky sweep: sun sets, moon crosses, sun rises again",
+     "acting": "skyCycle u 0.45 -> 1.1 in 1.0 s; yard darkens and brightens",
+     "library": "skyCycle + dayCycle night tint"
+    },
+    {
+     "t": 101.86,
+     "end": 103.06,
+     "cue": {
+      "word": "يوم",
+      "t": 102.16
+     },
+     "who": "lettering",
+     "action": "NEXT SATURDAY label",
+     "acting": "label pop top band",
+     "library": "label()"
+    },
+    {
+     "t": 102.74,
+     "end": 103.74,
+     "cue": {
+      "word": "التالي",
+      "t": 103.04
+     },
+     "who": "prince",
+     "action": "is back at the wall with his trowel, raising a new course; holds up the same two fingers: same terms",
+     "acting": "cheerful, steady rhythm; Abu Amir nods, palms up in surrender",
+     "library": "brickWall build key; person gestures"
+    },
+    {
+     "t": 104.42,
+     "end": 105.02,
+     "cue": {
+      "word": "نفسها.",
+      "t": 104.62
+     },
+     "who": "fx",
+     "action": "the counter box returns for a moment with the same two coins, big and small",
+     "acting": "coins drop in as before, half a second faster",
+     "library": "counter box reuse"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 96.44,
+     "text": "X2"
+    },
+    {
+     "t": 102.2,
+     "text": "NEXT SATURDAY"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 105.28
+   }
+  },
+  {
+   "id": "S11",
+   "start": 105.28,
+   "end": 111.4,
+   "paragraphs": [
+    6
+   ],
+   "set": "abuAmirYard",
+   "cast": [
+    "abuAmir",
+    "neighbour"
+   ],
+   "summary": "The third Saturday: the wall stands half done, the trowel lies alone. Abu Amir waits, worried, until a neighbour tells him the worker is ill.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Start on the idle trowel on the wall top {x:380,y:740,zoom:2.0}; pull to a medium of Abu Amir waiting {x:560,y:690,zoom:1.4} by 107.3; small push on his face at 110.9."
+   },
+   "composition": "Empty place at the wall (x 380) is the centre of the composition: a visible gap where the prince should be. Abu Amir at x 640 looking left down the road; neighbour enters from the left to x 300.",
+   "actions": [
+    {
+     "t": 105.28,
+     "end": 106.68,
+     "cue": {
+      "word": "في",
+      "t": 105.28
+     },
+     "who": "set",
+     "action": "close on the trowel lying on the unfinished course; morning light, nobody there",
+     "acting": "a sparrow hops on the wall beside it (life in a still frame)",
+     "library": "bird {kind:\"sparrow\"} + hop; trowel prop"
+    },
+    {
+     "t": 106.88,
+     "end": 108.08,
+     "cue": {
+      "word": "السبت",
+      "t": 106.88
+     },
+     "who": "lettering",
+     "action": "THIRD SATURDAY label",
+     "acting": "label pop",
+     "library": "label()"
+    },
+    {
+     "t": 107.68,
+     "end": 108.68,
+     "cue": {
+      "word": "علم",
+      "t": 108.08
+     },
+     "who": "abuAmir",
+     "action": "paces two steps, shades his eyes and looks down the road",
+     "acting": "worried brow -0.7, gaze far left, foot tap",
+     "library": "walk short + PERSON_HANDS.cupEar style hand at brow"
+    },
+    {
+     "t": 108.86,
+     "end": 109.86,
+     "cue": {
+      "word": "أبو",
+      "t": 108.86
+     },
+     "who": "neighbour",
+     "action": "hurries in from the left and stops in front of him, catching breath",
+     "acting": "sq 0.95 on stop, lurch, gaze up at Abu Amir",
+     "library": "person {costume:\"villager\"} walk + lurch"
+    },
+    {
+     "t": 110.2,
+     "end": 111.1,
+     "cue": {
+      "word": "العامل",
+      "t": 110.2
+     },
+     "who": "neighbour",
+     "action": "speaks: an icon balloon shows the young builder lying down",
+     "acting": "balloon pops above the neighbour; talk 0.8; points back the way he came",
+     "library": "box balloon with a small lying person icon (person lie:1 at 0.3 scale)"
+    },
+    {
+     "t": 110.86,
+     "end": 111.36,
+     "cue": {
+      "word": "مريض",
+      "t": 110.86
+     },
+     "who": "abuAmir",
+     "action": "hand flies to his chest, eyes wide; the sparrow startles off the wall",
+     "acting": "mouth o, sq 1.05 then 0.97, gaze on the balloon",
+     "library": "person PERSON_HANDS.chest; bird fly"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 106.88,
+     "text": "THIRD SATURDAY"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 111.4
+   }
+  },
+  {
+   "id": "S12",
+   "start": 111.4,
+   "end": 113.82,
+   "paragraphs": [
+    6
+   ],
+   "set": "graveyard",
+   "cast": [
+    "abuAmir"
+   ],
+   "summary": "A lonely hut at the edge of the same kind of graveyard the prince used to visit.",
+   "camera": {
+    "shot": "establishing",
+    "move": "drift",
+    "notes": "Wide {x:520,y:660,zoom:1.05} drifting right 30 units toward the hut."
+   },
+   "composition": "graveyard with hut option: mud hut at x 700..940, roof y 640, door facing left. Abu Amir small (s 0.8) hurrying in from the left between the graves.",
+   "actions": [
+    {
+     "t": 111.78,
+     "end": 112.78,
+     "cue": {
+      "word": "كوخ",
+      "t": 111.78
+     },
+     "who": "set",
+     "action": "a small mud hut beside the graves, one dim window",
+     "acting": "skyCycle u 0.42 (late afternoon), thin smoke-less chimney, stillness",
+     "library": "graveyard({hut:{x0:700,x1:940,top:640}, u:0.42})"
+    },
+    {
+     "t": 112.34,
+     "end": 113.54,
+     "cue": {
+      "word": "قرب",
+      "t": 112.34
+     },
+     "who": "abuAmir",
+     "action": "hurries between the graves to the hut door",
+     "acting": "fast walk amp 1, leaning forward (tip 0.08), gaze on the door",
+     "library": "walk + footfalls"
+    },
+    {
+     "t": 113.12,
+     "end": 113.72,
+     "cue": {
+      "word": "المقابر.",
+      "t": 112.92
+     },
+     "who": "abuAmir",
+     "action": "stops at the door, hesitates with his hand on it, pushes it open",
+     "acting": "anticipate() breath in, lid blink, then push",
+     "library": "townDoor open 0 -> 0.7; anticipate"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 113.82
+   }
+  },
+  {
+   "id": "S13",
+   "start": 113.82,
+   "end": 129.28,
+   "paragraphs": [
+    6
+   ],
+   "set": "hutRoom",
+   "cast": [
+    "abuAmir",
+    "prince"
+   ],
+   "summary": "Inside: the youth lies on the bare floor with a brick for a pillow. Abu Amir kneels beside him. The youth asks two things: bury me, then give what is in my pocket to my father.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Cutaway wide {x:500,y:680,zoom:1.1}; 116.4 push to the lying figure {x:470,y:800,zoom:1.7}; 119.5 insert on the brick under his head {x:360,y:830,zoom:2.4}; 121.6 two-shot {x:470,y:760,zoom:1.6}; 126.4 push to the chest pocket {x:470,y:820,zoom:2.2}."
+   },
+   "composition": "hutRoom with no mattress and no mat: bare floor y 900. Prince lies at hips x 470, head toward -x on a brick at about x 350. Door on the right wall (doorSide right); Abu Amir kneels at x 620 facing left. Lamp in the niche. Keep the lying face at y 830 or above.",
+   "actions": [
+    {
+     "t": 113.82,
+     "end": 115.22,
+     "cue": {
+      "word": "زاره",
+      "t": 113.82
+     },
+     "who": "abuAmir",
+     "action": "steps in through the door and stops, one hand on the frame",
+     "acting": "eyes adjust: lid 0.5 -> 0, gaze sweeps the bare room then drops to the floor",
+     "library": "hutRoom({palette:\"dusk\", door:0.7, doorSide:\"right\", mattress:false, mat:false, lamp:0.6})"
+    },
+    {
+     "t": 115.48,
+     "end": 116.38,
+     "cue": {
+      "word": "فوجده",
+      "t": 115.48
+     },
+     "who": "camera",
+     "action": "reveal by push: the youth on the floor",
+     "acting": "ease in-out",
+     "library": "K.camAt keys"
+    },
+    {
+     "t": 116.42,
+     "end": 117.42,
+     "cue": {
+      "word": "مستلقيًا",
+      "t": 116.42
+     },
+     "who": "prince",
+     "action": "lies on his back on the bare earth, wool robe, breathing slowly",
+     "acting": "lie 1, lid 0.7, breathe() slow, pale tone (pal skin lighter), one hand on his chest",
+     "library": "person {costume:\"devotee\", lie:1} + breathe"
+    },
+    {
+     "t": 117.58,
+     "end": 118.48,
+     "cue": {
+      "word": "الأرض،",
+      "t": 117.78
+     },
+     "who": "abuAmir",
+     "action": "sinks to his knees beside him",
+     "acting": "kneel 0 -> 1 with settle, gaze on the youth's face, wet true",
+     "library": "person kneel; landSquash; wet"
+    },
+    {
+     "t": 118.84,
+     "end": 119.74,
+     "cue": {
+      "word": "جعل",
+      "t": 119.04
+     },
+     "who": "fx",
+     "action": "insert: his head rests on a single clay brick; an arrow marks it",
+     "acting": "arrow draws in, brick has the same look as the wall bricks",
+     "library": "brick (brickWall single) + arrow()"
+    },
+    {
+     "t": 119.52,
+     "end": 120.42,
+     "cue": {
+      "word": "لبنة",
+      "t": 119.52
+     },
+     "who": "abuAmir",
+     "action": "starts to slip his own folded cloak under the head; the youth's hand stops him gently",
+     "acting": "prince lid opens to 0.4, small smile, hand lifts and lowers",
+     "library": "person handLW keyed"
+    },
+    {
+     "t": 121.58,
+     "end": 122.58,
+     "cue": {
+      "word": "طلب",
+      "t": 121.58
+     },
+     "who": "prince",
+     "action": "turns his eyes to Abu Amir and speaks softly",
+     "acting": "gaze right to Abu Amir, talk 0.4 (weak), lid 0.45",
+     "library": "gaze, talk"
+    },
+    {
+     "t": 123.34,
+     "end": 124.44,
+     "cue": {
+      "word": "يدفنه",
+      "t": 123.44
+     },
+     "who": "fx",
+     "action": "icon balloon above them: a plain graveMarker",
+     "acting": "balloon pops clear of both faces (top centre)",
+     "library": "box balloon + graveMarker icon"
+    },
+    {
+     "t": 124.5,
+     "end": 125.1,
+     "cue": {
+      "word": "موته،",
+      "t": 124.5
+     },
+     "who": "abuAmir",
+     "action": "nods quickly, wipes one eye with the back of his hand",
+     "acting": "wet true, teardrops one drop, mouth pressed",
+     "library": "teardrops(ctx, t, t0, t1, eye)"
+    },
+    {
+     "t": 125.46,
+     "end": 126.46,
+     "cue": {
+      "word": "ثم",
+      "t": 125.46
+     },
+     "who": "prince",
+     "action": "raises a finger: one more thing",
+     "acting": "hand lifts slowly, trembling slightly",
+     "library": "tremble; PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 126.74,
+     "end": 127.94,
+     "cue": {
+      "word": "جيب",
+      "t": 127.04
+     },
+     "who": "prince",
+     "action": "lays his hand on the patch pocket over his chest; a faint red glint shows through the wool for a moment",
+     "acting": "gaze down to the pocket then back to Abu Amir; glint is one small star, 0.5 s",
+     "library": "person handRW to the pocket; goldGlow small, red"
+    },
+    {
+     "t": 128.36,
+     "end": 129.26,
+     "cue": {
+      "word": "أبيه.",
+      "t": 128.56
+     },
+     "who": "fx",
+     "action": "the balloon changes: an arrow from the pocket to a small crowned head (his father)",
+     "acting": "icon swap with a pop; Abu Amir's brow lifts, puzzled: whose son is this?",
+     "library": "box balloon + caliph head icon; brow -0.8"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 129.28
+   }
+  },
+  {
+   "id": "S14",
+   "start": 129.28,
+   "end": 134.26,
+   "paragraphs": [
+    7
+   ],
+   "set": "hutRoom",
+   "cast": [
+    "abuAmir",
+    "prince",
+    "dove"
+   ],
+   "summary": "The youth dies quietly, as he had said he would.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "Hold the two-shot {x:470,y:770,zoom:1.6}, then slow pull-out to {zoom:1.2} tilting up to the window as the dove leaves."
+   },
+   "composition": "Same placement. The window (HUT.window) upper right of the lying figure shows the evening sky; the lamp niche on the back wall.",
+   "actions": [
+    {
+     "t": 129.28,
+     "end": 130.58,
+     "cue": {
+      "word": "مات",
+      "t": 129.28
+     },
+     "who": "prince",
+     "action": "his eyes close, the hand on his chest slides down to the floor",
+     "acting": "lid 0.45 -> 1 over 0.8 s, breathe amplitude fades to 0, faint smile stays",
+     "library": "lid keyed; breathe scaled by kfn"
+    },
+    {
+     "t": 130.18,
+     "end": 130.98,
+     "cue": {
+      "word": "مات",
+      "t": 129.28
+     },
+     "who": "set",
+     "action": "the lamp flame in the niche shrinks and goes out; the room cools to blue",
+     "acting": "lamp 0.6 -> 0 and dark 0 -> 0.35 over 1 s",
+     "library": "hutRoom lamp, dark keyed"
+    },
+    {
+     "t": 130.94,
+     "end": 131.94,
+     "cue": {
+      "word": "الشاب",
+      "t": 130.94
+     },
+     "who": "abuAmir",
+     "action": "bows his head, covers his face with one hand",
+     "acting": "tip 0.12, lid 1, wet true, shoulders shake twice (tremble 1 unit)",
+     "library": "PERSON_HANDS.mouthCover; tremble"
+    },
+    {
+     "t": 132.08,
+     "end": 133.28,
+     "cue": {
+      "word": "توقع",
+      "t": 132.28
+     },
+     "who": "dove",
+     "action": "a white dove rises from the window sill and flies out into the evening sky",
+     "acting": "slow flap, straight rising path, shrinking; Abu Amir's gaze follows it",
+     "library": "bird {kind:\"dove\", fly:true}"
+    },
+    {
+     "t": 133.16,
+     "end": 133.96,
+     "cue": {
+      "word": "الحكاية،",
+      "t": 133.16
+     },
+     "who": "abuAmir",
+     "action": "lowers his hand, looks at the still face, then at the pocket",
+     "acting": "gaze face then pocket, lid 0.4",
+     "library": "gaze keyed"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 134.26
+   }
+  },
+  {
+   "id": "S15",
+   "start": 134.26,
+   "end": 141.9,
+   "paragraphs": [
+    7
+   ],
+   "set": "graveyard",
+   "cast": [
+    "abuAmir"
+   ],
+   "summary": "Abu Amir washes and buries him: a fresh plain grave like all the others. Folding the wool robe, he finds a ruby.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide on the fresh grave {x:500,y:680,zoom:1.15}; 138.2 push to Abu Amir's hands {x:560,y:720,zoom:2.0}; 140.0 push again on the ruby {zoom:2.5}."
+   },
+   "composition": "Fresh mound at x 500 front row (darker earth, new headstone). Abu Amir at x 620 facing left; water jug and folded white cloth on the ground at x 720. The headstone is an ordinary one like all the others (see owner_questions for the brick alternative).",
+   "actions": [
+    {
+     "t": 134.26,
+     "end": 135.36,
+     "cue": {
+      "word": "فغسله",
+      "t": 134.26
+     },
+     "who": "abuAmir",
+     "action": "sets down an empty water jug and a folded white cloth: the washing is done",
+     "acting": "slow, careful; gaze down, lid 0.5",
+     "library": "waterJug prop + folded cloth (white rounded box)"
+    },
+    {
+     "t": 136.18,
+     "end": 137.38,
+     "cue": {
+      "word": "ودفنه.",
+      "t": 136.58
+     },
+     "who": "abuAmir",
+     "action": "pats the last earth onto a fresh mound with both hands and stands a small headstone",
+     "acting": "kneel 1, two pats with dust puffs, then rises",
+     "library": "graveyard({fresh:{x:500}}) + dustBurst; person kneel -> 0"
+    },
+    {
+     "t": 137.38,
+     "end": 138.18,
+     "cue": {
+      "word": "ودفنه.",
+      "t": 136.58
+     },
+     "who": "abuAmir",
+     "action": "stands with palms raised in a short prayer",
+     "acting": "PERSON_HANDS.palmsUp both, lid 1, head bowed",
+     "library": "person palmsUp"
+    },
+    {
+     "t": 138.24,
+     "end": 138.94,
+     "cue": {
+      "word": "وجد",
+      "t": 138.24
+     },
+     "who": "abuAmir",
+     "action": "picks up the folded wool robe and feels the pocket",
+     "acting": "gaze on the robe, brow -0.4",
+     "library": "wool robe prop (folded brown rounded box with patch)"
+    },
+    {
+     "t": 138.66,
+     "end": 139.46,
+     "cue": {
+      "word": "ثوبه",
+      "t": 138.96
+     },
+     "who": "abuAmir",
+     "action": "something hard: he turns the pocket out into his palm",
+     "acting": "anticipate, small shake",
+     "library": "shake"
+    },
+    {
+     "t": 140.0,
+     "end": 141.2,
+     "cue": {
+      "word": "ياقوتة",
+      "t": 140.0
+     },
+     "who": "fx",
+     "action": "a big red ruby drops into his palm and blazes",
+     "acting": "ruby bounces once in the palm, goldGlow 0 -> 1 with red tint, star glints staggered",
+     "library": "jewels (planned) red gem + goldGlow (planned)"
+    },
+    {
+     "t": 140.5,
+     "end": 141.4,
+     "cue": {
+      "word": "ياقوتة",
+      "t": 140.0
+     },
+     "who": "lettering",
+     "action": "RUBY! in red with a burst",
+     "acting": "emphasis pop, 1.3 s",
+     "library": "emphasis()"
+    },
+    {
+     "t": 140.72,
+     "end": 141.52,
+     "cue": {
+      "word": "ثمينة،",
+      "t": 140.72
+     },
+     "who": "abuAmir",
+     "action": "eyes huge, lit red from below; looks from the gem to the poor grave and back",
+     "acting": "eyes wide, mouth o, gaze gem, grave, gem (saccades); sq 1.05",
+     "library": "gaze saccade"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 140.5,
+     "text": "RUBY!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 141.9
+   }
+  },
+  {
+   "id": "S16",
+   "start": 141.9,
+   "end": 144.46,
+   "paragraphs": [
+    7
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "abuAmir"
+   ],
+   "summary": "He carries it to Baghdad.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Track left with the donkey toward the city gate: camX 600 -> 0, zoom 1.1."
+   },
+   "composition": "desertRoad city:\"left\". Abu Amir on a grey donkey moving right to left (dir -1), one hand pressed to the breast of his robe where the ruby is.",
+   "actions": [
+    {
+     "t": 141.9,
+     "end": 143.1,
+     "cue": {
+      "word": "وحملها",
+      "t": 141.9
+     },
+     "who": "abuAmir",
+     "action": "rides a donkey along the sand road, one hand guarding his chest",
+     "acting": "gaze ahead, brow set, bob with the gait; a red glint pulses under his hand",
+     "library": "rideOn(ctx,\"donkey\",{...walk(xf,t,{stride:GAIT.donkey*s}),dir:-1},{costume:\"merchant\"})"
+    },
+    {
+     "t": 143.0,
+     "end": 144.0,
+     "cue": {
+      "word": "بغداد.",
+      "t": 143.2
+     },
+     "who": "set",
+     "action": "the Baghdad gate and domes slide in from the left",
+     "acting": "far city parallax; milestones pass",
+     "library": "desertRoad city + townFarCity"
+    },
+    {
+     "t": 143.8,
+     "end": 144.4,
+     "cue": {
+      "word": "بغداد.",
+      "t": 143.2
+     },
+     "who": "abuAmir",
+     "action": "reins in at the gate; rider lurches",
+     "acting": "lurch(t,tStop), donkey ears up",
+     "library": "lurch; donkey earL/earR"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 144.46
+   }
+  },
+  {
+   "id": "S17",
+   "start": 144.46,
+   "end": 156.94,
+   "paragraphs": [
+    7,
+    8
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "caliph",
+    "abuAmir",
+    "queen",
+    "vizier"
+   ],
+   "summary": "In the throne hall Abu Amir opens his hand. Harun knows the ruby at once: the gift the boy's mother gave him. Father and mother weep.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Two-shot throne and visitor {x:620,y:680,zoom:1.3}; 144.9 push on the ruby and the caliph's face {x:700,y:660,zoom:1.9}; 147.7 hold while the inset circle opens upper left; 152.4 widen to include the queen {x:600,y:680,zoom:1.25}."
+   },
+   "composition": "Caliph on the throne (HALL.throne x). Abu Amir kneels at x 520 facing right, ruby on his raised palm at (590, 700). Inset circle centre (270, 380) radius 190. Queen enters from the right behind the throne and stops at x 900; vizier at far left edge.",
+   "actions": [
+    {
+     "t": 144.46,
+     "end": 145.36,
+     "cue": {
+      "word": "وحين",
+      "t": 144.46
+     },
+     "who": "abuAmir",
+     "action": "kneels before the throne and opens his hand: the ruby",
+     "acting": "kneel 1, head bowed, arm raised via handRW; goldGlow red",
+     "library": "person kneel + handRW; jewels + goldGlow"
+    },
+    {
+     "t": 144.92,
+     "end": 145.92,
+     "cue": {
+      "word": "رآها",
+      "t": 144.92
+     },
+     "who": "caliph",
+     "action": "leans forward, casual at first, then freezes",
+     "acting": "tip 0.1, lid 0.3 -> 0, pupils lock on the gem, hand stops halfway to his beard",
+     "library": "lookAt gem; anticipate"
+    },
+    {
+     "t": 145.88,
+     "end": 146.78,
+     "cue": {
+      "word": "هارون",
+      "t": 145.58
+     },
+     "who": "caliph",
+     "action": "rises half out of the throne and takes the ruby with a shaking hand",
+     "acting": "sit 1 -> 0.5, tremble on the hand 2 units, brow -1, mouth o",
+     "library": "person sit keyed; tremble"
+    },
+    {
+     "t": 146.6,
+     "end": 147.6,
+     "cue": {
+      "word": "عرف",
+      "t": 146.8
+     },
+     "who": "fx",
+     "action": "inset circle irises open upper left: a memory",
+     "acting": "iris 0.4 s, pale wash inside",
+     "library": "inset circle (planned) with dream wash"
+    },
+    {
+     "t": 147.42,
+     "end": 148.62,
+     "cue": {
+      "word": "هدية",
+      "t": 147.72
+     },
+     "who": "fx",
+     "action": "in the memory the queen kneels to a small boy prince and holds out the same ruby",
+     "acting": "child prince s 0.62, queen kneel 0.6, ruby between them with a small glow",
+     "library": "person {costume:\"lady\"} + person {costume:\"prince\", child:true} inside the inset"
+    },
+    {
+     "t": 149.3,
+     "end": 150.3,
+     "cue": {
+      "word": "أعطتها",
+      "t": 149.5
+     },
+     "who": "fx",
+     "action": "the boy takes the ruby in both hands and hugs it; she closes his fingers over it",
+     "acting": "child smile, sq 1.05 hop; mother hand on his",
+     "library": "hop; handLW"
+    },
+    {
+     "t": 150.16,
+     "end": 151.16,
+     "cue": {
+      "word": "الأم",
+      "t": 150.16
+     },
+     "who": "lettering",
+     "action": "FROM HIS MOTHER label under the inset, arrow to the ruby in Harun's hand",
+     "acting": "label pop; arrow links past and present gem",
+     "library": "label() + arrow()"
+    },
+    {
+     "t": 150.62,
+     "end": 151.52,
+     "cue": {
+      "word": "لابنها.",
+      "t": 150.62
+     },
+     "who": "caliph",
+     "action": "sinks back onto the throne, the ruby pressed to his chest",
+     "acting": "sit back to 1 with heavy settle sq 0.93, lid 0.6, wet true; inset irises shut",
+     "library": "landSquash; wet"
+    },
+    {
+     "t": 152.24,
+     "end": 153.24,
+     "cue": {
+      "word": "بكى",
+      "t": 152.44
+     },
+     "who": "caliph",
+     "action": "weeps: head down, shoulders shaking, tears fall",
+     "acting": "teardrops both eyes, lid 0.85, tremble 1.5, crown turban tilts forward",
+     "library": "teardrops(); tremble"
+    },
+    {
+     "t": 153.78,
+     "end": 154.78,
+     "cue": {
+      "word": "وأم",
+      "t": 153.98
+     },
+     "who": "queen",
+     "action": "runs in, sees the ruby in his hand and stops with both hands to her cheeks",
+     "acting": "eyes wide, mouth o, sq 0.94 on the stop, veil lags behind the stop",
+     "library": "person {costume:\"lady\", age:0.4} walk + PERSON_HANDS.cheeks; lurch"
+    },
+    {
+     "t": 155.16,
+     "end": 156.16,
+     "cue": {
+      "word": "عند",
+      "t": 155.36
+     },
+     "who": "abuAmir",
+     "action": "still kneeling, tells the news with a small downward gesture: a tiny graveMarker balloon",
+     "acting": "talk 0.4, gaze lowered, lid 0.5",
+     "library": "box balloon + graveMarker icon"
+    },
+    {
+     "t": 156.22,
+     "end": 156.92,
+     "cue": {
+      "word": "الخبر،",
+      "t": 156.42
+     },
+     "who": "queen",
+     "action": "sinks to her knees by the throne and weeps into her hands; the caliph's free hand finds her shoulder",
+     "acting": "kneel 0 -> 1, PERSON_HANDS.mouthCover, wet true, teardrops; vizier bows his head at the edge",
+     "library": "person kneel; teardrops; handLW"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 149.5,
+     "text": "FROM HIS MOTHER"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 156.94
+   }
+  },
+  {
+   "id": "S18",
+   "start": 156.94,
+   "end": 161.04,
+   "paragraphs": [
+    8
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "caliph",
+    "abuAmir"
+   ],
+   "summary": "The caliph himself rides to Basra, Abu Amir leading the way.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Track right with the riders: camX 300 -> 900, zoom 1.05, dusk sky."
+   },
+   "composition": "desertRoad u 0.4, no city. Abu Amir on the grey donkey in front (x offset +260), caliph on the white horse behind, both moving left to right. Horse s 0.8, donkey s 0.75.",
+   "actions": [
+    {
+     "t": 157.62,
+     "end": 159.02,
+     "cue": {
+      "word": "سافر",
+      "t": 158.22
+     },
+     "who": "set",
+     "action": "road at late afternoon: dunes, palms, a long empty track",
+     "acting": "skyCycle u 0.4; palms sway",
+     "library": "desertRoad({w:2400, u:0.4, camX})"
+    },
+    {
+     "t": 158.22,
+     "end": 159.42,
+     "cue": {
+      "word": "سافر",
+      "t": 158.22
+     },
+     "who": "abuAmir",
+     "action": "rides in front on the donkey, pointing ahead",
+     "acting": "gaze ahead, arm pointFwd, bob",
+     "library": "rideOn donkey + PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 158.78,
+     "end": 160.08,
+     "cue": {
+      "word": "الخليفة",
+      "t": 158.78
+     },
+     "who": "caliph",
+     "action": "follows on the white horse, head bowed, no escort",
+     "acting": "lid 0.6, gaze down, sag in the shoulders (lean 0.08), the ruby glint at his fist on the reins",
+     "library": "rideOn(ctx,\"horse\",{...walk(xf,t,{stride:GAIT.horse*0.8}),pal:0},{costume:\"caliph\"})"
+    },
+    {
+     "t": 160.06,
+     "end": 160.86,
+     "cue": {
+      "word": "عامر",
+      "t": 160.36
+     },
+     "who": "caliph",
+     "action": "lifts his head as low grave shapes appear on the horizon ahead",
+     "acting": "gaze up [1,-0.1], brow -0.5",
+     "library": "lookAt"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 161.04
+   }
+  },
+  {
+   "id": "S19",
+   "start": 161.04,
+   "end": 177.42,
+   "paragraphs": [
+    8
+   ],
+   "set": "graveyard",
+   "cast": [
+    "caliph",
+    "abuAmir",
+    "dove"
+   ],
+   "summary": "At the plain grave in Basra the father grieves. The ruby rests in his open hand: wealth the youth owned and never used. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide {x:500,y:670,zoom:1.1}; 162.8 push to the caliph kneeling {x:470,y:720,zoom:1.6}; 166.7 push on the ruby in his palm {x:500,y:760,zoom:2.3}; 170.0 slow pull-out to a wide {x:500,y:640,zoom:1.0} for THE END."
+   },
+   "composition": "Fresh grave at x 500; caliph kneels at x 360 facing right; Abu Amir stands at x 760, back row depth (y 890, s 0.9), head bowed. Horse and donkey tethered small at the far left by the wall. THE END in the top band (y 150..300), clear of heads.",
+   "actions": [
+    {
+     "t": 161.04,
+     "end": 162.04,
+     "cue": {
+      "word": "إلى",
+      "t": 161.04
+     },
+     "who": "abuAmir",
+     "action": "stops and points to one plain mound among many",
+     "acting": "arm low, gaze on the grave, lid 0.5",
+     "library": "graveyard({fresh:{x:500}, u:0.46}) + person pointDown"
+    },
+    {
+     "t": 161.64,
+     "end": 162.64,
+     "cue": {
+      "word": "إلى",
+      "t": 161.04
+     },
+     "who": "caliph",
+     "action": "walks slowly to it, each step heavier",
+     "acting": "walk amp 0.5, tip 0.06, gaze fixed on the mound",
+     "library": "walk + footfalls"
+    },
+    {
+     "t": 161.68,
+     "end": 162.48,
+     "cue": {
+      "word": "في",
+      "t": 161.98
+     },
+     "who": "caliph",
+     "action": "looks along the row: his son's grave is exactly like the rest",
+     "acting": "gaze sweeps left to right over the markers and back",
+     "library": "gaze keyed"
+    },
+    {
+     "t": 162.2,
+     "end": 163.2,
+     "cue": {
+      "word": "البصرة.",
+      "t": 162.2
+     },
+     "who": "caliph",
+     "action": "drops to his knees; the crown turban slips forward and he lets it",
+     "acting": "kneel 0 -> 1 fast with landSquash, dust puff, sq 0.92 then 0.98",
+     "library": "person kneel; landSquash; dustBurst"
+    },
+    {
+     "t": 162.8,
+     "end": 163.7,
+     "cue": {
+      "word": "حزن",
+      "t": 162.8
+     },
+     "who": "caliph",
+     "action": "lays one hand flat on the earth of the mound",
+     "acting": "handLW to the mound, lid 0.8, wet true",
+     "library": "person handLW"
+    },
+    {
+     "t": 164.16,
+     "end": 165.16,
+     "cue": {
+      "word": "لأنه",
+      "t": 164.36
+     },
+     "who": "caliph",
+     "action": "weeps openly",
+     "acting": "teardrops, tremble 1.5, mouth frown; Abu Amir looks away and wipes his own eye",
+     "library": "teardrops(); tremble"
+    },
+    {
+     "t": 165.42,
+     "end": 166.42,
+     "cue": {
+      "word": "ابنه،",
+      "t": 165.62
+     },
+     "who": "caliph",
+     "action": "opens his other hand: the ruby",
+     "acting": "fingers uncurl over 0.6 s; gaze drops to it",
+     "library": "person handRW; jewels"
+    },
+    {
+     "t": 166.6,
+     "end": 167.6,
+     "cue": {
+      "word": "وبقيت",
+      "t": 166.7
+     },
+     "who": "fx",
+     "action": "the ruby glows steadily on his palm, the one bright thing in the dusk frame",
+     "acting": "goldGlow red, strength 0.8 with a slow pulse (sin, 2 s period)",
+     "library": "goldGlow (planned)"
+    },
+    {
+     "t": 167.56,
+     "end": 168.36,
+     "cue": {
+      "word": "الياقوتة",
+      "t": 167.56
+     },
+     "who": "camera",
+     "action": "push in until the ruby and the plain headstone share the frame",
+     "acting": "ease in-out",
+     "library": "K.camAt keys"
+    },
+    {
+     "t": 169.5,
+     "end": 170.5,
+     "cue": {
+      "word": "مال",
+      "t": 169.7
+     },
+     "who": "fx",
+     "action": "ghost icons of what it could have bought (crown, coin heap, palace dome) rise from the gem in pale outline",
+     "acting": "three outline icons, 60 units, alpha 0.5, drift up",
+     "library": "crownProp, coinPile outlines; kfn alpha"
+    },
+    {
+     "t": 171.32,
+     "end": 172.22,
+     "cue": {
+      "word": "ولم",
+      "t": 171.62
+     },
+     "who": "fx",
+     "action": "the icons fade out unused, one by one",
+     "acting": "stagger 0.25 s; nothing remains but the stone and the gem",
+     "library": "stagger; alpha"
+    },
+    {
+     "t": 172.28,
+     "end": 173.28,
+     "cue": {
+      "word": "يستخدمه.",
+      "t": 172.28
+     },
+     "who": "caliph",
+     "action": "closes his fingers over the ruby and bows until his forehead nearly touches the headstone",
+     "acting": "tip 0.2, lid 1, slow",
+     "library": "tip keyed"
+    },
+    {
+     "t": 172.78,
+     "end": 174.28,
+     "cue": {
+      "word": "يستخدمه.",
+      "t": 172.28
+     },
+     "who": "dove",
+     "action": "the white dove glides down and settles on the headstone",
+     "acting": "glide, landSquash, wings fold; it stays (it does not go to the caliph's hand)",
+     "library": "bird {kind:\"dove\"} bezier path; landSquash"
+    },
+    {
+     "t": 173.4,
+     "end": 177.42,
+     "cue": {
+      "word": "يستخدمه.",
+      "t": 172.28
+     },
+     "who": "lettering",
+     "action": "THE END in the top band, held to 177.42",
+     "acting": "title pop with overshoot; slow pull-out continues; dove preens, the caliph breathes",
+     "library": "style title(); breathe"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 173.45,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 166.48,
+     "kind": "soft chime"
+    },
+    {
+     "t": 173.9,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 177.42
+   }
+  }
+ ],
+ "ending": {
+  "t": 173.4,
+  "description": "Dusk graveyard, wide. The caliph bowed at the plain grave with his fist closed on the ruby, Abu Amir standing back with his head down, the white dove settled on the headstone. THE END pops in the top band at 173.4 and holds to 177.42 while the camera finishes its slow pull-out; one soft chime at 173.9."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان للخليفة هارون الرشيد ابن بلغ السادسة عشرة،|لكنه لم يجد راحته في حياة القصور.|كان يزور المقابر كثيرًا|ويتأمل كيف انتهى أصحاب السلطان والمال إلى قبور لا يميزها جاه.",
+   "en": "Caliph Harun al-Rashid had a sixteen-year-old son|who was uneasy with palace life.|He visited graveyards|and reflected on how even rulers ended there."
+  },
+  {
+   "p": 2,
+   "ar": "مر هارون بابنه يومًا وهو يرتدي ثوبًا من الصوف.|رأى بعض الحاشية أن هيئته تسيء إلى مكانة الخليفة،|فعاتبه أبوه.|لكن الشاب أشار إلى طائر على سور القصر.",
+   "en": "One day Harun saw his son in coarse wool.|Courtiers considered the sight embarrassing,|and the caliph reproached him.|The youth pointed to a bird."
+  },
+  {
+   "p": 3,
+   "ar": "دعا الشاب الطائر فنزل على يده،|ثم طلب منه أن يقف على يد أبيه فلم يفعل.|تقول الحكاية إن الابن رأى في ذلك علامة،|وقرر ترك بغداد والعيش بعيدًا عن زخارف الحكم.",
+   "en": "The bird came to the prince’s hand|but refused his father’s,|according to the legend.|The youth decided to leave Baghdad and its riches."
+  },
+  {
+   "p": 4,
+   "ar": "وصل الأمير إلى البصرة وعمل في بناء الجدران.|كان يشترط أجرًا قليلًا: درهمًا ودانقًا،|ويطلب التوقف عند الأذان للصلاة مع الجماعة.|ينفق الدانق على طعامه ويتصدق بالدرهم.",
+   "en": "In Basra he worked building walls|for one dirham and one daniq,|pausing for communal prayers.|He ate with the daniq and gave the dirham as charity."
+  },
+  {
+   "p": 5,
+   "ar": "استأجره رجل اسمه أبو عامر لترميم جدار في بيته،|فأعجبه إتقانه وصيامه.|حاول أن يعطيه أجرًا مضاعفًا، لكن الشاب رفض الزيادة.|وعاد للعمل يوم السبت التالي بالشروط نفسها.",
+   "en": "A man named Abu Amir hired him to repair a wall|and admired his discipline.|He offered extra wages, but the young worker refused|and returned the following Saturday."
+  },
+  {
+   "p": 6,
+   "ar": "في السبت الثالث علم أبو عامر أن العامل مريض في كوخ قرب المقابر.|زاره فوجده مستلقيًا على الأرض، وقد جعل لبنة وسادة.|طلب الشاب أن يدفنه بعد موته،|ثم يسلم ما في جيب ثوبه إلى أبيه.",
+   "en": "On the third Saturday Abu Amir found the youth ill in a hut near the graves,|resting his head on a brick.|The youth asked him to bury him|and deliver something to his father."
+  },
+  {
+   "p": 7,
+   "ar": "مات الشاب كما توقع في الحكاية،|فغسله أبو عامر ودفنه.|وجد في ثوبه ياقوتة ثمينة، وحملها إلى بغداد.|وحين رآها هارون عرف أنها هدية سبق أن أعطتها الأم لابنها.",
+   "en": "The youth died.|Abu Amir buried him|and found a precious ruby sewn into his clothing.|In Baghdad Harun recognized it as a gift from the boy’s mother."
+  },
+  {
+   "p": 8,
+   "ar": "بكى هارون وأم الأمير عند سماع الخبر،|ثم سافر الخليفة مع أبي عامر إلى القبر في البصرة.|حزن الأب لأنه فقد ابنه،|وبقيت الياقوتة شاهدًا على مال امتلكه الشاب ولم يستخدمه.",
+   "en": "Both parents grieved.|Harun traveled to the grave in Basra with Abu Amir.|The unused ruby became a reminder|of the riches the prince had renounced."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "graveyard",
+   "description": "Plain cemetery with two rows of identical grave markers, a low wall, dusk sky; options for a fresh grave and a hut exterior. Used in S2, S12, S15, S19. Reusable for any burial, mourning or ascetic story.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "One function in Library/sets style: skyCycle(ctx,u), ground(), a wall as a K box with a cap line, graveMarker calls from a positions table (baked once per option set with bake()), palmTree, the hut from a flat mud rectangle with beam ends plus townDoor and townWindow. Return anchors."
+  },
+  {
+   "type": "prop",
+   "name": "graveMarker",
+   "description": "Plain mound and headstone (planned name from AN-095), with a fresh option.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Half ellipse path filled ochre with halftone dots, rounded-top rectangle for the stone, black brush outline; scale parameter."
+  },
+  {
+   "type": "prop",
+   "name": "brickWall",
+   "description": "Brick wall that can be built brick by brick (build 0..1) or repaired (gap 1..0), plus a single brick. Used in S7 to S11, S13, S15.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Loop over courses and columns with a half-brick offset on odd courses; brick index order gives the build threshold; each brick is a K rounded rect with red dot shading; the newest brick offset by landSquash; gap membership from a V mask (|col - centre| <= depth - course)."
+  },
+  {
+   "type": "character",
+   "name": "person costume preset devotee",
+   "description": "A wool-robed young ascetic on the costume layer: long coarse brown robe with a patch pocket, rope belt, white skull cap, bare feet, no beard, age 0. Reusable for dervishes, poor students and penitents (the existing ascetic preset is an old bearded man).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "One COSTUME table line: { robe:\"#b08a5a\", dot:\"#7a5a36\", len:\"long\", patches:\"#8a6a40\", sash:\"#5a3d1e\", shoes:\"bare\", head:\"cap\", hc:C.white, beard:\"none\", age:0 }. If a preset cannot be added yet, use costume:\"ascetic\" with age 0 and pal overrides and check the beard is absent."
+  },
+  {
+   "type": "prop",
+   "name": "jewels (ruby)",
+   "description": "The planned cut gem in red, sized for a palm and for close shots.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Six-point polygon with three facet lines, flat red and dark red fills, white highlight; scale parameter."
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "description": "Planned treasure light, here with a tint option (red) for the ruby and yellow for the far domes.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Tapering rays as triangles around a halftone disc, staggered four-point star glints, strength 0..1, col option."
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "description": "Planned round picture-in-picture with an iris, used once (147.5 to 151.6) for the mother's gift.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Clip to a circle of animated radius in panel space, draw the memory with a pale wash, black brush ring on top."
+  },
+  {
+   "type": "prop",
+   "name": "minaret, trowel",
+   "description": "Small flat props for the Basra site.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rectangles, a ring and a half disc for the minaret; a diamond and a handle for the trowel."
+  }
+ ],
+ "owner_questions": [
+  "The script says only \"a bird\"; default: a white dove, which also flies from the hut window at the death (129.9) and lands on the headstone at the end (an addition beyond the script).",
+  "The death is shown gently: eyes close, the hand slips, the lamp goes out; the washing is implied by a jug and a folded cloth and the burial by a finished mound (no body, no shroud shown). Default: keep it this soft.",
+  "Invented English lettering (20 items): THE DEVOTEE PRINCE, AGE 16, WOOL!, TWEET!, NOPE!, A SIGN, BAGHDAD, BASRA, 1 DIRHAM, 1 DANIQ, PRAYER TIME, CHARITY, ABU AMIR, FASTING, X2, NEXT SATURDAY, THIRD SATURDAY, RUBY!, FROM HIS MOTHER, THE END. Default: use all; NOPE! is the first to drop if the bird moment should stay serious.",
+  "The call to prayer is shown as sound arcs from a minaret and the youth walking off; the prayer itself is not depicted, and no adhan sound is synthesised. Default: keep it off screen.",
+  "Additions for clarity: a servant offering a tray of gold in S1, a beggar receiving the dirham in S8, a neighbour bringing the news in S11, and Abu Amir offering his cloak as a pillow in S13. Default: keep all four.",
+  "Harun al-Rashid and the queen are drawn as the generic caliph and lady figures, weeping with visible tears. Default: acceptable for named historical figures in this comic style.",
+  "Abu Amir uses the brick from the hut as the head marker of the grave (a visual echo, not in the script). Default: an ordinary headstone like the others, the brick left out, so that the grave is truly identical to the rest."
+ ],
+ "implementation_notes": [
+  "All cue times are the word starts in planning/inputs/timeline.md; build CUE with w(p, n) from timing.json and do not hard-code if the indices are available. Paragraph and word indices used are in each action's cue.",
+  "Set LIFE.t = t every frame so every figure blinks; give explicit lid only where listed. Every character has a gaze target at all times (lookAt).",
+  "The prince changes costume once: costume \"prince\" in S1 and S2 (crown in hand in S2), \"devotee\" from S3 to the end. Sick: lighten the skin tone slightly and use lid 0.45 to 0.7.",
+  "Walks: Object.assign(P, walk(xf, t)) with footfalls for dust; riders with rideOn and GAIT strides. The track shots on desertRoad use camX with ctx.translate(-camX, 0) and the front pass (lip) after the cast.",
+  "brickWall is the visual clock of the middle act: build 0.35 to 0.5 in S7, the gap closing 1 to 0.35 in S9, 0.35 to 0.15 in S10, and frozen at 0.15 with the idle trowel in S11.",
+  "Thought cloud in S2: thoughtCloud(ctx, 680, 420, 420, 300, t, {inside}) with the figures at scale 0.5 so they stay over 110 px on screen.",
+  "The counter box for the wage (S7, S8, S10) is one function: box at panel top, big coin left, small coin right, each with its label; coins leave it by arcs.",
+  "Lettering lives in the top band of the panel or beside props; never across a face. Balloons with icons (crown, lying figure, grave, crowned head) are plain white boxes with a tail, icons 60 to 90 units.",
+  "Sound: six effects only, all in pauses: 5.74 chime (AGE 16 settles), 21.2 soft thud (crown set down), 36.02 chirp, 62.6 whoosh (LATER card), 166.48 soft chime (ruby revealed in the palm), 173.9 chime (THE END). master 0.6, each quieter than the voice.",
+  "The one LATER transition is at 62.0 to 63.6 (the 1.18 s pause). The Saturday jumps use labels and a sky sweep, not a second card.",
+  "Film length 177.42 s (173.42 + 4.0 hold), under the 180 s limit."
+ ],
+ "warnings": [
+  "The narration has only three real pauses (5.36, 20.72, 62.04) plus two short gaps (35.76, 166.27); keep sound effects to the six listed.",
+  "S12 (hut exterior, 2.4 s) and S16 (ride to Baghdad, 2.6 s) are very short: keep them to one clear motion each.",
+  "villageYard has a forest backdrop; for a Basra house it may read too rural. Check a still; if so swap the backdrop for townFarCity or use marketStreet with one house front.",
+  "The palace battlement height for the bird is read from the catalogue image (approximate); measure it on the marketStreet anchors.",
+  "P8 English is shorter than the Arabic (the father's grief sentence is folded into \"Both parents grieved\"), so English chunk 3 appears while the Arabic says \"the father grieved because he lost his son\"; this is a chunk alignment compromise, the text is verbatim.",
+  "The devotee preset must be clean-shaven and read as a youth at phone size; keep the skull cap small so he is not confused with the villagers."
+ ]
+}

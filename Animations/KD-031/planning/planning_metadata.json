@@ -1,0 +1,124 @@
+{
+ "story_id": "KD-031",
+ "title": "The Pair of Hoopoes and the Treasure",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T12:34:49",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a1c8671b35efdb7c9.jsonl",
+ "agent_id": "a1c8671b35efdb7c9",
+ "model_messages": {
+  "claude-fable-5-2": 21
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "8de1adc0d6d727104b1563581d2e4795eb19246e030262c22713348c38d1305d",
+  "paragraphs": 8,
+  "segments": [
+   "KD-031-P01-S01",
+   "KD-031-P01-S02",
+   "KD-031-P01-S03",
+   "KD-031-P01-S04",
+   "KD-031-P01-S05",
+   "KD-031-P01-S06",
+   "KD-031-P01-S07",
+   "KD-031-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/KD-031_The_Pair_of_Hoopoes_and_the_Treasure_full_slowed.mp3",
+  "sha256": "67beabb8baa7610f7d3646cf49ac9abe183f1a42e3e9553cdb5208761bd33c43",
+  "duration": 171.322
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/KD-031_The_Pair_of_Hoopoes_and_the_Treasure_full_slowed.mp3.words.json",
+  "sha256": "8129f1f06e67f04689dd19c2c303d067aa0962a2efaf59b5e131b0c6a6d52a15",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "7721db2",
+ "scenes": 16,
+ "actions": 191,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "hoopoe (bird kind)",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (hunter)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "birdCage",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "hangingJar",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "stick, coinPile, smallBowl",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "fishingNet",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "groundWindow",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "weakFlight",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person kneel / sit",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "marketStreet",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "countryRoad",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "palaceHall (variant merchantHouse)",
+   "effort": "M"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Almost everything except the grove depends on assets that are planned but not yet in Library (costume layer, marketStreet, palaceHall, countryRoad, thoughtCloud, kneel/sit). If this film is produced before the films that planned them, their cost lands here.",
+  "Only five pauses of 0.6 s or more exist, so the film has very few sound effects; the long middle (33.8 to 129.3) has none. That is correct: do not add effects under words.",
+  "The first word of several paragraphs is followed by a long gap inside the word time (for example 40.32 to 42.22, 62.68 to 64.18, 82.40 to 84.02, 105.56 to 107.40, 149.56 to 151.40): the word start may include silence. Measure the real onset before tying a sharp action to these cues.",
+  "S10 and S11 are about 16 s each on one set; the camera keys listed keep them alive, do not flatten them into one static shot.",
+  "The grove coordinates (branch at y 520, jar at (640, 1050)) are design targets, not measured from a baked set; confirm with a still that the birds, the man's head and the ground window fit one frame at zoom 1.3.",
+  "Hoopoe crest and curved beak must stay readable at s 0.62 in the cage close-up: check at phone size."
+ ]
+}

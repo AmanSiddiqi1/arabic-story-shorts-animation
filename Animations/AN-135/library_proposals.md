@@ -1,0 +1,11 @@
+# AN-135 library proposals (code in src/a135_props.js)
+- `sugarcane` (a135Cane) and `caneField` (a135CaneField): stalk with nodes and leaves; lush, bend, sway, droop; field with seeded heights and tufts.
+- `canePiece` (a135CanePiece): loose cut stalk with twist (wrung) and limp.
+- `smallBowl` (a135Bowl): fill, cut cross-section with wobbling surface, specks, tilt, water tint.
+- `waterJug` (a135Jug) + `pourArc` (a135Pour) + `juiceStream` (a135Stream).
+- `taxScroll` (a135Scroll): open, coin icons, torn halves, red stamp.
+- `coinPile` (a135Coins), `crownProp` (a135Crown), `saddlebag` (a135Bag, crown tips peeking).
+- `iconBalloon` (a135Balloon): wordless picture balloon with popping cells; `redX`, `question` helpers.
+- `powderSprinkle` (a135Powder), `aroma` curls (a135Aroma).
+- `silhouette` (a135Silhouette): draws any figure as a flat black silhouette (lit windows) via a cached layer.
+- `hitchingPost` (a135Post).

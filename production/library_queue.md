@@ -1,0 +1,1 @@
+- KD-011: person acting wrapper drops P.hands on frames where it adds a blink (engine fix candidate)

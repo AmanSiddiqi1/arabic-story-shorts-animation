@@ -1,0 +1,118 @@
+{
+ "story_id": "AN-089",
+ "title": "ISAAC OF MOSUL",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T13:43:14",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a2003e77139edf4fa.jsonl",
+ "agent_id": "a2003e77139edf4fa",
+ "model_messages": {
+  "claude-fable-5-2": 27
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "82259e72136b22bf694c88d50fe4be684a4f21cd2235e28335203db9ebd39d40",
+  "paragraphs": 7,
+  "segments": [
+   "AN-089-P01-S01",
+   "AN-089-P01-S02",
+   "AN-089-P01-S04",
+   "AN-089-P01-S05",
+   "AN-089-P01-S06",
+   "AN-089-P01-S07",
+   "AN-089-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-089_ISAAC_OF_MOSUL_full_slowed.mp3",
+  "sha256": "45aedf430529f1a3c50fcd3c583067be600ae545db645d55b56161b6a3fea903",
+  "duration": 168.888
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-089_ISAAC_OF_MOSUL_full_slowed.mp3.words.json",
+  "sha256": "862523825d1837feb20f0c55662e0fec0270090cfd811c7e1ffb475e8f5ff0dc",
+  "manifest_status": "SUCCESS; METADATA MISMATCH",
+  "script_match": 1.0
+ },
+ "library_rev": "959278e",
+ "scenes": 19,
+ "actions": 168,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "palaceHall",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "nightAlley",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "hangingBasket",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "oud",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "candle",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "musicNotes",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "S"
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "throne",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "crownProp",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "sneak",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "paragraph(s) removed from audio by design: AN-089-P01-S03; no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Subtitle P6 chunk 2 is 12 Arabic words and P8 chunk 1 is 11: check the Arabic font size fits the caption panel in three lines at most.",
+  "The English translation is a summary and does not track the Arabic sentence by sentence; English chunks are placed at the nearest matching Arabic chunk.",
+  "The tall alley set needs negative camera y; check the template camAt clamp.",
+  "S5 is 16.5 s in one two-shot: the icon balloons and the oud-hiding gag must carry it; keep the push-in moving.",
+  "Seated figures inside a basket must not show feet through the weave: draw order back pass, person, front pass.",
+  "Sfx are limited to the pauses listed in timeline.md; do not add effects elsewhere without checking word ends in timeline.json."
+ ]
+}

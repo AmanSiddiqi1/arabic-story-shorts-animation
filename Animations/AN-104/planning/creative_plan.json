@@ -1,0 +1,2948 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-104",
+ "title": "The Man Who Stole the Dish of Gold Wherein the Dog Ate",
+ "duration": 168.586,
+ "end_hold": 3.5,
+ "logline": "A starving, indebted stranger is fed by a rich man dog, which then pushes its own gold dish to him; the dish makes his fortune, and years later the ruined owner refuses repayment because the gift was the dog, not his.",
+ "moral": "True dignity does not depend on wealth: a generous soul will not take payment for a gift, least of all one that another gave.",
+ "tone": "Warm and gentle with quiet comedy in the first half (a man envying dogs, sneaking past a bowing servant), tender in the middle (the long look, the pushed dish), bittersweet and dignified at the end. No villain; nobody is mocked.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 2.16,
+   "kind": "setup",
+   "cue": {
+    "word": "أثقلته",
+    "t": 2.16
+   },
+   "summary": "A stranger in a big city is crushed by debt, with no work and no food."
+  },
+  {
+   "id": "B2",
+   "t": 15.44,
+   "kind": "inciting",
+   "cue": {
+    "word": "فتبعها",
+    "t": 15.44
+   },
+   "summary": "He follows a group of guests into a grand mansion hoping to eat."
+  },
+  {
+   "id": "B3",
+   "t": 30.08,
+   "kind": "reveal",
+   "cue": {
+    "word": "أربعة",
+    "t": 30.08
+   },
+   "summary": "Four great dogs with gold collars, silver chains and gold dishes: the dogs are richer than he is."
+  },
+  {
+   "id": "B4",
+   "t": 47.88,
+   "kind": "emotion",
+   "cue": {
+    "word": "جوعًا",
+    "t": 47.88
+   },
+   "summary": "The dogs are fed; the man is hungrier than they are."
+  },
+  {
+   "id": "B5",
+   "t": 52.04,
+   "kind": "suspense",
+   "cue": {
+    "word": "فنظر",
+    "t": 52.04
+   },
+   "summary": "One dog notices him and looks at him for a long time."
+  },
+  {
+   "id": "B6",
+   "t": 54.62,
+   "kind": "turn",
+   "cue": {
+    "word": "ابتعد",
+    "t": 54.62
+   },
+   "summary": "The dog steps back from its dish to invite him."
+  },
+  {
+   "id": "B7",
+   "t": 66.7,
+   "kind": "rising",
+   "cue": {
+    "word": "وأكل",
+    "t": 66.7
+   },
+   "summary": "He hesitates, then eats until the hunger is gone."
+  },
+  {
+   "id": "B8",
+   "t": 72.34,
+   "kind": "surprise",
+   "cue": {
+    "word": "دفع",
+    "t": 72.34
+   },
+   "summary": "The dog pushes the gold dish itself to him with its paw: take this too."
+  },
+  {
+   "id": "B9",
+   "t": 88.78,
+   "kind": "rising",
+   "cue": {
+    "word": "باعه",
+    "t": 88.78
+   },
+   "summary": "He sells the dish, pays some debts and starts trading."
+  },
+  {
+   "id": "B10",
+   "t": 99.84,
+   "kind": "resolution",
+   "cue": {
+    "word": "نجحت",
+    "t": 99.84
+   },
+   "summary": "Over the years the trade prospers and he lives in comfort."
+  },
+  {
+   "id": "B11",
+   "t": 112.66,
+   "kind": "rising",
+   "cue": {
+    "word": "عاد",
+    "t": 112.66
+   },
+   "summary": "Years later he returns with the value of the dish and gifts."
+  },
+  {
+   "id": "B12",
+   "t": 122.84,
+   "kind": "reveal",
+   "cue": {
+    "word": "خربًا،",
+    "t": 122.84
+   },
+   "summary": "The mansion is a ruin; the wealth is gone."
+  },
+  {
+   "id": "B13",
+   "t": 136.6,
+   "kind": "emotion",
+   "cue": {
+    "word": "المالك",
+    "t": 136.6
+   },
+   "summary": "The poor man he is sent to is the owner himself."
+  },
+  {
+   "id": "B14",
+   "t": 147.96,
+   "kind": "climax",
+   "cue": {
+    "word": "رفض",
+    "t": 147.96
+   },
+   "summary": "The poor owner refuses the money."
+  },
+  {
+   "id": "B15",
+   "t": 157.26,
+   "kind": "surprise",
+   "cue": {
+    "word": "كلبي،",
+    "t": 157.26
+   },
+   "summary": "My dog gave it to you, and I do not take the price of another one gift."
+  },
+  {
+   "id": "B16",
+   "t": 165.23,
+   "kind": "moral",
+   "cue": {
+    "word": "عزة",
+    "t": 165.23
+   },
+   "summary": "The visitor leaves amazed by a dignity that poverty did not weaken."
+  }
+ ],
+ "cast": [
+  {
+   "id": "stranger",
+   "name": "the stranger (later the merchant)",
+   "library": "person",
+   "base": "person costume:'villager' (poor) then costume:'merchant' with the green MERCHANT PAL colours (rich)",
+   "look": "Poor (S1 to S8): villager preset, pal {robe faded brown '#a8741a', dot darker brown, sash grey, shoes 'bare', hc paper}, two paper patches drawn by the scene, age 0.15, s 0.85. Rich (S9 on): merchant preset in the catalogue MERCHANT PAL colours (green robe, yellow turban), age 0.45 in S9 and S10, 0.6 from S11. Keep one constant so he is recognised: the same red sash throughout.",
+   "new": false
+  },
+  {
+   "id": "dog1",
+   "name": "the generous dog (hero)",
+   "library": null,
+   "base": "planned dog (AN-040) pal 1, white with black patches, s 0.9 x hound scale",
+   "look": "Large hound: white with one black ear and a black saddle patch (unique among the four), gold collar, silver chain. Kind half-lidded eyes.",
+   "new": true
+  },
+  {
+   "id": "dog2",
+   "name": "dog two",
+   "library": null,
+   "base": "planned dog pal 0 (tan)",
+   "look": "Tan, gold collar, back row, s 0.78.",
+   "new": true
+  },
+  {
+   "id": "dog3",
+   "name": "dog three",
+   "library": null,
+   "base": "planned dog pal 2 (brown)",
+   "look": "Brown, gold collar, front row, s 0.9.",
+   "new": true
+  },
+  {
+   "id": "dog4",
+   "name": "dog four",
+   "library": null,
+   "base": "planned dog pal 0 with darker ears",
+   "look": "Tan with dark ears, gold collar, back row, s 0.78.",
+   "new": true
+  },
+  {
+   "id": "oldDog",
+   "name": "the same dog, old",
+   "library": null,
+   "base": "planned dog pal 1 with age 1",
+   "look": "dog1 years later: grey muzzle and brow, slower, thinner (belly 0.9), plain rope collar instead of gold, no chain. Same black ear and saddle patch so it is recognised at once.",
+   "new": true
+  },
+  {
+   "id": "lord",
+   "name": "the master of the mansion (rich)",
+   "library": "person",
+   "base": "person costume:'merchant' default blue, age 0.45",
+   "look": "Big white turban with the red jewel, full black beard, blue robe, yellow sash. Seen on the dais in S3 and in memory insets.",
+   "new": false
+  },
+  {
+   "id": "poorLord",
+   "name": "the master, now poor",
+   "library": "person",
+   "base": "person costume:'ascetic' with pal overrides, age 0.85",
+   "look": "Same man: ascetic preset (patched off-white robe, bare feet) but pal {beard grey in the SAME full merchant beard shape if the preset allows, else keep the ascetic beard in grey}, small plain cap in the faded blue of his old robe (hc '#8fa3c4') and a faded blue patch, so the blue links him to the rich lord. Thin, stooped until 152.12.",
+   "new": false
+  },
+  {
+   "id": "guestA",
+   "name": "guest: merchant",
+   "library": "person",
+   "base": "person costume:'merchant' pal red robe",
+   "look": "Portly, red robe, leads the group. Reused as a customer in S9.",
+   "new": false
+  },
+  {
+   "id": "guestB",
+   "name": "guest: lady",
+   "library": "person",
+   "base": "person costume:'lady'",
+   "look": "Blue dress, white veil. Reused as the first customer (S8, S9).",
+   "new": false
+  },
+  {
+   "id": "guestC",
+   "name": "guest: old vizier",
+   "library": "person",
+   "base": "person costume:'vizier' age 0.8",
+   "look": "Tall turban, grey beard, slow walker: the cover the stranger hides behind.",
+   "new": false
+  },
+  {
+   "id": "servantA",
+   "name": "servant (door, ladle)",
+   "library": "person",
+   "base": "person costume:'servant'",
+   "look": "Red cap, white tunic. Bows at the door, later ladles the dog food.",
+   "new": false
+  },
+  {
+   "id": "servantB",
+   "name": "servant (pot)",
+   "library": "person",
+   "base": "person costume:'servant' pal blue cap",
+   "look": "Carries the pot.",
+   "new": false
+  },
+  {
+   "id": "stallkeeper",
+   "name": "stallkeeper",
+   "library": "person",
+   "base": "person costume:'beanSeller'",
+   "look": "Waves him off in S1, bows and sells him goods in S8.",
+   "new": false
+  },
+  {
+   "id": "buyer",
+   "name": "goldsmith",
+   "library": "person",
+   "base": "person costume:'merchant' pal yellow turban, purple-brown robe, age 0.6",
+   "look": "Sharp-eyed buyer behind the jar stall.",
+   "new": false
+  },
+  {
+   "id": "porter",
+   "name": "porter boy",
+   "library": "person",
+   "base": "person costume:'servant', child:true",
+   "look": "Carries the gift chest; also brings the tray in S9.",
+   "new": false
+  },
+  {
+   "id": "neighbour",
+   "name": "old woman in the street",
+   "library": "person",
+   "base": "person costume:'oldWoman', hold:'stick'",
+   "look": "Points the way with her stick.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "street",
+   "library": "marketStreet",
+   "description": "marketStreet {w: 2400, palette: 'clear'} with the palace at the right end (default MARKET.palace), stalls: pots at about x 380 (stallkeeper), fruit at 760, jars with a yellow awning at 1250 (goldsmith), an empty closed stall at 1600 that becomes the stranger stall (cols 1 to 3 in S9). Use palaceDoor for the door, u for the S9 time-lapse. All positions approximate: read the returned anchors.",
+   "new": false
+  },
+  {
+   "id": "court",
+   "library": "palaceHall",
+   "description": "The mansion courtyard hall: palaceHall {variant: 'palace', wall: 'paper', throne: false, cushions: true, lamps: true}. Door arch on the left (HALL.door, day outside), dais on the right (HALL.dais) where the lord and guests sit on cushions. The script says courtyard (fina); the arched hall with the open door arch stands in for it. Ring post for the chains drawn by the scene at about (960, 700): a short yellow post with a ring.",
+   "new": false
+  },
+  {
+   "id": "ruin",
+   "library": "marketStreet",
+   "description": "The same street at the palace end years later: marketStreet {w: 2400, palette: 'dusk', palace: 'shut', shut: 1, rain: 0}, stalls closed or absent near the palace, plus scene dressing: a hanging shutter, weeds on the steps, two cracks on the facade (thin black brush lines).",
+   "new": false
+  },
+  {
+   "id": "hut",
+   "library": "hutRoom",
+   "description": "The poor owner room: hutRoom {palette: 'day', doorSide: 'left', door: 0.5 to 1, mat: true, jug: true, shelf: true, jar: false, window on the right half}. Owner sits on HUT.mat; the old dog lies on the floor in front of the mat. Floor y 900.",
+   "new": false
+  }
+ ],
+ "props": [
+  {
+   "id": "goldDish",
+   "library": null,
+   "description": "The star prop. Shallow gold dish: ellipse rim 110 wide x 26 high, bowl depth 34, foot ring 60 wide; flat process yellow with red dot shading on the right third, black brush outline 5 px, one white glint stroke. Fields: fill 0..1 (brown and cream food heap up to 30 high with 3 steam curls), glint (phase), tilt (radians, for carrying), s. Draw order: back rim, food, front rim.",
+   "new": true
+  },
+  {
+   "id": "chain",
+   "library": null,
+   "description": "chainLine(ctx, a, b, {sag, links, swing}): silver chain between a collar ring and the post as a quadratic sag curve drawn as alternating link ellipses (14 x 8, white fill with blue-grey dot, black outline), 14 to 20 links, sag 30 to 90, a travelling white glint.",
+   "new": true
+  },
+  {
+   "id": "debtScrolls",
+   "library": null,
+   "description": "Three small scrolls (planned scroll, 70 x 44 each, wavy lines and a red seal) stacked on the stranger back like a load; states: pop, ride (bob a beat late), unrolled column, struck (red X then roll up and pop). Count: 3 in S1, 1 left after S8, 0 after 99.84.",
+   "new": true
+  },
+  {
+   "id": "coinPile",
+   "library": null,
+   "description": "Planned coinPile: mound of gold coins growing in 4 steps on the goldsmith counter; also single coins in S9.",
+   "new": true
+  },
+  {
+   "id": "purse",
+   "library": null,
+   "description": "Planned fat coin purse (drawstring, 70 x 80), swings from the hand, glint.",
+   "new": true
+  },
+  {
+   "id": "giftChest",
+   "library": null,
+   "description": "Planned treasureHoard chest, small (120 x 90), lid open 0..1 showing cloth and two gems.",
+   "new": true
+  },
+  {
+   "id": "foodTray",
+   "library": null,
+   "description": "Planned foodTray (bread, dates, cup); also the loaf and bowl icon inside the S2 thought cloud.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 11.6,
+   "paragraphs": [
+    1
+   ],
+   "set": "street",
+   "cast": [
+    "stranger",
+    "stallkeeper"
+   ],
+   "summary": "A poor stranger trudges through a big city street, bent under his debts, turned away from work and unable to buy food.",
+   "camera": {
+    "shot": "establishing",
+    "move": "track",
+    "notes": "Strip camera: camX 0 to 700 following the walker at zoom 1.25, he stays left of centre; at 8.86 ease out to zoom 1.0 so the skyline and domes read as a big city."
+   },
+   "composition": "Stranger enters from the left on the ground line y 900 (s 0.85). Stalls behind him at mid depth. The three debt scrolls float above his back, never over his face. Headroom for the DEBTS label at the top left.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 2.0,
+     "cue": {
+      "word": "كان",
+      "t": 0.0
+     },
+     "who": "stranger",
+     "action": "walks in from the left edge, slow short steps, x -80 to 260",
+     "acting": "stooped (tip 0.08, age stoop), gaze on the ground [0.3, 0.7], lid 0.35, mouth frown, auto blinks",
+     "library": "person {costume:'villager', pal: STRANGER_POOR} + walk() + footfalls()"
+    },
+    {
+     "t": 0.94,
+     "end": 1.6,
+     "cue": {
+      "word": "غريب",
+      "t": 0.94
+     },
+     "who": "stranger",
+     "action": "glances up and around at the unfamiliar houses, then down again",
+     "acting": "saccades left, up, right (gazePlan ease 0.07), brow -0.4 worried",
+     "library": "gazePlan"
+    },
+    {
+     "t": 2.0,
+     "end": 3.4,
+     "cue": {
+      "word": "أثقلته",
+      "t": 2.16
+     },
+     "who": "debtScrolls",
+     "action": "three debt scrolls pop one by one (2.16, 2.5, 2.84) into a stack riding on his back; each landing presses him lower",
+     "acting": "each landing: sq dip 0.95 then settle, knees give, tip grows to 0.13",
+     "library": "scroll (planned) x3 + settleTo + landSquash"
+    },
+    {
+     "t": 2.84,
+     "end": 3.6,
+     "cue": {
+      "word": "الديون،",
+      "t": 2.84
+     },
+     "who": "lettering",
+     "action": "label DEBTS with an arrow to the scroll stack",
+     "acting": "style label + arrow, top left, clear of his head",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 3.7,
+     "end": 5.6,
+     "cue": {
+      "word": "يجد",
+      "t": 4.6
+     },
+     "who": "stallkeeper",
+     "action": "stranger stops at the pot stall and opens his hands to ask for work; the stallkeeper shakes his head and waves him on",
+     "acting": "stranger: palmsUp, brow -0.6, hopeful gaze at the keeper; keeper: wave hand, head turn away, lid 0.5",
+     "library": "PERSON_HANDS.palmsUp / wave; marketStall kind 'pots'"
+    },
+    {
+     "t": 5.0,
+     "end": 5.8,
+     "cue": {
+      "word": "عملًا",
+      "t": 5.0
+     },
+     "who": "stranger",
+     "action": "shoulders drop, hands fall, he walks on",
+     "acting": "slow blink, head drop 6 px, follow-through on the arms",
+     "library": "settleTo"
+    },
+    {
+     "t": 6.0,
+     "end": 7.6,
+     "cue": {
+      "word": "طعامًا",
+      "t": 6.18
+     },
+     "who": "stranger",
+     "action": "passes the fruit stall: eyes lock on the fruit while his body keeps walking, hand slides to his belly",
+     "acting": "gaze tracks the fruit backwards (lookAt), wet true, hand on belly (handR chest lowered), mouth o",
+     "library": "lookAt + PERSON_HANDS.chest"
+    },
+    {
+     "t": 7.0,
+     "end": 8.0,
+     "cue": {
+      "word": "يكفيه.",
+      "t": 7.0
+     },
+     "who": "stranger",
+     "action": "turns an empty pocket out; one moth flutters off",
+     "acting": "palmsUp small shrug, brow -0.7, single slow blink",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 8.08,
+     "end": 9.4,
+     "cue": {
+      "word": "وبينما",
+      "t": 8.08
+     },
+     "who": "camera",
+     "action": "ease out to the wide city view; he is small among domes and house fronts",
+     "acting": "hold then eased move on the beat boundary",
+     "library": "K.camAt keys in pairs"
+    },
+    {
+     "t": 8.86,
+     "end": 11.5,
+     "cue": {
+      "word": "يمشي",
+      "t": 8.86
+     },
+     "who": "stranger",
+     "action": "walks on along the strip, x 620 to 1150, dragging steps",
+     "acting": "amp 0.7 walk, scroll stack bobbing a beat late (secondary motion), gaze down",
+     "library": "walk() + footfalls() + dustBurst small"
+    },
+    {
+     "t": 10.38,
+     "end": 11.5,
+     "cue": {
+      "word": "كبيرة،",
+      "t": 10.38
+     },
+     "who": "set",
+     "action": "two background doors and a shutter open and close; awnings flutter; the palace facade slides into view on the right",
+     "acting": "life in the street, nothing in unison",
+     "library": "marketStreet {doors, shutters, t}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 2.84,
+     "text": "DEBTS"
+    },
+    {
+     "t": 7.5,
+     "text": "GRRR"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 11.6
+   }
+  },
+  {
+   "id": "S2",
+   "start": 11.6,
+   "end": 20.44,
+   "paragraphs": [
+    1
+   ],
+   "set": "street",
+   "cast": [
+    "stranger",
+    "guestA",
+    "guestB",
+    "guestC"
+   ],
+   "summary": "He sees a group of well-dressed guests entering a grand mansion and tiptoes in behind them, hoping for food.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Camera at the palace end of the strip: starts on the stranger (left third), pans right with his eye line to the palace door at 13.54, then holds a wide that keeps him and the door together."
+   },
+   "composition": "Palace facade on the right (MARKET.palace anchors), door steps at palace.door.bottom. Guests cross from centre to the door in a loose line, spaced 110 apart, different heights. Stranger left, 300 units behind the last guest.",
+   "actions": [
+    {
+     "t": 11.6,
+     "end": 12.4,
+     "cue": {
+      "word": "رأى",
+      "t": 11.62
+     },
+     "who": "stranger",
+     "action": "stops mid-step; head lifts",
+     "acting": "gaze snaps right to the group (2-frame saccade), lid 0, brow -0.5, anticipation: weight rocks back",
+     "library": "lookAt + settleTo"
+    },
+    {
+     "t": 11.98,
+     "end": 14.3,
+     "cue": {
+      "word": "جماعة",
+      "t": 11.98
+     },
+     "who": "guestA",
+     "action": "three guests stroll toward the palace, chatting: the merchant leads, the lady in the middle, the old vizier last with a slower step",
+     "acting": "staggered phases (stagger(i)), talk alternating, gazes on each other, lady laughs (mouth open, lid 0.8)",
+     "library": "person costumes merchant(pal green) / lady / vizier + walk() + stagger"
+    },
+    {
+     "t": 12.86,
+     "end": 14.2,
+     "cue": {
+      "word": "تدخل",
+      "t": 12.86
+     },
+     "who": "set",
+     "action": "the palace door swings open, warm light inside",
+     "acting": "palaceDoor 0 to 1 with a small overshoot",
+     "library": "marketStreet {palace, palaceDoor}"
+    },
+    {
+     "t": 13.54,
+     "end": 15.2,
+     "cue": {
+      "word": "قصرًا",
+      "t": 13.54
+     },
+     "who": "camera",
+     "action": "pan right and up the facade to the balcony and back down to the open door",
+     "acting": "reveal: the mansion is tall, he is small",
+     "library": "K.camAt"
+    },
+    {
+     "t": 14.36,
+     "end": 15.3,
+     "cue": {
+      "word": "واسعًا،",
+      "t": 14.36
+     },
+     "who": "lettering",
+     "action": "label THE MANSION with an arrow to the door",
+     "acting": "label sits on the wall, clear of all faces",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 14.4,
+     "end": 15.4,
+     "cue": {
+      "word": "واسعًا،",
+      "t": 14.36
+     },
+     "who": "guestA",
+     "action": "the merchant and the lady step inside; the vizier pauses on the step to adjust his turban",
+     "acting": "unhurried, backs to the stranger: nobody looks his way",
+     "library": "walk()"
+    },
+    {
+     "t": 15.0,
+     "end": 15.44,
+     "cue": {
+      "word": "فتبعها",
+      "t": 15.44
+     },
+     "who": "stranger",
+     "action": "anticipation: glances left and right, straightens his collar, crouches a little",
+     "acting": "saccades both ways, sq 0.94 dip",
+     "library": "anticipate() + gazePlan"
+    },
+    {
+     "t": 15.44,
+     "end": 18.6,
+     "cue": {
+      "word": "فتبعها",
+      "t": 15.44
+     },
+     "who": "stranger",
+     "action": "tiptoes after them, closing to 90 units behind the vizier, trying to look as if he belongs",
+     "acting": "high knees with a hold on each toe, shoulders up, gaze flicking to the guests backs, the debt scrolls hidden behind his back",
+     "library": "walk() with the planned sneak option"
+    },
+    {
+     "t": 16.78,
+     "end": 19.2,
+     "cue": {
+      "word": "أمل",
+      "t": 16.78
+     },
+     "who": "fx",
+     "action": "small thought cloud above him: a round loaf and a bowl with steam",
+     "acting": "trail pops first then the cloud; his mouth becomes a small smile, wet eyes shine",
+     "library": "thoughtCloud {scale 0.3, inside: foodTray}"
+    },
+    {
+     "t": 18.66,
+     "end": 19.6,
+     "cue": {
+      "word": "يأكله.",
+      "t": 18.66
+     },
+     "who": "stranger",
+     "action": "the vizier goes in; the stranger hops the step and slips through just before the door closes",
+     "acting": "small hop with squash on landing, last look over his shoulder to camera side",
+     "library": "hop() + landSquash()"
+    },
+    {
+     "t": 19.6,
+     "end": 20.4,
+     "cue": {
+      "word": "يأكله.",
+      "t": 18.66
+     },
+     "who": "set",
+     "action": "door swings shut; the thought cloud pops away",
+     "acting": "door settle with a damped swing",
+     "library": "townDoor open 1 to 0"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 14.36,
+     "text": "THE MANSION"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 20.44
+   }
+  },
+  {
+   "id": "S3",
+   "start": 20.44,
+   "end": 29.5,
+   "paragraphs": [
+    2
+   ],
+   "set": "court",
+   "cast": [
+    "stranger",
+    "guestA",
+    "guestB",
+    "guestC",
+    "servantA",
+    "lord"
+   ],
+   "summary": "Inside the courtyard hall he slips in behind the guests while the servant bows to them, and sits down small in a corner.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Full hall, zoom 1.0. Short eased push toward the left corner at 26.14 as he sits (zoom 1.0 to 1.25)."
+   },
+   "composition": "Door arch on the left (HALL.door). Lord of the mansion seated on the dais on the right (HALL.throne sitY, cushions, throne:false). Servant stands centre left greeting. Corner seat for the stranger at about x 140, floor y 930 (front left, approximate, measure on the set).",
+   "actions": [
+    {
+     "t": 20.44,
+     "end": 22.2,
+     "cue": {
+      "word": "دخل",
+      "t": 20.44
+     },
+     "who": "guestA",
+     "action": "the three guests walk in from the door arch toward the dais",
+     "acting": "staggered walk, the merchant waves to the host",
+     "library": "walk() + PERSON_HANDS.wave"
+    },
+    {
+     "t": 20.6,
+     "end": 22.4,
+     "cue": {
+      "word": "الزائرين",
+      "t": 21.42
+     },
+     "who": "servantA",
+     "action": "bows to each guest in turn with a hand on his chest",
+     "acting": "tip 0.25 bow x3 timed to each guest passing, lid 1 at the bottom of each bow (so he sees nothing)",
+     "library": "person {costume:'servant'} + PERSON_HANDS.chest"
+    },
+    {
+     "t": 21.0,
+     "end": 22.6,
+     "cue": {
+      "word": "الزائرين",
+      "t": 21.42
+     },
+     "who": "lord",
+     "action": "the host on the dais lifts a hand in welcome",
+     "acting": "warm smile, gaze on the guests, never on the door",
+     "library": "person {costume:'merchant', age 0.45, sit 1, seat:'bench'} + wave"
+    },
+    {
+     "t": 21.6,
+     "end": 24.0,
+     "cue": {
+      "word": "دون",
+      "t": 22.4
+     },
+     "who": "stranger",
+     "action": "enters last, glued to the vizier back, using him as cover; when the servant bows he slides past behind the bow",
+     "acting": "hunched (sq 0.92), sneak steps, eyes wide darting between servant and host (saccades)",
+     "library": "sneak walk + gazePlan(…, 0.07)"
+    },
+    {
+     "t": 23.4,
+     "end": 24.9,
+     "cue": {
+      "word": "ينتبه",
+      "t": 23.4
+     },
+     "who": "servantA",
+     "action": "straightens and looks straight over the stranger head toward the door, sees nobody, turns to follow the guests",
+     "acting": "gaze passes above him; comic near miss: the stranger freezes for 6 frames, only the pupils move",
+     "library": "suspense by stillness"
+    },
+    {
+     "t": 24.7,
+     "end": 26.0,
+     "cue": {
+      "word": "أحد،",
+      "t": 24.7
+     },
+     "who": "stranger",
+     "action": "lets out a breath and peels off toward the left front corner",
+     "acting": "shoulders drop, long blink, small relieved smile, walk amp 0.6",
+     "library": "breathe() + walk()"
+    },
+    {
+     "t": 26.14,
+     "end": 27.2,
+     "cue": {
+      "word": "جلس",
+      "t": 26.44
+     },
+     "who": "stranger",
+     "action": "sits down cross-legged on the floor",
+     "acting": "sit blend 0 to 1 with a settle, hands in his lap, makes himself small (s reads smaller by sq 0.95)",
+     "library": "person {sit, seat:'floor'} + settleTo"
+    },
+    {
+     "t": 27.22,
+     "end": 28.4,
+     "cue": {
+      "word": "زاوية",
+      "t": 27.22
+     },
+     "who": "camera",
+     "action": "eased push toward the corner; label THE CORNER is not used, the framing says it",
+     "acting": "he sits under the shadowed side wall, guests and host bright on the right",
+     "library": "K.camAt"
+    },
+    {
+     "t": 28.38,
+     "end": 29.5,
+     "cue": {
+      "word": "الفناء.",
+      "t": 28.38
+     },
+     "who": "stranger",
+     "action": "hugs his knees, belly rumbles, looks slowly across the court",
+     "acting": "hand on belly, gaze sweeping right, brow -0.5; guests settle on cushions in the background (sit 1)",
+     "library": "gazePlan + sit"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 28.6,
+     "text": "GRRR"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 29.5
+   }
+  },
+  {
+   "id": "S4",
+   "start": 29.5,
+   "end": 41.68,
+   "paragraphs": [
+    2
+   ],
+   "set": "court",
+   "cast": [
+    "stranger",
+    "dog1",
+    "dog2",
+    "dog3",
+    "dog4"
+   ],
+   "summary": "His eye line reveals four great hounds with gold collars, silver chains and solid gold dishes.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Pan from the stranger (29.58) right along his eye line to the dog row (30.1 to 31.4), hold wide on the four dogs; inserts by eased push: collars 33.1, chains 36.2, dishes 39.1 (zoom 2.0 on dog1 dish), ending on a two-shot of the stranger and dog1 dish."
+   },
+   "composition": "Dogs in two depth rows facing left: dog1 (hero, white with black patches) x 430 y 930 s 0.9; dog3 x 730 y 930 s 0.9; dog2 x 580 y 870 s 0.78; dog4 x 870 y 870 s 0.78. One gold dish 95 units in front (left) of each muzzle. Chains run from each collar up and right to a ring post at (960, 700). Stranger at x 140.",
+   "actions": [
+    {
+     "t": 29.5,
+     "end": 30.2,
+     "cue": {
+      "word": "رأى",
+      "t": 29.58
+     },
+     "who": "stranger",
+     "action": "head turns, eyes widen",
+     "acting": "gaze snaps right, lid 0, brow -0.8, mouth o",
+     "library": "lookAt"
+    },
+    {
+     "t": 30.08,
+     "end": 31.3,
+     "cue": {
+      "word": "أربعة",
+      "t": 30.08
+     },
+     "who": "fx",
+     "action": "counter ticks 1, 2, 3, 4 above the dogs as the pan passes each (30.1, 30.3, 30.5, 30.7)",
+     "acting": "each dog reacts to its number a few frames apart: ear flick, head lift, yawn, tail thump",
+     "library": "S.counter + stagger(i)"
+    },
+    {
+     "t": 31.36,
+     "end": 32.3,
+     "cue": {
+      "word": "كبيرة",
+      "t": 31.36
+     },
+     "who": "dog1",
+     "action": "the dogs sit up tall together but not in unison; dog1 is a head taller than the seated man",
+     "acting": "sit 1, chest out (sq 1.05 stretch), ears up, calm half lids (lid 0.3)",
+     "library": "dog {sit, ears, pal} (planned dog, hound scale 1.25 of the sheepdog)"
+    },
+    {
+     "t": 32.4,
+     "end": 34.1,
+     "cue": {
+      "word": "أطواقًا",
+      "t": 33.12
+     },
+     "who": "fx",
+     "action": "a glint runs across the four gold collars, one after another",
+     "acting": "staggered star glints 0.15 s apart; the stranger pupils follow the glint left to right",
+     "library": "dog collar option + goldGlow strength 0.5"
+    },
+    {
+     "t": 34.18,
+     "end": 35.0,
+     "cue": {
+      "word": "ذهب،",
+      "t": 34.18
+     },
+     "who": "lettering",
+     "action": "label GOLD with an arrow to dog1 collar",
+     "acting": "label above the dogs backs, no face covered",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 35.0,
+     "end": 37.2,
+     "cue": {
+      "word": "سلاسل",
+      "t": 36.22
+     },
+     "who": "chain",
+     "action": "dog3 shakes its head; its silver chain swings and rings; a white glint travels down each chain to the ring post",
+     "acting": "damped swing on the chain, links catch light in sequence",
+     "library": "chainLine {sag, swing()}"
+    },
+    {
+     "t": 37.26,
+     "end": 38.2,
+     "cue": {
+      "word": "فضة،",
+      "t": 37.26
+     },
+     "who": "lettering",
+     "action": "label SILVER with an arrow to the chain",
+     "acting": "second label replaces the first",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 38.26,
+     "end": 39.8,
+     "cue": {
+      "word": "أطباق",
+      "t": 39.14
+     },
+     "who": "camera",
+     "action": "eased push down to the dish in front of dog1; the empty dish shines",
+     "acting": "dog1 looks down at its dish, then back up; insert framing keeps dog1 eyes in the top of the frame",
+     "library": "K.camAt + goldDish {fill 0, glint}"
+    },
+    {
+     "t": 39.86,
+     "end": 41.0,
+     "cue": {
+      "word": "ذهبية.",
+      "t": 39.86
+     },
+     "who": "fx",
+     "action": "gold rays burst from the dish; label SOLID GOLD!",
+     "acting": "emphasis primitive, rays strength 0 to 1 to 0.4",
+     "library": "goldGlow + S.emphasis"
+    },
+    {
+     "t": 40.2,
+     "end": 41.6,
+     "cue": {
+      "word": "ذهبية.",
+      "t": 39.86
+     },
+     "who": "stranger",
+     "action": "two-shot: he looks from the gold dish down to his own empty hands",
+     "acting": "gaze dish, then own palms (palmsUp), slow blink, mouth frown; the dog watches him do it (first tiny notice, ears only)",
+     "library": "twoShot + PERSON_HANDS.palmsUp"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 34.18,
+     "text": "GOLD"
+    },
+    {
+     "t": 37.26,
+     "text": "SILVER"
+    },
+    {
+     "t": 39.86,
+     "text": "SOLID GOLD!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 41.68
+   }
+  },
+  {
+   "id": "S5",
+   "start": 41.68,
+   "end": 62.0,
+   "paragraphs": [
+    3
+   ],
+   "set": "court",
+   "cast": [
+    "stranger",
+    "dog1",
+    "dog2",
+    "dog3",
+    "dog4",
+    "servantA",
+    "servantB"
+   ],
+   "summary": "Servants fill the dishes. The man is hungrier than the dogs. One dog notices him, looks at him for a long time, then steps back from its dish as an invitation.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Wide while the servants serve (41.7 to 45). From 45.14 a two-shot of the stranger and dog1 (twoShot margin 120). 52.04 to 54.3 slow push to the two faces (zoom 1.6 to 2.0) for the long look. 54.62 ease back so the dish and the gap the dog opens are in frame."
+   },
+   "composition": "Stranger left (x 140, seated), dog1 right of centre (x 430) facing him, the dish between them at x 325. The other dogs eat in the background, heads down.",
+   "actions": [
+    {
+     "t": 41.68,
+     "end": 43.6,
+     "cue": {
+      "word": "الخدم",
+      "t": 42.6
+     },
+     "who": "servantA",
+     "action": "two servants walk along the row with a big pot and a ladle, one dish each: dog4, dog3, dog2, dog1",
+     "acting": "brisk steps, bored faces (lid 0.5), never glance at the corner",
+     "library": "person {costume:'servant'} x2 + walk() + handRW to each dish"
+    },
+    {
+     "t": 43.02,
+     "end": 44.9,
+     "cue": {
+      "word": "الطعام",
+      "t": 43.02
+     },
+     "who": "goldDish",
+     "action": "each dish fills with a steaming heap as the ladle tips (43.0, 43.5, 44.0, 44.5)",
+     "acting": "fill 0 to 1 with a small bounce, three steam curls each",
+     "library": "goldDish {fill, steam}"
+    },
+    {
+     "t": 43.74,
+     "end": 45.6,
+     "cue": {
+      "word": "للكلاب،",
+      "t": 43.74
+     },
+     "who": "dog2",
+     "action": "the dogs start eating one after another: heads go down, tails wag out of phase",
+     "acting": "headDown 1, chew cycles at different rates, tailWag; dog1 starts last and eats slowly",
+     "library": "dog {headDown, chew, tailWag} + stagger"
+    },
+    {
+     "t": 44.9,
+     "end": 45.8,
+     "cue": {
+      "word": "لكن",
+      "t": 45.14
+     },
+     "who": "servantA",
+     "action": "servants walk off to the right",
+     "acting": "backs turned; the court is left to the dogs and the man",
+     "library": "walk()"
+    },
+    {
+     "t": 45.84,
+     "end": 47.2,
+     "cue": {
+      "word": "الرجل",
+      "t": 45.84
+     },
+     "who": "stranger",
+     "action": "leans toward the smell without meaning to, swallows",
+     "acting": "tip 0.1 toward the dish, gaze fixed on the food, wet true, throat gulp (drop pulse 4 px)",
+     "library": "lookAt + pulse"
+    },
+    {
+     "t": 47.2,
+     "end": 48.6,
+     "cue": {
+      "word": "جوعًا",
+      "t": 47.88
+     },
+     "who": "fx",
+     "action": "his belly growls: sound arcs from his stomach; he presses both hands on it, embarrassed",
+     "acting": "tremble 1.5 px, hands on belly, eyes shut tight for 8 frames, brow -0.8",
+     "library": "tremble() + soundArcs"
+    },
+    {
+     "t": 48.56,
+     "end": 49.5,
+     "cue": {
+      "word": "منها.",
+      "t": 48.56
+     },
+     "who": "lettering",
+     "action": "small label HUNGRIER! with an arrow to him",
+     "acting": "pops and settles; removed at 49.5",
+     "library": "S.label"
+    },
+    {
+     "t": 49.3,
+     "end": 50.3,
+     "cue": {
+      "word": "لاحظه",
+      "t": 49.54
+     },
+     "who": "dog1",
+     "action": "dog1 stops chewing: the near ear swivels to the growl first, then the head lifts from the dish",
+     "acting": "ear leads, head follows 5 frames late, a crumb falls from the muzzle",
+     "library": "dog {ears, headDown 1 to 0} (ears find the sound before the head)"
+    },
+    {
+     "t": 50.32,
+     "end": 51.9,
+     "cue": {
+      "word": "الكلاب،",
+      "t": 50.72
+     },
+     "who": "dog1",
+     "action": "turns its head to the man, tilts it",
+     "acting": "headTilt 0.25, gaze on his face (lookAt), brow -0.4 curious, tail still",
+     "library": "dog {headTilt, brow} + lookAt"
+    },
+    {
+     "t": 50.9,
+     "end": 52.0,
+     "cue": {
+      "word": "الكلاب،",
+      "t": 50.72
+     },
+     "who": "stranger",
+     "action": "caught staring: freezes, pulls his hands back to his lap, looks away then back",
+     "acting": "gaze breaks to the floor, returns; shoulders up (sq 0.95)",
+     "library": "gazePlan"
+    },
+    {
+     "t": 52.04,
+     "end": 54.3,
+     "cue": {
+      "word": "فنظر",
+      "t": 52.04
+     },
+     "who": "dog1",
+     "action": "the long look: dog and man hold each other gaze; only blinks and breathing move; the other dogs keep eating behind",
+     "acting": "suspense by stillness: one slow blink each (dog at 53.0, man at 53.5), breathe() on both, camera creeps in",
+     "library": "breathe() + blink + twoShot"
+    },
+    {
+     "t": 53.18,
+     "end": 54.3,
+     "cue": {
+      "word": "طويلًا،",
+      "t": 53.18
+     },
+     "who": "dog1",
+     "action": "looks down at its full dish, then at the man again",
+     "acting": "gaze dish, gaze man: the thought is visible without a balloon",
+     "library": "gazePlan"
+    },
+    {
+     "t": 54.3,
+     "end": 56.1,
+     "cue": {
+      "word": "ابتعد",
+      "t": 54.62
+     },
+     "who": "dog1",
+     "action": "backs away from the dish: two steps backward (x 430 to 520), chain paying out, then sits",
+     "acting": "anticipation head dip, legs never slide (walk on distance), sits with a settle, chain sags",
+     "library": "walk() + dog {sit} + chainLine"
+    },
+    {
+     "t": 55.44,
+     "end": 56.2,
+     "cue": {
+      "word": "طبقه",
+      "t": 55.44
+     },
+     "who": "fx",
+     "action": "dashed arrow from the dish to the man appears on the floor",
+     "acting": "arrow draws on left-ward",
+     "library": "S.arrow"
+    },
+    {
+     "t": 56.2,
+     "end": 58.7,
+     "cue": {
+      "word": "يدعوه",
+      "t": 56.98
+     },
+     "who": "dog1",
+     "action": "nods its muzzle at the dish twice and lifts a front paw in a small beckon",
+     "acting": "headDown pulses 0.3 at 56.98 and 57.68, raise 1 at 57.96, tail wags slowly, soft eyes (lid 0.25)",
+     "library": "dog {raise, tailWag} + pulse"
+    },
+    {
+     "t": 58.8,
+     "end": 61.4,
+     "cue": {
+      "word": "وتناول",
+      "t": 58.8
+     },
+     "who": "stranger",
+     "action": "points at himself: me? looks around the court, back to the dog",
+     "acting": "PERSON_HANDS.chest, brow -0.9, saccades to the servants exit and the host, mouth o",
+     "library": "PERSON_HANDS.chest + gazePlan"
+    },
+    {
+     "t": 60.48,
+     "end": 61.9,
+     "cue": {
+      "word": "الطعام.",
+      "t": 60.72
+     },
+     "who": "dog1",
+     "action": "one more small nod; settles into a lie down beside the dish, chin on paws, eyes on him",
+     "acting": "crouch to rest, tail thump once in the pause at 61.9",
+     "library": "dog {crouch}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 48.56,
+     "text": "HUNGRIER!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 61.95,
+     "kind": "soft thud"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 62.0
+   }
+  },
+  {
+   "id": "S6",
+   "start": 62.0,
+   "end": 83.3,
+   "paragraphs": [
+    4
+   ],
+   "set": "court",
+   "cast": [
+    "stranger",
+    "dog1",
+    "dog2",
+    "dog3",
+    "dog4"
+   ],
+   "summary": "He hesitates, creeps over and eats until he is full. The dog does not stop him; it pushes the gold dish to him with its paw as if to say: take this too.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Two-shot throughout (stranger and dog1, dish between). Push to the dish and paw at 72.34 (zoom 2.1, both faces kept at the frame top), ease back at 75.58 for the balloon, final slow push on the man face 80.28 to 82.8."
+   },
+   "composition": "Dish at x 325 until 72.34, then it slides to x 235 in two nudges. Stranger moves from x 140 to kneel at x 240, facing right. Dog1 seated at x 520 then steps to x 440. Balloon space above the dog, left of centre top.",
+   "actions": [
+    {
+     "t": 62.0,
+     "end": 63.4,
+     "cue": {
+      "word": "تردد",
+      "t": 62.76
+     },
+     "who": "stranger",
+     "action": "half rises, sits back down",
+     "acting": "sit 1 to 0.5 to 1, hands wringing (clasp), gaze flicking between dish and dog",
+     "library": "person {sit} + PERSON_HANDS.clasp"
+    },
+    {
+     "t": 63.42,
+     "end": 64.6,
+     "cue": {
+      "word": "الرجل",
+      "t": 63.42
+     },
+     "who": "stranger",
+     "action": "checks over both shoulders for servants",
+     "acting": "saccades left and right, hush posture, brow -0.6",
+     "library": "gazePlan(…, 0.07)"
+    },
+    {
+     "t": 64.7,
+     "end": 65.4,
+     "cue": {
+      "word": "ثم",
+      "t": 65.46
+     },
+     "who": "dog1",
+     "action": "in the pause the dog gives one slow tail thump: go on",
+     "acting": "tailWag single beat, eyes soft",
+     "library": "dog {tailWag}"
+    },
+    {
+     "t": 65.46,
+     "end": 66.7,
+     "cue": {
+      "word": "اقترب",
+      "t": 66.12
+     },
+     "who": "stranger",
+     "action": "crawls and shuffles over on his knees to the dish (x 140 to 240)",
+     "acting": "low sneak, kneel 1 on arrival with a settle, eyes never leave the dog",
+     "library": "sneak + person {kneel}"
+    },
+    {
+     "t": 66.7,
+     "end": 68.2,
+     "cue": {
+      "word": "وأكل",
+      "t": 66.7
+     },
+     "who": "stranger",
+     "action": "eats with his hand: first a careful pinch, then faster and faster, three scoops",
+     "acting": "hand to mouth via handRW to the dish, cheeks full, eyes shut with relief on the second bite, wet true",
+     "library": "handRW + mouth open / closed cycle"
+    },
+    {
+     "t": 66.9,
+     "end": 69.6,
+     "cue": {
+      "word": "وأكل",
+      "t": 66.7
+     },
+     "who": "goldDish",
+     "action": "the heap in the dish goes down with each scoop until the gold bottom shows",
+     "acting": "fill 1 to 0 in steps on each scoop",
+     "library": "goldDish {fill}"
+    },
+    {
+     "t": 68.26,
+     "end": 69.7,
+     "cue": {
+      "word": "زال",
+      "t": 68.26
+     },
+     "who": "stranger",
+     "action": "sits back on his heels, long breath out, pats his belly; colour returns",
+     "acting": "smile, lid 0.6 contented, shoulders loose, one tear of relief",
+     "library": "breathe() + PERSON_HANDS.chest"
+    },
+    {
+     "t": 69.76,
+     "end": 71.3,
+     "cue": {
+      "word": "يمنعه",
+      "t": 70.1
+     },
+     "who": "dog1",
+     "action": "the dog has watched all of it without moving: tail wags, tongue out",
+     "acting": "tongue 0.6, tailWag steady, headTilt 0.15; behind, dog3 lifts its head, looks, goes back to eating",
+     "library": "dog {tongue, tailWag}"
+    },
+    {
+     "t": 70.82,
+     "end": 71.4,
+     "cue": {
+      "word": "الكلب،",
+      "t": 70.82
+     },
+     "who": "stranger",
+     "action": "looks up at the dog and dips his head in thanks",
+     "acting": "gaze dog, small bow tip 0.12",
+     "library": "lookAt"
+    },
+    {
+     "t": 71.4,
+     "end": 72.34,
+     "cue": {
+      "word": "دفع",
+      "t": 72.34
+     },
+     "who": "dog1",
+     "action": "anticipation: the dog stands, steps to the dish (x 520 to 440), lifts its near forepaw",
+     "acting": "raise 0 to 1, weight shifts back",
+     "library": "walk() + dog {raise} + anticipate()"
+    },
+    {
+     "t": 72.34,
+     "end": 73.3,
+     "cue": {
+      "word": "دفع",
+      "t": 72.34
+     },
+     "who": "goldDish",
+     "action": "first push: the paw shoves the dish, it scrapes 45 units toward the man",
+     "acting": "dish slides with ease-out and a tiny rock; scrape lines on the floor",
+     "library": "kfn slide + S.emphasis lines"
+    },
+    {
+     "t": 73.4,
+     "end": 74.5,
+     "cue": {
+      "word": "الطبق",
+      "t": 73.4
+     },
+     "who": "goldDish",
+     "action": "second push: 45 more units, the dish bumps his knee and rings",
+     "acting": "man startles back (sq 0.93), stares at the dish against his knee; gold glint",
+     "library": "goldGlow 0.4 + settleTo"
+    },
+    {
+     "t": 74.56,
+     "end": 75.5,
+     "cue": {
+      "word": "بقدمه،",
+      "t": 74.56
+     },
+     "who": "dog1",
+     "action": "paw stays planted on the rim for a beat, then withdraws; dog sits",
+     "acting": "holds eye contact; insert framing shows paw on gold",
+     "library": "dog {raise 1 to 0, sit}"
+    },
+    {
+     "t": 75.58,
+     "end": 77.3,
+     "cue": {
+      "word": "وكأنه",
+      "t": 75.58
+     },
+     "who": "fx",
+     "action": "wordless picture balloon from the dog: the gold dish, an arrow, the man",
+     "acting": "balloon pops above the dog, tail to its muzzle, never over a face",
+     "library": "iconBalloon (planned) single mode"
+    },
+    {
+     "t": 77.42,
+     "end": 78.4,
+     "cue": {
+      "word": "خذ",
+      "t": 77.42
+     },
+     "who": "dog1",
+     "action": "nods its muzzle at the dish, then at him",
+     "acting": "headDown pulse 0.3 then lookAt his face, ears forward",
+     "library": "dog + pulse"
+    },
+    {
+     "t": 78.18,
+     "end": 79.3,
+     "cue": {
+      "word": "هذا",
+      "t": 78.18
+     },
+     "who": "stranger",
+     "action": "points at the dish, then at his own chest; shakes his head: I cannot",
+     "acting": "pointDown, then chest; brow -0.9, head shake 3 px x2",
+     "library": "PERSON_HANDS.pointDown / chest"
+    },
+    {
+     "t": 79.32,
+     "end": 80.9,
+     "cue": {
+      "word": "فلعلك",
+      "t": 79.32
+     },
+     "who": "fx",
+     "action": "the balloon picture changes: the man with the three debt scrolls and an empty belly beside the dog with a full belly",
+     "acting": "reads as: you need it more than I do",
+     "library": "iconBalloon content swap"
+    },
+    {
+     "t": 80.28,
+     "end": 82.1,
+     "cue": {
+      "word": "تحتاج",
+      "t": 80.28
+     },
+     "who": "stranger",
+     "action": "his hands close slowly around the rim; he lifts the dish to his chest",
+     "acting": "handLW / handRW to the dish, wet true, lower lip trembles, slow blink",
+     "library": "handLW + handRW + tremble(…, 0.8)"
+    },
+    {
+     "t": 82.14,
+     "end": 83.3,
+     "cue": {
+      "word": "مني.",
+      "t": 82.14
+     },
+     "who": "dog1",
+     "action": "the dog lies down, chin on paws, eyes half shut, content; the man bows low over the dish",
+     "acting": "dog crouch + lid 0.6; man tip 0.2; gold glow on his face in the pause",
+     "library": "goldGlow 0.6"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 72.5,
+     "text": "SCRAPE!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 64.9,
+     "kind": "soft tail thump"
+    },
+    {
+     "t": 83.2,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 83.3
+   }
+  },
+  {
+   "id": "S7",
+   "start": 83.3,
+   "end": 91.2,
+   "paragraphs": [
+    5
+   ],
+   "set": "street",
+   "cast": [
+    "stranger",
+    "buyer"
+   ],
+   "summary": "He leaves the mansion with the dish under his robe and sells it to a goldsmith for a great price.",
+   "camera": {
+    "shot": "medium",
+    "move": "track",
+    "notes": "Starts on the palace door (street set), tracks left with him to the goldsmith stall, settles on a two-shot over the counter with the dish between them."
+   },
+   "composition": "Palace door right, goldsmith stall (kind jars, yellow awning) at mid strip; counter height from MARKET.stalls[i].counter. Buyer behind the counter, stranger in front on the left.",
+   "actions": [
+    {
+     "t": 83.3,
+     "end": 84.5,
+     "cue": {
+      "word": "أخذ",
+      "t": 83.8
+     },
+     "who": "stranger",
+     "action": "the palace door opens a crack; he steps out with the dish hugged under his robe, a round bulge",
+     "acting": "looks back once at the door (gaze back), grateful small bow, then forward",
+     "library": "townDoor + person handL chest"
+    },
+    {
+     "t": 85.06,
+     "end": 85.7,
+     "cue": {
+      "word": "الطبق",
+      "t": 85.06
+     },
+     "who": "goldDish",
+     "action": "a glint escapes from under the robe; he tucks it tighter",
+     "acting": "eyes widen, quick look around",
+     "library": "goldGlow 0.3"
+    },
+    {
+     "t": 85.72,
+     "end": 87.5,
+     "cue": {
+      "word": "وخرج",
+      "t": 85.72
+     },
+     "who": "stranger",
+     "action": "hurries down the steps and along the street, lighter on his feet than in S1",
+     "acting": "upright (tip 0), amp 1 walk, the debt scrolls still bobbing behind him",
+     "library": "walk() + footfalls()"
+    },
+    {
+     "t": 87.62,
+     "end": 88.7,
+     "cue": {
+      "word": "ثم",
+      "t": 87.62
+     },
+     "who": "stranger",
+     "action": "stops at the goldsmith stall and sets the dish on the counter",
+     "acting": "handRW to the counter, dish lands with a settle and a ring glint",
+     "library": "handRW + settleTo"
+    },
+    {
+     "t": 88.78,
+     "end": 89.4,
+     "cue": {
+      "word": "باعه",
+      "t": 88.78
+     },
+     "who": "buyer",
+     "action": "the goldsmith bites the rim, taps it, eyebrows shoot up",
+     "acting": "eyes wide, brow -1, coinEyes pop for 12 frames",
+     "library": "person {costume:'merchant', pal yellow turban} + coinEyes (planned)"
+    },
+    {
+     "t": 89.48,
+     "end": 90.4,
+     "cue": {
+      "word": "بثمن",
+      "t": 89.48
+     },
+     "who": "coinPile",
+     "action": "coins are counted onto the counter: the pile grows in four steps, counter above runs up",
+     "acting": "each stack lands with a hop of the dish; counter primitive ticks",
+     "library": "coinPile (planned) + S.counter"
+    },
+    {
+     "t": 90.42,
+     "end": 91.2,
+     "cue": {
+      "word": "كبير.",
+      "t": 90.42
+     },
+     "who": "stranger",
+     "action": "stares at the pile, then sweeps it into a purse; label BIG PRICE!",
+     "acting": "mouth o then a disbelieving smile, both hands gather (reachBoth)",
+     "library": "PERSON_HANDS.reachBoth + purse (planned)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 90.42,
+     "text": "BIG PRICE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 91.2
+   }
+  },
+  {
+   "id": "S8",
+   "start": 91.2,
+   "end": 97.8,
+   "paragraphs": [
+    5
+   ],
+   "set": "street",
+   "cast": [
+    "stranger",
+    "stallkeeper"
+   ],
+   "summary": "He pays off some of his debts and spends the rest on goods to trade.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Medium on the stranger with the scroll stack beside him at head height; small pan right at 93.82 to the handcart of goods and the empty stall."
+   },
+   "composition": "Stranger centre left. The three debt scrolls unroll in a column to his right (x +150), each 120 wide. Goods cart to the right, empty stall behind it.",
+   "actions": [
+    {
+     "t": 91.2,
+     "end": 92.1,
+     "cue": {
+      "word": "سدد",
+      "t": 91.42
+     },
+     "who": "debtScrolls",
+     "action": "the three scrolls float round in front of him; he drops coins on the first: a red X strikes it and it rolls up and pops",
+     "acting": "he stands taller as it goes (tip 0.13 to 0.08)",
+     "library": "scroll (planned) {struck} + settleTo"
+    },
+    {
+     "t": 92.18,
+     "end": 92.6,
+     "cue": {
+      "word": "بعض",
+      "t": 92.18
+     },
+     "who": "debtScrolls",
+     "action": "second scroll struck and gone; the third stays, smaller, tucked into his sash",
+     "acting": "only SOME debts: one scroll remains visible on him until S9",
+     "library": "scroll {struck}"
+    },
+    {
+     "t": 92.66,
+     "end": 93.7,
+     "cue": {
+      "word": "ديونه،",
+      "t": 92.66
+     },
+     "who": "stranger",
+     "action": "rolls his freed shoulders, breathes, weighs the lighter purse",
+     "acting": "tip to 0, sq stretch 1.04 then settle, smile",
+     "library": "breathe() + settleTo"
+    },
+    {
+     "t": 93.82,
+     "end": 95.2,
+     "cue": {
+      "word": "واشترى",
+      "t": 93.82
+     },
+     "who": "stallkeeper",
+     "action": "he pays the stallkeeper who refused him in S1; cloth bolts, sacks and jars hop onto a handcart one by one",
+     "acting": "keeper now bows (reversal); items pop with squash at 94.0, 94.4, 94.8, 95.2",
+     "library": "townProp 'sacks' / 'crate' / 'pots' + landSquash"
+    },
+    {
+     "t": 95.32,
+     "end": 96.1,
+     "cue": {
+      "word": "بضاعة",
+      "t": 95.32
+     },
+     "who": "lettering",
+     "action": "label GOODS with an arrow to the cart",
+     "acting": "label above the cart",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 96.18,
+     "end": 97.7,
+     "cue": {
+      "word": "يتاجر",
+      "t": 96.18
+     },
+     "who": "stranger",
+     "action": "pushes the cart to the empty stall, flips its awning open and stands behind the counter; first customer (the lady) stops",
+     "acting": "proud small smile, hands flat on the counter, welcoming wave",
+     "library": "marketStall {state closed to open} + PERSON_HANDS.wave"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 95.32,
+     "text": "GOODS"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 97.8
+   }
+  },
+  {
+   "id": "S9",
+   "start": 97.8,
+   "end": 106.5,
+   "paragraphs": [
+    5
+   ],
+   "set": "street",
+   "cast": [
+    "stranger",
+    "guestA",
+    "guestB"
+   ],
+   "summary": "Years pass in a time-lapse: the stall grows, customers come, and the poor stranger becomes a prosperous merchant.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Locked wide on his stall, slow pull-out (zoom 1.4 to 1.0) while the sky wheels; no card here, the time-lapse itself says the years."
+   },
+   "composition": "His stall centre. Sky visible above the house fronts for the sun and moon arcs. Customers cross from both sides.",
+   "actions": [
+    {
+     "t": 97.8,
+     "end": 101.4,
+     "cue": {
+      "word": "مرور",
+      "t": 98.48
+     },
+     "who": "set",
+     "action": "time-lapse: the sky runs three day and night cycles; shadows tint the street at each night",
+     "acting": "u from 0.1 to 3.1 eased; windows light at each dusk",
+     "library": "skyCycle / dayCycle(u) + marketStreet {u, windowsLit}"
+    },
+    {
+     "t": 98.98,
+     "end": 100.6,
+     "cue": {
+      "word": "السنوات",
+      "t": 98.98
+     },
+     "who": "stranger",
+     "action": "he ages behind the counter: a beard grows in, the patched robe becomes a good green robe, then a turban appears",
+     "acting": "age 0.15 to 0.45; costume swaps hidden on the three night passes (villager to merchant pal green)",
+     "library": "person {costume, age, pal} switched under the night tint"
+    },
+    {
+     "t": 99.84,
+     "end": 101.2,
+     "cue": {
+      "word": "نجحت",
+      "t": 99.84
+     },
+     "who": "set",
+     "action": "the stall grows from one column to three, awning widens, goods multiply; the last debt scroll in his sash gets its red X and pops",
+     "acting": "each growth step lands with a bounce on a day start",
+     "library": "marketStall {cols 1 to 3} + scroll {struck}"
+    },
+    {
+     "t": 100.68,
+     "end": 102.0,
+     "cue": {
+      "word": "تجارته،",
+      "t": 100.68
+     },
+     "who": "guestA",
+     "action": "customers come and go from both sides, each leaving a coin; a small coin counter climbs",
+     "acting": "walkers at different speeds, never in unison; he serves with quick bows",
+     "library": "walk() + S.counter + coinPile"
+    },
+    {
+     "t": 102.08,
+     "end": 103.6,
+     "cue": {
+      "word": "وأصبح",
+      "t": 102.08
+     },
+     "who": "stranger",
+     "action": "day holds at noon; he steps out in front of his stall, well dressed, hands on hips, looking at what he has built",
+     "acting": "hipsHands, chest out, calm smile, gaze sweeping the stall",
+     "library": "PERSON_HANDS.hipsHands"
+    },
+    {
+     "t": 103.74,
+     "end": 105.2,
+     "cue": {
+      "word": "العيش",
+      "t": 103.74
+     },
+     "who": "stranger",
+     "action": "sits on a cushion by the stall; a child servant brings him a tray of food: now he is the one with a full dish",
+     "acting": "sit 1 on a bench cushion, relaxed lid 0.4",
+     "library": "person {sit, seat:'bench'} + person {costume:'servant', child:true} + foodTray"
+    },
+    {
+     "t": 104.6,
+     "end": 106.5,
+     "cue": {
+      "word": "سعة.",
+      "t": 104.6
+     },
+     "who": "stranger",
+     "action": "he looks at the food on the tray and stops with the first bite half way: his eyes go far away",
+     "acting": "gaze drifts up left (memory), chewing stops, smile fades to thoughtful: bridge to the memory",
+     "library": "gazePlan"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 106.5
+   }
+  },
+  {
+   "id": "S10",
+   "start": 106.5,
+   "end": 110.2,
+   "paragraphs": [
+    6
+   ],
+   "set": "street",
+   "cast": [
+    "stranger",
+    "dog1",
+    "lord"
+   ],
+   "summary": "He has never forgotten the dog or the master of the mansion.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Push in on the seated merchant (zoom 1.6 to 2.0), thought cloud filling the upper half of the panel."
+   },
+   "composition": "Merchant low in the frame, cloud 520 x 360 centred at about panel (500, 420); figures inside at least 110 px tall.",
+   "actions": [
+    {
+     "t": 106.5,
+     "end": 107.7,
+     "cue": {
+      "word": "ينس",
+      "t": 106.74
+     },
+     "who": "fx",
+     "action": "thought cloud opens: the moment of S6, the dog paw on the gold dish, the dish sliding",
+     "acting": "trail first, then the cloud; inside plays as a 1.2 s loop of the push",
+     "library": "thoughtCloud {inside: dog + goldDish, scale 0.45}"
+    },
+    {
+     "t": 107.74,
+     "end": 108.3,
+     "cue": {
+      "word": "الكلب",
+      "t": 107.74
+     },
+     "who": "dog1",
+     "action": "inside the cloud the dog looks out at him and wags",
+     "acting": "the merchant smiles back, wet eyes",
+     "library": "dog inside thoughtCloud"
+    },
+    {
+     "t": 108.94,
+     "end": 110.0,
+     "cue": {
+      "word": "صاحب",
+      "t": 108.94
+     },
+     "who": "lord",
+     "action": "the picture in the cloud widens to the host on his dais behind the dog",
+     "acting": "merchant puts a hand on his heart",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 109.58,
+     "end": 110.2,
+     "cue": {
+      "word": "القصر.",
+      "t": 109.58
+     },
+     "who": "stranger",
+     "action": "he puts the tray down, stands up with decision; the cloud pops",
+     "acting": "anticipate dip then rise, brow set, mouth firm",
+     "library": "anticipate() + sit 1 to 0"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 110.2,
+    "label": "YEARS LATER..."
+   }
+  },
+  {
+   "id": "S11",
+   "start": 110.2,
+   "end": 120.0,
+   "paragraphs": [
+    6
+   ],
+   "set": "street",
+   "cast": [
+    "stranger",
+    "porter"
+   ],
+   "summary": "Years later he walks back to the city with a purse worth the dish and a chest of gifts, to repay the kindness.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "The card YEARS LATER... covers 110.2 to 111.8 (in the spoken gap between the two words); camera cut hidden at its midpoint. Then track right with the walkers along the strip toward the palace end, stopping short of the palace so it stays off screen until S12."
+   },
+   "composition": "Merchant leads (now age 0.6, grey in the beard), purse in his right hand; a porter child follows 120 units behind carrying a gift chest. They walk left to right, the same direction as in S1.",
+   "actions": [
+    {
+     "t": 110.2,
+     "end": 111.8,
+     "cue": {
+      "word": "وبعد",
+      "t": 110.2
+     },
+     "who": "fx",
+     "action": "transition card YEARS LATER...",
+     "acting": "style transition primitive; under it the merchant ages to 0.6",
+     "library": "S.transition {caption}"
+    },
+    {
+     "t": 111.86,
+     "end": 113.3,
+     "cue": {
+      "word": "سنوات",
+      "t": 111.86
+     },
+     "who": "stranger",
+     "action": "walks in from the left, brisk and upright, older",
+     "acting": "amp 1 walk, chin up, expectant smile, gaze ahead",
+     "library": "person {costume:'merchant', pal green, age 0.6} + walk() + footfalls()"
+    },
+    {
+     "t": 112.66,
+     "end": 114.0,
+     "cue": {
+      "word": "عاد",
+      "t": 112.66
+     },
+     "who": "porter",
+     "action": "the porter boy trots behind with the chest on his shoulder, half a beat late",
+     "acting": "shorter quicker steps, chest bobs with a lag",
+     "library": "person {costume:'servant', child:true} + walk()"
+    },
+    {
+     "t": 113.98,
+     "end": 115.2,
+     "cue": {
+      "word": "مالًا",
+      "t": 113.98
+     },
+     "who": "purse",
+     "action": "he lifts the fat purse and gives it a shake; coins glint; label FOR THE DISH with an arrow",
+     "acting": "purse swings (swing()), pleased nod",
+     "library": "purse (planned) + swing() + S.label"
+    },
+    {
+     "t": 115.32,
+     "end": 116.5,
+     "cue": {
+      "word": "قيمة",
+      "t": 115.32
+     },
+     "who": "fx",
+     "action": "small picture balloon over the purse: gold dish equals coin pile",
+     "acting": "balloon in the sky area, clear of both faces",
+     "library": "iconBalloon single: goldDish = coinPile"
+    },
+    {
+     "t": 116.56,
+     "end": 118.3,
+     "cue": {
+      "word": "وهدايا",
+      "t": 116.56
+     },
+     "who": "porter",
+     "action": "the boy opens the chest lid a crack to peek: cloth and jewels glow; he shuts it fast when the merchant looks back",
+     "acting": "comic beat: boy eyes wide, lid snap, innocent whistle face",
+     "library": "treasureHoard chest {open} + goldGlow 0.4"
+    },
+    {
+     "t": 118.38,
+     "end": 120.0,
+     "cue": {
+      "word": "رد",
+      "t": 118.96
+     },
+     "who": "stranger",
+     "action": "hand on heart as he walks, rehearsing his thanks; he rounds the last house front",
+     "acting": "PERSON_HANDS.chest, eyes shining, quickening steps",
+     "library": "PERSON_HANDS.chest + walk()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 113.98,
+     "text": "FOR THE DISH"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 120.0
+   }
+  },
+  {
+   "id": "S12",
+   "start": 120.0,
+   "end": 127.2,
+   "paragraphs": [
+    6
+   ],
+   "set": "ruin",
+   "cast": [
+    "stranger",
+    "porter"
+   ],
+   "summary": "He finds the mansion in ruins, shut and stripped of all its wealth.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Start close on his smiling face (120.04), hold it as the smile drops, then pan right and pull out on 121.76 to reveal the ruined palace; slow tilt up the cracked facade at 124.3."
+   },
+   "composition": "Same street geometry as S2 so the audience recognises the place: palace on the right, now palette dusk, door chained and planked. Merchant at the spot where he once tiptoed in. Porter behind him.",
+   "actions": [
+    {
+     "t": 120.0,
+     "end": 121.6,
+     "cue": {
+      "word": "لكنه",
+      "t": 120.04
+     },
+     "who": "stranger",
+     "action": "stops dead mid-stride; the smile fades in three steps",
+     "acting": "walk freezes, gaze fixed off right, mouth smile to closed to o, purse hand sinks",
+     "library": "settleTo + gazePlan"
+    },
+    {
+     "t": 121.2,
+     "end": 122.2,
+     "cue": {
+      "word": "وجد",
+      "t": 121.76
+     },
+     "who": "camera",
+     "action": "pan and pull out to reveal the mansion: boarded door, chain, broken balcony",
+     "acting": "reveal by camera on the word",
+     "library": "marketStreet {palette:'dusk', palace:'shut', shut:1}"
+    },
+    {
+     "t": 122.26,
+     "end": 123.5,
+     "cue": {
+      "word": "المكان",
+      "t": 122.26
+     },
+     "who": "set",
+     "action": "a shutter hangs by one hinge and swings; a tuft of weed on the steps; a crow lifts off the balcony",
+     "acting": "damped swing, single bird flaps away (the only motion)",
+     "library": "swing() + bird {kind:'crow', fly:true}"
+    },
+    {
+     "t": 122.84,
+     "end": 123.6,
+     "cue": {
+      "word": "خربًا،",
+      "t": 122.84
+     },
+     "who": "lettering",
+     "action": "label RUINED with an arrow to the planked door",
+     "acting": "label on the wall",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 123.6,
+     "end": 125.0,
+     "cue": {
+      "word": "اختفى",
+      "t": 124.34
+     },
+     "who": "stranger",
+     "action": "walks slowly up the steps and lays a hand on the planks",
+     "acting": "slow walk amp 0.5, handRW to the door, head drops",
+     "library": "walk() + handRW"
+    },
+    {
+     "t": 125.04,
+     "end": 126.2,
+     "cue": {
+      "word": "كان",
+      "t": 125.24
+     },
+     "who": "fx",
+     "action": "ghost of the past: for one second the bright door, the lamps and the four dogs with gold collars appear in outline over the ruin, then fade",
+     "acting": "dashed pale outline only, alpha up to 0.5 and out",
+     "library": "alpha overlay of S4 elements, dream wash (planned) 0.4"
+    },
+    {
+     "t": 126.1,
+     "end": 127.2,
+     "cue": {
+      "word": "غنى.",
+      "t": 126.3
+     },
+     "who": "stranger",
+     "action": "turns from the door, wet eyes, looks up and down the empty street; the porter boy sets the chest down",
+     "acting": "wet true, brow -0.7, slow blink; boy looks up at him, worried",
+     "library": "lookAt + wet"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 122.84,
+     "text": "RUINED"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 127.2
+   }
+  },
+  {
+   "id": "S13",
+   "start": 127.2,
+   "end": 134.9,
+   "paragraphs": [
+    7
+   ],
+   "set": "ruin",
+   "cast": [
+    "stranger",
+    "porter",
+    "neighbour",
+    "poorLord",
+    "oldDog"
+   ],
+   "summary": "He asks after the master of the mansion and is pointed to a poor man living in a bare hut.",
+   "camera": {
+    "shot": "medium",
+    "move": "whip",
+    "notes": "Medium two-shot of merchant and neighbour in the street until 131.4; whip along the pointing arm to a cut inside the hut (131.84), wide on the room."
+   },
+   "composition": "Street: neighbour (old woman with a stick) centre, merchant left. Hut (from 131.84): poor man seated on the mat at the right (HUT.mat), old dog lying beside him on his left, door in the left wall half open with the merchant silhouette arriving.",
+   "actions": [
+    {
+     "t": 127.2,
+     "end": 128.6,
+     "cue": {
+      "word": "سأل",
+      "t": 127.2
+     },
+     "who": "stranger",
+     "action": "stops an old woman passing with a stick; points back at the ruin and opens his hand: where is he?",
+     "acting": "pointFwd toward the palace then palmsUp, brow -0.6, leaning in",
+     "library": "PERSON_HANDS.pointFwd / palmsUp"
+    },
+    {
+     "t": 128.9,
+     "end": 130.1,
+     "cue": {
+      "word": "صاحب",
+      "t": 128.9
+     },
+     "who": "neighbour",
+     "action": "she looks at the ruin, shakes her head slowly, sighs",
+     "acting": "gaze ruin, lid 0.6, mouth frown, head shake",
+     "library": "person {costume:'oldWoman', hold:'stick'}"
+    },
+    {
+     "t": 130.2,
+     "end": 131.4,
+     "cue": {
+      "word": "فدلوه",
+      "t": 130.2
+     },
+     "who": "neighbour",
+     "action": "raises her stick and points down a side lane; a dashed arrow runs off right",
+     "acting": "arm and stick extend with overshoot; merchant and boy heads follow the line",
+     "library": "aR angles + S.arrow"
+    },
+    {
+     "t": 131.3,
+     "end": 131.9,
+     "cue": {
+      "word": "رجل",
+      "t": 131.84
+     },
+     "who": "camera",
+     "action": "whip along the arrow; cut to the hut interior",
+     "acting": "whip blur 4 frames, cut inside it",
+     "library": "K.camAt whip"
+    },
+    {
+     "t": 131.84,
+     "end": 133.1,
+     "cue": {
+      "word": "رجل",
+      "t": 131.84
+     },
+     "who": "poorLord",
+     "action": "reveal: a thin old man in a patched robe sits on a mat mending a sandal; beside him lies an old white dog with black patches and a grey muzzle, a plain rope collar",
+     "acting": "calm, absorbed, lid 0.4; dog asleep (lid 1), slow breathing",
+     "library": "hutRoom {palette:'day', mat, jug, door 0.5} + person {costume:'ascetic', pal beard as lord, age 0.85, sit 1, seat:'floor'} + dog {crouch, age 1}"
+    },
+    {
+     "t": 132.42,
+     "end": 133.2,
+     "cue": {
+      "word": "فقير",
+      "t": 132.42
+     },
+     "who": "set",
+     "action": "the room tells the poverty: one jug, one mat, a cracked wall, a single clay bowl in front of the dog",
+     "acting": "label not needed; slow drift across the bare shelf",
+     "library": "hutRoom anchors"
+    },
+    {
+     "t": 133.2,
+     "end": 134.9,
+     "cue": {
+      "word": "يعيش",
+      "t": 133.2
+     },
+     "who": "stranger",
+     "action": "appears in the doorway, stoops under the lintel, the boy peeking past his robe; the dog ear lifts, then one eye opens",
+     "acting": "door 0.5 to 1; merchant gaze sweeps the room and lands on the old man; dog: ear first, lid 1 to 0.5",
+     "library": "hutRoom {door} + dog {ears}"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 134.9
+   }
+  },
+  {
+   "id": "S14",
+   "start": 134.9,
+   "end": 147.7,
+   "paragraphs": [
+    7
+   ],
+   "set": "hut",
+   "cast": [
+    "stranger",
+    "poorLord",
+    "oldDog",
+    "porter"
+   ],
+   "summary": "He recognises the owner himself, tells him how the dog dish saved him from hunger and debt, and offers the money with thanks and apology.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Push to the old man face at 134.96 with the round inset of the rich host beside it; back to a two-shot (merchant left, owner right, dog low between them) for the telling; slight push on the offered purse at 143.54."
+   },
+   "composition": "Merchant kneels at x 380 facing right; owner seated at x 680; old dog lying at x 540 in front, below both eye lines. Story balloon above the centre, top third of the panel.",
+   "actions": [
+    {
+     "t": 134.9,
+     "end": 136.5,
+     "cue": {
+      "word": "عرف",
+      "t": 134.96
+     },
+     "who": "stranger",
+     "action": "stares at the old man face; takes a step closer",
+     "acting": "gaze locked, brow -0.8, mouth o, hand rises toward him",
+     "library": "lookAt + PERSON_HANDS.reach"
+    },
+    {
+     "t": 135.84,
+     "end": 137.8,
+     "cue": {
+      "word": "المالك",
+      "t": 136.6
+     },
+     "who": "fx",
+     "action": "round inset pops beside the old man head: the same face years ago under the rich turban on the dais; the two faces blink together",
+     "acting": "match: same beard shape, same eyes; inset has the dream wash",
+     "library": "inset circle (planned) + dream wash"
+    },
+    {
+     "t": 137.26,
+     "end": 137.9,
+     "cue": {
+      "word": "نفسه،",
+      "t": 137.26
+     },
+     "who": "poorLord",
+     "action": "the old man looks up from the sandal, mild and puzzled, sets it down",
+     "acting": "gaze to the visitor, brow -0.3, polite small smile",
+     "library": "gazePlan"
+    },
+    {
+     "t": 137.92,
+     "end": 139.1,
+     "cue": {
+      "word": "فأخبره",
+      "t": 137.92
+     },
+     "who": "stranger",
+     "action": "kneels in front of him and starts to tell, hands moving",
+     "acting": "kneel 0 to 1 with a settle, talk 0.7, earnest",
+     "library": "person {kneel, talk}"
+    },
+    {
+     "t": 139.18,
+     "end": 141.0,
+     "cue": {
+      "word": "أنقذه",
+      "t": 139.96
+     },
+     "who": "fx",
+     "action": "picture balloon in three frames, popping on the words: (1) the young ragged man in the corner, (2) the dog paw pushing the gold dish, (3) the dish",
+     "acting": "owner eyes follow the frames; old dog lifts its head at frame 2",
+     "library": "iconBalloon strip mode (planned)"
+    },
+    {
+     "t": 141.12,
+     "end": 141.6,
+     "cue": {
+      "word": "الكلب",
+      "t": 141.12
+     },
+     "who": "oldDog",
+     "action": "the old dog thumps its tail at its own picture; the merchant sees it and recognises the dog too",
+     "acting": "tailWag, grey muzzle up, merchant does a small double take then a wide smile",
+     "library": "dog {tailWag, age 1}"
+    },
+    {
+     "t": 141.96,
+     "end": 142.4,
+     "cue": {
+      "word": "الجوع",
+      "t": 141.96
+     },
+     "who": "fx",
+     "action": "balloon frame: an empty belly icon gets a red X",
+     "acting": "pop with overshoot",
+     "library": "iconBalloon"
+    },
+    {
+     "t": 142.48,
+     "end": 143.4,
+     "cue": {
+      "word": "والدين،",
+      "t": 142.48
+     },
+     "who": "fx",
+     "action": "balloon frame: the three debt scrolls get a red X",
+     "acting": "owner nods slowly, glad for him, no surprise at his own generosity",
+     "library": "iconBalloon + scroll icon"
+    },
+    {
+     "t": 143.54,
+     "end": 144.8,
+     "cue": {
+      "word": "وقدم",
+      "t": 143.54
+     },
+     "who": "stranger",
+     "action": "takes the fat purse from his sash and holds it out with both hands; the boy slides the gift chest forward",
+     "acting": "reachBoth with the purse, head bowed, tip 0.15",
+     "library": "PERSON_HANDS.reachBoth + purse"
+    },
+    {
+     "t": 144.86,
+     "end": 145.3,
+     "cue": {
+      "word": "المال",
+      "t": 144.86
+     },
+     "who": "purse",
+     "action": "the purse hangs heavy between them, coins glint; the hut gets a touch of gold light",
+     "acting": "goldGlow 0.4 on the owner face: he does not look at the money, only at the man",
+     "library": "goldGlow"
+    },
+    {
+     "t": 145.34,
+     "end": 146.1,
+     "cue": {
+      "word": "شاكرًا",
+      "t": 145.34
+     },
+     "who": "stranger",
+     "action": "hand on heart, deep nod of thanks",
+     "acting": "PERSON_HANDS.chest (left hand), wet eyes",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 146.2,
+     "end": 147.7,
+     "cue": {
+      "word": "ومعتذرًا.",
+      "t": 146.2
+     },
+     "who": "stranger",
+     "action": "bows lower, eyes down: sorry it took so long",
+     "acting": "tip 0.25, lid 0.8, purse still held out and trembling a little",
+     "library": "tremble(…, 0.6)"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 147.72,
+     "kind": "soft pop"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 147.7
+   }
+  },
+  {
+   "id": "S15",
+   "start": 147.7,
+   "end": 162.6,
+   "paragraphs": [
+    8
+   ],
+   "set": "hut",
+   "cast": [
+    "stranger",
+    "poorLord",
+    "oldDog",
+    "porter"
+   ],
+   "summary": "The poor man refuses to take anything: I did not give you the dish, my dog did, and I do not take the price of a gift someone else gave.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Two-shot; push to the owner for his speech from 152.12 (zoom 1.5 to 1.9) keeping the dog in the bottom of the frame; tilt down to the dog on 157.26; back up to the owner calm face by 160.44."
+   },
+   "composition": "Same marks as S14. The purse is the object passed between them: it moves from the merchant hands toward the owner and is gently pushed back. Owner higher in frame than the kneeling merchant from 153.5 when he straightens his back.",
+   "actions": [
+    {
+     "t": 147.7,
+     "end": 149.3,
+     "cue": {
+      "word": "رفض",
+      "t": 147.96
+     },
+     "who": "poorLord",
+     "action": "raises one open palm between himself and the purse; a gentle stop",
+     "acting": "shield hand, small head shake, kind smile, no anger",
+     "library": "PERSON_HANDS.shield"
+    },
+    {
+     "t": 149.34,
+     "end": 150.5,
+     "cue": {
+      "word": "الرجل",
+      "t": 149.34
+     },
+     "who": "stranger",
+     "action": "looks up, confused; offers the purse again, a little higher",
+     "acting": "brow -0.8, gaze purse then his face",
+     "library": "reachBoth"
+    },
+    {
+     "t": 150.6,
+     "end": 152.0,
+     "cue": {
+      "word": "يأخذ",
+      "t": 150.9
+     },
+     "who": "poorLord",
+     "action": "closes the merchant fingers round the purse with both his hands and pushes it back to the merchant chest",
+     "acting": "handLW / handRW onto the purse, slow firm push with a settle; the gold light leaves his face",
+     "library": "handLW + handRW + settleTo"
+    },
+    {
+     "t": 152.12,
+     "end": 153.4,
+     "cue": {
+      "word": "وقال:",
+      "t": 152.12
+     },
+     "who": "poorLord",
+     "action": "sits up straight; the stoop goes out of his back",
+     "acting": "age stoop eased off (lean to 0), chin level, talk starts, steady gaze",
+     "library": "person {talk, lean}"
+    },
+    {
+     "t": 153.5,
+     "end": 154.8,
+     "cue": {
+      "word": "أعطك",
+      "t": 154.26
+     },
+     "who": "poorLord",
+     "action": "touches his own chest and wags a finger: not I",
+     "acting": "chest then pointUp finger wag x2, mouth smile",
+     "library": "PERSON_HANDS.chest / pointUp"
+    },
+    {
+     "t": 154.86,
+     "end": 155.5,
+     "cue": {
+      "word": "الطبق،",
+      "t": 154.86
+     },
+     "who": "fx",
+     "action": "small gold dish icon pops between them with a question mark",
+     "acting": "icon at mid height, clear of faces",
+     "library": "S.emphasis icon"
+    },
+    {
+     "t": 155.52,
+     "end": 157.2,
+     "cue": {
+      "word": "أعطاك",
+      "t": 156.1
+     },
+     "who": "poorLord",
+     "action": "his open hand sweeps down to the old dog",
+     "acting": "pointDown with the whole arm, gaze follows his hand, proud",
+     "library": "PERSON_HANDS.pointDown + lookAt"
+    },
+    {
+     "t": 157.26,
+     "end": 158.4,
+     "cue": {
+      "word": "كلبي،",
+      "t": 157.26
+     },
+     "who": "oldDog",
+     "action": "the old dog sits up, tail sweeping the floor, and lays one paw on the merchant knee: the same paw, the same gesture",
+     "acting": "sit 0 to 1, raise 1, tongue out, grey muzzle; label MY DOG! with an arrow",
+     "library": "dog {sit, raise, tailWag} + S.label"
+    },
+    {
+     "t": 157.6,
+     "end": 158.4,
+     "cue": {
+      "word": "كلبي،",
+      "t": 157.26
+     },
+     "who": "stranger",
+     "action": "looks down at the paw on his knee; laughs through tears and strokes the dog head",
+     "acting": "wet true, mouth open smile, handRW to the dog head",
+     "library": "handRW"
+    },
+    {
+     "t": 158.44,
+     "end": 159.7,
+     "cue": {
+      "word": "آخذ",
+      "t": 158.74
+     },
+     "who": "poorLord",
+     "action": "shakes his head once and folds his hands in his lap",
+     "acting": "folded hands, lid 0.4, serene",
+     "library": "PERSON_HANDS.folded"
+    },
+    {
+     "t": 159.78,
+     "end": 160.4,
+     "cue": {
+      "word": "هدية",
+      "t": 159.78
+     },
+     "who": "fx",
+     "action": "the dish icon gains a ribbon bow: a GIFT, the question mark goes",
+     "acting": "pop and settle",
+     "library": "S.emphasis icon"
+    },
+    {
+     "t": 160.44,
+     "end": 162.5,
+     "cue": {
+      "word": "قدمها",
+      "t": 160.44
+     },
+     "who": "poorLord",
+     "action": "opens his hand toward the dog once more and lets it rest on the dog back; man and dog look at the visitor together",
+     "acting": "two matching calm gazes at the merchant; the dog leans on its master",
+     "library": "lookAt + dog {tip}"
+    },
+    {
+     "t": 161.48,
+     "end": 162.6,
+     "cue": {
+      "word": "غيري.",
+      "t": 161.48
+     },
+     "who": "stranger",
+     "action": "lowers the purse to his lap, speechless; bows his head to both of them",
+     "acting": "mouth closed, slow blink, tip 0.18",
+     "library": "settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 157.26,
+     "text": "MY DOG!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 162.6
+   }
+  },
+  {
+   "id": "S16",
+   "start": 162.6,
+   "end": 172.09,
+   "paragraphs": [
+    8
+   ],
+   "set": "hut",
+   "cast": [
+    "stranger",
+    "poorLord",
+    "oldDog",
+    "porter"
+   ],
+   "summary": "The visitor leaves, amazed at a self-respect that poverty could not weaken. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Slow pull-out to the full room as he goes to the door (162.8 to 166); final composition holds owner and dog small but upright in the warm room, the visitor in the doorway. THE END over the wall space at the top from 168.6."
+   },
+   "composition": "Door on the left (HUT.door), owner and dog on the right. The visitor exits left, turns in the doorway. Empty wall top centre reserved for the end title.",
+   "actions": [
+    {
+     "t": 162.6,
+     "end": 163.9,
+     "cue": {
+      "word": "انصرف",
+      "t": 162.81
+     },
+     "who": "stranger",
+     "action": "rises from his knees, tucks the purse away, backs two steps toward the door, the boy lifting the chest again",
+     "acting": "kneel 1 to 0, respectful backward steps (never turns his back at first)",
+     "library": "person {kneel} + walk()"
+    },
+    {
+     "t": 163.91,
+     "end": 164.9,
+     "cue": {
+      "word": "متعجبًا",
+      "t": 163.91
+     },
+     "who": "stranger",
+     "action": "stops in the doorway and looks back, shaking his head in wonder",
+     "acting": "brow -0.9, mouth o to smile, hand on heart",
+     "library": "PERSON_HANDS.chest + lookAt"
+    },
+    {
+     "t": 164.95,
+     "end": 166.2,
+     "cue": {
+      "word": "عزة",
+      "t": 165.23
+     },
+     "who": "poorLord",
+     "action": "the old man lifts a hand in farewell, back straight as a king on his mat; a shaft of daylight from the window falls on him and the dog",
+     "acting": "wave, chin level, serene smile; light shaft strength 0 to 0.6",
+     "library": "PERSON_HANDS.wave + hutRoom window light / skyLight (planned)"
+    },
+    {
+     "t": 166.23,
+     "end": 167.4,
+     "cue": {
+      "word": "تضعف",
+      "t": 166.79
+     },
+     "who": "fx",
+     "action": "for one second the round inset returns: the rich host on his dais, in the same pose as the poor man on his mat",
+     "acting": "match of poses: nothing in him has changed; inset fades",
+     "library": "inset circle (planned)"
+    },
+    {
+     "t": 167.51,
+     "end": 168.5,
+     "cue": {
+      "word": "الفقر.",
+      "t": 167.73
+     },
+     "who": "stranger",
+     "action": "bows from the doorway and goes; the door swings half shut; the old dog lies back down against its master",
+     "acting": "last look, exit left; dog crouch with a sigh, master hand on its head",
+     "library": "hutRoom {door 1 to 0.5} + dog {crouch}"
+    },
+    {
+     "t": 168.6,
+     "end": 172.09,
+     "who": "lettering",
+     "action": "THE END title on the wall space; the old man picks up his sandal and goes back to mending, the dog tail gives one last thump at 170.0",
+     "acting": "held ending: breathing, blinks, one tail thump; nothing else moves",
+     "library": "S.title THE END + breathe()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 168.6,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 168.75,
+     "kind": "soft chime"
+    },
+    {
+     "t": 170.0,
+     "kind": "soft tail thump"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 172.09
+   }
+  }
+ ],
+ "ending": {
+  "t": 168.6,
+  "description": "In the bare hut, daylight on the old man and his old dog; the visitor gone, the door half shut. The man goes back to mending his sandal with a straight back, the dog against his knee. THE END (style title) on the empty wall top centre from 168.6 to 172.09, one last tail thump at 170.0."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان رجل غريب قد أثقلته الديون،|ولم يجد عملًا ولا طعامًا يكفيه.|وبينما يمشي في مدينة كبيرة، رأى جماعة تدخل قصرًا واسعًا،|فتبعها على أمل أن يجد شيئًا يأكله.",
+   "en": "A stranger burdened by debt|had neither work nor enough food.|He followed a group entering a grand mansion,|hoping he might find something to eat."
+  },
+  {
+   "p": 2,
+   "ar": "دخل مع الزائرين دون أن ينتبه إليه أحد،|ثم جلس في زاوية من الفناء.|رأى أربعة كلاب كبيرة تلبس أطواقًا من ذهب،|وتربطها سلاسل من فضة، وأمامها أطباق ذهبية.",
+   "en": "He slipped inside unnoticed|and sat in a corner.|Four large dogs wore golden collars|and silver chains, with solid gold dishes set before them."
+  },
+  {
+   "p": 3,
+   "ar": "وضع الخدم الطعام للكلاب،|لكن الرجل كان أشد جوعًا منها.|لاحظه أحد الكلاب، فنظر إليه طويلًا،|ثم ابتعد عن طبقه كأنه يدعوه إلى الاقتراب وتناول شيء من الطعام.",
+   "en": "Servants brought food for the dogs,|but the man was hungrier than they were.|One dog watched him,|then stepped aside as if inviting him to eat."
+  },
+  {
+   "p": 4,
+   "ar": "تردد الرجل أولًا، ثم اقترب وأكل حتى زال جوعه.|لم يمنعه الكلب،|بل دفع نحوه الطبق الذهبي بقدمه،|وكأنه يقول له: خذ هذا أيضًا، فلعلك تحتاج إليه أكثر مني.",
+   "en": "He hesitated, then ate until satisfied.|The dog did not stop him;|it pushed its golden dish toward him with a paw,|as though offering that too."
+  },
+  {
+   "p": 5,
+   "ar": "أخذ الرجل الطبق وخرج من القصر، ثم باعه بثمن كبير.|سدد بعض ديونه، واشترى بماله بضاعة يتاجر بها.|ومع مرور السنوات نجحت تجارته،|وأصبح قادرًا على العيش في سعة.",
+   "en": "He took the dish, sold it for a great price,|paid debts, and invested in trade.|Over the years his business prospered,|and he became wealthy."
+  },
+  {
+   "p": 6,
+   "ar": "لم ينس الرجل الكلب ولا صاحب القصر.|وبعد سنوات عاد يحمل مالًا يعادل قيمة الطبق وهدايا أخرى، يريد رد الجميل.|لكنه وجد المكان خربًا،|وقد اختفى ما كان فيه من غنى.",
+   "en": "He never forgot the dog or its owner.|Years later he returned with repayment and gifts,|only to find the mansion ruined|and its former splendor gone."
+  },
+  {
+   "p": 7,
+   "ar": "سأل عن صاحب القصر،|فدلوه على رجل فقير يعيش في ضيق. عرف أنه المالك نفسه،|فأخبره كيف أنقذه طبق الكلب من الجوع والدين،|وقدم إليه المال شاكرًا ومعتذرًا.",
+   "en": "He found the former owner|living in poverty.|The visitor explained how the dog’s dish had saved him from hunger and debt,|then offered the money with thanks."
+  },
+  {
+   "p": 8,
+   "ar": "رفض الرجل الفقير أن يأخذ شيئًا،|وقال: لم أعطك الطبق، بل أعطاك إياه كلبي،|ولا آخذ ثمن هدية قدمها غيري.|انصرف الزائر متعجبًا من عزة نفس لم تضعف مع الفقر.",
+   "en": "The impoverished owner refused:|His dog had given the dish,|and he would not charge for another’s gift.|The visitor left amazed by dignity that poverty could not diminish."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "dog",
+   "description": "The planned dog (AN-040 sheepdog, about 240 x 190 at s 1; fields ph, amp, sit, crouch, bark, mouth, tongue, ears, earStream, tailWag, hackles, headTilt, brow + shared acting fields) drawn once for both films. This film uses it as a large hound: s 0.78 to 0.9 with option hound:true (legs 15 % longer, slimmer muzzle, drop ears) and palettes 0 tan, 1 white with black ear and saddle patch, 2 brown.",
+   "reusable": true,
+   "effort": "L",
+   "implementation": "Library/cast/dog.js in the fox/lion construction: rounded-box body, neck, head with muzzle wedge, drop ears as rotating teardrops, four legs driven by ph/amp like the fox, tail arc with tailWag phase. Wrap with acting() in registry.js. Sit and crouch as blends like fox sit (rear drops, front legs planted)."
+  },
+  {
+   "type": "pose",
+   "name": "dog headDown / chew / raise / collar / age",
+   "description": "Extra optional dog fields needed here: headDown 0..1 (muzzle to a dish on the ground, about 95 units ahead of the front feet), chew (jaw cycle), raise 0..1 (near forepaw lifted and extended up to 110 units forward at ground level: the push, the beckon, the paw on a knee; returns the paw point as P.paw), collar: \"gold\" | \"rope\" | none (band 14 wide with a ring; P.ring returned for the chain), age 0..1 (grey muzzle and brow, slower tail, belly 0.9).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "headDown rotates neck and head about the shoulder; raise uses the fox reach construction (near foreleg straightened toward a target); collar is a quad strip across the neck after the body; age mixes muzzle colour to grey with mixHex."
+  },
+  {
+   "type": "prop",
+   "name": "goldDish",
+   "description": "Shallow gold dish 110 x 60 with fill, steam, glint and tilt (see props). Can be the planned smallBowl function with a gold palette and the wide size if that is drawn first.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Two ellipses and a foot with shape(); food heap as a seeded blob; steam as three kfn-driven curls; glint via a short white stroke moved by phase."
+  },
+  {
+   "type": "prop",
+   "name": "chainLine",
+   "description": "Sagging chain of links between two points with swing and a travelling glint (see props). Reusable for prisoners, wells, lamps, anchors.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Sample a quadratic bezier at n points; draw alternating ellipses rotated to the tangent; swing() offsets the control point."
+  },
+  {
+   "type": "prop",
+   "name": "scroll, coinPile, purse, treasureHoard chest, foodTray",
+   "description": "Planned small props reused under their planned names (debt scrolls with a struck state, coin mound, purse, small chest, tray).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "As specified by their first planners; scroll needs struck 0..1 (red X then roll up)."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "description": "Planned wordless picture balloon: single mode (S6, S11) and three-frame strip mode (S14), content drawn by callbacks, each frame popping on a cue time.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Balloon outline like thoughtCloud but with a pointed tail; clip and draw callbacks at reduced scale."
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "description": "Planned treasure light: tapering yellow rays, halftone disc and star glints, strength 0..1, on the dish, collars, purse.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned (KD-031)."
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "description": "Planned round picture-in-picture with an iris (r 150 on screen) used twice to show the rich lord beside the poor one (135.84, 166.23) with the planned dream wash inside.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Clip a circle, draw the palaceHall dais and the lord at reduced scale, yellow rim, iris radius eased."
+  },
+  {
+   "type": "motion",
+   "name": "sneak",
+   "description": "Planned tiptoe option for walk(): high knees and a hold on each toe (S2, S3, S6).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned: phase shaping inside walk()."
+  },
+  {
+   "type": "expression",
+   "name": "coinEyes",
+   "description": "Planned greed eyes for the goldsmith, 12 frames at 88.9.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned (AN-087); optional, a plain wide-eyed look is the fallback."
+  }
+ ],
+ "owner_questions": [
+  "The old dog is shown alive beside its poor master in the hut (S13 to S16) and lays its paw on the visitor knee at \"my dog gave it to you\"; the script does not say the dog is still there. Default: include the old dog.",
+  "The rich master of the mansion appears on the dais in S3 and in two round memory insets so the audience can recognise him later; the script never shows him rich. Default: show him.",
+  "The film title says the man STOLE the dish, but the narration says the dog offered it; the film stages it as a gift with no theft and no chase. Default: staged as a gift, title unchanged.",
+  "Invented comic lettering and labels: DEBTS, GRRR, THE MANSION, GOLD, SILVER, SOLID GOLD!, HUNGRIER!, SCRAPE!, BIG PRICE!, GOODS, FOR THE DISH, RUINED, MY DOG!, YEARS LATER..., THE END. Default: use all of them.",
+  "Small additions beyond the script for clarity or warmth: the stallkeeper who refuses him work, the goldsmith, a porter boy with the gift chest, an old woman who points the way, and exactly two of three debt scrolls paid at \"some of his debts\". Default: keep them."
+ ],
+ "implementation_notes": [
+  "Start from Library/template; world 1000 x 1230 per set, ground or floor y 900; marketStreet is a 2400 strip with camX. Use the returned anchors (MARKET, HALL, HUT) for door, dais, stall and mat positions; every coordinate in this plan that is not a prop dimension is approximate.",
+  "Cue every action with w(p, n) from timing.json; the times in this plan are the word starts in planning/inputs/timeline.md.",
+  "Set LIFE.t = t each frame for auto blinks; give explicit lids hand blinks. Every character always has a gaze target (lookAt / gazePlan). The four dogs never move in unison: use stagger(i) and different chew and wag rates.",
+  "The long look (52.04 to 54.3) must be nearly still: only blinks, breathing and the camera creep. Do not add lettering there.",
+  "The dish push is two separate shoves (72.34 and 73.4), each with paw anticipation, ease-out slide of 45 units and a small rock; the second ends against his knee.",
+  "Continuity of the debt scrolls: 3 from 2.16, 1 after 92.6 (in the sash), 0 after about 100.5.",
+  "Continuity of the dog: same black ear and saddle patch young and old; gold collar and chain in the court, rope collar and no chain in the hut. The paw on the knee at 157.26 must copy the paw-on-dish pose of 74.56 (setup and payoff).",
+  "S12 uses the same camera position and street geometry as the end of S2 so the ruin is recognised as the same mansion.",
+  "The LATER card (YEARS LATER...) sits in the spoken gap 110.2 to 111.8; hide the camera cut and the age change at its midpoint. The S9 passage of years is a time-lapse with skyCycle, not a second card.",
+  "Sound effects only at 61.95, 64.9, 83.2, 147.72, 168.75 and 170.0, all quiet, SND master 0.6; re-check each against timing.json before mixing.",
+  "Lettering never covers a face; labels are removed after about 1 s. Arabic and English subtitles only in the caption panel.",
+  "Hut finale: keep the owner and the dog above panel y 1150 and the purse exchange around mid height so nothing important sits near the panel bottom edge."
+ ],
+ "warnings": [
+  "The dog is the largest new drawing (planned by AN-040, not yet in the Library) and carries the film: four instances plus an aged variant, with headDown, raise and collar fields added here. Build and approve it first.",
+  "Four large dogs, the seated stranger, two servants, three guests and the lord share one 1000-wide hall in S3 to S5: stage guests and lord small on the dais in the background and take the servants off by 45.8, or the frame will be crowded.",
+  "The front-facing person cannot show a profile: eating from the dish, the kneeling offer and the paw on the knee rely on hand targets (handLW / handRW) and gaze; check these read at phone size with stills.",
+  "Recognition of the poor owner depends on the round inset and the blue colour link, because the ascetic preset has a different beard and headwear from the merchant preset; if pal cannot keep the merchant beard shape, lean on the inset.",
+  "palaceHall is an interior; the script says courtyard. If the owner wants open sky, draw the sky through the arches with the outside(ctx) callback.",
+  "English paragraph 7 compresses the Arabic (it omits asking the way and the recognition) and paragraph 8 turns direct speech into reported speech; subtitles are verbatim in both languages, chunk pairs are aligned as closely as the texts allow."
+ ]
+}

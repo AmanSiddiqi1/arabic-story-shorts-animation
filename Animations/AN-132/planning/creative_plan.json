@@ -1,0 +1,2865 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-132",
+ "title": "The Simpleton and the Sharper",
+ "duration": 175.85,
+ "end_hold": 3.0,
+ "logline": "A trickster swaps himself for a donkey on its lead rope, then tells the trusting owner he was a man cursed into donkey shape. The owner believes him so completely that when he later finds his own donkey for sale, he scolds it for sinning again and refuses to buy it.",
+ "moral": "A man who believes everything he is told can be robbed twice: once of his donkey and once of his good sense.",
+ "tone": "Deadpan comic folk tale. The humour comes from the gap between what the audience sees (two grinning thieves, a perfectly ordinary donkey) and what the gentle, sincere owner believes. He is never mocked cruelly; the donkey is the quiet witness.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.84,
+   "kind": "setup",
+   "cue": {
+    "word": "ساذج",
+    "t": 0.84
+   },
+   "summary": "A trusting man leads his donkey by a neck rope and never looks back."
+  },
+  {
+   "id": "B2",
+   "t": 15.04,
+   "kind": "inciting",
+   "cue": {
+    "word": "يستطيع",
+    "t": 15.04
+   },
+   "summary": "The sharper bets his partner he can take the donkey behind the owner's back."
+  },
+  {
+   "id": "B3",
+   "t": 25.8,
+   "kind": "suspense",
+   "cue": {
+    "word": "وفك",
+    "t": 25.8
+   },
+   "summary": "He unties the walking donkey while keeping the rope taut; the partner leads it away."
+  },
+  {
+   "id": "B4",
+   "t": 36.14,
+   "kind": "comic",
+   "cue": {
+    "word": "عنقه",
+    "t": 36.14
+   },
+   "summary": "He puts the loop round his own neck and walks as the donkey."
+  },
+  {
+   "id": "B5",
+   "t": 49.04,
+   "kind": "turn",
+   "cue": {
+    "word": "توقف",
+    "t": 49.04
+   },
+   "summary": "He stops; the owner pulls and nothing moves."
+  },
+  {
+   "id": "B6",
+   "t": 58.94,
+   "kind": "reveal",
+   "cue": {
+    "word": "رجلًا",
+    "t": 58.94
+   },
+   "summary": "The owner turns and finds a man where his donkey was."
+  },
+  {
+   "id": "B7",
+   "t": 81.78,
+   "kind": "surprise",
+   "cue": {
+    "word": "وتحول",
+    "t": 81.78
+   },
+   "summary": "The lie: a mother's curse turned him into a donkey."
+  },
+  {
+   "id": "B8",
+   "t": 98.0,
+   "kind": "comic",
+   "cue": {
+    "word": "صورته",
+    "t": 98.0
+   },
+   "summary": "And today her blessing turned him back: ta-da."
+  },
+  {
+   "id": "B9",
+   "t": 102.16,
+   "kind": "emotion",
+   "cue": {
+    "word": "واعتذر",
+    "t": 102.16
+   },
+   "summary": "The owner believes, apologises and frees the thief."
+  },
+  {
+   "id": "B10",
+   "t": 127.76,
+   "kind": "emotion",
+   "cue": {
+    "word": "فتصدقت",
+    "t": 127.76
+   },
+   "summary": "His wife believes too and gives charity for forgiveness."
+  },
+  {
+   "id": "B11",
+   "t": 148.2,
+   "kind": "reveal",
+   "cue": {
+    "word": "حماره",
+    "t": 148.2
+   },
+   "summary": "At the market he recognises his own donkey for sale."
+  },
+  {
+   "id": "B12",
+   "t": 162.68,
+   "kind": "climax",
+   "cue": {
+    "word": "وضرب",
+    "t": 162.68
+   },
+   "summary": "He scolds the donkey for beating its mother again and refuses to buy it."
+  },
+  {
+   "id": "B13",
+   "t": 172.2,
+   "kind": "moral",
+   "cue": {
+    "word": "يفهم",
+    "t": 172.2
+   },
+   "summary": "He walks away proud, never understanding he was tricked."
+  }
+ ],
+ "cast": [
+  {
+   "id": "simpleton",
+   "name": "the simple man (donkey owner)",
+   "library": "person",
+   "base": "person costume:'villager', age 0.3, s 0.9",
+   "look": "Green dotted robe, red sash, white turban, short dark beard. Default face: raised brows (brow -0.3), round open eyes, small smile. Walks with a happy bounce. Never sly.",
+   "new": false
+  },
+  {
+   "id": "sharper",
+   "name": "the first trickster (the one who wears the rope)",
+   "library": "person",
+   "base": "person costume:'servant' with pal {robe: blue, sash: yellow, hc: red}, age 0.2, s 0.92",
+   "look": "Red cap, black moustache, blue tunic, yellow sash. Default face: half lids (lid 0.3), sly brow (-0.4 on one side read as a smirk: mouth smile). His face has two states: MASK (wet eyes, raised worried brow, frown) whenever the simpleton looks at him, and SLY whenever he does not.",
+   "new": false
+  },
+  {
+   "id": "partner",
+   "name": "the second trickster",
+   "library": "person",
+   "base": "person costume:'bedouin' with pal {robe: brown, cape: black}, s 0.82",
+   "look": "Shorter and rounder than the sharper (s 0.82), head cloth with black band, moustache. Nervous copycat: reacts 3 to 4 frames after the sharper, eyes dart.",
+   "new": false
+  },
+  {
+   "id": "donkey",
+   "name": "the simpleton's donkey",
+   "library": "donkey",
+   "base": "donkey pal 0 (grey), s 0.72, bridle: true (red bridle is his identifying mark in every scene)",
+   "look": "Grey donkey with white muzzle and a red bridle. One sack on his back in S1 to S3 (load: ['sack']), no load in the market. Calm, patient, fond of his owner.",
+   "new": false
+  },
+  {
+   "id": "wife",
+   "name": "the simpleton's wife",
+   "library": "person",
+   "base": "person costume:'villageWoman', s 0.86",
+   "look": "Yellow head scarf, red dress. As trusting as her husband: same raised brows.",
+   "new": false
+  },
+  {
+   "id": "mother",
+   "name": "the sharper's mother (only inside the tale cloud)",
+   "library": "person",
+   "base": "person costume:'oldWoman', age 0.9, hold:'stick'",
+   "look": "Dark shawl, brown robe, walking stick. Drawn only inside the tale cloud at scale 0.5.",
+   "new": false
+  },
+  {
+   "id": "beggar",
+   "name": "poor man at the door",
+   "library": "person",
+   "base": "person costume:'ascetic', age 0.75, s 0.84",
+   "look": "Patched off-white robe, white beard, bare feet, holds a small bowl.",
+   "new": false
+  },
+  {
+   "id": "sheep",
+   "name": "market ewe",
+   "library": "sheep",
+   "base": "sheep kind:'ewe', pal 0, s 0.8",
+   "look": "Background animal in the market row.",
+   "new": false
+  },
+  {
+   "id": "camel",
+   "name": "market camel",
+   "library": "camel",
+   "base": "camel pal 0, kneel 1, chew, s 0.7",
+   "look": "Couched and chewing, background.",
+   "new": false
+  },
+  {
+   "id": "donkeyB",
+   "name": "two other market donkeys",
+   "library": "donkey",
+   "base": "donkey pal 1 (brown) and pal 2 (pale), s 0.7, no bridle",
+   "look": "Clearly different colours from the hero donkey so the recognition reads at once.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "road",
+   "library": "countryRoad",
+   "description": "countryRoad(ctx, {w: 3000, camX, preset 'day', places: [{kind:'tree', x: 300}, {kind:'bush', x: 700, w: 300, h: 150}, {kind:'milestone', x: 1300}, {kind:'tree', x: 1750, small: true}, {kind:'milestone', x: 2050}, {kind:'bush', x: 2600}], house: false}). Ground y 900. The bush at x 700 is the tricksters' hiding place (front pass redraws it over them). Milestones mark distance travelled. In S5 use o.u from 0.25 to 0.36 so the light warms as time passes.",
+   "new": false
+  },
+  {
+   "id": "hut",
+   "library": "hutRoom",
+   "description": "hutRoom(ctx, {palette: 'dusk' in S11-S12 and 'day' in S13, doorSide: 'left', door: keyed 0..0.7, mat: true, jug: true, shelf: true, peg: true, stool: true, lamp: 0.6 at dusk, layer back/front}). Floor y 900, walls x 110..890 (anchors from the set; positions below are approximate, measure on the set). Stool near x 560, mat near x 700, door in the left wall. A pack strap and the empty rope hang on the peg from 120.4.",
+   "new": false
+  },
+  {
+   "id": "market",
+   "library": "marketStreet",
+   "description": "marketStreet(ctx, {w: 2400, camX, palette: 'clear', palace: false, stalls: [{x: 260, kind: 'fruit'}, {x: 640, kind: 'cloth'}, {x: 1040, kind: 'pots'}, {x: 2230, kind: 'animal'}], props: [['hay', 1980], ['hay', 2300], ['sacks', 1180], ['barrel', 2330]]}). Ground y 900. Animal row in front of the houses: sheep x 1260, camel x 1480, brown donkey x 1700, pale donkey x 1880, hero donkey x 2080 (tied to a post at x 2150). The two tricksters stand at the animal stall (x 2230) and hide behind the hay bale at x 2300 (redraw the bale after them).",
+   "new": false
+  }
+ ],
+ "props": [
+  {
+   "id": "leadRope",
+   "library": null,
+   "description": "Planned asset 'rope (lead)': a rope from a hand to a neck loop. leadRope(ctx, [hx, hy], [nx, ny], {slack 0..1, loop: 'on' | 'off' | 'open', r, vib}). Rope 7 px brown line with black brush outline, length 190 world units at rest; slack 1 = sagging catenary (mid point 40 below the chord), slack 0 = dead straight, vib adds a 3 px sine shiver. The loop is an ellipse 46 x 30 around the neck (drawn in two halves, behind and in front of the neck) with a small knot; 'open' is the loop held in two hands (ellipse 70 x 50); 'off' ends in the empty loop lying on the ground. Also a coiled state on the floor (3 turns, radius 30) and a hung state on a peg.",
+   "new": true
+  },
+  {
+   "id": "sacks",
+   "library": "packLoad",
+   "description": "packLoad(ctx, ['sack', 'sack'], x, y, s): the donkey's sack (via the donkey load field) and the two sacks the simpleton carries on his own back in S13.",
+   "new": false
+  },
+  {
+   "id": "taleCloud",
+   "library": "thoughtCloud",
+   "description": "The sharper's told story, staged inside the Library thoughtCloud (w 720, h 420, centred near world y 330, tail to the sharper's head, scale 0.5, at [500, 760]). Same cloud for the wife's worry (smaller: w 420, h 280, scale 0.34) and the simpleton's 'where is my donkey' (w 300, h 220).",
+   "new": false
+  },
+  {
+   "id": "wineCup",
+   "library": null,
+   "description": "Planned asset wineCup: small stemmed cup 30 x 44 held in the hand, tilt and two spilling red drops; also used as a flat icon in the balloon.",
+   "new": true
+  },
+  {
+   "id": "purse",
+   "library": null,
+   "description": "Planned asset purse: fat yellow coin purse 44 x 52 with a red tie; jingle = 2 px bounce with two small accent lines. Single coins (planned coinPile coin: yellow disc r 9, black outline) fly from it.",
+   "new": true
+  },
+  {
+   "id": "smallBowl",
+   "library": null,
+   "description": "Planned asset smallBowl: brown half-ellipse bowl 50 x 22 held by the beggar; coins land in it.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 9.0,
+   "paragraphs": [
+    1
+   ],
+   "set": "road",
+   "cast": [
+    "simpleton",
+    "donkey"
+   ],
+   "summary": "A sunny road. The simple man ambles along, humming, pulling his loaded donkey on a rope tied round its neck. He never looks back.",
+   "camera": {
+    "shot": "establishing",
+    "move": "track",
+    "notes": "Open wide (zoom 1.0, world centre y 640), then ease to zoom 1.25 by 6.5 s. Camera x follows SX(t) - 100 so the man sits right of centre and the donkey left of centre. SX(t) = 80 + 45 t for the whole road section (constant amble, 45 units/s) until 49.3."
+   },
+   "composition": "Man at about panel x 600, donkey at 400, rope between them across the centre. Sky and far hills fill the top third. Title card in the sky for the first 3.3 s, clear of both heads.",
+   "actions": [
+    {
+     "t": 0.0,
+     "cue": {
+      "word": "كان",
+      "t": 0.0
+     },
+     "who": "simpleton",
+     "action": "walks in rightward at SX(t) = 80 + 45 t, hand behind him holding the rope",
+     "acting": "bouncy amble (bob 5 px), gaze ahead [1, 0], small smile, head sways side to side as if humming; blink seed 3",
+     "library": "person {costume:'villager', ...walk(SX, t)}, handLW = rope end; LIFE.t = t"
+    },
+    {
+     "t": 0.84,
+     "end": 3.3,
+     "cue": {
+      "word": "ساذج",
+      "t": 0.84
+     },
+     "who": "lettering",
+     "action": "title THE SIMPLETON AND THE SHARPER pops in the sky and leaves at 3.3",
+     "acting": "style title primitive, two lines, wobble settle",
+     "library": "S.title"
+    },
+    {
+     "t": 1.72,
+     "cue": {
+      "word": "يمشي",
+      "t": 1.72
+     },
+     "who": "simpleton",
+     "action": "two music notes drift up from his head as he hums",
+     "acting": "eyes shut happily for 0.5 s (lid 1), head tilt 4 px",
+     "library": "small note glyphs, seeded drift"
+    },
+    {
+     "t": 3.5,
+     "cue": {
+      "word": "ويجر",
+      "t": 4.16
+     },
+     "who": "donkey",
+     "action": "enters frame behind him on the taut-then-slack rope, sack on his back, ears flicking one after the other",
+     "acting": "patient half lids (lid 0.25), tail swish; hoof clops in the pause with dust puffs",
+     "library": "donkey {pal 0, bridle: true, load: ['sack'], ...walk(DX, t, {stride: GAIT.donkey * 0.72})}, DX = SX - 190; footfalls + dustBurst"
+    },
+    {
+     "t": 4.86,
+     "end": 6.5,
+     "cue": {
+      "word": "حماره",
+      "t": 4.86
+     },
+     "who": "fx",
+     "action": "arrow + label 'HIS DONKEY' points at the donkey for 1.6 s",
+     "acting": "label pops with overshoot, follows the donkey",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 6.48,
+     "cue": {
+      "word": "بحبل",
+      "t": 6.48
+     },
+     "who": "leadRope",
+     "action": "the rope sags and tightens with each step (slack 0.5 to 0.2)",
+     "acting": "secondary motion: the sag swings one beat behind the walk",
+     "library": "leadRope slack from the walk phase"
+    },
+    {
+     "t": 7.22,
+     "end": 8.9,
+     "cue": {
+      "word": "مربوط",
+      "t": 7.22
+     },
+     "who": "camera",
+     "action": "push in to the knot at the donkey's neck, emphasis ring on the loop",
+     "acting": "hold 0.8 s so the neck loop is clearly read: it pays off in S3 and S4",
+     "library": "S.emphasis ring; CAM key zoom 1.6"
+    },
+    {
+     "t": 8.44,
+     "cue": {
+      "word": "عنقه.",
+      "t": 8.44
+     },
+     "who": "donkey",
+     "action": "one long ear turns toward the roadside bush ahead: he hears something",
+     "acting": "earR 1, earL 0.2, gaze slides right before the head",
+     "library": "donkey earL/earR, gaze"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.84,
+     "text": "THE SIMPLETON AND THE SHARPER"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 3.7,
+     "kind": "pop (soft hoof clop)"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 9.0
+   }
+  },
+  {
+   "id": "S2",
+   "start": 9.0,
+   "end": 22.5,
+   "paragraphs": [
+    1
+   ],
+   "set": "road",
+   "cast": [
+    "simpleton",
+    "donkey",
+    "sharper",
+    "partner"
+   ],
+   "summary": "Two tricksters watch from behind a roadside bush. The sharper whispers his boast: he can take the donkey without the owner noticing what happens behind his back. The man walks right past them.",
+   "camera": {
+    "shot": "medium",
+    "move": "drift",
+    "notes": "Cut to the bush at x 700 (zoom 1.45, centre x 720, y 700). The walkers cross the frame in the foreground between 11.0 and 16.5; then drift right to keep the man in the right edge."
+   },
+   "composition": "Tricksters head and shoulders above the bush, centre frame, behind the road plane (their feet at y 880, bush front pass over them). The walkers pass in front, larger. The plan balloon sits upper left, never over a face.",
+   "actions": [
+    {
+     "t": 9.22,
+     "cue": {
+      "word": "رآه",
+      "t": 9.22
+     },
+     "who": "sharper",
+     "action": "pops up from behind the bush, hand shading his eyes",
+     "acting": "sly half lids, gaze locked on the approaching man; rises with anticipate() dip then overshoot",
+     "library": "person {costume:'servant', pal}, handR = PERSON_HANDS.cupEar turned to a brow shade; settleTo"
+    },
+    {
+     "t": 10.28,
+     "cue": {
+      "word": "محتالان،",
+      "t": 10.28
+     },
+     "who": "partner",
+     "action": "pops up beside him 4 frames later, lower, only eyes above the leaves",
+     "acting": "eyes dart man, donkey, sharper (gazePlan with 0.07 ease = saccades)",
+     "library": "person {costume:'bedouin'}; stagger(1); gazePlan"
+    },
+    {
+     "t": 11.6,
+     "cue": {
+      "word": "فقال",
+      "t": 11.6
+     },
+     "who": "sharper",
+     "action": "leans to his partner and whispers behind his hand",
+     "acting": "cupMouth hand, talk 0.5, gaze stays on the donkey while he talks; partner cups his ear",
+     "library": "PERSON_HANDS.cupMouth, cupEar"
+    },
+    {
+     "t": 13.24,
+     "end": 14.8,
+     "cue": {
+      "word": "لصاحبه",
+      "t": 13.24
+     },
+     "who": "simpleton",
+     "action": "walks straight past in the foreground, close enough to touch, still humming",
+     "acting": "gaze ahead, never turns. Both tricksters FREEZE stiff as he passes (no blink, pupils follow him left to right), then breathe out",
+     "library": "noBlink on the tricksters 13.2-14.8; lookAt(simpleton head)"
+    },
+    {
+     "t": 15.04,
+     "cue": {
+      "word": "يستطيع",
+      "t": 15.04
+     },
+     "who": "sharper",
+     "action": "thumbs his own chest: I can do it",
+     "acting": "brow up, smug smile, chin lifts",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 15.82,
+     "cue": {
+      "word": "أخذ",
+      "t": 15.82
+     },
+     "who": "fx",
+     "action": "plan balloon pops above the sharper: frame 1 the donkey icon, a curved arrow carries it away",
+     "acting": "icons pop on their words, 1 frame overshoot",
+     "library": "iconBalloon strip (donkey silhouette, arrow)"
+    },
+    {
+     "t": 16.32,
+     "cue": {
+      "word": "الحمار",
+      "t": 16.32
+     },
+     "who": "donkey",
+     "action": "passes the bush, glances sideways at the two heads, one ear swivels at them, keeps walking",
+     "acting": "the only one who notices; deadpan, lid 0.4",
+     "library": "donkey gaze, earL"
+    },
+    {
+     "t": 17.84,
+     "cue": {
+      "word": "يشعر",
+      "t": 17.84
+     },
+     "who": "fx",
+     "action": "balloon frame 2: the owner's head with shut eyes and a small 'no eyes' mark (does not notice)",
+     "acting": "partner looks at the balloon, then at the man, doubtful brow",
+     "library": "iconBalloon frame 2"
+    },
+    {
+     "t": 19.26,
+     "cue": {
+      "word": "بما",
+      "t": 19.26
+     },
+     "who": "partner",
+     "action": "shakes his head, palms up: impossible",
+     "acting": "worried brow -0.6, mouth o, small tremble",
+     "library": "PERSON_HANDS.palmsUp, tremble"
+    },
+    {
+     "t": 20.26,
+     "cue": {
+      "word": "خلف",
+      "t": 20.26
+     },
+     "who": "sharper",
+     "action": "points with his thumb at the man's back, then winks at his partner",
+     "acting": "wink 'R', one-sided smile, 3 px head tilt toward the road",
+     "library": "person wink; pointFwd"
+    },
+    {
+     "t": 21.6,
+     "cue": {
+      "word": "ظهره.",
+      "t": 20.64
+     },
+     "who": "sharper",
+     "action": "shakes hands on the bet with the partner and vaults the bush (anticipation crouch at 21.9)",
+     "acting": "partner still unsure, bites his lip; sharper all confidence",
+     "library": "anticipate, hop over the bush"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 21.9,
+     "kind": "chime (the wink / the bet)"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 22.5
+   }
+  },
+  {
+   "id": "S3",
+   "start": 22.5,
+   "end": 32.8,
+   "paragraphs": [
+    2
+   ],
+   "set": "road",
+   "cast": [
+    "simpleton",
+    "donkey",
+    "sharper",
+    "partner"
+   ],
+   "summary": "The sharper tiptoes up behind the walking donkey, slips the rope loop off its neck while keeping the rope taut, and hands the donkey to his partner, who leads it away.",
+   "camera": {
+    "shot": "medium",
+    "move": "track",
+    "notes": "Track the donkey (zoom 1.35, centre x = DX + 40, y 720). The man is kept at the right edge of frame, back turned, so the audience always sees he is not looking. At 28.8 ease out to zoom 1.15 to hold all four."
+   },
+   "composition": "Donkey centre, sharper to its left then at its neck, man at far right. Partner enters from the left edge. Rope runs across the top of the action at about y 760.",
+   "actions": [
+    {
+     "t": 22.52,
+     "cue": {
+      "word": "اقترب",
+      "t": 22.52
+     },
+     "who": "sharper",
+     "action": "tiptoes after the donkey from the bush (x 700 to the donkey at about x 1050 by 25.6)",
+     "acting": "sneak: high knees, arms up like a mantis, body dips on each step; freezes mid-step once at 23.9 when the man hiccups a note",
+     "library": "walk(XS, t) with large lift, footfalls -> lettering 'tip' dots only (no sound)"
+    },
+    {
+     "t": 24.06,
+     "cue": {
+      "word": "الأول",
+      "t": 24.06
+     },
+     "who": "partner",
+     "action": "follows two steps behind on shorter legs, looking over both shoulders",
+     "acting": "nervous: quick double blinks, hands clasped at chest",
+     "library": "walk, stagger, PERSON_HANDS.clasp"
+    },
+    {
+     "t": 24.66,
+     "cue": {
+      "word": "بهدوء،",
+      "t": 24.66
+     },
+     "who": "sharper",
+     "action": "finger to lips at the donkey as he draws level with its head",
+     "acting": "hush gesture; donkey looks at him flatly, one ear down",
+     "library": "PERSON_HANDS.hush"
+    },
+    {
+     "t": 25.8,
+     "cue": {
+      "word": "وفك",
+      "t": 25.8
+     },
+     "who": "sharper",
+     "action": "walking in step with the donkey, both hands go to the neck loop and loosen the knot",
+     "acting": "tongue-out concentration (mouth o), gaze on the knot, quick check glance at the man at 26.4",
+     "library": "handLW/handRW on the loop point; lookAt"
+    },
+    {
+     "t": 26.82,
+     "end": 28.6,
+     "cue": {
+      "word": "الحبل",
+      "t": 26.82
+     },
+     "who": "leadRope",
+     "action": "loop opens (state open) and is lifted over the long ears, which fold back and spring up one after the other",
+     "acting": "ear follow-through: earL then earR with swing()",
+     "library": "leadRope loop:'open'; donkey earL/earR + swing"
+    },
+    {
+     "t": 28.0,
+     "cue": {
+      "word": "الحمار،",
+      "t": 28.0
+     },
+     "who": "sharper",
+     "action": "keeps the freed rope taut with one fist so the man's hand feels no change",
+     "acting": "arm straight forward, body leaning back against the pull; emphasis ring on the taut rope",
+     "library": "leadRope slack 0.1; S.emphasis"
+    },
+    {
+     "t": 29.44,
+     "cue": {
+      "word": "سلمه",
+      "t": 29.44
+     },
+     "who": "partner",
+     "action": "takes the donkey by the bridle; hand over its muzzle",
+     "acting": "donkey stops (amp to 0, small lurch), eyes wide for 6 frames then resigned; partner mouths 'shh'",
+     "library": "donkey walk amp 0, lurch; PERSON_HANDS.hush"
+    },
+    {
+     "t": 30.52,
+     "cue": {
+      "word": "صاحبه",
+      "t": 30.52
+     },
+     "who": "sharper",
+     "action": "jerks his head: go, go",
+     "acting": "gaze to partner then back to the man; brow down",
+     "library": "head tilt 5 px, gaze plan"
+    },
+    {
+     "t": 31.48,
+     "end": 33.4,
+     "cue": {
+      "word": "ليبتعد",
+      "t": 31.48
+     },
+     "who": "partner",
+     "action": "turns the donkey round and leads it off to the left, out of frame by 33.4",
+     "acting": "donkey looks back over its shoulder at its owner (headTurn 1), ears droop (sag 0.5); partner on tiptoe",
+     "library": "donkey dir -1, headTurn, sag, walk; turnFlip for the donkey turn"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 24.7,
+     "text": "SHHH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 32.8
+   }
+  },
+  {
+   "id": "S4",
+   "start": 32.8,
+   "end": 42.8,
+   "paragraphs": [
+    2
+   ],
+   "set": "road",
+   "cast": [
+    "simpleton",
+    "sharper"
+   ],
+   "summary": "The sharper drops the loop over his own head and walks behind the man exactly as the donkey did, even copying its plod and ears.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "track",
+    "notes": "twoShot(simpleton, sharper, {margin: 120}) while tracking at 45 units/s; push to zoom 1.5 on the sharper for the look to camera at 36.86, back out by 38.3."
+   },
+   "composition": "Man right of centre facing away (gaze right), sharper left of centre exactly where the donkey was (x = SX - 190). The rope links them across the middle.",
+   "actions": [
+    {
+     "t": 32.8,
+     "cue": {
+      "word": "وبعد",
+      "t": 32.8
+     },
+     "who": "sharper",
+     "action": "checks left (partner gone) and right (man still not looking), still holding the rope taut",
+     "acting": "saccades left, right; satisfied nod",
+     "library": "gazePlan(…, 0.07)"
+    },
+    {
+     "t": 34.42,
+     "cue": {
+      "word": "وضع",
+      "t": 34.42
+     },
+     "who": "sharper",
+     "action": "raises the open loop above his head with both hands like a crown",
+     "acting": "anticipation: arms up, eyes up at the loop, grin",
+     "library": "aL/aR raised [2.45, 2.85]; leadRope loop open"
+    },
+    {
+     "t": 35.68,
+     "cue": {
+      "word": "حول",
+      "t": 35.68
+     },
+     "who": "leadRope",
+     "action": "loop drops over the red cap and settles round his neck with a bounce; knot slides snug",
+     "acting": "cap squashes and pops back (sq 0.9 to 1), loop overshoot and settle",
+     "library": "leadRope loop:'on' at the person neck; settleTo"
+    },
+    {
+     "t": 36.86,
+     "cue": {
+      "word": "هو،",
+      "t": 36.86
+     },
+     "who": "sharper",
+     "action": "thumb at his own chest, slow wink straight to camera",
+     "acting": "the one deliberate lens look of the scene: gaze [0, 0.05], wink 'L'",
+     "library": "PERSON_HANDS.chest, wink"
+    },
+    {
+     "t": 37.3,
+     "cue": {
+      "word": "ومشى",
+      "t": 37.3
+     },
+     "who": "sharper",
+     "action": "falls into step behind the man, matching his foot timing exactly",
+     "acting": "walk phase copied from the donkey (same DX = SX - 190), arms hanging",
+     "library": "walk(DX, t)"
+    },
+    {
+     "t": 38.7,
+     "cue": {
+      "word": "الرجل",
+      "t": 38.7
+     },
+     "who": "simpleton",
+     "action": "gives the rope a fond little tug without looking; the sharper is jerked one step and trots to keep up",
+     "acting": "man smiles ahead; sharper rolls his eyes",
+     "library": "leadRope slack pulse; lurch"
+    },
+    {
+     "t": 39.34,
+     "cue": {
+      "word": "كأنه",
+      "t": 39.34
+     },
+     "who": "sharper",
+     "action": "hunches forward and plods heavily, head bobbing low",
+     "acting": "tip 0.22, sq 0.95, lid 0.4, lower lip out (mouth frown)",
+     "library": "tip, sq, walk bob x2"
+    },
+    {
+     "t": 40.22,
+     "cue": {
+      "word": "الحمار",
+      "t": 40.22
+     },
+     "who": "sharper",
+     "action": "puts both hands up beside his head as long ears and flicks one",
+     "acting": "smug: ears-hands flick alternately like the donkey did in S1",
+     "library": "aL/aR up, forearms vertical; alternate 0.2 rad flicks"
+    },
+    {
+     "t": 41.8,
+     "end": 42.8,
+     "cue": {
+      "word": "يقوده.",
+      "t": 41.8
+     },
+     "who": "fx",
+     "action": "label 'THE NEW DONKEY' with an arrow to the sharper, 1.2 s",
+     "acting": "pops, wobbles, gone before the cut",
+     "library": "S.label, S.arrow"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 42.8
+   }
+  },
+  {
+   "id": "S5",
+   "start": 42.8,
+   "end": 55.98,
+   "paragraphs": [
+    3
+   ],
+   "set": "road",
+   "cast": [
+    "simpleton",
+    "sharper"
+   ],
+   "summary": "They walk a long way. Two milestones pass and the light warms. Then the sharper simply stops. The man pulls the rope without looking; nothing moves.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Pull out to zoom 1.0 for the long walk (milestones at x 2050 passes at 43.8; second milestone drawn at x 2260 passes at 47.4). At 49.04 the camera stops with them (centre x 2190). Push to zoom 1.3 for the tug of war. Panel-only shake 3 px on each heave."
+   },
+   "composition": "Small figures on a long road for the passage of time, then a symmetrical tug: man right, leaning right; sharper left, leaning left; the rope a dead straight line between them.",
+   "actions": [
+    {
+     "t": 42.8,
+     "end": 48.8,
+     "cue": {
+      "word": "ظل",
+      "t": 42.8
+     },
+     "who": "camera",
+     "action": "pull out wide; sky warms (countryRoad o.u 0.25 to 0.36); counter 'MILES' ticks 1, 2, 3 at the milestones",
+     "acting": "time passing shown by the set, not a card",
+     "library": "S.counter; skyCycle via o.u"
+    },
+    {
+     "t": 44.94,
+     "cue": {
+      "word": "يمشي",
+      "t": 44.94
+     },
+     "who": "sharper",
+     "action": "tires of the game: yawns, wipes his brow, drags his feet",
+     "acting": "lid 0.6, mouth open yawn, shorter steps (amp 0.7)",
+     "library": "walk amp; PERSON_HANDS.headHold for the wipe"
+    },
+    {
+     "t": 46.18,
+     "cue": {
+      "word": "دون",
+      "t": 46.18
+     },
+     "who": "simpleton",
+     "action": "swats at a fly beside his head, and his head turns a little toward the back",
+     "acting": "gaze slides left to [-0.4, 0]: suspense. The sharper snaps into the donkey hunch, hands as ears, eyes wide",
+     "library": "gaze plan; sharper tip 0.22 in 3 frames"
+    },
+    {
+     "t": 47.02,
+     "cue": {
+      "word": "يلتفت،",
+      "t": 47.02
+     },
+     "who": "simpleton",
+     "action": "misses the fly, shrugs and faces forward again without seeing anything",
+     "acting": "gaze back to [1, 0]; sharper lets his breath out, hands drop",
+     "library": "gaze plan; breathe"
+    },
+    {
+     "t": 47.8,
+     "cue": {
+      "word": "حتى",
+      "t": 47.8
+     },
+     "who": "sharper",
+     "action": "decides: enough. Looks at the camera, raises one finger, plants his feet",
+     "acting": "anticipation for the stop: weight shifts back, heels forward",
+     "library": "anticipate; gaze [0, 0.05]"
+    },
+    {
+     "t": 49.04,
+     "cue": {
+      "word": "توقف",
+      "t": 49.04
+     },
+     "who": "sharper",
+     "action": "stops dead, arms folded",
+     "acting": "feet planted (walk amp 0 at once), body rocks back and settles; dust at the heels",
+     "library": "PERSON_HANDS.folded; dustBurst; settleTo"
+    },
+    {
+     "t": 49.4,
+     "cue": {
+      "word": "المحتال",
+      "t": 49.76
+     },
+     "who": "simpleton",
+     "action": "the rope snaps straight and yanks his arm back; he is pulled up short",
+     "acting": "lurch backward (tip -0.15), turban slides forward over his eyes and he pushes it back; still facing forward",
+     "library": "leadRope slack 0 + vib; lurch(t, 49.3)"
+    },
+    {
+     "t": 50.76,
+     "cue": {
+      "word": "الحركة.",
+      "t": 50.76
+     },
+     "who": "simpleton",
+     "action": "clicks his tongue and flicks the rope like reins: come on, boy",
+     "acting": "patient smile, gaze still ahead; rope ripples along its length",
+     "library": "leadRope wave travelling from hand to neck"
+    },
+    {
+     "t": 51.92,
+     "cue": {
+      "word": "شد",
+      "t": 51.92
+     },
+     "who": "simpleton",
+     "action": "heaves on the rope over his shoulder with both hands",
+     "acting": "tip 0.28 forward, brow down, teeth; feet slip one step and scrabble back",
+     "library": "handLW/handRW on the rope, anticipate then heave; dustBurst at his feet"
+    },
+    {
+     "t": 53.6,
+     "cue": {
+      "word": "فلم",
+      "t": 53.6
+     },
+     "who": "sharper",
+     "action": "leans back against the pull like a stubborn donkey, heels ploughing two short furrows",
+     "acting": "tip -0.2, eyes shut, serene smile; neck stretches a little (sq 1.05)",
+     "library": "tip, sq; furrow marks on the road"
+    },
+    {
+     "t": 54.6,
+     "cue": {
+      "word": "يتحرك",
+      "t": 54.6
+     },
+     "who": "simpleton",
+     "action": "second, bigger heave: he ends almost horizontal, feet running on the spot",
+     "acting": "full effort, sweat drop, turban tail streaming; nothing moves",
+     "library": "walk on the spot (amp 1, x fixed), tip 0.4"
+    },
+    {
+     "t": 55.3,
+     "cue": {
+      "word": "شيء.",
+      "t": 55.3
+     },
+     "who": "leadRope",
+     "action": "rope vibrates like a plucked string, then the man lets it go slack and stands panting",
+     "acting": "follow-through shiver for 0.4 s",
+     "library": "leadRope vib damped (swing)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 52.1,
+     "text": "TUG!"
+    },
+    {
+     "t": 54.7,
+     "text": "TUUUG!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 55.98
+   }
+  },
+  {
+   "id": "S6",
+   "start": 55.98,
+   "end": 67.24,
+   "paragraphs": [
+    3
+   ],
+   "set": "road",
+   "cast": [
+    "simpleton",
+    "sharper"
+   ],
+   "summary": "At last the man turns. Where his donkey should be stands a man with the rope round his neck. He shouts in astonishment and asks what happened.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "whip",
+    "notes": "Slow push on the man during the turn (zoom 1.5 on his face). At 58.94 whip pan left along the rope to the sharper (0.25 s), hold, then twoShot of both at zoom 1.25 from 60.9."
+   },
+   "composition": "The turn is played on the face: pupils first, then the head and body. After the whip, sharper centre frame with the rope leading off right. In the two-shot the thought cloud sits above the man, top right; the shout lettering top centre.",
+   "actions": [
+    {
+     "t": 55.98,
+     "cue": {
+      "word": "التفت",
+      "t": 55.98
+     },
+     "who": "simpleton",
+     "action": "hands on knees, catches his breath, then his eyes begin to travel back along the rope",
+     "acting": "pupils slide left first (gaze -1 over 0.6 s), head follows late",
+     "library": "gazePlan; breathe"
+    },
+    {
+     "t": 57.06,
+     "cue": {
+      "word": "أخيرًا،",
+      "t": 57.06
+     },
+     "who": "simpleton",
+     "action": "turns his whole body round",
+     "acting": "turn shown with a squeeze (turnFlip style, min width 0.7) since the figure is front facing; ends leaning toward the left, gaze [-1, 0]",
+     "library": "turnFlip(t, [57.06], 0.5); tip"
+    },
+    {
+     "t": 58.26,
+     "cue": {
+      "word": "فوجد",
+      "t": 58.26
+     },
+     "who": "simpleton",
+     "action": "freezes mid step; only the pupils shrink and the brows climb",
+     "acting": "stillness: noBlink, eyes wide, 0.6 s hold",
+     "library": "eyes: 'wide', noBlink"
+    },
+    {
+     "t": 58.94,
+     "cue": {
+      "word": "رجلًا",
+      "t": 58.94
+     },
+     "who": "sharper",
+     "action": "revealed by the whip pan: standing with the rope round his neck, he gives a tiny finger wave",
+     "acting": "MASK goes on as the camera arrives: sly smile drops into wet eyed innocence in 4 frames",
+     "library": "PERSON_HANDS.wave small; wet: true, brow -0.6"
+    },
+    {
+     "t": 59.68,
+     "end": 62.4,
+     "cue": {
+      "word": "مكان",
+      "t": 59.68
+     },
+     "who": "taleCloud",
+     "action": "small thought cloud above the man: a grey donkey silhouette with a '?' that blinks, an arrow from it to the sharper",
+     "acting": "he looks cloud, sharper, cloud (saccades)",
+     "library": "thoughtCloud w 300 h 220 with donkey {silhouette: true}"
+    },
+    {
+     "t": 61.18,
+     "cue": {
+      "word": "فصاح",
+      "t": 61.18
+     },
+     "who": "simpleton",
+     "action": "jumps straight up with a shout; turban lifts off his head and lands back crooked",
+     "acting": "anticipate crouch 0.25 s before, stretch sq 1.12 in the air, landSquash; mouth open, eyes wide; panel shake 4 px",
+     "library": "anticipate, hop, landSquash; turban offset lag 3 frames"
+    },
+    {
+     "t": 62.6,
+     "cue": {
+      "word": "الدهشة",
+      "t": 62.6
+     },
+     "who": "simpleton",
+     "action": "staggers back two steps, hands on cheeks",
+     "acting": "cheeks gesture, tremble 2 px",
+     "library": "PERSON_HANDS.cheeks, tremble"
+    },
+    {
+     "t": 63.68,
+     "cue": {
+      "word": "وسأله",
+      "t": 63.68
+     },
+     "who": "simpleton",
+     "action": "points at him, then at the rope, then at the empty road behind",
+     "acting": "three quick points, each on a word stress; talk 0.8",
+     "library": "PERSON_HANDS.pointFwd, gaze follows the finger"
+    },
+    {
+     "t": 64.38,
+     "cue": {
+      "word": "ماذا",
+      "t": 64.38
+     },
+     "who": "simpleton",
+     "action": "both palms up: what happened?",
+     "acting": "shoulders up, brow -0.8, mouth o",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 65.28,
+     "end": 67.2,
+     "cue": {
+      "word": "حدث.",
+      "t": 65.28
+     },
+     "who": "sharper",
+     "action": "lowers his eyes, hand on heart, lower lip trembles; in the pause he sinks to his knees and one fat tear swells",
+     "acting": "the liar winds up: slow head drop, wet eyes, a breath in (sq 1.03) before he speaks",
+     "library": "PERSON_HANDS.chest; kneel 0 to 1 over 66.0-66.9; wet"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 61.3,
+     "text": "WHAAAT?!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 66.5,
+     "kind": "soft descending whoosh (he sinks to his knees)"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 67.24
+   }
+  },
+  {
+   "id": "S7",
+   "start": 67.24,
+   "end": 80.2,
+   "paragraphs": [
+    4
+   ],
+   "set": "road",
+   "cast": [
+    "simpleton",
+    "sharper",
+    "mother"
+   ],
+   "summary": "The sharper's tale, part one, told on his knees and shown in a big tale cloud: he was once a man, came home drunk one day and struck his mother when she advised him to repent.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "Fixed two-shot, zoom 1.0, world centre (2190, 615): the two men small at the bottom of the panel (feet y 900), the tale cloud filling the upper half (cloud centre world (2190, 330), 720 x 420)."
+   },
+   "composition": "Cloud top centre, tail to the kneeling sharper at lower left (x 2100). The man stands lower right (x 2300), turned to him. Figures inside the cloud at scale 0.5 (about 115 px on screen): the son on the left, the house door on the right. The hit is hidden by a star burst.",
+   "actions": [
+    {
+     "t": 67.24,
+     "cue": {
+      "word": "قال",
+      "t": 67.24
+     },
+     "who": "sharper",
+     "action": "on his knees, begins to speak, one hand on his heart, the other raised",
+     "acting": "MASK: wet eyes, brows up and together, talk 0.7; he peeks at the man between phrases to check it is working",
+     "library": "kneel 1, PERSON_HANDS.chest, talk"
+    },
+    {
+     "t": 68.4,
+     "cue": {
+      "word": "إنه",
+      "t": 68.4
+     },
+     "who": "taleCloud",
+     "action": "the tale cloud pops open above them (trail bubbles first)",
+     "acting": "the man watches the bubbles rise, mouth open",
+     "library": "thoughtCloud p 0 to 1 over 0.5 s"
+    },
+    {
+     "t": 69.6,
+     "cue": {
+      "word": "إنسانًا،",
+      "t": 69.6
+     },
+     "who": "sharper",
+     "action": "in the cloud: himself as a tidy young man, standing straight, label 'ME, A MAN'",
+     "acting": "cloud figure smiles, waves; outside, the sharper nods sadly",
+     "library": "person in cloud (same costume), S.label inside"
+    },
+    {
+     "t": 71.48,
+     "cue": {
+      "word": "لكنه",
+      "t": 71.48
+     },
+     "who": "taleCloud",
+     "action": "cloud sky turns to dusk; a house door appears at the right",
+     "acting": "outside: sharper raises a finger: but...",
+     "library": "skyCycle u 0.25 to 0.5 inside the cloud; townDoor"
+    },
+    {
+     "t": 72.22,
+     "cue": {
+      "word": "عاد",
+      "t": 72.22
+     },
+     "who": "sharper",
+     "action": "cloud self walks toward the door in a zigzag",
+     "acting": "legs cross, body tips left and right (tip ±0.18 sine), cup in hand spilling two drops",
+     "library": "walk + tip sine; wineCup"
+    },
+    {
+     "t": 75.0,
+     "cue": {
+      "word": "سكران،",
+      "t": 75.0
+     },
+     "who": "sharper",
+     "action": "cloud self hiccups: spiral eyes, three hiccup bubbles",
+     "acting": "head jolts 4 px on each hiccup; lid 0.5",
+     "library": "spiralEyes; bubble circles"
+    },
+    {
+     "t": 75.6,
+     "cue": {
+      "word": "وضرب",
+      "t": 76.32
+     },
+     "who": "mother",
+     "action": "the door opens and the old mother stands there with her stick, one finger raised in advice",
+     "acting": "gentle worried brow, talk 0.5, head shaking slowly",
+     "library": "person {costume:'oldWoman', hold:'stick'}, PERSON_HANDS.pointUp; townDoor open"
+    },
+    {
+     "t": 76.32,
+     "end": 76.9,
+     "cue": {
+      "word": "وضرب",
+      "t": 76.32
+     },
+     "who": "sharper",
+     "action": "cloud self swings his arm up; a red and yellow star burst covers both figures at the moment of the blow",
+     "acting": "anticipation 4 frames, then the burst (2 frame white flash); no contact is drawn",
+     "library": "star burst shape over the pair; flash"
+    },
+    {
+     "t": 76.72,
+     "cue": {
+      "word": "أمه",
+      "t": 76.72
+     },
+     "who": "simpleton",
+     "action": "outside the cloud: claps both hands over his mouth",
+     "acting": "eyes wide, recoil tip -0.1",
+     "library": "PERSON_HANDS.mouthCover"
+    },
+    {
+     "t": 77.44,
+     "cue": {
+      "word": "عندما",
+      "t": 77.44
+     },
+     "who": "mother",
+     "action": "burst clears: she sits on the doorstep holding her cheek, stick on the ground; a small balloon above her shows a wine cup crossed out (her advice)",
+     "acting": "wet eyes, lid 0.3; cloud son sways with his back half turned",
+     "library": "sit floor, PERSON_HANDS.cheeks (one hand); iconBalloon single (wineCup + red X)"
+    },
+    {
+     "t": 78.88,
+     "cue": {
+      "word": "بالتوبة.",
+      "t": 78.88
+     },
+     "who": "sharper",
+     "action": "outside: buries his face in both hands and shakes with sobs, one eye peeping through his fingers at the man",
+     "acting": "the peek: wink 'R' open eye behind the hand, shut as soon as the man looks down at him",
+     "library": "PERSON_HANDS.headHold lowered to the face; tremble; wink"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 75.1,
+     "text": "HIC!"
+    },
+    {
+     "t": 76.4,
+     "text": "BAM!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 80.2
+   }
+  },
+  {
+   "id": "S8",
+   "start": 80.2,
+   "end": 88.68,
+   "paragraphs": [
+    4
+   ],
+   "set": "road",
+   "cast": [
+    "simpleton",
+    "sharper",
+    "mother",
+    "donkey"
+   ],
+   "summary": "The tale, part two: the mother prayed against him and he turned into a donkey, and lived in that shape for years.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Same framing; a slow push from zoom 1.0 to 1.12 into the cloud across the scene. 2 frame panel flash on the transformation."
+   },
+   "composition": "Inside the cloud: mother at right with arms raised, son at left where the donkey will appear. Years counter in the cloud top left corner.",
+   "actions": [
+    {
+     "t": 80.2,
+     "cue": {
+      "word": "فدعت",
+      "t": 80.2
+     },
+     "who": "mother",
+     "action": "stands and lifts both arms to the sky, stick raised",
+     "acting": "brow down for the first time, mouth open; shawl ends lift (secondary)",
+     "library": "aL/aR raised [2.45, 2.85]"
+    },
+    {
+     "t": 80.72,
+     "cue": {
+      "word": "عليه،",
+      "t": 80.72
+     },
+     "who": "fx",
+     "action": "a zigzag bolt drops from the top of the cloud onto the cloud son",
+     "acting": "son looks up at it, eyes wide, cup falls",
+     "library": "yellow zigzag polygon with black outline, 3 frames; flash"
+    },
+    {
+     "t": 81.78,
+     "end": 83.1,
+     "cue": {
+      "word": "وتحول",
+      "t": 81.78
+     },
+     "who": "fx",
+     "action": "transformation burst: stars spiral in, puff ring, man silhouette cross scales into a donkey silhouette",
+     "acting": "the red cap pops up in the air and lands on the donkey between the ears",
+     "library": "poofTransform(from person silhouette, to donkey silhouette) 81.78-83.1"
+    },
+    {
+     "t": 83.18,
+     "cue": {
+      "word": "دعائها",
+      "t": 83.18
+     },
+     "who": "simpleton",
+     "action": "outside: ducks as if the bolt were real, then peers up from under his arm",
+     "acting": "shield gesture, sq 0.9, slow rise",
+     "library": "PERSON_HANDS.shield"
+    },
+    {
+     "t": 84.42,
+     "cue": {
+      "word": "حمار،",
+      "t": 84.42
+     },
+     "who": "donkey",
+     "action": "in the cloud: a grey donkey stands where the son was, wearing the red cap, looking at its own hooves",
+     "acting": "sag 1, ears down, wet eyes, lifts one front hoof and stares at it (raise 1)",
+     "library": "donkey {pal 0, sag: 1, raise: 1, wet: true} + cap drawn by the scene"
+    },
+    {
+     "t": 85.12,
+     "end": 88.6,
+     "cue": {
+      "word": "وعاش",
+      "t": 85.12
+     },
+     "who": "taleCloud",
+     "action": "cloud sky spins through days and nights; the cloud donkey plods on the spot under a growing load of sacks (1, 2, 3)",
+     "acting": "head lower with each sack, knees bend (sq 0.94)",
+     "library": "skyCycle u looping 3 times; donkey walk on the spot; load ['sack','sack','sack']"
+    },
+    {
+     "t": 86.3,
+     "end": 88.6,
+     "cue": {
+      "word": "على",
+      "t": 86.3
+     },
+     "who": "fx",
+     "action": "counter 'YEARS' in the cloud corner runs 1 to 7",
+     "acting": "each tick lands with a small dip of the donkey head",
+     "library": "S.counter; countedBeats dip"
+    },
+    {
+     "t": 87.06,
+     "cue": {
+      "word": "الصورة",
+      "t": 87.06
+     },
+     "who": "simpleton",
+     "action": "looks from the cloud donkey to the rope in his own hand, then at the sharper: it was YOU all this time?",
+     "acting": "gaze saccades cloud, rope, sharper; hand slowly rises to his own mouth; wet eyes begin",
+     "library": "gazePlan 0.07; wet"
+    },
+    {
+     "t": 87.8,
+     "cue": {
+      "word": "سنوات.",
+      "t": 87.8
+     },
+     "who": "sharper",
+     "action": "nods slowly, miserably, and rubs his back as if it still ached from the loads",
+     "acting": "MASK held; one shoulder higher; lid 0.6",
+     "library": "handL behind the hip; nod = head y 4 px"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 82.0,
+     "text": "POOF!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 88.68
+   }
+  },
+  {
+   "id": "S9",
+   "start": 88.68,
+   "end": 99.64,
+   "paragraphs": [
+    5
+   ],
+   "set": "road",
+   "cast": [
+    "simpleton",
+    "sharper",
+    "mother",
+    "donkey"
+   ],
+   "summary": "The tale, part three: today his mother remembered her son and prayed for his good, and at once he returned to his human shape. The cloud closes and the sharper presents himself: ta-da.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pull-out",
+    "notes": "Start at zoom 1.12 in the cloud, ease back to 1.0 by 96.0; at 98.0 the cloud pops shut and the camera settles on a plain two-shot at zoom 1.3 (centre y 760)."
+   },
+   "composition": "Cloud: mother at right kneeling, donkey at left. After the cloud closes: sharper standing at left with arms flung wide, man at right, clear sky above for the lettering.",
+   "actions": [
+    {
+     "t": 88.68,
+     "cue": {
+      "word": "وأضاف",
+      "t": 88.68
+     },
+     "who": "sharper",
+     "action": "lifts his head and one finger: but today...",
+     "acting": "first flicker of hope in the MASK: brow lifts, a breath in",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 91.06,
+     "cue": {
+      "word": "أمه",
+      "t": 91.06
+     },
+     "who": "mother",
+     "action": "cloud: the mother sits alone by her door in morning light, sighs, and a small heart rises from her",
+     "acting": "slow head tilt, wet eyes, lid 0.3; heart pops on the word",
+     "library": "sit floor; Library heart prop; skyCycle u 0.08"
+    },
+    {
+     "t": 91.64,
+     "cue": {
+      "word": "تذكرت",
+      "t": 91.64
+     },
+     "who": "taleCloud",
+     "action": "a little picture of her son's face (red cap) appears inside the heart",
+     "acting": "she looks up at it and smiles for the first time",
+     "library": "small head icon inside the heart, pop"
+    },
+    {
+     "t": 93.72,
+     "cue": {
+      "word": "فدعت",
+      "t": 93.72
+     },
+     "who": "mother",
+     "action": "kneels and raises both open hands",
+     "acting": "eyes shut, gentle smile, slow sway",
+     "library": "kneel 1, PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 95.16,
+     "cue": {
+      "word": "بالخير،",
+      "t": 95.16
+     },
+     "who": "fx",
+     "action": "soft yellow rays fan down from the cloud top onto the cloud donkey; its ears lift",
+     "acting": "donkey looks up, ears 1, eyes wide",
+     "library": "goldGlow rays (yellow wedge fan, halftone dots)"
+    },
+    {
+     "t": 95.94,
+     "end": 97.2,
+     "cue": {
+      "word": "وعاد",
+      "t": 95.94
+     },
+     "who": "fx",
+     "action": "the burst again, reversed: donkey silhouette cross scales back into the man; the cap stays on",
+     "acting": "cloud son pats his own arms and face, overjoyed",
+     "library": "poofTransform reversed 95.94-97.2"
+    },
+    {
+     "t": 96.94,
+     "cue": {
+      "word": "فورًا",
+      "t": 96.94
+     },
+     "who": "simpleton",
+     "action": "outside: gasps and takes a step back, hand on his chest",
+     "acting": "mouth o, brows up, tiny hop",
+     "library": "PERSON_HANDS.chest; hop 6 px"
+    },
+    {
+     "t": 98.0,
+     "cue": {
+      "word": "صورته",
+      "t": 98.0
+     },
+     "who": "sharper",
+     "action": "the cloud pops shut and the real sharper springs up from his knees with arms flung wide: here I am",
+     "acting": "kneel 1 to 0 with anticipate and overshoot, big smile for 8 frames, then he remembers and softens it to humble",
+     "library": "PERSON_HANDS.armsOut; settleTo; sparkle accents"
+    },
+    {
+     "t": 98.76,
+     "cue": {
+      "word": "البشرية.",
+      "t": 98.76
+     },
+     "who": "fx",
+     "action": "arrow + label 'HUMAN AGAIN!' at the sharper",
+     "acting": "he turns once on the spot to show himself off; the rope swings round with him",
+     "library": "S.label; turnFlip; leadRope swing"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 96.1,
+     "text": "POOF!"
+    },
+    {
+     "t": 98.3,
+     "text": "TA-DA!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 99.64
+   }
+  },
+  {
+   "id": "S10",
+   "start": 99.64,
+   "end": 111.12,
+   "paragraphs": [
+    5
+   ],
+   "set": "road",
+   "cast": [
+    "simpleton",
+    "sharper"
+   ],
+   "summary": "The man believes every word. He apologises for having ridden him and loaded him with burdens, takes the rope off his neck and lets him go.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Push in on the man's face (zoom 1.7) for the belief, out to a two-shot (zoom 1.3) for the apology and the untying, then hold as the sharper exits left; a last 0.5 s drift left catches the sharper's skip."
+   },
+   "composition": "Man right, sharper left. Apology balloon above the man, upper right. The dropped rope ends as a coil on the ground at centre, where it stays as the last image of the scene.",
+   "actions": [
+    {
+     "t": 99.64,
+     "cue": {
+      "word": "صدق",
+      "t": 99.64
+     },
+     "who": "simpleton",
+     "action": "close: his eyes fill, lip trembles, he nods slowly",
+     "acting": "wet: true, brow -0.8, three small nods, one tear falls at 100.9",
+     "library": "wet, tremble 1 px, tear drop"
+    },
+    {
+     "t": 101.2,
+     "cue": {
+      "word": "القصة،",
+      "t": 101.2
+     },
+     "who": "sharper",
+     "action": "while the man wipes his eyes on his sleeve, the sharper's mask drops: a quick grin and a glance at the camera, then back to sorrow as the sleeve comes down",
+     "acting": "mask off 101.3-101.9 only while the man has lid 1",
+     "library": "gaze [0, 0.05], mouth smile; simpleton lid 1 + hand to eyes"
+    },
+    {
+     "t": 102.16,
+     "cue": {
+      "word": "واعتذر",
+      "t": 102.16
+     },
+     "who": "simpleton",
+     "action": "clasps his hands and bows low to the sharper",
+     "acting": "tip 0.3, head down, turban nearly falls; sharper waves it away graciously",
+     "library": "PERSON_HANDS.clasp, tip"
+    },
+    {
+     "t": 104.06,
+     "cue": {
+      "word": "يركبه",
+      "t": 104.06
+     },
+     "who": "fx",
+     "action": "balloon above the man: himself riding the donkey, kicking his heels",
+     "acting": "he cannot look at it; sharper puts a hand to the small of his back and winces",
+     "library": "iconBalloon with rideOn(ctx, 'donkey', …, {costume:'villager'}) at small scale"
+    },
+    {
+     "t": 104.92,
+     "cue": {
+      "word": "ويحمله",
+      "t": 104.92
+     },
+     "who": "fx",
+     "action": "balloon changes: the donkey bent under three sacks and a jar",
+     "acting": "sharper staggers a step as if the weight landed on him again",
+     "library": "iconBalloon frame 2: donkey load ['sack','sack','sack','jar'], sag 1"
+    },
+    {
+     "t": 105.78,
+     "cue": {
+      "word": "الأثقال،",
+      "t": 105.78
+     },
+     "who": "simpleton",
+     "action": "covers his face with both hands in shame, then pats the sharper gently on the shoulder",
+     "acting": "shame: head drop; the pat is tender, 2 taps",
+     "library": "PERSON_HANDS.headHold; handRW to the shoulder"
+    },
+    {
+     "t": 107.48,
+     "cue": {
+      "word": "فك",
+      "t": 107.48
+     },
+     "who": "simpleton",
+     "action": "lifts the loop carefully off over the red cap with both hands",
+     "acting": "as careful as with something holy; sharper stands still with eyes meekly down",
+     "library": "handLW/handRW on the loop; leadRope loop:'open'"
+    },
+    {
+     "t": 108.06,
+     "cue": {
+      "word": "الحبل",
+      "t": 108.06
+     },
+     "who": "leadRope",
+     "action": "the rope falls and coils on the ground between them",
+     "acting": "falls with fallY, the loop end lands last and rolls once",
+     "library": "leadRope 'off', coiled"
+    },
+    {
+     "t": 108.52,
+     "cue": {
+      "word": "وترك",
+      "t": 108.52
+     },
+     "who": "simpleton",
+     "action": "steps aside and opens his arm toward the road: you are free",
+     "acting": "sad smile, wet eyes, small bow",
+     "library": "PERSON_HANDS.armsOut (one arm)"
+    },
+    {
+     "t": 109.3,
+     "cue": {
+      "word": "المحتال",
+      "t": 109.3
+     },
+     "who": "sharper",
+     "action": "bows, backs away three steps, then turns and walks off left",
+     "acting": "humble little bows on each step; rubs his neck where the rope was",
+     "library": "walk backward (dir kept), then turnFlip"
+    },
+    {
+     "t": 110.14,
+     "cue": {
+      "word": "يذهب.",
+      "t": 110.14
+     },
+     "who": "sharper",
+     "action": "behind the man's back he breaks into a skip with a heel click and is gone",
+     "acting": "hop with both heels to one side at 110.6; the man is looking down at the empty rope and sees nothing",
+     "library": "hop, landSquash; simpleton gaze down at the coil"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 111.12
+   }
+  },
+  {
+   "id": "S11",
+   "start": 111.12,
+   "end": 120.4,
+   "paragraphs": [
+    6
+   ],
+   "set": "hut",
+   "cast": [
+    "simpleton",
+    "wife"
+   ],
+   "summary": "Home at dusk. He comes in sad, dragging the empty rope, and tells his wife what he believes happened.",
+   "camera": {
+    "shot": "full",
+    "move": "static",
+    "notes": "Cut to the hut cutaway, zoom 1.0 (whole room), centre y 615. A slight push to 1.15 on the pair from 115.4."
+   },
+   "composition": "Door in the left wall; he enters from it and crosses to the stool (about x 560). Wife sits on the mat at about x 720 sorting lentils in a tray. Dusk window between them. The story balloon opens above him, upper centre.",
+   "actions": [
+    {
+     "t": 111.12,
+     "cue": {
+      "word": "رجع",
+      "t": 111.12
+     },
+     "who": "set",
+     "action": "the door swings in (door 0 to 0.7) and warm dusk light falls across the floor",
+     "acting": "the wife looks up from her tray toward the door, smiling",
+     "library": "hutRoom door keyed; lamp 0.6 flicker with o.t"
+    },
+    {
+     "t": 112.2,
+     "cue": {
+      "word": "إلى",
+      "t": 112.92
+     },
+     "who": "simpleton",
+     "action": "shuffles in with his head down, the empty rope trailing behind him along the floor, loop last",
+     "acting": "slow short steps (amp 0.5), tip 0.1, lid 0.5, frown; the loop bumps over the threshold",
+     "library": "walk; leadRope dragged (slack 1, end on the floor)"
+    },
+    {
+     "t": 113.92,
+     "cue": {
+      "word": "حزينًا،",
+      "t": 113.92
+     },
+     "who": "wife",
+     "action": "her smile fades; she leans to look past him at the doorway for the donkey, then at the empty loop",
+     "acting": "gaze: him, door, loop (gazePlan); brow goes from smile to puzzled",
+     "library": "gazePlan; tip toward the door 0.1"
+    },
+    {
+     "t": 114.7,
+     "cue": {
+      "word": "وقص",
+      "t": 115.44
+     },
+     "who": "wife",
+     "action": "points at the loop, palms up: where is the donkey?",
+     "acting": "talk 0.6 mimed; he sighs (sq 0.96 then 1)",
+     "library": "PERSON_HANDS.pointDown, palmsUp"
+    },
+    {
+     "t": 115.44,
+     "cue": {
+      "word": "وقص",
+      "t": 115.44
+     },
+     "who": "simpleton",
+     "action": "drops heavily onto the stool",
+     "acting": "sit 0 to 1 in 0.4 s with a landSquash; turban sinks over his brow",
+     "library": "sit, seat:'stool'; landSquash"
+    },
+    {
+     "t": 116.76,
+     "cue": {
+      "word": "زوجته",
+      "t": 116.76
+     },
+     "who": "fx",
+     "action": "story balloon above him, frame 1: the donkey on the rope",
+     "acting": "he mimes long ears with his hands; she nods",
+     "library": "iconBalloon strip frame 1"
+    },
+    {
+     "t": 117.62,
+     "cue": {
+      "word": "اعتقد",
+      "t": 117.62
+     },
+     "who": "fx",
+     "action": "frame 2: the star burst with POOF",
+     "acting": "he throws his hands apart; she flinches back",
+     "library": "iconBalloon frame 2; PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 119.18,
+     "cue": {
+      "word": "حدث.",
+      "t": 119.18
+     },
+     "who": "fx",
+     "action": "frame 3: the man in the red cap with the rope round his neck",
+     "acting": "he holds the empty loop up beside his own neck to show her",
+     "library": "iconBalloon frame 3; leadRope loop open in his hands"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 120.4
+   }
+  },
+  {
+   "id": "S12",
+   "start": 120.4,
+   "end": 132.0,
+   "paragraphs": [
+    6
+   ],
+   "set": "hut",
+   "cast": [
+    "simpleton",
+    "wife",
+    "beggar"
+   ],
+   "summary": "She believes it too, and fears they have wronged a man without knowing. She gives some money in charity, asking forgiveness.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "Two-shot at zoom 1.3 for her reaction and the worry cloud; from 127.76 pan left with her to the door (zoom 1.2) where the poor man stands."
+   },
+   "composition": "Wife centre right, husband seated right of her. Worry cloud between and above them. For the charity: beggar in the open doorway at left (about x 170, measure on the set), wife beside him, husband still visible at the right edge watching.",
+   "actions": [
+    {
+     "t": 120.4,
+     "cue": {
+      "word": "صدقته",
+      "t": 120.4
+     },
+     "who": "wife",
+     "action": "her jaw drops; both hands fly to her cheeks; the lentil tray tips and a few lentils roll",
+     "acting": "eyes wide, sq 0.94 then 1.04; she believes it instantly",
+     "library": "PERSON_HANDS.cheeks; settleTo"
+    },
+    {
+     "t": 121.62,
+     "cue": {
+      "word": "أيضًا،",
+      "t": 121.62
+     },
+     "who": "simpleton",
+     "action": "nods gravely at her; she nods back 4 frames later",
+     "acting": "two matching solemn nods, never in unison",
+     "library": "stagger"
+    },
+    {
+     "t": 122.8,
+     "cue": {
+      "word": "وخافت",
+      "t": 122.8
+     },
+     "who": "wife",
+     "action": "begins to tremble and looks slowly at the pack strap and stick hanging on the wall peg",
+     "acting": "tremble 2 px, gaze travels to the peg, hand to her mouth",
+     "library": "tremble; lookAt(peg); PERSON_HANDS.mouthCover"
+    },
+    {
+     "t": 124.94,
+     "cue": {
+      "word": "ظلما",
+      "t": 124.94
+     },
+     "who": "taleCloud",
+     "action": "shared worry cloud: their loaded donkey plodding with wet eyes",
+     "acting": "both look up at it; his head sinks lower",
+     "library": "thoughtCloud w 420 h 280; donkey {load, sag: 1, wet: true}"
+    },
+    {
+     "t": 125.5,
+     "cue": {
+      "word": "رجلًا",
+      "t": 125.5
+     },
+     "who": "taleCloud",
+     "action": "in the cloud the donkey cross fades into the man in the red cap bent under the same sacks",
+     "acting": "she gasps (mouth o), he covers his eyes",
+     "library": "cross fade by alpha; person tip 0.35 + packLoad on his back"
+    },
+    {
+     "t": 126.58,
+     "cue": {
+      "word": "علمهما،",
+      "t": 126.58
+     },
+     "who": "wife",
+     "action": "shakes her head quickly: we did not know!",
+     "acting": "palms out, brow -0.8; cloud pops away",
+     "library": "PERSON_HANDS.shield (soft)"
+    },
+    {
+     "t": 127.76,
+     "cue": {
+      "word": "فتصدقت",
+      "t": 127.76
+     },
+     "who": "wife",
+     "action": "gets up, reaches behind the water jug and brings out the small purse",
+     "acting": "decision: mouth set, quick steps; he watches and nods",
+     "library": "walk; purse; handRW to the jug anchor"
+    },
+    {
+     "t": 128.76,
+     "cue": {
+      "word": "بشيء",
+      "t": 128.76
+     },
+     "who": "beggar",
+     "action": "a poor old man appears in the open doorway with his bowl held out",
+     "acting": "gentle, stooped, hopeful brows",
+     "library": "person {costume:'ascetic'}; smallBowl in handR"
+    },
+    {
+     "t": 129.68,
+     "end": 130.9,
+     "cue": {
+      "word": "المال",
+      "t": 129.68
+     },
+     "who": "wife",
+     "action": "drops three coins one by one into the bowl",
+     "acting": "coins arc and land (bowl dips 2 px on each); beggar eyes follow each coin",
+     "library": "coin arcs with hop(); countedBeats for the three coins"
+    },
+    {
+     "t": 130.34,
+     "cue": {
+      "word": "طلبًا",
+      "t": 130.34
+     },
+     "who": "beggar",
+     "action": "bows his thanks, hand on heart",
+     "acting": "smile, lid 1 for a beat",
+     "library": "PERSON_HANDS.chest, tip 0.15"
+    },
+    {
+     "t": 131.16,
+     "cue": {
+      "word": "للمغفرة.",
+      "t": 131.16
+     },
+     "who": "wife",
+     "action": "she and her husband both look up, hands clasped, eyes shut",
+     "acting": "relief: shoulders drop, a breath out; husband 3 frames later",
+     "library": "PERSON_HANDS.clasp; lid 1; stagger"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 129.8,
+     "text": "CLINK!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 132.0,
+    "label": "DAYS LATER..."
+   }
+  },
+  {
+   "id": "S13",
+   "start": 132.0,
+   "end": 140.6,
+   "paragraphs": [
+    7
+   ],
+   "set": "hut",
+   "cast": [
+    "simpleton",
+    "wife"
+   ],
+   "summary": "Days later. He is doing the donkey work himself. His wife says the house needs a donkey for him to work with, and sends him off with the purse.",
+   "camera": {
+    "shot": "full",
+    "move": "static",
+    "notes": "The LATER card covers 131.75-133.35 (covered midpoint 132.55: hidden cut to the hut in morning light, palette 'day'). Then zoom 1.1 on the pair."
+   },
+   "composition": "He comes in from the door at left under two sacks; she stands at centre right, hands on hips. Balloon above her, upper right.",
+   "actions": [
+    {
+     "t": 132.0,
+     "end": 133.35,
+     "cue": {
+      "word": "بعد",
+      "t": 132.0
+     },
+     "who": "fx",
+     "action": "transition card 'DAYS LATER...' wipes across and clears by 133.35",
+     "acting": "the scene behind changes to morning under the card",
+     "library": "S.transition(…, {caption: 'DAYS LATER...'})"
+    },
+    {
+     "t": 133.68,
+     "cue": {
+      "word": "أيام",
+      "t": 133.68
+     },
+     "who": "simpleton",
+     "action": "staggers in through the door bent double under two sacks tied on his own back",
+     "acting": "tip 0.35, knees bent (sq 0.9), tongue out, wobbling steps",
+     "library": "walk amp 0.6; packLoad on his back"
+    },
+    {
+     "t": 134.48,
+     "cue": {
+      "word": "قالت",
+      "t": 134.48
+     },
+     "who": "simpleton",
+     "action": "lets the sacks slide to the floor and stays bent, one hand on his back",
+     "acting": "sacks land with impactSquash and a dust puff; he straightens in three jerks",
+     "library": "fallY, impactSquash, dustBurst"
+    },
+    {
+     "t": 135.36,
+     "cue": {
+      "word": "الزوجة",
+      "t": 135.36
+     },
+     "who": "wife",
+     "action": "hands on hips, shakes her head at the sight, then speaks",
+     "acting": "fond but firm; talk 0.7",
+     "library": "PERSON_HANDS.hipsHands, talk"
+    },
+    {
+     "t": 136.48,
+     "cue": {
+      "word": "البيت",
+      "t": 136.48
+     },
+     "who": "wife",
+     "action": "sweeps an arm round the room, at the sacks, at him",
+     "acting": "gaze leads each gesture",
+     "library": "PERSON_HANDS.armsOut (one arm), pointDown"
+    },
+    {
+     "t": 138.02,
+     "cue": {
+      "word": "حمار",
+      "t": 138.02
+     },
+     "who": "fx",
+     "action": "balloon above her: a donkey icon with a yellow 'WANTED' tick",
+     "acting": "he looks at it and nods wearily, still rubbing his back",
+     "library": "iconBalloon single (donkey silhouette)"
+    },
+    {
+     "t": 138.68,
+     "cue": {
+      "word": "يعمل",
+      "t": 138.68
+     },
+     "who": "wife",
+     "action": "mimes loading the icon donkey instead of him: points from the sacks to the balloon",
+     "acting": "he brightens: brow up, small smile",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 139.82,
+     "cue": {
+      "word": "زوجها،",
+      "t": 139.82
+     },
+     "who": "wife",
+     "action": "presses the purse into his hand and turns him toward the door with a pat",
+     "acting": "he looks at the purse, jingles it, sets his turban straight and goes",
+     "library": "purse handed over (handRW to his hand); walk"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 134.6,
+     "text": "OOF!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 140.6
+   }
+  },
+  {
+   "id": "S14",
+   "start": 140.6,
+   "end": 147.56,
+   "paragraphs": [
+    7
+   ],
+   "set": "market",
+   "cast": [
+    "simpleton",
+    "sheep",
+    "camel",
+    "donkeyB",
+    "donkey",
+    "sharper",
+    "partner"
+   ],
+   "summary": "He goes to the market to buy one. The camera travels along the animals on offer; at the far end stand a familiar grey donkey and two familiar sellers.",
+   "camera": {
+    "shot": "establishing",
+    "move": "pan",
+    "notes": "Open wide on the market strip (zoom 1.0, camX 0), track right with him at 150 units/s to camX 900 by 146.6, running slightly ahead of him so each animal enters before he reaches it."
+   },
+   "composition": "He walks at about panel x 300; the animal row passes at mid depth (feet y 890). Stalls and awnings fill the top half. At the end of the move the hero donkey is at panel right with the two sellers behind it.",
+   "actions": [
+    {
+     "t": 140.6,
+     "cue": {
+      "word": "فذهب",
+      "t": 140.6
+     },
+     "who": "simpleton",
+     "action": "strides into the market from the left, purse held up in his fist",
+     "acting": "purposeful walk (amp 1), chin up, small smile; purse jingles",
+     "library": "walk(MX, t), MX = 150 + 150 (t - 140.6); purse"
+    },
+    {
+     "t": 142.48,
+     "end": 143.9,
+     "cue": {
+      "word": "السوق",
+      "t": 142.48
+     },
+     "who": "fx",
+     "action": "label 'THE MARKET' on the first awning, 1.4 s",
+     "acting": "stall cloths sway, a fruit seller silhouette waves from a window",
+     "library": "S.label; marketStreet shutters"
+    },
+    {
+     "t": 143.02,
+     "cue": {
+      "word": "ليشتري",
+      "t": 143.02
+     },
+     "who": "simpleton",
+     "action": "looks left and right at the stalls as he walks, tossing the purse once",
+     "acting": "saccade gaze; purse toss and catch with hop arc",
+     "library": "gazePlan 0.07; hop() for the purse"
+    },
+    {
+     "t": 144.6,
+     "cue": {
+      "word": "وبين",
+      "t": 144.6
+     },
+     "who": "sheep",
+     "action": "first in the row: the ewe chews and bleats at him as he passes",
+     "acting": "chew cycle, head turn to follow him",
+     "library": "sheep {chew, mouth}"
+    },
+    {
+     "t": 145.64,
+     "cue": {
+      "word": "الحيوانات",
+      "t": 145.64
+     },
+     "who": "camel",
+     "action": "the couched camel chews sideways and gives him a bored look",
+     "acting": "lid 0.6, lip chew, ear flick",
+     "library": "camel {kneel: 1, chew}"
+    },
+    {
+     "t": 146.58,
+     "cue": {
+      "word": "المعروضة",
+      "t": 146.58
+     },
+     "who": "donkeyB",
+     "action": "a brown donkey and a pale donkey, each with a price tag; they flick ears in turn",
+     "acting": "he slows, weighs the purse, considers them",
+     "library": "donkey pal 1, pal 2; stagger; tags as small labels"
+    },
+    {
+     "t": 147.1,
+     "cue": {
+      "word": "رأى",
+      "t": 147.56
+     },
+     "who": "sharper",
+     "action": "at the animal stall the two tricksters, counting on their fingers beside the grey donkey, see him coming and dive behind the hay bale",
+     "acting": "sharper spots him first (eyes wide), partner 4 frames later; both drop with a puff of straw, only the red cap tip shows",
+     "library": "draw order: tricksters, then the hay prop; anticipate + fast drop; stagger"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 147.56
+   }
+  },
+  {
+   "id": "S15",
+   "start": 147.56,
+   "end": 155.0,
+   "paragraphs": [
+    7
+   ],
+   "set": "market",
+   "cast": [
+    "simpleton",
+    "donkey",
+    "donkeyB",
+    "sharper",
+    "partner"
+   ],
+   "summary": "He sees his own old donkey among them and knows its shape and its voice beyond any doubt.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot(simpleton, donkey head) from zoom 1.2 pushing to 1.5 by 150.6; hold. Hay bale with the cap tip stays at the right edge of frame."
+   },
+   "composition": "Man at left, donkey at right facing him (dir -1), their eye lines level across the centre. Check marks pop beside the ears, the red bridle and the tail. Bray lettering above the donkey, clear of both faces.",
+   "actions": [
+    {
+     "t": 147.56,
+     "cue": {
+      "word": "رأى",
+      "t": 147.56
+     },
+     "who": "simpleton",
+     "action": "stops in mid stride, one foot in the air",
+     "acting": "lurch forward then freeze; eyes wide, noBlink for 0.7 s",
+     "library": "lurch(t, 147.56); walk amp 0"
+    },
+    {
+     "t": 148.2,
+     "cue": {
+      "word": "حماره",
+      "t": 148.2
+     },
+     "who": "donkey",
+     "action": "lifts his head from the hay and turns it toward his owner; both ears shoot up",
+     "acting": "recognition and joy: eyes wide then soft, tail swishes fast",
+     "library": "donkey headDown 1 to 0, earL/earR 1, tailSwish"
+    },
+    {
+     "t": 148.94,
+     "cue": {
+      "word": "القديم",
+      "t": 148.94
+     },
+     "who": "simpleton",
+     "action": "leans in, squinting, and walks a slow half circle of inspection (two steps left, two right)",
+     "acting": "lid 0.5, chin forward, hand on chin",
+     "library": "PERSON_HANDS.chin; walk small"
+    },
+    {
+     "t": 149.6,
+     "end": 150.9,
+     "cue": {
+      "word": "نفسه،",
+      "t": 149.6
+     },
+     "who": "fx",
+     "action": "arrow + label 'THE SAME DONKEY!'",
+     "acting": "pops on the word, 1.3 s",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 150.6,
+     "cue": {
+      "word": "فعرف",
+      "t": 150.6
+     },
+     "who": "simpleton",
+     "action": "counts on his fingers",
+     "acting": "nods on each count, more certain every time",
+     "library": "PERSON_HANDS.pointUp; countedBeats"
+    },
+    {
+     "t": 151.2,
+     "end": 152.0,
+     "cue": {
+      "word": "شكله",
+      "t": 151.2
+     },
+     "who": "fx",
+     "action": "three yellow check marks pop in turn: at the long ears, at the red bridle, at the tufted tail",
+     "acting": "the donkey obligingly flicks each part as it is checked",
+     "library": "S.emphasis ticks; donkey earL, tailSwish"
+    },
+    {
+     "t": 152.0,
+     "end": 152.9,
+     "cue": {
+      "word": "وصوته",
+      "t": 152.0
+     },
+     "who": "donkey",
+     "action": "throws back his head and brays a greeting",
+     "acting": "bray 1 with anticipation dip, eyes shut, sound arcs from the mouth; the other two donkeys lean away",
+     "library": "donkey {bray: 1}; soundArcs; anticipate"
+    },
+    {
+     "t": 152.3,
+     "cue": {
+      "word": "وصوته",
+      "t": 152.0
+     },
+     "who": "simpleton",
+     "action": "cups his ear, listens, and nods sharply: fourth check mark",
+     "acting": "eyes shut to listen, then snap open",
+     "library": "PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 152.9,
+     "cue": {
+      "word": "دون",
+      "t": 152.9
+     },
+     "who": "simpleton",
+     "action": "folds his arms; his brows come down and his face reddens",
+     "acting": "certainty turns to indignation: brow 0.9, mouth frown, flush climbing; the donkey, still pleased, steps toward him to the end of its tether",
+     "library": "PERSON_HANDS.folded; flush; donkey walk 1 step"
+    },
+    {
+     "t": 153.88,
+     "cue": {
+      "word": "شك.",
+      "t": 153.88
+     },
+     "who": "partner",
+     "action": "behind the bale two pairs of eyes rise an inch, see his face, and sink again",
+     "acting": "peek and snap back in 3 frames",
+     "library": "peek pattern (draw order)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 152.1,
+     "text": "HEE HAW!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 154.7,
+     "kind": "low thud (he sets his feet, angry)"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 155.0
+   }
+  },
+  {
+   "id": "S16",
+   "start": 155.0,
+   "end": 169.14,
+   "paragraphs": [
+    8
+   ],
+   "set": "market",
+   "cast": [
+    "simpleton",
+    "donkey",
+    "sharper",
+    "partner"
+   ],
+   "summary": "He marches up to the donkey's ear and hisses: it seems you went back to drinking and beat your mother a second time, but I will not buy you again! The donkey has no idea what he means.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Close two-shot, zoom 1.8, centred between the man's face and the donkey's head (world y about 720). Tiny push to 1.95 across the whisper; pull back to 1.4 at 165.34 for the refusal gesture."
+   },
+   "composition": "Man's face left of centre, tilted in; donkey's head right of centre with the near ear standing between them like a microphone. Whisper balloon upper left above the man. The donkey's look to camera is the centre of the frame at 164.08.",
+   "actions": [
+    {
+     "t": 155.0,
+     "cue": {
+      "word": "اقترب",
+      "t": 155.0
+     },
+     "who": "simpleton",
+     "action": "marches three stiff steps up to the donkey",
+     "acting": "arms straight down, fists, brow 1; each step a small dust puff",
+     "library": "walk with footfalls; dustBurst"
+    },
+    {
+     "t": 157.14,
+     "cue": {
+      "word": "أذن",
+      "t": 157.14
+     },
+     "who": "simpleton",
+     "action": "leans to the donkey's ear, hand cupped beside his mouth",
+     "acting": "tip 0.25; looks left and right first so nobody overhears",
+     "library": "PERSON_HANDS.cupMouth; gazePlan"
+    },
+    {
+     "t": 157.58,
+     "cue": {
+      "word": "الحمار",
+      "t": 157.58
+     },
+     "who": "donkey",
+     "action": "the near ear swivels down to him; the eye on his side rolls toward him",
+     "acting": "polite attention; tail still wagging",
+     "library": "donkey earL toward the man, gaze"
+    },
+    {
+     "t": 158.34,
+     "cue": {
+      "word": "وهمس",
+      "t": 158.34
+     },
+     "who": "simpleton",
+     "action": "whispers: small short whisper strokes fly from his mouth into the ear",
+     "acting": "mouth small, talk 0.4 fast",
+     "library": "talk; 3 small stroke marks per phrase, seeded"
+    },
+    {
+     "t": 159.12,
+     "cue": {
+      "word": "غاضبًا:",
+      "t": 159.12
+     },
+     "who": "simpleton",
+     "action": "face goes red, brows hard down, finger jabbing toward the ear",
+     "acting": "flush 1, brow 1, lid 0.4",
+     "library": "flush; PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 162.06,
+     "cue": {
+      "word": "السكر",
+      "t": 162.06
+     },
+     "who": "fx",
+     "action": "whisper balloon above him: the wine cup icon",
+     "acting": "he taps it with his finger; the donkey blinks slowly at it",
+     "library": "iconBalloon single (wineCup); donkey lid blink"
+    },
+    {
+     "t": 162.68,
+     "cue": {
+      "word": "وضرب",
+      "t": 162.68
+     },
+     "who": "fx",
+     "action": "balloon changes to the old mother with a star burst",
+     "acting": "donkey: ears go out sideways, eyes wide, head pulls back 10 px",
+     "library": "iconBalloon (oldWoman head + star); donkey earL/earR 0, eyes 'wide'"
+    },
+    {
+     "t": 164.08,
+     "cue": {
+      "word": "مرة",
+      "t": 164.08
+     },
+     "who": "simpleton",
+     "action": "holds up two fingers under the donkey nose: a second time!",
+     "acting": "the donkey looks at the fingers, then slowly straight at the camera: deadpan, one blink",
+     "library": "PERSON_HANDS.pointUp (two fingers); donkey gaze [0, 0.05]"
+    },
+    {
+     "t": 165.34,
+     "cue": {
+      "word": "لكنني",
+      "t": 165.34
+     },
+     "who": "simpleton",
+     "action": "straightens up and steps back, wagging a finger",
+     "acting": "chin up, eyes half shut in righteous scorn",
+     "library": "PERSON_HANDS.pointUp wag (0.25 rad sine)"
+    },
+    {
+     "t": 166.64,
+     "cue": {
+      "word": "لن",
+      "t": 166.64
+     },
+     "who": "simpleton",
+     "action": "crosses both arms in a big X and shakes his head; stuffs the purse deep into his sash",
+     "acting": "no, no, no: three head shakes; purse vanishes with a pat",
+     "library": "aL/aR crossed; purse"
+    },
+    {
+     "t": 167.86,
+     "cue": {
+      "word": "بعد",
+      "t": 167.86
+     },
+     "who": "donkey",
+     "action": "ears sink, eyes go wet; he stretches his neck after his owner to the end of the tether",
+     "acting": "sag 0 to 0.8, wet: true; the only real grief in the film",
+     "library": "donkey sag, wet, neck"
+    },
+    {
+     "t": 168.1,
+     "cue": {
+      "word": "اليوم!",
+      "t": 168.1
+     },
+     "who": "simpleton",
+     "action": "stamps his foot and turns his nose up",
+     "acting": "stamp with dust and a 2 px panel bump; gaze up and away, lid 1",
+     "library": "dustBurst; panel shake 2 px"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 167.2,
+     "text": "NO SALE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 169.14
+   }
+  },
+  {
+   "id": "S17",
+   "start": 169.14,
+   "end": 178.85,
+   "paragraphs": [
+    8
+   ],
+   "set": "market",
+   "cast": [
+    "simpleton",
+    "donkey",
+    "sharper",
+    "partner",
+    "donkeyB"
+   ],
+   "summary": "He leaves it and walks away, never understanding that he fell for a thieves trick. Behind the hay, the two tricksters rise and grin. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Pull out from zoom 1.4 to 1.0 by 171.4 (centre x 2050): the man leaving at left, the donkey centre, the hay bale and stall at right. Hold for THE END."
+   },
+   "composition": "Man walking off toward panel left with his back to everything; donkey centre looking after him; tricksters rising at right behind the bale. THE END in the sky top centre, clear of all heads.",
+   "actions": [
+    {
+     "t": 169.64,
+     "cue": {
+      "word": "تركه",
+      "t": 169.64
+     },
+     "who": "simpleton",
+     "action": "turns on his heel",
+     "acting": "turnFlip squeeze, nose still in the air",
+     "library": "turnFlip(t, [169.64], 0.4)"
+    },
+    {
+     "t": 170.4,
+     "cue": {
+      "word": "ومضى،",
+      "t": 170.4
+     },
+     "who": "simpleton",
+     "action": "marches away to the left, purse still full, arms swinging",
+     "acting": "proud of himself: chest out (sq 1.04), satisfied smile grows as he goes",
+     "library": "walk(MX2, t) to off frame by 175.5"
+    },
+    {
+     "t": 171.0,
+     "cue": {
+      "word": "ومضى،",
+      "t": 170.4
+     },
+     "who": "donkey",
+     "action": "takes two steps after him; the tether snaps taut; one small silent bray at his back",
+     "acting": "bray 0.5, ears down; then stands still, watching him go",
+     "library": "donkey walk 2 steps, leadRope slack 0 to the post, bray"
+    },
+    {
+     "t": 171.4,
+     "cue": {
+      "word": "ولم",
+      "t": 171.4
+     },
+     "who": "sharper",
+     "action": "the red cap rises behind the hay bale, then his eyes, then the partner beside him",
+     "acting": "peek in stages: cap, eyes, nose; partner 4 frames later",
+     "library": "peek pattern; stagger"
+    },
+    {
+     "t": 172.2,
+     "cue": {
+      "word": "يفهم",
+      "t": 172.2
+     },
+     "who": "partner",
+     "action": "stares after the man, then at the sharper, open mouthed: he still believes it?",
+     "acting": "brow -0.8, palms up",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 173.3,
+     "cue": {
+      "word": "وقع",
+      "t": 173.3
+     },
+     "who": "sharper",
+     "action": "shrugs, then holds up an identical rope loop and dangles it beside his own neck",
+     "acting": "smirk, one brow up",
+     "library": "leadRope loop open in one hand"
+    },
+    {
+     "t": 174.12,
+     "cue": {
+      "word": "خدعة",
+      "t": 174.12
+     },
+     "who": "sharper",
+     "action": "winks at the camera; both shake with silent laughter and duck as the man glances back once",
+     "acting": "wink 'L', shoulders bounce (tremble 3 px); the man looks back only at the donkey, sniffs, walks on",
+     "library": "wink; tremble; simpleton gaze back for 0.4 s at 174.9"
+    },
+    {
+     "t": 175.7,
+     "who": "lettering",
+     "action": "THE END pops in the sky and holds to 178.85",
+     "acting": "style title primitive; finish() last",
+     "library": "S.title"
+    },
+    {
+     "t": 176.6,
+     "who": "donkey",
+     "action": "looks from his departing owner to the two heads behind the hay, then at the camera: one slow blink, ears flop",
+     "acting": "the donkey is the only one who knows everything; hold to the end with breathing and a tail swish",
+     "library": "donkey gaze plan, lid, breathe"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 174.4,
+     "text": "HEE HEE!"
+    },
+    {
+     "t": 175.7,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 176.2,
+     "kind": "chime (THE END)"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 178.85
+   }
+  }
+ ],
+ "ending": {
+  "t": 175.56,
+  "description": "The last word ends at 175.56. THE END pops at 175.7 over the market: the owner marching away small at the left, the two tricksters peeking over the hay bale at the right, the donkey in the centre giving the camera one slow blink at 176.6. Held to 178.85 (3.0 s after the MP3) with breathing, tail swish and a chime at 176.2."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان رجل ساذج يمشي في الطريق،|ويجر حماره خلفه بحبل مربوط إلى عنقه.|رآه محتالان، فقال أحدهما لصاحبه|إنه يستطيع أخذ الحمار دون أن يشعر صاحبه بما يجري خلف ظهره.",
+   "en": "A simple man walked along|leading his donkey by a rope.|Two tricksters saw him, and one promised his partner|he could steal the animal without its owner noticing."
+  },
+  {
+   "p": 2,
+   "ar": "اقترب المحتال الأول بهدوء،|وفك الحبل من عنق الحمار،|ثم سلمه إلى صاحبه ليبتعد به.|وبعد ذلك وضع الحبل حول عنقه هو، ومشى خلف الرجل كأنه الحمار الذي كان يقوده.",
+   "en": "One trickster quietly unfastened the donkey|and gave it to his partner.|He looped the rope around his own neck|and followed the unsuspecting man."
+  },
+  {
+   "p": 3,
+   "ar": "ظل الرجل يمشي زمنًا دون أن يلتفت،|حتى توقف المحتال عن الحركة.|شد الرجل الحبل، فلم يتحرك شيء.|التفت أخيرًا، فوجد رجلًا مكان حماره، فصاح من شدة الدهشة وسأله ماذا حدث.",
+   "en": "The man kept walking|until the trickster stopped.|Pulling the rope did nothing.|When he turned, he saw a man where his donkey should have been and demanded an explanation."
+  },
+  {
+   "p": 4,
+   "ar": "قال المحتال إنه كان إنسانًا،|لكنه عاد إلى بيته يومًا وهو سكران، وضرب أمه عندما نصحته بالتوبة.|فدعت عليه، وتحول بسبب دعائها إلى حمار،|وعاش على هذه الصورة سنوات.",
+   "en": "The trickster claimed he had once been human|but beat his mother while drunk.|Her curse had turned him into a donkey,|he said, for many years."
+  },
+  {
+   "p": 5,
+   "ar": "وأضاف أن أمه تذكرت ابنها اليوم، فدعت له بالخير،|وعاد فورًا إلى صورته البشرية.|صدق الرجل القصة، واعتذر لأنه كان يركبه ويحمله الأثقال،|ثم فك الحبل وترك المحتال يذهب.",
+   "en": "He said his mother had finally forgiven him,|restoring his human form.|The simpleton believed the tale, apologized for riding him,|and released the thief."
+  },
+  {
+   "p": 6,
+   "ar": "رجع إلى بيته حزينًا، وقص على زوجته ما اعتقد أنه حدث.|صدقته هي أيضًا، وخافت أن يكونا قد ظلما رجلًا دون علمهما،|فتصدقت بشيء من المال طلبًا للمغفرة.",
+   "en": "At home he told his wife the extraordinary story.|She believed him too|and gave charity, fearing they had unknowingly mistreated a human being."
+  },
+  {
+   "p": 7,
+   "ar": "بعد أيام قالت الزوجة إن البيت يحتاج إلى حمار يعمل به زوجها،|فذهب إلى السوق ليشتري واحدًا.|وبين الحيوانات المعروضة رأى حماره القديم نفسه،|فعرف شكله وصوته دون أي شك.",
+   "en": "Days later his wife asked him|to buy another working donkey.|At the market he recognized his own animal|among those offered for sale."
+  },
+  {
+   "p": 8,
+   "ar": "اقترب الرجل من أذن الحمار وهمس غاضبًا:|يبدو أنك عدت إلى السكر وضرب أمك مرة ثانية،|لكنني لن أشتريك بعد اليوم!|ثم تركه ومضى، ولم يفهم أنه وقع في خدعة اللصوص.",
+   "en": "The man whispered angrily to the donkey|that it must have beaten its mother again.|He refused to buy it,|never realizing the tricksters had fooled him."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "rope (lead)",
+   "description": "leadRope: the planned lead rope between a hand and a neck loop, here the central prop of the film. States: on an animal neck, opened in two hands, on a person's neck, taut with vibration, dragged on the floor, coiled, tied to a post.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "leadRope(ctx, a, b, {slack, loop, r, vib, t}): quadratic curve from a to b with the control point at the midpoint lowered by 40 * slack (plus 3 * vib * sin(40 t)); stroke 11 px black then 7 px brown. Loop = ellipse (46 x 30 on the donkey, 40 x 22 on a person) drawn as a back half before the neck and a front half after it, knot = 8 px disc. 'open' = ellipse 70 x 50 between two hand points. Coil = 3 concentric ellipses radius 30, 22, 14. Length kept near 190 by placing the follower at SX - 190."
+  },
+  {
+   "type": "effect",
+   "name": "poofTransform",
+   "description": "Planned transformation burst (KD-014): stars spiral in, star burst and puff ring with a 2 frame flash, two black silhouettes cross scaled inside (from, to), puff clears. Used inside the tale cloud forward (man to donkey, 81.78) and reversed (donkey to man, 95.94).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "poofTransform(ctx, x, y, t, t0, {from(c), to(c), dur: 1.3, r: 150}): 0-35 %: 8 yellow 5 point stars on a shrinking spiral; 35-45 %: white flash 2 frames + 12 point burst polygon (yellow, red dot fill) scaling 0.2 to 1.1; 35-70 %: from() drawn with silhouette: true scaling 1 to 0.6 while to() scales 0.6 to 1; 60-100 %: ring of 9 puff circles expanding and fading. Pure function of t."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "description": "Planned wordless picture balloon (strip of up to 3 frames, or single). Used for the plan (S2), the advice and apology (S7, S10), the retelling (S11), the wife (S13) and the whispered accusation (S16).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "White rounded balloon with black brush outline and a tail to the speaker; content callback per frame drawn clipped at reduced scale (Library silhouettes, wineCup, star). Frames pop in turn with overshoot (settleTo). Place with a clear-of-faces check."
+  },
+  {
+   "type": "prop",
+   "name": "wineCup",
+   "description": "Planned small stemmed cup (30 x 44) with tilt and two red drops; also a flat icon with an optional red X.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Half ellipse bowl + stem + foot in yellow with black outline, red wine ellipse; drops as two small red circles on a fallY path."
+  },
+  {
+   "type": "prop",
+   "name": "purse",
+   "description": "Planned fat coin purse (44 x 52) with a red tie, plus single coins (planned coinPile coin).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Yellow teardrop with black outline and red dot shading, red tie band, two accent strokes when jingled; coin = yellow disc r 9 flying on a hop() arc."
+  },
+  {
+   "type": "prop",
+   "name": "smallBowl",
+   "description": "Planned small bowl 50 x 22 for the beggar.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Brown half ellipse with a lighter rim line; coins drawn inside as overlapping discs."
+  },
+  {
+   "type": "expression",
+   "name": "spiralEyes",
+   "description": "Planned spiral pupils for the drunk cloud self (75.0-76.3), at cloud scale.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Replace each pupil by a 2 turn spiral polyline rotating with t; blend back to normal eyes."
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "description": "Planned anger flush on the simpleton's face (152.9, 159.12-168).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Red Ben-Day dots rising up the face clipped to the head circle (level 0..1), two small steam puffs at level 1."
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "description": "Planned soft blessing rays for the mother's good prayer (95.16).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Fan of 5 yellow wedges from a point at the cloud top, alpha 0.5, halftone dot edge; fades in 0.3 s."
+  },
+  {
+   "type": "pose",
+   "name": "person carrying a load on the back",
+   "description": "The simpleton (and the cloud man) bent under sacks: tip 0.35, knees bent, packLoad drawn on the back with a strap.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Scene level: person {tip: 0.35, sq: 0.9}; packLoad(ctx, ['sack','sack'], x - 30, y - 150, s) rotated with the same tip; strap = 5 px line across the chest."
+  },
+  {
+   "type": "motion",
+   "name": "sneak / tiptoe gait",
+   "description": "High knee tiptoe for the approach (22.5-25.6).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "walk() with stride 0.6, leg lift doubled, body dip on each plant (4 px), arms raised and bent; footfalls give the freeze points."
+  }
+ ],
+ "owner_questions": [
+  "SCRIPT: the supplied English is a condensed summary, not a line by line translation (it omits, among others, the rope tied to the donkey's neck, 'walked behind him as if he were the donkey', the mother's advice to repent, 'and loaded him with burdens', 'knew its shape and its voice', and the direct speech 'I will not buy you after today'); both texts are kept verbatim and the subtitle chunks are aligned as closely as the two allow.",
+  "Violence softened: the son striking his mother (76.32) is shown only inside the tale cloud and is hidden by a star burst with BAM!, with no contact drawn; default kept.",
+  "Drinking is shown inside the tale cloud with a small wine cup, a zigzag walk, spiral eyes and HIC! (72-76 s) and as a wine cup icon in the whisper balloon (162 s); default kept, alternative is the zigzag walk only.",
+  "Addition beyond the script: the two tricksters are shown as the sellers at the market, hiding behind a hay bale and peeking out at the end to make 'the thieves' trick' visible; default kept.",
+  "Addition beyond the script: the charity (127.76-131.2) is shown as coins given to a poor old man at the door; default kept.",
+  "Invented English lettering: title, SHHH!, TUG!, TUUUG!, WHAAAT?!, HIC!, BAM!, POOF! (twice), TA-DA!, CLINK!, OOF!, HEE HAW!, NO SALE!, HEE HEE!, THE END, plus labels HIS DONKEY, THE NEW DONKEY, ME A MAN, HUMAN AGAIN!, THE MARKET, THE SAME DONKEY!, counters MILES and YEARS, card DAYS LATER...; default kept.",
+  "The donkey's identifying mark is a red bridle (Library bridle field) so that he reads as the same animal at the market; default kept."
+ ],
+ "implementation_notes": [
+  "Start from Library/template. One position function drives the whole road section: SX(t) = 80 + 45 t until 49.3, then fixed at 2298; follower (donkey, then sharper) at SX - 190. Use walk() on both so no foot slides; camera x derives from SX.",
+  "The Library person is front facing only. 'Not looking back' is carried by gaze [1, 0] plus body lean toward the walking direction; the turn at 57.06 uses a turnFlip style squeeze and a gaze flip to [-1, 0]. Keep the simpleton's gaze strictly forward from 0 to 55.9 except the fly beat at 46.18.",
+  "Mask on / mask off (guide section 9): the sharper's sly face shows only when the simpleton's gaze is away or his lid is 1; write it as a function of the simpleton's gaze so it can never be wrong.",
+  "Tale cloud (S7-S9): thoughtCloud(ctx, 2190, 330, 720, 420, t, {p, tail: sharper head, scale: 0.5, at: [500, 760], inside}). Everything inside is ordinary world drawing (person, donkey, townDoor, skyCycle) so figures are about 115 px on screen. Keep the two men outside the cloud alive the whole time: blinks, breathing, reactions listed in the actions.",
+  "hutRoom anchors (door, stool, mat, jug, peg) come from the set's returned anchors; the x positions in the plan are approximate, measure on the set. Draw layer 'back', cast, then layer 'front'.",
+  "marketStreet: w 2400, palace false. Draw order at the right end: stall, tricksters, hay bale (front), hero donkey, post. The tether in the market is the same leadRope tied to the post at (2150, 800).",
+  "Sound: 5 effects only (3.7, 21.9, 66.5, 154.7, 176.2), all inside listed pauses or after the last word; master 0.6. The bray, the coins and the tug are visual only (lettering), because the narration has no gap there.",
+  "Lettering never covers a face; balloons go upper left or upper right of the speaker. All on-screen text without en or em dashes. Call finish last in every frame; panel-only shake.",
+  "Subtitle chunks are in 'subtitles' (verbatim, 3 or 4 chunks per paragraph); chunk times come from the word times in timeline.json."
+ ],
+ "warnings": [
+  "The narration has only four pauses of 0.6 s or more, so the film is nearly silent apart from the voice: comedy must come from timing and faces.",
+  "P6 subtitle chunks: the English puts the charity before the fear and the Arabic the reverse, so chunk 2 and 3 of P6 do not match clause for clause.",
+  "Front facing person: walking in profile along a road with a rope behind is the hardest staging here; check stills at 5, 30, 40 and 52 s first.",
+  "Tale cloud figures are small (scale 0.5); verify on a phone sized still that the old mother, the cup and the donkey with the cap read.",
+  "S16 is a 14 s close two-shot: keep the donkey acting (ear, eye, look to camera) so it does not go static."
+ ]
+}

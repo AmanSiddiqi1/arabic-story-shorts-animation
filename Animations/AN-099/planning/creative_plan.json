@@ -1,0 +1,2697 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-099",
+ "title": "Caliph al-Maamun and the Strange Scholar",
+ "duration": 169.475,
+ "end_hold": 3.0,
+ "logline": "A poor stranger sits by the door of the caliphs assembly, answers three questions nobody else can, is moved seat by seat to the caliphs side, and then refuses the caliphs wine because his mind is the only thing that brought him there.",
+ "moral": "Knowledge and a clear mind raise a person, not clothes or money; guard the thing that earned your place.",
+ "tone": "Warm court comedy of manners: quiet, dignified hero, gently mocked snobs, one held moment of suspense at the cup, a generous ending. No villain and no humiliation.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 5.0,
+   "kind": "setup",
+   "cue": {
+    "word": "العلماء",
+    "t": 5.0
+   },
+   "summary": "The caliph who loves learning gathers his scholars."
+  },
+  {
+   "id": "B2",
+   "t": 14.14,
+   "kind": "inciting",
+   "cue": {
+    "word": "دخل",
+    "t": 14.14
+   },
+   "summary": "A stranger in patched clothes enters and sits by the door, far from everyone."
+  },
+  {
+   "id": "B3",
+   "t": 26.88,
+   "kind": "rising",
+   "cue": {
+    "word": "ظنوا",
+    "t": 26.88
+   },
+   "summary": "The scholars ignore him: poor clothes must mean little learning."
+  },
+  {
+   "id": "B4",
+   "t": 36.12,
+   "kind": "suspense",
+   "cue": {
+    "word": "عجز",
+    "t": 36.12
+   },
+   "summary": "The caliphs question defeats the scholars."
+  },
+  {
+   "id": "B5",
+   "t": 43.62,
+   "kind": "turn",
+   "cue": {
+    "word": "رفع",
+    "t": 43.62
+   },
+   "summary": "The stranger quietly raises his hand and asks to speak."
+  },
+  {
+   "id": "B6",
+   "t": 51.06,
+   "kind": "surprise",
+   "cue": {
+    "word": "دقيقًا،",
+    "t": 51.06
+   },
+   "summary": "His answer is exact and plain; the knot comes undone."
+  },
+  {
+   "id": "B7",
+   "t": 61.06,
+   "kind": "rising",
+   "cue": {
+    "word": "أقرب",
+    "t": 61.06
+   },
+   "summary": "First move: closer to the scholars."
+  },
+  {
+   "id": "B8",
+   "t": 75.2,
+   "kind": "rising",
+   "cue": {
+    "word": "اتضح",
+    "t": 75.2
+   },
+   "summary": "Second question: he joins the quarrelling views into one clear meaning."
+  },
+  {
+   "id": "B9",
+   "t": 81.68,
+   "kind": "reveal",
+   "cue": {
+    "word": "اهتمام",
+    "t": 81.68
+   },
+   "summary": "Second move; those who ignored him now watch him."
+  },
+  {
+   "id": "B10",
+   "t": 95.34,
+   "kind": "climax",
+   "cue": {
+    "word": "جانبه.",
+    "t": 95.34
+   },
+   "summary": "Third answer, wider than anyone expected: he is seated beside the caliph."
+  },
+  {
+   "id": "B11",
+   "t": 102.64,
+   "kind": "emotion",
+   "cue": {
+    "word": "مكرمًا",
+    "t": 102.64
+   },
+   "summary": "At the meal the forgotten stranger is the guest of honour."
+  },
+  {
+   "id": "B12",
+   "t": 112.52,
+   "kind": "suspense",
+   "cue": {
+    "word": "كأسًا",
+    "t": 112.52
+   },
+   "summary": "The caliph offers him a cup of wine."
+  },
+  {
+   "id": "B13",
+   "t": 117.94,
+   "kind": "surprise",
+   "cue": {
+    "word": "اعتذر",
+    "t": 117.94
+   },
+   "summary": "He politely refuses; the caliph asks why."
+  },
+  {
+   "id": "B14",
+   "t": 136.52,
+   "kind": "moral",
+   "cue": {
+    "word": "عقلي",
+    "t": 136.52
+   },
+   "summary": "Not my clothes or money but my mind and knowledge brought me near you."
+  },
+  {
+   "id": "B15",
+   "t": 142.42,
+   "kind": "emotion",
+   "cue": {
+    "word": "أفسدت",
+    "t": 142.42
+   },
+   "summary": "To drink would spoil the very thing that raised him."
+  },
+  {
+   "id": "B16",
+   "t": 156.0,
+   "kind": "resolution",
+   "cue": {
+    "word": "بمئة",
+    "t": 156.0
+   },
+   "summary": "The delighted caliph orders a hundred thousand silver pieces."
+  },
+  {
+   "id": "B17",
+   "t": 159.38,
+   "kind": "resolution",
+   "cue": {
+    "word": "خرج",
+    "t": 159.38
+   },
+   "summary": "He leaves honoured through the door he entered unnoticed."
+  }
+ ],
+ "cast": [
+  {
+   "id": "caliph",
+   "name": "Caliph al-Maamun",
+   "library": "person",
+   "base": "person costume:'caliph', age 0.35, s 0.8",
+   "look": "Red robe, crowned turban, dark beard (age 0.35 instead of the preset grey). On the throne in S1 to S9, on a big floor cushion from S10. Curious, quick to smile, never angry.",
+   "new": false
+  },
+  {
+   "id": "stranger",
+   "name": "the stranger (the strange scholar)",
+   "library": "person",
+   "base": "person costume:'ascetic', age 0.4, pal {shoes:'bare'}, s 0.72",
+   "look": "Off-white robe with two blue patches, small white turban, dark beard with a little grey, bare feet. Calm, upright, economical gestures; the only character who never hurries.",
+   "new": false
+  },
+  {
+   "id": "proud",
+   "name": "the proud scholar",
+   "library": "person",
+   "base": "person costume:'vizier', pal {robe: dark red, cape: yellow}, s 0.66",
+   "look": "Tall turban with a jewel, grey pointed beard, chin always up. The snob who learns: ends by offering his cushion and bowing lowest.",
+   "new": false
+  },
+  {
+   "id": "elder",
+   "name": "the old scholar",
+   "library": "person",
+   "base": "person costume:'physician', age 1, s 0.64",
+   "look": "White robe, long white beard, stooped, half asleep; wakes up as the stranger speaks. Comic relief by slowness.",
+   "new": false
+  },
+  {
+   "id": "eager",
+   "name": "the young scholar",
+   "library": "person",
+   "base": "person costume:'merchant', age 0.05, pal {robe: green, hc: yellow}, s 0.66",
+   "look": "Green robe, big yellow turban, short black beard. Copies the proud one a beat late; the first to warm to the stranger.",
+   "new": false
+  },
+  {
+   "id": "scholars",
+   "name": "the three scholars as a group (proud, elder, eager)",
+   "library": "person",
+   "base": "group label for staggered ensemble actions",
+   "look": "Always staggered with stagger(i); never in unison.",
+   "new": false
+  },
+  {
+   "id": "servant",
+   "name": "palace servant",
+   "library": "person",
+   "base": "person costume:'servant', s 0.7",
+   "look": "White tunic, red cap. Brings trays, goblets and the chest.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "hall",
+   "library": "palaceHall",
+   "description": "palaceHall {variant:'palace', wall:'blue', dais:[640, 960, 860], throne: 840, cushions:[705], carpet:true, lampsLit:true, t}. Door arch x 40..250 (top 480) with day outside; floor y 900; dais top y 860; throne sitY 848. Seats: A (120, 900) bare floor by the door; scholars cushions at x 345, 428, 511; B (262, 900); C (598, 925); D = honour cushion (705, 860) on the dais. From S10: u 0.45 (dusk in door and window), food cloth x 300..760. Read exact anchors from palaceHallAnchors(o).",
+   "new": false
+  }
+ ],
+ "props": [
+  {
+   "id": "balloon",
+   "library": null,
+   "description": "answerBalloon: speech balloon whose content is an icon instead of words (knot, wedge, pieces, whole disc, wide, lamp) with a red question mark or green tick badge. Carries all three questions and answers without inventing any text.",
+   "new": true
+  },
+  {
+   "id": "thought",
+   "library": "thoughtCloud",
+   "description": "Library thought cloud. Used twice: the scholars mistaken belief (S3) and the strangers if-I-drank picture (S14).",
+   "new": false
+  },
+  {
+   "id": "weekDots",
+   "library": null,
+   "description": "Row of seven paper discs (r 16, 44 apart) of which two turn yellow with a star: twice a week.",
+   "new": true
+  },
+  {
+   "id": "floorCushion",
+   "library": null,
+   "description": "Loose floor cushion matching the palaceHall dais cushion (100 x 30, yellow with red dots) for the scholars seats and the one handed over in S8; a 150 x 40 version for the caliph from S10.",
+   "new": true
+  },
+  {
+   "id": "foodTray",
+   "library": null,
+   "description": "Planned foodTray (brass tray with bread, dates and a cup), three of them on a pale cloth; reuse the planned drawing.",
+   "new": true
+  },
+  {
+   "id": "goblet",
+   "library": null,
+   "description": "Stemmed cup, 44 wide x 64 tall, yellow with black outline, fill 0..1 of red wine with a white highlight, slosh angle; jug 60 x 110 to match.",
+   "new": true
+  },
+  {
+   "id": "silverChest",
+   "library": null,
+   "description": "Planned treasureHoard chest (about 170 x 110, lid open 0..1) filled with the planned coinPile in a silver palette (white coins, blue dot shading).",
+   "new": true
+  },
+  {
+   "id": "counter",
+   "library": null,
+   "description": "The style counter primitive (S.counter) running to 100,000.",
+   "new": false
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 12.1,
+   "paragraphs": [
+    1
+   ],
+   "set": "hall",
+   "cast": [
+    "caliph",
+    "proud",
+    "elder",
+    "eager",
+    "scholars"
+   ],
+   "summary": "The majlis of al-Maamun: the caliph on his throne, delighted by a book; three scholars arrive on their cushions and fall into a lively argument. Seat A by the door is conspicuously empty.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Open close on the caliph and his book (x 840, y 700, zoom 2.0), hold to 3.3, pull out during the pause to the full hall (x 500, y 640, zoom 1.0) by 5.0, then a slow drift toward the scholars (x 470, zoom 1.15) to 12.1."
+   },
+   "composition": "Hall read left to right as a ladder of honour: door (x 40..250), scholars cushions at x 345, 428, 511, dais x 640..960 with the honour cushion at x 705 and the throne at x 840. Caliph is the tallest, rightmost shape; all eye lines converge on him.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 1.1,
+     "cue": {
+      "word": "كان",
+      "t": 0.0
+     },
+     "who": "caliph",
+     "action": "Sits on the throne reading an open book held in both hands; turns a page.",
+     "acting": "eyes down on the page (gaze [-0.2, 0.6]), small smile, breathe() idle",
+     "library": "person {costume:'caliph', sit:1, seat:'bench', y: HALL.throne.sitY, handLW/handRW on the book}"
+    },
+    {
+     "t": 1.92,
+     "end": 2.72,
+     "cue": {
+      "word": "يحب",
+      "t": 1.92
+     },
+     "who": "caliph",
+     "action": "Lifts the book to his chest and looks up, beaming.",
+     "acting": "gaze eases from the page up and out ([0, -0.2]), mouth 'smile', brow -0.4, sq settle 1.04 to 1",
+     "library": "settleTo, PERSON_HANDS.chest (hand over the book)"
+    },
+    {
+     "t": 2.9,
+     "end": 3.8,
+     "cue": {
+      "word": "العلم،",
+      "t": 2.7
+     },
+     "who": "fx",
+     "action": "Three small yellow star glints pop around the book, staggered 3 frames apart.",
+     "acting": "the caliph blinks once at the first glint",
+     "library": "S.emphasis / star shapes, stagger(i)"
+    },
+    {
+     "t": 3.9,
+     "end": 5.1,
+     "cue": {
+      "word": "ويجمع",
+      "t": 4.3
+     },
+     "who": "caliph",
+     "action": "Closes the book, sets it on the throne arm and opens his right arm wide toward the hall: come in.",
+     "acting": "anticipation dip 0.15 s before the sweep; gaze follows his own hand to the door, then back",
+     "library": "anticipate(), aR angle sweep (use arm angles so it reads wide), PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 5.0,
+     "end": 6.7,
+     "cue": {
+      "word": "العلماء",
+      "t": 5.0
+     },
+     "who": "scholars",
+     "action": "The three scholars walk in from the door in a line and stop at their cushions: proud first (chin high), elder second (short slow steps, stoop), eager last (quick, almost bumping the elder).",
+     "acting": "each on his own walk phase and speed, never in unison; eyes on the caliph; eager glances at the proud one to copy him",
+     "library": "walk(), footfalls() per scholar; stagger(i)"
+    },
+    {
+     "t": 6.66,
+     "end": 7.96,
+     "cue": {
+      "word": "مرتين",
+      "t": 6.76
+     },
+     "who": "weekDots",
+     "action": "A row of seven paper dots appears above the scholars; two of them pop to yellow with a star as he says twice.",
+     "acting": "the caliph counts them with two small nods",
+     "library": "new weekDots; countedBeats-style dip on each pop"
+    },
+    {
+     "t": 8.28,
+     "end": 9.18,
+     "cue": {
+      "word": "أسبوع",
+      "t": 8.08
+     },
+     "who": "scholars",
+     "action": "All three sit down cross-legged on their cushions, one after another (0.2 s apart); the elder lands last with a small bounce.",
+     "acting": "sit blend 0 to 1 with 6 % overshoot; landSquash on the elder (sq 0.92)",
+     "library": "person {sit, seat:'floor'}, settleTo, landSquash"
+    },
+    {
+     "t": 8.9,
+     "end": 10.1,
+     "cue": {
+      "word": "ليتناقشوا",
+      "t": 8.9
+     },
+     "who": "proud",
+     "action": "Starts the debate: turns to the others and wags a raised finger while talking.",
+     "acting": "talk 0.8, brow 0.5, gaze at the elder; chin up (tip -0.03)",
+     "library": "PERSON_HANDS.pointUp, talk"
+    },
+    {
+     "t": 10.52,
+     "end": 12.02,
+     "cue": {
+      "word": "المسائل",
+      "t": 10.52
+     },
+     "who": "eager",
+     "action": "Leans in and answers back with both palms up; the elder strokes his beard and nods between them.",
+     "acting": "eager: talk 0.7, brow -0.5, tip 0.06; elder: lid 0.35, slow nod, gaze swapping speaker to speaker",
+     "library": "PERSON_HANDS.palmsUp, PERSON_HANDS.chin, gazePlan"
+    },
+    {
+     "t": 11.34,
+     "end": 12.14,
+     "cue": {
+      "word": "الصعبة.",
+      "t": 11.24
+     },
+     "who": "caliph",
+     "action": "Watches the argument with open pleasure, chin on his fist.",
+     "acting": "gaze plan hopping between the three scholars, smile, one slow blink",
+     "library": "look(), PERSON_HANDS.chin"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.3,
+     "text": "THE CALIPH AND THE STRANGE SCHOLAR"
+    },
+    {
+     "t": 6.9,
+     "text": "TWICE A WEEK"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 3.8,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 12.1
+   }
+  },
+  {
+   "id": "S2",
+   "start": 12.1,
+   "end": 22.48,
+   "paragraphs": [
+    1
+   ],
+   "set": "hall",
+   "cast": [
+    "caliph",
+    "stranger",
+    "proud",
+    "elder",
+    "eager"
+   ],
+   "summary": "A stranger in a patched robe appears in the doorway, hesitates, comes in barefoot and sits down on the bare floor right by the door, as far from the throne as the room allows.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Whip-free eased pan left to the door (x 330, y 700, zoom 1.5) for the entrance at 13.2; push to a medium on the stranger (x 200, y 730, zoom 2.1) on the patches at 16.2; pull back to the full hall (x 500, y 640, zoom 1.0) by 19.8 so the distance is the picture."
+   },
+   "composition": "Stranger small against the tall door arch with daylight behind him. In the final wide the gap between him (x 120) and the scholars (x 345..511) is empty checker floor; a dashed arrow measures it.",
+   "actions": [
+    {
+     "t": 12.1,
+     "end": 14.1,
+     "cue": {
+      "word": "وفي",
+      "t": 12.1
+     },
+     "who": "scholars",
+     "action": "Debate continues in the background: small alternating talk pulses and hand wags.",
+     "acting": "eyes on each other or the caliph, nobody faces the door",
+     "library": "talk, gazePlan"
+    },
+    {
+     "t": 13.64,
+     "end": 14.24,
+     "cue": {
+      "word": "دخل",
+      "t": 14.14
+     },
+     "who": "stranger",
+     "action": "His head and one shoulder lean into the doorway from outside; he looks the hall up and down.",
+     "acting": "saccade gaze: lamps, throne, scholars (2-frame snaps); brow -0.6, mouth closed",
+     "library": "gazePlan(t, plan, 0.07); palaceHall behind(ctx) draws him outside first"
+    },
+    {
+     "t": 14.24,
+     "end": 15.34,
+     "cue": {
+      "word": "دخل",
+      "t": 14.14
+     },
+     "who": "stranger",
+     "action": "Steps in: four short barefoot steps to x 120, hands clasped in front.",
+     "acting": "head a little lowered (drop 6), eyes up at the throne; legs never slide",
+     "library": "walk(), footfalls(); person {costume:'ascetic', age:0.4}, PERSON_HANDS.clasp"
+    },
+    {
+     "t": 15.32,
+     "end": 16.22,
+     "cue": {
+      "word": "غريب",
+      "t": 15.32
+     },
+     "who": "fx",
+     "action": "A hand-drawn arrow and label point at him.",
+     "acting": "he blinks at being pointed at, glances up at the label",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 16.9,
+     "end": 18.5,
+     "cue": {
+      "word": "علامات",
+      "t": 17.2
+     },
+     "who": "camera",
+     "action": "Medium shot: two small yellow rings pulse on the two blue patches of his robe and on his bare feet, one after another.",
+     "acting": "he looks down at a patch and smooths it flat with his palm, a little embarrassed (lid 0.3), then lifts his chin again",
+     "library": "S.emphasis rings; handRW to the patch; settleTo"
+    },
+    {
+     "t": 18.44,
+     "end": 19.34,
+     "cue": {
+      "word": "الفقر،",
+      "t": 18.04
+     },
+     "who": "stranger",
+     "action": "Looks across at the scholars cushions, takes one step toward them, stops, and steps back.",
+     "acting": "anticipation lean (tip 0.06) then retreat; gaze at the empty floor near them, then down",
+     "library": "anticipate(), walk() on a 2-step path"
+    },
+    {
+     "t": 18.98,
+     "end": 19.78,
+     "cue": {
+      "word": "وجلس",
+      "t": 19.08
+     },
+     "who": "stranger",
+     "action": "Sits down cross-legged on the bare floor at x 120, by the door (seat A, no cushion).",
+     "acting": "sit blend with a soft landSquash (sq 0.94); hands fold in his lap; gaze straight to the caliph, attentive",
+     "library": "person {sit:1, seat:'floor'}, landSquash, PERSON_HANDS.folded"
+    },
+    {
+     "t": 19.78,
+     "end": 21.18,
+     "cue": {
+      "word": "بعيدًا",
+      "t": 19.78
+     },
+     "who": "fx",
+     "action": "A dashed double-headed arrow stretches along the floor from him to the scholars; label over it.",
+     "acting": "the caliph, far right, notices the newcomer for one beat (gaze to x 120) and returns to the scholars",
+     "library": "S.arrow (dashed), S.label; look()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 15.3,
+     "text": "A STRANGER"
+    },
+    {
+     "t": 19.9,
+     "text": "FAR AWAY"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 22.0,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 22.48
+   }
+  },
+  {
+   "id": "S3",
+   "start": 22.48,
+   "end": 31.7,
+   "paragraphs": [
+    2
+   ],
+   "set": "hall",
+   "cast": [
+    "stranger",
+    "proud",
+    "elder",
+    "eager"
+   ],
+   "summary": "The scholars do not turn to him. The proud one gives the patched robe one sideways look and a shared thought cloud shows the mistaken sum: patched robe equals empty book.",
+   "camera": {
+    "shot": "medium",
+    "move": "drift",
+    "notes": "Medium on the three scholars with the stranger kept at the left edge of frame (x 330, y 720, zoom 1.6); drift 20 units right to 31.7. Never crop the stranger out: the snub needs its victim in shot."
+   },
+   "composition": "Scholars in the right two-thirds, backs of attention toward him; stranger small at frame left looking at them. Thought cloud in the top band above the scholars (centre x 430, y 430, 360 x 230), clear of all faces.",
+   "actions": [
+    {
+     "t": 22.48,
+     "end": 23.18,
+     "cue": {
+      "word": "لم",
+      "t": 22.48
+     },
+     "who": "stranger",
+     "action": "Gives the nearest scholar a small polite nod and half-raised hand of greeting.",
+     "acting": "hopeful: brow -0.5, small smile, gaze at the eager scholar",
+     "library": "PERSON_HANDS.wave at half height"
+    },
+    {
+     "t": 23.18,
+     "end": 24.08,
+     "cue": {
+      "word": "يلتفت",
+      "t": 23.18
+     },
+     "who": "eager",
+     "action": "Sees the greeting, starts to answer, catches the proud ones glare and snaps his eyes forward again.",
+     "acting": "gaze to the stranger 0.3 s, then to proud, then front (2-frame snaps); mouth o to closed",
+     "library": "gazePlan saccades"
+    },
+    {
+     "t": 24.74,
+     "end": 25.94,
+     "cue": {
+      "word": "الحاضرين،",
+      "t": 24.94
+     },
+     "who": "scholars",
+     "action": "All three face front; the elder never noticed at all (eyes nearly shut).",
+     "acting": "proud: chin up, lid 0.4; elder: lid 0.7, slow breathe; the stranger lowers his hand slowly and folds it away",
+     "library": "breathe(), PERSON_HANDS.folded"
+    },
+    {
+     "t": 26.38,
+     "end": 27.38,
+     "cue": {
+      "word": "ظنوا",
+      "t": 26.88
+     },
+     "who": "proud",
+     "action": "One sideways look down at the patches, an eyebrow up; a thought cloud grows above the scholars (trail first, then cloud).",
+     "acting": "gaze [-1, 0.3] for 0.5 s, brow -0.5 on one beat, then smirk and front",
+     "library": "thoughtCloud(ctx, 430, 430, 360, 230, t, {tail:[365, 700]})"
+    },
+    {
+     "t": 27.7,
+     "end": 28.4,
+     "cue": {
+      "word": "ثيابه",
+      "t": 27.7
+     },
+     "who": "thought",
+     "action": "Inside the cloud: the patched robe icon pops in on the left.",
+     "acting": "the stranger follows the proud ones look down to his own robe",
+     "library": "thoughtCloud inside(c, t): small robe shape with two blue patches"
+    },
+    {
+     "t": 29.36,
+     "end": 29.96,
+     "cue": {
+      "word": "تدل",
+      "t": 29.36
+     },
+     "who": "thought",
+     "action": "An equals sign pops in the middle of the cloud.",
+     "acting": "eager nods along with the proud one, copying his smirk a beat late",
+     "library": "S.label style glyph inside the cloud; stagger"
+    },
+    {
+     "t": 30.4,
+     "end": 31.8,
+     "cue": {
+      "word": "قلة",
+      "t": 30.4
+     },
+     "who": "thought",
+     "action": "On the right of the cloud an open book pops in with blank pages; a tiny moth flutters out of it.",
+     "acting": "proud shuts his eyes, satisfied (lid 1 for 0.4 s); the stranger looks at the floor, then back to the caliph, steady",
+     "library": "book shape (planned book prop) with empty pages; seeded flutter path"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 31.7
+   }
+  },
+  {
+   "id": "S4",
+   "start": 31.7,
+   "end": 43.62,
+   "paragraphs": [
+    2
+   ],
+   "set": "hall",
+   "cast": [
+    "caliph",
+    "stranger",
+    "proud",
+    "elder",
+    "eager"
+   ],
+   "summary": "The debate begins. The caliph poses a hard question: a balloon with a tangled knot. Each scholar tries and only makes the knot worse; the caliph is not satisfied.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Cut to the caliph medium (x 800, y 690, zoom 1.8) for the question; at 36.0 cut wide on scholars plus throne (x 560, y 680, zoom 1.25); slow push to 1.35 by 42.5."
+   },
+   "composition": "Question balloon above the caliph, tail to his mouth, top band (centre about x 700, y 400). Scholars answer balloons are small (150 x 110) and rise over each speaker in turn, never over a face. Stranger at far left stays in the wide shot.",
+   "actions": [
+    {
+     "t": 31.7,
+     "end": 32.6,
+     "cue": {
+      "word": "بدأ",
+      "t": 31.7
+     },
+     "who": "caliph",
+     "action": "Raises one hand; the scholars murmur stops and every head turns to him.",
+     "acting": "caliph: palm out, brow 0; scholars gaze snap to the throne staggered 2, 4, 7 frames",
+     "library": "PERSON_HANDS.shield (one hand), stagger(i), lookAt"
+    },
+    {
+     "t": 33.16,
+     "end": 34.36,
+     "cue": {
+      "word": "وطرح",
+      "t": 33.46
+     },
+     "who": "caliph",
+     "action": "Leans forward on the throne and speaks the question.",
+     "acting": "anticipation lean back then forward (tip 0.07), talk 0.8, gaze sweeping the scholars",
+     "library": "anticipate(), talk, gazePlan"
+    },
+    {
+     "t": 35.32,
+     "end": 36.12,
+     "cue": {
+      "word": "سؤالًا",
+      "t": 35.32
+     },
+     "who": "balloon",
+     "action": "The question balloon pops over the hall: a red question mark over a knotted loop of black rope.",
+     "acting": "all four listeners look up at it; the stranger tilts his head, studying the knot",
+     "library": "new answerBalloon {icon:'knot', mark:'?'} with overshoot pop"
+    },
+    {
+     "t": 35.92,
+     "end": 36.72,
+     "cue": {
+      "word": "عجز",
+      "t": 36.12
+     },
+     "who": "proud",
+     "action": "Stands half up with a finger raised and answers at once.",
+     "acting": "talk 0.9, chin up, eyes half shut in confidence",
+     "library": "PERSON_HANDS.pointUp, sit 1 to 0.7; small answerBalloon {icon:'knot', tangle:1.4}"
+    },
+    {
+     "t": 37.3,
+     "end": 38.2,
+     "cue": {
+      "word": "العلماء",
+      "t": 37.4
+     },
+     "who": "eager",
+     "action": "Talks over him with both hands; his small balloon is the same knot with extra loops.",
+     "acting": "talk 0.8, brow -0.5, glance at the caliph for approval",
+     "library": "PERSON_HANDS.palmsUp; answerBalloon {icon:'knot', tangle:1.8}"
+    },
+    {
+     "t": 38.4,
+     "end": 39.6,
+     "cue": {
+      "word": "الإجابة",
+      "t": 38.4
+     },
+     "who": "elder",
+     "action": "Opens his mouth to answer, raises a finger, forgets, and strokes his beard instead.",
+     "acting": "mouth o, gaze drifts up and away, lid 0.5; finger sinks to his chin",
+     "library": "PERSON_HANDS.pointUp then chin; a tiny balloon with three dots"
+    },
+    {
+     "t": 40.38,
+     "end": 41.38,
+     "cue": {
+      "word": "واضحة",
+      "t": 40.58
+     },
+     "who": "balloon",
+     "action": "In the big balloon the knot has grown: more loops, the question mark still red on top.",
+     "acting": "caliph shakes his head once, small frown, brow 0.3; sits back",
+     "library": "answerBalloon knot tangle 1 to 2 keyed; settleTo on the caliph"
+    },
+    {
+     "t": 41.6,
+     "end": 42.5,
+     "cue": {
+      "word": "ومقنعة.",
+      "t": 41.6
+     },
+     "who": "scholars",
+     "action": "The proud one sinks back onto his cushion; the three avoid the caliphs eye.",
+     "acting": "proud: sit back to 1 with a small squash, gaze down; eager looks at proud; elder looks at the ceiling",
+     "library": "landSquash, gazePlan"
+    },
+    {
+     "t": 42.3,
+     "end": 43.0,
+     "cue": {
+      "word": "ومقنعة.",
+      "t": 41.6
+     },
+     "who": "stranger",
+     "action": "At the far left, his eyes go from the knot to the caliph; he takes a breath.",
+     "acting": "gaze up at the balloon then to the throne; chest lifts (sq 1.03): anticipation for the hand",
+     "library": "look(), breathe()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 38.5,
+     "text": "HMM..."
+    }
+   ],
+   "sfx": [
+    {
+     "t": 43.1,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 43.62
+   }
+  },
+  {
+   "id": "S5",
+   "start": 43.62,
+   "end": 55.62,
+   "paragraphs": [
+    3
+   ],
+   "set": "hall",
+   "cast": [
+    "caliph",
+    "stranger",
+    "proud",
+    "elder",
+    "eager"
+   ],
+   "summary": "The stranger quietly raises his hand and waits. The caliph nods. He speaks, and inside the big balloon the knot is pulled out into one clean straight line with a green tick.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Start wide (x 420, y 690, zoom 1.2) so the small hand at the far left is found by the eye; push to the stranger medium (x 190, y 730, zoom 2.2) by 46.5; at 49.6 cut to a wide (x 480, y 620, zoom 1.1) with the balloon; hold."
+   },
+   "composition": "His raised hand is the only moving thing in the first second (suspense by stillness). In the answer wide, the balloon sits at centre top (x 500, y 400, 380 x 240) with its tail swinging from the caliph to the stranger.",
+   "actions": [
+    {
+     "t": 43.62,
+     "end": 44.52,
+     "cue": {
+      "word": "رفع",
+      "t": 43.62
+     },
+     "who": "stranger",
+     "action": "Raises his right hand slowly to shoulder height, palm forward, and holds it there.",
+     "acting": "no hurry: 0.7 s ease, gaze on the caliph, brow level, mouth closed; everyone else frozen except blinks",
+     "library": "aR arm angle about [2.3, 2.6] (reads at a distance), settleTo"
+    },
+    {
+     "t": 45.18,
+     "end": 46.38,
+     "cue": {
+      "word": "يده",
+      "t": 44.98
+     },
+     "who": "scholars",
+     "action": "One by one the scholars turn their heads toward the door side: who is that?",
+     "acting": "eager first (eyes wide), elder second (lid opens from 0.6 to 0.2), proud last and only with his eyes",
+     "library": "stagger(i), lookAt the hand"
+    },
+    {
+     "t": 46.84,
+     "end": 47.74,
+     "cue": {
+      "word": "واستأذن",
+      "t": 47.04
+     },
+     "who": "stranger",
+     "action": "Lowers the hand to his chest and bows his head a little toward the throne: may I speak?",
+     "acting": "head drop 8 then up, hand on chest, brow -0.4; small talk pulse",
+     "library": "PERSON_HANDS.chest, talk 0.4"
+    },
+    {
+     "t": 48.16,
+     "end": 48.86,
+     "cue": {
+      "word": "الكلام.",
+      "t": 48.16
+     },
+     "who": "caliph",
+     "action": "Looks down the whole length of the hall at him, curious, and gives one clear nod with an open hand: speak.",
+     "acting": "gaze to x 120 (long eye line), brow -0.5, nod with 3-unit head drop; hand palm up toward him",
+     "library": "lookAt, PERSON_HANDS.reach"
+    },
+    {
+     "t": 49.5,
+     "end": 50.8,
+     "cue": {
+      "word": "قدم",
+      "t": 49.7
+     },
+     "who": "stranger",
+     "action": "Speaks: calm, one hand marking a single point in the air.",
+     "acting": "talk 0.7 steady rhythm, gaze on the caliph, body upright (no lean)",
+     "library": "talk, PERSON_HANDS.pointFwd low"
+    },
+    {
+     "t": 50.34,
+     "end": 51.24,
+     "cue": {
+      "word": "جوابًا",
+      "t": 50.24
+     },
+     "who": "balloon",
+     "action": "The balloon tail swings to the stranger; inside, an end of the rope is pulled and the loops begin to slip open.",
+     "acting": "scholars eyes go up to the balloon; the proud ones mouth opens slightly",
+     "library": "answerBalloon {icon:'knot', untie: 0 to 0.5}"
+    },
+    {
+     "t": 51.06,
+     "end": 51.76,
+     "cue": {
+      "word": "دقيقًا،",
+      "t": 51.06
+     },
+     "who": "balloon",
+     "action": "The knot pulls completely straight: one clean black line; the red question mark flips into a green tick.",
+     "acting": "2-frame white flash on the tick; the caliph sits up (sq 1.05 settle), eyes wide",
+     "library": "answerBalloon untie 1, mark:'tick'; settleTo"
+    },
+    {
+     "t": 51.94,
+     "end": 54.54,
+     "cue": {
+      "word": "وشرح",
+      "t": 51.94
+     },
+     "who": "stranger",
+     "action": "Explains: counts three reasons on his fingers; three short plain strokes appear under the line in the balloon, one per count.",
+     "acting": "small dip before each count; gaze visits each scholar in turn, friendly, then back to the caliph",
+     "library": "countedBeats (three beats at 52.98, 53.96, 54.90), S.box strokes"
+    },
+    {
+     "t": 54.9,
+     "end": 55.6,
+     "cue": {
+      "word": "سهلة.",
+      "t": 54.9
+     },
+     "who": "eager",
+     "action": "Nods along and mouths the answer; the elder nods a beat later; the proud one folds his arms.",
+     "acting": "eager smile and brow -0.5; elder slow nod; proud brow 0.5, gaze away",
+     "library": "PERSON_HANDS.folded on proud; stagger"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 54.95,
+     "text": "CLEAR!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 55.62
+   }
+  },
+  {
+   "id": "S6",
+   "start": 55.62,
+   "end": 63.0,
+   "paragraphs": [
+    3
+   ],
+   "set": "hall",
+   "cast": [
+    "caliph",
+    "stranger",
+    "proud",
+    "elder",
+    "eager"
+   ],
+   "summary": "Al-Maamun is impressed and waves him closer. The stranger gets up and walks to seat B, on the floor right at the end of the scholars row; the gap closes for the first time.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "track",
+    "notes": "Caliph medium (x 800, y 690, zoom 1.8) for his delight until 58.0; cut to a wide tracking the stranger from x 120 to x 262 (x 330 to 400, y 700, zoom 1.4)."
+   },
+   "composition": "Dashed FAR AWAY arrow returns and visibly shortens as he walks. Seat B (x 262) is just left of the eager scholars cushion at x 345.",
+   "actions": [
+    {
+     "t": 55.62,
+     "end": 56.62,
+     "cue": {
+      "word": "أعجب",
+      "t": 55.62
+     },
+     "who": "caliph",
+     "action": "Slaps his knee and smiles broadly, eyebrows up.",
+     "acting": "mouth 'smile', brow -0.6, sq pulse 1.05; looks at the scholars as if to say: did you hear that?",
+     "library": "pulse(), gazePlan"
+    },
+    {
+     "t": 57.4,
+     "end": 58.2,
+     "cue": {
+      "word": "بفهمه،",
+      "t": 57.4
+     },
+     "who": "caliph",
+     "action": "Taps his own temple with one finger, then points at the stranger.",
+     "acting": "gaze back to the stranger, warm; two taps",
+     "library": "handR to the temple, then PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 58.1,
+     "end": 59.3,
+     "cue": {
+      "word": "ودعاه",
+      "t": 58.3
+     },
+     "who": "caliph",
+     "action": "Beckons: his arm scoops toward himself twice.",
+     "acting": "anticipation reach out, scoop in; talk 0.5; head tilts toward the empty floor near the scholars",
+     "library": "aR keyed scoop x2, anticipate()"
+    },
+    {
+     "t": 59.32,
+     "end": 60.92,
+     "cue": {
+      "word": "الجلوس",
+      "t": 59.62
+     },
+     "who": "stranger",
+     "action": "Rises (hands on knees first), walks six steps to x 262 with his head a little higher than at his entrance.",
+     "acting": "sit 1 to 0 with a forward lean, then walk; gaze on the caliph, small bow of thanks mid-way",
+     "library": "walk(), footfalls(), person {sit}"
+    },
+    {
+     "t": 61.06,
+     "end": 61.86,
+     "cue": {
+      "word": "أقرب",
+      "t": 61.06
+     },
+     "who": "fx",
+     "action": "The dashed floor arrow shrinks with him; label pops.",
+     "acting": "eager shuffles his cushion 10 units right to make room without being asked; proud does not move",
+     "library": "S.arrow keyed length, S.label"
+    },
+    {
+     "t": 62.2,
+     "end": 62.9,
+     "cue": {
+      "word": "العلماء.",
+      "t": 62.2
+     },
+     "who": "stranger",
+     "action": "Sits at seat B, shoulder to shoulder with the row but still on bare floor.",
+     "acting": "landSquash 0.95; nods to the eager scholar, who nods back this time",
+     "library": "person {sit:1, seat:'floor'}, landSquash"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 61.1,
+     "text": "CLOSER!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 63.0
+   }
+  },
+  {
+   "id": "S7",
+   "start": 63.0,
+   "end": 76.94,
+   "paragraphs": [
+    4
+   ],
+   "set": "hall",
+   "cast": [
+    "caliph",
+    "stranger",
+    "proud",
+    "elder",
+    "eager"
+   ],
+   "summary": "A second question splits the room: each scholar holds up his own coloured piece and they quarrel. The stranger takes the three pieces and fits them into one whole disc; the meaning is clear.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide on the row plus throne (x 520, y 660, zoom 1.2); at 69.5 push to the stranger and the scholars (x 380, y 640, zoom 1.6); hold on the completed disc at 75.2."
+   },
+   "composition": "Three small balloons in a row above the scholars (y about 520), red wedge, yellow wedge, blue wedge. The stranger at their left end; his balloon forms higher and larger (centre x 380, y 400, 300 x 240) and the wedges fly up into it.",
+   "actions": [
+    {
+     "t": 63.0,
+     "end": 64.4,
+     "cue": {
+      "word": "جاء",
+      "t": 63.0
+     },
+     "who": "caliph",
+     "action": "Holds up two fingers and asks the second question.",
+     "acting": "talk 0.8, lean forward (tip 0.06), gaze along the row including the stranger now",
+     "library": "aR raised with two fingers (draw two short strokes at the hand), talk"
+    },
+    {
+     "t": 64.78,
+     "end": 65.58,
+     "cue": {
+      "word": "سؤال",
+      "t": 64.78
+     },
+     "who": "balloon",
+     "action": "Question balloon pops over the caliph: a red question mark over a broken disc outline (three gaps).",
+     "acting": "everyone looks up; the elder squints",
+     "library": "answerBalloon {icon:'pieces', mark:'?'}"
+    },
+    {
+     "t": 65.76,
+     "end": 66.66,
+     "cue": {
+      "word": "فاختلف",
+      "t": 65.96
+     },
+     "who": "proud",
+     "action": "Jumps in: his balloon holds a red wedge. He points at it: this is the answer.",
+     "acting": "talk 0.9, brow 0.6, finger jab",
+     "library": "answerBalloon {icon:'wedge', col: red}; PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 66.56,
+     "end": 67.36,
+     "cue": {
+      "word": "فاختلف",
+      "t": 65.96
+     },
+     "who": "elder",
+     "action": "Shakes his head and offers a yellow wedge in his own balloon.",
+     "acting": "head shake (gaze x -0.5, 0.5, -0.5), talk 0.6, lid 0.3",
+     "library": "answerBalloon {icon:'wedge', col: yellow}"
+    },
+    {
+     "t": 67.34,
+     "end": 68.24,
+     "cue": {
+      "word": "الحاضرون",
+      "t": 67.34
+     },
+     "who": "eager",
+     "action": "Blue wedge; he waves both hands between the other two.",
+     "acting": "talk 0.8, gaze flicking left and right, brow -0.6",
+     "library": "answerBalloon {icon:'wedge', col: blue}; PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 68.38,
+     "end": 69.58,
+     "cue": {
+      "word": "تفسيره.",
+      "t": 68.58
+     },
+     "who": "scholars",
+     "action": "The three balloons bump each other like elbows; proud and eager lean face to face, the elder between them covers his ears.",
+     "acting": "tremble 1.5 on the balloons; proud tip 0.08 toward eager, eager tip -0.08; caliph sighs (sq 0.97), chin on fist",
+     "library": "tremble(), PERSON_HANDS.headHold on the elder"
+    },
+    {
+     "t": 69.24,
+     "end": 70.14,
+     "cue": {
+      "word": "تكلم",
+      "t": 69.54
+     },
+     "who": "stranger",
+     "action": "Raises his hand again, a little higher than the first time; the caliph points to him at once.",
+     "acting": "same pose as the first raise (setup and payoff), gaze on the caliph; caliph nods before the hand is fully up",
+     "library": "aR [2.3, 2.6]; PERSON_HANDS.pointFwd on the caliph"
+    },
+    {
+     "t": 71.52,
+     "end": 72.72,
+     "cue": {
+      "word": "أخرى،",
+      "t": 71.52
+     },
+     "who": "stranger",
+     "action": "Speaks, turning to each scholar in turn with an open palm, as if asking for each piece.",
+     "acting": "talk 0.7; gaze proud, elder, eager; small respectful nods to each",
+     "library": "PERSON_HANDS.palmsUp, gazePlan"
+    },
+    {
+     "t": 72.8,
+     "end": 74.3,
+     "cue": {
+      "word": "وجمع",
+      "t": 72.8
+     },
+     "who": "balloon",
+     "action": "The red, then yellow, then blue wedge leave their balloons and fly up into the strangers balloon (0.25 s apart); the small balloons pop away.",
+     "acting": "each scholars eyes follow his own wedge upward; the stranger hands draw together",
+     "library": "kfn arcs with ease-out, stagger; PERSON_HANDS.clasp"
+    },
+    {
+     "t": 75.0,
+     "end": 75.9,
+     "cue": {
+      "word": "اتضح",
+      "t": 75.2
+     },
+     "who": "balloon",
+     "action": "The wedges click into one complete tricolour disc; it spins a quarter turn and the green tick stamps on it.",
+     "acting": "2-frame flash; proud jaw drops (mouth o), eager claps once, elder smiles with eyes shut",
+     "library": "answerBalloon {icon:'whole', mark:'tick'}, settleTo overshoot"
+    },
+    {
+     "t": 75.98,
+     "end": 76.78,
+     "cue": {
+      "word": "المعنى.",
+      "t": 75.78
+     },
+     "who": "caliph",
+     "action": "Sits up straight, delighted, both palms open.",
+     "acting": "mouth 'smile', brow -0.6, sq 1.05 settle",
+     "library": "PERSON_HANDS.palmsUp, settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 67.4,
+     "text": "NO! NO!"
+    },
+    {
+     "t": 75.9,
+     "text": "CLEAR!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 76.94
+   }
+  },
+  {
+   "id": "S8",
+   "start": 76.94,
+   "end": 85.3,
+   "paragraphs": [
+    4
+   ],
+   "set": "hall",
+   "cast": [
+    "caliph",
+    "stranger",
+    "proud",
+    "elder",
+    "eager"
+   ],
+   "summary": "The caliph signals him forward again. He walks past all three scholars to seat C at the foot of the dais; as he passes, each head that ignored him turns to follow, and the proud one hands him a cushion.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Wide tracking with the walk (x 430 to 560, y 690, zoom 1.4); the scholars heads stay in frame as he passes in front of them."
+   },
+   "composition": "He walks in front of the row (his feet at y 925, slightly nearer the viewer) from x 262 to x 598. Mirror of S3: the same three faces, now all turned to him.",
+   "actions": [
+    {
+     "t": 76.94,
+     "end": 77.94,
+     "cue": {
+      "word": "أشار",
+      "t": 76.94
+     },
+     "who": "caliph",
+     "action": "One crisp gesture: points at the stranger, then at the floor at the foot of the dais.",
+     "acting": "gaze leads the finger by 2 frames; smile",
+     "library": "PERSON_HANDS.pointFwd then pointDown, lookAt"
+    },
+    {
+     "t": 78.66,
+     "end": 80.36,
+     "cue": {
+      "word": "يتقدم،",
+      "t": 79.06
+     },
+     "who": "stranger",
+     "action": "Rises and walks eight steps along the front of the row to x 598.",
+     "acting": "upright now (drop 0), unhurried; gaze on the caliph; a nod to each scholar as he passes",
+     "library": "walk(), footfalls()"
+    },
+    {
+     "t": 79.56,
+     "end": 81.06,
+     "cue": {
+      "word": "يتقدم،",
+      "t": 79.06
+     },
+     "who": "scholars",
+     "action": "Each scholars head turns to follow him as he crosses in front: eager, elder, proud in order.",
+     "acting": "eager wide eyes and smile; elder fully awake (lid 0); proud brow from 0.5 to -0.4, mouth o",
+     "library": "lookAt the stranger head every frame; stagger"
+    },
+    {
+     "t": 79.98,
+     "end": 80.78,
+     "cue": {
+      "word": "وأصبح",
+      "t": 79.98
+     },
+     "who": "stranger",
+     "action": "Sits at seat C (x 598) below the throne.",
+     "acting": "landSquash 0.95, hands folded; gaze up to the caliph",
+     "library": "person {sit:1, seat:'floor'}"
+    },
+    {
+     "t": 81.04,
+     "end": 82.24,
+     "cue": {
+      "word": "موضع",
+      "t": 81.04
+     },
+     "who": "fx",
+     "action": "Three thin dashed eye lines run from the scholars eyes to him; label pops above him.",
+     "acting": "he notices, glances back over the row, a small modest smile, and looks forward again",
+     "library": "S.arrow dashed x3, S.label"
+    },
+    {
+     "t": 82.68,
+     "end": 83.68,
+     "cue": {
+      "word": "كانوا",
+      "t": 82.68
+     },
+     "who": "proud",
+     "action": "Pulls the spare cushion from behind his own back and holds it out to the stranger with both hands.",
+     "acting": "eyes lowered for a beat (shame, lid 0.5), then up with a small bow; hold the offer",
+     "library": "handLW/handRW on the floorCushion, tip 0.08"
+    },
+    {
+     "t": 83.52,
+     "end": 84.42,
+     "cue": {
+      "word": "يتجاهلونه.",
+      "t": 83.32
+     },
+     "who": "stranger",
+     "action": "Accepts the cushion with a hand on his chest and settles on it.",
+     "acting": "warm smile, brow -0.4; small hop up and landSquash onto the cushion",
+     "library": "PERSON_HANDS.chest, hop(), landSquash"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 79.3,
+     "text": "CLOSER STILL!"
+    },
+    {
+     "t": 81.2,
+     "text": "ALL EYES ON HIM"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 84.95,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 85.3
+   }
+  },
+  {
+   "id": "S9",
+   "start": 85.3,
+   "end": 96.14,
+   "paragraphs": [
+    5
+   ],
+   "set": "hall",
+   "cast": [
+    "caliph",
+    "stranger",
+    "proud",
+    "elder",
+    "eager"
+   ],
+   "summary": "Third question. His answer balloon opens wider and wider until it fills the top of the hall with a book, a star, a moon and a compass; the scholars lean back to take it in. The caliph pats the honour cushion beside the throne and he climbs the dais.",
+   "camera": {
+    "shot": "wide",
+    "move": "crane",
+    "notes": "Wide (x 560, y 640, zoom 1.2); as the balloon grows 88.7 to 91.3 the camera rises and pulls out (x 500, y 560, zoom 1.0); then pushes to the dais two-shot (x 770, y 700, zoom 1.9) by 95.3."
+   },
+   "composition": "Balloon grows from 220 x 160 at (598, 480) to 820 x 330 centred (500, 300), tail still on the stranger. Dais two-shot: honour cushion x 705, throne x 840, both faces in frame (twoShot margin 60).",
+   "actions": [
+    {
+     "t": 85.84,
+     "end": 86.94,
+     "cue": {
+      "word": "السؤال",
+      "t": 86.14
+     },
+     "who": "caliph",
+     "action": "Three fingers up; a third question balloon with a red question mark pops and hangs small over the dais.",
+     "acting": "talk 0.8; playful now, brow -0.3: he is testing how far this goes",
+     "library": "answerBalloon {mark:'?'} small; aR raised"
+    },
+    {
+     "t": 87.06,
+     "end": 87.96,
+     "cue": {
+      "word": "أظهر",
+      "t": 87.36
+     },
+     "who": "stranger",
+     "action": "Begins to answer without needing to raise his hand; the caliph has already turned to him.",
+     "acting": "talk 0.7, relaxed shoulders, gaze on the caliph",
+     "library": "talk, PERSON_HANDS.palmsUp one hand"
+    },
+    {
+     "t": 88.74,
+     "end": 89.34,
+     "cue": {
+      "word": "علمًا",
+      "t": 88.74
+     },
+     "who": "balloon",
+     "action": "His answer balloon pops with an open book in it.",
+     "acting": "scholars look up together but land staggered",
+     "library": "answerBalloon {icon:'wide', grow:0}"
+    },
+    {
+     "t": 89.48,
+     "end": 90.88,
+     "cue": {
+      "word": "أوسع",
+      "t": 89.48
+     },
+     "who": "balloon",
+     "action": "The balloon stretches wide across the hall; a star, a crescent moon and a compass rose pop in one after another beside the book.",
+     "acting": "each pop 0.25 s apart with overshoot; hanging lamps sway 2 degrees as the balloon edge passes them",
+     "library": "answerBalloon grow 0 to 1 keyed; swing() on hangingLamp"
+    },
+    {
+     "t": 90.56,
+     "end": 91.76,
+     "cue": {
+      "word": "توقعه",
+      "t": 90.56
+     },
+     "who": "scholars",
+     "action": "The three lean back to see all of it, heads tilting up; the elders turban slips back and he catches it.",
+     "acting": "tip -0.1, -0.07, -0.12 staggered; mouths o; eager points at the star",
+     "library": "stagger, PERSON_HANDS.headHold on the elder, pointUp on eager"
+    },
+    {
+     "t": 91.68,
+     "end": 93.18,
+     "cue": {
+      "word": "فدعاه",
+      "t": 91.98
+     },
+     "who": "caliph",
+     "action": "Laughs, then pats the honour cushion on the dais beside the throne twice.",
+     "acting": "pat on 92.3 and 92.9 with a dip before each; gaze on the stranger, brow -0.6",
+     "library": "handLW to the cushion at (705, 830), countedBeats dip"
+    },
+    {
+     "t": 93.88,
+     "end": 95.18,
+     "cue": {
+      "word": "للجلوس",
+      "t": 94.18
+     },
+     "who": "stranger",
+     "action": "Stands, hesitates one beat with a hand on his chest (me?), then steps up onto the dais.",
+     "acting": "gaze cushion, caliph, cushion; anticipation crouch then hop up 40 units onto the dais",
+     "library": "anticipate(), hop(), landSquash; PERSON_HANDS.chest"
+    },
+    {
+     "t": 95.24,
+     "end": 96.04,
+     "cue": {
+      "word": "جانبه.",
+      "t": 95.34
+     },
+     "who": "stranger",
+     "action": "Sits on the honour cushion beside the throne; the balloon shrinks away above.",
+     "acting": "landSquash, then both look out at the hall side by side; caliph hand briefly on his shoulder",
+     "library": "person {sit:1, seat:'floor', y: HALL.dais.top}; handLW"
+    },
+    {
+     "t": 95.64,
+     "end": 96.14,
+     "cue": {
+      "word": "جانبه.",
+      "t": 95.34
+     },
+     "who": "fx",
+     "action": "Label pops over the pair with an arrow to the cushion.",
+     "acting": "the stranger blinks twice, a little overwhelmed (wet false, lid flutter)",
+     "library": "S.label, S.arrow, blink"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 89.5,
+     "text": "WOW!"
+    },
+    {
+     "t": 95.5,
+     "text": "BESIDE THE CALIPH"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 96.14,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S10",
+   "start": 96.14,
+   "end": 105.42,
+   "paragraphs": [
+    5
+   ],
+   "set": "hall",
+   "cast": [
+    "caliph",
+    "stranger",
+    "servant",
+    "proud",
+    "elder",
+    "eager"
+   ],
+   "summary": "After the debate: everyone sits on the floor around a food cloth. The caliph has come down from the throne and the stranger sits at his right hand; the scholars pass him the best dish.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "LATER card covers 96.14 to 98.3 (camera and cast re-set under its midpoint at 97.2). Reveal wide (x 500, y 700, zoom 1.25); slow push to the caliph and stranger (x 540, y 720, zoom 1.7) by 104.7."
+   },
+   "composition": "New floor arrangement around a cloth (x 300..760, y 905..960): caliph on a big cushion at x 610, stranger at x 490, proud at x 250, eager at x 345 (left side), elder at x 770 (right). Throne empty behind on the dais. Dusk in the window (u 0.45), lamps lit.",
+   "actions": [
+    {
+     "t": 96.14,
+     "end": 98.24,
+     "cue": {
+      "word": "عند",
+      "t": 96.14
+     },
+     "who": "fx",
+     "action": "Transition card wipes across the panel.",
+     "acting": "none",
+     "library": "S.transition(..., {caption: 'LATER...'}); camera cut hidden at p 0.5"
+    },
+    {
+     "t": 98.32,
+     "end": 99.32,
+     "cue": {
+      "word": "جلسوا",
+      "t": 98.42
+     },
+     "who": "set",
+     "action": "Reveal: the food cloth with two trays, bread and a bowl; lamps now glowing, window at dusk.",
+     "acting": "everyone already seated; small breathe() idles out of phase",
+     "library": "palaceHall {u:0.45, lampsLit:true}; foodTray x2, townProp bowls"
+    },
+    {
+     "t": 98.92,
+     "end": 100.22,
+     "cue": {
+      "word": "جلسوا",
+      "t": 98.42
+     },
+     "who": "servant",
+     "action": "A servant sets down a third tray at the centre and steps back toward the door.",
+     "acting": "eyes on the tray, small bow; walk without sliding",
+     "library": "person {costume:'servant'}, walk(), handLW/handRW on the tray"
+    },
+    {
+     "t": 99.88,
+     "end": 100.68,
+     "cue": {
+      "word": "الطعام،",
+      "t": 99.88
+     },
+     "who": "caliph",
+     "action": "Tears a piece of bread and hands it to the stranger first.",
+     "acting": "gaze on the stranger, smile; hand travels on an arc",
+     "library": "handRW keyed from the tray to the stranger hand"
+    },
+    {
+     "t": 100.58,
+     "end": 101.58,
+     "cue": {
+      "word": "وصار",
+      "t": 100.58
+     },
+     "who": "stranger",
+     "action": "Takes the bread with both hands and a bow of the head, eats a small bite.",
+     "acting": "brow -0.4, smile; chew as two small mouth pulses",
+     "library": "handLW/handRW, talk pulses as chewing"
+    },
+    {
+     "t": 101.94,
+     "end": 102.94,
+     "cue": {
+      "word": "ضيفًا",
+      "t": 101.94
+     },
+     "who": "eager",
+     "action": "Slides a bowl along the cloth toward the stranger; the proud one tops it with a date.",
+     "acting": "both looking at him, friendly; proud small smile (first of the film)",
+     "library": "handRW on the bowl, kfn slide"
+    },
+    {
+     "t": 102.84,
+     "end": 103.64,
+     "cue": {
+      "word": "مكرمًا",
+      "t": 102.64
+     },
+     "who": "fx",
+     "action": "Label with a small star pops above the stranger.",
+     "acting": "he looks down, modest (lid 0.4), then up at the caliph",
+     "library": "S.label, S.emphasis"
+    },
+    {
+     "t": 104.12,
+     "end": 105.32,
+     "cue": {
+      "word": "الغريب",
+      "t": 104.12
+     },
+     "who": "camera",
+     "action": "For one second the empty spot by the door glows in a small inset circle at the left edge: seat A, bare floor, nobody there.",
+     "acting": "the stranger glances toward it once, then back to his hosts with a full smile",
+     "library": "S.box inset (clip circle r 110 showing world x 120, y 860), fades by 105.3"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 102.9,
+     "text": "GUEST OF HONOUR"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 105.42
+   }
+  },
+  {
+   "id": "S11",
+   "start": 105.42,
+   "end": 117.94,
+   "paragraphs": [
+    6
+   ],
+   "set": "hall",
+   "cast": [
+    "caliph",
+    "stranger",
+    "servant",
+    "proud",
+    "elder",
+    "eager"
+   ],
+   "summary": "The trays are cleared and the cups come out. The servant brings goblets; the scholars take theirs. The caliph himself fills one and holds it out to his guest.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Wide for the change of course (x 500, y 700, zoom 1.3) to 109.4; then the two-shot of caliph and stranger (x 550, y 730, zoom 2.1), pushing to 2.4 on the cup by 113.4. At 114.1 a 3 s cut-away wide (zoom 1.3) to the scholars drinking, back to the two-shot at 117.0."
+   },
+   "composition": "The goblet travels on the centre line between the two faces; it ends at (545, 770), exactly between them, and stays there through S12 and S13 as the object of the scene.",
+   "actions": [
+    {
+     "t": 105.62,
+     "end": 106.82,
+     "cue": {
+      "word": "ثم",
+      "t": 105.42
+     },
+     "who": "servant",
+     "action": "Lifts the food trays away (two trips shown as one: trays slide off left).",
+     "acting": "quick, eyes down",
+     "library": "kfn slide, walk()"
+    },
+    {
+     "t": 107.1,
+     "end": 108.6,
+     "cue": {
+      "word": "انتقل",
+      "t": 107.1
+     },
+     "who": "servant",
+     "action": "Returns with a round tray of four goblets and a tall jug and kneels to set it on the cloth.",
+     "acting": "careful balance: tip 0.03 sway, gaze on the goblets",
+     "library": "person {kneel:1}; new goblet x4, jug"
+    },
+    {
+     "t": 108.72,
+     "end": 109.52,
+     "cue": {
+      "word": "الشراب،",
+      "t": 108.72
+     },
+     "who": "scholars",
+     "action": "Proud and eager each take a goblet; the elder waves his away and keeps his bread.",
+     "acting": "proud: lid 0.4, pleased; eager copies him a beat late",
+     "library": "handRW to the goblets, stagger"
+    },
+    {
+     "t": 109.12,
+     "end": 110.42,
+     "cue": {
+      "word": "وعرض",
+      "t": 109.42
+     },
+     "who": "caliph",
+     "action": "Picks up the jug and pours red wine into a goblet (a short red stream, the level rises).",
+     "acting": "eyes on the cup, smile; anticipation lift of the jug",
+     "library": "handLW jug, goblet {fill: 0 to 1}; stream as a tapered red shape"
+    },
+    {
+     "t": 111.58,
+     "end": 112.58,
+     "cue": {
+      "word": "ضيفه",
+      "t": 111.78
+     },
+     "who": "caliph",
+     "action": "Turns and holds the full goblet out to the stranger at arms length.",
+     "acting": "gaze on the stranger, brow -0.5, generous smile; arm settles with 8 % overshoot, wine surface tilts and levels",
+     "library": "handRW keyed to (545, 770), settleTo; goblet {slosh}"
+    },
+    {
+     "t": 112.52,
+     "end": 113.32,
+     "cue": {
+      "word": "كأسًا",
+      "t": 112.52
+     },
+     "who": "goblet",
+     "action": "Close on the goblet: yellow cup, red wine with a white highlight, one glint star.",
+     "acting": "the strangers eyes drop from the caliphs face to the cup and stay there",
+     "library": "S.emphasis glint; lookAt the cup"
+    },
+    {
+     "t": 113.54,
+     "end": 114.54,
+     "cue": {
+      "word": "الخمر",
+      "t": 113.54
+     },
+     "who": "stranger",
+     "action": "Does not move his hands. His smile fades to a closed, thoughtful mouth.",
+     "acting": "suspense by stillness: only the pupils move, cup to caliph to cup; blink suppressed",
+     "library": "gazePlan; noBlink for 1.5 s"
+    },
+    {
+     "t": 114.76,
+     "end": 116.16,
+     "cue": {
+      "word": "كان",
+      "t": 114.96
+     },
+     "who": "scholars",
+     "action": "Cut-away: proud and eager clink goblets and sip.",
+     "acting": "eyes closing as they drink (lid 0.8), heads tip back slightly out of sync",
+     "library": "handRW to the mouth, tip -0.05"
+    },
+    {
+     "t": 116.64,
+     "end": 117.44,
+     "cue": {
+      "word": "جلسائه.",
+      "t": 116.64
+     },
+     "who": "caliph",
+     "action": "Back in the two-shot he nudges the cup 15 units closer: go on.",
+     "acting": "brow -0.6, small encouraging nod",
+     "library": "handRW key, anticipate()"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 117.94
+   }
+  },
+  {
+   "id": "S12",
+   "start": 117.94,
+   "end": 127.14,
+   "paragraphs": [
+    6
+   ],
+   "set": "hall",
+   "cast": [
+    "caliph",
+    "stranger",
+    "proud",
+    "elder",
+    "eager"
+   ],
+   "summary": "He declines: a hand on his chest, a small bow, an open palm. The cup stays in the caliphs hand. The scholars freeze mid-sip. The caliph, astonished, asks why.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "Two-shot held (x 550, y 730, zoom 2.2); at 122.4 widen slightly (zoom 1.8) to bring the frozen scholars heads into the frame edges; back to 2.2 on the question at 124.5."
+   },
+   "composition": "Cup at centre; the strangers refusing palm stops 40 units short of it, never touching. The WHY balloon sits above the caliph on the right, clear of both faces.",
+   "actions": [
+    {
+     "t": 117.94,
+     "end": 118.84,
+     "cue": {
+      "word": "اعتذر",
+      "t": 117.94
+     },
+     "who": "stranger",
+     "action": "Places his right hand flat on his chest and bows his head.",
+     "acting": "head drop 10 over 0.4 s, lid 0.6 during the bow, brow -0.4: grateful, not stern",
+     "library": "PERSON_HANDS.chest, settleTo"
+    },
+    {
+     "t": 119.32,
+     "end": 120.02,
+     "cue": {
+      "word": "بأدب،",
+      "t": 119.32
+     },
+     "who": "stranger",
+     "action": "Looks up with a gentle smile and speaks a few soft words.",
+     "acting": "gaze on the caliphs eyes (not the cup), talk 0.4",
+     "library": "talk, lookAt"
+    },
+    {
+     "t": 120.06,
+     "end": 120.96,
+     "cue": {
+      "word": "ولم",
+      "t": 120.06
+     },
+     "who": "stranger",
+     "action": "His left hand rises, open palm toward the cup, and stops short of it.",
+     "acting": "slow ease, no push; fingers relaxed; body does not lean away",
+     "library": "PERSON_HANDS.shield one hand, handLW keyed to (505, 775)"
+    },
+    {
+     "t": 121.5,
+     "end": 122.2,
+     "cue": {
+      "word": "الكأس،",
+      "t": 121.7
+     },
+     "who": "goblet",
+     "action": "The cup hangs in the air between them, unclaimed; the wine surface settles flat.",
+     "acting": "caliphs smile freezes; his arm stays out",
+     "library": "goblet {slosh: 0}; hold"
+    },
+    {
+     "t": 122.22,
+     "end": 123.42,
+     "cue": {
+      "word": "فتعجب",
+      "t": 122.42
+     },
+     "who": "caliph",
+     "action": "Eyebrows shoot up; he pulls the cup back a little and looks from the cup to the man.",
+     "acting": "brow -0.9, mouth 'o', sq 1.04 pop with settle; gaze cup, stranger, cup (2-frame snaps)",
+     "library": "settleTo, gazePlan saccades"
+    },
+    {
+     "t": 122.82,
+     "end": 124.12,
+     "cue": {
+      "word": "فتعجب",
+      "t": 122.42
+     },
+     "who": "scholars",
+     "action": "In the widened frame: proud frozen with his goblet at his lips, eyes wide over the rim; eager lowers his cup guiltily; elder smiles into his beard.",
+     "acting": "held shock, blinks suppressed on proud; eager gaze darts caliph to stranger",
+     "library": "noBlink, gazePlan"
+    },
+    {
+     "t": 124.28,
+     "end": 125.28,
+     "cue": {
+      "word": "وسأله",
+      "t": 124.48
+     },
+     "who": "caliph",
+     "action": "Sets the cup down on the cloth between them and asks, palm up.",
+     "acting": "lean in (tip 0.06), talk 0.7, brow -0.5: curious, not angry",
+     "library": "handRW down to (545, 895), PERSON_HANDS.palmsUp one hand"
+    },
+    {
+     "t": 125.82,
+     "end": 126.52,
+     "cue": {
+      "word": "السبب.",
+      "t": 125.82
+     },
+     "who": "balloon",
+     "action": "A small speech balloon over the caliph.",
+     "acting": "the stranger takes a breath before answering (sq 1.03)",
+     "library": "S.label as a balloon; breathe()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 125.85,
+     "text": "WHY?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 126.8,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 127.14
+   }
+  },
+  {
+   "id": "S13",
+   "start": 127.14,
+   "end": 138.32,
+   "paragraphs": [
+    7
+   ],
+   "set": "hall",
+   "cast": [
+    "caliph",
+    "stranger",
+    "proud",
+    "elder",
+    "eager"
+   ],
+   "summary": "The answer. He touches his patched sleeve: not this. He turns out an empty purse: not this. Then he touches his temple and a small glowing book and lamp rise beside his head: this.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Medium close on the stranger with the listening caliphs shoulder and face at the right edge of frame (x 500, y 720, zoom 2.4); slow push to 2.7 by 137.2. Keep it one held shot so the three gestures read as a list."
+   },
+   "composition": "Two crossed-out icons appear at the left of his head (x 380, y 600 and y 680 in world), the kept icons at the right (x 600, y 590), so the eye moves from rejected to chosen. Nothing covers his face.",
+   "actions": [
+    {
+     "t": 127.14,
+     "end": 128.04,
+     "cue": {
+      "word": "أجاب",
+      "t": 127.14
+     },
+     "who": "stranger",
+     "action": "Straightens his back and turns fully to the caliph.",
+     "acting": "calm, gaze on the caliph, brow 0; one blink before speaking",
+     "library": "settleTo, blink"
+    },
+    {
+     "t": 128.96,
+     "end": 130.06,
+     "cue": {
+      "word": "يا",
+      "t": 128.96
+     },
+     "who": "stranger",
+     "action": "Hand on chest, a short respectful bow as he addresses him.",
+     "acting": "head drop 6, talk 0.6",
+     "library": "PERSON_HANDS.chest, talk"
+    },
+    {
+     "t": 132.12,
+     "end": 133.32,
+     "cue": {
+      "word": "تقربني",
+      "t": 132.42
+     },
+     "who": "stranger",
+     "action": "His hand draws a short line from the door side toward the caliph: the journey he made across the room.",
+     "acting": "gaze follows his hand, then back to the caliph",
+     "library": "handRW keyed sweep; a dashed arc with three seat dots (A, B, C) and a star at the end"
+    },
+    {
+     "t": 133.32,
+     "end": 134.32,
+     "cue": {
+      "word": "ثيابي",
+      "t": 133.52
+     },
+     "who": "stranger",
+     "action": "Pinches his own patched sleeve and holds it up; a small robe icon pops at the left and a red cross strikes it.",
+     "acting": "small shake of the head, wry half smile",
+     "library": "handLW to the right sleeve; S.emphasis cross with overshoot"
+    },
+    {
+     "t": 134.84,
+     "end": 135.84,
+     "cue": {
+      "word": "مالي،",
+      "t": 135.04
+     },
+     "who": "stranger",
+     "action": "Shows an empty open palm, then turns a small limp purse upside down: nothing falls. A coin icon pops under the robe icon and is crossed out.",
+     "acting": "brow -0.5, gaze at the purse then the caliph; the caliph chuckles (sq pulse)",
+     "library": "PERSON_HANDS.palmsUp; purse (planned prop) rotated 180 degrees; S.emphasis cross"
+    },
+    {
+     "t": 136.22,
+     "end": 137.02,
+     "cue": {
+      "word": "عقلي",
+      "t": 136.52
+     },
+     "who": "stranger",
+     "action": "Raises one finger to his temple and taps it once on the word.",
+     "acting": "anticipation: hand rises during the word before; eyes bright (wide lid 0), small smile",
+     "library": "handRW to the temple (local about [30, -205], measure), dip on the tap"
+    },
+    {
+     "t": 136.62,
+     "end": 137.22,
+     "cue": {
+      "word": "عقلي",
+      "t": 136.52
+     },
+     "who": "fx",
+     "action": "A small lit lamp icon with short yellow rays pops beside his head on the right.",
+     "acting": "the caliphs eyes go to it",
+     "library": "S.emphasis; goldGlow (planned) at strength 0.5"
+    },
+    {
+     "t": 137.18,
+     "end": 138.08,
+     "cue": {
+      "word": "وعلمي.",
+      "t": 137.18
+     },
+     "who": "fx",
+     "action": "An open book icon pops under the lamp (pages full of lines this time, the opposite of the blank book in S3); both get a green tick.",
+     "acting": "the stranger lowers his hand to his lap; holds the caliphs eye",
+     "library": "book shape with line strokes; tick flash 2 frames"
+    },
+    {
+     "t": 137.88,
+     "end": 138.38,
+     "cue": {
+      "word": "وعلمي.",
+      "t": 137.18
+     },
+     "who": "caliph",
+     "action": "Nods slowly, his hand stroking his beard.",
+     "acting": "lid 0.3, thoughtful smile; gaze stays on the stranger",
+     "library": "PERSON_HANDS.chin, slow nod"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 138.32
+   }
+  },
+  {
+   "id": "S14",
+   "start": 138.32,
+   "end": 148.0,
+   "paragraphs": [
+    7
+   ],
+   "set": "hall",
+   "cast": [
+    "caliph",
+    "stranger",
+    "proud",
+    "elder",
+    "eager"
+   ],
+   "summary": "If I drank it: a thought cloud shows the lamp in his head going out and his clean straight answer line curling back into a knot, while the imagined him slides back down the hall to the door. He waves the cloud away: that is what raised me here today.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "From the close (zoom 2.4) pull out to a medium two-shot with headroom for the cloud (x 520, y 600, zoom 1.5) by 139.6; hold; at 143.9 ease down to the pair and the cup (x 540, y 740, zoom 1.9)."
+   },
+   "composition": "Thought cloud in the top band (centre x 520, y 380, 520 x 300), trail to the stranger (tail [500, 640]). The cup on the cloth is visible at the bottom of the frame throughout.",
+   "actions": [
+    {
+     "t": 138.32,
+     "end": 139.52,
+     "cue": {
+      "word": "فإذا",
+      "t": 138.32
+     },
+     "who": "stranger",
+     "action": "Points down at the cup on the cloth, then up beside his head as the cloud trail bubbles appear.",
+     "acting": "gaze cup then up; brow 0.2, serious",
+     "library": "PERSON_HANDS.pointDown then pointUp; thoughtCloud(ctx, 520, 380, 520, 300, t, {tail:[500, 640], scale:0.45})"
+    },
+    {
+     "t": 139.54,
+     "end": 140.14,
+     "cue": {
+      "word": "شربت",
+      "t": 139.64
+     },
+     "who": "thought",
+     "action": "Cloud opens: a small copy of himself on the honour cushion beside the throne lifts a goblet and drinks.",
+     "acting": "imagined self: lid 0.8, tip -0.05; the real stranger watches it gravely",
+     "library": "thoughtCloud inside: person {costume:'ascetic', sit:1} at 0.45, goblet"
+    },
+    {
+     "t": 140.36,
+     "end": 140.96,
+     "cue": {
+      "word": "يذهب",
+      "t": 140.46
+     },
+     "who": "thought",
+     "action": "Above the imagined self the lamp icon flickers and goes out with a wisp of smoke.",
+     "acting": "the caliph looks up at the cloud, mouth o",
+     "library": "lamp icon alpha keyed 1 to 0, wisp as a wavy line"
+    },
+    {
+     "t": 140.98,
+     "end": 141.68,
+     "cue": {
+      "word": "عقلي،",
+      "t": 140.98
+     },
+     "who": "thought",
+     "action": "The straight answer line from S5 curls back into the knot; the imagined self sways with his turban slipped over one eye.",
+     "acting": "imagined self: tip sway 0.1 at 2 Hz, mouth o, lid 0.6; kept mild and comic, not ugly",
+     "library": "answerBalloon {icon:'knot', untie: 1 to 0} inside the cloud; swing()"
+    },
+    {
+     "t": 142.12,
+     "end": 143.22,
+     "cue": {
+      "word": "أفسدت",
+      "t": 142.42
+     },
+     "who": "thought",
+     "action": "The imagined self slides backward off the dais and across the floor to the bare spot by the door (seat A); the cushion stays empty.",
+     "acting": "accelerating slide with a small bump at the dais edge; real stranger shakes his head once",
+     "library": "kfn ease-in on x, fallY for the 40-unit step, impactSquash"
+    },
+    {
+     "t": 143.64,
+     "end": 144.64,
+     "cue": {
+      "word": "رفعني",
+      "t": 143.94
+     },
+     "who": "stranger",
+     "action": "Sweeps the cloud away with the back of his hand (it pops), then lays his palm on the cushion he sits on.",
+     "acting": "firm brow 0.3 then soft; gaze returns to the caliph",
+     "library": "cloud p keyed to 0 with a pop; handLW to the cushion"
+    },
+    {
+     "t": 145.12,
+     "end": 145.92,
+     "cue": {
+      "word": "مجلسك",
+      "t": 145.12
+     },
+     "who": "stranger",
+     "action": "Open hand toward the caliph and the hall: your assembly.",
+     "acting": "small bow of the head; talk 0.6",
+     "library": "PERSON_HANDS.reach, talk"
+    },
+    {
+     "t": 146.28,
+     "end": 147.18,
+     "cue": {
+      "word": "اليوم.",
+      "t": 146.28
+     },
+     "who": "stranger",
+     "action": "Folds his hands in his lap and is silent. The cup stands untouched between them.",
+     "acting": "steady gaze, slow blink, breathe(); the scholars behind lower their own goblets to the cloth one by one",
+     "library": "PERSON_HANDS.folded; stagger on the scholars"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 147.6,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 148.0
+   }
+  },
+  {
+   "id": "S15",
+   "start": 148.0,
+   "end": 159.38,
+   "paragraphs": [
+    8
+   ],
+   "set": "hall",
+   "cast": [
+    "caliph",
+    "stranger",
+    "servant",
+    "proud",
+    "elder",
+    "eager"
+   ],
+   "summary": "The caliph is more pleased by this than by all three answers. He pushes the cup aside, claps for the treasurer, and a chest of silver is set before the scholar while a counter races to 100,000.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pull-out",
+    "notes": "Two-shot (x 550, y 730, zoom 2.0) for the delight; at 152.5 a quick top-band flash of the three ticked balloons; at 154.6 pull out to the wide (x 480, y 690, zoom 1.25) for the chest entering from the door."
+   },
+   "composition": "Chest lands at x 380 on the floor in front of the cloth, left of the stranger; counter in the top band at centre (x 500, y 330). The three small ticked balloons (line, disc, wide) appear in a row at y 420 with a larger fourth balloon (lamp icon) above them for this answer.",
+   "actions": [
+    {
+     "t": 148.0,
+     "end": 149.4,
+     "cue": {
+      "word": "سر",
+      "t": 148.0
+     },
+     "who": "caliph",
+     "action": "Throws his head back and laughs with delight, both hands slapping his knees.",
+     "acting": "mouth 'open' smile, lid 0.7, sq pulse 1.06, tip -0.05; follow-through: his crown jewel bobs a beat late",
+     "library": "pulse(), settleTo"
+    },
+    {
+     "t": 149.56,
+     "end": 150.56,
+     "cue": {
+      "word": "بجوابه",
+      "t": 149.56
+     },
+     "who": "caliph",
+     "action": "Picks the goblet up from between them and sets it far away to his own side, out of the picture.",
+     "acting": "decisive, gaze on the stranger not the cup",
+     "library": "handRW keyed, goblet slides out of frame"
+    },
+    {
+     "t": 150.66,
+     "end": 151.46,
+     "cue": {
+      "word": "أكثر",
+      "t": 150.66
+     },
+     "who": "caliph",
+     "action": "Clasps the strangers shoulder.",
+     "acting": "warm gaze, brow -0.5; the stranger smiles, modest (lid 0.3)",
+     "library": "handLW to the strangers shoulder"
+    },
+    {
+     "t": 152.5,
+     "end": 154.1,
+     "cue": {
+      "word": "بأجوبته",
+      "t": 152.5
+     },
+     "who": "balloon",
+     "action": "Three small ticked balloons pop in a row in the top band (straight line, whole disc, wide book), then a fourth, larger, with the lamp icon, pops above them all.",
+     "acting": "each 0.2 s apart; the fourth with a bigger overshoot; both men glance up",
+     "library": "answerBalloon x3 at 0.5 scale, then {icon:'lamp'} at 0.8; stagger"
+    },
+    {
+     "t": 154.78,
+     "end": 155.58,
+     "cue": {
+      "word": "وأمر",
+      "t": 154.98
+     },
+     "who": "caliph",
+     "action": "Claps twice and points to the door.",
+     "acting": "clap on 155.0 and 155.35; commanding but smiling",
+     "library": "handL/handR meet; PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 155.7,
+     "end": 156.9,
+     "cue": {
+      "word": "بمئة",
+      "t": 156.0
+     },
+     "who": "servant",
+     "action": "The servant comes in from the door bent under a heavy chest and sets it down at x 380.",
+     "acting": "short heavy steps, tip 0.1; impact squash of the chest and a dust puff on landing at 156.6",
+     "library": "walk(), footfalls(); impactSquash, dustBurst"
+    },
+    {
+     "t": 156.98,
+     "end": 157.98,
+     "cue": {
+      "word": "ألف",
+      "t": 156.98
+     },
+     "who": "counter",
+     "action": "The counter runs up fast and locks on 100,000 with a pop.",
+     "acting": "scholars lean toward the chest, eyes wide, staggered",
+     "library": "S.counter keyed 0 to 100000 by 157.9, settleTo on lock"
+    },
+    {
+     "t": 158.26,
+     "end": 159.36,
+     "cue": {
+      "word": "الفضة.",
+      "t": 158.46
+     },
+     "who": "silverChest",
+     "action": "The lid swings open: a mound of white silver coins with blue shading, two glints; one coin rolls out and spins flat.",
+     "acting": "the stranger looks at the chest, then at the caliph, and puts his hand on his chest in thanks",
+     "library": "treasureHoard chest {open: 0 to 1}, coinPile {metal:'silver'}; swing() for the coin wobble"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 149.6,
+     "text": "HA HA!"
+    },
+    {
+     "t": 157.9,
+     "text": "100,000"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 159.38
+   }
+  },
+  {
+   "id": "S16",
+   "start": 159.38,
+   "end": 172.47,
+   "paragraphs": [
+    8
+   ],
+   "set": "hall",
+   "cast": [
+    "caliph",
+    "stranger",
+    "servant",
+    "proud",
+    "elder",
+    "eager"
+   ],
+   "summary": "He leaves by the same door he came in through, now with the whole hall on its feet: the scholars bow as he passes, the servant carries the chest behind him. In the doorway he turns, touches his temple and bows. The untouched cup is left in the foreground. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Wide hall (x 470, y 690, zoom 1.25); slow pull-out to the full hall (x 500, y 640, zoom 1.0) as he walks left to the door; at 167.3 a gentle push to the doorway (x 300, y 700, zoom 1.4); hold from 169.4 for THE END."
+   },
+   "composition": "Mirror of S2: same door, same daylight (now warm dusk), but every eye line points at him. Foreground bottom right: the full goblet alone on the cloth (x 700, y 930), slightly larger than life. THE END lettering in the top band, clear of his head.",
+   "actions": [
+    {
+     "t": 159.38,
+     "end": 160.88,
+     "cue": {
+      "word": "خرج",
+      "t": 159.38
+     },
+     "who": "stranger",
+     "action": "Rises, bows to the caliph, and walks left toward the door.",
+     "acting": "upright, unhurried; gaze on the caliph for the bow, then ahead",
+     "library": "walk(), footfalls(); PERSON_HANDS.chest"
+    },
+    {
+     "t": 160.22,
+     "end": 161.22,
+     "cue": {
+      "word": "الرجل",
+      "t": 160.12
+     },
+     "who": "scholars",
+     "action": "The three scholars stand up as he approaches, one after another.",
+     "acting": "eager first and fast, elder pushes up on his knees, proud last but lowest bow",
+     "library": "sit 1 to 0 staggered, anticipate()"
+    },
+    {
+     "t": 160.8,
+     "end": 162.1,
+     "cue": {
+      "word": "مكرمًا،",
+      "t": 160.8
+     },
+     "who": "scholars",
+     "action": "Each bows as he passes; he answers each with a nod.",
+     "acting": "tip 0.15 bows in order of his passing; the proud ones eyes stay down a beat longer",
+     "library": "tip keyed, lookAt, stagger"
+    },
+    {
+     "t": 161.5,
+     "end": 162.7,
+     "cue": {
+      "word": "مكرمًا،",
+      "t": 160.8
+     },
+     "who": "servant",
+     "action": "Follows two steps behind carrying the chest.",
+     "acting": "tip 0.08 under the weight, eyes on his back",
+     "library": "walk() on a delayed copy of his path"
+    },
+    {
+     "t": 162.84,
+     "end": 163.74,
+     "cue": {
+      "word": "حفظ",
+      "t": 162.84
+     },
+     "who": "caliph",
+     "action": "Stands on the dais and raises one hand in farewell.",
+     "acting": "smile, brow -0.4, gaze following him to the door",
+     "library": "person {sit: 1 to 0}, PERSON_HANDS.wave"
+    },
+    {
+     "t": 163.38,
+     "end": 164.28,
+     "cue": {
+      "word": "بعلمه",
+      "t": 163.38
+     },
+     "who": "fx",
+     "action": "Above the honour cushion beside the throne the open book icon glows for a second: knowledge won the seat.",
+     "acting": "the stranger glances back at the cushion while walking",
+     "library": "book icon, goldGlow 0.4, alpha in and out"
+    },
+    {
+     "t": 165.24,
+     "end": 165.94,
+     "cue": {
+      "word": "ثم",
+      "t": 165.24
+     },
+     "who": "stranger",
+     "action": "Reaches the doorway (x 145), stops and turns to face the hall.",
+     "acting": "last footfall, settle; gaze across the hall to the caliph",
+     "library": "footfalls(), settleTo"
+    },
+    {
+     "t": 166.28,
+     "end": 167.08,
+     "cue": {
+      "word": "بعقله",
+      "t": 166.48
+     },
+     "who": "stranger",
+     "action": "Touches his temple once (the same tap as in S13) and the small lamp icon pops beside his head.",
+     "acting": "small smile, bright eyes; payoff of the earlier pose",
+     "library": "handRW to the temple; S.emphasis lamp"
+    },
+    {
+     "t": 167.26,
+     "end": 168.16,
+     "cue": {
+      "word": "سبب",
+      "t": 167.26
+     },
+     "who": "goblet",
+     "action": "In the foreground the full goblet gets a single quiet glint, still untouched.",
+     "acting": "the caliph looks down at it, then back up at the man, and nods",
+     "library": "S.emphasis glint; look()"
+    },
+    {
+     "t": 168.48,
+     "end": 169.48,
+     "cue": {
+      "word": "المكانة.",
+      "t": 168.48
+     },
+     "who": "stranger",
+     "action": "A last bow, then he steps out into the light; the servant with the chest follows.",
+     "acting": "bow tip 0.12, turn, two steps; figure fades into the bright doorway (alpha to 0.6)",
+     "library": "walk(); palaceHall behind(ctx) for the figures outside"
+    },
+    {
+     "t": 169.78,
+     "end": 172.58,
+     "cue": {
+      "word": "المكانة.",
+      "t": 168.48
+     },
+     "who": "lettering",
+     "action": "THE END pops in the top band and holds to the last frame; the hall settles: lamps flicker, scholars sit back down, caliph smiling at the door.",
+     "acting": "idle breathe() and blinks only",
+     "library": "S.title"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 169.8,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 170.2,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 172.47
+   }
+  }
+ ],
+ "ending": {
+  "t": 169.4,
+  "description": "After the last word (169.34) the scholar has stepped out into the lit doorway. The hall holds: caliph standing on the dais smiling at the door, scholars settling, the full goblet untouched in the right foreground with one glint. THE END pops at 169.8 in the top band and holds to 172.47 (3.0 s after the audio ends). One quiet chime at 170.2."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان الخليفة المأمون يحب العلم،|ويجمع العلماء في مجلسه مرتين كل أسبوع ليتناقشوا في المسائل الصعبة.|وفي أحد المجالس دخل رجل غريب تبدو عليه علامات الفقر،|وجلس بعيدًا عن الجميع.",
+   "en": "Caliph al-Maamun loved learning|and assembled scholars twice a week.|One day an unknown man in poor clothing entered|and sat far from the others."
+  },
+  {
+   "p": 2,
+   "ar": "لم يلتفت إليه أكثر الحاضرين،|فقد ظنوا أن ثيابه البسيطة تدل على قلة علمه.|بدأ النقاش، وطرح الخليفة سؤالًا|عجز بعض العلماء عن الإجابة عنه إجابة واضحة ومقنعة.",
+   "en": "Few noticed him,|assuming his simple clothing meant little education.|The debate began, and the caliph posed a question|that several scholars could not answer clearly."
+  },
+  {
+   "p": 3,
+   "ar": "رفع الغريب يده بهدوء، واستأذن في الكلام.|ثم قدم جوابًا دقيقًا، وشرح أسبابه بألفاظ سهلة.|أعجب المأمون بفهمه،|ودعاه إلى الجلوس في مكان أقرب إلى العلماء.",
+   "en": "The stranger asked permission to speak.|His precise, plainly explained answer|impressed al-Maamun,|who invited him to sit nearer the scholars."
+  },
+  {
+   "p": 4,
+   "ar": "جاء سؤال ثان، فاختلف الحاضرون في تفسيره.|تكلم الرجل مرة أخرى، وجمع بين الأدلة حتى اتضح المعنى.|أشار الخليفة إليه أن يتقدم،|وأصبح موضع اهتمام من كانوا يتجاهلونه.",
+   "en": "A second question divided the gathering.|The stranger weighed the evidence and clarified the answer.|The caliph moved him closer still,|and those who ignored him took notice."
+  },
+  {
+   "p": 5,
+   "ar": "وفي السؤال الثالث أظهر الغريب علمًا أوسع مما توقعه الجميع،|فدعاه المأمون للجلوس إلى جانبه.|عند انتهاء المناظرة، جلسوا إلى الطعام،|وصار الرجل ضيفًا مكرمًا بدل الغريب المنسي.",
+   "en": "His third answer surpassed expectations.|Al-Maamun invited him beside him.|After the debate, the company ate together,|and the forgotten stranger became an honored guest."
+  },
+  {
+   "p": 6,
+   "ar": "ثم انتقل المجلس إلى الشراب،|وعرض الخليفة على ضيفه كأسًا من الخمر كما كان يفعل مع بعض جلسائه.|اعتذر الرجل بأدب، ولم يتناول الكأس،|فتعجب المأمون وسأله عن السبب.",
+   "en": "The gathering then turned to drinking.|The caliph offered his guest a cup of wine.|The man politely refused,|and al-Maamun asked him why."
+  },
+  {
+   "p": 7,
+   "ar": "أجاب العالم: يا أمير المؤمنين،|لم تقربني منك ثيابي ولا مالي، بل عقلي وعلمي.|فإذا شربت ما يذهب عقلي،|فقد أفسدت الشيء الذي رفعني في مجلسك هذا اليوم.",
+   "en": "The scholar replied:|It was neither wealth nor clothing that brought me near you, but my mind and knowledge.|Why drink something|that could take away what earned your respect?"
+  },
+  {
+   "p": 8,
+   "ar": "سر الخليفة بجوابه أكثر من سروره بأجوبته العلمية،|وأمر له بمئة ألف قطعة من الفضة.|خرج الرجل مكرمًا،|بعدما حفظ بعلمه مكانته، ثم حفظ بعقله سبب تلك المكانة.",
+   "en": "The caliph admired this answer even more|and awarded him one hundred thousand silver coins.|The scholar departed honored,|having protected the very reason for his rise."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "effect",
+   "name": "answerBalloon",
+   "description": "Speech balloon with icon content and a badge. answerBalloon(ctx, x, y, w, h, t, {p (pop 0..1), tail:[x, y], icon:'knot'|'wedge'|'pieces'|'whole'|'wide'|'lamp'|'dots', tangle (1..2 extra loops), untie 0..1 (knot to straight line), col, grow 0..1 (wide: 220x160 to 820x330, icons book, star, crescent, compass pop at grow 0.2, 0.45, 0.7, 0.9), mark:'?'|'tick'|null}). Default size 380 x 240; small 150 x 110.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Balloon outline: reuse the Halftone Pop speech shape or thoughtCloud's body with a pointed tail (shape() with white fill, lw 6). Knot: one polyline through seeded loop points (K.rng seed fixed), drawn with the brush stroke; untie lerps every point onto a horizontal segment, so it is a pure function of the untie value. Wedges: three 120 degree pie slices (red, yellow, blue) of a disc r 60; 'pieces' draws their dashed outlines apart, 'whole' draws them joined. Badge: Bangers '?' in red or a two-stroke green tick in a white disc r 26 at the top right. Pop with settleTo overshoot."
+  },
+  {
+   "type": "prop",
+   "name": "goblet",
+   "description": "Stemmed drinking cup 44 x 64 with fill 0..1, slosh (surface tilt, radians), glint; matching jug 60 x 110 with a spout and handle. Any feast, tavern or poison story.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "shape() bowl (trapezoid with rounded base), stem rect and foot ellipse in yellow with black lw 5 and red Ben-Day shadow on the left third; wine as a clipped red polygon whose top edge rotates by slosh; white highlight stroke; star glint from S.emphasis."
+  },
+  {
+   "type": "prop",
+   "name": "floorCushion",
+   "description": "Loose floor cushion: floorCushion(ctx, x, y, {w: 100, h: 30, col, dot}) drawn exactly like the palaceHall dais cushion so that seats can be placed, carried and handed over.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Lift the four-point shape() call used for A.cushions in sets/towns.js into its own function (same seed and colours); the set keeps calling it, so the look is unchanged."
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "description": "Planned coin mound, with a metal:'silver' palette option (white coins, blue dot shading, black outline) and the planned treasureHoard chest with lid open 0..1.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Use the planned coinPile and treasureHoard chest functions; add a palette argument. Coins are ellipses 22 x 9 stacked in seeded rows; the rolling coin is one ellipse on a kfn path ending in a swing() wobble."
+  },
+  {
+   "type": "prop",
+   "name": "foodTray",
+   "description": "Planned brass tray with bread, dates and a cup (KD-011); three used on a pale cloth rectangle.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Planned drawing: yellow ellipse 150 x 34 with a rim line, three bread discs, a small heap of brown date ovals."
+  },
+  {
+   "type": "effect",
+   "name": "weekDots",
+   "description": "Seven small discs in a row, n of them lit with a star, for once or twice a week, days passing, or a count of meetings.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Loop of seven circles (paper fill, black lw 4); lit ones in yellow with a 5-point star and a settleTo pop at their cue time."
+  },
+  {
+   "type": "pose",
+   "name": "templeTap",
+   "description": "Person hand to the temple with a single tap (mind, thinking, clever). Used by the caliph in S6 and the stranger in S13 and S16. Candidate entry PERSON_HANDS.temple.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "A hand target near local [30, -205] at s 1 (measure against the head so the hand touches the side of the turban band and does not read as a salute; if it does, use arm angles); tap = 6-unit out and back in 4 frames."
+  }
+ ],
+ "owner_questions": [
+  "The script names wine: the plan shows a plain goblet of red wine and two scholars sipping briefly, with nobody shown drunk in the real hall. Default: show it this way.",
+  "In the thought cloud at 139.6 to 143.9 the scholar imagines himself tipsy (turban slipped, swaying, sliding back to the door). Default: keep it, mild and comic, only inside the cloud.",
+  "The three questions are not given in the script, so they are shown as wordless picture balloons (a knot untied, three pieces joined, a balloon that grows wide). Default: no invented question text.",
+  "Added business not in the script: the proud scholar hands the stranger a cushion at 82.7 and all three bow at the end. Default: keep, it pays off those who ignored him.",
+  "Invented lettering: A STRANGER, FAR AWAY, CLOSER!, CLOSER STILL!, ALL EYES ON HIM, BESIDE THE CALIPH, GUEST OF HONOUR, CLEAR!, HMM..., NO! NO!, WOW!, WHY?, HA HA!, 100,000. Default: keep these 14 plus the title and THE END.",
+  "The scholars are three invented types (proud, old, young) standing in for the whole assembly. Default: three, to keep faces readable on a phone.",
+  "Al-Maamun is drawn with a dark beard (age 0.35) rather than the grey caliph preset, and he comes down to a floor cushion for the meal. Default: both as planned."
+ ],
+ "implementation_notes": [
+  "One set for the whole film: palaceHall {variant:'palace', wall:'blue', dais:[640, 960, 860], throne:840, cushions:[705]}; bake it; get anchors from palaceHallAnchors with the same options. From 97.2 (hidden under the LATER card) switch to u 0.45 and the floor arrangement.",
+  "Seat positions are the story. Keep constants SEAT = {A:[120, 900], B:[262, 900], C:[598, 925], D:[705, 860]} and one function strangerX(t) built with kfn so that walk() and footfalls() drive legs and steps on all four walks (14.2, 59.3, 78.7, 159.2).",
+  "All people are person() with costume presets; set LIFE.t = t for auto-blinks and give every character a gaze every frame with look()/lookAt. Suppress blinks with noBlink during the cup suspense (113.5 to 115) and the proud scholars freeze (122.8 to 124).",
+  "The figure is front-facing only: sell who is addressed with gaze, a 3 to 6 unit head shift and tip toward the listener; the dais two-shot uses twoShot(caliph, stranger, {margin: 60}).",
+  "Raised hand (43.62 and 69.24) must read at zoom 1.2 from the far end of the hall: use arm angles aR about [2.3, 2.6], not a hand target near the head. Reuse the identical pose both times.",
+  "Lettering never covers a face: balloons and labels live in the top band (y 280..560 world) except floor arrows. Minimum 44 px headlines, 28 px labels at 1280x720 scale. No dashes.",
+  "Draw order from S10: hall, throne, people behind the cloth, cloth and trays, goblet, foreground items. In S16 the foreground goblet at (700, 930) is drawn last at 1.3 scale.",
+  "Counted beats: three reasons at 52.98, 53.96, 54.90; two pats at 92.3 and 92.9; two claps at 155.0 and 155.35 (the claps are visual only, no sound: they fall inside words).",
+  "Sound: seven quiet effects only, all in the listed pauses or after the last word (3.8 chime, 22.0 soft thud, 43.1 pop, 84.95 chime, 126.8 pop, 147.6 chime, 170.2 chime). SND master 0.6. Nothing else; there is no room between words in this narration.",
+  "Subtitles: use the chunk marks in the subtitles array (4 chunks per paragraph, both languages); time each chunk from the first word of its Arabic chunk in timing.json.",
+  "Panel-only shake is not needed anywhere; keep the camera eased with holds (keys in pairs)."
+ ],
+ "warnings": [
+  "Five seated figures plus a servant in a 1000-wide hall is tight: scholars at s 0.64 to 0.66 are about 105 px tall on screen in the wide shots, below the comfortable size, so every acting beat that matters is given a medium or close shot. Check a contact sheet at phone size.",
+  "The person figure has no profile; the offer of the cup depends on world hand targets (handRW) meeting exactly at (545, 770). Arms are short (about 74 units at s 1): seat the two men no more than 120 units apart or the cup will not reach.",
+  "Wine is shown on screen because the narration names it (owner question 1).",
+  "Seat C at y 925 puts the stranger in front of the cushion row; verify he does not hide the proud scholars face at x 511 (move C to x 610 if needed, dais starts at 640).",
+  "The LATER card runs over the words at 96.14 to 98.3; it is visual only. The narration has no pause there, so the card gets no sound.",
+  "The English translation is a condensed paraphrase of the Arabic (for example P1 omits the hard questions, P7 omits the address O Commander of the Faithful and ends as a question). Both are kept verbatim."
+ ]
+}

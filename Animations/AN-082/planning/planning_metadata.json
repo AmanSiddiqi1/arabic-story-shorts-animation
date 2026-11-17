@@ -1,0 +1,79 @@
+{
+ "story_id": "AN-082",
+ "title": "HATIM OF THE TRIBE OF TAYY",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T13:24:12",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-aaaffb35209619b30.jsonl",
+ "agent_id": "aaaffb35209619b30",
+ "model_messages": {
+  "claude-fable-5-2": 22
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "e54d0961d922d90563b392f2358efe452f0b9e56406fa2fbfb41c98d8dfecbf2",
+  "paragraphs": 8,
+  "segments": [
+   "AN-082-P01-S01",
+   "AN-082-P01-S02",
+   "AN-082-P01-S03",
+   "AN-082-P01-S04",
+   "AN-082-P01-S05",
+   "AN-082-P01-S06",
+   "AN-082-P01-S07",
+   "AN-082-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-082_HATIM_OF_THE_TRIBE_OF_TAYY_full_slowed.mp3",
+  "sha256": "fcb9bd06e49802603aadfe49fa6c0adbad255b9e02950c865e0db7318166d890",
+  "duration": 161.593
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-082_HATIM_OF_THE_TRIBE_OF_TAYY_full_slowed.mp3.words.json",
+  "sha256": "74a445ecae2e2fa80c9733c50c4744dee5329c82d21c8e3091de7d688676bb00",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.986
+ },
+ "library_rev": "959278e",
+ "scenes": 18,
+ "actions": 161,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "graveValley",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "stoneFigure",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "camel couch / fall / thrash / rider",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "ghostForm",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "sword, roastSpit",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The camel is a planned asset (AN-044) that is not in Library yet; this film depends on it and adds couch, fall, thrash and a rider anchor. Build the camel first and keep the new fields off by default.",
+  "The person figure is front facing only: looking back over the shoulder (107.3, 155.56) is done with gaze and a small head offset, and lying figures show the face to the viewer.",
+  "Person arms are short (about 74 units): overhead sword and pointing poses must use arm angles (aL/aR), not hand targets, to read at phone size.",
+  "The film implies an animal death. Staging keeps it off screen, but the fall and thrashing (70.62 to 73.7) must stay comic-book broad, not distressing: dust and lettering, no close up of the animal's face while she is down.",
+  "S11 shows the camel in the dream standing near the king although the real camel is tethered at x 170; this is deliberate dream geography and is why the scene is under the wash.",
+  "ghostForm uses an offscreen canvas and compositing: check that it renders identically in headless Chrome and stays a pure function of t."
+ ]
+}

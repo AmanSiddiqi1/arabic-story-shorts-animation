@@ -1,0 +1,2657 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-142",
+ "title": "The Devout Woman and the Two Wicked Elders",
+ "duration": 170.177,
+ "end_hold": 3.0,
+ "logline": "Two old garden keepers accuse a devout woman with a story they made up; a twelve-year-old boy saves her by asking each of them, alone, one simple question.",
+ "moral": "Do not believe an accusation until the witnesses have been tested. One simple question, asked separately, can uncover a lie.",
+ "tone": "A courtroom fable told with restraint: calm and bright in the garden, cold and still while the lie rules, then quick, clever and warm once the boy steps forward. Nothing improper or violent is ever drawn; the menace is in eyes, masks and an empty dotted outline.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 2.52,
+   "kind": "setup",
+   "cue": {
+    "word": "امرأة",
+    "t": 2.52
+   },
+   "summary": "A devout woman passes through a walled garden every morning on her way to pray."
+  },
+  {
+   "id": "B2",
+   "t": 14.44,
+   "kind": "setup",
+   "cue": {
+    "word": "فتتوضأ",
+    "t": 14.44
+   },
+   "summary": "She washes at the fountain; pear tree to the east, apple tree to the west are planted in the picture."
+  },
+  {
+   "id": "B3",
+   "t": 25.72,
+   "kind": "inciting",
+   "cue": {
+    "word": "فطمعا",
+    "t": 25.72
+   },
+   "summary": "The two old keepers of the garden set their eyes on her and make a demand she will not accept."
+  },
+  {
+   "id": "B4",
+   "t": 30.36,
+   "kind": "rising",
+   "cue": {
+    "word": "رفضت",
+    "t": 30.36
+   },
+   "summary": "She refuses, steady and unafraid."
+  },
+  {
+   "id": "B5",
+   "t": 36.34,
+   "kind": "rising",
+   "cue": {
+    "word": "شهادة",
+    "t": 36.34
+   },
+   "summary": "They threaten to agree on a false testimony that will ruin her name."
+  },
+  {
+   "id": "B6",
+   "t": 51.42,
+   "kind": "turn",
+   "cue": {
+    "word": "ورفعا",
+    "t": 51.42
+   },
+   "summary": "They throw open the gate and shout for help."
+  },
+  {
+   "id": "B7",
+   "t": 60.76,
+   "kind": "rising",
+   "cue": {
+    "word": "شاب",
+    "t": 60.76
+   },
+   "summary": "The lie: a young man who ran away. The picture shows only an empty dotted outline."
+  },
+  {
+   "id": "B8",
+   "t": 68.64,
+   "kind": "suspense",
+   "cue": {
+    "word": "غير",
+    "t": 68.64
+   },
+   "summary": "Nobody checks; the one doubter is hushed."
+  },
+  {
+   "id": "B9",
+   "t": 73.74,
+   "kind": "emotion",
+   "cue": {
+    "word": "ثلاثة",
+    "t": 73.74
+   },
+   "summary": "Three days of public shame."
+  },
+  {
+   "id": "B10",
+   "t": 81.92,
+   "kind": "emotion",
+   "cue": {
+    "word": "ترفع",
+    "t": 81.92
+   },
+   "summary": "On the fourth day, at the place of punishment, she raises her hands and prays for the truth."
+  },
+  {
+   "id": "B11",
+   "t": 90.1,
+   "kind": "surprise",
+   "cue": {
+    "word": "دانيال،",
+    "t": 90.1
+   },
+   "summary": "A twelve-year-old boy, Daniel, comes out of the back of the crowd."
+  },
+  {
+   "id": "B12",
+   "t": 101.76,
+   "kind": "turn",
+   "cue": {
+    "word": "انفراد،",
+    "t": 101.76
+   },
+   "summary": "He asks that the two witnesses be heard one at a time."
+  },
+  {
+   "id": "B13",
+   "t": 115.8,
+   "kind": "reveal",
+   "cue": {
+    "word": "الشرقي",
+    "t": 115.8
+   },
+   "summary": "First elder: the east side, under a pear tree."
+  },
+  {
+   "id": "B14",
+   "t": 132.26,
+   "kind": "reveal",
+   "cue": {
+    "word": "الغربي،",
+    "t": 132.26
+   },
+   "summary": "Second elder: the west side, under an apple tree."
+  },
+  {
+   "id": "B15",
+   "t": 137.4,
+   "kind": "climax",
+   "cue": {
+    "word": "التناقض",
+    "t": 137.4
+   },
+   "summary": "The contradiction is plain; the accusation was invented."
+  },
+  {
+   "id": "B16",
+   "t": 153.54,
+   "kind": "resolution",
+   "cue": {
+    "word": "أصابت",
+    "t": 153.54
+   },
+   "summary": "Legend: fire from the sky strikes the false accusers; the woman is saved."
+  },
+  {
+   "id": "B17",
+   "t": 162.96,
+   "kind": "moral",
+   "cue": {
+    "word": "سؤال",
+    "t": 162.96
+   },
+   "summary": "The decisive act was a simple question that tested the witnesses."
+  }
+ ],
+ "cast": [
+  {
+   "id": "woman",
+   "name": "the devout woman",
+   "library": "person",
+   "base": "person costume:'lady'",
+   "look": "s 1.0. White veil with the gold band, long blue robe (the preset as drawn in people.png). Fully covered at all times. Default face: calm, lid 0.2 to 0.4, small smile; in fear her brows rise but her feet stay planted.",
+   "new": false
+  },
+  {
+   "id": "elder1",
+   "name": "first elder (tall keeper, EAST / pear)",
+   "library": "person",
+   "base": "person costume:'villager', age 0.95, hold:'stick'",
+   "look": "s 1.0, stooped. Default GREEN robe, yellow sash (pal sash: yellow), white turban cap, long white beard. Carries the gate key ring at his sash. The leader and the better liar. Green and yellow tie him to the pear card.",
+   "new": false
+  },
+  {
+   "id": "elder2",
+   "name": "second elder (short keeper, WEST / apple)",
+   "library": "person",
+   "base": "person costume:'villager', age 0.9, pal {robe: '#a8431f', dot: '#7c2f14', hc: red, sash: blue}",
+   "look": "s 0.88, stooped. Red-brown robe and red cap so he reads as the red (apple) one. Sleepy, nervous copycat who follows elder1 a beat late.",
+   "new": false
+  },
+  {
+   "id": "daniel",
+   "name": "Daniel, the boy (12)",
+   "library": "person",
+   "base": "person costume:'servant', child:true, pal {robe: yellow, dot: red, hc: blue}",
+   "look": "Child figure (0.62 size, 1.25x head, no beard or moustache). Yellow tunic, blue cap: the brightest figure in the square so the eye finds him behind the crowd. Quick eyes, big clear gestures.",
+   "new": false
+  },
+  {
+   "id": "headman",
+   "name": "the town headman",
+   "library": "person",
+   "base": "person costume:'physician', age 0.8, pal {robe: navy}",
+   "look": "s 1.05. Navy robe, white turban, grey beard (the same recipe as the planned judge preset, built from pal overrides so nothing new is needed). Slow, heavy lidded; decides for the crowd.",
+   "new": false
+  },
+  {
+   "id": "crowd",
+   "name": "townspeople (5)",
+   "library": "person",
+   "base": "person presets: villager (age 0.2, pal robe ochre: the doubter), merchant (pal green), villageWoman, oldWoman, bedouin",
+   "look": "Five fixed individuals, s 0.9 to 1.0, used in every crowd shot so they are recognisable; two depth rows. The young ochre villager is the one who doubts in S7 and nods in S15. Driven by the planned streetCrowd helper.",
+   "new": false
+  },
+  {
+   "id": "dove",
+   "name": "white dove",
+   "library": "bird",
+   "base": "bird kind:'dove', pal 0",
+   "look": "s 0.7. A quiet companion for the woman in the garden; leaves when the elders approach, returns on the empty platform and in the last shot.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "walledGarden",
+   "library": null,
+   "new": true,
+   "description": "NEW shared set, world 1600 x 1230, ground y 900. Sky by skyCycle(u) (morning u 0.04 to 0.10; the sun low on the RIGHT = east). Behind the wall at the east end a domed prayer house: block 150 x 110 with base hidden by the wall, dome r 70, top at about y 430, centred x 1480. Back wall across the whole width: top y 600, foot y 860, cream with ochre Ben-Day shading, 14 high coping, a few vine scallops. Gate in the back wall: townDoor x 720..880, top 640, bottom 860, pointed arch, two leaves, open 0..1, inside(ctx) shows a strip of street. Lawn band y 860..900 behind the path; paved path from the gate (800, 860) down to y 900 and east to x 1600. WEST (left): apple tree at x 260 (fruitTree kind apple) with the keepers' bench under it at x 400..560, seat top y 852 (anchor bench.sitY). EAST (right): pear tree at x 1340 (fruitTree kind pear). Fountain at x 1040 (planned fountain: basin 220 wide, rim top y 840; pedestal to y 770; bowl 90 wide; jet 0..1, 40 high). Front pass: two Library bushes at x 80 and x 1560. Anchors: ground, gate {x0, x1, top, cx}, bench {x0, x1, sitY}, fountain {x, rim}, apple {x}, pear {x}, dome {x, top}, wallTop."
+  },
+  {
+   "id": "townSquare",
+   "library": "marketStreet",
+   "new": false,
+   "description": "Library marketStreet as a strip, w 2400, palace: false, palette 'clear' for S8 then 'dusk' from S9, shutters keyed for S8. Stalls: [{x: 500, kind: 'fruit'}, {x: 1650, kind: 'cloth'}] (the cloth stall is the hiding place for elder1, redrawn in the front pass). Props: [['barrel', 2340], ['crate', 2380]] (hiding place for elder2). House door used in S8 at about x 1320 (use the doors anchor nearest to it; approximate, measure on the set). The square is the right end, x 1700..2300: stonePlatform at x 2060..2260, top y 850. Questioning spot x 1890 (Daniel) and x 2010 (elder)."
+  }
+ ],
+ "props": [
+  {
+   "id": "fruitTree",
+   "library": null,
+   "new": true,
+   "description": "Fruit tree built on the Library tree(): kind 'apple': trunk 46 wide, three round crowns (r 110 to 130), crown top y 470, nine red apples r 13 with a small highlight. kind 'pear': narrower and taller, crowns r 95 over r 125, top y 430, nine yellow pears (r 11 circle with an r 8 circle above, short stem). sway(t) moves the fruit 3 px. Also drawn inside the thought clouds at scale 0.42 and as single big fruit icons (60 px) for the cards."
+  },
+  {
+   "id": "fountain",
+   "library": null,
+   "new": true,
+   "description": "Planned name (AN-114): stone basin fountain with a keyed jet. Here: basin 220 x 60, rim top y 840, pedestal, bowl 90 wide, jet 0..1; ripple rings on the basin water when touched."
+  },
+  {
+   "id": "keyRing",
+   "library": null,
+   "new": true,
+   "description": "Iron ring r 16 with two big keys (40 long, two teeth), yellow with black outline; hangs at elder1's sash with swing(); lies on the scorch mark in S16; hangs on the open gate in S18."
+  },
+  {
+   "id": "stonePlatform",
+   "library": null,
+   "new": true,
+   "description": "Low bare stone platform 200 wide x 50 high (top y 850) with two steps on its left side (each 40 x 25), grey with dot shading and block lines. Nothing on it: no post, no stones, no ropes."
+  },
+  {
+   "id": "evidenceCard",
+   "library": null,
+   "new": true,
+   "description": "A white card with a black brush border, 300 x 220 at full size (150 x 110 when pinned): the garden map reduced to the wall line, gate and fountain, a lit half (yellow right for EAST, red left for WEST), the word, and the tree with one big fruit. flip 0..1 (face down shows plain paper with a small question mark)."
+  },
+  {
+   "id": "iconBalloon",
+   "library": null,
+   "new": true,
+   "description": "Planned shared wordless picture balloon (24 films), single mode. Icons for this film: squiggle (unreadable whisper), two mouths with a bracket (agreed testimony), veil with a blot (her name), dashed empty man outline (the invented young man)."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 11.0,
+   "paragraphs": [
+    1
+   ],
+   "set": "walledGarden",
+   "cast": [
+    "woman",
+    "dove"
+   ],
+   "summary": "Morning in the walled garden. The devout woman comes through the gate as she does every day; beyond the east wall stands the domed prayer house she is heading for.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Start wide: centre x 800, y 640, zoom 0.78 (both trees and the gate in frame). 2.5-5.0 ease to x 800, y 700, zoom 1.25 on the gate and the woman. 8.3-9.2 ease to x 1250, y 600, zoom 0.95 so the dome beyond the east (right) wall is in frame; hold."
+   },
+   "composition": "Gate dead centre (x 720..880). Apple tree far left (x 260), pear tree far right (x 1340), fountain at x 1040. Low sun on the RIGHT (east) at about (1380, 520) so east is established by the light before any lettering. The woman stays in the middle third; the dome rises behind the wall at x 1480.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 2.2,
+     "who": "set",
+     "action": "Dawn garden: skyCycle u 0.04 easing to 0.10, sun low on the right, leaves sway, fountain jet 0.6 flickering",
+     "acting": "slow drift of one cloud; nothing moves fast, a calm world",
+     "library": "walledGarden(ctx, {u, t, jet: 0.6}) + skyCycle + cloudFlat"
+    },
+    {
+     "t": 0.5,
+     "end": 2.3,
+     "cue": {
+      "word": "رواية",
+      "t": 0.56
+     },
+     "who": "lettering",
+     "action": "Title pops in the sky band above the wall, holds, leaves at 2.3",
+     "acting": "title scales in with overshoot; kept clear of the gate",
+     "library": "S.title"
+    },
+    {
+     "t": 1.14,
+     "end": 2.0,
+     "cue": {
+      "word": "قديمة",
+      "t": 1.14
+     },
+     "who": "dove",
+     "action": "White dove flies in from the left and lands on the wall coping at (980, 600)",
+     "acting": "two flaps, landSquash on touchdown, head tilts toward the gate",
+     "library": "bird {kind:'dove', fly, flap} + hop/landSquash"
+    },
+    {
+     "t": 2.2,
+     "end": 3.0,
+     "cue": {
+      "word": "امرأة",
+      "t": 2.52
+     },
+     "who": "woman",
+     "action": "The gate leaves open (townDoor open 0 to 0.9, anticipation creak 0.3 s) and the woman steps through onto the path at (800, 870), s 1.0",
+     "acting": "gaze forward then up at the dove, small smile, blink on the step",
+     "library": "person {costume:'lady'} + walk + townDoor leaf"
+    },
+    {
+     "t": 3.06,
+     "end": 5.3,
+     "cue": {
+      "word": "صالحة",
+      "t": 3.06
+     },
+     "who": "woman",
+     "action": "She pauses, right hand to her chest, a small bow of the head",
+     "acting": "lid 0.35 for half a second, calm brows (brow -0.2), breathe(); the dove nods back",
+     "library": "PERSON_HANDS.chest + breathe + blink"
+    },
+    {
+     "t": 5.5,
+     "end": 7.0,
+     "cue": {
+      "word": "اعتادت",
+      "t": 5.5
+     },
+     "who": "woman",
+     "action": "She walks down the path from the gate toward the fountain (x 800 to 930)",
+     "acting": "unhurried walk, gaze ahead and slightly up; veil tail lags 2 frames",
+     "library": "walk(xf, t) + footfalls (no dust, soft)"
+    },
+    {
+     "t": 7.16,
+     "end": 8.3,
+     "cue": {
+      "word": "كل",
+      "t": 7.16
+     },
+     "who": "fx",
+     "action": "Three small sun stamps pop one after another over the wall (at 7.16, 7.54, 7.9) and fade: the same walk, day after day",
+     "acting": "each stamp pops with a 10% overshoot; the woman keeps walking under them",
+     "library": "sun icon at s 0.25 + settleTo"
+    },
+    {
+     "t": 8.4,
+     "end": 9.1,
+     "cue": {
+      "word": "موضع",
+      "t": 8.56
+     },
+     "who": "camera",
+     "action": "Camera eases right and up to bring the prayer house dome into frame; arrow and label point at it",
+     "acting": "the woman stops and lifts her eyes to it (gaze toward (1480, 450))",
+     "library": "S.arrow + S.label + lookAt"
+    },
+    {
+     "t": 9.18,
+     "end": 10.9,
+     "cue": {
+      "word": "للصلاة.",
+      "t": 9.18
+     },
+     "who": "woman",
+     "action": "She opens both palms a little toward the dome; a faint cone of light rests on the dome",
+     "acting": "lid 0.5, soft smile, tip 0.03 toward it; dove takes off toward the dome",
+     "library": "PERSON_HANDS.palmsUp + skyLight strength 0.35"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.56,
+     "text": "THE DEVOUT WOMAN AND THE TWO ELDERS"
+    },
+    {
+     "t": 8.56,
+     "text": "PRAYER HOUSE"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 10.6,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 11.0
+   }
+  },
+  {
+   "id": "S2",
+   "start": 11.0,
+   "end": 21.06,
+   "paragraphs": [
+    1
+   ],
+   "set": "walledGarden",
+   "cast": [
+    "woman",
+    "dove"
+   ],
+   "summary": "Her daily ablution at the garden fountain: she kneels, washes hands and face, rises at peace and sets off east toward the prayer house.",
+   "camera": {
+    "shot": "medium",
+    "move": "drift",
+    "notes": "x 1010, y 720, zoom 1.45 on the fountain and the kneeling woman; slow drift 20 units right over the scene. 16.9-18.0 ease out to zoom 1.05, x 1150 to follow her leaving."
+   },
+   "composition": "Fountain at x 1040, the woman on its left at x 950 so her face (front view) and both hands over the basin read; pear tree trunk at the right edge, a slice of apple tree far left at the start so both fruit colours are planted early.",
+   "actions": [
+    {
+     "t": 11.0,
+     "end": 12.6,
+     "cue": {
+      "word": "وكانت",
+      "t": 11.0
+     },
+     "who": "woman",
+     "action": "She walks the last steps to the fountain (x 930 to 950) and stops",
+     "acting": "gaze down to the water; walk amp falls to 0 with a settle",
+     "library": "walk + settleTo"
+    },
+    {
+     "t": 12.76,
+     "end": 14.2,
+     "cue": {
+      "word": "ببستان",
+      "t": 12.76
+     },
+     "who": "set",
+     "action": "A breeze: red apples (left edge) and yellow pears (right) bob on their stems, one leaf falls across the frame",
+     "acting": "secondary motion only; the dove lands on the fountain bowl and looks at her",
+     "library": "fruitTree sway + bird {kind:'dove'}"
+    },
+    {
+     "t": 14.1,
+     "end": 15.5,
+     "cue": {
+      "word": "فتتوضأ",
+      "t": 14.44
+     },
+     "who": "woman",
+     "action": "She kneels at the basin (kneel 0 to 1) and reaches both hands into the water at (1000, 835)",
+     "acting": "anticipation dip 0.2 s before kneeling; gaze on her hands; ripple rings on contact",
+     "library": "person kneel + handLW/handRW + ripple"
+    },
+    {
+     "t": 15.6,
+     "end": 16.7,
+     "cue": {
+      "word": "فيه",
+      "t": 15.6
+     },
+     "who": "woman",
+     "action": "She lifts water to her face: both hands to the cheeks, eyes closed, five drops fly and sparkle",
+     "acting": "lid 1, smile, sq 1.03 on the lift then settle; drops follow arcs (pure functions of t)",
+     "library": "PERSON_HANDS.cheeks + lid + small drop arcs"
+    },
+    {
+     "t": 16.94,
+     "end": 17.9,
+     "cue": {
+      "word": "تتجه",
+      "t": 16.94
+     },
+     "who": "woman",
+     "action": "She rises (kneel 1 to 0) and turns her eyes east",
+     "acting": "eyes open, blink, gaze right toward the dome, shoulders loose",
+     "library": "kneel blend + lookAt"
+    },
+    {
+     "t": 18.02,
+     "end": 19.0,
+     "cue": {
+      "word": "عبادتها",
+      "t": 18.02
+     },
+     "who": "woman",
+     "action": "She walks right along the path toward the east side (x 950 to 1250); camera eases out with her",
+     "acting": "even walk; dove flies ahead of her at head height",
+     "library": "walk + footfalls + bird fly"
+    },
+    {
+     "t": 19.1,
+     "end": 21.0,
+     "cue": {
+      "word": "مطمئنة.",
+      "t": 19.1
+     },
+     "who": "woman",
+     "action": "She stops under the pear tree for a breath, face serene, the light cone brushing her",
+     "acting": "lid 0.4, smile, breathe(); a slow blink. This calm face is the picture the ending returns to",
+     "library": "breathe + blink + skyLight 0.3"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 20.75,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "whip",
+    "t": 21.06
+   }
+  },
+  {
+   "id": "S3",
+   "start": 21.06,
+   "end": 30.36,
+   "paragraphs": [
+    2
+   ],
+   "set": "walledGarden",
+   "cast": [
+    "elder1",
+    "elder2",
+    "woman",
+    "dove"
+   ],
+   "summary": "The two old keepers on their bench under the apple tree. Their eyes find the woman; they get up, block her path and whisper a demand the picture never spells out. She recoils.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pan",
+    "notes": "21.06 whip settles on the bench: x 480, y 720, zoom 1.6 (twoShot of the elders). 26.5-27.4 pull to x 760, y 700, zoom 1.0 to include the woman at the fountain. Hold on the three from 28.0."
+   },
+   "composition": "Bench at x 400..560 under the apple tree (west, left). Elder1 (tall, green robe) on the left seat, elder2 (short, red-brown robe) on the right. After 27.4 the elders stand at x 860 and x 1010 on either side of the woman at x 940: she is boxed in but nobody touches anybody (keep 60 units of air).",
+   "actions": [
+    {
+     "t": 21.06,
+     "end": 22.6,
+     "cue": {
+      "word": "كان",
+      "t": 21.06
+     },
+     "who": "elder1",
+     "action": "Reveal: elder1 sits upright on the bench with the big gate key ring at his sash and a stick; elder2 dozes beside him",
+     "acting": "elder1 lid 0.3, bored; elder2 lid 1, head dropped, breathe() slow",
+     "library": "person {costume:'villager', age:0.95, sit:1, seat:'bench', hold:'stick'}"
+    },
+    {
+     "t": 22.84,
+     "end": 23.8,
+     "cue": {
+      "word": "حارسان",
+      "t": 22.84
+     },
+     "who": "keyRing",
+     "action": "The key ring swings and glints as elder1 pats it: these two hold the gate",
+     "acting": "damped swing; a counter 2 is NOT used, the two figures are enough",
+     "library": "swing(t, 22.84, 0.4)"
+    },
+    {
+     "t": 23.9,
+     "end": 24.8,
+     "cue": {
+      "word": "مسنان،",
+      "t": 23.9
+     },
+     "who": "elder2",
+     "action": "Elder2 wakes with a small snort and a stretch; both stroke their white beards",
+     "acting": "one eye opens first (wink), then both; stoop and slow settle show their age",
+     "library": "wink + lid ramp + PERSON_HANDS.chin"
+    },
+    {
+     "t": 25.2,
+     "end": 26.4,
+     "cue": {
+      "word": "فطمعا",
+      "t": 25.72
+     },
+     "who": "elder1",
+     "action": "Both heads turn toward the fountain in a 2-frame eye snap; elder1 elbows elder2",
+     "acting": "anticipation: eyes first, heads follow 3 frames late; brows go sly (brow -0.4), lids 0.45, one-sided smile",
+     "library": "gazePlan(t, plan, 0.07) + handR nudge"
+    },
+    {
+     "t": 26.6,
+     "end": 27.3,
+     "cue": {
+      "word": "المرأة",
+      "t": 26.7
+     },
+     "who": "woman",
+     "action": "Pull-out: the woman, small and unaware at the fountain, senses the stare and looks up",
+     "acting": "gaze snaps to them, brow lifts (brow -0.5), a single blink",
+     "library": "lookAt + blink"
+    },
+    {
+     "t": 27.42,
+     "end": 28.9,
+     "cue": {
+      "word": "وطلبا",
+      "t": 27.42
+     },
+     "who": "elder2",
+     "action": "The elders rise and shuffle over (stick taps on each footfall) and stop on both sides of her; elder1 leans in behind a cupped hand, a small balloon holds only a scribble",
+     "acting": "short stooped steps, never sliding; lean tip 0.1; masks of friendliness (smiles) while their lids stay half shut",
+     "library": "sit blend + walk + footfalls + PERSON_HANDS.cupMouth + iconBalloon squiggle"
+    },
+    {
+     "t": 29.02,
+     "end": 30.3,
+     "cue": {
+      "word": "ما",
+      "t": 29.02
+     },
+     "who": "woman",
+     "action": "She steps back one pace, eyes wide; the dove bursts off the fountain",
+     "acting": "sq 0.95 then settle, mouth o, both hands rise toward the shield gesture; the scribble balloon pops",
+     "library": "settleTo + PERSON_HANDS.shield + bird fly"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 25.2,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 30.36
+   }
+  },
+  {
+   "id": "S4",
+   "start": 30.36,
+   "end": 42.1,
+   "paragraphs": [
+    2
+   ],
+   "set": "walledGarden",
+   "cast": [
+    "woman",
+    "elder1",
+    "elder2"
+   ],
+   "summary": "She refuses, feet planted. The friendly masks drop: the elders threaten to agree on a false testimony that would stain her name.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "30.36 x 940, y 690, zoom 1.25 on the three. 32.0-33.0 push to zoom 1.8 on her face (x 940, y 660). 33.26 ease back to zoom 1.2 and stay for the threat; the balloon sits above the elders at y 430..560."
+   },
+   "composition": "Woman centre at x 940; the elders regroup together on the LEFT (x 760 and x 840) from 33.3 so the lie is one block facing her. The testimony balloon (380 x 150) hangs over the elders, never over a face.",
+   "actions": [
+    {
+     "t": 30.36,
+     "end": 31.3,
+     "cue": {
+      "word": "رفضت",
+      "t": 30.36
+     },
+     "who": "woman",
+     "action": "She straightens to full height and puts out a flat palm: NO",
+     "acting": "brow +0.6, mouth set, gaze level at elder1; the hand arrives with a 10% overshoot",
+     "library": "PERSON_HANDS.shield (one hand) + settleTo"
+    },
+    {
+     "t": 31.36,
+     "end": 32.3,
+     "cue": {
+      "word": "طلبهما",
+      "t": 31.36
+     },
+     "who": "elder1",
+     "action": "Both elders rock back half a step from the palm",
+     "acting": "follow-through: beards and turban tails lag; smiles freeze",
+     "library": "settleTo + stagger(i)"
+    },
+    {
+     "t": 32.36,
+     "end": 33.2,
+     "cue": {
+      "word": "بثبات،",
+      "t": 32.36
+     },
+     "who": "woman",
+     "action": "Push-in: her steady face, feet planted, no tremble at all",
+     "acting": "stillness: only one slow blink; gaze does not leave them",
+     "library": "blink + breathe"
+    },
+    {
+     "t": 33.26,
+     "end": 34.7,
+     "cue": {
+      "word": "فهدداها",
+      "t": 33.26
+     },
+     "who": "elder1",
+     "action": "The masks drop: brows snap to an angry V, elder1 wags a raised finger, elder2 thumps his stick (dust puff)",
+     "acting": "eyes narrow (lid 0.3), tip 0.08 toward her; the finger wag is 3 beats",
+     "library": "PERSON_HANDS.pointUp + shake + dustBurst"
+    },
+    {
+     "t": 35.2,
+     "end": 36.2,
+     "cue": {
+      "word": "يتفقا",
+      "t": 35.2
+     },
+     "who": "elder2",
+     "action": "The two turn their eyes to each other, nod once and clasp hands low, out of her sight",
+     "acting": "a wink from elder1, a smirk from elder2: a pact",
+     "library": "wink + handRW/handLW meeting at one point"
+    },
+    {
+     "t": 36.34,
+     "end": 37.0,
+     "cue": {
+      "word": "شهادة",
+      "t": 36.34
+     },
+     "who": "fx",
+     "action": "A speech balloon pops over the pair with two mouth icons joined by a bracket: one story from two mouths",
+     "acting": "balloon pops with overshoot; both elders point at it",
+     "library": "iconBalloon single mode (icons: two mouths, bracket)"
+    },
+    {
+     "t": 37.04,
+     "end": 38.0,
+     "cue": {
+      "word": "كاذبة",
+      "t": 37.04
+     },
+     "who": "fx",
+     "action": "The balloon floods red and a stamp lands on it",
+     "acting": "stamp hits with a 2-frame squash; the balloon outline turns jagged",
+     "library": "iconBalloon col red + S.emphasis stamp"
+    },
+    {
+     "t": 38.04,
+     "end": 39.6,
+     "cue": {
+      "word": "سمعتها",
+      "t": 38.76
+     },
+     "who": "woman",
+     "action": "The red balloon tilts over her like a cloud; a small veil icon inside it gets a black blot",
+     "acting": "she glances up at it, eyes wet for a moment, then looks back at them",
+     "library": "wet + gaze plan"
+    },
+    {
+     "t": 39.74,
+     "end": 42.0,
+     "cue": {
+      "word": "تستجب",
+      "t": 40.54
+     },
+     "who": "elder1",
+     "action": "Elder1 holds out an open palm (last chance), elder2 tilts his head; she slowly shakes her head",
+     "acting": "elders lean in, she does not lean back: equal height in frame; her head shake is two slow passes",
+     "library": "PERSON_HANDS.palmsUp + shake"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 30.5,
+     "text": "NO!"
+    },
+    {
+     "t": 37.1,
+     "text": "FALSE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 42.1
+   }
+  },
+  {
+   "id": "S5",
+   "start": 42.1,
+   "end": 54.1,
+   "paragraphs": [
+    3
+   ],
+   "set": "walledGarden",
+   "cast": [
+    "woman",
+    "elder1",
+    "elder2",
+    "dove"
+   ],
+   "summary": "She says she will not give in. The elders hurry to the gate, throw it open and shout for help.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "42.1 close on the woman: x 940, y 660, zoom 1.7. 46.4 ease to zoom 1.1 (three figures). 48.4-50.1 pan left with the elders to the gate: x 800, y 680, zoom 1.15. 52.3 small panel-only shake, then pull to zoom 0.85 so she stands small and alone by the fountain."
+   },
+   "composition": "The woman stays at x 940 throughout. Elders walk from x 760/840 to the gate posts (x 700 and x 900). From 52.3 the frame is the gate with the two shouting elders and, on the right, the small still figure of the woman.",
+   "actions": [
+    {
+     "t": 42.1,
+     "end": 43.7,
+     "cue": {
+      "word": "قالت",
+      "t": 42.1
+     },
+     "who": "woman",
+     "action": "Close: she speaks, hand on her chest",
+     "acting": "talk, gaze on them then lifting to the sky; brows firm, not angry",
+     "library": "talk + PERSON_HANDS.chest"
+    },
+    {
+     "t": 44.44,
+     "end": 46.3,
+     "cue": {
+      "word": "لن",
+      "t": 45.12
+     },
+     "who": "woman",
+     "action": "A slow, final head shake; she folds her arms",
+     "acting": "eyes closed on the shake (lid 1), open and level after; chin up 4 px",
+     "library": "shake + PERSON_HANDS.folded"
+    },
+    {
+     "t": 46.38,
+     "end": 48.3,
+     "cue": {
+      "word": "لتهديدهما،",
+      "t": 46.38
+     },
+     "who": "elder1",
+     "action": "The elders look at each other; elder1 jerks his thumb toward the gate, elder2 grins",
+     "acting": "saccade between her and the gate (gazePlan 0.07), smirk",
+     "library": "gazePlan + handR thumb"
+    },
+    {
+     "t": 48.44,
+     "end": 50.0,
+     "cue": {
+      "word": "ففتح",
+      "t": 48.44
+     },
+     "who": "elder1",
+     "action": "They hurry to the gate, stick tapping, key ring jangling; elder2 two steps behind",
+     "acting": "fast stooped walk (short stride, high frequency), stagger between the two",
+     "library": "walk + footfalls + stagger + swing (keys)"
+    },
+    {
+     "t": 50.14,
+     "end": 51.3,
+     "cue": {
+      "word": "باب",
+      "t": 50.14
+     },
+     "who": "set",
+     "action": "Elder1 turns the key and both gate leaves swing wide (0.0 to 1.0); the street shows through the arch",
+     "acting": "anticipation pull-back of the arm before the push; leaves overshoot and settle",
+     "library": "townDoor open keyed + anticipate + settleTo"
+    },
+    {
+     "t": 51.42,
+     "end": 52.2,
+     "cue": {
+      "word": "ورفعا",
+      "t": 51.42
+     },
+     "who": "elder2",
+     "action": "Both cup their mouths, heads back, and shout into the street; sound arcs fly out through the gate",
+     "acting": "talk 1, brows up in fake alarm; arms wave on alternate beats",
+     "library": "PERSON_HANDS.cupMouth + talk + soundArcs"
+    },
+    {
+     "t": 52.3,
+     "end": 54.0,
+     "cue": {
+      "word": "أصواتهما.",
+      "t": 52.3
+     },
+     "who": "woman",
+     "action": "Wide: the woman alone by the fountain, arms dropping to her sides, watching the gate; the dove circles overhead",
+     "acting": "gaze to the gate, brow -0.5, one blink; she does not run",
+     "library": "lookAt + bird fly circle"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 51.5,
+     "text": "HELP! HELP!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 53.75,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 54.1
+   }
+  },
+  {
+   "id": "S6",
+   "start": 54.1,
+   "end": 65.26,
+   "paragraphs": [
+    3
+   ],
+   "set": "walledGarden",
+   "cast": [
+    "crowd",
+    "headman",
+    "elder1",
+    "elder2",
+    "woman"
+   ],
+   "summary": "People rush in. The elders point at her and tell their invented story: a young man who ran away before anyone arrived. The picture shows only an empty dotted outline.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "x 860, y 680, zoom 0.95: gate left of centre, the woman at the right. One 0.25 s whip of the eyes only (no camera move) to the east wall at 61.3."
+   },
+   "composition": "Crowd of five plus the headman pours through the gate and bunches at x 620..800 in two depth rows (back row y 880, s 0.9; front row y 900, s 1.0). Elders stand at the front edge of the crowd (x 830, 880). Woman alone at x 1080. The lie balloon (420 x 220) sits top centre at y 300..520.",
+   "actions": [
+    {
+     "t": 54.1,
+     "end": 55.2,
+     "cue": {
+      "word": "اجتمع",
+      "t": 54.1
+     },
+     "who": "crowd",
+     "action": "Five townspeople and the headman run in through the gate, one after another",
+     "acting": "staggered entries 4 frames apart, dust at the footfalls, mouths open",
+     "library": "streetCrowd of person presets + walk + footfalls + stagger"
+    },
+    {
+     "t": 55.3,
+     "end": 56.2,
+     "cue": {
+      "word": "مسرعين،",
+      "t": 55.3
+     },
+     "who": "crowd",
+     "action": "They brake in a bunch (lurch) and their heads swivel from the elders to the woman",
+     "acting": "accordion stop: each bumps a little into the next; eyes do the swivel first",
+     "library": "lurch(t, tStop) + gazePlan"
+    },
+    {
+     "t": 56.26,
+     "end": 57.6,
+     "cue": {
+      "word": "وزعم",
+      "t": 56.26
+     },
+     "who": "elder1",
+     "action": "Elder1 throws out an arm and points at the woman",
+     "acting": "anticipation wind-up, then the point with overshoot; brows in fake outrage",
+     "library": "anticipate + PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 57.66,
+     "end": 59.2,
+     "cue": {
+      "word": "الرجلان",
+      "t": 57.66
+     },
+     "who": "elder2",
+     "action": "Elder2 lays a hand on his heart and shakes his head sadly, eyes to the sky",
+     "acting": "mock piety: lid 0.6, mouth frown, a peek at the crowd (one eye) to check it works",
+     "library": "PERSON_HANDS.chest + wink peek"
+    },
+    {
+     "t": 59.28,
+     "end": 60.4,
+     "cue": {
+      "word": "رأيا",
+      "t": 59.28
+     },
+     "who": "elder1",
+     "action": "Both point at their own eyes: we saw it",
+     "acting": "two quick taps; the crowd gasps in a ripple (mouths o, 3 frames apart)",
+     "library": "handR to the eye + stagger"
+    },
+    {
+     "t": 60.76,
+     "end": 61.3,
+     "cue": {
+      "word": "شاب",
+      "t": 60.76
+     },
+     "who": "fx",
+     "action": "A balloon pops over the elders: a DOTTED, empty outline of a young man, no face",
+     "acting": "the outline is dashed and unfilled: something that is not there",
+     "library": "iconBalloon + person silhouette drawn as a dashed stroke"
+    },
+    {
+     "t": 61.32,
+     "end": 62.8,
+     "cue": {
+      "word": "فر",
+      "t": 61.32
+     },
+     "who": "fx",
+     "action": "The dotted figure runs out of the balloon edge with speed lines; elder1 points over the east wall; every head whips there: nothing, one leaf drifting down",
+     "acting": "crowd gazes snap right, hold on the empty wall for 0.6 s",
+     "library": "speed lines + gazePlan(…, 0.07)"
+    },
+    {
+     "t": 62.92,
+     "end": 65.2,
+     "cue": {
+      "word": "قبل",
+      "t": 62.92
+     },
+     "who": "woman",
+     "action": "The crowd turns back to her with V brows; she opens her palms and shakes her head, but each pair of eyes slides away from hers",
+     "acting": "her gaze goes from face to face (gaze plan, 4 targets); headman raises a hand for silence",
+     "library": "PERSON_HANDS.palmsUp + look() + crowd gaze averted"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 64.9,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 65.26
+   }
+  },
+  {
+   "id": "S7",
+   "start": 65.26,
+   "end": 70.12,
+   "paragraphs": [
+    4
+   ],
+   "set": "walledGarden",
+   "cast": [
+    "crowd",
+    "headman",
+    "elder1",
+    "elder2",
+    "woman"
+   ],
+   "summary": "Nobody checks. The headman nods to the elders, and the one villager who starts to ask a question is hushed.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "x 760, y 690, zoom 1.3 on the headman, the elders and the first row; slow push to 1.45."
+   },
+   "composition": "Headman centre (x 760), elders to his right (x 840, 890) bowing, the doubtful villager at the left edge of the group (x 640). The woman is a small figure at the far right edge, out of the group.",
+   "actions": [
+    {
+     "t": 65.26,
+     "end": 66.7,
+     "cue": {
+      "word": "أخذ",
+      "t": 65.26
+     },
+     "who": "headman",
+     "action": "The headman looks from the elders to the woman once, then nods to the elders",
+     "acting": "a single glance is all the checking that happens; beard stroke, heavy lids",
+     "library": "person {costume:'physician', age:0.8, pal navy} + PERSON_HANDS.chin"
+    },
+    {
+     "t": 66.8,
+     "end": 68.1,
+     "cue": {
+      "word": "كلام",
+      "t": 66.8
+     },
+     "who": "crowd",
+     "action": "A wave of nodding passes through the crowd, each a few frames after the next",
+     "acting": "never in unison; one of them (the young villager) does not nod",
+     "library": "stagger(i) head dips"
+    },
+    {
+     "t": 68.24,
+     "end": 69.1,
+     "cue": {
+      "word": "غير",
+      "t": 68.64
+     },
+     "who": "crowd",
+     "action": "The young villager half raises a finger to ask something",
+     "acting": "brow -0.6, mouth o, gaze at the empty east wall",
+     "library": "PERSON_HANDS.pointUp at half height"
+    },
+    {
+     "t": 69.12,
+     "end": 70.1,
+     "cue": {
+      "word": "تحقيق،",
+      "t": 69.12
+     },
+     "who": "crowd",
+     "action": "His two neighbours hush him; the finger sinks",
+     "acting": "hush gestures, a frown; he looks at his feet. The elders exchange a relieved blink",
+     "library": "PERSON_HANDS.hush + lid"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 70.12,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S8",
+   "start": 70.12,
+   "end": 77.14,
+   "paragraphs": [
+    4
+   ],
+   "set": "townSquare",
+   "cast": [
+    "crowd",
+    "elder1",
+    "elder2",
+    "woman"
+   ],
+   "summary": "Three days of talk: her name is carried through the streets from mouth to ear while the sun rises and sets three times. She stands alone at a doorway.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "marketStreet strip: camX 200 at 70.12 tracking right to camX 900 at 75.2 with the criers (zoom 1.0, y 660). 75.28 hold on the house door at x 1320."
+   },
+   "composition": "Street strip, criers walking left to right at y 900; three shuttered windows above them. Day counter top left of the panel. From 75.28 the woman stands in a house doorway at x 1320 (door anchor), small, with empty street on both sides.",
+   "actions": [
+    {
+     "t": 70.12,
+     "end": 71.4,
+     "cue": {
+      "word": "وطافوا",
+      "t": 70.12
+     },
+     "who": "elder1",
+     "action": "After the card: elder1 and two townsmen walk the street calling out; a balloon over them holds a small veil icon with a black blot",
+     "acting": "cupped hands, talk; walk with stick taps",
+     "library": "walk + footfalls + iconBalloon (veil icon, blot)"
+    },
+    {
+     "t": 71.46,
+     "end": 72.8,
+     "cue": {
+      "word": "باسم",
+      "t": 71.46
+     },
+     "who": "set",
+     "action": "Shutters open one after another along the street and heads lean out",
+     "acting": "staggered 5 frames apart; each head turns to follow the criers",
+     "library": "marketStreet shutters keyed + townWindow inside()"
+    },
+    {
+     "t": 72.9,
+     "end": 73.7,
+     "cue": {
+      "word": "الطرقات",
+      "t": 72.9
+     },
+     "who": "crowd",
+     "action": "A whisper chain: cupped mouth to cupped ear along four people, the blot icon hopping from balloon to balloon",
+     "acting": "each listener widens the eyes, then becomes the next whisperer",
+     "library": "PERSON_HANDS.cupMouth / cupEar + stagger"
+    },
+    {
+     "t": 73.74,
+     "end": 75.2,
+     "cue": {
+      "word": "ثلاثة",
+      "t": 73.74
+     },
+     "who": "fx",
+     "action": "Day counter: 1, 2, 3 while the sky runs through three quick day cycles",
+     "acting": "counter digits pop with a dip before each beat; long shadows sweep",
+     "library": "S.counter + skyCycle u keyed (three loops) + countedBeats dip"
+    },
+    {
+     "t": 75.28,
+     "end": 76.1,
+     "cue": {
+      "word": "وفي",
+      "t": 75.28
+     },
+     "who": "woman",
+     "action": "The woman alone in a doorway, hands clasped, head bowed; two passers-by walk past without looking",
+     "acting": "wet eyes, lid 0.5, no tears yet; passers-by gaze fixed ahead",
+     "library": "PERSON_HANDS.clasp + wet + walk"
+    },
+    {
+     "t": 76.14,
+     "end": 77.1,
+     "cue": {
+      "word": "الرابع",
+      "t": 76.52
+     },
+     "who": "fx",
+     "action": "The counter flips to 4 in red; the door behind her opens and the headman waits in the street",
+     "acting": "she lifts her head and breathes in",
+     "library": "S.counter red + townDoor"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 73.74,
+     "text": "DAY 1 2 3"
+    },
+    {
+     "t": 76.52,
+     "text": "DAY 4"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 77.14
+   }
+  },
+  {
+   "id": "S9",
+   "start": 77.14,
+   "end": 86.26,
+   "paragraphs": [
+    4
+   ],
+   "set": "townSquare",
+   "cast": [
+    "woman",
+    "headman",
+    "crowd",
+    "elder1",
+    "elder2",
+    "daniel"
+   ],
+   "summary": "On the fourth day they walk her to the place of punishment, shown only as a bare stone platform. She steps up by herself, raises her hands and prays for the truth to appear.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "77.14 track right with the procession from camX 1150 to 1700 (zoom 1.0). 79.4 settle framing the platform (x 2060..2260) at the right third. 83.2-85.8 push in to zoom 1.7 on the woman (x 2130, y 640)."
+   },
+   "composition": "Procession order, left to right moving right: crowd, elders, woman, headman. Nobody holds her; no ropes, no stones, no weapons anywhere. Platform top y 850. Dusk palette. The light cone falls from the top of the panel onto the platform.",
+   "actions": [
+    {
+     "t": 77.14,
+     "end": 78.3,
+     "cue": {
+      "word": "ساقوها",
+      "t": 77.14
+     },
+     "who": "crowd",
+     "action": "The procession walks right down the street: headman first, the woman walking on her own, the smug elders, then the crowd",
+     "acting": "each walker on a different phase; the woman upright, eyes ahead",
+     "library": "walk + stagger + streetCrowd"
+    },
+    {
+     "t": 78.36,
+     "end": 79.3,
+     "cue": {
+      "word": "موضع",
+      "t": 78.7
+     },
+     "who": "set",
+     "action": "The stone platform slides into view at the end of the street under a dusk sky",
+     "acting": "the sky warms to dusk (u 0.42); long shadows",
+     "library": "marketStreet palette dusk + stonePlatform"
+    },
+    {
+     "t": 79.38,
+     "end": 80.3,
+     "cue": {
+      "word": "العقوبة،",
+      "t": 79.38
+     },
+     "who": "crowd",
+     "action": "The crowd halts in a half ring; the headman points to the platform",
+     "acting": "accordion stop; elders fold their arms",
+     "library": "lurch + PERSON_HANDS.pointFwd / folded"
+    },
+    {
+     "t": 80.36,
+     "end": 81.8,
+     "cue": {
+      "word": "بينما",
+      "t": 80.36
+     },
+     "who": "woman",
+     "action": "She climbs the two steps and stands on the platform alone",
+     "acting": "small hop on each step with a soft landSquash; she faces us",
+     "library": "hop + landSquash"
+    },
+    {
+     "t": 81.92,
+     "end": 83.1,
+     "cue": {
+      "word": "ترفع",
+      "t": 81.92
+     },
+     "who": "woman",
+     "action": "She raises both arms high and lifts her face",
+     "acting": "arm angles for a big readable shape; gaze [0, -1]; lid closing",
+     "library": "person aL/aR about [2.45, 2.85] + anticipate"
+    },
+    {
+     "t": 83.22,
+     "end": 85.0,
+     "cue": {
+      "word": "وتدعو",
+      "t": 83.22
+     },
+     "who": "fx",
+     "action": "A soft cone of light grows on her; one tear; the crowd shifts its feet, the elders glance at each other",
+     "acting": "wet eyes, lid 1, mouth moving (talk 0.3); crowd weight shifts are staggered",
+     "library": "skyLight 0 to 0.8 + wet + tremble (tiny)"
+    },
+    {
+     "t": 85.12,
+     "end": 86.2,
+     "cue": {
+      "word": "الحقيقة.",
+      "t": 85.12
+     },
+     "who": "daniel",
+     "action": "Push-in on her face; behind the tall backs at the rear a small yellow cap bobs up twice, trying to see",
+     "acting": "the cap is only a hint: two hops, 0.4 s apart",
+     "library": "hop + person child"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 86.26
+   }
+  },
+  {
+   "id": "S10",
+   "start": 86.26,
+   "end": 94.42,
+   "paragraphs": [
+    5
+   ],
+   "set": "townSquare",
+   "cast": [
+    "daniel",
+    "crowd",
+    "headman",
+    "woman"
+   ],
+   "summary": "Behind the procession is a boy, Daniel, twelve years old. He hops to see, squeezes through the grown-ups and takes the scene in with quick, thinking eyes.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "86.26 cut to the back of the crowd: x 1700, y 720, zoom 1.5. 88.6-90.1 pan right with Daniel as he squeezes to the front (x 1900). 93.3 push to zoom 2.0 on his face."
+   },
+   "composition": "Adults are tall verticals (s 1.0, heads at y 660); Daniel (child: true, head at about y 760) is framed between two of them, then alone in front with the platform and the woman soft at the right edge.",
+   "actions": [
+    {
+     "t": 86.26,
+     "end": 87.5,
+     "cue": {
+      "word": "كان",
+      "t": 86.26
+     },
+     "who": "camera",
+     "action": "Cut to the rear of the crowd: a wall of grown-up backs and shoulders",
+     "acting": "the adults murmur (small head turns, staggered)",
+     "library": "person presets + stagger"
+    },
+    {
+     "t": 87.58,
+     "end": 88.6,
+     "cue": {
+      "word": "الموكب",
+      "t": 87.98
+     },
+     "who": "daniel",
+     "action": "A boy hops twice behind them to see over, cap flying up each time",
+     "acting": "anticipation crouch, stretch at the top (sq 1.08), landSquash; eyes wide at the top of each hop",
+     "library": "anticipate + hop + landSquash"
+    },
+    {
+     "t": 88.64,
+     "end": 90.0,
+     "cue": {
+      "word": "صبي",
+      "t": 88.64
+     },
+     "who": "daniel",
+     "action": "He squeezes between two adults and pops out at the front",
+     "acting": "sq 0.88 in the gap, pop with overshoot; the two adults look down at him",
+     "library": "person {costume:'servant', child:true} + settleTo"
+    },
+    {
+     "t": 90.1,
+     "end": 90.6,
+     "cue": {
+      "word": "دانيال،",
+      "t": 90.1
+     },
+     "who": "lettering",
+     "action": "Arrow and name label point at him",
+     "acting": "he glances at the label side, then forward",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 90.66,
+     "end": 93.3,
+     "cue": {
+      "word": "اثنتا",
+      "t": 92.04
+     },
+     "who": "fx",
+     "action": "Counter beside him counts quickly up to 12 and lands; he stands only waist high to the headman",
+     "acting": "counter overshoots on 12; headman looks down, Daniel looks up",
+     "library": "S.counter + lookAt both ways"
+    },
+    {
+     "t": 93.36,
+     "end": 94.4,
+     "cue": {
+      "word": "سنة.",
+      "t": 93.36
+     },
+     "who": "daniel",
+     "action": "Push-in: his eyes jump from the woman on the platform to elder1, to elder2, and back: he is thinking",
+     "acting": "saccades (2-frame snaps), brow lowers, mouth closes to a line",
+     "library": "gazePlan(t, plan, 0.07)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 90.1,
+     "text": "DANIEL"
+    },
+    {
+     "t": 92.58,
+     "text": "AGE 12"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 94.42
+   }
+  },
+  {
+   "id": "S11",
+   "start": 94.42,
+   "end": 106.26,
+   "paragraphs": [
+    5
+   ],
+   "set": "townSquare",
+   "cast": [
+    "daniel",
+    "crowd",
+    "headman",
+    "woman",
+    "elder1",
+    "elder2"
+   ],
+   "summary": "Daniel steps forward and stops them: hear the two witnesses one at a time first. The headman allows it and the elders are separated.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "94.42 x 1930, y 700, zoom 1.25: Daniel between the crowd (left) and the platform (right). 100.6 ease out to zoom 1.0 to hold both elders. 104.6 settle on Daniel and elder1 (twoShot) as elder2 is walked off right."
+   },
+   "composition": "Daniel at x 1960, small, centre. Headman x 1830, elders x 1760 and 1700 at the front of the crowd, woman on the platform x 2130 (feet y 850). The dotted split line runs vertically at x 1730 between the two elders.",
+   "actions": [
+    {
+     "t": 94.42,
+     "end": 95.0,
+     "cue": {
+      "word": "تقدم",
+      "t": 94.42
+     },
+     "who": "daniel",
+     "action": "He walks out into the open space in front of the platform",
+     "acting": "short quick child steps (no sliding), chin up",
+     "library": "walk + footfalls"
+    },
+    {
+     "t": 95.02,
+     "end": 96.4,
+     "cue": {
+      "word": "وقال",
+      "t": 95.02
+     },
+     "who": "daniel",
+     "action": "He throws up a hand: wait",
+     "acting": "anticipation dip then stretch (sq 1.06); mouth open, brow +0.4",
+     "library": "anticipate + PERSON_HANDS.wave held as a stop palm"
+    },
+    {
+     "t": 96.54,
+     "end": 97.5,
+     "cue": {
+      "word": "يجب",
+      "t": 96.54
+     },
+     "who": "crowd",
+     "action": "The crowd freezes mid step; the headman's raised arm stops halfway",
+     "acting": "overshoot and settle; all eyes drop to the boy, staggered",
+     "library": "settleTo + stagger + lookAt"
+    },
+    {
+     "t": 97.64,
+     "end": 98.9,
+     "cue": {
+      "word": "يعاقبوا",
+      "t": 97.64
+     },
+     "who": "daniel",
+     "action": "He steps in front of the platform with one palm out toward the crowd",
+     "acting": "he looks tiny under the platform; the woman opens her eyes and looks down at him",
+     "library": "PERSON_HANDS.shield + lookAt"
+    },
+    {
+     "t": 99.04,
+     "end": 100.5,
+     "cue": {
+      "word": "الاستماع",
+      "t": 99.56
+     },
+     "who": "daniel",
+     "action": "He cups a hand to his ear: listen first",
+     "acting": "head tilt 5 px toward the ear hand",
+     "library": "PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 100.62,
+     "end": 101.7,
+     "cue": {
+      "word": "الشاهدين",
+      "t": 100.62
+     },
+     "who": "daniel",
+     "action": "He points at elder1, then at elder2",
+     "acting": "two clean points on two beats; both elders stiffen and glance at each other",
+     "library": "PERSON_HANDS.pointFwd + gazePlan"
+    },
+    {
+     "t": 101.76,
+     "end": 102.4,
+     "cue": {
+      "word": "انفراد،",
+      "t": 101.76
+     },
+     "who": "fx",
+     "action": "He pulls his hands apart: a dotted line drops between the two elders and they slide half a step apart",
+     "acting": "elders lean away from the line as if it were a wall",
+     "library": "PERSON_HANDS.armsOut + dashed line + settleTo"
+    },
+    {
+     "t": 102.48,
+     "end": 103.6,
+     "cue": {
+      "word": "فسمحوا",
+      "t": 102.48
+     },
+     "who": "headman",
+     "action": "The headman strokes his beard, thinks, and nods",
+     "acting": "eyes to the elders, to the boy, a long blink, then the nod",
+     "library": "PERSON_HANDS.chin + lid"
+    },
+    {
+     "t": 103.66,
+     "end": 104.6,
+     "cue": {
+      "word": "له",
+      "t": 103.66
+     },
+     "who": "elder1",
+     "action": "Elder1 swallows and gives one look straight to the lens",
+     "acting": "the film's one deliberate camera look for him (gaze [0, 0.05]), drop pulse for the gulp",
+     "library": "gaze to camera + drop pulse"
+    },
+    {
+     "t": 104.64,
+     "end": 106.2,
+     "cue": {
+      "word": "يسألهما.",
+      "t": 104.64
+     },
+     "who": "elder2",
+     "action": "Two townsmen walk elder2 away to the right, behind the barrels past the platform, out of earshot; he strains an ear back",
+     "acting": "reluctant small steps, head turning back; the barrels cover him (front pass)",
+     "library": "walk + PERSON_HANDS.cupEar + marketStreet props front pass"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 95.1,
+     "text": "WAIT!"
+    },
+    {
+     "t": 101.8,
+     "text": "ONE AT A TIME"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 105.9,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 106.26
+   }
+  },
+  {
+   "id": "S12",
+   "start": 106.26,
+   "end": 120.32,
+   "paragraphs": [
+    6
+   ],
+   "set": "townSquare",
+   "cast": [
+    "daniel",
+    "elder1",
+    "headman",
+    "crowd"
+   ],
+   "summary": "Daniel asks the first elder where it happened. Confident, the elder answers: the east side, under a pear tree. The answer is drawn in a thought cloud and kept as a card.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "tilt",
+    "notes": "twoShot(daniel, elder1, {margin: 120}): about x 1950, y 700, zoom 1.5. 112.3 tilt up and ease out to zoom 1.15 (y 560) to make room for the cloud above elder1."
+   },
+   "composition": "Daniel left (x 1890) looking up, elder1 right (x 2010) stooping down to him. Thought cloud 560 x 400 centred at (1990, 380) with its tail to elder1. Inside: the garden map at scale 0.42 (wall, gate, fountain), EAST on the right. Headman and two listeners at the left edge.",
+   "actions": [
+    {
+     "t": 106.26,
+     "end": 107.4,
+     "cue": {
+      "word": "سأل",
+      "t": 106.26
+     },
+     "who": "daniel",
+     "action": "Daniel looks up at elder1 and asks, one hand at his chin",
+     "acting": "talk, steady gaze up; elder1 smiles down at a mere child",
+     "library": "talk + PERSON_HANDS.chin + lookAt"
+    },
+    {
+     "t": 109.16,
+     "end": 109.9,
+     "cue": {
+      "word": "أين",
+      "t": 109.16
+     },
+     "who": "daniel",
+     "action": "He opens both palms: where",
+     "acting": "brows up, head tilt; the question lettering sits beside him, not over a face",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 110.58,
+     "end": 112.2,
+     "cue": {
+      "word": "الحادثة",
+      "t": 110.58
+     },
+     "who": "elder1",
+     "action": "Elder1 strokes his beard; his eyes dart up and to the side while he makes it up",
+     "acting": "saccades, lid 0.3; then a satisfied little nod",
+     "library": "gazePlan(t, plan, 0.07) + PERSON_HANDS.moustache"
+    },
+    {
+     "t": 112.32,
+     "end": 113.6,
+     "cue": {
+      "word": "أجاب",
+      "t": 112.32
+     },
+     "who": "elder1",
+     "action": "He puffs up and answers; a thought cloud pops over him showing the small garden: wall, gate, fountain",
+     "acting": "chest out (sq 1.04), talk 0.8, eyes half shut in confidence",
+     "library": "thoughtCloud(ctx, 1990, 380, 560, 400, t, {inside, scale: 0.42})"
+    },
+    {
+     "t": 114.44,
+     "end": 115.7,
+     "cue": {
+      "word": "وقعت",
+      "t": 114.44
+     },
+     "who": "elder1",
+     "action": "He sweeps his arm to his right",
+     "acting": "big arm angle so it reads on a phone",
+     "library": "person aR angle + anticipate"
+    },
+    {
+     "t": 115.8,
+     "end": 117.4,
+     "cue": {
+      "word": "الشرقي",
+      "t": 115.8
+     },
+     "who": "fx",
+     "action": "Inside the cloud the right half lights up yellow and the word lands on it with an arrow",
+     "acting": "stamp with a 2-frame squash",
+     "library": "S.label + S.arrow inside the cloud"
+    },
+    {
+     "t": 117.54,
+     "end": 119.0,
+     "cue": {
+      "word": "شجرة",
+      "t": 118.26
+     },
+     "who": "fx",
+     "action": "A pear tree pops up on the lit east side of the cloud",
+     "acting": "grows from the ground with overshoot; pears bob",
+     "library": "fruitTree {kind:'pear'} at cloud scale + settleTo"
+    },
+    {
+     "t": 119.16,
+     "end": 120.3,
+     "cue": {
+      "word": "كمثرى.",
+      "t": 119.16
+     },
+     "who": "fx",
+     "action": "One big yellow pear bounces beside the tree; the cloud snaps into a small card (EAST + pear) pinned at the top left of the panel",
+     "acting": "Daniel nods slowly; a tiny smile only while elder1 is not looking at him (mask on / off)",
+     "library": "hop on the pear icon + evidenceCard"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 109.2,
+     "text": "WHERE?"
+    },
+    {
+     "t": 115.8,
+     "text": "EAST"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 120.0,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 120.32
+   }
+  },
+  {
+   "id": "S13",
+   "start": 120.32,
+   "end": 126.88,
+   "paragraphs": [
+    6
+   ],
+   "set": "townSquare",
+   "cast": [
+    "daniel",
+    "elder1",
+    "elder2",
+    "headman",
+    "crowd"
+   ],
+   "summary": "Daniel sends the first elder away and calls the second to tell his story alone. The two never cross.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "x 1950, y 700, zoom 1.25. Pan 40 units left as elder1 leaves (121.1), 40 right as elder2 arrives (122.4): the swap is felt in the camera."
+   },
+   "composition": "Elder1 exits LEFT behind the cloth stall at x 1650 (front pass covers him) before elder2 enters from the RIGHT (from behind the barrels at x 2360). Daniel stays planted at x 1890 as the pivot. The card EAST + pear is pinned top left, then flips face down.",
+   "actions": [
+    {
+     "t": 120.32,
+     "end": 121.0,
+     "cue": {
+      "word": "ثم",
+      "t": 120.32
+     },
+     "who": "daniel",
+     "action": "Daniel bows his head politely to elder1",
+     "acting": "perfectly innocent face; blink",
+     "library": "drop + blink"
+    },
+    {
+     "t": 121.08,
+     "end": 122.3,
+     "cue": {
+      "word": "أبعده",
+      "t": 121.08
+     },
+     "who": "elder1",
+     "action": "Daniel waves elder1 off to the left; elder1 strolls away pleased with himself and disappears behind the cloth stall",
+     "acting": "smug walk, chin up, stick swinging",
+     "library": "walk + footfalls + marketStall front pass"
+    },
+    {
+     "t": 122.42,
+     "end": 123.2,
+     "cue": {
+      "word": "واستدعى",
+      "t": 122.42
+     },
+     "who": "daniel",
+     "action": "Daniel turns his eyes right and beckons",
+     "acting": "gaze right, two beckoning curls of the hand",
+     "library": "PERSON_HANDS.wave small + lookAt"
+    },
+    {
+     "t": 123.24,
+     "end": 124.5,
+     "cue": {
+      "word": "الشيخ",
+      "t": 123.24
+     },
+     "who": "elder2",
+     "action": "Elder2 shuffles in from the right wringing his hands, trying to see past Daniel to where elder1 went",
+     "acting": "worried brow (-0.6), eyes sliding left; Daniel side steps into his eye line",
+     "library": "walk + PERSON_HANDS.clasp + lookAt"
+    },
+    {
+     "t": 124.54,
+     "end": 126.0,
+     "cue": {
+      "word": "ليسمع",
+      "t": 124.54
+     },
+     "who": "daniel",
+     "action": "Daniel takes exactly the same pose as before: hand at the chin, then both palms open",
+     "acting": "setup and payoff: the same question, the same picture",
+     "library": "PERSON_HANDS.chin then palmsUp"
+    },
+    {
+     "t": 126.1,
+     "end": 126.85,
+     "cue": {
+      "word": "وحده.",
+      "t": 126.1
+     },
+     "who": "fx",
+     "action": "The EAST card flips face down so elder2 cannot read it; elder2 swallows",
+     "acting": "card flip is a 6-frame squeeze; elder2 drop pulse",
+     "library": "evidenceCard flip + drop pulse"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 126.88
+   }
+  },
+  {
+   "id": "S14",
+   "start": 126.88,
+   "end": 135.32,
+   "paragraphs": [
+    7
+   ],
+   "set": "townSquare",
+   "cast": [
+    "daniel",
+    "elder2",
+    "headman",
+    "crowd"
+   ],
+   "summary": "The second elder answers: the west side, under an apple tree. A second cloud draws the opposite picture.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "tilt",
+    "notes": "Mirror of S12: twoShot(daniel, elder2), x 1950, y 700, zoom 1.5; 129.6 tilt up and out to zoom 1.15, y 560 for the cloud."
+   },
+   "composition": "Same staging as S12 on purpose (Daniel x 1890, elder2 x 2010). Cloud 560 x 400 at (1990, 380) with the SAME garden map, but now the LEFT half lights (red) and an apple tree stands there. Face-down card stays top left.",
+   "actions": [
+    {
+     "t": 126.88,
+     "end": 128.2,
+     "cue": {
+      "word": "قال",
+      "t": 126.88
+     },
+     "who": "elder2",
+     "action": "Elder2 starts talking, eyes darting, hands still wringing",
+     "acting": "talk 0.6, saccades; he copies his friend's confident nod a beat too late",
+     "library": "talk + gazePlan 0.07"
+    },
+    {
+     "t": 129.66,
+     "end": 130.7,
+     "cue": {
+      "word": "الحادثة",
+      "t": 130.14
+     },
+     "who": "fx",
+     "action": "The second thought cloud pops over him: the same small garden",
+     "acting": "same pop as the first so the audience compares",
+     "library": "thoughtCloud (same inside function)"
+    },
+    {
+     "t": 131.42,
+     "end": 132.2,
+     "cue": {
+      "word": "الجانب",
+      "t": 131.68
+     },
+     "who": "elder2",
+     "action": "He sweeps his arm to his LEFT",
+     "acting": "the mirror of elder1's gesture",
+     "library": "person aL angle + anticipate"
+    },
+    {
+     "t": 132.26,
+     "end": 133.8,
+     "cue": {
+      "word": "الغربي،",
+      "t": 132.26
+     },
+     "who": "fx",
+     "action": "The left half of the cloud lights up red and the word lands on it",
+     "acting": "stamp with squash; Daniel's eyebrows shoot up (brow -0.8) for four frames, then level",
+     "library": "S.label + S.arrow inside the cloud"
+    },
+    {
+     "t": 133.86,
+     "end": 134.4,
+     "cue": {
+      "word": "شجرة",
+      "t": 133.86
+     },
+     "who": "fx",
+     "action": "An apple tree pops up on the west side of the cloud",
+     "acting": "overshoot, apples bob",
+     "library": "fruitTree {kind:'apple'} + settleTo"
+    },
+    {
+     "t": 134.48,
+     "end": 135.3,
+     "cue": {
+      "word": "تفاح.",
+      "t": 134.48
+     },
+     "who": "fx",
+     "action": "One big red apple bounces; the cloud snaps into a second card (WEST + apple) top right; a villager in the crowd frowns and looks from one card to the other",
+     "acting": "the same villager who was hushed in S7",
+     "library": "evidenceCard + gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 132.3,
+     "text": "WEST"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 135.32
+   }
+  },
+  {
+   "id": "S15",
+   "start": 135.32,
+   "end": 150.1,
+   "paragraphs": [
+    7
+   ],
+   "set": "townSquare",
+   "cast": [
+    "daniel",
+    "elder1",
+    "elder2",
+    "headman",
+    "crowd",
+    "woman"
+   ],
+   "summary": "Daniel turns the first card over. East and pear against west and apple: the two stories cannot both be true. The invented young man pops like a bubble and the crowd's eyes turn on the elders. The woman lowers her arms.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "135.32 x 1950, y 640, zoom 1.3. 136.6-137.4 pull out to zoom 0.95 as the two cards grow to the centre top. 139.6 pan 60 left to take in the crowd. 146.6-148.2 ease to the woman on the platform: x 2110, y 660, zoom 1.5."
+   },
+   "composition": "Two cards (each 300 x 220) side by side at panel top centre, the red unequal mark between them. Elders together below at x 1990 and 2060, Daniel x 1890, crowd left, the woman on the platform right. The cards stay above every head.",
+   "actions": [
+    {
+     "t": 135.32,
+     "end": 136.5,
+     "cue": {
+      "word": "عندها",
+      "t": 135.32
+     },
+     "who": "daniel",
+     "action": "Daniel raises one finger and flips the first card face up",
+     "acting": "calm face, small smile; finger arrives with overshoot",
+     "library": "PERSON_HANDS.pointUp + evidenceCard flip"
+    },
+    {
+     "t": 136.62,
+     "end": 137.3,
+     "cue": {
+      "word": "ظهر",
+      "t": 136.62
+     },
+     "who": "fx",
+     "action": "Both cards slide to the centre and grow: EAST + pear tree on one, WEST + apple tree on the other",
+     "acting": "cards settle with a wobble",
+     "library": "evidenceCard + settleTo"
+    },
+    {
+     "t": 137.4,
+     "end": 138.4,
+     "cue": {
+      "word": "التناقض",
+      "t": 137.4
+     },
+     "who": "fx",
+     "action": "A red zigzag unequal mark slashes down between the two cards; a small panel-only shake",
+     "acting": "the one hard accent of the film; 3-frame shake",
+     "library": "S.emphasis + panel-only shake"
+    },
+    {
+     "t": 138.48,
+     "end": 139.5,
+     "cue": {
+      "word": "الشهادتين،",
+      "t": 138.48
+     },
+     "who": "elder1",
+     "action": "Elder1, brought back from the left, sees both cards beside elder2: jaws drop, they look at each other, then at the lens",
+     "acting": "shock: eyes wide, mouth o, settleTo; no blinks during the hold",
+     "library": "settleTo + eyes 'wide' + noBlink"
+    },
+    {
+     "t": 139.62,
+     "end": 140.9,
+     "cue": {
+      "word": "وانكشف",
+      "t": 139.62
+     },
+     "who": "crowd",
+     "action": "A gasp runs through the crowd; heads turn from the cards down to the elders",
+     "acting": "staggered; brows turn to an angry V aimed at the elders now",
+     "library": "stagger + gazePlan"
+    },
+    {
+     "t": 141.24,
+     "end": 142.1,
+     "cue": {
+      "word": "الرجلين",
+      "t": 141.24
+     },
+     "who": "elder2",
+     "action": "Elder2 drops his hands; elder1's stick slips and falls",
+     "acting": "both shrink (sq 0.92), tip backward -0.06, tremble",
+     "library": "tremble + fallY + rebound (stick)"
+    },
+    {
+     "t": 142.14,
+     "end": 142.9,
+     "cue": {
+      "word": "اختلقا",
+      "t": 142.14
+     },
+     "who": "fx",
+     "action": "The dotted outline of the young man reappears over them and pops like a soap bubble",
+     "acting": "pop: ring of 8 short strokes, 5 frames",
+     "library": "iconBalloon + pop ring"
+    },
+    {
+     "t": 142.96,
+     "end": 143.7,
+     "cue": {
+      "word": "الاتهام.",
+      "t": 142.96
+     },
+     "who": "fx",
+     "action": "The red testimony balloon from the garden cracks in two and falls away",
+     "acting": "two halves fall with gravity and fade",
+     "library": "iconBalloon halves + fallY"
+    },
+    {
+     "t": 143.78,
+     "end": 146.5,
+     "cue": {
+      "word": "كلمة",
+      "t": 144.98
+     },
+     "who": "headman",
+     "action": "The headman lowers his arm, looks at the elders, then turns to the platform and bows his head",
+     "acting": "shame ending pattern: look up at her, eyes break away, head drops",
+     "library": "gaze plan + drop"
+    },
+    {
+     "t": 146.6,
+     "end": 148.1,
+     "cue": {
+      "word": "دليلًا",
+      "t": 146.6
+     },
+     "who": "crowd",
+     "action": "The crowd steps back and opens a path; several look at their feet. The hushed villager nods to himself",
+     "acting": "staggered half steps back; lids low",
+     "library": "walk (short) + stagger + lid"
+    },
+    {
+     "t": 148.2,
+     "end": 150.0,
+     "cue": {
+      "word": "المرأة.",
+      "t": 148.2
+     },
+     "who": "woman",
+     "action": "On the platform she lowers her arms, opens her eyes and breathes out; her eyes find Daniel",
+     "acting": "wet eyes, the first small smile since the garden; Daniel looks up at her",
+     "library": "aL/aR ease down + wet + breathe + lookAt"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 142.2,
+     "text": "MADE UP!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 149.5,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 150.1
+   }
+  },
+  {
+   "id": "S16",
+   "start": 150.1,
+   "end": 159.64,
+   "paragraphs": [
+    8
+   ],
+   "set": "townSquare",
+   "cast": [
+    "elder1",
+    "elder2",
+    "woman",
+    "daniel",
+    "crowd",
+    "headman",
+    "dove"
+   ],
+   "summary": "The legend: fire from the sky strikes the two elders. Shown as a storybook picture: a flame bolt, a white flash, and afterwards only two smoking turbans, a stick and the key ring. The woman steps down, saved.",
+   "camera": {
+    "shot": "wide",
+    "move": "shake",
+    "notes": "x 2000, y 620, zoom 0.95 with the sky open above. Panel-only shake for 0.4 s at 153.54. 156.2 ease to the platform steps: x 2090, y 700, zoom 1.3."
+   },
+   "composition": "Elders have backed away alone into the empty space LEFT of the crowd path at x 1780..1840, clear of everyone else (at least 200 units of air). Bolt enters at the panel top above them. The woman, Daniel and the crowd are on the right half and shield their eyes.",
+   "actions": [
+    {
+     "t": 150.1,
+     "end": 152.0,
+     "cue": {
+      "word": "وتقول",
+      "t": 150.1
+     },
+     "who": "fx",
+     "action": "A scalloped storybook frame closes round the picture and a caption strip says this part is the legend",
+     "acting": "frame draws on in 0.5 s; the elders, alone, back away from the crowd",
+     "library": "S.box border + S.label"
+    },
+    {
+     "t": 152.1,
+     "end": 152.8,
+     "cue": {
+      "word": "نارًا",
+      "t": 152.1
+     },
+     "who": "set",
+     "action": "The sky darkens to deep blue and a yellow glow opens at the top of the panel; the elders look up, trembling",
+     "acting": "gaze [0, -1], brows up, tremble; crowd looks up a few frames later",
+     "library": "dayCycle night tint + skyLight + tremble"
+    },
+    {
+     "t": 152.82,
+     "end": 153.5,
+     "cue": {
+      "word": "السماء",
+      "t": 152.82
+     },
+     "who": "fx",
+     "action": "A zigzag bolt of flame comes down from the glow toward the two",
+     "acting": "anticipation: the glow pulses once, then the bolt draws downward in 5 frames",
+     "library": "skyFire(ctx, x, y0, y1, p)"
+    },
+    {
+     "t": 153.54,
+     "end": 154.4,
+     "cue": {
+      "word": "أصابت",
+      "t": 153.54
+     },
+     "who": "fx",
+     "action": "A 2-frame white flash covers the strike; panel-only shake; everyone else throws up an arm to shield the eyes",
+     "acting": "the contact is never seen; shield gestures staggered",
+     "library": "white flash + panel-only shake + PERSON_HANDS.shield"
+    },
+    {
+     "t": 154.42,
+     "end": 156.1,
+     "cue": {
+      "word": "الشيخين",
+      "t": 154.42
+     },
+     "who": "fx",
+     "action": "The flash clears: where the elders stood there is a round scorch mark with two smoking turbans, the stick and the key ring; three smoke puffs rise",
+     "acting": "no bodies. Smoke puffs drift up and fade; the key ring rocks to a stop",
+     "library": "dustBurst grey + swing + flat props"
+    },
+    {
+     "t": 156.16,
+     "end": 158.0,
+     "cue": {
+      "word": "فنجت",
+      "t": 156.16
+     },
+     "who": "woman",
+     "action": "The woman steps down from the platform; Daniel waits at the bottom step; she puts a hand to her chest and bows her head to him",
+     "acting": "soft landSquash on the ground; warm eye contact, both smile; Daniel scratches the back of his head",
+     "library": "hop + landSquash + PERSON_HANDS.chest"
+    },
+    {
+     "t": 158.06,
+     "end": 159.6,
+     "cue": {
+      "word": "العقوبة.",
+      "t": 158.28
+     },
+     "who": "dove",
+     "action": "The empty platform; the white dove lands on it; the storybook frame opens again",
+     "acting": "landSquash, head tilt",
+     "library": "bird {kind:'dove'} + S.box off"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 150.7,
+     "text": "THE LEGEND SAYS..."
+    }
+   ],
+   "sfx": [
+    {
+     "t": 159.3,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 159.64
+   }
+  },
+  {
+   "id": "S17",
+   "start": 159.64,
+   "end": 168.18,
+   "paragraphs": [
+    8
+   ],
+   "set": "townSquare",
+   "cast": [
+    "daniel",
+    "crowd",
+    "headman",
+    "woman"
+   ],
+   "summary": "The moral: the most important moment was Daniel's simple question. A big question mark stands over the boy and the two cards show what it uncovered.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "x 1900, y 680, zoom 1.4 on Daniel, slow push to 1.7 by 164.1; the surroundings drop to 45 percent tone so he stands in a pool of light."
+   },
+   "composition": "Daniel centre. Question mark (160 tall, yellow with black outline) above and slightly right of his head, never over his face. From 166.8 the two cards sit left and right of the question mark at half size.",
+   "actions": [
+    {
+     "t": 159.64,
+     "end": 161.1,
+     "cue": {
+      "word": "أما",
+      "t": 159.64
+     },
+     "who": "camera",
+     "action": "Push in on Daniel; the crowd and street dim to a flat tone behind him",
+     "acting": "he looks around, a little shy now that everyone is looking",
+     "library": "tone overlay (alpha) + lookAt"
+    },
+    {
+     "t": 161.42,
+     "end": 162.9,
+     "cue": {
+      "word": "الحكاية",
+      "t": 161.42
+     },
+     "who": "daniel",
+     "action": "He rubs the back of his head and smiles",
+     "acting": "child body language: weight on one foot, tip 0.04",
+     "library": "PERSON_HANDS.headHold one hand + tip"
+    },
+    {
+     "t": 162.96,
+     "end": 164.0,
+     "cue": {
+      "word": "سؤال",
+      "t": 162.96
+     },
+     "who": "fx",
+     "action": "A big yellow question mark pops above him and bounces once",
+     "acting": "overshoot and settle; he looks up at it",
+     "library": "S.emphasis / drawn glyph + hop + lookAt"
+    },
+    {
+     "t": 164.1,
+     "end": 165.4,
+     "cue": {
+      "word": "البسيط",
+      "t": 164.1
+     },
+     "who": "fx",
+     "action": "The question mark shrinks to a small plain one sitting on his open palm",
+     "acting": "he holds it up like something light and ordinary",
+     "library": "PERSON_HANDS.palmsUp + scale ease"
+    },
+    {
+     "t": 165.48,
+     "end": 166.7,
+     "cue": {
+      "word": "منع",
+      "t": 165.48
+     },
+     "who": "fx",
+     "action": "He holds the little question mark out like a stop sign; the dim crowd silhouettes behind stop mid step",
+     "acting": "replay of the WAIT pose from S11",
+     "library": "PERSON_HANDS.shield + settleTo"
+    },
+    {
+     "t": 166.82,
+     "end": 168.1,
+     "cue": {
+      "word": "شاهدين",
+      "t": 166.82
+     },
+     "who": "fx",
+     "action": "The two cards return on both sides (EAST pear, WEST apple) and a red cross lands between them; lettering below",
+     "acting": "stamp with squash; Daniel nods once to the audience",
+     "library": "evidenceCard x2 + S.emphasis"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 162.96,
+     "text": "?"
+    },
+    {
+     "t": 167.0,
+     "text": "ASK FIRST!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 168.18
+   }
+  },
+  {
+   "id": "S18",
+   "start": 168.18,
+   "end": 173.18,
+   "paragraphs": [
+    8
+   ],
+   "set": "walledGarden",
+   "cast": [
+    "woman",
+    "daniel",
+    "dove"
+   ],
+   "summary": "Back to the first picture: morning in the garden, the woman on her way to the prayer house again, Daniel waving from the gate. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "x 1150, y 640, zoom 1.1 easing out to x 900, zoom 0.82 by 170.4; hold for THE END."
+   },
+   "composition": "Same framing as the end of S1: sun low on the right, dome beyond the east wall. Woman at x 1250 walking right, Daniel in the open gate (x 800), no keepers on the bench (the key ring hangs on the open gate). THE END in the sky band, clear of both faces.",
+   "actions": [
+    {
+     "t": 168.18,
+     "end": 169.0,
+     "cue": {
+      "word": "تُختبر",
+      "t": 168.18
+     },
+     "who": "woman",
+     "action": "Morning garden; the woman walks east past the fountain toward the dome, face calm as in S2",
+     "acting": "the same serene lid 0.4 and smile; walk with soft footfalls",
+     "library": "walk + footfalls + skyLight 0.3"
+    },
+    {
+     "t": 168.96,
+     "end": 170.3,
+     "cue": {
+      "word": "أقوالهما.",
+      "t": 168.96
+     },
+     "who": "daniel",
+     "action": "Daniel waves from the open gate; she turns her head and lifts a hand back",
+     "acting": "wave on 3 beats; her gaze to him, then on to the dome",
+     "library": "PERSON_HANDS.wave + lookAt"
+    },
+    {
+     "t": 170.4,
+     "end": 173.18,
+     "who": "lettering",
+     "action": "THE END pops and holds 2.8 s; the dove crosses the sky and lands on the wall where it landed at the start",
+     "acting": "title overshoot and settle; fruit bobs, fountain plays; nothing else moves",
+     "library": "S.title + bird fly + landSquash"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 170.4,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 170.4,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 173.18
+   }
+  }
+ ],
+ "ending": {
+  "t": 170.4,
+  "description": "After the last word (169.92) the film is back in the morning garden of the opening: the woman walks east toward the prayer house, Daniel waves from the open gate, the dove lands on the wall. THE END pops at 170.4 in the sky band and holds to 173.18 with only the fruit, the fountain and the dove moving."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "تحكي رواية قديمة عن امرأة صالحة من بني إسرائيل|اعتادت الذهاب كل يوم إلى موضع للصلاة.|وكانت تمر أولًا ببستان قريب،|فتتوضأ فيه قبل أن تتجه إلى عبادتها مطمئنة.",
+   "en": "An old story tells of a devout Israelite woman|who visited a place of prayer daily,|stopping at a nearby garden|to perform ablutions."
+  },
+  {
+   "p": 2,
+   "ar": "كان للبستان حارسان مسنان، فطمعا في المرأة|وطلبا منها ما لا تقبله. رفضت طلبهما بثبات،|فهدداها بأن يتفقا على شهادة كاذبة|تمس سمعتها إذا لم تستجب لهما.",
+   "en": "The garden had two elderly keepers|who made an improper demand. When she refused,|they threatened to ruin her reputation|with false testimony."
+  },
+  {
+   "p": 3,
+   "ar": "قالت المرأة إنها لن تستسلم لتهديدهما،|ففتح الحارسان باب البستان ورفعا أصواتهما.|اجتمع الناس مسرعين، وزعم الرجلان|أنهما رأيا المرأة مع شاب فر من المكان قبل وصولهم.",
+   "en": "She would not yield.|The keepers opened the gate, cried for help,|and falsely claimed to have caught her|with a young man who escaped."
+  },
+  {
+   "p": 4,
+   "ar": "أخذ الناس كلام الشيخين من غير تحقيق،|وطافوا باسم المرأة في الطرقات ثلاثة أيام.|وفي اليوم الرابع ساقوها إلى موضع العقوبة،|بينما كانت ترفع يديها وتدعو أن تظهر الحقيقة.",
+   "en": "The crowd accepted their accusation without checking it.|For three days they publicly shamed her,|then led her away for punishment|as she prayed for vindication."
+  },
+  {
+   "p": 5,
+   "ar": "كان خلف الموكب صبي يدعى دانيال، عمره اثنتا عشرة سنة.|تقدم وقال إنهم يجب ألا يعاقبوا المرأة|قبل الاستماع إلى الشاهدين على انفراد، فسمحوا له بأن يسألهما.",
+   "en": "A twelve-year-old boy named Daniel followed the procession.|He insisted that no punishment occur|before the witnesses were questioned separately."
+  },
+  {
+   "p": 6,
+   "ar": "سأل دانيال الشيخ الأول أين شاهد الحادثة المزعومة.|أجاب بأنها وقعت في الجانب الشرقي من الحديقة، تحت شجرة كمثرى.|ثم أبعده دانيال واستدعى الشيخ الثاني ليسمع روايته وحده.",
+   "en": "Daniel asked the first elder where the alleged incident happened.|The man said it was on the east side,|beneath a pear tree."
+  },
+  {
+   "p": 7,
+   "ar": "قال الشيخ الثاني إن الحادثة جرت في الجانب الغربي،|تحت شجرة تفاح.|عندها ظهر التناقض بين الشهادتين، وانكشف أن الرجلين اختلقا الاتهام.|لم تعد كلمة الحارسين دليلًا على ذنب المرأة.",
+   "en": "The second elder said it happened on the west side|under an apple tree.|Their contradictory stories|exposed the accusation as false."
+  },
+  {
+   "p": 8,
+   "ar": "وتقول الرواية إن نارًا من السماء أصابت الشيخين بعد ذلك،|فنجت المرأة من العقوبة.|أما أهم لحظة في الحكاية فهي سؤال دانيال البسيط|الذي منع تصديق شاهدين لم تُختبر أقوالهما.",
+   "en": "In the legend, heavenly fire then strikes the false accusers|and the woman is saved.|Daniel’s crucial act|was to test their claims."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "walledGarden",
+   "description": "Walled garden strip 1600 wide with a central gate in the back wall, an apple tree west, a pear tree east, a bench, a fountain and a domed prayer house beyond the east wall (all dimensions in sets.walledGarden).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "sets file function walledGarden(ctx, o) returning anchors. Bake the static part (skyless: wall rectangle with halftone shade, coping, vines as scallop strokes, lawn band, path stones, dome from a rect plus half circle) with bake(); live parts: skyCycle(ctx, o.u), townDoor for the gate (o.gate 0..1, inside callback), fruitTree sway, fountain jet, front pass with bush(). Related planned sets (orchard, palaceGarden) have other layouts; this one is the generic garden with a gate."
+  },
+  {
+   "type": "prop",
+   "name": "fruitTree",
+   "description": "Apple or pear tree on the Library tree with bobbing fruit; also usable small inside clouds and cards.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "tree(ctx, x, 900, {w, top, crowns}) then loop nine seeded fruit positions (K.rng seed) drawing circles; pears are two stacked circles; sway from Math.sin(t * 1.3 + i)."
+  },
+  {
+   "type": "prop",
+   "name": "fountain",
+   "description": "Planned stone basin fountain with a keyed jet (AN-114); the same function.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rounded rect basin, blue water ellipse with Ben-Day dots, pedestal rect, bowl half ellipse, jet as three tapering white strokes scaled by o.jet; ripple() on touch times."
+  },
+  {
+   "type": "prop",
+   "name": "evidenceCard",
+   "description": "The testimony card (map, lit half, word, tree and fruit) with a flip state; drawn in panel space above the heads.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "S.box style white rect with brush border; inside a clipped mini drawing using the same inside(c) function as the thought cloud; flip by scaling x through 0; draw after the world, before finish."
+  },
+  {
+   "type": "prop",
+   "name": "stonePlatform + keyRing",
+   "description": "Two small props: the bare stone platform with two steps, and the key ring.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rects with dot shading and two block lines; ring as a stroked circle with two key shapes (rect shaft plus two teeth), rotated by swing()."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "description": "Planned wordless picture balloon, single mode, with four icons for this film (squiggle, two mouths, veil with blot, dashed man outline).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Use the shared planned function if it exists when this film is built; else a rounded balloon with tail (halftone-pop box primitive plus a triangle), pop 0..1 scale with overshoot, icon callbacks. The dashed man is the person silhouette path stroked with ctx.setLineDash([10, 8]) and no fill."
+  },
+  {
+   "type": "effect",
+   "name": "skyLight",
+   "description": "Planned soft cone of yellow halftone light from the top of the frame, strength 0..1 (prayers in S1, S2, S9, S18; the glow before the bolt in S16).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Trapezoid from the panel top to the target, filled yellow at alpha 0.25 * strength with a Ben-Day dot overlay, soft edge by two nested trapezoids."
+  },
+  {
+   "type": "effect",
+   "name": "skyFire",
+   "description": "A bolt of flame from the sky: zigzag path 70 wide of red with a yellow core and black brush outline drawing downward in 5 frames, then a 2-frame white flash of the whole panel, then a scorch disc (ellipse 220 x 40, black dots) and three grey smoke puffs.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Polyline with 6 seeded zigzag points revealed by progress p; flame tongues as small triangles along it; flash is a white fillRect at alpha 1 for 2 frames; smoke with dustBurst in grey; shake inside the panel clip only. Related planned effect: skyCry (rings)."
+  },
+  {
+   "type": "motion",
+   "name": "streetCrowd",
+   "description": "Planned helper (AN-107) for a small crowd of person presets in two depth rows; here five fixed members with staggered entries, accordion stop, ripple reactions (gasp, nod, step back).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Array of member records {preset, pal, s, row, x0, delay}; positions from one group position function plus offsets, each member walk() on its own xf so feet never slide; reactions through stagger(i)."
+  }
+ ],
+ "owner_questions": [
+  "The improper demand (P2) is shown only as the elders blocking her path and whispering behind a cupped hand with an unreadable scribble balloon; nobody touches her. Default: keep it this discreet.",
+  "The false claim (P3) is shown as an empty dotted outline of a young man running out of a balloon; the woman is never drawn with him. Default: keep.",
+  "Three days of public shaming (P4): the Arabic says they went round the streets with her name, so the film shows criers and a whisper chain with a blotted veil icon, and the woman alone at a doorway; she is not paraded. Default: keep.",
+  "The place of punishment (P4) is a bare stone platform; no stones, ropes or weapons are drawn and the kind of punishment is never shown. Default: keep.",
+  "The fire from heaven (P8) is framed as a storybook legend: bolt, white flash, then only two smoking turbans, the stick and the keys on a scorch mark; no bodies or burning figures. Default: keep this softened version.",
+  "Added companion: a white dove in the garden, on the empty platform and in the last shot (not in the script). Default: keep.",
+  "Added character business: one young villager starts to doubt and is hushed (S7), and a town headman decides for the crowd. Default: keep both.",
+  "Invented lettering: NO!, FALSE!, HELP! HELP!, DAY 1 2 3, DAY 4, DANIEL, AGE 12, WAIT!, ONE AT A TIME, WHERE?, EAST, WEST, MADE UP!, THE LEGEND SAYS..., a question mark, ASK FIRST!, PRAYER HOUSE. Default: keep (19 items with the title and THE END).",
+  "The on-screen title drops the word WICKED to fit one line pair: THE DEVOUT WOMAN AND THE TWO ELDERS. Default: use the short title.",
+  "East is drawn on the right and west on the left (sun rising on the right in the garden). Default: keep.",
+  "The last shot returns to the garden with the woman walking to prayer and Daniel waving (an added epilogue image under the final words). Default: keep.",
+  "SCRIPT: P5 English omits the last Arabic clause (so they allowed him to question them); both kept verbatim.",
+  "SCRIPT: P6 English omits the last Arabic sentence (then Daniel sent him away and called the second elder to hear his account alone); both kept verbatim, so the last English chunk stays on screen during that sentence.",
+  "SCRIPT: P7 English omits the last Arabic sentence (the keepers' word was no longer proof of the woman's guilt); both kept verbatim.",
+  "SCRIPT: P1 English omits that she went on to her worship with a peaceful heart, and P8 English paraphrases the closing sentence; both kept verbatim."
+ ],
+ "implementation_notes": [
+  "Copy Library/template to Animations/AN-142; cue everything with w(p, n) from timing.json. The cue times in this plan are the word starts in planning/inputs/timeline.md.",
+  "Two worlds: walledGarden (1600 wide; S1 to S7 and S18) and townSquare = marketStreet strip w 2400 (S8 to S17). Camera values in the scenes are world centre x, y and zoom; clamp as in the template. For the strip use ctx.translate(-camX, 0) with camX = x - 500 / zoom.",
+  "East is ALWAYS screen right, west screen left: sun on the right in the garden, pear tree right, apple tree left, EAST card lights its right half in yellow, WEST card its left half in red. Elder colours follow: elder1 green and yellow (pear), elder2 red (apple).",
+  "People enter the garden through the gate in the back wall: draw arriving figures inside the townDoor inside() callback (clipped to the opening, s 0.85) until they cross the threshold, then on the path at full size. This suits the front-facing person figure.",
+  "Set LIFE.t = t each frame so everybody blinks; suppress blinks (noBlink) during the held shocks at 138.48 to 139.5 and the camera look at 103.66.",
+  "Every figure always has a gaze target: use look(T, headPos, plan) per character with the plans implied by the actions; listeners look at the speaker. Crowd members never move in unison: stagger(i) 3 to 5 frames.",
+  "The same inside(c) function draws the garden map for both thought clouds and both cards: wall line, gate, fountain dot, then the lit half, the word and the fruitTree. Parameter side: 'E' or 'W'.",
+  "S12 and S14 must be staged identically (positions, camera, cloud size) so the audience compares the two answers; only the pointing arm, the lit half, the colour and the tree change.",
+  "Nobody touches the woman in any scene. Keep at least 60 units of air between her and any other figure; in S9 she walks and climbs on her own.",
+  "S16: the white flash covers the frame for 2 frames at 153.54; before it the elders stand whole, after it they are simply absent. Do not draw flames on a figure.",
+  "Lettering never covers a face: title and THE END in the sky band (y 120 to 330), cards and clouds above y 580, WAIT! and WHERE? beside Daniel on the side away from the listener.",
+  "Sound: 10 quiet effects (master 0.6) only in the listed pauses: chime 10.6, whoosh 20.75, low thud 25.2, whoosh 53.75, thud 64.9, pop 105.9, pop 120.0, chime 149.5, chime 159.3, chime 170.4. The shout, the gasp, the contradiction mark and the fire bolt fall inside continuous narration and stay silent on purpose.",
+  "The LATER card at 70.12 sits on continuous narration: keep it short (0.5 s, covered midpoint at 70.12 for the hidden cut from the garden to the street).",
+  "Subtitles: use the chunk marks in subtitles; time each chunk from the first word of the chunk in timing.json."
+ ],
+ "warnings": [
+  "Mature source material (an improper demand, a false accusation of impropriety, public shaming, an implied execution, death by fire). The plan keeps all of it off screen or symbolic; see owner_questions before animating.",
+  "The narration has few pauses (nine of 0.6 s or more), so the film is nearly silent apart from the narrator: the acting has to carry the beats.",
+  "P6: the English has three sentences fewer than the Arabic in places; in P6 the third Arabic chunk has no matching English, so the English chunk 'beneath a pear tree.' stays up during it.",
+  "Crowd shots use up to 9 figures at once (5 townspeople, headman, 2 elders, woman or Daniel): keep them in two rows and check phone legibility on a contact sheet; drop to 4 townspeople if it crowds.",
+  "The person figure is front-facing only: turning away is acted with gaze, head drop and walking off, not with a back view. The 'wall of backs' in S10 is front-facing adults looking toward the platform with their eyes turned right.",
+  "walledGarden, iconBalloon, skyLight, fountain and streetCrowd are planned or new: none exists in Library yet. If iconBalloon is still missing when this film is built, a plain S.box balloon with the four icons is enough.",
+  "Arms are short (about 74 units): the raised prayer arms (81.92) and the pointing sweeps (114.44, 131.42) must use aL/aR angles, not hand targets."
+ ]
+}

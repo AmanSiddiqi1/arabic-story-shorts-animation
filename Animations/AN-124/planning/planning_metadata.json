@@ -1,0 +1,84 @@
+{
+ "story_id": "AN-124",
+ "title": "AL-MUTALAMMIS AND HIS WIFE UMAYMAH",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T14:53:26",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-ae5e3bf910264b90e.jsonl",
+ "agent_id": "ae5e3bf910264b90e",
+ "model_messages": {
+  "claude-fable-5-2": 19
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "0a06eee7a928d50f8620adf29d8aa2cb373fd4dee07d757ce38a2e5378a7af97",
+  "paragraphs": 8,
+  "segments": [
+   "AN-124-P01-S01",
+   "AN-124-P01-S02",
+   "AN-124-P01-S03",
+   "AN-124-P01-S04",
+   "AN-124-P01-S05",
+   "AN-124-P01-S06",
+   "AN-124-P01-S07",
+   "AN-124-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-124_AL_MUTALAMMIS_AND_HIS_WIFE_UMAYMAH_full_slowed.mp3",
+  "sha256": "5157e43c40fc1994023ca3b5283df181ff380f6d716997a929d13e5b5232640a",
+  "duration": 171.61
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-124_AL_MUTALAMMIS_AND_HIS_WIFE_UMAYMAH_full_slowed.mp3.words.json",
+  "sha256": "6f4b4ec23d53461546a1e68c2b819c4cdf34aaa86a21fb84d2b081e3583b28cf",
+  "manifest_status": "SUCCESS; METADATA MISMATCH",
+  "script_match": 0.988
+ },
+ "library_rev": "5a93429",
+ "scenes": 16,
+ "actions": 166,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "desertCamp",
+   "effort": "L"
+  },
+  {
+   "type": "effect",
+   "name": "verseRibbon",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "person faceCover",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "musicNotes",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "scroll + tallyMarks",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "desertCamp is a large new set (effort L) and almost the whole film plays on it; build and still-check it first.",
+  "The narration never pauses for 0.6 s; only 4 effects are planned (two inside the narration, two after it). If either inner one touches a word in the real audio, drop it rather than move it.",
+  "The person figure is front-facing only: 'looking back', 'turning away' and walking off are done with gaze, head offset, tip and travel direction, not a profile. The groom's exit wave with his back turned must be read from the arm and the travel, since a back view does not exist.",
+  "faceCover must leave both eyes clear; if the planned Library field hides the eyes at 1, cap it at about 0.7 here.",
+  "Three verse ribbons plus thought cloud in S11-S12 can crowd the frame: keep her cloud in the upper right, his ribbon at head height, and remove the cloud by 126.5.",
+  "Twelve seated or standing people appear in the wedding wide; keep guests to four plus two drummers and two children, each with a different delay, so nothing moves in unison."
+ ]
+}

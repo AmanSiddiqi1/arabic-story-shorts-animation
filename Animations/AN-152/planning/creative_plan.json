@@ -1,0 +1,2689 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-152",
+ "title": "The King and the Virtuous Wife",
+ "duration": 171.98,
+ "end_hold": 4.0,
+ "logline": "A king in disguise is tempted at a poor woman's door; she answers him with a book instead of a scream, and later a parable about a field and a lion clears her name and mends her marriage.",
+ "moral": "Courage with wisdom can check the powerful, and honest words restore trust.",
+ "tone": "Quiet, dignified comic-panel drama with light humour in the palace (the blunt brother, the crowned lion); the wife is always calm and upright; warmth at the end.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 1.82,
+   "kind": "setup",
+   "cue": {
+    "word": "متخفيًا",
+    "t": 1.82
+   },
+   "summary": "A king hides his crown under a plain cloak and goes out among his people."
+  },
+  {
+   "id": "B2",
+   "t": 13.9,
+   "kind": "setup",
+   "cue": {
+    "word": "فقدمته",
+    "t": 13.9
+   },
+   "summary": "A wife alone at home gives the thirsty stranger water, kindly."
+  },
+  {
+   "id": "B3",
+   "t": 16.5,
+   "kind": "inciting",
+   "cue": {
+    "word": "أعجبه",
+    "t": 16.5
+   },
+   "summary": "He admires her; a heart pops over his head. Her husband is away."
+  },
+  {
+   "id": "B4",
+   "t": 24.3,
+   "kind": "rising",
+   "cue": {
+    "word": "يلمح",
+    "t": 24.3
+   },
+   "summary": "He hints at his desire and steps closer."
+  },
+  {
+   "id": "B5",
+   "t": 32.82,
+   "kind": "reveal",
+   "cue": {
+    "word": "الملك",
+    "t": 32.82
+   },
+   "summary": "She recognises the king under the cloak."
+  },
+  {
+   "id": "B6",
+   "t": 38.24,
+   "kind": "turn",
+   "cue": {
+    "word": "كتابًا",
+    "t": 38.24
+   },
+   "summary": "No scream, no fear: she holds up a book of counsel against betrayal and injustice."
+  },
+  {
+   "id": "B7",
+   "t": 48.68,
+   "kind": "emotion",
+   "cue": {
+    "word": "بالخجل",
+    "t": 48.68
+   },
+   "summary": "The king reads, is ashamed, and leaves without harming her."
+  },
+  {
+   "id": "B8",
+   "t": 70.58,
+   "kind": "turn",
+   "cue": {
+    "word": "الملك",
+    "t": 70.58
+   },
+   "summary": "The husband returns and learns the king was at his house."
+  },
+  {
+   "id": "B9",
+   "t": 81.76,
+   "kind": "emotion",
+   "cue": {
+    "word": "فابتعد",
+    "t": 81.76
+   },
+   "summary": "With no proof of any wrong, he still withdraws from her out of fear; she is left sad and bewildered."
+  },
+  {
+   "id": "B10",
+   "t": 100.24,
+   "kind": "rising",
+   "cue": {
+    "word": "حقلًا",
+    "t": 100.24
+   },
+   "summary": "Her family complain to the king in a parable: a fine field rented, then left unsown."
+  },
+  {
+   "id": "B11",
+   "t": 112.4,
+   "kind": "reveal",
+   "cue": {
+    "word": "الزوجة",
+    "t": 112.4
+   },
+   "summary": "The king sees that the field is the wife and summons the husband."
+  },
+  {
+   "id": "B12",
+   "t": 125.12,
+   "kind": "surprise",
+   "cue": {
+    "word": "أسدًا",
+    "t": 125.12
+   },
+   "summary": "The husband answers: a lion entered my field. The lion wears a crown; the king knows it is himself."
+  },
+  {
+   "id": "B13",
+   "t": 137.92,
+   "kind": "climax",
+   "cue": {
+    "word": "يأخذ",
+    "t": 137.92
+   },
+   "summary": "The king vouches: the lion spoiled nothing and took nothing."
+  },
+  {
+   "id": "B14",
+   "t": 148.74,
+   "kind": "resolution",
+   "cue": {
+    "word": "فزالت",
+    "t": 148.74
+   },
+   "summary": "Jealousy bursts like a bubble."
+  },
+  {
+   "id": "B15",
+   "t": 156.02,
+   "kind": "resolution",
+   "cue": {
+    "word": "الخصام",
+    "t": 156.02
+   },
+   "summary": "Husband and wife are reconciled; the king rewards them."
+  },
+  {
+   "id": "B16",
+   "t": 168.02,
+   "kind": "moral",
+   "cue": {
+    "word": "بالحكمة،",
+    "t": 168.02
+   },
+   "summary": "Her courage answered power with wisdom, and trust came home."
+  }
+ ],
+ "cast": [
+  {
+   "id": "king",
+   "name": "the king",
+   "library": "person",
+   "base": "person costume:'caliph', age 0.55",
+   "new": false,
+   "look": "Palace look (S9 to S13): the caliph preset as drawn in people.png (crown on turban, grey beard, red robe, yellow trim, blue lined cape), s 1.15, seated with sit:1, seat:'bench' at HALL.throne.sitY. Disguise look (S1 after 1.82, S2 to S4): the same figure with crown:false (planned opt-in field) and the brown cloakWorn overlay; the grey beard, the red robe strip with yellow trim in the cloak opening and a ring glint on the right hand stay visible so the audience (and the wife) always know him."
+  },
+  {
+   "id": "wife",
+   "name": "the virtuous wife",
+   "library": "person",
+   "base": "person costume:'villageWoman', pal:{robe:'#1d5bd0', dot:'#174aa8', sleeve:'#1d5bd0'}",
+   "new": false,
+   "look": "Yellow headscarf, blue dress (recoloured so she never blends with the king's red), s 1.1. Calm, upright, level brows; her default mouth is closed, not smiling. Blink seed 11."
+  },
+  {
+   "id": "husband",
+   "name": "the husband",
+   "library": "person",
+   "base": "person costume:'villager', age 0.15",
+   "new": false,
+   "look": "Green villager as in people.png (white cap with red band, black beard), s 1.12. Carries a bindle on a stick over the shoulder when he returns (scene-drawn stick + round bundle). Blink seed 23."
+  },
+  {
+   "id": "father",
+   "name": "the wife's father",
+   "library": "person",
+   "base": "person costume:'villager', age 0.85, pal:{robe:'#8a5a2b', dot:'#6d4520'}, hold:'stick'",
+   "new": false,
+   "look": "Old, white beard, brown robe, stoop from age, walking stick; the thoughtful one who speaks in pictures. s 1.05. Blink seed 31."
+  },
+  {
+   "id": "brother",
+   "name": "the wife's brother",
+   "library": "person",
+   "base": "person costume:'villager', age 0, pal:{robe:'#e8862a', dot:'#c46a16', hc:'#ffd21f'}",
+   "new": false,
+   "look": "Young, orange robe, yellow cap; blunt and impatient, reacts a few frames after the father (stagger). s 1.1. Blink seed 37."
+  },
+  {
+   "id": "neighbour",
+   "name": "a neighbour",
+   "library": "person",
+   "base": "person costume:'oldWoman', hold:'stick'",
+   "new": false,
+   "look": "The oldWoman preset as in people.png, s 0.95. Only in S6 (6 seconds): she tells the husband of the visit."
+  },
+  {
+   "id": "servant",
+   "name": "the royal servant",
+   "library": "person",
+   "base": "person costume:'servant'",
+   "new": false,
+   "look": "Servant preset (red cap, white tunic), s 1.0. Only in S14: carries the reward chest."
+  },
+  {
+   "id": "townsfolk",
+   "name": "two townspeople",
+   "library": "person",
+   "base": "person costume:'beanSeller' behind the stall and costume:'bedouin' walking",
+   "new": false,
+   "look": "S1 only, s 0.9, background acting: the seller weighs beans, the bedouin walks past. They never look at the king (the disguise works)."
+  },
+  {
+   "id": "lionIcon",
+   "name": "the lion of the parable",
+   "library": "lion",
+   "base": "lion s 0.3 inside the parable balloon, with the crownProp drawn on its head",
+   "new": false,
+   "look": "Library lion at s 0.3 (about 130 units long inside the balloon, drawn at balloon scale so it is at least 110 px on screen). Wears the same gold crown as the king from 125.68. Fields: ph/amp (walk), crouch, lid, mouth, tailUp."
+  },
+  {
+   "id": "bird",
+   "name": "a songbird",
+   "library": "songbird",
+   "base": "songbird red",
+   "new": false,
+   "look": "Small secondary motion on the cottage roof in S2 and S15."
+  }
+ ],
+ "sets": [
+  {
+   "id": "street",
+   "library": "marketStreet",
+   "new": false,
+   "description": "marketStreet default 1000 wide, palette 'clear', palace: 'lit' off (day), palaceDoor keyed 0 to 1 to 0, one stall {x: 250, kind: 'seed'}. Ground y 900. Use the returned anchors: the king comes out at M.palace.door.cx, standing on M.palace.door.bottom (the step), then walks left to x 330."
+  },
+  {
+   "id": "yard",
+   "library": "villageYard",
+   "new": false,
+   "description": "villageYard 1000 wide, ground y 900, with a custom larger cottage so a figure of s 1.1 fits the doorway: cottage {x0: 540, x1: 985, top: 500, door: x 610..730 with top y 600, win: about (860, 690) 110 x 100} (field names as in towns.js; adjust to the real option shape and read the anchors Y.door, Y.win, Y.bench). tree {x: 150}. bench: true (bench at about x 300..440, Y.bench.sitY). Door open 0.9 with a dim inside. Times of day: S2 to S4 noon (sun 1), S6 dusk (u 0.47, night 0.25, winLit), S8 early morning (sun 0.3), S14 and S15 bright morning (sun 0.6). yardLeaves after the cast."
+  },
+  {
+   "id": "hut",
+   "library": "hutRoom",
+   "new": false,
+   "description": "hutRoom cutaway, walls x 110..890, floor y 900, doorSide left, shelf on the back wall (the book lives there, at about (560, 520), measure on the set), stool at about x 430, mattress {x0: 620, x1: 860}, jug by the wall, lamp niche, window. S5: palette 'day', door 0.2. S7: palette 'night', lamp 1, dark 0.35, u 0.72 in the window."
+  },
+  {
+   "id": "hall",
+   "library": "palaceHall",
+   "new": false,
+   "description": "palaceHall variant 'palace', wall 'paper', floor y 900: open door arch on the left (x about 40..250, top about y 480), three arches, two lamps, dais x about 560..900 (top about y 860), throne at HALL.throne.x with HALL.throne.sitY, carpet runner. Listeners stand on the floor at x 300 (father) and x 410 (brother); the husband later stands at x 420 and the relatives shift to x 170 and x 280. The parable balloons live in the clear wall space above the heads, y 250..520."
+  }
+ ],
+ "props": [
+  {
+   "id": "cloak",
+   "library": null,
+   "new": true,
+   "description": "cloakWorn: brown travelling cloak overlay on a person (planned cloakProp, new worn state). At s 1, figure-local: shoulders (-52, -158) and (52, -158), hem (-70, -36) and (70, -36), a centre opening 34 wide from the neck to the hem that shows the costume beneath, a rolled hood collar 100 x 22 at the neck. Brown #8a5a2b with dark dot shading and black brush outline. Field on 0..1 (swirls on: scales from the shoulders down in 0.35 s with a 10 % overshoot)."
+  },
+  {
+   "id": "crown",
+   "library": null,
+   "new": true,
+   "description": "crownProp (planned): gold three-point crown 60 x 40 with red jewels, usable loose, in a hand, on the lion (at s 0.3), in clouds, and as a balloon icon."
+  },
+  {
+   "id": "jug",
+   "library": null,
+   "new": true,
+   "description": "waterJug (planned): ewer 60 x 110 with spout, handle, fill and tilt; pours a blue arc of 5 drops into the cup."
+  },
+  {
+   "id": "cup",
+   "library": null,
+   "new": true,
+   "description": "smallBowl (planned) 50 x 22 as the drinking bowl, blue water line with fill 0..1."
+  },
+  {
+   "id": "book",
+   "library": null,
+   "new": true,
+   "description": "bookStack single book (planned): closed 90 x 26 on the shelf (red cover, yellow corner pieces, paper page edge), open 120 x 70 in the hands. Insert size for S4: open 620 x 400 centred at (500, 640), left page a house with a heart and a small lock (marriage kept), right page the planned balanceScale tilted with a red X that levels when the king has read it. Squiggle text lines under both pictures."
+  },
+  {
+   "id": "heart",
+   "library": "heart",
+   "new": false,
+   "description": "The Library heart(ctx, x, y, r, {fill, alpha, lw}) from fx/fx.js, r about 24. The king's wandering heart in S2 to S4 (pops, drifts, bumps the book, cracks, falls), and the true heart in S13 to S15. Crack: a 4-segment black zigzag drawn over it, then two halves rotate apart and fall with fallY."
+  },
+  {
+   "id": "fieldBalloon",
+   "library": null,
+   "new": true,
+   "description": "iconBalloon (planned, single mode) 400 x 260 with a tail to the speaker, holding the fieldPicture: a fenced field 320 x 170 inside the balloon: yellow-brown soil with 4 furrow lines, a fence of 9 posts with one rail, a gate 46 wide on the left that swings (gate 0..1), crop 0..1 (0 bare soil with 3 dry weeds, 1 four rows of 7 green sprouts 26 high with yellow ears that sway), a tiny tenant figure (person silhouette s 0.22 in green), and room for the lion at s 0.3. Fields: p (pop), crop, gate, tenantX, lionX, ticks 0..1 (green ticks over the rows), mark ('?' or none)."
+  },
+  {
+   "id": "worry",
+   "library": null,
+   "new": true,
+   "description": "worryScribble (planned): black scribble cloud about 110 x 80 over a worried head with a tiny crown icon at its centre; size 0..1, pulse, burst into 6 small stars."
+  },
+  {
+   "id": "chest",
+   "library": null,
+   "new": true,
+   "description": "giftChest (planned treasureHoard chest) 130 x 90 with a crown seal on the front, lid open 0..1, coins inside, used with the planned goldGlow at strength 0.6."
+  },
+  {
+   "id": "bindle",
+   "library": null,
+   "new": true,
+   "description": "bindle (planned): bundle on a stick over the shoulder, for the returning husband."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 6.22,
+   "paragraphs": [
+    1
+   ],
+   "set": "street",
+   "cast": [
+    "king",
+    "townsfolk"
+   ],
+   "summary": "The king steps out of his palace, hides his crown under a plain brown cloak and walks among his people unnoticed.",
+   "camera": {
+    "shot": "establishing",
+    "move": "track",
+    "notes": "Start zoom 1.25 centred (640, 690) on the palace door; from 3.02 ease left with the king to (420, 700) zoom 1.35. Keys in pairs for the hold 0 to 1.6."
+   },
+   "composition": "Palace door right of centre, stall on the left third. King head at about y 620. The label THE KING sits above him at y 430, the arrow points down to the crown. Townsfolk in the left third, smaller (s 0.9).",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 0.9,
+     "cue": {
+      "word": "خرج",
+      "t": 0.0
+     },
+     "who": "king",
+     "action": "The palace door swings open (palaceDoor 0 to 1) and the king steps out onto the step in full royal dress.",
+     "acting": "Chin up, gaze sweeping left over the street (gaze [-0.8, 0.1]); one step down with a small landSquash (sq 0.96).",
+     "library": "marketStreet palaceDoor; person {costume:'caliph'}; walk(); landSquash"
+    },
+    {
+     "t": 0.4,
+     "end": 1.8,
+     "cue": {
+      "word": "ملك",
+      "t": 0.4
+     },
+     "who": "lettering",
+     "action": "Label THE KING pops above him with an arrow down to the crown.",
+     "acting": "Crown glint (one four-point star) as the label lands.",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 1.5,
+     "end": 2.6,
+     "cue": {
+      "word": "متخفيًا",
+      "t": 1.82
+     },
+     "who": "king",
+     "action": "He glances left and right, lifts the crown off, tucks it inside his robe, and swirls the brown cloak on.",
+     "acting": "Anticipation: eyes dart both ways (gazePlan with 0.07 ease), shoulders dip (anticipate 0.3 s), then cloak on 0 to 1 with overshoot; crown follows handRW into the chest and vanishes behind the cloak edge.",
+     "library": "person crown:false (planned) + cloakWorn on; anticipate(); settleTo(); PERSON_HANDS.chest"
+    },
+    {
+     "t": 2.2,
+     "end": 3.0,
+     "cue": {
+      "word": "متخفيًا",
+      "t": 1.82
+     },
+     "who": "lettering",
+     "action": "Label IN DISGUISE replaces THE KING; the red robe strip and yellow trim stay visible in the cloak opening.",
+     "acting": "A tiny wink to camera on the last frame of the label (wink R, 6 frames).",
+     "library": "S.label; person wink"
+    },
+    {
+     "t": 3.02,
+     "end": 4.9,
+     "cue": {
+      "word": "ليتعرف",
+      "t": 3.02
+     },
+     "who": "king",
+     "action": "He walks left along the street past the bean stall.",
+     "acting": "Legs from walk(), relaxed arms; head turns to the stall (gaze follows the seller, lookAt), curious raised brow (brow -0.4).",
+     "library": "walk(KX, t); footfalls(); lookAt()"
+    },
+    {
+     "t": 4.3,
+     "end": 6.0,
+     "cue": {
+      "word": "أحوال",
+      "t": 4.3
+     },
+     "who": "townsfolk",
+     "action": "The seller pours beans into a scale and the bedouin walks by the other way; neither looks at the cloaked man.",
+     "acting": "Seller eyes on his hands, bedouin gaze ahead; the king nods to himself (2 small nods, 4 units).",
+     "library": "person {costume:'beanSeller'} handLW/handRW; person {costume:'bedouin'} + walk()"
+    },
+    {
+     "t": 4.94,
+     "end": 6.22,
+     "cue": {
+      "word": "الناس،",
+      "t": 4.94
+     },
+     "who": "camera",
+     "action": "Track left with the king as he leaves the street; a foreground whip to the countryside on the cut.",
+     "acting": "Sun climbs a little (heat is coming).",
+     "library": "CAM keys; transition whip"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.4,
+     "text": "THE KING"
+    },
+    {
+     "t": 2.2,
+     "text": "IN DISGUISE"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "whip",
+    "t": 6.22
+   }
+  },
+  {
+   "id": "S2",
+   "start": 6.22,
+   "end": 23.06,
+   "paragraphs": [
+    1
+   ],
+   "set": "yard",
+   "cast": [
+    "king",
+    "wife",
+    "bird"
+   ],
+   "summary": "Thirsty under the noon sun, the cloaked king asks for water at a small house. The wife serves him kindly; he admires her and learns her husband is away.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide (500, 690) zoom 1.2 until 9.6; ease to a two-shot at the door (560, 700) zoom 1.55 by 11.1 using twoShot(king head, wife head, {margin: 90}); hold; push to 1.7 on 16.5."
+   },
+   "composition": "King enters from the left and stops at x 430; the wife stands in the doorway at x 670. Eye line level across the gap of 240 units. Tree at x 150 frames the left; sun top left at (230, 180). Faces at y about 620 to 640, well above the caption panel.",
+   "actions": [
+    {
+     "t": 6.22,
+     "end": 7.6,
+     "cue": {
+      "word": "وشعر",
+      "t": 6.22
+     },
+     "who": "king",
+     "action": "He trudges in from the left under a big sun, steps shortening.",
+     "acting": "walk() with falling speed; tip 0.06 forward, lid 0.35, mouth open a little; one sweat drop slides from the turban.",
+     "library": "walk(); footfalls() dust; tremble 0"
+    },
+    {
+     "t": 6.92,
+     "end": 8.0,
+     "cue": {
+      "word": "بالعطش",
+      "t": 6.92
+     },
+     "who": "king",
+     "action": "He stops, puts a hand to his throat and swallows dry.",
+     "acting": "handR to the throat (handR near [10, -150]), a gulp (drop pulse 4 units), tongue of mouth o; label THIRSTY! by his head, not over the face.",
+     "library": "person handR; pulse(); S.label"
+    },
+    {
+     "t": 7.66,
+     "end": 9.4,
+     "cue": {
+      "word": "بيت",
+      "t": 8.04
+     },
+     "who": "king",
+     "action": "He sees the small house: head lifts, he points at the door.",
+     "acting": "Gaze snaps to the door (lookAt Y.door), brows up (brow -0.6), lid 0, posture straightens (tip 0.06 to 0, settleTo); a small arrow traces from his eyes to the cottage.",
+     "library": "lookAt(); settleTo(); PERSON_HANDS.pointFwd; S.arrow"
+    },
+    {
+     "t": 9.6,
+     "end": 10.8,
+     "cue": {
+      "word": "طلب",
+      "t": 9.6
+     },
+     "who": "king",
+     "action": "He walks to the door and knocks on the frame; mimes drinking with a cupped hand.",
+     "acting": "Three quick knocks (handRW to the door frame, strike cycle with no sound), then the cupped hand to the mouth; polite small bow (tip 0.05).",
+     "library": "walk(); handRW; PERSON_HANDS.cupMouth"
+    },
+    {
+     "t": 11.08,
+     "end": 12.9,
+     "cue": {
+      "word": "امرأة",
+      "t": 11.08
+     },
+     "who": "wife",
+     "action": "The wife appears in the dim doorway and steps onto the threshold.",
+     "acting": "Alpha 0.4 to 1 as she leaves the shade; gaze to his face (lookAt), level brow, a nod of greeting (head drop 4 units); she keeps one hand on the door frame.",
+     "library": "person {costume:'villageWoman'} alpha; lookAt(); handLW on the frame"
+    },
+    {
+     "t": 12.5,
+     "end": 13.9,
+     "cue": {
+      "word": "تقيم",
+      "t": 12.5
+     },
+     "who": "wife",
+     "action": "She turns back inside and returns with the jug and the bowl.",
+     "acting": "Leaves the frame edge in 8 frames, back in 10 with the jug in handR and the bowl in handL; the jug has weight (arrival dip 5 units).",
+     "library": "waterJug, smallBowl follow P.hands"
+    },
+    {
+     "t": 13.9,
+     "end": 15.2,
+     "cue": {
+      "word": "فقدمته",
+      "t": 13.9
+     },
+     "who": "wife",
+     "action": "She pours: a blue arc of water fills the bowl; she holds it out at arm length.",
+     "acting": "Eyes on the pouring (gaze down), then up to him as she offers; arm fully extended so the bowl crosses the gap, body stays in the doorway.",
+     "library": "waterJug tilt + drops; handRW to (560, 700)"
+    },
+    {
+     "t": 14.98,
+     "end": 16.4,
+     "cue": {
+      "word": "له",
+      "t": 14.98
+     },
+     "who": "king",
+     "action": "He takes the bowl with both hands and drinks; the water line drops.",
+     "acting": "Head tips back (tip -0.08), lid 1 while drinking, 3 swallows (drop pulses), then a relieved breath (sq 1.03 then 1).",
+     "library": "handOver (planned); smallBowl fill 1 to 0; PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 15.36,
+     "end": 16.4,
+     "cue": {
+      "word": "بلطف.",
+      "t": 15.36
+     },
+     "who": "wife",
+     "action": "She waits with folded hands and a small kind smile.",
+     "acting": "mouth 'smile' for this beat only, gaze politely lowered (gaze [0, 0.4]), slow blink.",
+     "library": "PERSON_HANDS.clasp; blink()"
+    },
+    {
+     "t": 16.5,
+     "end": 18.6,
+     "cue": {
+      "word": "أعجبه",
+      "t": 16.5
+     },
+     "who": "king",
+     "action": "Lowering the bowl he really sees her: he stops mid-motion and a small heart pops above his head.",
+     "acting": "Bowl freezes halfway down for 0.4 s (suspense by stillness, only the pupils move to her face); brows lift, lid 0; the heart pops with overshoot at (430, 500) and bobs.",
+     "library": "heart prop pop (K.beat + settleTo); lookAt()"
+    },
+    {
+     "t": 17.42,
+     "end": 18.7,
+     "cue": {
+      "word": "جمالها،",
+      "t": 17.42
+     },
+     "who": "wife",
+     "action": "She has already turned to set the jug down inside the door and does not see the heart.",
+     "acting": "Profile of attention away from him (gaze into the house, lid 0.2); scarf edge lags her head turn by 2 frames.",
+     "library": "gaze; secondary lag by hand"
+    },
+    {
+     "t": 18.72,
+     "end": 20.0,
+     "cue": {
+      "word": "وعرف",
+      "t": 18.72
+     },
+     "who": "king",
+     "action": "He looks past her into the house and asks with an open palm: who else lives here?",
+     "acting": "Gaze travels door, window, bench (gazePlan); palmsUp on one hand; talk 0.5.",
+     "library": "gazePlan(); PERSON_HANDS.palmsUp; talk"
+    },
+    {
+     "t": 20.08,
+     "end": 22.1,
+     "cue": {
+      "word": "زوجة",
+      "t": 20.08
+     },
+     "who": "wife",
+     "action": "She answers with a picture balloon: her husband walking a far road with a bundle. Label HUSBAND AWAY.",
+     "acting": "She points to the horizon on the left (pointFwd, arm angle so it reads), calm and open, no worry; the balloon pops above the tree, clear of both faces.",
+     "library": "iconBalloon (planned) with a villager silhouette + bindle; PERSON_HANDS.pointFwd; S.label"
+    },
+    {
+     "t": 22.3,
+     "end": 23.06,
+     "who": "king",
+     "action": "In the pause: the heart drifts one step toward her and the king takes half a step after it.",
+     "acting": "Lid 0.3, a slow one-sided smile that he should not be wearing; the songbird on the roof hops away from him.",
+     "library": "heart x key; person mouth 'smile'; songbird hop()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 6.92,
+     "text": "THIRSTY!"
+    },
+    {
+     "t": 20.08,
+     "text": "HUSBAND AWAY"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 22.55,
+     "kind": "soft pop (the heart bobs forward)"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 23.06
+   }
+  },
+  {
+   "id": "S3",
+   "start": 23.06,
+   "end": 43.52,
+   "paragraphs": [
+    2
+   ],
+   "set": "yard",
+   "cast": [
+    "king",
+    "wife"
+   ],
+   "summary": "The king hints at his desire. The wife reads who he is from the royal robe and ring under the cloak; she neither screams nor trembles, goes inside and returns holding up a book.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Two-shot (560, 690) zoom 1.6. Push to her face (640, 650) zoom 2.1 for 29.14 to 33.36, back to the two-shot by 34.0, slow push to 1.75 on the book at 38.24."
+   },
+   "composition": "King left at x 430 edging to x 500; wife in the doorway at x 670, never retreating past the threshold. The heart floats in the gap at y 520 to 560. Thought cloud of recognition above her at (700, 380), 300 x 200, tail to her head.",
+   "actions": [
+    {
+     "t": 23.06,
+     "end": 24.3,
+     "cue": {
+      "word": "بدأ",
+      "t": 23.06
+     },
+     "who": "king",
+     "action": "He hands back the empty bowl slowly, holding on to it a moment too long.",
+     "acting": "Gaze fixed on her face, lid 0.3, smile; she takes the bowl with a firm small tug and her eyes question him (brow +0.3).",
+     "library": "handOver (planned); lookAt()"
+    },
+    {
+     "t": 24.3,
+     "end": 26.1,
+     "cue": {
+      "word": "يلمح",
+      "t": 24.3
+     },
+     "who": "king",
+     "action": "He leans in with a hand on his chest and speaks low; a speech squiggle with a tiny heart leaves his mouth.",
+     "acting": "tip 0.07 toward her, talk 0.6, PERSON_HANDS.chest; the squiggle is three wavy lines, no words.",
+     "library": "person tip, talk; PERSON_HANDS.chest"
+    },
+    {
+     "t": 26.42,
+     "end": 27.7,
+     "cue": {
+      "word": "التقرب",
+      "t": 26.42
+     },
+     "who": "king",
+     "action": "He takes one step closer (x 430 to 500); the floating heart drifts across the gap toward her.",
+     "acting": "One planted step via walk(); the heart leads him by 60 units like a balloon on a string.",
+     "library": "walk(); heart path kfn"
+    },
+    {
+     "t": 27.76,
+     "end": 29.1,
+     "cue": {
+      "word": "لكنها",
+      "t": 27.76
+     },
+     "who": "wife",
+     "action": "She does not step back: one flat palm comes up between them and the heart stops in the air.",
+     "acting": "PERSON_HANDS.shield with one hand (arm angle so it reads at phone size), chin level, gaze steady on him; the heart squashes against the invisible line (sq 0.8) and bobs back.",
+     "library": "PERSON_HANDS.shield; heart sq"
+    },
+    {
+     "t": 29.14,
+     "end": 30.2,
+     "cue": {
+      "word": "أدركت",
+      "t": 29.14
+     },
+     "who": "wife",
+     "action": "Close on her eyes: they flick over him, collecting clues.",
+     "acting": "Saccades (gazePlan ease 0.07): his face, his chest, his hand; brows gather (brow 0.3) then rise.",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 30.22,
+     "end": 30.9,
+     "cue": {
+      "word": "هيئته",
+      "t": 30.22
+     },
+     "who": "fx",
+     "action": "An arrow marks the strip of red royal robe and gold trim in the cloak opening; the ring on his hand glints.",
+     "acting": "Her pupils are on each clue one frame before its arrow appears.",
+     "library": "S.arrow x2; star glint"
+    },
+    {
+     "t": 30.92,
+     "end": 31.9,
+     "cue": {
+      "word": "وكلامه",
+      "t": 30.92
+     },
+     "who": "fx",
+     "action": "His speech squiggle is redrawn in gold with a small crown shape in its curl.",
+     "acting": "She tilts her head 4 units as if listening to the accent.",
+     "library": "scene-drawn squiggle; crownProp tiny"
+    },
+    {
+     "t": 31.98,
+     "end": 33.9,
+     "cue": {
+      "word": "الملك",
+      "t": 32.82
+     },
+     "who": "wife",
+     "action": "Her thought cloud: the cloaked figure, the cloak drops away and the crown lands on his head. She knows.",
+     "acting": "Trail bubbles pop first, then the cloud; inside the figure is at least 120 px tall; her eyes widen for 4 frames only (lid 0, brow -0.7) then settle.",
+     "library": "thoughtCloud(ctx, 700, 380, 300, 200, t, {tail, inside}) with person {costume:'caliph'} + cloakWorn on 1 to 0 + crownProp"
+    },
+    {
+     "t": 34.08,
+     "end": 35.4,
+     "cue": {
+      "word": "تصرخ",
+      "t": 34.76
+     },
+     "who": "wife",
+     "action": "A scream starts and is swallowed: her mouth opens to an o, a dashed empty balloon outline begins by her head, then she closes her mouth and it fades.",
+     "acting": "mouth 'o' for 5 frames then closed; one long blink (lid 1 for 6 frames), a breath (sq 1.03).",
+     "library": "person mouth; dashed balloon outline alpha"
+    },
+    {
+     "t": 35.54,
+     "end": 36.7,
+     "cue": {
+      "word": "تخف،",
+      "t": 36.14
+     },
+     "who": "wife",
+     "action": "A tremble runs through her hands and stops; she sets her shoulders.",
+     "acting": "tremble amplitude 2 to 0 over 0.5 s; brows level; gaze returns to him, unafraid. The king, puzzled by her calm, blinks twice.",
+     "library": "tremble(); settleTo()"
+    },
+    {
+     "t": 36.78,
+     "end": 38.1,
+     "cue": {
+      "word": "بل",
+      "t": 36.78
+     },
+     "who": "wife",
+     "action": "She raises one finger (wait), turns and goes into the house; the king is left with the heart hovering.",
+     "acting": "PERSON_HANDS.pointUp, then alpha fades into the door shade; the king rocks on his heels, pleased, misreading it (smile, lid 0.3).",
+     "library": "PERSON_HANDS.pointUp; alpha; breathe()"
+    },
+    {
+     "t": 38.0,
+     "end": 39.3,
+     "cue": {
+      "word": "كتابًا",
+      "t": 38.24
+     },
+     "who": "wife",
+     "action": "She returns holding a red book in both hands and lifts it between them, open toward him.",
+     "acting": "Anticipation dip then the book rises to chest height at (600, 690); the heart bumps the cover and bounces back 30 units; his smile drops to closed.",
+     "library": "bookStack single book open 0 to 1; handLW/handRW; anticipate(); heart bounce (rebound)"
+    },
+    {
+     "t": 39.44,
+     "end": 40.3,
+     "cue": {
+      "word": "نصائح",
+      "t": 39.44
+     },
+     "who": "book",
+     "action": "The open pages glow a little: squiggle lines of advice draw on.",
+     "acting": "Her gaze goes from the page to his eyes: read it.",
+     "library": "book lines draw-on; lookAt()"
+    },
+    {
+     "t": 40.36,
+     "end": 41.9,
+     "cue": {
+      "word": "خيانة",
+      "t": 41.26
+     },
+     "who": "book",
+     "action": "Left page picture pops: a house with a heart and a lock. Caption KEEP FAITH.",
+     "acting": "She taps the left page with a finger (handRW), firm.",
+     "library": "book pictogram; S.label small"
+    },
+    {
+     "t": 42.0,
+     "end": 43.52,
+     "cue": {
+      "word": "والظلم.",
+      "t": 42.62
+     },
+     "who": "book",
+     "action": "Right page picture pops: a tilted balance scale with a red X. Caption NO INJUSTICE.",
+     "acting": "She taps the right page; the king leans in to look, brows drawing down (brow 0.2), the heart sinking 20 units.",
+     "library": "balanceScale (planned) tilt + red X; S.label small"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 41.26,
+     "text": "KEEP FAITH"
+    },
+    {
+     "t": 42.62,
+     "text": "NO INJUSTICE"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "match-cut",
+    "t": 43.52
+   }
+  },
+  {
+   "id": "S4",
+   "start": 43.52,
+   "end": 58.66,
+   "paragraphs": [
+    3
+   ],
+   "set": "yard",
+   "cast": [
+    "king",
+    "wife"
+   ],
+   "summary": "The king reads the book, is ashamed, apologises in his heart and leaves without harming her.",
+   "camera": {
+    "shot": "insert",
+    "move": "pull-out",
+    "notes": "Insert on the open book (full panel, drawn in panel space with his eyes above the top edge) 43.52 to 47.0; cut to a close on the king (460, 640) zoom 2.0 for the shame; pull out to the wide (480, 690) zoom 1.25 from 53.72 as he leaves."
+   },
+   "composition": "Insert: book 620 x 400 centred (500, 640); the king's eyes and turban peek over the top edge at y 300 to 420 (head drawn at s 2.2, clipped by the book). After 47.0: king centre left, wife at the door right, book still raised between them until 50.5.",
+   "actions": [
+    {
+     "t": 43.52,
+     "end": 45.2,
+     "cue": {
+      "word": "قرأ",
+      "t": 43.52
+     },
+     "who": "king",
+     "action": "Insert: over the top of the big open book his eyes scan the left page, line by line.",
+     "acting": "Pupils sweep right to left along each squiggle line and snap back (reading saccades, 3 lines); lids relaxed.",
+     "library": "gazePlan() saccades; book insert size"
+    },
+    {
+     "t": 45.28,
+     "end": 46.9,
+     "cue": {
+      "word": "الكتاب،",
+      "t": 46.3
+     },
+     "who": "king",
+     "action": "His eyes move to the right page; the tilted scale with the red X is reflected as a tiny glint in his pupils.",
+     "acting": "Reading slows; brows rise in the middle (brow -0.5), one hard blink.",
+     "library": "gazePlan(); blink override"
+    },
+    {
+     "t": 47.0,
+     "end": 48.6,
+     "cue": {
+      "word": "وشعر",
+      "t": 47.0
+     },
+     "who": "king",
+     "action": "Cut back: he straightens away from the book; the heart above him cracks.",
+     "acting": "Head pulls back 6 units, gaze drops off her face to the ground (gaze [0.2, 0.9]); a black zigzag runs down the heart.",
+     "library": "heart crack draw-on; settleTo()"
+    },
+    {
+     "t": 48.68,
+     "end": 50.4,
+     "cue": {
+      "word": "بالخجل",
+      "t": 48.68
+     },
+     "who": "king",
+     "action": "Shame: a soft flush climbs his cheeks, his head sinks, the two halves of the heart fall and fade.",
+     "acting": "flush soft (planned), lid 0.6, head drop 10 units, shoulders in (sq 0.97), hands withdraw inside the cloak; halves fall with fallY and one small bounce.",
+     "library": "flush soft (planned); fallY(); rebound()"
+    },
+    {
+     "t": 50.5,
+     "end": 51.9,
+     "cue": {
+      "word": "اعتذر",
+      "t": 50.5
+     },
+     "who": "king",
+     "action": "He lays his right hand on his chest and closes his eyes: a silent apology.",
+     "acting": "PERSON_HANDS.chest, lid 1 for 0.8 s, wet true as the lids open, lips move once without talk (mouth closed to o to closed).",
+     "library": "PERSON_HANDS.chest; lid; wet"
+    },
+    {
+     "t": 51.98,
+     "end": 53.6,
+     "cue": {
+      "word": "نفسه",
+      "t": 51.98
+     },
+     "who": "king",
+     "action": "He bows his head to her, low and brief; she lowers the book and closes it.",
+     "acting": "Bow: tip 0.14 for 10 frames then back; she answers with the smallest nod, face still serious; book open 1 to 0 with a soft clap of pages.",
+     "library": "tip; book open; settleTo()"
+    },
+    {
+     "t": 53.72,
+     "end": 55.8,
+     "cue": {
+      "word": "وغادر",
+      "t": 53.72
+     },
+     "who": "king",
+     "action": "He turns and walks away to the left, the cloak pulled close.",
+     "acting": "walk() at an even pace, head low, he does not look back; cloak hem lags the steps by 2 frames.",
+     "library": "walk(); footfalls() dust"
+    },
+    {
+     "t": 55.86,
+     "end": 57.9,
+     "cue": {
+      "word": "يمس",
+      "t": 56.78
+     },
+     "who": "fx",
+     "action": "As the gap between them grows, a dashed line marks the distance he never crossed: the threshold. Label UNTOUCHED above the door.",
+     "acting": "She stands exactly where she stood at the start, both feet on the threshold; a slow blink of relief.",
+     "library": "S.label; dashed line on the ground at the threshold x"
+    },
+    {
+     "t": 57.94,
+     "end": 58.66,
+     "cue": {
+      "word": "بسوء.",
+      "t": 57.94
+     },
+     "who": "wife",
+     "action": "She watches him go out of frame, then lets out the breath she was holding.",
+     "acting": "Gaze follows him (lookAt his x), shoulders fall 4 units, sq 0.98 to 1; the songbird returns to the roof.",
+     "library": "lookAt(); breathe(); songbird"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 56.78,
+     "text": "UNTOUCHED"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 58.66
+   }
+  },
+  {
+   "id": "S5",
+   "start": 58.66,
+   "end": 65.58,
+   "paragraphs": [
+    3
+   ],
+   "set": "hut",
+   "cast": [
+    "wife"
+   ],
+   "summary": "Thinking it is over, the wife puts the book back on its shelf and returns to her everyday work.",
+   "camera": {
+    "shot": "medium",
+    "move": "drift",
+    "notes": "Medium (500, 660) zoom 1.45, slow drift right 20 units; no cuts."
+   },
+   "composition": "Wife enters from the door on the left, shelf at upper centre, stool at x 430. Daylight shaft from the window. The book on the shelf stays in frame top centre for the rest of the scene (it will matter again).",
+   "actions": [
+    {
+     "t": 58.66,
+     "end": 59.7,
+     "cue": {
+      "word": "وظنت",
+      "t": 58.66
+     },
+     "who": "wife",
+     "action": "She comes in from the door with the book against her chest and pushes the door to.",
+     "acting": "walk(); eyes on the book, a small private smile; door 0.9 to 0.2.",
+     "library": "hutRoom door; walk()"
+    },
+    {
+     "t": 59.8,
+     "end": 61.2,
+     "cue": {
+      "word": "الزوجة",
+      "t": 59.8
+     },
+     "who": "wife",
+     "action": "She reaches up and slides the book back onto the shelf.",
+     "acting": "handRW to the shelf point, up on her toes (sq 1.04), the book settles with a 2 unit bounce; she pats it once.",
+     "library": "handRW; book closed; settleTo()"
+    },
+    {
+     "t": 61.32,
+     "end": 62.6,
+     "cue": {
+      "word": "انتهى،",
+      "t": 61.32
+     },
+     "who": "wife",
+     "action": "She dusts her hands: done.",
+     "acting": "Two quick hand brushes (hands meet at chest, 2 beats), brows relax, gaze to the window light.",
+     "library": "PERSON_HANDS.clasp keyed; countedBeats dip"
+    },
+    {
+     "t": 62.68,
+     "end": 64.4,
+     "cue": {
+      "word": "فعادت",
+      "t": 62.68
+     },
+     "who": "wife",
+     "action": "She sits on the stool and takes up her sewing: a cloth and a needle hand looping.",
+     "acting": "sit 0 to 1 on seat:'stool' with feet planted; the right hand makes small loops (2 Hz), eyes on the work.",
+     "library": "person sit, seat:'stool'; handR loop"
+    },
+    {
+     "t": 64.5,
+     "end": 65.58,
+     "cue": {
+      "word": "المعتادة.",
+      "t": 64.5
+     },
+     "who": "set",
+     "action": "The light shaft from the window slides and warms toward evening as she sews; the transition card wipes in.",
+     "acting": "She hums (head sways 3 units); nothing troubles her.",
+     "library": "hutRoom u keyed 0.25 to 0.42; S.transition caption LATER..."
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 65.58,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S6",
+   "start": 65.58,
+   "end": 72.34,
+   "paragraphs": [
+    4
+   ],
+   "set": "yard",
+   "cast": [
+    "husband",
+    "neighbour"
+   ],
+   "summary": "At dusk the husband comes home from his journey and a neighbour tells him the king visited his house.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide (460, 690) zoom 1.25; push to the husband and neighbour (300, 680) zoom 1.7 from 67.98 to 70.0."
+   },
+   "composition": "Dusk sky, cottage window lit on the right. Husband walks in from the left with his bindle; the neighbour waits by the tree at x 190. News balloon above them at (330, 380). The lit door of his home is visible at the right edge of every frame.",
+   "actions": [
+    {
+     "t": 65.9,
+     "end": 67.0,
+     "cue": {
+      "word": "لكن",
+      "t": 65.58
+     },
+     "who": "husband",
+     "action": "The card clears on a dusk yard; the husband walks in from the left, bindle on his shoulder, smiling at his own lit window.",
+     "acting": "walk() with a spring (glad to be home), gaze on the window (lookAt Y.win), mouth smile.",
+     "library": "walk(); footfalls(); bindle"
+    },
+    {
+     "t": 67.02,
+     "end": 67.9,
+     "cue": {
+      "word": "زوجها",
+      "t": 67.02
+     },
+     "who": "neighbour",
+     "action": "The old neighbour by the tree beckons him over with her stick hand.",
+     "acting": "Two beckoning curls of the hand, glance over her shoulder at the cottage (gaze flick), brows up.",
+     "library": "person {costume:'oldWoman', hold:'stick'}; PERSON_HANDS.wave"
+    },
+    {
+     "t": 67.98,
+     "end": 69.1,
+     "cue": {
+      "word": "علم",
+      "t": 67.98
+     },
+     "who": "neighbour",
+     "action": "She cups her mouth and whispers; he bends his ear to her.",
+     "acting": "PERSON_HANDS.cupMouth, talk 0.5; he uses cupEar and tips 0.08 toward her, still smiling.",
+     "library": "PERSON_HANDS.cupMouth / cupEar; tip"
+    },
+    {
+     "t": 69.22,
+     "end": 70.5,
+     "cue": {
+      "word": "عودته",
+      "t": 69.22
+     },
+     "who": "husband",
+     "action": "He sets the bindle down to listen; it slumps on the ground.",
+     "acting": "Bindle drops with a small squash; his smile is fading (mouth smile to closed).",
+     "library": "bindle fallY; landSquash"
+    },
+    {
+     "t": 70.58,
+     "end": 71.6,
+     "cue": {
+      "word": "الملك",
+      "t": 70.58
+     },
+     "who": "fx",
+     "action": "Her picture balloon pops: a crown, an arrow, his own cottage door.",
+     "acting": "Crown first, then the arrow draws on, then the house (3 frames apart); his pupils follow each icon.",
+     "library": "iconBalloon (planned) with crownProp + S.arrow + house icon"
+    },
+    {
+     "t": 71.66,
+     "end": 72.34,
+     "cue": {
+      "word": "بيته.",
+      "t": 71.66
+     },
+     "who": "husband",
+     "action": "He straightens, eyes going from the balloon to his own door. The first small scribble of worry appears over his head.",
+     "acting": "brow -0.7 then +0.3, lid 0, gaze to the door (lookAt Y.door) and held: only the pupils move; worry size 0 to 0.4.",
+     "library": "lookAt(); worryScribble (planned) size"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 72.34
+   }
+  },
+  {
+   "id": "S7",
+   "start": 72.34,
+   "end": 86.62,
+   "paragraphs": [
+    4
+   ],
+   "set": "hut",
+   "cast": [
+    "husband",
+    "wife"
+   ],
+   "summary": "Inside, by lamplight: she tells him everything openly and there is nothing to blame, yet fear of the king grows in him. He withdraws to the far side of the room and leaves her sad and bewildered.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pull-out",
+    "notes": "Two-shot (480, 670) zoom 1.6 while she explains; from 81.76 pull out to the full room (500, 680) zoom 1.2 so the empty floor between them fills the frame; end on a slow push to her (330, 660) zoom 1.6 at 84.78."
+   },
+   "composition": "Night palette, lamp warm circle at the niche. Wife at x 380, husband at x 560 at first; after 81.76 he is at x 780 by the mattress and she stays at x 330: 450 units of empty floor between them, the book on the shelf above the gap.",
+   "actions": [
+    {
+     "t": 72.34,
+     "end": 73.6,
+     "cue": {
+      "word": "لم",
+      "t": 72.34
+     },
+     "who": "wife",
+     "action": "She meets him gladly at the door side, then sees his face and starts to explain with open hands.",
+     "acting": "Step toward him (walk 1 step), smile fades to earnest; PERSON_HANDS.palmsUp, talk 0.6, gaze on his eyes.",
+     "library": "walk(); PERSON_HANDS.palmsUp; talk"
+    },
+    {
+     "t": 73.66,
+     "end": 75.1,
+     "cue": {
+      "word": "يسمع",
+      "t": 73.66
+     },
+     "who": "wife",
+     "action": "Her picture balloon: the cloaked king, the book held up, the king walking away. She points up at the real book on the shelf.",
+     "acting": "Three icons pop in story order; her pointing arm uses arm angles (reads at distance); nothing hidden in her face: level brows, steady gaze.",
+     "library": "iconBalloon strip mode (planned); PERSON_HANDS.pointUp via aR"
+    },
+    {
+     "t": 75.14,
+     "end": 77.4,
+     "cue": {
+      "word": "خيانة،",
+      "t": 76.32
+     },
+     "who": "husband",
+     "action": "He listens and nods once: there is nothing to accuse. But his eyes slide off her to the door.",
+     "acting": "One slow nod (head drop 5), then gaze drifts to the door where the king stood (lookAt door), lid 0.3; the worry scribble pulses.",
+     "library": "lookAt(); worryScribble pulse"
+    },
+    {
+     "t": 77.5,
+     "end": 79.1,
+     "cue": {
+      "word": "خاف",
+      "t": 78.4
+     },
+     "who": "husband",
+     "action": "Fear: the scribble grows over his head and he hugs his own arms.",
+     "acting": "worry size 0.4 to 0.8; PERSON_HANDS.folded, a small tremble (tremble 1.5), brow -0.5 (worried, not angry).",
+     "library": "worryScribble; tremble(); PERSON_HANDS.folded"
+    },
+    {
+     "t": 79.16,
+     "end": 81.7,
+     "cue": {
+      "word": "تعلق",
+      "t": 80.64
+     },
+     "who": "husband",
+     "action": "His thought cloud: the crowned king, large, with a heart floating toward a small picture of his wife; the husband himself tiny at the edge.",
+     "acting": "Cloud at (640, 360) 320 x 220; inside the king is drawn at 1.3 times the husband (power); the real husband looks up into the cloud and swallows.",
+     "library": "thoughtCloud(...{inside}) with person {costume:'caliph'}, heart, portrait of the wife"
+    },
+    {
+     "t": 81.76,
+     "end": 83.5,
+     "cue": {
+      "word": "فابتعد",
+      "t": 81.76
+     },
+     "who": "husband",
+     "action": "He raises a palm (not now), steps around her and walks to the far side of the room, sitting on the mattress edge with his arms folded.",
+     "acting": "Avoids her eyes (gaze down and away), walk() 4 short steps, sit 0 to 1 seat:'bench' at the mattress edge, tip -0.05 away from her; her reaching hand is left in the air.",
+     "library": "PERSON_HANDS.shield; walk(); person sit; wife PERSON_HANDS.reach"
+    },
+    {
+     "t": 82.98,
+     "end": 84.6,
+     "cue": {
+      "word": "عنها",
+      "t": 82.98
+     },
+     "who": "camera",
+     "action": "Pull out: the empty floor between them widens in frame and a double headed arrow opens across it.",
+     "acting": "The lamp flame dips with the mood (lamp 1 to 0.7); her hand lowers slowly (follow-through, 0.6 s).",
+     "library": "CAM keys; S.arrow double; hutRoom lamp"
+    },
+    {
+     "t": 84.78,
+     "end": 85.6,
+     "cue": {
+      "word": "حزينة",
+      "t": 84.78
+     },
+     "who": "wife",
+     "action": "Sad: her eyes fill and her head sinks.",
+     "acting": "wet true, lid 0.4, mouth 'frown', head drop 8 units, one tear; shoulders in (sq 0.97).",
+     "library": "wet; lid; mouth"
+    },
+    {
+     "t": 85.7,
+     "end": 86.62,
+     "cue": {
+      "word": "وحائرة.",
+      "t": 85.7
+     },
+     "who": "wife",
+     "action": "Bewildered: she looks from him to the book on the shelf and back, a small question mark by her head.",
+     "acting": "Saccades between him and the book (gazePlan 0.07), brow -0.6, palms half open. He stares at the floor.",
+     "library": "gazePlan(); \"?\" mark via S.label small"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 85.7,
+     "text": "?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 86.62
+   }
+  },
+  {
+   "id": "S8",
+   "start": 86.62,
+   "end": 90.48,
+   "paragraphs": [
+    5
+   ],
+   "set": "yard",
+   "cast": [
+    "wife",
+    "husband",
+    "father",
+    "brother"
+   ],
+   "summary": "Morning. Her father and brother arrive and see at once that something is wrong: she sits alone on the bench, he keeps to the doorway.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Wide (500, 690) zoom 1.2, held, so the distance between husband and wife is the whole picture."
+   },
+   "composition": "Wife seated on the bench at x 370 (Y.bench.sitY), husband standing in the doorway at x 670 looking away right, worry scribble over him. Father and brother enter from the left and stop at x 120 and x 215. Label HER FAMILY above them at y 470.",
+   "actions": [
+    {
+     "t": 86.62,
+     "end": 88.5,
+     "cue": {
+      "word": "لاحظ",
+      "t": 86.62
+     },
+     "who": "father",
+     "action": "Father (with his stick) and brother walk in from the left, smiling, and slow to a stop.",
+     "acting": "walk() for both with stagger(i) so they are never in step; the father sees first: smile gone, gaze on his daughter.",
+     "library": "walk(); stagger(); footfalls()"
+    },
+    {
+     "t": 88.66,
+     "end": 89.6,
+     "cue": {
+      "word": "أهل",
+      "t": 88.66
+     },
+     "who": "lettering",
+     "action": "Label HER FAMILY with an arrow to the two.",
+     "acting": "The brother waves at her; she does not lift her head (lid 0.5, wet).",
+     "library": "S.label + S.arrow; PERSON_HANDS.wave"
+    },
+    {
+     "t": 89.64,
+     "end": 90.48,
+     "cue": {
+      "word": "حدث،",
+      "t": 89.88
+     },
+     "who": "father",
+     "action": "The father looks from her to the husband in the doorway and back; the brother scratches his head, then scowls.",
+     "acting": "Father: gazePlan wife, husband, wife (held 8 frames each), brow -0.4. Brother: PERSON_HANDS.headHold one hand, then brow +0.6 and a step forward that the father stops with his stick across his chest.",
+     "library": "gazePlan(); person hold:'stick' via handRW"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 88.66,
+     "text": "HER FAMILY"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 90.48
+   }
+  },
+  {
+   "id": "S9",
+   "start": 90.48,
+   "end": 108.54,
+   "paragraphs": [
+    5
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "father",
+    "brother"
+   ],
+   "summary": "In the king's hall the family complain sideways, with a parable: a man rented a fine field, then left it unsown. May he neglect what he took?",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Hall wide (500, 640) zoom 1.0 for the entrance; from 97.04 a three-shot that keeps the balloon, both speakers and the king: (500, 600) zoom 1.15; push to the king (720, 600) zoom 1.6 at 107.16."
+   },
+   "composition": "King on the throne at the right (HALL.throne), crown on. Father at x 300 and brother at x 410 on the floor, lower than the king (the dais). Parable balloon 400 x 260 centred (360, 350), tail to the father. The king's eye line runs up left into the balloon.",
+   "actions": [
+    {
+     "t": 90.48,
+     "end": 92.0,
+     "cue": {
+      "word": "وذهبوا",
+      "t": 90.48
+     },
+     "who": "father",
+     "action": "The two walk in through the door arch, small in the big hall.",
+     "acting": "walk() with stagger; the brother looks up at the lamps and arches (gaze up), the father keeps his eyes on the throne.",
+     "library": "walk(); stagger(); palaceHall door"
+    },
+    {
+     "t": 92.04,
+     "end": 93.5,
+     "cue": {
+      "word": "مجلس",
+      "t": 92.46
+     },
+     "who": "king",
+     "action": "The king, crowned and robed, sits listening on his throne; he nods them forward.",
+     "acting": "sit:1 seat:'bench'; gaze to them (lookAt), a small beckon with two fingers; PERSON_HANDS.chin after.",
+     "library": "person {costume:'caliph', sit: 1, seat:'bench'} at HALL.throne.sitY"
+    },
+    {
+     "t": 93.08,
+     "end": 93.6,
+     "cue": {
+      "word": "الملك",
+      "t": 93.08
+     },
+     "who": "father",
+     "action": "They bow.",
+     "acting": "Father tip 0.12, brother a beat later and too fast (stagger 4 frames, overshoot).",
+     "library": "tip; stagger(); settleTo()"
+    },
+    {
+     "t": 93.62,
+     "end": 94.5,
+     "cue": {
+      "word": "يشكون",
+      "t": 93.62
+     },
+     "who": "brother",
+     "action": "The brother starts to blurt it out: a balloon begins with the wife's face and a pointing finger at the king.",
+     "acting": "brow +0.7, arm straight out (pointFwd by arm angle), mouth open; the balloon is only at p 0.4 when it is stopped.",
+     "library": "iconBalloon p; PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 94.56,
+     "end": 96.9,
+     "cue": {
+      "word": "غير",
+      "t": 95.44
+     },
+     "who": "father",
+     "action": "The father's hand covers the brother's mouth; the half balloon pops away. He taps his temple: say it another way.",
+     "acting": "handRW to the brother's mouth (brother eyes wide, brow -0.8), balloon shrinks to 0; templeTap (planned) with a wink to his son; the king raises one brow.",
+     "library": "handRW; templeTap (planned); wink"
+    },
+    {
+     "t": 97.04,
+     "end": 98.4,
+     "cue": {
+      "word": "قالوا",
+      "t": 97.04
+     },
+     "who": "fieldBalloon",
+     "action": "The father speaks and the parable balloon pops above them: an empty fenced plot.",
+     "acting": "Father talk 0.7 with PERSON_HANDS.palmsUp; the king's gaze lifts to the balloon.",
+     "library": "iconBalloon p 0 to 1; fieldPicture crop 0"
+    },
+    {
+     "t": 98.68,
+     "end": 99.2,
+     "cue": {
+      "word": "رجلًا",
+      "t": 98.68
+     },
+     "who": "fieldBalloon",
+     "action": "A tiny green tenant walks up to the gate of the plot.",
+     "acting": "The tenant is the husband in miniature (same green, same cap): do not label it.",
+     "library": "fieldPicture tenantX; walk()"
+    },
+    {
+     "t": 99.26,
+     "end": 100.2,
+     "cue": {
+      "word": "استأجر",
+      "t": 99.26
+     },
+     "who": "fieldBalloon",
+     "action": "He shakes hands with a second tiny figure over the gate and gets a key: rented.",
+     "acting": "Key passes hand to hand with a small glint; the brother nods hard at every step.",
+     "library": "handOver (planned) in miniature"
+    },
+    {
+     "t": 100.24,
+     "end": 101.5,
+     "cue": {
+      "word": "حقلًا",
+      "t": 100.24
+     },
+     "who": "fieldBalloon",
+     "action": "The field blooms: four rows of green sprouts with yellow ears wave up. Label A FINE FIELD.",
+     "acting": "crop 0 to 1 row by row (stagger 3 frames); the father opens both arms wide (armsOut): how fine it was.",
+     "library": "fieldPicture crop; S.label; PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 101.56,
+     "end": 103.0,
+     "cue": {
+      "word": "تركه",
+      "t": 102.32
+     },
+     "who": "fieldBalloon",
+     "action": "The tenant turns his back and walks out of the gate, which is left swinging.",
+     "acting": "tenantX leaves the fence line; gate swing (damped); the father lets his arms fall.",
+     "library": "swing(); fieldPicture gate"
+    },
+    {
+     "t": 103.06,
+     "end": 104.1,
+     "cue": {
+      "word": "زرع،",
+      "t": 103.56
+     },
+     "who": "fieldBalloon",
+     "action": "The crop droops and fades to bare soil with three dry weeds. Label LEFT UNSOWN.",
+     "acting": "crop 1 to 0, ears sag first; the brother's shoulders sag with it (sq 0.96).",
+     "library": "fieldPicture crop; S.label"
+    },
+    {
+     "t": 104.2,
+     "end": 105.3,
+     "cue": {
+      "word": "وسألوا",
+      "t": 104.2
+     },
+     "who": "father",
+     "action": "Both turn their palms up to the king.",
+     "acting": "PERSON_HANDS.palmsUp for both, the brother 3 frames late; both gazes on the king.",
+     "library": "PERSON_HANDS.palmsUp; stagger()"
+    },
+    {
+     "t": 105.34,
+     "end": 107.1,
+     "cue": {
+      "word": "يجوز",
+      "t": 105.92
+     },
+     "who": "fieldBalloon",
+     "action": "A big question mark hops onto the balloon. Label IS THAT FAIR?",
+     "acting": "mark ? with hop(); the king strokes his beard (PERSON_HANDS.chin), eyes narrowing (lid 0.3).",
+     "library": "hop(); S.label"
+    },
+    {
+     "t": 107.16,
+     "end": 108.54,
+     "cue": {
+      "word": "يهمل",
+      "t": 107.16
+     },
+     "who": "camera",
+     "action": "Push in on the king as he looks from the bare field to the two anxious faces.",
+     "acting": "gazePlan balloon, father, brother, balloon; a blink; his beard hand stops.",
+     "library": "CAM keys; gazePlan()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 100.24,
+     "text": "A FINE FIELD"
+    },
+    {
+     "t": 103.56,
+     "text": "LEFT UNSOWN"
+    },
+    {
+     "t": 105.92,
+     "text": "IS THAT FAIR?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 108.54
+   }
+  },
+  {
+   "id": "S10",
+   "start": 108.54,
+   "end": 119.5,
+   "paragraphs": [
+    6
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "father",
+    "brother",
+    "husband"
+   ],
+   "summary": "The king understands that the field is the wife and the tenant her husband. He sends for the man and asks why he keeps away.",
+   "camera": {
+    "shot": "close",
+    "move": "pull-out",
+    "notes": "Close on the king (720, 590) zoom 1.7 with his thought cloud above; pull out to the hall wide (500, 640) zoom 1.05 at 114.36 for the husband's entrance; two-shot husband and king (560, 640) zoom 1.3 from 116.28."
+   },
+   "composition": "King's thought cloud at (600, 330) 340 x 230, tail to his head, clear of the crown. After 114.36 relatives step back to x 170 and x 280; the husband enters at the door and stops at x 420, lower than the king.",
+   "actions": [
+    {
+     "t": 108.54,
+     "end": 110.2,
+     "cue": {
+      "word": "فهم",
+      "t": 108.54
+     },
+     "who": "king",
+     "action": "Thinking: his eyes flick and stop; the brows lift.",
+     "acting": "Saccades for 0.8 s (gazePlan 0.07), then still; brow -0.5; the beard hand opens.",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 110.34,
+     "end": 112.3,
+     "cue": {
+      "word": "يقصدون",
+      "t": 111.58
+     },
+     "who": "king",
+     "action": "His thought cloud pops holding the bare field.",
+     "acting": "Trail then cloud; he looks up into it.",
+     "library": "thoughtCloud(ctx, 600, 330, 340, 230, t, {inside}) with fieldPicture crop 0"
+    },
+    {
+     "t": 112.4,
+     "end": 113.1,
+     "cue": {
+      "word": "الزوجة",
+      "t": 112.4
+     },
+     "who": "fx",
+     "action": "Inside the cloud the field cross-fades into the cottage door with the wife standing in it, exactly the framing of the visit.",
+     "acting": "The king's face changes: a soft flush and a swallow (he remembers his own part); gaze drops for 6 frames.",
+     "library": "alpha cross-fade inside the cloud; flush soft (planned)"
+    },
+    {
+     "t": 113.2,
+     "end": 114.3,
+     "cue": {
+      "word": "وزوجها،",
+      "t": 113.2
+     },
+     "who": "fx",
+     "action": "The tiny tenant becomes the husband walking away from the door.",
+     "acting": "The father sees the king has understood and lowers his eyes respectfully; the brother starts to grin and is elbowed.",
+     "library": "thoughtCloud inside; stagger()"
+    },
+    {
+     "t": 114.36,
+     "end": 115.6,
+     "cue": {
+      "word": "فاستدعى",
+      "t": 114.36
+     },
+     "who": "king",
+     "action": "The king lifts his hand and points to the door: bring him. The cloud and the balloon pop away.",
+     "acting": "Anticipation (hand dips, then rises), pointFwd by arm angle toward the door; decisive brow +0.2.",
+     "library": "anticipate(); PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 115.7,
+     "end": 116.2,
+     "cue": {
+      "word": "الرجل",
+      "t": 115.7
+     },
+     "who": "husband",
+     "action": "The husband walks in through the arch, the worry scribble riding over his head; the relatives make room.",
+     "acting": "Short hesitant steps (walk with low amplitude), gaze down, hands clasped; relatives step left (walk).",
+     "library": "walk(); worryScribble; PERSON_HANDS.clasp"
+    },
+    {
+     "t": 116.28,
+     "end": 117.2,
+     "cue": {
+      "word": "وسأله",
+      "t": 116.28
+     },
+     "who": "king",
+     "action": "The king leans forward and asks, one open palm.",
+     "acting": "tip 0.06 forward on the throne, talk 0.6, gentle brow (brow -0.2); the husband bows quickly and keeps his eyes low.",
+     "library": "talk; PERSON_HANDS.palmsUp; tip"
+    },
+    {
+     "t": 117.26,
+     "end": 119.5,
+     "cue": {
+      "word": "ابتعاده.",
+      "t": 118.16
+     },
+     "who": "fx",
+     "action": "The king's small balloon: the tenant figure, a long double arrow, the field gate, and a question mark.",
+     "acting": "The husband glances up at the balloon, then at the father, who gives him the smallest nod.",
+     "library": "iconBalloon small (150 x 110 planned size scaled to 260 x 160); S.arrow"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 119.5
+   }
+  },
+  {
+   "id": "S11",
+   "start": 119.5,
+   "end": 130.12,
+   "paragraphs": [
+    6
+   ],
+   "set": "hall",
+   "cast": [
+    "husband",
+    "king",
+    "father",
+    "brother",
+    "lionIcon"
+   ],
+   "summary": "The husband answers in the same language: he saw a lion enter his field, and he is afraid to go back. The lion in his picture wears a crown, and the king knows who the lion is.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Two-shot (540, 600) zoom 1.25 keeping the husband, his balloon and the king; whip-fast push to the king (720, 590) zoom 1.9 at 125.68 for 0.9 s, then back."
+   },
+   "composition": "Husband at x 420, his balloon 400 x 260 at (330, 340) with the tail to him. King on the right watching it. The lion enters the balloon field from the gate on the left and is at least 110 px long on screen.",
+   "actions": [
+    {
+     "t": 119.5,
+     "end": 120.4,
+     "cue": {
+      "word": "أجاب",
+      "t": 119.5
+     },
+     "who": "husband",
+     "action": "The husband raises his head and draws a breath to answer.",
+     "acting": "Head up 8 units, sq 1.03 breath, gaze to the king then away; the scribble pulses.",
+     "library": "breathe(); worryScribble pulse"
+    },
+    {
+     "t": 120.52,
+     "end": 122.9,
+     "cue": {
+      "word": "الحقول",
+      "t": 121.24
+     },
+     "who": "fieldBalloon",
+     "action": "His own balloon pops: the same fenced field, green and full, the tiny tenant standing happily inside.",
+     "acting": "He speaks carefully (talk 0.5), one hand shaping the fence line; the father nods: the same language.",
+     "library": "iconBalloon p; fieldPicture crop 1"
+    },
+    {
+     "t": 123.06,
+     "end": 124.5,
+     "cue": {
+      "word": "وقال",
+      "t": 123.06
+     },
+     "who": "husband",
+     "action": "He points into his balloon at the gate.",
+     "acting": "pointUp by arm angle toward the balloon gate; eyes on the king to see if he follows.",
+     "library": "PERSON_HANDS.pointUp via aL"
+    },
+    {
+     "t": 124.58,
+     "end": 125.1,
+     "cue": {
+      "word": "رأى",
+      "t": 124.58
+     },
+     "who": "fieldBalloon",
+     "action": "Inside the balloon, paw prints appear on the path to the gate; the tiny tenant turns to look.",
+     "acting": "Four prints pop one by one (2 frames apart).",
+     "library": "scene-drawn prints"
+    },
+    {
+     "t": 125.12,
+     "end": 125.6,
+     "cue": {
+      "word": "أسدًا",
+      "t": 125.12
+     },
+     "who": "lionIcon",
+     "action": "A lion walks in through the open gate. Label A LION!",
+     "acting": "Library lion walking (walk() phase from distance), tail up, half lidded and pleased; the tenant jumps (hop).",
+     "library": "lion {s: 0.3, ph, amp, lid: 0.4}; walk(); hop(); S.label"
+    },
+    {
+     "t": 125.68,
+     "end": 126.3,
+     "cue": {
+      "word": "دخل",
+      "t": 125.68
+     },
+     "who": "lionIcon",
+     "action": "A gold crown pops onto the lion's head with a glint.",
+     "acting": "The crown lands with a 2 frame squash on the mane; it is the king's crown, same shape and jewels.",
+     "library": "crownProp on the lion head point"
+    },
+    {
+     "t": 125.9,
+     "end": 127.3,
+     "cue": {
+      "word": "حقله،",
+      "t": 126.32
+     },
+     "who": "king",
+     "action": "Push in: the king goes rigid, one hand creeping up to his own crown; he looks straight at the camera for half a second.",
+     "acting": "brow -0.8, lid 0, mouth o, sinks into the throne (sq 0.95); look to camera (gaze [0, 0.05]) for 12 frames; a gulp. The one lens stare of the film.",
+     "library": "settleTo(); PERSON_HANDS.headHold one hand; gaze"
+    },
+    {
+     "t": 127.38,
+     "end": 128.6,
+     "cue": {
+      "word": "فخشي",
+      "t": 127.38
+     },
+     "who": "fieldBalloon",
+     "action": "The tiny tenant backs out of the gate and hides behind the fence post, trembling.",
+     "acting": "tremble 2 on the tenant; the real husband mirrors it: half a step back, hands up in a small shield, gaze down.",
+     "library": "tremble(); PERSON_HANDS.shield"
+    },
+    {
+     "t": 128.66,
+     "end": 130.12,
+     "cue": {
+      "word": "ذلك",
+      "t": 128.96
+     },
+     "who": "fieldBalloon",
+     "action": "The gate swings shut with the lion inside and the tenant outside.",
+     "acting": "Gate swing (damped); the father looks at the floor, the brother stares at the king with his mouth open until the father's stick taps his foot.",
+     "library": "swing(); stagger()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 125.12,
+     "text": "A LION!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 130.12
+   }
+  },
+  {
+   "id": "S12",
+   "start": 130.12,
+   "end": 139.4,
+   "paragraphs": [
+    7
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "husband",
+    "father",
+    "brother",
+    "lionIcon"
+   ],
+   "summary": "The king answers honestly in the same picture: the lion did enter the field, but it spoiled no crop and took nothing away.",
+   "camera": {
+    "shot": "medium",
+    "move": "drift",
+    "notes": "Medium on the king and his balloon (660, 560) zoom 1.35 with the husband's head kept at the left edge; slow drift left 30 units so the husband comes fully into frame by 138.82."
+   },
+   "composition": "The king's balloon 420 x 270 at (560, 320), tail to the throne. Husband at x 420 looking up into it. The lion inside faces a small red book standing among the sprouts.",
+   "actions": [
+    {
+     "t": 130.12,
+     "end": 131.7,
+     "cue": {
+      "word": "قال",
+      "t": 130.12
+     },
+     "who": "king",
+     "action": "The king takes his hand from his crown, sits up straight and lays it on his chest.",
+     "acting": "A breath (sq 1.03), brows level, gaze meets the husband's eyes and holds: no royal mask. PERSON_HANDS.chest.",
+     "library": "breathe(); PERSON_HANDS.chest; lookAt()"
+    },
+    {
+     "t": 131.84,
+     "end": 133.0,
+     "cue": {
+      "word": "الملك",
+      "t": 131.84
+     },
+     "who": "fieldBalloon",
+     "action": "The husband's balloon slides across and becomes the king's: the tail swings from the husband to the throne.",
+     "acting": "Tail re-aims over 8 frames; the king talks (talk 0.6).",
+     "library": "iconBalloon tail key"
+    },
+    {
+     "t": 133.1,
+     "end": 134.1,
+     "cue": {
+      "word": "الأسد",
+      "t": 133.1
+     },
+     "who": "lionIcon",
+     "action": "Inside: the crowned lion stands in the middle of the green field.",
+     "acting": "The king nods once as the lion appears: yes, it entered. He does not look away.",
+     "library": "lion {s: 0.3}; nod"
+    },
+    {
+     "t": 134.18,
+     "end": 135.1,
+     "cue": {
+      "word": "الحقل",
+      "t": 134.18
+     },
+     "who": "lionIcon",
+     "action": "The lion meets a small red book standing upright among the sprouts and stops dead.",
+     "acting": "Lion lurch on the stop, ears and tail drop (tailUp 1 to 0), lid 0.2 to 0; the book is the wife's book in miniature.",
+     "library": "lurch(); lion tailUp; book mini"
+    },
+    {
+     "t": 135.16,
+     "end": 136.6,
+     "cue": {
+      "word": "يفسد",
+      "t": 136.12
+     },
+     "who": "lionIcon",
+     "action": "The lion steps backward on tiptoe between the rows; not one sprout bends.",
+     "acting": "Slow reverse walk (walk() with negative travel), head low (crouch 0.4), lid 0.5: an ashamed lion.",
+     "library": "walk(); lion crouch"
+    },
+    {
+     "t": 136.72,
+     "end": 137.2,
+     "cue": {
+      "word": "زرعه",
+      "t": 136.72
+     },
+     "who": "fieldBalloon",
+     "action": "Green ticks ripple over all four rows: unharmed.",
+     "acting": "ticks 0 to 1 with stagger; sprouts sway back upright.",
+     "library": "fieldPicture ticks; stagger()"
+    },
+    {
+     "t": 137.26,
+     "end": 138.4,
+     "cue": {
+      "word": "يأخذ",
+      "t": 137.92
+     },
+     "who": "lionIcon",
+     "action": "The lion walks out of the gate with nothing in its mouth; the gate closes behind it. Counter TAKEN: 0.",
+     "acting": "Mouth closed, tail low; the counter pops under the balloon and stays at 0 with a small bounce.",
+     "library": "S.counter; swing() gate"
+    },
+    {
+     "t": 138.48,
+     "end": 139.4,
+     "cue": {
+      "word": "شيئًا.",
+      "t": 138.82
+     },
+     "who": "king",
+     "action": "The king opens both palms (empty) and bows his head a little to the husband.",
+     "acting": "PERSON_HANDS.palmsUp, head drop 5 units, wet eyes for a moment; the father breathes out, the brother blinks, lost, then gets it (brow up) 6 frames later.",
+     "library": "PERSON_HANDS.palmsUp; wet; stagger()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 137.92,
+     "text": "TAKEN: 0"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 139.4
+   }
+  },
+  {
+   "id": "S13",
+   "start": 139.4,
+   "end": 151.44,
+   "paragraphs": [
+    7
+   ],
+   "set": "hall",
+   "cast": [
+    "husband",
+    "king",
+    "father",
+    "brother"
+   ],
+   "summary": "The husband understands that the king is vouching for his wife and that his fear had no cause. The scribble of jealousy over his head bursts.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on the husband (420, 620) zoom 1.6 with the relatives behind him at the left; push to 1.9 by 148.0; hold through the burst; tiny panel-only shake (2 px, 4 frames) on the pop."
+   },
+   "composition": "Husband centre, head at y 620; worry scribble above at y 470; his thought cloud to the right at (640, 380) 320 x 220. The king is out of frame after 140.0 except for his balloon fading at the top right.",
+   "actions": [
+    {
+     "t": 139.4,
+     "end": 140.9,
+     "cue": {
+      "word": "فهم",
+      "t": 139.4
+     },
+     "who": "husband",
+     "action": "He stares at the closed gate in the balloon; the meaning lands.",
+     "acting": "Saccades between the balloon and the king (gazePlan 0.07), then stillness; brow +0.2 to -0.6; mouth parts.",
+     "library": "gazePlan()"
+    },
+    {
+     "t": 140.96,
+     "end": 142.4,
+     "cue": {
+      "word": "الزوج",
+      "t": 140.96
+     },
+     "who": "husband",
+     "action": "His thought cloud pops: his wife at home, upright, the red book in her hands.",
+     "acting": "He looks up into it; the worry scribble stops pulsing.",
+     "library": "thoughtCloud(...) with person {costume:'villageWoman'} + book"
+    },
+    {
+     "t": 142.42,
+     "end": 143.2,
+     "cue": {
+      "word": "يؤكد",
+      "t": 142.42
+     },
+     "who": "fx",
+     "action": "In the cloud the tiny crowned lion bows to her and backs away.",
+     "acting": "A quick replay of S12 inside the cloud, 0.8 s.",
+     "library": "lion {s: 0.2, silhouette: false}; crouch"
+    },
+    {
+     "t": 143.22,
+     "end": 144.6,
+     "cue": {
+      "word": "براءة",
+      "t": 143.22
+     },
+     "who": "fx",
+     "action": "Stars ring the wife in the cloud. Label INNOCENT!",
+     "acting": "Six staggered star glints (goldGlow strength 0.5); his eyes fill (wet).",
+     "library": "goldGlow (planned); S.label"
+    },
+    {
+     "t": 144.7,
+     "end": 146.2,
+     "cue": {
+      "word": "مخاوفه",
+      "t": 145.44
+     },
+     "who": "worry",
+     "action": "The scribble over his head shrinks a step.",
+     "acting": "worry size 0.8 to 0.5; he lets go of his own arms (folded to open).",
+     "library": "worryScribble size"
+    },
+    {
+     "t": 146.34,
+     "end": 147.4,
+     "cue": {
+      "word": "بلا",
+      "t": 147.06
+     },
+     "who": "worry",
+     "action": "It shrinks again; the tiny crown inside it falls out and vanishes.",
+     "acting": "size 0.5 to 0.25; crown drops with fallY and fades before it reaches his shoulder.",
+     "library": "worryScribble; fallY()"
+    },
+    {
+     "t": 147.48,
+     "end": 148.7,
+     "cue": {
+      "word": "سبب،",
+      "t": 147.48
+     },
+     "who": "husband",
+     "action": "In the pause he draws one long breath in, eyes shut.",
+     "acting": "Anticipation: sq 1.05, lid 1, shoulders up; everything else still.",
+     "library": "anticipate(); lid"
+    },
+    {
+     "t": 148.74,
+     "end": 149.5,
+     "cue": {
+      "word": "فزالت",
+      "t": 148.74
+     },
+     "who": "worry",
+     "action": "The scribble bursts into six small stars. Lettering POP!",
+     "acting": "Burst on the word; he exhales (sq 0.97 then 1), shoulders drop 6 units, eyes open wet and bright.",
+     "library": "worryScribble burst; settleTo()"
+    },
+    {
+     "t": 149.6,
+     "end": 150.4,
+     "cue": {
+      "word": "الغيرة",
+      "t": 149.6
+     },
+     "who": "father",
+     "action": "The father lays a hand on his chest and breathes out; the brother hops with both fists up.",
+     "acting": "Father lid 0.6 then smile; brother hop() with landSquash 5 frames after the pop (stagger).",
+     "library": "hop(); landSquash; PERSON_HANDS.chest"
+    },
+    {
+     "t": 150.46,
+     "end": 151.44,
+     "cue": {
+      "word": "قلبه.",
+      "t": 150.46
+     },
+     "who": "heart",
+     "action": "A red heart pops on his chest and beats twice; he turns toward the door.",
+     "acting": "Heart pulse x2 (K.beat); his gaze snaps to the door (lookAt), anticipation crouch for the run.",
+     "library": "heart prop; anticipate(); lookAt()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 143.22,
+     "text": "INNOCENT!"
+    },
+    {
+     "t": 148.74,
+     "text": "POP!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 148.45,
+     "kind": "pop (anticipating the burst, in the pause)"
+    },
+    {
+     "t": 151.3,
+     "kind": "whoosh (he runs home, in the pause)"
+    }
+   ],
+   "transition_out": {
+    "type": "whip",
+    "t": 151.44
+   }
+  },
+  {
+   "id": "S14",
+   "start": 151.44,
+   "end": 161.36,
+   "paragraphs": [
+    8
+   ],
+   "set": "yard",
+   "cast": [
+    "husband",
+    "wife",
+    "servant"
+   ],
+   "summary": "He runs home. He asks her pardon; after one dignified beat she takes his hands, and the quarrel is over. A royal servant brings the king's reward.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide (480, 690) zoom 1.2 for the run; two-shot via twoShot(husband, wife, {margin: 100}) about (560, 690) zoom 1.6 from 153.82; ease out to (460, 690) zoom 1.3 at 157.9 to admit the servant on the left."
+   },
+   "composition": "Bright morning. Wife on the bench at x 370 rising, then standing at x 600 near the door; husband stops at x 470. Their hands meet at about (535, 720). Servant enters from the left and sets the chest at x 250.",
+   "actions": [
+    {
+     "t": 151.76,
+     "end": 152.9,
+     "cue": {
+      "word": "عاد",
+      "t": 151.76
+     },
+     "who": "husband",
+     "action": "He runs in from the left, dust at his heels.",
+     "acting": "walk() at run speed with footfalls() dust bursts; arms pumping; gaze locked on her.",
+     "library": "walk(); footfalls(); dustBurst"
+    },
+    {
+     "t": 152.94,
+     "end": 153.7,
+     "cue": {
+      "word": "الرجل",
+      "t": 152.94
+     },
+     "who": "husband",
+     "action": "He stops short of her with a lurch; she looks up from the bench, startled.",
+     "acting": "lurch() on the stop, sq 0.95 then settle; her lid 0.5 to 0, brow -0.5, she stands (sit 1 to 0).",
+     "library": "lurch(); person sit"
+    },
+    {
+     "t": 153.82,
+     "end": 154.5,
+     "cue": {
+      "word": "زوجته،",
+      "t": 153.82
+     },
+     "who": "husband",
+     "action": "He bows his head and holds out both open hands.",
+     "acting": "Head drop 10 units, PERSON_HANDS.reachBoth low, wet eyes, mouth closed: asking pardon without words.",
+     "library": "PERSON_HANDS.reachBoth; wet"
+    },
+    {
+     "t": 154.6,
+     "end": 155.9,
+     "cue": {
+      "word": "وانتهى",
+      "t": 154.6
+     },
+     "who": "wife",
+     "action": "She holds still for one beat, looking at him. Then her face softens.",
+     "acting": "Suspense by stillness (0.7 s, only a blink); then brow relaxes, mouth closed to smile, wet eyes.",
+     "library": "blink(); mouth"
+    },
+    {
+     "t": 156.02,
+     "end": 157.0,
+     "cue": {
+      "word": "الخصام",
+      "t": 156.02
+     },
+     "who": "wife",
+     "action": "She steps forward and puts her hands in his.",
+     "acting": "One step (walk), handLW/handRW meet his at (535, 720) with a small squeeze dip; both gazes meet.",
+     "library": "handLW/handRW; walk()"
+    },
+    {
+     "t": 156.66,
+     "end": 157.8,
+     "cue": {
+      "word": "بينهما،",
+      "t": 156.66
+     },
+     "who": "heart",
+     "action": "A heart rises from their joined hands and settles above them.",
+     "acting": "Pop with overshoot, slow bob; the songbird lands on the roof.",
+     "library": "heart prop; songbird"
+    },
+    {
+     "t": 157.9,
+     "end": 158.9,
+     "cue": {
+      "word": "وكافأهما",
+      "t": 157.9
+     },
+     "who": "servant",
+     "action": "A royal servant walks in from the left carrying a chest with a crown seal and sets it down with a bow.",
+     "acting": "walk() under a load (short steps, tip 0.06), chest lands with landSquash; bow tip 0.12. The couple turn their heads together, 3 frames apart.",
+     "library": "person {costume:'servant'}; walk(); giftChest"
+    },
+    {
+     "t": 159.0,
+     "end": 160.0,
+     "cue": {
+      "word": "الملك",
+      "t": 159.0
+     },
+     "who": "chest",
+     "action": "The lid opens: gold light and coins. An arrow marks the crown seal.",
+     "acting": "Lid 0 to 1 with a bounce; goldGlow 0 to 0.6; husband mouth o, wife a calm smile.",
+     "library": "giftChest open; goldGlow (planned); S.arrow"
+    },
+    {
+     "t": 160.12,
+     "end": 161.36,
+     "cue": {
+      "word": "تروي",
+      "t": 160.12
+     },
+     "who": "servant",
+     "action": "The servant backs out with a second bow; the couple look at each other over the open chest.",
+     "acting": "Their gazes return to each other, not the gold: that is the point of the shot.",
+     "library": "walk(); lookAt()"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 161.36
+   }
+  },
+  {
+   "id": "S15",
+   "start": 161.36,
+   "end": 175.98,
+   "paragraphs": [
+    8
+   ],
+   "set": "yard",
+   "cast": [
+    "wife",
+    "husband",
+    "king",
+    "bird"
+   ],
+   "summary": "The moral: what lasts is the courage of a woman who answered a powerful man with wisdom; trust comes home. THE END.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "Medium on the wife (600, 650) zoom 1.7; the memory inset opens at the upper left; from 168.82 pull out to the wide (520, 680) zoom 1.2 for the last tableau and the title."
+   },
+   "composition": "Wife in the doorway at x 640 holding the book to her chest. Memory inset circle r 170 centred (300, 400). Final tableau: husband x 540 and wife x 660 in the doorway, heart above the roof at (760, 430). THE END title in the sky at y 230, clear of the heads.",
+   "actions": [
+    {
+     "t": 161.36,
+     "end": 163.5,
+     "cue": {
+      "word": "وتبقى",
+      "t": 161.36
+     },
+     "who": "wife",
+     "action": "She stands in her doorway, the red book held to her chest, looking out at us calmly.",
+     "acting": "Level brows, closed mouth, slow blinks, breathe(); scarf edge moves in a light breeze.",
+     "library": "breathe(); blink(); book closed"
+    },
+    {
+     "t": 163.64,
+     "end": 164.4,
+     "cue": {
+      "word": "شجاعة",
+      "t": 163.64
+     },
+     "who": "lettering",
+     "action": "Label COURAGE with an arrow to her.",
+     "acting": "She lifts her chin 3 units as it lands.",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 164.42,
+     "end": 165.5,
+     "cue": {
+      "word": "المرأة",
+      "t": 164.42
+     },
+     "who": "fx",
+     "action": "A round memory inset irises open at the upper left: the doorway, the day of the visit.",
+     "acting": "Planned inset circle with the dream wash at 0.3 so it reads as the past.",
+     "library": "inset circle (planned); dream wash (planned)"
+    },
+    {
+     "t": 165.56,
+     "end": 167.3,
+     "cue": {
+      "word": "ردت",
+      "t": 165.56
+     },
+     "who": "king",
+     "action": "In the inset: the cloaked king looms (drawn 1.3 times her size) and she raises the open book between them; he stops.",
+     "acting": "His tall shadow with a crown shape falls toward her; the book comes up and the shadow halts at its edge.",
+     "library": "person + cloakWorn; book; flat shadow polygon"
+    },
+    {
+     "t": 167.34,
+     "end": 168.0,
+     "cue": {
+      "word": "السلطة",
+      "t": 167.34
+     },
+     "who": "king",
+     "action": "In the inset: the big figure bows and shrinks to her size as he backs away.",
+     "acting": "s 1.3 to 1.0 with tip 0.12; the crown shadow slides off the wall.",
+     "library": "s key; tip"
+    },
+    {
+     "t": 168.02,
+     "end": 168.8,
+     "cue": {
+      "word": "بالحكمة،",
+      "t": 168.02
+     },
+     "who": "lettering",
+     "action": "Label WISDOM with an arrow to the book in her real hands; the book glints.",
+     "acting": "She glances down at it and back up; one star glint.",
+     "library": "S.label + S.arrow; glint"
+    },
+    {
+     "t": 168.82,
+     "end": 170.1,
+     "cue": {
+      "word": "ثم",
+      "t": 168.82
+     },
+     "who": "husband",
+     "action": "The inset closes. The husband steps into the doorway beside her; she lowers the book.",
+     "acting": "walk() two steps; they exchange a look (lookAt each other), both smile; camera pulls out.",
+     "library": "walk(); lookAt(); inset iris close"
+    },
+    {
+     "t": 170.16,
+     "end": 171.0,
+     "cue": {
+      "word": "الثقة",
+      "t": 170.16
+     },
+     "who": "heart",
+     "action": "The heart rises over the cottage roof. Label TRUST.",
+     "acting": "Heart pop and 2 beats; the window lights warm.",
+     "library": "heart prop; S.label; villageYard winLit"
+    },
+    {
+     "t": 171.04,
+     "end": 171.9,
+     "cue": {
+      "word": "بيتها.",
+      "t": 171.04
+     },
+     "who": "wife",
+     "action": "They stand together in their doorway; the songbird settles on the roof ridge.",
+     "acting": "Idle breathing, offset blinks (different seeds), her head inclines 3 units toward him.",
+     "library": "breathe(); blink(); songbird hop()"
+    },
+    {
+     "t": 172.0,
+     "end": 175.98,
+     "who": "lettering",
+     "action": "THE END title pops in the sky and is held to the end of the film.",
+     "acting": "Under it the couple keep breathing and blinking; the heart bobs; the bird flicks its tail. Nothing new starts.",
+     "library": "S.title"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 163.64,
+     "text": "COURAGE"
+    },
+    {
+     "t": 168.02,
+     "text": "WISDOM"
+    },
+    {
+     "t": 170.16,
+     "text": "TRUST"
+    },
+    {
+     "t": 172.0,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 172.3,
+     "kind": "soft chime (after the last word)"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 175.98
+   }
+  }
+ ],
+ "ending": {
+  "t": 171.04,
+  "description": "Husband and wife stand together in their doorway in morning light, the heart over the roof, the songbird on the ridge. THE END pops at 172.0 in the sky and is held to 175.98 with idle breathing and blinks; soft chime at 172.3."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "خرج ملك يومًا متخفيًا ليتعرف إلى أحوال الناس،|وشعر بالعطش عند بيت صغير.|طلب الماء من امرأة كانت تقيم فيه، فقدمته له بلطف.|أعجبه جمالها، وعرف أنها زوجة رجل غائب.",
+   "en": "A king went out in disguise|and asked for water at a house.|A married woman served him kindly|while her husband was away."
+  },
+  {
+   "p": 2,
+   "ar": "بدأ الملك يلمح إلى رغبته في التقرب منها،|لكنها أدركت من هيئته وكلامه أنه الملك نفسه.|لم تصرخ ولم تخف،|بل أحضرت كتابًا فيه نصائح تحذر من خيانة الزواج والظلم.",
+   "en": "The king suggested a romantic encounter.|Recognizing him,|the woman calmly brought out a book|warning against adultery and injustice."
+  },
+  {
+   "p": 3,
+   "ar": "قرأ الملك ما في الكتاب، وشعر بالخجل من طلبه.|اعتذر في نفسه عن خطئه، وغادر البيت دون أن يمس المرأة بسوء.|وظنت الزوجة أن الأمر انتهى، فعادت إلى حياتها المعتادة.",
+   "en": "The king read, felt ashamed,|and left without touching her.|The woman believed the matter was over and resumed her ordinary life."
+  },
+  {
+   "p": 4,
+   "ar": "لكن زوجها علم بعد عودته أن الملك زار بيته.|لم يسمع من زوجته ما يدل على خيانة، إلا أنه خاف أن يكون الملك قد تعلق بها،|فابتعد عنها وتركها حزينة وحائرة.",
+   "en": "When her husband learned of the royal visit,|he grew fearful despite having no proof of wrongdoing.|He withdrew from his wife, leaving her distressed."
+  },
+  {
+   "p": 5,
+   "ar": "لاحظ أهل المرأة ما حدث،|وذهبوا إلى مجلس الملك يشكون بطريقة غير مباشرة.|قالوا إن رجلًا استأجر حقلًا حسنًا، ثم تركه بلا زرع،|وسألوا هل يجوز له أن يهمل ما أخذ.",
+   "en": "Her relatives|appealed to the king through a metaphor:|a man had rented a fine field but left it uncultivated.|Was such neglect fair?"
+  },
+  {
+   "p": 6,
+   "ar": "فهم الملك أنهم يقصدون الزوجة وزوجها،|فاستدعى الرجل وسأله عن سبب ابتعاده.|أجاب الزوج بلغة الحقول أيضًا،|وقال إنه رأى أسدًا دخل حقله، فخشي العودة إلى ذلك المكان.",
+   "en": "Understanding that the field meant the marriage,|the king questioned the husband.|The man replied|that a lion had entered his field, and he dared not return."
+  },
+  {
+   "p": 7,
+   "ar": "قال الملك إن الأسد دخل الحقل لكنه لم يفسد زرعه ولم يأخذ منه شيئًا.|فهم الزوج أن الملك يؤكد براءة زوجته،|وأن مخاوفه كانت بلا سبب، فزالت الغيرة من قلبه.",
+   "en": "The king replied that the lion had entered but damaged nothing and taken nothing.|The husband understood this as confirmation|that his wife had done no wrong."
+  },
+  {
+   "p": 8,
+   "ar": "عاد الرجل إلى زوجته، وانتهى الخصام بينهما،|وكافأهما الملك كما تروي الحكاية.|وتبقى في القصة شجاعة المرأة التي ردت طلب صاحب السلطة بالحكمة،|ثم عادت الثقة إلى بيتها.",
+   "en": "The couple reconciled,|and the tale says the king rewarded them.|The woman’s courage had checked a powerful man,|and trust returned to her marriage."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "fieldPicture (iconBalloon content)",
+   "reusable": true,
+   "effort": "M",
+   "description": "The parable picture that carries S9 to S13: a fenced field 320 x 170 with a swinging gate, crop 0..1, a tiny tenant figure, room for a walking lion at s 0.3, tick marks and a question mark. Reusable for any farm, land, rent or parable story (it matches the planned dreamProps field, with a fence and gate added).",
+   "implementation": "One function fieldPicture(ctx, x, y, {crop, gate, tenantX, tenantTremble, lionP, book, ticks, mark, prints}) drawn inside the planned iconBalloon (or thoughtCloud inside callback). Soil: rounded rect #d9a441 with 4 darker furrow lines. Fence: 9 posts 8 x 46 with one rail, black brush outline. Gate: a 46 wide frame hinged on the left post, rotated by gate * 1.2 rad (use swing() for the damped settle). Crop: 4 rows of 7 sprouts, each a green stroke 26 high scaled by crop with a yellow ear dot; droop by rotating the tip when crop falls. Tenant: person silhouette at s 0.22 in green. Lion: Library lion at s 0.3 with crownProp at its head point. Ticks: small green check marks over each row, staggered."
+  },
+  {
+   "type": "prop",
+   "name": "cloakProp (worn state: cloakWorn)",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned loose cloak gets a worn state: a brown travelling cloak over the shoulders of any person with a centre opening that shows the costume beneath, and a rolled hood collar. The king's disguise; reusable for travellers, spies, pilgrims and disguised rulers.",
+   "implementation": "Draw after the person body and before the head and hands (or as an overlay polygon that leaves the head circle and the hand discs uncovered): two trapezoid flaps from the shoulders (-52, -158)/(52, -158) to the hem (-70, -36)/(70, -36) with a 34 wide gap in the middle, brown #8a5a2b with dark dots (HP dot fill), black brush outline, collar ellipse 100 x 22. on 0..1 scales the flaps from the shoulders with settleTo overshoot. Follows the figure x, y, s, tip and sq."
+  },
+  {
+   "type": "pose",
+   "name": "person costume 'caliph' crown:false",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned opt-in field (AN-135): the caliph preset with its turban and jewel but without the crown, so the king can travel unrecognised. Default unchanged.",
+   "implementation": "In cast/people.js skip the crown path when P.crown === false; regression test must stay all identical."
+  },
+  {
+   "type": "prop",
+   "name": "crownProp",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned loose gold crown 60 x 40, three points with red jewels; here in the king's hand at 1.8, on the lion, in clouds and balloons, inside the worry scribble, and as the seal on the chest.",
+   "implementation": "Polygon with three points, yellow fill, black brush outline, three red discs, one white glint; s and rot parameters."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "reusable": true,
+   "effort": "M",
+   "description": "Planned wordless picture balloon (single and strip modes) with a tail that can re-aim; holds the fieldPicture, the husband-away icon, the neighbour's news and the wife's account.",
+   "implementation": "White rounded balloon with black brush outline and blue dot shading at the lower edge, tail triangle to a world point, pop p 0..1 with overshoot, inside(ctx) callback clipped to the balloon; strip mode divides it into 3 frames with thin gutters."
+  },
+  {
+   "type": "effect",
+   "name": "worryScribble",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned black scribble cloud over a worried head; here with a tiny crown inside, size steps and a burst into stars: the visible form of the husband's jealousy from 71.66 to 148.74.",
+   "implementation": "A seeded looping polyline (K.noise) of about 40 points inside an ellipse 110 x 80, redrawn with a slow phase so it writhes; size scales it; burst replaces it with 6 stars flying out over 0.4 s."
+  },
+  {
+   "type": "prop",
+   "name": "bookStack (single book, with insert size)",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned book: closed 90 x 26, open 120 x 70 in the hands, and a large open insert 620 x 400 with two pictogram pages (house with heart and lock; tilted balance scale with a red X) and squiggle lines.",
+   "implementation": "Two page rectangles with a centre gutter curve, red cover edge showing 6 units all round, yellow corner pieces; open 0..1 rotates the covers about the spine; pictograms drawn from simple shapes; lines draw on with a length parameter."
+  },
+  {
+   "type": "prop",
+   "name": "waterJug, smallBowl, giftChest, bindle",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned small props reused under their planned names: the ewer and drinking bowl of the visit, the reward chest with a crown seal, the husband's travel bundle.",
+   "implementation": "As specified in props; each one function with x, y, s, rot and one state field (tilt, fill, open)."
+  },
+  {
+   "type": "expression",
+   "name": "flush (soft option)",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned soft flush (pink cheek dots, no steam) for the king's shame at 48.68 and his memory of it at 112.4.",
+   "implementation": "Two clipped discs of red Ben-Day dots on the cheeks with alpha 0..1, drawn over the face of the person."
+  },
+  {
+   "type": "motion",
+   "name": "handOver, templeTap",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned helpers: an object passes from one hand to another with a weight dip (bowl at 14.98 and 23.06); a finger tapped on the temple (the father at 95.44).",
+   "implementation": "handOver(t, t0, handA, handB) returns the object position; templeTap is a PERSON_HANDS entry with one keyed tap."
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned round picture-in-picture with an iris, used once (164.42 to 168.82) to replay the moment of the book, with the planned dream wash.",
+   "implementation": "Circular clip r 170 with a fat black ring and paper rim; iris by radius; the inside callback draws the yard at 0.55 scale."
+  }
+ ],
+ "owner_questions": [
+  "SCRIPT: the English translation is a condensed summary of the Arabic in most paragraphs (for example P1 omits \"to learn how the people lived\", the thirst, the small house and \"he admired her beauty\"; P8 has no equivalent of \"as the tale tells\" in the same place); both are kept verbatim as supplied.",
+  "The king's advance is staged chastely: he leans in, speaks low, takes one step closer and a small heart drifts toward her; he never touches her and she never leaves her threshold (default: keep it this mild).",
+  "The whole visit happens at the doorway of the house, not inside it, although the Arabic says he left \"the house\" (default: doorway only, which also makes the UNTOUCHED threshold line possible).",
+  "The script does not say how the husband learned of the visit; an old neighbour tells him with a picture balloon (default). The source tale's alternative, a forgotten ring or sandals found in the house, was not used because it adds an object the narration never mentions.",
+  "The wife's relatives are shown as two people, her old father and her young brother, and the brother's near blunder is an added comic beat to show \"indirectly\" (default: keep).",
+  "The lion in the parable balloons wears the king's crown and the king reacts with one look to camera, so viewers read lion = king without words (default: keep); the lion also stops at a tiny book in the field, an added visual link to the real event.",
+  "The reward is shown as a chest of coins with a crown seal delivered by a servant (the script only says the king rewarded them).",
+  "Invented lettering (19 items plus THE END): THE KING, IN DISGUISE, THIRSTY!, HUSBAND AWAY, KEEP FAITH, NO INJUSTICE, UNTOUCHED, ?, HER FAMILY, A FINE FIELD, LEFT UNSOWN, IS THAT FAIR?, A LION!, TAKEN: 0, INNOCENT!, POP!, COURAGE, WISDOM, TRUST (default: keep all; KEEP FAITH and NO INJUSTICE are the page captions of the book).",
+  "The wife wears a blue dress (villageWoman recoloured) so she never blends with the king's red robe (default: blue)."
+ ],
+ "implementation_notes": [
+  "All times are seconds on the final MP3 (171.98 s); the film runs to 175.98 s (end_hold 4.0). Take cue times from timing.json words, not from this plan, if they differ by more than a frame.",
+  "World 1000 x 1230, ground and floors at y 900. Principals at s 1.1 to 1.15 (head top about y 630). Keep faces and hands above y 1000; captions live in the lower panel.",
+  "Set LIFE.t = t each frame for auto blinks; give explicit lids hand blinks. One blink seed per character (king 5, wife 11, husband 23, father 31, brother 37).",
+  "villageYard: the default cottage is sized for the KD-009 film; pass a larger cottage (about x 540..985, top y 500, door 120 wide and at least 290 high) so the wife at s 1.1 stands inside the doorway. Read Y.door, Y.win, Y.bench from the returned anchors; all yard coordinates in this plan are approximate, measure on the set.",
+  "The doorway is the stage: draw order yard back, door interior (dim), wife (alpha in the shade), door frame front, king, yardLeaves. The wife's feet never move left of the threshold x in S2 to S4.",
+  "The disguise: person {costume: caliph, crown: false} plus cloakWorn. The red robe strip with yellow trim must stay visible in the cloak opening in every disguise shot; it is the clue at 30.22.",
+  "The heart is one prop with a keyed path: pops 16.5 at (430, 500); drifts to x 520 by 27.7; stops at her palm 27.76; bumps the book 38.24; sinks; cracks 47.0; falls 48.68. It returns whole at 150.46 (husband), 156.66 (joined hands) and 170.16 (over the roof).",
+  "worryScribble sizes: 0.4 at 71.66; 0.8 by 79.1; holds through S8 to S12 whenever the husband is on screen; 0.5 at 145.44; 0.25 at 147.06; burst 148.74.",
+  "Parable balloons: one iconBalloon instance whose content is fieldPicture. Father's version at (360, 350); husband's at (330, 340); it slides to (560, 320) and re-aims its tail to the throne at 131.84. Keep the lion at least 110 px long on screen (balloon scale: draw the lion at s 0.3 in world units).",
+  "Lion in the balloon: Object.assign(P, walk(lx, t, {stride: 300 * 0.3})) so the paws do not slide; reverse walk for 135.16 to 136.6 by decreasing lx.",
+  "Palace: person sit:1, seat:'bench' at HALL.throne.sitY for the king in every hall shot; listeners never stand between the speaker and the throne. Relatives react a few frames apart (stagger), the father always first.",
+  "Camera: K.camAt keys in pairs for holds; clamp as in the template camAt. Panel-only shake only at 148.74 (2 px, 4 frames).",
+  "Transitions: whip at 6.22 and 151.44 (a 6 frame horizontal smear inside the panel), S.transition with caption LATER... centred on 65.58 (cover from 65.2 to 66.0, camera and set change under the covered midpoint), dissolve 86.62 and 161.36 (12 frames).",
+  "Sound: only four effects, all in listed pauses or after the last word: 22.55 soft pop, 148.45 pop, 151.3 whoosh, 172.3 chime; SND master 0.6. Do not add footsteps or knocks: the narration has almost no gaps.",
+  "Subtitles: use the subtitles array (| marks) for chunks_ar.txt and chunks_en.txt; the text is verbatim from story/script.json.",
+  "Lettering: Bangers, labels at least 28 px at 1280 x 720 scale, never over a face; captions on the book pages are part of the book insert and of the raised book only when the camera is at zoom 1.7 or more."
+ ],
+ "warnings": [
+  "Three long stretches share the yard set (S2 to S4, 37 s): variety must come from the camera (wide, two-shot, close on her eyes, book insert) and from the acting; do not let it sit in one framing for more than 6 s.",
+  "The parable is abstract: the audience must read field = wife and lion = king without words. The tenant must look like the husband (green, cap), the lion must wear the king's exact crown, and the king's thought cloud at 112.4 must show the real doorway. Check these three at phone size.",
+  "The advance scene must stay chaste and dignified; no touching, no leering close-up, the wife never cornered. Her power is stillness.",
+  "The person figure is front facing only: \"turning away\" is played with gaze, tip, folded arms and distance, not a back view.",
+  "The narration has only three pauses of 0.6 s or more, so the film is almost silent apart from the voice; do not add effects on words.",
+  "The cottage default geometry in villageYard may not accept the custom size as written; check towns.js and adjust, keeping the doorway at least 290 units high.",
+  "planned assets (iconBalloon, worryScribble, crownProp, bookStack, waterJug, smallBowl, giftChest, bindle, flush, handOver, templeTap, inset circle, caliph crown:false) may already exist in Library by the time this film is built; use the Library versions if so."
+ ]
+}

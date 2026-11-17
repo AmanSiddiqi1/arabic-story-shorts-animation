@@ -1,0 +1,91 @@
+{
+ "story_id": "AN-099",
+ "title": "CALIPH AL-MAAMUN AND THE STRANGE SCHOLAR",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T14:02:07",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a468d3d77acd381ff.jsonl",
+ "agent_id": "a468d3d77acd381ff",
+ "model_messages": {
+  "claude-fable-5-2": 29
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "55f40b80499764dafae6bd0a526652bb747cba15c90ac33ed858039270333ca5",
+  "paragraphs": 8,
+  "segments": [
+   "AN-099-P01-S01",
+   "AN-099-P01-S02",
+   "AN-099-P01-S03",
+   "AN-099-P01-S04",
+   "AN-099-P01-S05",
+   "AN-099-P01-S06",
+   "AN-099-P01-S07",
+   "AN-099-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-099_CALIPH_AL_MAAMUN_AND_THE_STRANGE_SCHOLAR_full_slowed.mp3",
+  "sha256": "70b54b4fc07a2ca535c722b53830b92d7b3a7089c765ce628e5a45409d0f3905",
+  "duration": 169.475
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-099_CALIPH_AL_MAAMUN_AND_THE_STRANGE_SCHOLAR_full_slowed.mp3.words.json",
+  "sha256": "6d791c14cbacede78655cd74b74ac398733054a92977887ba4b0df36e757cd4c",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "959278e",
+ "scenes": 16,
+ "actions": 137,
+ "new_assets": [
+  {
+   "type": "effect",
+   "name": "answerBalloon",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "goblet",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "floorCushion",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "foodTray",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "weekDots",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "templeTap",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [
+  "props counter: no library function and not marked new"
+ ],
+ "plan_warnings": [
+  "Five seated figures plus a servant in a 1000-wide hall is tight: scholars at s 0.64 to 0.66 are about 105 px tall on screen in the wide shots, below the comfortable size, so every acting beat that matters is given a medium or close shot. Check a contact sheet at phone size.",
+  "The person figure has no profile; the offer of the cup depends on world hand targets (handRW) meeting exactly at (545, 770). Arms are short (about 74 units at s 1): seat the two men no more than 120 units apart or the cup will not reach.",
+  "Wine is shown on screen because the narration names it (owner question 1).",
+  "Seat C at y 925 puts the stranger in front of the cushion row; verify he does not hide the proud scholars face at x 511 (move C to x 610 if needed, dais starts at 640).",
+  "The LATER card runs over the words at 96.14 to 98.3; it is visual only. The narration has no pause there, so the card gets no sound.",
+  "The English translation is a condensed paraphrase of the Arabic (for example P1 omits the hard questions, P7 omits the address O Commander of the Faithful and ends as a question). Both are kept verbatim."
+ ]
+}

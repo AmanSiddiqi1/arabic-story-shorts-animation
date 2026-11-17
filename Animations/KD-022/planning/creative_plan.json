@@ -1,0 +1,2531 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "KD-022",
+ "title": "The Ignorant Physician",
+ "duration": 171.487,
+ "end_hold": 3.4,
+ "logline": "An old physician is honest enough to refuse a job his failing eyes cannot do; a confident fraud takes it, poisons the prince by ignorance, and is made to drink his own mixture.",
+ "moral": "False confidence kills. Knowing the limit of what you can do is part of knowledge.",
+ "tone": "A dark cautionary tale told with restraint. Light comedy only in the first two thirds and only at the fraud's expense (the mask dropping, the sneeze); from the moment the prince drinks, the film goes quiet: stillness, eyes, a lamp going out. Both deaths are shown indirectly.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 2.18,
+   "kind": "setup",
+   "cue": {
+    "word": "طبيب",
+    "t": 2.18
+   },
+   "summary": "A famous, trusted physician in a distant city."
+  },
+  {
+   "id": "B2",
+   "t": 13.88,
+   "kind": "turn",
+   "cue": {
+    "word": "ضعف",
+    "t": 13.88
+   },
+   "summary": "Years pass; his sight fails until he cannot tell his own medicines apart. He knows it, and stops his hand."
+  },
+  {
+   "id": "B3",
+   "t": 22.58,
+   "kind": "inciting",
+   "cue": {
+    "word": "مرض",
+    "t": 22.58
+   },
+   "summary": "The king's son falls gravely ill."
+  },
+  {
+   "id": "B4",
+   "t": 35.0,
+   "kind": "rising",
+   "cue": {
+    "word": "عرف",
+    "t": 35.0
+   },
+   "summary": "The old physician diagnoses the illness and names the right medicine (the three-jar recipe)."
+  },
+  {
+   "id": "B5",
+   "t": 40.14,
+   "kind": "turn",
+   "cue": {
+    "word": "رفض",
+    "t": 40.14
+   },
+   "summary": "He refuses to mix it himself because he cannot see well: honest about his limit."
+  },
+  {
+   "id": "B6",
+   "t": 50.76,
+   "kind": "rising",
+   "cue": {
+    "word": "فرصة",
+    "t": 50.76
+   },
+   "summary": "An ignorant man overhears and sees a chance for money and royal favour."
+  },
+  {
+   "id": "B7",
+   "t": 60.06,
+   "kind": "rising",
+   "cue": {
+    "word": "طبيب،",
+    "t": 60.06
+   },
+   "summary": "At the palace he declares with full confidence: I am a physician."
+  },
+  {
+   "id": "B8",
+   "t": 82.14,
+   "kind": "comic",
+   "cue": {
+    "word": "يعرف",
+    "t": 82.14
+   },
+   "summary": "Alone in the medicine store, the mask drops: he knows none of the jars."
+  },
+  {
+   "id": "B9",
+   "t": 96.56,
+   "kind": "suspense",
+   "cue": {
+    "word": "سام",
+    "t": 96.56
+   },
+   "summary": "His wandering hand lands on the poison jar; the audience knows, he does not."
+  },
+  {
+   "id": "B10",
+   "t": 108.84,
+   "kind": "surprise",
+   "cue": {
+    "word": "بسرعة",
+    "t": 108.84
+   },
+   "summary": "The king takes the man's speed for skill."
+  },
+  {
+   "id": "B11",
+   "t": 116.88,
+   "kind": "suspense",
+   "cue": {
+    "word": "الدواء.",
+    "t": 116.88
+   },
+   "summary": "The prince drinks."
+  },
+  {
+   "id": "B12",
+   "t": 122.88,
+   "kind": "climax",
+   "cue": {
+    "word": "ومات",
+    "t": 122.88
+   },
+   "summary": "The prince dies; the lamp by his bed goes out."
+  },
+  {
+   "id": "B13",
+   "t": 127.08,
+   "kind": "emotion",
+   "cue": {
+    "word": "الحزن",
+    "t": 127.08
+   },
+   "summary": "Grief fills the palace."
+  },
+  {
+   "id": "B14",
+   "t": 135.3,
+   "kind": "turn",
+   "cue": {
+    "word": "متأكد",
+    "t": 135.3
+   },
+   "summary": "The furious king asks: are you sure? The man has no answer."
+  },
+  {
+   "id": "B15",
+   "t": 145.28,
+   "kind": "climax",
+   "cue": {
+    "word": "يشرب",
+    "t": 145.28
+   },
+   "summary": "The king orders him to drink his own medicine."
+  },
+  {
+   "id": "B16",
+   "t": 155.62,
+   "kind": "resolution",
+   "cue": {
+    "word": "ومات",
+    "t": 155.62
+   },
+   "summary": "The man drinks, is poisoned and dies too."
+  },
+  {
+   "id": "B17",
+   "t": 163.06,
+   "kind": "emotion",
+   "cue": {
+    "word": "إعادة",
+    "t": 163.06
+   },
+   "summary": "The old physician lives, but cannot bring the prince back."
+  },
+  {
+   "id": "B18",
+   "t": 167.78,
+   "kind": "moral",
+   "cue": {
+    "word": "الثقة",
+    "t": 167.78
+   },
+   "summary": "False confidence has cost two lives."
+  }
+ ],
+ "cast": [
+  {
+   "id": "oldDoc",
+   "name": "the old physician",
+   "library": "person",
+   "base": "person kind:'owner' + costume preset 'physician' (age 0..1)",
+   "look": "Small white wrapped turban, long beard (black at age 0, white at age 1), blue robe with white Ben-Day dots, yellow sash, satchel strap. At age 1: stoop (lean 0.12), lid never below 0.45 (permanent squint), walks with the stick. s 1.35.",
+   "new": false
+  },
+  {
+   "id": "quack",
+   "name": "the ignorant man",
+   "library": "person",
+   "base": "person kind:'thief' body proportions + costume preset 'quack'",
+   "look": "Oversized red turban that sits slightly too low, thin curled black moustache, yellow robe with red dot shading, black sash, pointed slippers. No beard. Default face: smirk, half lids. s 1.35. The turban is a separate drawable (prop quackTurban) so it can roll away.",
+   "new": false
+  },
+  {
+   "id": "king",
+   "name": "the king",
+   "library": "person",
+   "base": "person kind:'owner' + costume preset 'king'",
+   "look": "Gold three-point crown (yellow, red gems), full black beard, red robe with yellow trim, white sash; 8 % wider than the others. s 1.4.",
+   "new": false
+  },
+  {
+   "id": "prince",
+   "name": "the prince",
+   "library": "person",
+   "base": "person kind:'owner' + costume preset 'prince' + planned pose 'person lie / sit up in bed'",
+   "look": "Young, no facial hair, thin gold circlet, white nightshirt with blue dots; face a paler skin tone with green dot shading on the cheek while ill. Always in bed (lie 1, propped to lie 0.7 to drink).",
+   "new": false
+  },
+  {
+   "id": "official1",
+   "name": "palace official (tall)",
+   "library": "person",
+   "base": "person kind:'owner' + planned costume preset 'vizier'",
+   "look": "Tall turban with jewel, blue robe, pointed black beard. s 1.35, height factor 1.06. The leader of the two.",
+   "new": false
+  },
+  {
+   "id": "official2",
+   "name": "palace official (short)",
+   "library": "person",
+   "base": "person kind:'owner' + planned costume preset 'vizier', second palette",
+   "look": "Green robe, round moustache, width factor 1.12, height 0.94. The eager copycat: reacts 4 frames after official1.",
+   "new": false
+  },
+  {
+   "id": "patientA",
+   "name": "townsman",
+   "library": "person",
+   "base": "planned 'villager' (owner base, cap, brown tunic)",
+   "look": "Patient in S1 (bandaged head, green cheek dots until cured) and gossip in S3.",
+   "new": false
+  },
+  {
+   "id": "patientB",
+   "name": "townswoman",
+   "library": "person",
+   "base": "planned 'villager' variant villageWoman (wife base, headscarf, red dress)",
+   "look": "Second patient in S1 and gossip in S3.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "street",
+   "library": null,
+   "description": "Planned set marketStreet, palette 'clear' (day): skyline, house fronts, palace facade with a tall arched door at x 760..900 (door top y 520) on the right. Story additions: the physician's stall at x 280..620 (striped red and white awning, top y 520, front edge y 590; table top y 780; a three-board shelf of 9 jars behind it) with states open and closed (awning rolled, jars gone). Ground y 900.",
+   "new": true
+  },
+  {
+   "id": "sickroom",
+   "library": null,
+   "description": "Planned set bedchamber (KD-010) dressed as the prince's room, day and dim states. Floor y 900. Door x 40..190, top y 560 (opens inward). Window x 420..580, y 300..470. Bed across the right: frame x 520..940, mattress top y 770, headboard x 900..940 rising to y 640, pillow x 800..890; people standing behind the bed are visible from the waist up. Wall shelf with the oil lamp at (700, 560). Stool at x 440, seat y 830. Foreground carpet chest x 170..400, top y 800 (drawn in front of the cast, used to hide the fall in S9).",
+   "new": true
+  },
+  {
+   "id": "store",
+   "library": null,
+   "description": "New set apothecary (medicine store). Back wall navy with blue Ben-Day dots; three shelf boards (16 thick, brown) at y 330, 500 and 670 from x 120 to x 880; 7 jars per shelf at x 160, 270, 380, 490, 600, 710, 820. Worktable x 300..700, top y 760, legs to the floor y 900. Door x 40..170, top y 560, on the left. Four hanging herb bunches from the ceiling at x 200, 400, 620, 800 (y 120..230).",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "jars",
+   "library": null,
+   "description": "medicineJar: 70 wide x 100 tall rounded jar with a flat lid and a label 44 x 36 carrying 2 or 3 squiggle lines (never readable text). Colours cycle yellow, blue, white, green, brown. Recipe jars: yellow with a leaf mark, blue with a drop mark, white with a dot mark. Poison jar: red body, black lid, black X on the label, on the middle shelf at x 710 (6th slot). Fields: lidOff, tilt, glow, puff.",
+   "new": true
+  },
+  {
+   "id": "mortar",
+   "library": null,
+   "description": "Mortar 120 wide x 70 tall (white, blue dots) with a pestle 90 long; mixture colour and level fields; sits at (500, 760) on the worktable.",
+   "new": true
+  },
+  {
+   "id": "bowl",
+   "library": null,
+   "description": "Planned smallBowl enlarged to 60 wide: yellow bowl, fill colour murky purple with red dots, level 1 then 0.5 after the prince drinks; can be held in a hand, handed over and dropped.",
+   "new": true
+  },
+  {
+   "id": "recipe",
+   "library": null,
+   "description": "recipeStrip: a white speech/label box holding three 40 px jar icons (yellow leaf, blue drop, white dot) and a small mortar icon. First appears as the old physician's speech balloon (S2); returns small at the top left of the panel in S6 with a green tick or red cross popping on each ingredient as the man chooses.",
+   "new": true
+  },
+  {
+   "id": "stick",
+   "library": null,
+   "description": "Planned stick (180 x 12 staff from grip point and angle) for the old physician.",
+   "new": true
+  },
+  {
+   "id": "lamp",
+   "library": null,
+   "description": "Planned oilLamp on the wall shelf at (700, 560): brass lamp, flame 26 high with flicker; field flame 0..1 and a smoke wisp when it goes out.",
+   "new": true
+  },
+  {
+   "id": "quackTurban",
+   "library": null,
+   "description": "The man's red turban as a separate drawable (60 wide) that can fall, roll with rotation and settle with a damped wobble.",
+   "new": true
+  },
+  {
+   "id": "coins",
+   "library": null,
+   "description": "Planned coinPile (mound of n coins) and a small crown icon, shown inside the thought cloud.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 20.8,
+   "paragraphs": [
+    1
+   ],
+   "set": "street",
+   "cast": [
+    "oldDoc",
+    "patientA",
+    "patientB"
+   ],
+   "summary": "The distant city and its famous physician at his stall: precise, trusted. Years spin past; his beard whitens and his sight fails. He reaches for a jar, nearly takes the wrong one, and stops himself.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "0-2.0 wide on the skyline and street (x 500, y 640, zoom 1.0); 2.0-3.4 push to the stall (x 450, y 700, zoom 1.6); hold; 12.0-13.9 slow drift in to zoom 1.8 during the years; 15.4-17.3 the blurred POV insert fills the panel; 17.4 back to zoom 1.9 on hands and face (x 450, y 690)."
+   },
+   "composition": "Stall centre-left, the physician behind the table facing right (dir 1) at x 400, head near panel centre height. Patients queue on the right (x 560 and 680), so the eye line runs left to right. Palace door far right at the wide shot only, planting it for S4. Keep the sky area above the awning free for the label and counters.",
+   "actions": [
+    {
+     "t": 0.0,
+     "cue": {
+      "word": "مدينة",
+      "t": 0.62
+     },
+     "who": "camera",
+     "action": "Wide of the distant city: skyline, street, small figures; a cloud drifts",
+     "acting": "calm morning, nothing hurried",
+     "library": "marketStreet (planned) + sky + sun + cloudFlat; K.camAt keys"
+    },
+    {
+     "t": 2.0,
+     "cue": {
+      "word": "طبيب",
+      "t": 2.18
+     },
+     "who": "camera",
+     "action": "Push in to the stall as the physician is named",
+     "acting": "arrive on his face exactly on the word",
+     "library": "CAM keys in a pair for the hold"
+    },
+    {
+     "t": 3.0,
+     "cue": {
+      "word": "مشهور",
+      "t": 3.02
+     },
+     "who": "lettering",
+     "action": "Label THE PHYSICIAN with an arrow to him",
+     "acting": "pops with a 10 % overshoot above the awning, clear of his face",
+     "library": "S.label + S.arrow, settleTo"
+    },
+    {
+     "t": 3.8,
+     "cue": {
+      "word": "بعلمه",
+      "t": 3.86
+     },
+     "who": "oldDoc",
+     "action": "Reads a jar label held at a normal distance, nods",
+     "acting": "age 0 (black beard), eyes open and sharp, small smile; gaze on the jar then to the patient",
+     "library": "person + costume 'physician' {age:0}; handR target at the jar; gazePlan"
+    },
+    {
+     "t": 4.8,
+     "cue": {
+      "word": "وخبرته.",
+      "t": 4.86
+     },
+     "who": "oldDoc",
+     "action": "Takes one exact pinch, taps it into a bowl, stirs twice",
+     "acting": "precise, economical hands; a tiny head nod on each tap",
+     "library": "handR keys over the bowl; PERSON_HANDS.pointDown for the tap"
+    },
+    {
+     "t": 6.3,
+     "cue": {
+      "word": "عالج",
+      "t": 6.38
+     },
+     "who": "patientA",
+     "action": "Receives the bowl, drinks, the bandage and the green cheek dots vanish, he hops",
+     "acting": "before: slumped (tip 0.1), lid 0.5; after: stretch sq 1.08, smile, hop",
+     "library": "villager (planned); hop, landSquash; heart() pop"
+    },
+    {
+     "t": 7.0,
+     "cue": {
+      "word": "مرضى",
+      "t": 7.08
+     },
+     "who": "lettering",
+     "action": "Counter CURED ticks up fast 1, 2, 3 ... 99 while patientB steps up and is cured too",
+     "acting": "counter top right; patientB bows her thanks one beat after patientA",
+     "library": "S.counter; stagger(i) on the two patients"
+    },
+    {
+     "t": 9.3,
+     "cue": {
+      "word": "الناس",
+      "t": 9.3
+     },
+     "who": "patientB",
+     "action": "Both patients put a hand on the chest and bow slightly to him; two small hearts rise",
+     "acting": "trust: soft eyes on him, heads dip 6 px; he answers with a humble smile and lowered lids",
+     "library": "PERSON_HANDS.chest; heart(); lookAt both ways"
+    },
+    {
+     "t": 11.2,
+     "cue": {
+      "word": "لكن",
+      "t": 11.34
+     },
+     "who": "oldDoc",
+     "action": "A small beat: he blinks and rubs one eye; the patients walk off right",
+     "acting": "first hint: one slow blink, brow slightly raised (brow -0.3)",
+     "library": "blink + lid ramp; walk(), footfalls for the exits"
+    },
+    {
+     "t": 12.4,
+     "cue": {
+      "word": "السنين",
+      "t": 13.12
+     },
+     "who": "fx",
+     "action": "The years pass: sun and moon whirl over the street three times, the awning stripes fade a little, his beard goes white and his back bends",
+     "acting": "age 0 to 1 over 12.4-13.9; stoop grows (lean 0 to 0.12); he keeps working through it",
+     "library": "dayCycle (planned) at high speed; costume field age; S.counter 'YEARS' optional"
+    },
+    {
+     "t": 13.8,
+     "cue": {
+      "word": "ضعف",
+      "t": 13.88
+     },
+     "who": "oldDoc",
+     "action": "Squints hard at the shelf, lifts a jar until it almost touches his nose",
+     "acting": "lid 0.55, brow -0.5 (worried), head pushed forward (tip 0.1)",
+     "library": "lid, brow, tip; handR raises the jar to the face"
+    },
+    {
+     "t": 15.4,
+     "cue": {
+      "word": "حتى",
+      "t": 15.4
+     },
+     "who": "fx",
+     "action": "His point of view: the nine jars on the shelf swim apart into doubled, drifting ghosts and the labels smear",
+     "acting": "hold 1.9 s; the doubling grows from 0 to 1 and breathes slowly",
+     "library": "blurVision (new): draw the shelf twice at offsets +/- 14 px with alpha 0.55 plus a white halftone veil"
+    },
+    {
+     "t": 17.3,
+     "cue": {
+      "word": "رؤية",
+      "t": 17.42
+     },
+     "who": "oldDoc",
+     "action": "Reaches for the blue jar; the hand lands on the white jar beside it",
+     "acting": "trusting habit, eyes on the customerless table; then the fingers feel the wrong lid and he freezes",
+     "library": "handR target keyed to the wrong jar; 3-frame hold"
+    },
+    {
+     "t": 18.6,
+     "cue": {
+      "word": "يستعملها.",
+      "t": 19.14
+     },
+     "who": "oldDoc",
+     "action": "Pulls the hand back, shakes his head and sets both hands flat on the table; shoulders sink",
+     "acting": "he knows: long blink, mouth 'frown', gaze down at his hands. This is the setup for his refusal in S2",
+     "library": "anticipate, settleTo; breathe on the hold"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 3.0,
+     "text": "THE PHYSICIAN"
+    },
+    {
+     "t": 7.0,
+     "text": "CURED: 99"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 20.8,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 20.8,
+    "label": "ONE DAY..."
+   }
+  },
+  {
+   "id": "S2",
+   "start": 20.8,
+   "end": 45.05,
+   "paragraphs": [
+    2
+   ],
+   "set": "sickroom",
+   "cast": [
+    "prince",
+    "king",
+    "oldDoc",
+    "official1"
+   ],
+   "summary": "The prince lies ill. The old physician is led in, examines him nose-close, thinks, names the cure as a three-jar recipe, and then refuses the mortar because he cannot see.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Card clears at 22.3. Wide of the room (x 520, y 680, zoom 1.15) to 25.0; 25.0-26.2 push to the prince (x 780, y 700, zoom 1.8); 26.3 pull back to include the door (zoom 1.15); 28.9 two-shot physician and prince via twoShot (about x 640, y 720, zoom 1.7); 39.0 widen to x 560, zoom 1.4 for the offered tray; 42.4-44.5 blurred POV insert."
+   },
+   "composition": "Bed on the right with the prince's head at about (845, 735). King stands behind the bed at x 700 leaning toward his son. Physician enters from the door (left) and sits on the stool at x 440, then leans right over the bed foot: faces form a diagonal from the king (high) to the prince (low). The recipe balloon opens up and left of the physician, over the window, never over a face.",
+   "actions": [
+    {
+     "t": 21.3,
+     "cue": {
+      "word": "وفي",
+      "t": 21.32
+     },
+     "who": "fx",
+     "action": "The ONE DAY... card wipes across and clears",
+     "acting": "new place under the card midpoint",
+     "library": "S.transition caption; camera cut hidden at p 0.5"
+    },
+    {
+     "t": 22.5,
+     "cue": {
+      "word": "مرض",
+      "t": 22.58
+     },
+     "who": "prince",
+     "action": "In bed, pale, a red throb at his stomach; he winces",
+     "acting": "lid 0.6, brow -0.6, mouth 'frown', wet eyes, shallow fast breathing",
+     "library": "person + pose lie (planned); painPulse size 1 (planned); breathe at double rate"
+    },
+    {
+     "t": 23.4,
+     "cue": {
+      "word": "ابن",
+      "t": 23.4
+     },
+     "who": "king",
+     "action": "Behind the bed, lays a hand on his son's forehead and pulls it back from the heat",
+     "acting": "father first, king second: brow -0.7, gaze locked on the boy, crown slightly askew",
+     "library": "person costume 'king'; handR target at the prince's forehead; lookAt"
+    },
+    {
+     "t": 25.0,
+     "cue": {
+      "word": "شديدًا.",
+      "t": 25.28
+     },
+     "who": "camera",
+     "action": "Push in on the prince: sweat drops, a tremble, the throb beats twice",
+     "acting": "the illness is serious; hold the face",
+     "library": "tremble(t, 1.5); painPulse; CAM keys"
+    },
+    {
+     "t": 26.3,
+     "cue": {
+      "word": "أحضروا",
+      "t": 26.36
+     },
+     "who": "official1",
+     "action": "Opens the door and leads the old physician in by the elbow",
+     "acting": "respectful, patient with the old man's pace; gaze flicks to the king",
+     "library": "door open state; walk() for both; footfalls"
+    },
+    {
+     "t": 27.5,
+     "cue": {
+      "word": "الطبيب",
+      "t": 27.54
+     },
+     "who": "oldDoc",
+     "action": "Shuffles in tapping the floor ahead with his stick, head low",
+     "acting": "age 1, stoop, lid 0.5; each step: tap, short step, pause",
+     "library": "blind-grope pattern (Lark SEG style) with the stick as the tapper; stick prop"
+    },
+    {
+     "t": 28.9,
+     "cue": {
+      "word": "فسأل",
+      "t": 28.94
+     },
+     "who": "oldDoc",
+     "action": "Sits on the stool and leans so close to the prince that their noses nearly touch",
+     "acting": "he must come this near to see: tip 0.14, squint; the prince's eyes open a little wider",
+     "library": "sit (planned person kneel / sit); twoShot camera"
+    },
+    {
+     "t": 30.5,
+     "cue": {
+      "word": "ألمه",
+      "t": 30.66
+     },
+     "who": "prince",
+     "action": "Lifts a weak hand and points at his stomach; the throb answers",
+     "acting": "gaze to the physician, small nod; hand shakes",
+     "library": "handL target at the belly; painPulse; tremble 1"
+    },
+    {
+     "t": 31.4,
+     "cue": {
+      "word": "وأعراضه.",
+      "t": 31.44
+     },
+     "who": "oldDoc",
+     "action": "Cups an ear to the prince's chest, then takes his wrist and counts three beats with small nods",
+     "acting": "listening face: eyes shut, mouth closed; nods at 31.9, 32.1, 32.3",
+     "library": "PERSON_HANDS.cupEar; handR to the wrist; countedBeats for the nods"
+    },
+    {
+     "t": 32.4,
+     "cue": {
+      "word": "فكر",
+      "t": 32.46
+     },
+     "who": "oldDoc",
+     "action": "Sits back, hand to his beard, eyes closed; three small thought dots rise",
+     "acting": "thinking by stillness; pupils dart under half lids (saccades) at 33.6",
+     "library": "PERSON_HANDS.chin; gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 33.5,
+     "cue": {
+      "word": "قليلًا،",
+      "t": 33.56
+     },
+     "who": "king",
+     "action": "Leans in over the bed, hands clasped, watching the old man think",
+     "acting": "hope and fear: brow -0.6, gaze on the physician, holds his breath (no breathe)",
+     "library": "PERSON_HANDS.clasp; lookAt"
+    },
+    {
+     "t": 34.9,
+     "cue": {
+      "word": "عرف",
+      "t": 35.0
+     },
+     "who": "oldDoc",
+     "action": "Eyes open, one finger goes up: he knows it",
+     "acting": "the first full-open eyes we have seen from him since his youth; small smile; overshoot on the finger",
+     "library": "PERSON_HANDS.pointUp; settleTo; lid 0.45 to 0.2"
+    },
+    {
+     "t": 35.3,
+     "cue": {
+      "word": "المرض",
+      "t": 35.42
+     },
+     "who": "lettering",
+     "action": "AHA! pops beside his raised finger",
+     "acting": "small, one pop, gone by 36.6",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 36.0,
+     "cue": {
+      "word": "وشرح",
+      "t": 36.0
+     },
+     "who": "recipe",
+     "action": "His speech balloon opens with the recipe: yellow leaf jar, blue drop jar, white dot jar, then a mortar; each icon pops on a syllable",
+     "acting": "he counts them off on his fingers; the official nods and memorises (lips move)",
+     "library": "recipeStrip (new) in a balloon; pops at 36.0, 36.8, 37.4, 37.9"
+    },
+    {
+     "t": 38.3,
+     "cue": {
+      "word": "إليه،",
+      "t": 38.38
+     },
+     "who": "king",
+     "action": "Relieved, waves the official forward; the official holds out a tray with a mortar and pestle to the physician",
+     "acting": "king's shoulders drop, first smile; official bows as he offers",
+     "library": "PERSON_HANDS.wave; official handL/handR hold the tray (mortar prop)"
+    },
+    {
+     "t": 39.2,
+     "cue": {
+      "word": "رفض",
+      "t": 40.14
+     },
+     "who": "oldDoc",
+     "action": "Looks at the tray, then raises an open palm: no",
+     "acting": "smile fades, brow -0.4; the palm comes up slowly, firm",
+     "library": "PERSON_HANDS.shield (one hand); head shake 2 cycles of 5 px"
+    },
+    {
+     "t": 40.9,
+     "cue": {
+      "word": "بيده",
+      "t": 41.64
+     },
+     "who": "oldDoc",
+     "action": "Turns his own hands over in front of his face; they tremble",
+     "acting": "gaze on the hands, lid 0.55, wet eyes; the king's smile drops",
+     "library": "handL/handR targets at chest height; tremble(t, 1.2); wet"
+    },
+    {
+     "t": 42.4,
+     "cue": {
+      "word": "يرى",
+      "t": 43.5
+     },
+     "who": "fx",
+     "action": "His point of view of the tray: the mortar and three jars double and drift apart; he taps a finger under his eye",
+     "acting": "the same blur as in S1, so the audience recognises it at once",
+     "library": "blurVision (new); PERSON_HANDS.pointUp lowered to the eye"
+    },
+    {
+     "t": 44.2,
+     "cue": {
+      "word": "جيدًا.",
+      "t": 44.0
+     },
+     "who": "official1",
+     "action": "King and official look at each other; a single ? balloon rises between them",
+     "acting": "who will mix it? official shrugs with the tray still in his hands; hold for the pause",
+     "library": "lookAt both ways; S.label '?' ; PERSON_HANDS.palmsUp for the king"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 35.3,
+     "text": "AHA!"
+    },
+    {
+     "t": 44.3,
+     "text": "?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 45.05,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 45.05
+   }
+  },
+  {
+   "id": "S3",
+   "start": 45.05,
+   "end": 54.9,
+   "paragraphs": [
+    3
+   ],
+   "set": "street",
+   "cast": [
+    "quack",
+    "patientA",
+    "patientB"
+   ],
+   "summary": "In the street by the closed stall, two townspeople gossip about the palace. A lounging man cups his ear, and a thought of coins and a crown lights him up.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Start x 360, y 700, zoom 1.4 (gossips centre, the man at the left edge); 49.3-50.6 push to the man (x 190, y 660, zoom 2.0) with room above his head for the thought cloud."
+   },
+   "composition": "The man leans on the wall at x 140, facing right, half in shadow of a house front. Gossips at x 380 and 480 in front of the closed stall (awning rolled: a quiet sign that the physician is at the palace). The thought cloud sits up and right of his head at about (330, 430), 260 wide.",
+   "actions": [
+    {
+     "t": 45.4,
+     "cue": {
+      "word": "سمع",
+      "t": 45.36
+     },
+     "who": "patientA",
+     "action": "The two townspeople talk excitedly; a small balloon between them shows a crown, a bed and a bowl",
+     "acting": "gossip: heads close, quick hands, glances toward the palace",
+     "library": "villager (planned); talk pulses alternate; balloon with icons"
+    },
+    {
+     "t": 46.6,
+     "cue": {
+      "word": "رجل",
+      "t": 46.6
+     },
+     "who": "quack",
+     "action": "Leaning on the wall picking his teeth, he stops and his eyes slide toward them",
+     "acting": "idle and lazy: lid 0.6, slouch (tip -0.08). Only the pupils move first (suspense by stillness)",
+     "library": "person costume 'quack'; gazePlan; blink"
+    },
+    {
+     "t": 47.9,
+     "cue": {
+      "word": "بالقصة،",
+      "t": 47.9
+     },
+     "who": "quack",
+     "action": "Cups an ear and tilts toward them",
+     "acting": "eyebrow up (brow -0.5), smirk begins",
+     "library": "PERSON_HANDS.cupEar; tip 0.08; mouth 'smile'"
+    },
+    {
+     "t": 49.5,
+     "cue": {
+      "word": "ورأى",
+      "t": 49.52
+     },
+     "who": "fx",
+     "action": "Thought cloud opens above him",
+     "acting": "his eyes go up and to the right into it",
+     "library": "thoughtCloud (planned); gaze [0.5, -0.8]"
+    },
+    {
+     "t": 50.7,
+     "cue": {
+      "word": "فرصة",
+      "t": 50.76
+     },
+     "who": "quack",
+     "action": "Straightens off the wall: a chance",
+     "acting": "anticipation dip then stretch (sq 1.06), fingers rub together",
+     "library": "anticipate; settleTo"
+    },
+    {
+     "t": 51.7,
+     "cue": {
+      "word": "المال",
+      "t": 52.48
+     },
+     "who": "coins",
+     "action": "Inside the cloud a pile of coins grows, coin by coin, with a glint",
+     "acting": "his pupils follow each coin; grin widens",
+     "library": "coinPile (planned) n 1 to 9; S.emphasis glint"
+    },
+    {
+     "t": 53.1,
+     "cue": {
+      "word": "الملك.",
+      "t": 54.5
+     },
+     "who": "coins",
+     "action": "A crown pops above the coins and a tiny version of himself bows beside it",
+     "acting": "he puffs his chest and smooths his moustache",
+     "library": "crown icon; PERSON_HANDS.moustache; sq 1.05"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 54.9
+   }
+  },
+  {
+   "id": "S4",
+   "start": 54.9,
+   "end": 70.0,
+   "paragraphs": [
+    3,
+    4
+   ],
+   "set": "street",
+   "cast": [
+    "quack",
+    "official1",
+    "official2"
+   ],
+   "summary": "He struts to the palace door and announces himself with a full chest. The two officials look at each other, nod and bow him in.",
+   "camera": {
+    "shot": "medium",
+    "move": "track",
+    "notes": "Track with his walk from x 300 to x 720 (zoom 1.5, y 700), arriving 57.2; hold a three-shot at the door (x 760, y 690, zoom 1.6); 67.0 small push to zoom 1.75 on the officials' exchange."
+   },
+   "composition": "Palace door at x 760..900. Officials stand in front of it at x 800 and x 900 facing left; the man stops at x 660 facing right. He is on one side, listeners on the other. Gossips from S3 stay small in the background at the left, watching him go.",
+   "actions": [
+    {
+     "t": 55.0,
+     "cue": {
+      "word": "ذهب",
+      "t": 55.02
+     },
+     "who": "quack",
+     "action": "Tugs his turban straight, wipes his hands on his robe and sets off with a swagger",
+     "acting": "chin up, lid 0.4, elbows out; the cloud pops and vanishes behind him",
+     "library": "walk(QX, t) from x 140 to 660; footfalls for dust and the turban bob"
+    },
+    {
+     "t": 56.5,
+     "cue": {
+      "word": "القصر",
+      "t": 56.58
+     },
+     "who": "camera",
+     "action": "Track right with him; the palace door slides into frame with the two officials",
+     "acting": "they notice him one after the other (official2 4 frames later)",
+     "library": "CAM keys; stagger(i); lookAt"
+    },
+    {
+     "t": 57.2,
+     "cue": {
+      "word": "وقال",
+      "t": 57.28
+     },
+     "who": "quack",
+     "action": "Stops with a heel click and a small bow that is more of a flourish",
+     "acting": "showman: one arm sweeps out, eyes never leave their faces",
+     "library": "PERSON_HANDS.armsOut on one side; landSquash on the stop"
+    },
+    {
+     "t": 58.4,
+     "cue": {
+      "word": "بثقة:",
+      "t": 58.54
+     },
+     "who": "quack",
+     "action": "Chest out, chin higher",
+     "acting": "confidence as a physical size: sq 1.08, tip -0.06, half lids, smirk",
+     "library": "sq, tip; breathe held at the top"
+    },
+    {
+     "t": 59.1,
+     "cue": {
+      "word": "«أنا",
+      "t": 59.14
+     },
+     "who": "quack",
+     "action": "Taps his own chest twice: I am a physician",
+     "acting": "taps at 59.2 and 60.1; a tiny nod on each; brow -0.4",
+     "library": "PERSON_HANDS.chest; countedBeats for the two taps; talk"
+    },
+    {
+     "t": 60.9,
+     "cue": {
+      "word": "وأعرف",
+      "t": 60.96
+     },
+     "who": "official2",
+     "action": "The short official's eyebrows go up; he looks at the tall one",
+     "acting": "impressed already; official1 strokes his beard, unsure",
+     "library": "lookAt; PERSON_HANDS.chin for official1; brow -0.5"
+    },
+    {
+     "t": 62.2,
+     "cue": {
+      "word": "أخلط",
+      "t": 62.26
+     },
+     "who": "quack",
+     "action": "Mimes stirring a mortar in the air with great style, then a pinch, then a flick",
+     "acting": "fingers too fancy to be real; eyes half shut as if it were easy",
+     "library": "handR circles (2 turns, radius 14) then pinch; talk"
+    },
+    {
+     "t": 63.5,
+     "cue": {
+      "word": "دعوني",
+      "t": 63.54
+     },
+     "who": "quack",
+     "action": "Both palms open toward the door: let me",
+     "acting": "pleasant, patient smile; a glance past them at the door (mask slips for 3 frames into greed)",
+     "library": "PERSON_HANDS.palmsUp; gazePlan with a 3-frame snap to the door"
+    },
+    {
+     "t": 65.3,
+     "cue": {
+      "word": "الأمير.»",
+      "t": 65.86
+     },
+     "who": "quack",
+     "action": "Hand on heart, deep nod on the prince's name",
+     "acting": "false tenderness: lid 0.7, brow -0.6",
+     "library": "PERSON_HANDS.chest; head drop 6 px"
+    },
+    {
+     "t": 67.0,
+     "cue": {
+      "word": "صدقه",
+      "t": 67.02
+     },
+     "who": "official1",
+     "action": "The officials look at each other; the tall one nods, the short one nods faster",
+     "acting": "believing him: relief more than judgement",
+     "library": "lookAt both ways; stagger(i); head nods"
+    },
+    {
+     "t": 68.7,
+     "cue": {
+      "word": "القصر،",
+      "t": 69.38
+     },
+     "who": "official2",
+     "action": "Both step aside and bow; the short one pulls the door open",
+     "acting": "eager; the man walks through without looking at them, already past them",
+     "library": "door open state; walk(); PERSON_HANDS.pointFwd as an usher"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "match-cut",
+    "t": 70.0
+   }
+  },
+  {
+   "id": "S5",
+   "start": 70.0,
+   "end": 86.9,
+   "paragraphs": [
+    4
+   ],
+   "set": "store",
+   "cast": [
+    "quack",
+    "official1"
+   ],
+   "summary": "The medicine store: three shelves crowded with jars. The moment the door shuts behind the official, the smile falls off. He reads labels upside down, sniffs, and sneezes.",
+   "camera": {
+    "shot": "wide",
+    "move": "crane",
+    "notes": "70.0 at the door (x 300, y 720, zoom 1.5); 71.4-74.0 pull out and rise to the full shelf wall (x 500, y 560, zoom 1.02); 74.1-77.6 slow pan along the shelves left to right at zoom 1.5 (y 500); 78.3 medium on the man (x 430, y 640, zoom 1.6) to the end."
+   },
+   "composition": "Door on the left, shelves fill the upper two thirds, worktable low centre. The man ends at x 420 in front of the table facing the shelves three-quarter right, so his face stays visible. The poison jar (red, x 710, middle shelf) is in every wide frame but not pointed out yet.",
+   "actions": [
+    {
+     "t": 70.0,
+     "cue": {
+      "word": "وأدخلوه",
+      "t": 70.08
+     },
+     "who": "official1",
+     "action": "Match cut: the store door opens from inside; the official ushers the man in",
+     "acting": "official proud of the store; the man still wearing his court smile",
+     "library": "store door open state; walk(); PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 71.4,
+     "cue": {
+      "word": "مخزن",
+      "t": 71.38
+     },
+     "who": "camera",
+     "action": "Pull out and rise to reveal the whole wall of jars",
+     "acting": "the man's head tips back to follow it; his smile stays but his eyes widen a little",
+     "library": "CAM keys; gaze up; lid 0.2"
+    },
+    {
+     "t": 74.1,
+     "cue": {
+      "word": "الرفوف",
+      "t": 74.12
+     },
+     "who": "camera",
+     "action": "Slow pan along the shelves; jar lids glint one after another",
+     "acting": "21 jars, all different, labels all squiggles",
+     "library": "medicineJar glow field staggered along the pan"
+    },
+    {
+     "t": 75.6,
+     "cue": {
+      "word": "بعلب",
+      "t": 75.6
+     },
+     "who": "jars",
+     "action": "Two jars on the top shelf rattle as the pan passes; the herb bunches sway",
+     "acting": "secondary motion only, life in the room",
+     "library": "swing() on the herb bunches; 2 px jar hop"
+    },
+    {
+     "t": 77.1,
+     "cue": {
+      "word": "والمساحيق.",
+      "t": 77.1
+     },
+     "who": "jars",
+     "action": "A powder jar with a loose lid lets out a small puff of dust",
+     "acting": "plants the sneeze",
+     "library": "medicineJar puff; dustBurst small, pale"
+    },
+    {
+     "t": 77.7,
+     "cue": {
+      "word": "نظر",
+      "t": 78.36
+     },
+     "who": "official1",
+     "action": "Bows and leaves; the door closes",
+     "acting": "the man waves him off with a gracious hand, smile at full",
+     "library": "PERSON_HANDS.wave; walk(); door closed state at 78.2"
+    },
+    {
+     "t": 78.4,
+     "cue": {
+      "word": "نظر",
+      "t": 78.36
+     },
+     "who": "quack",
+     "action": "Alone. The smile drops, the chest deflates, the eyes dart left, right and up",
+     "acting": "mask off: sq 1.08 to 0.96, brow -0.7, mouth 'o'; 2-frame saccades",
+     "library": "settleTo; gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 79.9,
+     "cue": {
+      "word": "حوله،",
+      "t": 79.94
+     },
+     "who": "quack",
+     "action": "Turns a full circle on the spot looking at all the shelves",
+     "acting": "small steps, turban lags the turn by 3 frames; a bead of sweat",
+     "library": "turnFlip(t, turns, 0.5) twice; lag by hand"
+    },
+    {
+     "t": 80.7,
+     "cue": {
+      "word": "لكنه",
+      "t": 80.64
+     },
+     "who": "quack",
+     "action": "Takes down a brown jar and holds the label to his face",
+     "acting": "frown, tongue tip out; the label is only squiggles",
+     "library": "handR target to the shelf then to the face; mouth 'frown'"
+    },
+    {
+     "t": 82.1,
+     "cue": {
+      "word": "يعرف",
+      "t": 82.14
+     },
+     "who": "lettering",
+     "action": "? ? ? pop over three jars, one after another",
+     "acting": "at 82.1, 82.4, 82.7; small, over jars, not over his face",
+     "library": "S.label x3 with stagger"
+    },
+    {
+     "t": 83.3,
+     "cue": {
+      "word": "أكثرها",
+      "t": 83.36
+     },
+     "who": "quack",
+     "action": "Turns the jar upside down to read the label that way, then right way up again; shrugs",
+     "acting": "comic: brow one up; head tilts with the jar",
+     "library": "jar tilt field; head tilt 8 px; PERSON_HANDS.palmsUp one hand"
+    },
+    {
+     "t": 84.9,
+     "cue": {
+      "word": "أثرها",
+      "t": 84.92
+     },
+     "who": "quack",
+     "action": "Pulls the lid off the puffy powder jar and takes a big sniff",
+     "acting": "nose in, eyes shut; his face begins to crumple toward a sneeze at 85.9",
+     "library": "lidOff; anticipate stretch (sq 1.06) building 85.9-86.6"
+    },
+    {
+     "t": 86.6,
+     "cue": {
+      "word": "الجسم.",
+      "t": 85.88
+     },
+     "who": "quack",
+     "action": "ACHOO: the sneeze blows a cloud of powder off the table; the jars hop",
+     "acting": "full-body snap forward (tip 0.2, sq 0.9), turban slides over his eyes",
+     "library": "impactSquash; dustBurst; kick() on the jars; panel-only shake 4 px"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 82.1,
+     "text": "? ? ?"
+    },
+    {
+     "t": 86.7,
+     "text": "ACHOO!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 86.87,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 86.9
+   }
+  },
+  {
+   "id": "S6",
+   "start": 86.9,
+   "end": 106.9,
+   "paragraphs": [
+    5
+   ],
+   "set": "store",
+   "cast": [
+    "quack"
+   ],
+   "summary": "He pushes the turban up, shrugs and starts grabbing. The recipe strip at the top of the panel scores each choice. His hand wanders past the right jar and stops on the red one. A carefree pinch, a stir, and a small bowl held up with pride.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Table and middle shelf (x 520, y 620, zoom 1.5). 93.2-95.5 pan with his hand along the middle shelf to x 680; 95.6-98.6 close on the red jar and his face (x 690, y 560, zoom 2.3); 98.9 back to the table (x 520, y 660, zoom 1.7); 103.9 push to the bowl and his face (zoom 2.0)."
+   },
+   "composition": "The man behind the worktable facing us, mortar centre at (500, 760). Recipe strip fixed in panel space at the top left (about 300 x 90): three jar icons and a mortar. Counter of pinches at the top right. The red jar enters the close shot from the right so his hand travels toward it across the frame.",
+   "actions": [
+    {
+     "t": 87.2,
+     "cue": {
+      "word": "بدأ",
+      "t": 87.26
+     },
+     "who": "quack",
+     "action": "Pushes the turban back up, sniffs, looks at the door, then shrugs it all off",
+     "acting": "decision made by laziness: brow relaxes, smirk returns",
+     "library": "PERSON_HANDS.palmsUp; settleTo"
+    },
+    {
+     "t": 87.9,
+     "cue": {
+      "word": "يأخذ",
+      "t": 88.36
+     },
+     "who": "recipe",
+     "action": "The recipe strip slides in at the top left: yellow leaf, blue drop, white dot, mortar",
+     "acting": "the audience's memory of what the old man said; the man never looks at it",
+     "library": "recipeStrip (new) in panel space"
+    },
+    {
+     "t": 88.9,
+     "cue": {
+      "word": "قليلًا",
+      "t": 88.9
+     },
+     "who": "quack",
+     "action": "Pinch one: from the yellow leaf jar into the mortar",
+     "acting": "eyes on the ceiling, not the jar; a green tick pops on the first recipe icon (right by luck)",
+     "library": "handR shelf to mortar arc 0.6 s; S.counter PINCH 1"
+    },
+    {
+     "t": 91.0,
+     "cue": {
+      "word": "وقليلًا",
+      "t": 91.08
+     },
+     "who": "quack",
+     "action": "Pinch two: finger hops eeny-meeny over three jars and takes the green one",
+     "acting": "eyes shut, humming mouth; a red cross pops beside the strip",
+     "library": "handR hops (3 x 0.2 s); S.counter 2; mouth 'o'"
+    },
+    {
+     "t": 93.2,
+     "cue": {
+      "word": "وبين",
+      "t": 93.16
+     },
+     "who": "quack",
+     "action": "His open hand drifts along the middle shelf, fingers wiggling",
+     "acting": "slow, the camera pans with it; he looks bored",
+     "library": "handR x keyed 380 to 710 over 93.2-95.4; CAM pan"
+    },
+    {
+     "t": 94.4,
+     "cue": {
+      "word": "التي",
+      "t": 94.44
+     },
+     "who": "jars",
+     "action": "The hand passes over the blue drop jar (the right one); the jar gives one hopeful glint and is ignored",
+     "acting": "dramatic irony: the cure is under his fingers for 0.4 s",
+     "library": "medicineJar glow pulse at x 600"
+    },
+    {
+     "t": 95.4,
+     "cue": {
+      "word": "مسحوق",
+      "t": 95.58
+     },
+     "who": "quack",
+     "action": "The hand stops on the red jar with the black X and lifts it down",
+     "acting": "push-in; he weighs it, pleased by the colour",
+     "library": "CAM close; handR grips the jar; settleTo"
+    },
+    {
+     "t": 96.5,
+     "cue": {
+      "word": "سام",
+      "t": 96.56
+     },
+     "who": "lettering",
+     "action": "POISON! in red with an arrow to the jar; the X on its label pulses",
+     "acting": "shown to the audience only: his gaze stays on the powder, not on the letters",
+     "library": "S.label + S.arrow; scale pulse on the X"
+    },
+    {
+     "t": 97.6,
+     "cue": {
+      "word": "يصلح",
+      "t": 97.68
+     },
+     "who": "fx",
+     "action": "A small sign beside the jar: a cup with a red bar through it",
+     "acting": "pops on the word, holds 1.2 s",
+     "library": "icon from flat shapes: cup + diagonal bar"
+    },
+    {
+     "t": 98.9,
+     "cue": {
+      "word": "لم",
+      "t": 98.84
+     },
+     "who": "quack",
+     "action": "Sniffs the red powder, wrinkles his nose, shrugs",
+     "acting": "a 0.5 s hold where he might stop... and does not",
+     "library": "brow 0.3 then relax; breathe hold"
+    },
+    {
+     "t": 99.9,
+     "cue": {
+      "word": "يدرك",
+      "t": 99.9
+     },
+     "who": "quack",
+     "action": "Tosses in a generous pinch of red; a puff of red dots rises from the mortar",
+     "acting": "carefree flick of the wrist; counter jumps to 3 in red",
+     "library": "handR arc; dustBurst in red; S.counter 3"
+    },
+    {
+     "t": 101.1,
+     "cue": {
+      "word": "فخلطه",
+      "t": 101.16
+     },
+     "who": "mortar",
+     "action": "He grinds with the pestle in big circles; the mixture turns from yellow to a murky purple with red specks",
+     "acting": "whole body sways with the stirring, turban bobbing a beat late",
+     "library": "mortar colour field keyed 101.2-103.0; handR circles 3 turns"
+    },
+    {
+     "t": 102.4,
+     "cue": {
+      "word": "بقية",
+      "t": 102.5
+     },
+     "who": "quack",
+     "action": "With the free hand he throws in two more random pinches without looking",
+     "acting": "whistling mouth, eyes on the door; two more red crosses stack up",
+     "library": "handL arcs at 102.5 and 103.1"
+    },
+    {
+     "t": 103.8,
+     "cue": {
+      "word": "وقدمه",
+      "t": 103.88
+     },
+     "who": "bowl",
+     "action": "Pours the mixture into the small bowl; one red bubble swells on the surface",
+     "acting": "careful only now, for show",
+     "library": "bowl level 0 to 1; mortar tilt"
+    },
+    {
+     "t": 105.1,
+     "cue": {
+      "word": "إناء",
+      "t": 105.22
+     },
+     "who": "quack",
+     "action": "Lifts the bowl to eye level, admires it, chest back out",
+     "acting": "mask back on: sq 1.08, smirk, half lids. The recipe strip shows 1 tick and 4 crosses",
+     "library": "handL/handR hold the bowl; settleTo"
+    },
+    {
+     "t": 106.6,
+     "cue": {
+      "word": "صغير.",
+      "t": 105.64
+     },
+     "who": "bowl",
+     "action": "The red bubble pops; he does not notice and turns for the door",
+     "acting": "tiny, in the pause",
+     "library": "S.emphasis pop 10 px; turnFlip"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 88.9,
+     "text": "PINCH 1"
+    },
+    {
+     "t": 96.5,
+     "text": "POISON!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 106.75,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "whip",
+    "t": 106.9
+   }
+  },
+  {
+   "id": "S7",
+   "start": 106.9,
+   "end": 129.9,
+   "paragraphs": [
+    6
+   ],
+   "set": "sickroom",
+   "cast": [
+    "king",
+    "prince",
+    "quack",
+    "oldDoc",
+    "official1",
+    "official2"
+   ],
+   "summary": "He is back before anyone expects him. The king reads speed as skill. The old physician tries to look at the bowl and cannot. The prince drinks; a held breath; then the pain grows, his hand sinks, and the lamp by the bed goes out. Grief.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Room wide (x 520, y 680, zoom 1.15) for the entrance; 110.3 king medium with cloud (x 680, y 560, zoom 1.6); 113.5 old physician and bowl (x 430, y 700, zoom 1.8); 114.3 bed two-shot king and prince (x 760, y 680, zoom 1.7); 118.2 slow push to zoom 2.0 on the prince; 124.2 tilt up to the lamp (x 700, y 580, zoom 2.2); 126.3-128.6 slow pull out to the whole room (zoom 1.05)."
+   },
+   "composition": "Entrance from the door on the left. King behind the bed at x 700, prince's head at (845, 735), old physician on the stool at x 440, officials by the door at x 110 and 230. The man stops at x 330, between the old physician and the door. At the pull-out every head is lower than in S2: the room has sunk.",
+   "actions": [
+    {
+     "t": 107.0,
+     "cue": {
+      "word": "أعجب",
+      "t": 107.26
+     },
+     "who": "quack",
+     "action": "Whips in through the door with the bowl held high, robe and speed lines trailing, and brakes with a skid",
+     "acting": "showman's entrance; everyone's head turns, the officials 4 frames apart",
+     "library": "walk() fast; lurch on the stop; speed lines from S.emphasis; stagger"
+    },
+    {
+     "t": 108.3,
+     "cue": {
+      "word": "الملك",
+      "t": 108.38
+     },
+     "who": "king",
+     "action": "Eyebrows up, mouth opens into a smile; he looks from the bowl to the door and back",
+     "acting": "amazed: brow -0.8, sq 1.04",
+     "library": "gazePlan; mouth 'smile'"
+    },
+    {
+     "t": 108.9,
+     "cue": {
+      "word": "بسرعة",
+      "t": 108.84
+     },
+     "who": "lettering",
+     "action": "SO FAST! beside the king, over the window",
+     "acting": "one pop",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 110.3,
+     "cue": {
+      "word": "وظن",
+      "t": 110.36
+     },
+     "who": "fx",
+     "action": "A thought cloud over the king: the man with a gold star on his chest",
+     "acting": "the king nods to himself; false proof",
+     "library": "thoughtCloud (planned) 240 wide at (640, 330); star from K shapes"
+    },
+    {
+     "t": 111.7,
+     "cue": {
+      "word": "دليل",
+      "t": 111.78
+     },
+     "who": "king",
+     "action": "Nods twice, convinced, and claps his hands once",
+     "acting": "decision without a question asked",
+     "library": "head nods; PERSON_HANDS.clasp"
+    },
+    {
+     "t": 112.8,
+     "cue": {
+      "word": "مهارته.",
+      "t": 112.82
+     },
+     "who": "quack",
+     "action": "Bows low with the bowl offered up on both palms",
+     "acting": "eyes up under the brows to check the effect; smirk hidden by the bow",
+     "library": "tip 0.3; PERSON_HANDS.palmsUp holding the bowl"
+    },
+    {
+     "t": 113.5,
+     "cue": {
+      "word": "أمر",
+      "t": 114.26
+     },
+     "who": "oldDoc",
+     "action": "On his stool he leans toward the bowl, squints, lifts a hand as if to ask for it; the bowl doubles and smears in his view for half a second",
+     "acting": "the one man who would know cannot see it; his hand sinks back to his knee",
+     "library": "blurVision (new) as a 0.6 s inset; handR reach then drop; brow -0.6"
+    },
+    {
+     "t": 114.3,
+     "cue": {
+      "word": "أمر",
+      "t": 114.26
+     },
+     "who": "king",
+     "action": "Points from the bowl to his son: drink",
+     "acting": "firm, hopeful; arm out straight",
+     "library": "PERSON_HANDS.pointFwd; anticipate"
+    },
+    {
+     "t": 115.5,
+     "cue": {
+      "word": "يشرب",
+      "t": 115.64
+     },
+     "who": "official1",
+     "action": "Carries the bowl from the man to the bedside",
+     "acting": "careful two-handed carry, eyes on the surface",
+     "library": "walk(); bowl follows the hands"
+    },
+    {
+     "t": 116.2,
+     "cue": {
+      "word": "ابنه",
+      "t": 116.28
+     },
+     "who": "king",
+     "action": "Slides a hand under his son's head and lifts it",
+     "acting": "tender; the prince's eyes go to his father, trusting",
+     "library": "prince lie 1 to 0.7; handL target; lookAt both"
+    },
+    {
+     "t": 116.9,
+     "cue": {
+      "word": "الدواء.",
+      "t": 116.88
+     },
+     "who": "prince",
+     "action": "Drinks: the bowl tips at his lips, level falls to half",
+     "acting": "eyes close as he swallows",
+     "library": "bowl tilt and level 1 to 0.5; lid 1"
+    },
+    {
+     "t": 117.7,
+     "cue": {
+      "word": "لكن",
+      "t": 118.22
+     },
+     "who": "prince",
+     "action": "Lies back. Nobody moves; only eyes move, all on him. The official steps back with the half-full bowl",
+     "acting": "suspense by stillness, held through the pause",
+     "library": "all gazes lookAt the prince; no breathe on the king"
+    },
+    {
+     "t": 118.3,
+     "cue": {
+      "word": "لكن",
+      "t": 118.22
+     },
+     "who": "prince",
+     "action": "His eyes snap open",
+     "acting": "eyes wide, brow -0.8",
+     "library": "eyes 'wide'; settleTo"
+    },
+    {
+     "t": 119.7,
+     "cue": {
+      "word": "اشتد",
+      "t": 119.74
+     },
+     "who": "prince",
+     "action": "Both hands clutch his stomach; the red throb doubles in size and speed; he trembles",
+     "acting": "pain rising: painPulse size 1 to 2.2; mouth 'open'",
+     "library": "painPulse (planned) with growing size; tremble(t, 2.5)"
+    },
+    {
+     "t": 120.8,
+     "cue": {
+      "word": "الألم",
+      "t": 120.9
+     },
+     "who": "king",
+     "action": "Grabs his son's shoulders with both hands",
+     "acting": "panic: brow -1, mouth 'o', crown slips",
+     "library": "PERSON_HANDS.reachBoth; tip 0.15"
+    },
+    {
+     "t": 121.5,
+     "cue": {
+      "word": "بعد",
+      "t": 121.56
+     },
+     "who": "quack",
+     "action": "His smirk falters; he takes one small step backward toward the door",
+     "acting": "eyes dart to the officials, to the door; sweat drop",
+     "library": "gazePlan saccades; one footfall back"
+    },
+    {
+     "t": 122.8,
+     "cue": {
+      "word": "ومات",
+      "t": 122.88
+     },
+     "who": "prince",
+     "action": "The trembling stops. His eyes close, his head rolls gently to the side, one hand slides off his chest onto the blanket",
+     "acting": "quiet, not violent: 1.0 s ease; the throb fades out",
+     "library": "lid 1; head rot; handR slides (ease-out); painPulse alpha to 0"
+    },
+    {
+     "t": 124.2,
+     "cue": {
+      "word": "وقت",
+      "t": 124.18
+     },
+     "who": "lamp",
+     "action": "Tilt up to the lamp on the wall shelf: the flame shrinks, flutters and goes out; a thin wisp of smoke rises",
+     "acting": "the death is said with the lamp",
+     "library": "oilLamp (planned) flame 1 to 0 over 124.2-125.4; smoke wisp from 3 bezier strokes"
+    },
+    {
+     "t": 125.7,
+     "cue": {
+      "word": "عم",
+      "t": 126.26
+     },
+     "who": "king",
+     "action": "Sinks to his knees behind the bed until only his crown and bowed head show above the blanket",
+     "acting": "collapse with weight: fallY feel but slow, head down on the mattress",
+     "library": "kneel (planned person kneel / sit); impactSquash small"
+    },
+    {
+     "t": 126.3,
+     "cue": {
+      "word": "عم",
+      "t": 126.26
+     },
+     "who": "fx",
+     "action": "The room dims: a blue halftone wash settles over everything",
+     "acting": "grief as colour",
+     "library": "dream wash (planned) at alpha 0 to 0.35; sickroom dim state"
+    },
+    {
+     "t": 127.0,
+     "cue": {
+      "word": "الحزن",
+      "t": 127.08
+     },
+     "who": "king",
+     "action": "His shoulders shake; a tear drops on the blanket",
+     "acting": "wet eyes, lid 0.8; tremble small and slow",
+     "library": "wet; tremble(t, 0.8); tear as a falling drop"
+    },
+    {
+     "t": 127.8,
+     "cue": {
+      "word": "القصر",
+      "t": 127.84
+     },
+     "who": "official1",
+     "action": "Pull out: the officials bow their heads one after the other; the old physician covers his eyes with one hand",
+     "acting": "nobody in unison; the old man's back bends further",
+     "library": "stagger(i); PERSON_HANDS.headHold (one hand); CAM pull-out"
+    },
+    {
+     "t": 128.6,
+     "cue": {
+      "word": "كله.",
+      "t": 128.56
+     },
+     "who": "quack",
+     "action": "At the left edge, frozen, he steals a look at the door and finds the short official standing in front of it",
+     "acting": "only his pupils move; a gulp",
+     "library": "gazePlan; drop pulse for the gulp"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 108.9,
+     "text": "SO FAST!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 113.85,
+     "kind": "chime"
+    },
+    {
+     "t": 117.9,
+     "kind": "pop"
+    },
+    {
+     "t": 125.9,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 129.9
+   }
+  },
+  {
+   "id": "S8",
+   "start": 129.9,
+   "end": 149.8,
+   "paragraphs": [
+    7
+   ],
+   "set": "sickroom",
+   "cast": [
+    "king",
+    "quack",
+    "official1",
+    "official2",
+    "oldDoc",
+    "prince"
+   ],
+   "summary": "The king's head comes up. He crosses to the man: are you sure? The man who had every word at the palace door now has none. The king goes cold and points at the bowl.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "130.5 medium on the king rising (x 680, y 600, zoom 1.7); 132.1-133.0 track with him round the bed foot to a two-shot king and man via twoShot (x 400, y 640, zoom 1.6); 138.9 close on the man (x 300, y 610, zoom 2.2); 142.1 back to the two-shot, widened to include official1 and the bowl (zoom 1.4); 147.9 close on the man again."
+   },
+   "composition": "King ends at x 480 facing left, the man at x 300 facing right with his back near the door and the short official behind him at x 130: boxed in. Official1 with the half-full bowl at x 600. The bed and the still prince stay visible in the right background of every two-shot. ARE YOU SURE? sits above and between the two heads.",
+   "actions": [
+    {
+     "t": 130.4,
+     "cue": {
+      "word": "غضب",
+      "t": 130.5
+     },
+     "who": "king",
+     "action": "His head lifts slowly from the blanket; the tears are still there but the brows come down",
+     "acting": "grief turning: brow -0.8 to 1 over 0.8 s; red dots climb his face",
+     "library": "brow key; flush (planned) 0 to 0.8; wet stays"
+    },
+    {
+     "t": 131.2,
+     "cue": {
+      "word": "الملك",
+      "t": 131.3
+     },
+     "who": "king",
+     "action": "Stands to his full height",
+     "acting": "anticipation dip then rise, stretch sq 1.06; crown straightened with one hand",
+     "library": "anticipate; settleTo"
+    },
+    {
+     "t": 132.2,
+     "cue": {
+      "word": "وسأل",
+      "t": 133.0
+     },
+     "who": "king",
+     "action": "Strides round the foot of the bed and plants a foot in front of the man; the room jolts",
+     "acting": "heavy steps; on the last one the man hops off the floor and the officials flinch",
+     "library": "walk(); footfalls; kick() on the man; panel-only shake 6 px at 132.5"
+    },
+    {
+     "t": 133.0,
+     "cue": {
+      "word": "وسأل",
+      "t": 133.0
+     },
+     "who": "king",
+     "action": "Levels a finger at the man's chest",
+     "acting": "arm straight, gaze drilling; the man leans back (tip -0.1)",
+     "library": "PERSON_HANDS.pointFwd; lookAt; twoShot"
+    },
+    {
+     "t": 134.2,
+     "cue": {
+      "word": "«هل",
+      "t": 134.24
+     },
+     "who": "lettering",
+     "action": "ARE YOU SURE? in a jagged balloon above and between them",
+     "acting": "pops on the word, holds to 138.2",
+     "library": "S.title style balloon, tail to the king"
+    },
+    {
+     "t": 135.3,
+     "cue": {
+      "word": "متأكد",
+      "t": 135.3
+     },
+     "who": "quack",
+     "action": "Shrinks a little with each word; his eyes flick from the finger to the king's face",
+     "acting": "sq 1.0 to 0.94; brow -0.8",
+     "library": "sq key; gazePlan saccades"
+    },
+    {
+     "t": 136.6,
+     "cue": {
+      "word": "هذا",
+      "t": 136.6
+     },
+     "who": "king",
+     "action": "Swings the pointing arm to the bowl in the official's hands",
+     "acting": "this: the arm snaps over and settles; official1 raises the bowl slightly",
+     "library": "handR key; settleTo; lookAt"
+    },
+    {
+     "t": 137.4,
+     "cue": {
+      "word": "العلاج",
+      "t": 137.42
+     },
+     "who": "quack",
+     "action": "Looks at the bowl, then at the bed, then at the king",
+     "acting": "three snaps; mouth opens",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 138.9,
+     "cue": {
+      "word": "لم",
+      "t": 138.88
+     },
+     "who": "quack",
+     "action": "Close: his mouth opens, shuts, opens; a finger goes up to make a point and wilts",
+     "acting": "no words: talk pulses with nothing behind them; three sweat drops",
+     "library": "talk keyed 0, 0.6, 0, 0.5; PERSON_HANDS.pointUp fading to hang"
+    },
+    {
+     "t": 139.6,
+     "cue": {
+      "word": "يجد",
+      "t": 139.54
+     },
+     "who": "lettering",
+     "action": "UH... in small letters beside his head",
+     "acting": "one pop, wobbles, fades by 141.3",
+     "library": "S.label with a 2 px wobble"
+    },
+    {
+     "t": 140.6,
+     "cue": {
+      "word": "جوابًا",
+      "t": 140.7
+     },
+     "who": "quack",
+     "action": "Both palms turn up in a weak shrug and a weaker smile",
+     "acting": "the palace-door gesture, now empty: the mirror of S4",
+     "library": "PERSON_HANDS.palmsUp; mouth 'smile' at half"
+    },
+    {
+     "t": 141.4,
+     "cue": {
+      "word": "مقنعًا.",
+      "t": 141.44
+     },
+     "who": "quack",
+     "action": "Tugs his collar; the big turban slips down toward his eyes",
+     "acting": "smallest he has been: sq 0.9, tip 0.06",
+     "library": "handR to the neck; turban offset 0 to 10 px"
+    },
+    {
+     "t": 142.1,
+     "cue": {
+      "word": "عندها",
+      "t": 142.1
+     },
+     "who": "king",
+     "action": "The red drains from the king's face; the brows level; he lowers his arm",
+     "acting": "cold now, which is worse: flush 0.8 to 0, lid 0.3, mouth closed and straight",
+     "library": "flush key; settleTo slow"
+    },
+    {
+     "t": 143.5,
+     "cue": {
+      "word": "أمره",
+      "t": 143.56
+     },
+     "who": "king",
+     "action": "Opens his hand toward the bowl, then toward the man",
+     "acting": "a quiet order; no shout",
+     "library": "PERSON_HANDS.reach to the bowl, then pointFwd"
+    },
+    {
+     "t": 145.2,
+     "cue": {
+      "word": "يشرب",
+      "t": 145.28
+     },
+     "who": "official1",
+     "action": "Steps forward and holds the half-full bowl out to the man in both hands",
+     "acting": "face blank; the short official closes in behind the man",
+     "library": "walk() two steps; bowl follows the hands"
+    },
+    {
+     "t": 146.1,
+     "cue": {
+      "word": "الدواء",
+      "t": 146.08
+     },
+     "who": "lettering",
+     "action": "Label THE SAME MEDICINE with an arrow to the bowl",
+     "acting": "above the bowl, clear of faces",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 146.7,
+     "cue": {
+      "word": "نفسه",
+      "t": 146.7
+     },
+     "who": "quack",
+     "action": "Leans away from the bowl with both hands up",
+     "acting": "tip -0.14, eyes wide on the purple surface",
+     "library": "PERSON_HANDS.shield; eyes 'wide'"
+    },
+    {
+     "t": 147.9,
+     "cue": {
+      "word": "صنعه",
+      "t": 147.88
+     },
+     "who": "fx",
+     "action": "A small thought cloud beside him replays his own hand tossing the red pinch into the mortar",
+     "acting": "he made it; he never knew what was in it; now he wonders",
+     "library": "thoughtCloud (planned) 200 wide; red jar icon + hand arc looped once"
+    },
+    {
+     "t": 148.7,
+     "cue": {
+      "word": "للأمير.",
+      "t": 148.74
+     },
+     "who": "quack",
+     "action": "His eyes go past the king to the still prince, then straight to the camera; he gulps",
+     "acting": "the one lens stare of the film: gaze [0, 0.05], hold 0.5 s, drop pulse",
+     "library": "gazePlan; look to camera; drop pulse"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 134.2,
+     "text": "ARE YOU SURE?"
+    },
+    {
+     "t": 139.6,
+     "text": "UH..."
+    },
+    {
+     "t": 146.1,
+     "text": "THE SAME MEDICINE"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 129.9,
+     "kind": "low-hum"
+    },
+    {
+     "t": 132.5,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 149.8
+   }
+  },
+  {
+   "id": "S9",
+   "start": 149.8,
+   "end": 157.75,
+   "paragraphs": [
+    8
+   ],
+   "set": "sickroom",
+   "cast": [
+    "quack",
+    "king",
+    "official1",
+    "official2"
+   ],
+   "summary": "He takes the bowl in shaking hands and drinks. One eye opens: perhaps it is fine. It is not. He staggers and drops out of sight behind the carpet chest; his red turban rolls out alone and comes to rest.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Medium on the man over the carpet chest (x 300, y 660, zoom 1.8), the king's arm and the official's hands at the right edge. Held: the stillness of the frame makes the fall harder. A 2 px drift down at 156.7 to favour the turban."
+   },
+   "composition": "The man at x 290, standing just behind the foreground carpet chest (x 170..400, top y 800), so he is visible from the knees up and can sink behind it. King at the right edge (x 480), official2 a dark shape at the left. The turban rolls out to the right of the chest and stops at about (450, 890).",
+   "actions": [
+    {
+     "t": 150.0,
+     "cue": {
+      "word": "شرب",
+      "t": 150.1
+     },
+     "who": "quack",
+     "action": "Takes the bowl; it rattles in his hands",
+     "acting": "tremble 2; he looks at the king once more for mercy and finds none",
+     "library": "tremble(t, 2); handL/handR hold the bowl; lookAt the king"
+    },
+    {
+     "t": 151.3,
+     "cue": {
+      "word": "الرجل",
+      "t": 151.32
+     },
+     "who": "quack",
+     "action": "Screws his eyes shut and raises the bowl",
+     "acting": "anticipation: shoulders up, a breath in (sq 1.04)",
+     "library": "lid 1; anticipate"
+    },
+    {
+     "t": 152.2,
+     "cue": {
+      "word": "الخليط،",
+      "t": 152.26
+     },
+     "who": "quack",
+     "action": "Drinks: head back, bowl tipped to empty",
+     "acting": "the king watches without blinking (noBlink)",
+     "library": "bowl tilt, level 0.5 to 0; head rot -0.3"
+    },
+    {
+     "t": 153.4,
+     "cue": {
+      "word": "فأصابه",
+      "t": 154.1
+     },
+     "who": "quack",
+     "action": "Lowers the bowl. One eye opens. A small hopeful smile starts",
+     "acting": "the peek: wink 'L' open only; hold through the pause",
+     "library": "wink; mouth 'smile' at 0.3; breathe"
+    },
+    {
+     "t": 154.1,
+     "cue": {
+      "word": "فأصابه",
+      "t": 154.1
+     },
+     "who": "quack",
+     "action": "The smile dies; a throb at his stomach; green dots climb his face",
+     "acting": "eyes wide, hand to the belly; the same throb the prince had",
+     "library": "painPulse size 1.5; flush mechanism with a green palette; eyes 'wide'"
+    },
+    {
+     "t": 155.0,
+     "cue": {
+      "word": "السم",
+      "t": 155.08
+     },
+     "who": "bowl",
+     "action": "The bowl slips from his hand and drops behind the chest; he sways left, right",
+     "acting": "two stagger steps, turban sliding",
+     "library": "fallY for the bowl; swing() for the sway; footfalls"
+    },
+    {
+     "t": 155.6,
+     "cue": {
+      "word": "ومات",
+      "t": 155.62
+     },
+     "who": "quack",
+     "action": "His eyes roll shut and he tips over backward, sinking out of sight behind the carpet chest",
+     "acting": "0.5 s, accelerating; nothing shown after he passes the chest edge",
+     "library": "fallY; draw order: actor then chest (no clipped copy)"
+    },
+    {
+     "t": 156.6,
+     "cue": {
+      "word": "هو",
+      "t": 156.74
+     },
+     "who": "quackTurban",
+     "action": "His red turban rolls out from behind the chest, wobbles and settles upright on the floor",
+     "acting": "the only thing left of his confidence; damped wobble, then still",
+     "library": "quackTurban prop: x 330 to 450, rotation from distance; swing() to settle by 157.6"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 153.7,
+     "kind": "pop"
+    },
+    {
+     "t": 157.7,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 157.75
+   }
+  },
+  {
+   "id": "S10",
+   "start": 157.75,
+   "end": 174.9,
+   "paragraphs": [
+    8
+   ],
+   "set": "sickroom",
+   "cast": [
+    "oldDoc",
+    "king",
+    "prince",
+    "official1",
+    "official2"
+   ],
+   "summary": "The old physician is still on his stool, alive. He feels his way to the bed, rests a hand on the blanket and lets it fall: there is nothing he can do. The room looks from the bed to the red turban. FALSE CONFIDENCE: 2. THE END.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "158.1 pan right from the turban to the old physician (x 450, y 680, zoom 1.8); 160.7-162.2 track with his steps to the bed (x 640, y 700, zoom 1.7); 164.7-166.4 pull out to the whole room (x 520, y 670, zoom 1.05) and hold to the end."
+   },
+   "composition": "Final wide: bed with the still prince on the right, king kneeling behind it, old physician standing at the bed foot (x 560), officials at the left, the red turban alone on the floor at (450, 890) in the foreground with empty floor around it. The dark lamp above the bed. FALSE CONFIDENCE and the counter take the upper wall band (y 150..330); THE END replaces them in the same place.",
+   "actions": [
+    {
+     "t": 158.1,
+     "cue": {
+      "word": "بقي",
+      "t": 158.1
+     },
+     "who": "camera",
+     "action": "Pan from the turban up to the old physician on his stool",
+     "acting": "he is breathing: the only moving chest in the frame",
+     "library": "CAM keys; breathe"
+    },
+    {
+     "t": 158.8,
+     "cue": {
+      "word": "الطبيب",
+      "t": 158.84
+     },
+     "who": "oldDoc",
+     "action": "Lowers the hand from his eyes and lifts his head",
+     "acting": "lid 0.5, wet eyes, brow -0.7; a slow blink",
+     "library": "PERSON_HANDS release; blink; wet"
+    },
+    {
+     "t": 160.2,
+     "cue": {
+      "word": "حيًا،",
+      "t": 160.2
+     },
+     "who": "oldDoc",
+     "action": "Pushes himself up on his stick",
+     "acting": "effort: anticipate dip, two tries",
+     "library": "anticipate x2; stick prop; settleTo"
+    },
+    {
+     "t": 160.8,
+     "cue": {
+      "word": "لكنه",
+      "t": 160.7
+     },
+     "who": "oldDoc",
+     "action": "Three tapping steps to the bed",
+     "acting": "tap, step, pause; the stick finds the bed frame",
+     "library": "blind-grope pattern as in S2; footfalls"
+    },
+    {
+     "t": 162.2,
+     "cue": {
+      "word": "يستطع",
+      "t": 162.28
+     },
+     "who": "oldDoc",
+     "action": "Reaches out and lays his hand on the blanket over the prince's arm",
+     "acting": "gentle; he searches the boy's face from close, nose-near as in S2",
+     "library": "handR target; tip 0.12; lookAt"
+    },
+    {
+     "t": 163.0,
+     "cue": {
+      "word": "إعادة",
+      "t": 163.06
+     },
+     "who": "oldDoc",
+     "action": "The hand rests, then slides off and hangs",
+     "acting": "nothing to be done: head drops 10 px, long blink",
+     "library": "handR ease-out to hang; lid 1 for 0.5 s"
+    },
+    {
+     "t": 163.8,
+     "cue": {
+      "word": "الأمير.",
+      "t": 163.76
+     },
+     "who": "oldDoc",
+     "action": "One tear runs into his white beard",
+     "acting": "held; no sob",
+     "library": "wet; tear drop"
+    },
+    {
+     "t": 164.7,
+     "cue": {
+      "word": "وكان",
+      "t": 164.66
+     },
+     "who": "camera",
+     "action": "Pull out to the whole dim room",
+     "acting": "everyone is in frame; nobody speaks",
+     "library": "CAM keys in a pair"
+    },
+    {
+     "t": 165.4,
+     "cue": {
+      "word": "الجميع",
+      "t": 165.34
+     },
+     "who": "official1",
+     "action": "The officials lift their heads and look at the bed, the short one a moment later",
+     "acting": "sober; hands folded",
+     "library": "stagger(i); lookAt the prince; PERSON_HANDS.folded"
+    },
+    {
+     "t": 166.5,
+     "cue": {
+      "word": "الآن",
+      "t": 166.58
+     },
+     "who": "king",
+     "action": "The king's head turns from his son to the red turban on the floor; one by one the others follow his eyes",
+     "acting": "the room's eye line crosses from right to left and lands on the turban",
+     "library": "gazePlan per character, 0.15 s apart"
+    },
+    {
+     "t": 167.7,
+     "cue": {
+      "word": "الثقة",
+      "t": 167.78
+     },
+     "who": "lettering",
+     "action": "FALSE CONFIDENCE in a red box on the upper wall, with an arrow down to the turban",
+     "acting": "the word 'false' lands as the arrow touches the turban",
+     "library": "S.box + S.arrow"
+    },
+    {
+     "t": 169.7,
+     "cue": {
+      "word": "قتلت",
+      "t": 169.76
+     },
+     "who": "lettering",
+     "action": "Counter beside it ticks 1, then 2; a second arrow goes to the bed",
+     "acting": "1 on the turban arrow at 169.76, 2 on the bed arrow at 170.44",
+     "library": "S.counter; S.arrow"
+    },
+    {
+     "t": 170.4,
+     "cue": {
+      "word": "شخصين.",
+      "t": 170.44
+     },
+     "who": "fx",
+     "action": "The 2 pulses once; the room holds",
+     "acting": "nothing else moves but the old man's breathing",
+     "library": "S.emphasis pulse; breathe"
+    },
+    {
+     "t": 171.5,
+     "who": "lettering",
+     "action": "THE END replaces the label on the upper wall and is held",
+     "acting": "the old physician slowly sits back down on his stool at 172.4; hold to 174.9",
+     "library": "S.title; sit (planned); S.finish last"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 167.7,
+     "text": "FALSE CONFIDENCE"
+    },
+    {
+     "t": 169.7,
+     "text": "2"
+    },
+    {
+     "t": 171.5,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 171.7,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 174.9
+   }
+  }
+ ],
+ "ending": {
+  "t": 171.5,
+  "description": "After the last word (171.20) THE END appears on the upper wall of the dim sickroom and is held to 174.9: the prince still in his bed, the king kneeling, the dark lamp, the red turban alone on the floor, and the old physician lowering himself back onto his stool. One quiet chime at 171.7."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان في مدينة بعيدة طبيب مشهور بعلمه وخبرته.|عالج مرضى كثيرين، وكان الناس يثقون به.|لكن مع مرور السنين ضعف بصره|حتى لم يعد يستطيع رؤية الأدوية التي يستعملها.",
+   "en": "In a distant city lived a physician known for his knowledge and experience.|He had treated many patients, and people trusted him.|But over the years his sight weakened|until he could no longer see the medicines he used."
+  },
+  {
+   "p": 2,
+   "ar": "وفي يوم، مرض ابن الملك مرضًا شديدًا.|أحضروا الطبيب العجوز، فسأل الشاب عن ألمه وأعراضه.|فكر قليلًا، ثم عرف المرض وشرح الدواء الذي يحتاج إليه،|لكنه رفض أن يخلطه بيده لأنه لا يرى جيدًا.",
+   "en": "One day the king’s son fell gravely ill.|They brought the old physician, who asked the young man about his pain and symptoms.|After thinking, he recognized the illness and described the needed medicine,|but refused to mix it himself because he could not see well."
+  },
+  {
+   "p": 3,
+   "ar": "سمع رجل جاهل بالقصة،|ورأى فيها فرصة ليكسب المال ويقترب من الملك.|ذهب إلى القصر وقال بثقة:|«أنا طبيب، وأعرف كيف أخلط الأدوية. دعوني أجهز علاج الأمير.»",
+   "en": "An ignorant man heard the story|and saw a chance to earn money and gain the king’s favor.|He went to the palace and said confidently,|“I am a physician, and I know how to mix medicines. Let me prepare the prince’s treatment.”"
+  },
+  {
+   "p": 4,
+   "ar": "صدقه رجال القصر، وأدخلوه مخزن الأدوية.|كانت الرفوف مليئة بعلب الأعشاب والمساحيق.|نظر الرجل حوله، لكنه لم يعرف أسماء أكثرها|ولا أثرها في الجسم.",
+   "en": "The palace officials believed him and led him into the medicine store.|The shelves were full of boxes of herbs and powders.|He looked around but did not know the names of most of them|or their effects on the body."
+  },
+  {
+   "p": 5,
+   "ar": "بدأ يأخذ قليلًا من هذه العلبة وقليلًا من تلك.|وبين الأشياء التي اختارها مسحوق سام لا يصلح للشرب.|لم يدرك خطره، فخلطه مع بقية المواد|وقدمه في إناء صغير.",
+   "en": "He began taking a little from one box and a little from another.|Among the things he chose was a poisonous powder that could not be swallowed.|He did not recognize the danger, mixed it with the other substances,|and brought it in a small bowl."
+  },
+  {
+   "p": 6,
+   "ar": "أعجب الملك بسرعة الرجل، وظن أنها دليل على مهارته.|أمر أن يشرب ابنه الدواء.|لكن الأمير اشتد عليه الألم بعد أن شربه، ومات بعد وقت قصير.|عم الحزن القصر كله.",
+   "en": "The king was impressed by the man’s speed and took it as a sign of skill.|He ordered his son to drink the medicine.|But the prince’s pain worsened after drinking it, and he died soon afterward.|Grief filled the palace."
+  },
+  {
+   "p": 7,
+   "ar": "غضب الملك وسأل الرجل:|«هل أنت متأكد أن هذا هو العلاج|الصحيح؟» لم يجد الجاهل جوابًا|مقنعًا. عندها أمره الملك أن يشرب من الدواء نفسه الذي صنعه للأمير.",
+   "en": "The king was furious and asked the man,|“Are you certain that this was the correct treatment?”|The ignorant man had no convincing answer.|The king then ordered him to drink the very medicine he had prepared for the prince."
+  },
+  {
+   "p": 8,
+   "ar": "شرب الرجل من الخليط، فأصابه السم ومات هو أيضًا.|بقي الطبيب العجوز حيًا، لكنه لم يستطع إعادة الأمير.|وكان الجميع يعرف الآن|أن الثقة الكاذبة قد قتلت شخصين.",
+   "en": "The man drank the mixture, was poisoned, and died too.|The old physician remained alive, but he could not bring the prince back.|Everyone now knew|that false confidence had cost two people their lives."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "person costume presets (physician, king, prince, quack)",
+   "description": "Four more presets for the planned person costume layer (same body, face, arm IK and gestures). physician: small white turban, long beard, blue dotted robe, yellow sash, with age 0..1 (beard black to white, stoop 0 to 0.12, permanent squint). king: gold three-point crown, full black beard, red robe with yellow trim, 8 % wider. prince: thin gold circlet, no facial hair, white dotted nightshirt, pale ill skin tone option. quack: oversized red turban drawn as a detachable piece, thin curled moustache, yellow robe with red dots, pointed slippers. The two officials use the planned 'vizier' preset in two palettes; the townspeople use the planned 'villager'.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "One costume(P) hook called by person after the body: headwear from K rounded rects and arcs (turban = 3 stacked ellipses with a wrap line; crown = polygon with 3 points and 3 small circles), beard as a filled bezier under the mouth whose fill lerps black to white with age, robe as the existing torso recoloured with halftone dots. Detachable turban: skip it in costume when P.hat === false and draw the quackTurban prop instead."
+  },
+  {
+   "type": "set",
+   "name": "apothecary",
+   "description": "Medicine store interior: navy dotted wall, three shelves (y 330, 500, 670; x 120..880) with 7 jars each, worktable x 300..700 with top at y 760, door on the left with open and closed states, four hanging herb bunches. Reusable for any physician, alchemist, perfumer or spice-merchant story (it is the planned 'storeroom' idea with shelves of jars).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "bake() the wall, boards and table once; jars are drawn live from a 21-entry table {x, shelf, colour, mark} through medicineJar so single jars can glow, hop, lose a lid or leave the shelf. Herb bunches: 5 green bezier leaves on a stalk, swing() for sway. Door: rectangle with an arc top, open = a parallelogram plus a lighter doorway."
+  },
+  {
+   "type": "prop",
+   "name": "medicineKit (medicineJar, mortar, recipeStrip)",
+   "description": "medicineJar 70 x 100 with lid, squiggle label and optional mark (leaf, drop, dot, X), fields colour, lidOff, tilt, glow, puff. Mortar 120 x 70 with pestle 90 long and a mixture colour and level. recipeStrip: a white box with three 40 px jar icons and a mortar icon, each with an optional green tick or red cross.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Jar: K rounded rect body with halftone shading on the right third, flat lid rect, label rect with 2-3 seeded squiggle strokes (K.rng) so no text is readable. Mortar: half ellipse bowl on a short foot; pestle a tapered capsule that follows the hand target. recipeStrip reuses medicineJar at s 0.4 inside S.box; ticks and crosses are two-stroke brush marks with settleTo pop."
+  },
+  {
+   "type": "prop",
+   "name": "stick, coinPile, smallBowl",
+   "description": "Reuse of the planned small props: the old physician's walking stick, the coin pile in the thought cloud, and the small bowl (drawn here 60 wide with fill colour and level) that carries the medicine.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned in KD-015 and AN-095. Bowl: half ellipse with a rim line, the liquid an inner ellipse whose colour and height are fields; when held it follows the midpoint of handL and handR."
+  },
+  {
+   "type": "prop",
+   "name": "oilLamp",
+   "description": "Planned brass hand lamp on a wall shelf with a flame field 0..1 and a smoke wisp, used to say the prince's death without showing more.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned in KD-010; add flame scale and, when flame is 0, three thin bezier smoke strokes that rise 60 px and fade over 1.5 s (a function of time since out)."
+  },
+  {
+   "type": "effect",
+   "name": "blurVision",
+   "description": "Weak-sight point of view: whatever is drawn inside is shown doubled and drifting with a pale halftone veil, strength 0..1. Used three times (stall shelf, tray, bowl) so the audience learns it once and recognises it later.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "blurVision(ctx, draw, k, t): call draw twice with offsets +/- 14k px (x) and +/- 5k px (y) that breathe with sin(t * 1.3), each at alpha 0.55, then a white dot veil at alpha 0.25k and a soft round vignette built from the style's halftone dots. No canvas filter, so frames stay deterministic."
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "description": "Planned generic thought cloud: the man's coins and crown (S3), the king's gold star (S7), the replay of the red pinch (S8).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned (Capabilities Guide section 8): cloud(box, drawInside) with three trailing bubbles to the thinker's head."
+  },
+  {
+   "type": "effect",
+   "name": "dayCycle",
+   "description": "Planned sky that runs through day and night, here spun three times in 1.5 s for the passing years.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned; drive its phase with an eased key 0 to 3 over 12.4-13.9."
+  },
+  {
+   "type": "effect",
+   "name": "painPulse",
+   "description": "Planned red throb with a size parameter: the prince's illness (size 1), the poisoning (to 2.2), the man's own (1.5).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned in KD-009."
+  },
+  {
+   "type": "effect",
+   "name": "dream wash",
+   "description": "Planned blue halftone overlay, used here as the grief dim of the room from 126.3 to the end (alpha 0.35).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned; no vignette, alpha keyed."
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "description": "Planned anger flush (red dots climbing the face) for the king, plus a green palette for the poisoned man.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned; add a colour parameter (default red)."
+  },
+  {
+   "type": "pose",
+   "name": "person lie / sit up in bed",
+   "description": "Planned lie 0..1 for the prince (1 flat, 0.7 propped to drink), with arms free to point, clutch and slide.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "As planned in KD-010; hand targets must keep working in the rotated figure space."
+  },
+  {
+   "type": "pose",
+   "name": "person kneel / sit",
+   "description": "Planned kneel and sit: the old physician on his stool, the king kneeling behind the bed.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned."
+  },
+  {
+   "type": "set",
+   "name": "marketStreet",
+   "description": "Planned city street with palace facade and door, palette clear; this story adds a physician's stall (open and closed states) as an option.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "As planned; stall = table rect, two poles, striped awning polygon (red and white), a 3-board shelf of 9 medicineJars; closed state rolls the awning into a cylinder and removes the jars."
+  },
+  {
+   "type": "set",
+   "name": "bedchamber",
+   "description": "Planned rich bedroom, used as the prince's sickroom with the dimensions given in sets, a wall shelf for the lamp, a stool and a foreground carpet chest.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "As planned in KD-010; the chest is a separate foreground draw call (rounded rect 230 x 100 with a diamond carpet pattern) placed after the cast."
+  }
+ ],
+ "owner_questions": [
+  "The prince's death is shown softly (eyes close, a hand slides to the blanket, the bedside lamp goes out) with no X eyes; default: keep it this soft.",
+  "The ignorant man's death happens out of sight (he sinks behind a carpet chest and only his red turban rolls out); default: keep it off screen.",
+  "The old physician stays in the sickroom during paragraphs 6 to 8 and at 113.5 tries and fails to see the bowl, which the script does not say; default: keep, because it makes his survival in paragraph 8 readable.",
+  "A recipe strip (three jar icons with ticks and crosses) and a POISON! label tell the audience more than the man knows; default: keep both.",
+  "Added comic lettering and gags not in the script: AHA!, ? ? ?, ACHOO! (a sneeze), SO FAST!, UH..., plus ARE YOU SURE? and THE SAME MEDICINE which echo the narration; default: keep all.",
+  "Paragraph 1 adds two townspeople being cured and a CURED counter to show 'treated many patients'; the same two are the gossips in paragraph 3; default: keep.",
+  "The final moral is lettered as FALSE CONFIDENCE with a counter reaching 2; default: keep (alternative: no lettering, picture only)."
+ ],
+ "implementation_notes": [
+  "World 1000 x 1230, floor or ground y 900 in all three sets. People are drawn at s 1.35 (about 324 tall); the king s 1.4. Keep faces above panel y 1000.",
+  "Cue every action from timing.json words, not from the literal times here; the times in this plan are the word starts listed in planning/inputs/timeline.md.",
+  "Set LIFE.t = t each frame for automatic blinks; add hand blinks to characters with an explicit lid (old physician lid >= 0.45, ill prince lid 0.6). Use noBlink for the king at 152.2-155.6 and for everyone during the 117.7-118.2 hold.",
+  "Mask on / mask off for the man: confident pose = sq 1.08, tip -0.06, lid 0.4, mouth 'smile' or smirk; unmasked = sq 0.94-0.96, brow -0.7, saccades with gazePlan(t, plan, 0.07). Switch only when nobody is looking at him (78.4) or when he is cornered (135.3 on).",
+  "The old physician always works nose-close and with a squint; the same blurVision effect is used at 15.4, 42.4 and 113.5 with identical styling.",
+  "The half-full bowl is one object from 103.8 to 155.0: level 1 until the prince drinks (0.5), held by official1 from 117.7 to 145.2, emptied by the man at 152.2. Keep its fill colour (murky purple with red specks) identical throughout.",
+  "The poison jar is at the same place (middle shelf, x 710) in every store shot from 71.4 on, so a second viewing shows it waiting.",
+  "S9: draw order is room, king and officials, the man, then the foreground carpet chest; he disappears by passing behind it, no clipping. Nothing is drawn of him afterwards; the turban prop takes over at 156.6.",
+  "Sound: effects only at the listed pause times; all quiet (master 0.6). The thud at 125.9 is the king's knees, very soft; no effect at all on the prince's death itself or on the man's fall.",
+  "Panel-only shake at 86.6 (sneeze, 4 px) and 132.5 (the king's foot, 6 px); the caption panel never moves.",
+  "Lettering total is 15 items including counters and THE END; none may cover a face. Speech-like lettering (ARE YOU SURE?) sits above and between the heads.",
+  "Transition: one 'later' card (ONE DAY...) at 20.8-22.3 with the set change under its midpoint; the S6 to S7 change is a 4-frame whip, the rest are cuts.",
+  "After approval move the costume presets, apothecary, medicineKit and blurVision into Library/ with registry.js entries, run node Library/tests/regression.mjs and rebuild the catalogue."
+ ],
+ "warnings": [
+  "Depends on several planned assets that are not in Library/ yet (person costume layer, lie and kneel/sit poses, marketStreet, bedchamber, thoughtCloud, dayCycle, painPulse, flush, oilLamp). If this story is animated before the stories that planned them, they must be built here first: the effort is larger than the four assets that are new to this plan suggest.",
+  "Six people share the sickroom in S7 and S8; at 9:16 the wide shots get crowded. Keep the officials near the door, use the two-shots given, and check a contact sheet for overlapping heads.",
+  "The story contains two deaths including a child-aged prince; the staging is deliberately indirect, but the owner should confirm the level (see owner_questions).",
+  "The word 'هو' at 156.74 has an interpolated time; the turban cue uses the same time as 'أيضًا' and is safe either way.",
+  "Arms are short (about 74 units at s 1): handing the bowl between people needs them within about 150 px of each other at s 1.35; stage the hand-overs accordingly."
+ ]
+}

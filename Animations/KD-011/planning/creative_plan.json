@@ -1,0 +1,2919 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "KD-011",
+ "title": "The Rats and the Iron",
+ "duration": 157.506,
+ "end_hold": 3.5,
+ "logline": "A merchant whose friend claims that rats ate his iron answers with an equally absurd tale, that a hawk carried off the friend's son, and so wins back the truth, his iron and the friendship.",
+ "moral": "A lie is best exposed by holding up its own mirror; an absurd excuse invites an absurd answer, and honesty restores what trickery took.",
+ "tone": "Dry comedy of manners: a deadpan merchant, a sweating liar, two ridiculous picture clouds that match each other, and a warm, forgiving ending.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 6.44,
+   "kind": "setup",
+   "cue": {
+    "word": "الحديد.",
+    "t": 6.44
+   },
+   "summary": "A merchant in a busy city owns a great stack of iron."
+  },
+  {
+   "id": "B2",
+   "t": 19.0,
+   "kind": "setup",
+   "cue": {
+    "word": "ووعده",
+    "t": 19.0
+   },
+   "summary": "His old friend promises to keep it safe (the promise pose)."
+  },
+  {
+   "id": "B3",
+   "t": 27.92,
+   "kind": "inciting",
+   "cue": {
+    "word": "باع",
+    "t": 27.92
+   },
+   "summary": "Short of money, the friend sells the iron and pockets the price."
+  },
+  {
+   "id": "B4",
+   "t": 50.92,
+   "kind": "comic",
+   "cue": {
+    "word": "الفئران",
+    "t": 50.92
+   },
+   "summary": "The lie: rats came in and ate all the iron."
+  },
+  {
+   "id": "B5",
+   "t": 58.14,
+   "kind": "turn",
+   "cue": {
+    "word": "يتهم",
+    "t": 58.14
+   },
+   "summary": "The merchant swallows the accusation in front of people and starts to plan."
+  },
+  {
+   "id": "B6",
+   "t": 67.78,
+   "kind": "rising",
+   "cue": {
+    "word": "أخذه",
+    "t": 67.78
+   },
+   "summary": "He takes the friend's son somewhere safe and feeds him."
+  },
+  {
+   "id": "B7",
+   "t": 93.46,
+   "kind": "surprise",
+   "cue": {
+    "word": "صقرًا",
+    "t": 93.46
+   },
+   "summary": "His answer to the worried father: a big hawk carried the boy away."
+  },
+  {
+   "id": "B8",
+   "t": 101.6,
+   "kind": "suspense",
+   "cue": {
+    "word": "مستحيل!",
+    "t": 101.6
+   },
+   "summary": "Impossible! shouts the father."
+  },
+  {
+   "id": "B9",
+   "t": 111.58,
+   "kind": "climax",
+   "cue": {
+    "word": "الفئران",
+    "t": 111.58
+   },
+   "summary": "In a city where rats eat iron, a hawk can carry a child."
+  },
+  {
+   "id": "B10",
+   "t": 121.1,
+   "kind": "reveal",
+   "cue": {
+    "word": "عرف",
+    "t": 121.1
+   },
+   "summary": "Silence: the friend sees that the merchant knows the truth."
+  },
+  {
+   "id": "B11",
+   "t": 128.64,
+   "kind": "emotion",
+   "cue": {
+    "word": "بعته",
+    "t": 128.64
+   },
+   "summary": "He confesses the sale and promises to repay."
+  },
+  {
+   "id": "B12",
+   "t": 141.44,
+   "kind": "resolution",
+   "cue": {
+    "word": "أبوه",
+    "t": 141.44
+   },
+   "summary": "The boy is home safe; father and son embrace; the debt is paid."
+  },
+  {
+   "id": "B13",
+   "t": 152.72,
+   "kind": "moral",
+   "cue": {
+    "word": "فئران",
+    "t": 152.72
+   },
+   "summary": "Neither speaks again of iron-eating rats or child-carrying hawks."
+  }
+ ],
+ "cast": [
+  {
+   "id": "merchant",
+   "name": "the merchant",
+   "library": "person",
+   "base": "person kind:'owner' body with the planned 'merchant' costume preset",
+   "look": "Big white turban with a blue band, short black beard, long blue robe with a yellow sash, tall and upright (height factor 1.05). Calm, half-lidded, economical gestures.",
+   "new": false
+  },
+  {
+   "id": "friend",
+   "name": "the old friend (the father)",
+   "library": "person",
+   "base": "person kind:'owner' body with the planned 'villager' preset",
+   "look": "Small red cap, moustache, yellow tunic over a round belly (width factor 1.15, height 0.95). Expressive, sweaty, big gestures.",
+   "new": false
+  },
+  {
+   "id": "boy",
+   "name": "the friend's son",
+   "library": "person",
+   "base": "person at s 0.62 with a new child option (head 1.25x, no facial hair)",
+   "look": "His father in small: red cap, yellow tunic, bare feet. About 150 units tall.",
+   "new": true
+  },
+  {
+   "id": "buyer",
+   "name": "the iron buyer",
+   "library": "person",
+   "base": "planned 'trader' costume preset",
+   "look": "Small green turban, grey beard, brown robe, a purse at his belt. On screen about 4 s, and again inside the confession cloud.",
+   "new": false
+  },
+  {
+   "id": "passerA",
+   "name": "man with a jar",
+   "library": "person",
+   "base": "planned 'villager' preset, blue tunic, beard",
+   "look": "Street passer-by; also one of the onlookers in S7.",
+   "new": false
+  },
+  {
+   "id": "passerB",
+   "name": "woman with a basket",
+   "library": "person",
+   "base": "planned 'villageWoman' preset (wife base, headscarf, red dress)",
+   "look": "Street passer-by; the second onlooker in S7.",
+   "new": false
+  },
+  {
+   "id": "passerC",
+   "name": "hurrying porter",
+   "library": "person",
+   "base": "planned 'villager' preset, s 0.9, green tunic, no beard",
+   "look": "Crosses once in S1.",
+   "new": false
+  },
+  {
+   "id": "rat",
+   "name": "rats",
+   "library": null,
+   "base": "new small quadruped",
+   "look": "Grey body, pink ears, long pink tail, buck teeth; about 70 units long and 45 tall at s 1. Five in the lie cloud (with white bibs), one real rat in the street.",
+   "new": true
+  },
+  {
+   "id": "hawk",
+   "name": "the hawk",
+   "library": "bird",
+   "base": "bird with a new kind 'hawk' palette and hooked beak",
+   "look": "Brown back, cream barred chest, yellow hooked beak, fierce brow, yellow talons. Drawn huge (s up to 2.4) inside the cloud, tiny (s 0.4) in the last scene.",
+   "new": true
+  }
+ ],
+ "sets": [
+  {
+   "id": "marketStreet",
+   "library": null,
+   "description": "The planned city street (AN-095): skyline, house fronts, clear palette. This story needs the friend's house front: facade x 380..1000 with a storeroom double door (x 420..610, y 640..900, bar and padlock, can open to show the interior), the house door (x 720..820) and a window (x 860..940, y 620..700); to the left an open street with a road running to a far city gate (about x 120, y 820). A second framing without the storeroom door (wall and palm) serves S8, and the merchant's own door S9/S10. Dusk palette for S18. Coordinates are targets for the new drawing; measure on the set once built.",
+   "new": true
+  },
+  {
+   "id": "storeroom",
+   "library": null,
+   "description": "Cutaway interior of the storeroom: plank floor at y 900, stone back wall, one small barred window high on the left with a light shaft, a shelf with two jars, the open doorway on the right (x 600..900). States: full (iron stack at x 180..420) and empty (dust outlines of the stack, a cobweb in the corner). Also drawn small inside the clouds.",
+   "new": true
+  },
+  {
+   "id": "merchantHouse",
+   "library": null,
+   "description": "The planned merchantHouse variant of palaceHall (AN-095): arched interior, window light from the left, tiled floor at y 900, a cushion at x 620 and a low table at x 520. No treasure curtain needed.",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "ironBars",
+   "library": null,
+   "description": "A stack of dark blue-grey iron bars with white glints: each bar 120 x 18 units, stacked 5 wide and up to 6 rows on the cart; fields n (bars left), glint (index), bites (notches eaten out of the top row).",
+   "new": true
+  },
+  {
+   "id": "handcart",
+   "library": null,
+   "description": "Two-wheeled wooden handcart, bed 200 x 30 units, wheels radius 42 turning from distance travelled, two handles.",
+   "new": true
+  },
+  {
+   "id": "purse",
+   "library": null,
+   "description": "The planned purse and coinPile (AN-095): drawstring purse with a fill field (0 empty and flat, 1 fat), gold coins.",
+   "new": true
+  },
+  {
+   "id": "ball",
+   "library": null,
+   "description": "The planned ball (KD-008): red and white, radius 16.",
+   "new": true
+  },
+  {
+   "id": "foodTray",
+   "library": null,
+   "description": "Round brass tray (radius 60) with a flat bread, a small pile of dates and a cup.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 8.02,
+   "paragraphs": [
+    1
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "merchant",
+    "passerA",
+    "passerB",
+    "passerC"
+   ],
+   "summary": "The busy city and the merchant with his cart of iron.",
+   "camera": {
+    "shot": "establishing",
+    "move": "crane",
+    "notes": "Open on the skyline roofs (x 500, y 430, zoom 1.3), crane down to the street by 1.8 s (x 480, y 720, zoom 1.25); ease in to the cart (x 300, y 760, zoom 1.7) from 4.3 to 5.3 and hold."
+   },
+   "composition": "Skyline across the top third of the panel; street ground at y 900. Merchant stops at x 400 with the cart behind him at x 230. Passers-by on two depth lanes (y 880 behind at s 0.85, y 930 in front at s 1.05) so they never share his lane. Arrow and IRON label sit above the stack (about y 640), clear of his face.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 1.8,
+     "cue": {
+      "word": "كان",
+      "t": 0.0
+     },
+     "who": "camera",
+     "action": "crane down from the roofs to the street",
+     "acting": "awnings sway, one bird crosses the sky; the city is alive before anyone enters",
+     "library": "K.camAt keys; songbird {fly:true}"
+    },
+    {
+     "t": 0.3,
+     "end": 3.7,
+     "cue": {
+      "word": "تاجر",
+      "t": 0.3
+     },
+     "who": "merchant",
+     "action": "walks in from the left (x -150 to 400) pulling the loaded handcart",
+     "acting": "leaning into the weight (tip 0.07), short heavy steps, eyes ahead, cheerful smile; cart wheels turn from distance travelled",
+     "library": "person + walk(MX,t), footfalls(); handcart wheel angle = x / r"
+    },
+    {
+     "t": 0.9,
+     "end": 2.4,
+     "cue": {
+      "word": "يعيش",
+      "t": 0.94
+     },
+     "who": "fx",
+     "action": "arrow and label THE MERCHANT pop over him and travel with him",
+     "acting": "label settles with a small overshoot, gone by 2.4",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 1.86,
+     "end": 3.6,
+     "cue": {
+      "word": "مدينة",
+      "t": 1.86
+     },
+     "who": "passerA",
+     "action": "crosses right to left on the back lane carrying a jar",
+     "acting": "brisk walk, glances at the cart as he passes (gaze follows it for 0.5 s)",
+     "library": "person villager preset + walk()"
+    },
+    {
+     "t": 2.2,
+     "end": 4.4,
+     "cue": {
+      "word": "مزدحمة،",
+      "t": 2.5
+     },
+     "who": "passerB",
+     "action": "woman with a basket crosses left to right on the front lane",
+     "acting": "slower sway, the merchant nods to her (drop pulse 6 px) and she nods back 3 frames later",
+     "library": "person villageWoman preset + walk(), stagger()"
+    },
+    {
+     "t": 2.5,
+     "end": 3.8,
+     "cue": {
+      "word": "مزدحمة،",
+      "t": 2.5
+     },
+     "who": "passerC",
+     "action": "a hurrying boy-sized porter squeezes past the cart from the right",
+     "acting": "merchant lifts the cart handles and sidesteps (tip -0.05), eyes follow him out: the street is crowded",
+     "library": "person villager preset s 0.9 + walk()"
+    },
+    {
+     "t": 3.8,
+     "end": 4.4,
+     "cue": {
+      "word": "ولديه",
+      "t": 3.8
+     },
+     "who": "merchant",
+     "action": "stops, sets the handles down, wipes his brow",
+     "acting": "cart settles with landSquash, he exhales (sq 0.97 then 1), blink",
+     "library": "landSquash, settleTo; handR to forehead"
+    },
+    {
+     "t": 4.44,
+     "end": 5.9,
+     "cue": {
+      "word": "كمية",
+      "t": 4.44
+     },
+     "who": "fx",
+     "action": "counter runs up over the stack (IRON BARS 0 to 100) while the bars glint one after another",
+     "acting": "the camera eases in; the cart springs sag 6 units as the number climbs",
+     "library": "S.counter; ironBars {n, glint}"
+    },
+    {
+     "t": 5.1,
+     "end": 6.4,
+     "cue": {
+      "word": "كبيرة",
+      "t": 5.1
+     },
+     "who": "merchant",
+     "action": "pats the stack proudly, other hand on his chest; arrow and label IRON on the stack",
+     "acting": "chin up, proud half-lids (lid 0.25), gaze to the stack then out to the street",
+     "library": "PERSON_HANDS.chest, handL on the stack; S.arrow, S.label"
+    },
+    {
+     "t": 6.44,
+     "end": 7.3,
+     "cue": {
+      "word": "الحديد.",
+      "t": 6.44
+     },
+     "who": "ironBars",
+     "action": "the top bar slides off; he lunges and catches it",
+     "acting": "eyes wide for 3 frames, anticipation dip then a stretch catch (sq 1.05), relieved grin; follow-through wobble of the bar",
+     "library": "anticipate, settleTo; handR reach"
+    },
+    {
+     "t": 7.4,
+     "end": 8.0,
+     "who": "merchant",
+     "action": "drops the bar back on the stack",
+     "acting": "the whole cart hops 3 units on the clank; he dusts his hands",
+     "library": "kick(); PERSON_HANDS.clasp"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 7.55,
+     "text": "CLANK!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 7.6,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 8.02
+   }
+  },
+  {
+   "id": "S2",
+   "start": 8.02,
+   "end": 21.7,
+   "paragraphs": [
+    1
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "merchant",
+    "friend"
+   ],
+   "summary": "He must travel: he asks his old friend to keep the iron; it goes into the storeroom and the friend promises.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pan",
+    "notes": "Two-shot of the men at the house front (x 450, y 740, zoom 1.45). Pan right to the storeroom door 13.6 to 14.6 (x 520), back to the two-shot for the promise; small push-in (zoom 1.6) on the handshake at 19.9."
+   },
+   "composition": "House facade fills x 380..1000: storeroom double door x 420..610 (y 640..900), house door x 720..820, window x 860..940. Merchant on mark x 300 facing right, friend on mark x 600 facing left; cart at x 180. Heads near y 690, level, eye line straight across.",
+   "actions": [
+    {
+     "t": 8.02,
+     "end": 8.9,
+     "cue": {
+      "word": "أراد",
+      "t": 8.02
+     },
+     "who": "merchant",
+     "action": "looks down the road to the right; a small balloon shows a staff and a travel bundle",
+     "acting": "eyes lead (gaze [1,-0.1]) then the head follows 3 frames later; thoughtful mouth",
+     "library": "lookAt; thoughtCloud small (120 x 100)"
+    },
+    {
+     "t": 8.94,
+     "end": 10.3,
+     "cue": {
+      "word": "يسافر",
+      "t": 8.94
+     },
+     "who": "merchant",
+     "action": "shoulders the travel bundle on a staff and points down the road; arrow TRAVEL points off right",
+     "acting": "decisive nod, bundle swings behind him as secondary motion",
+     "library": "PERSON_HANDS.pointFwd; swing() on the bundle; S.arrow"
+    },
+    {
+     "t": 10.44,
+     "end": 11.5,
+     "cue": {
+      "word": "فطلب",
+      "t": 10.44
+     },
+     "who": "merchant",
+     "action": "knocks three times at the house door, which opens",
+     "acting": "small strike cycle of the fist (lift, rap, rebound), then steps back half a pace",
+     "library": "strike cycle pattern (Fox branchTipY) on handR"
+    },
+    {
+     "t": 11.3,
+     "end": 12.1,
+     "cue": {
+      "word": "صديق",
+      "t": 11.58
+     },
+     "who": "friend",
+     "action": "steps out of the door and throws his arms wide",
+     "acting": "surprised hop (hop 12 units, landSquash), big smile, brows up; label OLD FRIEND with arrow",
+     "library": "hop, landSquash; PERSON_HANDS.armsOut; S.label"
+    },
+    {
+     "t": 12.12,
+     "end": 13.1,
+     "cue": {
+      "word": "قديم",
+      "t": 12.12
+     },
+     "who": "merchant",
+     "action": "the two clasp forearms and the friend pats his shoulder",
+     "acting": "both lean in (tip 0.06), the friend bounces on the pat; warm eye contact",
+     "library": "hand targets handR meet at x 450, y 760"
+    },
+    {
+     "t": 13.34,
+     "end": 13.84,
+     "cue": {
+      "word": "يحفظ",
+      "t": 13.34
+     },
+     "who": "merchant",
+     "action": "palms up toward the cart, then points at the storeroom door",
+     "acting": "asking face: brows raised (brow -0.5), head tilted; the friend's gaze goes cart, then door",
+     "library": "PERSON_HANDS.palmsUp then pointFwd; gazePlan for the friend"
+    },
+    {
+     "t": 13.84,
+     "end": 14.6,
+     "cue": {
+      "word": "الحديد",
+      "t": 13.84
+     },
+     "who": "friend",
+     "action": "unbars the storeroom doors and swings them open",
+     "acting": "leans back against the door weight, doors open with a damped swing",
+     "library": "swing() on the door leaves; camera pan"
+    },
+    {
+     "t": 14.7,
+     "end": 16.0,
+     "cue": {
+      "word": "بيته",
+      "t": 14.7
+     },
+     "who": "handcart",
+     "action": "both men push the cart into the storeroom (x 180 to 515); the stack is seen inside against the back wall",
+     "acting": "heads down, pushing (tip 0.12), legs driven by distance; cart rocks over the threshold",
+     "library": "walk(), kick() at the threshold"
+    },
+    {
+     "t": 15.42,
+     "end": 16.6,
+     "cue": {
+      "word": "حتى",
+      "t": 15.42
+     },
+     "who": "merchant",
+     "action": "taps his own chest, then points at the ground: I will be back",
+     "acting": "clear two-beat mime on the two words, eyes on the friend",
+     "library": "PERSON_HANDS.chest then pointDown"
+    },
+    {
+     "t": 16.7,
+     "end": 17.4,
+     "who": "friend",
+     "action": "shuts the doors, drops the bar and snaps the padlock",
+     "acting": "door slam squashes the frame 4 %, padlock swings and settles",
+     "library": "swing(), settleTo"
+    },
+    {
+     "t": 17.52,
+     "end": 18.9,
+     "cue": {
+      "word": "وافق",
+      "t": 17.52
+     },
+     "who": "friend",
+     "action": "nods twice, generously",
+     "acting": "two head drops (8 px) with the cap bobbing a frame late, open smile",
+     "library": "pulse() on drop"
+    },
+    {
+     "t": 19.0,
+     "end": 19.8,
+     "cue": {
+      "word": "ووعده",
+      "t": 19.0
+     },
+     "who": "friend",
+     "action": "right hand flat on his chest, left hand raised: the promise pose",
+     "acting": "solemn brows, chin up, eyes on the merchant. This exact pose returns at 131.44 and 147.7",
+     "library": "PROMISE = {handR: chest, aL: [2.45, 2.85]}"
+    },
+    {
+     "t": 19.88,
+     "end": 20.6,
+     "cue": {
+      "word": "بذلك.",
+      "t": 19.88
+     },
+     "who": "merchant",
+     "action": "handshake, two shakes",
+     "acting": "both hands meet at x 450, y 770; merchant's shoulders drop in relief (sq 0.97)",
+     "library": "hand targets + pulse"
+    },
+    {
+     "t": 20.7,
+     "end": 21.6,
+     "who": "friend",
+     "action": "holds up the storeroom key, which glints, and hangs it on his belt",
+     "acting": "proud keeper; the merchant waves and turns to go",
+     "library": "key prop; PERSON_HANDS.wave"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 16.95,
+     "text": "CLUNK!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 17.0,
+     "kind": "thud"
+    },
+    {
+     "t": 21.1,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 21.7
+   }
+  },
+  {
+   "id": "S3",
+   "start": 21.7,
+   "end": 24.12,
+   "paragraphs": [
+    2
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "merchant",
+    "friend"
+   ],
+   "summary": "The merchant leaves; months spin by.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Pull out from the two-shot to the whole street and sky (x 500, y 640, zoom 1.0) by 22.8 so the sky has room to turn."
+   },
+   "composition": "Merchant walks away up the road toward the far city gate (from x 300, y 900, s 1 to x 120, y 820, s 0.45). Friend stays at x 600 by the locked door. Month counter top centre (y 200).",
+   "actions": [
+    {
+     "t": 21.7,
+     "end": 23.6,
+     "cue": {
+      "word": "غاب",
+      "t": 21.7
+     },
+     "who": "merchant",
+     "action": "walks away up the road with staff and bundle, shrinking into the distance",
+     "acting": "back to us, bundle swinging; one look back and a wave at 22.4",
+     "library": "walk() with scale keyed by distance; swing()"
+    },
+    {
+     "t": 22.36,
+     "end": 23.0,
+     "cue": {
+      "word": "التاجر",
+      "t": 22.36
+     },
+     "who": "friend",
+     "action": "waves him off, then lets the hand sink",
+     "acting": "wave slows, smile fades to neutral: now he is alone with the iron",
+     "library": "PERSON_HANDS.wave, settleTo"
+    },
+    {
+     "t": 23.02,
+     "end": 24.1,
+     "cue": {
+      "word": "أشهرًا،",
+      "t": 23.02
+     },
+     "who": "fx",
+     "action": "the sky runs through day and night three times; counter MONTH 1, 2, 3 with a moon icon",
+     "acting": "shadows sweep, windows light and darken; each month ticks with a small dip",
+     "library": "dayCycle (planned), S.counter"
+    },
+    {
+     "t": 23.7,
+     "end": 24.12,
+     "who": "friend",
+     "action": "his eyes slide to the padlocked door",
+     "acting": "only the pupils move",
+     "library": "gazePlan"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 23.9,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 24.12
+   }
+  },
+  {
+   "id": "S4",
+   "start": 24.12,
+   "end": 32.6,
+   "paragraphs": [
+    2
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "friend",
+    "buyer"
+   ],
+   "summary": "The friend runs out of money, sells the iron and keeps the payment.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on the friend at the storeroom door (x 520, y 740, zoom 1.55); widen to x 430, zoom 1.3 when the buyer enters at 28.2; push in on the purse at 31.0 (zoom 1.8)."
+   },
+   "composition": "Friend at x 600; storeroom door behind him at x 420..610; buyer enters from the left to x 300. Coins and purse are handed over at x 450, y 770, in clear air between the two.",
+   "actions": [
+    {
+     "t": 24.12,
+     "end": 25.5,
+     "cue": {
+      "word": "وخلال",
+      "t": 24.12
+     },
+     "who": "friend",
+     "action": "comes out, turns his purse upside down: one coin, then a moth",
+     "acting": "hopeful peek into the purse, then a slow blink as the moth flutters up; he watches it go",
+     "library": "purse prop; moth = two flapping triangles on a K.noise path"
+    },
+    {
+     "t": 25.62,
+     "end": 27.3,
+     "cue": {
+      "word": "احتاج",
+      "t": 25.62
+     },
+     "who": "friend",
+     "action": "pulls both pockets inside out, palms up",
+     "acting": "worried brows (brow -0.7), mouth frown, shoulders sink (sq 0.96)",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 27.38,
+     "end": 27.9,
+     "cue": {
+      "word": "المال.",
+      "t": 27.38
+     },
+     "who": "friend",
+     "action": "a coin with a question mark pops over his head; his eyes creep to the padlock, which glints",
+     "acting": "suspense by stillness: body frozen, only the pupils travel in three saccades",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 27.92,
+     "end": 28.9,
+     "cue": {
+      "word": "باع",
+      "t": 27.92
+     },
+     "who": "friend",
+     "action": "checks left and right, unlocks the door and beckons",
+     "acting": "shifty saccades, shoulders up, quick small steps; the buyer walks in from the left",
+     "library": "gazePlan; walk() for the buyer"
+    },
+    {
+     "t": 29.44,
+     "end": 30.2,
+     "cue": {
+      "word": "الحديد",
+      "t": 29.44
+     },
+     "who": "handcart",
+     "action": "the cart of iron rolls out to the buyer; a red SOLD stamp lands on the stack",
+     "acting": "buyer rubs his hands; the friend avoids looking at the stack",
+     "library": "S.emphasis as a stamp; walk()"
+    },
+    {
+     "t": 30.24,
+     "end": 31.0,
+     "cue": {
+      "word": "وأخذ",
+      "t": 30.24
+     },
+     "who": "buyer",
+     "action": "counts three coins into the friend's hand",
+     "acting": "each coin a small arc with a dip of the receiving hand; the friend's eyes follow every coin",
+     "library": "coinPile; pulse() dips"
+    },
+    {
+     "t": 31.02,
+     "end": 31.7,
+     "cue": {
+      "word": "ثمنه",
+      "t": 31.02
+     },
+     "who": "friend",
+     "action": "weighs the fat purse, and grins",
+     "acting": "purse squash and bounce on the palm, wide smile",
+     "library": "purse {fill: 1}; settleTo"
+    },
+    {
+     "t": 31.72,
+     "end": 32.5,
+     "cue": {
+      "word": "لنفسه.",
+      "t": 31.72
+     },
+     "who": "friend",
+     "action": "tucks the purse inside his robe, pats it, shuts the empty storeroom",
+     "acting": "one guilty look to camera then away; the buyer leaves with the cart; a cobweb already hangs in the empty doorway",
+     "library": "look to camera gaze [0, 0.05]; handR to chest"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 29.9,
+     "text": "SOLD!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 32.6
+   }
+  },
+  {
+   "id": "S5",
+   "start": 32.6,
+   "end": 45.82,
+   "paragraphs": [
+    2,
+    3
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "merchant",
+    "friend",
+    "rat"
+   ],
+   "summary": "The merchant returns and asks for his iron. The friend, cornered, spots a rat and finds his story.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Wide for the return (zoom 1.15) until 34.6, then the two-shot (x 450, y 740, zoom 1.45). Push in on the friend 41.5 to 43.6 (x 580, y 720, zoom 2.0) while he thinks; back to the two-shot at 44.4."
+   },
+   "composition": "Same marks as S2 (merchant x 300, friend x 600) so the return mirrors the parting. The rat runs along the foot of the wall at y 895 from x 900 to x 640.",
+   "actions": [
+    {
+     "t": 32.6,
+     "end": 34.5,
+     "cue": {
+      "word": "وعندما",
+      "t": 32.6
+     },
+     "who": "merchant",
+     "action": "walks back down the road from the far gate, growing from s 0.45 to 1",
+     "acting": "dusty, tired but happy, bundle on the staff",
+     "library": "walk() with scale by distance"
+    },
+    {
+     "t": 34.56,
+     "end": 35.5,
+     "cue": {
+      "word": "عاد",
+      "t": 34.56
+     },
+     "who": "merchant",
+     "action": "arrives, drops the bundle, knocks; the friend opens",
+     "acting": "bundle lands with landSquash; the friend's smile freezes, a gulp (drop pulse) and one sweat drop",
+     "library": "landSquash; pulse()"
+    },
+    {
+     "t": 35.64,
+     "end": 36.6,
+     "cue": {
+      "word": "وسأله",
+      "t": 35.64
+     },
+     "who": "merchant",
+     "action": "greets him and points at the storeroom door",
+     "acting": "cheerful, open; his balloon shows a small iron bar and a question mark",
+     "library": "PERSON_HANDS.pointFwd; S.box balloon"
+    },
+    {
+     "t": 36.74,
+     "end": 37.5,
+     "cue": {
+      "word": "أمانته،",
+      "t": 36.74
+     },
+     "who": "friend",
+     "action": "eyes dart door, merchant, ground",
+     "acting": "saccades; hands wring (clasp), feet shuffle",
+     "library": "gazePlan saccades; PERSON_HANDS.clasp"
+    },
+    {
+     "t": 37.52,
+     "end": 38.8,
+     "cue": {
+      "word": "قال",
+      "t": 37.52
+     },
+     "who": "friend",
+     "action": "takes a breath and puts on a face of amazement, arms out",
+     "acting": "anticipation inhale (sq 1.04), then the mask: huge eyes, brows up",
+     "library": "anticipate; PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 38.88,
+     "end": 40.2,
+     "cue": {
+      "word": "«حدث",
+      "t": 38.88
+     },
+     "who": "friend",
+     "action": "leans in and cups his mouth as if sharing a secret",
+     "acting": "tip 0.1 toward the merchant, eyes flick to check no one hears",
+     "library": "PERSON_HANDS.cupMouth"
+    },
+    {
+     "t": 40.24,
+     "end": 41.4,
+     "cue": {
+      "word": "غريب",
+      "t": 40.24
+     },
+     "who": "friend",
+     "action": "hands fly to his cheeks",
+     "acting": "held for the two words; the merchant tilts his head, one brow up",
+     "library": "PERSON_HANDS.cheeks"
+    },
+    {
+     "t": 41.48,
+     "end": 42.2,
+     "cue": {
+      "word": "سأله",
+      "t": 41.48
+     },
+     "who": "camera",
+     "action": "push in on the friend, who has no story yet",
+     "acting": "his eyes roll up and search the sky in saccades; mouth opens and shuts",
+     "library": "gazePlan saccades"
+    },
+    {
+     "t": 42.3,
+     "end": 43.3,
+     "cue": {
+      "word": "سأله",
+      "t": 41.48
+     },
+     "who": "rat",
+     "action": "a real rat scurries along the foot of the wall behind him",
+     "acting": "the friend's pupils snap down to it and follow it",
+     "library": "rat + walk(); lookAt"
+    },
+    {
+     "t": 43.66,
+     "end": 44.3,
+     "cue": {
+      "word": "التاجر:",
+      "t": 43.66
+     },
+     "who": "friend",
+     "action": "the idea lands",
+     "acting": "eyes widen, a small smile he hides at once; one finger goes up",
+     "library": "settleTo; PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 44.42,
+     "end": 45.2,
+     "cue": {
+      "word": "«ماذا",
+      "t": 44.42
+     },
+     "who": "merchant",
+     "action": "both palms up: what happened?",
+     "acting": "leans forward (tip 0.08), brows raised, honest curiosity",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 45.24,
+     "end": 45.8,
+     "cue": {
+      "word": "حدث؟»",
+      "t": 45.24
+     },
+     "who": "friend",
+     "action": "takes the merchant by the sleeve and pulls him to the storeroom door",
+     "acting": "eager showman; the merchant is tugged a step (follow-through of his turban)",
+     "library": "hand target on the merchant's arm; walk()"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 45.82
+   }
+  },
+  {
+   "id": "S6",
+   "start": 45.82,
+   "end": 54.72,
+   "paragraphs": [
+    3
+   ],
+   "set": "storeroom",
+   "cast": [
+    "merchant",
+    "friend",
+    "rat"
+   ],
+   "summary": "The lie, shown as a picture cloud: rats march in and eat every bar.",
+   "camera": {
+    "shot": "medium",
+    "move": "tilt",
+    "notes": "Cutaway interior (x 500, y 720, zoom 1.25). Tilt up 47.6 to 48.2 to give the cloud the upper half (y 600); settle back down on the men at 53.6."
+   },
+   "composition": "Storeroom cutaway: floor y 900, the two men stand in the open doorway on the right (merchant x 640, friend x 800, both facing left into the room). Empty floor with dust outlines where the stack stood (x 180..420). The lie cloud is 520 x 370 at x 60..580, y 150..520 with its tail toward the friend; figures inside at least 110 px tall on screen.",
+   "actions": [
+    {
+     "t": 45.82,
+     "end": 47.7,
+     "cue": {
+      "word": "قال",
+      "t": 45.82
+     },
+     "who": "friend",
+     "action": "throws the doors open on the empty storeroom",
+     "acting": "presenting gesture (armsOut); merchant's mouth makes an o, eyes sweep the dust outlines",
+     "library": "storeroom {empty: true}; gazePlan"
+    },
+    {
+     "t": 47.86,
+     "end": 48.6,
+     "cue": {
+      "word": "«وضعت",
+      "t": 47.86
+     },
+     "who": "fx",
+     "action": "the cloud opens; inside, the stack of bars pops in as the friend mimes setting it down",
+     "acting": "friend bends at the knees and places an invisible load (reachBoth)",
+     "library": "thoughtCloud(box, drawInside); PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 48.7,
+     "end": 49.4,
+     "cue": {
+      "word": "الحديد",
+      "t": 48.7
+     },
+     "who": "fx",
+     "action": "arrow and label IRON inside the cloud",
+     "acting": "friend nods at his own picture",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 49.56,
+     "end": 50.3,
+     "cue": {
+      "word": "المخزن،",
+      "t": 49.56
+     },
+     "who": "fx",
+     "action": "the cloud door shuts and locks; the friend dusts his hands",
+     "acting": "innocent face, brows up, eyes to the merchant to check he is following",
+     "library": "PERSON_HANDS.clasp"
+    },
+    {
+     "t": 50.92,
+     "end": 51.6,
+     "cue": {
+      "word": "الفئران",
+      "t": 50.92
+     },
+     "who": "rat",
+     "action": "five rats file in under the cloud door, each wearing a bib",
+     "acting": "staggered, never in step; the leader sniffs, the last one hurries to catch up; the friend's fingers scurry in the air",
+     "library": "rat x5 + stagger(i), walk()"
+    },
+    {
+     "t": 51.7,
+     "end": 52.4,
+     "cue": {
+      "word": "دخلت",
+      "t": 51.7
+     },
+     "who": "rat",
+     "action": "the rats climb the stack",
+     "acting": "hop by hop with landSquash; whiskers twitch",
+     "library": "hop, landSquash"
+    },
+    {
+     "t": 52.44,
+     "end": 53.3,
+     "cue": {
+      "word": "وأكلته",
+      "t": 52.44
+     },
+     "who": "rat",
+     "action": "they eat the iron like bread: bites appear, the stack drops a row every 0.2 s",
+     "acting": "cheeks puff, crumbs of iron fly; the friend chomps the air with both hands",
+     "library": "ironBars {bites, n}; rat {chew}"
+    },
+    {
+     "t": 53.34,
+     "end": 54.0,
+     "cue": {
+      "word": "كله!»",
+      "t": 53.34
+     },
+     "who": "rat",
+     "action": "nothing left: five round rats on their backs",
+     "acting": "friend shrugs with palms up; merchant's eyes travel cloud, empty floor, friend",
+     "library": "rat {fat: 1, roll: 1}; PERSON_HANDS.palmsUp; gazePlan"
+    },
+    {
+     "t": 54.1,
+     "end": 54.7,
+     "who": "rat",
+     "action": "one rat burps and the cloud pops",
+     "acting": "cloud shrinks with a 3 frame pop; the friend keeps the shrug, smiling too hard",
+     "library": "thoughtCloud scale to 0; dustBurst as the pop"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 52.6,
+     "text": "CRUNCH!"
+    },
+    {
+     "t": 54.2,
+     "text": "BURP!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 54.3,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 54.72
+   }
+  },
+  {
+   "id": "S7",
+   "start": 54.72,
+   "end": 61.62,
+   "paragraphs": [
+    3
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "merchant",
+    "friend",
+    "passerA",
+    "passerB"
+   ],
+   "summary": "The merchant is astonished but, with people watching, he does not call his friend a liar.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on the merchant (x 330, y 720, zoom 1.8) for the astonishment; pull to the two-shot plus onlookers at 56.8 (x 430, zoom 1.25); slow push to the merchant's face from 59.5."
+   },
+   "composition": "Merchant x 300, friend x 600. Two passers-by stop on the back lane at x 80 and x 190 (s 0.85), heads between the two men's heights so all four faces are in frame.",
+   "actions": [
+    {
+     "t": 54.72,
+     "end": 55.4,
+     "cue": {
+      "word": "تعجب",
+      "t": 54.72
+     },
+     "who": "merchant",
+     "action": "astonished",
+     "acting": "head back with overshoot (settleTo), brows up (brow -0.8), mouth o, no blink for 0.6 s",
+     "library": "settleTo; noBlink"
+    },
+    {
+     "t": 55.44,
+     "end": 56.0,
+     "cue": {
+      "word": "التاجر",
+      "t": 55.44
+     },
+     "who": "merchant",
+     "action": "slow look to camera",
+     "acting": "the one deliberate lens stare of the film: gaze [0, 0.05], one slow blink",
+     "library": "gaze [0, 0.05]; lid ramp"
+    },
+    {
+     "t": 56.08,
+     "end": 56.8,
+     "cue": {
+      "word": "كثيرًا،",
+      "t": 56.08
+     },
+     "who": "merchant",
+     "action": "raps the iron padlock with a knuckle and looks at his knuckle",
+     "acting": "tiny wince: iron is hard. One brow up",
+     "library": "handR target on the padlock; pulse()"
+    },
+    {
+     "t": 56.82,
+     "end": 57.8,
+     "cue": {
+      "word": "لكنه",
+      "t": 56.82
+     },
+     "who": "passerA",
+     "action": "two passers-by stop and watch",
+     "acting": "heads turn one after the other (stagger 4 frames); the merchant notices them (gaze left)",
+     "library": "stagger(); lookAt"
+    },
+    {
+     "t": 58.14,
+     "end": 58.7,
+     "cue": {
+      "word": "يتهم",
+      "t": 58.14
+     },
+     "who": "merchant",
+     "action": "begins to raise an accusing finger at the friend",
+     "acting": "anticipation, brows down (brow 0.6); the friend flinches (sq 0.93, shield hands)",
+     "library": "anticipate; PERSON_HANDS.pointFwd; friend PERSON_HANDS.shield"
+    },
+    {
+     "t": 58.76,
+     "end": 59.5,
+     "cue": {
+      "word": "صديقه",
+      "t": 58.76
+     },
+     "who": "merchant",
+     "action": "the finger curls back",
+     "acting": "brows relax, mouth closes: he decides against it",
+     "library": "settleTo"
+    },
+    {
+     "t": 59.54,
+     "end": 60.3,
+     "cue": {
+      "word": "بالكذب",
+      "t": 59.54
+     },
+     "who": "merchant",
+     "action": "strokes his beard instead",
+     "acting": "thinking eyes (saccades up and left); the friend opens one eye to peek, then breathes out",
+     "library": "PERSON_HANDS.chin; friend wink + lid"
+    },
+    {
+     "t": 60.38,
+     "end": 61.5,
+     "cue": {
+      "word": "أمام",
+      "t": 60.38
+     },
+     "who": "merchant",
+     "action": "nods politely to the onlookers, pats the friend on the shoulder and walks off left",
+     "acting": "as he turns away from the friend a small smile grows: he has a plan",
+     "library": "walk(); mouth smirk only once dir = -1"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 61.62,
+    "label": "A FEW DAYS LATER..."
+   }
+  },
+  {
+   "id": "S8",
+   "start": 61.62,
+   "end": 67.78,
+   "paragraphs": [
+    4
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "merchant",
+    "boy"
+   ],
+   "summary": "Days later the merchant meets the friend's son on the road.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "The LATER card covers 61.62 to 63.2. Wide street (zoom 1.2), then ease to a two-shot sized for the child (x 470, y 780, zoom 1.6) by 65.6."
+   },
+   "composition": "A different stretch of the street (no storeroom door; a wall and a palm). Merchant enters from the left to x 380; boy enters from the right to x 600. Boy is 150 units tall (s 0.62) so the camera centre sits lower (y 780).",
+   "actions": [
+    {
+     "t": 63.24,
+     "end": 64.0,
+     "cue": {
+      "word": "أيام،",
+      "t": 63.24
+     },
+     "who": "merchant",
+     "action": "strolls in from the left with a shopping basket",
+     "acting": "relaxed walk, humming mouth",
+     "library": "walk()"
+    },
+    {
+     "t": 64.04,
+     "end": 65.5,
+     "cue": {
+      "word": "التقى",
+      "t": 64.04
+     },
+     "who": "boy",
+     "action": "comes bouncing a ball from the right",
+     "acting": "ball on a hop arc with squash at each bounce; boy's eyes on the ball, tongue out",
+     "library": "ball (planned) + hop, landSquash"
+    },
+    {
+     "t": 65.62,
+     "end": 66.0,
+     "cue": {
+      "word": "بابن",
+      "t": 65.62
+     },
+     "who": "fx",
+     "action": "arrow and label THE FRIEND'S SON over the boy",
+     "acting": "he wears his father's red cap and yellow tunic in small",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 66.08,
+     "end": 66.8,
+     "cue": {
+      "word": "صديقه",
+      "t": 66.08
+     },
+     "who": "ball",
+     "action": "the ball gets away and rolls to the merchant, who stops it with his foot",
+     "acting": "boy looks up, recognises him, waves with the whole arm",
+     "library": "kick(); PERSON_HANDS.wave"
+    },
+    {
+     "t": 67.08,
+     "end": 67.7,
+     "cue": {
+      "word": "الطريق.",
+      "t": 67.08
+     },
+     "who": "merchant",
+     "action": "bends and hands the ball back; glances toward the friend's house, then at the boy",
+     "acting": "kind smile; the idea lands with a small glint in the eye, no bulb",
+     "library": "tip 0.15; handR target at the boy's hands; gazePlan"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 67.78
+   }
+  },
+  {
+   "id": "S9",
+   "start": 67.78,
+   "end": 77.0,
+   "paragraphs": [
+    4
+   ],
+   "set": "merchantHouse",
+   "cast": [
+    "merchant",
+    "boy"
+   ],
+   "summary": "He takes the boy somewhere safe, feeds him and asks him to wait.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Start on the street doorway (0.9 s), cut inside at 69.9. Interior medium (x 480, y 760, zoom 1.5), static so the small acting reads."
+   },
+   "composition": "Interior: tiled floor y 900, cushion at x 620, low table at x 520, window light from the left. Boy sits on the cushion (head near y 790); merchant kneels at x 380 so the two heads are nearly level.",
+   "actions": [
+    {
+     "t": 67.78,
+     "end": 69.8,
+     "cue": {
+      "word": "أخذه",
+      "t": 67.78
+     },
+     "who": "merchant",
+     "action": "leads the boy by the hand along the street and through his own door",
+     "acting": "boy takes two steps for each of his; the boy swings their joined hands",
+     "library": "walk() x2 with different stride; hand targets joined"
+    },
+    {
+     "t": 70.3,
+     "end": 71.4,
+     "cue": {
+      "word": "مكان",
+      "t": 70.3
+     },
+     "who": "fx",
+     "action": "inside: label SAFE PLACE with an arrow to the cushion; the door shuts behind them",
+     "acting": "boy looks all round the room (gazePlan), then flops on the cushion (landSquash)",
+     "library": "S.label; landSquash"
+    },
+    {
+     "t": 71.5,
+     "end": 72.5,
+     "cue": {
+      "word": "وأعطاه",
+      "t": 71.5
+     },
+     "who": "merchant",
+     "action": "sets a tray of bread, dates and a cup in front of him",
+     "acting": "tray lowered with care; boy's eyes grow as it comes down",
+     "library": "foodTray prop; hand targets"
+    },
+    {
+     "t": 72.58,
+     "end": 73.3,
+     "cue": {
+      "word": "طعامًا،",
+      "t": 72.58
+     },
+     "who": "boy",
+     "action": "eats with both hands",
+     "acting": "cheeks puff alternately, crumbs; happy half-shut eyes",
+     "library": "person child {chew}; lid 0.4"
+    },
+    {
+     "t": 73.36,
+     "end": 74.7,
+     "cue": {
+      "word": "وطلب",
+      "t": 73.36
+     },
+     "who": "merchant",
+     "action": "kneels to his eye level and raises one finger",
+     "acting": "gentle, serious; waits for the boy to look up",
+     "library": "person {kneel: 1} (planned); PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 75.08,
+     "end": 75.7,
+     "cue": {
+      "word": "ينتظر",
+      "t": 75.08
+     },
+     "who": "merchant",
+     "action": "palm down, then points at the cushion: wait here",
+     "acting": "boy nods with his mouth full",
+     "library": "PERSON_HANDS.pointDown"
+    },
+    {
+     "t": 75.8,
+     "end": 76.9,
+     "cue": {
+      "word": "هناك",
+      "t": 75.8
+     },
+     "who": "merchant",
+     "action": "finger to his lips and a wink",
+     "acting": "boy tries to wink back and blinks both eyes instead, giggles; they are in it together",
+     "library": "PERSON_HANDS.hush; wink 'R'"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 72.8,
+     "text": "YUM!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 77.0
+   }
+  },
+  {
+   "id": "S10",
+   "start": 77.0,
+   "end": 81.28,
+   "paragraphs": [
+    4
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "merchant",
+    "friend"
+   ],
+   "summary": "He goes back alone to the friend's house.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Track with the merchant from his door to the friend's house front (camera x follows him, zoom 1.3), arriving on the S2 two-shot framing."
+   },
+   "composition": "Merchant walks left to right; the empty space beside him is kept in frame on his left. Friend is already outside his door at x 640, pacing.",
+   "actions": [
+    {
+     "t": 77.0,
+     "end": 78.4,
+     "cue": {
+      "word": "ثم",
+      "t": 77.0
+     },
+     "who": "merchant",
+     "action": "steps out of his door, straightens his turban and sets his face",
+     "acting": "tries a smile, wipes it off with his hand, puts on grave brows: the mask goes on",
+     "library": "handR across the face; mouth and brow keys"
+    },
+    {
+     "t": 78.52,
+     "end": 79.5,
+     "cue": {
+      "word": "عاد",
+      "t": 78.52
+     },
+     "who": "merchant",
+     "action": "walks to the friend's house",
+     "acting": "measured steps, hands behind his back",
+     "library": "walk(), footfalls()"
+    },
+    {
+     "t": 78.96,
+     "end": 79.9,
+     "cue": {
+      "word": "وحده",
+      "t": 78.96
+     },
+     "who": "fx",
+     "action": "label ALONE with an arrow to a dotted child-sized outline walking beside him, which fades",
+     "acting": "the outline takes two steps and is gone",
+     "library": "S.label, S.arrow; dashed stroke of the child silhouette"
+    },
+    {
+     "t": 79.92,
+     "end": 81.2,
+     "cue": {
+      "word": "بيت",
+      "t": 79.92
+     },
+     "who": "friend",
+     "action": "paces in front of his door, looking up and down the road",
+     "acting": "three short turns (turnFlip), hands wringing; he sees the merchant and stops dead",
+     "library": "walk(), turnFlip; PERSON_HANDS.clasp"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 81.28
+   }
+  },
+  {
+   "id": "S11",
+   "start": 81.28,
+   "end": 88.92,
+   "paragraphs": [
+    5
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "merchant",
+    "friend"
+   ],
+   "summary": "The anxious father: have you seen my son?",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "Two-shot (x 450, y 740, zoom 1.5) with a slow drift toward the friend; both faces stay in frame."
+   },
+   "composition": "Merchant x 300 calm and upright, friend rushes from x 640 to x 420 and stays close, lower and leaning in. A small pair of sandals and nothing else by the open house door at x 770.",
+   "actions": [
+    {
+     "t": 81.28,
+     "end": 83.1,
+     "cue": {
+      "word": "سأله",
+      "t": 81.28
+     },
+     "who": "friend",
+     "action": "runs to the merchant and grabs his sleeves",
+     "acting": "three fast steps, lurch on the stop, cap slips back",
+     "library": "walk(), lurch"
+    },
+    {
+     "t": 83.7,
+     "end": 84.4,
+     "cue": {
+      "word": "بقلق:",
+      "t": 83.7
+     },
+     "who": "friend",
+     "action": "trembling",
+     "acting": "wet eyes, raised brows (brow -0.8), two sweat drops",
+     "library": "tremble(t, 2); wet: true"
+    },
+    {
+     "t": 84.44,
+     "end": 85.4,
+     "cue": {
+      "word": "«هل",
+      "t": 84.44
+     },
+     "who": "friend",
+     "action": "a balloon with the boy's face and a question mark",
+     "acting": "eyes fixed on the merchant's eyes",
+     "library": "S.box balloon with a small child head"
+    },
+    {
+     "t": 85.5,
+     "end": 85.9,
+     "cue": {
+      "word": "ابني؟",
+      "t": 85.5
+     },
+     "who": "friend",
+     "action": "holds a flat hand at the height of the boy's head",
+     "acting": "hand hovers at y 750 and trembles",
+     "library": "handR target [40, -150]"
+    },
+    {
+     "t": 85.98,
+     "end": 87.6,
+     "cue": {
+      "word": "إنه",
+      "t": 85.98
+     },
+     "who": "friend",
+     "action": "looks up the road, down the road",
+     "acting": "saccades with the head following late each time",
+     "library": "gazePlan saccades"
+    },
+    {
+     "t": 87.66,
+     "end": 88.2,
+     "cue": {
+      "word": "يعد",
+      "t": 87.66
+     },
+     "who": "friend",
+     "action": "points back at his own open door and the little sandals",
+     "acting": "arm thrown back, body still facing the merchant",
+     "library": "aL angle pointing behind"
+    },
+    {
+     "t": 88.3,
+     "end": 88.9,
+     "cue": {
+      "word": "البيت!»",
+      "t": 88.3
+     },
+     "who": "friend",
+     "action": "clutches his head",
+     "acting": "merchant has listened without moving: slow blinks, stroking his beard, steady gaze",
+     "library": "PERSON_HANDS.headHold; merchant PERSON_HANDS.chin"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 88.92
+   }
+  },
+  {
+   "id": "S12",
+   "start": 88.92,
+   "end": 98.98,
+   "paragraphs": [
+    5
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "merchant",
+    "friend",
+    "boy",
+    "hawk"
+   ],
+   "summary": "The merchant's answer in the same kind of picture cloud: a huge hawk carried the boy off.",
+   "camera": {
+    "shot": "medium",
+    "move": "tilt",
+    "notes": "Same move as S6: tilt up at 90.6 to give the cloud the upper half, down again at 98.0. Matching the lie scene on purpose."
+   },
+   "composition": "Merchant x 300, friend x 600. The hawk cloud is the same 520 x 370 box as the rat cloud (x 240..760, y 150..520) but its tail points to the merchant. Inside: road, the boy at the cloud's x 380, sky above him.",
+   "actions": [
+    {
+     "t": 88.92,
+     "end": 90.7,
+     "cue": {
+      "word": "قال",
+      "t": 88.92
+     },
+     "who": "merchant",
+     "action": "raises a finger, then copies the friend's amazed pose: arms out, hands to cheeks",
+     "acting": "the same poses as 37.52 and 40.24, played slowly and deadpan",
+     "library": "PERSON_HANDS.pointUp, armsOut, cheeks"
+    },
+    {
+     "t": 90.8,
+     "end": 91.8,
+     "cue": {
+      "word": "«رأيته",
+      "t": 90.8
+     },
+     "who": "fx",
+     "action": "the cloud opens: the boy on the road with his ball",
+     "acting": "friend leans toward the picture, hopeful",
+     "library": "thoughtCloud(box, drawInside)"
+    },
+    {
+     "t": 92.08,
+     "end": 92.7,
+     "cue": {
+      "word": "الطريق،",
+      "t": 92.08
+     },
+     "who": "boy",
+     "action": "the cloud boy waves",
+     "acting": "friend half smiles",
+     "library": "PERSON_HANDS.wave"
+    },
+    {
+     "t": 92.78,
+     "end": 93.4,
+     "cue": {
+      "word": "لكن",
+      "t": 92.78
+     },
+     "who": "merchant",
+     "action": "holds up a finger: but... and looks at the sky",
+     "acting": "friend's gaze follows his up",
+     "library": "PERSON_HANDS.pointUp; lookAt"
+    },
+    {
+     "t": 93.46,
+     "end": 94.2,
+     "cue": {
+      "word": "صقرًا",
+      "t": 93.46
+     },
+     "who": "hawk",
+     "action": "a shadow slides over the cloud boy; the hawk drops into the top of the cloud",
+     "acting": "wings spread, fierce brow",
+     "library": "bird kind hawk {fly: true}; groundShadow (planned)"
+    },
+    {
+     "t": 94.22,
+     "end": 95.0,
+     "cue": {
+      "word": "كبيرًا",
+      "t": 94.22
+     },
+     "who": "hawk",
+     "action": "it grows absurdly, wingspan as wide as the cloud; arrow and label BIG HAWK",
+     "acting": "the merchant spreads his own arms to show the size",
+     "library": "scale key 0.9 to 2.4; S.label"
+    },
+    {
+     "t": 95.1,
+     "end": 95.8,
+     "cue": {
+      "word": "نزل",
+      "t": 95.1
+     },
+     "who": "hawk",
+     "action": "hovers, then stoops",
+     "acting": "anticipation rise of 20 units, then a fast curved dive",
+     "library": "anticipate; Bezier flight path (Lark flyBz)"
+    },
+    {
+     "t": 95.86,
+     "end": 96.5,
+     "cue": {
+      "word": "السماء",
+      "t": 95.86
+     },
+     "who": "hawk",
+     "action": "takes the boy by the back of his tunic",
+     "acting": "boy's legs dangle and swing; he is surprised, not hurt",
+     "library": "swing() on the legs; rider = carrier position"
+    },
+    {
+     "t": 96.62,
+     "end": 97.5,
+     "cue": {
+      "word": "وحمله",
+      "t": 96.62
+     },
+     "who": "hawk",
+     "action": "heavy wingbeats, up and away with the boy; the ball drops and bounces",
+     "acting": "each flap lifts them in steps; the boy waves on the way",
+     "library": "flap from climb rate; hop() for the ball"
+    },
+    {
+     "t": 97.56,
+     "end": 98.4,
+     "cue": {
+      "word": "بعيدًا.»",
+      "t": 97.56
+     },
+     "who": "hawk",
+     "action": "shrinks to a dot at the cloud's edge",
+     "acting": "merchant waves goodbye with his fingers; friend's jaw hangs open",
+     "library": "scale to 0.1; PERSON_HANDS.wave"
+    },
+    {
+     "t": 98.5,
+     "end": 98.95,
+     "who": "fx",
+     "action": "the cloud pops",
+     "acting": "friend rocks back on his heels",
+     "library": "thoughtCloud scale to 0"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 96.9,
+     "text": "WHEEE!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 98.7,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 98.98
+   }
+  },
+  {
+   "id": "S13",
+   "start": 98.98,
+   "end": 106.12,
+   "paragraphs": [
+    6
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "merchant",
+    "friend"
+   ],
+   "summary": "Impossible! How could a hawk carry a child?",
+   "camera": {
+    "shot": "two-shot",
+    "move": "shake",
+    "notes": "Two-shot (zoom 1.45). Panel-only shake for 0.3 s on the shout at 101.6; then static."
+   },
+   "composition": "Friend dominates: he moves between x 520 and x 620; merchant still at x 300 with folded arms. IMPOSSIBLE! lettering top right (x 560..960, y 180..320), above and behind the friend, clear of both faces.",
+   "actions": [
+    {
+     "t": 98.98,
+     "end": 100.2,
+     "cue": {
+      "word": "صاح",
+      "t": 98.98
+     },
+     "who": "friend",
+     "action": "jumps on the spot",
+     "acting": "crouch, hop 30 units, landSquash; cap leaves his head and lands again a frame late",
+     "library": "anticipate, hop, landSquash"
+    },
+    {
+     "t": 100.84,
+     "end": 101.5,
+     "cue": {
+      "word": "«هذا",
+      "t": 100.84
+     },
+     "who": "friend",
+     "action": "throws both arms up",
+     "acting": "brows angry (brow 0.9), mouth open wide",
+     "library": "aL/aR [2.45, 2.85]"
+    },
+    {
+     "t": 101.6,
+     "end": 102.5,
+     "cue": {
+      "word": "مستحيل!",
+      "t": 101.6
+     },
+     "who": "lettering",
+     "action": "IMPOSSIBLE! slams in",
+     "acting": "panel shake; the merchant only blinks",
+     "library": "S.title small / emphasis"
+    },
+    {
+     "t": 102.62,
+     "end": 103.4,
+     "cue": {
+      "word": "كيف",
+      "t": 102.62
+     },
+     "who": "friend",
+     "action": "steps in, palms up",
+     "acting": "head thrust forward (tip 0.12)",
+     "library": "PERSON_HANDS.palmsUp; walk()"
+    },
+    {
+     "t": 104.18,
+     "end": 104.8,
+     "cue": {
+      "word": "صقر",
+      "t": 104.18
+     },
+     "who": "friend",
+     "action": "flaps his hands at his shoulders like a small bird",
+     "acting": "mocking little flaps, eyebrows high",
+     "library": "handL/handR keyed at the shoulders"
+    },
+    {
+     "t": 105.12,
+     "end": 105.5,
+     "cue": {
+      "word": "يحمل",
+      "t": 105.12
+     },
+     "who": "friend",
+     "action": "mimes lifting something heavy and failing",
+     "acting": "knees bend, hands at child height, strain",
+     "library": "PERSON_HANDS.reachBoth; sq 0.94"
+    },
+    {
+     "t": 105.58,
+     "end": 106.1,
+     "cue": {
+      "word": "طفلًا؟»",
+      "t": 105.58
+     },
+     "who": "friend",
+     "action": "points at the sky and shakes his head",
+     "acting": "merchant, arms folded, one brow up and the start of a smile: this is what he was waiting for",
+     "library": "PERSON_HANDS.pointUp; merchant PERSON_HANDS.folded"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 101.6,
+     "text": "IMPOSSIBLE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 106.12
+   }
+  },
+  {
+   "id": "S14",
+   "start": 106.12,
+   "end": 117.24,
+   "paragraphs": [
+    6
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "merchant",
+    "friend",
+    "rat",
+    "hawk",
+    "boy"
+   ],
+   "summary": "The calm reply: in a city where rats eat iron, a hawk may carry a child. The two pictures side by side.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Push in on the merchant 106.1 to 108.2 (x 320, y 710, zoom 1.9). Pull back and up for the two clouds at 110.0 (x 500, y 600, zoom 1.2); end on a push to the friend's face at 116.2."
+   },
+   "composition": "Two small clouds side by side: rats cloud x 60..470, y 150..450 (on the friend's lie side), hawk cloud x 530..940, y 150..450. The equals sign at x 500, y 300. Both men below, heads near y 690, each under the other man's picture.",
+   "actions": [
+    {
+     "t": 106.12,
+     "end": 107.5,
+     "cue": {
+      "word": "أجابه",
+      "t": 106.12
+     },
+     "who": "merchant",
+     "action": "a beat of stillness, then he unfolds his arms",
+     "acting": "slow; the friend is panting, shoulders heaving",
+     "library": "breathe() on the friend"
+    },
+    {
+     "t": 108.18,
+     "end": 109.3,
+     "cue": {
+      "word": "بهدوء:",
+      "t": 108.18
+     },
+     "who": "merchant",
+     "action": "small calm smile, one palm raised",
+     "acting": "lid 0.3, level brows, voice-of-reason posture",
+     "library": "handR palm out"
+    },
+    {
+     "t": 109.66,
+     "end": 110.3,
+     "cue": {
+      "word": "مدينة",
+      "t": 109.66
+     },
+     "who": "merchant",
+     "action": "sweeps a hand across the skyline",
+     "acting": "the friend's eyes follow the hand",
+     "library": "aR sweep; lookAt"
+    },
+    {
+     "t": 110.4,
+     "end": 111.5,
+     "cue": {
+      "word": "تأكل",
+      "t": 110.4
+     },
+     "who": "fx",
+     "action": "the rats cloud pops back on the left",
+     "acting": "the same rats, mid meal, on a 1 s loop",
+     "library": "thoughtCloud small; rat {chew}"
+    },
+    {
+     "t": 111.58,
+     "end": 112.2,
+     "cue": {
+      "word": "الفئران",
+      "t": 111.58
+     },
+     "who": "merchant",
+     "action": "points at the rats",
+     "acting": "friend's head turns to his own lie",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 112.24,
+     "end": 113.0,
+     "cue": {
+      "word": "الحديد،",
+      "t": 112.24
+     },
+     "who": "fx",
+     "action": "label RATS EAT IRON under the left cloud",
+     "acting": "friend swallows (drop pulse)",
+     "library": "S.label"
+    },
+    {
+     "t": 113.6,
+     "end": 114.5,
+     "cue": {
+      "word": "أستغرب",
+      "t": 113.6
+     },
+     "who": "merchant",
+     "action": "shrugs, palms up",
+     "acting": "mild, reasonable, brows raised",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 114.58,
+     "end": 115.5,
+     "cue": {
+      "word": "يحمل",
+      "t": 114.58
+     },
+     "who": "fx",
+     "action": "the hawk cloud pops in on the right; label HAWKS CARRY BOYS",
+     "acting": "hawk flapping on the spot with the boy",
+     "library": "thoughtCloud small; bird kind hawk"
+    },
+    {
+     "t": 115.56,
+     "end": 116.2,
+     "cue": {
+      "word": "طفلًا!»",
+      "t": 115.56
+     },
+     "who": "lettering",
+     "action": "a big equals sign pops between the two clouds",
+     "acting": "merchant looks left cloud, right cloud, then straight at the friend",
+     "library": "S.emphasis; gazePlan"
+    },
+    {
+     "t": 116.3,
+     "end": 117.2,
+     "cue": {
+      "word": "طفلًا!»",
+      "t": 115.56
+     },
+     "who": "friend",
+     "action": "his eyes go cloud, cloud, merchant: the penny drops",
+     "acting": "sq 0.92, pupils small, arms sink to his sides",
+     "library": "gazePlan saccades; settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 115.6,
+     "text": "="
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 117.24
+   }
+  },
+  {
+   "id": "S15",
+   "start": 117.24,
+   "end": 122.76,
+   "paragraphs": [
+    7
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "merchant",
+    "friend"
+   ],
+   "summary": "Silence. He understands that the merchant knows.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Close on the friend (x 590, y 700, zoom 2.1), slow push to 2.4; the merchant's shoulder and face stay at the left edge of frame."
+   },
+   "composition": "Friend's face right of centre, merchant's profile at the left edge so the wink can be seen. Label HE KNOWS! sits above the friend's cap (y 520).",
+   "actions": [
+    {
+     "t": 117.24,
+     "end": 118.1,
+     "cue": {
+      "word": "سكت",
+      "t": 117.24
+     },
+     "who": "friend",
+     "action": "his mouth shuts; a hand covers it",
+     "acting": "everything in the background stops moving; the clouds sag and fade",
+     "library": "PERSON_HANDS.mouthCover; alpha on the clouds"
+    },
+    {
+     "t": 118.2,
+     "end": 118.9,
+     "cue": {
+      "word": "الصديق،",
+      "t": 118.2
+     },
+     "who": "friend",
+     "action": "stands frozen",
+     "acting": "suspense by stillness: one blink only",
+     "library": "blink"
+    },
+    {
+     "t": 118.96,
+     "end": 119.9,
+     "cue": {
+      "word": "وفهم",
+      "t": 118.96
+     },
+     "who": "friend",
+     "action": "his pupils slide to the merchant",
+     "acting": "slow, afraid to look",
+     "library": "gazePlan"
+    },
+    {
+     "t": 120.28,
+     "end": 121.0,
+     "cue": {
+      "word": "التاجر",
+      "t": 120.28
+     },
+     "who": "merchant",
+     "action": "one raised brow, then the smallest wink",
+     "acting": "kindly, not triumphant",
+     "library": "wink 'R'; brow -0.4"
+    },
+    {
+     "t": 121.1,
+     "end": 121.6,
+     "cue": {
+      "word": "عرف",
+      "t": 121.1
+     },
+     "who": "fx",
+     "action": "label HE KNOWS! with an arrow at the friend",
+     "acting": "a blush of red dots climbs his cheeks, one sweat drop",
+     "library": "S.label; flush (planned)"
+    },
+    {
+     "t": 121.66,
+     "end": 122.7,
+     "cue": {
+      "word": "الحقيقة.",
+      "t": 121.66
+     },
+     "who": "friend",
+     "action": "the shame: looks up, eyes break away, head drops",
+     "acting": "shoulders sag (sq 0.95), cap slides forward a frame late",
+     "library": "Thief shame ending pattern; drop key"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 122.76
+   }
+  },
+  {
+   "id": "S16",
+   "start": 122.76,
+   "end": 136.74,
+   "paragraphs": [
+    7
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "merchant",
+    "friend",
+    "rat",
+    "buyer"
+   ],
+   "summary": "The confession: the rats did not eat it, I sold it. He promises the iron or its full price.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "Two-shot (x 450, y 720, zoom 1.4) with room above for the small clouds; drift in to zoom 1.6 for the promise and handshake from 131.4."
+   },
+   "composition": "Marks as before. Confession cloud (420 x 300) at x 290..710, y 160..460 over the gap between the men, tail to the friend. Bar icon at x 380, coin pile at x 620, OR between them at y 300.",
+   "actions": [
+    {
+     "t": 122.76,
+     "end": 123.4,
+     "cue": {
+      "word": "قال",
+      "t": 122.76
+     },
+     "who": "friend",
+     "action": "lifts his head and breathes out",
+     "acting": "long exhale (sq 0.96), hands clasped low",
+     "library": "breathe; PERSON_HANDS.clasp"
+    },
+    {
+     "t": 123.42,
+     "end": 124.6,
+     "cue": {
+      "word": "أخيرًا:",
+      "t": 123.42
+     },
+     "who": "friend",
+     "action": "meets the merchant's eyes at last",
+     "acting": "wet eyes, brows raised",
+     "library": "lookAt; wet: true"
+    },
+    {
+     "t": 124.66,
+     "end": 125.5,
+     "cue": {
+      "word": "«الفئران",
+      "t": 124.66
+     },
+     "who": "fx",
+     "action": "the rats cloud returns, small",
+     "acting": "rats look out of the cloud at him",
+     "library": "thoughtCloud; rat"
+    },
+    {
+     "t": 125.6,
+     "end": 126.5,
+     "cue": {
+      "word": "لم",
+      "t": 125.6
+     },
+     "who": "fx",
+     "action": "a red X stamps across it; the rats shrug and walk out of the cloud",
+     "acting": "friend shakes his head twice",
+     "library": "S.emphasis X; rat walk(), stagger"
+    },
+    {
+     "t": 126.54,
+     "end": 127.5,
+     "cue": {
+      "word": "الحديد.",
+      "t": 126.54
+     },
+     "who": "fx",
+     "action": "the cloud empties to the bare storeroom",
+     "acting": "friend's hand drops",
+     "library": "storeroom {empty: true} inside the cloud"
+    },
+    {
+     "t": 127.6,
+     "end": 127.9,
+     "who": "fx",
+     "action": "the cloud flips to the true picture",
+     "acting": "a quick page flip, no sound needed",
+     "library": "scale x flip"
+    },
+    {
+     "t": 127.94,
+     "end": 128.6,
+     "cue": {
+      "word": "لقد",
+      "t": 127.94
+     },
+     "who": "friend",
+     "action": "points at himself",
+     "acting": "thumb to chest, eyes down",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 128.64,
+     "end": 129.3,
+     "cue": {
+      "word": "بعته",
+      "t": 128.64
+     },
+     "who": "buyer",
+     "action": "in the cloud: the cart rolls to the buyer, SOLD stamp, coins to the friend",
+     "acting": "a 1.5 s replay of S4, same drawings",
+     "library": "reuse the S4 pose functions inside the cloud"
+    },
+    {
+     "t": 130.04,
+     "end": 130.8,
+     "cue": {
+      "word": "احتجت",
+      "t": 130.04
+     },
+     "who": "friend",
+     "action": "turns out an empty pocket, palms up",
+     "acting": "the merchant's brows soften; a small nod",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 130.88,
+     "end": 131.4,
+     "cue": {
+      "word": "المال.",
+      "t": 130.88
+     },
+     "who": "fx",
+     "action": "the cloud fades",
+     "acting": "both men alone again",
+     "library": "alpha"
+    },
+    {
+     "t": 131.44,
+     "end": 132.5,
+     "cue": {
+      "word": "سأعيد",
+      "t": 131.44
+     },
+     "who": "friend",
+     "action": "straightens up into the promise pose from 19.0",
+     "acting": "stretch (sq 1.03), hand on chest, other hand raised, steady eyes",
+     "library": "PROMISE pose"
+    },
+    {
+     "t": 133.18,
+     "end": 133.9,
+     "cue": {
+      "word": "الحديد",
+      "t": 133.18
+     },
+     "who": "fx",
+     "action": "an iron bar icon pops at the left",
+     "acting": "friend offers his left hand toward it",
+     "library": "ironBars {n: 1}"
+    },
+    {
+     "t": 134.0,
+     "end": 134.9,
+     "cue": {
+      "word": "أو",
+      "t": 134.0
+     },
+     "who": "fx",
+     "action": "OR, then a coin pile at the right",
+     "acting": "friend offers his right hand toward it",
+     "library": "S.label; coinPile"
+    },
+    {
+     "t": 134.94,
+     "end": 135.6,
+     "cue": {
+      "word": "كاملًا.»",
+      "t": 134.94
+     },
+     "who": "fx",
+     "action": "the coin pile grows to full height; counter runs to 100 %",
+     "acting": "merchant nods and holds out his hand",
+     "library": "S.counter; coinPile {fill}"
+    },
+    {
+     "t": 135.7,
+     "end": 136.6,
+     "cue": {
+      "word": "كاملًا.»",
+      "t": 134.94
+     },
+     "who": "merchant",
+     "action": "they shake hands, as at 19.88",
+     "acting": "the merchant covers the handshake with his other hand: forgiven",
+     "library": "hand targets; pulse()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 125.8,
+     "text": "X"
+    },
+    {
+     "t": 129.2,
+     "text": "SOLD!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 136.4,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 136.74
+   }
+  },
+  {
+   "id": "S17",
+   "start": 136.74,
+   "end": 148.24,
+   "paragraphs": [
+    8
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "merchant",
+    "friend",
+    "boy"
+   ],
+   "summary": "The boy comes back safe, the father rejoices, and the iron is paid for.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide (x 450, y 740, zoom 1.25) for the entrance and the run; push to the hug (x 560, y 770, zoom 1.8) at 141.4; back to the two-shot for the payment at 143.3."
+   },
+   "composition": "Merchant and boy enter from the left (x -80 to 250). Friend at x 620. Hug at x 560. Payment at the S4 spot (x 450, y 770), mirrored: now the purse goes from the friend to the merchant.",
+   "actions": [
+    {
+     "t": 136.74,
+     "end": 138.2,
+     "cue": {
+      "word": "عاد",
+      "t": 136.74
+     },
+     "who": "merchant",
+     "action": "walks in from the left hand in hand with the boy",
+     "acting": "boy skipping (small hops), half a flat bread in his free hand",
+     "library": "walk(), hop()"
+    },
+    {
+     "t": 138.3,
+     "end": 139.0,
+     "cue": {
+      "word": "بالولد",
+      "t": 138.3
+     },
+     "who": "boy",
+     "action": "lets go and runs to his father, arms out",
+     "acting": "fast short steps, crumbs falling",
+     "library": "walk() fast; PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 139.02,
+     "end": 140.3,
+     "cue": {
+      "word": "سالمًا،",
+      "t": 139.02
+     },
+     "who": "fx",
+     "action": "label SAFE! with an arrow at the boy",
+     "acting": "friend sees him: 2 frame wide eyes, then his whole body opens",
+     "library": "S.label; settleTo"
+    },
+    {
+     "t": 140.42,
+     "end": 141.4,
+     "cue": {
+      "word": "وفرح",
+      "t": 140.42
+     },
+     "who": "friend",
+     "action": "drops to his knees, arms wide",
+     "acting": "kneel with a landSquash, wet eyes",
+     "library": "person {kneel: 1}; PERSON_HANDS.reachBoth; wet: true"
+    },
+    {
+     "t": 141.44,
+     "end": 142.6,
+     "cue": {
+      "word": "أبوه",
+      "t": 141.44
+     },
+     "who": "friend",
+     "action": "the hug: he lifts the boy off the ground and turns",
+     "acting": "impact squash of both, the boy's legs swing, one heart rises",
+     "library": "impactSquash, swing(); heart prop"
+    },
+    {
+     "t": 142.7,
+     "end": 143.2,
+     "cue": {
+      "word": "رآه.",
+      "t": 142.7
+     },
+     "who": "boy",
+     "action": "offers his father a bite of bread",
+     "acting": "father laughs through a tear; merchant watches with hands behind his back, smiling",
+     "library": "handR target; wet: true"
+    },
+    {
+     "t": 143.3,
+     "end": 144.2,
+     "cue": {
+      "word": "دفع",
+      "t": 143.3
+     },
+     "who": "friend",
+     "action": "sets the boy down and takes the purse from inside his robe",
+     "acting": "the same purse and the same hiding place as 31.72",
+     "library": "purse prop"
+    },
+    {
+     "t": 144.84,
+     "end": 146.0,
+     "cue": {
+      "word": "ثمن",
+      "t": 144.84
+     },
+     "who": "friend",
+     "action": "counts coins into the merchant's palm",
+     "acting": "coin arcs with a dip of the palm on each; counter climbs",
+     "library": "coinPile; S.counter; pulse()"
+    },
+    {
+     "t": 146.34,
+     "end": 147.0,
+     "cue": {
+      "word": "التاجر",
+      "t": 146.34
+     },
+     "who": "friend",
+     "action": "then hands over the whole purse",
+     "acting": "merchant weighs it once and nods",
+     "library": "purse; settleTo"
+    },
+    {
+     "t": 147.12,
+     "end": 148.2,
+     "cue": {
+      "word": "كما",
+      "t": 147.12
+     },
+     "who": "friend",
+     "action": "the promise pose a third time, now kept; stamp PAID IN FULL",
+     "acting": "merchant claps him on the shoulder; the boy copies the pose beside them",
+     "library": "PROMISE pose; S.emphasis stamp"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 147.8,
+     "text": "PAID IN FULL!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 148.24
+   }
+  },
+  {
+   "id": "S18",
+   "start": 148.24,
+   "end": 161.0,
+   "paragraphs": [
+    8
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "merchant",
+    "friend",
+    "boy",
+    "rat",
+    "hawk"
+   ],
+   "summary": "Epilogue: friends again, and nobody mentions rats or hawks. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Start as a medium three-shot on the doorstep (x 520, y 760, zoom 1.5); pull out slowly to the whole street and evening sky (zoom 1.05) by 156.5 for the end title."
+   },
+   "composition": "Dusk palette of the same street. The three sit on the house doorstep: merchant x 430, boy x 530, friend x 630, food tray on the boy's knees. The rat passes along the wall foot at y 895, right to left. THE END in the sky (y 200..380), above every head.",
+   "actions": [
+    {
+     "t": 148.24,
+     "end": 149.3,
+     "cue": {
+      "word": "وبعد",
+      "t": 148.24
+     },
+     "who": "set",
+     "action": "evening: the three share the tray on the doorstep",
+     "acting": "sky warms to dusk; easy breathing, the boy swinging his feet",
+     "library": "sky {preset: dusk}; breathe, swing()"
+    },
+    {
+     "t": 149.98,
+     "end": 150.4,
+     "cue": {
+      "word": "لم",
+      "t": 149.98
+     },
+     "who": "friend",
+     "action": "opens his mouth and raises a finger to say something",
+     "acting": "merchant gives him a side look",
+     "library": "PERSON_HANDS.pointUp; gaze"
+    },
+    {
+     "t": 150.46,
+     "end": 151.2,
+     "cue": {
+      "word": "يتحدث",
+      "t": 150.46
+     },
+     "who": "merchant",
+     "action": "finger to his lips",
+     "acting": "the friend makes the same hush 3 frames later; both nod",
+     "library": "PERSON_HANDS.hush; stagger"
+    },
+    {
+     "t": 151.68,
+     "end": 152.4,
+     "cue": {
+      "word": "منهما",
+      "t": 151.68
+     },
+     "who": "friend",
+     "action": "the two men look at each other and laugh silently",
+     "acting": "shoulders shake, eyes shut",
+     "library": "tremble small; lid 1"
+    },
+    {
+     "t": 152.72,
+     "end": 153.3,
+     "cue": {
+      "word": "فئران",
+      "t": 152.72
+     },
+     "who": "rat",
+     "action": "a real rat trots along the foot of the wall",
+     "acting": "both men see it, look at each other, then study the sky",
+     "library": "rat + walk(); gazePlan"
+    },
+    {
+     "t": 153.38,
+     "end": 154.0,
+     "cue": {
+      "word": "تأكل",
+      "t": 153.38
+     },
+     "who": "rat",
+     "action": "it stops at a dropped iron nail and sniffs it",
+     "acting": "whiskers twitch; the boy points at it, the men look away harder",
+     "library": "rat {sniff}"
+    },
+    {
+     "t": 155.24,
+     "end": 155.8,
+     "cue": {
+      "word": "صقر",
+      "t": 155.24
+     },
+     "who": "hawk",
+     "action": "a small hawk glides across the far sky",
+     "acting": "boy points up; both men stare at their own feet",
+     "library": "bird kind hawk, s 0.4, {fly: true}"
+    },
+    {
+     "t": 155.82,
+     "end": 156.4,
+     "cue": {
+      "word": "يحمل",
+      "t": 155.82
+     },
+     "who": "friend",
+     "action": "pulls the boy close with one arm all the same",
+     "acting": "eyes flick up at the hawk for 4 frames; the merchant chuckles",
+     "library": "handL target round the boy"
+    },
+    {
+     "t": 156.48,
+     "end": 157.2,
+     "cue": {
+      "word": "الأطفال.",
+      "t": 156.48
+     },
+     "who": "camera",
+     "action": "the pull-out completes",
+     "acting": "all three small under the big evening sky",
+     "library": "K.camAt"
+    },
+    {
+     "t": 157.5,
+     "end": 158.3,
+     "who": "rat",
+     "action": "the rat bites the nail, and hops away holding its jaw",
+     "acting": "a star at the tooth, ears flat, a quick scurry out of frame",
+     "library": "rat {bite}; hop; S.emphasis star"
+    },
+    {
+     "t": 158.6,
+     "end": 161.0,
+     "who": "lettering",
+     "action": "THE END, held",
+     "acting": "the three keep breathing and blinking; the boy waves once at 159.4",
+     "library": "S.title; LIFE.t auto-blink"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 157.8,
+     "text": "TINK!"
+    },
+    {
+     "t": 158.3,
+     "text": "OW!"
+    },
+    {
+     "t": 158.6,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 157.8,
+     "kind": "pop"
+    },
+    {
+     "t": 158.6,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 161.0
+   }
+  }
+ ],
+ "ending": {
+  "t": 158.6,
+  "description": "After the last word (157.24) the real rat tries the iron nail and hurts its tooth (TINK! OW!), which answers the lie one last time without a word. THE END appears at 158.6 in the evening sky above the three figures on the doorstep and holds to 161.0; they keep breathing and blinking and the boy waves once."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان تاجر يعيش في مدينة مزدحمة، ولديه كمية كبيرة من الحديد.|أراد أن يسافر للعمل، فطلب من صديق قديم|أن يحفظ الحديد في بيته حتى يعود.|وافق الصديق ووعده بذلك.",
+   "en": "A merchant lived in a busy city and owned a large amount of iron.|He needed to travel for work, so he asked an old friend|to keep the iron in his house until he returned.|The friend agreed and promised to do so."
+  },
+  {
+   "p": 2,
+   "ar": "غاب التاجر أشهرًا، وخلال غيابه احتاج الصديق إلى المال.|باع الحديد وأخذ ثمنه لنفسه.|وعندما عاد التاجر وسأله عن أمانته،|قال الصديق: «حدث شيء غريب جدًا!»",
+   "en": "The merchant was away for months. During that time, his friend needed money,|so he sold the iron and kept the payment.|When the merchant returned and asked for his property,|the friend said, “Something very strange happened!”"
+  },
+  {
+   "p": 3,
+   "ar": "سأله التاجر: «ماذا حدث؟»|قال الصديق: «وضعت الحديد في المخزن،|لكن الفئران دخلت وأكلته كله!»|تعجب التاجر كثيرًا، لكنه لم يتهم صديقه بالكذب أمام الناس.",
+   "en": "“What happened?” the merchant asked.|“I put the iron in the storeroom,” said the friend,|“but rats came inside and ate all of it!”|The merchant was astonished, but he did not call his friend a liar in front of everyone."
+  },
+  {
+   "p": 4,
+   "ar": "بعد أيام، التقى التاجر بابن صديقه في الطريق.|أخذه إلى مكان آمن، وأعطاه طعامًا،|وطلب منه أن ينتظر هناك قليلًا.|ثم عاد وحده إلى بيت صديقه.",
+   "en": "A few days later, the merchant met his friend’s son on the road.|He took the boy to a safe place, gave him food,|and asked him to wait there for a while.|Then he returned alone to his friend’s house."
+  },
+  {
+   "p": 5,
+   "ar": "سأله الرجل بقلق: «هل رأيت ابني؟|إنه لم يعد إلى البيت!»|قال التاجر: «رأيته في الطريق،|لكن صقرًا كبيرًا نزل من السماء وحمله بعيدًا.»",
+   "en": "The man asked anxiously, “Have you seen my son?|He has not come home!”|The merchant answered, “I saw him on the road,|but a large hawk flew down from the sky and carried him away.”"
+  },
+  {
+   "p": 6,
+   "ar": "صاح الرجل: «هذا مستحيل!|كيف يستطيع صقر أن يحمل طفلًا؟»|أجابه التاجر بهدوء: «في مدينة تأكل فيها الفئران الحديد،|لا أستغرب أن يحمل صقر طفلًا!»",
+   "en": "“That is impossible!” the man cried.|“How could a hawk carry a child?”|The merchant answered calmly, “In a city where rats can eat iron,|I would not be surprised if a hawk could carry a child!”"
+  },
+  {
+   "p": 7,
+   "ar": "سكت الصديق، وفهم أن التاجر عرف الحقيقة.|قال أخيرًا: «الفئران لم تأكل الحديد.|لقد بعته عندما احتجت إلى المال.|سأعيد إليك الحديد أو ثمنه كاملًا.»",
+   "en": "The friend fell silent and realized that the merchant knew the truth.|Finally he said, “The rats did not eat the iron.|I sold it when I needed money.|I will return your iron or pay its full value.”"
+  },
+  {
+   "p": 8,
+   "ar": "عاد التاجر بالولد سالمًا، وفرح أبوه عندما رآه.|دفع الرجل ثمن الحديد إلى التاجر كما وعد.|وبعد ذلك، لم يتحدث أحد منهما|عن فئران تأكل الحديد أو صقر يحمل الأطفال.",
+   "en": "The merchant brought the boy back safely, and his father was delighted to see him.|The man paid the merchant for the iron as promised.|After that, neither of them spoke again|of rats that ate iron or hawks that carried children."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "rat",
+   "description": "Small comic rat for this and any later fable with mice or rats. Pose fields: ph and amp (scurry), sit, sniff (nose up, whiskers twitch), chew, bite, fat (0..1 belly), roll (on its back), bib, tailCurl, plus the shared acting fields.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "One function rat(ctx, P): ellipse body, circle head with a pointed snout, two round pink ears, a tapered Bezier tail, four short legs driven by walk(); eye through eye2 so gaze and lid work; wrap with acting(). Registry entry and catalogue poses."
+  },
+  {
+   "type": "character",
+   "name": "hawk (bird kind)",
+   "description": "A bird of prey as a new kind on the Library bird: palette, hooked beak, heavy brow, talons that can grip.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Add BIRD.hawk palette and optional fields hook (beak shape) and talons (0..1 open) to bird(); defaults unchanged so the regression test stays identical. Flight on a Bezier path as in the Lark flyBz, flap from climb rate."
+  },
+  {
+   "type": "set",
+   "name": "storeroom",
+   "description": "Cutaway storeroom interior with full and empty states (see sets).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "bake() the wall, floor, window and shelf once; draw the stack, dust outlines and cobweb as state layers; draw the same function scaled inside thoughtCloud."
+  },
+  {
+   "type": "set",
+   "name": "marketStreet",
+   "description": "The planned AN-095 street, with a house-front module that has an opening storeroom door.",
+   "reusable": true,
+   "effort": "L",
+   "implementation": "Reuse the planned set; add a houseFront(ctx, {doorOpen, storeOpen, padlock}) module of flat rects and a damped swing() on the door leaves. Skyline from nightCity shapes in a day palette."
+  },
+  {
+   "type": "prop",
+   "name": "ironBars, handcart",
+   "description": "The iron stack and the cart that carries it (see props).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rounded rects with a highlight stroke, drawn in rows; bites are circles cut with destination-out on a baked layer keyed by time; cart from rects and two spoked circles."
+  },
+  {
+   "type": "character",
+   "name": "person child option",
+   "description": "A child built on the person figure: s 0.62 with head 1.25x, no facial hair, chew field (alternating cheek puffs).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Optional P.child and P.chew fields on person(); defaults off."
+  },
+  {
+   "type": "prop",
+   "name": "foodTray",
+   "description": "Brass tray with bread, dates and a cup.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Ellipse tray, half-disc bread, six small ovals, a cup from a trapezoid."
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "description": "The planned generic picture cloud, used here as a telling cloud with a tail toward the speaker; two sizes (520 x 370 and about 410 x 300).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Scalloped outline from circles on a rounded rect, white fill, clip, then drawInside(ctx, t) in the cloud's own coordinates; scale key for pop in and out."
+  },
+  {
+   "type": "effect",
+   "name": "dayCycle",
+   "description": "The planned sky cycle, three turns in 1.1 s for the months montage.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Blend the sky presets by a phase value; sun and moon on arcs."
+  }
+ ],
+ "implementation_notes": [
+  "All times are seconds on the final MP3 (157.51 s). Film length 161.0 s (end_hold 3.5 s).",
+  "Fixed marks for every doorstep dialogue: merchant x 300 facing right, friend x 600 facing left, ground y 900. Reusing the marks makes S2, S5, S7, S11 to S16 read as one place and lets the parting, the return and the confession mirror each other.",
+  "Three planted mirrors must use identical code: (1) PROMISE pose at 19.0, 131.44 and 147.12; (2) the friend's amazed poses at 37.52 and 40.24 copied by the merchant at 88.92; (3) the lie cloud (S6) and the hawk cloud (S12) share box size, tilt move and pop.",
+  "Set LIFE.t = t every frame so everyone blinks; give explicit lids where a stare is held (54.72, 117.24 to 118.9).",
+  "The friend's mask: the amazed face only while the merchant is looking; when the merchant looks at the cloud or the room, let the friend's eyes check him.",
+  "Sound effects sit only in these gaps: 7.34-8.02, 16.64-17.52, 20.64-21.70, 23.68-24.12, 54.04-54.72, 98.40-98.98, 127.50-127.94, 136.14-136.74 and after 157.24. Lettering such as CRUNCH! at 52.6 is silent.",
+  "Word 64.04 (التقى) is interpolated in the timeline; the boy's entrance is cued on the next word (التاجر, also listed at 64.04) and the label on 65.62.",
+  "The word at 32.60 (وعندما) and those at 41.48, 67.78, 77.00, 81.28, 98.98, 106.12 and 122.76 are listed as long (1 to 2 s) because they include a breath; the actions on them are slow arrivals, so the exact onset is not critical. Measure onsets if a hit must land exactly.",
+  "Panel-only shake for 101.6 (template pattern). Keep clouds and lettering above y 540 so they never cover a face (heads near y 690).",
+  "Use the style primitives for arrows, labels, counters, stamps and the LATER card, and call finish last."
+ ],
+ "warnings": [
+  "Additions beyond the script (owner to confirm): the rat that gives the friend his idea at 42.3; the closing gag after the last word (a rat hurts its tooth on an iron nail) and the small hawk in the last sky.",
+  "The merchant taking the boy is staged as plainly kind and consensual (ball returned, hand in hand, food, a shared wink) and the cloud boy enjoys the flight (WHEEE!), so the film stays comic and never threatening.",
+  "The safe place is staged as the merchant's own house; the script does not say where it is.",
+  "Months pass by a sky and counter montage (23.02); the single LATER card is kept for A FEW DAYS LATER at 61.62.",
+  "marketStreet, merchantHouse, the person costume presets, villager, purse, ball, kneel, flush, thoughtCloud and dayCycle are planned by other stories and may not exist yet when this film is built; if not, they must be drawn here first.",
+  "Five rats plus four people is the fullest frame (S6); keep the rats inside the cloud so they stay small and simple."
+ ]
+}

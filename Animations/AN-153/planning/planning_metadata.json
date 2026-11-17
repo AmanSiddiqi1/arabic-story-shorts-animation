@@ -1,0 +1,114 @@
+{
+ "story_id": "AN-153",
+ "title": "ABD AL-RAHMAN THE MAGHRIBI'S STORY OF THE RUKH",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T16:45:18",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a5aa9edc76d649bc5.jsonl",
+ "agent_id": "a5aa9edc76d649bc5",
+ "model_messages": {
+  "claude-fable-5-2": 27
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "82477915e2b522cc1edfd957925ff39563da063a2cb30807ca6006a996c64a0c",
+  "paragraphs": 8,
+  "segments": [
+   "AN-153-P01-S01",
+   "AN-153-P01-S02",
+   "AN-153-P01-S03",
+   "AN-153-P01-S04",
+   "AN-153-P01-S05",
+   "AN-153-P01-S06",
+   "AN-153-P01-S07",
+   "AN-153-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-153_ABD_AL_RAHMAN_THE_MAGHRIBI_S_STORY_OF_THE_RUKH_full_slowed.mp3",
+  "sha256": "4fe00042d239a66057a2ed8838097a037a4ab3ead1ed753f479d716376f4c864",
+  "duration": 172.772
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-153_ABD_AL_RAHMAN_THE_MAGHRIBI_S_STORY_OF_THE_RUKH_full_slowed.mp3.words.json",
+  "sha256": "0e0cc41f740f82c2179893e4c63d27bfc26d38194bc1a046d147d339e885011c",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.996
+ },
+ "library_rev": "5a93429",
+ "scenes": 15,
+ "actions": 171,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "islandShore",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "openSea",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "dhow",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "rocEgg",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "giantFeather",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "boulder (with axe, woodBundle)",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "chick",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "groundShadow",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "splash",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "beard colour wipe",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "waterskin, carryBasket (cloth cover), foodTray (cover), floorCushion, portraitMedallion",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "legendFrame, windStreaks, iconBalloon",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The narration has only six gaps; the climax (rock, splash) has no pause, so it must work silently through staging, lettering and the panel shake.",
+  "The person figure is front-facing only: the low-angle shot at 74.8 uses front-facing heads looking up along the bottom edge, not backs of heads; rowing and carrying are shown with body tip and hand targets.",
+  "Crew of six on a deck 640 wide: keep 85 to 100 units between figures and never move them in unison; drop sailorB from a shot if it crowds.",
+  "Check that pal.beard overrides the age-driven beard colour before building the beard wipe; otherwise add a beard colour field in the story code (not in the Library default).",
+  "Room coordinates (curtain, window, ceiling) are read from the catalogue image: approximate, measure on the set anchors. The feather (760 long) may need curl or s 0.9 to fit under the ceiling.",
+  "Four medium new drawings (islandShore, openSea, dhow, plus the small rocEgg and giantFeather): share the wave drawing between the two sea sets and build the dhow once for AN-146 as well."
+ ]
+}

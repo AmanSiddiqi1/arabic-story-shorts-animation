@@ -1,0 +1,90 @@
+{
+ "story_id": "AN-137",
+ "title": "KHUSRAU AND SHIRIN AND THE FISHERMAN",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T15:23:08",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-ad0ba0df9d9d77303.jsonl",
+ "agent_id": "ad0ba0df9d9d77303",
+ "model_messages": {
+  "claude-fable-5-2": 20
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "1b1524825119e0d858a1fdb6ca004db6223024a8098303329eefb18497dcffad",
+  "paragraphs": 8,
+  "segments": [
+   "AN-137-P01-S01",
+   "AN-137-P01-S02",
+   "AN-137-P01-S03",
+   "AN-137-P01-S04",
+   "AN-137-P01-S05",
+   "AN-137-P01-S06",
+   "AN-137-P01-S07",
+   "AN-137-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-137_KHUSRAU_AND_SHIRIN_AND_THE_FISHERMAN_full_slowed.mp3",
+  "sha256": "628feb1f367b403ab1bb2e5ccf640b2a167f512ef503f6a5a75fc7296ef0115a",
+  "duration": 175.566
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-137_KHUSRAU_AND_SHIRIN_AND_THE_FISHERMAN_full_slowed.mp3.words.json",
+  "sha256": "5ec8680937f7092ea3a7f8c2ea8985e7708a1f51d728157a4a08008146c97bb5",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.996
+ },
+ "library_rev": "5a93429",
+ "scenes": 19,
+ "actions": 186,
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "fish",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "sack",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "coin (coinPile single, face:'king')",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "person costume preset 'fisherman'",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "iconBalloon (with fish, sack, courtier, scale icons)",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "fan",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "person laugh / templeTap / handOver / carry load",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [
+  "props counter: no library function and not marked new"
+ ],
+ "plan_warnings": [
+  "P8 has no pause of 0.6 s between 150.6 and 175.34, so the ending carries no effects until the final chime at 175.5.",
+  "The LATER card at 158.14 lies over the words 158.14 to 160.14 (a long word gap is not listed there); keep it silent and under 1.3 s.",
+  "The person figure is front-facing only: the bend for the coin (S11) relies on tip plus a kneel blend; check it reads at phone size with a still at 104.0 and adjust to a full kneel if it does not.",
+  "The hall is crowded on the left (door, vault, fisherman, sacks). Check stills at 23.0, 88.3 and 149.9 for overlaps between the sacks and the vault door.",
+  "The coin portrait must read at phone size: keep the insert coin at least 330 px across and the portrait in two tones only."
+ ]
+}

@@ -1,0 +1,100 @@
+{
+ "story_id": "AN-142",
+ "title": "THE DEVOUT WOMAN AND THE TWO WICKED ELDERS",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T16:02:21",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-ad9f8376cf96a0896.jsonl",
+ "agent_id": "ad9f8376cf96a0896",
+ "model_messages": {
+  "claude-fable-5-2": 22
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "61a0da93460752b660078382d11d32d6237b4ecd1002b77f1dd3e90390e785c9",
+  "paragraphs": 8,
+  "segments": [
+   "AN-142-P01-S01",
+   "AN-142-P01-S02",
+   "AN-142-P01-S03",
+   "AN-142-P01-S04",
+   "AN-142-P01-S05",
+   "AN-142-P01-S06",
+   "AN-142-P01-S07",
+   "AN-142-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-142_THE_DEVOUT_WOMAN_AND_THE_TWO_WICKED_ELDERS_full_slowed.mp3",
+  "sha256": "7ad34de7c57d492508dd7a6439082ad46db6c9cf658fdfcf48602d0f45be3acf",
+  "duration": 170.177
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-142_THE_DEVOUT_WOMAN_AND_THE_TWO_WICKED_ELDERS_full_slowed.mp3.words.json",
+  "sha256": "5845677791ea1783a529d2c05a6278b83221a628c8801f9792b8a68ec8d155b9",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "5a93429",
+ "scenes": 18,
+ "actions": 127,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "walledGarden",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "fruitTree",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "fountain",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "evidenceCard",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "stonePlatform + keyRing",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "skyLight",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "skyFire",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "streetCrowd",
+   "effort": "M"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Mature source material (an improper demand, a false accusation of impropriety, public shaming, an implied execution, death by fire). The plan keeps all of it off screen or symbolic; see owner_questions before animating.",
+  "The narration has few pauses (nine of 0.6 s or more), so the film is nearly silent apart from the narrator: the acting has to carry the beats.",
+  "P6: the English has three sentences fewer than the Arabic in places; in P6 the third Arabic chunk has no matching English, so the English chunk 'beneath a pear tree.' stays up during it.",
+  "Crowd shots use up to 9 figures at once (5 townspeople, headman, 2 elders, woman or Daniel): keep them in two rows and check phone legibility on a contact sheet; drop to 4 townspeople if it crowds.",
+  "The person figure is front-facing only: turning away is acted with gaze, head drop and walking off, not with a back view. The 'wall of backs' in S10 is front-facing adults looking toward the platform with their eyes turned right.",
+  "walledGarden, iconBalloon, skyLight, fountain and streetCrowd are planned or new: none exists in Library yet. If iconBalloon is still missing when this film is built, a plain S.box balloon with the four icons is enough.",
+  "Arms are short (about 74 units): the raised prayer arms (81.92) and the pointing sweeps (114.44, 131.42) must use aL/aR angles, not hand targets."
+ ]
+}

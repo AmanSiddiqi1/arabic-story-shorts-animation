@@ -1,0 +1,14 @@
+# AN-092 library proposals (drawn in src/, not yet in Library/)
+- `a92Bag` -> `leatherBag(ctx, x, y, {s, open, tie, bulge, sq, limp, rot, strapTo})` (props).
+- `a92Tile` + `A92_ICON` -> `claimTile(ctx, x, y, kind, {size, wide, badge, ghost, label, p})`: 17 flat icons (cup, comb, cloth, tent, rug, cow, calf, sheep, camel, lion, room, house, school, garden, baghdad, basra, army).
+- `a92Pile` + `a92Trail` -> `claimPile(ctx, t, list, {tc, base, droop})` with sway, row squash and collapse; bubble trail.
+- `a92Food` -> `bagFood(ctx, kind, x, y, s, rot)`: bread, cheese, olive, lemon.
+- `a92Purse` -> `purse(ctx, x, y, s, {glint})`.
+- `a92Diwan`, `a92Pillow`, `a92Blanket` -> `diwan` set piece with blanket over a lying figure.
+- `a92Scribble` -> `worryScribble(ctx, x, y, t, {s, burst})`.
+- `a92Balloon` (+ scroll and laugh icons) -> `iconBalloon(ctx, x, y, r, tail, p, inside)`.
+- `a92Laugh` -> `personLaugh(t, t0, amp, dur)` pose helper.
+- `a92Heads` -> `crowdDots(ctx, t, t0, n, region, {hands})`.
+- `a92Pt` / `a92Head` / `a92Reach` -> world body points for `person` (head, shoulders, reachable hand), useful for props held in hands.
+- `a92Turban` + `head: 'none'` -> a `judge` costume preset with `turbanTilt` / `turbanOff` fields.
+- `a92Cow` -> a small flat cow (no cow in the Library yet).

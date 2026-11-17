@@ -1,0 +1,94 @@
+{
+ "story_id": "AN-085",
+ "title": "THE CITY OF LABTAYT",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T13:32:45",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a044aba350bfb0bf2.jsonl",
+ "agent_id": "a044aba350bfb0bf2",
+ "model_messages": {
+  "claude-fable-5-2": 24
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "125d74ec445861d1dca79f6b488dd636b0af3f468508ed153ca203f7ac5f8711",
+  "paragraphs": 8,
+  "segments": [
+   "AN-085-P01-S01",
+   "AN-085-P01-S02",
+   "AN-085-P01-S03",
+   "AN-085-P01-S04",
+   "AN-085-P01-S05",
+   "AN-085-P01-S06",
+   "AN-085-P01-S07",
+   "AN-085-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-085_THE_CITY_OF_LABTAYT_full_slowed.mp3",
+  "sha256": "12c2b6feeb6836d20727a1c55e01afeb287aab34abb4eedd0755557cd9d6394e",
+  "duration": 171.356
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-085_THE_CITY_OF_LABTAYT_full_slowed.mp3.words.json",
+  "sha256": "6594de4deb09fa7d20cf8d32966e7a22bf652d216ce66b93decd790bd52b7601",
+  "manifest_status": "SUCCESS; METADATA MISMATCH",
+  "script_match": 0.996
+ },
+ "library_rev": "959278e",
+ "scenes": 14,
+ "actions": 139,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "horse",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "mountedRider",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "statueTint",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "hillCity",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "towerDoor",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "towerChamber",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "treasureHoard",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "padlock",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "New asset load is above the usual four (horse, mountedRider, statueTint, three sets, treasureHoard). If time is short: reuse towerDoor with open 1 and a darkness layer instead of a separate towerChamber, and show hillCity only as a baked backdrop without options.",
+  "The planned camel, palaceHall, desertRoad, scroll, coinPile, crownProp, sword, goldGlow, dream wash and thoughtCloud are reused by name; several are not in Library yet and must be built or taken from the story that builds them first.",
+  "The person figure is front-facing only, so riders are a front-facing torso on a side-view mount; test a still of one mounted rider early (S7 at 80.0) before building the rest.",
+  "Religious and historical sensitivity: no figure of the prophet Solomon; Tariq and the Caliph are shown respectfully; the conquest is shown without violence. See owner_questions.",
+  "Sound effects mostly sit on word boundaries because the narration is continuous; they are optional and must be checked by ear.",
+  "S11 is 19.1 s in one hall: the pan with six stops must keep one new object arriving every 1.5 s as storyboarded."
+ ]
+}

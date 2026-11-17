@@ -1,0 +1,91 @@
+{
+ "story_id": "AN-043",
+ "title": "The Hedgehog and the Wood Pigeons",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T13:10:26",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-af4bc1201bccf5a4e.jsonl",
+ "agent_id": "af4bc1201bccf5a4e",
+ "model_messages": {
+  "claude-fable-5-2": 15
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "0b1d0799b8bb2db102e14d604aaed25f745803572d0be170e170aa2274f54619",
+  "paragraphs": 8,
+  "segments": [
+   "AN-043-P01-S01",
+   "AN-043-P01-S02",
+   "AN-043-P01-S03",
+   "AN-043-P01-S04",
+   "AN-043-P01-S05",
+   "AN-043-P01-S06",
+   "AN-043-P01-S07",
+   "AN-043-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-043_The_Hedgehog_and_the_Wood_Pigeons_full_slowed.mp3",
+  "sha256": "9b42113b59ed06d12969968eff7a20fe8f82d7e0a7ead106be6e6cfedcba6ccb",
+  "duration": 178.778
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-043_The_Hedgehog_and_the_Wood_Pigeons_full_slowed.mp3.words.json",
+  "sha256": "efeaff8ba426cdee627ba2bd819043744ced8bd4e84b78c46cc5a04f3e6a225b",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "959278e",
+ "scenes": 17,
+ "actions": 178,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "hedgehog",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "burrowChamber",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "palmGrove (with palmTree)",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "dateBunch, datePile",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "dove (bird kind)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "burrow",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "poisonVial",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [
+  "21 lettering items; keep to the lettering diet (about 20 or fewer; labels only on key beats)"
+ ],
+ "plan_warnings": [
+  "The hedgehog is a large new figure with many pose fields; build sit/rear, paws, spike, curl and teeth first, since the story depends on them.",
+  "Subtitle chunk 2 of paragraph 8 lasts about 10 s (158.76 to 169.5) and is long on screen; chunk 3 of paragraph 3 is also long. The animator may need a smaller Arabic size for those two chunks.",
+  "The palm is 620 tall, so pigeons and hedgehog share a frame only in wide shots; the low stub (y 650) exists to make the dialogue two-shots possible.",
+  "The story ends unresolved in the script. Do not add an escape or a punishment.",
+  "The burrow interior must stay readable when darkened: keep the dark overlay at 0.4 or less and give faces a pale rim."
+ ],
+ "coordinator_adjustment": "3-minute cap: end_hold 4.5 -> 1.22"
+}

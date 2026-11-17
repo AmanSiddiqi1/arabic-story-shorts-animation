@@ -1,0 +1,2946 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "KD-014",
+ "title": "The Mouse Marries Only a Mouse",
+ "duration": 165.01,
+ "end_hold": 3.0,
+ "logline": "A mouse turned into a girl asks for the strongest husband in the world; sun, cloud, wind and mountain each point to someone stronger, until the chain ends at a mouse, and she chooses to be a mouse again.",
+ "moral": "Everyone returns to their own nature; real strength and the right home may be small and close to the ground.",
+ "tone": "Warm, gently comic cumulative tale. Giants with funny faces, a tender father and daughter, a circular ending that should feel like coming home, not like a loss.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 8.56,
+   "kind": "inciting",
+   "cue": {
+    "word": "سقطت",
+    "t": 8.56
+   },
+   "summary": "The mouse falls from the hawk and lands before the ascetic."
+  },
+  {
+   "id": "B2",
+   "t": 16.3,
+   "kind": "emotion",
+   "cue": {
+    "word": "فدعا",
+    "t": 16.3
+   },
+   "summary": "He prays that she become a girl so he can protect her."
+  },
+  {
+   "id": "B3",
+   "t": 23.2,
+   "kind": "surprise",
+   "cue": {
+    "word": "تحولت",
+    "t": 23.2
+   },
+   "summary": "POOF: mouse becomes a little girl (hair buns like mouse ears)."
+  },
+  {
+   "id": "B4",
+   "t": 37.72,
+   "kind": "setup",
+   "cue": {
+    "word": "شابة",
+    "t": 37.72
+   },
+   "summary": "Years later she is grown; the marriage question."
+  },
+  {
+   "id": "B5",
+   "t": 48.86,
+   "kind": "turn",
+   "cue": {
+    "word": "أقوى",
+    "t": 48.86
+   },
+   "summary": "She wants the strongest of all: the quest begins."
+  },
+  {
+   "id": "B6",
+   "t": 72.92,
+   "kind": "comic",
+   "cue": {
+    "word": "يحجب",
+    "t": 72.92
+   },
+   "summary": "The cloud blots out the sun."
+  },
+  {
+   "id": "B7",
+   "t": 80.7,
+   "kind": "comic",
+   "cue": {
+    "word": "تدفعني",
+    "t": 80.7
+   },
+   "summary": "The wind shoves the cloud about."
+  },
+  {
+   "id": "B8",
+   "t": 98.04,
+   "kind": "comic",
+   "cue": {
+    "word": "ثابتًا",
+    "t": 98.04
+   },
+   "summary": "The wind flattens itself on the unmoving mountain."
+  },
+  {
+   "id": "B9",
+   "t": 113.34,
+   "kind": "reveal",
+   "cue": {
+    "word": "الفأر",
+    "t": 113.34
+   },
+   "summary": "The strongest of all is a mouse."
+  },
+  {
+   "id": "B10",
+   "t": 137.78,
+   "kind": "suspense",
+   "cue": {
+    "word": "صغير",
+    "t": 137.78
+   },
+   "summary": "The mouse declines: she is human, his home is tiny."
+  },
+  {
+   "id": "B11",
+   "t": 150.0,
+   "kind": "climax",
+   "cue": {
+    "word": "فأرة",
+    "t": 150.0
+   },
+   "summary": "She asks to be a mouse again."
+  },
+  {
+   "id": "B12",
+   "t": 156.32,
+   "kind": "resolution",
+   "cue": {
+    "word": "فتحولت",
+    "t": 156.32
+   },
+   "summary": "Father agrees; she turns back."
+  },
+  {
+   "id": "B13",
+   "t": 160.34,
+   "kind": "moral",
+   "cue": {
+    "word": "بيت",
+    "t": 160.34
+   },
+   "summary": "She waves goodbye and enters the mouse's home; the giants look down at the small lit door."
+  }
+ ],
+ "cast": [
+  {
+   "id": "ascetic",
+   "name": "the ascetic (father)",
+   "library": "person",
+   "base": "person kind:'owner' with costume preset 'ascetic'",
+   "look": "Plain off-white robe with blue dot shading, small white turban, grey beard (white and a slight stoop after the YEARS LATER card, age 1), bare feet, prayer beads; walking stick from S5.",
+   "new": false
+  },
+  {
+   "id": "wife",
+   "name": "the ascetic's wife",
+   "library": "person",
+   "base": "planned 'villager' villageWoman (wife base, headscarf, red dress) plus apron",
+   "look": "Red dress, white headscarf and apron; a grey streak after the card.",
+   "new": false
+  },
+  {
+   "id": "child",
+   "name": "the girl as a child",
+   "library": "person",
+   "base": "planned 'person child option' (s 0.62, head 1.25x) in the maiden palette",
+   "look": "Yellow dress, two round black hair buns set high like mouse ears, big eyes.",
+   "new": false
+  },
+  {
+   "id": "maiden",
+   "name": "the young woman",
+   "library": "person",
+   "base": "person kind:'wife' with costume preset 'maiden'",
+   "look": "Yellow dress with red dot shading, yellow headscarf tied behind two round hair buns that still show, s 0.95. Keeps the nose twitch.",
+   "new": false
+  },
+  {
+   "id": "hawk",
+   "name": "the bird of prey",
+   "library": "bird",
+   "base": "planned 'hawk (bird kind)' with gripping talons and carry",
+   "look": "Brown and cream, hooked yellow beak, heavy brow.",
+   "new": false
+  },
+  {
+   "id": "mouseHer",
+   "name": "the she-mouse",
+   "library": null,
+   "base": "planned 'rat' figure, new kind 'mouse', pal 0",
+   "look": "Small, light grey, pink ears and tail, white belly; at the end a tiny yellow bow.",
+   "new": true
+  },
+  {
+   "id": "mouseHim",
+   "name": "the mouse of the mountain",
+   "library": null,
+   "base": "planned 'rat' figure, kind 'mouse', pal 1",
+   "look": "Brown-grey, slightly bigger ears, a tuft on the head so the two mice never get confused.",
+   "new": true
+  },
+  {
+   "id": "sunFace",
+   "name": "the sun",
+   "library": "sun",
+   "base": "Library sun() scaled to r 190 with the new elementFace on top",
+   "look": "Flat yellow disc, red dot shading low right, simple black eyes, brows, mouth.",
+   "new": false
+  },
+  {
+   "id": "cloudFace",
+   "name": "the cloud",
+   "library": "cloudFlat",
+   "base": "Library cloudFlat scaled to 420 wide with elementFace",
+   "look": "White with blue dot belly; smug half lids.",
+   "new": false
+  },
+  {
+   "id": "wind",
+   "name": "the wind",
+   "library": null,
+   "base": "new windSpirit effect with elementFace in the leading curl",
+   "look": "Five tapering white and pale-blue brush bands that curl like a comic gust.",
+   "new": true
+  },
+  {
+   "id": "mountainFace",
+   "name": "the mountain",
+   "library": null,
+   "base": "new mountain set with elementFace built from rock ledges",
+   "look": "Grey rock in den() colours with blue dot shade, snow cap, ledge eyelids, crack mouth.",
+   "new": true
+  }
+ ],
+ "sets": [
+  {
+   "id": "riverside",
+   "library": "riverBank",
+   "description": "Library sky day, sun, river(back/front), riverBank and figTree, WITHOUT islandHut (if the right bank belongs to islandHut, draw a plain grass bank instead). Add one flat stone at about (380, bank top). Bank top height: approximate, measure on the set.",
+   "new": false
+  },
+  {
+   "id": "villageYard",
+   "library": null,
+   "description": "The planned villageYard (KD-009): cottage facade with opening door and window, a tree, keyed sun. Two states: 'early' and 'later' (tree crown 30 % larger, 12 chalk marks). Add a bench left of the door.",
+   "new": true
+  },
+  {
+   "id": "skyHill",
+   "library": "hillTrees",
+   "description": "A bare ridge low in frame (crest about y 880) under a very large sky: Library sky(day), a low line of hillTrees on the horizon, ground. The sky is the stage for sun, cloud and wind. S9 variant is 1300 wide with three bendable trees and the mountain far right.",
+   "new": false
+  },
+  {
+   "id": "mountainFoot",
+   "library": null,
+   "description": "New mountain set seen from its foot: triangular grey massif with base x 120..1000, peak (600,120), snow cap, face parts, hole A (700,885) and hole B (640,880), boulder, optional cutaway interior. Ground y 900.",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "heightMarks",
+   "library": null,
+   "description": "Chalk height marks on the doorpost, n = 0..12, each a 26 px white tick 14 units above the last.",
+   "new": true
+  },
+  {
+   "id": "rankStrip",
+   "library": null,
+   "description": "A strip of five small icon slots in the top of the picture panel showing the chain sun, cloud, wind, mountain, mouse, with small arrows and a hopping STRONGEST? tag.",
+   "new": true
+  },
+  {
+   "id": "scarf",
+   "library": null,
+   "description": "The maiden's yellow headscarf as a loose cloth that floats down and lies on the ground (flat shape with two folds), later folded in the father's hand.",
+   "new": true
+  },
+  {
+   "id": "beads",
+   "library": null,
+   "description": "String of 9 prayer beads (red circles r 5 on a black arc) in the ascetic's hand; walking stick (brown line 150 long) from S5.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 12.08,
+   "paragraphs": [
+    1
+   ],
+   "set": "riverside",
+   "cast": [
+    "ascetic",
+    "hawk",
+    "mouseHer"
+   ],
+   "summary": "A calm riverbank. The ascetic sits under the fig tree with his beads. A hawk crosses the sky with a tiny mouse in its talons; she wriggles free, tumbles through the fig leaves and lands on the grass in front of him.",
+   "camera": {
+    "shot": "establishing",
+    "move": "tilt",
+    "notes": "0-2.8 wide (zoom 1.0, centre 500,640) easing to zoom 1.25 on the ascetic; 3.7-4.6 tilt up and widen (zoom 0.95, centre 520,470) so sky and man share the frame; 7.0-8.4 push to zoom 1.9 on the talons; 8.56-11.34 follow the fall down (keys on release, leaf hit, landing), end zoom 1.5 centre (300,760)."
+   },
+   "composition": "Ascetic seated on the left bank at x 210, facing right, head near y 700. River fills the right 60 %. Hawk path: enters top right (1050,170), flies left along y 190-230, exits (-80,150). Mouse lands at (335, bank top). Keep the hawk above y 300 and the man below y 620 so the fall reads as long.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 2.8,
+     "cue": {
+      "word": "كان",
+      "t": 0.0
+     },
+     "who": "camera",
+     "action": "Wide establishing shot, slow push toward the seated man",
+     "acting": "still water glints, one fig leaf drifts down; calm before the event",
+     "library": "K.camAt keys; river(t), riverBank, figTree, sky day, sun"
+    },
+    {
+     "t": 0.3,
+     "end": 1.0,
+     "cue": {
+      "word": "ناسك",
+      "t": 0.3
+     },
+     "who": "ascetic",
+     "action": "Seated cross-legged, eyes shut, slow breathing; label THE ASCETIC with an arrow pops in",
+     "acting": "lid 1, mouth small smile, breathe() 4 % on the torso, head level",
+     "library": "person + costume preset 'ascetic', sit 1, breathe(); S.label + S.arrow"
+    },
+    {
+     "t": 0.98,
+     "end": 2.1,
+     "cue": {
+      "word": "يجلس",
+      "t": 0.98
+     },
+     "who": "ascetic",
+     "action": "Three prayer beads click through his right hand, one per 0.35 s",
+     "acting": "only the hand moves; suspense by stillness",
+     "library": "handR keyed on the bead string (prop beads)"
+    },
+    {
+     "t": 2.18,
+     "end": 2.8,
+     "cue": {
+      "word": "نهر",
+      "t": 2.18
+     },
+     "who": "set",
+     "action": "Two ripple rings spread on the river; label RIVER fades in low right",
+     "acting": "secondary motion only",
+     "library": "ripple(); S.label"
+    },
+    {
+     "t": 3.1,
+     "end": 3.7,
+     "cue": {
+      "word": "فرأى",
+      "t": 3.68
+     },
+     "who": "fx",
+     "action": "A bird-shaped shadow slides right to left over the bank and across his face (in the pause)",
+     "acting": "the first sign of danger arrives before the bird",
+     "library": "groundShadow (planned) from the hawk position"
+    },
+    {
+     "t": 3.68,
+     "end": 4.3,
+     "cue": {
+      "word": "فرأى",
+      "t": 3.68
+     },
+     "who": "ascetic",
+     "action": "Eyes snap open, head tips back, he looks up",
+     "acting": "lid 1 to 0 in 0.2 s, gaze lookAt(hawk), brow -0.5, beads stop mid-click",
+     "library": "lookAt, settleTo"
+    },
+    {
+     "t": 4.38,
+     "end": 5.6,
+     "cue": {
+      "word": "طائرًا",
+      "t": 4.38
+     },
+     "who": "hawk",
+     "action": "Hawk flies in from the top right with slow heavy wingbeats",
+     "acting": "heavy brow, eyes forward; flap 0.6, body bobs 6 units per beat",
+     "library": "bird kind 'hawk' (planned) fly, flap, carry"
+    },
+    {
+     "t": 5.7,
+     "end": 7.0,
+     "cue": {
+      "word": "فأرة",
+      "t": 5.7
+     },
+     "who": "mouseHer",
+     "action": "The little mouse dangles from the talons, legs pedalling, tail swinging; arrow and label MOUSE!",
+     "acting": "eyes wide, ears flat, tremble(t,2); tail = swing() from the grip point",
+     "library": "rat kind 'mouse' (planned) held:true; swing, tremble; S.arrow"
+    },
+    {
+     "t": 7.0,
+     "end": 8.4,
+     "cue": {
+      "word": "مخالبه",
+      "t": 7.62
+     },
+     "who": "camera",
+     "action": "Push in to an insert of the talons around the mouse; she twists and pushes at a claw",
+     "acting": "her gaze goes down to the ground, then up to the claw; brow set: she decides to wriggle",
+     "library": "camera keys; hawk carry callback"
+    },
+    {
+     "t": 8.56,
+     "end": 9.9,
+     "cue": {
+      "word": "سقطت",
+      "t": 8.56
+     },
+     "who": "mouseHer",
+     "action": "The claw opens and she drops, spinning slowly, tail trailing",
+     "acting": "anticipation: 0.2 s upward tug before release; stretch sq 1.15 while falling; fallY acceleration",
+     "library": "fallY; hawk talons open"
+    },
+    {
+     "t": 9.0,
+     "end": 10.6,
+     "cue": {
+      "word": "الفأرة",
+      "t": 9.68
+     },
+     "who": "ascetic",
+     "action": "He rises to one knee, both hands out, eyes tracking her down",
+     "acting": "gaze follows the mouse every frame, mouth 'o', tip 0.1 forward",
+     "library": "PERSON_HANDS.reachBoth, kneel 0.5, look()"
+    },
+    {
+     "t": 9.9,
+     "end": 10.9,
+     "cue": {
+      "word": "من",
+      "t": 10.32
+     },
+     "who": "mouseHer",
+     "action": "She hits the fig tree crown: leaves burst, she bounces from one leaf clump to a lower one",
+     "acting": "impactSquash on each clump, 6 leaves scatter (seeded)",
+     "library": "impactSquash, rebound, dustBurst recoloured green"
+    },
+    {
+     "t": 10.64,
+     "end": 11.6,
+     "cue": {
+      "word": "الطائر",
+      "t": 10.64
+     },
+     "who": "hawk",
+     "action": "The hawk glances back once, then flaps off the left edge",
+     "acting": "headRot back 0.4 for 0.3 s, annoyed half lid, no return",
+     "library": "bird headRot, lid"
+    },
+    {
+     "t": 11.34,
+     "end": 12.08,
+     "cue": {
+      "word": "أمامه",
+      "t": 11.34
+     },
+     "who": "mouseHer",
+     "action": "She drops out of the leaves and lands on a grass tuft right in front of his knees",
+     "acting": "impactSquash 2 frames deep, rebound, then a dazed sit; eyes spiral for 0.4 s; small dust",
+     "library": "impactSquash, rebound, settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 11.4,
+     "text": "PLOP!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 3.2,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 12.08
+   }
+  },
+  {
+   "id": "S2",
+   "start": 12.08,
+   "end": 23.2,
+   "paragraphs": [
+    1
+   ],
+   "set": "riverside",
+   "cast": [
+    "ascetic",
+    "mouseHer",
+    "hawk"
+   ],
+   "summary": "Close on the man and the mouse. He scoops her up gently, shields her from the circling hawk, then sets her on a flat stone and prays; a thought cloud shows the wish: mouse becomes girl, living in a house.",
+   "camera": {
+    "shot": "close",
+    "move": "pull-out",
+    "notes": "12.08 close two-shot zoom 2.4 centred on his cupped hands (310,760); hold to 16.3; 16.3-19.5 ease out to zoom 1.45 centre (330,640) to make room for the light cone and the thought cloud above."
+   },
+   "composition": "His face upper left of frame, hands centre, mouse in the palms. From 16.3 the mouse sits on a flat stone at (380, bank top) and the cloud opens at (560,430), 300 wide, clear of both faces.",
+   "actions": [
+    {
+     "t": 12.08,
+     "end": 13.3,
+     "cue": {
+      "word": "فحملها",
+      "t": 12.08
+     },
+     "who": "ascetic",
+     "action": "Kneels fully, slides both cupped hands under her and lifts slowly to chest height",
+     "acting": "anticipation: hands hover 0.25 s before touching; eyes soft, lid 0.25, brow -0.4",
+     "library": "kneel 1, handL/handR IK, anticipate"
+    },
+    {
+     "t": 13.36,
+     "end": 14.4,
+     "cue": {
+      "word": "برفق",
+      "t": 13.36
+     },
+     "who": "mouseHer",
+     "action": "Curled and trembling in his palms; one eye opens, then both; the trembling fades",
+     "acting": "tremble amplitude 3 to 0 over 1 s, ears rise from flat to half, gaze lookAt(his eyes)",
+     "library": "tremble, lid, lookAt"
+    },
+    {
+     "t": 13.6,
+     "end": 14.4,
+     "cue": {
+      "word": "برفق",
+      "t": 13.36
+     },
+     "who": "ascetic",
+     "action": "Strokes her head once with a thumb and smiles",
+     "acting": "mouth smile, slow blink, head tilt 4 px toward her",
+     "library": "handR key, blink"
+    },
+    {
+     "t": 14.52,
+     "end": 15.4,
+     "cue": {
+      "word": "أراد",
+      "t": 14.52
+     },
+     "who": "hawk",
+     "action": "Far above, the hawk circles back as a small dark shape",
+     "acting": "a slow circle, radius 90, at (700,220); threat without speed",
+     "library": "bird fly at s 0.35"
+    },
+    {
+     "t": 14.7,
+     "end": 15.4,
+     "cue": {
+      "word": "أراد",
+      "t": 14.52
+     },
+     "who": "ascetic",
+     "action": "He looks up at the hawk; his brow knots",
+     "acting": "gaze up right, brow +0.5, mouth closed",
+     "library": "gazePlan"
+    },
+    {
+     "t": 15.48,
+     "end": 16.2,
+     "cue": {
+      "word": "يحميها",
+      "t": 15.48
+     },
+     "who": "ascetic",
+     "action": "Closes his fingers into a shell around her and turns his shoulder to the sky; the hawk gives up and leaves",
+     "acting": "PERSON_HANDS.shield, tip -0.06; mouse ducks, only ears show; hawk exits right by 16.2",
+     "library": "PERSON_HANDS.shield"
+    },
+    {
+     "t": 16.3,
+     "end": 17.1,
+     "cue": {
+      "word": "فدعا",
+      "t": 16.3
+     },
+     "who": "ascetic",
+     "action": "Sets her on the flat stone, then raises both open hands and lifts his face",
+     "acting": "eyes close (lid 1), arms by angles so they read at phone size, breathe()",
+     "library": "aL/aR about [-2.3, 2.3] palms up, breathe"
+    },
+    {
+     "t": 17.2,
+     "end": 18.3,
+     "cue": {
+      "word": "الله",
+      "t": 17.2
+     },
+     "who": "fx",
+     "action": "A soft cone of light widens from the top of the frame onto man and mouse",
+     "acting": "yellow halftone cone, alpha 0 to 0.45; no figure in the sky",
+     "library": "skyLight (new): clipped gradient + Ben-Day dots"
+    },
+    {
+     "t": 18.0,
+     "end": 19.6,
+     "cue": {
+      "word": "فتاة",
+      "t": 18.48
+     },
+     "who": "fx",
+     "action": "Thought cloud opens above them: mouse icon, arrow, little girl icon",
+     "acting": "icons pop on their words with settleTo; the mouse on the stone looks up at the cloud",
+     "library": "thoughtCloud (planned); S.arrow inside"
+    },
+    {
+     "t": 19.76,
+     "end": 21.0,
+     "cue": {
+      "word": "تستطيع",
+      "t": 19.76
+     },
+     "who": "mouseHer",
+     "action": "She sits up on her hind legs, nose twitching toward the girl icon",
+     "acting": "sniff 1, ears up, gaze at the cloud, whiskers twitch",
+     "library": "rat sniff, sit"
+    },
+    {
+     "t": 21.06,
+     "end": 22.0,
+     "cue": {
+      "word": "بيته",
+      "t": 21.3
+     },
+     "who": "fx",
+     "action": "A small house is drawn around the girl icon in the cloud; a heart pops over the roof",
+     "acting": "stroke draws on in 0.5 s; label HOME",
+     "library": "thoughtCloud interior; heart()"
+    },
+    {
+     "t": 22.1,
+     "end": 23.2,
+     "cue": {
+      "word": "بيته",
+      "t": 21.3
+     },
+     "who": "fx",
+     "action": "In the pause the cloud dissolves into stars that spiral down around the mouse; she spins once, watching them",
+     "acting": "8 stars on a shrinking spiral, radius 140 to 30; her head follows them, then eyes squeeze shut (anticipation of the change)",
+     "library": "poofTransform (new) gather phase"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 22.6,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 23.2
+   }
+  },
+  {
+   "id": "S3",
+   "start": 23.2,
+   "end": 27.3,
+   "paragraphs": [
+    2
+   ],
+   "set": "riverside",
+   "cast": [
+    "ascetic",
+    "mouseHer",
+    "child"
+   ],
+   "summary": "POOF. The stars burst and a little girl sits on the stone where the mouse was. She has two round hair buns like mouse ears and keeps a mouse's nose twitch.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Start zoom 1.45 centre (350,650); 2-frame panel-only shake at 23.2; push to zoom 1.8 on the child by 26.0."
+   },
+   "composition": "Burst centred on the stone (380, bank top - 40), radius 190. Child seated on the stone, head near y 640; ascetic kneeling left of her, faces at the same height.",
+   "actions": [
+    {
+     "t": 23.2,
+     "end": 24.0,
+     "cue": {
+      "word": "تحولت",
+      "t": 23.2
+     },
+     "who": "fx",
+     "action": "Star burst and puff ring explode from the stone, 2-frame white flash",
+     "acting": "burst scales 0.2 to 1.1 to 1.0 (overshoot); the ascetic's hands fly apart",
+     "library": "poofTransform burst; S.emphasis"
+    },
+    {
+     "t": 24.1,
+     "end": 25.2,
+     "cue": {
+      "word": "الفأرة",
+      "t": 24.1
+     },
+     "who": "mouseHer",
+     "action": "Inside the thinning puff a mouse silhouette stretches upward into a child's silhouette",
+     "acting": "black silhouette morph: sq 1 to 1.5, ears stay as two round bumps on the head",
+     "library": "poofTransform morph (two silhouettes cross-scaled)"
+    },
+    {
+     "t": 25.34,
+     "end": 26.0,
+     "cue": {
+      "word": "طفلة",
+      "t": 25.34
+     },
+     "who": "child",
+     "action": "The puff clears: a little girl sits on the stone, blinking, looking at her own hands",
+     "acting": "eyes wide, two slow blinks, turns hands over, mouth 'o'",
+     "library": "person child option (planned) costume 'maiden' small; lid, gaze"
+    },
+    {
+     "t": 26.02,
+     "end": 26.7,
+     "cue": {
+      "word": "جميلة",
+      "t": 26.02
+     },
+     "who": "child",
+     "action": "She wiggles her fingers, her nose twitches twice, then she beams up at him; 5 sparkles settle around her",
+     "acting": "nose twitch = the mouse habit kept for the whole film; smile, gaze lookAt(ascetic)",
+     "library": "new small field noseTwitch (0..1)"
+    },
+    {
+     "t": 26.1,
+     "end": 27.3,
+     "cue": {
+      "word": "جميلة",
+      "t": 26.02
+     },
+     "who": "ascetic",
+     "action": "Jaw drops, then delight: arms out, then he offers a hand and she takes it",
+     "acting": "mouth o to smile, brow -0.8, sq 1.05 pop; wet eyes of joy",
+     "library": "PERSON_HANDS.armsOut then reach; settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 23.25,
+     "text": "POOF!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 27.3
+   }
+  },
+  {
+   "id": "S4",
+   "start": 27.3,
+   "end": 35.9,
+   "paragraphs": [
+    2
+   ],
+   "set": "villageYard",
+   "cast": [
+    "ascetic",
+    "child",
+    "wife"
+   ],
+   "summary": "The cottage. He walks in hand in hand with the child; his wife opens the door, melts, and hugs her. Chalk height marks start on the doorpost. Card: YEARS LATER...",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide zoom 1.05 for the entrance; from 29.6 ease to zoom 1.5 centre (610,720) on the door group. The camera cut to the later yard hides under the card at 35.9."
+   },
+   "composition": "Cottage facade on the right, door centre at x 700 (approximate, measure on the set), doorpost at x 640. Walkers enter from x -80 and stop at x 520 (man) and 580 (child). Wife in the doorway at x 700.",
+   "actions": [
+    {
+     "t": 27.3,
+     "end": 28.6,
+     "cue": {
+      "word": "وأخذها",
+      "t": 27.3
+     },
+     "who": "ascetic",
+     "action": "Walks in from the left holding the child's hand; she takes two quick steps for each of his",
+     "acting": "walk() for both from one position function, child amp 1.3; she looks at everything (gaze saccades)",
+     "library": "walk, footfalls, gazePlan(...,0.07)"
+    },
+    {
+     "t": 28.62,
+     "end": 29.6,
+     "cue": {
+      "word": "الناسك",
+      "t": 28.62
+     },
+     "who": "wife",
+     "action": "The door opens; his wife steps out drying her hands on her apron",
+     "acting": "door swing 0.4 s; she looks at him first, then down",
+     "library": "villager villageWoman (planned); villageYard door open 0..1"
+    },
+    {
+     "t": 29.64,
+     "end": 30.4,
+     "cue": {
+      "word": "زوجته",
+      "t": 29.64
+     },
+     "who": "wife",
+     "action": "She sees the child: hands fly to her cheeks, eyes shine",
+     "acting": "PERSON_HANDS.cheeks, eyes wide then wet true, sq 1.04",
+     "library": "PERSON_HANDS.cheeks, settleTo"
+    },
+    {
+     "t": 29.7,
+     "end": 30.4,
+     "cue": {
+      "word": "زوجته",
+      "t": 29.64
+     },
+     "who": "child",
+     "action": "The child slips half behind his robe and peeks out with one eye and one hair bun",
+     "acting": "draw the child before the ascetic so the robe occludes her; nose twitch",
+     "library": "draw order (peek from cover)"
+    },
+    {
+     "t": 30.44,
+     "end": 31.9,
+     "cue": {
+      "word": "ربياها",
+      "t": 30.44
+     },
+     "who": "wife",
+     "action": "She kneels and opens her arms; the child runs out and jumps into the hug",
+     "acting": "child: anticipate crouch, hop 40 high, landSquash into the hug; wife rocks back 5 degrees and recovers",
+     "library": "kneel, anticipate, hop, landSquash"
+    },
+    {
+     "t": 31.0,
+     "end": 32.0,
+     "cue": {
+      "word": "ربياها",
+      "t": 30.44
+     },
+     "who": "ascetic",
+     "action": "Hand on his heart, slow happy blink",
+     "acting": "PERSON_HANDS.chest, lid pulse",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 32.06,
+     "end": 32.8,
+     "cue": {
+      "word": "كأنها",
+      "t": 32.06
+     },
+     "who": "wife",
+     "action": "Stands the child against the doorpost and chalks a height mark above her head",
+     "acting": "child stretches on tiptoe (sq 1.06) to cheat taller",
+     "library": "heightMarks prop n=1"
+    },
+    {
+     "t": 32.84,
+     "end": 34.0,
+     "cue": {
+      "word": "ابنتهما",
+      "t": 32.84
+     },
+     "who": "child",
+     "action": "Between them, holding both parents' hands, she swings her feet off the ground; a heart pops above; label OUR DAUGHTER",
+     "acting": "two hops with swing(); parents look at each other over her head, then down at her",
+     "library": "hop, swing, heart(), S.label"
+    },
+    {
+     "t": 34.12,
+     "end": 35.9,
+     "cue": {
+      "word": "ومرت",
+      "t": 34.12
+     },
+     "who": "fx",
+     "action": "Two more chalk marks tick up the post, then the YEARS LATER... card sweeps across",
+     "acting": "marks 2 and 3 at 34.2 and 34.5, each with a tiny chalk puff; card covers by 35.9",
+     "library": "S.transition caption 'YEARS LATER...'"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 34.6,
+    "label": "YEARS LATER..."
+   }
+  },
+  {
+   "id": "S5",
+   "start": 35.9,
+   "end": 51.3,
+   "paragraphs": [
+    2,
+    3
+   ],
+   "set": "villageYard",
+   "cast": [
+    "maiden",
+    "ascetic",
+    "wife"
+   ],
+   "summary": "Same yard, years on: twelve chalk marks, a taller tree, a whiter beard. The grown daughter stands at the top mark. Father sits her down and asks whom she wants to marry; she stands, flexes an arm and declares: the strongest of all.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "tilt",
+    "notes": "37.1-38.1 tilt up the doorpost from the lowest mark to her face (zoom 1.9). 38.2 ease out to a medium two-shot zoom 1.4 on the bench. 45.4-46.8 small push to zoom 1.6 on the maiden as she stands; keep the father's head in frame (twoShot margin 80)."
+   },
+   "composition": "Bench left of the door at x 430-560. Father seated at x 450 facing right, maiden at x 560 facing left. Window at about (840,640) where the wife listens. Thought cloud above and between them at (500,380); keep it off both faces.",
+   "actions": [
+    {
+     "t": 35.9,
+     "end": 37.0,
+     "cue": {
+      "word": "كثيرة",
+      "t": 35.48
+     },
+     "who": "fx",
+     "action": "On the card a counter YEARS runs 1 to 15",
+     "acting": "digits tick with a 0.1 s dip each",
+     "library": "S.counter on the transition card, countedBeats"
+    },
+    {
+     "t": 37.1,
+     "end": 38.1,
+     "cue": {
+      "word": "صارت",
+      "t": 37.1
+     },
+     "who": "camera",
+     "action": "Card clears on the foot of the doorpost; the camera climbs past twelve chalk marks",
+     "acting": "marks pass at an even rhythm; the tree behind is now taller (crown +30 %)",
+     "library": "camera keys; heightMarks n=12"
+    },
+    {
+     "t": 37.72,
+     "end": 38.6,
+     "cue": {
+      "word": "شابة",
+      "t": 37.72
+     },
+     "who": "maiden",
+     "action": "The tilt arrives at the young woman, hand flat on her head against the top mark; label ALL GROWN UP",
+     "acting": "proud smile, the nose twitch once; same two hair buns, yellow headscarf",
+     "library": "person + costume preset 'maiden'; S.label"
+    },
+    {
+     "t": 38.6,
+     "end": 39.6,
+     "cue": {
+      "word": "وفي",
+      "t": 38.16
+     },
+     "who": "ascetic",
+     "action": "Father comes round the corner with a walking stick, slower now",
+     "acting": "white beard, slight stoop tip 0.05; walk() amp 0.7",
+     "library": "walk, footfalls; costume 'ascetic' age 1"
+    },
+    {
+     "t": 39.7,
+     "end": 40.2,
+     "cue": {
+      "word": "يوم",
+      "t": 39.7
+     },
+     "who": "ascetic",
+     "action": "Sits on the bench and pats the seat beside him; she sits",
+     "acting": "sit 0 to 1 with a small settle; her skirt settles 2 frames late",
+     "library": "sit pose (planned), settleTo"
+    },
+    {
+     "t": 40.2,
+     "end": 41.2,
+     "cue": {
+      "word": "سألها",
+      "t": 40.2
+     },
+     "who": "ascetic",
+     "action": "Turns to her, raises a finger and asks",
+     "acting": "talk 0.7, PERSON_HANDS.pointUp, brow -0.4, gaze lookAt(maiden)",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 41.22,
+     "end": 42.1,
+     "cue": {
+      "word": "أبوها",
+      "t": 41.22
+     },
+     "who": "maiden",
+     "action": "Listens, head tilted, hands folded in her lap",
+     "acting": "gaze on him, slow blink, small nod on the stress",
+     "library": "PERSON_HANDS.clasp"
+    },
+    {
+     "t": 42.2,
+     "end": 43.7,
+     "cue": {
+      "word": "الرجل",
+      "t": 42.2
+     },
+     "who": "fx",
+     "action": "Thought cloud over the father: a plain groom silhouette with a question mark",
+     "acting": "pops with overshoot; the maiden's eyes go up to it",
+     "library": "thoughtCloud; black figure silhouette"
+    },
+    {
+     "t": 43.84,
+     "end": 45.2,
+     "cue": {
+      "word": "الزواج",
+      "t": 43.84
+     },
+     "who": "wife",
+     "action": "Two rings appear in the cloud; at the window behind, the mother leans out with a hand cupped to her ear",
+     "acting": "comic eavesdrop: PERSON_HANDS.cupEar, eyes sideways; maiden hides a smile behind her hand",
+     "library": "PERSON_HANDS.cupEar, mouthCover"
+    },
+    {
+     "t": 45.36,
+     "end": 46.6,
+     "cue": {
+      "word": "قالت",
+      "t": 45.36
+     },
+     "who": "maiden",
+     "action": "She stands up from the bench",
+     "acting": "anticipate dip 0.25 s, rise with sq 1.06, settle; chin lifts",
+     "library": "anticipate, settleTo"
+    },
+    {
+     "t": 46.76,
+     "end": 47.5,
+     "cue": {
+      "word": "الفتاة",
+      "t": 46.76
+     },
+     "who": "maiden",
+     "action": "Hands on hips, feet apart",
+     "acting": "PERSON_HANDS.hipsHands, brow +0.3 (determined), gaze to the horizon",
+     "library": "PERSON_HANDS.hipsHands"
+    },
+    {
+     "t": 47.56,
+     "end": 48.7,
+     "cue": {
+      "word": "أريد",
+      "t": 47.56
+     },
+     "who": "maiden",
+     "action": "Speaks, one finger raised",
+     "acting": "talk 0.8, pointUp; father leans in to hear",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 48.86,
+     "end": 49.8,
+     "cue": {
+      "word": "أقوى",
+      "t": 48.86
+     },
+     "who": "maiden",
+     "action": "Flexes a strong-arm pose; in the cloud the groom silhouette swells into a giant with huge shoulders that bursts the cloud's edge",
+     "acting": "arm by angles (aR about [-2.4, -0.9]); silhouette scale 1 to 1.9 with overshoot",
+     "library": "aL/aR angles; thoughtCloud interior scale"
+    },
+    {
+     "t": 49.98,
+     "end": 50.6,
+     "cue": {
+      "word": "الجميع",
+      "t": 49.98
+     },
+     "who": "maiden",
+     "action": "Sweeps both arms wide: stronger than everyone",
+     "acting": "PERSON_HANDS.armsOut, tip -0.05, big smile",
+     "library": "PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 50.0,
+     "end": 51.3,
+     "cue": {
+      "word": "الجميع",
+      "t": 49.98
+     },
+     "who": "ascetic",
+     "action": "Father rocks back on the bench, eyebrows up; a question mark pops over him in the pause; at the window the mother drops her cloth",
+     "acting": "tip -0.1, brow -1, mouth o; cloth falls with fallY",
+     "library": "settleTo, fallY; S.emphasis '?'"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 48.9,
+     "text": "THE STRONGEST!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 50.95,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 51.3
+   }
+  },
+  {
+   "id": "S6",
+   "start": 51.3,
+   "end": 65.5,
+   "paragraphs": [
+    3
+   ],
+   "set": "villageYard",
+   "cast": [
+    "ascetic",
+    "maiden",
+    "wife",
+    "sunFace"
+   ],
+   "summary": "Father thinks, searching the yard with his eyes, until sunlight catches his face. He points: ask the sun. A bright wash sweeps the whole world. Daughter nods, and the two set off toward the sun.",
+   "camera": {
+    "shot": "medium",
+    "move": "tilt",
+    "notes": "51.3 medium on the father zoom 1.7. 54.6-56.5 tilt up along his arm to the sun (still plain, no face yet), zoom 1.2. 58.1-59.2 pull out to full wide zoom 1.0 for the light wash. 63.6 track right with the walkers, then tilt up the hill path."
+   },
+   "composition": "Father at x 450, maiden at x 600. Sun at (800,170), r 80. The rank strip (new) lives along the top of the panel at world y 70 in screen space: five 70 px slots, right to left growth is NOT used; it fills left to right.",
+   "actions": [
+    {
+     "t": 51.3,
+     "end": 52.4,
+     "cue": {
+      "word": "فكر",
+      "t": 51.3
+     },
+     "who": "ascetic",
+     "action": "Hand to his beard, eyes narrowed, thinking",
+     "acting": "PERSON_HANDS.chin, lid 0.4, three rising thought dots",
+     "library": "PERSON_HANDS.chin"
+    },
+    {
+     "t": 52.48,
+     "end": 53.0,
+     "cue": {
+      "word": "الأب",
+      "t": 52.48
+     },
+     "who": "maiden",
+     "action": "She waits, arms folded, one foot tapping",
+     "acting": "PERSON_HANDS.folded, foot tap every 0.3 s, eyes on him",
+     "library": "PERSON_HANDS.folded"
+    },
+    {
+     "t": 53.02,
+     "end": 54.1,
+     "cue": {
+      "word": "قليلًا",
+      "t": 53.02
+     },
+     "who": "ascetic",
+     "action": "His eyes dart: the tree (no), the roof (no), then a glint of sunlight lands on his face and he squints up",
+     "acting": "gazePlan with 0.07 s saccades to three targets; yellow highlight disc slides onto his face at 53.7",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 54.18,
+     "end": 54.6,
+     "cue": {
+      "word": "قال",
+      "t": 54.18
+     },
+     "who": "ascetic",
+     "action": "Finger shoots up: got it",
+     "acting": "arm by angle straight up, settleTo overshoot, mouth open smile, brow -0.8",
+     "library": "aR about [-2.85], settleTo"
+    },
+    {
+     "t": 54.6,
+     "end": 56.4,
+     "cue": {
+      "word": "إذن",
+      "t": 54.6
+     },
+     "who": "camera",
+     "action": "Tilt up along his pointing arm into the sky",
+     "acting": "maiden's gaze follows his finger a beat late",
+     "library": "camera keys"
+    },
+    {
+     "t": 56.54,
+     "end": 57.1,
+     "cue": {
+      "word": "الشمس",
+      "t": 56.54
+     },
+     "who": "sunFace",
+     "action": "The sun enters frame, rays pulsing; arrow and label THE SUN; first slot of the rank strip shows a sun icon",
+     "acting": "rays rotate slowly, pulse 6 % on the word",
+     "library": "sun(ctx,x,y,t); S.arrow, S.label; rankStrip n=1"
+    },
+    {
+     "t": 58.08,
+     "end": 59.1,
+     "cue": {
+      "word": "تضيء",
+      "t": 58.08
+     },
+     "who": "fx",
+     "action": "A band of brighter yellow halftone sweeps left to right over hills, cottage and faces",
+     "acting": "everything it passes lifts 15 % brighter and keeps it",
+     "library": "clipped wash rectangle, K.beat eased"
+    },
+    {
+     "t": 59.2,
+     "end": 60.3,
+     "cue": {
+      "word": "كله",
+      "t": 59.2
+     },
+     "who": "camera",
+     "action": "Full wide: the whole lit landscape, tiny family in the yard",
+     "acting": "hold; a bird crosses for scale",
+     "library": "camera key pair for the hold; songbird fly"
+    },
+    {
+     "t": 60.7,
+     "end": 61.8,
+     "cue": {
+      "word": "نعرف",
+      "t": 60.7
+     },
+     "who": "ascetic",
+     "action": "Shrugs with both palms up",
+     "acting": "PERSON_HANDS.palmsUp, head tilt, talk 0.6",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 61.88,
+     "end": 62.9,
+     "cue": {
+      "word": "أقوى",
+      "t": 61.88
+     },
+     "who": "maiden",
+     "action": "Shades her eyes, looks up at the sun, then nods twice; STRONGEST? tag appears over the sun icon on the strip",
+     "acting": "hand flat at the brow by angle, smile grows, nod = drop 5 px twice",
+     "library": "rankStrip tag"
+    },
+    {
+     "t": 63.6,
+     "end": 64.5,
+     "cue": {
+      "word": "فذهبا",
+      "t": 63.6
+     },
+     "who": "maiden",
+     "action": "They set off to the right, she in front; the mother waves from the door",
+     "acting": "walk() both; father's stick plants on every second step; mother PERSON_HANDS.wave",
+     "library": "walk, footfalls, PERSON_HANDS.wave"
+    },
+    {
+     "t": 64.76,
+     "end": 65.5,
+     "cue": {
+      "word": "الشمس",
+      "t": 64.76
+     },
+     "who": "camera",
+     "action": "Track right and tilt up as their path climbs a hill toward the light",
+     "acting": "end on sky; upward wipe",
+     "library": "camera keys"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 63.2,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "wipe",
+    "t": 65.5
+   }
+  },
+  {
+   "id": "S7",
+   "start": 65.5,
+   "end": 74.32,
+   "paragraphs": [
+    4
+   ],
+   "set": "skyHill",
+   "cast": [
+    "ascetic",
+    "maiden",
+    "sunFace",
+    "cloudFace"
+   ],
+   "summary": "On a bare hilltop under a huge sun with a calm face. They call up; the sun shakes its head and glances nervously sideways: a smug cloud drifts in and blots it out. The world dims.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Locked wide, zoom 1.0 centre (500,560): the giant above, the small pair below. The lock makes the dimming at 72.9 read."
+   },
+   "composition": "Hilltop crest at (250,880), pair at x 200 (father) and 290 (maiden) at s 0.6, looking up right. Sun centre (640,330), r 190, face 150 wide. Cloud enters from x 1150 at y 300, 420 wide, and stops centred on the sun.",
+   "actions": [
+    {
+     "t": 65.6,
+     "end": 66.4,
+     "cue": {
+      "word": "لكن",
+      "t": 66.42
+     },
+     "who": "sunFace",
+     "action": "Reveal in the pause: the great sun fills the sky, eyes closed, serene, rays turning",
+     "acting": "lid 1, tiny smile; pair rim-lit yellow from the right",
+     "library": "sun() scaled + elementFace (new)"
+    },
+    {
+     "t": 66.42,
+     "end": 67.1,
+     "cue": {
+      "word": "لكن",
+      "t": 66.42
+     },
+     "who": "ascetic",
+     "action": "Father cups his mouth and calls up; daughter waves",
+     "acting": "PERSON_HANDS.cupMouth, tip -0.08 leaning back to look up; maiden wave",
+     "library": "PERSON_HANDS.cupMouth, wave"
+    },
+    {
+     "t": 67.12,
+     "end": 67.8,
+     "cue": {
+      "word": "الشمس",
+      "t": 67.12
+     },
+     "who": "sunFace",
+     "action": "One eye opens, then the other; it looks down at them",
+     "acting": "per-eye lid 0.15 s apart, gaze lookAt(pair), brow -0.4",
+     "library": "elementFace lidL/lidR, gaze"
+    },
+    {
+     "t": 67.84,
+     "end": 69.0,
+     "cue": {
+      "word": "قالت",
+      "t": 67.84
+     },
+     "who": "sunFace",
+     "action": "Speaks and slowly shakes its head: not me",
+     "acting": "talk 0.7; whole disc rotates +6, -6, 0 degrees; rays lag 3 frames",
+     "library": "elementFace talk; rotation keys"
+    },
+    {
+     "t": 69.04,
+     "end": 69.7,
+     "cue": {
+      "word": "السحاب",
+      "t": 69.04
+     },
+     "who": "cloudFace",
+     "action": "The sun's eyes slide to the right edge; a cloud's edge and one eye peek into frame; arrow and label THE CLOUD",
+     "acting": "sun gaze [1,0], brow worried; cloud lid 0.5 smug",
+     "library": "cloudFlat scaled + elementFace; S.arrow"
+    },
+    {
+     "t": 69.74,
+     "end": 70.9,
+     "cue": {
+      "word": "أقوى",
+      "t": 69.74
+     },
+     "who": "fx",
+     "action": "Rank strip: cloud icon pops in to the right of the sun icon with a small arrow between them",
+     "acting": "sun icon shrinks 15 %, STRONGEST? tag hops to the cloud",
+     "library": "rankStrip n=2"
+    },
+    {
+     "t": 70.98,
+     "end": 72.8,
+     "cue": {
+      "word": "لأنه",
+      "t": 70.98
+     },
+     "who": "cloudFace",
+     "action": "The cloud glides in front of the sun, smiling",
+     "acting": "eased slide, body bobs; the pair's heads turn to follow it",
+     "library": "kfn position; lookAt"
+    },
+    {
+     "t": 72.92,
+     "end": 73.4,
+     "cue": {
+      "word": "يحجب",
+      "t": 72.92
+     },
+     "who": "fx",
+     "action": "Cloud covers the sun: rays cut off and the whole scene drops into blue shade",
+     "acting": "blue overlay alpha 0 to 0.35 in 0.3 s with coarse dots; rim light on the pair goes out; maiden hugs her arms",
+     "library": "overlay rect inside the panel clip"
+    },
+    {
+     "t": 73.5,
+     "end": 74.3,
+     "cue": {
+      "word": "نوري",
+      "t": 73.5
+     },
+     "who": "sunFace",
+     "action": "The sun's eyes peek over the top of the cloud, annoyed; one ray pokes out and droops",
+     "acting": "brow +0.6, frown; ray wilts with swing()",
+     "library": "draw order sun, cloud; swing"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 73.0,
+     "text": "BLOCKED!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 65.9,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 74.32
+   }
+  },
+  {
+   "id": "S8",
+   "start": 74.32,
+   "end": 85.84,
+   "paragraphs": [
+    4
+   ],
+   "set": "skyHill",
+   "cast": [
+    "ascetic",
+    "maiden",
+    "cloudFace",
+    "wind",
+    "sunFace"
+   ],
+   "summary": "They walk under the cloud and ask it. Mid-boast, a gust arrives: the wind shoves the cloud right, then left, then tumbles it out of frame while it strains to resist.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "74.3-75.9 pan right 120 units with the walkers and settle with the cloud centred (zoom 1.1). Panel-only shake 3 px for 4 frames on each shove (80.7, 82.66)."
+   },
+   "composition": "Cloud centre (520,330). Pair at x 300/390 on the ridge. Wind enters from the left edge at y 300-420 as 5 swirl bands; its face sits in the leading curl.",
+   "actions": [
+    {
+     "t": 74.32,
+     "end": 75.8,
+     "cue": {
+      "word": "ذهبا",
+      "t": 74.32
+     },
+     "who": "maiden",
+     "action": "The pair walk along the ridge until they stand under the cloud",
+     "acting": "walk(); the shade overlay stays; father shields his turban",
+     "library": "walk, footfalls"
+    },
+    {
+     "t": 75.9,
+     "end": 76.5,
+     "cue": {
+      "word": "السحاب",
+      "t": 75.9
+     },
+     "who": "maiden",
+     "action": "She points up at the cloud; father calls the question",
+     "acting": "arm by angle, talk on the father",
+     "library": "PERSON_HANDS.pointUp, cupMouth"
+    },
+    {
+     "t": 76.6,
+     "end": 77.4,
+     "cue": {
+      "word": "فقال",
+      "t": 76.6
+     },
+     "who": "cloudFace",
+     "action": "The cloud puffs itself up and begins to answer grandly",
+     "acting": "sq 1.08, lid 0.5, talk 0.7",
+     "library": "elementFace"
+    },
+    {
+     "t": 77.52,
+     "end": 78.5,
+     "cue": {
+      "word": "الريح",
+      "t": 77.52
+     },
+     "who": "wind",
+     "action": "A streak crosses the frame; the cloud's smugness snaps to alarm as wind bands curl in from the left; arrow and label THE WIND",
+     "acting": "cloud: eyes wide, brow -0.8, gaze left; wind: sly half lid, grin",
+     "library": "windSpirit (new); S.arrow"
+    },
+    {
+     "t": 78.6,
+     "end": 79.8,
+     "cue": {
+      "word": "أقوى",
+      "t": 78.6
+     },
+     "who": "fx",
+     "action": "Rank strip: wind icon pops in third; tag hops to it",
+     "acting": "cloud icon shrinks",
+     "library": "rankStrip n=3"
+    },
+    {
+     "t": 80.1,
+     "end": 81.4,
+     "cue": {
+      "word": "تدفعني",
+      "t": 80.7
+     },
+     "who": "wind",
+     "action": "The wind coils back, cheeks filling, then blows on the word: the cloud squashes and slides 300 units right, shedding puffs",
+     "acting": "anticipate 0.5 s; cloud sq 0.82 with horizontal stretch, 4 trailing puffs",
+     "library": "anticipate; kfn; cloudFlat puffs"
+    },
+    {
+     "t": 81.72,
+     "end": 82.5,
+     "cue": {
+      "word": "مكان",
+      "t": 81.72
+     },
+     "who": "cloudFace",
+     "action": "The cloud paddles back toward centre on two stubby puff arms",
+     "acting": "determined brow, sweat drop",
+     "library": "two small circles as arms, alternating"
+    },
+    {
+     "t": 82.66,
+     "end": 83.8,
+     "cue": {
+      "word": "آخر",
+      "t": 82.66
+     },
+     "who": "wind",
+     "action": "The wind loops round and blows from the right: the cloud shoots back left past centre; the sun behind it grins",
+     "acting": "ping-pong; sun lid 0.5, smile; light returns for 1 s as the cloud passes",
+     "library": "kfn; overlay alpha keyed to cover"
+    },
+    {
+     "t": 83.94,
+     "end": 84.6,
+     "cue": {
+      "word": "أستطيع",
+      "t": 83.94
+     },
+     "who": "cloudFace",
+     "action": "The cloud digs in at centre, cheeks puffed, shaking with effort",
+     "acting": "tremble(t,3), eyes squeezed, tip into the wind 0.15",
+     "library": "tremble"
+    },
+    {
+     "t": 84.68,
+     "end": 85.84,
+     "cue": {
+      "word": "مقاومتها",
+      "t": 84.68
+     },
+     "who": "cloudFace",
+     "action": "It loses: tumbles head over heels off the right edge, one wisp left spinning",
+     "acting": "two full rotations; the pair's clothes stream right, maiden holds her scarf, father his turban",
+     "library": "rotation keys; costume streamers by swing()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 80.75,
+     "text": "WHOOSH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "whip",
+    "t": 85.84
+   }
+  },
+  {
+   "id": "S9",
+   "start": 85.84,
+   "end": 100.32,
+   "paragraphs": [
+    5
+   ],
+   "set": "skyHill",
+   "cast": [
+    "ascetic",
+    "maiden",
+    "wind",
+    "cloudFace",
+    "mountainFace"
+   ],
+   "summary": "They shout their question into the gale. The wind shows off, scattering clouds and bending three trees flat, then charges the distant mountain and flattens itself against it. The mountain does not move.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Zoom 1.0. 89.8-90.7 pan right 250 units to bring the mountain (far, 40 % scale) onto the right third. 95.6-98.0 whip-follow the wind's charge to the mountain, zoom 1.4; hold dead still on the impact."
+   },
+   "composition": "Ridge with three trees at x 420, 520, 620 (heights 260-320). Pair at x 200/280. Distant mountain peak at (1050,360) in a world 1300 wide. Wind face travels on a looping bezier.",
+   "actions": [
+    {
+     "t": 85.84,
+     "end": 87.7,
+     "cue": {
+      "word": "سألا",
+      "t": 85.84
+     },
+     "who": "ascetic",
+     "action": "Leaning into the gale, father shouts up; daughter grips his arm; the wind circles them once",
+     "acting": "tip 0.12, robes and scarf streaming, eyes narrowed (lid 0.5)",
+     "library": "tip; windSpirit path loop"
+    },
+    {
+     "t": 87.84,
+     "end": 88.4,
+     "cue": {
+      "word": "الريح",
+      "t": 87.84
+     },
+     "who": "wind",
+     "action": "The wind stops in mid-air, face forming in the front curl, and bends an ear-curl toward them",
+     "acting": "streaks slow to idle; head tilt",
+     "library": "windSpirit idle"
+    },
+    {
+     "t": 88.44,
+     "end": 89.7,
+     "cue": {
+      "word": "فقالت",
+      "t": 88.44
+     },
+     "who": "wind",
+     "action": "Answers in breathy puffs",
+     "acting": "talk 0.7, a small puff ring leaves the mouth on each stress",
+     "library": "elementFace talk"
+    },
+    {
+     "t": 89.76,
+     "end": 90.7,
+     "cue": {
+      "word": "الجبل",
+      "t": 89.76
+     },
+     "who": "mountainFace",
+     "action": "The wind's eyes flick right; pan reveals a grey mountain on the horizon; arrow and label THE MOUNTAIN",
+     "acting": "mountain face asleep (lid 1)",
+     "library": "mountain set (new) at distance; S.arrow"
+    },
+    {
+     "t": 90.78,
+     "end": 92.0,
+     "cue": {
+      "word": "أقوى",
+      "t": 90.78
+     },
+     "who": "fx",
+     "action": "Rank strip: mountain icon pops in fourth; tag hops to it",
+     "acting": "wind icon shrinks",
+     "library": "rankStrip n=4"
+    },
+    {
+     "t": 92.16,
+     "end": 93.2,
+     "cue": {
+      "word": "أستطيع",
+      "t": 92.16
+     },
+     "who": "wind",
+     "action": "The wind winds up like a pitcher: coils tight",
+     "acting": "anticipate, grin",
+     "library": "anticipate"
+    },
+    {
+     "t": 93.3,
+     "end": 94.5,
+     "cue": {
+      "word": "تحريك",
+      "t": 93.3
+     },
+     "who": "cloudFace",
+     "action": "It blows three small clouds across the sky like marbles; the dizzy cloud from before rolls past again",
+     "acting": "clouds at different speeds, never in unison; spiral eyes on cloudFace",
+     "library": "cloudFlat x3; elementFace eyes 'x'"
+    },
+    {
+     "t": 94.64,
+     "end": 95.5,
+     "cue": {
+      "word": "والأشجار",
+      "t": 94.64
+     },
+     "who": "set",
+     "action": "The three trees bend flat to the right one after another, leaves streaming; father's turban lifts off and he catches it",
+     "acting": "stagger 0.1 s per tree; trunks bend as arcs; turban hop with a hand snap",
+     "library": "stagger(i); tree drawn with bend param"
+    },
+    {
+     "t": 95.6,
+     "end": 97.1,
+     "cue": {
+      "word": "لكن",
+      "t": 95.6
+     },
+     "who": "wind",
+     "action": "The wind turns on the mountain: draws far back, then charges with speed lines",
+     "acting": "anticipation 0.6 s; stretch 1.3 along the path",
+     "library": "anticipate; speed lines"
+    },
+    {
+     "t": 97.2,
+     "end": 98.0,
+     "cue": {
+      "word": "يبقى",
+      "t": 97.2
+     },
+     "who": "mountainFace",
+     "action": "As the wind rushes in the mountain stays asleep; not a pebble moves",
+     "acting": "stillness is the joke: zero motion on the mountain",
+     "library": "none"
+    },
+    {
+     "t": 98.04,
+     "end": 99.5,
+     "cue": {
+      "word": "ثابتًا",
+      "t": 98.04
+     },
+     "who": "wind",
+     "action": "The wind hits face-first and flattens like a pancake against the rock, stars circling; the mountain opens one lazy eye",
+     "acting": "impactSquash 2 frames, hold flat 0.5 s; mountain lidL 1 to 0.6",
+     "library": "impactSquash; elementFace"
+    },
+    {
+     "t": 99.58,
+     "end": 100.3,
+     "cue": {
+      "word": "هببت",
+      "t": 99.58
+     },
+     "who": "wind",
+     "action": "The wind slides down the slope like a limp ribbon and gives two weak puffs at a pebble, which does not roll",
+     "acting": "follow-through; eyes half shut",
+     "library": "kfn slide; puff rings"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 98.1,
+     "text": "BONK!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 100.32
+   }
+  },
+  {
+   "id": "S10",
+   "start": 100.32,
+   "end": 106.32,
+   "paragraphs": [
+    5
+   ],
+   "set": "mountainFoot",
+   "cast": [
+    "maiden",
+    "ascetic",
+    "mountainFace"
+   ],
+   "summary": "The daughter jumps for joy, points at the mountain and strides off pulling her father. As they approach, the mountain grows until it fills the frame and they are specks at its foot.",
+   "camera": {
+    "shot": "full",
+    "move": "crane",
+    "notes": "100.3 medium on the pair zoom 1.6. From 102.2 pull out and crane up continuously to zoom 0.82 (the whole 1230-high world) by 105.6; hold."
+   },
+   "composition": "mountainFoot world: mountain base spans x 120..1000, peak at (600,120), ground y 900. Pair walk from x 60 to x 300 and stop. Final frame: pair under 12 % of frame height, mountain over 80 %.",
+   "actions": [
+    {
+     "t": 100.32,
+     "end": 101.3,
+     "cue": {
+      "word": "فرحت",
+      "t": 100.32
+     },
+     "who": "maiden",
+     "action": "Jumps for joy and claps",
+     "acting": "anticipate, hop 60, landSquash; PERSON_HANDS.clasp; big smile",
+     "library": "anticipate, hop, landSquash"
+    },
+    {
+     "t": 101.44,
+     "end": 102.1,
+     "cue": {
+      "word": "الفتاة",
+      "t": 101.44
+     },
+     "who": "maiden",
+     "action": "Points at the mountain; on the strip the mountain icon gets a star",
+     "acting": "arm by angle, gaze at father then at the mountain",
+     "library": "rankStrip star"
+    },
+    {
+     "t": 102.2,
+     "end": 104.3,
+     "cue": {
+      "word": "وذهبت",
+      "t": 102.2
+     },
+     "who": "maiden",
+     "action": "Strides off pulling her father by the sleeve; he puffs along behind with his stick",
+     "acting": "her walk amp 1.2, his 0.8 and half a step late; hand IK on his sleeve",
+     "library": "walk, handR IK, footfalls"
+    },
+    {
+     "t": 104.46,
+     "end": 104.9,
+     "cue": {
+      "word": "الجبل",
+      "t": 104.46
+     },
+     "who": "camera",
+     "action": "Crane up and back: the mountain rises and rises",
+     "acting": "the peak enters frame last",
+     "library": "camera keys"
+    },
+    {
+     "t": 104.98,
+     "end": 106.3,
+     "cue": {
+      "word": "الكبير",
+      "t": 104.98
+     },
+     "who": "ascetic",
+     "action": "They stop, tiny, at its foot; father tips his head so far back that he holds his turban on; label THE GREAT MOUNTAIN",
+     "acting": "tip -0.15, PERSON_HANDS.headHold; maiden hands on hips, impressed",
+     "library": "PERSON_HANDS.headHold; S.label"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 101.5,
+     "text": "THAT ONE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 106.32
+   }
+  },
+  {
+   "id": "S11",
+   "start": 106.32,
+   "end": 126.74,
+   "paragraphs": [
+    6
+   ],
+   "set": "mountainFoot",
+   "cast": [
+    "mountainFace",
+    "maiden",
+    "ascetic",
+    "mouseHim"
+   ],
+   "summary": "The mountain wakes with a rumble and confesses: a small creature beats it. Its eyes lead us down to a tiny hole; a mouse pops out. A cutaway shows him tunnelling a home inside the rock. The mountain blocks the hole with a boulder; the mouse pops out of a new one. Daughter and father stare at each other.",
+   "camera": {
+    "shot": "wide",
+    "move": "tilt",
+    "notes": "106.3 wide zoom 0.9 on the face. 108.0-110.3 follow the mountain's eye line: tilt down and push to zoom 2.2 on the hole at (700,885). 114.2 the round cutaway (r 230 on screen) opens upper left while the camera holds. 119.7 ease out to zoom 1.3 for the boulder gag. 122.3 push to a two-shot of the pair, zoom 2.0."
+   },
+   "composition": "Mountain face: eyes are two ledges at (520,380) and (700,380), mouth a crack at (610,520), 170 wide. Hole A at (700,885), 26 wide, 22 high. Hole B at (640,880). Pair stand at x 300/390. Cutaway centred on screen upper left, with a dotted pointer to the flank.",
+   "actions": [
+    {
+     "t": 106.32,
+     "end": 107.3,
+     "cue": {
+      "word": "قال",
+      "t": 106.32
+     },
+     "who": "mountainFace",
+     "action": "Two rock ledges lift like eyelids; pebbles skitter down; a slow rumble shakes the picture",
+     "acting": "panel-only shake 2 px for 0.5 s; lids open over 0.6 s, heavy",
+     "library": "mountain set elementFace; panel-only shake"
+    },
+    {
+     "t": 107.36,
+     "end": 107.9,
+     "cue": {
+      "word": "الجبل",
+      "t": 107.36
+     },
+     "who": "maiden",
+     "action": "The pair jump back; she ducks behind her father, then peeks",
+     "acting": "sq 0.9 startle, settleTo; father's arm out to shield her",
+     "library": "settleTo, PERSON_HANDS.shield"
+    },
+    {
+     "t": 107.5,
+     "end": 108.0,
+     "cue": {
+      "word": "الجبل",
+      "t": 107.36
+     },
+     "who": "mountainFace",
+     "action": "The crack mouth opens and speaks, very slowly",
+     "acting": "talk 0.5 at half the usual rate; gaze down at the pair",
+     "library": "elementFace talk"
+    },
+    {
+     "t": 108.02,
+     "end": 109.0,
+     "cue": {
+      "word": "هناك",
+      "t": 108.02
+     },
+     "who": "mountainFace",
+     "action": "Its eyes roll down and to its own right foot",
+     "acting": "pupils travel over 0.8 s; brow worried",
+     "library": "gaze keys"
+    },
+    {
+     "t": 109.06,
+     "end": 109.6,
+     "cue": {
+      "word": "مخلوق",
+      "t": 109.06
+     },
+     "who": "camera",
+     "action": "Tilt down the slope along that eye line toward the foot",
+     "acting": "pair's heads turn to follow",
+     "library": "camera keys; lookAt"
+    },
+    {
+     "t": 109.68,
+     "end": 110.3,
+     "cue": {
+      "word": "صغير",
+      "t": 109.68
+     },
+     "who": "fx",
+     "action": "Arrow and label SMALL... point at a tiny dark hole",
+     "acting": "arrow three times longer than the hole is wide",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 110.42,
+     "end": 111.7,
+     "cue": {
+      "word": "أقوى",
+      "t": 110.42
+     },
+     "who": "fx",
+     "action": "Rank strip: a fifth slot opens with only a question mark; the pair exchange a look",
+     "acting": "lookAt each other, brows up",
+     "library": "rankStrip n=5 unknown"
+    },
+    {
+     "t": 111.78,
+     "end": 113.2,
+     "cue": {
+      "word": "إنه",
+      "t": 111.78
+     },
+     "who": "mouseHim",
+     "action": "Hold: two eye glints in the dark of the hole, then whiskers and a nose",
+     "acting": "suspense by stillness: only the glints blink",
+     "library": "clip to the hole edge (head out of a hole)"
+    },
+    {
+     "t": 113.34,
+     "end": 114.1,
+     "cue": {
+      "word": "الفأر",
+      "t": 113.34
+     },
+     "who": "mouseHim",
+     "action": "The mouse pops out, sits up and waves; the strip's last slot fills with a mouse icon wearing a tiny crown",
+     "acting": "hop out with landSquash, sniff, paw raise; maiden's jaw drops",
+     "library": "rat kind 'mouse' pal 1; hop, landSquash; rankStrip n=5"
+    },
+    {
+     "t": 114.2,
+     "end": 115.3,
+     "cue": {
+      "word": "يحفر",
+      "t": 114.2
+     },
+     "who": "fx",
+     "action": "A round cutaway opens on the flank: inside the rock the mouse digs with both front paws, grit flying",
+     "acting": "dig cycle 6 strokes per second, body rocks",
+     "library": "macroLens (planned) as cutaway; rat dig field"
+    },
+    {
+     "t": 115.42,
+     "end": 116.2,
+     "cue": {
+      "word": "الصخور",
+      "t": 115.42
+     },
+     "who": "fx",
+     "action": "The tunnel line grows through the rock in three branches like a maze",
+     "acting": "path draws on with K.beat; dashed white on dark rock",
+     "library": "polyline reveal by length"
+    },
+    {
+     "t": 116.28,
+     "end": 117.8,
+     "cue": {
+      "word": "ويصنع",
+      "t": 116.28
+     },
+     "who": "mouseHim",
+     "action": "At the end of one branch he hollows a round room, pushing a pebble out with his back",
+     "acting": "effort: tip 0.2, feet slip twice",
+     "library": "circle grows r 0 to 60"
+    },
+    {
+     "t": 117.88,
+     "end": 118.6,
+     "cue": {
+      "word": "بيتًا",
+      "t": 117.88
+     },
+     "who": "fx",
+     "action": "The room gets a tiny bed, a lamp and a mat, one pop each; label HOME",
+     "acting": "three pops 0.2 s apart",
+     "library": "small flat-shape props; S.label"
+    },
+    {
+     "t": 118.72,
+     "end": 119.6,
+     "cue": {
+      "word": "جسمي",
+      "t": 118.72
+     },
+     "who": "mountainFace",
+     "action": "The mountain squirms: eyes cross, the mouth wobbles, an eyelid twitches with every scratch",
+     "acting": "tickle, not pain; twitch synced to the dig cycle",
+     "library": "elementFace gaze crossed, mouth wave"
+    },
+    {
+     "t": 119.7,
+     "end": 120.8,
+     "cue": {
+      "word": "لا",
+      "t": 119.7
+     },
+     "who": "mountainFace",
+     "action": "It shrugs a boulder loose; the boulder rolls down and plugs hole A",
+     "acting": "rolling rotation from distance travelled; lands with squash and dust at 120.5",
+     "library": "kfn, dustBurst"
+    },
+    {
+     "t": 120.92,
+     "end": 122.2,
+     "cue": {
+      "word": "منعه",
+      "t": 120.92
+     },
+     "who": "mouseHim",
+     "action": "The mouse pops out of a brand new hole beside it, dusts his paws and shrugs; the mountain sighs a puff of dust",
+     "acting": "hole B appears with 4 flying chips; mountain brows droop, lids half",
+     "library": "hop; chips by K.rng seed"
+    },
+    {
+     "t": 122.32,
+     "end": 123.6,
+     "cue": {
+      "word": "نظرت",
+      "t": 122.32
+     },
+     "who": "maiden",
+     "action": "Slowly she turns from the mouse to her father",
+     "acting": "eyes lead, head follows 3 frames later; mouth o",
+     "library": "gazePlan"
+    },
+    {
+     "t": 124.06,
+     "end": 124.7,
+     "cue": {
+      "word": "أبيها",
+      "t": 124.06
+     },
+     "who": "ascetic",
+     "action": "Father, just as stunned, looks at her and lifts both palms",
+     "acting": "PERSON_HANDS.palmsUp, brow -1",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 124.74,
+     "end": 126.7,
+     "cue": {
+      "word": "بدهشة",
+      "t": 124.74
+     },
+     "who": "maiden",
+     "action": "Her hand covers her mouth; both turn to the lens for one beat; an exclamation mark pops between them",
+     "acting": "the film's only look to camera: gaze [0,0.05], blink suppressed 0.8 s",
+     "library": "PERSON_HANDS.mouthCover; S.emphasis '!'"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 113.4,
+     "text": "SQUEAK!"
+    },
+    {
+     "t": 115.5,
+     "text": "DIG DIG DIG"
+    },
+    {
+     "t": 121.0,
+     "text": "POP!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 126.74
+   }
+  },
+  {
+   "id": "S12",
+   "start": 126.74,
+   "end": 144.22,
+   "paragraphs": [
+    7
+   ],
+   "set": "mountainFoot",
+   "cast": [
+    "ascetic",
+    "maiden",
+    "mouseHim",
+    "mouseHer"
+   ],
+   "summary": "Ground level, at mouse scale. He is sweeping his doorstep when two enormous pairs of feet arrive. Father kneels and proposes on his daughter's behalf. The mouse looks up, and up: she is human, his door is smaller than her sandal. In his thought cloud: a she-mouse his own size.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "tilt",
+    "notes": "Low angle, zoom 2.6 centre (640,840): the mouse is 150 px tall on screen. 132.0-133.6 tilt up the maiden's full height (zoom 1.5) and back down by 134.2. From 139.7 zoom 2.2, room for the thought cloud above the mouse."
+   },
+   "composition": "Mouse at (690, 900) facing left, hole A (boulder now rolled aside) behind him at x 720. Father kneels at x 520, face at mouse-shot height. Maiden stands at x 420; at zoom 2.6 only her hem and feet show until the tilt. Thought cloud at (760,700) world, 220 wide.",
+   "actions": [
+    {
+     "t": 126.74,
+     "end": 127.2,
+     "cue": {
+      "word": "وجدا",
+      "t": 126.74
+     },
+     "who": "mouseHim",
+     "action": "At his doorstep the mouse sweeps with a twig broom, humming",
+     "acting": "broom strokes every 0.4 s, eyes down, tail sways",
+     "library": "rat stand; prop twig"
+    },
+    {
+     "t": 127.28,
+     "end": 128.0,
+     "cue": {
+      "word": "فأرًا",
+      "t": 127.28
+     },
+     "who": "ascetic",
+     "action": "Two pairs of huge feet walk into frame from the left; a finger points down at him",
+     "acting": "footfalls make the mouse hop 3 px each (kick); PERSON_HANDS.pointDown",
+     "library": "walk, footfalls, kick"
+    },
+    {
+     "t": 128.52,
+     "end": 129.8,
+     "cue": {
+      "word": "الجبل",
+      "t": 128.52
+     },
+     "who": "mouseHim",
+     "action": "A shadow covers him; he looks up, and up, until he tips over backwards onto his tail",
+     "acting": "gaze up, head back, tip -0.3, small bounce (rebound)",
+     "library": "tip, rebound"
+    },
+    {
+     "t": 129.92,
+     "end": 130.5,
+     "cue": {
+      "word": "وسأله",
+      "t": 129.92
+     },
+     "who": "ascetic",
+     "action": "Father kneels down to mouse level, hand on his chest, polite",
+     "acting": "kneel 0 to 1 with settle; warm smile; mouse scrambles upright and straightens his whiskers",
+     "library": "kneel, PERSON_HANDS.chest"
+    },
+    {
+     "t": 130.54,
+     "end": 131.7,
+     "cue": {
+      "word": "الناسك",
+      "t": 130.54
+     },
+     "who": "ascetic",
+     "action": "Speaks, his open hand sweeping back toward his daughter",
+     "acting": "talk 0.7, handL reach behind",
+     "library": "PERSON_HANDS.reach"
+    },
+    {
+     "t": 131.8,
+     "end": 132.5,
+     "cue": {
+      "word": "هل",
+      "t": 131.8
+     },
+     "who": "fx",
+     "action": "A speech balloon from the father: two rings and a question mark",
+     "acting": "balloon placed left of his head, never over a face",
+     "library": "S.box balloon"
+    },
+    {
+     "t": 132.62,
+     "end": 133.7,
+     "cue": {
+      "word": "ابنتي",
+      "t": 132.62
+     },
+     "who": "camera",
+     "action": "Tilt from the mouse all the way up the maiden to her face; she gives a small shy wave down; a double-headed arrow measures her against him",
+     "acting": "the tilt takes a full second: the height is the joke; label A BIT TALL",
+     "library": "camera keys; S.arrow double"
+    },
+    {
+     "t": 133.78,
+     "end": 134.2,
+     "cue": {
+      "word": "قال",
+      "t": 133.78
+     },
+     "who": "mouseHim",
+     "action": "Back on the mouse: the broom drops from his paws",
+     "acting": "eyes wide, ears up, broom fallY and one bounce",
+     "library": "fallY"
+    },
+    {
+     "t": 134.3,
+     "end": 135.0,
+     "cue": {
+      "word": "الفأر",
+      "t": 134.3
+     },
+     "who": "mouseHim",
+     "action": "He answers kindly, both paws up, palms out",
+     "acting": "talk 0.8, ears half back, brow -0.5 apologetic",
+     "library": "rat paw raise"
+    },
+    {
+     "t": 135.08,
+     "end": 136.0,
+     "cue": {
+      "word": "لكنها",
+      "t": 135.08
+     },
+     "who": "mouseHim",
+     "action": "Measures himself with a flat paw on his head, then points up at her",
+     "acting": "looks from paw to her face",
+     "library": "lookAt"
+    },
+    {
+     "t": 136.12,
+     "end": 137.1,
+     "cue": {
+      "word": "إنسانة",
+      "t": 136.12
+     },
+     "who": "fx",
+     "action": "Arrow and label HUMAN point up at the maiden; she looks down at herself",
+     "acting": "her gaze drops to her own hands",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 137.2,
+     "end": 137.7,
+     "cue": {
+      "word": "وبيتي",
+      "t": 137.2
+     },
+     "who": "mouseHim",
+     "action": "Sweeps a paw to his front door; arrow and label MY HOME",
+     "acting": "proud little bow",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 137.78,
+     "end": 138.3,
+     "cue": {
+      "word": "صغير",
+      "t": 137.78
+     },
+     "who": "maiden",
+     "action": "She sets her sandal beside the door: the sandal alone is three times as wide",
+     "acting": "careful, on tiptoe; mouse hops aside",
+     "library": "foot placed by leg key"
+    },
+    {
+     "t": 138.4,
+     "end": 139.6,
+     "cue": {
+      "word": "جدًا",
+      "t": 138.4
+     },
+     "who": "maiden",
+     "action": "She crouches and pokes one fingertip into the hole; a quick cutaway shows the finger knocking over the tiny bed; the mouse covers his eyes",
+     "acting": "cutaway flashes 0.8 s; she winces, mouths sorry",
+     "library": "macroLens cutaway; handR IK"
+    },
+    {
+     "t": 139.7,
+     "end": 141.0,
+     "cue": {
+      "word": "أستطيع",
+      "t": 139.7
+     },
+     "who": "mouseHim",
+     "action": "He stands tall on his hind legs, paw on his heart",
+     "acting": "stand 1, sincere eyes (lid 0.15)",
+     "library": "rat stand"
+    },
+    {
+     "t": 141.18,
+     "end": 142.3,
+     "cue": {
+      "word": "فأرة",
+      "t": 141.18
+     },
+     "who": "fx",
+     "action": "Thought cloud over him: a she-mouse his own size standing beside him, a heart between them; label A MOUSE LIKE ME",
+     "acting": "pops on the word; the maiden's eyes lock on the she-mouse",
+     "library": "thoughtCloud; rat silhouette"
+    },
+    {
+     "t": 142.46,
+     "end": 143.2,
+     "cue": {
+      "word": "لا",
+      "t": 142.46
+     },
+     "who": "mouseHim",
+     "action": "He shakes his head gently",
+     "acting": "three small head turns, eyes closed",
+     "library": "headRot keys"
+    },
+    {
+     "t": 143.26,
+     "end": 144.2,
+     "cue": {
+      "word": "إنسانة",
+      "t": 143.26
+     },
+     "who": "maiden",
+     "action": "In the cloud a giant human foot replaces the she-mouse, with a red cross box; watching, the maiden's nose twitches and her hand rises to one hair bun",
+     "acting": "the idea lands on her face before she says anything: brows lift, slow blink",
+     "library": "S.box cross; noseTwitch"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 138.5,
+     "text": "BONK!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 144.22
+   }
+  },
+  {
+   "id": "S13",
+   "start": 144.22,
+   "end": 159.22,
+   "paragraphs": [
+    8
+   ],
+   "set": "mountainFoot",
+   "cast": [
+    "maiden",
+    "ascetic",
+    "mouseHim",
+    "mouseHer"
+   ],
+   "summary": "She sees her own shadow on the rock: with the hair buns it is a mouse's shadow. She smiles, takes her father's hands and asks to be a mouse again and marry this mouse. Father's eyes fill; he nods, hugs her, prays. POOF: a small she-mouse sits in the fallen yellow scarf.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "144.2 medium zoom 1.5 including her shadow on the rock wall. 146.8 two-shot of daughter and father, zoom 2.0 (twoShot margin 70). 155.3 ease out to zoom 1.5 for the light cone and burst. 157.4 push to zoom 2.4 on the scarf."
+   },
+   "composition": "Maiden at x 430, father at x 540 facing her, mouse at x 690. Her shadow falls right and up onto the rock at (560,640). Burst centre (430,860). Scarf lands at (430,900).",
+   "actions": [
+    {
+     "t": 144.5,
+     "end": 145.1,
+     "cue": {
+      "word": "ابتسمت",
+      "t": 145.14
+     },
+     "who": "fx",
+     "action": "In the pause the low sun throws her shadow on the rock: head and two buns, the outline of a mouse; she notices it",
+     "acting": "shadow fades in 0.4 s; she turns her head to it; its 'ears' move with her buns",
+     "library": "black silhouette at alpha 0.35, sheared"
+    },
+    {
+     "t": 145.14,
+     "end": 146.0,
+     "cue": {
+      "word": "ابتسمت",
+      "t": 145.14
+     },
+     "who": "maiden",
+     "action": "A slow smile spreads; her shoulders drop",
+     "acting": "mouth closed to smile over 0.6 s, lid 0.2, breathe",
+     "library": "settleTo"
+    },
+    {
+     "t": 146.06,
+     "end": 146.7,
+     "cue": {
+      "word": "الفتاة",
+      "t": 146.06
+     },
+     "who": "mouseHim",
+     "action": "The mouse watches her smile and tilts his head, puzzled",
+     "acting": "ears uneven, one paw raised",
+     "library": "rat ears"
+    },
+    {
+     "t": 146.76,
+     "end": 147.5,
+     "cue": {
+      "word": "وقالت",
+      "t": 146.76
+     },
+     "who": "maiden",
+     "action": "She turns to her father and takes both his hands",
+     "acting": "hand IK meeting his; eye contact",
+     "library": "handL/handR IK"
+    },
+    {
+     "t": 147.54,
+     "end": 148.8,
+     "cue": {
+      "word": "لأبيها",
+      "t": 147.54
+     },
+     "who": "ascetic",
+     "action": "Close two-shot; he searches her face",
+     "acting": "brow -0.5, gaze flicks between her eyes (saccades)",
+     "library": "gazePlan 0.07"
+    },
+    {
+     "t": 148.88,
+     "end": 149.9,
+     "cue": {
+      "word": "أريد",
+      "t": 148.88
+     },
+     "who": "maiden",
+     "action": "She speaks softly",
+     "acting": "talk 0.6, small nods",
+     "library": "talk"
+    },
+    {
+     "t": 150.0,
+     "end": 151.2,
+     "cue": {
+      "word": "فأرة",
+      "t": 150.0
+     },
+     "who": "fx",
+     "action": "Thought cloud between them: the tiny mouse on his cupped palms from the riverbank",
+     "acting": "same drawing as 13.4 s so the memory is exact",
+     "library": "thoughtCloud; reuse S2 pose"
+    },
+    {
+     "t": 151.3,
+     "end": 152.3,
+     "cue": {
+      "word": "كنت",
+      "t": 151.3
+     },
+     "who": "ascetic",
+     "action": "His eyes shine; he looks down at his own open palm",
+     "acting": "wet true, slow blink, mouth trembles into a smile",
+     "library": "wet, lid"
+    },
+    {
+     "t": 152.38,
+     "end": 153.5,
+     "cue": {
+      "word": "وأتزوج",
+      "t": 152.38
+     },
+     "who": "maiden",
+     "action": "She points down at the mouse",
+     "acting": "arm by angle, smile, glance down",
+     "library": "PERSON_HANDS.pointDown"
+    },
+    {
+     "t": 153.64,
+     "end": 154.2,
+     "cue": {
+      "word": "الفأر",
+      "t": 153.64
+     },
+     "who": "mouseHim",
+     "action": "He points at himself: ears shoot up, cheeks dot red, his tail curls into a heart",
+     "acting": "stretch sq 1.12, then tremble of delight",
+     "library": "rat tailCurl; settleTo"
+    },
+    {
+     "t": 154.28,
+     "end": 155.2,
+     "cue": {
+      "word": "وافق",
+      "t": 154.28
+     },
+     "who": "ascetic",
+     "action": "A long blink, a breath, one tear wiped with his sleeve; then a firm, smiling nod",
+     "acting": "grief to resolve, kept light: lid 1 for 0.4 s, breathe, nod drop 8 px",
+     "library": "lid, breathe"
+    },
+    {
+     "t": 155.34,
+     "end": 156.2,
+     "cue": {
+      "word": "الأب",
+      "t": 155.34
+     },
+     "who": "ascetic",
+     "action": "A last hug at human size; he steps back and lifts both hands as he did by the river; the cone of light returns",
+     "acting": "mirror of 16.3-18.3; eyes closed",
+     "library": "aL/aR angles; skyLight"
+    },
+    {
+     "t": 156.32,
+     "end": 157.3,
+     "cue": {
+      "word": "فتحولت",
+      "t": 156.32
+     },
+     "who": "fx",
+     "action": "POOF: the same star burst; her silhouette shrinks straight down inside it",
+     "acting": "burst identical to 23.2; silhouette sq 1 to 0.25; the yellow scarf floats down after her",
+     "library": "poofTransform reverse; fallY slow for the scarf"
+    },
+    {
+     "t": 157.46,
+     "end": 158.4,
+     "cue": {
+      "word": "فأرة",
+      "t": 157.46
+     },
+     "who": "mouseHer",
+     "action": "The puff clears: a small she-mouse sits in the middle of the fallen scarf, a tiny yellow bow between her ears; she looks at her paws and twitches her nose",
+     "acting": "the same blink-and-look-at-hands business as the child at 25.3",
+     "library": "rat kind 'mouse' pal 0, bow:true; noseTwitch"
+    },
+    {
+     "t": 158.5,
+     "end": 159.2,
+     "cue": {
+      "word": "جديد",
+      "t": 158.5
+     },
+     "who": "mouseHim",
+     "action": "He offers a shy paw; she scampers off the cloth and they touch noses; a small heart",
+     "acting": "his ears flat with shyness, her tail up",
+     "library": "rat scurry (ph, amp); heart()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 153.7,
+     "text": "ME?!"
+    },
+    {
+     "t": 156.4,
+     "text": "POOF!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 144.6,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 159.22
+   }
+  },
+  {
+   "id": "S14",
+   "start": 159.22,
+   "end": 168.0,
+   "paragraphs": [
+    8
+   ],
+   "set": "mountainFoot",
+   "cast": [
+    "mouseHer",
+    "mouseHim",
+    "ascetic",
+    "mountainFace",
+    "sunFace",
+    "cloudFace",
+    "wind"
+   ],
+   "summary": "He bows her in first. On the threshold she turns and waves to her father; he waves back with wet eyes. A warm light comes on in the hole. Father folds the scarf and heads home as the camera rises: sun, cloud, wind and mountain all look down at the tiny lit door. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "159.2 zoom 2.4 at the door. 160.3 widen to 1.8 to hold father and door together. 162.3-164.6 slow pull out and crane up to zoom 0.82, whole mountain and sky. Hold for THE END."
+   },
+   "composition": "Door at (700,885). Father kneeling at x 540, then walking left and out at x 150 by 167. Final wide: sun upper right (840,170), cloud (300,220), wind curl (140,420), mountain face centre; the lit hole is the brightest warm point, bottom right. THE END centred at y 520, clear of all faces.",
+   "actions": [
+    {
+     "t": 159.22,
+     "end": 160.2,
+     "cue": {
+      "word": "دخلت",
+      "t": 159.22
+     },
+     "who": "mouseHim",
+     "action": "The two mice trot to the door; he bows and sweeps a paw: after you",
+     "acting": "scurry by distance; bow tip 0.3",
+     "library": "rat ph/amp from distance"
+    },
+    {
+     "t": 160.34,
+     "end": 160.6,
+     "cue": {
+      "word": "بيت",
+      "t": 160.34
+     },
+     "who": "mouseHer",
+     "action": "On the threshold she stops, turns, stands up and waves at her father",
+     "acting": "turn with a squeeze (turnFlip), stand 1, paw wave 3 beats",
+     "library": "turnFlip; rat stand"
+    },
+    {
+     "t": 160.4,
+     "end": 161.1,
+     "cue": {
+      "word": "بيت",
+      "t": 160.34
+     },
+     "who": "ascetic",
+     "action": "Kneeling, he waves back with two fingers; eyes wet, smiling",
+     "acting": "wet true, small wave, slow blink",
+     "library": "PERSON_HANDS.wave small"
+    },
+    {
+     "t": 160.66,
+     "end": 161.1,
+     "cue": {
+      "word": "الفأر",
+      "t": 160.66
+     },
+     "who": "mouseHer",
+     "action": "She slips inside, he follows; her tail tip flicks last; a warm yellow light comes on in the hole",
+     "acting": "light = yellow disc with a dotted glow r 40",
+     "library": "clip at the hole edge; glow"
+    },
+    {
+     "t": 161.18,
+     "end": 162.2,
+     "cue": {
+      "word": "وانتهت",
+      "t": 161.18
+     },
+     "who": "ascetic",
+     "action": "He picks up the yellow scarf, folds it once and holds it to his chest, then stands",
+     "acting": "PERSON_HANDS.chest holding the cloth; breathe",
+     "library": "kneel 1 to 0"
+    },
+    {
+     "t": 162.3,
+     "end": 162.9,
+     "cue": {
+      "word": "رحلتها",
+      "t": 162.3
+     },
+     "who": "camera",
+     "action": "Slow pull out and crane up; father turns and walks home to the left with his stick",
+     "acting": "walk amp 0.7, one look back over the shoulder at 163.4",
+     "library": "camera keys; walk"
+    },
+    {
+     "t": 162.98,
+     "end": 164.0,
+     "cue": {
+      "word": "الطويلة",
+      "t": 162.98
+     },
+     "who": "fx",
+     "action": "The whole sky cast is in frame, each looking down at the little light; the rank strip completes: sun, cloud, wind, mountain, mouse, and a heart replaces the crown",
+     "acting": "sun, cloud and wind gaze lookAt(hole); they blink out of unison",
+     "library": "rankStrip done; elementFace gaze"
+    },
+    {
+     "t": 164.12,
+     "end": 165.0,
+     "cue": {
+      "word": "الجبل",
+      "t": 164.12
+     },
+     "who": "mountainFace",
+     "action": "The mountain smiles and closes its eyes over its new neighbours",
+     "acting": "lids ease shut, mouth crack curves up",
+     "library": "elementFace"
+    },
+    {
+     "t": 165.0,
+     "end": 168.0,
+     "who": "lettering",
+     "action": "THE END, held 3 s; the window light flickers gently, the cloud drifts, father is a small figure leaving frame left",
+     "acting": "nothing covers a face; idle life only",
+     "library": "S.title 'THE END'"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 165.0,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 165.3,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 168.0
+   }
+  }
+ ],
+ "ending": {
+  "t": 165.0,
+  "description": "Final wide held from 165.0 to 168.0: the whole mountain with closed, smiling eyes; sun, cloud and wind looking down; the tiny mouse door glowing warm at bottom right; the father a small figure walking home left. THE END in Bangers at centre, clear of all faces. The rank strip stays complete with a heart over the mouse."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان ناسك يجلس قرب نهر، فرأى طائرًا يحمل فأرة صغيرة في مخالبه.|سقطت الفأرة من الطائر أمامه، فحملها برفق.|أراد أن يحميها، فدعا الله أن تصبح فتاة تستطيع العيش في بيته.",
+   "en": "An ascetic was sitting beside a river when he saw a bird carrying a little mouse in its claws.|The mouse fell in front of him, and he picked her up gently.|Wanting to protect her, he prayed that she might become a girl and live in his home."
+  },
+  {
+   "p": 2,
+   "ar": "تحولت الفأرة إلى طفلة جميلة، وأخذها الناسك إلى زوجته.|ربياها كأنها ابنتهما، ومرت سنوات كثيرة حتى صارت شابة.|وفي يوم، سألها أبوها عن الرجل الذي تريد الزواج منه.",
+   "en": "The mouse turned into a beautiful little girl, and the ascetic took her to his wife.|They raised her as their own daughter. Many years passed, and she grew into a young woman.|One day, her father asked whom she wanted to marry."
+  },
+  {
+   "p": 3,
+   "ar": "قالت الفتاة: «أريد زوجًا أقوى من الجميع.»|فكر الأب قليلًا، ثم قال: «إذن اسألي الشمس.|إنها تضيء العالم كله، ولا نعرف شيئًا أقوى منها.»|فذهبا إلى الشمس.",
+   "en": "“I want a husband stronger than everyone,” the young woman said.|Her father thought for a moment. “Then ask the sun,” he said.|“It lights the whole world, and we know nothing stronger.”|So they went to the sun."
+  },
+  {
+   "p": 4,
+   "ar": "لكن الشمس قالت: «السحاب أقوى مني، لأنه يستطيع أن يحجب نوري.»|ذهبا إلى السحاب، فقال: «الريح أقوى مني.|إنها تدفعني من مكان إلى آخر، ولا أستطيع مقاومتها.»",
+   "en": "But the sun said, “The cloud is stronger than I am, because it can block my light.”|They went to the cloud, which said, “The wind is stronger than I am.|It pushes me from one place to another, and I cannot resist it.”"
+  },
+  {
+   "p": 5,
+   "ar": "سألا الريح، فقالت: «الجبل أقوى مني.|أستطيع تحريك السحاب والأشجار، لكن الجبل يبقى ثابتًا مهما هببت.»|فرحت الفتاة، وذهبت مع أبيها إلى الجبل الكبير.",
+   "en": "They asked the wind, which said, “The mountain is stronger than I am.|I can move clouds and trees, but the mountain stays in place however hard I blow.”|The young woman was pleased, and she and her father went to the great mountain."
+  },
+  {
+   "p": 6,
+   "ar": "قال الجبل: «هناك مخلوق صغير أقوى مني.|إنه الفأر الذي يحفر داخل الصخور، ويصنع لنفسه بيتًا في جسمي.|لا أقدر على منعه.»|نظرت الفتاة إلى أبيها بدهشة.",
+   "en": "The mountain said, “There is a little creature stronger than I am: the mouse.|He digs into the rocks and makes a home inside me.|I cannot stop him.”|The young woman looked at her father in surprise."
+  },
+  {
+   "p": 7,
+   "ar": "وجدا فأرًا قرب الجبل،|وسأله الناسك: «هل تتزوج ابنتي؟»|قال الفأر: «لكنها إنسانة، وبيتي صغير جدًا.|أستطيع الزواج من فأرة مثلي، لا من إنسانة.»",
+   "en": "They found a mouse near the mountain,|and the ascetic asked, “Will you marry my daughter?”|The mouse replied, “But she is human, and my home is very small.|I can marry a mouse like myself, not a human.”"
+  },
+  {
+   "p": 8,
+   "ar": "ابتسمت الفتاة وقالت لأبيها:|«أريد أن أعود فأرة كما كنت، وأتزوج هذا الفأر.»|وافق الأب، فتحولت إلى فأرة من جديد.|دخلت بيت الفأر، وانتهت رحلتها الطويلة عند الجبل.",
+   "en": "The young woman smiled and told her father,|“I want to become a mouse again, as I once was, and marry this mouse.”|Her father agreed, and she turned back into a mouse.|She entered the mouse’s home, and her long journey ended beside the mountain."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "rat",
+   "description": "Reuse the planned rat figure (KD-011) and add kind 'mouse': 70 % size, rounder ears (r 16 at s 1), two palettes (0 light grey, 1 brown-grey with head tuft). Extra fields: held (curled, limp legs for carrying), stand 0..1 (on hind legs), raise (front paw), dig (paw cycle), bow (yellow bow), noseTwitch, plus the shared acting fields.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Body = two ellipses and a round head, ears as circles, tail as a K bezier stroke driven by swing(); legs phase from walk(). About 60 units long at s 1; in S12 draw at s 1 with camera zoom 2.6 rather than scaling the figure."
+  },
+  {
+   "type": "character",
+   "name": "hawk (bird kind)",
+   "description": "Reuse the planned hawk kind on the Library bird, with talons that grip and the planned bird 'carry' callback so the mouse hangs from the feet.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Palette and hooked beak on bird(); carry draws mouseHer at the talon point with swing()."
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (ascetic, maiden)",
+   "description": "Two more presets for the planned person costume layer: 'ascetic' (off-white robe, small turban, beard grey or white by age 0..1, bare feet) and 'maiden' (yellow dress, yellow headscarf, two hair buns r 13 at head top, optional noseTwitch). The child uses the planned person child option in the maiden palette; the wife uses the planned villager villageWoman.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Parameter objects over person(): headwear, beard, palette, age; buns are two circles drawn before the head."
+  },
+  {
+   "type": "pose",
+   "name": "person kneel / sit",
+   "description": "Reuse the planned kneel 0..1 and sit 0..1: the ascetic sits cross-legged, kneels to the mouse; father and daughter sit on the bench.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "As planned by AN-095/KD-009: lower the hip, fold the leg shapes, keep arm IK."
+  },
+  {
+   "type": "effect",
+   "name": "elementFace",
+   "description": "One face rig for things that are not animals: two eyes (with per-eye lids lidL/lidR, gaze, brow), a mouth (closed, smile, frown, o, talk) and a width parameter. Used on the sun (150 wide), cloud (130), wind curl (70) and mountain (ledges as lids, crack as mouth).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "A function elementFace(ctx, {x, y, w, gaze, lidL, lidR, brow, mouth, talk, style:'ink'|'rock'}) using the same eye2 helper as the cast so gaze and blink() behave identically."
+  },
+  {
+   "type": "character",
+   "name": "windSpirit",
+   "description": "The wind as five tapering brush bands following one bezier path, with elementFace in the leading curl; states idle, coil (anticipation), blow (bands straighten, speed lines), flat (pancake on impact), limp.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Each band is a stroked K bezier offset along the path normal, phase-shifted by sin(t); position from a keyed path so every frame is a function of t. White with pale-blue second pass and black brush outline."
+  },
+  {
+   "type": "set",
+   "name": "mountain",
+   "description": "Grey triangular massif with snow cap, three ridge lines, pebbles, optional face (elementFace style 'rock'), mouse holes at given points, a boulder, and a far version at 40 % scale. Optional round cutaway interior with tunnel polyline, room, bed, lamp, mat.",
+   "reusable": true,
+   "effort": "L",
+   "implementation": "Polygon in den() greys with Ben-Day shade on the right flank, baked once with bake(); face, holes, boulder and cutaway drawn live on top. Cutaway = the planned macroLens circle with a dark rock fill."
+  },
+  {
+   "type": "effect",
+   "name": "poofTransform",
+   "description": "Transformation burst: stars spiral in (gather), star burst plus puff ring with a 2-frame flash, two black silhouettes cross-scaled inside (from, to), puff clears. Runs forward (mouse to girl) and reversed (woman to mouse).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "S.emphasis burst, 8 seeded stars on a spiral, cloud puffs from cloudFlat circles; silhouettes via the cast function drawn in solid black."
+  },
+  {
+   "type": "effect",
+   "name": "rankStrip",
+   "description": "Five-slot chain of 56 px icons (sun, cloud, wind, mountain, mouse) with small arrows, a hopping STRONGEST? tag, a crown and finally a heart; drawn in panel space at the top of the picture, hidden during S1-S5, S12 and close shots where it would crowd a face.",
+   "reusable": false,
+   "effort": "S",
+   "implementation": "S.box per slot with simplified flat icons; n and tag position keyed by time with settleTo pops."
+  },
+  {
+   "type": "effect",
+   "name": "skyLight",
+   "description": "Soft cone of yellow halftone light from the top of the frame for the two prayers.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Clipped trapezoid with a vertical alpha ramp and Ben-Day dots."
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "description": "Reuse the planned generic thought cloud for the wish (18.0), the groom (42.2), the mouse's ideal wife (141.2) and the memory (150.0).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned: cloud(box, drawInside)."
+  },
+  {
+   "type": "prop",
+   "name": "heightMarks, scarf, beads",
+   "description": "Small story props (see props).",
+   "reusable": false,
+   "effort": "S",
+   "implementation": "Flat shapes."
+  }
+ ],
+ "owner_questions": [
+  "The fall is softened: the mouse bounces through the fig tree's leaves before landing unhurt (default: yes).",
+  "Prayer is shown only as raised hands, closed eyes and a cone of light from above, with no figure in the sky (default: yes).",
+  "Sun, cloud, wind and mountain get simple cartoon faces and act (the script lets them speak); default: yes.",
+  "The girl keeps two round hair buns and a nose twitch as a visual echo of the mouse, and her shadow looks like a mouse at 144.5 s (default: yes).",
+  "Added comic business not in the script: mother eavesdropping at the window, the wind flattening on the mountain, the boulder and second hole, the finger knocking over the mouse's bed (default: keep all).",
+  "An on-screen rank strip of icons (sun, cloud, wind, mountain, mouse) tracks who is stronger (default: yes).",
+  "Invented lettering: PLOP!, POOF! (twice), THE STRONGEST!, BLOCKED!, WHOOSH!, BONK! (twice), THAT ONE!, SQUEAK!, DIG DIG DIG, POP!, ME?!, and labels such as YEARS LATER..., ALL GROWN UP, A MOUSE LIKE ME (default: keep).",
+  "The mother does not travel and is not in the ending; the father walks home alone carrying the folded scarf, smiling (default: yes, bittersweet but warm)."
+ ],
+ "implementation_notes": [
+  "Timing: use w(p, n) from timing.json; every cue.t here is the word start in planning/inputs/timeline.md. Word starts can include up to 0.4 s of silence, so check the POOFs (23.20, 156.32), the shoves (80.70, 82.66) and the BONK (98.04) against the audio by ear.",
+  "Only seven sound effects, all in listed pauses or after the last word: 3.2 whoosh, 22.6 chime, 50.95 pop, 63.2 pop, 65.9 chime, 144.6 chime, 165.3 chime. The POOF at 156.32 is silent on purpose (no pause there).",
+  "Scale plan: people s 0.6 in the sky scenes and s 0.95 in the yard; mice are drawn at s 1 (about 60 units long) and read through camera zoom 2.2-2.6 in S12-S14. Check the mouse is at least 110 px on screen whenever it acts.",
+  "Set LIFE.t = t each frame; elementFace must also take blink() seeds so the giants blink, never in unison.",
+  "The dimming at 72.92 is an overlay inside the picture panel clip only; restore it when the cloud leaves (82.66 briefly, fully at 85.0).",
+  "The hair buns must be visible in every maiden and child pose; they carry the shadow gag at 144.5 and the ending.",
+  "The camera cut from early to later yard hides under the YEARS LATER... card (two camera keys 0.01 s apart at 35.9).",
+  "rankStrip is drawn after the world and before finish; hide it whenever a face or label would come within 40 px of it.",
+  "Subtitles: use the | marks in 'subtitles' for chunks_ar.txt and chunks_en.txt; P6 chunk 1 ends at different points in the two languages by design (English names the mouse earlier).",
+  "Call finish last; apply shakes inside the panel clip only; no en or em dashes in any lettering."
+ ],
+ "warnings": [
+  "Four speaking non-animal characters need one new shared rig (elementFace); budget it first because sun, cloud, wind and mountain all depend on it.",
+  "The planned assets rat, hawk, villageYard, person kneel/sit, child option, costume presets, thoughtCloud and macroLens do not exist in Library yet; if this story is built before KD-009/KD-010/KD-011, they must be drawn here under the same names.",
+  "Scale contrast (mountain, people, mice) is the main legibility risk on a phone; the S12 low-angle shot and the final wide must be checked on a contact sheet.",
+  "S11 is 20.4 s with about 20 actions including the cutaway; if it feels crowded drop the boulder gag (119.70-122.2) first.",
+  "The S1 fall lasts 2.8 s of narration; the leaf bounce fills it. If the Library river set cannot lose islandHut cleanly, cover the right bank with bush()."
+ ]
+}

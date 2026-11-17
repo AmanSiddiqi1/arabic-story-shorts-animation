@@ -1,0 +1,113 @@
+{
+ "story_id": "KD-014",
+ "title": "The Mouse Marries Only a Mouse",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T12:08:25",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a869eeff7ee19d8d4.jsonl",
+ "agent_id": "a869eeff7ee19d8d4",
+ "model_messages": {
+  "claude-fable-5-2": 17
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "4a4e48178050f2eb81485157928f96f73fefdf7f17bf1d4cc052bbbe2e24a19a",
+  "paragraphs": 8,
+  "segments": [
+   "KD-014-P01-S01",
+   "KD-014-P01-S02",
+   "KD-014-P01-S03",
+   "KD-014-P01-S04",
+   "KD-014-P01-S05",
+   "KD-014-P01-S06",
+   "KD-014-P01-S07",
+   "KD-014-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/KD-014_The_Mouse_Marries_Only_a_Mouse_full_slowed.mp3",
+  "sha256": "5b64a09cb6ec487f84f2af5c8c42c530e34914307cac64b8364c4f18ec103494",
+  "duration": 165.015
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/KD-014_The_Mouse_Marries_Only_a_Mouse_full_slowed.mp3.words.json",
+  "sha256": "b76bee0f46f3435534fc30a21b7857c6a2ffebfa717892f752d0b7bc07843ea6",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "7721db2",
+ "scenes": 14,
+ "actions": 164,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "rat",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "hawk (bird kind)",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (ascetic, maiden)",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "person kneel / sit",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "elementFace",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "windSpirit",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "mountain",
+   "effort": "L"
+  },
+  {
+   "type": "effect",
+   "name": "poofTransform",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "rankStrip",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "skyLight",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "heightMarks, scarf, beads",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Four speaking non-animal characters need one new shared rig (elementFace); budget it first because sun, cloud, wind and mountain all depend on it.",
+  "The planned assets rat, hawk, villageYard, person kneel/sit, child option, costume presets, thoughtCloud and macroLens do not exist in Library yet; if this story is built before KD-009/KD-010/KD-011, they must be drawn here under the same names.",
+  "Scale contrast (mountain, people, mice) is the main legibility risk on a phone; the S12 low-angle shot and the final wide must be checked on a contact sheet.",
+  "S11 is 20.4 s with about 20 actions including the cutaway; if it feels crowded drop the boulder gag (119.70-122.2) first.",
+  "The S1 fall lasts 2.8 s of narration; the leaf bounce fills it. If the Library river set cannot lose islandHut cleanly, cover the right bank with bush()."
+ ]
+}

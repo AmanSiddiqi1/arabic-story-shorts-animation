@@ -1,0 +1,94 @@
+{
+ "story_id": "AN-127",
+ "title": "MUS'AB BIN AL-ZUBAYR AND AYISHAH HIS WIFE",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T14:59:42",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a6370f6366399dba5.jsonl",
+ "agent_id": "a6370f6366399dba5",
+ "model_messages": {
+  "claude-fable-5-2": 28
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "575f444416d7bfb44b6ae994ebf3a75f1ba6cef3adb6a430d2281abf06e81ca0",
+  "paragraphs": 8,
+  "segments": [
+   "AN-127-P01-S01",
+   "AN-127-P01-S02",
+   "AN-127-P01-S03",
+   "AN-127-P01-S04",
+   "AN-127-P01-S05",
+   "AN-127-P01-S06",
+   "AN-127-P01-S07",
+   "AN-127-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-127_MUS_AB_BIN_AL_ZUBAYR_AND_AYISHAH_HIS_WIFE_full_slowed.mp3",
+  "sha256": "2597b602a0f14520275e0db4fece608118caeb88964f2e25bd791147e875d568",
+  "duration": 179.814
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-127_MUS_AB_BIN_AL_ZUBAYR_AND_AYISHAH_HIS_WIFE_full_slowed.mp3.words.json",
+  "sha256": "bb59cea807b5bd8f01016fe48dbd909506b5d03ad6a1eab2ccdbacdf6760dd9d",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.996
+ },
+ "library_rev": "5a93429",
+ "scenes": 15,
+ "actions": 157,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "person costume preset 'noble' (pal variant of merchant)",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person bigFeet",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "iconBalloon",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "verseRibbon",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "scroll (long)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "floorCushion, foodTray, portraitMedallion",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "flush (soft option)",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "musicNotes",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Adult theme: the script speaks openly about a married couple's intimacy. The staging is deliberately discreet; do not add anything more explicit when implementing.",
+  "The narration has only four pauses of 0.6 s or more, so sound effects are few.",
+  "The palaceHall merchant curtain is narrow (about 110 wide); if two figures do not hide behind it, widen it with the curtain geometry option or let them exit past its edge.",
+  "Six women share two costume families; keep the palettes far apart (red Ayishah, green Izzah, purple visitor, orange neighbour, blue/yellow/purple-grey/brown guests) and use name tags on first appearance.",
+  "S9 is 21 s in one room: the camera plan (close, reveal, wide, close, wide) and the travelling ribbon must carry it."
+ ],
+ "coordinator_adjustment": "3-minute cap: end_hold 3.5 -> 0.18"
+}

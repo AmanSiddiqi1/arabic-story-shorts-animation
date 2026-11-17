@@ -1,0 +1,104 @@
+{
+ "story_id": "AN-104",
+ "title": "THE MAN WHO STOLE THE DISH OF GOLD WHEREIN THE DOG ATE",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T14:14:54",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a16992c75e5188e0f.jsonl",
+ "agent_id": "a16992c75e5188e0f",
+ "model_messages": {
+  "claude-fable-5-2": 24
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "59455cc7447596adb38ac7456102dd461eeaa49f7c2c4bf6062077903982852d",
+  "paragraphs": 8,
+  "segments": [
+   "AN-104-P01-S01",
+   "AN-104-P01-S02",
+   "AN-104-P01-S03",
+   "AN-104-P01-S04",
+   "AN-104-P01-S05",
+   "AN-104-P01-S06",
+   "AN-104-P01-S07",
+   "AN-104-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-104_THE_MAN_WHO_STOLE_THE_DISH_OF_GOLD_WHEREIN_THE_DOG_ATE_full_slowed.mp3",
+  "sha256": "f53834323dff07192816a16c1de10a7de7357eec1ffb2a44c40f832d6b27cc17",
+  "duration": 168.586
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-104_THE_MAN_WHO_STOLE_THE_DISH_OF_GOLD_WHEREIN_THE_DOG_ATE_full_slowed.mp3.words.json",
+  "sha256": "070ed952ed8accfa62cd0eca9898bb24d3199c887aa090eaf4b61a2709dd7769",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "2e7a9d0",
+ "scenes": 16,
+ "actions": 153,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "dog",
+   "effort": "L"
+  },
+  {
+   "type": "pose",
+   "name": "dog headDown / chew / raise / collar / age",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "goldDish",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "chainLine",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "scroll, coinPile, purse, treasureHoard chest, foodTray",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "effort": "S"
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "sneak",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "coinEyes",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The dog is the largest new drawing (planned by AN-040, not yet in the Library) and carries the film: four instances plus an aged variant, with headDown, raise and collar fields added here. Build and approve it first.",
+  "Four large dogs, the seated stranger, two servants, three guests and the lord share one 1000-wide hall in S3 to S5: stage guests and lord small on the dais in the background and take the servants off by 45.8, or the frame will be crowded.",
+  "The front-facing person cannot show a profile: eating from the dish, the kneeling offer and the paw on the knee rely on hand targets (handLW / handRW) and gaze; check these read at phone size with stills.",
+  "Recognition of the poor owner depends on the round inset and the blue colour link, because the ascetic preset has a different beard and headwear from the merchant preset; if pal cannot keep the merchant beard shape, lean on the inset.",
+  "palaceHall is an interior; the script says courtyard. If the owner wants open sky, draw the sky through the arches with the outside(ctx) callback.",
+  "English paragraph 7 compresses the Arabic (it omits asking the way and the recognition) and paragraph 8 turns direct speech into reported speech; subtitles are verbatim in both languages, chunk pairs are aligned as closely as the texts allow."
+ ]
+}

@@ -1,0 +1,2295 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "KD-008",
+ "title": "The Tortoise and the Two Ducks",
+ "duration": 170.452,
+ "end_hold": 4.0,
+ "logline": "When her pond dries up, a tortoise is carried through the sky by two duck friends on a stick she must hold in her mouth; stung by the laughter of villagers below, she opens it to answer and falls.",
+ "moral": "Keep your word and your temper: one answer given in anger can undo everything your friends have done for you.",
+ "tone": "Warm and funny for the first two thirds (a slow tortoise, two earnest ducks, a clever plan), real suspense in the air, then a quiet, honest ending without gore or jokes.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.6,
+   "kind": "setup",
+   "cue": {
+    "word": "سلحفاة",
+    "t": 0.6
+   },
+   "summary": "A tortoise at home in a full pond."
+  },
+  {
+   "id": "B2",
+   "t": 6.32,
+   "kind": "setup",
+   "cue": {
+    "word": "صديقتان",
+    "t": 6.32
+   },
+   "summary": "Her two duck friends arrive, as every morning, with stories of far places."
+  },
+  {
+   "id": "B3",
+   "t": 25.5,
+   "kind": "inciting",
+   "cue": {
+    "word": "ينقص.",
+    "t": 25.5
+   },
+   "summary": "No rain: the pond shrinks to a puddle."
+  },
+  {
+   "id": "B4",
+   "t": 33.8,
+   "kind": "emotion",
+   "cue": {
+    "word": "خافت",
+    "t": 33.8
+   },
+   "summary": "She is frightened; she cannot travel far."
+  },
+  {
+   "id": "B5",
+   "t": 43.54,
+   "kind": "rising",
+   "cue": {
+    "word": "بحيرة",
+    "t": 43.54
+   },
+   "summary": "The ducks know a big lake beyond the hills; but how can she get there?"
+  },
+  {
+   "id": "B6",
+   "t": 64.88,
+   "kind": "turn",
+   "cue": {
+    "word": "عصًا",
+    "t": 64.88
+   },
+   "summary": "The stick and the plan."
+  },
+  {
+   "id": "B7",
+   "t": 90.92,
+   "kind": "suspense",
+   "cue": {
+    "word": "تفتحي",
+    "t": 90.92
+   },
+   "summary": "The one rule: do not open your mouth."
+  },
+  {
+   "id": "B8",
+   "t": 96.42,
+   "kind": "comic",
+   "cue": {
+    "word": "تكلمتِ،",
+    "t": 96.42
+   },
+   "summary": "The pebble demonstration: speak and it falls (setup for the climax)."
+  },
+  {
+   "id": "B9",
+   "t": 109.98,
+   "kind": "rising",
+   "cue": {
+    "word": "ارتفعت",
+    "t": 109.98
+   },
+   "summary": "Lift-off over trees and houses."
+  },
+  {
+   "id": "B10",
+   "t": 124.74,
+   "kind": "suspense",
+   "cue": {
+    "word": "صامتة.",
+    "t": 124.74
+   },
+   "summary": "Delight almost makes her speak; she stays silent."
+  },
+  {
+   "id": "B11",
+   "t": 133.02,
+   "kind": "turn",
+   "cue": {
+    "word": "«انظروا!",
+    "t": 133.02
+   },
+   "summary": "The villagers see her and shout."
+  },
+  {
+   "id": "B12",
+   "t": 141.3,
+   "kind": "emotion",
+   "cue": {
+    "word": "غضبت",
+    "t": 141.3
+   },
+   "summary": "Their laughter makes her angry."
+  },
+  {
+   "id": "B13",
+   "t": 154.26,
+   "kind": "climax",
+   "cue": {
+    "word": "فمها",
+    "t": 154.26
+   },
+   "summary": "She opens her mouth to answer."
+  },
+  {
+   "id": "B14",
+   "t": 160.82,
+   "kind": "surprise",
+   "cue": {
+    "word": "وسقطت",
+    "t": 160.82
+   },
+   "summary": "She lets go of the stick and falls."
+  },
+  {
+   "id": "B15",
+   "t": 163.86,
+   "kind": "resolution",
+   "cue": {
+    "word": "تنجُ",
+    "t": 163.86
+   },
+   "summary": "She does not survive; the laughter stops."
+  },
+  {
+   "id": "B16",
+   "t": 169.1,
+   "kind": "moral",
+   "cue": {
+    "word": "وحدهما.",
+    "t": 169.1
+   },
+   "summary": "The ducks reach the lake alone, with an empty stick."
+  }
+ ],
+ "cast": [
+  {
+   "id": "tortoise",
+   "name": "the tortoise",
+   "library": "tortoise",
+   "base": "Library tortoise at scale about 1.9, with new optional acting fields",
+   "look": "Green domed shell with dots, yellow rim, short legs. New optional fields (default off): neck, headRot, talk, mouth set (closed, smile, frown, o, open), brow, bite, dangle, flush.",
+   "new": false
+  },
+  {
+   "id": "duckA",
+   "name": "duck A (the leader, speaks first)",
+   "library": null,
+   "base": "new duck figure built on the bird skeleton",
+   "look": "White duck, orange bill and feet, a small curl on the tail. Calm, decisive.",
+   "new": true
+  },
+  {
+   "id": "duckB",
+   "name": "duck B (the eager one)",
+   "library": null,
+   "base": "duck figure, palette 1",
+   "look": "Mallard palette: brown body with red dot shading, blue wing patch, green head, yellow bill. Slightly smaller, quicker, reacts a few frames after A.",
+   "new": true
+  },
+  {
+   "id": "songbird",
+   "name": "a songbird",
+   "library": "songbird",
+   "base": "songbird",
+   "look": "Red, as in the catalogue.",
+   "new": false
+  },
+  {
+   "id": "child",
+   "name": "village child",
+   "library": "person",
+   "base": "villager (planned, KD-005) at scale 0.7, no moustache, short tunic",
+   "look": "Yellow tunic, bare head with a black fringe.",
+   "new": true
+  },
+  {
+   "id": "man",
+   "name": "the man who shouts",
+   "library": "person",
+   "base": "villager (planned, KD-005): owner base, small turban, moustache, blue tunic",
+   "look": "Blue dotted tunic, white turban (removable cap for the ending), holds a broom at first.",
+   "new": true
+  },
+  {
+   "id": "woman",
+   "name": "village woman",
+   "library": "person",
+   "base": "villageWoman (planned, KD-005): wife base, headscarf, red dress",
+   "look": "Red dress, white headscarf, carries a jar at first.",
+   "new": true
+  },
+  {
+   "id": "onlookers",
+   "name": "two more villagers (window and doorway)",
+   "library": "person",
+   "base": "villager variants: different tunic colour, beard, width",
+   "look": "Seen head and shoulders only.",
+   "new": true
+  }
+ ],
+ "sets": [
+  {
+   "id": "forestPond",
+   "library": null,
+   "description": "sky + sun + treeRow + hillTrees + ground from the Library, plus a new pond with level 0..1 (water ellipse, wet ring, cracked mud ring, reeds, a flat stone). Palettes: fresh morning (S1) and hot dry (S2 to S6).",
+   "new": true
+  },
+  {
+   "id": "skyFlight",
+   "library": null,
+   "description": "Open sky with cloudFlat layers and a scrolling aerialStrip below: tree crowns, then small roofs, then a far patchwork with a river thread. Three parallax layers driven by one flight distance function.",
+   "new": true
+  },
+  {
+   "id": "village",
+   "library": null,
+   "description": "A lane with three flat-roofed mud houses (one window, one doorway, a dome on one roof), a palm and a wall; also drawn small inside aerialStrip. Generic and reusable.",
+   "new": true
+  },
+  {
+   "id": "lake",
+   "library": "river",
+   "description": "Composed from Library sky (dusk preset), hillTrees and river() widened to fill the lower panel, plus reeds; matches the picture in the S3 thought cloud.",
+   "new": false
+  }
+ ],
+ "props": [
+  {
+   "id": "stick",
+   "library": null,
+   "description": "Brown branch 420 long with two knots and a twig stub; bends as a quadratic curve under load; can float.",
+   "new": true
+  },
+  {
+   "id": "pebble",
+   "library": null,
+   "description": "Small grey stone for the demonstration.",
+   "new": true
+  },
+  {
+   "id": "snail",
+   "library": null,
+   "description": "Tiny snail (spiral shell, two eye stalks) that overtakes the tortoise.",
+   "new": true
+  },
+  {
+   "id": "ball",
+   "library": null,
+   "description": "Red ball the child plays with.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 19.4,
+   "paragraphs": [
+    1
+   ],
+   "set": "forestPond",
+   "cast": [
+    "tortoise",
+    "duckA",
+    "duckB",
+    "songbird"
+   ],
+   "summary": "Morning at the full pond. The tortoise wakes, her two duck friends fly in as they do every morning, and their stories of rivers, mountains and far places play in a thought cloud while she listens with shining eyes.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Open on the whole pond at zoom 1.0 (x 500, y 640); ease to zoom 1.35 on the stone and the near water by 5.2 and hold; widen a little to 1.2 at 13.9 so the thought cloud has room above the ducks."
+   },
+   "composition": "Pond ellipse centred (540, 990), 640 wide, full (level 1). Tortoise on a flat stone on the left bank at (240, 925), facing right. Ducks land on the water at (610, 965) and (760, 985) facing left. treeRow behind, sun top right (800, 190). Thought cloud at (600, 430), about 520 wide, clear of every face.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 2.0,
+     "cue": {
+      "word": "عاشت",
+      "t": 0.0
+     },
+     "who": "camera",
+     "action": "establishing shot of the pond among the trees; slow push-in begins",
+     "acting": "calm: cloud drifts, reeds sway on swing(), two ripple rings on the water"
+    },
+    {
+     "t": 0.5,
+     "end": 1.5,
+     "cue": {
+      "word": "سلحفاة",
+      "t": 0.6
+     },
+     "who": "tortoise",
+     "action": "head comes out of the shell (hide 1 to 0), a slow blink, a small yawn",
+     "acting": "lid 0.7 easing to 0.1, mouth o then smile; neck stretch overshoots and settles (settleTo)",
+     "library": "tortoise {hide, mouth} + new neck/mouth fields; blink()"
+    },
+    {
+     "t": 1.7,
+     "end": 3.0,
+     "cue": {
+      "word": "بركة",
+      "t": 1.78
+     },
+     "who": "set",
+     "action": "water glints and two ripple rings spread; label HOME with an arrow to the pond",
+     "acting": "tortoise looks down at her water, content (gaze [0.6, 0.5])",
+     "library": "ripple; S.label + S.arrow"
+    },
+    {
+     "t": 3.6,
+     "end": 5.0,
+     "cue": {
+      "word": "الأشجار.",
+      "t": 3.82
+     },
+     "who": "songbird",
+     "action": "a songbird flits between two trunks behind the pond and perches",
+     "acting": "tortoise eyes follow it (lookAt), head lags 4 frames behind the pupils",
+     "library": "songbird {fly, flap}; lookAt"
+    },
+    {
+     "t": 5.0,
+     "end": 6.2,
+     "cue": {
+      "word": "وكان",
+      "t": 5.22
+     },
+     "who": "tortoise",
+     "action": "lifts her head to the sky on the right: she is waiting for someone",
+     "acting": "gaze up right [0.7, -0.7], brow raised (negative), smile grows; a small anticipation bounce (sq 0.96 to 1.02)",
+     "library": "gazePlan, anticipate"
+    },
+    {
+     "t": 6.1,
+     "end": 7.5,
+     "cue": {
+      "word": "صديقتان",
+      "t": 6.32
+     },
+     "who": "duckA",
+     "action": "two ducks fly in from the top right in a staggered line, duck A leading, duck B 0.25 s behind and lower",
+     "acting": "flap phases offset by a third of a cycle (never in unison); both look down at the tortoise; she rises on her front legs",
+     "library": "duck {fly, flap}; bezier flight path like Lark flyBz"
+    },
+    {
+     "t": 7.4,
+     "end": 8.2,
+     "cue": {
+      "word": "البطّ،",
+      "t": 7.56
+     },
+     "who": "duckB",
+     "action": "both land on the water, A first then B: wings back, feet forward, splash and squash",
+     "acting": "landSquash on each duck 6 frames apart, ripple rings; tortoise blinks at the spray and laughs (mouth open, lid squeeze)",
+     "library": "landSquash, ripple, dustBurst recoloured white for spray"
+    },
+    {
+     "t": 8.0,
+     "end": 9.6,
+     "cue": {
+      "word": "تزورانها",
+      "t": 8.06
+     },
+     "who": "tortoise",
+     "action": "walks three steps down the bank to the water edge to greet them; ducks paddle toward her",
+     "acting": "legs from walk() (no sliding), footfall dust; ducks paddle with swimPhase and wake; all three keep eye contact",
+     "library": "walk, footfalls, swimPhase"
+    },
+    {
+     "t": 9.7,
+     "end": 11.0,
+     "cue": {
+      "word": "صباح.",
+      "t": 9.92
+     },
+     "who": "fx",
+     "action": "the sun bounces three small times with a counter 1, 2, 3 and the label EVERY MORNING",
+     "acting": "ducks nod on different bounces; tortoise settles at the edge, front feet tucked",
+     "library": "sun(); S.counter + S.label"
+    },
+    {
+     "t": 11.1,
+     "end": 12.6,
+     "cue": {
+      "word": "السلحفاة",
+      "t": 11.84
+     },
+     "who": "tortoise",
+     "action": "settles to listen: neck stretched toward the ducks, chin low, eyes wide",
+     "acting": "gaze locked on duck A, slow blink, head tilt 5 px toward the speaker; breathing idle (breathe)",
+     "library": "breathe, lookAt"
+    },
+    {
+     "t": 13.6,
+     "end": 15.0,
+     "cue": {
+      "word": "قصصهما",
+      "t": 13.92
+     },
+     "who": "duckA",
+     "action": "duck A tells a story: bill talks, one wing sweeps wide; a thought cloud opens above the ducks",
+     "acting": "duck A gaze goes up into the cloud then back to the tortoise; duck B watches A and nods late",
+     "library": "duck {talk, wing}; thoughtCloud"
+    },
+    {
+     "t": 15.1,
+     "end": 16.0,
+     "cue": {
+      "word": "الأنهار",
+      "t": 15.26
+     },
+     "who": "fx",
+     "action": "inside the cloud a blue river winds in from the left (draw-on)",
+     "acting": "tortoise pupils trace the river left to right",
+     "library": "thoughtCloud inside: K.wobblyLine river band"
+    },
+    {
+     "t": 15.9,
+     "end": 16.9,
+     "cue": {
+      "word": "والجبال",
+      "t": 16.06
+     },
+     "who": "duckB",
+     "action": "mountains pop up in the cloud; duck B stretches both wings high to show how tall",
+     "acting": "duck B stretch sq 1.1 on tiptoe; tortoise head tilts back to look up, mouth o",
+     "library": "duck {wingsUp}, sq"
+    },
+    {
+     "t": 16.9,
+     "end": 18.9,
+     "cue": {
+      "word": "البعيدة.",
+      "t": 18.02
+     },
+     "who": "tortoise",
+     "action": "a tiny far city on a dotted path appears at the cloud edge; she glances at her own short legs, then back at the far place",
+     "acting": "eyes shine (wet highlight used as sparkle), a long sigh (sq 1.03 then 0.97), smile a little wistful",
+     "library": "wet, gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 7.6,
+     "text": "QUACK!"
+    },
+    {
+     "t": 1.9,
+     "text": "HOME"
+    },
+    {
+     "t": 9.9,
+     "text": "EVERY MORNING"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 19.3,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 19.4,
+    "label": "DAYS LATER..."
+   }
+  },
+  {
+   "id": "S2",
+   "start": 19.4,
+   "end": 40.0,
+   "paragraphs": [
+    2
+   ],
+   "set": "forestPond",
+   "cast": [
+    "tortoise"
+   ],
+   "summary": "Drought. Under the DAYS LATER card the sky turns hot and the sun arcs over several times; the water line sinks, the mud cracks, only a puddle is left. The tortoise is frightened: the hills are far and three hard steps take her nowhere.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Camera cut hidden at the covered midpoint of the card. Wide (zoom 1.1) for the sinking water; slow pan along the cracked edge 27.2 to 30; push to zoom 1.9 on her face at 33.8; pull back to 1.2 at 36.6 for the three steps."
+   },
+   "composition": "Same pond geometry so the loss reads: the old shoreline stays as a darker dry ring. Tortoise on the cracked mud at (300, 940). Puddle finally at (560, 1000), 170 wide. Hot sky (dawn preset, yellow) with a big sun at (700, 200). Far hills on the right horizon are the goal of her gaze.",
+   "actions": [
+    {
+     "t": 19.4,
+     "end": 20.9,
+     "cue": {
+      "word": "مرّت",
+      "t": 19.98
+     },
+     "who": "fx",
+     "action": "transition card DAYS LATER... covers the panel; underneath, the set switches to the hot palette",
+     "acting": "none (card)",
+     "library": "S.transition caption; camera key pair 0.01 s apart at p = 0.5"
+    },
+    {
+     "t": 20.5,
+     "end": 22.2,
+     "cue": {
+      "word": "أيام",
+      "t": 20.68
+     },
+     "who": "fx",
+     "action": "the sun crosses the sky three times fast while a counter runs DAY 10, 20, 30",
+     "acting": "tortoise head follows each pass less and less (tired), lid creeping to 0.3",
+     "library": "dayCycle (planned effect) or sun() on an arc; S.counter"
+    },
+    {
+     "t": 22.4,
+     "end": 23.4,
+     "cue": {
+      "word": "مطر،",
+      "t": 22.76
+     },
+     "who": "fx",
+     "action": "one small cloud drifts in; she looks up hopeful; it shrinks to nothing. Label NO RAIN with a crossed raindrop",
+     "acting": "gaze up, brow raised, mouth o; as it vanishes the brow sinks and the head drops 6 px",
+     "library": "cloudFlat scaled to 0; S.label"
+    },
+    {
+     "t": 23.3,
+     "end": 25.3,
+     "cue": {
+      "word": "ماء",
+      "t": 24.26
+     },
+     "who": "set",
+     "action": "the water line sinks: pond level 1 to 0.5, a darker wet ring is left; a down arrow at the edge",
+     "acting": "she watches the edge leave her feet, pupils tracking it down",
+     "library": "pond {level}; S.arrow"
+    },
+    {
+     "t": 25.3,
+     "end": 26.3,
+     "cue": {
+      "word": "ينقص.",
+      "t": 25.5
+     },
+     "who": "tortoise",
+     "action": "stretches her neck down to where the water was and finds dry mud",
+     "acting": "neck out long, mouth frown, blink twice quickly",
+     "library": "tortoise neck field; settleTo"
+    },
+    {
+     "t": 27.0,
+     "end": 28.3,
+     "cue": {
+      "word": "جفّ",
+      "t": 27.22
+     },
+     "who": "set",
+     "action": "cracks run through the mud ring, growing from the old shore inward, in three bursts",
+     "acting": "she lifts one foot off a crack as it passes under her (startle hop 4 px)",
+     "library": "pond {cracks 0..1}: seeded polylines drawn on with K.rng"
+    },
+    {
+     "t": 28.4,
+     "end": 29.9,
+     "cue": {
+      "word": "أطرافها،",
+      "t": 28.68
+     },
+     "who": "set",
+     "action": "the reeds droop and one dry leaf falls and skitters; camera pans along the edge",
+     "acting": "reeds on swing() with a lower rest angle; her gaze follows the leaf",
+     "library": "swing; kfn leaf path"
+    },
+    {
+     "t": 30.2,
+     "end": 32.0,
+     "cue": {
+      "word": "قليل",
+      "t": 31.42
+     },
+     "who": "set",
+     "action": "pond level 0.5 to 0.14: only a puddle; label A LITTLE WATER with an arrow",
+     "acting": "she crawls two steps to the puddle, low and slow",
+     "library": "pond {level}; walk; S.label + S.arrow"
+    },
+    {
+     "t": 32.2,
+     "end": 33.0,
+     "cue": {
+      "word": "الماء.",
+      "t": 32.36
+     },
+     "who": "tortoise",
+     "action": "dips one front foot in: a single small ripple, the foot touches bottom at once",
+     "acting": "looks at the foot, then at camera side (not lens), worried brow",
+     "library": "ripple"
+    },
+    {
+     "t": 33.6,
+     "end": 35.2,
+     "cue": {
+      "word": "خافت",
+      "t": 33.8
+     },
+     "who": "tortoise",
+     "action": "push-in: she is frightened; head pulls halfway into the shell",
+     "acting": "eyes wide, brow raised hard (negative), tremble, hide 0.5, one sweat drop; blinks suppressed during the shock",
+     "library": "tremble; tortoise {hide}"
+    },
+    {
+     "t": 35.3,
+     "end": 36.5,
+     "cue": {
+      "word": "لأنها",
+      "t": 35.42
+     },
+     "who": "tortoise",
+     "action": "peeks out and looks to the far hills; a small thought cloud shows the long dotted path over them",
+     "acting": "gaze far right [1, -0.2], lid 0.2, swallow (neck pulse)",
+     "library": "thoughtCloud small; lookAt"
+    },
+    {
+     "t": 36.6,
+     "end": 38.5,
+     "cue": {
+      "word": "السفر",
+      "t": 37.4
+     },
+     "who": "tortoise",
+     "action": "tries to hurry: three hard steps that cover a hand of ground; a short arrow shows the distance against the long dotted path; counter 3 STEPS",
+     "acting": "effortful: tip 0.06 forward, tongue-tip, each footfall a small dust puff; legs never slide (walk on a tiny distance)",
+     "library": "walk, footfalls, dustBurst; S.counter"
+    },
+    {
+     "t": 38.5,
+     "end": 39.9,
+     "cue": {
+      "word": "بسرعة.",
+      "t": 38.68
+     },
+     "who": "tortoise",
+     "action": "stops, puffing; head sinks, eyes wet",
+     "acting": "breathe at double depth, lid 0.5, wet true, gaze to the ground; one long blink",
+     "library": "breathe, wet"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 19.7,
+     "text": "DAYS LATER..."
+    },
+    {
+     "t": 22.9,
+     "text": "NO RAIN"
+    },
+    {
+     "t": 31.5,
+     "text": "A LITTLE WATER"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 26.7,
+     "kind": "crack"
+    },
+    {
+     "t": 33.3,
+     "kind": "pop"
+    },
+    {
+     "t": 39.9,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 40.0
+   }
+  },
+  {
+   "id": "S3",
+   "start": 40.0,
+   "end": 60.06,
+   "paragraphs": [
+    3
+   ],
+   "set": "forestPond",
+   "cast": [
+    "tortoise",
+    "duckA",
+    "duckB"
+   ],
+   "summary": "The ducks stand with her on the dry bank. One describes a big lake beyond the hills (thought cloud: the promised picture). Her joy fades into the practical question: you fly, I walk very slowly. A snail overtakes her.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pull-out",
+    "notes": "twoShot(tortoise head, duck A head) at zoom 1.6; pull out to 1.15 at 45.1 to bring the hills and the cloud in; back to the two-shot at 49.5; drop to a low medium on her feet at 57.4."
+   },
+   "composition": "Speaker on one side, listener on the other: tortoise left at (300, 940) facing right; duck A (560, 930) and duck B (700, 945) on the right facing left, B a step behind. Thought cloud centred (520, 420), 600 wide. Hills on the right horizon under the pointing wing.",
+   "actions": [
+    {
+     "t": 40.2,
+     "end": 41.3,
+     "cue": {
+      "word": "قالت",
+      "t": 40.62
+     },
+     "who": "duckA",
+     "action": "duck A waddles one step forward and lays a wing on her chest",
+     "acting": "kind eyes on the tortoise; tortoise lifts her wet face to her",
+     "library": "duck {walk waddle, wing}; lookAt"
+    },
+    {
+     "t": 41.5,
+     "end": 42.3,
+     "cue": {
+      "word": "البطتين:",
+      "t": 41.7
+     },
+     "who": "duckB",
+     "action": "duck B nods agreement a beat late and looks from A to the tortoise",
+     "acting": "nod = headRot pulse; never in unison with A",
+     "library": "stagger"
+    },
+    {
+     "t": 42.3,
+     "end": 43.4,
+     "cue": {
+      "word": "«نعرف",
+      "t": 42.44
+     },
+     "who": "duckA",
+     "action": "bill opens to talk; one wingtip goes up: we know a place",
+     "acting": "brows up, slight lean in (tip 0.06)",
+     "library": "duck {talk}"
+    },
+    {
+     "t": 43.4,
+     "end": 45.0,
+     "cue": {
+      "word": "بحيرة",
+      "t": 43.54
+     },
+     "who": "fx",
+     "action": "thought cloud opens above them; a lake appears and grows wide on the word big",
+     "acting": "tortoise pupils rise to the cloud; mouth parts",
+     "library": "thoughtCloud; lake = ellipse scaled with settleTo"
+    },
+    {
+     "t": 45.0,
+     "end": 46.9,
+     "cue": {
+      "word": "التلال،",
+      "t": 45.76
+     },
+     "who": "duckA",
+     "action": "the wing swings to point right at the far hills; in the cloud the hills slide in front of the lake with an arrow hopping over them",
+     "acting": "duck A gaze goes along her wing; tortoise head turns to the horizon and back to the cloud (camera pulls out)",
+     "library": "gazePlan; S.arrow"
+    },
+    {
+     "t": 47.6,
+     "end": 49.4,
+     "cue": {
+      "word": "كثير.»",
+      "t": 48.2
+     },
+     "who": "fx",
+     "action": "the cloud lake sparkles and a fish jumps; label PLENTY OF WATER",
+     "acting": "tortoise eyes wide, smile opens, neck stretches toward the cloud as if to drink",
+     "library": "kfn fish arc; S.label"
+    },
+    {
+     "t": 49.4,
+     "end": 50.9,
+     "cue": {
+      "word": "سألت",
+      "t": 49.56
+     },
+     "who": "tortoise",
+     "action": "the cloud shrinks away; her smile fades and she looks at her own feet",
+     "acting": "settleTo from smile to worried brow; gaze drops [0.2, 1]",
+     "library": "settleTo"
+    },
+    {
+     "t": 51.0,
+     "end": 53.6,
+     "cue": {
+      "word": "«وكيف",
+      "t": 51.18
+     },
+     "who": "tortoise",
+     "action": "asks: lifts a front foot in a small shrug, head tilted",
+     "acting": "talk on, brow raised, tip -0.05 (leaning back); ducks listen with heads tilted opposite ways",
+     "library": "tortoise new talk field"
+    },
+    {
+     "t": 53.7,
+     "end": 56.2,
+     "cue": {
+      "word": "تستطيعان",
+      "t": 54.56
+     },
+     "who": "duckB",
+     "action": "she nods at their wings; duck B looks at her own wing, flaps once, hops up and lands",
+     "acting": "hop + landSquash; duck A only half-opens a wing and looks at it, a little embarrassed",
+     "library": "hop, landSquash"
+    },
+    {
+     "t": 56.9,
+     "end": 58.4,
+     "cue": {
+      "word": "فأمشي",
+      "t": 57.48
+     },
+     "who": "tortoise",
+     "action": "shows her walk: two slow steps",
+     "acting": "low medium shot; careful, heavy footfalls; gaze on the ducks to make her point",
+     "library": "walk, footfalls"
+    },
+    {
+     "t": 58.5,
+     "end": 60.0,
+     "cue": {
+      "word": "ببطء",
+      "t": 58.58
+     },
+     "who": "snail",
+     "action": "a snail slides past her from behind and overtakes her",
+     "acting": "she watches it pass (slow pupil track), lid 0.4, deadpan; the ducks exchange a glance",
+     "library": "snail prop: spiral shell + body, x from kfn"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 51.3,
+     "text": "HOW?"
+    },
+    {
+     "t": 48.3,
+     "text": "PLENTY OF WATER"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 60.06
+   }
+  },
+  {
+   "id": "S4",
+   "start": 60.06,
+   "end": 80.96,
+   "paragraphs": [
+    4
+   ],
+   "set": "forestPond",
+   "cast": [
+    "tortoise",
+    "duckA",
+    "duckB"
+   ],
+   "summary": "The ducks think, pace, spot a fallen branch, test that it is strong, and explain the plan on a drawn plan board in a thought cloud: ducks on the ends, tortoise in the middle by her mouth, up through the air to the lake.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Wide zoom 1.2 while they pace; track right with them to the branch at (860, 930) at 64.2; back to centre at 66.4; hold a composition with the plan board in the upper half from 67.9."
+   },
+   "composition": "Tortoise stays at (300, 940) as the fixed point; ducks pace between x 480 and 780 and cross each other. Branch lies by the reeds at right. Plan board cloud centred (520, 400), 640 x 360: a diagram in black line on paper white with yellow and blue fills, figures at least 110 px.",
+   "actions": [
+    {
+     "t": 60.1,
+     "end": 61.8,
+     "cue": {
+      "word": "فكّرت",
+      "t": 60.06
+     },
+     "who": "duckA",
+     "action": "thinking: duck A taps her bill with a wingtip, duck B scratches her head with a foot",
+     "acting": "saccade eyes (gazePlan with 0.07 ease): up, left, up right; tortoise looks from one to the other",
+     "library": "gazePlan saccades"
+    },
+    {
+     "t": 61.8,
+     "end": 62.7,
+     "cue": {
+      "word": "البطتان",
+      "t": 61.9
+     },
+     "who": "duckB",
+     "action": "they pace in opposite directions and cross",
+     "acting": "waddle from walk(); heads bob out of phase",
+     "library": "walk"
+    },
+    {
+     "t": 62.7,
+     "end": 63.4,
+     "cue": {
+      "word": "قليلًا،",
+      "t": 62.76
+     },
+     "who": "fx",
+     "action": "three thinking dots rise over each duck in turn",
+     "acting": "duck B stops and looks up into the tree",
+     "library": "K.popIn dots"
+    },
+    {
+     "t": 63.3,
+     "end": 64.2,
+     "cue": {
+      "word": "ثم",
+      "t": 63.44
+     },
+     "who": "duckB",
+     "action": "duck B snaps her eyes to a fallen branch by the reeds; small pop of surprise",
+     "acting": "pupil snap in 2 frames, neck straightens (sq 1.06), bill opens",
+     "library": "gazePlan"
+    },
+    {
+     "t": 64.2,
+     "end": 64.9,
+     "cue": {
+      "word": "وجدتا",
+      "t": 64.24
+     },
+     "who": "duckA",
+     "action": "both hurry to it with quick waddles and a last hop",
+     "acting": "B first, A 5 frames behind; footfall dust",
+     "library": "walk, hop, stagger"
+    },
+    {
+     "t": 64.9,
+     "end": 65.6,
+     "cue": {
+      "word": "عصًا",
+      "t": 64.88
+     },
+     "who": "stick",
+     "action": "they lift the stick between them; label STICK with an arrow",
+     "acting": "both look at it, then at each other",
+     "library": "stick prop; S.label + S.arrow"
+    },
+    {
+     "t": 65.6,
+     "end": 66.4,
+     "cue": {
+      "word": "قوية.",
+      "t": 65.68
+     },
+     "who": "stick",
+     "action": "strength test: they pull the two ends, it barely flexes and springs straight; duck B hops on it once",
+     "acting": "pull = lean back (tip -0.1) with anticipation; stick bend is a quadratic curve that rebounds (rebound)",
+     "library": "anticipate, rebound, landSquash"
+    },
+    {
+     "t": 66.4,
+     "end": 67.8,
+     "cue": {
+      "word": "قالتا:",
+      "t": 66.44
+     },
+     "who": "duckA",
+     "action": "they carry it back and lay it in front of the tortoise",
+     "acting": "proud chests; tortoise sniffs the stick, puzzled brow",
+     "library": "walk; bird carry (planned pose)"
+    },
+    {
+     "t": 67.9,
+     "end": 70.5,
+     "cue": {
+      "word": "طرفَي",
+      "t": 69.06
+     },
+     "who": "fx",
+     "action": "plan board opens: the stick draws on as a bold line; arrows mark its two ends",
+     "acting": "duck A talks, pointing a wing up at the board; tortoise follows the pointer",
+     "library": "thoughtCloud as plan board; K.wobblyLine; S.arrow"
+    },
+    {
+     "t": 70.6,
+     "end": 71.3,
+     "cue": {
+      "word": "بمنقارينا،",
+      "t": 70.68
+     },
+     "who": "duckB",
+     "action": "duck icons pop onto the two ends of the drawn stick; the real ducks tap their own bills, A then B",
+     "acting": "bill taps 5 frames apart",
+     "library": "K.popIn; stagger"
+    },
+    {
+     "t": 71.3,
+     "end": 73.0,
+     "cue": {
+      "word": "أمسكي",
+      "t": 72.34
+     },
+     "who": "tortoise",
+     "action": "both wings point at her; she points a foot at herself: me?",
+     "acting": "eyes wide, mouth o, head back (tip -0.08)",
+     "library": "tortoise new foot raise"
+    },
+    {
+     "t": 73.1,
+     "end": 75.2,
+     "cue": {
+      "word": "بفمك.",
+      "t": 73.96
+     },
+     "who": "tortoise",
+     "action": "a tortoise icon pops onto the middle of the drawn stick with an arrow to its mouth; she tries her jaw: snap, snap",
+     "acting": "cross-eyed look down at her own mouth, two quick bites on air, then a testing smile",
+     "library": "K.popIn; tortoise mouth open/closed"
+    },
+    {
+     "t": 75.3,
+     "end": 77.5,
+     "cue": {
+      "word": "نحملك",
+      "t": 76.02
+     },
+     "who": "fx",
+     "action": "the drawn trio lifts off inside the board along a dotted arc",
+     "acting": "duck B lifts both wings to mime the rise; tortoise pupils go up with the icon",
+     "library": "kfn path; dotted line"
+    },
+    {
+     "t": 77.6,
+     "end": 78.9,
+     "cue": {
+      "word": "الهواء،",
+      "t": 77.76
+     },
+     "who": "tortoise",
+     "action": "looks from the board up to the real sky and swallows",
+     "acting": "gaze [0, -1], neck pulse, feet shuffle; then her brow sets: she will do it",
+     "library": "gazePlan"
+    },
+    {
+     "t": 79.0,
+     "end": 80.9,
+     "cue": {
+      "word": "البحيرة.»",
+      "t": 79.88
+     },
+     "who": "fx",
+     "action": "the drawn trio lands at a lake icon; label THE LAKE",
+     "acting": "tortoise smile opens fully; ducks beam at her",
+     "library": "S.label"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 64.95,
+     "text": "STICK"
+    },
+    {
+     "t": 65.8,
+     "text": "STRONG!"
+    },
+    {
+     "t": 79.95,
+     "text": "THE LAKE"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 80.9,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 80.96
+   }
+  },
+  {
+   "id": "S5",
+   "start": 80.96,
+   "end": 102.9,
+   "paragraphs": [
+    5
+   ],
+   "set": "forestPond",
+   "cast": [
+    "tortoise",
+    "duckA",
+    "duckB"
+   ],
+   "summary": "Her happy dance is stopped by a raised wing. The one rule: do not open your mouth, whatever you hear. Duck B proves it with a pebble held in her bill: she speaks, it falls. The tortoise nods with her mouth already pressed shut.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium three-shot zoom 1.4; freeze the camera with her at 84.2; push to 1.8 on the ducks and her face 87.1 to 90; a quick tilt down with the pebble at 97.2; close on her nod (zoom 2.1) from 98.7."
+   },
+   "composition": "Tortoise left of centre (360, 940); duck A close at (560, 930), duck B at (700, 940) with a clear column of air under her bill for the pebble drop at x 660. Crossed-mouth icon box appears at (300, 700), beside (not over) her face.",
+   "actions": [
+    {
+     "t": 81.0,
+     "end": 82.4,
+     "cue": {
+      "word": "فرحت",
+      "t": 81.34
+     },
+     "who": "tortoise",
+     "action": "joy: a heavy little hop and a turn on the spot",
+     "acting": "anticipate crouch, hop 30 units, landSquash with dust; turnFlip for the turn; eyes shut in a grin",
+     "library": "anticipate, hop, landSquash, turnFlip"
+    },
+    {
+     "t": 83.2,
+     "end": 84.2,
+     "cue": {
+      "word": "كثيرًا،",
+      "t": 83.42
+     },
+     "who": "tortoise",
+     "action": "a second smaller hop, feet dancing",
+     "acting": "shell wobble follows through (swing); the ducks smile, then look at each other, serious",
+     "library": "hop, swing"
+    },
+    {
+     "t": 84.2,
+     "end": 85.0,
+     "cue": {
+      "word": "لكن",
+      "t": 84.24
+     },
+     "who": "duckA",
+     "action": "duck A raises a wing: wait. The tortoise freezes with one foot in the air",
+     "acting": "hard stop: her eyes slide to the wing, the foot stays up; camera stops too",
+     "library": "settleTo"
+    },
+    {
+     "t": 85.0,
+     "end": 86.9,
+     "cue": {
+      "word": "قالتا",
+      "t": 85.92
+     },
+     "who": "duckB",
+     "action": "both ducks step in close and lean toward her; she lowers the foot slowly",
+     "acting": "brows serious, tip 0.1; her brow rises, attentive",
+     "library": "tip"
+    },
+    {
+     "t": 87.1,
+     "end": 88.5,
+     "cue": {
+      "word": "أمر",
+      "t": 88.14
+     },
+     "who": "duckA",
+     "action": "duck A holds up one feather; counter 1 and label ONE RULE",
+     "acting": "steady stare into her eyes; duck B looks at the feather then at her",
+     "library": "S.counter + S.label"
+    },
+    {
+     "t": 88.5,
+     "end": 90.6,
+     "cue": {
+      "word": "مهم",
+      "t": 88.54
+     },
+     "who": "camera",
+     "action": "push-in; the label pulses with emphasis; duck B nods gravely twice",
+     "acting": "tortoise blinks, leans in to listen",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 90.7,
+     "end": 92.0,
+     "cue": {
+      "word": "تفتحي",
+      "t": 90.92
+     },
+     "who": "duckA",
+     "action": "duck A presses her own bill shut with a wingtip; a crossed-out open mouth icon pops beside the tortoise",
+     "acting": "tortoise goes cross-eyed at her own mouth and presses it into a tight line",
+     "library": "S.box icon with red cross; K.popIn"
+    },
+    {
+     "t": 92.4,
+     "end": 93.3,
+     "cue": {
+      "word": "الطيران،",
+      "t": 92.58
+     },
+     "who": "duckB",
+     "action": "duck B mimes flying, wings out, with her bill held tightly shut",
+     "acting": "exaggerated clamp (bill sq), eyes on the tortoise to see she understands",
+     "library": "bird mime pattern"
+    },
+    {
+     "t": 93.4,
+     "end": 95.6,
+     "cue": {
+      "word": "سمعتِ",
+      "t": 94.22
+     },
+     "who": "fx",
+     "action": "small speech balloon icons (scribbles, ! and ?) drift at her from both sides and bounce off",
+     "acting": "her eyes follow each balloon, mouth stays shut, cheeks puff; the ducks shake their heads no, out of phase",
+     "library": "K.popIn balloons on kfn paths"
+    },
+    {
+     "t": 95.6,
+     "end": 97.1,
+     "cue": {
+      "word": "تكلمتِ،",
+      "t": 96.42
+     },
+     "who": "duckB",
+     "action": "the proof: duck B holds a pebble in her bill, then opens it to speak and the pebble drops",
+     "acting": "setup pose for the fall later: bill opens, pebble leaves at once; duck B watches it go with only her eyes",
+     "library": "pebble prop; fallY"
+    },
+    {
+     "t": 97.2,
+     "end": 98.6,
+     "cue": {
+      "word": "ستسقطين!»",
+      "t": 97.22
+     },
+     "who": "pebble",
+     "action": "the pebble hits the ground with a dust puff and one bounce; a down arrow and the label YOU FALL!",
+     "acting": "tortoise flinches (hide 0.4), eyes fixed on the pebble; a held beat of stillness",
+     "library": "fallY, impactSquash, rebound, dustBurst; S.arrow"
+    },
+    {
+     "t": 98.7,
+     "end": 100.0,
+     "cue": {
+      "word": "هزّت",
+      "t": 98.76
+     },
+     "who": "tortoise",
+     "action": "she comes back out and nods once, big",
+     "acting": "anticipation up, head drop 14 px, settle; eyes earnest on duck A",
+     "library": "anticipate, settleTo"
+    },
+    {
+     "t": 100.8,
+     "end": 101.6,
+     "cue": {
+      "word": "رأسها",
+      "t": 100.94
+     },
+     "who": "tortoise",
+     "action": "two smaller nods with her mouth pressed in a firm line: already practising",
+     "acting": "brow set, cheeks slightly puffed",
+     "library": "countedBeats style dips"
+    },
+    {
+     "t": 101.6,
+     "end": 102.8,
+     "cue": {
+      "word": "موافقة.",
+      "t": 101.64
+     },
+     "who": "duckA",
+     "action": "the ducks relax and smile; duck A pats her shell with a wing",
+     "acting": "shell dips 3 units under the pat and springs back; her eyes close, pleased",
+     "library": "spring on the shell"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 81.5,
+     "text": "YAY!"
+    },
+    {
+     "t": 88.2,
+     "text": "ONE RULE"
+    },
+    {
+     "t": 97.4,
+     "text": "YOU FALL!"
+    },
+    {
+     "t": 101.7,
+     "text": "MM HM!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 102.85,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 102.9
+   }
+  },
+  {
+   "id": "S6",
+   "start": 102.9,
+   "end": 109.6,
+   "paragraphs": [
+    6
+   ],
+   "set": "forestPond",
+   "cast": [
+    "tortoise",
+    "duckA",
+    "duckB"
+   ],
+   "summary": "The grip. She bites the middle of the stick (CHOMP), the ducks clamp the ends from above and spread their wings.",
+   "camera": {
+    "shot": "close",
+    "move": "pull-out",
+    "notes": "Insert close (zoom 2.4) on her head and the stick for the bite; pull out to a full shot of the rig (zoom 1.25) by 106.8 so both wingspans fit."
+   },
+   "composition": "Stick horizontal at y 800, 420 long, centred x 500. Tortoise under its middle. Ducks stand over the ends at x 300 and 700, both facing right, necks curved down so the bills clamp the stick from above. Wings open upward into the empty sky.",
+   "actions": [
+    {
+     "t": 103.0,
+     "end": 104.5,
+     "cue": {
+      "word": "أمسكت",
+      "t": 103.24
+     },
+     "who": "tortoise",
+     "action": "stretches her neck up to the stick and opens wide",
+     "acting": "anticipation: head pulls back 8 px, then reaches; eyes determined, brow slightly down",
+     "library": "tortoise neck + mouth open; anticipate"
+    },
+    {
+     "t": 105.3,
+     "end": 106.7,
+     "cue": {
+      "word": "العصا",
+      "t": 105.44
+     },
+     "who": "tortoise",
+     "action": "bites the middle of the stick; the stick dips under the bite and settles",
+     "acting": "jaw clamp with a 2-frame squash on the head, eyes squeeze then open, firm",
+     "library": "tortoise new bite field; settleTo on the stick"
+    },
+    {
+     "t": 106.8,
+     "end": 107.8,
+     "cue": {
+      "word": "ورفعت",
+      "t": 106.8
+     },
+     "who": "duckA",
+     "action": "the ducks step over the two ends, bend their necks down and clamp their bills on the stick, A then B",
+     "acting": "each looks at the other along the stick and gives one small nod: ready",
+     "library": "duck {neckDown, clamp}; stagger"
+    },
+    {
+     "t": 107.8,
+     "end": 109.6,
+     "cue": {
+      "word": "جناحيهما.",
+      "t": 108.82
+     },
+     "who": "duckB",
+     "action": "wings spread wide and beat once, twice; dust swirls on the ground",
+     "acting": "crouch before the first beat; the tortoise eyes dart left and right at the huge wings, her legs brace",
+     "library": "duck {flap}; anticipate; dustBurst"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 105.6,
+     "text": "CHOMP!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 109.6
+   }
+  },
+  {
+   "id": "S7",
+   "start": 109.6,
+   "end": 125.98,
+   "paragraphs": [
+    6
+   ],
+   "set": "skyFlight",
+   "cast": [
+    "tortoise",
+    "duckA",
+    "duckB",
+    "songbird"
+   ],
+   "summary": "Lift-off and flight. The stick bows under her weight, her feet leave the ground one by one, trees and houses sink away. She dares to look down, is amazed, nearly cries out, catches herself and stays silent.",
+   "camera": {
+    "shot": "full",
+    "move": "crane",
+    "notes": "Crane up with the rig from the pond (world y 800) into the sky strip; keep the whole rig in frame at zoom 1.15. Tilt down for the over-the-feet view at 118.7; close on her face (zoom 2.3) at 120.5 with both duck heads still in the top corners; back to the full rig at 124.1."
+   },
+   "composition": "The rig is the composition: two ducks high left and high right, the stick a line between their bills, the tortoise hanging under the middle from her mouth. Flight is left to right; the ground strip scrolls right to left below. Keep the rig in the upper 60 % of the panel; her face is never below panel y 800.",
+   "actions": [
+    {
+     "t": 109.7,
+     "end": 111.6,
+     "cue": {
+      "word": "ارتفعت",
+      "t": 109.98
+     },
+     "who": "duckA",
+     "action": "lift-off: hard staggered wing beats, the stick bows, her feet leave the ground one at a time, rear last",
+     "acting": "ducks strain (lid squeeze), she goes on tiptoe then hangs; dust burst left behind; camera rises with them",
+     "library": "carryRig: stick ends = bill tips, rider hangs from the midpoint"
+    },
+    {
+     "t": 111.7,
+     "end": 112.6,
+     "cue": {
+      "word": "البطتان",
+      "t": 111.74
+     },
+     "who": "duckB",
+     "action": "she is heavy: the rig dips once, the ducks beat harder and climb",
+     "acting": "a sweat drop off duck B; stick bend deepens then recovers",
+     "library": "kfn dip; rebound"
+    },
+    {
+     "t": 112.6,
+     "end": 113.5,
+     "cue": {
+      "word": "والسلحفاة",
+      "t": 112.68
+     },
+     "who": "tortoise",
+     "action": "she dangles, legs paddling at the air, then hanging loose and swinging",
+     "acting": "eyes shut tight (lid 1), brow raised: afraid; legs on a damped swing",
+     "library": "swing; tortoise new dangle field"
+    },
+    {
+     "t": 113.6,
+     "end": 114.9,
+     "cue": {
+      "word": "الأشجار",
+      "t": 114.24
+     },
+     "who": "set",
+     "action": "the tree crowns sink below the frame; a songbird on the top branch does a double take as they pass",
+     "acting": "songbird head snaps to follow them, beak open",
+     "library": "songbird; parallax strip"
+    },
+    {
+     "t": 115.0,
+     "end": 115.9,
+     "cue": {
+      "word": "والبيوت.",
+      "t": 115.04
+     },
+     "who": "set",
+     "action": "small house roofs scroll by underneath with a thread of smoke; lettering UP! UP!",
+     "acting": "ducks settle into an easier rhythm, eyes ahead",
+     "library": "aerialStrip scroll"
+    },
+    {
+     "t": 115.9,
+     "end": 118.6,
+     "cue": {
+      "word": "نظرت",
+      "t": 115.96
+     },
+     "who": "tortoise",
+     "action": "she opens one eye, then the other, and looks down",
+     "acting": "lid ramp per eye if available (else both, slowly), pupils go down [0.2, 1], neck stiff",
+     "library": "lid ramp; gazePlan"
+    },
+    {
+     "t": 118.7,
+     "end": 120.4,
+     "cue": {
+      "word": "البعيدة،",
+      "t": 119.3
+     },
+     "who": "camera",
+     "action": "tilt down past her dangling feet: the far ground as a patchwork, a river thread, her old pond a small brown ring",
+     "acting": "her feet swing gently in the top of the frame; tiny cloud shadows drift",
+     "library": "aerialStrip far layer at small scale"
+    },
+    {
+     "t": 120.5,
+     "end": 122.0,
+     "cue": {
+      "word": "بالدهشة",
+      "t": 121.16
+     },
+     "who": "tortoise",
+     "action": "close on her face: amazement",
+     "acting": "eyes huge with a shine, brows up, cheeks lift into a smile around the stick; legs kick once with delight",
+     "library": "wet as shine; brow negative"
+    },
+    {
+     "t": 122.1,
+     "end": 122.9,
+     "cue": {
+      "word": "والفرح،",
+      "t": 122.12
+     },
+     "who": "tortoise",
+     "action": "joy nearly escapes: her mouth corners begin to part and the stick slips a hair",
+     "acting": "both ducks snap their eyes down at her, A first; duck A gives a tiny head shake",
+     "library": "gazePlan saccade; stagger"
+    },
+    {
+     "t": 122.9,
+     "end": 124.0,
+     "cue": {
+      "word": "لكنها",
+      "t": 122.92
+     },
+     "who": "tortoise",
+     "action": "she catches herself and bites down harder",
+     "acting": "pupils dart to the ducks, a 2-frame head squash on the clamp, brow down in effort",
+     "library": "settleTo"
+    },
+    {
+     "t": 124.1,
+     "end": 125.9,
+     "cue": {
+      "word": "صامتة.",
+      "t": 124.74
+     },
+     "who": "tortoise",
+     "action": "she stays silent: cheeks puffed, a muffled MMM! and a calm settle",
+     "acting": "ducks breathe out and look ahead again; her eyes go back to the view, shining",
+     "library": "breathe"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 115.2,
+     "text": "UP! UP!"
+    },
+    {
+     "t": 124.9,
+     "text": "MMM!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 125.98
+   }
+  },
+  {
+   "id": "S8",
+   "start": 125.98,
+   "end": 148.66,
+   "paragraphs": [
+    7
+   ],
+   "set": "village",
+   "cast": [
+    "tortoise",
+    "duckA",
+    "duckB",
+    "child",
+    "man",
+    "woman",
+    "onlookers"
+   ],
+   "summary": "Over a village. Their shadow crosses a child, who looks up; a man shouts LOOK!; the others laugh and crane their necks. In the air the tortoise hears it: her face darkens, she trembles, and a thought cloud shows what she wants to tell them. The ducks, bills full of stick, can only shake their heads.",
+   "camera": {
+    "shot": "wide",
+    "move": "tilt",
+    "notes": "Wide ground shot (zoom 1.1) with the rig small in the sky; low-angle up-shot at 133.8; cut to the air (medium on the rig) at 136.0; back to the ground at 137.0; tilt up along the pointing arms at 139.5 to land on a close-up of her face (zoom 2.3) at 141.3; slow push to the jaw (2.8) by 147.9."
+   },
+   "composition": "Ground: lane at y 900 with three flat-roofed houses behind (roof lines y 520 to 640); child (420, 900) scale 0.7, man (560, 900), woman (700, 900); two more heads in a window (250, 600) and a doorway (860, 900). The rig crosses the sky at y 250, left to right. Air: her face centre panel, duck heads top left and top right, thought cloud to her left at (250, 330).",
+   "actions": [
+    {
+     "t": 126.0,
+     "end": 127.8,
+     "cue": {
+      "word": "مرّت",
+      "t": 125.98
+     },
+     "who": "camera",
+     "action": "wide on the village: the rig enters small, high on the left, and its shadow slides along the lane and up the walls",
+     "acting": "villagers busy and unaware: the man sweeps, the woman carries a jar, the child bounces a ball",
+     "library": "groundShadow of the rig; person variants"
+    },
+    {
+     "t": 127.9,
+     "end": 128.6,
+     "cue": {
+      "word": "قرية،",
+      "t": 127.92
+     },
+     "who": "child",
+     "action": "the shadow passes over the child and the ball",
+     "acting": "child stops mid-bounce, looks at the dark patch on the ground",
+     "library": "ball prop; hop"
+    },
+    {
+     "t": 128.6,
+     "end": 129.7,
+     "cue": {
+      "word": "فرآها",
+      "t": 128.6
+     },
+     "who": "child",
+     "action": "the child looks up and sees them; the ball rolls away",
+     "acting": "head tilts back, eyes wide, mouth o; pupils track the rig",
+     "library": "lookAt"
+    },
+    {
+     "t": 129.7,
+     "end": 130.9,
+     "cue": {
+      "word": "الناس.",
+      "t": 130.26
+     },
+     "who": "man",
+     "action": "the child tugs the man by the tunic and points up; the man and the woman turn and look, one after the other",
+     "acting": "heads turn in a stagger: man, then woman 6 frames later",
+     "library": "handR target for the tug; stagger"
+    },
+    {
+     "t": 130.9,
+     "end": 132.9,
+     "cue": {
+      "word": "صاح",
+      "t": 130.92
+     },
+     "who": "man",
+     "action": "the man leans back, breathes in and cups a hand to his mouth",
+     "acting": "anticipation lean (tip -0.08), chest rise, brows up",
+     "library": "PERSON_HANDS.cupMouth; anticipate"
+    },
+    {
+     "t": 133.0,
+     "end": 133.8,
+     "cue": {
+      "word": "«انظروا!",
+      "t": 133.02
+     },
+     "who": "man",
+     "action": "he throws his arm up, pointing, and shouts LOOK!",
+     "acting": "arm by angle (aR raised) so it reads at phone size; mouth open wide",
+     "library": "person {aR}"
+    },
+    {
+     "t": 133.8,
+     "end": 135.9,
+     "cue": {
+      "word": "سلحفاة",
+      "t": 133.86
+     },
+     "who": "camera",
+     "action": "low-angle shot up past the rooftops: the tortoise between the two ducks against the sky; an arrow from the man up to her",
+     "acting": "the rig bobs along steadily; her legs swing",
+     "library": "S.arrow; camera keys"
+    },
+    {
+     "t": 136.0,
+     "end": 137.0,
+     "cue": {
+      "word": "بطتين!»",
+      "t": 136.06
+     },
+     "who": "duckB",
+     "action": "in the air: the ducks hear the shout and glance down, then at her",
+     "acting": "worried sideways eyes, duck B first; her pupils slide down toward the voices",
+     "library": "gazePlan"
+    },
+    {
+     "t": 137.0,
+     "end": 138.4,
+     "cue": {
+      "word": "وضحك",
+      "t": 137.04
+     },
+     "who": "woman",
+     "action": "on the ground they laugh: the woman covers her mouth, shoulders bouncing, the child hops and points",
+     "acting": "HA HA HA! letters wobble upward from the lane toward the rig",
+     "library": "PERSON_HANDS.mouthCover; hop"
+    },
+    {
+     "t": 138.5,
+     "end": 139.4,
+     "cue": {
+      "word": "الآخرون",
+      "t": 138.5
+     },
+     "who": "onlookers",
+     "action": "two more heads pop out, at a window and a doorway, laughing",
+     "acting": "each on its own delay and rhythm",
+     "library": "person variants; stagger"
+    },
+    {
+     "t": 139.5,
+     "end": 141.2,
+     "cue": {
+      "word": "رؤوسهم.",
+      "t": 140.46
+     },
+     "who": "camera",
+     "action": "every head tilts up, hands shading eyes or pointing; the camera tilts up along their arms to the rig",
+     "acting": "a fan of pointing arms; eye lines all meet at her",
+     "library": "lookAt for each; camera tilt"
+    },
+    {
+     "t": 141.3,
+     "end": 142.7,
+     "cue": {
+      "word": "غضبت",
+      "t": 141.3
+     },
+     "who": "tortoise",
+     "action": "close-up: she is angry. The brow slams into a V and a red dot flush climbs her face from the neck",
+     "acting": "eyes narrow (lid 0.3), pupils down at the crowd; overshoot and settle on the brow",
+     "library": "new flush field (red Ben-Day overlay clipped to the head); settleTo"
+    },
+    {
+     "t": 142.8,
+     "end": 143.6,
+     "cue": {
+      "word": "السلحفاة،",
+      "t": 142.84
+     },
+     "who": "tortoise",
+     "action": "she trembles, two puffs of steam from her nostrils, legs rigid; the stick shakes",
+     "acting": "both ducks feel it through the stick and look down in alarm",
+     "library": "tremble; K.popIn puffs"
+    },
+    {
+     "t": 143.7,
+     "end": 144.9,
+     "cue": {
+      "word": "وأرادت",
+      "t": 143.72
+     },
+     "who": "tortoise",
+     "action": "her jaw starts to work: MMPH! The ducks shake their heads frantically; they cannot speak either",
+     "acting": "duck A fast small head shakes, duck B pleading wet eyes; her gaze never leaves the crowd",
+     "library": "wet; headRot oscillation"
+    },
+    {
+     "t": 145.0,
+     "end": 146.6,
+     "cue": {
+      "word": "تقول",
+      "t": 145.06
+     },
+     "who": "fx",
+     "action": "a thought cloud beside her: herself lecturing tiny shrinking villagers",
+     "acting": "in the cloud she is big and stern, they are small with heads bowed",
+     "library": "thoughtCloud"
+    },
+    {
+     "t": 146.7,
+     "end": 148.6,
+     "cue": {
+      "word": "طائرًا",
+      "t": 147.26
+     },
+     "who": "fx",
+     "action": "the cloud picture changes to a silly winged, feathered tortoise with a red cross over it; push in on her clamped jaw",
+     "acting": "eyes burning, mouth corners quivering; a hairline of daylight begins between lip and stick",
+     "library": "thoughtCloud; camera push"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 133.1,
+     "text": "LOOK!"
+    },
+    {
+     "t": 137.2,
+     "text": "HA HA HA!"
+    },
+    {
+     "t": 143.9,
+     "text": "MMPH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 148.66
+   }
+  },
+  {
+   "id": "S9",
+   "start": 148.66,
+   "end": 162.58,
+   "paragraphs": [
+    8
+   ],
+   "set": "skyFlight",
+   "cast": [
+    "tortoise",
+    "duckA",
+    "duckB"
+   ],
+   "summary": "She forgets the warning and opens her mouth to answer. For a held moment she hangs on nothing while the lightened ducks bob upward; she sees the stick above her, reaches, and falls. She drops out of sight behind the rooftops; only a column of dust rises.",
+   "camera": {
+    "shot": "close",
+    "move": "whip",
+    "notes": "Stay close on her and the stick (zoom 2.2) to 153; ease out to the full rig (1.3) for the open mouth at 154.26; hold; at the fall keep the ducks for 0.4 s, then whip-tilt down after her to a high wide over the roofs; small panel-only shake at 162.06."
+   },
+   "composition": "Her mouth and the stick sit on the panel centre line so the growing gap is the picture. The balloon goes up right, clear of all three faces. In the fall shot the roofs are at the bottom of the frame; she passes behind the roof line at small size.",
+   "actions": [
+    {
+     "t": 148.7,
+     "end": 151.3,
+     "cue": {
+      "word": "نسيت",
+      "t": 148.66
+     },
+     "who": "fx",
+     "action": "the crossed-mouth icon from the lesson floats up behind her head, unseen, fades and pops",
+     "acting": "her eyes stay locked down on the crowd; she does not see it or the ducks",
+     "library": "S.box icon; alpha"
+    },
+    {
+     "t": 151.4,
+     "end": 153.1,
+     "cue": {
+      "word": "صديقتيها،",
+      "t": 152.1
+     },
+     "who": "duckA",
+     "action": "the ducks signal with everything but their bills: eyes wide, heads shaking, wings beating out of rhythm",
+     "acting": "duck A stares at her, duck B squeezes her eyes shut; neither can let go to speak",
+     "library": "gaze, lid, stagger"
+    },
+    {
+     "t": 153.2,
+     "end": 154.2,
+     "cue": {
+      "word": "وفتحت",
+      "t": 153.18
+     },
+     "who": "tortoise",
+     "action": "she draws breath: neck pulls back, shell swells",
+     "acting": "anticipation: sq 1.04, brow hard down, pupils on the crowd",
+     "library": "anticipate"
+    },
+    {
+     "t": 154.26,
+     "end": 155.0,
+     "cue": {
+      "word": "فمها",
+      "t": 154.26
+     },
+     "who": "tortoise",
+     "action": "her mouth opens wide",
+     "acting": "mouth open, eyes shut in the shout; her teeth leave the stick",
+     "library": "tortoise mouth open"
+    },
+    {
+     "t": 155.0,
+     "end": 156.8,
+     "cue": {
+      "word": "لتردّ",
+      "t": 155.06
+     },
+     "who": "tortoise",
+     "action": "she shouts down at the people: a balloon appears word by word, I AM NOT A; she hangs in the air with nothing holding her, and the ducks, suddenly light, bob up 30 units as the stick springs straight",
+     "acting": "the gap between her mouth and the stick widens; the ducks look down in horror",
+     "library": "S.box balloon; rebound on the stick; spring on the ducks"
+    },
+    {
+     "t": 156.9,
+     "end": 159.1,
+     "cue": {
+      "word": "اللحظة",
+      "t": 157.96
+     },
+     "who": "tortoise",
+     "action": "the words stop. Her pupils go up to the stick above her, then to the lens for a moment",
+     "acting": "realisation: mouth still open, brow flips from angry to raised, the flush drains; no gag, a short true beat",
+     "library": "gazePlan; look to camera (rare)"
+    },
+    {
+     "t": 159.2,
+     "end": 160.7,
+     "cue": {
+      "word": "تركت",
+      "t": 159.24
+     },
+     "who": "tortoise",
+     "action": "her front legs reach up for the stick and miss; the ducks dip their necks to offer it, too late",
+     "acting": "reach strains (neck and legs stretched, sq 1.06); duck bills still clamped on an empty stick",
+     "library": "kfn reach"
+    },
+    {
+     "t": 160.8,
+     "end": 161.8,
+     "cue": {
+      "word": "وسقطت",
+      "t": 160.82
+     },
+     "who": "tortoise",
+     "action": "she falls: accelerating, turning slowly shell-first, shrinking; the half balloon stays behind and fades",
+     "acting": "legs trail upward (follow-through); camera holds the ducks, then whips down after her",
+     "library": "fallY; camera keys on fall start and end"
+    },
+    {
+     "t": 161.8,
+     "end": 162.5,
+     "cue": {
+      "word": "الأرض.",
+      "t": 162.06
+     },
+     "who": "fx",
+     "action": "far below she passes behind the roof line and out of sight; a column of dust rises from behind the houses; small panel-only shake",
+     "acting": "no body is shown. The HA HA letters below break off and drop",
+     "library": "dustBurst column; panel-only shake"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 155.1,
+     "text": "I AM NOT A"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 162.58
+   }
+  },
+  {
+   "id": "S10",
+   "start": 162.58,
+   "end": 166.0,
+   "paragraphs": [
+    8
+   ],
+   "set": "village",
+   "cast": [
+    "duckA",
+    "duckB",
+    "child",
+    "man",
+    "woman"
+   ],
+   "summary": "The laughter is gone. The villagers stare at the settling dust, then lower their heads. Above them the two ducks hold a stick with an empty middle.",
+   "camera": {
+    "shot": "wide",
+    "move": "tilt",
+    "notes": "Static wide on the three villagers and the dust behind the houses; slow tilt up at 164.3 to the two ducks, small against the sky."
+   },
+   "composition": "Villagers in the lower third of the panel with their backs half to us, faces in profile toward the dust at right. The ducks top centre; the gap between them on the panel centre line.",
+   "actions": [
+    {
+     "t": 162.6,
+     "end": 163.8,
+     "cue": {
+      "word": "لم",
+      "t": 162.58
+     },
+     "who": "man",
+     "action": "the villagers stand frozen, mouths open, all looking at the place behind the houses; the child slips behind the woman",
+     "acting": "no movement but the settling dust and one blink each (suspense by stillness)",
+     "library": "person variants; lookAt"
+    },
+    {
+     "t": 163.86,
+     "end": 164.3,
+     "cue": {
+      "word": "تنجُ",
+      "t": 163.86
+     },
+     "who": "man",
+     "action": "the man takes off his cap and his head sinks; the woman covers her mouth",
+     "acting": "shame pattern: eyes break away from the spot, head drops, lid 0.6; the pointing arm is long gone",
+     "library": "PERSON_HANDS.mouthCover, chest"
+    },
+    {
+     "t": 164.3,
+     "end": 166.0,
+     "cue": {
+      "word": "السقوط،",
+      "t": 165.34
+     },
+     "who": "camera",
+     "action": "tilt up to the ducks: the stick between them, nothing in the middle; a faint dotted line from the gap downward fades out",
+     "acting": "ducks heads low, wings slow, wet eyes; they turn toward the hills",
+     "library": "duck {fly, flap}; wet"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 166.0
+   }
+  },
+  {
+   "id": "S11",
+   "start": 166.0,
+   "end": 174.45,
+   "paragraphs": [
+    8
+   ],
+   "set": "lake",
+   "cast": [
+    "duckA",
+    "duckB"
+   ],
+   "summary": "The big lake beyond the hills at dusk, composed exactly like the promise in the thought cloud. The two ducks land, let the stick float between them and look at its empty middle. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Wide on the lake matching the S3 cloud picture; follow the glide down; hold a medium on the ducks and the stick at 169.1; slow pull-out under THE END."
+   },
+   "composition": "Dusk sky, hills behind, water filling the lower panel from y 760. Ducks land at (400, 880) and (640, 890), facing each other with the stick floating between them at y 900. THE END in the sky at panel y 300, above and clear of both heads.",
+   "actions": [
+    {
+     "t": 166.0,
+     "end": 167.2,
+     "cue": {
+      "word": "ووصلت",
+      "t": 166.12
+     },
+     "who": "duckA",
+     "action": "the lake opens wide beyond the hills; the two ducks glide down from the upper left",
+     "acting": "slow flaps out of phase, heads low; no joy in the arrival",
+     "library": "duck {fly, flap}; bezier glide"
+    },
+    {
+     "t": 167.2,
+     "end": 168.3,
+     "cue": {
+      "word": "البطتان",
+      "t": 167.24
+     },
+     "who": "duckB",
+     "action": "they land softly on the water, still holding the stick",
+     "acting": "small landSquash, two quiet ripple rings each",
+     "library": "landSquash, ripple"
+    },
+    {
+     "t": 168.4,
+     "end": 169.0,
+     "cue": {
+      "word": "البحيرة",
+      "t": 168.4
+     },
+     "who": "set",
+     "action": "the water glitters and a fish jumps, just as in the promise; label THE LAKE",
+     "acting": "neither duck looks at it",
+     "library": "kfn fish arc; S.label"
+    },
+    {
+     "t": 169.1,
+     "end": 170.5,
+     "cue": {
+      "word": "وحدهما.",
+      "t": 169.1
+     },
+     "who": "duckA",
+     "action": "they let the stick go; it floats between them. Both look at its empty middle",
+     "acting": "lookAt the stick midpoint; duck A lid lowers, duck B wet eyes and one tear; a long blink",
+     "library": "wet, lid; ripple"
+    },
+    {
+     "t": 170.6,
+     "end": 172.0,
+     "who": "lettering",
+     "action": "THE END pops in the sky and holds",
+     "acting": "ducks bow their heads; the stick turns slowly on the water",
+     "library": "S.title"
+    },
+    {
+     "t": 172.0,
+     "end": 174.45,
+     "who": "camera",
+     "action": "slow pull-out; held ending",
+     "acting": "breathing idle on both ducks, slow ripples; nothing else moves",
+     "library": "breathe"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 168.5,
+     "text": "THE LAKE"
+    },
+    {
+     "t": 170.6,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 170.6,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 174.45
+   }
+  }
+ ],
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "عاشت سلحفاة في بركة جميلة بين الأشجار. | وكان لها صديقتان من البطّ، تزورانها كل صباح. | كانت السلحفاة تحب سماع قصصهما عن الأنهار والجبال والأماكن البعيدة.",
+   "en": "A tortoise lived in a beautiful pond among the trees. | She had two duck friends who visited her every morning. | The tortoise loved hearing their stories of rivers, mountains, and distant places."
+  },
+  {
+   "p": 2,
+   "ar": "مرّت أيام طويلة دون مطر، وبدأ ماء البركة ينقص. | جفّ الطين عند أطرافها، ولم يبقَ إلا قليل من الماء. | خافت السلحفاة، لأنها لا تستطيع السفر بعيدًا بسرعة.",
+   "en": "Many days passed without rain, and the pond began to lose water. | The mud around its edges dried, and only a little water remained. | The tortoise was frightened because she could not travel far quickly."
+  },
+  {
+   "p": 3,
+   "ar": "قالت إحدى البطتين: «نعرف بحيرة كبيرة خلف التلال، | وفيها ماء كثير.» | سألت السلحفاة: «وكيف أصل إليها؟ | أنتما تستطيعان الطيران، أما أنا فأمشي ببطء شديد.»",
+   "en": "One duck said, “We know a large lake beyond the hills, | and it has plenty of water.” | The tortoise asked, “But how can I get there? | You can fly, while I walk very slowly.”"
+  },
+  {
+   "p": 4,
+   "ar": "فكّرت البطتان قليلًا، ثم وجدتا عصًا قوية. | قالتا: «سنمسك طرفَي العصا بمنقارينا، | وأنتِ أمسكي وسطها بفمك. | هكذا نحملك معنا في الهواء، حتى نصل إلى البحيرة.»",
+   "en": "The ducks thought for a moment, then found a strong stick. | “We will hold the two ends with our beaks,” they said, | “and you hold the middle in your mouth. | Then we can carry you through the air to the lake.”"
+  },
+  {
+   "p": 5,
+   "ar": "فرحت السلحفاة كثيرًا، لكن البطتين قالتا لها: «هناك أمر مهم جدًا. | لا تفتحي فمك أثناء الطيران، مهما سمعتِ من كلام. | إذا تكلمتِ، ستسقطين!» | هزّت السلحفاة رأسها موافقة.",
+   "en": "The tortoise was delighted, but the ducks warned her, “There is one very important thing. | Do not open your mouth while we are flying, no matter what you hear. | If you speak, you will fall!” | The tortoise nodded."
+  },
+  {
+   "p": 6,
+   "ar": "أمسكت السلحفاة العصا بفمها، ورفعت البطتان جناحيهما. | ارتفعت البطتان والسلحفاة فوق الأشجار والبيوت. | نظرت السلحفاة إلى الأرض البعيدة، وشعرت بالدهشة والفرح، | لكنها بقيت صامتة.",
+   "en": "The tortoise gripped the stick in her mouth, and the ducks spread their wings. | The ducks and tortoise rose above the trees and houses. | The tortoise looked down at the distant ground, amazed and happy, | but she stayed silent."
+  },
+  {
+   "p": 7,
+   "ar": "مرّت فوق قرية، فرآها بعض الناس. | صاح أحدهم: «انظروا! سلحفاة تطير بين بطتين!» | وضحك الآخرون ورفعوا رؤوسهم. | غضبت السلحفاة، وأرادت أن تقول لهم إنها ليست طائرًا غريبًا.",
+   "en": "They passed above a village, and some people saw them. | “Look!” someone shouted. “A tortoise is flying between two ducks!” | Others laughed and looked up. | The tortoise grew angry and wanted to tell them she was not some strange bird."
+  },
+  {
+   "p": 8,
+   "ar": "نسيت السلحفاة تحذير صديقتيها، وفتحت فمها لتردّ على الناس. | في اللحظة نفسها، تركت العصا وسقطت إلى الأرض. | لم تنجُ السلحفاة من السقوط، | ووصلت البطتان إلى البحيرة وحدهما.",
+   "en": "The tortoise forgot her friends’ warning and opened her mouth to answer the people. | At that very moment, she let go of the stick and fell to the ground. | The tortoise did not survive the fall, | and the two ducks reached the lake alone."
+  }
+ ],
+ "ending": {
+  "t": 170.6,
+  "description": "The two ducks on the wide dusk lake with the stick floating between them, both looking at its empty middle. THE END pops in the sky at 170.6 and is held, with a slow pull-out, to 174.45. No moral caption: the script does not speak one."
+ },
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "duck",
+   "description": "A duck with two palettes (white, mallard). Pose fields: fly, flap, ph/amp (waddle), swim, neck (bend down 0..1), headRot, talk, bill (open), clamp, wing (gesture angle), wingsUp, plus the shared acting fields.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Start from Library bird(): larger oval body (K.shape ellipse with dot shading), a two-segment neck (quadratic stroke) ending in a round head, a flat two-part bill, webbed triangle feet. Wings reuse the bird flap geometry scaled 1.5. Wrap with acting() and add a registry entry and catalogue poses."
+  },
+  {
+   "type": "pose",
+   "name": "tortoise acting head, bite and dangle",
+   "description": "Optional fields on the Library tortoise so she can carry a film: neck (extension), headRot, talk, mouth set, brow, bite (jaw clamped on a bar), dangle (legs hang and swing), front foot raise.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Add the fields with defaults that reproduce the current drawing exactly (regression must stay identical). Head is drawn at the end of a neck stroke whose length and angle come from neck/headRot; mouth and brow copied from the turtle figure. When dangle is set the four legs are drawn as short capsules rotated by swing()."
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "description": "Anger flush 0..1: red Ben-Day dots climbing the face from the neck, with optional steam puffs.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Clip to the head shape and fill the style red dot pattern up to a height set by flush; puffs are K.popIn circles on short kfn paths."
+  },
+  {
+   "type": "motion",
+   "name": "carryRig",
+   "description": "Two carriers hold a bar and a rider hangs from its middle: bar ends follow the carriers, the bar bends with the load, the rider swings from the midpoint and can let go.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "A pure function rig(t) returning both duck poses, the stick curve and the rider pose. Duck y = flight path + flap bob (phases a third of a cycle apart); stick = quadratic through the two bill tips with sag proportional to load (load goes 1 to 0 at the release, with rebound()); rider hangs from the midpoint with swing(); after release rider y = fallY. Uses the planned bird carry idea for the bill grip."
+  },
+  {
+   "type": "set",
+   "name": "pond",
+   "description": "A pond with a level parameter for stories about water and drought.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "pond(c, {x, y, w, level, cracks, t}): outer dry ring (tan), darker wet ring, water ellipse scaled by level with blue dots and ripple(); cracks are seeded polylines (K.rng) revealed by the cracks value; reeds are strokes on swing()."
+  },
+  {
+   "type": "set",
+   "name": "village",
+   "description": "Small village lane with flat-roofed houses, window, doorway, dome and palm.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Rectangles with brush outlines and dot shading, baked once with bake(); the same function at scale 0.25 gives the roofs for aerialStrip."
+  },
+  {
+   "type": "effect",
+   "name": "aerialStrip",
+   "description": "Scrolling ground seen from the air in three parallax layers (crowns, roofs, far patchwork).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Three baked strips 3000 wide drawn at offsets -dist(t) * [1, 0.6, 0.25]; hillTrees crowns, village at small scale, flat colour fields with a wobbly river line."
+  },
+  {
+   "type": "character",
+   "name": "villager",
+   "description": "Reuses the planned villager / villageWoman person variants (KD-005) with a child size.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Person figure with costume parameters (headwear, tunic colour, beard, scale); the child is scale 0.7 with a larger head ratio."
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "description": "Reuses the planned generic thought cloud (stories, the lake promise, the plan board, the angry wish).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "cloud outline with trailing bubbles to the thinker; clip and draw a callback inside at its own scale."
+  },
+  {
+   "type": "effect",
+   "name": "groundShadow",
+   "description": "The moving shadow of flying characters on ground and walls.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Dark ellipses at 25 % alpha at the rig x, drawn on the lane and clipped to the house fronts."
+  },
+  {
+   "type": "prop",
+   "name": "stick, pebble, snail, ball",
+   "description": "Small props for this story.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Each one K.shape or stroke function with a header comment; the stick takes a bend value and two end points."
+  }
+ ],
+ "implementation_notes": [
+  "Cue every beat from timing.json word starts (w(p, n)); the cue times in this plan are those starts. Long words (60.06, 109.98, 148.66, 162.58) probably begin with silence: start the action up to 0.4 s later if the audio shows it.",
+  "Build rig(t) first (carryRig) and test it with stills at 109.98, 112.7, 122.5, 154.3, 157.9 and 161.2 before staging anything else; scenes S6 to S9 all depend on it.",
+  "Ducks hold the stick from above: both face right, necks bent down, bills clamped over the stick. This avoids a duck having to hold a stick behind its head and reads clearly at phone size.",
+  "The ducks never move in unison: offset flap phase by a third of a cycle, reactions by 4 to 6 frames, and give duck B the bigger, later reaction throughout.",
+  "Set LIFE.t = t for automatic blinks; suppress blinks (noBlink) during the frightened hold at 33.8, the realisation at 157 to 159 and the villagers freeze at 162.6.",
+  "The pebble drop at 96.42 and the tortoise release at 154.26 must share the same picture: an open mouth, a clear gap, a short hang, then fallY. Keep both on the panel centre line.",
+  "Death is shown by absence: she falls behind the roof line; never draw an impact or a body. Use only a dust column and the reactions.",
+  "Keep the caption panel still: apply shake inside the picture panel only. Balloons and labels must stay clear of faces and inside the picture panel.",
+  "Tortoise scale: about 1.9 on the ground and in the rig so her face is at least 90 px wide on screen; close-ups go to zoom 2.2 or more.",
+  "Sound: only the listed effects, in the listed pauses, with SND master 0.6. There is no effect on the fall or the impact (no pause there, and silence is stronger).",
+  "Call S.finish last every frame; one transition card only (19.4)."
+ ],
+ "warnings": [
+  "New drawing load is above the usual four major assets (duck, tortoise acting fields, pond, village, aerialStrip, carryRig). The village and the villagers can be shared with KD-005; if time is short, drop the two extra onlookers and the ball.",
+  "The Library tortoise is small and simple; if extending it without changing its default look is awkward, build the heroine on the turtle head (talk, brow, mouth already exist) with the tortoise shell and legs, as a new optional variant.",
+  "The ending is a death in a children fable. It is staged off screen. Confirm that this restraint is what the series wants, and that no spoken or written moral should be added.",
+  "No pause exists around the fall (160.8 to 162.6) so no impact sound is planned; if a real silence is measured inside the long word at 162.58, a very soft thud could be considered.",
+  "The balloon I AM NOT A is invented lettering standing for the narrated intention to answer the people; remove it if only true sound words are wanted."
+ ]
+}

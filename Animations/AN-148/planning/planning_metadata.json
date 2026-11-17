@@ -1,0 +1,94 @@
+{
+ "story_id": "AN-148",
+ "title": "THE DEVOTEE PRINCE",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T16:23:53",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a96a82c1bfd9fd58a.jsonl",
+ "agent_id": "a96a82c1bfd9fd58a",
+ "model_messages": {
+  "claude-fable-5-2": 28
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "99e53bb5bb1e79b3e42d915cfb8b746a9bae7e7197bfb49dc95e943060085bf5",
+  "paragraphs": 8,
+  "segments": [
+   "AN-148-P01-S01",
+   "AN-148-P01-S02",
+   "AN-148-P01-S03",
+   "AN-148-P01-S04",
+   "AN-148-P01-S05",
+   "AN-148-P01-S06",
+   "AN-148-P01-S07",
+   "AN-148-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-148_THE_DEVOTEE_PRINCE_full_slowed.mp3",
+  "sha256": "c4c9948a9c80ee2b162f7b5441c84eca3fabaad2aeea468cfeca3cd51f625d68",
+  "duration": 173.416
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-148_THE_DEVOTEE_PRINCE_full_slowed.mp3.words.json",
+  "sha256": "97284f00bda6268cd422752eceda64358a20390d5a24d6d949f4f5c004c8a2b0",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "5a93429",
+ "scenes": 19,
+ "actions": 162,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "graveyard",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "graveMarker",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "brickWall",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "person costume preset devotee",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "jewels (ruby)",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "effort": "S"
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "minaret, trowel",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The narration has only three real pauses (5.36, 20.72, 62.04) plus two short gaps (35.76, 166.27); keep sound effects to the six listed.",
+  "S12 (hut exterior, 2.4 s) and S16 (ride to Baghdad, 2.6 s) are very short: keep them to one clear motion each.",
+  "villageYard has a forest backdrop; for a Basra house it may read too rural. Check a still; if so swap the backdrop for townFarCity or use marketStreet with one house front.",
+  "The palace battlement height for the bird is read from the catalogue image (approximate); measure it on the marketStreet anchors.",
+  "P8 English is shorter than the Arabic (the father's grief sentence is folded into \"Both parents grieved\"), so English chunk 3 appears while the Arabic says \"the father grieved because he lost his son\"; this is a chunk alignment compromise, the text is verbatim.",
+  "The devotee preset must be clean-shaven and read as a youth at phone size; keep the skull cap small so he is not confused with the villagers."
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "story_id": "AN-098",
+ "title": "GENEROUS DEALING OF YAHYA SON OF KHALID WITH A MAN WHO FORGED A LETTER IN HIS NAME",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T14:02:07",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-ad25f14e5655c0227.jsonl",
+ "agent_id": "ad25f14e5655c0227",
+ "model_messages": {
+  "claude-fable-5-2": 25
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "5fb9f214a74fb26a545f0a90725d677c5725d0683cefcfa6a7472d46bf400e50",
+  "paragraphs": 8,
+  "segments": [
+   "AN-098-P01-S01",
+   "AN-098-P01-S02",
+   "AN-098-P01-S03",
+   "AN-098-P01-S04",
+   "AN-098-P01-S05",
+   "AN-098-P01-S06",
+   "AN-098-P01-S07",
+   "AN-098-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-098_GENEROUS_DEALING_OF_YAHYA_SON_OF_KHALID_WITH_A_MAN_WHO_FORGED_A_LETTER_IN_HIS_NAME_full_slowed.mp3",
+  "sha256": "0db79dd8dd6a4b6980e4e6af1581e3539cdb4149c866090b6119d3a2870f04ae",
+  "duration": 171.414
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-098_GENEROUS_DEALING_OF_YAHYA_SON_OF_KHALID_WITH_A_MAN_WHO_FORGED_A_LETTER_IN_HIS_NAME_full_slowed.mp3.words.json",
+  "sha256": "e1d6a5d54301688afc30dec5b3fe24244a1c8438861e86cc8ccf51782c3a6457",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.996
+ },
+ "library_rev": "959278e",
+ "scenes": 17,
+ "actions": 147,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "horse",
+   "effort": "L"
+  },
+  {
+   "type": "motion",
+   "name": "rideOn",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "scroll",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "portraitMedallion",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "rift",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "treasureHoard (chest) and jewels (jewelBox)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "quillInk, bindle, hourglass",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow, inset circle",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "P6 is chunked in 3: the last Arabic chunk has 12 words (119.68 to 129.02); the English has only one short sentence for it, so it cannot be split further without mismatch. Check the Arabic font size fits three lines.",
+  "S10 runs 21.2 s in one room; it is carried by acting (freeze, decision, wink). If it feels static in the review, widen the camera change at 96.1.",
+  "The English translation is a condensed paraphrase of the Arabic (see SCRIPT note in the Markdown, section 8); nothing was changed.",
+  "horse and rideOn are planned by other stories but not in Library yet; this film needs them in three scenes. If they are late, S8/S13/S17 can fall back to walking figures leading horses by a rope.",
+  "Word times at phrase starts can include up to 0.4 s of silence (for example 18.44, 39.76, 60.6, 83.28, 105.04); check the onsets of those first words when keying the cuts."
+ ]
+}

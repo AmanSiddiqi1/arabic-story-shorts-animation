@@ -1,0 +1,115 @@
+{
+ "story_id": "AN-086",
+ "title": "THE CALIPH HISHAM AND THE ARAB YOUTH",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T13:34:06",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a0e23b6f1fc034b13.jsonl",
+ "agent_id": "a0e23b6f1fc034b13",
+ "model_messages": {
+  "claude-fable-5-2": 16
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "d2b970f24d952235ef6c6c7ba2962216119939dfaa306dad2713652640ac4df4",
+  "paragraphs": 8,
+  "segments": [
+   "AN-086-P01-S01",
+   "AN-086-P01-S02",
+   "AN-086-P01-S03",
+   "AN-086-P01-S04",
+   "AN-086-P01-S05",
+   "AN-086-P01-S06",
+   "AN-086-P01-S07",
+   "AN-086-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-086_THE_CALIPH_HISHAM_AND_THE_ARAB_YOUTH_full_slowed.mp3",
+  "sha256": "597ee472d04afdc03daf0ae955783ed2f84673f0fd94d2f1e8a8f703029e556a",
+  "duration": 168.135
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-086_THE_CALIPH_HISHAM_AND_THE_ARAB_YOUTH_full_slowed.mp3.words.json",
+  "sha256": "4f803badf7593e494473d2f07fd80f28ef40b86a6265705f2984d57a18d6bf44",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "959278e",
+ "scenes": 9,
+ "actions": 117,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "horse",
+   "effort": "L"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (guard, executioner)",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "person youth option",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "sheep",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "hawk (bird kind)",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "sparrow (bird kind)",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "pasture",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "chaseRoad",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "jewels (with jewelBox)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "greetingIcon",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "spear, sword",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person mouthItem",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [
+  "no LATER transition (one is expected when time passes)"
+ ],
+ "plan_warnings": [
+  "The horse is the one large new drawing (effort L); if time is short it can be reduced to walk, gallop and brake only.",
+  "The person figure has no profile and no real mounting pose: the rider is the seated pose placed on the saddle, so check the leg overlap on the horse flank in a still before animating.",
+  "Six human figures share the frame in S5 to S8; at zoom 0.95 each is about 215 px tall on screen, so keep lettering and labels out of the head band (y 640..760) and check phone legibility with a contact sheet.",
+  "Hawk and sparrow kinds, sheep, pasture, chaseRoad, sword, flush, featherFall, goldGlow and iconBalloon are planned assets that may not exist in Library yet; build whichever are missing in the story and move them to Library after approval.",
+  "No LATER transition is used (continuous time); plancheck reports this as a warning."
+ ]
+}

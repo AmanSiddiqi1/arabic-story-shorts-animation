@@ -1,0 +1,117 @@
+{
+ "story_id": "AN-046",
+ "title": "The Sparrow and the Peacock",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T13:19:41",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a899e8bde9e193357.jsonl",
+ "agent_id": "a899e8bde9e193357",
+ "model_messages": {
+  "claude-fable-5-2": 20
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "5f854be3f515c7517827893c80b9d0f932e466b6f9dcbe0604b062f98d4c1002",
+  "paragraphs": 8,
+  "segments": [
+   "AN-046-P01-S01",
+   "AN-046-P01-S02",
+   "AN-046-P01-S03",
+   "AN-046-P01-S04",
+   "AN-046-P01-S05",
+   "AN-046-P01-S06",
+   "AN-046-P01-S07",
+   "AN-046-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-046_The_Sparrow_and_the_Peacock_full_slowed.mp3",
+  "sha256": "8da5c915be34d27682e32eb1552f1b6ddad2884cbe28ea29faff14a20346b723",
+  "duration": 172.831
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-046_The_Sparrow_and_the_Peacock_full_slowed.mp3.words.json",
+  "sha256": "e308f86072368bc999c359874fdc9d959c97da01565a1d27eb2b45dff2383d0e",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "959278e",
+ "scenes": 16,
+ "actions": 175,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "peacock",
+   "effort": "L"
+  },
+  {
+   "type": "character",
+   "name": "sparrow (bird kind)",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (hunter)",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "rockyHill",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "fishingNet",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "birdCage",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "crownProp, officeBadge, grainPile",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "bindle",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "fightCloud",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "featherFall",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "groundShadow",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "dream wash",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "New drawing load is above the usual four: peacock (L), rockyHill terrace (M), fishingNet with two extra states (M) and several small props and effects (S). Most are already planned by other stories (hunter, fishingNet, birdCage, rockyHill, fightCloud, featherFall, groundShadow, iconBalloon, dream wash, bindle); only peacock, the sparrow kind and three small props are new names.",
+  "The English subtitle is a summary and shorter than the Arabic; chunk boundaries therefore do not line up word for word (for example P4 chunk 2).",
+  "The first word of P3 (42.00, 2.0 s long) and of several paragraphs carries leading silence; S5 uses that silence for the waiting king. Do not place sound there without measuring the envelope.",
+  "S9 covers the end of P4 (84.56-86.62) and P5 to 99.2 on purpose: \"he stayed near his nest\" plays on the nest."
+ ]
+}

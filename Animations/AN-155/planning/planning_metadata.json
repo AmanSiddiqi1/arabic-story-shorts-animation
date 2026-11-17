@@ -1,0 +1,79 @@
+{
+ "story_id": "AN-155",
+ "title": "DI'IBIL AL-KHUZA'I WITH THE LADY AND MUSLIM BIN AL-WALID",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T16:54:52",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-aa9081b2fec448290.jsonl",
+ "agent_id": "aa9081b2fec448290",
+ "model_messages": {
+  "claude-fable-5-2": 23
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "9138b70df884e871de674bd26b4b4f7cd5c60f9f07779a4a0e82e8c14b5d79f4",
+  "paragraphs": 8,
+  "segments": [
+   "AN-155-P01-S01",
+   "AN-155-P01-S02",
+   "AN-155-P01-S03",
+   "AN-155-P01-S04",
+   "AN-155-P01-S05",
+   "AN-155-P01-S06",
+   "AN-155-P01-S07",
+   "AN-155-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-155_DI_IBIL_AL_KHUZA_I_WITH_THE_LADY_AND_MUSLIM_BIN_AL_WALID_full_slowed.mp3",
+  "sha256": "6fa96139d4d1f3b843899d7a47eaaa7f5be3882d7e2d17f0cb0809c09d894aeb",
+  "duration": 175.869
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-155_DI_IBIL_AL_KHUZA_I_WITH_THE_LADY_AND_MUSLIM_BIN_AL_WALID_full_slowed.mp3.words.json",
+  "sha256": "6d05eb8d202c79d1e72a79bc7e5b631efe65ff994275bf233866e641d5e62588",
+  "manifest_status": "MANUAL REVIEW",
+  "script_match": 0.991
+ },
+ "library_rev": "5a93429",
+ "scenes": 18,
+ "actions": 186,
+ "new_assets": [
+  {
+   "type": "effect",
+   "name": "verseRibbon",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "person costume preset 'poet'",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "kerchief",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "peephole (townDoor option)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "foodTray, waterJug, coinPile, iconBalloon, handOver, portraitMedallion",
+   "effort": "M"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only); timing manifest: MANUAL REVIEW (Out-of-range word timestamp detected and excluded)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Dense narration: no room for sound effects at the door slam, the kick or the market; do not add effects over words.",
+  "The poet preset, verseRibbon, iconBalloon, foodTray, coinPile, waterJug and handOver are planned assets that may not exist in Library yet; build them in the story (or take them from Library if another film has landed them) under these names.",
+  "Lettering is at the limit (19 items). If anything must go, drop QUICK WIT!, VALUABLE! and SOLD! first.",
+  "The peephole face is small: keep the camera at zoom 1.45 or more in S15 so the eyes are readable (opening at least 100 px wide on screen).",
+  "S16 pull-out makes Diibil small; keep his head at least 110 px on screen and the three tags at 44 px headline size.",
+  "Subject matter: keep the private room implicit (see owner questions); no suggestive imagery or lettering."
+ ]
+}

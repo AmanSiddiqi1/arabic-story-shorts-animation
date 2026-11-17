@@ -1,0 +1,98 @@
+{
+ "story_id": "AN-141",
+ "title": "THE WOMAN'S TRICK AGAINST HER HUSBAND",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T15:38:36",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-ad4a9a1fd862fbb74.jsonl",
+ "agent_id": "ad4a9a1fd862fbb74",
+ "model_messages": {
+  "claude-fable-5-2": 19
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "8ab83dc3f3b2cc031e02e132549f8c2e2d71b377d50ee64cf8c86e7b967b8272",
+  "paragraphs": 8,
+  "segments": [
+   "AN-141-P01-S01",
+   "AN-141-P01-S02",
+   "AN-141-P01-S03",
+   "AN-141-P01-S04",
+   "AN-141-P01-S05",
+   "AN-141-P01-S06",
+   "AN-141-P01-S07",
+   "AN-141-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-141_THE_WOMAN_S_TRICK_AGAINST_HER_HUSBAND_full_slowed.mp3",
+  "sha256": "a71efb679d025fafdcf35087db5e32a4c714fd743c2b7957d4c3eeb748f2dcf9",
+  "duration": 161.14
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-141_THE_WOMAN_S_TRICK_AGAINST_HER_HUSBAND_full_slowed.mp3.words.json",
+  "sha256": "96cc63c75727905c4277a4a0a3bec14bb0582e271dcd08713ea61e99c4b93c9e",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.987
+ },
+ "library_rev": "5a93429",
+ "scenes": 15,
+ "actions": 142,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "fish",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "hangingJar (floor state, water fill)",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "jailCell",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "weekDots",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "musicNotes",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "person laugh / templeTap / handOver",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "cookPot, smallBowl (wide, water), scroll, balanceScale, worryScribble",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Narration is nearly continuous: only seven pauses of 0.6 s or more. Do not add effects on the knocks, plop, clang or laughter.",
+  "Six people in the home in S10 to S13: keep them at s 1.1 to 1.2 with the camera wide (zoom about 1.15) and check at phone size that the three neighbours read as three different people.",
+  "S12 close shot draws person heads at more than 2x: check line weights and that both eyes of each face are inside the panel.",
+  "fish, iconBalloon, weekDots, jailCell and the jar floor state are planned assets that do not exist in Library yet; build them in the story first.",
+  "The ending is deliberately unjust (the script says so). Do not add a rescue, a wink or a smile after 139.60."
+ ]
+}

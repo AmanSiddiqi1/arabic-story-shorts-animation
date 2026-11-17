@@ -1,0 +1,2936 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-136",
+ "title": "The Water-Carrier and the Goldsmith's Wife",
+ "duration": 170.073,
+ "end_hold": 3.5,
+ "logline": "On the one day a Bukhara goldsmith squeezes a customer's hand in his shop, the water-carrier who has served his house blamelessly for thirty years does exactly the same to his wife, and she is the one who works out why.",
+ "moral": "What you do to others comes back to your own door: the repayment matches the deed.",
+ "tone": "Quiet domestic mystery with dry comedy. Restrained and decent: the wrong is a hand held too long, shown only as two matching hand close-ups. The wife is the calm detective; the men supply the squirming.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 2.46,
+   "kind": "setup",
+   "cue": {
+    "word": "صائغ",
+    "t": 2.46
+   },
+   "summary": "A goldsmith of Bukhara and his devout wife."
+  },
+  {
+   "id": "B2",
+   "t": 13.52,
+   "kind": "setup",
+   "cue": {
+    "word": "ثلاثين",
+    "t": 13.52
+   },
+   "summary": "The water-carrier: thirty blameless years of filling the cisterns (time-lapse and counter)."
+  },
+  {
+   "id": "B3",
+   "t": 33.24,
+   "kind": "inciting",
+   "cue": {
+    "word": "وأمسك",
+    "t": 33.24
+   },
+   "summary": "Out of nowhere he grips and squeezes her hand (hand insert no. 1) and leaves."
+  },
+  {
+   "id": "B4",
+   "t": 37.58,
+   "kind": "emotion",
+   "cue": {
+    "word": "دهشت",
+    "t": 37.58
+   },
+   "summary": "She is stunned; it is utterly unlike him."
+  },
+  {
+   "id": "B5",
+   "t": 51.7,
+   "kind": "rising",
+   "cue": {
+    "word": "ماذا",
+    "t": 51.7
+   },
+   "summary": "She questions her husband: what did you do in your shop today?"
+  },
+  {
+   "id": "B6",
+   "t": 57.3,
+   "kind": "comic",
+   "cue": {
+    "word": "أجاب",
+    "t": 57.3
+   },
+   "summary": "He denies it with too many gestures; she demands the whole truth."
+  },
+  {
+   "id": "B7",
+   "t": 78.62,
+   "kind": "reveal",
+   "cue": {
+    "word": "فأمسك",
+    "t": 78.62
+   },
+   "summary": "His confession: he squeezed a customer's hand (hand insert no. 2, the mirror of no. 1)."
+  },
+  {
+   "id": "B8",
+   "t": 87.62,
+   "kind": "surprise",
+   "cue": {
+    "word": "عجيب!",
+    "t": 87.62
+   },
+   "summary": "Strange! The carrier did the very same to me today: the two inserts side by side with an equals sign."
+  },
+  {
+   "id": "B9",
+   "t": 98.02,
+   "kind": "turn",
+   "cue": {
+    "word": "لماذا",
+    "t": 98.02
+   },
+   "summary": "Why on the very day you wronged another woman? The link is made."
+  },
+  {
+   "id": "B10",
+   "t": 107.28,
+   "kind": "emotion",
+   "cue": {
+    "word": "بالخجل،",
+    "t": 107.28
+   },
+   "summary": "Shame and repentance; they pray; a sleepless night until dawn."
+  },
+  {
+   "id": "B11",
+   "t": 133.16,
+   "kind": "climax",
+   "cue": {
+    "word": "جثا",
+    "t": 133.16
+   },
+   "summary": "Next day the carrier falls on his knees before her and begs pardon."
+  },
+  {
+   "id": "B12",
+   "t": 143.08,
+   "kind": "resolution",
+   "cue": {
+    "word": "زوجها",
+    "t": 143.08
+   },
+   "summary": "She tells him her husband did the like; the husband admits it from the doorway."
+  },
+  {
+   "id": "B13",
+   "t": 153.78,
+   "kind": "moral",
+   "cue": {
+    "word": "الجزاء",
+    "t": 153.78
+   },
+   "summary": "The saying on a balance scale: the repayment matches the deed."
+  },
+  {
+   "id": "B14",
+   "t": 166.14,
+   "kind": "resolution",
+   "cue": {
+    "word": "واجهت",
+    "t": 166.14
+   },
+   "summary": "The wife, upright between two bowed men, faced both wrongs and brought out the truth."
+  }
+ ],
+ "cast": [
+  {
+   "id": "goldsmith",
+   "name": "the goldsmith",
+   "library": "person",
+   "base": "person costume:'merchant' with pal {robe: green, dot: dark green, hc: yellow} (the MERCHANT PAL cell of people.png), age 0.45",
+   "look": "Big yellow turban with a feather pin, black beard, green dotted robe, yellow sash. Proud and bouncy at first; from 107.3 bare-headed with the turban in his hands. Colour code: GREEN.",
+   "new": false
+  },
+  {
+   "id": "wife",
+   "name": "the goldsmith's wife",
+   "library": "person",
+   "base": "person costume:'lady' (default palette)",
+   "look": "White veil with a yellow band, blue dotted robe. Upright, economical movement, level eyes. Colour code: BLUE sleeve.",
+   "new": false
+  },
+  {
+   "id": "carrier",
+   "name": "the water-carrier",
+   "library": "person",
+   "base": "person costume:'villager' with pal {robe: brown, dot: dark brown, sash: paper, hc: white}, age keyed 0.2 to 0.7 in S3 then 0.7",
+   "look": "Small white turban, grey beard, brown patched tunic, bent under a goatskin waterskin on a shoulder strap. Colour code: BROWN.",
+   "new": false
+  },
+  {
+   "id": "customer",
+   "name": "the customer",
+   "library": "person",
+   "base": "person costume:'lady' with pal {robe: red, dot: dark red, hc: yellow}",
+   "look": "Red robe, yellow veil; seen only inside the confession cloud and as the red sleeved hand. Colour code: RED sleeve with the gold bracelet.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "bukharaStreet",
+   "library": "marketStreet",
+   "description": "marketStreet({palette:'clear', palace:false, stalls:[{x:200, kind:'jewel'}]}): one jewel stall (planned marketStall kind 'jewel': blue velvet tray, T-stand with necklaces, blue and white awning; counter top y about 790, measure on the set) plus a small anvil block 40 x 30 on the counter. Skyline domes stand for Bukhara. The same stall is redrawn inside the confession cloud.",
+   "new": false
+  },
+  {
+   "id": "courtyard",
+   "library": null,
+   "description": "Planned set courtyardHouse (AN-114) with fountain off and wealth middle. If it is not built yet, build to these dimensions (world 1000 x 1230, ground y 900): back wall y 330..900 in cream with red dot shading, crenel-free flat top with sky above (skyCycle u); left side wall with the STREET DOOR x 90..230, top y 600 (townDoor, hinge left, opens inward); back wall arcade of three pointed arches x 330..470, 520..660, 710..850, tops y 520, dark blue inside; HOUSE DOOR on the right x 800..930, top y 590 (townDoor); stone bench 200 x 48 under the middle arch (sitY about 852); two cisterns on the ground at x 420 and x 600; checker paving below y 900.",
+   "new": true
+  },
+  {
+   "id": "homeRoom",
+   "library": "palaceHall",
+   "description": "palaceHall({variant:'merchant', wall:'ochre', desk:false, curtain:0, treasure:false, stools:[640], lampsLit:true, u}): the couple's room. Door at the left (anchor door), shelves with jars, the window pane shows the time of day (u 0.48 dusk in S7, 0.75 night and 1.0 dawn in S15). Floor y 900. Anchors from MERCHANT; positions given in scenes are approximate, measure on the set.",
+   "new": false
+  },
+  {
+   "id": "handInsert",
+   "library": null,
+   "description": "Not a place: a full-panel comic insert. Flat Ben-Day field (blue for the courtyard deed, yellow for the remembered shop deed) with an inner border 14 thick in the colour code of the man (brown or green). Holds one handClasp drawing at about 700 px wide.",
+   "new": true
+  },
+  {
+   "id": "moralCard",
+   "library": null,
+   "description": "Flat paper card filling the panel (paper colour, blue dot fade in the corners, scroll curl along the top) for the balance scale and the saying. Reuse the style box and title primitives; no perspective.",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "waterskin",
+   "library": null,
+   "description": "Planned prop waterskin (AN-083): goatskin bag about 150 x 90, brown with dark dot shading, tied neck, shoulder strap; fields fill 0..1 (bulge), slosh, tilt, squeeze. Worn on the back (drawn behind the person, strap across the chest) or held at the neck with both hands to pour.",
+   "new": true
+  },
+  {
+   "id": "cistern",
+   "library": null,
+   "description": "Stone water trough 170 wide x 100 high (rim y 800 when on ground 900), grey with blue dot shadow, rim 14 thick; field level 0..1 draws the blue water surface line inside the rim and spill drops above 1. Two of them in the courtyard.",
+   "new": true
+  },
+  {
+   "id": "bracelet",
+   "library": null,
+   "description": "Gold bangle: yellow ring outer r 26, inner r 18, black outline, three red gem dots, a white glint arc; drawn flat on the anvil, held in a hand, and as an ellipse (26 x 10) round a wrist.",
+   "new": true
+  },
+  {
+   "id": "handClasp",
+   "library": null,
+   "description": "The picture the film turns on, built on the planned ladyHand (AN-109). Two large hands in profile on a flat field: hand B (the woman, vertical, sleeve from one side) and hand A (the man, horizontal, sleeve from the other side) wrapping it. See new_assets for dimensions and fields.",
+   "new": true
+  },
+  {
+   "id": "balanceScale",
+   "library": null,
+   "description": "Flat balance scale: post 300 tall, beam 560 x 12 pivoting at the top (tilt in radians), two chains 150 long, pans 200 x 24 (shallow arcs) that stay level; yellow with black outline.",
+   "new": true
+  },
+  {
+   "id": "prayerBeads",
+   "library": null,
+   "description": "Planned prop (AN-075): loop of 11 small beads (r 5) with a tassel, hung from one hand; one bead advances per 0.5 s.",
+   "new": true
+  },
+  {
+   "id": "purse",
+   "library": null,
+   "description": "Small coin purse: yellow circle r 14 with a tied neck on a 40 long string.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 3.92,
+   "paragraphs": [
+    1
+   ],
+   "set": "bukharaStreet",
+   "cast": [
+    "goldsmith"
+   ],
+   "summary": "Bukhara. A market street; at his jewel stall the goldsmith taps a gold bracelet on a small anvil, pleased with himself.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Start wide on the street (x 500, y 640, zoom 1.0), ease to the stall (x 330, y 700, zoom 1.5) by 2.4."
+   },
+   "composition": "Jewel stall at x 200..460 (counter top y 790); goldsmith behind the counter at x 330, feet y 900 (counter hides him below the waist). Domes of the skyline top right. Title lower left of the panel, clear of his face.",
+   "actions": [
+    {
+     "t": 0.2,
+     "end": 1.6,
+     "cue": {
+      "word": "مدينة",
+      "t": 0.24
+     },
+     "who": "fx",
+     "action": "title BUKHARA pops with a small place tag under the skyline domes",
+     "acting": "the two domes get a one-frame glint",
+     "library": "S.title / S.label; marketStreet({palette:\"clear\", palace:false, stalls:[{x:200, kind:\"jewel\"}]})"
+    },
+    {
+     "t": 1.5,
+     "end": 2.4,
+     "cue": {
+      "word": "عاش",
+      "t": 1.66
+     },
+     "who": "goldsmith",
+     "action": "tap, tap with a small hammer on a gold bracelet lying on the anvil; each tap throws 3 spark ticks",
+     "acting": "eyes down on the work (gaze [0.2,0.8]), tongue-out concentration read as mouth \"smile\", lid 0.25",
+     "library": "person {costume:\"merchant\", pal:{robe:GREEN, hc:C.yellow}, age:0.45, handRW: hammer point} + strike cycle (lift 0.3 s, whip down)"
+    },
+    {
+     "t": 2.3,
+     "end": 3.3,
+     "cue": {
+      "word": "صائغ",
+      "t": 2.46
+     },
+     "who": "fx",
+     "action": "label box THE GOLDSMITH with an arrow to him",
+     "acting": "he lifts the bracelet to the light and squints one eye at it (wink \"L\")",
+     "library": "S.label + S.arrow; person wink, handRW at [360, 700]"
+    },
+    {
+     "t": 3.2,
+     "end": 3.92,
+     "cue": {
+      "word": "ذهب",
+      "t": 3.3
+     },
+     "who": "goldsmith",
+     "action": "bracelet flashes; he nods, proud, and puffs his chest",
+     "acting": "sq 1.04 then settle, brow -0.3, mouth \"smile\", gaze to the bracelet",
+     "library": "settleTo; S.emphasis sparkle (4 rays) on the bracelet"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 3.92
+   }
+  },
+  {
+   "id": "S2",
+   "start": 3.92,
+   "end": 9.0,
+   "paragraphs": [
+    1
+   ],
+   "set": "courtyard",
+   "cast": [
+    "wife"
+   ],
+   "summary": "The home courtyard. His wife sits by the arches with prayer beads, calm and upright: a good woman, known as such.",
+   "camera": {
+    "shot": "medium",
+    "move": "drift",
+    "notes": "Hold x 560, y 700, zoom 1.45 with a slow 20-unit drift right; nothing else moves fast in this shot."
+   },
+   "composition": "Wife seated on the bench under the middle arch (x 600, sitY about 852); soft light cone from top right. Label upper left.",
+   "actions": [
+    {
+     "t": 3.95,
+     "end": 4.9,
+     "cue": {
+      "word": "زوجته",
+      "t": 4.22
+     },
+     "who": "wife",
+     "action": "seated, passes prayer beads through her fingers one bead per 0.5 s",
+     "acting": "eyes lowered (lid 0.45, gaze [0,0.6]), small closed smile, slow breathe()",
+     "library": "person {costume:\"lady\", sit:1, seat:\"bench\", handL/handR: PERSON_HANDS.clasp} + prayerBeads (planned) + breathe"
+    },
+    {
+     "t": 4.8,
+     "end": 5.8,
+     "cue": {
+      "word": "المعروفة",
+      "t": 4.96
+     },
+     "who": "fx",
+     "action": "label box HIS WIFE with an arrow",
+     "acting": "she does not react to the label: stillness is the point",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 5.8,
+     "end": 6.9,
+     "cue": {
+      "word": "بالتقوى",
+      "t": 5.92
+     },
+     "who": "wife",
+     "action": "raises her eyes and open palms for one beat; a soft cone of light settles on her",
+     "acting": "gaze [0,-0.8], lid 0, brow -0.2, palmsUp",
+     "library": "PERSON_HANDS.palmsUp + skyLight (planned effect) strength 0 to 0.6"
+    },
+    {
+     "t": 6.9,
+     "end": 8.2,
+     "cue": {
+      "word": "وحسن",
+      "t": 6.92
+     },
+     "who": "wife",
+     "action": "a sparrow lands on the arch above her and she gives it a small nod; two neighbours pass the street door as silhouettes and bow their heads to the house",
+     "acting": "warm smile, head tilt 4 px, blink",
+     "library": "bird {kind:\"sparrow\"} hop + landSquash; person {silhouette-style: flat black fill at alpha 0.5, s 0.6} seen through the open street door"
+    },
+    {
+     "t": 8.2,
+     "end": 9.0,
+     "who": "wife",
+     "action": "hold: light fades to normal, she returns to the beads",
+     "acting": "lid back to 0.45",
+     "library": "skyLight 0.6 to 0"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 8.5,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 9.0
+   }
+  },
+  {
+   "id": "S3",
+   "start": 9.0,
+   "end": 22.46,
+   "paragraphs": [
+    1
+   ],
+   "set": "courtyard",
+   "cast": [
+    "carrier",
+    "wife"
+   ],
+   "summary": "The water-carrier. Thirty years of the same visit shown as a time-lapse: he walks in bent under the waterskin, fills the two cisterns, bows at the door and goes, while sky, beard and a year counter roll on. The wife never has cause to look up.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Wide x 500, y 690, zoom 1.1. Pan 60 units left with his entrance (9.7-11.6), centre on the cisterns for the counter (12.9-15.2), follow him out to the left (19.1-21.3)."
+   },
+   "composition": "Street door on the left wall x 90..230; cisterns at x 420 and x 600 (rim y 800); wife small in the background under the right arch (x 820, s 0.8). Counter top centre of the panel (panel y 150). Depth: he passes in front of the cisterns, she is behind them.",
+   "actions": [
+    {
+     "t": 9.2,
+     "end": 10.6,
+     "cue": {
+      "word": "سقاء",
+      "t": 9.7
+     },
+     "who": "carrier",
+     "action": "street door swings in; the carrier steps through, bent forward under a bulging waterskin on a shoulder strap",
+     "acting": "tip 0.12, eyes on the ground ahead (gaze [0.5,0.7]), steady plodding walk, breathe",
+     "library": "townDoor open 0 to 0.8; person {costume:\"villager\", pal:{robe:BROWN, dot:BROWND, hc:C.white}, age:0.2} + walk(CX, t) + footfalls; waterskin (planned) on the back"
+    },
+    {
+     "t": 10.3,
+     "end": 11.1,
+     "cue": {
+      "word": "يحمل",
+      "t": 10.62
+     },
+     "who": "fx",
+     "action": "label box THE WATER-CARRIER with an arrow that walks with him",
+     "acting": "the skin sloshes one beat behind each step",
+     "library": "S.label + S.arrow; waterskin {slosh: swing(t, footfall, 0.3)}"
+    },
+    {
+     "t": 11.1,
+     "end": 12.9,
+     "cue": {
+      "word": "الماء",
+      "t": 11.18
+     },
+     "who": "carrier",
+     "action": "reaches the first cistern, swings the skin off his shoulder and pours: a blue arc, the water level rises",
+     "acting": "anticipate dip before the swing, sq 0.95 as the weight comes off, eyes on the water",
+     "library": "anticipate; handLW/handRW on the skin neck; waterskin {tilt 0 to 1.1, fill 1 to 0.5}; cistern {level 0.2 to 0.6}; pour = bezier strip + 3 drops"
+    },
+    {
+     "t": 12.9,
+     "end": 14.3,
+     "cue": {
+      "word": "ثلاثين",
+      "t": 13.52
+     },
+     "who": "fx",
+     "action": "counter YEARS runs 1 to 30 over 2.1 s; behind it the sky seen over the wall spins day and night three times",
+     "acting": "his pour loops once per sky turn (three quick pours), never sliding: feet planted",
+     "library": "S.counter; skyCycle(ctx, u) with u = kfn 0 to 3 (mod 1); pour loop keyed, not free-running"
+    },
+    {
+     "t": 13.6,
+     "end": 15.2,
+     "cue": {
+      "word": "عامًا،",
+      "t": 14.28
+     },
+     "who": "carrier",
+     "action": "during the count his beard and hair go from black to grey and his back bends a little more",
+     "acting": "age 0.2 to 0.7 eased; tip 0.12 to 0.16; a slower blink at the end",
+     "library": "person age keyed with kfn; counter lands on 30 with S.emphasis pop"
+    },
+    {
+     "t": 15.2,
+     "end": 16.4,
+     "cue": {
+      "word": "يدخل",
+      "t": 15.26
+     },
+     "who": "carrier",
+     "action": "present day: he straightens with a hand on his back, shoulders the skin and crosses to the second cistern",
+     "acting": "small wince (lid 0.6 for 4 frames) then the usual mild face; walk 180 units",
+     "library": "walk + footfalls; PERSON_HANDS.hipsHands on one side"
+    },
+    {
+     "t": 16.4,
+     "end": 18.3,
+     "cue": {
+      "word": "ويملأ",
+      "t": 16.52
+     },
+     "who": "carrier",
+     "action": "pours the rest: second cistern fills to the brim, a ripple ring, he shakes out the last drops",
+     "acting": "eyes follow the level up (lookAt the water line), satisfied nod",
+     "library": "cistern {level 0.3 to 0.95}; ripple; waterskin {fill 0.5 to 0, tilt 1.2}"
+    },
+    {
+     "t": 17.3,
+     "end": 18.3,
+     "cue": {
+      "word": "الأحواض،",
+      "t": 17.4
+     },
+     "who": "fx",
+     "action": "small arrow and label FULL on the brimming cistern",
+     "acting": "wife in the background turns one page / one bead, eyes down",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 18.3,
+     "end": 19.7,
+     "cue": {
+      "word": "ينصرف",
+      "t": 19.08
+     },
+     "who": "carrier",
+     "action": "slings the flat skin over his shoulder, turns for the street door and walks out",
+     "acting": "lighter step now (tip 0.05), eyes on the door; the empty skin flaps behind (lag 3 frames)",
+     "library": "turnFlip squeeze 0.7; walk(CX2, t); waterskin {fill 0}"
+    },
+    {
+     "t": 19.7,
+     "end": 20.6,
+     "cue": {
+      "word": "دون",
+      "t": 19.82
+     },
+     "who": "carrier",
+     "action": "at the door he half turns and bows his head toward the house without looking at her",
+     "acting": "gaze held down [0,0.8], lid 0.5, hand on chest",
+     "library": "PERSON_HANDS.chest; head drop 8 px"
+    },
+    {
+     "t": 20.6,
+     "end": 21.3,
+     "cue": {
+      "word": "يزعج",
+      "t": 20.66
+     },
+     "who": "wife",
+     "action": "she has not looked up once; the sparrow on the arch is the only one watching him go",
+     "acting": "wife lid 0.45, beads; sparrow gaze follows him (lookAt)",
+     "library": "lookAt for the sparrow; person beads loop"
+    },
+    {
+     "t": 21.3,
+     "end": 22.46,
+     "cue": {
+      "word": "أحدًا.",
+      "t": 21.32
+     },
+     "who": "carrier",
+     "action": "door closes softly behind him; the two cisterns glint, the yard is still",
+     "acting": "hold on stillness for 0.8 s",
+     "library": "townDoor 0.8 to 0, settleTo"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 22.46
+   }
+  },
+  {
+   "id": "S4",
+   "start": 22.46,
+   "end": 33.0,
+   "paragraphs": [
+    2
+   ],
+   "set": "courtyard",
+   "cast": [
+    "carrier",
+    "wife"
+   ],
+   "summary": "One day. The wife comes out into the yard with a small tray while he is emptying the skin. He looks up, stops, and walks straight at her.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot(carrier head, wife head, {margin: 140}) from 24.3; at 31.0 start a push from zoom 1.3 to 1.8 centred between them, ending 33.0."
+   },
+   "composition": "Carrier at the left cistern (x 420), wife enters from the house door on the right (x 860) and stops at x 700. Empty ground between them is the suspense: it closes from 280 units to 70.",
+   "actions": [
+    {
+     "t": 22.6,
+     "end": 23.7,
+     "cue": {
+      "word": "ذات",
+      "t": 23.08
+     },
+     "who": "fx",
+     "action": "small caption box ONE DAY... top left; morning sky",
+     "acting": "carrier already at the cistern, mid pour, as every day",
+     "library": "S.label; skyCycle u 0.12"
+    },
+    {
+     "t": 23.9,
+     "end": 25.2,
+     "cue": {
+      "word": "جاءت",
+      "t": 24.32
+     },
+     "who": "wife",
+     "action": "house door opens; the wife steps out carrying a tray with two cups",
+     "acting": "eyes on the tray, unhurried walk, calm mouth",
+     "library": "townDoor; person {costume:\"lady\"} + walk(WX, t) + footfalls; tray = box 70 x 8 with two cup shapes at handLW/handRW"
+    },
+    {
+     "t": 25.2,
+     "end": 26.6,
+     "cue": {
+      "word": "الزوجة",
+      "t": 25.2
+     },
+     "who": "wife",
+     "action": "crosses to the bench under the arch and sets the tray down",
+     "acting": "small anticipate dip as she bends, sq 0.96",
+     "library": "anticipate; handRW to the bench top"
+    },
+    {
+     "t": 27.0,
+     "end": 28.4,
+     "cue": {
+      "word": "بينما",
+      "t": 27.3
+     },
+     "who": "carrier",
+     "action": "he is pouring; the blue arc thins",
+     "acting": "eyes on the water, ordinary",
+     "library": "waterskin {tilt 1.1, fill 0.4 to 0.1}; cistern level up"
+    },
+    {
+     "t": 28.4,
+     "end": 29.2,
+     "cue": {
+      "word": "السقاء",
+      "t": 28.42
+     },
+     "who": "carrier",
+     "action": "his eyes leave the water and go to her: pupils only, the body keeps pouring",
+     "acting": "gazePlan snap (0.07 ease) from the water to her hand; lid opens to 0",
+     "library": "gazePlan saccade; suspense by stillness"
+    },
+    {
+     "t": 29.2,
+     "end": 30.6,
+     "cue": {
+      "word": "يفرغ",
+      "t": 29.2
+     },
+     "who": "carrier",
+     "action": "the water overflows the rim and splashes his feet; he does not notice",
+     "acting": "held stare, no blink (noBlink), mouth closed",
+     "library": "cistern {level 1, spill: 3 drops over the rim}; P.noBlink"
+    },
+    {
+     "t": 29.9,
+     "end": 30.9,
+     "cue": {
+      "word": "الماء.",
+      "t": 29.86
+     },
+     "who": "wife",
+     "action": "she straightens from the bench and notices the overflow, raises a hand to point at it",
+     "acting": "mild surprise brow -0.3, gaze to the cistern, mouth \"o\" small",
+     "library": "PERSON_HANDS.pointFwd; lookAt cistern"
+    },
+    {
+     "t": 30.6,
+     "end": 32.0,
+     "cue": {
+      "word": "اقترب",
+      "t": 30.98
+     },
+     "who": "carrier",
+     "action": "he lets the skin drop (it flops at his feet) and walks toward her, four quick steps",
+     "acting": "tip 0.1 forward, eyes locked on her raised hand, brow 0.3",
+     "library": "waterskin fallY + impactSquash; walk(CX3, t, fast) + footfalls"
+    },
+    {
+     "t": 32.0,
+     "end": 33.0,
+     "cue": {
+      "word": "فجأة،",
+      "t": 32.28
+     },
+     "who": "wife",
+     "action": "SUDDENLY: she leans back as he arrives inside arm reach; her pointing hand is still in the air",
+     "acting": "tip -0.08, eyes \"wide\", gaze to him, one sweat tick; his hand starts up (anticipate)",
+     "library": "settleTo; person eyes:\"wide\"; PERSON_HANDS.reach on him"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 32.3,
+     "text": "!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 22.75,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "match-cut",
+    "t": 33.0
+   }
+  },
+  {
+   "id": "S5",
+   "start": 33.0,
+   "end": 36.1,
+   "paragraphs": [
+    2
+   ],
+   "set": "handInsert",
+   "cast": [
+    "carrier",
+    "wife"
+   ],
+   "summary": "Insert: only hands. His brown sleeved hand closes round her hand and squeezes. The exact framing returns twice later.",
+   "camera": {
+    "shot": "insert",
+    "move": "push-in",
+    "notes": "Flat insert, no world camera: handClasp fills the panel. 4 % scale push over the shot, panel-only shake of 3 px on the squeeze."
+   },
+   "composition": "Blue Ben-Day field. Her hand (blue dotted sleeve, entering from the right) open and vertical at panel centre; his hand (brown sleeve) enters from the left. Thick comic panel border in brown: this colour code means THE CARRIER.",
+   "actions": [
+    {
+     "t": 33.0,
+     "end": 33.8,
+     "cue": {
+      "word": "وأمسك",
+      "t": 33.24
+     },
+     "who": "carrier",
+     "action": "his hand comes in from the left and closes over hers",
+     "acting": "grip 0 to 1 in 0.25 s with a 10 % overshoot",
+     "library": "handClasp {grip: settleTo, palA: brown, palB: blue}"
+    },
+    {
+     "t": 33.8,
+     "end": 34.5,
+     "cue": {
+      "word": "يدها",
+      "t": 33.86
+     },
+     "who": "wife",
+     "action": "her fingers splay stiff in surprise",
+     "acting": "splay 0 to 1; 2 small surprise ticks above the hands",
+     "library": "handClasp {splay}"
+    },
+    {
+     "t": 34.5,
+     "end": 35.4,
+     "cue": {
+      "word": "وضغط",
+      "t": 34.52
+     },
+     "who": "carrier",
+     "action": "he squeezes: knuckles whiten, three red pressure lines pulse",
+     "acting": "squeeze 0 to 1 and hold; sq of her hand 0.92",
+     "library": "handClasp {squeeze}; S.emphasis lines; panel-only shake"
+    },
+    {
+     "t": 35.3,
+     "end": 36.1,
+     "cue": {
+      "word": "عليها،",
+      "t": 35.4
+     },
+     "who": "carrier",
+     "action": "the grip opens and his hand slides out of frame left; her hand stays hanging in the air",
+     "acting": "grip 1 to 0, her hand trembles",
+     "library": "handClasp {grip 0}; tremble"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 34.6,
+     "text": "SQUEEZE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 36.1
+   }
+  },
+  {
+   "id": "S6",
+   "start": 36.1,
+   "end": 44.0,
+   "paragraphs": [
+    2
+   ],
+   "set": "courtyard",
+   "cast": [
+    "carrier",
+    "wife"
+   ],
+   "summary": "He turns and goes without a word. She stands frozen, hand still raised, then looks at it. In thirty years he had only ever bowed.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "Start medium on her (x 700, y 690, zoom 1.7) with his back leaving frame left; pull out to zoom 1.25 by 38.2 so the empty yard shows; push back to 1.5 for the thought cloud at 40.4."
+   },
+   "composition": "Wife right of centre at x 700; street door far left. Thought cloud upper left (centre panel 330, 330; 420 x 300), tail to her head, never over her face.",
+   "actions": [
+    {
+     "t": 36.1,
+     "end": 36.9,
+     "cue": {
+      "word": "ثم",
+      "t": 36.16
+     },
+     "who": "carrier",
+     "action": "he lets go, spins on his heel and strides for the street door",
+     "acting": "eyes down, shoulders up, fast walk; no look back",
+     "library": "turnFlip 0.25 s; walk(CX4, t) + footfalls + dustBurst"
+    },
+    {
+     "t": 36.9,
+     "end": 37.6,
+     "cue": {
+      "word": "خرج.",
+      "t": 36.98
+     },
+     "who": "carrier",
+     "action": "out through the door; it bangs and swings back a little",
+     "acting": "door overshoot and settle",
+     "library": "townDoor + swing(t, 37.2, 0.3)"
+    },
+    {
+     "t": 37.5,
+     "end": 39.0,
+     "cue": {
+      "word": "دهشت",
+      "t": 37.58
+     },
+     "who": "wife",
+     "action": "frozen: hand still held where he left it, mouth open",
+     "acting": "eyes \"wide\", noBlink, sq 0.94 then slow stretch to 1, tremble 1.5 px",
+     "library": "person eyes:\"wide\", mouth:\"o\"; tremble; settleTo"
+    },
+    {
+     "t": 39.0,
+     "end": 39.8,
+     "cue": {
+      "word": "المرأة،",
+      "t": 39.0
+     },
+     "who": "wife",
+     "action": "slowly turns the hand over and looks at it, then at the door, then at the hand",
+     "acting": "gazePlan: hand, door (snap), hand; brow -0.5 (worried)",
+     "library": "gazePlan saccades; handRW keyed"
+    },
+    {
+     "t": 39.8,
+     "end": 41.4,
+     "cue": {
+      "word": "كان",
+      "t": 40.44
+     },
+     "who": "wife",
+     "action": "thought cloud pops: the carrier as she has always known him",
+     "acting": "she looks up into the cloud",
+     "library": "thoughtCloud(ctx, 330, 330, 420, 300, t, {tail: her head, scale: 0.6, inside})"
+    },
+    {
+     "t": 41.4,
+     "end": 42.2,
+     "cue": {
+      "word": "دائمًا",
+      "t": 41.46
+     },
+     "who": "carrier",
+     "action": "inside the cloud: he pours and backs away from the cistern three times in a quick loop",
+     "acting": "eyes always down; three identical polite loops",
+     "library": "thoughtCloud inside: person + cistern at scale 0.6 (figure about 140 px)"
+    },
+    {
+     "t": 42.2,
+     "end": 43.0,
+     "cue": {
+      "word": "بأدب",
+      "t": 42.24
+     },
+     "who": "carrier",
+     "action": "inside the cloud: the hand-on-chest bow from S3",
+     "acting": "the setup pose repeated exactly (PERSON_HANDS.chest, head drop 8 px)",
+     "library": "setup and payoff pose"
+    },
+    {
+     "t": 43.0,
+     "end": 44.0,
+     "cue": {
+      "word": "واحترام.",
+      "t": 43.0
+     },
+     "who": "wife",
+     "action": "the cloud pops away; she folds the squeezed hand in her other hand and frowns toward the street door",
+     "acting": "brow 0.4, mouth \"frown\", gaze to the door, one slow blink",
+     "library": "PERSON_HANDS.clasp; thoughtCloud p 1 to 0"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 38.0,
+     "text": "?!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 44.0
+   }
+  },
+  {
+   "id": "S7",
+   "start": 44.0,
+   "end": 56.8,
+   "paragraphs": [
+    3
+   ],
+   "set": "homeRoom",
+   "cast": [
+    "goldsmith",
+    "wife"
+   ],
+   "summary": "Evening, the room. The goldsmith comes home from the market in a good mood. His wife is waiting on the stool, arms folded, and asks at once: what did you do in your shop today?",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide on the room (x 500, y 690, zoom 1.1) for the entrance; from 48.2 ease to a two-shot (twoShot, margin 150, zoom about 1.5) and hold."
+   },
+   "composition": "Door on the left (palaceHall merchant door anchor); wife seated on the stool at x 640 facing left; lamp above between them; window shows dusk (u 0.48). He stops at x 380. Eye line: his cheerful eyes meet her level stare.",
+   "actions": [
+    {
+     "t": 44.2,
+     "end": 45.1,
+     "who": "set",
+     "action": "wipe lands on the lamp-lit room; window sky orange",
+     "acting": "wife already seated, still, eyes on the door",
+     "library": "palaceHall({variant:\"merchant\", wall:\"ochre\", u:0.48, lampsLit:true, desk:false, curtain:0, stools:[640]})"
+    },
+    {
+     "t": 45.0,
+     "end": 46.5,
+     "cue": {
+      "word": "عاد",
+      "t": 45.14
+     },
+     "who": "goldsmith",
+     "action": "door swings in; the goldsmith strides in swinging a small purse on its string",
+     "acting": "bouncy walk (hop 6 px per step), mouth \"smile\", humming eyes (lid 0.3)",
+     "library": "townDoor/doorOpen; walk(GX, t) + footfalls; purse = circle r 14 on a string with swing()"
+    },
+    {
+     "t": 46.5,
+     "end": 47.4,
+     "cue": {
+      "word": "من",
+      "t": 46.54
+     },
+     "who": "goldsmith",
+     "action": "tosses the purse up and catches it",
+     "acting": "eyes follow the purse up and down",
+     "library": "fallY arc for the purse; lookAt"
+    },
+    {
+     "t": 47.5,
+     "end": 48.2,
+     "who": "goldsmith",
+     "action": "sets the purse down on the shelf; sees her face; the smile shrinks by half",
+     "acting": "gaze snaps to her; mouth \"smile\" to \"closed\"; foot stops mid step and plants",
+     "library": "settleTo; gazePlan snap"
+    },
+    {
+     "t": 48.2,
+     "end": 49.1,
+     "cue": {
+      "word": "فسألته",
+      "t": 48.18
+     },
+     "who": "wife",
+     "action": "she rises from the stool in one slow move",
+     "acting": "sit 1 to 0 over 0.7 s, eyes never leave him, brow 0.5",
+     "library": "person sit blend; lookAt his head"
+    },
+    {
+     "t": 49.6,
+     "end": 51.0,
+     "cue": {
+      "word": "بجدية:",
+      "t": 49.8
+     },
+     "who": "wife",
+     "action": "stands square, arms folded; a small black gravity line under each eye",
+     "acting": "lid 0.3 (level stare), mouth set, no blink for 1 s",
+     "library": "PERSON_HANDS.folded; noBlink window"
+    },
+    {
+     "t": 51.6,
+     "end": 52.4,
+     "cue": {
+      "word": "ماذا",
+      "t": 51.7
+     },
+     "who": "wife",
+     "action": "speaks: one hand opens toward him, palm up",
+     "acting": "talk on the syllables, gaze locked",
+     "library": "talk; PERSON_HANDS.palmsUp (one hand)"
+    },
+    {
+     "t": 52.4,
+     "end": 53.9,
+     "cue": {
+      "word": "دكانك؟",
+      "t": 53.06
+     },
+     "who": "fx",
+     "action": "her picture balloon: the jewel stall counter with a question mark over it",
+     "acting": "he glances at the balloon, then away to the window (saccade)",
+     "library": "iconBalloon (planned) single mode, icons: stall, ?"
+    },
+    {
+     "t": 53.9,
+     "end": 55.2,
+     "cue": {
+      "word": "ارتكبت",
+      "t": 54.6
+     },
+     "who": "wife",
+     "action": "takes one step toward him; he takes one step back",
+     "acting": "her tip 0.06; his tip -0.06, hands come up half way",
+     "library": "walk one step each (stride keyed), footfalls"
+    },
+    {
+     "t": 55.2,
+     "end": 56.2,
+     "cue": {
+      "word": "خطأ؟",
+      "t": 55.58
+     },
+     "who": "goldsmith",
+     "action": "gulp: his turban slips a little forward",
+     "acting": "sq 0.95 pulse, eyes \"wide\" 6 frames, one sweat drop",
+     "library": "pulse; headwear offset (planned) or 6 px drop keyed by hand"
+    },
+    {
+     "t": 56.2,
+     "end": 56.8,
+     "who": "goldsmith",
+     "action": "beat of silence: only his pupils move, to her, to the door, to her",
+     "acting": "suspense by stillness; gazePlan with 0.07 ease",
+     "library": "gazePlan saccades"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 55.7,
+     "text": "WRONG?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 44.45,
+     "kind": "whoosh"
+    },
+    {
+     "t": 47.75,
+     "kind": "thud"
+    },
+    {
+     "t": 56.6,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 56.8
+   }
+  },
+  {
+   "id": "S8",
+   "start": 56.8,
+   "end": 65.0,
+   "paragraphs": [
+    3
+   ],
+   "set": "homeRoom",
+   "cast": [
+    "goldsmith",
+    "wife"
+   ],
+   "summary": "He denies it with too many gestures. She does not move. She asks for the truth, all of it, and he runs out of smile.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Two-shot at zoom 1.6; slow push to 1.9 from 60.2 to 63.4, favouring her side by 30 units; both faces stay in frame."
+   },
+   "composition": "Goldsmith left (x 400), wife right (x 600), eyes level. His waving hands stay below his chin so the face reads.",
+   "actions": [
+    {
+     "t": 57.0,
+     "end": 57.8,
+     "cue": {
+      "word": "أجاب",
+      "t": 57.3
+     },
+     "who": "goldsmith",
+     "action": "big innocent shrug, both palms up",
+     "acting": "brow -0.6, mouth \"smile\" too wide, talk",
+     "library": "PERSON_HANDS.palmsUp; settleTo overshoot"
+    },
+    {
+     "t": 57.8,
+     "end": 58.7,
+     "cue": {
+      "word": "لم",
+      "t": 58.36
+     },
+     "who": "goldsmith",
+     "action": "shakes his head and waves both hands NO",
+     "acting": "head shake 3 cycles (x offset 5 px), eyes shut on the shake",
+     "library": "P.shake / keyed x; PERSON_HANDS.wave both"
+    },
+    {
+     "t": 58.7,
+     "end": 60.1,
+     "cue": {
+      "word": "شيئًا،",
+      "t": 59.2
+     },
+     "who": "goldsmith",
+     "action": "little laugh, looks anywhere but at her; one sweat drop runs",
+     "acting": "gazePlan: ceiling, lamp, floor; lid 0.2; blink twice fast",
+     "library": "gazePlan saccades; blink seeds"
+    },
+    {
+     "t": 60.1,
+     "end": 60.9,
+     "cue": {
+      "word": "لكنها",
+      "t": 60.18
+     },
+     "who": "wife",
+     "action": "she has not moved: the same folded arms, the same stare",
+     "acting": "lid 0.3, no blink; only her brow lowers (0.5 to 0.8)",
+     "library": "stillness against his fidgeting"
+    },
+    {
+     "t": 60.9,
+     "end": 61.8,
+     "cue": {
+      "word": "أصرت",
+      "t": 60.92
+     },
+     "who": "wife",
+     "action": "one step in; unfolds one arm and points at the floor between them: here, now",
+     "acting": "tip 0.08, talk, gaze locked",
+     "library": "PERSON_HANDS.pointDown; walk one step"
+    },
+    {
+     "t": 61.8,
+     "end": 62.7,
+     "cue": {
+      "word": "يقول",
+      "t": 61.86
+     },
+     "who": "goldsmith",
+     "action": "his hands sink; the smile slides off",
+     "acting": "mouth \"smile\" to \"closed\" to \"frown\", brow -0.6 (worried)",
+     "library": "kfn on hand targets; mouth keys"
+    },
+    {
+     "t": 62.6,
+     "end": 63.4,
+     "cue": {
+      "word": "الحقيقة",
+      "t": 62.66
+     },
+     "who": "wife",
+     "action": "she raises one finger: the truth",
+     "acting": "pointUp, chin up 4 px",
+     "library": "PERSON_HANDS.pointUp; S.emphasis on the lettering"
+    },
+    {
+     "t": 63.4,
+     "end": 64.2,
+     "cue": {
+      "word": "كاملة.",
+      "t": 63.44
+     },
+     "who": "wife",
+     "action": "opens the hand flat and wide: all of it",
+     "acting": "armsOut one side, eyes still on him",
+     "library": "PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 64.2,
+     "end": 65.0,
+     "who": "goldsmith",
+     "action": "he deflates: shoulders drop, eyes to the floor, long breath out",
+     "acting": "sq 0.92, lid 0.6, gaze [0,0.9], turban sinks 6 px",
+     "library": "settleTo; breathe; head drop"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 62.7,
+     "text": "THE TRUTH!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 64.7,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 65.0
+   }
+  },
+  {
+   "id": "S9",
+   "start": 65.0,
+   "end": 78.2,
+   "paragraphs": [
+    4
+   ],
+   "set": "homeRoom",
+   "cast": [
+    "goldsmith",
+    "wife",
+    "customer"
+   ],
+   "summary": "The confession as a big thought cloud over his bowed head: at the stall a woman orders a gold bracelet, he makes it, she comes back, he slips it on her wrist, and he stares too long.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "Pull out to x 500, y 620, zoom 1.15 by 66.8 to make room: the cloud takes the upper 60 % of the panel (centre 500, 420; 860 x 640), the couple small at the bottom edge."
+   },
+   "composition": "Goldsmith bottom left (x 250, s 0.8), wife bottom right (x 760, s 0.8) looking up into the cloud with him. Inside the cloud (scale 0.75): jewel stall counter across the middle, goldsmith behind it at left, customer in front at right, hands meeting over the counter at the cloud centre.",
+   "actions": [
+    {
+     "t": 65.3,
+     "end": 66.2,
+     "cue": {
+      "word": "اعترف",
+      "t": 65.54
+     },
+     "who": "goldsmith",
+     "action": "head bowed, he starts to talk; one hand rubs the back of his neck",
+     "acting": "lid 0.6, gaze down, talk small, wet false (not yet)",
+     "library": "PERSON_HANDS.headHold (one hand); talk"
+    },
+    {
+     "t": 66.6,
+     "end": 67.4,
+     "cue": {
+      "word": "بأن",
+      "t": 66.82
+     },
+     "who": "fx",
+     "action": "the thought cloud trail pops from his head, then the big cloud opens",
+     "acting": "wife looks up into it",
+     "library": "thoughtCloud(ctx, 500, 420, 860, 640, t, {tail: his head, scale: 0.75, at: [330, 760], inside})"
+    },
+    {
+     "t": 67.4,
+     "end": 68.1,
+     "cue": {
+      "word": "امرأة",
+      "t": 67.46
+     },
+     "who": "customer",
+     "action": "inside: a customer in red with a yellow veil walks up to the stall",
+     "acting": "polite small smile, eyes on the trays",
+     "library": "person {costume:\"lady\", pal:{robe:C.red, dot:REDD, hc:C.yellow}} + walk"
+    },
+    {
+     "t": 68.1,
+     "end": 69.2,
+     "cue": {
+      "word": "طلبت",
+      "t": 68.08
+     },
+     "who": "customer",
+     "action": "she points at her bare wrist, then draws a circle in the air",
+     "acting": "talk; cloud goldsmith nods, eager shopkeeper smile",
+     "library": "handR keyed circle; iconless mime; nod = head drop pulse"
+    },
+    {
+     "t": 69.2,
+     "end": 70.4,
+     "cue": {
+      "word": "صنع",
+      "t": 69.3
+     },
+     "who": "goldsmith",
+     "action": "inside: he hammers a gold ring on the anvil; the customer slides out right",
+     "acting": "tongue of concentration, eyes down",
+     "library": "strike cycle from S1 (same pose: setup); customer walk out"
+    },
+    {
+     "t": 70.4,
+     "end": 71.1,
+     "cue": {
+      "word": "ذهبي.",
+      "t": 70.36
+     },
+     "who": "bracelet",
+     "action": "the finished bracelet rises with a sparkle and a label GOLD",
+     "acting": "he holds it up, wink of the craftsman",
+     "library": "bracelet {r:26, gems:3} + S.emphasis rays; S.label"
+    },
+    {
+     "t": 71.2,
+     "end": 72.2,
+     "who": "goldsmith",
+     "action": "two last taps on the anvil in the pause",
+     "acting": "spark ticks on each tap",
+     "library": "strike cycle; sparks"
+    },
+    {
+     "t": 72.5,
+     "end": 73.4,
+     "cue": {
+      "word": "عادت",
+      "t": 72.88
+     },
+     "who": "customer",
+     "action": "inside: the customer walks back in and holds out her right arm over the counter",
+     "acting": "pleased, eyes on the bracelet",
+     "library": "walk; handRW at the cloud centre"
+    },
+    {
+     "t": 73.4,
+     "end": 74.9,
+     "cue": {
+      "word": "ليلبسها",
+      "t": 73.46
+     },
+     "who": "goldsmith",
+     "action": "he slides the bracelet over her hand onto the wrist with both hands",
+     "acting": "careful, eyes on the work; the bracelet settles with a 2-frame bounce",
+     "library": "handLW/handRW follow the bracelet; settleTo"
+    },
+    {
+     "t": 74.9,
+     "end": 76.1,
+     "cue": {
+      "word": "أعجبه",
+      "t": 75.0
+     },
+     "who": "goldsmith",
+     "action": "his hands stop but do not let go of the air around her wrist; his eyes stay on it",
+     "acting": "eyes \"wide\", no blink, mouth \"o\" small; three small sparkles on the wrist",
+     "library": "noBlink; S.emphasis sparkles"
+    },
+    {
+     "t": 76.1,
+     "end": 77.7,
+     "cue": {
+      "word": "جمال",
+      "t": 76.18
+     },
+     "who": "camera",
+     "action": "the view inside the cloud pushes in on the wrist; an arrow points at it",
+     "acting": "real goldsmith below covers his eyes with one hand; wife's brow drops",
+     "library": "cloud inside scale 0.75 to 1.1 about the wrist; S.arrow; PERSON_HANDS.headHold"
+    },
+    {
+     "t": 77.7,
+     "end": 78.2,
+     "who": "goldsmith",
+     "action": "inside: his hand lifts and reaches (anticipation); cloud edge flashes",
+     "acting": "anticipate 0.3 s",
+     "library": "anticipate; PERSON_HANDS.reach"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 70.5,
+     "text": "GOLD"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 71.45,
+     "kind": "chime"
+    },
+    {
+     "t": 71.9,
+     "kind": "chime"
+    },
+    {
+     "t": 78.0,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "match-cut",
+    "t": 78.2
+   }
+  },
+  {
+   "id": "S10",
+   "start": 78.2,
+   "end": 82.4,
+   "paragraphs": [
+    4
+   ],
+   "set": "handInsert",
+   "cast": [
+    "goldsmith",
+    "customer"
+   ],
+   "summary": "Insert again, the same framing as S5 mirrored: now a green sleeved hand grips a red sleeved hand wearing the new bracelet. The audience makes the link before the wife says it.",
+   "camera": {
+    "shot": "insert",
+    "move": "push-in",
+    "notes": "Same insert as S5, flipped left to right; border colour green (THE GOLDSMITH). Scalloped cloud edge kept round the insert so it still reads as his memory."
+   },
+   "composition": "Yellow Ben-Day field (flashback tone). Her hand with red sleeve and the gold bracelet enters from the left, his green sleeved hand from the right.",
+   "actions": [
+    {
+     "t": 78.4,
+     "end": 79.2,
+     "cue": {
+      "word": "فأمسك",
+      "t": 78.62
+     },
+     "who": "goldsmith",
+     "action": "his hand closes over hers, same timing as the carrier",
+     "acting": "grip 0 to 1 in 0.25 s, 10 % overshoot",
+     "library": "handClasp {grip, palA: green, palB: red, bracelet: true, flip: true}"
+    },
+    {
+     "t": 79.2,
+     "end": 79.9,
+     "cue": {
+      "word": "يدها",
+      "t": 79.3
+     },
+     "who": "customer",
+     "action": "her fingers splay; the bracelet jumps on her wrist",
+     "acting": "splay 1; bracelet hop 4 px",
+     "library": "handClasp {splay}; hop"
+    },
+    {
+     "t": 79.9,
+     "end": 80.8,
+     "cue": {
+      "word": "وضغط",
+      "t": 79.94
+     },
+     "who": "goldsmith",
+     "action": "squeeze: the same three red pressure lines",
+     "acting": "squeeze 1, hold; panel-only shake 3 px",
+     "library": "handClasp {squeeze}; S.emphasis"
+    },
+    {
+     "t": 80.8,
+     "end": 81.5,
+     "cue": {
+      "word": "عليها",
+      "t": 80.84
+     },
+     "who": "fx",
+     "action": "hold on the squeeze; the border flashes red once",
+     "acting": "no new motion: let it sit",
+     "library": "S.box flash"
+    },
+    {
+     "t": 81.4,
+     "end": 82.4,
+     "cue": {
+      "word": "بغير",
+      "t": 81.52
+     },
+     "who": "fx",
+     "action": "a red WRONG! stamp slaps across the top corner, tilted",
+     "acting": "stamp scales 1.4 to 1 in 3 frames",
+     "library": "S.emphasis / S.title small, red, rot -0.12"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 80.0,
+     "text": "SQUEEZE!"
+    },
+    {
+     "t": 81.6,
+     "text": "WRONG!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 82.4
+   }
+  },
+  {
+   "id": "S11",
+   "start": 82.4,
+   "end": 84.78,
+   "paragraphs": [
+    4
+   ],
+   "set": "homeRoom",
+   "cast": [
+    "goldsmith",
+    "wife",
+    "customer"
+   ],
+   "summary": "Back in the cloud: he lets go, the customer snatches her hand back and leaves fast. Below, the real goldsmith cannot look up.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Same framing as the end of S9 (zoom 1.15, cloud above, couple below)."
+   },
+   "composition": "As S9. The customer exits the cloud to the right, away from him.",
+   "actions": [
+    {
+     "t": 82.4,
+     "end": 83.2,
+     "cue": {
+      "word": "ثم",
+      "t": 82.48
+     },
+     "who": "goldsmith",
+     "action": "inside: his hand opens; he looks at it as if it belonged to someone else",
+     "acting": "brow -0.6, mouth \"o\"",
+     "library": "handRW release; lookAt own hand"
+    },
+    {
+     "t": 83.2,
+     "end": 83.9,
+     "cue": {
+      "word": "تركها",
+      "t": 83.28
+     },
+     "who": "customer",
+     "action": "inside: she pulls her arm back, holds the wrist, turns",
+     "acting": "brow 0.6, mouth \"frown\", tip -0.08",
+     "library": "PERSON_HANDS.clasp; turnFlip"
+    },
+    {
+     "t": 83.9,
+     "end": 84.78,
+     "cue": {
+      "word": "تنصرف.",
+      "t": 83.98
+     },
+     "who": "customer",
+     "action": "inside: she walks out fast; the cloud shrinks and pops",
+     "acting": "real goldsmith: head down, lid 0.8; wife: slow blink, staring at him",
+     "library": "walk + footfalls; thoughtCloud p 1 to 0"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 84.78
+   }
+  },
+  {
+   "id": "S12",
+   "start": 84.78,
+   "end": 98.02,
+   "paragraphs": [
+    5
+   ],
+   "set": "homeRoom",
+   "cast": [
+    "goldsmith",
+    "wife"
+   ],
+   "summary": "The wife is astonished, not angry: the carrier took MY hand today, the very same way. The two hand panels hang side by side with an equals sign. Thirty years and never once.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pull-out",
+    "notes": "Two-shot zoom 1.55 on her reaction; at 89.4 pull out to zoom 1.2 and tilt up 60 units so the two inset panels fit above their heads."
+   },
+   "composition": "Couple low in frame (heads at panel y 700). Two inset panels above: left (brown border, the S5 clasp) centred panel x 290, y 330, 330 x 300; right (green border, the S10 clasp) centred x 710. Equals sign between at x 500. Counter under the left inset.",
+   "actions": [
+    {
+     "t": 84.9,
+     "end": 86.6,
+     "cue": {
+      "word": "قالت",
+      "t": 84.78
+     },
+     "who": "wife",
+     "action": "she takes a step back, one hand rising to her mouth",
+     "acting": "eyes widen slowly (lid 0.3 to 0), brow -0.5",
+     "library": "PERSON_HANDS.mouthCover; walk one step back"
+    },
+    {
+     "t": 86.6,
+     "end": 87.6,
+     "cue": {
+      "word": "الزوجة:",
+      "t": 86.66
+     },
+     "who": "wife",
+     "action": "looks down at her own right hand",
+     "acting": "gaze to the hand; the hand turns over as at 39.0 (same move)",
+     "library": "handRW keyed; setup and payoff"
+    },
+    {
+     "t": 87.5,
+     "end": 88.6,
+     "cue": {
+      "word": "عجيب!",
+      "t": 87.62
+     },
+     "who": "wife",
+     "action": "head snaps up to him: STRANGE!",
+     "acting": "eyes \"wide\", sq 1.05 pop then settle, talk",
+     "library": "settleTo; S.emphasis burst behind the lettering"
+    },
+    {
+     "t": 88.7,
+     "end": 89.4,
+     "who": "goldsmith",
+     "action": "he looks up, puzzled: this is not the scolding he expected",
+     "acting": "brow -0.4, head tilt 5 px, blink",
+     "library": "lookAt her; blink"
+    },
+    {
+     "t": 89.4,
+     "end": 90.5,
+     "cue": {
+      "word": "أمسك",
+      "t": 90.02
+     },
+     "who": "wife",
+     "action": "she thrusts her right hand out between them",
+     "acting": "talk, gaze to him",
+     "library": "PERSON_HANDS.reach"
+    },
+    {
+     "t": 90.5,
+     "end": 91.6,
+     "cue": {
+      "word": "السقاء",
+      "t": 90.56
+     },
+     "who": "handClasp",
+     "action": "left inset pops above her hand: the brown and blue clasp from S5, replaying its squeeze once",
+     "acting": "he leans to look at it",
+     "library": "handClasp in a panel box (S.box) scale 0.42; pop = settleTo"
+    },
+    {
+     "t": 91.6,
+     "end": 92.8,
+     "cue": {
+      "word": "بالطريقة",
+      "t": 92.14
+     },
+     "who": "handClasp",
+     "action": "right inset pops: the green and red clasp from S10; both insets squeeze in unison",
+     "acting": "his eyes go from one to the other and widen",
+     "library": "handClasp second instance; gazePlan"
+    },
+    {
+     "t": 92.8,
+     "end": 93.6,
+     "cue": {
+      "word": "نفسها.",
+      "t": 92.88
+     },
+     "who": "handClasp",
+     "action": "an equals sign stamps in between the two insets",
+     "acting": "both look up at it",
+     "library": "S.title small \"=\" + S.emphasis"
+    },
+    {
+     "t": 93.6,
+     "end": 95.3,
+     "cue": {
+      "word": "ثلاثين",
+      "t": 94.62
+     },
+     "who": "fx",
+     "action": "under the left inset a counter runs YEAR 1 to 30 again, fast, with a row of small ticks",
+     "acting": "she counts on her fingers once",
+     "library": "S.counter; PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 95.9,
+     "end": 97.4,
+     "cue": {
+      "word": "لم",
+      "t": 95.98
+     },
+     "who": "fx",
+     "action": "the counter result: 30 YEARS, 0 TIMES; the zero pulses",
+     "acting": "she shakes her head slowly; he swallows",
+     "library": "S.counter second line; head shake keyed"
+    },
+    {
+     "t": 97.3,
+     "end": 98.02,
+     "cue": {
+      "word": "كهذا.",
+      "t": 97.44
+     },
+     "who": "goldsmith",
+     "action": "he looks from the zero to his own inset",
+     "acting": "gaze snap; sq 0.96",
+     "library": "gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 87.7,
+     "text": "STRANGE!"
+    },
+    {
+     "t": 92.9,
+     "text": "="
+    },
+    {
+     "t": 96.0,
+     "text": "0 TIMES"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 88.95,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 98.02
+   }
+  },
+  {
+   "id": "S13",
+   "start": 98.02,
+   "end": 105.8,
+   "paragraphs": [
+    5
+   ],
+   "set": "homeRoom",
+   "cast": [
+    "goldsmith",
+    "wife"
+   ],
+   "summary": "Her real question: why today, the one day YOU wronged another woman? An arrow joins the two insets. He has no answer.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Push from zoom 1.2 to 1.6 on the pair between 98.0 and 102.6, insets sliding up but staying in frame top; hold."
+   },
+   "composition": "As S12; the arrow runs from the green inset (his deed) to the brown inset (what came back).",
+   "actions": [
+    {
+     "t": 98.0,
+     "end": 99.6,
+     "cue": {
+      "word": "لماذا",
+      "t": 98.02
+     },
+     "who": "wife",
+     "action": "she tilts her head and opens both hands: WHY?",
+     "acting": "brow -0.6, talk drawn out on the long word",
+     "library": "PERSON_HANDS.palmsUp; question mark via S.emphasis"
+    },
+    {
+     "t": 99.6,
+     "end": 100.5,
+     "cue": {
+      "word": "وقع",
+      "t": 99.66
+     },
+     "who": "fx",
+     "action": "a thick arrow draws from the green inset to the brown inset",
+     "acting": "both insets pulse once as it lands",
+     "library": "S.arrow drawn over 0.6 s"
+    },
+    {
+     "t": 100.5,
+     "end": 101.3,
+     "cue": {
+      "word": "يوم",
+      "t": 100.9
+     },
+     "who": "fx",
+     "action": "label SAME DAY on the arrow",
+     "acting": "he reads it, lips part",
+     "library": "S.label"
+    },
+    {
+     "t": 101.3,
+     "end": 102.5,
+     "cue": {
+      "word": "أخطأت",
+      "t": 101.34
+     },
+     "who": "wife",
+     "action": "she steps to him",
+     "acting": "tip 0.06, eyes level",
+     "library": "walk one step"
+    },
+    {
+     "t": 102.5,
+     "end": 103.3,
+     "cue": {
+      "word": "أنت",
+      "t": 102.6
+     },
+     "who": "wife",
+     "action": "and points straight at his chest: YOU",
+     "acting": "pointFwd, brow 0.6",
+     "library": "PERSON_HANDS.pointFwd; settleTo"
+    },
+    {
+     "t": 103.3,
+     "end": 104.7,
+     "cue": {
+      "word": "امرأة",
+      "t": 103.4
+     },
+     "who": "goldsmith",
+     "action": "he shrinks under the finger",
+     "acting": "sq 0.9, tip -0.06, lid 0.5, gaze down, wet true",
+     "library": "settleTo; wet"
+    },
+    {
+     "t": 104.8,
+     "end": 105.8,
+     "who": "goldsmith",
+     "action": "in the pause he sits down hard on the stool; the insets fade",
+     "acting": "sit 0 to 1 in 0.3 s with impactSquash; head in hand",
+     "library": "person sit + impactSquash; insets alpha 1 to 0"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 98.1,
+     "text": "WHY?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 105.2,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 105.8
+   }
+  },
+  {
+   "id": "S14",
+   "start": 105.8,
+   "end": 116.86,
+   "paragraphs": [
+    6
+   ],
+   "set": "homeRoom",
+   "cast": [
+    "goldsmith",
+    "wife"
+   ],
+   "summary": "Shame. He takes off the proud turban, kneels and asks her to pray for him; hand on heart, he says he is sorry.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on him (x 420, y 720, zoom 1.6) with her standing at frame right; slow push to 1.8. Window behind shows dusk turning to night (u 0.5 to 0.7)."
+   },
+   "composition": "He is lower than her from 108.2 on (kneeling): the eye line now runs up from him to her, the reverse of S1 pride.",
+   "actions": [
+    {
+     "t": 105.9,
+     "end": 107.2,
+     "cue": {
+      "word": "شعر",
+      "t": 105.8
+     },
+     "who": "goldsmith",
+     "action": "on the stool, face in one hand",
+     "acting": "lid 0.9, sq 0.93, slow breathe",
+     "library": "PERSON_HANDS.headHold; breathe"
+    },
+    {
+     "t": 107.2,
+     "end": 108.1,
+     "cue": {
+      "word": "بالخجل،",
+      "t": 107.28
+     },
+     "who": "goldsmith",
+     "action": "lifts the yellow turban off with both hands and holds it against his chest",
+     "acting": "hair flattened; wet eyes; gaze down",
+     "library": "headwear drawn at the hands (hc off: planned headwear offset, or draw the turban as a prop and use a bare-head pal)"
+    },
+    {
+     "t": 108.1,
+     "end": 109.6,
+     "cue": {
+      "word": "وطلب",
+      "t": 108.16
+     },
+     "who": "goldsmith",
+     "action": "slides off the stool onto both knees facing her",
+     "acting": "sit 1 to 0 while kneel 0 to 1, landSquash on the knees",
+     "library": "person kneel blend; landSquash"
+    },
+    {
+     "t": 109.6,
+     "end": 110.9,
+     "cue": {
+      "word": "زوجته",
+      "t": 109.98
+     },
+     "who": "goldsmith",
+     "action": "looks up at her",
+     "acting": "gaze up to her face (lookAt), wet, brow -0.7",
+     "library": "lookAt; wet"
+    },
+    {
+     "t": 110.9,
+     "end": 112.0,
+     "cue": {
+      "word": "تدعو",
+      "t": 111.12
+     },
+     "who": "goldsmith",
+     "action": "both hands open toward her, then upward: pray for me",
+     "acting": "reachBoth then palmsUp, talk",
+     "library": "PERSON_HANDS.reachBoth to palmsUp"
+    },
+    {
+     "t": 112.0,
+     "end": 113.3,
+     "cue": {
+      "word": "بالمغفرة،",
+      "t": 112.02
+     },
+     "who": "wife",
+     "action": "she looks down at him; the folded arms loosen",
+     "acting": "brow 0.6 to 0, lid 0.2, one slow blink",
+     "library": "arm targets keyed folded to rest"
+    },
+    {
+     "t": 113.3,
+     "end": 114.9,
+     "cue": {
+      "word": "وأعلن",
+      "t": 113.38
+     },
+     "who": "goldsmith",
+     "action": "hand flat on his heart, head bowed",
+     "acting": "chest gesture, lid 1 for 0.5 s, one tear drop",
+     "library": "PERSON_HANDS.chest; wet; tear = drop shape with fallY"
+    },
+    {
+     "t": 114.9,
+     "end": 116.86,
+     "cue": {
+      "word": "فعل.",
+      "t": 115.58
+     },
+     "who": "goldsmith",
+     "action": "head stays down; the turban rests on the floor beside him",
+     "acting": "shame ending pose: stillness, breathe only",
+     "library": "breathe; turban prop on the floor"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 116.86
+   }
+  },
+  {
+   "id": "S15",
+   "start": 116.86,
+   "end": 125.9,
+   "paragraphs": [
+    6
+   ],
+   "set": "homeRoom",
+   "cast": [
+    "goldsmith",
+    "wife"
+   ],
+   "summary": "She kneels too and prays for both of them. But neither sleeps: the two hand panels drift over their heads all night until the window turns to dawn.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Pull out from zoom 1.6 to 1.15 between 116.9 and 120.8; hold wide through the night; the window (sky) is the clock."
+   },
+   "composition": "Both kneeling side by side at x 400 and x 580 facing the window at right; light cone from the window. Night wash over the room from 120.8 (lamp dims to 0.3). The small double thought cloud floats centred above them at panel y 300.",
+   "actions": [
+    {
+     "t": 116.9,
+     "end": 117.6,
+     "cue": {
+      "word": "ودعت",
+      "t": 116.86
+     },
+     "who": "wife",
+     "action": "she kneels beside him",
+     "acting": "kneel 0 to 1, landSquash small",
+     "library": "person kneel; landSquash"
+    },
+    {
+     "t": 117.6,
+     "end": 118.6,
+     "cue": {
+      "word": "هي",
+      "t": 117.6
+     },
+     "who": "wife",
+     "action": "raises her open palms",
+     "acting": "gaze up [0.3,-0.8], lid 0.2",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 118.6,
+     "end": 119.5,
+     "cue": {
+      "word": "يغفر",
+      "t": 118.6
+     },
+     "who": "fx",
+     "action": "a soft cone of light comes through the window onto both",
+     "acting": "he raises his palms a beat after her (stagger)",
+     "library": "skyLight 0 to 0.6; stagger"
+    },
+    {
+     "t": 119.4,
+     "end": 120.7,
+     "cue": {
+      "word": "لهما،",
+      "t": 119.56
+     },
+     "who": "goldsmith",
+     "action": "both hold the prayer; their two shadows join on the floor",
+     "acting": "eyes shut, breathe in different phases",
+     "library": "breathe with two seeds; shadow ellipses"
+    },
+    {
+     "t": 120.7,
+     "end": 121.8,
+     "cue": {
+      "word": "لكن",
+      "t": 120.78
+     },
+     "who": "set",
+     "action": "night: window goes navy with moon and stars, lamp dims, room takes a blue wash; they sit back on the floor",
+     "acting": "palms lower; eyes open in the dark",
+     "library": "palaceHall u 0.6 to 0.75, lamp 1 to 0.3; person kneel to sit floor"
+    },
+    {
+     "t": 121.8,
+     "end": 122.5,
+     "cue": {
+      "word": "بقيت",
+      "t": 121.9
+     },
+     "who": "fx",
+     "action": "one small thought cloud with two tails, one to each head: the two clasp insets side by side, tiny",
+     "acting": "both look up at it, then away from each other",
+     "library": "thoughtCloud 300 x 170 drawn twice with different tails, or one cloud and a second trail of 3 bubbles"
+    },
+    {
+     "t": 122.5,
+     "end": 123.7,
+     "cue": {
+      "word": "تشغلهما",
+      "t": 122.58
+     },
+     "who": "goldsmith",
+     "action": "he lies awake sitting, chin on fist; she turns her beads; moon crosses the window",
+     "acting": "saccades (thinking eyes), lid 0.2, no smiles",
+     "library": "gazePlan 0.07; PERSON_HANDS.chin; moon arc via dayCycle"
+    },
+    {
+     "t": 123.7,
+     "end": 124.6,
+     "cue": {
+      "word": "حتى",
+      "t": 123.8
+     },
+     "who": "set",
+     "action": "stars fade; the window pales",
+     "acting": "both still awake, slower blinks (tired lids 0.5)",
+     "library": "palaceHall u 0.85 to 0.98"
+    },
+    {
+     "t": 124.6,
+     "end": 125.9,
+     "cue": {
+      "word": "جاء",
+      "t": 124.66
+     },
+     "who": "set",
+     "action": "dawn: yellow light through the window, a sun edge; the cloud thins out but its outline stays one beat longer",
+     "acting": "they look at the window together",
+     "library": "u to 1.0 / 0.05; thoughtCloud p to 0.2 then 0"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 125.9,
+    "label": "NEXT DAY..."
+   }
+  },
+  {
+   "id": "S16",
+   "start": 125.9,
+   "end": 136.3,
+   "paragraphs": [
+    7
+   ],
+   "set": "courtyard",
+   "cast": [
+    "carrier",
+    "wife"
+   ],
+   "summary": "Next day. The carrier comes back, slow and grey. The moment he sees her he drops to his knees and begs her pardon.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Under the card: cut to the courtyard wide (zoom 1.1). Follow him in from the door; from 131.4 twoShot(carrier, wife, {margin: 150}); settle zoom 1.5 by 134.0."
+   },
+   "composition": "Same geography as S4 so the audience compares: he enters left, she stands by the bench at x 700. This time he stops 200 units short of her and goes down; she stays standing, upper right of the pair.",
+   "actions": [
+    {
+     "t": 125.9,
+     "end": 127.4,
+     "cue": {
+      "word": "في",
+      "t": 125.9
+     },
+     "who": "fx",
+     "action": "transition card NEXT DAY...; the cut to the courtyard hides at its midpoint",
+     "acting": "morning sky u 0.1",
+     "library": "S.transition caption; camera cut under the card"
+    },
+    {
+     "t": 127.4,
+     "end": 128.6,
+     "cue": {
+      "word": "اليوم",
+      "t": 127.42
+     },
+     "who": "wife",
+     "action": "she is at the cisterns, looking at the empty one; hears the door",
+     "acting": "gaze to the cistern then snaps to the door",
+     "library": "gazePlan; cistern {level 0.2}"
+    },
+    {
+     "t": 128.6,
+     "end": 130.2,
+     "cue": {
+      "word": "عاد",
+      "t": 128.64
+     },
+     "who": "carrier",
+     "action": "the street door opens slowly; he comes in with the full skin, slower than ever",
+     "acting": "tip 0.18, eyes on the ground, no bounce, heavy footfalls",
+     "library": "townDoor slow; walk(CX5, t) slow + footfalls"
+    },
+    {
+     "t": 130.2,
+     "end": 131.3,
+     "cue": {
+      "word": "وما",
+      "t": 130.26
+     },
+     "who": "carrier",
+     "action": "stops just inside the door; cannot make himself go further",
+     "acting": "breathe deep, lid 0.6",
+     "library": "walk stop; breathe"
+    },
+    {
+     "t": 131.3,
+     "end": 132.4,
+     "cue": {
+      "word": "رأى",
+      "t": 131.4
+     },
+     "who": "carrier",
+     "action": "raises his eyes and sees her",
+     "acting": "gaze snap to her, eyes \"wide\" 5 frames, then brow -0.8",
+     "library": "gazePlan; settleTo"
+    },
+    {
+     "t": 132.4,
+     "end": 133.1,
+     "cue": {
+      "word": "حتى",
+      "t": 132.5
+     },
+     "who": "carrier",
+     "action": "the skin slides off his shoulder and slumps on the ground",
+     "acting": "anticipation for the kneel: shoulders drop first",
+     "library": "waterskin fallY + impactSquash; anticipate"
+    },
+    {
+     "t": 133.1,
+     "end": 134.5,
+     "cue": {
+      "word": "جثا",
+      "t": 133.16
+     },
+     "who": "carrier",
+     "action": "drops to both knees before her",
+     "acting": "kneel 0 to 1 in 0.35 s, landSquash, dustBurst at the knees",
+     "library": "person kneel; landSquash; dustBurst"
+    },
+    {
+     "t": 134.5,
+     "end": 135.3,
+     "cue": {
+      "word": "وطلب",
+      "t": 134.62
+     },
+     "who": "carrier",
+     "action": "clasps his hands and holds them up to her",
+     "acting": "gaze up to her, wet eyes, brow -0.8, talk",
+     "library": "PERSON_HANDS.clasp raised; wet"
+    },
+    {
+     "t": 135.3,
+     "end": 136.3,
+     "cue": {
+      "word": "العفو.",
+      "t": 135.38
+     },
+     "who": "wife",
+     "action": "she draws her right hand back against her chest and looks down at him, waiting",
+     "acting": "guarded: brow 0.3, lid 0.2, no step back",
+     "library": "PERSON_HANDS.chest; lookAt him"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 136.3
+   }
+  },
+  {
+   "id": "S17",
+   "start": 136.3,
+   "end": 141.84,
+   "paragraphs": [
+    7
+   ],
+   "set": "courtyard",
+   "cast": [
+    "carrier",
+    "wife"
+   ],
+   "summary": "Close on the kneeling carrier: the devil tricked me. A tiny red imp whispers at his ear in a picture balloon; he bows his forehead to the ground.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Close on him (x 430, y 760, zoom 2.1), her skirt edge and hand at frame right. Tilt down 40 units as he bows at 140.0."
+   },
+   "composition": "His face left of centre; picture balloon upper right of him (panel 640, 300), never over his face.",
+   "actions": [
+    {
+     "t": 136.3,
+     "end": 137.5,
+     "cue": {
+      "word": "قال:",
+      "t": 136.3
+     },
+     "who": "carrier",
+     "action": "he speaks, hands still clasped",
+     "acting": "talk, wet, gaze up to her",
+     "library": "talk; wet"
+    },
+    {
+     "t": 137.5,
+     "end": 138.1,
+     "cue": {
+      "word": "غرني",
+      "t": 137.62
+     },
+     "who": "carrier",
+     "action": "taps his own temple, then points off behind his shoulder",
+     "acting": "brow -0.6",
+     "library": "PERSON_HANDS temple tap (planned templeTap) then pointFwd reversed"
+    },
+    {
+     "t": 138.1,
+     "end": 138.9,
+     "cue": {
+      "word": "الشيطان",
+      "t": 138.16
+     },
+     "who": "fx",
+     "action": "picture balloon pops: a small red horned imp whispering into a little copy of his ear",
+     "acting": "he flinches away from that ear",
+     "library": "iconBalloon (planned) with icon imp: red circle head r 20, two horns, grin; 2 sound arcs"
+    },
+    {
+     "t": 138.9,
+     "end": 139.9,
+     "cue": {
+      "word": "ففعلت",
+      "t": 138.98
+     },
+     "who": "fx",
+     "action": "the imp icon is replaced by the brown and blue clasp icon",
+     "acting": "he looks at his own right hand with disgust and hides it behind his back",
+     "library": "iconBalloon icon swap; handRW behind the body"
+    },
+    {
+     "t": 139.9,
+     "end": 140.6,
+     "cue": {
+      "word": "ما",
+      "t": 140.04
+     },
+     "who": "carrier",
+     "action": "bows forward until his turban nearly touches the ground",
+     "acting": "tip 0.5, lid 1, a tear drops",
+     "library": "person kneel + tip; tear fallY"
+    },
+    {
+     "t": 140.6,
+     "end": 141.84,
+     "cue": {
+      "word": "يليق.",
+      "t": 140.54
+     },
+     "who": "carrier",
+     "action": "stays down; the balloon pops away",
+     "acting": "tremble 1 px, breathe",
+     "library": "tremble; iconBalloon out"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 141.84
+   }
+  },
+  {
+   "id": "S18",
+   "start": 141.84,
+   "end": 147.48,
+   "paragraphs": [
+    7
+   ],
+   "set": "courtyard",
+   "cast": [
+    "carrier",
+    "wife",
+    "goldsmith"
+   ],
+   "summary": "She answers him plainly: my husband did the same thing in his shop. Behind her the goldsmith peeks from the house door, turban in hand, and nods that it is true.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pull-out",
+    "notes": "Pull out to zoom 1.3 so the house door at the right (x 800..930) is in frame with both of them; the three heads make a rising line left to right: kneeling carrier, wife, husband in the door."
+   },
+   "composition": "Carrier x 430 kneeling, wife x 660 standing, goldsmith half out of the door at x 850 (door leaf hides his left half).",
+   "actions": [
+    {
+     "t": 141.9,
+     "end": 142.7,
+     "cue": {
+      "word": "فأجابته",
+      "t": 141.84
+     },
+     "who": "wife",
+     "action": "she lowers her guarded hand and speaks",
+     "acting": "talk, brow 0, level eyes",
+     "library": "talk"
+    },
+    {
+     "t": 142.7,
+     "end": 143.8,
+     "cue": {
+      "word": "زوجها",
+      "t": 143.08
+     },
+     "who": "wife",
+     "action": "points back over her shoulder with her thumb at the house door",
+     "acting": "gaze stays on the carrier",
+     "library": "handR keyed to shoulder height behind (arm angle aR)"
+    },
+    {
+     "t": 143.8,
+     "end": 144.8,
+     "cue": {
+      "word": "قد",
+      "t": 143.86
+     },
+     "who": "goldsmith",
+     "action": "the house door opens a hand width; the goldsmith peeks round it, bare-headed, turban held in both hands",
+     "acting": "sheepish: brow -0.7, lid 0.4, mouth \"frown\"",
+     "library": "townDoor open 0.25; person half hidden by the leaf (draw person, then the leaf)"
+    },
+    {
+     "t": 144.8,
+     "end": 145.8,
+     "cue": {
+      "word": "متجره",
+      "t": 145.1
+     },
+     "who": "fx",
+     "action": "her picture balloon: jewel stall icon, then the green and red clasp icon",
+     "acting": "carrier lifts his head to look",
+     "library": "iconBalloon two frames (strip mode)"
+    },
+    {
+     "t": 145.8,
+     "end": 146.5,
+     "cue": {
+      "word": "فعلًا",
+      "t": 145.86
+     },
+     "who": "carrier",
+     "action": "he looks from her balloon to the man in the door; his mouth falls open",
+     "acting": "eyes \"wide\", gazePlan balloon, door, her",
+     "library": "gazePlan; mouth \"o\""
+    },
+    {
+     "t": 146.5,
+     "end": 147.48,
+     "cue": {
+      "word": "مشابهًا.",
+      "t": 146.54
+     },
+     "who": "goldsmith",
+     "action": "the goldsmith raises one hand and nods: guilty",
+     "acting": "small wave at shoulder height, eyes down; the two men avoid each other's eyes at the same moment",
+     "library": "PERSON_HANDS.wave low; head drop"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 147.48
+   }
+  },
+  {
+   "id": "S19",
+   "start": 147.48,
+   "end": 159.4,
+   "paragraphs": [
+    8
+   ],
+   "set": "moralCard",
+   "cast": [
+    "goldsmith",
+    "carrier"
+   ],
+   "summary": "The saying. On plain paper the two hand panels sit in the pans of a balance scale that swings and comes level: what you do is done to you.",
+   "camera": {
+    "shot": "full",
+    "move": "static",
+    "notes": "Flat graphic card, no world camera. 3 px panel-only shake when each pan lands."
+   },
+   "composition": "Paper field with blue Ben-Day corner fade. Balance scale centred (post x 500, beam y 380, beam 560 wide, pans at x 220 and x 780, y 560). Green inset (the goldsmith) in the left pan, brown inset (the carrier) in the right. Lettering in two lines below the scale at panel y 820 and 930. Small heads of the two men (s 0.5) under their own pans at the bottom corners.",
+   "actions": [
+    {
+     "t": 147.5,
+     "end": 149.4,
+     "cue": {
+      "word": "انتهت",
+      "t": 147.48
+     },
+     "who": "fx",
+     "action": "paper card wipes in; a hand-drawn scroll edge unrolls across the top",
+     "acting": "no characters yet",
+     "library": "S.box + bezier scroll curls"
+    },
+    {
+     "t": 149.4,
+     "end": 150.8,
+     "cue": {
+      "word": "الحكاية",
+      "t": 149.5
+     },
+     "who": "balanceScale",
+     "action": "the balance scale draws itself: post, beam, two pans on chains",
+     "acting": "beam rocks from the drawing motion",
+     "library": "balanceScale {tilt: swing(t, 150.2, 0.5)}"
+    },
+    {
+     "t": 150.8,
+     "end": 152.6,
+     "cue": {
+      "word": "صار",
+      "t": 150.86
+     },
+     "who": "fx",
+     "action": "four speech balloons pop along the top edge one after another, each with the same tiny scale icon: people passing the saying on",
+     "acting": "staggered 0.3 s apart, different sizes",
+     "library": "iconBalloon x4 with stagger(i)"
+    },
+    {
+     "t": 152.6,
+     "end": 153.7,
+     "cue": {
+      "word": "الناس:",
+      "t": 152.68
+     },
+     "who": "handClasp",
+     "action": "the green inset (goldsmith and customer) drops into the left pan; the beam dips left",
+     "acting": "goldsmith head below looks up at it, worried",
+     "library": "handClasp inset fallY + impactSquash; balanceScale tilt -0.2"
+    },
+    {
+     "t": 153.7,
+     "end": 155.2,
+     "cue": {
+      "word": "الجزاء",
+      "t": 153.78
+     },
+     "who": "lettering",
+     "action": "lettering line 1: WHAT YOU DO...",
+     "acting": "letters pop word by word on the three Arabic stresses",
+     "library": "S.title, 3 pops"
+    },
+    {
+     "t": 155.2,
+     "end": 156.3,
+     "cue": {
+      "word": "العمل،",
+      "t": 155.32
+     },
+     "who": "handClasp",
+     "action": "the brown inset (carrier and wife) drops into the right pan",
+     "acting": "beam swings past level and back",
+     "library": "fallY + impactSquash; balanceScale tilt swing"
+    },
+    {
+     "t": 156.3,
+     "end": 157.2,
+     "cue": {
+      "word": "والضربة",
+      "t": 156.32
+     },
+     "who": "balanceScale",
+     "action": "the beam settles dead level; both insets squeeze once in unison",
+     "acting": "both men's heads look at each other's pan",
+     "library": "swing damped to 0; handClasp squeeze pulse"
+    },
+    {
+     "t": 157.2,
+     "end": 158.4,
+     "cue": {
+      "word": "تقابلها",
+      "t": 157.22
+     },
+     "who": "lettering",
+     "action": "lettering line 2: ...IS DONE TO YOU",
+     "acting": "pops in under line 1",
+     "library": "S.title"
+    },
+    {
+     "t": 158.4,
+     "end": 159.4,
+     "cue": {
+      "word": "ضربة.",
+      "t": 158.42
+     },
+     "who": "balanceScale",
+     "action": "an equals sign stamps on the scale post; hold",
+     "acting": "both heads drop their eyes",
+     "library": "S.emphasis; lid 0.6"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 153.8,
+     "text": "WHAT YOU DO..."
+    },
+    {
+     "t": 157.3,
+     "text": "...IS DONE TO YOU"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 159.4
+   }
+  },
+  {
+   "id": "S20",
+   "start": 159.4,
+   "end": 173.5,
+   "paragraphs": [
+    8
+   ],
+   "set": "courtyard",
+   "cast": [
+    "goldsmith",
+    "wife",
+    "carrier"
+   ],
+   "summary": "The teller ties the two deeds together with one arrow. Then the last picture: in the courtyard the wife stands in the middle, upright, and the two men bow their heads on either side. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "First 4 s stay on the card (159.4-163.4). At 163.44 the card slides up like a blind to reveal the courtyard wide (zoom 1.15); slow push to 1.4 on the wife by 168.0; hold for THE END."
+   },
+   "composition": "Symmetry: wife centre x 500 on the ground line, goldsmith left x 270, carrier right x 730, both turned in toward her with heads lowered. Light cone on her. THE END in the sky area above the wall (panel y 200), clear of all three faces.",
+   "actions": [
+    {
+     "t": 159.4,
+     "end": 160.2,
+     "cue": {
+      "word": "هكذا",
+      "t": 159.4
+     },
+     "who": "fx",
+     "action": "on the card: a quill pen icon (the teller) appears between the pans",
+     "acting": "insets still",
+     "library": "quill = 2 bezier shapes, 90 long"
+    },
+    {
+     "t": 160.2,
+     "end": 161.4,
+     "cue": {
+      "word": "ربط",
+      "t": 160.24
+     },
+     "who": "fx",
+     "action": "the quill draws a looping two-headed arrow from one inset to the other",
+     "acting": "arrow draws on over 1 s",
+     "library": "S.arrow double headed; dash offset by t"
+    },
+    {
+     "t": 161.4,
+     "end": 163.4,
+     "cue": {
+      "word": "التصرفين،",
+      "t": 161.76
+     },
+     "who": "fx",
+     "action": "label ONE DEED, ONE ANSWER under the arrow; both insets pulse",
+     "acting": "hold 1 s",
+     "library": "S.label"
+    },
+    {
+     "t": 163.4,
+     "end": 164.6,
+     "cue": {
+      "word": "بينما",
+      "t": 163.44
+     },
+     "who": "set",
+     "action": "the card rolls up; the courtyard in morning light, three figures already in place",
+     "acting": "wife centre, men at the sides",
+     "library": "card translate y; skyCycle u 0.15"
+    },
+    {
+     "t": 164.6,
+     "end": 165.8,
+     "cue": {
+      "word": "المرأة",
+      "t": 164.62
+     },
+     "who": "wife",
+     "action": "she stands straight, hands together in front, and lifts her chin",
+     "acting": "sq 1.03 settle, calm level eyes, brow 0",
+     "library": "settleTo; PERSON_HANDS.clasp low"
+    },
+    {
+     "t": 165.8,
+     "end": 166.9,
+     "cue": {
+      "word": "واجهت",
+      "t": 166.14
+     },
+     "who": "wife",
+     "action": "she looks at her husband: he lowers his head and holds his turban",
+     "acting": "her gaze left; his lid 0.8, head drop, stagger 4 frames after her look",
+     "library": "lookAt; stagger"
+    },
+    {
+     "t": 166.9,
+     "end": 167.9,
+     "cue": {
+      "word": "الخطأين",
+      "t": 167.02
+     },
+     "who": "wife",
+     "action": "she looks at the carrier: he lowers his head, hand on chest (his old bow)",
+     "acting": "her gaze right; his lid 0.8, PERSON_HANDS.chest",
+     "library": "lookAt; setup and payoff bow"
+    },
+    {
+     "t": 167.9,
+     "end": 169.0,
+     "cue": {
+      "word": "وكشفت",
+      "t": 167.94
+     },
+     "who": "wife",
+     "action": "she looks out at the audience; a light cone opens on her and a ray burst behind",
+     "acting": "gaze [0,0.05], small closed smile, no gloating",
+     "library": "skyLight 0 to 0.7; S.emphasis rays (yellow)"
+    },
+    {
+     "t": 169.0,
+     "end": 169.9,
+     "cue": {
+      "word": "الحقيقة.",
+      "t": 169.02
+     },
+     "who": "wife",
+     "action": "hold: the two cisterns glint, the sparrow lands on the arch above her",
+     "acting": "both men still bowed; she blinks once",
+     "library": "bird sparrow hop + landSquash"
+    },
+    {
+     "t": 169.9,
+     "end": 173.5,
+     "who": "fx",
+     "action": "THE END pops in the sky above the wall and holds; the men stay bowed, she breathes",
+     "acting": "only breathing and blinks",
+     "library": "S.title THE END; breathe; then S.finish as always"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 161.8,
+     "text": "ONE DEED, ONE ANSWER"
+    },
+    {
+     "t": 169.9,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 170.3,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 173.5
+   }
+  }
+ ],
+ "ending": {
+  "t": 169.9,
+  "description": "Courtyard, morning. The wife stands upright in the centre in a cone of light, looking out at us; the goldsmith (bare-headed, turban in hands) and the water-carrier (hand on chest) bow their heads on either side. THE END pops in the sky above the wall at 169.9 and holds to 173.5 with breathing and blinks only."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "في مدينة بخارى عاش صائغ ذهب مع زوجته المعروفة بالتقوى وحسن السيرة.|وكان سقاء يحمل الماء إلى بيتهما منذ ثلاثين عامًا،|يدخل الفناء ويملأ الأحواض،|ثم ينصرف دون أن يزعج أحدًا.",
+   "en": "In Bukhara a goldsmith lived with his devout wife.|A water-carrier had brought water to their home for thirty years,|filling the cisterns|and leaving without trouble."
+  },
+  {
+   "p": 2,
+   "ar": "ذات يوم جاءت الزوجة إلى فناء البيت بينما كان السقاء يفرغ الماء.|اقترب منها فجأة، وأمسك يدها وضغط عليها،|ثم خرج. دهشت المرأة،|فقد كان يتصرف دائمًا بأدب واحترام.",
+   "en": "One day the wife stood in the courtyard while the water-carrier worked.|Suddenly he gripped and squeezed her hand,|then left. She was shocked|by this unfamiliar behavior."
+  },
+  {
+   "p": 3,
+   "ar": "عاد الصائغ من السوق، فسألته زوجته بجدية:|ماذا فعلت اليوم في دكانك؟ هل ارتكبت أمرًا خطأ؟|أجاب أنه لم يفعل شيئًا،|لكنها أصرت أن يقول لها الحقيقة كاملة.",
+   "en": "When the goldsmith returned,|she asked whether he had done anything wrong in his shop.|He denied it,|but she insisted on the full truth."
+  },
+  {
+   "p": 4,
+   "ar": "اعترف الزوج بأن امرأة طلبت منه صنع سوار ذهبي.|وعندما عادت ليلبسها السوار، أعجبه جمال معصمها،|فأمسك يدها وضغط عليها بغير حق،|ثم تركها تنصرف.",
+   "en": "He admitted making a gold bracelet for a customer.|When she returned to try it on, he admired her wrist|and improperly pressed and squeezed her hand,|then let her leave."
+  },
+  {
+   "p": 5,
+   "ar": "قالت الزوجة: عجيب!|لقد أمسك السقاء يدي اليوم بالطريقة نفسها.|طوال ثلاثين عامًا لم يفعل شيئًا كهذا.|لماذا وقع هذا في يوم أخطأت فيه أنت مع امرأة أخرى؟",
+   "en": "His wife replied|that the water-carrier had done precisely the same to her that day,|though he had never behaved that way|in thirty years."
+  },
+  {
+   "p": 6,
+   "ar": "شعر الصائغ بالخجل،|وطلب من زوجته أن تدعو له بالمغفرة، وأعلن ندمه على ما فعل.|ودعت هي أيضًا أن يغفر الله لهما،|لكن الحادثة بقيت تشغلهما حتى جاء الصباح.",
+   "en": "Ashamed,|the goldsmith repented and asked his wife to pray for forgiveness.|She prayed for them both,|though the incident still troubled them."
+  },
+  {
+   "p": 7,
+   "ar": "في اليوم التالي عاد السقاء،|وما إن رأى المرأة حتى جثا أمامها وطلب العفو.|قال: غرني الشيطان ففعلت ما لا يليق.|فأجابته أن زوجها قد ارتكب في متجره فعلًا مشابهًا.",
+   "en": "The next day|the water-carrier knelt before her and begged pardon,|blaming temptation.|She told him her husband had committed a similar act in his shop."
+  },
+  {
+   "p": 8,
+   "ar": "انتهت الحكاية بقول صار يتناقله الناس:|الجزاء من جنس العمل، والضربة تقابلها ضربة.|هكذا ربط الراوي بين التصرفين،|بينما بقيت المرأة هي التي واجهت الخطأين وكشفت الحقيقة.",
+   "en": "The tale ends with a saying|that one act is repaid by a like act.|Its narrator linked the offenses,|while the wife confronted the wrongdoing and exposed the truth."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "handClasp",
+   "description": "Close-up of a man's hand gripping a woman's hand, parameterised by sleeve colours; reuses the planned ladyHand for hand B. Used full panel (S5, S10), as inset panels at scale 0.42 (S12, S13, S19, S20), tiny in a thought cloud (S15) and as a balloon icon (S17, S18).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "handClasp(ctx, x, y, {s, grip, squeeze, splay, palA, palB, bracelet, flip}). At s 1 about 700 x 420. Hand B: ladyHand shape (palm rounded box 150 x 190, four finger capsules 34 wide, thumb), skin colour with red dot shading, sleeve cuff 170 x 120 in palB with dots, optional gold bracelet ellipse at the wrist. Hand A: palm box 200 x 150 coming in horizontally, sleeve in palA; grip 0..1 moves it from 260 px away to contact and curls four finger capsules round the back of hand B (draw order: A thumb, B, A fingers). squeeze 0..1 narrows hand B by 8 %, adds 3 white knuckle arcs on A and three red pressure lines each side. splay 0..1 fans hand B fingers by 0.25 rad. flip mirrors in x. All fields keyed by t, no state."
+  },
+  {
+   "type": "set",
+   "name": "courtyardHouse",
+   "description": "The planned town house courtyard (AN-114), used here without the fountain and with two cisterns and a bench; street door left, house door right, three arches.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Bake the static wall, arches and paving once with bake(); townDoor for both doors (live), skyCycle behind the wall top, townArchPts for the arches. Return anchors {ground, streetDoor, houseDoor, arches, bench {sitY}, cisterns [x]}. Dimensions in sets.courtyard."
+  },
+  {
+   "type": "prop",
+   "name": "waterskin",
+   "description": "Planned goatskin bag (AN-083) with fill, slosh, tilt, squeeze; plus a pour arc helper (blue bezier strip from the neck to a target with 3 drops).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Body = closed bezier blob whose lower bulge scales with fill; neck = small rectangle with a tie; strap = two lines to the shoulder. pourArc(ctx, from, to, t) = quadratic strip 10 wide in blue with white highlight, drops by K.rng seeded on the scene."
+  },
+  {
+   "type": "prop",
+   "name": "cistern",
+   "description": "Stone trough with a water level field and spill; reusable as any trough, basin or well head.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rounded box 170 x 100 with rim; water = blue rect clipped inside the rim to height level * 70; ripple() on fill; spill = 3 drops over the rim when level > 1."
+  },
+  {
+   "type": "prop",
+   "name": "balanceScale",
+   "description": "Flat balance scale with tilt and level pans, for morals about justice and repayment.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Post rect, beam rotated by tilt about the pivot, pans hung at the beam ends (position from the rotation, pans not rotated); tilt driven by swing() after each drop."
+  },
+  {
+   "type": "prop",
+   "name": "bracelet",
+   "description": "Small gold bangle with red gems, flat and on-wrist views.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Two circles (ring) or an ellipse arc pair front/back of the wrist; gem dots; glint arc."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon icons (imp, stall, clasp, scale)",
+   "description": "Four small flat icons for the planned iconBalloon: a red horned imp head, a stall awning, the clasp in two colourways (a reduced handClasp), a tiny scale.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Each icon is a function (ctx, x, y, s) of 5 to 10 flat shapes; the clasp icon calls handClasp at s 0.12 with grip 1."
+  }
+ ],
+ "owner_questions": [
+  "SCRIPT: the English of paragraph 5 omits the Arabic closing question (\"Why did this happen on a day when you wronged another woman?\"); both are kept verbatim, and the staging (S13) follows the Arabic.",
+  "SCRIPT: the English of paragraph 1 has no equivalent of \"known for piety and good conduct\" beyond \"devout\", and paragraph 2 drops \"he had always behaved with courtesy and respect\"; both kept verbatim.",
+  "The improper touch is shown only as a stylised close-up of two hands (no faces, under 3.5 s each time) so the film stays decent for all ages; default: yes, hand inserts only.",
+  "Invented comic lettering: BUKHARA, THE GOLDSMITH, HIS WIFE, THE WATER-CARRIER, FULL, ONE DAY..., SQUEEZE!, WRONG?, THE TRUTH!, GOLD, WRONG!, STRANGE!, 0 TIMES, WHY?, SAME DAY, NEXT DAY..., ONE DEED, ONE ANSWER; default: keep all.",
+  "The saying is paraphrased on screen as WHAT YOU DO... / ...IS DONE TO YOU (the subtitle carries the script wording); default: keep this paraphrase.",
+  "\"Satan deceived me\" is pictured as a tiny red horned imp icon whispering in a picture balloon (2 s); default: keep the imp icon rather than leave the line unpictured.",
+  "Additions beyond the script: the goldsmith peeks from the house door and admits it during the wife's answer (143.9), and both men stand bowed beside her in the final picture; default: keep both.",
+  "Prayer is shown as raised open palms with a soft light cone, with no text or religious symbols on screen; default: yes."
+ ],
+ "implementation_notes": [
+  "Start from Library/template; set LIFE.t = t every frame so all four people blink; override with explicit lid/noBlink where the plan says \"no blink\".",
+  "Colour code is structural: goldsmith GREEN, carrier BROWN, wife BLUE sleeve, customer RED sleeve. The inset borders, the handClasp sleeves and the balloon icons must use exactly these four colours so the match reads without words.",
+  "S5 and S10 must share timing and geometry (grip at +0.24 s, squeeze at +1.5 s, same pressure lines); S10 is S5 with flip:true and other palettes. Build one function clasp(t0, pal) and call it for both, for the insets, the cloud and the icons.",
+  "The person figure is front facing: stage every meeting as a two-shot with dir set toward the partner and use handLW/handRW world targets for the tray, purse, bracelet and waterskin neck. In S4 the actual touch happens in the insert, so the wide shot only needs his reaching arm (PERSON_HANDS.reach) entering her space.",
+  "Carrier age is keyed (kfn 13.5 to 15.2: 0.2 to 0.7) and stays 0.7 afterwards, including inside the S6 thought cloud.",
+  "Bare-headed goldsmith (107.3 on, S18, S20): if the costume layer cannot hide headwear, draw him with pal hc matching the hair colour and a flat cap shape, or add an opt-in field; the held turban is a separate small drawing (yellow dome 90 x 60 with dots and the pin). Do not change the merchant preset default.",
+  "Thought clouds: S6 420 x 300 at scale 0.6; S9 and S11 860 x 640 at scale 0.75 (figures about 180 px); S15 300 x 170 holding two clasp icons. Keep every cloud clear of the faces below it.",
+  "Camera: clamp as in the template camAt; apply shake inside the panel clip only. The NEXT DAY card at 125.9 hides the cut from the room to the courtyard at its covered midpoint.",
+  "Sound: 12 quiet effects, all inside listed pauses (8.5 chime, 22.75 pop, 44.45 whoosh, 47.75 thud, 56.6 pop, 64.7 thud, 71.45 and 71.9 chime as hammer tinks, 78.0 whoosh, 88.95 pop, 105.2 thud) plus the 170.3 chime after the last word. No effect on either squeeze: the narration covers both.",
+  "Word cues: use w(p, n) from timing.json; every action cue in creative_plan.json names the Arabic word and its start time. The word هي at about 117.6 is interpolated, so key S15 from أيضًا (117.60) instead.",
+  "Subtitles: four chunks per paragraph as marked in subtitles; rebuild chunk text from the script words so it stays verbatim."
+ ],
+ "warnings": [
+  "New drawing load is on the high side: handClasp (M) and courtyardHouse (M) plus four small props. handClasp must be drawn large and clean; it is on screen in seven scenes. Review it alone on a still before staging.",
+  "The hands of the Library person are small discs; the story is about a hand. All readable hand acting therefore lives in the inserts and insets, and the wide shots must not try to show the grip itself.",
+  "Narration has few pauses after 105.8 s, so the last third has no sound effects except the end chime; rely on picture changes there.",
+  "S9 packs the whole shop flashback into 13 s inside a cloud; keep the cloud figures at 180 px or more and cut the bracelet-making to one hammer pose if it feels crowded.",
+  "courtyardHouse is planned by AN-114 with a fountain; coordinate so one set serves both (fountain optional, cisterns and bench as props)."
+ ]
+}

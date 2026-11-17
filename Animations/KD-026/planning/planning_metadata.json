@@ -1,0 +1,164 @@
+{
+ "story_id": "KD-026",
+ "title": "The Thief and the Devil",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T12:29:23",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-aafddfe1a78cc58a7.jsonl",
+ "agent_id": "aafddfe1a78cc58a7",
+ "model_messages": {
+  "claude-fable-5-2": 23
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "6006836fd7b1fef016765b5b04faad53072691a3a75aad709aa53293eb3a2a51",
+  "paragraphs": 8,
+  "segments": [
+   "KD-026-P01-S01",
+   "KD-026-P01-S02",
+   "KD-026-P01-S03",
+   "KD-026-P01-S04",
+   "KD-026-P01-S05",
+   "KD-026-P01-S06",
+   "KD-026-P01-S07",
+   "KD-026-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/KD-026_The_Thief_and_the_Devil_full_slowed.mp3",
+  "sha256": "8c42675b03a1417c7c2e7ea9019998ac75a43d5195b2d30383adbf71d0016a11",
+  "duration": 166.663
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/KD-026_The_Thief_and_the_Devil_full_slowed.mp3.words.json",
+  "sha256": "c30fbfc40fae6e9f5b5a7ba5849ec84d7c24d25c6cf68161e8fbf8560c2276d6",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.995
+ },
+ "library_rev": "7721db2",
+ "scenes": 15,
+ "actions": 150,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "cow",
+   "effort": "L"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (devil)",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (ascetic, richMan)",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "villager",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "sleepMeter",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "dayCycle",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "lampLight",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "countryRoad",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "villageYard",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "hutRoom",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "rope (lead)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "oilLamp, bindle, bigHand",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "dogIcon, balanceScale, sack, coin",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "stick, coinPile, smallBowl",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "firstBadge",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person lie / sit up in bed",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "person kneel / sit",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "sneak",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "runInPlace",
+   "effort": "S"
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "This plan depends on several assets planned by other stories that are not in Library yet (costume layer, countryRoad, villageYard, hutRoom, thoughtCloud, dayCycle, lampLight, sleepMeter, inset circle, person lie and sit). If KD-026 is built before them, they must be built here to the planned specifications.",
+  "Set coordinates for countryRoad, villageYard and hutRoom are requirements, not measurements: the sets do not exist yet. Measure on the sets once built and adjust positions.",
+  "The dark interior runs for about 70 s (72-145 s). There is a real risk of a murky, low-contrast picture on a phone; test stills early.",
+  "Long static location (S7-S15 in one room, about 106 s). Variety must come from shot sizes, the picture strips, the meter and the acting; do not let the wide shot run for more than 8 s at a time.",
+  "The time of paragraph 7 word 3 (126.86) is interpolated, not recognised; do not hang a sharp action on that word.",
+  "The narration has no pause between 123.66 and 145.14 or after 109.64, so the loud scene has no sound effects at all."
+ ]
+}

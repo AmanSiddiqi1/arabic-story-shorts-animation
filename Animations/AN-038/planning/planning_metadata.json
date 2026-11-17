@@ -1,0 +1,108 @@
+{
+ "story_id": "AN-038",
+ "title": "The Falcon and the Partridge",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T12:48:50",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a7d7b35e7c06eccbf.jsonl",
+ "agent_id": "a7d7b35e7c06eccbf",
+ "model_messages": {
+  "claude-fable-5-2": 23
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "b9963d86c446dee38883fcd102fabc4b83abce267140c91c892692eda7c7f79a",
+  "paragraphs": 8,
+  "segments": [
+   "AN-038-P01-S01",
+   "AN-038-P01-S02",
+   "AN-038-P01-S03",
+   "AN-038-P01-S04",
+   "AN-038-P01-S05",
+   "AN-038-P01-S06",
+   "AN-038-P01-S07",
+   "AN-038-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-038_The_Falcon_and_the_Partridge_full_slowed.mp3",
+  "sha256": "d376f6a315caff0156cc54e19494075d19460247fec5dcacdcc8bac444cc9956",
+  "duration": 163.528
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-038_The_Falcon_and_the_Partridge_full_slowed.mp3.words.json",
+  "sha256": "4cb7e2c059bf55425e27f00f5dd8b2702c8c99e9331b50bdbff7b0158035e466",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.996
+ },
+ "library_rev": "7721db2",
+ "scenes": 15,
+ "actions": 185,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "hawk (bird kind)",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "partridge (bird kind)",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "orchard",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "grapeBunch",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "featherFall",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "effort": "S"
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "groundShadow",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "fox rear / carry",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The narration has only seven pauses of 0.6 s or more, so the film is nearly silent apart from the voice; the big hits (pounce, fall) cannot have sound without covering words.",
+  "S11 (the curse) is 18.4 s on one small stage: it depends on acting and the three icons (heart, cracked heart, poison drop). If it drags in review, add one more cut to the falcon reaction at 116.2.",
+  "The falcon is the Library bird scaled to 1.9; line weights grow with scale. The hawk kind should draw with its own stroke widths so it matches the other characters.",
+  "A partly bald falcon (moult) must stay comic, not gruesome: pink patches with a few dots, no skin detail.",
+  "The word وأن at about 120.09 was not recognised by Whisper (interpolated time); no action is cued on it."
+ ]
+}

@@ -1,0 +1,3205 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-014",
+ "title": "The Envious Man and the Envied",
+ "duration": 170.003,
+ "end_hold": 3.0,
+ "logline": "An envious neighbour pushes a good man into a well; down there the man overhears the jinn, cures a princess, rises to be king, and repays the envier with gifts instead of punishment.",
+ "moral": "Envy harms the one who carries it; goodness and forgiveness lift a person higher than any revenge.",
+ "tone": "Warm fable with one dark turn (the well), a comic-spooky middle (the gossiping jinn) and a quiet, generous ending. The envier is a comic figure with a false smile, never a monster.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 5.22,
+   "kind": "setup",
+   "cue": {
+    "word": "محبوبًا",
+    "t": 5.22
+   },
+   "summary": "The kind man is loved by the whole lane."
+  },
+  {
+   "id": "B2",
+   "t": 11.9,
+   "kind": "inciting",
+   "cue": {
+    "word": "يحسده",
+    "t": 11.9
+   },
+   "summary": "His neighbour envies him and wishes him ruin."
+  },
+  {
+   "id": "B3",
+   "t": 29.78,
+   "kind": "turn",
+   "cue": {
+    "word": "غادر",
+    "t": 29.78
+   },
+   "summary": "To avoid trouble he leaves town and settles far away."
+  },
+  {
+   "id": "B4",
+   "t": 38.48,
+   "kind": "rising",
+   "cue": {
+    "word": "يزورونه",
+    "t": 38.48
+   },
+   "summary": "He opens a house of worship and becomes well known for his advice."
+  },
+  {
+   "id": "B5",
+   "t": 49.28,
+   "kind": "suspense",
+   "cue": {
+    "word": "متظاهرًا",
+    "t": 49.28
+   },
+   "summary": "The envier arrives behind a false smile and asks to talk by the old well."
+  },
+  {
+   "id": "B6",
+   "t": 60.26,
+   "kind": "climax",
+   "cue": {
+    "word": "دفعه",
+    "t": 60.26
+   },
+   "summary": "The shove into the well."
+  },
+  {
+   "id": "B7",
+   "t": 65.74,
+   "kind": "surprise",
+   "cue": {
+    "word": "يمت",
+    "t": 65.74
+   },
+   "summary": "He is alive."
+  },
+  {
+   "id": "B8",
+   "t": 75.38,
+   "kind": "reveal",
+   "cue": {
+    "word": "لجن",
+    "t": 75.38
+   },
+   "summary": "The voices are jinn who know why the princess is ill."
+  },
+  {
+   "id": "B9",
+   "t": 90.74,
+   "kind": "reveal",
+   "cue": {
+    "word": "سبع",
+    "t": 90.74
+   },
+   "summary": "The cure: seven white hairs from a black cat tail."
+  },
+  {
+   "id": "B10",
+   "t": 104.34,
+   "kind": "turn",
+   "cue": {
+    "word": "وأخرجوه",
+    "t": 104.34
+   },
+   "summary": "His followers pull him out."
+  },
+  {
+   "id": "B11",
+   "t": 120.18,
+   "kind": "climax",
+   "cue": {
+    "word": "الروح",
+    "t": 120.18
+   },
+   "summary": "The hairs are burned, the spirit leaves and the princess recovers."
+  },
+  {
+   "id": "B12",
+   "t": 143.8,
+   "kind": "resolution",
+   "cue": {
+    "word": "ملكًا",
+    "t": 143.8
+   },
+   "summary": "Son-in-law, vizier, then king of the land he entered as a stranger."
+  },
+  {
+   "id": "B13",
+   "t": 160.46,
+   "kind": "suspense",
+   "cue": {
+    "word": "فخاف",
+    "t": 160.46
+   },
+   "summary": "The envier recognises the king and expects punishment."
+  },
+  {
+   "id": "B14",
+   "t": 162.18,
+   "kind": "moral",
+   "cue": {
+    "word": "لكن",
+    "t": 162.18
+   },
+   "summary": "The raised hand opens: gifts, and he is let go unharmed."
+  }
+ ],
+ "cast": [
+  {
+   "id": "goodMan",
+   "name": "the kind man (the envied)",
+   "library": "person",
+   "base": "person kind:'owner' with the planned costume layer",
+   "look": "Round friendly face, short black beard, small white turban, white robe with blue Ben-Day dots and a yellow sash. The face, beard and yellow sash never change, so he stays recognisable through four costumes: villager (S1-S5), plain white ascetic robe (S6-S16), fine robe then tall vizier turban with a jewel (S17), crown and a blue cloak (S18-S20).",
+   "new": false
+  },
+  {
+   "id": "envier",
+   "name": "the envious neighbour",
+   "library": "person",
+   "base": "person kind:'thief' body proportions (thin) with the planned villager costume",
+   "look": "Thin, pointed black beard, red tunic, yellow skull cap, heavy brows (default brow 0.6). Uses the planned flush expression. In S19-S20 the same figure, older: grey streaks in the beard, patched tunic.",
+   "new": false
+  },
+  {
+   "id": "villagerA",
+   "name": "neighbour / follower 1",
+   "library": "person",
+   "base": "planned villager variant (owner base)",
+   "look": "Blue tunic, white cap, moustache. Plays a neighbour, a follower and a petitioner.",
+   "new": false
+  },
+  {
+   "id": "villagerB",
+   "name": "neighbour / follower 2",
+   "library": "person",
+   "base": "planned villager variant (owner base)",
+   "look": "Shorter and wider, green tunic, yellow turban, round beard.",
+   "new": false
+  },
+  {
+   "id": "villagerC",
+   "name": "old woman",
+   "library": "person",
+   "base": "planned villageWoman variant (wife base)",
+   "look": "Headscarf, red dress, slight stoop.",
+   "new": false
+  },
+  {
+   "id": "jinnA",
+   "name": "the talking jinn",
+   "library": "person",
+   "base": "planned person costume preset devil, red palette, s 0.7",
+   "look": "Small, round belly, two short horns, pointed ears, goatee; comic know-it-all. No cape.",
+   "new": false
+  },
+  {
+   "id": "jinnB",
+   "name": "the listening jinn",
+   "library": "person",
+   "base": "planned person costume preset devil, blue palette, s 0.62",
+   "look": "Smaller, blue skin with red dots, one horn bent; eager and a bit timid.",
+   "new": false
+  },
+  {
+   "id": "sultan",
+   "name": "the sultan",
+   "library": "person",
+   "base": "planned person costume preset king",
+   "look": "Wide body, big yellow crown with a red jewel, red robe with yellow trim, black beard (white beard at 138.68 with age 1).",
+   "new": false
+  },
+  {
+   "id": "princess",
+   "name": "the sultan daughter",
+   "library": "person",
+   "base": "planned person costume preset lady / maiden (wife base) plus a small crown",
+   "look": "Yellow dress, light veil, small crown. Ill state: pale skin tone, planned spiralEyes, limp arms.",
+   "new": false
+  },
+  {
+   "id": "oldVizier",
+   "name": "the old vizier",
+   "library": "person",
+   "base": "planned person costume preset vizier with age 1",
+   "look": "Tall turban with a jewel, long white beard, stoop, blue robe. On screen for two seconds.",
+   "new": false
+  },
+  {
+   "id": "servant",
+   "name": "palace servant",
+   "library": "person",
+   "base": "planned person costume preset servant",
+   "look": "Flat cap, short tunic, sash.",
+   "new": false
+  },
+  {
+   "id": "cat",
+   "name": "the black cat",
+   "library": null,
+   "base": "new quadruped",
+   "look": "Flat black cat with yellow eyes, pink inner ears, a white whisker set, and seven white hairs at the tail tip (count field).",
+   "new": true
+  },
+  {
+   "id": "spirit",
+   "name": "the evil spirit",
+   "library": null,
+   "base": "planned windSpirit with a dark palette",
+   "look": "Navy and black tapering smoke bands with a small mean face (planned elementFace) in the leading curl; about 220 units long.",
+   "new": true
+  }
+ ],
+ "sets": [
+  {
+   "id": "village",
+   "library": null,
+   "description": "Planned village lane (KD-008) arranged as two flat-roofed house fronts sharing a low wall: kind man house x 90..430 (roof line y 520, door x 230..310, top y 720), envier house x 570..910 (roof line y 540, door x 600..670, window x 700..790, y 610..700), wall x 430..570 with its top at y 800, ground y 900. Sky from Library sky / planned dayCycle.",
+   "new": true
+  },
+  {
+   "id": "countryRoad",
+   "library": null,
+   "description": "Planned countryRoad strip (KD-013, KD-026), about 2400 units long: road at y 900, far town skyline at the left end, three milestones, a low rise at the right end.",
+   "new": true
+  },
+  {
+   "id": "shrineYard",
+   "library": null,
+   "description": "New: a quiet yard with a small domed prayer house and an old well. House walls x 60..440, y 560..900, cream with blue dot shading; dome centre (250, 560) radius 130 in white with a plain ball finial (top y 410); arched double door x 200..300, top y 700, with open and closed states and a light spill polygon. Old well at x 780: round stone rim 150 wide, 70 high (top y 830), two posts and a crossbeam at y 690, rope and bucket, two cracked stones and weeds. Palm (planned palmTree) at x 930. Library sky presets day and dawn, hillTrees, ground at y 900.",
+   "new": true
+  },
+  {
+   "id": "wellShaft",
+   "library": "wellShaft",
+   "description": "Library cutaway well (The Lion and the Hare), used with a day-to-night sky strip and a sand heap at the bottom. Shaft about x 540..815 (approximate, measure on the set).",
+   "new": false
+  },
+  {
+   "id": "wellCavern",
+   "library": "wellShaft",
+   "description": "The same Library wellShaft with a new overlay: a rounded cavern pocket cut into the earth left of the shaft, about x 90..500, y 720..1060, navy interior with a rock, a lamp and a lit disc; the rest of the cutaway darkened to night.",
+   "new": true
+  },
+  {
+   "id": "palaceHall",
+   "library": null,
+   "description": "Planned palaceHall (AN-095, KD-017): arched interior, window top-left with a light shaft, tiled floor at y 900, dais and throne on the right (centre x 800, seat y 760, back top y 520), a vizier cushion and lamp stand at x 640, an open door at the left edge x 60..160.",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "bindle",
+   "library": null,
+   "description": "Planned bindle: bundle on a stick over the shoulder.",
+   "new": true
+  },
+  {
+   "id": "sandal",
+   "library": null,
+   "description": "One small sandal (30 x 10) left on the well rim at 60.9, found at 101.9, returned at 106.0.",
+   "new": true
+  },
+  {
+   "id": "oilLamp",
+   "library": null,
+   "description": "Planned brass lamp with flame 0..1 and a smoke wisp: at the shrine door, in the cavern, and on the palace stand (it goes out for the two deaths).",
+   "new": true
+  },
+  {
+   "id": "rope",
+   "library": null,
+   "description": "Planned rope, used over the well crossbeam for the rescue.",
+   "new": true
+  },
+  {
+   "id": "brazier",
+   "library": null,
+   "description": "Small bowl on three legs, 70 wide x 60 tall, yellow with red dot shading; flame 0..1 and a white smoke curl that follows a bezier to a target point.",
+   "new": true
+  },
+  {
+   "id": "crown",
+   "library": null,
+   "description": "The sultan crown as a separate prop (same drawing as on the king preset) so it can rest on the throne seat and be lowered onto a head.",
+   "new": true
+  },
+  {
+   "id": "vizierTurban",
+   "library": null,
+   "description": "The tall jewelled turban of the vizier preset as a separate prop for the cushion and the hand-over.",
+   "new": true
+  },
+  {
+   "id": "purse",
+   "library": null,
+   "description": "Planned purse (AN-095), fat, with two coins showing.",
+   "new": true
+  },
+  {
+   "id": "giftChest",
+   "library": null,
+   "description": "Small chest 80 x 55 with a yellow band, plus a folded robe (a 90 x 24 red slab) for the gift pile.",
+   "new": true
+  },
+  {
+   "id": "iconBalloon",
+   "library": null,
+   "description": "Planned iconBalloon (KD-026): picture balloons for the wordless jinn talk. Icons needed: dome, kind man head, princess head (well and ill), crown, dark wisp, question mark and tick, bowl, seven hairs, cat with tail.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 9.72,
+   "paragraphs": [
+    1
+   ],
+   "set": "village",
+   "cast": [
+    "goodMan",
+    "envier",
+    "villagerA",
+    "villagerB",
+    "villagerC"
+   ],
+   "summary": "One lane, two front doors. The kind man is surrounded by neighbours who love him; the envier watches from his side of the wall.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Start wide on the whole lane (x 500, y 640, zoom 1.0); from 3.58 ease to the kind man and his visitors (x 330, y 700, zoom 1.5) but keep the envier small at the right edge of frame."
+   },
+   "composition": "Kind man house on the left (door centre x 270), envier house on the right (door x 635, window x 745), a low wall between them at x 430..570. Kind man at x 270, villagers arrive from the left at x 90..210; envier at x 700, half turned away. Hearts rise above head height so no face is covered.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 0.46,
+     "cue": {
+      "word": "عاش",
+      "t": 0.0
+     },
+     "who": "camera",
+     "action": "wide view of the lane at morning; sun on the right, one cloud drifting",
+     "acting": "still, calm start; only the cloud and the sun rays move",
+     "library": "sky, sun, cloudFlat + planned village set"
+    },
+    {
+     "t": 0.46,
+     "end": 1.5,
+     "cue": {
+      "word": "رجلان",
+      "t": 0.46
+     },
+     "who": "goodMan",
+     "action": "opens his door and steps out, stretches, smiles at the day",
+     "acting": "door swings first (anticipation), small hop over the step with landSquash, gaze up at the sky then along the lane",
+     "library": "person + hop, landSquash"
+    },
+    {
+     "t": 0.9,
+     "end": 1.9,
+     "cue": {
+      "word": "رجلان",
+      "t": 0.46
+     },
+     "who": "envier",
+     "action": "opens his door 0.4 s later and steps out with folded arms",
+     "acting": "never in unison with the kind man: late, stiff, chin down, brow 0.6, gaze slides sideways to the neighbour",
+     "library": "person + PERSON_HANDS.folded, stagger"
+    },
+    {
+     "t": 2.04,
+     "end": 3.4,
+     "cue": {
+      "word": "واحد،",
+      "t": 2.04
+     },
+     "who": "fx",
+     "action": "a dotted line traces the low wall that the two houses share, then fades",
+     "acting": "shows \"one neighbourhood\" without lettering",
+     "library": "S.arrow / dashed stroke"
+    },
+    {
+     "t": 3.58,
+     "end": 4.2,
+     "cue": {
+      "word": "وكان",
+      "t": 3.58
+     },
+     "who": "camera",
+     "action": "eased push toward the kind man",
+     "acting": "keys in pairs so the move ends before 5.2",
+     "library": "K.camAt keys"
+    },
+    {
+     "t": 4.28,
+     "end": 5.1,
+     "cue": {
+      "word": "أحدهما",
+      "t": 4.28
+     },
+     "who": "fx",
+     "action": "a red arrow drops in above the kind man",
+     "acting": "arrow bounces once and settles; kind man looks up at it, amused",
+     "library": "S.arrow + settleTo"
+    },
+    {
+     "t": 5.22,
+     "end": 6.3,
+     "cue": {
+      "word": "محبوبًا",
+      "t": 5.22
+     },
+     "who": "villagerA",
+     "action": "three neighbours walk in from the left, one after another, waving",
+     "acting": "staggered entries 0.3 s apart, different walking speeds; a heart pops over each as it stops",
+     "library": "walk, footfalls, stagger, heart"
+    },
+    {
+     "t": 5.6,
+     "end": 6.6,
+     "cue": {
+      "word": "محبوبًا",
+      "t": 5.22
+     },
+     "who": "lettering",
+     "action": "label LOVED BY ALL above the group",
+     "acting": "label sits in the sky area, never over a face",
+     "library": "S.label"
+    },
+    {
+     "t": 6.38,
+     "end": 7.8,
+     "cue": {
+      "word": "الناس",
+      "t": 6.38
+     },
+     "who": "goodMan",
+     "action": "greets each neighbour in turn: wave, hand on chest, small bow",
+     "acting": "gaze goes to each person as he greets them (gaze plan), warm smile, blink between looks",
+     "library": "PERSON_HANDS.wave, chest + look()"
+    },
+    {
+     "t": 7.94,
+     "end": 8.7,
+     "cue": {
+      "word": "أخلاقه",
+      "t": 7.94
+     },
+     "who": "goodMan",
+     "action": "takes a loaf from inside his door and hands it to the old woman",
+     "acting": "reach with anticipation (lean back, then forward tip 0.08); she receives with both hands, her brow lifts",
+     "library": "handR target (arm IK), PERSON_HANDS.reach"
+    },
+    {
+     "t": 8.74,
+     "end": 9.7,
+     "cue": {
+      "word": "الطيبة.",
+      "t": 8.74
+     },
+     "who": "envier",
+     "action": "at the frame edge he turns his back and kicks a pebble",
+     "acting": "shoulders up, head drop 6 px, the pebble skips with two dust puffs; nobody notices him",
+     "library": "kick, dustBurst"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 5.6,
+     "text": "LOVED BY ALL"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 3.1,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "whip",
+    "t": 9.72
+   }
+  },
+  {
+   "id": "S2",
+   "start": 9.72,
+   "end": 19.2,
+   "paragraphs": [
+    1
+   ],
+   "set": "village",
+   "cast": [
+    "envier",
+    "goodMan"
+   ],
+   "summary": "The envier alone at the wall: envy climbs his face, and in a thought cloud he wishes his neighbour would lose everything.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Whip to the envier at the wall (x 640, y 660, zoom 1.9). At 15.4 ease back to zoom 1.5 and up (y 560) to make room for the thought cloud."
+   },
+   "composition": "Envier chest-up behind the low wall at x 600, fingers on the wall top, eyes just over it looking left. The neighbour is off screen left; only hearts drift in from that side. Thought cloud top-left, 520 x 380 world units, clear of his face.",
+   "actions": [
+    {
+     "t": 9.72,
+     "end": 10.3,
+     "cue": {
+      "word": "أما",
+      "t": 9.72
+     },
+     "who": "camera",
+     "action": "whip pan right to the envier",
+     "acting": "3-frame whip with smear lines, then a hold",
+     "library": "S.transition whip or fast CAM keys"
+    },
+    {
+     "t": 10.42,
+     "end": 11.7,
+     "cue": {
+      "word": "جاره",
+      "t": 10.42
+     },
+     "who": "envier",
+     "action": "rises slowly from behind the wall until only cap and eyes show, staring left",
+     "acting": "the peek: fingers first, then cap, then eyes; lid 0.35, pupils hard left",
+     "library": "draw order person then wall + lookAt"
+    },
+    {
+     "t": 11.9,
+     "end": 13.0,
+     "cue": {
+      "word": "يحسده",
+      "t": 11.9
+     },
+     "who": "envier",
+     "action": "envy takes over: his face flushes from the neck up and he grinds his teeth",
+     "acting": "brow to 1 (angry V), mouth frown, tremble 1.5, flush 0 to 1 over 0.8 s",
+     "library": "planned flush expression + tremble"
+    },
+    {
+     "t": 12.3,
+     "end": 13.6,
+     "cue": {
+      "word": "يحسده",
+      "t": 11.9
+     },
+     "who": "lettering",
+     "action": "label ENVY with an arrow to him; small GRRR beside his cap",
+     "acting": "pops with a 10 percent overshoot",
+     "library": "S.label, S.arrow"
+    },
+    {
+     "t": 13.14,
+     "end": 14.3,
+     "cue": {
+      "word": "محبة",
+      "t": 13.14
+     },
+     "who": "fx",
+     "action": "three hearts drift over the wall from the left, toward him",
+     "acting": "his pupils follow each heart (saccades), cap lags his head turns",
+     "library": "heart + gazePlan(…, 0.07)"
+    },
+    {
+     "t": 14.6,
+     "end": 15.2,
+     "cue": {
+      "word": "له،",
+      "t": 14.38
+     },
+     "who": "envier",
+     "action": "swats the nearest heart; it pops like a soap bubble",
+     "acting": "anticipation wind-up 0.2 s, fast swat, follow-through past the wall top",
+     "library": "aR angles + anticipate"
+    },
+    {
+     "t": 15.4,
+     "end": 16.3,
+     "cue": {
+      "word": "ويتمنى",
+      "t": 15.4
+     },
+     "who": "fx",
+     "action": "thought cloud opens above him showing the neighbour happy in front of his house with three hearts and a friend",
+     "acting": "envier looks up into the cloud, one corner of his mouth lifts",
+     "library": "planned thoughtCloud (Library cloud with inside drawing)"
+    },
+    {
+     "t": 16.5,
+     "end": 17.0,
+     "cue": {
+      "word": "يفقد",
+      "t": 16.5
+     },
+     "who": "fx",
+     "action": "in the cloud the friend and the hearts pop away one by one",
+     "acting": "one item per 0.2 s, a small puff each",
+     "library": "pulse + dustBurst"
+    },
+    {
+     "t": 17.04,
+     "end": 17.9,
+     "cue": {
+      "word": "كل",
+      "t": 17.04
+     },
+     "who": "fx",
+     "action": "in the cloud the house loses its door, its roof, then is gone",
+     "acting": "envier nods along with each loss, counting on his fingers",
+     "library": "kfn keys on alpha"
+    },
+    {
+     "t": 17.96,
+     "end": 18.9,
+     "cue": {
+      "word": "يملك.",
+      "t": 17.96
+     },
+     "who": "envier",
+     "action": "cloud shows the neighbour alone with empty hands; the envier rubs his hands and grins",
+     "acting": "first full smile of the film, brow still angry; breathe fast",
+     "library": "PERSON_HANDS.clasp + breathe"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 12.3,
+     "text": "ENVY"
+    },
+    {
+     "t": 12.6,
+     "text": "GRRR"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 15.0,
+     "kind": "pop"
+    },
+    {
+     "t": 19.0,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 19.2
+   }
+  },
+  {
+   "id": "S3",
+   "start": 19.2,
+   "end": 28.1,
+   "paragraphs": [
+    2
+   ],
+   "set": "village",
+   "cast": [
+    "goodMan",
+    "envier"
+   ],
+   "summary": "The envier makes trouble (rubbish over the wall); the kind man quietly cleans up and avoids a quarrel, but the peeking never stops.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "Level two-shot of both doorsteps and the wall (x 480, y 690, zoom 1.35). Sky runs day, night, day between 24.4 and 27.6."
+   },
+   "composition": "Kind man left at x 300, envier right behind the wall at x 560 then at his window (x 745, y 655) and last on his roof edge (x 700, roof line y 540). Rubbish lands at x 360 on the ground.",
+   "actions": [
+    {
+     "t": 19.4,
+     "end": 20.4,
+     "cue": {
+      "word": "حاول",
+      "t": 19.82
+     },
+     "who": "envier",
+     "action": "tips a basket of rubbish over the wall onto the neighbour doorstep",
+     "acting": "looks both ways first, heaves with a squash and stretch, ducks down",
+     "library": "anticipate + prop arc (hop curve)"
+    },
+    {
+     "t": 20.52,
+     "end": 21.0,
+     "cue": {
+      "word": "الرجل",
+      "t": 20.52
+     },
+     "who": "goodMan",
+     "action": "opens his door and finds the pile; looks at it, then at the wall",
+     "acting": "small start (sq 0.95), brow raised, a slow blink; no anger",
+     "library": "person brow -0.4, blink"
+    },
+    {
+     "t": 21.06,
+     "end": 22.1,
+     "cue": {
+      "word": "الطيب",
+      "t": 21.06
+     },
+     "who": "goodMan",
+     "action": "breathes out, fetches a broom and sweeps the pile away",
+     "acting": "shoulders drop on the sigh, three sweeps with dust puffs",
+     "library": "breathe, handR/handL on the broom, dustBurst"
+    },
+    {
+     "t": 22.16,
+     "end": 22.9,
+     "cue": {
+      "word": "يتجنب",
+      "t": 22.16
+     },
+     "who": "goodMan",
+     "action": "the envier pops up to gloat; the kind man answers with a polite hand on his chest and steps back",
+     "acting": "kind man gaze meets him for half a second then lowers; envier is thrown by the politeness (brow flicker)",
+     "library": "PERSON_HANDS.chest, lookAt"
+    },
+    {
+     "t": 22.96,
+     "end": 23.7,
+     "cue": {
+      "word": "المشاكل،",
+      "t": 22.96
+     },
+     "who": "goodMan",
+     "action": "goes in and closes his door softly",
+     "acting": "door closes slowly, the last gap shows his eye, then shut",
+     "library": "door prop angle key"
+    },
+    {
+     "t": 24.44,
+     "end": 25.0,
+     "cue": {
+      "word": "لكن",
+      "t": 24.44
+     },
+     "who": "envier",
+     "action": "pops up over the wall again, staring at the closed door",
+     "acting": "snap up in 3 frames, eyes narrow",
+     "library": "settleTo"
+    },
+    {
+     "t": 25.14,
+     "end": 25.8,
+     "cue": {
+      "word": "حسد",
+      "t": 25.14
+     },
+     "who": "set",
+     "action": "sky turns to night; a lit window shows the envier still watching",
+     "acting": "only his pupils move in the window square",
+     "library": "planned dayCycle"
+    },
+    {
+     "t": 25.92,
+     "end": 26.5,
+     "cue": {
+      "word": "جاره",
+      "t": 25.92
+     },
+     "who": "envier",
+     "action": "day again: he watches from his roof edge, chin on his fists",
+     "acting": "flush pulses once",
+     "library": "person kneel pose or clipped behind the roof line"
+    },
+    {
+     "t": 26.64,
+     "end": 28.0,
+     "cue": {
+      "word": "يتوقف.",
+      "t": 27.14
+     },
+     "who": "goodMan",
+     "action": "opens his door a crack, sees the eyes at wall, window and roof all in one look, and lets his head sink",
+     "acting": "three ghosted envier heads (alpha 0.5) at the three watching places; kind man wet eyes for a moment, long blink, then gaze goes to the road out of town",
+     "library": "alpha, wet, lid ramp"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 24.05,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 28.1
+   }
+  },
+  {
+   "id": "S4",
+   "start": 28.1,
+   "end": 30.3,
+   "paragraphs": [
+    2
+   ],
+   "set": "village",
+   "cast": [
+    "goodMan",
+    "envier",
+    "villagerA",
+    "villagerC"
+   ],
+   "summary": "At last he leaves home with a bundle on a stick; neighbours are sad, the envier is delighted.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Wide lane (zoom 1.15); pan right with him from x 420 to x 600 as he walks out of frame."
+   },
+   "composition": "Kind man walks left to right from x 270 to off the right edge. Two neighbours at the left wave. Envier behind the wall at x 520.",
+   "actions": [
+    {
+     "t": 28.1,
+     "end": 29.2,
+     "cue": {
+      "word": "وأخيرًا",
+      "t": 28.1
+     },
+     "who": "goodMan",
+     "action": "steps out with a bundle on a stick, pulls his door shut and rests a hand on it for a beat",
+     "acting": "head drop 5 px, long blink, breath, head level: a heavy decision, no smile",
+     "library": "planned bindle prop + grief-to-resolve pattern"
+    },
+    {
+     "t": 29.3,
+     "end": 30.3,
+     "cue": {
+      "word": "غادر",
+      "t": 29.78
+     },
+     "who": "goodMan",
+     "action": "walks away down the lane and out of frame",
+     "acting": "legs from distance travelled, bundle swings behind with a 2-frame lag, one look back at 29.9",
+     "library": "walk, footfalls, swing"
+    },
+    {
+     "t": 29.5,
+     "end": 30.3,
+     "cue": {
+      "word": "غادر",
+      "t": 29.78
+     },
+     "who": "villagerC",
+     "action": "the two neighbours wave after him with wet eyes",
+     "acting": "waves out of phase, the old woman dabs an eye",
+     "library": "PERSON_HANDS.wave, wet"
+    },
+    {
+     "t": 29.78,
+     "end": 30.3,
+     "cue": {
+      "word": "غادر",
+      "t": 29.78
+     },
+     "who": "envier",
+     "action": "does a tiny victory hop behind the wall",
+     "acting": "two quick hops with landSquash, fists up; he stops and pretends to dust the wall when a neighbour glances over",
+     "library": "hop, landSquash"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "whip",
+    "t": 30.3
+   }
+  },
+  {
+   "id": "S5",
+   "start": 30.3,
+   "end": 33.98,
+   "paragraphs": [
+    2
+   ],
+   "set": "countryRoad",
+   "cast": [
+    "goodMan"
+   ],
+   "summary": "The long road: the town shrinks behind him until he stops at a far, quiet place.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Side tracking shot, zoom 1.25, camera locked to him while the road scrolls; the town skyline slides off the left edge by 32.0."
+   },
+   "composition": "Kind man at panel centre-left walking right. Sun arcs across the sky to show a long journey. FAR AWAY label in the sky top right.",
+   "actions": [
+    {
+     "t": 30.4,
+     "end": 31.3,
+     "cue": {
+      "word": "المدينة،",
+      "t": 30.4
+     },
+     "who": "set",
+     "action": "the town skyline behind him gets smaller and slips away",
+     "acting": "parallax: far skyline 0.3x, road 1x",
+     "library": "planned countryRoad strip (bake + scroll)"
+    },
+    {
+     "t": 31.42,
+     "end": 32.5,
+     "cue": {
+      "word": "واستقر",
+      "t": 31.42
+     },
+     "who": "goodMan",
+     "action": "keeps walking while the sun crosses the sky; milestones pass",
+     "acting": "walk slows from brisk to tired (amp falls), bundle sags",
+     "library": "walk + planned dayCycle"
+    },
+    {
+     "t": 32.64,
+     "end": 33.1,
+     "cue": {
+      "word": "مكان",
+      "t": 32.64
+     },
+     "who": "lettering",
+     "action": "label FAR AWAY with an arrow pointing ahead",
+     "acting": "pops on the word",
+     "library": "S.label, S.arrow"
+    },
+    {
+     "t": 33.18,
+     "end": 33.95,
+     "cue": {
+      "word": "بعيد.",
+      "t": 33.18
+     },
+     "who": "goodMan",
+     "action": "stops on a low rise, sets the bundle down, wipes his brow and smiles at what he sees ahead",
+     "acting": "landSquash-style settle on the stop, gaze right and slightly up",
+     "library": "settleTo, handR to brow"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 32.64,
+     "text": "FAR AWAY"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 33.98
+   }
+  },
+  {
+   "id": "S6",
+   "start": 33.98,
+   "end": 42.7,
+   "paragraphs": [
+    2
+   ],
+   "set": "shrineYard",
+   "cast": [
+    "goodMan",
+    "villagerA",
+    "villagerB",
+    "villagerC"
+   ],
+   "summary": "He opens a small domed house of worship; people come, sit and listen to his advice. The old well waits at the edge of the yard.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Wide on the yard (x 480, y 650, zoom 1.05), slow push to the door and the seated listeners (x 330, y 720, zoom 1.5) from 37.2."
+   },
+   "composition": "Prayer house on the left (walls x 60..440, dome top y 430, door x 200..300). Kind man at the door, x 300. Listeners sit in a half ring at x 430..640 facing him. The old well stands apart on the right at x 780 with a palm behind it at x 930; it is in frame from the first shot.",
+   "actions": [
+    {
+     "t": 33.98,
+     "end": 34.9,
+     "cue": {
+      "word": "هناك",
+      "t": 33.98
+     },
+     "who": "camera",
+     "action": "reveal of the quiet yard: small domed house, palm, an old well",
+     "acting": "hold wide for one second so the well is seen",
+     "library": "planned shrineYard set (new)"
+    },
+    {
+     "t": 35.0,
+     "end": 35.9,
+     "cue": {
+      "word": "فتح",
+      "t": 35.0
+     },
+     "who": "goodMan",
+     "action": "now in a plain white robe, pushes the double door open; warm light spills out on the ground",
+     "acting": "push with both hands, lean in (tip 0.08), follow-through step",
+     "library": "PERSON_HANDS.reachBoth + ascetic costume preset"
+    },
+    {
+     "t": 36.16,
+     "end": 37.1,
+     "cue": {
+      "word": "للعبادة،",
+      "t": 36.16
+     },
+     "who": "goodMan",
+     "action": "hangs a small lamp by the door; the dome gets one sparkle",
+     "acting": "reach up with arm angles, lamp swings and settles",
+     "library": "aR angles, swing, planned oilLamp"
+    },
+    {
+     "t": 37.22,
+     "end": 38.4,
+     "cue": {
+      "word": "وصار",
+      "t": 37.22
+     },
+     "who": "villagerA",
+     "action": "first visitor arrives from the right, then a second, then the old woman",
+     "acting": "staggered, different speeds; each looks at the dome first then at him",
+     "library": "walk, stagger"
+    },
+    {
+     "t": 38.48,
+     "end": 39.5,
+     "cue": {
+      "word": "يزورونه",
+      "t": 38.48
+     },
+     "who": "villagerB",
+     "action": "the visitors sit down in a half ring",
+     "acting": "sit one after another with a small squash",
+     "library": "planned person sit/kneel pose"
+    },
+    {
+     "t": 39.54,
+     "end": 41.1,
+     "cue": {
+      "word": "ويستمعون",
+      "t": 39.54
+     },
+     "who": "goodMan",
+     "action": "speaks calmly with open palms; the listeners nod at different moments",
+     "acting": "talk 0.6, palms up, gaze moves round the ring; each listener gaze locked on him",
+     "library": "PERSON_HANDS.palmsUp, talk, look()"
+    },
+    {
+     "t": 41.18,
+     "end": 42.2,
+     "cue": {
+      "word": "نصائحه.",
+      "t": 41.18
+     },
+     "who": "villagerC",
+     "action": "the worried old woman breaks into a smile; a heart pops over the group",
+     "acting": "brow from -0.5 worried to relaxed, mouth frown to smile over 0.5 s",
+     "library": "person brow, mouth, heart"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 42.5,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 42.7
+   }
+  },
+  {
+   "id": "S7",
+   "start": 42.7,
+   "end": 47.6,
+   "paragraphs": [
+    3
+   ],
+   "set": "village",
+   "cast": [
+    "envier",
+    "villagerB"
+   ],
+   "summary": "Back in the old lane the envier overhears that his neighbour is now famous. The envy boils again.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on the envier at his window (x 720, y 650, zoom 1.7), slow push to 2.0 by 46.5."
+   },
+   "composition": "Envier leaning out of his window at x 745, y 655. A passer-by walks left to right along the lane below at y 900. Picture balloon above the passer-by, top-left of frame.",
+   "actions": [
+    {
+     "t": 43.1,
+     "end": 43.9,
+     "cue": {
+      "word": "سمع",
+      "t": 43.1
+     },
+     "who": "villagerB",
+     "action": "a passer-by walks along the lane telling the news; a picture balloon shows the little dome",
+     "acting": "talk 0.7, cheerful walk",
+     "library": "walk + planned iconBalloon"
+    },
+    {
+     "t": 44.0,
+     "end": 45.0,
+     "cue": {
+      "word": "الحاسد",
+      "t": 44.0
+     },
+     "who": "envier",
+     "action": "leans far out of his window with a cupped ear",
+     "acting": "ear leads, body follows; lid 0.3, pupils down at the passer-by",
+     "library": "PERSON_HANDS.cupEar, tip 0.15"
+    },
+    {
+     "t": 45.1,
+     "end": 45.8,
+     "cue": {
+      "word": "جاره",
+      "t": 45.1
+     },
+     "who": "fx",
+     "action": "the balloon now shows his neighbour at the dome door",
+     "acting": "envier pupils snap to the balloon (2-frame saccade)",
+     "library": "iconBalloon single icon mode"
+    },
+    {
+     "t": 45.86,
+     "end": 46.5,
+     "cue": {
+      "word": "أصبح",
+      "t": 45.86
+     },
+     "who": "fx",
+     "action": "a ring of hearts and a star appear around the neighbour in the balloon",
+     "acting": "pops on the word",
+     "library": "heart, star burst"
+    },
+    {
+     "t": 46.52,
+     "end": 47.5,
+     "cue": {
+      "word": "مشهورًا،",
+      "t": 46.52
+     },
+     "who": "envier",
+     "action": "flushes to the top of his cap, bites the cap, steam puffs from his ears",
+     "acting": "tremble 2, brow 1, one look to camera at 47.3",
+     "library": "planned flush + steam puffs (cloudFlat small)"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 47.45,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 47.6
+   }
+  },
+  {
+   "id": "S8",
+   "start": 47.6,
+   "end": 57.2,
+   "paragraphs": [
+    3
+   ],
+   "set": "shrineYard",
+   "cast": [
+    "envier",
+    "goodMan",
+    "villagerA",
+    "villagerC"
+   ],
+   "summary": "The envier arrives wearing a false smile, embraces his old neighbour and asks to talk alone, by the old well.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pan",
+    "notes": "Two-shot at the door (twoShot of both heads, zoom about 1.6) until 54.5, then pan right with the two walkers to the well (x 720, y 700, zoom 1.4)."
+   },
+   "composition": "Envier enters from the right at x 1050 and stops at x 420; kind man at x 300. Two listeners still sitting at x 520..600 in the background. The well at x 780. During the hug the envier face is toward camera over the kind man shoulder.",
+   "actions": [
+    {
+     "t": 48.0,
+     "end": 49.2,
+     "cue": {
+      "word": "فذهب",
+      "t": 48.0
+     },
+     "who": "envier",
+     "action": "marches into the yard from the right, scowling, dust at his heels",
+     "acting": "fast walk, brow 1, head forward",
+     "library": "walk, footfalls, dustBurst"
+    },
+    {
+     "t": 49.28,
+     "end": 50.3,
+     "cue": {
+      "word": "متظاهرًا",
+      "t": 49.28
+     },
+     "who": "envier",
+     "action": "stops behind the palm trunk, pulls a huge smile onto his face with two fingers and smooths his beard",
+     "acting": "mask on: mouth frown to wide smile, brow forced to -0.3; the eyes stay cold (lid 0.3)",
+     "library": "person mouth, brow, handR to mouth"
+    },
+    {
+     "t": 50.38,
+     "end": 51.1,
+     "cue": {
+      "word": "بالصداقة.",
+      "t": 50.38
+     },
+     "who": "envier",
+     "action": "throws his arms wide and hugs the kind man; over the shoulder the smile drops to a scowl, then snaps back",
+     "acting": "mask off for 0.35 s only while the kind man cannot see; kind man eyes shut, true smile",
+     "library": "PERSON_HANDS.armsOut, mask on/off pattern"
+    },
+    {
+     "t": 51.16,
+     "end": 52.0,
+     "cue": {
+      "word": "طلب",
+      "t": 51.16
+     },
+     "who": "envier",
+     "action": "finger to lips, then whispers behind his hand",
+     "acting": "glances at the listeners, leans in (tip 0.1)",
+     "library": "PERSON_HANDS.hush, cupMouth"
+    },
+    {
+     "t": 52.88,
+     "end": 53.6,
+     "cue": {
+      "word": "يتحدث",
+      "t": 52.88
+     },
+     "who": "envier",
+     "action": "jerks a thumb toward the far side of the yard",
+     "acting": "eyebrows wiggle; kind man follows the thumb with his gaze, puzzled but trusting",
+     "library": "aR angle, lookAt"
+    },
+    {
+     "t": 53.68,
+     "end": 54.5,
+     "cue": {
+      "word": "معه",
+      "t": 53.68
+     },
+     "who": "goodMan",
+     "action": "signs to his listeners to wait and goes along",
+     "acting": "open hand toward them, nod; the listeners look at each other",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 54.56,
+     "end": 55.8,
+     "cue": {
+      "word": "انفراد",
+      "t": 54.56
+     },
+     "who": "envier",
+     "action": "the two walk right, the envier a step behind with a hand on the kind man back",
+     "acting": "kind man walks easily; envier takes short quick steps and checks over his shoulder",
+     "library": "walk x2, footfalls"
+    },
+    {
+     "t": 55.9,
+     "end": 56.4,
+     "cue": {
+      "word": "بئر",
+      "t": 55.9
+     },
+     "who": "lettering",
+     "action": "label OLD WELL with an arrow to the well",
+     "acting": "pops as the camera arrives",
+     "library": "S.label, S.arrow"
+    },
+    {
+     "t": 56.44,
+     "end": 57.2,
+     "cue": {
+      "word": "قديمة.",
+      "t": 56.44
+     },
+     "who": "set",
+     "action": "a loose stone drops from the rim into the well; a crow leaves the crossbeam",
+     "acting": "the stone vanishes into the dark with no splash for a long beat: it is deep",
+     "library": "bird kind crow, fallY"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 51.3,
+     "text": "PSST!"
+    },
+    {
+     "t": 55.9,
+     "text": "OLD WELL"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 57.2
+   }
+  },
+  {
+   "id": "S9",
+   "start": 57.2,
+   "end": 64.0,
+   "paragraphs": [
+    3
+   ],
+   "set": "shrineYard",
+   "cast": [
+    "envier",
+    "goodMan"
+   ],
+   "summary": "At the rim the envier shoves his neighbour into the well and runs.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "shake",
+    "notes": "Tight two-shot at the well (x 760, y 700, zoom 1.8). 3-frame panel-only shake on the shove at 60.26. Stay on the envier after the fall."
+   },
+   "composition": "Well rim top at y 830, centre x 780. Kind man at x 730 facing right into the well; envier behind him at x 650. The fall is hidden by the rim: we see him tip over and his feet go down, nothing else.",
+   "actions": [
+    {
+     "t": 57.2,
+     "end": 58.1,
+     "cue": {
+      "word": "وعندما",
+      "t": 57.2
+     },
+     "who": "envier",
+     "action": "points down into the well as if showing something",
+     "acting": "eager false smile, pointing arm stiff",
+     "library": "PERSON_HANDS.pointDown"
+    },
+    {
+     "t": 58.18,
+     "end": 59.4,
+     "cue": {
+      "word": "اقترب",
+      "t": 58.18
+     },
+     "who": "goodMan",
+     "action": "steps up to the rim and leans over to look",
+     "acting": "trusting: hands on the rim, tip 0.15, gaze down",
+     "library": "handL/handR targets on the rim, tip"
+    },
+    {
+     "t": 59.5,
+     "end": 60.2,
+     "cue": {
+      "word": "البئر،",
+      "t": 59.68
+     },
+     "who": "envier",
+     "action": "behind him: looks left, looks right, the smile falls off, both hands rise",
+     "acting": "saccades, mask off, anticipation: leans back 0.5 s with arms cocked",
+     "library": "gazePlan 0.07 + anticipate"
+    },
+    {
+     "t": 60.26,
+     "end": 61.0,
+     "cue": {
+      "word": "دفعه",
+      "t": 60.26
+     },
+     "who": "envier",
+     "action": "shoves with both hands",
+     "acting": "fast lunge, follow-through with arms straight (this exact pose returns in the S19 thought cloud)",
+     "library": "aL/aR angles saved as SHOVE pose"
+    },
+    {
+     "t": 60.3,
+     "end": 61.2,
+     "cue": {
+      "word": "دفعه",
+      "t": 60.26
+     },
+     "who": "goodMan",
+     "action": "tips over the rim, feet in the air, and is gone; one sandal stays on the rim",
+     "acting": "eyes wide, arms windmill for 4 frames, then only the feet, then nothing",
+     "library": "tip to 1.4 rad, fallY, clip at the rim"
+    },
+    {
+     "t": 61.3,
+     "end": 62.2,
+     "cue": {
+      "word": "الحاسد",
+      "t": 61.3
+     },
+     "who": "envier",
+     "action": "stands frozen with his hands still out, then pulls them back and looks at them",
+     "acting": "held pose 0.4 s, then a grin grows",
+     "library": "settleTo"
+    },
+    {
+     "t": 62.34,
+     "end": 63.1,
+     "cue": {
+      "word": "داخلها",
+      "t": 62.34
+     },
+     "who": "envier",
+     "action": "peers into the dark well; a small dust puff comes up",
+     "acting": "cupped ear over the hole, hears nothing, nods",
+     "library": "PERSON_HANDS.cupEar, dustBurst"
+    },
+    {
+     "t": 63.24,
+     "end": 64.0,
+     "cue": {
+      "word": "وهرب.",
+      "t": 63.24
+     },
+     "who": "envier",
+     "action": "legs spin on the spot, then he bolts off to the right",
+     "acting": "run-in-place wind-up 0.3 s, dust trail, cap left spinning in the air for 3 frames",
+     "library": "planned runInPlace + walk at run amplitude"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 60.3,
+     "text": "SHOVE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 64.0
+   }
+  },
+  {
+   "id": "S10",
+   "start": 64.0,
+   "end": 73.78,
+   "paragraphs": [
+    4
+   ],
+   "set": "wellShaft",
+   "cast": [
+    "goodMan",
+    "jinnA",
+    "jinnB"
+   ],
+   "summary": "Cross-section of the well. He is alive at the bottom. Night falls, and strange voices come through the earth.",
+   "camera": {
+    "shot": "full",
+    "move": "tilt",
+    "notes": "Start at the top of the cutaway and tilt down the shaft to the bottom in 1.4 s (zoom 1.3); hold on him. From 72.8 drift left so that the earth beside the shaft fills the left half."
+   },
+   "composition": "Library wellShaft cutaway (shaft about x 540..815, mouth near y 520: approximate, measure on the set). Kind man sits on a sand heap at the shaft bottom, s 0.85. The sky strip above the ground shows day, then night. Jinn eyes appear in the dark earth left of the shaft at about x 250..380, y 880..940.",
+   "actions": [
+    {
+     "t": 64.02,
+     "end": 65.5,
+     "cue": {
+      "word": "لم",
+      "t": 64.02
+     },
+     "who": "camera",
+     "action": "tilt down the long shaft to a heap at the bottom: him, flat on his back on soft sand, three stars circling",
+     "acting": "the tilt is the fall we did not see; land on a still body for half a second",
+     "library": "CAM keys, star ring (K.rng seeded)"
+    },
+    {
+     "t": 65.74,
+     "end": 66.2,
+     "cue": {
+      "word": "يمت",
+      "t": 65.74
+     },
+     "who": "goodMan",
+     "action": "one eye opens, then the other",
+     "acting": "wake pattern: wink L, then both, pupils circle once",
+     "library": "wink + lid ramp"
+    },
+    {
+     "t": 66.22,
+     "end": 67.0,
+     "cue": {
+      "word": "الرجل",
+      "t": 66.22
+     },
+     "who": "goodMan",
+     "action": "sits up and pats himself: head, chest, arms",
+     "acting": "label ALIVE! pops with a tick; relieved breath",
+     "library": "PERSON_HANDS.headHold, chest; S.label"
+    },
+    {
+     "t": 67.06,
+     "end": 68.1,
+     "cue": {
+      "word": "البئر.",
+      "t": 67.06
+     },
+     "who": "goodMan",
+     "action": "looks up at the tiny circle of sky, tries the wall once and slides back down",
+     "acting": "gaze straight up, two scrape marks on the stones, landSquash",
+     "library": "failed climb pattern (settleTo, dustBurst)"
+    },
+    {
+     "t": 68.2,
+     "end": 69.4,
+     "cue": {
+      "word": "الليل",
+      "t": 68.92
+     },
+     "who": "set",
+     "action": "the sky strip turns dusk then night; a moon slides over the well mouth; the shaft goes navy",
+     "acting": "he hugs his knees, breathes, blinks slowly",
+     "library": "planned dayCycle, breathe"
+    },
+    {
+     "t": 69.44,
+     "end": 70.2,
+     "cue": {
+      "word": "سمع",
+      "t": 69.44
+     },
+     "who": "goodMan",
+     "action": "sound arcs pass through the left wall; his head snaps toward them",
+     "acting": "small jump (sq 1.08), eyes wide, then a cupped ear",
+     "library": "soundArcs, PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 70.22,
+     "end": 71.6,
+     "cue": {
+      "word": "أصواتًا",
+      "t": 70.22
+     },
+     "who": "jinnA",
+     "action": "two pairs of yellow eyes open in the dark earth, blinking out of phase",
+     "acting": "eyes only, no bodies yet; one pair is higher than the other",
+     "library": "eye2 drawn alone on dark earth"
+    },
+    {
+     "t": 71.74,
+     "end": 72.7,
+     "cue": {
+      "word": "تتحدث",
+      "t": 71.74
+     },
+     "who": "fx",
+     "action": "two small wordless speech balloons with squiggles alternate above the eyes",
+     "acting": "left, right, left: a conversation",
+     "library": "iconBalloon with squiggle"
+    },
+    {
+     "t": 72.8,
+     "end": 73.7,
+     "cue": {
+      "word": "تحت",
+      "t": 72.8
+     },
+     "who": "goodMan",
+     "action": "presses his ear flat to the stones, a finger on his own lips",
+     "acting": "gaze slides toward the wall, holds his breath (no breathe)",
+     "library": "PERSON_HANDS.hush, tip toward the wall"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 66.4,
+     "text": "ALIVE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "iris",
+    "t": 73.78
+   }
+  },
+  {
+   "id": "S11",
+   "start": 73.78,
+   "end": 85.8,
+   "paragraphs": [
+    4
+   ],
+   "set": "wellCavern",
+   "cast": [
+    "goodMan",
+    "jinnA",
+    "jinnB"
+   ],
+   "summary": "A cavern opens in the earth beside the shaft: two jinn gossip that the sultan daughter is ill from an evil spirit, and that they know the cure.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Cutaway two-shot: cavern on the left two-thirds, the shaft with the listening man on the right third (x 470, y 900, zoom 1.45). Push in on the man at 84.4 (zoom 2.0)."
+   },
+   "composition": "Cavern pocket about x 90..500, y 720..1060 (floor y 1040). Jinn A (red, the talker) stands at x 230; jinn B (blue, the listener) sits at x 380. A lamp on a rock between them. Kind man at x 680 with his ear to the shaft wall. Picture balloons appear above the jinn at y 600..720, inside the earth area.",
+   "actions": [
+    {
+     "t": 73.78,
+     "end": 74.7,
+     "cue": {
+      "word": "كانت",
+      "t": 73.78
+     },
+     "who": "set",
+     "action": "an iris of lamplight opens the cavern around the two pairs of eyes",
+     "acting": "the eyes stay exactly where they were in S10",
+     "library": "new wellCavern overlay + planned lampLight"
+    },
+    {
+     "t": 75.38,
+     "end": 76.0,
+     "cue": {
+      "word": "لجن",
+      "t": 75.38
+     },
+     "who": "jinnA",
+     "action": "the two jinn are revealed: small horned figures, one red, one blue",
+     "acting": "label JINN with an arrow; they are comic, not frightening: round bellies, big eyes",
+     "library": "planned person devil preset, two palettes; S.label"
+    },
+    {
+     "t": 75.5,
+     "end": 76.0,
+     "cue": {
+      "word": "لجن",
+      "t": 75.38
+     },
+     "who": "goodMan",
+     "action": "claps a hand over his own mouth",
+     "acting": "eyes wide, sq 0.94, frozen",
+     "library": "PERSON_HANDS.mouthCover"
+    },
+    {
+     "t": 76.08,
+     "end": 77.4,
+     "cue": {
+      "word": "يعرفون",
+      "t": 76.08
+     },
+     "who": "jinnA",
+     "action": "talks with big hands, the know-it-all; jinn B leans in",
+     "acting": "talk 0.8, brow -0.4 smug; B gaze locked on A, chin on fist",
+     "library": "talk, PERSON_HANDS.palmsUp, chin"
+    },
+    {
+     "t": 77.48,
+     "end": 77.9,
+     "cue": {
+      "word": "ابنة",
+      "t": 77.48
+     },
+     "who": "fx",
+     "action": "picture balloon frame 1: a princess face with a small crown",
+     "acting": "pops on the word",
+     "library": "iconBalloon strip mode"
+    },
+    {
+     "t": 77.96,
+     "end": 78.7,
+     "cue": {
+      "word": "السلطان",
+      "t": 77.96
+     },
+     "who": "fx",
+     "action": "a big sultan crown appears beside her in the balloon",
+     "acting": "jinn B points up at it",
+     "library": "iconBalloon"
+    },
+    {
+     "t": 78.82,
+     "end": 79.7,
+     "cue": {
+      "word": "مريضة",
+      "t": 78.82
+     },
+     "who": "fx",
+     "action": "the princess icon droops: pale face, spiral eyes",
+     "acting": "jinn B puts a hand to his cheek",
+     "library": "planned spiralEyes, PERSON_HANDS.cheeks"
+    },
+    {
+     "t": 79.78,
+     "end": 81.0,
+     "cue": {
+      "word": "روح",
+      "t": 80.62
+     },
+     "who": "fx",
+     "action": "frame 2: a dark smoke wisp with a mean little face coils around the princess icon",
+     "acting": "jinn B shivers; jinn A wiggles his fingers like smoke",
+     "library": "planned windSpirit, dark palette; tremble"
+    },
+    {
+     "t": 81.86,
+     "end": 83.1,
+     "cue": {
+      "word": "ويعرفون",
+      "t": 81.86
+     },
+     "who": "jinnA",
+     "action": "taps his own temple and puffs his chest",
+     "acting": "smirk, lid 0.4; B nods eagerly",
+     "library": "PERSON_HANDS.pointUp to the head"
+    },
+    {
+     "t": 83.18,
+     "end": 84.3,
+     "cue": {
+      "word": "كيف",
+      "t": 83.72
+     },
+     "who": "fx",
+     "action": "frame 3: a big question mark that turns into a glowing tick",
+     "acting": "the man in the shaft leans closer still",
+     "library": "iconBalloon, pulse"
+    },
+    {
+     "t": 84.38,
+     "end": 85.7,
+     "cue": {
+      "word": "علاجها.",
+      "t": 84.92
+     },
+     "who": "camera",
+     "action": "push in on the man listening with his whole body",
+     "acting": "only his pupils move, toward the wall; suspense by stillness",
+     "library": "CAM keys"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 75.5,
+     "text": "JINN"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 85.8
+   }
+  },
+  {
+   "id": "S12",
+   "start": 85.8,
+   "end": 98.14,
+   "paragraphs": [
+    5
+   ],
+   "set": "wellCavern",
+   "cast": [
+    "jinnA",
+    "jinnB",
+    "goodMan",
+    "cat"
+   ],
+   "summary": "The cure: seven white hairs from the tail of a black cat. The man commits every word to memory.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on the two jinn (x 310, y 900, zoom 1.9) with the balloon above. Cut at 94.72 to a close shot of the man (x 680, y 960, zoom 2.4)."
+   },
+   "composition": "Jinn A on a rock so his head is the highest point; balloon strip above the jinn. From 94.72 the man alone, head and shoulders, with three small icons in a row above his turban.",
+   "actions": [
+    {
+     "t": 85.8,
+     "end": 87.4,
+     "cue": {
+      "word": "قال",
+      "t": 85.8
+     },
+     "who": "jinnA",
+     "action": "climbs onto a rock and raises one finger for silence",
+     "acting": "hop up with landSquash, chest out; B folds his hands to listen",
+     "library": "hop, landSquash, PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 87.5,
+     "end": 88.5,
+     "cue": {
+      "word": "أحد",
+      "t": 87.5
+     },
+     "who": "jinnB",
+     "action": "looks left and right to check nobody is listening (the man is, one wall away)",
+     "acting": "saccades; dramatic irony: a tiny arrow shows the wall between them",
+     "library": "gazePlan 0.07"
+    },
+    {
+     "t": 89.18,
+     "end": 90.6,
+     "cue": {
+      "word": "العلاج",
+      "t": 89.18
+     },
+     "who": "fx",
+     "action": "balloon: a small medicine bowl with a tick",
+     "acting": "pops on the word",
+     "library": "iconBalloon"
+    },
+    {
+     "t": 90.74,
+     "end": 91.3,
+     "cue": {
+      "word": "سبع",
+      "t": 90.74
+     },
+     "who": "jinnA",
+     "action": "holds up seven fingers; a big counter 7 lands beside him",
+     "acting": "counter drops with a squash; the man mouths the number",
+     "library": "S.counter, settleTo"
+    },
+    {
+     "t": 91.38,
+     "end": 92.0,
+     "cue": {
+      "word": "شعرات",
+      "t": 91.38
+     },
+     "who": "fx",
+     "action": "balloon: seven thin hairs fan out, one by one",
+     "acting": "seven ticks 0.08 s apart",
+     "library": "stagger, line strokes"
+    },
+    {
+     "t": 92.1,
+     "end": 92.8,
+     "cue": {
+      "word": "بيضاء",
+      "t": 92.1
+     },
+     "who": "fx",
+     "action": "the hairs flash white with a sparkle",
+     "acting": "2-frame flash",
+     "library": "pulse"
+    },
+    {
+     "t": 93.22,
+     "end": 93.5,
+     "cue": {
+      "word": "ذيل",
+      "t": 93.22
+     },
+     "who": "fx",
+     "action": "a black tail curls into the balloon; the white hairs sit at its tip",
+     "acting": "tail swishes once",
+     "library": "cat tail drawing"
+    },
+    {
+     "t": 93.54,
+     "end": 94.6,
+     "cue": {
+      "word": "قط",
+      "t": 93.54
+     },
+     "who": "cat",
+     "action": "the rest of the black cat pops in at the end of the tail and blinks two yellow eyes",
+     "acting": "cat icon inside the balloon; jinn B says a silent MEOW with his hands as ears",
+     "library": "new cat (balloon scale)"
+    },
+    {
+     "t": 94.72,
+     "end": 96.2,
+     "cue": {
+      "word": "حفظ",
+      "t": 94.72
+     },
+     "who": "goodMan",
+     "action": "close on the man: he counts on his fingers, lips moving without sound",
+     "acting": "gaze up and to the side (remembering), brow knit, small nods",
+     "library": "talk 0.2, handR counting"
+    },
+    {
+     "t": 96.3,
+     "end": 97.3,
+     "cue": {
+      "word": "الرجل",
+      "t": 96.3
+     },
+     "who": "fx",
+     "action": "three icons line up above his head (7, hair, cat) and drop into his turban one by one",
+     "acting": "each icon tucks in with a small bounce of the turban",
+     "library": "kfn keys, settleTo"
+    },
+    {
+     "t": 97.42,
+     "end": 98.1,
+     "cue": {
+      "word": "جيدًا.",
+      "t": 97.42
+     },
+     "who": "goodMan",
+     "action": "pats his turban twice and nods; beyond the wall the lamp goes out",
+     "acting": "firm mouth, one decisive blink",
+     "library": "handR to turban"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 90.74,
+     "text": "7"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 98.14
+   }
+  },
+  {
+   "id": "S13",
+   "start": 98.14,
+   "end": 106.36,
+   "paragraphs": [
+    5
+   ],
+   "set": "shrineYard",
+   "cast": [
+    "villagerA",
+    "villagerB",
+    "goodMan"
+   ],
+   "summary": "Morning. His followers search the yard, hear his voice from the well and haul him out.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Dawn wide on the yard (zoom 1.1), push to the well (x 740, y 690, zoom 1.6) from 102.6."
+   },
+   "composition": "Dawn sky preset, sun low on the right. Followers enter from the left door area and work their way right. The sandal is still on the rim (x 760, y 826). The rescue: one follower at x 690, one at x 860, rope over the crossbeam.",
+   "actions": [
+    {
+     "t": 98.14,
+     "end": 99.4,
+     "cue": {
+      "word": "الصباح",
+      "t": 98.84
+     },
+     "who": "set",
+     "action": "the sun rises behind the dome; long shadows shorten",
+     "acting": "sky from night to dawn in one second",
+     "library": "sky preset dawn, sun, dayCycle"
+    },
+    {
+     "t": 99.5,
+     "end": 100.2,
+     "cue": {
+      "word": "جاء",
+      "t": 99.5
+     },
+     "who": "villagerA",
+     "action": "two followers hurry out of the prayer house, calling",
+     "acting": "cupped hands at the mouth, heads turning different ways",
+     "library": "PERSON_HANDS.cupMouth, walk"
+    },
+    {
+     "t": 100.24,
+     "end": 101.0,
+     "cue": {
+      "word": "أصحابه",
+      "t": 100.24
+     },
+     "who": "villagerB",
+     "action": "the second follower looks behind the palm, then under a small bucket",
+     "acting": "the bucket is far too small to hide a man: a small joke; shrug",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 101.08,
+     "end": 102.5,
+     "cue": {
+      "word": "يبحثون",
+      "t": 101.08
+     },
+     "who": "villagerA",
+     "action": "finds the sandal on the well rim and holds it up",
+     "acting": "gasp (mouth o), shows it to his friend; both look at the well",
+     "library": "handR target, lookAt"
+    },
+    {
+     "t": 102.62,
+     "end": 103.5,
+     "cue": {
+      "word": "فسمعوا",
+      "t": 102.62
+     },
+     "who": "fx",
+     "action": "sound arcs rise out of the well with the words DOWN HERE!",
+     "acting": "both followers cup an ear, heads snap to the hole in the same frame but ears first",
+     "library": "soundArcs, PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 103.58,
+     "end": 104.3,
+     "cue": {
+      "word": "صوته",
+      "t": 103.58
+     },
+     "who": "villagerB",
+     "action": "they lean over the rim and wave down",
+     "acting": "big smiles, one nearly drops the sandal in",
+     "library": "tip 0.15, wave"
+    },
+    {
+     "t": 104.34,
+     "end": 105.4,
+     "cue": {
+      "word": "وأخرجوه",
+      "t": 104.34
+     },
+     "who": "villagerA",
+     "action": "they drop the rope and heave three times",
+     "acting": "three pulls with squash on each, the second follower half a beat late",
+     "library": "countedBeats, stagger, planned rope"
+    },
+    {
+     "t": 105.48,
+     "end": 106.3,
+     "cue": {
+      "word": "البئر.",
+      "t": 105.74
+     },
+     "who": "goodMan",
+     "action": "his turban rises over the rim, then his face, and he is lifted out onto the ground",
+     "acting": "dusty, blinking in the light, smiling; landSquash; he is handed his sandal",
+     "library": "landSquash, blink"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 102.7,
+     "text": "DOWN HERE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 106.36,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S14",
+   "start": 106.36,
+   "end": 112.44,
+   "paragraphs": [
+    6
+   ],
+   "set": "shrineYard",
+   "cast": [
+    "goodMan",
+    "sultan",
+    "princess",
+    "spirit",
+    "villagerC"
+   ],
+   "summary": "Some time later the sultan himself arrives, asking for a cure for his daughter, who stands dazed with a dark wisp around her head.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Open from the LATER card on the yard (zoom 1.2); pan right to meet the sultan, settle on a three-figure shot (x 520, y 690, zoom 1.5)."
+   },
+   "composition": "Kind man at the door, x 300. Sultan enters from the right and stops at x 520. Princess follows to x 680. The spirit wisp circles her head at about y 620. One visitor bows at x 420 in the background.",
+   "actions": [
+    {
+     "t": 106.5,
+     "end": 107.9,
+     "cue": {
+      "word": "وبعد",
+      "t": 106.36
+     },
+     "who": "fx",
+     "action": "LATER... card wipes across and off",
+     "acting": "the camera and cast move under the card at its covered midpoint",
+     "library": "S.transition caption LATER..."
+    },
+    {
+     "t": 108.6,
+     "end": 109.5,
+     "cue": {
+      "word": "وصل",
+      "t": 108.6
+     },
+     "who": "sultan",
+     "action": "the sultan walks in: big crown, long robe, a worried face",
+     "acting": "heavy slow walk with footfalls, crown lags each step by 2 frames",
+     "library": "walk, footfalls, planned king preset"
+    },
+    {
+     "t": 109.58,
+     "end": 110.3,
+     "cue": {
+      "word": "السلطان",
+      "t": 109.58
+     },
+     "who": "villagerC",
+     "action": "the visitor bows low; label THE SULTAN with an arrow",
+     "acting": "bow with anticipation; kind man puts a hand on his chest and inclines his head",
+     "library": "tip 0.5, S.label"
+    },
+    {
+     "t": 110.36,
+     "end": 111.1,
+     "cue": {
+      "word": "يسأل",
+      "t": 110.36
+     },
+     "who": "sultan",
+     "action": "opens his hands, pleading",
+     "acting": "wet eyes, brow -0.7, shoulders low: a father, not a ruler",
+     "library": "PERSON_HANDS.palmsUp, wet"
+    },
+    {
+     "t": 111.2,
+     "end": 111.7,
+     "cue": {
+      "word": "علاج",
+      "t": 111.2
+     },
+     "who": "sultan",
+     "action": "turns and draws his daughter forward by the hand",
+     "acting": "gentle, gaze on her",
+     "library": "handR target, lookAt"
+    },
+    {
+     "t": 111.78,
+     "end": 112.4,
+     "cue": {
+      "word": "لابنته.",
+      "t": 111.78
+     },
+     "who": "princess",
+     "action": "the princess sways on the spot with spiral eyes while a dark smoke wisp with a mean face coils round her head",
+     "acting": "sway tip plus/minus 0.06 on a 1.6 s cycle, arms limp; the kind man sees the wisp and his eyes go wide: he knows this",
+     "library": "planned spiralEyes, windSpirit dark palette, swing"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 109.6,
+     "text": "THE SULTAN"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 112.44
+   }
+  },
+  {
+   "id": "S15",
+   "start": 112.44,
+   "end": 125.88,
+   "paragraphs": [
+    6
+   ],
+   "set": "shrineYard",
+   "cast": [
+    "goodMan",
+    "cat",
+    "princess",
+    "sultan",
+    "spirit"
+   ],
+   "summary": "He takes seven white hairs from a black cat tail and burns them as he heard in the well. The spirit flees and the princess is well again in front of her father.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "Medium on the man and the cat (x 330, y 780, zoom 2.0) to 118.9; cut to a three-shot of princess, sultan and smoke (x 600, y 660, zoom 1.6); the wisp exit is followed with a quick tilt up."
+   },
+   "composition": "Cat walks in along the house wall at ground level to x 380. Brazier (small bowl on three legs) at x 460. Smoke curls from the brazier to the right. Princess at x 680, sultan at x 820 behind her shoulder so that both faces are in frame for the recovery.",
+   "actions": [
+    {
+     "t": 112.44,
+     "end": 113.8,
+     "cue": {
+      "word": "أخذ",
+      "t": 112.44
+     },
+     "who": "cat",
+     "action": "a black cat strolls in with its tail straight up, seven white hairs at the tip",
+     "acting": "unhurried walk, tail tip sways; the three memory icons pop back out of the man turban above his head",
+     "library": "new cat: ph, amp, tailUp"
+    },
+    {
+     "t": 113.96,
+     "end": 114.4,
+     "cue": {
+      "word": "الرجل",
+      "t": 113.96
+     },
+     "who": "goodMan",
+     "action": "kneels and strokes the cat from head to tail",
+     "acting": "cat arches into the hand and shuts its eyes",
+     "library": "planned person kneel pose, cat arch"
+    },
+    {
+     "t": 114.5,
+     "end": 115.4,
+     "cue": {
+      "word": "الشعرات",
+      "t": 114.5
+     },
+     "who": "goodMan",
+     "action": "plucks the white hairs one by one: a counter runs 1 to 4",
+     "acting": "tiny pinch each time; cat ear flicks, no distress",
+     "library": "S.counter, countedBeats"
+    },
+    {
+     "t": 115.46,
+     "end": 116.3,
+     "cue": {
+      "word": "القط",
+      "t": 115.46
+     },
+     "who": "goodMan",
+     "action": "counter 5, 6, 7; the cat licks a paw and walks off to sit by the door",
+     "acting": "he holds the seven hairs up to the light, counts them with his eyes",
+     "library": "S.counter, lookAt"
+    },
+    {
+     "t": 116.36,
+     "end": 117.2,
+     "cue": {
+      "word": "وأحرقها",
+      "t": 116.36
+     },
+     "who": "goodMan",
+     "action": "drops the hairs into the brazier; a small flame jumps and white smoke rises with seven sparkles",
+     "acting": "leans back from the flare, then leans in",
+     "library": "new brazier prop, flame shape, pulse"
+    },
+    {
+     "t": 117.22,
+     "end": 118.9,
+     "cue": {
+      "word": "سمع",
+      "t": 117.84
+     },
+     "who": "fx",
+     "action": "a round inset shows him at the bottom of the well with his ear to the wall",
+     "acting": "he glances up at the inset and nods: exactly as he heard",
+     "library": "planned inset circle"
+    },
+    {
+     "t": 119.0,
+     "end": 120.1,
+     "cue": {
+      "word": "خرجت",
+      "t": 119.0
+     },
+     "who": "spirit",
+     "action": "the white smoke reaches the princess; the dark wisp recoils, its face alarmed",
+     "acting": "wisp bands pull tight (coil state), eyes wide",
+     "library": "windSpirit states coil"
+    },
+    {
+     "t": 120.18,
+     "end": 121.3,
+     "cue": {
+      "word": "الروح",
+      "t": 120.18
+     },
+     "who": "spirit",
+     "action": "the wisp is drawn out of her, stretches thin and shoots up out of the picture",
+     "acting": "stretch then snap away, a 2-frame white flash, small panel-only shake; POOF! lettering beside it, clear of faces",
+     "library": "windSpirit blow, shake inside the panel clip"
+    },
+    {
+     "t": 121.76,
+     "end": 123.0,
+     "cue": {
+      "word": "الأميرة،",
+      "t": 121.76
+     },
+     "who": "princess",
+     "action": "her spiral eyes spin slower, stop, and become normal eyes; colour returns to her face",
+     "acting": "blink, blink, a deep breath, head lifts",
+     "library": "spiralEyes to open, lid ramp, breathe"
+    },
+    {
+     "t": 123.14,
+     "end": 123.7,
+     "cue": {
+      "word": "وشفيت",
+      "t": 123.14
+     },
+     "who": "princess",
+     "action": "stands straight and smiles; label CURED! with a sparkle",
+     "acting": "posture from limp to upright with a small overshoot",
+     "library": "settleTo, S.label"
+    },
+    {
+     "t": 123.78,
+     "end": 125.0,
+     "cue": {
+      "word": "أمام",
+      "t": 123.78
+     },
+     "who": "sultan",
+     "action": "the sultan stares: eyes wide, then wet, then a huge smile",
+     "acting": "held disbelief 0.4 s before the joy; crown tips back",
+     "library": "eyes wide, wet, mouth smile"
+    },
+    {
+     "t": 125.14,
+     "end": 125.85,
+     "cue": {
+      "word": "أبيها.",
+      "t": 125.14
+     },
+     "who": "princess",
+     "action": "father and daughter embrace; the cat rubs against the man leg",
+     "acting": "kind man watches with a quiet smile and a hand on his chest",
+     "library": "PERSON_HANDS.armsOut, chest"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 120.3,
+     "text": "POOF!"
+    },
+    {
+     "t": 123.2,
+     "text": "CURED!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 125.88
+   }
+  },
+  {
+   "id": "S16",
+   "start": 125.88,
+   "end": 129.7,
+   "paragraphs": [
+    7
+   ],
+   "set": "shrineYard",
+   "cast": [
+    "sultan",
+    "goodMan",
+    "princess",
+    "cat"
+   ],
+   "summary": "The sultan is overjoyed.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Medium three-shot (x 560, y 680, zoom 1.6), static so the jump reads."
+   },
+   "composition": "Sultan centre at x 600, kind man left at x 420, princess right at x 760, cat at the door.",
+   "actions": [
+    {
+     "t": 125.88,
+     "end": 127.6,
+     "cue": {
+      "word": "فرح",
+      "t": 125.88
+     },
+     "who": "sultan",
+     "action": "jumps for joy twice; his crown stays in the air a moment each time",
+     "acting": "anticipation crouch, hop, landSquash; crown lags and drops back with a wobble",
+     "library": "anticipate, hop, landSquash"
+    },
+    {
+     "t": 127.72,
+     "end": 128.5,
+     "cue": {
+      "word": "السلطان",
+      "t": 127.72
+     },
+     "who": "sultan",
+     "action": "grabs the kind man in a bear hug and lifts him off the ground",
+     "acting": "kind man feet dangle and swing, surprised laugh",
+     "library": "swing, PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 128.54,
+     "end": 129.6,
+     "cue": {
+      "word": "كثيرًا،",
+      "t": 128.54
+     },
+     "who": "princess",
+     "action": "laughs behind her hand; the cat watches the dangling feet, head following them",
+     "acting": "HA HA! lettering in the sky area",
+     "library": "PERSON_HANDS.mouthCover, cat gaze"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 128.6,
+     "text": "HA HA!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 129.7
+   }
+  },
+  {
+   "id": "S17",
+   "start": 129.7,
+   "end": 138.68,
+   "paragraphs": [
+    7
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "goodMan",
+    "princess",
+    "sultan",
+    "oldVizier"
+   ],
+   "summary": "In the palace: the wedding, then the old vizier passes away and the man takes his place.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Wide of the hall for the wedding (x 420, y 680, zoom 1.3); pan right to the vizier place beside the throne at 132.58 (x 700, y 680, zoom 1.7)."
+   },
+   "composition": "Planned palaceHall: dais and throne on the right (throne centre about x 800, seat y 760), arched window top-left. Wedding group centre-left: man x 360, princess x 470, sultan behind at x 415. The vizier place is a cushion and a lamp on a stand at x 640.",
+   "actions": [
+    {
+     "t": 130.58,
+     "end": 130.85,
+     "cue": {
+      "word": "وزوج",
+      "t": 130.58
+     },
+     "who": "sultan",
+     "action": "joins the hands of the man and the princess",
+     "acting": "the sultan stands behind and between them, beaming",
+     "library": "handL/handR targets"
+    },
+    {
+     "t": 130.9,
+     "end": 131.8,
+     "cue": {
+      "word": "الرجل",
+      "t": 130.9
+     },
+     "who": "goodMan",
+     "action": "now in a fine robe, looks at the princess; both smile shyly, then look away at the same time",
+     "acting": "a small shared beat; hearts rise",
+     "library": "lookAt, heart"
+    },
+    {
+     "t": 131.84,
+     "end": 132.5,
+     "cue": {
+      "word": "ابنته.",
+      "t": 131.84
+     },
+     "who": "fx",
+     "action": "petals fall across the hall",
+     "acting": "seeded, sparse, never over the faces",
+     "library": "K.rng petals"
+    },
+    {
+     "t": 132.58,
+     "end": 133.7,
+     "cue": {
+      "word": "ثم",
+      "t": 132.58
+     },
+     "who": "oldVizier",
+     "action": "pan to the old vizier at his place: white beard, tall turban, stooped, smiling at the couple",
+     "acting": "slow nod, long slow blink",
+     "library": "planned vizier preset with age 1"
+    },
+    {
+     "t": 133.78,
+     "end": 134.9,
+     "cue": {
+      "word": "الوزير،",
+      "t": 134.2
+     },
+     "who": "set",
+     "action": "his place is empty: only the tall turban on the cushion; the lamp flame sinks to a thread of smoke",
+     "acting": "no body shown; the court lowers its heads, the man with wet eyes",
+     "library": "planned oilLamp flame field, alpha"
+    },
+    {
+     "t": 135.0,
+     "end": 136.5,
+     "cue": {
+      "word": "فأصبح",
+      "t": 135.0
+     },
+     "who": "sultan",
+     "action": "lifts the tall turban from the cushion with both hands and turns to the man",
+     "acting": "solemn; the man lowers his head to receive it",
+     "library": "PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 136.56,
+     "end": 137.8,
+     "cue": {
+      "word": "وزيرًا",
+      "t": 137.12
+     },
+     "who": "goodMan",
+     "action": "the turban is set on his head; label VIZIER",
+     "acting": "head dips under the weight and comes up (settle)",
+     "library": "settleTo, S.label"
+    },
+    {
+     "t": 137.86,
+     "end": 138.6,
+     "cue": {
+      "word": "مكانه.",
+      "t": 137.86
+     },
+     "who": "goodMan",
+     "action": "takes the vizier place beside the throne; the lamp is lit again",
+     "acting": "stands straight, a hand on his chest",
+     "library": "PERSON_HANDS.chest"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 137.2,
+     "text": "VIZIER"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 138.68
+   }
+  },
+  {
+   "id": "S18",
+   "start": 138.68,
+   "end": 149.5,
+   "paragraphs": [
+    7
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "goodMan",
+    "princess",
+    "sultan"
+   ],
+   "summary": "Years pass; the sultan dies and the stranger is crowned king of the country he once walked into with a bundle on a stick.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Start on the throne (x 800, y 660, zoom 1.8); pull out to the whole hall by 145.4 (zoom 1.15) to leave room for the round inset top-left."
+   },
+   "composition": "Throne at x 800. The man stands at x 640, the princess at x 930. The inset circle (radius 190) sits top-left at about x 250, y 380.",
+   "actions": [
+    {
+     "t": 138.68,
+     "end": 139.7,
+     "cue": {
+      "word": "وبعد",
+      "t": 138.68
+     },
+     "who": "set",
+     "action": "the window light slides across the floor and turns to evening; the sultan on his throne now has a white beard",
+     "acting": "a slow blink from the old sultan, a small smile to the couple",
+     "library": "planned dayCycle through the window, king preset age 1"
+    },
+    {
+     "t": 139.76,
+     "end": 140.9,
+     "cue": {
+      "word": "وفاة",
+      "t": 139.76
+     },
+     "who": "set",
+     "action": "the throne is empty: the crown rests on the seat and the lamp is out",
+     "acting": "the man and the princess stand with bowed heads, wet eyes; a held still moment",
+     "library": "alpha, wet, lid 0.6"
+    },
+    {
+     "t": 141.3,
+     "end": 142.4,
+     "cue": {
+      "word": "تولى",
+      "t": 141.48
+     },
+     "who": "princess",
+     "action": "lifts the crown from the seat and holds it out to her husband",
+     "acting": "she nods to him; he hesitates, hand on chest",
+     "library": "PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 142.52,
+     "end": 143.7,
+     "cue": {
+      "word": "وصار",
+      "t": 142.52
+     },
+     "who": "goodMan",
+     "action": "kneels a little; the crown is lowered onto his head; the lamp and the window light come back",
+     "acting": "anticipation dip, crown settles with a small bounce",
+     "library": "anticipate, settleTo"
+    },
+    {
+     "t": 143.8,
+     "end": 144.6,
+     "cue": {
+      "word": "ملكًا",
+      "t": 143.8
+     },
+     "who": "goodMan",
+     "action": "sits on the throne; label KING; the cat jumps onto the throne arm",
+     "acting": "sits with a small squash, looks at the crown rim above his eyes, a modest smile",
+     "library": "S.label, hop (cat)"
+    },
+    {
+     "t": 144.7,
+     "end": 145.8,
+     "cue": {
+      "word": "البلاد",
+      "t": 144.7
+     },
+     "who": "camera",
+     "action": "pull out to the whole hall",
+     "acting": "ends before the inset opens",
+     "library": "CAM keys"
+    },
+    {
+     "t": 145.92,
+     "end": 147.8,
+     "cue": {
+      "word": "جاء",
+      "t": 146.82
+     },
+     "who": "fx",
+     "action": "a round inset opens: himself years ago, dusty, walking the road with his bundle",
+     "acting": "the same walk cycle and costume as S5",
+     "library": "planned inset circle + S5 drawing"
+    },
+    {
+     "t": 147.92,
+     "end": 149.3,
+     "cue": {
+      "word": "غريبًا.",
+      "t": 147.92
+     },
+     "who": "goodMan",
+     "action": "looks up at the inset and touches his chest",
+     "acting": "gaze to the inset, long blink; the inset closes at 149.2",
+     "library": "lookAt, PERSON_HANDS.chest"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 143.9,
+     "text": "KING"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 149.3,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 149.5
+   }
+  },
+  {
+   "id": "S19",
+   "start": 149.5,
+   "end": 162.18,
+   "paragraphs": [
+    8
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "goodMan",
+    "envier",
+    "villagerA",
+    "villagerB",
+    "villagerC",
+    "servant"
+   ],
+   "summary": "One day in court the king spots his old neighbour in the crowd. The envier recognises the man he pushed into the well and shakes with fear.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Wide court (zoom 1.2) to 150.9; push to the king (x 780, y 640, zoom 1.9) on his look; cut to the crowd (x 300, y 700, zoom 1.8) at 151.94; from 154.6 a two-shot holding both faces (twoShot, zoom about 1.35)."
+   },
+   "composition": "King on the throne at x 800 looking left. Petitioners stand at x 120..420; the envier at x 300, half hidden behind villager B (x 250). Thought cloud above the envier, toward the centre top (x 330..680, y 250..520).",
+   "actions": [
+    {
+     "t": 149.96,
+     "end": 150.9,
+     "cue": {
+      "word": "وفي",
+      "t": 149.96
+     },
+     "who": "set",
+     "action": "court day: a short line of petitioners in the hall, a servant at the door",
+     "acting": "each petitioner fidgets differently",
+     "library": "breathe, stagger"
+    },
+    {
+     "t": 150.98,
+     "end": 151.5,
+     "cue": {
+      "word": "رأى",
+      "t": 150.98
+     },
+     "who": "goodMan",
+     "action": "the king eyes move along the line and stop",
+     "acting": "saccades along four heads, then a hard stop; lid lifts",
+     "library": "gazePlan 0.07"
+    },
+    {
+     "t": 151.94,
+     "end": 152.6,
+     "cue": {
+      "word": "جاره",
+      "t": 151.94
+     },
+     "who": "fx",
+     "action": "a red arrow picks out a man hiding behind another: the envier, older, in a patched cap",
+     "acting": "he is looking at the floor and has not seen who sits on the throne",
+     "library": "S.arrow; envier variant: grey in the beard, patches"
+    },
+    {
+     "t": 152.68,
+     "end": 153.3,
+     "cue": {
+      "word": "القديم",
+      "t": 152.68
+     },
+     "who": "goodMan",
+     "action": "leans forward on the throne, brows up",
+     "acting": "recognition without anger: a slow blink",
+     "library": "tip 0.1, brow -0.5"
+    },
+    {
+     "t": 153.38,
+     "end": 154.5,
+     "cue": {
+      "word": "الناس.",
+      "t": 153.68
+     },
+     "who": "villagerB",
+     "action": "the petitioners feel the king look and step aside one by one, leaving the envier alone in the open",
+     "acting": "staggered side steps; the envier shuffles to stay hidden and runs out of people",
+     "library": "stagger, walk"
+    },
+    {
+     "t": 154.64,
+     "end": 155.8,
+     "cue": {
+      "word": "عرف",
+      "t": 154.64
+     },
+     "who": "envier",
+     "action": "slowly looks up: the royal shoes, the robe, the face",
+     "acting": "gaze climbs in three steps with the head following late",
+     "library": "look() gaze plan"
+    },
+    {
+     "t": 155.9,
+     "end": 157.2,
+     "cue": {
+      "word": "الحاسد",
+      "t": 155.9
+     },
+     "who": "envier",
+     "action": "double take: looks away, snaps back, eyes huge",
+     "acting": "eyes wide, mouth o, cap jumps",
+     "library": "settleTo, sq 1.08"
+    },
+    {
+     "t": 157.26,
+     "end": 158.6,
+     "cue": {
+      "word": "أمام",
+      "t": 157.26
+     },
+     "who": "fx",
+     "action": "thought cloud opens: the well, and the kind man at its rim as he was then",
+     "acting": "the cloud figure wears the old robe",
+     "library": "planned thoughtCloud"
+    },
+    {
+     "t": 158.74,
+     "end": 159.8,
+     "cue": {
+      "word": "دفعه",
+      "t": 158.74
+     },
+     "who": "fx",
+     "action": "in the cloud the SHOVE pose from S9 replays, exactly",
+     "acting": "same arm angles, same framing: setup and payoff",
+     "library": "SHOVE pose constant"
+    },
+    {
+     "t": 159.88,
+     "end": 160.4,
+     "cue": {
+      "word": "البئر،",
+      "t": 159.88
+     },
+     "who": "fx",
+     "action": "in the cloud the feet vanish into the well; the cloud bursts",
+     "acting": "envier flinches at his own memory",
+     "library": "pulse"
+    },
+    {
+     "t": 160.46,
+     "end": 161.3,
+     "cue": {
+      "word": "فخاف",
+      "t": 160.46
+     },
+     "who": "envier",
+     "action": "his knees knock; he drops to his knees with his arms over his head",
+     "acting": "tremble 3, GULP! lettering by his throat, cap slides over one eye",
+     "library": "tremble, PERSON_HANDS.shield, kneel"
+    },
+    {
+     "t": 161.38,
+     "end": 162.1,
+     "cue": {
+      "word": "العقاب.",
+      "t": 161.38
+     },
+     "who": "goodMan",
+     "action": "stands up from the throne and raises one hand; his shadow falls across the envier",
+     "acting": "suspense: the raised hand holds; the court holds its breath (all breathe off)",
+     "library": "aR angle raised, shadow polygon"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 160.6,
+     "text": "GULP!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 162.18
+   }
+  },
+  {
+   "id": "S20",
+   "start": 162.18,
+   "end": 173.0,
+   "paragraphs": [
+    8
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "goodMan",
+    "envier",
+    "servant",
+    "princess",
+    "cat"
+   ],
+   "summary": "But the raised hand opens: the king orders money and gifts for him and lets him go in peace. THE END.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pull-out",
+    "notes": "Two-shot of king and kneeling envier (zoom 1.5); pull out to the wide hall with the open door on the left from 167.3 (zoom 1.15); hold for THE END."
+   },
+   "composition": "King standing at x 700. Envier kneeling at x 380, then standing with his arms full. Servant enters from the right behind the king and crosses to x 480. The open door is at the left edge (x 60..160) with daylight in it. THE END sits in the upper third, above all heads.",
+   "actions": [
+    {
+     "t": 162.18,
+     "end": 163.4,
+     "cue": {
+      "word": "لكن",
+      "t": 162.18
+     },
+     "who": "goodMan",
+     "action": "the raised hand turns over and opens: a gentle palm, and a smile",
+     "acting": "the turn of the story is this one hand; ease over 0.6 s",
+     "library": "aR angle, PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 163.52,
+     "end": 164.1,
+     "cue": {
+      "word": "الملك",
+      "t": 163.52
+     },
+     "who": "envier",
+     "action": "peeks out between his fingers",
+     "acting": "one eye through the gap, brow -0.6",
+     "library": "PERSON_HANDS.shield with a gap, wink"
+    },
+    {
+     "t": 164.22,
+     "end": 164.7,
+     "cue": {
+      "word": "أمر",
+      "t": 164.22
+     },
+     "who": "goodMan",
+     "action": "beckons the servant with two fingers",
+     "acting": "calm, gaze to the servant then back to the envier",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 164.76,
+     "end": 165.7,
+     "cue": {
+      "word": "بإعطائه",
+      "t": 164.76
+     },
+     "who": "servant",
+     "action": "the servant walks up with a tray",
+     "acting": "brisk small steps, tray level",
+     "library": "walk, planned servant preset"
+    },
+    {
+     "t": 165.8,
+     "end": 166.2,
+     "cue": {
+      "word": "المال",
+      "t": 165.8
+     },
+     "who": "purse",
+     "action": "a fat purse is placed in the envier hands; they sag under the weight",
+     "acting": "he stands up slowly, staring at it; coins clink out of the top",
+     "library": "settleTo, planned purse"
+    },
+    {
+     "t": 166.3,
+     "end": 167.2,
+     "cue": {
+      "word": "والهدايا،",
+      "t": 166.3
+     },
+     "who": "giftChest",
+     "action": "a folded robe and a small chest are stacked on top, up to his chin",
+     "acting": "he peers over the pile, baffled; wet eyes",
+     "library": "stack with stagger, wet"
+    },
+    {
+     "t": 167.28,
+     "end": 168.3,
+     "cue": {
+      "word": "وتركه",
+      "t": 167.28
+     },
+     "who": "goodMan",
+     "action": "opens his arm toward the bright open door",
+     "acting": "kind, no gloating; a nod",
+     "library": "aL angle, lookAt"
+    },
+    {
+     "t": 168.36,
+     "end": 169.0,
+     "cue": {
+      "word": "يرحل",
+      "t": 168.36
+     },
+     "who": "envier",
+     "action": "walks to the door with the pile, looks back once: meets the king eyes, then his gaze breaks away and his head drops",
+     "acting": "shame ending pattern; the flush is gone for the first time in the film",
+     "library": "walk, look() gaze plan"
+    },
+    {
+     "t": 169.02,
+     "end": 170.0,
+     "cue": {
+      "word": "سالمًا.",
+      "t": 169.02
+     },
+     "who": "envier",
+     "action": "steps out into the daylight and is gone; the king lowers his hand",
+     "acting": "the princess comes to stand beside the king, the cat on the throne arm curls its tail",
+     "library": "walk, alpha at the door"
+    },
+    {
+     "t": 170.2,
+     "end": 173.0,
+     "cue": {
+      "word": "سالمًا.",
+      "t": 169.02
+     },
+     "who": "lettering",
+     "action": "THE END title in the upper third, held to 173.0",
+     "acting": "the king gives one slow blink and a small smile; the cat tail tip (white hairs again) flicks once at 171.6",
+     "library": "S.title, blink"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 170.2,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 170.4,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 173.0
+   }
+  }
+ ],
+ "ending": {
+  "t": 170.2,
+  "description": "After the last word (169.86) the envier has gone out into the daylight with his gifts. The king stands by the throne with the princess, the cat on the throne arm. THE END appears at 170.2 in the upper third and holds to 173.0 with one blink from the king and one flick of the cat tail; a single quiet chime at 170.4."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "عاش رجلان في حي واحد،|وكان أحدهما محبوبًا بين الناس بسبب أخلاقه الطيبة.|أما جاره فكان يحسده على محبة الناس له،|ويتمنى أن يفقد كل ما يملك.",
+   "en": "Two men lived in one neighborhood.|One was loved for his good character.|His neighbor envied this affection|and wished he would lose everything he had."
+  },
+  {
+   "p": 2,
+   "ar": "حاول الرجل الطيب أن يتجنب المشاكل،|لكن حسد جاره لم يتوقف.|وأخيرًا غادر المدينة، واستقر في مكان بعيد.|هناك فتح بيتًا للعبادة، وصار الناس يزورونه ويستمعون إلى نصائحه.",
+   "en": "The kind man tried to avoid trouble,|but his neighbor’s envy did not stop.|Eventually he left town and settled far away,|opening a house of worship where people came for advice."
+  },
+  {
+   "p": 3,
+   "ar": "سمع الحاسد أن جاره أصبح مشهورًا،|فذهب إليه متظاهرًا بالصداقة.|طلب منه أن يتحدث معه على انفراد قرب بئر قديمة.|وعندما اقترب الرجل من البئر، دفعه الحاسد إلى داخلها وهرب.",
+   "en": "Hearing that his neighbor had become famous,|the envious man visited pretending friendship.|He asked to speak privately near an old well.|As the man approached it, the envier pushed him inside and fled."
+  },
+  {
+   "p": 4,
+   "ar": "لم يمت الرجل في البئر.|وفي الليل سمع أصواتًا غريبة تتحدث تحت الأرض.|كانت أصواتًا لجن يعرفون أن ابنة السلطان مريضة بسبب روح شريرة،|ويعرفون أيضًا كيف يمكن علاجها.",
+   "en": "The man did not die in the well.|At night he heard strange voices beneath the ground.|They belonged to jinn who knew that the sultan’s daughter was ill because of a possessing spirit,|and knew the cure."
+  },
+  {
+   "p": 5,
+   "ar": "قال أحد الجن إن العلاج يحتاج إلى سبع شعرات بيضاء من ذيل قط أسود.|حفظ الرجل الكلام جيدًا.|وفي الصباح جاء أصحابه يبحثون عنه،|فسمعوا صوته وأخرجوه من البئر.",
+   "en": "One jinn said the treatment required seven white hairs from the tail of a black cat.|The man remembered the words.|In the morning his followers searched for him,|heard his voice, and pulled him out."
+  },
+  {
+   "p": 6,
+   "ar": "وبعد مدة وصل السلطان يسأل عن علاج لابنته.|أخذ الرجل الشعرات من القط وأحرقها|كما سمع في البئر.|خرجت الروح الشريرة من الأميرة، وشفيت أمام عيني أبيها.",
+   "en": "Later the sultan arrived seeking help for his daughter.|The man took the hairs from the cat and burned them|as he had heard in the well.|The spirit left the princess, and she recovered before her father’s eyes."
+  },
+  {
+   "p": 7,
+   "ar": "فرح السلطان كثيرًا، وزوج الرجل من ابنته.|ثم مات الوزير، فأصبح الرجل وزيرًا مكانه.|وبعد وفاة السلطان تولى الحكم،|وصار ملكًا على البلاد التي كان قد جاء إليها غريبًا.",
+   "en": "The delighted sultan married his daughter to the man.|When the vizier died, the man became vizier;|after the sultan’s death,|he became king of the country where he had arrived as a stranger."
+  },
+  {
+   "p": 8,
+   "ar": "وفي يوم رأى الملك جاره القديم بين الناس.|عرف الحاسد أنه أمام الرجل الذي دفعه إلى البئر، فخاف العقاب.|لكن الملك أمر بإعطائه المال والهدايا،|وتركه يرحل سالمًا.",
+   "en": "One day the king recognized his former neighbor among the people.|The envier realized he faced the man he had pushed into the well and feared punishment.|But the king ordered gifts and money for him|and let him leave safely."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "cat",
+   "description": "Black cat, about 190 wide x 150 tall at s 1, feet at (x, y). Pose fields: ph, amp (walk), sit 0..1, arch 0..1 (back up under a stroking hand), tailUp 0..1, tailCurl, tailHairs (number of white hairs at the tail tip, 0..7), ears -1..1, lick, eyes, plus the shared acting fields. Used in the yard, on the throne arm and as a balloon icon.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Follow the fox file as a model: body ellipse, four tapered legs driven by walk(), round head with two triangle ears, eye2 eyes in yellow, tail as a tapered brush stroke along a 3-point bezier; tail hairs are short white lines fanned at the tip. Register through acting() in registry.js once approved."
+  },
+  {
+   "type": "set",
+   "name": "shrineYard",
+   "description": "Domed prayer house, old well and palm in a quiet yard (dimensions in sets). Door open/closed, light spill, well with rim, posts, crossbeam, rope and bucket.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Bake once with bake(): Library sky, hillTrees and ground; house as a rect plus a half ellipse dome with the style brush outline and blue dot shading; door as two rects with an angle key; well rim as a stone-patterned rounded rect with a dark ellipse mouth. Draw the rim front again after any actor who goes into the well so the fall is clipped by it."
+  },
+  {
+   "type": "set",
+   "name": "wellCavern",
+   "description": "A cavern overlay for the Library wellShaft: rounded pocket in the earth beside the shaft with a rock, a lamp and a lit disc, opened by an iris.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Draw the baked wellShaft, a navy night wash over the earth, then a clipped blob path (K.noise edge, seeded) filled navy with a yellow halftone disc (planned lampLight). The iris is the blob clip scaled from 0 to 1 about the eyes. No change to the Library wellShaft itself."
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (sultan, princess, jinn pair)",
+   "description": "Uses the planned costume layer: king (as sultan, with age), lady/maiden plus crown (as princess, with an ill option), devil (as two small jinn in red and blue palettes without the cape), vizier (age 1), servant, ascetic and villager.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Parameters on the Library person only: headwear, beard, palette, width and height factors, age. If the costume layer is not in Library yet, build it in this story as a wrapper that draws headwear and robe over person() and move it to Library after approval."
+  },
+  {
+   "type": "effect",
+   "name": "windSpirit (dark palette) as evilSpirit",
+   "description": "The planned windSpirit drawn in navy and black as a possessing spirit: idle coil round a head, coil (alarm), blow (stretch and exit).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Five tapering brush bands along one bezier whose control points orbit the princess head; the exit moves the end points up and out over 0.5 s with a 2-frame white flash."
+  },
+  {
+   "type": "prop",
+   "name": "brazier",
+   "description": "Three-legged bowl with a flame and a steerable smoke curl.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Half ellipse bowl, three line legs, flame as a teardrop path scaled by flame 0..1, smoke as three white brush strokes along a bezier with alpha by age."
+  },
+  {
+   "type": "expression",
+   "name": "spiralEyes",
+   "description": "Planned spiral pupils (KD-013) for the possessed princess, with a spin speed that can fall to 0 and blend to normal eyes.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Two Archimedean spirals in place of the pupils, rotation = spin * t; cross-fade to eye2."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "description": "Planned wordless picture balloon in strip mode for the jinn gossip (three frames) and single mode for the news in S7.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Library cloud or S.box outline with a tail toward the speaker; icons are small flat drawings made from the same cast functions at s 0.3 or simple shapes."
+  }
+ ],
+ "owner_questions": [
+  "The house of worship is drawn as a small plain domed building with a ball finial and no religious symbol or writing (default); confirm, or ask for a crescent.",
+  "The shove is shown, but the fall itself is hidden by the well rim and by the cut; we never see him hit the bottom (default: softened this way).",
+  "The jinn are drawn as two small comic horned figures, one red and one blue, more gossipy than frightening (default).",
+  "The evil spirit is a dark smoke wisp with a small face and the princess shows spiral eyes; no pain or convulsion is shown (default).",
+  "The deaths of the vizier and the sultan are shown only by an empty seat and a lamp going out, never a body (default).",
+  "The cat is unharmed and calm while the seven hairs are taken, and returns as the king companion at the end; this small running detail is an addition to the script (default: keep).",
+  "Additions beyond the script used as staging: rubbish tipped over the wall as the trouble, a sandal left on the well rim that the followers find, and a flashback inset of him arriving as a stranger (default: keep all three).",
+  "Invented English lettering: LOVED BY ALL, ENVY, GRRR, FAR AWAY, PSST!, OLD WELL, SHOVE!, ALIVE!, JINN, 7, DOWN HERE!, LATER..., THE SULTAN, POOF!, CURED!, HA HA!, VIZIER, KING, GULP!, THE END (default: keep these 20, no others)."
+ ],
+ "implementation_notes": [
+  "Start from Library/template. World 1000 x 1230, ground y 900 on every set except the well cutaway. Set LIFE.t = t each frame so everybody blinks; give explicit lids where listed.",
+  "Word cues: use w(p, n) from timing.json; every action above lists its Arabic cue word and time. The words at 141.48 and 141.99 are interpolated: do not hang a sharp accent on them (the crown lift at 141.3 is a slow move).",
+  "One person figure for all humans. Keep the kind man face, beard and yellow sash constant through the four costumes; change costume only on cuts (33.98, 129.7) or on screen (turban 137.1, crown 142.5).",
+  "Save the shove as a constant (SHOVE = arm angles for both arms) and reuse it unchanged in the S19 thought cloud, as the Thief film did with GRIP.",
+  "Mask on / mask off for the envier in S8-S9: the smile is only on while the kind man can see his face.",
+  "Wells: shrineYard draws the rim front after the actors; the wellShaft cutaway is the Library set unchanged, the cavern is an overlay. The jinn eyes in S10 and the jinn in S11 must be at the same world positions.",
+  "Picture balloons must stay above head height and inside the picture panel; the bottom third holds only the subtitles. Lettering never covers a face.",
+  "Shake only inside the panel clip (60.26 and 120.2), 3 frames, small.",
+  "Sound: SND master 0.6. Effects only at 3.1 pop, 15.0 pop, 19.0 pop, 24.05 thud, 42.5 chime, 47.45 whoosh, 149.3 chime, 170.4 chime. Everything else is silent picture action because the narration has no other pause of 0.6 s.",
+  "Transitions: whips at 9.72 and 30.3, iris at 73.78, dissolve at 98.14, the single LATER... card at 106.36 (covering about 106.2 to 107.9), wipe at 129.7, dissolve at 138.68.",
+  "Subtitles: four chunks per paragraph, marked in the subtitles array; copy them to chunks_ar.txt and chunks_en.txt and verify against the script by program."
+ ],
+ "warnings": [
+  "Many assets here are planned names from other stories (person costume layer, village, countryRoad, palaceHall, iconBalloon, thoughtCloud, dayCycle, inset circle, flush, spiralEyes, windSpirit, oilLamp, rope, purse, bindle, runInPlace, person kneel/sit). If they are not in Library when this film is built, they must be built here first: the total drawing load is then large (L).",
+  "Five sets and thirteen cast entries is a lot for 170 s; the people are all one figure with costumes, which keeps it feasible.",
+  "Only eight narration pauses exist, so the shove, the spirit exit and the rescue have no sound effect; they must read from picture alone.",
+  "The LATER... card overlaps the first two words of paragraph 6 (106.36 to about 107.9); the sultan entrance is cued at 108.6 so nothing is hidden.",
+  "S11 and S12 hold one cutaway for 24 s; the balloons, the two jinn acting and the listening man must keep something changing every 1-2 s."
+ ]
+}

@@ -1,0 +1,97 @@
+{
+ "story_id": "AN-143",
+ "title": "JA'AFAR THE BARMECIDE AND THE OLD BADAWI",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T16:15:02",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a6e88d2d82bc101da.jsonl",
+ "agent_id": "a6e88d2d82bc101da",
+ "model_messages": {
+  "claude-fable-5-2": 24
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "5aac889eca8b6cbaab46979bce2e64e4d342c29f256459b7f9de79bd27c2c5ee",
+  "paragraphs": 8,
+  "segments": [
+   "AN-143-P01-S01",
+   "AN-143-P01-S02",
+   "AN-143-P01-S03",
+   "AN-143-P01-S04",
+   "AN-143-P01-S05",
+   "AN-143-P01-S06",
+   "AN-143-P01-S07",
+   "AN-143-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-143_JA_AFAR_THE_BARMECIDE_AND_THE_OLD_BADAWI_full_slowed.mp3",
+  "sha256": "515a0b2f9c27b0528e9f409809c5a78a4008f0965388b066f2ecdbe37d931bcd",
+  "duration": 165.53
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-143_JA_AFAR_THE_BARMECIDE_AND_THE_OLD_BADAWI_full_slowed.mp3.words.json",
+  "sha256": "dc86810d2f7cbfac56b640e41d79a9ddbc69835b1c7e97e4ffb08544b9195ed8",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.995
+ },
+ "library_rev": "5a93429",
+ "scenes": 11,
+ "actions": 149,
+ "new_assets": [
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "recipeIcons (with medicineKit mortar bottomless option, platter crack, oilLamp, graveMarker)",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "gasPuff (with planned stinkLines)",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "person costume preset 'poet'",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "reclineOnMount",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "soreEye",
+   "effort": "S"
+  },
+  {
+   "type": "camera",
+   "name": "doubleVision",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "person laugh, flush, templeTap (planned helpers)",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [
+  "no LATER transition (one is expected when time passes)"
+ ],
+ "plan_warnings": [
+  "The narration has only four real pauses in the first 30 s and none later; effects are therefore few and the raspberry at 128.44 sits on a word boundary and must be checked by ear.",
+  "Faces are small in the wides (zoom 1.0: a head is about 55 px); every key expression is given a close or two-shot. Do not let the wides carry acting.",
+  "Four mounted riders plus two on-foot actors is the heaviest frame (S2 wide, S10): keep the two rear riders simple (idle, staggered) and check the frame time.",
+  "rideOn clips the rider at the saddle and shows the front-facing person; riders cannot turn in profile, so \"looking back\" is done with gaze and a small head offset only.",
+  "The lie pose on the donkey (reclineOnMount) is untested on a mount: check a still at 124.5 and 128.4 before animating the rest; fallback is the Bedouin sitting astride and leaning far back (tip -0.5).",
+  "No LATER transition: the story has no passage of time (plancheck will warn).",
+  "The poet costume preset is planned, not in the Library yet; the fallback palette is given in cast."
+ ]
+}

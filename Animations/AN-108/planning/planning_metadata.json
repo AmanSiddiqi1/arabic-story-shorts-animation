@@ -1,0 +1,102 @@
+{
+ "story_id": "AN-108",
+ "title": "THE CHIEF OF THE KUS POLICE AND THE SHARPER",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T14:22:48",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a661b0a5bf22acc09.jsonl",
+ "agent_id": "a661b0a5bf22acc09",
+ "model_messages": {
+  "claude-fable-5-2": 18
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "4bcf3c31a093d6f160889ee952cd784c5dd785cb6bde12b8ee47ad8581062d72",
+  "paragraphs": 8,
+  "segments": [
+   "AN-108-P01-S01",
+   "AN-108-P01-S02",
+   "AN-108-P01-S03",
+   "AN-108-P01-S04",
+   "AN-108-P01-S05",
+   "AN-108-P01-S06",
+   "AN-108-P01-S07",
+   "AN-108-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-108_THE_CHIEF_OF_THE_KUS_POLICE_AND_THE_SHARPER_full_slowed.mp3",
+  "sha256": "3e2f6516a3300b6f0bee6b17ed70ef6f79bc541fcaad587e2a2b25248cbe17fc",
+  "duration": 177.958
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-108_THE_CHIEF_OF_THE_KUS_POLICE_AND_THE_SHARPER_full_slowed.mp3.words.json",
+  "sha256": "4a84747b8da32e6ada65650a2cea4d39a792be54ab9bbe94baf1d4ee17ca59ee",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "2e7a9d0",
+ "scenes": 20,
+ "actions": 139,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "person costume presets (guard, executioner)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "treasureHoard",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "jewels (with jewelBox)",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "purse",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "rewardPoster",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "loupe",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "coinEyes",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [
+  "25 lettering items; keep to the lettering diet (about 20 or fewer; labels only on key beats)"
+ ],
+ "plan_warnings": [
+  "The person figure is front-facing only: carrying the chest, hugging it and kneeling at it must be staged with the chest in front of or beside the figure and world hand targets (handLW/handRW); check with stills that the servant carry reads as heavy (bent knees via sq, lean back via tip, short steps).",
+  "The guard preset, chest, jewels, goldGlow, purse, rewardPoster, coinEyes and flush are planned assets that are not in Library yet; if another film has already built them, use those functions and names.",
+  "mouth 'smirk' exists on monkey and turtle only; on the person use a smile with one raised brow, or add an opt-in smirk mouth.",
+  "S17 packs twelve cues into 13 s on an insert; keep each verdict label on screen until the next one lands and do not move the camera, or it will read as clutter on a phone.",
+  "S20 composes cloud, poster and chief in one picture during the pull-out; the cloud must be gone (175.2) before the poster falls (176.0) and THE END must sit clear of the chief's head.",
+  "Cue times are word starts from timeline.md and can include a little leading silence; check 56.9 (lid), 105.84 (payment) and 154.34 (GLASS) against the audio by ear."
+ ],
+ "coordinator_adjustment": "3-minute cap: end_hold 3.5 -> 2.04"
+}

@@ -1,0 +1,3194 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-134",
+ "title": "The Caliph al-Hakim and the Merchant",
+ "duration": 173.285,
+ "end_hold": 3.0,
+ "logline": "A caliph stops at a garden for a drink of water, is given an instant feast for his whole procession, learns it is only the owner's ordinary day, and repays the welcome with the year's entire mint of dirhams.",
+ "moral": "Generous hospitality, given without calculation, can bring a reward far beyond anything expected: one cup of water became 3,700,000 dirhams.",
+ "tone": "Warm, bright comedy of amazement. The humour comes from scale and speed (things appearing by the hundred) and from the owner's calm against the caliph's growing astonishment. No villain, no danger; the ending is generous and a little wry.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 4.16,
+   "kind": "setup",
+   "cue": {
+    "word": "موكب",
+    "t": 4.16
+   },
+   "summary": "The caliph rides out in a great procession."
+  },
+  {
+   "id": "B2",
+   "t": 16.28,
+   "kind": "inciting",
+   "cue": {
+    "word": "ماء",
+    "t": 16.28
+   },
+   "summary": "He asks a man in a garden for a drink of water; the man runs to serve him. The cup is planted for the ending."
+  },
+  {
+   "id": "B3",
+   "t": 27.18,
+   "kind": "rising",
+   "cue": {
+    "word": "فوافق",
+    "t": 27.18
+   },
+   "summary": "Invited to rest, the caliph agrees and enters the garden."
+  },
+  {
+   "id": "B4",
+   "t": 30.62,
+   "kind": "surprise",
+   "cue": {
+    "word": "وفجأة",
+    "t": 30.62
+   },
+   "summary": "Servants appear from nowhere with rugs and cushions for everyone."
+  },
+  {
+   "id": "B5",
+   "t": 56.32,
+   "kind": "comic",
+   "cue": {
+    "word": "مئة",
+    "t": 56.32
+   },
+   "summary": "The food multiplies: a hundred of each kind."
+  },
+  {
+   "id": "B6",
+   "t": 68.74,
+   "kind": "suspense",
+   "cue": {
+    "word": "يعلم",
+    "t": 68.74
+   },
+   "summary": "The caliph suspects the owner knew he was coming."
+  },
+  {
+   "id": "B7",
+   "t": 77.0,
+   "kind": "turn",
+   "cue": {
+    "word": "لم",
+    "t": 77.0
+   },
+   "summary": "He did not: this is simply the daily routine of his house."
+  },
+  {
+   "id": "B8",
+   "t": 89.38,
+   "kind": "reveal",
+   "cue": {
+    "word": "مئة",
+    "t": 89.38
+   },
+   "summary": "A hundred women of the household each send food, drink and comforts every day."
+  },
+  {
+   "id": "B9",
+   "t": 123.12,
+   "kind": "emotion",
+   "cue": {
+    "word": "دهشة",
+    "t": 123.12
+   },
+   "summary": "The caliph grasps how rich this man must be, and his wonder grows."
+  },
+  {
+   "id": "B10",
+   "t": 131.18,
+   "kind": "emotion",
+   "cue": {
+    "word": "شكر",
+    "t": 131.18
+   },
+   "summary": "He thanks God for the prosperity of one of his subjects."
+  },
+  {
+   "id": "B11",
+   "t": 147.7,
+   "kind": "climax",
+   "cue": {
+    "word": "ملايين",
+    "t": 147.7
+   },
+   "summary": "He orders the year's minted dirhams brought: 3,700,000."
+  },
+  {
+   "id": "B12",
+   "t": 151.9,
+   "kind": "resolution",
+   "cue": {
+    "word": "أعطى",
+    "t": 151.9
+   },
+   "summary": "He gives it all to the merchant: hospitality deserves even more."
+  },
+  {
+   "id": "B13",
+   "t": 167.02,
+   "kind": "moral",
+   "cue": {
+    "word": "الماء",
+    "t": 167.02
+   },
+   "summary": "He rides home; a short stop for water became a gift nobody expected."
+  }
+ ],
+ "cast": [
+  {
+   "id": "caliph",
+   "name": "Caliph al-Hakim",
+   "library": "person",
+   "base": "person costume:'caliph' (crowned turban, red robe, grey beard)",
+   "look": "The Library caliph preset unchanged, age default; s 1.0 on foot, s 0.76 as a rider. A storybook caliph, not a portrait.",
+   "new": false
+  },
+  {
+   "id": "merchant",
+   "name": "the garden's owner (the merchant)",
+   "library": "person",
+   "base": "person costume:'merchant', pal {robe: GREEN, dot: GREEND, hc: C.yellow} (the catalogue 'merchant pal' cell)",
+   "look": "Green robe, yellow turban, black beard: reads against the caliph's red and the vizier's navy. Calm, modest, always a little amused.",
+   "new": false
+  },
+  {
+   "id": "vizier",
+   "name": "the vizier",
+   "library": "person",
+   "base": "person costume:'vizier'",
+   "look": "Library vizier preset. Silent comic witness: bored on the road, greedy for sweets, the one who is sent to the treasury.",
+   "new": false
+  },
+  {
+   "id": "guards",
+   "name": "four guards of the procession",
+   "library": "person",
+   "base": "person costume:'guard' (planned preset: pointed helmet with neck cloth, short tunic, sash) with hold:'spear'",
+   "look": "Blue tunics; the lead guard carries a red pennant on his spear. Two ahead of the caliph, two behind; only two need acting.",
+   "new": true
+  },
+  {
+   "id": "servants",
+   "name": "the owner's servants (four)",
+   "library": "person",
+   "base": "person costume:'servant' with pal variants (white, cream, pale blue, pale yellow tunics; caps red or blue)",
+   "look": "Quick, quiet, well drilled; each has his own rhythm.",
+   "new": false
+  },
+  {
+   "id": "boy",
+   "name": "the child servant",
+   "library": "person",
+   "base": "person costume:'servant', child:true",
+   "look": "Small figure with a big head; carries the cushion tower, catches the orange, peeps into the chest.",
+   "new": false
+  },
+  {
+   "id": "horseW",
+   "name": "the caliph's white horse",
+   "library": "horse",
+   "base": "horse pal 0 (white, blue saddle cloth), s 0.8",
+   "look": "Library horse unchanged.",
+   "new": false
+  },
+  {
+   "id": "horseB",
+   "name": "the vizier's bay horse",
+   "library": "horse",
+   "base": "horse pal 1 (bay), s 0.76",
+   "look": "Library horse unchanged.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "orchardRoad",
+   "library": null,
+   "new": true,
+   "description": "New set orchard({view:'road'}): a 2200-wide strip. Sky (sky() or skyCycle(u)), hillTrees, ground at y 900 with a sand road band (y 900..1230, two ruts). x 0..900 open country. From x 900 to 2200 a low cream garden wall, top y 820, yellow coping 14 high, with a gate opening at x 1500..1680 (pointed arch top y 640, posts 30 wide, one leaf on townDoor). Behind the wall the garden lawn is drawn at y 880 and six fruit trees stand with trunks at x 1000, 1200, 1400, 1780, 1960, 2140 (trunk 44 wide, crowns of three circles r 110..140 centred near y 520, tops about y 380, red and orange fruit dots r 9). A jug stand (small table 70 x 60) at x 1470 behind the wall. Options: u (time of day), farCity: x (townFarCity on the horizon, used at x 250 in the last scene), houseRoof: true. Front pass redraws the wall over figures standing in the garden."
+  },
+  {
+   "id": "orchardGarden",
+   "library": null,
+   "new": true,
+   "description": "New set orchard({view:'inside'}): 1000 x 1230. Green lawn from y 900 down (darker green dot shading), ground line y 900. Back wall cream, top y 600, with the gate at x 60..220 (arch top y 470) showing the road and sky. Three trees: trunks at x 330, 640, 930 (46 wide, drawn again in a front pass so figures can hide behind them), one continuous canopy from y 150 to y 430 across the whole width with fruit dots; dappled shade ellipses on the lawn that drift with t. Over the back wall at x 700..960 the roofline of the owner's house (top y 470, crenellated, a row of small windows) when houseRoof: true. Rugs, cushions and food are props placed by the scene."
+  },
+  {
+   "id": "houseDiagram",
+   "library": null,
+   "new": true,
+   "description": "The hundredWindows facade on a flat yellow ground (see new_assets): facade x 150..850, y 170..800, door x 450..550, ground y 900. Not a place the characters walk in; a diagram."
+  },
+  {
+   "id": "treasury",
+   "library": "palaceHall",
+   "new": false,
+   "description": "palaceHall(ctx, {wall: 'blue', vault: {open}, door: false, light: 0.6, throne: false, t}) as in the catalogue cell 'palaceHall wall blue, vault open 0.4'. Take the vault position from the returned anchor A.vault; floor y 900."
+  }
+ ],
+ "props": [
+  {
+   "id": "goblet",
+   "library": null,
+   "new": true,
+   "description": "Planned goblet (AN-099): stemmed cup 44 x 64 with fill 0..1, slosh, glint. The story's key object: the same cup in S2, in the caliph's balloon in S16 and in the owner's hand at the end."
+  },
+  {
+   "id": "waterJug",
+   "library": null,
+   "new": true,
+   "description": "Planned waterJug (AN-107): ewer 60 x 110 with spout, handle, fill, tilt and a pour arc. Blue with a yellow band here; frosted sparkle option for the cold drinks."
+  },
+  {
+   "id": "floorCushion",
+   "library": null,
+   "new": true,
+   "description": "Planned floorCushion(ctx, x, y, {w: 100, h: 30, col, dot}) (AN-099). Used loose, stacked (tower of six, seat of two) and thrown."
+  },
+  {
+   "id": "carpetRoll",
+   "library": null,
+   "new": true,
+   "description": "New: a rug that unrolls (see new_assets). Three colours: red with yellow border, blue with white border, yellow with red diamonds."
+  },
+  {
+   "id": "foodTray",
+   "library": null,
+   "new": true,
+   "description": "Planned foodTray (KD-011) with a kind option added: 'fruit' (pyramid of oranges and pomegranates with grapes), 'sweets' (diamond pastries and round sweets), 'rice' (white cone), 'bread' (stack of flat loaves), 'dome' (covered dish with steam). Tray 150 x 16 brass, contents up to 90 high."
+  },
+  {
+   "id": "feastSpread",
+   "library": null,
+   "new": true,
+   "description": "New: n small copies of one dish laid out as a ten-wide receding grid with a pop-in order (see new_assets)."
+  },
+  {
+   "id": "hundredWindows",
+   "library": null,
+   "new": true,
+   "description": "New: house front with a ten by ten grid of windows that light and send icons to the door (see new_assets)."
+  },
+  {
+   "id": "chest",
+   "library": null,
+   "new": true,
+   "description": "Planned treasureHoard chest: 120 x 90, lid open 0..1, contents coins (level 0..1). Four used."
+  },
+  {
+   "id": "coinPile",
+   "library": null,
+   "new": true,
+   "description": "Planned coinPile: coin mound with n / height; silver-white dirhams here (pal option), also single coin close-up r 60."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 10.66,
+   "paragraphs": [
+    1
+   ],
+   "set": "orchardRoad",
+   "cast": [
+    "caliph",
+    "vizier",
+    "guards",
+    "horseW",
+    "horseB"
+   ],
+   "summary": "The procession walks along the country road from the left; the camera tracks with it until the garden wall and its fruit trees slide in from the right and the caliph reins in.",
+   "camera": {
+    "shot": "establishing",
+    "move": "track",
+    "notes": "World strip 2200 wide. Keys: 0 s {x 500, y 700, zoom 1.25}; 4.2 s pull-out to zoom 1.0 (whole line of six); 5.94-9.4 s camera x 500 -> 1150 with the riders; 8.2-9.0 s y 700 -> 640 -> 700 (a small crane over the crowns). Hills parallax 0.3."
+   },
+   "composition": "Riders on the lower third of the panel (ground y 900), heads near y 560-620. Procession faces screen right. Title lettering in the sky band (panel y 90-230), never over a head. Garden enters at the right edge from 6.6 s.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 4.0,
+     "cue": {
+      "word": "خرج",
+      "t": 0.0
+     },
+     "who": "caliph",
+     "action": "rides in from x -200 to x 420 on the white horse at a walk",
+     "acting": "regal: chin up, lid 0.25, gaze ahead [1, 0], slow blink at 2.4; reins held; body bobs with the horse",
+     "library": "rideOn(ctx,'horse',{...walk(xf,t,{stride:GAIT.horse*0.8}),y:900,s:0.8,pal:0},{costume:'caliph',s:0.76})"
+    },
+    {
+     "t": 0.3,
+     "end": 3.4,
+     "cue": {
+      "word": "خرج",
+      "t": 0.0
+     },
+     "who": "lettering",
+     "action": "title THE CALIPH AND THE MERCHANT pops in the sky band and leaves at 3.4",
+     "acting": "two lines, Bangers, yellow on black shadow, 6 % overshoot",
+     "library": "S.title"
+    },
+    {
+     "t": 1.3,
+     "end": 3.8,
+     "cue": {
+      "word": "الحاكم",
+      "t": 1.28
+     },
+     "who": "fx",
+     "action": "label box CALIPH AL HAKIM with an arrow to the rider",
+     "acting": "arrow draws on in 0.3 s, follows the rider, leaves before the pull-out",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 2.0,
+     "end": 5.9,
+     "cue": {
+      "word": "بأمر",
+      "t": 1.94
+     },
+     "who": "guards",
+     "action": "two guards march ahead of the horse with spears; the lead one carries a red pennant on a pole",
+     "acting": "never in unison: second guard phase +0.25 and 4 frames late on every head turn; pennant swings (swing); dust on each footfall",
+     "library": "person {costume:'guard', hold:'spear'} + walk() + footfalls() + dustBurst + stagger(i)"
+    },
+    {
+     "t": 2.9,
+     "end": 9.4,
+     "cue": {
+      "word": "الله",
+      "t": 2.64
+     },
+     "who": "horseW",
+     "action": "white horse walks with head nod, ears flicking, tail swish",
+     "acting": "earL/earR alternate 0.3..1 every ~1.3 s, tailSwish sine, snort puff at 3.2",
+     "library": "horse {pal:0, tailSwish, earL, earR, snort}"
+    },
+    {
+     "t": 4.16,
+     "end": 5.9,
+     "cue": {
+      "word": "موكب",
+      "t": 4.16
+     },
+     "who": "camera",
+     "action": "pulls out to show the whole procession: 2 guards, caliph, vizier on a bay horse, 2 rear guards",
+     "acting": "ease out, hold from 4.9",
+     "library": "K.camAt keys"
+    },
+    {
+     "t": 4.78,
+     "end": 6.6,
+     "cue": {
+      "word": "كبير",
+      "t": 4.78
+     },
+     "who": "vizier",
+     "action": "rides behind on the bay horse, strokes his beard and looks about",
+     "acting": "gaze sweep left-right (gazePlan), lid 0.3, a bored little yawn at 5.3 (mouth o, lid 1 for 6 frames)",
+     "library": "rideOn(ctx,'horse',{pal:1,s:0.76},{costume:'vizier', handR: PERSON_HANDS.chin.R})"
+    },
+    {
+     "t": 5.94,
+     "end": 9.4,
+     "cue": {
+      "word": "ومر",
+      "t": 5.94
+     },
+     "who": "camera",
+     "action": "tracks right with the riders, camera x 500 -> 1150",
+     "acting": "riders keep the left-centre of frame so the garden has room to enter",
+     "library": "camX key, hillTrees parallax"
+    },
+    {
+     "t": 6.62,
+     "end": 7.5,
+     "cue": {
+      "word": "ببستان",
+      "t": 6.62
+     },
+     "who": "set",
+     "action": "the low garden wall (top y 820) and the first fruit trees slide in from the right",
+     "acting": "caliph gaze swings to the trees (lookAt), head 4 px toward them; brow -0.3",
+     "library": "orchard({view:\"road\"}) + lookAt"
+    },
+    {
+     "t": 7.54,
+     "end": 8.2,
+     "cue": {
+      "word": "جميل",
+      "t": 7.54
+     },
+     "who": "fx",
+     "action": "two songbirds flit out of a crown; three fruit glints twinkle in sequence",
+     "acting": "caliph mouth smile, lid opens to 0; vizier wakes from his yawn and looks too, 5 frames late",
+     "library": "songbird {fly:true, flap} + star glints"
+    },
+    {
+     "t": 8.24,
+     "end": 9.2,
+     "cue": {
+      "word": "تحيط",
+      "t": 8.24
+     },
+     "who": "camera",
+     "action": "small crane up over the ring of crowns and back",
+     "acting": "y 700 -> 640 -> 700",
+     "library": "CAM keys"
+    },
+    {
+     "t": 9.42,
+     "end": 10.66,
+     "cue": {
+      "word": "الأشجار",
+      "t": 9.42
+     },
+     "who": "horseW",
+     "action": "slows and stops at x 1180 beside the wall; rider lurches a little",
+     "acting": "stride shortens over 0.8 s, last footfall at 10.5; ears up toward the garden; guards stop a beat late and bump (accordion, 4 px)",
+     "library": "walk() + lurch(t, 10.5)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.3,
+     "text": "THE CALIPH AND THE MERCHANT"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 5.75,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 10.66
+   }
+  },
+  {
+   "id": "S2",
+   "start": 10.66,
+   "end": 21.82,
+   "paragraphs": [
+    1
+   ],
+   "set": "orchardRoad",
+   "cast": [
+    "caliph",
+    "merchant",
+    "servants",
+    "horseW",
+    "vizier"
+   ],
+   "summary": "Over the low wall the caliph sees the owner sitting at ease among his servants and asks for a drink. The owner springs up, runs, pours, and hands the cup up to the saddle. The caliph drinks. This cup is the object the ending returns to.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Keys: 10.66 {x 1230, y 690, zoom 1.45}; 14.0 zoom 1.6; 18.4-19.4 push to {x 1215, y 660, zoom 1.9} on the hand-over; hold to 21.82."
+   },
+   "composition": "Caliph on the horse at x 1130 (left, high: head y ~575); owner behind the wall at x 1330 seated on a two-cushion stack (garden lawn drawn at y 880, wall top y 820 so he shows from the chest up); servants at x 1250 and x 1420; jug stand at x 1470. Eye line runs diagonally down from the rider to the owner.",
+   "actions": [
+    {
+     "t": 10.66,
+     "end": 11.3,
+     "cue": {
+      "word": "رأى",
+      "t": 10.66
+     },
+     "who": "caliph",
+     "action": "turns his head over the wall and notices someone",
+     "acting": "gaze from trees down to the owner (gazePlan), lid 0.25 -> 0, small head tilt",
+     "library": "look() / lookAt"
+    },
+    {
+     "t": 11.34,
+     "end": 12.0,
+     "cue": {
+      "word": "رجلًا",
+      "t": 11.34
+     },
+     "who": "merchant",
+     "action": "revealed seated under the tree, fanning himself with a palm fan",
+     "acting": "content: lid 0.45, mouth smile, gaze down at his cup; breathe() idle; arrow label THE OWNER pops 11.5-13.2",
+     "library": "person {costume:'merchant', pal:{robe:GREEN, dot:GREEND, hc:C.yellow}, sit:1, seat:'bench'} + S.label"
+    },
+    {
+     "t": 12.08,
+     "end": 13.3,
+     "cue": {
+      "word": "جالسًا",
+      "t": 12.08
+     },
+     "who": "merchant",
+     "action": "sips from a small goblet and sighs",
+     "acting": "goblet to mouth with handRW, lid 1 for 8 frames, shoulders drop (sq 0.98)",
+     "library": "goblet {fill} + handRW"
+    },
+    {
+     "t": 13.42,
+     "end": 14.1,
+     "cue": {
+      "word": "خدمه",
+      "t": 13.42
+     },
+     "who": "servants",
+     "action": "two servants at his sides, one with a tray, one with a fan, see the riders first",
+     "acting": "gaze snaps to the road, second servant 4 frames later; the nearer one taps the owner on the shoulder (handRW)",
+     "library": "person {costume:'servant'} + stagger(i)"
+    },
+    {
+     "t": 14.18,
+     "end": 15.6,
+     "cue": {
+      "word": "فطلب",
+      "t": 14.18
+     },
+     "who": "caliph",
+     "action": "raises a polite hand, then mimes drinking",
+     "acting": "PERSON_HANDS.wave for 0.5 s, then hand to the mouth tipping an unseen cup; talk 0.7; tip 0.05 toward the wall; warm brow -0.2",
+     "library": "person hand IK + talk"
+    },
+    {
+     "t": 14.9,
+     "end": 15.6,
+     "cue": {
+      "word": "منه",
+      "t": 15.08
+     },
+     "who": "merchant",
+     "action": "looks up and recognises the caliph",
+     "acting": "eyes wide (noBlink 0.6 s), brow -0.6, mouth o, the fan freezes mid-stroke",
+     "library": "person eyes/brow"
+    },
+    {
+     "t": 15.66,
+     "end": 16.8,
+     "cue": {
+      "word": "شربة",
+      "t": 15.66
+     },
+     "who": "fx",
+     "action": "speech balloon from the caliph holding a goblet icon with one blue drop (no text)",
+     "acting": "balloon to the upper left of his head, never over a face",
+     "library": "S.box/balloon + goblet icon"
+    },
+    {
+     "t": 16.28,
+     "end": 16.8,
+     "cue": {
+      "word": "ماء",
+      "t": 16.28
+     },
+     "who": "merchant",
+     "action": "springs to his feet; the cushions bounce",
+     "acting": "anticipate (sq 0.92 for 3 frames), sit 1 -> 0 in 0.3 s, settleTo overshoot; servants flinch back 3 frames later",
+     "library": "anticipate() + settleTo()"
+    },
+    {
+     "t": 16.82,
+     "end": 17.8,
+     "cue": {
+      "word": "فأسرع",
+      "t": 16.82
+     },
+     "who": "merchant",
+     "action": "runs to the jug stand at x 1470, robe hem flapping, turban lagging 2 frames",
+     "acting": "fast walk (stride x0.7, amp 1.2), tip 0.12 forward, dust at each footfall, gaze locked on the jug",
+     "library": "walk() + footfalls() + dustBurst"
+    },
+    {
+     "t": 17.88,
+     "end": 18.5,
+     "cue": {
+      "word": "الرجل",
+      "t": 17.88
+     },
+     "who": "merchant",
+     "action": "pours from the ewer into a goblet",
+     "acting": "waterJug tilt 0 -> 0.9, blue pour arc, goblet fill 0 -> 1; gaze on the rim, tongue-tip concentration (mouth closed, brow 0.2)",
+     "library": "waterJug {tilt, pourArc} + goblet {fill}"
+    },
+    {
+     "t": 18.52,
+     "end": 19.5,
+     "cue": {
+      "word": "وقدّم",
+      "t": 18.52
+     },
+     "who": "merchant",
+     "action": "hurries to the wall and lifts the cup with both hands up to the rider; the caliph leans down and takes it",
+     "acting": "tiptoe stretch sq 1.06, both hands on the cup (handLW/handRW); caliph tip 0.12, hand meets the cup at 19.3 and ownership passes on that frame",
+     "library": "handLW/handRW + hand-over (cup follows the taker after 19.3)"
+    },
+    {
+     "t": 19.66,
+     "end": 20.6,
+     "cue": {
+      "word": "ما",
+      "t": 19.66
+     },
+     "who": "caliph",
+     "action": "drinks: head back, cup tilts, water level falls",
+     "acting": "lid 1, goblet tilt 0 -> 1.1, fill 1 -> 0; owner below clasps his hands (PERSON_HANDS.clasp) and watches, brows raised in hope",
+     "library": "goblet {tilt, fill} + clasp"
+    },
+    {
+     "t": 20.7,
+     "end": 21.8,
+     "cue": {
+      "word": "يشرب",
+      "t": 20.02
+     },
+     "who": "caliph",
+     "action": "lowers the empty cup, refreshed; hands it back down",
+     "acting": "lid opens, big smile, one glint on the eye; AHH! lettering by the cup; owner takes the cup and beams, the horse snorts",
+     "library": "settleTo + glint"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 20.75,
+     "text": "AHH!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 20.9,
+     "kind": "pop"
+    },
+    {
+     "t": 21.4,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 21.82
+   }
+  },
+  {
+   "id": "S3",
+   "start": 21.82,
+   "end": 30.62,
+   "paragraphs": [
+    2
+   ],
+   "set": "orchardRoad",
+   "cast": [
+    "caliph",
+    "merchant",
+    "vizier",
+    "guards",
+    "horseW",
+    "horseB",
+    "servants"
+   ],
+   "summary": "The owner bows and invites the caliph in, miming \"get down and rest\". The caliph agrees, dismounts and walks through the gate with his companions.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Keys: 21.82 {x 1300, y 700, zoom 1.3}; 23.0-24.0 pan to {x 1420, zoom 1.2} to include the gate (x 1500..1680); 30.0-30.62 push into the gate arch {x 1590, y 760, zoom 2.4} for the match cut."
+   },
+   "composition": "Left to right: rear guard, vizier on the bay (x 960), caliph on the white horse (x 1130), owner now outside the gate on the road (x 1380), the gate at x 1500..1680 with a servant at the leaf. Everything reads toward the gate on the right.",
+   "actions": [
+    {
+     "t": 21.82,
+     "end": 22.5,
+     "cue": {
+      "word": "دعا",
+      "t": 21.82
+     },
+     "who": "merchant",
+     "action": "comes out through the gate, bows deeply with a hand on his chest",
+     "acting": "lean 0.3 with a 4-frame anticipation up first; lid 1 at the bottom of the bow; turban lags",
+     "library": "person {lean} + PERSON_HANDS.chest"
+    },
+    {
+     "t": 22.5,
+     "end": 23.7,
+     "cue": {
+      "word": "صاحب",
+      "t": 22.5
+     },
+     "who": "merchant",
+     "action": "straightens and sweeps one arm toward the gate, talking",
+     "acting": "aR opens wide toward the gate, talk 0.7, gaze up at the rider, eager brows -0.4",
+     "library": "aR angles + talk"
+    },
+    {
+     "t": 23.06,
+     "end": 24.0,
+     "cue": {
+      "word": "البستان",
+      "t": 23.06
+     },
+     "who": "set",
+     "action": "a servant swings the gate leaf open; shade, tree trunks and a strip of red rug show inside",
+     "acting": "door open 0 -> 1 with a 5 % overshoot; servant bows behind it",
+     "library": "townDoor(open) inside orchard road view"
+    },
+    {
+     "t": 23.8,
+     "end": 25.2,
+     "cue": {
+      "word": "الخليفة",
+      "t": 23.8
+     },
+     "who": "caliph",
+     "action": "looks at the gate, then back at his vizier, weighing it",
+     "acting": "gazePlan gate -> vizier -> owner; hand to chin (PERSON_HANDS.chin); vizier answers with a small shrug and a nod",
+     "library": "gazePlan + chin"
+    },
+    {
+     "t": 25.24,
+     "end": 25.8,
+     "cue": {
+      "word": "النزول",
+      "t": 25.24
+     },
+     "who": "merchant",
+     "action": "mimes \"come down\": both palms pat the air downward twice",
+     "acting": "two pulses 0.25 s apart, knees dip with each (sq 0.97)",
+     "library": "handL/handR keys + pulse"
+    },
+    {
+     "t": 25.86,
+     "end": 27.1,
+     "cue": {
+      "word": "والاستراحة",
+      "t": 25.86
+     },
+     "who": "merchant",
+     "action": "mimes \"rest\": tilts his head onto joined hands and shuts his eyes, then opens one eye to see if it worked",
+     "acting": "lid 1, head tilt 8 px; at 26.6 wink:\"R\" (one eye open) gaze up at the caliph: the comic peek",
+     "library": "person {wink:'R'} + clasp at the cheek"
+    },
+    {
+     "t": 27.18,
+     "end": 27.7,
+     "cue": {
+      "word": "فوافق",
+      "t": 27.18
+     },
+     "who": "caliph",
+     "action": "nods, smiling; the white horse nods too, three frames later",
+     "acting": "head drop pulse 6 px, mouth smile; horse headDown pulse 0.25",
+     "library": "pulse() on head and horse headDown"
+    },
+    {
+     "t": 27.6,
+     "end": 28.4,
+     "cue": {
+      "word": "فوافق",
+      "t": 27.18
+     },
+     "who": "caliph",
+     "action": "dismounts: swings off and lands on the road beside the horse",
+     "acting": "swap from rideOn to a standing person at the apex of a short hop arc from the saddle; landSquash at 28.2; a guard takes the reins",
+     "library": "hop() + landSquash() + swap rideOn/person"
+    },
+    {
+     "t": 28.4,
+     "end": 29.6,
+     "cue": {
+      "word": "ودخل",
+      "t": 28.4
+     },
+     "who": "caliph",
+     "action": "walks to the gate and through it; the owner goes ahead of him walking backwards, half bowed",
+     "acting": "caliph unhurried (stride normal), gaze into the garden; owner dir flipped, small quick steps, hand showing the way",
+     "library": "walk() + footfalls()"
+    },
+    {
+     "t": 29.38,
+     "end": 30.5,
+     "cue": {
+      "word": "مع",
+      "t": 29.38
+     },
+     "who": "vizier",
+     "action": "dismounts and follows with two guards; the guards tip their spears to pass under the arch",
+     "acting": "staggered 0.3 s apart; the second guard forgets, his spear stops him at the arch for 4 frames, he tips it and hurries on",
+     "library": "stagger(i) + spear angle key"
+    },
+    {
+     "t": 30.0,
+     "end": 30.62,
+     "cue": {
+      "word": "رافقه",
+      "t": 29.66
+     },
+     "who": "camera",
+     "action": "pushes into the dark of the gate arch",
+     "acting": "the arch fills the panel at 30.6 for the match cut to the inside",
+     "library": "CAM keys"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "match-cut",
+    "t": 30.62
+   }
+  },
+  {
+   "id": "S4",
+   "start": 30.62,
+   "end": 42.84,
+   "paragraphs": [
+    2
+   ],
+   "set": "orchardGarden",
+   "cast": [
+    "caliph",
+    "merchant",
+    "vizier",
+    "guards",
+    "servants",
+    "boy"
+   ],
+   "summary": "Inside the garden. A beat of empty lawn, then servants pop out from behind the trees with rolled rugs and a tower of cushions; rugs unroll to the caliph's toes, cushions fly into a row, everyone is seated in the shade.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Keys: 30.62 {x 480, y 720, zoom 1.5} on the caliph; 33.3 {x 500, y 700, zoom 1.25}; 39.8-40.6 pull out to the full set {x 500, y 640, zoom 1.0}; hold."
+   },
+   "composition": "Garden interior 1000 wide: back wall top y 600, gate in it at x 60..220, tree trunks at x 330, 640, 930, canopy from y 150 to 430. Caliph stands at x 520; owner at x 400; arrivals enter from the gate and from behind trunks. Rugs cover x 250..950, y 880..1010; the caliph's seat (two stacked cushions) at x 600.",
+   "actions": [
+    {
+     "t": 30.62,
+     "end": 31.8,
+     "cue": {
+      "word": "وفجأة",
+      "t": 30.62
+     },
+     "who": "caliph",
+     "action": "stands on the bare lawn and looks around: nothing here but grass and trees",
+     "acting": "saccade gaze left, right, up (gazePlan ease 0.07); 0.5 s of stillness before the burst; owner beside him smiles with folded hands",
+     "library": "gazePlan(t, plan, 0.07) + PERSON_HANDS.folded"
+    },
+    {
+     "t": 31.92,
+     "end": 33.2,
+     "cue": {
+      "word": "ظهر",
+      "t": 31.92
+     },
+     "who": "servants",
+     "action": "four servants pop out: from behind each trunk and through the gate",
+     "acting": "peek first (cap, one eye), then step out, staggered 0.15 s; caliph startles (sq 0.94, brow -0.6) on the first",
+     "library": "draw actor then trunk (occluder) + stagger(i)"
+    },
+    {
+     "t": 33.3,
+     "end": 34.1,
+     "cue": {
+      "word": "يحملون",
+      "t": 33.3
+     },
+     "who": "servants",
+     "action": "walk in, each with a rolled rug on the shoulder",
+     "acting": "weight: sq 0.97, shorter stride, the roll bobs one frame behind the body; each at his own phase",
+     "library": "walk() + carpetRoll {unroll:0} on the shoulder"
+    },
+    {
+     "t": 34.12,
+     "end": 34.8,
+     "cue": {
+      "word": "سجادًا",
+      "t": 34.12
+     },
+     "who": "carpetRoll",
+     "action": "the first rug is flung down and unrolls across the lawn, stopping exactly at the caliph's toes",
+     "acting": "unroll 0 -> 1 in 0.6 s with a ripple and a 6 % overshoot; caliph hops back half a step (hop 12 px) and looks down at it",
+     "library": "carpetRoll {unroll} + hop()"
+    },
+    {
+     "t": 34.6,
+     "end": 35.5,
+     "cue": {
+      "word": "سجادًا",
+      "t": 34.12
+     },
+     "who": "carpetRoll",
+     "action": "two more rugs (blue, then yellow diamond pattern) unroll left and right of the first",
+     "acting": "at 34.6 and 35.0; servants flick the ends with both hands (reachBoth)",
+     "library": "carpetRoll {col, unroll}"
+    },
+    {
+     "t": 35.06,
+     "end": 36.0,
+     "cue": {
+      "word": "ووسائد",
+      "t": 35.06
+     },
+     "who": "boy",
+     "action": "a child servant totters in under a tower of six cushions taller than himself; only his legs show",
+     "acting": "tower sways (swing damped, re-excited each step); owner steadies it with one finger without looking",
+     "library": "person {costume:'servant', child:true} + floorCushion stack + swing()"
+    },
+    {
+     "t": 36.08,
+     "end": 36.9,
+     "cue": {
+      "word": "كثيرة",
+      "t": 36.08
+     },
+     "who": "floorCushion",
+     "action": "the cushions leave the tower one by one in arcs and land in a neat row",
+     "acting": "six arcs 0.12 s apart to x 420, 500, 600 (two stack), 760, 860; each lands with landSquash; boy revealed, proud grin",
+     "library": "bezier toss + landSquash()"
+    },
+    {
+     "t": 36.8,
+     "end": 38.1,
+     "cue": {
+      "word": "ويجهزون",
+      "t": 36.8
+     },
+     "who": "servants",
+     "action": "plump the cushions and straighten a rug fringe",
+     "acting": "pat-pat hand pulses, each servant a different rhythm; one steps back to check his work, head tilted",
+     "library": "pulse() hands"
+    },
+    {
+     "t": 38.2,
+     "end": 38.9,
+     "cue": {
+      "word": "للضيوف",
+      "t": 38.2
+     },
+     "who": "caliph",
+     "action": "is shown to the tallest seat and sits",
+     "acting": "owner palm toward the seat; caliph sit 0 -> 1 (seat bench), the stack squashes 8 % and rebounds; he bounces once, pleased",
+     "library": "person {sit, seat:'bench'} + impactSquash on the cushions"
+    },
+    {
+     "t": 38.92,
+     "end": 39.8,
+     "cue": {
+      "word": "أماكن",
+      "t": 38.92
+     },
+     "who": "vizier",
+     "action": "vizier and guards sit down in turn on their cushions",
+     "acting": "stagger 0.3 s; one guard lays his spear down first, the other sinks too deep into a soft cushion (deep squash, knees up) and looks surprised",
+     "library": "person {sit:1, seat:'floor'} + stagger(i)"
+    },
+    {
+     "t": 39.8,
+     "end": 41.4,
+     "cue": {
+      "word": "واسعة",
+      "t": 39.8
+     },
+     "who": "camera",
+     "action": "pulls out to the whole lawn covered in rugs and seats",
+     "acting": "label ROOM FOR EVERYONE with an arrow sweeping the rugs, 40.0-41.6",
+     "library": "CAM keys + S.label"
+    },
+    {
+     "t": 41.56,
+     "end": 42.0,
+     "cue": {
+      "word": "تحت",
+      "t": 41.56
+     },
+     "who": "set",
+     "action": "dappled shade drifts over the group; one leaf spirals down onto the vizier's turban",
+     "acting": "vizier looks up cross-eyed (gaze [0, -1]) and blows it off",
+     "library": "leaf bezier + gaze"
+    },
+    {
+     "t": 42.0,
+     "end": 42.84,
+     "cue": {
+      "word": "الأشجار",
+      "t": 42.0
+     },
+     "who": "caliph",
+     "action": "settles back and sighs, patting the cushion",
+     "acting": "breathe(), lid 0.5, mouth smile; gaze to the owner with a small approving nod",
+     "library": "breathe() + pulse hand"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 36.3,
+     "text": "FLUMP!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 42.84
+   }
+  },
+  {
+   "id": "S5",
+   "start": 42.84,
+   "end": 53.22,
+   "paragraphs": [
+    3
+   ],
+   "set": "orchardGarden",
+   "cast": [
+    "caliph",
+    "merchant",
+    "vizier",
+    "guards",
+    "servants",
+    "boy"
+   ],
+   "summary": "The owner claps and the food comes: fruit, sweets, cold jugs, then trays of every colour, until the rug is covered.",
+   "camera": {
+    "shot": "medium",
+    "move": "drift",
+    "notes": "Keys: 42.84 {x 520, y 760, zoom 1.5}; 44.5 pan left to the gate {x 380, zoom 1.4}; 45.2 back to {x 560, y 800, zoom 1.6}; 50.3-52.4 slow drift right x 560 -> 640."
+   },
+   "composition": "Caliph seated at x 600 facing screen left-centre; owner standing at x 400; vizier seated at x 780, guard at x 880. Trays land on the rug in front (y 930..1000), below the faces. Servants come from the gate on the left in a file.",
+   "actions": [
+    {
+     "t": 42.9,
+     "end": 43.8,
+     "cue": {
+      "word": "ثم",
+      "t": 42.84
+     },
+     "who": "merchant",
+     "action": "claps his hands twice toward the gate",
+     "acting": "claps at 43.0 and 43.5 (hands meet with a 2-frame white tick), gaze to the gate; every seated head turns to the gate, staggered",
+     "library": "handL/handR keys + stagger(i)"
+    },
+    {
+     "t": 44.56,
+     "end": 45.2,
+     "cue": {
+      "word": "جاءت",
+      "t": 44.56
+     },
+     "who": "servants",
+     "action": "a file of servants enters with trays held high over their heads",
+     "acting": "handLW/handRW on the tray rim, walk at four different phases, trays bob one frame late",
+     "library": "walk() + foodTray carried"
+    },
+    {
+     "t": 45.22,
+     "end": 45.8,
+     "cue": {
+      "word": "أطباق",
+      "t": 45.22
+     },
+     "who": "foodTray",
+     "action": "the first tray is set down in front of the caliph",
+     "acting": "servant kneels (kneel 0 -> 1) as he lowers it; tray settles with a 3 px bounce",
+     "library": "foodTray {kind:'fruit'} + kneel"
+    },
+    {
+     "t": 45.8,
+     "end": 46.6,
+     "cue": {
+      "word": "الفاكهة",
+      "t": 45.8
+     },
+     "who": "boy",
+     "action": "an orange rolls off the fruit pyramid; the child servant dives and catches it",
+     "acting": "every gaze tracks the orange (lookAt the orange); boy holds it up, grin; caliph chuckles (shoulders, lid 0.5)",
+     "library": "lookAt(target = orange) + hop()"
+    },
+    {
+     "t": 46.68,
+     "end": 48.0,
+     "cue": {
+      "word": "والحلوى",
+      "t": 46.68
+     },
+     "who": "foodTray",
+     "action": "a tray of sweets lands with a flourish next to the fruit",
+     "acting": "vizier's pupils follow it down, mouth o then smile, his hand creeps toward it; the guard beside him notices and he pretends to adjust his sash",
+     "library": "foodTray {kind:'sweets'} + gazePlan"
+    },
+    {
+     "t": 48.04,
+     "end": 49.4,
+     "cue": {
+      "word": "وأوعية",
+      "t": 48.04
+     },
+     "who": "waterJug",
+     "action": "three tall ewers arrive on one tray and are stood in a row",
+     "acting": "set down left to right 0.2 s apart, each with a small settle",
+     "library": "waterJug x3"
+    },
+    {
+     "t": 49.5,
+     "end": 50.2,
+     "cue": {
+      "word": "البارد",
+      "t": 49.5
+     },
+     "who": "fx",
+     "action": "cold: blue sparkles and drips on the jugs; a guard touches one and shivers",
+     "acting": "guard hand to the jug then tremble(t, 3) for 0.5 s, shoulders up; BRRR! small by his hand",
+     "library": "tremble() + sparkle"
+    },
+    {
+     "t": 50.26,
+     "end": 52.0,
+     "cue": {
+      "word": "وألوان",
+      "t": 50.26
+     },
+     "who": "foodTray",
+     "action": "three more trays land in quick succession: a rice cone, a bread stack, a domed dish with steam",
+     "acting": "at 50.5, 51.0, 51.5; red, blue and yellow covers; each landing makes the neighbours hop 2 px (kick)",
+     "library": "foodTray {kind:'rice'|'bread'|'dome'} + kick()"
+    },
+    {
+     "t": 51.22,
+     "end": 52.4,
+     "cue": {
+      "word": "كثيرة",
+      "t": 51.22
+     },
+     "who": "caliph",
+     "action": "his eyes ping-pong from one landing tray to the next",
+     "acting": "saccades on each landing, brow rising step by step (-0.2, -0.4, -0.6), goblet forgotten in his hand",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 52.46,
+     "end": 53.22,
+     "cue": {
+      "word": "الطعام",
+      "t": 52.46
+     },
+     "who": "merchant",
+     "action": "stands by with folded hands and a modest smile, as if this were nothing",
+     "acting": "PERSON_HANDS.folded, lid 0.3, tiny rock on the heels (tip +-0.02)",
+     "library": "PERSON_HANDS.folded"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 49.7,
+     "text": "BRRR!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 53.22
+   }
+  },
+  {
+   "id": "S6",
+   "start": 53.22,
+   "end": 64.18,
+   "paragraphs": [
+    3
+   ],
+   "set": "orchardGarden",
+   "cast": [
+    "caliph",
+    "merchant",
+    "vizier",
+    "servants"
+   ],
+   "summary": "The count. The view rises to look down the rugs as each kind of dish multiplies into a ten by ten block and the counter hits 100. Back on the caliph: open astonishment at the size and the speed.",
+   "camera": {
+    "shot": "wide",
+    "move": "crane",
+    "notes": "Keys: 53.22 {x 600, y 800, zoom 1.6}; 53.3-54.2 crane to the high wide {x 500, y 560, zoom 1.0} (feastSpread drawn as a receding grid on the lawn x 120..880, y 620..1010); 58.22 cut to medium on the caliph {x 600, y 700, zoom 1.9}; 62.0 pan with his arm to x 520; 63.4 two-shot {x 500, zoom 1.6}."
+   },
+   "composition": "High wide: grid block centred, counter top left of the panel (panel x 90..360, y 80..200), the seated figures small along the bottom edge. Medium: caliph centre, vizier behind his right shoulder, owner enters frame left at 63.4.",
+   "actions": [
+    {
+     "t": 53.22,
+     "end": 54.2,
+     "cue": {
+      "word": "بلغ",
+      "t": 53.22
+     },
+     "who": "camera",
+     "action": "cranes up and back for a high view down the rugs",
+     "acting": "ease in-out; the seated group shrinks to the bottom edge",
+     "library": "CAM keys"
+    },
+    {
+     "t": 54.22,
+     "end": 55.4,
+     "cue": {
+      "word": "عدد",
+      "t": 54.22
+     },
+     "who": "fx",
+     "action": "a counter with a fruit tray icon appears and starts ticking: 1, 2, 3...",
+     "acting": "ticks speed up; each tick is a new tray popping onto the grid",
+     "library": "S.counter + feastSpread {n}"
+    },
+    {
+     "t": 55.48,
+     "end": 56.3,
+     "cue": {
+      "word": "الأشياء",
+      "t": 55.48
+     },
+     "who": "feastSpread",
+     "action": "rows of identical trays extend away across the lawn: 12, 30, 60",
+     "acting": "trays pop 2 frames apart with a 10 % overshoot, row by row, back rows smaller (simple perspective scale 1 -> 0.55)",
+     "library": "feastSpread {kind, n} + stagger"
+    },
+    {
+     "t": 56.32,
+     "end": 57.3,
+     "cue": {
+      "word": "مئة",
+      "t": 56.32
+     },
+     "who": "fx",
+     "action": "the block completes at ten by ten and the counter slams to 100",
+     "acting": "counter scale 1.3 -> 1 with emphasis rays; 100! lettering beside it",
+     "library": "S.counter + S.emphasis"
+    },
+    {
+     "t": 57.36,
+     "end": 58.2,
+     "cue": {
+      "word": "كل",
+      "t": 57.36
+     },
+     "who": "feastSpread",
+     "action": "two more blocks flick in beside the first (sweets, jugs), each with its own 100 tag",
+     "acting": "at 57.4 and 57.8; three tags in a row: of every kind",
+     "library": "feastSpread x3 + S.label"
+    },
+    {
+     "t": 58.22,
+     "end": 59.0,
+     "cue": {
+      "word": "حتى",
+      "t": 58.22
+     },
+     "who": "camera",
+     "action": "cuts down to a medium shot of the caliph",
+     "acting": "hard cut on the word; he is still looking out over the blocks",
+     "library": "CAM key pair"
+    },
+    {
+     "t": 59.02,
+     "end": 60.6,
+     "cue": {
+      "word": "تعجب",
+      "t": 59.02
+     },
+     "who": "caliph",
+     "action": "his jaw drops and the goblet stops halfway to his mouth",
+     "acting": "mouth o, eyes wide with noBlink for 1.2 s, brow -0.7, sq 1.05; crown hops 6 px and settles late; behind him a sweet falls from the vizier's fingers",
+     "library": "settleTo + person eyes/brow"
+    },
+    {
+     "t": 60.72,
+     "end": 62.0,
+     "cue": {
+      "word": "سرعة",
+      "t": 60.72
+     },
+     "who": "caliph",
+     "action": "double take: gate, spread, gate again",
+     "acting": "three 2-frame saccades; at the gate the last servant is still skidding to a stop with speed lines and dust",
+     "library": "gazePlan(t, plan, 0.07) + dustBurst"
+    },
+    {
+     "t": 62.04,
+     "end": 63.4,
+     "cue": {
+      "word": "مائدة",
+      "t": 62.04
+     },
+     "who": "caliph",
+     "action": "sweeps an open arm across the whole spread",
+     "acting": "aR opens slowly left to right, head follows, camera pans with the hand",
+     "library": "aR angles"
+    },
+    {
+     "t": 63.44,
+     "end": 64.18,
+     "cue": {
+      "word": "الحجم",
+      "t": 63.44
+     },
+     "who": "caliph",
+     "action": "turns to the owner with one eyebrow up and a hand on his chin",
+     "acting": "gaze locks on the owner, brow -0.4, lid 0.35 (suspicious, amused); owner smiles back blandly: the question is coming",
+     "library": "PERSON_HANDS.chin + lookAt"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 56.4,
+     "text": "100!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 64.18
+   }
+  },
+  {
+   "id": "S7",
+   "start": 64.18,
+   "end": 74.94,
+   "paragraphs": [
+    4
+   ],
+   "set": "orchardGarden",
+   "cast": [
+    "caliph",
+    "merchant",
+    "vizier",
+    "guards"
+   ],
+   "summary": "The question. The caliph suspects a tip-off; his suspicion plays in a thought cloud: the owner spying the procession from his wall and stacking trays in a panic.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "twoShot(caliph head, merchant head, {margin: 150}) about {x 500, y 640, zoom 1.6}, framed low so the cloud has the upper half of the panel. Static apart from a 2 % breathing drift."
+   },
+   "composition": "Caliph seated right of centre (x 600) facing left; owner seated on the rug at x 400 facing him; vizier leaning in behind the caliph at x 760. Thought cloud centre (500, 320), 540 x 360, tail to the caliph's head. Lettering under the cloud, clear of both faces.",
+   "actions": [
+    {
+     "t": 64.18,
+     "end": 65.8,
+     "cue": {
+      "word": "سأل",
+      "t": 64.18
+     },
+     "who": "caliph",
+     "action": "leans toward the owner and raises a finger",
+     "acting": "tip 0.08, PERSON_HANDS.pointUp, talk 0.7, brow -0.4 on one beat then level",
+     "library": "PERSON_HANDS.pointUp + talk"
+    },
+    {
+     "t": 65.86,
+     "end": 66.4,
+     "cue": {
+      "word": "الحاكم",
+      "t": 65.86
+     },
+     "who": "vizier",
+     "action": "leans in behind with a hand cupped to his ear",
+     "acting": "PERSON_HANDS.cupEar, gaze at the owner, cheeks still full",
+     "library": "PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 66.4,
+     "end": 68.0,
+     "cue": {
+      "word": "صاحب",
+      "t": 66.4
+     },
+     "who": "merchant",
+     "action": "sits down on the rug opposite and listens",
+     "acting": "sit 0 -> 1 (seat floor), gaze on the caliph, small nods on صاحب and البستان",
+     "library": "person {sit:1, seat:'floor'} + pulse nods"
+    },
+    {
+     "t": 68.74,
+     "end": 69.2,
+     "cue": {
+      "word": "يعلم",
+      "t": 68.74
+     },
+     "who": "fx",
+     "action": "thought cloud pops over the caliph: the trail bubbles first, then the cloud",
+     "acting": "inside: the garden wall in small, empty road",
+     "library": "thoughtCloud(ctx, 500, 320, 540, 360, t, {tail, inside, scale: 0.42})"
+    },
+    {
+     "t": 69.28,
+     "end": 70.7,
+     "cue": {
+      "word": "مسبقًا",
+      "t": 69.28
+     },
+     "who": "fx",
+     "action": "in the cloud a tiny owner peers over his wall with a hand shading his eyes; a \"!\" pops over him",
+     "acting": "tiny figure about 120 px tall on screen; caliph outside narrows his eyes (lid 0.45)",
+     "library": "person inside the cloud {costume:'merchant', handR near the brow}"
+    },
+    {
+     "t": 70.8,
+     "end": 71.4,
+     "cue": {
+      "word": "الموكب",
+      "t": 70.8
+     },
+     "who": "fx",
+     "action": "in the cloud a black silhouette procession crosses the far road with a pennant",
+     "acting": "horse and rider silhouettes move right to left at half speed",
+     "library": "horse {silhouette:true} + rideOn inside the cloud"
+    },
+    {
+     "t": 71.48,
+     "end": 73.5,
+     "cue": {
+      "word": "وأعد",
+      "t": 71.48
+     },
+     "who": "fx",
+     "action": "in the cloud the tiny owner stacks trays in a frenzy, sweat drops flying",
+     "acting": "fast-forward: three trays pop at 71.6, 72.0, 72.4, he zips between them (2-frame moves); comic",
+     "library": "foodTray icons + keyed x"
+    },
+    {
+     "t": 73.64,
+     "end": 74.5,
+     "cue": {
+      "word": "انتظارًا",
+      "t": 73.64
+     },
+     "who": "caliph",
+     "action": "points at the owner, then at the spread; a big \"?\" takes over the cloud",
+     "acting": "PERSON_HANDS.pointFwd toward the owner at 73.7, toward the trays at 74.1; DID YOU KNOW? lettering under the cloud",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 74.56,
+     "end": 74.94,
+     "cue": {
+      "word": "له",
+      "t": 74.56
+     },
+     "who": "guards",
+     "action": "every listener turns to the owner and waits",
+     "acting": "heads turn staggered 3 frames apart; nobody blinks for 0.4 s: a held beat",
+     "library": "stagger(i) + noBlink"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 73.8,
+     "text": "DID YOU KNOW?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 74.94
+   }
+  },
+  {
+   "id": "S8",
+   "start": 74.94,
+   "end": 85.94,
+   "paragraphs": [
+    4
+   ],
+   "set": "orchardGarden",
+   "cast": [
+    "caliph",
+    "merchant",
+    "vizier"
+   ],
+   "summary": "The answer. The owner had no idea; the suspicion cloud is crossed out and pops. All this, he says with a shrug, is simply how his house runs every day.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pan",
+    "notes": "Same two-shot; 77.0-79.3 unchanged while the cloud is struck out; 80.3-81.5 pan down-left over the trays {x 440, y 800, zoom 1.7}; 83.1 back up to the two-shot widened to zoom 1.4 so the house roof over the back wall (x 700..960, top y 470) is in frame."
+   },
+   "composition": "As S7. After the cloud pops the upper half is free for the label and for the house roofline over the wall at the right, which the owner thumbs toward.",
+   "actions": [
+    {
+     "t": 74.94,
+     "end": 76.4,
+     "cue": {
+      "word": "أجاب",
+      "t": 74.94
+     },
+     "who": "merchant",
+     "action": "turns both palms up and shakes his head",
+     "acting": "PERSON_HANDS.palmsUp, head x +-5 px for two cycles, brows -0.5 (honest), talk 0.6",
+     "library": "PERSON_HANDS.palmsUp + talk"
+    },
+    {
+     "t": 77.0,
+     "end": 77.6,
+     "cue": {
+      "word": "لم",
+      "t": 77.0
+     },
+     "who": "fx",
+     "action": "a red X is struck across the thought cloud in two strokes",
+     "acting": "strokes at 77.0 and 77.3, brush style; the tiny owner inside freezes mid-step",
+     "library": "brush strokes (K.brushLine)"
+    },
+    {
+     "t": 77.26,
+     "end": 78.3,
+     "cue": {
+      "word": "يسمع",
+      "t": 77.26
+     },
+     "who": "merchant",
+     "action": "cups a hand to his ear, then shakes his head again: heard nothing",
+     "acting": "PERSON_HANDS.cupEar for 0.5 s then back to palmsUp; NO IDEA! lettering beside him at 77.5",
+     "library": "PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 78.4,
+     "end": 79.2,
+     "cue": {
+      "word": "الزيارة",
+      "t": 78.4
+     },
+     "who": "caliph",
+     "action": "leans back, surprised; blinks twice",
+     "acting": "tip -0.06, two blinks 6 frames apart, brow from suspicious to raised",
+     "library": "blink + tip"
+    },
+    {
+     "t": 79.3,
+     "end": 79.6,
+     "cue": {
+      "word": "الزيارة",
+      "t": 78.4
+     },
+     "who": "fx",
+     "action": "the crossed-out cloud pops in the pause",
+     "acting": "cloud p 1 -> 0 in 5 frames with six little puffs",
+     "library": "thoughtCloud {p}"
+    },
+    {
+     "t": 79.6,
+     "end": 80.3,
+     "cue": {
+      "word": "وأن",
+      "t": 79.6
+     },
+     "who": "merchant",
+     "action": "waves a casual hand over the spread and shrugs",
+     "acting": "aL opens over the trays, shoulders up-down once (sq 1.02 -> 0.98)",
+     "library": "aL angles"
+    },
+    {
+     "t": 80.34,
+     "end": 81.5,
+     "cue": {
+      "word": "يراه",
+      "t": 80.34
+     },
+     "who": "caliph",
+     "action": "looks where the hand points; the camera pans over the dishes",
+     "acting": "gaze follows the hand with a 3-frame lag; glints on the fruit",
+     "library": "lookAt + CAM keys"
+    },
+    {
+     "t": 81.56,
+     "end": 83.0,
+     "cue": {
+      "word": "جزء",
+      "t": 81.56
+     },
+     "who": "fx",
+     "action": "label box JUST THE DAILY ROUTINE with an arrow to the spread",
+     "acting": "pops at 81.6, arrow draws on by 82.6 on نظام, leaves at 84.9",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 83.1,
+     "end": 83.7,
+     "cue": {
+      "word": "بيته",
+      "t": 83.1
+     },
+     "who": "merchant",
+     "action": "jerks a thumb back over his shoulder at the big house whose roof shows over the wall",
+     "acting": "aR bent back (thumb), gaze stays on the caliph; a few windows in the roofline glint: sets up the next scene",
+     "library": "aR angles + set house roofline"
+    },
+    {
+     "t": 83.72,
+     "end": 84.4,
+     "cue": {
+      "word": "اليومي",
+      "t": 83.72
+     },
+     "who": "fx",
+     "action": "a small sun icon makes one quick arc over the roofline: every day",
+     "acting": "rise and set in 0.6 s",
+     "library": "sun() small on a keyed arc"
+    },
+    {
+     "t": 84.44,
+     "end": 85.2,
+     "cue": {
+      "word": "المعتاد",
+      "t": 84.44
+     },
+     "who": "vizier",
+     "action": "the caliph and the vizier trade a look; the vizier shrugs",
+     "acting": "gazes meet (lookAt each other), vizier palmsUp, caliph brow -0.5; owner calmly sips his own cup",
+     "library": "lookAt + palmsUp"
+    },
+    {
+     "t": 85.3,
+     "end": 85.94,
+     "cue": {
+      "word": "المعتاد",
+      "t": 84.44
+     },
+     "who": "camera",
+     "action": "whips up and right over the wall toward the house",
+     "acting": "smear of 4 frames starting in the pause",
+     "library": "CAM whip"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 77.5,
+     "text": "NO IDEA!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 79.34,
+     "kind": "pop"
+    },
+    {
+     "t": 85.58,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "whip",
+    "t": 85.94
+   }
+  },
+  {
+   "id": "S9",
+   "start": 85.94,
+   "end": 99.1,
+   "paragraphs": [
+    5
+   ],
+   "set": "houseDiagram",
+   "cast": [
+    "merchant"
+   ],
+   "summary": "The explanation as a diagram. The owner, small at the lower left with a pointer, presents the front of his house: one hundred windows light up, and from every window, every day, food, drink and comforts stream down to the door.",
+   "camera": {
+    "shot": "full",
+    "move": "static",
+    "notes": "Flat diagram view of the 1000 x 1230 world, zoom 1.0, static; a 3 % push on the highlighted window at 91.7-93.7 is done with an inset circle, not a camera move."
+   },
+   "composition": "House facade x 150..850, y 170..800 on a flat yellow ground, door x 450..550 (top y 800, ground y 900). Ten by ten windows, each 46 x 40, pitch 64 x 58, first at (182, 200). Presenter at x 110, y 900, s 0.7. Counter at the top right (panel x 660..930, y 80..190). Labels in the band below the house (y 930..1010).",
+   "actions": [
+    {
+     "t": 85.94,
+     "end": 87.1,
+     "cue": {
+      "word": "وأوضح",
+      "t": 85.94
+     },
+     "who": "merchant",
+     "action": "stands at the lower left as presenter with a pointer stick, talking",
+     "acting": "hold stick raised to the house, talk 0.6, relaxed smile, lid 0.2",
+     "library": "person {costume:'merchant', hold:'stick', s:0.7}"
+    },
+    {
+     "t": 87.22,
+     "end": 88.5,
+     "cue": {
+      "word": "التاجر",
+      "t": 87.22
+     },
+     "who": "set",
+     "action": "the house front rises into place from the bottom of the frame",
+     "acting": "slides up 300 px with settleTo; windows dark blue",
+     "library": "hundredWindows {rise}"
+    },
+    {
+     "t": 88.64,
+     "end": 89.3,
+     "cue": {
+      "word": "بيته",
+      "t": 88.64
+     },
+     "who": "fx",
+     "action": "label HIS HOUSE with an arrow",
+     "acting": "pops 88.7, leaves 90.8",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 89.38,
+     "end": 90.5,
+     "cue": {
+      "word": "مئة",
+      "t": 89.38
+     },
+     "who": "hundredWindows",
+     "action": "the windows light up in a diagonal sweep while the counter runs 0 to 100",
+     "acting": "lit 0 -> 100 over 1.1 s; counter lands on 100 at 90.5 with emphasis",
+     "library": "hundredWindows {lit} + S.counter"
+    },
+    {
+     "t": 89.92,
+     "end": 91.6,
+     "cue": {
+      "word": "جارية",
+      "t": 89.92
+     },
+     "who": "hundredWindows",
+     "action": "in every lit window a small head silhouette; in the three nearest (bottom row) a woman of the household looks out and waves",
+     "acting": "three busts in maiden / lady colours wave at different phases; one blows the dust off a tray",
+     "library": "person busts {costume:'maiden'|'lady'} clipped to the window"
+    },
+    {
+     "t": 91.72,
+     "end": 92.9,
+     "cue": {
+      "word": "كل",
+      "t": 91.72
+     },
+     "who": "fx",
+     "action": "one window is ringed and enlarged in an inset circle: one woman sets a tray on her sill",
+     "acting": "inset r 150 at (760, 330); she places the tray, pats it, smiles",
+     "library": "inset circle + foodTray icon"
+    },
+    {
+     "t": 93.0,
+     "end": 93.7,
+     "cue": {
+      "word": "ترسل",
+      "t": 93.0
+     },
+     "who": "fx",
+     "action": "the tray slides from that window down a drawn arrow to the door",
+     "acting": "arrow draws on, the tray icon rides it, a servant's hands take it at the door",
+     "library": "S.arrow + bezier"
+    },
+    {
+     "t": 93.78,
+     "end": 94.6,
+     "cue": {
+      "word": "يوم",
+      "t": 94.1
+     },
+     "who": "fx",
+     "action": "a little sun arcs over the roof and a tag EVERY DAY pops",
+     "acting": "one arc in 0.7 s; tag at the roof right",
+     "library": "sun() on an arc + S.label"
+    },
+    {
+     "t": 94.72,
+     "end": 95.6,
+     "cue": {
+      "word": "طعامًا",
+      "t": 94.72
+     },
+     "who": "hundredWindows",
+     "action": "wave one: a red tray icon drops from every window and flows to the door; label FOOD",
+     "acting": "icons leave in a seeded stagger over 0.6 s (K.rng), join one stream; label pops under the house, left",
+     "library": "hundredWindows {send:[t0, kind]} + S.label"
+    },
+    {
+     "t": 95.68,
+     "end": 96.7,
+     "cue": {
+      "word": "وشرابًا",
+      "t": 95.68
+     },
+     "who": "hundredWindows",
+     "action": "wave two: blue jug icons; label DRINK",
+     "acting": "same stream path, label pops centre",
+     "library": "hundredWindows send"
+    },
+    {
+     "t": 96.76,
+     "end": 97.6,
+     "cue": {
+      "word": "وأشياء",
+      "t": 96.76
+     },
+     "who": "hundredWindows",
+     "action": "wave three: yellow cushion and rug icons",
+     "acting": "same again",
+     "library": "hundredWindows send"
+    },
+    {
+     "t": 97.7,
+     "end": 99.1,
+     "cue": {
+      "word": "للاستراحة",
+      "t": 97.7
+     },
+     "who": "fx",
+     "action": "label COMFORTS completes the row of three; the three streams merge and pour out of the door to the right",
+     "acting": "presenter lowers the stick and shrugs with a smile, as if every house did this",
+     "library": "S.label + PERSON_HANDS.palmsUp"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 99.1
+   }
+  },
+  {
+   "id": "S10",
+   "start": 99.1,
+   "end": 108.56,
+   "paragraphs": [
+    5
+   ],
+   "set": "orchardGarden",
+   "cast": [
+    "servants",
+    "boy",
+    "caliph",
+    "vizier",
+    "merchant",
+    "guards"
+   ],
+   "summary": "Back in the garden: when the caliph got down, the servants simply gathered what had arrived that day from everyone and carried it to the guests in a hand-to-hand chain.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Keys: 99.1 {x 320, y 760, zoom 1.5} on the gate; 104.4-105.4 pan right along the chain to {x 600, y 780, zoom 1.6}; hold on the caliph."
+   },
+   "composition": "The day's heap of trays, jugs and cushions sits just inside the gate (x 120..260). Four servants stand in a chain at x 250, 340, 430, 510 passing items toward the guests on the right. Inset circle (r 140) top right for the two-second replay of the dismount.",
+   "actions": [
+    {
+     "t": 99.1,
+     "end": 99.8,
+     "cue": {
+      "word": "وعندما",
+      "t": 99.1
+     },
+     "who": "fx",
+     "action": "an inset circle opens at the top right replaying the caliph on his horse at the gate",
+     "acting": "iris opens in 6 frames; pale wash to mark the past",
+     "library": "inset circle + rideOn"
+    },
+    {
+     "t": 99.88,
+     "end": 101.3,
+     "cue": {
+      "word": "نزل",
+      "t": 99.88
+     },
+     "who": "fx",
+     "action": "in the inset he swings down and lands; the inset closes",
+     "acting": "the same hop and landSquash as 27.6-28.2; iris closes at 101.2",
+     "library": "hop() + landSquash()"
+    },
+    {
+     "t": 100.4,
+     "end": 101.4,
+     "cue": {
+      "word": "الخليفة",
+      "t": 100.34
+     },
+     "who": "set",
+     "action": "at the gate the stream of icons from the house lands as a real heap of trays, jugs and cushions",
+     "acting": "items drop in with small bounces; the heap grows to head height",
+     "library": "packLoad-style stack of foodTray, waterJug, floorCushion"
+    },
+    {
+     "t": 101.44,
+     "end": 101.9,
+     "cue": {
+      "word": "جمع",
+      "t": 101.44
+     },
+     "who": "servants",
+     "action": "scoop from the heap and start a chain, passing hand to hand",
+     "acting": "each pass is a small arc; receiver sinks 3 px on the catch, passer straightens; phases offset so the chain ripples",
+     "library": "bezier toss + stagger(i)"
+    },
+    {
+     "t": 101.98,
+     "end": 102.8,
+     "cue": {
+      "word": "الخدم",
+      "t": 101.98
+     },
+     "who": "boy",
+     "action": "at the end of the chain the child servant's armful grows taller and taller",
+     "acting": "he leans back to balance (tip -0.1), eyes peering round the stack, wobble",
+     "library": "swing() + tip"
+    },
+    {
+     "t": 102.88,
+     "end": 104.3,
+     "cue": {
+      "word": "يأتي",
+      "t": 102.88
+     },
+     "who": "fx",
+     "action": "an arrow runs from the heap along the chain; label THE USUAL",
+     "acting": "draws on over 0.6 s; label above the heap",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 104.38,
+     "end": 105.4,
+     "cue": {
+      "word": "الجميع",
+      "t": 104.38
+     },
+     "who": "camera",
+     "action": "pans right along the chain to the guests",
+     "acting": "follows one tray from hand to hand",
+     "library": "CAM keys"
+    },
+    {
+     "t": 105.44,
+     "end": 106.4,
+     "cue": {
+      "word": "وقدموه",
+      "t": 105.44
+     },
+     "who": "servants",
+     "action": "the last servant kneels and offers a tray to the caliph with both hands",
+     "acting": "kneel 0 -> 1, handLW/handRW on the tray, head bowed; caliph takes a pomegranate",
+     "library": "person {kneel:1} + handLW/handRW"
+    },
+    {
+     "t": 106.48,
+     "end": 107.5,
+     "cue": {
+      "word": "للزائرين",
+      "t": 106.48
+     },
+     "who": "vizier",
+     "action": "vizier and guards are served too: the vizier already has both hands full and puffed cheeks",
+     "acting": "he tries to take a third sweet with his little finger; a guard refuses politely, then takes two",
+     "library": "person hands + mouth"
+    },
+    {
+     "t": 107.6,
+     "end": 108.56,
+     "cue": {
+      "word": "للزائرين",
+      "t": 106.48
+     },
+     "who": "caliph",
+     "action": "looks at the pomegranate in his hand, then slowly at the owner",
+     "acting": "gaze fruit -> owner over 0.6 s, brow rising, lid 0.2: it is dawning on him",
+     "library": "gazePlan"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 108.56
+   }
+  },
+  {
+   "id": "S11",
+   "start": 108.56,
+   "end": 121.9,
+   "paragraphs": [
+    6
+   ],
+   "set": "orchardGarden",
+   "cast": [
+    "caliph",
+    "merchant",
+    "vizier"
+   ],
+   "summary": "No special banquet was intended: this table is what reaches the garden's owner on an ordinary day. The same spread appears on three little day cards.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Keys: 108.56 two-shot {x 500, y 650, zoom 1.5}; 113.9-115.0 pan down over the table {x 520, y 820, zoom 1.7}; 115.06 close on the caliph's eyes {x 600, y 610, zoom 2.6}; 117.7 back to the two-shot zoom 1.4 with the upper band free for the day cards."
+   },
+   "composition": "Owner left (x 400), caliph right (x 600). Speech balloon above the owner (centre 330, 380). Three day cards, each 220 x 170, in a row across the top of the panel (panel y 90..270) from 120.3.",
+   "actions": [
+    {
+     "t": 108.56,
+     "end": 110.1,
+     "cue": {
+      "word": "لم",
+      "t": 108.56
+     },
+     "who": "merchant",
+     "action": "shakes his head with a small \"no, no\" wave of the hand",
+     "acting": "PERSON_HANDS.wave small amplitude, modest smile, talk 0.5",
+     "library": "PERSON_HANDS.wave + talk"
+    },
+    {
+     "t": 110.18,
+     "end": 111.5,
+     "cue": {
+      "word": "إقامة",
+      "t": 110.18
+     },
+     "who": "fx",
+     "action": "a balloon over the owner shows a grand banquet: a string of pennants, a great domed dish, two lamps",
+     "acting": "pops on إقامة; pennants flutter",
+     "library": "S.box balloon + pennant string"
+    },
+    {
+     "t": 111.58,
+     "end": 113.2,
+     "cue": {
+      "word": "خاصة",
+      "t": 111.58
+     },
+     "who": "fx",
+     "action": "the pennant string comes loose and drops; the balloon sags and blows away",
+     "acting": "string falls with swing, balloon sq 1 -> 0.7 then drifts off right at 112.6; owner watches it go without interest",
+     "library": "swing() + keyed sq"
+    },
+    {
+     "t": 113.34,
+     "end": 113.9,
+     "cue": {
+      "word": "بل",
+      "t": 113.34
+     },
+     "who": "merchant",
+     "action": "points down at the real table in front of them",
+     "acting": "PERSON_HANDS.pointDown, head dips with the point",
+     "library": "PERSON_HANDS.pointDown"
+    },
+    {
+     "t": 113.94,
+     "end": 115.0,
+     "cue": {
+      "word": "المائدة",
+      "t": 113.94
+     },
+     "who": "camera",
+     "action": "pans across the laden trays",
+     "acting": "glints on fruit and jugs, steam from the dome",
+     "library": "CAM keys + glints"
+    },
+    {
+     "t": 115.06,
+     "end": 116.8,
+     "cue": {
+      "word": "رآها",
+      "t": 115.06
+     },
+     "who": "caliph",
+     "action": "close on his eyes travelling over the table",
+     "acting": "pupils sweep left to right in three saccades, a tray reflected as a small yellow glint; blink at 116.4",
+     "library": "gazePlan + close camera"
+    },
+    {
+     "t": 117.74,
+     "end": 118.5,
+     "cue": {
+      "word": "يصل",
+      "t": 117.74
+     },
+     "who": "fx",
+     "action": "small tray and jug icons arc in over the back wall from the house and settle on the table",
+     "acting": "five icons, seeded stagger, each fades into a real dish",
+     "library": "bezier icons"
+    },
+    {
+     "t": 118.58,
+     "end": 120.2,
+     "cue": {
+      "word": "صاحب",
+      "t": 118.58
+     },
+     "who": "fx",
+     "action": "an arrow runs from the house roofline to the owner",
+     "acting": "draws on over 0.5 s; owner glances up at it and nods",
+     "library": "S.arrow"
+    },
+    {
+     "t": 120.34,
+     "end": 120.7,
+     "cue": {
+      "word": "يوم",
+      "t": 120.34
+     },
+     "who": "fx",
+     "action": "three day cards pop across the top: morning, noon and dusk skies, each over the very same little spread",
+     "acting": "cards pop 0.12 s apart with overshoot",
+     "library": "skyCycle(u 0.08 / 0.25 / 0.45) in small clipped cards + feastSpread icon"
+    },
+    {
+     "t": 120.7,
+     "end": 121.4,
+     "cue": {
+      "word": "عادي",
+      "t": 120.7
+     },
+     "who": "merchant",
+     "action": "shrugs: an ordinary day",
+     "acting": "PERSON_HANDS.palmsUp, lid 0.3, smile; label AN ORDINARY DAY under the cards",
+     "library": "PERSON_HANDS.palmsUp + S.label"
+    },
+    {
+     "t": 121.3,
+     "end": 121.9,
+     "cue": {
+      "word": "عادي",
+      "t": 120.7
+     },
+     "who": "caliph",
+     "action": "goes very still; lowers the goblet; one slow blink",
+     "acting": "stillness: only the lid moves (0 -> 1 -> 0 over 0.4 s)",
+     "library": "lid keys"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 121.9
+   }
+  },
+  {
+   "id": "S12",
+   "start": 121.9,
+   "end": 131.18,
+   "paragraphs": [
+    6
+   ],
+   "set": "orchardGarden",
+   "cast": [
+    "caliph",
+    "merchant"
+   ],
+   "summary": "The caliph's astonishment grows as he works out what this must cost: in his thought cloud a coin pile grows day by day until it bursts out of the cloud. He looks at the unassuming man plumping a cushion, and decides.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Keys: 121.9 {x 600, y 640, zoom 1.6}; 123.1 {zoom 2.2}; 124.7 ease back to {x 560, y 560, zoom 1.5} to give the cloud room; 128.1 pan left to the owner {x 400, y 680, zoom 1.9}; 129.2 back to the caliph {x 600, y 660, zoom 1.8}."
+   },
+   "composition": "Caliph's face large, slightly right of centre. Cloud centre (430, 300), 480 x 340, tail to his head; the coin pile is allowed to break the top edge of the cloud. Owner shown alone in his cut-in.",
+   "actions": [
+    {
+     "t": 121.9,
+     "end": 122.4,
+     "cue": {
+      "word": "ازداد",
+      "t": 121.9
+     },
+     "who": "camera",
+     "action": "pushes in on the caliph",
+     "acting": "slow ease",
+     "library": "CAM keys"
+    },
+    {
+     "t": 122.5,
+     "end": 123.0,
+     "cue": {
+      "word": "الحاكم",
+      "t": 122.5
+     },
+     "who": "caliph",
+     "action": "eyes widen by degrees",
+     "acting": "lid 0.2 -> 0, brow -0.3 -> -0.7, sq 1.0 -> 1.05",
+     "library": "lid/brow keys"
+    },
+    {
+     "t": 123.12,
+     "end": 124.0,
+     "cue": {
+      "word": "دهشة",
+      "t": 123.12
+     },
+     "who": "caliph",
+     "action": "his crown hops off his turban and lands again a little crooked",
+     "acting": "hop 14 px, lands 3 frames after the head settles, tilted 5 degrees; emphasis lines behind the head",
+     "library": "hop() + S.emphasis"
+    },
+    {
+     "t": 124.74,
+     "end": 125.1,
+     "cue": {
+      "word": "فهم",
+      "t": 124.74
+     },
+     "who": "fx",
+     "action": "thought cloud: one tray equals one coin",
+     "acting": "trail first, then the cloud; inside: tray icon, \"=\", a coin",
+     "library": "thoughtCloud + coinPile {n:1}"
+    },
+    {
+     "t": 125.12,
+     "end": 125.8,
+     "cue": {
+      "word": "مقدار",
+      "t": 125.12
+     },
+     "who": "fx",
+     "action": "in the cloud the day cards flip and the pile grows with each flip",
+     "acting": "three flips 0.2 s apart; pile height 40, 110, 200",
+     "library": "coinPile {n} + card flip"
+    },
+    {
+     "t": 125.82,
+     "end": 126.9,
+     "cue": {
+      "word": "المال",
+      "t": 125.82
+     },
+     "who": "fx",
+     "action": "the pile outgrows the cloud and bursts through its top edge, glowing",
+     "acting": "cloud stretches 8 % then springs back; goldGlow 0 -> 0.7; caliph's pupils rise with the pile",
+     "library": "coinPile + goldGlow + settleTo"
+    },
+    {
+     "t": 126.92,
+     "end": 128.1,
+     "cue": {
+      "word": "يستطيع",
+      "t": 126.92
+     },
+     "who": "caliph",
+     "action": "his gaze drops from the pile to the owner",
+     "acting": "gazePlan cloud -> owner; mouth closes into the start of a smile",
+     "library": "gazePlan"
+    },
+    {
+     "t": 128.14,
+     "end": 129.1,
+     "cue": {
+      "word": "التاجر",
+      "t": 128.14
+     },
+     "who": "merchant",
+     "action": "cut-in: the owner, unaware, is plumping a cushion and humming",
+     "acting": "pat-pat, head bobbing, lid 0.5; arrow label THIS MERCHANT",
+     "library": "pulse() + S.label"
+    },
+    {
+     "t": 129.2,
+     "end": 129.98,
+     "cue": {
+      "word": "ينفقه",
+      "t": 129.2
+     },
+     "who": "fx",
+     "action": "coins trickle out of the cloud and turn into tray icons as they fall; the cloud fades",
+     "acting": "six coins, seeded; cloud p 1 -> 0",
+     "library": "thoughtCloud {p} + bezier"
+    },
+    {
+     "t": 130.2,
+     "end": 131.18,
+     "cue": {
+      "word": "ينفقه",
+      "t": 129.2
+     },
+     "who": "caliph",
+     "action": "in the pause he sets the goblet down, shakes his head in admiration and stands",
+     "acting": "goblet down at 130.3 (chime), head x +-4 once, smile, sit 1 -> 0 from 130.6, feet planted at 130.85",
+     "library": "sit key + anticipate()"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 130.3,
+     "kind": "chime"
+    },
+    {
+     "t": 130.85,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 131.18
+   }
+  },
+  {
+   "id": "S13",
+   "start": 131.18,
+   "end": 137.68,
+   "paragraphs": [
+    7
+   ],
+   "set": "orchardGarden",
+   "cast": [
+    "caliph",
+    "merchant",
+    "vizier",
+    "guards",
+    "servants"
+   ],
+   "summary": "The caliph gives thanks to God for the prosperity of one of his subjects: raised palms, eyes up, light through the leaves, the garden glowing.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "Keys: 131.18 {x 600, y 620, zoom 1.8}; 132.6 tilt up to y 580; 133.8-135.6 pull out to {x 500, y 660, zoom 1.15} over the whole garden; 135.7 ease to the two-shot zoom 1.5."
+   },
+   "composition": "Caliph standing at x 600, full figure, with the light shaft falling from the canopy at the upper right. Others seated lower; the owner at x 400 is the end point of the caliph's open hand at 135.7.",
+   "actions": [
+    {
+     "t": 131.18,
+     "end": 132.5,
+     "cue": {
+      "word": "شكر",
+      "t": 131.18
+     },
+     "who": "caliph",
+     "action": "stands and raises both palms",
+     "acting": "aL/aR lifted to about [-2.45, -2.85] and [2.45, 2.85], palms up, slow (0.6 s) with settle",
+     "library": "aL/aR angles + settleTo"
+    },
+    {
+     "t": 132.58,
+     "end": 133.7,
+     "cue": {
+      "word": "الله",
+      "t": 132.58
+     },
+     "who": "caliph",
+     "action": "looks up, then closes his eyes",
+     "acting": "gaze [0, -1], lid 0.5 -> 1 for 0.5 s; the light shaft brightens; the seated company lower their heads one after another",
+     "library": "gaze/lid + stagger(i)"
+    },
+    {
+     "t": 133.82,
+     "end": 134.5,
+     "cue": {
+      "word": "رأى",
+      "t": 133.82
+     },
+     "who": "camera",
+     "action": "pulls out over the garden as his eyes open and travel across it",
+     "acting": "gaze sweeps right to left",
+     "library": "CAM keys + gazePlan"
+    },
+    {
+     "t": 134.6,
+     "end": 135.6,
+     "cue": {
+      "word": "سعة",
+      "t": 134.6
+     },
+     "who": "fx",
+     "action": "a soft gold light over trees, table and rugs; fruit glints in sequence",
+     "acting": "goldGlow strength 0.4, staggered star glints",
+     "library": "goldGlow + glints"
+    },
+    {
+     "t": 135.7,
+     "end": 136.1,
+     "cue": {
+      "word": "أحد",
+      "t": 135.7
+     },
+     "who": "caliph",
+     "action": "lowers one open hand toward the owner",
+     "acting": "aR comes down to indicate him, warm smile, wet: true for this beat",
+     "library": "aR angles + wet"
+    },
+    {
+     "t": 136.18,
+     "end": 137.2,
+     "cue": {
+      "word": "رعيته",
+      "t": 136.18
+     },
+     "who": "merchant",
+     "action": "notices and bows his head, hand on his chest",
+     "acting": "PERSON_HANDS.chest, lean 0.15, lid 1 for 6 frames; arrow label ONE OF HIS PEOPLE",
+     "library": "PERSON_HANDS.chest + S.label"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 137.45,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 137.68
+   }
+  },
+  {
+   "id": "S14",
+   "start": 137.68,
+   "end": 140.4,
+   "paragraphs": [
+    7
+   ],
+   "set": "orchardGarden",
+   "cast": [
+    "caliph",
+    "vizier",
+    "horseB"
+   ],
+   "summary": "The order. The caliph turns sharply and points; the vizier gulps down his sweet, salutes and gallops off through the gate.",
+   "camera": {
+    "shot": "medium",
+    "move": "whip",
+    "notes": "Keys: 137.68 {x 680, y 680, zoom 1.6} caliph and vizier; 139.2 pan left with the vizier to the gate {x 300, zoom 1.3}; 140.1-140.4 whip left."
+   },
+   "composition": "Caliph at x 600 turned to screen right; vizier at x 780 rising; then the vizier runs left behind the caliph to the gate (x 140), where the bay horse waits outside (seen through the arch).",
+   "actions": [
+    {
+     "t": 137.68,
+     "end": 138.2,
+     "cue": {
+      "word": "ثم",
+      "t": 137.68
+     },
+     "who": "caliph",
+     "action": "turns sharply to his vizier",
+     "acting": "facing flips with a squeeze (turnFlip), cape lags 2 frames; brow 0.3, decided",
+     "library": "turnFlip(t, turns, 0.25)"
+    },
+    {
+     "t": 138.28,
+     "end": 138.6,
+     "cue": {
+      "word": "أمر",
+      "t": 138.28
+     },
+     "who": "caliph",
+     "action": "points, giving the order",
+     "acting": "PERSON_HANDS.pointFwd, talk 0.8, chin up; vizier jolts upright, swallows (cheeks to a gulp), hand to chest",
+     "library": "PERSON_HANDS.pointFwd + PERSON_HANDS.chest"
+    },
+    {
+     "t": 138.66,
+     "end": 140.4,
+     "cue": {
+      "word": "بإحضار",
+      "t": 138.66
+     },
+     "who": "vizier",
+     "action": "runs to the gate, onto the bay horse, and gallops away left",
+     "acting": "run (stride x0.7, tip 0.14), robe flying; mount hidden by the gate post; horse gallop 1 with dust; guards run after",
+     "library": "walk() + rideOn(ctx,'horse',{pal:1, gallop:1}) + dustBurst"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "whip",
+    "t": 140.4
+   }
+  },
+  {
+   "id": "S15",
+   "start": 140.4,
+   "end": 151.0,
+   "paragraphs": [
+    7
+   ],
+   "set": "treasury",
+   "cast": [
+    "vizier",
+    "guards"
+   ],
+   "summary": "The state treasury. The vault opens on gold; this year's freshly struck dirhams are stamped, counted and packed: the counter climbs to 3,700,000 as four chests fill and shut.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Keys: 140.4 {x 500, y 700, zoom 1.2}; 141.3 push to the vault {x 560, y 700, zoom 1.5}; 142.2-144.4 insert on the coin and stamp (drawn as an insert panel, zoom 1.0 of a 1000 x 1230 close-up layer); 145.9 back to wide {x 500, y 690, zoom 1.15} with the counter across the top."
+   },
+   "composition": "palaceHall with blue wall and no side door; vault door from the set anchor (A.vault). Four chests in a row on the floor at x 300, 440, 580, 720 (each 120 x 90). Vizier at x 200, two guards at x 850 and 920. Counter across the upper band of the panel (panel y 90..230), full width, digits at least 90 px.",
+   "actions": [
+    {
+     "t": 140.56,
+     "end": 141.2,
+     "cue": {
+      "word": "خزينة",
+      "t": 140.56
+     },
+     "who": "vizier",
+     "action": "skids into the treasury and points at the vault",
+     "acting": "enters from the left, lurch on the stop, PERSON_HANDS.pointFwd; label STATE TREASURY pops 140.7-142.2",
+     "library": "lurch() + S.label"
+    },
+    {
+     "t": 141.3,
+     "end": 142.1,
+     "cue": {
+      "word": "الدولة",
+      "t": 141.3
+     },
+     "who": "set",
+     "action": "the vault door swings open and gold light spills out",
+     "acting": "vault.open 0 -> 1 in 0.7 s; goldGlow 0 -> 0.8; the guards' faces are lit yellow, eyes wide",
+     "library": "palaceHall {vault:{open}} + goldGlow"
+    },
+    {
+     "t": 142.22,
+     "end": 142.9,
+     "cue": {
+      "word": "دراهم",
+      "t": 142.22
+     },
+     "who": "coinPile",
+     "action": "inside: mounds of silver-white dirhams; insert of one coin turning",
+     "acting": "coin r 60 with a ring and star pattern, spin by x-scale; glint",
+     "library": "coinPile + coin close-up"
+    },
+    {
+     "t": 143.02,
+     "end": 143.9,
+     "cue": {
+      "word": "ضُربت",
+      "t": 143.02
+     },
+     "who": "fx",
+     "action": "insert: a stamp hammer strikes a blank disc and the pattern appears; two more strikes follow",
+     "acting": "strike cycle: lift 0.3 s, whip down, contact at 143.3; again at 143.6 and 143.9; each new coin hops off into a chest; CLINK! at the first contact",
+     "library": "strike cycle (lift, whip, contact, damped rebound) + hop()"
+    },
+    {
+     "t": 144.0,
+     "end": 145.3,
+     "cue": {
+      "word": "تلك",
+      "t": 144.14
+     },
+     "who": "fx",
+     "action": "the new coins sparkle; label THIS YEAR'S COINS",
+     "acting": "three star glints; label with an arrow to the chest",
+     "library": "S.label + glints"
+    },
+    {
+     "t": 145.42,
+     "end": 146.6,
+     "cue": {
+      "word": "وكان",
+      "t": 145.42
+     },
+     "who": "fx",
+     "action": "back to the wide: a big counter appears across the top and starts rolling",
+     "acting": "digits blur-roll (seeded), coins pour from the vault into chest 1",
+     "library": "S.counter"
+    },
+    {
+     "t": 146.72,
+     "end": 147.6,
+     "cue": {
+      "word": "ثلاثة",
+      "t": 146.72
+     },
+     "who": "fx",
+     "action": "counter passes 1,000,000 and 2,000,000 to 3,000,000; chest 1 fills and its lid shuts",
+     "acting": "lid shut with a 2-frame squash",
+     "library": "S.counter + chest {open}"
+    },
+    {
+     "t": 147.7,
+     "end": 148.5,
+     "cue": {
+      "word": "ملايين",
+      "t": 147.7
+     },
+     "who": "fx",
+     "action": "counter holds 3,000,000 with a pulse; chest 2 fills and shuts",
+     "acting": "the guards count on their fingers and give up",
+     "library": "S.counter"
+    },
+    {
+     "t": 148.62,
+     "end": 149.8,
+     "cue": {
+      "word": "وسبعمئة",
+      "t": 148.62
+     },
+     "who": "fx",
+     "action": "counter climbs through 3,700,000; chest 3 fills and shuts",
+     "acting": "vizier mops his brow (hand to forehead)",
+     "library": "S.counter"
+    },
+    {
+     "t": 149.86,
+     "end": 150.9,
+     "cue": {
+      "word": "ألف",
+      "t": 149.86
+     },
+     "who": "fx",
+     "action": "counter slams to 3,700,000 DIRHAMS on the last word; chest 4 shuts; the guards hoist the chests on poles",
+     "acting": "final scale 1.25 -> 1 with emphasis at 150.38; guards' knees dip under the weight (sq 0.95)",
+     "library": "S.counter + S.emphasis"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 143.3,
+     "text": "CLINK!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 151.2,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 151.0,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S16",
+   "start": 151.0,
+   "end": 161.66,
+   "paragraphs": [
+    8
+   ],
+   "set": "orchardGarden",
+   "cast": [
+    "caliph",
+    "merchant",
+    "vizier",
+    "guards",
+    "servants",
+    "boy"
+   ],
+   "summary": "The gift. Four chests stand open on the rug; the caliph gives the owner all of it and says such hospitality deserves more still. The owner cannot believe it is meant for him.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "The LATER card covers 151.0-152.0 (camera cut under its midpoint). Keys: 152.0 {x 540, y 720, zoom 1.25}; 153.6 push to the owner {x 420, y 680, zoom 1.7}; 155.9 two-shot {x 500, y 660, zoom 1.5}; 160.0 ease out to zoom 1.3."
+   },
+   "composition": "Owner at x 250 (screen left), caliph standing at x 370, the four chests on the rug to their right at x 500, 620, 740, 860 (y 900), so the caliph's arm sweeps from the chests on the right back to the owner on the left. Vizier and guards behind the chests; servants at the gate. Balloon above the caliph (centre 420, 330), clear of both faces.",
+   "actions": [
+    {
+     "t": 151.9,
+     "end": 152.8,
+     "cue": {
+      "word": "أعطى",
+      "t": 151.9
+     },
+     "who": "guards",
+     "action": "the last chest is set down with a thump as the card clears",
+     "acting": "guards straighten and rub their backs; lid bounces once",
+     "library": "impactSquash + chest"
+    },
+    {
+     "t": 152.9,
+     "end": 153.5,
+     "cue": {
+      "word": "الخليفة",
+      "t": 152.9
+     },
+     "who": "chest",
+     "action": "the four lids open one after another and gold light rises",
+     "acting": "open 0 -> 1 staggered 0.15 s; goldGlow 0 -> 0.8 lights the faces from below",
+     "library": "chest {open} + goldGlow + stagger(i)"
+    },
+    {
+     "t": 153.62,
+     "end": 154.0,
+     "cue": {
+      "word": "المال",
+      "t": 153.62
+     },
+     "who": "merchant",
+     "action": "stares; his eyes jump from chest to chest",
+     "acting": "four saccades, mouth o, brow -0.7, noBlink",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 154.12,
+     "end": 155.1,
+     "cue": {
+      "word": "كله",
+      "t": 154.12
+     },
+     "who": "caliph",
+     "action": "sweeps his arm from the last chest across all four to the owner",
+     "acting": "aR sweeps over 0.7 s, ends as an open palm toward the owner; a sweeping arrow follows the hand; ALL OF IT! lettering over the chests",
+     "library": "aR angles + S.arrow"
+    },
+    {
+     "t": 155.22,
+     "end": 155.9,
+     "cue": {
+      "word": "التاجر",
+      "t": 155.22
+     },
+     "who": "merchant",
+     "action": "points at himself: me? Then glances behind him to see who is meant; the servant behind him points at him too",
+     "acting": "PERSON_HANDS.chest with one finger, brow -0.8; quick look back (gaze flip) and forward",
+     "library": "PERSON_HANDS.chest + gazePlan"
+    },
+    {
+     "t": 155.96,
+     "end": 157.1,
+     "cue": {
+      "word": "وقال",
+      "t": 155.96
+     },
+     "who": "caliph",
+     "action": "raises a finger and speaks kindly",
+     "acting": "PERSON_HANDS.pointUp, talk 0.7, smile, lid 0.2",
+     "library": "PERSON_HANDS.pointUp + talk"
+    },
+    {
+     "t": 156.4,
+     "end": 157.7,
+     "cue": {
+      "word": "وقال",
+      "t": 155.96
+     },
+     "who": "merchant",
+     "action": "hands fly to his cheeks; his knees give and he sinks to kneel",
+     "acting": "PERSON_HANDS.cheeks, tremble(t, 2) for 0.5 s, kneel 0 -> 1 at 157.0",
+     "library": "PERSON_HANDS.cheeks + tremble() + kneel"
+    },
+    {
+     "t": 157.78,
+     "end": 158.2,
+     "cue": {
+      "word": "كرم",
+      "t": 157.78
+     },
+     "who": "fx",
+     "action": "a balloon over the caliph: the goblet of water with a heart",
+     "acting": "goblet from S2 (same drawing) and the Library heart",
+     "library": "S.box balloon + goblet + heart()"
+    },
+    {
+     "t": 158.28,
+     "end": 159.1,
+     "cue": {
+      "word": "الضيافة",
+      "t": 158.28
+     },
+     "who": "fx",
+     "action": "a cushion and a tray join the goblet in the balloon",
+     "acting": "pop 0.15 s apart",
+     "library": "floorCushion + foodTray icons"
+    },
+    {
+     "t": 159.18,
+     "end": 159.9,
+     "cue": {
+      "word": "يستحق",
+      "t": 159.18
+     },
+     "who": "caliph",
+     "action": "holds his hands apart, wider than the row of chests",
+     "acting": "PERSON_HANDS.armsOut, growing",
+     "library": "PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 160.0,
+     "end": 160.8,
+     "cue": {
+      "word": "أكثر",
+      "t": 160.0
+     },
+     "who": "fx",
+     "action": "ghost outlines of more chests pulse beyond the row with a plus sign, then fade",
+     "acting": "two dashed outline chests, alpha pulse; AND MORE! lettering; the child servant peeps into a chest, a coin glint in each eye",
+     "library": "chest outline {alpha} + S.emphasis"
+    },
+    {
+     "t": 160.88,
+     "end": 161.66,
+     "cue": {
+      "word": "ذلك",
+      "t": 160.88
+     },
+     "who": "merchant",
+     "action": "rises with a hand on his heart; the two exchange a bow",
+     "acting": "wet: true, smile trembling; caliph inclines his head; held two-shot",
+     "library": "kneel 1 -> 0 + PERSON_HANDS.chest + wet"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 154.3,
+     "text": "ALL OF IT!"
+    },
+    {
+     "t": 160.1,
+     "text": "AND MORE!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 151.6,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 161.66
+   }
+  },
+  {
+   "id": "S17",
+   "start": 161.66,
+   "end": 176.28,
+   "paragraphs": [
+    8
+   ],
+   "set": "orchardRoad",
+   "cast": [
+    "caliph",
+    "merchant",
+    "vizier",
+    "guards",
+    "horseW",
+    "horseB",
+    "boy",
+    "servants"
+   ],
+   "summary": "The caliph mounts and rides home toward the far palace as the day turns gold. At the gate the owner stands among the chests, looks at the goblet in his hand, and an arrow joins the one cup of water to the gift. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Road view, facing the same wall. Keys: 161.66 {x 1500, y 700, zoom 1.3} gate; 163.4-165.2 pan left with the riders to {x 900, y 680, zoom 1.1} (far city on the left horizon); 165.3-166.3 pan back right to the gate {x 1560, y 720, zoom 1.4}; 166.4 push in on the goblet {x 1600, y 720, zoom 2.4}; 168.2 pull to {x 1640, y 720, zoom 1.5} to hold cup and chests; 172.3-173.3 pull out to {x 1500, y 660, zoom 1.0}."
+   },
+   "composition": "Riders leave toward screen LEFT (the way they came). Owner at the gate x 1590 with the chests on the road at x 1700, 1820, 1940, 2060; goblet in his right hand at about (1625, 760). Arrow from the cup curves over to the chests. THE END centred in the sky band.",
+   "actions": [
+    {
+     "t": 161.66,
+     "end": 162.1,
+     "cue": {
+      "word": "ثم",
+      "t": 161.66
+     },
+     "who": "caliph",
+     "action": "walks out of the gate to the white horse held by a guard",
+     "acting": "unhurried walk, one look back over the garden",
+     "library": "walk() + footfalls()"
+    },
+    {
+     "t": 162.18,
+     "end": 162.6,
+     "cue": {
+      "word": "ركب",
+      "t": 162.18
+     },
+     "who": "caliph",
+     "action": "mounts",
+     "acting": "anticipate crouch 3 frames, hop arc up, swap to rideOn at the apex; the horse sidesteps one pace",
+     "library": "anticipate() + hop() + rideOn"
+    },
+    {
+     "t": 162.62,
+     "end": 163.4,
+     "cue": {
+      "word": "جواده",
+      "t": 162.62
+     },
+     "who": "horseW",
+     "action": "tosses its head, half rears and turns to face left",
+     "acting": "rear 0 -> 0.3 -> 0 pulse, ears up, turn with a squeeze (turnFlip)",
+     "library": "horse {rear} + turnFlip"
+    },
+    {
+     "t": 163.44,
+     "end": 165.2,
+     "cue": {
+      "word": "وعاد",
+      "t": 163.44
+     },
+     "who": "guards",
+     "action": "the procession moves off to the left: guards, caliph, vizier",
+     "acting": "walk with footfalls, pennant swinging; sky u eases 0.3 -> 0.42 (warm)",
+     "library": "walk() + skyCycle(u)"
+    },
+    {
+     "t": 164.5,
+     "end": 165.2,
+     "cue": {
+      "word": "قصره",
+      "t": 164.5
+     },
+     "who": "set",
+     "action": "the far city with a domed palace shows on the left horizon, lit warm",
+     "acting": "caliph turns in the saddle and waves once (PERSON_HANDS.wave)",
+     "library": "townFarCity + PERSON_HANDS.wave"
+    },
+    {
+     "t": 165.3,
+     "end": 166.3,
+     "cue": {
+      "word": "وبقيت",
+      "t": 165.3
+     },
+     "who": "camera",
+     "action": "pans back to the gate: the owner stands among four chests, waving",
+     "acting": "he is small in the frame at first; servants peep round the gate posts",
+     "library": "CAM keys"
+    },
+    {
+     "t": 166.38,
+     "end": 167.0,
+     "cue": {
+      "word": "زيارة",
+      "t": 166.38
+     },
+     "who": "merchant",
+     "action": "stops waving and looks down at what is still in his other hand: the goblet",
+     "acting": "gaze down to the cup, head dips; camera pushes in",
+     "library": "lookAt(cup)"
+    },
+    {
+     "t": 167.02,
+     "end": 168.2,
+     "cue": {
+      "word": "الماء",
+      "t": 167.02
+     },
+     "who": "goblet",
+     "action": "the goblet glints; one last drop of water falls from its rim",
+     "acting": "glint star, blue drop with a tiny splash ring; arrow label ONE CUP OF WATER",
+     "library": "goblet {glint} + S.label"
+    },
+    {
+     "t": 168.24,
+     "end": 169.4,
+     "cue": {
+      "word": "سببًا",
+      "t": 168.24
+     },
+     "who": "fx",
+     "action": "a fat arrow draws from the cup in a curve over to the chests",
+     "acting": "draws on over 1.0 s; the owner's eyes follow its head",
+     "library": "S.arrow (curved) + lookAt"
+    },
+    {
+     "t": 169.44,
+     "end": 170.5,
+     "cue": {
+      "word": "هدية",
+      "t": 169.44
+     },
+     "who": "chest",
+     "action": "the chests pulse with gold light; label 3,700,000 DIRHAMS",
+     "acting": "goldGlow pulse 0.5 -> 0.9 -> 0.6; label pops with overshoot",
+     "library": "goldGlow + S.label"
+    },
+    {
+     "t": 170.54,
+     "end": 171.6,
+     "cue": {
+      "word": "يتوقعها",
+      "t": 170.54
+     },
+     "who": "merchant",
+     "action": "looks from cup to chests to the camera, and shrugs with a huge grin",
+     "acting": "the one look to camera (gaze [0, 0.05]), palmsUp with the cup, brows -0.6; the child servant hops for joy beside him",
+     "library": "PERSON_HANDS.palmsUp + hop()"
+    },
+    {
+     "t": 171.7,
+     "end": 172.2,
+     "cue": {
+      "word": "صاحب",
+      "t": 171.7
+     },
+     "who": "merchant",
+     "action": "raises the cup after the departing riders",
+     "acting": "arm up toward the left, lid 0.3, warm smile",
+     "library": "aR angles"
+    },
+    {
+     "t": 172.28,
+     "end": 173.3,
+     "cue": {
+      "word": "البستان",
+      "t": 172.28
+     },
+     "who": "camera",
+     "action": "pulls out to the wide garden wall and gate in golden light; birds settle back in the trees",
+     "acting": "two songbirds return to a crown; labels leave by 173.0",
+     "library": "CAM keys + songbird"
+    },
+    {
+     "t": 173.3,
+     "end": 176.28,
+     "cue": {
+      "word": "البستان",
+      "t": 172.28
+     },
+     "who": "lettering",
+     "action": "THE END, held",
+     "acting": "title pops with overshoot at 173.3; behind it leaves drift, the owner keeps blinking and breathing, the pennant is a dot on the horizon",
+     "library": "S.title + breathe()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 173.3,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 173.45,
+     "kind": "chime"
+    },
+    {
+     "t": 174.3,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 176.28
+   }
+  }
+ ],
+ "ending": {
+  "t": 173.3,
+  "description": "After the last word (173.04) the camera has pulled out to the garden wall and gate in golden light, the owner small at the gate with his four chests and the goblet, the riders a dot on the left horizon. THE END pops at 173.3 in the sky band and holds to 176.28 while leaves drift and the owner blinks and breathes."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "خرج الخليفة الحاكم بأمر الله يومًا في موكب كبير،|ومر ببستان جميل تحيط به الأشجار.|رأى رجلًا جالسًا فيه مع خدمه،|فطلب منه شربة ماء، فأسرع الرجل وقدّم له ما يشرب.",
+   "en": "Caliph al-Hakim rode in a great procession|past a beautiful garden.|He saw a man among his servants|and asked for water, which the man readily provided."
+  },
+  {
+   "p": 2,
+   "ar": "دعا صاحب البستان الخليفة إلى النزول والاستراحة،|فوافق ودخل مع من رافقه.|وفجأة ظهر الخدم يحملون سجادًا ووسائد كثيرة،|ويجهزون للضيوف أماكن واسعة للجلوس تحت الأشجار.",
+   "en": "The garden’s owner invited the caliph to rest.|He accepted,|and attendants quickly spread many rugs and cushions|beneath the trees for his entourage."
+  },
+  {
+   "p": 3,
+   "ar": "ثم جاءت أطباق الفاكهة والحلوى، وأوعية الشراب البارد، وألوان كثيرة من الطعام.|بلغ عدد بعض هذه الأشياء مئة من كل نوع،|حتى تعجب الخليفة من سرعة تجهيز مائدة بهذا الحجم.",
+   "en": "Platters of fruit and sweets, cool drinks and food|followed—some items numbering a hundred each.|The caliph wondered how such an enormous feast had appeared so quickly."
+  },
+  {
+   "p": 4,
+   "ar": "سأل الحاكم صاحب البستان إن كان يعلم مسبقًا بمرور الموكب،|وأعد كل ذلك انتظارًا له.|أجاب الرجل أنه لم يسمع بخبر الزيارة،|وأن ما يراه الخليفة جزء من نظام بيته اليومي المعتاد.",
+   "en": "Al-Hakim asked whether the merchant had expected his visit|and prepared in advance.|The host insisted|that he had known nothing of it."
+  },
+  {
+   "p": 5,
+   "ar": "وأوضح التاجر أن في بيته مئة جارية،|وأن كل واحدة ترسل كل يوم طعامًا وشرابًا وأشياء للاستراحة.|وعندما نزل الخليفة جمع الخدم ما يأتي عادة من الجميع،|وقدموه للزائرين.",
+   "en": "The merchant explained that a hundred women in his household|each sent daily food, drink and furnishings.|His servants had simply gathered the usual contributions|for the visitors."
+  },
+  {
+   "p": 6,
+   "ar": "لم يكن القصد إقامة وليمة خاصة،|بل إن المائدة التي رآها الخليفة|كانت مما يصل إلى صاحب البستان في يوم عادي.|ازداد الحاكم دهشة عندما فهم مقدار المال الذي يستطيع هذا التاجر أن ينفقه.",
+   "en": "It was no specially arranged banquet:|the lavish spread|was part of an ordinary day.|The caliph was even more astonished by the merchant’s wealth and hospitality."
+  },
+  {
+   "p": 7,
+   "ar": "شكر الخليفة الله على ما رأى من سعة رزق أحد رعيته،|ثم أمر بإحضار ما جمع في خزينة الدولة من دراهم ضُربت في تلك السنة،|وكان عددها ثلاثة ملايين وسبعمئة ألف درهم.",
+   "en": "The caliph thanked God for the prosperity of one of his subjects.|He ordered the treasury to bring the dirhams minted|that year—three million seven hundred thousand."
+  },
+  {
+   "p": 8,
+   "ar": "أعطى الخليفة المال كله إلى التاجر،|وقال إن كرم الضيافة يستحق أكثر من ذلك.|ثم ركب جواده وعاد إلى قصره،|وبقيت زيارة الماء القصيرة سببًا في هدية لم يتوقعها صاحب البستان.",
+   "en": "He gave all the money to the merchant,|declaring such hospitality deserved even more,|and rode away.|A simple request for water had brought an extraordinary gift."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "orchard",
+   "reusable": true,
+   "effort": "M",
+   "description": "Walled fruit garden in two views. 'road': 2200-wide roadside strip with the low wall (top y 820), gate x 1500..1680 and six trees. 'inside': 1000-wide lawn under three trees with the gate in the back wall and tree trunks that occlude. The name is the planned orchard (AN-038); this is the walled-garden dressing of it (wall, gate, lawn, no trellis). Reusable for any garden, picnic or roadside-estate story.",
+   "implementation": "Library/sets file with orchard(ctx, o) returning anchors {ground, wall {top}, gate {x0, x1, top, cx}, trees [{x, crown}], seat, jugStand, house}. Bake the static layer per option set with bake(); trees from the existing tree() with a fruit-dot pass (seeded K.rng); wall as K.rect with halftone shade; gate from townDoor / townArchPts; sky from sky() or skyCycle(u); far city from townFarCity. front: true redraws wall or trunks over the cast."
+  },
+  {
+   "type": "prop",
+   "name": "carpetRoll",
+   "reusable": true,
+   "effort": "S",
+   "description": "A rug 420 x 120 (on the lawn as a flat parallelogram, skew 30) with unroll 0..1: at 0 a roll (ellipse end r 26 with a spiral, length 120) that can be carried on a shoulder; as unroll grows the flat part extends from the start edge and the roll shrinks and travels; fringe at both ends; col and border options, pattern none / diamonds.",
+   "implementation": "One function carpetRoll(ctx, x, y, {w, d, unroll, col, border, pattern, dir}). Flat part: polygon clipped to unroll * w with a border stroke and a row of diamonds; roll: ellipse plus 2-turn spiral, radius 26 * (1 - 0.6 * unroll); ripple = 3 px sine on the leading 60 px while moving."
+  },
+  {
+   "type": "prop",
+   "name": "feastSpread",
+   "reusable": true,
+   "effort": "S",
+   "description": "Counts made visible: n (0..100) small dish icons of one kind laid out ten per row in a receding grid (row scale 1 -> 0.55, row pitch 34 -> 20), popping in order with a 2-frame stagger; returns the grid box so a counter tag can be attached. Kinds reuse the foodTray contents at icon size plus jug and cushion.",
+   "implementation": "feastSpread(ctx, x, y, t, {kind, n, t0, w}) loops i < n, pos from row/col with the perspective scale, each icon scaled by K.beat pop from t0 + i * 0.066; icons are the foodTray(kind) drawing at s 0.28 (bake one icon per kind and drawImage it 100 times)."
+  },
+  {
+   "type": "effect",
+   "name": "hundredWindows",
+   "reusable": true,
+   "effort": "M",
+   "description": "Diagram of a great house: facade 700 x 630 with crenellations and a door, a ten by ten grid of windows (46 x 40, pitch 64 x 58). Fields: rise 0..1, lit 0..100 (diagonal order), busts (list of window indices that show a waving person bust), send: [[t0, kind]...] (every window emits one icon that drops to the door along a bezier and leaves along the ground to the right), highlight (index, ring). Reusable for any \"a hundred rooms / many households / everyone sends\" explanation.",
+   "implementation": "Bake the facade; windows as townWindow-style rects, lit colour by index order (row + col diagonal) against lit. Busts: person drawn at s 0.22 clipped to the window rect. Icons: baked 28 px tray / jug / cushion sprites moved by K.bezier with a per-window delay from K.rng(seed + i) (pure function of t). Stream on the ground: icons continue x += speed * (t - tDoor)."
+  },
+  {
+   "type": "character",
+   "name": "person costume preset 'guard'",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned guard preset (AN-086 and others): pointed helmet with neck cloth, short tunic, sash, optional moustache; hold:'spear' (shaft 300, leaf blade) with an optional pennant. Blue tunics here.",
+   "implementation": "Add 'guard' to the COSTUME table in Library/cast/people.js (helmet = triangle over a half ellipse plus a cloth polygon behind the neck); spear as a hold option drawn through the hand like hold:'stick', pennant = a triangle driven by swing()."
+  },
+  {
+   "type": "prop",
+   "name": "goblet, waterJug, floorCushion, foodTray (kind option), chest, coinPile",
+   "reusable": true,
+   "effort": "M",
+   "description": "Small props already planned by other films, reused under their planned names; the only extension is the foodTray kind option (fruit, sweets, rice, bread, dome) and a silver palette on coinPile for dirhams.",
+   "implementation": "One function per prop in Library/props (things.js style) with a registry entry; flat shapes with a halftone shade side and one highlight. Chest: box 120 x 90 with a lid polygon rotating about the back edge by open; coins as a yellow-white mound with 5 coin ellipses on top."
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow, inset circle",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned treasure light (rays, halftone disc, staggered star glints, strength 0..1) on the vault, the chests and the thought-cloud pile; the planned round picture-in-picture with an iris for the window close-up (S9) and the two-second dismount replay (S10).",
+   "implementation": "As planned by the other films: goldGlow(ctx, x, y, r, t, {strength}) with K.dots disc and tapered ray polygons; inset(ctx, x, y, r, p, draw) = circular clip with a black brush ring, p drives the iris radius."
+  }
+ ],
+ "owner_questions": [
+  "SCRIPT: P4 English (\"The host insisted that he had known nothing of it.\") leaves out the second half of the Arabic (that what the caliph sees is part of the normal daily routine of his house); both are kept verbatim and the picture follows the Arabic.",
+  "SCRIPT: smaller differences kept verbatim: P1 English omits \"surrounded by trees\"; P6 English adds \"and hospitality\"; P8 English omits \"returned to his palace\" and \"that the garden's owner had not expected\".",
+  "The hundred \"جارية\" of P5 are shown neutrally as women of the household at the windows of a house diagram (three small waving busts in maiden / lady costume, the rest as lit windows), matching the English \"a hundred women in his household\"; default: this neutral staging.",
+  "A vizier, four guards and a child servant are added as the \"procession\" and the \"servants\" the script mentions, with light comedy (the vizier and the sweets, the cushion tower, the caught orange); default: included.",
+  "For \"ضُربت في تلك السنة\" the plan adds a short treasury scene with a stamp hammer striking three coins and a counter rolling to 3,700,000; the script only says the caliph ordered the money brought. Default: included.",
+  "The caliph thanking God is staged as raised palms, eyes lifted then closed, light through the leaves and the company lowering their heads; default: this respectful, simple staging with no lettering.",
+  "Caliph al-Hakim is drawn as the generic Library caliph (crowned turban, red robe, grey beard), not as a likeness of the historical ruler; default: generic storybook caliph.",
+  "The supplied English subtitles contain em dashes in P3 and P7 (\"followed—some\", \"year—three\") while the series rule forbids em dashes in on-screen text; default: keep the supplied text verbatim in the subtitles.",
+  "English lettering added beyond the script: AHH!, FLUMP!, BRRR!, 100!, DID YOU KNOW?, NO IDEA!, CLINK!, ALL OF IT!, AND MORE!, plus labels such as ONE CUP OF WATER and 3,700,000 DIRHAMS (Western digits); default: included."
+ ],
+ "implementation_notes": [
+  "Start from Library/template; cues from timing.json words (w(p, n)); every action above carries the exact word and its start time. Anticipation may start up to 0.4 s before the cue; contacts land on the cue.",
+  "World 1000 x 1230 for the garden interior, house diagram and treasury; the road view is a 2200 strip drawn with ctx.translate(-camX, 0). Ground y 900 everywhere. Use the template camAt clamp and panel-only shake (none is needed here except a 3 px tick on the chest thump at 151.9).",
+  "Set LIFE.t = t every frame so all figures blink; add explicit noBlink for the held shocks (59.0-60.2, 74.56-74.94, 153.6-154.0). Every figure always has a gaze target: use look()/gazePlan for the caliph and the owner, lookAt for the listeners.",
+  "Riders: rideOn(ctx, 'horse', {...walk(xf, t, {stride: GAIT.horse * s}), y: 900, s, pal}, personP). Dismount and mount are swaps between rideOn and a standing person at the apex of a hop() arc, hidden partly by the horse body; do not try to animate a leg swing.",
+  "Groups never move in unison: servants and guards take stagger(i) delays of 0.1-0.3 s and different walk phases. Four servants and four guards are the same figure with pal variants.",
+  "The goblet is one object across the film: the owner takes it back at 21.0, it sits on the jug stand until the end, and he holds it from 165.3. Keep its colour (yellow with a red band) identical in S2, in the S16 balloon and in S17.",
+  "Counters use S.counter: 0..100 at 54.2-56.3 (ease-in), 0..100 at 89.4-90.5, and 0..3,700,000 from 145.4 with holds at 3,000,000 (147.7) and the final slam at 150.38. Format with commas; digits at least 90 px tall for the last one.",
+  "Thought clouds (thoughtCloud): S7 (500, 320, 540 x 360, scale 0.42) and S12 (430, 300, 480 x 340). Keep the tiny figures at least 110 px tall on screen. Clouds and balloons never overlap a face; the two-shots are framed low for that reason.",
+  "The LATER... card: S.transition with caption LATER... from 151.0 to about 152.0; cut set and camera under its midpoint (two CAM keys 0.01 s apart at 151.5). It is the only time jump.",
+  "Sound (12 effects, master 0.6, only in the listed gaps): 5.75 soft hoof thud; 20.9 pop (gulp) and 21.4 chime (refreshed); 79.34 pop (cloud); 85.58 whoosh (whip to the house); 130.3 chime and 130.85 thud (cup down, standing); 137.45 pop (the turn); 151.2 whoosh and 151.6 thud (card, chest set down); 173.45 chime and 174.3 pop (THE END). No effects under the counters or the feast: the narration has no gaps there.",
+  "Subtitles: Arabic verbatim in Noto Naskh Arabic 700 with the English below in blue Bangers, chunked as in \"subtitles\"; chunk times from the first word of each Arabic chunk.",
+  "Call the style finish last every frame; lettering sizes at least 44 px (headlines) and 28 px (labels) at 1280 x 720 scale."
+ ],
+ "warnings": [
+  "The narration is nearly continuous: only four pauses of 0.6 s or more. Keep to the 12 listed effects; do not add sounds to the feast, the counters or the coin stamping.",
+  "The guard preset, goblet, waterJug, floorCushion, foodTray, chest, coinPile, goldGlow and inset circle are planned by other films but are not in Library yet; build them once under these names.",
+  "feastSpread and hundredWindows each draw about 100 small items per frame: bake one sprite per icon and blit it; do not redraw vector trays 300 times a frame.",
+  "S9 is a diagram scene with a small presenter; keep it lively with the sweep, the inset and the three waves so that 13 s on one image does not go static.",
+  "The low wall in the road view must leave the seated owner visible from the chest up (wall top y 820, his lawn at y 880, seat 48 high); check with a still at 12.0 s before animating S2.",
+  "The S15 counter reaches a seven-digit number: test that 3,700,000 DIRHAMS fits the 972-px panel at the chosen size."
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "story_id": "KD-009",
+ "title": "The Monkey and the Carpenter",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T11:50:08",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-aeb5a21dafbef38ef.jsonl",
+ "agent_id": "aeb5a21dafbef38ef",
+ "model_messages": {
+  "claude-fable-5-2": 23
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "ba2da82e44104fdc14de93944a215e00a251a0c157fb3b866bed18bc02c893ca",
+  "paragraphs": 8,
+  "segments": [
+   "KD-009-P01-S01",
+   "KD-009-P01-S02",
+   "KD-009-P01-S03",
+   "KD-009-P01-S04",
+   "KD-009-P01-S05",
+   "KD-009-P01-S06",
+   "KD-009-P01-S07",
+   "KD-009-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/KD-009_The_Monkey_and_the_Carpenter_full_slowed.mp3",
+  "sha256": "607008d044439b13502ebdef00c3cc9279d503b5700f668d6238beca2f7c8850",
+  "duration": 162.289
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/KD-009_The_Monkey_and_the_Carpenter_full_slowed.mp3.words.json",
+  "sha256": "bc7cf17bcc16f779bbe0f9b0264fc8431b5bf298bdbf30b70b3566f3c431c510",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "5fc1ffb",
+ "scenes": 9,
+ "actions": 160,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "villager",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "person kneel / sit",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "monkey tailPath / pinch / armLen",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "villageYard",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "splitLog (with wedge)",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "carpenterTools (saw, mallet, pry bar, stool, door, table)",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "painPulse",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The SNAP at 105.78 has no narration pause around it (words run continuously from 102.48 to 109.26), so by the sound rule it is silent and carried by the picture (flash, dust, shake, lettering). Open question for the user: allow one very short, quiet thud exactly on the word boundary at 105.78?",
+  "Liberty in the staging: the split is drawn as a horizontal mouth opening at the end of the log (upper half hinging up) so the gap, the wedge and the tail all read from the side. A real rip cut would be vertical and invisible in a side view.",
+  "The monkey reach to the wedge needs longer arms than the current IK (new armLen). Fallback if it looks wrong: seat him at the very end of the log with his legs hanging either side of the wedge.",
+  "The Library monkey has no walk cycle; ground travel is by hops and the climb by two hops plus a trunk slide. If a real climb is wanted it is an extra pose.",
+  "The single LATER card falls at 50.9 (before \"after a short while\") and overlaps the first two words of that sentence for about 0.6 s of picture only; subtitles stay visible.",
+  "The carpenter tapping the wedge back in at 148.8 and the bird on the mallet are staging additions, not narrated; they do not contradict the script."
+ ]
+}

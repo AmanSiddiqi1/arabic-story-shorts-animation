@@ -1,0 +1,84 @@
+{
+ "story_id": "AN-083",
+ "title": "MA'AN THE SON OF ZAIDAH AND THE THREE GIRLS",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T13:27:19",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-af86a3ba0a5f2a63c.jsonl",
+ "agent_id": "af86a3ba0a5f2a63c",
+ "model_messages": {
+  "claude-fable-5-2": 21
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "0dfb8f0b35922ed1b58054d097e4423504cc7bd12b65d2c52f1e5d4c0292ce15",
+  "paragraphs": 8,
+  "segments": [
+   "AN-083-P01-S01",
+   "AN-083-P01-S02",
+   "AN-083-P01-S03",
+   "AN-083-P01-S04",
+   "AN-083-P01-S05",
+   "AN-083-P01-S06",
+   "AN-083-P01-S07",
+   "AN-083-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-083_MA_AN_THE_SON_OF_ZAIDAH_AND_THE_THREE_GIRLS_full_slowed.mp3",
+  "sha256": "d4d078005922da0665e8665efec920d616e611558b3dca5be9af9672df0832c0",
+  "duration": 165.407
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-083_MA_AN_THE_SON_OF_ZAIDAH_AND_THE_THREE_GIRLS_full_slowed.mp3.words.json",
+  "sha256": "6c8f4d3bc526bd69be04afb5fdb82af7051bbec65a36e9b93215afd990fe9cc1",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "959278e",
+ "scenes": 16,
+ "actions": 130,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "desertRoad",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "waterskin",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "quiver + goldArrow (with arrowBundle and bow)",
+   "effort": "M"
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "heatShimmer",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Three near-identical villageWoman figures can blur together at phone size: keep the three robe colours (red, blue, green), the three heights and the three temperaments distinct in every scene.",
+  "Scenes S12 to S14 are 36 s of recited verse with little physical action in the script; the insets must keep changing every 1 to 2 s or the film will stall here.",
+  "The inset figures are small: keep each at least 110 px tall on screen and limit each inset to three figures.",
+  "The person figure is front-facing only: turning to walk away (S16) and facing the men (S6) rely on dir and turnFlip; check the walk-away reads as leaving.",
+  "desertRoad, inset circle, goldGlow, purse and coinPile are planned by other stories but not built; whichever film is produced first must build them to the shared specification.",
+  "Word starts in the timeline can lead the audible onset by up to 0.4 s; check the gold reveal (69.22) and the name (90.56) against the audio by ear."
+ ]
+}

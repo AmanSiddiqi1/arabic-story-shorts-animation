@@ -1,0 +1,107 @@
+{
+ "story_id": "AN-088",
+ "title": "THE CITY OF MANY-COLUMNED IRAM AND ABDULLAH SON OF ABI KALABAH",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T13:41:16",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-acfe44cd596de3efd.jsonl",
+ "agent_id": "acfe44cd596de3efd",
+ "model_messages": {
+  "claude-fable-5-2": 21
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "9d9ba57ae63fce4a33c8d0fa063dfdbcb58aad88667ab742cb3a383c77575a22",
+  "paragraphs": 7,
+  "segments": [
+   "AN-088-P01-S01",
+   "AN-088-P01-S03",
+   "AN-088-P01-S04",
+   "AN-088-P01-S05",
+   "AN-088-P01-S06",
+   "AN-088-P01-S07",
+   "AN-088-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-088_THE_CITY_OF_MANY_COLUMNED_IRAM_AND_ABDULLAH_SON_OF_ABI_KALABAH_full_slowed.mp3",
+  "sha256": "22f50592ba90a96047acb31e21c89cd27a4964a557511e57085c26c041ceb693",
+  "duration": 170.94
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-088_THE_CITY_OF_MANY_COLUMNED_IRAM_AND_ABDULLAH_SON_OF_ABI_KALABAH_full_slowed.mp3.words.json",
+  "sha256": "8b16970e30b9abe1b9718c27d78d26819d7eb73b2d49c15324d9de29cac9331d",
+  "manifest_status": "SUCCESS; METADATA MISMATCH",
+  "script_match": 0.991
+ },
+ "library_rev": "959278e",
+ "scenes": 18,
+ "actions": 163,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "iramCity",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "desertRoad",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "palaceHall",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "camel",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "pearlSack + pearl + perfumeJar",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "mapCard",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "skyCry",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "sandBlow",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "legendFrame",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "generations",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "book, planScroll, banner, parasol, crown, treasure heaps, throne",
+   "effort": "M"
+  }
+ ],
+ "input_notes": "paragraph(s) removed from audio by design: AN-088-P01-S02; no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Depicting the Caliph and a named early scholar may be sensitive for some viewers; see owner questions 1 and 2.",
+  "Almost no pauses in the narration: effects are limited to three and the climax has no sound effect.",
+  "Heavy new-asset load for one film: iramCity (L) plus the planned desertRoad, palaceHall, throne and camel, which do not exist in the Library yet. If they are still missing, build simple versions here to the stated dimensions.",
+  "The English subtitle is a shorter paraphrase of the Arabic (for example P6 English omits the citadel and the builders reporting), so the English chunks cannot line up phrase for phrase with the picture; chunks are split evenly by count.",
+  "The procession (up to 9 near figures plus a far row) is the most expensive frame; draw the far row as flat silhouettes."
+ ]
+}

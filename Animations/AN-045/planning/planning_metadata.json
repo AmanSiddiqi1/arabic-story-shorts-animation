@@ -1,0 +1,103 @@
+{
+ "story_id": "AN-045",
+ "title": "The Thief and His Monkey",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T13:11:25",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a9b1ecb244dd9413c.jsonl",
+ "agent_id": "a9b1ecb244dd9413c",
+ "model_messages": {
+  "claude-fable-5-2": 25
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "d73934f38bc59dfb8b3a84f56f36f5f21881779a0f611886bfdf9f45e79b2b83",
+  "paragraphs": 8,
+  "segments": [
+   "AN-045-P01-S01",
+   "AN-045-P01-S02",
+   "AN-045-P01-S03",
+   "AN-045-P01-S04",
+   "AN-045-P01-S05",
+   "AN-045-P01-S06",
+   "AN-045-P01-S07",
+   "AN-045-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-045_The_Thief_and_His_Monkey_full_slowed.mp3",
+  "sha256": "ae10125d38010ab57f1c9d1e67de4c07853f5f71cd349fe2fc14abfd28a2f8a8",
+  "duration": 167.63
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-045_The_Thief_and_His_Monkey_full_slowed.mp3.words.json",
+  "sha256": "85e8ddca1bc610f8f9d259c748b07094bf7a8a78d8e63f318ab4320c03d010ac",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.991
+ },
+ "library_rev": "959278e",
+ "scenes": 17,
+ "actions": 183,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "marketStreet",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "palaceHall (variant merchantHouse)",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "clothBundle (with oldClothes and richCloth)",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "noPeekSign",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "monkey rot (flip, handstand) and fez",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "S"
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "moth",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "sneak",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Many human figures: up to 6 on screen in S1, S2 and S9. Keep extras at 3 to 5, reuse the same five, and drop them from close shots.",
+  "P4 ends and P5 starts at 84.08 with no pause, so the LATER card overlaps the first word of P5 (the long word at 84.08); the picture of Market B must be clear by 85.6, before the word for market at 86.38.",
+  "The word at 57.56 (the thief) has an interpolated time in the timeline; the reach is cued on the neighbouring words 56.48 and 57.56 instead.",
+  "The narration has only five pauses of 0.6 s or more, so the film has very few sound effects by design.",
+  "marketStreet and palaceHall are shared planned assets: build them to the generic descriptions in production/planned_assets.md so other films can use them."
+ ]
+}

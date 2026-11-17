@@ -1,0 +1,2736 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-119",
+ "title": "Abu Nuwas, the Three Guests and the Caliph",
+ "duration": 171.423,
+ "end_hold": 3.4,
+ "logline": "The poet Abu Nuwas answers the caliph's mockery with a cheeky joke, is sentenced to be paraded in a donkey saddle and worse, and jokes his way from the edge of the sword to a pardon and ten thousand dirhams.",
+ "moral": "Quick wit can save a man where strength and rank cannot.",
+ "tone": "Light court comedy played deadpan: a merry dinner, an offended king, a clown who refuses to be humiliated. Danger is shown only as icons; the laughs come from acting.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 2.42,
+   "kind": "setup",
+   "cue": {
+    "word": "وليمة",
+    "t": 2.42
+   },
+   "summary": "A proud feast with three empty cushions."
+  },
+  {
+   "id": "B2",
+   "t": 15.28,
+   "kind": "inciting",
+   "cue": {
+    "word": "ثلاثة",
+    "t": 15.28
+   },
+   "summary": "He finds three guests in the street and invites them."
+  },
+  {
+   "id": "B3",
+   "t": 37.66,
+   "kind": "comic",
+   "cue": {
+    "word": "وصفًا",
+    "t": 37.66
+   },
+   "summary": "Asked to choose, he gives each a different verse: nobody loses."
+  },
+  {
+   "id": "B4",
+   "t": 50.72,
+   "kind": "suspense",
+   "cue": {
+    "word": "طرقًا",
+    "t": 50.72
+   },
+   "summary": "A knock freezes the party."
+  },
+  {
+   "id": "B5",
+   "t": 53.3,
+   "kind": "surprise",
+   "cue": {
+    "word": "الخليفة",
+    "t": 53.3
+   },
+   "summary": "It is the caliph himself."
+  },
+  {
+   "id": "B6",
+   "t": 69.34,
+   "kind": "rising",
+   "cue": {
+    "word": "قاضيًا",
+    "t": 69.34
+   },
+   "summary": "The caliph mocks him with a pretend judgeship."
+  },
+  {
+   "id": "B7",
+   "t": 76.62,
+   "kind": "turn",
+   "cue": {
+    "word": "قضية",
+    "t": 76.62
+   },
+   "summary": "The poet's cheeky reply turns the mockery back on the caliph."
+  },
+  {
+   "id": "B8",
+   "t": 81.88,
+   "kind": "emotion",
+   "cue": {
+    "word": "فغضب",
+    "t": 81.88
+   },
+   "summary": "The caliph storms out, punishment postponed."
+  },
+  {
+   "id": "B9",
+   "t": 100.74,
+   "kind": "rising",
+   "cue": {
+    "word": "سرج",
+    "t": 100.74
+   },
+   "summary": "Next day: robe taken, donkey saddle on, parade and sword ordered."
+  },
+  {
+   "id": "B10",
+   "t": 116.44,
+   "kind": "comic",
+   "cue": {
+    "word": "المزاح",
+    "t": 116.44
+   },
+   "summary": "He plays the donkey; the ladies laugh and pay him."
+  },
+  {
+   "id": "B11",
+   "t": 137.38,
+   "kind": "climax",
+   "cue": {
+    "word": "أفضل",
+    "t": 137.38
+   },
+   "summary": "The deadpan line: my finest poetry for his finest clothes."
+  },
+  {
+   "id": "B12",
+   "t": 142.44,
+   "kind": "reveal",
+   "cue": {
+    "word": "أدرك",
+    "t": 142.44
+   },
+   "summary": "The caliph realises the poet is mocking the punishment itself."
+  },
+  {
+   "id": "B13",
+   "t": 149.68,
+   "kind": "resolution",
+   "cue": {
+    "word": "ضحك",
+    "t": 149.68
+   },
+   "summary": "He laughs, pardons him and pays ten thousand dirhams."
+  },
+  {
+   "id": "B14",
+   "t": 169.7,
+   "kind": "moral",
+   "cue": {
+    "word": "بنكتة",
+    "t": 169.7
+   },
+   "summary": "Not strength, not rank: one last joke."
+  }
+ ],
+ "cast": [
+  {
+   "id": "abu",
+   "name": "Abu Nuwas, the poet",
+   "library": "person",
+   "base": "person costume 'poet' (planned preset, AN-103)",
+   "look": "Green robe, yellow sash, small tilted white turban with a tail, short pointed black beard, s 1.0. Second look 'plainShirt' from 98.8 to 157.9: ankle-length plain white long-sleeved shirt (the ascetic robe shape without patches), bare head with short black hair, bare feet, with the packSaddle on his back.",
+   "new": false
+  },
+  {
+   "id": "g1",
+   "name": "first guest",
+   "library": "person",
+   "base": "person costume 'merchant' recoloured, age 0",
+   "look": "A young adult gentleman: red robe, small white turban, thin black moustache, s 0.96. Adult proportions (no child or youth option).",
+   "new": false
+  },
+  {
+   "id": "g2",
+   "name": "second guest",
+   "library": "person",
+   "base": "person costume 'merchant' recoloured, age 0",
+   "look": "Blue robe, yellow small turban, short black beard, s 1.0, the talker of the three.",
+   "new": false
+  },
+  {
+   "id": "g3",
+   "name": "third guest",
+   "library": "person",
+   "base": "person costume 'villager' recoloured, age 0",
+   "look": "Yellow robe with red sash, white cap turban, moustache, s 0.94, the shy one.",
+   "new": false
+  },
+  {
+   "id": "caliph",
+   "name": "Caliph Harun al-Rashid",
+   "library": "person",
+   "base": "person costume 'caliph'",
+   "look": "Library caliph: crown on turban, red robe, blue cape; age 0.35 so the beard is black; s 1.05.",
+   "new": false
+  },
+  {
+   "id": "masrur",
+   "name": "Masrur the guard",
+   "library": "person",
+   "base": "person costume 'executioner' (planned preset, AN-086/AN-108)",
+   "look": "Broad shoulders, sleeveless jerkin, wide sash, head wrap, heavy lids; a sheathed scimitar at his belt that is never drawn; s 1.1.",
+   "new": false
+  },
+  {
+   "id": "jaafar",
+   "name": "Jaafar the Barmecide",
+   "library": "person",
+   "base": "person costume 'vizier'",
+   "look": "Library vizier: tall white turban with jewel, navy robe, red cape; age 0.3 (dark beard); s 1.0.",
+   "new": false
+  },
+  {
+   "id": "l1",
+   "name": "palace lady 1",
+   "library": "person",
+   "base": "person costume 'lady'",
+   "look": "Blue robe, white veil; s 0.85 upstage.",
+   "new": false
+  },
+  {
+   "id": "l2",
+   "name": "palace lady 2",
+   "library": "person",
+   "base": "person costume 'lady' recoloured",
+   "look": "Yellow robe, red veil band; s 0.85.",
+   "new": false
+  },
+  {
+   "id": "l3",
+   "name": "old palace lady",
+   "library": "person",
+   "base": "person costume 'oldWoman'",
+   "look": "Library oldWoman with her stick; s 0.82; the loudest laugher.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "poetHouse",
+   "library": "palaceHall",
+   "description": "palaceHall variant 'merchant' (wall ochre): door with a leaf in the left wall, window, shelf; desk and curtain off. The scene adds a low table (x 320..680, top y 830, 70 high, red cloth), three floor cushions behind it at x 380, 500, 620 and one at x 760. Floor y 900. Door position approximate (x 60..170): use the MERCHANT anchors.",
+   "new": false
+  },
+  {
+   "id": "street",
+   "library": "marketStreet",
+   "description": "marketStreet w 1000, palette 'clear', palace false, one fruit stall at x 700..900, Abu's house front with an opening door on the left (doors[0], cx near 150; use the anchors), two street props (crate, basket).",
+   "new": false
+  },
+  {
+   "id": "court",
+   "library": "palaceHall",
+   "description": "palaceHall variant 'palace': door arch x 40..250 (top y 480), dais x 560..900 top y 860, throne, red runner, checker floor, two lamps. Folding screen (bathScreen) at x 150..330 in S9 and S10.",
+   "new": false
+  },
+  {
+   "id": "womensHall",
+   "library": "palaceHall",
+   "description": "palaceHall variant 'palace' with wall 'blue', throne false, dais false, door false, lamps lit: a plain inner hall whose three pointed arches act as the chamber doorways (the ladies stand in them). Floor y 900; arch positions from the HALL anchors (approximate centres x 420, 580, 740, measure on the set).",
+   "new": false
+  }
+ ],
+ "props": [
+  {
+   "id": "foodTray",
+   "library": null,
+   "description": "Planned brass tray with food (KD-011); three variants on the table: roast dish, sweet pyramid, bread and fruit.",
+   "new": true
+  },
+  {
+   "id": "goblet",
+   "library": null,
+   "description": "Planned stemmed cup 44 x 64 and matching jug (AN-099); four cups, one jug. Contents are never shown or labelled.",
+   "new": true
+  },
+  {
+   "id": "verseRibbon",
+   "library": null,
+   "description": "Planned poetry ribbon (AN-103): paper band with squiggle writing that unrolls along a curve and can carry small icons (dish, sweets, cup, moon, star, rose, crown).",
+   "new": true
+  },
+  {
+   "id": "judgeTurban",
+   "library": null,
+   "description": "The oversized white turban of the planned judge preset, drawn as a loose prop 150 wide x 90 high that can be carried, dropped on a head and pushed up.",
+   "new": true
+  },
+  {
+   "id": "iconBalloon",
+   "library": null,
+   "description": "Planned wordless picture balloon, single and strip modes; icons here: \"?\", scroll with \"?\", looping path arrow, three veiled heads, plain scimitar (also struck with a red X).",
+   "new": true
+  },
+  {
+   "id": "bathScreen",
+   "library": null,
+   "description": "Planned folding screen (AN-090): three panels, 180 wide x 260 high, paper with blue dots and a red frame; hides the change of clothes completely.",
+   "new": true
+  },
+  {
+   "id": "packSaddle",
+   "library": null,
+   "description": "NEW. Donkey pack saddle worn on a person: a padded hump 170 wide x 80 high sitting behind the shoulders (brown leather with red dot shading, yellow trim, two short wooden horns 30 high), a 14 wide girth strap across the chest with a buckle, and a ring at one side for the lead rope. Open top holds a coin heap (fill 0..1).",
+   "new": true
+  },
+  {
+   "id": "purse",
+   "library": null,
+   "description": "Planned fat coin purse.",
+   "new": true
+  },
+  {
+   "id": "coinPile",
+   "library": null,
+   "description": "Planned coin mound and single coins (rain of 14 coins on seeded arcs in S12).",
+   "new": true
+  },
+  {
+   "id": "scroll",
+   "library": null,
+   "description": "Planned small scroll with wavy lines; Jaafar's reading scroll and the pardon with a red seal.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 7.26,
+   "paragraphs": [
+    1
+   ],
+   "set": "poetHouse",
+   "cast": [
+    "abu"
+   ],
+   "summary": "Abu Nuwas, alone at home, lays a proud feast on the low table and finds it has no guests.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Start wide on the whole room (zoom 1.0, centre 500,700); from 4.0 ease to zoom 1.35 centred on the table (500,760)."
+   },
+   "composition": "Low table centre x 500 (x 320..680, top y 830). Abu works from the right end (x 760, facing left). Three empty cushions behind the table at x 380, 500, 620 are visible from the first frame: they are the question the scene asks.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 1.4,
+     "cue": {
+      "word": "أعد",
+      "t": 0.0
+     },
+     "who": "abu",
+     "action": "sets a tray on the table with both hands, steps back",
+     "acting": "gaze on the tray, proud small smile, sq 0.94 dip as he sets it down then settleTo upright",
+     "library": "person {costume:'poet', handLW/handRW on the tray} + settleTo"
+    },
+    {
+     "t": 2.3,
+     "end": 3.2,
+     "cue": {
+      "word": "وليمة",
+      "t": 2.42
+     },
+     "who": "foodTray",
+     "action": "second and third trays pop onto the table, staggered 0.25 s, each with a 3 unit bounce",
+     "acting": "steam curls rise; Abu rubs his hands (PERSON_HANDS.clasp)",
+     "library": "stagger(i), settleTo"
+    },
+    {
+     "t": 3.3,
+     "end": 4.0,
+     "cue": {
+      "word": "كبيرة",
+      "t": 3.28
+     },
+     "who": "abu",
+     "action": "throws both arms wide to present the feast",
+     "acting": "aL/aR out (armsOut), chest up (tip -0.05), eyes shut with pride (lid 0.8) then open",
+     "library": "PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 4.5,
+     "end": 5.3,
+     "cue": {
+      "word": "اللحوم",
+      "t": 4.6
+     },
+     "who": "fx",
+     "action": "arrow + label ROAST on the big dish",
+     "acting": "label pops on the word; Abu sniffs toward it (gaze to dish)",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 5.3,
+     "end": 6.3,
+     "cue": {
+      "word": "والأطعمة",
+      "t": 5.32
+     },
+     "who": "fx",
+     "action": "arrow + label SWEETS on the pyramid dish; jug and cups glint",
+     "acting": "Abu nods twice",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 6.3,
+     "end": 7.26,
+     "cue": {
+      "word": "الفاخرة",
+      "t": 6.34
+     },
+     "who": "abu",
+     "action": "looks along the three empty cushions, smile fades",
+     "acting": "gazePlan saccade 380 > 500 > 620 (2-frame snaps), mouth to 'closed', brow -0.4, shoulders sink (sq 0.97)",
+     "library": "gazePlan(t, plan, 0.07)"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 7.26
+   }
+  },
+  {
+   "id": "S2",
+   "start": 7.26,
+   "end": 21.82,
+   "paragraphs": [
+    1
+   ],
+   "set": "street",
+   "cast": [
+    "abu",
+    "g1",
+    "g2",
+    "g3"
+   ],
+   "summary": "He goes out to find company, scans the street, spots three well dressed young gentlemen at a stall, stops and invites them.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Camera tracks with Abu from x 150 to 430 (zoom 1.15); at 14.3 it widens to a group shot holding Abu (430) and the three (640..840); at 18.8 slow push to zoom 1.3 on the invitation."
+   },
+   "composition": "Abu enters from his own door on the left (marketStreet doors[0]). Fruit stall at x 700..900 with the three friends in front of it at x 640, 740, 840, facing each other at first. Thought cloud above Abu at (430, 420), clear of all heads.",
+   "actions": [
+    {
+     "t": 7.3,
+     "end": 8.3,
+     "cue": {
+      "word": "ثم",
+      "t": 7.26
+     },
+     "who": "set",
+     "action": "his house door swings open",
+     "acting": "door open 0 to 0.8 with a settle",
+     "library": "marketStreet {doors:[open]} / townDoor"
+    },
+    {
+     "t": 7.9,
+     "end": 10.6,
+     "cue": {
+      "word": "خرج",
+      "t": 7.96
+     },
+     "who": "abu",
+     "action": "steps out and walks right along the street, x 150 to 430",
+     "acting": "jaunty walk, head turning, gaze sweeping the street",
+     "library": "walk(xf, t) + footfalls for dust; person {costume:'poet'}"
+    },
+    {
+     "t": 8.4,
+     "end": 9.8,
+     "cue": {
+      "word": "يبحث",
+      "t": 8.34
+     },
+     "who": "abu",
+     "action": "shades his eyes with one hand and scans left then right",
+     "acting": "hand to brow (aR up), saccade gaze left/right, brow -0.3",
+     "library": "gazePlan short ease"
+    },
+    {
+     "t": 9.4,
+     "end": 11.0,
+     "cue": {
+      "word": "رفقة",
+      "t": 9.32
+     },
+     "who": "fx",
+     "action": "thought cloud pops: his table with three empty cushions, a \"?\" on each",
+     "acting": "trail pops first; Abu looks up into it",
+     "library": "thoughtCloud(ctx, 430, 420, 380, 240, t, {inside, scale 0.3})"
+    },
+    {
+     "t": 11.0,
+     "end": 12.6,
+     "cue": {
+      "word": "يشاركها",
+      "t": 10.86
+     },
+     "who": "fx",
+     "action": "inside the cloud a tray lands on the table and a cup slides to each empty place",
+     "acting": "Abu smiles at the idea, small nod",
+     "library": "thoughtCloud inside callback, foodTray, goblet"
+    },
+    {
+     "t": 13.4,
+     "end": 14.3,
+     "cue": {
+      "word": "والغزل",
+      "t": 13.44
+     },
+     "who": "abu",
+     "action": "tidies his turban and smooths his beard, cloud pops away",
+     "acting": "PERSON_HANDS.moustache then chin; one wink to camera ('wink'); cloud p 1 to 0",
+     "library": "person wink:'R'"
+    },
+    {
+     "t": 14.3,
+     "end": 15.2,
+     "cue": {
+      "word": "رأى",
+      "t": 14.34
+     },
+     "who": "abu",
+     "action": "stops mid step and leans forward: he has seen someone",
+     "acting": "eyes wide, gaze locks right (lookAt to x 740), tip 0.08, 0.1 s anticipation dip",
+     "library": "lookAt, anticipate"
+    },
+    {
+     "t": 15.2,
+     "end": 16.0,
+     "cue": {
+      "word": "ثلاثة",
+      "t": 15.28
+     },
+     "who": "fx",
+     "action": "counter 1, 2, 3 ticks over the three heads as the camera widens",
+     "acting": "the three chat among themselves, staggered nods, they have not seen him yet",
+     "library": "S.counter, stagger(i)"
+    },
+    {
+     "t": 16.0,
+     "end": 17.5,
+     "cue": {
+      "word": "فتيان",
+      "t": 15.96
+     },
+     "who": "g1",
+     "action": "g1 laughs at something g2 says; g3 picks a fruit from the stall",
+     "acting": "each a different idle: g1 mouth 'open' shoulders shake, g2 talk + pointUp, g3 reach to the counter; all blink on their own seeds",
+     "library": "person laugh helper (planned), PERSON_HANDS.reach, LIFE.t"
+    },
+    {
+     "t": 17.5,
+     "end": 18.7,
+     "cue": {
+      "word": "الوجوه",
+      "t": 17.6
+     },
+     "who": "fx",
+     "action": "three small star glints, one beside each face (not over it)",
+     "acting": "the three notice Abu one after another (0.2 s stagger) and turn to him",
+     "library": "S.emphasis small stars, stagger(i)"
+    },
+    {
+     "t": 18.6,
+     "end": 19.6,
+     "cue": {
+      "word": "فتوقف",
+      "t": 18.76
+     },
+     "who": "abu",
+     "action": "plants his feet in front of them with a little landing squash",
+     "acting": "landSquash, then upright, hand on heart greeting",
+     "library": "landSquash, PERSON_HANDS.chest"
+    },
+    {
+     "t": 19.6,
+     "end": 21.82,
+     "cue": {
+      "word": "ليدعوهم",
+      "t": 19.66
+     },
+     "who": "abu",
+     "action": "sweeps one arm back toward his door: come in",
+     "acting": "arm gesture aL back toward x 150, talk, smile; the three look at each other (gaze plan between them), g3 shrugs palmsUp",
+     "library": "PERSON_HANDS.wave / palmsUp, gazePlan"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 21.82
+   }
+  },
+  {
+   "id": "S3",
+   "start": 21.82,
+   "end": 29.32,
+   "paragraphs": [
+    2
+   ],
+   "set": "street",
+   "cast": [
+    "abu",
+    "g1",
+    "g2",
+    "g3"
+   ],
+   "summary": "He recites verses about the feast; the verses float out as a paper ribbon carrying pictures of the dishes; the three accept.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "Hold the group (zoom 1.3, centre 620,720) with a slow 20 unit drift right following the ribbon."
+   },
+   "composition": "Abu left at x 430, the three right at 640, 740, 840. The verse ribbon arcs over the gap from Abu to a point above the three (y 470..560), never across a face.",
+   "actions": [
+    {
+     "t": 21.8,
+     "end": 23.0,
+     "cue": {
+      "word": "أنشد",
+      "t": 21.82
+     },
+     "who": "abu",
+     "action": "strikes a reciting pose: one hand high, chin up",
+     "acting": "aR raised (pointUp), eyes half shut (lid 0.5), chest out (tip -0.06), talk on",
+     "library": "PERSON_HANDS.pointUp, talk"
+    },
+    {
+     "t": 23.1,
+     "end": 24.8,
+     "cue": {
+      "word": "أبياتًا",
+      "t": 23.18
+     },
+     "who": "verseRibbon",
+     "action": "the verse ribbon unrolls from his raised hand toward the three",
+     "acting": "ribbon grows along a bezier (430,560) > (620,440) > (800,520); squiggle lines write on as it grows",
+     "library": "verseRibbon (planned, AN-103)"
+    },
+    {
+     "t": 25.3,
+     "end": 26.3,
+     "cue": {
+      "word": "الوليمة",
+      "t": 25.4
+     },
+     "who": "verseRibbon",
+     "action": "icons pop on the ribbon: roast dish, sweets, cup",
+     "acting": "each of the three follows a different icon with his eyes; g3 licks his lips (mouth o then smile)",
+     "library": "verseRibbon icons, lookAt"
+    },
+    {
+     "t": 26.3,
+     "end": 27.5,
+     "cue": {
+      "word": "ومتعتها",
+      "t": 26.32
+     },
+     "who": "g2",
+     "action": "g2 rubs his stomach, g1 nudges g3 with an elbow",
+     "acting": "small secondary bounces (sq 0.97), smiles growing",
+     "library": "PERSON_HANDS.chest, stagger"
+    },
+    {
+     "t": 27.8,
+     "end": 28.5,
+     "cue": {
+      "word": "فقبلوا",
+      "t": 27.84
+     },
+     "who": "g1",
+     "action": "all three nod yes, one after another, hands on hearts",
+     "acting": "nods staggered 0.15 s, mouths smile",
+     "library": "stagger(i), PERSON_HANDS.chest"
+    },
+    {
+     "t": 28.5,
+     "end": 29.32,
+     "cue": {
+      "word": "الدعوة",
+      "t": 28.54
+     },
+     "who": "abu",
+     "action": "turns and leads; the three fall in behind him toward the door",
+     "acting": "Abu hop of joy (10 units) then walk left; followers start 0.2 s apart",
+     "library": "hop, walk, stagger"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 27.62,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "wipe",
+    "t": 29.32
+   }
+  },
+  {
+   "id": "S4",
+   "start": 29.32,
+   "end": 44.68,
+   "paragraphs": [
+    2
+   ],
+   "set": "poetHouse",
+   "cast": [
+    "abu",
+    "g1",
+    "g2",
+    "g3"
+   ],
+   "summary": "The four sit and eat. The guests ask who is the most handsome; the poet gives each a different verse (moon, star, rose) and a courtly bow.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "Table shot (zoom 1.35, centre 520,740). During 35.9 to 40.6 the camera eases 60 units toward each guest in turn (g1, g2, g3) and returns to centre at 40.8."
+   },
+   "composition": "Guests sit on the cushions behind the table at x 380 (g1), 500 (g2), 620 (g3), sit 1 seat floor; Abu at the right end x 760 facing left. Verse ribbons rise to y 470..540 above each guest, clear of faces.",
+   "actions": [
+    {
+     "t": 29.3,
+     "end": 30.4,
+     "cue": {
+      "word": "جلسوا",
+      "t": 29.32
+     },
+     "who": "g1",
+     "action": "the three sit down one after another on the cushions; Abu sits last",
+     "acting": "sit 0 to 1 with a small squash on landing, staggered 0.2 s",
+     "library": "person {sit, seat:'floor'}, settleTo, stagger"
+    },
+    {
+     "t": 30.4,
+     "end": 31.3,
+     "cue": {
+      "word": "يأكلون",
+      "t": 30.46
+     },
+     "who": "g2",
+     "action": "hands go to the trays; g2 takes a big bite, cheeks working",
+     "acting": "chewing cheek bounce 4 Hz, eyes shut with pleasure (lid 0.9)",
+     "library": "handLW/handRW to the tray"
+    },
+    {
+     "t": 31.3,
+     "end": 32.8,
+     "cue": {
+      "word": "ويشربون",
+      "t": 31.36
+     },
+     "who": "goblet",
+     "action": "four cups rise and tip together, then come down",
+     "acting": "Abu drains his and beams; cups staggered 0.1 s",
+     "library": "goblet {tilt} (planned AN-099)"
+    },
+    {
+     "t": 33.1,
+     "end": 34.0,
+     "cue": {
+      "word": "سألوه",
+      "t": 33.22
+     },
+     "who": "g1",
+     "action": "g1 leans in toward Abu and asks, pointing along the row of three",
+     "acting": "talk, tip 0.08, gaze to Abu; the other two look at Abu too",
+     "library": "PERSON_HANDS.pointFwd, lookAt"
+    },
+    {
+     "t": 34.0,
+     "end": 35.8,
+     "cue": {
+      "word": "أيهم",
+      "t": 34.04
+     },
+     "who": "fx",
+     "action": "a \"?\" hops over g1, g2, g3 in turn; each strikes a small pose when it is over him",
+     "acting": "g1 chin up, g2 strokes moustache, g3 smooths turban; Abu taps his chin, eyes going down the row",
+     "library": "S.label \"?\" keyed, PERSON_HANDS.chin, gazePlan"
+    },
+    {
+     "t": 35.9,
+     "end": 36.9,
+     "cue": {
+      "word": "اختار",
+      "t": 35.9
+     },
+     "who": "abu",
+     "action": "raises a finger: he has it",
+     "acting": "pointUp, brow -0.4, bright smile, 0.1 s dip before",
+     "library": "anticipate, PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 36.9,
+     "end": 37.6,
+     "cue": {
+      "word": "واحد",
+      "t": 37.02
+     },
+     "who": "verseRibbon",
+     "action": "verse 1 to g1: short ribbon with a crescent moon icon",
+     "acting": "g1 looks up at his ribbon, pleased, sits taller (sq 1.04)",
+     "library": "verseRibbon small + moon icon"
+    },
+    {
+     "t": 37.6,
+     "end": 38.6,
+     "cue": {
+      "word": "وصفًا",
+      "t": 37.66
+     },
+     "who": "verseRibbon",
+     "action": "verse 2 to g2: ribbon with a star icon",
+     "acting": "g2 claps once; g1 glances sideways to compare",
+     "library": "verseRibbon small + star icon"
+    },
+    {
+     "t": 38.6,
+     "end": 39.5,
+     "cue": {
+      "word": "شعريًا",
+      "t": 38.6
+     },
+     "who": "verseRibbon",
+     "action": "verse 3 to g3: ribbon with a rose icon",
+     "acting": "g3 hides a shy smile behind a hand (mouthCover)",
+     "library": "verseRibbon small + rose icon, PERSON_HANDS.mouthCover"
+    },
+    {
+     "t": 39.5,
+     "end": 40.6,
+     "cue": {
+      "word": "مختلفًا",
+      "t": 39.46
+     },
+     "who": "fx",
+     "action": "the three icons pulse together: moon, star, rose, all different, no winner",
+     "acting": "the three compare ribbons, then laugh together; Abu spreads his palms (palmsUp)",
+     "library": "S.emphasis, PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 40.8,
+     "end": 42.2,
+     "cue": {
+      "word": "وأبدى",
+      "t": 40.8
+     },
+     "who": "abu",
+     "action": "hand on heart, a deep seated bow to the three",
+     "acting": "tip 0.14 forward and back, eyes shut on the bow",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 42.6,
+     "end": 44.68,
+     "cue": {
+      "word": "وقبّلهم",
+      "t": 42.72
+     },
+     "who": "abu",
+     "action": "a courtly salute to each guest in turn: fingertips to his lips then opened toward them (not a contact kiss)",
+     "acting": "three small gestures 0.5 s apart; each guest answers with a hand on heart nod; ribbons roll up",
+     "library": "hand targets, stagger(i)"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 44.68
+   }
+  },
+  {
+   "id": "S5",
+   "start": 44.68,
+   "end": 52.82,
+   "paragraphs": [
+    3
+   ],
+   "set": "poetHouse",
+   "cast": [
+    "abu",
+    "g1",
+    "g2",
+    "g3"
+   ],
+   "summary": "The party grows merry: the poet sways with a crooked turban, the guests clap along, until a knock at the door freezes everyone.",
+   "camera": {
+    "shot": "medium",
+    "move": "whip",
+    "notes": "Table shot as before; on the knock (50.7) a fast whip pan left to the door (centre 240,700, zoom 1.25) then settle so the door and the four are all in frame."
+   },
+   "composition": "Door in the left wall (MERCHANT.door, approximate x 60..170, measure on the set). The four are to the right of it; all eye lines snap left to the door.",
+   "actions": [
+    {
+     "t": 44.7,
+     "end": 45.6,
+     "cue": {
+      "word": "اشتد",
+      "t": 44.68
+     },
+     "who": "abu",
+     "action": "stands up from his cushion, cup raised",
+     "acting": "sit 1 to 0 with overshoot, wide grin",
+     "library": "person sit, settleTo"
+    },
+    {
+     "t": 45.6,
+     "end": 47.0,
+     "cue": {
+      "word": "السكر",
+      "t": 45.6
+     },
+     "who": "abu",
+     "action": "sways side to side, turban slipped crooked, three small stars circling his head",
+     "acting": "tip oscillating +/-0.08 at 0.7 Hz, lid 0.4, turban offset (planned headwear offset)",
+     "library": "planned person headwear offset; S.emphasis stars"
+    },
+    {
+     "t": 47.0,
+     "end": 48.2,
+     "cue": {
+      "word": "واستمر",
+      "t": 47.04
+     },
+     "who": "g1",
+     "action": "the three clap in time, each on his own beat; g2 drums on the table",
+     "acting": "small hops in their seats (sq pulses), mouths open laughing",
+     "library": "person laugh (planned), stagger"
+    },
+    {
+     "t": 48.2,
+     "end": 49.4,
+     "cue": {
+      "word": "اللهو",
+      "t": 48.2
+     },
+     "who": "abu",
+     "action": "attempts a twirl and wobbles, catching himself on one foot",
+     "acting": "anticipate, a half spin faked with a sq squeeze to 0.75 and back (turnFlip idea), arms out",
+     "library": "turnFlip-style squeeze, PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 49.5,
+     "end": 50.6,
+     "cue": {
+      "word": "سمع",
+      "t": 49.48
+     },
+     "who": "abu",
+     "action": "freezes mid sway, one hand cupped to his ear",
+     "acting": "cupEar, eyes wide, suspense by stillness: only the pupils move left",
+     "library": "PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 50.7,
+     "end": 51.7,
+     "cue": {
+      "word": "طرقًا",
+      "t": 50.72
+     },
+     "who": "set",
+     "action": "the door shakes with three knocks; sound arcs at the door",
+     "acting": "door leaf jolts 3 units on each knock (strike cycle, damped)",
+     "library": "strike cycle pattern, soundArcs"
+    },
+    {
+     "t": 51.6,
+     "end": 52.82,
+     "cue": {
+      "word": "الباب",
+      "t": 51.76
+     },
+     "who": "g1",
+     "action": "all four heads snap to the door, staggered; cups stop in mid air",
+     "acting": "gaze left, mouths o, the stars over Abu drop away, g3 half hides behind g2",
+     "library": "lookAt, stagger(i)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 50.75,
+     "text": "KNOCK! KNOCK!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 52.82
+   }
+  },
+  {
+   "id": "S6",
+   "start": 52.82,
+   "end": 64.54,
+   "paragraphs": [
+    3
+   ],
+   "set": "poetHouse",
+   "cast": [
+    "abu",
+    "caliph",
+    "g1",
+    "g2",
+    "g3"
+   ],
+   "summary": "The door opens on Caliph Harun al-Rashid. Everyone scrambles up respectfully; the caliph looks over the feast and asks what is going on.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Reveal: start on the door (zoom 1.5) as it opens, pull to the full room by 56.5 (zoom 1.0), then from 59.3 push in to a two-shot of caliph (x 230) and Abu (x 480), zoom 1.4."
+   },
+   "composition": "Caliph stands in the doorway then at x 230, the tallest figure (s 1.05). Abu comes forward to x 480; the three guests line up behind the table at 560, 660, 760, heads bowed. Caliph eye line passes over the table.",
+   "actions": [
+    {
+     "t": 52.8,
+     "end": 53.8,
+     "cue": {
+      "word": "دخل",
+      "t": 52.82
+     },
+     "who": "set",
+     "action": "the door swings open, daylight wedge on the floor",
+     "acting": "door open 0 to 1 with settle",
+     "library": "palaceHall merchant {doorOpen}"
+    },
+    {
+     "t": 53.3,
+     "end": 54.6,
+     "cue": {
+      "word": "الخليفة",
+      "t": 53.3
+     },
+     "who": "caliph",
+     "action": "the caliph steps through the doorway and stops",
+     "acting": "slow heavy walk (two steps), chin up, brow 0.5, gaze sweeping the room",
+     "library": "person {costume:'caliph'} + walk + footfalls"
+    },
+    {
+     "t": 54.6,
+     "end": 55.3,
+     "cue": {
+      "word": "الرشيد",
+      "t": 54.66
+     },
+     "who": "fx",
+     "action": "arrow + label THE CALIPH above him (clear of the crown)",
+     "acting": "label pops with a 2-frame overshoot",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 55.3,
+     "end": 56.5,
+     "cue": {
+      "word": "فجأة",
+      "t": 55.28
+     },
+     "who": "abu",
+     "action": "shock: jumps, turban hops off his head and lands straight again",
+     "acting": "eyes wide, sq 1.1 stretch then 0.9, look to camera for 6 frames",
+     "library": "hop, landSquash, planned turban hop"
+    },
+    {
+     "t": 56.5,
+     "end": 57.2,
+     "cue": {
+      "word": "فنهض",
+      "t": 56.56
+     },
+     "who": "g1",
+     "action": "the three scramble to their feet one after another; a cup rolls on the table",
+     "acting": "sit 1 to 0 fast with overshoot, staggered 0.15 s; g3 last, wiping his mouth",
+     "library": "stagger(i), settleTo"
+    },
+    {
+     "t": 57.2,
+     "end": 59.2,
+     "cue": {
+      "word": "احترامًا",
+      "t": 58.14
+     },
+     "who": "g2",
+     "action": "all four bow, hands clasped; Abu bows lowest and peeks up",
+     "acting": "tip 0.16, clasp hands; Abu one eye open (wink) watching the caliph",
+     "library": "PERSON_HANDS.clasp, person wink:'L'"
+    },
+    {
+     "t": 59.3,
+     "end": 60.6,
+     "cue": {
+      "word": "سأل",
+      "t": 59.32
+     },
+     "who": "caliph",
+     "action": "the caliph walks two steps to the table, picks up a cup, looks into it, sets it down",
+     "acting": "eyes down into the cup then slowly up to Abu, lid 0.3 (cool), no smile",
+     "library": "handRW to the cup, gazePlan"
+    },
+    {
+     "t": 60.7,
+     "end": 61.8,
+     "cue": {
+      "word": "أبا",
+      "t": 60.76
+     },
+     "who": "caliph",
+     "action": "points at Abu",
+     "acting": "pointFwd, talk, brow 0.6; Abu straightens, hands behind him, innocent smile (brow -0.5)",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 62.5,
+     "end": 64.54,
+     "cue": {
+      "word": "يحدث",
+      "t": 62.54
+     },
+     "who": "caliph",
+     "action": "sweeps his hand over the table, the cups, the three guests: what is all this?",
+     "acting": "palmsUp sweep, head tilt; each guest shrinks a little as the hand passes (sq 0.95, staggered); big \"?\" balloon above the caliph",
+     "library": "PERSON_HANDS.palmsUp, iconBalloon \"?\" (planned)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 55.4,
+     "text": "THE CALIPH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 64.54
+   }
+  },
+  {
+   "id": "S7",
+   "start": 64.54,
+   "end": 79.76,
+   "paragraphs": [
+    4
+   ],
+   "set": "poetHouse",
+   "cast": [
+    "abu",
+    "caliph",
+    "g1",
+    "g2",
+    "g3"
+   ],
+   "summary": "Harun mocks him with a pretend appointment: judge of this mischief. The poet cheekily asks whether the caliph has a case of his own to bring.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Two-shot of caliph and Abu (twoShot margin 80, zoom 1.4). At 75.7 push to zoom 1.65 on Abu for the quip, pulling back at 78.7 to include the caliph face for the reaction."
+   },
+   "composition": "Caliph left (x 300), Abu right (x 520), guests soft in the background at 640..820, watching like a tennis match. The mock judge turban is held between the two men at y 560 before it lands.",
+   "actions": [
+    {
+     "t": 64.5,
+     "end": 65.7,
+     "cue": {
+      "word": "سخر",
+      "t": 64.54
+     },
+     "who": "caliph",
+     "action": "a slow mocking smile, one eyebrow up",
+     "acting": "mouth 'smirk' or one-sided smile, lid 0.4, tip -0.05 (leans back)",
+     "library": "person mouth, brow"
+    },
+    {
+     "t": 65.8,
+     "end": 66.9,
+     "cue": {
+      "word": "هارون",
+      "t": 65.76
+     },
+     "who": "caliph",
+     "action": "slow sarcastic clap, twice",
+     "acting": "hands meet at chest height on 65.9 and 66.5, head shaking a little",
+     "library": "hand targets"
+    },
+    {
+     "t": 67.6,
+     "end": 68.5,
+     "cue": {
+      "word": "لقد",
+      "t": 67.66
+     },
+     "who": "caliph",
+     "action": "raises his hand like a formal proclamation",
+     "acting": "pointUp, chin up, talk",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 68.5,
+     "end": 69.3,
+     "cue": {
+      "word": "عينتك",
+      "t": 68.52
+     },
+     "who": "judgeTurban",
+     "action": "takes a napkin from the table, twists it into an oversized turban shape and drops it on Abu head",
+     "acting": "the turban lands with a squash (Abu sq 0.92) and sits too big, covering his brows",
+     "library": "planned judge preset turban as a loose prop; landSquash"
+    },
+    {
+     "t": 69.3,
+     "end": 70.3,
+     "cue": {
+      "word": "قاضيًا",
+      "t": 69.34
+     },
+     "who": "fx",
+     "action": "arrow + label JUDGE pointing at the giant turban",
+     "acting": "Abu eyes roll up to look at it",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 70.4,
+     "end": 71.9,
+     "cue": {
+      "word": "أهل",
+      "t": 70.48
+     },
+     "who": "caliph",
+     "action": "sweeps his arm over the whole room: judge over this lot",
+     "acting": "pointFwd sweep across the guests; each guest flinches in turn (stagger)",
+     "library": "PERSON_HANDS.pointFwd, stagger(i)"
+    },
+    {
+     "t": 72.0,
+     "end": 72.8,
+     "cue": {
+      "word": "الفساد",
+      "t": 72.04
+     },
+     "who": "fx",
+     "action": "label OF MISCHIEF pops under JUDGE",
+     "acting": "guests look at the floor; the caliph folds his arms, satisfied",
+     "library": "S.label, PERSON_HANDS.folded"
+    },
+    {
+     "t": 72.9,
+     "end": 73.8,
+     "cue": {
+      "word": "أجاب",
+      "t": 72.8
+     },
+     "who": "abu",
+     "action": "pushes the big turban up off his eyes with one finger",
+     "acting": "eyes reappear, a spark: brow -0.5, small smile growing",
+     "library": "PERSON_HANDS.pointUp to the turban rim"
+    },
+    {
+     "t": 74.4,
+     "end": 75.6,
+     "cue": {
+      "word": "مازحًا",
+      "t": 74.48
+     },
+     "who": "abu",
+     "action": "adjusts the turban like a real judge, clears his throat, mock solemn",
+     "acting": "chin up, lid 0.5, hand to chest, a tiny wink to the guests",
+     "library": "PERSON_HANDS.chest, wink:'R'"
+    },
+    {
+     "t": 75.7,
+     "end": 77.2,
+     "cue": {
+      "word": "وهل",
+      "t": 75.7
+     },
+     "who": "abu",
+     "action": "opens an imaginary court ledger on his palm and looks at the caliph",
+     "acting": "palmsUp (one palm as the book), talk, innocent raised brows",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 77.2,
+     "end": 78.6,
+     "cue": {
+      "word": "تريد",
+      "t": 77.26
+     },
+     "who": "abu",
+     "action": "beckons the caliph forward with one finger: next case, please",
+     "acting": "hand curl beckon twice; guests eyes go wide, g2 covers his mouth",
+     "library": "hand targets, PERSON_HANDS.mouthCover"
+    },
+    {
+     "t": 78.7,
+     "end": 79.76,
+     "cue": {
+      "word": "علي",
+      "t": 78.7
+     },
+     "who": "iconBalloon",
+     "action": "icon balloon from Abu: a scroll with a \"?\" and a small arrow pointing at the caliph",
+     "acting": "beat of silence staging: everyone frozen, only the guests pupils flick to the caliph",
+     "library": "iconBalloon (planned), gazePlan saccade"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 69.4,
+     "text": "JUDGE?!"
+    },
+    {
+     "t": 78.75,
+     "text": "ANY CASE FOR ME?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 79.76
+   }
+  },
+  {
+   "id": "S8",
+   "start": 79.76,
+   "end": 86.62,
+   "paragraphs": [
+    4
+   ],
+   "set": "poetHouse",
+   "cast": [
+    "abu",
+    "caliph",
+    "g1",
+    "g2",
+    "g3"
+   ],
+   "summary": "The caliph understands the hint, goes red with anger and storms out without punishing him yet. The door slams; the poet gulps.",
+   "camera": {
+    "shot": "close",
+    "move": "pull-out",
+    "notes": "Close on the caliph face (zoom 1.9) for the slow understanding, pull out at 83.0 to the full room as he leaves; 2 frame panel-only shake on the slam at 84.0."
+   },
+   "composition": "Caliph face centred at (500,520) in the close shot, well above the caption panel. On the pull-out the caliph exits left, Abu centre, guests right.",
+   "actions": [
+    {
+     "t": 79.8,
+     "end": 80.9,
+     "cue": {
+      "word": "فهم",
+      "t": 79.76
+     },
+     "who": "caliph",
+     "action": "the smirk drops; a slow blink",
+     "acting": "mouth to closed, one long blink (lid 0 > 1 > 0 over 0.5 s), pupils slide to Abu",
+     "library": "lid, gazePlan"
+    },
+    {
+     "t": 81.0,
+     "end": 81.8,
+     "cue": {
+      "word": "التلميح",
+      "t": 81.02
+     },
+     "who": "caliph",
+     "action": "eyes widen: he gets it",
+     "acting": "eyes wide, brow -0.6 then snapping to +1",
+     "library": "settleTo"
+    },
+    {
+     "t": 81.9,
+     "end": 83.0,
+     "cue": {
+      "word": "فغضب",
+      "t": 81.88
+     },
+     "who": "caliph",
+     "action": "anger flush climbs his face, two steam puffs",
+     "acting": "red dots climbing chin to brow, fists (grip), tremble 2",
+     "library": "planned flush expression, tremble"
+    },
+    {
+     "t": 83.1,
+     "end": 84.0,
+     "cue": {
+      "word": "وخرج",
+      "t": 83.08
+     },
+     "who": "caliph",
+     "action": "spins round (cape swings a beat late) and strides out of the door",
+     "acting": "turn with squeeze, fast walk left, cape lag 3 frames",
+     "library": "turnFlip-style squeeze, walk, footfalls"
+    },
+    {
+     "t": 84.0,
+     "end": 84.8,
+     "cue": {
+      "word": "دون",
+      "t": 84.1
+     },
+     "who": "set",
+     "action": "the door slams; cups hop on the table, a lamp swings",
+     "acting": "kick on small props, damped swing on the lamp",
+     "library": "kick, swing, hangingLamp"
+    },
+    {
+     "t": 84.8,
+     "end": 85.7,
+     "cue": {
+      "word": "يعاقبه",
+      "t": 84.82
+     },
+     "who": "abu",
+     "action": "looks at the shut door, takes off the big turban, gulps",
+     "acting": "gaze to the door, drop pulse (gulp), brow -0.6",
+     "library": "gaze, drop pulse"
+    },
+    {
+     "t": 85.7,
+     "end": 86.62,
+     "cue": {
+      "word": "فورًا",
+      "t": 85.78
+     },
+     "who": "g1",
+     "action": "the three tiptoe out past him in a line; Abu is left alone with the feast",
+     "acting": "sneak steps staggered, gaze on Abu then away; Abu gives the camera a small uneasy smile",
+     "library": "planned sneak gait, stagger, look to camera"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 82.0,
+     "text": "HMPH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 86.62,
+    "label": "NEXT DAY..."
+   }
+  },
+  {
+   "id": "S9",
+   "start": 86.62,
+   "end": 98.8,
+   "paragraphs": [
+    5
+   ],
+   "set": "court",
+   "cast": [
+    "abu",
+    "caliph",
+    "masrur",
+    "jaafar"
+   ],
+   "summary": "Next day Abu strolls into court as usual. The caliph, stone faced on the throne, orders the guard Masrur to take away his fine robe; the change happens behind a folding screen.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Hall wide (zoom 1.0) as Abu enters by the left door arch; pan right with him to x 380; hold a three figure composition (Abu, Masrur, caliph) from 92.7."
+   },
+   "composition": "palaceHall palace: door arch x 40..250, dais x 560..900 top y 860, caliph on the throne (HALL.throne), Jaafar standing on the dais right at x 870, Masrur on the floor at x 520. Folding screen at x 150..330, top y 640, beside the door.",
+   "actions": [
+    {
+     "t": 87.2,
+     "end": 88.3,
+     "cue": {
+      "word": "اليوم",
+      "t": 87.2
+     },
+     "who": "set",
+     "action": "the sun rises in the door arch; hall lamps off",
+     "acting": "sky through the door goes dawn to day",
+     "library": "palaceHall {u} / skyCycle"
+    },
+    {
+     "t": 88.3,
+     "end": 90.1,
+     "cue": {
+      "word": "ذهب",
+      "t": 88.32
+     },
+     "who": "abu",
+     "action": "walks in through the door arch whistling, x 80 to 380",
+     "acting": "jaunty walk, mouth o, eyes half shut, as if nothing happened",
+     "library": "walk, footfalls"
+    },
+    {
+     "t": 90.2,
+     "end": 91.7,
+     "cue": {
+      "word": "إلى",
+      "t": 90.18
+     },
+     "who": "abu",
+     "action": "gives the court his usual flourish of a bow",
+     "acting": "tip 0.14, armsOut, big smile up at the throne",
+     "library": "PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 91.8,
+     "end": 92.6,
+     "cue": {
+      "word": "كعادته",
+      "t": 91.8
+     },
+     "who": "caliph",
+     "action": "no answer: the caliph sits like a stone, arms folded",
+     "acting": "folded arms, lid 0.4, no blink (noBlink), brow 0.8; Abu smile falters; Jaafar eyes flick between them",
+     "library": "person {sit:1, seat:'bench', y: sitY}, PERSON_HANDS.folded"
+    },
+    {
+     "t": 92.7,
+     "end": 93.5,
+     "cue": {
+      "word": "لكن",
+      "t": 92.7
+     },
+     "who": "abu",
+     "action": "straightens slowly, smile gone",
+     "acting": "gaze up at the caliph, brow -0.5, sq 0.97",
+     "library": "settleTo"
+    },
+    {
+     "t": 94.4,
+     "end": 95.0,
+     "cue": {
+      "word": "أمر",
+      "t": 94.42
+     },
+     "who": "caliph",
+     "action": "raises one hand and snaps his fingers",
+     "acting": "arm up, short sharp move, no change of face",
+     "library": "hand target"
+    },
+    {
+     "t": 95.0,
+     "end": 96.6,
+     "cue": {
+      "word": "الحارس",
+      "t": 95.02
+     },
+     "who": "masrur",
+     "action": "Masrur steps forward one heavy step; arrow + label MASRUR",
+     "acting": "heavy footfall with dust and a 2 unit hop of Abu; heavy lids (0.4), arms folded then open",
+     "library": "person {costume:'executioner'} (planned), footfalls, kick; S.label"
+    },
+    {
+     "t": 97.0,
+     "end": 98.0,
+     "cue": {
+      "word": "ينزع",
+      "t": 97.02
+     },
+     "who": "masrur",
+     "action": "points Abu behind the folding screen; Abu goes, looking back over his shoulder",
+     "acting": "pointFwd; Abu walks left to x 240 behind the screen, gaze back at the throne",
+     "library": "bathScreen (planned AN-090) drawn after Abu so it hides him"
+    },
+    {
+     "t": 98.0,
+     "end": 98.8,
+     "cue": {
+      "word": "ثيابه",
+      "t": 98.04
+     },
+     "who": "bathScreen",
+     "action": "the green robe and the turban flop over the top of the screen, one after the other",
+     "acting": "cloth shapes arc up and hang with a damped swing; only Abu worried eyes show over the screen top",
+     "library": "swing, simple cloth polygons"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 98.8
+   }
+  },
+  {
+   "id": "S10",
+   "start": 98.8,
+   "end": 106.44,
+   "paragraphs": [
+    5
+   ],
+   "set": "court",
+   "cast": [
+    "abu",
+    "caliph",
+    "masrur",
+    "jaafar"
+   ],
+   "summary": "Abu comes out in a plain long white shirt; Masrur straps a donkey saddle on his back. The caliph gives the rest of the order in pictures: parade him before the palace ladies, and then the sword.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on Abu and Masrur (zoom 1.35, centre 330,720); at 101.9 widen to include the caliph and his order balloon; at 105.5 push in on Abu face (zoom 1.7)."
+   },
+   "composition": "Abu at x 330 in front of the screen, Masrur at x 450. The order balloon sits above the caliph at (700, 380), 300 x 170, three small icons in a strip. Abu face stays above y 700.",
+   "actions": [
+    {
+     "t": 98.8,
+     "end": 99.6,
+     "cue": {
+      "word": "ويضع",
+      "t": 98.8
+     },
+     "who": "abu",
+     "action": "steps out from behind the screen in a long plain white shirt, bare headed, barefoot",
+     "acting": "small embarrassed steps, hands clasped in front, gaze down",
+     "library": "person {costume:'ascetic' recoloured plain white, no headwear} (the 'plainShirt' look)"
+    },
+    {
+     "t": 99.7,
+     "end": 100.7,
+     "cue": {
+      "word": "ظهره",
+      "t": 100.0
+     },
+     "who": "masrur",
+     "action": "lifts the donkey saddle from the floor and holds it up behind Abu",
+     "acting": "both arms up, slow; Abu eyes slide sideways to see it",
+     "library": "handLW/handRW on the saddle; packSaddle prop"
+    },
+    {
+     "t": 100.7,
+     "end": 101.2,
+     "cue": {
+      "word": "سرج",
+      "t": 100.74
+     },
+     "who": "packSaddle",
+     "action": "the saddle drops onto his shoulders; Abu sags under it",
+     "acting": "impact squash 0.88 for 2 frames, rebound, settle with a 0.06 forward stoop",
+     "library": "impactSquash, rebound"
+    },
+    {
+     "t": 101.2,
+     "end": 101.9,
+     "cue": {
+      "word": "حمار",
+      "t": 101.18
+     },
+     "who": "masrur",
+     "action": "pulls the girth strap tight across his chest and hands him the lead rope end; arrow + label DONKEY SADDLE",
+     "acting": "strap tug: Abu jerks 4 units (tip -0.05), mouth o",
+     "library": "rope lead (planned), S.arrow, S.label"
+    },
+    {
+     "t": 101.9,
+     "end": 102.7,
+     "cue": {
+      "word": "ثم",
+      "t": 101.92
+     },
+     "who": "iconBalloon",
+     "action": "order balloon pops above the caliph, first frame empty",
+     "acting": "caliph points away toward the inner palace without looking at Abu",
+     "library": "iconBalloon strip mode (planned), PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 102.8,
+     "end": 103.6,
+     "cue": {
+      "word": "يطوف",
+      "t": 102.76
+     },
+     "who": "iconBalloon",
+     "action": "icon 1: a looping walking path arrow",
+     "acting": "Abu and Masrur both look up at the balloon",
+     "library": "iconBalloon icon"
+    },
+    {
+     "t": 104.2,
+     "end": 105.4,
+     "cue": {
+      "word": "نساء",
+      "t": 104.24
+     },
+     "who": "iconBalloon",
+     "action": "icon 2: three small veiled lady heads, laughing",
+     "acting": "Abu covers his face with one hand (shame), peeks between fingers",
+     "library": "iconBalloon icon, PERSON_HANDS.headHold"
+    },
+    {
+     "t": 105.5,
+     "end": 106.44,
+     "cue": {
+      "word": "ويقتله",
+      "t": 105.52
+     },
+     "who": "iconBalloon",
+     "action": "icon 3: a plain scimitar icon; Masrur rests a hand on the sheathed sword at his belt",
+     "acting": "Abu eyes wide, gulp (drop pulse), look to camera; Jaafar winces and looks away",
+     "library": "iconBalloon icon, sword prop sheathed (planned), look to camera"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 106.44
+   }
+  },
+  {
+   "id": "S11",
+   "start": 106.44,
+   "end": 118.12,
+   "paragraphs": [
+    6
+   ],
+   "set": "womensHall",
+   "cast": [
+    "abu",
+    "masrur",
+    "l1",
+    "l2",
+    "l3"
+   ],
+   "summary": "Masrur leads the saddled poet through the ladies' hall. Abu refuses to be humiliated: he plays the donkey for laughs, with brays, ear flaps and a hoof count.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Track with the pair from the left edge to x 420 (zoom 1.1); from 113.8 hold a full shot of Abu's act with the three ladies behind him (zoom 1.25, centre 500,700)."
+   },
+   "composition": "Blue hall with three arches (measure with HALL anchors; approximate arch centres x 420, 580, 740). The ladies stand at the arches, a little upstage (y 880, s 0.85): l1 x 420, l2 x 580, l3 x 740. Masrur leads on the floor line y 900, the rope between his hand and the saddle ring.",
+   "actions": [
+    {
+     "t": 106.4,
+     "end": 108.0,
+     "cue": {
+      "word": "قاد",
+      "t": 106.44
+     },
+     "who": "masrur",
+     "action": "Masrur walks in from the left holding the lead rope, x -80 to 200",
+     "acting": "slow heavy walk, eyes front, bored lids",
+     "library": "walk, footfalls, rope lead (planned)"
+    },
+    {
+     "t": 107.9,
+     "end": 109.2,
+     "cue": {
+      "word": "الشاعر",
+      "t": 108.12
+     },
+     "who": "abu",
+     "action": "Abu follows on the rope, bent under the saddle",
+     "acting": "stoop tip 0.1, gaze down, slow steps; rope sags and goes taut",
+     "library": "walk, rope sag/taut"
+    },
+    {
+     "t": 109.2,
+     "end": 110.5,
+     "cue": {
+      "word": "غرف",
+      "t": 109.24
+     },
+     "who": "l1",
+     "action": "the three ladies step into the arches one by one to look",
+     "acting": "staggered entrances (alpha 0 to 1 with a step), hands to mouths, eyes wide",
+     "library": "person {costume:'lady' / 'maiden' / 'oldWoman'}, stagger(i)"
+    },
+    {
+     "t": 110.5,
+     "end": 111.7,
+     "cue": {
+      "word": "منتظرًا",
+      "t": 110.54
+     },
+     "who": "masrur",
+     "action": "stops, plants his feet, pats the sword at his belt and waits",
+     "acting": "folded arms, slow blink; Abu bumps into the stop with a lurch",
+     "library": "lurch(t, tStop), PERSON_HANDS.folded"
+    },
+    {
+     "t": 111.7,
+     "end": 113.7,
+     "cue": {
+      "word": "تنفيذ",
+      "t": 111.74
+     },
+     "who": "abu",
+     "action": "looks at the sword, at the ladies, at the camera: an idea",
+     "acting": "gazePlan sword > ladies > camera, then brow -0.5 and a slow smile",
+     "library": "gazePlan, look to camera"
+    },
+    {
+     "t": 113.8,
+     "end": 115.0,
+     "cue": {
+      "word": "لم",
+      "t": 113.8
+     },
+     "who": "abu",
+     "action": "straightens up under the saddle and shakes himself like a donkey",
+     "acting": "sq stretch 1.06, shake 6 Hz for 0.5 s, saddle rattles",
+     "library": "tremble, settleTo"
+    },
+    {
+     "t": 115.0,
+     "end": 116.4,
+     "cue": {
+      "word": "أبو",
+      "t": 115.04
+     },
+     "who": "abu",
+     "action": "makes donkey ears with both hands above his head and flaps them",
+     "acting": "hands up beside the head (aL/aR angles), flapping 3 Hz, eyes crossed inward",
+     "library": "aL/aR angles [2.45, 2.85] keyed"
+    },
+    {
+     "t": 116.4,
+     "end": 117.1,
+     "cue": {
+      "word": "المزاح",
+      "t": 116.44
+     },
+     "who": "abu",
+     "action": "throws his head back and brays",
+     "acting": "mouth 'open', tip -0.12, eyes shut; sound arcs from his mouth",
+     "library": "person mouth, soundArcs"
+    },
+    {
+     "t": 117.1,
+     "end": 118.12,
+     "cue": {
+      "word": "والتمثيل",
+      "t": 117.14
+     },
+     "who": "abu",
+     "action": "paws the floor three times like a counting donkey, then bows to the ladies",
+     "acting": "one foot taps (small hops 4 units) with dust; Masrur stares at him, one eyebrow rising",
+     "library": "hop, dustBurst, countedBeats"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 116.5,
+     "text": "HEE HAW!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 118.12
+   }
+  },
+  {
+   "id": "S12",
+   "start": 118.12,
+   "end": 122.82,
+   "paragraphs": [
+    6
+   ],
+   "set": "womensHall",
+   "cast": [
+    "abu",
+    "masrur",
+    "l1",
+    "l2",
+    "l3"
+   ],
+   "summary": "The ladies burst out laughing and shower him with coins and small gifts, which pile up in his saddle.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Hold the act shot (zoom 1.25); no camera move so the falling gifts read."
+   },
+   "composition": "Gifts arc from each lady (y 620) down to Abu at x 420; a coin counter sits top left of the panel at (150,130), clear of all faces.",
+   "actions": [
+    {
+     "t": 118.1,
+     "end": 119.4,
+     "cue": {
+      "word": "فضحكت",
+      "t": 118.12
+     },
+     "who": "l2",
+     "action": "the ladies laugh, each differently",
+     "acting": "l1 behind her hand, l2 head thrown back, l3 (old) slapping her knee; never in unison",
+     "library": "person laugh helper (planned), stagger(i)"
+    },
+    {
+     "t": 119.4,
+     "end": 120.1,
+     "cue": {
+      "word": "النساء",
+      "t": 119.42
+     },
+     "who": "masrur",
+     "action": "Masrur's mouth twitches; he turns his face away to hide a smile",
+     "acting": "mask on / mask off: mouth 'smile' for 8 frames only while facing away",
+     "library": "person mouth, dir flip with squeeze"
+    },
+    {
+     "t": 120.1,
+     "end": 121.1,
+     "cue": {
+      "word": "وأعطته",
+      "t": 120.14
+     },
+     "who": "l1",
+     "action": "l1 tosses a purse; Abu catches it in the saddle with a little hop",
+     "acting": "arc with a weight dip on landing; Abu gaze tracks it",
+     "library": "purse (planned), hop, landSquash"
+    },
+    {
+     "t": 121.1,
+     "end": 121.9,
+     "cue": {
+      "word": "الهدايا",
+      "t": 121.16
+     },
+     "who": "l3",
+     "action": "l3 throws a flower and a bead necklace",
+     "acting": "two arcs staggered 0.2 s; the necklace hangs on a saddle horn and swings",
+     "library": "necklace (planned), swing"
+    },
+    {
+     "t": 121.9,
+     "end": 122.82,
+     "cue": {
+      "word": "والنقود",
+      "t": 121.88
+     },
+     "who": "coinPile",
+     "action": "coins rain from all three; a counter ticks up; coin heap grows in the saddle",
+     "acting": "Abu bows and brays a thank you; counter pops per coin",
+     "library": "coinPile (planned), S.counter"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 118.3,
+     "text": "HA HA HA!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 122.82
+   }
+  },
+  {
+   "id": "S13",
+   "start": 122.82,
+   "end": 129.64,
+   "paragraphs": [
+    6
+   ],
+   "set": "womensHall",
+   "cast": [
+    "abu",
+    "masrur",
+    "jaafar",
+    "l1",
+    "l2",
+    "l3"
+   ],
+   "summary": "Jaafar the Barmecide passes, stops dead at the sight and asks why on earth the poet looks like that.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pan",
+    "notes": "Pan right to meet Jaafar entering at x 900, then settle on a two-shot of Jaafar (x 700) and Abu (x 420), zoom 1.35."
+   },
+   "composition": "Jaafar enters from the right edge and stops at x 700, facing left. Abu at x 420 with the full saddle, Masrur at x 220. The ladies withdraw into the arches (alpha to 0.35) so the two-shot is clean.",
+   "actions": [
+    {
+     "t": 122.8,
+     "end": 123.9,
+     "cue": {
+      "word": "وعندما",
+      "t": 122.82
+     },
+     "who": "l1",
+     "action": "the ladies draw back into the arches, still giggling",
+     "acting": "alpha 1 to 0.35 staggered, small waves",
+     "library": "alpha, stagger(i)"
+    },
+    {
+     "t": 123.9,
+     "end": 124.6,
+     "cue": {
+      "word": "مر",
+      "t": 123.94
+     },
+     "who": "jaafar",
+     "action": "Jaafar walks in from the right reading a scroll, not looking",
+     "acting": "walk x 1000 to 760, eyes on the scroll",
+     "library": "person {costume:'vizier'}, walk, scroll (planned)"
+    },
+    {
+     "t": 124.6,
+     "end": 125.3,
+     "cue": {
+      "word": "جعفر",
+      "t": 124.64
+     },
+     "who": "fx",
+     "action": "arrow + label JAAFAR above him",
+     "acting": "label pops",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 125.3,
+     "end": 126.2,
+     "cue": {
+      "word": "البرمكي",
+      "t": 125.3
+     },
+     "who": "jaafar",
+     "action": "walks past, stops, does a double take back at Abu",
+     "acting": "two more steps, freeze, head snap (gaze right then hard left), scroll drops to his side, eyes wide",
+     "library": "gazePlan saccade, settleTo"
+    },
+    {
+     "t": 126.2,
+     "end": 127.1,
+     "cue": {
+      "word": "سأله",
+      "t": 126.24
+     },
+     "who": "jaafar",
+     "action": "points at the saddle with the scroll, then at the bare head",
+     "acting": "talk, pointFwd up and down, brow -0.7",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 127.1,
+     "end": 128.0,
+     "cue": {
+      "word": "عن",
+      "t": 127.16
+     },
+     "who": "iconBalloon",
+     "action": "small \"?\" balloon over Jaafar; arrow from it to the saddle",
+     "acting": "Masrur shrugs (palmsUp) behind Abu",
+     "library": "iconBalloon \"?\" (planned), PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 128.1,
+     "end": 129.64,
+     "cue": {
+      "word": "تلك",
+      "t": 128.1
+     },
+     "who": "abu",
+     "action": "Abu turns to Jaafar and composes himself: wipes the grin off his face with one hand",
+     "acting": "hand passes down the face; behind it the mouth changes from smile to a dead straight line, lids level",
+     "library": "PERSON_HANDS.mouthCover pass, mouth closed"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 129.38,
+     "kind": "tick"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 129.64
+   }
+  },
+  {
+   "id": "S14",
+   "start": 129.64,
+   "end": 138.88,
+   "paragraphs": [
+    7
+   ],
+   "set": "womensHall",
+   "cast": [
+    "abu",
+    "masrur",
+    "jaafar"
+   ],
+   "summary": "With a perfectly straight face Abu explains: I gave the caliph my finest poetry, so he gave me his finest clothes.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Medium close on Abu (zoom 1.6, centre 430,640) with Jaafar shoulder at frame right; slow push to 1.8 by 138.0, then a quick pull to the two-shot at 138.1 for the reaction."
+   },
+   "composition": "Abu face at about (430,600). The verse ribbon goes out to frame right at y 470; the \"finest clothes\" presentation uses both his hands at his own chest, so everything stays above y 800.",
+   "actions": [
+    {
+     "t": 129.6,
+     "end": 130.9,
+     "cue": {
+      "word": "أجاب",
+      "t": 129.64
+     },
+     "who": "abu",
+     "action": "draws himself up with great dignity under the saddle",
+     "acting": "chin up, lid 0.35, no smile at all, sq 1.03",
+     "library": "settleTo"
+    },
+    {
+     "t": 131.2,
+     "end": 132.2,
+     "cue": {
+      "word": "بوجه",
+      "t": 131.18
+     },
+     "who": "fx",
+     "action": "label STRAIGHT FACE with a small arrow to his flat mouth",
+     "acting": "the mouth line does not move; one slow blink",
+     "library": "S.label, S.arrow, lid"
+    },
+    {
+     "t": 132.2,
+     "end": 133.4,
+     "cue": {
+      "word": "قدمت",
+      "t": 132.24
+     },
+     "who": "abu",
+     "action": "offers an invisible gift forward on both palms",
+     "acting": "reachBoth forward, talk small, eyes solemn",
+     "library": "PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 133.5,
+     "end": 134.4,
+     "cue": {
+      "word": "للخليفة",
+      "t": 133.46
+     },
+     "who": "fx",
+     "action": "a small crown icon pops at the far end of the gesture",
+     "acting": "Abu gaze goes to it",
+     "library": "S.emphasis icon (crownProp planned, icon size)"
+    },
+    {
+     "t": 134.4,
+     "end": 135.7,
+     "cue": {
+      "word": "أفضل",
+      "t": 134.44
+     },
+     "who": "verseRibbon",
+     "action": "a golden verse ribbon unrolls from his palms to the crown icon, with glints",
+     "acting": "ribbon with three star glints; Jaafar eyes follow it",
+     "library": "verseRibbon (planned), goldGlow small (planned)"
+    },
+    {
+     "t": 135.8,
+     "end": 137.3,
+     "cue": {
+      "word": "فأهداني",
+      "t": 135.8
+     },
+     "who": "abu",
+     "action": "turns his hands round and presents himself, like a tailor showing a suit",
+     "acting": "palms sweep down from shoulders to the shirt hem; a slight proud turn left and right (dir squeeze)",
+     "library": "hand targets, turnFlip-style squeeze"
+    },
+    {
+     "t": 137.4,
+     "end": 138.1,
+     "cue": {
+      "word": "أفضل",
+      "t": 137.38
+     },
+     "who": "packSaddle",
+     "action": "he pats the saddle; it gives one glint like a jewel",
+     "acting": "pat with a 2 unit bounce; sparkle on the saddle horn",
+     "library": "S.emphasis glint"
+    },
+    {
+     "t": 138.1,
+     "end": 138.88,
+     "cue": {
+      "word": "ثيابه",
+      "t": 138.06
+     },
+     "who": "jaafar",
+     "action": "Jaafar blinks twice, then his cheeks puff: he is fighting a laugh",
+     "acting": "stifled laugh: mouth pressed, shoulders jerk twice, hand flies to his mouth; Masrur's shoulders shake behind",
+     "library": "PERSON_HANDS.mouthCover, tremble"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "whip",
+    "t": 138.88
+   }
+  },
+  {
+   "id": "S15",
+   "start": 138.88,
+   "end": 149.68,
+   "paragraphs": [
+    7
+   ],
+   "set": "court",
+   "cast": [
+    "caliph",
+    "jaafar"
+   ],
+   "summary": "The line travels to the throne: Jaafar hurries in and repeats it in the caliph's ear. Harun sees that the poet is laughing even at his punishment and has lost none of his wit.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on the throne (zoom 1.4, centre 730,640). Push to a close on the caliph (zoom 1.8) from 142.4 to 146.0 for the thinking, holding to the end of the scene."
+   },
+   "composition": "Caliph seated on the throne (HALL.throne), Jaafar arrives at his right shoulder (x 850 on the dais). The thought cloud opens up left at (360, 400), 360 x 230, with the trail to the caliph head.",
+   "actions": [
+    {
+     "t": 138.9,
+     "end": 140.0,
+     "cue": {
+      "word": "وصلت",
+      "t": 138.88
+     },
+     "who": "jaafar",
+     "action": "Jaafar hurries in along the dais, robe flapping",
+     "acting": "fast short steps, still half laughing, composes his face just before the throne",
+     "library": "walk, footfalls"
+    },
+    {
+     "t": 140.0,
+     "end": 141.0,
+     "cue": {
+      "word": "العبارة",
+      "t": 139.9
+     },
+     "who": "jaafar",
+     "action": "leans to the caliph's ear and whispers behind his hand",
+     "acting": "cupMouth, tip 0.1; a tiny rolled verse ribbon passes from his hand to the caliph ear",
+     "library": "PERSON_HANDS.cupMouth, verseRibbon tiny"
+    },
+    {
+     "t": 141.0,
+     "end": 141.8,
+     "cue": {
+      "word": "هارون",
+      "t": 140.94
+     },
+     "who": "caliph",
+     "action": "the caliph listens, stone faced, eyes sliding sideways",
+     "acting": "gaze toward Jaafar, lid 0.4, arms folded",
+     "library": "gaze, PERSON_HANDS.folded"
+    },
+    {
+     "t": 142.4,
+     "end": 143.4,
+     "cue": {
+      "word": "أدرك",
+      "t": 142.44
+     },
+     "who": "fx",
+     "action": "thought cloud: a small Abu in the saddle, grinning and bowing to laughing ladies",
+     "acting": "trail pops first; the caliph looks up into it, one brow lifting",
+     "library": "thoughtCloud {inside: abu small, scale 0.3}"
+    },
+    {
+     "t": 144.1,
+     "end": 145.3,
+     "cue": {
+      "word": "يسخر",
+      "t": 144.16
+     },
+     "who": "fx",
+     "action": "inside the cloud the small Abu brays and the coin heap in his saddle grows",
+     "acting": "the caliph's folded arms loosen; chin moves on to his fist",
+     "library": "thoughtCloud inside, PERSON_HANDS.chin"
+    },
+    {
+     "t": 145.4,
+     "end": 146.3,
+     "cue": {
+      "word": "العقوبة",
+      "t": 145.62
+     },
+     "who": "fx",
+     "action": "inside the cloud the sword icon appears beside Abu and he bows to it too",
+     "acting": "the corner of the caliph mouth twitches once (smile for 4 frames, back to closed)",
+     "library": "mask on / mask off, mouth"
+    },
+    {
+     "t": 147.3,
+     "end": 148.1,
+     "cue": {
+      "word": "لم",
+      "t": 147.34
+     },
+     "who": "caliph",
+     "action": "shakes his head slowly: that man",
+     "acting": "slow head shake (gaze x +/-0.4 over 0.8 s), lids softening to 0.2, brow from 0.8 to 0",
+     "library": "gazePlan"
+    },
+    {
+     "t": 148.1,
+     "end": 149.68,
+     "cue": {
+      "word": "سرعة",
+      "t": 148.14
+     },
+     "who": "fx",
+     "action": "the cloud shrinks to a single spark that rests on his crown jewel; his shoulders start to shake",
+     "acting": "anticipation for the laugh: cheeks puff, eyes squeeze, tremble 2 building",
+     "library": "thoughtCloud p to 0, S.emphasis spark, tremble"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 149.68
+   }
+  },
+  {
+   "id": "S16",
+   "start": 149.68,
+   "end": 161.5,
+   "paragraphs": [
+    8
+   ],
+   "set": "court",
+   "cast": [
+    "abu",
+    "caliph",
+    "masrur",
+    "jaafar"
+   ],
+   "summary": "The caliph roars with laughter in spite of himself, pardons the poet before anything else can happen, has the saddle taken off and gives him ten thousand dirhams.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "From the close on the laughing caliph pull out to the full hall by 153.0 as Masrur leads Abu in; from 158.7 ease toward Abu and the coin sack (zoom 1.3, centre 420,720)."
+   },
+   "composition": "Caliph on the throne right, Jaafar beside him at x 870. Masrur brings Abu in from the door arch to x 380. The sack lands at x 300 on the floor line; the counter sits top centre at (500,130).",
+   "actions": [
+    {
+     "t": 149.7,
+     "end": 150.7,
+     "cue": {
+      "word": "ضحك",
+      "t": 149.68
+     },
+     "who": "caliph",
+     "action": "the laugh bursts out: head back, the throne rocks",
+     "acting": "mouth 'open', lid 0.9, tip -0.14, shoulders shaking 5 Hz; throne rot +/-0.03",
+     "library": "person laugh helper (planned), throne rot (planned prop) or scene drawn tilt"
+    },
+    {
+     "t": 150.7,
+     "end": 151.5,
+     "cue": {
+      "word": "الخليفة",
+      "t": 150.74
+     },
+     "who": "jaafar",
+     "action": "Jaafar lets his own laugh go; crown slips over the caliph brow and he pushes it back",
+     "acting": "staggered 0.3 s after the caliph, different rhythm",
+     "library": "stagger, laugh"
+    },
+    {
+     "t": 152.2,
+     "end": 152.8,
+     "cue": {
+      "word": "غضبه",
+      "t": 152.16
+     },
+     "who": "caliph",
+     "action": "tries to scowl again, fails, wipes a tear",
+     "acting": "brow to 0.8 for 6 frames, collapses back to laughing; wet eye, one tear",
+     "library": "wet, brow"
+    },
+    {
+     "t": 152.8,
+     "end": 153.8,
+     "cue": {
+      "word": "وأمر",
+      "t": 152.82
+     },
+     "who": "caliph",
+     "action": "raises an open hand: stop; Masrur leads Abu in through the door arch",
+     "acting": "palm out; Masrur and Abu walk in, Abu still saddled, coins jingling in it",
+     "library": "walk, footfalls, rope lead"
+    },
+    {
+     "t": 153.8,
+     "end": 154.7,
+     "cue": {
+      "word": "بالعفو",
+      "t": 153.84
+     },
+     "who": "scroll",
+     "action": "Jaafar unrolls a pardon scroll with a red seal; label PARDONED",
+     "acting": "seal stamps on with a 2-frame flash; Abu eyes go wide, then shut in relief (long blink)",
+     "library": "scroll with seal (planned), S.label"
+    },
+    {
+     "t": 155.9,
+     "end": 156.9,
+     "cue": {
+      "word": "قبل",
+      "t": 155.9
+     },
+     "who": "masrur",
+     "action": "Masrur takes his hand off the sword and unbuckles the girth strap",
+     "acting": "the sword icon from the order balloon reappears small and is struck out with a red X",
+     "library": "iconBalloon icon struck, hand targets"
+    },
+    {
+     "t": 157.0,
+     "end": 157.8,
+     "cue": {
+      "word": "الإعدام",
+      "t": 157.1
+     },
+     "who": "packSaddle",
+     "action": "the saddle slides off and drops to the floor; Abu springs upright",
+     "acting": "fallY on the saddle, dust; Abu stretch sq 1.08 then settle, rolls his shoulders",
+     "library": "fallY, impactSquash, dustBurst, settleTo"
+    },
+    {
+     "t": 157.9,
+     "end": 158.7,
+     "cue": {
+      "word": "ثم",
+      "t": 157.84
+     },
+     "who": "jaafar",
+     "action": "Jaafar swings the green robe round Abu shoulders and sets the turban back, a little crooked",
+     "acting": "cloth flourish for 6 frames hides the costume change back to the poet look",
+     "library": "honourRobe flourish (planned AN-103)"
+    },
+    {
+     "t": 158.7,
+     "end": 159.4,
+     "cue": {
+      "word": "منحه",
+      "t": 158.7
+     },
+     "who": "caliph",
+     "action": "the caliph claps twice; a fat sack swings in on a servant-less toss from Masrur and lands at x 300",
+     "acting": "sack arc with weight, landing squash and coin jingle lines",
+     "library": "sack (planned), impactSquash"
+    },
+    {
+     "t": 159.4,
+     "end": 160.9,
+     "cue": {
+      "word": "عشرة",
+      "t": 159.42
+     },
+     "who": "fx",
+     "action": "counter runs up to 10,000 above the sack; gold glow",
+     "acting": "counter ticks 1,000 per 0.12 s and locks with a pop on 160.96",
+     "library": "S.counter, goldGlow (planned)"
+    },
+    {
+     "t": 160.9,
+     "end": 161.5,
+     "cue": {
+      "word": "درهم",
+      "t": 160.96
+     },
+     "who": "abu",
+     "action": "hugs the sack, then bows to the throne with it",
+     "acting": "eyes shining (wet highlight, no tear), deep bow tip 0.16",
+     "library": "handLW/handRW on the sack"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 149.8,
+     "text": "HA HA HA!"
+    },
+    {
+     "t": 153.95,
+     "text": "PARDONED!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 161.5
+   }
+  },
+  {
+   "id": "S17",
+   "start": 161.5,
+   "end": 174.9,
+   "paragraphs": [
+    8
+   ],
+   "set": "court",
+   "cast": [
+    "abu",
+    "caliph",
+    "masrur",
+    "jaafar"
+   ],
+   "summary": "The moral in pictures: he was saved not by strength, not by rank, but by one last joke. Wink to camera, THE END.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on Abu alone (zoom 1.5, centre 400,660); the court soft behind. Final slow push to 1.65 by 170.4; hold for THE END."
+   },
+   "composition": "Abu at x 400 with the sack at his feet. Three icon tiles appear in a row above him at y 380 (x 250, 400, 550), 110 px each: arm, crown, speech balloon. THE END title sits in the upper third, clear of his face.",
+   "actions": [
+    {
+     "t": 161.5,
+     "end": 162.8,
+     "cue": {
+      "word": "وهكذا",
+      "t": 161.5
+     },
+     "who": "abu",
+     "action": "walks forward toward the camera, sack over his shoulder, and stops",
+     "acting": "relaxed walk, lets out a long breath (sq 0.96 then up)",
+     "library": "walk, breathe"
+    },
+    {
+     "t": 162.9,
+     "end": 163.6,
+     "cue": {
+      "word": "نجا",
+      "t": 162.88
+     },
+     "who": "abu",
+     "action": "wipes his brow; the saddle lies small on the floor behind him",
+     "acting": "hand across the forehead, eyes shut then open",
+     "library": "hand target"
+    },
+    {
+     "t": 164.5,
+     "end": 166.0,
+     "cue": {
+      "word": "عقوبة",
+      "t": 164.48
+     },
+     "who": "fx",
+     "action": "the struck-out sword icon floats up behind him and fades",
+     "acting": "Abu glances back at it over his shoulder and shivers once",
+     "library": "tremble, alpha fade"
+    },
+    {
+     "t": 166.7,
+     "end": 167.7,
+     "cue": {
+      "word": "بقوته",
+      "t": 166.74
+     },
+     "who": "fx",
+     "action": "tile 1: a flexed arm icon; Abu tries to flex, nothing there; red X on the tile",
+     "acting": "aR flex pose, looks at his thin arm, shrugs",
+     "library": "S.box tile, aR angles"
+    },
+    {
+     "t": 168.0,
+     "end": 168.9,
+     "cue": {
+      "word": "مكانته",
+      "t": 168.06
+     },
+     "who": "fx",
+     "action": "tile 2: a small crown icon; he points at the real caliph behind and shakes his head; red X",
+     "acting": "pointFwd back at the throne, small head shake",
+     "library": "S.box tile, PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 169.6,
+     "end": 170.4,
+     "cue": {
+      "word": "بنكتة",
+      "t": 169.7
+     },
+     "who": "fx",
+     "action": "tile 3: a speech balloon with HA! inside; green tick, the tile pulses",
+     "acting": "Abu taps his own temple, then his lips: big grin",
+     "library": "S.box tile, S.emphasis"
+    },
+    {
+     "t": 170.4,
+     "end": 171.2,
+     "cue": {
+      "word": "أخيرة",
+      "t": 170.42
+     },
+     "who": "abu",
+     "action": "winks to the camera; behind him the caliph is still chuckling and Masrur finally smiles openly",
+     "acting": "wink:'R', look to camera; staggered background laughs",
+     "library": "person wink:'R', stagger"
+    },
+    {
+     "t": 171.3,
+     "end": 174.9,
+     "who": "lettering",
+     "action": "THE END title pops and holds; Abu gives one last small donkey ear flap and a bow, then stillness with blinks only",
+     "acting": "title overshoot and settle; breathing idle, blinks",
+     "library": "S.title, breathe, blink"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 171.35,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 171.3,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 174.9
+   }
+  }
+ ],
+ "ending": {
+  "t": 171.3,
+  "description": "After the last word (171.08) Abu holds his wink, the court chuckles behind him, THE END pops at 171.3 with a chime and holds to 174.9 with blinks and breathing only."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "أعد أبو نواس في بيته وليمة كبيرة من اللحوم والأطعمة الفاخرة.|ثم خرج يبحث عن رفقة جميلة يشاركها الطعام والشراب والغزل.|رأى ثلاثة فتيان حسان الوجوه، فتوقف ليدعوهم إلى مجلسه.",
+   "en": "Abu Nuwas prepared a luxurious feast|and went looking for attractive company for food, wine, and flirtation.|He saw three handsome youths and invited them in."
+  },
+  {
+   "p": 2,
+   "ar": "أنشد لهم أبياتًا يمدح فيها الوليمة ومتعتها، فقبلوا الدعوة.|جلسوا يأكلون ويشربون، ثم سألوه أيهم أجمل.|اختار لكل واحد وصفًا شعريًا مختلفًا، وأبدى إعجابه بهم وقبّلهم.",
+   "en": "He recited verses praising the feast, and they accepted.|Over food and wine they asked which was most beautiful.|He praised and kissed each in turn."
+  },
+  {
+   "p": 3,
+   "ar": "اشتد به السكر، واستمر مجلس اللهو حتى سمع الجميع طرقًا على الباب.|دخل الخليفة هارون الرشيد فجأة، فنهض الحاضرون احترامًا.|سأل الخليفة أبا نواس عما يحدث في ذلك المكان.",
+   "en": "As the drinking continued, someone knocked.|Harun al-Rashid entered unexpectedly. Everyone rose respectfully,|and the caliph asked Abu Nuwas what sort of gathering this was."
+  },
+  {
+   "p": 4,
+   "ar": "سخر هارون منه وقال: لقد عينتك قاضيًا على أهل الوساطة في الفساد.|أجاب الشاعر مازحًا: وهل لديك قضية تريد عرضها علي؟|فهم الخليفة التلميح، فغضب وخرج دون أن يعاقبه فورًا.",
+   "en": "Harun mockingly appointed him judge over procurers.|Abu Nuwas quipped, “Do you have a case to bring before me?”|The caliph took offense and left angrily."
+  },
+  {
+   "p": 5,
+   "ar": "في اليوم التالي ذهب أبو نواس إلى مجلس القصر كعادته.|لكن هارون أمر الحارس مسرورًا أن ينزع عنه ثيابه، ويضع على ظهره سرج حمار،|ثم يطوف به أمام نساء القصر ويقتله.",
+   "en": "The next day Abu Nuwas attended court.|Harun ordered Masrur to strip him, dress him in donkey gear,|parade him before the palace women, and then execute him."
+  },
+  {
+   "p": 6,
+   "ar": "قاد مسرور الشاعر بين غرف النساء، منتظرًا تنفيذ بقية الأمر.|لم يكف أبو نواس عن المزاح والتمثيل، فضحكت النساء وأعطته الهدايا والنقود.|وعندما مر به جعفر البرمكي، سأله عن سبب تلك الهيئة.",
+   "en": "Masrur paraded him through the women’s chambers.|Abu Nuwas kept joking, making them laugh and earning gifts.|Jaafar the Barmecide then asked what had happened."
+  },
+  {
+   "p": 7,
+   "ar": "أجاب أبو نواس بوجه جاد:|قدمت للخليفة أفضل شعري، فأهداني أفضل ثيابه!|وصلت العبارة إلى هارون، الذي أدرك أن الشاعر يسخر حتى من العقوبة، وأنه لم يفقد سرعة بديهته.",
+   "en": "With a straight face, Abu Nuwas replied,|“I gave the caliph my finest poetry; he gave me his finest clothes.”|The joke reached Harun."
+  },
+  {
+   "p": 8,
+   "ar": "ضحك الخليفة رغم غضبه، وأمر بالعفو عن أبي نواس قبل تنفيذ الإعدام.|ثم منحه عشرة آلاف درهم.|وهكذا نجا الشاعر من عقوبة مرعبة، لا بقوته أو مكانته، بل بنكتة أخيرة.",
+   "en": "The caliph laughed despite his anger, pardoned Abu Nuwas before the execution,|and awarded him ten thousand dirhams.|One last joke saved the poet’s life."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "packSaddle",
+   "description": "Donkey pack saddle worn by a person, with girth strap, lead ring and an open top that fills with coins. Reusable for any punishment, porter or pack-animal gag; the same drawing can sit on the Library donkey.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "One function packSaddle(ctx, x, y, {s, fill, tilt, strap}). Hump: K rounded box 170 x 80 with brush outline, red Ben-Day dots, yellow trim line, two horn rectangles. Strap: a band drawn over the person's chest after the person (two passes: saddle behind the figure, strap in front). Anchor it to the person's shoulder point (figure-local about y -150) so it follows tip, sq and walk bob. Coins: reuse coinPile clipped to the open top."
+  },
+  {
+   "type": "pose",
+   "name": "person plainShirt look",
+   "description": "A costume variant for the 'shamed' poet: ankle-length plain white long-sleeved shirt, no headwear, short hair, bare feet. Fully covered; reusable for prisoners, penitents, sleepers.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "No new drawing: person {costume:'ascetic', pal:{robe: white, dot: pale blue, shoes:'bare', hair: black, beard: black}, age: 0.2} with headwear switched off (add an opt-in headwear:false if the preset has no such switch; default unchanged for the regression test)."
+  },
+  {
+   "type": "prop",
+   "name": "judgeTurban (loose)",
+   "description": "The planned judge turban usable as a loose prop that can be carried and dropped on any head.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Draw the judge preset headwear from a standalone function at (x, y, rot, s); after it lands, pass the planned headwear offset and scale 1.35 to the person so it follows the head."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon icons (path, veiled heads, scimitar, struck)",
+   "description": "Four small flat icons for the planned iconBalloon and a red X strike state. Keeps the order to execute off screen and wordless.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Each icon is a 70 px function made of K primitives (loop arrow path; three circles with veil arcs and smile arcs; a curved blade polygon with a yellow hilt). strike 0..1 draws two red brush lines on."
+  }
+ ],
+ "owner_questions": [
+  "The script calls the three 'handsome youths' and mentions flirtation: by default they are drawn as three clearly adult young gentlemen (moustaches or beards, adult size) and the scene is staged as a friendly dinner with poetry; no flirting is shown.",
+  "The script says he kissed each of them: by default this is a courtly salute from his seat (fingertips to his own lips, then a bow, hand on heart) with no contact; say if you prefer it left out completely.",
+  "Wine and drunkenness: by default plain cups and a jug with no label or visible contents, and his state is shown only as swaying, a crooked turban and three little stars.",
+  "The caliph's insult ('judge over procurers') and the poet's hint are softened in pictures to a giant mock judge turban, the lettering JUDGE?! and OF MISCHIEF, and a scroll balloon pointing at the caliph; the subtitles stay verbatim.",
+  "Stripping: by default he changes behind a folding screen and comes out fully covered in a long plain white shirt, with the donkey saddle strapped on his back; no undress is shown.",
+  "The execution order is shown only as a small scimitar icon in the caliph's balloon and Masrur's sheathed sword; the sword is never drawn and the icon is struck out at the pardon.",
+  "Invented lettering (not in the script): KNOCK! KNOCK!, THE CALIPH!, JUDGE?!, ANY CASE FOR ME?, HMPH!, HEE HAW!, HA HA HA! (twice), PARDONED!, THE END; labels ROAST, SWEETS, MASRUR, JAAFAR, DONKEY SADDLE, STRAIGHT FACE, OF MISCHIEF. Default: keep all.",
+  "Added business beyond the script: the donkey act (ear flaps, bray, hoof count), Masrur hiding a smile, the green robe being returned at the pardon, and the three tiles (arm, crown, HA!) for the moral. Default: keep.",
+  "SCRIPT: the English of P7 stops at 'The joke reached Harun.' while the Arabic adds that Harun realised the poet was mocking even the punishment and had not lost his quick wit; both are kept verbatim.",
+  "SCRIPT: the English of P8 omits the Arabic 'not by his strength or his rank' and 'a terrifying punishment', and P4 English omits 'without punishing him at once'; both are kept verbatim.",
+  "SCRIPT: the story title says 'Three Boys'; the plan title used on any card is 'Abu Nuwas, the Three Guests and the Caliph'. Default: no title card with the word boys."
+ ],
+ "implementation_notes": [
+  "The narration has almost no pauses: the only gaps are 27.44 to 27.84, 129.12 to 129.64 and the tail after 171.08. Only three effects are planned (pop 27.62, tick 129.38, chime 171.3). Knocks, the door slam, the bray and the coin rain are visual only (lettering, sound arcs, shake). Do not add effects under words.",
+  "Set LIFE.t = t every frame; give every character a gaze target. Groups (three guests, three ladies) always use stagger(i) and different idles; never move in unison.",
+  "Abu has two looks. Switch poet to plainShirt while he is fully hidden by bathScreen (97.9 to 98.8) and back under the robe flourish (157.9 to 158.5). Draw order in S9/S10: hall, Abu, screen, Masrur.",
+  "packSaddle draws in two passes around the person (hump behind, strap in front) and follows tip/sq. The lead rope runs from Masrur's hand (P.hands) to the saddle ring; sag when slack, straight when taut.",
+  "Sitting at the table: person {sit: 1, seat: 'floor'} for the guests and Abu; draw the table after the seated figures behind it and before the trays, so the table hides their legs.",
+  "The caliph on the throne: person({y: HALL.throne.sitY, sit: 1, seat: 'bench'}). The house door and hall positions quoted in the plan are approximate: read them from the set anchors (MERCHANT, HALL, MARKET).",
+  "The transition card NEXT DAY... at 86.62 covers the set change from poetHouse to court: put the camera cut 0.01 s apart at the card midpoint.",
+  "Thought clouds (S2, S15) are for narrated intentions and realisation only; keep figures inside at least 110 px on screen (scale 0.3 of an s 1.2 figure, or raise the scale).",
+  "Lettering never covers a face: place KNOCK! KNOCK! on the door, HA HA HA! above the arches, HEE HAW! to the upper right of Abu, PARDONED! over the scroll.",
+  "Use panel-only shake (door slam 84.0, saddle drop 157.1). Call finish last every frame. Subtitles: Noto Naskh Arabic 700 verbatim, English below in blue Bangers; chunks as given in subtitles.",
+  "Cue times in actions are the word starts from timeline.md; anticipation starts up to 0.3 s earlier where noted. Scene S17 ends at 174.9 (audio 171.42 + 3.4 s hold)."
+ ],
+ "warnings": [
+  "Mature source: the story is softened in pictures (see owner_questions) while the narration and subtitles remain verbatim, including the words wine, flirtation, kissed, procurers, strip and execute. The owner should confirm this is acceptable for the channel's audience.",
+  "Depends on planned assets that are not in Library yet: person presets 'poet' and 'executioner', verseRibbon, iconBalloon, bathScreen, goblet, foodTray, purse, coinPile, scroll, flush, headwear offset, person laugh, sneak gait, rope lead, honourRobe flourish, goldGlow. If one is missing, build it in the story under the planned name.",
+  "No pauses in the narration: the film will be nearly free of sound effects; that is intended.",
+  "The person figure is front-facing only: the donkey act is played upright (ears with hands, bray, hoof tap), not on all fours.",
+  "Ten characters on four sets is a large human cast for one film; all are costume variants of one figure and no new set is needed, but staging time is high (17 scenes, about 140 keyed actions)."
+ ]
+}

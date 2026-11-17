@@ -1,0 +1,11 @@
+# KD-022 library proposals (drawings in src/, not moved to Library/)
+- k22jar (medicineJar: label squiggles, marks leaf/drop/dot/X, lidOff, glow) and k22mark, k22glint
+- k22mortar (mortar + pestle, mixture colour/level/specks), k22bowl (small bowl with level, tilt, bubble)
+- k22recipeIcons / recipe strip, k22tick (green tick / red cross)
+- k22storeBack + k22storeJars + k22table + k22herbs (apothecary set)
+- k22roomBack, k22bedBack/k22bedFront, k22blanket, k22chest (bedchamber set pieces), k22dim (grief wash)
+- k22lamp (oilLamp with flame, glow and smoke wisp)
+- k22pain (painPulse), k22blur + k22povMask (blurVision point-of-view insert), k22speedLines
+- k22faceFx (flush, green poison dots, pale cheeks, sweat, tear, thought dots) with k22headXf / k22L2W / k22lieW (person head and lie geometry)
+- k22turban (detachable rolling turban), k22stick (walking stick hand-to-tip), k22coins, k22crown, k22star
+- k22stall / k22stallFront (physician's stall, open/closed, faded awning)

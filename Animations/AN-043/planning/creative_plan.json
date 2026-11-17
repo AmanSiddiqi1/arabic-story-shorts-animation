@@ -1,0 +1,3110 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-043",
+ "title": "The Hedgehog and the Wood Pigeons",
+ "duration": 178.778,
+ "end_hold": 1.22,
+ "logline": "A hedgehog who cannot climb plays the holy hermit to trick two wood pigeons into stripping their own date palm and walking into his burrow; cornered, the male pigeon starts telling a story.",
+ "moral": "A show of piety can hide an appetite, and a trick tends to come back on the one who plays it.",
+ "tone": "Sly comedy of a fake saint that tightens into a real trap, then an open, uneasy ending held on a storyteller buying time. The menace is comic-book (teeth, shadow), never bloody.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.0,
+   "kind": "setup",
+   "cue": {
+    "word": "عاش",
+    "t": 0.0
+   },
+   "summary": "A pigeon couple lives in the crown of a tall date palm and eats its fruit."
+  },
+  {
+   "id": "B2",
+   "t": 15.56,
+   "kind": "inciting",
+   "cue": {
+    "word": "وتمنى",
+    "t": 15.56
+   },
+   "summary": "The hedgehog below wants the dates and cannot climb."
+  },
+  {
+   "id": "B3",
+   "t": 27.78,
+   "kind": "turn",
+   "cue": {
+    "word": "متظاهرًا",
+    "t": 27.78
+   },
+   "summary": "He digs a burrow by the trunk and fakes a holy, simple life."
+  },
+  {
+   "id": "B4",
+   "t": 39.26,
+   "kind": "comic",
+   "cue": {
+    "word": "ثلاثين",
+    "t": 39.26
+   },
+   "summary": "Thirty years of devotion, he says, eating only what falls."
+  },
+  {
+   "id": "B5",
+   "t": 55.82,
+   "kind": "rising",
+   "cue": {
+    "word": "«أسقطا",
+    "t": 55.82
+   },
+   "summary": "His advice: shake down every date, store a year of food, live by the ground."
+  },
+  {
+   "id": "B6",
+   "t": 78.98,
+   "kind": "reveal",
+   "cue": {
+    "word": "وخبأه",
+    "t": 78.98
+   },
+   "summary": "The pigeons strip the tree; he hides the whole harvest in his burrow."
+  },
+  {
+   "id": "B7",
+   "t": 88.68,
+   "kind": "suspense",
+   "cue": {
+    "word": "وأكلهما.",
+    "t": 88.68
+   },
+   "summary": "His real plan: hunger will bring them close enough to catch and eat."
+  },
+  {
+   "id": "B8",
+   "t": 99.14,
+   "kind": "comic",
+   "cue": {
+    "word": "الريح",
+    "t": 99.14
+   },
+   "summary": "The dates are gone; he blames the wind and preaches patience."
+  },
+  {
+   "id": "B9",
+   "t": 115.04,
+   "kind": "rising",
+   "cue": {
+    "word": "ودخلا",
+    "t": 115.04
+   },
+   "summary": "Talked round, they enter his burrow as friends."
+  },
+  {
+   "id": "B10",
+   "t": 127.06,
+   "kind": "climax",
+   "cue": {
+    "word": "أسنانه",
+    "t": 127.06
+   },
+   "summary": "He blocks the door and shows his teeth: a trap."
+  },
+  {
+   "id": "B11",
+   "t": 143.04,
+   "kind": "moral",
+   "cue": {
+    "word": "يعود",
+    "t": 143.04
+   },
+   "summary": "The male pigeon warns that deceit returns upon the deceiver."
+  },
+  {
+   "id": "B12",
+   "t": 165.88,
+   "kind": "surprise",
+   "cue": {
+    "word": "فماتا",
+    "t": 165.88
+   },
+   "summary": "The tale of the two cheats who poisoned each other while the merchant lived."
+  },
+  {
+   "id": "B13",
+   "t": 176.64,
+   "kind": "resolution",
+   "cue": {
+    "word": "محاصرين",
+    "t": 176.64
+   },
+   "summary": "Open ending: the hedgehog listens at the door; the pigeons are still shut in."
+  }
+ ],
+ "cast": [
+  {
+   "id": "pigeonM",
+   "name": "the male wood pigeon",
+   "library": "bird",
+   "base": "bird kind 'dove' (planned) pal 1",
+   "look": "blue-grey, darker head, white neck patch with green edge, pink chest; s 0.9. Trusting, eager, brave at the end.",
+   "new": false
+  },
+  {
+   "id": "pigeonF",
+   "name": "the female wood pigeon",
+   "library": "bird",
+   "base": "bird kind 'dove' (planned) pal 2",
+   "look": "paler and 8 % smaller, no green; s 0.82. The quiet sceptic: always reacts a beat later and looks at the hedgehog, not at what he points to.",
+   "new": false
+  },
+  {
+   "id": "hedgehog",
+   "name": "the hedgehog",
+   "library": null,
+   "base": "new hedgehog figure",
+   "look": "brown spines, cream face, s 1. Two faces: the holy mask (eyes shut, brows raised, paws clasped) and the real one (smirk, teeth).",
+   "new": true
+  },
+  {
+   "id": "hedgeWife",
+   "name": "the hedgehog's wife",
+   "library": null,
+   "base": "hedgehog pal 1",
+   "look": "lighter coat, red bow, s 0.85. Seen in P1, then only as paws at the burrow.",
+   "new": true
+  },
+  {
+   "id": "cheatA",
+   "name": "first cheat (in the story cloud)",
+   "library": "person",
+   "base": "person kind 'thief'",
+   "look": "tall, striped; drawn at scale 0.5 inside the cloud",
+   "new": false
+  },
+  {
+   "id": "cheatB",
+   "name": "second cheat (in the story cloud)",
+   "library": "person",
+   "base": "person costume 'villager', pal robe dark blue, s 0.9",
+   "look": "short, round turban",
+   "new": false
+  },
+  {
+   "id": "merchant",
+   "name": "the merchant (in the story cloud)",
+   "library": "person",
+   "base": "person costume 'merchant'",
+   "look": "big turban, blue robe, purse",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "palmGrove",
+   "library": null,
+   "new": true,
+   "description": "Tall date palm at x 400 (crown hub about (410, 280), ledge y 262..268, stub (430, 650) to (600, 640)), home bush at x 160, burrow spot at x 880, ground y 900, skyCycle sky with hillTrees. Built from Library sky, hillTrees, ground, bush and the planned palmTree."
+  },
+  {
+   "id": "burrowChamber",
+   "library": null,
+   "new": true,
+   "description": "Cutaway burrow interior, floor y 900, door arch x 150..320 on the left, root curtain and hidden date hoard at x 800..920, options dark, shadow, doorSky."
+  }
+ ],
+ "props": [
+  {
+   "id": "dateBunch",
+   "library": null,
+   "new": true,
+   "description": "Three hanging date clusters under the crown at (310, 360), (420, 385), (520, 355); left 0..1, shake, swing."
+  },
+  {
+   "id": "datePile",
+   "library": null,
+   "new": true,
+   "description": "Heap of up to 40 fallen dates at (560, 900); also the hoard in the burrow alcove."
+  },
+  {
+   "id": "burrow",
+   "library": null,
+   "new": true,
+   "description": "Planned burrow mound centred x 880 with opening at x 815; grow and eyes states."
+  },
+  {
+   "id": "poisonVial",
+   "library": null,
+   "new": true,
+   "description": "Small green bottle with an X label, inside the story cloud only."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 13.7,
+   "paragraphs": [
+    1
+   ],
+   "set": "palmGrove",
+   "cast": [
+    "pigeonM",
+    "pigeonF",
+    "hedgehog",
+    "hedgeWife"
+   ],
+   "summary": "The pigeon couple at home in the crown of the tall palm, eating dates. A spat date stone falls the whole height of the tree and lands at the hedgehogs' bush: the camera follows it down to meet them.",
+   "camera": {
+    "shot": "establishing",
+    "move": "crane",
+    "notes": "Keys: 0-2.6 {x 450, y 330, zoom 2.0} on the crown; 2.78-3.9 ease out to {500, 615, 1.0} (whole palm); 5.4-6.1 in to {440, 350, 1.8}; 8.7-10.3 follow the falling stone down to {270, 790, 1.9}; hold."
+   },
+   "composition": "Palm trunk at x 400, crown hub (410, 280). Pigeons on the crown ledge: M feet (500, 262), F (350, 268), facing each other. Date bunches under the crown at (310, 360), (420, 385), (520, 355). Hedgehog home bush at x 160, ground y 900.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 0.9,
+     "cue": {
+      "word": "عاش",
+      "t": 0.0
+     },
+     "who": "pigeonM",
+     "action": "flies in from the right on a shallow arc and lands on the crown ledge",
+     "acting": "stretch on the glide, landSquash on touch-down, tail flick as follow-through; gaze on his mate",
+     "library": "bird {kind dove pal 1, fly, flap} + hop/landSquash"
+    },
+    {
+     "t": 0.46,
+     "end": 1.3,
+     "cue": {
+      "word": "زوج",
+      "t": 0.46
+     },
+     "who": "pigeonF",
+     "action": "shuffles two steps along the ledge and bumps shoulders with him",
+     "acting": "smile, head tilt toward him (headRot 0.2), half lids; he leans back into her 3 frames later",
+     "library": "bird {headRot, lid} + stagger"
+    },
+    {
+     "t": 1.32,
+     "end": 2.7,
+     "cue": {
+      "word": "الحمام",
+      "t": 1.32
+     },
+     "who": "fx",
+     "action": "label with arrow WOOD PIGEONS beside the pair, clear of both heads",
+     "acting": "pigeons bob heads alternately, never in unison",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 2.6,
+     "end": 3.9,
+     "cue": {
+      "word": "فوق",
+      "t": 2.78
+     },
+     "who": "camera",
+     "action": "pull out from the crown to the whole palm so the height reads",
+     "acting": "the pigeons become small at the top; fronds sway on a slow sine",
+     "library": "CAM keys"
+    },
+    {
+     "t": 3.4,
+     "end": 5.2,
+     "cue": {
+      "word": "نخلة",
+      "t": 3.4
+     },
+     "who": "fx",
+     "action": "double-headed height arrow runs up the trunk from the ground to the crown with the tag SO HIGH",
+     "acting": "arrow draws bottom to top in 0.6 s, tag pops with settle",
+     "library": "S.arrow + S.label + settleTo"
+    },
+    {
+     "t": 5.4,
+     "end": 6.1,
+     "cue": {
+      "word": "وكان",
+      "t": 5.54
+     },
+     "who": "camera",
+     "action": "push back in to the crown and the date bunches",
+     "acting": "eased move, ends before the first bite",
+     "library": "CAM keys"
+    },
+    {
+     "t": 6.2,
+     "end": 7.0,
+     "cue": {
+      "word": "يأكل",
+      "t": 6.2
+     },
+     "who": "pigeonM",
+     "action": "stretches down, plucks one date from the middle bunch, tips his head back and swallows",
+     "acting": "anticipation dip, beak jab (drop, headRot -0.5), gulp bulge, happy lid 0.4",
+     "library": "bird mime {drop, headRot, beak} ; dateBunch left -1"
+    },
+    {
+     "t": 7.04,
+     "end": 7.8,
+     "cue": {
+      "word": "تمرها",
+      "t": 7.04
+     },
+     "who": "pigeonF",
+     "action": "plucks her own date from the left bunch; the bunch swings after the tug",
+     "acting": "tug then release, bunch swing damped; she offers him a look, he nods",
+     "library": "dateBunch {swing} + swing()"
+    },
+    {
+     "t": 7.8,
+     "end": 8.7,
+     "cue": {
+      "word": "كل",
+      "t": 7.8
+     },
+     "who": "pigeonM",
+     "action": "spits the date stone over the edge; it starts to fall",
+     "acting": "cheek puff, small head flick; both watch it go without interest",
+     "library": "fallY for the stone"
+    },
+    {
+     "t": 8.7,
+     "end": 10.3,
+     "cue": {
+      "word": "تحت",
+      "t": 9.14
+     },
+     "who": "camera",
+     "action": "follows the falling stone down the whole trunk to the ground",
+     "acting": "accelerating fall with the trunk rings streaking past; the stone lands and bounces twice by the bush",
+     "library": "fallY + rebound, CAM keys on fall start and impact"
+    },
+    {
+     "t": 10.46,
+     "end": 11.2,
+     "cue": {
+      "word": "سكن",
+      "t": 10.46
+     },
+     "who": "hedgehog",
+     "action": "nose, then one eye, pokes out of the bush and sniffs the stone",
+     "acting": "peek from cover: nose twitches, eye darts to the stone and back",
+     "library": "draw order bush over actor (peek pattern), hedgehog (new) {sniff}"
+    },
+    {
+     "t": 11.28,
+     "end": 12.0,
+     "cue": {
+      "word": "قنفذ",
+      "t": 11.28
+     },
+     "who": "hedgehog",
+     "action": "walks out fully; label HEDGEHOG with arrow",
+     "acting": "short waddle steps (walk), spines jiggle one frame late, picks the stone up and licks it",
+     "library": "hedgehog (new) {ph, amp} + walk + S.label"
+    },
+    {
+     "t": 11.98,
+     "end": 13.2,
+     "cue": {
+      "word": "زوجته.",
+      "t": 12.36
+     },
+     "who": "hedgeWife",
+     "action": "pops out beside him (red bow), takes the bare stone, shows him it is empty",
+     "acting": "frown, she drops the stone; both sigh, shoulders sink (sq 0.94)",
+     "library": "hedgehog (new) {pal 1, bow}"
+    },
+    {
+     "t": 13.26,
+     "end": 13.7,
+     "who": "hedgehog",
+     "action": "both hedgehogs slowly raise their heads to look up the trunk",
+     "acting": "anticipation for the look: heads tilt back, eyes roll up",
+     "library": "gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 1.5,
+     "text": "WOOD PIGEONS"
+    },
+    {
+     "t": 3.6,
+     "text": "SO HIGH"
+    },
+    {
+     "t": 11.4,
+     "text": "HEDGEHOG"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 13.5,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 13.7
+   }
+  },
+  {
+   "id": "S2",
+   "start": 13.7,
+   "end": 22.0,
+   "paragraphs": [
+    1
+   ],
+   "set": "palmGrove",
+   "cast": [
+    "hedgehog",
+    "hedgeWife",
+    "pigeonM",
+    "pigeonF"
+   ],
+   "summary": "The hedgehog stares up at the dates, dreams of them, then tries to climb the trunk twice and falls on his back. Lying there, the idea of a trick is born.",
+   "camera": {
+    "shot": "medium",
+    "move": "tilt",
+    "notes": "Start {300, 780, 1.8}. 14.1-14.9 fast tilt up the trunk to the bunches {420, 380, 2.0} (his point of view), 15.4 back down to {330, 760, 1.7}; from 18.3 widen to {380, 700, 1.4} for the climb."
+   },
+   "composition": "Hedgehog at (300, 900) facing the trunk (dir 1), wife at (200, 900). Thought cloud at (560, 520), 360 x 240, tail to his head. Climb happens on the left side of the trunk (x 370).",
+   "actions": [
+    {
+     "t": 14.08,
+     "end": 14.9,
+     "cue": {
+      "word": "نظر",
+      "t": 14.08
+     },
+     "who": "hedgehog",
+     "action": "looks straight up; camera tilts up the trunk to the dates",
+     "acting": "head back, mouth falls open (o), pupils at the top of the eyes",
+     "library": "lookAt, CAM keys"
+    },
+    {
+     "t": 15.02,
+     "end": 15.5,
+     "cue": {
+      "word": "الثمر",
+      "t": 15.02
+     },
+     "who": "dateBunch",
+     "action": "three star glints run across the bunches; a pigeon beak plucks one more",
+     "acting": "the dates look their best: yellow stalks, red dates, glints staggered 3 frames",
+     "library": "K sparkle / S.emphasis glint"
+    },
+    {
+     "t": 15.56,
+     "end": 17.6,
+     "cue": {
+      "word": "وتمنى",
+      "t": 15.56
+     },
+     "who": "fx",
+     "action": "thought cloud: a small hedgehog sitting on a heap of dates, eating",
+     "acting": "real hedgehog: wet shining eyes, a drool drop, paws rub; the wife licks her lips a beat later",
+     "library": "thoughtCloud {inside, scale 0.4} + wet"
+    },
+    {
+     "t": 16.78,
+     "end": 17.7,
+     "cue": {
+      "word": "يحصل",
+      "t": 16.78
+     },
+     "who": "hedgehog",
+     "action": "stands on his hind legs and stretches both paws up; far too short",
+     "acting": "full stretch (sq 1.1), paws open and close on air, then drops back",
+     "library": "hedgehog (new) {rear, paws: reach}"
+    },
+    {
+     "t": 17.76,
+     "end": 18.4,
+     "who": "hedgehog",
+     "action": "spits on his paws, crouches for a run at the trunk",
+     "acting": "anticipation crouch (sq 0.85), brow down, wife covers her eyes with one paw",
+     "library": "anticipate"
+    },
+    {
+     "t": 18.4,
+     "end": 19.1,
+     "cue": {
+      "word": "لكنه",
+      "t": 18.4
+     },
+     "who": "hedgehog",
+     "action": "runs at the trunk and hugs it",
+     "acting": "three quick steps with dust, body slaps onto the bark",
+     "library": "walk + footfalls + dustBurst"
+    },
+    {
+     "t": 19.06,
+     "end": 19.9,
+     "cue": {
+      "word": "يستطع",
+      "t": 19.32
+     },
+     "who": "hedgehog",
+     "action": "scrabbles 120 units up, hangs, slides back down leaving four claw scrape marks",
+     "acting": "rear legs pedal, eyes wide at the stall, slide with tremble",
+     "library": "teeter/failed climb pattern (Lark): settleTo, scrape marks"
+    },
+    {
+     "t": 20.1,
+     "end": 20.6,
+     "cue": {
+      "word": "صعود",
+      "t": 20.1
+     },
+     "who": "hedgehog",
+     "action": "second try, weaker: only 60 units up",
+     "acting": "tongue out, lids half shut, slower legs",
+     "library": "same pattern, half amplitude"
+    },
+    {
+     "t": 20.62,
+     "end": 21.4,
+     "cue": {
+      "word": "الشجرة.",
+      "t": 20.62
+     },
+     "who": "hedgehog",
+     "action": "lets go and falls flat on his back; his spines stick in the ground and his feet wave in the air",
+     "acting": "fallY, impact squash 2 frames, rebound; legs cycle then go limp",
+     "library": "fallY + impactSquash + rebound, hedgehog (new) {roll: 1}"
+    },
+    {
+     "t": 21.4,
+     "end": 22.0,
+     "who": "hedgehog",
+     "action": "still on his back, his eyes slide to the foot of the trunk and narrow: a slow smirk",
+     "acting": "saccades (2-frame snaps) trunk, crown, ground; brow drops, mouth smirk. No light bulb. Wife peeks through her paws",
+     "library": "gazePlan(t, plan, 0.07), mouth smirk"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 21.35,
+     "text": "THUD!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 18.05,
+     "kind": "whoosh"
+    },
+    {
+     "t": 21.5,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 22.0
+   }
+  },
+  {
+   "id": "S3",
+   "start": 22.0,
+   "end": 30.2,
+   "paragraphs": [
+    2
+   ],
+   "set": "palmGrove",
+   "cast": [
+    "hedgehog",
+    "hedgeWife"
+   ],
+   "summary": "He digs a burrow right beside the trunk, then sits in front of it and puts on a show of prayer and simple living, checking that the pigeons are watching.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Start {760, 760, 1.6} on the digging spot. 25.9-27.0 slide to {700, 760, 1.9} as he sits; 27.7 hold on his face and paws."
+   },
+   "composition": "Burrow mound centre x 880 (770..990), 100 high, dark opening centred x 815 facing left. Prayer seat at (740, 900), hedgehog facing left and up (dir -1) toward the trunk at x 400.",
+   "actions": [
+    {
+     "t": 22.56,
+     "end": 23.9,
+     "cue": {
+      "word": "حفر",
+      "t": 22.56
+     },
+     "who": "hedgehog",
+     "action": "digs with his back to us: forepaws alternate, clods and dust fly out behind",
+     "acting": "rump wiggles with each stroke, spines shake; clods on seeded arcs",
+     "library": "hedgehog (new) {dig} + dustBurst, kick"
+    },
+    {
+     "t": 23.96,
+     "end": 24.6,
+     "cue": {
+      "word": "جحرًا",
+      "t": 23.96
+     },
+     "who": "burrow",
+     "action": "the mound rises in three steps and the dark opening appears",
+     "acting": "each step lands on a dig stroke; small settle",
+     "library": "burrow {grow 0..1} + settleTo"
+    },
+    {
+     "t": 24.62,
+     "end": 25.9,
+     "cue": {
+      "word": "قرب",
+      "t": 24.62
+     },
+     "who": "fx",
+     "action": "short arrow from the opening to the trunk shows how close it is; he backs out and shakes the dirt off",
+     "acting": "shake: body twists, spines ripple as follow-through, dust ring",
+     "library": "S.arrow + swing"
+    },
+    {
+     "t": 25.3,
+     "end": 25.9,
+     "cue": {
+      "word": "الجذع،",
+      "t": 25.16
+     },
+     "who": "hedgeWife",
+     "action": "carries a leaf into the burrow and disappears inside",
+     "acting": "quick waddle, head goes in first (clipped at the opening)",
+     "library": "head into a hole clip (Fox)"
+    },
+    {
+     "t": 25.96,
+     "end": 26.9,
+     "cue": {
+      "word": "وجلس",
+      "t": 25.96
+     },
+     "who": "hedgehog",
+     "action": "walks to the seat, glances up at the crown, then sits upright on his haunches",
+     "acting": "gaze up to check his audience, then sit 0..1 with overshoot and settle",
+     "library": "hedgehog (new) {sit} + settleTo"
+    },
+    {
+     "t": 26.96,
+     "end": 27.7,
+     "cue": {
+      "word": "أمامه",
+      "t": 26.96
+     },
+     "who": "hedgehog",
+     "action": "brushes his chest clean and arranges two leaves as a neat mat under him",
+     "acting": "fussy small paw moves, a stage being set",
+     "library": "hedgehog (new) {pawL, pawR}"
+    },
+    {
+     "t": 27.78,
+     "end": 28.8,
+     "cue": {
+      "word": "متظاهرًا",
+      "t": 27.78
+     },
+     "who": "hedgehog",
+     "action": "one sly look to the lens and a wink, then the mask goes on",
+     "acting": "the only look to camera in act one: gaze [0, 0.05], lidR 1 for 4 frames, smirk; then face goes blank and holy",
+     "library": "hedgehog (new) {lidL, lidR, mouth: smirk}"
+    },
+    {
+     "t": 28.84,
+     "end": 29.7,
+     "cue": {
+      "word": "بالصلاة",
+      "t": 28.84
+     },
+     "who": "hedgehog",
+     "action": "clasps his paws, shuts his eyes, bows his head and sways gently",
+     "acting": "slow breathe sway (tip +-0.03), brows raised (brow -0.5), mouth small",
+     "library": "hedgehog (new) {paws: clasp, lid 1} + breathe"
+    },
+    {
+     "t": 29.74,
+     "end": 30.2,
+     "cue": {
+      "word": "والزهد.",
+      "t": 29.74
+     },
+     "who": "hedgehog",
+     "action": "one eye opens a crack and slides up toward the crown, then shuts fast",
+     "acting": "the peek: lidL 0.6, pupil up-left, snap shut in 2 frames",
+     "library": "lidL ramp, gaze"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 27.9,
+     "text": "JUST AN ACT"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 22.2,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 30.2
+   }
+  },
+  {
+   "id": "S4",
+   "start": 30.2,
+   "end": 44.6,
+   "paragraphs": [
+    2
+   ],
+   "set": "palmGrove",
+   "cast": [
+    "pigeonM",
+    "pigeonF",
+    "hedgehog"
+   ],
+   "summary": "The male pigeon notices, flies down to a low stub on the trunk and asks about his life. The hedgehog claims thirty years of this and that he eats only dates that fall; one falls on cue and he takes it with a humble show.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "crane",
+    "notes": "30.2 {450, 330, 1.9} on the crown; 32.0-32.9 follow the pigeon down to the two-shot {640, 760, 1.75}; 39.2 small push to 1.9; hold through the pause."
+   },
+   "composition": "Stub on the trunk from (430, 650) to (600, 640): M perch (560, 640) facing right. Hedgehog seated at (740, 900) facing left. Eye line runs diagonally down-right. Counter sits top right of the panel, clear of both heads.",
+   "actions": [
+    {
+     "t": 30.5,
+     "end": 31.5,
+     "cue": {
+      "word": "رآه",
+      "t": 30.5
+     },
+     "who": "pigeonM",
+     "action": "on the crown, leans over the ledge and looks down; head tilts one way, then the other",
+     "acting": "curious: headRot +0.3 then -0.3, one blink, F keeps eating behind him",
+     "library": "bird {headRot} + gazePlan"
+    },
+    {
+     "t": 31.58,
+     "end": 32.0,
+     "cue": {
+      "word": "ذكر",
+      "t": 31.58
+     },
+     "who": "fx",
+     "action": "small arrow tag HE on the male (darker head, green neck patch), so the two birds are told apart",
+     "acting": "tag pops and goes in 0.8 s",
+     "library": "S.label"
+    },
+    {
+     "t": 32.02,
+     "end": 32.8,
+     "cue": {
+      "word": "الحمام",
+      "t": 32.02
+     },
+     "who": "pigeonM",
+     "action": "drops off the ledge and glides down in an S curve to the stub",
+     "acting": "wings flap 3 times then spread to brake; tail fans",
+     "library": "bird {fly, flap} on a bezier path (flyBz pattern)"
+    },
+    {
+     "t": 32.82,
+     "end": 33.8,
+     "cue": {
+      "word": "فسأله",
+      "t": 32.82
+     },
+     "who": "pigeonM",
+     "action": "lands on the stub (it dips and springs back) and leans down to speak",
+     "acting": "landSquash; the hedgehog's open eye snaps shut just before the bird looks at him",
+     "library": "landSquash + platform spring, bird {talk}"
+    },
+    {
+     "t": 33.88,
+     "end": 34.9,
+     "cue": {
+      "word": "عن",
+      "t": 33.88
+     },
+     "who": "pigeonM",
+     "action": "asks: beak talks, a wing opens toward the hedgehog and the bare ground",
+     "acting": "polite head bob; small ? balloon above the bird, not over a face",
+     "library": "bird {beak, sag as a pointing wing}"
+    },
+    {
+     "t": 34.22,
+     "end": 35.0,
+     "cue": {
+      "word": "حياته.",
+      "t": 34.22
+     },
+     "who": "hedgehog",
+     "action": "opens his eyes slowly as if returning from far away; a gentle surprised smile",
+     "acting": "lid 1 to 0.3 over 0.6 s, gaze drifts up to the bird, brow raised",
+     "library": "lid ramp + lookAt"
+    },
+    {
+     "t": 35.0,
+     "end": 36.5,
+     "cue": {
+      "word": "قال",
+      "t": 35.0
+     },
+     "who": "hedgehog",
+     "action": "speaks softly, one paw on his chest",
+     "acting": "talk 0.6, small nods; the pigeon listens with his head cocked",
+     "library": "hedgehog (new) {talk, paws: chest}"
+    },
+    {
+     "t": 37.42,
+     "end": 38.6,
+     "cue": {
+      "word": "يعيش",
+      "t": 37.42
+     },
+     "who": "hedgehog",
+     "action": "opens both paws to the bare ground, the little burrow, the leaf mat: this is all I have",
+     "acting": "palms up, shoulders shrug, eyes half shut in modesty",
+     "library": "hedgehog (new) {paws: open}"
+    },
+    {
+     "t": 39.26,
+     "end": 40.7,
+     "cue": {
+      "word": "ثلاثين",
+      "t": 39.26
+     },
+     "who": "fx",
+     "action": "counter rolls 1 to 30 with the word YEARS",
+     "acting": "the pigeon's head goes back a little further with every ten; hedgehog nods slowly with closed eyes",
+     "library": "S.counter"
+    },
+    {
+     "t": 39.98,
+     "end": 40.9,
+     "cue": {
+      "word": "سنة،",
+      "t": 39.98
+     },
+     "who": "pigeonM",
+     "action": "eyes go wide, beak drops open",
+     "acting": "lid 0, sq 1.06 stretch up, crest feathers lift",
+     "library": "bird {beak, sq}"
+    },
+    {
+     "t": 40.94,
+     "end": 42.4,
+     "cue": {
+      "word": "ولا",
+      "t": 40.94
+     },
+     "who": "hedgehog",
+     "action": "points up at the bunches and wags a paw: never those",
+     "acting": "paw wag 3 times, head turned away from the dates as if they did not tempt him; a quick swallow gives him away",
+     "library": "hedgehog (new) {paws: point}"
+    },
+    {
+     "t": 42.3,
+     "end": 43.1,
+     "cue": {
+      "word": "يسقط",
+      "t": 42.68
+     },
+     "who": "dateBunch",
+     "action": "one loose date drops from the crown and lands beside him with two small bounces",
+     "acting": "fall starts 0.35 s before the word so it lands on it; hedgehog's ear twitches at the tap",
+     "library": "fallY + rebound"
+    },
+    {
+     "t": 43.3,
+     "end": 44.1,
+     "cue": {
+      "word": "التمر.",
+      "t": 43.54
+     },
+     "who": "hedgehog",
+     "action": "lifts the date in both paws, shows it to heaven, takes the tiniest nibble",
+     "acting": "eyes up, then shut; nibble with front teeth only; paws tremble with the effort not to gobble",
+     "library": "hedgehog (new) {paws: hold, chew}"
+    },
+    {
+     "t": 44.14,
+     "end": 44.6,
+     "who": "hedgehog",
+     "action": "side-eye up at the pigeon to see if it worked",
+     "acting": "mask slip for 6 frames: pupil slides to the bird while the face stays holy; the bird is gaping",
+     "library": "gazePlan saccade"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 39.3,
+     "text": "30 YEARS"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 44.5,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 44.6
+   }
+  },
+  {
+   "id": "S5",
+   "start": 44.6,
+   "end": 54.0,
+   "paragraphs": [
+    3
+   ],
+   "set": "palmGrove",
+   "cast": [
+    "pigeonM",
+    "pigeonF",
+    "hedgehog"
+   ],
+   "summary": "The pigeon is won over and asks how he and his wife can live as simply. She flies down and is less sure. The hedgehog hides his delight.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "Hold {630, 760, 1.75}; drift to {610, 750, 1.65} when the female lands so three faces fit."
+   },
+   "composition": "M at (560, 640) and F landing at (490, 644) on the stub, both facing right. Hedgehog (740, 900). The speaker side is the birds; the hedgehog is alone on the right.",
+   "actions": [
+    {
+     "t": 44.96,
+     "end": 46.0,
+     "cue": {
+      "word": "أعجب",
+      "t": 44.96
+     },
+     "who": "pigeonM",
+     "action": "presses a wing to his chest and bows low",
+     "acting": "bow with overshoot, eyes shining (wet highlight only, no tear)",
+     "library": "bird {drop, sag} + settleTo"
+    },
+    {
+     "t": 46.06,
+     "end": 46.7,
+     "cue": {
+      "word": "الحمام",
+      "t": 46.06
+     },
+     "who": "pigeonF",
+     "action": "flies down from the crown and lands beside him; the stub dips again",
+     "acting": "neat landing, she looks at the hedgehog first, then at her mate",
+     "library": "bird {fly} + landSquash"
+    },
+    {
+     "t": 46.76,
+     "end": 48.0,
+     "cue": {
+      "word": "بكلامه،",
+      "t": 46.76
+     },
+     "who": "pigeonM",
+     "action": "turns to her and mimes the talk: beak chatter, wing to the sky; lettering WOW!",
+     "acting": "excited small hops; she leans away from the wing",
+     "library": "bird mime"
+    },
+    {
+     "t": 48.12,
+     "end": 49.2,
+     "cue": {
+      "word": "وطلب",
+      "t": 48.12
+     },
+     "who": "pigeonM",
+     "action": "leans far down off the stub toward the hedgehog and asks",
+     "acting": "tip 0.2 forward, wings half open for balance, talk",
+     "library": "bird {tip, talk}"
+    },
+    {
+     "t": 49.24,
+     "end": 50.2,
+     "cue": {
+      "word": "نصيحته",
+      "t": 49.24
+     },
+     "who": "hedgehog",
+     "action": "raises a modest paw as if to refuse the honour, then gives in",
+     "acting": "head shake, eyes shut, small smile; one beat of false reluctance",
+     "library": "hedgehog (new) {paws: up}"
+    },
+    {
+     "t": 50.3,
+     "end": 51.6,
+     "cue": {
+      "word": "ليعيش",
+      "t": 50.3
+     },
+     "who": "pigeonM",
+     "action": "points a wing at the rich crown above, then at the bare ground below",
+     "acting": "gaze follows his own wing up then down: he is already giving it up",
+     "library": "gazePlan"
+    },
+    {
+     "t": 51.7,
+     "end": 52.7,
+     "cue": {
+      "word": "بسيطة",
+      "t": 51.7
+     },
+     "who": "pigeonF",
+     "action": "looks up at the dates, down at the burrow, and frowns a little",
+     "acting": "the sceptic: slower head moves, lid 0.3, one step away along the stub",
+     "library": "bird {lid, headRot}"
+    },
+    {
+     "t": 52.78,
+     "end": 53.9,
+     "cue": {
+      "word": "وزوجته.",
+      "t": 53.14
+     },
+     "who": "pigeonM",
+     "action": "folds a wing round her and pulls her back; she nods without joy",
+     "acting": "her nod comes 5 frames after his; behind his back the hedgehog rubs his paws once, seen only by us",
+     "library": "stagger; hedgehog (new) {paws: rub}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 46.9,
+     "text": "WOW!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 54.0
+   }
+  },
+  {
+   "id": "S6",
+   "start": 54.0,
+   "end": 68.6,
+   "paragraphs": [
+    3
+   ],
+   "set": "palmGrove",
+   "cast": [
+    "hedgehog",
+    "pigeonM",
+    "pigeonF"
+   ],
+   "summary": "The advice, shown as a four-picture plan above the hedgehog: shake all the dates down, heap a year of food, come and live by the ground, spend your time in worship. The pigeons copy his praying pose and fly up to start.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "54.0 {680, 700, 1.5}: hedgehog low right, birds upper left, room above for the picture strip. 63.0 push to {700, 780, 1.8} for the ground pat. 67.4 pull out to {520, 615, 1.0} as they fly up."
+   },
+   "composition": "Picture strip (planned iconBalloon, strip mode) in the upper part of the panel, four frames filling left to right, tail to the hedgehog. Keep it above the birds' heads.",
+   "actions": [
+    {
+     "t": 54.1,
+     "end": 55.0,
+     "cue": {
+      "word": "قال",
+      "t": 54.1
+     },
+     "who": "hedgehog",
+     "action": "rises onto his hind legs, one paw up like a teacher",
+     "acting": "sit to rear with anticipation dip; clears throat",
+     "library": "hedgehog (new) {rear, paws: up} + anticipate"
+    },
+    {
+     "t": 55.82,
+     "end": 57.0,
+     "cue": {
+      "word": "«أسقطا",
+      "t": 55.82
+     },
+     "who": "fx",
+     "action": "frame 1 pops: a date bunch with three down arrows and falling dates",
+     "acting": "his raised paw mimes shaking a branch",
+     "library": "iconBalloon strip + S.arrow"
+    },
+    {
+     "t": 57.02,
+     "end": 58.1,
+     "cue": {
+      "word": "تمر",
+      "t": 57.02
+     },
+     "who": "pigeonM",
+     "action": "looks up at the bunches and counts them with small head jabs",
+     "acting": "three jabs, one per bunch; F watches the hedgehog instead",
+     "library": "gazePlan"
+    },
+    {
+     "t": 58.14,
+     "end": 59.2,
+     "cue": {
+      "word": "كله،",
+      "t": 58.14
+     },
+     "who": "hedgehog",
+     "action": "sweeps both paws wide: all of it. Lettering ALL!",
+     "acting": "big arm shapes, body stretch 1.06, then settle",
+     "library": "hedgehog (new) {paws: wide} + settleTo"
+    },
+    {
+     "t": 59.3,
+     "end": 60.2,
+     "cue": {
+      "word": "واجمعا",
+      "t": 59.3
+     },
+     "who": "fx",
+     "action": "frame 2 pops: a heap of dates on the ground",
+     "acting": "heap icon grows in three layers",
+     "library": "iconBalloon strip"
+    },
+    {
+     "t": 60.74,
+     "end": 61.9,
+     "cue": {
+      "word": "سنة",
+      "t": 60.74
+     },
+     "who": "fx",
+     "action": "tag on the heap: 1 YEAR",
+     "acting": "M nods hard; F tilts her head: that much?",
+     "library": "S.label"
+    },
+    {
+     "t": 63.0,
+     "end": 64.0,
+     "cue": {
+      "word": "اسكنا",
+      "t": 63.0
+     },
+     "who": "fx",
+     "action": "frame 3 pops: two bird icons with an arrow from the treetop down to the ground",
+     "acting": "the hedgehog's gaze drops from the birds to the earth beside him",
+     "library": "iconBalloon strip + S.arrow"
+    },
+    {
+     "t": 64.04,
+     "end": 64.6,
+     "cue": {
+      "word": "الأرض",
+      "t": 64.04
+     },
+     "who": "hedgehog",
+     "action": "pats the ground twice, right in front of his burrow; his tongue flicks over his lip",
+     "acting": "pat, pat with tiny dust puffs; the lick is 4 frames, then the holy face again",
+     "library": "hedgehog (new) {paws: pat, lick} + dustBurst"
+    },
+    {
+     "t": 64.66,
+     "end": 65.5,
+     "cue": {
+      "word": "واقضيا",
+      "t": 64.66
+     },
+     "who": "fx",
+     "action": "frame 4 pops: a bird with folded wings and closed eyes",
+     "acting": "strip is now complete; a thin line under all four",
+     "library": "iconBalloon strip"
+    },
+    {
+     "t": 66.48,
+     "end": 67.4,
+     "cue": {
+      "word": "العبادة».",
+      "t": 66.68
+     },
+     "who": "pigeonM",
+     "action": "the hedgehog clasps his paws and shuts his eyes; M copies at once, F a beat later with one eye open",
+     "acting": "three poses, three delays; F's open eye is on the hedgehog",
+     "library": "stagger, bird {sag 0, lid 1}"
+    },
+    {
+     "t": 67.5,
+     "end": 68.6,
+     "who": "pigeonF",
+     "action": "both birds crouch and take off for the crown; the hedgehog opens one eye and grins",
+     "acting": "anticipate, stretch on take-off, stub springs; his grin shows the first hint of teeth",
+     "library": "anticipate + bird {fly}; hedgehog (new) {mouth: grin}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 58.3,
+     "text": "ALL!"
+    },
+    {
+     "t": 60.8,
+     "text": "1 YEAR"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 68.6
+   }
+  },
+  {
+   "id": "S7",
+   "start": 68.6,
+   "end": 75.0,
+   "paragraphs": [
+    4
+   ],
+   "set": "palmGrove",
+   "cast": [
+    "pigeonM",
+    "pigeonF",
+    "hedgehog"
+   ],
+   "summary": "Long hours of work in one shot: the sky runs from midday to dusk while the pigeons tug the bunches bare and dates rain onto a growing heap. Below, the hedgehog \"prays\" with one eye open.",
+   "camera": {
+    "shot": "wide",
+    "move": "drift",
+    "notes": "Whole palm {500, 615, 1.0}, a slow drift down of 30 units over the shot so the heap gains weight in frame."
+   },
+   "composition": "Birds work at the three bunches at the top; date heap grows at (560, 900), up to 260 wide and 110 high; hedgehog seated at (740, 900). Sun crosses on the skyCycle arc behind the fronds.",
+   "actions": [
+    {
+     "t": 68.6,
+     "end": 69.1,
+     "cue": {
+      "word": "عمل",
+      "t": 68.6
+     },
+     "who": "pigeonM",
+     "action": "grips a stalk in his beak and shakes it",
+     "acting": "draw back, clamp, tug (tip -0.08), release: the bite and tug cycle",
+     "library": "bite and tug pattern (Fox), dateBunch {shake, left}"
+    },
+    {
+     "t": 69.16,
+     "end": 70.0,
+     "cue": {
+      "word": "الحمامان",
+      "t": 69.16
+     },
+     "who": "pigeonF",
+     "action": "works the next bunch on the off-beat; dates fall in seeded arcs and bounce on the ground",
+     "acting": "never in unison with him; each date gets a small bounce and comes to rest in the heap",
+     "library": "fallY + rebound; datePile {n}"
+    },
+    {
+     "t": 70.06,
+     "end": 70.8,
+     "cue": {
+      "word": "ساعات",
+      "t": 70.06
+     },
+     "who": "set",
+     "action": "the sky runs from midday toward dusk; the sun slides down its arc and the land warms",
+     "acting": "u 0.22 to 0.47 between 69.2 and 73.9",
+     "library": "skyCycle + dayCycle(u).warm via kfn"
+    },
+    {
+     "t": 70.88,
+     "end": 71.7,
+     "cue": {
+      "word": "طويلة",
+      "t": 70.88
+     },
+     "who": "pigeonM",
+     "action": "stops to pant: wings sag, beak open, one sweat drop; then back to work",
+     "acting": "sag -0.5, chest heaves (breathe x3); F nudges him on",
+     "library": "bird {sag, beak} + breathe"
+    },
+    {
+     "t": 71.78,
+     "end": 72.5,
+     "cue": {
+      "word": "حتى",
+      "t": 71.78
+     },
+     "who": "fx",
+     "action": "counter DATES climbs with the heap",
+     "acting": "counter ticks with each landing, reaching 40",
+     "library": "S.counter"
+    },
+    {
+     "t": 72.52,
+     "end": 73.3,
+     "cue": {
+      "word": "أسقطا",
+      "t": 72.52
+     },
+     "who": "pigeonF",
+     "action": "both haul on the last bunch together: the whole cluster comes away and drops",
+     "acting": "the one moment they pull in unison; they tumble back onto the ledge as it gives",
+     "library": "anticipate + fallY"
+    },
+    {
+     "t": 73.32,
+     "end": 73.9,
+     "cue": {
+      "word": "جميع",
+      "t": 73.32
+     },
+     "who": "dateBunch",
+     "action": "three bare stalks swing where the bunches were",
+     "acting": "damped swing, nothing left on them",
+     "library": "swing, dateBunch {left 0}"
+    },
+    {
+     "t": 73.9,
+     "end": 74.4,
+     "cue": {
+      "word": "الثمر.",
+      "t": 73.9
+     },
+     "who": "pigeonM",
+     "action": "the two birds flop on the ledge, eyes shut, leaning on each other",
+     "acting": "sq 0.88, lids 1, slow breathing",
+     "library": "bird {sq, lid} + breathe"
+    },
+    {
+     "t": 74.46,
+     "end": 75.0,
+     "who": "hedgehog",
+     "action": "the very last date bounces off his head; he does not move, but his open eye follows it to the heap",
+     "acting": "stillness as comedy: only the pupil moves",
+     "library": "gazePlan, kick"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 74.72,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 75.0
+   }
+  },
+  {
+   "id": "S8",
+   "start": 75.0,
+   "end": 90.3,
+   "paragraphs": [
+    4
+   ],
+   "set": "palmGrove",
+   "cast": [
+    "hedgehog",
+    "hedgeWife",
+    "pigeonM",
+    "pigeonF"
+   ],
+   "summary": "At dusk the hedgehog carries the whole heap into his burrow, rolling on it so the dates stick to his spines, and hides it for himself. Then he waits at his door in the dark and imagines the hungry birds walking into his paws.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "75.0 {650, 770, 1.5} heap and burrow in one frame; 80.8-82.3 push to {760, 760, 2.1} on the hedgehog at his door; thought cloud opens up-left."
+   },
+   "composition": "Heap at (560, 900), burrow opening at x 815. Trips run left to right. Night look: skyCycle u 0.5 to 0.72, land tinted by dayCycle night. Thought cloud at (520, 520), 420 x 280.",
+   "actions": [
+    {
+     "t": 75.1,
+     "end": 75.9,
+     "cue": {
+      "word": "لكن",
+      "t": 75.1
+     },
+     "who": "hedgehog",
+     "action": "both eyes snap open; he checks the crown: the birds are asleep",
+     "acting": "mask off: lids 0 in 2 frames, gaze up, a slow smile",
+     "library": "gazePlan"
+    },
+    {
+     "t": 75.94,
+     "end": 76.8,
+     "cue": {
+      "word": "القنفذ",
+      "t": 75.94
+     },
+     "who": "hedgehog",
+     "action": "tiptoes to the heap",
+     "acting": "high careful steps, body low, a hold on each toe",
+     "library": "walk (sneak style: low amp, holds)"
+    },
+    {
+     "t": 76.88,
+     "end": 77.5,
+     "cue": {
+      "word": "أخذ",
+      "t": 76.88
+     },
+     "who": "hedgehog",
+     "action": "curls into a ball and rolls across the heap; he stands up with a dozen dates stuck on his spines",
+     "acting": "curl 0..1, one full roll, uncurl with a shake that loses no dates",
+     "library": "hedgehog (new) {curl, carry: 12}"
+    },
+    {
+     "t": 77.56,
+     "end": 78.2,
+     "cue": {
+      "word": "التمر",
+      "t": 77.56
+     },
+     "who": "datePile",
+     "action": "the heap drops by a third",
+     "acting": "pile count 40 to 28",
+     "library": "datePile {n}"
+    },
+    {
+     "t": 78.3,
+     "end": 78.9,
+     "cue": {
+      "word": "جحره",
+      "t": 78.3
+     },
+     "who": "hedgehog",
+     "action": "trots to the burrow and backs in; two small paws inside pluck the dates off him",
+     "acting": "the wife is only paws and a bow at the opening",
+     "library": "walk + head into a hole clip; hedgeWife paws"
+    },
+    {
+     "t": 78.98,
+     "end": 80.0,
+     "cue": {
+      "word": "وخبأه",
+      "t": 78.98
+     },
+     "who": "hedgehog",
+     "action": "two more trips at double speed until the ground is bare",
+     "acting": "each trip shorter (0.45 s), dust puffs at the turns; pile 28, 14, 0",
+     "library": "kfn loop of the trip, footfalls"
+    },
+    {
+     "t": 80.04,
+     "end": 80.8,
+     "cue": {
+      "word": "لنفسه.",
+      "t": 80.04
+     },
+     "who": "hedgehog",
+     "action": "sweeps the ground with a dry frond to wipe the marks, then pats his belly",
+     "acting": "backward sweeping steps, smug closed-eye smile; label ALL MINE",
+     "library": "hedgehog (new) {paws: hold} + S.label"
+    },
+    {
+     "t": 80.84,
+     "end": 81.5,
+     "cue": {
+      "word": "كان",
+      "t": 80.84
+     },
+     "who": "set",
+     "action": "night falls: stars fade in, the moon rises behind the fronds",
+     "acting": "u 0.5 to 0.72 over 80.0 to 82.5",
+     "library": "skyCycle"
+    },
+    {
+     "t": 81.5,
+     "end": 82.3,
+     "cue": {
+      "word": "ينتظر",
+      "t": 81.5
+     },
+     "who": "hedgehog",
+     "action": "sits in his doorway, paws clasped again, eyes on the crown",
+     "acting": "patient stillness; only an ear turns",
+     "library": "hedgehog (new) {sit, paws: clasp}"
+    },
+    {
+     "t": 82.52,
+     "end": 83.9,
+     "cue": {
+      "word": "يجوع",
+      "t": 82.52
+     },
+     "who": "fx",
+     "action": "thought cloud: two thin pigeons with wobbly rumble lines on their bellies",
+     "acting": "cloud trail pops first, then the cloud; the dream birds droop",
+     "library": "thoughtCloud {inside}"
+    },
+    {
+     "t": 83.94,
+     "end": 85.4,
+     "cue": {
+      "word": "فيقتربا",
+      "t": 83.94
+     },
+     "who": "fx",
+     "action": "in the cloud the birds walk step by step toward a small praying hedgehog",
+     "acting": "they come within one step of him",
+     "library": "thoughtCloud inside: walk"
+    },
+    {
+     "t": 87.24,
+     "end": 87.9,
+     "cue": {
+      "word": "الإمساك",
+      "t": 87.24
+     },
+     "who": "fx",
+     "action": "in the cloud two paws clap shut on them; a puff and three feathers",
+     "acting": "no bird is shown hurt: the puff hides it",
+     "library": "thoughtCloud inside + featherFall (planned)"
+    },
+    {
+     "t": 88.68,
+     "end": 89.8,
+     "cue": {
+      "word": "وأكلهما.",
+      "t": 88.68
+     },
+     "who": "hedgehog",
+     "action": "cloud: a plate with two feathers and a bib. Real hedgehog licks his lips and his teeth catch the moonlight",
+     "acting": "drool drop, eyes shine in the dark doorway (burrow eyes state)",
+     "library": "hedgehog (new) {mouth: grin, lick}; burrow {eyes}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 80.2,
+     "text": "ALL MINE"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 90.1,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 90.3,
+    "label": "NEXT MORNING..."
+   }
+  },
+  {
+   "id": "S9",
+   "start": 90.3,
+   "end": 101.4,
+   "paragraphs": [
+    5
+   ],
+   "set": "palmGrove",
+   "cast": [
+    "pigeonM",
+    "pigeonF",
+    "hedgehog",
+    "hedgeWife"
+   ],
+   "summary": "Morning. The pigeons come down and find nothing. They ask the hedgehog, who blames the wind, while not a single frond moves.",
+   "camera": {
+    "shot": "wide",
+    "move": "crane",
+    "notes": "Under the card: cut to {450, 400, 1.6} on the bare crown. 91.8-92.5 follow the glide down to {600, 770, 1.6}. 99.0 widen to {560, 700, 1.3} for the wind gesture."
+   },
+   "composition": "Birds land at (520, 900) and (600, 900) facing right; the empty spot of the heap (560, 900) is between them. Hedgehog seated at (760, 900) in front of the opening, facing left.",
+   "actions": [
+    {
+     "t": 90.84,
+     "end": 91.8,
+     "cue": {
+      "word": "عندما",
+      "t": 90.84
+     },
+     "who": "pigeonM",
+     "action": "wakes on the bare crown and stretches; F is already looking down",
+     "acting": "wing stretch, yawn; morning sky u 0.08",
+     "library": "bird {sag, beak}; skyCycle"
+    },
+    {
+     "t": 91.86,
+     "end": 92.4,
+     "cue": {
+      "word": "نزلا",
+      "t": 91.86
+     },
+     "who": "pigeonF",
+     "action": "both glide down and land on the ground for the first time, one after the other",
+     "acting": "landSquash staggered 6 frames; they look small on the ground",
+     "library": "bird {fly} + landSquash + stagger"
+    },
+    {
+     "t": 92.44,
+     "end": 93.5,
+     "cue": {
+      "word": "لم",
+      "t": 92.44
+     },
+     "who": "pigeonM",
+     "action": "looks left, right, behind him",
+     "acting": "saccades, then a full turn with a squeeze",
+     "library": "gazePlan(…, 0.07) + turnFlip"
+    },
+    {
+     "t": 93.54,
+     "end": 94.4,
+     "cue": {
+      "word": "شيئًا",
+      "t": 93.54
+     },
+     "who": "fx",
+     "action": "a dashed outline of the missing heap blinks on the bare ground",
+     "acting": "outline draws once and fades; one frond sweep mark remains",
+     "library": "S.box dashed"
+    },
+    {
+     "t": 94.48,
+     "end": 95.0,
+     "cue": {
+      "word": "التمر.",
+      "t": 94.48
+     },
+     "who": "pigeonF",
+     "action": "her belly rumbles (wobbly lines); wings out in a shrug",
+     "acting": "she looks at her mate, not at the ground: I told you",
+     "library": "bird {sag} + tremble"
+    },
+    {
+     "t": 95.1,
+     "end": 95.6,
+     "who": "fx",
+     "action": "one ? balloon between the two birds",
+     "acting": "pops in the pause, above and between them",
+     "library": "S.label"
+    },
+    {
+     "t": 95.62,
+     "end": 96.3,
+     "cue": {
+      "word": "سألا",
+      "t": 95.62
+     },
+     "who": "pigeonM",
+     "action": "both turn to the hedgehog; M points a wing at the empty spot",
+     "acting": "talk; F stands half behind him",
+     "library": "bird {talk, sag}"
+    },
+    {
+     "t": 96.32,
+     "end": 97.5,
+     "cue": {
+      "word": "القنفذ",
+      "t": 96.32
+     },
+     "who": "hedgehog",
+     "action": "opens his eyes slowly, looks at the spot, and puts on a face of gentle sorrow",
+     "acting": "brow raised, mouth small frown, slow head shake",
+     "library": "hedgehog (new) {brow -0.6, mouth: frown}"
+    },
+    {
+     "t": 97.6,
+     "end": 98.5,
+     "cue": {
+      "word": "فأجاب",
+      "t": 97.6
+     },
+     "who": "hedgehog",
+     "action": "sighs and shrugs with both paws",
+     "acting": "shoulders up and down, eyes to heaven",
+     "library": "hedgehog (new) {paws: open}"
+    },
+    {
+     "t": 99.14,
+     "end": 100.2,
+     "cue": {
+      "word": "الريح",
+      "t": 99.14
+     },
+     "who": "hedgehog",
+     "action": "sweeps a paw across the sky; in a small picture balloon three dates fly off on wind streaks",
+     "acting": "the real fronds hang perfectly still, and so do his spines: the lie is in the picture",
+     "library": "iconBalloon single + windStreaks (planned) inside the balloon only"
+    },
+    {
+     "t": 100.24,
+     "end": 100.9,
+     "cue": {
+      "word": "حملته",
+      "t": 100.24
+     },
+     "who": "pigeonM",
+     "action": "both birds follow his paw and stare at the far horizon",
+     "acting": "obedient heads turn together, M first",
+     "library": "gazePlan + stagger"
+    },
+    {
+     "t": 100.98,
+     "end": 101.4,
+     "cue": {
+      "word": "بعيدًا.",
+      "t": 100.98
+     },
+     "who": "hedgeWife",
+     "action": "behind their backs one date rolls out of the burrow; a small paw darts out and snatches it back",
+     "acting": "date rolls 40 units, paw in and out in 5 frames; the hedgehog's eye flicks to it and back",
+     "library": "kfn + clip at the opening"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 95.2,
+     "text": "?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 95.3,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 101.4
+   }
+  },
+  {
+   "id": "S10",
+   "start": 101.4,
+   "end": 110.4,
+   "paragraphs": [
+    5
+   ],
+   "set": "palmGrove",
+   "cast": [
+    "hedgehog",
+    "pigeonM",
+    "pigeonF"
+   ],
+   "summary": "The sermon on patience and trust, given by a hedgehog with a date stuck in his back spines and a full belly he has to hide.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "{650, 780, 1.7} to {670, 790, 1.95} by 106; faces of all three stay in frame."
+   },
+   "composition": "Hedgehog standing at (740, 900) facing left, birds at (540, 900) and (610, 900) facing right, looking up at him. The stuck date is on his back (screen right), which the birds cannot see.",
+   "actions": [
+    {
+     "t": 101.72,
+     "end": 102.6,
+     "cue": {
+      "word": "ثم",
+      "t": 101.72
+     },
+     "who": "hedgehog",
+     "action": "stands up on his hind legs and raises a paw",
+     "acting": "sit to rear, anticipation, chest out",
+     "library": "hedgehog (new) {rear, paws: up}"
+    },
+    {
+     "t": 103.08,
+     "end": 104.2,
+     "cue": {
+      "word": "يحدثهما",
+      "t": 103.08
+     },
+     "who": "hedgehog",
+     "action": "lectures: three gesture poses in turn (paw up, paw on chest, both open)",
+     "acting": "talk 0.7; the birds sit down to listen, M upright, F slumped",
+     "library": "hedgehog (new) {talk}; bird {sq}"
+    },
+    {
+     "t": 104.5,
+     "end": 105.0,
+     "cue": {
+      "word": "الصبر",
+      "t": 104.5
+     },
+     "who": "pigeonM",
+     "action": "nods eagerly; his own belly rumbles and he hides it with a wing",
+     "acting": "nod x2, then an embarrassed glance at F",
+     "library": "bird {drop} + tremble"
+    },
+    {
+     "t": 105.08,
+     "end": 105.9,
+     "cue": {
+      "word": "والتوكل،",
+      "t": 105.08
+     },
+     "who": "hedgehog",
+     "action": "points to the sky, and takes one step sideways so that he covers the burrow opening",
+     "acting": "F had stretched her beak toward the opening, sniffing; his step cuts her eye line",
+     "library": "hedgehog (new) {paws: point}; lookAt"
+    },
+    {
+     "t": 106.0,
+     "end": 107.3,
+     "cue": {
+      "word": "ويتظاهر",
+      "t": 106.0
+     },
+     "who": "hedgehog",
+     "action": "half turns in his sermon and we see a date stuck on his back spines",
+     "acting": "he does not know; a small arrow points at it for us only",
+     "library": "hedgehog (new) {carry: 1} + S.arrow"
+    },
+    {
+     "t": 107.34,
+     "end": 108.3,
+     "cue": {
+      "word": "بأنه",
+      "t": 107.34
+     },
+     "who": "hedgehog",
+     "action": "pats his belly and waves a paw: food means nothing to me",
+     "acting": "belly is round; he sucks it in while they look",
+     "library": "hedgehog (new) {paws: pat, sq 1.04}"
+    },
+    {
+     "t": 108.4,
+     "end": 108.8,
+     "cue": {
+      "word": "يهتم",
+      "t": 108.4
+     },
+     "who": "hedgehog",
+     "action": "a burp rises: cheeks puff, eyes widen, he clamps a paw over his mouth",
+     "acting": "held 8 frames, swallowed; then the holy smile",
+     "library": "hedgehog (new) {cheeks, paws: mouth}"
+    },
+    {
+     "t": 108.88,
+     "end": 109.8,
+     "cue": {
+      "word": "بالطعام.",
+      "t": 108.88
+     },
+     "who": "hedgehog",
+     "action": "the stuck date drops behind him; he feels it and sits down on it at once",
+     "acting": "ear twitch, eyes dart, sit with a small bounce, innocent look upward",
+     "library": "hedgehog (new) {sit} + landSquash"
+    },
+    {
+     "t": 109.9,
+     "end": 110.4,
+     "who": "pigeonM",
+     "action": "bows his head to the teacher; F looks at the sky",
+     "acting": "M moved, F unconvinced but tired",
+     "library": "bird {drop}"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 110.3,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 110.4
+   }
+  },
+  {
+   "id": "S11",
+   "start": 110.4,
+   "end": 116.5,
+   "paragraphs": [
+    6
+   ],
+   "set": "palmGrove",
+   "cast": [
+    "hedgehog",
+    "pigeonM",
+    "pigeonF"
+   ],
+   "summary": "He talks until the sun is low. Worn down, the pigeons believe him and walk into his burrow.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "{620, 720, 1.3}; from 114.6 push to {800, 800, 2.0} on the opening as they go in."
+   },
+   "composition": "Same marks as S10. The burrow opening (x 815) is the target; the hedgehog ends beside it at (890, 900) bowing them in.",
+   "actions": [
+    {
+     "t": 110.84,
+     "end": 112.0,
+     "cue": {
+      "word": "صدقه",
+      "t": 110.84
+     },
+     "who": "pigeonM",
+     "action": "nods, wing on his heart",
+     "acting": "slow sincere nod; eyes half shut with tiredness",
+     "library": "bird {drop, lid 0.4}"
+    },
+    {
+     "t": 112.14,
+     "end": 113.0,
+     "cue": {
+      "word": "الحمامان",
+      "t": 112.14
+     },
+     "who": "pigeonF",
+     "action": "looks at him, at the hedgehog, sighs and gives a small nod",
+     "acting": "shoulders drop (sq 0.94): she gives in",
+     "library": "bird {sq}"
+    },
+    {
+     "t": 113.06,
+     "end": 113.9,
+     "cue": {
+      "word": "بعد",
+      "t": 113.06
+     },
+     "who": "set",
+     "action": "the sky slides from morning to late afternoon while his mouth keeps going",
+     "acting": "u 0.1 to 0.42 between 110.9 and 114.2; shadows lengthen",
+     "library": "skyCycle via kfn"
+    },
+    {
+     "t": 113.4,
+     "end": 114.5,
+     "cue": {
+      "word": "طول",
+      "t": 113.4
+     },
+     "who": "hedgehog",
+     "action": "talks on and on: mouth flaps, gestures cycle; lettering YAK YAK YAK drifts up from him",
+     "acting": "birds' heads sink lower with each YAK",
+     "library": "hedgehog (new) {talk}; lettering away from faces"
+    },
+    {
+     "t": 114.6,
+     "end": 115.0,
+     "who": "hedgehog",
+     "action": "steps aside from the opening and bows with a sweeping paw: after you",
+     "acting": "gallant overshoot bow; eyes on their feet",
+     "library": "hedgehog (new) {paws: wide} + settleTo"
+    },
+    {
+     "t": 115.04,
+     "end": 115.7,
+     "cue": {
+      "word": "ودخلا",
+      "t": 115.04
+     },
+     "who": "pigeonM",
+     "action": "walks in first, head bobbing",
+     "acting": "bird walk in small hops; disappears into the dark of the opening",
+     "library": "hop + head into a hole clip"
+    },
+    {
+     "t": 115.78,
+     "end": 116.2,
+     "cue": {
+      "word": "جحره",
+      "t": 115.78
+     },
+     "who": "pigeonF",
+     "action": "stops at the lip, looks back once at the open sky, then follows",
+     "acting": "one long look up (gaze [0, -1]), a blink, in",
+     "library": "gazePlan + clip"
+    },
+    {
+     "t": 116.2,
+     "end": 116.5,
+     "who": "hedgehog",
+     "action": "alone outside for a moment: he looks at the lens, smiles with all his teeth, and goes in after them",
+     "acting": "second and last look to camera; 6 frames of grin",
+     "library": "hedgehog (new) {mouth: teeth}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 113.5,
+     "text": "YAK YAK YAK"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "match-cut",
+    "t": 116.5
+   }
+  },
+  {
+   "id": "S12",
+   "start": 116.5,
+   "end": 120.3,
+   "paragraphs": [
+    6
+   ],
+   "set": "burrowChamber",
+   "cast": [
+    "hedgehog",
+    "pigeonM",
+    "pigeonF"
+   ],
+   "summary": "Inside the burrow. The pigeons step down into a dim earth room, still sure he is a good friend.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Cut through the darkness of the opening to the cutaway interior {520, 720, 1.25}."
+   },
+   "composition": "Door arch on the left (x 150..320, floor y 900) with daylight behind it. Hedgehog at (430, 900) facing right, birds at (620, 900) and (720, 900). A curtain of roots at x 800..920 hides the back alcove. The round daylight of the door sits behind the hedgehog's head like a halo.",
+   "actions": [
+    {
+     "t": 116.64,
+     "end": 117.3,
+     "cue": {
+      "word": "وهما",
+      "t": 116.64
+     },
+     "who": "pigeonM",
+     "action": "the birds hop down from the tunnel and look around the room",
+     "acting": "eyes wide in the dim light, heads turning different ways",
+     "library": "hop + gazePlan"
+    },
+    {
+     "t": 117.36,
+     "end": 118.1,
+     "cue": {
+      "word": "يظنان",
+      "t": 117.36
+     },
+     "who": "pigeonM",
+     "action": "smiles: cosy! He tests the soft floor with a foot",
+     "acting": "small delighted hop; F stays near the middle, wings tight",
+     "library": "bird {sq} + hop"
+    },
+    {
+     "t": 118.72,
+     "end": 119.3,
+     "cue": {
+      "word": "صديق",
+      "t": 118.72
+     },
+     "who": "pigeonM",
+     "action": "turns back to the hedgehog with a grateful wave of his wing",
+     "acting": "open, trusting face",
+     "library": "bird {sag as wave}"
+    },
+    {
+     "t": 119.36,
+     "end": 120.3,
+     "cue": {
+      "word": "صالح.",
+      "t": 119.36
+     },
+     "who": "hedgehog",
+     "action": "stands smiling sweetly, the bright door exactly behind his head like a halo",
+     "acting": "paws clasped; the halo is only the door light: the last picture of the mask",
+     "library": "hedgehog (new) {paws: clasp, mouth: smile}"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 120.3
+   }
+  },
+  {
+   "id": "S13",
+   "start": 120.3,
+   "end": 132.4,
+   "paragraphs": [
+    6
+   ],
+   "set": "burrowChamber",
+   "cast": [
+    "hedgehog",
+    "pigeonM",
+    "pigeonF"
+   ],
+   "summary": "The trap closes. He runs to the door, fills it with raised spines and shows his teeth. The room goes dark, his spiky shadow reaches the birds, and when they back away the hidden dates spill out at their feet.",
+   "camera": {
+    "shot": "medium",
+    "move": "whip",
+    "notes": "120.3 {520, 740, 1.3}; 121.3-123.3 track left with his run to {300, 760, 1.7}; 126.2-127.9 push to close {240, 770, 2.6} on the mouth; 128.3 whip to {700, 780, 1.9} on the birds; 131.2 out to {520, 740, 1.3} for TRAP!"
+   },
+   "composition": "Hedgehog ends in the arch at (235, 900) facing right. Birds at (640, 900) and (730, 900); root curtain and hoard at x 800..920.",
+   "actions": [
+    {
+     "t": 120.66,
+     "end": 121.3,
+     "cue": {
+      "word": "عندئذ",
+      "t": 120.66
+     },
+     "who": "hedgehog",
+     "action": "the smile switches off",
+     "acting": "mask off for good: mouth flat, brow down, lids half; 2-frame change, then stillness",
+     "library": "hedgehog (new) {brow 1, lid 0.4}"
+    },
+    {
+     "t": 121.36,
+     "end": 122.3,
+     "cue": {
+      "word": "أسرع",
+      "t": 121.36
+     },
+     "who": "hedgehog",
+     "action": "spins and dashes for the door",
+     "acting": "turn with a squeeze, low fast run, dust from each step",
+     "library": "turnFlip + walk + footfalls + dustBurst"
+    },
+    {
+     "t": 122.3,
+     "end": 123.2,
+     "cue": {
+      "word": "القنفذ",
+      "t": 122.3
+     },
+     "who": "pigeonF",
+     "action": "F sees him run and turns first; M is still admiring the ceiling",
+     "acting": "her head snaps round; his follows 10 frames late",
+     "library": "gazePlan + stagger"
+    },
+    {
+     "t": 123.28,
+     "end": 123.8,
+     "cue": {
+      "word": "الباب",
+      "t": 123.28
+     },
+     "who": "hedgehog",
+     "action": "skids to a stop in the arch and turns to face them",
+     "acting": "lurch forward on the brake, spines sway forward then back",
+     "library": "lurch + swing + turnFlip"
+    },
+    {
+     "t": 123.8,
+     "end": 124.5,
+     "cue": {
+      "word": "وسد",
+      "t": 123.8
+     },
+     "who": "hedgehog",
+     "action": "plants his paws on both sides of the arch and raises every spine until the doorway is full",
+     "acting": "spike 0 to 1 with overshoot; body stretch",
+     "library": "hedgehog (new) {spike, paws: wide} + settleTo"
+    },
+    {
+     "t": 124.6,
+     "end": 125.2,
+     "cue": {
+      "word": "طريق",
+      "t": 124.6
+     },
+     "who": "set",
+     "action": "the daylight is cut: the room darkens and his spiked shadow shoots across the floor to the birds' feet",
+     "acting": "dark overlay 0 to 0.4; shadow grows in 0.4 s",
+     "library": "burrowChamber {dark, shadow: polygon from his outline}"
+    },
+    {
+     "t": 125.2,
+     "end": 126.2,
+     "cue": {
+      "word": "الخروج،",
+      "t": 125.2
+     },
+     "who": "pigeonM",
+     "action": "M finally turns; both birds stare at the blocked door",
+     "acting": "M beak drops; F presses against him",
+     "library": "bird {beak, sq}"
+    },
+    {
+     "t": 126.3,
+     "end": 127.0,
+     "cue": {
+      "word": "وأظهر",
+      "t": 126.3
+     },
+     "who": "hedgehog",
+     "action": "close on his face: the lips part slowly",
+     "acting": "the slowest move in the film; eyes fixed on them, no blink",
+     "library": "hedgehog (new) {mouth: teeth, teeth 0..1}, noBlink"
+    },
+    {
+     "t": 127.06,
+     "end": 127.9,
+     "cue": {
+      "word": "أسنانه",
+      "t": 127.06
+     },
+     "who": "hedgehog",
+     "action": "two rows of small pointed teeth, fully shown",
+     "acting": "teeth 1; a thread of drool",
+     "library": "hedgehog (new) {teeth 1}"
+    },
+    {
+     "t": 127.92,
+     "end": 128.3,
+     "cue": {
+      "word": "الحادة.",
+      "t": 127.92
+     },
+     "who": "fx",
+     "action": "one star glint travels along the teeth; lettering SHINK!",
+     "acting": "glint runs left to right in 5 frames",
+     "library": "sparkle + lettering"
+    },
+    {
+     "t": 128.3,
+     "end": 129.1,
+     "who": "pigeonM",
+     "action": "whip to the birds: feathers puff out, eyes huge; M throws a wing in front of F",
+     "acting": "puff 1, tremble, lids 0; she ducks behind the wing",
+     "library": "bird {puff, sag} + tremble"
+    },
+    {
+     "t": 129.14,
+     "end": 130.3,
+     "cue": {
+      "word": "أدرك",
+      "t": 129.14
+     },
+     "who": "pigeonF",
+     "action": "they back away step by step",
+     "acting": "backward hops, never turning their eyes from him",
+     "library": "hop"
+    },
+    {
+     "t": 130.4,
+     "end": 131.3,
+     "cue": {
+      "word": "أنهما",
+      "t": 130.4
+     },
+     "who": "pigeonF",
+     "action": "F backs into the root curtain and a dozen dates roll out between their feet",
+     "acting": "they look down at the dates, at each other, then at him: now they know everything",
+     "library": "kfn rolls + gazePlan"
+    },
+    {
+     "t": 131.34,
+     "end": 132.4,
+     "cue": {
+      "word": "وقعا",
+      "t": 131.34
+     },
+     "who": "fx",
+     "action": "stamp TRAP! in the upper earth, clear of every face",
+     "acting": "stamp lands on the word for trap; one panel-only shake of 3 frames",
+     "library": "S.emphasis + panel-only shake"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 127.95,
+     "text": "SHINK!"
+    },
+    {
+     "t": 132.2,
+     "text": "TRAP!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 132.4
+   }
+  },
+  {
+   "id": "S14",
+   "start": 132.4,
+   "end": 144.5,
+   "paragraphs": [
+    7
+   ],
+   "set": "burrowChamber",
+   "cast": [
+    "pigeonM",
+    "pigeonF",
+    "hedgehog"
+   ],
+   "summary": "The male pigeon steps in front of his mate and speaks up: yesterday a teacher, today a killer. Does he not fear his trick coming back on him? The hedgehog, who has been creeping closer, stops.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "twoShot(hedgehog head, M head, margin 120): about {470, 770, 1.55}; drifts right as the hedgehog advances."
+   },
+   "composition": "Hedgehog advances from x 235 to 400 in three steps; birds at (640, 900) (M, in front) and (730, 900). Inset circle top left at panel (250, 300), radius 130.",
+   "actions": [
+    {
+     "t": 132.68,
+     "end": 134.3,
+     "cue": {
+      "word": "قال",
+      "t": 132.68
+     },
+     "who": "pigeonM",
+     "action": "gulps, then steps in front of F and puffs his chest",
+     "acting": "fear first (gulp, tremble), courage second (stretch 1.08, brow down)",
+     "library": "bird {puff, sq}"
+    },
+    {
+     "t": 134.36,
+     "end": 135.4,
+     "cue": {
+      "word": "ذكر",
+      "t": 134.36
+     },
+     "who": "hedgehog",
+     "action": "takes one slow step toward them, licking his lips",
+     "acting": "low stalking step, spines still up",
+     "library": "walk"
+    },
+    {
+     "t": 135.52,
+     "end": 136.8,
+     "cue": {
+      "word": "«بالأمس",
+      "t": 135.52
+     },
+     "who": "fx",
+     "action": "inset circle opens: the hedgehog of yesterday, paws clasped, eyes shut",
+     "acting": "M points a wing at it; the inset has the pale dream wash",
+     "library": "inset circle + dream wash (planned)"
+    },
+    {
+     "t": 137.36,
+     "end": 138.1,
+     "cue": {
+      "word": "تنصحنا",
+      "t": 137.36
+     },
+     "who": "pigeonM",
+     "action": "mimes the teacher: wing up, beak chatter",
+     "acting": "bitter imitation, short",
+     "library": "bird mime"
+    },
+    {
+     "t": 138.86,
+     "end": 140.0,
+     "cue": {
+      "word": "واليوم",
+      "t": 138.86
+     },
+     "who": "fx",
+     "action": "the inset flips to today: the mouth full of teeth",
+     "acting": "flip like a card in 4 frames",
+     "library": "inset circle"
+    },
+    {
+     "t": 139.5,
+     "end": 140.0,
+     "cue": {
+      "word": "واليوم",
+      "t": 138.86
+     },
+     "who": "hedgehog",
+     "action": "second step closer",
+     "acting": "his shadow now touches M's feet",
+     "library": "walk"
+    },
+    {
+     "t": 140.68,
+     "end": 141.7,
+     "cue": {
+      "word": "قتلنا!",
+      "t": 140.68
+     },
+     "who": "pigeonM",
+     "action": "slashes his wing down; F hides her face in his back",
+     "acting": "voice breaks: beak wide, eyes wet",
+     "library": "bird {beak, wet}"
+    },
+    {
+     "t": 141.78,
+     "end": 142.8,
+     "cue": {
+      "word": "ألا",
+      "t": 141.78
+     },
+     "who": "pigeonM",
+     "action": "raises a wing: wait. The hedgehog stops with one foot in the air",
+     "acting": "the freeze: foot held up, only his eyes move to the wing",
+     "library": "hedgehog (new) {raise}"
+    },
+    {
+     "t": 143.04,
+     "end": 144.0,
+     "cue": {
+      "word": "يعود",
+      "t": 143.04
+     },
+     "who": "fx",
+     "action": "a curved arrow leaves the hedgehog, loops round the room and comes back at his own head",
+     "acting": "arrow draws along its path over 1 s",
+     "library": "S.arrow on a bezier"
+    },
+    {
+     "t": 144.1,
+     "end": 144.5,
+     "cue": {
+      "word": "عليك؟»",
+      "t": 144.1
+     },
+     "who": "hedgehog",
+     "action": "the arrowhead taps his nose; he goes cross-eyed, blinks, and one brow lifts",
+     "acting": "first doubt: spines drop a little (spike 0.8)",
+     "library": "hedgehog (new) {gaze crossed, brow -0.4}"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 144.5
+   }
+  },
+  {
+   "id": "S15",
+   "start": 144.5,
+   "end": 154.3,
+   "paragraphs": [
+    7
+   ],
+   "set": "burrowChamber",
+   "cast": [
+    "pigeonM",
+    "pigeonF",
+    "hedgehog",
+    "cheatA",
+    "cheatB",
+    "merchant"
+   ],
+   "summary": "The pigeon starts a story to make his point: two men who set out to cheat a merchant, each secretly planning to betray the other. A story cloud opens over the room and the hedgehog's foot comes down.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "{520, 640, 1.2}: the story cloud fills the upper half of the panel, the three animals stay along the bottom."
+   },
+   "composition": "Story cloud centred (520, 400), 640 x 400, tail to the male pigeon. Inside: merchant on the right with his back turned, the two cheats on the left. Figures at least 110 px tall on screen.",
+   "actions": [
+    {
+     "t": 144.78,
+     "end": 146.0,
+     "cue": {
+      "word": "ثم",
+      "t": 144.78
+     },
+     "who": "pigeonM",
+     "action": "opens both wings like a storyteller; the story cloud pops above",
+     "acting": "a breath, a glance at F, then the showman",
+     "library": "thoughtCloud {tail to M}"
+    },
+    {
+     "t": 146.12,
+     "end": 146.9,
+     "cue": {
+      "word": "رجلين",
+      "t": 146.12
+     },
+     "who": "cheatA",
+     "action": "two men pop into the cloud side by side, one tall, one short",
+     "acting": "matching sly grins; pop with settle, B 3 frames late",
+     "library": "person {kind thief} and person {costume villager, pal dark} + stagger"
+    },
+    {
+     "t": 146.92,
+     "end": 147.7,
+     "cue": {
+      "word": "حاولا",
+      "t": 146.92
+     },
+     "who": "cheatB",
+     "action": "they tiptoe toward the right, fingers to lips",
+     "acting": "hush gesture, knees high",
+     "library": "PERSON_HANDS.hush + walk"
+    },
+    {
+     "t": 148.32,
+     "end": 149.0,
+     "cue": {
+      "word": "تاجر،",
+      "t": 148.32
+     },
+     "who": "merchant",
+     "action": "the merchant appears, back half turned, counting a purse; label MERCHANT",
+     "acting": "content, unaware; moustache gesture",
+     "library": "person {costume merchant} + PERSON_HANDS.moustache"
+    },
+    {
+     "t": 149.04,
+     "end": 149.8,
+     "cue": {
+      "word": "لكن",
+      "t": 149.04
+     },
+     "who": "cheatA",
+     "action": "the two cheats face each other and shake hands",
+     "acting": "big friendly smiles to each other",
+     "library": "handRW / handLW world targets"
+    },
+    {
+     "t": 149.86,
+     "end": 151.0,
+     "cue": {
+      "word": "كل",
+      "t": 149.86
+     },
+     "who": "cheatB",
+     "action": "behind his back each one hides a small green bottle from the other",
+     "acting": "A first, B a beat later; the bottles face us",
+     "library": "poisonVial at P.hands"
+    },
+    {
+     "t": 151.88,
+     "end": 152.6,
+     "cue": {
+      "word": "خطط",
+      "t": 151.88
+     },
+     "who": "cheatA",
+     "action": "each gives the other a side look and a private smirk",
+     "acting": "eyes slide, brows drop, smile stays",
+     "library": "gaze + brow"
+    },
+    {
+     "t": 152.68,
+     "end": 154.3,
+     "cue": {
+      "word": "لخيانة",
+      "t": 152.68
+     },
+     "who": "hedgehog",
+     "action": "below the cloud his raised foot comes down; he lowers his spines and sits",
+     "acting": "spike 0.8 to 0.3, teeth close, head tilts: he is hooked. F peeks from behind M and sees it",
+     "library": "hedgehog (new) {sit, spike}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 148.4,
+     "text": "MERCHANT"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 154.3
+   }
+  },
+  {
+   "id": "S16",
+   "start": 154.3,
+   "end": 169.6,
+   "paragraphs": [
+    8
+   ],
+   "set": "burrowChamber",
+   "cast": [
+    "hedgehog",
+    "pigeonM",
+    "pigeonF",
+    "cheatA",
+    "cheatB",
+    "merchant"
+   ],
+   "summary": "The hedgehog asks for the story. The pigeon tells it: each cheat poisons the other's food, both fall, and the merchant is left alive. The hedgehog laughs and does not see that the story is about him.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "{520, 640, 1.2}; 160.6 push into the cloud {520, 440, 1.6}; 168.9 back out to {520, 640, 1.2}."
+   },
+   "composition": "Cloud as S15. Inside: a low table (240 wide) with two bowls, cheats seated on the floor at its ends, merchant enters from the right.",
+   "actions": [
+    {
+     "t": 154.5,
+     "end": 156.1,
+     "cue": {
+      "word": "سأل",
+      "t": 154.5
+     },
+     "who": "hedgehog",
+     "action": "raises a paw like a pupil and asks",
+     "acting": "mouth o then talk; eager brows",
+     "library": "hedgehog (new) {paws: up, talk}"
+    },
+    {
+     "t": 156.2,
+     "end": 157.1,
+     "cue": {
+      "word": "القنفذ",
+      "t": 156.2
+     },
+     "who": "hedgehog",
+     "action": "shuffles forward on his seat and rests his chin on both paws",
+     "acting": "tip 0.12 forward, ears forward",
+     "library": "hedgehog (new) {paws: chin, tip}"
+    },
+    {
+     "t": 157.2,
+     "end": 158.7,
+     "cue": {
+      "word": "قصة",
+      "t": 157.2
+     },
+     "who": "hedgehog",
+     "action": "lettering AND THEN? beside him",
+     "acting": "tail-like wiggle of his rump; the cloud brightens",
+     "library": "lettering"
+    },
+    {
+     "t": 158.76,
+     "end": 159.9,
+     "cue": {
+      "word": "فبدأ",
+      "t": 158.76
+     },
+     "who": "pigeonM",
+     "action": "clears his throat; F gives him the smallest nod",
+     "acting": "they share one look: keep him listening",
+     "library": "gazePlan"
+    },
+    {
+     "t": 160.7,
+     "end": 161.9,
+     "cue": {
+      "word": "يروي",
+      "t": 160.7
+     },
+     "who": "fx",
+     "action": "camera pushes into the cloud: the two cheats sit at a low table with two bowls",
+     "acting": "sit floor poses, polite smiles",
+     "library": "person {sit, seat: floor}"
+    },
+    {
+     "t": 161.94,
+     "end": 162.7,
+     "cue": {
+      "word": "وضع",
+      "t": 161.94
+     },
+     "who": "cheatA",
+     "action": "while B looks away, A tips his bottle into B's bowl",
+     "acting": "quick, eyes on B's back; three green drops",
+     "library": "handRW + poisonVial"
+    },
+    {
+     "t": 162.78,
+     "end": 163.5,
+     "cue": {
+      "word": "محتال",
+      "t": 162.78
+     },
+     "who": "cheatB",
+     "action": "then A looks away and B does exactly the same to A's bowl",
+     "acting": "mirror image, a beat later",
+     "library": "handLW + poisonVial"
+    },
+    {
+     "t": 163.6,
+     "end": 164.2,
+     "cue": {
+      "word": "السم",
+      "t": 163.6
+     },
+     "who": "fx",
+     "action": "label POISON with arrows to both bowls",
+     "acting": "bottle label is a plain X, no skull",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 164.6,
+     "end": 165.8,
+     "cue": {
+      "word": "طعام",
+      "t": 164.6
+     },
+     "who": "cheatA",
+     "action": "they raise their bowls to each other and eat, both smiling",
+     "acting": "each watches the other eat, delighted",
+     "library": "person {eat}"
+    },
+    {
+     "t": 165.88,
+     "end": 167.2,
+     "cue": {
+      "word": "فماتا",
+      "t": 165.88
+     },
+     "who": "cheatB",
+     "action": "both freeze, their eyes close, and they tip over backwards, one to each side",
+     "acting": "lid 1, lie 0..1 staggered 5 frames; bowls roll in half circles. Nothing else",
+     "library": "person {lie, lid 1} + stagger"
+    },
+    {
+     "t": 166.3,
+     "end": 167.2,
+     "cue": {
+      "word": "فماتا",
+      "t": 165.88
+     },
+     "who": "hedgehog",
+     "action": "gasps, paws to his cheeks",
+     "acting": "the listener's reaction, seen below the cloud edge",
+     "library": "hedgehog (new) {paws: cheeks}"
+    },
+    {
+     "t": 167.28,
+     "end": 168.0,
+     "cue": {
+      "word": "وبقي",
+      "t": 167.28
+     },
+     "who": "merchant",
+     "action": "the merchant walks in, sees them, stops",
+     "acting": "small recoil",
+     "library": "walk + settleTo"
+    },
+    {
+     "t": 168.02,
+     "end": 168.8,
+     "cue": {
+      "word": "التاجر",
+      "t": 168.02
+     },
+     "who": "merchant",
+     "action": "shrugs with his purse safe in his hand",
+     "acting": "palms up, raised brows",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 168.84,
+     "end": 169.6,
+     "cue": {
+      "word": "حيًا.",
+      "t": 168.84
+     },
+     "who": "hedgehog",
+     "action": "label ALIVE! on the merchant; the hedgehog slaps his knee and laughs HA HA!",
+     "acting": "the boomerang arrow of S14 flickers once above his head and he does not notice",
+     "library": "S.label; hedgehog (new) {mouth: open}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 157.9,
+     "text": "AND THEN?"
+    },
+    {
+     "t": 163.7,
+     "text": "POISON"
+    },
+    {
+     "t": 168.9,
+     "text": "ALIVE!"
+    },
+    {
+     "t": 169.1,
+     "text": "HA HA!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 169.6
+   }
+  },
+  {
+   "id": "S17",
+   "start": 169.6,
+   "end": 180.0,
+   "paragraphs": [
+    8
+   ],
+   "set": "burrowChamber",
+   "cast": [
+    "hedgehog",
+    "pigeonM",
+    "pigeonF"
+   ],
+   "summary": "The held ending: the hedgehog sits in his own doorway, listening, while the pigeons stay shut inside and the storyteller talks on. Night comes in the door behind him. THE END.",
+   "camera": {
+    "shot": "full",
+    "move": "pull-out",
+    "notes": "169.6 {300, 770, 1.7} on the hedgehog in the arch; 174.4-176.4 drift right to {690, 780, 1.7} on the birds; 177.3-178.6 pull out to the whole room {500, 615, 1.0}; hold to the end."
+   },
+   "composition": "Hedgehog seated in the arch at (235, 900); birds at (640, 900) and (730, 900); the shadows of his spines lie across the floor like bars. THE END in the upper earth band (y 250..420), clear of the cloud remains and all faces.",
+   "actions": [
+    {
+     "t": 169.98,
+     "end": 170.3,
+     "cue": {
+      "word": "ظل",
+      "t": 169.98
+     },
+     "who": "hedgehog",
+     "action": "settles back into the doorway, still chuckling",
+     "acting": "laugh dies to a smile; he gets comfortable",
+     "library": "hedgehog (new) {sit} + breathe"
+    },
+    {
+     "t": 170.38,
+     "end": 171.0,
+     "cue": {
+      "word": "القنفذ",
+      "t": 170.38
+     },
+     "who": "hedgehog",
+     "action": "crosses his paws on his belly, ears forward",
+     "acting": "relaxed, greedy for more story",
+     "library": "hedgehog (new) {paws: belly}"
+    },
+    {
+     "t": 171.42,
+     "end": 172.4,
+     "cue": {
+      "word": "باب",
+      "t": 171.42
+     },
+     "who": "fx",
+     "action": "arrow to the arch he is sitting in: ONLY WAY OUT",
+     "acting": "arrow draws, tag pops, both gone by 174",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 172.52,
+     "end": 173.5,
+     "cue": {
+      "word": "يستمع",
+      "t": 172.52
+     },
+     "who": "hedgehog",
+     "action": "cups a paw to his ear: go on",
+     "acting": "head tilt, lids half shut with pleasure",
+     "library": "hedgehog (new) {paws: ear}"
+    },
+    {
+     "t": 173.62,
+     "end": 174.4,
+     "cue": {
+      "word": "الحكاية،",
+      "t": 173.62
+     },
+     "who": "pigeonM",
+     "action": "keeps talking: beak, wings shaping the tale; small cloud above him shows the next picture (a road, three small figures)",
+     "acting": "talk loop with three varied gestures; never a pause",
+     "library": "bird {talk} + thoughtCloud small"
+    },
+    {
+     "t": 174.5,
+     "end": 175.5,
+     "cue": {
+      "word": "بينما",
+      "t": 174.5
+     },
+     "who": "camera",
+     "action": "drift right from the listener to the two birds",
+     "acting": "eased move",
+     "library": "CAM keys"
+    },
+    {
+     "t": 175.66,
+     "end": 176.6,
+     "cue": {
+      "word": "الحمامان",
+      "t": 175.66
+     },
+     "who": "pigeonF",
+     "action": "F stands pressed to M's back; her eyes go to the door, to the hedgehog, to the floor",
+     "acting": "small trembles; she is counting the distance",
+     "library": "gazePlan + tremble"
+    },
+    {
+     "t": 176.64,
+     "end": 177.6,
+     "cue": {
+      "word": "محاصرين",
+      "t": 176.64
+     },
+     "who": "set",
+     "action": "the long shadows of his spines lie across the floor and over the birds like the bars of a cage",
+     "acting": "shadow bars lengthen 20 units as the door light sinks",
+     "library": "burrowChamber {shadow}"
+    },
+    {
+     "t": 177.88,
+     "end": 178.6,
+     "cue": {
+      "word": "الداخل.",
+      "t": 177.88
+     },
+     "who": "set",
+     "action": "pull out to the whole room; through the arch the sky turns to night and a moon shows behind the hedgehog",
+     "acting": "door sky u 0.45 to 0.72 from 170 to 179",
+     "library": "skyCycle clipped to the arch"
+    },
+    {
+     "t": 179.0,
+     "end": 179.9,
+     "who": "fx",
+     "action": "title THE END drops into the upper earth band",
+     "acting": "title lands with a small settle; the birds flinch at it, the hedgehog does not",
+     "library": "S.title"
+    },
+    {
+     "t": 179.9,
+     "end": 179.9,
+     "who": "pigeonM",
+     "action": "held picture, alive: he talks on, glances once at the lens and gulps, and goes on talking; the hedgehog nods along",
+     "acting": "breathing, blinks, an ear turn; M's look to camera at 181.3 for 8 frames",
+     "library": "breathe, blink, gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 171.5,
+     "text": "ONLY WAY OUT"
+    },
+    {
+     "t": 179.0,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 179.15,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 180.0
+   }
+  }
+ ],
+ "ending": {
+  "t": 179.0,
+  "description": "Whole-room view of the burrow: the hedgehog seated in the door arch with night sky and moon behind him, listening; the two pigeons inside, the male still telling his tale, the shadows of the spines across the floor like bars. THE END drops into the upper earth band at 179.0 and is held to 183.28; the picture stays alive (talk loop, blinks, one look to camera)."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "عاش زوج من الحمام البري فوق نخلة عالية،|وكان يأكل من تمرها كل يوم.|تحت النخلة سكن قنفذ مع زوجته.|نظر إلى الثمر وتمنى أن يحصل عليه، لكنه لم يستطع صعود الشجرة.",
+   "en": "A pair of wood pigeons lived high in a date palm,|eating its fruit daily.|Below them a hedgehog and his wife|wanted the dates but could not climb the tree."
+  },
+  {
+   "p": 2,
+   "ar": "حفر القنفذ جحرًا قرب الجذع،|وجلس أمامه متظاهرًا بالصلاة والزهد.|رآه ذكر الحمام فسأله عن حياته.|قال القنفذ إنه يعيش هكذا منذ ثلاثين سنة، ولا يأكل إلا ما يسقط من التمر.",
+   "en": "The hedgehog dug a burrow by the trunk|and pretended to pray and live simply.|Asked about his life,|he claimed thirty years of devotion and eating only fallen dates."
+  },
+  {
+   "p": 3,
+   "ar": "أعجب الحمام بكلامه،|وطلب نصيحته ليعيش حياة بسيطة هو وزوجته.|قال القنفذ: «أسقطا تمر النخلة كله، واجمعا طعام سنة كاملة،|ثم اسكنا قرب الأرض واقضيا وقتكما في العبادة».",
+   "en": "Impressed,|the pigeon asked for guidance.|The hedgehog advised the couple to shake down the dates, save enough for a year,|move near the ground and devote themselves to worship."
+  },
+  {
+   "p": 4,
+   "ar": "عمل الحمامان ساعات طويلة حتى أسقطا جميع الثمر.|لكن القنفذ أخذ التمر إلى جحره وخبأه لنفسه.|كان ينتظر أن يجوع الطائران فيقتربا منه،|حتى يستطيع الإمساك بهما وأكلهما.",
+   "en": "The pigeons worked until all the fruit fell.|The hedgehog secretly stored it in his burrow,|hoping hunger would bring them near|enough for him to catch and eat."
+  },
+  {
+   "p": 5,
+   "ar": "عندما نزلا لم يجدا شيئًا من التمر.|سألا القنفذ عنه، فأجاب أن الريح ربما حملته بعيدًا.|ثم أخذ يحدثهما عن الصبر والتوكل،|ويتظاهر بأنه لا يهتم بالطعام.",
+   "en": "Descending, the pigeons found no dates.|The hedgehog claimed the wind had carried them away|and lectured them about patience and trust|while pretending to care little for food."
+  },
+  {
+   "p": 6,
+   "ar": "صدقه الحمامان بعد طول حديث، ودخلا جحره وهما يظنان أنه صديق صالح.|عندئذ أسرع القنفذ إلى الباب وسد طريق الخروج،|وأظهر أسنانه الحادة.|أدرك الحمام أنهما وقعا في فخ.",
+   "en": "After long persuasion, the pigeons trusted him and entered his burrow.|The hedgehog rushed to block the exit|and bared his teeth.|They realized it was a trap."
+  },
+  {
+   "p": 7,
+   "ar": "قال ذكر الحمام: «بالأمس كنت تنصحنا بالخير، واليوم تريد قتلنا!|ألا تخشى أن يعود مكرك عليك؟»|ثم ذكر رجلين حاولا خداع تاجر،|لكن كل واحد منهما خطط لخيانة صاحبه.",
+   "en": "The male pigeon protested: “Yesterday you advised us; today you wish to kill us!|Do you not fear your deceit returning upon you?”|He mentioned two cheats who planned to betray a merchant|and each other."
+  },
+  {
+   "p": 8,
+   "ar": "سأل القنفذ عن قصة الرجلين،|فبدأ الحمام يروي كيف وضع كل محتال السم في طعام الآخر، فماتا وبقي التاجر حيًا.|ظل القنفذ عند باب الجحر يستمع إلى الحكاية،|بينما كان الحمامان محاصرين في الداخل.",
+   "en": "The hedgehog asked for the story.|The pigeon told how each cheat poisoned the other’s food, both died and the merchant survived.|The hedgehog listened at the burrow’s entrance|while the pigeons remained trapped inside."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "hedgehog",
+   "reusable": true,
+   "effort": "L",
+   "description": "Side-view comic hedgehog for this and any later hedgehog or porcupine tale (palette option). Feet at (x, y), facing dir. On all fours at s 1: 200 wide x 130 tall. Sitting or rearing upright: 150 wide x 180 tall. Cream face and belly, brown spine coat, black nose on a pointed snout, round ear, short legs with paws. pal 1 = the wife (lighter coat, red bow). Pose fields: ph, amp (walk), sit 0..1, rear 0..1, curl 0..1 (ball), roll 0..1 (on his back), dig (phase), spike 0..1 (spines raised and 40 % longer), carry n (dates stuck on the spines), paws (named sets: clasp, chest, open, up, point, wide, hold, rub, pat, reach, chin, cheeks, ear, belly, mouth) or pawL/pawR targets, talk, mouth (closed, smile, smirk, frown, o, open, grin, teeth), teeth 0..1, lick, cheeks (puff), chew, sniff, brow, lidL/lidR (per-eye lids for the wink and the peek), plus the shared acting fields.",
+   "implementation": "One function hedgehog(ctx, P) in Library/cast, wrapped with acting(). Body: a brush-outlined dome (K ellipse/rounded path) in brown with red-brown dot shading; spine coat = 3 rows of 9 to 11 tapering triangles along the back arc, each 26 to 34 long (x1.4 at spike 1), angles fanned from the arc normal with a seeded +-0.12 rad jitter and a follow-through offset P.spineLag. Face wedge in cream with eye2() eyes so gaze/lid/wet work; per-eye lids by drawing the lid arc per eye. Sit/rear blend rotates the body about the hips from horizontal to upright (like the fox sit) and moves the two front paws to arm IK targets (armTo with segment length 34). curl draws a circle of radius 78 with the spine rows all round and only the nose showing. teeth: mouth polygon opened wide with two rows of 5 white triangles, 9 high. carry: n date ellipses drawn at seeded spine tips."
+  },
+  {
+   "type": "set",
+   "name": "burrowChamber",
+   "reusable": true,
+   "effort": "M",
+   "description": "Cutaway underground room for any den, burrow or cave interior. World 1000 x 1230, floor y 900. Brown earth with dark dot shading fills the frame; a rounded cavity (x 110..930, y 500..930, navy-brown interior with blue dots) is cut into it. Door arch on the left: x 150..320, 190 high, showing sky by option doorSky u (skyCycle). Five hanging roots from the ceiling; a curtain of 6 root strands at x 800..920 hiding an alcove with a date hoard (option hoard 0..1, spill n). Options: dark 0..1 (navy overlay with the door light cone left clear), shadow (a polygon cast on the floor from an actor outline toward +x).",
+   "implementation": "bake() the earth and cavity once (K path with brush outline, halftone dots clipped to the cavity). Door arch: clip region, draw skyCycle(ctx, u) reduced inside it, then a pale yellow dotted light cone on the floor (a quadrilateral from the arch base to x 700). dark: fillRect navy with globalAlpha, drawn before the actors' rim. shadow: take 12 spine tip points of the hedgehog, project along the floor with a 3.2x horizontal stretch and 0.18 vertical scale, fill black alpha 0.55. Based on the Fox drawInside cross-section idea."
+  },
+  {
+   "type": "set",
+   "name": "palmGrove (with palmTree)",
+   "reusable": true,
+   "effort": "M",
+   "description": "The outdoor set: the planned palmTree (KD-016) made tall, on Library sky, hillTrees and ground. palmTree(ctx, 400, 900, {h: 620, lean: 10, fronds: 9}): trunk 60 wide at the base tapering to 44, ringed segments; crown hub at about (410, 280), fronds 260 long; a flat ledge of cut frond bases at y 262..268 (x 330..520) where the pigeons perch; a low stub on the trunk from (430, 650) to (600, 640), 16 thick, that dips 6 units under a landing. Home bush (Library bush) at x 160. Sky by skyCycle(u).",
+   "implementation": "Compose from existing sky/skyCycle, hillTrees, ground, bush; reuse the planned palmTree drawing with new opts (ledge: true, stub: {y: 650, len: 170}). Fronds: 9 bezier ribs with leaflet strokes, sway = sin(t * 0.8 + i) * 0.03 rad. Bake the trunk; draw the fronds live for the sway."
+  },
+  {
+   "type": "prop",
+   "name": "dateBunch, datePile",
+   "reusable": true,
+   "effort": "S",
+   "description": "dateBunch(ctx, x, y, {left, shake, swing, seed}): a hanging cluster 70 wide x 110 tall: yellow stalk fan of 7 strands from the crown, up to 14 dates (red-brown ellipses 14 x 22 with a highlight) of which left 0..1 remain; bare stalks when 0. datePile(ctx, x, y, {n, seed}): n 0..40 dates stacked as a mound up to 260 wide x 110 high, plus single loose dates. Reusable for any palm, market or food scene.",
+   "implementation": "Seeded positions (K.rng) fixed per date so removing a date never moves the others; pile positions precomputed in layers (row widths 9, 8, 7, 6, 5, 3, 2). Falling dates are scene code: fallY + rebound from a bunch point to its pile slot."
+  },
+  {
+   "type": "character",
+   "name": "dove (bird kind)",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned dove kind on the Library bird, with a wood pigeon palette: pal 1 male (blue-grey body, darker head, white neck patch with a green edge, pink chest), pal 2 female (8 % smaller, paler, no green). Uses the planned puff field (feathers out in fear, chest out in courage).",
+   "implementation": "Palette entries in BIRD plus the neck patch (a small white ellipse) and puff (body ellipse scaled 1.12 with 6 notches in the outline)."
+  },
+  {
+   "type": "prop",
+   "name": "burrow",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned burrow mound, here 220 wide x 100 high centred x 880 with a dark opening 100 x 80 centred x 815; states grow 0..1 (three steps while it is dug) and eyes (two glints in the dark).",
+   "implementation": "Planned asset; add grow as a vertical scale with a clod ring, opening drawn last so actors can be clipped into it."
+  },
+  {
+   "type": "prop",
+   "name": "poisonVial",
+   "reusable": true,
+   "effort": "S",
+   "description": "Small green bottle 18 x 30 with a cork and a plain X label, with a tilt angle and 3 drops when poured. For the tale inside the story cloud.",
+   "implementation": "Rounded rect + neck + cork; drops are 3 ellipses on fallY."
+  }
+ ],
+ "owner_questions": [
+  "The hedgehog's wife is named only in paragraph 1; default: she also appears as a pair of paws at the burrow helping to hide the dates (S8, S9).",
+  "The pretend prayer is shown as a generic pose (paws clasped, eyes shut, head bowed, gentle sway) with no prayer mat, beads or ritual of any faith; default: keep it generic.",
+  "The plan to catch and eat the pigeons is shown only in a thought cloud (paws clap, a puff, a plate with two feathers) and the teeth are comic, with no blood; default: this softened version.",
+  "The deaths of the two cheats are shown as closed eyes and tipping over, with a plain X on the bottle and the label POISON, no skull; default: this softened version.",
+  "The script stops with the pigeons still trapped; default: an open ending under THE END (not TO BE CONTINUED), with the pigeon still talking.",
+  "Added comic business not in the script: dates carried stuck on his spines, the date left on his back during the sermon, the swallowed burp, the still fronds during the wind excuse; default: keep all four.",
+  "Invented lettering: WOOD PIGEONS, SO HIGH, HEDGEHOG, THUD!, JUST AN ACT, 30 YEARS, WOW!, ALL!, 1 YEAR, ALL MINE, NEXT MORNING..., ?, YAK YAK YAK, SHINK!, TRAP!, MERCHANT, AND THEN?, POISON, ALIVE!, HA HA!, ONLY WAY OUT, THE END; default: keep (cut HE tag and ONLY WAY OUT first if it feels busy)."
+ ],
+ "implementation_notes": [
+  "Copy Library/template to Animations/AN-043 and take every cue from timing.json words; the cue times in this plan are the word starts in planning/inputs/timeline.md.",
+  "Two worlds, both 1000 x 1230 with ground/floor at y 900: palmGrove (S1 to S11) and burrowChamber (S12 to S17). The cut at 116.5 happens in the dark of the opening.",
+  "Set LIFE.t = t every frame for auto-blinks; give the hedgehog explicit lids only where the plan says (prayer, peek, wink, the no-blink teeth close-up).",
+  "The mask rule: the hedgehog shows his real face (smirk, open eyes, teeth) only when no pigeon is looking at him, until 120.66; after that the mask never returns.",
+  "The two pigeons never move in unison except the last tug at 72.52; the female always reacts 5 to 10 frames after the male.",
+  "Sky is one skyCycle value u keyed with kfn: 0.25 (S1 to S6), 0.22 to 0.47 (S7), 0.5 to 0.72 (S8), 0.08 after the card (S9, S10), 0.1 to 0.42 (S11), door sky 0.45 to 0.72 (S17).",
+  "LATER card: S.transition with caption NEXT MORNING..., centred on 90.3 (inside the 89.84 to 90.84 pause); put the camera cut and the sky jump 0.01 s apart at its covered midpoint.",
+  "Thought and story clouds use thoughtCloud with figures at least 110 px on screen; the S15/S16 cloud is the largest (640 x 400). Use lie + lid 1 for the fallen cheats.",
+  "Picture strip in S6 and the single balloon in S9 are the planned iconBalloon; if it is not in the Library yet, draw them as S.box panels with a tail.",
+  "Use panel-only shake (template) for THUD! at 21.4 and TRAP! at 132.2; the caption panel never moves.",
+  "Effects only at: 13.5 pop, 18.05 whoosh, 21.5 thud, 22.2 pop, 44.5 chime, 74.72 pop, 90.1 whoosh, 95.3 pop, 110.3 chime, 179.15 thud. All inside listed pauses or after the last word; master 0.6.",
+  "Keep lettering off faces and above the subtitles; counters (30 YEARS, DATES) sit top right of the picture panel."
+ ],
+ "warnings": [
+  "The hedgehog is a large new figure with many pose fields; build sit/rear, paws, spike, curl and teeth first, since the story depends on them.",
+  "Subtitle chunk 2 of paragraph 8 lasts about 10 s (158.76 to 169.5) and is long on screen; chunk 3 of paragraph 3 is also long. The animator may need a smaller Arabic size for those two chunks.",
+  "The palm is 620 tall, so pigeons and hedgehog share a frame only in wide shots; the low stub (y 650) exists to make the dialogue two-shots possible.",
+  "The story ends unresolved in the script. Do not add an escape or a punishment.",
+  "The burrow interior must stay readable when darkened: keep the dark overlay at 0.4 or less and give faces a pale rim.",
+  "Coordinator 2026-11-16: capped at the 3-minute limit (end_hold 4.5 -> 1.22 s; 4 times past 180 s pulled to 179.9)."
+ ]
+}

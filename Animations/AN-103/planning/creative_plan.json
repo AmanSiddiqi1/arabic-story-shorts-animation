@@ -1,0 +1,3378 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-103",
+ "title": "Harun al-Rashid and the Damsel and Abu Nowas",
+ "duration": 168.25,
+ "end_hold": 3.0,
+ "logline": "A sleepless caliph has a secret night encounter, then tests his poet twice: first to put a secret into verse, then, at sword point, to say where a hidden cup has gone. Both times the poet sees through him.",
+ "moral": "A quick mind and a tactful tongue can turn danger into reward: say what is true without shaming anyone.",
+ "tone": "Light court comedy: a guilty king, an unshockable poet, a sharp young woman. Suspense is played as a joke the audience is let in on; warm ending.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 1.62,
+   "kind": "setup",
+   "cue": {
+    "word": "قلقًا",
+    "t": 1.62
+   },
+   "summary": "Harun cannot sleep and wanders his palace."
+  },
+  {
+   "id": "B2",
+   "t": 20.2,
+   "kind": "inciting",
+   "cue": {
+    "word": "وقبّل",
+    "t": 20.2
+   },
+   "summary": "He uncovers the sleeping woman face and kisses her cheek without asking."
+  },
+  {
+   "id": "B3",
+   "t": 23.8,
+   "kind": "surprise",
+   "cue": {
+    "word": "فاستيقظت",
+    "t": 23.8
+   },
+   "summary": "She wakes, startled: the pose the poem will repeat."
+  },
+  {
+   "id": "B4",
+   "t": 34.52,
+   "kind": "rising",
+   "cue": {
+    "word": "زبيدة",
+    "t": 34.52
+   },
+   "summary": "Her story: bought for the caliph, kept away by Zubaydah; come back tomorrow."
+  },
+  {
+   "id": "B5",
+   "t": 49.48,
+   "kind": "comic",
+   "cue": {
+    "word": "ديون",
+    "t": 49.48
+   },
+   "summary": "Abu Nuwas is found in a tavern under a scroll of debts, reciting about a youth clothes."
+  },
+  {
+   "id": "B6",
+   "t": 73.44,
+   "kind": "suspense",
+   "cue": {
+    "word": "لم",
+    "t": 73.44
+   },
+   "summary": "The first test: a poem about a secret Harun will not tell."
+  },
+  {
+   "id": "B7",
+   "t": 89.76,
+   "kind": "reveal",
+   "cue": {
+    "word": "هذا؟",
+    "t": 89.76
+   },
+   "summary": "The improvised poem matches the night exactly: WHAT IS THIS?"
+  },
+  {
+   "id": "B8",
+   "t": 98.82,
+   "kind": "comic",
+   "cue": {
+    "word": "حاضرًا.",
+    "t": 98.82
+   },
+   "summary": "Harun: it is as if you were there."
+  },
+  {
+   "id": "B9",
+   "t": 114.0,
+   "kind": "emotion",
+   "cue": {
+    "word": "مسابقة",
+    "t": 114.0
+   },
+   "summary": "A friendly contest of poetry and song."
+  },
+  {
+   "id": "B10",
+   "t": 127.14,
+   "kind": "turn",
+   "cue": {
+    "word": "الكأس",
+    "t": 127.14
+   },
+   "summary": "The woman hides the sleeping poet cup on the caliph order."
+  },
+  {
+   "id": "B11",
+   "t": 131.12,
+   "kind": "climax",
+   "cue": {
+    "word": "بسيف",
+    "t": 131.12
+   },
+   "summary": "The second test, at sword point: where is the cup? Answer in verse."
+  },
+  {
+   "id": "B12",
+   "t": 150.44,
+   "kind": "resolution",
+   "cue": {
+    "word": "وأخفته،",
+    "t": 150.44
+   },
+   "summary": "He names the woman and stops there, sparing her embarrassment."
+  },
+  {
+   "id": "B13",
+   "t": 162.78,
+   "kind": "moral",
+   "cue": {
+    "word": "دينار،",
+    "t": 162.78
+   },
+   "summary": "Laughter, a robe of honour and a thousand dinars; the poet leaves happy."
+  }
+ ],
+ "cast": [
+  {
+   "id": "harun",
+   "name": "Harun al-Rashid, the caliph",
+   "library": "person",
+   "base": "person costume:'caliph'",
+   "look": "Catalogue caliph: red robe, blue cape, white turban with crown, grey beard. Age 0.5 (beard dark grey) so he reads as vigorous. Sword worn at the sash from S13.",
+   "new": false
+  },
+  {
+   "id": "damsel",
+   "name": "the damsel (lute player)",
+   "library": "person",
+   "base": "person costume:'maiden'",
+   "look": "Maiden preset; long loose black hair (new hairVeil field) in S2-S4 with the default yellow robe; from S11 pal {robe: blue, dot: dark blue, sash: yellow} with wide sleeves and the hair tied back. Modest throughout.",
+   "new": false
+  },
+  {
+   "id": "abuNowas",
+   "name": "Abu Nuwas, the poet",
+   "library": "person",
+   "base": "person new costume preset 'poet'",
+   "look": "Green robe with a yellow sash, small loosely wound white turban tilted to one side with a tail, short black pointed beard, a quill tucked in the turban. Age 0.3. From 160.68 the robe of honour (red, gold trim) over it.",
+   "new": true
+  },
+  {
+   "id": "chamberlain",
+   "name": "the chamberlain",
+   "library": "person",
+   "base": "person costume:'vizier' recoloured",
+   "look": "Vizier preset with pal {robe: green, cape: white, hc: white}, age 0.6, carries a short staff of office (hold:'stick'). Fussy and upright.",
+   "new": false
+  },
+  {
+   "id": "youth",
+   "name": "the young man in colourful clothes",
+   "library": "person",
+   "base": "person costume:'prince' without crown, youth option",
+   "look": "No beard, red cap, blue robe, yellow sash, green shoes, one striped sleeve: every garment a different flat colour. Appears only in the tavern.",
+   "new": false
+  },
+  {
+   "id": "keeper",
+   "name": "the tavern keeper",
+   "library": "person",
+   "base": "person costume:'merchant' recoloured",
+   "look": "Merchant preset with pal {robe: brown, hc: paper}, apron stripe, holds the debt scroll. Background role.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "palaceCorridor",
+   "library": "palaceHall",
+   "description": "palaceHall as a 2000-wide strip with the planned night option: no throne or dais (door:false), a row of pointed arches showing moon and stars (skyCycle 0.72), hanging lamps lit, navy wash, checker floor at y 900; a doorway at x 1500 spilling a yellow light wedge. Used in S1 and S17.",
+   "new": false
+  },
+  {
+   "id": "bedchamber",
+   "library": null,
+   "description": "The planned shared bedchamber set (KD-010, KD-022) with a low divan instead of the big bed: walls x 60..940, floor y 900, door arch at the left (x 90..250), window upper right showing skyCycle, divan x 520..860 with the mattress top at y 820, cushions, a curtain on the back wall, two candle stands (x 470 and x 900). Night, dusk and lamp-lit states.",
+   "new": true
+  },
+  {
+   "id": "throneHall",
+   "library": "palaceHall",
+   "description": "palaceHall {variant:'palace'} by day (u 0.08 in S5, 0.25 later); use the returned throne anchors for Harun seat.",
+   "new": false
+  },
+  {
+   "id": "tavern",
+   "library": "palaceHall",
+   "description": "palaceHall {variant:'merchant'} dressed as a tavern: shelves of jars, a low counter in place of the desk, floor cushions, a hanging board lettered TAVERN, door at the left. No new architecture.",
+   "new": false
+  }
+ ],
+ "props": [
+  {
+   "id": "oud",
+   "library": null,
+   "description": "The planned lute (AN-087, AN-089): pear body about 90 x 120, short bent-back neck 110 long, 4 string lines, sound hole; anchors for the strumming and fretting hands.",
+   "new": true
+  },
+  {
+   "id": "candle",
+   "library": null,
+   "description": "The planned candlestick (AN-089) on a 260-high floor stand: flame with seeded flicker and an optional halftone light disc r 220.",
+   "new": true
+  },
+  {
+   "id": "sword",
+   "library": null,
+   "description": "The planned sword as a scimitar (AN-086): curved blade about 150 long, gold hilt, glint; a sheath at the sash. Always held upright or across, never at a face.",
+   "new": true
+  },
+  {
+   "id": "wineCup",
+   "library": null,
+   "description": "Small stemmed cup, 34 wide x 44 high, yellow with a black outline and a red rim band; options tilt, glint, empty. Also drawn small as an icon.",
+   "new": true
+  },
+  {
+   "id": "coinPile",
+   "library": null,
+   "description": "The planned coin mound; here fed by coins arcing out of a sack while a counter runs to 1000.",
+   "new": true
+  },
+  {
+   "id": "purse",
+   "library": null,
+   "description": "The planned purse (drawstring bag about 50 x 60) with a red seal disc.",
+   "new": true
+  },
+  {
+   "id": "scroll",
+   "library": null,
+   "description": "The planned scroll: here a debt scroll that unrolls along the floor (length 0..340) with red tally lines, and small verse scrolls as icons.",
+   "new": true
+  },
+  {
+   "id": "honourRobe",
+   "library": null,
+   "description": "Robe of honour: folded on a tray (a 90 x 40 red block with gold trim) and unfurled as a 260 x 300 cloth shape for the flourish; after it the poet uses pal {robe: red, trim: yellow, sash: blue}.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 8.0,
+   "paragraphs": [
+    1
+   ],
+   "set": "palaceCorridor",
+   "cast": [
+    "harun"
+   ],
+   "summary": "Night. The caliph cannot sleep; he leaves the moonlit arch and walks the palace corridor until a warm light catches his eye.",
+   "camera": {
+    "shot": "establishing",
+    "move": "track",
+    "notes": "Open wide (zoom 1.0) on the corridor strip at camX 0, hold 3.6 s, then track right with Harun (camX 0 to 900 over 3.72 to 7.4), ease out as he slows."
+   },
+   "composition": "Corridor strip 2000 wide, floor y 900. Harun starts at x 330 beside the first arch (moon in the arch at about 330, 300), s 1.25 so his head is near y 600. Warm light wedge spills from a doorway at x 1500. Keep his face above panel y 1000.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 1.5,
+     "cue": {
+      "word": "كان",
+      "t": 0.0
+     },
+     "who": "camera",
+     "action": "Establishing night corridor: moon and stars through three arches, hanging lamps glowing, long floor shadow.",
+     "acting": "Still except lamp flicker and a slow star twinkle.",
+     "library": "palaceHall {w:2000, night option, u:0.72} + hangingLamp + skyCycle(0.72)"
+    },
+    {
+     "t": 0.3,
+     "end": 2.2,
+     "cue": {
+      "word": "هارون",
+      "t": 0.3
+     },
+     "who": "harun",
+     "action": "Stands at the arch looking at the moon; label HARUN AL-RASHID with an arrow pops beside him.",
+     "acting": "gaze up left at the moon via lookAt, slow blink, shoulders rise and fall (breathe).",
+     "library": "person {costume:'caliph'} + lookAt + breathe + style label/arrow"
+    },
+    {
+     "t": 1.5,
+     "end": 2.8,
+     "cue": {
+      "word": "قلقًا",
+      "t": 1.62
+     },
+     "who": "harun",
+     "action": "Restless: strokes his beard, shifts weight, turns his head left, right, left.",
+     "acting": "gazePlan saccades (0.07 ease), brow -0.5 worried, small tip 0.03 each way, fingers drumming on his sash.",
+     "library": "PERSON_HANDS.chin + gazePlan"
+    },
+    {
+     "t": 2.7,
+     "end": 3.6,
+     "cue": {
+      "word": "ليلة،",
+      "t": 2.86
+     },
+     "who": "harun",
+     "action": "Looks at the moon once more and sighs; a small puff leaves his mouth.",
+     "acting": "long blink (lid 0 to 1 to 0.3), mouth 'o' then closed, sq dips to 0.96 on the sigh.",
+     "library": "anticipate + lid"
+    },
+    {
+     "t": 3.6,
+     "end": 5.0,
+     "cue": {
+      "word": "فخرج",
+      "t": 3.72
+     },
+     "who": "harun",
+     "action": "Turns and walks off to the right along the corridor.",
+     "acting": "hands clasp behind his back, gaze down at the floor ahead, cape lags half a step.",
+     "library": "walk(HX, t) + footfalls (soft, no dust)"
+    },
+    {
+     "t": 4.98,
+     "end": 6.1,
+     "cue": {
+      "word": "يتمشى",
+      "t": 4.98
+     },
+     "who": "camera",
+     "action": "Tracking: arches and lamps slide past with parallax, his shadow stretches and shrinks under each lamp.",
+     "acting": "Slow, even pace; one lamp sways slightly as he passes (swing).",
+     "library": "camX key track + swing"
+    },
+    {
+     "t": 6.1,
+     "end": 7.4,
+     "cue": {
+      "word": "أروقة",
+      "t": 6.14
+     },
+     "who": "harun",
+     "action": "Keeps pacing, glances out of an arch at the stars, then down again.",
+     "acting": "gaze flick up right then back down, one blink, head drop 4 px.",
+     "library": "gazePlan"
+    },
+    {
+     "t": 7.4,
+     "end": 8.0,
+     "cue": {
+      "word": "رأى",
+      "t": 8.14
+     },
+     "who": "harun",
+     "action": "Slows and stops: a wedge of warm yellow light on the floor ahead. He leans to look.",
+     "acting": "gaze snaps right, brow -0.6 raised, tip 0.08 forward, settleTo on the stop.",
+     "library": "settleTo + lookAt"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.3,
+     "text": "HARUN AL-RASHID"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 8.0
+   }
+  },
+  {
+   "id": "S2",
+   "start": 8.0,
+   "end": 17.5,
+   "paragraphs": [
+    1
+   ],
+   "set": "bedchamber",
+   "cast": [
+    "harun",
+    "damsel"
+   ],
+   "summary": "Inside the chamber: two candles, and a young woman asleep on a divan with her long hair across her face. Harun peers in from the door.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Start wide on the whole room (zoom 1.0), count the candles, then pan right and push to zoom 1.6 on the divan by 16.2."
+   },
+   "composition": "Room walls x 60..940, floor y 900. Door arch left x 90..250 with Harun peeking (only head and one hand visible past the jamb at x 250). Divan x 520..860, mattress top y 820. Candle stands at x 470 and x 900, flames near y 640. Damsel lies with her head at the left end (x 560).",
+   "actions": [
+    {
+     "t": 8.0,
+     "end": 8.76,
+     "cue": {
+      "word": "رأى",
+      "t": 8.14
+     },
+     "who": "harun",
+     "action": "Cut inside: Harun peeks around the door arch, drawn before the jamb so half of him is hidden.",
+     "acting": "eyes wide, gaze right into the room, one hand on the jamb.",
+     "library": "draw order: person then door jamb (peek from cover) + handRW"
+    },
+    {
+     "t": 8.76,
+     "end": 9.46,
+     "cue": {
+      "word": "غرفة",
+      "t": 8.76
+     },
+     "who": "set",
+     "action": "The room reads: tiled floor, a curtain, cushions, a low divan at the right.",
+     "acting": "Dark navy wash everywhere except near the candles.",
+     "library": "bedchamber {night:1, divan option}"
+    },
+    {
+     "t": 9.46,
+     "end": 10.44,
+     "cue": {
+      "word": "مضاءة",
+      "t": 9.46
+     },
+     "who": "fx",
+     "action": "The two warm light discs swell from the candle flames and overlap on the divan.",
+     "acting": "Discs flicker in radius by 3 percent on seeded noise.",
+     "library": "candle light disc (halftone yellow, globalAlpha 0.5)"
+    },
+    {
+     "t": 10.44,
+     "end": 12.3,
+     "cue": {
+      "word": "بشمعتين،",
+      "t": 10.44
+     },
+     "who": "candle",
+     "action": "Counter: an arrow and a big 1 pop on the left candle, then 2 on the right one 0.5 s later.",
+     "acting": "Each flame jumps a little as its number pops.",
+     "library": "style counter/arrow + candle {flicker}"
+    },
+    {
+     "t": 12.3,
+     "end": 12.92,
+     "cue": {
+      "word": "وفيها",
+      "t": 12.36
+     },
+     "who": "camera",
+     "action": "Pan right and begin the push toward the divan.",
+     "acting": "Eased move ending on a hold.",
+     "library": "CAM keys"
+    },
+    {
+     "t": 12.92,
+     "end": 14.3,
+     "cue": {
+      "word": "فتاة",
+      "t": 12.92
+     },
+     "who": "damsel",
+     "action": "The sleeping woman is revealed on the divan under a light blanket; small Z letters drift up.",
+     "acting": "lid 1, slow breathing (breathe on the chest and blanket), one hand under her cheek.",
+     "library": "person {costume:'maiden', lie:1, lid:1, s:0.9} + breathe"
+    },
+    {
+     "t": 14.34,
+     "end": 15.5,
+     "cue": {
+      "word": "يغطي",
+      "t": 14.34
+     },
+     "who": "damsel",
+     "action": "Her long black hair lies across her face; a few strands lift and fall with each breath.",
+     "acting": "hairVeil 1; strand tips rise 6 px on the exhale.",
+     "library": "new pose field hairVeil 0..1 (see new_assets)"
+    },
+    {
+     "t": 15.5,
+     "end": 16.2,
+     "cue": {
+      "word": "شعرها",
+      "t": 15.52
+     },
+     "who": "harun",
+     "action": "Harun tilts his head, curious, and puts one foot inside the room.",
+     "acting": "head tilt 5 px, brow -0.4, gaze locked on the divan.",
+     "library": "lookAt"
+    },
+    {
+     "t": 16.24,
+     "end": 17.5,
+     "cue": {
+      "word": "وجهها.",
+      "t": 16.24
+     },
+     "who": "fx",
+     "action": "Arrow to the hidden face with the label WHO?",
+     "acting": "Arrow wiggles once and holds.",
+     "library": "style arrow + label"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 13.0,
+     "text": "Z Z Z"
+    },
+    {
+     "t": 16.3,
+     "text": "WHO?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 17.5
+   }
+  },
+  {
+   "id": "S3",
+   "start": 17.5,
+   "end": 27.06,
+   "paragraphs": [
+    1
+   ],
+   "set": "bedchamber",
+   "cast": [
+    "harun",
+    "damsel"
+   ],
+   "summary": "He tiptoes over, lifts the hair from her face and pecks her cheek without asking. She wakes with a start; he jumps back.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot on Harun (kneeling at x 470) and the damsel head (x 560): zoom 1.7, push to 1.9 for the reveal at 19.4, snap out to 1.5 at 23.8 so her sit-up and his recoil both fit."
+   },
+   "composition": "Harun enters from x 250 to x 460 and kneels left of the divan, so his face and hers are 110 units apart at about y 760. Nothing below y 900 matters. Hearts and lettering go above the heads, never on a face.",
+   "actions": [
+    {
+     "t": 17.6,
+     "end": 18.3,
+     "cue": {
+      "word": "اقترب",
+      "t": 17.78
+     },
+     "who": "harun",
+     "action": "Tiptoes to the divan in four high-knee steps.",
+     "acting": "hush finger at his lips, shoulders up, gaze on her; toes hold a beat on each step.",
+     "library": "walk(HX, t, {sneak}) + PERSON_HANDS.hush"
+    },
+    {
+     "t": 18.32,
+     "end": 19.3,
+     "cue": {
+      "word": "وكشف",
+      "t": 18.32
+     },
+     "who": "harun",
+     "action": "Kneels and, with two fingers, lifts the hair aside from her face.",
+     "acting": "handRW follows the hair edge from (590, 770) to (640, 740); hairVeil eases 1 to 0; he holds his breath (sq 1.03).",
+     "library": "person {kneel:1, handRW} + damsel hairVeil"
+    },
+    {
+     "t": 19.38,
+     "end": 20.0,
+     "cue": {
+      "word": "وجهها",
+      "t": 19.38
+     },
+     "who": "damsel",
+     "action": "Her sleeping face is revealed in the candle light; a small glint star.",
+     "acting": "lid 1, faint smile, breathing continues. Harun: eyes wide then soft (lid 0.3), mouth smile.",
+     "library": "person lie + glint"
+    },
+    {
+     "t": 20.0,
+     "end": 21.1,
+     "cue": {
+      "word": "وقبّل",
+      "t": 20.2
+     },
+     "who": "harun",
+     "action": "Leans in (short pull back first) and gives a quick peck on the cheek; MWAH! pops above.",
+     "acting": "anticipate back 0.25 s, tip 0.22 forward, lid 1 on contact, contact 4 frames only.",
+     "library": "anticipate + tip"
+    },
+    {
+     "t": 21.14,
+     "end": 22.0,
+     "cue": {
+      "word": "خدها",
+      "t": 21.14
+     },
+     "who": "fx",
+     "action": "One small red heart rises from her cheek and pops.",
+     "acting": "Heart r 22, rises 90 units, pops into 5 dots.",
+     "library": "heart(ctx, x, y, r, {alpha})"
+    },
+    {
+     "t": 22.0,
+     "end": 23.6,
+     "cue": {
+      "word": "دون",
+      "t": 22.0
+     },
+     "who": "fx",
+     "action": "Picture balloon over Harun: a speech balloon with a question mark, struck through with a red bar (he did not ask).",
+     "acting": "Harun leans back on his heels, pleased with himself: lid 0.5, smile. Balloon stamps on with a 10 percent overshoot.",
+     "library": "iconBalloon (single) + settleTo"
+    },
+    {
+     "t": 23.6,
+     "end": 24.8,
+     "cue": {
+      "word": "فاستيقظت",
+      "t": 23.8
+     },
+     "who": "damsel",
+     "action": "Her eyes snap open and she sits bolt upright; the blanket flies off her shoulder, hair swings.",
+     "acting": "lid 1 to 0 in 2 frames, lie 1 to 0.15 with settleTo overshoot, gaze straight at him.",
+     "library": "person {lie blend} + settleTo"
+    },
+    {
+     "t": 24.84,
+     "end": 25.8,
+     "cue": {
+      "word": "مندهشة.",
+      "t": 24.84
+     },
+     "who": "damsel",
+     "action": "Shock: both hands to her cheeks, mouth O; ?! above her.",
+     "acting": "eyes 'wide', noBlink, mouth 'o', tremble 2 px. Camera: 3 frames of panel-only shake.",
+     "library": "PERSON_HANDS.cheeks + tremble + panel-only shake"
+    },
+    {
+     "t": 24.9,
+     "end": 25.9,
+     "cue": {
+      "word": "مندهشة.",
+      "t": 24.84
+     },
+     "who": "harun",
+     "action": "Harun springs back off his knees, lands on his seat; his turban hops.",
+     "acting": "hop back 60 units, landSquash 0.85, turban lags 2 frames (lag by hand).",
+     "library": "hop + landSquash"
+    },
+    {
+     "t": 25.9,
+     "end": 27.06,
+     "cue": {
+      "word": "مندهشة.",
+      "t": 24.84
+     },
+     "who": "harun",
+     "action": "Held beat: they stare at each other; he offers a sheepish smile with open palms. Candle flames lean away from the gust and recover.",
+     "acting": "Harun brow -0.5, palmsUp, one blink. Damsel pulls the blanket up, gaze still on him.",
+     "library": "PERSON_HANDS.palmsUp + swing on flames"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 20.4,
+     "text": "MWAH!"
+    },
+    {
+     "t": 24.9,
+     "text": "?!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 27.06
+   }
+  },
+  {
+   "id": "S4",
+   "start": 27.06,
+   "end": 40.7,
+   "paragraphs": [
+    2
+   ],
+   "set": "bedchamber",
+   "cast": [
+    "harun",
+    "damsel"
+   ],
+   "summary": "She plays the lute, then tells her story in a picture balloon: the prince bought her for the caliph, Zubaydah kept her away. She asks him to come back tomorrow night.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "Hold a medium two-shot (zoom 1.35) with Harun left on a cushion and the damsel on the divan edge right; drift up 60 units at 31.5 to make room for the balloon, back down at 36.3."
+   },
+   "composition": "Harun sits on a floor cushion at x 300, damsel sits on the divan edge at x 640 (head near y 640). The picture balloon is 520 x 300 centred at (470, 330), tail to her. Window with the moon at upper right (840, 300).",
+   "actions": [
+    {
+     "t": 27.06,
+     "end": 27.8,
+     "cue": {
+      "word": "عزفت",
+      "t": 27.06
+     },
+     "who": "damsel",
+     "action": "Calmer now, she lifts the lute from beside the divan and settles it on her knee.",
+     "acting": "gaze down to the lute, lid 0.3, small smile; blanket slides away.",
+     "library": "person {sit:1, seat:'bench'} + oud prop + handLW/handRW"
+    },
+    {
+     "t": 27.84,
+     "end": 28.4,
+     "cue": {
+      "word": "الفتاة",
+      "t": 27.84
+     },
+     "who": "damsel",
+     "action": "Strums: right hand sweeps the strings, left hand moves on the neck.",
+     "acting": "handRW oscillates 14 px at 5 Hz for 3 strums, head sways with each.",
+     "library": "handRW on oud anchors"
+    },
+    {
+     "t": 28.42,
+     "end": 29.9,
+     "cue": {
+      "word": "العود،",
+      "t": 28.42
+     },
+     "who": "fx",
+     "action": "Music notes rise from the lute; Harun, seated, listens with his head swaying.",
+     "acting": "Harun lid 0.6, smile, tip sways 0.03. Notes on seeded S-paths.",
+     "library": "musicNotes + person {sit:1, seat:'floor'}"
+    },
+    {
+     "t": 30.0,
+     "end": 31.5,
+     "cue": {
+      "word": "وقالت",
+      "t": 30.0
+     },
+     "who": "damsel",
+     "action": "Lays her palm flat on the strings to stop them and starts to speak.",
+     "acting": "talk 0.7, gaze to Harun, brow slightly raised (earnest).",
+     "library": "talk + lookAt"
+    },
+    {
+     "t": 31.54,
+     "end": 32.6,
+     "cue": {
+      "word": "ابن",
+      "t": 31.54
+     },
+     "who": "fx",
+     "action": "Picture balloon, frame 1: a small prince figure pops in with a crown.",
+     "acting": "Harun recognises him: brow up, small nod.",
+     "library": "iconBalloon (strip) + person {costume:'prince', s:0.45}"
+    },
+    {
+     "t": 32.68,
+     "end": 33.3,
+     "cue": {
+      "word": "اشتراها",
+      "t": 32.68
+     },
+     "who": "fx",
+     "action": "In the balloon the prince hands a purse to a merchant hand and a small damsel figure steps to his side; label BOUGHT.",
+     "acting": "Purse arcs across in 0.3 s. Damsel (real) looks down for a moment, lid 0.4.",
+     "library": "iconBalloon + purse prop"
+    },
+    {
+     "t": 33.38,
+     "end": 34.4,
+     "cue": {
+      "word": "له",
+      "t": 33.38
+     },
+     "who": "damsel",
+     "action": "She points at Harun; in the balloon an arrow runs from the small damsel to a caliph crown: FOR YOU.",
+     "acting": "Harun points at his own chest, mouth o, eyes wide.",
+     "library": "PERSON_HANDS.pointFwd / PERSON_HANDS.chest"
+    },
+    {
+     "t": 34.52,
+     "end": 35.3,
+     "cue": {
+      "word": "زبيدة",
+      "t": 34.52
+     },
+     "who": "fx",
+     "action": "Balloon frame 2: Zubaydah (a lady with a small crown, red robe) slides in between them, arms folded; label ZUBAYDAH.",
+     "acting": "Zubaydah brow 1 (stern). Harun (real) winces: shoulders up, gaze to camera for 6 frames.",
+     "library": "iconBalloon + person {costume:'lady', pal red, s:0.45, PERSON_HANDS.folded}"
+    },
+    {
+     "t": 35.36,
+     "end": 36.3,
+     "cue": {
+      "word": "أبعدتها.",
+      "t": 35.36
+     },
+     "who": "fx",
+     "action": "In the balloon Zubaydah points; the small damsel is whisked behind a door that shuts with a padlock.",
+     "acting": "Damsel (real) sad: lid 0.45, mouth frown, head drop 5 px.",
+     "library": "iconBalloon + townDoor small"
+    },
+    {
+     "t": 36.32,
+     "end": 38.1,
+     "cue": {
+      "word": "وطلبت",
+      "t": 36.32
+     },
+     "who": "damsel",
+     "action": "The balloon pops away. She sets the lute down and clasps her hands toward him.",
+     "acting": "kneel-like lean (tip 0.08), gaze up to him, brow -0.5, talk.",
+     "library": "PERSON_HANDS.clasp"
+    },
+    {
+     "t": 38.2,
+     "end": 38.9,
+     "cue": {
+      "word": "يعود",
+      "t": 38.2
+     },
+     "who": "damsel",
+     "action": "She points to the window; a curved return arrow draws from the door back to the room.",
+     "acting": "gaze follows her finger to the moon; Harun turns his eyes there too.",
+     "library": "style arrow + lookAt"
+    },
+    {
+     "t": 38.92,
+     "end": 39.5,
+     "cue": {
+      "word": "الليلة",
+      "t": 38.92
+     },
+     "who": "set",
+     "action": "In the window the moon sets and a fresh moon pops up: label TOMORROW NIGHT.",
+     "acting": "Moon arc takes 0.5 s, the new moon overshoots and settles.",
+     "library": "skyCycle moon arc in the window + label"
+    },
+    {
+     "t": 39.5,
+     "end": 40.7,
+     "cue": {
+      "word": "التالية.",
+      "t": 39.5
+     },
+     "who": "harun",
+     "action": "Harun stands, hand on his heart, nods a promise and backs toward the door.",
+     "acting": "smile, slow nod, sit 1 to 0 with anticipation; damsel smiles, small wave.",
+     "library": "PERSON_HANDS.chest + settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 32.7,
+     "text": "BOUGHT"
+    },
+    {
+     "t": 33.4,
+     "text": "FOR YOU"
+    },
+    {
+     "t": 34.6,
+     "text": "ZUBAYDAH"
+    },
+    {
+     "t": 38.95,
+     "text": "TOMORROW NIGHT"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 29.65,
+     "kind": "chime (soft lute pluck)"
+    },
+    {
+     "t": 40.7,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 40.7,
+    "label": "NEXT MORNING..."
+   }
+  },
+  {
+   "id": "S5",
+   "start": 40.7,
+   "end": 45.6,
+   "paragraphs": [
+    3
+   ],
+   "set": "throneHall",
+   "cast": [
+    "harun",
+    "chamberlain"
+   ],
+   "summary": "Morning in the throne hall. The sleepless caliph orders his chamberlain to fetch Abu Nuwas.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Under the LATER card cut to the hall (zoom 1.0); push to 1.3 on the throne by 43.2; follow the chamberlain out left with a small pan at 44.6."
+   },
+   "composition": "Use the palaceHall anchors: Harun seated at A.throne (x near 740, sitY near 800, approximate, read the anchors). Chamberlain stands at x 420 on the carpet. Day sky in the door arch at the left.",
+   "actions": [
+    {
+     "t": 41.11,
+     "end": 41.8,
+     "cue": {
+      "word": "في",
+      "t": 41.11
+     },
+     "who": "set",
+     "action": "The transition card clears on the bright hall: morning sky in the door arch, the light shaft from the window.",
+     "acting": "Lamps off, light 1.",
+     "library": "palaceHall {variant:'palace', u:0.08}"
+    },
+    {
+     "t": 41.8,
+     "end": 42.4,
+     "cue": {
+      "word": "الصباح",
+      "t": 41.8
+     },
+     "who": "harun",
+     "action": "On the throne, Harun yawns hugely and rubs one eye (he has not slept).",
+     "acting": "mouth open, lid 0.8, stretch sq 1.05 then settle; dark half-lids after.",
+     "library": "person {costume:'caliph', sit:1, seat:'bench'}"
+    },
+    {
+     "t": 42.46,
+     "end": 43.1,
+     "cue": {
+      "word": "طلب",
+      "t": 42.46
+     },
+     "who": "harun",
+     "action": "Claps twice and points forward: an order.",
+     "acting": "brow 0.4, talk 0.8. Chamberlain snaps upright (sq 1.06), staff of office straight.",
+     "library": "PERSON_HANDS.pointFwd + settleTo"
+    },
+    {
+     "t": 43.16,
+     "end": 44.0,
+     "cue": {
+      "word": "الخليفة",
+      "t": 43.16
+     },
+     "who": "chamberlain",
+     "action": "Chamberlain steps forward and cups his ear, attentive; BRING ME... letters over the throne.",
+     "acting": "gaze on Harun, brow -0.3, quick nods.",
+     "library": "PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 44.04,
+     "end": 44.5,
+     "cue": {
+      "word": "أبا",
+      "t": 44.04
+     },
+     "who": "fx",
+     "action": "Picture balloon from Harun: the poet face with a quill, label ABU NUWAS.",
+     "acting": "Balloon pops with overshoot.",
+     "library": "iconBalloon + person {costume:'poet', s:0.5}"
+    },
+    {
+     "t": 44.54,
+     "end": 45.6,
+     "cue": {
+      "word": "نواس،",
+      "t": 44.54
+     },
+     "who": "chamberlain",
+     "action": "Bows deeply, spins and hurries out through the door arch.",
+     "acting": "tip 0.35 bow with anticipation, then walk at speed with dust at the first two footfalls.",
+     "library": "walk + footfalls + dustBurst"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 43.2,
+     "text": "BRING ME..."
+    },
+    {
+     "t": 44.1,
+     "text": "ABU NUWAS"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 45.42,
+     "kind": "thud (door)"
+    }
+   ],
+   "transition_out": {
+    "type": "whip",
+    "t": 45.6
+   }
+  },
+  {
+   "id": "S6",
+   "start": 45.6,
+   "end": 58.8,
+   "paragraphs": [
+    3,
+    4
+   ],
+   "set": "tavern",
+   "cast": [
+    "chamberlain",
+    "abuNowas",
+    "youth",
+    "keeper"
+   ],
+   "summary": "The chamberlain finds Abu Nuwas in a tavern, a long scroll of debts beside him, improvising verses about a young man in dazzling clothes.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Whip in on the tavern door (zoom 1.2 at x 250); pan right to the poet (x 520) at 47.8, then on to include the youth (x 800) by 51.8; settle on a wide (zoom 1.05) for the recital."
+   },
+   "composition": "Tavern = merchant variant of the hall: door at the left (x 120..240), shelves of jars on the back wall, keeper behind a low counter at x 330. Abu Nuwas sits on a floor cushion at x 520 with a cup. The youth stands at x 800. The debt scroll rolls along the floor from x 360 to x 700 at y 880.",
+   "actions": [
+    {
+     "t": 45.74,
+     "end": 46.8,
+     "cue": {
+      "word": "فوجده",
+      "t": 45.74
+     },
+     "who": "chamberlain",
+     "action": "Bursts through the tavern door and scans the room.",
+     "acting": "saccades left, right, left (gazePlan 0.07); door leaf swings and settles.",
+     "library": "townDoor open + gazePlan"
+    },
+    {
+     "t": 46.84,
+     "end": 47.8,
+     "cue": {
+      "word": "الحاجب",
+      "t": 46.84
+     },
+     "who": "chamberlain",
+     "action": "Label THE CHAMBERLAIN with an arrow; he straightens his turban and wrinkles his nose at the place.",
+     "acting": "brow 0.5, mouth frown, PERSON_HANDS.hipsHands.",
+     "library": "person {costume:'vizier', pal green} + label"
+    },
+    {
+     "t": 47.84,
+     "end": 48.5,
+     "cue": {
+      "word": "حانة",
+      "t": 47.84
+     },
+     "who": "camera",
+     "action": "Pan to the room: hanging sign TAVERN, jars, and Abu Nuwas on a cushion raising a cup; label ABU NUWAS.",
+     "acting": "Poet: lid 0.4, wide smile, cup held high, sways gently.",
+     "library": "palaceHall {variant:'merchant'} dressed as tavern + person {costume:'poet', sit:1, seat:'floor'} + wineCup"
+    },
+    {
+     "t": 48.54,
+     "end": 49.4,
+     "cue": {
+      "word": "وعليه",
+      "t": 48.54
+     },
+     "who": "keeper",
+     "action": "The keeper flicks open a debt scroll: it drops, bounces and unrolls across the floor toward the poet.",
+     "acting": "Keeper brow 1, one hand out for payment. Scroll end rolls with easing and a small rebound.",
+     "library": "person {costume:'merchant', pal brown} + scroll {len 0..340}"
+    },
+    {
+     "t": 49.48,
+     "end": 50.0,
+     "cue": {
+      "word": "ديون",
+      "t": 49.48
+     },
+     "who": "scroll",
+     "action": "Counter over the scroll: DEBTS ticking 10, 50, 100, 300.",
+     "acting": "Each tick stamps a red line on the scroll.",
+     "library": "style counter"
+    },
+    {
+     "t": 50.02,
+     "end": 50.9,
+     "cue": {
+      "word": "بسبب",
+      "t": 50.02
+     },
+     "who": "abuNowas",
+     "action": "Abu Nuwas shrugs with a guilty grin; an arrow curves from the scroll toward the right of the room.",
+     "acting": "palmsUp, brow -0.5, gaze slides right along the arrow.",
+     "library": "PERSON_HANDS.palmsUp + arrow"
+    },
+    {
+     "t": 50.96,
+     "end": 51.8,
+     "cue": {
+      "word": "إعجابه",
+      "t": 50.96
+     },
+     "who": "abuNowas",
+     "action": "He gazes off to the right, chin in hand, starry-eyed; one small heart floats up from him.",
+     "acting": "lid 0.3, smile, head tilt; heart r 18.",
+     "library": "PERSON_HANDS.chin + heart"
+    },
+    {
+     "t": 51.86,
+     "end": 53.3,
+     "cue": {
+      "word": "بشاب.",
+      "t": 51.86
+     },
+     "who": "youth",
+     "action": "The arrow lands on a young man in bright red, yellow, blue and green; label THE YOUNG MAN. He adjusts his sash, unaware.",
+     "acting": "youth looks at his own sleeve, small proud smile, one blink.",
+     "library": "person {costume:'prince' without crown, youth:true, multicolour pal}"
+    },
+    {
+     "t": 53.6,
+     "end": 55.1,
+     "cue": {
+      "word": "أبو",
+      "t": 54.1
+     },
+     "who": "abuNowas",
+     "action": "Abu Nuwas gets up on one knee, clears his throat and sets his cup down.",
+     "acting": "anticipation dip, kneel 0.6, hand to chest.",
+     "library": "person {kneel} + anticipate"
+    },
+    {
+     "t": 55.2,
+     "end": 56.0,
+     "cue": {
+      "word": "يرتجل",
+      "t": 55.2
+     },
+     "who": "abuNowas",
+     "action": "Throws one arm wide and recites; a verse ribbon (paper band of squiggle lines) unrolls from his mouth.",
+     "acting": "talk 0.9, lid 0.5, aR raised by angle; ribbon follows a sine path.",
+     "library": "verseRibbon + talk"
+    },
+    {
+     "t": 56.08,
+     "end": 57.0,
+     "cue": {
+      "word": "شعرًا",
+      "t": 56.08
+     },
+     "who": "chamberlain",
+     "action": "The ribbon curls toward the youth; the chamberlain slaps his forehead.",
+     "acting": "PERSON_HANDS.headHold, lid 1, head drop; keeper rolls his eyes (gaze up).",
+     "library": "PERSON_HANDS.headHold"
+    },
+    {
+     "t": 57.06,
+     "end": 58.0,
+     "cue": {
+      "word": "ثياب",
+      "t": 57.06
+     },
+     "who": "fx",
+     "action": "Four quick arrows hit the turban (red), sash (yellow), robe (blue) and shoes (green); each garment flashes brighter as it is named.",
+     "acting": "Flash = 2 frames white then colour at full; youth looks at each in turn.",
+     "library": "style arrow x4 + emphasis"
+    },
+    {
+     "t": 58.06,
+     "end": 58.8,
+     "cue": {
+      "word": "الملوّنة.",
+      "t": 58.06
+     },
+     "who": "youth",
+     "action": "The youth does a small proud turn; coloured stars pop around his clothes.",
+     "acting": "turnFlip squeeze 0.7, smile, sleeve swings after (swing).",
+     "library": "turnFlip + swing"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 46.9,
+     "text": "THE CHAMBERLAIN"
+    },
+    {
+     "t": 47.9,
+     "text": "TAVERN"
+    },
+    {
+     "t": 48.0,
+     "text": "ABU NUWAS"
+    },
+    {
+     "t": 49.5,
+     "text": "DEBTS"
+    },
+    {
+     "t": 51.9,
+     "text": "THE YOUNG MAN"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 53.0,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 58.8
+   }
+  },
+  {
+   "id": "S7",
+   "start": 58.8,
+   "end": 64.5,
+   "paragraphs": [
+    4
+   ],
+   "set": "tavern",
+   "cast": [
+    "chamberlain",
+    "abuNowas",
+    "youth",
+    "keeper"
+   ],
+   "summary": "The caliph pays: a sealed purse hits the counter, the debt scroll is stamped PAID, and the chamberlain marches the poet off to the palace.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "Medium on the counter (zoom 1.5, x 380) for the purse, then pan with the two men to the door by 63.7."
+   },
+   "composition": "Counter at x 330, top y 760. Purse lands at (350, 750). Poet at x 520, chamberlain between them at x 430. Door at left.",
+   "actions": [
+    {
+     "t": 58.88,
+     "end": 59.8,
+     "cue": {
+      "word": "سدد",
+      "t": 58.88
+     },
+     "who": "chamberlain",
+     "action": "The chamberlain sighs, pulls out a fat purse with the caliph seal and drops it on the counter.",
+     "acting": "gaze to camera for 5 frames (long-suffering), then down to the purse.",
+     "library": "purse prop + fallY + impactSquash"
+    },
+    {
+     "t": 59.9,
+     "end": 60.5,
+     "cue": {
+      "word": "سدد",
+      "t": 58.88
+     },
+     "who": "keeper",
+     "action": "Coins spill into a small pile; the keeper eyes go wide and he bites one.",
+     "acting": "eyes 'wide', brow -0.6, then mouth smile.",
+     "library": "coinPile"
+    },
+    {
+     "t": 60.58,
+     "end": 61.3,
+     "cue": {
+      "word": "الخليفة",
+      "t": 60.58
+     },
+     "who": "fx",
+     "action": "Arrow to the seal on the purse: FROM THE CALIPH.",
+     "acting": "Seal glints once.",
+     "library": "style arrow + label"
+    },
+    {
+     "t": 61.34,
+     "end": 61.95,
+     "cue": {
+      "word": "دينه",
+      "t": 61.34
+     },
+     "who": "scroll",
+     "action": "The debt counter spins down to 0 and a red PAID! stamp slams onto the scroll, which rolls itself up.",
+     "acting": "Stamp overshoots 15 percent and settles; scroll rolls back in 0.4 s.",
+     "library": "style counter + emphasis"
+    },
+    {
+     "t": 62.0,
+     "end": 62.6,
+     "cue": {
+      "word": "ثم",
+      "t": 62.0
+     },
+     "who": "abuNowas",
+     "action": "Abu Nuwas jaw drops, then a huge grin; he raises his cup to the ceiling in thanks.",
+     "acting": "mouth o to smile, eyes wide then lid 0.3.",
+     "library": "person mouth/lid"
+    },
+    {
+     "t": 62.7,
+     "end": 63.7,
+     "cue": {
+      "word": "استدعاه",
+      "t": 62.7
+     },
+     "who": "chamberlain",
+     "action": "The chamberlain hooks the poet by the sleeve and tows him toward the door; the cup is left wobbling on the floor.",
+     "acting": "Poet leans back (tip -0.12) while his feet walk; chamberlain tip 0.1 forward. Cup wobble = damped swing.",
+     "library": "walk x2 + handRW (sleeve) + swing"
+    },
+    {
+     "t": 63.74,
+     "end": 64.5,
+     "cue": {
+      "word": "القصر.",
+      "t": 63.74
+     },
+     "who": "fx",
+     "action": "Picture balloon over the chamberlain: the palace facade with an arrow. The poet waves goodbye to the youth, who waves back.",
+     "acting": "Poet gaze back over the room, wave; youth small wave.",
+     "library": "iconBalloon + PERSON_HANDS.wave"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 60.6,
+     "text": "FROM THE CALIPH"
+    },
+    {
+     "t": 61.4,
+     "text": "PAID!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 64.5
+   }
+  },
+  {
+   "id": "S8",
+   "start": 64.5,
+   "end": 76.9,
+   "paragraphs": [
+    5
+   ],
+   "set": "throneHall",
+   "cast": [
+    "harun",
+    "abuNowas",
+    "chamberlain"
+   ],
+   "summary": "In the throne hall Harun asks for a poem that contains the woman surprised question, but hides what happened.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot on Harun (throne) and the poet (x 400), zoom 1.25; slow push to 1.45 by 73.4 as the secret closes in."
+   },
+   "composition": "Harun on the throne at the right, poet standing on the carpet at x 400 facing him, chamberlain small at the far left by the door (x 160). Harun balloon sits above and between them at (520, 330).",
+   "actions": [
+    {
+     "t": 64.52,
+     "end": 65.9,
+     "cue": {
+      "word": "قال",
+      "t": 64.52
+     },
+     "who": "harun",
+     "action": "Harun leans forward on the throne and speaks.",
+     "acting": "talk 0.7, elbows on knees, gaze on the poet, half smile.",
+     "library": "person {costume:'caliph', sit:1, seat:'bench'} + lookAt"
+    },
+    {
+     "t": 65.96,
+     "end": 66.7,
+     "cue": {
+      "word": "الخليفة",
+      "t": 65.96
+     },
+     "who": "harun",
+     "action": "Points at the poet.",
+     "acting": "pointFwd with a small jab; brow 0.3.",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 66.8,
+     "end": 68.0,
+     "cue": {
+      "word": "للشاعر:",
+      "t": 66.8
+     },
+     "who": "abuNowas",
+     "action": "Abu Nuwas bows with a flourish, hand on his chest; label THE POET.",
+     "acting": "tip 0.25 then up, smile, gaze up to the caliph; his tavern sway is gone, he is alert.",
+     "library": "PERSON_HANDS.chest + anticipate"
+    },
+    {
+     "t": 68.12,
+     "end": 69.6,
+     "cue": {
+      "word": "أنشدني",
+      "t": 68.12
+     },
+     "who": "harun",
+     "action": "Open palm toward him: A POEM! in Bangers above.",
+     "acting": "palm up, brow -0.3 (expectant).",
+     "library": "PERSON_HANDS.palmsUp + style title small"
+    },
+    {
+     "t": 69.64,
+     "end": 70.5,
+     "cue": {
+      "word": "تتضمن",
+      "t": 69.64
+     },
+     "who": "fx",
+     "action": "Picture balloon from Harun: a blank verse scroll with a dotted hole in the middle.",
+     "acting": "Poet eyes follow the balloon upward.",
+     "library": "iconBalloon + scroll"
+    },
+    {
+     "t": 70.54,
+     "end": 71.2,
+     "cue": {
+      "word": "سؤال",
+      "t": 70.54
+     },
+     "who": "fx",
+     "action": "A big red question mark drops into the hole.",
+     "acting": "Drops with fallY and a small rebound.",
+     "library": "fallY + rebound"
+    },
+    {
+     "t": 71.24,
+     "end": 72.3,
+     "cue": {
+      "word": "الفتاة",
+      "t": 71.24
+     },
+     "who": "fx",
+     "action": "Beside it a plain grey silhouette of a lying figure appears (no detail at all).",
+     "acting": "Harun glances away from the poet as it appears.",
+     "library": "iconBalloon silhouette (person lie filled grey)"
+    },
+    {
+     "t": 72.4,
+     "end": 73.4,
+     "cue": {
+      "word": "استيقظت.",
+      "t": 72.4
+     },
+     "who": "fx",
+     "action": "Two white eyes pop open on the silhouette.",
+     "acting": "Poet tilts his head: brow -0.5.",
+     "library": "iconBalloon"
+    },
+    {
+     "t": 73.44,
+     "end": 74.5,
+     "cue": {
+      "word": "لم",
+      "t": 73.44
+     },
+     "who": "harun",
+     "action": "Harun presses a finger to his lips; a black bar reading SECRET slides across the rest of his balloon.",
+     "acting": "gaze slides off to the side, whistling mouth o, lid 0.4.",
+     "library": "PERSON_HANDS.hush + style box"
+    },
+    {
+     "t": 74.6,
+     "end": 75.0,
+     "cue": {
+      "word": "يذكر",
+      "t": 74.6
+     },
+     "who": "chamberlain",
+     "action": "By the door the chamberlain leans in to hear and gets nothing; he shrugs.",
+     "acting": "cupEar then palmsUp.",
+     "library": "PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 75.04,
+     "end": 76.0,
+     "cue": {
+      "word": "تفاصيل",
+      "t": 75.04
+     },
+     "who": "abuNowas",
+     "action": "The poet rubs his chin; his eyes dart between the caliph shifty face, the silhouette and the question mark. Counter CLUES: 2.",
+     "acting": "saccades with holds (gazePlan 0.07), one eyebrow up.",
+     "library": "gazePlan + PERSON_HANDS.chin + counter"
+    },
+    {
+     "t": 76.12,
+     "end": 76.9,
+     "cue": {
+      "word": "جرى،",
+      "t": 76.12
+     },
+     "who": "harun",
+     "action": "Harun folds his arms and sits back, sure the task is impossible.",
+     "acting": "smug: lid 0.5, smile, tip -0.05.",
+     "library": "PERSON_HANDS.folded"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 66.9,
+     "text": "THE POET"
+    },
+    {
+     "t": 68.2,
+     "text": "A POEM!"
+    },
+    {
+     "t": 73.5,
+     "text": "SECRET"
+    },
+    {
+     "t": 75.1,
+     "text": "CLUES: 2"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 67.8,
+     "kind": "chime"
+    },
+    {
+     "t": 73.27,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 76.9
+   }
+  },
+  {
+   "id": "S9",
+   "start": 76.9,
+   "end": 91.2,
+   "paragraphs": [
+    5
+   ],
+   "set": "throneHall",
+   "cast": [
+    "harun",
+    "abuNowas"
+   ],
+   "summary": "Abu Nuwas improvises. His poem appears as a big cloud that repeats the night scene step by step: dark room, long hair, a girl who wakes and says WHAT IS THIS? Harun watches his secret being told.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "Start close on the poet (zoom 1.7) for the idea, pull out and tilt up to zoom 1.1 by 80.0 so the poem cloud (top half) and both men (bottom) are in frame. Small push on Harun at 89.8."
+   },
+   "composition": "Poem cloud 640 x 430 centred (500, 340), tail to the poet at x 330. Poet low left (x 300), Harun on the throne low right (x 740), both heads between y 600 and 720 so the cloud never covers a face. Inside the cloud reuse the bedchamber drawing at scale 0.5.",
+   "actions": [
+    {
+     "t": 76.96,
+     "end": 77.4,
+     "cue": {
+      "word": "لكن",
+      "t": 76.96
+     },
+     "who": "camera",
+     "action": "Cut close on the poet.",
+     "acting": "Hold.",
+     "library": "CAM keys"
+    },
+    {
+     "t": 77.48,
+     "end": 78.6,
+     "cue": {
+      "word": "أبا",
+      "t": 77.48
+     },
+     "who": "abuNowas",
+     "action": "He shuts his eyes, one finger rises slowly: he has it.",
+     "acting": "lid 1, brow -0.3, finger up with anticipation dip, then eyes open bright.",
+     "library": "PERSON_HANDS.pointUp + anticipate"
+    },
+    {
+     "t": 78.72,
+     "end": 79.6,
+     "cue": {
+      "word": "ارتجل",
+      "t": 78.72
+     },
+     "who": "abuNowas",
+     "action": "Sweeps his arm wide and begins; the poem cloud bubbles up from him (trail first, then cloud).",
+     "acting": "talk 0.9, chest out (sq 1.04), aR raised by angle so it reads at phone size.",
+     "library": "thoughtCloud {bg paper, tail to poet}"
+    },
+    {
+     "t": 79.7,
+     "end": 81.2,
+     "cue": {
+      "word": "أبياتًا",
+      "t": 79.7
+     },
+     "who": "fx",
+     "action": "Verse ribbons flow from his mouth into the cloud like lines being written.",
+     "acting": "Ribbon speed follows talk pulses.",
+     "library": "verseRibbon"
+    },
+    {
+     "t": 81.24,
+     "end": 81.9,
+     "cue": {
+      "word": "غرفة",
+      "t": 81.24
+     },
+     "who": "fx",
+     "action": "Inside the cloud: a room draws itself in (walls, divan).",
+     "acting": "Harun leans forward a little: brow 0.",
+     "library": "thoughtCloud inside: bedchamber at scale 0.5"
+    },
+    {
+     "t": 81.94,
+     "end": 83.3,
+     "cue": {
+      "word": "مظلمة،",
+      "t": 81.94
+     },
+     "who": "fx",
+     "action": "The cloud room turns dark navy; two candle flames light up, exactly as in S2.",
+     "acting": "Harun: one eyebrow twitches up, fingers stop drumming.",
+     "library": "night wash + candle x2"
+    },
+    {
+     "t": 83.34,
+     "end": 84.2,
+     "cue": {
+      "word": "وشعرًا",
+      "t": 83.34
+     },
+     "who": "fx",
+     "action": "A sweep of long black hair draws across the divan.",
+     "acting": "Harun eyes widen one step (lid 0).",
+     "library": "hairVeil on the cloud figure"
+    },
+    {
+     "t": 84.22,
+     "end": 85.0,
+     "cue": {
+      "word": "طويلًا،",
+      "t": 84.22
+     },
+     "who": "harun",
+     "action": "Arrow LONG HAIR in the cloud. Harun gulps and looks straight at the camera.",
+     "acting": "gaze [0, 0.05] for 8 frames, drop pulse on the gulp, a bead of sweat.",
+     "library": "look to camera + drops"
+    },
+    {
+     "t": 85.04,
+     "end": 86.3,
+     "cue": {
+      "word": "وفتاة",
+      "t": 85.04
+     },
+     "who": "fx",
+     "action": "The hair parts: the sleeping girl is under it.",
+     "acting": "Poet gestures gently downward as if laying her there.",
+     "library": "person lie in cloud"
+    },
+    {
+     "t": 86.36,
+     "end": 87.3,
+     "cue": {
+      "word": "تستيقظ",
+      "t": 86.36
+     },
+     "who": "fx",
+     "action": "The cloud girl eyes snap open and she sits up: the same pose as 23.8.",
+     "acting": "Setup and payoff pose; Harun grips the throne arms.",
+     "library": "same pose keys as S3 at scale 0.5"
+    },
+    {
+     "t": 87.36,
+     "end": 88.0,
+     "cue": {
+      "word": "وتقول",
+      "t": 87.36
+     },
+     "who": "fx",
+     "action": "Her mouth opens; an empty speech balloon grows from her.",
+     "acting": "Poet pauses for effect: finger raised, sly glance at the caliph.",
+     "library": "balloon outline"
+    },
+    {
+     "t": 88.04,
+     "end": 88.8,
+     "cue": {
+      "word": "مستغربة:",
+      "t": 88.04
+     },
+     "who": "fx",
+     "action": "Hands to her cheeks, exactly as before.",
+     "acting": "Harun mouth falls open.",
+     "library": "PERSON_HANDS.cheeks"
+    },
+    {
+     "t": 88.88,
+     "end": 89.7,
+     "cue": {
+      "word": "ما",
+      "t": 88.88
+     },
+     "who": "lettering",
+     "action": "WHAT IS fills the balloon.",
+     "acting": "Stamped on the word.",
+     "library": "style emphasis"
+    },
+    {
+     "t": 89.76,
+     "end": 91.2,
+     "cue": {
+      "word": "هذا؟",
+      "t": 89.76
+     },
+     "who": "harun",
+     "action": "THIS?! lands big. Harun jolts: his crown-turban hops off his head and drops back.",
+     "acting": "eyes 'wide', mouth o, hop of the headwear 30 px with landSquash; poet bows, smiling, lid 0.5.",
+     "library": "hop + landSquash + settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 84.3,
+     "text": "LONG HAIR"
+    },
+    {
+     "t": 88.9,
+     "text": "WHAT IS"
+    },
+    {
+     "t": 89.8,
+     "text": "THIS?!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 91.2,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 91.2
+   }
+  },
+  {
+   "id": "S10",
+   "start": 91.2,
+   "end": 99.6,
+   "paragraphs": [
+    6
+   ],
+   "set": "throneHall",
+   "cast": [
+    "harun",
+    "abuNowas",
+    "chamberlain"
+   ],
+   "summary": "Harun is amazed at the accuracy and accuses the poet of having been there. The poet plays innocent.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "track",
+    "notes": "Follow Harun off the throne to the poet (zoom 1.4), holding both faces (twoShot margin 120)."
+   },
+   "composition": "Harun comes down from the dais to x 520; poet at x 360. They face each other; the comparison insets sit above them at (300, 330) and (700, 330).",
+   "actions": [
+    {
+     "t": 91.48,
+     "end": 92.3,
+     "cue": {
+      "word": "تعجب",
+      "t": 91.48
+     },
+     "who": "harun",
+     "action": "Springs off the throne.",
+     "acting": "sit 1 to 0 with stretch sq 1.08, arms out, mouth o.",
+     "library": "settleTo + PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 92.4,
+     "end": 93.4,
+     "cue": {
+      "word": "الخليفة",
+      "t": 92.4
+     },
+     "who": "harun",
+     "action": "Strides down to the poet and peers at him from very close.",
+     "acting": "walk, then tip 0.15 toward him, brow 0.6, eyes narrowed (lid 0.4).",
+     "library": "walk + footfalls"
+    },
+    {
+     "t": 93.5,
+     "end": 94.8,
+     "cue": {
+      "word": "دقة",
+      "t": 93.5
+     },
+     "who": "fx",
+     "action": "Two round insets pop side by side: THE POEM (cloud girl waking) and LAST NIGHT (the real moment). A tick joins them: SAME!",
+     "acting": "Insets iris open 0.2 s apart; tick overshoots.",
+     "library": "inset circle x2 + dream wash on the memory"
+    },
+    {
+     "t": 94.9,
+     "end": 96.7,
+     "cue": {
+      "word": "وقال",
+      "t": 94.9
+     },
+     "who": "harun",
+     "action": "Jabs a finger at the poet chest, talking fast.",
+     "acting": "talk 0.9, pointFwd jab on each stress, brow 0.8.",
+     "library": "PERSON_HANDS.pointFwd + countedBeats dip"
+    },
+    {
+     "t": 96.84,
+     "end": 97.5,
+     "cue": {
+      "word": "الشاعر",
+      "t": 96.84
+     },
+     "who": "abuNowas",
+     "action": "Abu Nuwas spreads his palms, all innocence.",
+     "acting": "palmsUp, brow -0.6, eyes wide, tiny smile; leans back (tip -0.06) from the finger.",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 97.56,
+     "end": 98.7,
+     "cue": {
+      "word": "كأنه",
+      "t": 97.56
+     },
+     "who": "lettering",
+     "action": "WERE YOU THERE?! in a spiky balloon above Harun.",
+     "acting": "Placed clear of both faces.",
+     "library": "style emphasis"
+    },
+    {
+     "t": 98.82,
+     "end": 99.6,
+     "cue": {
+      "word": "حاضرًا.",
+      "t": 98.82
+     },
+     "who": "fx",
+     "action": "In the LAST NIGHT inset a dotted outline of the poet peeks from behind the curtain, then is crossed out with a red X as the real poet shakes his head.",
+     "acting": "Poet: slow head shake, hand on heart. Chamberlain at the door looks from one to the other, lost.",
+     "library": "inset circle + dotted outline (setLineDash) + PERSON_HANDS.chest"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 93.6,
+     "text": "SAME!"
+    },
+    {
+     "t": 97.6,
+     "text": "WERE YOU THERE?!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 99.6
+   }
+  },
+  {
+   "id": "S11",
+   "start": 99.6,
+   "end": 108.4,
+   "paragraphs": [
+    6
+   ],
+   "set": "bedchamber",
+   "cast": [
+    "harun",
+    "abuNowas",
+    "damsel"
+   ],
+   "summary": "Harun takes the poet to the woman chamber. She is in a blue robe, and the poet makes new verses about it on the spot.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide on the chamber by day/evening (zoom 1.05); push to 1.4 on the damsel at 104.4, then back to a three-shot at 106.0."
+   },
+   "composition": "Same room as S2, lamps lit, window showing a dusk sky. Door left; Harun leads to x 330, poet stops at x 220. Damsel stands at x 660 in front of the divan. The lute leans on the divan.",
+   "actions": [
+    {
+     "t": 99.62,
+     "end": 100.6,
+     "cue": {
+      "word": "ثم",
+      "t": 99.62
+     },
+     "who": "harun",
+     "action": "Harun takes the poet by the wrist; the wipe carries them into the chamber doorway.",
+     "acting": "Harun grin, the poet eyebrows up.",
+     "library": "handRW (wrist) + wipe transition"
+    },
+    {
+     "t": 100.66,
+     "end": 101.6,
+     "cue": {
+      "word": "أخذه",
+      "t": 100.66
+     },
+     "who": "harun",
+     "action": "Leads him in; the poet trails half a step, looking around.",
+     "acting": "walk both with different phases; poet saccades round the room.",
+     "library": "walk + stagger"
+    },
+    {
+     "t": 101.68,
+     "end": 102.2,
+     "cue": {
+      "word": "غرفة",
+      "t": 101.68
+     },
+     "who": "set",
+     "action": "The chamber again, now warm: the two candles (unlit), cushions, the window.",
+     "acting": "The poet eyes stop on the two candles and the divan for 6 frames (he recognises his own poem).",
+     "library": "bedchamber {night:0.4}"
+    },
+    {
+     "t": 102.3,
+     "end": 102.9,
+     "cue": {
+      "word": "الفتاة،",
+      "t": 102.3
+     },
+     "who": "damsel",
+     "action": "The damsel rises and bows to them.",
+     "acting": "small tip 0.15, smile, gaze to Harun then to the newcomer.",
+     "library": "person {costume:'maiden', pal blue}"
+    },
+    {
+     "t": 102.98,
+     "end": 104.3,
+     "cue": {
+      "word": "فرآها",
+      "t": 102.98
+     },
+     "who": "abuNowas",
+     "action": "Abu Nuwas sees her: eyes widen, hand to chest, a respectful bow.",
+     "acting": "eyes wide then lid 0.3, PERSON_HANDS.chest.",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 104.42,
+     "end": 105.0,
+     "cue": {
+      "word": "بثوب",
+      "t": 104.42
+     },
+     "who": "damsel",
+     "action": "She turns once; the robe flares.",
+     "acting": "turnFlip, hem follows with swing.",
+     "library": "turnFlip + swing"
+    },
+    {
+     "t": 105.06,
+     "end": 105.9,
+     "cue": {
+      "word": "أزرق،",
+      "t": 105.06
+     },
+     "who": "fx",
+     "action": "Arrow and label BLUE ROBE; the blue flashes with Ben-Day sparkle.",
+     "acting": "2-frame flash, stars.",
+     "library": "style arrow + label + emphasis"
+    },
+    {
+     "t": 105.96,
+     "end": 106.9,
+     "cue": {
+      "word": "فنظم",
+      "t": 105.96
+     },
+     "who": "abuNowas",
+     "action": "Finger up, then he plucks a line out of the air.",
+     "acting": "pointUp, lid 1 for 4 frames, then talk.",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 106.96,
+     "end": 107.5,
+     "cue": {
+      "word": "أبياتًا",
+      "t": 106.96
+     },
+     "who": "fx",
+     "action": "A blue-tinted verse ribbon curls from him around her robe.",
+     "acting": "Damsel pleased: flush (light), lid 0.3; Harun nods along.",
+     "library": "verseRibbon {col blue} + flush"
+    },
+    {
+     "t": 107.6,
+     "end": 108.4,
+     "cue": {
+      "word": "جديدة.",
+      "t": 107.6
+     },
+     "who": "fx",
+     "action": "Scoreboard tile appears top left: POEMS 1.",
+     "acting": "Stamps on.",
+     "library": "style counter"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 105.1,
+     "text": "BLUE ROBE"
+    },
+    {
+     "t": 107.7,
+     "text": "POEMS 1"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 108.4
+   }
+  },
+  {
+   "id": "S12",
+   "start": 108.4,
+   "end": 117.88,
+   "paragraphs": [
+    6
+   ],
+   "set": "bedchamber",
+   "cast": [
+    "harun",
+    "abuNowas",
+    "damsel"
+   ],
+   "summary": "She answers with the lute and a song. The evening becomes a friendly contest between poetry and singing, with Harun as the delighted judge.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Medium on the damsel (zoom 1.5) for the song; pull out to a three-shot (zoom 1.05) at 112.1 and hold."
+   },
+   "composition": "Three-shot: poet seated left (x 230), Harun centre on a cushion (x 500), damsel right on the divan edge (x 760). Scoreboard at the top: POEMS left, SONGS right, well above the heads.",
+   "actions": [
+    {
+     "t": 108.46,
+     "end": 109.6,
+     "cue": {
+      "word": "عزفت",
+      "t": 108.46
+     },
+     "who": "damsel",
+     "action": "She sits, takes the lute and strums.",
+     "acting": "same strum cycle as S4; gaze on the strings.",
+     "library": "oud + handRW"
+    },
+    {
+     "t": 109.66,
+     "end": 110.3,
+     "cue": {
+      "word": "الفتاة",
+      "t": 109.66
+     },
+     "who": "fx",
+     "action": "Notes rise; the poet listens with real admiration.",
+     "acting": "poet lid 0.5, slow nod; Harun sways.",
+     "library": "musicNotes"
+    },
+    {
+     "t": 110.34,
+     "end": 111.1,
+     "cue": {
+      "word": "وغنت",
+      "t": 110.34
+     },
+     "who": "damsel",
+     "action": "She lifts her chin and sings.",
+     "acting": "mouth 'open' with talk pulses, lid 0.8, head back 5 px; larger notes with red heads.",
+     "library": "talk + musicNotes {big}"
+    },
+    {
+     "t": 111.2,
+     "end": 112.0,
+     "cue": {
+      "word": "أيضًا،",
+      "t": 111.2
+     },
+     "who": "fx",
+     "action": "Scoreboard: SONGS 1.",
+     "acting": "Stamps on; Harun applauds.",
+     "library": "style counter"
+    },
+    {
+     "t": 112.14,
+     "end": 112.8,
+     "cue": {
+      "word": "وتحول",
+      "t": 112.14
+     },
+     "who": "camera",
+     "action": "Pull out to the three of them.",
+     "acting": "Eased.",
+     "library": "CAM keys"
+    },
+    {
+     "t": 112.82,
+     "end": 113.9,
+     "cue": {
+      "word": "المجلس",
+      "t": 112.82
+     },
+     "who": "harun",
+     "action": "Harun in the middle turns his head from one to the other like a tennis spectator.",
+     "acting": "gazePlan left, right, left; grin.",
+     "library": "gazePlan"
+    },
+    {
+     "t": 114.0,
+     "end": 114.8,
+     "cue": {
+      "word": "مسابقة",
+      "t": 114.0
+     },
+     "who": "lettering",
+     "action": "Banner between the scores: POEMS VS SONGS.",
+     "acting": "Drops in and settles.",
+     "library": "style title small"
+    },
+    {
+     "t": 114.84,
+     "end": 115.9,
+     "cue": {
+      "word": "لطيفة",
+      "t": 114.84
+     },
+     "who": "abuNowas",
+     "action": "The poet and the singer bow to each other, smiling.",
+     "acting": "tip 0.15 each, not in unison (stagger 4 frames).",
+     "library": "stagger"
+    },
+    {
+     "t": 116.42,
+     "end": 117.0,
+     "cue": {
+      "word": "الشعر",
+      "t": 116.42
+     },
+     "who": "abuNowas",
+     "action": "He sends a verse ribbon: POEMS 2.",
+     "acting": "talk, arm sweep.",
+     "library": "verseRibbon + counter"
+    },
+    {
+     "t": 117.1,
+     "end": 117.88,
+     "cue": {
+      "word": "والغناء.",
+      "t": 117.1
+     },
+     "who": "damsel",
+     "action": "She answers with a run of notes: SONGS 2. Harun claps over his head.",
+     "acting": "strum + sing; Harun arms up by angle.",
+     "library": "musicNotes + counter"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 111.3,
+     "text": "SONGS 1"
+    },
+    {
+     "t": 114.1,
+     "text": "POEMS VS SONGS"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 117.88
+   }
+  },
+  {
+   "id": "S13",
+   "start": 117.88,
+   "end": 129.1,
+   "paragraphs": [
+    7
+   ],
+   "set": "bedchamber",
+   "cast": [
+    "harun",
+    "abuNowas",
+    "damsel"
+   ],
+   "summary": "Late that night, after the drinks, the poet falls asleep still holding his cup. At a sign from the caliph the woman slips it from his fingers and hides it in her sleeve.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Three-shot (zoom 1.1) while the window turns to night; push to zoom 1.7 on the poet hand and the damsel for the theft (125.4 to 127.8); back out to 1.3 at 128.3."
+   },
+   "composition": "Poet slumped on cushions at x 240, cup in his right hand resting on his knee at about (290, 800). Harun at x 500. Damsel starts at x 760, tiptoes to x 340. A tray with a jug and two cups at x 620.",
+   "actions": [
+    {
+     "t": 117.9,
+     "end": 119.5,
+     "cue": {
+      "word": "بعد",
+      "t": 117.88
+     },
+     "who": "set",
+     "action": "The window sky slides from dusk to night; the two candles light; a tray with a jug and cups is now on the floor.",
+     "acting": "skyCycle u 0.5 to 0.72 over 1.5 s; light discs fade in.",
+     "library": "skyCycle + candle + tray"
+    },
+    {
+     "t": 119.62,
+     "end": 120.4,
+     "cue": {
+      "word": "الشراب",
+      "t": 119.62
+     },
+     "who": "abuNowas",
+     "action": "All three raise their cups; beside the poet a little stack of empty cups counts 1, 2, 3.",
+     "acting": "poet biggest gesture, lid 0.4; damsel barely lifts hers.",
+     "library": "wineCup x3 + counter"
+    },
+    {
+     "t": 120.44,
+     "end": 121.1,
+     "cue": {
+      "word": "غلب",
+      "t": 120.44
+     },
+     "who": "abuNowas",
+     "action": "His eyelids sink and he sways.",
+     "acting": "lid 0.3 to 0.75, tip sways 0.05, slow.",
+     "library": "lid ramp"
+    },
+    {
+     "t": 121.14,
+     "end": 121.6,
+     "cue": {
+      "word": "النوم",
+      "t": 121.14
+     },
+     "who": "abuNowas",
+     "action": "Head nods down, jerks up once, drops again; Z letters.",
+     "acting": "head drop 12 px, 2-frame jerk, drop.",
+     "library": "drop keys"
+    },
+    {
+     "t": 121.68,
+     "end": 122.9,
+     "cue": {
+      "word": "أبا",
+      "t": 121.68
+     },
+     "who": "abuNowas",
+     "action": "He slumps sideways onto the cushions, fast asleep; a snore bubble swells and shrinks.",
+     "acting": "lid 1, mouth 'o' pulsing with breathe, tip -0.3.",
+     "library": "person {sit:1, seat:'floor', tip} + breathe"
+    },
+    {
+     "t": 123.6,
+     "end": 124.1,
+     "cue": {
+      "word": "يحمل",
+      "t": 123.6
+     },
+     "who": "fx",
+     "action": "Arrow to his hand: the cup is still gripped upright. Label STILL HOLDING IT.",
+     "acting": "Cup tilts 5 degrees with each snore.",
+     "library": "style arrow + label + wineCup"
+    },
+    {
+     "t": 124.16,
+     "end": 124.6,
+     "cue": {
+      "word": "كأسًا.",
+      "t": 124.16
+     },
+     "who": "wineCup",
+     "action": "The cup glints.",
+     "acting": "One 4-point glint.",
+     "library": "glint"
+    },
+    {
+     "t": 124.6,
+     "end": 125.3,
+     "cue": {
+      "word": "أخفت",
+      "t": 124.82
+     },
+     "who": "harun",
+     "action": "Harun gets a wicked idea: hush finger, a wink to the damsel, a point at the cup.",
+     "acting": "wink 'R', smile, PERSON_HANDS.hush then pointFwd.",
+     "library": "person {wink:'R'} + PERSON_HANDS.hush"
+    },
+    {
+     "t": 125.4,
+     "end": 126.4,
+     "cue": {
+      "word": "أخفت",
+      "t": 124.82
+     },
+     "who": "damsel",
+     "action": "She tiptoes across, biting her lip.",
+     "acting": "sneak walk 4 steps, gaze fixed on the cup, shoulders up.",
+     "library": "walk {sneak}"
+    },
+    {
+     "t": 126.48,
+     "end": 127.1,
+     "cue": {
+      "word": "الفتاة",
+      "t": 126.48
+     },
+     "who": "damsel",
+     "action": "She eases the cup out of his fingers in three small tugs; he snorts, everyone freezes; he sleeps on, his hand still curled around nothing.",
+     "acting": "three counted tugs, freeze 5 frames (only pupils move: suspense by stillness).",
+     "library": "handRW + countedBeats"
+    },
+    {
+     "t": 127.14,
+     "end": 127.8,
+     "cue": {
+      "word": "الكأس",
+      "t": 127.14
+     },
+     "who": "damsel",
+     "action": "She drops the cup into her wide blue sleeve, which now has a round bump.",
+     "acting": "quick look left and right, then smooths the sleeve.",
+     "library": "wineCup + sleeve bulge (ellipse under the sleeve)"
+    },
+    {
+     "t": 127.82,
+     "end": 128.2,
+     "cue": {
+      "word": "بأمر",
+      "t": 127.82
+     },
+     "who": "fx",
+     "action": "Arrow from Harun to her: CALIPH ORDER; he nods and rubs his hands.",
+     "acting": "Harun silent chuckle: shoulders shake, lid 0.7.",
+     "library": "style arrow + label"
+    },
+    {
+     "t": 128.28,
+     "end": 129.1,
+     "cue": {
+      "word": "الخليفة،",
+      "t": 128.28
+     },
+     "who": "damsel",
+     "action": "She sits back in her place, hands folded, looking at the ceiling.",
+     "acting": "mask on: innocent raised brows, gaze up, tiny smile.",
+     "library": "PERSON_HANDS.folded"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 121.2,
+     "text": "Z Z Z"
+    },
+    {
+     "t": 123.7,
+     "text": "STILL HOLDING IT"
+    },
+    {
+     "t": 127.9,
+     "text": "CALIPH ORDER"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 129.1
+   }
+  },
+  {
+   "id": "S14",
+   "start": 129.1,
+   "end": 142.94,
+   "paragraphs": [
+    7
+   ],
+   "set": "bedchamber",
+   "cast": [
+    "harun",
+    "abuNowas",
+    "damsel"
+   ],
+   "summary": "Harun wakes the poet with a drawn sword and demands, in verse, where the cup is. The joke is frightening; the poet gathers himself and answers with clever lines.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Low two-shot of Harun standing over the seated poet (zoom 1.4). Close on the poet (zoom 2.0) at 136.9. Widen at 137.5 to show the two jokers behind his back; back to the poet at 139.3."
+   },
+   "composition": "Poet on the floor at x 260 looking up; Harun stands at x 430, sword raised by arm angle so the blade tip is near (470, 380). Damsel at x 760. The blade never touches or points directly at the poet face: it is held upright or across.",
+   "actions": [
+    {
+     "t": 129.12,
+     "end": 129.7,
+     "cue": {
+      "word": "ثم",
+      "t": 129.12
+     },
+     "who": "harun",
+     "action": "Harun stands, sets his face to stern, hand to his belt.",
+     "acting": "smile wiped to brow 1 (mask on), anticipation dip.",
+     "library": "anticipate"
+    },
+    {
+     "t": 129.72,
+     "end": 130.3,
+     "cue": {
+      "word": "أيقظه",
+      "t": 129.72
+     },
+     "who": "harun",
+     "action": "Shakes the poet by the shoulder.",
+     "acting": "two shakes; the poet head lolls.",
+     "library": "handRW + tremble on the poet"
+    },
+    {
+     "t": 130.4,
+     "end": 131.0,
+     "cue": {
+      "word": "الخليفة",
+      "t": 130.4
+     },
+     "who": "abuNowas",
+     "action": "The poet wakes: one eye, then the other, pupils wandering.",
+     "acting": "wink then both open (wake quietly), mouth 'o', groggy.",
+     "library": "wink + lid ramp"
+    },
+    {
+     "t": 131.12,
+     "end": 131.6,
+     "cue": {
+      "word": "بسيف",
+      "t": 131.12
+     },
+     "who": "harun",
+     "action": "Harun draws a curved sword in one arc; SHING! and a glint along the blade.",
+     "acting": "draw = 0.25 s whip with overshoot and settle.",
+     "library": "sword prop + settleTo"
+    },
+    {
+     "t": 131.68,
+     "end": 132.5,
+     "cue": {
+      "word": "مسلول",
+      "t": 131.68
+     },
+     "who": "abuNowas",
+     "action": "The poet sees the blade: eyes huge, he shrinks, trembling.",
+     "acting": "eyes 'wide', noBlink, sq 0.85, tremble 3 px, shield hands. 3 frames of panel-only shake.",
+     "library": "PERSON_HANDS.shield + tremble + panel-only shake"
+    },
+    {
+     "t": 132.56,
+     "end": 133.7,
+     "cue": {
+      "word": "وطالبه",
+      "t": 132.56
+     },
+     "who": "harun",
+     "action": "Harun thunders his demand.",
+     "acting": "talk 1, brow 1, free hand palm out.",
+     "library": "talk"
+    },
+    {
+     "t": 133.74,
+     "end": 134.3,
+     "cue": {
+      "word": "بوصف",
+      "t": 133.74
+     },
+     "who": "abuNowas",
+     "action": "The poet looks down at his own hand: empty, still curled in a cup shape.",
+     "acting": "gaze down, double take, opens and closes the fingers.",
+     "library": "gazePlan"
+    },
+    {
+     "t": 134.36,
+     "end": 134.8,
+     "cue": {
+      "word": "مكان",
+      "t": 134.36
+     },
+     "who": "fx",
+     "action": "Picture balloon from Harun: a map pin and a question mark, WHERE?",
+     "acting": "Pops on.",
+     "library": "iconBalloon"
+    },
+    {
+     "t": 134.84,
+     "end": 135.6,
+     "cue": {
+      "word": "الكأس",
+      "t": 134.84
+     },
+     "who": "fx",
+     "action": "The cup icon drops into the balloon.",
+     "acting": "Bounce.",
+     "library": "iconBalloon + wineCup"
+    },
+    {
+     "t": 135.68,
+     "end": 136.8,
+     "cue": {
+      "word": "شعره.",
+      "t": 135.68
+     },
+     "who": "lettering",
+     "action": "IN VERSE! and a verse scroll icon beside the cup.",
+     "acting": "Poet gulps (drop pulse).",
+     "library": "style emphasis"
+    },
+    {
+     "t": 136.88,
+     "end": 137.5,
+     "cue": {
+      "word": "كان",
+      "t": 136.88
+     },
+     "who": "camera",
+     "action": "Close on the poet: one sweat drop, eyes flicking to the blade.",
+     "acting": "Only the pupils and the drop move.",
+     "library": "drops + gazePlan"
+    },
+    {
+     "t": 137.56,
+     "end": 138.2,
+     "cue": {
+      "word": "المزاح",
+      "t": 137.56
+     },
+     "who": "damsel",
+     "action": "Wider: behind the poet back, Harun mouth twitches into a grin and the damsel hides a giggle behind her hand. The audience now knows it is a joke.",
+     "acting": "mask off only while the poet cannot see: PERSON_HANDS.mouthCover, shoulders shake.",
+     "library": "PERSON_HANDS.mouthCover"
+    },
+    {
+     "t": 138.24,
+     "end": 139.3,
+     "cue": {
+      "word": "مخيفًا،",
+      "t": 138.24
+     },
+     "who": "abuNowas",
+     "action": "The sword shadow falls across the poet; Harun snaps stern again as the poet glances up.",
+     "acting": "shadow = halftone dark band; poet lid flutter, tremble.",
+     "library": "halftoneShadow"
+    },
+    {
+     "t": 139.34,
+     "end": 139.85,
+     "cue": {
+      "word": "لكن",
+      "t": 139.34
+     },
+     "who": "abuNowas",
+     "action": "The poet takes one deep breath and straightens.",
+     "acting": "sq 1.05 then 1, tremble stops, brow levels.",
+     "library": "breathe + settleTo"
+    },
+    {
+     "t": 139.9,
+     "end": 140.6,
+     "cue": {
+      "word": "الشاعر",
+      "t": 139.9
+     },
+     "who": "abuNowas",
+     "action": "His eyes move in three clean snaps: the caliph mouth, the damsel, her sleeve.",
+     "acting": "saccades with 5-frame holds.",
+     "library": "gazePlan 0.07"
+    },
+    {
+     "t": 140.68,
+     "end": 141.2,
+     "cue": {
+      "word": "أجاب",
+      "t": 140.68
+     },
+     "who": "abuNowas",
+     "action": "Finger up; he begins to recite.",
+     "acting": "pointUp, talk 0.8, a small smile returning.",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 141.22,
+     "end": 142.0,
+     "cue": {
+      "word": "بأبيات",
+      "t": 141.22
+     },
+     "who": "fx",
+     "action": "A verse ribbon unrolls from him and curls neatly around the raised blade without touching it.",
+     "acting": "Harun watches it pass, eyebrows rising.",
+     "library": "verseRibbon"
+    },
+    {
+     "t": 142.06,
+     "end": 142.94,
+     "cue": {
+      "word": "حاذقة.",
+      "t": 142.06
+     },
+     "who": "fx",
+     "action": "Sparkles run along the ribbon: CLEVER!",
+     "acting": "Stars pop in sequence.",
+     "library": "style emphasis + stars"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 131.2,
+     "text": "SHING!"
+    },
+    {
+     "t": 134.4,
+     "text": "WHERE?"
+    },
+    {
+     "t": 135.7,
+     "text": "IN VERSE!"
+    },
+    {
+     "t": 142.1,
+     "text": "CLEVER!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 136.6,
+     "kind": "thud (low, soft)"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 142.94
+   }
+  },
+  {
+   "id": "S15",
+   "start": 142.94,
+   "end": 155.0,
+   "paragraphs": [
+    8
+   ],
+   "set": "bedchamber",
+   "cast": [
+    "harun",
+    "abuNowas",
+    "damsel"
+   ],
+   "summary": "Abu Nuwas has understood the trick. His verse says, gently, that the woman took the cup and hid it, and he stops there. She brings the cup out herself.",
+   "camera": {
+    "shot": "close",
+    "move": "pull-out",
+    "notes": "Close on the poet eyes (zoom 2.0) with three small clue insets; pull out to the three-shot (zoom 1.15) at 146.3; small push on the damsel at 153.1."
+   },
+   "composition": "Clue insets (r 90) in a row above the poet head at y 330. Then three-shot as S13. The verse ribbon runs from the poet (x 260) in an arc over Harun to end near the damsel (x 760), carrying small icons.",
+   "actions": [
+    {
+     "t": 142.94,
+     "end": 144.7,
+     "cue": {
+      "word": "فهم",
+      "t": 142.94
+     },
+     "who": "abuNowas",
+     "action": "Close: the poet eyes narrow, then a slow knowing smile.",
+     "acting": "lid 0.5, brow 0.3 one side, mouth smile; no light bulb.",
+     "library": "person face fields"
+    },
+    {
+     "t": 144.78,
+     "end": 145.7,
+     "cue": {
+      "word": "أبو",
+      "t": 144.78
+     },
+     "who": "fx",
+     "action": "Clue 1 inset: the caliph hidden grin. A tick.",
+     "acting": "Iris opens, tick stamps.",
+     "library": "inset circle"
+    },
+    {
+     "t": 145.78,
+     "end": 146.3,
+     "cue": {
+      "word": "خدعة",
+      "t": 145.78
+     },
+     "who": "fx",
+     "action": "Clue 2 and 3 insets: the too-innocent face, the bump in the blue sleeve. Label A TRICK!",
+     "acting": "Two ticks 0.2 s apart.",
+     "library": "inset circle x2 + label"
+    },
+    {
+     "t": 146.32,
+     "end": 147.1,
+     "cue": {
+      "word": "المجلس",
+      "t": 146.32
+     },
+     "who": "camera",
+     "action": "Pull out to all three; Harun still holds the sword up, the damsel still studies the ceiling.",
+     "acting": "Both hold their masks.",
+     "library": "CAM keys"
+    },
+    {
+     "t": 147.18,
+     "end": 148.0,
+     "cue": {
+      "word": "وذكر",
+      "t": 147.18
+     },
+     "who": "abuNowas",
+     "action": "The poet recites, hand opening politely toward the damsel (open palm, not a pointing finger).",
+     "acting": "talk 0.8, courteous half bow.",
+     "library": "PERSON_HANDS.palmsUp one hand"
+    },
+    {
+     "t": 148.34,
+     "end": 149.0,
+     "cue": {
+      "word": "الفتاة",
+      "t": 148.34
+     },
+     "who": "damsel",
+     "action": "The ribbon reaches her: a small damsel icon on it. She starts and looks at her sleeve.",
+     "acting": "eyes wide, gaze down to the bump, then to Harun.",
+     "library": "verseRibbon icons + lookAt"
+    },
+    {
+     "t": 149.08,
+     "end": 149.8,
+     "cue": {
+      "word": "أخذت",
+      "t": 149.08
+     },
+     "who": "fx",
+     "action": "Next icon on the ribbon: a hand lifting.",
+     "acting": "Icon pops on its word.",
+     "library": "verseRibbon icons"
+    },
+    {
+     "t": 149.84,
+     "end": 150.4,
+     "cue": {
+      "word": "الكأس",
+      "t": 149.84
+     },
+     "who": "fx",
+     "action": "Next icon: the cup.",
+     "acting": "Icon pops; the real sleeve bump glints.",
+     "library": "verseRibbon icons + glint"
+    },
+    {
+     "t": 150.44,
+     "end": 151.7,
+     "cue": {
+      "word": "وأخفته،",
+      "t": 150.44
+     },
+     "who": "fx",
+     "action": "Last icon: the cup behind a little drawn curtain, label HIDDEN.",
+     "acting": "Harun jaw loosens: the mask is slipping.",
+     "library": "verseRibbon icons + label"
+    },
+    {
+     "t": 151.74,
+     "end": 153.0,
+     "cue": {
+      "word": "دون",
+      "t": 151.74
+     },
+     "who": "abuNowas",
+     "action": "The poet puts a finger to his lips and winks; the rest of the ribbon stays blank and rolls itself up.",
+     "acting": "wink 'L', PERSON_HANDS.hush, small bow to her.",
+     "library": "PERSON_HANDS.hush + wink"
+    },
+    {
+     "t": 153.12,
+     "end": 154.0,
+     "cue": {
+      "word": "بتفاصيل",
+      "t": 153.12
+     },
+     "who": "damsel",
+     "action": "Relieved and laughing, she slides the cup out of her sleeve herself.",
+     "acting": "flush (light), smile, lid 0.3; the bump disappears as the cup appears.",
+     "library": "flush + wineCup"
+    },
+    {
+     "t": 154.08,
+     "end": 155.0,
+     "cue": {
+      "word": "محرجة.",
+      "t": 154.08
+     },
+     "who": "damsel",
+     "action": "She holds the cup up; it glints. Harun sword arm sinks.",
+     "acting": "damsel arm up by angle; Harun aR lowers with follow-through.",
+     "library": "glint + settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 145.9,
+     "text": "A TRICK!"
+    },
+    {
+     "t": 150.5,
+     "text": "HIDDEN"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 155.0
+   }
+  },
+  {
+   "id": "S16",
+   "start": 155.0,
+   "end": 163.1,
+   "paragraphs": [
+    8
+   ],
+   "set": "bedchamber",
+   "cast": [
+    "harun",
+    "abuNowas",
+    "damsel",
+    "chamberlain"
+   ],
+   "summary": "Harun roars with laughter, praises the poet quick wit and rewards him: a robe of honour and a thousand dinars.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Three-shot (zoom 1.15) for the laugh; push to 1.5 on the poet for the robe at 160.7 and the coin counter at 161.6."
+   },
+   "composition": "Harun centre (x 500), poet left (x 260) now standing, damsel right (x 760). Chamberlain enters from the door (x 150) with a tray. Coin counter top centre at y 250.",
+   "actions": [
+    {
+     "t": 155.06,
+     "end": 155.8,
+     "cue": {
+      "word": "ضحك",
+      "t": 155.06
+     },
+     "who": "harun",
+     "action": "The mask breaks: Harun throws his head back and laughs; the sword goes back into its sheath.",
+     "acting": "mouth 'open', lid 0.9, tip -0.12, shoulders shake at 9 Hz.",
+     "library": "person laugh helper + tremble"
+    },
+    {
+     "t": 155.88,
+     "end": 156.6,
+     "cue": {
+      "word": "الخليفة",
+      "t": 155.88
+     },
+     "who": "abuNowas",
+     "action": "The poet lets out all his breath and sags with relief, then starts laughing too.",
+     "acting": "sq 0.9 then 1, lid 1 for 6 frames, hand on heart.",
+     "library": "settleTo + PERSON_HANDS.chest"
+    },
+    {
+     "t": 156.72,
+     "end": 157.6,
+     "cue": {
+      "word": "وأعجب",
+      "t": 156.72
+     },
+     "who": "harun",
+     "action": "Harun claps him on the shoulder; the poet bounces.",
+     "acting": "contact on the word, poet sq 0.92 and a 6 px hop.",
+     "library": "handRW + landSquash"
+    },
+    {
+     "t": 157.7,
+     "end": 158.4,
+     "cue": {
+      "word": "بسرعة",
+      "t": 157.7
+     },
+     "who": "fx",
+     "action": "Speed lines and a spark at the poet head: QUICK WIT!",
+     "acting": "Spark flickers 3 times.",
+     "library": "style emphasis"
+    },
+    {
+     "t": 158.42,
+     "end": 159.6,
+     "cue": {
+      "word": "بديهته،",
+      "t": 158.42
+     },
+     "who": "damsel",
+     "action": "The damsel applauds; the poet bows to her.",
+     "acting": "clap cycle, smile; poet tip 0.2.",
+     "library": "PERSON_HANDS.clasp cycle"
+    },
+    {
+     "t": 159.66,
+     "end": 160.6,
+     "cue": {
+      "word": "فأهداه",
+      "t": 159.66
+     },
+     "who": "harun",
+     "action": "Harun claps twice; the chamberlain hurries in with a tray: a folded robe and a sack.",
+     "acting": "chamberlain walk, careful hands under the tray, eyes on the load.",
+     "library": "walk + handLW/handRW + honourRobe (folded)"
+    },
+    {
+     "t": 160.68,
+     "end": 161.0,
+     "cue": {
+      "word": "ثوب",
+      "t": 160.68
+     },
+     "who": "honourRobe",
+     "action": "The robe unfurls in a flourish that covers the poet for 6 frames; when it settles he is wearing it (red with gold trim).",
+     "acting": "Costume change hidden behind the flourish.",
+     "library": "honourRobe + costume change behind a foreground wipe"
+    },
+    {
+     "t": 161.02,
+     "end": 161.5,
+     "cue": {
+      "word": "شرف",
+      "t": 161.02
+     },
+     "who": "abuNowas",
+     "action": "He admires his new sleeves; label ROBE OF HONOUR.",
+     "acting": "gaze sleeve to sleeve, proud smile, small turn.",
+     "library": "label + gazePlan"
+    },
+    {
+     "t": 161.6,
+     "end": 162.4,
+     "cue": {
+      "word": "وألف",
+      "t": 161.6
+     },
+     "who": "coinPile",
+     "action": "The sack opens; coins pour into a pile and the counter races up.",
+     "acting": "Counter eases 0 to 1000 over 1.1 s; coins arc on seeded paths.",
+     "library": "coinPile + style counter"
+    },
+    {
+     "t": 162.78,
+     "end": 163.1,
+     "cue": {
+      "word": "دينار،",
+      "t": 162.78
+     },
+     "who": "fx",
+     "action": "Counter lands on 1000 DINARS with a gold glow.",
+     "acting": "Overshoot to 1.1 scale and settle.",
+     "library": "goldGlow + emphasis"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 155.1,
+     "text": "HA HA HA!"
+    },
+    {
+     "t": 157.8,
+     "text": "QUICK WIT!"
+    },
+    {
+     "t": 161.1,
+     "text": "ROBE OF HONOUR"
+    },
+    {
+     "t": 162.8,
+     "text": "1000 DINARS"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 162.6,
+     "kind": "chime (coins)"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 163.1
+   }
+  },
+  {
+   "id": "S17",
+   "start": 163.1,
+   "end": 171.25,
+   "paragraphs": [
+    8
+   ],
+   "set": "palaceCorridor",
+   "cast": [
+    "abuNowas",
+    "harun",
+    "damsel"
+   ],
+   "summary": "The poet leaves down the same moonlit corridor, delighted with his escape and his reward. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Bookend with S1: the corridor strip, tracking left to right with the poet (camX 150 to 650), stopping at 167.0 so that the doorway (left) and the poet (right) are both in frame for the end title."
+   },
+   "composition": "Bookend of S1 on the same strip: the lit chamber doorway is at x 600 here (mirror the S1 strip or pass the door x as an option); the poet walks right from x 640 to x 1150 and stops. Harun and the damsel stand small (s 0.8) in the doorway light behind him. THE END title in the upper third (panel y 150 to 330), clear of all heads; moon in the arch above the poet.",
+   "actions": [
+    {
+     "t": 163.16,
+     "end": 164.2,
+     "cue": {
+      "word": "وانصرف",
+      "t": 163.16
+     },
+     "who": "abuNowas",
+     "action": "In the doorway he bows low to them both and backs out into the corridor.",
+     "acting": "tip 0.3, robe hem swings; Harun waves him off, still chuckling.",
+     "library": "PERSON_HANDS.chest + swing"
+    },
+    {
+     "t": 164.24,
+     "end": 164.9,
+     "cue": {
+      "word": "الشاعر",
+      "t": 164.24
+     },
+     "who": "abuNowas",
+     "action": "He walks off along the corridor, coin sack over his shoulder, new robe swishing.",
+     "acting": "walk with a bounce (amp 1.2), gaze ahead, smile.",
+     "library": "walk + footfalls + sack carried by handLW"
+    },
+    {
+     "t": 164.94,
+     "end": 165.7,
+     "cue": {
+      "word": "مسرورًا",
+      "t": 164.94
+     },
+     "who": "abuNowas",
+     "action": "A happy skip.",
+     "acting": "anticipate, hop 40 px, landSquash; coins jingle marks at the sack.",
+     "library": "anticipate + hop + landSquash"
+    },
+    {
+     "t": 165.72,
+     "end": 166.7,
+     "cue": {
+      "word": "بنجاته",
+      "t": 165.72
+     },
+     "who": "abuNowas",
+     "action": "He stops, touches his own neck, and blows out his cheeks: PHEW!",
+     "acting": "gaze back toward the door for a beat, drop pulse, lid 1 for 5 frames.",
+     "library": "gazePlan + settleTo"
+    },
+    {
+     "t": 166.72,
+     "end": 167.9,
+     "cue": {
+      "word": "ومكافأته.",
+      "t": 166.72
+     },
+     "who": "abuNowas",
+     "action": "He hugs the sack and gives it a pat.",
+     "acting": "smile, lid 0.4, pats in two counted beats.",
+     "library": "handRW + countedBeats"
+    },
+    {
+     "t": 168.3,
+     "end": 171.25,
+     "who": "lettering",
+     "action": "THE END title pops. The poet looks at the camera and winks; in the lit doorway behind, Harun and the damsel wave; the moon sits in the arch as at the start.",
+     "acting": "wink 'R', then idle breathing and blinks to the last frame.",
+     "library": "style title + person {wink:'R'} + breathe"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 165.8,
+     "text": "PHEW!"
+    },
+    {
+     "t": 168.3,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 168.15,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 171.25
+   }
+  }
+ ],
+ "ending": {
+  "t": 168.3,
+  "description": "After the last word (167.96) the poet stands in the moonlit corridor in his new robe with the coin sack, winks at the camera; Harun and the damsel wave from the lit doorway. THE END title held from 168.3 to 171.25 with idle breathing and blinks."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان هارون الرشيد قلقًا ذات ليلة، فخرج يتمشى في أروقة قصره.|رأى غرفة مضاءة بشمعتين، وفيها فتاة نائمة يغطي شعرها وجهها.|اقترب وكشف وجهها وقبّل خدها دون استئذان،|فاستيقظت مندهشة.",
+   "en": "Restless one night, Harun al-Rashid wandered his palace|and found a sleeping young woman.|He uncovered her face and kissed her without asking;|she woke startled."
+  },
+  {
+   "p": 2,
+   "ar": "عزفت الفتاة العود،|وقالت إن ابن الخليفة اشتراها له لكن زبيدة أبعدتها.|وطلبت منه أن يعود في الليلة التالية.",
+   "en": "The young woman played the lute|and said the caliph's son had bought her for him, but Zubaydah had kept her away.|She asked him to return the following night."
+  },
+  {
+   "p": 3,
+   "ar": "في الصباح طلب الخليفة أبا نواس،|فوجده الحاجب في حانة|وعليه ديون بسبب إعجابه بشاب.",
+   "en": "In the morning, the caliph sent for Abu Nuwas.|The chamberlain found him in a tavern,|in debt because of his infatuation with a young man."
+  },
+  {
+   "p": 4,
+   "ar": "كان أبو نواس يرتجل شعرًا عن ثياب الشاب الملوّنة.|سدد الخليفة دينه ثم استدعاه إلى القصر.",
+   "en": "Abu Nuwas was improvising poems about the young man's colorful clothing.|The caliph paid his debt and summoned him to the palace."
+  },
+  {
+   "p": 5,
+   "ar": "قال الخليفة للشاعر: أنشدني قصيدة تتضمن سؤال الفتاة حين استيقظت.|لم يذكر تفاصيل ما جرى،|لكن أبا نواس ارتجل أبياتًا تصف غرفة مظلمة، وشعرًا طويلًا،|وفتاة تستيقظ وتقول مستغربة: ما هذا؟",
+   "en": "Harun asked for lines containing the woman’s surprised question|but gave few details.|Abu Nuwas improvised a scene|strikingly like what had happened."
+  },
+  {
+   "p": 6,
+   "ar": "تعجب الخليفة من دقة الوصف، وقال إن الشاعر كأنه كان حاضرًا.|ثم أخذه إلى غرفة الفتاة، فرآها بثوب أزرق، فنظم أبياتًا جديدة.|عزفت الفتاة وغنت أيضًا، وتحول المجلس إلى مسابقة لطيفة بين الشعر والغناء.",
+   "en": "The caliph exclaimed that Abu Nuwas spoke as though he had witnessed the encounter.|They visited the woman,|and poetry and music continued."
+  },
+  {
+   "p": 7,
+   "ar": "بعد الشراب غلب النوم أبا نواس وهو يحمل كأسًا.|أخفت الفتاة الكأس بأمر الخليفة،|ثم أيقظه الخليفة بسيف مسلول وطالبه بوصف مكان الكأس في شعره.|كان المزاح مخيفًا، لكن الشاعر أجاب بأبيات حاذقة.",
+   "en": "After drinking, the poet fell asleep holding a cup.|The woman hid it,|and Harun woke him with a drawn sword,|demanding a poetic answer."
+  },
+  {
+   "p": 8,
+   "ar": "فهم أبو نواس خدعة المجلس وذكر أن الفتاة أخذت الكأس وأخفته، دون أن يصرح بتفاصيل محرجة.|ضحك الخليفة وأعجب بسرعة بديهته، فأهداه ثوب شرف وألف دينار،|وانصرف الشاعر مسرورًا بنجاته ومكافأته.",
+   "en": "Abu Nuwas cleverly identified the woman as the one who had hidden the cup|without embarrassing her.|Harun rewarded him with a robe and money."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "person costume presets (poet)",
+   "description": "A 'poet' preset on the person costume layer for Abu Nuwas and any court poet or storyteller: green robe, yellow sash, small tilted white turban with a hanging tail, short pointed black beard, quill in the turban.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Add one entry to the presets in cast/people.js built from existing parts (merchant robe, smaller turban ellipse rotated 0.2 rad, tail = tapered quad, beard = short triangle). Quill = a 30 px line with a leaf-shaped vane. Recolour through pal as usual."
+  },
+  {
+   "type": "set",
+   "name": "bedchamber",
+   "description": "The planned shared bedchamber (KD-010, KD-022) with an added divan option and candle stands; night, dusk and lamp-lit states.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Compose from towns.js pieces: back wall rect with Ben-Day dots, townDoor arch at the left, townWindow with skyCycle inside, checker floor as in palaceHall. Divan = rounded rect 340 x 80 on four short legs plus a bolster ellipse; blanket = filled path over the lying figure. o.night 0..1 draws a navy multiply-style overlay (globalAlpha) under the candle light discs. Return anchors {door, divan:{x0,x1,top}, window, candles:[..]}."
+  },
+  {
+   "type": "set",
+   "name": "palaceHall (night option)",
+   "description": "Planned night lighting for palaceHall (AN-092), used here as a 2000-wide corridor strip with a lit doorway.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "palaceHall {w:2000, door:false, u:0.72}: draw skyCycle(0.72) inside each arch, lamps lit with halftone glow, a navy wash at alpha 0.45 over walls and floor, and a yellow trapezoid light wedge on the floor at the doorway."
+  },
+  {
+   "type": "prop",
+   "name": "oud",
+   "description": "Planned lute with hand anchors.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Body = ellipse path with a pointed top, brown with yellow face and dot shading; neck = rotated rect; peg box bent back 60 degrees; 4 strings as thin lines; returns {strum:[x,y], fret:[x,y]} in world units for handLW/handRW."
+  },
+  {
+   "type": "prop",
+   "name": "candle",
+   "description": "Planned candlestick on a floor stand with flicker and light disc.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Stand = thin rect plus two discs; candle = white rect; flame = teardrop path scaled by 1 + 0.08 * K.noise(t * 9 + seed); light disc = radial halftone of yellow dots at alpha 0.5."
+  },
+  {
+   "type": "prop",
+   "name": "spear, sword",
+   "description": "The planned sword as a scimitar with a sheath and a glint.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Blade = two quadratic curves closing a crescent 150 long, white with a black outline; hilt = yellow cross bar and grip; glint = 4-point star sliding along the blade over 0.3 s. Drawn in the hand at the angle of the forearm."
+  },
+  {
+   "type": "prop",
+   "name": "wineCup",
+   "description": "Small stemmed cup, also usable as an icon; tilt, glint and empty options.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Bowl = half ellipse, stem = rect, foot = ellipse; yellow fill, black outline, red rim band; rotate about the stem for tilt."
+  },
+  {
+   "type": "prop",
+   "name": "coinPile, purse, foodTray, necklace, scroll",
+   "description": "Planned small props reused under their planned names: coinPile (with a running counter), purse (with seal), scroll (debt scroll that unrolls, verse scroll icon), tray.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "coinPile = stacked yellow ellipses on seeded positions revealed by a count; purse = pear path with a drawstring; scroll = rect whose length is a parameter with a rolled end (two circles) and red tally lines every 24 px."
+  },
+  {
+   "type": "prop",
+   "name": "honourRobe",
+   "description": "Robe of honour: folded on a tray, then an unfurling cloth flourish that hides the costume change.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Folded = red rounded rect with a yellow border. Flourish = a 260 x 300 path whose lower edge is a sine wave, scaled from 0.2 to 1 over 6 frames in front of the figure, then removed while the figure pal switches to red with yellow trim."
+  },
+  {
+   "type": "pose",
+   "name": "person hairVeil",
+   "description": "Opt-in long loose hair on the maiden/lady presets: hair 0..1 drawn down past the shoulders, and hairVeil 0..1 sweeping it across the face (for sleeping or grieving figures).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "A black filled path from the crown down one side of the head to shoulder height (lie pose: along the pillow); hairVeil interpolates the front edge control points from beside the face to across it; 3 strand tips offset by a breathe value. Drawn after the face. Default 0 keeps every existing drawing identical."
+  },
+  {
+   "type": "pose",
+   "name": "person youth option",
+   "description": "Planned youth:true (AN-086): no facial hair, head 1.1x, s about 0.84; used for the young man.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned by AN-086: a flag in people.js that suppresses beard and moustache and scales the head."
+  },
+  {
+   "type": "pose",
+   "name": "person laugh",
+   "description": "Planned laugh helper (AN-084, AN-092) for Harun at 155.06.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Helper returning {mouth:'open', lid:0.9, tip:-0.12} plus a 9 Hz 2 px shoulder shake from Math.sin(t)."
+  },
+  {
+   "type": "motion",
+   "name": "sneak",
+   "description": "Planned tiptoe option for walk(): high knees and a short hold on each toe. Harun at 17.6 and the damsel at 125.4.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "walk(X, t, {sneak:true}): X is a stepped position function (ease, hold) and the lifted knee amplitude is 1.6x; footfalls from the same steps."
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "description": "Planned flush, used lightly for the damsel (107.0 and 153.1) as a pleased blush: two red dot patches on the cheeks, no steam.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Two clipped circles of red Ben-Day dots on the cheeks with alpha from the field value."
+  },
+  {
+   "type": "effect",
+   "name": "musicNotes",
+   "description": "Planned rising quavers from the lute (S4, S12).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "n calls of the Library note() on seeded S-paths from the sound hole, rocking by sin and fading over 1.2 s."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "description": "Planned wordless picture balloon, strip mode for the damsel story (S4) and single mode for orders and questions (S3, S5, S7, S8, S14).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Rounded white box with a tail and a black outline, a clip region, and a callback that draws small figures and icons in local units, as thoughtCloud does."
+  },
+  {
+   "type": "effect",
+   "name": "verseRibbon",
+   "description": "Poetry made visible: a paper band with squiggle lines of writing that unrolls from the poet along a curve, can carry small icons, curl round an object and roll up again. The visual counterpart of musicNotes.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "A polyline sampled from a cubic path from 0 to u (growth 0..1), drawn as a 26 px wide paper stroke over a 32 px black stroke; writing = short black dashes along the centre line; icons placed at given path fractions and popped on their cue times; roll-up = shrink u from the tail with a small spiral at the end."
+  },
+  {
+   "type": "effect",
+   "name": "inset circle",
+   "description": "Planned round picture-in-picture with an iris: the poem versus last night (93.5) and the three clues (144.8).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Clip to a circle growing from r 0 with overshoot, draw the given scene at a scale, black ring 8 px; with the planned dream wash for the memory."
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "description": "Planned gold glow behind the 1000 DINARS counter.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Radial rays of yellow wedges at alpha 0.6 rotating slowly, behind the counter."
+  }
+ ],
+ "owner_questions": [
+  "The kiss \"without asking\" (20.2) is shown as one quick comic peck on the cheek with MWAH! and a crossed-out question balloon; default: shown this way, light and brief, not romantic.",
+  "The tavern, wine cups and \"after drinking\" are shown plainly (cups, a jug, a stack of empty cups, the poet dozing) with no staggering; default: shown.",
+  "The poet's infatuation with the young man (50.96) is staged as admiring verses about his clothes plus one small heart; default: one heart, nothing more.",
+  "The script does not say where the cup is hidden; default: the damsel drops it into her wide blue sleeve, and brings it out herself at 153.1.",
+  "The damsel being \"bought\" (32.68) is shown only as small icons (a purse changing hands) in her picture balloon; default: shown as icons.",
+  "Zubaydah appears only as a small stern figure inside the picture balloon, labelled ZUBAYDAH; default: shown.",
+  "The sword joke is softened: the blade is held upright or across and never points at a face, and at 137.56 the audience sees Harun and the damsel hiding smiles; default: softened this way.",
+  "Invented English lettering beyond the script: MWAH!, WHO?, ?!, BOUGHT, FOR YOU, TOMORROW NIGHT, BRING ME..., DEBTS, PAID!, A POEM!, SECRET, CLUES: 2, LONG HAIR, WHAT IS THIS?!, SAME!, WERE YOU THERE?!, BLUE ROBE, POEMS VS SONGS, STILL HOLDING IT, CALIPH ORDER, SHING!, WHERE?, IN VERSE!, CLEVER!, A TRICK!, HIDDEN, HA HA HA!, QUICK WIT!, ROBE OF HONOUR, 1000 DINARS, PHEW!; default: all used (about 30, trim in review if it feels busy).",
+  "Spelling in labels follows the English subtitles (ABU NUWAS) although the story title says Abu Nowas; default: ABU NUWAS.",
+  "The film ends with an added bookend (the poet winks at the camera in the corridor, Harun and the damsel wave); default: included, 3.0 s hold."
+ ],
+ "implementation_notes": [
+  "Cue everything with w(p, n) from timing.json; the times in this plan are the word starts in planning/inputs/timeline.md. Paragraph gaps are short, so scene cuts sit on the first word of the next sentence.",
+  "Humans are all person(): harun {costume:'caliph', age:0.5}, damsel {costume:'maiden'} (blue pal from S11), abuNowas {costume:'poet'} (new preset), chamberlain {costume:'vizier', pal green/white, hold:'stick'}, youth {costume:'prince', youth:true, multicolour pal, no crown via pal/headwear option}, keeper {costume:'merchant', pal brown}.",
+  "Set LIFE.t = t each frame for automatic blinks; give explicit lid values for sleep (lid 1), the waking snap (23.6) and all held shocks (noBlink).",
+  "Setup and payoff: store the damsel waking pose keys of 23.6-25.8 (sit-up, hands to cheeks, mouth o) in one function and call it again inside the poem cloud at 86.36-88.8 at scale 0.5. The match is the joke of the film.",
+  "The poem cloud is thoughtCloud with o.inside drawing the bedchamber function at scale 0.5 (o.at on the divan). Keep the cloud figure at least 110 px tall on screen.",
+  "Mask on / mask off for Harun and the damsel in S13-S15: grins only while the poet eyes are shut or turned away; snap back to stern or innocent within 3 frames when he looks.",
+  "Lying figure: person {lie:1} has its origin under the hips with the head toward -x; put the divan head end at the left so her face is near Harun. Draw the blanket and the hairVeil over the figure in the scene.",
+  "Seats: Harun on the throne uses sit:1, seat:'bench' at the palaceHall throne anchor; floor sitters use seat:'floor'; the damsel on the divan edge uses seat:'bench' with y at the divan top.",
+  "Big arm shapes (sword raised, cup raised, clapping overhead, reciting sweep) use aL/aR angles so they read at phone size; hand targets (handLW/handRW) are for touching props: hair, lute, cup, sleeve, purse.",
+  "Camera: build two-shots with twoShot(a, b, {margin}); apply shake inside the panel clip only (24.84, 131.68). Hide the scene change at 40.7 under the LATER card (camera key pair 0.01 s apart at p 0.5).",
+  "Sound: only the listed effects, all in measured pauses: 29.65, 40.7, 45.42, 53.0, 67.8, 73.27, 91.2, 136.6, 162.6, 168.15. SND master 0.6. SHING!, MWAH! and HA HA HA! are lettering only because there is no gap under them.",
+  "Lettering never covers a face; score tiles and the coin counter stay above y 300 in panel terms. No en or em dashes in any on-screen text.",
+  "Set coordinates in this plan (divan, candles, counter, door) are design targets for the new or dressed sets; for palaceHall read the returned anchors (throne, door) instead of the approximate numbers.",
+  "After adding the poet preset, hairVeil, youth and the props to Library, run node Library/tests/regression.mjs (must report all identical) and rebuild the catalogue."
+ ],
+ "warnings": [
+  "The English subtitle text is a condensed translation: it omits details that the Arabic narrates (the two candles and hair in P1, the dark room, long hair and WHAT IS THIS? in P5, the blue robe and the contest in P6, the frightening joke in P7, the laughter, the thousand dinars and the departure in P8). Both are kept verbatim; the picture follows the Arabic.",
+  "Because the English is shorter, its chunks do not always line up with what the Arabic chunk says at that moment (notably P5 and P6).",
+  "S9 (14.3 s) depends on the poem cloud reading clearly on a phone: keep it large (640 x 430) and uncluttered.",
+  "About 30 pieces of lettering is above the usual lettering diet (8 to 12); counters and labels carry much of the court intrigue, but trim in review if busy.",
+  "Mature themes (an uninvited kiss, wine, a purchased woman, infatuation) are staged lightly; see owner_questions.",
+  "A single LATER card is used (40.7, NEXT MORNING...); the later time jumps (the evening visit at 99.6, after the drinks at 117.88) use a wipe and a dissolve with the window sky changing."
+ ]
+}

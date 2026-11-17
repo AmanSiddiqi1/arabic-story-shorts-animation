@@ -1,0 +1,3129 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "KD-031",
+ "title": "The Pair of Hoopoes and the Treasure",
+ "duration": 171.322,
+ "end_hold": 3.0,
+ "logline": "A poor servant spends his whole wages, two dinars, to keep a pair of caged hoopoes together and set them free; the birds repay him with a buried jar of gold, and even the king lets him keep it.",
+ "moral": "Kindness given without counting the cost comes back multiplied; and when destiny arrives, even obvious things can be hidden from the sharpest eyes.",
+ "tone": "Warm and gentle with light comedy: a small man with a big heart, two fragile birds, one quiet piece of wisdom. Suspense only in the market; no villainy played for fear.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 4.6,
+   "kind": "setup",
+   "cue": {
+    "word": "قرر",
+    "t": 4.6
+   },
+   "summary": "The servant decides to leave his job and travel."
+  },
+  {
+   "id": "B2",
+   "t": 10.3,
+   "kind": "setup",
+   "cue": {
+    "word": "دينارين",
+    "t": 10.3
+   },
+   "summary": "Two dinars: all his wages. One for charity, one for food."
+  },
+  {
+   "id": "B3",
+   "t": 24.88,
+   "kind": "inciting",
+   "cue": {
+    "word": "هدهدين",
+    "t": 24.88
+   },
+   "summary": "Two weak hoopoes in one cage."
+  },
+  {
+   "id": "B4",
+   "t": 39.6,
+   "kind": "rising",
+   "cue": {
+    "word": "رفض.",
+    "t": 39.6
+   },
+   "summary": "One dinar is refused: both birds cost everything he has."
+  },
+  {
+   "id": "B5",
+   "t": 50.68,
+   "kind": "emotion",
+   "cue": {
+    "word": "زوجين،",
+    "t": 50.68
+   },
+   "summary": "They may be a pair; buying one would tear them apart."
+  },
+  {
+   "id": "B6",
+   "t": 57.74,
+   "kind": "turn",
+   "cue": {
+    "word": "الدينارين",
+    "t": 57.74
+   },
+   "summary": "He pays both dinars and keeps nothing."
+  },
+  {
+   "id": "B7",
+   "t": 72.98,
+   "kind": "suspense",
+   "cue": {
+    "word": "صياد",
+    "t": 72.98
+   },
+   "summary": "Not here: another hunter could catch them."
+  },
+  {
+   "id": "B8",
+   "t": 81.62,
+   "kind": "emotion",
+   "cue": {
+    "word": "برفق.",
+    "t": 81.62
+   },
+   "summary": "Far away among the trees he opens the cage gently."
+  },
+  {
+   "id": "B9",
+   "t": 102.98,
+   "kind": "surprise",
+   "cue": {
+    "word": "جرّة",
+    "t": 102.98
+   },
+   "summary": "The birds decide to reward him: a jar of gold lies under the tree."
+  },
+  {
+   "id": "B10",
+   "t": 117.72,
+   "kind": "comic",
+   "cue": {
+    "word": "شبكة",
+    "t": 117.72
+   },
+   "summary": "His question: you saw buried gold but not the net?"
+  },
+  {
+   "id": "B11",
+   "t": 125.2,
+   "kind": "moral",
+   "cue": {
+    "word": "القدر،",
+    "t": 125.2
+   },
+   "summary": "When destiny arrives, obvious things can be hidden from the eyes."
+  },
+  {
+   "id": "B12",
+   "t": 139.66,
+   "kind": "reveal",
+   "cue": {
+    "word": "مليئة",
+    "t": 139.66
+   },
+   "summary": "The clay jar is full of gold dinars."
+  },
+  {
+   "id": "B13",
+   "t": 162.04,
+   "kind": "climax",
+   "cue": {
+    "word": "«احتفظ",
+    "t": 162.04
+   },
+   "summary": "The king refuses the gold: keep it, it is yours."
+  },
+  {
+   "id": "B14",
+   "t": 169.02,
+   "kind": "resolution",
+   "cue": {
+    "word": "يتذكر",
+    "t": 169.02
+   },
+   "summary": "He leaves with the gold, remembering the two birds."
+  }
+ ],
+ "cast": [
+  {
+   "id": "man",
+   "name": "the servant",
+   "library": "person",
+   "base": "person kind:'owner' body with the planned costume preset 'servant'",
+   "look": "Flat cap in blue, short white tunic with blue dots, yellow sash, bare lower legs, sandals; clean-shaven or a thin moustache; s 1.0. Carries a bindle (S1, S2, S3). Kind, open face: default brow -0.2, mouth smile.",
+   "new": false
+  },
+  {
+   "id": "richMan",
+   "name": "the rich master",
+   "library": "person",
+   "base": "person with the planned costume preset 'richMan'",
+   "look": "Big yellow turban, wide belly (width factor 1.3), red robe, curled moustache. Only in S1 and S2.",
+   "new": false
+  },
+  {
+   "id": "hunter",
+   "name": "the bird hunter",
+   "library": "person",
+   "base": "person kind:'thief' body with a new costume preset 'hunter'",
+   "look": "Brown skull cap with one orange and black hoopoe feather, stubble dots, sleeveless brown jerkin over a white shirt, a folded net over the left shoulder, bare feet. Sly but not evil: brow -0.4, half lids.",
+   "new": true
+  },
+  {
+   "id": "hunter2",
+   "name": "another hunter (imagined danger)",
+   "library": "person",
+   "base": "the 'hunter' preset recoloured navy with a red cap, holding a hand net",
+   "look": "Seen only as one eye, an ear and a hand net round a corner in S7 (1.5 s).",
+   "new": false
+  },
+  {
+   "id": "hoopoeA",
+   "name": "the first hoopoe (proposes the reward)",
+   "library": "bird",
+   "base": "bird with a new kind 'hoopoe'",
+   "look": "Cinnamon orange body, black wings and tail with three white bars, long thin down-curved black beak (1.6x the lark beak), tall fan crest of 7 orange feathers with black tips driven by crest 0..1. s 0.75 on the branch, 0.62 in the cage.",
+   "new": true
+  },
+  {
+   "id": "hoopoeB",
+   "name": "the second hoopoe (gives the answer)",
+   "library": "bird",
+   "base": "bird kind 'hoopoe', pal 1",
+   "look": "Same drawing 8 % smaller, paler peach body, crest of 6 feathers. Quieter, moves second, speaks the moral.",
+   "new": false
+  },
+  {
+   "id": "king",
+   "name": "the king",
+   "library": "person",
+   "base": "person with the planned costume preset 'king'",
+   "look": "Gold three-point crown on a white turban band, full black beard, blue robe with yellow trim. Gentle and generous: never frowns.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "street",
+   "library": null,
+   "description": "Planned marketStreet, palette clear (daylight). Three places on it: the merchant house door at x 220..360 (S1, S2); the market end with two striped awnings, a crate and a mat at x 560..800 and a house corner at x 60..150 (S3 to S7); the palace facade with a door at x 300..420, two steps and a balcony window at y 380 (S16). Ground y 900. Bake one layer per place.",
+   "new": true
+  },
+  {
+   "id": "road",
+   "library": null,
+   "description": "Planned countryRoad: a 2400-unit strip, ground y 900, with the city edge at the left end, a milestone at x 1100, hills (Library hillTrees) and a tree row (Library treeRow) rising toward the right end. Only the tree hiding place and milestone are needed here.",
+   "new": true
+  },
+  {
+   "id": "grove",
+   "library": "tree",
+   "description": "Composed from Library pieces: sky (day), sun at (180, 150), hillTrees, treeRow with hmin 360 (many trees), ground at y 900 with the soil below drawn down to y 1230, bush at x 120. The fruit tree is Library tree(ctx, 700, 900, {w: 110, top: 330, crowns: [[700,250,170],[570,330,120],[830,330,120],[700,150,110]]}) plus a branch on the left from (700, 520) to (430, 520), 26 thick, tapering, and 8 Library figs hanging in the crown. Coordinates are a design target; adjust after a still. Buried jar centred at (640, 1050).",
+   "new": false
+  },
+  {
+   "id": "hall",
+   "library": null,
+   "description": "Planned palaceHall: arched interior, window light, tiled floor at y 900, dais (top y 860, x 620..900) with a throne (seat y 800). Added for this story: a heavy treasury door on the back wall at x 80..230, y 560..900, with a round coin emblem and a big lock.",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "cage",
+   "library": null,
+   "description": "birdCage: domed wire cage 170 wide x 200 tall at s 1 (flat base 14 thick in brown, 9 vertical bars, 2 hoops, a ring on top, a hinged door 60 x 90 on the front with angle field door 0..1.9 rad, a small seed dish inside). Drawn in two passes (back bars, then the birds, then front bars) so the birds are inside it.",
+   "new": true
+  },
+  {
+   "id": "jar",
+   "library": null,
+   "description": "The planned hangingJar drawing without the rope (clay body 130 x 150, 60 wide neck, rim, two ear handles, terracotta with red dot shading) with added fields: lid (a flat cap with a knob, lidOff 0..1), fill 0..1 (gold coins as stacked yellow ellipses at the mouth), cutaway 0..1 (front wall transparent to show the coins), tilt, soil 0..1 (dirt smears).",
+   "new": true
+  },
+  {
+   "id": "coin",
+   "library": null,
+   "description": "The planned coin / coinPile drawing: yellow disc r 16 with a black rim, an inner ring and one glint; can stand, lie (ellipse) and roll.",
+   "new": true
+  },
+  {
+   "id": "bindle",
+   "library": null,
+   "description": "The planned bindle: a red dotted bundle (r 34) tied on a stick 150 long, carried on the shoulder.",
+   "new": true
+  },
+  {
+   "id": "broom",
+   "library": null,
+   "description": "The planned broom: stick 190 long with a yellow straw head 50 x 60.",
+   "new": true
+  },
+  {
+   "id": "net",
+   "library": null,
+   "description": "The planned fishingNet mesh used as a bird net: handNet (hoop r 45 on a pole) for hunter2, a folded bundle on the hunter's shoulder, and a flat or closed net inside the thought cloud.",
+   "new": true
+  },
+  {
+   "id": "fig",
+   "library": "fig",
+   "description": "Library fig, r 14, eight hanging in the crown of the fruit tree.",
+   "new": false
+  },
+  {
+   "id": "heart",
+   "library": "heart",
+   "description": "Library heart: between the caged pair (r 24), drifting down as thanks, in the last cloud.",
+   "new": false
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 8.3,
+   "paragraphs": [
+    1
+   ],
+   "set": "street",
+   "cast": [
+    "man",
+    "richMan"
+   ],
+   "summary": "At the rich man's door the servant sweeps, stops, looks down the road and decides to leave.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Keys: 0.0 {x:500,y:660,zoom:1.15} hold to 3.9; ease to {x:540,y:650,zoom:1.6} by 4.9 (the decision); hold; ease back to zoom 1.3 by 7.6."
+   },
+   "composition": "House door (merchant house front of marketStreet) at x 220..360. richMan in the doorway at x 290; man at x 560 facing left while sweeping, then turns right toward the open road (screen right = the future). Heads at y 660..700, well inside the panel.",
+   "actions": [
+    {
+     "t": 0.0,
+     "cue": {
+      "word": "رجل",
+      "t": 0.3
+     },
+     "who": "man",
+     "action": "sweeps the doorstep with the broom, two short strokes per second, small dust puffs at the bristles",
+     "acting": "head down, gaze [-0.4,0.6], lid 0.3 (dull routine), tip 0.08; arms as angles so the broom reads",
+     "library": "person {aL,aR} cycle + dustBurst; broom follows the hands"
+    },
+    {
+     "t": 0.82,
+     "cue": {
+      "word": "يعمل",
+      "t": 0.82
+     },
+     "who": "man",
+     "action": "one longer stroke, wipes his brow with the back of the hand",
+     "acting": "tired exhale: sq 0.97 then back, slow blink",
+     "library": "PERSON_HANDS.headHold (one hand), breathe()"
+    },
+    {
+     "t": 1.48,
+     "cue": {
+      "word": "خادمًا",
+      "t": 1.48
+     },
+     "who": "lettering",
+     "action": "arrow label points at him",
+     "acting": "label pops with a 10 % overshoot, clear of his face (upper right of him)",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 2.6,
+     "cue": {
+      "word": "الأغنياء،",
+      "t": 2.98
+     },
+     "who": "richMan",
+     "action": "steps into the doorway, arms folded over a big belly, looks his servant over",
+     "acting": "chin up, lid 0.4 (lordly), brow 0.3; gaze on the man",
+     "library": "person + planned costume layer preset 'richMan', PERSON_HANDS.folded, look()"
+    },
+    {
+     "t": 3.96,
+     "cue": {
+      "word": "ثم",
+      "t": 3.96
+     },
+     "who": "man",
+     "action": "stops mid stroke and straightens; the eyes leave the broom and go to the horizon on the right",
+     "acting": "saccade gazePlan(…,0.07): broom, master, then far right; brow lifts to -0.4",
+     "library": "gazePlan saccade mode, settleTo"
+    },
+    {
+     "t": 4.6,
+     "cue": {
+      "word": "قرر",
+      "t": 4.6
+     },
+     "who": "man",
+     "action": "plants the broom upright like a staff: the decision",
+     "acting": "chin up, mouth set then a small smile, sq 1.04 stretch with overshoot; one deliberate blink",
+     "library": "anticipate + settleTo"
+    },
+    {
+     "t": 5.38,
+     "cue": {
+      "word": "يترك",
+      "t": 5.38
+     },
+     "who": "man",
+     "action": "leans the broom against the wall; it rocks and settles",
+     "acting": "looks at the broom a beat (goodbye), then away",
+     "library": "swing() on the broom"
+    },
+    {
+     "t": 5.84,
+     "cue": {
+      "word": "عمله",
+      "t": 5.84
+     },
+     "who": "richMan",
+     "action": "unfolds his arms, eyebrows up, one palm out: you are leaving?",
+     "acting": "brow -0.6, mouth o, head tilt 5 px",
+     "library": "PERSON_HANDS.palmsUp (one hand)"
+    },
+    {
+     "t": 6.64,
+     "cue": {
+      "word": "ويسافر.",
+      "t": 6.64
+     },
+     "who": "man",
+     "action": "swings a bindle onto his shoulder and points down the road",
+     "acting": "crouch 0.2 s before, bindle arcs up and overshoots; gaze far right, smile",
+     "library": "anticipate, PERSON_HANDS.pointFwd; bindle = planned prop"
+    },
+    {
+     "t": 7.5,
+     "who": "richMan",
+     "action": "shrugs and reaches for the purse at his sash",
+     "acting": "lid 0.3, mouth closed; hand travels in an arc",
+     "library": "person handR target"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 1.48,
+     "text": "THE SERVANT"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 7.9,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 8.3
+   }
+  },
+  {
+   "id": "S2",
+   "start": 8.3,
+   "end": 21.0,
+   "paragraphs": [
+    1
+   ],
+   "set": "street",
+   "cast": [
+    "man",
+    "richMan"
+   ],
+   "summary": "The wages: two dinars counted into his palm. His plan in a thought cloud: one coin for charity, one for food.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot(man, richMan, {margin: 90}) from 8.3; at 12.4 ease to a medium on the man alone {x:600,y:600,zoom:1.7} leaving the upper left free for the cloud; hold to 19.5; ease out to zoom 1.3 as he walks."
+   },
+   "composition": "Master left (x 330), man right (x 560), the open palm exactly between them at y 760. From 13.1 the thought cloud sits upper left (world x 250..560, y 250..520), never over his face; its two halves are side by side.",
+   "actions": [
+    {
+     "t": 8.52,
+     "cue": {
+      "word": "أعطاه",
+      "t": 8.52
+     },
+     "who": "richMan",
+     "action": "pulls two coins from the purse with a flourish",
+     "acting": "eyes on the coins, lid 0.4, a grudging mouth",
+     "library": "person handR, anticipate"
+    },
+    {
+     "t": 9.16,
+     "cue": {
+      "word": "صاحب",
+      "t": 9.16
+     },
+     "who": "man",
+     "action": "puts the bindle down and holds out an open palm",
+     "acting": "gaze on the master's hand, polite small bow (tip 0.06)",
+     "library": "PERSON_HANDS.palmsUp (one hand)"
+    },
+    {
+     "t": 10.3,
+     "cue": {
+      "word": "دينارين",
+      "t": 10.3
+     },
+     "who": "coin",
+     "action": "coin 1 drops into the palm; the hand dips 6 px and springs back",
+     "acting": "coin squashes 2 frames on landing; counter DINARS shows 1",
+     "library": "fallY + impactSquash on the coin; S.counter"
+    },
+    {
+     "t": 10.95,
+     "cue": {
+      "word": "دينارين",
+      "t": 10.3
+     },
+     "who": "coin",
+     "action": "coin 2 drops beside it; counter shows 2",
+     "acting": "the man's eyes follow each coin down (look())",
+     "library": "fallY; S.counter"
+    },
+    {
+     "t": 11.5,
+     "cue": {
+      "word": "أجرًا",
+      "t": 11.5
+     },
+     "who": "man",
+     "action": "closes his fingers over the coins and bows his thanks",
+     "acting": "tip 0.1, lid 0.5 on the bow, smile",
+     "library": "settleTo"
+    },
+    {
+     "t": 12.06,
+     "cue": {
+      "word": "له.",
+      "t": 12.06
+     },
+     "who": "richMan",
+     "action": "nods once, turns and goes inside; the door shuts",
+     "acting": "turn with a squeeze (never a sliver), back to camera, door closes in 0.4 s",
+     "library": "turnFlip"
+    },
+    {
+     "t": 13.12,
+     "cue": {
+      "word": "أراد",
+      "t": 13.12
+     },
+     "who": "man",
+     "action": "opens his hand and looks at the two coins; a thought cloud opens upper left",
+     "acting": "chin gesture with the free hand, gaze down at the palm then up into the cloud",
+     "library": "PERSON_HANDS.chin; thoughtCloud (planned effect)"
+    },
+    {
+     "t": 14.64,
+     "cue": {
+      "word": "يتصدق",
+      "t": 14.64
+     },
+     "who": "fx",
+     "action": "cloud, left half: a copy of coin 1 flies from his palm into an open receiving hand; a heart pops above it",
+     "acting": "the man smiles softly, lid 0.2, head tilts toward the cloud",
+     "library": "thoughtCloud inside-draw; heart(); hop arc for the coin"
+    },
+    {
+     "t": 15.46,
+     "cue": {
+      "word": "بدينار،",
+      "t": 15.46
+     },
+     "who": "lettering",
+     "action": "arrow from coin 1 to the label CHARITY under the left half",
+     "acting": "label pops on the word",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 16.98,
+     "cue": {
+      "word": "يحتفظ",
+      "t": 16.98
+     },
+     "who": "man",
+     "action": "closes the other coin in his fist and presses it to his chest",
+     "acting": "gaze back to his own hand, small nod",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 17.64,
+     "cue": {
+      "word": "بالآخر",
+      "t": 17.64
+     },
+     "who": "fx",
+     "action": "cloud, right half: coin 2 slides in",
+     "acting": "eyes travel to the right half (look())",
+     "library": "thoughtCloud"
+    },
+    {
+     "t": 18.42,
+     "cue": {
+      "word": "لطعامه",
+      "t": 18.42
+     },
+     "who": "fx",
+     "action": "coin 2 turns into a round loaf of bread with steam; label FOOD; he pats his belly",
+     "acting": "mouth smile, one happy blink",
+     "library": "S.label; flat loaf = ellipse + 3 score lines"
+    },
+    {
+     "t": 19.48,
+     "cue": {
+      "word": "في",
+      "t": 19.48
+     },
+     "who": "man",
+     "action": "cloud shrinks away; he pockets both coins, shoulders the bindle and takes the first steps right",
+     "acting": "gaze far right, chin up",
+     "library": "walk(), footfalls()"
+    },
+    {
+     "t": 20.5,
+     "who": "camera",
+     "action": "he walks out of frame right; wipe follows him",
+     "acting": "the wipe travels left to right with the walk"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 10.95,
+     "text": "DINARS: 2"
+    },
+    {
+     "t": 15.46,
+     "text": "CHARITY"
+    },
+    {
+     "t": 18.42,
+     "text": "FOOD"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 12.7,
+     "kind": "chime"
+    },
+    {
+     "t": 20.9,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "wipe",
+    "t": 21.0
+   }
+  },
+  {
+   "id": "S3",
+   "start": 21.0,
+   "end": 33.5,
+   "paragraphs": [
+    2
+   ],
+   "set": "street",
+   "cast": [
+    "man",
+    "hunter",
+    "hoopoeA",
+    "hoopoeB"
+   ],
+   "summary": "The market. He sees a hunter with two weak hoopoes in one cage, asks the price and hears: two dinars.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Keys: 21.0 {x:420,y:680,zoom:1.2}; pan right 22.8..23.9 to {x:560,y:700,zoom:1.35} (reveals the hunter); push in 24.6..25.4 on the cage {x:610,y:770,zoom:2.6}; hold to 27.4; ease back to a two-shot {x:520,y:700,zoom:1.5} by 28.2."
+   },
+   "composition": "Market end of marketStreet (two striped awnings added behind). Hunter sits cross-legged on a mat at x 740 facing left; the cage stands on a crate at x 610, cage floor y 800, top y 610. The man stops at x 380. In the cage close-up the two birds are side by side at s 0.62, hoopoeA right, hoopoeB left.",
+   "actions": [
+    {
+     "t": 21.54,
+     "cue": {
+      "word": "دخل",
+      "t": 21.54
+     },
+     "who": "man",
+     "action": "walks in from the left with the bindle, looking around at the stalls",
+     "acting": "walk() so the feet never slide; gaze wanders up and right, relaxed smile",
+     "library": "walk, footfalls"
+    },
+    {
+     "t": 22.18,
+     "cue": {
+      "word": "السوق",
+      "t": 22.18
+     },
+     "who": "set",
+     "action": "awnings sway, a hanging sign swings",
+     "acting": "secondary motion only, damped",
+     "library": "swing()"
+    },
+    {
+     "t": 22.8,
+     "cue": {
+      "word": "فرأى",
+      "t": 22.8
+     },
+     "who": "man",
+     "action": "stops short; head turns, eyes lock on something to the right",
+     "acting": "settleTo on the stop, gaze snaps to (610,720), brow -0.3",
+     "library": "settleTo, lookAt"
+    },
+    {
+     "t": 23.52,
+     "cue": {
+      "word": "صيادًا",
+      "t": 23.52
+     },
+     "who": "hunter",
+     "action": "revealed by the pan: sitting on his mat, a net over one shoulder, calling for customers",
+     "acting": "cupped hand at the mouth, talk 0.8 in bursts, sly half lid 0.35",
+     "library": "person + planned costume layer preset 'hunter', PERSON_HANDS.cupMouth"
+    },
+    {
+     "t": 24.38,
+     "cue": {
+      "word": "يبيع",
+      "t": 24.38
+     },
+     "who": "hunter",
+     "action": "raps the top of the cage twice with his knuckles",
+     "acting": "the cage hops 3 units on each rap; both birds flinch (sq 0.9)",
+     "library": "strike cycle pattern; kick()"
+    },
+    {
+     "t": 24.88,
+     "cue": {
+      "word": "هدهدين",
+      "t": 24.88
+     },
+     "who": "camera",
+     "action": "push in on the cage: two hoopoes pressed together; arrow label 2 HOOPOES",
+     "acting": "label above the cage, off the birds",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 25.7,
+     "cue": {
+      "word": "ضعيفين",
+      "t": 25.7
+     },
+     "who": "hoopoeA",
+     "action": "head droops, crest flat, eyes almost shut",
+     "acting": "drop 14, lid 0.7, crest 0, sag -0.5, slow breathing",
+     "library": "bird {kind:'hoopoe', drop, lid, crest, sag} + breathe"
+    },
+    {
+     "t": 26.2,
+     "cue": {
+      "word": "ضعيفين",
+      "t": 25.7
+     },
+     "who": "hoopoeB",
+     "action": "leans in and props him up with her shoulder, trembling",
+     "acting": "tip toward A 0.12, tremble(t,1.5), wet true",
+     "library": "tremble, tip"
+    },
+    {
+     "t": 26.92,
+     "cue": {
+      "word": "قفص",
+      "t": 26.92
+     },
+     "who": "hoopoeB",
+     "action": "looks out through the bars straight at the man; one slow blink",
+     "acting": "gaze via lookAt to the man's head, lid ramps 0 to 1 to 0 over 0.5 s",
+     "library": "lookAt, lid"
+    },
+    {
+     "t": 27.52,
+     "cue": {
+      "word": "واحد.",
+      "t": 27.52
+     },
+     "who": "man",
+     "action": "seen past the bars: his smile fades into concern",
+     "acting": "brow -0.5, mouth closed, head tilt"
+    },
+    {
+     "t": 28.18,
+     "cue": {
+      "word": "سأل",
+      "t": 28.18
+     },
+     "who": "man",
+     "action": "steps up to the crate and bends to look inside",
+     "acting": "tip 0.12, gaze on the birds; they look back",
+     "library": "walk (2 steps), tip"
+    },
+    {
+     "t": 29.68,
+     "cue": {
+      "word": "عن",
+      "t": 29.68
+     },
+     "who": "man",
+     "action": "points at the cage and turns the other palm up: how much?",
+     "acting": "gaze switches to the hunter, brow raised -0.5, talk 0.6",
+     "library": "PERSON_HANDS.pointFwd + palmsUp"
+    },
+    {
+     "t": 29.92,
+     "cue": {
+      "word": "ثمنهما،",
+      "t": 29.92
+     },
+     "who": "hunter",
+     "action": "looks the customer up and down, from cap to sandals",
+     "acting": "gazePlan head, bindle, feet, head; lid 0.4, brow -0.4 (sly)",
+     "library": "gazePlan"
+    },
+    {
+     "t": 30.8,
+     "cue": {
+      "word": "فقال",
+      "t": 30.8
+     },
+     "who": "hunter",
+     "action": "smile widens; lifts his hand slowly",
+     "acting": "anticipation: the hand dips first; mouth smirk-like smile",
+     "library": "anticipate"
+    },
+    {
+     "t": 32.38,
+     "cue": {
+      "word": "«ديناران.»",
+      "t": 32.38
+     },
+     "who": "hunter",
+     "action": "two fingers up; speech balloon 2 DINARS! with two coin icons",
+     "acting": "talk 1, chin up; balloon above him, not over any face; the birds flinch at the loud voice",
+     "library": "person aR raised (angles) ; S.box balloon"
+    },
+    {
+     "t": 33.3,
+     "who": "man",
+     "action": "hand goes to his pocket; a small gulp",
+     "acting": "drop pulse 4 px, eyes flick to his pocket",
+     "library": "pulse()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 24.88,
+     "text": "2 HOOPOES"
+    },
+    {
+     "t": 32.38,
+     "text": "2 DINARS!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 33.5
+   }
+  },
+  {
+   "id": "S4",
+   "start": 33.5,
+   "end": 40.32,
+   "paragraphs": [
+    2
+   ],
+   "set": "street",
+   "cast": [
+    "man",
+    "hunter",
+    "hoopoeA",
+    "hoopoeB"
+   ],
+   "summary": "He offers one dinar for both. The hunter refuses.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "Hold {x:540,y:710,zoom:1.6}: man left, cage centre, hunter right. A 3-unit panel-only nudge on NO!"
+   },
+   "composition": "The single coin is held at head height between the two men (about x 500, y 660) so it reads as the subject. Birds low centre; their heads turn from one man to the other.",
+   "actions": [
+    {
+     "t": 33.8,
+     "cue": {
+      "word": "حاول",
+      "t": 33.8
+     },
+     "who": "man",
+     "action": "takes out ONE coin and holds it up between finger and thumb",
+     "acting": "hopeful smile, brow -0.5, eyes on the hunter",
+     "library": "person aR angles (arm up reads at phone size)"
+    },
+    {
+     "t": 35.58,
+     "cue": {
+      "word": "يشتريهما",
+      "t": 35.58
+     },
+     "who": "man",
+     "action": "sweeps the other hand across both birds: both of them, please",
+     "acting": "gaze dips to the birds and back",
+     "library": "person handL target sweep"
+    },
+    {
+     "t": 36.56,
+     "cue": {
+      "word": "بدينار",
+      "t": 36.56
+     },
+     "who": "man",
+     "action": "offers the coin forward, leaning in; small balloon 1?",
+     "acting": "tip 0.1, talk 0.6, head tilt",
+     "library": "PERSON_HANDS.reach"
+    },
+    {
+     "t": 37.3,
+     "cue": {
+      "word": "واحد،",
+      "t": 37.3
+     },
+     "who": "hunter",
+     "action": "eyes narrow on the single coin",
+     "acting": "lid 0.55, brow 0.6, mouth flat; holds still 0.4 s (suspense by stillness)"
+    },
+    {
+     "t": 37.92,
+     "cue": {
+      "word": "لكن",
+      "t": 37.92
+     },
+     "who": "hunter",
+     "action": "folds his arms, chin up",
+     "acting": "settleTo, gaze away over the man's head",
+     "library": "PERSON_HANDS.folded"
+    },
+    {
+     "t": 38.66,
+     "cue": {
+      "word": "الصياد",
+      "t": 38.66
+     },
+     "who": "hoopoeB",
+     "action": "both birds look from the man to the hunter and back",
+     "acting": "gaze ping-pong, A two frames behind B (never in unison)",
+     "library": "gazePlan, stagger"
+    },
+    {
+     "t": 39.6,
+     "cue": {
+      "word": "رفض.",
+      "t": 39.6
+     },
+     "who": "hunter",
+     "action": "turns his face away, shakes his head twice, one palm out: NO!",
+     "acting": "lid 1 while shaking, hand as a stop sign; lettering NO! beside him",
+     "library": "PERSON_HANDS.shield (one hand)"
+    },
+    {
+     "t": 40.0,
+     "cue": {
+      "word": "رفض.",
+      "t": 39.6
+     },
+     "who": "man",
+     "action": "the offering arm sinks; the coin lowers",
+     "acting": "settleTo downward, brow worried, long blink",
+     "library": "settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 36.56,
+     "text": "1?"
+    },
+    {
+     "t": 39.6,
+     "text": "NO!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 40.32
+   }
+  },
+  {
+   "id": "S5",
+   "start": 40.32,
+   "end": 54.66,
+   "paragraphs": [
+    3
+   ],
+   "set": "street",
+   "cast": [
+    "man",
+    "hunter",
+    "hoopoeA",
+    "hoopoeB"
+   ],
+   "summary": "He thinks of buying only one bird; then fears they are a pair he would tear apart.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Keys: 40.3 {x:430,y:600,zoom:1.5} man lower right of frame, cloud upper left; 49.3..50.0 ease to the real cage {x:610,y:770,zoom:2.8}; 52.0..52.6 back out to {x:430,y:600,zoom:1.5}; slow push to 1.65 by 54.6."
+   },
+   "composition": "Thought cloud at world x 150..500, y 300..560 (figures inside about 110 px on screen). The man at x 420; the hunter is out of frame right except his knee. The cloud and the real cage never overlap.",
+   "actions": [
+    {
+     "t": 40.32,
+     "cue": {
+      "word": "فكر",
+      "t": 40.32
+     },
+     "who": "man",
+     "action": "hand to chin, eyes go up and left; the thought cloud opens",
+     "acting": "saccades between the coin in his hand and the cage, then up",
+     "library": "PERSON_HANDS.chin, gazePlan(…,0.07); thoughtCloud"
+    },
+    {
+     "t": 42.22,
+     "cue": {
+      "word": "الرجل",
+      "t": 42.22
+     },
+     "who": "man",
+     "action": "weighs the one coin in his palm, two small tosses",
+     "acting": "eyes follow the coin; mouth pursed",
+     "library": "hop() on the coin"
+    },
+    {
+     "t": 43.18,
+     "cue": {
+      "word": "يشتري",
+      "t": 43.18
+     },
+     "who": "fx",
+     "action": "in the cloud: his hand reaches into the cage",
+     "acting": "cloud drawing is simple: cage, two birds, one hand",
+     "library": "thoughtCloud inside-draw"
+    },
+    {
+     "t": 44.42,
+     "cue": {
+      "word": "واحدًا",
+      "t": 44.42
+     },
+     "who": "fx",
+     "action": "in the cloud: the hand lifts ONE hoopoe out; a small 1 beside it",
+     "acting": "the lifted bird looks back down",
+     "library": "bird in cloud at s 0.5"
+    },
+    {
+     "t": 45.3,
+     "cue": {
+      "word": "ويترك",
+      "t": 45.3
+     },
+     "who": "fx",
+     "action": "in the cloud: the cage door shuts on the other",
+     "acting": "door swing 0.25 s"
+    },
+    {
+     "t": 46.16,
+     "cue": {
+      "word": "الآخر.",
+      "t": 46.16
+     },
+     "who": "fx",
+     "action": "in the cloud: the bird left behind stretches its neck through the bars, crest flat",
+     "acting": "wet true, beak open, tremble",
+     "library": "bird {wet, crest:0, beak}"
+    },
+    {
+     "t": 46.98,
+     "cue": {
+      "word": "ثم",
+      "t": 46.98
+     },
+     "who": "man",
+     "action": "his chin hand stops; the cloud picture freezes",
+     "acting": "eyes go from the cloud to the real cage; no blink for 1 s",
+     "library": "lookAt; noBlink"
+    },
+    {
+     "t": 48.32,
+     "cue": {
+      "word": "خاف",
+      "t": 48.32
+     },
+     "who": "man",
+     "action": "fear: eyes wide, shoulders in",
+     "acting": "brow -0.8, sq 0.94, tremble(t,1), mouth o",
+     "library": "tremble, settleTo"
+    },
+    {
+     "t": 49.58,
+     "cue": {
+      "word": "الهدهدان",
+      "t": 49.58
+     },
+     "who": "hoopoeB",
+     "action": "cut in on the real cage: she tucks her head under his neck",
+     "acting": "lid 0.6, tip toward A; A lays his beak over her back",
+     "library": "bird headRot, drop, tip"
+    },
+    {
+     "t": 50.68,
+     "cue": {
+      "word": "زوجين،",
+      "t": 50.68
+     },
+     "who": "fx",
+     "action": "a small heart pops between the two crests; label A PAIR?",
+     "acting": "heart r 24 with overshoot; both crests rise to 0.4",
+     "library": "heart(); S.label"
+    },
+    {
+     "t": 52.4,
+     "cue": {
+      "word": "يفرقهما",
+      "t": 52.4
+     },
+     "who": "fx",
+     "action": "back to the cloud: the heart there cracks down the middle and the halves slide apart with the two birds",
+     "acting": "crack line draws in 4 frames; halves drift 40 units each",
+     "library": "heart drawn twice with left/right clips"
+    },
+    {
+     "t": 53.6,
+     "cue": {
+      "word": "بعضهما.",
+      "t": 53.96
+     },
+     "who": "man",
+     "action": "winces and covers his mouth; the cloud pops away",
+     "acting": "lid 0.6, wet true, head turns from the cloud",
+     "library": "PERSON_HANDS.mouthCover"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 50.68,
+     "text": "A PAIR?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 54.66
+   }
+  },
+  {
+   "id": "S6",
+   "start": 54.66,
+   "end": 62.68,
+   "paragraphs": [
+    3
+   ],
+   "set": "street",
+   "cast": [
+    "man",
+    "hunter",
+    "hoopoeA",
+    "hoopoeB"
+   ],
+   "summary": "Compassion wins: he pays both dinars and has nothing left.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "Hold {x:540,y:710,zoom:1.6}; at 60.0 ease to a medium on the man and the cage {x:440,y:700,zoom:1.9}."
+   },
+   "composition": "Coins change hands at the centre of frame (x 560, y 720). The counter DINARS sits top left of the picture panel, over sky, and counts 2, 1, 0.",
+   "actions": [
+    {
+     "t": 54.66,
+     "cue": {
+      "word": "أشفق",
+      "t": 54.66
+     },
+     "who": "man",
+     "action": "hand to his chest; a long breath; head tilts to the birds",
+     "acting": "wet true, long blink, breathe(); gaze on the cage",
+     "library": "PERSON_HANDS.chest, breathe"
+    },
+    {
+     "t": 55.84,
+     "cue": {
+      "word": "عليهما،",
+      "t": 55.84
+     },
+     "who": "man",
+     "action": "crouches to cage height; the birds look up at him",
+     "acting": "tip 0.14; birds: gaze via lookAt to his eyes, lids 0.3",
+     "library": "lookAt"
+    },
+    {
+     "t": 56.6,
+     "cue": {
+      "word": "ودفع",
+      "t": 56.6
+     },
+     "who": "man",
+     "action": "stands, turns to the hunter and brings out the second coin",
+     "acting": "mouth set (decision), crouch 0.15 s before standing",
+     "library": "anticipate, settleTo"
+    },
+    {
+     "t": 57.74,
+     "cue": {
+      "word": "الدينارين",
+      "t": 57.74
+     },
+     "who": "coin",
+     "action": "coin 1 into the hunter's palm; counter DINARS 2 to 1",
+     "acting": "hunter's hand dips; his eyes go round",
+     "library": "hop arc; S.counter"
+    },
+    {
+     "t": 58.25,
+     "cue": {
+      "word": "الدينارين",
+      "t": 57.74
+     },
+     "who": "coin",
+     "action": "coin 2 follows; counter 1 to 0",
+     "acting": "man does not watch the coins: his eyes are already on the birds",
+     "library": "hop arc; S.counter"
+    },
+    {
+     "t": 58.68,
+     "cue": {
+      "word": "معًا،",
+      "t": 58.68
+     },
+     "who": "hunter",
+     "action": "grins, bites a coin to test it, and pushes the cage over by its ring",
+     "acting": "lid 0.3, mouth open then smile; comic 2-frame bite",
+     "library": "person handL target"
+    },
+    {
+     "t": 59.2,
+     "cue": {
+      "word": "ولم",
+      "t": 59.2
+     },
+     "who": "man",
+     "action": "takes the cage in both hands",
+     "acting": "careful: slow ease, elbows in",
+     "library": "PERSON_HANDS.grip"
+    },
+    {
+     "t": 60.06,
+     "cue": {
+      "word": "يبقَ",
+      "t": 60.06
+     },
+     "who": "man",
+     "action": "shows one empty palm, then pulls his pocket lining out",
+     "acting": "eyebrows up, small shrug",
+     "library": "PERSON_HANDS.palmsUp (one hand)"
+    },
+    {
+     "t": 61.02,
+     "cue": {
+      "word": "شيء",
+      "t": 61.02
+     },
+     "who": "lettering",
+     "action": "the counter stamps DINARS: 0 and shakes once",
+     "acting": "panel-only 2-unit nudge",
+     "library": "S.counter + S.emphasis"
+    },
+    {
+     "t": 61.3,
+     "cue": {
+      "word": "شيء",
+      "t": 61.02
+     },
+     "who": "hunter",
+     "action": "pockets the coins and walks off left, tossing one",
+     "acting": "jaunty walk, back to us",
+     "library": "walk"
+    },
+    {
+     "t": 61.98,
+     "cue": {
+      "word": "أجره.",
+      "t": 61.98
+     },
+     "who": "man",
+     "action": "looks at the empty hand, then at the cage, and smiles",
+     "acting": "look() palm then birds; mouth smile; the birds lift their crests a little (0.3)",
+     "library": "look(), bird crest"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 61.02,
+     "text": "DINARS: 0"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 62.68
+   }
+  },
+  {
+   "id": "S7",
+   "start": 62.68,
+   "end": 74.52,
+   "paragraphs": [
+    4
+   ],
+   "set": "street",
+   "cast": [
+    "man",
+    "hoopoeA",
+    "hoopoeB",
+    "hunter2"
+   ],
+   "summary": "He will not free them here: they are hungry and weak, and another hunter may be waiting.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "Keys: 62.7 {x:440,y:690,zoom:1.9}; 66.2..67.2 pull out to {x:480,y:680,zoom:1.2} (the busy street); 68.3 cut in to the cage {x:445,y:700,zoom:2.8}; 70.9 cut back to {x:420,y:690,zoom:1.3} with the left corner in frame."
+   },
+   "composition": "Man centre (x 450) holding the cage at chest height (cage centre y 720). A house corner at x 60..150 on the left is the hiding place: hunter2 is drawn first, the corner over him. The exit is screen right.",
+   "actions": [
+    {
+     "t": 62.68,
+     "cue": {
+      "word": "لم",
+      "t": 62.68
+     },
+     "who": "man",
+     "action": "lifts the cage to eye level; a finger goes to the latch",
+     "acting": "smile, gaze on the birds",
+     "library": "person handR target on the latch"
+    },
+    {
+     "t": 64.18,
+     "cue": {
+      "word": "يرد",
+      "t": 64.18
+     },
+     "who": "man",
+     "action": "the finger stops on the latch",
+     "acting": "smile fades, brow -0.4; holds still 0.5 s",
+     "library": "settleTo"
+    },
+    {
+     "t": 64.94,
+     "cue": {
+      "word": "يطلق",
+      "t": 64.94
+     },
+     "who": "man",
+     "action": "takes his hand off the latch and shakes his head",
+     "acting": "two small head shakes, lid 0.4"
+    },
+    {
+     "t": 66.32,
+     "cue": {
+      "word": "وسط",
+      "t": 66.32
+     },
+     "who": "man",
+     "action": "looks left, right, left over the street as the camera pulls out",
+     "acting": "saccades (2-frame snaps), head follows late by 3 frames",
+     "library": "gazePlan(…,0.07)"
+    },
+    {
+     "t": 66.76,
+     "cue": {
+      "word": "السوق؛",
+      "t": 66.76
+     },
+     "who": "set",
+     "action": "awnings, signs, a cart wheel rolling through the background",
+     "acting": "no crowd: three moving shapes are enough to say busy",
+     "library": "swing(); wheel rotation = distance / r"
+    },
+    {
+     "t": 68.42,
+     "who": "camera",
+     "action": "cut in to the birds in the cage",
+     "acting": "both sit low on the cage floor"
+    },
+    {
+     "t": 69.32,
+     "cue": {
+      "word": "جائعين",
+      "t": 69.32
+     },
+     "who": "hoopoeA",
+     "action": "opens his beak weakly; hunger squiggles over his belly; she pecks at an empty seed dish",
+     "acting": "beak 1.3, lid 0.6; B: two pecks then stops and looks up",
+     "library": "bird mime: beak, drop jab"
+    },
+    {
+     "t": 69.84,
+     "cue": {
+      "word": "وضعيفين،",
+      "t": 69.84
+     },
+     "who": "hoopoeB",
+     "action": "both sag",
+     "acting": "sag -0.5, sq 0.92, lids 0.7, crests 0",
+     "library": "bird sag, sq"
+    },
+    {
+     "t": 70.98,
+     "cue": {
+      "word": "وربما",
+      "t": 70.98
+     },
+     "who": "man",
+     "action": "cut wide: his eyes snap to the left",
+     "acting": "2-frame saccade, head still",
+     "library": "gazePlan"
+    },
+    {
+     "t": 71.98,
+     "cue": {
+      "word": "أمسك",
+      "t": 71.98
+     },
+     "who": "fx",
+     "action": "the shadow of a net slides along the wall behind him",
+     "acting": "dotted halftone shadow, moves right to left to the corner",
+     "library": "net mesh drawn in black at alpha 0.35"
+    },
+    {
+     "t": 72.98,
+     "cue": {
+      "word": "صياد",
+      "t": 72.98
+     },
+     "who": "hunter2",
+     "action": "peeks round the corner: ear, eye, then a hand net rising",
+     "acting": "only one eye visible, gaze locked on the cage, lid 0.3; snaps back when the man turns",
+     "library": "peek from cover: draw actor, then the occluder"
+    },
+    {
+     "t": 73.78,
+     "cue": {
+      "word": "آخر.",
+      "t": 73.78
+     },
+     "who": "man",
+     "action": "hugs the cage to his chest, turns his back on the corner and strides off right",
+     "acting": "PERSON_HANDS.shield around the cage, brow 0.5, the birds duck (sq 0.85)",
+     "library": "turnFlip, walk"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 74.52
+   }
+  },
+  {
+   "id": "S8",
+   "start": 74.52,
+   "end": 79.6,
+   "paragraphs": [
+    4
+   ],
+   "set": "road",
+   "cast": [
+    "man",
+    "hoopoeA",
+    "hoopoeB"
+   ],
+   "summary": "He carries them a long way, out of the city, to a land of many trees.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Camera tracks the walker at zoom 1.25, y 690, keeping him one third from the left. The city edge leaves frame left by 76.3; the tree row arrives from the right at 77.7."
+   },
+   "composition": "Side view on the countryRoad strip (2400 units). Man at s 0.9 so the journey reads; far layer (skyline, hills) at parallax 0.3, tree row at 0.6, road at 1.",
+   "actions": [
+    {
+     "t": 74.52,
+     "cue": {
+      "word": "سار",
+      "t": 74.52
+     },
+     "who": "man",
+     "action": "walks right with the cage held against his chest",
+     "acting": "walk() from distance; steady pace, gaze ahead",
+     "library": "walk, footfalls, dustBurst"
+    },
+    {
+     "t": 75.36,
+     "cue": {
+      "word": "بهما",
+      "t": 75.36
+     },
+     "who": "hoopoeA",
+     "action": "the birds sway with his steps and look out ahead through the bars",
+     "acting": "rider = carrier position + bob; A and B half a step out of phase",
+     "library": "lurch, rider on carrier"
+    },
+    {
+     "t": 75.86,
+     "cue": {
+      "word": "إلى",
+      "t": 75.86
+     },
+     "who": "set",
+     "action": "the city skyline slides away behind",
+     "acting": "parallax 0.3"
+    },
+    {
+     "t": 76.78,
+     "cue": {
+      "word": "بعيدة",
+      "t": 76.78
+     },
+     "who": "man",
+     "action": "passes a milestone; wipes his brow; steps shorten; arrow label FAR AWAY",
+     "acting": "fatigue: tip 0.08, walk amp 0.8, lid 0.3",
+     "library": "PERSON_HANDS.headHold (one hand); S.label"
+    },
+    {
+     "t": 77.7,
+     "cue": {
+      "word": "فيها",
+      "t": 77.7
+     },
+     "who": "set",
+     "action": "the first trees slide in from the right",
+     "acting": "tree row rises from behind a hill",
+     "library": "treeRow"
+    },
+    {
+     "t": 78.52,
+     "cue": {
+      "word": "أشجار",
+      "t": 78.52
+     },
+     "who": "hoopoeB",
+     "action": "the birds perk up at the trees: crests half open, heads high",
+     "acting": "crest 0.5, lid 0, gaze up right; B first, A 3 frames later",
+     "library": "bird crest, stagger"
+    },
+    {
+     "t": 79.2,
+     "cue": {
+      "word": "كثيرة،",
+      "t": 79.2
+     },
+     "who": "man",
+     "action": "slows and stops, looks up at the trees and smiles",
+     "acting": "settleTo on the stop, breathe, chin up",
+     "library": "settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 76.78,
+     "text": "FAR AWAY"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 79.6
+   }
+  },
+  {
+   "id": "S9",
+   "start": 79.6,
+   "end": 89.28,
+   "paragraphs": [
+    4,
+    5
+   ],
+   "set": "grove",
+   "cast": [
+    "man",
+    "hoopoeA",
+    "hoopoeB"
+   ],
+   "summary": "He opens the cage gently. The two hoopoes struggle through the air to a fruit tree.",
+   "camera": {
+    "shot": "wide",
+    "move": "tilt",
+    "notes": "Keys: 79.6 {x:330,y:760,zoom:1.9} on the man and cage; hold to 82.3; 82.4..84.0 ease out to {x:480,y:700,zoom:1.15}; 86.3..88.2 tilt up to {x:560,y:520,zoom:1.3} so the whole fruit tree and its branch fill the frame."
+   },
+   "composition": "Grove world: ground y 900. Cage on the grass at x 260. Man kneels at x 170 facing right. Fruit tree trunk at x 700 (w 110), branch on its left side from x 700 to x 430 at y 520; crown above y 420. Flight path from the cage door (300, 800) to the branch (500, 520).",
+   "actions": [
+    {
+     "t": 79.96,
+     "cue": {
+      "word": "وفتح",
+      "t": 79.96
+     },
+     "who": "man",
+     "action": "kneels and sets the cage down on the grass",
+     "acting": "kneel 0 to 1 with anticipation; the cage lands with a 3 px squash",
+     "library": "person kneel (planned pose), landSquash"
+    },
+    {
+     "t": 81.02,
+     "cue": {
+      "word": "القفص",
+      "t": 81.02
+     },
+     "who": "cage",
+     "action": "he lifts the latch with two fingers; the door swings open slowly",
+     "acting": "door angle 0 to 1.9 rad over 0.9 s, eased, tiny settle",
+     "library": "cage {door}"
+    },
+    {
+     "t": 81.62,
+     "cue": {
+      "word": "برفق.",
+      "t": 81.62
+     },
+     "who": "man",
+     "action": "draws his hand back, palms open and low, and leans away to give them room",
+     "acting": "tip -0.08, lid 0.2, whisper smile; no sudden moves",
+     "library": "PERSON_HANDS.palmsUp low"
+    },
+    {
+     "t": 82.4,
+     "cue": {
+      "word": "طار",
+      "t": 82.4
+     },
+     "who": "hoopoeA",
+     "action": "hops to the door sill, blinks at the light, looks back at her",
+     "acting": "hop(), sq 0.9 on landing, two quick blinks, crest 0.3",
+     "library": "hop, landSquash, blink"
+    },
+    {
+     "t": 83.3,
+     "cue": {
+      "word": "الهدهدان",
+      "t": 84.02
+     },
+     "who": "hoopoeB",
+     "action": "joins him; both jump off flapping hard and drop toward the grass",
+     "acting": "flap 1.4, bodies pitched up, eyes wide",
+     "library": "bird {fly:true, flap} on a keyed bezier path"
+    },
+    {
+     "t": 84.94,
+     "cue": {
+      "word": "بصعوبة",
+      "t": 84.94
+     },
+     "who": "hoopoeA",
+     "action": "dips to 20 units above the grass; she loops back and flies beside him; FLAP! FLAP!",
+     "acting": "A: lid 0.5, sag; B: gaze on A; the man half rises with both hands out to catch",
+     "library": "flight path with sagging arcs; PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 85.92,
+     "cue": {
+      "word": "حتى",
+      "t": 85.92
+     },
+     "who": "hoopoeA",
+     "action": "three sagging arcs, each a little higher, a short hover between",
+     "acting": "wings beat faster at the bottom of each arc; follow-through on the tail",
+     "library": "flight path (see new_assets weakFlight)"
+    },
+    {
+     "t": 86.78,
+     "cue": {
+      "word": "وصلا",
+      "t": 86.78
+     },
+     "who": "hoopoeB",
+     "action": "the last climb up to the branch; camera tilts with them",
+     "acting": "B arrives first and looks back for A"
+    },
+    {
+     "t": 87.72,
+     "cue": {
+      "word": "شجرة",
+      "t": 87.72
+     },
+     "who": "set",
+     "action": "the tree fills the frame",
+     "acting": "leaf clumps sway 2 units",
+     "library": "tree()"
+    },
+    {
+     "t": 88.42,
+     "cue": {
+      "word": "مثمرة.",
+      "t": 88.42
+     },
+     "who": "fig",
+     "action": "eight figs glint in the crown; two sway",
+     "acting": "small sparkle on two figs, one after the other",
+     "library": "fig(), swing()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 84.94,
+     "text": "FLAP! FLAP!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 89.28
+   }
+  },
+  {
+   "id": "S10",
+   "start": 89.28,
+   "end": 105.56,
+   "paragraphs": [
+    5
+   ],
+   "set": "grove",
+   "cast": [
+    "man",
+    "hoopoeA",
+    "hoopoeB"
+   ],
+   "summary": "On the branch they thank him; then one whispers to the other: reward him, a jar of gold lies under this tree.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "tilt",
+    "notes": "Keys: 89.3 {x:500,y:500,zoom:2.2} on the branch; 92.6..93.4 pull to {x:430,y:660,zoom:1.3} (birds and man); 96.4..97.0 back in to the branch {x:520,y:500,zoom:2.4}; 100.0 ease to {x:450,y:640,zoom:1.35} (man overhearing in frame); 101.5..102.6 tilt down to {x:600,y:860,zoom:1.5} (roots and underground); hold."
+   },
+   "composition": "Birds at s 0.75 on the branch: hoopoeB at (480, 520), hoopoeA at (550, 520) after landing. Man stands at x 250. The buried jar is centred at (640, 1050); the ground window is a circle r 130 around it. The cage lies at x 200.",
+   "actions": [
+    {
+     "t": 89.28,
+     "cue": {
+      "word": "جلسا",
+      "t": 89.28
+     },
+     "who": "hoopoeA",
+     "action": "lands on the branch; the branch dips 10 units and springs",
+     "acting": "landSquash, wings fold late (follow-through), panting",
+     "library": "landSquash, spring on the branch"
+    },
+    {
+     "t": 89.85,
+     "cue": {
+      "word": "جلسا",
+      "t": 89.28
+     },
+     "who": "hoopoeB",
+     "action": "lands half a second later, nearly overshoots, catches her balance",
+     "acting": "tip 0.2 then back, tail fans",
+     "library": "stagger, settleTo"
+    },
+    {
+     "t": 91.32,
+     "cue": {
+      "word": "غصن،",
+      "t": 91.32
+     },
+     "who": "hoopoeB",
+     "action": "they shuffle together, breathing fast",
+     "acting": "breathe() at double rate, lids 0.4 then open",
+     "library": "breathe"
+    },
+    {
+     "t": 91.98,
+     "cue": {
+      "word": "وشكرا",
+      "t": 91.98
+     },
+     "who": "hoopoeA",
+     "action": "both turn to the man and bow; the crests fan fully open, one after the other",
+     "acting": "headRot 0.5, drop 8; crest 0 to 1 with overshoot, A then B 5 frames later",
+     "library": "bird crest, headRot, turnFlip"
+    },
+    {
+     "t": 92.98,
+     "cue": {
+      "word": "الرجل",
+      "t": 92.98
+     },
+     "who": "man",
+     "action": "stands and waves up at them with a big smile",
+     "acting": "gaze up via lookAt, sq 1.03, wave from the elbow",
+     "library": "PERSON_HANDS.wave"
+    },
+    {
+     "t": 94.54,
+     "cue": {
+      "word": "أنقذهما.",
+      "t": 94.54
+     },
+     "who": "fx",
+     "action": "a small heart drifts down from the birds to him; he puts a hand on his chest",
+     "acting": "heart sways on the way down; long warm blink",
+     "library": "heart(), PERSON_HANDS.chest"
+    },
+    {
+     "t": 95.7,
+     "cue": {
+      "word": "ثم",
+      "t": 95.7
+     },
+     "who": "man",
+     "action": "turns away and bends to pick up the empty cage, his back to the tree",
+     "acting": "unhurried; this is why he only overhears",
+     "library": "turnFlip, tip 0.3"
+    },
+    {
+     "t": 96.84,
+     "cue": {
+      "word": "قال",
+      "t": 96.84
+     },
+     "who": "hoopoeA",
+     "action": "turns to her and sidles close",
+     "acting": "two small side hops, dir flips toward B",
+     "library": "hop"
+    },
+    {
+     "t": 97.24,
+     "cue": {
+      "word": "أحدهما",
+      "t": 97.24
+     },
+     "who": "hoopoeA",
+     "action": "beak to her ear, near wing cupped round it",
+     "acting": "talk as fast beak flutter (beak 1 to 1.3), lid 0.3, sag -0.4",
+     "library": "bird beak, sag"
+    },
+    {
+     "t": 98.12,
+     "cue": {
+      "word": "للآخر:",
+      "t": 98.12
+     },
+     "who": "hoopoeB",
+     "action": "tilts her head to listen; lettering PSST... above them",
+     "acting": "headRot -0.2, lid 0.3, eyes slide toward the man"
+    },
+    {
+     "t": 98.9,
+     "cue": {
+      "word": "«علينا",
+      "t": 98.9
+     },
+     "who": "hoopoeA",
+     "action": "nods toward the man below",
+     "acting": "gazePlan: B, man, B; one nod (drop pulse)",
+     "library": "gazePlan, pulse"
+    },
+    {
+     "t": 100.22,
+     "cue": {
+      "word": "نكافئه.",
+      "t": 100.22
+     },
+     "who": "hoopoeB",
+     "action": "nods twice, crest pops open; below, the man freezes mid bend and one eye opens toward the tree",
+     "acting": "bird: drop pulses, crest 0.8; man: wink field leaves one eye open, gaze up and back, no other movement",
+     "library": "person wink; suspense by stillness"
+    },
+    {
+     "t": 101.06,
+     "cue": {
+      "word": "تحت",
+      "t": 101.06
+     },
+     "who": "hoopoeA",
+     "action": "jabs his beak straight down twice and throws a wing down to point",
+     "acting": "bird mime: drop jab, sag -0.8; gaze down the trunk",
+     "library": "bird drop, sag"
+    },
+    {
+     "t": 101.76,
+     "cue": {
+      "word": "هذه",
+      "t": 101.76
+     },
+     "who": "camera",
+     "action": "tilts down the trunk to the roots, following the pointing wing",
+     "acting": "eased, 1.1 s"
+    },
+    {
+     "t": 102.24,
+     "cue": {
+      "word": "الشجرة",
+      "t": 102.24
+     },
+     "who": "fx",
+     "action": "a round window opens in the ground under the roots",
+     "acting": "circle irises from r 0 to 130 with a dotted rim; darker soil inside with pebbles and two root tips",
+     "library": "groundWindow (new effect): circular clip + soil fill"
+    },
+    {
+     "t": 102.98,
+     "cue": {
+      "word": "جرّة",
+      "t": 102.98
+     },
+     "who": "jar",
+     "action": "the buried clay jar is inside the window; arrow label JAR",
+     "acting": "jar tilted 8 degrees, lid on; label left of the window",
+     "library": "jar {buried:true}; S.arrow"
+    },
+    {
+     "t": 103.88,
+     "cue": {
+      "word": "مليئة",
+      "t": 103.88
+     },
+     "who": "jar",
+     "action": "the jar wall goes see-through: gold coins stacked to the brim",
+     "acting": "cutaway alpha 0 to 1 over 0.3 s",
+     "library": "jar {cutaway}"
+    },
+    {
+     "t": 104.72,
+     "cue": {
+      "word": "بالذهب.»",
+      "t": 104.72
+     },
+     "who": "fx",
+     "action": "three glints on the coins and a soft yellow halftone glow",
+     "acting": "glints one at a time, not in unison",
+     "library": "K star sparkle; halftone disc"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 98.12,
+     "text": "PSST..."
+    },
+    {
+     "t": 102.98,
+     "text": "JAR"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 105.56
+   }
+  },
+  {
+   "id": "S11",
+   "start": 105.56,
+   "end": 121.22,
+   "paragraphs": [
+    6
+   ],
+   "set": "grove",
+   "cast": [
+    "man",
+    "hoopoeA",
+    "hoopoeB"
+   ],
+   "summary": "The astonished man asks: you saw gold under the earth, yet not the net that caught you?",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Keys: 105.6 {x:400,y:700,zoom:1.35}; 109.2 nudge (panel-only shake 3 units) on the jump; 110.2..111.0 twoShot(man, birds, {margin: 110}) about {x:420,y:640,zoom:1.45}; hold; the cloud at upper left is inside this frame."
+   },
+   "composition": "Man at x 300 looking up right; birds on the branch at (480..550, 520). Thought cloud for the net at world x 60..360, y 260..500, above and behind the man, clear of all three faces. The ground window reopens at (640, 1050) only while he points down.",
+   "actions": [
+    {
+     "t": 105.56,
+     "cue": {
+      "word": "سمع",
+      "t": 105.56
+     },
+     "who": "man",
+     "action": "still bent over the cage, a hand comes up to cup his ear",
+     "acting": "one eye open (wink), gaze up and back; the rest of him frozen",
+     "library": "PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 107.4,
+     "cue": {
+      "word": "الرجل",
+      "t": 107.4
+     },
+     "who": "man",
+     "action": "straightens slowly and turns to face the tree",
+     "acting": "turn with a squeeze, eyes arrive before the head",
+     "library": "turnFlip, look()"
+    },
+    {
+     "t": 107.94,
+     "cue": {
+      "word": "كلامهما",
+      "t": 107.94
+     },
+     "who": "hoopoeA",
+     "action": "the birds notice him staring: they freeze and glance at each other",
+     "acting": "caught: lids 0, crests snap flat, 2-frame glance",
+     "library": "gazePlan saccade"
+    },
+    {
+     "t": 109.36,
+     "cue": {
+      "word": "ودهش.",
+      "t": 109.36
+     },
+     "who": "man",
+     "action": "jumps with astonishment; the empty cage drops and rolls",
+     "acting": "hop 30 units, stretch sq 1.1, landSquash; eyes wide, mouth o, noBlink 1 s; a single ! over his head",
+     "library": "anticipate, hop, landSquash"
+    },
+    {
+     "t": 110.24,
+     "cue": {
+      "word": "سألهما:",
+      "t": 110.24
+     },
+     "who": "man",
+     "action": "steps toward the tree, both palms up to the birds",
+     "acting": "gaze up via lookAt, brow -0.8",
+     "library": "PERSON_HANDS.palmsUp, walk (2 steps)"
+    },
+    {
+     "t": 111.92,
+     "cue": {
+      "word": "«كيف",
+      "t": 111.92
+     },
+     "who": "man",
+     "action": "shoulders up, head tilted: how?",
+     "acting": "talk 0.8, head tilt 6 px"
+    },
+    {
+     "t": 112.68,
+     "cue": {
+      "word": "عرفتما",
+      "t": 112.68
+     },
+     "who": "man",
+     "action": "points up at the two of them",
+     "acting": "arm as angles so it reads; the birds lean back a little",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 114.0,
+     "cue": {
+      "word": "ذهب",
+      "t": 114.0
+     },
+     "who": "man",
+     "action": "points straight down at the roots; the ground window reopens for a moment over the jar",
+     "acting": "gaze follows his own finger; window r 0 to 110 and holds 1.6 s",
+     "library": "PERSON_HANDS.pointDown; groundWindow"
+    },
+    {
+     "t": 115.38,
+     "cue": {
+      "word": "تحت",
+      "t": 115.38
+     },
+     "who": "man",
+     "action": "stamps the ground once; a puff of dust",
+     "acting": "kick dust at the foot, window rim shivers",
+     "library": "dustBurst"
+    },
+    {
+     "t": 116.56,
+     "cue": {
+      "word": "ولم",
+      "t": 116.56
+     },
+     "who": "man",
+     "action": "raises the other hand; a thought cloud opens upper left",
+     "acting": "eyes go to the cloud; the ground window closes",
+     "library": "thoughtCloud"
+    },
+    {
+     "t": 117.72,
+     "cue": {
+      "word": "شبكة",
+      "t": 117.72
+     },
+     "who": "fx",
+     "action": "in the cloud: a net lying in plain sight on open ground, seeds in the middle",
+     "acting": "the mesh is bold black, impossible to miss",
+     "library": "net (planned fishingNet mesh) drawn flat"
+    },
+    {
+     "t": 118.44,
+     "cue": {
+      "word": "الصياد",
+      "t": 118.44
+     },
+     "who": "fx",
+     "action": "in the cloud: the hunter's head peeks over a bush",
+     "acting": "one sly eye, lid 0.4",
+     "library": "person 'hunter' head at s 0.45; bush()"
+    },
+    {
+     "t": 119.68,
+     "cue": {
+      "word": "أمسكت",
+      "t": 119.68
+     },
+     "who": "fx",
+     "action": "in the cloud: two tiny hoopoes walk onto the seeds and the net flips over them",
+     "acting": "net closes in 3 frames; the tiny birds squash",
+     "library": "bird at s 0.4; net {closed}"
+    },
+    {
+     "t": 120.48,
+     "cue": {
+      "word": "بكما؟»",
+      "t": 120.48
+     },
+     "who": "man",
+     "action": "arms out wide, a ? over his head; the real birds look at each other, embarrassed",
+     "acting": "man: brow -0.8, mouth o; hoopoeA scratches his head with a foot, lid 0.4; hoopoeB looks at her toes",
+     "library": "PERSON_HANDS.armsOut"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 109.36,
+     "text": "!"
+    },
+    {
+     "t": 120.48,
+     "text": "?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 121.22
+   }
+  },
+  {
+   "id": "S12",
+   "start": 121.22,
+   "end": 130.44,
+   "paragraphs": [
+    6
+   ],
+   "set": "grove",
+   "cast": [
+    "man",
+    "hoopoeA",
+    "hoopoeB"
+   ],
+   "summary": "One hoopoe answers: when destiny arrives, even obvious things can be hidden from the eyes.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Keys: 121.2 {x:450,y:470,zoom:2.0} (branch right, cloud left); slow push to zoom 2.3 by 128.6; 128.9..129.6 ease out to {x:420,y:640,zoom:1.45} to bring the man back."
+   },
+   "composition": "hoopoeB steps to the front of the branch at (455, 520); hoopoeA behind her at (540, 520). The net cloud stays at upper left (same place as S11) so the answer rewrites the question's own picture. Eye line: she speaks down left to the man.",
+   "actions": [
+    {
+     "t": 121.22,
+     "cue": {
+      "word": "أجاب",
+      "t": 121.22
+     },
+     "who": "hoopoeB",
+     "action": "the quiet one hops two steps along the branch toward the man; hoopoeA makes room",
+     "acting": "two small hops with landSquash; A leans back",
+     "library": "hop, landSquash"
+    },
+    {
+     "t": 122.46,
+     "cue": {
+      "word": "أحد",
+      "t": 122.46
+     },
+     "who": "hoopoeB",
+     "action": "lifts her beak and puffs her chest: she will answer",
+     "acting": "crest 0.5, sq 1.05, one calm blink",
+     "library": "bird crest, sq"
+    },
+    {
+     "t": 124.0,
+     "cue": {
+      "word": "«حين",
+      "t": 124.0
+     },
+     "who": "hoopoeB",
+     "action": "looks up at the sky",
+     "acting": "gaze [0,-1], headRot -0.3, lid 0.2",
+     "library": "bird headRot"
+    },
+    {
+     "t": 124.76,
+     "cue": {
+      "word": "يأتي",
+      "t": 124.76
+     },
+     "who": "fx",
+     "action": "a cloud shadow slides over the branch and the birds",
+     "acting": "a band of blue halftone dots travelling left to right over 1.6 s",
+     "library": "halftone overlay band"
+    },
+    {
+     "t": 125.2,
+     "cue": {
+      "word": "القدر،",
+      "t": 125.2
+     },
+     "who": "hoopoeB",
+     "action": "crest fans fully open; one wing lifts toward the sky",
+     "acting": "crest 1 with overshoot, sag -0.8 upward gesture, beak moving",
+     "library": "bird crest, sag, beak"
+    },
+    {
+     "t": 125.9,
+     "cue": {
+      "word": "قد",
+      "t": 125.9
+     },
+     "who": "fx",
+     "action": "in the cloud the trap scene starts again: net on the ground, two tiny hoopoes walking toward it",
+     "acting": "same drawing as S11, replayed",
+     "library": "thoughtCloud"
+    },
+    {
+     "t": 126.46,
+     "cue": {
+      "word": "تغيب",
+      "t": 126.46
+     },
+     "who": "fx",
+     "action": "in the cloud the net fades to a faint dotted outline; the tiny birds walk straight on",
+     "acting": "net alpha 1 to 0.15 over 0.5 s",
+     "library": "alpha on the net"
+    },
+    {
+     "t": 127.18,
+     "cue": {
+      "word": "العيون",
+      "t": 127.18
+     },
+     "who": "hoopoeB",
+     "action": "covers her own eyes with a wing; hoopoeA copies her six frames later",
+     "acting": "lid 1, head lowered; stagger",
+     "library": "bird sag (wing across the face), lid, stagger"
+    },
+    {
+     "t": 127.86,
+     "cue": {
+      "word": "أشياء",
+      "t": 127.86
+     },
+     "who": "fx",
+     "action": "in the cloud the net snaps back solid, closed around the two tiny birds",
+     "acting": "2-frame snap, the net bag swings",
+     "library": "net {closed}, swing"
+    },
+    {
+     "t": 128.58,
+     "cue": {
+      "word": "واضحة.»",
+      "t": 128.58
+     },
+     "who": "hoopoeB",
+     "action": "uncovers her eyes, looks down at the man, small shrug of both wings",
+     "acting": "gaze via lookAt to the man, head tilt, lid 0.2",
+     "library": "lookAt, sag"
+    },
+    {
+     "t": 129.3,
+     "who": "man",
+     "action": "nods slowly, hand to chin; the cloud pops away",
+     "acting": "two slow nods, long blink, a quiet smile",
+     "library": "PERSON_HANDS.chin"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 129.8,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 130.44
+   }
+  },
+  {
+   "id": "S13",
+   "start": 130.44,
+   "end": 142.5,
+   "paragraphs": [
+    7
+   ],
+   "set": "grove",
+   "cast": [
+    "man",
+    "hoopoeA",
+    "hoopoeB"
+   ],
+   "summary": "He digs at the foot of the tree, finds a clay jar, opens it: full of gold dinars.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Keys: 130.4 {x:560,y:800,zoom:1.7} (roots, man, hole; branch birds at the top edge); 134.4..134.6 push to {x:600,y:830,zoom:2.1}; 135.9 ease to {x:580,y:790,zoom:1.9}; 138.4 a 3-unit panel-only shake with the glow; 140.4 ease out to {x:520,y:700,zoom:1.45} so the birds are in frame."
+   },
+   "composition": "Man kneels at x 520 facing right; the hole opens at x 600..690 beside the roots; the dirt mound grows at x 400..470 behind him. The jar comes out and is set down at (610, 900). The birds lean over the branch at (480..550, 520).",
+   "actions": [
+    {
+     "t": 130.44,
+     "cue": {
+      "word": "حفر",
+      "t": 130.44
+     },
+     "who": "man",
+     "action": "kneels at the roots and digs with both hands, alternating, three scoops a second",
+     "acting": "tip 0.2, gaze on the ground, tongue-out effort is not needed: brow 0.4, mouth set",
+     "library": "person kneel + aL/aR dig cycle (see new_assets); dirt clods on seeded arcs"
+    },
+    {
+     "t": 131.3,
+     "cue": {
+      "word": "الرجل",
+      "t": 131.3
+     },
+     "who": "set",
+     "action": "the mound grows behind him; clods arc left",
+     "acting": "mound height 0 to 70 over 4 s; 2 clods per scoop from K.rng",
+     "library": "dustBurst + ellipse mound"
+    },
+    {
+     "t": 132.3,
+     "cue": {
+      "word": "أصل",
+      "t": 132.3
+     },
+     "who": "hoopoeA",
+     "action": "both birds lean over the branch to watch, heads cocked opposite ways",
+     "acting": "tip 0.25, gaze down via lookAt to the hole; blink out of phase",
+     "library": "lookAt, tip"
+    },
+    {
+     "t": 133.48,
+     "cue": {
+      "word": "حتى",
+      "t": 133.48
+     },
+     "who": "man",
+     "action": "the hole is deep: arms in to the elbows, head dipping below the rim",
+     "acting": "clip his arms and head at the hole edge",
+     "library": "evenodd clip (Fox head-into-hole method)"
+    },
+    {
+     "t": 134.58,
+     "cue": {
+      "word": "وجد",
+      "t": 134.58
+     },
+     "who": "man",
+     "action": "his hands hit something: CLINK! He freezes and looks to camera",
+     "acting": "gaze [0,0.05], eyes wide, noBlink for 0.5 s, the one lens stare of the film",
+     "library": "look to camera"
+    },
+    {
+     "t": 135.1,
+     "cue": {
+      "word": "جرّة",
+      "t": 135.1
+     },
+     "who": "jar",
+     "action": "he heaves the jar up out of the hole; soil falls off it",
+     "acting": "man: anticipate crouch, strain tip -0.1, lid 0.5 squint; the jar rises 150 units over 0.7 s",
+     "library": "anticipate; PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 135.92,
+     "cue": {
+      "word": "من",
+      "t": 135.92
+     },
+     "who": "jar",
+     "action": "sets it down on the grass with a thump of dust",
+     "acting": "landSquash on the jar (0.94), dust both sides",
+     "library": "landSquash, dustBurst"
+    },
+    {
+     "t": 136.24,
+     "cue": {
+      "word": "الفخار.",
+      "t": 136.24
+     },
+     "who": "man",
+     "action": "wipes soil off its belly with his sleeve; arrow label CLAY JAR",
+     "acting": "two wipes, head tilted, curious",
+     "library": "person handR sweep; S.arrow + S.label"
+    },
+    {
+     "t": 137.14,
+     "cue": {
+      "word": "فتحها،",
+      "t": 137.14
+     },
+     "who": "man",
+     "action": "grips the lid, twists, lifts it",
+     "acting": "tiny anticipation press down, then up; eyes on the mouth of the jar",
+     "library": "PERSON_HANDS.grip (one hand), anticipate"
+    },
+    {
+     "t": 138.4,
+     "cue": {
+      "word": "فإذا",
+      "t": 138.4
+     },
+     "who": "fx",
+     "action": "yellow rays burst up out of the jar and light his face",
+     "acting": "his eyes go wide, brow -0.8, mouth o, cap lifts 6 px and settles (lag)",
+     "library": "goldGlow (new effect): 9 tapering rays + halftone disc"
+    },
+    {
+     "t": 139.66,
+     "cue": {
+      "word": "مليئة",
+      "t": 139.66
+     },
+     "who": "coin",
+     "action": "coins brim at the mouth; two spill over and roll on the grass",
+     "acting": "roll rotation = distance / r; one topples flat",
+     "library": "coin; jar {fill:1, open:true}"
+    },
+    {
+     "t": 140.5,
+     "cue": {
+      "word": "بالدنانير",
+      "t": 140.5
+     },
+     "who": "man",
+     "action": "holds up two fingers (the two dinars he gave), looks at them, then throws both arms at the jar and laughs",
+     "acting": "gaze fingers then jar, mouth open smile, sq 1.05 bounce",
+     "library": "person aL/aR angles, look()"
+    },
+    {
+     "t": 141.56,
+     "cue": {
+      "word": "الذهبية.",
+      "t": 141.56
+     },
+     "who": "hoopoeB",
+     "action": "the birds bob with joy on the branch, crests popping",
+     "acting": "alternating hops in place, crest 0.3 to 1, never together",
+     "library": "hop, bird crest"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 134.58,
+     "text": "CLINK!"
+    },
+    {
+     "t": 136.24,
+     "text": "CLAY JAR"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 142.5
+   }
+  },
+  {
+   "id": "S14",
+   "start": 142.5,
+   "end": 149.56,
+   "paragraphs": [
+    7
+   ],
+   "set": "grove",
+   "cast": [
+    "man",
+    "hoopoeA",
+    "hoopoeB"
+   ],
+   "summary": "He thanks the hoopoes, prays for their safety, and carries the treasure away.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Hold {x:500,y:680,zoom:1.3}; drift 20 units left with his exit from 148.4."
+   },
+   "composition": "Man at x 560 below the branch, looking up left at the birds (480..550, 520). He exits screen left (the way he came). The birds finish on the branch looking after him.",
+   "actions": [
+    {
+     "t": 142.5,
+     "cue": {
+      "word": "شكر",
+      "t": 142.5
+     },
+     "who": "man",
+     "action": "stands, hand on his chest, and bows to the birds",
+     "acting": "tip 0.15, lid 0.6 on the bow, gaze up as he rises",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 143.42,
+     "cue": {
+      "word": "الهدهدين",
+      "t": 143.42
+     },
+     "who": "hoopoeA",
+     "action": "the birds bow back, crests fanning",
+     "acting": "headRot 0.5, A then B",
+     "library": "bird headRot, crest, stagger"
+    },
+    {
+     "t": 144.42,
+     "cue": {
+      "word": "ودعا",
+      "t": 144.42
+     },
+     "who": "man",
+     "action": "raises both open palms in prayer, eyes to the sky",
+     "acting": "gaze [0,-1], lids 0.4, lips moving (talk 0.4)",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 145.7,
+     "cue": {
+      "word": "بالسلامة،",
+      "t": 145.7
+     },
+     "who": "hoopoeB",
+     "action": "both take off and fly one clean, strong loop round the crown",
+     "acting": "the opposite of the weak flight: smooth arc, even flaps, crests back",
+     "library": "bird {fly:true} on a circular path"
+    },
+    {
+     "t": 146.82,
+     "cue": {
+      "word": "ثم",
+      "t": 146.82
+     },
+     "who": "man",
+     "action": "puts the lid back on the jar and pats it",
+     "acting": "lid lands with a 2 px squash"
+    },
+    {
+     "t": 147.24,
+     "cue": {
+      "word": "حمل",
+      "t": 147.24
+     },
+     "who": "man",
+     "action": "hoists the jar: crouch, lift, hug it to his chest, one staggering step back",
+     "acting": "anticipate, strain then smile; sq 0.95 under the weight",
+     "library": "anticipate, PERSON_HANDS.grip, settleTo"
+    },
+    {
+     "t": 147.68,
+     "cue": {
+      "word": "الكنز",
+      "t": 147.68
+     },
+     "who": "jar",
+     "action": "a glint runs across the jar",
+     "acting": "single sparkle"
+    },
+    {
+     "t": 148.4,
+     "cue": {
+      "word": "وعاد",
+      "t": 148.4
+     },
+     "who": "man",
+     "action": "walks off left with short heavy steps",
+     "acting": "walk amp 0.7, footfall dust, tip -0.06 leaning back against the load",
+     "library": "walk, footfalls, dustBurst"
+    },
+    {
+     "t": 149.18,
+     "cue": {
+      "word": "به.",
+      "t": 149.18
+     },
+     "who": "hoopoeA",
+     "action": "the birds land on the branch and watch him go; he looks back once",
+     "acting": "birds: lookAt the man; man: head turn, smile",
+     "library": "landSquash, lookAt"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 149.56,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S15",
+   "start": 149.56,
+   "end": 164.72,
+   "paragraphs": [
+    8
+   ],
+   "set": "hall",
+   "cast": [
+    "man",
+    "king"
+   ],
+   "summary": "Later, before the king: he tells the story and offers the gold to the treasury. The king says: keep it, it is yours.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "The LATER... card covers 149.56..151.5; the set and camera change at its covered midpoint. Keys: 151.5 twoShot(man, king, {margin: 100}) about {x:520,y:640,zoom:1.3}; 158.2 ease left 60 units to include the treasury door; 159.7 back; 162.0..164.3 push to {x:560,y:650,zoom:1.7}."
+   },
+   "composition": "palaceHall: king seated on the dais at x 740 (seat y 800, dais top y 860), facing left. Man at x 360 facing right, jar on the floor at x 450. Treasury door on the back wall at x 80..230 with a coin emblem. Story balloon above the man at x 240..520, y 300..460.",
+   "actions": [
+    {
+     "t": 149.56,
+     "cue": {
+      "word": "وبعد",
+      "t": 149.56
+     },
+     "who": "fx",
+     "action": "transition card LATER...",
+     "acting": "standard card; camera cut hidden at p = 0.5",
+     "library": "S.transition {caption: 'LATER...'}"
+    },
+    {
+     "t": 151.5,
+     "cue": {
+      "word": "وقت،",
+      "t": 151.4
+     },
+     "who": "king",
+     "action": "revealed seated on the dais, the man standing before him with the jar at his feet",
+     "acting": "king: calm, lid 0.2, hands on knees; man: respectful, hands clasped",
+     "library": "person + planned costume layer preset 'king', person sit (planned pose); PERSON_HANDS.clasp"
+    },
+    {
+     "t": 151.94,
+     "cue": {
+      "word": "أخبر",
+      "t": 151.94
+     },
+     "who": "man",
+     "action": "begins to tell it, hands opening",
+     "acting": "talk 0.7, gaze on the king",
+     "library": "PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 152.78,
+     "cue": {
+      "word": "الرجل",
+      "t": 152.78
+     },
+     "who": "fx",
+     "action": "story balloon above him: icon 1, the cage",
+     "acting": "icon pops with overshoot",
+     "library": "S.box balloon + cage at s 0.4"
+    },
+    {
+     "t": 153.38,
+     "cue": {
+      "word": "ملك",
+      "t": 153.38
+     },
+     "who": "king",
+     "action": "leans his chin on his hand, one eyebrow up",
+     "acting": "brow -0.5, gaze on the balloon",
+     "library": "PERSON_HANDS.chin"
+    },
+    {
+     "t": 153.86,
+     "cue": {
+      "word": "البلاد",
+      "t": 153.86
+     },
+     "who": "fx",
+     "action": "icon 2: the two hoopoes",
+     "acting": "pops beside the cage",
+     "library": "bird at s 0.4"
+    },
+    {
+     "t": 154.54,
+     "cue": {
+      "word": "بما",
+      "t": 154.54
+     },
+     "who": "fx",
+     "action": "icon 3: the jar with rays",
+     "acting": "the king sits up, eyes on the real jar on the floor",
+     "library": "jar at s 0.4"
+    },
+    {
+     "t": 155.56,
+     "cue": {
+      "word": "وعرض",
+      "t": 155.56
+     },
+     "who": "man",
+     "action": "lifts the jar, steps forward and sets it at the foot of the dais",
+     "acting": "anticipate, two heavy steps, half kneel (kneel 0.6)",
+     "library": "walk, person kneel"
+    },
+    {
+     "t": 156.98,
+     "cue": {
+      "word": "يضع",
+      "t": 156.98
+     },
+     "who": "man",
+     "action": "pushes it forward with both hands",
+     "acting": "head bowed, lid 0.6",
+     "library": "PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 157.42,
+     "cue": {
+      "word": "الذهب",
+      "t": 157.42
+     },
+     "who": "jar",
+     "action": "lid off: the gold glow lights the king's face",
+     "acting": "king: eyes widen a little, then soften",
+     "library": "goldGlow; jar {open:true}"
+    },
+    {
+     "t": 158.32,
+     "cue": {
+      "word": "خزينة",
+      "t": 158.32
+     },
+     "who": "man",
+     "action": "points to the treasury door; arrow label TREASURY; the coin emblem glints",
+     "acting": "gaze to the door then back to the king",
+     "library": "PERSON_HANDS.pointFwd (dir -1); S.arrow + S.label"
+    },
+    {
+     "t": 159.72,
+     "cue": {
+      "word": "لكن",
+      "t": 159.72
+     },
+     "who": "king",
+     "action": "raises one open palm: stop",
+     "acting": "slow, kind; brow -0.2, no frown",
+     "library": "PERSON_HANDS.shield (one hand)"
+    },
+    {
+     "t": 160.54,
+     "cue": {
+      "word": "الملك",
+      "t": 160.54
+     },
+     "who": "king",
+     "action": "rises from the throne and comes down one step",
+     "acting": "sit 1 to 0 with anticipation; robe hem settles",
+     "library": "person sit, anticipate, settleTo"
+    },
+    {
+     "t": 161.16,
+     "cue": {
+      "word": "قال",
+      "t": 161.16
+     },
+     "who": "king",
+     "action": "warm smile, bends toward the man",
+     "acting": "tip 0.1, mouth smile, gaze on the man's eyes"
+    },
+    {
+     "t": 162.04,
+     "cue": {
+      "word": "«احتفظ",
+      "t": 162.04
+     },
+     "who": "king",
+     "action": "puts the lid back on and slides the jar back to the man; balloon KEEP IT!",
+     "acting": "the jar slides 70 units and rocks once; balloon above the king, clear of faces",
+     "library": "person handL target; S.box balloon"
+    },
+    {
+     "t": 163.5,
+     "cue": {
+      "word": "فهو",
+      "t": 163.5
+     },
+     "who": "king",
+     "action": "points at the man: it is yours",
+     "acting": "talk 0.7, one nod",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 164.28,
+     "cue": {
+      "word": "لك.»",
+      "t": 164.28
+     },
+     "who": "man",
+     "action": "looks up, hand to his chest, eyes wet, the open mouth turns into a smile",
+     "acting": "wet true, brow -0.6, mouth o then smile, long blink",
+     "library": "PERSON_HANDS.chest"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 158.32,
+     "text": "TREASURY"
+    },
+    {
+     "t": 162.04,
+     "text": "KEEP IT!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 164.72
+   }
+  },
+  {
+   "id": "S16",
+   "start": 164.72,
+   "end": 174.32,
+   "paragraphs": [
+    8
+   ],
+   "set": "street",
+   "cast": [
+    "man",
+    "king",
+    "hoopoeA",
+    "hoopoeB"
+   ],
+   "summary": "He leaves the palace with the gold, remembering the two birds. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Keys: 164.7 {x:430,y:700,zoom:1.5} on the palace door; follow him right to {x:560,y:680,zoom:1.4} by 168.4; 169.0..170.0 pull out to {x:540,y:600,zoom:1.15} to open the sky for the cloud and the birds; hold to the end."
+   },
+   "composition": "Palace facade end of marketStreet (palette clear): door at x 300..420 with two steps, balcony window above at y 380. Man walks right to x 620. Thought cloud upper right at x 600..900, y 250..470. The real hoopoes cross the sky from left to right at y 250..330 and land on the awning pole at (800, 560). THE END title in the upper third, clear of his face.",
+   "actions": [
+    {
+     "t": 164.72,
+     "cue": {
+      "word": "فخرج",
+      "t": 164.72
+     },
+     "who": "man",
+     "action": "comes out of the palace door hugging the jar",
+     "acting": "walk(), smile, eyes still shining",
+     "library": "walk, footfalls"
+    },
+    {
+     "t": 166.02,
+     "cue": {
+      "word": "الرجل",
+      "t": 166.02
+     },
+     "who": "man",
+     "action": "down the two steps, a small hop on each",
+     "acting": "landSquash 0.96 each step; the jar bobs",
+     "library": "hop, landSquash"
+    },
+    {
+     "t": 167.08,
+     "cue": {
+      "word": "الملك",
+      "t": 167.08
+     },
+     "who": "king",
+     "action": "waves once from the balcony window above",
+     "acting": "small, in the background; the man does not see",
+     "library": "PERSON_HANDS.wave"
+    },
+    {
+     "t": 167.8,
+     "cue": {
+      "word": "والذهب",
+      "t": 167.8
+     },
+     "who": "jar",
+     "action": "the jar glints in the sun; he pats it",
+     "acting": "single sparkle, gaze down at it"
+    },
+    {
+     "t": 169.02,
+     "cue": {
+      "word": "يتذكر",
+      "t": 169.02
+     },
+     "who": "man",
+     "action": "stops and looks up; thought cloud: the two hoopoes on the fig branch, crests fanned, a heart between them",
+     "acting": "gaze up right into the cloud, soft smile, slow blink",
+     "library": "thoughtCloud; bird at s 0.5; heart()"
+    },
+    {
+     "t": 170.1,
+     "cue": {
+      "word": "الطائرين.",
+      "t": 170.1
+     },
+     "who": "hoopoeA",
+     "action": "two real hoopoes fly across the sky above him, strong and level",
+     "acting": "even flaps, B half a length behind A; the cloud fades as they pass through its place",
+     "library": "bird {fly:true}"
+    },
+    {
+     "t": 170.8,
+     "cue": {
+      "word": "الطائرين.",
+      "t": 170.1
+     },
+     "who": "man",
+     "action": "sees them and lifts one hand in a wave",
+     "acting": "gaze tracks them (look()), mouth open smile",
+     "library": "PERSON_HANDS.wave, look()"
+    },
+    {
+     "t": 171.4,
+     "who": "lettering",
+     "action": "THE END title comes in; the hoopoes land on the awning pole and fan their crests",
+     "acting": "title in the upper third; birds land with landSquash, A then B",
+     "library": "S.title; landSquash"
+    },
+    {
+     "t": 172.6,
+     "who": "man",
+     "action": "holds the wave, then lowers it and breathes; everything settles to a held picture",
+     "acting": "breathe(), natural blinks; hold to 174.32"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 171.4,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 171.6,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 174.32
+   }
+  }
+ ],
+ "ending": {
+  "t": 171.4,
+  "description": "After the last word (171.02) the two real hoopoes land on the awning pole above the man and fan their crests; he lowers his wave and breathes. THE END (S.title) in the upper third from 171.4, held to 174.32 with blinks and breathing only. One quiet chime at 171.6."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان رجل يعمل خادمًا عند أحد الأغنياء،|ثم قرر أن يترك عمله ويسافر.|أعطاه صاحب العمل دينارين أجرًا له.|أراد الرجل أن يتصدق بدينار، وأن يحتفظ بالآخر لطعامه في الطريق.",
+   "en": "A man worked as a servant for a wealthy person,|then decided to leave his job and travel.|His employer gave him two dinars in wages.|The man wanted to give one dinar in charity and keep the other for food on the road."
+  },
+  {
+   "p": 2,
+   "ar": "دخل السوق فرأى صيادًا يبيع هدهدين ضعيفين في قفص واحد.|سأل عن ثمنهما، فقال الصياد: «ديناران.»|حاول أن يشتريهما بدينار واحد،|لكن الصياد رفض.",
+   "en": "He entered the market and saw a hunter selling two weak hoopoes in one cage.|He asked their price, and the hunter said, “Two dinars.”|He tried to buy both for one dinar,|but the hunter refused."
+  },
+  {
+   "p": 3,
+   "ar": "فكر الرجل أن يشتري طائرًا واحدًا ويترك الآخر.|ثم خاف أن يكون الهدهدان زوجين، وأن يفرقهما عن بعضهما.|أشفق عليهما، ودفع الدينارين معًا،|ولم يبقَ معه شيء من أجره.",
+   "en": "The man considered buying one bird and leaving the other.|Then he feared they might be a pair and he would separate them.|He felt compassion, paid both dinars,|and had none of his wages left."
+  },
+  {
+   "p": 4,
+   "ar": "لم يرد أن يطلق الطائرين وسط السوق؛|فقد كانا جائعين وضعيفين، وربما أمسك بهما صياد آخر.|سار بهما إلى أرض بعيدة فيها أشجار كثيرة،|وفتح القفص برفق.",
+   "en": "He did not want to release the birds in the market:|they were hungry and weak, and another hunter might catch them.|He walked to a distant place full of trees|and gently opened the cage."
+  },
+  {
+   "p": 5,
+   "ar": "طار الهدهدان بصعوبة حتى وصلا إلى شجرة مثمرة.|جلسا فوق غصن، وشكرا الرجل لأنه أنقذهما.|ثم قال أحدهما للآخر: «علينا أن نكافئه.|تحت هذه الشجرة جرّة مليئة بالذهب.»",
+   "en": "The two hoopoes flew with difficulty to a fruit tree.|They perched on a branch and thanked the man for rescuing them.|Then one said to the other, “We must reward him.|Beneath this tree is a jar full of gold.”"
+  },
+  {
+   "p": 6,
+   "ar": "سمع الرجل كلامهما ودهش. سألهما: «كيف عرفتما مكان ذهب مخفي تحت الأرض،|ولم تريا شبكة الصياد التي أمسكت بكما؟»|أجاب أحد الهدهدين: «حين يأتي القدر،|قد تغيب عن العيون أشياء واضحة.»",
+   "en": "The man heard them and was astonished. He asked, “How did you know about gold hidden underground,|yet fail to see the hunter’s net that caught you?”|One hoopoe answered, “When destiny arrives,|even obvious things may be hidden from our eyes.”"
+  },
+  {
+   "p": 7,
+   "ar": "حفر الرجل عند أصل الشجرة، حتى وجد جرّة من الفخار.|فتحها، فإذا هي مليئة بالدنانير الذهبية.|شكر الهدهدين ودعا لهما بالسلامة،|ثم حمل الكنز وعاد به.",
+   "en": "The man dug beside the tree until he found a clay jar.|He opened it and discovered it was full of gold dinars.|He thanked the two hoopoes and wished them well,|then carried the treasure away."
+  },
+  {
+   "p": 8,
+   "ar": "وبعد وقت، أخبر الرجل ملك البلاد بما حدث،|وعرض أن يضع الذهب في خزينة القصر.|لكن الملك قال له: «احتفظ به، فهو لك.»|فخرج الرجل من عند الملك والذهب معه، يتذكر الطائرين.",
+   "en": "Later the man told the king what had happened|and offered to place the gold in the royal treasury.|But the king said, “Keep it. It belongs to you.”|The man left the king carrying the gold, remembering the two birds."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "hoopoe (bird kind)",
+   "description": "A new kind 'hoopoe' on the Library bird with two palettes (pal 0 cinnamon, pal 1 pale peach, 8 % smaller): barred black and white wing and tail, long thin curved beak, and a fan crest of 6 or 7 black-tipped feathers driven by the existing crest field (0 folded back, 1 fully fanned).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Add BIRD.hoopoe colours; draw the wing as the existing wing shape in black with three white bar polygons clipped to it; beak as a quadratic curve stroked 5 wide tapering to a point; crest as N tapered triangles rotated about the crown from -0.2 rad (folded) to a fan of 1.4 rad, each with a black tip. Default look of other kinds unchanged; run the regression test."
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (hunter)",
+   "description": "Adds a 'hunter' (fowler) preset to the planned person costume layer: skull cap with a feather, stubble, sleeveless jerkin, optional net on the shoulder; palette option for a second hunter. This film also uses the planned presets 'servant', 'richMan' and 'king'.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Same body, face, arm IK and PERSON_HANDS as every preset; headwear and jerkin as flat shapes over the torso; stubble as 8 dots; the net bundle is the fishingNet mesh clipped to a rounded blob."
+  },
+  {
+   "type": "prop",
+   "name": "birdCage",
+   "description": "Domed wire cage 170 x 200 with a hinged door (door 0..1.9 rad), carry ring, seed dish; back and front bar passes so characters sit inside. Reusable for any caged bird or small animal.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "cageBack(ctx, x, y, P) and cageFront(ctx, x, y, P): base rect, bars as lines to an arc dome, two hoops as ellipses; the door is a small barred rect rotated about its hinge with a horizontal squeeze (cos of the angle)."
+  },
+  {
+   "type": "prop",
+   "name": "hangingJar",
+   "description": "Uses the planned clay jar drawing standing on the ground, with new fields lidOff, fill (gold), cutaway, tilt and soil, so one jar serves as buried treasure and as a hanging store jar.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rope drawn only when a hook is given. Coins at the mouth are 5 to 7 yellow ellipses; cutaway fills the body silhouette with soil colour at alpha and draws 4 rows of coin ellipses inside the clip."
+  },
+  {
+   "type": "prop",
+   "name": "stick, coinPile, smallBowl",
+   "description": "Uses the planned coin / coinPile drawing for the two dinars, the spilled coins and the jar fill; this film adds stand, lie and roll states for a single coin.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Disc r 16 with rim and inner ring; lying = ellipse with a 4 px edge; rolling angle = distance / r."
+  },
+  {
+   "type": "prop",
+   "name": "fishingNet",
+   "description": "Uses the planned mesh drawing as a bird net: hand net, folded bundle, flat net and closed bag (in the thought cloud).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Diamond mesh lines clipped to the given outline (hoop, blob, flat ellipse, bag)."
+  },
+  {
+   "type": "effect",
+   "name": "groundWindow",
+   "description": "A round see-through window into the earth (r up to 130) that irises open at a point below ground level to show what is buried: darker soil, pebbles, root tips and whatever is drawn inside. Reusable for buried treasure, burrows, seeds, hidden water.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "ctx.save(); arc clip at (x, y, r(t)); fill the darker soil with red Ben-Day dots, 6 seeded pebbles, 2 root curves; call the inside-draw callback; restore; stroke a dashed black rim 6 wide. Radius eased with a 10 % overshoot."
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "description": "Treasure light: 9 tapering yellow rays fanning up from a point with a yellow halftone disc behind and 3 staggered star glints; strength 0..1.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rays as thin triangles with seeded lengths that breathe 5 %; halftone disc from the style module; glints with the K star primitive on offsets of 0.2 s."
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "description": "The planned generic thought cloud, used four times: the two-coin plan (S2), buying one bird (S5), the net (S11, S12) and the remembered birds (S16).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "thoughtCloud(ctx, box, t, drawInside): scalloped white cloud with a black brush outline, three trail bubbles toward the thinker, a clip, then the inside draw at its own scale."
+  },
+  {
+   "type": "motion",
+   "name": "weakFlight",
+   "description": "A struggling flight path for small birds: from A to B in n sagging arcs, each ending higher, with a short hover between, flap rate rising at the bottom of each arc; returns x, y, flap, rot, sq. The strong flight later uses a plain arc for contrast. (The guide lists flight(t, path, mood) as wanted; this is its weak mood.)",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Piecewise quadratic beziers between keyed points; y adds a downward sine sag per segment; flap = 1 + 0.5 * sag depth; rot from the path tangent; pure function of t."
+  },
+  {
+   "type": "pose",
+   "name": "person kneel / sit",
+   "description": "Uses the planned kneel and sit fields (man kneeling to open the cage and to dig; king seated on the throne and rising). Adds a dig cycle: while kneeling the two arms alternate between a reach into the hole and a throw back.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "dig(t, t0, rate) returns handL/handR targets on two half-phase-shifted ellipses (reach down-forward, sweep back-up) for the arm IK, plus a small torso bob; dirt clods are spawned from K.rng on each throw."
+  },
+  {
+   "type": "set",
+   "name": "marketStreet",
+   "description": "Uses the planned street in the clear palette at three places (merchant door, market corner with awnings, palace facade with steps and balcony).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "As planned; this film adds two striped awnings, a crate, a mat and two palace steps as separate small drawings on top of the baked layer."
+  },
+  {
+   "type": "set",
+   "name": "countryRoad",
+   "description": "Uses the planned road strip for one 5 s tracking walk from the city edge to the trees.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Three parallax layers baked wide: skyline and hills (0.3), tree row (0.6), road with milestone (1.0)."
+  },
+  {
+   "type": "set",
+   "name": "palaceHall (variant merchantHouse)",
+   "description": "Uses the planned palace hall with a throne on the dais and adds a treasury door (coin emblem, lock) on the back wall.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "As planned; the treasury door is a rounded rect in brown with two iron bands, a yellow coin disc and a black lock."
+  }
+ ],
+ "owner_questions": [
+  "A second hunter is shown for 1.5 s as an eye and a hand net peeking round a corner to picture the words \"another hunter might catch them\"; default: keep it (it is the man's worry made visible, not an event added to the story).",
+  "The man overhears the hoopoes because he has turned to pick up the cage, and the buried jar is shown to the audience through a round ground window as the bird speaks; default: keep both.",
+  "The fruit tree is drawn as a fig tree (the script says only \"a fruit tree\") to reuse the Library fig; default: fig tree.",
+  "Charity is shown in a thought cloud as a coin landing in an open hand with a heart, with no beggar character; default: no beggar.",
+  "Invented English lettering beyond the script: THE SERVANT, 2 HOOPOES, 2 DINARS!, 1?, NO!, A PAIR?, DINARS: 0, FAR AWAY, FLAP! FLAP!, PSST..., JAR, CLINK!, CLAY JAR, TREASURY, KEEP IT!; default: keep all, they are short and each sits on its spoken word.",
+  "At the end two real hoopoes fly over the man and land near him while he remembers them (the script says only that he remembers the two birds); default: keep the fly-over, he waves.",
+  "The second hoopoe (the smaller, quieter one) speaks the moral, while the first proposes the reward; the script says only \"one of them\"; default: as described.",
+  "The hunter bites a coin and the man holds up two fingers at the open jar (small comic touches); default: keep both."
+ ],
+ "implementation_notes": [
+  "Start from Library/template; cue every action with w(p, n) from timing.json. The times in this plan are the word starts in planning/inputs/timeline.md; do not re-estimate.",
+  "Set LIFE.t = t each frame so every character blinks; add hand blinks where a lid is set explicitly. Give every character a gaze target at all times (look() / lookAt()).",
+  "Hoopoes are the Library bird with the new kind: use crest as their main emotion channel (0 flat = weak, afraid, caught out; 0.3 to 0.5 = interest; 1 = thanks, joy, the moral). Talking = beak flutter between 1 and 1.3 on the speaker only; the listener tilts headRot.",
+  "The pair never moves in unison: hoopoeB follows hoopoeA by 3 to 6 frames (stagger) except in S12, where she leads.",
+  "Weak flight (S9) against strong flight (S14, S16) is the visible proof of the rescue: keep the same path style code with a mood parameter.",
+  "Cage draw order: cageBack, birds, cageFront. While carried, the cage position comes from the man's hands and the birds from the cage (rider on carrier, lurch on stops).",
+  "groundWindow and the thought clouds are drawn in world space after the cast; keep all balloons, labels and clouds off faces. The DINARS counter is in panel space at the top left of the picture panel.",
+  "Underground: the grove world shows soil from y 900 to 1230; the camera only frames it from 101.5 (S10), briefly at 114.0 (S11) and in S13. At other times keep the camera centre above y 700 so the caption panel stays the only thing in the bottom third.",
+  "Digging (S13): the hole is an evenodd clip in the ground layer that deepens with time; clip the man's arms and head at its rim (Fox head-into-hole method). The mound is an ellipse growing behind him; clods come from K.rng with a fixed seed per scoop.",
+  "The LATER... card (149.56 to about 151.5) hides the change from the grove to the hall: put the camera and set cut at its covered midpoint.",
+  "Sound: effects only at 7.9 (pop), 12.7 (chime), 20.9 (whoosh), 129.8 (chime) and 171.6 (chime); SND master 0.6. Lettering such as CLINK! and FLAP! FLAP! is silent because there is no pause under it.",
+  "Panel-only shake (template) for NO! (39.6), the astonished jump (109.36) and the gold burst (138.4); 3 units at most.",
+  "Subtitles: the chunk marks in \"subtitles\" go to chunks_ar.txt and chunks_en.txt unchanged. P6 chunk 1 (12 Arabic words) and P1 chunk 4 (11 words) are the longest: check they fit the caption panel at the default size.",
+  "Human figures share the planned costume layer; if it does not exist yet, build it once in Library (presets servant, richMan, king, hunter) rather than in this story."
+ ],
+ "warnings": [
+  "Almost everything except the grove depends on assets that are planned but not yet in Library (costume layer, marketStreet, palaceHall, countryRoad, thoughtCloud, kneel/sit). If this film is produced before the films that planned them, their cost lands here.",
+  "Only five pauses of 0.6 s or more exist, so the film has very few sound effects; the long middle (33.8 to 129.3) has none. That is correct: do not add effects under words.",
+  "The first word of several paragraphs is followed by a long gap inside the word time (for example 40.32 to 42.22, 62.68 to 64.18, 82.40 to 84.02, 105.56 to 107.40, 149.56 to 151.40): the word start may include silence. Measure the real onset before tying a sharp action to these cues.",
+  "S10 and S11 are about 16 s each on one set; the camera keys listed keep them alive, do not flatten them into one static shot.",
+  "The grove coordinates (branch at y 520, jar at (640, 1050)) are design targets, not measured from a baked set; confirm with a still that the birds, the man's head and the ground window fit one frame at zoom 1.3.",
+  "Hoopoe crest and curved beak must stay readable at s 0.62 in the cage close-up: check at phone size."
+ ]
+}

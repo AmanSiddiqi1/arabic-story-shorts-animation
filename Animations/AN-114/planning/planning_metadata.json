@@ -1,0 +1,109 @@
+{
+ "story_id": "AN-114",
+ "title": "THE RUINED MAN WHO BECAME RICH AGAIN THROUGH A DREAM",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T14:36:20",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a3acf0a9dad4c3f66.jsonl",
+ "agent_id": "a3acf0a9dad4c3f66",
+ "model_messages": {
+  "claude-fable-5-2": 23
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "4d8f4da3f12b29e5a82877edb9654223023d13e436ea81d7dbd6dcf31176b92d",
+  "paragraphs": 8,
+  "segments": [
+   "AN-114-P01-S01",
+   "AN-114-P01-S02",
+   "AN-114-P01-S03",
+   "AN-114-P01-S04",
+   "AN-114-P01-S05",
+   "AN-114-P01-S06",
+   "AN-114-P01-S07",
+   "AN-114-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-114_THE_RUINED_MAN_WHO_BECAME_RICH_AGAIN_THROUGH_A_DREAM_full_slowed.mp3",
+  "sha256": "520b194b9f79d84ce3dd43ecc96699cd2f76a4f535f302ffe26c9dfa3513f288",
+  "duration": 178.45
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-114_THE_RUINED_MAN_WHO_BECAME_RICH_AGAIN_THROUGH_A_DREAM_full_slowed.mp3.words.json",
+  "sha256": "8e92b3a2ccb25def71df1f324b59d0088f1ddfd2a62e54a174896e02c90b4722",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "5a93429",
+ "scenes": 21,
+ "actions": 176,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "courtyardHouse",
+   "effort": "L"
+  },
+  {
+   "type": "prop",
+   "name": "fountain",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "mosqueCourt",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "jailCell",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (guard)",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "ghostForm",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "fightCloud",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "mapCard",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "shovel, torch, bars, bread, chest, coinPile, purse",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "painPulse, dream wash, inset circle, flush",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Three new sets (courtyardHouse, mosqueCourt, jailCell) plus the fountain: courtyardHouse is the costly one (wealth, build, cutaway and dug states). If time is short, jailCell can be palaceHall wall 'blue' with a barred townWindow.",
+  "The guard costume preset is planned by other films but not in the Library yet; until it exists use costume 'servant' with pal overrides and a scene-drawn helmet.",
+  "The figure is front-facing only: carrying a sack on the back (7.8 to 10.6) and digging (160 to 163) must be staged with arm angles and world hand targets and may need a still check for readability.",
+  "The recognition (134.6 to 144.3) depends on the audience remembering the courtyard; if the first review finds it unclear, lengthen the hold on the fountain at 3.3 to 4.7.",
+  "S14 is 15.7 s on one set; the cloud build gives a change on every noun, keep those cues exact."
+ ],
+ "coordinator_adjustment": "3-minute cap: end_hold 3.0 -> 1.55"
+}

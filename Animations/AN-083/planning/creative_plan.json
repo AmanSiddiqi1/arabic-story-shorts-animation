@@ -1,0 +1,2536 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-083",
+ "title": "Ma'an the Son of Zaidah and the Three Girls",
+ "duration": 165.407,
+ "end_hold": 4.5,
+ "logline": "A thirsty prince out hunting is given water by three girls who never ask who he is; with no coins to thank them he gives away his thirty gold-tipped arrows, and the gift itself tells them his name.",
+ "moral": "Kindness given without asking who it is for is answered by generosity, and a person is known by what he gives, not by his clothes or his company.",
+ "tone": "Warm, sunny and gently comic for the first half (heat, empty waterskins, empty purses), a bright reveal in the middle, then lyrical and a little tender for the three verses; calm, glowing ending.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.44,
+   "kind": "setup",
+   "cue": {
+    "word": "الأمير",
+    "t": 0.44
+   },
+   "summary": "Prince Ma'an goes hunting with two men on a burning day, dressed as plainly as they are."
+  },
+  {
+   "id": "B2",
+   "t": 10.32,
+   "kind": "rising",
+   "cue": {
+    "word": "العطش",
+    "t": 10.32
+   },
+   "summary": "Deep in the desert the thirst bites."
+  },
+  {
+   "id": "B3",
+   "t": 16.2,
+   "kind": "comic",
+   "cue": {
+    "word": "يجدوا",
+    "t": 16.2
+   },
+   "summary": "The waterskins are empty: not enough even for the prince."
+  },
+  {
+   "id": "B4",
+   "t": 23.57,
+   "kind": "inciting",
+   "cue": {
+    "word": "ظهرت",
+    "t": 23.57
+   },
+   "summary": "Three girls appear over a dune with full waterskins."
+  },
+  {
+   "id": "B5",
+   "t": 36.72,
+   "kind": "emotion",
+   "cue": {
+    "word": "قدمن",
+    "t": 36.72
+   },
+   "summary": "Without asking his name they give him water at once."
+  },
+  {
+   "id": "B6",
+   "t": 45.14,
+   "kind": "turn",
+   "cue": {
+    "word": "أراد",
+    "t": 45.14
+   },
+   "summary": "Refreshed, he wants to repay the kindness."
+  },
+  {
+   "id": "B7",
+   "t": 57.36,
+   "kind": "comic",
+   "cue": {
+    "word": "نقودًا",
+    "t": 57.36
+   },
+   "summary": "Nobody brought money on a hunt."
+  },
+  {
+   "id": "B8",
+   "t": 63.8,
+   "kind": "suspense",
+   "cue": {
+    "word": "فتح",
+    "t": 63.8
+   },
+   "summary": "He thinks, then opens his quiver."
+  },
+  {
+   "id": "B9",
+   "t": 69.22,
+   "kind": "reveal",
+   "cue": {
+    "word": "الذهب",
+    "t": 69.22
+   },
+   "summary": "The arrowheads are gold."
+  },
+  {
+   "id": "B10",
+   "t": 76.72,
+   "kind": "climax",
+   "cue": {
+    "word": "ثلاثين",
+    "t": 76.72
+   },
+   "summary": "Ten each: thirty golden arrows instead of coins."
+  },
+  {
+   "id": "B11",
+   "t": 90.56,
+   "kind": "surprise",
+   "cue": {
+    "word": "معن",
+    "t": 90.56
+   },
+   "summary": "One girl works it out: only Ma'an bin Zaidah does this."
+  },
+  {
+   "id": "B12",
+   "t": 107.96,
+   "kind": "emotion",
+   "cue": {
+    "word": "أنشدت",
+    "t": 107.96
+   },
+   "summary": "They thank him in verse; three pictured poems, the last one tender."
+  },
+  {
+   "id": "B13",
+   "t": 154.54,
+   "kind": "moral",
+   "cue": {
+    "word": "هديته",
+    "t": 154.54
+   },
+   "summary": "They knew him by his gift, not his clothes or attendants."
+  },
+  {
+   "id": "B14",
+   "t": 162.44,
+   "kind": "resolution",
+   "cue": {
+    "word": "ذكرى",
+    "t": 162.44
+   },
+   "summary": "The arrows stay with the girls as a keepsake of the meeting."
+  }
+ ],
+ "cast": [
+  {
+   "id": "maan",
+   "name": "Prince Ma'an bin Zaidah",
+   "library": "person",
+   "base": "person costume:'bedouin' with pal overrides",
+   "new": false,
+   "look": "Deliberately plain so the moral works: bedouin preset, pal {robe: blue #1d5bd0, dot: darker blue, sash: yellow, hc: white, band: black}, age 0.3 (black moustache and short beard), s 1.0. No crown, no jewel. Quiver on his back, bow slung. Open, kind face; default small smile."
+  },
+  {
+   "id": "man1",
+   "name": "first huntsman (the loyal one)",
+   "library": "person",
+   "base": "person costume:'bedouin' default sand palette",
+   "new": false,
+   "look": "Bedouin preset default colours, age 0.45, s 0.96, seed 11. Steady, a little smug about his master. Carries a bow and a flat waterskin."
+  },
+  {
+   "id": "man2",
+   "name": "second huntsman (the comic one)",
+   "library": "person",
+   "base": "person costume:'bedouin' pal brown",
+   "new": false,
+   "look": "Bedouin preset, pal {robe: brown, hc: red, band: black}, age 0.15, s 0.92, seed 23. Suffers most in the heat, reacts biggest, always a few frames late."
+  },
+  {
+   "id": "girl1",
+   "name": "first girl (the eldest, who recognises him)",
+   "library": "person",
+   "base": "person costume:'villageWoman'",
+   "new": false,
+   "look": "villageWoman preset as drawn (red dress, yellow headscarf), age 0, s 0.9, seed 31. Calm and quick-witted; she acts first and speaks first."
+  },
+  {
+   "id": "girl2",
+   "name": "second girl (the lively one)",
+   "library": "person",
+   "base": "person costume:'villageWoman' pal blue",
+   "new": false,
+   "look": "villageWoman, pal {robe: blue, dot: darker blue, hc: white}, age 0, s 0.86, seed 37. Talkative, big gestures, laughs easily."
+  },
+  {
+   "id": "girl3",
+   "name": "third girl (the youngest, shy)",
+   "library": "person",
+   "base": "person costume:'villageWoman' pal green",
+   "new": false,
+   "look": "villageWoman, pal {robe: green, dot: dark green, hc: red}, age 0, s 0.8, seed 41. Shy, peeks from behind the others; her verse is the tender one."
+  },
+  {
+   "id": "versePeople",
+   "name": "small figures inside the verse insets",
+   "library": "person",
+   "base": "person presets bedouin, villager, physician at s 0.5-0.55",
+   "new": false,
+   "look": "A small double of Ma'an (same palette), a kneeling poor villager, a friend (villager green), a foe (bedouin, dark navy robe, hold:'stick' as a spear), a physician (age 0.8) and a seated bandaged soldier. Each at least 110 px tall on screen."
+  }
+ ],
+ "sets": [
+  {
+   "id": "desertRoad",
+   "library": null,
+   "new": true,
+   "description": "The planned desertRoad travel strip, used as open desert: world 2000 x 1230, ground line y 900. Sky: sky() day preset shifted pale (yellow-white near the horizon), large sun r 90 at (190,170). Three layers of flat dunes: far (crests y 700-740, pale yellow with red dot shading on the lee side), mid (crests y 780-820), and one FRONT dune lip from x 1450 to 2000 with its crest at (1560, 850) falling to the ground line at x 1450; the girls rise from behind this lip. One far palm at x 420 (scale 0.5, on the far dune) and one rock (120 x 70) at x 1750. Ground: sand ochre with sparse ripple strokes. Zone A (thirst) is x 0-800, zone B (meeting) x 900-1700. Late-afternoon option via skyCycle for the ending."
+  }
+ ],
+ "props": [
+  {
+   "id": "waterskin",
+   "library": null,
+   "new": true,
+   "description": "Goatskin water bag (qirba): brown rounded sack 78 x 50 with a short tied neck, four stub corners and a shoulder strap; fields fill 0..1 (round and taut to flat and creased), slosh, tilt, squeeze."
+  },
+  {
+   "id": "quiver",
+   "library": null,
+   "new": true,
+   "description": "Leather quiver 36 wide x 118 tall with a flap lid (open 0..1), yellow trim band, strap; shows n red fletchings above the rim (n 0..30, drawn as up to 8)."
+  },
+  {
+   "id": "goldArrow",
+   "library": null,
+   "new": true,
+   "description": "Arrow 120 long: black-outlined pale shaft 5 thick, red two-vane fletching 22 long, leaf-shaped head 26 x 16 in process yellow with a white facet and red dot shading; glint option."
+  },
+  {
+   "id": "arrowBundle",
+   "library": null,
+   "new": true,
+   "description": "n arrows (1..10) held as a tight fan, heads up, tied with a red cord; built from goldArrow."
+  },
+  {
+   "id": "bow",
+   "library": null,
+   "new": true,
+   "description": "Simple recurve bow 150 tall: brown arc 7 thick and a thin string; worn across the back or held."
+  },
+  {
+   "id": "purse",
+   "library": null,
+   "new": true,
+   "description": "The planned drawstring purse (AN-095), here empty: limp brown pouch 40 x 46, open mouth, turned upside down."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 11.4,
+   "paragraphs": [
+    1
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "maan",
+    "man1",
+    "man2"
+   ],
+   "summary": "A white-hot desert. Ma'an, plainly dressed, strides in at the head of two huntsmen; the walk slows and sags as the heat and thirst bite.",
+   "camera": {
+    "shot": "establishing",
+    "move": "track",
+    "notes": "Keys: 0-0.4 {x:500,y:640,zoom:1.0}; 0.4-6.0 track with Ma'an to {x:560,y:680,zoom:1.15}; 7.0-10.8 slow push to {x:700,y:720,zoom:1.45} on the three sagging figures. Sun stays in the top-left of frame."
+   },
+   "composition": "Sun (r 90) at world (190,170) with heat rings. Ma'an leads at screen centre-right, men staggered behind him to the left (never in step). Faces at y 690-720, well above the caption panel.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 0.4,
+     "cue": {
+      "word": "خرج",
+      "t": 0.0
+     },
+     "who": "set",
+     "action": "Empty dunes under a huge sun; heat shimmer lines wobble over the ground",
+     "acting": "stillness for 0.4 s so the heat reads before anyone enters",
+     "library": "desertRoad set (baked) + sun(ctx,190,170,t) + new heatShimmer effect"
+    },
+    {
+     "t": 0.4,
+     "end": 6.0,
+     "cue": {
+      "word": "الأمير",
+      "t": 0.44
+     },
+     "who": "maan",
+     "action": "Walks in from the left edge (x -80 to 520), brisk, chest out, bow slung",
+     "acting": "gaze ahead [1,0.1], small smile, tip 0.04 forward, quiver bouncing 3 px on each footfall",
+     "library": "person {costume:'bedouin', pal} + walk(MX,t) + footfalls"
+    },
+    {
+     "t": 1.0,
+     "end": 2.6,
+     "cue": {
+      "word": "معن",
+      "t": 1.12
+     },
+     "who": "lettering",
+     "action": "Label MA'AN with an arrow to the leader, pops on his name and leaves at 3.0",
+     "acting": "label sits above his head, never over a face",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 2.9,
+     "end": 4.0,
+     "cue": {
+      "word": "حار",
+      "t": 3.46
+     },
+     "who": "fx",
+     "action": "Sun rays pulse once and a wavy heat band crosses the frame",
+     "acting": "Ma'an squints (lid 0.35) for half a second, wipes brow with handR",
+     "library": "sun() scale pulse + heatShimmer; PERSON_HANDS.headHold one hand"
+    },
+    {
+     "t": 4.0,
+     "end": 6.0,
+     "cue": {
+      "word": "للصيد",
+      "t": 4.18
+     },
+     "who": "man1",
+     "action": "Two huntsmen follow 150 and 270 units behind, bows on their shoulders, out of step with each other",
+     "acting": "man1 eager, gaze on Ma'an; man2 already looking up at the sun (gaze [0.3,-0.9])",
+     "library": "person {costume:'bedouin', pal} x2 + walk() with phase offsets + stagger(i)"
+    },
+    {
+     "t": 6.2,
+     "end": 7.0,
+     "who": "fx",
+     "action": "Hot wind: three dust streaks drift right to left across the ground in the pause",
+     "acting": "headcloth tails flick back 2 frames late",
+     "library": "dustBurst along the ground; kick() on the headcloth offset"
+    },
+    {
+     "t": 7.0,
+     "end": 8.8,
+     "cue": {
+      "word": "ابتعدوا",
+      "t": 7.0
+     },
+     "who": "maan",
+     "action": "Keeps walking (x 520 to 700) but slower; the dunes scroll and the far palm slides out of frame",
+     "acting": "pace halves; tip goes from 0.04 forward to 0 (upright, tiring)",
+     "library": "walk(MX,t) (amp follows speed) + camera track"
+    },
+    {
+     "t": 8.8,
+     "end": 10.3,
+     "cue": {
+      "word": "واشتد",
+      "t": 8.82
+     },
+     "who": "man2",
+     "action": "Shoulders drop, feet drag, he fans himself with one hand",
+     "acting": "lid 0.5, mouth 'o', sq 0.96, arms hang (aL/aR near straight down), tremble 1 px",
+     "library": "person aL/aR + sq + PERSON_HANDS.wave slowed"
+    },
+    {
+     "t": 10.3,
+     "end": 11.1,
+     "cue": {
+      "word": "العطش",
+      "t": 10.32
+     },
+     "who": "maan",
+     "action": "Stops, touches his throat and swallows",
+     "acting": "gaze down, mouth 'frown', lid 0.45, a single sweat drop falls from the chin; men stop one after the other 4 and 8 frames later",
+     "library": "handR to PERSON_HANDS.chest raised to neck + stagger(i)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 1.12,
+     "text": "MA'AN"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 6.6,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 11.4
+   }
+  },
+  {
+   "id": "S2",
+   "start": 11.4,
+   "end": 20.3,
+   "paragraphs": [
+    1
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "maan",
+    "man1",
+    "man2"
+   ],
+   "summary": "They search their waterskins: one drop, then nothing. Not even enough for the prince.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "11.4 {x:690,y:735,zoom:1.6} three-shot; 15.8-17.0 push to {x:700,y:745,zoom:1.9}; 18.3-19.6 ease to Ma'an alone {x:720,y:720,zoom:2.1}."
+   },
+   "composition": "Ma'an at x 720 on the right of the group facing left toward his men (dir -1); man1 at 600, man2 at 490. The upended waterskin is held at the centre of frame, above the heads' chin line.",
+   "actions": [
+    {
+     "t": 11.4,
+     "end": 12.0,
+     "who": "man1",
+     "action": "Upends his waterskin over his open mouth in the pause; one fat drop falls and misses, hitting the sand",
+     "acting": "anticipation: head back, mouth 'open', eyes follow the drop down (gaze plan), sq 0.95 as it lands; tiny steam puff where it hits",
+     "library": "new waterskin {fill:0, tilt:2.6} + fallY for the drop + dustBurst (white)"
+    },
+    {
+     "t": 12.0,
+     "end": 13.6,
+     "cue": {
+      "word": "بحثوا",
+      "t": 12.03
+     },
+     "who": "man2",
+     "action": "Shakes his own skin by his ear, then squeezes it flat like an empty tube",
+     "acting": "cupEar pose with the skin; hopeful brows (-0.4) turn to a frown; man1 watches him (lookAt)",
+     "library": "PERSON_HANDS.cupEar + waterskin {fill:0, squeeze:1} + lookAt"
+    },
+    {
+     "t": 13.6,
+     "end": 14.6,
+     "cue": {
+      "word": "أوعيتهم",
+      "t": 13.66
+     },
+     "who": "man1",
+     "action": "Peers with one eye into the neck of the skin",
+     "acting": "wink 'L', head tilted, the skin held at eye height by handRW",
+     "library": "person wink + handRW world target"
+    },
+    {
+     "t": 14.66,
+     "end": 16.2,
+     "cue": {
+      "word": "لكنهم",
+      "t": 14.66
+     },
+     "who": "maan",
+     "action": "Looks from one man to the other, palm out asking",
+     "acting": "saccade gaze man1, man2, man1 (gazePlan 0.07), brow -0.3, handR palmsUp",
+     "library": "gazePlan + PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 16.2,
+     "end": 17.6,
+     "cue": {
+      "word": "يجدوا",
+      "t": 16.2
+     },
+     "who": "man2",
+     "action": "Both men shake their heads and turn the skins neck down: nothing comes out",
+     "acting": "heads shake out of phase (man2 two frames late), lids 0.4, mouths 'frown'; NO WATER! pops between them above head height",
+     "library": "tip oscillation +-0.03 + waterskin {tilt:3.1} + S.emphasis"
+    },
+    {
+     "t": 17.66,
+     "end": 18.8,
+     "cue": {
+      "word": "حتى",
+      "t": 17.66
+     },
+     "who": "man1",
+     "action": "Offers his skin to Ma'an anyway with a bow of the head",
+     "acting": "gaze down in apology, tip 0.1, handRW holding the limp skin out",
+     "library": "handRW + tip"
+    },
+    {
+     "t": 18.88,
+     "end": 19.6,
+     "cue": {
+      "word": "الأمير",
+      "t": 18.88
+     },
+     "who": "maan",
+     "action": "Takes it, tilts it, gets nothing, and hands it back with a tired half smile",
+     "acting": "lid 0.5, mouth 'smile' small (he does not blame them), a long blink at 19.4",
+     "library": "waterskin handover (position lerp between hands) + blink"
+    },
+    {
+     "t": 19.7,
+     "end": 20.3,
+     "who": "fx",
+     "action": "LATER card wipes across during the pause",
+     "acting": "the three trudge on underneath as the card covers them",
+     "library": "S.transition {caption:'LATER...'}; hidden camera cut at its midpoint to x 1000"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 16.2,
+     "text": "NO WATER!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 11.6,
+     "kind": "pop"
+    },
+    {
+     "t": 20.0,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 19.7,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S3",
+   "start": 20.3,
+   "end": 29.0,
+   "paragraphs": [
+    2
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "maan",
+    "man1",
+    "man2",
+    "girl1",
+    "girl2",
+    "girl3"
+   ],
+   "summary": "Trudging on, the men see three girls rise over a dune with full waterskins on their shoulders.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "20.3 {x:1000,y:700,zoom:1.2} on the trudging men; 23.2-24.6 pan right to {x:1330,y:690,zoom:1.05} so the dune crest and the girls enter from the right; hold to 29.0."
+   },
+   "composition": "Men on the left third (x 1040-1180 by 23.5), dune crest right of centre at x 1500. Girls appear head first above the crest line, in a diagonal by height. Eye line: the men look up-right, the girls look down-left.",
+   "actions": [
+    {
+     "t": 20.96,
+     "end": 23.4,
+     "cue": {
+      "word": "وبينما",
+      "t": 20.96
+     },
+     "who": "maan",
+     "action": "Trudges right (x 900 to 1180), heavy steps, men behind",
+     "acting": "tip -0.03 (leaning back, spent), lid 0.5, feet drag: dust on every footfall",
+     "library": "walk + footfalls + dustBurst"
+    },
+    {
+     "t": 22.0,
+     "end": 23.4,
+     "cue": {
+      "word": "يسيرون",
+      "t": 22.06
+     },
+     "who": "man2",
+     "action": "Stumbles a half step and is steadied by man1's hand on his arm",
+     "acting": "sq 0.93 dip then settleTo upright; man1 glances at him",
+     "library": "anticipate/settleTo + handRW"
+    },
+    {
+     "t": 23.4,
+     "end": 24.7,
+     "cue": {
+      "word": "ظهرت",
+      "t": 23.57
+     },
+     "who": "girl1",
+     "action": "Her head, then shoulders rise over the dune crest; she walks down the near slope",
+     "acting": "calm, mouth 'smile', gaze ahead-left; the waterskin on her shoulder sways 2 frames after each step",
+     "library": "person {costume:'villageWoman', age:0, pal} drawn behind the dune front layer + walk"
+    },
+    {
+     "t": 24.2,
+     "end": 25.6,
+     "cue": {
+      "word": "ثلاث",
+      "t": 24.22
+     },
+     "who": "girl2",
+     "action": "Second and third girls rise behind her 0.35 s apart; a small counter 1, 2, 3 ticks above the crest",
+     "acting": "girl2 chatting back to girl3 (talk 0.5, gaze right); girl3, the smallest, hurries to keep up (faster leg phase)",
+     "library": "stagger + S.counter + walk"
+    },
+    {
+     "t": 25.6,
+     "end": 27.2,
+     "cue": {
+      "word": "يحملن",
+      "t": 25.6
+     },
+     "who": "man1",
+     "action": "Stops dead, points, mouth open",
+     "acting": "eyes 'wide', handR pointFwd, sq 1.06 stretch then settle",
+     "library": "PERSON_HANDS.pointFwd + settleTo"
+    },
+    {
+     "t": 26.6,
+     "end": 28.2,
+     "cue": {
+      "word": "قربًا",
+      "t": 26.6
+     },
+     "who": "waterskin",
+     "action": "The three waterskins are round and heavy; an arrow and the label WATER! point at the nearest one; a blue glint slides across each",
+     "acting": "skins bulge and slosh (fill 1, slosh from walk speed)",
+     "library": "waterskin {fill:1, slosh} + S.arrow + S.label"
+    },
+    {
+     "t": 27.9,
+     "end": 29.0,
+     "cue": {
+      "word": "أكتافهن",
+      "t": 28.26
+     },
+     "who": "maan",
+     "action": "Straightens up; hope comes back into his face",
+     "acting": "lid 0.5 to 0, brow -0.5, gaze locked on the skins (lookAt), tip back to 0.03 forward",
+     "library": "lookAt + blend on lid/tip"
+    },
+    {
+     "t": 28.3,
+     "end": 29.0,
+     "cue": {
+      "word": "أكتافهن",
+      "t": 28.26
+     },
+     "who": "girl3",
+     "action": "The girls reach the flat (x 1430, 1530, 1630) and notice the men; girl3 half hides behind girl2",
+     "acting": "girl1 steady gaze at Ma'an; girl3 peeks (x offset 20 behind, one eye visible)",
+     "library": "lookAt + draw order"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 26.6,
+     "text": "WATER!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 29.0
+   }
+  },
+  {
+   "id": "S4",
+   "start": 29.0,
+   "end": 40.0,
+   "paragraphs": [
+    2
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "maan",
+    "man1",
+    "man2",
+    "girl1",
+    "girl2",
+    "girl3"
+   ],
+   "summary": "Ma'an steps forward and asks for a little water. No questions asked: the girls hand it over at once.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot(Ma'an head, girl1 head, {margin:150}) from 29.0 (about {x:1370,y:715,zoom:1.5}); 36.3-38.3 push in to {x:1370,y:725,zoom:1.8} on the handover."
+   },
+   "composition": "Ma'an left (x 1300, dir 1), girl1 right (x 1430, dir -1), girl2 and girl3 behind her at 1530 and 1630, men soft at the left edge. The waterskin crosses the exact centre of frame.",
+   "actions": [
+    {
+     "t": 29.02,
+     "end": 30.9,
+     "cue": {
+      "word": "اقترب",
+      "t": 29.02
+     },
+     "who": "maan",
+     "action": "Walks three steps toward the girls (x 1180 to 1300) and stops at a polite distance",
+     "acting": "open posture, hands low and visible; gaze to girl1's face",
+     "library": "walk + footfalls"
+    },
+    {
+     "t": 30.9,
+     "end": 31.8,
+     "cue": {
+      "word": "معن",
+      "t": 31.04
+     },
+     "who": "maan",
+     "action": "Bows his head and puts his right hand on his chest",
+     "acting": "tip 0.08, lid 0.6 for 6 frames (respect), then eyes up",
+     "library": "PERSON_HANDS.chest + tip"
+    },
+    {
+     "t": 31.78,
+     "end": 33.6,
+     "cue": {
+      "word": "وطلب",
+      "t": 31.78
+     },
+     "who": "maan",
+     "action": "Asks: cups his hand to his mouth like a small drinking bowl, then shows a tiny gap between finger and thumb (a little)",
+     "acting": "talk 0.6 on the words, brow -0.4, dry swallow at 33.3",
+     "library": "talk + handR hand targets (mouth, then pointFwd low)"
+    },
+    {
+     "t": 33.74,
+     "end": 35.3,
+     "cue": {
+      "word": "لم",
+      "t": 33.74
+     },
+     "who": "girl2",
+     "action": "Girl2 opens her mouth to ask something; girl1 is already unslinging her waterskin",
+     "acting": "girl2 talk 0.4 with a raised finger that stops halfway; girl1 does not hesitate (anticipation dip sq 0.96, then the skin swings forward)",
+     "library": "anticipate + waterskin swing (swing()) + PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 35.38,
+     "end": 36.3,
+     "cue": {
+      "word": "اسمه",
+      "t": 35.66
+     },
+     "who": "fx",
+     "action": "A small question-mark balloon starts to form over girl2 and pops unfinished",
+     "acting": "girl2 shrugs and smiles; it does not matter who he is",
+     "library": "iconBalloon (planned) or cloud() with a ? scaled 0 to 0.6 to 0"
+    },
+    {
+     "t": 36.72,
+     "end": 37.8,
+     "cue": {
+      "word": "قدمن",
+      "t": 36.72
+     },
+     "who": "girl1",
+     "action": "Holds the full waterskin out with both hands",
+     "acting": "arms straight out (reachBoth), gaze on him, mouth 'smile', tip 0.06",
+     "library": "PERSON_HANDS.reachBoth + handLW/handRW on the skin"
+    },
+    {
+     "t": 37.4,
+     "end": 38.3,
+     "cue": {
+      "word": "إليه",
+      "t": 37.4
+     },
+     "who": "maan",
+     "action": "Takes it with both hands; the weight pulls his arms down 12 px before he lifts it",
+     "acting": "eyes 'wide' with relief, sq 0.95 then settle",
+     "library": "waterskin position lerp + settleTo"
+    },
+    {
+     "t": 38.3,
+     "end": 39.2,
+     "cue": {
+      "word": "فورًا",
+      "t": 38.3
+     },
+     "who": "girl3",
+     "action": "Girl2 and girl3 hurry past with their skins toward the two huntsmen",
+     "acting": "girl3 trots (short quick steps), the men's hands already reaching",
+     "library": "walk + PERSON_HANDS.reachBoth on men"
+    },
+    {
+     "t": 39.2,
+     "end": 40.0,
+     "cue": {
+      "word": "فورًا",
+      "t": 38.3
+     },
+     "who": "maan",
+     "action": "Lifts the skin toward his mouth: held breath before the drink",
+     "acting": "anticipation: head tips back, lid closing",
+     "library": "anticipate + handLW/handRW"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 40.0
+   }
+  },
+  {
+   "id": "S5",
+   "start": 40.0,
+   "end": 49.0,
+   "paragraphs": [
+    3
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "maan",
+    "man1",
+    "man2",
+    "girl1",
+    "girl2",
+    "girl3"
+   ],
+   "summary": "He drinks until the thirst is gone, and at once wants to thank them.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "40.0 {x:1310,y:715,zoom:2.0} on Ma'an drinking; 43.9-45.2 pull out to twoShot with the girls {x:1400,y:715,zoom:1.45}."
+   },
+   "composition": "Ma'an centre, skin raised across his face diagonal; after the pull-out the three girls are on the right, men drinking small at the far left.",
+   "actions": [
+    {
+     "t": 40.0,
+     "end": 41.8,
+     "cue": {
+      "word": "شرب",
+      "t": 40.0
+     },
+     "who": "maan",
+     "action": "Drinks in long gulps: head back, the skin shrinks with each gulp",
+     "acting": "lid 1, throat bob on a 0.45 s cycle (countedBeats), a drop runs down the chin",
+     "library": "waterskin {fill 1 to 0.45} + countedBeats().dip on the head"
+    },
+    {
+     "t": 40.9,
+     "end": 43.0,
+     "cue": {
+      "word": "معن",
+      "t": 40.86
+     },
+     "who": "man1",
+     "action": "Behind him both men drink too, man2 with the skin held far too high so it splashes his face",
+     "acting": "man2 blinks hard and laughs; man1 wipes his moustache",
+     "library": "waterskin + PERSON_HANDS.moustache"
+    },
+    {
+     "t": 41.86,
+     "end": 43.1,
+     "cue": {
+      "word": "حتى",
+      "t": 41.86
+     },
+     "who": "maan",
+     "action": "Colour and posture return: he grows a few px taller with each gulp",
+     "acting": "sq from 0.96 to 1.03, shoulders back",
+     "library": "sq blend"
+    },
+    {
+     "t": 43.14,
+     "end": 43.9,
+     "cue": {
+      "word": "عطشه",
+      "t": 43.14
+     },
+     "who": "maan",
+     "action": "Lowers the skin and lets out a long satisfied breath (one small puff)",
+     "acting": "eyes open bright, big 'smile', breathe() amplitude doubled for one cycle",
+     "library": "breathe + mouth"
+    },
+    {
+     "t": 43.96,
+     "end": 45.1,
+     "cue": {
+      "word": "ثم",
+      "t": 43.96
+     },
+     "who": "maan",
+     "action": "Hands the lighter skin back to girl1 with a small bow",
+     "acting": "gaze to her, tip 0.08; she takes it and slings it",
+     "library": "handover lerp + tip"
+    },
+    {
+     "t": 45.14,
+     "end": 46.3,
+     "cue": {
+      "word": "أراد",
+      "t": 45.14
+     },
+     "who": "maan",
+     "action": "Hand on heart, then both palms open toward the three girls",
+     "acting": "warm, brow -0.3, talk 0.4",
+     "library": "PERSON_HANDS.chest then palmsUp"
+    },
+    {
+     "t": 46.38,
+     "end": 47.5,
+     "cue": {
+      "word": "الفتيات",
+      "t": 46.38
+     },
+     "who": "girl1",
+     "action": "The girls wave it off: it was only water",
+     "acting": "girl1 small head shake and smile, girl2 flaps a hand, girl3 looks at her feet (shy, lid 0.4)",
+     "library": "PERSON_HANDS.wave + tip oscillation"
+    },
+    {
+     "t": 47.58,
+     "end": 49.0,
+     "cue": {
+      "word": "معروفهن",
+      "t": 47.58
+     },
+     "who": "maan",
+     "action": "Pats his sash where a purse should be: nothing. Pats the other side. Pause",
+     "acting": "gaze drops to his own waist, brows up, the smile freezes",
+     "library": "handR/handL to sash (local hand targets) + gaze down"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 49.0
+   }
+  },
+  {
+   "id": "S6",
+   "start": 49.0,
+   "end": 60.1,
+   "paragraphs": [
+    3
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "maan",
+    "man1",
+    "man2",
+    "girl1",
+    "girl2",
+    "girl3"
+   ],
+   "summary": "He turns to his men for money. They came to hunt: nobody brought a single coin.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "49.0 {x:1330,y:720,zoom:1.6}; pan left with his turn 49.36-50.6 to {x:1170,y:720,zoom:1.6} (Ma'an on the right edge, men centre and left); hold; 58.8 ease back to {x:1300,y:715,zoom:1.4} including the girls."
+   },
+   "composition": "Ma'an at x 1300 now facing left (dir -1), man1 at 1150, man2 at 1050 facing right. Girls stay visible at the right edge after 58.8 as waiting onlookers.",
+   "actions": [
+    {
+     "t": 49.36,
+     "end": 50.5,
+     "cue": {
+      "word": "التفت",
+      "t": 49.36
+     },
+     "who": "maan",
+     "action": "Turns to face his men (flip with a squeeze, not a mirror pop)",
+     "acting": "head leads, body follows 3 frames later; eyebrows asking",
+     "library": "turnFlip(t, [49.4], 0.3) + dir"
+    },
+    {
+     "t": 50.5,
+     "end": 52.0,
+     "cue": {
+      "word": "رجاله",
+      "t": 50.32
+     },
+     "who": "maan",
+     "action": "Beckons with two fingers, then rubs finger and thumb: coins",
+     "acting": "talk 0.5, gaze man1 then man2 (look plan)",
+     "library": "look() + handR targets"
+    },
+    {
+     "t": 52.0,
+     "end": 54.3,
+     "cue": {
+      "word": "مالًا",
+      "t": 52.0
+     },
+     "who": "fx",
+     "action": "A small coin icon pops above his rubbing fingers and an arrow hops from it toward the girls",
+     "acting": "the icon shows what he is asking for, then fades at 54.3",
+     "library": "coinPile (planned, single coin) + S.arrow"
+    },
+    {
+     "t": 54.44,
+     "end": 55.7,
+     "cue": {
+      "word": "لكن",
+      "t": 54.44
+     },
+     "who": "man1",
+     "action": "The men look at each other, then at the ground",
+     "acting": "mutual glance (lookAt each other) for 0.5 s, then gaze down, mouths 'frown'",
+     "library": "lookAt + gazePlan"
+    },
+    {
+     "t": 55.7,
+     "end": 57.3,
+     "cue": {
+      "word": "لم",
+      "t": 55.7
+     },
+     "who": "man1",
+     "action": "man1 pulls out a purse and turns it upside down: empty",
+     "acting": "holds it by the corner, shakes twice, peers inside with one eye",
+     "library": "purse (planned) {open:1, empty:true} + wink"
+    },
+    {
+     "t": 56.84,
+     "end": 58.2,
+     "cue": {
+      "word": "معهم",
+      "t": 56.84
+     },
+     "who": "man2",
+     "action": "man2 turns out both hands, then lifts his bow and shrugs",
+     "acting": "palmsUp, shoulders up 6 px, apologetic smile, brow -0.5",
+     "library": "PERSON_HANDS.palmsUp + bow prop"
+    },
+    {
+     "t": 58.26,
+     "end": 59.4,
+     "cue": {
+      "word": "رحلة",
+      "t": 58.42
+     },
+     "who": "maan",
+     "action": "Ma'an's shoulders drop; he rubs the back of his neck",
+     "acting": "lid 0.4, gaze to the sand, mouth flat",
+     "library": "PERSON_HANDS.headHold (one hand) + sq 0.97"
+    },
+    {
+     "t": 59.5,
+     "end": 60.1,
+     "who": "girl2",
+     "action": "In the pause the girls quietly shoulder their skins and half turn to go",
+     "acting": "no fuss: girl1 already facing away, girl3 gives a little wave",
+     "library": "turnFlip + PERSON_HANDS.wave"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 57.36,
+     "text": "NO COINS!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 59.8,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 60.1
+   }
+  },
+  {
+   "id": "S7",
+   "start": 60.1,
+   "end": 70.4,
+   "paragraphs": [
+    4
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "maan",
+    "man1",
+    "man2",
+    "girl1"
+   ],
+   "summary": "A thought, a glance over his shoulder, and the quiver comes open: every arrowhead is gold.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "60.1 {x:1300,y:700,zoom:2.1} Ma'an close; 64.3-65.6 tilt down to the quiver at his hip {x:1290,y:770,zoom:2.4}; 65.84 cut to an insert of the arrowheads (panel-filling, zoom 3.2) until 70.4."
+   },
+   "composition": "Close on Ma'an's face (eyes on the upper third). In the insert five arrowheads fan up from the quiver mouth across the centre, tips at mid-frame, sky behind for contrast.",
+   "actions": [
+    {
+     "t": 60.7,
+     "end": 61.9,
+     "cue": {
+      "word": "فكر",
+      "t": 60.7
+     },
+     "who": "maan",
+     "action": "Chin in hand, eyes scan the sand, the sky, his own hands",
+     "acting": "saccades (gazePlan 0.07) left, up, down; brow 0.3; a slow blink",
+     "library": "PERSON_HANDS.chin + gazePlan"
+    },
+    {
+     "t": 61.92,
+     "end": 63.3,
+     "cue": {
+      "word": "قليلًا",
+      "t": 61.92
+     },
+     "who": "maan",
+     "action": "His eyes stop, slide sideways to the strap on his shoulder, and widen",
+     "acting": "the idea lands in the eyes first, then the brows lift, then a slow smile",
+     "library": "gaze to quiver (lookAt) + brow blend + settleTo"
+    },
+    {
+     "t": 63.36,
+     "end": 64.3,
+     "cue": {
+      "word": "ثم",
+      "t": 63.36
+     },
+     "who": "maan",
+     "action": "Swings the quiver round from his back to his front",
+     "acting": "anticipation: shoulder dips back, then the quiver arcs forward and overshoots 8 degrees",
+     "library": "quiver {swing} with anticipate + swing()"
+    },
+    {
+     "t": 64.3,
+     "end": 65.6,
+     "cue": {
+      "word": "جعبة",
+      "t": 64.34
+     },
+     "who": "quiver",
+     "action": "He flips the leather flap open; red fletchings stick up inside",
+     "acting": "men lean in from the left edge (tip 0.1), girl1 looks back over her shoulder",
+     "library": "new quiver {open 0 to 1} + lookAt"
+    },
+    {
+     "t": 65.84,
+     "end": 67.2,
+     "cue": {
+      "word": "كانت",
+      "t": 65.84
+     },
+     "who": "goldArrow",
+     "action": "Insert: his hand draws one arrow up out of the quiver, slowly",
+     "acting": "the shaft comes first, the head still hidden by the rim",
+     "library": "new goldArrow drawn through a clip at the quiver rim"
+    },
+    {
+     "t": 67.22,
+     "end": 68.8,
+     "cue": {
+      "word": "السهام",
+      "t": 67.22
+     },
+     "who": "goldArrow",
+     "action": "The head clears the rim: flat process yellow with a white facet and red dot shading",
+     "acting": "hold 6 frames of stillness as it appears",
+     "library": "goldArrow {gold:true} + clip release"
+    },
+    {
+     "t": 68.84,
+     "end": 69.9,
+     "cue": {
+      "word": "الذهب",
+      "t": 69.22
+     },
+     "who": "fx",
+     "action": "A glint sweeps the head, rays fan out behind it; GOLD! pops beside it; four more heads rise in a fan",
+     "acting": "one star glint per head, staggered 3 frames",
+     "library": "goldGlow (planned) + S.emphasis + stagger"
+    },
+    {
+     "t": 69.9,
+     "end": 70.4,
+     "cue": {
+      "word": "الذهب",
+      "t": 69.22
+     },
+     "who": "man2",
+     "action": "Cut back wide: man2's jaw drops, man1 nods as if he always knew",
+     "acting": "man2 eyes 'wide' mouth 'o'; man1 arms folded, smug lid 0.4",
+     "library": "PERSON_HANDS.folded"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 69.22,
+     "text": "GOLD!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 60.4,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 70.4
+   }
+  },
+  {
+   "id": "S8",
+   "start": 70.4,
+   "end": 80.24,
+   "paragraphs": [
+    4
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "maan",
+    "man1",
+    "man2",
+    "girl1",
+    "girl2",
+    "girl3"
+   ],
+   "summary": "Ten golden arrows to each girl: 10, 20, 30. Arrows instead of coins.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "70.4 {x:1420,y:715,zoom:1.35}; drift right with him as he goes down the line: 71.4 girl1, 72.9 girl2, 74.9 girl3 (x 1420 to 1500); 76.7 settle {x:1480,y:715,zoom:1.3} on all three holding bundles."
+   },
+   "composition": "Ma'an moves along the line of girls left to right; each girl receives in turn. The running counter sits in the top-right corner of the picture panel (panel space), clear of every head.",
+   "actions": [
+    {
+     "t": 70.42,
+     "end": 71.4,
+     "cue": {
+      "word": "أعطى",
+      "t": 70.42
+     },
+     "who": "maan",
+     "action": "Counts ten arrows out into a bundle, quick flicks of the fingers",
+     "acting": "tongue-tip concentration (mouth 'smile' small), eyes on the count",
+     "library": "arrowBundle {n 1 to 10} growing in his hand"
+    },
+    {
+     "t": 71.42,
+     "end": 72.1,
+     "cue": {
+      "word": "فتاة",
+      "t": 71.42
+     },
+     "who": "girl1",
+     "action": "girl1 receives the first bundle in both hands",
+     "acting": "reachBoth, then the weight dips her hands 8 px; eyes 'wide'",
+     "library": "PERSON_HANDS.reachBoth + arrowBundle handover + settleTo"
+    },
+    {
+     "t": 72.16,
+     "end": 72.9,
+     "cue": {
+      "word": "عشرة",
+      "t": 72.16
+     },
+     "who": "lettering",
+     "action": "Counter 10 pops top-right with a tick",
+     "acting": "counter does a 0.1 s dip before each number",
+     "library": "S.counter + countedBeats().dip"
+    },
+    {
+     "t": 72.88,
+     "end": 74.6,
+     "cue": {
+      "word": "سهام",
+      "t": 72.88
+     },
+     "who": "girl2",
+     "action": "Ma'an steps to girl2 and hands her ten; counter 20",
+     "acting": "girl2 laughs with her hand over her mouth and nearly drops them, catches them against her chest",
+     "library": "walk (one step) + PERSON_HANDS.mouthCover + S.counter"
+    },
+    {
+     "t": 74.86,
+     "end": 76.2,
+     "cue": {
+      "word": "الفتيات",
+      "t": 74.86
+     },
+     "who": "girl3",
+     "action": "girl3, the smallest, gets hers; the bundle looks huge in her arms",
+     "acting": "she hugs it, looks up at him, then at the tips (gaze plan), sq 0.95 under the weight",
+     "library": "arrowBundle + lookAt + sq"
+    },
+    {
+     "t": 76.72,
+     "end": 77.5,
+     "cue": {
+      "word": "ثلاثين",
+      "t": 76.72
+     },
+     "who": "lettering",
+     "action": "Counter jumps to 30 and grows; label 30 GOLDEN ARROWS underlines it",
+     "acting": "all thirty tips glint once in a wave from left to right",
+     "library": "S.counter + S.label + stagger glints"
+    },
+    {
+     "t": 77.5,
+     "end": 79.0,
+     "cue": {
+      "word": "سهمًا",
+      "t": 77.5
+     },
+     "who": "quiver",
+     "action": "Ma'an turns his quiver upside down: empty, and he grins",
+     "acting": "pats its bottom twice, shrugs happily; man2 slaps his own forehead",
+     "library": "quiver {tilt:3.1} + PERSON_HANDS.headHold (man2)"
+    },
+    {
+     "t": 79.02,
+     "end": 80.24,
+     "cue": {
+      "word": "بدل",
+      "t": 79.02
+     },
+     "who": "fx",
+     "action": "A coin icon with a red cross is replaced by an arrow icon with a tick above Ma'an",
+     "acting": "simple swap, 0.4 s each",
+     "library": "coinPile single coin + S.box + goldArrow icon"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 72.16,
+     "text": "10"
+    },
+    {
+     "t": 74.2,
+     "text": "20"
+    },
+    {
+     "t": 76.72,
+     "text": "30 GOLDEN ARROWS"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 80.24
+   }
+  },
+  {
+   "id": "S9",
+   "start": 80.24,
+   "end": 88.0,
+   "paragraphs": [
+    5
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "girl1",
+    "girl2",
+    "girl3",
+    "maan"
+   ],
+   "summary": "The girls stare at the gold in their hands. One of them turns to the other two.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "80.24 {x:1530,y:720,zoom:1.7} three girls; slow push to zoom 1.95 by 84.5; hold."
+   },
+   "composition": "Three faces in a shallow arc at y 700-730, the arrow tips fanned at chest height between them catching the light. Ma'an is out of frame except his shadow at the left edge.",
+   "actions": [
+    {
+     "t": 80.24,
+     "end": 82.0,
+     "cue": {
+      "word": "نظرت",
+      "t": 80.24
+     },
+     "who": "girl1",
+     "action": "All three look down at the bundles; the yellow of the tips lights their chins",
+     "acting": "eyes 'wide', heads tilt down 5 px one after another (stagger 4 frames)",
+     "library": "gaze down + stagger + yellow under-glow (halftone disc at low alpha)"
+    },
+    {
+     "t": 82.1,
+     "end": 83.3,
+     "cue": {
+      "word": "الفتيات",
+      "t": 82.1
+     },
+     "who": "girl2",
+     "action": "girl2 taps a tip with a fingernail; it rings (two sound arcs)",
+     "acting": "curious, brow -0.4, then looks at the others",
+     "library": "handRW to the tip + soundArcs"
+    },
+    {
+     "t": 83.34,
+     "end": 84.7,
+     "cue": {
+      "word": "السهام",
+      "t": 83.34
+     },
+     "who": "girl3",
+     "action": "girl3 holds one arrow up against the sun; the glint crosses her face",
+     "acting": "one eye shut against the light (wink), mouth 'o'",
+     "library": "wink + goldGlow small"
+    },
+    {
+     "t": 84.04,
+     "end": 85.4,
+     "cue": {
+      "word": "بدهشة",
+      "t": 84.04
+     },
+     "who": "girl1",
+     "action": "The three slowly look at each other, then all at the man off-screen left",
+     "acting": "shared look (lookAt each other), then three gazes swing left in turn; no blink for 0.8 s",
+     "library": "gazePlan + noBlink window"
+    },
+    {
+     "t": 85.44,
+     "end": 86.7,
+     "cue": {
+      "word": "قالت",
+      "t": 85.44
+     },
+     "who": "girl1",
+     "action": "girl1 turns to her friends and pulls them into a huddle with a hand on girl2's sleeve",
+     "acting": "decisive: brow 0.2, tip 0.08 toward them",
+     "library": "turnFlip + handRW"
+    },
+    {
+     "t": 86.76,
+     "end": 88.0,
+     "cue": {
+      "word": "لصاحبتَيها",
+      "t": 86.76
+     },
+     "who": "girl2",
+     "action": "The two lean in to listen, bundles clutched",
+     "acting": "tip toward girl1, gaze on her mouth, girl3 on tiptoe (y -8)",
+     "library": "lookAt + tip"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 85.0,
+     "kind": "chime"
+    },
+    {
+     "t": 87.8,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 88.0
+   }
+  },
+  {
+   "id": "S10",
+   "start": 88.0,
+   "end": 100.18,
+   "paragraphs": [
+    5
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "maan",
+    "man1",
+    "man2",
+    "girl1",
+    "girl2",
+    "girl3"
+   ],
+   "summary": "She says it out loud: only Ma'an bin Zaidah does this. Even his war arrows carry gold. The plain traveller is unmasked by his own gift.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "whip",
+    "notes": "88.0 {x:1530,y:720,zoom:1.9} huddle; at 90.4 whip left to Ma'an {x:1300,y:705,zoom:2.0} for the name; 92.0 pull to the full group {x:1400,y:715,zoom:1.3}; 97.9-99.5 push in on the raised arrow {x:1480,y:640,zoom:1.9}."
+   },
+   "composition": "Huddle of three on the right; after the whip Ma'an alone centre, plain robe, no jewel, the name label above him. In the group shot the raised arrow is the highest point of the composition.",
+   "actions": [
+    {
+     "t": 88.12,
+     "end": 89.8,
+     "cue": {
+      "word": "لا",
+      "t": 88.12
+     },
+     "who": "girl1",
+     "action": "Speaks low and fast to the other two, wagging one arrow like a finger",
+     "acting": "talk 0.7, eyes bright, small head shakes on 'no one does this'",
+     "library": "talk + handR holding goldArrow"
+    },
+    {
+     "t": 89.84,
+     "end": 90.5,
+     "cue": {
+      "word": "إلا",
+      "t": 89.84
+     },
+     "who": "girl1",
+     "action": "Stops, turns her head toward the man, and points the arrow at him",
+     "acting": "anticipation: a breath in (sq 1.03), then the point snaps out and settles",
+     "library": "anticipate + settleTo + PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 90.56,
+     "end": 92.0,
+     "cue": {
+      "word": "معن",
+      "t": 90.56
+     },
+     "who": "maan",
+     "action": "Whip to Ma'an: caught, he gives a small guilty smile and a one-finger hush",
+     "acting": "one look to camera ([0,0.05]) for 0.5 s, then back to the girls; label MA'AN BIN ZAIDAH stamps in above him with an arrow",
+     "library": "PERSON_HANDS.hush + S.label + S.arrow (look to camera once only)"
+    },
+    {
+     "t": 92.06,
+     "end": 93.5,
+     "cue": {
+      "word": "الذي",
+      "t": 92.06
+     },
+     "who": "girl2",
+     "action": "girl2 and girl3 gasp and look from the arrows to him and back",
+     "acting": "eyes 'wide', PERSON_HANDS.cheeks on girl2; girl3 hides half her face behind her bundle",
+     "library": "PERSON_HANDS.cheeks + gazePlan"
+    },
+    {
+     "t": 93.52,
+     "end": 94.8,
+     "cue": {
+      "word": "الناس",
+      "t": 93.52
+     },
+     "who": "fx",
+     "action": "Three tiny open hands pop in a row above the girls (the people who know his generosity), then a heart",
+     "acting": "icons 60 px, staggered, gone by 94.8",
+     "library": "heart() + simple hand icons via S.box row"
+    },
+    {
+     "t": 94.86,
+     "end": 96.5,
+     "cue": {
+      "word": "حتى",
+      "t": 94.86
+     },
+     "who": "girl1",
+     "action": "Lifts one arrow high over her head toward the sun",
+     "acting": "arm up by angle (aR near [2.6, 2.8]) so it reads at phone size; gaze up at the tip",
+     "library": "aR angles + goldArrow at hand"
+    },
+    {
+     "t": 96.56,
+     "end": 98.1,
+     "cue": {
+      "word": "التي",
+      "t": 96.56
+     },
+     "who": "man1",
+     "action": "Behind Ma'an the two huntsmen nod proudly and mime drawing a bow",
+     "acting": "man1 pulls an invisible string, man2 copies him one beat late",
+     "library": "aL/aR + stagger"
+    },
+    {
+     "t": 98.12,
+     "end": 99.4,
+     "cue": {
+      "word": "الحرب",
+      "t": 98.12
+     },
+     "who": "goldArrow",
+     "action": "The raised arrowhead fills the top of frame",
+     "acting": "steady hold, rays turning slowly",
+     "library": "goldGlow"
+    },
+    {
+     "t": 99.5,
+     "end": 100.18,
+     "cue": {
+      "word": "الذهب",
+      "t": 99.5
+     },
+     "who": "fx",
+     "action": "Big glint burst on the word gold; Ma'an rubs his neck, bashful",
+     "acting": "his lid 0.4, smile, gaze down",
+     "library": "goldGlow pulse + PERSON_HANDS.headHold"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 90.56,
+     "text": "MA'AN BIN ZAIDAH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 100.18
+   }
+  },
+  {
+   "id": "S11",
+   "start": 100.18,
+   "end": 107.9,
+   "paragraphs": [
+    6
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "maan",
+    "man1",
+    "man2",
+    "girl1",
+    "girl2",
+    "girl3"
+   ],
+   "summary": "The girls agree: each will thank him with a few lines of verse.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "{x:1420,y:715,zoom:1.3} group shot, held; the acting carries it."
+   },
+   "composition": "Girls in a tight triangle on the right with heads together; Ma'an and men left, waiting politely, a clear gap of sand between the groups.",
+   "actions": [
+    {
+     "t": 100.18,
+     "end": 102.1,
+     "cue": {
+      "word": "اتفقت",
+      "t": 100.18
+     },
+     "who": "girl1",
+     "action": "Huddle: three heads together, whispering; bundles tucked under arms",
+     "acting": "girl1 talks, the others nod out of phase; quick glances over the shoulder at Ma'an",
+     "library": "talk + tip + gazePlan"
+    },
+    {
+     "t": 102.24,
+     "end": 103.7,
+     "cue": {
+      "word": "الفتيات",
+      "t": 102.24
+     },
+     "who": "maan",
+     "action": "Ma'an and the men lean sideways trying to hear",
+     "acting": "three leans at different angles (tip 0.06, 0.1, 0.14), PERSON_HANDS.cupEar on man2",
+     "library": "tip + PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 103.76,
+     "end": 104.9,
+     "cue": {
+      "word": "تشكره",
+      "t": 103.76
+     },
+     "who": "girl2",
+     "action": "The three nod together and put their free hands in, one on top of another",
+     "acting": "hands stack with 3-frame stagger, a small bounce on the last",
+     "library": "handRW world targets + stagger"
+    },
+    {
+     "t": 104.96,
+     "end": 105.9,
+     "cue": {
+      "word": "واحدة",
+      "t": 104.96
+     },
+     "who": "girl3",
+     "action": "They count off with raised fingers: one, two, three",
+     "acting": "girl3 holds up three fingers proudly, corrects it to her own number",
+     "library": "PERSON_HANDS.pointUp + S.counter small"
+    },
+    {
+     "t": 105.92,
+     "end": 107.2,
+     "cue": {
+      "word": "بكلمات",
+      "t": 105.92
+     },
+     "who": "fx",
+     "action": "A scroll icon unrolls above the huddle with three wavy verse lines on it",
+     "acting": "scroll pops on 'words', lines draw on 'verse'",
+     "library": "scroll (planned) + S.box"
+    },
+    {
+     "t": 107.26,
+     "end": 107.9,
+     "cue": {
+      "word": "الشعر",
+      "t": 107.26
+     },
+     "who": "girl1",
+     "action": "The huddle opens into a line facing him; girl1 steps forward and clears her throat",
+     "acting": "anticipation: chin up, a breath, hand on chest",
+     "library": "walk (one step) + anticipate + PERSON_HANDS.chest"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 107.9
+   }
+  },
+  {
+   "id": "S12",
+   "start": 107.9,
+   "end": 121.6,
+   "paragraphs": [
+    6
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "maan",
+    "man1",
+    "man2",
+    "girl1",
+    "girl2",
+    "girl3"
+   ],
+   "summary": "The first girl recites. Her verse appears as a picture: golden arrows that help the needy, even on the way to battle.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "107.9 {x:1440,y:715,zoom:1.9} on girl1 reciting; 110.3-111.6 pull out and tilt up to {x:1400,y:600,zoom:1.15} so the verse inset (centre world 1380,330, radius 230) sits above the group."
+   },
+   "composition": "Lower half: girl1 forward at x 1400, Ma'an at 1260 listening, others behind. Upper half: a round inset panel with a dotted yellow rim, joined to girl1 by three musical-note shapes (not a thought trail).",
+   "actions": [
+    {
+     "t": 107.96,
+     "end": 109.5,
+     "cue": {
+      "word": "أنشدت",
+      "t": 107.96
+     },
+     "who": "girl1",
+     "action": "Begins to recite: one arm rises in a slow arc, head lifted",
+     "acting": "talk 0.6 on a steady rhythm, lid 0.3 (eyes half closed, feeling the words)",
+     "library": "talk + aR angles + breathe"
+    },
+    {
+     "t": 109.56,
+     "end": 110.3,
+     "cue": {
+      "word": "الأولى",
+      "t": 109.56
+     },
+     "who": "lettering",
+     "action": "A small tag FIRST with her arrow counter 1 pops beside her and goes at 111.5",
+     "acting": "kept small, lower left of her, off her face",
+     "library": "S.label"
+    },
+    {
+     "t": 110.28,
+     "end": 111.6,
+     "cue": {
+      "word": "أبياتًا",
+      "t": 110.28
+     },
+     "who": "fx",
+     "action": "The verse inset opens above her: an iris from a dot to radius 230, three notes drifting up into it",
+     "acting": "Ma'an's gaze lifts from her to the picture",
+     "library": "inset circle (planned) + lookAt"
+    },
+    {
+     "t": 111.68,
+     "end": 112.9,
+     "cue": {
+      "word": "رجلًا",
+      "t": 111.68
+     },
+     "who": "versePeople",
+     "action": "Inside: a small warrior (Ma'an's palette, plus a plain helmet shape) stands with a bow",
+     "acting": "figure about 130 px tall on screen, heroic stance (hipsHands)",
+     "library": "person {costume:'bedouin', pal} at s 0.55 inside the inset clip"
+    },
+    {
+     "t": 112.98,
+     "end": 114.6,
+     "cue": {
+      "word": "سهامه",
+      "t": 112.98
+     },
+     "who": "versePeople",
+     "action": "He looses an arrow; it flies across the inset leaving a dotted gold arc",
+     "acting": "anticipation pull back, release, follow-through of the bow arm",
+     "library": "goldArrow on a bezier (kfn) + anticipate"
+    },
+    {
+     "t": 114.68,
+     "end": 116.4,
+     "cue": {
+      "word": "عونًا",
+      "t": 114.68
+     },
+     "who": "versePeople",
+     "action": "The arrow lands softly in the open hands of a kneeling poor man; its gold head becomes a loaf of bread and a coin",
+     "acting": "the poor man looks up, smile, wet eyes",
+     "library": "person {costume:'villager', kneel:1, wet:true} + PERSON_HANDS.reachBoth + pop swap"
+    },
+    {
+     "t": 116.54,
+     "end": 118.0,
+     "cue": {
+      "word": "حتى",
+      "t": 116.54
+     },
+     "who": "girl1",
+     "action": "Below, girl1 sweeps her arm toward the horizon",
+     "acting": "talk continues, gaze far left; girl2 mouths along",
+     "library": "aL angles + talk"
+    },
+    {
+     "t": 118.06,
+     "end": 119.5,
+     "cue": {
+      "word": "يخرج",
+      "t": 118.06
+     },
+     "who": "versePeople",
+     "action": "In the inset the warrior marches left toward two crossed-spear silhouettes on a ridge, still handing an arrow to a second kneeling figure as he passes",
+     "acting": "walk without sliding; the enemies are flat black shapes only, no fight shown",
+     "library": "walk + flat silhouettes (rect + triangles)"
+    },
+    {
+     "t": 119.56,
+     "end": 121.3,
+     "cue": {
+      "word": "أعدائه",
+      "t": 119.56
+     },
+     "who": "maan",
+     "action": "Ma'an listens, hand on his chest, touched",
+     "acting": "lid 0.3, small nod on the last word, gaze returns from the inset to girl1",
+     "library": "PERSON_HANDS.chest + tip nod"
+    },
+    {
+     "t": 121.34,
+     "end": 121.6,
+     "who": "fx",
+     "action": "Inset irises shut; girl1 steps back with a small bow",
+     "acting": "girl2 already stepping forward",
+     "library": "inset circle close + walk"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 109.56,
+     "text": "FIRST"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 121.6
+   }
+  },
+  {
+   "id": "S13",
+   "start": 121.6,
+   "end": 135.2,
+   "paragraphs": [
+    7
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "maan",
+    "man1",
+    "man2",
+    "girl1",
+    "girl2",
+    "girl3"
+   ],
+   "summary": "The second girl: he gives freely to friend and foe alike, and his generosity does not stop in wartime.",
+   "camera": {
+    "shot": "medium",
+    "move": "drift",
+    "notes": "121.6 {x:1420,y:600,zoom:1.15} (same upper-inset framing); slow drift right 15 units over the scene; no cuts."
+   },
+   "composition": "girl2 forward at x 1400; inset above as before but with a red dotted rim. Inside, Ma'an's small double in the centre, a friend on his left and a foe on his right, symmetrical.",
+   "actions": [
+    {
+     "t": 121.96,
+     "end": 123.6,
+     "cue": {
+      "word": "ثم",
+      "t": 121.96
+     },
+     "who": "girl2",
+     "action": "girl2 steps forward, tosses her headscarf tail back and starts with a flourish of the hand",
+     "acting": "the lively one: bigger gestures, talk 0.8, eyebrows working",
+     "library": "walk + PERSON_HANDS.armsOut + talk"
+    },
+    {
+     "t": 123.7,
+     "end": 124.3,
+     "cue": {
+      "word": "الثانية",
+      "t": 123.7
+     },
+     "who": "lettering",
+     "action": "Tag SECOND beside her",
+     "acting": "small, off the face, gone by 125.5",
+     "library": "S.label"
+    },
+    {
+     "t": 124.38,
+     "end": 125.8,
+     "cue": {
+      "word": "أبياتًا",
+      "t": 124.38
+     },
+     "who": "fx",
+     "action": "Her inset opens (red rim) with notes drifting up",
+     "acting": "girl3 watches her, mouthing the words",
+     "library": "inset circle"
+    },
+    {
+     "t": 126.76,
+     "end": 128.0,
+     "cue": {
+      "word": "الأمير",
+      "t": 126.76
+     },
+     "who": "versePeople",
+     "action": "Inside: the small Ma'an with a full quiver, arms open",
+     "acting": "open stance, smile",
+     "library": "person + PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 128.12,
+     "end": 128.8,
+     "cue": {
+      "word": "بسخاء",
+      "t": 128.12
+     },
+     "who": "versePeople",
+     "action": "Gold coins and arrows pour from both his hands in two arcs",
+     "acting": "8 pieces per side, staggered, each on a short ballistic path",
+     "library": "kfn arcs + stagger; coinPile singles"
+    },
+    {
+     "t": 128.88,
+     "end": 130.1,
+     "cue": {
+      "word": "للأصدقاء",
+      "t": 128.88
+     },
+     "who": "versePeople",
+     "action": "Left: a friend (green robe) catches them, arrow label FRIEND",
+     "acting": "friend laughs, hands up",
+     "library": "person {costume:'villager'} + S.label small"
+    },
+    {
+     "t": 130.22,
+     "end": 131.1,
+     "cue": {
+      "word": "والأعداء",
+      "t": 130.22
+     },
+     "who": "versePeople",
+     "action": "Right: a scowling foe (dark robe, spear) gets exactly the same shower; his scowl melts into surprise",
+     "acting": "brow 0.8 to -0.5 over 0.5 s, spear lowers 30 degrees; label FOE",
+     "library": "person {costume:'bedouin', pal dark} + brow blend + hold:'stick' as spear"
+    },
+    {
+     "t": 131.2,
+     "end": 132.9,
+     "cue": {
+      "word": "ولا",
+      "t": 131.2
+     },
+     "who": "girl2",
+     "action": "Below, girl2 wags a finger: it never stops",
+     "acting": "talk, pointUp wag on a 0.4 s cycle; Ma'an smiles at the ground, embarrassed by praise",
+     "library": "PERSON_HANDS.pointUp + tip"
+    },
+    {
+     "t": 132.94,
+     "end": 134.0,
+     "cue": {
+      "word": "كرمه",
+      "t": 132.94
+     },
+     "who": "versePeople",
+     "action": "Inset background flips to dusk red with crossed spears on the horizon; the shower of gold keeps falling without a break",
+     "acting": "the giving figure does not change pose at all: that is the point",
+     "library": "sky(ctx,{preset:'dusk'}) inside the clip"
+    },
+    {
+     "t": 134.08,
+     "end": 135.2,
+     "cue": {
+      "word": "أوقات",
+      "t": 134.08
+     },
+     "who": "girl2",
+     "action": "girl2 finishes with a curtsey; the inset closes; she nudges girl3 forward",
+     "acting": "girl3 shakes her head, then takes a breath",
+     "library": "inset close + handRW nudge + anticipate"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 123.7,
+     "text": "SECOND"
+    },
+    {
+     "t": 128.88,
+     "text": "FRIEND"
+    },
+    {
+     "t": 130.22,
+     "text": "FOE"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 121.7,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 135.2
+   }
+  },
+  {
+   "id": "S14",
+   "start": 135.2,
+   "end": 144.06,
+   "paragraphs": [
+    7
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "maan",
+    "man1",
+    "man2",
+    "girl1",
+    "girl2",
+    "girl3"
+   ],
+   "summary": "The third and youngest: this gold could pay to heal a wounded person, or for a dead person's shroud. The mood softens.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "135.2 {x:1430,y:600,zoom:1.15}; 141.2-143.4 very slow push to zoom 1.3 toward the inset; everything quiet."
+   },
+   "composition": "girl3 small and forward at x 1410; her inset has a blue rim. Inside, left half: a physician and a seated patient; right half (on the word shroud): a folded white cloth on a low stand with one flower. Nothing graphic.",
+   "actions": [
+    {
+     "t": 135.34,
+     "end": 136.1,
+     "cue": {
+      "word": "أما",
+      "t": 135.34
+     },
+     "who": "girl3",
+     "action": "girl3 steps forward clutching her bundle, eyes down",
+     "acting": "shy: lid 0.4, shoulders in, small voice (talk 0.35)",
+     "library": "walk + talk"
+    },
+    {
+     "t": 136.2,
+     "end": 137.1,
+     "cue": {
+      "word": "الثالثة",
+      "t": 136.2
+     },
+     "who": "lettering",
+     "action": "Tag THIRD beside her",
+     "acting": "small; gone by 138",
+     "library": "S.label"
+    },
+    {
+     "t": 137.16,
+     "end": 138.4,
+     "cue": {
+      "word": "فوصفت",
+      "t": 137.16
+     },
+     "who": "girl3",
+     "action": "She looks up; the inset opens above her (blue rim)",
+     "acting": "eyes lift to it, voice steadies (talk 0.5), one hand opens",
+     "library": "inset circle + PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 139.36,
+     "end": 140.4,
+     "cue": {
+      "word": "يدفع",
+      "t": 139.36
+     },
+     "who": "versePeople",
+     "action": "Inside: a golden arrowhead drops into a physician's open hand",
+     "acting": "the physician nods gravely (age 0.8)",
+     "library": "person {costume:'physician'} + goldArrow head only + fallY"
+    },
+    {
+     "t": 141.2,
+     "end": 142.4,
+     "cue": {
+      "word": "علاج",
+      "t": 141.2
+     },
+     "who": "versePeople",
+     "action": "The physician kneels and wraps a white bandage round the arm of a seated soldier, who breathes easier",
+     "acting": "patient: lid 0.6 to 0.2, mouth from 'frown' to small smile; no blood, a red cross of cloth only",
+     "library": "person {kneel:1} + person {sit:1, seat:'floor'} + bandage as white rounded strokes"
+    },
+    {
+     "t": 142.52,
+     "end": 143.4,
+     "cue": {
+      "word": "أو",
+      "t": 142.52
+     },
+     "who": "versePeople",
+     "action": "The right half of the inset lights: a folded white shroud on a low stand, a single flower laid on it; the figures bow their heads",
+     "acting": "stillness; only the flower settles (settleTo)",
+     "library": "rect stack with fold lines + small flower; lid 1 on the figures"
+    },
+    {
+     "t": 143.46,
+     "end": 144.06,
+     "cue": {
+      "word": "الميت",
+      "t": 143.46
+     },
+     "who": "girl1",
+     "action": "Below, the two older girls put a hand each on girl3's shoulders; Ma'an lowers his head",
+     "acting": "all lids 0.6, no smiles; a held quiet beat",
+     "library": "handRW + lid"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 136.2,
+     "text": "THIRD"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 144.06
+   }
+  },
+  {
+   "id": "S15",
+   "start": 144.06,
+   "end": 158.3,
+   "paragraphs": [
+    8
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "maan",
+    "man1",
+    "man2",
+    "girl1",
+    "girl2",
+    "girl3"
+   ],
+   "summary": "Ma'an has heard them out. The picture explains the point: they knew him by his gift, not by his clothes or his attendants.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pull-out",
+    "notes": "144.06 {x:1300,y:705,zoom:2.0} Ma'an listening; 148.6-150.4 pull to twoShot with the girls {x:1390,y:715,zoom:1.4}; 151.7-158.3 hold wide {x:1340,y:700,zoom:1.2} for the three icon comparisons in the upper sky."
+   },
+   "composition": "Ma'an left of centre, girls right. From 151.7 an icon row sits in the sky at y 380-470 (panel space): robe and attendants with red crosses, the golden arrow with a tick, the arrow in the centre.",
+   "actions": [
+    {
+     "t": 144.06,
+     "end": 146.1,
+     "cue": {
+      "word": "استمع",
+      "t": 144.06
+     },
+     "who": "maan",
+     "action": "The last inset fades; Ma'an stands with his head a little bowed, taking it in",
+     "acting": "lid 0.4, slow breath, then eyes up, wet",
+     "library": "breathe + wet + lid blend"
+    },
+    {
+     "t": 146.22,
+     "end": 147.7,
+     "cue": {
+      "word": "معن",
+      "t": 146.22
+     },
+     "who": "maan",
+     "action": "Hand on heart, deep nod to each girl in turn",
+     "acting": "gaze girl1, girl2, girl3 with a small nod on each (look plan)",
+     "library": "look() + PERSON_HANDS.chest + tip"
+    },
+    {
+     "t": 147.76,
+     "end": 148.6,
+     "cue": {
+      "word": "الفتيات",
+      "t": 147.76
+     },
+     "who": "girl3",
+     "action": "The girls beam; girl3 hides her face in her bundle and peeps over it",
+     "acting": "girl2 elbows girl1, proud",
+     "library": "handRW + lookAt"
+    },
+    {
+     "t": 148.64,
+     "end": 150.3,
+     "cue": {
+      "word": "بعدما",
+      "t": 148.64
+     },
+     "who": "waterskin",
+     "action": "girl1 pats the waterskin on her shoulder; a small memory inset (radius 110) beside it replays the handover as one frozen frame",
+     "acting": "Ma'an glances at the skin and smiles",
+     "library": "inset circle small + the S4 pose drawn inside at s 0.4"
+    },
+    {
+     "t": 150.4,
+     "end": 151.6,
+     "cue": {
+      "word": "وهو",
+      "t": 150.4
+     },
+     "who": "maan",
+     "action": "He mimes his earlier dry throat, then gestures to the skin: you saved me",
+     "acting": "light, self-mocking: tongue out for 4 frames, then a laugh",
+     "library": "handR to neck + mouth 'open'"
+    },
+    {
+     "t": 151.76,
+     "end": 153.1,
+     "cue": {
+      "word": "عرفن",
+      "t": 151.76
+     },
+     "who": "girl1",
+     "action": "girl1 taps her temple, then points at him: we knew",
+     "acting": "sly smile, brow -0.4",
+     "library": "hand target at temple + PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 154.2,
+     "end": 155.4,
+     "cue": {
+      "word": "من",
+      "t": 154.2
+     },
+     "who": "fx",
+     "action": "In the sky a large golden arrow icon pops with a green tick and a short arrow to Ma'an",
+     "acting": "the three girls lift their bundles on the same beat, staggered",
+     "library": "goldArrow icon + S.box + S.arrow + stagger"
+    },
+    {
+     "t": 156.2,
+     "end": 157.2,
+     "cue": {
+      "word": "من",
+      "t": 156.2
+     },
+     "who": "fx",
+     "action": "Left of it a plain robe icon pops and gets a red cross; Ma'an looks down at his dusty robe and flaps the hem",
+     "acting": "amused shrug",
+     "library": "robe as person torso shape + S.box cross + PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 157.54,
+     "end": 158.3,
+     "cue": {
+      "word": "مرافقيه",
+      "t": 157.54
+     },
+     "who": "man2",
+     "action": "Right of it two little attendant heads pop and get a red cross; the two huntsmen point at themselves, mock offended",
+     "acting": "man1 hand on chest (me?), man2 folds his arms; then both grin",
+     "library": "PERSON_HANDS.chest + PERSON_HANDS.folded"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 158.3
+   }
+  },
+  {
+   "id": "S16",
+   "start": 158.3,
+   "end": 169.9,
+   "paragraphs": [
+    8
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "maan",
+    "man1",
+    "man2",
+    "girl1",
+    "girl2",
+    "girl3"
+   ],
+   "summary": "They part. The golden arrows stay with the girls as a keepsake of the meeting in the desert. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "158.3 {x:1500,y:715,zoom:1.5} on the girls; 162.4-165.1 long pull-out and drift to {x:1250,y:640,zoom:1.0}: girls on the right dune, the three men small walking away left, low sun. Hold from 165.1."
+   },
+   "composition": "Final image: girls in a row on the dune on the right third, each bundle a small yellow fan; the men's three silhouettes on the left with long shadows; THE END centred in the sky at y 330, clear of all heads.",
+   "actions": [
+    {
+     "t": 158.56,
+     "end": 160.2,
+     "cue": {
+      "word": "وبقيت",
+      "t": 158.56
+     },
+     "who": "maan",
+     "action": "Ma'an raises a hand in farewell, slings the empty quiver, and turns to go with his men",
+     "acting": "warm look back over the shoulder, then turnFlip and walk left",
+     "library": "PERSON_HANDS.wave + turnFlip + walk"
+    },
+    {
+     "t": 160.28,
+     "end": 161.8,
+     "cue": {
+      "word": "السهام",
+      "t": 160.28
+     },
+     "who": "girl1",
+     "action": "The girls hold their bundles close; one glint runs along the thirty tips",
+     "acting": "girl1 steady smile, girl2 waves big with her free arm, girl3 waves small",
+     "library": "PERSON_HANDS.wave + stagger glints"
+    },
+    {
+     "t": 161.84,
+     "end": 162.4,
+     "cue": {
+      "word": "معهن",
+      "t": 161.84
+     },
+     "who": "girl3",
+     "action": "girl3 pulls one arrow from her bundle and tucks it behind her ear like a flower",
+     "acting": "pleased with herself; girl2 laughs",
+     "library": "goldArrow at head offset"
+    },
+    {
+     "t": 162.44,
+     "end": 163.5,
+     "cue": {
+      "word": "ذكرى",
+      "t": 162.44
+     },
+     "who": "set",
+     "action": "The sky warms toward late afternoon as the camera pulls out",
+     "acting": "long shadows grow to the right of every figure",
+     "library": "skyCycle(ctx, u 0.25 to 0.42) + groundShadow (planned)"
+    },
+    {
+     "t": 163.58,
+     "end": 165.1,
+     "cue": {
+      "word": "اللقاء",
+      "t": 163.58
+     },
+     "who": "man2",
+     "action": "The three men walk off left, small; man2 looks back once and trips on his own bow, caught by man1",
+     "acting": "one last gag, small in frame, no lettering",
+     "library": "walk + anticipate/settleTo"
+    },
+    {
+     "t": 165.2,
+     "end": 166.0,
+     "who": "lettering",
+     "action": "THE END stamps in (title primitive) in the sky; the girls' waving arms come down one by one",
+     "acting": "hold: only blinks, breathing and a slow heat shimmer until 169.9",
+     "library": "S.title + breathe + blink"
+    },
+    {
+     "t": 166.6,
+     "end": 169.9,
+     "who": "goldArrow",
+     "action": "Held ending: every 1.2 s a single glint travels across the bundles",
+     "acting": "stillness otherwise",
+     "library": "goldGlow at low strength"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 165.2,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 165.5,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 169.9
+   }
+  }
+ ],
+ "ending": {
+  "t": 165.2,
+  "description": "After the last word (165.13) the pull-out lands on a wide late-afternoon desert: the three girls on the right dune with their golden bundles, the three men small on the left walking away with long shadows. THE END stamps into the sky at 165.2 and holds with blinks, breathing, heat shimmer and an occasional glint until 169.9."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "خرج الأمير معن بن زائدة في يوم حار للصيد مع رجاله.|ابتعدوا في الصحراء، واشتد بهم العطش.|بحثوا عن الماء في أوعيتهم، لكنهم لم يجدوا ما يكفي حتى يشرب الأمير.",
+   "en": "The prince Ma‘an bin Zaidah went hunting on a hot day.|He and his men grew thirsty|and found no water to drink."
+  },
+  {
+   "p": 2,
+   "ar": "وبينما هم يسيرون، ظهرت ثلاث فتيات يحملن قربًا من الماء على أكتافهن.|اقترب منهن معن وطلب قليلًا من الماء.|لم يسألنه عن اسمه، بل قدمن إليه الماء فورًا.",
+   "en": "Three girls appeared carrying waterskins.|Ma‘an asked for a drink,|and without asking his identity they gave him water."
+  },
+  {
+   "p": 3,
+   "ar": "شرب معن حتى ذهب عطشه،|ثم أراد أن يشكر الفتيات على معروفهن.|التفت إلى رجاله وطلب مالًا ليعطيهن،|لكن الرجال لم يحملوا معهم نقودًا في رحلة الصيد.",
+   "en": "After drinking,|he wanted to repay their kindness.|He asked his men for money,|but they had brought none on the hunt."
+  },
+  {
+   "p": 4,
+   "ar": "فكر الأمير قليلًا، ثم فتح جعبة سهامه.|كانت رؤوس السهام مصنوعة من الذهب.|أعطى كل فتاة عشرة سهام،|فحصلت الفتيات الثلاث على ثلاثين سهمًا ثمينًا بدل النقود.",
+   "en": "The prince opened his quiver.|His arrows had golden tips,|so he gave each girl ten,|thirty valuable arrows in all."
+  },
+  {
+   "p": 5,
+   "ar": "نظرت الفتيات إلى السهام بدهشة.|قالت إحداهن لصاحبتَيها: «لا يفعل هذا إلا معن بن زائدة،|الذي يعرفه الناس بكرمه.|حتى سهامه التي يستعملها في الحرب تحمل الذهب!»",
+   "en": "The girls were astonished.|One said only Ma‘an,|famed for generosity,|would give away gold even from arrows used in war."
+  },
+  {
+   "p": 6,
+   "ar": "اتفقت الفتيات على أن تشكره كل واحدة بكلمات من الشعر.|أنشدت الأولى أبياتًا تصف رجلًا يجعل سهامه الذهبية عونًا للمحتاجين،|حتى عندما يخرج لملاقاة أعدائه في القتال.",
+   "en": "They decided to thank him in verse.|The first praised a warrior whose golden arrows could help|even those wounded in battle."
+  },
+  {
+   "p": 7,
+   "ar": "ثم أنشدت الثانية أبياتًا تقول إن الأمير يعطي بسخاء للأصدقاء والأعداء،|ولا يتوقف كرمه في أوقات الحرب.|أما الثالثة فوصفت كيف يمكن أن يدفع الذهب ثمن علاج المصاب|أو كفن الميت.",
+   "en": "The second praised his generosity|toward friends and enemies;|the third said the gold could pay for a wounded person’s treatment|or a dead person’s shroud."
+  },
+  {
+   "p": 8,
+   "ar": "استمع معن إلى ثناء الفتيات بعدما سقينه وهو عطشان.|عرفن هويته من هديته،|لا من ثيابه أو مرافقيه.|وبقيت السهام الذهبية معهن، ذكرى اللقاء في الصحراء.",
+   "en": "Ma‘an heard their praise after their kindness to him.|They had recognized him by his gift,|not his clothing or attendants.|The golden arrows remained with them as a memory of the meeting."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "desertRoad",
+   "reusable": true,
+   "effort": "M",
+   "description": "Open desert strip 2000 x 1230 with three dune layers, a front dune lip characters can rise from behind, a far palm, a rock and a hot pale sky. Reuses the planned desertRoad name (AN-044, AN-095); this film needs the plain open-desert option without city or wall.",
+   "implementation": "bake() three layers. Each dune layer is one closed path of 3-4 quadratic curves filled flat (far #f6e3a0, mid #edc65a, front sand ochre as ground()), with K halftone red dots clipped to the lee third. Draw order: sky, sun, far dunes, palm, mid dunes, girls while rising, FRONT lip, ground, everyone else. Options {palm, rock, lip, city:false}."
+  },
+  {
+   "type": "prop",
+   "name": "waterskin",
+   "reusable": true,
+   "effort": "S",
+   "description": "Goatskin water bag with fill, slosh, tilt and squeeze, carried on a shoulder strap or held in two hands.",
+   "implementation": "One rounded blob path whose height scales 0.45..1 with fill and whose lower edge offsets by slosh; neck as a small trapezoid with a cord; crease strokes appear below fill 0.4; blue glint stroke when fill > 0.8. Strap is a line from the shoulder to the bag. Position from the carrier's P.hands or shoulder point."
+  },
+  {
+   "type": "prop",
+   "name": "quiver + goldArrow (with arrowBundle and bow)",
+   "reusable": true,
+   "effort": "M",
+   "description": "Archer kit for any hunter or soldier story: quiver with opening flap and visible fletchings, a single arrow with an optional gold head and glint, a tied bundle of n arrows, and a simple bow. goldArrow with gold:false is an ordinary iron-headed arrow.",
+   "implementation": "Quiver: rounded rect + flap rotated about its top edge by open; fletchings are small red parallelograms above the rim. Arrow: line shaft, two fletch polygons, head as a 4-point leaf path filled C.yellow with a white triangle facet and halftone red on one side; glint = 4-point star scaled by pulse(). Bundle: n arrows rotated -12..12 degrees about a tie point. Bow: one quadratic arc stroke + string line."
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned round inset panel (8 other stories), used here as the verse picture: radius 230 (and one small one of 110), coloured dotted rim, iris open and close, linked to the reciter by three drifting note shapes instead of a thought trail.",
+   "implementation": "ctx.save, arc clip, draw the inner scene at its own scale and origin, restore, then a 10 px black ring and a ring of rim-colour dots. Radius animated by kfn for the iris. Notes are small filled ellipses with stems on bezier paths. If the planned inset circle is not built yet, thoughtCloud with a round shape and no trail is an acceptable stand-in."
+  },
+  {
+   "type": "effect",
+   "name": "heatShimmer",
+   "reusable": true,
+   "effort": "S",
+   "description": "Hot-day cue: 3 to 5 thin wavy horizontal strokes rising slowly above the ground line plus a pulsing ring round the sun.",
+   "implementation": "Pure function of t: sine-offset polylines (K.noise seeded per line) at alpha 0.25 in white, y drifting up 40 px over 2 s and looping; sun ring radius = r * (1.15 + 0.05 sin(3t))."
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned treasure light (KD-031): tapering yellow rays with a halftone disc and staggered star glints, strength 0..1; used on the arrowheads.",
+   "implementation": "As specified by KD-031: 9 triangles fanned about a point, a yellow halftone disc behind, 3 four-point stars on pulse() with offsets."
+  }
+ ],
+ "owner_questions": [
+  "The hunting party is on foot with no horses or hawks (the Library has no horse, and the script says they were walking); default: on foot.",
+  "Ma'an wears a plain blue bedouin robe with no crown so that being recognised by his gift and not his clothing reads visually; default: plain costume.",
+  "The script does not number the men; default: two huntsmen.",
+  "The girls' three verses are shown as picture insets above each reciter (no verse text is written on screen, since the narration only describes them); default: picture insets.",
+  "Battle, wounding and death in the verses are softened: enemies are flat silhouettes with spears, the wounded man gets a clean bandage with no blood, and the shroud is a folded white cloth with a flower, no body; default: softened.",
+  "Added comic business not in the script: the single water drop that misses, the upside-down empty purse, the huntsman tripping on his bow at the end, girl3 tucking an arrow behind her ear; default: kept.",
+  "English lettering added: MA'AN, NO WATER!, WATER!, NO COINS!, GOLD!, counters 10 / 20 / 30 GOLDEN ARROWS, MA'AN BIN ZAIDAH!, FIRST / SECOND / THIRD, FRIEND / FOE, LATER..., THE END; default: kept (14 items, slightly above the usual 8 to 12).",
+  "The LATER... card is placed at 19.7 s between the search for water and the walk on, although the Arabic says 'while they were walking'; default: card kept, since the film needs one passage of time."
+ ],
+ "implementation_notes": [
+  "World 2000 x 1230, ground y 900; the camera clamps as in the template with WW = 2000. All camera keys in the scene notes are {x, y, zoom} for K.camAt; hold with paired keys and ease on beat boundaries.",
+  "Final standing positions (feet, y 900): zone A Ma'an 700, man1 600, man2 490. Zone B Ma'an 1180 then 1300 from 30.9, man1 1150 (1040 before 29), man2 1050 (940 before 29), girl1 1430, girl2 1530, girl3 1630. In the verse scenes the reciter steps forward to x 1400-1410 and back.",
+  "Set LIFE.t = t every frame for auto-blinks; give each character a seed. Suppress blinks (noBlink) in the 0.8 s shared stare at 84.0-84.9 and the look to camera at 90.6-91.1.",
+  "Every walk uses a position function + walk() + footfalls() so no foot slides; the three men and the three girls never share a phase (offset by 0.35 of a cycle) and reactions use stagger(i) of 3 to 5 frames.",
+  "Girls rising over the dune: draw them before the FRONT dune lip layer and move them along the path (1760,960) to (1560,850) to their marks; switch them to the normal layer once past the crest (after 27.9).",
+  "Carried props follow the carrier: waterskin at shoulder (local about (-34,-150)), quiver on the back (local (26,-150), rotated 0.25) until 63.4 then at the hip front (local (-20,-95)); use P.hands for held items.",
+  "Verse insets: centre world (1380,330), radius 230, drawn after the world and before lettering; inner scenes are small functions vInset1/2/3(ctx, t) in their own 460 x 460 space with ground at y 380 and figures at s 0.5-0.55. Rim colours yellow, red, blue. Only one inset is open at a time.",
+  "Counter and icon rows are drawn in panel space (not world) so the camera cannot crop them: counter top-right at panel (820,150); S15 icon row at y 380-470.",
+  "Panel-only shake is not needed in this film; there are no hits.",
+  "Sound (SND master 0.6, offline render, amix normalize=0): whoosh 6.6, pop 11.6 (the drop), whoosh 20.0 (LATER card), pop 59.8, chime 60.4 (the idea), chime 85.0, pop 87.8, chime 121.7 (verse change), chime 165.5 (THE END). All are inside listed pauses or after the last word. The gold reveal at 69.22 has no effect because there is no pause there.",
+  "Subtitle chunks are in 'subtitles' (verbatim, '|' marks). P7 has four chunks where the English and Arabic phrase boundaries differ slightly in the first half; time chunks by the Arabic words.",
+  "Lettering never covers a face: name labels above heads, sound words in the gap between groups, THE END at y 330.",
+  "Reuse first: person presets bedouin, villageWoman, villager, physician; PERSON_HANDS gestures; sun, sky, skyCycle, ground, dustBurst, heart, cloud. New drawings go in the story's src first and move to Library/ after approval with registry entries."
+ ],
+ "warnings": [
+  "Three near-identical villageWoman figures can blur together at phone size: keep the three robe colours (red, blue, green), the three heights and the three temperaments distinct in every scene.",
+  "Scenes S12 to S14 are 36 s of recited verse with little physical action in the script; the insets must keep changing every 1 to 2 s or the film will stall here.",
+  "The inset figures are small: keep each at least 110 px tall on screen and limit each inset to three figures.",
+  "The person figure is front-facing only: turning to walk away (S16) and facing the men (S6) rely on dir and turnFlip; check the walk-away reads as leaving.",
+  "desertRoad, inset circle, goldGlow, purse and coinPile are planned by other stories but not built; whichever film is produced first must build them to the shared specification.",
+  "Word starts in the timeline can lead the audible onset by up to 0.4 s; check the gold reveal (69.22) and the name (90.56) against the audio by ear."
+ ]
+}

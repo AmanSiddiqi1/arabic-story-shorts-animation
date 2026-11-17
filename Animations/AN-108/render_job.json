@@ -1,0 +1,10 @@
+{
+ "story": "AN-108",
+ "cwd": "Animations/AN-108",
+ "build": "python3 build.py",
+ "render": "node render.mjs --workers 3 --crf 20 --frames ../../scratch/render-queue/AN-108/frames --out renders/AN-108_v1.mp4",
+ "qc": "python3 tools/production/qc.py AN-108 Animations/AN-108/renders/AN-108_v1.mp4 --record v1",
+ "notes": "run from the repository root with tools/production/render_queue.py; frames are deleted only after \"ffmpeg exit 0\"",
+ "implcheck": "PASS",
+ "film_duration": 180
+}

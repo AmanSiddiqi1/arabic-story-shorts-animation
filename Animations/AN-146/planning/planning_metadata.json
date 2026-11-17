@@ -1,0 +1,89 @@
+{
+ "story_id": "AN-146",
+ "title": "THE THIEF AND THE MERCHANT",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T16:23:57",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a5a41a56f6631b7cd.jsonl",
+ "agent_id": "a5a41a56f6631b7cd",
+ "model_messages": {
+  "claude-fable-5-2": 24
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "6208cf608788c6a2f9cbc3df0db3c73e5d0e87b33575d3ba1f373ba0925675df",
+  "paragraphs": 8,
+  "segments": [
+   "AN-146-P01-S01",
+   "AN-146-P01-S02",
+   "AN-146-P01-S03",
+   "AN-146-P01-S04",
+   "AN-146-P01-S05",
+   "AN-146-P01-S06",
+   "AN-146-P01-S07",
+   "AN-146-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-146_THE_THIEF_AND_THE_MERCHANT_full_slowed.mp3",
+  "sha256": "3f4845b2e827015a517dd6e98f02ea5bfc7373be6697f7aac07e5324322abbf2",
+  "duration": 177.576
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-146_THE_THIEF_AND_THE_MERCHANT_full_slowed.mp3.words.json",
+  "sha256": "49fbe2ded2dd6c7caf1d5eb7835512b8c9be5c84f40423b9e70b870d716c2c24",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.987
+ },
+ "library_rev": "5a93429",
+ "scenes": 17,
+ "actions": 198,
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "clothBale",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "cloakProp",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "harbourQuay",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "clothShop (front for marketStreet)",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "person costume preset 'guard'",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "storeroom",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "candle, ledger, keyRing, coinPile (silver), portraitMedallion, iconBalloon",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Two men in the same costume can be confused on a phone: keep the red cloak and the reddish beard clearly visible on the impostor in P2..P4, and note that in P8 the impostor has no cloak while the merchant wears it; the label THE REAL MERCHANT at 88.9 resets the audience.",
+  "The 'guard' costume preset, storeroom, candle, ledger, keyRing, portraitMedallion and iconBalloon are planned assets that may not be in the Library yet; fallbacks are given in new_assets.",
+  "The narration has almost no pauses (five of 0.6 s or more), so effects are few by design.",
+  "The storeroom must stay readable when dark: keep the dark overlay at or under 0.7 and let the door light cone reach the bale stack by 135.7.",
+  "Camel loading: the Library load field stacks items on the hump; four 150 wide bales will not fit that way, so the scene draws them at the seat point (see clothBale).",
+  "S9 is 16.5 s with many beats (fetch, kneel, load, leave, tip): keep the camera wide during the loading so nothing is cropped."
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "story_id": "AN-125",
+ "title": "HARUN AL-RASHID AND ZUBAYDAH IN THE BATH",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T14:52:08",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a2ab452a91e9dd9a1.jsonl",
+ "agent_id": "a2ab452a91e9dd9a1",
+ "model_messages": {
+  "claude-fable-5-2": 28
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "9534ab60ab8a0d83c1e8d8290f30d855a843221d3cec8976d7fd48dd5bbe1499",
+  "paragraphs": 8,
+  "segments": [
+   "AN-125-P01-S01",
+   "AN-125-P01-S02",
+   "AN-125-P01-S03",
+   "AN-125-P01-S04",
+   "AN-125-P01-S05",
+   "AN-125-P01-S06",
+   "AN-125-P01-S07",
+   "AN-125-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-125_HARUN_AL_RASHID_AND_ZUBAYDAH_IN_THE_BATH_full_slowed.mp3",
+  "sha256": "bafa68cc920a77f9b4910587f72ab86dbd66a099148c08dae0173110f5717472",
+  "duration": 175.553
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-125_HARUN_AL_RASHID_AND_ZUBAYDAH_IN_THE_BATH_full_slowed.mp3.words.json",
+  "sha256": "4096878b5d152383d535fa361ef3667aa42491ce97477bbf3b7e8a6169677bc4",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.996
+ },
+ "library_rev": "5a93429",
+ "scenes": 16,
+ "actions": 148,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "palaceGarden",
+   "effort": "L"
+  },
+  {
+   "type": "prop",
+   "name": "poolBasin",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "bathScreen",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "waterJug (silver palette)",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "person costume preset 'poet'",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "verseRibbon",
+   "effort": "M"
+  },
+  {
+   "type": "expression",
+   "name": "flush (soft option)",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "tiptoe",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "purse, hourglass, mantle, iconBalloon, handOver",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Subject matter: a bathing scene and a husband spying. The plan keeps it modest, but the narration and verbatim subtitles still say \"naked\" and \"body\"; the owner must decide if the story suits the channel.",
+  "The narration has only four real pauses, so the film has few sound effects by design.",
+  "Subtitle P6: the English chunks 2 and 3 are in the opposite order to the Arabic chunks 2 and 3 (the supplied translation reorders the sentence); a 2 chunk split would avoid this but makes the Arabic chunk 16 words long.",
+  "Word \"سمع\" (45.16) and \"لاحظت\" (67.62) have long listed durations (start times may include silence); check the onsets before locking the first action of S5 and S7.",
+  "bathScreen top y (about 735) must be measured against the lady figure so that only head and neck show standing, and only eyes and veil top when ducked 45 units.",
+  "The person figure is front facing only: turns toward the bush are head tilts plus gaze, not profiles."
+ ]
+}

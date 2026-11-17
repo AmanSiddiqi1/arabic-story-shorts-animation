@@ -1,0 +1,93 @@
+{
+ "story_id": "KD-007",
+ "title": "The Three Fish",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T11:49:16",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a25402e031a938270.jsonl",
+ "agent_id": "a25402e031a938270",
+ "model_messages": {
+  "claude-fable-5-2": 23
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "3f27368f5b26007d3b41f428cf589332bc1648cc17bafb1d9cd48de1b6ee5f70",
+  "paragraphs": 8,
+  "segments": [
+   "KD-007-P01-S01",
+   "KD-007-P01-S02",
+   "KD-007-P01-S03",
+   "KD-007-P01-S04",
+   "KD-007-P01-S05",
+   "KD-007-P01-S06",
+   "KD-007-P01-S07",
+   "KD-007-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/KD-007_The_Three_Fish_full_slowed.mp3",
+  "sha256": "37883006957f99be3ca460a4d9e3e2ba53d2e80c0143209879900951ddb548e5",
+  "duration": 168.405
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/KD-007_The_Three_Fish_full_slowed.mp3.words.json",
+  "sha256": "c7966583f6841528c1626903c3a11050255bd60f1a71581f74f0a7e07a93f6dd",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "5fc1ffb",
+ "scenes": 9,
+ "actions": 150,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "fish",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "pondStream",
+   "effort": "L"
+  },
+  {
+   "type": "prop",
+   "name": "fishingNet",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "villager",
+   "effort": "M"
+  },
+  {
+   "type": "motion",
+   "name": "swimPath",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "splash",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "dayCycle",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The fish figure is the main new drawing and carries the whole film; get three clearly different silhouettes approved on a still before staging.",
+  "The script says the men placed the second fish near the river; the plan lays her on the far bank directly above the river water at x 1450. Check that this reads as near the river and not as back in the pond.",
+  "The third fish is caught, not shown harmed: the plan stops at the net leaving the water. Confirm this restraint is wanted for the audience.",
+  "villager, dayCycle and thoughtCloud are planned by KD-005 but not in Library yet; whichever story is animated first must build them.",
+  "ACT IN TIME under THE END is added lettering stating the moral; remove it if only THE END is wanted."
+ ]
+}

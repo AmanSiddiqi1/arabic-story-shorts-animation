@@ -1,0 +1,3050 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "KD-013",
+ "title": "The Ascetic and the Thieves",
+ "duration": 162.544,
+ "end_hold": 3.5,
+ "logline": "Three thieves take a holy man's goat without touching it: one after another they call it a dog until he doubts his own eyes and leaves it by the road.",
+ "moral": "A lie does not become true because three people repeat it; trust what you have seen for yourself.",
+ "tone": "Light comic con played straight: sunny road, a deadpan goat, thieves who over-act, and a decent man whose certainty wears away in three clear steps. The joke is always on the trick, never cruel to the ascetic.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 5.26,
+   "kind": "setup",
+   "cue": {
+    "word": "ماعزًا",
+    "t": 5.26
+   },
+   "summary": "An ascetic buys a fat goat at the market."
+  },
+  {
+   "id": "B2",
+   "t": 9.9,
+   "kind": "setup",
+   "cue": {
+    "word": "حبلًا",
+    "t": 9.9
+   },
+   "summary": "He ties a rope round its neck: the rope is the story's key object."
+  },
+  {
+   "id": "B3",
+   "t": 18.4,
+   "kind": "suspense",
+   "cue": {
+    "word": "يشك",
+    "t": 18.4
+   },
+   "summary": "He suspects nothing; eyes open in the tree behind him."
+  },
+  {
+   "id": "B4",
+   "t": 21.54,
+   "kind": "inciting",
+   "cue": {
+    "word": "ثلاثة",
+    "t": 21.54
+   },
+   "summary": "Three thieves see the goat and want it for nothing."
+  },
+  {
+   "id": "B5",
+   "t": 31.86,
+   "kind": "turn",
+   "cue": {
+    "word": "حيلة",
+    "t": 31.86
+   },
+   "summary": "They agree a strange trick: no force, make him abandon it himself."
+  },
+  {
+   "id": "B6",
+   "t": 50.88,
+   "kind": "rising",
+   "cue": {
+    "word": "كلبًا",
+    "t": 50.88
+   },
+   "summary": "Thief 1: why are you leading a dog? (1)"
+  },
+  {
+   "id": "B7",
+   "t": 52.5,
+   "kind": "comic",
+   "cue": {
+    "word": "ضحك",
+    "t": 52.5
+   },
+   "summary": "The ascetic laughs: this is a goat. Full confidence."
+  },
+  {
+   "id": "B8",
+   "t": 73.6,
+   "kind": "rising",
+   "cue": {
+    "word": "كلبًا",
+    "t": 73.6
+   },
+   "summary": "Thief 2: a man like you leading a dog? (2)"
+  },
+  {
+   "id": "B9",
+   "t": 77.12,
+   "kind": "turn",
+   "cue": {
+    "word": "توقف",
+    "t": 77.12
+   },
+   "summary": "He stops. Why does everyone call it a dog?"
+  },
+  {
+   "id": "B10",
+   "t": 91.46,
+   "kind": "rising",
+   "cue": {
+    "word": "كلب",
+    "t": 91.46
+   },
+   "summary": "Thief 3, confident: certainly a dog. Who sold it to you? (3 out of 3)"
+  },
+  {
+   "id": "B11",
+   "t": 100.18,
+   "kind": "emotion",
+   "cue": {
+    "word": "بالقلق",
+    "t": 100.18
+   },
+   "summary": "Worry and confusion."
+  },
+  {
+   "id": "B12",
+   "t": 111.52,
+   "kind": "suspense",
+   "cue": {
+    "word": "كلب.",
+    "t": 111.52
+   },
+   "summary": "One man's eyes against three men's words."
+  },
+  {
+   "id": "B13",
+   "t": 126.46,
+   "kind": "surprise",
+   "cue": {
+    "word": "سحر",
+    "t": 126.46
+   },
+   "summary": "He convinces himself the seller bewitched his eyes."
+  },
+  {
+   "id": "B14",
+   "t": 131.3,
+   "kind": "climax",
+   "cue": {
+    "word": "وتركه",
+    "t": 131.3
+   },
+   "summary": "He unties the rope and abandons the goat himself."
+  },
+  {
+   "id": "B15",
+   "t": 144.98,
+   "kind": "reveal",
+   "cue": {
+    "word": "وأمسكوا",
+    "t": 144.98
+   },
+   "summary": "The thieves come out and take the goat without a struggle."
+  },
+  {
+   "id": "B16",
+   "t": 149.42,
+   "kind": "comic",
+   "cue": {
+    "word": "يضحكون",
+    "t": 149.42
+   },
+   "summary": "They laugh: the plan worked."
+  },
+  {
+   "id": "B17",
+   "t": 160.22,
+   "kind": "moral",
+   "cue": {
+    "word": "ماعزًا",
+    "t": 160.22
+   },
+   "summary": "He is still hunting the seller; the goat was a goat all along."
+  }
+ ],
+ "cast": [
+  {
+   "id": "ascetic",
+   "name": "the ascetic",
+   "library": "person",
+   "base": "person kind:'owner' with the costume preset 'ascetic'",
+   "look": "Small white turban, long white beard to the chest, plain cream robe with sparse brown Ben-Day dots, bare feet, wooden prayer beads in the left hand. s 1.0. Gentle raised brows by default.",
+   "new": false
+  },
+  {
+   "id": "thief1",
+   "name": "thief 1, the leader",
+   "library": "person",
+   "base": "person kind:'thief' v 0 (black and white stripes, red cap, eye mask)",
+   "look": "Lean, s 1.0. Disguise item: a quick villager turban jammed over the cap. Sly, economical gestures.",
+   "new": false
+  },
+  {
+   "id": "thief2",
+   "name": "thief 2, the eager one",
+   "library": "person",
+   "base": "person kind:'thief' v 1 (yellow and red stripes)",
+   "look": "Short and round, s 0.88 with width 1.12. Disguise item: a false beard on ear strings that keeps slipping. Fast, nervous, always a beat late.",
+   "new": false
+  },
+  {
+   "id": "thief3",
+   "name": "thief 3, the confident one",
+   "library": "person",
+   "base": "person kind:'thief' v 0 recoloured (blue and white stripes)",
+   "look": "Tall, s 1.08. Disguise items: long merchant cloak and tall turban. Slow, heavy, smug half lids.",
+   "new": false
+  },
+  {
+   "id": "seller",
+   "name": "the goat seller",
+   "library": "person",
+   "base": "villager (planned variant of person kind:'owner')",
+   "look": "Round cap, moustache, green tunic, apron. Honest and friendly in reality; shifty or a sorcerer only inside the ascetic's thought clouds.",
+   "new": false
+  },
+  {
+   "id": "goat",
+   "name": "the fat goat",
+   "library": null,
+   "base": "new quadruped on the deer leg rig",
+   "look": "White body with red-dot shading and a very round belly, short curved yellow horns, chin tuft, sideways ears, short upright tail, pink muzzle, horizontal-pupil eyes. About 170 wide x 130 high at s 1.",
+   "new": true
+  }
+ ],
+ "sets": [
+  {
+   "id": "marketStreet",
+   "library": null,
+   "description": "The planned marketStreet set (AN-095, KD-011), palette clear, plus one animal stall: striped red and white awning on two posts at x 560..820, counter y 800, tether post at x 590, hay pile, two baskets. Option stall empty for the ending. Ground y 900.",
+   "new": true
+  },
+  {
+   "id": "countryRoad",
+   "library": null,
+   "description": "A 3000-unit road strip (same strip builder as the planned chaseRoad): Library sky day, hillTrees, ground at y 900 with a paler dirt band y 900..960, grass tufts. Landmarks: big tree x 420 (trunk w 110, crown top y 300), milestone x 1260 (60 w x 80 h grey stone), bush x 1760, low wall x 2350 (220 w x 70 h, also a seat), bush x 2420, tree x 2520, tiny house on the horizon at x 2900. All positions are proposals; adjust on the stills.",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "rope",
+   "library": null,
+   "description": "Rope from the holder's fist to a loop round the goat's neck: a quadratic curve whose sag grows as the two ends come closer, 7 px black line with a 4 px tan core; states loop, knot 0..1, lying loose on the ground in an S.",
+   "new": true
+  },
+  {
+   "id": "coin",
+   "library": null,
+   "description": "coinPile / single coin (planned in AN-095): yellow disc r 10 with black rim.",
+   "new": true
+  },
+  {
+   "id": "dogIcon",
+   "library": null,
+   "description": "Flat cartoon dog head and shoulders, about 90 px: brown, long drooping ear, black nose, red tongue. Used only inside balloons and thought clouds.",
+   "new": true
+  },
+  {
+   "id": "balanceScale",
+   "library": null,
+   "description": "Simple two-pan scale for the thought cloud: post 160 high, beam 300 long pivoting by tilt (-0.5..0.5 rad), two pans hanging on V lines, each pan 110 wide.",
+   "new": true
+  },
+  {
+   "id": "sack",
+   "library": null,
+   "description": "Empty brown sack with a patch, about 90 x 110, droops when lowered.",
+   "new": true
+  },
+  {
+   "id": "disguises",
+   "library": null,
+   "description": "Three small costume items drawn over the thief figure: turban (white wrap over the cap), false beard (grey bib on two ear strings, swings), long cloak with tall turban.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 7.0,
+   "paragraphs": [
+    1
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "ascetic",
+    "seller",
+    "goat"
+   ],
+   "summary": "The market. The ascetic walks in, stops at the goat stall and falls for a very fat goat.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Start wide on the whole street (zoom 1.0, centre 500,700); from 3.64 ease to zoom 1.5 centred on the stall at x 640 by 5.3 and hold."
+   },
+   "composition": "Stall with striped awning at x 560..820, seller behind it at x 740 facing left. Goat tethered to the stall post at x 590. Ascetic enters from the left edge and stops at x 430. Faces all above y 760.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 1.8,
+     "cue": {
+      "word": "في",
+      "t": 0.0
+     },
+     "who": "set",
+     "action": "Title lettering THE ASCETIC AND THE THIEVES sits on the sky for 1.8 s; awning flaps, two songbirds cross",
+     "acting": "calm morning; nothing hints at trouble",
+     "library": "S.title, songbird {fly, flap}, cloudFlat"
+    },
+    {
+     "t": 1.5,
+     "end": 3.6,
+     "cue": {
+      "word": "ذهب",
+      "t": 1.82
+     },
+     "who": "ascetic",
+     "action": "walks in from x -80 to x 430, prayer beads swinging from his left hand",
+     "acting": "unhurried, upright, small smile, gaze ahead then drifting over the stalls; blink seed 3",
+     "library": "person + costume ascetic, walk(AX), footfalls, swing() on the beads"
+    },
+    {
+     "t": 3.64,
+     "end": 4.2,
+     "cue": {
+      "word": "السوق",
+      "t": 3.64
+     },
+     "who": "seller",
+     "action": "the seller waves him over and pats the stall",
+     "acting": "eager brow -0.4, talk 0.6, gaze on the ascetic",
+     "library": "person villager variant, PERSON_HANDS.wave"
+    },
+    {
+     "t": 4.26,
+     "end": 5.2,
+     "cue": {
+      "word": "واشترى",
+      "t": 4.26
+     },
+     "who": "ascetic",
+     "action": "stops, leans in toward the stall, strokes his beard",
+     "acting": "tip 0.06, hand to beard (PERSON_HANDS.chin), gaze sliding down to the goat",
+     "library": "settleTo, look()"
+    },
+    {
+     "t": 5.26,
+     "end": 6.0,
+     "cue": {
+      "word": "ماعزًا",
+      "t": 5.26
+     },
+     "who": "goat",
+     "action": "the goat lifts its head from the hay; arrow and label GOAT pop on",
+     "acting": "chewing sideways (chew), slow blink, completely unbothered",
+     "library": "goat {chew, headDown 1 to 0}, S.arrow + S.label"
+    },
+    {
+     "t": 6.06,
+     "end": 7.0,
+     "cue": {
+      "word": "سمينًا.",
+      "t": 6.06
+     },
+     "who": "goat",
+     "action": "belly jiggles as it shifts its weight; the label grows to FAT GOAT",
+     "acting": "sq 0.94 then 1.04 settle, tail flick; ascetic eyes go wide with delight (brow -0.6, mouth smile)",
+     "library": "goat {fat 1, sq}, settleTo, S.emphasis"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.0,
+     "text": "THE ASCETIC AND THE THIEVES"
+    },
+    {
+     "t": 5.3,
+     "text": "GOAT"
+    },
+    {
+     "t": 6.1,
+     "text": "FAT GOAT"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 7.0
+   }
+  },
+  {
+   "id": "S2",
+   "start": 7.0,
+   "end": 12.0,
+   "paragraphs": [
+    1
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "ascetic",
+    "seller",
+    "goat"
+   ],
+   "summary": "He pays, the rope goes round the goat's neck. The rope is the object the whole story turns on, so it is shown clearly.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium at zoom 1.5; from 9.0 ease to zoom 2.0 on hands, rope and goat neck (centre 560,800) by 10.0; ease back to 1.5 at 11.6."
+   },
+   "composition": "Ascetic left (x 430), seller right (x 740), goat between and below them at x 590. Coins travel left to right across the middle of the frame.",
+   "actions": [
+    {
+     "t": 7.0,
+     "end": 7.3,
+     "who": "ascetic",
+     "action": "dips a hand into his robe (anticipation for the payment)",
+     "acting": "gaze down at his own hand, lid 0.3",
+     "library": "person handR target at the chest, anticipate"
+    },
+    {
+     "t": 7.26,
+     "end": 8.2,
+     "cue": {
+      "word": "دفع",
+      "t": 7.26
+     },
+     "who": "ascetic",
+     "action": "counts three coins into the seller's open palm, one per beat (7.3, 7.6, 7.9)",
+     "acting": "careful, counting with his eyes; seller palm up, gaze on the coins, head bobs with each",
+     "library": "coin prop, hop arc per coin, PERSON_HANDS.reach / palmsUp"
+    },
+    {
+     "t": 8.24,
+     "end": 9.0,
+     "cue": {
+      "word": "ثمنه،",
+      "t": 8.24
+     },
+     "who": "seller",
+     "action": "closes his fist on the coins, nods, unhooks the tether and holds out the rope end",
+     "acting": "honest smile, small bow (tip 0.08); gaze to the ascetic",
+     "library": "person handL, settleTo"
+    },
+    {
+     "t": 9.02,
+     "end": 9.9,
+     "cue": {
+      "word": "وربط",
+      "t": 9.02
+     },
+     "who": "ascetic",
+     "action": "kneels a little and passes the rope round the goat's neck",
+     "acting": "tip 0.14, tongue-tip concentration (mouth closed), gaze on the knot",
+     "library": "person handL/handR targets on the goat neck, rope prop"
+    },
+    {
+     "t": 9.9,
+     "end": 10.8,
+     "cue": {
+      "word": "حبلًا",
+      "t": 9.9
+     },
+     "who": "rope",
+     "action": "the loop closes and the knot pulls tight; goat blinks at the tug",
+     "acting": "goat head dips 4 units and returns; ears flick",
+     "library": "rope {loop, knot 0 to 1}, goat {ears}"
+    },
+    {
+     "t": 10.88,
+     "end": 11.6,
+     "cue": {
+      "word": "رقبته،",
+      "t": 10.88
+     },
+     "who": "ascetic",
+     "action": "pats the goat's neck twice and stands, rope in his right fist",
+     "acting": "pleased, brow -0.3, smile; goat leans into the pat",
+     "library": "PERSON_HANDS.grip, settleTo"
+    },
+    {
+     "t": 11.64,
+     "end": 12.0,
+     "cue": {
+      "word": "ثم",
+      "t": 11.64
+     },
+     "who": "seller",
+     "action": "waves goodbye as the ascetic turns to the right",
+     "acting": "friendly; this is the innocent face the ascetic will later blame",
+     "library": "PERSON_HANDS.wave, turnFlip for the ascetic"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 7.3,
+     "text": "CLINK!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 12.0
+   }
+  },
+  {
+   "id": "S3",
+   "start": 12.0,
+   "end": 20.53,
+   "paragraphs": [
+    1
+   ],
+   "set": "countryRoad",
+   "cast": [
+    "ascetic",
+    "goat",
+    "thief1",
+    "thief2",
+    "thief3"
+   ],
+   "summary": "On the road home, happy. He suspects nothing; three pairs of eyes open in the tree behind him.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Track with the walker: camera x = ascetic x + 120, zoom 1.25, from world x 150 to 620. At 18.4 let him walk ahead and ease the frame back so the big tree at x 420 is on the left third."
+   },
+   "composition": "Road strip is 3000 wide. Ascetic leads, goat 150 units behind on a slack rope. A tiny house sits on the far horizon to the right (home). Big tree trunk at x 420, crown above.",
+   "actions": [
+    {
+     "t": 12.2,
+     "end": 12.8,
+     "cue": {
+      "word": "بدأ",
+      "t": 12.32
+     },
+     "who": "ascetic",
+     "action": "sets off to the right; the rope goes taut, then the goat follows",
+     "acting": "first step has a small anticipation dip; goat resists one beat (tip -0.06) then trots",
+     "library": "walk(AX), footfalls, rope sag from distance, goat walk"
+    },
+    {
+     "t": 12.78,
+     "end": 14.0,
+     "cue": {
+      "word": "يمشي",
+      "t": 12.78
+     },
+     "who": "goat",
+     "action": "trots behind, belly swaying, hooves ticking",
+     "acting": "chew continues; ears bounce half a beat late (secondary motion)",
+     "library": "goat {ph, amp, fat}, footfalls + dustBurst"
+    },
+    {
+     "t": 14.08,
+     "end": 15.2,
+     "cue": {
+      "word": "بيته.",
+      "t": 14.08
+     },
+     "who": "ascetic",
+     "action": "points ahead with his free hand to the little house on the horizon; arrow label HOME",
+     "acting": "gaze far right, chin up",
+     "library": "PERSON_HANDS.pointFwd, S.arrow + S.label"
+    },
+    {
+     "t": 15.26,
+     "end": 16.7,
+     "cue": {
+      "word": "سعيدًا",
+      "t": 15.94
+     },
+     "who": "ascetic",
+     "action": "a spring comes into his step; he hums (two music notes drift up)",
+     "acting": "bounce on each footfall (sq 1.03), eyes half closed in contentment (lid 0.45), smile",
+     "library": "kick(t, FALLS), note glyphs via S.emphasis"
+    },
+    {
+     "t": 16.78,
+     "end": 17.7,
+     "cue": {
+      "word": "اشتراه،",
+      "t": 17.06
+     },
+     "who": "ascetic",
+     "action": "looks back over his shoulder at the goat and gives the rope a fond little shake",
+     "acting": "gaze back-left to the goat, brow -0.4; goat looks up and bleats silently (talk 0.5)",
+     "library": "look(), rope wave"
+    },
+    {
+     "t": 17.78,
+     "end": 18.8,
+     "cue": {
+      "word": "يشك",
+      "t": 18.4
+     },
+     "who": "thief1",
+     "action": "in the dark of the tree crown behind him, one pair of white eyes opens",
+     "acting": "eyes only, pupils on the goat; the ascetic faces forward and never sees",
+     "library": "eye2 on the baked crown, drawn before the foreground leaves"
+    },
+    {
+     "t": 18.84,
+     "end": 19.6,
+     "cue": {
+      "word": "شيء.",
+      "t": 19.16
+     },
+     "who": "thief2",
+     "action": "a second and a third pair of eyes open lower down (19.0, 19.3), all three sliding right to follow the goat",
+     "acting": "staggered; the lowest pair blinks nervously",
+     "library": "stagger(i), gazePlan"
+    },
+    {
+     "t": 20.2,
+     "end": 20.53,
+     "who": "fx",
+     "action": "the three pairs of eyes blink together with a pop; hold",
+     "acting": "suspense by stillness: only pupils move",
+     "library": "blink override, SND pop"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 14.2,
+     "text": "HOME"
+    },
+    {
+     "t": 16.0,
+     "text": "HUM HUM"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 20.5,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 20.53
+   }
+  },
+  {
+   "id": "S4",
+   "start": 20.53,
+   "end": 27.5,
+   "paragraphs": [
+    2
+   ],
+   "set": "countryRoad",
+   "cast": [
+    "thief1",
+    "thief2",
+    "thief3",
+    "goat",
+    "ascetic"
+   ],
+   "summary": "The three thieves are revealed: heads stacked round the trunk, hungry for the goat, with empty pockets.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Cut to medium on the tree (centre 420,640, zoom 1.7). Slow push to 1.9 by 23.7. Whip 60 units right and back at 22.94 to glimpse the goat walking off."
+   },
+   "composition": "Three heads lean out from the right side of the trunk, stacked: thief3 top (y 520), thief1 middle (y 610), thief2 bottom (y 700). Counter top-left of the panel.",
+   "actions": [
+    {
+     "t": 20.86,
+     "end": 21.5,
+     "cue": {
+      "word": "رأى",
+      "t": 20.86
+     },
+     "who": "thief1",
+     "action": "the leader leans out from behind the trunk, hand on the bark",
+     "acting": "narrow eyes (lid 0.4), brow 0.6, gaze right at the goat",
+     "library": "person kind thief, peek: draw actor then trunk occluder"
+    },
+    {
+     "t": 21.54,
+     "end": 22.3,
+     "cue": {
+      "word": "ثلاثة",
+      "t": 21.54
+     },
+     "who": "fx",
+     "action": "counter ticks 1, 2, 3 as thief3 pops out above and thief2 below (21.54, 21.80, 22.06)",
+     "acting": "thief3 confident grin; thief2 pops too far, wobbles, grabs the trunk",
+     "library": "S.counter, stagger, settleTo"
+    },
+    {
+     "t": 22.36,
+     "end": 22.9,
+     "cue": {
+      "word": "لصوص",
+      "t": 22.36
+     },
+     "who": "lettering",
+     "action": "label 3 THIEVES with an arrow at the stack",
+     "acting": "all three blink out of sync",
+     "library": "S.label + S.arrow, LIFE.t auto-blink"
+    },
+    {
+     "t": 22.94,
+     "end": 23.7,
+     "cue": {
+      "word": "الماعز،",
+      "t": 22.94
+     },
+     "who": "goat",
+     "action": "quick whip to the goat trotting away, a sparkle on its fat belly, then back",
+     "acting": "the goat chews on, the ascetic hums, backs to us",
+     "library": "camera key pair, star glyph"
+    },
+    {
+     "t": 23.74,
+     "end": 24.6,
+     "cue": {
+      "word": "وأرادوا",
+      "t": 23.74
+     },
+     "who": "thief2",
+     "action": "thief2 licks his lips and rubs his hands",
+     "acting": "eyes wide, mouth smile, shoulders up",
+     "library": "PERSON_HANDS.clasp with a 6 Hz rub"
+    },
+    {
+     "t": 24.64,
+     "end": 25.3,
+     "cue": {
+      "word": "أخذه",
+      "t": 24.64
+     },
+     "who": "thief3",
+     "action": "thief3 reaches a long arm out toward the goat, fingers wiggling",
+     "acting": "tip 0.1, gaze locked right",
+     "library": "PERSON_HANDS.reach, anticipate"
+    },
+    {
+     "t": 25.4,
+     "end": 26.2,
+     "cue": {
+      "word": "دون",
+      "t": 25.4
+     },
+     "who": "thief1",
+     "action": "the leader pulls thief3's arm back down and shakes his head",
+     "acting": "brow 0.8, mouth closed; a thinking glance up",
+     "library": "handR target on the other arm, look()"
+    },
+    {
+     "t": 26.22,
+     "end": 27.5,
+     "cue": {
+      "word": "يدفعوا",
+      "t": 26.22
+     },
+     "who": "thief2",
+     "action": "thief2 turns out an empty pocket: one moth flutters up; a crossed-out coin icon pops on at 26.90",
+     "acting": "sheepish, brow -0.6, gaze following the moth upward",
+     "library": "pocket flap rectangle, moth = two triangles on a sine path, coin prop + red X"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 22.4,
+     "text": "3 THIEVES"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 27.5
+   }
+  },
+  {
+   "id": "S5",
+   "start": 27.5,
+   "end": 41.4,
+   "paragraphs": [
+    2
+   ],
+   "set": "countryRoad",
+   "cast": [
+    "thief1",
+    "thief2",
+    "thief3",
+    "goat",
+    "ascetic"
+   ],
+   "summary": "The huddle behind the tree. The leader forbids force and explains the trick; the plan appears in a thought cloud.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "The view is from behind the tree now (trunk on the right edge, x 880). Group shot zoom 1.6 centred 520,640; push to 1.9 on the leader for 35.08-38.0; pull to 1.5 at 38.9 so the far ascetic (s 0.35, grazing stop on the horizon line at x 150) is in frame; hold."
+   },
+   "composition": "Leader centre (x 520), thief2 left (x 380, shorter), thief3 right (x 660, taller). Thought cloud above them in the sky, 520x300, clear of all three heads. Far left background: the ascetic waits while the goat grazes, which also gives the thieves time to get ahead.",
+   "actions": [
+    {
+     "t": 27.72,
+     "end": 28.6,
+     "cue": {
+      "word": "اجتمعوا",
+      "t": 27.72
+     },
+     "who": "thief1",
+     "action": "heads snap back behind the trunk; cut round the tree: the three shuffle into a huddle",
+     "acting": "leader beckons with two fingers; thief2 scurries, thief3 saunters",
+     "library": "walk with short steps, stagger"
+    },
+    {
+     "t": 29.18,
+     "end": 30.3,
+     "cue": {
+      "word": "خلف",
+      "t": 29.18
+     },
+     "who": "set",
+     "action": "the trunk and a low branch frame them; leaves drift down as they lean on it",
+     "acting": "heads come together, eyes dart outward (saccades) to check nobody listens",
+     "library": "tree(), gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 30.38,
+     "end": 31.5,
+     "cue": {
+      "word": "واتفقوا",
+      "t": 30.38
+     },
+     "who": "thief1",
+     "action": "the leader whispers behind a cupped hand; the other two nod in turn",
+     "acting": "thief2 nods fast and often, thief3 one slow nod",
+     "library": "PERSON_HANDS.cupMouth, talk 0.5"
+    },
+    {
+     "t": 31.86,
+     "end": 33.2,
+     "cue": {
+      "word": "حيلة",
+      "t": 31.86
+     },
+     "who": "fx",
+     "action": "thought cloud opens: a goat icon, an arrow, a dog icon with a question mark (the strange trick)",
+     "acting": "thief2 looks from cloud to leader, baffled (brow -0.7); thief3 smirks first",
+     "library": "thoughtCloud(box, drawInside), goat s 0.5, dogIcon, S.arrow"
+    },
+    {
+     "t": 33.3,
+     "end": 35.0,
+     "cue": {
+      "word": "أحدهم:",
+      "t": 34.3
+     },
+     "who": "thief1",
+     "action": "the leader raises one finger for attention; arrow label THE BOSS",
+     "acting": "chin up, lid 0.3, gaze sweeping both listeners",
+     "library": "PERSON_HANDS.pointUp, S.label"
+    },
+    {
+     "t": 35.08,
+     "end": 35.8,
+     "cue": {
+      "word": "«لن",
+      "t": 35.08
+     },
+     "who": "thief1",
+     "action": "wags the finger left-right: no",
+     "acting": "head counter-rotates slightly, mouth o on the word",
+     "library": "handR keyed sine, talk"
+    },
+    {
+     "t": 35.86,
+     "end": 37.0,
+     "cue": {
+      "word": "نسرق",
+      "t": 35.86
+     },
+     "who": "thief2",
+     "action": "thief2 eagerly pulls a sack from behind his back and mimes pouncing",
+     "acting": "tip 0.15, big grin, on tiptoe",
+     "library": "sack prop, anticipate"
+    },
+    {
+     "t": 37.08,
+     "end": 38.0,
+     "cue": {
+      "word": "بالقوة.",
+      "t": 37.08
+     },
+     "who": "thief1",
+     "action": "the leader pushes the sack down with one flat hand; thief2 deflates",
+     "acting": "thief2 sq 0.92, brow -0.6, sack droops; lettering NO FORCE with a red cross",
+     "library": "handL target, settleTo, S.emphasis"
+    },
+    {
+     "t": 38.1,
+     "end": 38.9,
+     "cue": {
+      "word": "سنجعل",
+      "t": 38.1
+     },
+     "who": "thief1",
+     "action": "taps his temple twice",
+     "acting": "sly: brow -0.4, half smile",
+     "library": "handR at the cap, 2 taps"
+    },
+    {
+     "t": 38.92,
+     "end": 39.4,
+     "cue": {
+      "word": "الرجل",
+      "t": 38.92
+     },
+     "who": "thief1",
+     "action": "points past the trunk at the tiny far ascetic; camera pulls back to include him",
+     "acting": "all three gazes follow the finger, each a few frames late",
+     "library": "PERSON_HANDS.pointFwd, lookAt, stagger"
+    },
+    {
+     "t": 39.46,
+     "end": 40.2,
+     "cue": {
+      "word": "يتركه",
+      "t": 39.46
+     },
+     "who": "thief1",
+     "action": "mimes holding a rope, then opens his fingers one by one and lets it drop",
+     "acting": "eyes follow the imaginary rope to the ground",
+     "library": "GRIP angles then palmsUp"
+    },
+    {
+     "t": 40.28,
+     "end": 41.1,
+     "cue": {
+      "word": "بنفسه.»",
+      "t": 40.28
+     },
+     "who": "thief3",
+     "action": "thief3 gets it and laughs silently; thief2 gets it a beat later; the leader winks at the lens",
+     "acting": "stifled laugh: shoulders shake (tremble 2), lid 0.6; wink R",
+     "library": "tremble, wink"
+    },
+    {
+     "t": 41.1,
+     "end": 41.4,
+     "who": "thief2",
+     "action": "they scatter in the pause: three dust puffs, three tiptoe exits to the right at different speeds",
+     "acting": "thief2 trips on the sack and recovers",
+     "library": "dustBurst, walk sneak steps, SND whoosh"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 31.9,
+     "text": "GOAT = DOG ?"
+    },
+    {
+     "t": 34.4,
+     "text": "THE BOSS"
+    },
+    {
+     "t": 37.2,
+     "text": "NO FORCE"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 41.4,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "whip",
+    "t": 41.4
+   }
+  },
+  {
+   "id": "S6",
+   "start": 41.4,
+   "end": 52.3,
+   "paragraphs": [
+    3
+   ],
+   "set": "countryRoad",
+   "cast": [
+    "thief1",
+    "ascetic",
+    "goat"
+   ],
+   "summary": "Thief 1 takes his post by the milestone, puts on a turban over his mask, and asks his amazed question.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide at the milestone (world x 900..1500 in frame, zoom 1.3). Push to a two-shot zoom 1.7 from 47.7 to 48.5, framed with twoShot(ascetic head, thief head, margin 110) and tilted down enough to keep the goat in frame."
+   },
+   "composition": "Milestone at x 1260. Thief1 leans on it facing left. Ascetic enters from the left, stops at x 1090; goat at x 960. Counter DOG? fixed top-right of the panel from 50.88.",
+   "actions": [
+    {
+     "t": 41.72,
+     "end": 42.8,
+     "cue": {
+      "word": "وقف",
+      "t": 41.72
+     },
+     "who": "thief1",
+     "action": "skids in from the left, plants himself by the milestone, pulls a turban from his shirt and jams it on over the mask",
+     "acting": "checks both ways (saccade), then melts into a fake-casual lean, whistling",
+     "library": "walk, landSquash on the skid, turban disguise item, settleTo"
+    },
+    {
+     "t": 42.92,
+     "end": 43.9,
+     "cue": {
+      "word": "الأول",
+      "t": 43.36
+     },
+     "who": "lettering",
+     "action": "arrow and label THIEF 1",
+     "acting": "he tugs the turban straight; mask still plainly visible under it",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 44.02,
+     "end": 45.2,
+     "cue": {
+      "word": "الطريق،",
+      "t": 44.42
+     },
+     "who": "set",
+     "action": "the road stretches left; the ascetic and goat appear small at the left edge",
+     "acting": "thief1 one eye open toward them (wink L), the rest of him pretending to doze",
+     "library": "wink, walk(AX)"
+    },
+    {
+     "t": 45.26,
+     "end": 46.5,
+     "cue": {
+      "word": "وحين",
+      "t": 45.26
+     },
+     "who": "ascetic",
+     "action": "walks in humming, goat trotting behind on a slack rope",
+     "acting": "contented lid 0.4, gaze ahead; has not noticed the stranger",
+     "library": "walk, footfalls, kick for the hum bounce"
+    },
+    {
+     "t": 46.54,
+     "end": 47.6,
+     "cue": {
+      "word": "مر",
+      "t": 46.54
+     },
+     "who": "ascetic",
+     "action": "draws level and gives a polite nod as he passes",
+     "acting": "small head dip, smile; thief1 pushes off the stone (anticipation)",
+     "library": "drop pulse, anticipate"
+    },
+    {
+     "t": 47.72,
+     "end": 48.4,
+     "cue": {
+      "word": "سأله",
+      "t": 47.72
+     },
+     "who": "thief1",
+     "action": "steps into the road with a raised hand; the ascetic stops",
+     "acting": "ascetic rocks back on his heels (tip -0.05), eyebrows up",
+     "library": "PERSON_HANDS.wave held, settleTo"
+    },
+    {
+     "t": 48.5,
+     "end": 49.5,
+     "cue": {
+      "word": "بدهشة:",
+      "t": 48.5
+     },
+     "who": "thief1",
+     "action": "a huge staged double take at the goat: looks, looks away, snaps back, both hands to his cheeks",
+     "acting": "eyes wide, mouth o, sq 1.06 on the snap; this is acting, and slightly too big",
+     "library": "PERSON_HANDS.cheeks, gazePlan saccades, settleTo"
+    },
+    {
+     "t": 49.62,
+     "end": 50.8,
+     "cue": {
+      "word": "«لماذا",
+      "t": 49.62
+     },
+     "who": "thief1",
+     "action": "palms up to the ascetic: why?",
+     "acting": "head tilt, brow -0.8; ascetic follows his look down to the goat and back",
+     "library": "PERSON_HANDS.palmsUp, look()"
+    },
+    {
+     "t": 50.88,
+     "end": 51.5,
+     "cue": {
+      "word": "كلبًا",
+      "t": 50.88
+     },
+     "who": "thief1",
+     "action": "points straight down at the goat; a balloon from him holds a dog icon and ?; counter DOG? shows 1",
+     "acting": "goat looks up the pointing arm, still chewing",
+     "library": "PERSON_HANDS.pointDown, bubble + dogIcon, S.counter"
+    },
+    {
+     "t": 51.54,
+     "end": 52.3,
+     "cue": {
+      "word": "بيتك؟»",
+      "t": 51.8
+     },
+     "who": "thief1",
+     "action": "jerks a thumb down the road toward the far house",
+     "acting": "eyebrows hold the question; ascetic begins to grin",
+     "library": "aR angle, lookAt"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 43.4,
+     "text": "THIEF 1"
+    },
+    {
+     "t": 50.9,
+     "text": "DOG? 1"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 52.3
+   }
+  },
+  {
+   "id": "S7",
+   "start": 52.3,
+   "end": 62.6,
+   "paragraphs": [
+    3
+   ],
+   "set": "countryRoad",
+   "cast": [
+    "ascetic",
+    "thief1",
+    "goat"
+   ],
+   "summary": "The ascetic laughs it off, completely sure of himself, and walks on. Behind his back the thief drops the act and signals ahead.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "track",
+    "notes": "Hold the two-shot (zoom 1.7). At 60.9 the camera follows the ascetic 150 units right, letting thief1 slide to the left third, then stops so we stay with the thief when the ascetic exits."
+   },
+   "composition": "Ascetic centre-left, thief right, goat low centre. GOAT label and arrow below the faces. Counter DOG? 1 stays top-right.",
+   "actions": [
+    {
+     "t": 52.5,
+     "end": 53.7,
+     "cue": {
+      "word": "ضحك",
+      "t": 52.5
+     },
+     "who": "ascetic",
+     "action": "throws his head back and laughs, belly shaking",
+     "acting": "eyes shut (lid 1), mouth open, tremble 3 on the torso, beads bouncing",
+     "library": "tremble, talk 1, swing"
+    },
+    {
+     "t": 53.76,
+     "end": 55.1,
+     "cue": {
+      "word": "وقال:",
+      "t": 54.44
+     },
+     "who": "ascetic",
+     "action": "wipes one eye, recovers, pats the thief kindly on the arm",
+     "acting": "wet true for a moment (tear of laughter), indulgent smile",
+     "library": "handR target, wet"
+    },
+    {
+     "t": 55.14,
+     "end": 55.9,
+     "cue": {
+      "word": "«هذا",
+      "t": 55.14
+     },
+     "who": "ascetic",
+     "action": "presents the goat with both open hands",
+     "acting": "proud, gaze to the thief, brow -0.3",
+     "library": "PERSON_HANDS.palmsUp lowered toward the goat"
+    },
+    {
+     "t": 55.94,
+     "end": 56.7,
+     "cue": {
+      "word": "ماعز،",
+      "t": 55.94
+     },
+     "who": "goat",
+     "action": "the goat bleats on cue: MEH! Arrow and label GOAT",
+     "acting": "head up, mouth open, ears back; this is the one true witness",
+     "library": "goat {talk 1, headUp}, S.arrow + S.label, soundArcs"
+    },
+    {
+     "t": 56.8,
+     "end": 58.4,
+     "cue": {
+      "word": "كلبًا!",
+      "t": 57.5
+     },
+     "who": "ascetic",
+     "action": "wags a finger: not a dog; the thief's dog balloon gets a red cross and pops",
+     "acting": "amused certainty, head shake",
+     "library": "handR keyed sine, bubble out"
+    },
+    {
+     "t": 58.56,
+     "end": 59.2,
+     "cue": {
+      "word": "ترى",
+      "t": 58.84
+     },
+     "who": "ascetic",
+     "action": "points two fingers at his own eyes",
+     "acting": "eyes wide open, leaning in",
+     "library": "handR target near the eyes"
+    },
+    {
+     "t": 59.3,
+     "end": 60.6,
+     "cue": {
+      "word": "جيدًا؟»",
+      "t": 59.3
+     },
+     "who": "ascetic",
+     "action": "leans in and peers into the thief's masked eyes like a doctor; the thief leans back and shrugs",
+     "acting": "ascetic tip 0.12; thief tip -0.1, PERSON_HANDS.palmsUp, innocent raised brows",
+     "library": "tip, palmsUp"
+    },
+    {
+     "t": 60.72,
+     "end": 61.5,
+     "cue": {
+      "word": "واصل",
+      "t": 60.92
+     },
+     "who": "ascetic",
+     "action": "straightens, chuckles, tugs the rope and walks on to the right",
+     "acting": "shaking his head, smile; goat gives the thief a long side look as it passes",
+     "library": "walk, goat gaze plan"
+    },
+    {
+     "t": 61.52,
+     "end": 62.14,
+     "cue": {
+      "word": "طريقه.",
+      "t": 61.52
+     },
+     "who": "thief1",
+     "action": "mask off the act: the moment the ascetic's back is turned the wide-eyed face drops into a smirk",
+     "acting": "lid 0.5, brow 0.5, mouth smirk-like smile; watches him go",
+     "library": "mask on / mask off pattern"
+    },
+    {
+     "t": 62.14,
+     "end": 62.6,
+     "who": "thief1",
+     "action": "holds one finger high as a signal to the next man up the road",
+     "acting": "gaze far right",
+     "library": "PERSON_HANDS.pointUp"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 52.6,
+     "text": "HA HA!"
+    },
+    {
+     "t": 56.0,
+     "text": "MEH!"
+    },
+    {
+     "t": 56.1,
+     "text": "GOAT"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 62.6,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 62.6,
+    "label": "A LITTLE LATER..."
+   }
+  },
+  {
+   "id": "S8",
+   "start": 62.6,
+   "end": 77.0,
+   "paragraphs": [
+    4
+   ],
+   "set": "countryRoad",
+   "cast": [
+    "thief2",
+    "ascetic",
+    "goat"
+   ],
+   "summary": "Thief 2 rises out of a bush in a false beard, inspects the goat nose to nose, and is shocked that such a man leads a dog.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Under the transition card (covered midpoint about 63.1) cut the camera to the bush at world x 1700. Medium zoom 1.5; at 67.6 push to 1.9 on thief2 and the goat nose to nose (centre y 800); back to a two-shot 1.6 at 70.9."
+   },
+   "composition": "Bush at x 1760 (Library bush, w 260, h 150). Ascetic stops at x 1560, goat at x 1640 has wandered a little ahead of him toward the bush. Thief2 comes out on the left side of the bush.",
+   "actions": [
+    {
+     "t": 62.6,
+     "end": 63.9,
+     "cue": {
+      "word": "بعد",
+      "t": 63.14
+     },
+     "who": "fx",
+     "action": "transition card A LITTLE LATER... wipes across and off",
+     "acting": "none",
+     "library": "S.transition with caption; camera key pair under the card"
+    },
+    {
+     "t": 64.0,
+     "end": 64.8,
+     "cue": {
+      "word": "قليل،",
+      "t": 64.0
+     },
+     "who": "ascetic",
+     "action": "is walking again, still chuckling to himself",
+     "acting": "head shake, smile; nothing has stuck yet",
+     "library": "walk, footfalls"
+    },
+    {
+     "t": 64.88,
+     "end": 65.6,
+     "cue": {
+      "word": "ظهر",
+      "t": 64.88
+     },
+     "who": "thief2",
+     "action": "the bush rustles and thief2 rises out of it, hooking a false beard on strings over his ears",
+     "acting": "leaves fall off his cap; he checks the beard is on, clears his throat",
+     "library": "bush occluder, hop small, beard disguise item, leaf particles (seeded)"
+    },
+    {
+     "t": 65.62,
+     "end": 67.5,
+     "cue": {
+      "word": "اللص",
+      "t": 65.62
+     },
+     "who": "lettering",
+     "action": "arrow and label THIEF 2; he steps onto the road and strolls toward them hands behind his back",
+     "acting": "overdone innocence: eyes on the sky, whistling mouth o",
+     "library": "S.arrow + S.label, walk"
+    },
+    {
+     "t": 67.6,
+     "end": 68.4,
+     "cue": {
+      "word": "ونظر",
+      "t": 67.6
+     },
+     "who": "thief2",
+     "action": "stops dead, bends at the waist and stares",
+     "acting": "tip 0.3, eyes wide, the false beard swings forward",
+     "library": "tip, swing on the beard"
+    },
+    {
+     "t": 68.5,
+     "end": 69.1,
+     "cue": {
+      "word": "الماعز",
+      "t": 68.5
+     },
+     "who": "goat",
+     "action": "nose to nose: the goat stares back, chewing, and blinks slowly",
+     "acting": "deadpan; ears twitch once",
+     "library": "goat {chew, lid ramp}"
+    },
+    {
+     "t": 69.2,
+     "end": 70.5,
+     "cue": {
+      "word": "مستغربًا.",
+      "t": 69.2
+     },
+     "who": "thief2",
+     "action": "rubs both eyes with his fists, looks again: goat, ascetic, goat",
+     "acting": "saccades; the beard has slipped sideways and he pushes it back",
+     "library": "handL/handR at the eyes, gazePlan 0.07"
+    },
+    {
+     "t": 70.58,
+     "end": 72.1,
+     "cue": {
+      "word": "«رجل",
+      "t": 70.94
+     },
+     "who": "thief2",
+     "action": "straightens and addresses the ascetic with a respectful hand on his chest",
+     "acting": "talk 0.7, brow -0.5 (dismay)",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 72.22,
+     "end": 72.9,
+     "cue": {
+      "word": "مثلك",
+      "t": 72.22
+     },
+     "who": "thief2",
+     "action": "gestures up and down the ascetic's whole figure: a man like you",
+     "acting": "the ascetic stands a little taller, flattered (sq 1.03)",
+     "library": "PERSON_HANDS.palmsUp sweep"
+    },
+    {
+     "t": 73.0,
+     "end": 73.5,
+     "cue": {
+      "word": "يقود",
+      "t": 73.0
+     },
+     "who": "thief2",
+     "action": "mimes holding a lead",
+     "acting": "pinched fingers, wrinkled nose",
+     "library": "PERSON_HANDS.grip"
+    },
+    {
+     "t": 73.6,
+     "end": 74.3,
+     "cue": {
+      "word": "كلبًا",
+      "t": 73.6
+     },
+     "who": "thief2",
+     "action": "points at the goat; dog-icon balloon; counter DOG? ticks to 2",
+     "acting": "the ascetic's smile shrinks by half (mouth smile to closed)",
+     "library": "PERSON_HANDS.pointDown, bubble + dogIcon, S.counter"
+    },
+    {
+     "t": 74.38,
+     "end": 74.9,
+     "cue": {
+      "word": "الشارع؟",
+      "t": 74.38
+     },
+     "who": "thief2",
+     "action": "sweeps an arm along the open road: in public",
+     "acting": "looks left and right as if embarrassed for him",
+     "library": "aL sweep, gazePlan"
+    },
+    {
+     "t": 75.0,
+     "end": 76.2,
+     "cue": {
+      "word": "أمر",
+      "t": 75.88
+     },
+     "who": "thief2",
+     "action": "shakes his head slowly and tuts",
+     "acting": "lid 0.5, mouth frown; the ascetic's gaze has dropped to the goat",
+     "library": "head shake keyed, look()"
+    },
+    {
+     "t": 76.26,
+     "end": 77.0,
+     "cue": {
+      "word": "عجيب!»",
+      "t": 76.26
+     },
+     "who": "thief2",
+     "action": "walks on past them to the left, still shaking his head, and peeks back once",
+     "acting": "the peek: one quick look back, then eyes front when the ascetic turns",
+     "library": "walk, peek pattern"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 63.0,
+     "text": "A LITTLE LATER..."
+    },
+    {
+     "t": 65.7,
+     "text": "THIEF 2"
+    },
+    {
+     "t": 73.7,
+     "text": "DOG? 2"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 77.0
+   }
+  },
+  {
+   "id": "S9",
+   "start": 77.0,
+   "end": 83.9,
+   "paragraphs": [
+    4
+   ],
+   "set": "countryRoad",
+   "cast": [
+    "ascetic",
+    "goat",
+    "thief1",
+    "thief2"
+   ],
+   "summary": "The first crack. He stops in the road and asks himself why everyone calls it a dog.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Slow push from zoom 1.7 to 2.3 on the ascetic's face (centre about 1560,650) across the scene; tilt down 60 units at 83.1 to include the goat."
+   },
+   "composition": "Ascetic slightly left of centre; small thought cloud up right (360x220) with two thief heads. Goat enters the bottom of frame at the end.",
+   "actions": [
+    {
+     "t": 77.12,
+     "end": 78.5,
+     "cue": {
+      "word": "توقف",
+      "t": 77.12
+     },
+     "who": "ascetic",
+     "action": "takes two steps and stops dead; the goat walks into the back of his legs and bounces off",
+     "acting": "smile gone; goat bump sq 0.9 and a shake of the head",
+     "library": "walk to a stop, settleTo, goat impactSquash small"
+    },
+    {
+     "t": 78.6,
+     "end": 79.2,
+     "cue": {
+      "word": "الناسك",
+      "t": 78.6
+     },
+     "who": "ascetic",
+     "action": "stands quite still; only his pupils move, back toward where thief2 went",
+     "acting": "suspense by stillness, lid 0.2",
+     "library": "gazePlan"
+    },
+    {
+     "t": 79.3,
+     "end": 80.6,
+     "cue": {
+      "word": "لنفسه:",
+      "t": 79.92
+     },
+     "who": "ascetic",
+     "action": "hand comes up to his beard",
+     "acting": "brow -0.5 (first worry), mouth closed",
+     "library": "PERSON_HANDS.chin"
+    },
+    {
+     "t": 80.72,
+     "end": 81.7,
+     "cue": {
+      "word": "«لماذا",
+      "t": 80.72
+     },
+     "who": "fx",
+     "action": "small thought cloud: the heads of thief1 and thief2, each with a little dog icon",
+     "acting": "he looks up into the cloud",
+     "library": "thoughtCloud small, person heads s 0.4, dogIcon"
+    },
+    {
+     "t": 81.8,
+     "end": 83.0,
+     "cue": {
+      "word": "الجميع",
+      "t": 82.54
+     },
+     "who": "ascetic",
+     "action": "eyes go from one head to the other and back",
+     "acting": "two saccades; a single sweat drop",
+     "library": "gazePlan 0.07"
+    },
+    {
+     "t": 83.12,
+     "end": 83.9,
+     "cue": {
+      "word": "كلبًا؟»",
+      "t": 83.12
+     },
+     "who": "goat",
+     "action": "he looks down. For 10 frames the goat's ears droop long and its horns shrink a little, then it is a goat again",
+     "acting": "ascetic blinks hard twice; goat unchanged in attitude, chewing",
+     "library": "goat {asDog 0 to 0.3 to 0}, blink override"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 83.9
+   }
+  },
+  {
+   "id": "S10",
+   "start": 83.9,
+   "end": 95.0,
+   "paragraphs": [
+    5
+   ],
+   "set": "countryRoad",
+   "cast": [
+    "thief3",
+    "ascetic",
+    "goat"
+   ],
+   "summary": "Thief 3 arrives as the confident expert in a merchant cloak: certainly a dog. He plants the question that turns doubt against the seller.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Low wall at world x 2350. Medium-wide zoom 1.4 for the entrance; two-shot zoom 1.8 from 90.0; brief push to 2.0 on the pair at 93.5 for the conspiratorial lean."
+   },
+   "composition": "Thief3 enters from the right, taller than the ascetic (s 1.08 vs 1.0), and ends at x 2260 facing left. Ascetic x 2110, goat x 2000. Stamp 3 OUT OF 3 top-right where the counter was.",
+   "actions": [
+    {
+     "t": 83.96,
+     "end": 85.5,
+     "cue": {
+      "word": "ثم",
+      "t": 83.96
+     },
+     "who": "ascetic",
+     "action": "trudges on, slower now, glancing down at the goat every other step",
+     "acting": "shoulders lower (tip 0.05), no smile, rope held shorter",
+     "library": "walk with lower amp, look()"
+    },
+    {
+     "t": 85.58,
+     "end": 86.4,
+     "cue": {
+      "word": "جاء",
+      "t": 85.58
+     },
+     "who": "thief3",
+     "action": "strides in from the right in a long cloak and a tall turban, chest out",
+     "acting": "long confident steps, chin high, lid 0.35; mask visible under the turban",
+     "library": "walk, cloak + tall turban disguise items"
+    },
+    {
+     "t": 86.42,
+     "end": 87.4,
+     "cue": {
+      "word": "الثالث،",
+      "t": 86.42
+     },
+     "who": "lettering",
+     "action": "arrow and label THIEF 3",
+     "acting": "he flicks the cloak over one shoulder",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 87.44,
+     "end": 88.0,
+     "cue": {
+      "word": "وقال",
+      "t": 87.44
+     },
+     "who": "thief3",
+     "action": "stops square in front of the ascetic, feet apart",
+     "acting": "landSquash small on the last step",
+     "library": "settleTo"
+    },
+    {
+     "t": 88.06,
+     "end": 89.9,
+     "cue": {
+      "word": "واثق:",
+      "t": 88.62
+     },
+     "who": "thief3",
+     "action": "fists on hips; looks the goat over once, like a judge",
+     "acting": "smug half lids, slow single nod; no double take this time: calm is more convincing",
+     "library": "PERSON_HANDS.hipsHands"
+    },
+    {
+     "t": 90.02,
+     "end": 91.0,
+     "cue": {
+      "word": "رجل،",
+      "t": 90.2
+     },
+     "who": "thief3",
+     "action": "lays a heavy friendly hand on the ascetic's shoulder",
+     "acting": "the ascetic sinks an inch under it (sq 0.97), gaze up at him",
+     "library": "handL target on the shoulder"
+    },
+    {
+     "t": 91.14,
+     "end": 91.9,
+     "cue": {
+      "word": "كلب",
+      "t": 91.46
+     },
+     "who": "thief3",
+     "action": "points at the goat with a whole flat hand; dog balloon; counter ticks to 3 and stamps 3 OUT OF 3",
+     "acting": "goat looks at the hand, then at the lens",
+     "library": "PERSON_HANDS.pointDown, bubble + dogIcon, S.counter, S.emphasis stamp"
+    },
+    {
+     "t": 92.0,
+     "end": 93.4,
+     "cue": {
+      "word": "شك.",
+      "t": 92.54
+     },
+     "who": "thief3",
+     "action": "folds his arms: no doubt",
+     "acting": "eyes closed in certainty (lid 1) then one slow nod",
+     "library": "PERSON_HANDS.folded"
+    },
+    {
+     "t": 93.5,
+     "end": 94.2,
+     "cue": {
+      "word": "باعه",
+      "t": 93.72
+     },
+     "who": "thief3",
+     "action": "leans in, hand cupped to his mouth, and jerks a thumb back toward the market",
+     "acting": "conspiratorial brow -0.6; the ascetic's pupils slide left toward the market",
+     "library": "PERSON_HANDS.cupMouth, tip 0.12, gazePlan"
+    },
+    {
+     "t": 94.26,
+     "end": 95.0,
+     "cue": {
+      "word": "لك؟»",
+      "t": 94.26
+     },
+     "who": "fx",
+     "action": "a small cloud puffs over the ascetic's head with the seller's smiling face and a ?",
+     "acting": "the idea is planted; thief3 pats his shoulder twice and strolls off left",
+     "library": "thoughtCloud small, person head s 0.4"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 86.5,
+     "text": "THIEF 3"
+    },
+    {
+     "t": 91.5,
+     "text": "3 OUT OF 3"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 95.0
+   }
+  },
+  {
+   "id": "S11",
+   "start": 95.0,
+   "end": 101.7,
+   "paragraphs": [
+    5
+   ],
+   "set": "countryRoad",
+   "cast": [
+    "ascetic",
+    "goat",
+    "thief3"
+   ],
+   "summary": "He examines the animal again. The goat is plainly a goat, and he no longer trusts what he sees.",
+   "camera": {
+    "shot": "close",
+    "move": "drift",
+    "notes": "Close two-shot of ascetic and goat, zoom 2.0, centre 2060,770. Drift 30 units right over the scene. No cuts."
+   },
+   "composition": "Ascetic bent over on the right, goat on the left looking up at him. Thief3 exits small in the background left by 97.4.",
+   "actions": [
+    {
+     "t": 95.34,
+     "end": 96.3,
+     "cue": {
+      "word": "نظر",
+      "t": 95.34
+     },
+     "who": "ascetic",
+     "action": "turns to the goat and bends down, hands on knees",
+     "acting": "tip 0.2, squinting (lid 0.5)",
+     "library": "person handL/handR on the knees, tip"
+    },
+    {
+     "t": 96.4,
+     "end": 97.4,
+     "cue": {
+      "word": "الحيوان",
+      "t": 96.68
+     },
+     "who": "ascetic",
+     "action": "lifts one of the goat's ears and looks under it; lets it flop",
+     "acting": "goat endures it; ear falls with a bounce",
+     "library": "handR target, goat {earLift}, settleTo"
+    },
+    {
+     "t": 97.44,
+     "end": 98.9,
+     "cue": {
+      "word": "أخرى،",
+      "t": 97.84
+     },
+     "who": "ascetic",
+     "action": "second look: taps a horn, checks the beard tuft, counts the legs with a finger",
+     "acting": "lips moving (talk 0.3); goat says MEH? very small",
+     "library": "handR targets, goat talk"
+    },
+    {
+     "t": 99.02,
+     "end": 99.5,
+     "cue": {
+      "word": "وبدأ",
+      "t": 99.02
+     },
+     "who": "ascetic",
+     "action": "straightens slowly, rope hanging loose in his hand",
+     "acting": "gaze unfocused, past the goat",
+     "library": "settleTo"
+    },
+    {
+     "t": 99.56,
+     "end": 100.1,
+     "cue": {
+      "word": "يشعر",
+      "t": 99.56
+     },
+     "who": "ascetic",
+     "action": "a hand goes to his chest",
+     "acting": "breathing faster (breathe x2)",
+     "library": "PERSON_HANDS.chest, breathe"
+    },
+    {
+     "t": 100.18,
+     "end": 100.9,
+     "cue": {
+      "word": "بالقلق",
+      "t": 100.18
+     },
+     "who": "ascetic",
+     "action": "worry: sweat drops, a tremble in the rope hand",
+     "acting": "brow -0.9, tremble 2, pupils small",
+     "library": "tremble, sweat drops (two ellipses, seeded)"
+    },
+    {
+     "t": 100.98,
+     "end": 101.7,
+     "cue": {
+      "word": "والحيرة.",
+      "t": 100.98
+     },
+     "who": "ascetic",
+     "action": "confusion: his eyes dart goat, road behind, goat; three ? glyphs pop round his head",
+     "acting": "saccades; the goat tilts its head the other way",
+     "library": "gazePlan 0.07, S.emphasis"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 97.9,
+     "text": "MEH?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 101.7
+   }
+  },
+  {
+   "id": "S12",
+   "start": 101.7,
+   "end": 112.9,
+   "paragraphs": [
+    6
+   ],
+   "set": "countryRoad",
+   "cast": [
+    "ascetic",
+    "goat",
+    "thief1",
+    "thief2",
+    "thief3"
+   ],
+   "summary": "He sits on the wall and reasons. In a large thought cloud a balance scale weighs what he saw against what three men say.",
+   "camera": {
+    "shot": "medium",
+    "move": "tilt",
+    "notes": "Pull out to zoom 1.3 and tilt up so the top 60% of the panel is sky for the cloud (centre 2200,560). Hold."
+   },
+   "composition": "Ascetic sits on the low wall bottom-left of frame (x 2140), goat beside him. Thought cloud 720x420 fills the upper frame. Inside: a balance scale; left pan gets the goat, right pan gets the three thief heads.",
+   "actions": [
+    {
+     "t": 101.74,
+     "end": 103.6,
+     "cue": {
+      "word": "فكر",
+      "t": 101.74
+     },
+     "who": "ascetic",
+     "action": "backs up to the low wall and sits down heavily, rope across his knees",
+     "acting": "sq 0.95 on the sit, a long breath out",
+     "library": "person sit (planned pose), landSquash"
+    },
+    {
+     "t": 103.68,
+     "end": 104.7,
+     "cue": {
+      "word": "الناسك:",
+      "t": 103.68
+     },
+     "who": "fx",
+     "action": "thought cloud inflates above him from three small puffs",
+     "acting": "he looks up into it",
+     "library": "thoughtCloud(box, drawInside)"
+    },
+    {
+     "t": 104.8,
+     "end": 105.7,
+     "cue": {
+      "word": "رأيت",
+      "t": 105.24
+     },
+     "who": "balanceScale",
+     "action": "the empty scale appears, level; a little ascetic head with eyes pops over the left pan",
+     "acting": "he points at his own eye",
+     "library": "balanceScale {tilt 0}, PERSON_HANDS.pointUp to the eye"
+    },
+    {
+     "t": 105.78,
+     "end": 106.7,
+     "cue": {
+      "word": "ماعزًا",
+      "t": 105.78
+     },
+     "who": "balanceScale",
+     "action": "a goat icon drops into the left pan; the pan dips",
+     "acting": "small hopeful smile",
+     "library": "balanceScale {tilt -0.25}, fallY, rebound"
+    },
+    {
+     "t": 106.74,
+     "end": 107.8,
+     "cue": {
+      "word": "السوق،",
+      "t": 106.74
+     },
+     "who": "fx",
+     "action": "a tiny market awning sketches in behind the goat icon",
+     "acting": "nod: yes, that is what happened",
+     "library": "S.box, awning shape"
+    },
+    {
+     "t": 107.86,
+     "end": 108.5,
+     "cue": {
+      "word": "لكن",
+      "t": 107.86
+     },
+     "who": "ascetic",
+     "action": "his hand, raised, hesitates and sinks",
+     "acting": "smile fades, brow -0.6",
+     "library": "handR ease"
+    },
+    {
+     "t": 108.56,
+     "end": 110.0,
+     "cue": {
+      "word": "ثلاثة",
+      "t": 108.56
+     },
+     "who": "balanceScale",
+     "action": "three thief heads drop into the right pan one at a time (108.6, 109.1, 109.6); the beam swings further with each",
+     "acting": "he flinches a little at each clunk",
+     "library": "stagger, fallY, balanceScale {tilt +0.1, +0.3, +0.5}"
+    },
+    {
+     "t": 110.08,
+     "end": 111.0,
+     "cue": {
+      "word": "يقولون",
+      "t": 110.08
+     },
+     "who": "fx",
+     "action": "each head gets a tiny speech tick",
+     "acting": "his eyes go 1, 2, 3",
+     "library": "bubble small x3, gazePlan"
+    },
+    {
+     "t": 111.04,
+     "end": 112.9,
+     "cue": {
+      "word": "كلب.",
+      "t": 111.52
+     },
+     "who": "balanceScale",
+     "action": "three dog icons light up over the heads; the right pan hits the bottom with a bounce and the lone goat pan is flung high",
+     "acting": "he slumps; the real goat beside him looks up at the cloud too",
+     "library": "balanceScale {tilt 0.5}, rebound, dogIcon, lettering 1 vs 3"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 111.6,
+     "text": "1 vs 3"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 112.9
+   }
+  },
+  {
+   "id": "S13",
+   "start": 112.9,
+   "end": 120.74,
+   "paragraphs": [
+    6
+   ],
+   "set": "countryRoad",
+   "cast": [
+    "ascetic",
+    "goat",
+    "seller"
+   ],
+   "summary": "Did the seller cheat me, or are my eyes wrong? He rubs his eyes and, through them, the goat flickers into a dog. He cannot choose.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Cloud content changes with a quick iris inside the cloud at 112.9. At 115.2 push to zoom 1.9 on the ascetic and goat (centre 2120,760) as the cloud shrinks away. From 115.9 to 117.6 the frame carries the blue dream wash (his view)."
+   },
+   "composition": "Ascetic seated left, goat right, level with his knees. Signs GOAT (left, yellow) and DOG (right, blue) pop above the goat at 118.7 for the head turns.",
+   "actions": [
+    {
+     "t": 112.96,
+     "end": 113.9,
+     "cue": {
+      "word": "خدعني",
+      "t": 113.26
+     },
+     "who": "seller",
+     "action": "in the cloud: the seller as the ascetic now imagines him, rubbing his hands with a sly sideways smile",
+     "acting": "this is imagination: the same friendly face from S2 redrawn with brow 0.6 and a wink",
+     "library": "thoughtCloud, person villager variant, wink"
+    },
+    {
+     "t": 113.94,
+     "end": 115.1,
+     "cue": {
+      "word": "البائع؟",
+      "t": 113.94
+     },
+     "who": "ascetic",
+     "action": "frowns up at the cloud and half raises an accusing finger",
+     "acting": "brow 0.5, mouth frown",
+     "library": "PERSON_HANDS.pointUp half"
+    },
+    {
+     "t": 115.18,
+     "end": 115.8,
+     "cue": {
+      "word": "أم",
+      "t": 115.18
+     },
+     "who": "ascetic",
+     "action": "the finger wavers and comes back to point at his own face; the cloud pops",
+     "acting": "brow flips to -0.8",
+     "library": "handR ease, settleTo"
+    },
+    {
+     "t": 115.86,
+     "end": 116.4,
+     "cue": {
+      "word": "أرى",
+      "t": 116.14
+     },
+     "who": "ascetic",
+     "action": "rubs both eyes hard with his knuckles",
+     "acting": "lid 1, head down",
+     "library": "handL/handR at the eyes, 5 Hz rub"
+    },
+    {
+     "t": 116.42,
+     "end": 117.7,
+     "cue": {
+      "word": "الحقيقة؟»",
+      "t": 116.42
+     },
+     "who": "goat",
+     "action": "his view (blue dream wash): the goat wobbles goat, dog, goat, dog and back, tongue out and tail wagging on the dog phases",
+     "acting": "the goat's own expression never changes; only the costume of his doubt does",
+     "library": "goat {asDog} keyed 0, 0.9, 0.1, 0.9, 0; dream wash"
+    },
+    {
+     "t": 117.84,
+     "end": 118.6,
+     "cue": {
+      "word": "يعرف",
+      "t": 118.12
+     },
+     "who": "ascetic",
+     "action": "the wash clears; he lowers his hands and stares",
+     "acting": "eyes wide, wet true",
+     "library": "settleTo, wet"
+    },
+    {
+     "t": 118.7,
+     "end": 119.7,
+     "cue": {
+      "word": "كلام",
+      "t": 119.16
+     },
+     "who": "ascetic",
+     "action": "head turns left to the sign GOAT, right to the sign DOG, left, right",
+     "acting": "four turns, each smaller and slower (losing strength)",
+     "library": "gazePlan + 4 unit head shift, S.label x2"
+    },
+    {
+     "t": 119.8,
+     "end": 120.74,
+     "cue": {
+      "word": "يصدق.",
+      "t": 119.8
+     },
+     "who": "ascetic",
+     "action": "both signs fade; his shoulders drop and his chin sinks onto his chest",
+     "acting": "lid 0.6, long blink; goat nudges his knee with its nose and gets no answer",
+     "library": "tip 0.1, goat nudge (x key + settle)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 118.8,
+     "text": "GOAT"
+    },
+    {
+     "t": 119.3,
+     "text": "DOG"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 120.74
+   }
+  },
+  {
+   "id": "S14",
+   "start": 120.74,
+   "end": 127.6,
+   "paragraphs": [
+    7
+   ],
+   "set": "countryRoad",
+   "cast": [
+    "ascetic",
+    "goat",
+    "seller"
+   ],
+   "summary": "He decides: the seller must have bewitched his eyes. A wrong answer, firmly held.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Zoom 1.6 as he stands; push to 2.1 on his face for 126.46-127.5 while the spiral eyes show."
+   },
+   "composition": "Ascetic rises at x 2140, goat at x 2230. Thought cloud (480x300) upper right with the imagined sorcerer-seller.",
+   "actions": [
+    {
+     "t": 120.74,
+     "end": 122.7,
+     "cue": {
+      "word": "أخيرًا،",
+      "t": 120.74
+     },
+     "who": "ascetic",
+     "action": "lifts his head, slaps both knees and stands up",
+     "acting": "anticipate dip, sq 1.05 on the rise; jaw set",
+     "library": "anticipate, settleTo"
+    },
+    {
+     "t": 122.8,
+     "end": 123.7,
+     "cue": {
+      "word": "أقنع",
+      "t": 122.8
+     },
+     "who": "ascetic",
+     "action": "nods to himself, then again harder",
+     "acting": "brow 0.4, mouth closed firm",
+     "library": "drop pulses"
+    },
+    {
+     "t": 123.78,
+     "end": 124.8,
+     "cue": {
+      "word": "نفسه",
+      "t": 123.78
+     },
+     "who": "ascetic",
+     "action": "punches a fist into his open palm",
+     "acting": "decision; the goat startles a step back",
+     "library": "handR to handL, goat hop small"
+    },
+    {
+     "t": 124.86,
+     "end": 125.6,
+     "cue": {
+      "word": "البائع",
+      "t": 124.86
+     },
+     "who": "seller",
+     "action": "thought cloud: the seller again, now in a pointed hat with stars",
+     "acting": "grinning, fingers spread",
+     "library": "thoughtCloud, person villager + hat triangle"
+    },
+    {
+     "t": 125.64,
+     "end": 126.4,
+     "cue": {
+      "word": "ربما",
+      "t": 125.64
+     },
+     "who": "seller",
+     "action": "the cloud seller waggles his fingers; yellow sparkles stream out of the cloud toward the ascetic's face",
+     "acting": "ascetic leans back from them",
+     "library": "star glyphs on a bezier, tremble on the fingers"
+    },
+    {
+     "t": 126.46,
+     "end": 127.0,
+     "cue": {
+      "word": "سحر",
+      "t": 126.46
+     },
+     "who": "fx",
+     "action": "lettering ZAP! and the sparkles land on his eyes",
+     "acting": "head jolts back 6 units",
+     "library": "S.emphasis, impact pulse"
+    },
+    {
+     "t": 127.06,
+     "end": 127.6,
+     "cue": {
+      "word": "عينيه.",
+      "t": 127.06
+     },
+     "who": "ascetic",
+     "action": "his pupils become two slow spirals; the real goat, in plain view, bleats at him in vain",
+     "acting": "eyes spiral for 0.5 s then return to angry certainty",
+     "library": "spiralEyes overlay (two 2-turn spirals r 9), goat talk"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 126.5,
+     "text": "ZAP!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 127.6
+   }
+  },
+  {
+   "id": "S15",
+   "start": 127.6,
+   "end": 134.0,
+   "paragraphs": [
+    7
+   ],
+   "set": "countryRoad",
+   "cast": [
+    "ascetic",
+    "goat"
+   ],
+   "summary": "He unties the rope with his own hands and leaves the goat at the roadside: exactly what the leader promised.",
+   "camera": {
+    "shot": "insert",
+    "move": "pull-out",
+    "notes": "Insert close on hands, knot and goat neck (zoom 2.6, centre 2230,790) for 127.8-130.9; pull out to zoom 1.4 by 132.4 so the goat is alone on the right third with the road empty to the left."
+   },
+   "composition": "In the insert the goat's face is top-right looking up at him. In the wide, goat at x 2230 by a grass tuft; ascetic walks out to the left; rope lies in an S on the ground between them.",
+   "actions": [
+    {
+     "t": 127.82,
+     "end": 129.1,
+     "cue": {
+      "word": "فك",
+      "t": 127.82
+     },
+     "who": "ascetic",
+     "action": "kneels and picks at the knot with both hands",
+     "acting": "angry concentration, brow 0.6; fingers fumble once",
+     "library": "handL/handR targets, rope {knot 1 to 0.4}"
+    },
+    {
+     "t": 129.22,
+     "end": 129.9,
+     "cue": {
+      "word": "الحبل",
+      "t": 129.22
+     },
+     "who": "rope",
+     "action": "the knot opens and the loop slackens",
+     "acting": "goat looks from the rope up to his face",
+     "library": "rope {knot 0, loop widen}"
+    },
+    {
+     "t": 129.96,
+     "end": 130.4,
+     "cue": {
+      "word": "رقبة",
+      "t": 129.96
+     },
+     "who": "ascetic",
+     "action": "lifts the loop over the horns and off the neck",
+     "acting": "he will not meet the goat's eyes",
+     "library": "handR arc, look() away"
+    },
+    {
+     "t": 130.5,
+     "end": 131.2,
+     "cue": {
+      "word": "الماعز،",
+      "t": 130.5
+     },
+     "who": "goat",
+     "action": "the goat, free, simply stands there and looks up at him",
+     "acting": "wet true, head tilt, one soft MEH",
+     "library": "goat {wet, headTilt, talk 0.4}"
+    },
+    {
+     "t": 131.3,
+     "end": 132.3,
+     "cue": {
+      "word": "وتركه",
+      "t": 131.3
+     },
+     "who": "ascetic",
+     "action": "drops the rope on the ground and turns his back; echo of the leader's mime at 39.46",
+     "acting": "the hand opens finger by finger exactly as the leader showed",
+     "library": "fallY for the rope, turnFlip"
+    },
+    {
+     "t": 132.36,
+     "end": 133.3,
+     "cue": {
+      "word": "جانب",
+      "t": 132.72
+     },
+     "who": "goat",
+     "action": "takes one step after him, stops, and noses the grass tuft",
+     "acting": "ears down then up; begins to graze",
+     "library": "goat walk 1 step, {headDown 1, chew}"
+    },
+    {
+     "t": 133.34,
+     "end": 134.0,
+     "cue": {
+      "word": "الطريق،",
+      "t": 133.34
+     },
+     "who": "lettering",
+     "action": "arrow and label LEFT BEHIND over the goat",
+     "acting": "none",
+     "library": "S.arrow + S.label"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 133.4,
+     "text": "LEFT BEHIND"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 134.0
+   }
+  },
+  {
+   "id": "S16",
+   "start": 134.0,
+   "end": 140.2,
+   "paragraphs": [
+    7
+   ],
+   "set": "countryRoad",
+   "cast": [
+    "ascetic",
+    "goat"
+   ],
+   "summary": "He storms back toward the market to find the seller. The goat watches him go. The road is very quiet.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Hold the wide (zoom 1.4, goat on the right third). The ascetic shrinks to the left with distance (s 1.0 to 0.55) and leaves frame at 139.9. Stillness sets up the ambush."
+   },
+   "composition": "Goat right, tree at x 2520 behind it, bush at x 2420, low wall at x 2350. These are the three hiding places and must all be in frame.",
+   "actions": [
+    {
+     "t": 134.1,
+     "end": 134.9,
+     "cue": {
+      "word": "ثم",
+      "t": 134.1
+     },
+     "who": "ascetic",
+     "action": "squares his shoulders facing left",
+     "acting": "brow 1, mouth frown, fists",
+     "library": "anticipate"
+    },
+    {
+     "t": 134.98,
+     "end": 136.0,
+     "cue": {
+      "word": "عاد",
+      "t": 134.98
+     },
+     "who": "ascetic",
+     "action": "stomps off to the left; each footfall raises dust",
+     "acting": "tip 0.1 forward, arms pumping",
+     "library": "walk(AX2), footfalls, dustBurst"
+    },
+    {
+     "t": 136.12,
+     "end": 136.9,
+     "cue": {
+      "word": "غاضبًا",
+      "t": 136.12
+     },
+     "who": "ascetic",
+     "action": "two puffs of steam over his head; red dots climb his cheeks",
+     "acting": "anger flush 0 to 0.8",
+     "library": "flush (planned expression), steam = cloudFlat s 0.25 rising"
+    },
+    {
+     "t": 136.94,
+     "end": 137.8,
+     "cue": {
+      "word": "ليبحث",
+      "t": 136.94
+     },
+     "who": "ascetic",
+     "action": "shades his eyes with a hand and scans the horizon toward the market as he walks",
+     "acting": "gaze far left",
+     "library": "handR at the brow"
+    },
+    {
+     "t": 137.86,
+     "end": 139.0,
+     "cue": {
+      "word": "الرجل",
+      "t": 138.1
+     },
+     "who": "ascetic",
+     "action": "shakes a fist at a tiny cloud of the seller's face that floats ahead of him",
+     "acting": "small with distance now",
+     "library": "aR angles keyed, thoughtCloud tiny"
+    },
+    {
+     "t": 139.12,
+     "end": 140.2,
+     "cue": {
+      "word": "باعه",
+      "t": 139.12
+     },
+     "who": "goat",
+     "action": "the goat lifts its head and watches him go, then looks at the lens and bleats once",
+     "acting": "head tilt, slow chew; behind it one leaf falls from the tree",
+     "library": "goat {headDown 0, gaze}, leaf particle"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 139.4,
+     "text": "MEH?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 140.2
+   }
+  },
+  {
+   "id": "S17",
+   "start": 140.2,
+   "end": 148.1,
+   "paragraphs": [
+    8
+   ],
+   "set": "countryRoad",
+   "cast": [
+    "thief1",
+    "thief2",
+    "thief3",
+    "goat"
+   ],
+   "summary": "Three heads pop out of three hiding places. They tiptoe in, the leader simply picks the rope up off the ground, and they walk away with the goat.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Same wide for the pops; ease to zoom 1.7 centred on the goat by 144.9; then track right with the group from 147.4."
+   },
+   "composition": "Thief1 from behind the tree (x 2520), thief2 up out of the bush (x 2420), thief3 over the low wall (x 2350). Counter top-left. Disguises already half off: turban askew, beard on one ear, cloak trailing.",
+   "actions": [
+    {
+     "t": 140.24,
+     "end": 142.1,
+     "cue": {
+      "word": "خرج",
+      "t": 140.24
+     },
+     "who": "thief1",
+     "action": "pop, pop, pop: thief1 leans from the tree (140.24), thief2 rises from the bush (140.75), thief3 stands up behind the wall (141.25)",
+     "acting": "each checks left where the ascetic went; goat looks from one to the next",
+     "library": "peek pattern, stagger, hop small"
+    },
+    {
+     "t": 142.2,
+     "end": 143.6,
+     "cue": {
+      "word": "الثلاثة",
+      "t": 142.9
+     },
+     "who": "fx",
+     "action": "counter 1, 2, 3 above the heads; label THE THIEVES",
+     "acting": "none",
+     "library": "S.counter, S.label"
+    },
+    {
+     "t": 143.74,
+     "end": 144.9,
+     "cue": {
+      "word": "أماكنهم،",
+      "t": 144.0
+     },
+     "who": "thief2",
+     "action": "they tiptoe out and close in on the goat from three sides",
+     "acting": "exaggerated sneak, knees high, fingers spread; out of step with each other",
+     "library": "walk sneak steps, footfalls (TIP TAP), stagger"
+    },
+    {
+     "t": 144.98,
+     "end": 146.3,
+     "cue": {
+      "word": "وأمسكوا",
+      "t": 144.98
+     },
+     "who": "thief1",
+     "action": "the leader stoops, picks the loose rope end off the ground with two fingers, and slips the loop back over the goat's head",
+     "acting": "delicate, amused; the goat does not resist at all",
+     "library": "handR target, rope {loop}, PERSON_HANDS.grip"
+    },
+    {
+     "t": 146.38,
+     "end": 147.3,
+     "cue": {
+      "word": "الماعز",
+      "t": 146.38
+     },
+     "who": "thief1",
+     "action": "holds the rope up for the others like a prize; lettering TOO EASY!",
+     "acting": "thief2 claps silently, thief3 bows",
+     "library": "aR up, clasp, tip"
+    },
+    {
+     "t": 147.4,
+     "end": 148.1,
+     "cue": {
+      "word": "ومضوا",
+      "t": 147.4
+     },
+     "who": "thief1",
+     "action": "they set off to the right in a line: leader, goat, thief3, thief2",
+     "acting": "goat trots along as willingly as it did for the ascetic",
+     "library": "walk x4, rope sag"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 142.9,
+     "text": "THE THIEVES"
+    },
+    {
+     "t": 146.5,
+     "text": "TOO EASY!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 148.1
+   }
+  },
+  {
+   "id": "S18",
+   "start": 148.1,
+   "end": 153.8,
+   "paragraphs": [
+    8
+   ],
+   "set": "countryRoad",
+   "cast": [
+    "thief1",
+    "thief2",
+    "thief3",
+    "goat"
+   ],
+   "summary": "They laugh all the way up the road: the plan worked without a struggle.",
+   "camera": {
+    "shot": "medium",
+    "move": "track",
+    "notes": "Track right with the group at zoom 1.6, walkers held centre-left; let them walk out of frame to the right from 153.0."
+   },
+   "composition": "Line of four moving right along the road between x 2500 and 2950, the little house on the horizon ahead. Laugh lettering above and behind them, never on a face.",
+   "actions": [
+    {
+     "t": 148.1,
+     "end": 149.3,
+     "cue": {
+      "word": "به.",
+      "t": 148.1
+     },
+     "who": "thief2",
+     "action": "thief2 rips off the false beard and tosses it over his shoulder",
+     "acting": "beard tumbles on an arc and lands in the dust",
+     "library": "hop arc for the prop, rebound"
+    },
+    {
+     "t": 149.42,
+     "end": 150.2,
+     "cue": {
+      "word": "يضحكون",
+      "t": 149.42
+     },
+     "who": "thief1",
+     "action": "all three laugh as they walk: HA HA HA!",
+     "acting": "staggered belly laughs; leader head back, thief2 doubled over, thief3 slapping his knee",
+     "library": "tremble, stagger, talk 1"
+    },
+    {
+     "t": 150.28,
+     "end": 150.7,
+     "cue": {
+      "word": "لأن",
+      "t": 150.28
+     },
+     "who": "thief3",
+     "action": "thief3 flings the tall turban in the air and catches it",
+     "acting": "eyes follow it up and down",
+     "library": "hop arc, look()"
+    },
+    {
+     "t": 150.8,
+     "end": 151.6,
+     "cue": {
+      "word": "خطتهم",
+      "t": 150.8
+     },
+     "who": "thief1",
+     "action": "the leader taps his temple twice: the plan",
+     "acting": "smug lid 0.5, echo of 38.10",
+     "library": "handR at the cap"
+    },
+    {
+     "t": 151.64,
+     "end": 152.3,
+     "cue": {
+      "word": "نجحت",
+      "t": 151.64
+     },
+     "who": "thief2",
+     "action": "thief2 and thief3 slap palms over the goat's back",
+     "acting": "goat ducks its head under the slap",
+     "library": "handR targets meeting, goat drop"
+    },
+    {
+     "t": 152.34,
+     "end": 153.8,
+     "cue": {
+      "word": "صراع.",
+      "t": 152.88
+     },
+     "who": "thief2",
+     "action": "thief2 shows his clean hands front and back, then drops the unused sack by the road",
+     "acting": "mock innocence, brow -0.6; they walk out of frame, the sack and beard left behind",
+     "library": "PERSON_HANDS.palmsUp, sack prop fallY"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 149.5,
+     "text": "HA HA HA!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 153.8
+   }
+  },
+  {
+   "id": "S19",
+   "start": 153.8,
+   "end": 166.0,
+   "paragraphs": [
+    8
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "ascetic",
+    "goat",
+    "thief1"
+   ],
+   "summary": "The ascetic hunts through the market for the seller while, in an inset, the goat is still very much a goat. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Market wide at zoom 1.3 on the now empty goat stall. At 157.6 a round inset panel (r 190, thick black border) opens top-right of the picture showing the goat. At 162.5 ease the whole view out to zoom 1.1 for THE END."
+   },
+   "composition": "Ascetic low left to centre, searching. Inset circle top-right centred about (760, 330) in world terms at zoom 1.3, clear of his head. THE END lettering centre, upper third, at 162.6.",
+   "actions": [
+    {
+     "t": 153.84,
+     "end": 154.4,
+     "cue": {
+      "word": "أما",
+      "t": 153.84
+     },
+     "who": "set",
+     "action": "the market again; the goat stall stands empty, tether post bare, awning flapping",
+     "acting": "none",
+     "library": "marketStreet {stall empty}"
+    },
+    {
+     "t": 154.5,
+     "end": 155.2,
+     "cue": {
+      "word": "الناسك",
+      "t": 154.5
+     },
+     "who": "ascetic",
+     "action": "marches in from the right, red in the face",
+     "acting": "brow 1, flush 0.6, fists",
+     "library": "walk, footfalls, flush"
+    },
+    {
+     "t": 155.28,
+     "end": 155.9,
+     "cue": {
+      "word": "فكان",
+      "t": 155.28
+     },
+     "who": "ascetic",
+     "action": "stops at the empty stall and looks behind the counter",
+     "acting": "tip 0.2, gaze down",
+     "library": "settleTo, tip"
+    },
+    {
+     "t": 155.94,
+     "end": 156.5,
+     "cue": {
+      "word": "يبحث",
+      "t": 155.94
+     },
+     "who": "ascetic",
+     "action": "looks under the awning, then lifts the lid of a basket",
+     "acting": "quick saccades, jerky moves",
+     "library": "gazePlan 0.07, handR"
+    },
+    {
+     "t": 156.54,
+     "end": 157.5,
+     "cue": {
+      "word": "البائع،",
+      "t": 156.8
+     },
+     "who": "ascetic",
+     "action": "hand over his eyes, turns left, right, left: no seller; a ? pops over the stall",
+     "acting": "angry brows sag into bafflement (brow 1 to -0.5)",
+     "library": "turnFlip x2, S.emphasis"
+    },
+    {
+     "t": 157.58,
+     "end": 158.6,
+     "cue": {
+      "word": "يعلم",
+      "t": 158.1
+     },
+     "who": "fx",
+     "action": "the round inset opens top-right: the road, far away, the goat trotting behind the leader",
+     "acting": "the ascetic, below, has his back to the inset",
+     "library": "inset circle clip + border, iris open"
+    },
+    {
+     "t": 158.7,
+     "end": 159.7,
+     "cue": {
+      "word": "الماعز",
+      "t": 159.06
+     },
+     "who": "goat",
+     "action": "inset: the goat stops, plants its feet",
+     "acting": "head up, ears forward",
+     "library": "goat settleTo"
+    },
+    {
+     "t": 159.8,
+     "end": 160.9,
+     "cue": {
+      "word": "ماعزًا",
+      "t": 160.22
+     },
+     "who": "goat",
+     "action": "inset: one huge bleat, MAAA! with arrow and label STILL A GOAT",
+     "acting": "mouth wide, sq 1.06, tail up; sound arcs",
+     "library": "goat {talk 1}, soundArcs, S.arrow + S.label"
+    },
+    {
+     "t": 161.02,
+     "end": 162.4,
+     "cue": {
+      "word": "طوال",
+      "t": 161.02
+     },
+     "who": "goat",
+     "action": "inset: the goat looks straight at the lens and goes back to chewing",
+     "acting": "deadpan, slow blink; below, the ascetic scratches his head under the turban",
+     "library": "gaze [0, 0.05], chew, PERSON_HANDS.headHold one hand"
+    },
+    {
+     "t": 162.6,
+     "end": 166.0,
+     "who": "lettering",
+     "action": "THE END pops on with a chime; the goat blinks once in the inset; hold",
+     "acting": "everything settles to stillness except the chew and the awning",
+     "library": "S.title, SND chime"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 160.3,
+     "text": "MAAA!"
+    },
+    {
+     "t": 160.4,
+     "text": "STILL A GOAT"
+    },
+    {
+     "t": 162.6,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 162.9,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 166.0
+   }
+  }
+ ],
+ "ending": {
+  "t": 162.6,
+  "description": "Market wide with the ascetic scratching his head at the empty stall; in the round inset the goat chews and blinks at the lens. THE END (Bangers, yellow on black burst) pops on at 162.6 with a quiet chime at 162.9 and holds to 166.0."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "في يوم من الأيام، ذهب ناسك إلى السوق واشترى ماعزًا سمينًا.|دفع ثمنه، وربط حبلًا حول رقبته،|ثم بدأ يمشي به إلى بيته.|كان سعيدًا بما اشتراه، ولم يشك في شيء.",
+   "en": "One day, an ascetic went to the market and bought a fat goat.|He paid for it, tied a rope around its neck,|and started walking home with it.|He was pleased with his purchase and suspected nothing."
+  },
+  {
+   "p": 2,
+   "ar": "رأى ثلاثة لصوص الماعز، وأرادوا أخذه دون أن يدفعوا مالًا.|اجتمعوا خلف شجرة، واتفقوا على حيلة غريبة.|قال أحدهم: «لن نسرق الماعز بالقوة.|سنجعل الرجل يتركه بنفسه.»",
+   "en": "Three thieves saw the goat and wanted to take it without paying.|They met behind a tree and agreed on a strange trick.|One said, “We will not steal the goat by force.|We will make the man abandon it himself.”"
+  },
+  {
+   "p": 3,
+   "ar": "وقف اللص الأول عند الطريق،|وحين مر الناسك سأله بدهشة: «لماذا تقود كلبًا إلى بيتك؟»|ضحك الناسك وقال: «هذا ماعز، وليس كلبًا!|ألا ترى جيدًا؟» ثم واصل طريقه.",
+   "en": "The first thief stood by the road.|When the ascetic passed, he asked in surprise, “Why are you leading a dog home?”|The ascetic laughed. “This is a goat, not a dog!|Can you not see properly?” Then he continued on his way."
+  },
+  {
+   "p": 4,
+   "ar": "بعد قليل، ظهر اللص الثاني، ونظر إلى الماعز مستغربًا.|قال: «رجل مثلك يقود كلبًا في الشارع؟ هذا أمر عجيب!»|توقف الناسك وقال لنفسه: «لماذا يسميه الجميع كلبًا؟»",
+   "en": "A little later, the second thief appeared and stared at the goat in astonishment.|“A man like you leading a dog through the street? How strange!” he said.|The ascetic stopped and wondered, “Why does everyone call it a dog?”"
+  },
+  {
+   "p": 5,
+   "ar": "ثم جاء اللص الثالث، وقال بصوت واثق:|«يا رجل، هذا كلب بلا شك. من باعه لك؟»|نظر الناسك إلى الحيوان مرة أخرى،|وبدأ يشعر بالقلق والحيرة.",
+   "en": "Then the third thief came and said confidently,|“My good man, that is certainly a dog. Who sold it to you?”|The ascetic looked at the animal again|and began to feel worried and confused."
+  },
+  {
+   "p": 6,
+   "ar": "فكر الناسك: «أنا رأيت ماعزًا في السوق،|لكن ثلاثة رجال يقولون إنه كلب.|هل خدعني البائع؟ أم أنني لا أرى الحقيقة؟»|ولم يعرف أي كلام يصدق.",
+   "en": "The ascetic thought, “I saw a goat at the market,|but three men say it is a dog.|Did the seller deceive me? Or can I no longer see the truth?”|He did not know whom to believe."
+  },
+  {
+   "p": 7,
+   "ar": "أخيرًا، أقنع نفسه أن البائع ربما سحر عينيه.|فك الحبل عن رقبة الماعز، وتركه عند جانب الطريق،|ثم عاد إلى السوق غاضبًا ليبحث عن الرجل الذي باعه له.",
+   "en": "At last, he convinced himself that perhaps the seller had cast a spell on his eyes.|He untied the rope, left the goat beside the road,|and returned angrily to the market to look for the seller."
+  },
+  {
+   "p": 8,
+   "ar": "خرج اللصوص الثلاثة من أماكنهم، وأمسكوا الماعز ومضوا به.|كانوا يضحكون لأن خطتهم نجحت دون صراع.|أما الناسك فكان يبحث عن البائع،|ولا يعلم أن الماعز كان ماعزًا طوال الوقت.",
+   "en": "The three thieves emerged from their hiding places, took the goat, and went away.|They laughed because their plan had worked without a struggle.|The ascetic, meanwhile, was looking for the seller,|unaware that his goat had been a goat all along."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "goat",
+   "description": "Fat comic goat, reusable for any farm or village story. Pose fields: ph, amp (walk), fat 0..1, chew, talk (bleat), headDown 0..1 (graze), headTilt, earLift, ears, tailUp, asDog 0..1, plus the shared acting fields.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Copy the deer structure (four legs driven by ph/amp, body, neck, head) and change proportions: body ellipse 150 x 85 with a second belly ellipse scaled by fat, legs 55 long, neck 40. Head: rounded wedge 60 x 46, two horns as tapered arcs, chin tuft triangle, ear ellipses rotated by ears, eye via eye2 with a horizontal bar pupil. chew = jaw offset on a 3 Hz sine sideways. asDog blends parameters only: horn length x (1 - asDog), tuft x (1 - asDog), ear length x (1 + asDog) rotated down, tail length x (1 + 1.5 asDog) with a wag sine, tongue alpha asDog. Wrap with acting() and add a registry entry and catalogue poses."
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (ascetic, plus thief disguise items)",
+   "description": "Adds an ascetic preset to the planned person costume layer (small white turban, long white beard, plain robe, prayer beads) and three overlay items for the thief kind (turban, false beard, cloak with tall turban).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Same costume layer as planned for AN-095: draw headwear and beard after the head, robe as a recoloured owner gown. Beads: 9 small circles on a hanging arc from the hand, swung with swing(). Disguise items are drawn after the thief head and take an on 0..1 value so they can pop on, slip and come off."
+  },
+  {
+   "type": "set",
+   "name": "countryRoad",
+   "description": "Long road strip with named hiding places (tree, milestone, bush, low wall) and a far house; reusable for any travel or roadside story.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "bake() a 3000 x 1230 canvas: sky(), hillTrees() tiled three times, ground(), a dirt band rectangle with dot shading, tree() twice with custom opts, bush() twice, milestone and wall as outlined rectangles with a top highlight, house as a 40 px box and roof triangle. Export an anchors object with the x positions. Occluders (trunk, bush front, wall) are also drawn in a second pass after the actors for the peeks."
+  },
+  {
+   "type": "set",
+   "name": "marketStreet",
+   "description": "Reuse of the planned marketStreet with an animal stall option (stall: full or empty).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Add a stall(ctx, x, o) drawing: two posts, striped awning polygon with a 3-unit flap sine, counter box, hay ellipses, baskets, tether post. Called on top of the marketStreet bake."
+  },
+  {
+   "type": "prop",
+   "name": "rope (lead)",
+   "description": "A lead rope between a hand and an animal neck that sags, goes taut, can be untied and lie on the ground.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "quadraticCurveTo between the two anchor points with control point lowered by sag = clamp(len0 - distance, 0, 60); loop = ellipse round the neck anchor; knot = small circle whose two tails shorten as knot goes to 0; ground state = a fixed S curve."
+  },
+  {
+   "type": "prop",
+   "name": "dogIcon, balanceScale, sack, coin",
+   "description": "Small flat props (see props). The coin is the planned coinPile drawing.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Each is under 20 lines of kit shapes: circles, ellipses, rounded boxes, K outlines. balanceScale takes tilt and draws pans at the beam ends so items placed in a pan use the returned pan positions."
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "description": "The planned generic thought cloud large enough to stage action in (used here for the plan, the scale, the imagined seller).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Generalise the Thief story cloud(): thoughtCloud(ctx, box, p, drawInside) clips to the cloud shape, calls drawInside, then draws the outline and three trailing puffs toward the thinker."
+  },
+  {
+   "type": "effect",
+   "name": "dream wash",
+   "description": "The planned blue halftone overlay with dotted vignette, used here to mark the ascetic's unreliable view (116.42-117.7).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Panel-clipped blue fill at alpha 0.25 with multiply, plus a radial ring of Ben-Day dots at the border; alpha keyed in and out over 0.2 s."
+  },
+  {
+   "type": "expression",
+   "name": "spiralEyes",
+   "description": "Two slow spirals in place of the pupils for half a second (bewitched, dizzy, hypnotised).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Overlay at the person eye positions: white disc r 11, then a 2-turn Archimedean spiral stroke rotating at 1 turn per second. Also uses the planned flush expression for anger in S16 and S19."
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "description": "A round picture-in-picture panel that opens with an iris to show a second place at the same time.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Save, clip to a circle of keyed radius, draw the second world with its own camera, restore, then stroke a fat black tapering border and a paper ring."
+  }
+ ],
+ "owner_questions": [
+  "The thieves put comic disguises (turban, false beard, cloak) over their striped outfits and masks when they meet the ascetic; the script does not mention disguises. Default: keep them, because they are funny and explain why he does not suspect.",
+  "In two short moments (83.1 and 116.4-117.7) the goat is drawn turning into a dog, only as the ascetic's doubtful view inside a blue dream wash. Default: keep; the real goat is never anything but a goat.",
+  "The seller is shown as honest; he appears as a cheat or a sorcerer only inside the ascetic's thought clouds, and the stall is empty at the end. Default: keep this reading.",
+  "Invented English lettering beyond the script: FAT GOAT, HOME, 3 THIEVES, THE BOSS, NO FORCE, THIEF 1/2/3, DOG? counter, 3 OUT OF 3, 1 vs 3, ZAP!, LEFT BEHIND, TOO EASY!, STILL A GOAT, MEH!, MAAA!, HA HA!. Default: keep all; the animator may drop the weakest if the frame is busy.",
+  "The ascetic is drawn as a generic holy man (white turban, long beard, plain robe, prayer beads) with no specific religious symbols. Default: this look.",
+  "No moral card is added because the narration does not state a moral; the film ends on the goat and THE END. Default: no moral card."
+ ],
+ "implementation_notes": [
+  "Start from Library/template. Word cues come from timing.json via w(p, n); every cue time in this plan is a word start from planning/inputs/timeline.md. Word starts can sit up to 0.4 s early; check the three DOG balloons (50.88, 73.60, 91.46) against the audio.",
+  "countryRoad is one baked 3000-unit world; the camera clamps to it. Ascetic position is one function AX(t) for the whole road so walk() and footfalls() never slide; stops: x 1090 (46.5-60.9), x 1560 (77.1-84.0), x 2110 (87.4-101.7), wall seat x 2140 (101.7-131.3). The goat follows at AX - 150 with a 0.25 s lag; rope sag from their distance.",
+  "The thieves must visibly get ahead of him: they exit right at 41.1-41.4 while he waits with the grazing goat far left; thief2 and thief3 are already in the bush and behind the wall when he arrives.",
+  "Peeks: draw the actor, then the occluder (trunk, bush front, wall) again on top; no clipped second copies.",
+  "Counter DOG? uses S.counter top-right of the picture panel at 50.88 (1), 73.60 (2), 91.46 (3); hide it at 95.0. The three thieves each get one S.label + S.arrow on their ordinal word.",
+  "Three different liars: thief1 over-acts surprise (cheeks, double take), thief2 inspects and pities (nose to nose, tuts), thief3 is calm authority (hips, folded arms, hand on the shoulder). The ascetic answers with laugh, stop and think, then worry. Keep these distinct; do not reuse one reaction.",
+  "The goat is the constant: same chew, same slow blink in every scene. Give it LIFE auto-blinks and a gaze target in every shot. asDog is used only at 83.12-83.5 (max 0.3) and 116.42-117.7 (max 0.9) under the dream wash.",
+  "Setup and payoff: the leader's rope-drop mime at 39.46 must be the same hand pose as the ascetic's real drop at 131.3; the temple tap at 38.10 returns at 150.8.",
+  "Person arms are short: use arm angles (aL/aR) for big readable poses (raised finger, fists on hips, rope held high) and hand targets only for contact (shoulder, knot, ear).",
+  "Sound: only four effects, in the listed pauses and after the last word: pop 20.5, whoosh 41.4, whoosh 62.6 (under the LATER card), chime 162.9. SND master 0.6. Lettering such as CLINK! and ZAP! is silent.",
+  "Lettering never covers a face and stays inside the picture panel (y under 1250). Keep balloons on the far side of the speaker from the listener.",
+  "Film length 166.0 s (audio 162.54 + 3.5 hold). Panel-only shake is not needed anywhere; do not add any."
+ ],
+ "warnings": [
+  "New drawing load is above the usual four: goat (M), ascetic costume and disguise items (M), countryRoad (M), market stall (S) plus small props. marketStreet, thoughtCloud, dream wash, flush, person sit and the costume layer are planned by other stories but not yet in Library; if this film is built first it must create them.",
+  "The word اللص in paragraph 4 (65.62) has an interpolated time; the THIEF 2 label is cued to الثاني at 65.62 instead.",
+  "به at 148.10 is interpolated and shares its time with كانوا; scene S18 starts on that boundary, so check the cut against the audio.",
+  "Three similar encounters in a row are the main risk of monotony: vary the place (milestone, bush, wall), the entrance (skid in, rise from bush, stride in), the camera and the ascetic's reaction as specified.",
+  "The asDog morph must read as his imagination, not as magic: keep it under the dream wash and never show it in an objective shot."
+ ]
+}

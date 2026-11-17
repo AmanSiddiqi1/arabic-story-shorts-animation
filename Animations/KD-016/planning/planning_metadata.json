@@ -1,0 +1,99 @@
+{
+ "story_id": "KD-016",
+ "title": "The Dove, the Fox, and the Crane",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T12:15:06",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a4087705a816f4c61.jsonl",
+ "agent_id": "a4087705a816f4c61",
+ "model_messages": {
+  "claude-fable-5-2": 19
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "05b8582078ba65e8575ff9d1423fb09b405fb18da150cb2f7b0654734b662786",
+  "paragraphs": 8,
+  "segments": [
+   "KD-016-P01-S01",
+   "KD-016-P01-S02",
+   "KD-016-P01-S03",
+   "KD-016-P01-S04",
+   "KD-016-P01-S05",
+   "KD-016-P01-S06",
+   "KD-016-P01-S07",
+   "KD-016-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/KD-016_The_Dove_the_Fox_and_the_Crane_full_slowed.mp3",
+  "sha256": "820d4b9b5f600698dbe12dab22797a1f2149baee4eb3f017ba09737ae462a48f",
+  "duration": 161.729
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/KD-016_The_Dove_the_Fox_and_the_Crane_full_slowed.mp3.words.json",
+  "sha256": "78781d973d48180a6b9de4ddb52db84e70eeeb2a96bafb4fab939d7a3c298930",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "7721db2",
+ "scenes": 11,
+ "actions": 168,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "heron",
+   "effort": "L"
+  },
+  {
+   "type": "character",
+   "name": "dove (bird kind)",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "palmRiver (with palmTree)",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "chick",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "fox rear / carry",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "windStreaks",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "fightCloud",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "dayCycle",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The heron is a large new character whose tuck pose carries the climax; build and test tuck 0..1 on a still sheet first.",
+  "The nest is 570 units above the ground: in any shot wide enough to hold fox and nest the dove is only about 125 px tall, so her acting must be carried by the close shots and by big silhouettes (BRAVE pose, wail).",
+  "Library river and riverBank were drawn for the Monkey story with their own bank heights; measure them before reusing, or draw the simple water band described in the set.",
+  "nestDraw must draw 2 and 1 chicks cleanly and take per chick acting; check before relying on it.",
+  "No pause exists around the leap (145.64) or the second chick drop, so those moments have no sound effect.",
+  "The narration is continuous from 138.68 to 161.42; the ending relies on stillness and one drifting feather, so resist adding more lettering there."
+ ]
+}

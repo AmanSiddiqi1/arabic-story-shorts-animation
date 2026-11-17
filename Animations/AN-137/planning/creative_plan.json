@@ -1,0 +1,3162 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-137",
+ "title": "Khusrau and Shirin and the Fisherman",
+ "duration": 175.57,
+ "end_hold": 3.0,
+ "logline": "A fisherman sells a king one fish and, by answering two traps set by the queen with quick wit, walks out with three rewards instead of one.",
+ "moral": "A quick, courteous mind can turn every test into a reward.",
+ "tone": "Light court comedy: a calm clever commoner, an impulsive laughing king, a cool calculating queen, and a servant who has to carry every sack. The humour is in looks, the fan and the emptying vault, never in mockery of the fisherman.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 5.2,
+   "kind": "setup",
+   "cue": {
+    "word": "دخل",
+    "t": 5.2
+   },
+   "summary": "The fisherman brings a rare great fish to the fish-loving king."
+  },
+  {
+   "id": "B2",
+   "t": 19.32,
+   "kind": "inciting",
+   "cue": {
+    "word": "أربعة",
+    "t": 19.32
+   },
+   "summary": "The king orders 4000 dirhams; Shirin's fan snaps shut."
+  },
+  {
+   "id": "B3",
+   "t": 27.04,
+   "kind": "rising",
+   "cue": {
+    "word": "كبيرة،",
+    "t": 27.04
+   },
+   "summary": "Shirin objects: too much, the courtiers will resent it."
+  },
+  {
+   "id": "B4",
+   "t": 41.0,
+   "kind": "turn",
+   "cue": {
+    "word": "وعد",
+    "t": 41.0
+   },
+   "summary": "The king will not break a promise made in public."
+  },
+  {
+   "id": "B5",
+   "t": 46.32,
+   "kind": "suspense",
+   "cue": {
+    "word": "حيلة،",
+    "t": 46.32
+   },
+   "summary": "Shirin's trick: male or female? Either answer loses the money."
+  },
+  {
+   "id": "B6",
+   "t": 69.98,
+   "kind": "suspense",
+   "cue": {
+    "word": "حاضر",
+    "t": 69.98
+   },
+   "summary": "The fisherman hears the question and thinks."
+  },
+  {
+   "id": "B7",
+   "t": 79.1,
+   "kind": "surprise",
+   "cue": {
+    "word": "الصفتين.",
+    "t": 79.1
+   },
+   "summary": "It is both. The trap closes on nothing."
+  },
+  {
+   "id": "B8",
+   "t": 80.64,
+   "kind": "comic",
+   "cue": {
+    "word": "ضحك",
+    "t": 80.64
+   },
+   "summary": "The king laughs: 4000 more (8000)."
+  },
+  {
+   "id": "B9",
+   "t": 97.92,
+   "kind": "turn",
+   "cue": {
+    "word": "سقط",
+    "t": 97.92
+   },
+   "summary": "One coin falls; he puts the whole sack down for it."
+  },
+  {
+   "id": "B10",
+   "t": 112.44,
+   "kind": "rising",
+   "cue": {
+    "word": "بخيل،",
+    "t": 112.44
+   },
+   "summary": "Shirin calls him a miser."
+  },
+  {
+   "id": "B11",
+   "t": 120.22,
+   "kind": "suspense",
+   "cue": {
+    "word": "غضب",
+    "t": 120.22
+   },
+   "summary": "The king is angry and summons him."
+  },
+  {
+   "id": "B12",
+   "t": 136.9,
+   "kind": "reveal",
+   "cue": {
+    "word": "صورة",
+    "t": 136.9
+   },
+   "summary": "The coin bears the king's image and name; he saved it from being trodden on."
+  },
+  {
+   "id": "B13",
+   "t": 148.04,
+   "kind": "climax",
+   "cue": {
+    "word": "أربعة",
+    "t": 148.04
+   },
+   "summary": "Third win: 12000."
+  },
+  {
+   "id": "B14",
+   "t": 153.98,
+   "kind": "resolution",
+   "cue": {
+    "word": "اثنا",
+    "t": 153.98
+   },
+   "summary": "He leaves with twelve thousand instead of four."
+  },
+  {
+   "id": "B15",
+   "t": 165.44,
+   "kind": "comic",
+   "cue": {
+    "word": "نصيحة",
+    "t": 165.44
+   },
+   "summary": "The king's stern decree, undercut by the empty vault and the queen's look."
+  },
+  {
+   "id": "B16",
+   "t": 173.04,
+   "kind": "moral",
+   "cue": {
+    "word": "اختبار",
+    "t": 173.04
+   },
+   "summary": "Every test became a reward."
+  }
+ ],
+ "cast": [
+  {
+   "id": "king",
+   "name": "King Khusrau",
+   "library": "person",
+   "base": "person costume:'caliph' (the Library king preset), age 0.45",
+   "look": "Red dotted robe with yellow trim, blue cape, white turban with a gold crown and jewel, greying beard. s 1.0. Seated on the palaceHall throne (sit:1, seat:'bench', y = A.throne.sitY); stands on the dais (y 860) for orders, laughter and anger.",
+   "new": false
+  },
+  {
+   "id": "queen",
+   "name": "Queen Shirin",
+   "library": "person",
+   "base": "person costume:'lady' with crown:true (planned lady plus crown), age 0.2",
+   "look": "Blue dotted robe, white veil, small gold three-point crown on the veil band, a folding fan in the right hand (prop fan). s 0.95. Seated on queenSeat at x 690, lower than the throne. Acts with the fan: open = hiding, snap shut = disapproval, tapping = scheming, over the face = defeat.",
+   "new": false
+  },
+  {
+   "id": "fisherman",
+   "name": "the fisherman",
+   "library": "person",
+   "base": "person costume:'villager' variant = new preset 'fisherman'",
+   "look": "Short faded blue-grey tunic with rolled sleeves, rope sash, trousers rolled to the knee, bare feet (pal shoes:'bare'), small frayed cap, short black beard, age 0.3. s 1.0. Calm, courteous, bright eyes.",
+   "new": true
+  },
+  {
+   "id": "servant",
+   "name": "the palace servant (treasurer and herald)",
+   "library": "person",
+   "base": "person costume:'servant'",
+   "look": "Red flat cap, white tunic, red sash, moustache. s 0.95. Running gag: he carries every sack from the vault and gets more tired each time; he is also the face of \"the palace servants\" in P6 and holds the scroll in P8.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "hall",
+   "library": "palaceHall",
+   "description": "palaceHall(ctx, {variant:'palace', wall:'paper', dais:[580, 960, 860], throne: 850, cushions: [], vault:{x0: 290, x1: 410, top: 620, open}, t}). Floor y 900. Door arch x 40..250, top 480 (day outside). Vault (treasury door with coin and lock) under the first arch, keyed open 0..1 three times; the coin mound inside (coinPile) shrinks: n 40, 22, 6, then 0 in S18. Throne anchor A.throne (x 850, sitY from the anchors). queenSeat at x 690 on the dais (top 860). Fish tray stand at x 520 on the floor in front of the dais edge, top y 840. Lamps as anchors. Positions approximate, measure on the set (use palaceHallAnchors).",
+   "new": false
+  },
+  {
+   "id": "street",
+   "library": "marketStreet",
+   "description": "marketStreet(ctx, {palette:'clear', palace:'lit', palaceDoor: 1, stalls:[{x: 300, kind:'fruit'}]}) with the palace facade on the right; ground from anchors (about y 900). The fisherman comes out of anchors.palace.door (stand on door.bottom, the step) and walks left. Used in S17 and S19; in S19 he walks on past the stall to x 500. Also drawn small inside the S14 thought cloud (paving only).",
+   "new": false
+  }
+ ],
+ "props": [
+  {
+   "id": "fish",
+   "library": null,
+   "description": "Planned Library fish (KD-007, KD-019, AN-111): side-view comic fish, palette 2 (round, pink body, blue fins), about 200 x 110 at s 1; here s 1.3 (260 x 143). Fields: limp 1, eyes x, roll, tail swing when carried. Also used as flat icons (blue = male tag, pink = female tag, half and half = both).",
+   "new": true
+  },
+  {
+   "id": "fishBones",
+   "library": null,
+   "description": "Planned fishBones (KD-019): fish skeleton 150 x 60 on the tray in S1 and S18.",
+   "new": true
+  },
+  {
+   "id": "fishTray",
+   "library": null,
+   "description": "Low stand: a round brass tray 280 x 26 (yellow, red dot shading) on a folding X leg 60 high; top y 840 at x 520. Planned foodTray drawing if it exists, else three shapes.",
+   "new": true
+  },
+  {
+   "id": "sack",
+   "library": null,
+   "description": "Planned sack with fill 0..1 and a coin mark: cream cloth bag, 120 x 150 at fill 0.5, 170 x 210 at fill 1, tied neck, optional number tag (4000, 8000, 12000) in Bangers 44 px; giant state for the ending s 1.5. Squash on impact through impactSquash.",
+   "new": true
+  },
+  {
+   "id": "coin",
+   "library": null,
+   "description": "Planned coinPile single coin: yellow disc r 12 in the wide shots with a red rim dot ring; spin = x scale; glint. Large state for the insert (r 150 world at zoom 1.1) with face:'king': crowned bearded head (crown = three yellow points with red dots, beard = grey wedge, drawn from the caliph head shapes in one tone of darker yellow with black line) and a squiggle name band under it.",
+   "new": true
+  },
+  {
+   "id": "counter",
+   "library": null,
+   "description": "The style counter primitive (S.counter) in panel space at the top left (x 80..420, y 80..160): label DIRHAMS and a rolling number 0, 4000, 8000, 12000. Hidden in close shots where it would crowd a face (S3, S5, S6 partly, S12, S14 insert).",
+   "new": false
+  },
+  {
+   "id": "iconBalloon",
+   "library": null,
+   "description": "Planned wordless picture balloon (iconBalloon, single mode): white balloon with a tail to the speaker and flat icons inside. Icons needed here: sack with number, courtier head with purse (x3), balanceScale, fish blue / pink / half and half, bending fisherman, servant with open hand, struck sack with coinEyes face.",
+   "new": true
+  },
+  {
+   "id": "planCloud",
+   "library": "thoughtCloud",
+   "description": "Library thoughtCloud for Shirin's plan (S5, S6), the king's fish daydream (S1) and the fisherman's market worry (S14).",
+   "new": false
+  },
+  {
+   "id": "queenSeat",
+   "library": null,
+   "description": "A low cushioned seat on the dais at x 690: block 120 x 48 (blue with yellow trim) with a red cushion (planned floorCushion look), no back, so Shirin sits lower than the king. person y 860 - 0 with sit:1, seat:'bench'.",
+   "new": true
+  },
+  {
+   "id": "fan",
+   "library": null,
+   "description": "Folding hand fan at Shirin's right hand: open 0..1 (a 120 degree sector r 62 in yellow with red ribs, 7 ribs) or closed (a 62 x 10 stick). Angle and open keyed.",
+   "new": true
+  },
+  {
+   "id": "scroll",
+   "library": null,
+   "description": "Planned scroll (long): paper band 150 wide, len up to 420, squiggle lines only, rolled end that falls and bounces.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 10.54,
+   "paragraphs": [
+    1
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "servant",
+    "fisherman"
+   ],
+   "summary": "The king who loves fish: Khusrau on his throne finishes a fish (only bones left on the tray) and dreams of the next one; the fisherman walks in at the door hugging a huge rare fish.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Open medium on the king (x 850, y 700, zoom 1.7), queen kept just out of frame left for her reveal in S2. At 4.1 ease out to the wide (x 500, y 690, zoom 1.0) by 5.2 so the door (x 40..250) is in frame for the entrance; hold."
+   },
+   "composition": "King on the throne at x 850 (dais 580..960, top 860). Servant beside the dais at x 540 holding the tray. Door arch at the far left; the fisherman stops at x 300. Fish bones tray low at the left of the king, never over his face.",
+   "actions": [
+    {
+     "t": 0.0,
+     "cue": {
+      "word": "الملك",
+      "t": 0.28
+     },
+     "who": "king",
+     "action": "sits on the throne, napkin tucked, holding a fish skeleton by the tail over a tray the servant holds",
+     "acting": "half lids of pleasure (lid 0.5), smile, gaze down at the bones",
+     "library": "person {costume:'caliph', sit:1, seat:'bench', y: A.throne.sitY}"
+    },
+    {
+     "t": 0.82,
+     "cue": {
+      "word": "كسرى",
+      "t": 0.82
+     },
+     "who": "lettering",
+     "action": "style label KING KHUSRAU pops under the throne arch (panel left of his head)",
+     "acting": "label pops with overshoot, gone by 3.4",
+     "library": "S.label"
+    },
+    {
+     "t": 1.7,
+     "cue": {
+      "word": "يحب",
+      "t": 1.7
+     },
+     "who": "king",
+     "action": "kisses his fingertips, drops the bones on the tray (they clatter flat), pats his belly",
+     "acting": "eyes shut on the kiss (lid 1), sq 0.96 then settle",
+     "library": "handR to mouth then PERSON_HANDS.chest; settleTo"
+    },
+    {
+     "t": 2.76,
+     "cue": {
+      "word": "السمك،",
+      "t": 2.76
+     },
+     "who": "fishBones",
+     "action": "bones land on the tray; servant looks at them, then at the king",
+     "acting": "servant brow raised (brow -0.4), small tray dip of 6 units on the landing",
+     "library": "fishBones (planned) + landSquash on the tray"
+    },
+    {
+     "t": 3.5,
+     "who": "king",
+     "action": "thought cloud pops above him: a whole plump fish with a sparkle; he sighs",
+     "acting": "gaze up into the cloud [0.3,-0.8], mouth o then smile; cloud trail pops first",
+     "library": "thoughtCloud(ctx, 760, 380, 300, 200, t, {inside: fish icon})"
+    },
+    {
+     "t": 4.1,
+     "cue": {
+      "word": "وفي",
+      "t": 4.1
+     },
+     "who": "camera",
+     "action": "pull back to the wide hall; thought cloud shrinks away as the door comes into frame",
+     "acting": "eased 1.1 s move"
+    },
+    {
+     "t": 4.9,
+     "cue": {
+      "word": "دخل",
+      "t": 5.2
+     },
+     "who": "fisherman",
+     "action": "appears in the door arch, hugging a fish as long as his chest is wide; first step in",
+     "acting": "anticipation: peeks with a head lean (tip 0.06), wide hopeful eyes, gaze at the king",
+     "library": "person {costume:'fisherman'} + walk(FX, t) + footfalls"
+    },
+    {
+     "t": 6.02,
+     "cue": {
+      "word": "عليه",
+      "t": 6.02
+     },
+     "who": "king",
+     "action": "head snaps toward the door; thought cloud gone; leans forward on the throne",
+     "acting": "gaze lookAt the fish; brows up (brow -0.5); 2-frame snap then settle",
+     "library": "lookAt + settleTo"
+    },
+    {
+     "t": 6.5,
+     "cue": {
+      "word": "صياد",
+      "t": 6.5
+     },
+     "who": "fisherman",
+     "action": "walks to x 300 with short respectful steps, the fish tail swinging behind his elbow",
+     "acting": "tip 0.05 under the weight, legs from walk() (no slide), tail swing follows each footfall",
+     "library": "walk, footfalls, swing for the fish tail"
+    },
+    {
+     "t": 7.26,
+     "cue": {
+      "word": "يحمل",
+      "t": 7.26
+     },
+     "who": "fish",
+     "action": "the fish in his arms: big pink round body, blue fins, limp, tail flaps once",
+     "acting": "fish limp 1, eyes x; secondary tail swing",
+     "library": "fish (planned) pal 2, s 1.3, held with handLW/handRW"
+    },
+    {
+     "t": 8.08,
+     "cue": {
+      "word": "سمكة",
+      "t": 8.08
+     },
+     "who": "fisherman",
+     "action": "stops, bends his knees and lifts the fish high toward the throne",
+     "acting": "anticipate dip 0.25 s then lift; proud smile; gaze up at the king",
+     "library": "anticipate + arm angles aL/aR for a raise that reads at phone size"
+    },
+    {
+     "t": 8.86,
+     "cue": {
+      "word": "كبيرة",
+      "t": 8.86
+     },
+     "who": "fx",
+     "action": "size arrow: a double headed style arrow spans the fish nose to tail",
+     "acting": "arrow draws on in 0.3 s",
+     "library": "S.arrow"
+    },
+    {
+     "t": 9.66,
+     "cue": {
+      "word": "نادرة.",
+      "t": 9.66
+     },
+     "who": "lettering",
+     "action": "RARE! starburst emphasis beside the fish (above the door side, not over a face); three glints on the scales",
+     "acting": "pop with overshoot; servant and king both stare at it",
+     "library": "S.emphasis + sparkle"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.82,
+     "text": "KING KHUSRAU"
+    },
+    {
+     "t": 9.66,
+     "text": "RARE!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 3.75,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 10.54
+   }
+  },
+  {
+   "id": "S2",
+   "start": 10.54,
+   "end": 24.24,
+   "paragraphs": [
+    1
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "queen",
+    "fisherman",
+    "servant"
+   ],
+   "summary": "Shirin is revealed beside the king; he admires the fish and orders 4000 dirhams; the servant opens the treasury door and drops the first sack at the fisherman's feet.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pan",
+    "notes": "Cut to the two-shot of the royal pair (twoShot(king, queen), about x 770, y 700, zoom 1.8) starting on the king and sliding 80 units left to include Shirin by 12.9. At 15.2 cut wide (zoom 1.0). At 20.9 push to x 400, y 760, zoom 1.4 for the sack delivery."
+   },
+   "composition": "Queen on her lower seat at x 690, king at x 850: her head is about 40 units lower than his. Fisherman at x 300 with the fish, servant at x 540 then walking to the vault door (x 290..410, top 620, under the first arch). Counter in panel space top left (x 80..420, y 80..160).",
+   "actions": [
+    {
+     "t": 10.54,
+     "cue": {
+      "word": "كان",
+      "t": 10.54
+     },
+     "who": "king",
+     "action": "settles back on the throne, one hand on the armrest",
+     "acting": "gaze still on the fish, pleased",
+     "library": "person sit:1"
+    },
+    {
+     "t": 11.8,
+     "cue": {
+      "word": "جالسًا",
+      "t": 11.8
+     },
+     "who": "camera",
+     "action": "slide left along the dais toward the second seat",
+     "acting": "eased, ends on the word",
+     "library": "twoShot(a, b, {margin})"
+    },
+    {
+     "t": 12.94,
+     "cue": {
+      "word": "زوجته",
+      "t": 12.94
+     },
+     "who": "queen",
+     "action": "revealed seated beside him: blue robe, veil, small gold crown, fanning herself slowly",
+     "acting": "cool, upright; lid 0.3; gaze on the fisherman, one brow up",
+     "library": "person {costume:'lady', crown:true, sit:1, seat:'bench'}"
+    },
+    {
+     "t": 13.74,
+     "cue": {
+      "word": "شيرين،",
+      "t": 13.74
+     },
+     "who": "lettering",
+     "action": "style label QUEEN SHIRIN under her; she gives the smallest nod",
+     "acting": "label pop; nod 6 units; blink after",
+     "library": "S.label"
+    },
+    {
+     "t": 14.75,
+     "who": "queen",
+     "action": "her fan stops; eyes go from the fish to the king to see what he will do",
+     "acting": "saccade: fish, king (2-frame snaps)",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 15.2,
+     "cue": {
+      "word": "فأعجب",
+      "t": 15.2
+     },
+     "who": "king",
+     "action": "stands up from the throne and claps once, delighted with the fish",
+     "acting": "sit 1 to 0 with anticipation; big smile; sq stretch 1.04 on the rise",
+     "library": "sit blend + anticipate + settleTo"
+    },
+    {
+     "t": 16.02,
+     "cue": {
+      "word": "بالسمكة،",
+      "t": 16.02
+     },
+     "who": "fisherman",
+     "action": "lays the fish on the low tray stand in front of the dais (x 520, top y 840) and steps back to x 300, bowing",
+     "acting": "careful two-hand set down; fish settles with a 2-frame squash; bow = tip 0.3",
+     "library": "handLW/handRW to the tray; fishTray"
+    },
+    {
+     "t": 17.34,
+     "cue": {
+      "word": "وأمر",
+      "t": 17.34
+     },
+     "who": "king",
+     "action": "points at the servant, then at the vault door: an order",
+     "acting": "arm angles for a long point; brow 0.2 (command), talk on the words",
+     "library": "PERSON_HANDS.pointFwd as arm angles"
+    },
+    {
+     "t": 18.12,
+     "cue": {
+      "word": "يعطى",
+      "t": 18.12
+     },
+     "who": "servant",
+     "action": "bows, hurries to the vault door, pulls it open: a coin mound glows inside",
+     "acting": "quick short steps (walk), door open 0 to 1 in 0.4 s",
+     "library": "walk + palaceHall vault.open"
+    },
+    {
+     "t": 19.32,
+     "cue": {
+      "word": "أربعة",
+      "t": 19.32
+     },
+     "who": "counter",
+     "action": "counter DIRHAMS ticks 0 up to 4000, landing exactly on the word for thousand",
+     "acting": "digits roll with a 0.1 s dip per thousand",
+     "library": "S.counter + countedBeats"
+    },
+    {
+     "t": 20.18,
+     "cue": {
+      "word": "آلاف",
+      "t": 20.18
+     },
+     "who": "queen",
+     "action": "on 4000 her fan snaps shut; head turns to the king",
+     "acting": "eyes wide for 0.3 s then lid 0.4 and brow 0.5 (disapproval); king does not notice",
+     "library": "lookAt(queen, king)"
+    },
+    {
+     "t": 20.88,
+     "cue": {
+      "word": "درهم",
+      "t": 20.88
+     },
+     "who": "servant",
+     "action": "comes back hugging a sack with a coin mark, leaning back under its weight",
+     "acting": "tip -0.12, small fast steps, cheeks puffed (mouth o)",
+     "library": "sack (planned) fill 0.5 carried with handLW/handRW"
+    },
+    {
+     "t": 21.48,
+     "cue": {
+      "word": "مكافأة",
+      "t": 21.48
+     },
+     "who": "fisherman",
+     "action": "eyes grow as the sack approaches; hands open",
+     "acting": "eyes wide, mouth o, gaze locked on the sack; sq 0.95 anticipation"
+    },
+    {
+     "t": 22.64,
+     "cue": {
+      "word": "له.",
+      "t": 22.64
+     },
+     "who": "servant",
+     "action": "sets the sack down in front of the fisherman at x 380; coins jingle visibly (three coins hop at the mouth)",
+     "acting": "drop lands in the pause at 23.3: impactSquash on the sack, dust puff, servant wipes brow",
+     "library": "impactSquash + dustBurst"
+    },
+    {
+     "t": 23.5,
+     "who": "fisherman",
+     "action": "looks from the sack to the king and bows low twice",
+     "acting": "grateful smile, wet: false; two quick bows (tip 0.35)",
+     "library": "tip keyed"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 13.74,
+     "text": "QUEEN SHIRIN"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 14.9,
+     "kind": "chime"
+    },
+    {
+     "t": 23.6,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 24.24
+   }
+  },
+  {
+   "id": "S3",
+   "start": 24.24,
+   "end": 37.34,
+   "paragraphs": [
+    2
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "queen",
+    "fisherman",
+    "servant"
+   ],
+   "summary": "Shirin objects behind her fan: the reward is too big; the courtiers will think their own gifts small beside a fisherman's. Shown as an icon balloon with a scale.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Two-shot of king and queen (zoom 1.8). Slow push to zoom 2.0 by 36. The balloon sits in the upper half of the panel above their heads; the fisherman is out of frame, so the audience shares the secret."
+   },
+   "composition": "King left of frame centre after sitting again (x 850), queen at x 690 leaning toward him. Icon balloon box centred about world (770, 420), 420 x 230, tail to the queen. Faces stay below y 600 of the world, clear of the balloon.",
+   "actions": [
+    {
+     "t": 24.24,
+     "cue": {
+      "word": "قالت",
+      "t": 24.24
+     },
+     "who": "queen",
+     "action": "leans toward the king and raises her open fan as a screen between them and the fisherman",
+     "acting": "tip 0.1 toward him; gaze flicks to the fisherman then to the king; talk",
+     "library": "person tip + fan prop on handR"
+    },
+    {
+     "t": 24.94,
+     "cue": {
+      "word": "شيرين",
+      "t": 24.94
+     },
+     "who": "king",
+     "action": "sits again, tilts his head to listen, still smiling",
+     "acting": "gaze to her; brow -0.3 (open, unworried)",
+     "library": "sit blend, lookAt"
+    },
+    {
+     "t": 26.06,
+     "cue": {
+      "word": "المكافأة",
+      "t": 26.06
+     },
+     "who": "iconBalloon",
+     "action": "balloon pops from her: the fisherman sack icon, huge, with 4000 on it",
+     "acting": "pop with overshoot; she taps the air under it",
+     "library": "iconBalloon (planned), single mode"
+    },
+    {
+     "t": 27.04,
+     "cue": {
+      "word": "كبيرة،",
+      "t": 27.04
+     },
+     "who": "queen",
+     "action": "spreads her hands wide: too big",
+     "acting": "armsOut gesture; brow 0.4; the sack icon swells 10 percent with her hands",
+     "library": "PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 29.14,
+     "cue": {
+      "word": "يظن",
+      "t": 29.14
+     },
+     "who": "iconBalloon",
+     "action": "three small courtier heads (vizier turbans, drawn as icons) pop into the balloon one by one, each holding a tiny purse",
+     "acting": "staggered pops 4 frames apart; each looks at his purse",
+     "library": "stagger(i); vizier head icons from the person costume head"
+    },
+    {
+     "t": 30.1,
+     "cue": {
+      "word": "القصر",
+      "t": 30.1
+     },
+     "who": "queen",
+     "action": "points up at the courtier icons, then down at her own palm, small",
+     "acting": "gaze up at the balloon, king follows her finger 3 frames late",
+     "library": "PERSON_HANDS.pointUp; gazePlan"
+    },
+    {
+     "t": 31.2,
+     "cue": {
+      "word": "هدايا",
+      "t": 31.2
+     },
+     "who": "iconBalloon",
+     "action": "the three purses shrink a little and the three faces turn to frowns",
+     "acting": "mouths flip to frown, brows 0.5, in a stagger"
+    },
+    {
+     "t": 32.72,
+     "cue": {
+      "word": "قليلة",
+      "t": 32.72
+     },
+     "who": "lettering",
+     "action": "tag TOO SMALL? over the purses",
+     "acting": "small label, wobbles once",
+     "library": "S.label"
+    },
+    {
+     "t": 34.18,
+     "cue": {
+      "word": "ساوت",
+      "t": 34.18
+     },
+     "who": "iconBalloon",
+     "action": "a balance scale drops in: one courtier purse on one pan, the fisherman sack on the other; the pans level out, equal",
+     "acting": "pans swing (damped swing) and settle level on the word for fisherman",
+     "library": "balanceScale (planned) + swing"
+    },
+    {
+     "t": 35.3,
+     "cue": {
+      "word": "صياد",
+      "t": 35.3
+     },
+     "who": "queen",
+     "action": "jerks her fan toward the off-screen fisherman on the word",
+     "acting": "lid 0.5, mouth frown; then turns back to the king expecting agreement",
+     "library": "handR keyed"
+    },
+    {
+     "t": 36.08,
+     "cue": {
+      "word": "بسيط.",
+      "t": 36.08
+     },
+     "who": "king",
+     "action": "smile fades to a thoughtful pout; strokes his beard",
+     "acting": "gaze drifts up (thinking), slow blink",
+     "library": "PERSON_HANDS.chin"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 26.3,
+     "text": "4000"
+    },
+    {
+     "t": 32.72,
+     "text": "TOO SMALL?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 36.95,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 37.34
+   }
+  },
+  {
+   "id": "S4",
+   "start": 37.34,
+   "end": 44.08,
+   "paragraphs": [
+    2
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "queen",
+    "fisherman",
+    "servant"
+   ],
+   "summary": "Khusrau answers: he will not go back on a promise made in front of people. The balloon bursts; his hand goes to his chest.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "Start on the king (x 850, y 700, zoom 2.0); at 42.0 pull out to the wide (zoom 1.0) to show \"the people\": the fisherman, the servant and the open door."
+   },
+   "composition": "King centred in the close; after the pull-out the fisherman at x 300 hugging his sack and the servant by the vault are the witnesses. Queen at x 690 between them.",
+   "actions": [
+    {
+     "t": 37.34,
+     "cue": {
+      "word": "أجاب",
+      "t": 37.34
+     },
+     "who": "king",
+     "action": "shakes his head once; the icon balloon above pops and is gone",
+     "acting": "head shake = two gaze/tilt swings; mouth set",
+     "library": "tilt keyed"
+    },
+    {
+     "t": 38.56,
+     "cue": {
+      "word": "أنه",
+      "t": 38.56
+     },
+     "who": "king",
+     "action": "raises a flat palm toward Shirin: no",
+     "acting": "calm, lid 0.3, brow 0.2; talk",
+     "library": "handL keyed (shield, one hand)"
+    },
+    {
+     "t": 39.26,
+     "cue": {
+      "word": "لا",
+      "t": 39.26
+     },
+     "who": "queen",
+     "action": "her fan drops an inch; chin lifts",
+     "acting": "brow 0.5, gaze away from him to the fish"
+    },
+    {
+     "t": 40.04,
+     "cue": {
+      "word": "الرجوع",
+      "t": 40.04
+     },
+     "who": "fx",
+     "action": "small style arrow starts from the sack back toward the vault and is struck out with a red X",
+     "acting": "draws on, X stamps 0.3 s later",
+     "library": "S.arrow + red X"
+    },
+    {
+     "t": 41.0,
+     "cue": {
+      "word": "وعد",
+      "t": 41.0
+     },
+     "who": "king",
+     "action": "hand on his chest, then one finger up: a promise",
+     "acting": "proud, chest out (sq 1.03), gaze to camera for one beat",
+     "library": "PERSON_HANDS.chest then pointUp"
+    },
+    {
+     "t": 42.0,
+     "cue": {
+      "word": "أمام",
+      "t": 42.38
+     },
+     "who": "camera",
+     "action": "pull out to the wide hall: the witnesses",
+     "acting": "eased 0.8 s"
+    },
+    {
+     "t": 42.84,
+     "cue": {
+      "word": "الناس.",
+      "t": 42.84
+     },
+     "who": "fisherman",
+     "action": "in the wide, bows again, hugging the sack; the servant nods along",
+     "acting": "both look at the king; fisherman smiles, sack bounces on the bow",
+     "library": "stagger for the two reactions"
+    },
+    {
+     "t": 43.4,
+     "who": "queen",
+     "action": "taps the closed fan against her palm, thinking; eyes slide toward the fish on the tray",
+     "acting": "saccade king, fisherman, fish; a slow half smile grows",
+     "library": "gazePlan(t, plan, 0.07)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 41.0,
+     "text": "A PROMISE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 44.08
+   }
+  },
+  {
+   "id": "S5",
+   "start": 44.08,
+   "end": 53.86,
+   "paragraphs": [
+    3
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "queen",
+    "fisherman",
+    "servant"
+   ],
+   "summary": "Shirin has a trick: let the king ask whether the fish is male or female.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "Two-shot of the pair again (zoom 1.8) with the fish tray visible at the lower left corner of the frame (shift the frame centre to x 720). Hold; the thought cloud does the moving."
+   },
+   "composition": "Thought cloud (the plan) centred about world (640, 380), 560 x 300, trail to Shirin. Inside it the fish and two tags. Fish tray at x 520 stays visible so the eye links cloud and fish.",
+   "actions": [
+    {
+     "t": 44.08,
+     "cue": {
+      "word": "اقترحت",
+      "t": 44.08
+     },
+     "who": "queen",
+     "action": "sits up straight; the fan snaps open with a flick",
+     "acting": "eyes narrow (lid 0.45), sly smile, brow -0.4 on one beat",
+     "library": "settleTo"
+    },
+    {
+     "t": 45.68,
+     "cue": {
+      "word": "شيرين",
+      "t": 45.68
+     },
+     "who": "queen",
+     "action": "leans in and whispers behind the fan; one finger up",
+     "acting": "cupMouth with the fan hand; gaze to the king",
+     "library": "PERSON_HANDS.cupMouth"
+    },
+    {
+     "t": 46.32,
+     "cue": {
+      "word": "حيلة،",
+      "t": 46.32
+     },
+     "who": "lettering",
+     "action": "small tag THE TRICK on a cloud trail that begins to bubble up from her",
+     "acting": "trail bubbles pop first",
+     "library": "thoughtCloud p ramp"
+    },
+    {
+     "t": 47.1,
+     "who": "planCloud",
+     "action": "the cloud opens fully in the pause; inside: the fish from the tray, drawn again at icon size",
+     "acting": "pop with overshoot; king looks up into it",
+     "library": "thoughtCloud(ctx, 640, 380, 560, 300, t, {tail: queen head, inside})"
+    },
+    {
+     "t": 48.5,
+     "cue": {
+      "word": "يسأل",
+      "t": 48.5
+     },
+     "who": "king",
+     "action": "inside the cloud a tiny king icon points at the fish; the real king copies the pointing finger without knowing it",
+     "acting": "real king mouth o, gaze in the cloud; follow-through on the finger",
+     "library": "person silhouette icon at 0.3 scale"
+    },
+    {
+     "t": 49.52,
+     "cue": {
+      "word": "الصياد",
+      "t": 49.52
+     },
+     "who": "fisherman",
+     "action": "a tiny fisherman icon appears in the cloud facing the king icon",
+     "acting": "icon hops in"
+    },
+    {
+     "t": 51.06,
+     "cue": {
+      "word": "السمكة",
+      "t": 51.06
+     },
+     "who": "fish",
+     "action": "the cloud fish wiggles; a big ? grows over it",
+     "acting": "question mark pops with overshoot",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 51.78,
+     "cue": {
+      "word": "ذكر",
+      "t": 51.78
+     },
+     "who": "lettering",
+     "action": "blue tag MALE? pops on the left of the cloud fish",
+     "acting": "tag tilts in",
+     "library": "S.label"
+    },
+    {
+     "t": 52.8,
+     "cue": {
+      "word": "أنثى.",
+      "t": 52.8
+     },
+     "who": "lettering",
+     "action": "red tag FEMALE? pops on the right",
+     "acting": "tag tilts in the other way; Shirin shows two fingers",
+     "library": "S.label"
+    },
+    {
+     "t": 53.3,
+     "who": "king",
+     "action": "looks from one tag to the other, puzzled, then at Shirin",
+     "acting": "saccade left tag, right tag, queen; brow -0.5",
+     "library": "gazePlan(t, plan, 0.07)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 46.32,
+     "text": "THE TRICK"
+    },
+    {
+     "t": 51.78,
+     "text": "MALE?"
+    },
+    {
+     "t": 52.8,
+     "text": "FEMALE?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 47.2,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 53.86
+   }
+  },
+  {
+   "id": "S6",
+   "start": 53.86,
+   "end": 64.84,
+   "paragraphs": [
+    3
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "queen",
+    "fisherman",
+    "servant"
+   ],
+   "summary": "The trap explained inside the cloud: if he says male, ask for a female; if he says female, ask for a male; either way the money comes back.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "The cloud grows to fill the upper two thirds of the panel (push to x 640, y 480, zoom 1.5 so the cloud is the picture); the royal heads stay along the bottom edge of the frame. At 62.3 ease back to the two-shot."
+   },
+   "composition": "Cloud layout, two rows: row 1 (y 300) MALE tag, arrow, red NO! stamp with a female fish outline; row 2 (y 430) FEMALE tag, arrow, red NO! stamp with a male fish outline. Both arrows then bend down to a sack icon that slides right, back into a small vault icon.",
+   "actions": [
+    {
+     "t": 53.86,
+     "cue": {
+      "word": "فإن",
+      "t": 53.86
+     },
+     "who": "planCloud",
+     "action": "row 1 lights: the tiny fisherman icon gets a speech tick beside MALE",
+     "acting": "row 2 dims to 40 percent"
+    },
+    {
+     "t": 55.3,
+     "cue": {
+      "word": "ذكر،",
+      "t": 55.3
+     },
+     "who": "lettering",
+     "action": "MALE tag stamps solid blue",
+     "acting": "stamp squash 2 frames"
+    },
+    {
+     "t": 56.3,
+     "cue": {
+      "word": "يطلب",
+      "t": 56.3
+     },
+     "who": "king",
+     "action": "the king icon in the cloud wags a finger; arrow shoots from MALE to a pink fish outline",
+     "acting": "real king nods slowly, starting to get it",
+     "library": "S.arrow"
+    },
+    {
+     "t": 57.48,
+     "cue": {
+      "word": "أنثى،",
+      "t": 57.48
+     },
+     "who": "lettering",
+     "action": "red NO! stamps over row 1 with the pink outline labelled FEMALE",
+     "acting": "stamp with a 4 unit panel-only shake",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 58.8,
+     "cue": {
+      "word": "وإن",
+      "t": 58.8
+     },
+     "who": "planCloud",
+     "action": "row 2 lights, row 1 dims: the fisherman icon speech tick beside FEMALE",
+     "acting": "mirror of row 1"
+    },
+    {
+     "t": 59.38,
+     "cue": {
+      "word": "أنثى،",
+      "t": 59.38
+     },
+     "who": "lettering",
+     "action": "FEMALE tag stamps solid red",
+     "acting": "stamp squash"
+    },
+    {
+     "t": 60.66,
+     "cue": {
+      "word": "يطلب",
+      "t": 60.66
+     },
+     "who": "king",
+     "action": "king icon wags the finger again; arrow from FEMALE to a blue fish outline",
+     "acting": "the real king mouths along (talk 0.4), smiling now",
+     "library": "S.arrow"
+    },
+    {
+     "t": 61.22,
+     "cue": {
+      "word": "ذكرًا،",
+      "t": 61.22
+     },
+     "who": "lettering",
+     "action": "second red NO! stamps over row 2",
+     "acting": "same stamp, smaller shake",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 62.34,
+     "cue": {
+      "word": "فيسترد",
+      "t": 62.34
+     },
+     "who": "sack",
+     "action": "both rows fade; the sack icon slides from the fisherman icon back into the vault icon; the fisherman icon is left with empty hands",
+     "acting": "sack slides with a small arc; icon fisherman mouth frown",
+     "library": "kfn slide + S.arrow"
+    },
+    {
+     "t": 63.14,
+     "cue": {
+      "word": "المال.",
+      "t": 63.14
+     },
+     "who": "counter",
+     "action": "the real counter at the top left flickers 4000 to a ghosted 0 with a ? (a threat, not a fact)",
+     "acting": "dashed outline, 3 flickers, back to 4000 when the cloud closes",
+     "library": "S.counter alpha keyed"
+    },
+    {
+     "t": 63.9,
+     "who": "queen",
+     "action": "cloud folds away; she closes the fan and sits back, satisfied; the king rubs his hands",
+     "acting": "queen lid 0.5 smile; king small guilty glance at the fisherman",
+     "library": "settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 55.3,
+     "text": "MALE"
+    },
+    {
+     "t": 57.48,
+     "text": "NO!"
+    },
+    {
+     "t": 59.38,
+     "text": "FEMALE"
+    },
+    {
+     "t": 61.22,
+     "text": "NO!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 64.2,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 64.84
+   }
+  },
+  {
+   "id": "S7",
+   "start": 64.84,
+   "end": 71.52,
+   "paragraphs": [
+    4
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "queen",
+    "fisherman",
+    "servant"
+   ],
+   "summary": "The fisherman, already at the door with his sack, is called back and hears the question. He freezes, then his eyes start to work.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide (zoom 1.0) for the call back; at 68.9 push in on the fisherman (x 330, y 720, zoom 2.0) for the thinking beat."
+   },
+   "composition": "Fisherman starts at x 170 in the door arch, back toward the hall, sack on his shoulder; returns to x 320. King standing on the dais edge pointing at the fish tray (x 520).",
+   "actions": [
+    {
+     "t": 64.84,
+     "cue": {
+      "word": "عاد",
+      "t": 64.84
+     },
+     "who": "king",
+     "action": "beckons with a big arm: come back",
+     "acting": "arm angles sweep; talk; false-friendly smile",
+     "library": "aR keyed sweep"
+    },
+    {
+     "t": 65.0,
+     "cue": {
+      "word": "الصياد",
+      "t": 65.46
+     },
+     "who": "fisherman",
+     "action": "stops in the doorway mid step, turns, walks back with the sack on his shoulder",
+     "acting": "head turns first (gaze), then body; walk() back to x 320; brow -0.4",
+     "library": "turn squeeze as in turnFlip; walk + footfalls"
+    },
+    {
+     "t": 66.2,
+     "cue": {
+      "word": "وسمع",
+      "t": 66.2
+     },
+     "who": "king",
+     "action": "points down at the fish on the tray, then holds up two fingers, left hand then right: this or that?",
+     "acting": "talk; glance at Shirin for approval",
+     "library": "PERSON_HANDS.pointDown, then palmsUp alternating"
+    },
+    {
+     "t": 67.1,
+     "cue": {
+      "word": "السؤال،",
+      "t": 67.1
+     },
+     "who": "lettering",
+     "action": "balloon from the king with two fish icons: blue with MALE?, pink with FEMALE?",
+     "acting": "balloon placed above the tray, clear of all faces",
+     "library": "iconBalloon (planned)"
+    },
+    {
+     "t": 67.9,
+     "who": "fisherman",
+     "action": "freezes; sets the sack down slowly; only his pupils move: fish, king, queen",
+     "acting": "suspense by stillness; sweat bead once; Shirin watches over the fan, lid 0.5",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 68.86,
+     "cue": {
+      "word": "لكنه",
+      "t": 68.86
+     },
+     "who": "camera",
+     "action": "push in on the fisherman",
+     "acting": "eased 0.7 s"
+    },
+    {
+     "t": 69.98,
+     "cue": {
+      "word": "حاضر",
+      "t": 69.98
+     },
+     "who": "fisherman",
+     "action": "eyes stop darting; one brow lifts; a slow smile",
+     "acting": "gaze settles on the fish; brow -0.5 one side; blink",
+     "library": "gazePlan then settle"
+    },
+    {
+     "t": 70.6,
+     "cue": {
+      "word": "الذهن.",
+      "t": 70.6
+     },
+     "who": "fisherman",
+     "action": "taps his temple once",
+     "acting": "small head bob with the tap; glint on the eye",
+     "library": "templeTap (planned PERSON_HANDS.temple)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 67.1,
+     "text": "MALE?"
+    },
+    {
+     "t": 67.3,
+     "text": "FEMALE?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 68.3,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 71.52
+   }
+  },
+  {
+   "id": "S8",
+   "start": 71.52,
+   "end": 80.64,
+   "paragraphs": [
+    4
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "queen",
+    "fisherman",
+    "servant"
+   ],
+   "summary": "His answer: the fish is not only male and not only female, it is both. The two icons slide together into one two-coloured fish.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "Hold the medium on the fisherman (zoom 1.8) with his answer balloon above him; at 78.4 cut to the wide to catch the royal reactions as the word BOTH lands."
+   },
+   "composition": "Answer balloon centred about world (420, 400), 460 x 240, tail to the fisherman at x 320. The real fish on its tray below right. In the wide: king standing, queen seated, both looking at the balloon.",
+   "actions": [
+    {
+     "t": 71.52,
+     "cue": {
+      "word": "قال",
+      "t": 71.52
+     },
+     "who": "fisherman",
+     "action": "bows a little, then speaks with an open hand toward the fish",
+     "acting": "respectful but relaxed; talk; gaze to the king",
+     "library": "PERSON_HANDS.palmsUp (one hand)"
+    },
+    {
+     "t": 72.84,
+     "cue": {
+      "word": "هذه",
+      "t": 72.84
+     },
+     "who": "fisherman",
+     "action": "points at the real fish on the tray",
+     "acting": "gaze follows his own finger, then back to the king",
+     "library": "handRW to the tray"
+    },
+    {
+     "t": 74.2,
+     "cue": {
+      "word": "ليست",
+      "t": 74.2
+     },
+     "who": "iconBalloon",
+     "action": "his balloon pops: the blue MALE fish icon on the left; he wags one finger over it",
+     "acting": "icon dims to half and a small ONLY? tag wobbles",
+     "library": "iconBalloon"
+    },
+    {
+     "t": 74.82,
+     "cue": {
+      "word": "ذكرًا",
+      "t": 74.82
+     },
+     "who": "lettering",
+     "action": "NOT ONLY over the blue icon",
+     "acting": "label pop",
+     "library": "S.label"
+    },
+    {
+     "t": 76.02,
+     "cue": {
+      "word": "أنثى",
+      "t": 76.02
+     },
+     "who": "iconBalloon",
+     "action": "the pink FEMALE fish icon pops on the right; the same finger wag",
+     "acting": "icon dims to half"
+    },
+    {
+     "t": 77.7,
+     "cue": {
+      "word": "بل",
+      "t": 77.7
+     },
+     "who": "fisherman",
+     "action": "brings his two hands together slowly from wide apart",
+     "acting": "anticipation: hands apart on the word before, eyes twinkle",
+     "library": "handL/handR keyed toward clasp"
+    },
+    {
+     "t": 78.48,
+     "cue": {
+      "word": "تجمع",
+      "t": 78.48
+     },
+     "who": "iconBalloon",
+     "action": "the two icons slide together and snap into ONE fish, left half blue, right half pink, with a sparkle",
+     "acting": "snap with overshoot and a 2-frame white flash",
+     "library": "two clipped halves of the fish icon"
+    },
+    {
+     "t": 79.1,
+     "cue": {
+      "word": "الصفتين.",
+      "t": 79.1
+     },
+     "who": "lettering",
+     "action": "BOTH! starburst under the merged fish; cut to the wide",
+     "acting": "burst pop; the real fish on the tray gets one glint",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 79.7,
+     "who": "queen",
+     "action": "her fan freezes half open; mouth a small o",
+     "acting": "eyes wide, then lid 0.6 and a slow look away; the king blinks twice at the balloon",
+     "library": "stagger: queen first, king 4 frames later"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 74.82,
+     "text": "NOT ONLY"
+    },
+    {
+     "t": 79.1,
+     "text": "BOTH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 80.64
+   }
+  },
+  {
+   "id": "S9",
+   "start": 80.64,
+   "end": 88.92,
+   "paragraphs": [
+    4
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "queen",
+    "fisherman",
+    "servant"
+   ],
+   "summary": "Khusrau roars with laughter at the clever answer and orders four thousand more. Second sack; counter 8000.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Wide (zoom 1.05, x 520). One 5-unit panel-only shake on the first laugh. Counter visible top left."
+   },
+   "composition": "King standing on the dais at x 850 laughing; queen seated at x 690 hiding behind the fan; servant runs vault to fisherman; second sack lands beside the first at x 430.",
+   "actions": [
+    {
+     "t": 80.64,
+     "cue": {
+      "word": "ضحك",
+      "t": 80.64
+     },
+     "who": "king",
+     "action": "throws his head back and laughs, hands on his belly, shoulders shaking",
+     "acting": "shared laugh: mouth open, lid 0.9, tip -0.12, shoulder shake 8 Hz",
+     "library": "person laugh (planned helper) + tremble"
+    },
+    {
+     "t": 81.2,
+     "cue": {
+      "word": "كسرى",
+      "t": 81.2
+     },
+     "who": "lettering",
+     "action": "HA HA! in the arch above the king (never over a face)",
+     "acting": "letters bounce with the shake",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 82.06,
+     "cue": {
+      "word": "الجواب",
+      "t": 82.06
+     },
+     "who": "king",
+     "action": "wipes a tear, points at the fisherman: you!",
+     "acting": "wet eyes one beat; smile wide; gaze to the fisherman",
+     "library": "wet + PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 82.72,
+     "cue": {
+      "word": "الذكي،",
+      "t": 82.72
+     },
+     "who": "fisherman",
+     "action": "modest shrug and a small bow",
+     "acting": "palms up, smile; gaze flicks to Shirin and back",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 83.86,
+     "cue": {
+      "word": "وأمر",
+      "t": 83.86
+     },
+     "who": "king",
+     "action": "snaps his arm toward the vault again",
+     "acting": "same order pose as 17.34 (setup and payoff)"
+    },
+    {
+     "t": 84.34,
+     "cue": {
+      "word": "له",
+      "t": 84.34
+     },
+     "who": "servant",
+     "action": "sighs, trots back to the vault; the coin mound inside is visibly lower",
+     "acting": "slower than the first time; shoulders 6 units lower",
+     "library": "walk; coinPile n lower"
+    },
+    {
+     "t": 84.72,
+     "cue": {
+      "word": "بأربعة",
+      "t": 84.72
+     },
+     "who": "counter",
+     "action": "counter rolls 4000 up to 8000",
+     "acting": "digit roll lands on the word for thousand",
+     "library": "S.counter"
+    },
+    {
+     "t": 85.66,
+     "cue": {
+      "word": "آلاف",
+      "t": 85.66
+     },
+     "who": "queen",
+     "action": "slides the fan up to cover her face to the eyes",
+     "acting": "lid 0.6; gaze fixed straight ahead; the fan trembles",
+     "library": "tremble on the fan hand"
+    },
+    {
+     "t": 86.38,
+     "cue": {
+      "word": "درهم",
+      "t": 86.38
+     },
+     "who": "servant",
+     "action": "staggers back with the second sack",
+     "acting": "tip -0.16, knees bent",
+     "library": "sack fill 0.5"
+    },
+    {
+     "t": 87.04,
+     "cue": {
+      "word": "أخرى.",
+      "t": 87.04
+     },
+     "who": "lettering",
+     "action": "tag +4000 hops out of the counter",
+     "acting": "pops and drops back in",
+     "library": "S.label"
+    },
+    {
+     "t": 88.0,
+     "who": "servant",
+     "action": "drops the second sack beside the first; fans himself with his cap",
+     "acting": "impact in the pause at 88.3; sack squash and rebound",
+     "library": "impactSquash + rebound"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 81.2,
+     "text": "HA HA!"
+    },
+    {
+     "t": 87.04,
+     "text": "+4000"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 88.3,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 88.92
+   }
+  },
+  {
+   "id": "S10",
+   "start": 88.92,
+   "end": 101.66,
+   "paragraphs": [
+    5
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "queen",
+    "fisherman",
+    "servant"
+   ],
+   "summary": "The fisherman pours everything into one big sack, heaves it on his shoulder and heads for the door. One coin slips out, bounces and rolls.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Wide (zoom 1.15) tracking the fisherman from x 400 toward the door (camera x 520 to 400). At 97.9 the camera drops 60 units and pushes to zoom 1.6 to follow the coin along the floor."
+   },
+   "composition": "Fisherman walks right to left toward the door arch (x 40..250). The sack rides on his far shoulder, mouth of the sack toward the camera side so the falling coin is seen. Coin path: falls from (300, 700) to the floor at x 310, rolls right to x 470 (back toward the throne) and spins flat.",
+   "actions": [
+    {
+     "t": 88.92,
+     "cue": {
+      "word": "تسلم",
+      "t": 88.92
+     },
+     "who": "fisherman",
+     "action": "tips the second sack into the first; the first swells",
+     "acting": "careful, tongue-out concentration (mouth o); sack fill 0.5 to 1",
+     "library": "sack fill keyed"
+    },
+    {
+     "t": 90.2,
+     "cue": {
+      "word": "ثمانية",
+      "t": 90.2
+     },
+     "who": "counter",
+     "action": "counter 8000 pulses and a tag 8000 stamps on the sack itself",
+     "acting": "pulse 1.15x",
+     "library": "S.counter"
+    },
+    {
+     "t": 92.66,
+     "cue": {
+      "word": "كيس،",
+      "t": 92.66
+     },
+     "who": "fisherman",
+     "action": "ties the neck of the sack with a tug, loosely: a small gap stays open",
+     "acting": "two tugs; the gap is shown with one coin edge peeping (setup)"
+    },
+    {
+     "t": 93.5,
+     "who": "fisherman",
+     "action": "crouches, grips, and heaves the sack onto his shoulder in the pause",
+     "acting": "anticipate crouch 0.3 s, stretch on the lift, knees dip when the weight lands",
+     "library": "anticipate + landSquash; person carrying a load (planned pose)"
+    },
+    {
+     "t": 94.26,
+     "cue": {
+      "word": "وحمله",
+      "t": 94.26
+     },
+     "who": "fisherman",
+     "action": "stands under the load, body bent",
+     "acting": "tip 0.3, sq 0.95; proud grin",
+     "library": "tip + packLoad-style sack on the back"
+    },
+    {
+     "t": 95.32,
+     "cue": {
+      "word": "كتفه",
+      "t": 95.32
+     },
+     "who": "fisherman",
+     "action": "bows goodbye as far as the load allows; king waves him off kindly",
+     "acting": "short bow; king smile, queen stiff"
+    },
+    {
+     "t": 96.2,
+     "cue": {
+      "word": "ليخرج",
+      "t": 96.2
+     },
+     "who": "fisherman",
+     "action": "walks toward the door with heavy planted steps",
+     "acting": "walk() with short stride, body bob 6 units, sack sways a beat late",
+     "library": "walk + footfalls + swing"
+    },
+    {
+     "t": 97.22,
+     "cue": {
+      "word": "القصر.",
+      "t": 97.22
+     },
+     "who": "sack",
+     "action": "on a step the sack jolts and the peeping coin works loose",
+     "acting": "the coin edge slides out over 0.5 s"
+    },
+    {
+     "t": 97.92,
+     "cue": {
+      "word": "سقط",
+      "t": 97.92
+     },
+     "who": "coin",
+     "action": "one coin drops from the sack mouth, flashing as it turns",
+     "acting": "fallY with real acceleration; two glints",
+     "library": "coin (planned coinPile single coin) + fallY"
+    },
+    {
+     "t": 98.88,
+     "cue": {
+      "word": "منه",
+      "t": 98.88
+     },
+     "who": "coin",
+     "action": "hits the floor, bounces twice, lands on its edge and rolls back toward the throne",
+     "acting": "bounces with rebound; roll rotation from distance travelled",
+     "library": "rebound + kfn roll"
+    },
+    {
+     "t": 99.52,
+     "cue": {
+      "word": "درهم",
+      "t": 99.52
+     },
+     "who": "fx",
+     "action": "style arrow and tag ONE COIN follow the rolling coin",
+     "acting": "arrow tracks, tag above the coin",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 100.24,
+     "cue": {
+      "word": "واحد،",
+      "t": 100.24
+     },
+     "who": "king",
+     "action": "both royals lean out to watch the coin roll past the dais; the fisherman stops, one foot in the air, ear cocked",
+     "acting": "three gazes on one coin; fisherman cupEar",
+     "library": "lookAt x3; PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 101.0,
+     "who": "coin",
+     "action": "the coin spins down flat and rings to a stop at x 470",
+     "acting": "spin ellipse narrows to flat in the pause; last wobble at 101.2",
+     "library": "spin = scale x keyed"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 90.2,
+     "text": "8000"
+    },
+    {
+     "t": 99.52,
+     "text": "ONE COIN"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 93.7,
+     "kind": "whoosh"
+    },
+    {
+     "t": 101.2,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 101.66
+   }
+  },
+  {
+   "id": "S11",
+   "start": 101.66,
+   "end": 110.14,
+   "paragraphs": [
+    5
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "queen",
+    "fisherman",
+    "servant"
+   ],
+   "summary": "He puts the whole heavy sack down, walks back, bends and picks up the one small coin while the king and queen stare.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide (zoom 1.2, x 480, y 740). At 104.5 push to an insert on the hand and the coin (x 470, y 860, zoom 2.6) for the pinch; at 106.8 back out to the wide for the watching royals."
+   },
+   "composition": "Sack at x 250 near the door; coin at x 470 on the checker floor; royals above right on the dais looking down: a strong diagonal of eye lines from their faces to the coin.",
+   "actions": [
+    {
+     "t": 101.66,
+     "cue": {
+      "word": "فوضع",
+      "t": 101.66
+     },
+     "who": "fisherman",
+     "action": "lets the sack slide off his shoulder to the floor",
+     "acting": "sack lands with squash, he straightens with relief (sq 1.03)",
+     "library": "impactSquash"
+    },
+    {
+     "t": 102.84,
+     "cue": {
+      "word": "على",
+      "t": 102.84
+     },
+     "who": "fisherman",
+     "action": "walks back four steps to the coin, eyes on it the whole way",
+     "acting": "walk(); gaze locked on the coin; hand already reaching",
+     "library": "walk + lookAt"
+    },
+    {
+     "t": 103.68,
+     "cue": {
+      "word": "وانحنى",
+      "t": 103.68
+     },
+     "who": "fisherman",
+     "action": "bends down from the waist, knees bent, one hand on his knee",
+     "acting": "tip 0.45 with the knee bend (kneel 0.4), anticipation dip",
+     "library": "tip + kneel blend"
+    },
+    {
+     "t": 104.54,
+     "cue": {
+      "word": "ليلتقط",
+      "t": 104.54
+     },
+     "who": "fisherman",
+     "action": "pinches the coin up between finger and thumb (insert)",
+     "acting": "hand closes in 3 frames; coin glints",
+     "library": "handRW to the coin; insert camera"
+    },
+    {
+     "t": 105.38,
+     "cue": {
+      "word": "القطعة",
+      "t": 105.38
+     },
+     "who": "coin",
+     "action": "the coin held up small against the huge sack behind: a size joke",
+     "acting": "style arrows: tiny one to the coin, big one to the sack",
+     "library": "S.arrow x2"
+    },
+    {
+     "t": 106.04,
+     "cue": {
+      "word": "الصغيرة",
+      "t": 106.04
+     },
+     "who": "fisherman",
+     "action": "blows the dust off it and polishes it on his sleeve",
+     "acting": "cheeks puff, 3 rubs; fond look"
+    },
+    {
+     "t": 106.82,
+     "cue": {
+      "word": "أمام",
+      "t": 106.82
+     },
+     "who": "camera",
+     "action": "pull back: the royals are watching",
+     "acting": "eased 0.6 s"
+    },
+    {
+     "t": 107.54,
+     "cue": {
+      "word": "الملك",
+      "t": 107.54
+     },
+     "who": "king",
+     "action": "stares, mouth open, pointing at the coin then at the sack",
+     "acting": "brow -0.6 (disbelief); gaze coin, sack, coin",
+     "library": "gazePlan"
+    },
+    {
+     "t": 107.98,
+     "cue": {
+      "word": "والملكة.",
+      "t": 107.98
+     },
+     "who": "queen",
+     "action": "lowers her fan slowly: a new opening; her smile returns",
+     "acting": "lid 0.4, brow 0.4, one-sided smile; she leans to the king"
+    },
+    {
+     "t": 109.4,
+     "who": "fisherman",
+     "action": "tucks the coin into his sash and pats it, unaware of them",
+     "acting": "content blink; back half turned"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 109.7,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 110.14
+   }
+  },
+  {
+   "id": "S12",
+   "start": 110.14,
+   "end": 120.22,
+   "paragraphs": [
+    6
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "queen",
+    "fisherman",
+    "servant"
+   ],
+   "summary": "Shirin: the man is a miser; with all that money he would not leave even one dirham for the palace servants.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "Two-shot of the royal pair (zoom 1.8); the servant is included at the frame edge on the left (shift the frame to x 720) so the \"servants\" are a face, not a word."
+   },
+   "composition": "Icon balloon above them (world 740, 400): the fisherman bent over the coin beside the giant sack. Servant at x 560 by the dais corner, empty hands.",
+   "actions": [
+    {
+     "t": 110.14,
+     "cue": {
+      "word": "قالت",
+      "t": 110.14
+     },
+     "who": "queen",
+     "action": "points her closed fan at the off-screen fisherman",
+     "acting": "talk; lid 0.4; brow 0.6",
+     "library": "aR angle point"
+    },
+    {
+     "t": 111.96,
+     "cue": {
+      "word": "الرجل",
+      "t": 111.96
+     },
+     "who": "iconBalloon",
+     "action": "balloon: icon of the fisherman bending for the coin",
+     "acting": "pop",
+     "library": "iconBalloon"
+    },
+    {
+     "t": 112.44,
+     "cue": {
+      "word": "بخيل،",
+      "t": 112.44
+     },
+     "who": "lettering",
+     "action": "red tag MISER! slaps onto the balloon",
+     "acting": "stamp with a 2-frame squash",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 113.3,
+     "who": "king",
+     "action": "the smile drains from his face; he looks at the balloon",
+     "acting": "brow goes from -0.3 to 0.3 over the pause; slow blink"
+    },
+    {
+     "t": 115.06,
+     "cue": {
+      "word": "يترك",
+      "t": 115.06
+     },
+     "who": "iconBalloon",
+     "action": "inside the balloon the coin lies on the floor with a dotted arrow to a tiny servant icon with an open hand",
+     "acting": "dotted arrow draws on",
+     "library": "S.arrow dashed"
+    },
+    {
+     "t": 116.36,
+     "cue": {
+      "word": "لخدم",
+      "t": 116.36
+     },
+     "who": "servant",
+     "action": "the real servant at the frame edge looks at his own empty palm, then up hopefully",
+     "acting": "palm up; brow -0.5; small comic sigh (sq 0.97)",
+     "library": "PERSON_HANDS.palmsUp (one hand)"
+    },
+    {
+     "t": 117.6,
+     "cue": {
+      "word": "رغم",
+      "t": 117.6
+     },
+     "who": "iconBalloon",
+     "action": "the dotted arrow is crossed out; the coin jumps into the sack icon instead",
+     "acting": "red X, coin hop"
+    },
+    {
+     "t": 118.56,
+     "cue": {
+      "word": "حصل",
+      "t": 118.56
+     },
+     "who": "queen",
+     "action": "draws a huge sack in the air with both hands, then pinches a tiny coin",
+     "acting": "big to small: same size joke turned against him",
+     "library": "PERSON_HANDS.armsOut then pinch"
+    },
+    {
+     "t": 119.76,
+     "cue": {
+      "word": "مال.",
+      "t": 119.76
+     },
+     "who": "lettering",
+     "action": "tag 8000 on the sack icon, tag 1 on the coin icon",
+     "acting": "two pops, 4 frames apart",
+     "library": "S.label"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 112.44,
+     "text": "MISER!"
+    },
+    {
+     "t": 119.76,
+     "text": "8000"
+    },
+    {
+     "t": 119.9,
+     "text": "1"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 113.5,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 120.22
+   }
+  },
+  {
+   "id": "S13",
+   "start": 120.22,
+   "end": 129.7,
+   "paragraphs": [
+    6
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "queen",
+    "fisherman",
+    "servant"
+   ],
+   "summary": "Khusrau is angry and summons the fisherman to explain why one small coin mattered so much.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "Push in on the king as he rises (x 850, y 690, zoom 2.0) for the anger; at 122.0 cut wide (zoom 1.0) for the summons; hold as the fisherman comes back."
+   },
+   "composition": "King standing on the dais edge, arm out. Fisherman at the door (x 200) turning; walks back to x 330 leaving the sack at x 250. Lamps (380, 250) and (930, 250) swing a few degrees after the stamp.",
+   "actions": [
+    {
+     "t": 120.22,
+     "cue": {
+      "word": "غضب",
+      "t": 120.22
+     },
+     "who": "king",
+     "action": "springs up from the throne; brows crash down",
+     "acting": "brow 1, mouth frown, sq 1.05 on the rise; a red flush tint for 1 s",
+     "library": "sit blend + anticipate + settleTo"
+    },
+    {
+     "t": 121.34,
+     "cue": {
+      "word": "كسرى،",
+      "t": 121.34
+     },
+     "who": "king",
+     "action": "stamps a foot; the dais cushions hop",
+     "acting": "impact: 4-unit panel-only shake; lamps swing",
+     "library": "kick + swing on hangingLamp"
+    },
+    {
+     "t": 121.98,
+     "cue": {
+      "word": "واستدعاه",
+      "t": 121.98
+     },
+     "who": "king",
+     "action": "throws his arm at the fisherman and curls a finger: here, now",
+     "acting": "talk wide; gaze hard at him",
+     "library": "aR keyed"
+    },
+    {
+     "t": 122.4,
+     "cue": {
+      "word": "واستدعاه",
+      "t": 121.98
+     },
+     "who": "fisherman",
+     "action": "at the door, hand on the sack, flinches and turns",
+     "acting": "eyes wide, sq 0.9 flinch then recover; points at himself: me?",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 123.44,
+     "cue": {
+      "word": "ليسأله",
+      "t": 123.44
+     },
+     "who": "fisherman",
+     "action": "walks back slowly, hands open at his sides",
+     "acting": "walk() short stride; gaze on the king; one gulp (drop pulse)",
+     "library": "walk + footfalls"
+    },
+    {
+     "t": 124.3,
+     "cue": {
+      "word": "كيف",
+      "t": 124.3
+     },
+     "who": "king",
+     "action": "points down at the place on the floor where the coin lay",
+     "acting": "brow 1; second hand on his hip",
+     "library": "PERSON_HANDS.pointDown + hipsHands"
+    },
+    {
+     "t": 125.4,
+     "cue": {
+      "word": "بقطعة",
+      "t": 125.4
+     },
+     "who": "king",
+     "action": "holds finger and thumb a pinch apart in front of his own eye",
+     "acting": "squints one eye through the gap (wink R), mocking",
+     "library": "handR near the face + wink"
+    },
+    {
+     "t": 126.2,
+     "cue": {
+      "word": "صغيرة",
+      "t": 126.2
+     },
+     "who": "queen",
+     "action": "folds her arms, sits back, waits for the fall",
+     "acting": "lid 0.5, smug smile; fan tapping",
+     "library": "PERSON_HANDS.folded"
+    },
+    {
+     "t": 127.72,
+     "cue": {
+      "word": "هذا",
+      "t": 127.72
+     },
+     "who": "king",
+     "action": "spreads both arms wide: this much fuss?",
+     "acting": "armsOut; talk; lean forward tip 0.1",
+     "library": "PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 128.9,
+     "who": "fisherman",
+     "action": "stops under the dais; draws the coin from his sash and holds it in his closed fist; a breath",
+     "acting": "looks at the fist, then up; calm returns (lid 0.2, small smile)",
+     "library": "breathe"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 121.34,
+     "text": "STAMP!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 129.2,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 129.7
+   }
+  },
+  {
+   "id": "S14",
+   "start": 129.7,
+   "end": 142.4,
+   "paragraphs": [
+    7
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "queen",
+    "fisherman",
+    "servant"
+   ],
+   "summary": "The fisherman explains: not greed. The coin carries the king's picture and name, and someone in the market might tread on it. Coin insert, then a thought cloud of a market foot.",
+   "camera": {
+    "shot": "insert",
+    "move": "push-in",
+    "notes": "Medium on the fisherman (zoom 1.8) until 134.3; in the pause push into an extreme close insert of the coin in his fingers (coin about 330 px across on screen) held 135.0 to 138.9; at 139.0 back to the medium with a thought cloud above him for the market; 141.9 cut to the king."
+   },
+   "composition": "Insert: the coin centred at panel (500, 520); the king's real face slides in small at the right edge at 137.6 to match the portrait. Cloud: world (430, 380), 520 x 300, trail to the fisherman at x 330.",
+   "actions": [
+    {
+     "t": 129.7,
+     "cue": {
+      "word": "أجاب",
+      "t": 129.7
+     },
+     "who": "fisherman",
+     "action": "bows his head, then looks up and speaks plainly",
+     "acting": "steady gaze at the king; talk; no fear"
+    },
+    {
+     "t": 132.28,
+     "cue": {
+      "word": "ينحن",
+      "t": 132.28
+     },
+     "who": "fisherman",
+     "action": "shakes his head and waves away a small sack icon with a red X",
+     "acting": "one hand wave; the icon with a greedy coinEyes face appears and is struck out",
+     "library": "iconBalloon + coinEyes (planned) struck"
+    },
+    {
+     "t": 132.78,
+     "cue": {
+      "word": "طمعًا",
+      "t": 132.78
+     },
+     "who": "lettering",
+     "action": "NOT GREED! beside the struck icon",
+     "acting": "label pop",
+     "library": "S.label"
+    },
+    {
+     "t": 134.4,
+     "who": "fisherman",
+     "action": "opens his fist and raises the coin between finger and thumb; it catches the light",
+     "acting": "slow raise in the pause; glint star at 134.65",
+     "library": "handR keyed; sparkle"
+    },
+    {
+     "t": 135.04,
+     "cue": {
+      "word": "بل",
+      "t": 135.04
+     },
+     "who": "camera",
+     "action": "push into the coin insert",
+     "acting": "0.5 s ease"
+    },
+    {
+     "t": 136.24,
+     "cue": {
+      "word": "الدرهم",
+      "t": 136.24
+     },
+     "who": "coin",
+     "action": "the coin fills the frame: a dotted yellow disc with a raised rim",
+     "acting": "slight wobble in his fingers",
+     "library": "coin {face: 'king'} drawn large"
+    },
+    {
+     "t": 136.9,
+     "cue": {
+      "word": "صورة",
+      "t": 136.9
+     },
+     "who": "coin",
+     "action": "the stamped portrait is drawn on with a glint sweep: a crowned bearded head, the same crown as Khusrau",
+     "acting": "glint travels left to right",
+     "library": "coinFace"
+    },
+    {
+     "t": 137.58,
+     "cue": {
+      "word": "الملك",
+      "t": 137.58
+     },
+     "who": "king",
+     "action": "the real king's face slides into the frame edge beside the coin: same crown, same beard; his angry brows lift",
+     "acting": "brow 1 to -0.4 over 0.6 s; double take between coin and camera",
+     "library": "person head close; settleTo"
+    },
+    {
+     "t": 138.1,
+     "cue": {
+      "word": "واسمه،",
+      "t": 138.1
+     },
+     "who": "coin",
+     "action": "a band of squiggle writing under the portrait lights up, with a small style arrow and tag HIS NAME",
+     "acting": "squiggle draws on",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 139.04,
+     "cue": {
+      "word": "وخاف",
+      "t": 139.04
+     },
+     "who": "planCloud",
+     "action": "back to the medium: his thought cloud opens on a market street floor with the coin lying on it",
+     "acting": "fisherman worried brow (brow -0.6), gaze into the cloud",
+     "library": "thoughtCloud with marketStreet paving inside"
+    },
+    {
+     "t": 140.1,
+     "cue": {
+      "word": "يدوس",
+      "t": 140.1
+     },
+     "who": "fx",
+     "action": "in the cloud a big sandalled foot comes down toward the coin",
+     "acting": "foot descends on the word, stops 10 units above the coin and trembles there",
+     "library": "marketFoot: leg seg + shoe ellipse, kfn"
+    },
+    {
+     "t": 141.04,
+     "cue": {
+      "word": "أحد",
+      "t": 141.04
+     },
+     "who": "lettering",
+     "action": "red NO! over the foot; a tiny hand whisks the coin away to safety",
+     "acting": "stamp; the cloud foot lands on bare paving with a small dust puff",
+     "library": "S.emphasis + dustBurst"
+    },
+    {
+     "t": 141.9,
+     "cue": {
+      "word": "السوق.",
+      "t": 141.9
+     },
+     "who": "fisherman",
+     "action": "presses the coin to his chest with both hands",
+     "acting": "eyes shut (lid 1) for a beat, then a look up to the king",
+     "library": "PERSON_HANDS.chest both"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 132.78,
+     "text": "NOT GREED!"
+    },
+    {
+     "t": 138.1,
+     "text": "HIS NAME"
+    },
+    {
+     "t": 141.04,
+     "text": "NO!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 134.65,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 142.4
+   }
+  },
+  {
+   "id": "S15",
+   "start": 142.4,
+   "end": 150.6,
+   "paragraphs": [
+    7
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "queen",
+    "fisherman",
+    "servant"
+   ],
+   "summary": "The king is won over a third time and grants another four thousand. Third trip to the vault; counter 12000.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Cut to a medium on the king for his melt (zoom 1.9) until 144.5, then the wide (zoom 1.05) for the third sack."
+   },
+   "composition": "King on the dais edge; queen at x 690 sinking in her seat; the servant drags the third sack from the nearly empty vault to x 330.",
+   "actions": [
+    {
+     "t": 142.4,
+     "cue": {
+      "word": "أعجب",
+      "t": 142.4
+     },
+     "who": "king",
+     "action": "his anger melts: brows up, hand to his heart, a delighted laugh",
+     "acting": "brow -0.5, wet eyes one beat, smile; sq 1.03",
+     "library": "settleTo + PERSON_HANDS.chest"
+    },
+    {
+     "t": 143.94,
+     "cue": {
+      "word": "كسرى",
+      "t": 143.94
+     },
+     "who": "king",
+     "action": "claps and points at the fisherman with both hands",
+     "acting": "same order pose forming for the third time"
+    },
+    {
+     "t": 144.5,
+     "cue": {
+      "word": "بذكائه",
+      "t": 144.5
+     },
+     "who": "fisherman",
+     "action": "taps his temple shyly, shrugs",
+     "acting": "modest smile; the same temple tap as 70.6 (payoff)",
+     "library": "templeTap"
+    },
+    {
+     "t": 145.48,
+     "cue": {
+      "word": "مرة",
+      "t": 145.48
+     },
+     "who": "lettering",
+     "action": "three style tick badges pop in a row at the top of the panel: 1, 2, 3",
+     "acting": "staggered 4 frames apart; the third is bigger",
+     "library": "S.box x3 with ticks"
+    },
+    {
+     "t": 145.94,
+     "cue": {
+      "word": "ثالثة،",
+      "t": 145.94
+     },
+     "who": "queen",
+     "action": "on \"third\" she slides down in her seat and opens the fan over her whole face",
+     "acting": "sq 0.92 sink; only the crown shows above the fan"
+    },
+    {
+     "t": 147.2,
+     "cue": {
+      "word": "ومنحه",
+      "t": 147.2
+     },
+     "who": "king",
+     "action": "the order arm snaps toward the vault for the third time",
+     "acting": "identical pose to 17.34 and 83.86"
+    },
+    {
+     "t": 147.6,
+     "cue": {
+      "word": "ومنحه",
+      "t": 147.2
+     },
+     "who": "servant",
+     "action": "stares at the king, shoulders drop, trudges to the vault; scrapes the last coins into a sack",
+     "acting": "slowest walk; vault mound nearly gone; long blink",
+     "library": "walk; coinPile n low"
+    },
+    {
+     "t": 148.04,
+     "cue": {
+      "word": "أربعة",
+      "t": 148.04
+     },
+     "who": "counter",
+     "action": "counter rolls 8000 up to 12000",
+     "acting": "lands on the word for thousand; pulse",
+     "library": "S.counter"
+    },
+    {
+     "t": 149.52,
+     "cue": {
+      "word": "إضافية.",
+      "t": 149.52
+     },
+     "who": "servant",
+     "action": "drags the third sack along the floor by its neck to the fisherman and sits down on the floor beside it",
+     "acting": "drag marks; sit floor at the end; fisherman helps him up with one hand and slips the rescued coin into his palm",
+     "library": "sit seat:'floor'; handOver (planned)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 149.52,
+     "text": "+4000"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 150.6
+   }
+  },
+  {
+   "id": "S16",
+   "start": 150.6,
+   "end": 153.1,
+   "paragraphs": [
+    8
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "queen",
+    "fisherman",
+    "servant"
+   ],
+   "summary": "The fisherman leaves the hall with an enormous sack; the servant beams at the coin in his palm.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Wide (zoom 1.15) tracking him to the door, camera x 500 to 380."
+   },
+   "composition": "Fisherman crosses from x 330 to the door at x 150 with a sack now as big as his body on his back; servant at x 420 holding up one coin; royals small on the right.",
+   "actions": [
+    {
+     "t": 150.6,
+     "cue": {
+      "word": "خرج",
+      "t": 150.6
+     },
+     "who": "fisherman",
+     "action": "heaves the giant sack onto his back and walks to the door",
+     "acting": "tip 0.35, heavy steps, grin; sack sways late",
+     "library": "walk + footfalls; person carrying a load"
+    },
+    {
+     "t": 151.3,
+     "who": "servant",
+     "action": "looks at the coin in his palm, then waves after the fisherman",
+     "acting": "big smile, brow -0.4; wave",
+     "library": "PERSON_HANDS.wave"
+    },
+    {
+     "t": 152.28,
+     "cue": {
+      "word": "الصياد",
+      "t": 152.28
+     },
+     "who": "fisherman",
+     "action": "turns in the door arch for one last bow and goes out",
+     "acting": "bow as far as the load allows; exits frame left"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 153.1
+   }
+  },
+  {
+   "id": "S17",
+   "start": 153.1,
+   "end": 158.14,
+   "paragraphs": [
+    8
+   ],
+   "set": "street",
+   "cast": [
+    "fisherman"
+   ],
+   "summary": "Outside the palace door he comes down the steps: twelve thousand instead of four.",
+   "camera": {
+    "shot": "full",
+    "move": "pull-out",
+    "notes": "Start medium on him in the palace doorway (zoom 1.7), pull out to the street wide (zoom 1.05) by 155.3."
+   },
+   "composition": "marketStreet with the palace facade at the right; he comes out of the palace door (anchors palace.door) and walks left along the street to x 420. Counter top left; the comparison tags sit in the sky above the house fronts.",
+   "actions": [
+    {
+     "t": 153.1,
+     "cue": {
+      "word": "ومعه",
+      "t": 153.1
+     },
+     "who": "fisherman",
+     "action": "steps out of the palace door into the daylight under the giant sack",
+     "acting": "squints at the sun (lid 0.5), then grins",
+     "library": "marketStreet palace door anchors; walk"
+    },
+    {
+     "t": 153.98,
+     "cue": {
+      "word": "اثنا",
+      "t": 153.98
+     },
+     "who": "counter",
+     "action": "counter 12000 bounces big to the centre top of the panel",
+     "acting": "scale 1 to 1.4 and back",
+     "library": "S.counter"
+    },
+    {
+     "t": 154.94,
+     "cue": {
+      "word": "ألف",
+      "t": 154.94
+     },
+     "who": "sack",
+     "action": "tag 12000 stamps on the sack; three coin glints",
+     "acting": "stamp squash"
+    },
+    {
+     "t": 155.94,
+     "cue": {
+      "word": "بدل",
+      "t": 155.94
+     },
+     "who": "lettering",
+     "action": "small grey tag 4000 appears beside the counter",
+     "acting": "pop",
+     "library": "S.label"
+    },
+    {
+     "t": 156.66,
+     "cue": {
+      "word": "أربعة",
+      "t": 156.66
+     },
+     "who": "lettering",
+     "action": "the 4000 tag is struck through with a red line and falls away",
+     "acting": "strike draws in 0.2 s; tag drops with gravity",
+     "library": "fallY"
+    },
+    {
+     "t": 157.32,
+     "cue": {
+      "word": "آلاف.",
+      "t": 157.32
+     },
+     "who": "fisherman",
+     "action": "stops, looks back at the palace, and winks to camera",
+     "acting": "wink R, one beat to the lens, then walks on",
+     "library": "person wink:'R'"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 153.98,
+     "text": "12000"
+    },
+    {
+     "t": 155.94,
+     "text": "4000"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 158.14,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S18",
+   "start": 158.14,
+   "end": 166.74,
+   "paragraphs": [
+    8
+   ],
+   "set": "hall",
+   "cast": [
+    "king",
+    "queen",
+    "servant"
+   ],
+   "summary": "How the old tale ends: the king makes a stern proclamation blaming the advice of women. Staged wordlessly and at the king's expense: empty vault behind him, unimpressed queen.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "The LATER card covers 158.1 to 159.4. Wide of the hall (zoom 1.1); slow push to the king and queen (zoom 1.5) by 165."
+   },
+   "composition": "King standing on the dais with a long scroll; servant below as herald holding its lower end; queen seated at x 690; behind them the vault door hangs open and empty (one cobweb line).",
+   "actions": [
+    {
+     "t": 158.14,
+     "cue": {
+      "word": "وتختم",
+      "t": 158.14
+     },
+     "who": "fx",
+     "action": "style transition card LATER... wipes across",
+     "acting": "card covers the cut from the street back to the hall",
+     "library": "S.transition caption 'LATER...'"
+    },
+    {
+     "t": 160.14,
+     "cue": {
+      "word": "الحكاية",
+      "t": 160.14
+     },
+     "who": "set",
+     "action": "the hall again; the vault door stands open and bare; the fish tray holds only bones",
+     "acting": "the servant glances at the empty vault",
+     "library": "palaceHall vault.open 1; fishBones"
+    },
+    {
+     "t": 161.6,
+     "cue": {
+      "word": "الملك",
+      "t": 161.6
+     },
+     "who": "king",
+     "action": "stands very upright, chest out, one finger raised",
+     "acting": "pompous: lid 0.4, brow 0.6, chin up (tip -0.06)",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 162.1,
+     "cue": {
+      "word": "أعلن",
+      "t": 162.1
+     },
+     "who": "king",
+     "action": "unrolls a long scroll that drops to the servant; it shows only squiggle lines",
+     "acting": "scroll falls with a bounce at the end; talk",
+     "library": "scroll (planned, long, squiggles only)"
+    },
+    {
+     "t": 163.36,
+     "cue": {
+      "word": "قاسيًا",
+      "t": 163.36
+     },
+     "who": "lettering",
+     "action": "tag A STERN DECREE on the scroll header; heavy black squiggles",
+     "acting": "pop",
+     "library": "S.label"
+    },
+    {
+     "t": 164.16,
+     "cue": {
+      "word": "يلوم",
+      "t": 164.16
+     },
+     "who": "king",
+     "action": "wags the raised finger sideways toward Shirin without looking at her",
+     "acting": "eyes shut in self-importance (lid 1)"
+    },
+    {
+     "t": 165.44,
+     "cue": {
+      "word": "نصيحة",
+      "t": 165.44
+     },
+     "who": "queen",
+     "action": "looks at the finger, at the empty vault, at the camera; lowers the fan and raises one brow",
+     "acting": "deadpan: lid 0.5, brow -0.5 one side, one slow blink to camera",
+     "library": "gazePlan; look to camera once"
+    },
+    {
+     "t": 166.18,
+     "cue": {
+      "word": "النساء،",
+      "t": 166.18
+     },
+     "who": "servant",
+     "action": "the herald servant peeks round the scroll at the queen and quickly hides again",
+     "acting": "eyes wide, ducks behind the paper"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 163.36,
+     "text": "A STERN DECREE"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 166.74
+   }
+  },
+  {
+   "id": "S19",
+   "start": 166.74,
+   "end": 178.57,
+   "paragraphs": [
+    8
+   ],
+   "set": "street",
+   "cast": [
+    "fisherman"
+   ],
+   "summary": "The picture corrects the proclamation: three tests, three wins. The fisherman walks home; each test card turns into a sack. THE END.",
+   "camera": {
+    "shot": "full",
+    "move": "pull-out",
+    "notes": "Cut to the street: medium on the fisherman walking (zoom 1.5, tracking), widen to zoom 1.0 by 172. Hold still for THE END from 175.6."
+   },
+   "composition": "Fisherman walks left to right now (away from the palace, toward home) and stops at x 500. Three test cards in a row across the upper panel (world y 300; x 250, 500, 750), each 200 x 150. THE END title in the upper third, clear of his head.",
+   "actions": [
+    {
+     "t": 166.74,
+     "cue": {
+      "word": "مع",
+      "t": 166.74
+     },
+     "who": "fx",
+     "action": "cut to the sunny street; the fisherman strolling with the giant sack, whistling (two music note shapes)",
+     "acting": "easy walk, no strain now (tip 0.2)",
+     "library": "walk + footfalls"
+    },
+    {
+     "t": 167.78,
+     "cue": {
+      "word": "الأحداث",
+      "t": 167.78
+     },
+     "who": "fx",
+     "action": "card 1 pops: the two-coloured fish icon",
+     "acting": "pop with overshoot",
+     "library": "S.box"
+    },
+    {
+     "t": 168.64,
+     "cue": {
+      "word": "أظهرت",
+      "t": 168.64
+     },
+     "who": "fx",
+     "action": "card 2 pops: the single coin icon",
+     "acting": "pop",
+     "library": "S.box"
+    },
+    {
+     "t": 169.36,
+     "cue": {
+      "word": "بوضوح",
+      "t": 169.36
+     },
+     "who": "fx",
+     "action": "card 3 pops: the coin with the crowned face",
+     "acting": "pop",
+     "library": "S.box"
+    },
+    {
+     "t": 170.08,
+     "cue": {
+      "word": "قدرة",
+      "t": 170.08
+     },
+     "who": "fisherman",
+     "action": "stops, sets the sack down, and taps his temple",
+     "acting": "the temple tap a third time; smile to camera",
+     "library": "templeTap"
+    },
+    {
+     "t": 172.02,
+     "cue": {
+      "word": "تحويل",
+      "t": 172.02
+     },
+     "who": "fx",
+     "action": "the three cards flip over one by one",
+     "acting": "flip = scale x 1 to 0 to 1, staggered 0.35 s",
+     "library": "stagger(i)"
+    },
+    {
+     "t": 173.04,
+     "cue": {
+      "word": "اختبار",
+      "t": 173.04
+     },
+     "who": "lettering",
+     "action": "each flipped card shows TEST with a green tick",
+     "acting": "ticks draw on in order",
+     "library": "S.box + tick"
+    },
+    {
+     "t": 174.4,
+     "cue": {
+      "word": "مكافأة.",
+      "t": 174.4
+     },
+     "who": "sack",
+     "action": "the three cards drop and land as three small sacks stacked beside him",
+     "acting": "fallY, impactSquash in order, coin glints; he laughs",
+     "library": "fallY + impactSquash + person laugh"
+    },
+    {
+     "t": 175.6,
+     "who": "lettering",
+     "action": "THE END title; he sits on the sack pile, takes a breath, waves; a sparrow lands on the top sack",
+     "acting": "held 3 s: breathing, blinks, one slow wave; nothing else moves",
+     "library": "S.title; person sit; bird {kind:'sparrow'}; breathe"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 173.04,
+     "text": "TEST 1"
+    },
+    {
+     "t": 173.3,
+     "text": "TEST 2"
+    },
+    {
+     "t": 173.6,
+     "text": "TEST 3"
+    },
+    {
+     "t": 175.6,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 175.5,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 178.57
+   }
+  }
+ ],
+ "ending": {
+  "t": 175.6,
+  "description": "On the street outside the palace the fisherman sits on his pile of sacks (one giant, three small), breathing and blinking, gives one slow wave; a sparrow lands on the top sack. THE END title in the upper third from 175.6 to 178.57 (3.0 s hold after the audio). Soft chime at 175.5."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان الملك كسرى يحب أكل السمك،|وفي يوم دخل عليه صياد يحمل سمكة كبيرة نادرة.|كان الملك جالسًا مع زوجته شيرين،|فأعجب بالسمكة، وأمر أن يعطى الصياد أربعة آلاف درهم مكافأة له.",
+   "en": "King Khusrau loved fish.|When a fisherman brought him a fine large fish,|he ordered a reward of four thousand dirhams|as Queen Shirin watched."
+  },
+  {
+   "p": 2,
+   "ar": "قالت شيرين إن المكافأة كبيرة،|فقد يظن رجال القصر أن هدايا الملك لهم قليلة|إذا ساوت هدية صياد بسيط.|أجاب كسرى أنه لا يحب الرجوع في وعد قطعه أمام الناس.",
+   "en": "Shirin thought the payment excessive:|courtiers might resent receiving as much|as a fisherman.|Khusrau replied that a king should not withdraw a promised gift."
+  },
+  {
+   "p": 3,
+   "ar": "اقترحت شيرين حيلة،|وهي أن يسأل الملك الصياد هل السمكة ذكر أم أنثى.|فإن أجاب أنها ذكر، يطلب الملك أنثى، وإن قال أنثى، يطلب ذكرًا،|فيسترد المال.",
+   "en": "Shirin proposed|asking whether the fish was male or female,|then demanding the opposite kind|so the reward could be reclaimed."
+  },
+  {
+   "p": 4,
+   "ar": "عاد الصياد وسمع السؤال، لكنه كان حاضر الذهن.|قال إن هذه السمكة ليست ذكرًا فقط ولا أنثى فقط، بل تجمع الصفتين.|ضحك كسرى من الجواب الذكي،|وأمر له بأربعة آلاف درهم أخرى.",
+   "en": "Summoned back, the quick-witted fisherman|replied that the fish was both male and female.|Khusrau laughed|and granted him four thousand dirhams more."
+  },
+  {
+   "p": 5,
+   "ar": "تسلم الرجل ثمانية آلاف درهم في كيس،|وحمله على كتفه ليخرج من القصر.|سقط منه درهم واحد،|فوضع الكيس على الأرض وانحنى ليلتقط القطعة الصغيرة أمام الملك والملكة.",
+   "en": "The fisherman collected eight thousand dirhams in a sack.|As he left,|a single coin fell,|and he set down the sack to pick it up."
+  },
+  {
+   "p": 6,
+   "ar": "قالت شيرين إن الرجل بخيل،|لأنه لم يترك الدرهم لخدم القصر رغم ما حصل عليه من مال.|غضب كسرى، واستدعاه ليسأله كيف اهتم بقطعة صغيرة إلى هذا الحد.",
+   "en": "Shirin called him miserly|for not leaving one coin to the servants.|Angered, Khusrau summoned the fisherman to explain himself."
+  },
+  {
+   "p": 7,
+   "ar": "أجاب الصياد أنه لم ينحن طمعًا في المال،|بل لأن على الدرهم صورة الملك واسمه،|وخاف أن يدوس عليه أحد في السوق.|أعجب كسرى بذكائه مرة ثالثة، ومنحه أربعة آلاف إضافية.",
+   "en": "The fisherman said he had rescued the coin|because it bore the king’s image and name,|which might otherwise be trampled.|Khusrau awarded him another four thousand."
+  },
+  {
+   "p": 8,
+   "ar": "خرج الصياد ومعه اثنا عشر ألف درهم بدل أربعة آلاف.|وتختم الحكاية بأن الملك أعلن قولًا قاسيًا يلوم فيه نصيحة النساء،|مع أن الأحداث أظهرت بوضوح قدرة الصياد|على تحويل كل اختبار إلى مكافأة.",
+   "en": "The fisherman left with twelve thousand dirhams instead of four.|The old tale ends with the king making a harsh proclamation about women’s advice,|while the fisherman’s cleverness|had won every test."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "fish",
+   "description": "The planned side-view comic fish (shared with KD-007, KD-019, AN-111): palette 2 round and pink, 200 x 110 at s 1, fields limp, eyes, roll, tail swing; plus flat icon mode with a colour override (blue, pink, split) for balloons and clouds.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "One function fish(ctx, P): body = shape(ell) with red Ben-Day dots, tail = triangle rotated by a swing angle about the tail root, two fins, eye (x eyes = two short crossed segs), mouth arc. split: draw twice with a clip rect at the body centre line. Register in registry.js."
+  },
+  {
+   "type": "prop",
+   "name": "sack",
+   "description": "The planned coin sack with fill 0..1, coin mark, optional number tag, tied or loose neck, carried on the back or dropped.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "shape() pear outline scaled by fill (width 120..170, height 150..210), neck = small trapezoid with a rope seg, coin mark = yellow circle with a C squiggle, tag = S.label rotated 4 degrees. Use impactSquash for drops; draw after the person for carry-on-back with tip 0.3."
+  },
+  {
+   "type": "prop",
+   "name": "coin (coinPile single, face:'king')",
+   "description": "Single coin from the planned coinPile with a large portrait state for the insert: crowned bearded head and a squiggle name band.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "K circle + rim dots; portrait from 6 shapes (head circle, crown poly, beard wedge, two eye dots, brow line); name = 3 seeded squiggle lines; reveal with a clip rect that sweeps left to right; glint = white diagonal bar clipped to the disc."
+  },
+  {
+   "type": "character",
+   "name": "person costume preset 'fisherman'",
+   "description": "Poor fisherman on the Library person figure: short blue-grey tunic, rolled sleeves, rope sash, rolled trousers, bare feet, frayed cap, short beard. Reusable for every fisherman, boatman or porter story.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "New entry in the COSTUME table of cast/people.js copied from 'villager' with pal {robe: '#7f95b8', dot: C.blue, sash: '#a8741a', shoes: 'bare', hc: C.white}; opt-in only, so the regression test stays identical."
+  },
+  {
+   "type": "prop",
+   "name": "iconBalloon (with fish, sack, courtier, scale icons)",
+   "description": "The planned wordless picture balloon in single mode, with this film's icons.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Library bubble() outline with an inside(ctx) callback clipped to the balloon; icons are the real props drawn at 0.3 to 0.4 scale (fish, sack, person heads with costume vizier), balanceScale = beam seg + two pan arcs rotating about the pivot with swing()."
+  },
+  {
+   "type": "prop",
+   "name": "fan",
+   "description": "Queen's folding fan with open 0..1 and angle; her main acting tool.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Sector polygon from the hand point (person P.hands gives the hand position), 7 rib segs, open scales the sector angle from 8 to 120 degrees; draw after the person."
+  },
+  {
+   "type": "motion",
+   "name": "person laugh / templeTap / handOver / carry load",
+   "description": "Planned shared helpers reused under their planned names: the full laugh (mouth open, lid 0.9, tip back, shoulder shake), the temple tap, passing a small object between two hands, and the bent carry pose with a sack on the back.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Small functions returning pose fields from t (pure functions): laugh(t, t0, dur), PERSON_HANDS.temple, handOver(t, t0, handA, handB), carry = {tip: 0.3, sq: 0.96} plus the sack drawn at the shoulder point."
+  }
+ ],
+ "owner_questions": [
+  "SCRIPT: the English translation is a condensed version of the Arabic (for example P5 omits 'on his shoulder' and 'before the king and queen', P7 omits 'not out of greed', 'in the market' and 'a third time'); both are kept verbatim as supplied.",
+  "The king's proclamation about women's advice (P8) is staged wordlessly: a scroll with squiggle lines and the tag A STERN DECREE, with the empty vault and the queen's deadpan look undercutting him; no text of the decree is shown. Default: this softened, king-is-the-joke staging.",
+  "Added a palace servant who carries each sack from a treasury door that empties (and receives the rescued coin as a tip at 149.5); he is not named in the script apart from 'the palace servants'. Default: keep him, including the tip.",
+  "Male and female are shown as blue and pink fish icons with the English tags MALE? and FEMALE? and the answer as one half blue, half pink fish with BOTH!. Default: these colours and tags.",
+  "Shirin is played as a cool schemer with a fan but is never humiliated beyond hiding behind it; the fisherman winks to camera at 157.3. Default: keep both.",
+  "Invented lettering beyond the script: RARE!, A PROMISE!, THE TRICK, NO!, NOT ONLY, HA HA!, ONE COIN, MISER!, STAMP!, NOT GREED!, HIS NAME, A STERN DECREE, TEST 1 to 3, plus the numbers. Default: keep all; trim first: STAMP!, THE TRICK, NOT ONLY."
+ ],
+ "implementation_notes": [
+  "Start from Library/template. Two baked sets only: palaceHall (palace variant, options in sets.hall) and marketStreet. Read the anchors from palaceHallAnchors(o) and marketStreetAnchors(o) instead of the approximate numbers in this plan.",
+  "All cue times are word starts from planning/inputs/timeline.json; build the CUE table from timing.json with w(p, n) and check each against the times written here.",
+  "Set LIFE.t = t each frame for auto-blinks; give explicit lid values hand blinks. Every character has a gaze target in every shot (lookAt / gazePlan); the three thinkers use the saccade mode gazePlan(t, plan, 0.07).",
+  "The seated royals: person({costume, sit: 1, seat: 'bench', y: sitY}); rise and sit by blending sit with anticipate() and settleTo(). The queen sits on queenSeat (48 high) on the dais.",
+  "The order pose (arm snapped toward the vault) must be the identical arm angles at 17.34, 83.86 and 147.2; the servant walk gets slower each time (stride 1.0, 0.8, 0.55) and the vault coinPile lower (n 40, 22, 6, 0).",
+  "The fisherman never slides: every move is walk(FX, t) with footfalls; turns use a squeeze flip no narrower than 0.7 as in turnFlip.",
+  "The coin: fallY from the sack mouth, two rebound bounces, then roll with rotation = distance / r; the last spin-down must end in the pause 100.86 to 101.66 so the chime at 101.2 is clear of words.",
+  "Thought clouds and icon balloons sit in the upper half of the panel; no balloon or lettering may cover a face. Keep figures inside clouds at least 110 px tall on screen.",
+  "Counter and tags are drawn in panel space after the camera transform; hit shakes are panel-only (template). Call S.finish last every frame.",
+  "Sound: 15 effects, all inside listed pauses (or after the last word); SND master 0.6. If any feels busy against the voice, drop 36.95, 68.3 and 109.7 first.",
+  "Subtitles: P1 has four chunks; the Arabic chunk 3 names Shirin while the English names her in chunk 4 (the translation reorders the sentence). Chunk timing follows the Arabic words."
+ ],
+ "warnings": [
+  "P8 has no pause of 0.6 s between 150.6 and 175.34, so the ending carries no effects until the final chime at 175.5.",
+  "The LATER card at 158.14 lies over the words 158.14 to 160.14 (a long word gap is not listed there); keep it silent and under 1.3 s.",
+  "The person figure is front-facing only: the bend for the coin (S11) relies on tip plus a kneel blend; check it reads at phone size with a still at 104.0 and adjust to a full kneel if it does not.",
+  "The hall is crowded on the left (door, vault, fisherman, sacks). Check stills at 23.0, 88.3 and 149.9 for overlaps between the sacks and the vault door.",
+  "The coin portrait must read at phone size: keep the insert coin at least 330 px across and the portrait in two tones only."
+ ]
+}

@@ -1,0 +1,3137 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-107",
+ "title": "The Thief and the Shroff",
+ "duration": 168.406,
+ "end_hold": 3.0,
+ "logline": "A cocky thief steals a money-changer's purse to win a dare, learns an innocent maid is being punished for it, and pulls a second, cleverer trick that clears her while he still keeps the gold.",
+ "moral": "A clever deed is not finished while an innocent person pays for it.",
+ "tone": "Light-footed caper comedy with one real pang of conscience; the punishment is threatened, never shown landing.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 2.64,
+   "kind": "setup",
+   "cue": {
+    "word": "كيسًا",
+    "t": 2.64
+   },
+   "summary": "The shroff walks the market with a purse full of gold."
+  },
+  {
+   "id": "B2",
+   "t": 6.5,
+   "kind": "inciting",
+   "cue": {
+    "word": "رآه",
+    "t": 6.5
+   },
+   "summary": "A gang of thieves sees the purse."
+  },
+  {
+   "id": "B3",
+   "t": 13.84,
+   "kind": "comic",
+   "cue": {
+    "word": "وحده.",
+    "t": 13.84
+   },
+   "summary": "One boasts he can take it alone; the others laugh and dare him."
+  },
+  {
+   "id": "B4",
+   "t": 29.7,
+   "kind": "rising",
+   "cue": {
+    "word": "الكيس",
+    "t": 29.7
+   },
+   "summary": "The purse goes onto a high shelf at home."
+  },
+  {
+   "id": "B5",
+   "t": 40.36,
+   "kind": "suspense",
+   "cue": {
+    "word": "الباب",
+    "t": 40.36
+   },
+   "summary": "The maid goes for water and leaves the door open."
+  },
+  {
+   "id": "B6",
+   "t": 46.6,
+   "kind": "climax",
+   "cue": {
+    "word": "الكيس",
+    "t": 46.6
+   },
+   "summary": "The thief takes the purse unseen."
+  },
+  {
+   "id": "B7",
+   "t": 58.3,
+   "kind": "comic",
+   "cue": {
+    "word": "ينتظر",
+    "t": 58.3
+   },
+   "summary": "He waits for praise that does not come."
+  },
+  {
+   "id": "B8",
+   "t": 72.16,
+   "kind": "turn",
+   "cue": {
+    "word": "ويضربها.",
+    "t": 72.16
+   },
+   "summary": "His companions show him the cost: the maid will be blamed and beaten."
+  },
+  {
+   "id": "B9",
+   "t": 82.28,
+   "kind": "emotion",
+   "cue": {
+    "word": "اللص.",
+    "t": 82.28
+   },
+   "summary": "An innocent will pay instead of the thief; he decides to go back."
+  },
+  {
+   "id": "B10",
+   "t": 90.0,
+   "kind": "emotion",
+   "cue": {
+    "word": "الخادمة.",
+    "t": 90.0
+   },
+   "summary": "He finds the shroff punishing the maid."
+  },
+  {
+   "id": "B11",
+   "t": 94.52,
+   "kind": "surprise",
+   "cue": {
+    "word": "رسول",
+    "t": 94.52
+   },
+   "summary": "He knocks and poses as a messenger returning a found purse."
+  },
+  {
+   "id": "B12",
+   "t": 112.82,
+   "kind": "comic",
+   "cue": {
+    "word": "ليأخذه.",
+    "t": 112.82
+   },
+   "summary": "The shroff reaches; the thief holds the purse back and demands a sealed receipt."
+  },
+  {
+   "id": "B13",
+   "t": 138.22,
+   "kind": "climax",
+   "cue": {
+    "word": "ركض",
+    "t": 138.22
+   },
+   "summary": "While the shroff writes, the thief runs off with the same purse."
+  },
+  {
+   "id": "B14",
+   "t": 152.04,
+   "kind": "resolution",
+   "cue": {
+    "word": "توقف",
+    "t": 152.04
+   },
+   "summary": "The shroff loses his gold but stops punishing the maid."
+  },
+  {
+   "id": "B15",
+   "t": 162.22,
+   "kind": "moral",
+   "cue": {
+    "word": "نجح",
+    "t": 162.22
+   },
+   "summary": "The second trick succeeds and the maid is saved from unjust punishment."
+  }
+ ],
+ "cast": [
+  {
+   "id": "shroff",
+   "name": "the shroff (money-changer)",
+   "library": "person",
+   "base": "person costume: 'merchant' (blue dotted robe, big white turban with jewel, black beard), s 1.45 to 1.5, slightly wide belly",
+   "look": "Pompous and comfortable; a signet ring (yellow dot, r 5) on his right hand; carries the purse at his sash in S1 to S5; holds the Library stick in S9 to S14.",
+   "new": false
+  },
+  {
+   "id": "thief",
+   "name": "the thief (hero)",
+   "library": "person",
+   "base": "person kind: 'thief', v: 0 (black and white stripes, mask, red cap with bobble), s 1.45",
+   "look": "Cocky, quick, expressive brows. From 91.0 to 139.6 he wears a small white turban jammed over his cap as his messenger disguise (new overlay); the mask stays on, which is the joke.",
+   "new": false
+  },
+  {
+   "id": "pal1",
+   "name": "first companion",
+   "library": "person",
+   "base": "person kind: 'thief', v: 1 (yellow stripes), s 1.5",
+   "look": "The taller, dry one: folded arms, slow head shake; he gives the first warning (P4).",
+   "new": false
+  },
+  {
+   "id": "pal2",
+   "name": "second companion",
+   "library": "person",
+   "base": "person kind: 'thief', v: 2 if FIG.thief has it, else v: 1 with s 1.3 and a blue cap override",
+   "look": "Shorter, rounder, the laugher who slaps his knee; he gives the second warning (the job is not finished).",
+   "new": false
+  },
+  {
+   "id": "maid",
+   "name": "the maid",
+   "library": "person",
+   "base": "person costume: 'maiden' (yellow dotted dress, red sash, two hair buns), s 1.4, no child option",
+   "look": "Young, quick, blameless. White apron rectangle over the dress (drawn by the scene, 46 x 70) so she reads as a house servant; kneels with shield hands when threatened.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "market",
+   "library": "marketStreet",
+   "description": "marketStreet {w: 2400, palette: 'clear', palace: false, stalls: fruit at x 500, cloth at x 1100, closed empty stall at x 1750, props crate 1640, barrel 1880, sacks 900, hay 2000}. Ground y 900. The shroff house is the house front whose door anchor is nearest x 2130 (doors[k]: about x 2090..2180, top 650; measure on the set); its leaf opens with townDoor. Used for S1, S2, S4, S13 with camX tracking.",
+   "new": false
+  },
+  {
+   "id": "alley",
+   "library": "marketStreet",
+   "description": "marketStreet {alley: true, props: [['crate', 560 or 620], ['barrel', 800]]}: two plain walls, washing line, door at x 760..880. The thieves' corner. Crate top (about y 830, measure) is the table for the purse; crate and barrel are seats (person sit 1, seat 'bench').",
+   "new": false
+  },
+  {
+   "id": "house",
+   "library": "palaceHall",
+   "description": "palaceHall {variant: 'merchant', wall: 'ochre', treasure: false, curtain keyed, doorOpen keyed, shelves: [{x0: 240, x1: 440, y: 500, goods: 'jars'}, {x0: 240, x1: 440, y: 620, goods: 'cloth'}]}. Floor y 900. Door x 60..200 top 580 on the left (street outside through outside(ctx): a slice of the market wall and daylight); desk x 410..630 top 800 with coin stacks; window x 510..610, y 330..470; lamp at (730, 240); curtain x 790..970 top 330 = the lavatory alcove (never shown inside). Stool (seatStool) on the floor at x 320 under the shelves. Leave a 60 unit gap in the jars at x 300 on the top shelf for the purse.",
+   "new": false
+  }
+ ],
+ "props": [
+  {
+   "id": "purse",
+   "library": null,
+   "description": "Planned fat coin purse: sack 64 wide x 80 tall at s 1 (drawn at 1.4 in the room), yellow with red Ben-Day shading, gathered neck with a red drawstring 40 long ending in two knots, and a black coin mark (circle r 12 with a star) on the belly so it is recognisably THE SAME purse. Fields: open 0..1 (neck loosens, 3 to 5 coin rims show), swing (angle when dangling by the string), sq, ghost (dashed outline only).",
+   "new": true
+  },
+  {
+   "id": "receipt",
+   "library": null,
+   "description": "Planned scroll used as the receipt: paper sheet 90 x 120, curled top and bottom edges, lines 0..3 wavy black lines, seal 0..1 (red wax disc r 14 at the bottom right). Also the quill and inkpot (planned quillInk) on the desk.",
+   "new": true
+  },
+  {
+   "id": "waterJug",
+   "library": null,
+   "description": "Water jug (ewer): 60 wide x 110 tall, terracotta with red dot shading, narrow neck, spout on one side, loop handle on the other. Fields: fill 0..1 (blue water line visible at the mouth, one drop from the spout when tilted empty), tilt.",
+   "new": true
+  },
+  {
+   "id": "stick",
+   "library": "person",
+   "description": "The Library stick: person hold: 'stick' while in the shroff's hand; drawn as a free prop (same shape: shaft about 140 long, round knob) when it drops and rolls at 152.0 and lies on the floor in S16.",
+   "new": false
+  },
+  {
+   "id": "stool",
+   "library": "seatStool",
+   "description": "Library seatStool on the floor at x 320, used as a step to reach the high shelf (top about 72 above the floor at s 1.5).",
+   "new": false
+  },
+  {
+   "id": "turban",
+   "library": null,
+   "description": "Small white wrapped turban (80 wide x 46 tall, one red band, short tail) worn over the thief cap as the disguise; a free prop when it flies off at 139.6, lies on the step in S14 and is picked up in S16.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 6.5,
+   "paragraphs": [
+    1
+   ],
+   "set": "market",
+   "cast": [
+    "shroff"
+   ],
+   "summary": "The shroff parades through the market with a fat purse of gold at his sash.",
+   "camera": {
+    "shot": "establishing",
+    "move": "track",
+    "notes": "Start wide at camX 0 (zoom 1.0, centre y 640), track right with the shroff at his walking speed; ease to zoom 1.5 centred on the purse at 4.7 and hold."
+   },
+   "composition": "Strip 2400 wide. Shroff (s 1.45) walks on y 900 from x -80 to x 760, kept on the left third so the purse (at his right hip, about y 720) leads into empty space. Stalls behind at x 500 (fruit) and 1100 (cloth). Head stays above panel y 900.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 0.5,
+     "cue": {
+      "word": "مر",
+      "t": 0.0
+     },
+     "who": "set",
+     "action": "Market street established: awnings, skyline with two domes, a fruit stall and a cloth stall, pots and sacks.",
+     "acting": "awning edges sway slowly; nothing else moves so the walker reads",
+     "library": "marketStreet {w: 2400, palace: false, stalls: [{x: 500, kind: 'fruit'}, {x: 1100, kind: 'cloth'}, {x: 1750, kind: 'empty', state: 'closed'}], props: [['crate', 1640], ['barrel', 1880], ['sacks', 900]], camX}"
+    },
+    {
+     "t": 0.3,
+     "end": 1.3,
+     "cue": {
+      "word": "صراف",
+      "t": 0.46
+     },
+     "who": "shroff",
+     "action": "Enters from the left edge, belly first, walking right.",
+     "acting": "proud strut: tip -0.04, chin up, lid 0.3 (smug), gaze [1, -0.1]; turban bobs one frame late",
+     "library": "person {costume: 'merchant'} + walk(SX, t) + footfalls"
+    },
+    {
+     "t": 1.3,
+     "end": 1.9,
+     "cue": {
+      "word": "السوق",
+      "t": 1.3
+     },
+     "who": "camera",
+     "action": "Camera picks him up and tracks along the stalls; skyline parallax.",
+     "acting": "steady, no bounce"
+    },
+    {
+     "t": 1.9,
+     "end": 2.6,
+     "cue": {
+      "word": "يحمل",
+      "t": 1.88
+     },
+     "who": "shroff",
+     "action": "His right hand drops to the purse hanging from his sash and pats it.",
+     "acting": "eyes flick down to the purse and back up; small smile",
+     "library": "handRW to the purse point; lookAt()"
+    },
+    {
+     "t": 2.6,
+     "end": 3.9,
+     "cue": {
+      "word": "كيسًا",
+      "t": 2.64
+     },
+     "who": "purse",
+     "action": "Purse pops with an arrow and the label PURSE; it bounces a beat late on every footfall.",
+     "acting": "secondary motion: purse swings 6 degrees behind the hips",
+     "library": "S.arrow + S.label; swing() keyed from footfalls"
+    },
+    {
+     "t": 3.9,
+     "end": 4.7,
+     "cue": {
+      "word": "بالنقود",
+      "t": 3.98
+     },
+     "who": "shroff",
+     "action": "He stops, lifts the purse to chest height and gives it two jingle shakes; three coin rims show at its mouth.",
+     "acting": "anticipation dip before the lift (anticipate), eyes half shut with pleasure, mouth smile",
+     "library": "anticipate(); purse {open: 0.3}"
+    },
+    {
+     "t": 4.7,
+     "end": 5.7,
+     "cue": {
+      "word": "الذهبية.",
+      "t": 4.7
+     },
+     "who": "fx",
+     "action": "Gold star glints burst off the coins; camera eases in on the purse.",
+     "acting": "he beams straight ahead, unaware of anything; one blink",
+     "library": "S.emphasis star glints (planned goldGlow, strength 0.6)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 2.7,
+     "text": "PURSE"
+    },
+    {
+     "t": 5.8,
+     "text": "CLINK!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 6.0,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "whip",
+    "t": 6.5
+   }
+  },
+  {
+   "id": "S2",
+   "start": 6.5,
+   "end": 9.0,
+   "paragraphs": [
+    1
+   ],
+   "set": "market",
+   "cast": [
+    "shroff",
+    "thief",
+    "pal1",
+    "pal2"
+   ],
+   "summary": "Three thieves rise from behind a closed stall and follow the purse with their eyes.",
+   "camera": {
+    "shot": "medium",
+    "move": "whip",
+    "notes": "Whip right 600 units in 5 frames to the closed stall at x 1750, zoom 1.6, then hold. The shroff crosses the foreground as a cropped body and purse only."
+   },
+   "composition": "Closed stall counter (top y 780) and a crate hide the thieves. Heads stacked diagonally: pal2 low at x 1640, the hero middle at x 1730, pal1 highest at x 1820. The purse crosses at y 720 in front, left to right.",
+   "actions": [
+    {
+     "t": 6.5,
+     "end": 7.1,
+     "cue": {
+      "word": "رآه",
+      "t": 6.5
+     },
+     "who": "thief",
+     "action": "Three masked heads rise from behind the counter one after another (hero first, 3 and 6 frames later the others).",
+     "acting": "only eyes over the counter at first; all pupils snap to the purse",
+     "library": "person {kind: 'thief', v: 0|1|2} drawn before the stall front (peek from cover); stagger(i)"
+    },
+    {
+     "t": 7.2,
+     "end": 8.1,
+     "cue": {
+      "word": "جماعة",
+      "t": 7.16
+     },
+     "who": "purse",
+     "action": "The shroff strolls across the foreground; six pupils track the purse left to right.",
+     "acting": "pupils eased, each thief a few frames apart; pal2 lifts his head higher, mouth o",
+     "library": "gazePlan / lookAt(head, purse)"
+    },
+    {
+     "t": 8.1,
+     "end": 8.9,
+     "cue": {
+      "word": "اللصوص،",
+      "t": 8.14
+     },
+     "who": "lettering",
+     "action": "Label THIEVES with an arrow to the three heads.",
+     "acting": "pal1 rubs his hands (clasp), pal2 grins, the hero narrows his eyes (lid 0.5) and smirks",
+     "library": "S.label + S.arrow; PERSON_HANDS.clasp"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 8.2,
+     "text": "THIEVES"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 9.0
+   }
+  },
+  {
+   "id": "S3",
+   "start": 9.0,
+   "end": 21.04,
+   "paragraphs": [
+    1
+   ],
+   "set": "alley",
+   "cast": [
+    "thief",
+    "pal1",
+    "pal2"
+   ],
+   "summary": "In the alley the hero boasts he can take the purse alone; his companions laugh and dare him.",
+   "camera": {
+    "shot": "full",
+    "move": "push-in",
+    "notes": "Full shot zoom 1.15 on all three; ease to zoom 1.45 on the hero at 10.5; pull back to 1.15 at 14.8 so both laughers are in frame; hold."
+   },
+   "composition": "Alley set 1000 wide. Hero (s 1.45) at x 330 facing right. pal1 sits on a crate at x 620, pal2 on a barrel at x 800 (both face left). Speaker on the left, listeners on the right. All heads between y 500 and 640.",
+   "actions": [
+    {
+     "t": 9.0,
+     "end": 9.8,
+     "cue": {
+      "word": "فقال",
+      "t": 9.0
+     },
+     "who": "thief",
+     "action": "Hero steps two paces out from the pair and turns to face them.",
+     "acting": "springy steps, shoulders back; pals lounge, pal2 picks his teeth",
+     "library": "marketStreet {alley: true, props: [['crate', 620], ['barrel', 800]]}; walk(); person sit 1 seat 'bench' on crate and barrel"
+    },
+    {
+     "t": 9.8,
+     "end": 10.5,
+     "cue": {
+      "word": "أحدهم",
+      "t": 9.84
+     },
+     "who": "thief",
+     "action": "Thumps his chest with his thumb.",
+     "acting": "chin up, gaze over their heads",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 10.5,
+     "end": 11.3,
+     "cue": {
+      "word": "بثقة",
+      "t": 10.5
+     },
+     "who": "thief",
+     "action": "Puffs up with confidence.",
+     "acting": "sq 1.06, tip -0.06, lid 0.45, one-sided smile; pal1 rolls his eyes (gaze arc up and over)",
+     "library": "sq, tip, lid; gazePlan for the eye roll"
+    },
+    {
+     "t": 11.4,
+     "end": 12.7,
+     "cue": {
+      "word": "إنه",
+      "t": 11.4
+     },
+     "who": "fx",
+     "action": "A speech balloon pops above the hero with a purse icon inside.",
+     "acting": "he gestures up at it with an open hand; pals look at the icon",
+     "library": "planned iconBalloon (single) at (330, 330), 240 x 170; tail to his mouth"
+    },
+    {
+     "t": 12.8,
+     "end": 13.7,
+     "cue": {
+      "word": "أخذ",
+      "t": 12.82
+     },
+     "who": "thief",
+     "action": "Mimes the snatch: his right hand darts out and closes on air.",
+     "acting": "0.15 s wind-up back, then a 3-frame dart; fingers shut; eyes wide with glee",
+     "library": "anticipate(); handR reach to grip; settleTo()"
+    },
+    {
+     "t": 13.8,
+     "end": 14.8,
+     "cue": {
+      "word": "وحده.",
+      "t": 13.84
+     },
+     "who": "thief",
+     "action": "Holds up one finger; a big 1 pops beside it with the label ALONE!",
+     "acting": "frozen proud pose, eyes closed (lid 1) for a beat",
+     "library": "PERSON_HANDS.pointUp; S.counter 1; S.label"
+    },
+    {
+     "t": 14.86,
+     "end": 15.7,
+     "cue": {
+      "word": "ضحك",
+      "t": 14.86
+     },
+     "who": "pal1",
+     "action": "Both pals burst out laughing.",
+     "acting": "mouth open, lid 0.85, heads thrown back (tip -0.12), shoulders shaking; pal2 starts 4 frames later and slaps his knee",
+     "library": "planned person laugh (mouth open + lid + tip + tremble); stagger"
+    },
+    {
+     "t": 15.7,
+     "end": 16.8,
+     "cue": {
+      "word": "أصحابه،",
+      "t": 15.7
+     },
+     "who": "thief",
+     "action": "His raised finger wilts; he looks from one laugher to the other.",
+     "acting": "brow 0.8 (angry V), cheeks flushed, mouth frown; saccades left pal, right pal",
+     "library": "gazePlan(t, plan, 0.07); planned flush 0.6"
+    },
+    {
+     "t": 16.86,
+     "end": 18.1,
+     "cue": {
+      "word": "وطلبوا",
+      "t": 16.86
+     },
+     "who": "pal1",
+     "action": "pal1 wipes a tear, hops off the crate and folds his arms.",
+     "acting": "still chuckling (small tremble), lid 0.4",
+     "library": "sit 1 to 0; PERSON_HANDS.folded"
+    },
+    {
+     "t": 18.22,
+     "end": 19.3,
+     "cue": {
+      "word": "يريهم",
+      "t": 18.22
+     },
+     "who": "pal1",
+     "action": "pal1 points down the street toward where the shroff went; pal2 sweeps a mocking bow.",
+     "acting": "pal1 brow raised, daring smirk; pal2 tip 0.3 then up",
+     "library": "PERSON_HANDS.pointFwd; tip"
+    },
+    {
+     "t": 19.38,
+     "end": 20.4,
+     "cue": {
+      "word": "يفعل",
+      "t": 19.38
+     },
+     "who": "thief",
+     "action": "Hero tugs his cap down, turns on his heel and marches out to the left.",
+     "acting": "jaw set, brow 0.6; cap tug is the anticipation, then a fast stiff walk",
+     "library": "turnFlip(); walk() amp 1.2"
+    },
+    {
+     "t": 20.6,
+     "end": 21.04,
+     "who": "pal2",
+     "action": "The pals lean out after him and trade a look.",
+     "acting": "pal2 shrugs (palmsUp), pal1 one raised brow",
+     "library": "PERSON_HANDS.palmsUp"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 13.9,
+     "text": "ALONE!"
+    },
+    {
+     "t": 14.95,
+     "text": "HA HA!"
+    },
+    {
+     "t": 18.3,
+     "text": "SHOW US!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 20.8,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "wipe",
+    "t": 21.04
+   }
+  },
+  {
+   "id": "S4",
+   "start": 21.04,
+   "end": 27.1,
+   "paragraphs": [
+    2
+   ],
+   "set": "market",
+   "cast": [
+    "shroff",
+    "thief"
+   ],
+   "summary": "The thief shadows the shroff from cover to cover until he reaches his house door.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Zoom 1.0 so both are in frame 420 units apart; track right with the pair; settle with the house door on the right third at 25.1; ease to zoom 1.3 on the door by 26.0."
+   },
+   "composition": "Second stretch of the street (camX 900 to 1400): house fronts, door of the shroff house at about x 2090..2180 (use the marketStreet anchors doors[k], measure on the set). Shroff ahead on the right, thief behind on the left, the dotted distance marker between them at y 560.",
+   "actions": [
+    {
+     "t": 21.3,
+     "end": 22.2,
+     "cue": {
+      "word": "تبع",
+      "t": 21.56
+     },
+     "who": "shroff",
+     "action": "Shroff walks right along the house fronts; the hero enters far behind on tiptoe.",
+     "acting": "shroff as before, humming (head sway); hero knees high, shoulders hunched, eyes on the purse",
+     "library": "walk() for the shroff; planned sneak gait for the hero (high knees, short hold on each toe)"
+    },
+    {
+     "t": 22.22,
+     "end": 22.7,
+     "cue": {
+      "word": "اللص",
+      "t": 22.22
+     },
+     "who": "thief",
+     "action": "Hero darts behind a barrel as the shroff slows.",
+     "acting": "drop behind cover in 3 frames, only the cap bobble showing",
+     "library": "draw actor, then the barrel (peek from cover); sq 0.85"
+    },
+    {
+     "t": 22.74,
+     "end": 23.5,
+     "cue": {
+      "word": "الصراف",
+      "t": 22.74
+     },
+     "who": "shroff",
+     "action": "Shroff glances back over his shoulder, sees an empty street, shrugs and walks on.",
+     "acting": "pupils lead, head follows; brow -0.3; then forward again",
+     "library": "person look / gaze; gazePlan"
+    },
+    {
+     "t": 23.5,
+     "end": 24.3,
+     "cue": {
+      "word": "بعيد",
+      "t": 23.68
+     },
+     "who": "lettering",
+     "action": "Dotted double arrow between the two with the label FAR BEHIND.",
+     "acting": "hero rises: eyes first, then tiptoes to the next cover (a crate)",
+     "library": "S.arrow (two heads) + S.label"
+    },
+    {
+     "t": 24.36,
+     "end": 25.1,
+     "cue": {
+      "word": "حتى",
+      "t": 24.36
+     },
+     "who": "thief",
+     "action": "Tiptoes from crate to hay bale, freezing whenever the shroff bobs.",
+     "acting": "freeze frames on one leg; arms out for balance",
+     "library": "sneak; townProp 'hay'"
+    },
+    {
+     "t": 25.12,
+     "end": 26.0,
+     "cue": {
+      "word": "وصل",
+      "t": 25.12
+     },
+     "who": "shroff",
+     "action": "Shroff stops at his own door and reaches for the handle.",
+     "acting": "weight settles (landSquash), pleased sigh, pats the purse again",
+     "library": "settleTo(); handRW to the door"
+    },
+    {
+     "t": 26.02,
+     "end": 26.7,
+     "cue": {
+      "word": "بيته.",
+      "t": 26.02
+     },
+     "who": "lettering",
+     "action": "Arrow and label HIS HOUSE at the door; hero peeks around the corner crate.",
+     "acting": "hero eyes wide, then lid 0.5: calculating",
+     "library": "S.label; peek from cover"
+    },
+    {
+     "t": 26.8,
+     "end": 27.1,
+     "who": "set",
+     "action": "The door swings open inward.",
+     "acting": "door leaf eases open to 0.8",
+     "library": "townDoor open 0 to 0.8"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 23.7,
+     "text": "FAR BEHIND"
+    },
+    {
+     "t": 26.1,
+     "text": "HIS HOUSE"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 27.0,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 27.1
+   }
+  },
+  {
+   "id": "S5",
+   "start": 27.1,
+   "end": 41.74,
+   "paragraphs": [
+    2
+   ],
+   "set": "house",
+   "cast": [
+    "shroff",
+    "maid",
+    "thief"
+   ],
+   "summary": "Inside: the shroff puts the purse on a high shelf, hurries behind the curtain to the lavatory and calls for water; the maid goes out and leaves the door open.",
+   "camera": {
+    "shot": "full",
+    "move": "pan",
+    "notes": "Full room zoom 1.0 (centre 500, 640). Ease to zoom 1.35 on the shelf (340, 560) for 29.7 to 31.8, pan right with him to the curtain by 33.7, back to full by 35.6, then push in on the doorway (130, 740, zoom 1.6) from 40.3."
+   },
+   "composition": "Merchant room: door x 60..200 (top 580) on the left, shelves x 240..440 lowered to y 500 (jars) and y 620 (cloth) with a gap in the jars at x 300 for the purse, stool on the floor at x 320, desk x 410..630 (top 800), curtain x 790..970 on the right (the lavatory alcove). People at s 1.5 (about 360 tall). Maid starts at x 690 by the desk.",
+   "actions": [
+    {
+     "t": 27.42,
+     "end": 28.8,
+     "cue": {
+      "word": "دخل",
+      "t": 27.42
+     },
+     "who": "shroff",
+     "action": "Shroff comes in through the door; the maid by the desk turns and dips her head.",
+     "acting": "he does not look at her; eyes go straight up to the shelf. Maid: gaze down, hands clasped",
+     "library": "palaceHall {variant: 'merchant', shelves: [{x0: 240, x1: 440, y: 500, goods: 'jars'}, {x0: 240, x1: 440, y: 620, goods: 'cloth'}], curtain: 0.6, treasure: false, doorOpen}; person {costume: 'maiden'}"
+    },
+    {
+     "t": 28.92,
+     "end": 29.6,
+     "cue": {
+      "word": "ووضع",
+      "t": 28.92
+     },
+     "who": "shroff",
+     "action": "He steps up onto the low stool under the shelves.",
+     "acting": "small crouch, hop up, wobble and settle",
+     "library": "anticipate(); hop(); landSquash(); seatStool at x 320"
+    },
+    {
+     "t": 29.7,
+     "end": 30.5,
+     "cue": {
+      "word": "الكيس",
+      "t": 29.7
+     },
+     "who": "shroff",
+     "action": "Stretches on tiptoe with both arms up and slides the purse onto the top shelf between two jars.",
+     "acting": "sq 1.07 stretch, tongue-tip smile, gaze up; belly lifts",
+     "library": "aL/aR raised angles (about [2.45, 2.85]); sq"
+    },
+    {
+     "t": 30.64,
+     "end": 31.0,
+     "cue": {
+      "word": "رف",
+      "t": 30.64
+     },
+     "who": "purse",
+     "action": "Purse settles with a soft squash; arrow up and label HIGH SHELF.",
+     "acting": "jars either side rock once and settle",
+     "library": "S.arrow + S.label; swing()"
+    },
+    {
+     "t": 31.06,
+     "end": 31.9,
+     "cue": {
+      "word": "مرتفع،",
+      "t": 31.06
+     },
+     "who": "shroff",
+     "action": "Pats the purse twice, dusts his hands and steps down.",
+     "acting": "satisfied nod, lid 0.6; landing squash",
+     "library": "landSquash()"
+    },
+    {
+     "t": 32.0,
+     "end": 32.8,
+     "cue": {
+      "word": "ثم",
+      "t": 32.0
+     },
+     "who": "shroff",
+     "action": "He freezes, one hand on his belly: sudden urgency.",
+     "acting": "eyes wide, knees together, small tremble; gaze darts to the curtain",
+     "library": "tremble(); gazePlan saccade"
+    },
+    {
+     "t": 32.9,
+     "end": 33.6,
+     "cue": {
+      "word": "ذهب",
+      "t": 32.9
+     },
+     "who": "shroff",
+     "action": "Quick short-step shuffle across the room to the curtain.",
+     "acting": "tiny fast steps, robe hem bouncing, tip 0.1",
+     "library": "walk() amp 0.5 at double cadence"
+    },
+    {
+     "t": 33.68,
+     "end": 34.3,
+     "cue": {
+      "word": "الحمام.",
+      "t": 33.68
+     },
+     "who": "set",
+     "action": "Curtain swishes shut behind him and keeps swaying.",
+     "acting": "damped sway on the curtain hem",
+     "library": "curtain 0.6 to 0; swing()"
+    },
+    {
+     "t": 34.42,
+     "end": 35.5,
+     "cue": {
+      "word": "طلب",
+      "t": 34.42
+     },
+     "who": "shroff",
+     "action": "His head pops out at the curtain edge and he calls across the room.",
+     "acting": "one hand cupped at his mouth, brow raised, impatient",
+     "library": "PERSON_HANDS.cupMouth; draw him clipped by the curtain edge"
+    },
+    {
+     "t": 35.6,
+     "end": 36.8,
+     "cue": {
+      "word": "خادمته",
+      "t": 35.6
+     },
+     "who": "maid",
+     "action": "Maid looks up at him, nods and sets her broom against the desk.",
+     "acting": "gaze to the curtain; quick double nod; hands open (ready)",
+     "library": "lookAt(); drop pulse for the nod"
+    },
+    {
+     "t": 36.88,
+     "end": 37.7,
+     "cue": {
+      "word": "تحضر",
+      "t": 36.88
+     },
+     "who": "fx",
+     "action": "Balloon from the curtain with a water jug icon.",
+     "acting": "his head bobs on each syllable",
+     "library": "iconBalloon single: waterJug icon, 200 x 150 at (760, 360)"
+    },
+    {
+     "t": 37.84,
+     "end": 38.5,
+     "cue": {
+      "word": "إبريق",
+      "t": 37.84
+     },
+     "who": "maid",
+     "action": "Maid picks the empty water jug up from beside the desk and tips it: one drop.",
+     "acting": "she peers in (gaze down), brow -0.4: empty",
+     "library": "handRW to the jug; waterJug {fill: 0, tilt}"
+    },
+    {
+     "t": 38.6,
+     "end": 39.0,
+     "cue": {
+      "word": "ماء،",
+      "t": 38.6
+     },
+     "who": "maid",
+     "action": "She hurries to the door with the jug to fetch water.",
+     "acting": "brisk walk, jug swinging at her side",
+     "library": "walk()"
+    },
+    {
+     "t": 39.1,
+     "end": 40.3,
+     "cue": {
+      "word": "فتركت",
+      "t": 39.1
+     },
+     "who": "maid",
+     "action": "She goes out; the door leaf is left swinging wide open.",
+     "acting": "door overshoots to fully open and settles",
+     "library": "townDoor open to 1 with settleTo()"
+    },
+    {
+     "t": 40.36,
+     "end": 40.8,
+     "cue": {
+      "word": "الباب",
+      "t": 40.36
+     },
+     "who": "lettering",
+     "action": "Camera pushes to the bright doorway; arrow and label DOOR OPEN!",
+     "acting": "empty room, curtain still swaying slightly",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 40.82,
+     "end": 41.7,
+     "cue": {
+      "word": "مفتوحًا.",
+      "t": 40.82
+     },
+     "who": "thief",
+     "action": "A striped cap bobble rises into the doorway corner, then two eyes.",
+     "acting": "eyes sweep the room right, left, then up to the shelf",
+     "library": "peek from the door frame; gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 30.7,
+     "text": "HIGH SHELF"
+    },
+    {
+     "t": 40.4,
+     "text": "DOOR OPEN!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 41.74
+   }
+  },
+  {
+   "id": "S6",
+   "start": 41.74,
+   "end": 51.76,
+   "paragraphs": [
+    3
+   ],
+   "set": "house",
+   "cast": [
+    "thief",
+    "shroff"
+   ],
+   "summary": "The thief tiptoes in, takes the purse from the shelf and is gone before anyone sees.",
+   "camera": {
+    "shot": "full",
+    "move": "track",
+    "notes": "Zoom 1.2 following the thief from the door to the stool; tilt up to the shelf (zoom 1.5) for the grab at 46.6; whip left with his exit at 49.0; slow pan right over the empty room to the curtain by 50.7; end on the shelf."
+   },
+   "composition": "Same room. Thief (s 1.45) crosses x 130 to x 320 on y 900. The closed curtain on the right is the danger; keep it in frame at the right edge until 45.4 so the freeze reads.",
+   "actions": [
+    {
+     "t": 41.74,
+     "end": 42.7,
+     "cue": {
+      "word": "تسلل",
+      "t": 41.74
+     },
+     "who": "thief",
+     "action": "Tiptoes in through the open door, a finger to his lips.",
+     "acting": "high knees, a hold on each toe; eyes on the curtain; TIP TAP lettering small at his feet",
+     "library": "planned sneak gait + footfalls; PERSON_HANDS.hush"
+    },
+    {
+     "t": 42.8,
+     "end": 43.8,
+     "cue": {
+      "word": "تسلل",
+      "t": 41.74
+     },
+     "who": "set",
+     "action": "The curtain bulges and a hum line wiggles out: the thief freezes on one leg.",
+     "acting": "suspense by stillness: only his pupils move toward the curtain; one bead of sweat",
+     "library": "curtain bulge keyed; gaze only"
+    },
+    {
+     "t": 43.86,
+     "end": 44.6,
+     "cue": {
+      "word": "اللص",
+      "t": 43.86
+     },
+     "who": "thief",
+     "action": "Lets out a breath and moves on; his gaze climbs to the purse.",
+     "acting": "sq 0.97 to 1 breath; head tilts up",
+     "library": "lookAt(head, purse); breathe()"
+    },
+    {
+     "t": 44.72,
+     "end": 45.3,
+     "cue": {
+      "word": "البيت،",
+      "t": 44.72
+     },
+     "who": "thief",
+     "action": "Reaches the stool and crouches.",
+     "acting": "anticipation crouch, hands rubbing",
+     "library": "anticipate()"
+    },
+    {
+     "t": 45.4,
+     "end": 46.5,
+     "cue": {
+      "word": "وأخذ",
+      "t": 45.4
+     },
+     "who": "thief",
+     "action": "Steps up on the stool and stretches, fingers wiggling toward the purse.",
+     "acting": "sq 1.08, tongue out, both arms up",
+     "library": "hop(); aL/aR raised; sq"
+    },
+    {
+     "t": 46.6,
+     "end": 47.3,
+     "cue": {
+      "word": "الكيس",
+      "t": 46.6
+     },
+     "who": "thief",
+     "action": "Grabs the purse; the next jar rocks toward the edge and he steadies it with his other hand.",
+     "acting": "eyes to camera for one held beat (the deliberate lens stare), then relief",
+     "library": "gaze [0, 0.05]; jar rot swing()"
+    },
+    {
+     "t": 47.44,
+     "end": 47.9,
+     "cue": {
+      "word": "الرف،",
+      "t": 47.44
+     },
+     "who": "purse",
+     "action": "A dashed outline stays on the shelf where the purse was.",
+     "acting": "outline blinks twice",
+     "library": "dashed ghost of the purse shape"
+    },
+    {
+     "t": 48.0,
+     "end": 48.9,
+     "cue": {
+      "word": "وخرج",
+      "t": 48.0
+     },
+     "who": "thief",
+     "action": "Hops down hugging the purse and winds up on the spot.",
+     "acting": "soft landing squash; legs spin without travel for 0.3 s, dust building",
+     "library": "landSquash(); planned runInPlace"
+    },
+    {
+     "t": 49.04,
+     "end": 49.8,
+     "cue": {
+      "word": "سريعًا",
+      "t": 49.04
+     },
+     "who": "thief",
+     "action": "Shoots out through the door.",
+     "acting": "tip 0.25, speed lines, a dust puff at the threshold",
+     "library": "walk() amp 1.5; dustBurst"
+    },
+    {
+     "t": 49.84,
+     "end": 50.6,
+     "cue": {
+      "word": "دون",
+      "t": 49.84
+     },
+     "who": "camera",
+     "action": "Slow pan across the silent room to the closed curtain.",
+     "acting": "nothing moves but the curtain hem"
+    },
+    {
+     "t": 50.72,
+     "end": 51.2,
+     "cue": {
+      "word": "يراه",
+      "t": 50.72
+     },
+     "who": "shroff",
+     "action": "The shroff's hand gropes out of the curtain for the water jug that has not come.",
+     "acting": "fingers pat the air twice, then withdraw",
+     "library": "handRW; draw clipped by the curtain"
+    },
+    {
+     "t": 51.22,
+     "end": 51.7,
+     "cue": {
+      "word": "أحد.",
+      "t": 51.22
+     },
+     "who": "lettering",
+     "action": "Label UNSEEN! over the empty room; the dashed outline on the shelf blinks.",
+     "acting": "hold",
+     "library": "S.label"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 41.9,
+     "text": "TIP TAP"
+    },
+    {
+     "t": 49.1,
+     "text": "ZIP!"
+    },
+    {
+     "t": 51.25,
+     "text": "UNSEEN!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 51.76
+   }
+  },
+  {
+   "id": "S7",
+   "start": 51.76,
+   "end": 63.02,
+   "paragraphs": [
+    3
+   ],
+   "set": "alley",
+   "cast": [
+    "thief",
+    "pal1",
+    "pal2"
+   ],
+   "summary": "The thief returns in triumph, sets the gold before his companions and waits for applause that does not come.",
+   "camera": {
+    "shot": "full",
+    "move": "push-in",
+    "notes": "Full zoom 1.15; ease to 1.4 on the hero and his thought cloud from 57.4; widen to 1.2 at 61.8 to include both unsmiling pals."
+   },
+   "composition": "Hero enters from the left to x 360. Crate at x 560 becomes the table for the purse. pal1 at x 690, pal2 seated on the barrel at x 820. Thought cloud above the hero at (330, 330), 380 x 240, clear of all heads.",
+   "actions": [
+    {
+     "t": 51.76,
+     "end": 53.2,
+     "cue": {
+      "word": "رجع",
+      "t": 51.76
+     },
+     "who": "thief",
+     "action": "Bounds into the alley in three hops, purse held high.",
+     "acting": "stretch on each take-off, squash on each landing; huge grin",
+     "library": "hop() x3 + landSquash()"
+    },
+    {
+     "t": 53.34,
+     "end": 54.1,
+     "cue": {
+      "word": "أصحابه",
+      "t": 53.34
+     },
+     "who": "pal1",
+     "action": "The pals look up, pal2 a few frames after pal1.",
+     "acting": "eyes widen at the purse; pal2 stops mid tooth-pick",
+     "library": "lookAt(); stagger"
+    },
+    {
+     "t": 54.24,
+     "end": 54.9,
+     "cue": {
+      "word": "فرحًا،",
+      "t": 54.24
+     },
+     "who": "thief",
+     "action": "A small victory hop.",
+     "acting": "mouth open smile, eyes shut with joy",
+     "library": "hop(); lid"
+    },
+    {
+     "t": 54.98,
+     "end": 55.9,
+     "cue": {
+      "word": "ووضع",
+      "t": 54.98
+     },
+     "who": "thief",
+     "action": "Sets the purse on the crate with a flourish.",
+     "acting": "arm sweeps in an arc, slight bow (tip 0.15)",
+     "library": "handRW; tip"
+    },
+    {
+     "t": 56.02,
+     "end": 56.5,
+     "cue": {
+      "word": "المال",
+      "t": 56.02
+     },
+     "who": "purse",
+     "action": "The purse mouth falls open and five gold coins slide out and glint.",
+     "acting": "coins settle one by one; pals lean in",
+     "library": "purse {open: 1}; planned coinPile (5 coins)"
+    },
+    {
+     "t": 56.54,
+     "end": 57.3,
+     "cue": {
+      "word": "أمامهم،",
+      "t": 56.54
+     },
+     "who": "thief",
+     "action": "Steps back with both arms spread: ta-da.",
+     "acting": "chin high, gaze flicks between their faces",
+     "library": "PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 57.36,
+     "end": 58.2,
+     "cue": {
+      "word": "وهو",
+      "t": 57.36
+     },
+     "who": "thief",
+     "action": "Hands on hips, eyes shut, rocking on his heels, waiting.",
+     "acting": "lid 1, smug smile, slow rock (tip +-0.04)",
+     "library": "PERSON_HANDS.hipsHands"
+    },
+    {
+     "t": 58.3,
+     "end": 59.2,
+     "cue": {
+      "word": "ينتظر",
+      "t": 58.3
+     },
+     "who": "thief",
+     "action": "One eye opens to check: silence.",
+     "acting": "wink peek; the pals are staring at the coins without smiling",
+     "library": "wink: 'L'"
+    },
+    {
+     "t": 59.3,
+     "end": 59.8,
+     "cue": {
+      "word": "يمدحوا",
+      "t": 59.3
+     },
+     "who": "fx",
+     "action": "His thought cloud: a tiny hero on a box wearing a star medal.",
+     "acting": "he cups an ear toward the pals",
+     "library": "thoughtCloud(ctx, 330, 330, 380, 240, t, {inside}); PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 59.86,
+     "end": 60.7,
+     "cue": {
+      "word": "جرأته",
+      "t": 59.86
+     },
+     "who": "fx",
+     "action": "In the cloud two tiny pals clap and the word BRAVO pops (daring).",
+     "acting": "cloud figures at least 110 px tall",
+     "library": "thoughtCloud inside()"
+    },
+    {
+     "t": 60.78,
+     "end": 61.7,
+     "cue": {
+      "word": "وسرعة",
+      "t": 60.78
+     },
+     "who": "fx",
+     "action": "In the cloud the tiny hero zips left to right with speed lines (speed).",
+     "acting": "real hero nods along, eyes shut again",
+     "library": "thoughtCloud inside()"
+    },
+    {
+     "t": 61.8,
+     "end": 62.6,
+     "cue": {
+      "word": "حركته.",
+      "t": 61.8
+     },
+     "who": "pal1",
+     "action": "The real pals trade a look; pal1 frowns and slowly shakes his head.",
+     "acting": "pal2 scratches his neck, gaze down; the cloud wobbles",
+     "library": "gazePlan; PERSON_HANDS.chin"
+    },
+    {
+     "t": 62.75,
+     "end": 63.02,
+     "who": "fx",
+     "action": "The thought cloud pops; the hero opens both eyes and his smile drops.",
+     "acting": "2-frame pop, three small puffs; brow -0.5",
+     "library": "thoughtCloud p 1 to 0"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 59.9,
+     "text": "BRAVO!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 62.9,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 63.02
+   }
+  },
+  {
+   "id": "S8",
+   "start": 63.02,
+   "end": 83.08,
+   "paragraphs": [
+    4
+   ],
+   "set": "alley",
+   "cast": [
+    "thief",
+    "pal1",
+    "pal2",
+    "shroff",
+    "maid"
+   ],
+   "summary": "The companions warn him: the shroff will blame and beat the maid, so the job is not finished while an innocent pays for it.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot(hero, pal1) zoom 1.3 until 66.9; tilt up and widen to zoom 1.05 for the big cloud (66.9 to 73.2); twoShot(hero, pal2) from 74.3; slow push to the hero alone (zoom 1.7) for 81.7 to 83.0."
+   },
+   "composition": "Hero x 360, pal1 x 620, pal2 comes round to x 150 at 74.3 so the hero stands between them. Big thought cloud 620 x 400 centred (540, 300) with its trail to pal1; small cloud 300 x 200 at (720, 300) for the maid alone. Cloud figures: shroff and maid at about 0.55 scale (130 px).",
+   "actions": [
+    {
+     "t": 63.36,
+     "end": 64.3,
+     "cue": {
+      "word": "لكن",
+      "t": 63.36
+     },
+     "who": "pal1",
+     "action": "pal1 raises a flat palm: stop.",
+     "acting": "brow 0.4, mouth closed, steady gaze at the hero; hero blinks twice",
+     "library": "PERSON_HANDS.shield (one hand)"
+    },
+    {
+     "t": 64.42,
+     "end": 65.7,
+     "cue": {
+      "word": "أحد",
+      "t": 64.42
+     },
+     "who": "camera",
+     "action": "Push in to a two-shot of pal1 and the hero.",
+     "acting": "hero still half smiling, uncertain",
+     "library": "twoShot(a, b, {margin})"
+    },
+    {
+     "t": 65.78,
+     "end": 66.8,
+     "cue": {
+      "word": "قال",
+      "t": 65.78
+     },
+     "who": "pal1",
+     "action": "pal1 speaks and points down at the purse on the crate.",
+     "acting": "talk; hero follows the finger to the purse",
+     "library": "PERSON_HANDS.pointDown; talk"
+    },
+    {
+     "t": 66.94,
+     "end": 67.6,
+     "cue": {
+      "word": "الصراف",
+      "t": 66.94
+     },
+     "who": "fx",
+     "action": "A big thought cloud opens from pal1: the shroff back in his room.",
+     "acting": "trail bubbles pop first, then the cloud",
+     "library": "thoughtCloud(ctx, 540, 300, 620, 400, t, {inside, scale: 0.55}) with a reduced palaceHall merchant wall and shelf"
+    },
+    {
+     "t": 67.74,
+     "end": 68.6,
+     "cue": {
+      "word": "سيكتشف",
+      "t": 67.74
+     },
+     "who": "shroff",
+     "action": "In the cloud the shroff looks up at the shelf: only the dashed outline.",
+     "acting": "eyes wide, both hands to his cheeks",
+     "library": "PERSON_HANDS.cheeks"
+    },
+    {
+     "t": 68.74,
+     "end": 70.0,
+     "cue": {
+      "word": "ضياع",
+      "t": 68.74
+     },
+     "who": "fx",
+     "action": "A ? then a ! pop over him in the cloud; his turban jumps.",
+     "acting": "small hop of shock, settle",
+     "library": "S.emphasis; hop()"
+    },
+    {
+     "t": 70.74,
+     "end": 71.2,
+     "cue": {
+      "word": "يتهم",
+      "t": 70.74
+     },
+     "who": "shroff",
+     "action": "He spins round and points at the maid as she comes in with the jug; label YOU!",
+     "acting": "brow 1, flush, arm rigid",
+     "library": "PERSON_HANDS.pointFwd; planned flush"
+    },
+    {
+     "t": 71.34,
+     "end": 72.1,
+     "cue": {
+      "word": "الخادمة",
+      "t": 71.34
+     },
+     "who": "maid",
+     "action": "Cloud maid stops dead, free hand to her chest, eyes wide and wet.",
+     "acting": "real hero: gaze locked on the cloud, mouth o",
+     "library": "wet: true; PERSON_HANDS.chest"
+    },
+    {
+     "t": 72.16,
+     "end": 73.2,
+     "cue": {
+      "word": "ويضربها.",
+      "t": 72.16
+     },
+     "who": "shroff",
+     "action": "Cloud shroff raises his stick high and freezes there; the maid shrinks to her knees behind raised hands. No blow is shown.",
+     "acting": "cloud rim flashes red twice; real hero flinches (sq 0.92, lid 1, head turned away)",
+     "library": "person {hold: 'stick'} aR raised; maid kneel 1 + PERSON_HANDS.shield"
+    },
+    {
+     "t": 73.28,
+     "end": 74.2,
+     "cue": {
+      "word": "وقال",
+      "t": 73.28
+     },
+     "who": "fx",
+     "action": "The cloud shrinks away; pal2 gets up off the barrel.",
+     "acting": "hero opens his eyes slowly, brow -0.5",
+     "library": "thoughtCloud p to 0; sit 1 to 0"
+    },
+    {
+     "t": 74.32,
+     "end": 74.9,
+     "cue": {
+      "word": "آخر",
+      "t": 74.32
+     },
+     "who": "pal2",
+     "action": "pal2 walks round to the hero's other side.",
+     "acting": "hero turns his head to him (other pal keeps watching the hero)",
+     "library": "walk(); lookAt()"
+    },
+    {
+     "t": 75.52,
+     "end": 76.5,
+     "cue": {
+      "word": "السرقة",
+      "t": 75.52
+     },
+     "who": "pal2",
+     "action": "pal2 picks the purse up and weighs it in his palm.",
+     "acting": "two small bounces, lips pursed, unimpressed",
+     "library": "handRW; purse bob"
+    },
+    {
+     "t": 76.6,
+     "end": 77.3,
+     "cue": {
+      "word": "تكتمل",
+      "t": 76.6
+     },
+     "who": "pal2",
+     "action": "He wags a finger: not finished. Label NOT FINISHED!",
+     "acting": "finger wag 3 beats, head shaking the opposite way",
+     "library": "PERSON_HANDS.pointUp with a keyed wag; S.label"
+    },
+    {
+     "t": 77.36,
+     "end": 78.2,
+     "cue": {
+      "word": "بعد،",
+      "t": 77.36
+     },
+     "who": "pal2",
+     "action": "Pushes the purse into the hero's chest; the hero takes it limply.",
+     "acting": "hero rocks back half a step (tip -0.08), arms slow to close",
+     "library": "handRW; settleTo()"
+    },
+    {
+     "t": 78.96,
+     "end": 79.3,
+     "cue": {
+      "word": "شخص",
+      "t": 78.96
+     },
+     "who": "fx",
+     "action": "A small cloud: the maid alone on her knees, eyes wet.",
+     "acting": "one tear drop",
+     "library": "thoughtCloud(ctx, 720, 300, 300, 200, ...)"
+    },
+    {
+     "t": 79.4,
+     "end": 80.3,
+     "cue": {
+      "word": "بريء",
+      "t": 79.4
+     },
+     "who": "lettering",
+     "action": "Label INNOCENT with an arrow to her.",
+     "acting": "hero's shoulders drop (drop 6)",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 80.36,
+     "end": 81.6,
+     "cue": {
+      "word": "سيدفع",
+      "t": 80.36
+     },
+     "who": "fx",
+     "action": "A dotted arrow runs from the purse in the hero's hands to the maid in the cloud: SHE PAYS.",
+     "acting": "hero looks down at the purse as if it had grown heavy; arms sag",
+     "library": "S.arrow dotted"
+    },
+    {
+     "t": 81.74,
+     "end": 82.2,
+     "cue": {
+      "word": "بدل",
+      "t": 81.74
+     },
+     "who": "pal2",
+     "action": "pal2 jabs a finger at the hero's chest.",
+     "acting": "pal1 nods once behind",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 82.28,
+     "end": 83.0,
+     "cue": {
+      "word": "اللص.",
+      "t": 82.28
+     },
+     "who": "thief",
+     "action": "Hero looks at the purse, then at the camera, gulps, and sets his jaw.",
+     "acting": "lens stare, drop pulse (gulp), brow from -0.6 to 0.5: decision; turns to go",
+     "library": "gaze [0, 0.05]; drop pulse; turnFlip()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 70.8,
+     "text": "YOU!"
+    },
+    {
+     "t": 76.7,
+     "text": "NOT FINISHED!"
+    },
+    {
+     "t": 79.5,
+     "text": "INNOCENT"
+    },
+    {
+     "t": 80.5,
+     "text": "SHE PAYS"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 83.08,
+    "label": "BACK AT THE HOUSE..."
+   }
+  },
+  {
+   "id": "S9",
+   "start": 83.08,
+   "end": 91.0,
+   "paragraphs": [
+    5
+   ],
+   "set": "house",
+   "cast": [
+    "thief",
+    "shroff",
+    "maid"
+   ],
+   "summary": "Back at the house the thief peers in and sees the furious shroff punishing the maid.",
+   "camera": {
+    "shot": "over-shoulder",
+    "move": "pan",
+    "notes": "Open on the doorway (zoom 1.6) as the card clears; pan right from the peeking thief to the room at 86.1; hold a full shot zoom 1.1 of shroff and maid with the thief small at the left edge."
+   },
+   "composition": "Thief peeks round the door frame at x 200 (frame as occluder). Shroff at x 430 facing right, stick raised. Maid kneeling at x 650, the full water jug on the floor by her at x 730. Shelf with the dashed outline above the shroff. Curtain open (0.7).",
+   "actions": [
+    {
+     "t": 83.36,
+     "end": 84.5,
+     "cue": {
+      "word": "عاد",
+      "t": 83.36
+     },
+     "who": "thief",
+     "action": "His shadow falls across the open doorway, then stops.",
+     "acting": "hesitant: shadow advances, retreats, advances",
+     "library": "shadow polygon on the floor"
+    },
+    {
+     "t": 84.62,
+     "end": 85.9,
+     "cue": {
+      "word": "اللص",
+      "t": 84.62
+     },
+     "who": "thief",
+     "action": "His head leans round the door frame, purse held behind his back.",
+     "acting": "eyes first, cap bobble lagging 2 frames",
+     "library": "peek from cover (draw actor then door frame)"
+    },
+    {
+     "t": 86.08,
+     "end": 87.5,
+     "cue": {
+      "word": "فوجد",
+      "t": 86.08
+     },
+     "who": "camera",
+     "action": "Pan right to reveal the room.",
+     "acting": "his pupils lead the pan"
+    },
+    {
+     "t": 87.66,
+     "end": 88.4,
+     "cue": {
+      "word": "الصراف",
+      "t": 87.66
+     },
+     "who": "shroff",
+     "action": "The shroff jabs a finger up at the dashed outline on the shelf.",
+     "acting": "turban askew (tilt 0.15), jaw thrust",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 88.52,
+     "end": 89.1,
+     "cue": {
+      "word": "غاضبًا",
+      "t": 88.52
+     },
+     "who": "shroff",
+     "action": "He stamps a foot; red flush climbs his face and two steam puffs pop.",
+     "acting": "brow 1, mouth open (talk 0.9), body shaking",
+     "library": "planned flush 1; kick(); tremble()"
+    },
+    {
+     "t": 89.24,
+     "end": 89.9,
+     "cue": {
+      "word": "يعاقب",
+      "t": 89.24
+     },
+     "who": "shroff",
+     "action": "He shakes the raised stick over the maid; it never lands.",
+     "acting": "stick shakes at the top of the arc only; its shadow on the wall is larger",
+     "library": "hold: 'stick'; aR raised with a keyed shake"
+    },
+    {
+     "t": 90.0,
+     "end": 90.9,
+     "cue": {
+      "word": "الخادمة.",
+      "t": 90.0
+     },
+     "who": "maid",
+     "action": "The maid kneels behind raised hands, trembling; the full water jug stands beside her.",
+     "acting": "wet eyes, brow -0.8, head turned away; the thief in the doorway winces (lid 0.4, brow -0.6): guilt",
+     "library": "kneel: 1; PERSON_HANDS.shield; wet; tremble(); waterJug {fill: 1}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 88.6,
+     "text": "GRRR!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 91.0
+   }
+  },
+  {
+   "id": "S10",
+   "start": 91.0,
+   "end": 104.42,
+   "paragraphs": [
+    5
+   ],
+   "set": "house",
+   "cast": [
+    "thief",
+    "shroff",
+    "maid"
+   ],
+   "summary": "He knocks and poses as a messenger from a neighbouring shopkeeper who found the purse lying by the shop.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on the doorway and the shroff (zoom 1.35, centre 330, 660); icon balloon area above them kept clear; slight push to 1.5 by 100.2."
+   },
+   "composition": "Thief stands in the doorway at x 150 (on the threshold), now with a small white turban jammed over his cap. Shroff walks to x 400. Maid stays kneeling at x 650, visible at the right edge. Icon balloon 300 x 200 at (300, 330).",
+   "actions": [
+    {
+     "t": 91.14,
+     "end": 91.7,
+     "cue": {
+      "word": "طرق",
+      "t": 91.14
+     },
+     "who": "thief",
+     "action": "Three raps on the open door leaf: KNOCK KNOCK!",
+     "acting": "strike cycle: lift, rap, rebound; innocent upward eyes; a small white turban now sits on his cap",
+     "library": "strike cycle keyed; thief disguise turban overlay (new)"
+    },
+    {
+     "t": 91.8,
+     "end": 92.3,
+     "cue": {
+      "word": "الباب،",
+      "t": 91.8
+     },
+     "who": "shroff",
+     "action": "The shroff freezes with the stick in the air and turns his head to the door.",
+     "acting": "pupils first, head 3 frames later; the maid opens one eye",
+     "library": "gazePlan; maid wink: 'R'"
+    },
+    {
+     "t": 92.36,
+     "end": 93.1,
+     "cue": {
+      "word": "وادعى",
+      "t": 92.36
+     },
+     "who": "thief",
+     "action": "Steps onto the threshold and bows low, hand on his chest.",
+     "acting": "tip 0.3 bow, syrupy smile, lid 0.6",
+     "library": "PERSON_HANDS.chest; tip"
+    },
+    {
+     "t": 93.2,
+     "end": 94.0,
+     "cue": {
+      "word": "وادعى",
+      "t": 92.36
+     },
+     "who": "shroff",
+     "action": "The shroff lowers the stick to his side, straightens his turban and stomps to the door.",
+     "acting": "brow 0.6, suspicious; heavy steps",
+     "library": "walk(); settleTo()"
+    },
+    {
+     "t": 94.52,
+     "end": 95.3,
+     "cue": {
+      "word": "رسول",
+      "t": 94.52
+     },
+     "who": "lettering",
+     "action": "Label MESSENGER? with an arrow to the turban; he taps it.",
+     "acting": "while the shroff looks at the turban, the thief winks at the camera (mask on, mask off)",
+     "library": "S.label; wink: 'R'"
+    },
+    {
+     "t": 95.36,
+     "end": 96.6,
+     "cue": {
+      "word": "جار",
+      "t": 95.36
+     },
+     "who": "fx",
+     "action": "Icon balloon from the thief: the head of a neighbour merchant in a yellow turban.",
+     "acting": "thief talks with small open-hand beats",
+     "library": "iconBalloon single: person head {costume: 'merchant', pal yellow turban} (catalogue MERCHANT PAL)"
+    },
+    {
+     "t": 96.74,
+     "end": 97.2,
+     "cue": {
+      "word": "السوق،",
+      "t": 96.74
+     },
+     "who": "fx",
+     "action": "A striped stall awning pops beside the head in the balloon; he thumbs over his shoulder toward the market.",
+     "acting": "shroff leans in, brow easing",
+     "library": "marketStall icon at small scale"
+    },
+    {
+     "t": 98.04,
+     "end": 98.6,
+     "cue": {
+      "word": "ليعيد",
+      "t": 98.04
+     },
+     "who": "thief",
+     "action": "His hidden hand shifts behind his back: only the red drawstring shows.",
+     "acting": "teasing half smile; shroff's eyes drop to it",
+     "library": "handL behind the body; draw the drawstring only"
+    },
+    {
+     "t": 98.7,
+     "end": 99.3,
+     "cue": {
+      "word": "كيسًا",
+      "t": 98.7
+     },
+     "who": "fx",
+     "action": "The balloon icon changes to a purse.",
+     "acting": "pop swap with a squash",
+     "library": "iconBalloon content swap"
+    },
+    {
+     "t": 100.24,
+     "end": 100.9,
+     "cue": {
+      "word": "مرميًا",
+      "t": 100.24
+     },
+     "who": "fx",
+     "action": "In the balloon the purse lies on the ground by a shop door, with drop lines.",
+     "acting": "shroff: brow from angry to raised (-0.5), mouth o",
+     "library": "townDoor icon + purse"
+    },
+    {
+     "t": 101.44,
+     "end": 102.0,
+     "cue": {
+      "word": "الدكان",
+      "t": 101.44
+     },
+     "who": "shroff",
+     "action": "The shroff glances back at the shelf, at the maid, then at the thief: could it be?",
+     "acting": "three saccades with holds",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 102.14,
+     "end": 103.3,
+     "cue": {
+      "word": "وحفظه",
+      "t": 102.14
+     },
+     "who": "thief",
+     "action": "Mimes guarding it: both hands clasped to his chest, eyes raised virtuously.",
+     "acting": "gaze [0, -1], halo-like stillness",
+     "library": "PERSON_HANDS.clasp"
+    },
+    {
+     "t": 103.6,
+     "end": 104.4,
+     "cue": {
+      "word": "الضياع.",
+      "t": 103.6
+     },
+     "who": "maid",
+     "action": "The maid lifts her head, hopeful; the tip of the stick sinks to the floor.",
+     "acting": "her hands lower halfway; shroff's arm relaxes",
+     "library": "kneel stays 1; brow -0.3"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 91.2,
+     "text": "KNOCK KNOCK!"
+    },
+    {
+     "t": 94.6,
+     "text": "MESSENGER?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 104.42
+   }
+  },
+  {
+   "id": "S11",
+   "start": 104.42,
+   "end": 127.14,
+   "paragraphs": [
+    6
+   ],
+   "set": "house",
+   "cast": [
+    "thief",
+    "shroff",
+    "maid"
+   ],
+   "summary": "He shows the purse; the shroff knows it and reaches, but the thief holds it back and demands a written, sealed receipt first.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot(thief, shroff) zoom 1.45. Insert on the dangling purse (zoom 2.0) 106.9 to 108.3; back to the two-shot; quick 4-unit panel shake on the missed grab at 112.9; widen to 1.3 for the receipt balloon from 119.9."
+   },
+   "composition": "Thief x 170 facing right, shroff x 400 facing left, about 230 apart so the purse can hang between them at (285, 560). Maid small at the right edge (x 650). Receipt balloon 320 x 220 at (300, 300) above the gap, never over a face.",
+   "actions": [
+    {
+     "t": 104.42,
+     "end": 105.5,
+     "cue": {
+      "word": "أخرج",
+      "t": 104.42
+     },
+     "who": "thief",
+     "action": "Slowly brings his hand round from behind his back.",
+     "acting": "anticipation: shoulders rise first; eyes on the shroff's face",
+     "library": "anticipate(); handR"
+    },
+    {
+     "t": 105.6,
+     "end": 106.8,
+     "cue": {
+      "word": "أخرج",
+      "t": 104.42
+     },
+     "who": "purse",
+     "action": "The purse rises into view between them with star glints.",
+     "acting": "shroff's pupils shrink to it",
+     "library": "S.emphasis glints"
+    },
+    {
+     "t": 106.92,
+     "end": 107.5,
+     "cue": {
+      "word": "الكيس",
+      "t": 106.92
+     },
+     "who": "thief",
+     "action": "Holds it up at arm's length, dangling by its red drawstring; it swings.",
+     "acting": "arm angle high so the shape reads at phone size",
+     "library": "aR raised; swing()"
+    },
+    {
+     "t": 107.6,
+     "end": 108.3,
+     "cue": {
+      "word": "وأراه",
+      "t": 107.6
+     },
+     "who": "shroff",
+     "action": "The shroff's eyes follow the swing like a pendulum.",
+     "acting": "head sways 3 px with it",
+     "library": "gazePlan from the purse position"
+    },
+    {
+     "t": 109.28,
+     "end": 110.1,
+     "cue": {
+      "word": "فعرفه",
+      "t": 109.28
+     },
+     "who": "shroff",
+     "action": "Recognition: hands to his cheeks, a small hop; label MY PURSE!",
+     "acting": "eyes wide, mouth o to open smile; turban hops",
+     "library": "PERSON_HANDS.cheeks; hop(); S.label"
+    },
+    {
+     "t": 110.2,
+     "end": 110.9,
+     "cue": {
+      "word": "فعرفه",
+      "t": 109.28
+     },
+     "who": "maid",
+     "action": "The maid gasps and puts a hand to her chest.",
+     "acting": "wet eyes brighten; long relieved blink",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 111.56,
+     "end": 112.3,
+     "cue": {
+      "word": "ومد",
+      "t": 111.56
+     },
+     "who": "shroff",
+     "action": "His hand creeps out toward the purse.",
+     "acting": "greedy smile, lid 0.4, leaning in (tip 0.1)",
+     "library": "PERSON_HANDS.reach to handRW"
+    },
+    {
+     "t": 112.44,
+     "end": 112.8,
+     "cue": {
+      "word": "يده",
+      "t": 112.44
+     },
+     "who": "shroff",
+     "action": "Fingers a hand-width from it, wiggling.",
+     "acting": "hold; the purse stops swinging",
+     "library": "handRW"
+    },
+    {
+     "t": 112.82,
+     "end": 113.4,
+     "cue": {
+      "word": "ليأخذه.",
+      "t": 112.82
+     },
+     "who": "thief",
+     "action": "The thief whips the purse up and behind him; the grab closes on air and the shroff stumbles half a step.",
+     "acting": "3-frame whip with overshoot; shroff tip 0.18 then recover",
+     "library": "settleTo(); panel-only shake 4 units"
+    },
+    {
+     "t": 113.52,
+     "end": 114.6,
+     "cue": {
+      "word": "لكن",
+      "t": 113.52
+     },
+     "who": "thief",
+     "action": "Free palm up: stop.",
+     "acting": "polite, firm; brow -0.2",
+     "library": "PERSON_HANDS.shield (one hand)"
+    },
+    {
+     "t": 115.24,
+     "end": 116.5,
+     "cue": {
+      "word": "قال",
+      "t": 115.24
+     },
+     "who": "thief",
+     "action": "He talks, wagging a finger.",
+     "acting": "head tilts with each wag",
+     "library": "PERSON_HANDS.pointUp wag; talk"
+    },
+    {
+     "t": 116.64,
+     "end": 117.5,
+     "cue": {
+      "word": "لا",
+      "t": 116.64
+     },
+     "who": "thief",
+     "action": "Shakes his head: cannot.",
+     "acting": "shroff opens both palms, pleading",
+     "library": "look +-; PERSON_HANDS.palmsUp for the shroff"
+    },
+    {
+     "t": 117.62,
+     "end": 118.4,
+     "cue": {
+      "word": "تسليمه",
+      "t": 117.62
+     },
+     "who": "thief",
+     "action": "Offers the purse forward a little, then draws it back again.",
+     "acting": "a smaller tease than the first; shroff's hands follow and drop",
+     "library": "handRW keyed"
+    },
+    {
+     "t": 118.52,
+     "end": 119.5,
+     "cue": {
+      "word": "إلا",
+      "t": 118.52
+     },
+     "who": "shroff",
+     "action": "The shroff huffs and plants his fists on his hips.",
+     "acting": "brow 0.5, cheeks puffed",
+     "library": "PERSON_HANDS.hipsHands"
+    },
+    {
+     "t": 119.92,
+     "end": 121.0,
+     "cue": {
+      "word": "يكتب",
+      "t": 119.92
+     },
+     "who": "thief",
+     "action": "Mimes writing on his palm.",
+     "acting": "scribble loops with the right hand over the left",
+     "library": "handR keyed over handL"
+    },
+    {
+     "t": 121.12,
+     "end": 121.7,
+     "cue": {
+      "word": "ورقة",
+      "t": 121.12
+     },
+     "who": "fx",
+     "action": "Balloon: a receipt (scroll with three lines) and a quill; label RECEIPT.",
+     "acting": "pop with squash",
+     "library": "iconBalloon: planned scroll + quillInk icons"
+    },
+    {
+     "t": 121.8,
+     "end": 122.6,
+     "cue": {
+      "word": "تثبت",
+      "t": 121.8
+     },
+     "who": "fx",
+     "action": "A green tick appears on the scroll: proof.",
+     "acting": "tick draws on",
+     "library": "S.emphasis tick"
+    },
+    {
+     "t": 122.72,
+     "end": 124.5,
+     "cue": {
+      "word": "وصول",
+      "t": 122.72
+     },
+     "who": "fx",
+     "action": "In the balloon a small arrow runs from a purse icon to a turbaned head: delivered.",
+     "acting": "thief nods, hand flat on his chest (duty)",
+     "library": "S.arrow inside the balloon"
+    },
+    {
+     "t": 124.68,
+     "end": 125.6,
+     "cue": {
+      "word": "مختومة",
+      "t": 124.68
+     },
+     "who": "fx",
+     "action": "A red wax seal stamps onto the scroll in the balloon.",
+     "acting": "squash on impact, small ring",
+     "library": "red disc r 22 with a star; impactSquash()"
+    },
+    {
+     "t": 125.72,
+     "end": 126.7,
+     "cue": {
+      "word": "بختمه.",
+      "t": 125.72
+     },
+     "who": "thief",
+     "action": "Points at the signet ring on the shroff's hand; the shroff looks at it and nods fast.",
+     "acting": "three quick nods, eager smile",
+     "library": "PERSON_HANDS.pointFwd; drop pulses"
+    },
+    {
+     "t": 126.85,
+     "end": 127.14,
+     "who": "shroff",
+     "action": "The shroff spins toward his desk.",
+     "acting": "turn with a squeeze, robe swirl",
+     "library": "turnFlip()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 109.4,
+     "text": "MY PURSE!"
+    },
+    {
+     "t": 113.0,
+     "text": "NOPE!"
+    },
+    {
+     "t": 121.2,
+     "text": "RECEIPT"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 127.1,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 127.14
+   }
+  },
+  {
+   "id": "S12",
+   "start": 127.14,
+   "end": 138.22,
+   "paragraphs": [
+    7
+   ],
+   "set": "house",
+   "cast": [
+    "shroff",
+    "thief",
+    "maid"
+   ],
+   "summary": "The shroff bends over his desk to write and seal the receipt, sure his gold is home; behind his back the thief hushes the maid and gets ready to run.",
+   "camera": {
+    "shot": "full",
+    "move": "drift",
+    "notes": "Full room zoom 1.1 with the desk centre and the doorway kept in frame at the left: both the writer's back and the waiting thief must be visible. Slow drift left toward the thief from 134.4."
+   },
+   "composition": "Shroff kneels at the desk (x 520) facing right, his back to the door. Thief in the doorway x 150. Maid standing at x 720 facing left: she can see the thief, the shroff cannot. Thought cloud 360 x 230 at (640, 300) above the shroff.",
+   "actions": [
+    {
+     "t": 127.52,
+     "end": 128.4,
+     "cue": {
+      "word": "دخل",
+      "t": 127.52
+     },
+     "who": "shroff",
+     "action": "Bustles from the door to the desk, back to the thief.",
+     "acting": "fast small steps, hem bouncing",
+     "library": "walk()"
+    },
+    {
+     "t": 128.48,
+     "end": 129.1,
+     "cue": {
+      "word": "الصراف",
+      "t": 128.48
+     },
+     "who": "shroff",
+     "action": "Drops to his knees at the low desk and pulls a sheet toward him.",
+     "acting": "landing settle; sleeves pushed back",
+     "library": "kneel 0 to 1; settleTo()"
+    },
+    {
+     "t": 129.22,
+     "end": 129.9,
+     "cue": {
+      "word": "ليكتب",
+      "t": 129.22
+     },
+     "who": "shroff",
+     "action": "Writes: the quill scratches along the sheet.",
+     "acting": "tongue-tip concentration, gaze down",
+     "library": "handRW along the scroll; quillInk"
+    },
+    {
+     "t": 130.0,
+     "end": 130.5,
+     "cue": {
+      "word": "الورقة",
+      "t": 130.0
+     },
+     "who": "receipt",
+     "action": "Three wavy lines appear on the receipt one by one.",
+     "acting": "in the doorway the thief rocks on his heels, eyes on the ceiling, whistling",
+     "library": "scroll {lines: 0..3}"
+    },
+    {
+     "t": 130.6,
+     "end": 131.6,
+     "cue": {
+      "word": "ويختمها،",
+      "t": 130.6
+     },
+     "who": "shroff",
+     "action": "Breathes on his seal and stamps it; the coin stacks on the desk hop.",
+     "acting": "lift, whip down, rebound (strike cycle); red seal left on the sheet",
+     "library": "strike cycle; kick() on the coins"
+    },
+    {
+     "t": 131.74,
+     "end": 133.1,
+     "cue": {
+      "word": "وظن",
+      "t": 131.74
+     },
+     "who": "fx",
+     "action": "His thought cloud: the purse back on the high shelf, glowing.",
+     "acting": "dreamy smile, lid 0.6, head tilted",
+     "library": "thoughtCloud(ctx, 640, 300, 360, 230, ...) + glints"
+    },
+    {
+     "t": 133.22,
+     "end": 134.2,
+     "cue": {
+      "word": "ماله",
+      "t": 133.22
+     },
+     "who": "fx",
+     "action": "In the cloud he hugs the purse and coins rain into his lap.",
+     "acting": "he sighs (sq 1.03 to 1)",
+     "library": "thoughtCloud inside(); breathe()"
+    },
+    {
+     "t": 134.36,
+     "end": 135.5,
+     "cue": {
+      "word": "عاد",
+      "t": 134.36
+     },
+     "who": "thief",
+     "action": "The whistling stops. The thief's eyes slide to the shroff's back; he meets the maid's eyes, puts a finger to his lips and winks.",
+     "acting": "she covers her mouth, eyes wide, then a tiny nod",
+     "library": "PERSON_HANDS.hush; wink: 'R'; maid PERSON_HANDS.mouthCover"
+    },
+    {
+     "t": 135.68,
+     "end": 136.8,
+     "cue": {
+      "word": "وفي",
+      "t": 135.68
+     },
+     "who": "thief",
+     "action": "One silent backward tiptoe step.",
+     "acting": "held on the toe; purse tucked under his arm",
+     "library": "sneak (reverse)"
+    },
+    {
+     "t": 136.92,
+     "end": 137.6,
+     "cue": {
+      "word": "ابتعد",
+      "t": 136.92
+     },
+     "who": "shroff",
+     "action": "The shroff bends lower to blow the ink dry; arrow and label NOT LOOKING.",
+     "acting": "cheeks puffed, eyes shut",
+     "library": "tip 0.2; S.label + S.arrow"
+    },
+    {
+     "t": 137.66,
+     "end": 138.2,
+     "cue": {
+      "word": "فيها،",
+      "t": 137.66
+     },
+     "who": "thief",
+     "action": "Legs spin on the spot, dust building.",
+     "acting": "tip 0.2, teeth gritted grin",
+     "library": "planned runInPlace"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 136.95,
+     "text": "NOT LOOKING"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "whip",
+    "t": 138.22
+   }
+  },
+  {
+   "id": "S13",
+   "start": 138.22,
+   "end": 147.0,
+   "paragraphs": [
+    7
+   ],
+   "set": "market",
+   "cast": [
+    "thief"
+   ],
+   "summary": "The thief bolts out of the door with the very same purse and melts into the crowded streets.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Track left with the runner along the street (zoom 1.2); insert push to the purse (zoom 1.9) 140.7 to 142.6; then crane up and pull out to zoom 0.9 over the crowd and skyline from 144.8."
+   },
+   "composition": "Street strip, running right to left from the house door (x about 2130) toward the market (x 900). Crowd of 9 passers-by in two depth rows between x 800 and 1500: back row s 1.1 at y 880, front row s 1.5 at y 930 drawn after the thief so they hide him.",
+   "actions": [
+    {
+     "t": 138.22,
+     "end": 139.5,
+     "cue": {
+      "word": "ركض",
+      "t": 138.22
+     },
+     "who": "thief",
+     "action": "Bursts out of the house door at full run: ZOOM!",
+     "acting": "tip 0.25, arms pumping, purse clutched to his chest",
+     "library": "walk(TX, t) amp 1.5; footfalls + dustBurst"
+    },
+    {
+     "t": 139.56,
+     "end": 140.6,
+     "cue": {
+      "word": "خارج",
+      "t": 139.56
+     },
+     "who": "set",
+     "action": "The door swings behind him; the white turban flies off his head and tumbles onto the step.",
+     "acting": "follow-through: turban rocks to rest",
+     "library": "townDoor swing(); turban arc with fallY()"
+    },
+    {
+     "t": 140.74,
+     "end": 141.5,
+     "cue": {
+      "word": "ومعه",
+      "t": 140.74
+     },
+     "who": "camera",
+     "action": "Push in on the purse in his fist as he runs.",
+     "acting": "red drawstring streams behind"
+    },
+    {
+     "t": 141.62,
+     "end": 142.1,
+     "cue": {
+      "word": "الكيس",
+      "t": 141.62
+     },
+     "who": "lettering",
+     "action": "Arrow and label THE SAME PURSE!",
+     "acting": "glints on the coin mark",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 142.14,
+     "end": 142.8,
+     "cue": {
+      "word": "نفسه،",
+      "t": 142.14
+     },
+     "who": "thief",
+     "action": "He tosses the purse up and catches it mid-stride.",
+     "acting": "eyes follow it up and down; grin",
+     "library": "hop arc on the purse; lookAt()"
+    },
+    {
+     "t": 142.88,
+     "end": 144.0,
+     "cue": {
+      "word": "واختفى",
+      "t": 142.88
+     },
+     "who": "thief",
+     "action": "He plunges into the crowd of shoppers.",
+     "acting": "passers-by walk both ways, never in unison; one turns a head as he brushes past",
+     "library": "streetCrowd (new helper): 9 person figures from presets villager, villageWoman, merchant, bedouin, oldWoman, servant with seeded pal, speed and phase"
+    },
+    {
+     "t": 144.1,
+     "end": 144.7,
+     "cue": {
+      "word": "شوارع",
+      "t": 144.1
+     },
+     "who": "thief",
+     "action": "Only his cap bobble shows, bobbing between turbans, then nothing.",
+     "acting": "bobble dips out of sight behind a tall turban",
+     "library": "draw order; alpha not needed"
+    },
+    {
+     "t": 144.82,
+     "end": 145.4,
+     "cue": {
+      "word": "المدينة",
+      "t": 144.82
+     },
+     "who": "camera",
+     "action": "Crane up and pull out over the busy street to the domes.",
+     "acting": "crowd keeps flowing"
+    },
+    {
+     "t": 145.52,
+     "end": 146.6,
+     "cue": {
+      "word": "المزدحمة.",
+      "t": 145.52
+     },
+     "who": "lettering",
+     "action": "Label GONE! over the crowd; a last dust puff where he vanished.",
+     "acting": "hold",
+     "library": "S.label; dustBurst"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 138.3,
+     "text": "ZOOM!"
+    },
+    {
+     "t": 141.7,
+     "text": "THE SAME PURSE!"
+    },
+    {
+     "t": 145.6,
+     "text": "GONE!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 146.95,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 147.0
+   }
+  },
+  {
+   "id": "S14",
+   "start": 147.0,
+   "end": 160.0,
+   "paragraphs": [
+    8
+   ],
+   "set": "house",
+   "cast": [
+    "shroff",
+    "maid"
+   ],
+   "summary": "The shroff finds the doorway empty and his gold gone for good, but he drops the stick: the purse plainly was not lost through the maid's fault.",
+   "camera": {
+    "shot": "full",
+    "move": "push-in",
+    "notes": "Medium on the doorway and shroff (zoom 1.4) to 150.4; pull to full room zoom 1.1 as he sits down; ease toward the maid (zoom 1.4, centre 620, 660) from 153.0; small widen for the cloud at 155.7."
+   },
+   "composition": "Shroff trots from the desk to x 300 by the door, receipt in his left hand, stick still tucked in his right. Fallen turban on the threshold at x 140. Maid kneeling at x 650. Small thought cloud 320 x 210 at (330, 310).",
+   "actions": [
+    {
+     "t": 147.3,
+     "end": 147.9,
+     "cue": {
+      "word": "لم",
+      "t": 147.3
+     },
+     "who": "shroff",
+     "action": "Trots to the door waving the finished receipt.",
+     "acting": "proud, eyes shut, smile",
+     "library": "walk(); scroll held up"
+    },
+    {
+     "t": 148.0,
+     "end": 148.7,
+     "cue": {
+      "word": "يسترد",
+      "t": 148.0
+     },
+     "who": "shroff",
+     "action": "Stops: the doorway is empty; only the fallen turban rocks on the step.",
+     "acting": "smile stays one beat too long, then slides off; receipt droops",
+     "library": "settleTo()"
+    },
+    {
+     "t": 148.78,
+     "end": 149.4,
+     "cue": {
+      "word": "الصراف",
+      "t": 148.78
+     },
+     "who": "shroff",
+     "action": "Looks left, right, out into the street.",
+     "acting": "three saccades; leans out of the door (tip 0.2)",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 149.54,
+     "end": 150.4,
+     "cue": {
+      "word": "نقوده،",
+      "t": 149.54
+     },
+     "who": "lettering",
+     "action": "A purse outline with the counter GOLD: 0 pops above him.",
+     "acting": "jaw drops, turban slides askew, knees sag (sq 0.9)",
+     "library": "S.counter; dashed purse ghost"
+    },
+    {
+     "t": 150.5,
+     "end": 151.0,
+     "who": "shroff",
+     "action": "He sits down hard on the floor; the receipt flutters down beside him.",
+     "acting": "impact squash and rebound; receipt rocks down on a sway path",
+     "library": "sit 1 seat 'floor'; impactSquash(); rebound()"
+    },
+    {
+     "t": 151.08,
+     "end": 151.9,
+     "cue": {
+      "word": "لكنه",
+      "t": 151.08
+     },
+     "who": "shroff",
+     "action": "He looks at the stick still in his hand.",
+     "acting": "slow head turn, long blink",
+     "library": "lookAt(head, stick)"
+    },
+    {
+     "t": 152.04,
+     "end": 153.0,
+     "cue": {
+      "word": "توقف",
+      "t": 152.04
+     },
+     "who": "shroff",
+     "action": "His fingers open; the stick drops, rolls and lies still.",
+     "acting": "no anger left: brow -0.4, shoulders down",
+     "library": "stick as a free prop: fallY() + roll"
+    },
+    {
+     "t": 153.08,
+     "end": 153.8,
+     "cue": {
+      "word": "معاقبة",
+      "t": 153.08
+     },
+     "who": "maid",
+     "action": "The maid peeks between her raised fingers.",
+     "acting": "one eye, then both",
+     "library": "wink then open; PERSON_HANDS.shield"
+    },
+    {
+     "t": 153.9,
+     "end": 155.5,
+     "cue": {
+      "word": "الخادمة،",
+      "t": 153.9
+     },
+     "who": "maid",
+     "action": "She lowers her hands, lets out a breath and gets to her feet.",
+     "acting": "wet eyes, slow blink, sq 0.96 to 1; rises with a settle",
+     "library": "kneel 1 to 0; breathe()"
+    },
+    {
+     "t": 155.7,
+     "end": 156.3,
+     "cue": {
+      "word": "ظهر",
+      "t": 155.7
+     },
+     "who": "fx",
+     "action": "His small thought cloud: the purse lying by a shop door in the market (the tale he was told).",
+     "acting": "he stares into it, mouth o",
+     "library": "thoughtCloud(ctx, 330, 310, 320, 210, ...)"
+    },
+    {
+     "t": 156.42,
+     "end": 157.1,
+     "cue": {
+      "word": "الكيس",
+      "t": 156.42
+     },
+     "who": "fx",
+     "action": "In the cloud a red X crosses a tiny shelf icon: it was never taken from here.",
+     "acting": "he nods slowly to himself",
+     "library": "S.emphasis X"
+    },
+    {
+     "t": 157.2,
+     "end": 158.2,
+     "cue": {
+      "word": "لم",
+      "t": 157.2
+     },
+     "who": "shroff",
+     "action": "He glances at the maid and cannot hold her eye.",
+     "acting": "look up, then eyes break away and head drops (shame)",
+     "library": "gazePlan; drop"
+    },
+    {
+     "t": 158.28,
+     "end": 158.9,
+     "cue": {
+      "word": "بسبب",
+      "t": 158.28
+     },
+     "who": "shroff",
+     "action": "He waves her off gently with an open palm.",
+     "acting": "small head shake",
+     "library": "PERSON_HANDS.palmsUp (one hand)"
+    },
+    {
+     "t": 158.94,
+     "end": 159.9,
+     "cue": {
+      "word": "تقصيرها.",
+      "t": 158.94
+     },
+     "who": "lettering",
+     "action": "Label NOT HER FAULT with a tick beside the maid; she picks up her water jug.",
+     "acting": "first small smile",
+     "library": "S.label; handRW to the jug"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 149.6,
+     "text": "GOLD: 0"
+    },
+    {
+     "t": 159.0,
+     "text": "NOT HER FAULT"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 150.8,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 160.0
+   }
+  },
+  {
+   "id": "S15",
+   "start": 160.0,
+   "end": 164.4,
+   "paragraphs": [
+    8
+   ],
+   "set": "alley",
+   "cast": [
+    "thief",
+    "pal1",
+    "pal2"
+   ],
+   "summary": "In the alley the second trick earns the applause the first one did not.",
+   "camera": {
+    "shot": "full",
+    "move": "static",
+    "notes": "Full shot zoom 1.2, same framing as S7 so the payoff mirrors the setup."
+   },
+   "composition": "Hero enters from the left to x 360; pals standing at x 640 and x 800. Counter TRICK 2 at panel top right, clear of heads.",
+   "actions": [
+    {
+     "t": 160.26,
+     "end": 160.9,
+     "cue": {
+      "word": "أما",
+      "t": 160.26
+     },
+     "who": "thief",
+     "action": "Strolls in tossing the purse from hand to hand.",
+     "acting": "easy walk, modest smile this time",
+     "library": "walk(); purse arc"
+    },
+    {
+     "t": 160.96,
+     "end": 162.1,
+     "cue": {
+      "word": "اللص",
+      "t": 160.96
+     },
+     "who": "pal1",
+     "action": "The pals straighten up and look at him, then at each other.",
+     "acting": "pal1 raised brow, slow nod",
+     "library": "gazePlan; stagger"
+    },
+    {
+     "t": 162.22,
+     "end": 162.9,
+     "cue": {
+      "word": "نجح",
+      "t": 162.22
+     },
+     "who": "pal1",
+     "action": "Now they clap: BRAVO!",
+     "acting": "alternating hands, pal2 lifts his cap; not in unison",
+     "library": "handL/handR keyed clap; stagger"
+    },
+    {
+     "t": 162.98,
+     "end": 163.6,
+     "cue": {
+      "word": "خدعته",
+      "t": 162.98
+     },
+     "who": "lettering",
+     "action": "Counter: TRICK 1 struck through, TRICK 2 ticked.",
+     "acting": "pop on the word",
+     "library": "S.counter"
+    },
+    {
+     "t": 163.72,
+     "end": 164.4,
+     "cue": {
+      "word": "الثانية،",
+      "t": 163.72
+     },
+     "who": "thief",
+     "action": "He holds up two fingers and bows.",
+     "acting": "echo of the ALONE finger at 13.8; wink to camera",
+     "library": "PERSON_HANDS.pointUp (two fingers drawn by the scene); wink: 'L'; tip 0.2"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 162.3,
+     "text": "BRAVO!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 164.4
+   }
+  },
+  {
+   "id": "S16",
+   "start": 164.4,
+   "end": 171.41,
+   "paragraphs": [
+    8
+   ],
+   "set": "house",
+   "cast": [
+    "maid",
+    "shroff"
+   ],
+   "summary": "The maid stands free in the sunny doorway; behind her the stick lies on the floor. THE END.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on the maid in the doorway (zoom 1.5, centre 230, 650), slow push to 1.7 by 167.4; hold through THE END."
+   },
+   "composition": "Maid at x 200 just inside the open door, facing left toward the street, jug on her hip. Background right: the stick on the floor at x 520 and the shroff seated at his desk, small, chin in hand, the dashed outline still on the shelf. THE END title in the upper panel (y 180 to 330), clear of her face.",
+   "actions": [
+    {
+     "t": 164.54,
+     "end": 165.4,
+     "cue": {
+      "word": "ونجت",
+      "t": 164.54
+     },
+     "who": "maid",
+     "action": "The maid steps into the bright doorway with her jug.",
+     "acting": "shoulders loose, gaze out to the street",
+     "library": "walk() 2 steps; lookAt()"
+    },
+    {
+     "t": 165.46,
+     "end": 166.4,
+     "cue": {
+      "word": "الخادمة",
+      "t": 165.46
+     },
+     "who": "maid",
+     "action": "Her smile grows; a long relieved blink.",
+     "acting": "wet off, lid 1 for 0.3 s, then open and bright",
+     "library": "lid keyed; mouth smile"
+    },
+    {
+     "t": 166.54,
+     "end": 167.3,
+     "cue": {
+      "word": "العقوبة",
+      "t": 166.54
+     },
+     "who": "set",
+     "action": "Behind her the stick lies harmless on the floor; the shroff sulks at his desk.",
+     "acting": "he sighs, chin in hand, eyes on the empty shelf",
+     "library": "PERSON_HANDS.chin; sit 'floor'"
+    },
+    {
+     "t": 167.42,
+     "end": 168.3,
+     "cue": {
+      "word": "الظالمة.",
+      "t": 167.42
+     },
+     "who": "maid",
+     "action": "She notices the fallen turban on the step, picks it up, and looks down the street with a small knowing smile.",
+     "acting": "gaze far left, one raised brow",
+     "library": "handRW; brow -0.3"
+    },
+    {
+     "t": 168.4,
+     "end": 171.41,
+     "who": "lettering",
+     "action": "THE END title pops and holds.",
+     "acting": "she keeps breathing and blinking; turban tail sways",
+     "library": "S.title; breathe(); blink()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 168.4,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 168.6,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 171.41
+   }
+  }
+ ],
+ "ending": {
+  "t": 168.4,
+  "description": "After the last word (168.18) the maid stands smiling in the sunny doorway holding the fallen turban, the stick harmless on the floor behind her and the shroff sulking small at his desk. THE END pops at 168.4 in the upper panel and holds to 171.41 with breathing and blinks; a quiet chime at 168.6."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "مر صراف في السوق يحمل كيسًا مليئًا بالنقود الذهبية.|رآه جماعة من اللصوص،|فقال أحدهم بثقة إنه يستطيع أخذ الكيس وحده.|ضحك أصحابه، وطلبوا منه أن يريهم كيف يفعل ذلك.",
+   "en": "A money-changer passed through the market carrying gold coins.|A thief boasted to his companions|that he could steal the purse by himself,|and they challenged him to prove it."
+  },
+  {
+   "p": 2,
+   "ar": "تبع اللص الصراف من بعيد حتى وصل إلى بيته.|دخل الصراف، ووضع الكيس على رف مرتفع،|ثم ذهب إلى الحمام. طلب من خادمته أن تحضر له إبريق ماء،|فتركت الباب مفتوحًا.",
+   "en": "The thief followed him home.|The money-changer put the purse on a high shelf,|then went to the lavatory, asking his maid to bring water.|She left the door open."
+  },
+  {
+   "p": 3,
+   "ar": "تسلل اللص إلى البيت، وأخذ الكيس من الرف،|وخرج سريعًا دون أن يراه أحد.|رجع إلى أصحابه فرحًا، ووضع المال أمامهم،|وهو ينتظر أن يمدحوا جرأته وسرعة حركته.",
+   "en": "The thief slipped inside, took the purse|and escaped unseen.|He returned proudly to his companions,|expecting them to praise his daring and speed."
+  },
+  {
+   "p": 4,
+   "ar": "لكن أحد اللصوص قال له إن الصراف سيكتشف ضياع المال،|ثم يتهم الخادمة ويضربها.|وقال آخر إن السرقة لم تكتمل بعد،|ما دام شخص بريء سيدفع ثمنها بدل اللص.",
+   "en": "Instead, his companions warned that the money-changer|would accuse and beat the innocent maid.|They said his trick was incomplete|unless he saved her from punishment."
+  },
+  {
+   "p": 5,
+   "ar": "عاد اللص إلى البيت، فوجد الصراف غاضبًا يعاقب الخادمة.|طرق الباب، وادعى أنه رسول من جار الصراف في السوق،|جاء ليعيد كيسًا وجده مرميًا قرب الدكان وحفظه من الضياع.",
+   "en": "He returned and found the maid being punished.|Knocking, he pretended to be a messenger from a neighboring shopkeeper|who had found and safeguarded the missing purse."
+  },
+  {
+   "p": 6,
+   "ar": "أخرج اللص الكيس وأراه للصراف،|فعرفه الرجل ومد يده ليأخذه.|لكن اللص قال إنه لا يستطيع تسليمه إلا بعد أن يكتب الصراف ورقة|تثبت وصول المال إليه، مختومة بختمه.",
+   "en": "The thief showed the familiar purse.|When the money-changer reached for it,|he demanded a signed, sealed receipt|to prove to his supposed employer that he had delivered it."
+  },
+  {
+   "p": 7,
+   "ar": "دخل الصراف ليكتب الورقة ويختمها،|وظن أن ماله قد عاد إليه.|وفي اللحظة التي ابتعد فيها،|ركض اللص خارج الباب ومعه الكيس نفسه، واختفى في شوارع المدينة المزدحمة.",
+   "en": "The money-changer went inside to write the receipt,|believing his money restored.|As soon as he turned away,|the thief ran off with the very same purse."
+  },
+  {
+   "p": 8,
+   "ar": "لم يسترد الصراف نقوده،|لكنه توقف عن معاقبة الخادمة، بعدما ظهر أن الكيس لم يختف بسبب تقصيرها.|أما اللص فقد نجح في خدعته الثانية،|ونجت الخادمة من العقوبة الظالمة.",
+   "en": "The money-changer did not recover his gold,|but the maid escaped further punishment.|The thief kept the purse|and saved her from the blame his first trick had caused."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "purse",
+   "description": "The planned fat coin purse with drawstring, coin mark, open, swing and ghost fields (see props).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "One function purse(ctx, x, y, {s, open, swing, sq, ghost}): body with shape() from an ellipse belly plus a pinched neck polygon, yellow fill with red dot shading; drawstring as two seg() strokes; coin rims as 3 to 5 yellow ellipses at the mouth; ghost draws the outline only with a dashed stroke. Rotate about the string end for swing."
+  },
+  {
+   "type": "prop",
+   "name": "scroll (with quillInk)",
+   "description": "Planned scroll as a receipt with lines 0..3 and a red seal 0..1, plus the planned quill and inkpot.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Paper polygon with two curled end ellipses; wavy lines with K.noise offsets, revealed by count; seal as a red disc with a star and impactSquash on arrival. Quill: a tapering white feather polygon on a black nib; inkpot: small navy trapezoid."
+  },
+  {
+   "type": "prop",
+   "name": "waterJug",
+   "description": "Ewer 60 x 110 with spout, handle, fill and tilt.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Ellipse belly, neck rectangle, spout triangle and a stroked loop handle, drawn with shape() in terracotta with red dots; blue ellipse at the mouth when fill > 0; rotate about the base for tilt."
+  },
+  {
+   "type": "pose",
+   "name": "thief disguise turban",
+   "description": "The planned thief disguise overlay (KD-013), turban item only: a small white turban drawn over the cap of the thief kind, following head moves; also drawable as a loose prop.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Opt-in field on person (disguise: 'turban') that draws the people.js turban shape at the thief head position after the cap; default off so the regression test stays identical. In the story first, as a scene overlay at the head point returned by the person pose."
+  },
+  {
+   "type": "motion",
+   "name": "sneak",
+   "description": "The planned tiptoe option for walk(): high knees and a short hold on each toe.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Wrap walk(): remap the leg phase with a stepped ease so each foot holds at the top for about 40 % of the step, raise amp, add 6 units of body lift on the hold; footfalls() still gives the toe taps."
+  },
+  {
+   "type": "motion",
+   "name": "runInPlace",
+   "description": "The planned comic wind-up: legs cycle at run amplitude with no travel for about 0.3 s, dust building, then release.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Drive ph from time (not distance) while x is held, amp 1.5, tip ramping to 0.2, dustBurst behind the heels every 3 frames; hand over to walk(TX, t) at the release time with matching phase."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "description": "The planned wordless picture balloon (single mode): speech balloon with a tail to the speaker, content drawn by a callback and swappable with a pop.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Rounded box via the style box primitive or shape() with a triangular tail; pop scale with overshoot; inside(ctx) callback clipped to the balloon; icons here: purse, waterJug, merchant head (person head clipped), marketStall at small scale, townDoor, scroll, quill, tick, seal."
+  },
+  {
+   "type": "effect",
+   "name": "streetCrowd",
+   "description": "A flow of 8 to 10 passers-by built from the existing person costume presets, walking both ways in two depth rows so a character can vanish among them.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "streetCrowd(ctx, t, {x0, x1, n, seed, row}): for each i a seeded preset, pal override, scale, speed (40 to 90 units/s), direction and start phase; x from time modulo the span, legs from walk() on that x function so feet never slide; call once with row 'back' before the hero and once with row 'front' after him. No unique drawings."
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "description": "The planned anger flush: red dots climbing the face plus two steam puffs.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Opt-in person field flush 0..1: a clipped red Ben-Day overlay on the face rising from the chin, and two small cloud puffs beside the head when above 0.8."
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "description": "The planned coin mound, used small (5 loose coins) when the purse opens on the crate and as stacks on the desk.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Seeded yellow ellipses with a darker rim and a glint; n coins; kick() offset for the hop."
+  }
+ ],
+ "owner_questions": [
+  "The punishment is never shown landing: the shroff shakes a raised stick and the maid kneels behind her hands (in the warning cloud and in P5); default: keep it softened this way.",
+  "The thief's messenger disguise is an invented small white turban jammed over his masked cap (not in the script); default: keep it as the visual joke and as the object the maid finds at the end.",
+  "The lavatory is shown only as a closed curtain alcove with the shroff's head and hand appearing at its edge; default: keep it discreet.",
+  "Added acting beyond the script: the thief hushes and winks at the maid before he runs (134.4) and she ends holding his turban with a knowing smile; default: keep, it ties her rescue to him.",
+  "The ending adds the companions applauding the second trick (BRAVO!, TRICK 2 counter) as the payoff of the praise he awaited in P3; default: keep.",
+  "Invented comic lettering (PURSE, ALONE!, SHOW US!, DOOR OPEN!, NOPE!, RECEIPT, THE SAME PURSE!, GONE!, GOLD: 0, NOT HER FAULT, BRAVO!) is English only; default: keep, about 30 words in the film.",
+  "The story lets the thief keep the stolen gold; the film plays the stated lesson (no innocent should pay) and gives the shroff a sulking, not tragic, ending; default: follow the script without an added judgement."
+ ],
+ "implementation_notes": [
+  "Start from Library/template. Word cues: use w(p, n) from timing.json; every cue in this plan is the exact word start on the final MP3.",
+  "Sets are single calls that return anchors: const M = marketStreet(ctx, {...}); const H = palaceHall(ctx, {variant: 'merchant', ...}). Read door, shelf, desk and curtain positions from the anchors (MERCHANT constants with the lowered shelves option), not from this plan's rounded numbers.",
+  "Interior scale: people at s 1.45 to 1.5 (about 350 tall) so faces read on a phone; the top shelf is lowered to y 500 so a figure standing on the stool with raised arm angles reaches it. Check with a still at 29.9 and 46.6 and adjust the shelf y, not the arms.",
+  "Peeks and hiding: draw the actor, then redraw the occluder (door frame strip, stall front, barrel, crowd front row). No clipped second copies.",
+  "The purse is one prop instance with a holder state keyed over time (shroff sash, shelf, thief hand, crate, pal2 hand, thief behind back, thief hand running) so it never duplicates; the dashed ghost stays on the shelf from 47.44 to the end of the film.",
+  "Thought clouds use Library thoughtCloud with inside(c, t) and scale about 0.55 so cloud figures are at least 110 px tall; speech uses the new iconBalloon. Never place either over a face.",
+  "Set LIFE.t = t each frame for automatic blinks; give every character a gaze target in every scene (lookAt or gazePlan); stagger the two pals by 3 to 6 frames in every shared reaction.",
+  "The LATER card at 82.75 to 83.55 (caption BACK AT THE HOUSE...) hides the cut from the alley to the house: put the camera and set switch at its covered midpoint.",
+  "Effects only at the listed times (6.0, 20.8, 27.0, 62.9, 127.1, 146.95, 150.8, 168.6), all inside narration pauses, SND master 0.6. Knocks, stamps and thuds that fall on spoken words are visual only (lettering).",
+  "Panel-only shake for the missed grab at 112.9; captions never move.",
+  "The shroff holds the stick from 87.66 to 152.04 (right hand); when he walks to the door or the desk it hangs at his side, and during writing it lies across his lap."
+ ],
+ "warnings": [
+  "The English translation is a condensed paraphrase of the Arabic (for example the laughing companions in P1 and the crowded streets in P7 are only in the Arabic); both are kept verbatim.",
+  "person is front-facing only: runs and walks read through leg cycle, tip and travel; over-shoulder looks are done with pupils and the look field.",
+  "Reaching the shelf depends on arm length (about 74 units at s 1): verify with stills and lower the shelf option if the hands do not meet the purse.",
+  "S8 and S11 are long dialogue scenes (20 s and 23 s): keep the listed icon and gesture changes on their words so something changes every 1 to 2 s.",
+  "If FIG.thief has only two variants, pal2 needs a colour override so the three thieves stay distinct.",
+  "The crowd must stay cheap: 9 figures, baked set behind, no per-figure gaze plans."
+ ]
+}

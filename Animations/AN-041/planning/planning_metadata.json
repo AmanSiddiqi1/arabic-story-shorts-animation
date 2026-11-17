@@ -1,0 +1,104 @@
+{
+ "story_id": "AN-041",
+ "title": "The Fox and the Crow",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T13:01:48",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a60ea5cad6432b363.jsonl",
+ "agent_id": "a60ea5cad6432b363",
+ "model_messages": {
+  "claude-fable-5-2": 27
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "0832f11f8abc03aa28f7f127042cde89ca5bbd3de06b922faeda89ea457adff2",
+  "paragraphs": 8,
+  "segments": [
+   "AN-041-P01-S01",
+   "AN-041-P01-S02",
+   "AN-041-P01-S03",
+   "AN-041-P01-S04",
+   "AN-041-P01-S05",
+   "AN-041-P01-S06",
+   "AN-041-P01-S07",
+   "AN-041-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-041_The_Fox_and_the_Crow_full_slowed.mp3",
+  "sha256": "6ba5cf711bc1d4bc99f920e991ecba60c45d89ad0ffea672fd7bd07416962e46",
+  "duration": 164.809
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-041_The_Fox_and_the_Crow_full_slowed.mp3.words.json",
+  "sha256": "136489298ebb77b8449d1f7decd3552a7343e6713df3293e0b4d0c1294c24d20",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "959278e",
+ "scenes": 12,
+ "actions": 157,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "rockyHill",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "hawk (bird kind)",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "insect (kinds louse, flea)",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "rat",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "wolf",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "sheep",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "hunterShadow",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "featherFall",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Paragraphs 3 to 8 are almost continuous speech (no pause of 0.6 s after 42.7 s), so nearly all sound effects sit in the first 43 s and at the very end. Do not add effects under the words.",
+  "This is a talking story: two characters stand still for two minutes. The plan keeps it moving with three story clouds, the heart, the shadow and the gap; if the clouds are cut or simplified the film will go static.",
+  "S6 packs a whole inset story into 8.5 s (73.8-82.3); it must be staged very simply (one floor line, left to right) or it will not read on a phone.",
+  "The hawk kind, rat and insect are planned by other stories but not in the Library yet; if they are built first elsewhere, use those drawings and names.",
+  "The crane in S1 passes 1060 world units in 2.5 s; keep the rock face detail sparse so it does not strobe at 30 fps.",
+  "Time of day moves from morning to dusk across one conversation; this is a mood device, not narrated. The single LATER card is at 160.75-161.55 over the words 'then he returned'."
+ ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "arabic",
+  "description": "Optional Arabic-language preset: the typography and subtitle layout approved across the four Kalila wa Dimna films (Thief and the Moonbeam, Monkey and the Turtle, Lark and the Elephant, Fox and the Drum). Arabic verbatim (diacritics kept), right to left, large, in a plain caption box in the bottom third, with the translation smaller and blue below it.",
+  "defaultFont": "naskh",
+  "fonts": {
+    "naskh": { "family": "Noto Naskh Arabic", "weight": 700, "files": { "arabic": "naskh-arabic-700.woff2", "latin": "naskh-latin-700.woff2" }, "used_in": "Monkey and the Turtle, Lark and the Elephant, Fox and the Drum, and the Naskh version of Thief and the Moonbeam", "status": "default (requested for the last three films)" },
+    "cairo": { "family": "Cairo", "weight": 800, "files": { "arabic": "cairo-arabic-800.woff2", "latin": "cairo-latin-800.woff2" }, "used_in": "Thief and the Moonbeam, first version", "status": "selectable alternative (it was this film's original font; no single approved font was named for Thief)" },
+    "scheherazade": { "family": "Scheherazade New", "weight": 700, "files": { "arabic": "sch-arabic-700.woff2", "latin": "sch-latin-700.woff2" }, "used_in": "Thief and the Moonbeam, third version", "status": "selectable alternative" }
+  },
+  "english_font": { "family": "Bangers", "weight": 400, "file": "bangers-latin-400.woff2" },
+  "unicodeRange": {
+    "arabic": "U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC",
+    "latin": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122"
+  },
+  "fontSampleText": "لُصوص «شُولَمْ»،",
+  "layout": "9x16",
+  "subtitle": {
+    "fields": { "primary": "ar", "secondary": "en" },
+    "box": { "fill": "#fffaf0", "lw": 9, "seed": 13 },
+    "pad": 90,
+    "gap": 22,
+    "primary": { "font": "{{arabicFamily}}", "weight": "{{arabicWeight}}", "color": "#141414", "dir": "rtl", "max": 70, "min": 44, "step": 2, "lineHeight": 1.72, "maxBlock": 340, "letterSpacing": "0px" },
+    "secondary": { "font": "Bangers", "weight": 400, "color": "#1d5bd0", "dir": "ltr", "max": 44, "min": 30, "step": 2, "lineHeight": 1.25, "maxBlock": 150, "letterSpacing": "1px" },
+    "timing": { "fadeIn": 0.14, "lead": 0.12, "holdGap": 1.4, "tail": 0.6 }
+  },
+  "rules": [
+    "Show the Arabic script verbatim from the supplied text, diacritics included. Chunks are rebuilt from the original script words (see modules/narration-sync), never retyped.",
+    "Embed the fonts as base64 so renders work offline; load the Arabic subset with a real Arabic sample text before the first frame (document.fonts.load).",
+    "Line height 1.72 x font size keeps harakat from colliding between lines. Arabic is set by canvas text shaping with ctx.direction = 'rtl' (no manual reversing).",
+    "The translation (secondary line) sits below the Arabic, smaller, in blue (#1d5bd0) Bangers. The core subtitle component is colour-neutral; blue is this preset's choice.",
+    "Animation in the top two thirds, caption box in the bottom third (layout 9x16)."
+  ]
+}

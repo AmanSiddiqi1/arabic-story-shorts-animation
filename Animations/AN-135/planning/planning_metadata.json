@@ -1,0 +1,93 @@
+{
+ "story_id": "AN-135",
+ "title": "KING KISRA ANUSHIRWAN AND THE VILLAGE DAMSEL",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T15:14:47",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a6b21322a0dd5bf13.jsonl",
+ "agent_id": "a6b21322a0dd5bf13",
+ "model_messages": {
+  "claude-fable-5-2": 28
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "d9df39f5ccecd38cb60f9fc97bf249b9210096f22a8cf21d24f50734f5ae6349",
+  "paragraphs": 8,
+  "segments": [
+   "AN-135-P01-S01",
+   "AN-135-P01-S02",
+   "AN-135-P01-S03",
+   "AN-135-P01-S04",
+   "AN-135-P01-S05",
+   "AN-135-P01-S06",
+   "AN-135-P01-S07",
+   "AN-135-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-135_KING_KISRA_ANUSHIRWAN_AND_THE_VILLAGE_DAMSEL_full_slowed.mp3",
+  "sha256": "41970ceceb4899801cf95e3786a9228a48f3eb39120f9a55403a7d7f67402fbe",
+  "duration": 170.503
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-135_KING_KISRA_ANUSHIRWAN_AND_THE_VILLAGE_DAMSEL_full_slowed.mp3.words.json",
+  "sha256": "0999119223bd2e898e17cc2bd986e2c208003f15e4dfd73887c0e985920d16a1",
+  "manifest_status": "SUCCESS; METADATA MISMATCH",
+  "script_match": 1.0
+ },
+ "library_rev": "5a93429",
+ "scenes": 16,
+ "actions": 149,
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "sugarcane (with caneField)",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "smallBowl",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "waterJug",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "scroll, coinPile, crownProp, saddlebag",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person costume 'caliph' crown:false",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "powderSprinkle",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "handOver",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The narration is nearly continuous (no pause of 0.6 s or more), so sound effects are very sparse and short; do not add more.",
+  "S9 is 18.8 s on one set with a pan, an insert and the thought cloud: keep the pacing by cutting camera positions exactly on the listed words.",
+  "The silhouette acting in the lit window (104.9 to 106.1) is small (80 x 80 world units): at zoom 1.45 it is about 116 px; keep the motion broad (twist, look, reach) or enlarge the window to 110 x 100.",
+  "The girl must not recognise the king before 155.4; avoid any bow or deference from her earlier.",
+  "crown:false is a library change: run the regression test; a fallback without a library change is given in new_assets."
+ ]
+}

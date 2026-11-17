@@ -1,0 +1,104 @@
+{
+ "story_id": "AN-107",
+ "title": "THE THIEF AND THE SHROFF",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T14:16:12",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a728ab10db7cd71de.jsonl",
+ "agent_id": "a728ab10db7cd71de",
+ "model_messages": {
+  "claude-fable-5-2": 23
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "b3b4e2b8e4d32d75e6a5593ab04fdd0ed6d0e6da820e0978321e60e6327df986",
+  "paragraphs": 8,
+  "segments": [
+   "AN-107-P01-S01",
+   "AN-107-P01-S02",
+   "AN-107-P01-S03",
+   "AN-107-P01-S04",
+   "AN-107-P01-S05",
+   "AN-107-P01-S06",
+   "AN-107-P01-S07",
+   "AN-107-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-107_THE_THIEF_AND_THE_SHROFF_full_slowed.mp3",
+  "sha256": "022390f101ee8349968fa906b75b3aad9241d087b9efa885802760cb52267cec",
+  "duration": 168.406
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-107_THE_THIEF_AND_THE_SHROFF_full_slowed.mp3.words.json",
+  "sha256": "9d52e8c45fc4a133399d9de8334826559c91520dac9c86563f5598d42bef1fee",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.991
+ },
+ "library_rev": "2e7a9d0",
+ "scenes": 16,
+ "actions": 175,
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "purse",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "scroll (with quillInk)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "waterJug",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "thief disguise turban",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "sneak",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "runInPlace",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "streetCrowd",
+   "effort": "M"
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The English translation is a condensed paraphrase of the Arabic (for example the laughing companions in P1 and the crowded streets in P7 are only in the Arabic); both are kept verbatim.",
+  "person is front-facing only: runs and walks read through leg cycle, tip and travel; over-shoulder looks are done with pupils and the look field.",
+  "Reaching the shelf depends on arm length (about 74 units at s 1): verify with stills and lower the shelf option if the hands do not meet the purse.",
+  "S8 and S11 are long dialogue scenes (20 s and 23 s): keep the listed icon and gesture changes on their words so something changes every 1 to 2 s.",
+  "If FIG.thief has only two variants, pal2 needs a colour override so the three thieves stay distinct.",
+  "The crowd must stay cheap: 9 figures, baked set behind, no per-figure gaze plans."
+ ]
+}

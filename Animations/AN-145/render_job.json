@@ -1,0 +1,10 @@
+{
+ "story": "AN-145",
+ "cwd": "Animations/AN-145",
+ "build": "python3 build.py",
+ "render": "node render.mjs --workers 3 --crf 20 --frames ../../scratch/render-queue/AN-145/frames --out renders/AN-145_v1.mp4",
+ "qc": "python3 tools/production/qc.py AN-145 Animations/AN-145/renders/AN-145_v1.mp4 --record v1",
+ "notes": "run from the repository root with tools/production/render_queue.py; frames are deleted only after \"ffmpeg exit 0\"",
+ "implcheck": "PASS",
+ "film_duration": 177.861
+}

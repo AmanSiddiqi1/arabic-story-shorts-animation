@@ -1,0 +1,89 @@
+{
+ "story_id": "AN-044",
+ "title": "The Merchant and the Two Sharpers",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T13:09:41",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a816913397ca608a6.jsonl",
+ "agent_id": "a816913397ca608a6",
+ "model_messages": {
+  "claude-fable-5-2": 16
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "d627edcf9502ee6299a9512273a530cde6444b6ee660e8b4f8bcb2b9185958e8",
+  "paragraphs": 8,
+  "segments": [
+   "AN-044-P01-S01",
+   "AN-044-P01-S02",
+   "AN-044-P01-S03",
+   "AN-044-P01-S04",
+   "AN-044-P01-S05",
+   "AN-044-P01-S06",
+   "AN-044-P01-S07",
+   "AN-044-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-044_The_Merchant_and_the_Two_Sharpers_full_slowed.mp3",
+  "sha256": "aae64f4e2be40e9b5876e8795a2bb6dc62af30dfc36d9d0dd71c66fa0fcae69a",
+  "duration": 169.541
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-044_The_Merchant_and_the_Two_Sharpers_full_slowed.mp3.words.json",
+  "sha256": "6d93ca6c299161b5fbce59c6f6d5262bc0c9396ad1109c74cdddd2f6b9a94671",
+  "manifest_status": "SUCCESS; METADATA MISMATCH",
+  "script_match": 1.0
+ },
+ "library_rev": "959278e",
+ "scenes": 16,
+ "actions": 155,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "camel",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "desertRoad",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "desertCamp",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "camelLoad (cloth bolts, chest, sacks, bindle)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "smallBowl (rim colour, steam, poison badge) and poisonVial",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "poison face tint",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "costume change behind a foreground wipe",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The camel is a large new character (effort L) and is on screen in 9 of 16 scenes; draw and approve it first on a still sheet.",
+  "No narration pause reaches 0.6 s: effects must be very sparse and quiet; the listed sfx times are word boundaries, not true silences.",
+  "Poisoning and two deaths in a children s format: staged discreetly (see owner_questions 2 and 3); the owner may want it softer still.",
+  "The person figure has no profile or back view; the \"back turned\" and \"back to back\" staging depends on hands, gaze and prop placement reading clearly at phone size. Check with stills at 89.7, 103.8 and 83.4.",
+  "Sharper B without a beard depends on the merchant preset allowing the beard to be switched off; if not, give him a short grey-brown beard via pal.beard and keep the size difference as the main distinction.",
+  "The city name is written SINDAH as in the English script."
+ ]
+}

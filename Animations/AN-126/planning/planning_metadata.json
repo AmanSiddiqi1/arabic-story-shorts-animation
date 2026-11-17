@@ -1,0 +1,103 @@
+{
+ "story_id": "AN-126",
+ "title": "HARUN AL-RASHID AND THE THREE POETS",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T14:53:18",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a53b8de061e3c6cda.jsonl",
+ "agent_id": "a53b8de061e3c6cda",
+ "model_messages": {
+  "claude-fable-5-2": 20
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "da518ba46f3e3f9ce4dc6b1461bec2f0da061ba69b4dd557c672ae05aa7bb337",
+  "paragraphs": 8,
+  "segments": [
+   "AN-126-P01-S01",
+   "AN-126-P01-S02",
+   "AN-126-P01-S03",
+   "AN-126-P01-S04",
+   "AN-126-P01-S05",
+   "AN-126-P01-S06",
+   "AN-126-P01-S07",
+   "AN-126-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-126_HARUN_AL_RASHID_AND_THE_THREE_POETS_full_slowed.mp3",
+  "sha256": "6262b20b0b6c4a417b783619ac1020ebd3b1f8a4d0ac093eed5f3807ad9c83fe",
+  "duration": 159.827
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-126_HARUN_AL_RASHID_AND_THE_THREE_POETS_full_slowed.mp3.words.json",
+  "sha256": "3a3892ada0a019acb90ce5a2c3348d80bc85fd94f79a3f84fb70b5ec135ff43e",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "5a93429",
+ "scenes": 17,
+ "actions": 133,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "person costume presets (poet)",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (guard, executioner)",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person shawl (shoulder slip)",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "verseRibbon",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "wineCup",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "purse",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "spear, sword",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "handOver",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "palaceHall (night option)",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Eight scenes need the planned iconBalloon; if it is not in Library yet, build it in this story first and move it later.",
+  "Five to six figures share the hall in S5, S11, S12, S14 and S16: keep them at s 0.75-0.8 and at least 110 units apart so name tags and counters do not collide.",
+  "Adult themes (wine, a night visit, a death sentence) are in the script; every staging choice here is deliberately discreet. See owner_questions.",
+  "No sound effects can be placed during almost all of the film (continuous narration); visual accents must carry the beats.",
+  "The clouds in S9-S10 carry the key reveal: check at phone size that the slipped shawl reads in the cloud (the shawl is yellow on red for contrast)."
+ ]
+}

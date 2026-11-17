@@ -1,0 +1,111 @@
+{
+ "story_id": "AN-138",
+ "title": "YAHYA BIN KHALID AND THE POOR MAN",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T15:24:41",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a5f25c67179b9a4b2.jsonl",
+ "agent_id": "a5f25c67179b9a4b2",
+ "model_messages": {
+  "claude-fable-5-2": 21
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "b36ce58b0442ea7596690463036a8e08298457e0f2c9a8c1c608797fe3852b94",
+  "paragraphs": 8,
+  "segments": [
+   "AN-138-P01-S01",
+   "AN-138-P01-S02",
+   "AN-138-P01-S03",
+   "AN-138-P01-S04",
+   "AN-138-P01-S05",
+   "AN-138-P01-S06",
+   "AN-138-P01-S07",
+   "AN-138-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-138_YAHYA_BIN_KHALID_AND_THE_POOR_MAN_full_slowed.mp3",
+  "sha256": "a4d37a7f051ec556594306e5879358917ee7a54f350a654cb50c020e99706809",
+  "duration": 172.269
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-138_YAHYA_BIN_KHALID_AND_THE_POOR_MAN_full_slowed.mp3.words.json",
+  "sha256": "24238f3ef1e481c7940a9190ab79121c5e31adfc6fe35ed43f27a731371c9963",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.992
+ },
+ "library_rev": "5a93429",
+ "scenes": 17,
+ "actions": 169,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "guestRoom (palaceHall merchant dressing)",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "diwan",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "purse",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "sack",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "foodTray",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "ledger",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "moonCounter (rows)",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "sneak",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "handOver",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person carrying a load on the back",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [
+  "31 lettering items; keep to the lettering diet (about 20 or fewer; labels only on key beats)"
+ ],
+ "plan_warnings": [
+  "The narration is nearly continuous (three pauses of 0.6 s or more, all in the first 23 s), so only 5 sound effects are planned; do not add coin or door sounds over words.",
+  "English is a condensed translation: chunk 4 of P4 and P6 show English that does not translate the Arabic being spoken at that moment.",
+  "The person figure is front facing only: \"bows\", \"turns to the door\" and \"looks back\" must be acted with tip, gaze, dir flips (turnFlip) and hands, not a profile.",
+  "Arms are short (about 74 units): hugging the 190 wide sack is drawn with the hands on its near edge and the sack overlapping the body.",
+  "S8-S9 repeat one action many times; vary the treasurer and the guest slightly on each repeat so it does not read as a loop.",
+  "guestRoom uses the merchant variant of palaceHall: check on a still that with desk:false and one shelf it does not read as a shop; if it does, add the rug, diwan and a second cushion first."
+ ]
+}

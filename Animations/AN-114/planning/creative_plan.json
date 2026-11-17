@@ -1,0 +1,3257 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-114",
+ "title": "The Ruined Man Who Became Rich Again Through a Dream",
+ "duration": 178.45,
+ "end_hold": 1.55,
+ "logline": "A ruined Baghdad man follows a dream to Cairo, is beaten and jailed by mistake, and learns from the police chief's own mocking dream that the treasure lies under the fountain in his own courtyard.",
+ "moral": "The journey did not lead him to a treasure far away; it taught him where to look at home.",
+ "tone": "Warm ironic comedy: hardship played gently, one big laugh (the chief), one big gasp (the recognition), a glowing quiet ending.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.54,
+   "kind": "setup",
+   "cue": {
+    "word": "بغداد",
+    "t": 0.54
+   },
+   "summary": "A rich man in Baghdad, in his courtyard, beside his fountain."
+  },
+  {
+   "id": "B2",
+   "t": 5.42,
+   "kind": "turn",
+   "cue": {
+    "word": "خسره",
+    "t": 5.42
+   },
+   "summary": "He loses everything."
+  },
+  {
+   "id": "B3",
+   "t": 22.02,
+   "kind": "inciting",
+   "cue": {
+    "word": "القاهرة.",
+    "t": 22.02
+   },
+   "summary": "A dream says his fortune waits in Cairo."
+  },
+  {
+   "id": "B4",
+   "t": 27.5,
+   "kind": "rising",
+   "cue": {
+    "word": "قرر",
+    "t": 27.5
+   },
+   "summary": "He decides to travel."
+  },
+  {
+   "id": "B5",
+   "t": 41.86,
+   "kind": "rising",
+   "cue": {
+    "word": "ونام",
+    "t": 41.86
+   },
+   "summary": "Tired and hungry in Cairo, he sleeps in a mosque."
+  },
+  {
+   "id": "B6",
+   "t": 48.44,
+   "kind": "suspense",
+   "cue": {
+    "word": "لصوص",
+    "t": 48.44
+   },
+   "summary": "Thieves tiptoe past him to the house next door."
+  },
+  {
+   "id": "B7",
+   "t": 60.74,
+   "kind": "comic",
+   "cue": {
+    "word": "هرب",
+    "t": 60.74
+   },
+   "summary": "The thieves get away just before the police arrive; he sleeps on."
+  },
+  {
+   "id": "B8",
+   "t": 75.16,
+   "kind": "emotion",
+   "cue": {
+    "word": "وضربوه",
+    "t": 75.16
+   },
+   "summary": "Mistaken for a thief, he is beaten and jailed for three days."
+  },
+  {
+   "id": "B9",
+   "t": 101.36,
+   "kind": "comic",
+   "cue": {
+    "word": "ضحك",
+    "t": 101.36
+   },
+   "summary": "The chief laughs at his dream."
+  },
+  {
+   "id": "B10",
+   "t": 126.12,
+   "kind": "surprise",
+   "cue": {
+    "word": "مال",
+    "t": 126.12
+   },
+   "summary": "The chief's own dream: money buried under a fountain in a Baghdad house."
+  },
+  {
+   "id": "B11",
+   "t": 142.92,
+   "kind": "reveal",
+   "cue": {
+    "word": "بيته",
+    "t": 142.92
+   },
+   "summary": "It is his own house."
+  },
+  {
+   "id": "B12",
+   "t": 144.8,
+   "kind": "suspense",
+   "cue": {
+    "word": "يكشف",
+    "t": 144.8
+   },
+   "summary": "He hides what he knows and takes a few coins."
+  },
+  {
+   "id": "B13",
+   "t": 163.98,
+   "kind": "climax",
+   "cue": {
+    "word": "كنزًا",
+    "t": 163.98
+   },
+   "summary": "He digs under his fountain and finds the treasure."
+  },
+  {
+   "id": "B14",
+   "t": 174.56,
+   "kind": "moral",
+   "cue": {
+    "word": "علمته",
+    "t": 174.56
+   },
+   "summary": "Cairo held no treasure; it taught him where to look."
+  }
+ ],
+ "cast": [
+  {
+   "id": "man",
+   "name": "the man from Baghdad",
+   "library": "person",
+   "base": "person costume 'merchant' (rich) and costume 'villager' (ruined)",
+   "look": "Same face in both states: black moustache and short beard, yellow headwear (hc C.yellow) so he is recognisable. Rich: green merchant robe (0-6.2 s only). Ruined, from 6.22 to the end: faded brown villager tunic '#b98a4a', bare feet, two scene-drawn patches (blue square on the chest, paper square at the hem). A red bump with painPulse on his head from 76.9 to 89.5.",
+   "new": false
+  },
+  {
+   "id": "dreamVoice",
+   "name": "the figure in the dream",
+   "library": "person",
+   "base": "person costume 'ascetic' drawn through planned ghostForm",
+   "look": "Pale blue robed elder, legs replaced by a wavy hem, soft halftone halo; only ever inside a thought cloud.",
+   "new": false
+  },
+  {
+   "id": "keeper",
+   "name": "stall keeper",
+   "library": "person",
+   "base": "person costume 'beanSeller'",
+   "look": "Behind the stall counter, waist up.",
+   "new": false
+  },
+  {
+   "id": "thief1",
+   "name": "lead thief",
+   "library": "person",
+   "base": "person kind 'thief'",
+   "look": "Striped thief as in the Library, s 0.95.",
+   "new": false
+  },
+  {
+   "id": "thief2",
+   "name": "second thief",
+   "library": "person",
+   "base": "person kind 'thief' v 1",
+   "look": "Shorter (s 0.85), carries an empty sack, always four frames late.",
+   "new": false
+  },
+  {
+   "id": "householder",
+   "name": "neighbour at the window",
+   "library": "person",
+   "base": "person kind 'owner'",
+   "look": "Nightcap owner figure, waist up in the lit window.",
+   "new": false
+  },
+  {
+   "id": "chief",
+   "name": "the police chief",
+   "library": "person",
+   "base": "planned costume preset 'guard' with pal {robe: red, cape: blue}, age 0.5",
+   "look": "Pointed helmet with neck cloth in the night scenes, helmet off (small red turban) in his hall; the widest moustache in the film; broad, slow, sure of himself. s 1.08.",
+   "new": false
+  },
+  {
+   "id": "guard1",
+   "name": "guard with torch",
+   "library": "person",
+   "base": "planned costume preset 'guard', pal blue",
+   "look": "Tall, thin, bored.",
+   "new": false
+  },
+  {
+   "id": "guard2",
+   "name": "guard with spear",
+   "library": "person",
+   "base": "planned costume preset 'guard', pal blue, s 0.9",
+   "look": "Short, round, always half a beat late.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "courtyard",
+   "library": null,
+   "new": true,
+   "description": "courtyardHouse: the man's Baghdad house seen from inside its courtyard, 1000 wide, paving at y 900. Back wall y 300..900 (ochre, crenellated top), door at the left x 70..190 top y 560 (townDoor), three pointed arches x 250..430, 450..630 (behind the fountain), 650..830, tops y 470. Garden bed at the right x 660..960: two trees 300 tall, three bushes, flowers. Fountain at x 480 (see prop). Fields: wealth 0..1 (1: rug x 600..860, hanging lamp, flower pots, clean wall; 0: three wall cracks, weeds, bare paving), u (time of day), build 0..1 per part (wall, paving+arches, garden, fountain) for the dream version, cutaway 0..1 (the ground band y 900..1100 under the basin opens to show soil and a buried chest at (480, 1000)), dug 0..1 (two slabs tipped, hole x 360..560 down to y 1010, heap at x 250). Returns anchors {door, arches, fountain {x, rim, jetTop}, garden, hole}."
+  },
+  {
+   "id": "market",
+   "library": "marketStreet",
+   "new": false,
+   "description": "marketStreet palette 'clear', palace false, one seed stall at x 760, sacks at x 120, a crate at x 600; u eases toward dusk at 12.4."
+  },
+  {
+   "id": "desert",
+   "library": "desertRoad",
+   "new": false,
+   "description": "desertRoad w 2400: Baghdad far city at the left end, milestones, palms from x 1300, two small pyramid triangles on the far dune line at x 1700 and 1790 (scene-drawn), Cairo wall and gate at the right end (city edge composed with townCityEdge). S18 runs the same strip right to left."
+  },
+  {
+   "id": "mosque",
+   "library": null,
+   "new": true,
+   "description": "mosqueCourt: 1600-wide night strip, floor y 900. Mosque arcade x 0..1000: three pointed arches 220 wide (x 60..280, 390..610, 720..940) tops y 430 on pillars 40 wide, striped prayer mats on the floor (one at x 330..610), hanging lamp at (500, 470), dome behind centred x 500 top y 180 with a crescent finial, minaret x 880..940 top y 120. Boundary wall x 1000..1040, top y 640. Neighbour's yard and house x 1060..1560: flat roof top y 420, window at (1250, 560) 110 x 130 (townWindow, lit 0..1), second window (1420, 560), door x 1100..1190. Fields: dark 0..1, lamp 0..1, winLit [a, b], camX, front pass for the pillars and the wall. Positions are a specification, adjust on the first still."
+  },
+  {
+   "id": "jail",
+   "library": null,
+   "new": true,
+   "description": "jailCell: dark blue wall x 150..850, floor y 900, barred window at (680, 430) 130 x 110 showing skyCycle, tally marks at (300, 560), jug and crust at x 420. Front bars drawn after the cast (prop bars)."
+  },
+  {
+   "id": "office",
+   "library": "palaceHall",
+   "new": false,
+   "description": "palaceHall variant 'palace', wall 'ochre', throne false, dais kept, door at the left with day outside; a plain bench on the dais at x 660 (scene-drawn, 48 high) for the chief (person y = dais top, sit 1, seat 'bench')."
+  }
+ ],
+ "props": [
+  {
+   "id": "fountain",
+   "library": null,
+   "new": true,
+   "description": "Courtyard fountain at x 480: octagonal stone basin 260 wide, rim y 830, base y 900; stem 24 wide up to a bowl 110 wide at y 730; jet from y 730 to y 640 with two falling arcs. Fields: water 0..1 (0 = one drip per 1.1 s), sparkle, front pass (rim over a person in the hole)."
+  },
+  {
+   "id": "coinPile",
+   "library": null,
+   "new": true,
+   "description": "Planned coinPile (coin mound and single coins)."
+  },
+  {
+   "id": "chest",
+   "library": null,
+   "new": true,
+   "description": "Planned treasureHoard chest, 150 x 110, lid open 0..1, coins inside."
+  },
+  {
+   "id": "bread",
+   "library": null,
+   "new": true,
+   "description": "Planned bread: one flat loaf 60 x 22."
+  },
+  {
+   "id": "bindle",
+   "library": "packLoad",
+   "new": false,
+   "description": "packLoad 'bindle' tied to a 150-long stick over the shoulder."
+  },
+  {
+   "id": "mapCard",
+   "library": null,
+   "new": true,
+   "description": "Planned mapCard (AN-088): paper card with house icon, dotted road with progress 0..1, city icon; here with a return line, a coin icon and a red X."
+  },
+  {
+   "id": "torch",
+   "library": null,
+   "new": true,
+   "description": "Stick 120 long with a three-lobe flame (seeded flicker) and a soft halftone light circle r 260."
+  },
+  {
+   "id": "bars",
+   "library": null,
+   "new": true,
+   "description": "Nine vertical black bars 16 wide, x 170..830, y 280..900, with a cross bar at y 560; slide 0..1 from the left."
+  },
+  {
+   "id": "shovel",
+   "library": null,
+   "new": true,
+   "description": "Wooden shaft 190 long, 12 thick, flat iron blade 46 x 60; held with both world hand targets."
+  },
+  {
+   "id": "purse",
+   "library": null,
+   "new": true,
+   "description": "Planned purse, small, at the chief's belt."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 7.0,
+   "paragraphs": [
+    1
+   ],
+   "set": "courtyard",
+   "cast": [
+    "man"
+   ],
+   "summary": "Baghdad. A rich man in his own courtyard beside his fountain (planted from the first second); his coins vanish and the house decays.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Start zoom 1.0 centred (500, 640) showing wall, garden and fountain; ease to zoom 1.25 centred (470, 700) by 3.3; hold; no move during the loss so the vanishing coins read."
+   },
+   "composition": "Fountain dead centre (x 480) so the audience remembers it; man at x 290 left of it; coin piles and open chest on a rug at x 640..820; BAGHDAD ribbon top left (x 90, y 150), clear of his head.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 1.3,
+     "cue": {
+      "word": "بغداد",
+      "t": 0.54
+     },
+     "who": "camera",
+     "action": "opens wide on the courtyard at noon, fountain jet playing; BAGHDAD ribbon pops at 0.54",
+     "acting": "calm, sunny; jet arcs animate (sin of t), two sparkles",
+     "library": ""
+    },
+    {
+     "t": 1.1,
+     "end": 1.9,
+     "cue": {
+      "word": "رجل",
+      "t": 1.3
+     },
+     "who": "man",
+     "action": "stands by the fountain in a green merchant robe, hands on belly, rocks on his heels",
+     "acting": "smile, lid 0.25 content, gaze lookAt coin piles, breathe()",
+     "library": "person {costume:'merchant', pal:{robe:green, hc:C.yellow}}, PERSON_HANDS.hipsHands, breathe"
+    },
+    {
+     "t": 1.98,
+     "end": 2.6,
+     "cue": {
+      "word": "يملك",
+      "t": 1.98
+     },
+     "who": "coinPile",
+     "action": "three coin piles pop up on the rug one after another (0.15 s apart), then an open chest behind them",
+     "acting": "each pile overshoots 10 % and settles",
+     "library": "settleTo, stagger"
+    },
+    {
+     "t": 2.68,
+     "end": 3.3,
+     "cue": {
+      "word": "مالًا",
+      "t": 2.68
+     },
+     "who": "man",
+     "action": "flips one coin up and catches it (the pose that returns at 166.8)",
+     "acting": "eyes follow the coin up and down (gazePlan), small hop of the heels on the catch",
+     "library": "handRW to the coin, hop arc for the coin, goldGlow 0.4"
+    },
+    {
+     "t": 3.3,
+     "end": 4.0,
+     "cue": {
+      "word": "كثيرًا،",
+      "t": 3.3
+     },
+     "who": "man",
+     "action": "spreads both arms proudly; fountain jet rises to full height; label arrow RICH points at the piles",
+     "acting": "anticipation dip then chest out, sq 1.04, brow -0.3",
+     "library": "PERSON_HANDS.armsOut, anticipate, S.arrow/label"
+    },
+    {
+     "t": 4.75,
+     "end": 5.4,
+     "cue": {
+      "word": "ثم",
+      "t": 4.75
+     },
+     "who": "coinPile",
+     "action": "the piles shrink to nothing one at a time (4.75, 5.08, 5.42), each leaving a small puff",
+     "acting": "man's eyes snap to each loss (saccades), smile drops",
+     "library": "gazePlan(t, plan, 0.07), dustBurst"
+    },
+    {
+     "t": 5.42,
+     "end": 6.2,
+     "cue": {
+      "word": "خسره",
+      "t": 5.42
+     },
+     "who": "man",
+     "action": "snatches at the last coin and closes his hand on air; opens the empty palm",
+     "acting": "mouth 'o', brow -0.8, sq 0.94, then hands to head",
+     "library": "handRW reach, PERSON_HANDS.headHold"
+    },
+    {
+     "t": 6.22,
+     "end": 7.0,
+     "cue": {
+      "word": "كله،",
+      "t": 6.22
+     },
+     "who": "set",
+     "action": "wealth 1 to 0: rug, lamp and chest vanish, three cracks run up the wall, weeds appear, the jet sinks to a drip; under a 2-frame white flash his robe becomes the patched brown tunic",
+     "acting": "shoulders drop: tip 0.08, lid 0.45, gaze down at the empty palm; RICH label flips to a struck-out state then goes",
+     "library": "courtyardHouse {wealth}, person {costume:'villager', pal:{robe:'#b98a4a', hc:C.yellow, shoes:'bare'}} + 2 scene-drawn patches"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 4.4,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 7.0
+   }
+  },
+  {
+   "id": "S2",
+   "start": 7.0,
+   "end": 13.1,
+   "paragraphs": [
+    1
+   ],
+   "set": "market",
+   "cast": [
+    "man",
+    "keeper"
+   ],
+   "summary": "Hard labour in the market for one day's bread.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Zoom 1.15 centred (500, 700); the stall right, sack stack centre."
+   },
+   "composition": "Man enters from the left; sack stack at x 520; stall with keeper at x 760; bread label low right, clear of faces.",
+   "actions": [
+    {
+     "t": 7.08,
+     "end": 7.7,
+     "cue": {
+      "word": "حتى",
+      "t": 7.08
+     },
+     "who": "set",
+     "action": "market street, clear palette, a seed stall right with a keeper behind the counter and four sacks waiting at the left edge",
+     "acting": "keeper counts on his fingers, blinks; gaze on the man",
+     "library": "marketStreet {palette:'clear', stalls:[{x:760, kind:'seed'}], props:[['sacks', 120]]}"
+    },
+    {
+     "t": 7.76,
+     "end": 8.7,
+     "cue": {
+      "word": "صار",
+      "t": 7.76
+     },
+     "who": "man",
+     "action": "walks in bent under a sack on his back",
+     "acting": "tip 0.18, short heavy steps, lid 0.4, mouth 'frown'; legs never slide",
+     "library": "walk(xf, t, {stride}), footfalls + dustBurst, packLoad 'sack' on the back"
+    },
+    {
+     "t": 8.72,
+     "end": 9.4,
+     "cue": {
+      "word": "أعمالًا",
+      "t": 8.72
+     },
+     "who": "man",
+     "action": "drops the sack on the stack (counter 1) and wipes his forehead with the back of a hand",
+     "acting": "landSquash on the sack, one sweat drop, long blink",
+     "library": "landSquash, handR to brow, S.counter"
+    },
+    {
+     "t": 9.46,
+     "end": 10.6,
+     "cue": {
+      "word": "شاقة",
+      "t": 9.46
+     },
+     "who": "man",
+     "action": "lifts a second, bigger sack: crouch, strain, wobble, up; stacks it (counter 2), then a third (counter 3)",
+     "acting": "anticipate crouch sq 0.9, tremble on the lift, brow 0.6, knees shake",
+     "library": "anticipate, tremble, settleTo"
+    },
+    {
+     "t": 10.73,
+     "end": 11.6,
+     "cue": {
+      "word": "ليحصل",
+      "t": 10.73
+     },
+     "who": "keeper",
+     "action": "leans over the counter and drops one small coin into the man's open palm",
+     "acting": "keeper looks at the coin, not at him; man watches the single coin land",
+     "library": "PERSON_HANDS.reach, lookAt"
+    },
+    {
+     "t": 11.72,
+     "end": 12.3,
+     "cue": {
+      "word": "طعام",
+      "t": 11.72
+     },
+     "who": "bread",
+     "action": "the coin pops into one small flat loaf in his hand; arrow label ONE LOAF",
+     "acting": "he looks at it a long moment, wet eyes, then a small brave smile",
+     "library": "wet:true, S.arrow/label"
+    },
+    {
+     "t": 12.36,
+     "end": 13.1,
+     "cue": {
+      "word": "يومه.",
+      "t": 12.36
+     },
+     "who": "man",
+     "action": "sits on a crate and takes a bite as the sky warms toward dusk",
+     "acting": "sit 0..0.6 eased, chews, shoulders low, gaze down",
+     "library": "person sit, townProp 'crate', marketStreet {u}"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 13.1
+   }
+  },
+  {
+   "id": "S3",
+   "start": 13.1,
+   "end": 23.87,
+   "paragraphs": [
+    1
+   ],
+   "set": "courtyard",
+   "cast": [
+    "man",
+    "dreamVoice"
+   ],
+   "summary": "Night. He sleeps, worried, on a mat right beside the fountain; a figure in a dream cloud points to Cairo.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Zoom 1.1 centred (500, 660) until 16.7; then ease to zoom 1.35 centred (540, 500) so the cloud fills the top of the panel while his sleeping face stays in the lower left."
+   },
+   "composition": "Mat at x 250..520 on the paving, his head left; fountain at x 480 directly behind him (dramatic irony); thought cloud centre (580, 360), 600 x 400.",
+   "actions": [
+    {
+     "t": 13.2,
+     "end": 13.9,
+     "cue": {
+      "word": "وفي",
+      "t": 13.29
+     },
+     "who": "set",
+     "action": "the ruined courtyard at night (u 0.72): moon over the wall, stars, the fountain only dripping",
+     "acting": "one drip every 1.1 s with a ring in the basin",
+     "library": "courtyardHouse {wealth:0, u:0.72}, ripple"
+    },
+    {
+     "t": 13.96,
+     "end": 14.5,
+     "cue": {
+      "word": "ليلة",
+      "t": 13.96
+     },
+     "who": "man",
+     "action": "shuffles in from the door with slow steps and unrolls a mat",
+     "acting": "tip 0.12, lid 0.5, gaze on the ground",
+     "library": "walk, footfalls"
+    },
+    {
+     "t": 14.56,
+     "end": 15.3,
+     "cue": {
+      "word": "نام",
+      "t": 14.56
+     },
+     "who": "man",
+     "action": "lies down on the mat beside the fountain and shuts his eyes",
+     "acting": "lie 0..1 eased over 0.6 s, lid to 1, a sigh (breathe amplitude doubled once)",
+     "library": "person {lie, lid}, breathe"
+    },
+    {
+     "t": 15.32,
+     "end": 16.6,
+     "cue": {
+      "word": "مهمومًا،",
+      "t": 15.32
+     },
+     "who": "man",
+     "action": "worried even in sleep: brow knotted, turns his head once; a small scribble knot floats over him and fades; ZZZ",
+     "acting": "brow -0.6, mouth 'frown', slow breathing",
+     "library": "breathe, S.emphasis"
+    },
+    {
+     "t": 16.69,
+     "end": 17.9,
+     "cue": {
+      "word": "ورأى",
+      "t": 16.69
+     },
+     "who": "fx",
+     "action": "the dream cloud opens above him (three bubbles first, then the cloud), blue dream wash inside",
+     "acting": "his frown eases a little as it opens",
+     "library": "thoughtCloud(ctx, 580, 360, 600, 400, t, {p, tail, inside, scale:0.5}), dream wash (planned)"
+    },
+    {
+     "t": 17.98,
+     "end": 18.6,
+     "cue": {
+      "word": "شخصًا",
+      "t": 17.98
+     },
+     "who": "dreamVoice",
+     "action": "a pale robed figure gathers from mist inside the cloud",
+     "acting": "calm, eyes half closed, no walking: it forms in place",
+     "library": "ghostForm (planned) over person {costume:'ascetic'}"
+    },
+    {
+     "t": 18.68,
+     "end": 20.0,
+     "cue": {
+      "word": "يقول",
+      "t": 18.68
+     },
+     "who": "dreamVoice",
+     "action": "speaks and raises one arm to point off to the right",
+     "acting": "talk on syllables, gaze toward the sleeper then along its arm",
+     "library": "person {talk, aR}, PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 20.08,
+     "end": 20.7,
+     "cue": {
+      "word": "رزقه",
+      "t": 20.08
+     },
+     "who": "coinPile",
+     "action": "a coin mound with a glow appears at the right of the cloud",
+     "acting": "sleeper's mouth turns to a small smile",
+     "library": "coinPile (planned), goldGlow 0.7 (planned)"
+    },
+    {
+     "t": 20.78,
+     "end": 21.9,
+     "cue": {
+      "word": "ينتظره",
+      "t": 20.78
+     },
+     "who": "fx",
+     "action": "a dotted path draws from a tiny house icon at the left of the cloud to the coin mound",
+     "acting": "the figure's arm follows the path",
+     "library": "S.arrow (dotted, progress 0..1)"
+    },
+    {
+     "t": 22.02,
+     "end": 22.8,
+     "cue": {
+      "word": "القاهرة.",
+      "t": 22.02
+     },
+     "who": "set",
+     "action": "a skyline rises behind the coin mound inside the cloud: two minarets, a dome and two small pyramids, with the ribbon CAIRO",
+     "acting": "camera reaches its closest framing",
+     "library": "townFarCity silhouette + S.label"
+    },
+    {
+     "t": 23.1,
+     "end": 23.8,
+     "who": "man",
+     "action": "in the pause the cloud pops and his eyes snap open, staring up",
+     "acting": "lid 1 to 0 in 2 frames, gaze [0, -0.6], no blink for 0.6 s",
+     "library": "settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 15.9,
+     "text": "ZZZ"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 23.3,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 23.87
+   }
+  },
+  {
+   "id": "S4",
+   "start": 23.87,
+   "end": 28.76,
+   "paragraphs": [
+    2
+   ],
+   "set": "courtyard",
+   "cast": [
+    "man"
+   ],
+   "summary": "Dawn. He thinks the dream over and decides to go.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Zoom 1.3 centred (430, 680); push to 1.6 on the decision at 27.5; the dripping fountain stays in the right of frame."
+   },
+   "composition": "Man at x 330..420; small replay cloud up right at (700, 380); fountain visible behind him at all times.",
+   "actions": [
+    {
+     "t": 23.87,
+     "end": 24.5,
+     "cue": {
+      "word": "ظل",
+      "t": 23.87
+     },
+     "who": "man",
+     "action": "sits up on the mat as the sky turns from night to dawn",
+     "acting": "lie 1 to sit floor, rubs one eye, gaze far right",
+     "library": "person {lie, sit, seat:'floor'}, courtyardHouse {u: 0.72..1}"
+    },
+    {
+     "t": 25.1,
+     "end": 26.0,
+     "cue": {
+      "word": "يفكر",
+      "t": 25.1
+     },
+     "who": "man",
+     "action": "hand to chin, eyes darting; a small cloud replays the coin mound and CAIRO",
+     "acting": "saccades between cloud and ground, brow -0.3",
+     "library": "PERSON_HANDS.chin, gazePlan(t, plan, 0.07), thoughtCloud small"
+    },
+    {
+     "t": 26.06,
+     "end": 27.4,
+     "cue": {
+      "word": "الحلم",
+      "t": 26.06
+     },
+     "who": "man",
+     "action": "stands, paces three steps away and three back, glancing at the cracked wall",
+     "acting": "weight shifts, head turns lead each turn; the fountain drips beside him unnoticed",
+     "library": "walk, footfalls, lookAt"
+    },
+    {
+     "t": 27.5,
+     "end": 28.1,
+     "cue": {
+      "word": "قرر",
+      "t": 27.5
+     },
+     "who": "man",
+     "action": "stops dead, fist to chest, then one finger up: decided",
+     "acting": "anticipation dip, brow 0.4, mouth set, sq 1.04; cloud pops",
+     "library": "anticipate, PERSON_HANDS.chest then pointUp"
+    },
+    {
+     "t": 28.16,
+     "end": 28.76,
+     "cue": {
+      "word": "السفر.",
+      "t": 28.16
+     },
+     "who": "bindle",
+     "action": "swings a bundle on a stick to his shoulder and strides to the door",
+     "acting": "bundle lags the swing by 2 frames (follow-through); he does not look back at the fountain",
+     "library": "packLoad 'bindle' on a stick, swing, walk"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 28.76
+   }
+  },
+  {
+   "id": "S5",
+   "start": 28.76,
+   "end": 37.1,
+   "paragraphs": [
+    2
+   ],
+   "set": "desert",
+   "cast": [
+    "man"
+   ],
+   "summary": "The long road from Baghdad to Egypt; he reaches the gate of Cairo at evening, worn out and hungry.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Camera tracks with him along the 2400 strip (camX 0 to 1400), zoom 1.0; the sky runs from morning to dusk; settle on the gate at 33.3."
+   },
+   "composition": "Man walks left to right at screen x about 400; map card top right (x 600..940, y 110..310); gate at the strip's right end.",
+   "actions": [
+    {
+     "t": 28.76,
+     "end": 29.8,
+     "cue": {
+      "word": "قطع",
+      "t": 28.76
+     },
+     "who": "man",
+     "action": "walks out along the sand road, bundle on his shoulder, Baghdad's skyline small behind him",
+     "acting": "brisk at first: tip 0.05, amp full, gaze ahead",
+     "library": "desertRoad {w:2400, city:'left', camX}, walk(xf, t, {stride}), footfalls"
+    },
+    {
+     "t": 29.92,
+     "end": 30.5,
+     "cue": {
+      "word": "الطريق",
+      "t": 29.92
+     },
+     "who": "mapCard",
+     "action": "a map card pops in the top right: house icon BAGHDAD, a dotted road that grows with his progress, city icon CAIRO",
+     "acting": "card pops with overshoot",
+     "library": "mapCard (planned AN-088)"
+    },
+    {
+     "t": 30.56,
+     "end": 31.4,
+     "cue": {
+      "word": "الطويل",
+      "t": 30.56
+     },
+     "who": "set",
+     "action": "milestones slide past (counter 1, 2, 3); the sun crosses the sky; his steps shorten",
+     "acting": "tip grows 0.05 to 0.16, lid 0.3, the bundle sags",
+     "library": "skyCycle u 0.1..0.5, S.counter"
+    },
+    {
+     "t": 31.52,
+     "end": 32.1,
+     "cue": {
+      "word": "مصر،",
+      "t": 31.52
+     },
+     "who": "set",
+     "action": "palms appear and two small pyramids rise on the far dune line",
+     "acting": "he lifts his head a little",
+     "library": "desertRoad palms, palmTree"
+    },
+    {
+     "t": 32.14,
+     "end": 33.2,
+     "cue": {
+      "word": "ووصل",
+      "t": 32.14
+     },
+     "who": "set",
+     "action": "the city wall and gate slide in from the right",
+     "acting": "he sees it: brow lifts, two quicker steps",
+     "library": "desertRoad {city:'right'} composed at the strip end"
+    },
+    {
+     "t": 33.26,
+     "end": 34.4,
+     "cue": {
+      "word": "القاهرة",
+      "t": 33.26
+     },
+     "who": "fx",
+     "action": "arrow label CAIRO points at the gate; the map's dotted road reaches the city icon",
+     "acting": "label pops on the word",
+     "library": "S.arrow/label"
+    },
+    {
+     "t": 34.48,
+     "end": 35.1,
+     "cue": {
+      "word": "المساء",
+      "t": 34.48
+     },
+     "who": "set",
+     "action": "dusk: sky to u 0.55, a lamp glows in the gate arch; the map card fades",
+     "acting": "long shadows",
+     "library": "skyCycle, hangingLamp {lit}"
+    },
+    {
+     "t": 35.16,
+     "end": 36.1,
+     "cue": {
+      "word": "متعبًا",
+      "t": 35.16
+     },
+     "who": "man",
+     "action": "stops at the gate, leans on his stick, knees wobble",
+     "acting": "lid 0.55, tip 0.2, tremble small, one sweat drop, slow blink",
+     "library": "tremble, settleTo"
+    },
+    {
+     "t": 36.16,
+     "end": 37.1,
+     "cue": {
+      "word": "وجائعًا.",
+      "t": 36.16
+     },
+     "who": "man",
+     "action": "one hand to his belly; squiggle lines at the stomach; looks at his empty palm",
+     "acting": "mouth 'frown', wet eyes, gaze down",
+     "library": "PERSON_HANDS.chest lowered to the belly, S.emphasis"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 37.1
+   }
+  },
+  {
+   "id": "S6",
+   "start": 37.1,
+   "end": 44.92,
+   "paragraphs": [
+    2
+   ],
+   "set": "mosque",
+   "cast": [
+    "man"
+   ],
+   "summary": "He knows nobody in Cairo, so he goes into a mosque and sleeps there.",
+   "camera": {
+    "shot": "wide",
+    "move": "tilt",
+    "notes": "Zoom 1.1 centred (480, 680); at 41.1 tilt up to (480, 420) to show dome, minaret and crescent, back down by 41.9; end wide enough to include the boundary wall at x 1000."
+   },
+   "composition": "Man enters under the left arch; mat at x 330..610 by the middle pillar; hanging lamp at (500, 470); wall and neighbouring house off right for the next scene.",
+   "actions": [
+    {
+     "t": 37.12,
+     "end": 37.9,
+     "cue": {
+      "word": "لم",
+      "t": 37.12
+     },
+     "who": "man",
+     "action": "stands in the street before the mosque, looking left, right, left at shut doors and dark windows",
+     "acting": "saccades, shoulders up",
+     "library": "gazePlan(t, plan, 0.07), townWindow dark"
+    },
+    {
+     "t": 38.5,
+     "end": 39.5,
+     "cue": {
+      "word": "أحدًا",
+      "t": 38.5
+     },
+     "who": "man",
+     "action": "shrugs with both palms up",
+     "acting": "brow -0.5, head tilt, sigh",
+     "library": "PERSON_HANDS.palmsUp, breathe"
+    },
+    {
+     "t": 40.28,
+     "end": 41.0,
+     "cue": {
+      "word": "فدخل",
+      "t": 40.28
+     },
+     "who": "man",
+     "action": "walks under the arch into the mosque court, steps slowing on the mats",
+     "acting": "quiet careful steps, head a little bowed",
+     "library": "walk, footfalls (no dust)"
+    },
+    {
+     "t": 41.14,
+     "end": 41.8,
+     "cue": {
+      "word": "مسجدًا",
+      "t": 41.14
+     },
+     "who": "camera",
+     "action": "tilts up the arcade to the dome, the minaret and a crescent moon, then back down",
+     "acting": "stillness",
+     "library": "CAM keys in pairs"
+    },
+    {
+     "t": 41.86,
+     "end": 42.5,
+     "cue": {
+      "word": "ونام",
+      "t": 41.86
+     },
+     "who": "man",
+     "action": "lies down on the prayer mat, bundle under his head, eyes shut at once",
+     "acting": "lie 0..1, lid 1, whole body sags on the out-breath",
+     "library": "person {lie, lid}, breathe"
+    },
+    {
+     "t": 43.2,
+     "end": 44.2,
+     "cue": {
+      "word": "حتى",
+      "t": 43.2
+     },
+     "who": "set",
+     "action": "the hanging lamp sinks to a low glow; ZZZ floats up; the court goes navy",
+     "acting": "slow breathing only",
+     "library": "hangingLamp {lit: 1..0.3}, mosqueCourt {dark}"
+    },
+    {
+     "t": 44.24,
+     "end": 44.92,
+     "cue": {
+      "word": "النهار.",
+      "t": 44.24
+     },
+     "who": "camera",
+     "action": "eases right to bring the boundary wall and the neighbour's dark house into frame",
+     "acting": "sets up the thieves' route",
+     "library": "CAM"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 43.4,
+     "text": "ZZZ"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 44.92
+   }
+  },
+  {
+   "id": "S7",
+   "start": 44.92,
+   "end": 57.3,
+   "paragraphs": [
+    3
+   ],
+   "set": "mosque",
+   "cast": [
+    "man",
+    "thief1",
+    "thief2",
+    "householder"
+   ],
+   "summary": "Thieves tiptoe through the mosque past the sleeper, climb into the house next door, and the household shouts for help.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Zoom 1.05; pan right with the thieves from camX 0 to 520 between 49.9 and 51.5; hold on the wall and the lit window."
+   },
+   "composition": "Sleeper stays in the lower left third; thieves cross above/behind his mat line at y 880; wall at x 1000..1040 top y 640; window at (1250, 560).",
+   "actions": [
+    {
+     "t": 44.92,
+     "end": 46.8,
+     "cue": {
+      "word": "في",
+      "t": 44.92
+     },
+     "who": "set",
+     "action": "nothing moves but his breathing and one star twinkle",
+     "acting": "suspense by stillness",
+     "library": "breathe"
+    },
+    {
+     "t": 46.94,
+     "end": 47.7,
+     "cue": {
+      "word": "الليلة",
+      "t": 46.94
+     },
+     "who": "thief1",
+     "action": "a masked head rises round the left arch pillar, eyes sweep the court",
+     "acting": "only the pupils move, then a nod back",
+     "library": "person {kind:'thief'}, gazePlan"
+    },
+    {
+     "t": 47.8,
+     "end": 48.4,
+     "cue": {
+      "word": "دخل",
+      "t": 47.8
+     },
+     "who": "thief1",
+     "action": "tiptoes in, finger to lips; thief2 follows four frames behind, carrying an empty sack",
+     "acting": "knees high, short stride, tip -0.06; never in unison",
+     "library": "walk short stride, stagger, PERSON_HANDS.hush"
+    },
+    {
+     "t": 48.44,
+     "end": 49.8,
+     "cue": {
+      "word": "لصوص",
+      "t": 48.44
+     },
+     "who": "thief2",
+     "action": "almost steps on the sleeper's foot, freezes on one leg, wobbles; the man snorts and rolls over; both thieves look at the camera",
+     "acting": "held wobble, gaze [0, 0.05] for 0.4 s, gulp",
+     "library": "tremble, swing, lookAt"
+    },
+    {
+     "t": 49.88,
+     "end": 51.0,
+     "cue": {
+      "word": "المسجد",
+      "t": 49.88
+     },
+     "who": "thief1",
+     "action": "they slip past the mat to the boundary wall",
+     "acting": "backs bent, eyes on the wall top",
+     "library": "walk, lookAt"
+    },
+    {
+     "t": 51.1,
+     "end": 51.45,
+     "cue": {
+      "word": "بيت",
+      "t": 51.1
+     },
+     "who": "thief2",
+     "action": "gets a leg up from thief1 and goes over the wall",
+     "acting": "crouch, stretch, arc",
+     "library": "anticipate, hop"
+    },
+    {
+     "t": 51.5,
+     "end": 52.1,
+     "cue": {
+      "word": "قريب.",
+      "t": 51.5
+     },
+     "who": "thief1",
+     "action": "jumps, hauls himself over and drops into the neighbour's yard",
+     "acting": "landing squash, small dust",
+     "library": "hop, landSquash, dustBurst"
+    },
+    {
+     "t": 52.14,
+     "end": 53.6,
+     "cue": {
+      "word": "سمع",
+      "t": 52.14
+     },
+     "who": "set",
+     "action": "inside the dark house a pot tips: the window flashes and lights up",
+     "acting": "thieves freeze inside as silhouettes in the doorway",
+     "library": "townWindow {lit}"
+    },
+    {
+     "t": 54.14,
+     "end": 55.5,
+     "cue": {
+      "word": "البيت",
+      "t": 54.14
+     },
+     "who": "householder",
+     "action": "a man in a nightcap appears at the window, eyes wide, hand to ear",
+     "acting": "eyes 'wide', brow -0.8",
+     "library": "person {kind:'owner'} waist-up in townWindow, PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 55.6,
+     "end": 56.3,
+     "cue": {
+      "word": "وطلبوا",
+      "t": 55.6
+     },
+     "who": "householder",
+     "action": "cups his mouth and shouts into the street; sound arcs spread",
+     "acting": "head back, talk 1, body shakes",
+     "library": "PERSON_HANDS.cupMouth, soundArcs"
+    },
+    {
+     "t": 56.4,
+     "end": 57.3,
+     "cue": {
+      "word": "النجدة،",
+      "t": 56.4
+     },
+     "who": "set",
+     "action": "HELP! bursts beside the window; a second window lights; the sleeper only scratches his nose",
+     "acting": "thieves' eyes snap to each other",
+     "library": "S.emphasis"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 52.3,
+     "text": "CRASH!"
+    },
+    {
+     "t": 56.4,
+     "text": "HELP!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 57.3
+   }
+  },
+  {
+   "id": "S8",
+   "start": 57.3,
+   "end": 66.98,
+   "paragraphs": [
+    3
+   ],
+   "set": "mosque",
+   "cast": [
+    "man",
+    "thief1",
+    "thief2",
+    "chief",
+    "guard1",
+    "guard2"
+   ],
+   "summary": "The police chief and his men arrive; the thieves are gone before they get there; only the sleeping stranger is left.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Pull out to zoom 0.95 at camX 480 for the arrival; whip-free eased pan back left to the mat (camX 0, zoom 1.3) from 63.7."
+   },
+   "composition": "Police enter from the right edge; thieves exit over the wall and out the far left; never both groups in the same half of the frame.",
+   "actions": [
+    {
+     "t": 57.38,
+     "end": 58.0,
+     "cue": {
+      "word": "فجاء",
+      "t": 57.38
+     },
+     "who": "torch",
+     "action": "torch glow swings in from the right edge; long shadows stretch across the yard",
+     "acting": "glow flickers (seeded)",
+     "library": "goldGlow as torch light, K.noise"
+    },
+    {
+     "t": 58.12,
+     "end": 59.2,
+     "cue": {
+      "word": "رئيس",
+      "t": 58.12
+     },
+     "who": "chief",
+     "action": "the chief strides in: helmet, cape, big moustache; arrow label POLICE CHIEF",
+     "acting": "chest out, tip -0.04, heavy even steps, brow 0.5",
+     "library": "person {costume:'guard' (planned), pal red, cape}, walk, footfalls"
+    },
+    {
+     "t": 59.34,
+     "end": 60.6,
+     "cue": {
+      "word": "ورجاله.",
+      "t": 59.34
+     },
+     "who": "guard1",
+     "action": "two guards jog in behind him, one with a torch, one with a spear, out of step",
+     "acting": "guard2 half a beat late and puffing",
+     "library": "person {costume:'guard', hold:'spear'}, stagger, walk"
+    },
+    {
+     "t": 60.74,
+     "end": 61.2,
+     "cue": {
+      "word": "هرب",
+      "t": 60.74
+     },
+     "who": "thief1",
+     "action": "the thieves vault back over the wall into the mosque court",
+     "acting": "panic: eyes wide, no hush now",
+     "library": "anticipate, hop, landSquash"
+    },
+    {
+     "t": 61.28,
+     "end": 61.9,
+     "cue": {
+      "word": "اللصوص",
+      "t": 61.28
+     },
+     "who": "thief2",
+     "action": "they sprint left past the sleeper and out under the arch, the empty sack flapping",
+     "acting": "long stride, tip 0.2, dust",
+     "library": "walk long stride, dustBurst"
+    },
+    {
+     "t": 61.94,
+     "end": 62.4,
+     "cue": {
+      "word": "قبل",
+      "t": 61.94
+     },
+     "who": "guard1",
+     "action": "the guards reach the house door just as the last heel leaves frame left: a near miss",
+     "acting": "guard looks right while they go left",
+     "library": "lookAt"
+    },
+    {
+     "t": 62.48,
+     "end": 63.6,
+     "cue": {
+      "word": "وصولهم،",
+      "t": 62.48
+     },
+     "who": "chief",
+     "action": "looks around the empty yard, fists on hips; the householder points at the wall",
+     "acting": "brow 0.8, moustache twitch, slow head turn toward the mosque",
+     "library": "PERSON_HANDS.hipsHands, pointFwd"
+    },
+    {
+     "t": 63.68,
+     "end": 65.6,
+     "cue": {
+      "word": "وبقي",
+      "t": 63.68
+     },
+     "who": "camera",
+     "action": "pans back left across the wall to the mat: the man from Baghdad, still asleep",
+     "acting": "ZZZ; he smiles in his sleep",
+     "library": "CAM keys"
+    },
+    {
+     "t": 65.7,
+     "end": 66.2,
+     "cue": {
+      "word": "بغداد",
+      "t": 65.7
+     },
+     "who": "fx",
+     "action": "arrow label STILL ASLEEP points at him",
+     "acting": "pops on the word",
+     "library": "S.arrow/label"
+    },
+    {
+     "t": 66.28,
+     "end": 66.98,
+     "cue": {
+      "word": "نائمًا.",
+      "t": 66.28
+     },
+     "who": "torch",
+     "action": "the torch circle creeps onto his face and three shadows fall across the mat",
+     "acting": "his lids flutter but stay shut",
+     "library": "goldGlow as torch light"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 64.2,
+     "text": "ZZZ"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 66.98
+   }
+  },
+  {
+   "id": "S9",
+   "start": 66.98,
+   "end": 77.62,
+   "paragraphs": [
+    4
+   ],
+   "set": "mosque",
+   "cast": [
+    "man",
+    "chief",
+    "guard1",
+    "guard2"
+   ],
+   "summary": "The police take the stranger for one of the gang, seize him and beat him (hidden in a comic scuffle cloud).",
+   "camera": {
+    "shot": "medium",
+    "move": "shake",
+    "notes": "Zoom 1.5 centred (470, 720); panel-only shake on the two hit words; no camera move otherwise."
+   },
+   "composition": "Man low centre on the mat; guards left and right of him, chief behind; mistaken-belief cloud above the guards at (520, 330).",
+   "actions": [
+    {
+     "t": 66.98,
+     "end": 68.8,
+     "cue": {
+      "word": "ظن",
+      "t": 66.98
+     },
+     "who": "guard1",
+     "action": "three figures loom over the sleeper; guard1 points down at him",
+     "acting": "narrowed eyes (lid 0.4), brow 0.9",
+     "library": "PERSON_HANDS.pointDown"
+    },
+    {
+     "t": 68.86,
+     "end": 70.5,
+     "cue": {
+      "word": "رجال",
+      "t": 68.86
+     },
+     "who": "guard2",
+     "action": "the guards trade a look and nod",
+     "acting": "slow certain nods, half a beat apart",
+     "library": "lookAt, stagger"
+    },
+    {
+     "t": 70.64,
+     "end": 71.4,
+     "cue": {
+      "word": "الغريب",
+      "t": 70.64
+     },
+     "who": "fx",
+     "action": "a shared thought cloud: the sleeping stranger exactly as he lies",
+     "acting": "it is a mistaken belief, so a cloud is allowed",
+     "library": "thoughtCloud {scale:0.45}"
+    },
+    {
+     "t": 71.52,
+     "end": 72.9,
+     "cue": {
+      "word": "اللصوص،",
+      "t": 72.18
+     },
+     "who": "fx",
+     "action": "inside the cloud a striped thief cap and mask stamp onto his picture with a tick",
+     "acting": "chief nods once, satisfied",
+     "library": "person {kind:'thief'} head overlay"
+    },
+    {
+     "t": 73.04,
+     "end": 74.7,
+     "cue": {
+      "word": "فأمسكوا",
+      "t": 73.04
+     },
+     "who": "guard1",
+     "action": "the guards seize an arm each and haul him upright; his bundle drops",
+     "acting": "man: eyes snap wide, mouth 'o', feet dangling a moment",
+     "library": "person {lie 1..0}, handLW/handRW grips, settleTo"
+    },
+    {
+     "t": 74.82,
+     "end": 75.1,
+     "cue": {
+      "word": "به",
+      "t": 74.82
+     },
+     "who": "man",
+     "action": "shakes his head, palms up, looking from one face to the next",
+     "acting": "brow -1, wet eyes, saccades",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 75.16,
+     "end": 76.3,
+     "cue": {
+      "word": "وضربوه",
+      "t": 75.16
+     },
+     "who": "fx",
+     "action": "a churning scuffle cloud covers all four: sticks, a helmet and a bare foot poke out in turn",
+     "acting": "the violence stays inside the cloud",
+     "library": "fightCloud (planned)"
+    },
+    {
+     "t": 76.34,
+     "end": 76.9,
+     "cue": {
+      "word": "ضربًا",
+      "t": 76.34
+     },
+     "who": "fx",
+     "action": "WHACK! with a panel shake; stars fly out of the cloud",
+     "acting": "",
+     "library": "S.emphasis, panel-only shake"
+    },
+    {
+     "t": 76.92,
+     "end": 77.62,
+     "cue": {
+      "word": "شديدًا،",
+      "t": 76.92
+     },
+     "who": "man",
+     "action": "the cloud thins: he sits dazed on the floor, a bump on his head, stars circling, cap askew",
+     "acting": "wet eyes, lid 0.5, sways",
+     "library": "painPulse (planned), person {sit, seat:'floor'}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 74.4,
+     "text": "ME?!"
+    },
+    {
+     "t": 76.34,
+     "text": "WHACK!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 77.62
+   }
+  },
+  {
+   "id": "S10",
+   "start": 77.62,
+   "end": 81.5,
+   "paragraphs": [
+    4
+   ],
+   "set": "jail",
+   "cast": [
+    "man",
+    "guard1"
+   ],
+   "summary": "Three days in a cell.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Zoom 1.2 centred (500, 660); locked off so the day counter reads."
+   },
+   "composition": "Barred window top right showing the sky; man seated low left of centre; front bars across the whole panel; counter top left.",
+   "actions": [
+    {
+     "t": 77.62,
+     "end": 78.3,
+     "cue": {
+      "word": "ثم",
+      "t": 77.62
+     },
+     "who": "set",
+     "action": "cut to a bare cell: dark blue wall, one small barred window",
+     "acting": "",
+     "library": "jailCell (new), townWindow {bars:true}"
+    },
+    {
+     "t": 78.38,
+     "end": 79.2,
+     "cue": {
+      "word": "وضعوه",
+      "t": 78.38
+     },
+     "who": "guard1",
+     "action": "shoves him in from the left; he stumbles two steps and drops to his knees",
+     "acting": "landing squash, cap falls over one eye",
+     "library": "landSquash, person {kneel}"
+    },
+    {
+     "t": 79.32,
+     "end": 79.8,
+     "cue": {
+      "word": "السجن",
+      "t": 79.32
+     },
+     "who": "bars",
+     "action": "the front bars slide across and stop with a jolt; CLANG!",
+     "acting": "he flinches (sq 0.92)",
+     "library": "new prop bars, panel-only shake"
+    },
+    {
+     "t": 79.88,
+     "end": 80.7,
+     "cue": {
+      "word": "ثلاثة",
+      "t": 79.88
+     },
+     "who": "set",
+     "action": "the window sky runs day, night, day, night, day; counter DAY 1, DAY 2",
+     "acting": "he sinks from kneeling to sitting, head lower each day",
+     "library": "skyCycle u 0..2.5 in the window, S.counter"
+    },
+    {
+     "t": 80.82,
+     "end": 81.5,
+     "cue": {
+      "word": "أيام.",
+      "t": 80.82
+     },
+     "who": "set",
+     "action": "counter DAY 3; three tally scratches on the wall; a crust and a jug by his knee",
+     "acting": "wet eyes, one slow blink, gaze at the window",
+     "library": "S.counter"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 79.4,
+     "text": "CLANG!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 81.5,
+    "label": "THREE DAYS LATER..."
+   }
+  },
+  {
+   "id": "S11",
+   "start": 81.5,
+   "end": 89.52,
+   "paragraphs": [
+    4
+   ],
+   "set": "office",
+   "cast": [
+    "man",
+    "chief",
+    "guard1"
+   ],
+   "summary": "The chief sends for him and asks where he is from and why he came.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Camera cut hidden under the LATER card at its midpoint (about 82.05); twoShot(man, chief) at zoom 1.25, pushing to 1.45 by 88.3."
+   },
+   "composition": "Chief seated on a bench on the dais at x 660; man standing at x 340 facing right; guard at the door x 130; question balloon above and between them, over neither face.",
+   "actions": [
+    {
+     "t": 81.5,
+     "end": 82.6,
+     "cue": {
+      "word": "وبعد",
+      "t": 81.5
+     },
+     "who": "fx",
+     "action": "transition card THREE DAYS LATER... covers the cut from the cell to the chief's hall",
+     "acting": "",
+     "library": "S.transition {caption}"
+    },
+    {
+     "t": 83.26,
+     "end": 84.2,
+     "cue": {
+      "word": "استدعاه",
+      "t": 83.26
+     },
+     "who": "guard1",
+     "action": "leads the man in from the door; he shuffles, head low, bump still showing",
+     "acting": "man: tip 0.14, gaze on the floor; guard bored",
+     "library": "palaceHall {variant:'palace', wall:'ochre', throne:false}, walk, footfalls"
+    },
+    {
+     "t": 84.3,
+     "end": 85.6,
+     "cue": {
+      "word": "رئيس",
+      "t": 84.3
+     },
+     "who": "chief",
+     "action": "seated wide on his bench, stroking his moustache, looks the stranger up and down",
+     "acting": "lid 0.35, slow gaze from feet to face",
+     "library": "person {sit:1, seat:'bench'}, PERSON_HANDS.moustache, gazePlan"
+    },
+    {
+     "t": 85.68,
+     "end": 86.6,
+     "cue": {
+      "word": "وسأله",
+      "t": 85.68
+     },
+     "who": "chief",
+     "action": "leans forward and points at him; a question balloon pops",
+     "acting": "tip 0.08, talk, brow 0.5",
+     "library": "PERSON_HANDS.pointFwd, S.box balloon"
+    },
+    {
+     "t": 86.72,
+     "end": 87.4,
+     "cue": {
+      "word": "بلده",
+      "t": 86.72
+     },
+     "who": "fx",
+     "action": "balloon icon 1: a small house and a question mark",
+     "acting": "man lifts his head",
+     "library": "S.box + icon"
+    },
+    {
+     "t": 87.46,
+     "end": 88.2,
+     "cue": {
+      "word": "وسبب",
+      "t": 87.46
+     },
+     "who": "fx",
+     "action": "balloon icon 2: footprints and a question mark",
+     "acting": "",
+     "library": "S.box + icon"
+    },
+    {
+     "t": 88.3,
+     "end": 89.52,
+     "cue": {
+      "word": "قدومه.",
+      "t": 88.3
+     },
+     "who": "man",
+     "action": "swallows, blinks twice, opens his mouth to answer",
+     "acting": "gulp (drop pulse), gaze up to the chief for the first time",
+     "library": "lookAt, blink"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 89.52
+   }
+  },
+  {
+   "id": "S12",
+   "start": 89.52,
+   "end": 101.36,
+   "paragraphs": [
+    5
+   ],
+   "set": "office",
+   "cast": [
+    "man",
+    "chief",
+    "guard1"
+   ],
+   "summary": "He tells the truth: he is from Baghdad and came because a dream promised him wealth in Cairo.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "Hold the two-shot at zoom 1.4, drifting 30 units left toward the man; his story cloud occupies the top left."
+   },
+   "composition": "Story cloud centre (360, 330), 520 x 340; chief's face stays in frame at the right so his reaction builds.",
+   "actions": [
+    {
+     "t": 89.52,
+     "end": 90.9,
+     "cue": {
+      "word": "أخبره",
+      "t": 89.52
+     },
+     "who": "man",
+     "action": "speaks, one hand on his chest",
+     "acting": "talk on syllables, earnest brow -0.4, gaze on the chief",
+     "library": "PERSON_HANDS.chest, lookAt"
+    },
+    {
+     "t": 92.54,
+     "end": 93.5,
+     "cue": {
+      "word": "بغداد،",
+      "t": 92.54
+     },
+     "who": "man",
+     "action": "thumbs back over his shoulder; a story cloud pops with the Baghdad skyline and ribbon BAGHDAD",
+     "acting": "chief listens, chin on fist",
+     "library": "thoughtCloud, townFarCity, PERSON_HANDS.chin"
+    },
+    {
+     "t": 94.78,
+     "end": 96.1,
+     "cue": {
+      "word": "جاء",
+      "t": 94.78
+     },
+     "who": "fx",
+     "action": "in the cloud a dotted road runs from Baghdad across the cloud",
+     "acting": "man walks two fingers along the air",
+     "library": "S.arrow dotted"
+    },
+    {
+     "t": 96.26,
+     "end": 97.7,
+     "cue": {
+      "word": "سمع",
+      "t": 96.26
+     },
+     "who": "fx",
+     "action": "the cloud shows him asleep with the pale figure above him",
+     "acting": "man shuts his eyes a moment and tilts his head on joined hands",
+     "library": "ghostForm small, PERSON_HANDS.clasp at the cheek"
+    },
+    {
+     "t": 98.3,
+     "end": 99.7,
+     "cue": {
+      "word": "ثروته",
+      "t": 98.3
+     },
+     "who": "coinPile",
+     "action": "a glowing coin mound appears in the cloud; his eyes shine",
+     "acting": "hopeful smile, both hands reach toward it, sq 1.04",
+     "library": "goldGlow, PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 100.04,
+     "end": 100.5,
+     "cue": {
+      "word": "القاهرة.",
+      "t": 100.04
+     },
+     "who": "man",
+     "action": "points straight down at the floor: here, in Cairo; CAIRO ribbon in the cloud",
+     "acting": "eager nod",
+     "library": "PERSON_HANDS.pointDown"
+    },
+    {
+     "t": 100.6,
+     "end": 101.36,
+     "cue": {
+      "word": "القاهرة.",
+      "t": 100.04
+     },
+     "who": "chief",
+     "action": "the chief's moustache trembles, cheeks puff, shoulders start to bob",
+     "acting": "stifled laugh: mouth pressed, lid squeezing, tremble",
+     "library": "tremble, anticipate"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 101.36
+   }
+  },
+  {
+   "id": "S13",
+   "start": 101.36,
+   "end": 111.74,
+   "paragraphs": [
+    5
+   ],
+   "set": "office",
+   "cast": [
+    "man",
+    "chief",
+    "guard1"
+   ],
+   "summary": "The chief roars with laughter and tells him dreams are not worth leaving home for.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Shift the two-shot right to favour the chief (zoom 1.5), keep the man's face in the left third; slow push on the chief to 1.7 by 110.8."
+   },
+   "composition": "HA HA HA! above and right of the chief, never over a face; lecture balloon above centre.",
+   "actions": [
+    {
+     "t": 101.36,
+     "end": 102.3,
+     "cue": {
+      "word": "ضحك",
+      "t": 101.36
+     },
+     "who": "chief",
+     "action": "throws his head back and laughs; HA HA HA!",
+     "acting": "talk wide, body bounces at 4 per second (sq 0.94..1.04), eyes shut",
+     "library": "S.emphasis, settleTo"
+    },
+    {
+     "t": 102.38,
+     "end": 103.2,
+     "cue": {
+      "word": "الشرطة",
+      "t": 102.38
+     },
+     "who": "guard1",
+     "action": "the guard at the door joins in a beat late, then chokes it off when the chief glances over",
+     "acting": "stagger, hand over mouth",
+     "library": "stagger, PERSON_HANDS.mouthCover"
+    },
+    {
+     "t": 103.26,
+     "end": 104.1,
+     "cue": {
+      "word": "كلامه",
+      "t": 103.26
+     },
+     "who": "man",
+     "action": "his story cloud sags and pops; shoulders sink, cheeks colour",
+     "acting": "gaze down, lid 0.5, tip 0.1",
+     "library": "flush (planned)"
+    },
+    {
+     "t": 104.16,
+     "end": 105.4,
+     "cue": {
+      "word": "وقال",
+      "t": 104.16
+     },
+     "who": "chief",
+     "action": "wipes a tear with a knuckle and wags a finger",
+     "acting": "smile, lid 0.4, finger ticks left-right 3 times",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 105.54,
+     "end": 106.1,
+     "cue": {
+      "word": "الأحلام",
+      "t": 105.54
+     },
+     "who": "chief",
+     "action": "puffs a tiny dream cloud off his open palm",
+     "acting": "amused, eyes on the puff",
+     "library": "PERSON_HANDS.palmsUp, thoughtCloud tiny"
+    },
+    {
+     "t": 106.16,
+     "end": 107.3,
+     "cue": {
+      "word": "لا",
+      "t": 106.16
+     },
+     "who": "chief",
+     "action": "pops it with one fingertip; POP!",
+     "acting": "one eyebrow up",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 107.74,
+     "end": 108.8,
+     "cue": {
+      "word": "يترك",
+      "t": 107.74
+     },
+     "who": "fx",
+     "action": "lecture balloon: a little house with a little man walking away from it",
+     "acting": "man glances up at it",
+     "library": "S.box + icons"
+    },
+    {
+     "t": 108.92,
+     "end": 109.5,
+     "cue": {
+      "word": "بيته",
+      "t": 108.92
+     },
+     "who": "fx",
+     "action": "a red X strikes the walking man; the house gets a tick",
+     "acting": "chief nods at his own wisdom",
+     "library": "S.box"
+    },
+    {
+     "t": 109.56,
+     "end": 110.7,
+     "cue": {
+      "word": "ويسافر",
+      "t": 109.56
+     },
+     "who": "chief",
+     "action": "walks two fingers through the air, then shakes his head slowly",
+     "acting": "mock pity, mouth corners down",
+     "library": "handR keyed"
+    },
+    {
+     "t": 110.82,
+     "end": 111.74,
+     "cue": {
+      "word": "بسببها.",
+      "t": 110.82
+     },
+     "who": "chief",
+     "action": "folds his arms and leans back, pleased with himself",
+     "acting": "lid 0.5 smug, small after-chuckle bounce",
+     "library": "PERSON_HANDS.folded"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 101.5,
+     "text": "HA HA HA!"
+    },
+    {
+     "t": 106.2,
+     "text": "POP!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 111.74
+   }
+  },
+  {
+   "id": "S14",
+   "start": 111.74,
+   "end": 127.46,
+   "paragraphs": [
+    6
+   ],
+   "set": "office",
+   "cast": [
+    "man",
+    "chief"
+   ],
+   "summary": "The chief tells his own recurring dream; it builds piece by piece in a big cloud: a Baghdad house, courtyard, garden, fountain, money buried under the fountain.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "tilt",
+    "notes": "Zoom 1.15 centred (500, 560) so the big cloud has the upper half; inside the cloud its own view tilts down under the fountain at 124.4."
+   },
+   "composition": "Cloud centre (520, 320), 700 x 420, tail to the chief; both heads below it at y about 660; the dream house is drawn with the SAME layout as S1 (door left, three arches, garden right, fountain centre).",
+   "actions": [
+    {
+     "t": 111.74,
+     "end": 113.4,
+     "cue": {
+      "word": "ثم",
+      "t": 111.74
+     },
+     "who": "chief",
+     "action": "raises one finger: listen; leans toward the man",
+     "acting": "conspiratorial, brow -0.3, glance left and right",
+     "library": "PERSON_HANDS.pointUp, tip 0.1"
+    },
+    {
+     "t": 113.82,
+     "end": 115.2,
+     "cue": {
+      "word": "الرئيس",
+      "t": 113.82
+     },
+     "who": "chief",
+     "action": "taps his own chest twice",
+     "acting": "proud, eyes half shut",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 115.26,
+     "end": 116.6,
+     "cue": {
+      "word": "رأى",
+      "t": 115.26
+     },
+     "who": "fx",
+     "action": "a big dream cloud opens over the chief, empty blue with dream wash",
+     "acting": "man looks up dully, lid 0.45, still hurt",
+     "library": "thoughtCloud(ctx, 520, 320, 700, 420, t, {scale:0.55}), dream wash"
+    },
+    {
+     "t": 116.7,
+     "end": 117.4,
+     "cue": {
+      "word": "حلمًا",
+      "t": 116.7
+     },
+     "who": "chief",
+     "action": "shuts his eyes and tilts his head as if asleep, still talking",
+     "acting": "lid 1, talk small",
+     "library": "person {lid, talk}"
+    },
+    {
+     "t": 117.46,
+     "end": 118.6,
+     "cue": {
+      "word": "يتكرر",
+      "t": 117.46
+     },
+     "who": "fx",
+     "action": "the cloud flashes its outline three times with a counter x1, x2, x3: the dream keeps coming back",
+     "acting": "",
+     "library": "S.counter"
+    },
+    {
+     "t": 118.74,
+     "end": 119.4,
+     "cue": {
+      "word": "بيت",
+      "t": 118.74
+     },
+     "who": "set",
+     "action": "in the cloud a house wall with a door draws itself",
+     "acting": "build 0..1 of the wall",
+     "library": "courtyardHouse {part builds} drawn through thoughtCloud inside"
+    },
+    {
+     "t": 119.5,
+     "end": 120.2,
+     "cue": {
+      "word": "بغداد،",
+      "t": 119.5
+     },
+     "who": "fx",
+     "action": "ribbon BAGHDAD pops in the cloud's top left",
+     "acting": "man's eyes flick to the word and away",
+     "library": "S.label"
+    },
+    {
+     "t": 121.24,
+     "end": 121.8,
+     "cue": {
+      "word": "فناء",
+      "t": 121.24
+     },
+     "who": "set",
+     "action": "the courtyard paving and three arches appear",
+     "acting": "",
+     "library": "courtyardHouse build"
+    },
+    {
+     "t": 121.9,
+     "end": 122.9,
+     "cue": {
+      "word": "وحديقة",
+      "t": 121.9
+     },
+     "who": "set",
+     "action": "the garden pops up at the right: two trees, bushes, flowers",
+     "acting": "each plant with overshoot, staggered",
+     "library": "settleTo, stagger"
+    },
+    {
+     "t": 123.0,
+     "end": 124.3,
+     "cue": {
+      "word": "ونافورة،",
+      "t": 123.0
+     },
+     "who": "fountain",
+     "action": "the fountain pops into the centre and its jet starts",
+     "acting": "man's head lifts a little and stops: the first flicker (lid 0.45 to 0.15)",
+     "library": "fountain (new prop)"
+    },
+    {
+     "t": 124.36,
+     "end": 125.1,
+     "cue": {
+      "word": "وتحت",
+      "t": 124.36
+     },
+     "who": "fx",
+     "action": "the cloud's view tilts down; the ground under the basin opens as a cutaway; an arrow points down",
+     "acting": "chief points down with a heavy finger",
+     "library": "courtyardHouse {cutaway}, S.arrow, PERSON_HANDS.pointDown"
+    },
+    {
+     "t": 125.14,
+     "end": 126.0,
+     "cue": {
+      "word": "النافورة",
+      "t": 125.14
+     },
+     "who": "fountain",
+     "action": "the arrow traces from the basin down through the soil",
+     "acting": "",
+     "library": "S.arrow progress"
+    },
+    {
+     "t": 126.12,
+     "end": 126.6,
+     "cue": {
+      "word": "مال",
+      "t": 126.12
+     },
+     "who": "chest",
+     "action": "a chest of coins glows in the soil under the fountain",
+     "acting": "man's pupils shrink; he stops breathing",
+     "library": "treasureHoard chest (planned), goldGlow 0.6"
+    },
+    {
+     "t": 126.66,
+     "end": 127.46,
+     "cue": {
+      "word": "مدفون.",
+      "t": 126.66
+     },
+     "who": "fx",
+     "action": "a red X stamps on the spot",
+     "acting": "man: no blink, completely still",
+     "library": "S.emphasis"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 127.46
+   }
+  },
+  {
+   "id": "S15",
+   "start": 127.46,
+   "end": 134.58,
+   "paragraphs": [
+    6
+   ],
+   "set": "office",
+   "cast": [
+    "man",
+    "chief"
+   ],
+   "summary": "He describes the house exactly, and says he never went after the vision.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Slow push from 1.15 to 1.4 toward the man's side of the frame while the chief keeps talking."
+   },
+   "composition": "Ticks appear inside the cloud beside each detail; the man is now the face to watch (left third).",
+   "actions": [
+    {
+     "t": 127.46,
+     "end": 128.4,
+     "cue": {
+      "word": "وصف",
+      "t": 127.46
+     },
+     "who": "chief",
+     "action": "counts details off on his fingers",
+     "acting": "matter of fact, eyes on his fingers, not on the man",
+     "library": "handR keyed, talk"
+    },
+    {
+     "t": 128.52,
+     "end": 129.0,
+     "cue": {
+      "word": "البيت",
+      "t": 128.52
+     },
+     "who": "fx",
+     "action": "tick beside the door on the left; tick beside the cracked wall",
+     "acting": "man's eyes snap to each tick",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 129.04,
+     "end": 129.6,
+     "cue": {
+      "word": "بدقة،",
+      "t": 129.04
+     },
+     "who": "fx",
+     "action": "tick beside the three arches; tick beside the garden",
+     "acting": "his mouth opens a little",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 129.68,
+     "end": 130.6,
+     "cue": {
+      "word": "وأضاف",
+      "t": 129.68
+     },
+     "who": "chief",
+     "action": "shrugs with both palms up",
+     "acting": "bored, lip pushed out",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 131.68,
+     "end": 132.4,
+     "cue": {
+      "word": "يسافر",
+      "t": 131.68
+     },
+     "who": "chief",
+     "action": "waves the cloud away with the back of his hand; it does not vanish: it drifts across and settles over the man's head",
+     "acting": "the chief never notices where it goes",
+     "library": "thoughtCloud position keyed, tail swaps to the man"
+    },
+    {
+     "t": 132.48,
+     "end": 133.6,
+     "cue": {
+      "word": "قط",
+      "t": 132.48
+     },
+     "who": "chief",
+     "action": "leans back, hands on his belly, eyes shut, shaking his head",
+     "acting": "smug, slow",
+     "library": "PERSON_HANDS.hipsHands lowered"
+    },
+    {
+     "t": 134.06,
+     "end": 134.58,
+     "cue": {
+      "word": "الرؤيا.",
+      "t": 134.06
+     },
+     "who": "chief",
+     "action": "one last small chuckle",
+     "acting": "shoulder bounce",
+     "library": "settleTo"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 134.58
+   }
+  },
+  {
+   "id": "S16",
+   "start": 134.58,
+   "end": 144.26,
+   "paragraphs": [
+    7
+   ],
+   "set": "office",
+   "cast": [
+    "man"
+   ],
+   "summary": "Close on the traveller: astonishment, then certainty. It is his own house.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Close on the man: zoom 2.1 centred on his head (about (340, 640)); ease to 2.4 by 141.2. His face stays at least 300 px tall."
+   },
+   "composition": "Face lower left; the chief's cloud picture upper right; at 137.4 a round memory inset opens beside it; they merge at 141.2.",
+   "actions": [
+    {
+     "t": 134.58,
+     "end": 136.4,
+     "cue": {
+      "word": "استمع",
+      "t": 134.58
+     },
+     "who": "man",
+     "action": "listens without moving; only his pupils travel over the picture above him",
+     "acting": "suspense by stillness, no blink",
+     "library": "gazePlan"
+    },
+    {
+     "t": 136.52,
+     "end": 137.3,
+     "cue": {
+      "word": "الرجل",
+      "t": 136.52
+     },
+     "who": "man",
+     "action": "swallows",
+     "acting": "drop pulse, one late blink",
+     "library": "blink"
+    },
+    {
+     "t": 137.42,
+     "end": 138.3,
+     "cue": {
+      "word": "الوصف",
+      "t": 137.42
+     },
+     "who": "fx",
+     "action": "a round memory inset irises open: his courtyard exactly as framed at 0.5 s",
+     "acting": "",
+     "library": "inset circle (planned), courtyardHouse"
+    },
+    {
+     "t": 138.36,
+     "end": 139.0,
+     "cue": {
+      "word": "دهشة",
+      "t": 138.36
+     },
+     "who": "man",
+     "action": "eyes go wide, brows shoot up",
+     "acting": "eyes 'wide', brow -1, sq 1.06 with overshoot",
+     "library": "settleTo"
+    },
+    {
+     "t": 139.12,
+     "end": 139.8,
+     "cue": {
+      "word": "شديدة،",
+      "t": 139.12
+     },
+     "who": "man",
+     "action": "his cap hops; one exclamation mark",
+     "acting": "mouth 'o'",
+     "library": "pulse, S.emphasis"
+    },
+    {
+     "t": 139.86,
+     "end": 141.1,
+     "cue": {
+      "word": "لأنه",
+      "t": 139.86
+     },
+     "who": "fx",
+     "action": "the inset and the dream picture slide toward each other",
+     "acting": "his eyes go between them faster and faster",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 141.2,
+     "end": 142.2,
+     "cue": {
+      "word": "عرف",
+      "t": 141.2
+     },
+     "who": "fx",
+     "action": "they overlap perfectly: door on door, arch on arch, fountain on fountain, with a 2-frame flash",
+     "acting": "",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 142.3,
+     "end": 142.9,
+     "cue": {
+      "word": "وصف",
+      "t": 142.3
+     },
+     "who": "fountain",
+     "action": "the merged picture pulses once at the fountain and the X under it",
+     "acting": "",
+     "library": "goldGlow"
+    },
+    {
+     "t": 142.92,
+     "end": 143.5,
+     "cue": {
+      "word": "بيته",
+      "t": 142.92
+     },
+     "who": "fx",
+     "action": "thought balloon MY HOUSE! above the merged picture",
+     "acting": "a breath in, chest rises",
+     "library": "S.box thought"
+    },
+    {
+     "t": 143.56,
+     "end": 144.26,
+     "cue": {
+      "word": "هو.",
+      "t": 143.56
+     },
+     "who": "man",
+     "action": "the one look straight at the lens",
+     "acting": "gaze [0, 0.05], tiny smile starting",
+     "library": "gaze"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 142.95,
+     "text": "MY HOUSE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 144.26
+   }
+  },
+  {
+   "id": "S17",
+   "start": 144.26,
+   "end": 153.72,
+   "paragraphs": [
+    7
+   ],
+   "set": "office",
+   "cast": [
+    "man",
+    "chief"
+   ],
+   "summary": "He hides what he has understood, takes the few coins the chief gives him for the road, and leaves.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pull-out",
+    "notes": "Pull out from the close to the two-shot (zoom 1.35) by 145.4; hold; follow him a little toward the door at 152.6."
+   },
+   "composition": "Chief right, man left; coins pass at the centre at hand height (y about 740); the door at the left edge.",
+   "actions": [
+    {
+     "t": 144.26,
+     "end": 144.7,
+     "cue": {
+      "word": "لم",
+      "t": 144.26
+     },
+     "who": "man",
+     "action": "glances sideways at the chief, who is examining his fingernails",
+     "acting": "pupils only",
+     "library": "lookAt"
+    },
+    {
+     "t": 144.8,
+     "end": 145.3,
+     "cue": {
+      "word": "يكشف",
+      "t": 144.8
+     },
+     "who": "man",
+     "action": "claps a hand over his mouth, then smooths it down to his chin; the picture snaps shut like a book",
+     "acting": "mask on: mouth closed, brow neutral",
+     "library": "PERSON_HANDS.mouthCover then chin"
+    },
+    {
+     "t": 145.38,
+     "end": 146.3,
+     "cue": {
+      "word": "للرئيس",
+      "t": 145.38
+     },
+     "who": "chief",
+     "action": "looks up; the man is all bland politeness",
+     "acting": "man: innocent raised brows, gaze at the ceiling",
+     "library": "lookAt"
+    },
+    {
+     "t": 146.38,
+     "end": 147.2,
+     "cue": {
+      "word": "فهمه،",
+      "t": 146.38
+     },
+     "who": "man",
+     "action": "the chief looks away and a grin flashes across his face, gone when the chief looks back",
+     "acting": "mask off then on, a tiny fist clench behind his back",
+     "library": "mouth 'smile' for 0.5 s"
+    },
+    {
+     "t": 147.78,
+     "end": 148.1,
+     "cue": {
+      "word": "أخذ",
+      "t": 147.78
+     },
+     "who": "chief",
+     "action": "digs in the purse at his belt",
+     "acting": "pitying half smile",
+     "library": "purse (planned)"
+    },
+    {
+     "t": 148.16,
+     "end": 148.8,
+     "cue": {
+      "word": "نقودًا",
+      "t": 148.16
+     },
+     "who": "purse",
+     "action": "holds out three small coins on his palm",
+     "acting": "",
+     "library": "coinPile single coins, PERSON_HANDS.reach"
+    },
+    {
+     "t": 148.86,
+     "end": 149.7,
+     "cue": {
+      "word": "قليلة",
+      "t": 148.86
+     },
+     "who": "coinPile",
+     "action": "the coins drop one, two, three into the man's cupped hands; counter 3",
+     "acting": "man's eyes follow each coin",
+     "library": "S.counter, handLW/handRW"
+    },
+    {
+     "t": 149.82,
+     "end": 151.1,
+     "cue": {
+      "word": "أعطاه",
+      "t": 149.82
+     },
+     "who": "man",
+     "action": "bows low, twice, a little too eagerly",
+     "acting": "tip 0.3 with settle, eyes shut tight with thanks",
+     "library": "settleTo, PERSON_HANDS.clasp"
+    },
+    {
+     "t": 151.2,
+     "end": 152.2,
+     "cue": {
+      "word": "ليساعده",
+      "t": 151.2
+     },
+     "who": "chief",
+     "action": "pats his shoulder and points at the door: go home",
+     "acting": "kindly, sure he has taught a lesson",
+     "library": "handRW to the shoulder, PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 152.58,
+     "end": 153.72,
+     "cue": {
+      "word": "الرجوع،",
+      "t": 152.58
+     },
+     "who": "man",
+     "action": "backs to the door still bowing, turns, and is gone in two quick steps",
+     "acting": "the grin breaks out the instant his back is turned to the chief",
+     "library": "walk, footfalls"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "whip",
+    "t": 153.72
+   }
+  },
+  {
+   "id": "S18",
+   "start": 153.72,
+   "end": 156.98,
+   "paragraphs": [
+    7
+   ],
+   "set": "desert",
+   "cast": [
+    "man"
+   ],
+   "summary": "He races home to Baghdad.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Fast track right to left along the strip (camX 1400 to 0 in 2.4 s), zoom 1.0."
+   },
+   "composition": "Man runs right to left (the reverse of S5); map card top left with the dotted line shrinking back to the house icon.",
+   "actions": [
+    {
+     "t": 153.72,
+     "end": 154.3,
+     "cue": {
+      "word": "وسافر",
+      "t": 153.72
+     },
+     "who": "man",
+     "action": "sprints out of the Cairo gate, coins clutched to his chest, bundle streaming behind",
+     "acting": "tip 0.22, long stride, mouth open in a grin, dust at every footfall",
+     "library": "desertRoad {camX}, walk(xf, t, {stride long}), footfalls, dustBurst"
+    },
+    {
+     "t": 154.6,
+     "end": 155.2,
+     "cue": {
+      "word": "بغداد",
+      "t": 154.6
+     },
+     "who": "mapCard",
+     "action": "the map card shows the dotted line racing back to BAGHDAD; milestones whip past 3, 2, 1",
+     "acting": "",
+     "library": "mapCard, S.counter"
+    },
+    {
+     "t": 155.3,
+     "end": 156.1,
+     "cue": {
+      "word": "مسرعًا.",
+      "t": 155.3
+     },
+     "who": "man",
+     "action": "speed lines; Baghdad's skyline rises ahead; he leaves frame left",
+     "acting": "bundle lags then catches up (follow-through)",
+     "library": "townFarCity, S.emphasis speed lines"
+    },
+    {
+     "t": 156.2,
+     "end": 156.98,
+     "who": "set",
+     "action": "in the pause only his dust settles on the empty road",
+     "acting": "",
+     "library": "dustBurst"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 156.5,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 156.98
+   }
+  },
+  {
+   "id": "S19",
+   "start": 156.98,
+   "end": 167.46,
+   "paragraphs": [
+    8
+   ],
+   "set": "courtyard",
+   "cast": [
+    "man"
+   ],
+   "summary": "Home. He digs under the fountain in the courtyard and finds a great treasure, just as the chief said.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Same framing as S1 (zoom 1.0), push to 1.4 centred (450, 800) for the digging so the hole and ground band are in view; pull out to 1.1 at 164.6 for the glow."
+   },
+   "composition": "Hole in front of the basin at x 360..560, cut into the ground band (y 900..1010); dirt heap at x 250; chest comes up at x 600.",
+   "actions": [
+    {
+     "t": 156.98,
+     "end": 157.9,
+     "cue": {
+      "word": "وصل",
+      "t": 156.98
+     },
+     "who": "man",
+     "action": "the courtyard door bangs open and he skids in",
+     "acting": "landing squash, dust, panting",
+     "library": "townDoor open 0..1, landSquash, dustBurst"
+    },
+    {
+     "t": 158.38,
+     "end": 159.9,
+     "cue": {
+      "word": "داره،",
+      "t": 158.38
+     },
+     "who": "man",
+     "action": "checks it off with his eyes: door, cracked wall, garden, fountain; his gaze locks on the fountain",
+     "acting": "saccades then a held stare, slow smile",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 159.98,
+     "end": 160.6,
+     "cue": {
+      "word": "وحفر",
+      "t": 159.98
+     },
+     "who": "shovel",
+     "action": "snatches a shovel from the wall and drives it in at the foot of the basin",
+     "acting": "anticipation lift, plunge, sq 0.92",
+     "library": "new prop shovel, anticipate, handLW/handRW on the shaft"
+    },
+    {
+     "t": 160.64,
+     "end": 161.0,
+     "cue": {
+      "word": "تحت",
+      "t": 160.64
+     },
+     "who": "man",
+     "action": "second stroke: clods fly in an arc to a heap at the left",
+     "acting": "follow-through of the shoulders",
+     "library": "seeded clods (K.rng), hop arcs"
+    },
+    {
+     "t": 161.08,
+     "end": 162.1,
+     "cue": {
+      "word": "النافورة",
+      "t": 161.08
+     },
+     "who": "man",
+     "action": "third and fourth strokes; two paving slabs tip aside; the hole deepens",
+     "acting": "faster rhythm, sweat drop, cap askew",
+     "library": "courtyardHouse {dug: 0..0.6}"
+    },
+    {
+     "t": 162.22,
+     "end": 163.3,
+     "cue": {
+      "word": "الفناء،",
+      "t": 162.22
+     },
+     "who": "man",
+     "action": "waist deep in the hole (clipped at its edge); the shovel stops dead with small tink lines",
+     "acting": "freeze, eyes wide, gaze down",
+     "library": "courtyardHouse {dug: 1}, clip"
+    },
+    {
+     "t": 163.42,
+     "end": 163.9,
+     "cue": {
+      "word": "فوجد",
+      "t": 163.42
+     },
+     "who": "man",
+     "action": "drops the shovel, kneels, brushes soil away with both hands; gold light leaks up onto his face",
+     "acting": "wet eyes, mouth 'o'",
+     "library": "person {kneel}, goldGlow 0.3"
+    },
+    {
+     "t": 163.98,
+     "end": 164.5,
+     "cue": {
+      "word": "كنزًا",
+      "t": 163.98
+     },
+     "who": "chest",
+     "action": "heaves a chest onto the rim; the lid flies open and coins spill",
+     "acting": "strain then release, sq 0.9 to 1.06",
+     "library": "treasureHoard chest (planned), coinPile, anticipate"
+    },
+    {
+     "t": 164.62,
+     "end": 165.3,
+     "cue": {
+      "word": "كبيرًا",
+      "t": 164.62
+     },
+     "who": "fx",
+     "action": "full glow and star glints; the fountain's jet springs back to life",
+     "acting": "he laughs silently, head back",
+     "library": "goldGlow 1, fountain {water: 1}"
+    },
+    {
+     "t": 165.98,
+     "end": 166.7,
+     "cue": {
+      "word": "قال",
+      "t": 165.98
+     },
+     "who": "chief",
+     "action": "a small cloud shows the chief's laughing face with a tick beside it",
+     "acting": "man shakes his head, grinning",
+     "library": "thoughtCloud small, person head"
+    },
+    {
+     "t": 166.82,
+     "end": 167.46,
+     "cue": {
+      "word": "الشرطة.",
+      "t": 166.82
+     },
+     "who": "man",
+     "action": "flips a coin and catches it: the exact pose from 2.7 s",
+     "acting": "eyes follow it, heels hop",
+     "library": "hop arc for the coin"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 167.46
+   }
+  },
+  {
+   "id": "S20",
+   "start": 167.46,
+   "end": 178.4,
+   "paragraphs": [
+    8
+   ],
+   "set": "courtyard",
+   "cast": [
+    "man"
+   ],
+   "summary": "The moral as a picture: the road to Cairo led to no treasure there; it taught him where to look at home.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Ease out to zoom 1.0 centred (500, 615); the map card takes the sky area above the wall; hold still for the last words."
+   },
+   "composition": "Man seated on the basin rim at x 600 with the chest at his feet; map card (x 140..860, y 90..330) above the wall line, clear of his head.",
+   "actions": [
+    {
+     "t": 167.46,
+     "end": 168.8,
+     "cue": {
+      "word": "أدرك",
+      "t": 167.46
+     },
+     "who": "man",
+     "action": "sits on the rim of the basin, hand to chin, calm now",
+     "acting": "sit eased, slow blink, gaze up",
+     "library": "person {sit, seat:'bench'}, PERSON_HANDS.chin"
+    },
+    {
+     "t": 169.2,
+     "end": 169.9,
+     "cue": {
+      "word": "رحلته",
+      "t": 169.2
+     },
+     "who": "mapCard",
+     "action": "a wide map card pops above the wall: house icon BAGHDAD at the left; a dotted road starts toward the right",
+     "acting": "",
+     "library": "mapCard"
+    },
+    {
+     "t": 170.32,
+     "end": 171.0,
+     "cue": {
+      "word": "القاهرة",
+      "t": 170.32
+     },
+     "who": "mapCard",
+     "action": "the road reaches a city icon CAIRO",
+     "acting": "his eyes follow the line",
+     "library": "gazePlan"
+    },
+    {
+     "t": 171.54,
+     "end": 172.3,
+     "cue": {
+      "word": "توصله",
+      "t": 171.54
+     },
+     "who": "mapCard",
+     "action": "a coin with a question mark appears over Cairo",
+     "acting": "",
+     "library": "mapCard icons"
+    },
+    {
+     "t": 172.7,
+     "end": 173.1,
+     "cue": {
+      "word": "كنز",
+      "t": 172.7
+     },
+     "who": "mapCard",
+     "action": "the coin wobbles",
+     "acting": "",
+     "library": "tremble"
+    },
+    {
+     "t": 173.2,
+     "end": 173.9,
+     "cue": {
+      "word": "هناك،",
+      "t": 173.2
+     },
+     "who": "mapCard",
+     "action": "a red X strikes the Cairo coin: nothing there",
+     "acting": "small shrug",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 173.96,
+     "end": 174.5,
+     "cue": {
+      "word": "بل",
+      "t": 173.96
+     },
+     "who": "mapCard",
+     "action": "a second dotted line curves back from Cairo toward the house",
+     "acting": "",
+     "library": "S.arrow progress"
+    },
+    {
+     "t": 174.56,
+     "end": 175.2,
+     "cue": {
+      "word": "علمته",
+      "t": 174.56
+     },
+     "who": "mapCard",
+     "action": "a tiny laughing chief icon at Cairo sends the arrow on its way",
+     "acting": "man smiles at it",
+     "library": "person head small"
+    },
+    {
+     "t": 175.84,
+     "end": 176.6,
+     "cue": {
+      "word": "يبحث",
+      "t": 175.84
+     },
+     "who": "mapCard",
+     "action": "the arrowhead lands on the house icon",
+     "acting": "",
+     "library": "S.arrow"
+    },
+    {
+     "t": 176.68,
+     "end": 177.5,
+     "cue": {
+      "word": "كنزه",
+      "t": 176.68
+     },
+     "who": "mapCard",
+     "action": "a glowing coin appears under the house icon",
+     "acting": "",
+     "library": "goldGlow 0.6"
+    },
+    {
+     "t": 177.6,
+     "end": 178.4,
+     "cue": {
+      "word": "بيته.",
+      "t": 177.6
+     },
+     "who": "man",
+     "action": "looks from the map down to the real fountain and pats the basin",
+     "acting": "warm smile, long blink, breathe",
+     "library": "handRW to the rim, lookAt"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 178.4
+   }
+  },
+  {
+   "id": "S21",
+   "start": 178.4,
+   "end": 180.0,
+   "paragraphs": [
+    8
+   ],
+   "set": "courtyard",
+   "cast": [
+    "man"
+   ],
+   "summary": "THE END, held.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Locked at zoom 1.0."
+   },
+   "composition": "THE END in the sky area above the wall where the map card was; man and fountain below, untouched.",
+   "actions": [
+    {
+     "t": 178.5,
+     "end": 179.1,
+     "who": "lettering",
+     "action": "the map card folds away and THE END pops in its place",
+     "acting": "overshoot and settle",
+     "library": "S.title, settleTo"
+    },
+    {
+     "t": 179.2,
+     "end": 179.9,
+     "who": "man",
+     "action": "tosses one coin into the fountain; a ring spreads in the basin",
+     "acting": "eyes follow the coin, contented sigh",
+     "library": "hop arc, ripple"
+    },
+    {
+     "t": 179.9,
+     "end": 179.9,
+     "who": "fountain",
+     "action": "the jet plays on with two sparkles; he sits breathing, blinking",
+     "acting": "held ending",
+     "library": "breathe, blink"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 178.5,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 178.6,
+     "kind": "chime"
+    },
+    {
+     "t": 179.5,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 180.0
+   }
+  }
+ ],
+ "ending": {
+  "t": 178.4,
+  "description": "After the last word (178.26) the map card folds away and THE END pops in the sky area above the courtyard wall; the man, seated on the basin rim with the open chest at his feet, tosses one coin into the playing fountain. Held to 181.45."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان في بغداد رجل يملك مالًا كثيرًا،|ثم خسره كله، حتى صار يعمل أعمالًا شاقة ليحصل على طعام يومه.|وفي ليلة نام مهمومًا،|ورأى في الحلم شخصًا يقول له إن رزقه ينتظره في القاهرة.",
+   "en": "A wealthy man in Baghdad|lost everything and had to work hard for daily food.|One night|a voice in a dream told him his fortune awaited him in Cairo."
+  },
+  {
+   "p": 2,
+   "ar": "ظل الرجل يفكر في الحلم حتى قرر السفر.|قطع الطريق الطويل إلى مصر،|ووصل إلى القاهرة عند المساء متعبًا وجائعًا.|لم يعرف أحدًا يقيم عنده، فدخل مسجدًا ونام فيه حتى يطلع النهار.",
+   "en": "He resolved to travel,|crossed the long road to Egypt,|and reached Cairo exhausted.|Knowing nobody there, he entered a mosque and slept until morning."
+  },
+  {
+   "p": 3,
+   "ar": "في تلك الليلة دخل لصوص من جهة المسجد إلى بيت قريب.|سمع أهل البيت أصواتهم وطلبوا النجدة،|فجاء رئيس الشرطة ورجاله. هرب اللصوص قبل وصولهم،|وبقي الرجل القادم من بغداد نائمًا.",
+   "en": "That night thieves passed through the mosque toward a nearby house.|Its occupants called for help,|and the thieves fled before the police arrived,|leaving the visitor asleep."
+  },
+  {
+   "p": 4,
+   "ar": "ظن رجال الشرطة أن الغريب من جماعة اللصوص،|فأمسكوا به وضربوه ضربًا شديدًا،|ثم وضعوه في السجن ثلاثة أيام.|وبعد ذلك استدعاه رئيس الشرطة وسأله عن بلده وسبب قدومه.",
+   "en": "The police mistook the stranger for one of the thieves,|beat him severely,|and jailed him for three days.|Then their chief questioned his origins and purpose."
+  },
+  {
+   "p": 5,
+   "ar": "أخبره الرجل أنه من بغداد،|وأنه جاء بعدما سمع في نومه أن ثروته توجد في القاهرة.|ضحك رئيس الشرطة من كلامه|وقال إن الأحلام لا تستحق أن يترك الإنسان بيته ويسافر بسببها.",
+   "en": "He explained|that a dream had promised him wealth in Cairo.|The police chief laughed,|saying a man should not leave home merely because of a dream."
+  },
+  {
+   "p": 6,
+   "ar": "ثم قال الرئيس إنه رأى هو نفسه حلمًا يتكرر|عن بيت في بغداد، فيه فناء وحديقة ونافورة،|وتحت النافورة مال مدفون.|وصف البيت بدقة، وأضاف أنه لم يسافر قط وراء تلك الرؤيا.",
+   "en": "The chief described his own recurring dream:|a Baghdad house with a garden and fountain|hiding buried money.|He had never bothered to go there."
+  },
+  {
+   "p": 7,
+   "ar": "استمع الرجل إلى الوصف في دهشة شديدة،|لأنه عرف أنه وصف بيته هو.|لم يكشف للرئيس ما فهمه،|بل أخذ نقودًا قليلة أعطاه إياها ليساعده على الرجوع، وسافر إلى بغداد مسرعًا.",
+   "en": "The traveler recognized|every detail of his own home.|Keeping the discovery secret,|he accepted a little money for the journey and hurried back to Baghdad."
+  },
+  {
+   "p": 8,
+   "ar": "وصل إلى داره، وحفر تحت النافورة في الفناء،|فوجد كنزًا كبيرًا كما قال رئيس الشرطة.|أدرك أن رحلته إلى القاهرة لم توصله إلى كنز هناك،|بل علمته أين يبحث عن كنزه في بيته.",
+   "en": "Back home he dug beneath his fountain|and found a great treasure.|The journey to Cairo had led him not to wealth there,|but to wealth hidden in his own courtyard."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "courtyardHouse",
+   "description": "Town house courtyard with door, three arches, garden bed and central fountain; fields wealth, u, per-part build, cutaway under the fountain, dug. Reusable for any merchant or family home (dimensions in sets.courtyard).",
+   "reusable": true,
+   "effort": "L",
+   "implementation": "Bake the wall, arches and garden per wealth state with townArchPts, townDoor, bush and tree from Library/sets; draw cracks as 3 seeded polylines; the cutaway and the hole are polygons in the ground band clipped to x 330..630; build fields scale each part from its base with settleTo."
+  },
+  {
+   "type": "prop",
+   "name": "fountain",
+   "description": "Stone basin fountain with a keyed jet (dimensions in props.fountain); usable in any courtyard, garden or palace.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Basin as an 8-sided polygon with blue Ben-Day water ellipse; jet as two mirrored quadratic curves whose height follows water; drops as 4 seeded circles looping along the curves (pure function of t); ripple() rings in the basin; front pass redraws the near rim."
+  },
+  {
+   "type": "set",
+   "name": "mosqueCourt",
+   "description": "Night mosque arcade with dome and minaret, boundary wall and a neighbouring house with lit windows on one 1600 strip (dimensions in sets.mosque). Reusable for any mosque, shrine or night street scene.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Arcade from townArchPts and pillars; dome as a half ellipse with a finial; minaret as stacked rectangles with a balcony; mats as striped rectangles; neighbour house from townWindow/townDoor; navy wash by dark; front pass for pillars and wall so actors pass behind."
+  },
+  {
+   "type": "set",
+   "name": "jailCell",
+   "description": "Bare cell with a barred window showing the sky and sliding front bars (sets.jail, props.bars).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Flat wall rectangle with blue dot shading, townWindow {bars:true} with skyCycle inside, bars as rectangles drawn after the cast with a slide offset."
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (guard)",
+   "description": "Planned guard preset (pointed helmet with neck cloth, short tunic, sash); here blue guards and a red caped chief with a wide moustache, hold 'spear' or the torch.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Add to the COSTUME table in cast/people.js as already planned by AN-086 and AN-090; chief = same preset with pal overrides, s 1.08, moustache width x1.4."
+  },
+  {
+   "type": "effect",
+   "name": "ghostForm",
+   "description": "Planned vision treatment for the dream figure (pale tint, wavy hem, halo).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned by AN-082: draw the person to an offscreen layer, tint, clip the legs to a sine hem, add a halftone disc behind."
+  },
+  {
+   "type": "effect",
+   "name": "fightCloud",
+   "description": "Planned comic scuffle cloud that hides the beating (75.16 to 77.4).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned: 8 seeded dust puffs churning on K.noise, stars and three props (stick, helmet, foot) popping out on a fixed schedule."
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "description": "Planned treasure light; also used at low strength with a warm tint as torch light.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned: tapering rays plus halftone disc plus staggered star glints, strength 0..1."
+  },
+  {
+   "type": "prop",
+   "name": "mapCard",
+   "description": "Planned journey map card with a return line, coin icon and X (169.2 to 178.4; small versions at 29.9 and 154.6).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned by AN-088; add a second dotted path with its own progress and two icon slots."
+  },
+  {
+   "type": "prop",
+   "name": "shovel, torch, bars, bread, chest, coinPile, purse",
+   "description": "Small props (dimensions in props); chest, coinPile, purse and bread are planned names.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Flat shapes with K outlines; the torch flame is three lobes scaled by K.noise(t)."
+  },
+  {
+   "type": "effect",
+   "name": "painPulse, dream wash, inset circle, flush",
+   "description": "Planned small effects reused under their planned names: the bump (76.9), the dream tint inside clouds, the memory inset (137.4), the man's blush (103.3).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned in production/planned_assets.md."
+  }
+ ],
+ "owner_questions": [
+  "The beating (75.16 to 77.4) is hidden inside a comic scuffle cloud with one WHACK! and ends on a bump and circling stars; default: softened in this way, no blows shown.",
+  "The opening shows the man beside his fountain from the first second and he sleeps next to it on the night of the dream, so the ending pays off; this staging is an addition to the script; default: keep it.",
+  "The speaker in the dream is drawn as a pale blue robed elder inside the cloud with no name or religious identity; default: keep this neutral figure.",
+  "The mosque is shown as a quiet empty arcade with mats, a lamp, a dome and a minaret, and the thieves only pass through it; default: keep it this plain and respectful.",
+  "Invented lettering: ZZZ, CRASH!, HELP!, ME?!, WHACK!, CLANG!, HA HA HA!, POP!, MY HOUSE!, labels RICH, ONE LOAF, POLICE CHIEF, STILL ASLEEP, BAGHDAD, CAIRO, DAY 1 to 3 and the card THREE DAYS LATER...; default: all kept.",
+  "The chief's cloud showing a chest in a cutaway under the fountain and the final map card are visual explanations added to the narration; default: keep both."
+ ],
+ "implementation_notes": [
+  "Cue everything from timing.json words; the times in this plan are the word starts in planning/inputs/timeline.md.",
+  "The identity of the three courtyard pictures is the whole film: S1 (0.5 s), the chief's dream cloud (118.7 to 127.5) and the memory inset (137.4) must call courtyardHouse with the same layout so they overlap exactly at 141.2. Draw the dream version through thoughtCloud inside() at scale 0.55, at [500, 640].",
+  "Keep the fountain in frame in every courtyard shot (S1, S3, S4, S19 to S21).",
+  "Sleeping man in S6 to S8: person lie 1, lid 1, breathe(); LIFE.t auto-blink is off for him because lid is explicit. Give every other character a gaze target and blinks (LIFE.t = t).",
+  "Thieves and guards never move in unison: stagger(i) of 4 to 6 frames; thief2 and guard2 are the late ones.",
+  "Hide the S10 to S11 cut under the LATER card midpoint (camera keys 0.01 s apart at about 82.05).",
+  "Sound: only five effects, all in real pauses (4.4 chime, 23.3 chime, 156.5 whoosh, 178.6 chime, 179.5 pop); CRASH!, HELP!, WHACK!, CLANG! and HA HA HA! are lettering only because the narrator is speaking.",
+  "Use panel-only shake for WHACK! (76.34) and CLANG! (79.4).",
+  "Lettering never covers a face; clouds and the map card sit in the upper half, heads at y 620 to 700.",
+  "Costume change at 6.22 happens under a 2-frame white flash; keep headwear colour and beard so he stays the same man.",
+  "S18 reuses the S5 desertRoad bake mirrored in travel direction (camX decreasing, dir -1)."
+ ],
+ "warnings": [
+  "Three new sets (courtyardHouse, mosqueCourt, jailCell) plus the fountain: courtyardHouse is the costly one (wealth, build, cutaway and dug states). If time is short, jailCell can be palaceHall wall 'blue' with a barred townWindow.",
+  "The guard costume preset is planned by other films but not in the Library yet; until it exists use costume 'servant' with pal overrides and a scene-drawn helmet.",
+  "The figure is front-facing only: carrying a sack on the back (7.8 to 10.6) and digging (160 to 163) must be staged with arm angles and world hand targets and may need a still check for readability.",
+  "The recognition (134.6 to 144.3) depends on the audience remembering the courtyard; if the first review finds it unclear, lengthen the hold on the fountain at 3.3 to 4.7.",
+  "S14 is 15.7 s on one set; the cloud build gives a change on every noun, keep those cues exact.",
+  "Coordinator 2026-11-16: capped at the 3-minute limit (end_hold 3.0 -> 1.55 s; 4 times past 180 s pulled to 179.9)."
+ ]
+}

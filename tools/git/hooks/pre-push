@@ -1,0 +1,10 @@
+#!/bin/sh
+# Arabic Story Shorts: refuse pushes that would rewrite or delete remote history (force pushes, deleted branches).
+z=0000000000000000000000000000000000000000
+while read lref lsha rref rsha; do
+  if [ "$lsha" = "$z" ]; then echo "pre-push: refusing to delete remote ref $rref" >&2; exit 1; fi
+  if [ "$rsha" != "$z" ] && ! git merge-base --is-ancestor "$rsha" "$lsha" 2>/dev/null; then
+    echo "pre-push: refusing non-fast-forward push to $rref (it would rewrite remote history)." >&2
+    echo "          Fetch and integrate first: git pull --ff-only (or ask before doing anything else)." >&2; exit 1; fi
+done
+exit 0

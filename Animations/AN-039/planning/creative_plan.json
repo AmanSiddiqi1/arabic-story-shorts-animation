@@ -1,0 +1,3073 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-039",
+ "title": "The Mouse and the Ichneumon",
+ "duration": 170.59,
+ "end_hold": 3.0,
+ "logline": "A mongoose who has been stealing a farmer's sesame fools the wife by returning a few seeds, then talks a greedy mouse into walking under the stick in her place.",
+ "moral": "The script states no moral; the picture carries it: a gift offered too easily hides a trap, and the one who never asks why can end up paying for someone else's crime.",
+ "tone": "Dry, dark comedy told as a con: light and funny while the mongoose works, a held quiet beat for the mouse, a cold unsmiling exit. No gloating and no gore.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.32,
+   "kind": "setup",
+   "cue": {
+    "word": "فلاح",
+    "t": 0.32
+   },
+   "summary": "A poor farmer and his wife."
+  },
+  {
+   "id": "B2",
+   "t": 10.9,
+   "kind": "inciting",
+   "cue": {
+    "word": "السمسم",
+    "t": 10.9
+   },
+   "summary": "The physician prescribes sesame for their sick friend; the farmer buys it."
+  },
+  {
+   "id": "B3",
+   "t": 32.54,
+   "kind": "rising",
+   "cue": {
+    "word": "وأخذت",
+    "t": 32.54
+   },
+   "summary": "A mongoose steals the drying seeds, trip after trip."
+  },
+  {
+   "id": "B4",
+   "t": 44.78,
+   "kind": "turn",
+   "cue": {
+    "word": "النقص،",
+    "t": 44.78
+   },
+   "summary": "The wife notices the loss and sits guard with a stick."
+  },
+  {
+   "id": "B5",
+   "t": 53.1,
+   "kind": "suspense",
+   "cue": {
+    "word": "المكان.",
+    "t": 53.1
+   },
+   "summary": "The mongoose walks into the woman's view and freezes."
+  },
+  {
+   "id": "B6",
+   "t": 60.32,
+   "kind": "surprise",
+   "cue": {
+    "word": "وأعادتها",
+    "t": 60.32
+   },
+   "summary": "She returns seeds in plain view; the wife takes her for a helper."
+  },
+  {
+   "id": "B7",
+   "t": 81.8,
+   "kind": "turn",
+   "cue": {
+    "word": "تدفعه",
+    "t": 81.8
+   },
+   "summary": "The mongoose looks for someone to push into the danger instead."
+  },
+  {
+   "id": "B8",
+   "t": 97.6,
+   "kind": "rising",
+   "cue": {
+    "word": "تعالي",
+    "t": 97.6
+   },
+   "summary": "She invites the mouse: come and take your share."
+  },
+  {
+   "id": "B9",
+   "t": 116.96,
+   "kind": "suspense",
+   "cue": {
+    "word": "المرأة",
+    "t": 116.96
+   },
+   "summary": "The mouse never notices the woman sitting by the sesame."
+  },
+  {
+   "id": "B10",
+   "t": 133.02,
+   "kind": "climax",
+   "cue": {
+    "word": "وضربتها",
+    "t": 133.02
+   },
+   "summary": "The stick comes down; the mouse dies at once."
+  },
+  {
+   "id": "B11",
+   "t": 142.82,
+   "kind": "comic",
+   "cue": {
+    "word": "أمسكت",
+    "t": 142.82
+   },
+   "summary": "The wife is sure she has caught the thief."
+  },
+  {
+   "id": "B12",
+   "t": 155.22,
+   "kind": "reveal",
+   "cue": {
+    "word": "هي",
+    "t": 155.22
+   },
+   "summary": "The watching mongoose was the real thief all along."
+  },
+  {
+   "id": "B13",
+   "t": 169.6,
+   "kind": "resolution",
+   "cue": {
+    "word": "سالمة.",
+    "t": 169.6
+   },
+   "summary": "The mongoose goes home safe; the mouse lies dead."
+  }
+ ],
+ "cast": [
+  {
+   "id": "farmer",
+   "name": "the poor farmer",
+   "library": "person",
+   "base": "planned 'villager' variant on person kind:'owner'",
+   "look": "small off-white turban, short black beard, faded blue dotted tunic with two yellow patches (knee and elbow), bare feet; s 0.95",
+   "new": false
+  },
+  {
+   "id": "wife",
+   "name": "the farmer's wife",
+   "library": "person",
+   "base": "planned 'villageWoman' variant on person kind:'wife'",
+   "look": "yellow headscarf, red dress with dot shading, white apron; s 0.9. Needs the planned sit pose and both-hands stick grip.",
+   "new": false
+  },
+  {
+   "id": "friend",
+   "name": "the sick friend",
+   "library": "person",
+   "base": "planned 'villager' variant, planned lie pose",
+   "look": "grey cap, pale skin tone (paper mixed into the skin colour), under a blue dotted blanket",
+   "new": false
+  },
+  {
+   "id": "physician",
+   "name": "the physician",
+   "library": "person",
+   "base": "planned costume preset 'physician' (age 0.6)",
+   "look": "small white turban, long grey beard, blue dotted robe, yellow sash",
+   "new": false
+  },
+  {
+   "id": "seller",
+   "name": "the sesame seller",
+   "library": "person",
+   "base": "planned costume preset 'merchant'",
+   "look": "big turban, round belly, behind a low counter with two open sacks",
+   "new": false
+  },
+  {
+   "id": "mongoose",
+   "name": "the female mongoose (ichneumon)",
+   "library": null,
+   "base": "new quadruped, see new_assets",
+   "look": "long low grizzled brown body with black dot shading, cream belly and muzzle, small round ears, pointed snout with a pink nose, thick tapering tail with a black tip; lashes on the eyes mark her as female",
+   "new": true
+  },
+  {
+   "id": "mouse",
+   "name": "the mouse",
+   "library": null,
+   "base": "planned 'rat' character with a mouse palette (pal 1) at s 0.75",
+   "look": "light grey body, big round pink-lined ears, pink nose, feet and tail; uses the rat fields sniff, chew, sit, roll, bib, tailCurl",
+   "new": true
+  },
+  {
+   "id": "tortoise",
+   "name": "a passing tortoise",
+   "library": "tortoise",
+   "base": "Library tortoise, s 0.8",
+   "look": "unchanged; one gag (hides in its shell)",
+   "new": false
+  },
+  {
+   "id": "songbird",
+   "name": "a small bird on the branch",
+   "library": "songbird",
+   "base": "Library songbird, yellow",
+   "look": "unchanged; one gag (flies off)",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "villageYard",
+   "library": null,
+   "new": true,
+   "description": "The planned 'villageYard' set, built 1800 x 1230 for this film with ground at y 900. Cottage facade x 40..470 (roof line y 430, door x 300..400 from y 640, window x 110..210 at y 620..710, showing a moving silhouette). Stool at x 520. dryingMat x 600..920 on the ground. Library bush at x 1120 (w 240, h 140) as the hiding place. Burrow mound (planned 'burrow', 150 x 70) at x 1330. Library tree with trunk at x 1560 and one branch at y 520; the mouse hole (burrow at s 0.5) at its root, x 1640. Library sky, sun, hillTrees and treeRow behind; sky preset day, dusk for S16."
+  },
+  {
+   "id": "hutRoom",
+   "library": null,
+   "new": true,
+   "description": "The planned 'hutRoom' cutaway (walls x 110..890, floor y 900) dressed as the sick friend's home: floor mattress x 600..840 with a pillow at the right, a water jug, door on the left wall."
+  },
+  {
+   "id": "marketStreet",
+   "library": null,
+   "new": true,
+   "description": "The planned 'marketStreet' set, clear day palette, with one low stall counter x 620..820 (top y 800) holding two open sacks of white seeds and a small scale. Only 7 s of screen time: keep it simple."
+  }
+ ],
+ "props": [
+  {
+   "id": "dryingMat",
+   "library": null,
+   "new": true,
+   "description": "Woven straw mat 320 x 26 on the ground with a heap of sesame whose size is a parameter (fill 0..1, spread 0..1); see new_assets."
+  },
+  {
+   "id": "stick",
+   "library": null,
+   "new": true,
+   "description": "The planned 'stick' (180 x 12 staff drawn from a grip point and an angle)."
+  },
+  {
+   "id": "sack",
+   "library": null,
+   "new": true,
+   "description": "The planned 'sack' with fill 0..1 (small size, about 70 x 90) and the planned 'coin'."
+  },
+  {
+   "id": "burrow",
+   "library": null,
+   "new": true,
+   "description": "The planned 'burrow' mound and hole, states plain and eyes in the dark; used at s 1 for the mongoose and s 0.5 for the mouse hole."
+  },
+  {
+   "id": "smallBowl",
+   "library": null,
+   "new": true,
+   "description": "The planned 'smallBowl' for the hulling."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 4.54,
+   "paragraphs": [
+    1
+   ],
+   "set": "villageYard",
+   "cast": [
+    "farmer",
+    "wife"
+   ],
+   "summary": "The poor farmer and his wife at their cottage door.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Start zoom 1.0 centred (470, 640) showing cottage, stool and empty mat area; ease to zoom 1.45 on the door (350, 720) by 2.8."
+   },
+   "composition": "Cottage fills the left half (x 40..470). Farmer at x 350, wife joins at x 430; both heads near y 690, well above the caption panel.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 2.0,
+     "who": "camera",
+     "action": "establishing view of the yard, slow push toward the door",
+     "acting": "sun bobbing, one cloud drifting, door closed",
+     "library": "sky, sun, cloudFlat, villageYard"
+    },
+    {
+     "t": 0.3,
+     "end": 1.1,
+     "cue": {
+      "word": "فلاح",
+      "t": 0.32
+     },
+     "who": "farmer",
+     "action": "the door opens and he steps out, stretching",
+     "acting": "anticipation dip then stretch (sq 1.06), blink, gaze to the sky",
+     "library": "person villager preset + anticipate, settleTo"
+    },
+    {
+     "t": 1.1,
+     "end": 2.0,
+     "cue": {
+      "word": "فقير",
+      "t": 1.1
+     },
+     "who": "farmer",
+     "action": "pulls both tunic pockets inside out: empty; one patch on his knee and one on his elbow read as poor",
+     "acting": "gaze down at the pockets, brow raised (-0.4), small shrug with palmsUp, mouth frown then a brave smile",
+     "library": "PERSON_HANDS.palmsUp, brow, mouth"
+    },
+    {
+     "t": 2.0,
+     "end": 2.8,
+     "cue": {
+      "word": "يعيش",
+      "t": 2.0
+     },
+     "who": "farmer",
+     "action": "tucks the pockets back, looks toward the door",
+     "acting": "head turns before the body, blink on the turn",
+     "library": "lookAt"
+    },
+    {
+     "t": 2.8,
+     "end": 3.6,
+     "cue": {
+      "word": "زوجته،",
+      "t": 2.82
+     },
+     "who": "wife",
+     "action": "steps out beside him with a small bowl, brushes dust off his shoulder",
+     "acting": "eye contact both ways (lookAt), her smile, his shoulders settle (settleTo)",
+     "library": "person villageWoman preset, handR target on his shoulder"
+    },
+    {
+     "t": 3.7,
+     "end": 4.5,
+     "who": "wife",
+     "action": "in the pause both turn their heads toward screen right, worried: thinking of their friend",
+     "acting": "gaze snaps right, brows raised, his hand to chin",
+     "library": "PERSON_HANDS.chin, gazePlan"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 4.1,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 4.54
+   }
+  },
+  {
+   "id": "S2",
+   "start": 4.54,
+   "end": 13.3,
+   "paragraphs": [
+    1
+   ],
+   "set": "hutRoom",
+   "cast": [
+    "friend",
+    "physician",
+    "farmer",
+    "wife"
+   ],
+   "summary": "At the sick friend's bedside the physician prescribes sesame.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Zoom 1.15 centred (500, 660); at 9.1 ease to 1.5 on the physician and the balloon (470, 560); at 12.6 widen to 1.3 to include the friend."
+   },
+   "composition": "Friend lies on a floor mattress x 600..840, head to the right at (800, 815). Physician kneels at x 520 then stands. Couple at x 300 (farmer) and x 220 (wife), facing right. Balloon above the physician at (470, 430), never over a face.",
+   "actions": [
+    {
+     "t": 4.54,
+     "end": 5.2,
+     "cue": {
+      "word": "ولهما",
+      "t": 4.54
+     },
+     "who": "camera",
+     "action": "cut inside the friend's hut: the couple enter from the door on the left",
+     "acting": "couple walk in two steps (walk, no sliding), eyes already on the bed",
+     "library": "hutRoom, walk"
+    },
+    {
+     "t": 5.24,
+     "end": 6.0,
+     "cue": {
+      "word": "صديق",
+      "t": 5.24
+     },
+     "who": "friend",
+     "action": "lies under a blanket, lifts a weak hand in greeting and lets it drop",
+     "acting": "lid 0.6, slow blink, hand falls with follow-through",
+     "library": "person lie pose (planned), lid, swing"
+    },
+    {
+     "t": 6.08,
+     "end": 6.9,
+     "cue": {
+      "word": "مريض",
+      "t": 6.08
+     },
+     "who": "friend",
+     "action": "coughs twice; a red throb at the forehead",
+     "acting": "sq pulses 0.94 on each cough, wet eyes, brow raised",
+     "library": "painPulse (planned), sq, wet"
+    },
+    {
+     "t": 7.0,
+     "end": 7.8,
+     "cue": {
+      "word": "يحتاج",
+      "t": 7.0
+     },
+     "who": "wife",
+     "action": "clasps her hands; the farmer holds his head",
+     "acting": "her gaze on the friend, his gaze to the physician, both brows raised",
+     "library": "PERSON_HANDS.clasp, PERSON_HANDS.headHold"
+    },
+    {
+     "t": 7.88,
+     "end": 8.5,
+     "cue": {
+      "word": "علاج.",
+      "t": 7.88
+     },
+     "who": "physician",
+     "action": "kneeling, finishes feeling the pulse, strokes his beard, thinking",
+     "acting": "saccades up-left then a decision blink",
+     "library": "PERSON_HANDS.chin, gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 9.0,
+     "end": 9.8,
+     "cue": {
+      "word": "أخبرهما",
+      "t": 9.12
+     },
+     "who": "physician",
+     "action": "stands and turns to the couple, one finger up",
+     "acting": "anticipation dip before standing, gaze to the couple, they look back at him",
+     "library": "kneel pose (planned), PERSON_HANDS.pointUp, anticipate"
+    },
+    {
+     "t": 9.88,
+     "end": 10.6,
+     "cue": {
+      "word": "الطبيب",
+      "t": 9.88
+     },
+     "who": "lettering",
+     "action": "arrow and label DOCTOR pop beside the physician",
+     "acting": "label pops with overshoot, clear of every face",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 10.8,
+     "end": 11.6,
+     "cue": {
+      "word": "السمسم",
+      "t": 10.9
+     },
+     "who": "fx",
+     "action": "a picture balloon pops above the physician: a small heap of white sesame seeds",
+     "acting": "all three listeners' pupils jump to the balloon",
+     "library": "iconBalloon (planned)"
+    },
+    {
+     "t": 11.7,
+     "end": 12.5,
+     "cue": {
+      "word": "يمكن",
+      "t": 11.7
+     },
+     "who": "physician",
+     "action": "points from the balloon to the friend",
+     "acting": "gaze follows his own finger; the wife nods",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 12.6,
+     "end": 13.3,
+     "cue": {
+      "word": "يساعده،",
+      "t": 12.64
+     },
+     "who": "farmer",
+     "action": "a red heart joins the seeds in the balloon; the farmer puts a fist on his chest and turns to go",
+     "acting": "the friend manages a small smile, the farmer's brow sets (decision), body turns after the head",
+     "library": "heart, PERSON_HANDS.chest, settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 9.9,
+     "text": "DOCTOR"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 8.8,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "whip",
+    "t": 13.3
+   }
+  },
+  {
+   "id": "S3",
+   "start": 13.3,
+   "end": 20.2,
+   "paragraphs": [
+    1
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "farmer",
+    "seller"
+   ],
+   "summary": "The farmer spends his last coin on a sack of sesame and carries it home.",
+   "camera": {
+    "shot": "medium",
+    "move": "track",
+    "notes": "Zoom 1.3; track with the farmer from x 200 to the stall at x 620, hold, then follow him back out to the left from 19.0."
+   },
+   "composition": "Stall (two open sacks and a small scale on a low counter) at x 620..820; seller behind it at x 760 facing left; farmer stops at x 540 facing right. Heads near y 690.",
+   "actions": [
+    {
+     "t": 13.5,
+     "end": 14.5,
+     "cue": {
+      "word": "فذهب",
+      "t": 13.56
+     },
+     "who": "farmer",
+     "action": "walks in briskly from the left",
+     "acting": "legs from distance (walk), small dust on footfalls, gaze ahead",
+     "library": "walk, footfalls, dustBurst"
+    },
+    {
+     "t": 14.54,
+     "end": 15.4,
+     "cue": {
+      "word": "الفلاح",
+      "t": 14.54
+     },
+     "who": "seller",
+     "action": "waves him over; the farmer stops and points down at the open sack of white seeds",
+     "acting": "seller smile, farmer leans in (tip 0.06), gaze on the sack",
+     "library": "PERSON_HANDS.wave, PERSON_HANDS.pointDown, merchant preset (planned)"
+    },
+    {
+     "t": 15.5,
+     "end": 16.0,
+     "cue": {
+      "word": "واشترى",
+      "t": 15.56
+     },
+     "who": "farmer",
+     "action": "digs out his single coin, looks at it for a beat, hands it over",
+     "acting": "lid 0.4 and a small sigh as he looks at the coin, then a firm nod; the coin flips in a short arc to the seller's palm",
+     "library": "coin (planned), hop arc for the coin, PERSON_HANDS.reach"
+    },
+    {
+     "t": 16.08,
+     "end": 16.9,
+     "cue": {
+      "word": "كمية",
+      "t": 16.08
+     },
+     "who": "seller",
+     "action": "scoops seeds into a small sack that fills up",
+     "acting": "seller's eyes on the scoop; the farmer watches each scoop (gaze follows)",
+     "library": "sack fill 0..1 (planned)"
+    },
+    {
+     "t": 16.98,
+     "end": 17.6,
+     "cue": {
+      "word": "منه،",
+      "t": 16.98
+     },
+     "who": "lettering",
+     "action": "arrow and label SESAME on the small sack",
+     "acting": "label pops, sack gives a small squash as it is tied",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 17.9,
+     "end": 18.7,
+     "cue": {
+      "word": "حملها",
+      "t": 17.98
+     },
+     "who": "farmer",
+     "action": "hoists the sack onto his shoulder",
+     "acting": "anticipation crouch, sq 0.9 then stretch, one stagger step, settle",
+     "library": "anticipate, landSquash, settleTo"
+    },
+    {
+     "t": 19.0,
+     "end": 19.7,
+     "cue": {
+      "word": "البيت.",
+      "t": 19.02
+     },
+     "who": "farmer",
+     "action": "turns and walks out to the left with the sack; the seller waves",
+     "acting": "turn with a squeeze (turnFlip), sack bobs a frame late on each step",
+     "library": "turnFlip, walk"
+    },
+    {
+     "t": 19.7,
+     "end": 20.2,
+     "who": "fx",
+     "action": "transition card LATER... covers the cut to the yard",
+     "acting": "card midpoint at 20.25; camera cut hidden under it",
+     "library": "S.transition"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 17.0,
+     "text": "SESAME"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 20.2,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 19.7,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S4",
+   "start": 20.2,
+   "end": 30.6,
+   "paragraphs": [
+    2
+   ],
+   "set": "villageYard",
+   "cast": [
+    "wife"
+   ],
+   "summary": "The wife hulls the sesame, spreads it on the mat to dry, and goes in to her chores.",
+   "camera": {
+    "shot": "medium",
+    "move": "drift",
+    "notes": "Zoom 1.35 on the stool and mat (660, 760); at 23.8 ease to 1.2 (740, 740) to hold the whole mat; from 29.9 drift right to (1000, 740) so the bush enters frame."
+   },
+   "composition": "Wife on the stool at x 520 facing right; dryingMat x 600..920 on the ground; door at x 300..400 behind her. Bush at x 1120 enters at the end.",
+   "actions": [
+    {
+     "t": 20.8,
+     "end": 21.5,
+     "cue": {
+      "word": "قشرت",
+      "t": 20.82
+     },
+     "who": "wife",
+     "action": "seated on the stool with a bowl in her lap, rubbing seeds between her palms; husks fly up",
+     "acting": "eyes on her hands, small rocking of the torso, husk specks from K.rng",
+     "library": "person sit pose (planned), smallBowl (planned)"
+    },
+    {
+     "t": 22.26,
+     "end": 22.8,
+     "cue": {
+      "word": "حبوب",
+      "t": 22.26
+     },
+     "who": "wife",
+     "action": "blows the husks away",
+     "acting": "cheeks puff, lid 0.5 on the blow, husks drift right",
+     "library": "mouth o, sq 1.03"
+    },
+    {
+     "t": 22.82,
+     "end": 23.7,
+     "cue": {
+      "word": "السمسم",
+      "t": 22.82
+     },
+     "who": "camera",
+     "action": "short insert: white seeds pour from the bowl in a stream",
+     "acting": "stream of dots from the bowl rim, bowl tilts",
+     "library": "smallBowl tilt"
+    },
+    {
+     "t": 23.8,
+     "end": 24.8,
+     "cue": {
+      "word": "ونشرتها",
+      "t": 23.8
+     },
+     "who": "wife",
+     "action": "stands and sweeps her arm: the seeds fan out into an even heap across the mat",
+     "acting": "anticipation back-swing, follow-through of the arm, gaze along the mat",
+     "library": "dryingMat spread 0..1 (new), anticipate"
+    },
+    {
+     "t": 25.4,
+     "end": 26.0,
+     "cue": {
+      "word": "تجف.",
+      "t": 25.46
+     },
+     "who": "fx",
+     "action": "three heat wiggles rise from the mat under the sun; she wipes her brow and smiles at the full mat",
+     "acting": "satisfied half-lid, hands on hips",
+     "library": "PERSON_HANDS.hipsHands"
+    },
+    {
+     "t": 26.06,
+     "end": 27.0,
+     "cue": {
+      "word": "وبينما",
+      "t": 26.06
+     },
+     "who": "wife",
+     "action": "her head turns to the door: something inside needs her",
+     "acting": "head first, then body; blink on the turn",
+     "library": "gazePlan, turnFlip"
+    },
+    {
+     "t": 27.86,
+     "end": 28.3,
+     "cue": {
+      "word": "كانت",
+      "t": 27.86
+     },
+     "who": "wife",
+     "action": "picks up a broom leaning by the door",
+     "acting": "reach with follow-through",
+     "library": "PERSON_HANDS.reach"
+    },
+    {
+     "t": 28.38,
+     "end": 29.8,
+     "cue": {
+      "word": "مشغولة",
+      "t": 28.38
+     },
+     "who": "wife",
+     "action": "walks in through the door; it closes",
+     "acting": "walk without sliding, door swings shut with a small settle",
+     "library": "walk, villageYard door 0..1"
+    },
+    {
+     "t": 29.88,
+     "end": 30.6,
+     "cue": {
+      "word": "أخرى،",
+      "t": 29.88
+     },
+     "who": "set",
+     "action": "through the window her silhouette sweeps back and forth; the mat lies alone; two eyes open inside the bush",
+     "acting": "only the eyes move in the bush (suspense by stillness)",
+     "library": "bush + two eye discs drawn before the bush front"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 30.6
+   }
+  },
+  {
+   "id": "S5",
+   "start": 30.6,
+   "end": 42.26,
+   "paragraphs": [
+    2
+   ],
+   "set": "villageYard",
+   "cast": [
+    "mongoose",
+    "wife"
+   ],
+   "summary": "The mongoose steals from the mat again and again until the heap is low.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Zoom 1.15; the frame holds mat (left) to burrow (right) centred (980, 740); at 39.7 ease to zoom 1.6 on the mat (760, 800); at 41.1 whip to the burrow mouth (1330, 840) zoom 1.9."
+   },
+   "composition": "Mat x 600..920 left of frame, bush x 1120 centre, burrow mound x 1330 right. Window with the sweeping silhouette at the far left edge. Trip counter top right of the panel.",
+   "actions": [
+    {
+     "t": 30.7,
+     "end": 31.4,
+     "cue": {
+      "word": "جاءت",
+      "t": 30.8
+     },
+     "who": "mongoose",
+     "action": "her nose and whiskers poke out of the bush and sniff",
+     "acting": "nose twitches, ears forward, eyes still half hidden",
+     "library": "mongoose sniff (new), draw order: mongoose then bush front"
+    },
+    {
+     "t": 31.52,
+     "end": 32.0,
+     "cue": {
+      "word": "أنثى",
+      "t": 31.52
+     },
+     "who": "mongoose",
+     "action": "steps out and stands upright like a sentinel to check the window",
+     "acting": "rear 1, gaze to the window, one slow blink, tail flat",
+     "library": "mongoose rear 0..1, lookAt"
+    },
+    {
+     "t": 32.06,
+     "end": 32.5,
+     "cue": {
+      "word": "نمس",
+      "t": 32.06
+     },
+     "who": "lettering",
+     "action": "arrow and label MONGOOSE",
+     "acting": "label pops clear of her head",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 32.54,
+     "end": 33.4,
+     "cue": {
+      "word": "وأخذت",
+      "t": 32.54
+     },
+     "who": "mongoose",
+     "action": "drops low and creeps to the mat, then stuffs both cheeks with fast paws",
+     "acting": "sneak crouch (sq 0.85), cheeks grow 0 to 1, eyes flick to the window between grabs",
+     "library": "walk, mongoose cheeks 0..1"
+    },
+    {
+     "t": 33.88,
+     "end": 34.7,
+     "cue": {
+      "word": "الحبوب",
+      "t": 33.88
+     },
+     "who": "mongoose",
+     "action": "freezes mid-grab as the silhouette passes the window, then relaxes",
+     "acting": "total stillness for 8 frames, only pupils move",
+     "library": "gazePlan"
+    },
+    {
+     "t": 34.82,
+     "end": 35.5,
+     "cue": {
+      "word": "جحرها.",
+      "t": 34.82
+     },
+     "who": "mongoose",
+     "action": "scurries right and dives into her burrow; the heap drops a notch; counter shows 1",
+     "acting": "tail whips in last; dust puff at the hole",
+     "library": "walk, clip at the burrow mouth, S.counter, dryingMat fill"
+    },
+    {
+     "t": 35.56,
+     "end": 37.2,
+     "cue": {
+      "word": "وعادت",
+      "t": 35.56
+     },
+     "who": "mongoose",
+     "action": "pops out with empty cheeks, looks both ways, runs back to the mat and loads again",
+     "acting": "faster than the first trip, less caution",
+     "library": "walk, cheeks"
+    },
+    {
+     "t": 37.24,
+     "end": 37.7,
+     "cue": {
+      "word": "مرة",
+      "t": 37.24
+     },
+     "who": "fx",
+     "action": "second dive into the burrow: counter 2, heap lower",
+     "acting": "counter digit pops with overshoot",
+     "library": "S.counter"
+    },
+    {
+     "t": 38.3,
+     "end": 38.9,
+     "cue": {
+      "word": "مرة،",
+      "t": 38.34
+     },
+     "who": "mongoose",
+     "action": "third trip at comic double speed with a dust trail: counter 3",
+     "acting": "legs a blur (amp up), no checking of the window at all now",
+     "library": "walk, dustBurst, S.counter"
+    },
+    {
+     "t": 39.7,
+     "end": 40.4,
+     "cue": {
+      "word": "نقصت",
+      "t": 39.76
+     },
+     "who": "dryingMat",
+     "action": "close on the mat: the heap sinks from full to about a third; bare mat shows",
+     "acting": "fill eases 1.0 to 0.35 across the three trips, final sag here",
+     "library": "dryingMat fill"
+    },
+    {
+     "t": 40.46,
+     "end": 41.1,
+     "cue": {
+      "word": "الكمية",
+      "t": 40.46
+     },
+     "who": "lettering",
+     "action": "a red down arrow and label LESS! beside the heap",
+     "acting": "arrow drops with a bounce",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 41.18,
+     "end": 42.2,
+     "cue": {
+      "word": "كثيرًا.",
+      "t": 41.18
+     },
+     "who": "mongoose",
+     "action": "her fat-cheeked face fills the burrow mouth, a satisfied smirk, then she sinks out of sight",
+     "acting": "lid 0.5, smirk, a small hiccup (sq pulse)",
+     "library": "mongoose mouth smirk, burrow"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 30.9,
+     "text": "SNIFF!"
+    },
+    {
+     "t": 32.1,
+     "text": "MONGOOSE"
+    },
+    {
+     "t": 40.5,
+     "text": "LESS!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 42.26
+   }
+  },
+  {
+   "id": "S6",
+   "start": 42.26,
+   "end": 53.6,
+   "paragraphs": [
+    3
+   ],
+   "set": "villageYard",
+   "cast": [
+    "wife",
+    "mongoose"
+   ],
+   "summary": "The wife notices the loss, sits guard with a stick and sees the mongoose approach.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "Zoom 1.4 on the wife and mat (660, 740); hold; at 50.5 pan right following her eye line to the burrow (1250, 800); at 53.1 settle on a wide two-shot zoom 1.05 centred (930, 740)."
+   },
+   "composition": "Wife left (stool x 520), mat centre-left, mongoose enters from the right. In the two-shot her head is at about (520, 740) and the mongoose at x 1080; the stick reads as a diagonal above the mat.",
+   "actions": [
+    {
+     "t": 42.26,
+     "end": 44.0,
+     "cue": {
+      "word": "لاحظت",
+      "t": 42.26
+     },
+     "who": "wife",
+     "action": "comes out of the door, takes two steps and stops dead in front of the mat",
+     "acting": "double take: glance, look away, snap back with eyes wide; sq 0.94 then 1.04",
+     "library": "walk, settleTo, eyes wide"
+    },
+    {
+     "t": 44.14,
+     "end": 44.7,
+     "cue": {
+      "word": "الزوجة",
+      "t": 44.14
+     },
+     "who": "wife",
+     "action": "bends over the mat",
+     "acting": "tip 0.12 forward, gaze down",
+     "library": "tip, lookAt"
+    },
+    {
+     "t": 44.78,
+     "end": 45.5,
+     "cue": {
+      "word": "النقص،",
+      "t": 44.78
+     },
+     "who": "wife",
+     "action": "hands to her cheeks, then scans the yard left and right",
+     "acting": "saccades with 2-frame snaps, brows up then angry V",
+     "library": "PERSON_HANDS.cheeks, gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 45.56,
+     "end": 47.1,
+     "cue": {
+      "word": "فجلست",
+      "t": 45.56
+     },
+     "who": "wife",
+     "action": "marches to the stool and sits down hard, facing the mat",
+     "acting": "short stamping steps, landSquash on the sit, jaw set",
+     "library": "walk, person sit, landSquash"
+    },
+    {
+     "t": 47.22,
+     "end": 48.5,
+     "cue": {
+      "word": "تراقب",
+      "t": 47.22
+     },
+     "who": "wife",
+     "action": "watches: body still, only her eyes sweep the yard",
+     "acting": "suspense by stillness, one slow blink",
+     "library": "gazePlan, blink"
+    },
+    {
+     "t": 48.58,
+     "end": 49.9,
+     "cue": {
+      "word": "وفي",
+      "t": 48.58
+     },
+     "who": "wife",
+     "action": "her hand goes down beside the stool and comes up holding a stick",
+     "acting": "eyes never leave the mat while the hand finds it",
+     "library": "stick (planned), handR target"
+    },
+    {
+     "t": 49.96,
+     "end": 50.4,
+     "cue": {
+      "word": "عصا.",
+      "t": 49.96
+     },
+     "who": "lettering",
+     "action": "she taps the stick once in her palm; arrow and label STICK",
+     "acting": "tap with a tiny rebound",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 50.5,
+     "end": 51.4,
+     "cue": {
+      "word": "رأت",
+      "t": 50.5
+     },
+     "who": "wife",
+     "action": "her pupils snap to the right; the camera follows her eye line",
+     "acting": "head follows the eyes 3 frames late",
+     "library": "gazePlan"
+    },
+    {
+     "t": 51.5,
+     "end": 52.0,
+     "cue": {
+      "word": "النمس",
+      "t": 51.5
+     },
+     "who": "mongoose",
+     "action": "her nose, then her head, rise out of the burrow",
+     "acting": "ears first, sniff, unaware of the woman",
+     "library": "mongoose, burrow"
+    },
+    {
+     "t": 52.06,
+     "end": 53.0,
+     "cue": {
+      "word": "تقترب",
+      "t": 52.06
+     },
+     "who": "mongoose",
+     "action": "creeps toward the mat in the low sneak",
+     "acting": "eyes on the seeds, tail low",
+     "library": "walk"
+    },
+    {
+     "t": 53.1,
+     "end": 53.6,
+     "cue": {
+      "word": "المكان.",
+      "t": 53.1
+     },
+     "who": "mongoose",
+     "action": "sees the woman and the stick: freezes, rears up, looks to camera, gulps",
+     "acting": "eyes wide, the one lens stare, sq 0.9 gulp",
+     "library": "rear, gaze [0, 0.05]"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 44.9,
+     "text": "HMM?"
+    },
+    {
+     "t": 50.0,
+     "text": "STICK"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 53.6
+   }
+  },
+  {
+   "id": "S7",
+   "start": 53.6,
+   "end": 64.74,
+   "paragraphs": [
+    3
+   ],
+   "set": "villageYard",
+   "cast": [
+    "wife",
+    "mongoose"
+   ],
+   "summary": "The clever mongoose fetches seeds from her burrow and returns them in plain view.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Two-shot zoom 1.05 (930, 740); 55.1 push to 1.9 on the mongoose face (1080, 830); 57.1 back out to 1.1 for the run to the burrow and back; 61.6 two-shot 1.3 on wife and mat (700, 760)."
+   },
+   "composition": "Wife left, mongoose right, mat between them: the stick and the returning seeds share the frame.",
+   "actions": [
+    {
+     "t": 53.78,
+     "end": 55.0,
+     "cue": {
+      "word": "لكن",
+      "t": 53.78
+     },
+     "who": "wife",
+     "action": "her grip tightens and the stick lifts a little; the mongoose backs up one step",
+     "acting": "wife brow angry, mongoose ears flat",
+     "library": "aR angle, walk"
+    },
+    {
+     "t": 55.16,
+     "end": 56.2,
+     "cue": {
+      "word": "النمس",
+      "t": 55.16
+     },
+     "who": "mongoose",
+     "action": "thinking: eyes dart from the stick to the mat to her burrow",
+     "acting": "saccades (2-frame snaps), body still",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 56.26,
+     "end": 57.0,
+     "cue": {
+      "word": "ذكية؛",
+      "t": 56.26
+     },
+     "who": "mongoose",
+     "action": "the idea lands: ears perk, brows lift, a quick smirk that she wipes off at once",
+     "acting": "smirk for 8 frames then an innocent face",
+     "library": "mouth smirk, ears"
+    },
+    {
+     "t": 57.14,
+     "end": 58.2,
+     "cue": {
+      "word": "حملت",
+      "t": 57.14
+     },
+     "who": "mongoose",
+     "action": "darts back into the burrow",
+     "acting": "tail whips in",
+     "library": "walk, clip at the hole"
+    },
+    {
+     "t": 58.3,
+     "end": 58.6,
+     "cue": {
+      "word": "بعض",
+      "t": 58.3
+     },
+     "who": "mongoose",
+     "action": "comes out with full cheeks",
+     "acting": "cheeks 1, eyes wide and guileless",
+     "library": "cheeks"
+    },
+    {
+     "t": 58.7,
+     "end": 60.2,
+     "cue": {
+      "word": "الحبوب",
+      "t": 58.7
+     },
+     "who": "mongoose",
+     "action": "walks to the mat openly, upright, in a showy honest march, not the sneak",
+     "acting": "chin up, tail high, gaze on the woman to make sure she watches",
+     "library": "rear 0.6 + walk, tailUp"
+    },
+    {
+     "t": 60.32,
+     "end": 61.6,
+     "cue": {
+      "word": "وأعادتها",
+      "t": 60.32
+     },
+     "who": "mongoose",
+     "action": "drops the seeds onto the heap one small pawful at a time and pats the heap",
+     "acting": "each drop a clear beat; the heap rises a hair (fill 0.35 to 0.40)",
+     "library": "dryingMat fill, mongoose raise"
+    },
+    {
+     "t": 61.66,
+     "end": 62.1,
+     "cue": {
+      "word": "أمام",
+      "t": 61.66
+     },
+     "who": "wife",
+     "action": "her eyes follow every seed; the stick sinks to her lap",
+     "acting": "brow goes from angry V to raised",
+     "library": "gazePlan, brow"
+    },
+    {
+     "t": 62.14,
+     "end": 62.8,
+     "cue": {
+      "word": "عيني",
+      "t": 62.14
+     },
+     "who": "camera",
+     "action": "two-shot holds both faces: her wide eyes, the mongoose's careful paws",
+     "acting": "eye line drawn by staging only",
+     "library": "twoShot"
+    },
+    {
+     "t": 62.82,
+     "end": 64.7,
+     "cue": {
+      "word": "المرأة.",
+      "t": 62.82
+     },
+     "who": "mongoose",
+     "action": "a small bow with big innocent eyes; when the woman blinks, a 6-frame smirk to camera; innocent again",
+     "acting": "mask on, mask off, mask on",
+     "library": "tip 0.15, smirk"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 64.74
+   }
+  },
+  {
+   "id": "S8",
+   "start": 64.74,
+   "end": 75.6,
+   "paragraphs": [
+    4
+   ],
+   "set": "villageYard",
+   "cast": [
+    "wife",
+    "mongoose"
+   ],
+   "summary": "The wife decides the mongoose is a helper and settles down to wait for the real thief.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Zoom 1.3 centred (640, 640) so the thought cloud above the wife has room; the mongoose stays in the right edge of frame."
+   },
+   "composition": "Thought cloud 380 x 240 at about (640, 430) above and right of the wife, never over her face. Mongoose small at the right edge near x 1000.",
+   "actions": [
+    {
+     "t": 64.74,
+     "end": 66.0,
+     "cue": {
+      "word": "ظنت",
+      "t": 64.74
+     },
+     "who": "fx",
+     "action": "a thought cloud grows above the wife",
+     "acting": "she looks up into it, finger on chin",
+     "library": "thoughtCloud (planned), PERSON_HANDS.chin"
+    },
+    {
+     "t": 66.58,
+     "end": 67.3,
+     "cue": {
+      "word": "النمس",
+      "t": 66.58
+     },
+     "who": "fx",
+     "action": "in the cloud: a small mongoose",
+     "acting": "small mongoose pops in with overshoot",
+     "library": "thoughtCloud inside draw"
+    },
+    {
+     "t": 67.4,
+     "end": 68.0,
+     "cue": {
+      "word": "تسرق،",
+      "t": 67.4
+     },
+     "who": "fx",
+     "action": "in the cloud: the mongoose carrying seeds away, struck out with a big red X",
+     "acting": "X slams on with a 2-frame scale",
+     "library": "S.emphasis or two red strokes"
+    },
+    {
+     "t": 69.08,
+     "end": 70.4,
+     "cue": {
+      "word": "تعيد",
+      "t": 69.08
+     },
+     "who": "fx",
+     "action": "the cloud picture flips: the mongoose puts seeds onto the mat; a halo appears over her head",
+     "acting": "halo pops, tiny sparkle",
+     "library": "thoughtCloud inside draw"
+    },
+    {
+     "t": 70.46,
+     "end": 71.3,
+     "cue": {
+      "word": "مكانه.",
+      "t": 70.46
+     },
+     "who": "wife",
+     "action": "smiles and gives the real mongoose a fond little wave; the mongoose waves a paw back",
+     "acting": "warm half-lid smile; mongoose eyes big",
+     "library": "PERSON_HANDS.wave, mongoose raise"
+    },
+    {
+     "t": 71.42,
+     "end": 72.5,
+     "cue": {
+      "word": "لذلك",
+      "t": 71.42
+     },
+     "who": "fx",
+     "action": "the cloud pops; the wife squares herself on the stool",
+     "acting": "settle with a shoulder roll",
+     "library": "settleTo"
+    },
+    {
+     "t": 72.56,
+     "end": 73.2,
+     "cue": {
+      "word": "بقيت",
+      "t": 72.56
+     },
+     "who": "wife",
+     "action": "lays the stick over her shoulder, ready",
+     "acting": "jaw set, brow angry again",
+     "library": "stick, aR angle"
+    },
+    {
+     "t": 73.28,
+     "end": 74.1,
+     "cue": {
+      "word": "تنتظر",
+      "t": 73.28
+     },
+     "who": "wife",
+     "action": "her eyes sweep the yard, every direction except the mongoose",
+     "acting": "saccades left, up, far left",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 74.2,
+     "end": 74.9,
+     "cue": {
+      "word": "السارق",
+      "t": 74.2
+     },
+     "who": "fx",
+     "action": "a small cloud: a black unknown silhouette with a question mark",
+     "acting": "small cloud bobs",
+     "library": "thoughtCloud small"
+    },
+    {
+     "t": 74.94,
+     "end": 75.6,
+     "cue": {
+      "word": "الحقيقي.",
+      "t": 74.94
+     },
+     "who": "mongoose",
+     "action": "behind the woman's line of sight she drops the innocent face, flicks her tail and slips behind the bush",
+     "acting": "smirk only once the woman looks away",
+     "library": "mouth smirk, walk"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 69.3,
+     "text": "HELPER!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 75.6
+   }
+  },
+  {
+   "id": "S9",
+   "start": 75.6,
+   "end": 85.3,
+   "paragraphs": [
+    4
+   ],
+   "set": "villageYard",
+   "cast": [
+    "mongoose",
+    "tortoise",
+    "songbird",
+    "mouse"
+   ],
+   "summary": "The mongoose goes looking for another animal to send into danger.",
+   "camera": {
+    "shot": "medium",
+    "move": "track",
+    "notes": "Zoom 1.4, track right with the mongoose from x 1150 to x 1520; the yard and the woman slide out of frame on the left."
+   },
+   "composition": "Mongoose centre-left of frame moving right; perch tree trunk at x 1560 and the mouse hole at its root (x 1640) arrive at the right by 84.",
+   "actions": [
+    {
+     "t": 75.78,
+     "end": 76.7,
+     "cue": {
+      "word": "أما",
+      "t": 75.78
+     },
+     "who": "camera",
+     "action": "cut behind the bush: the mongoose, hidden from the woman, rubs her paws",
+     "acting": "eyes narrow (lid 0.4), small smile",
+     "library": "mongoose"
+    },
+    {
+     "t": 76.78,
+     "end": 77.4,
+     "cue": {
+      "word": "النمس",
+      "t": 76.78
+     },
+     "who": "mongoose",
+     "action": "one glance back at the woman over the bush",
+     "acting": "head turn only, blink",
+     "library": "lookAt"
+    },
+    {
+     "t": 77.44,
+     "end": 78.3,
+     "cue": {
+      "word": "فذهبت",
+      "t": 77.44
+     },
+     "who": "mongoose",
+     "action": "trots off to the right",
+     "acting": "legs from distance, tail streaming",
+     "library": "walk, footfalls"
+    },
+    {
+     "t": 78.34,
+     "end": 79.0,
+     "cue": {
+      "word": "تبحث",
+      "t": 78.34
+     },
+     "who": "mongoose",
+     "action": "stops, stands upright with a paw shading her eyes and scans",
+     "acting": "saccades right, up, right",
+     "library": "rear, raise, gazePlan"
+    },
+    {
+     "t": 79.12,
+     "end": 79.7,
+     "cue": {
+      "word": "حيوان",
+      "t": 79.12
+     },
+     "who": "songbird",
+     "action": "a small bird on the branch sees her looking and flies away",
+     "acting": "mongoose head follows it up, shrug",
+     "library": "songbird fly, flap"
+    },
+    {
+     "t": 79.8,
+     "end": 80.5,
+     "cue": {
+      "word": "آخر",
+      "t": 79.8
+     },
+     "who": "tortoise",
+     "action": "a tortoise in her path pulls into its shell; she taps the shell twice and moves on",
+     "acting": "tortoise hide 1; mongoose flat look to camera",
+     "library": "tortoise hide, mongoose raise"
+    },
+    {
+     "t": 80.56,
+     "end": 81.7,
+     "cue": {
+      "word": "تستطيع",
+      "t": 80.56
+     },
+     "who": "fx",
+     "action": "a small thought cloud over the mongoose: a blank animal silhouette with a question mark",
+     "acting": "she looks up at it, tapping her chin",
+     "library": "thoughtCloud small"
+    },
+    {
+     "t": 81.8,
+     "end": 82.8,
+     "cue": {
+      "word": "تدفعه",
+      "t": 81.8
+     },
+     "who": "fx",
+     "action": "in the cloud an arrow pushes the silhouette toward a stick",
+     "acting": "arrow slides, silhouette jolts",
+     "library": "S.arrow inside the cloud"
+    },
+    {
+     "t": 82.84,
+     "end": 83.4,
+     "cue": {
+      "word": "الخطر",
+      "t": 82.84
+     },
+     "who": "fx",
+     "action": "the stick in the cloud throbs red",
+     "acting": "two red pulses",
+     "library": "painPulse (planned)"
+    },
+    {
+     "t": 83.5,
+     "end": 84.1,
+     "cue": {
+      "word": "بدلًا",
+      "t": 83.5
+     },
+     "who": "mongoose",
+     "action": "the cloud pops; she walks on",
+     "acting": "walk",
+     "library": "walk"
+    },
+    {
+     "t": 84.16,
+     "end": 85.3,
+     "cue": {
+      "word": "منها.",
+      "t": 84.16
+     },
+     "who": "mongoose",
+     "action": "she spots the small hole at the tree root: ears perk, she lowers herself, slow smirk; a pink nose shows in the hole",
+     "acting": "gaze locks on the hole; smirk grows over 12 frames",
+     "library": "burrow (small), mouse sniff"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 85.2,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 85.3
+   }
+  },
+  {
+   "id": "S10",
+   "start": 85.3,
+   "end": 104.6,
+   "paragraphs": [
+    5
+   ],
+   "set": "villageYard",
+   "cast": [
+    "mongoose",
+    "mouse"
+   ],
+   "summary": "The mongoose sweet-talks the mouse: plenty of sesame, come and take your share.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pull-out",
+    "notes": "Two-shot zoom 1.9 centred (1560, 830); 87.2 to 88.6 pull out to zoom 1.0 centred (1100, 720) to show how near the yard is, then back to the two-shot 1.8 by 88.8; small push to 2.0 at 97.6."
+   },
+   "composition": "Mongoose left at x 1480 facing right, mouse right at the hole x 1640 facing left. Picture balloon above the mongoose at about (1500, 640) with its tail to her, clear of both faces.",
+   "actions": [
+    {
+     "t": 85.76,
+     "end": 86.5,
+     "cue": {
+      "word": "وجدت",
+      "t": 85.76
+     },
+     "who": "mouse",
+     "action": "pops out of her hole, sniffs, sees the mongoose and half ducks back",
+     "acting": "startle sq 0.85, ears back, eyes wide",
+     "library": "rat (planned) mouse palette: sniff, sq"
+    },
+    {
+     "t": 86.6,
+     "end": 87.1,
+     "cue": {
+      "word": "فأرة",
+      "t": 86.6
+     },
+     "who": "lettering",
+     "action": "arrow and label MOUSE",
+     "acting": "label pops",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 87.2,
+     "end": 88.6,
+     "cue": {
+      "word": "تسكن",
+      "t": 87.2
+     },
+     "who": "camera",
+     "action": "pull out: the mouse hole, the bush, the mat and the woman on her stool all in one line; then back in",
+     "acting": "the woman is small but clearly there with her stick",
+     "library": "CAM keys in pairs"
+    },
+    {
+     "t": 88.82,
+     "end": 90.1,
+     "cue": {
+      "word": "وقالت",
+      "t": 88.82
+     },
+     "who": "mongoose",
+     "action": "makes herself small and friendly: sits low, head tilted, a paw on her chest",
+     "acting": "sq 0.92, soft half-lid, smile; mouse watches from the hole rim",
+     "library": "mongoose sit, raise, talk"
+    },
+    {
+     "t": 90.64,
+     "end": 91.6,
+     "cue": {
+      "word": "«هناك",
+      "t": 90.64
+     },
+     "who": "mongoose",
+     "action": "points back toward the yard",
+     "acting": "her gaze stays on the mouse while the paw points",
+     "library": "mongoose raise + tip -0.05"
+    },
+    {
+     "t": 91.66,
+     "end": 92.2,
+     "cue": {
+      "word": "سمسم",
+      "t": 91.66
+     },
+     "who": "fx",
+     "action": "a picture balloon pops: a heap of sesame",
+     "acting": "mouse pupils jump to the balloon",
+     "library": "iconBalloon (planned)"
+    },
+    {
+     "t": 92.28,
+     "end": 93.2,
+     "cue": {
+      "word": "كثير",
+      "t": 92.28
+     },
+     "who": "fx",
+     "action": "the heap in the balloon swells until it presses the balloon edge",
+     "acting": "mouse eyes widen, ears forward",
+     "library": "iconBalloon content scale"
+    },
+    {
+     "t": 93.26,
+     "end": 94.2,
+     "cue": {
+      "word": "ولذيذ،",
+      "t": 93.26
+     },
+     "who": "mongoose",
+     "action": "licks her lips and rubs her belly; sparkles on the balloon heap; the mouse comes fully out, nose twitching",
+     "acting": "mongoose eyes shut in mock bliss, one eye peeks at the mouse",
+     "library": "lid, sniff"
+    },
+    {
+     "t": 94.94,
+     "end": 96.0,
+     "cue": {
+      "word": "يحتاج",
+      "t": 94.94
+     },
+     "who": "mongoose",
+     "action": "open-pawed shrug: nobody needs all of it",
+     "acting": "brows raised, head shake",
+     "library": "mongoose raise, brow"
+    },
+    {
+     "t": 96.76,
+     "end": 97.5,
+     "cue": {
+      "word": "كله.",
+      "t": 96.76
+     },
+     "who": "mouse",
+     "action": "nods along, takes one small step closer",
+     "acting": "nod on the word, tail curls",
+     "library": "walk, tailCurl"
+    },
+    {
+     "t": 97.6,
+     "end": 98.4,
+     "cue": {
+      "word": "تعالي",
+      "t": 97.6
+     },
+     "who": "mongoose",
+     "action": "beckons twice with a paw",
+     "acting": "two paw pulses, warm smile",
+     "library": "raise pulses"
+    },
+    {
+     "t": 98.46,
+     "end": 99.4,
+     "cue": {
+      "word": "وخذي",
+      "t": 98.46
+     },
+     "who": "mouse",
+     "action": "two more steps; now out in the open beside the mongoose",
+     "acting": "eyes on the balloon, not on the mongoose",
+     "library": "walk"
+    },
+    {
+     "t": 99.66,
+     "end": 100.3,
+     "cue": {
+      "word": "يكفيك،",
+      "t": 99.66
+     },
+     "who": "mongoose",
+     "action": "mimes a modest little pile between her paws",
+     "acting": "gentle, reasonable face",
+     "library": "raise"
+    },
+    {
+     "t": 101.14,
+     "end": 102.1,
+     "cue": {
+      "word": "أكلت",
+      "t": 101.14
+     },
+     "who": "fx",
+     "action": "balloon picture changes: three small round-bellied mongooses asleep by an empty bowl",
+     "acting": "mouse licks her lips",
+     "library": "iconBalloon content"
+    },
+    {
+     "t": 102.14,
+     "end": 103.2,
+     "cue": {
+      "word": "منه",
+      "t": 102.14
+     },
+     "who": "mongoose",
+     "action": "pats her own round belly",
+     "acting": "belly pat with a small jiggle (sq 0.97)",
+     "library": "mongoose, sq"
+    },
+    {
+     "t": 103.3,
+     "end": 104.6,
+     "cue": {
+      "word": "شبعت.»",
+      "t": 103.3
+     },
+     "who": "mongoose",
+     "action": "leans back content; while the mouse stares at the balloon, the mongoose's smile turns into the smirk for a few frames",
+     "acting": "mask off only while the mouse cannot see",
+     "library": "smirk, lid"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 86.7,
+     "text": "MOUSE"
+    },
+    {
+     "t": 88.9,
+     "text": "PSST!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 104.6
+   }
+  },
+  {
+   "id": "S11",
+   "start": 104.6,
+   "end": 119.4,
+   "paragraphs": [
+    6
+   ],
+   "set": "villageYard",
+   "cast": [
+    "mouse",
+    "mongoose",
+    "wife"
+   ],
+   "summary": "The mouse hungers for the food, asks no questions and does not notice the woman by the sesame.",
+   "camera": {
+    "shot": "close",
+    "move": "pull-out",
+    "notes": "Close zoom 2.2 on the mouse (1620, 840); at 115.5 pull out and pan left to zoom 1.0 centred (1050, 720) so the woman, the mat, the bush and the mouse are all in frame; hold."
+   },
+   "composition": "Mouse right, mongoose just behind her. In the wide: woman on the stool far left (x 520), mat, bush, then mongoose and mouse on the right. The mouse's dream cloud is drawn exactly over the woman.",
+   "actions": [
+    {
+     "t": 104.7,
+     "end": 105.3,
+     "who": "mouse",
+     "action": "in the pause: her stomach rumbles (three small arcs at her belly)",
+     "acting": "she looks down at her belly, then up",
+     "library": "soundArcs, lookAt"
+    },
+    {
+     "t": 105.36,
+     "end": 106.0,
+     "cue": {
+      "word": "سمعت",
+      "t": 105.36
+     },
+     "who": "mouse",
+     "action": "ears swivel to the mongoose, head tilts",
+     "acting": "big ears forward, blink",
+     "library": "rat ears, tip"
+    },
+    {
+     "t": 106.8,
+     "end": 107.5,
+     "cue": {
+      "word": "الكلام",
+      "t": 106.8
+     },
+     "who": "fx",
+     "action": "a thought cloud opens over the mouse: a mountain of sesame with herself on top",
+     "acting": "eyes shine (wet highlight used as sparkle)",
+     "library": "thoughtCloud (planned)"
+    },
+    {
+     "t": 107.64,
+     "end": 108.7,
+     "cue": {
+      "word": "فاشتهت",
+      "t": 107.64
+     },
+     "who": "mouse",
+     "action": "a drop at the corner of her mouth; her tail curls tight; she rises on her toes",
+     "acting": "sq 1.06 stretch toward the cloud, lid 0.3 dreamy",
+     "library": "tailCurl, sq"
+    },
+    {
+     "t": 108.76,
+     "end": 109.5,
+     "cue": {
+      "word": "الطعام.",
+      "t": 108.76
+     },
+     "who": "lettering",
+     "action": "YUM! pops beside her",
+     "acting": "small hop of joy",
+     "library": "hop, landSquash"
+    },
+    {
+     "t": 110.0,
+     "end": 110.5,
+     "who": "fx",
+     "action": "in the pause: a small question mark starts to form over her head",
+     "acting": "she glances up at it for a moment",
+     "library": "S.label ?"
+    },
+    {
+     "t": 110.82,
+     "end": 111.5,
+     "cue": {
+      "word": "تسأل",
+      "t": 110.82
+     },
+     "who": "mouse",
+     "action": "she shakes her head and the question mark pops like a bubble",
+     "acting": "quick head shake, eyes back to the dream cloud",
+     "library": "tremble 1 cycle"
+    },
+    {
+     "t": 111.52,
+     "end": 112.5,
+     "cue": {
+      "word": "لماذا",
+      "t": 111.52
+     },
+     "who": "mongoose",
+     "action": "behind her, the mongoose holds a smile that is a little too wide",
+     "acting": "unblinking for 1 s (noBlink)",
+     "library": "mouth smile, noBlink"
+    },
+    {
+     "t": 112.6,
+     "end": 113.7,
+     "cue": {
+      "word": "النمس",
+      "t": 112.6
+     },
+     "who": "mongoose",
+     "action": "offers the way with an open paw, like a host at a door",
+     "acting": "head dip",
+     "library": "raise, tip 0.1"
+    },
+    {
+     "t": 113.76,
+     "end": 115.4,
+     "cue": {
+      "word": "بهذه",
+      "t": 113.76
+     },
+     "who": "mongoose",
+     "action": "a low sweeping bow: after you",
+     "acting": "bow with follow-through of the tail",
+     "library": "tip 0.2, tailUp"
+    },
+    {
+     "t": 115.54,
+     "end": 116.9,
+     "cue": {
+      "word": "ولم",
+      "t": 115.54
+     },
+     "who": "camera",
+     "action": "pull out and pan left: the yard comes into view",
+     "acting": "mouse still gazing up at her cloud",
+     "library": "CAM keys"
+    },
+    {
+     "t": 116.96,
+     "end": 117.5,
+     "cue": {
+      "word": "المرأة",
+      "t": 116.96
+     },
+     "who": "lettering",
+     "action": "the woman on her stool with the stick; red arrow and label DANGER point at her",
+     "acting": "arrow bounces once",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 117.54,
+     "end": 118.3,
+     "cue": {
+      "word": "الجالسة",
+      "t": 117.54
+     },
+     "who": "wife",
+     "action": "yawns, eyelids droop, then snap open: still on guard",
+     "acting": "lid 0.7 then 0",
+     "library": "lid, mouth o"
+    },
+    {
+     "t": 118.38,
+     "end": 118.8,
+     "cue": {
+      "word": "قرب",
+      "t": 118.38
+     },
+     "who": "wife",
+     "action": "shifts the stick from her shoulder to both hands",
+     "acting": "eyes on the yard",
+     "library": "stick, PERSON_HANDS.grip"
+    },
+    {
+     "t": 118.82,
+     "end": 119.4,
+     "cue": {
+      "word": "السمسم.",
+      "t": 118.82
+     },
+     "who": "fx",
+     "action": "the mouse's dream cloud slides so that it sits exactly over the woman, hiding her from the mouse; the mat glints",
+     "acting": "the picture of not noticing",
+     "library": "thoughtCloud position key"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 108.8,
+     "text": "YUM!"
+    },
+    {
+     "t": 117.0,
+     "text": "DANGER"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 104.7,
+     "kind": "chime"
+    },
+    {
+     "t": 110.0,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 119.4
+   }
+  },
+  {
+   "id": "S12",
+   "start": 119.4,
+   "end": 127.0,
+   "paragraphs": [
+    6
+   ],
+   "set": "villageYard",
+   "cast": [
+    "mouse",
+    "mongoose",
+    "wife"
+   ],
+   "summary": "The mouse races to the seeds thinking only of the meal.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Zoom 1.3, track left with the mouse from x 1600 to x 960; ends on a wide zoom 1.15 centred (760, 740) with the wife on the left and the mouse arriving on the right of the mat."
+   },
+   "composition": "Mouse runs right to left along the ground line; the bush passes behind her with the mongoose ducking into it; the wife grows in the left of frame.",
+   "actions": [
+    {
+     "t": 119.6,
+     "end": 119.9,
+     "who": "mouse",
+     "action": "anticipation crouch",
+     "acting": "sq 0.8, ears back",
+     "library": "anticipate"
+    },
+    {
+     "t": 119.94,
+     "end": 120.7,
+     "cue": {
+      "word": "أسرعت",
+      "t": 119.94
+     },
+     "who": "mouse",
+     "action": "bolts to the left in a scurry with a dust trail",
+     "acting": "stretch on take-off, legs from distance",
+     "library": "rat ph/amp via walk, dustBurst"
+    },
+    {
+     "t": 120.78,
+     "end": 121.2,
+     "cue": {
+      "word": "نحو",
+      "t": 120.78
+     },
+     "who": "mongoose",
+     "action": "stays behind and backs into the bush until only her eyes show",
+     "acting": "eyes follow the mouse",
+     "library": "peek from cover: draw mongoose then bush"
+    },
+    {
+     "t": 121.22,
+     "end": 121.8,
+     "cue": {
+      "word": "الحبوب،",
+      "t": 121.22
+     },
+     "who": "mouse",
+     "action": "passes the bush without a glance",
+     "acting": "gaze fixed straight ahead on the mat",
+     "library": "lookAt"
+    },
+    {
+     "t": 122.52,
+     "end": 123.0,
+     "cue": {
+      "word": "تفكر",
+      "t": 122.52
+     },
+     "who": "fx",
+     "action": "a small cloud with a bowl of seeds bobs along above her head as she runs",
+     "acting": "cloud lags her by 3 frames",
+     "library": "thoughtCloud small"
+    },
+    {
+     "t": 123.12,
+     "end": 123.9,
+     "cue": {
+      "word": "فقط",
+      "t": 123.12
+     },
+     "who": "mouse",
+     "action": "running, she ties a little bib round her neck",
+     "acting": "eyes half shut with bliss",
+     "library": "rat bib (planned field)"
+    },
+    {
+     "t": 123.96,
+     "end": 124.8,
+     "cue": {
+      "word": "الوجبة",
+      "t": 123.96
+     },
+     "who": "camera",
+     "action": "the frame widens: the mat and, beyond it, the woman",
+     "acting": "mouse still looking only at the heap",
+     "library": "CAM keys"
+    },
+    {
+     "t": 124.9,
+     "end": 126.0,
+     "cue": {
+      "word": "تنتظرها.",
+      "t": 124.9
+     },
+     "who": "wife",
+     "action": "her pupils snap to the running mouse; her hands close on the stick; she does not move yet",
+     "acting": "stillness, brow V",
+     "library": "gazePlan, PERSON_HANDS.grip"
+    },
+    {
+     "t": 126.3,
+     "end": 127.0,
+     "who": "mouse",
+     "action": "in the pause she skids to a stop at the edge of the mat in a puff of dust",
+     "acting": "squash on the stop, bib flips up and settles",
+     "library": "landSquash, dustBurst"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 126.6,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 127.0
+   }
+  },
+  {
+   "id": "S13",
+   "start": 127.0,
+   "end": 138.0,
+   "paragraphs": [
+    7
+   ],
+   "set": "villageYard",
+   "cast": [
+    "mouse",
+    "wife"
+   ],
+   "summary": "The mouse reaches the food; the woman raises her stick and strikes; the mouse dies at once.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "shake",
+    "notes": "Two-shot zoom 1.5 centred (680, 760); 132.2 push to 2.4 on the mouse (800, 860) for her look to camera; 134.4 cut wide 1.3; panel-only shake 6 px for 0.25 s at 135.2; then a still hold."
+   },
+   "composition": "Wife left rising over the mat, mouse on the right part of the mat at x 800. The raised stick must stay inside the panel: stick tip no higher than world y 420 at zoom 1.3.",
+   "actions": [
+    {
+     "t": 127.19,
+     "end": 128.0,
+     "cue": {
+      "word": "ما",
+      "t": 127.19
+     },
+     "who": "mouse",
+     "action": "hops onto the mat",
+     "acting": "hop arc, small squash",
+     "library": "hop, landSquash"
+    },
+    {
+     "t": 128.04,
+     "end": 129.4,
+     "cue": {
+      "word": "وصلت",
+      "t": 128.04
+     },
+     "who": "mouse",
+     "action": "pads up the heap and takes the first seed in both paws",
+     "acting": "reverent, eyes wide",
+     "library": "rat sit"
+    },
+    {
+     "t": 129.5,
+     "end": 130.9,
+     "cue": {
+      "word": "الطعام",
+      "t": 129.5
+     },
+     "who": "mouse",
+     "action": "eats: cheeks pump, eyes shut",
+     "acting": "chew cycle, lid 1, tail sways",
+     "library": "rat chew"
+    },
+    {
+     "t": 130.98,
+     "end": 132.2,
+     "cue": {
+      "word": "رفعت",
+      "t": 130.98
+     },
+     "who": "wife",
+     "action": "rises from the stool and lifts the stick high in both hands; her shadow slides over the mouse",
+     "acting": "anticipation dip then rise, arms by angles so the shape reads",
+     "library": "aL/aR about [2.45, 2.85], stick, dark ellipse shadow on the mat"
+    },
+    {
+     "t": 132.24,
+     "end": 133.0,
+     "cue": {
+      "word": "عصاها",
+      "t": 132.24
+     },
+     "who": "mouse",
+     "action": "stops mid-chew as the light dims; her pupils slide up; a look to camera",
+     "acting": "hold, realise, lens stare, gulp",
+     "library": "gaze [0, 0.05], noBlink"
+    },
+    {
+     "t": 133.02,
+     "end": 134.4,
+     "cue": {
+      "word": "وضربتها",
+      "t": 133.02
+     },
+     "who": "wife",
+     "action": "the stick draws back further for the blow and trembles at the top",
+     "acting": "wind-up, eyes narrowed; mouse frozen with the seed in her paws",
+     "library": "anticipate, tremble"
+    },
+    {
+     "t": 134.46,
+     "end": 135.15,
+     "cue": {
+      "word": "رأسها.",
+      "t": 134.46
+     },
+     "who": "wife",
+     "action": "the stick whips down",
+     "acting": "ease-in swing over 6 frames starting 134.95",
+     "library": "strike cycle (Fox branchTipY pattern)"
+    },
+    {
+     "t": 135.2,
+     "end": 135.9,
+     "who": "fx",
+     "action": "contact at 135.20 in the pause, hidden by a 2-frame white flash and a red and yellow star burst with THWACK!; the seeds jump",
+     "acting": "panel-only shake, seeds hop 10 units and settle",
+     "library": "S.emphasis, kick, panel shake"
+    },
+    {
+     "t": 136.06,
+     "end": 137.3,
+     "cue": {
+      "word": "ماتت",
+      "t": 136.06
+     },
+     "who": "mouse",
+     "action": "the burst clears: the mouse lies on her back on the mat, X eyes, small and still, the bib askew",
+     "acting": "no blood, no wound; total stillness",
+     "library": "rat roll 1, eyes x"
+    },
+    {
+     "t": 137.36,
+     "end": 138.0,
+     "cue": {
+      "word": "في",
+      "t": 137.36
+     },
+     "who": "fx",
+     "action": "one seed rolls out of her paw and comes to rest; the stick tip rests on the ground",
+     "acting": "slow roll with ease-out; the woman breathes out",
+     "library": "settleTo, breathe"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 135.2,
+     "text": "THWACK!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 135.25,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 138.0
+   }
+  },
+  {
+   "id": "S14",
+   "start": 138.0,
+   "end": 148.14,
+   "paragraphs": [
+    7
+   ],
+   "set": "villageYard",
+   "cast": [
+    "wife",
+    "mouse"
+   ],
+   "summary": "The wife believes she has caught the animal that took the sesame from the start.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "Zoom 1.35 centred (680, 660) with room for the cloud; from 147.2 begin a slow pan right toward the bush."
+   },
+   "composition": "Wife standing left of the mat, the mouse small on the mat at x 800; thought cloud above the mat at (760, 430).",
+   "actions": [
+    {
+     "t": 138.22,
+     "end": 139.1,
+     "cue": {
+      "word": "رأت",
+      "t": 138.22
+     },
+     "who": "wife",
+     "action": "leans over and looks at the mouse",
+     "acting": "tip 0.12, brow raised, blink",
+     "library": "tip, lookAt"
+    },
+    {
+     "t": 139.2,
+     "end": 140.1,
+     "cue": {
+      "word": "الزوجة",
+      "t": 139.2
+     },
+     "who": "wife",
+     "action": "looks from the mouse to the low heap and back",
+     "acting": "two gaze moves on a plan",
+     "library": "gazePlan"
+    },
+    {
+     "t": 140.14,
+     "end": 140.7,
+     "cue": {
+      "word": "حدث،",
+      "t": 140.14
+     },
+     "who": "wife",
+     "action": "straightens, plants the stick like a staff",
+     "acting": "settle, chin up",
+     "library": "settleTo, stick"
+    },
+    {
+     "t": 140.74,
+     "end": 142.1,
+     "cue": {
+      "word": "وظنت",
+      "t": 140.74
+     },
+     "who": "fx",
+     "action": "thought cloud: the mouse silhouette in a little black mask hauling a sack of seeds",
+     "acting": "cloud grows, she looks up into it",
+     "library": "thoughtCloud (planned)"
+    },
+    {
+     "t": 142.2,
+     "end": 142.8,
+     "cue": {
+      "word": "أنها",
+      "t": 142.2
+     },
+     "who": "wife",
+     "action": "nods firmly",
+     "acting": "nod with follow-through",
+     "library": "tip pulse"
+    },
+    {
+     "t": 142.82,
+     "end": 143.5,
+     "cue": {
+      "word": "أمسكت",
+      "t": 142.82
+     },
+     "who": "wife",
+     "action": "lifts the stick like a trophy; GOT YOU! pops beside her",
+     "acting": "proud grin, chest out (sq 1.04)",
+     "library": "aR angle, S.emphasis"
+    },
+    {
+     "t": 143.56,
+     "end": 144.4,
+     "cue": {
+      "word": "بالحيوان",
+      "t": 143.56
+     },
+     "who": "fx",
+     "action": "an arrow runs from the masked mouse in the cloud down to the real mouse",
+     "acting": "arrow draws on",
+     "library": "S.arrow"
+    },
+    {
+     "t": 145.44,
+     "end": 146.0,
+     "cue": {
+      "word": "يأخذ",
+      "t": 145.44
+     },
+     "who": "fx",
+     "action": "the cloud replays the three trips with the mouse in the mongoose's place, counter 1, 2, 3",
+     "acting": "quick 3-step replay",
+     "library": "thoughtCloud inside draw, S.counter"
+    },
+    {
+     "t": 146.04,
+     "end": 147.2,
+     "cue": {
+      "word": "السمسم",
+      "t": 146.04
+     },
+     "who": "wife",
+     "action": "the cloud pops; she pats the low heap, dusts her hands",
+     "acting": "content half-lid",
+     "library": "PERSON_HANDS.reach"
+    },
+    {
+     "t": 147.26,
+     "end": 148.14,
+     "cue": {
+      "word": "البداية.",
+      "t": 147.26
+     },
+     "who": "wife",
+     "action": "turns and walks toward the door; the camera starts to drift right",
+     "acting": "turnFlip, walk; the mouse stays in frame as long as possible",
+     "library": "turnFlip, walk"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 142.9,
+     "text": "GOT YOU!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 148.14
+   }
+  },
+  {
+   "id": "S15",
+   "start": 148.14,
+   "end": 162.7,
+   "paragraphs": [
+    8
+   ],
+   "set": "villageYard",
+   "cast": [
+    "mongoose",
+    "wife",
+    "mouse"
+   ],
+   "summary": "From a distance the mongoose watches: the real thief escaped by making the mouse look guilty.",
+   "camera": {
+    "shot": "over-shoulder",
+    "move": "pan",
+    "notes": "Pan lands on the bush zoom 1.6 (1120, 780); 151.2 pull to zoom 1.0 centred (900, 720): mongoose large on the right, the mat and the door small on the left; 157.0 tilt down 60 units for the ground window under the burrow; 160.2 back up."
+   },
+   "composition": "Mongoose head above the bush at about (1120, 760), looking left. Inset circle (r 150) top left of the panel for the replays. Ground window under the burrow at (1330, 1010).",
+   "actions": [
+    {
+     "t": 148.14,
+     "end": 149.5,
+     "cue": {
+      "word": "أما",
+      "t": 148.14
+     },
+     "who": "camera",
+     "action": "the pan arrives at the bush: two eyes in the leaves",
+     "acting": "only the eyes, one blink",
+     "library": "bush, eye discs"
+    },
+    {
+     "t": 149.62,
+     "end": 150.2,
+     "cue": {
+      "word": "النمس",
+      "t": 149.62
+     },
+     "who": "mongoose",
+     "action": "her head rises above the bush",
+     "acting": "ears first, then eyes, then snout",
+     "library": "peek from cover"
+    },
+    {
+     "t": 150.3,
+     "end": 151.1,
+     "cue": {
+      "word": "فبقيت",
+      "t": 150.3
+     },
+     "who": "mongoose",
+     "action": "stays put, chin resting on her paws on top of the bush",
+     "acting": "calm, half-lid",
+     "library": "lid 0.4"
+    },
+    {
+     "t": 151.22,
+     "end": 152.0,
+     "cue": {
+      "word": "بعيدة",
+      "t": 151.22
+     },
+     "who": "camera",
+     "action": "pull out to show the distance: the small still mouse on the mat, the woman at her door, the mongoose far on the right",
+     "acting": "depth by size",
+     "library": "CAM keys"
+    },
+    {
+     "t": 152.12,
+     "end": 152.9,
+     "cue": {
+      "word": "تراقب",
+      "t": 152.12
+     },
+     "who": "mongoose",
+     "action": "her pupils follow the woman to the door",
+     "acting": "slow gaze move, tail tip flicks",
+     "library": "gazePlan, tailUp"
+    },
+    {
+     "t": 153.0,
+     "end": 153.7,
+     "cue": {
+      "word": "المشهد.",
+      "t": 153.0
+     },
+     "who": "wife",
+     "action": "goes inside; the door shuts",
+     "acting": "door settles",
+     "library": "walk, door"
+    },
+    {
+     "t": 153.72,
+     "end": 155.1,
+     "cue": {
+      "word": "كانت",
+      "t": 153.72
+     },
+     "who": "mongoose",
+     "action": "steps out from the bush into the open, now that nobody is watching",
+     "acting": "unhurried walk, tail high",
+     "library": "walk"
+    },
+    {
+     "t": 155.22,
+     "end": 155.6,
+     "cue": {
+      "word": "هي",
+      "t": 155.22
+     },
+     "who": "lettering",
+     "action": "a red arrow and label REAL THIEF pop, pointing at her",
+     "acting": "she glances at the label and shrugs",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 155.7,
+     "end": 156.9,
+     "cue": {
+      "word": "سرقت",
+      "t": 155.7
+     },
+     "who": "fx",
+     "action": "inset circle: fast replay of her three trips to the mat with the counter 1, 2, 3",
+     "acting": "iris opens with overshoot",
+     "library": "inset circle (planned)"
+    },
+    {
+     "t": 157.06,
+     "end": 158.7,
+     "cue": {
+      "word": "الحبوب،",
+      "t": 157.06
+     },
+     "who": "fx",
+     "action": "a round window opens in the earth under her burrow: a big hoard of sesame",
+     "acting": "iris opens; she pats her belly",
+     "library": "groundWindow (planned), dryingMat heap drawing reused"
+    },
+    {
+     "t": 158.88,
+     "end": 160.1,
+     "cue": {
+      "word": "نجت",
+      "t": 158.88
+     },
+     "who": "mongoose",
+     "action": "wipes her brow with a paw: phew",
+     "acting": "eyes shut for 6 frames, shoulders drop",
+     "library": "raise, lid"
+    },
+    {
+     "t": 160.22,
+     "end": 160.8,
+     "cue": {
+      "word": "جعلت",
+      "t": 160.22
+     },
+     "who": "fx",
+     "action": "the ground window closes; the inset now shows the wife's picture of the masked mouse",
+     "acting": "iris swap",
+     "library": "inset circle"
+    },
+    {
+     "t": 160.88,
+     "end": 162.1,
+     "cue": {
+      "word": "الفأرة",
+      "t": 160.88
+     },
+     "who": "mongoose",
+     "action": "looks across the yard at the small body on the mat",
+     "acting": "long look, no smile",
+     "library": "lookAt"
+    },
+    {
+     "t": 162.18,
+     "end": 162.7,
+     "cue": {
+      "word": "مذنبة.",
+      "t": 162.18
+     },
+     "who": "lettering",
+     "action": "a stamp GUILTY? slams onto the inset picture of the mouse",
+     "acting": "stamp scale 1.4 to 1 in 3 frames",
+     "library": "S.emphasis"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 155.3,
+     "text": "REAL THIEF"
+    },
+    {
+     "t": 162.2,
+     "text": "GUILTY?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 162.7
+   }
+  },
+  {
+   "id": "S16",
+   "start": 162.7,
+   "end": 173.59,
+   "paragraphs": [
+    8
+   ],
+   "set": "villageYard",
+   "cast": [
+    "mongoose",
+    "mouse"
+   ],
+   "summary": "The story ends with the mouse dead on the mat while the mongoose goes safely home. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Zoom 1.5 on the mat (780, 800) with a slow push to 1.8 until 166.4; cut to the burrow zoom 1.5 (1300, 780); slow push to 1.8 on the hole by 170; hold for THE END."
+   },
+   "composition": "First the mouse alone on the mat in long evening light; then the mongoose crossing right to her burrow. THE END title in the upper third of the panel, clear of the burrow.",
+   "actions": [
+    {
+     "t": 162.86,
+     "end": 164.4,
+     "cue": {
+      "word": "وانتهت",
+      "t": 162.86
+     },
+     "who": "set",
+     "action": "the sky eases to the dusk preset; shadows lengthen across the yard; inset and labels are gone",
+     "acting": "quiet frame",
+     "library": "sky preset dusk (cross-fade of two bakes)"
+    },
+    {
+     "t": 164.52,
+     "end": 165.2,
+     "cue": {
+      "word": "القصة",
+      "t": 164.52
+     },
+     "who": "camera",
+     "action": "slow push in on the mat",
+     "acting": "nothing moves but the camera",
+     "library": "CAM keys"
+    },
+    {
+     "t": 165.24,
+     "end": 165.8,
+     "cue": {
+      "word": "بموت",
+      "t": 165.24
+     },
+     "who": "mouse",
+     "action": "the little mouse lies still, bib beside her, one seed by her paw",
+     "acting": "held stillness",
+     "library": "rat roll"
+    },
+    {
+     "t": 165.84,
+     "end": 166.4,
+     "cue": {
+      "word": "الفأرة،",
+      "t": 165.84
+     },
+     "who": "fx",
+     "action": "a single husk drifts down and lands near her",
+     "acting": "slow drift, settles",
+     "library": "seeded particle"
+    },
+    {
+     "t": 166.48,
+     "end": 167.3,
+     "cue": {
+      "word": "بينما",
+      "t": 166.48
+     },
+     "who": "camera",
+     "action": "cut to the mongoose by the bush, turning for home",
+     "acting": "turn with a squeeze",
+     "library": "turnFlip"
+    },
+    {
+     "t": 167.42,
+     "end": 168.5,
+     "cue": {
+      "word": "عادت",
+      "t": 167.42
+     },
+     "who": "mongoose",
+     "action": "trots to her burrow, unhurried, tail high",
+     "acting": "walk from distance, small dust",
+     "library": "walk, footfalls"
+    },
+    {
+     "t": 168.82,
+     "end": 169.5,
+     "cue": {
+      "word": "جحرها",
+      "t": 168.82
+     },
+     "who": "mongoose",
+     "action": "pauses at the burrow mouth and looks back once toward the yard",
+     "acting": "one blink, flat mouth",
+     "library": "lookAt, blink"
+    },
+    {
+     "t": 169.6,
+     "end": 170.5,
+     "cue": {
+      "word": "سالمة.",
+      "t": 169.6
+     },
+     "who": "mongoose",
+     "action": "slides in; the tail flicks in last; two eyes glint in the dark of the hole and close",
+     "acting": "tail follow-through, slow eye close",
+     "library": "burrow eyes state (planned), clip at the hole"
+    },
+    {
+     "t": 170.6,
+     "end": 173.59,
+     "who": "lettering",
+     "action": "THE END title pops and holds over the quiet burrow",
+     "acting": "title overshoot and settle; a husk drifts",
+     "library": "S.title, S.finish last"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 170.6,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 170.9,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 173.59
+   }
+  }
+ ],
+ "ending": {
+  "t": 170.6,
+  "description": "After the last word (ends 170.30) the mongoose is gone into her burrow; two eyes glint in the hole and close. THE END pops at 170.6 over the quiet dusk yard and holds to 173.59 with one soft chime at 170.9. No moral caption (the script gives none)."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان فلاح فقير يعيش مع زوجته، ولهما صديق مريض يحتاج إلى علاج.|أخبرهما الطبيب أن السمسم يمكن أن يساعده،|فذهب الفلاح واشترى كمية منه، ثم حملها إلى البيت.",
+   "en": "A poor farmer and his wife had a sick friend who needed treatment.|A physician told them sesame could help him,|so the farmer bought some and brought it home."
+  },
+  {
+   "p": 2,
+   "ar": "قشرت الزوجة حبوب السمسم ونشرتها حتى تجف.|وبينما كانت مشغولة بأعمال أخرى، جاءت أنثى نمس وأخذت بعض الحبوب إلى جحرها.|وعادت مرة بعد مرة، حتى نقصت الكمية كثيرًا.",
+   "en": "The wife hulled the sesame and spread it out to dry.|While she was busy, a female mongoose carried some into her burrow.|She returned repeatedly until much of the sesame was gone."
+  },
+  {
+   "p": 3,
+   "ar": "لاحظت الزوجة النقص، فجلست تراقب السمسم وفي يدها عصا.|رأت النمس تقترب من المكان.|لكن النمس كانت ذكية؛|حملت بعض الحبوب من جحرها وأعادتها أمام عيني المرأة.",
+   "en": "The wife noticed the loss and sat watching with a stick.|She saw the mongoose approach,|but it acted cleverly:|it brought some seeds from its burrow and returned them in full view of the woman."
+  },
+  {
+   "p": 4,
+   "ar": "ظنت الزوجة أن النمس لا تسرق، بل تعيد الطعام إلى مكانه.|لذلك بقيت تنتظر السارق الحقيقي.|أما النمس فذهبت تبحث عن حيوان آخر تستطيع أن تدفعه إلى الخطر بدلًا منها.",
+   "en": "The wife thought the mongoose was returning food rather than stealing it.|She waited for the real thief.|Meanwhile the mongoose looked for another animal it could send into danger in its place."
+  },
+  {
+   "p": 5,
+   "ar": "وجدت فأرة تسكن قريبًا، وقالت لها:|«هناك سمسم كثير ولذيذ، ولا يحتاج أحد إليه كله.|تعالي وخذي منه ما يكفيك، فقد أكلت أسرتي منه حتى شبعت.»",
+   "en": "It found a mouse living nearby and said,|“There is plenty of delicious sesame, more than anyone needs.|Come take your share. My family has eaten its fill.”"
+  },
+  {
+   "p": 6,
+   "ar": "سمعت الفأرة الكلام فاشتهت الطعام.|لم تسأل لماذا تعرض النمس الحبوب بهذه السهولة، ولم تنتبه إلى المرأة الجالسة قرب السمسم.|أسرعت نحو الحبوب، وهي تفكر فقط في الوجبة التي تنتظرها.",
+   "en": "The mouse desired the food.|It did not ask why the mongoose offered it so freely or notice the woman sitting beside the sesame.|It hurried toward the seeds, thinking only of the meal ahead."
+  },
+  {
+   "p": 7,
+   "ar": "ما إن وصلت الفأرة إلى الطعام حتى رفعت المرأة عصاها وضربتها على رأسها.|ماتت الفأرة في الحال.|رأت الزوجة ما حدث، وظنت أنها أمسكت بالحيوان الذي كان يأخذ السمسم منذ البداية.",
+   "en": "As soon as the mouse reached the food, the woman raised her stick and struck its head.|The mouse died immediately.|The wife believed she had caught the animal stealing the sesame all along."
+  },
+  {
+   "p": 8,
+   "ar": "أما النمس فبقيت بعيدة تراقب المشهد.|كانت هي التي سرقت أكثر الحبوب، لكنها نجت لأنها جعلت الفأرة تبدو مذنبة.|وانتهت القصة بموت الفأرة، بينما عادت النمس إلى جحرها سالمة.",
+   "en": "The mongoose watched from a distance.|It had stolen most of the seeds but escaped by making the mouse appear guilty.|The mouse was dead, while the mongoose returned safely to its burrow."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "mongoose",
+   "reusable": true,
+   "effort": "M",
+   "description": "Long low small carnivore for this film and any later mongoose, weasel, ferret or marten (palette option). At s 1: feet at (x, y), body a rounded bar 230 long x 70 high with its top 95 above the ground, four short legs 30 long, head 80 x 60 with a pointed snout, round ears r 14, thick tapering tail 170 long. Pose fields: ph, amp (walk), rear 0..1 (pivot upright about the hind feet to about 75 degrees, forepaws tucked: the sentinel pose), sit, sniff (nose up, whisker twitch), cheeks 0..1 (stuffed cheek pouches), raise 0..1 (near forepaw up for pointing, beckoning, waving), talk, mouth (closed, smile, smirk, o, open), brow, ears -1..1, tailUp 0..1, lashes, pal, plus the shared acting fields.",
+   "implementation": "One function in Library/cast following the fox file: body as a K rounded path with the style's red or black dot shading, legs from the same walk() phase as the fox, head as a rotated group so headRot and sniff work, eyes through eye2/EYE so gaze, lid and wet work, tail as a tapered quadratic stroke with a swing() follow-through. rear is a rotation of body, head and forelegs about the hind feet. cheeks scales two cream circles at the jaw. Wrap with acting() in registry.js."
+  },
+  {
+   "type": "character",
+   "name": "rat",
+   "reusable": true,
+   "effort": "M",
+   "description": "The planned 'rat' used as a mouse: palette pal 1 (light grey, pink ears 1.3x), s 0.75. Fields used: ph, amp, sit, sniff, chew, roll (on its back), bib, tailCurl, eyes 'x', plus the shared acting fields.",
+   "implementation": "As planned by KD-011 and KD-014; add only the palette entry and an ear size factor. If the rat is not built yet, build it once here from an egg-shaped body 110 x 70, a 60 x 50 head, two ear discs, four short legs on walk() and a tail drawn as a quadratic stroke."
+  },
+  {
+   "type": "character",
+   "name": "villager",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned person variants 'villager' (farmer with patches, sick friend with a pale tone) and 'villageWoman' (the wife).",
+   "implementation": "Costume parameters on the Library person as planned; patches are two small yellow rounded rects with black stitches on the tunic."
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (physician, merchant)",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned 'physician' preset (age 0.6) and the planned 'merchant' preset as the sesame seller.",
+   "implementation": "As planned by KD-022 and AN-095 on the person costume layer."
+  },
+  {
+   "type": "pose",
+   "name": "person kneel / sit",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned sit 0..1 for the wife on her stool (most of the film) and kneel for the physician at the bedside.",
+   "implementation": "As planned: thighs drawn forward, hips lowered by about 70 units; the stool is a 70 x 60 brown box under her."
+  },
+  {
+   "type": "pose",
+   "name": "person lie / sit up in bed",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned lie pose for the sick friend on the floor mattress (S2 only).",
+   "implementation": "As planned: the figure rotated to horizontal, a blanket shape over the body, one arm outside."
+  },
+  {
+   "type": "set",
+   "name": "villageYard",
+   "reusable": true,
+   "effort": "M",
+   "description": "The planned village yard, 1800 wide for this film, with the anchors listed under sets (cottage, stool, mat, bush, burrow, tree, mouse hole).",
+   "implementation": "Bake Library sky, hillTrees, treeRow and ground; draw the cottage facade from rects with a hinged door (door 0..1) and a window whose silhouette is a clipped dark person; Library bush and tree for the cover and the perch."
+  },
+  {
+   "type": "set",
+   "name": "hutRoom",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned hut cutaway, dressed with a floor mattress and a jug.",
+   "implementation": "As planned by KD-015 and KD-026; the mattress is a rounded rect 240 x 40 with piping and a pillow."
+  },
+  {
+   "type": "set",
+   "name": "marketStreet",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned market street with one seed stall.",
+   "implementation": "As planned; the stall is a counter rect with two sack props and a scale drawn from two arcs and a bar."
+  },
+  {
+   "type": "prop",
+   "name": "dryingMat",
+   "reusable": true,
+   "effort": "S",
+   "description": "A straw mat 320 x 26 (yellow with brown weave lines and a fringe at both ends) carrying a heap of grain. Fields: fill 0..1 (heap height up to 60 and width up to 260; at 0.35 bare mat shows at both sides), spread 0..1 (seeds fan out from one end), jump (px, for the hit), colour (white sesame by default, so it can be wheat, rice or dates later). 40 seeded loose seeds around the heap edge.",
+   "implementation": "Mat: K rounded rect plus short strokes. Heap: a flattened ellipse cap in white with blue Ben-Day dots on the shaded side and small black seed ticks placed by K.rng with a fixed seed; fill scales the cap. Also reused inside the picture balloon, the thought clouds and the ground window."
+  },
+  {
+   "type": "prop",
+   "name": "stick, coinPile, smallBowl",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned stick (the wife's weapon), a single coin from coinPile, and the smallBowl for hulling.",
+   "implementation": "As planned; the stick is drawn from the grip point at an angle so the strike is one keyed angle."
+  },
+  {
+   "type": "prop",
+   "name": "sack, coin, valuables",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned sack with fill 0..1 for the purchase (small size).",
+   "implementation": "As planned by KD-013 and KD-017."
+  },
+  {
+   "type": "prop",
+   "name": "burrow",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned burrow mound with states plain and eyes in the dark; two instances (mongoose s 1, mouse s 0.5).",
+   "implementation": "As planned; characters enter by clipping them at the hole edge (the Fox head-into-hole pattern)."
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned generic thought cloud, used for the wife's two mistaken beliefs (S8, S14), the mongoose's plan (S9) and the mouse's dream of food (S11, S12).",
+   "implementation": "As planned: cloud outline with a draw-inside callback and a position key so it can slide over the woman in S11."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned wordless picture balloon for the physician's advice (S2) and the mongoose's sales talk (S10).",
+   "implementation": "As planned; content is the dryingMat heap drawing, a heart, and three small mongoose silhouettes."
+  },
+  {
+   "type": "effect",
+   "name": "groundWindow",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned round window into the earth, used once (157.06 to 160.2) to show the hoard under the burrow.",
+   "implementation": "As planned by KD-031: an iris-clipped disc of darker soil with the heap drawing inside."
+  },
+  {
+   "type": "effect",
+   "name": "painPulse",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned red throb for the sick friend's forehead (6.08) and the danger stick in the plan cloud (82.84).",
+   "implementation": "As planned: two expanding red rings and three small stars."
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned round picture-in-picture, used in S15 for the replay of the thefts and for the picture of the framed mouse.",
+   "implementation": "As planned: a clipped circle r 150 in panel space with an iris and a fat black border."
+  }
+ ],
+ "owner_questions": [
+  "The strike on the mouse is hidden by a white flash and a THWACK! star burst, and the dead mouse is shown whole on her back with X eyes and no blood; default: softened as described.",
+  "The contact of the stick is placed at 135.20 in the pause after the sentence, so the thud never covers a word; default: accepted, although the hit lands about 2 s after the word for struck.",
+  "Two small gags not in the script are added while the mongoose searches (a bird flies off, a Library tortoise hides in its shell); default: kept, total 1.4 s.",
+  "English lettering added: SESAME, DOCTOR, MONGOOSE, MOUSE, STICK, SNIFF!, HMM?, LESS!, HELPER!, PSST!, YUM!, DANGER, THWACK!, GOT YOU!, REAL THIEF, GUILTY?; default: kept (16 words in 171 s).",
+  "The script gives no moral line, so no moral caption is shown and the film ends on the mongoose going home; default: THE END only.",
+  "The mongoose is drawn with eyelashes to show she is female as the script says; default: kept."
+ ],
+ "implementation_notes": [
+  "One world for S1 and S4 to S16: villageYard 1800 x 1230, ground y 900. Bake the back layers once per sky preset (day, dusk) and cross-fade the two bakes during 162.86 to 164.4.",
+  "Set LIFE.t = t each frame so every character blinks; give explicit lid where a scene asks for stillness, a stare (noBlink) or a slow blink.",
+  "Drive every traverse with a position function and walk() and footfalls(): the three theft trips (S5) share one keyed X list [mat 880, burrow 1330] so the counter, the mat fill and the dust all come from the same keys.",
+  "dryingMat fill timeline: 0 before 23.8; spread to 1.0 by 24.8; 0.8 at 34.9; 0.6 at 37.3; 0.35 at 38.9 and held; 0.40 from 61.6; unchanged to the end. The low heap must stay visibly low in S14 so the wife's pride reads as a mistake.",
+  "The wife sits on the stool from 45.56 to 130.98 without a break; keep her alive in every wide shot with blinks, gaze plans and small stick moves, even when she is tiny.",
+  "Mask on, mask off: the mongoose smirks only when no other character can see her face (62.82, 74.94, 103.30). Keep those smirks 6 to 10 frames.",
+  "The strike: gap at rest, lift at 130.98, wind-up at 133.02, whip down from 134.95, contact 135.20, damped rebound with no second contact (the Fox strike cycle). Flash 2 frames. Shake inside the panel clip only.",
+  "Hiding in the bush and entering the burrows: draw the actor first and the occluder after it, or clip at the hole edge; no second clipped copy.",
+  "Thought clouds and balloons sit above y 560 in world terms and never cover a face, except the deliberate case at 118.82 where the mouse's cloud covers the woman.",
+  "Sound: nine quiet effects, all in listed pauses or after the last word: pop 4.1, pop 8.8, whoosh 20.2, pop 85.2, chime 104.7, pop 110.0, whoosh 126.6, thud 135.25, chime 170.9. SND master 0.6.",
+  "Cue times are word starts from timeline.md; starts after a pause can include a little silence, so check the onsets at 20.82, 85.76, 105.36, 110.56, 127.19 and 136.06 against the audio envelope before locking those actions.",
+  "Subtitle chunks are in the subtitles array (3 chunks per paragraph, 4 for paragraph 3), verbatim from story/script.json."
+ ],
+ "warnings": [
+  "Many assets this film relies on are planned by other stories but not yet in Library (rat, villager variants, physician and merchant presets, sit, kneel and lie poses, villageYard, hutRoom, marketStreet, thoughtCloud, iconBalloon, groundWindow, inset circle, stick, sack, burrow). If AN-039 is animated before them, it must build them; the only assets new to the whole plan are mongoose and dryingMat.",
+  "The mongoose and the mouse are small (about 95 and 55 units high). Use zoom 1.4 or more whenever they act alone, and keep faces at least 110 px on screen.",
+  "S1 to S3 use three sets in 20 s for the first paragraph. If time is short, S3 can be staged in the yard with the seller's stall as an inset circle.",
+  "The death of the mouse must stay calm and clear, never funny after the hit: no stars circling, no comic bounce after 136.06.",
+  "Three mongoose thefts, one replay in the wife's cloud and one in the inset use the same motion; write it once as a function of a local clock."
+ ]
+}

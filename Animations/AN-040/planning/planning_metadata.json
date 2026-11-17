@@ -1,0 +1,98 @@
+{
+ "story_id": "AN-040",
+ "title": "The Cat and the Crow",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T13:01:39",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a5d3ff9c63396f930.jsonl",
+ "agent_id": "a5d3ff9c63396f930",
+ "model_messages": {
+  "claude-fable-5-2": 20
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "1c2c036f0032e04fde5af9954f57a5c6515f82ca0482c026acf3387e5c9c61be",
+  "paragraphs": 8,
+  "segments": [
+   "AN-040-P01-S01",
+   "AN-040-P01-S02",
+   "AN-040-P01-S03",
+   "AN-040-P01-S04",
+   "AN-040-P01-S05",
+   "AN-040-P01-S06",
+   "AN-040-P01-S07",
+   "AN-040-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-040_The_Cat_and_the_Crow_full_slowed.mp3",
+  "sha256": "f24e9824fe92f8b50f2ad8eaebdb0f304b0c57826d60ad82596e13434eac7d54",
+  "duration": 164.099
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-040_The_Cat_and_the_Crow_full_slowed.mp3.words.json",
+  "sha256": "c09687aaecefbe84791cc44fccd32ae171544784bf1a982f035553a589d51b56",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "959278e",
+ "scenes": 16,
+ "actions": 173,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "cat",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "leopard",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "dog",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "sheep",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "forestEdge",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "pasture",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "chaseRoad",
+   "effort": "M"
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "runInPlace",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Four new animals (cat, leopard, dog, sheep) is the upper limit for one film; cat is already planned for AN-014 and should be drawn once for both. If time is short, sheep can be simplified to static wool shapes with a head bob.",
+  "The Arabic word for the predator is translated as leopard in the supplied English; the plan follows the English (spots, not stripes).",
+  "S5 is diagram heavy; if it reads as cluttered at phone size drop the TOO FAR label and keep the two X marks and the two bars.",
+  "The word times marked for long words (for example 79.20, 100.78, 107.20) include a little leading silence; check onsets on the waveform for the lunge at 79.2 and the charge at 133.12.",
+  "The crow (s 0.95) is large next to the cat (s 0.9) by real proportions; this is deliberate for phone legibility."
+ ]
+}

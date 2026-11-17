@@ -1,0 +1,2870 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-138",
+ "title": "Yahya bin Khalid and the Poor Man",
+ "duration": 172.269,
+ "end_hold": 3.5,
+ "logline": "A poor man asks the vizier Yahya for help and is given a room, fine food and a thousand dirhams every day with no end date; after thirty days he panics that it is too much, and sneaks away with his sack from a door that was never going to close.",
+ "moral": "True generosity keeps no account. Fear of losing a gift can cost more than the gift: the man kept thirty thousand and walked away from a lifetime of welcome.",
+ "tone": "Warm, gently comic and a little wistful. The comedy is the gap between what the poor man imagines (a stern accountant) and what Yahya is (a host who never counts). No villain, no punishment.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.0,
+   "kind": "setup",
+   "cue": {
+    "word": "عاد",
+    "t": 0.0
+   },
+   "summary": "Yahya rides home through Baghdad from the caliph's palace."
+  },
+  {
+   "id": "B2",
+   "t": 9.72,
+   "kind": "inciting",
+   "cue": {
+    "word": "رأى",
+    "t": 9.72
+   },
+   "summary": "He sees a poor man waiting at his door; the man stands, greets him and asks for help."
+  },
+  {
+   "id": "B3",
+   "t": 32.9,
+   "kind": "surprise",
+   "cue": {
+    "word": "يسأله",
+    "t": 32.9
+   },
+   "summary": "Yahya asks nothing about who he is: no family, no trade. He orders a room."
+  },
+  {
+   "id": "B4",
+   "t": 48.7,
+   "kind": "rising",
+   "cue": {
+    "word": "ألف",
+    "t": 48.7
+   },
+   "summary": "The order to the treasurer: one thousand dirhams every day and the family's own food."
+  },
+  {
+   "id": "B5",
+   "t": 57.56,
+   "kind": "reveal",
+   "cue": {
+    "word": "يحدد",
+    "t": 57.56
+   },
+   "summary": "No end date is set. The treasurer's empty box is the plant for the ending."
+  },
+  {
+   "id": "B6",
+   "t": 66.2,
+   "kind": "comic",
+   "cue": {
+    "word": "أسابيع",
+    "t": 66.2
+   },
+   "summary": "Days and weeks spin by: eating, resting, a purse every morning."
+  },
+  {
+   "id": "B7",
+   "t": 88.8,
+   "kind": "rising",
+   "cue": {
+    "word": "ثلاثون",
+    "t": 88.8
+   },
+   "summary": "Thirty nights, thirty thousand dirhams, one big sack."
+  },
+  {
+   "id": "B8",
+   "t": 95.42,
+   "kind": "turn",
+   "cue": {
+    "word": "وخاف",
+    "t": 95.42
+   },
+   "summary": "Joy turns to fear: he imagines Yahya checking the accounts and asking for some back."
+  },
+  {
+   "id": "B9",
+   "t": 118.76,
+   "kind": "suspense",
+   "cue": {
+    "word": "سرًا",
+    "t": 118.76
+   },
+   "summary": "He packs in silence and tiptoes out at night without a goodbye."
+  },
+  {
+   "id": "B10",
+   "t": 139.64,
+   "kind": "emotion",
+   "cue": {
+    "word": "يغضب",
+    "t": 139.64
+   },
+   "summary": "The servants report it and brace; Yahya is not angry and sends no one."
+  },
+  {
+   "id": "B11",
+   "t": 156.38,
+   "kind": "climax",
+   "cue": {
+    "word": "عمره",
+    "t": 156.38
+   },
+   "summary": "Yahya: had he stayed to the end of his life, neither food nor money would have stopped."
+  },
+  {
+   "id": "B12",
+   "t": 169.3,
+   "kind": "moral",
+   "cue": {
+    "word": "مفتوحًا",
+    "t": 169.3
+   },
+   "summary": "The man is gone with his sack; the door of hospitality stays open."
+  }
+ ],
+ "cast": [
+  {
+   "id": "yahya",
+   "name": "Yahya ibn Khalid al-Barmaki, the vizier",
+   "library": "person",
+   "base": "person costume:'vizier', age 0.55",
+   "look": "Navy dotted robe, red cape, tall white turban with jewel and feather, grey pointed beard. s 1.3 (the tallest figure). Always calm: slow blinks, small gestures, level brow. The imagined Yahya in the S11 cloud is the same figure with brow 1 and mouth open.",
+   "new": false
+  },
+  {
+   "id": "poorMan",
+   "name": "the poor man (the guest)",
+   "library": "person",
+   "base": "person costume:'villager', age 0.3, pal override",
+   "look": "Faded robe (pal robe '#b9a77a', dot brown), two patches (one blue, one red, drawn by the scene on the skirt), small frayed turban, bare feet (pal shoes:'bare'), s 1.2, slight stoop (lean 0.05) in P1-P2. He keeps the same costume all film so he is always recognised; from S8 the stoop goes and a clean sash (yellow) is added.",
+   "new": false
+  },
+  {
+   "id": "treasurer",
+   "name": "the treasurer",
+   "library": "person",
+   "base": "person costume:'merchant' with pal {robe: green, dot: dark green, hc: yellow}",
+   "look": "Round green merchant figure with a big yellow turban and black beard, a ring of three keys on his sash and a ledger under his arm. Precise, counts everything, slowly won over.",
+   "new": false
+  },
+  {
+   "id": "servantA",
+   "name": "first servant (cheerful)",
+   "library": "person",
+   "base": "person costume:'servant'",
+   "look": "White tunic, red cap and sash, moustache. Cheerful and quick. Also the dozing doorkeeper in S13.",
+   "new": false
+  },
+  {
+   "id": "servantB",
+   "name": "second servant (eager)",
+   "library": "person",
+   "base": "person costume:'servant' with pal {hc: blue, sash: blue}, age 0",
+   "look": "Same preset, blue cap and sash, no grey; always two frames behind servantA and over-eager (he wants to chase the guest).",
+   "new": false
+  },
+  {
+   "id": "horse",
+   "name": "Yahya's white horse",
+   "library": "horse",
+   "base": "horse pal 0 (white, blue saddle cloth), s 0.8, with rideOn",
+   "look": "Only in S1-S2.",
+   "new": false
+  },
+  {
+   "id": "household",
+   "name": "Yahya's family at their meal (diagram figures)",
+   "library": "person",
+   "base": "person costume:'lady' sit floor + costume:'prince' child:true sit floor, s 0.8",
+   "look": "Two small seated figures under the FAMILY tray in S7 only.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "gateStreet",
+   "library": "marketStreet",
+   "description": "Baghdad street with the palace facade used as Yahya's house: marketStreet({palette:'clear', palace:'lit', palaceDoor}). House door anchor x 680..820, top 560, standing line (step) y 872, ground y 900, balcony at (750, 400). Day for S1-S4, night for S13 (u 0.75, palette 'cold', lit balcony and door glow), dawn for S17 (u 0.02-0.08). No stalls; one 'mat' and one 'pots' prop at x 200 for life.",
+   "new": false
+  },
+  {
+   "id": "guestRoom",
+   "library": "palaceHall",
+   "description": "The guest room: palaceHall({variant:'merchant', wall:'ochre', desk:false, shelves:[{x0:240,x1:440,y:440,goods:'jars'}], u}) dressed by the scene with the diwan (x 580..880, seat top y 836), a low table (x 260..400, top y 822), a rug (x 540..900, y 900..930) and the hanging lamp at (730, 240). Door x 60..200, top 580. The window (x 510..610, y 330..470) shows the time of day and is the film's clock. States: day, spinning time, night with lamp, morning empty.",
+   "new": true
+  },
+  {
+   "id": "hall",
+   "library": "palaceHall",
+   "description": "Yahya's reception hall: palaceHall({variant:'palace', wall:'paper', throne:false, cushions:[730]}). Door arch x 40..250 (top 480), dais x 560..900 with top y 860, three arches behind. Yahya sits on a floorCushion on the dais at x 730.",
+   "new": false
+  }
+ ],
+ "props": [
+  {
+   "id": "purse",
+   "library": null,
+   "description": "Planned purse: fat drawstring coin purse about 60 x 70 with fill 0..1 (0 = flat and limp, insideOut option for S3) and an optional mark \"1000\".",
+   "new": true
+  },
+  {
+   "id": "coinPile",
+   "library": null,
+   "description": "Planned coinPile with the silver palette (dirhams): single coin, short stacks, a floor heap that grows (n), and a tall column in the S11 cloud.",
+   "new": true
+  },
+  {
+   "id": "sack",
+   "library": null,
+   "description": "Planned sack with fill 0..1 and a coin mark; here at s 1.6 (about 190 wide x 300 tall), tied mouth with a knot, a bulge field, and a carried state on the back.",
+   "new": true
+  },
+  {
+   "id": "foodTray",
+   "library": null,
+   "description": "Planned brass tray 150 x 16 with bread, a rice dome, dates and a cup; optional domed cover that lifts; steam.",
+   "new": true
+  },
+  {
+   "id": "ledger",
+   "library": null,
+   "description": "The treasurer's account book: closed 70 x 90 red-brown with a yellow spine; open 150 x 100 showing ruled lines, tally strokes (n 0..30) and an UNTIL line with an empty box.",
+   "new": true
+  },
+  {
+   "id": "bindle",
+   "library": "packLoad",
+   "description": "The guest's few belongings tied in a cloth: packLoad(ctx, ['bindle'], x, y, s) on the floor, then hanging from his free hand.",
+   "new": false
+  },
+  {
+   "id": "moonCounter",
+   "library": null,
+   "description": "Planned moonCounter extended to rows: 30 moon icons (r 20) in 3 rows of 10, pitch 62 x 58, in panel space, lighting in order.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 8.12,
+   "paragraphs": [
+    1
+   ],
+   "set": "gateStreet",
+   "cast": [
+    "yahya",
+    "horse",
+    "servantA",
+    "poorMan"
+   ],
+   "summary": "Baghdad by day. Yahya rides home from the caliph's palace on a white horse, a servant trotting behind. The camera travels with him to the tall door of his own house, where a small ragged figure sits by the steps.",
+   "camera": {
+    "shot": "establishing",
+    "move": "pan",
+    "notes": "Start wide on the left half of the street (cam x 420, y 640, zoom 1.0), travel right with the horse and settle on x 560 zoom 1.15 by 6.7 so the house door (x 680..820) and the seated man (x 610) are in frame with the stopped horse (x 300)."
+   },
+   "composition": "Horse and rider in the left third, moving right; house facade (marketStreet palace, x 530..1010) on the right. Poor man small and low at x 610, y 900 so the eye finds him last. Labels sit in the sky above y 300, never on a face.",
+   "actions": [
+    {
+     "t": 0.0,
+     "cue": {
+      "word": "عاد",
+      "t": 0.0
+     },
+     "who": "camera",
+     "action": "opens wide on a sunny Baghdad street, skyline domes behind",
+     "acting": "slow eased travel to the right; nothing static: cloud drift, a shutter swinging",
+     "library": "marketStreet {palette:\"clear\", palace:\"lit\", palaceDoor:0}"
+    },
+    {
+     "t": 0.42,
+     "cue": {
+      "word": "يحيى",
+      "t": 0.42
+     },
+     "who": "yahya",
+     "action": "rides in from the left edge (x -220 to 300 by 7.4) on the white horse",
+     "acting": "upright, calm half smile, eyes ahead (gaze [1,0.1]), slow blinks; rider bob from the mount",
+     "library": "rideOn(ctx,\"horse\",{...walk(HX,t,{stride:GAIT.horse*0.8}),pal:0,s:0.8},{costume:\"vizier\",age:0.55})"
+    },
+    {
+     "t": 1.68,
+     "cue": {
+      "word": "البرمكي",
+      "t": 1.68
+     },
+     "who": "lettering",
+     "action": "label YAHYA THE VIZIER with an arrow to the rider",
+     "acting": "label pops with overshoot above the turban, follows him for 2.2 s then drops away",
+     "library": "style label + arrow"
+    },
+    {
+     "t": 2.62,
+     "cue": {
+      "word": "ذات",
+      "t": 2.62
+     },
+     "who": "servantA",
+     "action": "jogs in three steps behind the horse carrying a rolled document",
+     "acting": "eager, slightly out of breath (mouth o), gaze on his master; legs from distance, no sliding",
+     "library": "person {costume:\"servant\"} + walk() + footfalls()"
+    },
+    {
+     "t": 3.86,
+     "cue": {
+      "word": "قصر",
+      "t": 3.86
+     },
+     "who": "fx",
+     "action": "the larger dome on the skyline behind them glints; small arrow tag CALIPH'S PALACE points back at it",
+     "acting": "Yahya's horse flicks an ear back toward it; tag fades by 5.2",
+     "library": "style arrow + label; horse earL"
+    },
+    {
+     "t": 5.66,
+     "cue": {
+      "word": "بيته",
+      "t": 5.66
+     },
+     "who": "camera",
+     "action": "pan arrives on the tall red door of the house; tag HOME over the door",
+     "acting": "door closed, lamp glow in the balcony window (palace:\"lit\")",
+     "library": "marketStreet anchors palace.door {x0:680,x1:820,top:560,bottom:872}"
+    },
+    {
+     "t": 6.68,
+     "cue": {
+      "word": "بغداد",
+      "t": 6.68
+     },
+     "who": "lettering",
+     "action": "place title BAGHDAD stamps in the sky top left",
+     "acting": "style title, small size, 1.3 s, clear of the rider's head",
+     "library": "style title"
+    },
+    {
+     "t": 6.9,
+     "who": "poorMan",
+     "action": "is revealed sitting on the ground beside the steps, knees up, head low",
+     "acting": "sit floor, lid 0.5, gaze down, slow breathing; patched robe, bare feet. He has not seen the rider yet",
+     "library": "person {costume:\"villager\", pal:{robe:faded, shoes:\"bare\"}, sit:1, seat:\"floor\"} + breathe()"
+    },
+    {
+     "t": 7.4,
+     "who": "horse",
+     "action": "is reined in and stops with a small rear of the head; dust at the front hooves",
+     "acting": "rider lurches forward and settles; horse snorts, tail swish",
+     "library": "lurch(t,7.4), dustBurst, horse {snort, tailSwish}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 1.68,
+     "text": "YAHYA THE VIZIER"
+    },
+    {
+     "t": 3.86,
+     "text": "CALIPH'S PALACE"
+    },
+    {
+     "t": 5.66,
+     "text": "HOME"
+    },
+    {
+     "t": 6.68,
+     "text": "BAGHDAD"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 7.72,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 8.12
+   }
+  },
+  {
+   "id": "S2",
+   "start": 8.12,
+   "end": 22.98,
+   "paragraphs": [
+    1
+   ],
+   "set": "gateStreet",
+   "cast": [
+    "yahya",
+    "horse",
+    "servantA",
+    "poorMan"
+   ],
+   "summary": "At the door. Yahya notices the waiting man; the man scrambles to his feet, bows, greets him and asks for help. Yahya dismounts off screen during a close shot and walks in to meet him.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Cut at 8.12 to a medium on the steps (x 600, y 700, zoom 1.6). 11.2-13.0 close on the poor man (zoom 2.2) which hides the dismount. From 15.5 a two-shot from twoShot(yahya head, poorMan head, {margin:110})."
+   },
+   "composition": "Poor man right of centre (x 610), Yahya enters from the left and stops at x 420: status reads from height (Yahya s 1.3 with tall turban, the poor man s 1.2 and stooped). Door behind them, centred between the two heads.",
+   "actions": [
+    {
+     "t": 8.12,
+     "cue": {
+      "word": "وعند",
+      "t": 8.12
+     },
+     "who": "camera",
+     "action": "cut to the steps of the house",
+     "acting": "medium shot, slight push"
+    },
+    {
+     "t": 8.74,
+     "cue": {
+      "word": "باب",
+      "t": 8.74
+     },
+     "who": "poorMan",
+     "action": "hears the hooves and lifts his head",
+     "acting": "lid 0.5 to 0, gaze rises from the ground to the rider (lookAt), ears of the horse in the left edge of frame",
+     "library": "gazePlan"
+    },
+    {
+     "t": 9.72,
+     "cue": {
+      "word": "رأى",
+      "t": 9.72
+     },
+     "who": "yahya",
+     "action": "on the horse at the frame edge, his eyes drop to the man and stay",
+     "acting": "gaze snaps down right, brow raised (-0.4), a 6 px head tilt; the horse turns its head to look too",
+     "library": "look(), horse {headTurn:0.3}"
+    },
+    {
+     "t": 10.52,
+     "cue": {
+      "word": "رجلًا",
+      "t": 10.52
+     },
+     "who": "lettering",
+     "action": "arrow and label A POOR MAN on the seated figure",
+     "acting": "label above and to the right of his head, not over the face",
+     "library": "style arrow + label"
+    },
+    {
+     "t": 11.24,
+     "cue": {
+      "word": "فقيرًا",
+      "t": 11.24
+     },
+     "who": "camera",
+     "action": "push in close on the poor man: two patches, frayed hem, bare toes, a flat empty purse on his sash",
+     "acting": "his eyes are wet (wet:true) and hopeful; toes curl",
+     "library": "purse {fill:0}"
+    },
+    {
+     "t": 11.98,
+     "cue": {
+      "word": "ينتظره",
+      "t": 11.98
+     },
+     "who": "poorMan",
+     "action": "wrings his hands; he has clearly been waiting a long time",
+     "acting": "clasp hands, two quick blinks, a swallow (drop pulse 4 px)",
+     "library": "PERSON_HANDS.clasp"
+    },
+    {
+     "t": 12.5,
+     "who": "servantA",
+     "action": "off screen business: leads the horse away to the left (only the tail leaves frame) while Yahya dismounts unseen",
+     "acting": "the dismount is never drawn; when the camera widens at 15.5 Yahya is on foot",
+     "library": "cut hidden in the close shot"
+    },
+    {
+     "t": 13.2,
+     "cue": {
+      "word": "وقف",
+      "t": 13.2
+     },
+     "who": "poorMan",
+     "action": "scrambles to his feet",
+     "acting": "anticipation dip 0.15 s, sit 1 to 0 in 0.5 s with a 10 % overshoot and settle; brushes dust from his robe with two pats",
+     "library": "anticipate(), settleTo(), dustBurst small"
+    },
+    {
+     "t": 14.4,
+     "cue": {
+      "word": "احترامًا",
+      "t": 14.4
+     },
+     "who": "poorMan",
+     "action": "bows his head, right hand on his chest",
+     "acting": "tip 0.14 forward, lid 0.7, held one second: respect, not grovelling",
+     "library": "PERSON_HANDS.chest, tip"
+    },
+    {
+     "t": 15.5,
+     "who": "yahya",
+     "action": "walks into the two-shot from the left and stops",
+     "acting": "unhurried walk, hands folded, kind eyes on the man; stops with a small settle",
+     "library": "walk() + footfalls(); PERSON_HANDS.folded"
+    },
+    {
+     "t": 16.18,
+     "cue": {
+      "word": "وسلم",
+      "t": 16.18
+     },
+     "who": "poorMan",
+     "action": "straightens and gives the greeting",
+     "acting": "hand from chest to an open raised palm, talk 0.7, shy smile; gaze up to Yahya's eyes",
+     "library": "PERSON_HANDS.wave"
+    },
+    {
+     "t": 16.8,
+     "cue": {
+      "word": "عليه",
+      "t": 16.8
+     },
+     "who": "yahya",
+     "action": "returns the greeting, hand on chest, a small nod",
+     "acting": "nod = 5 px drop and return; mouth smile; blink on the nod",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 18.14,
+     "cue": {
+      "word": "قال",
+      "t": 18.14
+     },
+     "who": "poorMan",
+     "action": "begins to speak",
+     "acting": "talk 0.8, palms up, brow raised worried (-0.5); Yahya listens, head tilted, gaze locked on him",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 19.58,
+     "cue": {
+      "word": "جاء",
+      "t": 19.58
+     },
+     "who": "poorMan",
+     "action": "points to himself, then to the house door",
+     "acting": "hand to chest then pointFwd at the door; a hopeful glance at the door and back",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 20.06,
+     "cue": {
+      "word": "يطلب",
+      "t": 20.06
+     },
+     "who": "poorMan",
+     "action": "half kneels, both hands reaching",
+     "acting": "kneel 0 to 0.5, reachBoth, wet eyes, slight tremble",
+     "library": "kneel, PERSON_HANDS.reachBoth, tremble()"
+    },
+    {
+     "t": 20.68,
+     "cue": {
+      "word": "مساعدته",
+      "t": 20.68
+     },
+     "who": "yahya",
+     "action": "bends and lifts him by the elbow back to standing",
+     "acting": "handRW to the man's elbow; poorMan kneel 0.5 to 0; Yahya shakes his head gently: no need to kneel",
+     "library": "handRW world target"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 10.52,
+     "text": "A POOR MAN"
+    },
+    {
+     "t": 16.3,
+     "text": "SALAM!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 15.86,
+     "kind": "chime"
+    },
+    {
+     "t": 22.4,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 22.98
+   }
+  },
+  {
+   "id": "S3",
+   "start": 22.98,
+   "end": 32.32,
+   "paragraphs": [
+    2
+   ],
+   "set": "gateStreet",
+   "cast": [
+    "yahya",
+    "poorMan"
+   ],
+   "summary": "The plea. The man shows how badly he needs money and asks Yahya to be generous. Yahya only listens, and his smile grows.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Tighter two-shot (zoom 1.9 to 2.1), eased, heads at y about 560. Keep both faces in frame the whole scene."
+   },
+   "composition": "Poor man right, Yahya left, the empty purse held up between them at chest height (about x 520, y 640) so both eye lines meet on it.",
+   "actions": [
+    {
+     "t": 22.98,
+     "cue": {
+      "word": "أخبر",
+      "t": 22.98
+     },
+     "who": "poorMan",
+     "action": "tells his trouble",
+     "acting": "talk 0.8, eyes on Yahya, shoulders low (lean)"
+    },
+    {
+     "t": 24.18,
+     "cue": {
+      "word": "يحيى",
+      "t": 24.18
+     },
+     "who": "yahya",
+     "action": "listens without interrupting",
+     "acting": "slow blink, head tilt toward him, hands folded; breathing only",
+     "library": "breathe()"
+    },
+    {
+     "t": 25.62,
+     "cue": {
+      "word": "حاجة",
+      "t": 25.62
+     },
+     "who": "poorMan",
+     "action": "unties the purse from his sash and turns it inside out",
+     "acting": "both hands at chest height (handLW/handRW on the purse); the purse hangs like a limp sock",
+     "library": "purse {fill:0, insideOut:1}"
+    },
+    {
+     "t": 26.32,
+     "cue": {
+      "word": "شديدة",
+      "t": 26.32
+     },
+     "who": "fx",
+     "action": "one moth flutters out of the purse and away over Yahya's shoulder",
+     "acting": "both pairs of eyes follow the moth for 0.6 s, then return to each other (the one light laugh of the scene)",
+     "library": "moth (planned, AN-105): 2 triangles flapping on a seeded bezier"
+    },
+    {
+     "t": 27.64,
+     "cue": {
+      "word": "المال",
+      "t": 27.64
+     },
+     "who": "fx",
+     "action": "small balloon above the poor man: a coin icon with a red slash",
+     "acting": "pops on the word, 1.2 s, placed right of his head",
+     "library": "bubble() + coinPile single coin"
+    },
+    {
+     "t": 28.22,
+     "cue": {
+      "word": "وطلب",
+      "t": 28.22
+     },
+     "who": "poorMan",
+     "action": "clasps his hands toward Yahya",
+     "acting": "clasp, tip 0.08, brow -0.7, wet eyes",
+     "library": "PERSON_HANDS.clasp"
+    },
+    {
+     "t": 30.28,
+     "cue": {
+      "word": "يكون",
+      "t": 30.28
+     },
+     "who": "yahya",
+     "action": "strokes his beard once, thinking kindly",
+     "acting": "chin gesture, gaze stays on the man, lid 0.2",
+     "library": "PERSON_HANDS.chin"
+    },
+    {
+     "t": 30.74,
+     "cue": {
+      "word": "كريمًا",
+      "t": 30.74
+     },
+     "who": "yahya",
+     "action": "his smile spreads",
+     "acting": "mouth closed to smile over 0.4 s, brow relaxed; poor man sees it and his own brow lifts"
+    },
+    {
+     "t": 31.5,
+     "cue": {
+      "word": "معه",
+      "t": 31.5
+     },
+     "who": "yahya",
+     "action": "one decisive nod",
+     "acting": "anticipate up 3 px, nod down 7 px, settle",
+     "library": "anticipate()"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 32.32
+   }
+  },
+  {
+   "id": "S4",
+   "start": 32.32,
+   "end": 38.5,
+   "paragraphs": [
+    2
+   ],
+   "set": "gateStreet",
+   "cast": [
+    "yahya",
+    "poorMan",
+    "servantA",
+    "servantB"
+   ],
+   "summary": "The surprise of the story begins: the man braces for questions that never come. Two question tags pop up and are struck out; Yahya waves them away, turns to the door and gives an order. The door swings open.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "Start on the two-shot, pull out to zoom 1.5 by 36.9 so the door (x 680..820) is in frame for the order."
+   },
+   "composition": "Question tags appear in the sky between the heads (x 420..620, y 380..470). Door right of centre; the servants pop out of it at 37.5.",
+   "actions": [
+    {
+     "t": 32.32,
+     "cue": {
+      "word": "لم",
+      "t": 32.32
+     },
+     "who": "poorMan",
+     "action": "braces for the questioning he expects",
+     "acting": "shoulders hunch, lid 0.4, eyes flick down then up"
+    },
+    {
+     "t": 32.9,
+     "cue": {
+      "word": "يسأله",
+      "t": 32.9
+     },
+     "who": "yahya",
+     "action": "opens his mouth as if to ask, then closes it with a smile",
+     "acting": "talk 0.3 for 4 frames then mouth smile; a tiny head shake"
+    },
+    {
+     "t": 34.46,
+     "cue": {
+      "word": "نسبه",
+      "t": 34.46
+     },
+     "who": "lettering",
+     "action": "tag FAMILY? pops with a small family-tree icon and is struck through by a red brush stroke",
+     "acting": "pop 0.15 s, strike 0.25 s later",
+     "library": "style box + emphasis strike"
+    },
+    {
+     "t": 35.54,
+     "cue": {
+      "word": "عمله",
+      "t": 35.54
+     },
+     "who": "lettering",
+     "action": "tag JOB? pops with a hammer icon and is struck through",
+     "acting": "same rhythm as the first, 0.1 s faster",
+     "library": "style box + emphasis strike"
+    },
+    {
+     "t": 36.22,
+     "cue": {
+      "word": "بل",
+      "t": 36.22
+     },
+     "who": "yahya",
+     "action": "sweeps both tags out of the air with the back of his hand",
+     "acting": "wave arc right to left; tags spin off the top of the panel; poor man's eyes follow them up, mouth o",
+     "library": "PERSON_HANDS.wave"
+    },
+    {
+     "t": 36.94,
+     "cue": {
+      "word": "أمر",
+      "t": 36.94
+     },
+     "who": "yahya",
+     "action": "turns to the door, claps once and points inside",
+     "acting": "aR raised then pointFwd at the door; talk 0.8; chin up, the only commanding pose he takes in the film",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 37.3,
+     "cue": {
+      "word": "أن",
+      "t": 37.26
+     },
+     "who": "set",
+     "action": "the house door swings open, warm yellow light on the step",
+     "acting": "palaceDoor 0 to 0.8 in 0.4 s with a small overshoot",
+     "library": "marketStreet {palaceDoor}"
+    },
+    {
+     "t": 37.56,
+     "cue": {
+      "word": "يجهزوا",
+      "t": 37.56
+     },
+     "who": "servantA",
+     "action": "pops out of the doorway, servantB two frames behind him",
+     "acting": "both bow quickly, then hurry back in (stagger); the poor man: eyes wide, sq 1.06 in surprise",
+     "library": "stagger(i)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 34.46,
+     "text": "FAMILY?"
+    },
+    {
+     "t": 35.54,
+     "text": "JOB?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 38.5
+   }
+  },
+  {
+   "id": "S5",
+   "start": 38.5,
+   "end": 42.22,
+   "paragraphs": [
+    2
+   ],
+   "set": "guestRoom",
+   "cast": [
+    "poorMan",
+    "servantA",
+    "servantB"
+   ],
+   "summary": "The comfortable room. Servants plump the cushions as the man steps in and cannot believe it. He sits and sinks into the couch.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Whole room (x 500, y 640, zoom 1.0). Static: the room is a place we return to five times, so its geography must be learned here."
+   },
+   "composition": "Door on the left (x 60..200), low table at x 330, the couch (diwan) at x 580..880 with its seat top at y 836, window above centre (x 510..610) showing the day. Poor man enters from the door, servants at the couch.",
+   "actions": [
+    {
+     "t": 38.7,
+     "cue": {
+      "word": "غرفة",
+      "t": 38.7
+     },
+     "who": "servantB",
+     "action": "plumps a big cushion on the couch; servantA unrolls a small rug in front of it",
+     "acting": "cushion squashes and springs back (sq 0.8 to 1.1 to 1); the rug unrolls left to right in 0.5 s",
+     "library": "diwan + floorCushion"
+    },
+    {
+     "t": 39.54,
+     "cue": {
+      "word": "مريحة",
+      "t": 39.54
+     },
+     "who": "lettering",
+     "action": "label GUEST ROOM with an arrow to the couch; the hanging lamp lights",
+     "acting": "label in the upper wall area",
+     "library": "hangingLamp {lit}"
+    },
+    {
+     "t": 40.38,
+     "cue": {
+      "word": "داخل",
+      "t": 40.38
+     },
+     "who": "poorMan",
+     "action": "steps in through the door and stops dead",
+     "acting": "two steps, then frozen: eyes wide, mouth o, gaze darts couch, lamp, window, couch (saccades)",
+     "library": "walk(); gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 41.08,
+     "cue": {
+      "word": "البيت",
+      "t": 41.08
+     },
+     "who": "poorMan",
+     "action": "pokes the couch with one finger, then sits and sinks in",
+     "acting": "pointDown poke, cushion dents; sit 0 to 1 with landSquash; a slow delighted smile; servants exit past him with bows",
+     "library": "sit, seat:\"bench\" on the diwan (sitY 836), landSquash()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 39.54,
+     "text": "GUEST ROOM"
+    },
+    {
+     "t": 41.75,
+     "text": "POOF!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 41.95,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 42.22
+   }
+  },
+  {
+   "id": "S6",
+   "start": 42.22,
+   "end": 50.88,
+   "paragraphs": [
+    3
+   ],
+   "set": "hall",
+   "cast": [
+    "yahya",
+    "treasurer"
+   ],
+   "summary": "Yahya's hall. He summons his treasurer and orders one thousand dirhams for the guest, every day. The treasurer's careful face does the comedy.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide of the hall at 42.22 (zoom 1.0), push to a two-shot (zoom 1.5) by 47.2 and hold for the number."
+   },
+   "composition": "Yahya seated on a cushion on the dais (x 730, dais top y 860); treasurer enters by the door arch (x 40..250) and stops at x 430 on the floor (y 900). The counter appears between them at about x 560, y 420.",
+   "actions": [
+    {
+     "t": 42.22,
+     "cue": {
+      "word": "ثم",
+      "t": 42.22
+     },
+     "who": "camera",
+     "action": "cut to the hall: arches, carpet runner, Yahya sitting on the dais",
+     "acting": "calm, symmetrical; lamps sway slightly",
+     "library": "palaceHall {throne:false, cushions:[730]}"
+    },
+    {
+     "t": 43.32,
+     "cue": {
+      "word": "استدعى",
+      "t": 43.32
+     },
+     "who": "yahya",
+     "action": "claps twice to summon",
+     "acting": "two small claps (hands meet at chest), gaze to the door arch",
+     "library": "person {costume:\"vizier\", sit:1, seat:\"bench\"}"
+    },
+    {
+     "t": 44.62,
+     "cue": {
+      "word": "خازنه",
+      "t": 44.62
+     },
+     "who": "treasurer",
+     "action": "hurries in from the door arch with a ledger under his arm and a ring of keys at his sash",
+     "acting": "quick short steps, keys swinging (swing()), stops with a settle and a bow; label THE TREASURER for 1.5 s",
+     "library": "person {costume:\"merchant\", pal:{robe:GREEN, dot:GREEND, hc:C.yellow}} + walk() + ledger"
+    },
+    {
+     "t": 45.34,
+     "cue": {
+      "word": "وأمره",
+      "t": 45.34
+     },
+     "who": "treasurer",
+     "action": "opens the ledger and readies his quill",
+     "acting": "handLW under the book, handRW with the quill; eyes on his master, brows level: a man who counts everything",
+     "library": "ledger {open:1}"
+    },
+    {
+     "t": 46.3,
+     "who": "yahya",
+     "action": "takes a breath and raises one open hand",
+     "acting": "anticipation: chest lifts, hand rises slowly through the gap in the narration",
+     "library": "anticipate()"
+    },
+    {
+     "t": 47.48,
+     "cue": {
+      "word": "يعطي",
+      "t": 47.48
+     },
+     "who": "yahya",
+     "action": "the open hand tips forward: give",
+     "acting": "palmsUp R tipping toward the door the guest went through; warm smile",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 48.7,
+     "cue": {
+      "word": "ألف",
+      "t": 48.7
+     },
+     "who": "fx",
+     "action": "counter 1000 stamps in large between them with a silver coin beside it",
+     "acting": "pop with overshoot; the treasurer's eyes go wide and the quill stops in mid air",
+     "library": "style counter + coinPile {silver:true, n:1}"
+    },
+    {
+     "t": 49.16,
+     "cue": {
+      "word": "درهم",
+      "t": 49.16
+     },
+     "who": "coinPile",
+     "action": "ten short stacks of silver coins pop up in a row under the number",
+     "acting": "left to right, 2 frames apart",
+     "library": "coinPile {silver:true}"
+    },
+    {
+     "t": 49.9,
+     "cue": {
+      "word": "كل",
+      "t": 49.9
+     },
+     "who": "lettering",
+     "action": "tag EVERY DAY slams under the counter",
+     "acting": "treasurer does a slow look to camera (gaze [0,0.05]) and back",
+     "library": "style emphasis"
+    },
+    {
+     "t": 50.24,
+     "cue": {
+      "word": "يوم",
+      "t": 50.24
+     },
+     "who": "treasurer",
+     "action": "gulps and writes very fast",
+     "acting": "drop pulse 5 px, quill scribbling (hand jitter from K.noise), brow -0.6"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 44.9,
+     "text": "THE TREASURER"
+    },
+    {
+     "t": 48.7,
+     "text": "1000"
+    },
+    {
+     "t": 49.9,
+     "text": "EVERY DAY"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 50.88
+   }
+  },
+  {
+   "id": "S7",
+   "start": 50.88,
+   "end": 61.28,
+   "paragraphs": [
+    3
+   ],
+   "set": "hall",
+   "cast": [
+    "yahya",
+    "treasurer",
+    "servantA",
+    "household"
+   ],
+   "summary": "The same good food as the family, and no end date. A simple picture equation shows the two identical trays; then the treasurer waits to write a last day and Yahya gives him none.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "50.9-56.4: the left half of the hall as a diagram stage (cam x 380). 56.5 on: back to the two-shot on the dais side (cam x 600, zoom 1.6)."
+   },
+   "composition": "Diagram: two trays side by side at y 600 (x 260 and x 520) with an equals sign between; under the left tray the family (lady and child, s 0.8), under the right tray the tag GUEST. Later: ledger held up at x 470, y 640 with its empty UNTIL box facing us.",
+   "actions": [
+    {
+     "t": 50.88,
+     "cue": {
+      "word": "وأن",
+      "t": 50.88
+     },
+     "who": "servantA",
+     "action": "crosses the hall carrying a covered tray",
+     "acting": "careful walk, eyes on the tray, steam curls from it",
+     "library": "foodTray {kind:\"dome\"} + steam()"
+    },
+    {
+     "t": 52.8,
+     "cue": {
+      "word": "الطعام",
+      "t": 52.8
+     },
+     "who": "foodTray",
+     "action": "the cover lifts: bread, rice dome, dates, a cup",
+     "acting": "cover pops up 30 units and away; three sparkle stars",
+     "library": "foodTray {open:1}"
+    },
+    {
+     "t": 53.4,
+     "cue": {
+      "word": "الجيد",
+      "t": 53.4
+     },
+     "who": "lettering",
+     "action": "label GOOD FOOD with an arrow",
+     "acting": "short, above the tray"
+    },
+    {
+     "t": 53.98,
+     "cue": {
+      "word": "مثل",
+      "t": 53.98
+     },
+     "who": "fx",
+     "action": "the tray doubles: a second identical tray slides out beside it and a big equals sign pops between them",
+     "acting": "match the two exactly; the equals sign bounces once",
+     "library": "style box, seg()"
+    },
+    {
+     "t": 55.0,
+     "cue": {
+      "word": "يأكل",
+      "t": 55.0
+     },
+     "who": "household",
+     "action": "under the left tray Yahya's family appear eating: a lady and a child seated on the floor",
+     "acting": "child reaches for a date, lady smiles; tag FAMILY",
+     "library": "person {costume:\"lady\", sit:1, seat:\"floor\"}, person {costume:\"prince\", child:true, sit:1, seat:\"floor\"}"
+    },
+    {
+     "t": 55.92,
+     "cue": {
+      "word": "البيت",
+      "t": 55.92
+     },
+     "who": "lettering",
+     "action": "tag GUEST under the right tray, with an arrow off toward the guest room door",
+     "acting": "both tags the same size: equal treatment is the point"
+    },
+    {
+     "t": 56.52,
+     "cue": {
+      "word": "لم",
+      "t": 56.52
+     },
+     "who": "treasurer",
+     "action": "holds up the ledger: one line reads UNTIL with an empty box; his quill hovers over the box",
+     "acting": "expectant look at Yahya, brows raised, small lean in (tip 0.06)",
+     "library": "ledger {open:1, box:\"empty\"}"
+    },
+    {
+     "t": 57.56,
+     "cue": {
+      "word": "يحدد",
+      "t": 57.56
+     },
+     "who": "yahya",
+     "action": "slowly shakes his head",
+     "acting": "two slow head turns (gaze follows), palm down, a patient smile"
+    },
+    {
+     "t": 58.52,
+     "cue": {
+      "word": "يومًا",
+      "t": 58.52
+     },
+     "who": "fx",
+     "action": "an hourglass icon pops in a balloon by the treasurer's quill: he is still waiting for a date",
+     "acting": "balloon right of his head; sand running",
+     "library": "hourglass (planned)"
+    },
+    {
+     "t": 59.3,
+     "cue": {
+      "word": "تنتهي",
+      "t": 59.3
+     },
+     "who": "yahya",
+     "action": "flicks the balloon away; a red stroke strikes the hourglass and the tag NO END DATE lands on the empty box",
+     "acting": "one finger flick; the treasurer blinks twice",
+     "library": "style emphasis strike"
+    },
+    {
+     "t": 60.34,
+     "cue": {
+      "word": "الضيافة",
+      "t": 60.34
+     },
+     "who": "treasurer",
+     "action": "shrugs, snaps the ledger shut and bows",
+     "acting": "shoulders up and down, book closes in 3 frames, a small smile escapes him",
+     "library": "ledger {open:0}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 53.4,
+     "text": "GOOD FOOD"
+    },
+    {
+     "t": 55.0,
+     "text": "FAMILY"
+    },
+    {
+     "t": 55.92,
+     "text": "GUEST"
+    },
+    {
+     "t": 59.3,
+     "text": "NO END DATE"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 61.28
+   }
+  },
+  {
+   "id": "S8",
+   "start": 61.28,
+   "end": 72.24,
+   "paragraphs": [
+    4
+   ],
+   "set": "guestRoom",
+   "cast": [
+    "poorMan",
+    "servantA"
+   ],
+   "summary": "Days, then weeks. The window sky spins through days and nights while the guest eats, rests and receives his money.",
+   "camera": {
+    "shot": "wide",
+    "move": "drift",
+    "notes": "Same room framing as S5 with a very slow drift (20 units) toward the couch."
+   },
+   "composition": "Day counter top left of the panel (panel space x 200, y 130). Window sky is the clock. Table with tray at x 330, coin heap grows on the floor at x 460.",
+   "actions": [
+    {
+     "t": 61.28,
+     "cue": {
+      "word": "بقي",
+      "t": 61.28
+     },
+     "who": "poorMan",
+     "action": "sits on the couch, looking round his room with a contented sigh",
+     "acting": "sit 1, gaze wanders, breathe()"
+    },
+    {
+     "t": 63.82,
+     "cue": {
+      "word": "الدار",
+      "t": 63.82
+     },
+     "who": "set",
+     "action": "the window sky starts to turn: sun across, dusk, moon, dawn",
+     "acting": "u runs one full cycle every 0.5 s from 64.3; the room light follows (townDim night amount)",
+     "library": "palaceHall {variant:\"merchant\", u: kfn(t,...)} + dayCycle"
+    },
+    {
+     "t": 64.32,
+     "cue": {
+      "word": "أيامًا",
+      "t": 64.32
+     },
+     "who": "lettering",
+     "action": "counter DAY 1, 2, 3 ... 7 ticks with each turn of the sky",
+     "acting": "counter flips on each dawn",
+     "library": "style counter"
+    },
+    {
+     "t": 66.2,
+     "cue": {
+      "word": "أسابيع",
+      "t": 66.2
+     },
+     "who": "lettering",
+     "action": "the counter changes to WEEK 2, WEEK 3, WEEK 4",
+     "acting": "faster flips; the sky is now a blur of blue and navy bands"
+    },
+    {
+     "t": 68.02,
+     "cue": {
+      "word": "يأكل",
+      "t": 68.02
+     },
+     "who": "poorMan",
+     "action": "eats from the tray on the low table",
+     "acting": "hand to mouth three times, cheeks full (sq 1.03 pulses), eyes shut in bliss",
+     "library": "foodTray + handRW"
+    },
+    {
+     "t": 68.6,
+     "cue": {
+      "word": "ويستريح",
+      "t": 68.6
+     },
+     "who": "poorMan",
+     "action": "lies back on the couch, hands behind his head",
+     "acting": "sit to lie in 0.5 s, lid 1, zzz, belly rises and falls",
+     "library": "lie, zzz(), breathe()"
+    },
+    {
+     "t": 69.84,
+     "cue": {
+      "word": "ويتلقى",
+      "t": 69.84
+     },
+     "who": "servantA",
+     "action": "reaches in from the door side and holds out a purse",
+     "acting": "the guest opens one eye (wink), sits half up and takes it",
+     "library": "handOver (planned), purse, wink"
+    },
+    {
+     "t": 70.78,
+     "cue": {
+      "word": "المال",
+      "t": 70.78
+     },
+     "who": "purse",
+     "action": "lands on the floor heap with a bounce",
+     "acting": "heap bumps (sq), one coin rolls and settles",
+     "library": "coinPile + purse"
+    },
+    {
+     "t": 71.36,
+     "cue": {
+      "word": "بانتظام",
+      "t": 71.36
+     },
+     "who": "purse",
+     "action": "three more purses arrive on a steady beat",
+     "acting": "same arc each time, 0.28 s apart: regular as a clock",
+     "library": "countedBeats()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 64.32,
+     "text": "DAY 1"
+    },
+    {
+     "t": 66.2,
+     "text": "WEEK 2"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 72.24
+   }
+  },
+  {
+   "id": "S9",
+   "start": 72.24,
+   "end": 83.36,
+   "paragraphs": [
+    4
+   ],
+   "set": "guestRoom",
+   "cast": [
+    "poorMan",
+    "treasurer"
+   ],
+   "summary": "Every morning another thousand. The treasurer himself appears at the door each dawn, a little more amused each time; the heap grows until the man cannot believe his own hands.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on door and heap (cam x 380, zoom 1.4); at 82.0 push in to his hands (zoom 2.3)."
+   },
+   "composition": "Door left with the treasurer in it; heap at x 460; running total counter top right of the panel. The guest stands between heap and couch.",
+   "actions": [
+    {
+     "t": 72.24,
+     "cue": {
+      "word": "وكل",
+      "t": 72.24
+     },
+     "who": "set",
+     "action": "the window goes from night to dawn",
+     "acting": "u 0.9 to 1.0; stars fade",
+     "library": "skyCycle in the window"
+    },
+    {
+     "t": 73.42,
+     "cue": {
+      "word": "صباح",
+      "t": 73.42
+     },
+     "who": "fx",
+     "action": "a beam of morning sun falls through the window onto the door",
+     "acting": "pale yellow wedge, alpha 0.35; the guest stretches and yawns"
+    },
+    {
+     "t": 74.9,
+     "cue": {
+      "word": "تصل",
+      "t": 74.9
+     },
+     "who": "treasurer",
+     "action": "appears in the doorway holding out a purse marked 1000",
+     "acting": "small bow, arm out; the guest takes it with both hands and bows back",
+     "library": "handOver, purse {mark:\"1000\"}"
+    },
+    {
+     "t": 75.98,
+     "cue": {
+      "word": "ألف",
+      "t": 75.98
+     },
+     "who": "lettering",
+     "action": "running total counter adds 1000",
+     "acting": "digits roll",
+     "library": "style counter"
+    },
+    {
+     "t": 77.28,
+     "cue": {
+      "word": "جديدة",
+      "t": 77.28
+     },
+     "who": "purse",
+     "action": "the new purse drops on the heap",
+     "acting": "bounce and settle; a coin spins"
+    },
+    {
+     "t": 77.92,
+     "cue": {
+      "word": "حتى",
+      "t": 77.92
+     },
+     "who": "treasurer",
+     "action": "four more mornings in quick repeats: window flash, treasurer, purse, counter",
+     "acting": "0.22 s per morning; on each repeat the treasurer's bow is smaller and his smile wider; counter runs to 12,000",
+     "library": "countedBeats()"
+    },
+    {
+     "t": 78.9,
+     "cue": {
+      "word": "جمع",
+      "t": 78.9
+     },
+     "who": "coinPile",
+     "action": "the heap is now taller than the table",
+     "acting": "grows in three steps with squash on each"
+    },
+    {
+     "t": 79.38,
+     "cue": {
+      "word": "مبلغًا",
+      "t": 79.38
+     },
+     "who": "poorMan",
+     "action": "steps back from it, both hands on his head",
+     "acting": "headHold, eyes wide, sq 0.94 then 1",
+     "library": "PERSON_HANDS.headHold"
+    },
+    {
+     "t": 80.54,
+     "cue": {
+      "word": "يحلم",
+      "t": 80.54
+     },
+     "who": "poorMan",
+     "action": "pinches his own cheek to check he is awake",
+     "acting": "hand to cheek, a wince, then a huge smile",
+     "library": "PERSON_HANDS.cheeks"
+    },
+    {
+     "t": 82.04,
+     "cue": {
+      "word": "يكون",
+      "t": 82.04
+     },
+     "who": "poorMan",
+     "action": "scoops coins in both hands and lets them run through his fingers",
+     "acting": "camera pushes in on the hands; wet happy eyes, coins fall with fallY",
+     "library": "handLW/handRW, fallY()"
+    },
+    {
+     "t": 82.8,
+     "cue": {
+      "word": "يده",
+      "t": 82.8
+     },
+     "who": "coinPile",
+     "action": "the last coin lands on its edge, spins and falls flat",
+     "acting": "the sound of it is left to the picture; hold on the hands"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 77.5,
+     "text": "CLINK!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 83.36,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S10",
+   "start": 83.36,
+   "end": 91.94,
+   "paragraphs": [
+    5
+   ],
+   "set": "guestRoom",
+   "cast": [
+    "poorMan"
+   ],
+   "summary": "Thirty nights. A grid of thirty moons lights up; the total reaches thirty thousand and the heap has become one enormous sack.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Card first (83.4-84.9). The camera position changes under the card (key 0.01 s apart at its midpoint) to the night room, wide."
+   },
+   "composition": "Moon counter: 3 rows of 10 moons in panel space (x 190..820, y 120..250). Sack at x 450, 300 tall, beside the couch; the man stands at x 640. Night in the window, lamp lit.",
+   "actions": [
+    {
+     "t": 83.36,
+     "cue": {
+      "word": "مرت",
+      "t": 83.36
+     },
+     "who": "fx",
+     "action": "transition card LATER...",
+     "acting": "style transition; under it the room becomes night and the heap becomes the sack",
+     "library": "S.transition {caption:\"LATER...\"}"
+    },
+    {
+     "t": 85.14,
+     "cue": {
+      "word": "ثلاثون",
+      "t": 85.14
+     },
+     "who": "moonCounter",
+     "action": "thirty small moons light one by one in three rows",
+     "acting": "0.03 s apart, a ripple left to right",
+     "library": "moonCounter (planned) n 30, rows 3"
+    },
+    {
+     "t": 86.1,
+     "cue": {
+      "word": "ليلة",
+      "t": 86.1
+     },
+     "who": "lettering",
+     "action": "tag 30 NIGHTS under the moons; the last moon gives a small flash",
+     "acting": ""
+    },
+    {
+     "t": 87.16,
+     "cue": {
+      "word": "فصار",
+      "t": 87.16
+     },
+     "who": "poorMan",
+     "action": "is revealed standing beside a sack as tall as his chest",
+     "acting": "hands on hips, proud; the moons fade out",
+     "library": "sack {fill:1, s:1.6}"
+    },
+    {
+     "t": 88.8,
+     "cue": {
+      "word": "ثلاثون",
+      "t": 88.8
+     },
+     "who": "lettering",
+     "action": "running counter rolls from 29,000 to 30,000",
+     "acting": "digits roll and lock",
+     "library": "style counter"
+    },
+    {
+     "t": 89.8,
+     "cue": {
+      "word": "ألف",
+      "t": 89.8
+     },
+     "who": "lettering",
+     "action": "the number stamps large: 30,000 DIRHAMS",
+     "acting": "emphasis burst behind it, 1.4 s",
+     "library": "style emphasis"
+    },
+    {
+     "t": 90.28,
+     "cue": {
+      "word": "درهم",
+      "t": 90.28
+     },
+     "who": "sack",
+     "action": "bulges and one coin pops out of its mouth",
+     "acting": "the man catches it and tucks it back in, pats the sack",
+     "library": "sack {bulge}, hop arc for the coin"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 86.1,
+     "text": "30 NIGHTS"
+    },
+    {
+     "t": 89.8,
+     "text": "30,000 DIRHAMS"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 91.94
+   }
+  },
+  {
+   "id": "S11",
+   "start": 91.94,
+   "end": 105.98,
+   "paragraphs": [
+    5
+   ],
+   "set": "guestRoom",
+   "cast": [
+    "poorMan",
+    "yahya"
+   ],
+   "summary": "The turn. Looking at the big sack, his joy sours into fear. In a thought cloud he imagines a stern Yahya checking the accounts, finding the sum too large and holding out his hand for some of it.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on man and sack (zoom 1.5); the cloud occupies the upper half of the panel. Slow push to zoom 1.8 by 104."
+   },
+   "composition": "Man seated on the floor right (x 650), sack left of him (x 450); thought cloud 620 x 400 centred at (500, 330) with its tail to his head. Inside the cloud the imagined Yahya is at least 120 px tall on screen.",
+   "actions": [
+    {
+     "t": 91.94,
+     "cue": {
+      "word": "أخذ",
+      "t": 91.94
+     },
+     "who": "poorMan",
+     "action": "sits down on the floor in front of the sack, chin on his hand",
+     "acting": "sit floor, chin gesture, small smile",
+     "library": "person {sit:1, seat:\"floor\"} + PERSON_HANDS.chin"
+    },
+    {
+     "t": 93.1,
+     "cue": {
+      "word": "الكيس",
+      "t": 93.1
+     },
+     "who": "lettering",
+     "action": "arrow and label THE BIG SACK",
+     "acting": "label left of the sack"
+    },
+    {
+     "t": 93.74,
+     "cue": {
+      "word": "الكبير",
+      "t": 93.74
+     },
+     "who": "poorMan",
+     "action": "his eyes travel slowly up the sack to its knot",
+     "acting": "gazePlan bottom to top over 1.2 s, head tilts back 8 px",
+     "library": "gazePlan()"
+    },
+    {
+     "t": 95.42,
+     "cue": {
+      "word": "وخاف",
+      "t": 95.42
+     },
+     "who": "poorMan",
+     "action": "the smile drops; fear arrives",
+     "acting": "mouth smile to o to frown, brow -0.8, eyes wide, one sweat drop, lamp flickers lower",
+     "library": "drops()"
+    },
+    {
+     "t": 96.24,
+     "cue": {
+      "word": "يراجع",
+      "t": 96.24
+     },
+     "who": "fx",
+     "action": "thought cloud pops: an imagined Yahya at a desk, running a finger down the ledger",
+     "acting": "trail bubbles first, then the cloud; cloud background blue so it reads as cold",
+     "library": "thoughtCloud(ctx,500,330,620,400,t,{tail, bg:C.blue, scale:0.7, inside})"
+    },
+    {
+     "t": 97.46,
+     "cue": {
+      "word": "حسابه",
+      "t": 97.46
+     },
+     "who": "ledger",
+     "action": "in the cloud the ledger page fills with thirty tally strokes",
+     "acting": "strokes appear in a run; cloud Yahya's finger follows"
+    },
+    {
+     "t": 98.56,
+     "cue": {
+      "word": "فيرى",
+      "t": 98.56
+     },
+     "who": "yahya",
+     "action": "cloud Yahya's eyes pop and his brow turns to an angry V",
+     "acting": "this is the man's fear, not the real Yahya: exaggerate (brow 1, mouth open)"
+    },
+    {
+     "t": 100.22,
+     "cue": {
+      "word": "تجاوز",
+      "t": 100.22
+     },
+     "who": "fx",
+     "action": "in the cloud a coin column shoots up past a red line marked TOO MUCH",
+     "acting": "column overshoots the line and wobbles",
+     "library": "coinPile column + seg()"
+    },
+    {
+     "t": 102.64,
+     "cue": {
+      "word": "ثم",
+      "t": 102.64
+     },
+     "who": "poorMan",
+     "action": "gulps and throws both arms round the real sack",
+     "acting": "drop pulse, reachBoth to the sack, tremble 2 px",
+     "library": "tremble(), handLW/handRW"
+    },
+    {
+     "t": 103.0,
+     "cue": {
+      "word": "يطلب",
+      "t": 103.0
+     },
+     "who": "yahya",
+     "action": "cloud Yahya thrusts an open hand at us",
+     "acting": "hand grows toward the lens (scale 1 to 1.6); tag GIVE IT BACK",
+     "library": "PERSON_HANDS.reach"
+    },
+    {
+     "t": 104.06,
+     "cue": {
+      "word": "إعادة",
+      "t": 104.06
+     },
+     "who": "fx",
+     "action": "in the cloud a dashed line cuts a third off a small sack and an arrow carries it to the hand",
+     "acting": "simple diagram, 1 s",
+     "library": "style arrow"
+    },
+    {
+     "t": 105.4,
+     "cue": {
+      "word": "منه",
+      "t": 105.4
+     },
+     "who": "poorMan",
+     "action": "shakes his head hard; the cloud bursts",
+     "acting": "three fast head shakes, eyes shut tight; cloud p 1 to 0 in 0.2 s"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 93.1,
+     "text": "THE BIG SACK"
+    },
+    {
+     "t": 100.22,
+     "text": "TOO MUCH!"
+    },
+    {
+     "t": 103.0,
+     "text": "GIVE IT BACK!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 105.98
+   }
+  },
+  {
+   "id": "S12",
+   "start": 105.98,
+   "end": 117.28,
+   "paragraphs": [
+    6
+   ],
+   "set": "guestRoom",
+   "cast": [
+    "poorMan"
+   ],
+   "summary": "He will not wait to find out. In the dim room he ties up his few things, hushes himself, and heaves the whole sack onto his back.",
+   "camera": {
+    "shot": "medium",
+    "move": "drift",
+    "notes": "Night room, lamp low; medium on the man (zoom 1.5) following his small moves."
+   },
+   "composition": "Door on the left is the goal: he keeps glancing at it. Bundle on the floor at x 560; sack at x 450; the dark is a navy wash with the lamp circle on him.",
+   "actions": [
+    {
+     "t": 105.98,
+     "cue": {
+      "word": "لم",
+      "t": 105.98
+     },
+     "who": "poorMan",
+     "action": "looks at the door, the window, the door again",
+     "acting": "darting eyes (2-frame saccades), lid 0.2, body still",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 108.9,
+     "cue": {
+      "word": "ينتظر",
+      "t": 108.9
+     },
+     "who": "poorMan",
+     "action": "stands and shakes his head: no waiting",
+     "acting": "sit to stand with anticipation; one firm head shake; mouth set",
+     "library": "anticipate()"
+    },
+    {
+     "t": 110.24,
+     "cue": {
+      "word": "يتبين",
+      "t": 110.24
+     },
+     "who": "poorMan",
+     "action": "bites his knuckle and glances up where the cloud was",
+     "acting": "hand to mouth (mouthCover), gaze up left, a shiver",
+     "library": "PERSON_HANDS.mouthCover"
+    },
+    {
+     "t": 111.64,
+     "cue": {
+      "word": "فجمع",
+      "t": 111.64
+     },
+     "who": "bindle",
+     "action": "he spreads a cloth and gathers his things on it",
+     "acting": "kneel 0.6; quick neat hands",
+     "library": "kneel, packLoad \"bindle\""
+    },
+    {
+     "t": 112.84,
+     "cue": {
+      "word": "أمتعته",
+      "t": 112.84
+     },
+     "who": "bindle",
+     "action": "a cup, his old sandals and the empty purse hop into the cloth one by one, and the corners tie themselves into a knot",
+     "acting": "three small arcs 0.2 s apart, then the knot pulls tight",
+     "library": "hop()"
+    },
+    {
+     "t": 114.16,
+     "cue": {
+      "word": "هدوء",
+      "t": 114.16
+     },
+     "who": "poorMan",
+     "action": "finger to his lips, hushing himself; he turns the lamp down",
+     "acting": "hush gesture, eyes to the door; lamp 1 to 0.35",
+     "library": "PERSON_HANDS.hush, hangingLamp"
+    },
+    {
+     "t": 114.82,
+     "cue": {
+      "word": "وحمل",
+      "t": 114.82
+     },
+     "who": "poorMan",
+     "action": "squats, grips the sack and heaves it onto his back",
+     "acting": "anticipation squat (sq 0.88), lift with stretch, then bent under the weight: tip 0.3, knees bent",
+     "library": "anticipate(), person carrying a load on the back (planned pose), sack"
+    },
+    {
+     "t": 115.8,
+     "cue": {
+      "word": "المال",
+      "t": 115.8
+     },
+     "who": "sack",
+     "action": "one coin slips out of the sack mouth and falls",
+     "acting": "he freezes mid step, eyes wide, watching it drop",
+     "library": "fallY()"
+    },
+    {
+     "t": 116.3,
+     "cue": {
+      "word": "كله",
+      "t": 116.3
+     },
+     "who": "poorMan",
+     "action": "catches the coin on the top of his foot, breathes out",
+     "acting": "foot lifts 12 units; long blink; then the coin is flicked back into his hand"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 114.3,
+     "text": "SHHH"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 117.28
+   }
+  },
+  {
+   "id": "S13",
+   "start": 117.28,
+   "end": 127.24,
+   "paragraphs": [
+    6
+   ],
+   "set": "gateStreet",
+   "cast": [
+    "poorMan",
+    "servantA"
+   ],
+   "summary": "Night street. He squeezes out of the house door, tiptoes past a dozing servant without a goodbye, and hurries off believing he has saved his treasure. Behind him the door drifts open, lit and unguarded.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Start medium on the door (zoom 1.5); from 118.8 track left with him along the street to cam x 380, pulling out to zoom 1.1 so the lit door stays in the right of frame at the end."
+   },
+   "composition": "He moves right to left (away from home). Door glow on the right; sleeping servant seated left of the steps at x 600. The sack makes him a new silhouette: a hump on legs.",
+   "actions": [
+    {
+     "t": 117.28,
+     "cue": {
+      "word": "وخرج",
+      "t": 117.28
+     },
+     "who": "set",
+     "action": "the house at night; the door opens a crack",
+     "acting": "palaceDoor 0 to 0.25; two eyes peek in the gap",
+     "library": "marketStreet {u:0.75, palette:\"cold\", palace:\"lit\"} + peekEyes()"
+    },
+    {
+     "t": 118.22,
+     "cue": {
+      "word": "البيت",
+      "t": 118.22
+     },
+     "who": "poorMan",
+     "action": "squeezes out; the sack sticks in the doorway and pops through",
+     "acting": "pull, pull, pop: he stumbles one step and steadies; door swings to 0.6",
+     "library": "landSquash()"
+    },
+    {
+     "t": 118.76,
+     "cue": {
+      "word": "سرًا",
+      "t": 118.76
+     },
+     "who": "poorMan",
+     "action": "tiptoes past the dozing servant",
+     "acting": "high knees, a hold on each toe, shoulders up by his ears, eyes on the sleeper",
+     "library": "sneak (planned walk option)"
+    },
+    {
+     "t": 119.1,
+     "who": "servantA",
+     "action": "sleeps sitting against the wall, snores once and resettles",
+     "acting": "zzz, lid 1, head nod; the thief of his own gift freezes for 4 frames",
+     "library": "person {sit:1, seat:\"floor\"}, zzz()"
+    },
+    {
+     "t": 119.58,
+     "cue": {
+      "word": "دون",
+      "t": 119.58
+     },
+     "who": "poorMan",
+     "action": "looks back at the door and half raises a hand",
+     "acting": "the hand stops at shoulder height and drops: no goodbye"
+    },
+    {
+     "t": 120.08,
+     "cue": {
+      "word": "وداع",
+      "t": 120.08
+     },
+     "who": "poorMan",
+     "action": "turns away and goes",
+     "acting": "turn with a squeeze, first quick step",
+     "library": "turnFlip()"
+    },
+    {
+     "t": 120.78,
+     "cue": {
+      "word": "وظن",
+      "t": 120.78
+     },
+     "who": "poorMan",
+     "action": "hurries along the street, bent under the sack",
+     "acting": "camera tracks; footfalls with tiny dust; a smile starts",
+     "library": "walk() + footfalls()"
+    },
+    {
+     "t": 122.84,
+     "cue": {
+      "word": "الطريقة",
+      "t": 122.84
+     },
+     "who": "fx",
+     "action": "small thought cloud: the sack with a padlock on it",
+     "acting": "cloud above and ahead of him, 1.8 s",
+     "library": "thoughtCloud + padlock (planned)"
+    },
+    {
+     "t": 123.58,
+     "cue": {
+      "word": "سيحتفظ",
+      "t": 123.58
+     },
+     "who": "poorMan",
+     "action": "pats the sack over his shoulder, eyes shut, blissful grin",
+     "acting": "two pats, sq pulse on the sack"
+    },
+    {
+     "t": 125.22,
+     "cue": {
+      "word": "حصل",
+      "t": 125.22
+     },
+     "who": "poorMan",
+     "action": "shrinks down the street toward the left edge",
+     "acting": "s eases 1.1 to 0.8 as he goes up the street; the camera stops following"
+    },
+    {
+     "t": 126.5,
+     "cue": {
+      "word": "العطاء",
+      "t": 126.5
+     },
+     "who": "set",
+     "action": "behind him the house door drifts fully open, warm and bright, with no one in it",
+     "acting": "palaceDoor 0.6 to 1 slowly; he does not look back. The irony is held for the last 0.7 s"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 127.24
+   }
+  },
+  {
+   "id": "S14",
+   "start": 127.24,
+   "end": 138.8,
+   "paragraphs": [
+    7
+   ],
+   "set": "hall",
+   "cast": [
+    "yahya",
+    "servantA",
+    "servantB"
+   ],
+   "summary": "Morning. The servants find the room empty, run to Yahya and report: gone in secret, with thirty thousand dirhams. They brace for his anger.",
+   "camera": {
+    "shot": "medium",
+    "move": "whip",
+    "notes": "127.24-131.4 in the guest room doorway (drawn as an inset panel, see notes); whip to the hall at 131.4; medium three-shot."
+   },
+   "composition": "Inset (127.24-131.4): the guest room framing of S5 with the couch empty. Hall: Yahya on the dais right (x 730), the two servants arrive at x 380 and x 470. Report balloon above the servants at (430, 400).",
+   "actions": [
+    {
+     "t": 127.24,
+     "cue": {
+      "word": "عندما",
+      "t": 127.24
+     },
+     "who": "set",
+     "action": "the guest room in morning light: the couch is empty, a dent in the cushion, the rug kicked crooked",
+     "acting": "still for half a second: let the emptiness read",
+     "library": "palaceHall merchant dressing guestRoom, u 0.05"
+    },
+    {
+     "t": 129.32,
+     "cue": {
+      "word": "علم",
+      "t": 129.32
+     },
+     "who": "servantA",
+     "action": "comes in cheerfully with the breakfast tray and today's purse, and stops",
+     "acting": "smile fades, gaze sweeps couch to floor where the sack stood",
+     "library": "foodTray, purse"
+    },
+    {
+     "t": 129.78,
+     "cue": {
+      "word": "الخدم",
+      "t": 129.78
+     },
+     "who": "servantB",
+     "action": "walks into his back",
+     "acting": "bump: A lurches, the tray wobbles, a date hops",
+     "library": "lurch()"
+    },
+    {
+     "t": 130.32,
+     "cue": {
+      "word": "برحيله",
+      "t": 130.32
+     },
+     "who": "servantA",
+     "action": "both stare at the empty couch, then at each other",
+     "acting": "eyes wide, mouths o, a shared look (lookAt each other)",
+     "library": "lookAt()"
+    },
+    {
+     "t": 131.44,
+     "cue": {
+      "word": "أخبروا",
+      "t": 131.44
+     },
+     "who": "camera",
+     "action": "whip to the hall: the two servants run in to Yahya",
+     "acting": "staggered run, A first; Yahya is reading a scroll",
+     "library": "stagger(i), walk()"
+    },
+    {
+     "t": 133.0,
+     "cue": {
+      "word": "يحيى",
+      "t": 133.0
+     },
+     "who": "yahya",
+     "action": "lowers the scroll and looks up",
+     "acting": "calm, brows a little raised, gaze from one to the other"
+    },
+    {
+     "t": 134.16,
+     "cue": {
+      "word": "غادر",
+      "t": 134.16
+     },
+     "who": "servantA",
+     "action": "mimes it: two fingers walking away",
+     "acting": "report balloon pops showing the guest's silhouette tiptoeing with the sack",
+     "library": "bubble() + person silhouette"
+    },
+    {
+     "t": 134.82,
+     "cue": {
+      "word": "خفية",
+      "t": 134.82
+     },
+     "who": "servantB",
+     "action": "adds a hush finger and points at the door",
+     "acting": "hush then pointFwd toward the door arch; talk 0.8",
+     "library": "PERSON_HANDS.hush"
+    },
+    {
+     "t": 136.3,
+     "cue": {
+      "word": "جمع",
+      "t": 136.3
+     },
+     "who": "fx",
+     "action": "the balloon picture changes to the big sack",
+     "acting": "swap with a pop",
+     "library": "sack icon"
+    },
+    {
+     "t": 136.78,
+     "cue": {
+      "word": "ثلاثين",
+      "t": 136.78
+     },
+     "who": "lettering",
+     "action": "the number 30,000 stamps inside the balloon",
+     "acting": "",
+     "library": "style counter"
+    },
+    {
+     "t": 138.16,
+     "cue": {
+      "word": "درهم",
+      "t": 138.16
+     },
+     "who": "servantA",
+     "action": "both servants brace for the explosion",
+     "acting": "A shields his head with both arms, B squints with one eye shut; a held beat",
+     "library": "PERSON_HANDS.shield, wink"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 130.5,
+     "text": "GONE!"
+    },
+    {
+     "t": 136.78,
+     "text": "30,000"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 138.8
+   }
+  },
+  {
+   "id": "S15",
+   "start": 138.8,
+   "end": 150.14,
+   "paragraphs": [
+    7
+   ],
+   "set": "hall",
+   "cast": [
+    "yahya",
+    "servantA",
+    "servantB",
+    "poorMan"
+   ],
+   "summary": "The explosion never comes. Yahya is not angry and sends no one after him; he only wonders that the man thought kindness could suddenly stop.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Push in on Yahya (zoom 2.0) for the non-reaction; open to include servantB at 141.5; back to Yahya with the cloud at 146."
+   },
+   "composition": "Yahya's face is the picture. Servants peek from the left edge. Thought cloud above left of Yahya (centre 400, 330; 520 x 340).",
+   "actions": [
+    {
+     "t": 138.8,
+     "cue": {
+      "word": "لم",
+      "t": 138.8
+     },
+     "who": "camera",
+     "action": "push in on Yahya's face",
+     "acting": "the servants' braced shapes stay at the left edge"
+    },
+    {
+     "t": 139.64,
+     "cue": {
+      "word": "يغضب",
+      "t": 139.64
+     },
+     "who": "yahya",
+     "action": "no anger arrives: a slow blink and a small smile",
+     "acting": "brow stays level (0), lid closes 0.3 s, mouth to smile; servantA lowers one arm and peeks",
+     "library": "blink override"
+    },
+    {
+     "t": 140.74,
+     "cue": {
+      "word": "ولم",
+      "t": 140.74
+     },
+     "who": "servantB",
+     "action": "opens his squinting eye, confused",
+     "acting": "the two servants exchange a glance"
+    },
+    {
+     "t": 141.74,
+     "cue": {
+      "word": "يرسل",
+      "t": 141.74
+     },
+     "who": "servantB",
+     "action": "springs toward the door, pointing: shall I fetch him?",
+     "acting": "eager lunge with anticipation, arm out",
+     "library": "anticipate(), PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 142.34,
+     "cue": {
+      "word": "أحدًا",
+      "t": 142.34
+     },
+     "who": "yahya",
+     "action": "raises one palm: stop",
+     "acting": "calm raised hand; servantB brakes with a lurch, one foot in the air",
+     "library": "lurch()"
+    },
+    {
+     "t": 143.16,
+     "cue": {
+      "word": "ليعيده",
+      "t": 143.16
+     },
+     "who": "servantB",
+     "action": "lowers his arm and his foot",
+     "acting": "puzzled, scratches under his cap"
+    },
+    {
+     "t": 144.4,
+     "cue": {
+      "word": "تعجب",
+      "t": 144.4
+     },
+     "who": "yahya",
+     "action": "strokes his beard, head tilted, looking at the open door arch",
+     "acting": "brow raised (-0.5), chin gesture, gaze to the door: wonder, not hurt",
+     "library": "PERSON_HANDS.chin"
+    },
+    {
+     "t": 146.12,
+     "cue": {
+      "word": "ظن",
+      "t": 146.12
+     },
+     "who": "fx",
+     "action": "thought cloud: the worried guest clutching his sack, looking over his shoulder",
+     "acting": "cloud yellow (warm: Yahya's view of him)",
+     "library": "thoughtCloud"
+    },
+    {
+     "t": 146.58,
+     "cue": {
+      "word": "الكرم",
+      "t": 146.58
+     },
+     "who": "fx",
+     "action": "in the cloud a door marked with a heart stands open behind the guest",
+     "acting": "heart icon on the door leaf",
+     "library": "townDoor + heart()"
+    },
+    {
+     "t": 148.36,
+     "cue": {
+      "word": "ينتهي",
+      "t": 148.36
+     },
+     "who": "fx",
+     "action": "in the cloud the heart door slams shut on its own, as the guest feared",
+     "acting": "slam in 3 frames, the little guest jumps"
+    },
+    {
+     "t": 149.06,
+     "cue": {
+      "word": "فجأة",
+      "t": 149.06
+     },
+     "who": "yahya",
+     "action": "chuckles, shakes his head and the cloud door swings open again",
+     "acting": "shoulders bob twice, palms up; the cloud fades",
+     "library": "PERSON_HANDS.palmsUp"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 150.14
+   }
+  },
+  {
+   "id": "S16",
+   "start": 150.14,
+   "end": 161.06,
+   "paragraphs": [
+    8
+   ],
+   "set": "hall",
+   "cast": [
+    "yahya",
+    "servantA",
+    "servantB",
+    "poorMan"
+   ],
+   "summary": "What Yahya says. A large vision shows the guest staying to the end of his days: his beard grows long and white on the same couch while the tray and the purse keep arriving.",
+   "camera": {
+    "shot": "medium",
+    "move": "zoom",
+    "notes": "Medium on Yahya speaking; from 152.8 the vision cloud grows to fill most of the panel (taleZoom) with Yahya small at the bottom right; shrink back at 160.6."
+   },
+   "composition": "Vision: the guest room in miniature, couch centre, door left. Yahya at bottom right corner (x 820, y 900, s 0.9) with the cloud tail to his head; servants bottom left, looking up at it.",
+   "actions": [
+    {
+     "t": 150.14,
+     "cue": {
+      "word": "قال",
+      "t": 150.14
+     },
+     "who": "yahya",
+     "action": "speaks to the servants",
+     "acting": "talk 0.8, one hand open, eyes kind; servants listen, heads tilted"
+    },
+    {
+     "t": 152.76,
+     "cue": {
+      "word": "لو",
+      "t": 152.76
+     },
+     "who": "fx",
+     "action": "the cloud grows from his head to fill the upper panel",
+     "acting": "p 0 to 1 in 0.5 s, trail first",
+     "library": "thoughtCloud large / taleZoom (planned)"
+    },
+    {
+     "t": 153.44,
+     "cue": {
+      "word": "الضيف",
+      "t": 153.44
+     },
+     "who": "poorMan",
+     "action": "in the vision the guest sits happily on the couch",
+     "acting": "same pose as S8 so it is recognised at once"
+    },
+    {
+     "t": 154.32,
+     "cue": {
+      "word": "بيته",
+      "t": 154.32
+     },
+     "who": "lettering",
+     "action": "tag IF HE HAD STAYED...",
+     "acting": "small, top of the cloud"
+    },
+    {
+     "t": 155.0,
+     "cue": {
+      "word": "حتى",
+      "t": 155.0
+     },
+     "who": "set",
+     "action": "the vision window spins days and nights again",
+     "acting": "same device as S8, faster",
+     "library": "skyCycle"
+    },
+    {
+     "t": 155.72,
+     "cue": {
+      "word": "آخر",
+      "t": 155.72
+     },
+     "who": "poorMan",
+     "action": "his beard turns grey, then white, and grows to his belt; he stoops",
+     "acting": "age 0.3 to 1 over 1.2 s; a walking stick appears in his hand",
+     "library": "person {age: kfn}, hold:\"stick\""
+    },
+    {
+     "t": 156.38,
+     "cue": {
+      "word": "عمره",
+      "t": 156.38
+     },
+     "who": "poorMan",
+     "action": "the very old guest, still on the couch, still smiling",
+     "acting": "lid 0.4, contented, slow breathing"
+    },
+    {
+     "t": 158.3,
+     "cue": {
+      "word": "قطع",
+      "t": 158.3
+     },
+     "who": "servantA",
+     "action": "in the vision an (also white-bearded) servant still carries in the tray",
+     "acting": "tiny shuffle walk; a small laugh for the audience",
+     "library": "person {costume:\"servant\", age:1}"
+    },
+    {
+     "t": 159.28,
+     "cue": {
+      "word": "الطعام",
+      "t": 159.28
+     },
+     "who": "foodTray",
+     "action": "the tray lands on the table, steaming",
+     "acting": "",
+     "library": "steam()"
+    },
+    {
+     "t": 160.44,
+     "cue": {
+      "word": "المال",
+      "t": 160.44
+     },
+     "who": "purse",
+     "action": "and a purse drops on a heap that reaches the ceiling",
+     "acting": "bounce; the real servants below look at each other and smile; the cloud shrinks away"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 154.32,
+     "text": "IF HE HAD STAYED..."
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 161.06
+   }
+  },
+  {
+   "id": "S17",
+   "start": 161.06,
+   "end": 175.77,
+   "paragraphs": [
+    8
+   ],
+   "set": "gateStreet",
+   "cast": [
+    "yahya",
+    "poorMan",
+    "servantA"
+   ],
+   "summary": "Ending. Dawn on the street: far away the man goes off with his sack, small and alone; the camera returns to the house, whose door stands wide open with Yahya in it. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Wide at dawn. 161-166.5 framed on the left end of the street (cam x 400); 167.0-168.5 slow pan right to the house (cam x 620, zoom 1.25); hold."
+   },
+   "composition": "Far figure: s 0.35 at x 120..-40, y 880 on the far end of the street. House door right of centre, fully open, light spilling in a yellow wedge down the steps. THE END in the sky left of the house, above y 330.",
+   "actions": [
+    {
+     "t": 161.06,
+     "cue": {
+      "word": "وهكذا",
+      "t": 161.06
+     },
+     "who": "camera",
+     "action": "cut to the street at dawn, empty and quiet",
+     "acting": "sky u 0.02 to 0.08 through the scene; long shadows",
+     "library": "marketStreet {u, palaceDoor:1, palace:\"lit\"}"
+    },
+    {
+     "t": 162.54,
+     "cue": {
+      "word": "انتهت",
+      "t": 162.54
+     },
+     "who": "fx",
+     "action": "two doves cross the sky",
+     "acting": "a little life while the story closes",
+     "library": "bird {kind:\"dove\", fly:true}"
+    },
+    {
+     "t": 164.26,
+     "cue": {
+      "word": "برحيل",
+      "t": 164.26
+     },
+     "who": "poorMan",
+     "action": "far down the street the tiny figure with the sack walks away",
+     "acting": "bent, quick small steps; one look over his shoulder at nothing",
+     "library": "walk(), s 0.35"
+    },
+    {
+     "t": 165.58,
+     "cue": {
+      "word": "ما",
+      "t": 165.58
+     },
+     "who": "sack",
+     "action": "the sack catches the first sun and glints",
+     "acting": "one sparkle star",
+     "library": "star()"
+    },
+    {
+     "t": 166.24,
+     "cue": {
+      "word": "جمعه",
+      "t": 166.24
+     },
+     "who": "poorMan",
+     "action": "goes out of sight behind the last house",
+     "acting": "gone: the left of the frame is empty"
+    },
+    {
+     "t": 167.0,
+     "cue": {
+      "word": "وبقاء",
+      "t": 167.0
+     },
+     "who": "camera",
+     "action": "pans slowly right, back to the house",
+     "acting": "eased 1.5 s"
+    },
+    {
+     "t": 168.08,
+     "cue": {
+      "word": "باب",
+      "t": 168.08
+     },
+     "who": "set",
+     "action": "the door: wide open, warm light down the steps",
+     "acting": "light wedge breathes slightly",
+     "library": "townDoor open 1"
+    },
+    {
+     "t": 168.5,
+     "cue": {
+      "word": "الضيافة",
+      "t": 168.5
+     },
+     "who": "yahya",
+     "action": "stands in the doorway looking down the road, hand on his chest",
+     "acting": "gaze far left, lid 0.2, a small sad-kind smile; servantA sets a fresh tray on the top step",
+     "library": "PERSON_HANDS.chest, foodTray"
+    },
+    {
+     "t": 169.3,
+     "cue": {
+      "word": "مفتوحًا",
+      "t": 169.3
+     },
+     "who": "lettering",
+     "action": "arrow and label STILL OPEN on the door",
+     "acting": "pops on the word",
+     "library": "style arrow + label"
+    },
+    {
+     "t": 171.18,
+     "cue": {
+      "word": "صاحبه",
+      "t": 171.18
+     },
+     "who": "yahya",
+     "action": "one slow blink and a nod toward the road",
+     "acting": "the last acting beat; then stillness except the light"
+    },
+    {
+     "t": 172.3,
+     "who": "lettering",
+     "action": "THE END",
+     "acting": "style title, held to 175.77; Yahya and the open door stay in frame",
+     "library": "style title"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 169.3,
+     "text": "STILL OPEN"
+    },
+    {
+     "t": 172.3,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 172.6,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 175.77
+   }
+  }
+ ],
+ "ending": {
+  "t": 172.3,
+  "description": "Dawn street, wide. The far road is empty where the man went; the house door stands fully open with warm light on the steps, Yahya in the doorway and a fresh tray on the top step. THE END (Bangers, in the sky left of the house) from 172.3 to 175.77, with one quiet chime at 172.6. The light wedge keeps breathing so the hold is not a freeze."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "عاد يحيى بن خالد البرمكي ذات يوم|من قصر الخليفة إلى بيته في بغداد.|وعند باب الدار رأى رجلًا فقيرًا ينتظره.|وقف الرجل احترامًا له، وسلم عليه، ثم قال إنه جاء يطلب مساعدته.",
+   "en": "Yahya ibn Khalid al-Barmaki returned home|from the caliph’s palace|and found a poor man waiting at his gate,|hoping for help."
+  },
+  {
+   "p": 2,
+   "ar": "أخبر الرجل يحيى أنه في حاجة شديدة إلى المال،|وطلب منه أن يكون كريمًا معه.|لم يسأله يحيى عن نسبه أو عمله،|بل أمر أن يجهزوا له غرفة مريحة داخل البيت.",
+   "en": "The man explained|his desperate need.|Yahya asked neither about his family nor his occupation,|but ordered a comfortable room prepared for him inside."
+  },
+  {
+   "p": 3,
+   "ar": "ثم استدعى يحيى خازنه،|وأمره أن يعطي الضيف ألف درهم كل يوم،|وأن يقدم له من الطعام الجيد مثل ما يأكل أهل البيت.|لم يحدد له يومًا تنتهي فيه الضيافة.",
+   "en": "Yahya instructed his treasurer|to give the guest one thousand dirhams daily|and serve him the same fine food enjoyed by the household,|without setting a deadline."
+  },
+  {
+   "p": 4,
+   "ar": "بقي الرجل في الدار أيامًا، ثم أسابيع،|وهو يأكل ويستريح ويتلقى المال بانتظام.|وكل صباح كانت تصل إليه ألف درهم جديدة،|حتى جمع مبلغًا لم يحلم يومًا أن يكون في يده.",
+   "en": "The man stayed for days and then weeks,|eating well and receiving the regular payment.|Each morning brought|another thousand dirhams."
+  },
+  {
+   "p": 5,
+   "ar": "مرت ثلاثون ليلة، فصار معه ثلاثون ألف درهم.|أخذ يتأمل الكيس الكبير،|وخاف أن يراجع يحيى حسابه، فيرى أن المبلغ تجاوز ما ينبغي،|ثم يطلب منه إعادة جزء منه.",
+   "en": "After thirty days he held thirty thousand dirhams.|He began to fear|that Yahya would notice how much he had received|and demand some back."
+  },
+  {
+   "p": 6,
+   "ar": "لم يشأ الرجل أن ينتظر حتى يتبين الأمر،|فجمع أمتعته في هدوء، وحمل المال كله،|وخرج من البيت سرًا دون وداع.|وظن أنه بهذه الطريقة سيحتفظ بما حصل عليه من العطاء.",
+   "en": "Rather than risk the imagined demand,|he packed quietly|and slipped away with all the money,|saying no farewell."
+  },
+  {
+   "p": 7,
+   "ar": "عندما علم الخدم برحيله،|أخبروا يحيى أنه غادر خفية بعدما جمع ثلاثين ألف درهم.|لم يغضب يحيى، ولم يرسل أحدًا ليعيده،|بل تعجب من أن الرجل ظن الكرم يمكن أن ينتهي فجأة.",
+   "en": "When servants reported|his secret departure,|Yahya neither grew angry nor sent anyone after him.|He was surprised that the man had feared his generosity would end."
+  },
+  {
+   "p": 8,
+   "ar": "قال يحيى إنه لو بقي الضيف في بيته حتى آخر عمره،|لما قطع عنه الطعام ولا المال.|وهكذا انتهت القصة برحيل الرجل مع ما جمعه،|وبقاء باب الضيافة مفتوحًا في نية صاحبه.",
+   "en": "Yahya declared that even if the guest had stayed for life,|he would never have stopped the gifts or meals.|The man was gone,|though the welcome had never ended."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "guestRoom (palaceHall merchant dressing)",
+   "description": "A comfortable guest room made from the merchant variant of palaceHall plus a diwan, low table, rug and lamp; the window is a live time-of-day clock. Reusable for any guest, inn or bedroom scene.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "function guestRoom(ctx, o): call palaceHall({variant:'merchant', wall:'ochre', desk:false, shelves:[one jar shelf], u:o.u, doorOpen:o.door, t}) then draw the dressing with kit shapes; return anchors {door, table:{x:330, top:822}, diwan:{x0:580, x1:880, sitY:836, lieX:730}, heap:{x:460}, window}. Night: townDim or a navy multiply rect with a radial lamp circle (as hutRoom dark)."
+  },
+  {
+   "type": "prop",
+   "name": "diwan",
+   "description": "Planned low couch (AN-092): 300 wide, seat top 64 above the floor, rolled arm at the right end (r 34), one long striped mattress (red and yellow stripes), a round pillow at the arm, two loose cushions with squash fields.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rounded rects and circles with ink outlines; dotPat for Ben-Day shading; cushions take sq so they dent when poked or sat on. The seated person uses seat:\"bench\" at sitY; the lying person uses lie:1 at the seat top."
+  },
+  {
+   "type": "prop",
+   "name": "purse",
+   "description": "Planned fat coin purse with fill 0..1, insideOut state and an optional number mark.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Teardrop path scaled by fill, drawstring neck (two short lines and a knot), yellow coin glint at the mouth when fill > 0.5; insideOut draws the pale lining shape hanging down."
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "description": "Planned coin mound with the silver palette for dirhams and single coin, stack, heap and column modes.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Seeded ellipses (K.rng) stacked in rows for a heap; stacks as short columns of ellipses; palette {face: C.white, edge: grey, dot: C.blue}."
+  },
+  {
+   "type": "prop",
+   "name": "sack",
+   "description": "Planned sack with fill, coin mark, bulge and a carried state.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rounded bag path whose width follows fill and bulge; tied neck with two ears; a coin disc mark; drawn behind the bent person for the carried state (person tip 0.3)."
+  },
+  {
+   "type": "prop",
+   "name": "foodTray",
+   "description": "Planned brass tray with food and an optional lifting dome cover.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Flat yellow ellipse rim, small shapes for bread, rice dome, dates and cup; cover is a half ellipse with a knob translated up by open; steam() above."
+  },
+  {
+   "type": "prop",
+   "name": "ledger",
+   "description": "Account book with closed and open states, tally strokes and an empty UNTIL box.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Two page quads with a spine; ruled lines with seg(); n tally strokes drawn in order; the box is a stroked rect whose content is a tag drawn by the style (NO END DATE). A quill is a white feather shape on the hand."
+  },
+  {
+   "type": "effect",
+   "name": "moonCounter (rows)",
+   "description": "Planned moonCounter extended with a rows option so thirty nights fit in the panel.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Loop n icons at pitch 62 x 58, each a disc that goes from dark outline to lit yellow with a crescent shadow when lit > i; draw in panel space after the camera."
+  },
+  {
+   "type": "motion",
+   "name": "sneak",
+   "description": "Planned tiptoe option for walk(): high knees, short stride, a hold on each toe, shoulders raised.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "walk(xf, t, {stride: 46}) with the phase eased into steps (hold 40 % of each step) and the person lifted 6 units on each hold; x keys step in the same rhythm so feet do not slide."
+  },
+  {
+   "type": "motion",
+   "name": "handOver",
+   "description": "Planned hand-to-hand pass of a small object (the purse) with a weight dip and both gazes following.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Object position = blend(handA world, handB world) over 0.25 s from P.hands of each person; receiver hand dips 8 units on arrival."
+  },
+  {
+   "type": "pose",
+   "name": "person carrying a load on the back",
+   "description": "Planned pose (AN-132): bent under a sack, tip 0.3, knees bent, one hand over the shoulder on the sack neck.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Draw the sack first at the shoulder point rotated with the body, then person {tip:0.3, sq:0.95, handR near the shoulder}; walk amplitude reduced to 0.7."
+  }
+ ],
+ "owner_questions": [
+  "SCRIPT: the English translation is a condensed version of the Arabic (P1 omits that the man stood up and greeted Yahya, P4 omits \"until he had gathered a sum he had never dreamed of holding\", P6 omits \"he thought that this way he would keep what he had been given\", P8 summarises the closing line); both are kept verbatim and the English chunks are matched to the nearest Arabic phrase.",
+  "Yahya arrives on a white horse with a servant behind him (the script only says he returned from the palace); default: keep the horse.",
+  "Invented English lettering beyond sound words: YAHYA THE VIZIER, CALIPH'S PALACE, HOME, BAGHDAD, A POOR MAN, SALAM!, FAMILY?, JOB?, GUEST ROOM, THE TREASURER, EVERY DAY, GOOD FOOD, FAMILY, GUEST, NO END DATE, 30 NIGHTS, 30,000 DIRHAMS, THE BIG SACK, TOO MUCH!, GIVE IT BACK!, GONE!, IF HE HAD STAYED..., STILL OPEN; default: keep all (they are labels on key beats).",
+  "In S11 the man's fear is shown as a thought cloud with a stern, angry Yahya holding out his hand (GIVE IT BACK!); it is clearly imagined, but it does show Yahya unkind for a few seconds; default: keep.",
+  "In S7 Yahya's household is shown as a lady and a child eating (a diagram of \"what the household eats\"); default: keep.",
+  "In S13 a servant dozes by the door as the man tiptoes past, and the door drifts open behind him; default: keep (added for suspense and irony).",
+  "In S16 the vision shows the guest growing old on the couch with a white beard and an equally aged servant still bringing the tray; default: keep (gentle humour for \"to the end of his life\").",
+  "The LATER... card plays over the spoken words \"thirty nights passed\" (83.4-84.9) instead of in a silence, because the narration has no pause there; default: keep the card."
+ ],
+ "implementation_notes": [
+  "Start from Library/template. World 1000 x 1230, floor or ground y 900. Set LIFE.t = t each frame so every person blinks; add explicit blinks where lid is set by hand.",
+  "People: yahya {costume:\"vizier\", age:0.55, s:1.3}; poorMan {costume:\"villager\", age:0.3, s:1.2, pal:{robe:\"#b9a77a\", dot:\"#8a6a3a\", shoes:\"bare\", sash:C.red}} plus two patch rects drawn on the skirt by the scene; treasurer {costume:\"merchant\", pal:{robe:GREEN, dot:GREEND, hc:C.yellow, hd:C.red}}; servants {costume:\"servant\"} with pal for the blue one. All dialogue uses lookAt / look() so speaker and listener keep eye contact.",
+  "S1: rideOn(ctx, \"horse\", {...walk(HX, t, {stride: GAIT.horse*0.8}), y:900, s:0.8, pal:0}, {costume:\"vizier\", age:0.55, lurch: lurch(t, 7.4)}); HX = kfn [[0.42,-220],[7.4,300]] eased out. The dismount is hidden by the close shot 11.2-13.0; from 15.5 Yahya is a standing person walking from x 250 to x 420, and the horse is gone (led off left by servantA at 12.5-14).",
+  "gateStreet: const A = marketStreet(ctx, {palette, palace:\"lit\", palaceDoor, u, t}); use A.palace.door {x0, x1, top, bottom:872, cx:750} for everyone who stands on the step and A.ground (900) on the street. Draw people who come out of the door clipped to the door opening until they pass the frame.",
+  "guestRoom window clock: one function U(t) (kfn) gives the time of day for every guest room scene: S5 0.25; S8 runs 0.25 + (t-64.3)*2 mod 1; S9 0.9 to 1.0 and one-shot flashes per morning; S10-S12 0.75; S14 0.05. Dim the room with the dayCycle night value.",
+  "Counters: one running total drawn with the style counter in panel space (top right), values keyed: 1000 at 75.98, to 12,000 by 78.8, 29,000 to 30,000 at 88.8-89.6. The DAY / WEEK counter is separate, top left.",
+  "Thought clouds: thoughtCloud(ctx, x, y, w, h, t, {p, tail, bg, scale, at, inside}); S11 cloud blue (cold fear) 620 x 400 at (500, 330); S15 cloud yellow 520 x 340 at (400, 330); S16 vision 880 x 620 at (480, 400), p keyed 152.76 to 153.26 and back at 160.6 to 161.0. Keep figures inside at least 110 px tall on screen.",
+  "S14 opens in the guestRoom although the scene set is the hall: draw the guest room for 127.24-131.4 and whip to the hall at 131.4 (a camera key pair 0.01 s apart under a 3-frame whip smear).",
+  "Camera: build keys per scene from the camera notes; use twoShot(a, b, {margin}) for S2, S3, S6, S7; clamp as in the template. Shake only inside the panel clip, and only at 7.4 (2 units).",
+  "Sound: SND master 0.6, 5 effects only (7.72 thud, 15.86 chime, 22.4 pop, 41.95 pop, 172.6 chime). The narration has only three real pauses, so coins, purses and doors are silent picture events.",
+  "Subtitles: 4 chunks per paragraph as marked in \"subtitles\"; time each chunk from the first Arabic word of the chunk in timing.json. English is shorter than the Arabic, so several English chunks are short.",
+  "Lettering never covers a face; labels live in the sky or wall above y 470 world. No en or em dashes anywhere. Headline sizes as in CLAUDE.md.",
+  "Call the style finish last every frame; every motion is a function of t (kfn, blend, pulse, K.rng with fixed seeds)."
+ ],
+ "warnings": [
+  "The narration is nearly continuous (three pauses of 0.6 s or more, all in the first 23 s), so only 5 sound effects are planned; do not add coin or door sounds over words.",
+  "English is a condensed translation: chunk 4 of P4 and P6 show English that does not translate the Arabic being spoken at that moment.",
+  "The person figure is front facing only: \"bows\", \"turns to the door\" and \"looks back\" must be acted with tip, gaze, dir flips (turnFlip) and hands, not a profile.",
+  "Arms are short (about 74 units): hugging the 190 wide sack is drawn with the hands on its near edge and the sack overlapping the body.",
+  "S8-S9 repeat one action many times; vary the treasurer and the guest slightly on each repeat so it does not read as a loop.",
+  "guestRoom uses the merchant variant of palaceHall: check on a still that with desk:false and one shelf it does not read as a shop; if it does, add the rug, diwan and a second cushion first."
+ ]
+}

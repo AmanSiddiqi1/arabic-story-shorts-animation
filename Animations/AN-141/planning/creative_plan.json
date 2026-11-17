@@ -1,0 +1,2535 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-141",
+ "title": "The Woman's Trick Against Her Husband",
+ "duration": 161.14,
+ "end_hold": 3.0,
+ "logline": "A wife hides a live fish in a water jar, vanishes to a wedding for a week, and on her return uses the still living fish to convince the neighbours that her truthful husband is mad.",
+ "moral": "Evidence that looks decisive can be wrong: the neighbours trusted the living fish and punished the man who told the truth.",
+ "tone": "Dry satirical comedy that cools into a quiet, unjust ending. The fish is the innocent running gag; the husband earns real sympathy; no gloating at the end.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 4.46,
+   "kind": "setup",
+   "cue": {
+    "word": "سمكة،",
+    "t": 4.46
+   },
+   "summary": "A man brings home a live fish on Friday and expects lunch after prayer."
+  },
+  {
+   "id": "B2",
+   "t": 22.72,
+   "kind": "inciting",
+   "cue": {
+    "word": "جاء",
+    "t": 22.72
+   },
+   "summary": "A friend arrives with a wedding invitation."
+  },
+  {
+   "id": "B3",
+   "t": 30.0,
+   "kind": "turn",
+   "cue": {
+    "word": "لكنها",
+    "t": 30.0
+   },
+   "summary": "She wants to go but the fish is not cooked."
+  },
+  {
+   "id": "B4",
+   "t": 41.92,
+   "kind": "comic",
+   "cue": {
+    "word": "وضعتها",
+    "t": 41.92
+   },
+   "summary": "She drops the live fish in the water jar and leaves."
+  },
+  {
+   "id": "B5",
+   "t": 54.5,
+   "kind": "rising",
+   "cue": {
+    "word": "غائبة",
+    "t": 54.5
+   },
+   "summary": "She stays away for days; he waits beside the jar without knowing."
+  },
+  {
+   "id": "B6",
+   "t": 60.36,
+   "kind": "rising",
+   "cue": {
+    "word": "وفتش",
+    "t": 60.36
+   },
+   "summary": "He searches house to house; nobody can help."
+  },
+  {
+   "id": "B7",
+   "t": 76.54,
+   "kind": "suspense",
+   "cue": {
+    "word": "الجمعة",
+    "t": 76.54
+   },
+   "summary": "A full week passes: Friday again."
+  },
+  {
+   "id": "B8",
+   "t": 84.72,
+   "kind": "emotion",
+   "cue": {
+    "word": "غاضبًا",
+    "t": 84.72
+   },
+   "summary": "She returns and he confronts her in anger."
+  },
+  {
+   "id": "B9",
+   "t": 95.02,
+   "kind": "surprise",
+   "cue": {
+    "word": "وأخرجت",
+    "t": 95.02
+   },
+   "summary": "She answers by pulling the fish from the jar, still alive."
+  },
+  {
+   "id": "B10",
+   "t": 104.88,
+   "kind": "turn",
+   "cue": {
+    "word": "وروت",
+    "t": 104.88
+   },
+   "summary": "She tells the neighbours the opposite story."
+  },
+  {
+   "id": "B11",
+   "t": 114.44,
+   "kind": "rising",
+   "cue": {
+    "word": "سبعة",
+    "t": 114.44
+   },
+   "summary": "He insists it was seven days ago."
+  },
+  {
+   "id": "B12",
+   "t": 128.8,
+   "kind": "climax",
+   "cue": {
+    "word": "يمكن",
+    "t": 128.8
+   },
+   "summary": "The neighbours rule that a fish cannot live a week, so he must be lying."
+  },
+  {
+   "id": "B13",
+   "t": 136.5,
+   "kind": "reveal",
+   "cue": {
+    "word": "احتجزوه",
+    "t": 136.5
+   },
+   "summary": "They call him mad and lock him up, laughing."
+  },
+  {
+   "id": "B14",
+   "t": 139.6,
+   "kind": "emotion",
+   "cue": {
+    "word": "بكى",
+    "t": 139.6
+   },
+   "summary": "He weeps, unable to convince anyone."
+  },
+  {
+   "id": "B15",
+   "t": 153.82,
+   "kind": "moral",
+   "cue": {
+    "word": "دليل",
+    "t": 153.82
+   },
+   "summary": "Evidence that looked decisive punished the one who told the truth."
+  }
+ ],
+ "cast": [
+  {
+   "id": "husband",
+   "name": "the husband",
+   "library": "person",
+   "base": "person costume:'villager' (green robe, white turban, black beard), s 1.2",
+   "look": "Honest, a little pompous at first, then hungry, frantic, and finally broken. Uses sit, kneel, flush, wet eyes.",
+   "new": false
+  },
+  {
+   "id": "wife",
+   "name": "the wife",
+   "library": "person",
+   "base": "person costume:'villageWoman' (red dress, yellow headscarf), s 1.15",
+   "look": "Quick and sly. Innocent mask for others, smirk only when unobserved. A flower in the headscarf after the wedding.",
+   "new": false
+  },
+  {
+   "id": "friend",
+   "name": "the friend with the invitation",
+   "library": "person",
+   "base": "person costume:'maiden' with pal {robe: blue, dot: white}, s 1.1",
+   "look": "Cheerful neighbour woman in festive clothes, only seen in the doorway (see owner_questions: the Arabic says a male friend).",
+   "new": false
+  },
+  {
+   "id": "nOld",
+   "name": "old woman neighbour",
+   "library": "person",
+   "base": "person costume:'oldWoman', hold:'stick', s 1.1",
+   "look": "Sharp eyed, the first to judge. Leads every staggered reaction.",
+   "new": false
+  },
+  {
+   "id": "nCarp",
+   "name": "carpenter neighbour",
+   "library": "person",
+   "base": "person costume:'carpenter', s 1.2",
+   "look": "Big, slow, arms folded; counts on his fingers; does the grabbing.",
+   "new": false
+  },
+  {
+   "id": "nBean",
+   "name": "bean seller neighbour",
+   "library": "person",
+   "base": "person costume:'beanSeller', s 1.15",
+   "look": "Eager know-all; speaks the verdict and laughs hardest.",
+   "new": false
+  },
+  {
+   "id": "fish",
+   "name": "the fish",
+   "library": null,
+   "base": "planned side-view comic 'fish' (palette 0, blue-grey with a yellow fin)",
+   "look": "About 150 x 80 in the hand, round eye that blinks and gazes. Always alive and cheerful: the innocent witness.",
+   "new": true
+  }
+ ],
+ "sets": [
+  {
+   "id": "home",
+   "library": "palaceHall",
+   "description": "palaceHall {variant:'merchant', wall:'ochre', treasure:false, curtain closed, desk used as the dining table without coin stacks, stools:[600], lamps, window showing the time of day via u}. Floor y 900. Door on the left (anchor door), window and desk from the MERCHANT anchors (measure on the set). Added by the scene: cooking pot on a brazier at x 720, the water jar at x 840.",
+   "new": false
+  },
+  {
+   "id": "street",
+   "library": "marketStreet",
+   "description": "marketStreet {w:2400, palace:false, palette:'clear', stalls:[{x:1700, kind:'seed'}]} with three house doors used: the husband's (x about 700), the old woman's (about 1050), the carpenter's (about 1350); approximate, take the real values from the returned doors anchors. Sky by u (0.25 noon to 0.5 dusk).",
+   "new": false
+  },
+  {
+   "id": "jail",
+   "library": null,
+   "description": "Planned jailCell: bare cell 1000 x 1230, floor y 900, grey-blue dotted back wall, side wall at x 640 with the cell occupying x 60..640, a small barred window (90 x 110) high at about (200, 380) showing skyCycle(u), front bars (9 vertical bars 14 wide, pitch 64, with two cross rails) that slide in from the left (shut 0..1), drawn after the cast inside. Outside area x 640..1000 with a hangingLamp at (800, 300).",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "jar",
+   "library": null,
+   "description": "Planned hangingJar drawing in a new floor state (no rope, no hook), scale 1.5: 195 wide x 225 tall, mouth 90 wide at y about 675 when standing on the floor at y 900; blue water shown through the oval cutaway window (105 x 135) with a level line that can slosh; the fish swims inside the window.",
+   "new": true
+  },
+  {
+   "id": "pot",
+   "library": null,
+   "description": "Planned cookPot: black round pot 110 x 80 with two ear handles on a three legged brazier 60 high; cold (no flame, no steam) for the whole film.",
+   "new": true
+  },
+  {
+   "id": "bowl",
+   "library": null,
+   "description": "Planned smallBowl in its wide size (160 x 60) with blue water and a level line; the fish shows above the rim and through a shallow cutaway.",
+   "new": true
+  },
+  {
+   "id": "bars",
+   "library": null,
+   "description": "The sliding front bars of jailCell, also used as the wipe into S14 and for the final glint.",
+   "new": true
+  },
+  {
+   "id": "scroll",
+   "library": null,
+   "description": "Planned scroll, small (60 x 26) with a red seal: the wedding invitation.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 5.6,
+   "paragraphs": [
+    1
+   ],
+   "set": "street",
+   "cast": [
+    "husband",
+    "fish"
+   ],
+   "summary": "Friday morning. The husband walks home along the street, proudly carrying a live fish on a string.",
+   "camera": {
+    "shot": "establishing",
+    "move": "track",
+    "notes": "Start wide (zoom 1.0, centre 500,640) on the street; track right with the walker, ending at zoom 1.35 on his house door (door cx about 700)."
+   },
+   "composition": "Husband enters from the left edge, ground y 900, s 1.1; his house is the front with the blue door at x about 640..760. FRIDAY tag top left of the panel, clear of his head. Fish hangs at hip height on his screen-right hand.",
+   "actions": [
+    {
+     "t": 0.0,
+     "cue": {
+      "word": "عاد",
+      "t": 0.0
+     },
+     "who": "husband",
+     "action": "walks in from x -80 to x 600 (arrives 4.0) with a bouncy stride, the fish swinging on a short string from his right hand",
+     "acting": "chest out, smile, gaze ahead [1,0], a blink at 1.0; the string swings a beat behind each step (swing)",
+     "library": "person {costume:'villager'} + walk(xf,t) + footfalls + swing() for the string"
+    },
+    {
+     "t": 1.3,
+     "cue": {
+      "word": "بيته",
+      "t": 1.32
+     },
+     "who": "set",
+     "action": "his house front comes into view: the door has a yellow frame so it reads as HOME; a shutter above it is open",
+     "acting": "none (set)",
+     "library": "marketStreet {w:1400, palace:false, doors:[0,0,0]} anchors doors[1]"
+    },
+    {
+     "t": 2.4,
+     "cue": {
+      "word": "الجمعة",
+      "t": 2.52
+     },
+     "who": "fx",
+     "action": "tag FRIDAY pops top left with a row of seven small discs under it, the first one lit",
+     "acting": "pop with overshoot (settleTo), holds to 5.0 then slides up out of the panel",
+     "library": "S.label + weekDots(n:1)"
+    },
+    {
+     "t": 3.8,
+     "cue": {
+      "word": "يده",
+      "t": 3.94
+     },
+     "who": "husband",
+     "action": "stops at his door and lifts the fish to eye level to admire it",
+     "acting": "gaze on the fish (lookAt), brows raised (brow -0.3), proud half lid 0.3, weight settles with landSquash",
+     "library": "handRW to the string top; anticipate() before the lift"
+    },
+    {
+     "t": 4.4,
+     "cue": {
+      "word": "سمكة،",
+      "t": 4.46
+     },
+     "who": "fish",
+     "action": "the fish flaps its tail twice and blinks: it is alive. Arrow and tag FRESH! point at it",
+     "acting": "two tail flaps 0.15 s each, eye wide then a blink; the husband flinches back 10 units and grins",
+     "library": "fish {flap, eyes} + S.arrow + S.label"
+    },
+    {
+     "t": 5.3,
+     "who": "husband",
+     "action": "pushes the door open and steps inside (door swings in, he passes behind the frame)",
+     "acting": "head turned to the door, fish trailing behind him",
+     "library": "townDoor open 0..1 via marketStreet doors:[..]"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 2.5,
+     "text": "FRIDAY"
+    },
+    {
+     "t": 4.6,
+     "text": "FRESH!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 5.5,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 5.6
+   }
+  },
+  {
+   "id": "S2",
+   "start": 5.6,
+   "end": 19.3,
+   "paragraphs": [
+    1
+   ],
+   "set": "home",
+   "cast": [
+    "husband",
+    "wife",
+    "fish"
+   ],
+   "summary": "Inside. He hands the fish to his wife, dreams of lunch ready after prayer, tells her to cook it and leaves.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Two-shot (twoShot husband/wife, zoom about 1.45). Slow push to 1.6 on the thought cloud 8.5 to 12.9, back to 1.45 at 13.1; widen to 1.2 at 16.4 to show the door for his exit."
+   },
+   "composition": "Door on the left (anchor door). Husband at x 380, wife at x 620 facing each other, both s 1.2. Cooking pot on a brazier at x 720, the big jar at x 840 by the right wall. Thought cloud above the husband at about (330, 380), 360 x 240, never over the wife.",
+   "actions": [
+    {
+     "t": 5.9,
+     "cue": {
+      "word": "وسلمها",
+      "t": 5.94
+     },
+     "who": "husband",
+     "action": "holds the fish out to her in both hands",
+     "acting": "lean forward (tip 0.08), big smile, gaze on her face",
+     "library": "PERSON_HANDS.reachBoth + handOver"
+    },
+    {
+     "t": 6.9,
+     "cue": {
+      "word": "لزوجته",
+      "t": 6.98
+     },
+     "who": "wife",
+     "action": "takes the fish; her hands dip under the weight and the fish flaps once in her grip",
+     "acting": "brows up, eyes follow the fish, a small flinch (sq 0.94) then a polite smile; gaze to him",
+     "library": "person {costume:'villageWoman'} + handOver weight dip + settleTo"
+    },
+    {
+     "t": 8.5,
+     "cue": {
+      "word": "يظن",
+      "t": 8.68
+     },
+     "who": "husband",
+     "action": "a thought cloud pops over him (three bubbles first)",
+     "acting": "eyes drift up to the cloud (gaze [-0.2,-0.9]), dreamy half lid 0.5, hand to his belly",
+     "library": "thoughtCloud {p, tail}"
+    },
+    {
+     "t": 9.5,
+     "cue": {
+      "word": "الغداء",
+      "t": 9.54
+     },
+     "who": "fx",
+     "action": "inside the cloud: the fish cooked on a round platter with three steam curls",
+     "acting": "the husband licks his lips (mouth smile, a tongue flick as a 4 frame mouth open)",
+     "library": "thoughtCloud inside(): fish {icon:true, eyes:shut} on platter"
+    },
+    {
+     "t": 10.8,
+     "cue": {
+      "word": "جاهزًا",
+      "t": 10.9
+     },
+     "who": "fx",
+     "action": "a tick pops beside the platter in the cloud: READY",
+     "acting": "husband nods once with follow-through on the turban",
+     "library": "S.emphasis tick inside the cloud"
+    },
+    {
+     "t": 12.0,
+     "cue": {
+      "word": "الصلاة.",
+      "t": 12.1
+     },
+     "who": "fx",
+     "action": "the cloud picture slides to a small dome and minaret with an arrow to the platter: prayer first, then lunch; the cloud pops away at 12.9",
+     "acting": "his gaze returns to his wife as the cloud goes",
+     "library": "thoughtCloud inside(): townFarCity dome icon"
+    },
+    {
+     "t": 13.1,
+     "cue": {
+      "word": "طلب",
+      "t": 13.12
+     },
+     "who": "husband",
+     "action": "points at the fish, then swings the arm to point at the cooking pot",
+     "acting": "talk, brows level, gaze follows his own pointing hand then back to her",
+     "library": "PERSON_HANDS.pointFwd, talk"
+    },
+    {
+     "t": 14.6,
+     "cue": {
+      "word": "تطبخ",
+      "t": 14.68
+     },
+     "who": "wife",
+     "action": "nods and holds the fish over the pot",
+     "acting": "two quick nods, smile; gaze to the pot",
+     "library": "head nod as drop pulse; handRW over the pot"
+    },
+    {
+     "t": 15.2,
+     "cue": {
+      "word": "السمكة",
+      "t": 15.26
+     },
+     "who": "fish",
+     "action": "the fish looks down at the pot, eyes go wide, and gulps",
+     "acting": "eye wide, pupil down, one gulp (sq 0.9 then 1.05), tail stiff",
+     "library": "fish {eyes:wide, gaze}"
+    },
+    {
+     "t": 16.5,
+     "cue": {
+      "word": "خرج",
+      "t": 16.62
+     },
+     "who": "husband",
+     "action": "turns and walks out through the door with a wave over his shoulder",
+     "acting": "light step, wave at 16.9; the wife watches him go",
+     "library": "walk + PERSON_HANDS.wave + townDoor"
+    },
+    {
+     "t": 17.8,
+     "cue": {
+      "word": "أعماله.",
+      "t": 17.86
+     },
+     "who": "set",
+     "action": "the door swings shut behind him; the wife and the fish are alone and look at each other",
+     "acting": "wife: gaze slides from the door to the fish, a slow blink; fish blinks back",
+     "library": "palaceHall {variant:merchant, doorOpen}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 14.7,
+     "text": "COOK IT!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 19.15,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 19.3
+   }
+  },
+  {
+   "id": "S3",
+   "start": 19.3,
+   "end": 38.3,
+   "paragraphs": [
+    2
+   ],
+   "set": "home",
+   "cast": [
+    "wife",
+    "friend",
+    "fish"
+   ],
+   "summary": "A friend knocks with a wedding invitation. The wife longs to go, remembers the uncooked fish, and thinks.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "Medium on the wife at the pot (zoom 1.4). Pan left to include the door at 22.5; two-shot wife/friend 23.1 to 27.5; follow the wife toward the door 28.9; whip back to the table at 30.0; slow push-in to 1.8 on the wife and fish from 33.6."
+   },
+   "composition": "Wife at the pot (x 680), fish on a plate on the low table (x 520, table top about y 790, measure on the set). Friend stands in the open doorway at x 150 and never comes further than x 240. Balloon from the friend sits above the doorway side, clear of both faces.",
+   "actions": [
+    {
+     "t": 19.7,
+     "cue": {
+      "word": "لم",
+      "t": 19.72
+     },
+     "who": "wife",
+     "action": "lays the fish on a plate on the table and pushes her sleeves up; the fish flaps on the plate",
+     "acting": "brisk, businesslike; gaze on the pot",
+     "library": "handRW to the plate"
+    },
+    {
+     "t": 20.8,
+     "cue": {
+      "word": "مدة",
+      "t": 20.86
+     },
+     "who": "wife",
+     "action": "fans the brazier under the pot with her hand; two small smoke puffs rise",
+     "acting": "leaning (tip 0.1), cheeks puffed as she blows",
+     "library": "dustBurst as smoke"
+    },
+    {
+     "t": 22.3,
+     "cue": {
+      "word": "جاء",
+      "t": 22.72
+     },
+     "who": "set",
+     "action": "three knocks: the door jolts three times with small impact stars",
+     "acting": "wife freezes, head turns to the door (gaze to door), the fish also looks",
+     "library": "countedBeats for the knocks + kick on the door"
+    },
+    {
+     "t": 23.1,
+     "cue": {
+      "word": "صديق",
+      "t": 23.1
+     },
+     "who": "friend",
+     "action": "the door opens and the friend leans in with a wave",
+     "acting": "bright smile, bounce on arrival (hop small), gaze on the wife",
+     "library": "person {costume:'maiden'} + townDoor + PERSON_HANDS.wave"
+    },
+    {
+     "t": 23.7,
+     "cue": {
+      "word": "يدعو",
+      "t": 23.78
+     },
+     "who": "friend",
+     "action": "holds out a small invitation scroll with a red seal",
+     "acting": "arm fully out, eager lean (tip 0.1), talk",
+     "library": "scroll prop in handR, talk"
+    },
+    {
+     "t": 25.3,
+     "cue": {
+      "word": "حفل",
+      "t": 25.4
+     },
+     "who": "fx",
+     "action": "picture balloon from the friend: a drum, two figures under an arch and a heart; music notes float out of the balloon",
+     "acting": "friend sways side to side as if dancing; wife gaze goes up to the balloon, mouth opens in a smile",
+     "library": "iconBalloon + musicNotes"
+    },
+    {
+     "t": 26.8,
+     "cue": {
+      "word": "منزله.",
+      "t": 26.9
+     },
+     "who": "friend",
+     "action": "jerks a thumb back over her shoulder at the street (her house), beckons, and slips out; the door stays ajar",
+     "acting": "beckon twice, a wink, then exits with a skip",
+     "library": "PERSON_HANDS.pointUp reused as a thumb back; wink"
+    },
+    {
+     "t": 28.1,
+     "cue": {
+      "word": "رغبت",
+      "t": 28.16
+     },
+     "who": "wife",
+     "action": "clasps her hands and does a small hop of delight",
+     "acting": "eyes wide and shining, big smile, anticipation crouch then hop and landSquash",
+     "library": "PERSON_HANDS.clasp + anticipate + hop + landSquash"
+    },
+    {
+     "t": 28.9,
+     "cue": {
+      "word": "الذهاب،",
+      "t": 28.96
+     },
+     "who": "wife",
+     "action": "takes two quick steps toward the door",
+     "acting": "leaning forward, gaze on the door",
+     "library": "walk"
+    },
+    {
+     "t": 30.0,
+     "cue": {
+      "word": "لكنها",
+      "t": 30.0
+     },
+     "who": "wife",
+     "action": "stops dead with one foot in the air and slowly turns her head back to the table",
+     "acting": "overshoot and settle, smile drops to a flat mouth, gaze to the fish",
+     "library": "settleTo"
+    },
+    {
+     "t": 31.7,
+     "cue": {
+      "word": "أعدت",
+      "t": 31.76
+     },
+     "who": "fx",
+     "action": "arrow and tag NOT COOKED point at the cold empty pot",
+     "acting": "her shoulders drop (tip -0.05), frown",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 32.3,
+     "cue": {
+      "word": "الطعام،",
+      "t": 32.32
+     },
+     "who": "fish",
+     "action": "the fish on the plate flaps and lifts a fin as if to say hello",
+     "acting": "cheerful, eye on the wife",
+     "library": "fish {flap}"
+    },
+    {
+     "t": 33.6,
+     "cue": {
+      "word": "ففكرت",
+      "t": 33.6
+     },
+     "who": "wife",
+     "action": "hand to her chin, thinking; her eyes dart pot, fish, door, pot",
+     "acting": "saccades (gazePlan ease 0.07), one brow up, mouth to one side",
+     "library": "PERSON_HANDS.chin + gazePlan"
+    },
+    {
+     "t": 34.8,
+     "cue": {
+      "word": "السمكة",
+      "t": 34.86
+     },
+     "who": "fish",
+     "action": "close on the fish as the camera pushes in: it blinks innocently",
+     "acting": "slow blink, tiny tail wag",
+     "library": "fish {lid}"
+    },
+    {
+     "t": 36.0,
+     "cue": {
+      "word": "تركها",
+      "t": 36.04
+     },
+     "who": "fx",
+     "action": "small thought cloud by her head: the husband with a spoon and an empty plate, waiting",
+     "acting": "she winces at it (brow -0.5)",
+     "library": "thoughtCloud small (240 x 170), person inside at scale 0.45"
+    },
+    {
+     "t": 36.9,
+     "cue": {
+      "word": "زوجها.",
+      "t": 36.88
+     },
+     "who": "wife",
+     "action": "waves the cloud away; her darting eyes land on the big jar and stop there",
+     "acting": "eyes narrow (lid 0.35), sly brow -0.4, a slow smile grows",
+     "library": "gazePlan to the jar"
+    },
+    {
+     "t": 37.9,
+     "who": "fx",
+     "action": "arrow pops pointing at the jar; the jar gives one small glint",
+     "acting": "held beat: only her smile widens",
+     "library": "S.arrow"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 22.3,
+     "text": "KNOCK KNOCK!"
+    },
+    {
+     "t": 25.9,
+     "text": "WEDDING!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 27.85,
+     "kind": "chime"
+    },
+    {
+     "t": 38.1,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 38.3
+   }
+  },
+  {
+   "id": "S4",
+   "start": 38.3,
+   "end": 48.4,
+   "paragraphs": [
+    3
+   ],
+   "set": "home",
+   "cast": [
+    "wife",
+    "fish"
+   ],
+   "summary": "Instead of cooking, she drops the live fish into the water jar and slips out to the wedding.",
+   "camera": {
+    "shot": "medium",
+    "move": "track",
+    "notes": "Medium (zoom 1.5) following the wife from the table (x 520) to the jar (x 840) 41.9 to 43.6; hold on the jar for the plop; pull back to 1.15 at 46.9 for her exit through the door."
+   },
+   "composition": "Jar at x 840 on the floor, drawn 195 wide x 225 tall, mouth at y about 675; its cutaway window faces the viewer. The wife stands left of the jar so the fish drops in the open between her face and the jar mouth.",
+   "actions": [
+    {
+     "t": 39.0,
+     "cue": {
+      "word": "بدلًا",
+      "t": 38.97
+     },
+     "who": "wife",
+     "action": "slides the cooking pot away along the floor with her foot",
+     "acting": "chin up, breezy; gaze on the jar not the pot",
+     "library": "leg kick; pot x keyed with settleTo"
+    },
+    {
+     "t": 39.8,
+     "cue": {
+      "word": "طبخ",
+      "t": 39.78
+     },
+     "who": "fx",
+     "action": "a red X stamps over the pot",
+     "acting": "stamp with overshoot; the pot rocks once",
+     "library": "S.emphasis X"
+    },
+    {
+     "t": 41.4,
+     "who": "wife",
+     "action": "picks the fish off the plate by the tail with two fingers",
+     "acting": "arm at full stretch, head leaning away, nose wrinkled",
+     "library": "handRW to the fish tail"
+    },
+    {
+     "t": 41.9,
+     "cue": {
+      "word": "وضعتها",
+      "t": 41.92
+     },
+     "who": "wife",
+     "action": "carries the dangling fish across to the jar",
+     "acting": "quick short steps; the fish swings a beat behind",
+     "library": "walk + swing"
+    },
+    {
+     "t": 42.7,
+     "cue": {
+      "word": "حية",
+      "t": 42.72
+     },
+     "who": "fish",
+     "action": "the fish thrashes in her grip; arrow and tag ALIVE!",
+     "acting": "three fast flaps, eyes wide",
+     "library": "fish {flap} + S.arrow + S.label"
+    },
+    {
+     "t": 43.8,
+     "cue": {
+      "word": "جرة",
+      "t": 43.84
+     },
+     "who": "fish",
+     "action": "she lets go: the fish drops nose first into the jar mouth",
+     "acting": "accelerating fall; she rises on her toes to watch it go in",
+     "library": "fallY"
+    },
+    {
+     "t": 45.3,
+     "cue": {
+      "word": "بالماء،",
+      "t": 45.44
+     },
+     "who": "jar",
+     "action": "a crown of drops jumps from the mouth; in the cutaway window the water level rocks and the fish rights itself and swims a loop",
+     "acting": "jar squashes 5 percent on impact and settles; the fish looks pleased",
+     "library": "hangingJar floor state {fill:0.8, slosh} + splash + swimPath"
+    },
+    {
+     "t": 46.1,
+     "cue": {
+      "word": "ثم",
+      "t": 46.14
+     },
+     "who": "wife",
+     "action": "dusts her hands and gives the viewer one wink",
+     "acting": "the single look to camera of the film: gaze [0,0.05], wink R, smirk",
+     "library": "person {wink:'R'}"
+    },
+    {
+     "t": 46.9,
+     "cue": {
+      "word": "خرجت",
+      "t": 46.9
+     },
+     "who": "wife",
+     "action": "skips to the door, pulls her shawl straight, and goes out",
+     "acting": "light bouncing walk with one hop at the threshold",
+     "library": "walk + hop + townDoor"
+    },
+    {
+     "t": 47.8,
+     "cue": {
+      "word": "الحفل.",
+      "t": 47.8
+     },
+     "who": "set",
+     "action": "the door closes; two music notes drift in through the gap before it shuts. The fish in the jar watches the door, then turns a lazy loop",
+     "acting": "fish gaze to the door, slow blink",
+     "library": "musicNotes (n 2) + palaceHall doorOpen"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 45.5,
+     "text": "PLOP!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 41.5,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 48.4
+   }
+  },
+  {
+   "id": "S5",
+   "start": 48.4,
+   "end": 57.14,
+   "paragraphs": [
+    3
+   ],
+   "set": "home",
+   "cast": [
+    "husband",
+    "fish"
+   ],
+   "summary": "The husband comes home to no lunch and no wife. Evening falls, then night, then days, while the fish swims beside him unnoticed.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Locked wide (zoom 1.15, centre 500,650) so the window, the door, the husband and the jar are all in frame: the stillness is the joke. Only the window sky, the lamp and the dots change."
+   },
+   "composition": "Husband enters by the door, ends seated on the stool at x 600 beside the table. The window (anchor window) is the clock. The jar at x 840 with the fish visible in its cutaway is on the right edge of every frame. weekDots row along the top of the panel at y about 110 (panel space).",
+   "actions": [
+    {
+     "t": 48.9,
+     "cue": {
+      "word": "ولم",
+      "t": 48.99
+     },
+     "who": "husband",
+     "action": "comes in through the door rubbing his hands and sniffing the air for lunch",
+     "acting": "eyes closed in anticipation (lid 0.8), nose up, smile",
+     "library": "walk + PERSON_HANDS.clasp"
+    },
+    {
+     "t": 49.6,
+     "cue": {
+      "word": "تعد",
+      "t": 49.66
+     },
+     "who": "husband",
+     "action": "opens his eyes: cold pot, bare table, nobody. Arrow and tag EMPTY on the pot",
+     "acting": "smile falls, eyes dart table, pot, door (saccades), brows up",
+     "library": "gazePlan 0.07 + S.arrow + S.label"
+    },
+    {
+     "t": 50.2,
+     "cue": {
+      "word": "المساء",
+      "t": 50.24
+     },
+     "who": "set",
+     "action": "the window sky turns to dusk and the room warms in tone; he sits down on the stool to wait",
+     "acting": "sits heavily (sit 0 to 1 over 0.5 s with a settle), gaze on the door",
+     "library": "palaceHall {u} keyed 0.25 to 0.5 with kfn + person {sit, seat:'stool'}"
+    },
+    {
+     "t": 51.7,
+     "cue": {
+      "word": "يتوقع",
+      "t": 51.76
+     },
+     "who": "husband",
+     "action": "drums his fingers on the table and leans to look at the door; the hanging lamp lights",
+     "acting": "impatient, brow 0.4, head tilts toward the door",
+     "library": "hand tap cycle; lampsLit"
+    },
+    {
+     "t": 52.5,
+     "cue": {
+      "word": "زوجها،",
+      "t": 52.5
+     },
+     "who": "husband",
+     "action": "his stomach growls: belly pulses twice and he looks down at it",
+     "acting": "sq pulse 0.96, gaze down, sad mouth",
+     "library": "pulse on sq"
+    },
+    {
+     "t": 54.0,
+     "cue": {
+      "word": "ظلت",
+      "t": 54.02
+     },
+     "who": "set",
+     "action": "night in the window (moon and stars); the door still shut",
+     "acting": "he props his chin in his hand, lid 0.6",
+     "library": "palaceHall {u:0.75} + PERSON_HANDS.chin"
+    },
+    {
+     "t": 54.5,
+     "cue": {
+      "word": "غائبة",
+      "t": 54.5
+     },
+     "who": "fx",
+     "action": "the seven dot row appears along the top with dot 1 lit",
+     "acting": "quiet pop, no bounce",
+     "library": "weekDots(n:1)"
+    },
+    {
+     "t": 55.3,
+     "cue": {
+      "word": "أيامًا",
+      "t": 55.38
+     },
+     "who": "fx",
+     "action": "the window runs through two full days (sun arc, moon arc, twice); dots 2 and 3 light on each sunrise",
+     "acting": "his head sinks lower with each night; breathing only (breathe)",
+     "library": "palaceHall {u} keyed 0.75 to 2.9; weekDots(n:3)"
+    },
+    {
+     "t": 56.2,
+     "cue": {
+      "word": "متتابعة.",
+      "t": 56.24
+     },
+     "who": "fish",
+     "action": "the fish swims one slow loop in the jar window and looks out at the husband, who never looks its way",
+     "acting": "husband nods off and jerks awake (lid 1 then snap open); fish blinks",
+     "library": "swimPath + fish {gaze}"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 57.14
+   }
+  },
+  {
+   "id": "S6",
+   "start": 57.14,
+   "end": 72.4,
+   "paragraphs": [
+    4
+   ],
+   "set": "street",
+   "cast": [
+    "husband",
+    "nOld",
+    "nCarp",
+    "nBean"
+   ],
+   "summary": "He waits at his door, then searches house to house and asks everyone. Nobody can tell him anything.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Wide street strip (zoom 1.1) tracking right with the husband from his door (x about 700) past two more doors and a stall to x about 1900; hold and slow push to 1.4 on him alone at 71.1."
+   },
+   "composition": "Street strip w 2400, ground y 900. Door 1 (old woman) at x about 1050, door 2 (carpenter) at x about 1350, the bean stall at x about 1700. Neighbours appear only in their doorways or behind the stall counter. Sky runs from noon to dusk over the scene (u 0.25 to 0.5).",
+   "actions": [
+    {
+     "t": 57.1,
+     "cue": {
+      "word": "انتظر",
+      "t": 57.14
+     },
+     "who": "husband",
+     "action": "stands in his own doorway shading his eyes, looking left along the street, then right",
+     "acting": "slow head turns with the gaze leading, worried brow -0.4",
+     "library": "gazePlan + handR at the brow"
+    },
+    {
+     "t": 59.5,
+     "cue": {
+      "word": "زوجته",
+      "t": 59.6
+     },
+     "who": "fx",
+     "action": "small thought cloud: his wife with a question mark over her",
+     "acting": "he sighs (breathe deep), shoulders down",
+     "library": "thoughtCloud small, person inside"
+    },
+    {
+     "t": 60.3,
+     "cue": {
+      "word": "وفتش",
+      "t": 60.36
+     },
+     "who": "husband",
+     "action": "sets off down the street at a fast walk",
+     "acting": "leaning into it (tip 0.1), arms pumping",
+     "library": "walk + footfalls"
+    },
+    {
+     "t": 62.3,
+     "cue": {
+      "word": "بيت",
+      "t": 62.36
+     },
+     "who": "husband",
+     "action": "knocks at door 1; it opens and the old woman looks out and shakes her head",
+     "acting": "he asks with palms up; she squints, head shake",
+     "library": "PERSON_HANDS.palmsUp; person {costume:'oldWoman'} + townDoor"
+    },
+    {
+     "t": 63.3,
+     "cue": {
+      "word": "بيت،",
+      "t": 63.34
+     },
+     "who": "husband",
+     "action": "hurries to door 2 and knocks; the carpenter opens and shrugs",
+     "acting": "the husband is already half turned to the next door; the carpenter shrugs with palms up, chewing",
+     "library": "person {costume:'carpenter'} + PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 63.9,
+     "cue": {
+      "word": "وسأل",
+      "t": 63.98
+     },
+     "who": "fx",
+     "action": "picture balloon from the husband: his wife face with a question mark",
+     "acting": "talk, pleading brows",
+     "library": "iconBalloon single"
+    },
+    {
+     "t": 65.5,
+     "cue": {
+      "word": "كل",
+      "t": 65.54
+     },
+     "who": "husband",
+     "action": "reaches the bean stall and asks the seller, pointing at his balloon",
+     "acting": "out of breath (breathe fast), hand on the counter",
+     "library": "marketStall + person {costume:'beanSeller'}"
+    },
+    {
+     "t": 67.8,
+     "cue": {
+      "word": "مكانها.",
+      "t": 67.88
+     },
+     "who": "nBean",
+     "action": "the bean seller points left with confidence; behind the husband the carpenter in his doorway points right",
+     "acting": "the husband head whips left, right, left (2 frame snaps), mouth o",
+     "library": "PERSON_HANDS.pointFwd on both, mirrored"
+    },
+    {
+     "t": 68.7,
+     "cue": {
+      "word": "لكن",
+      "t": 68.76
+     },
+     "who": "nOld",
+     "action": "all three shake their heads one after another (old woman, carpenter, bean seller)",
+     "acting": "staggered by 4 frames each; none in unison",
+     "library": "stagger(i)"
+    },
+    {
+     "t": 69.7,
+     "cue": {
+      "word": "أحدًا",
+      "t": 69.74
+     },
+     "who": "set",
+     "action": "door 1 shuts, door 2 shuts, the stall shutter drops, in sequence",
+     "acting": "the husband flinches a little less at each (falling reaction)",
+     "library": "townDoor + marketStall state closed"
+    },
+    {
+     "t": 71.1,
+     "cue": {
+      "word": "يدله",
+      "t": 71.14
+     },
+     "who": "husband",
+     "action": "stands alone in the middle of the empty street; his arms drop",
+     "acting": "head sinks, tip -0.06, long slow blink",
+     "library": "settleTo"
+    },
+    {
+     "t": 71.8,
+     "cue": {
+      "word": "عليها،",
+      "t": 71.84
+     },
+     "who": "set",
+     "action": "dusk sky; his long shadow stretches along the ground toward the camera side",
+     "acting": "only his breathing moves",
+     "library": "marketStreet {u:0.5}"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 72.4,
+    "label": "DAYS PASSED..."
+   }
+  },
+  {
+   "id": "S7",
+   "start": 72.4,
+   "end": 78.1,
+   "paragraphs": [
+    4
+   ],
+   "set": "home",
+   "cast": [
+    "husband",
+    "fish"
+   ],
+   "summary": "The week runs out: the dots fill to seven and it is Friday again.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Same locked wide as S5 revealed from under the transition card (camera key hidden at the card midpoint); slow push from 1.15 to 1.3 toward the dot row and the husband; ends on his head lifting toward the door."
+   },
+   "composition": "Husband slumped on the stool at x 600. Dot row at the top of the panel with the FRIDAY tag returning top left exactly where it sat in S1. Jar and fish at x 840.",
+   "actions": [
+    {
+     "t": 72.7,
+     "cue": {
+      "word": "ومرت",
+      "t": 72.7
+     },
+     "who": "fx",
+     "action": "the card clears on the home: four dots lit, the window sky turning",
+     "acting": "husband slumped, chin on chest, breathing",
+     "library": "S.transition caption + weekDots(n:4)"
+    },
+    {
+     "t": 74.1,
+     "cue": {
+      "word": "الأيام",
+      "t": 74.12
+     },
+     "who": "fx",
+     "action": "dots 5 and 6 light on two more sunrises in the window",
+     "acting": "he lifts his head hopefully at each dawn and lets it fall again",
+     "library": "weekDots(n:6) + palaceHall {u}"
+    },
+    {
+     "t": 74.9,
+     "cue": {
+      "word": "حتى",
+      "t": 74.9
+     },
+     "who": "fish",
+     "action": "the fish swims a figure of eight in the jar window, perfectly healthy",
+     "acting": "a small bubble rises to the surface",
+     "library": "swimPath"
+    },
+    {
+     "t": 75.6,
+     "cue": {
+      "word": "جاء",
+      "t": 75.64
+     },
+     "who": "fx",
+     "action": "dot 7 lights with a star and a bounce",
+     "acting": "pop with overshoot",
+     "library": "weekDots(n:7)"
+    },
+    {
+     "t": 76.5,
+     "cue": {
+      "word": "الجمعة",
+      "t": 76.54
+     },
+     "who": "fx",
+     "action": "the tag FRIDAY AGAIN pops top left",
+     "acting": "same place and style as FRIDAY in S1",
+     "library": "S.label"
+    },
+    {
+     "t": 77.2,
+     "cue": {
+      "word": "التالي.",
+      "t": 77.2
+     },
+     "who": "fx",
+     "action": "counter 7 DAYS under the dots",
+     "acting": "counts 1 to 7 over 0.5 s",
+     "library": "S.counter"
+    },
+    {
+     "t": 77.7,
+     "who": "husband",
+     "action": "a sound at the door: his head snaps up and he cups an ear toward it",
+     "acting": "eyes wide, gaze to the door, body rises 10 units",
+     "library": "PERSON_HANDS.cupEar"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 76.6,
+     "text": "FRIDAY AGAIN"
+    },
+    {
+     "t": 77.3,
+     "text": "7 DAYS"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 78.1
+   }
+  },
+  {
+   "id": "S8",
+   "start": 78.1,
+   "end": 89.2,
+   "paragraphs": [
+    5
+   ],
+   "set": "home",
+   "cast": [
+    "wife",
+    "husband",
+    "fish"
+   ],
+   "summary": "The wife strolls in at last. The husband confronts her, furious: where has she been all week?",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Wide on the door for her entrance (zoom 1.2), then twoShot husband/wife from 82.0 (zoom 1.5), push to 1.7 on his anger at 84.7. Both faces stay in frame throughout."
+   },
+   "composition": "Wife enters from the door and stops at x 330; the husband crosses from the stool to x 560 so they face each other with the jar still visible behind him on the right. Balloon above and between them, tail to him.",
+   "actions": [
+    {
+     "t": 78.1,
+     "cue": {
+      "word": "دخلت",
+      "t": 78.1
+     },
+     "who": "wife",
+     "action": "the door swings open and she strolls in humming, a flower tucked in her headscarf, two music notes trailing",
+     "acting": "relaxed, lid 0.3, smile, loose swinging arms",
+     "library": "walk + musicNotes (n 2)"
+    },
+    {
+     "t": 79.8,
+     "cue": {
+      "word": "الزوجة",
+      "t": 79.84
+     },
+     "who": "husband",
+     "action": "springs up from the stool; the stool rocks behind him",
+     "acting": "anticipation dip then stretch (sq 1.08), eyes wide, mouth o",
+     "library": "anticipate + person {sit 1 to 0} + swing for the stool"
+    },
+    {
+     "t": 81.2,
+     "cue": {
+      "word": "أخيرًا،",
+      "t": 81.24
+     },
+     "who": "wife",
+     "action": "stops and gives a small casual wave, as if back from the market",
+     "acting": "bright innocent smile, head tilt",
+     "library": "PERSON_HANDS.wave"
+    },
+    {
+     "t": 82.0,
+     "cue": {
+      "word": "فواجهها",
+      "t": 82.0
+     },
+     "who": "husband",
+     "action": "marches up to her and plants his feet",
+     "acting": "hard heel steps (footfalls with micro shake), brow 0.8",
+     "library": "walk + footfalls + kick"
+    },
+    {
+     "t": 84.6,
+     "cue": {
+      "word": "غاضبًا",
+      "t": 84.72
+     },
+     "who": "husband",
+     "action": "his face flushes red from the chin up and two steam puffs pop from his turban; fists on hips",
+     "acting": "brow 1, mouth grit, tremble 2",
+     "library": "flush + PERSON_HANDS.hipsHands + tremble"
+    },
+    {
+     "t": 85.6,
+     "cue": {
+      "word": "يسأل",
+      "t": 85.62
+     },
+     "who": "husband",
+     "action": "jabs a finger at the door and back at her; picture balloon: a door with a question mark",
+     "acting": "talk large, leaning in (tip 0.12); she leans back the same amount",
+     "library": "PERSON_HANDS.pointFwd + iconBalloon"
+    },
+    {
+     "t": 86.9,
+     "cue": {
+      "word": "أين",
+      "t": 86.96
+     },
+     "who": "lettering",
+     "action": "WHERE WERE YOU?! in the space above the balloon",
+     "acting": "lettering shakes 2 units for 0.3 s",
+     "library": "S.title small"
+    },
+    {
+     "t": 88.2,
+     "cue": {
+      "word": "الأسبوع.",
+      "t": 88.28
+     },
+     "who": "husband",
+     "action": "sweeps his arm up at the seven lit dots, which drop into view along the top",
+     "acting": "counting on his fingers; meanwhile her eyes slide sideways to the jar and back (he does not see)",
+     "library": "weekDots(n:7) + gazePlan on the wife"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 86.96,
+     "text": "WHERE WERE YOU?!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 89.2
+   }
+  },
+  {
+   "id": "S9",
+   "start": 89.2,
+   "end": 99.22,
+   "paragraphs": [
+    5
+   ],
+   "set": "home",
+   "cast": [
+    "wife",
+    "husband",
+    "fish"
+   ],
+   "summary": "She says nothing about her trip. She hurries to the jar and lifts out the fish, still alive.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on the wife (zoom 1.5) with the husband at the left edge; track her dash to the jar at 93.3; push to 1.9 as the fish comes up at 95.0 and hold it centre panel; ease back to 1.6 at 97.1 to include the husband face."
+   },
+   "composition": "Wife moves from x 330 to x 760 beside the jar; the husband follows two steps and stops at x 520. The fish is raised to about (800, 520): the highest, most central thing in the panel. STILL ALIVE! tag below the fish, above the jar, not over a face.",
+   "actions": [
+    {
+     "t": 89.6,
+     "cue": {
+      "word": "لم",
+      "t": 89.68
+     },
+     "who": "wife",
+     "action": "closes her mouth and raises one finger: wait",
+     "acting": "calm, lid 0.5, tiny smile; he stops mid word, mouth open",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 90.5,
+     "cue": {
+      "word": "بقصة",
+      "t": 90.56
+     },
+     "who": "fx",
+     "action": "a small thought cloud pops behind her head: dancing figures and music notes (the wedding)",
+     "acting": "her eyes flick up to it for 4 frames",
+     "library": "thoughtCloud small + musicNotes"
+    },
+    {
+     "t": 91.2,
+     "cue": {
+      "word": "رحلتها،",
+      "t": 91.22
+     },
+     "who": "wife",
+     "action": "she pushes the cloud down behind her back with one hand, out of his sight",
+     "acting": "mask on: innocent face toward him while the hand hides the cloud; he cups an ear, waiting",
+     "library": "handL behind; PERSON_HANDS.cupEar on the husband"
+    },
+    {
+     "t": 93.2,
+     "cue": {
+      "word": "أسرعت",
+      "t": 93.28
+     },
+     "who": "wife",
+     "action": "dashes across the room to the jar",
+     "acting": "wind up 0.3 s then fast walk, dust at the start; the husband head tracks her",
+     "library": "anticipate + walk + dustBurst"
+    },
+    {
+     "t": 94.1,
+     "cue": {
+      "word": "الجرة",
+      "t": 94.18
+     },
+     "who": "wife",
+     "action": "plunges her arm into the jar mouth; the water rocks in the window",
+     "acting": "bent over the jar (tip 0.25), tongue at the corner of her mouth",
+     "library": "handRW into the jar + hangingJar {slosh}"
+    },
+    {
+     "t": 95.0,
+     "cue": {
+      "word": "وأخرجت",
+      "t": 95.02
+     },
+     "who": "wife",
+     "action": "pulls the fish straight up out of the jar and holds it high; drops fly off it",
+     "acting": "stretch (sq 1.1) and settle, triumphant chin up, gaze on him not on the fish",
+     "library": "splash + settleTo"
+    },
+    {
+     "t": 96.2,
+     "cue": {
+      "word": "السمكة،",
+      "t": 96.24
+     },
+     "who": "fish",
+     "action": "the fish flaps hard in her raised hand",
+     "acting": "four flaps, eyes bright; drops shake off with each",
+     "library": "fish {flap}"
+    },
+    {
+     "t": 97.1,
+     "cue": {
+      "word": "وكانت",
+      "t": 97.14
+     },
+     "who": "husband",
+     "action": "stares at the fish; his jaw drops and the pointing arm sinks",
+     "acting": "eyes wide, mouth o, gaze locked on the fish, a 3 frame pull back",
+     "library": "settleTo"
+    },
+    {
+     "t": 98.5,
+     "cue": {
+      "word": "حية.",
+      "t": 98.62
+     },
+     "who": "fx",
+     "action": "arrow and tag STILL ALIVE! on the fish; the fish blows one bubble",
+     "acting": "tag pops with overshoot",
+     "library": "S.arrow + S.label"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 98.7,
+     "text": "STILL ALIVE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 99.22
+   }
+  },
+  {
+   "id": "S10",
+   "start": 99.22,
+   "end": 109.2,
+   "paragraphs": [
+    6
+   ],
+   "set": "home",
+   "cast": [
+    "wife",
+    "husband",
+    "nOld",
+    "nCarp",
+    "nBean",
+    "fish"
+   ],
+   "summary": "She calls the neighbours in and tells them her version, the opposite of his.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Wide (zoom 1.15) on the door as she calls and they file in; pan right to settle on the group: neighbours left, wife centre, table with the bowl, husband far right. Hold; small push to 1.3 at 104.9 on her balloon."
+   },
+   "composition": "Blocking for the rest of the home scenes: neighbours at x 150, 250, 350 (old woman in front, s 1.1; carpenter s 1.2; bean seller s 1.15), wife at x 500, the fish in a shallow water bowl on the table at x 620, husband at x 800 with the jar behind him. Speaker (wife) on one side, listeners on the other. Her balloon above the neighbours, tail to her.",
+   "actions": [
+    {
+     "t": 99.2,
+     "cue": {
+      "word": "جمعت",
+      "t": 99.22
+     },
+     "who": "wife",
+     "action": "drops the fish into a wide bowl of water on the table, runs to the open door and calls out with cupped hands",
+     "acting": "big breath then the call; sound arcs from her mouth",
+     "library": "PERSON_HANDS.cupMouth + bowl prop"
+    },
+    {
+     "t": 101.8,
+     "cue": {
+      "word": "الجيران",
+      "t": 101.86
+     },
+     "who": "nOld",
+     "action": "the three neighbours file in through the door: old woman with her stick first, carpenter with folded arms, bean seller craning over them",
+     "acting": "each stops a beat after the one in front (concertina), all gazes on the wife",
+     "library": "person costumes oldWoman, carpenter, beanSeller + walk + bumpChain/stagger"
+    },
+    {
+     "t": 102.6,
+     "cue": {
+      "word": "لتدافع",
+      "t": 102.64
+     },
+     "who": "wife",
+     "action": "hand flat on her chest, the other pointing back at her husband",
+     "acting": "wet eyes (wet true), brows raised in the middle (brow -0.6), lower lip out",
+     "library": "PERSON_HANDS.chest + wet"
+    },
+    {
+     "t": 103.9,
+     "cue": {
+      "word": "نفسها،",
+      "t": 103.98
+     },
+     "who": "husband",
+     "action": "takes a step forward to speak; the old woman raises her stick sideways like a gate and he stops",
+     "acting": "mouth open, finger raised; the stick blocks at chest height",
+     "library": "person {hold:'stick'} on nOld"
+    },
+    {
+     "t": 104.8,
+     "cue": {
+      "word": "وروت",
+      "t": 104.88
+     },
+     "who": "fx",
+     "action": "her picture balloon opens as a strip of three frames, frame 1: the husband handing her a fish",
+     "acting": "talk; the neighbours lean in",
+     "library": "iconBalloon strip"
+    },
+    {
+     "t": 106.2,
+     "cue": {
+      "word": "رواية",
+      "t": 106.24
+     },
+     "who": "fx",
+     "action": "frame 2: a single sun with the word TODAY; frame 3: the fish alive in the bowl with a tick",
+     "acting": "neighbours nod one after another",
+     "library": "iconBalloon strip + stagger"
+    },
+    {
+     "t": 106.9,
+     "cue": {
+      "word": "تخالف",
+      "t": 106.96
+     },
+     "who": "husband",
+     "action": "waves both arms and shakes his head: no, no",
+     "acting": "arms out wide, frantic, brow -0.5",
+     "library": "PERSON_HANDS.armsOut + shake"
+    },
+    {
+     "t": 108.3,
+     "cue": {
+      "word": "قاله",
+      "t": 108.34
+     },
+     "who": "nCarp",
+     "action": "the three neighbours turn their heads to look at him, one after another, with narrowed eyes",
+     "acting": "lid 0.4, brow 0.5, staggered turns",
+     "library": "gazePlan + stagger"
+    },
+    {
+     "t": 108.9,
+     "cue": {
+      "word": "الرجل.",
+      "t": 108.9
+     },
+     "who": "wife",
+     "action": "while their heads are turned away, her tearful face flickers into a smirk for half a second, then back",
+     "acting": "mask off then on: mouth smirk, lid 0.4, then wet eyes again as a neighbour glances back",
+     "library": "mouth key"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 106.3,
+     "text": "TODAY"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 109.2
+   }
+  },
+  {
+   "id": "S11",
+   "start": 109.2,
+   "end": 120.0,
+   "paragraphs": [
+    6
+   ],
+   "set": "home",
+   "cast": [
+    "husband",
+    "wife",
+    "nOld",
+    "nCarp",
+    "nBean",
+    "fish"
+   ],
+   "summary": "The husband tries to explain: he brought the fish seven days ago and she has been gone ever since.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on the husband (zoom 1.5) with the neighbours as listeners at the left edge and the wife between; push to 1.7 on the seven fingers at 114.4; ease back to 1.3 at 118.0 to show every face in the silence."
+   },
+   "composition": "Husband steps to x 720. His balloon rises above the table, tail to him, clear of the wife. The bowl with the fish stays in the lower centre of the frame the whole time: the thing everybody will look at next.",
+   "actions": [
+    {
+     "t": 109.4,
+     "cue": {
+      "word": "حاول",
+      "t": 109.46
+     },
+     "who": "husband",
+     "action": "steps forward with open palms",
+     "acting": "pleading brow -0.6, quick breaths, gaze moving from face to face",
+     "library": "PERSON_HANDS.palmsUp + gazePlan"
+    },
+    {
+     "t": 111.4,
+     "cue": {
+      "word": "يشرح",
+      "t": 111.42
+     },
+     "who": "fx",
+     "action": "his picture balloon opens",
+     "acting": "talk fast",
+     "library": "iconBalloon strip"
+    },
+    {
+     "t": 112.5,
+     "cue": {
+      "word": "أحضر",
+      "t": 112.56
+     },
+     "who": "fx",
+     "action": "frame 1: himself at the door holding the fish on its string (the S1 picture)",
+     "acting": "he mimes the carrying hand",
+     "library": "iconBalloon"
+    },
+    {
+     "t": 113.2,
+     "cue": {
+      "word": "السمكة",
+      "t": 113.18
+     },
+     "who": "husband",
+     "action": "points hard at the fish in the bowl",
+     "acting": "arm snap with follow through",
+     "library": "PERSON_HANDS.pointDown"
+    },
+    {
+     "t": 114.4,
+     "cue": {
+      "word": "سبعة",
+      "t": 114.44
+     },
+     "who": "fx",
+     "action": "frame 2: the seven dots light one by one, fast; he holds up seven fingers (five and two) high over his head",
+     "acting": "arms raised by angle so the shape reads at phone size, mouth wide",
+     "library": "weekDots(n:7) inside the balloon; aL/aR angles"
+    },
+    {
+     "t": 115.0,
+     "cue": {
+      "word": "أيام،",
+      "t": 114.96
+     },
+     "who": "nCarp",
+     "action": "the carpenter and the bean seller glance at each other; the carpenter lifts one eyebrow",
+     "acting": "gaze to each other, 6 frames apart",
+     "library": "lookAt between the two"
+    },
+    {
+     "t": 116.4,
+     "cue": {
+      "word": "زوجته",
+      "t": 116.48
+     },
+     "who": "husband",
+     "action": "swings the pointing arm to his wife; she touches her chest: me? and bats her eyes",
+     "acting": "her brows up, two fast blinks",
+     "library": "PERSON_HANDS.pointFwd; PERSON_HANDS.chest on the wife"
+    },
+    {
+     "t": 117.2,
+     "cue": {
+      "word": "اختفت",
+      "t": 117.22
+     },
+     "who": "fx",
+     "action": "frame 3: the wife figure fades to a dotted outline with a question mark",
+     "acting": "he spreads his hands: gone",
+     "library": "iconBalloon"
+    },
+    {
+     "t": 118.8,
+     "cue": {
+      "word": "الوقت.",
+      "t": 118.82
+     },
+     "who": "nOld",
+     "action": "silence: the old woman taps her chin; nobody speaks; the husband pants, hands still out",
+     "acting": "slow blinks staggered across the group, only pupils move",
+     "library": "PERSON_HANDS.chin + suspense by stillness"
+    },
+    {
+     "t": 119.7,
+     "who": "nBean",
+     "action": "all three heads turn together toward the bowl on the table",
+     "acting": "gaze to the fish, staggered by 3 frames",
+     "library": "gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 114.5,
+     "text": "7 DAYS AGO!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 119.9,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 120.0
+   }
+  },
+  {
+   "id": "S12",
+   "start": 120.0,
+   "end": 130.5,
+   "paragraphs": [
+    7
+   ],
+   "set": "home",
+   "cast": [
+    "nOld",
+    "nCarp",
+    "nBean",
+    "fish",
+    "husband"
+   ],
+   "summary": "The neighbours study the living fish and decide: it could not have lived a week. So his story cannot be true.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Close on the bowl (zoom 2.1, centre about 620,720): three big faces lean in around it. Very slow push to 2.3. At 130.0 rack to include the small husband between their heads in the background."
+   },
+   "composition": "Bowl centre low in the frame (the fish about 160 px long on screen). Old woman face left, carpenter top, bean seller right, each cropped by the frame edge but with both eyes inside. Balloon from the bean seller in the top right corner. Husband appears small (s 0.8 in depth) in the gap between the carpenter and the bean seller.",
+   "actions": [
+    {
+     "t": 120.4,
+     "cue": {
+      "word": "نظر",
+      "t": 120.46
+     },
+     "who": "nOld",
+     "action": "three faces lean in over the bowl from three sides",
+     "acting": "eyes converge on the fish (lookAt), brows low, leaning with a settle",
+     "library": "lookAt + settleTo"
+    },
+    {
+     "t": 122.3,
+     "cue": {
+      "word": "السمكة",
+      "t": 122.4
+     },
+     "who": "fish",
+     "action": "the fish swims a tight circle and flicks a drop onto the old woman nose",
+     "acting": "she blinks twice and wipes it; the other two do not react",
+     "library": "swimPath + splash drop"
+    },
+    {
+     "t": 123.1,
+     "cue": {
+      "word": "الحية،",
+      "t": 123.1
+     },
+     "who": "fish",
+     "action": "the fish jumps a hand high and lands with a small splash; an arrow points at it",
+     "acting": "hop with squash on landing, eye bright",
+     "library": "hop + landSquash + S.arrow"
+    },
+    {
+     "t": 123.7,
+     "cue": {
+      "word": "وقالوا",
+      "t": 123.74
+     },
+     "who": "nBean",
+     "action": "the bean seller straightens and speaks; picture balloon: seven dots, an arrow, a fish",
+     "acting": "talk, finger raised like a teacher, sure of himself",
+     "library": "PERSON_HANDS.pointUp + iconBalloon"
+    },
+    {
+     "t": 125.7,
+     "cue": {
+      "word": "بقاءها",
+      "t": 125.78
+     },
+     "who": "nCarp",
+     "action": "the carpenter counts days on his fingers up to seven and shakes his head",
+     "acting": "eyes on his own fingers, lips pushed out",
+     "library": "hand cycle"
+    },
+    {
+     "t": 127.5,
+     "cue": {
+      "word": "المدة",
+      "t": 127.52
+     },
+     "who": "fx",
+     "action": "a red X strikes the fish in the balloon: no fish lives seven days",
+     "acting": "stamp with overshoot",
+     "library": "S.emphasis X"
+    },
+    {
+     "t": 128.1,
+     "cue": {
+      "word": "لا",
+      "t": 128.16
+     },
+     "who": "nOld",
+     "action": "all three shake their heads, old woman first",
+     "acting": "staggered, eyes shut on the shake",
+     "library": "stagger"
+    },
+    {
+     "t": 128.8,
+     "cue": {
+      "word": "يمكن",
+      "t": 128.8
+     },
+     "who": "lettering",
+     "action": "IMPOSSIBLE! across the top of the panel",
+     "acting": "slams in, 2 unit shake inside the panel only",
+     "library": "S.title small"
+    },
+    {
+     "t": 130.0,
+     "cue": {
+      "word": "صحيحًا.",
+      "t": 130.02
+     },
+     "who": "husband",
+     "action": "small in the background between their heads: both hands go to his head",
+     "acting": "mouth open, eyes wide, gaze from one back to another",
+     "library": "PERSON_HANDS.headHold"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 128.8,
+     "text": "IMPOSSIBLE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 130.5
+   }
+  },
+  {
+   "id": "S13",
+   "start": 130.5,
+   "end": 136.2,
+   "paragraphs": [
+    7
+   ],
+   "set": "home",
+   "cast": [
+    "wife",
+    "husband",
+    "nOld",
+    "nCarp",
+    "nBean",
+    "fish"
+   ],
+   "summary": "They believe the wife, call the husband mad, and take hold of him.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Wide (zoom 1.15) on the whole room so the line-up reads: everyone on her side, he alone on the right. Panel-only shake of 2 units when they grab him."
+   },
+   "composition": "The neighbours cross to stand round the wife at x 300..520; the husband alone at x 800 with empty floor between: a visible gap. The pointing arms make three parallel lines aimed at him.",
+   "actions": [
+    {
+     "t": 130.8,
+     "cue": {
+      "word": "صدقوا",
+      "t": 130.86
+     },
+     "who": "nCarp",
+     "action": "the neighbours step over to the wife side; the carpenter pats her shoulder",
+     "acting": "nods to her, kind brows; she lowers her eyes",
+     "library": "walk + handRW to her shoulder"
+    },
+    {
+     "t": 132.0,
+     "cue": {
+      "word": "المرأة،",
+      "t": 132.06
+     },
+     "who": "wife",
+     "action": "dabs one eye with the corner of her headscarf",
+     "acting": "head down, the hidden mouth corner turned up",
+     "library": "handR to the eye"
+    },
+    {
+     "t": 132.8,
+     "cue": {
+      "word": "واتهموا",
+      "t": 132.9
+     },
+     "who": "nOld",
+     "action": "three arms come up one after another and point at the husband",
+     "acting": "staggered 4 frames; brows angry (brow 0.8)",
+     "library": "PERSON_HANDS.pointFwd + stagger"
+    },
+    {
+     "t": 134.3,
+     "cue": {
+      "word": "بفقدان",
+      "t": 134.4
+     },
+     "who": "nBean",
+     "action": "the bean seller twirls a finger beside his own temple",
+     "acting": "eyes rolled toward the others, mouth to one side",
+     "library": "templeTap"
+    },
+    {
+     "t": 135.2,
+     "cue": {
+      "word": "عقله،",
+      "t": 135.28
+     },
+     "who": "fx",
+     "action": "a black scribble spiral pops over the husband head; HE IS MAD! above the group",
+     "acting": "the husband protests with arms out, shaking his head",
+     "library": "worryScribble + PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 135.8,
+     "cue": {
+      "word": "ثم",
+      "t": 135.84
+     },
+     "who": "nCarp",
+     "action": "the carpenter and the bean seller stride over and each takes one of his arms; his feet leave the floor and pedal",
+     "acting": "he looks from one to the other, legs cycling in the air",
+     "library": "handLW/handRW to his elbows; walk phase with y lifted 20"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 135.3,
+     "text": "HE IS MAD!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 136.2
+   }
+  },
+  {
+   "id": "S14",
+   "start": 136.2,
+   "end": 146.4,
+   "paragraphs": [
+    7,
+    8
+   ],
+   "set": "jail",
+   "cast": [
+    "husband",
+    "wife",
+    "nOld",
+    "nCarp",
+    "nBean"
+   ],
+   "summary": "Bars slam shut on him. They laugh at his protests and leave. Alone, he weeps because nobody will believe him.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "The wipe is the bars sliding across the panel. Medium (zoom 1.3) through the bars with the laughing group on the right outside them; after they leave at 139.6 a slow push to 1.9 on his face between two bars by 145.0."
+   },
+   "composition": "Cell on the left two thirds (x 60..640, floor y 900), bars in front; a small barred window high in the back wall at about (200, 380) with dusk sky. Husband at x 330 inside. Neighbours and wife outside at x 700..940. HA HA HA! over the group, not over him.",
+   "actions": [
+    {
+     "t": 136.5,
+     "cue": {
+      "word": "احتجزوه",
+      "t": 136.5
+     },
+     "who": "bars",
+     "action": "iron bars slide across from the left and stop with a jolt in front of him",
+     "acting": "panel-only shake 3 units, the bars ring (1 unit vibration for 0.4 s); he stumbles back",
+     "library": "jailCell front bars {shut 0 to 1}"
+    },
+    {
+     "t": 137.4,
+     "cue": {
+      "word": "وسخروا",
+      "t": 137.46
+     },
+     "who": "nBean",
+     "action": "outside the bars the three neighbours laugh, each differently: bean seller bent double, carpenter head back, old woman behind her hand",
+     "acting": "shoulders shaking out of phase, lids 0.9",
+     "library": "person laugh + PERSON_HANDS.mouthCover on nOld"
+    },
+    {
+     "t": 138.6,
+     "cue": {
+      "word": "احتجاجه.",
+      "t": 138.68
+     },
+     "who": "husband",
+     "action": "grips two bars and shakes them, shouting; a small balloon with seven dots pops from him",
+     "acting": "two fist grip, talk wide, brow -0.6",
+     "library": "PERSON_HANDS.grip + iconBalloon small"
+    },
+    {
+     "t": 139.6,
+     "cue": {
+      "word": "بكى",
+      "t": 139.6
+     },
+     "who": "wife",
+     "action": "the group walks off to the right, still laughing; the wife goes last and glances back once, without a smile",
+     "acting": "her one honest look: flat mouth, 8 frames, then she turns away",
+     "library": "walk + stagger"
+    },
+    {
+     "t": 141.3,
+     "cue": {
+      "word": "الرجل",
+      "t": 141.3
+     },
+     "who": "husband",
+     "action": "his hands slide down the bars and he sinks to his knees",
+     "acting": "slow (1.2 s), head following late",
+     "library": "person {kneel 0 to 1} + handLW/handRW on the bars"
+    },
+    {
+     "t": 142.8,
+     "cue": {
+      "word": "عجز",
+      "t": 142.8
+     },
+     "who": "husband",
+     "action": "his eyes fill; one tear runs down and drops",
+     "acting": "wet true, lid 0.4, small tremble, lower lip",
+     "library": "wet + tremble"
+    },
+    {
+     "t": 143.7,
+     "cue": {
+      "word": "عن",
+      "t": 143.68
+     },
+     "who": "fx",
+     "action": "the little seven dot balloon drifts to the bars, sags and goes out dot by dot",
+     "acting": "he watches it go (gaze follows), then looks down",
+     "library": "iconBalloon + weekDots(n: 7 to 0)"
+    },
+    {
+     "t": 145.0,
+     "cue": {
+      "word": "جرى.",
+      "t": 145.0
+     },
+     "who": "husband",
+     "action": "forehead rests against a bar; a long blink",
+     "acting": "lid 1 for 0.5 s, breathing only",
+     "library": "breathe"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 136.6,
+     "text": "CLANG!"
+    },
+    {
+     "t": 137.6,
+     "text": "HA HA HA!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 146.2,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 146.4
+   }
+  },
+  {
+   "id": "S15",
+   "start": 146.4,
+   "end": 164.14,
+   "paragraphs": [
+    8
+   ],
+   "set": "jail",
+   "cast": [
+    "husband",
+    "fish"
+   ],
+   "summary": "The moral picture: the truthful man behind bars, and beside the cell the fish, the proof everybody trusted, swimming happily.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Slow pull-out from the husband (zoom 1.6) to a wide (zoom 1.05) by 151.0 that reveals the fish bowl on a stool outside the cell on the right, lit by a lamp. Then locked to the end."
+   },
+   "composition": "Two halves. Left: the cell with the husband sitting on the floor against the wall (x 300). Right: outside the bars, the bowl on a stool at x 800 (bowl rim y about 760) under a hanging lamp with a yellow halftone disc. A small scale icon hangs top centre at about (500, 300). Tags: PROOF on the fish side, TRUE on the bars. THE END in the upper third over the back wall, clear of his face.",
+   "actions": [
+    {
+     "t": 146.6,
+     "cue": {
+      "word": "وتنتهي",
+      "t": 146.6
+     },
+     "who": "camera",
+     "action": "the pull-out begins; the husband slides from his knees to sit on the floor",
+     "acting": "kneel to sit (seat:'floor'), head against the wall, wet eyes",
+     "library": "person {sit:1, seat:'floor'}"
+    },
+    {
+     "t": 148.1,
+     "cue": {
+      "word": "الساخرة",
+      "t": 148.14
+     },
+     "who": "fish",
+     "action": "the bowl comes into frame on the right: the fish does a cheerful loop and a small splash",
+     "acting": "bright eye, quick tail; it has no idea",
+     "library": "swimPath + splash"
+    },
+    {
+     "t": 150.0,
+     "cue": {
+      "word": "يُنصف،",
+      "t": 150.06
+     },
+     "who": "fx",
+     "action": "a balance scale drops in top centre and tips the wrong way: the pan over the fish sinks, the pan over the man rises empty",
+     "acting": "tilt overshoots and settles at 12 degrees",
+     "library": "balanceScale {tilt}"
+    },
+    {
+     "t": 151.8,
+     "cue": {
+      "word": "مفارقة",
+      "t": 151.86
+     },
+     "who": "husband",
+     "action": "lifts his head and sees the fish through the bars",
+     "acting": "gaze to the fish, brows up in the middle, a slow blink",
+     "library": "lookAt"
+    },
+    {
+     "t": 153.8,
+     "cue": {
+      "word": "دليل",
+      "t": 153.82
+     },
+     "who": "fx",
+     "action": "arrow and tag PROOF pop on the fish bowl",
+     "acting": "pop with overshoot",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 155.3,
+     "cue": {
+      "word": "الناس",
+      "t": 155.36
+     },
+     "who": "fx",
+     "action": "three ticks pop beside the PROOF tag one after another (one for each neighbour)",
+     "acting": "staggered 5 frames",
+     "library": "S.emphasis tick x3 + stagger"
+    },
+    {
+     "t": 156.8,
+     "cue": {
+      "word": "جعلهم",
+      "t": 156.8
+     },
+     "who": "fx",
+     "action": "a second arrow draws from the PROOF tag across to the bars",
+     "acting": "draw on over 0.5 s",
+     "library": "S.arrow"
+    },
+    {
+     "t": 157.6,
+     "cue": {
+      "word": "يعاقبون",
+      "t": 157.66
+     },
+     "who": "bars",
+     "action": "the bars give one cold glint from top to bottom",
+     "acting": "travelling highlight 0.4 s",
+     "library": "glint line on the bars"
+    },
+    {
+     "t": 159.2,
+     "cue": {
+      "word": "الرواية",
+      "t": 159.26
+     },
+     "who": "fx",
+     "action": "a small tag TRUE pops on the bars beside the husband",
+     "acting": "he looks at the tag, then down",
+     "library": "S.label"
+    },
+    {
+     "t": 160.0,
+     "cue": {
+      "word": "الصادقة.",
+      "t": 159.94
+     },
+     "who": "fish",
+     "action": "the fish and the husband look at each other; the fish blows one bubble and turns its tail to him",
+     "acting": "his long blink; the bubble rises and pops at the rim",
+     "library": "fish {gaze} + bubble"
+    },
+    {
+     "t": 161.3,
+     "who": "lettering",
+     "action": "THE END holds to 164.14; the fish keeps circling, the husband breathes, the lamp flickers",
+     "acting": "everything settles; one last fish blink at 163.0",
+     "library": "S.title"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 153.9,
+     "text": "PROOF"
+    },
+    {
+     "t": 159.3,
+     "text": "TRUE"
+    },
+    {
+     "t": 161.3,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 161.2,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 164.14
+   }
+  }
+ ],
+ "ending": {
+  "t": 161.3,
+  "description": "After the last word (160.76) the wide moral picture holds: the husband sitting behind bars on the left, the fish circling in its lamp-lit bowl on the right, the tilted scale above. THE END pops at 161.3 in the upper third and holds to 164.14 with a soft chime at 161.2. No smile, no gloating."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "عاد رجل إلى بيته يوم الجمعة وفي يده سمكة،|وسلمها لزوجته وهو يظن أن الغداء سيكون جاهزًا بعد الصلاة.|طلب منها أن تطبخ السمكة ثم خرج لقضاء أعماله.",
+   "en": "On Friday a man brought home a fish,|asking his wife to cook it|while he went to his work and the congregational prayer."
+  },
+  {
+   "p": 2,
+   "ar": "لم تمض مدة طويلة حتى جاء صديق يدعو الزوجة إلى حفل زفاف في منزله.|رغبت في الذهاب، لكنها لم تكن قد أعدت الطعام،|ففكرت في أمر السمكة التي تركها زوجها.",
+   "en": "Soon a friend invited the wife to a wedding celebration.|She wanted to attend,|but the fish still had not been prepared."
+  },
+  {
+   "p": 3,
+   "ar": "بدلًا من طبخ السمكة، وضعتها حية في جرة مملوءة بالماء،|ثم خرجت إلى الحفل.|ولم تعد في المساء كما قد يتوقع زوجها، بل ظلت غائبة أيامًا متتابعة.",
+   "en": "Instead of cooking the fish, she placed it alive in a jar of water|and went to the wedding.|She did not return that evening."
+  },
+  {
+   "p": 4,
+   "ar": "انتظر الرجل زوجته وفتش عنها من بيت إلى بيت،|وسأل كل من ظن أنه يعرف مكانها.|لكن أحدًا لم يدله عليها،|ومرت الأيام حتى جاء يوم الجمعة التالي.",
+   "en": "The husband searched house after house for her|and asked everyone he could think of.|A whole week passed|before the next Friday arrived."
+  },
+  {
+   "p": 5,
+   "ar": "دخلت الزوجة بيتها أخيرًا،|فواجهها زوجها غاضبًا يسأل أين كانت طوال الأسبوع.|لم تجبه بقصة رحلتها،|بل أسرعت إلى الجرة وأخرجت منها السمكة، وكانت لا تزال حية.",
+   "en": "When she finally returned,|her husband angrily asked where she had been.|Instead of explaining,|she produced the fish from the jar, still alive."
+  },
+  {
+   "p": 6,
+   "ar": "جمعت المرأة الجيران لتدافع عن نفسها،|وروت لهم رواية تخالف ما قاله الرجل.|حاول الزوج أن يشرح أنه أحضر السمكة قبل سبعة أيام،|وأن زوجته اختفت منذ ذلك الوقت.",
+   "en": "The woman gathered the neighbors|and contradicted her husband’s account.|He insisted the fish had been brought home|seven days earlier."
+  },
+  {
+   "p": 7,
+   "ar": "نظر الجيران إلى السمكة الحية،|وقالوا إن بقاءها كل هذه المدة لا يمكن أن يكون صحيحًا.|صدقوا المرأة، واتهموا الرجل بفقدان عقله،|ثم احتجزوه وسخروا من احتجاجه.",
+   "en": "Seeing the living fish,|the neighbors refused to believe it could have survived a week.|They sided with the wife, called the husband mad,|and imprisoned him."
+  },
+  {
+   "p": 8,
+   "ar": "بكى الرجل لأنه عجز عن إقناعهم بما جرى.|وتنتهي الحكاية الساخرة من غير أن يُنصف،|تاركة مفارقة قاسية:|دليل ظنه الناس قاطعًا جعلهم يعاقبون صاحب الرواية الصادقة.",
+   "en": "The husband wept at being disbelieved.|The satirical tale ends without justice:|evidence the neighbors treated as decisive|led them to punish the truthful man."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "fish",
+   "description": "The planned side-view comic fish (shared with KD-007, KD-019, AN-111, AN-137), palette 0 blue-grey with yellow fins, 200 x 110 at s 1 (used at s 0.75). Fields used: flap (tail angle), eyes (open, wide, shut), gaze, lid, rot (hanging by the tail = rot 90 degrees), sq, plus a flat icon mode for balloons and clouds.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Body as one K path (pointed oval), tail a triangle rotated about the tail root by flap, one dorsal and one belly fin, gill arc, round eye through eye2/EYE so the shared acting fields work; wrap with acting(). Swimming position from a keyed path (planned swimPath) with flap from speed."
+  },
+  {
+   "type": "prop",
+   "name": "hangingJar (floor state, water fill)",
+   "description": "The planned clay jar with the oval cutaway window, standing on the floor without its rope, with a blue water fill, a slosh angle and room for a creature drawn inside the window.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Add rope:false and fillCol to the planned hangingJar; clip to the window ellipse, fill water below a level line tilted by slosh (damped with swing()), then call an inside(ctx) callback for the fish; draw the rim and outline last."
+  },
+  {
+   "type": "set",
+   "name": "jailCell",
+   "description": "The planned bare cell (AN-114) with a barred window showing the sky and sliding front bars; here with an outside strip on the right for the laughing group and the fish bowl.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "bake() the wall (flat grey-blue with S.dots shading), floor band and window frame; window sky by skyCycle clipped to the opening with 3 bars; front bars as rounded rects with a black brush outline translated by (1 - shut) * -700 and drawn after the cast; return anchors {floor, window, barsX, outside}."
+  },
+  {
+   "type": "effect",
+   "name": "weekDots",
+   "description": "The planned row of seven small discs (r 20, pitch 58) in panel space, n of them lit yellow with a star, the rest paper with a black outline; pop on each change. The running clock of the film (S1, S5, S7, S8, S11, S14).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "One function weekDots(ctx, x, y, {n, t, popAt:[...]}); each disc is a circle with settleTo scale on its pop time; also callable inside iconBalloon at 0.5 scale."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "description": "The planned wordless picture balloon, single and three frame strip modes. Icons for this film: wedding (drum, two figures under an arch, heart), wife face with question mark, door with question mark, husband with fish, sun with TODAY, fish with tick, fish with X, dotted wife outline, weekDots.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "White rounded balloon with a black brush outline and a tail to a given point, pop scale via settleTo; content callbacks drawn clipped; strip mode divides the balloon into frames that pop on given times. Icons are Library figures at small scale or flat shapes."
+  },
+  {
+   "type": "effect",
+   "name": "musicNotes",
+   "description": "The planned rising quaver glyphs (n 2 to 6) for the wedding invitation, the open door and the wife coming home humming.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Seeded S paths from a point; each note is an ellipse head and a stem with a flag, rocking with K.noise and fading over 1.2 s."
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "description": "The planned anger flush: red dots climbing the face from the chin plus two steam puffs, for the husband at 84.72.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "A red S.dots patch clipped to the head circle with a rising clip line (0..1), and two dustBurst puffs at the headwear."
+  },
+  {
+   "type": "motion",
+   "name": "person laugh / templeTap / handOver",
+   "description": "Planned shared helpers: the full laugh (mouth open, lid 0.9, lean back, shoulder shake) for the three neighbours at 137.46, the finger at the temple for the bean seller at 134.40, and passing the fish between two hands at 5.94.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Small functions that return person pose fields from t (laugh: tip -0.1 and a 7 Hz shoulder offset; templeTap: handR near the temple circling 8 units; handOver: object eases from hand A to hand B in 0.25 s with a weight dip)."
+  },
+  {
+   "type": "prop",
+   "name": "cookPot, smallBowl (wide, water), scroll, balanceScale, worryScribble",
+   "description": "Small planned props and marks reused under their planned names: the cold cooking pot on a brazier, the wide water bowl for the fish, the invitation scroll, the tilted scale icon for the moral, and the scribble spiral over the husband at 135.28.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Flat shapes with black brush outlines and dot shading, each one function with a few fields (pot: x, rock; bowl: fill, slosh, inside callback; scale: tilt; scribble: seeded spiral stroke with pop)."
+  }
+ ],
+ "owner_questions": [
+  "The Arabic says a male friend (صديق) invites the wife to a wedding at his house; default used: the friend is drawn as a cheerful neighbour woman at the door, which keeps the scene innocent.",
+  "The script says the neighbours imprisoned him (احتجزوه); default used: a plain barred cell with no chains or rough handling beyond being lifted by the arms.",
+  "Added running device not in the script: a row of seven day dots (weekDots) with the tags FRIDAY and FRIDAY AGAIN to make the week visible; default: keep.",
+  "Invented English lettering: FRESH!, COOK IT!, KNOCK KNOCK!, WEDDING!, PLOP!, WHERE WERE YOU?!, STILL ALIVE!, TODAY, 7 DAYS AGO!, IMPOSSIBLE!, HE IS MAD!, CLANG!, HA HA HA!, PROOF, TRUE; default: keep all (19 items).",
+  "The wife gives the viewer one wink at 46.14 and glances back without a smile at 139.60 (a hint of conscience that the script does not state); default: keep both.",
+  "SCRIPT: the English is a condensed translation; it omits Arabic details in P1 (he expects lunch ready after prayer), P2 (she thinks about the fish her husband left), P3 (she stayed away for days on end), P4 (nobody could direct him), P6 (his wife had been missing since then) and P7 (they mocked his protests). Both are kept verbatim."
+ ],
+ "implementation_notes": [
+  "All cue times are word starts from planning/inputs/timeline.json on the final MP3 (161.14 s). The film runs 0 to 164.14 s.",
+  "People: Library person with costume presets (villager, villageWoman, maiden with a blue pal, oldWoman with hold:'stick', carpenter, beanSeller). Set LIFE.t = t for auto blinks; give every character a gaze target every frame (lookAt / gazePlan); explicit lid values need hand blinks.",
+  "Home: palaceHall {variant:'merchant'} baked once per u state; key u for the window (S5: 0.25 at 49.0, 0.5 at 50.6, 0.75 at 54.0, then 2.9 by 57.0; S7: continue to 6.25 by 76.0, then hold at 0.25 morning). Use the returned anchors for door, window, desk and stool; the coordinates in this plan are approximate and must be measured on the set.",
+  "Street: marketStreet strip w 2400 with camX tracking; neighbours stand in doorways (draw them before the door leaf) or behind the stall counter. Use townDoor open values keyed with settleTo.",
+  "The jar with the swimming fish must be visible in every home scene from 45.44 on (S5, S7, S8): the audience knows what the husband does not. Never let the husband look at it before 97.14.",
+  "weekDots sits in panel space (not world space) at the top of the picture; hide it in close shots where it would crowd a face (S9, S12).",
+  "Mask rule for the wife: smirk or sly eyes only while no other character is looking at her (36.88, 88.28, 108.90, 132.06); innocent or tearful otherwise.",
+  "Groups never move in unison: stagger(i) by 3 to 6 frames, old woman first. Speaker on one side, listeners on the other; balloons never over the speaker face.",
+  "Sound: only eight quiet effects, all in the listed pauses or after the last word (5.5 pop, 19.15 thud, 27.85 chime, 38.1 pop, 41.5 whoosh, 119.9 pop, 146.2 chime, 161.2 chime), master 0.6. Knocks, the plop, the bars and the laughter are visual only because the narration has no gap there.",
+  "Transitions: plain cuts except S6 to S7 (S.transition with caption DAYS PASSED..., camera key hidden at the card midpoint) and S13 to S14 (the bars slide across as the wipe; switch the set at the moment the bars cover the panel centre).",
+  "Shake is panel-only (translate inside the panel clip). Call the style finish last every frame. Lettering at least 44 px for headlines and 28 px for tags at 1280 x 720 scale; no dashes.",
+  "Subtitles: use the subtitles array (chunks marked with |), Arabic in Noto Naskh Arabic 700, English below in blue Bangers."
+ ],
+ "warnings": [
+  "Narration is nearly continuous: only seven pauses of 0.6 s or more. Do not add effects on the knocks, plop, clang or laughter.",
+  "Six people in the home in S10 to S13: keep them at s 1.1 to 1.2 with the camera wide (zoom about 1.15) and check at phone size that the three neighbours read as three different people.",
+  "S12 close shot draws person heads at more than 2x: check line weights and that both eyes of each face are inside the panel.",
+  "fish, iconBalloon, weekDots, jailCell and the jar floor state are planned assets that do not exist in Library yet; build them in the story first.",
+  "The ending is deliberately unjust (the script says so). Do not add a rescue, a wink or a smile after 139.60."
+ ]
+}

@@ -1,0 +1,113 @@
+{
+ "story_id": "AN-001",
+ "title": "The Bull and the Ass",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T12:32:37",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-acd8b32dbab6cb916.jsonl",
+ "agent_id": "acd8b32dbab6cb916",
+ "model_messages": {
+  "claude-fable-5-2": 22
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "86205d0633cb8c8575890dfb545c033f433a6e7efa8546f19222361a27ecf850",
+  "paragraphs": 8,
+  "segments": [
+   "AN-001-P01-S01",
+   "AN-001-P01-S02",
+   "AN-001-P01-S03",
+   "AN-001-P01-S04",
+   "AN-001-P01-S05",
+   "AN-001-P01-S06",
+   "AN-001-P01-S07",
+   "AN-001-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-001_The_Bull_and_the_Ass_full_slowed.mp3",
+  "sha256": "030a848dfd4a9340dd670901642c6c7215696d312064f7d72f5a3129bbc70b39",
+  "duration": 176.254
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-001_The_Bull_and_the_Ass_full_slowed.mp3.words.json",
+  "sha256": "87a6641df808fa012e422b23be4275f36364d52b707075545f4cf8d0384d1677",
+  "manifest_status": "REUSED CURRENT TIMINGS",
+  "script_match": 1.0
+ },
+ "library_rev": "7721db2",
+ "scenes": 19,
+ "actions": 143,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "bull",
+   "effort": "L"
+  },
+  {
+   "type": "character",
+   "name": "donkey",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "farmStable",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "ploughField",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "plough",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "feedTrough",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "dayCycle",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "painPulse",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "effort": "S"
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "butcherSign",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Two new characters (bull, donkey) carry the whole film and neither exists in the Library; their faces must read at phone size, so test stills of the key expressions (sick act, smug, shocked, exhausted, smirk) before staging.",
+  "The side-view animals show one eye, so winks and peeks are lid pulses; make sure the 73.9 peek and the 151.9 wink read (hold at least 6 frames, add a small head turn to the lens).",
+  "S6 is 22 s in one set-up; it stays alive only if the plan cloud changes on every listed word and the merchant's entrance at 56.7 is clearly visible.",
+  "The 102.3-104.8 time-lapse has only 2.5 s for eight hours: keep it to three crossings, the sun arc and the counter.",
+  "dayCycle, thoughtCloud, painPulse, flush, inset circle, dream wash, runInPlace and the person costume presets are planned by other stories but not in the Library yet; if this film is built first it must create them under those names."
+ ]
+}

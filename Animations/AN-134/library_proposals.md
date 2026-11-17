@@ -1,0 +1,13 @@
+# AN-134 Library proposals (drawn in src/, prefix hk; planned names in brackets)
+- `hkGoblet` [goblet]: stemmed cup 44 x 64, fill, tilt, glint (hk_props.js).
+- `hkJug` + `hkPour` [waterJug]: ewer 60 x 110 with tilt, frost and a pour arc.
+- `hkCushion` [floorCushion]: 100 x 30 cushion with squash; `HK_CUSH` colourways.
+- `hkTray` + `hkTraySprite` / `hkSprite` [foodTray kind]: fruit, sweets, rice, bread, dome, jugs, pomeg, cushion; baked sprite for crowds.
+- `hkFeast` [feastSpread]: n of one dish in a ten-wide receding grid with ordered pop-in.
+- `hkChest` [chest], `hkCoin`, `hkCoinPile` [coinPile], `hkGhostChest`.
+- `hkGlow` [goldGlow] (AN-108 goldGlow), `hkInset` [inset circle] (iris, shadow, past wash).
+- `hkRug` + `hkRoll` [carpetRoll]: perspective rug with unroll and leading roll; rolled rug for a shoulder.
+- `hkFacade` + `hkWindows` + `HK_HW` [hundredWindows]: 10 x 10 window facade with lit sweep and head silhouettes.
+- `hkRoadFar` / `hkRoadMid` / `hkRoadWall` / `hkGateLeaf` / `hkStand` and `hkGardenBack` / `hkGardenShade` / `hkTrunkFront` [orchard, views road and inside].
+- `HK_GRD` + `hkHelmet` + `hkSpear` [person costume preset 'guard', hold 'spear', pennant].
+- `hkBalloon` (picture balloon with tail), `hkHat` (headwear drawn separately for a crown hop).

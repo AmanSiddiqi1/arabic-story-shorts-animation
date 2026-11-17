@@ -1,0 +1,118 @@
+{
+ "story_id": "AN-149",
+ "title": "THE SCHOOLMASTER WHO FELL IN LOVE BY REPORT",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T16:24:15",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a4e7490ca0577b602.jsonl",
+ "agent_id": "a4e7490ca0577b602",
+ "model_messages": {
+  "claude-fable-5-2": 22
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "72d194ef2a8165705bbb5ea938595c98aed18239a6ce7f8c7a394de74d558828",
+  "paragraphs": 8,
+  "segments": [
+   "AN-149-P01-S01",
+   "AN-149-P01-S02",
+   "AN-149-P01-S03",
+   "AN-149-P01-S04",
+   "AN-149-P01-S05",
+   "AN-149-P01-S06",
+   "AN-149-P01-S07",
+   "AN-149-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-149_THE_SCHOOLMASTER_WHO_FELL_IN_LOVE_BY_REPORT_full_slowed.mp3",
+  "sha256": "3cd4ab0dfecbbdc294d27113ba2999164934a3d9b560737713e4629b20991373",
+  "duration": 171.897
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-149_THE_SCHOOLMASTER_WHO_FELL_IN_LOVE_BY_REPORT_full_slowed.mp3.words.json",
+  "sha256": "adc63e9b921dc76c2a71a76e45456851f6cb8e907cea9ad9640b5806258a1e36",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.996
+ },
+ "library_rev": "5a93429",
+ "scenes": 15,
+ "actions": 136,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "schoolRoom",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "writingTablet",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "oud",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "musicNotes",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "mysteryFace",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "mourning palette",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "songTower",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "bookStack",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "graveMarker",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "dream wash",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "townStreet fronts (school front, two-storey house front)",
+   "effort": "M"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Narration is dense: only five pauses of 0.6 s or more, so effects are few and most comedy must read silently.",
+  "Word 'مات' at 73.28 is interpolated (shares its time with the next word); no action is cued to it. Bust cues use 74.02, 75.32, 76.76.",
+  "The person figure is front-facing only: the teacher at the window and the singer below cannot face each other in profile, so the link is made with gaze, soundArcs, the note stream and the arrow.",
+  "Many pictures-in-balloons: keep them large (figures at least 110 px) and one at a time, or the two-shot scenes will look cluttered on a phone.",
+  "The custom fronts on marketStreet (school, two-storey house with a lean-out window) may need drawing by hand from townDoor/townWindow if the houses option cannot express them."
+ ]
+}

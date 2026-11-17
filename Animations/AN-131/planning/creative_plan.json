@@ -1,0 +1,3377 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-131",
+ "title": "The Miller and His Wife",
+ "duration": 174.6,
+ "end_hold": 3.0,
+ "logline": "A miller dreams of gold buried on his donkey s path and tells his wife; she betrays the secret to a neighbour who kills her for the whole hoard, and at dawn the miller kills the donkey that was only trying to warn him.",
+ "moral": "A secret told to the wrong person costs everything, and anger punishes the innocent: the donkey was afraid, not stubborn.",
+ "tone": "A dark fable told with restraint: warm and gently comic for the first third, then night, greed and silence. Violence is shown only as shadows, a lamp going out and stillness.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 6.02,
+   "kind": "setup",
+   "cue": {
+    "word": "يديرها",
+    "t": 6.02
+   },
+   "summary": "The mill, the ring and the donkey that walks it."
+  },
+  {
+   "id": "B2",
+   "t": 15.36,
+   "kind": "setup",
+   "cue": {
+    "word": "تميل",
+    "t": 15.36
+   },
+   "summary": "He loves her; she leans toward the neighbour, who keeps away."
+  },
+  {
+   "id": "B3",
+   "t": 33.12,
+   "kind": "inciting",
+   "cue": {
+    "word": "مال",
+    "t": 33.12
+   },
+   "summary": "The dream: gold under one spot of the ring."
+  },
+  {
+   "id": "B4",
+   "t": 42.36,
+   "kind": "rising",
+   "cue": {
+    "word": "السر.",
+    "t": 42.36
+   },
+   "summary": "He tells his wife and asks for secrecy."
+  },
+  {
+   "id": "B5",
+   "t": 47.82,
+   "kind": "turn",
+   "cue": {
+    "word": "أسرعت",
+    "t": 47.82
+   },
+   "summary": "She runs straight to the neighbour."
+  },
+  {
+   "id": "B6",
+   "t": 60.52,
+   "kind": "reveal",
+   "cue": {
+    "word": "فظهرت",
+    "t": 60.52
+   },
+   "summary": "The gold is real."
+  },
+  {
+   "id": "B7",
+   "t": 80.2,
+   "kind": "suspense",
+   "cue": {
+    "word": "الكنز",
+    "t": 80.2
+   },
+   "summary": "Her plan to share and marry; his plan to take it all."
+  },
+  {
+   "id": "B8",
+   "t": 95.76,
+   "kind": "climax",
+   "cue": {
+    "word": "فقتلها،",
+    "t": 95.76
+   },
+   "summary": "He kills her (lamp out) and flees with the gold, leaving the pit open."
+  },
+  {
+   "id": "B9",
+   "t": 122.18,
+   "kind": "surprise",
+   "cue": {
+    "word": "توقف",
+    "t": 122.18
+   },
+   "summary": "The donkey stops at the pit; the miller cannot see why."
+  },
+  {
+   "id": "B10",
+   "t": 144.72,
+   "kind": "climax",
+   "cue": {
+    "word": "مات.",
+    "t": 144.72
+   },
+   "summary": "In his rage he kills the donkey."
+  },
+  {
+   "id": "B11",
+   "t": 150.02,
+   "kind": "moral",
+   "cue": {
+    "word": "لا",
+    "t": 150.02
+   },
+   "summary": "It was afraid, not stubborn."
+  },
+  {
+   "id": "B12",
+   "t": 157.56,
+   "kind": "emotion",
+   "cue": {
+    "word": "ميتة",
+    "t": 157.56
+   },
+   "summary": "Daylight shows him wife, donkey and treasure all lost."
+  },
+  {
+   "id": "B13",
+   "t": 171.3,
+   "kind": "resolution",
+   "cue": {
+    "word": "مضى",
+    "t": 171.3
+   },
+   "summary": "The neighbour is gone with the money."
+  }
+ ],
+ "cast": [
+  {
+   "id": "miller",
+   "name": "the miller",
+   "library": "person",
+   "base": "person costume:'beanSeller' (small white turban, moustache, white apron) with pal {robe: brown}",
+   "look": "Round, trusting, flour on his apron (3 white dots drawn by the scene). Seed 3 for blinks.",
+   "new": false
+  },
+  {
+   "id": "wife",
+   "name": "the wife",
+   "library": "person",
+   "base": "person costume:'villageWoman' (red dress, yellow headscarf)",
+   "look": "The yellow scarf is her sign: it is what we see in the pit. Seed 5.",
+   "new": false
+  },
+  {
+   "id": "neighbour",
+   "name": "the neighbour",
+   "library": "person",
+   "base": "person costume:'villager' (green tunic, black beard), age 0.2",
+   "look": "Reserved at first, then coin eyed. Seed 8.",
+   "new": false
+  },
+  {
+   "id": "donkey",
+   "name": "the donkey",
+   "library": "donkey",
+   "base": "donkey pal 0 (grey), s 0.85, with a simple brown collar drawn by the scene",
+   "look": "The only innocent. Acting through ears, eyes, headTurn, bray, sag, lie.",
+   "new": false
+  },
+  {
+   "id": "dreamer",
+   "name": "the figure in the dream",
+   "library": "person",
+   "base": "person costume:'ascetic', age 0.9, pale blue pal overrides, alpha 0.9, only inside the thought cloud",
+   "look": "Calm, faceless in meaning: neither angel nor devil.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "millHouse",
+   "library": null,
+   "new": true,
+   "description": "New shared set (see new_assets): cutaway donkey mill interior, 1000 x 1230, floor line y 900. Used in S1, S7 to S11, S13 to S19, S21 with options u (window sky), dark 0..1, door 0..1, turn (stone angle), pit {open 0..1}, mound 0..1, layer 'back' / 'front'."
+  },
+  {
+   "id": "hut",
+   "library": "hutRoom",
+   "new": false,
+   "description": "The miller s room: hutRoom with mattress {x0: 560, x1: 860}, jug, peg, window; palette 'night' with dark 0.6 for S3 and S6, u 0.02 (dawn) for S4 and S12. Use HUT anchors (mattress lieX, door, window)."
+  },
+  {
+   "id": "yard",
+   "library": "villageYard",
+   "new": false,
+   "description": "The lane between the houses: villageYard with the default cottage at the right edge as the NEIGHBOUR S house (door anchor about x 800, measure on the set), tree false or far left, u 0.25 in S2, u 0.4 to 0.72 in S5 with winLit."
+  },
+  {
+   "id": "road",
+   "library": "countryRoad",
+   "new": false,
+   "description": "countryRoad w 2400, u 0.03 (sunrise), default places; one tree used as a foreground wipe with the front pass."
+  }
+ ],
+ "props": [
+  {
+   "id": "heart",
+   "library": "heart",
+   "new": false,
+   "description": "Library heart(ctx, x, y, r): r 30 to 48. Miller s heart (S2), wife s smaller heart (S2, S5)."
+  },
+  {
+   "id": "coins",
+   "library": null,
+   "new": true,
+   "description": "Planned coinPile (mound of n 0..40 coins, about 220 wide x 90 high at n 40, with a ghost dashed outline option) and a single coin (yellow disc r 12, black outline, inner ring) that can arc, roll and glint."
+  },
+  {
+   "id": "shovel",
+   "library": null,
+   "new": true,
+   "description": "Planned shovel: wooden shaft 150 long x 8, grey iron blade 40 x 52 with a rounded tip, drawn about a grip point with rot."
+  },
+  {
+   "id": "sack",
+   "library": "packLoad",
+   "new": false,
+   "description": "packLoad(ctx, ['sack'], x, y, s) for the coin sack; in the tug it is stretched by scaling x up to 1.25; a yellow coin mark drawn on it by the scene."
+  },
+  {
+   "id": "scarf",
+   "library": null,
+   "new": true,
+   "description": "Scene drawn: the wife s yellow headscarf as a loose cloth (a 70 x 40 quad with two folds, yellow with red dots, black outline) that drifts down and lies by the pit."
+  },
+  {
+   "id": "knife",
+   "library": null,
+   "new": true,
+   "description": "Small knife: white blade 60 x 14 with a pointed tip, brown handle 30 x 12, black outline, optional 4 point glint star. Never shown touching the donkey."
+  },
+  {
+   "id": "lamp",
+   "library": "hangingLamp",
+   "new": false,
+   "description": "The Library lamp drawing used as a floor lamp (hangingLamp without its chain, or the chain length 0) with a yellow halftone disc r 170; it rocks with swing() and goes out at 95.76."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 8.66,
+   "paragraphs": [
+    1
+   ],
+   "set": "millHouse",
+   "cast": [
+    "miller",
+    "wife",
+    "donkey"
+   ],
+   "summary": "Establishing: the mill by day. The donkey walks its ring and turns the stone; the miller works; his wife looks in. The ring is taught here because the whole story happens on it.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Start zoom 1.0 on the whole cutaway (centre 500, 640), ease to zoom 1.25 centred (500, 720) by 7.0. Keep the whole ring in frame."
+   },
+   "composition": "Stone dead centre, ring ellipse round it. Miller left (x 190), door behind him on the left wall, window top right. Donkey passes nearest the viewer at the front of the ring (y 960).",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 0.8,
+     "cue": {
+      "word": "كان",
+      "t": 0.0
+     },
+     "who": "camera",
+     "action": "opens on the mill interior, slow push-in",
+     "acting": "calm, sunny, the stone already turning",
+     "library": "millHouse({u: 0.2}) + K.camAt keys"
+    },
+    {
+     "t": 0.3,
+     "end": 1.1,
+     "cue": {
+      "word": "طحان",
+      "t": 0.3
+     },
+     "who": "miller",
+     "action": "stands at the hopper (x 190) and pours a scoop of grain; label THE MILLER with an arrow",
+     "acting": "content half smile, eyes on the grain, a blink, weight shifts with the pour",
+     "library": "person {costume:'beanSeller'} + S.label + S.arrow"
+    },
+    {
+     "t": 1.92,
+     "end": 2.72,
+     "cue": {
+      "word": "زوجته",
+      "t": 1.92
+     },
+     "who": "wife",
+     "action": "looks in at the door (door 0 to 0.6) holding a jug, then leaves",
+     "acting": "polite small smile that ends early; her eyes drift off him before she turns",
+     "library": "person {costume:'villageWoman'}; townDoor open keyed"
+    },
+    {
+     "t": 2.2,
+     "end": 3.0,
+     "cue": {
+      "word": "زوجته",
+      "t": 1.92
+     },
+     "who": "miller",
+     "action": "waves to her with flour on his hand, watches her go",
+     "acting": "big smile, gaze follows her 0.4 s after she left (follow-through)",
+     "library": "PERSON_HANDS.wave, lookAt, gazePlan"
+    },
+    {
+     "t": 2.74,
+     "end": 3.54,
+     "cue": {
+      "word": "ويعمل",
+      "t": 2.74
+     },
+     "who": "miller",
+     "action": "tips a sack onto the stone, flour puff, wipes his brow",
+     "acting": "anticipation dip before the lift, squash under the weight (sq 0.94), settle",
+     "library": "anticipate, settleTo, dustBurst (white)"
+    },
+    {
+     "t": 3.8,
+     "end": 4.6,
+     "cue": {
+      "word": "كل",
+      "t": 3.8
+     },
+     "who": "set",
+     "action": "the window sky runs one whole day and night in 1.2 s while the work goes on; label EVERY DAY",
+     "acting": "the donkey never changes pace: routine",
+     "library": "skyCycle u 0.2 to 1.2 through millHouse o.u; S.label"
+    },
+    {
+     "t": 5.06,
+     "end": 5.86,
+     "cue": {
+      "word": "طاحونة",
+      "t": 5.06
+     },
+     "who": "set",
+     "action": "runner stone turns (stripes slide), flour trickles into the tray; label THE MILL",
+     "acting": "beam creaks: 2 unit bob on the beam each donkey footfall",
+     "library": "millHouse {turn: angle from ring distance}"
+    },
+    {
+     "t": 6.02,
+     "end": 6.82,
+     "cue": {
+      "word": "يديرها",
+      "t": 6.02
+     },
+     "who": "donkey",
+     "action": "comes round the front arc from the left pulling the beam; a curved arrow follows the ring",
+     "acting": "steady plod, head nodding with the stride, ears loose and swinging a beat late",
+     "library": "donkey + millRing(theta) + walk(dist, t, {stride: GAIT.donkey}) + footfalls + dustBurst"
+    },
+    {
+     "t": 7.02,
+     "end": 7.82,
+     "cue": {
+      "word": "حمار.",
+      "t": 7.02
+     },
+     "who": "donkey",
+     "action": "passes nearest the camera, ear flick, glances at the viewer; label THE DONKEY",
+     "acting": "soft eye, one blink, gaze [0, 0.05] for 6 frames then back to the track",
+     "library": "donkey {earL, earR, gaze, lid: blink}"
+    },
+    {
+     "t": 7.9,
+     "end": 8.7,
+     "who": "miller",
+     "action": "pats the donkey on the rump as it goes by",
+     "acting": "fond, eyes on the animal: he likes this donkey (pays off at 134)",
+     "library": "handRW to the donkey back point"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.4,
+     "text": "THE MILLER"
+    },
+    {
+     "t": 5.1,
+     "text": "THE MILL"
+    },
+    {
+     "t": 7.1,
+     "text": "THE DONKEY"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 8.2,
+     "kind": "tick"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 8.66
+   }
+  },
+  {
+   "id": "S2",
+   "start": 8.66,
+   "end": 22.18,
+   "paragraphs": [
+    1
+   ],
+   "set": "yard",
+   "cast": [
+    "miller",
+    "wife",
+    "neighbour"
+   ],
+   "summary": "The triangle in one picture: his heart goes to her, hers goes to the neighbour, the neighbour shuts his door on it.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Start medium on miller and wife (centre 380, 720, zoom 1.5); at 16.0 pan right and widen to zoom 1.05 so all three are in frame; hold from 18.0."
+   },
+   "composition": "Left to right: miller x 230, wife x 470, neighbour at his cottage door x 800 (villageYard door anchor). Three eye lines form a chain pointing right. Hearts travel at head height (y 600 to 640), never over a face.",
+   "actions": [
+    {
+     "t": 8.66,
+     "end": 9.46,
+     "cue": {
+      "word": "أحب",
+      "t": 8.66
+     },
+     "who": "miller",
+     "action": "turns to his wife, both hands to his chest; a red heart pops over his head",
+     "acting": "eyes only for her, brows up, a little bounce (sq 1.05)",
+     "library": "PERSON_HANDS.chest; heart(ctx, x, y, r) pop with settleTo"
+    },
+    {
+     "t": 9.88,
+     "end": 10.68,
+     "cue": {
+      "word": "زوجته",
+      "t": 9.88
+     },
+     "who": "heart",
+     "action": "his heart floats across to her on a soft arc",
+     "acting": "he leans after it (tip 0.06), gaze follows it",
+     "library": "kfn path, lookAt"
+    },
+    {
+     "t": 10.58,
+     "end": 11.38,
+     "cue": {
+      "word": "كثيرًا،",
+      "t": 10.58
+     },
+     "who": "heart",
+     "action": "the heart swells to 1.6x as it reaches her",
+     "acting": "miller on his toes, biggest smile of the film",
+     "library": "heart r keyed, sq 1.06"
+    },
+    {
+     "t": 11.84,
+     "end": 12.64,
+     "cue": {
+      "word": "لكنها",
+      "t": 11.84
+     },
+     "who": "wife",
+     "action": "her eyes slide off him to the right; she half turns away",
+     "acting": "lid 0.35, flat mouth, no blink for a second: bored",
+     "library": "gazePlan, lid"
+    },
+    {
+     "t": 12.86,
+     "end": 13.66,
+     "cue": {
+      "word": "تبادله",
+      "t": 12.86
+     },
+     "who": "heart",
+     "action": "the heart bumps her shoulder, bounces off and drops to the ground with a small squash",
+     "acting": "she does not notice; he flinches with the bounce",
+     "library": "hop arc, impactSquash"
+    },
+    {
+     "t": 13.72,
+     "end": 14.52,
+     "cue": {
+      "word": "الحب؛",
+      "t": 13.72
+     },
+     "who": "miller",
+     "action": "looks down at the fallen heart, smile fades, then looks back up at her",
+     "acting": "brow -0.4 (worried), head drop 4 px, hopeful again when he looks up",
+     "library": "brow, gazePlan"
+    },
+    {
+     "t": 15.36,
+     "end": 16.16,
+     "cue": {
+      "word": "تميل",
+      "t": 15.36
+     },
+     "who": "wife",
+     "action": "leans toward the right (tip 0.1); a small heart of her own rises",
+     "acting": "gaze locked right, smile at last, lashes: the look she never gave her husband",
+     "library": "tip, heart"
+    },
+    {
+     "t": 16.44,
+     "end": 17.24,
+     "cue": {
+      "word": "جار",
+      "t": 16.44
+     },
+     "who": "neighbour",
+     "action": "revealed by the pan: sweeping his doorstep, minding his own business; label THE NEIGHBOR",
+     "acting": "eyes on his broom, calm",
+     "library": "person {costume:'villager', hold:'stick'} as a broom; S.label"
+    },
+    {
+     "t": 17.6,
+     "end": 18.4,
+     "who": "heart",
+     "action": "her heart drifts across the yard toward him (in the pause)",
+     "acting": "miller watches it pass over his head; his own heart still lies on the ground",
+     "library": "kfn path"
+    },
+    {
+     "t": 18.08,
+     "end": 18.88,
+     "cue": {
+      "word": "بينما",
+      "t": 18.08
+     },
+     "who": "neighbour",
+     "action": "sees the heart coming, straightens, raises both palms",
+     "acting": "brow -0.6, eyes wide, glance at the miller, then at the heart",
+     "library": "PERSON_HANDS.shield, gazePlan saccades"
+    },
+    {
+     "t": 19.72,
+     "end": 20.52,
+     "cue": {
+      "word": "يبتعد",
+      "t": 19.72
+     },
+     "who": "neighbour",
+     "action": "steps back into his doorway; the heart stops short and hangs in the air",
+     "acting": "leans away (tip -0.08), polite firm shake of the head",
+     "library": "walk backward two steps, footfalls"
+    },
+    {
+     "t": 20.5,
+     "end": 21.3,
+     "cue": {
+      "word": "عنها.",
+      "t": 20.5
+     },
+     "who": "neighbour",
+     "action": "shuts the door; her heart sinks to knee height",
+     "acting": "wife sighs (sq 0.96 then back); miller still looks only at her",
+     "library": "villageYard {door: 0.6 to 0}, breathe"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 16.5,
+     "text": "THE NEIGHBOR"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 17.7,
+     "kind": "pop"
+    },
+    {
+     "t": 21.7,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 22.18,
+    "label": "ONE NIGHT..."
+   }
+  },
+  {
+   "id": "S3",
+   "start": 22.18,
+   "end": 34.44,
+   "paragraphs": [
+    2
+   ],
+   "set": "hut",
+   "cast": [
+    "miller",
+    "wife",
+    "dreamer"
+   ],
+   "summary": "The dream. A pale old figure in a large thought cloud shows the ring, marks one spot with a red X and shows gold under it.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Start zoom 1.1 with the mattress low in frame and the cloud above; from 30.7 push to zoom 1.5 on the cloud; keep the sleeper s head in the bottom of the frame."
+   },
+   "composition": "Mattress x 560..860 on the floor (hutRoom mattress anchor), miller lying head left; wife asleep behind him, turned away. Cloud 640 x 440 centred (500, 400), tail to his head. Night palette, moonlight from the window.",
+   "actions": [
+    {
+     "t": 22.18,
+     "end": 22.98,
+     "cue": {
+      "word": "رأى",
+      "t": 22.18
+     },
+     "who": "miller",
+     "action": "asleep on the mattress, slow breathing",
+     "acting": "lid 1, small smile, chest rises on breathe()",
+     "library": "person {lie: 1, lid: 1} + breathe; hutRoom {palette:'night', dark: 0.6}"
+    },
+    {
+     "t": 23.78,
+     "end": 24.58,
+     "cue": {
+      "word": "منامه",
+      "t": 23.78
+     },
+     "who": "fx",
+     "action": "thought cloud: three trail bubbles pop from his head, then the cloud opens (navy with blue dots)",
+     "acting": "his brow twitches as it opens",
+     "library": "thoughtCloud(ctx, 500, 400, 640, 440, t, {p, tail, bg: NAVY})"
+    },
+    {
+     "t": 24.56,
+     "end": 25.36,
+     "cue": {
+      "word": "شخصًا",
+      "t": 24.56
+     },
+     "who": "dreamer",
+     "action": "a pale old man fades in inside the cloud (alpha 0 to 0.9)",
+     "acting": "serene, slow blink, eyes on the sleeper below",
+     "library": "person {costume:'ascetic', age: 0.9, pal: pale blue tones, alpha}"
+    },
+    {
+     "t": 25.34,
+     "end": 26.14,
+     "cue": {
+      "word": "يقول",
+      "t": 25.34
+     },
+     "who": "dreamer",
+     "action": "speaks and raises one finger",
+     "acting": "talk on the syllables; miller s lips move as if answering in his sleep",
+     "library": "talk, PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 26.14,
+     "end": 26.94,
+     "cue": {
+      "word": "احفر",
+      "t": 26.14
+     },
+     "who": "shovel",
+     "action": "a shovel icon pops beside the figure and makes two digging strokes",
+     "acting": "figure nods on each stroke",
+     "library": "shovel(ctx, x, y, {rot}) keyed"
+    },
+    {
+     "t": 27.5,
+     "end": 28.3,
+     "cue": {
+      "word": "مكان",
+      "t": 27.5
+     },
+     "who": "fx",
+     "action": "the cloud picture changes to a small mill: stone and ring seen from the same angle as S1",
+     "acting": "figure moves to the left third of the cloud and gestures at it",
+     "library": "millHouse drawn inside the cloud at scale 0.45, walls off"
+    },
+    {
+     "t": 27.96,
+     "end": 28.76,
+     "cue": {
+      "word": "معين",
+      "t": 27.96
+     },
+     "who": "fx",
+     "action": "a red X is brushed onto the ring at the front right (the future pit spot, world 650, 962)",
+     "acting": "two strokes, 4 frames each; figure taps the air once",
+     "library": "S.emphasis or two K lines; same spot as millHouse pit anchor"
+    },
+    {
+     "t": 29.08,
+     "end": 29.88,
+     "cue": {
+      "word": "طريق",
+      "t": 29.08
+     },
+     "who": "fx",
+     "action": "the dotted ring lights up segment by segment, ending at the X",
+     "acting": "sleeper s eyes move under the lids (2 px lid ripple)",
+     "library": "dash offset keyed"
+    },
+    {
+     "t": 29.66,
+     "end": 30.46,
+     "cue": {
+      "word": "الحمار",
+      "t": 29.66
+     },
+     "who": "donkey",
+     "action": "a black donkey silhouette trots once round the small ring and steps over the X",
+     "acting": "ears bob",
+     "library": "donkey {silhouette: true} + millRing"
+    },
+    {
+     "t": 30.72,
+     "end": 31.52,
+     "cue": {
+      "word": "الطاحونة،",
+      "t": 30.72
+     },
+     "who": "camera",
+     "action": "push in on the cloud; small stone turns",
+     "acting": "everything else still",
+     "library": "CAM keys"
+    },
+    {
+     "t": 31.78,
+     "end": 32.58,
+     "cue": {
+      "word": "فهناك",
+      "t": 31.78
+     },
+     "who": "dreamer",
+     "action": "points straight down at the X",
+     "acting": "leans in (tip 0.08), eyes wide, a held beat",
+     "library": "PERSON_HANDS.pointDown"
+    },
+    {
+     "t": 33.12,
+     "end": 33.92,
+     "cue": {
+      "word": "مال",
+      "t": 33.12
+     },
+     "who": "coins",
+     "action": "gold rays burst from the X and three coins rise out of the ground",
+     "acting": "the sleeper smiles wide; his hand twitches as if to catch one",
+     "library": "goldGlow(strength 0 to 1), coin(x, y, r) hop arcs"
+    },
+    {
+     "t": 33.58,
+     "end": 34.38,
+     "cue": {
+      "word": "مدفون.",
+      "t": 33.58
+     },
+     "who": "coins",
+     "action": "the coins sink back under the X, which pulses once; the figure fades",
+     "acting": "cloud edges start to wobble: waking",
+     "library": "alpha keys, pulse"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 26.2,
+     "text": "DIG!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 34.44
+   }
+  },
+  {
+   "id": "S4",
+   "start": 34.44,
+   "end": 43.64,
+   "paragraphs": [
+    2
+   ],
+   "set": "hut",
+   "cast": [
+    "miller",
+    "wife"
+   ],
+   "summary": "He wakes overjoyed, tells his wife everything and asks her to keep it secret. She agrees with her mouth; her eyes go to the window.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "twoShot(miller head, wife head, {margin: 160}), zoom about 1.6. One small push at 41.3 for the hush."
+   },
+   "composition": "Both on the mattress, miller left sitting up, wife right. Window (dawn sky) between and above them: her glance to it at 42.6 reads clearly. Balloon above and between, clear of both faces.",
+   "actions": [
+    {
+     "t": 34.44,
+     "end": 35.24,
+     "cue": {
+      "word": "استيقظ",
+      "t": 34.44
+     },
+     "who": "miller",
+     "action": "the cloud pops; he sits bolt upright",
+     "acting": "eyes snap wide, overshoot and settle, hair/cap lag",
+     "library": "lie 1 to 0 with sit 1 (settleTo); hutRoom u to 0.02 (dawn)"
+    },
+    {
+     "t": 35.94,
+     "end": 36.74,
+     "cue": {
+      "word": "فرحًا،",
+      "t": 35.94
+     },
+     "who": "miller",
+     "action": "springs to his feet with a hop, arms up",
+     "acting": "crouch 0.2 s before, stretch, landSquash; open grin",
+     "library": "anticipate, hop, landSquash, aL/aR raised angles"
+    },
+    {
+     "t": 37.14,
+     "end": 37.94,
+     "cue": {
+      "word": "وأخبر",
+      "t": 37.14
+     },
+     "who": "miller",
+     "action": "drops to his knees beside her and shakes her shoulder",
+     "acting": "urgent, eyes shining; she wakes groggy (lid 0.6, mouth closed)",
+     "library": "kneel 1, handRW to her shoulder"
+    },
+    {
+     "t": 38.1,
+     "end": 38.9,
+     "cue": {
+      "word": "زوجته",
+      "t": 38.1
+     },
+     "who": "wife",
+     "action": "sits up and listens, rubbing one eye",
+     "acting": "gaze on him, half bored, half asleep",
+     "library": "sit 1 seat floor, lookAt"
+    },
+    {
+     "t": 38.88,
+     "end": 39.68,
+     "cue": {
+      "word": "بالحلم،",
+      "t": 38.88
+     },
+     "who": "fx",
+     "action": "picture balloon from him: ring, red X, coin",
+     "acting": "at the coin her lid snaps to 0 and her pupils fix on it: fully awake",
+     "library": "iconBalloon strip of 3 icons popping 0.25 s apart"
+    },
+    {
+     "t": 39.74,
+     "end": 40.54,
+     "cue": {
+      "word": "وطلب",
+      "t": 39.74
+     },
+     "who": "miller",
+     "action": "looks at the door, then the window, then leans close to her",
+     "acting": "saccades (2 frame snaps), shoulders hunched",
+     "library": "gazePlan(t, plan, 0.07), tip 0.08"
+    },
+    {
+     "t": 41.76,
+     "end": 42.56,
+     "cue": {
+      "word": "تحفظ",
+      "t": 41.76
+     },
+     "who": "miller",
+     "action": "finger to his lips",
+     "acting": "brows up, pleading eyes; the balloon shrinks behind his finger",
+     "library": "PERSON_HANDS.hush"
+    },
+    {
+     "t": 42.36,
+     "end": 43.16,
+     "cue": {
+      "word": "السر.",
+      "t": 42.36
+     },
+     "who": "wife",
+     "action": "nods and copies the hush; when he turns to lie back down, her eyes slide to the window and a one sided smile appears",
+     "acting": "mask on / mask off: the smile exists only while he cannot see",
+     "library": "PERSON_HANDS.hush, gazePlan, mouth 'smile' for 0.6 s"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 41.8,
+     "text": "SHH!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 43.3,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 43.64
+   }
+  },
+  {
+   "id": "S5",
+   "start": 43.64,
+   "end": 54.08,
+   "paragraphs": [
+    3
+   ],
+   "set": "yard",
+   "cast": [
+    "wife",
+    "neighbour"
+   ],
+   "summary": "She breaks the secret within seconds: runs to the neighbour, whispers it, and gold changes his mind about her. They agree on tonight.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Track with her run from x 150 to x 700 (zoom 1.3), settle into a two-shot at the door by 49.0 (zoom 1.7); widen to 1.2 at 53.2 for the sky."
+   },
+   "composition": "She enters from the left edge; neighbour s door at x 800. In the two-shot she is left, he is right in the doorway. Sky visible above the cottage roof for the nightfall.",
+   "actions": [
+    {
+     "t": 43.64,
+     "end": 44.44,
+     "cue": {
+      "word": "لم",
+      "t": 43.64
+     },
+     "who": "wife",
+     "action": "peeks round the left edge of the frame, looks both ways",
+     "acting": "saccades, shoulders up",
+     "library": "gazePlan saccade mode"
+    },
+    {
+     "t": 44.56,
+     "end": 45.36,
+     "cue": {
+      "word": "تحفظ",
+      "t": 44.56
+     },
+     "who": "wife",
+     "action": "still holding the hush finger from S4; lowers it",
+     "acting": "the smirk comes back",
+     "library": "PERSON_HANDS.hush to rest"
+    },
+    {
+     "t": 45.9,
+     "end": 46.7,
+     "cue": {
+      "word": "السر،",
+      "t": 45.9
+     },
+     "who": "fx",
+     "action": "the SHH! lettering reappears small over her head and falls off like a dropped sign",
+     "acting": "she does not look back at it",
+     "library": "lettering with fallY + swing"
+    },
+    {
+     "t": 47.82,
+     "end": 48.62,
+     "cue": {
+      "word": "أسرعت",
+      "t": 47.82
+     },
+     "who": "wife",
+     "action": "runs across the yard, scarf tail streaming, dust at each step",
+     "acting": "lean forward (tip 0.12), eager open smile",
+     "library": "walk(xf, t) fast + footfalls + dustBurst"
+    },
+    {
+     "t": 48.76,
+     "end": 49.56,
+     "cue": {
+      "word": "الجار",
+      "t": 48.76
+     },
+     "who": "neighbour",
+     "action": "she knocks; the door opens a hand s width and he peers out",
+     "acting": "wary, brow -0.5, body behind the door leaf",
+     "library": "villageYard door 0 to 0.3; kick on the door for the knocks"
+    },
+    {
+     "t": 50.46,
+     "end": 51.26,
+     "cue": {
+      "word": "تحبه.",
+      "t": 50.46
+     },
+     "who": "wife",
+     "action": "beams at him, a small heart over her head; then cups her mouth and whispers",
+     "acting": "he leans away from the heart (tip -0.06) as in S2",
+     "library": "heart, PERSON_HANDS.cupMouth"
+    },
+    {
+     "t": 50.9,
+     "end": 51.7,
+     "cue": {
+      "word": "تحبه.",
+      "t": 50.46
+     },
+     "who": "fx",
+     "action": "her picture balloon: ring, red X, coins",
+     "acting": "his eyes go to the coins",
+     "library": "iconBalloon"
+    },
+    {
+     "t": 51.38,
+     "end": 52.18,
+     "cue": {
+      "word": "اتفقا",
+      "t": 51.38
+     },
+     "who": "neighbour",
+     "action": "gold coins replace his pupils; the door swings wide and his lean reverses toward her",
+     "acting": "coinEyes pop with overshoot; first smile we see from him",
+     "library": "coinEyes, door to 0.7, tip +0.08"
+    },
+    {
+     "t": 52.0,
+     "end": 52.8,
+     "cue": {
+      "word": "اتفقا",
+      "t": 51.38
+     },
+     "who": "wife",
+     "action": "they nod together, hers first, his 4 frames later",
+     "acting": "conspirators: heads close, eyes sideways",
+     "library": "stagger"
+    },
+    {
+     "t": 52.8,
+     "end": 53.6,
+     "cue": {
+      "word": "الحفر",
+      "t": 52.8
+     },
+     "who": "neighbour",
+     "action": "takes the shovel from beside the door and plants it between them",
+     "acting": "grip with both hands, chin up",
+     "library": "shovel prop, PERSON_HANDS.grip"
+    },
+    {
+     "t": 53.4,
+     "end": 54.2,
+     "cue": {
+      "word": "ليلًا،",
+      "t": 53.4
+     },
+     "who": "set",
+     "action": "the sky runs dusk to night, the moon comes up, the cottage window lights",
+     "acting": "both look up at the moon, then at each other",
+     "library": "villageYard {u: 0.45 to 0.72, winLit}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 45.95,
+     "text": "SHH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 54.08
+   }
+  },
+  {
+   "id": "S6",
+   "start": 54.08,
+   "end": 56.32,
+   "paragraphs": [
+    3
+   ],
+   "set": "hut",
+   "cast": [
+    "miller",
+    "wife"
+   ],
+   "summary": "The miller sleeps, dreaming of gold, while his wife slips out.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Zoom 1.4 on the mattress with the door in the left of frame."
+   },
+   "composition": "Miller asleep centre right; the empty dent beside him; the door on the left wall.",
+   "actions": [
+    {
+     "t": 54.08,
+     "end": 54.88,
+     "cue": {
+      "word": "وحين",
+      "t": 54.08
+     },
+     "who": "set",
+     "action": "the hut at night, lamp low",
+     "acting": "still",
+     "library": "hutRoom {palette:'night', lamp: 0.3, dark: 0.7}"
+    },
+    {
+     "t": 55.12,
+     "end": 55.92,
+     "cue": {
+      "word": "نام",
+      "t": 55.12
+     },
+     "who": "miller",
+     "action": "fast asleep, Z letters rising; a tiny coin bubble over his head",
+     "acting": "lid 1, smile, slow breathe",
+     "library": "person lie + S lettering Z"
+    },
+    {
+     "t": 55.46,
+     "end": 56.26,
+     "cue": {
+      "word": "الطحان",
+      "t": 55.46
+     },
+     "who": "wife",
+     "action": "her dark shape slips out of the door, which eases shut",
+     "acting": "she looks back at him once; no feeling in it",
+     "library": "person alpha/dark tint; hutRoom door 0.5 to 0"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 55.15,
+     "text": "Z Z Z"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 56.32
+   }
+  },
+  {
+   "id": "S7",
+   "start": 56.32,
+   "end": 65.08,
+   "paragraphs": [
+    3
+   ],
+   "set": "millHouse",
+   "cast": [
+    "wife",
+    "neighbour"
+   ],
+   "summary": "Night in the mill. They creep in with a lamp, dig at the marked spot and gold light comes up out of the ground.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Zoom 1.1 on the door side for the entrance, pan with them to the pit spot, push to 1.6 centred (650, 820) from 60.5."
+   },
+   "composition": "Door left wall. They cross in front of the stone to the front right of the ring (650, 962). Neighbour digs facing right, wife left of him holding the lamp high. Mound grows at (800, 950).",
+   "actions": [
+    {
+     "t": 56.32,
+     "end": 57.12,
+     "cue": {
+      "word": "دخلا",
+      "t": 56.32
+     },
+     "who": "set",
+     "action": "the mill door opens a crack; a wedge of lamp light falls across the dark floor; two heads peek, one above the other",
+     "acting": "eyes sweep the room in opposite directions",
+     "library": "millHouse {dark: 0.85, door keyed, lampAt}"
+    },
+    {
+     "t": 57.18,
+     "end": 57.98,
+     "cue": {
+      "word": "الطاحونة",
+      "t": 57.18
+     },
+     "who": "neighbour",
+     "action": "they tiptoe in, he carries shovel and lamp, she points to the spot",
+     "acting": "high knees, a hold on each toe, her gesture impatient",
+     "library": "sneak gait option on walk()"
+    },
+    {
+     "t": 58.12,
+     "end": 58.92,
+     "cue": {
+      "word": "وحفرا",
+      "t": 58.12
+     },
+     "who": "neighbour",
+     "action": "digs: three strokes (58.12, 58.7, 59.3), earth thrown to the mound",
+     "acting": "effort squash on each push, breath between strokes; she holds the lamp over him",
+     "library": "digCycle with handLW/handRW on the shovel; dustBurst (brown)"
+    },
+    {
+     "t": 59.18,
+     "end": 59.98,
+     "cue": {
+      "word": "الموضع",
+      "t": 59.18
+     },
+     "who": "set",
+     "action": "the pit opens under the strokes (pit open 0 to 0.7) and the mound grows",
+     "acting": "the dream X shows faintly on the floor and breaks up as the hole forms",
+     "library": "millHouse {pit: {open}, mound}"
+    },
+    {
+     "t": 59.74,
+     "end": 60.54,
+     "cue": {
+      "word": "المذكور،",
+      "t": 59.74
+     },
+     "who": "neighbour",
+     "action": "the shovel hits something: both freeze",
+     "acting": "look at each other, she first, he 3 frames later; held breath",
+     "library": "stagger, 2 frame jolt"
+    },
+    {
+     "t": 60.52,
+     "end": 61.32,
+     "cue": {
+      "word": "فظهرت",
+      "t": 60.52
+     },
+     "who": "fx",
+     "action": "gold rays rise out of the pit and light their faces from below",
+     "acting": "eyes widen, mouths open slowly",
+     "library": "goldGlow at the pit, strength 0 to 1"
+    },
+    {
+     "t": 61.62,
+     "end": 62.42,
+     "cue": {
+      "word": "أمامهما",
+      "t": 61.62
+     },
+     "who": "wife",
+     "action": "both drop to their knees at the rim and look down",
+     "acting": "her hands to her cheeks; his coin eyes return",
+     "library": "kneel 1, PERSON_HANDS.cheeks, coinEyes"
+    },
+    {
+     "t": 62.66,
+     "end": 63.46,
+     "cue": {
+      "word": "كنوز",
+      "t": 62.66
+     },
+     "who": "neighbour",
+     "action": "lifts out double handfuls; coins pour onto the floor beside the pit and a pile grows (n 0 to 40)",
+     "acting": "greedy speed, tongue at the corner of his mouth",
+     "library": "coinPile {n} keyed, coin arcs"
+    },
+    {
+     "t": 63.66,
+     "end": 64.46,
+     "cue": {
+      "word": "النقود.",
+      "t": 63.66
+     },
+     "who": "wife",
+     "action": "holds one coin up to the lamp; it glints; she laughs silently behind her hand",
+     "acting": "eyes on the coin, never on him",
+     "library": "PERSON_HANDS.mouthCover, glint star"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 59.8,
+     "text": "CLANK!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 64.75,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 65.08
+   }
+  },
+  {
+   "id": "S8",
+   "start": 65.08,
+   "end": 76.94,
+   "paragraphs": [
+    4
+   ],
+   "set": "millHouse",
+   "cast": [
+    "wife",
+    "neighbour"
+   ],
+   "summary": "Her plan in pictures: halve the gold, each leaves a spouse, they marry, the halves join again.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "twoShot over the coin pile, zoom about 1.7, centre (600, 760). Balloon space kept above the heads."
+   },
+   "composition": "Wife left standing, neighbour right kneeling by the pile, pit behind them, lamp on the floor between. Picture balloon at top centre.",
+   "actions": [
+    {
+     "t": 65.08,
+     "end": 65.88,
+     "cue": {
+      "word": "قالت",
+      "t": 65.08
+     },
+     "who": "wife",
+     "action": "stands and raises a finger: she has it all worked out",
+     "acting": "brisk, chin up, eyes bright",
+     "library": "PERSON_HANDS.pointUp, talk"
+    },
+    {
+     "t": 66.32,
+     "end": 67.12,
+     "cue": {
+      "word": "الزوجة:",
+      "t": 66.32
+     },
+     "who": "neighbour",
+     "action": "still scooping coins, looks up at her",
+     "acting": "listening with half his attention; eyes keep dropping to the gold",
+     "library": "gazePlan"
+    },
+    {
+     "t": 67.32,
+     "end": 68.12,
+     "cue": {
+      "word": "نقسم",
+      "t": 67.32
+     },
+     "who": "wife",
+     "action": "draws a line through the pile with her foot",
+     "acting": "neat, decisive",
+     "library": "leg raise field or a short scuff + dustBurst"
+    },
+    {
+     "t": 67.96,
+     "end": 68.76,
+     "cue": {
+      "word": "المال",
+      "t": 67.96
+     },
+     "who": "coins",
+     "action": "the pile slides apart into two equal piles",
+     "acting": "his eyes follow one pile, then the other",
+     "library": "two coinPile instances, x keyed"
+    },
+    {
+     "t": 68.52,
+     "end": 69.32,
+     "cue": {
+      "word": "نصفين،",
+      "t": 68.52
+     },
+     "who": "lettering",
+     "action": "a label HALF pops over each pile",
+     "acting": "she points to hers, then his",
+     "library": "S.label x 2"
+    },
+    {
+     "t": 70.44,
+     "end": 71.24,
+     "cue": {
+      "word": "تترك",
+      "t": 70.44
+     },
+     "who": "fx",
+     "action": "balloon picture 1: a woman s head (his wife) with an arrow pushing it out of the balloon",
+     "acting": "she flicks her fingers: gone",
+     "library": "iconBalloon + person head clipped (portrait)"
+    },
+    {
+     "t": 70.92,
+     "end": 71.72,
+     "cue": {
+      "word": "زوجتك",
+      "t": 70.92
+     },
+     "who": "neighbour",
+     "action": "glances toward his house, shrugs",
+     "acting": "lid 0.4, small one shoulder shrug",
+     "library": "gaze, sq"
+    },
+    {
+     "t": 71.84,
+     "end": 72.64,
+     "cue": {
+      "word": "وأتخلص",
+      "t": 71.84
+     },
+     "who": "fx",
+     "action": "balloon picture 2: the sleeping miller s head with Z; a red X strikes it",
+     "acting": "her face goes cold: lid 0.4, no blink, flat mouth",
+     "library": "iconBalloon, red X two strokes"
+    },
+    {
+     "t": 73.7,
+     "end": 74.5,
+     "cue": {
+      "word": "زوجي،",
+      "t": 73.7
+     },
+     "who": "neighbour",
+     "action": "looks from the X to her face; a small swallow",
+     "acting": "first flicker of fear of her (sets up 81.64)",
+     "library": "drop pulse 3 px, gaze"
+    },
+    {
+     "t": 74.5,
+     "end": 75.3,
+     "cue": {
+      "word": "فنتزوج",
+      "t": 74.5
+     },
+     "who": "fx",
+     "action": "balloon picture 3: their two heads and a heart",
+     "acting": "she clasps her hands and leans toward him, lashes",
+     "library": "iconBalloon, PERSON_HANDS.clasp, tip 0.08"
+    },
+    {
+     "t": 75.44,
+     "end": 76.24,
+     "cue": {
+      "word": "ونجمع",
+      "t": 75.44
+     },
+     "who": "wife",
+     "action": "pushes the two piles back together with both arms",
+     "acting": "kneel, happy effort",
+     "library": "kneel 1, PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 76.4,
+     "end": 77.2,
+     "cue": {
+      "word": "المال.",
+      "t": 76.4
+     },
+     "who": "wife",
+     "action": "one big pile; she opens her arms to him",
+     "acting": "expecting an embrace; he does not move",
+     "library": "PERSON_HANDS.armsOut"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 68.55,
+     "text": "HALF"
+    },
+    {
+     "t": 68.75,
+     "text": "HALF"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 76.94
+   }
+  },
+  {
+   "id": "S9",
+   "start": 76.94,
+   "end": 85.56,
+   "paragraphs": [
+    4
+   ],
+   "set": "millHouse",
+   "cast": [
+    "wife",
+    "neighbour"
+   ],
+   "summary": "His real thoughts, shown where she cannot see: all of it for himself, and fear that she will take her half to another man.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Close on the neighbour turned three quarters away from her (zoom 2.1, centre on his head), thought cloud above right; she stays soft in the left edge counting coins."
+   },
+   "composition": "His face right of centre, cloud 420 x 300 at upper right, wife small at the left edge behind his shoulder with her back half turned.",
+   "actions": [
+    {
+     "t": 76.94,
+     "end": 77.74,
+     "cue": {
+      "word": "لكن",
+      "t": 76.94
+     },
+     "who": "neighbour",
+     "action": "turns his face away from her, toward us; the smile drops",
+     "acting": "mask off: mouth flat, lid 0.3",
+     "library": "gaze, mouth"
+    },
+    {
+     "t": 78.0,
+     "end": 78.8,
+     "cue": {
+      "word": "الجار",
+      "t": 78.0
+     },
+     "who": "neighbour",
+     "action": "eyes slide back to the pile",
+     "acting": "coinEyes glint",
+     "library": "coinEyes, gazePlan"
+    },
+    {
+     "t": 78.82,
+     "end": 79.62,
+     "cue": {
+      "word": "أراد",
+      "t": 78.82
+     },
+     "who": "fx",
+     "action": "thought cloud opens above him",
+     "acting": "he chews his lip",
+     "library": "thoughtCloud(…, {tail: his head})"
+    },
+    {
+     "t": 80.2,
+     "end": 81.0,
+     "cue": {
+      "word": "الكنز",
+      "t": 80.2
+     },
+     "who": "fx",
+     "action": "in the cloud: he sits alone hugging the whole pile",
+     "acting": "cloud self grins",
+     "library": "person {costume:'villager', sit: 1} + coinPile inside the cloud"
+    },
+    {
+     "t": 80.76,
+     "end": 81.56,
+     "cue": {
+      "word": "كله،",
+      "t": 80.76
+     },
+     "who": "lettering",
+     "action": "ALL MINE! inside the cloud; his real fingers curl",
+     "acting": "small greedy hand rub",
+     "library": "PERSON_HANDS.grip"
+    },
+    {
+     "t": 81.64,
+     "end": 82.44,
+     "cue": {
+      "word": "وخاف",
+      "t": 81.64
+     },
+     "who": "neighbour",
+     "action": "the cloud picture wipes; a sweat drop; brows turn worried",
+     "acting": "brow -0.6, pupils small, glance over his shoulder at her",
+     "library": "brow, gaze"
+    },
+    {
+     "t": 82.48,
+     "end": 83.28,
+     "cue": {
+      "word": "تهرب",
+      "t": 82.48
+     },
+     "who": "fx",
+     "action": "in the cloud: the wife tiptoes away",
+     "acting": "cloud wife looks back and smirks",
+     "library": "person inside cloud, sneak"
+    },
+    {
+     "t": 82.94,
+     "end": 83.74,
+     "cue": {
+      "word": "بنصيبها",
+      "t": 82.94
+     },
+     "who": "sack",
+     "action": "in the cloud she carries a sack marked 1/2; the real wife behind him hums and bags her half",
+     "acting": "she is unaware; rocking on her heels",
+     "library": "packLoad(['sack']) + label 1/2"
+    },
+    {
+     "t": 84.34,
+     "end": 85.14,
+     "cue": {
+      "word": "رجل",
+      "t": 84.34
+     },
+     "who": "fx",
+     "action": "in the cloud a faceless man in black outline with a ? for a face opens his arms to her",
+     "acting": "neighbour s jaw sets",
+     "library": "person drawn as a flat silhouette with ?"
+    },
+    {
+     "t": 84.84,
+     "end": 85.64,
+     "cue": {
+      "word": "آخر.",
+      "t": 84.84
+     },
+     "who": "neighbour",
+     "action": "the cloud pops; his face hardens, then the smile snaps back on as she looks up",
+     "acting": "brow +0.8 for 0.4 s, then the mask",
+     "library": "brow, mouth"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 80.8,
+     "text": "ALL MINE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 85.56
+   }
+  },
+  {
+   "id": "S10",
+   "start": 85.56,
+   "end": 97.46,
+   "paragraphs": [
+    5
+   ],
+   "set": "millHouse",
+   "cast": [
+    "wife",
+    "neighbour"
+   ],
+   "summary": "He asks for her half, she refuses, they pull at the sack. Greed wins: his shadow on the wall lifts the shovel, the lamp goes out. The killing is not shown.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "shake",
+    "notes": "Two-shot zoom 1.5 centred (620, 740). Panel-only shake (3 units) during the tug 90.7 to 92.3. At 93.5 tilt up to include the back wall for the shadow. Black from 95.9."
+   },
+   "composition": "Wife left with her sack, backing toward the pit rim (danger behind her), neighbour right. Lamp on the floor between them throws his shadow up the back wall (x 560..900, y 320..760).",
+   "actions": [
+    {
+     "t": 85.56,
+     "end": 86.36,
+     "cue": {
+      "word": "رفضت",
+      "t": 85.56
+     },
+     "who": "neighbour",
+     "action": "holds out an open palm: give it to me",
+     "acting": "false smile, eyes on the sack",
+     "library": "PERSON_HANDS.palmsUp (one hand)"
+    },
+    {
+     "t": 86.3,
+     "end": 87.1,
+     "cue": {
+      "word": "رفضت",
+      "t": 85.56
+     },
+     "who": "wife",
+     "action": "hugs the sack to her chest and shakes her head",
+     "acting": "brow +0.6, three head shakes (x offset 3 px)",
+     "library": "handLW/handRW on the sack"
+    },
+    {
+     "t": 87.54,
+     "end": 88.34,
+     "cue": {
+      "word": "المرأة",
+      "t": 87.54
+     },
+     "who": "wife",
+     "action": "steps back, chin up; her heel is one step from the pit",
+     "acting": "defiant; a pebble drops into the pit behind her",
+     "library": "walk back one step, footfalls"
+    },
+    {
+     "t": 88.46,
+     "end": 89.26,
+     "cue": {
+      "word": "تسلمه",
+      "t": 88.46
+     },
+     "who": "neighbour",
+     "action": "steps forward, both palms up, coaxing",
+     "acting": "smile too wide, lid 0.3",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 89.32,
+     "end": 90.12,
+     "cue": {
+      "word": "حصتها،",
+      "t": 89.32
+     },
+     "who": "wife",
+     "action": "turns her back on him, clutching the sack; label HER SHARE with an arrow",
+     "acting": "eyes shut, nose in the air",
+     "library": "S.label, S.arrow"
+    },
+    {
+     "t": 90.68,
+     "end": 91.48,
+     "cue": {
+      "word": "فاشتد",
+      "t": 90.68
+     },
+     "who": "neighbour",
+     "action": "grabs the sack; tug of war begins; his elbow knocks the lamp, which starts to rock",
+     "acting": "smile gone; both lean back (tip -0.15 and +0.15)",
+     "library": "sack stretch (scale x 1.25), swing() on the lamp"
+    },
+    {
+     "t": 91.6,
+     "end": 92.4,
+     "cue": {
+      "word": "الخلاف",
+      "t": 91.6
+     },
+     "who": "sack",
+     "action": "three pulls each way, feet skid, coins spill from the mouth of the sack",
+     "acting": "flush on both faces, teeth",
+     "library": "flush, kfn x keys, dustBurst, coin arcs"
+    },
+    {
+     "t": 92.34,
+     "end": 93.14,
+     "cue": {
+      "word": "بينهما.",
+      "t": 92.34
+     },
+     "who": "wife",
+     "action": "she wrenches it free; they stand panting, nose to nose",
+     "acting": "no blinks; 0.8 s of stillness",
+     "library": "breathe at 2x"
+    },
+    {
+     "t": 93.58,
+     "end": 94.38,
+     "cue": {
+      "word": "غلب",
+      "t": 93.58
+     },
+     "who": "fx",
+     "action": "his shadow on the back wall swells to 1.6x; his real hand finds the shovel handle",
+     "acting": "the man himself barely moves: only his fingers close",
+     "library": "hunterShadow(person pose, {scale: 1.6, lag: 2 frames})"
+    },
+    {
+     "t": 94.12,
+     "end": 94.92,
+     "cue": {
+      "word": "الطمع",
+      "t": 94.12
+     },
+     "who": "fx",
+     "action": "the shadow raises the shovel high though the man has not yet moved; coin eyes burn",
+     "acting": "true nature shown first on the wall",
+     "library": "hunterShadow with its own pose (aR raised)"
+    },
+    {
+     "t": 95.04,
+     "end": 95.84,
+     "cue": {
+      "word": "الجار",
+      "t": 95.04
+     },
+     "who": "wife",
+     "action": "sees the shadow, turns, eyes wide",
+     "acting": "mouth o, sack slips an inch, half step back to the rim",
+     "library": "eyes wide via lid 0 + brow -0.8, mouth 'o'"
+    },
+    {
+     "t": 95.76,
+     "end": 96.56,
+     "cue": {
+      "word": "فقتلها،",
+      "t": 95.76
+     },
+     "who": "set",
+     "action": "the lamp tips over: one 2 frame white flash, then the panel is black except the dying ember",
+     "acting": "no figures visible, no impact shown",
+     "library": "millHouse {dark: 1}; flash rect"
+    },
+    {
+     "t": 96.5,
+     "end": 97.3,
+     "who": "scarf",
+     "action": "in the ember light her yellow headscarf drifts down and settles on the floor",
+     "acting": "slow rocking fall, then nothing moves",
+     "library": "cloth quad on a seeded sway path (as featherFall)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 86.35,
+     "text": "NO!"
+    },
+    {
+     "t": 89.4,
+     "text": "HER SHARE"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 97.46
+   }
+  },
+  {
+   "id": "S11",
+   "start": 97.46,
+   "end": 109.06,
+   "paragraphs": [
+    5
+   ],
+   "set": "millHouse",
+   "cast": [
+    "wife",
+    "neighbour"
+   ],
+   "summary": "He puts her in the empty pit, sweeps up every coin and runs. Dawn is too close to fill the hole: the open pit stays.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Zoom 1.3 on the pit and mound; pan left with his run to the door at 102.3; return to a static wide of the empty mill (zoom 1.05) from 106.6."
+   },
+   "composition": "Seen from the front: mound at right, pit centre right. His back hides most of the lowering. Window top right shows the sky growing pale. Door left.",
+   "actions": [
+    {
+     "t": 97.46,
+     "end": 98.26,
+     "cue": {
+      "word": "وألقى",
+      "t": 97.46
+     },
+     "who": "neighbour",
+     "action": "lamp relit low; with his back to us he lowers a still shape over the rim",
+     "acting": "slow, mechanical; he looks away to the side while he does it",
+     "library": "wife: person {lie: 1, lid: 1}, clipped at the pit rim line; millHouse {dark: 0.6}"
+    },
+    {
+     "t": 98.22,
+     "end": 99.02,
+     "cue": {
+      "word": "جسدها",
+      "t": 98.22
+     },
+     "who": "wife",
+     "action": "only her hand and the edge of her red sleeve are seen sliding over the rim",
+     "acting": "limp, no face shown",
+     "library": "clip + y keyed"
+    },
+    {
+     "t": 99.24,
+     "end": 100.04,
+     "cue": {
+      "word": "الحفرة",
+      "t": 99.24
+     },
+     "who": "set",
+     "action": "the shape is gone below the rim; a small puff of dust",
+     "acting": "he straightens",
+     "library": "dustBurst"
+    },
+    {
+     "t": 99.84,
+     "end": 100.64,
+     "cue": {
+      "word": "الفارغة.",
+      "t": 99.84
+     },
+     "who": "neighbour",
+     "action": "stares into the pit for half a second, swallows, then his eyes snap to the gold",
+     "acting": "drop pulse, gaze switch in 2 frames, coinEyes",
+     "library": "gazePlan saccade"
+    },
+    {
+     "t": 100.9,
+     "end": 101.7,
+     "cue": {
+      "word": "أخذ",
+      "t": 100.9
+     },
+     "who": "neighbour",
+     "action": "sweeps both heaps into the sack with his forearms",
+     "acting": "frantic, coins spilling and snatched back",
+     "library": "coinPile n to 0, sack fill 0 to 1"
+    },
+    {
+     "t": 101.52,
+     "end": 102.32,
+     "cue": {
+      "word": "النقود",
+      "t": 101.52
+     },
+     "who": "neighbour",
+     "action": "heaves the sack onto his shoulder and staggers",
+     "acting": "squash under the weight (sq 0.9), one step sideways to catch balance",
+     "library": "landSquash, settleTo"
+    },
+    {
+     "t": 102.3,
+     "end": 103.1,
+     "cue": {
+      "word": "وهرب،",
+      "t": 102.3
+     },
+     "who": "neighbour",
+     "action": "runs to the door and out",
+     "acting": "bent forward, quick short steps, sack bouncing a beat late",
+     "library": "walk fast, footfalls, swing on the sack"
+    },
+    {
+     "t": 103.06,
+     "end": 103.86,
+     "cue": {
+      "word": "ولم",
+      "t": 103.06
+     },
+     "who": "neighbour",
+     "action": "his head comes back round the door: looks at the open pit, then at the shovel",
+     "acting": "brow -0.5, biting his lip",
+     "library": "peek from the door edge, gazePlan"
+    },
+    {
+     "t": 104.78,
+     "end": 105.58,
+     "cue": {
+      "word": "الوقت",
+      "t": 104.78
+     },
+     "who": "set",
+     "action": "the window sky pales and a first band of light climbs the wall",
+     "acting": "he looks up at the window: panic",
+     "library": "millHouse {u: 0.9 to 0.97}"
+    },
+    {
+     "t": 105.3,
+     "end": 106.1,
+     "cue": {
+      "word": "ليردم",
+      "t": 105.3
+     },
+     "who": "neighbour",
+     "action": "takes one step toward the shovel, reaching",
+     "acting": "anticipation that is never completed",
+     "library": "anticipate, PERSON_HANDS.reach"
+    },
+    {
+     "t": 106.0,
+     "end": 106.8,
+     "cue": {
+      "word": "الحفرة",
+      "t": 106.0
+     },
+     "who": "neighbour",
+     "action": "gives up, waves it away and bolts; one coin falls from the sack, rolls and tips flat by the mound",
+     "acting": "the coin is the last thing moving",
+     "library": "coin roll: x keyed, rotation from distance"
+    },
+    {
+     "t": 107.38,
+     "end": 108.18,
+     "cue": {
+      "word": "الفجر.",
+      "t": 107.38
+     },
+     "who": "set",
+     "action": "the empty mill: open pit, mound, shovel, scarf, one coin, grey light",
+     "acting": "hold; only the door swings and settles",
+     "library": "swing() on the door leaf"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 108.65,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 109.06
+   }
+  },
+  {
+   "id": "S12",
+   "start": 109.06,
+   "end": 113.36,
+   "paragraphs": [
+    6
+   ],
+   "set": "hut",
+   "cast": [
+    "miller"
+   ],
+   "summary": "Morning. The miller wakes happy and finds her side of the bed empty.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Zoom 1.5 on the mattress."
+   },
+   "composition": "Miller left half of the mattress, the empty half on the right; her scarf peg empty on the wall.",
+   "actions": [
+    {
+     "t": 109.06,
+     "end": 109.86,
+     "cue": {
+      "word": "استيقظ",
+      "t": 109.06
+     },
+     "who": "miller",
+     "action": "wakes, stretches, yawns, smiles: treasure day",
+     "acting": "arms up, long blink, open yawn",
+     "library": "lie 1 to 0, mouth 'o'"
+    },
+    {
+     "t": 110.06,
+     "end": 110.86,
+     "cue": {
+      "word": "الطحان",
+      "t": 110.06
+     },
+     "who": "miller",
+     "action": "turns to wake her and pats an empty mattress",
+     "acting": "smile holds one beat too long, then fades",
+     "library": "handRW to the mattress, 2 pats"
+    },
+    {
+     "t": 111.56,
+     "end": 112.36,
+     "cue": {
+      "word": "يجد",
+      "t": 111.56
+     },
+     "who": "miller",
+     "action": "looks round the room",
+     "acting": "saccades to door, window, peg; brows up; a ? pops",
+     "library": "gazePlan(…, 0.07)"
+    },
+    {
+     "t": 112.02,
+     "end": 112.82,
+     "cue": {
+      "word": "زوجته،",
+      "t": 112.02
+     },
+     "who": "miller",
+     "action": "calls once with a cupped hand, shrugs, gets up to go to work",
+     "acting": "mild puzzlement only: he trusts her",
+     "library": "PERSON_HANDS.cupMouth"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 111.7,
+     "text": "?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 113.0,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 113.36
+   }
+  },
+  {
+   "id": "S13",
+   "start": 113.36,
+   "end": 126.44,
+   "paragraphs": [
+    6
+   ],
+   "set": "millHouse",
+   "cast": [
+    "miller",
+    "donkey",
+    "wife"
+   ],
+   "summary": "Before sunrise, in the half dark, he harnesses the donkey as always and turns to his hopper. The donkey walks a few steps along the ring, sees what is in the pit and stops dead.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide zoom 1.1 until 122.2; push to the donkey s head (zoom 2.0) for 122.9 to 124.6; insert of the pit 124.96 to 125.8 (zoom 2.4 centred 650, 960); back to zoom 1.3."
+   },
+   "composition": "Miller and hopper far left (x 150), donkey starts front left of the ring (x 200, y 955) facing right, pit at (650, 962) still in gloom (dark 0.55): the audience can see the coin glint and the mound, the miller has his back to it.",
+   "actions": [
+    {
+     "t": 113.36,
+     "end": 114.16,
+     "cue": {
+      "word": "ثم",
+      "t": 113.36
+     },
+     "who": "set",
+     "action": "the mill in grey half light; the door opens",
+     "acting": "the pit and mound sit in the dim right half",
+     "library": "millHouse {u: 0.97, dark: 0.55, pit: {open: 1}}"
+    },
+    {
+     "t": 114.06,
+     "end": 114.86,
+     "cue": {
+      "word": "ذهب",
+      "t": 114.06
+     },
+     "who": "miller",
+     "action": "leads the donkey in by a rope, yawning",
+     "acting": "eyes half shut (lid 0.5), looking at his feet",
+     "library": "walk for both (no sliding), rope as a sagging line"
+    },
+    {
+     "t": 114.78,
+     "end": 115.58,
+     "cue": {
+      "word": "الطاحونة",
+      "t": 114.78
+     },
+     "who": "donkey",
+     "action": "follows him to the start of the ring",
+     "acting": "ears loose, calm, nodding walk",
+     "library": "donkey + walk + footfalls"
+    },
+    {
+     "t": 115.76,
+     "end": 116.56,
+     "cue": {
+      "word": "وربط",
+      "t": 115.76
+     },
+     "who": "miller",
+     "action": "hooks the beam to the harness and tugs it to test",
+     "acting": "routine hands, he does not look up",
+     "library": "handLW/handRW to the harness point"
+    },
+    {
+     "t": 116.58,
+     "end": 117.38,
+     "cue": {
+      "word": "الحمار",
+      "t": 116.58
+     },
+     "who": "miller",
+     "action": "pats its neck",
+     "acting": "the donkey flicks an ear and blinks",
+     "library": "earL keyed"
+    },
+    {
+     "t": 117.26,
+     "end": 118.06,
+     "cue": {
+      "word": "ليدور",
+      "t": 117.26
+     },
+     "who": "miller",
+     "action": "slaps its rump; a curved arrow shows the usual way round",
+     "acting": "cheerful click of the tongue",
+     "library": "S.arrow along the ring"
+    },
+    {
+     "t": 118.2,
+     "end": 119.0,
+     "cue": {
+      "word": "كعادته.",
+      "t": 118.2
+     },
+     "who": "miller",
+     "action": "turns his back and walks to the hopper at far left",
+     "acting": "this is why he never sees the pit",
+     "library": "walk"
+    },
+    {
+     "t": 118.94,
+     "end": 119.74,
+     "cue": {
+      "word": "تقدم",
+      "t": 118.94
+     },
+     "who": "donkey",
+     "action": "steps off along the front of the ring toward the right; the stone begins to turn",
+     "acting": "steady, head nodding",
+     "library": "millRing theta keyed; walk(dist)"
+    },
+    {
+     "t": 120.86,
+     "end": 121.66,
+     "cue": {
+      "word": "قليلًا",
+      "t": 120.86
+     },
+     "who": "donkey",
+     "action": "three more steps, a puff of dust at each",
+     "acting": "ears begin to turn forward: something ahead",
+     "library": "footfalls, earL/earR to 0.8"
+    },
+    {
+     "t": 122.18,
+     "end": 122.98,
+     "cue": {
+      "word": "توقف",
+      "t": 122.18
+     },
+     "who": "donkey",
+     "action": "stops dead two steps from the rim: forelegs braced, skid dust, the stone jolts still",
+     "acting": "tip -0.1, 2 frame squash, beam shudders",
+     "library": "impactSquash, dustBurst, tremble on the beam"
+    },
+    {
+     "t": 122.88,
+     "end": 123.68,
+     "cue": {
+      "word": "خائفًا؛",
+      "t": 122.88
+     },
+     "who": "donkey",
+     "action": "ears flat back, eyes wide, whole body shaking; backs half a step until the beam stops it",
+     "acting": "eyes 'wide', earL/earR -1, snort puffs",
+     "library": "donkey {eyes:'wide', snort} + tremble"
+    },
+    {
+     "t": 123.76,
+     "end": 124.56,
+     "cue": {
+      "word": "فقد",
+      "t": 123.76
+     },
+     "who": "camera",
+     "action": "pushes in on its head; a dotted line runs from its eye toward the pit",
+     "acting": "pupil shrinks",
+     "library": "S.arrow dashed"
+    },
+    {
+     "t": 124.58,
+     "end": 125.38,
+     "cue": {
+      "word": "رأى",
+      "t": 124.58
+     },
+     "who": "donkey",
+     "action": "extreme close on the wide eye, wet",
+     "acting": "wet: true, no blink",
+     "library": "wet"
+    },
+    {
+     "t": 124.96,
+     "end": 125.76,
+     "cue": {
+      "word": "الجسد",
+      "t": 124.96
+     },
+     "who": "wife",
+     "action": "insert: over the rim into the pit: in deep shadow her yellow scarf, a closed eyed face half hidden, a still hand",
+     "acting": "nothing moves; no wound, no blood",
+     "library": "person {lie: 1, lid: 1} under a navy overlay 0.5, clipped to the pit ellipse"
+    },
+    {
+     "t": 125.8,
+     "end": 126.6,
+     "cue": {
+      "word": "الحفرة،",
+      "t": 125.8
+     },
+     "who": "donkey",
+     "action": "back to the wide: the donkey shakes and gives one cracked half bray toward the miller",
+     "acting": "bray 0.4, head turned back to him (headTurn 0.6)",
+     "library": "donkey {bray, headTurn}"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 126.44
+   }
+  },
+  {
+   "id": "S14",
+   "start": 126.44,
+   "end": 130.96,
+   "paragraphs": [
+    6
+   ],
+   "set": "millHouse",
+   "cast": [
+    "miller",
+    "donkey"
+   ],
+   "summary": "The miller comes back, looks at everything except what is ahead, and does not understand.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "Two-shot of miller and donkey (zoom 1.5), framed so the pit is just outside the right edge: we know it is there."
+   },
+   "composition": "Miller behind the donkey s rump on the left, donkey facing right at the frame edge.",
+   "actions": [
+    {
+     "t": 126.44,
+     "end": 127.24,
+     "cue": {
+      "word": "أما",
+      "t": 126.44
+     },
+     "who": "miller",
+     "action": "hears the stone stop and turns from the hopper",
+     "acting": "brows up",
+     "library": "gaze"
+    },
+    {
+     "t": 127.32,
+     "end": 128.12,
+     "cue": {
+      "word": "صاحبه",
+      "t": 127.32
+     },
+     "who": "miller",
+     "action": "walks to the donkey s rump, hands on hips",
+     "acting": "head tilt, patient so far",
+     "library": "walk, PERSON_HANDS.hipsHands"
+    },
+    {
+     "t": 129.0,
+     "end": 129.8,
+     "cue": {
+      "word": "يفهم",
+      "t": 129.0
+     },
+     "who": "miller",
+     "action": "scratches his head; a ? pops; he checks the hooves, the harness, the stone",
+     "acting": "gaze visits three places, never forward; the donkey keeps looking from him to the pit",
+     "library": "PERSON_HANDS.headHold, gazePlan"
+    },
+    {
+     "t": 130.04,
+     "end": 130.84,
+     "cue": {
+      "word": "توقفه.",
+      "t": 130.04
+     },
+     "who": "miller",
+     "action": "pushes the rump with both hands; his feet slip, the donkey does not move",
+     "acting": "effort lean (tip 0.2), feet skating in place",
+     "library": "PERSON_HANDS.reachBoth"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 129.1,
+     "text": "?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 130.96
+   }
+  },
+  {
+   "id": "S15",
+   "start": 130.96,
+   "end": 138.44,
+   "paragraphs": [
+    7
+   ],
+   "set": "millHouse",
+   "cast": [
+    "miller",
+    "donkey"
+   ],
+   "summary": "Shouting, then the stick. The donkey pleads with its eyes, looks at the pit again and digs in.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "shake",
+    "notes": "Same two-shot, zoom 1.6. Panel-only shake 2 units on each blow (134.5, 135.4)."
+   },
+   "composition": "As S14. WHACK! lettering above the rump, clear of both faces.",
+   "actions": [
+    {
+     "t": 130.96,
+     "end": 131.76,
+     "cue": {
+      "word": "صرخ",
+      "t": 130.96
+     },
+     "who": "miller",
+     "action": "shouts at it through a cupped hand",
+     "acting": "mouth open, talk 1, brow +0.6; donkey ears flinch back",
+     "library": "PERSON_HANDS.cupMouth"
+    },
+    {
+     "t": 132.88,
+     "end": 133.68,
+     "cue": {
+      "word": "الرجل",
+      "t": 132.88
+     },
+     "who": "miller",
+     "action": "stamps a foot and points forward along the ring",
+     "acting": "stiff arm; dust at the stamp",
+     "library": "PERSON_HANDS.pointFwd, dustBurst"
+    },
+    {
+     "t": 133.6,
+     "end": 134.4,
+     "cue": {
+      "word": "الحمار",
+      "t": 133.6
+     },
+     "who": "donkey",
+     "action": "turns its head back to him, eyes wide and wet, then looks forward at the pit again",
+     "acting": "it is telling him; he reads it as defiance",
+     "library": "donkey {headTurn 0 to 1 to 0, wet}"
+    },
+    {
+     "t": 134.24,
+     "end": 135.04,
+     "cue": {
+      "word": "وضربه،",
+      "t": 134.24
+     },
+     "who": "miller",
+     "action": "raises the stick and brings it down on the rump (contact 134.5)",
+     "acting": "lift 0.25 s, whip down, damped rebound; donkey squashes 8 % and hops 3 units",
+     "library": "person {hold:'stick'} strike cycle; dustBurst"
+    },
+    {
+     "t": 135.18,
+     "end": 135.98,
+     "cue": {
+      "word": "لكنه",
+      "t": 135.18
+     },
+     "who": "donkey",
+     "action": "second blow (135.4): it leans back against the harness, hooves cutting furrows",
+     "acting": "tip -0.14, eyes shut on the hit",
+     "library": "tip, lid"
+    },
+    {
+     "t": 136.6,
+     "end": 137.4,
+     "cue": {
+      "word": "رفض",
+      "t": 136.6
+     },
+     "who": "donkey",
+     "action": "shakes its head and brays",
+     "acting": "headTurn oscillating, bray 1, ears back",
+     "library": "donkey {bray: 1}"
+    },
+    {
+     "t": 137.24,
+     "end": 138.04,
+     "cue": {
+      "word": "الحركة.",
+      "t": 137.24
+     },
+     "who": "donkey",
+     "action": "sinks onto its haunches: immovable",
+     "acting": "lie 0.4, sag 0.5; the miller lowers the stick and stares",
+     "library": "donkey {lie: 0.4, sag}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 131.0,
+     "text": "MOVE!"
+    },
+    {
+     "t": 134.5,
+     "text": "WHACK!"
+    },
+    {
+     "t": 136.65,
+     "text": "HEE HAW!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 138.44
+   }
+  },
+  {
+   "id": "S16",
+   "start": 138.44,
+   "end": 145.3,
+   "paragraphs": [
+    7
+   ],
+   "set": "millHouse",
+   "cast": [
+    "miller",
+    "donkey"
+   ],
+   "summary": "Rage. He draws a knife. The stabbing is told by two shadows on the wall and three flashes; then the donkey lies still. No wound or blood is drawn.",
+   "camera": {
+    "shot": "close",
+    "move": "whip",
+    "notes": "Close on the miller s face (zoom 2.2) 138.4 to 141.5; hold on the donkey s eye at 141.9; whip up to the back wall at 142.3 (shadows, zoom 1.4); cut down to the floor at 144.7 (zoom 1.3)."
+   },
+   "composition": "Face close-up centred. Wall shadows: miller s shadow left, donkey head and ears shadow right, between x 380 and 900, y 300..760. Final frame: donkey lying at the front of the ring, miller standing over it with his back to the pit.",
+   "actions": [
+    {
+     "t": 138.44,
+     "end": 139.24,
+     "cue": {
+      "word": "ازداد",
+      "t": 138.44
+     },
+     "who": "miller",
+     "action": "red dots climb his face from the chin, two steam puffs",
+     "acting": "brow +1, shoulders rising",
+     "library": "flush 0 to 1"
+    },
+    {
+     "t": 139.08,
+     "end": 139.88,
+     "cue": {
+      "word": "غضب",
+      "t": 139.08
+     },
+     "who": "miller",
+     "action": "throws the stick down; it bounces",
+     "acting": "fists shaking (tremble)",
+     "library": "hop arc on the stick, tremble"
+    },
+    {
+     "t": 139.66,
+     "end": 140.46,
+     "cue": {
+      "word": "الطحان،",
+      "t": 139.66
+     },
+     "who": "camera",
+     "action": "pushes in on his face",
+     "acting": "teeth set, lid 0.2, no blink",
+     "library": "CAM keys"
+    },
+    {
+     "t": 140.48,
+     "end": 141.28,
+     "cue": {
+      "word": "فأخذ",
+      "t": 140.48
+     },
+     "who": "miller",
+     "action": "his hand goes to his sash",
+     "acting": "eyes never leave the donkey",
+     "library": "handR to the hip"
+    },
+    {
+     "t": 141.5,
+     "end": 142.3,
+     "cue": {
+      "word": "سكينًا",
+      "t": 141.5
+     },
+     "who": "knife",
+     "action": "the knife comes up into frame with one glint star",
+     "acting": "cut to the donkey s wet eye for 0.4 s: the glint is reflected in it, the ears sink",
+     "library": "knife prop, glint"
+    },
+    {
+     "t": 142.32,
+     "end": 143.12,
+     "cue": {
+      "word": "وطعنه",
+      "t": 142.32
+     },
+     "who": "fx",
+     "action": "whip to the wall: his shadow arm falls once; a 2 frame white flash",
+     "acting": "only shadows; the donkey s ear shadows jerk",
+     "library": "hunterShadow of both figures; flash"
+    },
+    {
+     "t": 143.4,
+     "end": 144.2,
+     "cue": {
+      "word": "مرارًا",
+      "t": 143.4
+     },
+     "who": "fx",
+     "action": "twice more (143.4, 143.95), each with a flash; the ear shadows droop lower each time",
+     "acting": "the lamp chain sways; nothing else",
+     "library": "hunterShadow, swing"
+    },
+    {
+     "t": 144.2,
+     "end": 145.0,
+     "cue": {
+      "word": "حتى",
+      "t": 144.2
+     },
+     "who": "fx",
+     "action": "the arm shadow hangs; the donkey s shadow sinks out of the bottom of the wall",
+     "acting": "slow, 0.5 s",
+     "library": "y keyed"
+    },
+    {
+     "t": 144.72,
+     "end": 145.52,
+     "cue": {
+      "word": "مات.",
+      "t": 144.72
+     },
+     "who": "donkey",
+     "action": "floor: the donkey lies still on its side, the beam tilted; the knife lies dropped; the miller pants with his back to the pit",
+     "acting": "lie 1, lid 1, sag 1; his chest heaving, flush fading",
+     "library": "donkey {lie: 1, lid: 1, sag: 1}, breathe 2x on the miller"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 145.3
+   }
+  },
+  {
+   "id": "S17",
+   "start": 145.3,
+   "end": 152.2,
+   "paragraphs": [
+    7
+   ],
+   "set": "millHouse",
+   "cast": [
+    "miller",
+    "donkey"
+   ],
+   "summary": "The irony, for the audience only: he thinks stubborn; the donkey s last eye line leads to the pit.",
+   "camera": {
+    "shot": "wide",
+    "move": "crane",
+    "notes": "Slow pull back and up from zoom 1.3 to 1.05 so miller, donkey and pit are all in one frame; the miller faces left, away from the pit."
+   },
+   "composition": "Left to right: miller (x 300, facing left), donkey lying (x 440), pit (650), mound (800). His thought cloud upper left; the dotted eye line runs low along the floor to the right.",
+   "actions": [
+    {
+     "t": 145.3,
+     "end": 146.1,
+     "cue": {
+      "word": "لم",
+      "t": 145.3
+     },
+     "who": "camera",
+     "action": "begins the slow pull back",
+     "acting": "only his shoulders move",
+     "library": "CAM keys"
+    },
+    {
+     "t": 146.3,
+     "end": 147.1,
+     "cue": {
+      "word": "يعرف",
+      "t": 146.3
+     },
+     "who": "fx",
+     "action": "his thought cloud: a small donkey with heels dug in and angry brows, NO! over it",
+     "acting": "this is what he believes",
+     "library": "thoughtCloud + donkey {brow: 1, tip: -0.14}"
+    },
+    {
+     "t": 147.12,
+     "end": 147.92,
+     "cue": {
+      "word": "الحيوان",
+      "t": 147.12
+     },
+     "who": "donkey",
+     "action": "camera eases toward the donkey s closed eye",
+     "acting": "still",
+     "library": "CAM"
+    },
+    {
+     "t": 148.38,
+     "end": 149.18,
+     "cue": {
+      "word": "يخاف",
+      "t": 148.38
+     },
+     "who": "fx",
+     "action": "a round inset beside the donkey replays its wide frightened eye from 124.58",
+     "acting": "the truth, placed next to his belief",
+     "library": "inset circle (clip + iris) with donkey {eyes: wide, wet}"
+    },
+    {
+     "t": 149.02,
+     "end": 149.82,
+     "cue": {
+      "word": "مما",
+      "t": 149.02
+     },
+     "who": "fx",
+     "action": "a dotted line runs from the inset along the floor to the pit rim",
+     "acting": "draws on over 0.5 s",
+     "library": "dashed path, draw-on"
+    },
+    {
+     "t": 149.6,
+     "end": 150.4,
+     "cue": {
+      "word": "رآه،",
+      "t": 149.6
+     },
+     "who": "set",
+     "action": "the first grey light touches the rim: the fallen scarf shows",
+     "acting": "the miller is looking the other way",
+     "library": "millHouse {dark: 0.4}"
+    },
+    {
+     "t": 150.02,
+     "end": 150.82,
+     "cue": {
+      "word": "لا",
+      "t": 150.02
+     },
+     "who": "fx",
+     "action": "a red X strikes the stubborn donkey in his cloud",
+     "acting": "two strokes",
+     "library": "red X"
+    },
+    {
+     "t": 150.72,
+     "end": 151.52,
+     "cue": {
+      "word": "يعاند",
+      "t": 150.72
+     },
+     "who": "lettering",
+     "action": "caption label over the donkey: AFRAID, NOT STUBBORN",
+     "acting": "cloud crumbles and drops away",
+     "library": "S.label"
+    },
+    {
+     "t": 151.5,
+     "end": 152.3,
+     "cue": {
+      "word": "صاحبه.",
+      "t": 151.5
+     },
+     "who": "miller",
+     "action": "wipes his brow with his sleeve and sits down heavily on the stone base, still facing away",
+     "acting": "spent; sq 0.95 on the sit",
+     "library": "sit 1 seat 'bench'"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 146.4,
+     "text": "NO!"
+    },
+    {
+     "t": 150.75,
+     "text": "AFRAID, NOT STUBBORN"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 152.2
+   }
+  },
+  {
+   "id": "S18",
+   "start": 152.2,
+   "end": 165.52,
+   "paragraphs": [
+    8
+   ],
+   "set": "millHouse",
+   "cast": [
+    "miller",
+    "donkey",
+    "wife"
+   ],
+   "summary": "Sunrise. A shaft of light crosses the floor and shows him everything, one loss after another: wife, donkey, treasure.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Wide zoom 1.1. Follow the light shaft left to right 154.3 to 155.9; push to 1.6 on him at the rim 156.8 to 158.7; pull back to 1.1 for 159.7 to 161.6; small push to the mound at 163.1."
+   },
+   "composition": "Window top right throws a slanted shaft that sweeps from the stone to the pit. Miller rises at x 300, walks to the rim (x 540), kneels facing right; donkey behind him at 440.",
+   "actions": [
+    {
+     "t": 152.2,
+     "end": 153.0,
+     "cue": {
+      "word": "عندما",
+      "t": 152.2
+     },
+     "who": "set",
+     "action": "the window sky warms from grey to dawn yellow",
+     "acting": "slow; the miller sits with his head in his hands",
+     "library": "millHouse {u: 0.97 to 0.08}"
+    },
+    {
+     "t": 154.34,
+     "end": 155.14,
+     "cue": {
+      "word": "طلع",
+      "t": 154.34
+     },
+     "who": "set",
+     "action": "the sun s edge enters the window; a shaft of light lands on the floor at the stone",
+     "acting": "dust motes in the shaft",
+     "library": "yellow halftone wedge, keyed angle"
+    },
+    {
+     "t": 154.74,
+     "end": 155.54,
+     "cue": {
+      "word": "النهار",
+      "t": 154.74
+     },
+     "who": "set",
+     "action": "the shaft sweeps right across the lying donkey to the mound and the pit; the coin glints; the gloom lifts (dark to 0)",
+     "acting": "he lifts his head as the light passes his feet",
+     "library": "dark keyed, glint"
+    },
+    {
+     "t": 155.98,
+     "end": 156.78,
+     "cue": {
+      "word": "رأى",
+      "t": 155.98
+     },
+     "who": "miller",
+     "action": "his eyes follow the light to the pit; he stands",
+     "acting": "gaze travels slowly, then stops; lid 0",
+     "library": "gazePlan, sit 1 to 0"
+    },
+    {
+     "t": 156.82,
+     "end": 157.62,
+     "cue": {
+      "word": "زوجته",
+      "t": 156.82
+     },
+     "who": "miller",
+     "action": "three steps to the rim; looks down; freezes",
+     "acting": "the last step is half length; arms hang",
+     "library": "walk, footfalls"
+    },
+    {
+     "t": 157.56,
+     "end": 158.36,
+     "cue": {
+      "word": "ميتة",
+      "t": 157.56
+     },
+     "who": "miller",
+     "action": "falls to his knees and reaches both hands toward the pit",
+     "acting": "impact squash, mouth o, eyes wet",
+     "library": "kneel 1, impactSquash, PERSON_HANDS.reachBoth, wet"
+    },
+    {
+     "t": 157.9,
+     "end": 158.7,
+     "cue": {
+      "word": "ميتة",
+      "t": 157.56
+     },
+     "who": "wife",
+     "action": "in the pit, now lit: scarf, closed eyes, still hand, as in the 124.96 insert",
+     "acting": "no wound; held 0.8 s only",
+     "library": "person {lie: 1, lid: 1} clipped to the pit"
+    },
+    {
+     "t": 158.74,
+     "end": 159.54,
+     "cue": {
+      "word": "الحفرة،",
+      "t": 158.74
+     },
+     "who": "miller",
+     "action": "hands to his cheeks",
+     "acting": "tremble, a tear",
+     "library": "PERSON_HANDS.cheeks, tremble"
+    },
+    {
+     "t": 159.66,
+     "end": 160.46,
+     "cue": {
+      "word": "وحماره",
+      "t": 159.66
+     },
+     "who": "miller",
+     "action": "turns his head slowly back to the donkey as the camera pulls out",
+     "acting": "the turn takes a full second",
+     "library": "gazePlan, CAM"
+    },
+    {
+     "t": 160.86,
+     "end": 161.66,
+     "cue": {
+      "word": "ميتًا",
+      "t": 160.86
+     },
+     "who": "miller",
+     "action": "sees the knife on the floor, then his own hand; the dotted eye line from the donkey to the pit shows again for a moment",
+     "acting": "he understands: head drops, hand shakes",
+     "library": "tremble on the hand, dashed path alpha"
+    },
+    {
+     "t": 161.64,
+     "end": 162.44,
+     "cue": {
+      "word": "بجانبها،",
+      "t": 161.64
+     },
+     "who": "camera",
+     "action": "holds the wide: pit and donkey side by side, the man between them",
+     "acting": "stillness",
+     "library": "CAM hold"
+    },
+    {
+     "t": 163.06,
+     "end": 163.86,
+     "cue": {
+      "word": "والكنز",
+      "t": 163.06
+     },
+     "who": "miller",
+     "action": "looks at the mound: a dashed ghost outline of the coin pile appears beside the pit",
+     "acting": "eyes search the floor",
+     "library": "coinPile ghost (dashed outline)"
+    },
+    {
+     "t": 164.02,
+     "end": 164.82,
+     "cue": {
+      "word": "قد",
+      "t": 164.02
+     },
+     "who": "miller",
+     "action": "picks up the single coin left by the mound",
+     "acting": "holds it in an open palm",
+     "library": "handRW"
+    },
+    {
+     "t": 164.44,
+     "end": 165.24,
+     "cue": {
+      "word": "اختفى.",
+      "t": 164.44
+     },
+     "who": "coins",
+     "action": "the ghost outline fades; label GONE",
+     "acting": "he closes his fingers on the one coin",
+     "library": "alpha, S.label"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 164.5,
+     "text": "GONE"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 165.52
+   }
+  },
+  {
+   "id": "S19",
+   "start": 165.52,
+   "end": 169.44,
+   "paragraphs": [
+    8
+   ],
+   "set": "millHouse",
+   "cast": [
+    "miller",
+    "donkey"
+   ],
+   "summary": "He stays there, grieving for everything he has lost.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Static wide, zoom 1.1."
+   },
+   "composition": "Miller sitting on the floor between the pit and the donkey, centred low; three small loss icons in a row above him (y 430), clear of his face.",
+   "actions": [
+    {
+     "t": 165.52,
+     "end": 166.32,
+     "cue": {
+      "word": "بقي",
+      "t": 165.52
+     },
+     "who": "miller",
+     "action": "sinks from kneeling to sitting on the floor",
+     "acting": "slow, no bounce",
+     "library": "sit 1 seat 'floor'"
+    },
+    {
+     "t": 165.98,
+     "end": 166.78,
+     "cue": {
+      "word": "حزينًا",
+      "t": 165.98
+     },
+     "who": "miller",
+     "action": "head drops, wet eyes, one tear, a long blink",
+     "acting": "grief without gesture",
+     "library": "wet, lid ramp, head drop"
+    },
+    {
+     "t": 167.14,
+     "end": 167.94,
+     "cue": {
+      "word": "خسائره",
+      "t": 167.14
+     },
+     "who": "fx",
+     "action": "three small icons pop in a row above him: yellow scarf, donkey head, coin; each is crossed out in turn (167.14, 167.6, 168.14)",
+     "acting": "he does not look up",
+     "library": "iconBalloon icons without a tail, red X strikes"
+    },
+    {
+     "t": 168.14,
+     "end": 168.94,
+     "cue": {
+      "word": "كلها،",
+      "t": 168.14
+     },
+     "who": "coins",
+     "action": "the coin slips from his fingers, rolls a little way and tips flat",
+     "acting": "his hand stays open",
+     "library": "coin roll"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "match-cut",
+    "t": 169.44
+   }
+  },
+  {
+   "id": "S20",
+   "start": 169.44,
+   "end": 172.94,
+   "paragraphs": [
+    8
+   ],
+   "set": "road",
+   "cast": [
+    "neighbour"
+   ],
+   "summary": "Meanwhile the neighbour is far down the road with the sack.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Match the fallen coin to the rising sun disc. Slow track right with him, zoom 1.2."
+   },
+   "composition": "Dawn road, sun low at right. Neighbour small (s 0.6) walking away to the right, bent under the sack, long shadow toward us; a tree trunk in the foreground for him to pass behind.",
+   "actions": [
+    {
+     "t": 169.44,
+     "end": 170.24,
+     "cue": {
+      "word": "بينما",
+      "t": 169.44
+     },
+     "who": "set",
+     "action": "the round coin becomes the rising sun over a country road",
+     "acting": "match on shape and position",
+     "library": "countryRoad {u: 0.03} + sun at the coin s panel position"
+    },
+    {
+     "t": 170.18,
+     "end": 170.98,
+     "cue": {
+      "word": "الجار",
+      "t": 170.18
+     },
+     "who": "neighbour",
+     "action": "walks away to the right, bent under the heavy sack",
+     "acting": "short quick steps, sack sway a beat late",
+     "library": "person + packLoad(['sack']) on the shoulder; walk, footfalls"
+    },
+    {
+     "t": 171.3,
+     "end": 172.1,
+     "cue": {
+      "word": "مضى",
+      "t": 171.3
+     },
+     "who": "neighbour",
+     "action": "glances back once over his shoulder, then hurries on",
+     "acting": "no smile: brow -0.3, quick eyes",
+     "library": "gaze back, walk speed up"
+    },
+    {
+     "t": 171.76,
+     "end": 172.56,
+     "cue": {
+      "word": "بالمال،",
+      "t": 171.76
+     },
+     "who": "neighbour",
+     "action": "passes behind the tree and does not come out the other side; two coin twinkles where he went",
+     "acting": "gone",
+     "library": "countryRoad {front: true}, glint"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "match-cut",
+    "t": 172.94
+   }
+  },
+  {
+   "id": "S21",
+   "start": 172.94,
+   "end": 177.6,
+   "paragraphs": [
+    8
+   ],
+   "set": "millHouse",
+   "cast": [
+    "miller",
+    "donkey"
+   ],
+   "summary": "Back to the mill for the held ending: the miller alone in the morning light. THE END.",
+   "camera": {
+    "shot": "establishing",
+    "move": "pull-out",
+    "notes": "Very wide (zoom 1.0 easing to 0.95), the same framing as the first shot of the film."
+   },
+   "composition": "Same framing as 0.0, so the full ring is seen: stone still, donkey lying, pit open, miller small on the floor. THE END title in the upper third over the back wall.",
+   "actions": [
+    {
+     "t": 172.94,
+     "end": 173.74,
+     "cue": {
+      "word": "كما",
+      "t": 172.94
+     },
+     "who": "camera",
+     "action": "match from the sun back to the single coin on the mill floor, then the wide of the mill",
+     "acting": "nothing turns",
+     "library": "CAM, match-cut"
+    },
+    {
+     "t": 173.68,
+     "end": 174.48,
+     "cue": {
+      "word": "الحكاية.",
+      "t": 173.68
+     },
+     "who": "miller",
+     "action": "sits without moving; only dust motes drift in the light",
+     "acting": "one slow blink",
+     "library": "blink, seeded motes"
+    },
+    {
+     "t": 174.6,
+     "end": 175.4,
+     "who": "lettering",
+     "action": "THE END title, held to 177.6",
+     "acting": "quiet",
+     "library": "S.title"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 174.6,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 175.0,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 177.6
+   }
+  }
+ ],
+ "ending": {
+  "t": 172.94,
+  "description": "Match-cut back to the first framing of the film: the whole ring, the stone still, the donkey lying, the pit open, the miller sitting small in the shaft of morning light with one coin. Last word ends 174.34; THE END (S.title) from 174.6 held to 177.6 with one low quiet chime at 175.0."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان طحان يعيش مع زوجته ويعمل كل يوم في طاحونة يديرها حمار.|أحب الرجل زوجته كثيرًا، لكنها لم تبادله الحب؛|فقد كانت تميل إلى جار لهما، بينما كان الجار يبتعد عنها.",
+   "en": "A miller lived with his wife and worked each day at a mill turned by a donkey.|He loved her,|but she was drawn to a neighbor who kept his distance."
+  },
+  {
+   "p": 2,
+   "ar": "رأى الطحان في منامه شخصًا يقول له:|احفر في مكان معين من طريق الحمار حول الطاحونة، فهناك مال مدفون.|استيقظ فرحًا، وأخبر زوجته بالحلم، وطلب منها أن تحفظ السر.",
+   "en": "In a dream someone told the miller|to dig at a particular place along the donkey’s circular path, where money lay buried.|He told his wife and urged secrecy."
+  },
+  {
+   "p": 3,
+   "ar": "لم تحفظ الزوجة السر، بل أسرعت إلى الجار الذي كانت تحبه.|اتفقا على الحفر ليلًا، وحين نام الطحان|دخلا الطاحونة وحفرا في الموضع المذكور، فظهرت أمامهما كنوز من النقود.",
+   "en": "Instead, the wife told the neighbor she loved.|They agreed to dig at night and, while the miller slept,|uncovered a hoard of coins in the mill."
+  },
+  {
+   "p": 4,
+   "ar": "قالت الزوجة: نقسم المال نصفين،|ثم تترك زوجتك وأتخلص أنا من زوجي، فنتزوج ونجمع المال.|لكن الجار أراد أن يأخذ الكنز كله،|وخاف أن تهرب بنصيبها إلى رجل آخر.",
+   "en": "She suggested splitting the treasure,|leaving their spouses, marrying, and combining their shares.|But the neighbor wanted all the money|and feared she would leave him."
+  },
+  {
+   "p": 5,
+   "ar": "رفضت المرأة أن تسلمه حصتها، فاشتد الخلاف بينهما.|غلب الطمع على الجار فقتلها، وألقى جسدها في الحفرة الفارغة.|أخذ النقود وهرب، ولم يسعفه الوقت ليردم الحفرة قبل الفجر.",
+   "en": "She refused to surrender her share.|Driven by greed, the neighbor killed her, threw her body into the empty pit,|took the coins, and fled before dawn."
+  },
+  {
+   "p": 6,
+   "ar": "استيقظ الطحان فلم يجد زوجته،|ثم ذهب إلى الطاحونة وربط الحمار ليدور كعادته.|تقدم الحيوان قليلًا ثم توقف خائفًا؛ فقد رأى الجسد في الحفرة،|أما صاحبه فلم يفهم سبب توقفه.",
+   "en": "The miller woke to find his wife missing.|At the mill he harnessed the donkey,|which stopped in fright at the body in the pit.|The miller did not understand."
+  },
+  {
+   "p": 7,
+   "ar": "صرخ الرجل في الحمار وضربه، لكنه رفض الحركة.|ازداد غضب الطحان، فأخذ سكينًا وطعنه مرارًا حتى مات.|لم يكن يعرف أن الحيوان كان يخاف مما رآه، لا يعاند صاحبه.",
+   "en": "He shouted and beat the donkey, but it would not move.|Angry, he repeatedly stabbed it until it died,|unaware that it had been terrified rather than stubborn."
+  },
+  {
+   "p": 8,
+   "ar": "عندما طلع النهار رأى الطحان زوجته ميتة في الحفرة،|وحماره ميتًا بجانبها، والكنز قد اختفى.|بقي حزينًا على خسائره كلها، بينما كان الجار قد مضى بالمال، كما تروي الحكاية.",
+   "en": "At daylight the miller found his wife dead in the pit,|his donkey dead beside it, and the treasure gone.|The neighbor had escaped with the money."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "millHouse",
+   "reusable": true,
+   "effort": "L",
+   "description": "Cutaway donkey mill for any miller, oil press or water wheel story. World 1000 x 1230, floor line y 900 (floor fills to 1230, earth brown with dark dot shading). Walls x 60..940, roof beam y 250..280, ochre back wall with red dot shading. Door in the left wall (x 60..190, top y 560). Window in the back wall x 760..880, y 380..500 showing skyCycle(u). Millstone at centre: bed stone 230 wide x 80 high (x 385..615, y 820..900), runner stone 190 x 56 on top (y 764..820) with 6 radial stripes that slide with `turn`, a vertical post 16 wide from the runner to the roof beam, a wooden hopper 110 x 90 hung at (430, 640) and a flour tray at the left foot. Sweep beam: a 12 thick pole from the post at (500, 770) to the donkey collar. Ring: an ellipse worn into the floor, centre (500, 905), rx 320, ry 55 (back of the ring y 850, front y 960), drawn as a lighter band 26 wide with hoof dots. Sacks and a hopper table at far left (x 90..230). Pit anchor at ring angle about 62 degrees toward the front right: an ellipse 210 x 64 centred (650, 962), navy inside with blue dots, with a 14 unit lip; mound of earth 160 wide x 66 high at (800, 950).",
+   "implementation": "One function millHouse(ctx, o) in Library/sets returning anchors {floor, door, window, stone, post, ring {cx, cy, rx, ry}, pit {x, y, w, h, rim}, mound, hopper}. Static parts baked with bake(); live parts: door (townDoor), window (skyCycle clipped), runner stripes (turn), pit (open 0..1 scales the ellipse and its depth shade), mound (0..1 height), dark 0..1 (navy overlay with a clear disc at o.lampAt), light shaft (yellow halftone quad from the window, o.shaft 0..1 with its foot x keyed). Two passes: layer 'back' (walls, back half of the ring, stone), cast, then layer 'front' (pit lip and mound front edge) so a figure lowered into the pit is clipped by the rim. Helper millRing(theta) returns {x, y, dir, s, behind} on the ellipse: x = cx + rx cos(theta), y = cy + ry sin(theta), s = 0.9 + 0.1 * (sin + 1) / 2, behind = sin < 0 (draw before the stone), dir from the travel direction; leg phase from walk(distFn, t, {stride: GAIT.donkey * s}) where distFn = 0.72 * rx * theta(t)."
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned coin mound with a removable coin (n 0..40, seeded), ghost dashed outline option, plus coin(ctx, x, y, r, {rot, glint}).",
+   "implementation": "Seeded rows of yellow ellipses 24 x 12 with black outlines stacked as a triangle profile; draw the first n. Ghost: dashed outline of the hull. Coin: disc, inner ring, glint star via K lines."
+  },
+  {
+   "type": "prop",
+   "name": "shovel",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned shovel (AN-114): shaft 150 x 8 brown, blade 40 x 52 grey with a rounded tip, drawn about a grip point at 60 from the top with rot; usable as an icon.",
+   "implementation": "Two shapes (rect + rounded path) in a rotated frame; the digger s hands follow two points on the shaft through handLW/handRW."
+  },
+  {
+   "type": "prop",
+   "name": "knife",
+   "reusable": true,
+   "effort": "S",
+   "description": "Small knife: blade 60 x 14 white with a point, handle 30 x 12 brown, glint option.",
+   "implementation": "One path and one rect about the grip, rot field; glint as a 4 point star for 6 frames."
+  },
+  {
+   "type": "effect",
+   "name": "hunterShadow",
+   "reusable": true,
+   "effort": "M",
+   "description": "Planned wall shadow: a character s flat black shadow on a wall, scaled (1.4 to 1.6), 2 frames late, optionally with its own pose (true nature). Used for the neighbour (93.58 to 95.7) and for the miller and donkey (142.32 to 144.7).",
+   "implementation": "Draw the character with its (or an alternate) pose into an offscreen canvas, fill with black using globalCompositeOperation 'source-in', then draw it on the wall at alpha 0.8 with the scale about the lamp point, clipped to the wall rectangle. Pose time = t - 2/30 for the lag."
+  },
+  {
+   "type": "expression",
+   "name": "coinEyes",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned greed eyes: both pupils replaced by small gold coin discs with a glint, popping on with overshoot. Neighbour at 51.38, 61.62, 78.0, 94.12, 99.84.",
+   "implementation": "Draw after the person: two yellow discs r about 60 % of the eye at the eye positions returned by the figure (or measured: local x +-17, y about -196 at s 1), scale from settleTo."
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned anger flush: red dots climbing the face from the chin plus two steam puffs. Tug of war (91.6) and the miller s rage (138.44).",
+   "implementation": "Clip to the head circle, fill a red Ben-Day dot pattern below a rising line; puffs with dustBurst in white."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned wordless picture balloon (single and strip mode) for the told dream (38.88, 50.9), the wife s plan (70.44 to 74.5) and the loss icons (167.14).",
+   "implementation": "Rounded white box with a black brush outline and a tail to the speaker; icons are small scene callbacks popping with settleTo; red X strike as two K lines."
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned treasure light: tapering yellow rays, halftone disc and star glints, strength 0..1. In the dream (33.12) and from the pit (60.52).",
+   "implementation": "Fan of 9 yellow triangles from a point, alpha by strength, yellow halftone disc, 3 seeded glint stars."
+  },
+  {
+   "type": "motion",
+   "name": "sneak",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned tiptoe option for walk(): high knees and a short hold on each toe (57.18; inside the cloud at 82.48).",
+   "implementation": "A walk() option that shapes the phase with a hold at each contact and raises amp; body dips 4 units on each step."
+  },
+  {
+   "type": "motion",
+   "name": "digCycle",
+   "reusable": true,
+   "effort": "S",
+   "description": "Person digging with the shovel: push down (0.2 s), lever, throw over the shoulder side (0.25 s), return; one cycle about 0.6 s, with a dirt burst at the throw.",
+   "implementation": "A function of stroke phase returning shovel grip point and rot plus body tip and sq; hands by handLW/handRW; dirt with dustBurst in brown toward the mound."
+  }
+ ],
+ "owner_questions": [
+  "The wife s killing (95.76) is not shown: the neighbour s wall shadow raises the shovel, the lamp goes out, and only her scarf falls. Default: keep it off screen like this.",
+  "Her body is shown only as a still, closed eyed figure in deep shadow inside the pit (97.5 to 99.8, an 0.8 s insert at 124.96, and at 157.9), with no wound or blood. Default: show it this softly; the alternative is to show only the scarf and a hand.",
+  "The donkey s stabbing (142.32 to 144.2) is told by wall shadows and three white flashes, the knife never touches it on screen, then it lies still with closed eyes. Default: shadows only.",
+  "The beating (134.5, 135.4) is shown directly as two comic stick blows with WHACK! lettering. Default: keep two blows.",
+  "Added staging not in the script: hearts for the love triangle, the neighbour sweeping his step, the miller turning to his hopper so that he cannot see the pit, one coin left behind, and the final return to the mill after the neighbour s road. Default: keep them.",
+  "English lettering added: THE MILLER, THE MILL, THE DONKEY, THE NEIGHBOR, EVERY DAY, DIG!, SHH!, CLANK!, HALF, ALL MINE!, NO!, HER SHARE, MOVE!, WHACK!, HEE HAW!, AFRAID, NOT STUBBORN, GONE, Z Z Z, ONE NIGHT... Default: keep; AFRAID, NOT STUBBORN states the moral on screen.",
+  "SCRIPT: P8 English omits two Arabic phrases (he remained grieving over all his losses; as the tale tells) and P3 English omits that she hurried to the neighbour and that they dug at the stated spot. Both languages are kept verbatim; default: no change."
+ ],
+ "implementation_notes": [
+  "Cue every action to timeline.json word starts (w(p, n) in the template); the times in this plan are those starts.",
+  "Set LIFE.t = t each frame so everyone blinks; suppress blinks (noBlink) on the cold stare 71.84 to 73.7, the standoff 92.34 to 93.5, the miller 139.66 to 141.5 and the donkey s wide eye 122.88 to 125.8.",
+  "Draw order in millHouse: layer back, donkey if millRing behind, stone and beam, cast and donkey in front, pit contents (clipped to the pit ellipse), layer front (lip and mound), darkness overlay, lamp disc, light shaft, lettering, finish last.",
+  "The donkey s ring walk: key theta(t) only; position, facing, scale and draw order come from millRing(theta); legs from walk() on the arc distance so the hooves never slide. In S13 theta goes from the front left (about 150 degrees) to about 105 degrees and stops there, two strides short of the pit at 62 degrees.",
+  "The miller must never face the pit between 113.36 and 155.9: he works at the far left, stands behind the donkey s rump, and the right half of the mill stays at dark 0.55 until the light shaft at 154.34.",
+  "Darkness: dark 0.85 on entry (56.32) with the lamp disc following the lamp; 0.5 while they dig and talk; 1.0 from 95.76 (2 frames) to 97.46; 0.6 to 107; 0.55 from 113.36; 0.4 at 149.6; 0 by 155.5.",
+  "Violence rules: no blood anywhere, no contact frames for the shovel or the knife, flashes are 2 frames of paper white inside the panel only. The pit figure is the wife in lie 1, lid 1, under a navy overlay.",
+  "Sound: 8 quiet effects only, all in listed pauses (8.2 tick, 17.7 pop, 21.7 whoosh, 43.3 pop, 64.75 chime, 108.65 thud, 113.0 pop) plus one low chime at 175.0 after the last word. The killing, the beating and the stabbing have no effects: the narration has no pauses there and silence is stronger.",
+  "Use twoShot() for S4, S8, S10, S14 and S15; panel-only shake for the tug and the blows; the one transition card is ONE NIGHT... centred on 21.7 with the set change hidden at its midpoint.",
+  "Subtitles: 24 chunks as marked in the subtitles array (verbatim, checked by plancheck). Lettering never covers a face and stays inside the picture panel.",
+  "Costume check on first stills: the miller (beanSeller, brown) and the neighbour (villager, green) must be told apart at phone size; if not, give the neighbour pal {robe: blue}."
+ ],
+ "warnings": [
+  "Dark material (a murder and the killing of an animal). The plan keeps both off screen; see owner_questions 1 to 4 before animating.",
+  "millHouse is a large new set and the film depends on it (14 of 21 scenes). Build and approve it with stills first: ring perspective, donkey passing behind the stone, pit and mound, darkness and light shaft.",
+  "hunterShadow, coinEyes, flush, iconBalloon, goldGlow, coinPile, shovel and sneak are planned by other stories but not in Library yet; if they exist by then, use the Library versions.",
+  "The person figure is front facing only: lowering the body (97.46) is staged with the neighbour s back implied by hiding his face behind a raised shoulder and the mound; check that it reads, otherwise stage it wholly behind the mound.",
+  "Narration is dense from 65 s to 107 s and 118 s to 152 s (no pauses of 0.6 s): no sound effects are planned there.",
+  "The Library person has no profile, so the stick blow and the pushing at 130.04 rely on arm angles and body tip; test these poses on a contact sheet."
+ ]
+}

@@ -1,0 +1,2193 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-086",
+ "title": "The Caliph Hisham and the Arab Youth",
+ "duration": 168.135,
+ "end_hold": 3.0,
+ "logline": "A caliph out hunting barks at a shepherd boy without a greeting; the boy answers him back, is sentenced to death, and laughs his way to freedom with a tale of a hawk and a sparrow.",
+ "moral": "Good manners bind kings too, and a calm, clever word can turn away a ruler's anger.",
+ "tone": "Light court comedy with one stretch of real suspense: pompous caliph on a high horse, an unshakeable boy, nervous attendants, no blood.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.46,
+   "kind": "setup",
+   "cue": {
+    "word": "الخليفة",
+    "t": 0.46
+   },
+   "summary": "Caliph Hisham hunts a gazelle and outruns his companions."
+  },
+  {
+   "id": "B2",
+   "t": 10.54,
+   "kind": "setup",
+   "cue": {
+    "word": "فتى",
+    "t": 10.54
+   },
+   "summary": "He meets a shepherd boy and asks the way from the saddle."
+  },
+  {
+   "id": "B3",
+   "t": 23.1,
+   "kind": "inciting",
+   "cue": {
+    "word": "بالسلام،",
+    "t": 23.1
+   },
+   "summary": "No greeting: he orders the boy like a servant."
+  },
+  {
+   "id": "B4",
+   "t": 33.0,
+   "kind": "turn",
+   "cue": {
+    "word": "بشجاعة:",
+    "t": 33.0
+   },
+   "summary": "The boy stands and asks whether speech has no manners, even for a king."
+  },
+  {
+   "id": "B5",
+   "t": 40.66,
+   "kind": "rising",
+   "cue": {
+    "word": "غضب",
+    "t": 40.66
+   },
+   "summary": "Hisham rages and pulls rank; the boy answers that rank excuses nobody."
+  },
+  {
+   "id": "B6",
+   "t": 68.48,
+   "kind": "rising",
+   "cue": {
+    "word": "يمسكوا",
+    "t": 68.48
+   },
+   "summary": "The men arrive; the boy is seized and the executioner called."
+  },
+  {
+   "id": "B7",
+   "t": 86.2,
+   "kind": "suspense",
+   "cue": {
+    "word": "مرة،",
+    "t": 86.2
+   },
+   "summary": "The executioner asks once, twice, three times; the hand does not fall."
+  },
+  {
+   "id": "B8",
+   "t": 97.02,
+   "kind": "surprise",
+   "cue": {
+    "word": "ضحك",
+    "t": 97.02
+   },
+   "summary": "The boy laughs out loud."
+  },
+  {
+   "id": "B9",
+   "t": 108.02,
+   "kind": "reveal",
+   "cue": {
+    "word": "صقر",
+    "t": 108.02
+   },
+   "summary": "His tale: the hawk, the sparrow and the tiny meal."
+  },
+  {
+   "id": "B10",
+   "t": 122.8,
+   "kind": "turn",
+   "cue": {
+    "word": "فتح",
+    "t": 122.8
+   },
+   "summary": "The hawk opens its claws."
+  },
+  {
+   "id": "B11",
+   "t": 139.1,
+   "kind": "suspense",
+   "cue": {
+    "word": "سكت",
+    "t": 139.1
+   },
+   "summary": "The question is put to the caliph; silence."
+  },
+  {
+   "id": "B12",
+   "t": 141.8,
+   "kind": "climax",
+   "cue": {
+    "word": "انفجر",
+    "t": 141.8
+   },
+   "summary": "Hisham bursts out laughing."
+  },
+  {
+   "id": "B13",
+   "t": 154.74,
+   "kind": "comic",
+   "cue": {
+    "word": "جواهر",
+    "t": 154.74
+   },
+   "summary": "Freed, and his mouth filled with jewels."
+  },
+  {
+   "id": "B14",
+   "t": 159.3,
+   "kind": "moral",
+   "cue": {
+    "word": "حيًا",
+    "t": 159.3
+   },
+   "summary": "He leaves alive and honoured; the caliph greets first this time."
+  }
+ ],
+ "cast": [
+  {
+   "id": "hisham",
+   "name": "Caliph Hisham",
+   "library": "person",
+   "base": "person costume:'caliph', age 0.45, s 1.0",
+   "look": "Red robe, blue cape, big white turban with gold crown, dark beard with a little grey. Rides in S1 to S3 (sit:1, seat:'bench' on the horse saddle), on foot from 43.3.",
+   "new": false
+  },
+  {
+   "id": "youth",
+   "name": "the shepherd boy",
+   "library": "person",
+   "base": "person costume:'bedouin', s 0.84, new option youth:true (no moustache or beard, head 1.1x), age 0, pal shoes 'bare'",
+   "look": "Cream dotted robe, white head cloth with black cord, bare feet, plain wooden staff (hold:'stick'). A teenager: clearly smaller than the men, clearly not a small child.",
+   "new": false
+  },
+  {
+   "id": "vizier",
+   "name": "the vizier",
+   "library": "person",
+   "base": "person costume:'vizier', age 0.7",
+   "look": "As the Library preset. Silent conscience of the court: the one who winces.",
+   "new": false
+  },
+  {
+   "id": "guardA",
+   "name": "guard A (the keen one)",
+   "library": "person",
+   "base": "person new costume preset 'guard'",
+   "look": "Blue tunic, yellow sash, small pointed helmet over a neck cloth, moustache, spear.",
+   "new": true
+  },
+  {
+   "id": "guardB",
+   "name": "guard B (the soft one)",
+   "library": "person",
+   "base": "person costume 'guard' with pal {robe: green}, s 0.95, no moustache",
+   "look": "Same preset in green, rounder brows; sorry for the boy.",
+   "new": true
+  },
+  {
+   "id": "executioner",
+   "name": "the executioner",
+   "library": "person",
+   "base": "person new costume preset 'executioner', s 1.08",
+   "look": "Big, bare forearms, black sleeveless jerkin, red sash, red head wrap, heavy lids, curved sword. Deadpan, not a monster.",
+   "new": true
+  },
+  {
+   "id": "horse",
+   "name": "the caliph's horse",
+   "library": null,
+   "base": "new quadruped built like the Library deer",
+   "look": "White horse with blue Ben-Day shading, black mane and tail, red saddle cloth with yellow trim.",
+   "new": true
+  },
+  {
+   "id": "gazelle",
+   "name": "the gazelle",
+   "library": "deer",
+   "base": "Library deer at s 0.6 (optional sandy palette, off by default)",
+   "look": "Small, quick, seen only in S1.",
+   "new": false
+  },
+  {
+   "id": "sheep",
+   "name": "the flock (3 sheep and a lamb)",
+   "library": null,
+   "base": "planned sheep (AN-040, AN-042, AN-075), two wool palettes, lamb at s 0.55",
+   "look": "White and cream wool with blue dot shading, black faces.",
+   "new": true
+  },
+  {
+   "id": "hawk",
+   "name": "the hawk (in the tale)",
+   "library": "bird",
+   "base": "planned bird kind 'hawk', pal 0 falcon",
+   "look": "Brown, barred cream chest, hooked beak, heavy brow, yellow talons.",
+   "new": true
+  },
+  {
+   "id": "sparrow",
+   "name": "the sparrow",
+   "library": "bird",
+   "base": "planned bird kind 'sparrow', pal 0, s 0.5",
+   "look": "Chestnut cap, black bib, cream belly. In the tale and, at the very end, a real one.",
+   "new": true
+  }
+ ],
+ "sets": [
+  {
+   "id": "chaseRoad",
+   "library": null,
+   "description": "The planned tracking chase strip in loop mode with a dry steppe palette: Library sky (day) and sun, far rounded hills (y 700..880) at 0.3 parallax, ground y 900 with grass tufts and three stones repeating every 1400 units. Used only in S1.",
+   "new": true
+  },
+  {
+   "id": "pasture",
+   "library": null,
+   "description": "The planned open grazing meadow, 1600 x 1230, ground y 900, here near the hills: Library sky (day), sun at (1350, 170), two cloudFlat, a band of bare rounded hills in tan with red dot shading across the back (crests y 560..700), Library ground. Anchors: sitting rock at x 600 (140 wide, flat top y 852); acacia style Library tree() at x 1120; grass tufts; a dotted footpath leaving left toward the hills for the exit.",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "spear",
+   "library": null,
+   "description": "Guard spear: brown shaft 250 long, 8 wide, yellow leaf blade 36 long, red tassel that lags.",
+   "new": true
+  },
+  {
+   "id": "sword",
+   "library": null,
+   "description": "The planned sword (AN-082) as a curved scimitar 170 long with a glint; carried on the shoulder or held upright, never swung.",
+   "new": true
+  },
+  {
+   "id": "greetingIcon",
+   "library": null,
+   "description": "Greeting pictogram 90 px: an open white hand laid over a red heart inside a yellow disc with a black brush ring. States: pop, struck through with a red X, fallen (tilted on the ground), glint.",
+   "new": true
+  },
+  {
+   "id": "jewels",
+   "library": null,
+   "description": "Cut gems (red, blue, green, yellow; 5 facet polygons 18..34 px with a white glint) plus a small casket (jewelBox 110 x 80, lid open 0..1).",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 8.9,
+   "paragraphs": [
+    1
+   ],
+   "set": "chaseRoad",
+   "cast": [
+    "hisham",
+    "horse",
+    "gazelle",
+    "vizier",
+    "guardA",
+    "guardB"
+   ],
+   "summary": "The hunt. Caliph Hisham gallops after a gazelle; his vizier and two guards on foot fall farther and farther behind until they are gone.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Camera locked to the horse (horse held at world x 520, the strip scrolls right to left). Zoom 1.0 at 0, eased to 1.25 on the caliph by 6.1 so that the companions leave by the left edge. Keep the crown inside the panel top (crown tip about y 400)."
+   },
+   "composition": "Loop strip, ground y 900. Gazelle 300 units ahead of the horse at screen x 850, horse at 520, the three companions start at 250, 170, 90 and slide left as they tire. Far hills band y 700..880 scrolls at 0.3 speed, tufts at 1.0. Faces all above y 900.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 2.0,
+     "cue": {
+      "word": "خرج",
+      "t": 0.0
+     },
+     "who": "horse",
+     "action": "gallops in from the left edge to screen x 520 and holds there while the strip scrolls",
+     "acting": "ears back, mane and tail streaming (lag 3 frames), dust on each footfall",
+     "library": "new horse {gallop:1, ph, amp} + walk()/footfalls() on the scroll distance + dustBurst"
+    },
+    {
+     "t": 0.46,
+     "end": 2.6,
+     "cue": {
+      "word": "الخليفة",
+      "t": 0.46
+     },
+     "who": "hisham",
+     "action": "rides, leaning over the neck, one hand on the reins, the other pointing ahead",
+     "acting": "gaze locked on the gazelle (lookAt), brow 0.5 keen, grin, body bobs half a beat after the horse",
+     "library": "person {costume:'caliph', sit:1, seat:'bench'} placed from horse.saddle; handR = PERSON_HANDS.pointFwd; lurch-style lag"
+    },
+    {
+     "t": 1.28,
+     "end": 1.9,
+     "cue": {
+      "word": "هشام",
+      "t": 1.28
+     },
+     "who": "lettering",
+     "action": "label box CALIPH HISHAM with a short arrow to the rider, held 1.6 s",
+     "acting": "pops with overshoot, never over his face (place above the hills, left of the crown)",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 2.72,
+     "end": 3.6,
+     "cue": {
+      "word": "للصيد،",
+      "t": 2.72
+     },
+     "who": "gazelle",
+     "action": "bounds ahead in three long hops, looks back once",
+     "acting": "stretch on take-off (sq 1.12), squash on landing (0.88), wide eye on the look back",
+     "library": "deer {s:0.6} + hop() + landSquash()"
+    },
+    {
+     "t": 3.5,
+     "end": 4.1,
+     "who": "gazelle",
+     "action": "one extra high leap over a tuft in the pause",
+     "acting": "legs tucked, ears flat",
+     "library": "hop(h 120)"
+    },
+    {
+     "t": 4.1,
+     "end": 6.0,
+     "cue": {
+      "word": "وابتعد",
+      "t": 4.1
+     },
+     "who": "guardA",
+     "action": "the three runners drop back: guard A first, then guard B, then the vizier, each sliding toward the left edge",
+     "acting": "guard A still eager, guard B puffing (mouth o, lid 0.4), never in unison",
+     "library": "person {costume:'guard'} walk() with stagger(i); x keys 250 to -120"
+    },
+    {
+     "t": 5.16,
+     "end": 6.6,
+     "cue": {
+      "word": "أصحابه",
+      "t": 5.16
+     },
+     "who": "vizier",
+     "action": "holds his tall turban with one hand, waves the other, stumbles to a stop bent over",
+     "acting": "brow -0.6 worried, tip 0.15 forward, then hands on knees, sq 0.94 pants",
+     "library": "person {costume:'vizier', handL: PERSON_HANDS.headHold.L, handR: PERSON_HANDS.wave.R} + breathe()"
+    },
+    {
+     "t": 6.1,
+     "end": 7.4,
+     "cue": {
+      "word": "وهو",
+      "t": 6.1
+     },
+     "who": "camera",
+     "action": "push to zoom 1.25: the companions are out of frame, only horse and gazelle remain",
+     "acting": "the frame empties behind him: he is alone and has not noticed",
+     "library": "CAM keys"
+    },
+    {
+     "t": 6.74,
+     "end": 7.5,
+     "cue": {
+      "word": "يطارد",
+      "t": 6.74
+     },
+     "who": "hisham",
+     "action": "whips the reins hand, leans lower",
+     "acting": "gaze on the gazelle, teeth showing, tip 0.1",
+     "library": "handR pump, tip"
+    },
+    {
+     "t": 7.5,
+     "end": 8.9,
+     "cue": {
+      "word": "غزالًا.",
+      "t": 7.5
+     },
+     "who": "gazelle",
+     "action": "zigzags, then springs away up and out of the right edge; the horse slows to a trot",
+     "acting": "one flick of the white tail as it goes; horse ears come forward, head lifts",
+     "library": "hop() chain; horse gallop 1 to 0.3"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 4.9,
+     "text": "WAIT FOR US!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 3.75,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 8.9
+   }
+  },
+  {
+   "id": "S2",
+   "start": 8.9,
+   "end": 20.16,
+   "paragraphs": [
+    1
+   ],
+   "set": "pasture",
+   "cast": [
+    "hisham",
+    "horse",
+    "youth",
+    "sheep"
+   ],
+   "summary": "Alone now, the caliph finds a shepherd boy sitting on a rock among his sheep near the hills. He reins in right in front of him and asks the way from the saddle.",
+   "camera": {
+    "shot": "establishing",
+    "move": "pan",
+    "notes": "Open on the boy and flock (centre x 520, zoom 1.15), pan right to meet the rider at 10.5, settle as a two-shot centred x 760, y 660, zoom 1.1 that holds the mounted caliph head (y about 470) and the seated boy (head y about 730)."
+   },
+   "composition": "Pasture 1600 wide. Rock x 600 (top y 852). Boy seated on it facing right. Sheep at x 250, 380, 470, lamb at 690 in front. Acacia tree x 1120 behind. Horse stops at x 930 facing left. Strong diagonal: caliph high right, boy low left.",
+   "actions": [
+    {
+     "t": 8.9,
+     "end": 9.8,
+     "cue": {
+      "word": "وفي",
+      "t": 8.9
+     },
+     "who": "youth",
+     "action": "sits on the rock whittling the end of his staff, a lamb at his knee",
+     "acting": "gaze down at his hands, calm half smile, slow blinks",
+     "library": "person {costume:'bedouin', youth:true, s:0.84, sit:1, seat:'bench', hold:'stick'} + blink()"
+    },
+    {
+     "t": 9.0,
+     "end": 12.0,
+     "who": "sheep",
+     "action": "three sheep graze, heads down, never in step; the lamb chews and looks about",
+     "acting": "headDown cycles offset by seed; one sheep lifts its head toward the hoofbeats first",
+     "library": "planned sheep {headDown, chew} x3 + lamb (s 0.55)"
+    },
+    {
+     "t": 9.84,
+     "end": 11.0,
+     "cue": {
+      "word": "رأى",
+      "t": 9.84
+     },
+     "who": "hisham",
+     "action": "trots in from the right edge, sees the boy, sits up",
+     "acting": "gaze snaps to the boy (lookAt), brow lifts then settles to haughty (lid 0.3)",
+     "library": "horse walk() x 1750 to 1100; person gaze plan"
+    },
+    {
+     "t": 10.54,
+     "end": 11.6,
+     "cue": {
+      "word": "فتى",
+      "t": 10.54
+     },
+     "who": "lettering",
+     "action": "label THE SHEPHERD with arrow to the boy, held 1.5 s",
+     "acting": "placed above the sheep, left of his head",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 12.32,
+     "end": 13.8,
+     "cue": {
+      "word": "يرعى",
+      "t": 12.32
+     },
+     "who": "youth",
+     "action": "reaches down and scratches the lamb under the chin without looking up",
+     "acting": "gentle, unhurried; lamb leans into the hand (tip 0.08)",
+     "library": "handRW to the lamb head"
+    },
+    {
+     "t": 13.8,
+     "end": 15.4,
+     "cue": {
+      "word": "قرب",
+      "t": 13.8
+     },
+     "who": "camera",
+     "action": "small drift up to show the hills band behind the flock, then down to the two-shot",
+     "acting": "breath before the meeting",
+     "library": "CAM keys"
+    },
+    {
+     "t": 15.6,
+     "end": 16.5,
+     "cue": {
+      "word": "فتوقف",
+      "t": 15.6
+     },
+     "who": "horse",
+     "action": "pulls up hard at x 930: front legs brace, haunches drop, dust, head tosses",
+     "acting": "squash 0.9 then settle; reins tight; the sheep flinch and shuffle a step away, lamb hides behind the rock",
+     "library": "horse {brake} + settleTo() + dustBurst; sheep kick()"
+    },
+    {
+     "t": 16.34,
+     "end": 17.1,
+     "cue": {
+      "word": "أمامه",
+      "t": 16.34
+     },
+     "who": "hisham",
+     "action": "looms over the boy from the saddle, chin up",
+     "acting": "gaze down the nose at the boy, lid 0.35, mouth flat, no nod, no hand to chest",
+     "library": "person gaze [-0.6, 0.7]"
+    },
+    {
+     "t": 17.14,
+     "end": 19.2,
+     "cue": {
+      "word": "وسأله",
+      "t": 17.14
+     },
+     "who": "hisham",
+     "action": "jabs a finger at the boy, then sweeps it toward the horizon: which way?",
+     "acting": "talk 0.8, brow 0.6, impatient flick of the wrist",
+     "library": "aR angle keys (arm shapes that read at phone size) + talk"
+    },
+    {
+     "t": 19.3,
+     "end": 20.1,
+     "who": "horse",
+     "action": "stamps one front hoof in the pause and snorts",
+     "acting": "ear flick; the boy still has not looked up",
+     "library": "horse {raise} strike cycle + puff"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 19.7,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 20.16
+   }
+  },
+  {
+   "id": "S3",
+   "start": 20.16,
+   "end": 40.66,
+   "paragraphs": [
+    2
+   ],
+   "set": "pasture",
+   "cast": [
+    "hisham",
+    "horse",
+    "youth",
+    "sheep"
+   ],
+   "summary": "No greeting. The caliph barks at the boy as if at a servant. The boy lifts his head, stands, and asks politely whether speech has no manners, even for a king.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Two-shot from S2. At 30.2 a slow push toward the boy (zoom 1.1 to 1.5, centre x 640, y 700) as he lifts his head; at 37.1 widen back to include the crown for the word king."
+   },
+   "composition": "Caliph mounted at x 930 (head y 470), boy at x 600. The empty air between them carries the missing greeting icon. Eye line runs steeply down left; when the boy stands his eye line climbs it.",
+   "actions": [
+    {
+     "t": 20.16,
+     "end": 22.0,
+     "cue": {
+      "word": "لكن",
+      "t": 20.16
+     },
+     "who": "hisham",
+     "action": "stays stiff in the saddle, arms folded",
+     "acting": "lid 0.4, mouth frown, chin high",
+     "library": "PERSON_HANDS.folded"
+    },
+    {
+     "t": 22.5,
+     "end": 24.6,
+     "cue": {
+      "word": "بالسلام،",
+      "t": 23.1
+     },
+     "who": "fx",
+     "action": "a small greeting icon (open hand over a heart) pops in the gap between them, then is struck through by a red X and drops",
+     "acting": "icon pops with overshoot on the word, X slams 0.4 s later, falls with fallY",
+     "library": "new greetingIcon prop + K pop + fallY()"
+    },
+    {
+     "t": 25.08,
+     "end": 26.1,
+     "cue": {
+      "word": "كلم",
+      "t": 25.08
+     },
+     "who": "hisham",
+     "action": "leans out of the saddle and snaps his fingers at the boy twice",
+     "acting": "tip 0.14, brow 0.8, talk 1, gaze hard on the boy",
+     "library": "handR keys + anticipate()"
+    },
+    {
+     "t": 26.12,
+     "end": 27.4,
+     "cue": {
+      "word": "بصوت",
+      "t": 26.12
+     },
+     "who": "fx",
+     "action": "jagged red speech burst from the caliph with three shout lines; sound arcs travel toward the boy",
+     "acting": "burst sits above the horse head, clear of both faces",
+     "library": "S.emphasis burst + soundArcs"
+    },
+    {
+     "t": 27.46,
+     "end": 29.9,
+     "cue": {
+      "word": "كأنه",
+      "t": 27.46
+     },
+     "who": "hisham",
+     "action": "points straight down at the ground beside the horse: here, now",
+     "acting": "aR straight down, shoulders up, lid 0.3",
+     "library": "aR angle key"
+    },
+    {
+     "t": 28.44,
+     "end": 29.9,
+     "cue": {
+      "word": "يأمر",
+      "t": 28.44
+     },
+     "who": "sheep",
+     "action": "the nearest sheep stops chewing and stares at the caliph; the lamb peeks round the rock",
+     "acting": "heads turn one after another (stagger 4 frames)",
+     "library": "sheep headTurn + stagger()"
+    },
+    {
+     "t": 29.9,
+     "end": 31.6,
+     "cue": {
+      "word": "رفع",
+      "t": 30.2
+     },
+     "who": "youth",
+     "action": "hands stop on the staff; then the head lifts slowly, eyes arriving last",
+     "acting": "anticipation: 0.3 s stillness, head tilt up 6 px, lid 0.5 opening to 0, gaze travels up to the caliph face",
+     "library": "look() gaze plan + head drop key"
+    },
+    {
+     "t": 31.7,
+     "end": 32.9,
+     "cue": {
+      "word": "رأسه",
+      "t": 31.7
+     },
+     "who": "youth",
+     "action": "sets the staff against the rock and stands, unhurried, brushing his knees",
+     "acting": "sit 1 to 0 over 0.7 s with settle; back straight, no fear (no tremble)",
+     "library": "person sit blend + settleTo()"
+    },
+    {
+     "t": 33.0,
+     "end": 33.8,
+     "cue": {
+      "word": "بشجاعة:",
+      "t": 33.0
+     },
+     "who": "youth",
+     "action": "plants his feet, hand flat on his chest in greeting, small bow of the head",
+     "acting": "steady gaze up at the caliph, brow level, slight smile",
+     "library": "PERSON_HANDS.chest + head drop 4 px"
+    },
+    {
+     "t": 33.88,
+     "end": 36.4,
+     "cue": {
+      "word": "ألا",
+      "t": 33.88
+     },
+     "who": "youth",
+     "action": "speaks: open palm offered upward toward the caliph",
+     "acting": "talk 0.7, brow -0.3 (asking, not scolding), gaze never leaves him",
+     "library": "PERSON_HANDS.palmsUp.R + talk"
+    },
+    {
+     "t": 35.64,
+     "end": 37.0,
+     "cue": {
+      "word": "للكلام",
+      "t": 35.64
+     },
+     "who": "fx",
+     "action": "the greeting icon rises again from the ground between them, the red X falling off it",
+     "acting": "gentle pop, glint",
+     "library": "greetingIcon + K ease"
+    },
+    {
+     "t": 37.1,
+     "end": 39.7,
+     "cue": {
+      "word": "حتى",
+      "t": 37.1
+     },
+     "who": "camera",
+     "action": "widen to take in the crown high on the right",
+     "acting": "the boy small, the crown large: the question lands upward",
+     "library": "CAM keys"
+    },
+    {
+     "t": 39.76,
+     "end": 40.66,
+     "cue": {
+      "word": "ملكًا؟",
+      "t": 39.76
+     },
+     "who": "youth",
+     "action": "one finger points up at the crown",
+     "acting": "pointUp, brows raised, mouth closes on the question; the caliph jolts back in the saddle (sq 1.06), eyes wide",
+     "library": "PERSON_HANDS.pointUp; hisham settleTo()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 25.5,
+     "text": "YOU! BOY!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 40.66
+   }
+  },
+  {
+   "id": "S4",
+   "start": 40.66,
+   "end": 62.3,
+   "paragraphs": [
+    3
+   ],
+   "set": "pasture",
+   "cast": [
+    "hisham",
+    "horse",
+    "youth",
+    "sheep"
+   ],
+   "summary": "Hisham boils over, gets down from his horse and declares who he is. The boy answers evenly: rank does not excuse bad manners, and a greeting is everyone's right.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Cut to a close shot of the caliph face (zoom 2.3, centre on his head) for the flush, 40.66 to 43.2. Cut at 43.3 to a level two-shot (zoom 1.35, centre x 720, y 690): he is now on foot. Slow push on the boy from 51.3 to zoom 1.6."
+   },
+   "composition": "After the cut: caliph standing at x 840 facing left, boy at x 600 facing right, horse parked behind at x 1100 cropping grass. The caliph is a full head taller (s 1.0 against 0.84) and leans in; the boy does not lean back.",
+   "actions": [
+    {
+     "t": 40.66,
+     "end": 42.6,
+     "cue": {
+      "word": "غضب",
+      "t": 40.66
+     },
+     "who": "hisham",
+     "action": "close shot: red dots climb his face from the beard to the brow, two steam puffs from the turban",
+     "acting": "brow 1, eyes wide then narrowed (lid 0.3), mouth frown shaking; crown rattles",
+     "library": "planned flush expression + tremble() on the crown"
+    },
+    {
+     "t": 42.72,
+     "end": 43.3,
+     "cue": {
+      "word": "هشام",
+      "t": 42.72
+     },
+     "who": "hisham",
+     "action": "swings a leg (seen only as the body dropping out of the close frame)",
+     "acting": "the cut hides the dismount",
+     "library": "cut on the drop"
+    },
+    {
+     "t": 43.34,
+     "end": 44.4,
+     "cue": {
+      "word": "جرأته،",
+      "t": 43.68
+     },
+     "who": "hisham",
+     "action": "on foot now, stomps two steps to the boy, robe hem swinging",
+     "acting": "footfalls with dust, each step makes the lamb hop; tip 0.12",
+     "library": "walk() + footfalls() + kick()"
+    },
+    {
+     "t": 44.48,
+     "end": 45.7,
+     "cue": {
+      "word": "وقال",
+      "t": 44.48
+     },
+     "who": "hisham",
+     "action": "draws himself up, chest out, inhales",
+     "acting": "anticipation: sq 0.93 then stretch 1.07",
+     "library": "anticipate()"
+    },
+    {
+     "t": 45.82,
+     "end": 48.1,
+     "cue": {
+      "word": "أمير",
+      "t": 46.68
+     },
+     "who": "hisham",
+     "action": "thumps his chest then points at his own crown; crown glints",
+     "acting": "talk 1, brow 1, gaze down on the boy",
+     "library": "PERSON_HANDS.chest then pointUp + S.emphasis glint"
+    },
+    {
+     "t": 48.16,
+     "end": 49.8,
+     "cue": {
+      "word": "وإن",
+      "t": 48.16
+     },
+     "who": "hisham",
+     "action": "wags a finger an inch from the boy nose",
+     "acting": "boy blinks once, does not step back",
+     "library": "handRW toward the boy face (stop 30 units short)"
+    },
+    {
+     "t": 50.06,
+     "end": 51.2,
+     "cue": {
+      "word": "مقامه.",
+      "t": 50.6
+     },
+     "who": "hisham",
+     "action": "hand held high for his own rank, then pressed low, near the ground, for the boy place",
+     "acting": "two clear arm shapes: aR up 2.6 then down 0.4; a dotted height line and arrow at each",
+     "library": "aR keys + S.arrow"
+    },
+    {
+     "t": 51.3,
+     "end": 52.7,
+     "cue": {
+      "word": "أجابه",
+      "t": 51.3
+     },
+     "who": "youth",
+     "action": "waits a beat, then lifts his chin to answer; the push begins",
+     "acting": "slow blink, breath (breathe), gaze steady",
+     "library": "blink + breathe()"
+    },
+    {
+     "t": 53.72,
+     "end": 55.1,
+     "cue": {
+      "word": "المكانة",
+      "t": 54.06
+     },
+     "who": "youth",
+     "action": "gestures up to the crown",
+     "acting": "talk 0.6, open hand, no accusation in the brow",
+     "library": "PERSON_HANDS.pointUp.R"
+    },
+    {
+     "t": 55.22,
+     "end": 57.7,
+     "cue": {
+      "word": "تمنع",
+      "t": 55.22
+     },
+     "who": "youth",
+     "action": "brings the hand down to his heart: good character",
+     "acting": "chest, small nod on the word",
+     "library": "PERSON_HANDS.chest + head dip"
+    },
+    {
+     "t": 57.84,
+     "end": 59.1,
+     "cue": {
+      "word": "التحية",
+      "t": 58.52
+     },
+     "who": "fx",
+     "action": "the greeting icon appears in the boy open palm, offered across",
+     "acting": "pops on the word with a glint",
+     "library": "greetingIcon at P.hands"
+    },
+    {
+     "t": 59.18,
+     "end": 61.3,
+     "cue": {
+      "word": "لكل",
+      "t": 59.76
+     },
+     "who": "youth",
+     "action": "sweeps the palm across everyone: sheep, horse, caliph",
+     "acting": "gaze follows his own hand then returns to the caliph; the sheep and horse each get a tiny copy of the icon over the head (3 pops, staggered)",
+     "library": "aL sweep + stagger pops"
+    },
+    {
+     "t": 60.72,
+     "end": 61.4,
+     "cue": {
+      "word": "يلقاه.",
+      "t": 60.72
+     },
+     "who": "hisham",
+     "action": "speechless: mouth opens, shuts; fists clench at his sides",
+     "acting": "flush returns, lid 0.2, tremble 1.5",
+     "library": "tremble()"
+    },
+    {
+     "t": 61.5,
+     "end": 62.3,
+     "who": "set",
+     "action": "dust rises on the right horizon and three sets of running feet are heard; both heads turn right",
+     "acting": "boy calm glance, caliph triumphant grin spreading",
+     "library": "dustBurst far right + lookAt"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 46.7,
+     "text": "I AM THE CALIPH!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 61.85,
+     "kind": "rumble"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 62.3
+   }
+  },
+  {
+   "id": "S5",
+   "start": 62.3,
+   "end": 83.46,
+   "paragraphs": [
+    4
+   ],
+   "set": "pasture",
+   "cast": [
+    "hisham",
+    "youth",
+    "vizier",
+    "guardA",
+    "guardB",
+    "executioner",
+    "sheep",
+    "horse"
+   ],
+   "summary": "The caliph's men catch up. He has the boy seized and calls the executioner. The boy stands firm while the executioner, sword on his shoulder, waits for the signal.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide at zoom 0.95 (centre x 820, y 650) for the arrival and the seizing. From 74.0 push to zoom 1.3 on the trio boy, executioner, caliph hand. No shake."
+   },
+   "composition": "Final blocking, held to the end of S8: boy x 600; guard A x 520 and guard B x 690 holding his arms; executioner x 800 a half step behind, facing left; caliph x 980 facing left; vizier x 1120 behind him; horse x 1300. Sheep bunched at x 200..380 watching.",
+   "actions": [
+    {
+     "t": 62.3,
+     "end": 64.5,
+     "cue": {
+      "word": "وصل",
+      "t": 62.3
+     },
+     "who": "guardA",
+     "action": "the two guards run in from the right with spears, the vizier last, holding his turban; they pile up behind the caliph",
+     "acting": "guard A stops sharp, guard B bumps into him, the vizier doubles over puffing; staggered, never in unison",
+     "library": "walk() + footfalls() + stagger(); bump = lurch()"
+    },
+    {
+     "t": 64.54,
+     "end": 65.9,
+     "cue": {
+      "word": "في",
+      "t": 64.54
+     },
+     "who": "executioner",
+     "action": "walks in last, slow and heavy, curved sword resting on his shoulder",
+     "acting": "heavy lids (lid 0.45), no expression, each step a small ground shake inside the panel",
+     "library": "person {costume:'executioner', s:1.08} + walk() + footfalls()"
+    },
+    {
+     "t": 65.95,
+     "end": 66.7,
+     "who": "guardB",
+     "action": "both guards plant their spear butts on the ground in the pause",
+     "acting": "one beat, a frame apart",
+     "library": "spear prop + landSquash"
+    },
+    {
+     "t": 66.78,
+     "end": 68.4,
+     "cue": {
+      "word": "فأمر",
+      "t": 66.78
+     },
+     "who": "hisham",
+     "action": "whips an arm out at the boy without looking at his men",
+     "acting": "gaze stays on the boy, brow 1, talk 0.9",
+     "library": "aR straight out + anticipate()"
+    },
+    {
+     "t": 68.48,
+     "end": 69.8,
+     "cue": {
+      "word": "يمسكوا",
+      "t": 68.48
+     },
+     "who": "guardA",
+     "action": "the guards step to either side and take the boy by the upper arms",
+     "acting": "guard A firm, guard B glances at the boy face and looks away; the boy lets them, arms loose",
+     "library": "handLW/handRW to the boy elbows"
+    },
+    {
+     "t": 69.85,
+     "end": 70.45,
+     "who": "sheep",
+     "action": "the lamb runs to the flock; all sheep heads turn to the boy",
+     "acting": "ears down",
+     "library": "walk() + headTurn"
+    },
+    {
+     "t": 70.48,
+     "end": 71.9,
+     "cue": {
+      "word": "دعا",
+      "t": 70.82
+     },
+     "who": "hisham",
+     "action": "beckons with two fingers over his shoulder",
+     "acting": "does not turn his head",
+     "library": "handR keys"
+    },
+    {
+     "t": 71.14,
+     "end": 72.7,
+     "cue": {
+      "word": "الجلاد",
+      "t": 71.14
+     },
+     "who": "executioner",
+     "action": "steps forward past the caliph to x 800; label THE EXECUTIONER with arrow",
+     "acting": "vizier flinches as he passes (sq 0.95), guard B gulps",
+     "library": "walk(); S.label + S.arrow"
+    },
+    {
+     "t": 72.8,
+     "end": 74.0,
+     "cue": {
+      "word": "قتله.",
+      "t": 73.44
+     },
+     "who": "hisham",
+     "action": "draws a flat hand sideways through the air, then raises it high: the signal hand",
+     "acting": "cold now, flush gone, lid 0.4; the vizier covers his mouth",
+     "library": "aR keys; vizier PERSON_HANDS.mouthCover"
+    },
+    {
+     "t": 74.06,
+     "end": 76.4,
+     "cue": {
+      "word": "وقف",
+      "t": 74.06
+     },
+     "who": "youth",
+     "action": "straightens between the guards, feet together, chin level",
+     "acting": "no tremble at all (the guards tremble a little instead), slow blink, gaze on the caliph",
+     "library": "person upright, sq 1.02; guards tremble(0.6)"
+    },
+    {
+     "t": 75.98,
+     "end": 77.6,
+     "cue": {
+      "word": "ثابتًا،",
+      "t": 75.98
+     },
+     "who": "camera",
+     "action": "push in on the boy calm face between two spear shafts",
+     "acting": "stillness: only his eyes and breathing move",
+     "library": "CAM keys + breathe()"
+    },
+    {
+     "t": 77.7,
+     "end": 79.5,
+     "cue": {
+      "word": "الجلاد",
+      "t": 78.14
+     },
+     "who": "executioner",
+     "action": "lifts the sword off his shoulder and holds it upright at rest in both hands, blade up, well away from the boy",
+     "acting": "turns only his eyes to the caliph raised hand",
+     "library": "hold:'sword' prop on handRW; gaze plan"
+    },
+    {
+     "t": 79.66,
+     "end": 81.1,
+     "cue": {
+      "word": "إشارة",
+      "t": 79.66
+     },
+     "who": "hisham",
+     "action": "the raised hand hovers; a dotted line and small arrow mark where it would drop",
+     "acting": "fingers flex once",
+     "library": "S.arrow dashed + handR micro key"
+    },
+    {
+     "t": 81.22,
+     "end": 83.4,
+     "cue": {
+      "word": "أمام",
+      "t": 81.22
+     },
+     "who": "vizier",
+     "action": "camera eases back to show everyone watching the hand: guards, vizier, sheep, horse",
+     "acting": "all gazes converge on the hand (lookAt), blinks suppressed for the hold",
+     "library": "lookAt for the ensemble; noBlink"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 66.3,
+     "kind": "thud"
+    },
+    {
+     "t": 70.15,
+     "kind": "low drum"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 83.46
+   }
+  },
+  {
+   "id": "S6",
+   "start": 83.46,
+   "end": 104.38,
+   "paragraphs": [
+    5
+   ],
+   "set": "pasture",
+   "cast": [
+    "hisham",
+    "youth",
+    "executioner",
+    "guardA",
+    "guardB",
+    "vizier",
+    "sheep"
+   ],
+   "summary": "Three times the executioner asks; three times the hand does not fall and the boy stays calm. Then the boy laughs out loud, and the astonished caliph demands to know why.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "Medium on executioner and caliph hand (zoom 1.45, centre x 890, y 640) for the three asks, with a quick pan left to the boy face after each ask and back. From 96.1 hold a two-shot boy and caliph (zoom 1.3, centre x 790)."
+   },
+   "composition": "Counter 1, 2, 3 in the top left of the picture panel (style counter), well above the faces. The caliph hand is the highest thing in frame (about y 430); each ask it sinks a little.",
+   "actions": [
+    {
+     "t": 83.46,
+     "end": 85.3,
+     "cue": {
+      "word": "سأل",
+      "t": 83.46
+     },
+     "who": "executioner",
+     "action": "leans toward the caliph, eyebrows up, a tiny tilt of the sword: now?",
+     "acting": "talk 0.4, brow -0.5, tip 0.06",
+     "library": "person talk + tip"
+    },
+    {
+     "t": 86.2,
+     "end": 87.0,
+     "cue": {
+      "word": "مرة،",
+      "t": 86.2
+     },
+     "who": "fx",
+     "action": "counter shows 1; the caliph hand stays up, his eyes flick to the boy",
+     "acting": "dip 0.1 s before the beat; boy: slow blink",
+     "library": "countedBeats([86.2, 87.8, 89.26]) + S.counter"
+    },
+    {
+     "t": 87.8,
+     "end": 88.5,
+     "cue": {
+      "word": "ثانية،",
+      "t": 87.8
+     },
+     "who": "fx",
+     "action": "counter 2; executioner asks again, leaning further; the hand sinks 30 units",
+     "acting": "caliph brow less sure (0.6); boy looks at a passing butterfly",
+     "library": "countedBeats + aR key"
+    },
+    {
+     "t": 89.26,
+     "end": 89.9,
+     "cue": {
+      "word": "ثالثة:",
+      "t": 89.26
+     },
+     "who": "fx",
+     "action": "counter 3; executioner clears his throat; the hand sinks again, elbow bent",
+     "acting": "caliph gaze stuck on the boy, lid twitch; guard B shuts his eyes",
+     "library": "countedBeats + aR key; lid"
+    },
+    {
+     "t": 90.0,
+     "end": 90.5,
+     "who": "executioner",
+     "action": "shifts his grip on the sword in the pause",
+     "acting": "one small shrug",
+     "library": "handRW key"
+    },
+    {
+     "t": 90.56,
+     "end": 92.6,
+     "cue": {
+      "word": "هل",
+      "t": 90.56
+     },
+     "who": "executioner",
+     "action": "mouths the question with a questioning open palm",
+     "acting": "talk 0.7, palm up, gaze caliph",
+     "library": "PERSON_HANDS.palmsUp.L + talk"
+    },
+    {
+     "t": 92.72,
+     "end": 94.7,
+     "cue": {
+      "word": "وفي",
+      "t": 92.72
+     },
+     "who": "camera",
+     "action": "pan left to the boy: between the guards he is the only relaxed figure",
+     "acting": "guards stiff, boy shoulders loose",
+     "library": "CAM keys"
+    },
+    {
+     "t": 94.78,
+     "end": 96.0,
+     "cue": {
+      "word": "هادئًا.",
+      "t": 95.56
+     },
+     "who": "youth",
+     "action": "breathes evenly; a sheep bleats and he smiles at it",
+     "acting": "lid 0.2, mouth smile, gaze to the flock and back",
+     "library": "breathe() + gaze plan"
+    },
+    {
+     "t": 96.1,
+     "end": 97.0,
+     "cue": {
+      "word": "ثم",
+      "t": 96.1
+     },
+     "who": "youth",
+     "action": "the smile widens, cheeks puff, shoulders start to shake: he is holding in a laugh",
+     "acting": "anticipation for the laugh: sq 0.95, lid 0.6",
+     "library": "anticipate() + tremble(1)"
+    },
+    {
+     "t": 97.02,
+     "end": 98.0,
+     "cue": {
+      "word": "ضحك",
+      "t": 97.02
+     },
+     "who": "youth",
+     "action": "throws his head back and laughs out loud",
+     "acting": "eyes shut (lid 1), mouth open, sq bounce 3 times, the guards jolt and almost let go",
+     "library": "mouth 'open' + pulse(); guards settleTo()"
+    },
+    {
+     "t": 98.04,
+     "end": 99.4,
+     "cue": {
+      "word": "فتعجب",
+      "t": 98.04
+     },
+     "who": "hisham",
+     "action": "the signal hand drops to his side in surprise; he recoils half a step",
+     "acting": "eyes wide, brow -0.8, mouth o; crown slips a little; one look to camera (use once)",
+     "library": "settleTo() + gaze [0, 0.05] for 0.4 s"
+    },
+    {
+     "t": 99.42,
+     "end": 100.1,
+     "cue": {
+      "word": "هشام",
+      "t": 99.42
+     },
+     "who": "executioner",
+     "action": "lowers the sword point to the ground, looks from boy to caliph and back",
+     "acting": "saccades (2 frame snaps), baffled",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 100.12,
+     "end": 101.8,
+     "cue": {
+      "word": "وسأله",
+      "t": 100.12
+     },
+     "who": "hisham",
+     "action": "steps in close, both palms out: explain yourself",
+     "acting": "talk 0.9, brow -0.4 turning to 0.5, tip 0.1",
+     "library": "PERSON_HANDS.palmsUp + walk() one step"
+    },
+    {
+     "t": 101.88,
+     "end": 102.5,
+     "cue": {
+      "word": "يضحك",
+      "t": 101.88
+     },
+     "who": "hisham",
+     "action": "points at the boy still chuckling mouth",
+     "acting": "boy wipes an eye with his shoulder (hands held)",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 102.94,
+     "end": 104.38,
+     "cue": {
+      "word": "قريب",
+      "t": 102.94
+     },
+     "who": "hisham",
+     "action": "points at the sword",
+     "acting": "boy looks at the sword, then back, still smiling; he draws breath to speak",
+     "library": "pointDown toward the blade; boy gaze plan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 97.1,
+     "text": "HA HA!"
+    },
+    {
+     "t": 98.6,
+     "text": "?!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 90.25,
+     "kind": "tick"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 104.38
+   }
+  },
+  {
+   "id": "S7",
+   "start": 104.38,
+   "end": 125.98,
+   "paragraphs": [
+    6
+   ],
+   "set": "pasture",
+   "cast": [
+    "youth",
+    "hisham",
+    "hawk",
+    "sparrow",
+    "guardA",
+    "guardB"
+   ],
+   "summary": "The boy tells his tale inside a large story cloud: a hawk catches a little sparrow; the sparrow asks what use so small a bite is; the hawk thinks, opens its claws and lets it fly.",
+   "camera": {
+    "shot": "wide",
+    "move": "drift",
+    "notes": "Wide (zoom 1.0, centre x 790, y 560, lower than usual so the sky is free for the cloud). Slow drift up 30 units over the scene. The tellers stay in the bottom band of the picture, the cloud fills the sky."
+   },
+   "composition": "Story cloud 780 x 470 centred at world (790, 380), tail to the boy head at (600, 700). Boy bottom left, caliph bottom right (x 980), both looking up into the cloud. Inside: its own small sky, one bare branch at the cloud lower right. Birds at least 110 px on screen (hawk about 190, sparrow about 70).",
+   "actions": [
+    {
+     "t": 104.38,
+     "end": 106.9,
+     "cue": {
+      "word": "قال",
+      "t": 104.38
+     },
+     "who": "youth",
+     "action": "the guards have loosened their grip; he lifts one freed hand and begins",
+     "acting": "talk 0.6, gaze up to where the cloud will be, storyteller brows (-0.3)",
+     "library": "PERSON_HANDS.pointUp.R + talk"
+    },
+    {
+     "t": 106.94,
+     "end": 108.0,
+     "cue": {
+      "word": "سمعت",
+      "t": 106.94
+     },
+     "who": "fx",
+     "action": "the story cloud opens: three trail bubbles, then the cloud",
+     "acting": "caliph eyes follow the bubbles up; arms fold",
+     "library": "thoughtCloud(ctx, 790, 380, 780, 470, t, {tail:[600,700], inside})"
+    },
+    {
+     "t": 108.02,
+     "end": 108.5,
+     "cue": {
+      "word": "صقر",
+      "t": 108.02
+     },
+     "who": "hawk",
+     "action": "a hawk circles into the cloud from the top left, wings wide; label HAWK",
+     "acting": "heavy brow, gaze scanning down (saccades)",
+     "library": "planned bird {kind:'hawk', fly:true, flap} on a bezier + S.label"
+    },
+    {
+     "t": 108.54,
+     "end": 109.4,
+     "cue": {
+      "word": "أمسك",
+      "t": 108.54
+     },
+     "who": "hawk",
+     "action": "folds, stoops and snatches",
+     "acting": "anticipation: 0.25 s hang, then a fast dive (ease-in), 2 frame white flash on the catch, 3 feathers drift",
+     "library": "anticipate() + fallY() path + planned featherFall(n 3)"
+    },
+    {
+     "t": 109.4,
+     "end": 111.1,
+     "cue": {
+      "word": "عصفورًا",
+      "t": 109.4
+     },
+     "who": "sparrow",
+     "action": "the sparrow, tiny in the talons, is carried to the bare branch; label SPARROW",
+     "acting": "eyes wide, wings pinned; swings a beat late under the hawk",
+     "library": "planned bird {kind:'sparrow', s:0.5} + planned bird carry + swing()"
+    },
+    {
+     "t": 111.22,
+     "end": 113.9,
+     "cue": {
+      "word": "فقال",
+      "t": 111.22
+     },
+     "who": "sparrow",
+     "action": "on the branch under one talon, twists its head up and speaks",
+     "acting": "talk 0.9 (beak 1.4), brow up, not pleading: reasoning; hawk beak already open over it, pauses",
+     "library": "bird headRot -0.5, beak; hawk beak 1.6 hold"
+    },
+    {
+     "t": 114.08,
+     "end": 115.7,
+     "cue": {
+      "word": "ماذا",
+      "t": 114.08
+     },
+     "who": "sparrow",
+     "action": "frees one wing and points it at itself, then measures its own size with the wingtip",
+     "acting": "sag -0.8 wing point (bird mime)",
+     "library": "bird sag, headRot"
+    },
+    {
+     "t": 115.12,
+     "end": 117.5,
+     "cue": {
+      "word": "بلقمة",
+      "t": 115.12
+     },
+     "who": "fx",
+     "action": "small icon balloon from the sparrow: a single crumb on a huge empty plate",
+     "acting": "pops on the word, clear of both heads",
+     "library": "planned iconBalloon (single mode) or a small cloud() with a drawn plate"
+    },
+    {
+     "t": 117.68,
+     "end": 119.9,
+     "cue": {
+      "word": "لن",
+      "t": 117.68
+     },
+     "who": "sparrow",
+     "action": "points the wing at the hawk big belly and shakes its head",
+     "acting": "hawk looks down at its own belly, which rumbles (two small arcs)",
+     "library": "bird sag + headRot shake; soundArcs"
+    },
+    {
+     "t": 120.04,
+     "end": 122.4,
+     "cue": {
+      "word": "ففكر",
+      "t": 120.04
+     },
+     "who": "hawk",
+     "action": "closes its beak, tilts its head one way, then the other, eyes up and to the side",
+     "acting": "thinking saccades, one slow blink, brow easing from 1 to 0.2",
+     "library": "gazePlan(t, plan, 0.07) + headRot keys"
+    },
+    {
+     "t": 120.68,
+     "end": 122.4,
+     "cue": {
+      "word": "الصقر",
+      "t": 120.68
+     },
+     "who": "hisham",
+     "action": "outside the cloud, the caliph hand goes to his beard; his head tilts the same way as the hawk, half a second later",
+     "acting": "mirror of the hawk: he is already seeing himself",
+     "library": "PERSON_HANDS.chin + head tilt key (delay 0.5 s)"
+    },
+    {
+     "t": 122.48,
+     "end": 123.2,
+     "cue": {
+      "word": "فتح",
+      "t": 122.8
+     },
+     "who": "hawk",
+     "action": "lifts the foot and spreads the talons",
+     "acting": "anticipation 0.2 s, then the claws open with overshoot",
+     "library": "new hawk talon field open 0..1 + settleTo()"
+    },
+    {
+     "t": 123.3,
+     "end": 124.2,
+     "cue": {
+      "word": "مخالبه",
+      "t": 123.3
+     },
+     "who": "sparrow",
+     "action": "shakes out its feathers, hops once on the branch, bows its head to the hawk",
+     "acting": "sq 0.85 then 1.1, quick double blink",
+     "library": "hop() + landSquash()"
+    },
+    {
+     "t": 124.22,
+     "end": 125.98,
+     "cue": {
+      "word": "وتركه",
+      "t": 124.22
+     },
+     "who": "sparrow",
+     "action": "flies up and out through the edge of the cloud into the real sky; the cloud closes behind it in a soft pop",
+     "acting": "the caliph and the boy both follow it with their eyes across the real sky and off the top right",
+     "library": "bird fly on a bezier crossing the cloud edge; thoughtCloud p to 0; lookAt"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 125.98
+   }
+  },
+  {
+   "id": "S8",
+   "start": 125.98,
+   "end": 147.7,
+   "paragraphs": [
+    7
+   ],
+   "set": "pasture",
+   "cast": [
+    "youth",
+    "hisham",
+    "executioner",
+    "guardA",
+    "guardB",
+    "vizier",
+    "sheep"
+   ],
+   "summary": "The boy turns to Hisham: you too are a great king; what does your power gain by killing a poor shepherd? Everyone falls silent. Then the caliph bursts out laughing.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Level two-shot boy and caliph (zoom 1.4, centre x 790, y 680). At 139.1 cut out to the wide (zoom 0.95) for the silence. At 141.5 push to the caliph (zoom 1.6) for the laugh, then ease back to 1.2 to include the relieved men."
+   },
+   "composition": "Boy x 600, caliph x 980 moved in to x 860 for this scene. During the silence the frame is perfectly still and symmetrical: boy left, caliph right, the sword point on the ground between them.",
+   "actions": [
+    {
+     "t": 125.98,
+     "end": 127.7,
+     "cue": {
+      "word": "ثم",
+      "t": 125.98
+     },
+     "who": "youth",
+     "action": "his eyes come down from the sky where the sparrow went",
+     "acting": "slow, gaze travels down the caliph crown to his eyes",
+     "library": "look() gaze plan"
+    },
+    {
+     "t": 127.74,
+     "end": 129.7,
+     "cue": {
+      "word": "نظر",
+      "t": 127.74
+     },
+     "who": "youth",
+     "action": "turns square to the caliph; the guards let his arms go without being told",
+     "acting": "steady eye contact; the caliph meets it",
+     "library": "lookAt both ways; guards hands drop (stagger)"
+    },
+    {
+     "t": 131.18,
+     "end": 133.9,
+     "cue": {
+      "word": "وأنت",
+      "t": 131.18
+     },
+     "who": "youth",
+     "action": "open hand toward the caliph; a small hawk silhouette icon pops over the crown",
+     "acting": "talk 0.7, respectful, a slight bow on great",
+     "library": "PERSON_HANDS.palmsUp.R; hawk icon = bird kind hawk s 0.35 flat black"
+    },
+    {
+     "t": 133.98,
+     "end": 135.9,
+     "cue": {
+      "word": "فماذا",
+      "t": 133.98
+     },
+     "who": "youth",
+     "action": "turns the palm up empty and weighs it: what is gained?",
+     "acting": "brow -0.4, head tilt",
+     "library": "handR key"
+    },
+    {
+     "t": 136.48,
+     "end": 137.0,
+     "cue": {
+      "word": "قتلت",
+      "t": 136.48
+     },
+     "who": "youth",
+     "action": "glances once at the sword, no flinch",
+     "acting": "gaze to the blade and back in 0.4 s",
+     "library": "gaze plan"
+    },
+    {
+     "t": 137.1,
+     "end": 139.0,
+     "cue": {
+      "word": "راعيًا",
+      "t": 137.1
+     },
+     "who": "youth",
+     "action": "hand to his own chest; a small sparrow icon pops over his head, facing the hawk icon",
+     "acting": "smile, shoulders open, mouth closes on the question",
+     "library": "PERSON_HANDS.chest; sparrow icon s 0.3"
+    },
+    {
+     "t": 139.1,
+     "end": 140.8,
+     "cue": {
+      "word": "سكت",
+      "t": 139.1
+     },
+     "who": "camera",
+     "action": "cut wide: nobody moves. Only eyes: guards look at each other, the executioner at the caliph, the vizier at the ground",
+     "acting": "suspense by stillness; blinks suppressed; the two icons hang in the air",
+     "library": "noBlink; gaze plans only"
+    },
+    {
+     "t": 139.9,
+     "end": 141.0,
+     "cue": {
+      "word": "الحاضرون،",
+      "t": 139.9
+     },
+     "who": "sheep",
+     "action": "one sheep chews, loudly, the only motion in frame",
+     "acting": "small BAA lettering by the flock, far from the faces",
+     "library": "sheep chew"
+    },
+    {
+     "t": 140.84,
+     "end": 141.7,
+     "cue": {
+      "word": "ثم",
+      "t": 140.84
+     },
+     "who": "hisham",
+     "action": "his mouth corner twitches, cheeks puff, shoulders begin to shake",
+     "acting": "anticipation: sq 0.94, lid 0.5, the brow breaks from 1 to -0.3",
+     "library": "anticipate() + tremble(1.2)"
+    },
+    {
+     "t": 141.8,
+     "end": 143.1,
+     "cue": {
+      "word": "انفجر",
+      "t": 141.8
+     },
+     "who": "hisham",
+     "action": "throws his head back and roars with laughter, slapping his own knee",
+     "acting": "lid 1, mouth open, sq bounce, crown hops and lands crooked; the hawk and sparrow icons burst into small stars",
+     "library": "mouth 'open' + pulse() + landSquash on the crown"
+    },
+    {
+     "t": 143.18,
+     "end": 144.6,
+     "cue": {
+      "word": "ضاحكًا",
+      "t": 143.18
+     },
+     "who": "executioner",
+     "action": "shrugs and puts the sword back on his shoulder; the guards breathe out together, the vizier wipes his brow",
+     "acting": "staggered relief; guard B grins",
+     "library": "stagger() + settleTo()"
+    },
+    {
+     "t": 144.7,
+     "end": 146.4,
+     "cue": {
+      "word": "الفتى",
+      "t": 144.7
+     },
+     "who": "hisham",
+     "action": "wipes a tear, points at the boy head (wit) with a wagging finger",
+     "acting": "wet eyes, smile, brow -0.3",
+     "library": "wet:true + PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 146.52,
+     "end": 147.7,
+     "cue": {
+      "word": "وشجاعته.",
+      "t": 146.52
+     },
+     "who": "hisham",
+     "action": "claps the boy on the shoulder; the boy rocks a little and grins",
+     "acting": "boy settleTo, first big smile",
+     "library": "handRW to the boy shoulder + settleTo()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 140.3,
+     "text": "BAA"
+    },
+    {
+     "t": 141.95,
+     "text": "HA HA HA!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 147.7
+   }
+  },
+  {
+   "id": "S9",
+   "start": 147.7,
+   "end": 171.1,
+   "paragraphs": [
+    8
+   ],
+   "set": "pasture",
+   "cast": [
+    "hisham",
+    "youth",
+    "vizier",
+    "guardA",
+    "guardB",
+    "executioner",
+    "sheep",
+    "sparrow",
+    "horse"
+   ],
+   "summary": "Hisham orders the boy freed and has precious jewels placed in his mouth as a reward. The boy walks home alive and honoured with his flock, and this time the caliph greets him first. THE END.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "Medium two-shot (zoom 1.35) for the release and the jewels; small push to the boy face at 154.1 (zoom 1.7); from 157.7 pull out to the full wide (zoom 0.9, centre x 640) and pan left with the boy as he leaves. Hold the final picture from 167.8."
+   },
+   "composition": "Jewel business at face height, y about 700, between the two heads. Exit: the boy walks left along the ground line toward the hills, sheep falling in behind him; the caliph and his men stay on the right third. THE END title in the open sky above the flock, never over a face.",
+   "actions": [
+    {
+     "t": 147.7,
+     "end": 149.3,
+     "cue": {
+      "word": "أمر",
+      "t": 147.7
+     },
+     "who": "hisham",
+     "action": "still chuckling, waves the guards away with the back of his hand",
+     "acting": "talk 0.6, smile, crown still crooked",
+     "library": "handR flick keys"
+    },
+    {
+     "t": 150.0,
+     "end": 151.5,
+     "cue": {
+      "word": "بإطلاق",
+      "t": 150.0
+     },
+     "who": "guardA",
+     "action": "the guards step back two paces and ground their spears; the executioner walks off to the horse",
+     "acting": "guard B gives the boy a tiny nod; the boy rolls his shoulders and picks up his staff",
+     "library": "walk() + stagger()"
+    },
+    {
+     "t": 151.58,
+     "end": 153.2,
+     "cue": {
+      "word": "وطلب",
+      "t": 151.58
+     },
+     "who": "hisham",
+     "action": "snaps his fingers at the vizier, who hurries in with a small casket and opens the lid: glow",
+     "acting": "vizier bows, eager; the boy leans to look (tip 0.08)",
+     "library": "new jewelBox {open 0..1} + planned goldGlow"
+    },
+    {
+     "t": 153.32,
+     "end": 154.1,
+     "cue": {
+      "word": "توضع",
+      "t": 153.32
+     },
+     "who": "hisham",
+     "action": "picks out a big red gem between finger and thumb and holds it up",
+     "acting": "gem glints; the boy eyes cross toward it",
+     "library": "new jewels prop (single gem) on handRW + S.emphasis glint"
+    },
+    {
+     "t": 154.14,
+     "end": 154.7,
+     "cue": {
+      "word": "فمه",
+      "t": 154.14
+     },
+     "who": "youth",
+     "action": "opens his mouth in surprise and the caliph pops the gem between his teeth",
+     "acting": "mouth 'o' then a wide grin holding the red gem; brows right up",
+     "library": "person mouth 'open' + gem drawn at the mouth (new mouthItem field)"
+    },
+    {
+     "t": 154.74,
+     "end": 156.2,
+     "cue": {
+      "word": "جواهر",
+      "t": 154.74
+     },
+     "who": "hisham",
+     "action": "tips the casket: blue, yellow and green gems pour into the boy cupped hands, one bouncing off his nose",
+     "acting": "boy cheeks puffed (two more gems behind the first), eyes wide with delight",
+     "library": "PERSON_HANDS.reachBoth + jewels {n 8} falling with fallY() and rebound()"
+    },
+    {
+     "t": 156.26,
+     "end": 157.7,
+     "cue": {
+      "word": "مكافأة",
+      "t": 156.26
+     },
+     "who": "youth",
+     "action": "ties the gems into his head cloth corner and takes the big gem out of his mouth to say thank you, hand on chest",
+     "acting": "smile, small bow",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 157.76,
+     "end": 159.2,
+     "cue": {
+      "word": "خرج",
+      "t": 157.76
+     },
+     "who": "youth",
+     "action": "turns and walks left, staff in hand; the lamb trots to him, the sheep fall in behind one by one",
+     "acting": "light step, head up",
+     "library": "walk() + footfalls(); sheep walk() with stagger; turnFlip not needed (front facing figure, flip dir)"
+    },
+    {
+     "t": 159.3,
+     "end": 160.6,
+     "cue": {
+      "word": "حيًا",
+      "t": 159.3
+     },
+     "who": "hisham",
+     "action": "calls after him and, this time, greets first: hand flat on his chest, head bowed",
+     "acting": "the payoff of the whole film: warm brow, smile; the greeting icon pops over his hand",
+     "library": "PERSON_HANDS.chest + greetingIcon"
+    },
+    {
+     "t": 159.82,
+     "end": 161.5,
+     "cue": {
+      "word": "مكرمًا",
+      "t": 159.82
+     },
+     "who": "youth",
+     "action": "stops, turns, returns the greeting with his hand on his chest, then waves",
+     "acting": "both icons glint together; the guards copy the gesture a beat late",
+     "library": "PERSON_HANDS.chest then wave; stagger()"
+    },
+    {
+     "t": 161.58,
+     "end": 163.5,
+     "cue": {
+      "word": "واجه",
+      "t": 161.58
+     },
+     "who": "camera",
+     "action": "pull out wide and pan left with the boy and flock walking toward the hills",
+     "acting": "caliph group small on the right, remounting; the boy shadow long",
+     "library": "CAM keys"
+    },
+    {
+     "t": 163.58,
+     "end": 165.5,
+     "cue": {
+      "word": "بكلمات",
+      "t": 163.58
+     },
+     "who": "youth",
+     "action": "walks on, tossing the big gem once and catching it",
+     "acting": "gaze follows the gem up and down",
+     "library": "fallY()/hop arc for the gem + gaze plan"
+    },
+    {
+     "t": 166.44,
+     "end": 167.8,
+     "cue": {
+      "word": "عصفور",
+      "t": 166.44
+     },
+     "who": "sparrow",
+     "action": "a real sparrow flutters down and lands on the top of his staff; he looks up at it and smiles",
+     "acting": "sparrow landSquash, quick head turns; boy gaze up",
+     "library": "planned bird {kind:'sparrow', s:0.5} bezier + landSquash()"
+    },
+    {
+     "t": 168.0,
+     "end": 171.1,
+     "who": "lettering",
+     "action": "THE END title in the sky; the sparrow chirps once, the flock keeps walking in place toward the hills",
+     "acting": "held ending, small life only: blinks, sheep tails, sun rays",
+     "library": "S.title 'THE END' + finish last"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 150.1,
+     "text": "FREE!"
+    },
+    {
+     "t": 168.0,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 168.3,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 171.1
+   }
+  }
+ ],
+ "ending": {
+  "t": 168.0,
+  "description": "After the last word (167.82) the boy and his flock walk on toward the hills with a sparrow on his staff; the caliph's party is small on the right. THE END is held from 168.0 to 171.1 with a single quiet chime at 168.3."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "خرج الخليفة هشام يومًا للصيد،|وابتعد عن أصحابه وهو يطارد غزالًا.|وفي الطريق رأى فتى من أهل البادية يرعى غنمه قرب التلال،|فتوقف أمامه وسأله عن الطريق.",
+   "en": "One day Caliph Hisham went hunting|and rode away from his companions while pursuing a gazelle.|He stopped beside a young shepherd|and asked for directions."
+  },
+  {
+   "p": 2,
+   "ar": "لكن الخليفة لم يبدأ بالسلام،|بل كلم الفتى بصوت آمر كأنه يأمر أحد خدمه.|رفع الفتى رأسه وقال بشجاعة:|ألا تعرف أن للكلام أدبًا، حتى إذا كان قائله ملكًا؟",
+   "en": "Hisham did not greet him.|He spoke as if ordering a servant.|The boy looked up and boldly asked|whether a king, too, should not speak with courtesy."
+  },
+  {
+   "p": 3,
+   "ar": "غضب هشام من جرأته، وقال إنه أمير المؤمنين، وإن على الفتى أن يعرف مقامه.|أجابه الفتى بأن المكانة لا تمنع الإنسان من حسن الخلق،|وأن التحية حق لكل من يلقاه.",
+   "en": "Hisham angrily declared that he was the caliph.|The youth replied that high position did not excuse bad manners|and that everyone deserved a greeting."
+  },
+  {
+   "p": 4,
+   "ar": "وصل رجال الخليفة في تلك اللحظة،|فأمر هشام أن يمسكوا بالفتى.|ثم دعا الجلاد وطلب إليه قتله.|وقف الفتى ثابتًا، بينما أخذ الجلاد ينتظر إشارة التنفيذ أمام الحاضرين.",
+   "en": "The caliph’s men arrived.|Hisham had the youth seized|and ordered an executioner to kill him.|The young shepherd stood firm as the executioner awaited the signal."
+  },
+  {
+   "p": 5,
+   "ar": "سأل الجلاد الخليفة مرة، ثم ثانية، ثم ثالثة: هل أنفذ الأمر؟|وفي كل مرة ظل الفتى هادئًا.|ثم ضحك فجأة،|فتعجب هشام وسأله كيف يضحك وهو قريب من الموت.",
+   "en": "The executioner asked three times whether to carry out the order.|The boy remained calm,|then suddenly laughed.|Hisham demanded to know why he laughed so near death."
+  },
+  {
+   "p": 6,
+   "ar": "قال الفتى: سمعت عن صقر أمسك عصفورًا صغيرًا.|فقال له العصفور: ماذا تنتفع بلقمة صغيرة مثلي؟ لن أشبع جوعك.|ففكر الصقر في كلامه، ثم فتح مخالبه وتركه يطير.",
+   "en": "The boy told of a hawk that caught a little sparrow.|The sparrow asked what use such a tiny meal could be.|The hawk considered the question and released it."
+  },
+  {
+   "p": 7,
+   "ar": "ثم نظر الفتى إلى هشام وقال: وأنت أيضًا ملك عظيم،|فماذا يزيد سلطانك إذا قتلت راعيًا فقيرًا؟|سكت الحاضرون،|ثم انفجر الخليفة ضاحكًا من جواب الفتى وذكائه وشجاعته.",
+   "en": "The youth then asked what a mighty ruler|could gain by killing a poor shepherd.|The court fell silent;|Hisham burst out laughing at the boy’s wit and courage."
+  },
+  {
+   "p": 8,
+   "ar": "أمر هشام بإطلاق سراحه،|وطلب أن توضع في فمه جواهر ثمينة مكافأة له.|خرج الفتى حيًا مكرمًا|بعدما واجه غضب الخليفة بكلمات واضحة وقصة عصفور صغير.",
+   "en": "Hisham ordered his release|and had precious jewels placed in his mouth as a reward.|The boy left alive and honored,|having faced the ruler’s anger with a sparrow’s story."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "horse",
+   "description": "Side view riding horse for any rider story (kings, messengers, hunters). About 400 wide x 330 tall at s 1: back top 215 above the feet, head top 330. Fields: ph, amp (walk and trot), gallop 0..1 (front and rear pairs reach together with an air phase), brake 0..1 (front legs braced, haunches down), raise (front hoof), headDown 0..1 (graze), headTurn, ears -1..1, snort, tailSwish, mane lag, saddle:true, pal. Returns saddle point for a rider.",
+   "reusable": true,
+   "effort": "L",
+   "implementation": "Copy the Library deer structure (rounded box body 250 x 120, four two-segment legs driven by ph and amp, neck as a tapered quad, head 120 x 62 with a long muzzle). Mane and tail are brush stroke fans with 3 frame lag via delayed position. Wrap with acting() for gaze, lid, sq, tip. Rider: draw the far leg, the horse, then person {sit:1, seat:'bench'} at the saddle point with a bob delayed 2 frames."
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (guard, executioner)",
+   "description": "Two presets on the person costume layer. guard: short tunic, sash, pointed helmet with neck cloth, moustache optional. executioner: sleeveless jerkin (bare skin sleeves), wide sash, head wrap, broad shoulders (+12 %), heavy lid default 0.4.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Add two rows to the COSTUME table in cast/people.js (palettes and headwear); helmet is a half ellipse plus a triangle point and a rectangle cloth; the wrap is the turban shape flattened. No change to existing presets (regression stays identical)."
+  },
+  {
+   "type": "pose",
+   "name": "person youth option",
+   "description": "Opt-in youth:true: a teenager between child and adult: no facial hair, head 1.1x, used with s about 0.84.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "One branch beside the existing child option in cast/people.js: skip beard and moustache, scale the head group 1.1 about the neck."
+  },
+  {
+   "type": "character",
+   "name": "sheep",
+   "description": "The planned background sheep (about 190 x 150 at s 1) with ph, amp, headDown, chew, hop, plus headTurn; lamb = s 0.55.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "As planned by AN-040: wool as a ring of overlapping circles on a rounded body, black face wedge, four stick legs driven by walk()."
+  },
+  {
+   "type": "character",
+   "name": "hawk (bird kind)",
+   "description": "The planned bird of prey kind on the Library bird, with one extra opt-in field talon 0..1 (claws closed to spread) and the planned carry option.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "New entry in the BIRD palette table plus hooked beak path and brow bar; talons as three short tapered strokes per foot rotating open with the talon field."
+  },
+  {
+   "type": "character",
+   "name": "sparrow (bird kind)",
+   "description": "The planned sparrow kind on the Library bird, pal 0.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Palette entry and bib shape on the Library bird; no crest."
+  },
+  {
+   "type": "set",
+   "name": "pasture",
+   "description": "The planned 1600 wide meadow, here with a hill band, a sitting rock (x 600, top y 852) and one tree (x 1120).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "bake(): sky(), sun(), cloudFlat(), hills as 5 overlapping ellipses with K dot shading, ground(), tree(), rock as a rounded polygon with a brush outline."
+  },
+  {
+   "type": "set",
+   "name": "chaseRoad",
+   "description": "The planned loop strip for the hunt, steppe palette.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Two baked layers drawn twice with modulo offsets from the travelled distance (hills 0.3, ground 1.0)."
+  },
+  {
+   "type": "prop",
+   "name": "jewels (with jewelBox)",
+   "description": "Cut gems in four colours and a small casket with a hinged lid; used with the planned goldGlow.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Each gem a 5 point polygon with two facet lines and a glint; casket two rounded boxes, the lid rotating about the back edge."
+  },
+  {
+   "type": "prop",
+   "name": "greetingIcon",
+   "description": "Hand over heart pictogram with pop, X, fallen and glint states: the film's running sign for the missing and finally given greeting.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Disc, Library heart(), a mitten hand polygon; X = two brush strokes; states by parameters."
+  },
+  {
+   "type": "prop",
+   "name": "spear, sword",
+   "description": "Guard spear and the planned sword as a scimitar.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Flat shapes attached at P.hands of the carrier; tassel lags by sampling the hand position 3 frames earlier."
+  },
+  {
+   "type": "pose",
+   "name": "person mouthItem",
+   "description": "Opt-in field mouthItem: draws a small callback (here a gem) held between the teeth of an open grin, with cheeks 0..1 puff.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "After the mouth is drawn, call P.mouthItem(ctx) at the mouth centre; cheeks = two small arcs outside the mouth corners."
+  }
+ ],
+ "owner_questions": [
+  "The execution threat is shown without violence: the sword rests on the shoulder or is held upright and is never raised over the boy, and there is no blood (default: softened as described).",
+  "The jewels in the mouth are staged as comedy: one big gem popped between his teeth and the rest poured into his hands (default: this comic version rather than a mouth crammed full).",
+  "An unscripted payoff is added at 159.3: the caliph greets the boy first with his hand on his chest and the boy returns it (default: keep it, no words added).",
+  "The caliph rides a horse and gets down from it off screen at 43.3; his companions (a vizier and two guards) follow on foot (default: one horse only, to keep new assets modest).",
+  "Invented comic lettering: WAIT FOR US!, YOU! BOY!, I AM THE CALIPH!, HA HA!, ?!, BAA, HA HA HA!, FREE! (default: keep all eight plus THE END).",
+  "No LATER card is used because the whole story happens in one continuous meeting (default: none).",
+  "A real sparrow lands on the boy staff at the last words as a closing image (default: keep it)."
+ ],
+ "implementation_notes": [
+  "Start from Library/template; LIFE.t = t each frame for auto blinks; set noBlink during the two held silences (81.2 to 83.4 and 139.1 to 140.8).",
+  "Word cues with w(p, n) from timing.json; every action cue in this plan is a start time from timeline.md. The three counts use countedBeats([86.2, 87.8, 89.26]).",
+  "One blocking table for S5 to S8 (boy 600, guards 520 and 690, executioner 800, caliph 980 or 860, vizier 1120, horse 1300) so cuts never jump positions.",
+  "The person figure is front facing: show who addresses whom with gaze (lookAt), tip and arm angles; use aL/aR angles for the big readable shapes (signal hand, rank high and low, pointing at the crown).",
+  "The signal hand is one keyed value H(t): 1.0 from 73.4, 0.85 at 87.8, 0.65 at 89.26, 0 at 98.04. Draw the dashed drop line only 79.6 to 96.",
+  "Story cloud S7: thoughtCloud with inside(c, t) drawing its own pale sky and a branch; keep the hawk about 190 px and the sparrow about 70 px on screen; the exit of the sparrow is drawn twice (inside clip until the edge, then in the world) with a cut over at the cloud border.",
+  "Dismount is hidden by the cut at 43.3; the horse then idles (headDown graze cycle, tail swish) at x 1100, moved to 1300 in S5.",
+  "Sound: only the listed effects, in the listed pauses, master 0.6; nothing between 90.56 and 167.82 except the tick at 90.25. Laughs are lettering and acting only.",
+  "Panel-only shake is not needed; the executioner steps use a 2 px panel bump at most.",
+  "Call finish last; subtitles from the subtitles array of this plan (verbatim, checked by program)."
+ ],
+ "warnings": [
+  "The horse is the one large new drawing (effort L); if time is short it can be reduced to walk, gallop and brake only.",
+  "The person figure has no profile and no real mounting pose: the rider is the seated pose placed on the saddle, so check the leg overlap on the horse flank in a still before animating.",
+  "Six human figures share the frame in S5 to S8; at zoom 0.95 each is about 215 px tall on screen, so keep lettering and labels out of the head band (y 640..760) and check phone legibility with a contact sheet.",
+  "Hawk and sparrow kinds, sheep, pasture, chaseRoad, sword, flush, featherFall, goldGlow and iconBalloon are planned assets that may not exist in Library yet; build whichever are missing in the story and move them to Library after approval.",
+  "No LATER transition is used (continuous time); plancheck reports this as a warning."
+ ]
+}

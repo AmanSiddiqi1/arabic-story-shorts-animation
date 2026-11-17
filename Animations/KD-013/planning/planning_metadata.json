@@ -1,0 +1,103 @@
+{
+ "story_id": "KD-013",
+ "title": "The Ascetic and the Thieves",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T12:06:24",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a98060a9f3357b5fe.jsonl",
+ "agent_id": "a98060a9f3357b5fe",
+ "model_messages": {
+  "claude-fable-5-2": 20
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "668a22a2ed053b88c42af8fcbeb153dc8abb99c73a5b3865d9f58a14497cde8d",
+  "paragraphs": 8,
+  "segments": [
+   "KD-013-P01-S01",
+   "KD-013-P01-S02",
+   "KD-013-P01-S03",
+   "KD-013-P01-S04",
+   "KD-013-P01-S05",
+   "KD-013-P01-S06",
+   "KD-013-P01-S07",
+   "KD-013-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/KD-013_The_Ascetic_and_the_Thieves_full_slowed.mp3",
+  "sha256": "3c119a16b0b25db2054210cd2d8343e20cfa940ab61255a07d82e32d8b7fe5db",
+  "duration": 162.544
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/KD-013_The_Ascetic_and_the_Thieves_full_slowed.mp3.words.json",
+  "sha256": "375f76307e4192be782d5a8cf017be1138c14cbffa1a352071a0621b19cff0bd",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.991
+ },
+ "library_rev": "7721db2",
+ "scenes": 19,
+ "actions": 158,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "goat",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (ascetic, plus thief disguise items)",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "countryRoad",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "marketStreet",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "rope (lead)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "dogIcon, balanceScale, sack, coin",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "dream wash",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "spiralEyes",
+   "effort": "S"
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "New drawing load is above the usual four: goat (M), ascetic costume and disguise items (M), countryRoad (M), market stall (S) plus small props. marketStreet, thoughtCloud, dream wash, flush, person sit and the costume layer are planned by other stories but not yet in Library; if this film is built first it must create them.",
+  "The word اللص in paragraph 4 (65.62) has an interpolated time; the THIEF 2 label is cued to الثاني at 65.62 instead.",
+  "به at 148.10 is interpolated and shares its time with كانوا; scene S18 starts on that boundary, so check the cut against the audio.",
+  "Three similar encounters in a row are the main risk of monotony: vary the place (milestone, bush, wall), the entrance (skid in, rise from bush, stride in), the camera and the ascetic's reaction as specified.",
+  "The asDog morph must read as his imagination, not as magic: keep it under the dream wash and never show it in an objective shot."
+ ]
+}

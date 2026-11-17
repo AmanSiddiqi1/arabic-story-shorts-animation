@@ -1,0 +1,89 @@
+{
+ "story_id": "KD-012",
+ "title": "The Hare and the Elephants",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T12:00:31",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-aa6bcee23aeed9ac0.jsonl",
+ "agent_id": "aa6bcee23aeed9ac0",
+ "model_messages": {
+  "claude-fable-5-2": 18
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "d040d8a8fc1be1272230588e4843792e61fefa9eb3f486c30eebf85d4b057e6f",
+  "paragraphs": 8,
+  "segments": [
+   "KD-012-P01-S01",
+   "KD-012-P01-S02",
+   "KD-012-P01-S03",
+   "KD-012-P01-S04",
+   "KD-012-P01-S05",
+   "KD-012-P01-S06",
+   "KD-012-P01-S07",
+   "KD-012-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/KD-012_The_Hare_and_the_Elephants_full_slowed.mp3",
+  "sha256": "7378404141eeaccb9e1955d50dc71178954f53d792c2758b71466196883054ef",
+  "duration": 164.795
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/KD-012_The_Hare_and_the_Elephants_full_slowed.mp3.words.json",
+  "sha256": "becef70b69de4d02e80780625c9e6adfc5378deaff46039e3665cebfa56a3a7a",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "5fc1ffb",
+ "scenes": 11,
+ "actions": 137,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "lakeShore",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "pond",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "burrow",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "rock",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "moonReflection",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "elephant crown / talk / wide eyes",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "bumpChain",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Some narration words run long in the word timings (for example 108.56 and 81.08), so the listed start of the next word can be late or early by a few tenths; check the cues at 82.70, 96.52 and 109.90 against the audio on the first stills.",
+  "The underground cutaway and the oblique lake share one side view; if they clash, draw the cutaway as an inset panel with its own brush border.",
+  "The king is given a crown and the herd is three elephants (one small scout); the script says only \"a herd\" and \"one elephant\".",
+  "A cloud hides the moon at 97.7 so that the king's question makes sense; the narration does not mention it.",
+  "The elephant has no rear-foot lift, so the retreat gag at 142.0 uses ears and head only.",
+  "The hare has no wink; the group beat at 70.3 uses a long blink unless a per-eye lid is added."
+ ]
+}

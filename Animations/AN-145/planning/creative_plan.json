@@ -1,0 +1,3140 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-145",
+ "title": "Al-Maamun and the Pyramids of Egypt",
+ "duration": 173.861,
+ "end_hold": 4.0,
+ "logline": "A caliph digs into a pyramid for treasure, spends a fortune on a tiny tunnel, and finds gold worth exactly what the digging cost.",
+ "moral": "Greed for what others built can cost as much as it gains; great monuments outlast kings, and wisdom is knowing when to stop.",
+ "tone": "Dry comedy of accounts (the level scale, PROFIT 0) inside a tall, awed frame; the last third turns calm and reflective. No villains, no violence.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 2.62,
+   "kind": "setup",
+   "cue": {
+    "word": "الخليفة",
+    "t": 2.62
+   },
+   "summary": "Caliph al-Maamun arrives in Egypt."
+  },
+  {
+   "id": "B2",
+   "t": 6.96,
+   "kind": "reveal",
+   "cue": {
+    "word": "الأهرامات",
+    "t": 6.96
+   },
+   "summary": "The pyramids are revealed by a camera tilt; he is astonished at the stones and the height."
+  },
+  {
+   "id": "B3",
+   "t": 16.24,
+   "kind": "inciting",
+   "cue": {
+    "word": "كنوز",
+    "t": 16.24
+   },
+   "summary": "He hears people talk of treasure hidden inside and wants to know what they hide."
+  },
+  {
+   "id": "B4",
+   "t": 21.8,
+   "kind": "rising",
+   "cue": {
+    "word": "قرر",
+    "t": 21.8
+   },
+   "summary": "He decides to open one pyramid and even to remove a large part of it."
+  },
+  {
+   "id": "B5",
+   "t": 35.44,
+   "kind": "comic",
+   "cue": {
+    "word": "قاومت",
+    "t": 35.44
+   },
+   "summary": "The huge stones resist the tools: picks bounce and bend."
+  },
+  {
+   "id": "B6",
+   "t": 46.44,
+   "kind": "rising",
+   "cue": {
+    "word": "وأنفق",
+    "t": 46.44
+   },
+   "summary": "Many days pass and the pay chest empties on men, tools and hauling."
+  },
+  {
+   "id": "B7",
+   "t": 58.56,
+   "kind": "suspense",
+   "cue": {
+    "word": "نفق",
+    "t": 58.56
+   },
+   "summary": "All of it buys only a small tunnel, and nothing appears."
+  },
+  {
+   "id": "B8",
+   "t": 68.88,
+   "kind": "turn",
+   "cue": {
+    "word": "مالًا",
+    "t": 68.88
+   },
+   "summary": "Then money and treasure are found in the passage."
+  },
+  {
+   "id": "B9",
+   "t": 82.32,
+   "kind": "surprise",
+   "cue": {
+    "word": "ساوت",
+    "t": 82.32
+   },
+   "summary": "Weighed against the cost, the value equals the expenses exactly: no more, no less."
+  },
+  {
+   "id": "B10",
+   "t": 93.76,
+   "kind": "climax",
+   "cue": {
+    "word": "يربح",
+    "t": 93.76
+   },
+   "summary": "He realises he has gained nothing from the costly attempt."
+  },
+  {
+   "id": "B11",
+   "t": 103.12,
+   "kind": "resolution",
+   "cue": {
+    "word": "بوقف",
+    "t": 103.12
+   },
+   "summary": "He takes the find, drops the idea of demolition and orders the work stopped."
+  },
+  {
+   "id": "B12",
+   "t": 111.94,
+   "kind": "emotion",
+   "cue": {
+    "word": "عجائب",
+    "t": 111.94
+   },
+   "summary": "The tale praises the pyramids as wonders built of great stones set exactly."
+  },
+  {
+   "id": "B13",
+   "t": 138.42,
+   "kind": "suspense",
+   "cue": {
+    "word": "حراسًا",
+    "t": 138.42
+   },
+   "summary": "Old storytellers imagine jewels, weapons, books and unseen guardians inside."
+  },
+  {
+   "id": "B14",
+   "t": 144.04,
+   "kind": "reveal",
+   "cue": {
+    "word": "أسطورية",
+    "t": 144.04
+   },
+   "summary": "These are legends of the story, not confirmed history."
+  },
+  {
+   "id": "B15",
+   "t": 164.62,
+   "kind": "moral",
+   "cue": {
+    "word": "الأهرامات",
+    "t": 164.62
+   },
+   "summary": "Kings and builders are gone; the pyramids remain, and al-Maamun stops seeking profit under them."
+  }
+ ],
+ "cast": [
+  {
+   "id": "caliph",
+   "name": "Caliph al-Maamun",
+   "library": "person",
+   "base": "person costume:'caliph', age 0.35",
+   "look": "Library caliph preset (red robe, yellow trim, big white turban with crown and jewel) with age 0.35 so the beard is black with a little grey; s 0.8 in the face view, s 0.5 in the far view, s 0.42 in the ending. Proud chest, hands on hips by default (PERSON_HANDS.hipsHands).",
+   "new": false
+  },
+  {
+   "id": "vizier",
+   "name": "the vizier and accountant",
+   "library": "person",
+   "base": "person costume:'vizier', age 0.6",
+   "look": "Library vizier preset (navy robe, red cape, tall turban, grey pointed beard). Carries the ledger; the cautious one who keeps the accounts. s 0.75.",
+   "new": false
+  },
+  {
+   "id": "w1",
+   "name": "worker 1 (the eager one)",
+   "library": "person",
+   "base": "person costume:'villager', age 0.1",
+   "look": "Green tunic villager, young, s 0.75. Swings first and hardest. Also one of the two gossips in S3.",
+   "new": false
+  },
+  {
+   "id": "w2",
+   "name": "worker 2 (the tired one)",
+   "library": "person",
+   "base": "person costume:'servant'",
+   "look": "White tunic, red flat cap, moustache, s 0.75. Always half a beat late, heavy lids (lid 0.3), first to slump.",
+   "new": false
+  },
+  {
+   "id": "w3",
+   "name": "worker 3 (the foreman)",
+   "library": "person",
+   "base": "person costume:'carpenter', age 0.55",
+   "look": "Yellow shirt and brown apron, grey beard, s 0.78. Methodical; carries the torch into the tunnel and finds the treasure.",
+   "new": false
+  },
+  {
+   "id": "gossip",
+   "name": "the village woman who tells the rumour",
+   "library": "person",
+   "base": "person costume:'villageWoman'",
+   "look": "Yellow headscarf, red dress, s 0.72. Appears only in S3.",
+   "new": false
+  },
+  {
+   "id": "storyteller",
+   "name": "the old storyteller (the rawi)",
+   "library": "person",
+   "base": "person costume:'ascetic', age 0.9",
+   "look": "Off-white patched robe, small turban, long white beard, seated on the floor (sit 1, seat 'floor'), s 0.85. Stands for 'the tale' and 'the ancient storytellers' of P6 to P7.",
+   "new": false
+  },
+  {
+   "id": "kid1",
+   "name": "listening child 1",
+   "library": "person",
+   "base": "person costume:'servant', child:true",
+   "look": "Child in a white tunic and red cap, seated on the floor (sit 1, seat 'floor').",
+   "new": false
+  },
+  {
+   "id": "kid2",
+   "name": "listening child 2",
+   "library": "person",
+   "base": "person costume:'maiden', child:true",
+   "look": "Child in the yellow maiden dress, seated on the floor; the sceptical one (one brow up).",
+   "new": false
+  },
+  {
+   "id": "oldKing",
+   "name": "an ancient king (generic, no named pharaoh)",
+   "library": "person",
+   "base": "person costume:'prince' with pal {robe: white, sash: yellow, hc: yellow}, age 0.5",
+   "look": "Thin gold circlet, white robe, yellow sash, black beard by age. Shown small (s 0.5) on the pyramid step in S16 and blown away as sand.",
+   "new": false
+  },
+  {
+   "id": "builder",
+   "name": "an ancient builder",
+   "library": "person",
+   "base": "person costume:'carpenter', pal {robe: paper white}",
+   "look": "Carpenter preset in pale colours holding a mallet shape; two copies (the second mirrored, age 0.6) stand for the builders in S12 and S16.",
+   "new": false
+  },
+  {
+   "id": "horse",
+   "name": "the caliph's white horse",
+   "library": "horse",
+   "base": "horse pal 0 with saddle",
+   "look": "Library white horse, blue saddle cloth, ridden with rideOn; s 0.5 in the far view.",
+   "new": false
+  },
+  {
+   "id": "bayHorse",
+   "name": "the vizier's bay horse",
+   "library": "horse",
+   "base": "horse pal 1",
+   "look": "Library bay horse, ridden by the vizier one length behind.",
+   "new": false
+  },
+  {
+   "id": "camel",
+   "name": "the pack camel",
+   "library": "camel",
+   "base": "camel pal 0, saddle:true, load:['chest','sack']",
+   "look": "Library camel that carries the treasure chest away in S11 and S17.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "pyramidFar",
+   "library": null,
+   "new": true,
+   "description": "pyramidSite view 'far' (new shared set, world 1000 x 1230, ground y 900, strip option w 1600 with camX). Sky by skyCycle(u) with o.sky false on Library dunes: reuse the far and mid dune layers of desertRoad (road:false, no palms) for the land. Great pyramid: apex (560, 250), base x 160..960 on y 900 (800 wide, 650 high), 13 courses 50 high drawn as horizontal course lines with staggered vertical joints every 100; sunlit left face flat yellow with red Ben-Day dots, right face (apex to x 960, split line apex to (650, 900)) a darker ochre with black dots. Two far pyramids behind on the left: B apex (190, 520) base x 20..360 on y 885; C apex (70, 690) base x -50..190 on y 890, both flat with only 4 course lines, parallax 0.6. Two Library palmTree at x 60 (h 260) and x 930 (h 220) for scale. Option scar: a small dark arch 26 wide x 30 high at (300, 900) on the left face of the great pyramid (the tunnel mouth, shown from S11 on)."
+  },
+  {
+   "id": "pyramidFace",
+   "library": null,
+   "new": true,
+   "description": "pyramidSite view 'face': the bottom courses of the great pyramid seen close as a stepped wall, world 1000 x 1230. Sand ground from y 900 to 1230 (Library ground tone for sand, as desertRoad). Courses 170 high: tops at y 730, 560, 390, 220, 50; course n begins at x 300 + 90 n and runs off the right edge (a staircase edge on the left with sky and far pyramid C behind it). Blocks 260 wide with joints staggered by 130 on alternate courses; each block has its own seeded dot shading and one chipped corner here and there. Course 0 blocks: x 300..560, 560..820, 820..1080. The dig block is x 560..820, y 730..900. Field dig 0..1 on that block: 0 clean, 0.15 three chip marks, 0.4 a dent 70 wide, 1 an arched black opening 120 wide x 140 high centred x 690 with its floor on y 900, rubble of 6 seeded stones at its foot. Field outline 0..1: a red dashed rectangle x 480..1000, y 220..900 (the 'large part' he wants removed). People stand on the sand in front of the wall (feet y 900 to 930). At s 0.8 a person is 192 high: just taller than one block, which is the scale joke."
+  },
+  {
+   "id": "pyramidSection",
+   "library": null,
+   "new": true,
+   "description": "pyramidSite view 'section': cutaway of the great pyramid, world 1000 x 1230. Outline apex (500, 180), base x 60..940 on y 900; inside filled with dark brown stone, course lines every 48, blue-black dot shading; sky by skyCycle(u) outside, sand below y 900. Tunnel: a 60 high passage with a rough roof that enters the left face at (109, 820) (floor y 850) and runs horizontally; field len 0..1 puts its end at x 109 + 260 len (x 369 at len 1). Hidden niche: x 372..470, y 770..850, closed by a wall 12 thick at x 369..381 until field breach 0..1 opens it; holds the hoard. Field legend 0..1: three dashed chambers A (500, 560) 130 x 84, B (420, 690) 110 x 70, C (610, 740) 124 x 80 joined by dashed passages 30 wide (A to B, A to C, C down to (700, 900)); each chamber takes a content callback. Field solid 0..1 fills everything back to plain stone (the inside is unknown). Person scale inside the tunnel: s 0.24 (58 high); use a camera of about zoom 2.4 centred (300, 800) so the figure is about 135 px on screen."
+  },
+  {
+   "id": "campNight",
+   "library": null,
+   "new": true,
+   "description": "The planned desertCamp reduced to what this film needs: night sky (skyCycle u 0.72) over two dune lines, the great pyramid as a flat navy silhouette (apex (700, 330), base x 400..1000 on y 880) with a yellow rim on its left edge from the moon, one striped tent at the left edge (x 0..220, top y 560), a small fire at (500, 905) (three flame shapes, flicker from K.noise, warm halftone disc r 200) and a carpet mat x 250..760, y 900..930. Storyteller sits at x 330, children at x 600 and x 700."
+  }
+ ],
+ "props": [
+  {
+   "id": "pickaxe",
+   "library": null,
+   "new": true,
+   "description": "Pickaxe: brown shaft 150 x 9, grey double-pointed head 96 wide and 16 thick with a slight curve, black brush outline. Drawn about the grip point with rot. Field bend 0..1 curls one point up by 40 degrees (the stone wins). Placed at the worker's hands (P.hands) with rot from the strike cycle."
+  },
+  {
+   "id": "shovel",
+   "library": null,
+   "new": true,
+   "description": "The planned shovel (AN-114, AN-131): shaft 150 x 8, blade 40 x 52; worker 2 leans on it."
+  },
+  {
+   "id": "torch",
+   "library": null,
+   "new": true,
+   "description": "The planned torch (AN-114): stick 70 long with a three-tongue flame and a yellow halftone light disc r 90 that reveals the tunnel walls (draw the tunnel dark, then the disc with globalCompositeOperation lighter or a clipped lighter redraw)."
+  },
+  {
+   "id": "coinPile",
+   "library": null,
+   "new": true,
+   "description": "The planned coin mound (fill 0..1, single coin option). Used on the pay table, as flying coins, and on the scale."
+  },
+  {
+   "id": "payChest",
+   "library": null,
+   "new": true,
+   "description": "The planned treasureHoard chest: 150 x 100, lid open 0..1, fill 0..1 (coins visible above the rim). The caliph's pay chest starts full (fill 1) in S6 and empties to 0.05."
+  },
+  {
+   "id": "hoard",
+   "library": null,
+   "new": true,
+   "description": "The found treasure: the planned treasureHoard chest (110 x 76, old, grey-green with a broken lock) plus a coinPile and four planned jewels spilling beside it; goldGlow behind. Drawn at 0.5 scale inside the niche and at full size on the sand and on the scale."
+  },
+  {
+   "id": "balanceScale",
+   "library": null,
+   "new": true,
+   "description": "The planned flat balance scale, large: post 230 high on a 160 wide foot, beam 380 wide pivoting at the post top with field tilt (radians, positive = right pan down), two pans 130 wide hanging on three chains 110 long that stay vertical. Stands on a low table (carpet covered box 420 x 60) at x 500."
+  },
+  {
+   "id": "ledger",
+   "library": null,
+   "new": true,
+   "description": "The planned ledger (AN-138): account book 90 x 70 in the vizier's hands, open state with tally strokes that grow with a fill field; a reed pen in his other hand."
+  },
+  {
+   "id": "counter",
+   "library": null,
+   "new": true,
+   "description": "The planned priceTags running-total counter used as two tags in panel space: SPENT (red tag) and FOUND (yellow tag), each a coin icon and a number drawn with the style counter primitive. They count in purses of gold, 0 to 100."
+  },
+  {
+   "id": "ironClamp",
+   "library": null,
+   "new": true,
+   "description": "Macro insert of a stone joint: two block corners filling the frame with a hairline joint between them; a dovetail (bow-tie) slot 220 wide x 90 high cut across the joint; a dark blue-grey iron clamp of the same shape drops into it; then a ladle (bowl 80 wide on a 200 long handle) pours pale grey lead that fills the gap round the clamp (fill 0..1, a wavy top edge until it sets flat, white steam puffs)."
+  },
+  {
+   "id": "legendIcons",
+   "library": null,
+   "new": true,
+   "description": "Three chamber contents at icon size (about 90 x 60 each): the planned jewels (four cut gems), weapons (the planned sword as two crossed scimitars over a round shield) and books (a stack of three with one open, squiggle lines). Each has a dashed-outline ghost state for the disclaimer."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 9.06,
+   "paragraphs": [
+    1
+   ],
+   "set": "pyramidFar",
+   "cast": [
+    "caliph",
+    "vizier",
+    "horse",
+    "bayHorse"
+   ],
+   "summary": "Arrival. The caliph rides into Egypt with his vizier; the camera lifts from the riders to the three pyramids.",
+   "camera": {
+    "shot": "establishing",
+    "move": "tilt",
+    "notes": "Start low and close on the dunes with the pyramids out of the top of frame: {x 300, y 860, zoom 1.7} held 0 to 5.2; ease to the full world {x 500, y 615, zoom 1.0} from 5.78 to 7.9 so the great pyramid rises into view on the word."
+   },
+   "composition": "Riders small on the left third (ground y 900, s 0.5), travelling right; the great pyramid fills the right two thirds once revealed, apex at (560, 250); far pyramids behind the riders. Eye line of both riders runs up the left face to the apex.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 2.6,
+     "cue": {
+      "word": "تحكي",
+      "t": 0.0
+     },
+     "who": "set",
+     "action": "Title card over the dunes: the style title \"AL-MAAMUN AND THE PYRAMIDS\" pops, holds and slides off by 2.5; heat shimmer lines drift over the sand",
+     "acting": "none; the land waits",
+     "library": "S.title + pyramidSite far, skyCycle u 0.2"
+    },
+    {
+     "t": 2.2,
+     "end": 5.1,
+     "cue": {
+      "word": "الخليفة",
+      "t": 2.62
+     },
+     "who": "caliph",
+     "action": "Rides in from the left edge on the white horse (x -150 to 240), sitting tall",
+     "acting": "chin up, gaze ahead [1, -0.1], easy smile; rider bob from the horse",
+     "library": "rideOn(ctx, 'horse', {...walk(xf, t, {stride: GAIT.horse * 0.5}), y: 900, s: 0.5}, {costume: 'caliph'})"
+    },
+    {
+     "t": 2.9,
+     "end": 5.4,
+     "cue": {
+      "word": "المأمون",
+      "t": 3.42
+     },
+     "who": "vizier",
+     "action": "Follows one horse length behind on the bay (x -330 to 60), a ledger under his arm",
+     "acting": "gaze on the caliph, lid 0.2, a little weary",
+     "library": "rideOn 'horse' pal 1 + walk, stagger phase"
+    },
+    {
+     "t": 4.16,
+     "end": 5.6,
+     "cue": {
+      "word": "وصل",
+      "t": 4.16
+     },
+     "who": "horse",
+     "action": "Slows to a stop with footfall dust; the bay stops a few frames later",
+     "acting": "ears prick forward (earL, earR 1), tail swish",
+     "library": "footfalls + dustBurst, walk amp to 0"
+    },
+    {
+     "t": 5.0,
+     "end": 6.2,
+     "cue": {
+      "word": "مصر،",
+      "t": 5.16
+     },
+     "who": "lettering",
+     "action": "Label EGYPT pops on the sand with a small arrow to the ground",
+     "acting": "none",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 5.78,
+     "end": 7.0,
+     "cue": {
+      "word": "وشاهد",
+      "t": 5.78
+     },
+     "who": "caliph",
+     "action": "Lurches as the horse halts, then his head tips back as his eyes climb",
+     "acting": "gaze sweeps from [1, 0] to [0.6, -1]; brows rise (brow -0.6)",
+     "library": "lurch(t, 5.6) + gazePlan"
+    },
+    {
+     "t": 5.78,
+     "end": 7.9,
+     "cue": {
+      "word": "الأهرامات",
+      "t": 6.96
+     },
+     "who": "camera",
+     "action": "Tilts and pulls out to reveal the three pyramids; the great pyramid enters from the top of frame",
+     "acting": "the reveal is the beat: nothing else moves",
+     "library": "CAM keys"
+    },
+    {
+     "t": 7.88,
+     "end": 9.06,
+     "cue": {
+      "word": "العظيمة،",
+      "t": 7.88
+     },
+     "who": "vizier",
+     "action": "Looks up too, a beat after his master; the bay horse lowers its head to sniff the sand",
+     "acting": "gaze [0.5, -1], mouth o; the horse headDown 0.6",
+     "library": "lookAt + stagger; horse headDown"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.3,
+     "text": "AL-MAAMUN AND THE PYRAMIDS"
+    },
+    {
+     "t": 5.16,
+     "text": "EGYPT"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 9.06
+   }
+  },
+  {
+   "id": "S2",
+   "start": 9.06,
+   "end": 13.1,
+   "paragraphs": [
+    1
+   ],
+   "set": "pyramidFace",
+   "cast": [
+    "caliph",
+    "vizier"
+   ],
+   "summary": "Astonishment at the size of the stones: the caliph stands beside one block that is as tall as he is, then looks up the staircase of courses.",
+   "camera": {
+    "shot": "full",
+    "move": "tilt",
+    "notes": "Full world {x 500, y 640, zoom 1.0} until 11.6, then tilt up {x 560, y 440, zoom 1.15} on height so the courses run out of the top of frame."
+   },
+   "composition": "Caliph at x 250 (s 0.8) right at the corner of the first block (x 300..560, top y 730), vizier at x 110 (s 0.75). The wall fills the right two thirds.",
+   "actions": [
+    {
+     "t": 9.06,
+     "end": 9.8,
+     "cue": {
+      "word": "فدهش",
+      "t": 9.06
+     },
+     "who": "caliph",
+     "action": "Already dismounted; steps back half a pace with both hands thrown wide",
+     "acting": "eyes wide, mouth o, sq 0.94 then settle; gaze up the wall [0.5, -0.9]",
+     "library": "settleTo + PERSON_HANDS.armsOut, eyes 'wide'"
+    },
+    {
+     "t": 10.04,
+     "end": 10.84,
+     "cue": {
+      "word": "ضخامة",
+      "t": 10.04
+     },
+     "who": "caliph",
+     "action": "Walks to the first block and measures himself against it with a flat hand on his turban: the block top is level with his eyes",
+     "acting": "gaze flicks block, own hand, block (saccades)",
+     "library": "walk + handR to head height, gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 10.84,
+     "end": 11.8,
+     "cue": {
+      "word": "أحجارها",
+      "t": 10.84
+     },
+     "who": "fx",
+     "action": "A double headed arrow spans the block height (y 730..900) beside him; the block gives a tiny emphasis pulse",
+     "acting": "none",
+     "library": "S.arrow x 2 + S.emphasis"
+    },
+    {
+     "t": 10.9,
+     "end": 11.8,
+     "cue": {
+      "word": "أحجارها",
+      "t": 10.84
+     },
+     "who": "vizier",
+     "action": "Raps the stone with his knuckles and shakes his hand",
+     "acting": "wince (lid 0.6 for 4 frames), mouth frown",
+     "library": "handRW to the block + shake"
+    },
+    {
+     "t": 11.6,
+     "end": 13.1,
+     "cue": {
+      "word": "وارتفاعها.",
+      "t": 11.84
+     },
+     "who": "camera",
+     "action": "Tilts up the staircase of courses; a tall arrow climbs with it and leaves the top of frame",
+     "acting": "both men tip back (tip -0.06) to follow it",
+     "library": "CAM keys + S.arrow growing"
+    },
+    {
+     "t": 12.2,
+     "end": 13.1,
+     "cue": {
+      "word": "وارتفاعها.",
+      "t": 11.84
+     },
+     "who": "caliph",
+     "action": "Holds his turban on with one hand as he leans back to see the top",
+     "acting": "gaze [0.2, -1], small smile of wonder",
+     "library": "PERSON_HANDS.headHold (one hand), tip -0.08"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 13.1
+   }
+  },
+  {
+   "id": "S3",
+   "start": 13.1,
+   "end": 21.8,
+   "paragraphs": [
+    1
+   ],
+   "set": "pyramidFace",
+   "cast": [
+    "caliph",
+    "vizier",
+    "gossip",
+    "w1"
+   ],
+   "summary": "The rumour. Two locals whisper about treasure inside; the caliph overhears and curiosity takes hold.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot on the gossips and the caliph {x 330, y 740, zoom 1.5} from 13.1; push in on the caliph {x 250, y 720, zoom 2.0} from 18.8 to 20.1 for the decision."
+   },
+   "composition": "Gossip at x 520 and w1 at x 640, facing each other in front of the first block; caliph at x 250 with his back half turned, ear toward them; vizier at x 110. The picture balloon sits above the gossips at (580, 520), clear of faces.",
+   "actions": [
+    {
+     "t": 13.1,
+     "end": 14.1,
+     "cue": {
+      "word": "سمع",
+      "t": 13.1
+     },
+     "who": "caliph",
+     "action": "Freezes mid-step and cups his ear toward the voices",
+     "acting": "pupils slide right without the head moving (gaze [1, 0]), then a 5 unit head tilt",
+     "library": "PERSON_HANDS.cupEar + lookAt"
+    },
+    {
+     "t": 14.2,
+     "end": 15.0,
+     "cue": {
+      "word": "الناس",
+      "t": 14.42
+     },
+     "who": "gossip",
+     "action": "Leans to worker 1 and whispers behind her hand",
+     "acting": "talk on the syllables, gaze on w1, glances once at the pyramid",
+     "library": "PERSON_HANDS.cupMouth, talk, tip 0.06"
+    },
+    {
+     "t": 14.92,
+     "end": 16.0,
+     "cue": {
+      "word": "يتحدثون",
+      "t": 14.92
+     },
+     "who": "w1",
+     "action": "Nods quickly and points a thumb at the wall behind him",
+     "acting": "eyes wide, brow -0.5, eager",
+     "library": "handR point back, head nod (drop pulse)"
+    },
+    {
+     "t": 16.0,
+     "end": 17.0,
+     "cue": {
+      "word": "كنوز",
+      "t": 16.24
+     },
+     "who": "fx",
+     "action": "A picture balloon pops above them: a small pyramid outline with a glowing coin pile inside",
+     "acting": "none",
+     "library": "thoughtCloud drawn as a speech balloon (tail to the gossip) + coinPile + goldGlow"
+    },
+    {
+     "t": 16.86,
+     "end": 17.9,
+     "cue": {
+      "word": "مخبأة",
+      "t": 16.86
+     },
+     "who": "gossip",
+     "action": "Puts a finger to her lips; both look around",
+     "acting": "gaze sweeps left then right; lids low",
+     "library": "PERSON_HANDS.hush"
+    },
+    {
+     "t": 17.92,
+     "end": 18.8,
+     "cue": {
+      "word": "داخلها،",
+      "t": 17.92
+     },
+     "who": "fx",
+     "action": "In the balloon a dashed arrow dives from the pyramid tip to the coins inside",
+     "acting": "none",
+     "library": "S.arrow inside the balloon"
+    },
+    {
+     "t": 18.6,
+     "end": 20.0,
+     "cue": {
+      "word": "فأراد",
+      "t": 18.82
+     },
+     "who": "caliph",
+     "action": "Turns to the wall, strokes his beard, and a slow smile grows",
+     "acting": "gaze locks on the stone, lid 0.3 (calculating), brow -0.4",
+     "library": "PERSON_HANDS.chin, settleTo"
+    },
+    {
+     "t": 20.14,
+     "end": 21.0,
+     "cue": {
+      "word": "يعرف",
+      "t": 20.14
+     },
+     "who": "fx",
+     "action": "A large question mark pops on the dig block (x 560..820) and pulses twice",
+     "acting": "none",
+     "library": "a drawn question mark glyph (icon, not a lettering item) + S.emphasis"
+    },
+    {
+     "t": 20.9,
+     "end": 21.8,
+     "cue": {
+      "word": "تخفيه.",
+      "t": 20.98
+     },
+     "who": "vizier",
+     "action": "Sees the look on his master, glances at the wall, then at his ledger, and swallows",
+     "acting": "gaze caliph, wall, ledger; worried brow (brow -0.7)",
+     "library": "gazePlan + drop pulse"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 21.8
+   }
+  },
+  {
+   "id": "S4",
+   "start": 21.8,
+   "end": 32.96,
+   "paragraphs": [
+    2
+   ],
+   "set": "pyramidFace",
+   "cast": [
+    "caliph",
+    "vizier",
+    "w1",
+    "w2",
+    "w3"
+   ],
+   "summary": "The order: open it, and take a large part down. Workers are gathered and raise their picks.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Full world zoom 1.0. At 26.4 drift right {x 560, y 600} to show the dashed area; at 29.6 return to {x 500, y 660} as the workers enter."
+   },
+   "composition": "Caliph at x 230 pointing right; vizier x 100. Dig block x 560..820. Workers enter from the right edge and line up at x 520, 660, 800 (feet y 915, in front of the wall).",
+   "actions": [
+    {
+     "t": 21.8,
+     "end": 22.7,
+     "cue": {
+      "word": "قرر",
+      "t": 21.8
+     },
+     "who": "caliph",
+     "action": "Anticipation dip (begun in the last 0.3 s of S3), then a full arm point at the wall",
+     "acting": "jaw set, brow 0.6, gaze on the dig block",
+     "library": "anticipate(t, 21.5, 0.3, 0.06) + PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 23.2,
+     "end": 24.1,
+     "cue": {
+      "word": "فتح",
+      "t": 23.44
+     },
+     "who": "lettering",
+     "action": "His order as lettering above him: OPEN IT!",
+     "acting": "talk 0.8 on the word",
+     "library": "S.label burst"
+    },
+    {
+     "t": 24.14,
+     "end": 25.6,
+     "cue": {
+      "word": "أحد",
+      "t": 24.14
+     },
+     "who": "fx",
+     "action": "A red arrow flies from his finger to the dig block and a chalk X is drawn on it",
+     "acting": "none",
+     "library": "S.arrow + two strokes"
+    },
+    {
+     "t": 25.64,
+     "end": 26.9,
+     "cue": {
+      "word": "بل",
+      "t": 25.64
+     },
+     "who": "caliph",
+     "action": "Not enough: he sweeps his arm in a great arc over the wall",
+     "acting": "eyes widen with ambition, chest out, tip -0.05",
+     "library": "aR angle sweep (arm angles, reads at distance)"
+    },
+    {
+     "t": 26.94,
+     "end": 29.0,
+     "cue": {
+      "word": "إزالة",
+      "t": 26.94
+     },
+     "who": "set",
+     "action": "A red dashed outline traces a huge area of the wall (x 480..1000, y 220..900), one side at a time",
+     "acting": "none",
+     "library": "pyramidSite face field outline 0..1"
+    },
+    {
+     "t": 27.72,
+     "end": 29.0,
+     "cue": {
+      "word": "جزء",
+      "t": 27.72
+     },
+     "who": "vizier",
+     "action": "Counts the blocks inside the outline with a finger, loses count, and drops the pen",
+     "acting": "mouth o, brow -0.8; looks to camera once at 28.6",
+     "library": "PERSON_HANDS.pointUp + gaze [0, 0.05]"
+    },
+    {
+     "t": 29.4,
+     "end": 31.2,
+     "cue": {
+      "word": "جمع",
+      "t": 29.62
+     },
+     "who": "w3",
+     "action": "The foreman walks in from the right with a pickaxe on his shoulder, the other two behind him",
+     "acting": "steady, gaze on the caliph",
+     "library": "walk + footfalls (no sliding), pickaxe at P.hands"
+    },
+    {
+     "t": 29.9,
+     "end": 31.3,
+     "cue": {
+      "word": "العمال",
+      "t": 30.5
+     },
+     "who": "w1",
+     "action": "Jogs in eagerly and nearly bumps the foreman as he stops",
+     "acting": "smile, bounce on stopping (landSquash)",
+     "library": "walk + landSquash"
+    },
+    {
+     "t": 30.2,
+     "end": 31.6,
+     "cue": {
+      "word": "العمال",
+      "t": 30.5
+     },
+     "who": "w2",
+     "action": "Trails in last, dragging a shovel that leaves a line in the sand",
+     "acting": "lid 0.3, gaze down",
+     "library": "walk with a low amp + a drawn drag line"
+    },
+    {
+     "t": 31.28,
+     "end": 32.2,
+     "cue": {
+      "word": "وأمرهم",
+      "t": 31.28
+     },
+     "who": "caliph",
+     "action": "Claps twice and points at the X",
+     "acting": "brisk, brow 0.4, talk",
+     "library": "handL, handR clap + pointFwd"
+    },
+    {
+     "t": 32.0,
+     "end": 32.96,
+     "cue": {
+      "word": "بالحفر،",
+      "t": 32.18
+     },
+     "who": "w1",
+     "action": "All three raise their picks: w1 first, w3 next, w2 last and lowest",
+     "acting": "anticipation crouch (sq 0.92) before the lift; eyes on the X",
+     "library": "aL, aR raised [2.45, 2.85] with stagger(i)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 23.44,
+     "text": "OPEN IT!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 32.96
+   }
+  },
+  {
+   "id": "S5",
+   "start": 32.96,
+   "end": 43.2,
+   "paragraphs": [
+    2
+   ],
+   "set": "pyramidFace",
+   "cast": [
+    "caliph",
+    "vizier",
+    "w1",
+    "w2",
+    "w3"
+   ],
+   "summary": "The stones resist. Picks bounce and bend; the work is slower and harder than anyone expected.",
+   "camera": {
+    "shot": "medium",
+    "move": "shake",
+    "notes": "{x 660, y 760, zoom 1.6} on the three workers and the dig block. Panel-only shake of 4 units on the three contacts (34.76, 35.44, 36.5), none after. Pull out to zoom 1.0 at 41.0 to bring the caliph back in."
+   },
+   "composition": "Workers at x 520, 660, 800 facing the block; the X at (690, 815). The progress gauge is a panel-space bar at the top (x 300..700, y 110). Caliph and vizier re-enter the frame on the left at the pull-out.",
+   "actions": [
+    {
+     "t": 32.96,
+     "end": 34.7,
+     "cue": {
+      "word": "الحجارة",
+      "t": 33.82
+     },
+     "who": "w1",
+     "action": "Strike 1: whips the pick down onto the X; contact exactly on the word",
+     "acting": "teeth grit, eyes shut on impact (lid 1 for 3 frames)",
+     "library": "strike cycle (lift 0.3 s, ease-in whip, damped rebound) on arm angles"
+    },
+    {
+     "t": 34.76,
+     "end": 35.4,
+     "cue": {
+      "word": "الضخمة",
+      "t": 34.76
+     },
+     "who": "fx",
+     "action": "Sparks and three chips; the block does not move at all (no squash, no hop: it is the workers who shake)",
+     "acting": "w1 vibrates from the hands up (tremble 3 for 0.4 s)",
+     "library": "spark lines + tremble; pyramidSite dig 0.15"
+    },
+    {
+     "t": 35.3,
+     "end": 36.4,
+     "cue": {
+      "word": "قاومت",
+      "t": 35.44
+     },
+     "who": "w3",
+     "action": "Strike 2 by the foreman; the pick bounces back over his head and pulls him a step backward",
+     "acting": "eyes wide, sq 1.06 stretch then stagger back",
+     "library": "strike cycle + rebound + walk back 30"
+    },
+    {
+     "t": 35.44,
+     "end": 36.3,
+     "cue": {
+      "word": "قاومت",
+      "t": 35.44
+     },
+     "who": "lettering",
+     "action": "CLANG! bursts at the contact point, clear of the faces",
+     "acting": "none",
+     "library": "S.label burst at (700, 640)"
+    },
+    {
+     "t": 36.3,
+     "end": 37.3,
+     "cue": {
+      "word": "أدواتهم،",
+      "t": 36.5
+     },
+     "who": "w2",
+     "action": "Strike 3: the tip of his pickaxe curls up like a hook; he holds it up and stares at it",
+     "acting": "slow blink, gaze tool then camera [0, 0.05]",
+     "library": "pickaxe bend 0..1 + gazePlan"
+    },
+    {
+     "t": 37.38,
+     "end": 38.7,
+     "cue": {
+      "word": "وكان",
+      "t": 37.38
+     },
+     "who": "fx",
+     "action": "A progress gauge pops at the top of the panel: a bar that creeps to about 3 percent and stops",
+     "acting": "none",
+     "library": "S.box + bar fill; S.counter"
+    },
+    {
+     "t": 38.8,
+     "end": 39.5,
+     "cue": {
+      "word": "أبطأ",
+      "t": 38.8
+     },
+     "who": "w1",
+     "action": "Swings again but slower: the cycle time doubles, the lift sags",
+     "acting": "sweat drop, lid 0.3",
+     "library": "strike cycle with period x 2, breathe"
+    },
+    {
+     "t": 39.58,
+     "end": 40.5,
+     "cue": {
+      "word": "وأصعب",
+      "t": 39.58
+     },
+     "who": "w3",
+     "action": "Wipes his brow with his forearm and leans on the pick",
+     "acting": "long blink, chest heaving (breathe amp 2x)",
+     "library": "handR to forehead + breathe"
+    },
+    {
+     "t": 40.2,
+     "end": 41.0,
+     "cue": {
+      "word": "مما",
+      "t": 40.54
+     },
+     "who": "w2",
+     "action": "Sits down on the sand with his back to the block",
+     "acting": "lid 0.6, mouth frown",
+     "library": "sit 0..1, seat 'floor'"
+    },
+    {
+     "t": 41.04,
+     "end": 42.2,
+     "cue": {
+      "word": "توقع",
+      "t": 41.04
+     },
+     "who": "camera",
+     "action": "Pulls out to the full world: the caliph is tapping his foot, arms folded",
+     "acting": "caliph brow 0.7, gaze on the gauge; foot tap every 0.4 s",
+     "library": "CAM keys + PERSON_HANDS.folded + a foot key"
+    },
+    {
+     "t": 41.58,
+     "end": 43.2,
+     "cue": {
+      "word": "الجميع",
+      "t": 41.58
+     },
+     "who": "vizier",
+     "action": "Everyone looks at the tiny dent, then at each other: vizier, caliph, workers, one after another",
+     "acting": "staggered head turns, shared flat mouths",
+     "library": "stagger(i) + lookAt"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 35.44,
+     "text": "CLANG!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 43.2
+   }
+  },
+  {
+   "id": "S6",
+   "start": 43.2,
+   "end": 53.68,
+   "paragraphs": [
+    3
+   ],
+   "set": "pyramidFace",
+   "cast": [
+    "caliph",
+    "vizier",
+    "w1",
+    "w2",
+    "w3",
+    "camel"
+   ],
+   "summary": "Many days and huge sums. The sun wheels over a fixed shot while the pay chest empties into men, tools and hauling; the SPENT counter runs up.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Locked full world so that only the sky, the shadows and the chest change: a time-lapse."
+   },
+   "composition": "Pay chest on the sand at x 190 beside the caliph (x 110); vizier at x 300 with the ledger. Workers at the block. SPENT tag in panel space top left (x 90..330, y 90..160); day counter top right. Coins arc from the chest to three targets.",
+   "actions": [
+    {
+     "t": 43.2,
+     "end": 46.4,
+     "cue": {
+      "word": "استمر",
+      "t": 43.2
+     },
+     "who": "set",
+     "action": "Time-lapse: the sky runs through three full days and nights (u 0.2 to 3.2) while the workers keep swinging in a fast loop",
+     "acting": "workers on a 0.5 s strike loop with different phases",
+     "library": "skyCycle(ctx, u) with kfn; strike loop + stagger"
+    },
+    {
+     "t": 44.6,
+     "end": 46.4,
+     "cue": {
+      "word": "أيامًا",
+      "t": 44.88
+     },
+     "who": "fx",
+     "action": "Day counter in the corner flips DAY 1, DAY 9, DAY 30 on the sunrises",
+     "acting": "none",
+     "library": "S.counter in panel space"
+    },
+    {
+     "t": 45.68,
+     "end": 46.4,
+     "cue": {
+      "word": "كثيرة،",
+      "t": 45.68
+     },
+     "who": "set",
+     "action": "The dent deepens only a little across all those days (dig 0.15 to 0.4)",
+     "acting": "none",
+     "library": "pyramidSite face dig"
+    },
+    {
+     "t": 46.3,
+     "end": 47.6,
+     "cue": {
+      "word": "وأنفق",
+      "t": 46.44
+     },
+     "who": "caliph",
+     "action": "Flips the pay chest open; it is brim full and glows",
+     "acting": "confident, gaze on the gold, small smile",
+     "library": "treasureHoard chest lid 0..1, fill 1 + goldGlow 0.4"
+    },
+    {
+     "t": 47.66,
+     "end": 48.4,
+     "cue": {
+      "word": "الخليفة",
+      "t": 47.66
+     },
+     "who": "fx",
+     "action": "SPENT tag pops with a coin icon and starts to count",
+     "acting": "none",
+     "library": "priceTags running total (S.counter)"
+    },
+    {
+     "t": 48.46,
+     "end": 49.9,
+     "cue": {
+      "word": "مبالغ",
+      "t": 48.46
+     },
+     "who": "vizier",
+     "action": "Writes tally strokes faster and faster, licking the pen",
+     "acting": "gaze flicks chest, ledger, chest; brow -0.6",
+     "library": "ledger fill + handR scribble"
+    },
+    {
+     "t": 50.2,
+     "end": 51.1,
+     "cue": {
+      "word": "الرجال",
+      "t": 50.46
+     },
+     "who": "fx",
+     "action": "Coins arc from the chest into the three workers' open hands; counter jumps to 30",
+     "acting": "workers catch with a small hop, w2 last",
+     "library": "arc paths (kfn) + hop + PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 51.14,
+     "end": 52.1,
+     "cue": {
+      "word": "والأدوات",
+      "t": 51.14
+     },
+     "who": "fx",
+     "action": "Coins arc onto a growing heap of bent and broken picks at x 900; counter jumps to 60",
+     "acting": "w1 tosses another ruined pick on the heap",
+     "library": "pickaxe bend 1 copies + arc"
+    },
+    {
+     "t": 52.14,
+     "end": 53.6,
+     "cue": {
+      "word": "ونقل",
+      "t": 52.14
+     },
+     "who": "camel",
+     "action": "A camel paces across the foreground hauling a stone block on a sled; coins arc to it; counter reaches 100",
+     "acting": "camel chews, lid 0.4; the sled leaves two ruts",
+     "library": "camel walk (GAIT.camel) + a drawn sled and rope"
+    },
+    {
+     "t": 52.98,
+     "end": 53.68,
+     "cue": {
+      "word": "الحجارة.",
+      "t": 52.98
+     },
+     "who": "caliph",
+     "action": "Looks into the chest: three coins left. His smile is gone",
+     "acting": "gaze down into the chest, brow -0.5, mouth flat",
+     "library": "chest fill 0.05 + lookAt"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 44.88,
+     "text": "DAY 30"
+    },
+    {
+     "t": 47.66,
+     "text": "SPENT"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "match-cut",
+    "t": 53.68
+   }
+  },
+  {
+   "id": "S7",
+   "start": 53.68,
+   "end": 65.06,
+   "paragraphs": [
+    3
+   ],
+   "set": "pyramidSection",
+   "cast": [
+    "w1",
+    "w3",
+    "caliph"
+   ],
+   "summary": "After all that: only a small tunnel in the body of the pyramid, and nothing in it. Cutaway view.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Whole cutaway {x 500, y 615, zoom 1.0} from 53.68 so the tunnel looks tiny in the mass; push in to the tunnel {x 300, y 800, zoom 2.4} from 59.9 to 61.2 for the empty end."
+   },
+   "composition": "Tunnel enters the left face at (109, 820) and ends at x 369. Caliph stands outside at the mouth (x 60, s 0.3 in the wide; out of frame after the push-in). w3 with the torch at the tunnel end, w1 behind him.",
+   "actions": [
+    {
+     "t": 53.68,
+     "end": 55.2,
+     "cue": {
+      "word": "ومع",
+      "t": 53.68
+     },
+     "who": "set",
+     "action": "Match cut from the wall to the cutaway: the whole pyramid in section, solid and dark, with one short burrow at its foot",
+     "acting": "none",
+     "library": "pyramidSite section, len 1, breach 0, legend 0"
+    },
+    {
+     "t": 55.24,
+     "end": 56.4,
+     "cue": {
+      "word": "لم",
+      "t": 55.24
+     },
+     "who": "fx",
+     "action": "The tunnel draws itself in from the face, slowing as it goes, and stops",
+     "acting": "none",
+     "library": "len 0..1 with an out ease"
+    },
+    {
+     "t": 56.44,
+     "end": 57.8,
+     "cue": {
+      "word": "العمال",
+      "t": 56.44
+     },
+     "who": "w3",
+     "action": "Tiny figures at the tunnel end: the foreman holds the torch, w1 chips at the end wall",
+     "acting": "torch disc flickers; w1 strike loop at small scale",
+     "library": "person s 0.24 + torch light disc"
+    },
+    {
+     "t": 58.12,
+     "end": 59.0,
+     "cue": {
+      "word": "فتح",
+      "t": 58.12
+     },
+     "who": "fx",
+     "action": "A bracket and arrow measure the tunnel against the full base width: a sliver",
+     "acting": "none",
+     "library": "S.arrow double headed x 2"
+    },
+    {
+     "t": 59.08,
+     "end": 59.8,
+     "cue": {
+      "word": "صغير",
+      "t": 59.08
+     },
+     "who": "lettering",
+     "action": "Label TINY! pops beside the tunnel with a pointer",
+     "acting": "none",
+     "library": "S.label"
+    },
+    {
+     "t": 59.86,
+     "end": 61.2,
+     "cue": {
+      "word": "جسم",
+      "t": 60.22
+     },
+     "who": "camera",
+     "action": "Pushes in to the tunnel end",
+     "acting": "the stone mass closes round the little passage",
+     "library": "CAM keys"
+    },
+    {
+     "t": 61.26,
+     "end": 62.5,
+     "cue": {
+      "word": "ولم",
+      "t": 61.26
+     },
+     "who": "w3",
+     "action": "Sweeps the torch left, right, up: bare stone everywhere",
+     "acting": "gaze follows the torch with saccades; brow -0.4",
+     "library": "gazePlan(t, plan, 0.07) + handRW torch"
+    },
+    {
+     "t": 62.06,
+     "end": 63.2,
+     "cue": {
+      "word": "يظهر",
+      "t": 62.06
+     },
+     "who": "w1",
+     "action": "Turns to the foreman and turns both palms up",
+     "acting": "mouth frown, shoulders drop (sq 0.96)",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 62.96,
+     "end": 64.2,
+     "cue": {
+      "word": "كانوا",
+      "t": 63.24
+     },
+     "who": "fx",
+     "action": "A thought balloon with a coin pile pops over w1 and is struck out, then deflates",
+     "acting": "none",
+     "library": "thoughtCloud + coinPile + two red strokes"
+    },
+    {
+     "t": 63.82,
+     "end": 65.06,
+     "cue": {
+      "word": "يتوقعونه.",
+      "t": 63.82
+     },
+     "who": "w3",
+     "action": "Sighs; the torch flame gutters low and the light disc shrinks to half",
+     "acting": "long blink, head drop 6 units",
+     "library": "torch flame 0.5 + drop"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 59.08,
+     "text": "TINY!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 65.06,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S8",
+   "start": 65.06,
+   "end": 72.3,
+   "paragraphs": [
+    4
+   ],
+   "set": "pyramidSection",
+   "cast": [
+    "w1",
+    "w3"
+   ],
+   "summary": "Then they found it: a blow breaks through into a hidden niche and gold light floods the passage.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Opens under the LATER card on the tunnel end {x 330, y 800, zoom 2.4}; snap push to {x 400, y 800, zoom 3.0} at 66.9 as the wall breaks; hold."
+   },
+   "composition": "w1 at x 330 striking right; w3 at x 290 with the torch. Niche x 372..470, y 770..850 with the hoard at (420, 850). Both faces stay left of the glow.",
+   "actions": [
+    {
+     "t": 65.06,
+     "end": 66.0,
+     "cue": {
+      "word": "ثم",
+      "t": 65.06
+     },
+     "who": "w1",
+     "action": "One more tired swing at the end wall",
+     "acting": "lid 0.4, no hope in it",
+     "library": "strike cycle (slow)"
+    },
+    {
+     "t": 66.0,
+     "end": 66.7,
+     "cue": {
+      "word": "وجدوا،",
+      "t": 66.0
+     },
+     "who": "set",
+     "action": "The pick goes straight through: a black hole, then cracks race outward",
+     "acting": "w1 stumbles forward a step with the lost resistance (tip 0.1)",
+     "library": "pyramidSite section breach 0..0.5 + crack lines"
+    },
+    {
+     "t": 66.7,
+     "end": 67.3,
+     "cue": {
+      "word": "وجدوا،",
+      "t": 66.0
+     },
+     "who": "fx",
+     "action": "In the pause the wall falls in and gold light bursts out along the tunnel",
+     "acting": "both men lit yellow from the right; eyes wide, pupils small",
+     "library": "breach 1 + goldGlow strength 0..1 + dustBurst"
+    },
+    {
+     "t": 67.2,
+     "end": 68.8,
+     "cue": {
+      "word": "تقول",
+      "t": 67.58
+     },
+     "who": "w3",
+     "action": "Raises the torch and leans in; the torch is no longer needed",
+     "acting": "mouth o, brow -0.8, slow lean (tip 0.08)",
+     "library": "settleTo + lookAt the hoard"
+    },
+    {
+     "t": 68.88,
+     "end": 70.0,
+     "cue": {
+      "word": "مالًا",
+      "t": 68.88
+     },
+     "who": "hoard",
+     "action": "Revealed: an old chest, a mound of coins beside it",
+     "acting": "star glints stagger across the coins",
+     "library": "treasureHoard chest + coinPile + goldGlow glints"
+    },
+    {
+     "t": 70.02,
+     "end": 71.0,
+     "cue": {
+      "word": "وكنوزًا",
+      "t": 70.02
+     },
+     "who": "hoard",
+     "action": "The chest lid creaks open on its own weight: jewels on top",
+     "acting": "none",
+     "library": "chest lid 0..1 + jewels"
+    },
+    {
+     "t": 69.4,
+     "end": 70.6,
+     "cue": {
+      "word": "مالًا",
+      "t": 68.88
+     },
+     "who": "lettering",
+     "action": "GOLD! bursts above the niche",
+     "acting": "none",
+     "library": "S.label burst"
+    },
+    {
+     "t": 71.06,
+     "end": 72.3,
+     "cue": {
+      "word": "داخل",
+      "t": 71.06
+     },
+     "who": "w1",
+     "action": "Hops on the spot, then grabs the foreman by the shoulders and shakes him",
+     "acting": "huge smile, w3 lets himself be shaken, grinning",
+     "library": "hop + landSquash; handLW, handRW to the shoulders"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 68.88,
+     "text": "GOLD!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 66.94,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 72.3
+   }
+  },
+  {
+   "id": "S9",
+   "start": 72.3,
+   "end": 87.56,
+   "paragraphs": [
+    4
+   ],
+   "set": "pyramidFace",
+   "cast": [
+    "caliph",
+    "vizier",
+    "w1",
+    "w3"
+   ],
+   "summary": "The reckoning. The find is weighed against the cost on a great balance: the two counters stop on the same number and the beam settles dead level.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "{x 500, y 700, zoom 1.25} on the scale with caliph and vizier either side; slow push to zoom 1.5 from 79.1 to 82.3; hold on the level beam; a 2 frame hold-still at 84.26."
+   },
+   "composition": "Balance on its table at x 500 (pivot at (500, 610)). Left pan (x 310): SPENT, shown as dashed ghost coins. Right pan (x 690): FOUND, the real hoard. Caliph at x 160, vizier at x 850. Tags above each pan in panel space; the equals sign appears between them at (500, 420). The opened tunnel mouth (dig 1) is visible behind.",
+   "actions": [
+    {
+     "t": 72.3,
+     "end": 73.1,
+     "cue": {
+      "word": "أمر",
+      "t": 72.3
+     },
+     "who": "caliph",
+     "action": "Strides to the balance and snaps his fingers for the count",
+     "acting": "bright, impatient, gaze on the hoard",
+     "library": "walk + handR up"
+    },
+    {
+     "t": 73.16,
+     "end": 73.8,
+     "cue": {
+      "word": "المأمون",
+      "t": 73.16
+     },
+     "who": "w3",
+     "action": "The workers set the open chest by the right pan and step back out of frame",
+     "acting": "careful, tongue out",
+     "library": "handLW, handRW on the chest; walk out"
+    },
+    {
+     "t": 73.84,
+     "end": 74.6,
+     "cue": {
+      "word": "بحساب",
+      "t": 73.84
+     },
+     "who": "vizier",
+     "action": "Opens the ledger and licks his pen",
+     "acting": "gaze down, professional calm",
+     "library": "ledger open + PERSON_HANDS.chin"
+    },
+    {
+     "t": 74.6,
+     "end": 76.9,
+     "cue": {
+      "word": "قيمتها",
+      "t": 74.6
+     },
+     "who": "hoard",
+     "action": "Coins and gems hop from the chest into the right pan in a stream; the FOUND tag counts 0 up; the right pan sinks",
+     "acting": "caliph rubs his hands, sq pulses on each tenth",
+     "library": "arc paths + balanceScale tilt 0 to 0.22 + S.counter"
+    },
+    {
+     "t": 75.52,
+     "end": 76.9,
+     "cue": {
+      "word": "ومقارنتها",
+      "t": 75.52
+     },
+     "who": "vizier",
+     "action": "Turns the ledger to the page of costs and runs a finger down it",
+     "acting": "lips move as he reads (talk 0.3)",
+     "library": "handR down the page"
+    },
+    {
+     "t": 76.94,
+     "end": 78.3,
+     "cue": {
+      "word": "بما",
+      "t": 76.94
+     },
+     "who": "coinPile",
+     "action": "For each line of the ledger a dashed red ghost coin stack drops into the left pan; the SPENT tag counts up beside it",
+     "acting": "caliph's smile freezes as the left pan starts to pull down",
+     "library": "ghost coins (dashed outline, no fill) + S.counter"
+    },
+    {
+     "t": 78.32,
+     "end": 79.1,
+     "cue": {
+      "word": "للحفر،",
+      "t": 78.32
+     },
+     "who": "balanceScale",
+     "action": "The beam swings back through level and past it, then begins to rock in smaller and smaller swings",
+     "acting": "caliph's head follows the beam like a tennis match",
+     "library": "swing(t, 78.3, amp) on tilt + lookAt"
+    },
+    {
+     "t": 79.12,
+     "end": 80.1,
+     "cue": {
+      "word": "فكانت",
+      "t": 79.12
+     },
+     "who": "camera",
+     "action": "Slow push in as the rocking narrows",
+     "acting": "vizier stops writing, pen in the air",
+     "library": "CAM keys"
+    },
+    {
+     "t": 80.16,
+     "end": 81.1,
+     "cue": {
+      "word": "المفاجأة",
+      "t": 80.16
+     },
+     "who": "caliph",
+     "action": "Leans in until his nose is nearly on the beam",
+     "acting": "eyes wide, brow -0.9, no blink (noBlink)",
+     "library": "tip 0.1 + noBlink"
+    },
+    {
+     "t": 81.52,
+     "end": 82.3,
+     "cue": {
+      "word": "القيمة",
+      "t": 81.52
+     },
+     "who": "fx",
+     "action": "Both counters tick their last digits and stop on the same number: 100 and 100",
+     "acting": "none",
+     "library": "S.counter x 2 landing together"
+    },
+    {
+     "t": 82.32,
+     "end": 83.7,
+     "cue": {
+      "word": "ساوت",
+      "t": 82.32
+     },
+     "who": "balanceScale",
+     "action": "The beam stops exactly level; a thin white level line flashes along it",
+     "acting": "both men hold completely still for 6 frames; only the pupils move from pan to pan",
+     "library": "tilt settles to 0 (settleTo) + suspense by stillness"
+    },
+    {
+     "t": 82.94,
+     "end": 84.2,
+     "cue": {
+      "word": "نفقات",
+      "t": 82.94
+     },
+     "who": "lettering",
+     "action": "A big equals sign pops between the two tags",
+     "acting": "none",
+     "library": "S.label \"=\" + S.emphasis"
+    },
+    {
+     "t": 84.26,
+     "end": 85.4,
+     "cue": {
+      "word": "تمامًا،",
+      "t": 84.26
+     },
+     "who": "lettering",
+     "action": "EXACTLY! stamps under the equals sign",
+     "acting": "vizier lifts both hands off the ledger as if it were hot",
+     "library": "S.label burst + PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 85.44,
+     "end": 86.3,
+     "cue": {
+      "word": "أكثر",
+      "t": 85.78
+     },
+     "who": "caliph",
+     "action": "Presses one finger on the right pan, hoping for more: it springs back level",
+     "acting": "hopeful brow, then flat",
+     "library": "handRW to the pan + tilt pulse 0.06 and back"
+    },
+    {
+     "t": 86.38,
+     "end": 87.56,
+     "cue": {
+      "word": "أقل.",
+      "t": 86.88
+     },
+     "who": "vizier",
+     "action": "Presses the left pan the same way: it too springs back. He shrugs",
+     "acting": "gaze to the caliph, one brow up",
+     "library": "handLW to the pan + tilt pulse -0.06; palmsUp"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 74.6,
+     "text": "FOUND"
+    },
+    {
+     "t": 82.94,
+     "text": "="
+    },
+    {
+     "t": 84.26,
+     "text": "EXACTLY!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 87.56
+   }
+  },
+  {
+   "id": "S10",
+   "start": 87.56,
+   "end": 97.28,
+   "paragraphs": [
+    5
+   ],
+   "set": "pyramidFace",
+   "cast": [
+    "caliph",
+    "vizier"
+   ],
+   "summary": "He marvels at the strange match and understands: after all that expense he has gained nothing.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Close on the caliph {x 200, y 720, zoom 2.3} with the level beam end still in the right of frame; slow push to 2.6 by 93.4; pull to the two-shot with the vizier {x 480, y 720, zoom 1.4} at 95.2."
+   },
+   "composition": "Caliph face at about (200, 735) world, large. The PROFIT tag pops to the right of his head at panel centre right, never over his face.",
+   "actions": [
+    {
+     "t": 87.56,
+     "end": 88.7,
+     "cue": {
+      "word": "تعجب",
+      "t": 87.56
+     },
+     "who": "caliph",
+     "action": "Straightens slowly from the scale and stares at nothing",
+     "acting": "eyes wide, two slow blinks, mouth small o",
+     "library": "eyes 'wide' then lid ramps"
+    },
+    {
+     "t": 88.7,
+     "end": 89.7,
+     "cue": {
+      "word": "الخليفة",
+      "t": 88.7
+     },
+     "who": "caliph",
+     "action": "Looks at the left pan, the right pan, the left pan",
+     "acting": "saccades, head still",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 90.14,
+     "end": 90.9,
+     "cue": {
+      "word": "الاتفاق",
+      "t": 90.14
+     },
+     "who": "caliph",
+     "action": "Scratches under his turban so that the crown tilts",
+     "acting": "one brow up, mouth pulled to one side",
+     "library": "PERSON_HANDS.headHold (one hand) + head tilt 6"
+    },
+    {
+     "t": 90.92,
+     "end": 91.7,
+     "cue": {
+      "word": "الغريب،",
+      "t": 90.92
+     },
+     "who": "fx",
+     "action": "Two curved arrows link the SPENT and FOUND tags in a circle: out, and back in",
+     "acting": "none",
+     "library": "S.arrow x 2 curved"
+    },
+    {
+     "t": 91.74,
+     "end": 92.7,
+     "cue": {
+      "word": "وأدرك",
+      "t": 91.74
+     },
+     "who": "caliph",
+     "action": "The penny drops: his head sinks a little and the brows level",
+     "acting": "gaze drops, lid 0.4, long exhale (sq 0.96)",
+     "library": "settleTo + drop"
+    },
+    {
+     "t": 93.42,
+     "end": 94.3,
+     "cue": {
+      "word": "يربح",
+      "t": 93.76
+     },
+     "who": "lettering",
+     "action": "A third tag pops beside him: PROFIT 0, the zero rolling down to rest like a coin",
+     "acting": "he watches the zero wobble and fall flat",
+     "library": "S.counter + a spinning ellipse"
+    },
+    {
+     "t": 94.34,
+     "end": 95.0,
+     "cue": {
+      "word": "شيئًا",
+      "t": 94.34
+     },
+     "who": "caliph",
+     "action": "Looks straight at the lens",
+     "acting": "the one deliberate camera stare of the film: gaze [0, 0.05], flat mouth, one blink",
+     "library": "gaze to camera"
+    },
+    {
+     "t": 95.2,
+     "end": 96.1,
+     "cue": {
+      "word": "محاولته",
+      "t": 95.2
+     },
+     "who": "camera",
+     "action": "Pulls back to include the vizier, who is fanning himself with the ledger",
+     "acting": "vizier avoids his eye, gaze up and away",
+     "library": "twoShot keys"
+    },
+    {
+     "t": 96.12,
+     "end": 97.28,
+     "cue": {
+      "word": "المكلفة.",
+      "t": 96.12
+     },
+     "who": "vizier",
+     "action": "Holds up the empty pay chest and turns it upside down: one coin falls and rolls away",
+     "acting": "apologetic smile, brow -0.6",
+     "library": "chest rot + a coin on a damped path"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 93.76,
+     "text": "PROFIT 0"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 97.28
+   }
+  },
+  {
+   "id": "S11",
+   "start": 97.28,
+   "end": 107.66,
+   "paragraphs": [
+    5
+   ],
+   "set": "pyramidFar",
+   "cast": [
+    "caliph",
+    "vizier",
+    "w1",
+    "w2",
+    "w3",
+    "horse",
+    "camel"
+   ],
+   "summary": "He takes what was found, gives up the idea of tearing the pyramids down, stops the work and goes back to governing.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Start {x 330, y 780, zoom 1.6} at the pyramid foot; pull out to the full world from 99.6 to 101.2 so the pyramid stands whole and huge over the tiny scar; hold."
+   },
+   "composition": "Far view: the scar (tunnel mouth) at (300, 900) on the great pyramid. Camel at x 400, caliph x 250, workers x 470..600, all at s 0.5. They leave toward the left edge, the way they came.",
+   "actions": [
+    {
+     "t": 97.28,
+     "end": 98.1,
+     "cue": {
+      "word": "أخذ",
+      "t": 97.28
+     },
+     "who": "w3",
+     "action": "The workers lift the found chest onto the kneeling camel and tie it",
+     "acting": "w1 and w3 lift together on a count, w2 steadies",
+     "library": "camel kneel 1 + load ['chest', 'sack']; handLW, handRW"
+    },
+    {
+     "t": 98.14,
+     "end": 98.8,
+     "cue": {
+      "word": "وجده،",
+      "t": 98.14
+     },
+     "who": "camel",
+     "action": "Rises rear first then front, with a grumble",
+     "acting": "chew, lid 0.4, talk pulse",
+     "library": "camel kneel 1..0"
+    },
+    {
+     "t": 98.8,
+     "end": 99.6,
+     "cue": {
+      "word": "ثم",
+      "t": 98.8
+     },
+     "who": "caliph",
+     "action": "Turns for one last look up the pyramid",
+     "acting": "gaze climbs to the apex; respect now, not greed (brow -0.3, mouth closed)",
+     "library": "lookAt(apex)"
+    },
+    {
+     "t": 99.6,
+     "end": 101.1,
+     "cue": {
+      "word": "ترك",
+      "t": 99.6
+     },
+     "who": "camera",
+     "action": "Pulls out: the red dashed demolition outline reappears over the pyramid, flickers and is wiped off with one stroke",
+     "acting": "none",
+     "library": "CAM keys + outline alpha 1..0 with a wipe line"
+    },
+    {
+     "t": 100.62,
+     "end": 102.2,
+     "cue": {
+      "word": "هدم",
+      "t": 100.62
+     },
+     "who": "caliph",
+     "action": "Shakes his head and waves the idea away with the back of his hand",
+     "acting": "small rueful smile, lid 0.3",
+     "library": "PERSON_HANDS.wave (one flick) + head shake"
+    },
+    {
+     "t": 102.22,
+     "end": 103.1,
+     "cue": {
+      "word": "وأمر",
+      "t": 102.22
+     },
+     "who": "caliph",
+     "action": "Raises a flat palm to the workers",
+     "acting": "firm, gaze on them",
+     "library": "aR raised palm (arm angle)"
+    },
+    {
+     "t": 103.12,
+     "end": 104.3,
+     "cue": {
+      "word": "بوقف",
+      "t": 103.12
+     },
+     "who": "w2",
+     "action": "STOP! as lettering; w2 drops his shovel first and at once, w1 last and reluctantly",
+     "acting": "w2 delighted (first real smile), w1 looks at the scar once more",
+     "library": "S.label + stagger(i); tools fall with fallY and a small bounce"
+    },
+    {
+     "t": 104.32,
+     "end": 105.3,
+     "cue": {
+      "word": "والعودة",
+      "t": 104.32
+     },
+     "who": "horse",
+     "action": "The caliph mounts; the horse turns to face left",
+     "acting": "ears up, tail swish",
+     "library": "rideOn + headTurn then flip under a 2 frame squeeze"
+    },
+    {
+     "t": 105.34,
+     "end": 107.66,
+     "cue": {
+      "word": "شؤون",
+      "t": 105.6
+     },
+     "who": "caliph",
+     "action": "Rides out left with the vizier and the loaded camel behind; in a small thought balloon over him a throne and a scroll replace the pyramid",
+     "acting": "gaze ahead, composed; the vizier looks back once",
+     "library": "rideOn + walk; thoughtCloud with the Library throne anchor drawing and a scroll"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 103.12,
+     "text": "STOP!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 107.66
+   }
+  },
+  {
+   "id": "S12",
+   "start": 107.66,
+   "end": 119.62,
+   "paragraphs": [
+    6
+   ],
+   "set": "pyramidFace",
+   "cast": [
+    "storyteller",
+    "builder"
+   ],
+   "summary": "The tale goes on: a wonder of the world, built of huge stones set exactly on one another. The courses build themselves; a blade cannot enter the joint.",
+   "camera": {
+    "shot": "wide",
+    "move": "crane",
+    "notes": "Open on the storyteller inset bottom left for 2 s, then crane up the wall {x 560, y 420, zoom 1.2} as the blocks land; close on one joint {x 560, y 730, zoom 3.0} from 117.0."
+   },
+   "composition": "Storyteller as a round inset (r 130) at panel bottom left (x 170, y 1040 world) for 107.66 to 110.6, hands telling. The wall is shown empty above course 1 at first; blocks drop into courses 2 to 4. The builder stands on course 0 top (y 730) at x 470 for the blade gag.",
+   "actions": [
+    {
+     "t": 107.66,
+     "end": 108.4,
+     "cue": {
+      "word": "تواصل",
+      "t": 107.66
+     },
+     "who": "storyteller",
+     "action": "Round inset irises open: the old storyteller, mid-sentence, one finger raised",
+     "acting": "twinkle, talk 0.6, gaze to camera then up at the picture",
+     "library": "inset circle (clip + iris) + PERSON_HANDS.pointUp, sit 1 seat 'floor'"
+    },
+    {
+     "t": 109.12,
+     "end": 110.6,
+     "cue": {
+      "word": "الأهرامات",
+      "t": 109.72
+     },
+     "who": "storyteller",
+     "action": "Sweeps his hand up toward the wall and the inset slides away",
+     "acting": "eyes follow his own hand upward",
+     "library": "handR sweep; inset alpha out"
+    },
+    {
+     "t": 110.74,
+     "end": 112.7,
+     "cue": {
+      "word": "عجائب",
+      "t": 111.94
+     },
+     "who": "lettering",
+     "action": "Banner WONDER OF THE WORLD unrolls across the top; a ring of small star glints circles the wall",
+     "acting": "none",
+     "library": "S.title (small) + glints"
+    },
+    {
+     "t": 113.5,
+     "end": 114.9,
+     "cue": {
+      "word": "مبنية",
+      "t": 113.5
+     },
+     "who": "set",
+     "action": "Building replay: the upper courses are empty sky, and blocks begin to drop in one by one from above",
+     "acting": "each block lands with a 2 frame squash of 6 percent and a dust line",
+     "library": "fallY + impactSquash per block, seeded order"
+    },
+    {
+     "t": 115.0,
+     "end": 116.9,
+     "cue": {
+      "word": "أحجار",
+      "t": 115.0
+     },
+     "who": "builder",
+     "action": "A builder at s 0.8 guides a block down with both hands raised: the block is taller than he is",
+     "acting": "gaze up at the block, braced knees (sq 0.95)",
+     "library": "aL, aR raised; lookAt the block"
+    },
+    {
+     "t": 115.7,
+     "end": 116.9,
+     "cue": {
+      "word": "عظيمة",
+      "t": 115.7
+     },
+     "who": "fx",
+     "action": "A height arrow beside builder and block compares them",
+     "acting": "none",
+     "library": "S.arrow double headed"
+    },
+    {
+     "t": 117.04,
+     "end": 117.5,
+     "cue": {
+      "word": "وضعت",
+      "t": 117.04
+     },
+     "who": "set",
+     "action": "The last block slides the final few units sideways and seats with no gap at all",
+     "acting": "none",
+     "library": "kfn ease out + a single joint line"
+    },
+    {
+     "t": 117.54,
+     "end": 118.9,
+     "cue": {
+      "word": "بدقة",
+      "t": 117.54
+     },
+     "who": "builder",
+     "action": "Close on the joint: he tries to push a thin blade into it; the blade bends into an arc and springs out of his hand",
+     "acting": "tongue out in concentration, then eyes follow the blade flying off",
+     "library": "handRW + a blade drawn as a bending line; knife on an arc"
+    },
+    {
+     "t": 118.92,
+     "end": 119.62,
+     "cue": {
+      "word": "بعضها.",
+      "t": 118.92
+     },
+     "who": "builder",
+     "action": "Gives the joint a pat and a proud nod to the camera",
+     "acting": "smile, one blink",
+     "library": "handLW pat + drop pulse"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 111.94,
+     "text": "WONDER OF THE WORLD"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 119.62
+   }
+  },
+  {
+   "id": "S13",
+   "start": 119.62,
+   "end": 129.8,
+   "paragraphs": [
+    6
+   ],
+   "set": "pyramidSection",
+   "cast": [
+    "builder"
+   ],
+   "summary": "Iron and lead in the building (a clamp set in a joint and sealed), then the passages and chambers whose secrets nobody knows.",
+   "camera": {
+    "shot": "insert",
+    "move": "pull-out",
+    "notes": "Macro insert of the joint full frame from 119.62 to 124.9 (ironClamp prop drawn in panel space); cut to the cutaway {x 500, y 560, zoom 1.3} at 124.9 and pull out to 1.0 by 128.9."
+   },
+   "composition": "Insert: joint vertical at panel centre, slot across it; clamp enters from the top, ladle from the upper right. Cutaway: chambers A (500, 560), B (420, 690), C (610, 740) appear as dashed shapes with a question mark in each.",
+   "actions": [
+    {
+     "t": 119.62,
+     "end": 121.2,
+     "cue": {
+      "word": "وتتحدث",
+      "t": 119.62
+     },
+     "who": "ironClamp",
+     "action": "Macro: two block corners and the hairline joint; a bow-tie slot is chalked across the joint and cut (it darkens)",
+     "acting": "none",
+     "library": "ironClamp prop: slot 0..1"
+    },
+    {
+     "t": 121.26,
+     "end": 121.9,
+     "cue": {
+      "word": "حديد",
+      "t": 121.26
+     },
+     "who": "ironClamp",
+     "action": "The dark iron clamp drops into the slot and seats with a 2 frame bounce; label IRON with a pointer",
+     "acting": "none",
+     "library": "fallY + rebound; S.label"
+    },
+    {
+     "t": 121.9,
+     "end": 122.8,
+     "cue": {
+      "word": "ورصاص",
+      "t": 121.9
+     },
+     "who": "ironClamp",
+     "action": "A ladle swings in and pours pale molten lead round the clamp; label LEAD",
+     "acting": "steam puffs rise",
+     "library": "ladle rot + fill 0..1; S.label"
+    },
+    {
+     "t": 122.8,
+     "end": 124.2,
+     "cue": {
+      "word": "استعملا",
+      "t": 122.8
+     },
+     "who": "builder",
+     "action": "A builder hand taps the set joint with a mallet twice: nothing moves",
+     "acting": "only the hand and the mallet in frame",
+     "library": "strike cycle (small) on a hand + mallet"
+    },
+    {
+     "t": 124.26,
+     "end": 124.9,
+     "cue": {
+      "word": "البناء،",
+      "t": 124.26
+     },
+     "who": "fx",
+     "action": "A glint runs along the joint, sealed",
+     "acting": "none",
+     "library": "glint line"
+    },
+    {
+     "t": 124.9,
+     "end": 125.7,
+     "cue": {
+      "word": "وعن",
+      "t": 124.9
+     },
+     "who": "set",
+     "action": "Cut to the cutaway of the whole pyramid, solid and dark",
+     "acting": "none",
+     "library": "pyramidSite section, legend 0"
+    },
+    {
+     "t": 125.78,
+     "end": 126.4,
+     "cue": {
+      "word": "ممرات",
+      "t": 125.78
+     },
+     "who": "set",
+     "action": "Dashed passages snake through the mass like a maze being guessed at",
+     "acting": "the dashes crawl (lineDashOffset from t)",
+     "library": "legend 0..0.5 + animated dash"
+    },
+    {
+     "t": 126.44,
+     "end": 127.1,
+     "cue": {
+      "word": "وغرف",
+      "t": 126.44
+     },
+     "who": "set",
+     "action": "Three dashed chambers pop along the passages, staggered",
+     "acting": "none",
+     "library": "legend 0.5..1 with stagger(i)"
+    },
+    {
+     "t": 127.14,
+     "end": 128.3,
+     "cue": {
+      "word": "يعرف",
+      "t": 127.84
+     },
+     "who": "fx",
+     "action": "A question mark pops in each chamber, one after another",
+     "acting": "none",
+     "library": "S.label \"?\" x 3 (one lettering item)"
+    },
+    {
+     "t": 128.38,
+     "end": 129.8,
+     "cue": {
+      "word": "أسرارها.",
+      "t": 128.9
+     },
+     "who": "set",
+     "action": "The chambers darken to black with the question marks still showing: nobody has seen inside",
+     "acting": "none",
+     "library": "legend fill alpha + CAM settle"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 121.26,
+     "text": "IRON"
+    },
+    {
+     "t": 121.9,
+     "text": "LEAD"
+    },
+    {
+     "t": 127.84,
+     "text": "? ? ?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 129.8
+   }
+  },
+  {
+   "id": "S14",
+   "start": 129.8,
+   "end": 142.32,
+   "paragraphs": [
+    7
+   ],
+   "set": "campNight",
+   "cast": [
+    "storyteller",
+    "kid1",
+    "kid2"
+   ],
+   "summary": "The old storytellers claim: jewels, weapons and books in the chambers, and unseen guardians keeping them from time. Told by the fire, pictured in a big story cloud.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Full world to place the fire, the listeners and the pyramid silhouette; from 132.5 the story cloud (thoughtCloud 620 x 400 centred (560, 400)) is the stage; push in on the cloud {x 560, y 460, zoom 1.35} at 138.4 for the guardians."
+   },
+   "composition": "Storyteller at x 330 seated, facing right; kid1 x 600 and kid2 x 700 seated facing him; fire at x 500 between them. The cloud rises from the storyteller (tail at his head) and holds the three dashed chambers in a row at scale 0.9: A left, B centre, C right.",
+   "actions": [
+    {
+     "t": 129.8,
+     "end": 131.0,
+     "cue": {
+      "word": "ويزعم",
+      "t": 129.8
+     },
+     "who": "storyteller",
+     "action": "By the fire at night; he leans in and lowers his voice",
+     "acting": "firelight flicker on his face, lid 0.3, talk 0.5, gaze on the children",
+     "library": "tip 0.08 + PERSON_HANDS.cupMouth (one hand)"
+    },
+    {
+     "t": 131.02,
+     "end": 132.5,
+     "cue": {
+      "word": "الرواة",
+      "t": 131.02
+     },
+     "who": "kid1",
+     "action": "Both children lean in; kid1 hugs his knees",
+     "acting": "eyes wide, kid2 with one brow up",
+     "library": "sit 1 seat 'floor' + tip 0.06, stagger"
+    },
+    {
+     "t": 132.54,
+     "end": 133.9,
+     "cue": {
+      "word": "بعض",
+      "t": 133.08
+     },
+     "who": "fx",
+     "action": "The story cloud puffs up from the storyteller: trail first, then the cloud with three dark chambers in it",
+     "acting": "children's eyes rise to it",
+     "library": "thoughtCloud(ctx, 560, 400, 620, 400, t, {p, tail, inside})"
+    },
+    {
+     "t": 134.64,
+     "end": 135.5,
+     "cue": {
+      "word": "جواهر",
+      "t": 134.64
+     },
+     "who": "legendIcons",
+     "action": "Chamber A lights: cut gems sparkle",
+     "acting": "kid1 mouth o",
+     "library": "jewels + goldGlow 0.5"
+    },
+    {
+     "t": 135.54,
+     "end": 136.6,
+     "cue": {
+      "word": "وأسلحة",
+      "t": 135.54
+     },
+     "who": "legendIcons",
+     "action": "Chamber B lights: crossed swords over a shield",
+     "acting": "kid1 flinches a little and grins",
+     "library": "sword x 2 + shield"
+    },
+    {
+     "t": 136.66,
+     "end": 137.5,
+     "cue": {
+      "word": "وكتبًا،",
+      "t": 136.66
+     },
+     "who": "legendIcons",
+     "action": "Chamber C lights: a stack of books, one open",
+     "acting": "kid2 leans forward at last: this is the one she wants",
+     "library": "books icon"
+    },
+    {
+     "t": 137.58,
+     "end": 139.0,
+     "cue": {
+      "word": "حراسًا",
+      "t": 138.42
+     },
+     "who": "storyteller",
+     "action": "Raises both hands with spread fingers and widens his eyes: now the guardians",
+     "acting": "eyes wide, brow -0.9, slow sway",
+     "library": "PERSON_HANDS.armsOut + tremble 1"
+    },
+    {
+     "t": 139.1,
+     "end": 140.1,
+     "cue": {
+      "word": "خفيين",
+      "t": 139.1
+     },
+     "who": "fx",
+     "action": "In the dark passages between the chambers pairs of pale eyes open, one pair after another, and a faint outline of a tall figure forms round one pair and fades again",
+     "acting": "the eyes blink out of step; they look at the children",
+     "library": "ghostForm (planned) at low alpha: eye pairs + outline"
+    },
+    {
+     "t": 140.16,
+     "end": 141.3,
+     "cue": {
+      "word": "يحفظونها",
+      "t": 140.16
+     },
+     "who": "fx",
+     "action": "The pale figures drift in front of the three chamber mouths and stand guard",
+     "acting": "none; slow, weightless",
+     "library": "ghostForm + kfn drift"
+    },
+    {
+     "t": 141.38,
+     "end": 142.32,
+     "cue": {
+      "word": "الزمان.",
+      "t": 141.64
+     },
+     "who": "kid1",
+     "action": "Kid1 hides behind kid2; an hourglass icon at the cloud edge runs and runs, and the chambers do not change",
+     "acting": "kid2 pats his head without looking away",
+     "library": "handLW pat; hourglass (planned) level loop"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 142.32
+   }
+  },
+  {
+   "id": "S15",
+   "start": 142.32,
+   "end": 152.62,
+   "paragraphs": [
+    7
+   ],
+   "set": "campNight",
+   "cast": [
+    "storyteller",
+    "kid1",
+    "kid2"
+   ],
+   "summary": "The honest note: these are legends in the story, not confirmed facts about the real history of the pyramids. The cloud becomes outlines and is stamped; the real pyramid stays solid behind.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "From the cloud {zoom 1.35} back to the full world by 143.3; at 150.3 drift right and up {x 620, y 560, zoom 1.2} to favour the real pyramid silhouette under the moon."
+   },
+   "composition": "Cloud at (560, 400) as before. The stamp sits diagonally across the cloud centre. The real pyramid silhouette is at the right behind (apex (700, 330)); when the cloud pops it is left alone in the frame with the moon at (860, 200).",
+   "actions": [
+    {
+     "t": 142.32,
+     "end": 143.2,
+     "cue": {
+      "word": "هذه",
+      "t": 142.32
+     },
+     "who": "storyteller",
+     "action": "Drops his spooky hands, sits back and laughs kindly",
+     "acting": "smile, lids relax, talk 0.5",
+     "library": "settleTo + sit"
+    },
+    {
+     "t": 143.28,
+     "end": 144.0,
+     "cue": {
+      "word": "أوصاف",
+      "t": 143.28
+     },
+     "who": "legendIcons",
+     "action": "Everything inside the cloud loses its colour and becomes dashed outlines: gems, swords, books, guardians",
+     "acting": "none",
+     "library": "ghost state (dashed, no fill) cross-fade"
+    },
+    {
+     "t": 144.04,
+     "end": 145.1,
+     "cue": {
+      "word": "أسطورية",
+      "t": 144.04
+     },
+     "who": "lettering",
+     "action": "A red rubber stamp thumps diagonally across the cloud: LEGEND",
+     "acting": "the cloud squashes 5 percent under the stamp and springs back",
+     "library": "S.label rotated in a red box + impactSquash"
+    },
+    {
+     "t": 145.18,
+     "end": 146.2,
+     "cue": {
+      "word": "وردت",
+      "t": 145.18
+     },
+     "who": "kid1",
+     "action": "Kid1 comes out from behind kid2, relieved, and laughs",
+     "acting": "sq 1.04 hop of relief, smile",
+     "library": "hop (small) + landSquash"
+    },
+    {
+     "t": 146.26,
+     "end": 147.2,
+     "cue": {
+      "word": "القصة،",
+      "t": 146.26
+     },
+     "who": "storyteller",
+     "action": "Taps the side of his head, then opens his hand toward the cloud: it is in the story",
+     "acting": "gaze on the children, warm",
+     "library": "handR to temple then palmsUp"
+    },
+    {
+     "t": 147.24,
+     "end": 148.6,
+     "cue": {
+      "word": "معلومات",
+      "t": 147.9
+     },
+     "who": "fx",
+     "action": "The cloud shrinks toward his head and pops, leaving three small puffs",
+     "acting": "none",
+     "library": "thoughtCloud p 1..0"
+    },
+    {
+     "t": 148.7,
+     "end": 149.6,
+     "cue": {
+      "word": "مؤكدة",
+      "t": 148.7
+     },
+     "who": "lettering",
+     "action": "Label NOT PROVEN FACT appears small beside the place where the cloud was",
+     "acting": "kid2 nods slowly, satisfied",
+     "library": "S.label"
+    },
+    {
+     "t": 150.34,
+     "end": 151.7,
+     "cue": {
+      "word": "تاريخ",
+      "t": 150.34
+     },
+     "who": "camera",
+     "action": "Drifts to the real pyramid: a plain, solid silhouette with a moonlit edge",
+     "acting": "all three turn their heads to look at it, one after another",
+     "library": "CAM keys + stagger lookAt"
+    },
+    {
+     "t": 151.8,
+     "end": 152.62,
+     "cue": {
+      "word": "الحقيقي.",
+      "t": 151.8
+     },
+     "who": "fx",
+     "action": "A single question mark stays on the real pyramid and fades",
+     "acting": "none",
+     "library": "alpha ramp"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 144.04,
+     "text": "LEGEND"
+    },
+    {
+     "t": 148.7,
+     "text": "NOT PROVEN FACT"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 152.62
+   }
+  },
+  {
+   "id": "S16",
+   "start": 152.62,
+   "end": 163.84,
+   "paragraphs": [
+    8
+   ],
+   "set": "pyramidFar",
+   "cast": [
+    "oldKing",
+    "builder"
+   ],
+   "summary": "The tale ends in reflection: the monuments stay after their owners vanish. An ancient king and his builders stand before the pyramid and blow away as sand while the days race overhead.",
+   "camera": {
+    "shot": "wide",
+    "move": "drift",
+    "notes": "Full world, a very slow drift right (x 480 to 520) across the whole scene so the land never feels frozen; no cuts."
+   },
+   "composition": "Great pyramid centred right as in S1. The king stands at x 330 (s 0.5) on the sand before it with two builders at x 420 and 480. Sun and moon arc over the apex. No scar on the pyramid in this scene (it is the distant past) until 163.0.",
+   "actions": [
+    {
+     "t": 152.62,
+     "end": 153.9,
+     "cue": {
+      "word": "وتنتهي",
+      "t": 152.62
+     },
+     "who": "set",
+     "action": "Dawn over the pyramids, long shadows; quiet",
+     "acting": "none",
+     "library": "pyramidSite far, skyCycle u 0.02, scar off"
+    },
+    {
+     "t": 153.98,
+     "end": 155.5,
+     "cue": {
+      "word": "بالتأمل",
+      "t": 154.68
+     },
+     "who": "set",
+     "action": "The shadow of the great pyramid swings slowly across the sand as the sun climbs",
+     "acting": "none",
+     "library": "a shadow polygon keyed from u"
+    },
+    {
+     "t": 155.82,
+     "end": 157.1,
+     "cue": {
+      "word": "الآثار",
+      "t": 155.82
+     },
+     "who": "oldKing",
+     "action": "An ancient king and two builders fade in before the pyramid, tiny against it, looking up at what they made",
+     "acting": "king proud, hands on hips; builders wipe their brows",
+     "library": "person alpha 0..1 + PERSON_HANDS.hipsHands"
+    },
+    {
+     "t": 157.18,
+     "end": 158.0,
+     "cue": {
+      "word": "بقيت",
+      "t": 157.18
+     },
+     "who": "fx",
+     "action": "The pyramid gets a firm outline pulse: it stays",
+     "acting": "none",
+     "library": "S.emphasis ring on the pyramid"
+    },
+    {
+     "t": 158.06,
+     "end": 159.3,
+     "cue": {
+      "word": "اختفى",
+      "t": 158.52
+     },
+     "who": "builder",
+     "action": "The builders turn to sand from the head down and stream away on the wind, one then the other",
+     "acting": "no fear: they simply look at the pyramid until they are gone",
+     "library": "sandBlow (planned) p 0..1 with stagger"
+    },
+    {
+     "t": 159.38,
+     "end": 160.2,
+     "cue": {
+      "word": "أصحابها.",
+      "t": 159.38
+     },
+     "who": "set",
+     "action": "Their tools lie on the sand a moment, then the sand covers them",
+     "acting": "none",
+     "library": "mallet shapes + a rising sand line"
+    },
+    {
+     "t": 160.22,
+     "end": 161.6,
+     "cue": {
+      "word": "رحل",
+      "t": 161.2
+     },
+     "who": "set",
+     "action": "Days begin to race: sun, moon, sun, moon over the apex",
+     "acting": "none",
+     "library": "skyCycle u accelerating (kfn 0.1 to 6)"
+    },
+    {
+     "t": 161.68,
+     "end": 162.3,
+     "cue": {
+      "word": "الملوك",
+      "t": 161.68
+     },
+     "who": "oldKing",
+     "action": "The king blows away last; his gold circlet drops to the sand, rolls and falls flat",
+     "acting": "gaze up to the apex to the end, lid slowly closing",
+     "library": "sandBlow + a circlet on a damped roll"
+    },
+    {
+     "t": 162.36,
+     "end": 163.84,
+     "cue": {
+      "word": "والبناؤون،",
+      "t": 162.36
+     },
+     "who": "set",
+     "action": "Sand drifts over the circlet; the empty desert and the pyramid remain",
+     "acting": "none",
+     "library": "sand line + dust dots from K.noise"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 163.84
+   }
+  },
+  {
+   "id": "S17",
+   "start": 163.84,
+   "end": 177.86,
+   "paragraphs": [
+    8
+   ],
+   "set": "pyramidFar",
+   "cast": [
+    "caliph",
+    "vizier",
+    "horse",
+    "bayHorse",
+    "camel"
+   ],
+   "summary": "The pyramids remain as witnesses to a distant age, and al-Maamun, a small rider under them, stops looking for profit beneath their stones. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Same far view; the racing sky slows to a warm dusk (u 0.45). Slow pull-out feeling by a 4 percent zoom from 1.04 to 1.0 over 164 to 172. Final frame held from 173.5."
+   },
+   "composition": "The three pyramids in dusk light; the scar, a tiny dark arch at (300, 900), now visible on the great pyramid. Caliph, vizier and camel cross the foreground right to left at s 0.42 along y 930. THE END sits in the sky upper left (x 90..470, y 150..300), clear of the apex.",
+   "actions": [
+    {
+     "t": 163.84,
+     "end": 164.6,
+     "cue": {
+      "word": "وظلت",
+      "t": 163.84
+     },
+     "who": "set",
+     "action": "The racing sky brakes and settles into a golden dusk",
+     "acting": "none",
+     "library": "skyCycle u eased to 0.45"
+    },
+    {
+     "t": 164.62,
+     "end": 165.5,
+     "cue": {
+      "word": "الأهرامات",
+      "t": 164.62
+     },
+     "who": "fx",
+     "action": "Outline pulses run over the three pyramids, largest first",
+     "acting": "none",
+     "library": "S.emphasis x 3 with stagger"
+    },
+    {
+     "t": 165.52,
+     "end": 166.5,
+     "cue": {
+      "word": "تشهد",
+      "t": 165.52
+     },
+     "who": "set",
+     "action": "A caravan of three tiny camel silhouettes passes far behind, then a single later traveller: ages of visitors",
+     "acting": "none",
+     "library": "camel silhouette:true at s 0.12, walk"
+    },
+    {
+     "t": 166.56,
+     "end": 167.9,
+     "cue": {
+      "word": "زمن",
+      "t": 166.56
+     },
+     "who": "fx",
+     "action": "Stars come out early above the apex and one glint sits on the tip",
+     "acting": "none",
+     "library": "dayCycle stars + glint"
+    },
+    {
+     "t": 167.92,
+     "end": 168.9,
+     "cue": {
+      "word": "بينما",
+      "t": 167.92
+     },
+     "who": "caliph",
+     "action": "Al-Maamun rides in from the right at small scale, the vizier and the loaded camel behind",
+     "acting": "calm, gaze ahead; rider bob",
+     "library": "rideOn + walk (GAIT.horse * 0.42), stagger"
+    },
+    {
+     "t": 168.98,
+     "end": 169.6,
+     "cue": {
+      "word": "توقف",
+      "t": 168.98
+     },
+     "who": "caliph",
+     "action": "Halts level with the scar",
+     "acting": "horse ears forward; he turns his head to the little tunnel mouth",
+     "library": "walk amp 0 + lurch + lookAt(scar)"
+    },
+    {
+     "t": 169.64,
+     "end": 170.6,
+     "cue": {
+      "word": "المأمون",
+      "t": 169.64
+     },
+     "who": "fx",
+     "action": "A small arrow points at the scar: his tunnel, a pinprick on the mass",
+     "acting": "none",
+     "library": "S.arrow"
+    },
+    {
+     "t": 170.62,
+     "end": 171.3,
+     "cue": {
+      "word": "البحث",
+      "t": 170.62
+     },
+     "who": "caliph",
+     "action": "A coin balloon pops over his head; he waves it away himself and it bursts",
+     "acting": "rueful smile, lid 0.3",
+     "library": "thoughtCloud small + coinPile single; PERSON_HANDS.wave"
+    },
+    {
+     "t": 171.4,
+     "end": 172.5,
+     "cue": {
+      "word": "ربح",
+      "t": 171.4
+     },
+     "who": "caliph",
+     "action": "Bows his head to the pyramid, one hand on his chest",
+     "acting": "eyes closed for 8 frames, then open",
+     "library": "PERSON_HANDS.chest + drop + lid"
+    },
+    {
+     "t": 172.56,
+     "end": 173.5,
+     "cue": {
+      "word": "حجارتها.",
+      "t": 172.56
+     },
+     "who": "horse",
+     "action": "He rides on to the left; the long shadows of the pyramids lie over the riders as they go",
+     "acting": "vizier pats the ledger shut",
+     "library": "rideOn + walk; shadow polygons"
+    },
+    {
+     "t": 173.66,
+     "end": 175.0,
+     "who": "lettering",
+     "action": "After the last word THE END pops in the sky upper left",
+     "acting": "none",
+     "library": "S.title"
+    },
+    {
+     "t": 175.0,
+     "end": 177.86,
+     "who": "set",
+     "action": "Hold: riders leave the frame, the pyramids keep still, a little sand blows across the scar",
+     "acting": "none",
+     "library": "dust dots from K.noise"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 173.66,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 173.66,
+     "kind": "chime"
+    },
+    {
+     "t": 175.0,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 177.86
+   }
+  }
+ ],
+ "ending": {
+  "t": 173.66,
+  "description": "Dusk over the three pyramids with the tiny tunnel scar; the caliph bows his head and rides out left with vizier and camel. THE END pops in the sky upper left at 173.66 and is held to 177.86 (end_hold 4.0) while sand blows across the scar."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "تحكي رواية قديمة أن الخليفة المأمون وصل إلى مصر،|وشاهد الأهرامات العظيمة، فدهش من ضخامة أحجارها وارتفاعها.|سمع أن الناس يتحدثون عن كنوز مخبأة داخلها،|فأراد أن يعرف ما تخفيه.",
+   "en": "An old tale says Caliph al-Maamun visited Egypt|and marveled at the pyramids.|Hearing rumors of hidden treasure,|he wanted to discover what lay inside."
+  },
+  {
+   "p": 2,
+   "ar": "قرر المأمون فتح أحد الأهرامات،|بل حاول إزالة جزء كبير منه. جمع العمال وأمرهم بالحفر،|لكن الحجارة الضخمة قاومت أدواتهم، وكان العمل أبطأ وأصعب مما توقع الجميع في البداية.",
+   "en": "Al-Maamun ordered workers to open a pyramid|and even tried to take part of it down.|Its enormous stones resisted their tools."
+  },
+  {
+   "p": 3,
+   "ar": "استمر العمل أيامًا كثيرة، وأنفق الخليفة مبالغ ضخمة على الرجال والأدوات ونقل الحجارة.|ومع ذلك لم يتمكن العمال إلا من فتح نفق صغير في جسم الهرم،|ولم يظهر لهم ما كانوا يتوقعونه.",
+   "en": "Work continued at great cost,|but the laborers managed to open only a small tunnel.|The expected riches did not readily appear."
+  },
+  {
+   "p": 4,
+   "ar": "ثم وجدوا، كما تقول الحكاية، مالًا وكنوزًا داخل الممر.|أمر المأمون بحساب قيمتها ومقارنتها بما دفعه للحفر،|فكانت المفاجأة أن القيمة ساوت نفقات العمل تمامًا، لا أكثر ولا أقل.",
+   "en": "Eventually, the story says, treasure was found.|Its value matched exactly what the caliph had spent|on excavation—no more and no less."
+  },
+  {
+   "p": 5,
+   "ar": "تعجب الخليفة من هذا الاتفاق الغريب، وأدرك أنه لم يربح شيئًا من محاولته المكلفة.|أخذ ما وجده،|ثم ترك فكرة هدم الأهرامات، وأمر بوقف العمل والعودة إلى شؤون الحكم الأخرى.",
+   "en": "Astonished by the coincidence and his lack of profit,|the caliph took what had been discovered|and abandoned his attempt to dismantle the pyramids."
+  },
+  {
+   "p": 6,
+   "ar": "تواصل الرواية وصف الأهرامات بأنها من عجائب الدنيا،|مبنية من أحجار عظيمة وضعت بدقة فوق بعضها.|وتتحدث عن حديد ورصاص استعملا في البناء، وعن ممرات وغرف لا يعرف الناس أسرارها.",
+   "en": "The tale describes the pyramids as wonders|built from immense, carefully fitted stones,|and imagines mysterious passages and chambers within them."
+  },
+  {
+   "p": 7,
+   "ar": "ويزعم الرواة القدماء أن بعض الغرف تضم جواهر وأسلحة وكتبًا،|وأن حراسًا خفيين يحفظونها من الزمان.|هذه أوصاف أسطورية وردت في القصة،|وليست معلومات مؤكدة عن تاريخ الأهرامات الحقيقي.",
+   "en": "Ancient storytellers imagined jewels, weapons, writings|and unseen guardians inside.|These are legendary claims,|not established facts about the pyramids."
+  },
+  {
+   "p": 8,
+   "ar": "وتنتهي الحكاية بالتأمل في الآثار التي بقيت بعدما اختفى أصحابها.|فقد رحل الملوك والبناؤون، وظلت الأهرامات تشهد على زمن بعيد،|بينما توقف المأمون عن البحث عن ربح تحت حجارتها.",
+   "en": "The tale closes by reflecting on monuments that outlast their builders.|Kings passed away, pyramids endured,|and al-Maamun stopped seeking profit beneath their stones."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "pyramidSite",
+   "reusable": true,
+   "effort": "L",
+   "description": "One module with three views of the same pyramid: 'far' (three pyramids on Library dunes with skyCycle, scar option), 'face' (close stepped wall of big blocks with dig 0..1 and outline 0..1) and 'section' (cutaway with tunnel len, niche breach, legend chambers, solid). All dimensions are in the sets entries pyramidFar, pyramidFace, pyramidSection. Reusable for any Egypt, tomb, treasure or ruin tale.",
+   "implementation": "sets/pyramid.js: pyramidSite(ctx, {view, u, dig, outline, len, breach, legend, solid, scar, camX}) returning anchors {apex, base, digBlock, mouth, tunnelEnd, niche, chambers}. Static parts baked with bake() per view and option set; faces are polygons with Ben-Day dot fills (S dots helper), course lines and joints from a seeded loop, brush outline. far reuses the desertRoad dune layers (road false) and palmTree. Keyed parts (dig hole, outline dash, tunnel length, breach wall, legend dashes with lineDashOffset) drawn live."
+  },
+  {
+   "type": "set",
+   "name": "desertCamp",
+   "reusable": true,
+   "effort": "M",
+   "description": "The planned campsite (AN-044, AN-124), used here in its night state with one tent, the fire and the carpet mat, plus a pyramid silhouette option. See sets.campNight.",
+   "implementation": "If desertCamp exists by then, call it with night and add the silhouette polygon; otherwise draw skyCycle(u 0.72), two dune curves, a striped tent (triangle fan), a fire (three flame paths scaled by K.noise, a radial halftone disc) and a carpet rectangle."
+  },
+  {
+   "type": "prop",
+   "name": "pickaxe",
+   "reusable": true,
+   "effort": "S",
+   "description": "Pickaxe with a bend field (see props). Used with the planned shovel and torch.",
+   "implementation": "props: a rounded rect shaft and a curved double-point head as one path, rotated about the grip; bend rotates the outer third of one point. Icon mode for the broken-tool heap."
+  },
+  {
+   "type": "prop",
+   "name": "balanceScale",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned balance scale at large size with a tilt field and pans that take content callbacks (see props).",
+   "implementation": "Post and foot as rects; beam rotated by tilt about the pivot; pan positions from the beam ends, chains as three lines, pans as shallow arcs; content drawn by callback at the pan centre."
+  },
+  {
+   "type": "prop",
+   "name": "treasureHoard",
+   "reusable": true,
+   "effort": "M",
+   "description": "The planned chest (lid, fill), with the planned coinPile and jewels: used as the pay chest and as the found hoard.",
+   "implementation": "Reuse the planned functions; chest = box + arched lid rotated about the back hinge, coins as overlapping ellipses above the rim scaled by fill."
+  },
+  {
+   "type": "prop",
+   "name": "ironClamp",
+   "reusable": false,
+   "effort": "S",
+   "description": "Macro joint insert with a bow-tie iron clamp and poured lead (see props).",
+   "implementation": "Panel-space drawing: two block fills, a bow-tie polygon slot, the same polygon in blue-grey falling with fallY, a lead fill polygon clipped to the slot whose top edge is a sine line that flattens with fill; ladle as arc plus handle."
+  },
+  {
+   "type": "prop",
+   "name": "ledger",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned account book with tally strokes (AN-138).",
+   "implementation": "Two page quads, strokes in rows of five by fill."
+  },
+  {
+   "type": "effect",
+   "name": "priceTags",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned running-total tags: SPENT, FOUND and PROFIT with coin icons, counting on keyed times.",
+   "implementation": "Panel-space S.box + S.counter with kfn values; the equals sign and EXACTLY! as S.label."
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned treasure light: rays, halftone disc, staggered glints, strength 0..1.",
+   "implementation": "As planned by KD-031; clip it to the tunnel and niche shape in the section view."
+  },
+  {
+   "type": "effect",
+   "name": "sandBlow",
+   "reusable": true,
+   "effort": "M",
+   "description": "The planned effect (AN-088) that turns a drawn figure into sand streaming away: the gentle way to show that kings and builders are gone.",
+   "implementation": "Draw the figure to an offscreen canvas; p 0..0.3 tint to one sand tone; p 0.3..1 clip away everything above a wipe line and emit seeded dots (K.rng by index) that drift sideways and fade as a pure function of t."
+  },
+  {
+   "type": "effect",
+   "name": "ghostForm",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned vision treatment (AN-082, AN-114), used very lightly: pale eye pairs and a faint outline of a tall figure for the unseen guardians.",
+   "implementation": "Eye pairs as two white ellipses with pupils (eye2) and seeded blinks; outline = a person silhouette stroked dashed at alpha 0.35 with a wavy hem."
+  },
+  {
+   "type": "effect",
+   "name": "inset circle",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned round picture-in-picture with an iris, for the storyteller at 107.66.",
+   "implementation": "Circular clip with a brush ring; radius eased 0 to 130."
+  },
+  {
+   "type": "motion",
+   "name": "strikeCycle",
+   "reusable": true,
+   "effort": "S",
+   "description": "The guide's strike cycle (Fox branch) applied to a person with a pickaxe: lift 0.3 s, whip down, contact on the cue, damped rebound; a slow variant with doubled period for fatigue.",
+   "implementation": "A function of (t, hits) returning arm angles aL, aR and tool rot; contact times listed in S5; rebound from rebound()."
+  }
+ ],
+ "owner_questions": [
+  "SCRIPT: the English is a condensed translation, not sentence for sentence (for example P2 omits that the work was slower and harder than expected, P3 omits the spending on men, tools and hauling, P5 omits stopping the work and returning to affairs of rule, P6 omits iron and lead); both are kept verbatim.",
+  "SCRIPT: the English of P4 contains an em dash (excavation, no more and no less); it is kept verbatim in the subtitle although on-screen text normally avoids dashes. Default: keep verbatim.",
+  "The sums are shown as invented round counters (SPENT 100 and FOUND 100 purses, PROFIT 0); the script gives no numbers. Default: use 100 with a coin icon and no currency name.",
+  "P6 and P7 are staged as an old storyteller telling children by a fire (an addition), so that the legends are visibly a tale. Default: keep the storyteller frame.",
+  "The unseen guardians are shown only as pale eye pairs and a faint outline inside the story cloud, not as monsters. Default: keep them gentle.",
+  "In P8 an ancient king and builders (generic, no named pharaoh, no Egyptian religious imagery) blow away as sand to show that the owners are gone. Default: use the sand effect, no graves or bones.",
+  "Added gags beyond the script: the pick that curls into a hook, the blade that cannot enter the joint, the last coin falling from the upturned pay chest, the caliph bowing his head to the pyramid at the end. Default: keep all four.",
+  "Invented lettering (20 items in all): EGYPT, OPEN IT!, CLANG!, DAY 30, SPENT, TINY!, GOLD!, FOUND, =, EXACTLY!, PROFIT 0, STOP!, WONDER OF THE WORLD, IRON, LEAD, ? ? ?, LEGEND, NOT PROVEN FACT, plus the title and THE END. Default: use as listed."
+ ],
+ "implementation_notes": [
+  "Timeline: every cue is a word start from planning/inputs/timeline.md on the final MP3 (173.86 s). Film length 177.86 s (end_hold 4.0).",
+  "The narration has no pauses of 0.6 s or more; the only gap is 66.68 to 67.20. Use three effects only: a soft chime at 66.94 (the wall breaks), a chime at 173.66 and a quiet whoosh at 175.0 under THE END. All impacts (CLANG!, blocks landing, the stamp) are silent and carried by lettering and squash.",
+  "Build pyramidSite first (three views, one module) and check each view as a still with a person beside it for scale before staging.",
+  "People: Library person with costume presets only (caliph, vizier, villager, servant, carpenter, villageWoman, ascetic, prince, child). Set LIFE.t = t each frame for auto blinks; set noBlink on the caliph from 80.16 to 83.7.",
+  "Tools in hands: draw the pickaxe, shovel, torch and ledger at P.hands (returned by person) after the figure; for the strike use arm angles aL, aR (about [2.45, 2.85] raised) so the pose reads at phone size, not hand targets near the head.",
+  "Workers never move in unison: w1 leads, w3 follows 3 to 4 frames later, w2 6 to 8 frames later (stagger(i)); different strike phases in the S6 time-lapse.",
+  "S6 is a locked shot: only skyCycle u, the shadow, the chest fill, the dig field and the counters change. Animate u with kfn from 0.2 to 3.2 between 43.2 and 46.4, then hold day (u 0.25 equivalent) for the coin beats.",
+  "Section view figures are at s 0.24: keep the camera at zoom 2.4 or more whenever they act (S7 from 61.2, S8 throughout) so they are at least about 135 px tall on screen.",
+  "S9 scale: beam tilt = 0.22 while only FOUND is loaded, then swing(t, 78.3, ...) decaying to exactly 0 at 82.32; the two finger presses at 85.78 and 86.88 are tilt pulses of plus and minus 0.06 that return to 0.",
+  "Counters and tags are drawn in panel space (not world) so camera pushes do not move them; keep them above y 420 of the panel and never over a face.",
+  "Camera cuts under the LATER card at 65.06: put two CAM keys 0.01 s apart at the covered midpoint.",
+  "Panel-only shake (template) for the three strikes in S5; the caption panel never moves.",
+  "Subtitles: chunks_ar.txt and chunks_en.txt from the subtitles array (verbatim, 3 or 4 chunks per paragraph).",
+  "Ending: THE END in the upper left sky (x 90..470, y 150..300 world), clear of the apex at (560, 250) and of the riders."
+ ],
+ "warnings": [
+  "No real pauses in the narration: resist adding sound effects inside words.",
+  "P6 to P8 (66 s) have no plot; the plan gives them their own pictures (building replay, clamp insert, fireside legends, sand and time). Keep something changing every 1 to 2 s there.",
+  "pyramidSite is a large new set (three views). If time is short, build face and far first; the section view can share the outline code.",
+  "The front-facing person cannot swing a pick in profile: sell the strike with arm angles, tool rotation, body tip and the contact effects.",
+  "Tiny figures in the far view (s 0.42 to 0.5) are for scale only; do not put acting that matters on them except the final bow, which is helped by the arrow and the balloon.",
+  "Keep the depiction of the caliph respectful: he is curious and proud, never a buffoon; the joke is on the arithmetic."
+ ]
+}

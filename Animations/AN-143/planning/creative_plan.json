@@ -1,0 +1,2532 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-143",
+ "title": "Ja'afar the Barmecide and the Old Badawi",
+ "duration": 165.53,
+ "end_hold": 3.5,
+ "logline": "On a desert ride the caliph orders his vizier Jaafar to tease a half-blind old Bedouin; Jaafar prescribes an absurd cure of wind and light, and the old man pays him back with a loud fart, a curse and a quicker wit, winning three thousand dirhams from the laughing caliph.",
+ "moral": "Mock a poor man and you may find his tongue is sharper than yours: the joke ends in favour of the one it was aimed at.",
+ "tone": "Broad court comedy with a slow fuse: polite mock gravity, a patient victim, one rude explosion, then warmth. The humour is in faces and timing; the old man keeps his dignity and wins.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.46,
+   "kind": "setup",
+   "cue": {
+    "word": "الخليفة",
+    "t": 0.46
+   },
+   "summary": "The caliph rides into the desert with Jaafar, Abu Nuwas and a companion."
+  },
+  {
+   "id": "B2",
+   "t": 10.74,
+   "kind": "inciting",
+   "cue": {
+    "word": "رجلًا",
+    "t": 10.74
+   },
+   "summary": "They find an old Bedouin leaning on his donkey and stop."
+  },
+  {
+   "id": "B3",
+   "t": 34.04,
+   "kind": "emotion",
+   "cue": {
+    "word": "لعيني،",
+    "t": 34.04
+   },
+   "summary": "He is going to Baghdad for eye medicine; he can hardly see (double-vision POV)."
+  },
+  {
+   "id": "B4",
+   "t": 42.34,
+   "kind": "turn",
+   "cue": {
+    "word": "فأمر",
+    "t": 42.34
+   },
+   "summary": "The caliph orders Jaafar to tease him."
+  },
+  {
+   "id": "B5",
+   "t": 50.58,
+   "kind": "suspense",
+   "cue": {
+    "word": "جوابًا",
+    "t": 50.58
+   },
+   "summary": "Jaafar foresees a harsh answer (thought cloud) but the caliph insists."
+  },
+  {
+   "id": "B6",
+   "t": 68.44,
+   "kind": "emotion",
+   "cue": {
+    "word": "الله",
+    "t": 68.44
+   },
+   "summary": "Asked for a fee, the poor man offers a sincere prayer."
+  },
+  {
+   "id": "B7",
+   "t": 82.5,
+   "kind": "comic",
+   "cue": {
+    "word": "الريح،",
+    "t": 82.5
+   },
+   "summary": "The mock prescription: wind, sunlight, moonlight, lamplight, three months in the air."
+  },
+  {
+   "id": "B8",
+   "t": 103.1,
+   "kind": "comic",
+   "cue": {
+    "word": "بلا",
+    "t": 103.1
+   },
+   "summary": "A bottomless mortar and a cracked dish: nine months of nothing."
+  },
+  {
+   "id": "B9",
+   "t": 121.26,
+   "kind": "turn",
+   "cue": {
+    "word": "يسخر",
+    "t": 121.26
+   },
+   "summary": "The Bedouin understands he is being mocked; anger becomes a sly idea."
+  },
+  {
+   "id": "B10",
+   "t": 127.62,
+   "kind": "climax",
+   "cue": {
+    "word": "عال،",
+    "t": 127.62
+   },
+   "summary": "Stretched on his donkey he breaks wind loudly: payment for the prescription."
+  },
+  {
+   "id": "B11",
+   "t": 139.36,
+   "kind": "surprise",
+   "cue": {
+    "word": "وجهك",
+    "t": 139.36
+   },
+   "summary": "And if cured, a servant will blacken Jaafar's face after his death (picture balloon)."
+  },
+  {
+   "id": "B12",
+   "t": 150.62,
+   "kind": "comic",
+   "cue": {
+    "word": "انفجر",
+    "t": 150.62
+   },
+   "summary": "Fool and curses, until the caliph explodes with laughter."
+  },
+  {
+   "id": "B13",
+   "t": 158.86,
+   "kind": "resolution",
+   "cue": {
+    "word": "ثلاثة",
+    "t": 158.86
+   },
+   "summary": "The caliph rewards the quick wit with three thousand silver dirhams."
+  },
+  {
+   "id": "B14",
+   "t": 163.7,
+   "kind": "moral",
+   "cue": {
+    "word": "لصالح",
+    "t": 163.7
+   },
+   "summary": "The joke ends in the old man's favour; he rides on to Baghdad."
+  }
+ ],
+ "cast": [
+  {
+   "id": "caliph",
+   "name": "Caliph Harun al-Rashid",
+   "library": "person",
+   "base": "person costume:'caliph', age 0.3 (black beard)",
+   "look": "Red robe, blue cape, turban with crown and jewel. Mounted on the white horse (rideOn, rider s 0.76) for the whole film. Playful, quick to grin.",
+   "new": false
+  },
+  {
+   "id": "jaafar",
+   "name": "Jaafar the Barmecide (vizier)",
+   "library": "person",
+   "base": "person costume:'vizier', age 0.2",
+   "look": "Navy robe, red cape, tall white turban with feather, short dark beard. Mounted on the bay horse to 55.2, then on foot at s 0.95. Dignified; wears a courtier smile as a mask.",
+   "new": false
+  },
+  {
+   "id": "abuNuwas",
+   "name": "Abu Nuwas (poet)",
+   "library": "person",
+   "base": "person costume:'poet' (planned preset; until it exists use costume:'merchant' with pal {robe: GREEN, dot: GREEND, hc: C.white, sash: C.yellow})",
+   "look": "Green robe, yellow sash, small tilted white turban with a tail, pointed black beard. Mounted on the black horse. The audience inside the film: first to smirk, first to collapse.",
+   "new": true
+  },
+  {
+   "id": "companion",
+   "name": "the companion",
+   "library": "person",
+   "base": "person costume:'merchant', pal {robe: ochre brown, dot: darker brown, hc: C.yellow, hd: C.red}",
+   "look": "Plain courtier in ochre with a yellow turban. Mounted on a bay horse with a green saddle cloth; on foot only in S11 to carry the sacks. Slow on the uptake.",
+   "new": false
+  },
+  {
+   "id": "bedouin",
+   "name": "the old Bedouin",
+   "library": "person",
+   "base": "person costume:'bedouin', age 0.9, hold:'stick', wink:'R' as the bad eye",
+   "look": "Cream robe, brown cloak, white keffiyeh with black agal, white beard, stoop. Right eye half shut with red soreEye marks. s 0.95 on foot; lying (lie) and then riding (rideOn) on the donkey from 122.4.",
+   "new": false
+  },
+  {
+   "id": "donkey",
+   "name": "the donkey",
+   "library": "donkey",
+   "base": "donkey pal 0 (grey), s 0.8, dir -1 (faces left, toward Baghdad)",
+   "look": "The silent third party of every exchange: ears, headTurn and looks to camera comment on the scene.",
+   "new": false
+  },
+  {
+   "id": "whiteHorse",
+   "name": "the caliph's horse",
+   "library": "horse",
+   "base": "horse pal 0, s 0.8",
+   "look": "White, blue saddle cloth with yellow trim.",
+   "new": false
+  },
+  {
+   "id": "bayHorse",
+   "name": "Jaafar's horse",
+   "library": "horse",
+   "base": "horse pal 1, s 0.8",
+   "look": "Bay; stands riderless at x 1250 from 55.26 on.",
+   "new": false
+  },
+  {
+   "id": "blackHorse",
+   "name": "Abu Nuwas's horse",
+   "library": "horse",
+   "base": "horse pal 2, s 0.8",
+   "look": "Black with a white blaze.",
+   "new": false
+  },
+  {
+   "id": "brownHorse",
+   "name": "the companion's horse",
+   "library": "horse",
+   "base": "horse pal 1, s 0.8, cloth green",
+   "look": "Bay with a green cloth so it differs from Jaafar's.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "desertRoad",
+   "library": "desertRoad",
+   "description": "One strip for the whole film: desertRoad(ctx, {w: 2400, city: 'left', farCity: 2330, palms: [640, [1500, 300, 0.1], 2140], thorns: [1120], rocks: [1960], sun: [1900, 170], camX}) plus the front pass desertRoad(ctx, {w: 2400, front: true}). Ground y 900. Baghdad's wall and gate at the left end (about x 0..330, approximate, read anchors city.gate); the tiny far city at 2330 stands for Basra. Meeting place x 1250..1800.",
+   "new": false
+  }
+ ],
+ "props": [
+  {
+   "id": "iconBalloon",
+   "library": null,
+   "description": "Planned wordless picture balloon (speech tail). Used small (single icon, about 200 x 150) in S3 and S5 and large in strip mode (660 x 380 in panel space) for the prescription (S6, S7) and the Bedouin's threat (S9).",
+   "new": true
+  },
+  {
+   "id": "recipeIcons",
+   "library": null,
+   "description": "The flat icons that play inside the balloon: measuring cup (70 x 80), wind (three curl strokes 120 long), small sun (Library sun at r 34), crescent moon (r 34), oilLamp (planned, 90 wide), bowl (140 x 70, tilt shows it empty) and spoon, mortar (planned medicineKit mortar at 2x = 240 x 140, with the new bottomless option), cracked dish (planned platter at 2x, crack 0..1), sparkle mixture (8 four-point stars), eye (ellipse 90 x 50), servant silhouette with pail, blot (7 circles, r 16..30), face icon with turban (r 44), graveMarker (planned), curse bursts (bolt, spiral, star in red jagged bursts 70 wide).",
+   "new": true
+  },
+  {
+   "id": "thoughtCloud",
+   "library": "thoughtCloud",
+   "description": "Library thought cloud for Jaafar's foreseen harsh answer (48.64..52.5), 300 x 220 at world (1290, 330), inside scale 0.4.",
+   "new": false
+  },
+  {
+   "id": "purse",
+   "library": null,
+   "description": "Planned fat coin purse in its empty state (flat, 50 x 60), turned upside down by the Bedouin at 73.68.",
+   "new": true
+  },
+  {
+   "id": "gasPuff",
+   "library": null,
+   "description": "The fart: a cartoon puff cloud (5 scalloped circles, about 130 x 90, pale yellow green #d9e27a with green dot shading and a black brush outline) that bursts out with three speed lines, then drifts along a bezier to Jaafar trailing the planned stinkLines (three wavy strokes, no flies).",
+   "new": true
+  },
+  {
+   "id": "coinSacks",
+   "library": "packLoad",
+   "description": "Three Library sacks (packLoad 'sack') stacked on the donkey behind the rider, the top one open with planned coinPile coins in a silver palette (white with blue dots) spilling; a counter 1000 / 2000 / 3000 above.",
+   "new": false
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 9.6,
+   "paragraphs": [
+    1
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "caliph",
+    "jaafar",
+    "abuNuwas",
+    "companion",
+    "whiteHorse",
+    "bayHorse",
+    "blackHorse",
+    "brownHorse"
+   ],
+   "summary": "The caliph and his three companions ride out of the Baghdad gate into the desert; each is named as the narrator names him.",
+   "camera": {
+    "shot": "establishing",
+    "move": "track",
+    "notes": "Zoom 1.0, cy 615. Camera x = caliph x + 120 (starts 500, so the city gate is at the left edge), clamped to the strip. At 3.44 ease to zoom 1.1 for the name labels."
+   },
+   "composition": "Party in file moving right, leader rightmost: Jaafar (caliph + 230), caliph, Abu Nuwas (caliph - 230), companion (caliph - 460). Horses s 0.8, feet on y 900; rider heads near y 570 (measure with mountSeat). Dunes and sun (1900, 170) fill the upper half; name labels sit above each head at y 430..470, never over a face.",
+   "actions": [
+    {
+     "t": 0.0,
+     "cue": {
+      "word": "خرج",
+      "t": 0.0
+     },
+     "who": "camera",
+     "action": "opens on the city gate at the left of the strip; the party is already riding out through the arch (clip riders to x > the gate jamb so they emerge)",
+     "acting": "slow track right with the caliph; palms sway",
+     "library": "desertRoad {w: 2400, city: \"left\"} + K.camAt"
+    },
+    {
+     "t": 0.0,
+     "who": "whiteHorse",
+     "action": "all four horses walk without sliding, small dust at each footfall, heads nod out of phase",
+     "acting": "different ph per horse (stagger), ears flick on seeds",
+     "library": "walk(xf, t, {stride: GAIT.horse * 0.8}) + footfalls + dustBurst + stagger(i)"
+    },
+    {
+     "t": 0.46,
+     "cue": {
+      "word": "الخليفة",
+      "t": 0.46
+     },
+     "who": "caliph",
+     "action": "rides tall on the white horse; label THE CALIPH pops above him with a short arrow",
+     "acting": "chin up, smile, gaze ahead [1, -0.1], one hand loose on the reins, crown catches a glint",
+     "library": "rideOn(ctx, \"horse\", H, {costume: \"caliph\", age: 0.3}) + S.label + S.arrow"
+    },
+    {
+     "t": 1.28,
+     "cue": {
+      "word": "هارون",
+      "t": 1.28
+     },
+     "who": "caliph",
+     "action": "pats the horse neck and breathes in the open air; the horse flicks an ear back to him",
+     "acting": "lid 0.4 content, breathe(), handRW to the mane",
+     "library": "handRW, horse earL"
+    },
+    {
+     "t": 3.44,
+     "cue": {
+      "word": "الصحراء",
+      "t": 3.44
+     },
+     "who": "camera",
+     "action": "eases out a touch and drifts ahead so the empty dunes and the big sun open up to the right",
+     "acting": "the city wall slides out of frame; far dunes move at 0.4 parallax",
+     "library": "desertRoad camX parallax"
+    },
+    {
+     "t": 4.56,
+     "cue": {
+      "word": "جعفر",
+      "t": 4.56
+     },
+     "who": "jaafar",
+     "action": "leading on the bay horse; label JAAFAR pops; he glances back over his shoulder at the caliph",
+     "acting": "straight back, composed mouth, gaze back [-1, 0] then ahead; a man who minds his dignity",
+     "library": "rideOn \"horse\" pal 1, {costume: \"vizier\", age: 0.2} + lookAt"
+    },
+    {
+     "t": 6.1,
+     "cue": {
+      "word": "وأبي",
+      "t": 6.1
+     },
+     "who": "abuNuwas",
+     "action": "rides loose in the saddle behind the caliph reciting to himself with a flourish of one hand; label ABU NUWAS pops",
+     "acting": "lid 0.5, smile, talk 0.4, gaze up [0.3, -0.8], hand wave on the stresses; his horse walks a little off the beat",
+     "library": "rideOn \"horse\" pal 2, {costume: \"poet\"}, PERSON_HANDS.wave"
+    },
+    {
+     "t": 7.62,
+     "cue": {
+      "word": "وأحد",
+      "t": 7.62
+     },
+     "who": "companion",
+     "action": "comes out of the gate last, hurrying his horse two quicker steps to close the gap, fanning himself with a hand",
+     "acting": "mouth o, brow raised, gaze on the caliph",
+     "library": "rideOn \"horse\" pal 1 with green cloth, {costume: \"merchant\", pal: ochre}"
+    },
+    {
+     "t": 8.6,
+     "cue": {
+      "word": "أصحابه.",
+      "t": 8.36
+     },
+     "who": "jaafar",
+     "action": "sees something ahead: reins tighten, he rises a little in the saddle and points forward",
+     "acting": "eyes wide for 6 frames, gaze [1, 0.1], anticipation lean back then forward (tip 0.06)",
+     "library": "anticipate + PERSON_HANDS.pointFwd"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.5,
+     "text": "THE CALIPH"
+    },
+    {
+     "t": 4.6,
+     "text": "JAAFAR"
+    },
+    {
+     "t": 6.15,
+     "text": "ABU NUWAS"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 9.62,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "whip",
+    "t": 9.6
+   }
+  },
+  {
+   "id": "S2",
+   "start": 9.6,
+   "end": 19.0,
+   "paragraphs": [
+    1
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "caliph",
+    "jaafar",
+    "abuNuwas",
+    "companion",
+    "whiteHorse",
+    "bayHorse",
+    "blackHorse",
+    "brownHorse",
+    "bedouin",
+    "donkey"
+   ],
+   "summary": "Whip ahead to the old Bedouin leaning on his donkey; we read his age and his bad eye; the riders arrive and rein in.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Whip pan (0.3 s) from the party to cx 1730, cy 640, zoom 1.5. Push to zoom 2.0 on his face at 12.16, back to 1.5 at 12.94. Cut at 15.06 to the wide: cx 1360, cy 615, zoom 1.0."
+   },
+   "composition": "Donkey at x 1690 facing LEFT (toward Baghdad and the party), s 0.8, back about y 728. Bedouin at x 1785, s 0.95, drawn after the donkey, leaning on its rump. In the wide the party stops at companion 560, Abu Nuwas 790, caliph 1020, Jaafar 1250 (window 860..1860 shows the caliph, Jaafar, donkey, Bedouin).",
+   "actions": [
+    {
+     "t": 9.6,
+     "cue": {
+      "word": "رأوا",
+      "t": 10.04
+     },
+     "who": "camera",
+     "action": "whip pan right along the road, speed lines, landing on the lone figure by the track",
+     "acting": "overshoot 20 units and settle",
+     "library": "K.camAt keys + settleTo"
+    },
+    {
+     "t": 10.74,
+     "cue": {
+      "word": "رجلًا",
+      "t": 10.74
+     },
+     "who": "bedouin",
+     "action": "stands propped against his donkey, staff in hand, breathing slowly; keffiyeh tail and robe hem stir in the wind",
+     "acting": "idle: breathe(), slow blinks, gaze down the road [-0.6, 0.2]",
+     "library": "person {costume: \"bedouin\", age: 0.9, hold: \"stick\"} + breathe + blink"
+    },
+    {
+     "t": 12.16,
+     "cue": {
+      "word": "مسنًا",
+      "t": 12.16
+     },
+     "who": "bedouin",
+     "action": "push-in on the face: white beard, lined eyes; the right eye is half shut and red rimmed, he rubs it with a knuckle and blinks hard",
+     "acting": "wink \"R\" held (bad eye), soreEye marks, wet, the good eye squints (lid 0.35), brow worried (-0.5)",
+     "library": "person wink + lid + wet, soreEye (new)"
+    },
+    {
+     "t": 12.94,
+     "cue": {
+      "word": "يستند",
+      "t": 12.94
+     },
+     "who": "bedouin",
+     "action": "lets his weight sink onto the donkey: elbow on its rump, whole body tilted",
+     "acting": "tip 0.12 toward the donkey, head drop 6, a tired sigh (sq 0.98)",
+     "library": "person tip + handLW on the rump"
+    },
+    {
+     "t": 13.3,
+     "who": "donkey",
+     "action": "takes the weight: sinks 8 units and springs back, shifts a hind hoof",
+     "acting": "sq 0.96 then settle, ears swing back to him",
+     "library": "donkey sq + settleTo, earL/earR"
+    },
+    {
+     "t": 14.18,
+     "cue": {
+      "word": "حماره،",
+      "t": 14.18
+     },
+     "who": "donkey",
+     "action": "chews, flicks one ear, then turns its head back to look at the old man",
+     "acting": "chew 0.5, headTurn 0..1 over 0.4 s, lid 0.4 patient",
+     "library": "donkey chew, headTurn"
+    },
+    {
+     "t": 15.06,
+     "cue": {
+      "word": "فتوقفوا",
+      "t": 15.06
+     },
+     "who": "whiteHorse",
+     "action": "cut wide: the four riders arrive from the left and rein in one after another; dust rolls forward and settles",
+     "acting": "each rider lurches forward on the stop, 3 frames apart; horses toss heads",
+     "library": "lurch(t, tStop) + stagger + dustBurst"
+    },
+    {
+     "t": 15.4,
+     "who": "donkey",
+     "action": "ears snap forward toward the hooves before the head turns to the newcomers",
+     "acting": "earL/earR 1, headTurn back to 0, eyes wide for 8 frames",
+     "library": "donkey earL/earR"
+    },
+    {
+     "t": 15.9,
+     "cue": {
+      "word": "ليسألوه",
+      "t": 16.44
+     },
+     "who": "bedouin",
+     "action": "hears them late, lifts off the donkey and shades his eyes with a flat hand, peering at the shapes",
+     "acting": "gaze toward the riders via lookAt, tip -0.05 then forward 0.08 to peer, mouth o",
+     "library": "lookAt + handR at the brow"
+    },
+    {
+     "t": 16.44,
+     "cue": {
+      "word": "ليسألوه",
+      "t": 16.44
+     },
+     "who": "jaafar",
+     "action": "raises a hand in greeting from the saddle; his horse stretches its nose toward the donkey",
+     "acting": "polite smile, gaze on the Bedouin, small nod",
+     "library": "PERSON_HANDS.wave, horse neck"
+    },
+    {
+     "t": 17.56,
+     "cue": {
+      "word": "رحلته.",
+      "t": 17.56
+     },
+     "who": "caliph",
+     "action": "leans out of line to look past Jaafar at the old man, curious",
+     "acting": "tip 0.08, brow raised (-0.4), gaze on the Bedouin; Abu Nuwas (left edge) cranes too",
+     "library": "lookAt, tip"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 18.7,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 19.0
+   }
+  },
+  {
+   "id": "S3",
+   "start": 19.0,
+   "end": 38.72,
+   "paragraphs": [
+    2
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "jaafar",
+    "bayHorse",
+    "bedouin",
+    "donkey",
+    "caliph",
+    "whiteHorse",
+    "abuNuwas",
+    "blackHorse"
+   ],
+   "summary": "Jaafar questions the old man from the saddle: from Basra, going to Baghdad for eye medicine. A double-vision POV shows how badly he sees.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Dialogue two-shot cx 1500, cy 600, zoom 1.2 (window 1083..1917). Drift right 60 on \"Basra\", left 60 on \"Baghdad\". Push to the Bedouin (cx 1760, cy 660, zoom 2.1) at 32.68. POV insert 35.98..37.4. Back to the close at 37.42."
+   },
+   "composition": "Jaafar mounted at x 1250 (left third, head y 570), donkey head in the middle looking from one speaker to the other, Bedouin at 1785 (right third, head y 690). Eye lines cross the frame diagonally. Labels at y 380..440 above the dunes.",
+   "actions": [
+    {
+     "t": 19.22,
+     "cue": {
+      "word": "قال",
+      "t": 19.22
+     },
+     "who": "jaafar",
+     "action": "leans down from the saddle to speak",
+     "acting": "tip 0.07, talk on the words, gaze down right at the Bedouin (lookAt), brows politely raised",
+     "library": "rideOn + talk + lookAt"
+    },
+    {
+     "t": 21.38,
+     "cue": {
+      "word": "من",
+      "t": 21.38
+     },
+     "who": "jaafar",
+     "action": "open hand sweeps along the road behind the old man: where from?",
+     "acting": "palm up gesture, head tilt 4, question brows (-0.6)",
+     "library": "PERSON_HANDS.palmsUp.R"
+    },
+    {
+     "t": 22.42,
+     "cue": {
+      "word": "جئت؟",
+      "t": 22.42
+     },
+     "who": "bedouin",
+     "action": "turns his good ear and eye to the voice, steps half a pace nearer",
+     "acting": "head turn by gaze, squint lid 0.4, one footfall",
+     "library": "lookAt, walk half step"
+    },
+    {
+     "t": 23.8,
+     "cue": {
+      "word": "أجاب:",
+      "t": 23.8
+     },
+     "who": "bedouin",
+     "action": "straightens, answers",
+     "acting": "talk, chin up, staff tapped once on the sand",
+     "library": "talk, hold: \"stick\""
+    },
+    {
+     "t": 25.58,
+     "cue": {
+      "word": "البصرة.",
+      "t": 25.58
+     },
+     "who": "bedouin",
+     "action": "jerks a thumb back over his shoulder to the right; label FROM BASRA with an arrow pointing right to the tiny far city on the horizon",
+     "acting": "aR raised behind, gaze stays on Jaafar; camera drifts right to show the far silhouette",
+     "library": "aR angles + desertRoad farCity 2330 + S.label + S.arrow"
+    },
+    {
+     "t": 26.28,
+     "cue": {
+      "word": "وسأله:",
+      "t": 26.28
+     },
+     "who": "jaafar",
+     "action": "nods, asks again; his horse shifts its weight and swishes its tail",
+     "acting": "talk, pointUp finger for the second question",
+     "library": "PERSON_HANDS.pointUp, horse tailSwish"
+    },
+    {
+     "t": 27.56,
+     "cue": {
+      "word": "إلى",
+      "t": 27.56
+     },
+     "who": "jaafar",
+     "action": "hand sweeps the other way, down the road toward the city",
+     "acting": "gaze follows his own hand then returns",
+     "library": "handR keys"
+    },
+    {
+     "t": 28.64,
+     "cue": {
+      "word": "تذهب؟",
+      "t": 28.64
+     },
+     "who": "donkey",
+     "action": "looks from Jaafar to its master, waiting for the answer like a third party to the talk",
+     "acting": "headTurn 0 to 1, ears one up one down",
+     "library": "donkey headTurn"
+    },
+    {
+     "t": 30.0,
+     "cue": {
+      "word": "قال:",
+      "t": 30.0
+     },
+     "who": "bedouin",
+     "action": "pats the donkey and answers",
+     "acting": "talk, small smile, handLW pat twice",
+     "library": "handLW"
+    },
+    {
+     "t": 31.68,
+     "cue": {
+      "word": "بغداد؛",
+      "t": 31.68
+     },
+     "who": "bedouin",
+     "action": "points with the staff past the riders to the left; label TO BAGHDAD with an arrow pointing left",
+     "acting": "gaze along the staff; Jaafar and the caliph turn their heads to look back where he points, 4 frames apart",
+     "library": "hold: \"stick\" raised + S.label + S.arrow + stagger"
+    },
+    {
+     "t": 32.68,
+     "cue": {
+      "word": "أريد",
+      "t": 32.68
+     },
+     "who": "camera",
+     "action": "pushes in to a close shot of the Bedouin",
+     "acting": "eased 0.8 s",
+     "library": "K.camAt"
+    },
+    {
+     "t": 33.38,
+     "cue": {
+      "word": "دواءً",
+      "t": 33.38
+     },
+     "who": "iconBalloon",
+     "action": "a small speech balloon pops beside him with a medicine jar icon",
+     "acting": "pop with overshoot; tail to his mouth; balloon is right of the face, not over it",
+     "library": "iconBalloon single mode + medicineKit jar"
+    },
+    {
+     "t": 34.04,
+     "cue": {
+      "word": "لعيني،",
+      "t": 34.04
+     },
+     "who": "bedouin",
+     "action": "points a finger at his bad eye, winces",
+     "acting": "wink \"R\", soreEye pulses, wet true, brow -0.7, mouth frown",
+     "library": "handR to the eye, soreEye"
+    },
+    {
+     "t": 35.98,
+     "cue": {
+      "word": "الرؤية",
+      "t": 35.98
+     },
+     "who": "camera",
+     "action": "POV insert: what he sees. The riders as doubled, drifting colour shapes: each figure drawn twice 14 units apart at alpha 0.5, no outlines on the far copy",
+     "acting": "the two copies slide apart and together slowly (sin 0.6 Hz)",
+     "library": "doubleVision (new): draw the party layer twice with offsets"
+    },
+    {
+     "t": 36.54,
+     "cue": {
+      "word": "صعبة",
+      "t": 36.54
+     },
+     "who": "fx",
+     "action": "he squints: a dark lid shape closes from the top to a slit, the image nearly joins, then splits again; the crown is only a yellow blob",
+     "acting": "lid vignette 0 to 0.6 and back",
+     "library": "doubleVision lid option"
+    },
+    {
+     "t": 37.42,
+     "cue": {
+      "word": "عليّ.",
+      "t": 37.42
+     },
+     "who": "bedouin",
+     "action": "back to the close shot: he sighs, shoulders drop; the donkey nudges his elbow with its nose",
+     "acting": "sq 0.97, lid 0.5, gaze down; donkey headTurn and a 6 unit nudge, he pats it without looking",
+     "library": "person sq, donkey headTurn"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 25.6,
+     "text": "FROM BASRA"
+    },
+    {
+     "t": 31.7,
+     "text": "TO BAGHDAD"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 23.42,
+     "kind": "pop"
+    },
+    {
+     "t": 29.62,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 38.72
+   }
+  },
+  {
+   "id": "S4",
+   "start": 38.72,
+   "end": 57.44,
+   "paragraphs": [
+    3
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "caliph",
+    "jaafar",
+    "abuNuwas",
+    "companion",
+    "whiteHorse",
+    "bayHorse",
+    "blackHorse",
+    "brownHorse",
+    "bedouin",
+    "donkey"
+   ],
+   "summary": "The caliph wants a laugh and orders Jaafar to tease the old man. Jaafar foresees a sharp answer and hesitates; the caliph insists; Jaafar walks over on foot.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Mounted two-shot cx 1135, cy 560, zoom 1.5 (window 802..1468). Close on the caliph (cx 1020, cy 560, zoom 2.3) 52.78..55.2. Cut wide at 55.26: cx 1360, cy 615, zoom 1.0."
+   },
+   "composition": "Caliph left (x 1020), Jaafar right (x 1250), both mounted, heads y 570; Abu Nuwas enters the left edge by leaning in. The thought cloud sits above Jaafar at (1290, 330), 300 x 220, clear of both faces. In the wide, Jaafar walks left to right from 1290 to 1440 toward the donkey.",
+   "actions": [
+    {
+     "t": 38.72,
+     "cue": {
+      "word": "أراد",
+      "t": 38.72
+     },
+     "who": "caliph",
+     "action": "watches the old man off to the right, an idea arriving",
+     "acting": "gaze right, lid 0.4, brow -0.4, one side of the mouth lifts",
+     "library": "lookAt + lid"
+    },
+    {
+     "t": 39.68,
+     "cue": {
+      "word": "هارون",
+      "t": 39.68
+     },
+     "who": "caliph",
+     "action": "the smile grows to a grin; he twirls his moustache",
+     "acting": "mouth smile, PERSON_HANDS.moustache, eyes slide to Jaafar and back",
+     "library": "PERSON_HANDS.moustache + gazePlan"
+    },
+    {
+     "t": 40.7,
+     "cue": {
+      "word": "يضحك،",
+      "t": 40.7
+     },
+     "who": "caliph",
+     "action": "a silent chuckle bounces his shoulders; the crown jiggles a beat late",
+     "acting": "two small sq pulses (0.97), lid 0.7 on each",
+     "library": "pulse + sq"
+    },
+    {
+     "t": 42.34,
+     "cue": {
+      "word": "فأمر",
+      "t": 42.34
+     },
+     "who": "caliph",
+     "action": "leans across and nudges Jaafar with an elbow",
+     "acting": "tip 0.1 toward Jaafar, handRW to his sleeve; Jaafar rocks 8 units and looks at him",
+     "library": "handRW + kick on Jaafar"
+    },
+    {
+     "t": 44.06,
+     "cue": {
+      "word": "يمزح",
+      "t": 44.06
+     },
+     "who": "caliph",
+     "action": "points at the Bedouin and winks at Jaafar",
+     "acting": "PERSON_HANDS.pointFwd, wink \"L\", talk; grin",
+     "library": "pointFwd + wink"
+    },
+    {
+     "t": 44.96,
+     "cue": {
+      "word": "الرجل.",
+      "t": 44.96
+     },
+     "who": "jaafar",
+     "action": "his eyes follow the finger to the old man, then come back to the caliph",
+     "acting": "gazePlan caliph, Bedouin, caliph; eyes widen on the return",
+     "library": "gazePlan"
+    },
+    {
+     "t": 46.12,
+     "cue": {
+      "word": "تردد",
+      "t": 46.12
+     },
+     "who": "jaafar",
+     "action": "leans away, both palms up; his horse backs half a step",
+     "acting": "tip -0.08, brow -0.8 worried, saccades between the caliph and the Bedouin (gazePlan ease 0.07)",
+     "library": "PERSON_HANDS.palmsUp + gazePlan saccades + walk back 20"
+    },
+    {
+     "t": 47.28,
+     "cue": {
+      "word": "وقال",
+      "t": 47.28
+     },
+     "who": "jaafar",
+     "action": "cups a hand to his mouth and whispers his objection",
+     "acting": "cupMouth, talk 0.6, gaze on the caliph, head lowered",
+     "library": "PERSON_HANDS.cupMouth"
+    },
+    {
+     "t": 48.64,
+     "cue": {
+      "word": "المزاح",
+      "t": 48.64
+     },
+     "who": "thoughtCloud",
+     "action": "a thought cloud pops above Jaafar: inside, a small Bedouin silhouette and a small Jaafar bowing to tease him",
+     "acting": "trail bubbles first, then the cloud; Jaafar looks up into it",
+     "library": "thoughtCloud(ctx, 1290, 330, 300, 220, t, {tail: Jaafar head, scale: 0.4, inside})"
+    },
+    {
+     "t": 50.58,
+     "cue": {
+      "word": "جوابًا",
+      "t": 50.58
+     },
+     "who": "thoughtCloud",
+     "action": "inside the cloud the Bedouin silhouette opens its mouth and a jagged red burst with three black bolts flies at the little Jaafar, who is knocked flat",
+     "acting": "burst pops with overshoot, little Jaafar sq 0.6 then lies",
+     "library": "burst(star) from fx, person silhouette lie"
+    },
+    {
+     "t": 51.4,
+     "cue": {
+      "word": "قاسيًا،",
+      "t": 51.4
+     },
+     "who": "jaafar",
+     "action": "gulps: head dips and comes up, one sweat drop; the cloud pops away",
+     "acting": "drop pulse 8 units, lid blink long, mouth frown",
+     "library": "pulse + blink"
+    },
+    {
+     "t": 52.78,
+     "cue": {
+      "word": "لكن",
+      "t": 52.78
+     },
+     "who": "camera",
+     "action": "cut to a close shot of the caliph",
+     "acting": "hold",
+     "library": "K.camAt"
+    },
+    {
+     "t": 53.2,
+     "cue": {
+      "word": "الخليفة",
+      "t": 53.2
+     },
+     "who": "caliph",
+     "action": "the grin drops into mock royal sternness",
+     "acting": "brow 0.8 (V), mouth closed, lid 0.2, chin lifts",
+     "library": "brow + settleTo"
+    },
+    {
+     "t": 54.14,
+     "cue": {
+      "word": "أصر،",
+      "t": 54.14
+     },
+     "who": "caliph",
+     "action": "draws the arm back, then stabs a finger toward the Bedouin: GO!",
+     "acting": "anticipate 0.25 s, pointFwd with 10 % overshoot; the crown wobbles; the stern mouth cracks into a grin at 54.9",
+     "library": "anticipate + settleTo + pointFwd"
+    },
+    {
+     "t": 55.26,
+     "cue": {
+      "word": "فاقترب",
+      "t": 55.26
+     },
+     "who": "jaafar",
+     "action": "cut wide: Jaafar is already on foot beside his riderless horse (the cut hides the dismount) and walks toward the old man, 1290 to 1440",
+     "acting": "shoulders low, head down for the first two steps, footfalls with small dust",
+     "library": "walk(JX, t) + footfalls, person {costume: \"vizier\"} s 0.95"
+    },
+    {
+     "t": 55.84,
+     "cue": {
+      "word": "جعفر",
+      "t": 55.84
+     },
+     "who": "jaafar",
+     "action": "on the third step he straightens his turban, lifts his chin and puts on a courtier smile",
+     "acting": "mask on: mouth smile, brow level, sq back to 1",
+     "library": "PERSON_HANDS.headHold one hand"
+    },
+    {
+     "t": 56.56,
+     "cue": {
+      "word": "من",
+      "t": 56.56
+     },
+     "who": "bayHorse",
+     "action": "left behind without a rider, it lowers its head to nose the sand",
+     "acting": "headDown 0.8, reins slack",
+     "library": "horse headDown"
+    },
+    {
+     "t": 56.78,
+     "cue": {
+      "word": "البدوي.",
+      "t": 56.78
+     },
+     "who": "bedouin",
+     "action": "turns toward the footsteps, squinting; the donkey points both ears at Jaafar; behind, the caliph and Abu Nuwas lean in to watch",
+     "acting": "lookAt Jaafar, lid 0.4; watchers tip 0.06, gaze on the pair, staggered",
+     "library": "lookAt + stagger"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 54.2,
+     "text": "GO!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 57.44
+   }
+  },
+  {
+   "id": "S5",
+   "start": 57.44,
+   "end": 75.98,
+   "paragraphs": [
+    4
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "jaafar",
+    "bedouin",
+    "donkey",
+    "caliph",
+    "whiteHorse"
+   ],
+   "summary": "Jaafar asks what he will be paid for a cure. The poor old man sincerely offers the only thing he has: a prayer.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "On-foot two-shot cx 1610, cy 650, zoom 1.6 (window 1297..1922). Slow push to zoom 1.85 on the Bedouin (cx 1740) 66.28..70.0. Pull out to cx 1360, zoom 1.0 at 74.6 so the caliph is in frame."
+   },
+   "composition": "Jaafar x 1440 facing right, donkey head between them at about x 1580, Bedouin x 1785. Heads at y 680. Icon balloon above and left of Jaafar at about (1400, 440).",
+   "actions": [
+    {
+     "t": 57.44,
+     "cue": {
+      "word": "قال",
+      "t": 57.44
+     },
+     "who": "jaafar",
+     "action": "bows a little with a hand on his chest",
+     "acting": "tip 0.08 and back, PERSON_HANDS.chest, smooth smile, gaze up at the old man from under the brows",
+     "library": "PERSON_HANDS.chest + tip"
+    },
+    {
+     "t": 59.92,
+     "cue": {
+      "word": "إذا",
+      "t": 59.92
+     },
+     "who": "jaafar",
+     "action": "raises one finger: suppose...",
+     "acting": "pointUp, brows up, talk",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 61.64,
+     "cue": {
+      "word": "علاجًا",
+      "t": 61.64
+     },
+     "who": "iconBalloon",
+     "action": "Jaafar's balloon pops with a glowing medicine jar",
+     "acting": "jar glow pulses; the Bedouin's good eye opens wide and he leans in",
+     "library": "iconBalloon + medicineKit jar {glow}"
+    },
+    {
+     "t": 63.02,
+     "cue": {
+      "word": "عينك،",
+      "t": 63.02
+     },
+     "who": "jaafar",
+     "action": "points at the old man's bad eye; the old man touches it, hopeful",
+     "acting": "Bedouin: wet, brow -0.6, mouth o then small smile, off the donkey now (tip 0)",
+     "library": "pointFwd, handR to eye"
+    },
+    {
+     "t": 64.02,
+     "cue": {
+      "word": "فماذا",
+      "t": 64.02
+     },
+     "who": "jaafar",
+     "action": "turns the hand palm up and rubs thumb against fingers",
+     "acting": "sly: lid 0.4, brow -0.4",
+     "library": "handR keys"
+    },
+    {
+     "t": 64.96,
+     "cue": {
+      "word": "تعطيني؟",
+      "t": 64.96
+     },
+     "who": "iconBalloon",
+     "action": "the jar in the balloon is replaced by a coin and a question mark; Jaafar throws a quick smirk back toward the caliph, then the polite mask returns",
+     "acting": "mask off for 10 frames while the old man cannot see it (gaze back left, mouth smirk), then on",
+     "library": "iconBalloon coin + mouth \"smirk\""
+    },
+    {
+     "t": 66.28,
+     "cue": {
+      "word": "أجاب",
+      "t": 66.28
+     },
+     "who": "bedouin",
+     "action": "stands straight and opens both hands",
+     "acting": "PERSON_HANDS.palmsUp, talk, gaze on Jaafar",
+     "library": "palmsUp"
+    },
+    {
+     "t": 68.44,
+     "cue": {
+      "word": "الله",
+      "t": 68.44
+     },
+     "who": "bedouin",
+     "action": "lifts his face and both arms to the sky; slow push-in",
+     "acting": "gaze [0, -1], arms aL/aR raised (about +-2.5), wet, mouth soft; keffiyeh tail lags the head",
+     "library": "aL/aR + gaze"
+    },
+    {
+     "t": 69.28,
+     "cue": {
+      "word": "يجزيك",
+      "t": 69.28
+     },
+     "who": "bedouin",
+     "action": "brings the hands down toward Jaafar as a blessing, with a nod",
+     "acting": "reachBoth, lid long blink, smile",
+     "library": "PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 70.02,
+     "cue": {
+      "word": "خيرًا،",
+      "t": 70.02
+     },
+     "who": "jaafar",
+     "action": "the sincerity lands: his smile slips and his eyes drop for a beat",
+     "acting": "gaze down [0.2, 0.8], mouth closed, a half step back; the donkey watches him steadily",
+     "library": "gaze + mouth"
+    },
+    {
+     "t": 71.18,
+     "cue": {
+      "word": "فثوابه",
+      "t": 71.18
+     },
+     "who": "bedouin",
+     "action": "points upward again, gentle and sure",
+     "acting": "pointUp, smile, talk",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 73.68,
+     "cue": {
+      "word": "مال",
+      "t": 73.68
+     },
+     "who": "purse",
+     "action": "he pulls a flat purse from his sash and turns it upside down: one puff of dust falls, nothing else",
+     "acting": "shrug; gaze follows the dust to the sand; the donkey looks down at it too",
+     "library": "purse (planned) {fill: 0, tilt} + dustBurst small"
+    },
+    {
+     "t": 75.02,
+     "cue": {
+      "word": "على",
+      "t": 75.02
+     },
+     "who": "caliph",
+     "action": "camera pulls out: behind Jaafar the caliph waves him on, grinning; Jaafar glances back, sees it, and squares his shoulders",
+     "acting": "caliph PERSON_HANDS.wave fast, mouth smile; Jaafar gaze back then forward, small sigh",
+     "library": "wave + lookAt"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 75.98
+   }
+  },
+  {
+   "id": "S6",
+   "start": 75.98,
+   "end": 96.76,
+   "paragraphs": [
+    5
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "jaafar",
+    "bedouin",
+    "donkey"
+   ],
+   "summary": "The mock prescription, part one, drawn in a big picture balloon: a measure of wind, sunlight, moonlight and lamplight, mixed and left in the air three months. The old man goes from eager to doubtful.",
+   "camera": {
+    "shot": "medium",
+    "move": "drift",
+    "notes": "cx 1600, cy 560, zoom 1.25 (window x 1200..2000, y 68..1052) so the balloon has the sky. Very slow drift right 30 units over the scene."
+   },
+   "composition": "Recipe balloon in PANEL space: centre (500, 250), 660 x 380, tail to Jaafar's mouth; ingredients line up left to right inside it. Jaafar (x 1440) and the Bedouin (x 1785) act below it, heads at panel y about 760; the donkey between them. Month counter at the balloon's lower right.",
+   "actions": [
+    {
+     "t": 75.98,
+     "cue": {
+      "word": "قال",
+      "t": 75.98
+     },
+     "who": "jaafar",
+     "action": "clears his throat into a fist and tugs his robe straight",
+     "acting": "two small head dips, lid shut on each, then eyes open",
+     "library": "PERSON_HANDS.mouthCover + pulse"
+    },
+    {
+     "t": 78.2,
+     "cue": {
+      "word": "بجدية",
+      "t": 78.2
+     },
+     "who": "jaafar",
+     "action": "puts on a physician's gravity: chin up, hand on chest",
+     "acting": "brow level, mouth closed flat, lid 0.3, gaze over the old man's head",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 79.08,
+     "cue": {
+      "word": "مصطنعة:",
+      "t": 79.08
+     },
+     "who": "jaafar",
+     "action": "the corner of his mouth twitches up for 6 frames and is pressed flat again",
+     "acting": "mouth smirk then closed; one fast blink",
+     "library": "mouth keys"
+    },
+    {
+     "t": 79.98,
+     "cue": {
+      "word": "خذ",
+      "t": 79.98
+     },
+     "who": "iconBalloon",
+     "action": "the big recipe balloon pops open above them, empty; Jaafar lifts a finger",
+     "acting": "pop with overshoot; the Bedouin leans in with a hand behind his ear, nodding",
+     "library": "iconBalloon strip mode + PERSON_HANDS.pointUp, cupEar"
+    },
+    {
+     "t": 80.94,
+     "cue": {
+      "word": "مقدارًا",
+      "t": 80.94
+     },
+     "who": "recipeIcons",
+     "action": "an empty measuring cup appears at the left of the balloon",
+     "acting": "cup hops in and settles",
+     "library": "recipeIcons.cup"
+    },
+    {
+     "t": 82.5,
+     "cue": {
+      "word": "الريح،",
+      "t": 82.5
+     },
+     "who": "recipeIcons",
+     "action": "three wind curls blow across the balloon and through the cup, which stays empty; the old man's keffiyeh flutters as if he felt it",
+     "acting": "Bedouin nods twice, lips repeating the word",
+     "library": "recipeIcons.wind (three curl strokes)"
+    },
+    {
+     "t": 85.44,
+     "cue": {
+      "word": "الشمس،",
+      "t": 85.44
+     },
+     "who": "recipeIcons",
+     "action": "a small sun pops in the balloon and drops one ray into the cup; the old man looks up at the real sun and shades his eyes",
+     "acting": "first doubt: brow lifts on one side, nod stops halfway",
+     "library": "sun(ctx) small + lookAt"
+    },
+    {
+     "t": 88.06,
+     "cue": {
+      "word": "القمر",
+      "t": 88.06
+     },
+     "who": "recipeIcons",
+     "action": "a crescent moon pops next to the sun",
+     "acting": "Jaafar counts it off on a finger, face still solemn",
+     "library": "recipeIcons.moon"
+    },
+    {
+     "t": 88.64,
+     "cue": {
+      "word": "والمصباح.",
+      "t": 88.64
+     },
+     "who": "recipeIcons",
+     "action": "an oil lamp pops as the fourth ingredient; the old man tilts his head and scratches his beard; the donkey looks at the camera",
+     "acting": "Bedouin lid 0.35, PERSON_HANDS.chin, gaze sliding to Jaafar's face; donkey gaze [0, 0.05]",
+     "library": "oilLamp (planned) + PERSON_HANDS.chin"
+    },
+    {
+     "t": 89.68,
+     "cue": {
+      "word": "اخلط",
+      "t": 89.68
+     },
+     "who": "recipeIcons",
+     "action": "the four icons spiral down into a bowl and a spoon stirs; Jaafar mimes the stirring with one hand",
+     "acting": "hand circles 2 per second; solemn face",
+     "library": "recipeIcons.bowl + handR circle keys"
+    },
+    {
+     "t": 91.72,
+     "cue": {
+      "word": "الأربعة",
+      "t": 91.72
+     },
+     "who": "bedouin",
+     "action": "counts four on his fingers, lips moving",
+     "acting": "gaze down at his own hand, then up",
+     "library": "handR keys"
+    },
+    {
+     "t": 92.46,
+     "cue": {
+      "word": "جيدًا،",
+      "t": 92.46
+     },
+     "who": "recipeIcons",
+     "action": "the bowl tips toward us: it is plainly empty, one sparkle at the bottom",
+     "acting": "Jaafar finishes the stir with a flourish",
+     "library": "recipeIcons.bowl {tilt}"
+    },
+    {
+     "t": 93.92,
+     "cue": {
+      "word": "اتركها",
+      "t": 93.92
+     },
+     "who": "jaafar",
+     "action": "lifts both hands and lets go: in the balloon the bowl floats up and hangs in the air with wind lines passing",
+     "acting": "arms up (aL/aR), gaze up after it",
+     "library": "aL/aR + bowl float"
+    },
+    {
+     "t": 95.28,
+     "cue": {
+      "word": "ثلاثة",
+      "t": 95.28
+     },
+     "who": "recipeIcons",
+     "action": "the counter appears under the floating bowl and ticks 1, 2, 3 MONTHS",
+     "acting": "the Bedouin's mouth opens (o); eyes wide",
+     "library": "S.counter"
+    },
+    {
+     "t": 96.18,
+     "cue": {
+      "word": "أشهر.",
+      "t": 96.18
+     },
+     "who": "donkey",
+     "action": "the old man looks at his donkey; the donkey looks back at him: a shared flat stare",
+     "acting": "both lid 0.5, no blink for 12 frames",
+     "library": "lookAt both ways"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 95.3,
+     "text": "3 MONTHS"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 96.76
+   }
+  },
+  {
+   "id": "S7",
+   "start": 96.76,
+   "end": 117.4,
+   "paragraphs": [
+    6
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "jaafar",
+    "bedouin",
+    "donkey",
+    "caliph",
+    "abuNuwas",
+    "companion",
+    "whiteHorse",
+    "blackHorse",
+    "brownHorse"
+   ],
+   "summary": "A cut to the audience holding in their laughter, then part two: the bottomless mortar, the cracked dish, nine months in all, and the promised cure. The old man's patience runs out silently.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Audience insert 96.76..100.6: cx 905, cy 560, zoom 1.5 (caliph 1020, Abu Nuwas 790, companion at the left edge). Then the recipe framing of S6 (cx 1630, cy 560, zoom 1.25), static."
+   },
+   "composition": "Same balloon as S6 in panel space; one large object at a time in its centre (mortar 240 x 140, dish 200 x 130), counter lower right. The Bedouin's reactions carry the lower half.",
+   "actions": [
+    {
+     "t": 96.76,
+     "cue": {
+      "word": "واصل",
+      "t": 96.76
+     },
+     "who": "caliph",
+     "action": "cut to the riders: the caliph has a hand clamped over his mouth, shaking",
+     "acting": "PERSON_HANDS.mouthCover, lid 0.8, tremble 2, wet",
+     "library": "mouthCover + tremble"
+    },
+    {
+     "t": 99.28,
+     "cue": {
+      "word": "وصفته",
+      "t": 99.28
+     },
+     "who": "abuNuwas",
+     "action": "pretends to write the prescription down on his palm, nodding gravely",
+     "acting": "handR scribbles on handL, lid 0.5, smirk",
+     "library": "handL/handR keys"
+    },
+    {
+     "t": 100.02,
+     "cue": {
+      "word": "الغريبة:",
+      "t": 100.02
+     },
+     "who": "companion",
+     "action": "scratches his head, honestly trying to follow",
+     "acting": "PERSON_HANDS.headHold one hand, brow -0.6, gaze up",
+     "library": "headHold"
+    },
+    {
+     "t": 100.74,
+     "cue": {
+      "word": "ضع",
+      "t": 100.74
+     },
+     "who": "jaafar",
+     "action": "cut back: he mimes pouring the mixture",
+     "acting": "both hands tip an invisible bowl",
+     "library": "handL/handR keys"
+    },
+    {
+     "t": 102.56,
+     "cue": {
+      "word": "هاون",
+      "t": 102.56
+     },
+     "who": "recipeIcons",
+     "action": "a big mortar with its pestle pops in the balloon",
+     "acting": "pop and settle",
+     "library": "medicineKit mortar (planned) scaled 2x"
+    },
+    {
+     "t": 103.1,
+     "cue": {
+      "word": "بلا",
+      "t": 103.1
+     },
+     "who": "recipeIcons",
+     "action": "the mortar tilts toward us: there is no bottom, we see the balloon paper through it; an arrow and the label NO BOTTOM",
+     "acting": "tilt over 0.3 s",
+     "library": "mortar {bottomless: true, tilt} + S.arrow + S.label"
+    },
+    {
+     "t": 104.0,
+     "cue": {
+      "word": "وادقه",
+      "t": 104.0
+     },
+     "who": "recipeIcons",
+     "action": "the sparkle mixture is poured in and falls straight out underneath; the pestle pounds down through the hole and back, three times",
+     "acting": "strike cycle with nothing to hit; Jaafar pounds fist on palm in time",
+     "library": "strike cycle (lift, whip down, rebound)"
+    },
+    {
+     "t": 105.14,
+     "cue": {
+      "word": "ثلاثة",
+      "t": 105.14
+     },
+     "who": "recipeIcons",
+     "action": "the counter flips to 6 MONTHS",
+     "acting": "flip with a squash",
+     "library": "S.counter"
+    },
+    {
+     "t": 106.48,
+     "cue": {
+      "word": "أخرى،",
+      "t": 106.48
+     },
+     "who": "bedouin",
+     "action": "turns his face slowly to the camera and holds the look, then one slow blink",
+     "acting": "gaze [0, 0.05], lid 0.5, no other motion",
+     "library": "gaze to camera"
+    },
+    {
+     "t": 108.82,
+     "cue": {
+      "word": "طبق",
+      "t": 108.82
+     },
+     "who": "recipeIcons",
+     "action": "the mortar slides out and a dish pops in",
+     "acting": "slide and pop",
+     "library": "platter (planned platterJar)"
+    },
+    {
+     "t": 109.32,
+     "cue": {
+      "word": "مشقوق",
+      "t": 109.32
+     },
+     "who": "recipeIcons",
+     "action": "a crack zigzags across the dish and the sparkles drain through it in a thin stream",
+     "acting": "crack 0 to 1 in 5 frames",
+     "library": "platter {crack}"
+    },
+    {
+     "t": 110.18,
+     "cue": {
+      "word": "ثلاثة",
+      "t": 110.18
+     },
+     "who": "recipeIcons",
+     "action": "counter flips to 9 MONTHS; below, the old man's hand closes into a fist on the donkey's back and the donkey's ears go flat",
+     "acting": "Bedouin brow starts to turn (0.4), lid 0.5; donkey earL/earR -1",
+     "library": "S.counter + donkey ears"
+    },
+    {
+     "t": 111.96,
+     "cue": {
+      "word": "وبعد",
+      "t": 111.96
+     },
+     "who": "jaafar",
+     "action": "raises a finger: and after that...",
+     "acting": "pointUp, eyebrows high, enjoying himself now; the solemn mask is slipping into a smile",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 113.1,
+     "cue": {
+      "word": "خذ",
+      "t": 113.1
+     },
+     "who": "recipeIcons",
+     "action": "an empty spoon rises from the empty dish toward a small open mouth icon",
+     "acting": "spoon arcs up",
+     "library": "recipeIcons.spoon"
+    },
+    {
+     "t": 114.64,
+     "cue": {
+      "word": "ليلة،",
+      "t": 114.64
+     },
+     "who": "recipeIcons",
+     "action": "a moon slides in over the spoon: every night",
+     "acting": "moon bobs once",
+     "library": "recipeIcons.moon"
+    },
+    {
+     "t": 115.72,
+     "cue": {
+      "word": "وستشفى",
+      "t": 115.72
+     },
+     "who": "jaafar",
+     "action": "throws both arms wide; in the balloon an eye icon bursts into sparkles; CURED!",
+     "acting": "armsOut, big smile, then a deep bow (tip 0.2)",
+     "library": "PERSON_HANDS.armsOut + burst"
+    },
+    {
+     "t": 116.7,
+     "cue": {
+      "word": "عينك!",
+      "t": 116.7
+     },
+     "who": "jaafar",
+     "action": "holds the bow and peeks up with one eye to see how it landed; nobody moves",
+     "acting": "wink (one eye open), stillness; only the donkey's tail swishes once",
+     "library": "wink + donkey tailSwish"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 103.2,
+     "text": "NO BOTTOM"
+    },
+    {
+     "t": 105.2,
+     "text": "6 MONTHS"
+    },
+    {
+     "t": 110.2,
+     "text": "9 MONTHS"
+    },
+    {
+     "t": 115.8,
+     "text": "CURED!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 117.4
+   }
+  },
+  {
+   "id": "S8",
+   "start": 117.4,
+   "end": 133.5,
+   "paragraphs": [
+    7
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "caliph",
+    "jaafar",
+    "abuNuwas",
+    "companion",
+    "whiteHorse",
+    "bayHorse",
+    "blackHorse",
+    "brownHorse",
+    "bedouin",
+    "donkey"
+   ],
+   "summary": "The old man understands. Anger turns into a sly idea: he stretches out on his donkey with his feet toward Jaafar, breaks wind loudly, and offers that as payment.",
+   "camera": {
+    "shot": "close",
+    "move": "shake",
+    "notes": "Close on the Bedouin (cx 1770, cy 660, zoom 2.1) to 122.4. Wide two-shot cx 1580, cy 620, zoom 1.3 (window 1195..1965) for the climb and the blast; panel-only shake 6 px for 0.3 s at 128.38. Widen to cx 1360, zoom 1.0 at 132.9 for the riders."
+   },
+   "composition": "Close: face centred, bad eye toward us. Wide: Jaafar at x 1440 leaning in, donkey at 1690, the Bedouin lying along its back (head toward the rump at the right, feet over the withers toward Jaafar). PFFFT! burst at world (1560, 520), above and between them, covering no face.",
+   "actions": [
+    {
+     "t": 117.4,
+     "cue": {
+      "word": "فهم",
+      "t": 117.4
+     },
+     "who": "iconBalloon",
+     "action": "the recipe balloon pops like a soap bubble; close on the old man's face",
+     "acting": "his squint narrows",
+     "library": "iconBalloon p 1 to 0"
+    },
+    {
+     "t": 119.22,
+     "cue": {
+      "word": "البدوي",
+      "t": 119.22
+     },
+     "who": "bedouin",
+     "action": "his good eye goes from Jaafar's bowed head, to the shaking riders, and back",
+     "acting": "gazePlan saccades (ease 0.07): left, far left, left",
+     "library": "gazePlan"
+    },
+    {
+     "t": 121.26,
+     "cue": {
+      "word": "يسخر",
+      "t": 121.26
+     },
+     "who": "bedouin",
+     "action": "red climbs his face and two steam puffs leave his ears; the beard bristles",
+     "acting": "flush 0 to 1, brow 1 (V), sq 1.04, mouth grit",
+     "library": "flush (planned) + brow"
+    },
+    {
+     "t": 121.98,
+     "cue": {
+      "word": "منه.",
+      "t": 121.98
+     },
+     "who": "bedouin",
+     "action": "then the anger drains into a slow, sly smile: he has a better answer; he pats the donkey",
+     "acting": "flush fades, lid 0.5, brow -0.4, mouth smile one side; donkey ear turns to him",
+     "library": "mouth + lid"
+    },
+    {
+     "t": 122.4,
+     "cue": {
+      "word": "تمدد",
+      "t": 122.74
+     },
+     "who": "bedouin",
+     "action": "wide: he crouches, hops up and swings himself onto the donkey's back, ending stretched along it on his back",
+     "acting": "anticipate 0.3 s, hop arc 0.5 s (height 120), lie blends 0 to 1 during the arc, landing squash",
+     "library": "anticipate + hop + landSquash, person {lie} at mountSeat(\"donkey\", D)"
+    },
+    {
+     "t": 123.2,
+     "who": "donkey",
+     "action": "takes the landing: sinks 14 units, legs brace, springs back with a grunt",
+     "acting": "spring on y, mouth grit, eyes wide for 6 frames",
+     "library": "platform spring + donkey mouth"
+    },
+    {
+     "t": 124.22,
+     "cue": {
+      "word": "فوق",
+      "t": 124.22
+     },
+     "who": "bedouin",
+     "action": "settles as if on a couch: hands behind his head, feet toward Jaafar, toes waggling",
+     "acting": "PERSON_HANDS.headHold, lid 0.6 content, smile",
+     "library": "headHold + lie"
+    },
+    {
+     "t": 124.64,
+     "cue": {
+      "word": "حماره",
+      "t": 124.64
+     },
+     "who": "jaafar",
+     "action": "straightens from his bow, puzzled, and steps closer to see what the old man is doing: a mistake",
+     "acting": "brow -0.6, mouth o, one step (footfall), tip 0.1 toward the feet",
+     "library": "walk one step + tip"
+    },
+    {
+     "t": 125.54,
+     "cue": {
+      "word": "وأطلق",
+      "t": 125.54
+     },
+     "who": "bedouin",
+     "action": "gathers himself: eyes shut, brow knotted, body compressed and trembling",
+     "acting": "lid 1, brow 0.8, sq 0.93, tremble 1.5; everything else on screen stops moving",
+     "library": "tremble + sq"
+    },
+    {
+     "t": 126.44,
+     "cue": {
+      "word": "ريحًا",
+      "t": 126.44
+     },
+     "who": "donkey",
+     "action": "eyes go wide and slide to the camera; ears sink; behind, Abu Nuwas ducks behind his horse's neck",
+     "acting": "gaze [0, 0.05], earL/earR -0.6; the robe hem lifts a little",
+     "library": "donkey gaze + ears"
+    },
+    {
+     "t": 128.38,
+     "cue": {
+      "word": "عال،",
+      "t": 127.62
+     },
+     "who": "gasPuff",
+     "action": "the blast: a pale yellow green puff bursts from under the robe hem toward Jaafar with three speed lines; PFFFT! in a jagged burst; the panel shakes",
+     "acting": "Bedouin releases to sq 1.06 then settles with a blissful smile; hem flaps",
+     "library": "gasPuff (dustBurst recoloured + stinkLines) + burst + panel shake"
+    },
+    {
+     "t": 128.48,
+     "cue": {
+      "word": "ثم",
+      "t": 128.48
+     },
+     "who": "donkey",
+     "action": "all four hooves leave the ground, ears straight up, a bray; Jaafar is blown back two steps with his turban lifting off his head and dropping back",
+     "acting": "donkey hop 20 + bray 1; Jaafar tip -0.2, PERSON_HANDS.shield, turban offset 14 then settle",
+     "library": "hop + bray, shield, settleTo"
+    },
+    {
+     "t": 129.32,
+     "cue": {
+      "word": "ساخرًا:",
+      "t": 129.32
+     },
+     "who": "bedouin",
+     "action": "rolls up onto one elbow and looks down his feet at Jaafar with a mocking smile",
+     "acting": "lid 0.5, brow -0.4, mouth smirk, talk",
+     "library": "lie 0.8 + talk"
+    },
+    {
+     "t": 130.6,
+     "cue": {
+      "word": "خذ",
+      "t": 130.6
+     },
+     "who": "bedouin",
+     "action": "flicks an open hand toward the drifting cloud: take it",
+     "acting": "PERSON_HANDS.pointFwd toward Jaafar, wrist flick with follow through",
+     "library": "pointFwd"
+    },
+    {
+     "t": 131.62,
+     "cue": {
+      "word": "أجر",
+      "t": 131.62
+     },
+     "who": "gasPuff",
+     "action": "the cloud drifts across to Jaafar's face trailing three wavy lines; label PAYMENT with an arrow to the cloud",
+     "acting": "cloud eases along a bezier, swelling 20 %",
+     "library": "stinkLines (planned) + S.label + S.arrow"
+    },
+    {
+     "t": 132.18,
+     "cue": {
+      "word": "وصفتك",
+      "t": 132.18
+     },
+     "who": "jaafar",
+     "action": "pinches his nose, eyes watering, and fans the air with the other hand",
+     "acting": "wet, lid 0.6, brow -0.8, hand fan 4 per second, flush soft",
+     "library": "handR to nose, handL fan, wet"
+    },
+    {
+     "t": 132.92,
+     "cue": {
+      "word": "الآن!",
+      "t": 132.92
+     },
+     "who": "whiteHorse",
+     "action": "widen: the horses shuffle back with flat ears; the caliph's mouth is a small o behind his hand, cheeks swelling; Abu Nuwas is face down on his horse's neck",
+     "acting": "horses earL/earR -0.8, rear 0.15, staggered; caliph not laughing yet, he is holding it",
+     "library": "horse ears + rear, stagger"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 128.4,
+     "text": "PFFFT!"
+    },
+    {
+     "t": 131.7,
+     "text": "PAYMENT"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 128.44,
+     "kind": "raspberry"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 133.5
+   }
+  },
+  {
+   "id": "S9",
+   "start": 133.5,
+   "end": 142.12,
+   "paragraphs": [
+    7
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "bedouin",
+    "donkey",
+    "jaafar"
+   ],
+   "summary": "The second instalment of the fee, told in a picture balloon: when the eye is cured he will send a servant to blacken Jaafar's face after his death.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "cx 1640, cy 560, zoom 1.3 (window 1255..2025): the reclining Bedouin right, Jaafar at the left edge, the balloon above the donkey."
+   },
+   "composition": "Bedouin's balloon in panel space: centre (470, 250), 600 x 360, tail to his mouth at the right. Icons play left to right. Jaafar (x 1440) lower left looks up at it; his face stays clear of the balloon.",
+   "actions": [
+    {
+     "t": 133.5,
+     "cue": {
+      "word": "وإذا",
+      "t": 133.5
+     },
+     "who": "bedouin",
+     "action": "raises one finger from his couch: and there is more",
+     "acting": "pointUp, talk, lid 0.5, enjoying it",
+     "library": "PERSON_HANDS.pointUp + lie 0.8"
+    },
+    {
+     "t": 134.92,
+     "cue": {
+      "word": "شفيت",
+      "t": 134.92
+     },
+     "who": "bedouin",
+     "action": "taps under his bad eye, which gets a little sparkle, copying Jaafar's CURED flourish",
+     "acting": "mock solemn face (brow level, mouth flat) borrowed from Jaafar",
+     "library": "handR to eye + sparkle"
+    },
+    {
+     "t": 136.3,
+     "cue": {
+      "word": "فسأرسل",
+      "t": 136.3
+     },
+     "who": "iconBalloon",
+     "action": "his balloon pops; he flicks his hand as if sending someone off",
+     "acting": "pop with overshoot; Jaafar looks up into it",
+     "library": "iconBalloon strip mode"
+    },
+    {
+     "t": 137.7,
+     "cue": {
+      "word": "خادمة",
+      "t": 137.7
+     },
+     "who": "recipeIcons",
+     "action": "a servant girl in silhouette walks across the balloon carrying a pail",
+     "acting": "walk cycle 4 steps, pail swings",
+     "library": "person {costume: \"maiden\", silhouette style: flat black} + walk"
+    },
+    {
+     "t": 138.62,
+     "cue": {
+      "word": "تسوّد",
+      "t": 138.62
+     },
+     "who": "recipeIcons",
+     "action": "she swings the pail: a black blot flies",
+     "acting": "anticipation swing back, release",
+     "library": "blot = 7 overlapping circles"
+    },
+    {
+     "t": 139.36,
+     "cue": {
+      "word": "وجهك",
+      "t": 139.36
+     },
+     "who": "recipeIcons",
+     "action": "the blot lands on a round face icon wearing Jaafar's turban and covers it; the real Jaafar puts a hand to his own cheek",
+     "acting": "Jaafar eyes wide, mouth o, hand to cheek (PERSON_HANDS.cheeks one side)",
+     "library": "blot on face icon + cheeks"
+    },
+    {
+     "t": 140.1,
+     "cue": {
+      "word": "بالقذر",
+      "t": 140.1
+     },
+     "who": "recipeIcons",
+     "action": "three wavy lines and two flies rise from the blot; Jaafar looks back toward the caliph for help and gets none",
+     "acting": "gaze far left, brow -0.8",
+     "library": "stinkLines with flies"
+    },
+    {
+     "t": 140.92,
+     "cue": {
+      "word": "بعد",
+      "t": 140.92
+     },
+     "who": "recipeIcons",
+     "action": "a gravestone rises under the blotted face icon",
+     "acting": "rise with a small bounce",
+     "library": "graveMarker (planned)"
+    },
+    {
+     "t": 141.28,
+     "cue": {
+      "word": "موتك!",
+      "t": 141.28
+     },
+     "who": "jaafar",
+     "action": "gulps and shrinks; the old man lies back with his hands behind his head; the donkey smirks",
+     "acting": "Jaafar sq 0.94, drop pulse; Bedouin headHold, lid 0.7; donkey mouth smirk",
+     "library": "sq + donkey mouth \"smirk\""
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 142.12
+   }
+  },
+  {
+   "id": "S10",
+   "start": 142.12,
+   "end": 152.82,
+   "paragraphs": [
+    8
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "caliph",
+    "jaafar",
+    "abuNuwas",
+    "companion",
+    "whiteHorse",
+    "bayHorse",
+    "blackHorse",
+    "brownHorse",
+    "bedouin",
+    "donkey"
+   ],
+   "summary": "Sitting up on the donkey, the old man calls Jaafar a fool and showers him with curses until the caliph can hold it no longer and explodes with laughter.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide cx 1360, cy 615, zoom 1.0 from 142.12. Push to the caliph (cx 1020, cy 560, zoom 2.0) 149.66..150.5; small shake on the laugh; ease back to zoom 1.3, cx 980 at 152.0 to take in Abu Nuwas and the companion."
+   },
+   "composition": "Left to right: caliph (1020) and the riderless bay horse (1250) behind Jaafar (on foot, 1440, backing toward 1330), donkey (1690) with the Bedouin now sitting upright on it facing left. Curse symbols fly right to left at head height y 600..680. HA HA HA! above the caliph at y 380.",
+   "actions": [
+    {
+     "t": 142.12,
+     "cue": {
+      "word": "ثم",
+      "t": 142.12
+     },
+     "who": "bedouin",
+     "action": "wide: he swings up to sit astride the donkey facing Jaafar, staff in one fist",
+     "acting": "lie 1 to 0 as he sits (0.5 s), settle; donkey shifts a hoof",
+     "library": "rideOn(ctx, \"donkey\", D, {costume: \"bedouin\", hold: \"stick\"})"
+    },
+    {
+     "t": 143.72,
+     "cue": {
+      "word": "وصف",
+      "t": 143.72
+     },
+     "who": "bedouin",
+     "action": "jabs a finger at Jaafar on each stress of the sentence",
+     "acting": "pointFwd with a 0.1 s dip before each jab, brow 0.8, talk 0.9",
+     "library": "countedBeats-style jabs + pointFwd"
+    },
+    {
+     "t": 145.46,
+     "cue": {
+      "word": "بالأحمق",
+      "t": 145.46
+     },
+     "who": "bedouin",
+     "action": "FOOL! in a jagged balloon; the donkey throws its head back and brays in agreement, HEE HAW!",
+     "acting": "donkey bray 1 for 0.6 s; Jaafar flinches (sq 0.95), turban sinks",
+     "library": "burst + donkey bray"
+    },
+    {
+     "t": 146.48,
+     "cue": {
+      "word": "وأطلق",
+      "t": 146.48
+     },
+     "who": "recipeIcons",
+     "action": "the curses fly: jagged red bursts with a bolt, a spiral and a star stream from the Bedouin and bounce off Jaafar's turban one after another",
+     "acting": "each hit knocks his head 6 units (kick); three hits at 146.6, 147.3, 148.0",
+     "library": "burst icons on bezier paths + kick"
+    },
+    {
+     "t": 147.86,
+     "cue": {
+      "word": "دعوات",
+      "t": 147.86
+     },
+     "who": "jaafar",
+     "action": "backs away step by step until he bumps into his own horse, which nudges him forward again",
+     "acting": "hands up (shield), footfalls backward 1440 to 1330; horse headTurn and a shove",
+     "library": "walk backward + shield + horse neck"
+    },
+    {
+     "t": 148.72,
+     "cue": {
+      "word": "قاسية،",
+      "t": 148.72
+     },
+     "who": "abuNuwas",
+     "action": "slides forward onto his horse's neck, shoulders heaving in silence; the companion grins behind his hand",
+     "acting": "lid 1, tremble, mouthCover on the companion; they are 5 frames apart",
+     "library": "person laugh (planned, muted) + stagger"
+    },
+    {
+     "t": 149.66,
+     "cue": {
+      "word": "حتى",
+      "t": 149.66
+     },
+     "who": "caliph",
+     "action": "push-in: cheeks blown out, eyes screwed shut, hand over his mouth, shoulders hitching three times, each bigger",
+     "acting": "mouthCover, lid 0.9, tremble rising 1 to 3, sq pulses 0.97, 0.95, 0.93; crown rattles",
+     "library": "tremble + pulse"
+    },
+    {
+     "t": 150.62,
+     "cue": {
+      "word": "انفجر",
+      "t": 150.62
+     },
+     "who": "caliph",
+     "action": "he explodes: head thrown back, mouth wide, arms flung out, tears flying; HA HA HA!",
+     "acting": "tip -0.18, mouth open, lid 1, wet, armsOut; small panel shake; his horse's ears jump",
+     "library": "person laugh (planned) + armsOut"
+    },
+    {
+     "t": 151.56,
+     "cue": {
+      "word": "هارون",
+      "t": 151.56
+     },
+     "who": "caliph",
+     "action": "slaps his thigh and nearly slides out of the saddle, grabbing the horse's mane to stay on",
+     "acting": "lurch forward, handRW to mane, still laughing (lid 0.9)",
+     "library": "lurch + handRW"
+    },
+    {
+     "t": 152.02,
+     "cue": {
+      "word": "ضاحكًا.",
+      "t": 152.02
+     },
+     "who": "abuNuwas",
+     "action": "the laugh spreads: Abu Nuwas and the companion roar openly; Jaafar manages a small sick grin, face red",
+     "acting": "laugh staggered 4 and 9 frames; Jaafar flush soft, mouth smile thin, gaze down",
+     "library": "person laugh + flush (soft)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 145.5,
+     "text": "FOOL!"
+    },
+    {
+     "t": 146.0,
+     "text": "HEE HAW!"
+    },
+    {
+     "t": 150.7,
+     "text": "HA HA HA!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 152.82
+   }
+  },
+  {
+   "id": "S11",
+   "start": 152.82,
+   "end": 169.03,
+   "paragraphs": [
+    8
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "caliph",
+    "jaafar",
+    "abuNuwas",
+    "companion",
+    "whiteHorse",
+    "bayHorse",
+    "blackHorse",
+    "brownHorse",
+    "bedouin",
+    "donkey"
+   ],
+   "summary": "The caliph admires the quick answer and has three thousand silver dirhams given to the old man, who rides on to Baghdad the winner. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Medium cx 1480, cy 600, zoom 1.3 (caliph rides in to 1330). Sack loading at cx 1640, zoom 1.5 from 158.1. Pull out to cx 1300, cy 615, zoom 1.0 at 162.18 for the ride off; hold for THE END."
+   },
+   "composition": "Caliph rides forward to x 1330 between Jaafar (stepped aside to 1420, turned to face us, small) and the donkey (1690). Sacks stack on the donkey behind the rider; counter above them at world (1760, 470). In the last wide the Bedouin rides left along the road toward the city; THE END title in the sky at panel y 300.",
+   "actions": [
+    {
+     "t": 152.82,
+     "cue": {
+      "word": "أعجب",
+      "t": 152.82
+     },
+     "who": "caliph",
+     "action": "wipes a tear with a knuckle, still hiccuping, and looks at the old man with warm delight",
+     "acting": "wet, smile, brow -0.4, two small after-laugh pulses",
+     "library": "handR to eye + pulse"
+    },
+    {
+     "t": 153.76,
+     "cue": {
+      "word": "الخليفة",
+      "t": 153.76
+     },
+     "who": "caliph",
+     "action": "walks his horse forward past the deflated Jaafar to the Bedouin (1020 to 1330)",
+     "acting": "horse walk with footfalls; Jaafar steps aside and bows his head",
+     "library": "walk(CX, t, {stride: GAIT.horse * 0.8})"
+    },
+    {
+     "t": 154.54,
+     "cue": {
+      "word": "بسرعة",
+      "t": 154.54
+     },
+     "who": "caliph",
+     "action": "taps his temple twice, then points at the old man: a sharp mind",
+     "acting": "templeTap, then pointFwd, nodding",
+     "library": "templeTap (planned) + pointFwd"
+    },
+    {
+     "t": 156.24,
+     "cue": {
+      "word": "البدوي،",
+      "t": 156.24
+     },
+     "who": "bedouin",
+     "action": "squints up at the crowned shape, not sure who is praising him; the donkey sniffs the white horse",
+     "acting": "lid 0.4, brow -0.5, hand shading the good eye",
+     "library": "lookAt + handR at brow"
+    },
+    {
+     "t": 156.94,
+     "cue": {
+      "word": "وأمر",
+      "t": 156.94
+     },
+     "who": "caliph",
+     "action": "claps twice and beckons behind him",
+     "acting": "two claps (hands meet), then PERSON_HANDS.wave back toward the companion",
+     "library": "handL/handR clap keys + wave"
+    },
+    {
+     "t": 158.18,
+     "cue": {
+      "word": "يعطوه",
+      "t": 158.18
+     },
+     "who": "companion",
+     "action": "on foot now (cut hides the dismount), he walks in carrying a heavy sack and heaves it up onto the donkey behind the rider",
+     "acting": "bent under the load, footfalls, anticipation dip before the heave",
+     "library": "walk + handLW/handRW on the sack + anticipate"
+    },
+    {
+     "t": 158.86,
+     "cue": {
+      "word": "ثلاثة",
+      "t": 158.86
+     },
+     "who": "coinSacks",
+     "action": "first sack lands: counter 1000; the donkey sinks a little",
+     "acting": "donkey sq 0.97",
+     "library": "packLoad(ctx, [\"sack\"]) + S.counter"
+    },
+    {
+     "t": 159.72,
+     "cue": {
+      "word": "آلاف",
+      "t": 159.72
+     },
+     "who": "coinSacks",
+     "action": "second and third sacks stack on: 2000, 3000; the donkey's legs splay, then it braces and grins",
+     "acting": "sq 0.95, 0.93, settle; mouth smile",
+     "library": "packLoad three sacks + S.counter"
+    },
+    {
+     "t": 160.3,
+     "cue": {
+      "word": "درهم",
+      "t": 160.3
+     },
+     "who": "coinSacks",
+     "action": "the top sack gapes: silver coins spill and glint; the old man catches one, holds it an inch from his good eye, and bites it",
+     "acting": "gaze crossed onto the coin, lid 0.3, then eyes wide",
+     "library": "coinPile (planned, silver palette) + handR keys"
+    },
+    {
+     "t": 161.02,
+     "cue": {
+      "word": "الفضة،",
+      "t": 161.02
+     },
+     "who": "bedouin",
+     "action": "disbelief turns into a huge smile; he lifts his face and both arms to the sky, the same gesture as his prayer",
+     "acting": "wet, mouth smile, gaze [0, -1], arms aL/aR up",
+     "library": "aL/aR + wet"
+    },
+    {
+     "t": 162.18,
+     "cue": {
+      "word": "وانتهت",
+      "t": 162.18
+     },
+     "who": "bedouin",
+     "action": "pull out: he turns the donkey's head down the road and rides off left toward Baghdad, sacks jiggling, with a wave of the staff",
+     "acting": "donkey walk with footfalls, sacks lag the bob by 2 frames",
+     "library": "rideOn \"donkey\" + walk(DX, t, {stride: GAIT.donkey * 0.8})"
+    },
+    {
+     "t": 162.94,
+     "cue": {
+      "word": "المزحة",
+      "t": 162.94
+     },
+     "who": "caliph",
+     "action": "chuckling again, he claps Jaafar on the back from the saddle; Jaafar staggers a step, still fanning his nose",
+     "acting": "Jaafar lurch, brow -0.6, mouth frown; caliph smile",
+     "library": "handRW + lurch"
+    },
+    {
+     "t": 164.58,
+     "cue": {
+      "word": "العجوز.",
+      "t": 164.58
+     },
+     "who": "donkey",
+     "action": "passing Jaafar, the donkey lifts its tail: Jaafar flinches and covers his nose with both hands. Nothing happens. The old man winks back over his shoulder",
+     "acting": "tailUp 1; Jaafar shield, sq 0.92; Bedouin wink \"L\", smile",
+     "library": "donkey tailUp + PERSON_HANDS.mouthCover + wink"
+    },
+    {
+     "t": 165.5,
+     "who": "lettering",
+     "action": "THE END title pops in the sky; the party watches the donkey grow small down the road; hold to 169.03",
+     "acting": "idle breathing and blinks only; caliph gives one last shoulder shake at 167.0",
+     "library": "S.title + breathe + LIFE blinks"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 159.9,
+     "text": "3000"
+    },
+    {
+     "t": 165.5,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 161.92,
+     "kind": "chime"
+    },
+    {
+     "t": 165.7,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 169.03
+   }
+  }
+ ],
+ "ending": {
+  "t": 165.5,
+  "description": "Last word ends 165.30. Wide of the road: the Bedouin, astride his donkey with three sacks, rides away left toward Baghdad; Jaafar still guards his nose, the caliph chuckles. THE END (Bangers, style title) pops in the sky at 165.5 with a quiet chime and is held 3.5 s to 169.03 with only breathing, blinks and the receding donkey."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "خرج الخليفة هارون الرشيد يومًا إلى الصحراء|مع جعفر البرمكي وأبي نواس وأحد أصحابه.|رأوا رجلًا بدويًا مسنًا يستند إلى حماره، فتوقفوا ليسألوه عن رحلته.",
+   "en": "One day Caliph Harun al-Rashid went into the desert|with Jaafar the Barmecide, Abu Nuwas, and a companion.|They saw an old Bedouin leaning against his donkey."
+  },
+  {
+   "p": 2,
+   "ar": "قال جعفر للرجل: من أين جئت؟|أجاب: من البصرة. وسأله: إلى أين تذهب؟|قال: إلى بغداد؛ أريد دواءً لعيني،|فقد أصبحت الرؤية صعبة عليّ.",
+   "en": "Jaafar asked where the man had come from.|“Basra,” he said.|He was going to Baghdad to find medicine for his eye,|because he could not see well."
+  },
+  {
+   "p": 3,
+   "ar": "أراد هارون أن يضحك، فأمر جعفرًا أن يمزح مع الرجل.|تردد جعفر وقال إن المزاح قد يجلب له جوابًا قاسيًا،|لكن الخليفة أصر، فاقترب جعفر من البدوي.",
+   "en": "Harun wanted some amusement and ordered Jaafar to tease him.|Jaafar hesitated, fearing an unpleasant reply,|but the caliph insisted."
+  },
+  {
+   "p": 4,
+   "ar": "قال جعفر: إذا وصفت لك علاجًا يشفي عينك، فماذا تعطيني؟|أجاب العجوز: أسأل الله أن يجزيك خيرًا،|فثوابه خير من كل مال أقدر على دفعه.",
+   "en": "Jaafar asked what reward he would get for a cure.|The old man said he prayed that God would reward him|better than any payment he could offer."
+  },
+  {
+   "p": 5,
+   "ar": "قال جعفر بجدية مصطنعة: خذ مقدارًا من أنفاس الريح،|ومثله من ضوء الشمس، ومثله من ضوء القمر والمصباح.|اخلط الأشياء الأربعة جيدًا، ثم اتركها في الهواء ثلاثة أشهر.",
+   "en": "With a solemn face, Jaafar prescribed measures of wind,|sunlight, moonlight, and lamplight,|mixed and left outdoors for three months."
+  },
+  {
+   "p": 6,
+   "ar": "واصل جعفر وصفته الغريبة: ضع الخليط في هاون بلا قاع|وادقه ثلاثة أشهر أخرى،|ثم اتركه في طبق مشقوق ثلاثة أشهر.|وبعد ذلك خذ منه كل ليلة، وستشفى عينك!",
+   "en": "Jaafar continued: pound it in a bottomless mortar|for three more months,|leave it in a cracked dish for another three,|then take some each night to cure the eye."
+  },
+  {
+   "p": 7,
+   "ar": "فهم البدوي أن جعفرًا يسخر منه.|تمدد فوق حماره وأطلق ريحًا بصوت عال،|ثم قال ساخرًا: خذ هذا أجر وصفتك الآن!|وإذا شفيت عيني، فسأرسل إليك خادمة تسوّد وجهك بالقذر بعد موتك!",
+   "en": "The Bedouin understood the mockery.|He stretched over his donkey, loudly broke wind,|and said, “Take this as payment now!|If I recover, I’ll send a servant who will foul your face after your death!”"
+  },
+  {
+   "p": 8,
+   "ar": "ثم وصف الرجل جعفرًا بالأحمق وأطلق عليه دعوات قاسية،|حتى انفجر هارون ضاحكًا.|أعجب الخليفة بسرعة بديهة البدوي،|وأمر أن يعطوه ثلاثة آلاف درهم من الفضة، وانتهت المزحة لصالح العجوز.",
+   "en": "He called Jaafar a fool and continued with harsh curses|until Harun burst out laughing.|Delighted by the Bedouin’s quick reply,|the caliph gave him three thousand silver dirhams."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "description": "Planned wordless picture balloon (26 films). Here: single mode (one icon) and a large strip mode whose content is drawn by a scene callback, with pop in and soap-bubble pop out.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "iconBalloon(ctx, x, y, w, h, t, {p, tail: [x, y], inside(c, t)}): rounded white box with a fat black brush outline and a triangular tail (S.box style), scale overshoot on p; clip to the box and call inside(). Draw in panel space after the camera restore so it does not move with pushes; tail end from toPanel(mouth)."
+  },
+  {
+   "type": "prop",
+   "name": "recipeIcons (with medicineKit mortar bottomless option, platter crack, oilLamp, graveMarker)",
+   "description": "Small flat icons for the two balloons, listed with sizes under props. Reuses the planned medicineKit mortar and jar, platterJar platter, oilLamp and graveMarker names; adds only bottomless:true to the mortar (an open ellipse at the base showing the background, contents fall through).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "One small function per icon from K shapes (ellipses, rounded rects, 3 to 6 point paths) with the brush outline. Mortar: trapezoid 240 x 140 with a rim ellipse; bottomless draws a second ellipse at the base filled with the balloon paper colour. Crack: 5-segment zigzag stroke revealed by length. Sparkles: K.rng seeded four-point stars falling with fallY. Blot: 7 circles from K.rng(seed)."
+  },
+  {
+   "type": "effect",
+   "name": "gasPuff (with planned stinkLines)",
+   "description": "Comic fart puff: burst, drift, three wavy smell lines; reusable for smoke puffs and bad smells.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Burst phase: Library dustBurst at the hem point recoloured pale yellow green, plus three tapered speed lines for 6 frames. Drift phase: 5 scalloped circles whose centre follows a quadratic bezier from the hem (about 1600, 720) to Jaafar's face (1440, 690) over 3 s, radius growing 20 %, alpha fading from 135 s. stinkLines: three sine strokes rising 60 units above the cloud, phase from t."
+  },
+  {
+   "type": "character",
+   "name": "person costume preset 'poet'",
+   "description": "Planned preset for Abu Nuwas: green robe, yellow sash, small tilted white turban with a hanging tail, short pointed black beard, quill in the turban.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Add a COSTUME entry in cast/people.js copying 'merchant' with the palette above, turban scale 0.8 tilted 0.15 rad, a tail strip and a quill line. Fallback without library work: merchant with a green pal."
+  },
+  {
+   "type": "pose",
+   "name": "reclineOnMount",
+   "description": "A person lying along the back of a donkey (head toward the rump, feet toward the head), then sitting up into the normal rideOn seat. No new drawing: the Library lie pose placed at mountSeat.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "const seat = mountSeat('donkey', D); person(ctx, {x: seat.x, y: seat.y, lie: 1, dir: +1 or -1 so the head is toward the rump, ...}) drawn after the donkey; add the donkey's spring y to both. Sit up: lie 1 to 0 over 0.5 s then switch to rideOn on the frame they match (cover with the cut at 142.12)."
+  },
+  {
+   "type": "expression",
+   "name": "soreEye",
+   "description": "The bad eye: the Library wink closes it; three short red ticks under it and a red rim arc mark it as sore; pulse option when he touches it.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Scene overlay drawn after the person at the eye position (head centre + eye offset * s): arc and three 8 unit strokes in C.red, alpha from a pulse."
+  },
+  {
+   "type": "camera",
+   "name": "doubleVision",
+   "description": "POV of poor sight: the subject layer drawn twice with a slowly changing offset and half alpha, with an eyelid vignette that can close to a slit.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Render the party (no outlines on the second copy if cheap, else same) into the panel twice with ctx.globalAlpha 0.5 and x offsets +-7..14 from Math.sin(t * 3.8); lid = two black-filled arcs closing from top and bottom by a keyed amount. Pure function of t."
+  },
+  {
+   "type": "motion",
+   "name": "person laugh, flush, templeTap (planned helpers)",
+   "description": "Shared planned helpers reused under their names: the full laugh (mouth open, lid 0.9, tip back, shoulder shake), the anger flush with steam puffs (and soft option), a finger tapped on the temple.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "laugh(P, t, t0, amt): sets mouth, lid, tip -0.18 * amt and a 9 Hz sq pulse. flush: red dots clipped to the face circle rising with a keyed level, two small puffs via dustBurst. templeTap: handR target at the temple with two 3 frame taps."
+  }
+ ],
+ "owner_questions": [
+  "SCRIPT: the English omits three Arabic clauses (P1 'so they stopped to ask him about his journey', P3 'so Jaafar approached the Bedouin', P8 'and the joke ended in the old man's favour'); both languages are kept verbatim, so those moments show Arabic with the previous English chunk.",
+  "The fart is shown as a cartoon puff cloud with the lettering PFFFT! and one quiet raspberry sound; default: shown this way, clearly comic, with no anatomical detail.",
+  "The threat to foul Jaafar's face after his death is shown only as icons in the Bedouin's picture balloon (servant silhouette, a black blot on a face icon, a gravestone); default: icons only, nothing done to the real Jaafar.",
+  "The curses are shown as wordless symbol bursts bouncing off Jaafar's turban plus the single word FOOL!; default: no written insults beyond FOOL!.",
+  "'Stretched over his donkey' is staged as the old man lying back along the donkey like a couch with his feet toward Jaafar; default: this pose (the Library lie pose), not belly down.",
+  "Additions beyond the script: the party rides out of a city gate, the caliph and others stay mounted while Jaafar goes on foot, a double-vision POV of the old man's sight, an empty purse, and the ending where the Bedouin rides off to Baghdad and Jaafar flinches at the donkey's lifted tail; default: all kept.",
+  "Invented English lettering (18 items): THE CALIPH, JAAFAR, ABU NUWAS, FROM BASRA, TO BAGHDAD, GO!, 3 / 6 / 9 MONTHS, NO BOTTOM, CURED!, PFFFT!, PAYMENT, FOOL!, HEE HAW!, HA HA HA!, 3000, THE END; default: all used.",
+  "No LATER card is used because the story is one continuous encounter; default: none."
+ ],
+ "implementation_notes": [
+  "World: one desertRoad strip 2400 wide, ground y 900, translate by -camX. Stop positions (feet x): companion 560, Abu Nuwas 790, caliph 1020, Jaafar's horse 1250, Jaafar on foot 1440, donkey 1690 (dir -1), Bedouin 1785. Horses and donkey s 0.8, riders s 0.76 via rideOn, people on foot s 0.95.",
+  "Ride in: caliph x = kfn(t, [[0, 380], [15.3, 1020]]) with an eased stop; others at +230, -230, -460. Use walk(xf, t, {stride: GAIT.horse * 0.8}) per horse with different phase offsets and footfalls for dust. All four stop within 15.06..15.6, staggered front to back, each rider with lurch(t, tStop).",
+  "Dismounts are never shown: Jaafar is on foot from the cut at 55.26 (hidden by the caliph close-up 52.78..55.2); the companion is on foot from the cut at 158.1. Draw the bay horse riderless after 55.26.",
+  "Draw order per frame: set back, far horses and riders (companion, Abu Nuwas), caliph, bay horse, Jaafar, donkey, Bedouin (or lying on / riding the donkey), set front pass, effects (gasPuff, bursts), then in panel space: balloons, labels, counter, finish.",
+  "Set LIFE.t = t for automatic blinks; give every character a gaze target each scene (lookAt). The donkey is a listener in every dialogue scene: key its headTurn and ears on the speaker changes listed in the actions.",
+  "The Bedouin's bad eye is wink:\"R\" at all times except when he shuts both (lid 1). Check which side wink \"R\" closes on a figure facing left and keep the sore eye on the camera side.",
+  "Recipe balloon: build the icon timeline as one function recipe(c, t) with pop times from the cue words (79.98, 80.94, 82.50, 85.44, 88.06, 88.64, 89.68, 92.46, 93.92, 95.28, 102.56, 103.10, 104.00, 105.14, 108.82, 109.32, 110.18, 113.10, 114.64, 115.72). The counter is the style counter primitive with the word MONTHS.",
+  "Climb at 122.4: anticipate(t, 122.4, 0.3, 0.1), hop arc 122.7..123.2 from (1785, 900) to the mountSeat of the donkey, lie blending 0 to 1; the donkey's y gets a damped spring (14 units, 0.5 s). Verify the lie pose head direction and mirror if needed so the feet point at Jaafar.",
+  "The blast is at 128.38, after the narrator finishes \"بصوت عال،\". Hold everything still from 125.54 (only tremble) so the release reads. Apply the shake inside the panel clip only.",
+  "Caliph laugh fuse: he must not laugh openly before 150.62. Stages: grin (39.68), hidden shaking (96.76), cheeks and held breath (132.92, 148.72), three hitches (149.66), explosion (150.62).",
+  "Sound: narration is continuous, so only 7 effects: whoosh 9.62, thud 18.7, pops 23.42 and 29.62, raspberry 128.44, chime 161.92, chime 165.7. All SND master 0.6. Measure the real silence at the tail of the word at 127.62..128.48 and put the 0.2 s raspberry inside it; if there is no clean gap, drop the sound and keep the lettering.",
+  "Subtitles: use the chunk marks in \"subtitles\" for chunks_ar.txt and chunks_en.txt; P1, P3 and P8 have Arabic clauses with no English counterpart (see owner_questions), so the last English chunk simply stays up.",
+  "Lettering never covers a face: name labels above heads at y 430..470, PFFFT! between the two men above head height, HA HA HA! above the crown."
+ ],
+ "warnings": [
+  "The narration has only four real pauses in the first 30 s and none later; effects are therefore few and the raspberry at 128.44 sits on a word boundary and must be checked by ear.",
+  "Faces are small in the wides (zoom 1.0: a head is about 55 px); every key expression is given a close or two-shot. Do not let the wides carry acting.",
+  "Four mounted riders plus two on-foot actors is the heaviest frame (S2 wide, S10): keep the two rear riders simple (idle, staggered) and check the frame time.",
+  "rideOn clips the rider at the saddle and shows the front-facing person; riders cannot turn in profile, so \"looking back\" is done with gaze and a small head offset only.",
+  "The lie pose on the donkey (reclineOnMount) is untested on a mount: check a still at 124.5 and 128.4 before animating the rest; fallback is the Bedouin sitting astride and leaning far back (tip -0.5).",
+  "No LATER transition: the story has no passage of time (plancheck will warn).",
+  "The poet costume preset is planned, not in the Library yet; the fallback palette is given in cast."
+ ]
+}

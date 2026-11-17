@@ -1,0 +1,91 @@
+{
+ "story_id": "AN-112",
+ "title": "ABU HASSAN AL-ZIYADI AND THE KHORASAN MAN",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T14:32:37",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-aba649837707b15a9.jsonl",
+ "agent_id": "aba649837707b15a9",
+ "model_messages": {
+  "claude-fable-5-2": 25
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "d55d5b7d2a2a3ecd194554a2f35864657fe14cfccc0187ecaf9001fc7f1217a4",
+  "paragraphs": 8,
+  "segments": [
+   "AN-112-P01-S01",
+   "AN-112-P01-S02",
+   "AN-112-P01-S03",
+   "AN-112-P01-S04",
+   "AN-112-P01-S05",
+   "AN-112-P01-S06",
+   "AN-112-P01-S07",
+   "AN-112-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-112_ABU_HASSAN_AL_ZIYADI_AND_THE_KHORASAN_MAN_full_slowed.mp3",
+  "sha256": "57ed422fcf774acaaa84f0b41f7417d05424f4021290597deb7485c33cf2f608",
+  "duration": 171.904
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-112_ABU_HASSAN_AL_ZIYADI_AND_THE_KHORASAN_MAN_full_slowed.mp3.words.json",
+  "sha256": "505f5efa47746ceae6a16e52b5265410e14674551c85fb33726f34b749a54145",
+  "manifest_status": "SUCCESS; METADATA MISMATCH",
+  "script_match": 0.996
+ },
+ "library_rev": "2e7a9d0",
+ "scenes": 19,
+ "actions": 199,
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "purse",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "scroll",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (soldier)",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (judge)",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "dream frame (full-panel thoughtCloud)",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person headwear offset (crooked turban, turban hop)",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [
+  "29 sound effects; effects must be sparse and quiet (aim for 16 or fewer, only in real pauses)"
+ ],
+ "plan_warnings": [
+  "The narration is dense: effects have to sit on word boundaries rather than in true pauses. Fewer is better; the thuds at 24.36, 116.70, 120.42 and 123.74 and the chime at 107.64 are the ones worth keeping.",
+  "P6 packs the dream, the explanation and three gifts into 25 s; the dream flashback has only about 6 s (106.1 to 112.6). Keep the three-night repeat to three quick beats.",
+  "The soldier and judge presets and the purse, coinPile and scroll props are planned names that are not in Library yet; they must be built in this story first (opt-in, regression test must stay identical).",
+  "English subtitles are shorter than the Arabic in P1, P4, P6 and P8, so some English chunks stay on screen while the Arabic chunk shows text with no English counterpart.",
+  "palaceHall merchant variant may draw wealth (coin stacks, cloth bolts, treasure curtain); check its options before using it as a poor scholar's room, or fall back to hutRoom with a desk drawn by the scene.",
+  "Set coordinates in this plan are read from the catalogue image and are approximate; measure on the set anchors."
+ ]
+}

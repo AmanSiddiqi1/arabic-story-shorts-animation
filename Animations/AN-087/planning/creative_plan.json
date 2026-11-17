@@ -1,0 +1,2908 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-087",
+ "title": "Ibrahim bin al-Mahdi and the Barber-Surgeon",
+ "duration": 166.38,
+ "end_hold": 3.0,
+ "logline": "A prince on the run with a price on his head is sheltered by a poor barber who refuses the reward, by a soldier's wife who hides him from her own husband, and betrayed by a woman who owed him her freedom; the caliph pardons him and pays each one back in kind.",
+ "moral": "Loyalty and kindness are repaid, and betrayal for money is punished; mercy ends a quarrel better than revenge.",
+ "tone": "Light comic suspense (a hunted man who sees a reward poster in every face) that warms into trust and ends in a generous court scene. The disguise and the soldier supply the laughs; the barber and the pardon supply the heart.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.58,
+   "kind": "setup",
+   "cue": {
+    "word": "إبراهيم",
+    "t": 0.58
+   },
+   "summary": "Uncle on the throne, nephew the caliph walks in: the quarrel over rule."
+  },
+  {
+   "id": "B2",
+   "t": 7.32,
+   "kind": "inciting",
+   "cue": {
+    "word": "خسر",
+    "t": 7.32
+   },
+   "summary": "Ibrahim loses, falls off the throne and runs to hide in Baghdad."
+  },
+  {
+   "id": "B3",
+   "t": 13.28,
+   "kind": "rising",
+   "cue": {
+    "word": "جائزة",
+    "t": 13.28
+   },
+   "summary": "A huge reward is posted; every passer-by is now a danger."
+  },
+  {
+   "id": "B4",
+   "t": 21.76,
+   "kind": "comic",
+   "cue": {
+    "word": "الطريق",
+    "t": 21.76
+   },
+   "summary": "He finds he is hiding against his own reward poster."
+  },
+  {
+   "id": "B5",
+   "t": 31.18,
+   "kind": "suspense",
+   "cue": {
+    "word": "خاف",
+    "t": 31.18
+   },
+   "summary": "Fed by the barber, he imagines being sold."
+  },
+  {
+   "id": "B6",
+   "t": 37.2,
+   "kind": "surprise",
+   "cue": {
+    "word": "عودًا",
+    "t": 37.2
+   },
+   "summary": "The feared object from the chest is a lute."
+  },
+  {
+   "id": "B7",
+   "t": 44.52,
+   "kind": "reveal",
+   "cue": {
+    "word": "هويته",
+    "t": 44.52
+   },
+   "summary": "The barber knows exactly who he is."
+  },
+  {
+   "id": "B8",
+   "t": 49.46,
+   "kind": "turn",
+   "cue": {
+    "word": "يخونه",
+    "t": 49.46
+   },
+   "summary": "He will not betray him: the reward notice is torn up; they sing."
+  },
+  {
+   "id": "B9",
+   "t": 58.94,
+   "kind": "emotion",
+   "cue": {
+    "word": "رفض",
+    "t": 58.94
+   },
+   "summary": "The barber refuses the purse."
+  },
+  {
+   "id": "B10",
+   "t": 70.16,
+   "kind": "climax",
+   "cue": {
+    "word": "دفعه",
+    "t": 70.16
+   },
+   "summary": "Recognised in his disguise, he shoves the soldier at the bridge and flees."
+  },
+  {
+   "id": "B11",
+   "t": 83.98,
+   "kind": "surprise",
+   "cue": {
+    "word": "زوجها",
+    "t": 83.98
+   },
+   "summary": "The woman hiding him is the soldier's wife; she protects him anyway."
+  },
+  {
+   "id": "B12",
+   "t": 96.96,
+   "kind": "turn",
+   "cue": {
+    "word": "طمعت",
+    "t": 96.96
+   },
+   "summary": "The woman he once freed sells him for the reward."
+  },
+  {
+   "id": "B13",
+   "t": 108.78,
+   "kind": "suspense",
+   "cue": {
+    "word": "العفو",
+    "t": 108.78
+   },
+   "summary": "He confesses and asks pardon; the court splits between death and mercy."
+  },
+  {
+   "id": "B14",
+   "t": 118.82,
+   "kind": "resolution",
+   "cue": {
+    "word": "العفو",
+    "t": 118.82
+   },
+   "summary": "The caliph chooses pardon and restores him."
+  },
+  {
+   "id": "B15",
+   "t": 149.02,
+   "kind": "comic",
+   "cue": {
+    "word": "الحجامة",
+    "t": 149.02
+   },
+   "summary": "The soldier is made a barber's apprentice."
+  },
+  {
+   "id": "B16",
+   "t": 157.44,
+   "kind": "moral",
+   "cue": {
+    "word": "وكسوة",
+    "t": 157.44
+   },
+   "summary": "The loyal barber receives house, robe of honour and yearly pay."
+  }
+ ],
+ "cast": [
+  {
+   "id": "ibrahim",
+   "name": "Ibrahim bin al-Mahdi",
+   "library": "person",
+   "base": "person costume:'merchant' with pal {robe:GREEN, dot:GREEND, hc:C.yellow, hd:C.red} (the 'merchant pal' cell of people.png), age 0.45, s 1.25",
+   "look": "Green robe, big yellow turban, black beard: one strong colour pair that survives the disguise. Disguise (61.2 to 120.3): costume 'lady' with the same green robe and a yellow veil, planned faceCover 0.9 plus the new beardPeek. From 120.3 back in the green robe and yellow turban.",
+   "new": false
+  },
+  {
+   "id": "mamun",
+   "name": "Caliph al-Ma'mun (the nephew)",
+   "library": "person",
+   "base": "person costume:'caliph', age 0.25, pal {beard:C.black}",
+   "look": "Red robe, crown on turban, black beard (younger than his uncle). Always the highest head in the palace frames.",
+   "new": false
+  },
+  {
+   "id": "barber",
+   "name": "the barber-surgeon",
+   "library": "person",
+   "base": "person costume:'beanSeller' (cap and apron) with pal {robe:C.blue, dot:BLUED}, age 0.5",
+   "look": "Blue tunic, white apron, small cap, moustache; razor in the apron pocket. In S11 from 157.4 a yellow robe of honour with red trim (palette change only).",
+   "new": false
+  },
+  {
+   "id": "soldier",
+   "name": "the soldier (trooper)",
+   "library": "person",
+   "base": "person with the new costume preset 'soldier'",
+   "look": "Pointed helmet, red tunic with a belt, spear. From 80.2: wet, head bandage, no spear. From 147.5: apron over the tunic, no helmet.",
+   "new": true
+  },
+  {
+   "id": "wife",
+   "name": "the soldier's wife",
+   "library": "person",
+   "base": "person costume:'villageWoman'",
+   "look": "Red dress, yellow headscarf (catalogue default). Gold necklace from 150.9.",
+   "new": false
+  },
+  {
+   "id": "freedwoman",
+   "name": "the freedwoman (informer)",
+   "library": "person",
+   "base": "person costume:'oldWoman', age 0.65, no stick",
+   "look": "Grey hood, brown robe: the dullest palette in the film, so the gold coin eyes at 96.96 stand out.",
+   "new": false
+  },
+  {
+   "id": "guards",
+   "name": "two palace guards",
+   "library": "person",
+   "base": "person costume:'soldier' with pal {robe:C.blue}",
+   "look": "Same preset as the soldier in blue so the hero soldier (red) is never confused with them.",
+   "new": true
+  },
+  {
+   "id": "vizierRed",
+   "name": "the vizier who wants death",
+   "library": "person",
+   "base": "person costume:'vizier' with pal {robe:C.red, dot:REDD}, age 0.7",
+   "look": "Red robe, grey beard, hard brow.",
+   "new": false
+  },
+  {
+   "id": "vizierBlue",
+   "name": "the vizier who asks mercy",
+   "library": "person",
+   "base": "person costume:'vizier' (default blue), age 0.9",
+   "look": "Blue robe, white beard, open hands.",
+   "new": false
+  },
+  {
+   "id": "servant",
+   "name": "herald / palace servant",
+   "library": "person",
+   "base": "person costume:'servant'",
+   "look": "Catalogue default. One figure used as the herald in S2 and the servant in S10 and S11.",
+   "new": false
+  },
+  {
+   "id": "passersby",
+   "name": "two passers-by",
+   "library": "person",
+   "base": "person costume:'villager' and costume:'bedouin'",
+   "look": "Catalogue defaults; they only cross the street in S2.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "palaceHall",
+   "library": null,
+   "description": "The planned palaceHall (AN-084), full palace variant, 1000 x 1230: blue dotted wall with three pointed arches, door arch at x 40..250 (top y 480), dais x 560..900 with top y 860, red runner, checker floor, two lamps. Planned throne on the dais at x 730.",
+   "new": true
+  },
+  {
+   "id": "baghdadStreet",
+   "library": null,
+   "description": "The planned marketStreet as a 1600 wide strip, ground y 900, flat-roofed house wall behind (roof line about y 430; approximate, take it from the set when built). Anchors this film needs: door A x 180..300, blank poster wall x 380..640, one stall x 1000..1200, door B x 1320..1440 with poster space at x 1230, street corner x 1540. Day for S2 (Library sky), dusk for S8 (skyCycle u 0.45).",
+   "new": true
+  },
+  {
+   "id": "barberRoom",
+   "library": null,
+   "description": "The planned palaceHall variant merchantHouse (modest cutaway room), 1000 x 1230, floor y 900. Dressing: door x 60..200 (top y 600), window x 420..560 / y 420..560, shelf x 640..920 at y 520 with five cupping cups and a towel, low table x 430..570 (top y 840), stool at x 560, chest x 800..930 (top y 800, hinged lid), wall lamp at (300, 480).",
+   "new": true
+  },
+  {
+   "id": "wifeRoom",
+   "library": null,
+   "description": "The same merchantHouse variant with a second dressing and a warmer wall palette (yellow dots on paper instead of blue): door x 60..200 with a bar, bed mat x 330..560 on the floor, kneading bowl at x 620, window x 420..560 / y 420..560 showing the sky (skyCycle), and the curtain alcove x 700..900.",
+   "new": true
+  },
+  {
+   "id": "cityBridge",
+   "library": null,
+   "description": "New: 1600 x 1230 street end and bridge. Street ground y 900 for x 0..900 with the barber's street door at x 100..220 in a house wall; Library river() from x 900 to 1600, water surface y 965; a low stone bridge deck from x 820 to 1560, top y 880 at the ends and y 845 at the crown (x 1190), 46 thick, two arches below, a 40 high parapet on the FAR side only (the near edge is open); a post at x 930 for a reward notice; domes and flat roofs as a blue silhouette behind.",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "throne",
+   "library": null,
+   "description": "Planned throne (AN-084): 150 wide, seat 48 above its base, back 300 high with pointed arch; rot field used for a small rock at 7.4 s.",
+   "new": true
+  },
+  {
+   "id": "rewardPoster",
+   "library": null,
+   "description": "New: paper 190 x 250 with curled corners; Ibrahim's face as a simple drawing (yellow turban arc, two eyes, black beard wedge), a small crown seal, a coin pile pictogram at the foot. Fields unroll 0..1, torn 0..1 (splits along a zigzag), s.",
+   "new": true
+  },
+  {
+   "id": "coinPile",
+   "library": null,
+   "description": "Planned coin mound (count n, removable coins, glint).",
+   "new": true
+  },
+  {
+   "id": "foodTray",
+   "library": null,
+   "description": "Planned brass tray with bread, dates and a cup (KD-011).",
+   "new": true
+  },
+  {
+   "id": "oud",
+   "library": null,
+   "description": "New lute: pear body 110 x 150, short neck 120 x 16 bent back at the peg box, 4 strings, sound hole rosette; fields rot, wrapped 0..1, vibrate.",
+   "new": true
+  },
+  {
+   "id": "purse",
+   "library": null,
+   "description": "Planned drawstring purse (AN-095) with open 0..1.",
+   "new": true
+  },
+  {
+   "id": "curtain",
+   "library": null,
+   "description": "New small prop: striped cloth 200 x 380 on a rod at y 520 with lift (corner pulled), bulge, gap 0..1 and edge tremble.",
+   "new": true
+  },
+  {
+   "id": "barberKit",
+   "library": null,
+   "description": "New small props: folding razor 70 long with a glint, cupping cup (small bell glass 34 x 40), leather strop; also the apron option used on the soldier.",
+   "new": true
+  },
+  {
+   "id": "necklace",
+   "library": null,
+   "description": "Planned gold bead necklace with a red drop gem.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 11.6,
+   "paragraphs": [
+    1
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "ibrahim",
+    "mamun",
+    "guards"
+   ],
+   "summary": "The quarrel over the throne in one picture: uncle Ibrahim sits on the throne, his nephew the caliph walks in with two guards, Ibrahim loses his seat and runs.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "CAM keys: 0.0 {x:560,y:640,zoom:1.05} hold; 3.3 ease to {x:500,y:640,zoom:1.0} to include the door arch as Ma'mun enters; 7.0 to {x:640,y:680,zoom:1.35} on the throne for the fall; 9.6 pan to {x:760,y:680,zoom:1.2} following the exit right; 10.8 settle {x:700,y:660,zoom:1.3} on Ma'mun seated."
+   },
+   "composition": "Throne on the dais at x 730 (dais top y 860), so the seated head is near y 640, upper third of the panel. Door arch at x 40..250 on the left gives the entrance. Ibrahim (green, yellow turban) and Ma'mun (red, crown) are opposite colours so the two sides read at phone size. Guards one step behind Ma'mun at x-90 and x-170, never level with him.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 0.6,
+     "cue": {
+      "word": "خالف",
+      "t": 0.0
+     },
+     "who": "camera",
+     "action": "Open on the hall already in motion: lamp flames flicker, Ibrahim is settling onto the throne.",
+     "acting": "No dead first frame: his sit blend goes 0.7 to 1 in the first 0.5 s with a landSquash on the cushion.",
+     "library": "person sit 0..1 seat:'bench' on the throne prop; landSquash"
+    },
+    {
+     "t": 0.58,
+     "end": 2.2,
+     "cue": {
+      "word": "إبراهيم",
+      "t": 0.58
+     },
+     "who": "ibrahim",
+     "action": "Pats both arm rests, wriggles comfortable, chin up. Label with arrow: IBRAHIM, THE UNCLE.",
+     "acting": "Smug: lid 0.45, mouth smile, gaze sweeping the empty hall [-0.6,0] to [0.6,0]; small breathe().",
+     "library": "person {costume:'merchant', pal:{robe:GREEN, dot:GREEND, hc:C.yellow, hd:C.red}, age:0.45, s:1.25}, sit:1; S.label + S.arrow"
+    },
+    {
+     "t": 2.26,
+     "end": 4.1,
+     "cue": {
+      "word": "ابن",
+      "t": 2.26
+     },
+     "who": "mamun",
+     "action": "Walks in through the left door arch with two guards behind, stops at x 400.",
+     "acting": "Steady walk, chin level, gaze locked on the throne; guards stagger 4 and 8 frames behind, spears upright.",
+     "library": "person {costume:'caliph', age:0.25, pal:{beard:C.black}}; walk(MX,t), footfalls, stagger(i)"
+    },
+    {
+     "t": 3.32,
+     "end": 4.9,
+     "cue": {
+      "word": "الخليفة",
+      "t": 3.32
+     },
+     "who": "ibrahim",
+     "action": "Sees him: the smile freezes, the patting hand stops in mid air. Label on Ma'mun at 4.14: CALIPH AL-MA'MUN.",
+     "acting": "Gaze snaps to Ma'mun with lookAt; lid opens to 0; a 3 px head pull-back; hand held 0.5 s (suspense by stillness).",
+     "library": "lookAt, settleTo; S.label"
+    },
+    {
+     "t": 5.3,
+     "end": 6.6,
+     "cue": {
+      "word": "الحكم",
+      "t": 5.64
+     },
+     "who": "mamun",
+     "action": "Points at the throne and stamps one foot; Ibrahim grips the arm rests and shakes his head.",
+     "acting": "Ma'mun brow 0.8, arm straight (aR angle, not a hand target, so it reads far away); the stamp makes Ibrahim's turban hop 6 px (kick on the footfall).",
+     "library": "PERSON_HANDS.pointFwd as arm angles; kick(); PERSON_HANDS.grip for Ibrahim"
+    },
+    {
+     "t": 6.62,
+     "end": 7.3,
+     "cue": {
+      "word": "ثم",
+      "t": 6.62
+     },
+     "who": "guards",
+     "action": "Both guards lower their spears to 30 degrees and take one step forward, one after the other.",
+     "acting": "Not in unison: second guard 5 frames late. Ibrahim's eyes go guard, guard, Ma'mun (saccades), brow flips from angry to worried.",
+     "library": "person costume:'soldier' hold:'spear'; gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 7.32,
+     "end": 8.6,
+     "cue": {
+      "word": "خسر",
+      "t": 7.32
+     },
+     "who": "ibrahim",
+     "action": "Slides off the seat, drops off the dais edge onto the floor and lands in a deep squash; the empty throne rocks.",
+     "acting": "anticipate 0.25 s (hands push on the arm rests), hop down 40 units, landSquash sq 0.82 with rebound; turban tips 15 degrees and stays crooked.",
+     "library": "sit 1 to 0, hop, landSquash, rebound; throne rot swing() +-0.05"
+    },
+    {
+     "t": 8.66,
+     "end": 9.7,
+     "cue": {
+      "word": "واضطر",
+      "t": 8.66
+     },
+     "who": "ibrahim",
+     "action": "Backs away to the right with both palms up as the spears follow him.",
+     "acting": "Shield hands, tip -0.1 (leaning away), small backward steps from walk() with dir kept facing left; wet false, mouth o.",
+     "library": "PERSON_HANDS.shield; walk"
+    },
+    {
+     "t": 9.76,
+     "end": 10.8,
+     "cue": {
+      "word": "الاختباء",
+      "t": 9.76
+     },
+     "who": "ibrahim",
+     "action": "Turns and runs out of the panel on the right, holding his turban on with one hand; a dust puff where he started.",
+     "acting": "Wind-up 0.2 s (planned runInPlace) then fast walk amp 1; hand headHold; dustBurst at the start point.",
+     "library": "runInPlace, walk, PERSON_HANDS.headHold, dustBurst"
+    },
+    {
+     "t": 10.8,
+     "end": 11.6,
+     "cue": {
+      "word": "بغداد",
+      "t": 10.8
+     },
+     "who": "mamun",
+     "action": "Steps up and sits on the throne; the guards take their places either side.",
+     "acting": "Sits slowly (0.6 s), straightens the cushion first; a long look at the exit, lid 0.3: not finished with his uncle.",
+     "library": "sit, gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.7,
+     "text": "IBRAHIM, THE UNCLE",
+     "kind": "label"
+    },
+    {
+     "t": 4.14,
+     "text": "CALIPH AL-MA'MUN",
+     "kind": "label"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 11.6
+   }
+  },
+  {
+   "id": "S2",
+   "start": 11.6,
+   "end": 23.3,
+   "paragraphs": [
+    1
+   ],
+   "set": "baghdadStreet",
+   "cast": [
+    "ibrahim",
+    "servant",
+    "passersby"
+   ],
+   "summary": "The reward goes up on a Baghdad wall. Ibrahim creeps along the street hiding his face from every passer-by, then finds he is leaning on his own poster.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "CAM: 11.6 {x:510,y:640,zoom:1.7} close on the poster wall; 16.6 ease out to {x:560,y:690,zoom:1.15} by 17.4 so the street and Ibrahim's entrance from the left are in view; 21.5 push to {x:500,y:650,zoom:1.5} for the poster gag."
+   },
+   "composition": "Poster 190 x 250 centred at (510, 560) on the blank wall section x 380..640; coin pile on the ground at x 660. Ibrahim stops at x 430, so his head (y about 600) ends beside the drawn face on the poster: the two identical faces side by side are the joke. Passers-by cross in front at y 915 (slightly nearer), one each way.",
+   "actions": [
+    {
+     "t": 11.9,
+     "end": 12.6,
+     "cue": {
+      "word": "أعلن",
+      "t": 11.9
+     },
+     "who": "servant",
+     "action": "A herald slaps a rolled paper on the wall and lets it unroll downward.",
+     "acting": "One brisk gesture, anticipation up then down; the paper unrolls with a settle bounce at the bottom.",
+     "library": "person costume:'servant'; rewardPoster {unroll:0..1}; settleTo"
+    },
+    {
+     "t": 12.6,
+     "end": 13.2,
+     "cue": {
+      "word": "المأمون",
+      "t": 12.6
+     },
+     "who": "rewardPoster",
+     "action": "The poster shows Ibrahim's face (yellow turban, black beard) under a small crown seal.",
+     "acting": "The seal pops on with a 10 % overshoot.",
+     "library": "rewardPoster {face:true, seal:true}; S.emphasis"
+    },
+    {
+     "t": 13.28,
+     "end": 14.1,
+     "cue": {
+      "word": "جائزة",
+      "t": 13.28
+     },
+     "who": "coinPile",
+     "action": "Coins stack up beside the poster, coin by coin, and a counter of coins climbs. Lettering REWARD! on the poster foot.",
+     "acting": "Each coin lands with a 2 frame squash; the herald's eyes follow the pile upward.",
+     "library": "coinPile {n: 0..40}; S.counter"
+    },
+    {
+     "t": 14.14,
+     "end": 15.4,
+     "cue": {
+      "word": "ضخمة",
+      "t": 14.14
+     },
+     "who": "coinPile",
+     "action": "The pile overshoots to head height, wobbles and glints.",
+     "acting": "Damped wobble (swing), three star glints staggered; herald whistles (mouth o) and walks off right.",
+     "library": "swing(), planned goldGlow strength 0.6"
+    },
+    {
+     "t": 15.54,
+     "end": 16.9,
+     "cue": {
+      "word": "يدل",
+      "t": 15.54
+     },
+     "who": "fx",
+     "action": "An arrow sweeps from the coin pile to the face on the poster: point him out, get the coins.",
+     "acting": "Arrow draws on in 0.3 s; a first passer-by (villager) stops, looks at the pile, rubs his hands, walks on.",
+     "library": "S.arrow; person costume:'villager'"
+    },
+    {
+     "t": 17.0,
+     "end": 18.5,
+     "cue": {
+      "word": "فصار",
+      "t": 17.0
+     },
+     "who": "ibrahim",
+     "action": "Creeps in from the left along the wall with the tail of his turban cloth pulled over nose and mouth.",
+     "acting": "Planned sneak gait (high knees, hold on each step), tip 0.08, shoulders up; eyes only above the cloth.",
+     "library": "person {costume:'merchant', pal:{robe:GREEN, dot:GREEND, hc:C.yellow, hd:C.red}, age:0.45, s:1.25}, faceCover:0.55; walk with sneak option, footfalls"
+    },
+    {
+     "t": 18.58,
+     "end": 19.5,
+     "cue": {
+      "word": "يخشى",
+      "t": 18.58
+     },
+     "who": "ibrahim",
+     "action": "Stops, trembling; his eyes dart left, right, behind.",
+     "acting": "tremble(t, 2) on x; saccade gaze plan (0.07 ease); wide eyes, sweat is NOT drawn (no clutter).",
+     "library": "tremble, gazePlan saccades"
+    },
+    {
+     "t": 19.58,
+     "end": 20.7,
+     "cue": {
+      "word": "يعرفه",
+      "t": 19.58
+     },
+     "who": "passersby",
+     "action": "A villager walks past left to right and glances at him; Ibrahim spins to face the wall and pretends to read.",
+     "acting": "Passer's head turns late (gaze first, then 4 px head). Ibrahim's turn is a quick squeeze flip, hand at his chin as if studying the notice.",
+     "library": "walk; turnFlip-style squeeze; PERSON_HANDS.chin"
+    },
+    {
+     "t": 20.84,
+     "end": 21.7,
+     "cue": {
+      "word": "عابر",
+      "t": 20.84
+     },
+     "who": "passersby",
+     "action": "A bedouin passes the other way and slows; Ibrahim spins away again and flattens against the wall.",
+     "acting": "Bedouin lid 0.4, a suspicious half second pause, then on. Ibrahim sq 1.06 (standing thin), arms pressed down.",
+     "library": "person costume:'bedouin'; walk; sq"
+    },
+    {
+     "t": 21.76,
+     "end": 23.3,
+     "cue": {
+      "word": "الطريق",
+      "t": 21.76
+     },
+     "who": "ibrahim",
+     "action": "He notices what he is leaning on: looks at the poster face, the poster face seems to look back, he looks to the lens, gulps and tiptoes out right.",
+     "acting": "Comedy beat: hold, realise (eyes slide to the poster), look to camera gaze [0,0.05], gulp (drop pulse 5 px), then sneak off. Cloth slips down to show the same beard as the drawing.",
+     "library": "gazePlan, look to camera, drop pulse, sneak"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 13.3,
+     "text": "REWARD!",
+     "kind": "on the poster"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 23.0,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "wipe",
+    "t": 23.3
+   }
+  },
+  {
+   "id": "S3",
+   "start": 23.3,
+   "end": 34.7,
+   "paragraphs": [
+    2
+   ],
+   "set": "barberRoom",
+   "cast": [
+    "ibrahim",
+    "barber"
+   ],
+   "summary": "The barber-surgeon lets him in and feeds him. While the host's back is turned, Ibrahim imagines being sold for the reward.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "CAM: 23.3 {x:500,y:680,zoom:1.1} whole cutaway room; 28.2 ease to {x:470,y:720,zoom:1.45} on the table and the two men; 31.0 lift to {x:470,y:600,zoom:1.3} to make room for the thought cloud above Ibrahim."
+   },
+   "composition": "Door at x 60..200 on the left, low table at x 430..570 (top y 840), shelf with cupping cups at x 640..920 y 520, chest at x 800..930. Ibrahim sits on the floor at x 360 facing right, barber works at the shelf at x 760 with his back half turned. Thought cloud 420 x 300 centred at (360, 330), tail to Ibrahim's head.",
+   "actions": [
+    {
+     "t": 23.62,
+     "end": 25.5,
+     "cue": {
+      "word": "لجأ",
+      "t": 23.62
+     },
+     "who": "barber",
+     "action": "Inside the room the barber sits on a stool stropping a razor and humming; outside the window Ibrahim's turban hurries past toward the door.",
+     "acting": "Barber relaxed: slow strop strokes (hand target moving 40 units), lid 0.3, head bob. The turban passes the window x 420..560 in 0.8 s, bobbing with footfalls.",
+     "library": "person {costume:'beanSeller', pal:{robe:C.blue, dot:BLUED}, age:0.5, sit:1, seat:'stool'}; handRW on the strop"
+    },
+    {
+     "t": 25.64,
+     "end": 26.4,
+     "cue": {
+      "word": "حجّام",
+      "t": 25.64
+     },
+     "who": "barber",
+     "action": "Label with arrow on him: BARBER SURGEON. The razor glints, the cupping cups on the shelf glint in turn.",
+     "acting": "He holds the razor up to the light and squints one eye at the edge (wink R).",
+     "library": "S.label, S.arrow; barberKit; wink"
+    },
+    {
+     "t": 26.8,
+     "end": 27.1,
+     "who": "set",
+     "action": "Three quick knocks: the door shakes, lettering KNOCK! beside it.",
+     "acting": "Barber's head tilts toward the door, gaze first, then he rises (sit 1 to 0 with anticipation).",
+     "library": "door shake (x offset kick), sit blend"
+    },
+    {
+     "t": 27.14,
+     "end": 27.8,
+     "cue": {
+      "word": "فرحّب",
+      "t": 27.14
+     },
+     "who": "barber",
+     "action": "Opens the door wide with both arms out in welcome.",
+     "acting": "Big open smile, armsOut gesture with overshoot; no hesitation at all (his kindness is instant).",
+     "library": "PERSON_HANDS.armsOut, settleTo"
+    },
+    {
+     "t": 27.84,
+     "end": 28.2,
+     "cue": {
+      "word": "به",
+      "t": 27.84
+     },
+     "who": "ibrahim",
+     "action": "Slips in sideways, looks back over his shoulder at the street, then lets the door close.",
+     "acting": "Gaze back out of the door [-1,0], shoulders up; exhale (sq 0.96) when the door shuts.",
+     "library": "person {costume:'merchant', pal:{robe:GREEN, dot:GREEND, hc:C.yellow, hd:C.red}, age:0.45, s:1.25}; lookAt, sq"
+    },
+    {
+     "t": 28.22,
+     "end": 29.3,
+     "cue": {
+      "word": "وأطعمه",
+      "t": 28.22
+     },
+     "who": "barber",
+     "action": "Sets a tray of bread, dates and a cup on the low table; Ibrahim drops to the floor cushion and eats fast.",
+     "acting": "Barber bows him down with a palm; Ibrahim sits floor in 0.4 s, hand to mouth twice, cheeks moving (planned chew, or mouth open/closed alternation).",
+     "library": "planned foodTray; person sit:1 seat:'floor'; handR to mouth"
+    },
+    {
+     "t": 29.36,
+     "end": 31.1,
+     "cue": {
+      "word": "لكن",
+      "t": 29.36
+     },
+     "who": "ibrahim",
+     "action": "Stops in mid bite. His eyes slide to the barber, who has turned his back to fetch something from the shelf.",
+     "acting": "Only the pupils move for 0.6 s; the bread stays in the air; lid 0.2. Barber hums on, unaware.",
+     "library": "gazePlan; suspense by stillness"
+    },
+    {
+     "t": 31.18,
+     "end": 32.0,
+     "cue": {
+      "word": "خاف",
+      "t": 31.18
+     },
+     "who": "fx",
+     "action": "A thought cloud pops above Ibrahim: the barber leading him by the sleeve to a soldier.",
+     "acting": "Trail bubbles first, then the cloud; inside, small versions of the three figures (at least 110 px tall on screen).",
+     "library": "thoughtCloud(ctx, 360, 330, 420, 300, t, {tail:[360,560], scale:0.5, inside})"
+    },
+    {
+     "t": 32.12,
+     "end": 33.6,
+     "cue": {
+      "word": "يسلّمه",
+      "t": 32.12
+     },
+     "who": "fx",
+     "action": "In the cloud the soldier grabs imagined Ibrahim; the real Ibrahim swallows hard.",
+     "acting": "Real Ibrahim: drop pulse, brow -0.6 (worried), bread lowered slowly.",
+     "library": "thoughtCloud inside; drop pulse"
+    },
+    {
+     "t": 33.74,
+     "end": 34.7,
+     "cue": {
+      "word": "للجائزة",
+      "t": 33.74
+     },
+     "who": "fx",
+     "action": "In the cloud coins rain on the imagined barber. The real barber turns round with a plain friendly smile and the cloud pops.",
+     "acting": "Contrast is the joke: greedy grin inside the cloud, open honest face outside. Ibrahim snaps a too-wide smile back.",
+     "library": "coinPile inside the cloud; cloud p to 0 with a pop"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 25.7,
+     "text": "BARBER SURGEON",
+     "kind": "label"
+    },
+    {
+     "t": 26.8,
+     "text": "KNOCK!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 26.8,
+     "kind": "knock (two soft thuds)"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 34.7
+   }
+  },
+  {
+   "id": "S4",
+   "start": 34.7,
+   "end": 47.2,
+   "paragraphs": [
+    3
+   ],
+   "set": "barberRoom",
+   "cast": [
+    "ibrahim",
+    "barber"
+   ],
+   "summary": "The barber pulls something long out of the chest: only a lute. He asks his guest to sing, then calmly says he knows exactly who he is and what he is worth.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "CAM: 34.7 {x:620,y:720,zoom:1.4} favouring the chest; 37.2 snap-ease to {x:560,y:700,zoom:1.6} on the reveal; 41.0 twoShot(ibrahim head, barber head, {margin:140}); 44.5 push to zoom 1.9 centred on Ibrahim's face for the freeze."
+   },
+   "composition": "Ibrahim seated on the floor at x 360; barber at the chest x 830, then comes to sit on the stool at x 560, close. Picture balloon (iconBalloon) 300 x 200 above and between them at (480, 380), never over a face.",
+   "actions": [
+    {
+     "t": 34.7,
+     "end": 35.5,
+     "cue": {
+      "word": "أخرج",
+      "t": 34.7
+     },
+     "who": "barber",
+     "action": "Walks to the chest, lifts the lid and reaches in deep with both arms, back to us.",
+     "acting": "Slow, deliberate; elbows working. Ibrahim leans away (tip -0.1) and half raises his hands.",
+     "library": "walk; handLW/handRW into the chest; chest lid rot"
+    },
+    {
+     "t": 35.6,
+     "end": 36.4,
+     "cue": {
+      "word": "أخرج",
+      "t": 34.7
+     },
+     "who": "barber",
+     "action": "Something long comes out wrapped in a cloth: it could be a club.",
+     "acting": "Hold the wrapped shape against the light for 0.5 s; Ibrahim wide eyes, shield hands, tremble 1.",
+     "library": "oud {wrapped:1}; PERSON_HANDS.shield; tremble"
+    },
+    {
+     "t": 36.46,
+     "end": 37.1,
+     "cue": {
+      "word": "الحجّام",
+      "t": 36.46
+     },
+     "who": "barber",
+     "action": "Turns to face his guest and whips the cloth off.",
+     "acting": "anticipate 0.2 s, then a fast arm sweep; cloth flies off right on an arc and falls.",
+     "library": "anticipate; cloth as a 4 point polygon on a hop() arc"
+    },
+    {
+     "t": 37.2,
+     "end": 38.1,
+     "cue": {
+      "word": "عودًا",
+      "t": 37.2
+     },
+     "who": "oud",
+     "action": "A lute. Sparkle and lettering TA-DA!",
+     "acting": "Ibrahim deflates with relief: sq 0.92 then back to 1, lid closes for a long blink, hands drop.",
+     "library": "oud {x,y,rot}; S.emphasis; sq, lid"
+    },
+    {
+     "t": 38.24,
+     "end": 39.0,
+     "cue": {
+      "word": "وطلب",
+      "t": 38.24
+     },
+     "who": "barber",
+     "action": "Holds the lute out across both palms with a small bow.",
+     "acting": "Eyes on his guest, brows raised (brow -0.5), smile; a polite 6 degree tip.",
+     "library": "PERSON_HANDS.palmsUp; tip 0.1"
+    },
+    {
+     "t": 39.06,
+     "end": 39.6,
+     "cue": {
+      "word": "ضيفه",
+      "t": 39.06
+     },
+     "who": "ibrahim",
+     "action": "Points at himself (me?), then takes the lute into his lap.",
+     "acting": "Chest gesture, glance left and right as if someone else might be meant; then the hands close on the neck and body of the lute.",
+     "library": "PERSON_HANDS.chest; handLW/handRW to the oud"
+    },
+    {
+     "t": 39.7,
+     "end": 41.2,
+     "cue": {
+      "word": "الغناء",
+      "t": 39.7
+     },
+     "who": "ibrahim",
+     "action": "Turns one peg, strums once; three music notes float up.",
+     "acting": "He cannot help himself: head tilts to the string, lid 0.5, the first small real smile. He is a singer and it shows.",
+     "library": "oud strum (hand arc); notes as small glyphs rising with K.noise drift"
+    },
+    {
+     "t": 41.28,
+     "end": 42.9,
+     "cue": {
+      "word": "فاجأه",
+      "t": 41.28
+     },
+     "who": "barber",
+     "action": "Sits on the stool right beside him, leans in and cups a hand to his mouth.",
+     "acting": "Conspiratorial: tip 0.14 toward Ibrahim, cupMouth, eyes flick once to the door and back.",
+     "library": "sit seat:'stool'; PERSON_HANDS.cupMouth"
+    },
+    {
+     "t": 43.68,
+     "end": 44.4,
+     "cue": {
+      "word": "يعرف",
+      "t": 43.68
+     },
+     "who": "fx",
+     "action": "A picture balloon from the barber: the face from the reward poster.",
+     "acting": "Barber taps the balloon picture, then points gently at his guest.",
+     "library": "planned iconBalloon {single, icon: poster face}"
+    },
+    {
+     "t": 44.52,
+     "end": 45.2,
+     "cue": {
+      "word": "هويته",
+      "t": 44.52
+     },
+     "who": "ibrahim",
+     "action": "Freezes. The strumming hand hits a wrong string (TWANG!), the notes drop out of the air.",
+     "acting": "Eyes wide, noBlink, a look straight to the lens; one string of the lute drawn vibrating for 0.4 s.",
+     "library": "look to camera; notes fall with fallY"
+    },
+    {
+     "t": 45.28,
+     "end": 46.3,
+     "cue": {
+      "word": "وجائزة",
+      "t": 45.28
+     },
+     "who": "fx",
+     "action": "The balloon adds a coin pile next to the face.",
+     "acting": "Barber counts invisible coins on his fingers, cheerfully, as plain information.",
+     "library": "iconBalloon second icon coinPile"
+    },
+    {
+     "t": 46.36,
+     "end": 47.2,
+     "cue": {
+      "word": "القبض",
+      "t": 46.36
+     },
+     "who": "ibrahim",
+     "action": "His eyes jump to the door; he half rises with the lute held in front of him like a shield.",
+     "acting": "Saccade to the door, sit 1 to 0.5, tip away -0.12. The barber does not move at all.",
+     "library": "gazePlan 0.07; sit blend"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 37.3,
+     "text": "TA-DA!"
+    },
+    {
+     "t": 44.6,
+     "text": "TWANG!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 47.2
+   }
+  },
+  {
+   "id": "S5",
+   "start": 47.2,
+   "end": 61.0,
+   "paragraphs": [
+    3
+   ],
+   "set": "barberRoom",
+   "cast": [
+    "ibrahim",
+    "barber"
+   ],
+   "summary": "The barber promises not to betray him and tears up the reward notice. They sing together until the fear is gone. He refuses the purse.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pull-out",
+    "notes": "CAM: 47.2 keep the S4 close two-shot (zoom 1.7); 50.2 ease out to {x:470,y:700,zoom:1.3} for the song by 53.5; 54.4 push to twoShot with margin 120 (zoom about 1.6) on the purse exchange; hold to the end."
+   },
+   "composition": "Both seated, heads level, 200 units apart; torn poster halves end on the floor at x 440 and 520 in front of them and stay there for the rest of the scene. Notes rise in two colours (yellow from Ibrahim, blue from the barber) and cross.",
+   "actions": [
+    {
+     "t": 47.42,
+     "end": 48.9,
+     "cue": {
+      "word": "أكد",
+      "t": 47.42
+     },
+     "who": "barber",
+     "action": "Raises a calming palm, the other hand flat on his chest.",
+     "acting": "Steady eyes on Ibrahim, lid 0.15, slow nod; the balloon still hangs between them.",
+     "library": "PERSON_HANDS.chest + palm (handR raised)"
+    },
+    {
+     "t": 48.98,
+     "end": 49.4,
+     "cue": {
+      "word": "لن",
+      "t": 48.98
+     },
+     "who": "barber",
+     "action": "Takes a folded reward notice from his apron pocket and opens it: he had one all along.",
+     "acting": "Ibrahim flinches at the paper (tip -0.1).",
+     "library": "rewardPoster {s:0.45}"
+    },
+    {
+     "t": 49.46,
+     "end": 50.2,
+     "cue": {
+      "word": "يخونه",
+      "t": 49.46
+     },
+     "who": "barber",
+     "action": "Tears the notice in two and lets the halves fall; a red X crosses the coin pile in the balloon, then the balloon pops.",
+     "acting": "Tear: 0.15 s anticipation (hands together), hands snap apart; halves rock down (planned featherFall sway). Ibrahim's mouth o, then the worried brow lets go.",
+     "library": "rewardPoster {torn:0..1}; featherFall-style sway; iconBalloon X"
+    },
+    {
+     "t": 50.28,
+     "end": 51.0,
+     "cue": {
+      "word": "وغنّى",
+      "t": 50.28
+     },
+     "who": "barber",
+     "action": "Claps a slow rhythm and starts to sing.",
+     "acting": "talk 0.7 on the beat, head bob, eyes shut on long notes; claps as counted beats (dip before each).",
+     "library": "countedBeats for claps; talk"
+    },
+    {
+     "t": 51.12,
+     "end": 52.5,
+     "cue": {
+      "word": "معه",
+      "t": 51.12
+     },
+     "who": "ibrahim",
+     "action": "Sits back down, plays and joins in; notes rise from both men.",
+     "acting": "sit back to 1 with a settle; sway +-0.05 tip in counter-phase to the barber; mouth open on his notes.",
+     "library": "oud strum cycle; tip sway"
+    },
+    {
+     "t": 52.62,
+     "end": 53.4,
+     "cue": {
+      "word": "خف",
+      "t": 52.62
+     },
+     "who": "ibrahim",
+     "action": "His shoulders come down and his face opens.",
+     "acting": "lid 0.35, mouth smile, drop +4 (weight settling), gaze up and soft; first unforced blink pattern (LIFE.t).",
+     "library": "pose blend with settleTo"
+    },
+    {
+     "t": 53.54,
+     "end": 54.4,
+     "cue": {
+      "word": "إبراهيم",
+      "t": 53.54
+     },
+     "who": "camera",
+     "action": "The widest, warmest picture of the film: two men singing by lamplight, the torn notice at their feet.",
+     "acting": "Lamp flame flicker (K.noise), notes drifting; nothing else moves.",
+     "library": "CAM pull-out"
+    },
+    {
+     "t": 54.46,
+     "end": 55.3,
+     "cue": {
+      "word": "وحين",
+      "t": 54.46
+     },
+     "who": "ibrahim",
+     "action": "The song ends. He lays the lute down and reaches into his sash.",
+     "acting": "Last note floats off; a decision look (lid 0.2, mouth closed).",
+     "library": "handR to sash"
+    },
+    {
+     "t": 55.34,
+     "end": 56.2,
+     "cue": {
+      "word": "عرض",
+      "t": 55.34
+     },
+     "who": "ibrahim",
+     "action": "Holds a fat purse out with both hands.",
+     "acting": "reachBoth, slight bow of the head, eyes up at the barber.",
+     "library": "planned purse; PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 56.24,
+     "end": 57.4,
+     "cue": {
+      "word": "مالًا",
+      "t": 56.24
+     },
+     "who": "purse",
+     "action": "The purse sags heavy and one coin peeps out with a glint.",
+     "acting": "Barber looks at the purse for half a second, then up at Ibrahim's face, not back at the purse.",
+     "library": "purse {open:0.3}; gazePlan"
+    },
+    {
+     "t": 57.48,
+     "end": 58.8,
+     "cue": {
+      "word": "مساعدته",
+      "t": 57.48
+     },
+     "who": "ibrahim",
+     "action": "Pushes the purse closer, nodding: please.",
+     "acting": "Two small insisting nods; brow -0.5.",
+     "library": "handLW/handRW"
+    },
+    {
+     "t": 58.94,
+     "end": 59.3,
+     "cue": {
+      "word": "رفض",
+      "t": 58.94
+     },
+     "who": "barber",
+     "action": "Flat palm out: no. He shakes his head.",
+     "acting": "Shield palm with overshoot, head shake +-6 px twice, smiling.",
+     "library": "PERSON_HANDS.shield (one hand); settleTo"
+    },
+    {
+     "t": 59.32,
+     "end": 61.0,
+     "cue": {
+      "word": "أخذه",
+      "t": 59.32
+     },
+     "who": "barber",
+     "action": "Closes Ibrahim's fingers back over the purse and puts his own hand on his heart.",
+     "acting": "Ibrahim: wet eyes, a slow blink, head bows. Hold 0.6 s before the card.",
+     "library": "handRW to the purse; PERSON_HANDS.chest; wet"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 60.6,
+     "kind": "soft chime"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 60.3,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S6",
+   "start": 61.0,
+   "end": 74.7,
+   "paragraphs": [
+    4
+   ],
+   "set": "cityBridge",
+   "cast": [
+    "ibrahim",
+    "soldier"
+   ],
+   "summary": "Ibrahim leaves dressed as a woman. A soldier at the bridge spots the beard, grabs him, gets shoved, and teeters on the bridge edge long enough for Ibrahim to escape before the splash.",
+   "camera": {
+    "shot": "full",
+    "move": "track",
+    "notes": "World 1600 wide. CAM: 61.0 {x:420,y:690,zoom:1.25} on the door at x 150; track right with Ibrahim to {x:760,y:690,zoom:1.25} by 65.5; 68.4 push {x:820,y:660,zoom:1.6} on the grab; 70.2 pan with the staggering soldier to {x:1080,y:700,zoom:1.3}; hold on the teeter; 73.9 tilt down 60 units with the fall."
+   },
+   "composition": "Street ground y 900 for x 0..900; bridge deck from x 820 to 1560, top y 880 at the ends and y 845 at the crown (x 1190); water surface y 965. The soldier starts at the bridge head x 960 facing left. The arrest happens at x 820..860. The teeter is at x 1120 on the near (open) edge of the deck. Ibrahim exits left, small in the background of the teeter shot.",
+   "actions": [
+    {
+     "t": 61.16,
+     "end": 61.6,
+     "cue": {
+      "word": "خرج",
+      "t": 61.16
+     },
+     "who": "set",
+     "action": "After the card: day, the barber's street door (x 100..220) opens a crack, then wide.",
+     "acting": "The door opens in two stages: a peek, then the push.",
+     "library": "door rot; cityBridge"
+    },
+    {
+     "t": 61.7,
+     "end": 62.6,
+     "cue": {
+      "word": "إبراهيم",
+      "t": 61.7
+     },
+     "who": "ibrahim",
+     "action": "A figure in a long green dress and yellow veil steps out. Label with arrow: IBRAHIM?",
+     "acting": "Tiny steps (walk amp 0.4), hands folded in front, eyes over the veil checking both ways.",
+     "library": "person {costume:'lady', pal:{robe:GREEN, dot:GREEND, hc:C.yellow}, faceCover, beardPeek} faceCover:0.9; walk"
+    },
+    {
+     "t": 62.7,
+     "end": 63.9,
+     "cue": {
+      "word": "متنكرًا",
+      "t": 62.7
+     },
+     "who": "ibrahim",
+     "action": "The tip of his black beard pokes out under the veil; he notices and tucks it back in.",
+     "acting": "Eyes look down at it, widen; one quick poke with a finger; innocent look up and around.",
+     "library": "new field beardPeek 0..1 on faceCover; handR to chin"
+    },
+    {
+     "t": 63.96,
+     "end": 64.5,
+     "cue": {
+      "word": "بثياب",
+      "t": 63.96
+     },
+     "who": "ibrahim",
+     "action": "Smooths the dress and sets off toward the bridge with a swaying walk.",
+     "acting": "Overacted: tip sway +-0.05 with each step, head high.",
+     "library": "walk(IX,t), footfalls"
+    },
+    {
+     "t": 64.6,
+     "end": 65.6,
+     "cue": {
+      "word": "امرأة",
+      "t": 64.6
+     },
+     "who": "ibrahim",
+     "action": "Passes the soldier at the bridge head and gives him a little finger wave.",
+     "acting": "Soldier nods politely, bored (lid 0.5), leaning on his spear.",
+     "library": "PERSON_HANDS.wave; soldier: person costume:'soldier' hold:'spear'"
+    },
+    {
+     "t": 65.78,
+     "end": 66.5,
+     "cue": {
+      "word": "فعرفه",
+      "t": 65.78
+     },
+     "who": "soldier",
+     "action": "A gust lifts the veil for a moment: moustache and beard. The soldier does a double take.",
+     "acting": "Veil flips (faceCover 0.9 to 0.2 to 0.9 in 0.5 s). Soldier: eyes away, eyes snap back, lid 0, head jerks 6 px, helmet lags 2 frames.",
+     "library": "faceCover keyed; gazePlan; planned windStreaks (3 streaks)"
+    },
+    {
+     "t": 66.64,
+     "end": 67.2,
+     "cue": {
+      "word": "جندي",
+      "t": 66.64
+     },
+     "who": "soldier",
+     "action": "Label: SOLDIER. He checks the reward notice pasted on the bridge post, the walking figure, the notice again.",
+     "acting": "Three saccades; mouth o; a \"!\" emphasis above the helmet.",
+     "library": "S.label; rewardPoster {s:0.5} on the post at x 930; S.emphasis"
+    },
+    {
+     "t": 67.24,
+     "end": 68.4,
+     "cue": {
+      "word": "وحاول",
+      "t": 67.24
+     },
+     "who": "soldier",
+     "action": "Strides after him with an arm out. Lettering HALT!",
+     "acting": "Fast walk; Ibrahim speeds his tiny steps without turning round (eyes slide back, shoulders up).",
+     "library": "walk, footfalls"
+    },
+    {
+     "t": 68.46,
+     "end": 69.6,
+     "cue": {
+      "word": "القبض",
+      "t": 68.46
+     },
+     "who": "soldier",
+     "action": "Grabs the veil: it comes away in his fist and there is Ibrahim, beard and all.",
+     "acting": "Ibrahim spins round (squeeze flip), frozen wide-eyed for 0.4 s; soldier grins, holds the veil up like a prize, eyes on the coins in his head (no cloud needed).",
+     "library": "faceCover to 0, veil prop in handRW; turnFlip-style"
+    },
+    {
+     "t": 69.9,
+     "end": 70.15,
+     "cue": {
+      "word": "دفعه",
+      "t": 70.16
+     },
+     "who": "ibrahim",
+     "action": "Pulls both arms back and sinks a little.",
+     "acting": "anticipate: sq 0.93, tip -0.08, brow 1.",
+     "library": "anticipate(t, 69.9, 0.26, 0.07)"
+    },
+    {
+     "t": 70.16,
+     "end": 70.7,
+     "cue": {
+      "word": "دفعه",
+      "t": 70.16
+     },
+     "who": "ibrahim",
+     "action": "Shoves the soldier in the chest with both hands.",
+     "acting": "reachBoth with stretch sq 1.06 and tip 0.15; a 2 frame white contact flash; soldier folds at the middle and leaves the ground.",
+     "library": "PERSON_HANDS.reachBoth; panel-only shake 4 px"
+    },
+    {
+     "t": 70.76,
+     "end": 71.6,
+     "cue": {
+      "word": "إبراهيم",
+      "t": 70.76
+     },
+     "who": "soldier",
+     "action": "Staggers backward onto the bridge on his heels.",
+     "acting": "Backward steps from a position function (legs never slide), arms starting to circle, helmet slipping over his eyes.",
+     "library": "walk with dir kept; footfalls dust"
+    },
+    {
+     "t": 71.62,
+     "end": 72.6,
+     "cue": {
+      "word": "قرب",
+      "t": 71.62
+     },
+     "who": "soldier",
+     "action": "Heels on the open edge of the deck: he windmills both arms and teeters; his spear drops into the river first.",
+     "acting": "Planned teeter: tip oscillates -0.1..-0.28 with growing period; arm angles rotate full circles; a tiny ring where the spear goes in.",
+     "library": "tip keyed; aL/aR rotating; ripple"
+    },
+    {
+     "t": 72.66,
+     "end": 73.4,
+     "cue": {
+      "word": "وفرّ",
+      "t": 72.66
+     },
+     "who": "ibrahim",
+     "action": "Hitches up the dress and runs off left; his sandals show.",
+     "acting": "runInPlace wind-up 0.2 s, then gone in 0.5 s; dust puff; he is small in the back of the shot.",
+     "library": "runInPlace, walk amp 1, dustBurst"
+    },
+    {
+     "t": 73.5,
+     "end": 74.7,
+     "cue": {
+      "word": "وفرّ",
+      "t": 72.66
+     },
+     "who": "soldier",
+     "action": "The soldier looks at the lens, loses the fight with gravity and drops into the river. SPLASH!",
+     "acting": "Hold, look to camera, then fallY 85 units into the water at (1120, 965); splash crown and rings; helmet bobs up alone.",
+     "library": "fallY; planned splash; ripple"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 61.8,
+     "text": "IBRAHIM?",
+     "kind": "label"
+    },
+    {
+     "t": 66.7,
+     "text": "SOLDIER",
+     "kind": "label"
+    },
+    {
+     "t": 67.4,
+     "text": "HALT!"
+    },
+    {
+     "t": 73.95,
+     "text": "SPLASH!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 73.95,
+     "kind": "splash (noise burst with a low thud)"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 74.7
+   }
+  },
+  {
+   "id": "S7",
+   "start": 74.7,
+   "end": 89.7,
+   "paragraphs": [
+    5
+   ],
+   "set": "wifeRoom",
+   "cast": [
+    "ibrahim",
+    "wife",
+    "soldier"
+   ],
+   "summary": "A woman hides him behind a curtain. The door opens and in limps the same soldier, soaked: her husband. She still keeps the secret for three days.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "CAM: 74.7 {x:480,y:690,zoom:1.15}; 79.2 ease to {x:640,y:690,zoom:1.35} on the curtain; 80.2 whip-ease back to {x:330,y:690,zoom:1.35} on the door; 81.4 settle {x:500,y:690,zoom:1.2} holding door, wife and curtain together (the triangle is the scene); 88.1 push to {x:520,y:560,zoom:1.5} to feature the window day counter with the curtain still in frame right."
+   },
+   "composition": "Door x 60..200 left; bed mat x 330..560 on the floor; window x 420..560, y 420..560; curtain alcove x 700..900, rod at y 520, cloth to the floor. Wife in red and yellow in the middle between husband (left) and curtain (right) from 84.7 on: she is literally the wall between them.",
+   "actions": [
+    {
+     "t": 74.82,
+     "end": 76.6,
+     "cue": {
+      "word": "لجأ",
+      "t": 74.82
+     },
+     "who": "ibrahim",
+     "action": "Outside the open door frame Ibrahim arrives running, bare-faced in the green dress, and taps on the door post, panting.",
+     "acting": "breathe() fast, tip 0.12, one hand on the frame, looking back the way he came.",
+     "library": "person {costume:'lady', pal:{robe:GREEN, dot:GREEND, hc:C.yellow}, faceCover, beardPeek} faceCover:0; walk; breathe"
+    },
+    {
+     "t": 76.7,
+     "end": 77.3,
+     "cue": {
+      "word": "امرأة",
+      "t": 76.7
+     },
+     "who": "wife",
+     "action": "A woman kneading at a bowl looks up.",
+     "acting": "Ear first then eyes then head; hands stop in the dough.",
+     "library": "person {costume:'villageWoman', kneel:1}; gazePlan"
+    },
+    {
+     "t": 77.36,
+     "end": 78.4,
+     "cue": {
+      "word": "فتحت",
+      "t": 77.36
+     },
+     "who": "wife",
+     "action": "Comes to the door, reads his face, checks the street left and right and pulls him in by the sleeve.",
+     "acting": "No words: brow -0.6 (concern), two saccades to the street, a firm tug (his body lurches after the arm).",
+     "library": "kneel 1 to 0, walk; handRW to his sleeve; lurch"
+    },
+    {
+     "t": 78.5,
+     "end": 79.2,
+     "cue": {
+      "word": "بيتها",
+      "t": 78.5
+     },
+     "who": "wife",
+     "action": "Shuts the door and drops the bar across it.",
+     "acting": "Back against the door for two frames, exhale.",
+     "library": "door rot; bar as a rect keyed"
+    },
+    {
+     "t": 79.24,
+     "end": 80.1,
+     "cue": {
+      "word": "وأخفته",
+      "t": 79.24
+     },
+     "who": "wife",
+     "action": "Lifts the curtain; he ducks behind; it falls. A bulge at belly height: she pats it flat.",
+     "acting": "Curtain lift is a corner pulled to (780, 620); bulge 20 px that flattens on the pat; she dusts her hands.",
+     "library": "curtain {lift, bulge}; handRW"
+    },
+    {
+     "t": 80.22,
+     "end": 81.4,
+     "cue": {
+      "word": "ثم",
+      "t": 80.22
+     },
+     "who": "soldier",
+     "action": "Wet footsteps. The bar lifts, the door opens: the soldier, dripping, a bandage round his head, limping, no spear.",
+     "acting": "Asymmetric walk (short step on one side), drops fall from elbows and helmet with puddle rings on each footfall, lid 0.5, mouth frown.",
+     "library": "person costume:'soldier' {bandage:true}; walk, footfalls; drips as small fallY drops"
+    },
+    {
+     "t": 81.46,
+     "end": 82.3,
+     "cue": {
+      "word": "اكتشف",
+      "t": 81.46
+     },
+     "who": "ibrahim",
+     "action": "In the gap of the curtain one eye appears, sees him and goes huge; the curtain shivers.",
+     "acting": "The peek: only an eye disc and a slice of beard in a 14 px gap; tremble on the curtain edge.",
+     "library": "curtain {gap:0..1}; eye drawn via person clipped to the gap; tremble"
+    },
+    {
+     "t": 82.38,
+     "end": 83.9,
+     "cue": {
+      "word": "الجندي",
+      "t": 82.38
+     },
+     "who": "fx",
+     "action": "Label with arrow on the soldier: THE SAME SOLDIER!",
+     "acting": "Soldier wrings out his sleeve; a small puddle spreads.",
+     "library": "S.label, S.arrow"
+    },
+    {
+     "t": 83.98,
+     "end": 84.7,
+     "cue": {
+      "word": "زوجها",
+      "t": 83.98
+     },
+     "who": "wife",
+     "action": "She runs to him with a towel and a kiss on the cheek. Label: HER HUSBAND! The eye in the curtain squeezes shut.",
+     "acting": "Her eyes flick once to the curtain over his shoulder while she hugs him (mask on / mask off).",
+     "library": "heart(ctx) small; S.label; lid"
+    },
+    {
+     "t": 84.76,
+     "end": 86.3,
+     "cue": {
+      "word": "مع",
+      "t": 84.76
+     },
+     "who": "soldier",
+     "action": "Acts out his day for her: a shove, a fall, a splash; sneezes; turns to hang his wet cloak on the curtain rod.",
+     "acting": "Broad mime with arm angles; the sneeze is a full body sq 0.9 pop. As he turns right the curtain goes rigid.",
+     "library": "aL/aR keyed; sq pulse"
+    },
+    {
+     "t": 86.34,
+     "end": 87.3,
+     "cue": {
+      "word": "واصلت",
+      "t": 86.34
+     },
+     "who": "wife",
+     "action": "Steps in between, takes the cloak herself and turns him round toward the bed; behind her back her hand makes a hush sign at the curtain.",
+     "acting": "Bright smile to his face, flat palm behind her to the curtain: two messages at once.",
+     "library": "handLW behind her toward (700, 700); PERSON_HANDS.hush as shape"
+    },
+    {
+     "t": 87.34,
+     "end": 88.1,
+     "cue": {
+      "word": "حمايته",
+      "t": 87.34
+     },
+     "who": "wife",
+     "action": "The soldier lies down and snores at once; she slides a bread under the curtain and a hand takes it.",
+     "acting": "Soldier lie 1, lid 1, belly breathe 1.5x; a green sleeve hand appears under the hem and withdraws.",
+     "library": "person lie:1; breathe; handRW"
+    },
+    {
+     "t": 88.18,
+     "end": 89.1,
+     "cue": {
+      "word": "ثلاثة",
+      "t": 88.18
+     },
+     "who": "set",
+     "action": "The window runs through a day and a night; counter DAY 1.",
+     "acting": "Soldier leaves by the door (walk out) as the window brightens; wife sweeps.",
+     "library": "skyCycle clipped to the window, u keyed 0.1 to 1.1; S.counter"
+    },
+    {
+     "t": 89.12,
+     "end": 89.7,
+     "cue": {
+      "word": "أيام",
+      "t": 89.12
+     },
+     "who": "set",
+     "action": "DAY 2, DAY 3: two faster cycles; each time a bowl goes under the curtain and comes back empty.",
+     "acting": "Counter ticks at 89.15 and 89.45; the empty bowl sliding back out is the laugh.",
+     "library": "skyCycle u to 3.1; S.counter; planned smallBowl"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 82.4,
+     "text": "THE SAME SOLDIER!",
+     "kind": "label"
+    },
+    {
+     "t": 84.0,
+     "text": "HER HUSBAND!",
+     "kind": "label"
+    },
+    {
+     "t": 88.2,
+     "text": "DAY 1",
+     "kind": "counter"
+    },
+    {
+     "t": 89.15,
+     "text": "DAY 2",
+     "kind": "counter"
+    },
+    {
+     "t": 89.45,
+     "text": "DAY 3",
+     "kind": "counter"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 89.7
+   }
+  },
+  {
+   "id": "S8",
+   "start": 89.7,
+   "end": 100.3,
+   "paragraphs": [
+    5
+   ],
+   "set": "baghdadStreet",
+   "cast": [
+    "ibrahim",
+    "wife",
+    "freedwoman",
+    "guards"
+   ],
+   "summary": "At dusk he moves to the house of a woman he once set free. She welcomes him, sees the reward notice, and fetches the guards.",
+   "camera": {
+    "shot": "medium",
+    "move": "track",
+    "notes": "Street strip 1600 wide at dusk (skyCycle u 0.45). CAM: 89.7 {x:300,y:690,zoom:1.3} at door A (x 180..300); track right with Ibrahim to {x:1300,y:680,zoom:1.4} at door B (x 1320..1440) by 92.6; 95.7 push to zoom 1.8 on the old woman's face and the notice; 98.8 pull out and pan right to {x:1420,y:690,zoom:1.2} for the guards at x 1540."
+   },
+   "composition": "Door B with a reward notice pasted on the wall just left of it at (1230, 560), s 0.7. The old woman stands in her doorway at x 1380; after he goes in she is alone with the notice: her face and the coin picture in one frame.",
+   "actions": [
+    {
+     "t": 89.78,
+     "end": 90.9,
+     "cue": {
+      "word": "وبعد",
+      "t": 89.78
+     },
+     "who": "wife",
+     "action": "Door A opens; the wife looks up and down the dusk street and beckons.",
+     "acting": "Two saccades, then a small wave of the fingers low at her side.",
+     "library": "person villageWoman; gazePlan"
+    },
+    {
+     "t": 90.98,
+     "end": 92.0,
+     "cue": {
+      "word": "مغادرته",
+      "t": 90.98
+     },
+     "who": "ibrahim",
+     "action": "Veiled again, he slips out, bows to her with a hand on his heart and tiptoes off right.",
+     "acting": "Bow tip 0.2 held 0.3 s; she nods and shuts the door; sneak gait.",
+     "library": "person {costume:'lady', pal:{robe:GREEN, dot:GREEND, hc:C.yellow}, faceCover, beardPeek} faceCover:0.9; PERSON_HANDS.chest; sneak"
+    },
+    {
+     "t": 92.06,
+     "end": 92.7,
+     "cue": {
+      "word": "قصد",
+      "t": 92.06
+     },
+     "who": "ibrahim",
+     "action": "Reaches door B and knocks softly.",
+     "acting": "Looks over his shoulder first; three small knuckle moves (no sound effect: narration is running).",
+     "library": "handRW to the door"
+    },
+    {
+     "t": 92.78,
+     "end": 94.2,
+     "cue": {
+      "word": "امرأة",
+      "t": 92.78
+     },
+     "who": "freedwoman",
+     "action": "An old woman opens, peers, and he lowers the veil: she gasps and smiles wide.",
+     "acting": "Her eyes narrow (lid 0.5) then open; hands to cheeks; faceCover on Ibrahim 0.9 to 0.",
+     "library": "person {costume:'oldWoman', age:0.65}; PERSON_HANDS.cheeks"
+    },
+    {
+     "t": 94.28,
+     "end": 95.0,
+     "cue": {
+      "word": "أعتقها",
+      "t": 94.28
+     },
+     "who": "fx",
+     "action": "A picture balloon above her: a broken chain, and a younger Ibrahim handing her a scroll.",
+     "acting": "Dream wash tint inside the balloon marks it as the past.",
+     "library": "planned iconBalloon {single}; planned scroll; planned dream wash"
+    },
+    {
+     "t": 95.02,
+     "end": 95.7,
+     "cue": {
+      "word": "قديمًا",
+      "t": 95.02
+     },
+     "who": "freedwoman",
+     "action": "Bows over his hand and waves him inside; he goes in, shoulders loosening.",
+     "acting": "Deep bow tip 0.25; Ibrahim pats her shoulder as he passes (trust).",
+     "library": "tip; walk"
+    },
+    {
+     "t": 95.72,
+     "end": 96.9,
+     "cue": {
+      "word": "لكنها",
+      "t": 95.72
+     },
+     "who": "freedwoman",
+     "action": "The door closes behind him. Her smile drops off her face. Her eyes slide to the reward notice.",
+     "acting": "Mask off: mouth smile to closed in 3 frames, lid 0.4; only the pupils travel to the notice.",
+     "library": "gazePlan; mouth"
+    },
+    {
+     "t": 96.96,
+     "end": 97.7,
+     "cue": {
+      "word": "طمعت",
+      "t": 96.96
+     },
+     "who": "freedwoman",
+     "action": "Her pupils turn into two small gold coins; her fingers rub together.",
+     "acting": "coinEyes on with a pop and glint; a slow one-sided smile.",
+     "library": "new expression coinEyes; handR rub (2 px jitter)"
+    },
+    {
+     "t": 97.8,
+     "end": 98.7,
+     "cue": {
+      "word": "الجائزة",
+      "t": 97.8
+     },
+     "who": "rewardPoster",
+     "action": "The coin pile drawn on the notice glints; she looks at her own door, at the notice, at the door.",
+     "acting": "Three saccades, then her chin sets: decided.",
+     "library": "S.emphasis glint; gazePlan 0.07"
+    },
+    {
+     "t": 98.82,
+     "end": 99.5,
+     "cue": {
+      "word": "وأبلغت",
+      "t": 98.82
+     },
+     "who": "freedwoman",
+     "action": "Scurries to two guards at the corner and whispers behind her hand.",
+     "acting": "Fast short steps (walk amp 0.6, high frequency), tug on the first guard's sleeve, cupMouth.",
+     "library": "walk; PERSON_HANDS.cupMouth"
+    },
+    {
+     "t": 99.6,
+     "end": 100.3,
+     "cue": {
+      "word": "عنه",
+      "t": 99.6
+     },
+     "who": "freedwoman",
+     "action": "Points back at her own door; both helmets snap round and the guards march.",
+     "acting": "Straight arm (angle, reads far); guards react one after the other (stagger), spears level.",
+     "library": "aR angle; stagger"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 100.3
+   }
+  },
+  {
+   "id": "S9",
+   "start": 100.3,
+   "end": 116.0,
+   "paragraphs": [
+    6
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "ibrahim",
+    "mamun",
+    "guards",
+    "vizierRed",
+    "vizierBlue"
+   ],
+   "summary": "Ibrahim is marched before the caliph still dressed as a woman. He kneels, admits it and asks pardon. The court splits: one vizier for death, one for mercy.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "CAM: 100.3 {x:330,y:690,zoom:1.3} on the door arch; pan right with the escort to {x:560,y:670,zoom:1.15} by 103.1 revealing the throne; 104.5 push {x:520,y:660,zoom:1.5} on Ibrahim and Ma'mun; 110.1 pull out to {x:500,y:660,zoom:1.0} full hall for the split; hold."
+   },
+   "composition": "Ma'mun on the throne at x 730 (highest head in frame). Ibrahim kneels at x 400 on the red runner. vizierRed at x 200 (left of Ibrahim), vizierBlue at x 560 (right of him, below the dais edge). Their picture balloons sit at (200, 330) and (540, 330), 200 x 150 each, so the caliph's eye line passes between them. Guards at x 80 and x 950.",
+   "actions": [
+    {
+     "t": 100.38,
+     "end": 101.8,
+     "cue": {
+      "word": "أُحضر",
+      "t": 100.38
+     },
+     "who": "guards",
+     "action": "Two guards march a veiled green figure in through the door arch.",
+     "acting": "Guards in step but offset by half a cycle; the prisoner takes two small steps to each of theirs.",
+     "library": "walk x3, footfalls, stagger"
+    },
+    {
+     "t": 101.9,
+     "end": 103.0,
+     "cue": {
+      "word": "إبراهيم",
+      "t": 101.9
+     },
+     "who": "ibrahim",
+     "action": "Head down, hands together in front; the viziers turn to look.",
+     "acting": "Gaze at the floor [0,1], shoulders in; viziers' heads turn one after the other.",
+     "library": "person {costume:'lady', pal:{robe:GREEN, dot:GREEND, hc:C.yellow}, faceCover, beardPeek} faceCover:0.9"
+    },
+    {
+     "t": 103.1,
+     "end": 104.4,
+     "cue": {
+      "word": "المأمون",
+      "t": 103.1
+     },
+     "who": "mamun",
+     "action": "The pan finds Ma'mun on the throne, chin on his fist, looking at the \"lady\".",
+     "acting": "Chin gesture, lid 0.4, one brow raised; he leans forward slowly.",
+     "library": "person caliph sit:1 seat:'bench'; PERSON_HANDS.chin"
+    },
+    {
+     "t": 104.54,
+     "end": 105.0,
+     "cue": {
+      "word": "متنكر",
+      "t": 104.54
+     },
+     "who": "guards",
+     "action": "A guard lifts the veil with two fingers: the black beard springs out.",
+     "acting": "Beard pops with overshoot (settleTo); Ibrahim's eyes shut tight in embarrassment.",
+     "library": "faceCover 0.9 to 0; settleTo"
+    },
+    {
+     "t": 105.0,
+     "end": 105.3,
+     "cue": {
+      "word": "متنكر",
+      "t": 104.54
+     },
+     "who": "mamun",
+     "action": "The court laughs (HA HA!). Ma'mun hides a smile behind his hand.",
+     "acting": "Planned person laugh on the viziers (staggered); Ma'mun mouthCover, shoulders shake twice, then he straightens his face.",
+     "library": "planned laugh helper; PERSON_HANDS.mouthCover"
+    },
+    {
+     "t": 105.32,
+     "end": 106.7,
+     "cue": {
+      "word": "فاعترف",
+      "t": 105.32
+     },
+     "who": "ibrahim",
+     "action": "Sinks to his knees.",
+     "acting": "kneel 0 to 1 over 0.6 s with settle; head stays down.",
+     "library": "person kneel"
+    },
+    {
+     "t": 106.8,
+     "end": 107.9,
+     "cue": {
+      "word": "بتمرده",
+      "t": 106.8
+     },
+     "who": "ibrahim",
+     "action": "One hand on his chest; with the other he pulls the veil off his head and lays it on the floor.",
+     "acting": "A plain gesture, no comedy now: the laugh in the hall dies (viziers' mouths close).",
+     "library": "PERSON_HANDS.chest; veil prop"
+    },
+    {
+     "t": 107.96,
+     "end": 108.7,
+     "cue": {
+      "word": "وطلب",
+      "t": 107.96
+     },
+     "who": "ibrahim",
+     "action": "Raises clasped hands.",
+     "acting": "clasp gesture lifted 20 units; tip 0.08.",
+     "library": "PERSON_HANDS.clasp"
+    },
+    {
+     "t": 108.78,
+     "end": 110.1,
+     "cue": {
+      "word": "العفو",
+      "t": 108.78
+     },
+     "who": "ibrahim",
+     "action": "Looks up at his nephew with wet eyes. Ma'mun's half smile fades into thought.",
+     "acting": "lookAt the caliph's head, wet true, slow blink. Ma'mun: gaze on him, lid 0.2, stillness for a full second.",
+     "library": "lookAt, wet, blink"
+    },
+    {
+     "t": 110.16,
+     "end": 112.0,
+     "cue": {
+      "word": "انقسم",
+      "t": 110.16
+     },
+     "who": "camera",
+     "action": "Pull out: the two viziers step forward on either side of the kneeling man.",
+     "acting": "vizierRed steps in sharply, vizierBlue a beat later and slower.",
+     "library": "CAM; walk"
+    },
+    {
+     "t": 112.14,
+     "end": 112.6,
+     "cue": {
+      "word": "طالب",
+      "t": 112.14
+     },
+     "who": "vizierRed",
+     "action": "Points down at Ibrahim, scowling.",
+     "acting": "brow 1, arm angle straight down-forward, tip 0.1.",
+     "library": "person {costume:'vizier', pal:{robe:C.red, dot:REDD}, age:0.7}; PERSON_HANDS.pointDown"
+    },
+    {
+     "t": 112.7,
+     "end": 114.0,
+     "cue": {
+      "word": "بقتله",
+      "t": 112.7
+     },
+     "who": "fx",
+     "action": "His picture balloon: a sword. Ibrahim flinches.",
+     "acting": "Balloon pops on with a hard edge; Ibrahim sq 0.94, eyes to the balloon.",
+     "library": "planned iconBalloon {icon: planned sword}"
+    },
+    {
+     "t": 114.12,
+     "end": 114.8,
+     "cue": {
+      "word": "دعا",
+      "t": 114.12
+     },
+     "who": "vizierBlue",
+     "action": "Steps forward with open palms.",
+     "acting": "palmsUp, brow -0.5, a small bow to the throne.",
+     "library": "person {costume:'vizier', age:0.9}; PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 114.9,
+     "end": 116.0,
+     "cue": {
+      "word": "مسامحته",
+      "t": 114.9
+     },
+     "who": "fx",
+     "action": "His balloon: a heart. Ma'mun's eyes go sword, heart, sword; Ibrahim's head follows like a spectator at a match.",
+     "acting": "Caliph: pupils only (saccades). Ibrahim: whole head, 2 frames behind the caliph.",
+     "library": "iconBalloon {icon: heart()}; gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 105.0,
+     "text": "HA HA!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 116.0
+   }
+  },
+  {
+   "id": "S10",
+   "start": 116.0,
+   "end": 140.6,
+   "paragraphs": [
+    7
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "ibrahim",
+    "mamun",
+    "vizierRed",
+    "vizierBlue",
+    "servant",
+    "barber",
+    "wife",
+    "freedwoman"
+   ],
+   "summary": "The caliph chooses pardon, lifts his uncle up and gives him back his own clothes and goods. Then he asks for the whole story; a round inset replays the three helpers and he decides to reward kindness and punish betrayal.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "CAM: 116.0 push from the wide to {x:720,y:620,zoom:1.9} on Ma'mun's face by 117.6 (the decision); 118.8 ease out to twoShot(mamun, ibrahim, {margin:150}); 123.0 settle {x:600,y:600,zoom:1.3} with empty wall above for the inset circle (centre (430, 330), radius 190); 134.0 push to {x:700,y:640,zoom:1.6} on Ma'mun standing."
+   },
+   "composition": "The inset circle occupies the upper left; Ma'mun (seated, x 730) and Ibrahim (sitting on the dais step at x 590) are lower right and both look up-left at it, so the audience looks where they look. Tick or cross stamps land on the circle's rim at lower right, 70 px.",
+   "actions": [
+    {
+     "t": 116.08,
+     "end": 117.9,
+     "cue": {
+      "word": "اختار",
+      "t": 116.08
+     },
+     "who": "mamun",
+     "action": "Shuts his eyes; two fingers drum on the arm rest. The sword and the heart hang in the air.",
+     "acting": "The longest stillness of the film: lid 1, only the fingers (2 px) and the lamp flames move for 1.6 s.",
+     "library": "lid, handR jitter keyed"
+    },
+    {
+     "t": 118.0,
+     "end": 118.7,
+     "cue": {
+      "word": "الخليفة",
+      "t": 118.0
+     },
+     "who": "mamun",
+     "action": "Opens his eyes and stands.",
+     "acting": "Eyes first, a breath (sq 1.03), then sit 1 to 0.",
+     "library": "sit blend"
+    },
+    {
+     "t": 118.82,
+     "end": 119.6,
+     "cue": {
+      "word": "العفو",
+      "t": 118.82
+     },
+     "who": "fx",
+     "action": "The heart balloon swells and the sword balloon bursts. Ma'mun opens his arms.",
+     "acting": "Heart to 1.4x with a pulse; sword balloon pops into 6 dots; vizierRed's shoulders drop, vizierBlue beams.",
+     "library": "iconBalloon keyed; PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 119.68,
+     "end": 120.3,
+     "cue": {
+      "word": "عمه",
+      "t": 119.68
+     },
+     "who": "mamun",
+     "action": "Steps down and lifts Ibrahim to his feet by both hands. Label: UNCLE!",
+     "acting": "Ibrahim kneel 1 to 0 with the pull (lurch), wet eyes, mouth trembling into a smile.",
+     "library": "handLW/handRW joined; kneel blend; S.label"
+    },
+    {
+     "t": 120.32,
+     "end": 122.1,
+     "cue": {
+      "word": "وأعاد",
+      "t": 120.32
+     },
+     "who": "servant",
+     "action": "A servant crosses the foreground holding up a wide green robe: when it has passed, Ibrahim stands in his own green robe and yellow turban.",
+     "acting": "Planned costume change behind a foreground wipe; the cloth is 300 wide and covers him for 8 frames. He looks down at himself and pats the turban.",
+     "library": "costume swap lady to merchant under the wipe; person costume:'servant'; walk"
+    },
+    {
+     "t": 122.2,
+     "end": 123.0,
+     "cue": {
+      "word": "أملاكه",
+      "t": 122.2
+     },
+     "who": "servant",
+     "action": "A small chest and a ring of keys are set at his feet.",
+     "acting": "Chest lands with a 2 frame squash; Ibrahim ignores it and keeps looking at his nephew (that is what he got back).",
+     "library": "chest rect prop; planned coinPile glint inside"
+    },
+    {
+     "t": 123.84,
+     "end": 124.9,
+     "cue": {
+      "word": "طلب",
+      "t": 123.84
+     },
+     "who": "mamun",
+     "action": "Sits again, pats the dais step beside the throne and cups a hand to his ear.",
+     "acting": "Curious, lighter now: brow -0.4, a small smile.",
+     "library": "PERSON_HANDS.cupEar; sit"
+    },
+    {
+     "t": 124.94,
+     "end": 125.7,
+     "cue": {
+      "word": "تفاصيل",
+      "t": 124.94
+     },
+     "who": "ibrahim",
+     "action": "Sits on the step and starts to tell it with his hands.",
+     "acting": "Storyteller's hands: one up, both wide; talk 0.6.",
+     "library": "sit seat:'bench'; talk; aL/aR keyed"
+    },
+    {
+     "t": 125.76,
+     "end": 128.6,
+     "cue": {
+      "word": "أيام",
+      "t": 125.76
+     },
+     "who": "fx",
+     "action": "A round inset irises open above them and replays the flight in miniature: the street, the veil, the bridge splash.",
+     "acting": "Three 0.8 s vignettes reusing the drawn scenes at 0.35 scale with the dream wash; Ma'mun chuckles at the splash.",
+     "library": "planned inset circle (clip + iris); dream wash; reuse scene draw functions at t offsets"
+    },
+    {
+     "t": 128.74,
+     "end": 129.4,
+     "cue": {
+      "word": "ساعده",
+      "t": 128.74
+     },
+     "who": "fx",
+     "action": "The inset shows the barber's room.",
+     "acting": "Both men lean toward it.",
+     "library": "inset: barberRoom draw"
+    },
+    {
+     "t": 129.52,
+     "end": 130.2,
+     "cue": {
+      "word": "الحجّام",
+      "t": 129.52
+     },
+     "who": "barber",
+     "action": "In the inset the barber tears the reward notice and sings; a green tick stamps the rim.",
+     "acting": "Ma'mun nods slowly, hand to beard (moustache gesture).",
+     "library": "inset; tick stamp with settleTo; PERSON_HANDS.moustache"
+    },
+    {
+     "t": 130.26,
+     "end": 130.9,
+     "cue": {
+      "word": "والمرأة",
+      "t": 130.26
+     },
+     "who": "wife",
+     "action": "In the inset the soldier's wife stands in front of the curtain with her hush hand; second green tick.",
+     "acting": "Ma'mun's brows go up: impressed. Ibrahim holds his heart.",
+     "library": "inset; tick"
+    },
+    {
+     "t": 131.96,
+     "end": 132.6,
+     "cue": {
+      "word": "خانته",
+      "t": 131.96
+     },
+     "who": "freedwoman",
+     "action": "In the inset the old woman with coin eyes points at her door.",
+     "acting": "Ibrahim's telling hands drop into his lap; he looks away from the inset.",
+     "library": "inset; coinEyes"
+    },
+    {
+     "t": 133.32,
+     "end": 134.0,
+     "cue": {
+      "word": "المعتقة",
+      "t": 133.32
+     },
+     "who": "fx",
+     "action": "A red X stamps the rim. Ma'mun's brow comes down.",
+     "acting": "X lands hard (2 frame squash); Ma'mun brow 0.8, mouth set.",
+     "library": "stamp; brow"
+    },
+    {
+     "t": 134.08,
+     "end": 135.2,
+     "cue": {
+      "word": "عندئذ",
+      "t": 134.08
+     },
+     "who": "mamun",
+     "action": "The inset irises shut. He stands.",
+     "acting": "Iris closes on the X; he rises in one move, robe settling late.",
+     "library": "inset iris; sit blend"
+    },
+    {
+     "t": 135.32,
+     "end": 136.4,
+     "cue": {
+      "word": "قرر",
+      "t": 135.32
+     },
+     "who": "mamun",
+     "action": "One finger up: decided.",
+     "acting": "pointUp with overshoot; everyone in the hall looks at the finger.",
+     "library": "PERSON_HANDS.pointUp; settleTo"
+    },
+    {
+     "t": 136.54,
+     "end": 137.9,
+     "cue": {
+      "word": "يكافئ",
+      "t": 136.54
+     },
+     "who": "mamun",
+     "action": "Opens his left hand: a gold star rises from the palm.",
+     "acting": "Eyes to the star, soft; goldGlow 0.5.",
+     "library": "palmsUp (one hand); planned goldGlow; star glyph"
+    },
+    {
+     "t": 138.08,
+     "end": 139.1,
+     "cue": {
+      "word": "ويعاقب",
+      "t": 138.08
+     },
+     "who": "mamun",
+     "action": "Points his right hand at the floor: a red X drops there.",
+     "acting": "Eyes harden, lid 0.3; the two symbols held together, one high and one low.",
+     "library": "PERSON_HANDS.pointDown; S.emphasis"
+    },
+    {
+     "t": 139.2,
+     "end": 140.6,
+     "cue": {
+      "word": "الخيانة",
+      "t": 139.2
+     },
+     "who": "mamun",
+     "action": "Claps his hands once: bring them in. The guards turn to the door.",
+     "acting": "Clap lands at 140.5 in the pause (the sound effect); guards pivot one after the other.",
+     "library": "handLW/handRW meet; stagger"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 119.7,
+     "text": "UNCLE!",
+     "kind": "label"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 140.5,
+     "kind": "pop (hand clap)"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 140.6
+   }
+  },
+  {
+   "id": "S11",
+   "start": 140.6,
+   "end": 160.4,
+   "paragraphs": [
+    8
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "ibrahim",
+    "mamun",
+    "guards",
+    "freedwoman",
+    "soldier",
+    "wife",
+    "barber",
+    "servant"
+   ],
+   "summary": "Four judgments in a row, each one a small comic or warm picture: the informer loses the reward, the soldier is turned into a barber's apprentice, his clever wife is honoured, and the loyal barber gets the soldier's house, a robe of honour and a yearly purse.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "CAM: 140.6 {x:480,y:670,zoom:1.2}. Each person judged stands on the same mark at x 380; the camera pushes in a little on each (zoom 1.45 centred x 470) and relaxes between. 152.8 pan left to the door {x:300} for the barber's entrance, back to {x:480,y:650,zoom:1.4} by 155.3."
+   },
+   "composition": "Ma'mun stands on the dais at x 700 (not seated: he is acting). Ibrahim stands at x 580 beside him as witness. The judged person is at x 380. People already judged collect at the left wall x 90..240 (soldier, wife) and watch, so the group grows toward the final tableau.",
+   "actions": [
+    {
+     "t": 141.12,
+     "end": 142.4,
+     "cue": {
+      "word": "عاقب",
+      "t": 141.12
+     },
+     "who": "guards",
+     "action": "Guards bring the old woman in; she is hugging a reward purse.",
+     "acting": "She walks fast and pleased, expecting praise.",
+     "library": "walk; planned purse"
+    },
+    {
+     "t": 142.5,
+     "end": 143.5,
+     "cue": {
+      "word": "المرأة",
+      "t": 142.5
+     },
+     "who": "freedwoman",
+     "action": "She sees Ibrahim standing free beside the caliph in his own robes, and slides the purse behind her back.",
+     "acting": "Double take: gaze Ibrahim, caliph, Ibrahim; smile freezes; purse hand goes behind.",
+     "library": "gazePlan; handLW"
+    },
+    {
+     "t": 143.6,
+     "end": 144.5,
+     "cue": {
+      "word": "دلّت",
+      "t": 143.6
+     },
+     "who": "mamun",
+     "action": "Points at her; a red X stamps above her; a guard takes the purse back.",
+     "acting": "Straight arm; her hands follow the purse for a moment and close on air.",
+     "library": "aR angle; S.emphasis X; handRW"
+    },
+    {
+     "t": 144.62,
+     "end": 145.9,
+     "cue": {
+      "word": "إبراهيم",
+      "t": 144.62
+     },
+     "who": "freedwoman",
+     "action": "She looks up at Ibrahim, cannot hold his eyes, drops her head and is led out.",
+     "acting": "Shame ending pattern: look up, eyes break away, head drop 8 px, tip 0.1; Ibrahim only looks sad, no triumph.",
+     "library": "gazePlan; drop; walk out left"
+    },
+    {
+     "t": 146.04,
+     "end": 146.7,
+     "cue": {
+      "word": "وجعل",
+      "t": 146.04
+     },
+     "who": "soldier",
+     "action": "The soldier steps onto the mark, bandage still on, and salutes.",
+     "acting": "Stiff, proud: sq 1.04, chin up; he expects a reward.",
+     "library": "person costume:'soldier' {bandage:true}; hand to brow"
+    },
+    {
+     "t": 146.74,
+     "end": 147.4,
+     "cue": {
+      "word": "الجندي",
+      "t": 146.74
+     },
+     "who": "servant",
+     "action": "On a nod from the caliph a servant takes away his spear and lifts off his helmet.",
+     "acting": "Soldier's eyes follow the helmet up; hair tuft springs up.",
+     "library": "helmet as separate prop keyed; settleTo"
+    },
+    {
+     "t": 147.48,
+     "end": 148.3,
+     "cue": {
+      "word": "يتعلم",
+      "t": 147.48
+     },
+     "who": "servant",
+     "action": "An apron is tied round him and a razor is put in his hand.",
+     "acting": "He turns on the spot as the apron strings go round (two squeeze flips).",
+     "library": "costume option apron:true on soldier; barberKit razor"
+    },
+    {
+     "t": 149.02,
+     "end": 150.1,
+     "cue": {
+      "word": "الحجامة",
+      "t": 149.02
+     },
+     "who": "soldier",
+     "action": "He holds up the razor and a cupping cup, baffled, and looks at the lens. Label: NEW JOB: BARBER.",
+     "acting": "Look to camera, lid 0.5, mouth flat; one blink.",
+     "library": "barberKit; S.label"
+    },
+    {
+     "t": 150.16,
+     "end": 150.8,
+     "cue": {
+      "word": "وأكرم",
+      "t": 150.16
+     },
+     "who": "wife",
+     "action": "His wife steps forward and bows.",
+     "acting": "Calm, eyes down then up.",
+     "library": "person villageWoman; tip 0.15"
+    },
+    {
+     "t": 150.9,
+     "end": 151.5,
+     "cue": {
+      "word": "زوجته",
+      "t": 150.9
+     },
+     "who": "servant",
+     "action": "A gold necklace is put over her head; it glints.",
+     "acting": "She touches it with her fingertips; goldGlow 0.5.",
+     "library": "planned necklace; goldGlow"
+    },
+    {
+     "t": 151.58,
+     "end": 152.7,
+     "cue": {
+      "word": "لذكائها",
+      "t": 151.58
+     },
+     "who": "wife",
+     "action": "She taps her temple once and winks at Ibrahim. Her husband looks at her, at Ibrahim, at the necklace: the coin drops.",
+     "acting": "wink R; soldier three saccades then mouth o and a slow turn of the head to her; she shrugs sweetly.",
+     "library": "wink; handR to temple; gazePlan"
+    },
+    {
+     "t": 152.84,
+     "end": 153.7,
+     "cue": {
+      "word": "أما",
+      "t": 152.84
+     },
+     "who": "barber",
+     "action": "Everyone turns to the door: the barber comes in shyly, lute on his back, cap in his hands.",
+     "acting": "Small steps, eyes wide at the hall, tip 0.08; heads turn in a wave from left to right.",
+     "library": "walk; oud on the back; stagger"
+    },
+    {
+     "t": 153.82,
+     "end": 154.4,
+     "cue": {
+      "word": "الحجّام",
+      "t": 153.82
+     },
+     "who": "ibrahim",
+     "action": "Ibrahim hurries down and brings him to the mark by the hand. Label with arrow: THE LOYAL BARBER.",
+     "acting": "The warmest move in the scene: Ibrahim's walk is quick, both hands take the barber's.",
+     "library": "walk; handLW/handRW; S.label"
+    },
+    {
+     "t": 155.36,
+     "end": 156.1,
+     "cue": {
+      "word": "فأعطاه",
+      "t": 155.36
+     },
+     "who": "mamun",
+     "action": "Opens a hand toward the barber.",
+     "acting": "Smile, palm up, gaze on the barber.",
+     "library": "PERSON_HANDS.palmsUp (one hand)"
+    },
+    {
+     "t": 156.22,
+     "end": 157.3,
+     "cue": {
+      "word": "بيت",
+      "t": 156.22
+     },
+     "who": "soldier",
+     "action": "A picture balloon with a little house; the soldier, in his apron, hands over his own door key, sulking.",
+     "acting": "Soldier arm out, face turned away, lid 0.6; barber takes the key with two fingers, embarrassed.",
+     "library": "iconBalloon {icon: house}; key glyph; handRW"
+    },
+    {
+     "t": 157.44,
+     "end": 158.2,
+     "cue": {
+      "word": "وكسوة",
+      "t": 157.44
+     },
+     "who": "servant",
+     "action": "A yellow robe of honour is swung round his shoulders.",
+     "acting": "Robe passes in front (wipe) and the barber's costume colours change to yellow with red trim.",
+     "library": "costume wipe to pal {robe:C.yellow, dot:C.red, trim:C.red}"
+    },
+    {
+     "t": 158.32,
+     "end": 158.8,
+     "cue": {
+      "word": "شرف",
+      "t": 158.32
+     },
+     "who": "barber",
+     "action": "He holds his arms out and stares at the sleeves; the robe glows.",
+     "acting": "sq 1.05, armsOut, mouth o, goldGlow 0.7.",
+     "library": "PERSON_HANDS.armsOut; goldGlow"
+    },
+    {
+     "t": 158.82,
+     "end": 159.7,
+     "cue": {
+      "word": "ومالًا",
+      "t": 158.82
+     },
+     "who": "coinPile",
+     "action": "A coin pile lands at his feet.",
+     "acting": "Coins stack in 0.5 s; he hops back a step.",
+     "library": "coinPile {n}; hop"
+    },
+    {
+     "t": 159.82,
+     "end": 160.4,
+     "cue": {
+      "word": "سنويًا",
+      "t": 159.82
+     },
+     "who": "coinPile",
+     "action": "Two more piles drop beside it, each under a small sun: EVERY YEAR.",
+     "acting": "Barber hands to cheeks; Ibrahim laughs.",
+     "library": "coinPile x3; sun() small; S.label"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 149.1,
+     "text": "NEW JOB: BARBER",
+     "kind": "label"
+    },
+    {
+     "t": 153.9,
+     "text": "THE LOYAL BARBER",
+     "kind": "label"
+    },
+    {
+     "t": 159.9,
+     "text": "EVERY YEAR",
+     "kind": "label"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 160.4
+   }
+  },
+  {
+   "id": "S12",
+   "start": 160.4,
+   "end": 169.38,
+   "paragraphs": [
+    8
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "ibrahim",
+    "mamun",
+    "barber",
+    "soldier",
+    "wife",
+    "vizierBlue"
+   ],
+   "summary": "The ordeal is over: Ibrahim throws the veil away, uncle and nephew clasp hands, the barber plays and Ibrahim sings. THE END.",
+   "camera": {
+    "shot": "full",
+    "move": "pull-out",
+    "notes": "CAM: 160.4 from the S11 framing ease out to {x:500,y:650,zoom:1.0} by 163.0 (whole hall tableau); hold. THE END title in the upper wall area y 150..330, above every head."
+   },
+   "composition": "Tableau left to right: soldier in apron (x 120), wife (x 230), barber in yellow with lute (x 400), Ibrahim (x 560), Ma'mun (x 700), vizierBlue (x 880). Heads between y 600 and 660; title above.",
+   "actions": [
+    {
+     "t": 160.52,
+     "end": 161.9,
+     "cue": {
+      "word": "وهكذا",
+      "t": 160.52
+     },
+     "who": "camera",
+     "action": "Pull out to the whole hall; everyone finds a place.",
+     "acting": "Small settling moves, staggered; no one stands still as a statue.",
+     "library": "CAM; breathe"
+    },
+    {
+     "t": 162.0,
+     "end": 162.9,
+     "cue": {
+      "word": "انتهت",
+      "t": 162.0
+     },
+     "who": "ibrahim",
+     "action": "Picks the yellow veil off the floor, looks at it and tosses it over his shoulder.",
+     "acting": "A short laugh at it (lid 0.6, mouth open), then a big throw with anticipation.",
+     "library": "veil prop on a hop() arc, then featherFall sway"
+    },
+    {
+     "t": 163.0,
+     "end": 164.3,
+     "cue": {
+      "word": "محنة",
+      "t": 163.0
+     },
+     "who": "ibrahim",
+     "action": "Lets out a long breath; his shoulders finally drop.",
+     "acting": "sq 1.03 to 0.97 to 1, lid closes and opens; the turban sits straight for the first time since 7.3 s.",
+     "library": "sq keyed; lid"
+    },
+    {
+     "t": 164.42,
+     "end": 165.3,
+     "cue": {
+      "word": "بالعفو",
+      "t": 164.42
+     },
+     "who": "mamun",
+     "action": "Uncle and nephew clasp hands.",
+     "acting": "Eye contact both ways, smiles; hands meet at a world point between them.",
+     "library": "handLW/handRW; lookAt"
+    },
+    {
+     "t": 165.34,
+     "end": 166.2,
+     "cue": {
+      "word": "والجزاء",
+      "t": 165.34
+     },
+     "who": "barber",
+     "action": "The barber swings the lute round and strums; Ibrahim sings; notes rise; the soldier claps a beat late.",
+     "acting": "Sway in counter-phase as in S5 (the callback); soldier off the beat is the last small joke.",
+     "library": "oud strum; notes; tip sway"
+    },
+    {
+     "t": 166.3,
+     "end": 169.38,
+     "cue": {
+      "word": "والجزاء",
+      "t": 165.34
+     },
+     "who": "lettering",
+     "action": "THE END title pops on above the group and holds.",
+     "acting": "Standard title with overshoot; characters keep swaying and blinking under it.",
+     "library": "S.title; LIFE.t blinks"
+    },
+    {
+     "t": 167.4,
+     "end": 168.4,
+     "who": "soldier",
+     "action": "The falling veil lands on the soldier's head; his wife laughs behind her hand.",
+     "acting": "He stops clapping, eyes up at it, lid 0.5; she mouthCover, shoulders shaking.",
+     "library": "featherFall landing; PERSON_HANDS.mouthCover"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 166.3,
+     "text": "THE END",
+     "kind": "title"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 166.5,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 169.38
+   }
+  }
+ ],
+ "ending": {
+  "t": 166.3,
+  "description": "Full hall tableau: the barber in his yellow robe plays the lute, Ibrahim sings, uncle and nephew side by side, the soldier in an apron clapping off the beat. THE END pops on at 166.3 above the heads and holds to 169.38; at 167.4 the thrown veil lands on the soldier's head."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "خالف إبراهيم بن المهدي ابن أخيه الخليفة المأمون في أمر الحكم،|ثم خسر الصراع واضطر إلى الاختباء في بغداد.|أعلن المأمون جائزة ضخمة لمن يدل عليه،|فصار إبراهيم يخشى أن يعرفه أي عابر في الطريق.",
+   "en": "Ibrahim bin al-Mahdi opposed his nephew,|Caliph al-Ma’mun, in a struggle for power.|After losing, he hid in Baghdad,|fearing the large reward offered for his capture."
+  },
+  {
+   "p": 2,
+   "ar": "لجأ إبراهيم إلى حجّام،|فرحّب به وأطعمه،|لكن إبراهيم خاف أن يسلّمه طلبًا للجائزة.",
+   "en": "Ibrahim took refuge with a barber-surgeon.|The man welcomed him and fed him,|but Ibrahim feared that he might hand him over for the reward."
+  },
+  {
+   "p": 3,
+   "ar": "أخرج الحجّام عودًا وطلب من ضيفه الغناء،|ثم فاجأه بقوله إنه يعرف هويته وجائزة القبض عليه.|أكد أنه لن يخونه، وغنّى معه حتى خف خوف إبراهيم.|وحين عرض عليه مالًا لقاء مساعدته رفض أخذه.",
+   "en": "The barber produced a lute,|revealed that he knew Ibrahim’s identity,|and promised safety.|They sang together, and the host refused any payment for his help."
+  },
+  {
+   "p": 4,
+   "ar": "خرج إبراهيم متنكرًا بثياب امرأة،|فعرفه جندي وحاول القبض عليه.|دفعه إبراهيم قرب جسر وفرّ.",
+   "en": "Ibrahim went out disguised in women's clothing.|A soldier recognized him and tried to arrest him.|Ibrahim pushed him near a bridge and fled."
+  },
+  {
+   "p": 5,
+   "ar": "لجأ إبراهيم إلى امرأة فتحت له بيتها وأخفته،|ثم اكتشف أن الجندي المطارد زوجها.|مع ذلك واصلت حمايته ثلاثة أيام.|وبعد مغادرته قصد امرأة كان قد أعتقها قديمًا، لكنها طمعت في الجائزة وأبلغت عنه.",
+   "en": "A woman hid Ibrahim,|even though the injured pursuer was her husband.|After three days he moved to a former freedwoman’s house,|but she betrayed him for the reward."
+  },
+  {
+   "p": 6,
+   "ar": "أُحضر إبراهيم إلى المأمون وهو متنكر،|فاعترف بتمرده وطلب العفو.|انقسم الحاضرون بين من طالب بقتله ومن دعا إلى مسامحته.",
+   "en": "Ibrahim was brought before al-Ma'mun while still disguised.|He admitted his rebellion and asked for pardon.|Those present were divided between those who called for his death and those who urged mercy."
+  },
+  {
+   "p": 7,
+   "ar": "اختار الخليفة العفو عن عمه، وأعاد إليه أملاكه.|ثم طلب سماع تفاصيل أيام هروبه،|فعرف كيف ساعده الحجّام والمرأة، وكيف خانته المرأة المعتقة.|عندئذ قرر أن يكافئ الإحسان ويعاقب الخيانة.",
+   "en": "The caliph pardoned his uncle|and restored his property.|Hearing about the escape,|he learned who had sheltered Ibrahim and who had betrayed him."
+  },
+  {
+   "p": 8,
+   "ar": "عاقب المأمون المرأة التي دلّت على إبراهيم،|وجعل الجندي يتعلم مهنة الحجامة، وأكرم زوجته لذكائها.|أما الحجّام الكريم فأعطاه بيت الجندي|وكسوة شرف ومالًا سنويًا. وهكذا انتهت محنة إبراهيم بالعفو والجزاء.",
+   "en": "Al-Ma’mun punished the informer,|assigned the trooper to learn barbering, and honored the trooper’s wife.|He rewarded the loyal barber with the trooper’s house,|a robe, and an annual allowance."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "person costume presets (soldier)",
+   "description": "A soldier / guard / trooper preset for the person costume layer: pointed helmet with a nose bar and neck cloth, knee length tunic with a wide belt and a round chest plate (dot pattern as mail), boots; pal overrides for the tunic (red hero soldier, blue palace guards). Options: hold:'spear' (shaft 300, leaf blade), bandage:true (white band round the head with a knot, replaces or sits under the helmet), apron:true (white apron over the tunic), helmet:false.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Add a COSTUME entry in Library/cast/people.js like the others: helmet = half ellipse + triangle spike + 6 px nose bar in the headwear slot; tunic uses the existing robe shape at knee length; belt = sash slot; chest plate = circle r 16 with a dot. Spear drawn like hold:'stick' with a blade. bandage and apron are small overlay draws after the body. Opt-in, so the regression test stays identical."
+  },
+  {
+   "type": "set",
+   "name": "cityBridge",
+   "description": "Street end with a low two-arch stone bridge over the Library river, open near edge for falls, far parapet, notice post, city silhouette (dimensions in sets).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "bake() a 1600 x 1230 canvas: sky(), a row of flat blue silhouettes (rects + half ellipses for domes), ground() to x 900, riverBank edge, river(c, t, {back:true}) and {front:true} drawn live around the deck; deck = K path with a quadratic top, two arch cut-outs with evenodd fill, stone joints as short lines; parapet as a parallel strip on the far side."
+  },
+  {
+   "type": "prop",
+   "name": "oud",
+   "description": "Lute (see props): the story's emblem of trust, used in S4, S5, S11, S12.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Pear = two beziers, yellow fill with brown stave lines; neck rect; peg box as a short rect rotated -60 degrees; strings 4 lines (one drawn as a sine for 0.4 s when vibrate is set); wrapped draws a paper-coloured lumpy outline over it."
+  },
+  {
+   "type": "prop",
+   "name": "rewardPoster",
+   "description": "Reward notice with the wanted face and a coin pile (see props); appears in S2, S5, S6, S8.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rounded rect in paper white with a 4 px black edge; face from circles and a wedge; unroll clips the height; torn draws the two halves from a shared zigzag with separate transforms."
+  },
+  {
+   "type": "prop",
+   "name": "curtain, barberKit",
+   "description": "Two small prop modules (see props).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Curtain: 8 vertical stripes whose x positions are displaced by lift / bulge / gap functions; hem drawn last. barberKit: razor = two thin rects on a pivot; cup = half ellipse + rect lip with a white highlight."
+  },
+  {
+   "type": "pose",
+   "name": "person faceCover",
+   "description": "The planned faceCover 0..1 (AN-075) with one addition for this film: beardPeek 0..1 draws the tip of the beard (a 22 px black wedge) below the lower edge of the cover.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned: a flap in the headwear colour across the face. beardPeek: after the flap, draw the costume's beard clipped to a 24 px band under the flap edge."
+  },
+  {
+   "type": "expression",
+   "name": "coinEyes",
+   "description": "Greed: both pupils replaced by small gold coin discs (r about 60 % of the eye) with a glint; pops on with overshoot.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "In the scene, after person(), draw two yellow circles with a black edge and a tiny inner ring at P.eyesAt (or the known eye offsets: head centre +-13, s scaled); could later become eyes:'coin' in helpers eye2."
+  },
+  {
+   "type": "set",
+   "name": "palaceHall",
+   "description": "The planned full palace hall (AN-084) with the planned throne; used in S1 and S9 to S12 (about 80 s of the film).",
+   "reusable": true,
+   "effort": "L",
+   "implementation": "As specified by AN-084. If this film is built first: bake wall (blue Ben-Day), three pointed arches (two arcs meeting), door arch showing sky(), dais as a 3-step trapezoid, runner as a red strip in perspective (trapezoid), checker floor rows below y 900, lamps with K.noise flames drawn live."
+  },
+  {
+   "type": "set",
+   "name": "palaceHall (variant merchantHouse)",
+   "description": "The planned modest room, dressed twice (barberRoom, wifeRoom; see sets).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "One function with a dressing option list and wall palette; furniture as flat rects with brush outlines; the window clips skyCycle for the three days."
+  },
+  {
+   "type": "set",
+   "name": "marketStreet",
+   "description": "The planned market street strip with the anchors listed in sets (two doors, poster wall, one stall).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "As planned by the other films; this film needs only the wall, two doors and one stall."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "description": "The planned wordless picture balloon, single mode: poster face + coins (S4), broken chain (S8), sword and heart (S9, S10), house (S11).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Speech balloon outline with a tail and a clipped inside callback, as planned."
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "description": "The planned round picture-in-picture with an iris and the planned dream wash, used once (125.76 to 135.0) for the retelling.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Clip a circle r 190 at panel (430, 330); inside call the earlier scene draw functions at fixed t values with a 0.35 scale; iris = radius keyed 0 to 190; tick and cross stamps on the rim."
+  },
+  {
+   "type": "motion",
+   "name": "costume change behind a foreground wipe",
+   "description": "Planned technique, used at 120.3 (disguise back to his own robe) and 157.4 (robe of honour).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "A wide cloth polygon carried across in front; the costume switches at the frame where the cloth fully covers the figure."
+  },
+  {
+   "type": "effect",
+   "name": "splash",
+   "description": "The planned crown of drops with rings, for the soldier's fall at 73.9.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned; plus Library ripple."
+  },
+  {
+   "type": "prop",
+   "name": "throne",
+   "description": "Planned throne (AN-084).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned."
+  },
+  {
+   "type": "prop",
+   "name": "coinPile, purse, foodTray, necklace, scroll",
+   "description": "Planned small props reused under their planned names.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned by the earlier stories."
+  }
+ ],
+ "owner_questions": [
+  "Opening picture for \"opposed his nephew in the matter of rule\": Ibrahim sits on the throne and is driven off it by Ma'mun and two guards (no fighting shown). Default: yes.",
+  "Real historical figures (Caliph al-Ma'mun, Ibrahim bin al-Mahdi) are drawn as the usual blocky comic people, and Ibrahim's face appears on a reward poster. Default: yes, as in the Library caliph preset.",
+  "Disguise comedy: his beard tip peeks from under the woman's veil and the court laughs (HA HA!) when the veil is lifted. Default: keep, gentle and brief.",
+  "The script says he pushed the soldier near a bridge; the plan has the soldier teeter and fall into the river with a SPLASH, then come home wet with a head bandage (the English calls him \"the injured pursuer\"). Default: keep the comic fall, no blood.",
+  "The call for his death is shown only as a sword picture in a vizier's balloon, the plea for mercy as a heart. Default: yes, no weapon is drawn in anyone's hand.",
+  "The informer's punishment is shown as the reward purse being taken back and her being led out in shame; no physical punishment is shown. Default: yes.",
+  "Added action: the barber tears up a reward notice to show \"he would not betray him\". Default: keep.",
+  "Her being a freed slave is shown as a broken chain and a scroll in a memory balloon. Default: keep; alternative is the scroll alone.",
+  "Invented English lettering: REWARD!, KNOCK!, TA-DA!, TWANG!, HALT!, SPLASH!, HA HA!, DAY 1 / 2 / 3, labels (IBRAHIM, THE UNCLE; CALIPH AL-MA'MUN; BARBER SURGEON; IBRAHIM?; SOLDIER; THE SAME SOLDIER!; HER HUSBAND!; UNCLE!; NEW JOB: BARBER; THE LOYAL BARBER; EVERY YEAR). Default: keep all.",
+  "Closing gag after the last word: the thrown veil lands on the soldier's head. Default: keep."
+ ],
+ "implementation_notes": [
+  "Start from Library/template; cue every beat with w(p, n) from timing.json. The cue times in this plan are word starts from planning/inputs/timeline.md.",
+  "All people are the Library person with costume presets; give every figure a gaze target each frame (lookAt / gazePlan) and set LIFE.t = t for blinks. Use arm ANGLES (aL/aR) for poses that must read small (pointing, the shove, the teeter windmill) and hand targets (handLW/handRW) for contacts (lute, purse, veil, key).",
+  "Ibrahim keeps one seed and one scale (1.25 in rooms, 1.0 in the wide hall and street shots) through three costumes: merchant pal (0 to 23.3 and 120.3 on), lady + faceCover (61.2 to 120.3). Keep the green robe and yellow head cloth in all of them.",
+  "S3 to S5 are one continuous room scene (no cut): keep character positions continuous across the scene ids.",
+  "S6 timing is the centre of the comedy: shove on 70.16, teeter 71.62 to 73.5, Ibrahim gone by 73.4, soldier hits the water at 73.9 to 73.95 inside the 73.64 to 74.82 pause so the splash sound is clear of words.",
+  "S7: draw order door, soldier, wife, Ibrahim, then curtain, so the hidden man needs no clipped copy; the peeking eye is the same figure seen through the gap (clip to the gap rect).",
+  "The three-day counter (88.18 to 89.7) has only 1.5 s: cycle the window with skyCycle u from 0.1 to 3.1 with ease, counter ticks at 88.2, 89.15, 89.45.",
+  "Inset circle (S10): reuse drawBarberRoom / drawWifeRoom / drawStreet at fixed times (for example 49.6, 86.6, 97.2) rather than new drawings.",
+  "Sound effects only at: 23.0 whoosh, 26.8 knock, 60.6 chime, 73.95 splash, 140.5 clap pop, 166.5 chime. SND master 0.6. Everything else (strums, laughs) is silent lettering or picture only so no word is covered.",
+  "Panel-only shake (4 px, 0.2 s) at 70.16 and 73.95; never move the caption panel.",
+  "Lettering never covers a face: labels go beside heads with arrows; balloons sit in the upper wall area.",
+  "Subtitles: 3 or 4 chunks per paragraph as marked; the English is a condensed translation, so some English chunks are shorter than the Arabic they sit under."
+ ],
+ "warnings": [
+  "Most of the film depends on planned assets that may not exist yet (palaceHall + throne, merchantHouse variant, marketStreet, faceCover, iconBalloon, inset circle, coinPile, purse, foodTray, splash). If they are not in Library when this film is built, build them in the story to the planned specifications and move them to Library after approval.",
+  "The person figure is front-facing only: the shove, the grab and the hand clasp must be staged side by side with arm angles and world hand targets; test these three poses in stills first.",
+  "The disguise must stay readable as Ibrahim at phone size: keep the green and yellow, and show the beard peek early (62.7).",
+  "P5 packs two houses and a three-day stay into 25 s, and P8 four judgments into 19 s: keep each to one clear picture and do not add extra business.",
+  "S10 is 24.6 s in one set: the inset circle and the costume wipe carry the visual change; do not let the two seated men sit still under it.",
+  "P8 English has no sentence for the Arabic closing line (وهكذا انتهت محنة إبراهيم بالعفو والجزاء); the last English chunk stays on screen under it.",
+  "Sensitive content softened by design: the death demand, the punishment and the freed-slave back story are shown as symbols only (see owner_questions)."
+ ]
+}

@@ -1,0 +1,21 @@
+{
+  "_comment": "Where large media (audio, video, built players) live; they are never in Git. Root: $ARABIC_STORY_MEDIA, else the one-line file .media-root at the repository root (not tracked), else defaultRoot. defaultRoot \".\" = LOCAL mode: the repository's own folders, paths used as they are (narration in Animations/<story>/, finished films in MP4s/). Any other root = SHARED mode: 'map' turns a repository path into a path in that folder (longest prefix wins). sharedRootExample is the layout prepared on 2026-11-16 for a second macOS account. See DEVELOPMENT_SETUP.md.",
+  "envVar": "ARABIC_STORY_MEDIA",
+  "defaultRoot": ".",
+  "sharedRootExample": "/Users/Shared/ArabicStoryShorts",
+  "map": [
+    ["MP4s/", "final-mp4s/"],
+    ["Originals/", "originals/"],
+    ["Audio Files/Final Done/", "narration/final-done/"],
+    ["Audio Files/", "audio-archive/"],
+    ["Animations/", "animations/"],
+    ["fox-and-the-drum/", "story-sources/fox-and-the-drum/"],
+    ["lark-and-the-elephant/", "story-sources/lark-and-the-elephant/"],
+    ["lion-and-the-hare/", "story-sources/lion-and-the-hare/"],
+    ["monkey-and-the-turtle/", "story-sources/monkey-and-the-turtle/"],
+    ["thief-and-the-moonbeam/", "story-sources/thief-and-the-moonbeam/"]
+  ],
+  "mediaExtensions": ["mp3", "wav", "m4a", "aac", "flac", "ogg", "aif", "aiff", "mp4", "mov", "m4v", "mkv", "webm", "avi", "zip"],
+  "playerPattern": " - Halftone Pop 9x16 - ",
+  "scratch": "scratch/"
+}

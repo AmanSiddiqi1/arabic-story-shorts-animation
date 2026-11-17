@@ -1,0 +1,285 @@
+{
+ "story": "AN-113",
+ "paragraphs": [
+  {
+   "p": 1,
+   "chunks": [
+    {
+     "c": 1,
+     "ar": "كان رجل غني قد خسر ماله كله،",
+     "en_old": "A once-rich man lost his fortune",
+     "en_new": "A once-rich man lost his fortune",
+     "verdict": "ok",
+     "note": ""
+    },
+    {
+     "c": 2,
+     "ar": "وأصبح عاجزًا عن تدبير شؤون بيته.",
+     "en_old": "and could no longer support his household.",
+     "en_new": "and could no longer support his household.",
+     "verdict": "ok",
+     "note": ""
+    },
+    {
+     "c": 3,
+     "ar": "نصحته زوجته أن يستعين بصديق قديم يعرفه ويثق به،",
+     "en_old": "His wife urged him to ask",
+     "en_new": "His wife advised him to seek help from an old friend he knew and trusted,",
+     "verdict": "fixed",
+     "note": "friend belonged in this chunk"
+    },
+    {
+     "c": 4,
+     "ar": "فذهب إليه وأخبره بما أصابه من فقر وضيق.",
+     "en_old": "an old trusted friend for help.",
+     "en_new": "so he went to him and told him of the poverty and hardship he had suffered.",
+     "verdict": "fixed",
+     "note": "did not match Arabic chunk"
+    }
+   ]
+  },
+  {
+   "p": 2,
+   "chunks": [
+    {
+     "c": 1,
+     "ar": "استمع الصديق إليه، وأعطاه خمسمئة دينار ليبدأ عملًا جديدًا.",
+     "en_old": "The friend gave him five hundred dinars.",
+     "en_new": "The friend listened and gave him five hundred dinars to start new work.",
+     "verdict": "fixed",
+     "note": "omitted 'to start new work'"
+    },
+    {
+     "c": 2,
+     "ar": "وكان الرجل قد عمل صائغًا في شبابه،",
+     "en_old": "Having worked as a jeweler in his youth,",
+     "en_new": "Having worked as a jeweler in his youth,",
+     "verdict": "ok",
+     "note": ""
+    },
+    {
+     "c": 3,
+     "ar": "فاستأجر دكانًا في سوق الجواهر،",
+     "en_old": "the man rented a shop in the jewel market",
+     "en_new": "so he rented a shop in the jewel market,",
+     "verdict": "fixed",
+     "note": "minor wording"
+    },
+    {
+     "c": 4,
+     "ar": "واشترى بعض البضاعة، وجلس ينتظر الزبائن.",
+     "en_old": "and began trading again.",
+     "en_new": "bought some goods and sat waiting for customers.",
+     "verdict": "fixed",
+     "note": "omitted buying goods, waiting"
+    }
+   ]
+  },
+  {
+   "p": 3,
+   "chunks": [
+    {
+     "c": 1,
+     "ar": "جاء إلى الدكان ثلاثة رجال، وسألوه عن أبيه.",
+     "en_old": "Three men came asking about his father.",
+     "en_new": "Three men came to the shop and asked him about his father.",
+     "verdict": "fixed",
+     "note": "minor wording"
+    },
+    {
+     "c": 2,
+     "ar": "أخبرهم أن والده قد مات، فسألوه إن كان ابنه فعلًا.",
+     "en_old": "Told the father had died,",
+     "en_new": "He told them his father had died, and they asked whether he was really his son.",
+     "verdict": "fixed",
+     "note": "omitted their question"
+    },
+    {
+     "c": 3,
+     "ar": "جمع بعض أهل السوق، فشهدوا أمامهم أن الرجل ابن ذلك التاجر المتوفى.",
+     "en_old": "they asked witnesses from the market to confirm the jeweler was truly his son.",
+     "en_new": "He gathered some market people, who testified before them that he was that late merchant's son.",
+     "verdict": "fixed",
+     "note": "he gathered witnesses, not they"
+    }
+   ]
+  },
+  {
+   "p": 4,
+   "chunks": [
+    {
+     "c": 1,
+     "ar": "عندئذ سلموه حقيبتين",
+     "en_old": "They handed him two bags",
+     "en_new": "They handed him two bags",
+     "verdict": "ok",
+     "note": ""
+    },
+    {
+     "c": 2,
+     "ar": "فيهما ثلاثون ألف دينار، وحلي وأحجار نفيسة.",
+     "en_old": "holding thirty thousand dinars and precious jewels,",
+     "en_new": "holding thirty thousand dinars, ornaments and precious stones.",
+     "verdict": "fixed",
+     "note": "omitted 'ornaments'"
+    },
+    {
+     "c": 3,
+     "ar": "قالوا إن أباه ترك هذه الأشياء عندهم أمانة قبل وفاته،",
+     "en_old": "saying his late father had entrusted the goods to them",
+     "en_new": "They said his father had left these with them in trust before he died,",
+     "verdict": "fixed",
+     "note": "minor wording"
+    },
+    {
+     "c": 4,
+     "ar": "وإنهم جاءوا ليعيدوها إلى وريثه الشرعي.",
+     "en_old": "for his heir.",
+     "en_new": "and that they had come to return them to his rightful heir.",
+     "verdict": "fixed",
+     "note": "omitted 'come to return'"
+    }
+   ]
+  },
+  {
+   "p": 5,
+   "chunks": [
+    {
+     "c": 1,
+     "ar": "وبعد قليل حضرت امرأة إلى الدكان،",
+     "en_old": "Soon a woman arrived",
+     "en_new": "Soon after, a woman came to the shop",
+     "verdict": "fixed",
+     "note": "minor wording"
+    },
+    {
+     "c": 2,
+     "ar": "واختارت جواهر كان ثمنها خمسمئة دينار، لكنها دفعت ثلاثة آلاف دينار.",
+     "en_old": "and bought jewels worth five hundred dinars for three thousand.",
+     "en_new": "and chose jewels priced at five hundred dinars, but paid three thousand dinars.",
+     "verdict": "fixed",
+     "note": "minor wording"
+    },
+    {
+     "c": 3,
+     "ar": "تعجب الرجل من هذه الأحداث،",
+     "en_old": "The astonished jeweler",
+     "en_new": "The man was amazed at these events",
+     "verdict": "fixed",
+     "note": "minor wording"
+    },
+    {
+     "c": 4,
+     "ar": "وشعر أن أبواب الرزق قد فتحت له فجأة.",
+     "en_old": "believed fortune had unexpectedly returned.",
+     "en_new": "and felt the doors of fortune had suddenly opened to him.",
+     "verdict": "fixed",
+     "note": "minor wording"
+    }
+   ]
+  },
+  {
+   "p": 6,
+   "chunks": [
+    {
+     "c": 1,
+     "ar": "حمل خمسمئة دينار إلى صديقه، وقال إنه يريد رد المال الذي اقترضه.",
+     "en_old": "He brought five hundred dinars to repay his friend.",
+     "en_new": "He took five hundred dinars to his friend and said he wanted to repay what he had borrowed.",
+     "verdict": "fixed",
+     "note": "minor wording"
+    },
+    {
+     "c": 2,
+     "ar": "لكن الصديق رفض، وأخبره أنه قدمه هدية منذ البداية،",
+     "en_old": "The friend refused, saying it had been a gift,",
+     "en_new": "But the friend refused, telling him it had been a gift from the start,",
+     "verdict": "fixed",
+     "note": "omitted 'from the start'"
+    },
+    {
+     "c": 3,
+     "ar": "ثم أعطاه ورقة وطلب منه ألا يفتحها إلا في بيته.",
+     "en_old": "and handed him a sealed note to read at home.",
+     "en_new": "then gave him a paper and asked him not to open it until he was home.",
+     "verdict": "fixed",
+     "note": "'sealed' not in Arabic"
+    }
+   ]
+  },
+  {
+   "p": 7,
+   "chunks": [
+    {
+     "c": 1,
+     "ar": "فتح الرجل الورقة، فوجد فيها أبياتًا تكشف الحقيقة.",
+     "en_old": "At home he read verses revealing the truth.",
+     "en_new": "The man opened the paper and found in it verses revealing the truth.",
+     "verdict": "fixed",
+     "note": "minor wording"
+    },
+    {
+     "c": 2,
+     "ar": "الثلاثة الذين جاءوا إلى السوق كانوا أقارب صديقه،",
+     "en_old": "The three men were his friend’s relatives,",
+     "en_new": "The three men who had come to the market were his friend's relatives,",
+     "verdict": "fixed",
+     "note": "minor wording"
+    },
+    {
+     "c": 3,
+     "ar": "والمرأة التي اشترت الجواهر كانت أم الصديق،",
+     "en_old": "the buyer was his friend’s mother,",
+     "en_new": "and the woman who bought the jewels was his friend's mother,",
+     "verdict": "fixed",
+     "note": "minor wording"
+    },
+    {
+     "c": 4,
+     "ar": "أما الأموال والحلي فقد أرسلها الصديق سرًا.",
+     "en_old": "and all the money and jewels came from his friend.",
+     "en_new": "while the money and ornaments had been sent secretly by his friend.",
+     "verdict": "fixed",
+     "note": "omitted 'secretly'"
+    }
+   ]
+  },
+  {
+   "p": 8,
+   "chunks": [
+    {
+     "c": 1,
+     "ar": "كتب الصديق أنه دبّر ذلك كله",
+     "en_old": "The note explained that the friend had arranged everything",
+     "en_new": "The friend wrote that he had arranged it all",
+     "verdict": "fixed",
+     "note": "minor wording"
+    },
+    {
+     "c": 2,
+     "ar": "حتى يساعده من غير أن يحرجه بطلب المال أمامه.",
+     "en_old": "to help without embarrassing him.",
+     "en_new": "to help him without the embarrassment of asking for money face to face.",
+     "verdict": "fixed",
+     "note": "omitted 'in front of him'"
+    },
+    {
+     "c": 3,
+     "ar": "فهم الرجل عندها أن ثروته الجديدة لم تكن ميراثًا مجهولًا،",
+     "en_old": "The new fortune was not a forgotten inheritance,",
+     "en_new": "The man then understood that his new wealth was no unknown inheritance,",
+     "verdict": "fixed",
+     "note": "omitted his realization"
+    },
+    {
+     "c": 4,
+     "ar": "بل ثمرة وفاء صديق حفظ كرامته.",
+     "en_old": "but an act of loyalty that preserved his dignity.",
+     "en_new": "but the fruit of a loyal friend who had protected his dignity.",
+     "verdict": "fixed",
+     "note": "minor wording"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,89 @@
+{
+ "story_id": "AN-134",
+ "title": "THE CALIPH AL HAKIM AND THE MERCHANT",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T15:15:22",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-ace0d1ebc0c838400.jsonl",
+ "agent_id": "ace0d1ebc0c838400",
+ "model_messages": {
+  "claude-fable-5-2": 26
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "75fb3acdfca7e687b50c9d8213e39ca2901c7e99f22b631e3e705f3c046090aa",
+  "paragraphs": 8,
+  "segments": [
+   "AN-134-P01-S01",
+   "AN-134-P01-S02",
+   "AN-134-P01-S03",
+   "AN-134-P01-S04",
+   "AN-134-P01-S05",
+   "AN-134-P01-S06",
+   "AN-134-P01-S07",
+   "AN-134-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-134_THE_CALIPH_AL_HAKIM_AND_THE_MERCHANT_full_slowed.mp3",
+  "sha256": "566ff25b5d1f9f344b0c10500b1de73dffe6ef384c6e4a2e28df6fb1b751330c",
+  "duration": 173.285
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-134_THE_CALIPH_AL_HAKIM_AND_THE_MERCHANT_full_slowed.mp3.words.json",
+  "sha256": "42e6222f06880139d01a70215729dbf9564f57aeb05a4b1cbe5af4969eed62d6",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.996
+ },
+ "library_rev": "5a93429",
+ "scenes": 17,
+ "actions": 178,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "orchard",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "carpetRoll",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "feastSpread",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "hundredWindows",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "person costume preset 'guard'",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "goblet, waterJug, floorCushion, foodTray (kind option), chest, coinPile",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow, inset circle",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The narration is nearly continuous: only four pauses of 0.6 s or more. Keep to the 12 listed effects; do not add sounds to the feast, the counters or the coin stamping.",
+  "The guard preset, goblet, waterJug, floorCushion, foodTray, chest, coinPile, goldGlow and inset circle are planned by other films but are not in Library yet; build them once under these names.",
+  "feastSpread and hundredWindows each draw about 100 small items per frame: bake one sprite per icon and blit it; do not redraw vector trays 300 times a frame.",
+  "S9 is a diagram scene with a small presenter; keep it lively with the sweep, the inset and the three waves so that 13 s on one image does not go static.",
+  "The low wall in the road view must leave the seated owner visible from the chest up (wall top y 820, his lawn at y 880, seat 48 high); check with a still at 12.0 s before animating S2.",
+  "The S15 counter reaches a seven-digit number: test that 3,700,000 DIRHAMS fits the 972-px panel at the chosen size."
+ ]
+}

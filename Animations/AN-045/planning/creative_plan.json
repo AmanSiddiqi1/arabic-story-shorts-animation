@@ -1,0 +1,3175 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-045",
+ "title": "The Thief and His Monkey",
+ "duration": 167.63,
+ "end_hold": 3.8,
+ "logline": "A thief whose monkey distracts the crowd steals a bundle that turns out to be rags, dresses it in costly cloth and sells it unopened to a buyer who learns from his wife, too late, what he has paid for.",
+ "moral": "Do not buy what you have not seen: a fine wrapping and a low price are the mark of a trick, and stolen or unknown goods cost more than they are worth.",
+ "tone": "Light market comedy of misdirection. Sly rather than cruel: the fun is in watching where everyone looks. A quiet, rueful ending with no gloating.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 2.82,
+   "kind": "setup",
+   "cue": {
+    "word": "السرقة،",
+    "t": 2.82
+   },
+   "summary": "A man who lives by stealing: introduced with a THIEF label and a look to camera."
+  },
+  {
+   "id": "B2",
+   "t": 4.9,
+   "kind": "setup",
+   "cue": {
+    "word": "قرد",
+    "t": 4.9
+   },
+   "summary": "His trained monkey: three tricks that pull every eye."
+  },
+  {
+   "id": "B3",
+   "t": 19.04,
+   "kind": "suspense",
+   "cue": {
+    "word": "فرصة",
+    "t": 19.04
+   },
+   "summary": "The method: eyes go to the monkey, his eyes go to the purses."
+  },
+  {
+   "id": "B4",
+   "t": 23.58,
+   "kind": "inciting",
+   "cue": {
+    "word": "بائعًا",
+    "t": 23.58
+   },
+   "summary": "He spots the old-clothes seller, whom nobody buys from."
+  },
+  {
+   "id": "B5",
+   "t": 38.9,
+   "kind": "rising",
+   "cue": {
+    "word": "صرة",
+    "t": 38.9
+   },
+   "summary": "The tired seller ties the bundle and sets it at his side."
+  },
+  {
+   "id": "B6",
+   "t": 48.62,
+   "kind": "comic",
+   "cue": {
+    "word": "ضحك",
+    "t": 48.62
+   },
+   "summary": "The seller laughs at the monkey and turns his back on the bundle."
+  },
+  {
+   "id": "B7",
+   "t": 58.16,
+   "kind": "climax",
+   "cue": {
+    "word": "وأخذ",
+    "t": 58.16
+   },
+   "summary": "The steal, after one false alarm."
+  },
+  {
+   "id": "B8",
+   "t": 71.52,
+   "kind": "surprise",
+   "cue": {
+    "word": "البالية،",
+    "t": 71.52
+   },
+   "summary": "The prize is only rags: the thief is cheated by his own theft."
+  },
+  {
+   "id": "B9",
+   "t": 75.2,
+   "kind": "turn",
+   "cue": {
+    "word": "قطعة",
+    "t": 75.2
+   },
+   "summary": "The idea: a costly cloth outside, rags inside."
+  },
+  {
+   "id": "B10",
+   "t": 94.4,
+   "kind": "rising",
+   "cue": {
+    "word": "لا",
+    "t": 94.4
+   },
+   "summary": "The strange rule: no opening before paying."
+  },
+  {
+   "id": "B11",
+   "t": 103.66,
+   "kind": "reveal",
+   "cue": {
+    "word": "ثمينًا",
+    "t": 103.66
+   },
+   "summary": "Why it works: people imagine treasure in a closed bundle."
+  },
+  {
+   "id": "B12",
+   "t": 115.46,
+   "kind": "turn",
+   "cue": {
+    "word": "اشترى",
+    "t": 115.46
+   },
+   "summary": "The buyer pays three coins without looking inside."
+  },
+  {
+   "id": "B13",
+   "t": 138.9,
+   "kind": "emotion",
+   "cue": {
+    "word": "بداخله؟",
+    "t": 138.9
+   },
+   "summary": "His wife asks the two questions he never asked himself."
+  },
+  {
+   "id": "B14",
+   "t": 149.52,
+   "kind": "reveal",
+   "cue": {
+    "word": "خدعة،",
+    "t": 149.52
+   },
+   "summary": "She sees the trick."
+  },
+  {
+   "id": "B15",
+   "t": 158.78,
+   "kind": "resolution",
+   "cue": {
+    "word": "ورحل",
+    "t": 158.78
+   },
+   "summary": "The thief leaves with the money and the monkey."
+  },
+  {
+   "id": "B16",
+   "t": 164.5,
+   "kind": "moral",
+   "cue": {
+    "word": "قديمة",
+    "t": 164.5
+   },
+   "summary": "The buyer is left with old clothes worth less than he paid."
+  }
+ ],
+ "cast": [
+  {
+   "id": "thief",
+   "name": "the thief",
+   "library": "person",
+   "base": "person costume:'servant' with pal overrides",
+   "new": false,
+   "look": "Unmasked street trickster, clearly different from the masked Moonbeam thief: red flat cap, black tunic with white dots (pal robe #141414, dot #fffaf0), yellow sash, black moustache, age 0.2, s 1.25. Default face: lid 0.45, brow -0.4 (sly), smirk. A friendly 'mask' face (big smile, brows up) whenever a victim looks at him."
+  },
+  {
+   "id": "monkey",
+   "name": "the trained monkey",
+   "library": "monkey",
+   "base": "Library monkey, s 0.7, plus a small red fez drawn by the scene",
+   "new": false,
+   "look": "Brown Library monkey with a red fez (yellow tassel) on its head as the performer mark. Uses hand IK, mouth smirk, brow, and a new rot field for flips and handstands."
+  },
+  {
+   "id": "seller",
+   "name": "the old-clothes seller",
+   "library": "person",
+   "base": "person costume:'beanSeller', age 0.6",
+   "new": false,
+   "look": "Frayed cap, brown tunic with pale apron, grey moustache, slight stoop. Hopeful at first, then worn out, then delighted by the monkey."
+  },
+  {
+   "id": "buyer",
+   "name": "the buyer",
+   "library": "person",
+   "base": "person costume:'merchant' with the green palette shown in people.png ('merchant pal')",
+   "new": false,
+   "look": "Green robe, big yellow turban with a red jewel, black beard, s 1.3: prosperous and pleased with himself. Blue is avoided so he never merges with the caption colour."
+  },
+  {
+   "id": "wife",
+   "name": "the buyer's wife",
+   "library": "person",
+   "base": "person costume:'villageWoman'",
+   "new": false,
+   "look": "Yellow headscarf, red dress, s 1.25. Calm, sharp eyes; the cleverest person in the film. Red against his green keeps the two apart at phone size."
+  },
+  {
+   "id": "crowd",
+   "name": "market people (3 to 5 on screen)",
+   "library": "person",
+   "base": "person costumes 'villager', 'maiden', 'bedouin', 'carpenter', 'servant' child",
+   "new": false,
+   "look": "A small fixed set of five extras reused in both markets with different positions; each has its own blink seed, walk speed and reaction delay. Each wears a small purse on the sash in S1 and S2."
+  }
+ ],
+ "sets": [
+  {
+   "id": "marketA",
+   "library": null,
+   "new": true,
+   "description": "The planned 'marketStreet' set, variant A, world 1800 x 1230, ground y 900. Back wall of flat-roofed sand houses from y 300 to 880 with three arches; two stalls (each 320 wide, counter top y 780, striped awning top y 520, two posts): fruit at x 250 (red and white) and cloth at x 780 (yellow and red, right post at x 960), with a few pots on the ground at x 1010. The seller corner for S3 to S6 is the open ground x 1000..1700 right of that post, in front of a plain wall with one arch. Sky by skyCycle. Approximate marks; measure on the set once drawn."
+  },
+  {
+   "id": "marketB",
+   "library": null,
+   "new": true,
+   "description": "The same 'marketStreet' function, variant B, so it reads as another market: mirrored layout, blue and yellow awnings, a dome and a palm above the roof line, later sun (skyCycle u 0.3). Display crate at x 500 (top y 800). The street runs on to a house front with a door (150 x 300) at x 1640 for S12."
+  },
+  {
+   "id": "alley",
+   "library": null,
+   "new": true,
+   "description": "The 'marketStreet' function with option alley:true: no stalls, two high blank walls (to y 120) in shadow tone, one dark arch at x 820, a washing line from (80, 260) to (920, 300) with three cloths that swing, a crate at x 500 (180 wide, top y 820) and a barrel at x 660 (top y 790). World 1000 x 1230."
+  },
+  {
+   "id": "home",
+   "library": null,
+   "new": true,
+   "description": "The planned 'palaceHall' set, variant merchantHouse: plain arched interior 1000 x 1230, ochre wall with red dot shading, one window at (780, 380) with dusk light, door at x 150 (150 x 320), tiled floor from y 900, a shelf with three jars at y 420, a low table at x 520 (220 wide, top y 800) and a stool at x 720 for the wife (and one at x 400 for the ending)."
+  },
+  {
+   "id": "duskRoad",
+   "library": "skyCycle",
+   "new": false,
+   "description": "Library skyCycle(u 0.45) + hillTrees + ground, with a tiny silhouette of the market domes (two arcs and a palm, 160 wide) on the horizon at x 200 drawn by the scene."
+  }
+ ],
+ "props": [
+  {
+   "id": "bundle",
+   "library": null,
+   "new": true,
+   "description": "clothBundle: a knotted cloth bundle about 150 wide x 120 tall at s 1 with a top knot (two ears 40 long). Fields: wrap 'plain' (grey-brown, two patches) or 'rich' (red with yellow diamonds, gold fringe, gold cord and tassel), open 0..1 (four corners fall flat one at a time to a 260-wide cloth showing the contents), contents 'rags' or 'treasure', sq, peek 0..1 (one corner lifted with a sleeve hanging out)."
+  },
+  {
+   "id": "oldClothes",
+   "library": null,
+   "new": true,
+   "description": "Part of the clothBundle module: a heap of 5 drab garments (shirt with two patches and a 30-unit hole, trousers, robe, cap, sock) plus the single shirt (160 x 150) that can be held up by two hand points."
+  },
+  {
+   "id": "richCloth",
+   "library": null,
+   "new": true,
+   "description": "The 'rich' wrap as a flat cloth 240 x 240: red, yellow diamond grid (6 x 6), 14-unit gold fringe; unfurl 0..1 with a travelling edge wave."
+  },
+  {
+   "id": "coins",
+   "library": null,
+   "new": true,
+   "description": "The planned 'coinPile' with n coins (single coins usable alone): yellow discs r 14 with a black rim and a red dot; heap up to 30."
+  },
+  {
+   "id": "sign",
+   "library": null,
+   "new": true,
+   "description": "noPeekSign: board 200 x 130 on a 260 post; front shows a black eye icon crossed by a red bar and the words NO PEEKING! (Bangers, 44 px minimum on the 1280 scale); flip 0..1."
+  },
+  {
+   "id": "moth",
+   "library": null,
+   "new": true,
+   "description": "Two pale triangles (wings, 14 units) and a dot, flapping at 12 Hz on a seeded zigzag path; used three times (26.38, 70.86, 163.86) as the running gag that marks the same old clothes."
+  },
+  {
+   "id": "figs",
+   "library": "fig",
+   "new": false,
+   "description": "Three Library figs for the juggling."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 10.4,
+   "paragraphs": [
+    1
+   ],
+   "set": "marketA",
+   "cast": [
+    "thief",
+    "monkey",
+    "crowd"
+   ],
+   "summary": "Market A. The thief strolls in, his eyes on purses; his monkey pops up and does three tricks; a small crowd gathers.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Start wide (zoom 1.0, centre x 500, y 615) on the street; from 4.9 ease to zoom 1.45 centred x 470, y 700 on thief and monkey; hold from 8.3."
+   },
+   "composition": "Thief stops at x 380 (s 1.25, head near y 610). Monkey lands at x 560, ground 900. Fruit stall behind at x 250. Three onlookers gather at x 720, 800, 880 (s 1.15, different costumes). Title in the top band y 80..230, clear of all heads.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 3.4,
+     "cue": {
+      "word": "كان",
+      "t": 0.0
+     },
+     "who": "lettering",
+     "action": "Style title 'THE THIEF AND HIS MONKEY' in the top band; fades by 3.4",
+     "acting": "title pops in with a 6 percent overshoot, holds, pops out",
+     "library": "S.title"
+    },
+    {
+     "t": 0.3,
+     "end": 3.0,
+     "cue": {
+      "word": "مدينة",
+      "t": 0.58
+     },
+     "who": "crowd",
+     "action": "Two passers-by cross in opposite directions (villager left to right, maiden right to left), each with a small purse on the sash",
+     "acting": "different walk speeds and bob, each glances at a stall; never in step",
+     "library": "person {costume:'villager'|'maiden'} + walk()"
+    },
+    {
+     "t": 1.0,
+     "end": 2.7,
+     "cue": {
+      "word": "رجل",
+      "t": 1.18
+     },
+     "who": "thief",
+     "action": "Walks in from x -80 to x 380 with a lazy stroll, hands behind his back",
+     "acting": "lid 0.45, smirk, pupils slide to the villager purse as it passes and follow it for 0.5 s",
+     "library": "walk(), footfalls(), gazePlan"
+    },
+    {
+     "t": 2.8,
+     "end": 3.5,
+     "cue": {
+      "word": "السرقة،",
+      "t": 2.82
+     },
+     "who": "lettering",
+     "action": "Arrow and label 'THIEF' pointing at him from the upper left",
+     "acting": "he notices the label, looks straight at camera once, raises one brow, then whistles innocently (mouth o, gaze up)",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 3.6,
+     "end": 4.2,
+     "cue": {
+      "word": "وله",
+      "t": 4.22
+     },
+     "who": "monkey",
+     "action": "Pops up from behind the thief onto his right shoulder (fez first, then the eyes, then the whole monkey)",
+     "acting": "eyes wide, smile, tail curls up; thief head tips 4 px away under the weight and his gaze goes to the monkey",
+     "library": "monkey + settleTo"
+    },
+    {
+     "t": 4.9,
+     "end": 5.5,
+     "cue": {
+      "word": "قرد",
+      "t": 4.9
+     },
+     "who": "monkey",
+     "action": "Jumps from the shoulder to the ground at x 560",
+     "acting": "anticipate crouch on the shoulder, stretch sq 1.12 in the air, landSquash 0.85, small dust",
+     "library": "anticipate(), hop(), landSquash(), dustBurst"
+    },
+    {
+     "t": 5.5,
+     "end": 6.8,
+     "cue": {
+      "word": "علمه",
+      "t": 5.52
+     },
+     "who": "thief",
+     "action": "Twirls a raised finger like a trainer; the monkey copies the twirl with its own finger a beat later",
+     "acting": "thief brow -0.4 (sly), gaze on monkey; monkey gaze on the finger, head following the circle",
+     "library": "PERSON_HANDS.pointUp; monkey handR"
+    },
+    {
+     "t": 6.9,
+     "end": 7.4,
+     "cue": {
+      "word": "يؤدي",
+      "t": 6.88
+     },
+     "who": "monkey",
+     "action": "Trick 1: flips up into a handstand, legs kicking, tail waving",
+     "acting": "new rot field 0 to pi with a hop; eyes stay level and happy; fez stays on",
+     "library": "monkey rot (new) + hop()"
+    },
+    {
+     "t": 7.4,
+     "end": 8.2,
+     "cue": {
+      "word": "حركات",
+      "t": 7.4
+     },
+     "who": "monkey",
+     "action": "Trick 2: back on its feet, juggles three figs in a tall arc",
+     "acting": "pupils follow the highest fig; tongue-tip smile; hands alternate",
+     "library": "fig(), monkey handL/handR"
+    },
+    {
+     "t": 8.3,
+     "end": 9.1,
+     "cue": {
+      "word": "مضحكة",
+      "t": 8.26
+     },
+     "who": "monkey",
+     "action": "Trick 3: back flip (one full turn, 0.6 s) and a ta-da pose with arms out; the figs land in the fez",
+     "acting": "anticipate before the flip, landSquash after, big smile, holds the pose",
+     "library": "hop(), landSquash()"
+    },
+    {
+     "t": 9.2,
+     "end": 10.0,
+     "cue": {
+      "word": "أمام",
+      "t": 9.24
+     },
+     "who": "crowd",
+     "action": "Three onlookers step in from the right and laugh",
+     "acting": "staggered by 3 and 6 frames; talk pulses, small sq bounces; all gazes on the monkey",
+     "library": "stagger(), walk(), lookAt()"
+    },
+    {
+     "t": 9.7,
+     "end": 10.4,
+     "cue": {
+      "word": "الناس.",
+      "t": 9.74
+     },
+     "who": "thief",
+     "action": "While they watch the monkey, his eyes drop to their sashes and purses",
+     "acting": "mask off: smile narrows to a smirk, lid 0.5, pupils snap purse to purse (2-frame saccades)",
+     "library": "gazePlan(t, plan, 0.07)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 8.6,
+     "text": "HA HA!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 3.9,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 10.4
+   }
+  },
+  {
+   "id": "S2",
+   "start": 10.4,
+   "end": 21.1,
+   "paragraphs": [
+    1
+   ],
+   "set": "marketA",
+   "cast": [
+    "thief",
+    "monkey",
+    "crowd"
+   ],
+   "summary": "His routine: he tours the stalls, sends the monkey out to hold every eye, and hunts for an opening behind the backs.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Track right with the walk from x 470 to x 780 (zoom 1.2) until 14.6; hold; from 17.6 push to zoom 1.8 on the thief behind the row of backs (centre x 640, y 700)."
+   },
+   "composition": "Thief stops at x 580 behind three onlookers (x 680, 770, 860) who watch the monkey perform on an upturned pot at x 1010, in front of the cloth stall. The audience looks right, the thief is left of them: eyes go right, his hand works from the left.",
+   "actions": [
+    {
+     "t": 10.6,
+     "end": 12.9,
+     "cue": {
+      "word": "اعتاد",
+      "t": 10.72
+     },
+     "who": "thief",
+     "action": "Strolls right along the street with the monkey riding his shoulder",
+     "acting": "easy bob; monkey sways a beat late and looks around at the stalls",
+     "library": "walk(), lurch-style rider offset"
+    },
+    {
+     "t": 11.4,
+     "end": 12.6,
+     "cue": {
+      "word": "الرجل",
+      "t": 11.4
+     },
+     "who": "crowd",
+     "action": "Background shoppers pass the other way; a stall keeper waves a hand over his goods",
+     "acting": "small independent loops, each with its own blink seed",
+     "library": "LIFE.t auto-blink"
+    },
+    {
+     "t": 12.9,
+     "end": 14.0,
+     "cue": {
+      "word": "الأسواق،",
+      "t": 12.96
+     },
+     "who": "camera",
+     "action": "The track reveals the full row of stalls (pots, cloth, fruit) and a second group of shoppers",
+     "acting": "thief head turns with a slow scan left to right, pleased"
+    },
+    {
+     "t": 14.6,
+     "end": 15.4,
+     "cue": {
+      "word": "يستعمل",
+      "t": 14.66
+     },
+     "who": "thief",
+     "action": "Stops and flicks two fingers forward: the signal",
+     "acting": "tiny gesture kept low at the hip, eyes not on the monkey but on the shoppers",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 15.4,
+     "end": 16.1,
+     "cue": {
+      "word": "القرد",
+      "t": 15.48
+     },
+     "who": "monkey",
+     "action": "Leaps off the shoulder over the heads of the shoppers and lands in front of them",
+     "acting": "anticipate, long arc (height 260), landSquash, ta-da",
+     "library": "anticipate(), hop(), landSquash()"
+    },
+    {
+     "t": 16.2,
+     "end": 16.9,
+     "cue": {
+      "word": "ليشغل",
+      "t": 16.18
+     },
+     "who": "monkey",
+     "action": "Cartwheels and spins on an upturned pot",
+     "acting": "rot runs two turns; tail streams behind; fez wobbles",
+     "library": "monkey rot (new)"
+    },
+    {
+     "t": 16.9,
+     "end": 17.6,
+     "cue": {
+      "word": "الناس",
+      "t": 16.92
+     },
+     "who": "crowd",
+     "action": "All three lean toward the monkey and clap",
+     "acting": "tips 0.06 to 0.1, staggered; dotted eye lines from the three heads to the monkey",
+     "library": "stagger(), S.arrow (dotted)"
+    },
+    {
+     "t": 17.6,
+     "end": 18.3,
+     "cue": {
+      "word": "بينما",
+      "t": 17.62
+     },
+     "who": "camera",
+     "action": "Push in on the thief behind the row of backs",
+     "acting": "he is the only still figure in the frame"
+    },
+    {
+     "t": 18.3,
+     "end": 18.8,
+     "cue": {
+      "word": "يبحث",
+      "t": 18.3
+     },
+     "who": "thief",
+     "action": "His pupils jump to purse 1 on the first sash; a small arrow pops on it",
+     "acting": "only the pupils move (suspense by stillness)",
+     "library": "gazePlan saccade, S.arrow"
+    },
+    {
+     "t": 18.8,
+     "end": 19.1,
+     "cue": {
+      "word": "عن",
+      "t": 18.78
+     },
+     "who": "thief",
+     "action": "Pupils jump to purse 2; second arrow",
+     "acting": "brow lifts a little more each time"
+    },
+    {
+     "t": 19.0,
+     "end": 19.7,
+     "cue": {
+      "word": "فرصة",
+      "t": 19.04
+     },
+     "who": "thief",
+     "action": "Pupils jump to purse 3, the fattest; third arrow, bigger",
+     "acting": "smirk grows, tongue-tip, shoulders rise"
+    },
+    {
+     "t": 19.7,
+     "end": 20.6,
+     "cue": {
+      "word": "للسرقة.",
+      "t": 19.72
+     },
+     "who": "thief",
+     "action": "His hand creeps toward purse 3 and hovers a hand-width away, fingers wiggling",
+     "acting": "tip 0.08 forward on tiptoe; we cut before he touches it",
+     "library": "handRW world target"
+    },
+    {
+     "t": 20.6,
+     "end": 21.1,
+     "who": "monkey",
+     "action": "In the pause the monkey glances back past the shoppers at the thief and smirks",
+     "acting": "mouth 'smirk', one quick look, then back to the act"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 21.05,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "whip",
+    "t": 21.1
+   }
+  },
+  {
+   "id": "S3",
+   "start": 21.1,
+   "end": 34.8,
+   "paragraphs": [
+    2
+   ],
+   "set": "marketA",
+   "cast": [
+    "seller",
+    "thief",
+    "monkey",
+    "crowd"
+   ],
+   "summary": "The old-clothes seller calls and calls; three passers-by refuse; the sun moves on; SOLD stays at 0. The thief watches from behind a stall post.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "World x 900..1800. Start zoom 1.1 centred x 1330, y 650; insert push to zoom 2.2 on the shirt 25.4 to 27.2; back to 1.25 for the refusals."
+   },
+   "composition": "Seller stands at x 1330 (s 1.25) behind a mat (x 1180..1480, y 900) with a heap of clothes. Stool at x 1420. Thief peeks from behind the awning post at x 960. Passers-by cross in front on y 930 (slightly larger, s 1.3).",
+   "actions": [
+    {
+     "t": 21.6,
+     "end": 22.6,
+     "cue": {
+      "word": "وفي",
+      "t": 21.6
+     },
+     "who": "set",
+     "action": "New corner of the same market: the seller mat with a heap of grey and brown clothes; sun at mid morning",
+     "acting": "cloud drifts; a shop sign swings",
+     "library": "skyCycle(u 0.15), swing()"
+    },
+    {
+     "t": 22.7,
+     "end": 23.5,
+     "cue": {
+      "word": "رأى",
+      "t": 22.8
+     },
+     "who": "thief",
+     "action": "His head and one shoulder edge out from behind the stall post; the monkey head appears above his",
+     "acting": "draw the actor then the post over it; gaze locks on the seller; ear, eye, then smirk",
+     "library": "peek pattern (guide section 6), lookAt()"
+    },
+    {
+     "t": 23.6,
+     "end": 24.1,
+     "cue": {
+      "word": "بائعًا",
+      "t": 23.58
+     },
+     "who": "lettering",
+     "action": "Arrow and label 'SELLER'",
+     "acting": "seller mid-call, hopeful brows (brow -0.5), smile",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 24.2,
+     "end": 24.9,
+     "cue": {
+      "word": "يحمل",
+      "t": 24.18
+     },
+     "who": "seller",
+     "action": "Lifts a shirt by its shoulders in both hands and shows it left and right",
+     "acting": "hopeful, eyes on passers-by, slight lean forward",
+     "library": "handLW/handRW to the shirt corners"
+    },
+    {
+     "t": 24.9,
+     "end": 25.5,
+     "cue": {
+      "word": "ملابس",
+      "t": 24.94
+     },
+     "who": "oldClothes",
+     "action": "The heap on the mat settles: trousers, a robe, a cap, all drab with patches",
+     "acting": "one sock slides off the heap"
+    },
+    {
+     "t": 25.5,
+     "end": 26.3,
+     "cue": {
+      "word": "قديمة",
+      "t": 25.62
+     },
+     "who": "camera",
+     "action": "Insert on the shirt: two patches, a frayed hem, a hole",
+     "acting": "the seller finger pokes through the hole by accident; he hides it behind his thumb"
+    },
+    {
+     "t": 26.4,
+     "end": 27.2,
+     "cue": {
+      "word": "مستعملة.",
+      "t": 26.38
+     },
+     "who": "moth",
+     "action": "A moth flutters out of the sleeve and zigzags up out of frame (first of three moths)",
+     "acting": "seller follows it with his eyes, embarrassed half smile",
+     "library": "seeded zigzag path, K.noise"
+    },
+    {
+     "t": 27.4,
+     "end": 28.6,
+     "cue": {
+      "word": "نادى",
+      "t": 27.4
+     },
+     "who": "seller",
+     "action": "Cups a hand to his mouth and calls; sound arcs leave his mouth",
+     "acting": "chest up, talk 0.9, head turning to follow each passer-by",
+     "library": "PERSON_HANDS.cupMouth, soundArcs()"
+    },
+    {
+     "t": 28.7,
+     "end": 29.7,
+     "cue": {
+      "word": "البائع",
+      "t": 28.78
+     },
+     "who": "crowd",
+     "action": "Passer-by 1 (villager) is offered the shirt, shakes his head and walks on without slowing",
+     "acting": "palm up refusal, eyes ahead; seller arm follows him then drops",
+     "library": "walk(), PERSON_HANDS.shield"
+    },
+    {
+     "t": 29.8,
+     "end": 30.6,
+     "cue": {
+      "word": "بضاعته",
+      "t": 29.78
+     },
+     "who": "crowd",
+     "action": "Passer-by 2 (maiden) glances at the heap, raises her brows and hurries past",
+     "acting": "gaze flick to the heap and away; seller smile slips a step",
+     "library": "walk(), gazePlan"
+    },
+    {
+     "t": 30.7,
+     "end": 31.4,
+     "cue": {
+      "word": "طويلًا،",
+      "t": 30.68
+     },
+     "who": "set",
+     "action": "Time passes in the picture: the sun slides along its arc and the post shadow stretches",
+     "acting": "seller calls get smaller: talk 0.9 to 0.4, the cupped hand sinks",
+     "library": "skyCycle(u 0.15 to 0.4) with kfn"
+    },
+    {
+     "t": 32.2,
+     "end": 33.3,
+     "cue": {
+      "word": "أحدًا",
+      "t": 32.28
+     },
+     "who": "crowd",
+     "action": "Passer-by 3 (bedouin) stops, takes the shirt, holds it to the light and puts a finger through the hole",
+     "acting": "seller leans in, hands clasped, hope returning (brow -0.6)",
+     "library": "PERSON_HANDS.clasp"
+    },
+    {
+     "t": 33.4,
+     "end": 34.1,
+     "cue": {
+      "word": "يرغب",
+      "t": 33.38
+     },
+     "who": "crowd",
+     "action": "He hands the shirt back with two fingers and walks off",
+     "acting": "seller hands stay out a beat too long holding the shirt (follow-through)"
+    },
+    {
+     "t": 34.1,
+     "end": 34.8,
+     "cue": {
+      "word": "شرائها.",
+      "t": 34.14
+     },
+     "who": "lettering",
+     "action": "Counter box 'SOLD: 0' pops in the top right; the 0 gives one sad bounce",
+     "acting": "seller looks up at it, shoulders drop",
+     "library": "S.counter"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 27.9,
+     "text": "OLD CLOTHES!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 34.8
+   }
+  },
+  {
+   "id": "S4",
+   "start": 34.8,
+   "end": 42.0,
+   "paragraphs": [
+    2
+   ],
+   "set": "marketA",
+   "cast": [
+    "seller",
+    "thief"
+   ],
+   "summary": "Worn out, the seller wraps the clothes into a bundle, sits and puts the bundle down at his side: the target is set.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Zoom 1.5 centred x 1310, y 720. Keep the ground left of the stool in frame: that is where the bundle will sit."
+   },
+   "composition": "Seller at x 1330 kneels to the mat, then sits on the stool at x 1400. Bundle ends at x 1220, y 900, on his screen-left side.",
+   "actions": [
+    {
+     "t": 34.9,
+     "end": 36.1,
+     "cue": {
+      "word": "تعب",
+      "t": 34.92
+     },
+     "who": "seller",
+     "action": "Lets the shirt hang, wipes his brow with the back of his hand; one sweat drop",
+     "acting": "lid 0.5, lean 0.08, mouth frown, slow blink",
+     "library": "drops(), person lean"
+    },
+    {
+     "t": 36.2,
+     "end": 36.9,
+     "cue": {
+      "word": "أخيرًا،",
+      "t": 36.18
+     },
+     "who": "seller",
+     "action": "A long sigh",
+     "acting": "breath: sq 1.03 then 0.95, a small puff from the mouth, head sinks 6 px",
+     "library": "breathe(), steam()"
+    },
+    {
+     "t": 37.0,
+     "end": 37.9,
+     "cue": {
+      "word": "فجمع",
+      "t": 36.98
+     },
+     "who": "seller",
+     "action": "Kneels and sweeps the clothes to the middle of a plain brown cloth",
+     "acting": "kneel 0 to 1 with a settle; the garments slide in one after another",
+     "library": "person kneel, settleTo()"
+    },
+    {
+     "t": 37.9,
+     "end": 38.8,
+     "cue": {
+      "word": "الملابس",
+      "t": 37.92
+     },
+     "who": "bundle",
+     "action": "The four corners of the plain cloth fold up over the heap",
+     "acting": "bundle open 1 to 0, corners arriving one at a time",
+     "library": "clothBundle {wrap:'plain', open}"
+    },
+    {
+     "t": 38.9,
+     "end": 39.4,
+     "cue": {
+      "word": "صرة",
+      "t": 38.9
+     },
+     "who": "bundle",
+     "action": "He pulls the knot tight: the bundle pops into shape; arrow and label 'BUNDLE'",
+     "acting": "squash 0.88 and rebound on the tug; seller gives one nod",
+     "library": "impactSquash(), S.arrow, S.label"
+    },
+    {
+     "t": 39.5,
+     "end": 40.4,
+     "cue": {
+      "word": "وجلس",
+      "t": 39.44
+     },
+     "who": "seller",
+     "action": "Stands, sets the bundle on the ground at his left side and drops onto the stool",
+     "acting": "sit 0 to 1 with a heavy settle; the stool creaks one unit; knees apart, hands on knees",
+     "library": "person sit, seat:'stool', settleTo()"
+    },
+    {
+     "t": 40.5,
+     "end": 41.6,
+     "cue": {
+      "word": "ليستريح.",
+      "t": 40.5
+     },
+     "who": "seller",
+     "action": "Chin into his hand, eyes half shut",
+     "acting": "lid 0.6, slow breathing, gaze on the ground far from the bundle",
+     "library": "PERSON_HANDS.chin, breathe()"
+    },
+    {
+     "t": 41.6,
+     "end": 42.0,
+     "who": "thief",
+     "action": "In the pause two pairs of eyes pop out at the left frame edge, low: thief and monkey",
+     "acting": "both gazes on the bundle, not on the seller",
+     "library": "peekEyes()"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 41.9,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 42.0
+   }
+  },
+  {
+   "id": "S5",
+   "start": 42.0,
+   "end": 54.2,
+   "paragraphs": [
+    3
+   ],
+   "set": "marketA",
+   "cast": [
+    "thief",
+    "monkey",
+    "seller"
+   ],
+   "summary": "The thief arrives all smiles and sets the monkey performing on the far side of the seller; the seller laughs and turns his whole attention away from the bundle.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "twoShot(thief, monkey) with the seller between them: zoom 1.2 centred x 1300, y 700, drifting 30 units right as the seller leans toward the monkey."
+   },
+   "composition": "Left to right: thief x 1060, bundle x 1220, seller on the stool x 1400, monkey x 1590. The picture explains the trick by itself: eyes go right, the bundle is left.",
+   "actions": [
+    {
+     "t": 42.4,
+     "end": 43.4,
+     "cue": {
+      "word": "اقترب",
+      "t": 42.4
+     },
+     "who": "thief",
+     "action": "Walks in from the left with the monkey on his shoulder",
+     "acting": "open friendly face, but one glance down at the bundle as he passes it",
+     "library": "walk(), footfalls()"
+    },
+    {
+     "t": 43.4,
+     "end": 44.2,
+     "cue": {
+      "word": "اللص",
+      "t": 43.42
+     },
+     "who": "thief",
+     "action": "Stops at x 1060 and greets the seller with a wave and a small bow",
+     "acting": "mask on: big smile, brows up",
+     "library": "PERSON_HANDS.wave"
+    },
+    {
+     "t": 44.2,
+     "end": 45.0,
+     "cue": {
+      "word": "البائع",
+      "t": 44.24
+     },
+     "who": "seller",
+     "action": "Lifts his head from his hand; eyes open",
+     "acting": "lid 0.6 to 0.1, polite tired nod, gaze to the thief",
+     "library": "lookAt()"
+    },
+    {
+     "t": 45.0,
+     "end": 45.7,
+     "cue": {
+      "word": "وجعل",
+      "t": 45.02
+     },
+     "who": "thief",
+     "action": "Presents the monkey with an open hand, then flicks the two-finger signal at his hip",
+     "acting": "the same low gesture as at 14.66 (setup and payoff)",
+     "library": "PERSON_HANDS.palmsUp, pointFwd"
+    },
+    {
+     "t": 45.7,
+     "end": 46.3,
+     "cue": {
+      "word": "القرد",
+      "t": 45.74
+     },
+     "who": "monkey",
+     "action": "Leaps from the shoulder in a high arc over the seller and lands at x 1590",
+     "acting": "anticipate, stretch, landSquash; seller head and pupils follow the arc left to right",
+     "library": "anticipate(), hop(), landSquash(), look()"
+    },
+    {
+     "t": 46.3,
+     "end": 47.0,
+     "cue": {
+      "word": "يقفز",
+      "t": 46.34
+     },
+     "who": "monkey",
+     "action": "Three quick hops on the spot, each higher",
+     "acting": "sq on each landing, fez bouncing a frame late",
+     "library": "hop(), landSquash()"
+    },
+    {
+     "t": 47.0,
+     "end": 47.9,
+     "cue": {
+      "word": "ويلعب",
+      "t": 47.04
+     },
+     "who": "monkey",
+     "action": "Juggles three figs, then catches one on its head",
+     "acting": "eyes cross toward the fig on its head",
+     "library": "fig()"
+    },
+    {
+     "t": 47.9,
+     "end": 48.6,
+     "cue": {
+      "word": "أمامه.",
+      "t": 47.9
+     },
+     "who": "monkey",
+     "action": "Handstand, walking two steps on its hands toward the seller",
+     "acting": "tail waving like a flag",
+     "library": "monkey rot (new)"
+    },
+    {
+     "t": 48.6,
+     "end": 49.8,
+     "cue": {
+      "word": "ضحك",
+      "t": 48.62
+     },
+     "who": "seller",
+     "action": "Bursts out laughing",
+     "acting": "talk pulses, shoulders shake (sq 0.96..1.03), eyes squeezed (lid 0.8) then open and bright; the tiredness is gone",
+     "library": "person talk, tremble() small"
+    },
+    {
+     "t": 49.9,
+     "end": 50.6,
+     "cue": {
+      "word": "البائع،",
+      "t": 49.88
+     },
+     "who": "seller",
+     "action": "Claps twice and slaps his knee",
+     "acting": "hands meet at chest height on two beats",
+     "library": "PERSON_HANDS.clasp"
+    },
+    {
+     "t": 50.7,
+     "end": 51.3,
+     "cue": {
+      "word": "وصار",
+      "t": 50.7
+     },
+     "who": "thief",
+     "action": "The moment the seller turns away his smile drops and his eyes slide down to the bundle",
+     "acting": "mask off: lid 0.45, brow -0.4, pupils down-right",
+     "library": "gazePlan"
+    },
+    {
+     "t": 51.4,
+     "end": 52.0,
+     "cue": {
+      "word": "يتابع",
+      "t": 51.36
+     },
+     "who": "seller",
+     "action": "Turns on the stool toward the monkey; his gaze sticks to it",
+     "acting": "tip 0.06 to the right, pupils track the monkey position every frame",
+     "library": "look() on the monkey position"
+    },
+    {
+     "t": 52.1,
+     "end": 52.8,
+     "cue": {
+      "word": "حركات",
+      "t": 52.08
+     },
+     "who": "monkey",
+     "action": "Back flip",
+     "acting": "seller head bobs up and down with the flip, a beat late",
+     "library": "hop(), landSquash()"
+    },
+    {
+     "t": 52.8,
+     "end": 53.6,
+     "cue": {
+      "word": "الحيوان",
+      "t": 52.82
+     },
+     "who": "monkey",
+     "action": "Balances a fig on its nose, arms out, wobbling",
+     "acting": "slow sway; seller mouth hangs open in a smile"
+    },
+    {
+     "t": 53.6,
+     "end": 54.2,
+     "cue": {
+      "word": "باهتمام.",
+      "t": 53.62
+     },
+     "who": "seller",
+     "action": "Leans further toward the monkey; a dotted eye line runs from his eyes to the fig",
+     "acting": "tip 0.12, eyes wide, both hands on his knees; his back is now to the bundle",
+     "library": "S.arrow (dotted)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 49.0,
+     "text": "HA HA!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 54.2
+   }
+  },
+  {
+   "id": "S6",
+   "start": 54.2,
+   "end": 63.4,
+   "paragraphs": [
+    3
+   ],
+   "set": "marketA",
+   "cast": [
+    "thief",
+    "monkey",
+    "seller"
+   ],
+   "summary": "The steal: a slow reach, one false alarm, the bundle is gone, and the seller never looks round.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Push from zoom 1.4 to 1.9 centred x 1180, y 760 (thief hand and bundle). The laughing seller stays in the right third so we see that he does not notice. Pull back to 1.3 at 61.6."
+   },
+   "composition": "Thief at x 1060, bundle x 1220, seller x 1400 leaning right. Hand path: from the thief hip to the knot at (1220, 830).",
+   "actions": [
+    {
+     "t": 54.4,
+     "end": 55.4,
+     "cue": {
+      "word": "وفي",
+      "t": 54.4
+     },
+     "who": "camera",
+     "action": "Slow push in on the thief and the bundle",
+     "acting": "all motion in the frame slows except the monkey in the far background"
+    },
+    {
+     "t": 55.5,
+     "end": 56.4,
+     "cue": {
+      "word": "اللحظة",
+      "t": 55.78
+     },
+     "who": "thief",
+     "action": "Stands dead still; only his pupils move: seller, bundle, seller, bundle",
+     "acting": "suspense by stillness; no blink",
+     "library": "gazePlan saccades, noBlink"
+    },
+    {
+     "t": 56.5,
+     "end": 57.5,
+     "cue": {
+      "word": "مد",
+      "t": 56.48
+     },
+     "who": "thief",
+     "action": "His arm stretches toward the knot, slowly, on tiptoe",
+     "acting": "tip 0.1, tongue-tip, shoulder rising",
+     "library": "handRW world target eased over 1.0 s"
+    },
+    {
+     "t": 57.5,
+     "end": 57.9,
+     "cue": {
+      "word": "يده",
+      "t": 57.56
+     },
+     "who": "thief",
+     "action": "Fingers close round the knot",
+     "acting": "small squeeze of the bundle toward his hand"
+    },
+    {
+     "t": 57.9,
+     "end": 58.2,
+     "who": "seller",
+     "action": "False alarm: the seller rocks back with a laugh, his elbow swinging toward the thief",
+     "acting": "thief freezes for 6 frames: eyes wide, one sweat drop, hand still on the knot",
+     "library": "settleTo(), drops()"
+    },
+    {
+     "t": 58.2,
+     "end": 59.0,
+     "cue": {
+      "word": "وأخذ",
+      "t": 58.16
+     },
+     "who": "thief",
+     "action": "Lifts the bundle straight up and away in one smooth move",
+     "acting": "the lift starts on the seller next laugh; body leans back to balance the weight"
+    },
+    {
+     "t": 59.1,
+     "end": 59.6,
+     "cue": {
+      "word": "صرة",
+      "t": 59.1
+     },
+     "who": "bundle",
+     "action": "The bundle swings to his chest; a dashed outline blinks where it sat",
+     "acting": "bundle swings a beat late and settles",
+     "library": "swing(), dashed outline"
+    },
+    {
+     "t": 59.6,
+     "end": 60.4,
+     "cue": {
+      "word": "الملابس",
+      "t": 59.62
+     },
+     "who": "thief",
+     "action": "Slides the bundle behind his back, both hands behind him",
+     "acting": "innocent whistle face, gaze up"
+    },
+    {
+     "t": 60.5,
+     "end": 61.5,
+     "cue": {
+      "word": "من",
+      "t": 60.5
+     },
+     "who": "thief",
+     "action": "Backs away to the left in four tiptoe steps",
+     "acting": "knees high, a short hold on each toe, eyes never leaving the seller",
+     "library": "walk() with sneak option (planned), footfalls()"
+    },
+    {
+     "t": 61.6,
+     "end": 62.2,
+     "cue": {
+      "word": "ينتبه",
+      "t": 61.6
+     },
+     "who": "seller",
+     "action": "Camera eases back: the seller is still laughing at the monkey, back turned to the empty spot",
+     "acting": "the dashed outline and an arrow mark the empty ground behind him",
+     "library": "S.arrow"
+    },
+    {
+     "t": 62.3,
+     "end": 62.9,
+     "cue": {
+      "word": "الرجل.",
+      "t": 62.26
+     },
+     "who": "thief",
+     "action": "At the frame edge he gives a short low hush sign to the monkey",
+     "acting": "one finger to the lips, then gone",
+     "library": "PERSON_HANDS.hush"
+    },
+    {
+     "t": 62.9,
+     "end": 63.4,
+     "who": "monkey",
+     "action": "Bows to the seller, tips its fez and scampers off left after the thief",
+     "acting": "quick bow (tip 0.3), then a bounding run; the seller waves goodbye, still smiling",
+     "library": "hop()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 59.2,
+     "text": "SWIPE!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 63.35,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "wipe",
+    "t": 63.4
+   }
+  },
+  {
+   "id": "S7",
+   "start": 63.4,
+   "end": 72.1,
+   "paragraphs": [
+    4
+   ],
+   "set": "alley",
+   "cast": [
+    "thief",
+    "monkey"
+   ],
+   "summary": "An empty alley. He checks that no one is near, opens the prize and finds only rags.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide zoom 1.1 centred x 500, y 650 for the arrival and the empty alley; from 68.4 push to zoom 1.7 on the crate, centred x 500, y 740."
+   },
+   "composition": "Crate at x 500 (top y 820, 180 wide). Thief ends at x 400, monkey sits on a barrel at x 660 (top y 790). High blank walls, one dark arch at x 820, a washing line across the top.",
+   "actions": [
+    {
+     "t": 63.9,
+     "end": 64.6,
+     "cue": {
+      "word": "أخذ",
+      "t": 63.92
+     },
+     "who": "thief",
+     "action": "Hurries in from the right with the bundle under his arm",
+     "acting": "fast walk, looking back over his shoulder twice",
+     "library": "walk(), footfalls()"
+    },
+    {
+     "t": 65.1,
+     "end": 65.7,
+     "cue": {
+      "word": "القرد",
+      "t": 65.14
+     },
+     "who": "monkey",
+     "action": "Bounds in behind him and springs onto the barrel",
+     "acting": "two bounds and a hop, landSquash on the barrel",
+     "library": "hop(), landSquash()"
+    },
+    {
+     "t": 65.7,
+     "end": 66.5,
+     "cue": {
+      "word": "والصرة",
+      "t": 65.72
+     },
+     "who": "thief",
+     "action": "Holds the bundle up at arm length and admires it",
+     "acting": "greedy grin, eyes shining; monkey looks at the bundle too",
+     "library": "star() glint in the eyes"
+    },
+    {
+     "t": 67.1,
+     "end": 67.6,
+     "cue": {
+      "word": "مكان",
+      "t": 67.12
+     },
+     "who": "thief",
+     "action": "Looks left, then right, then up at the washing line",
+     "acting": "head snaps with 2-frame saccades; hugging the bundle to his chest",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 67.6,
+     "end": 68.3,
+     "cue": {
+      "word": "خال.",
+      "t": 67.64
+     },
+     "who": "set",
+     "action": "The alley is empty: nothing moves but the washing line and one drifting leaf",
+     "acting": "he breathes out; shoulders drop",
+     "library": "swing(), breathe()"
+    },
+    {
+     "t": 68.4,
+     "end": 69.1,
+     "who": "thief",
+     "action": "In the pause he sets the bundle on the crate and rubs his hands",
+     "acting": "bundle lands with a small squash; hand rub with shoulders up",
+     "library": "impactSquash()"
+    },
+    {
+     "t": 69.1,
+     "end": 70.1,
+     "cue": {
+      "word": "فتحها",
+      "t": 69.12
+     },
+     "who": "bundle",
+     "action": "He unties the knot; the corners of the plain cloth fall open",
+     "acting": "open 0 to 1, each corner flopping with follow-through",
+     "library": "clothBundle {wrap:'plain', open}"
+    },
+    {
+     "t": 70.1,
+     "end": 70.8,
+     "cue": {
+      "word": "ورأى",
+      "t": 70.14
+     },
+     "who": "thief",
+     "action": "Bends over the open cloth, eyes wide, expecting treasure; the monkey leans in from the other side",
+     "acting": "tip 0.14, brows up, mouth o, a held beat of hope",
+     "library": "lookAt()"
+    },
+    {
+     "t": 70.9,
+     "end": 71.5,
+     "cue": {
+      "word": "الملابس",
+      "t": 70.86
+     },
+     "who": "thief",
+     "action": "Lifts the shirt with two fingers and looks at the monkey through the hole",
+     "acting": "his eye visible through the hole; a moth flutters out (second moth)",
+     "library": "handRW, moth path"
+    },
+    {
+     "t": 71.5,
+     "end": 72.1,
+     "cue": {
+      "word": "البالية،",
+      "t": 71.52
+     },
+     "who": "thief",
+     "action": "His face falls; the shirt drops back on the heap",
+     "acting": "mouth frown, brow worried, shoulders sag with a settle; monkey covers its eyes with both hands",
+     "library": "settleTo(), monkey handL/handR"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 71.6,
+     "text": "RAGS!?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 68.75,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 72.1
+   }
+  },
+  {
+   "id": "S8",
+   "start": 72.1,
+   "end": 84.0,
+   "paragraphs": [
+    4
+   ],
+   "set": "alley",
+   "cast": [
+    "thief",
+    "monkey"
+   ],
+   "summary": "The idea: he rewraps the rags in a costly cloth so the outside lies about the inside.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Zoom 1.6 centred x 500, y 740; ease to zoom 2.0 on the finished bundle at 79.8; hold for the cutaway; small pull back to 1.7 for the wink at 83.4."
+   },
+   "composition": "Same marks. The rich cloth unfurls across the crate from x 380 to 620. Cutaway circle (radius 90) opens on the bundle at (500, 770). Comparison labels sit left and right of the bundle, never over a face.",
+   "actions": [
+    {
+     "t": 72.3,
+     "end": 72.9,
+     "cue": {
+      "word": "ثم",
+      "t": 72.3
+     },
+     "who": "thief",
+     "action": "Strokes his chin; his eyes wander up and stop: an idea; a small bulb pops beside his head",
+     "acting": "thinking saccades, then brows up and a slow smile",
+     "library": "PERSON_HANDS.chin, gazePlan, bulb()"
+    },
+    {
+     "t": 72.9,
+     "end": 73.8,
+     "cue": {
+      "word": "جمعها",
+      "t": 72.94
+     },
+     "who": "thief",
+     "action": "Scoops the rags into a tight heap with both hands",
+     "acting": "brisk, businesslike; the plain cloth is tossed aside",
+     "library": "PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 74.5,
+     "end": 75.2,
+     "cue": {
+      "word": "داخل",
+      "t": 74.48
+     },
+     "who": "thief",
+     "action": "Pulls a folded square of cloth out of his tunic with a flourish",
+     "acting": "anticipation dip, then the arm sweeps up"
+    },
+    {
+     "t": 75.2,
+     "end": 75.7,
+     "cue": {
+      "word": "قطعة",
+      "t": 75.2
+     },
+     "who": "richCloth",
+     "action": "The cloth snaps open across the crate: deep red with yellow diamonds and a gold fringe",
+     "acting": "unfurls in 8 frames with a wave running along its edge, then settles",
+     "library": "new prop, wave by K.noise-free sine of t"
+    },
+    {
+     "t": 75.7,
+     "end": 76.4,
+     "cue": {
+      "word": "قماش",
+      "t": 75.72
+     },
+     "who": "monkey",
+     "action": "Uncovers its eyes, stares, reaches out and strokes the cloth",
+     "acting": "eyes wide, mouth o, one finger",
+     "library": "monkey handR IK"
+    },
+    {
+     "t": 76.4,
+     "end": 77.3,
+     "cue": {
+      "word": "جميلة",
+      "t": 76.42
+     },
+     "who": "fx",
+     "action": "Three star glints run across the cloth one after another",
+     "acting": "thief admires it at arm length, head tilted",
+     "library": "star()"
+    },
+    {
+     "t": 77.4,
+     "end": 78.2,
+     "cue": {
+      "word": "غالية",
+      "t": 77.4
+     },
+     "who": "coins",
+     "action": "A small coin stack icon pops beside the cloth with an up arrow: this cloth is dear",
+     "acting": "thief rubs thumb and fingers together",
+     "library": "coinPile, S.arrow"
+    },
+    {
+     "t": 78.8,
+     "end": 79.7,
+     "cue": {
+      "word": "حتى",
+      "t": 78.78
+     },
+     "who": "bundle",
+     "action": "He drops the rags in the middle and folds the four rich corners over them",
+     "acting": "open 1 to 0, corners one at a time, a gold cord tied on top with a tassel",
+     "library": "clothBundle {wrap:'rich', open}"
+    },
+    {
+     "t": 79.8,
+     "end": 80.4,
+     "cue": {
+      "word": "يبدو",
+      "t": 79.82
+     },
+     "who": "bundle",
+     "action": "The finished bundle: a pop, a glint, arrow and label 'OUTSIDE: FANCY'",
+     "acting": "squash and rebound; tassel swings and settles",
+     "library": "impactSquash(), swing(), star()"
+    },
+    {
+     "t": 80.6,
+     "end": 81.5,
+     "cue": {
+      "word": "بداخلها",
+      "t": 80.58
+     },
+     "who": "fx",
+     "action": "A round cutaway opens on the bundle and shows the same patched rags inside; label 'INSIDE: RAGS'",
+     "acting": "iris opens in 6 frames; the holed shirt is recognisable",
+     "library": "inset circle (planned), clip"
+    },
+    {
+     "t": 81.5,
+     "end": 82.3,
+     "cue": {
+      "word": "أثمن",
+      "t": 81.54
+     },
+     "who": "thief",
+     "action": "Polishes the bundle with his sleeve and pats it",
+     "acting": "smug: lid 0.5, smirk, chest out"
+    },
+    {
+     "t": 83.2,
+     "end": 84.0,
+     "cue": {
+      "word": "الحقيقة.",
+      "t": 83.38
+     },
+     "who": "thief",
+     "action": "The cutaway closes; he winks at the camera, and the monkey copies his smug pose with folded arms",
+     "acting": "wink 'R', gaze to camera [0, 0.05]; the one lens look of the film for him after 2.82",
+     "library": "person wink, PERSON_HANDS.folded"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 80.7,
+     "text": "INSIDE: RAGS"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 84.0,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S9",
+   "start": 84.0,
+   "end": 98.7,
+   "paragraphs": [
+    5
+   ],
+   "set": "marketB",
+   "cast": [
+    "thief",
+    "monkey",
+    "crowd"
+   ],
+   "summary": "Another market. He displays the fancy bundle, names a low price and sets his strange rule: no opening before paying.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "The 'LATER...' card covers 83.6 to 85.6 (camera cut hidden at its midpoint). Wide zoom 1.1 centred x 500, y 650 until 89.9; then zoom 1.5 centred x 470, y 720 on the display."
+   },
+   "composition": "Market B: blue and yellow awnings, a dome and a palm behind. Display crate at x 500 (top y 800) with the bundle on it. Thief stands at x 350, monkey sits on the ground at x 250. Onlookers gather at x 660, 760, 860. Price box upper right, sign board on a post at x 590.",
+   "actions": [
+    {
+     "t": 84.0,
+     "end": 85.6,
+     "cue": {
+      "word": "ذهب",
+      "t": 84.08
+     },
+     "who": "lettering",
+     "action": "Transition card 'LATER...' wipes across and clears",
+     "acting": "the alley is replaced by Market B under the card",
+     "library": "S.transition"
+    },
+    {
+     "t": 86.3,
+     "end": 87.5,
+     "cue": {
+      "word": "سوق",
+      "t": 86.38
+     },
+     "who": "thief",
+     "action": "Walks in from the left carrying the bundle on both palms like a treasure, monkey on his shoulder",
+     "acting": "chin high, slow ceremonial steps",
+     "library": "walk(), footfalls()"
+    },
+    {
+     "t": 86.9,
+     "end": 87.6,
+     "cue": {
+      "word": "آخر",
+      "t": 86.86
+     },
+     "who": "lettering",
+     "action": "Label 'ANOTHER MARKET' on the top band",
+     "acting": "pops in and out within 1.6 s",
+     "library": "S.label"
+    },
+    {
+     "t": 87.6,
+     "end": 88.4,
+     "cue": {
+      "word": "وعرض",
+      "t": 87.64
+     },
+     "who": "thief",
+     "action": "Sets the bundle on the display crate and steps back with a showman sweep of both arms",
+     "acting": "anticipate, then armsOut; the monkey hops down and mirrors the sweep",
+     "library": "PERSON_HANDS.armsOut, hop()"
+    },
+    {
+     "t": 88.5,
+     "end": 89.1,
+     "cue": {
+      "word": "الصرة",
+      "t": 88.48
+     },
+     "who": "bundle",
+     "action": "Glints on the gold fringe; three heads in the street turn toward it",
+     "acting": "onlookers stagger in by 4 and 8 frames",
+     "library": "star(), stagger()"
+    },
+    {
+     "t": 89.2,
+     "end": 89.9,
+     "cue": {
+      "word": "للبيع",
+      "t": 89.2
+     },
+     "who": "thief",
+     "action": "Calls out with a cupped hand",
+     "acting": "talk 0.9, sound arcs, brows up",
+     "library": "PERSON_HANDS.cupMouth, soundArcs()"
+    },
+    {
+     "t": 90.0,
+     "end": 90.7,
+     "cue": {
+      "word": "بسعر",
+      "t": 89.96
+     },
+     "who": "lettering",
+     "action": "A price box pops up beside the bundle showing a coin and the number 10",
+     "acting": "onlookers lean in",
+     "library": "S.box, S.counter"
+    },
+    {
+     "t": 90.7,
+     "end": 91.5,
+     "cue": {
+      "word": "منخفض.",
+      "t": 90.72
+     },
+     "who": "lettering",
+     "action": "The counter runs down 10 to 3 and stamps 'ONLY 3 COINS'",
+     "acting": "onlookers brows jump; one nudges the next",
+     "library": "S.counter, S.emphasis"
+    },
+    {
+     "t": 91.6,
+     "end": 92.9,
+     "cue": {
+      "word": "وضع",
+      "t": 91.56
+     },
+     "who": "thief",
+     "action": "Raises one finger: wait",
+     "acting": "stern brow 0.6, mouth closed, a held pause while every eye goes to the finger",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 93.1,
+     "end": 93.6,
+     "cue": {
+      "word": "شرطًا",
+      "t": 93.08
+     },
+     "who": "sign",
+     "action": "A sign board swings up on its post beside the bundle, blank side first",
+     "acting": "swing settle",
+     "library": "swing()"
+    },
+    {
+     "t": 93.7,
+     "end": 94.3,
+     "cue": {
+      "word": "غريبًا:",
+      "t": 93.68
+     },
+     "who": "crowd",
+     "action": "The onlookers tilt their heads; one scratches his head",
+     "acting": "three different reactions, staggered",
+     "library": "PERSON_HANDS.headHold, stagger()"
+    },
+    {
+     "t": 94.4,
+     "end": 95.1,
+     "cue": {
+      "word": "لا",
+      "t": 94.4
+     },
+     "who": "sign",
+     "action": "The board flips: an eye crossed by a red bar and 'NO PEEKING!'",
+     "acting": "flip in 5 frames with a squash",
+     "library": "S.emphasis style lettering"
+    },
+    {
+     "t": 95.8,
+     "end": 96.5,
+     "cue": {
+      "word": "للمشتري",
+      "t": 95.76
+     },
+     "who": "crowd",
+     "action": "The nearest onlooker reaches to lift a corner of the cloth",
+     "acting": "curious, tongue-tip",
+     "library": "handRW"
+    },
+    {
+     "t": 96.6,
+     "end": 97.3,
+     "cue": {
+      "word": "فتحها",
+      "t": 96.56
+     },
+     "who": "thief",
+     "action": "Slaps his palm flat on the bundle and wags a finger; the monkey wags its finger too",
+     "acting": "fast block, then a slow wag; onlooker hand snaps back",
+     "library": "PERSON_HANDS.shield, pointUp"
+    },
+    {
+     "t": 97.9,
+     "end": 98.7,
+     "cue": {
+      "word": "دفع",
+      "t": 97.9
+     },
+     "who": "thief",
+     "action": "Holds out his open palm and taps it twice; a coin icon with an arrow points into the palm",
+     "acting": "smile returns, brows up: pay first",
+     "library": "PERSON_HANDS.palmsUp, S.arrow"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 86.9,
+     "text": "ANOTHER MARKET"
+    },
+    {
+     "t": 90.9,
+     "text": "ONLY 3 COINS"
+    },
+    {
+     "t": 94.5,
+     "text": "NO PEEKING!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 98.7
+   }
+  },
+  {
+   "id": "S10",
+   "start": 98.7,
+   "end": 105.0,
+   "paragraphs": [
+    5
+   ],
+   "set": "marketB",
+   "cast": [
+    "thief",
+    "monkey",
+    "crowd"
+   ],
+   "summary": "Why the rule works: the onlookers fill the closed bundle with imagined treasure.",
+   "camera": {
+    "shot": "medium",
+    "move": "tilt",
+    "notes": "Zoom 1.4; tilt up from the bundle (y 760) to the thought cloud (centre y 380) at 100.5, holding thief face at the lower left."
+   },
+   "composition": "Thought cloud 560 x 360 centred (640, 380) with its tail to the middle onlooker head at (760, 600). Thief lower left, turned away from the crowd. Monkey at his feet.",
+   "actions": [
+    {
+     "t": 98.9,
+     "end": 99.6,
+     "cue": {
+      "word": "كان",
+      "t": 98.86
+     },
+     "who": "thief",
+     "action": "Turns his face away from the crowd toward us",
+     "acting": "mask off: sly half lids and a smirk the crowd cannot see"
+    },
+    {
+     "t": 99.7,
+     "end": 100.4,
+     "cue": {
+      "word": "يريد",
+      "t": 99.7
+     },
+     "who": "thief",
+     "action": "Taps his temple with one finger",
+     "acting": "gaze slides back to the crowd",
+     "library": "handR to the temple"
+    },
+    {
+     "t": 100.5,
+     "end": 101.0,
+     "cue": {
+      "word": "يظن",
+      "t": 100.52
+     },
+     "who": "fx",
+     "action": "A thought cloud pops over the three onlookers: trail bubbles first, then the cloud",
+     "acting": "three heads tilt up to it",
+     "library": "thoughtCloud()"
+    },
+    {
+     "t": 101.0,
+     "end": 101.8,
+     "cue": {
+      "word": "الناس",
+      "t": 100.92
+     },
+     "who": "crowd",
+     "action": "All three stare at the bundle and lean in",
+     "acting": "staggered tips 0.05 to 0.1, mouths o",
+     "library": "stagger()"
+    },
+    {
+     "t": 102.1,
+     "end": 103.0,
+     "cue": {
+      "word": "بداخلها",
+      "t": 102.08
+     },
+     "who": "fx",
+     "action": "Inside the cloud the fancy bundle opens by itself",
+     "acting": "corners fall open one by one",
+     "library": "clothBundle {wrap:'rich', open} inside the cloud"
+    },
+    {
+     "t": 103.1,
+     "end": 103.6,
+     "cue": {
+      "word": "شيئًا",
+      "t": 103.06
+     },
+     "who": "fx",
+     "action": "Gems, a gold cup and a coin heap rise out of it",
+     "acting": "each item pops with a 2-frame overshoot",
+     "library": "coinPile, flat gem shapes"
+    },
+    {
+     "t": 103.7,
+     "end": 104.4,
+     "cue": {
+      "word": "ثمينًا",
+      "t": 103.66
+     },
+     "who": "fx",
+     "action": "The heap doubles in size and glints",
+     "acting": "onlookers eyes widen; one licks his lips",
+     "library": "star()"
+    },
+    {
+     "t": 104.4,
+     "end": 105.0,
+     "cue": {
+      "word": "جدًا.",
+      "t": 104.44
+     },
+     "who": "monkey",
+     "action": "The monkey looks up at the cloud, then at the camera, and shrugs",
+     "acting": "palms up, flat mouth: it knows what is inside",
+     "library": "monkey handL/handR palms up"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 105.0
+   }
+  },
+  {
+   "id": "S11",
+   "start": 105.0,
+   "end": 119.2,
+   "paragraphs": [
+    6
+   ],
+   "set": "marketB",
+   "cast": [
+    "buyer",
+    "thief",
+    "monkey"
+   ],
+   "summary": "A buyer falls for the wrapping, dreams of a bargain, pays three coins and takes the bundle unopened.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot(thief, buyer): zoom 1.3 centred x 520, y 700; push to 1.7 on buyer and bundle for 107.4 to 111; back to 1.3 for the sale."
+   },
+   "composition": "Thief x 330, bundle on the crate x 500, buyer arrives at x 680 (s 1.3, green merchant). Buyer thought cloud 480 x 320 at (700, 330), tail to his head. Coins travel from his hand at (610, 760) to the thief palm at (410, 760).",
+   "actions": [
+    {
+     "t": 105.1,
+     "end": 106.9,
+     "cue": {
+      "word": "رأى",
+      "t": 105.08
+     },
+     "who": "buyer",
+     "action": "Strolls in from the right, passing the stall, and stops short when he sees the bundle",
+     "acting": "the stop has a one-step overshoot; brows up",
+     "library": "walk(), footfalls(), settleTo()"
+    },
+    {
+     "t": 107.0,
+     "end": 107.4,
+     "cue": {
+      "word": "رجل",
+      "t": 107.02
+     },
+     "who": "lettering",
+     "action": "Arrow and label 'BUYER'",
+     "acting": "he straightens his turban",
+     "library": "S.arrow, S.label"
+    },
+    {
+     "t": 107.5,
+     "end": 108.1,
+     "cue": {
+      "word": "قطعة",
+      "t": 107.46
+     },
+     "who": "buyer",
+     "action": "His gaze locks on the cloth; he comes one step closer",
+     "acting": "pupils fixed on the bundle; the other onlookers drift out of frame",
+     "library": "lookAt()"
+    },
+    {
+     "t": 108.2,
+     "end": 108.9,
+     "cue": {
+      "word": "القماش",
+      "t": 108.14
+     },
+     "who": "buyer",
+     "action": "Bends to look closely; a glint runs over the fringe",
+     "acting": "tip 0.12, hands behind his back",
+     "library": "star()"
+    },
+    {
+     "t": 109.0,
+     "end": 109.6,
+     "cue": {
+      "word": "الجميلة،",
+      "t": 108.94
+     },
+     "who": "buyer",
+     "action": "Strokes the cloth with one finger; the thief watches the finger, ready to block",
+     "acting": "thief hand hovers 20 units above the bundle",
+     "library": "handRW"
+    },
+    {
+     "t": 109.7,
+     "end": 111.4,
+     "cue": {
+      "word": "فأعجبته",
+      "t": 109.64
+     },
+     "who": "buyer",
+     "action": "Straightens up delighted; a small heart pops over the bundle",
+     "acting": "smile, brows up, a happy sway; thief and monkey trade a quick look",
+     "library": "heart()"
+    },
+    {
+     "t": 111.6,
+     "end": 112.4,
+     "cue": {
+      "word": "وفكر",
+      "t": 111.56
+     },
+     "who": "buyer",
+     "action": "Hand to his chin, eyes up; his own thought cloud pops",
+     "acting": "thinking saccades",
+     "library": "PERSON_HANDS.chin, thoughtCloud()"
+    },
+    {
+     "t": 113.1,
+     "end": 113.6,
+     "cue": {
+      "word": "وجد",
+      "t": 113.06
+     },
+     "who": "fx",
+     "action": "In the cloud: 3 coins on the left, an arrow, and the bundle on the right",
+     "acting": "the three coins drop in one by one",
+     "library": "coinPile"
+    },
+    {
+     "t": 113.6,
+     "end": 114.3,
+     "cue": {
+      "word": "صفقة",
+      "t": 113.6
+     },
+     "who": "fx",
+     "action": "The bundle in the cloud turns into a coin heap that grows to ten times the three coins",
+     "acting": "heap grows with overshoot; counter in the cloud runs 3 to 30",
+     "library": "S.counter"
+    },
+    {
+     "t": 114.4,
+     "end": 115.3,
+     "cue": {
+      "word": "رائعة.",
+      "t": 114.34
+     },
+     "who": "buyer",
+     "action": "Rubs his hands; the cloud pops away",
+     "acting": "eyes shut in bliss for 8 frames, then decision: a firm nod"
+    },
+    {
+     "t": 115.5,
+     "end": 116.3,
+     "cue": {
+      "word": "اشترى",
+      "t": 115.46
+     },
+     "who": "coins",
+     "action": "He counts three coins into the thief palm: 1, 2, 3",
+     "acting": "each coin a small arc; thief fingers close on the third",
+     "library": "coinPile single coins, S.counter"
+    },
+    {
+     "t": 116.4,
+     "end": 117.2,
+     "cue": {
+      "word": "الصرة",
+      "t": 116.36
+     },
+     "who": "thief",
+     "action": "Hands the bundle over with both hands and a bow",
+     "acting": "bow tip 0.2; buyer takes the weight (arms dip 6 px)",
+     "library": "handLW/handRW"
+    },
+    {
+     "t": 117.3,
+     "end": 118.0,
+     "cue": {
+      "word": "غير",
+      "t": 117.3
+     },
+     "who": "buyer",
+     "action": "His fingers go to the knot to peek; the thief points at the sign; the fingers come away",
+     "acting": "buyer shrugs and smiles: fine",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 118.0,
+     "end": 118.8,
+     "cue": {
+      "word": "يفحص",
+      "t": 118.02
+     },
+     "who": "lettering",
+     "action": "Stamp 'NOT CHECKED' with a red X over a small eye icon, upper left",
+     "acting": "stamp lands with a 2-frame squash",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 118.8,
+     "end": 119.2,
+     "cue": {
+      "word": "فيها،",
+      "t": 118.82
+     },
+     "who": "buyer",
+     "action": "Hugs the bundle to his chest",
+     "acting": "cheek against the cloth, eyes shut"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 118.1,
+     "text": "NOT CHECKED"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 119.2
+   }
+  },
+  {
+   "id": "S12",
+   "start": 119.2,
+   "end": 125.3,
+   "paragraphs": [
+    6
+   ],
+   "set": "marketB",
+   "cast": [
+    "buyer",
+    "thief",
+    "monkey"
+   ],
+   "summary": "He carries it home dreaming of a big profit, while behind him the thief counts the coins.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Track right with the buyer from x 680 to x 1500 (zoom 1.2, y 660) so the thought cloud above him stays in frame; the thief and monkey slide out on the left."
+   },
+   "composition": "Buyer walks on y 900 with the bundle in both arms. Cloud 420 x 280 follows 300 units above his head, a beat late. His house door stands at x 1640 (door 150 x 300, yellow light inside).",
+   "actions": [
+    {
+     "t": 119.4,
+     "end": 120.5,
+     "cue": {
+      "word": "وأخذها",
+      "t": 119.38
+     },
+     "who": "buyer",
+     "action": "Turns and walks off right with the bundle",
+     "acting": "springy proud walk, bundle bobbing a beat late",
+     "library": "walk(), footfalls()"
+    },
+    {
+     "t": 120.0,
+     "end": 120.8,
+     "who": "thief",
+     "action": "Behind him the thief kisses the coins and the monkey rubs its hands, then both slip out left",
+     "acting": "small and in the background; clear silhouette",
+     "library": "walk()"
+    },
+    {
+     "t": 120.9,
+     "end": 121.6,
+     "cue": {
+      "word": "بيته",
+      "t": 120.84
+     },
+     "who": "set",
+     "action": "His house door comes into view at the right edge",
+     "acting": "warm yellow light in the doorway"
+    },
+    {
+     "t": 122.2,
+     "end": 123.2,
+     "cue": {
+      "word": "يتوقع",
+      "t": 122.22
+     },
+     "who": "fx",
+     "action": "A thought cloud trails above him as he walks",
+     "acting": "cloud lags his head by 3 frames",
+     "library": "thoughtCloud()"
+    },
+    {
+     "t": 123.3,
+     "end": 124.0,
+     "cue": {
+      "word": "يبيعها",
+      "t": 123.32
+     },
+     "who": "fx",
+     "action": "In the cloud a small buyer hands the bundle to a rich customer",
+     "acting": "two small figures, at least 110 px tall on screen",
+     "library": "person {costume:'merchant'}, {costume:'vizier'} inside the cloud"
+    },
+    {
+     "t": 124.1,
+     "end": 124.6,
+     "cue": {
+      "word": "بربح",
+      "t": 124.08
+     },
+     "who": "fx",
+     "action": "Coins rain into the small buyer arms",
+     "acting": "6 coins on seeded arcs",
+     "library": "coinPile, K.rng"
+    },
+    {
+     "t": 124.7,
+     "end": 125.3,
+     "cue": {
+      "word": "كبير.",
+      "t": 124.68
+     },
+     "who": "buyer",
+     "action": "The coin heap in the cloud grows taller than he is; the real buyer skips through his door",
+     "acting": "one hop with landSquash on the threshold",
+     "library": "hop(), landSquash()"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "wipe",
+    "t": 125.3
+   }
+  },
+  {
+   "id": "S13",
+   "start": 125.3,
+   "end": 134.5,
+   "paragraphs": [
+    7
+   ],
+   "set": "home",
+   "cast": [
+    "buyer",
+    "wife"
+   ],
+   "summary": "At home his wife asks what he bought; he boasts about the low price and the profit to come.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "twoShot(buyer, wife): zoom 1.25 centred x 520, y 700. Static, so the acting carries the scene."
+   },
+   "composition": "Merchant house interior. Door at x 150. Low table at x 520 (top y 800, 220 wide) with the bundle on it. Buyer at x 360, wife rises from a stool at x 720 (s 1.25). Icon balloons appear above the speaker side, never over a face.",
+   "actions": [
+    {
+     "t": 125.4,
+     "end": 126.6,
+     "cue": {
+      "word": "سألته",
+      "t": 125.44
+     },
+     "who": "buyer",
+     "action": "Comes in through the door and sets the bundle on the table with both hands, like a trophy",
+     "acting": "chest out, proud smile; a little flourish as he lets go",
+     "library": "walk(), handLW/handRW"
+    },
+    {
+     "t": 126.6,
+     "end": 127.5,
+     "who": "wife",
+     "action": "Looks up from her mending on the stool",
+     "acting": "needle hand stops in the air; gaze goes to the bundle, then to him",
+     "library": "person sit, seat:'stool', gazePlan"
+    },
+    {
+     "t": 127.5,
+     "end": 128.2,
+     "cue": {
+      "word": "زوجته",
+      "t": 127.52
+     },
+     "who": "wife",
+     "action": "Stands and points at the bundle",
+     "acting": "sit 1 to 0 with a settle; talk on; head tilt",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 128.8,
+     "end": 129.7,
+     "cue": {
+      "word": "اشترى،",
+      "t": 128.82
+     },
+     "who": "wife",
+     "action": "One brow up, waiting for the answer; a small ? balloon",
+     "acting": "brow -0.5, mouth closed, hand on hip",
+     "library": "bubble()"
+    },
+    {
+     "t": 129.8,
+     "end": 130.8,
+     "cue": {
+      "word": "فأخبرها",
+      "t": 129.78
+     },
+     "who": "buyer",
+     "action": "Talks with a hand on his chest",
+     "acting": "sq 1.04 puffed, rocking on his heels",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 131.1,
+     "end": 131.6,
+     "cue": {
+      "word": "الثمن",
+      "t": 131.14
+     },
+     "who": "buyer",
+     "action": "Shows three fingers; a balloon shows three small coins",
+     "acting": "gleeful, eyes on her to see the effect",
+     "library": "iconBalloon (planned), coinPile"
+    },
+    {
+     "t": 131.6,
+     "end": 132.5,
+     "cue": {
+      "word": "القليل",
+      "t": 131.58
+     },
+     "who": "buyer",
+     "action": "Pinches the air: so little",
+     "acting": "squint, pinched fingers near his eye"
+    },
+    {
+     "t": 132.6,
+     "end": 133.5,
+     "cue": {
+      "word": "والربح",
+      "t": 132.56
+     },
+     "who": "buyer",
+     "action": "Spreads both arms wide; the balloon swaps to a big coin heap",
+     "acting": "anticipate, then armsOut with overshoot",
+     "library": "PERSON_HANDS.armsOut, anticipate()"
+    },
+    {
+     "t": 133.6,
+     "end": 134.5,
+     "cue": {
+      "word": "ينتظره.",
+      "t": 133.6
+     },
+     "who": "wife",
+     "action": "She looks from the heap balloon to the bundle to him; her brow sinks and her arms fold",
+     "acting": "brow -0.5 to +0.5; he rubs his hands with eyes shut and misses it",
+     "library": "PERSON_HANDS.folded, gazePlan"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 134.5
+   }
+  },
+  {
+   "id": "S14",
+   "start": 134.5,
+   "end": 145.8,
+   "paragraphs": [
+    7
+   ],
+   "set": "home",
+   "cast": [
+    "buyer",
+    "wife"
+   ],
+   "summary": "Her two questions: how do you buy what you have not seen, and why would anything valuable sell so cheap? His smile fades.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Slow push from zoom 1.25 to 1.6 centred x 560, y 690 over the speech, keeping both faces and the bundle in frame."
+   },
+   "composition": "Wife steps to x 660; bundle between them at x 520; buyer at x 360. Her icon balloon (300 x 220) sits top right at (760, 330); the ? on the bundle is drawn on the bundle itself.",
+   "actions": [
+    {
+     "t": 134.6,
+     "end": 135.6,
+     "cue": {
+      "word": "قالت:",
+      "t": 134.62
+     },
+     "who": "wife",
+     "action": "Steps forward, hands on hips",
+     "acting": "one firm step with a settle; chin down, eyes on him",
+     "library": "walk(), PERSON_HANDS.hipsHands"
+    },
+    {
+     "t": 135.7,
+     "end": 136.3,
+     "cue": {
+      "word": "«كيف",
+      "t": 135.72
+     },
+     "who": "wife",
+     "action": "Speaks, pointing at him",
+     "acting": "talk 0.8, brow 0.4, head pushing forward on the stresses",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 136.4,
+     "end": 137.0,
+     "cue": {
+      "word": "تشتري",
+      "t": 136.38
+     },
+     "who": "buyer",
+     "action": "Still smiling, he nods along",
+     "acting": "the nod slows down"
+    },
+    {
+     "t": 137.0,
+     "end": 137.6,
+     "cue": {
+      "word": "شيئًا",
+      "t": 137.02
+     },
+     "who": "wife",
+     "action": "Her finger swings down to the bundle",
+     "acting": "gaze follows her own finger",
+     "library": "PERSON_HANDS.pointDown"
+    },
+    {
+     "t": 138.1,
+     "end": 138.8,
+     "cue": {
+      "word": "تعرف",
+      "t": 138.1
+     },
+     "who": "lettering",
+     "action": "A big ? pops on the side of the bundle",
+     "acting": "the ? rocks once",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 138.9,
+     "end": 139.6,
+     "cue": {
+      "word": "بداخله؟",
+      "t": 138.9
+     },
+     "who": "wife",
+     "action": "Raps the bundle twice with her knuckles; it gives a soft, flat wobble",
+     "acting": "buyer blinks twice; his smile closes to a line",
+     "library": "impactSquash() small"
+    },
+    {
+     "t": 139.7,
+     "end": 140.8,
+     "cue": {
+      "word": "ولماذا",
+      "t": 139.68
+     },
+     "who": "wife",
+     "action": "Turns both palms up in a shrug, head tilted",
+     "acting": "brows up, a real question",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 141.6,
+     "end": 142.4,
+     "cue": {
+      "word": "صاحبه",
+      "t": 141.6
+     },
+     "who": "fx",
+     "action": "Her balloon shows the seller as a black silhouette with a fez-wearing monkey shape on its shoulder",
+     "acting": "buyer looks up at it and swallows",
+     "library": "iconBalloon (planned)"
+    },
+    {
+     "t": 143.1,
+     "end": 143.7,
+     "cue": {
+      "word": "الرخص",
+      "t": 143.06
+     },
+     "who": "fx",
+     "action": "In the balloon a price tag with 3 and a down arrow pulses",
+     "acting": "buyer eyes slide to the bundle",
+     "library": "coinPile, S.arrow"
+    },
+    {
+     "t": 144.6,
+     "end": 145.8,
+     "cue": {
+      "word": "قيمة؟»",
+      "t": 144.62
+     },
+     "who": "buyer",
+     "action": "The balloon shows a gem with a ?; he gulps, one sweat drop, and his hands tighten on his sash",
+     "acting": "smile gone, brow worried (-0.6), gaze stuck on the bundle",
+     "library": "drops()"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 145.8
+   }
+  },
+  {
+   "id": "S15",
+   "start": 145.8,
+   "end": 156.1,
+   "paragraphs": [
+    8
+   ],
+   "set": "home",
+   "cast": [
+    "buyer",
+    "wife"
+   ],
+   "summary": "She sees the trick and warns him off stolen or unknown goods.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Zoom 1.6 on the wife and the bundle (centre x 600, y 700); at 150.2 ease back to the two-shot (zoom 1.3) for the warning so his reaction reads."
+   },
+   "composition": "Wife at x 660 bends to the bundle at x 520. Buyer at x 360. Warning icons appear in one balloon top centre (500, 300), one after the other.",
+   "actions": [
+    {
+     "t": 145.9,
+     "end": 147.2,
+     "cue": {
+      "word": "فهمت",
+      "t": 145.84
+     },
+     "who": "wife",
+     "action": "Narrows her eyes at the fancy knot; her pupils jump knot, fringe, husband, knot",
+     "acting": "lid 0.4, saccades, then brows up: she has it",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 148.3,
+     "end": 148.8,
+     "cue": {
+      "word": "وراء",
+      "t": 148.34
+     },
+     "who": "wife",
+     "action": "Lifts one corner of the rich cloth with two fingers",
+     "acting": "careful, as if it might bite",
+     "library": "handRW"
+    },
+    {
+     "t": 148.9,
+     "end": 149.5,
+     "cue": {
+      "word": "الصفقة",
+      "t": 148.82
+     },
+     "who": "bundle",
+     "action": "A patched grey sleeve flops out of the lifted corner",
+     "acting": "sleeve swings and hangs",
+     "library": "swing()"
+    },
+    {
+     "t": 149.5,
+     "end": 150.2,
+     "cue": {
+      "word": "خدعة،",
+      "t": 149.52
+     },
+     "who": "lettering",
+     "action": "Stamp 'A TRICK!' top left",
+     "acting": "buyer double take: head back, both hands to his head",
+     "library": "S.emphasis, PERSON_HANDS.headHold"
+    },
+    {
+     "t": 150.3,
+     "end": 152.0,
+     "cue": {
+      "word": "وحذرته",
+      "t": 150.26
+     },
+     "who": "wife",
+     "action": "Wags a finger at him, three beats",
+     "acting": "stern brow 0.6, talk on; he shrinks: sq 0.93, tip -0.06, hands to his cheeks",
+     "library": "PERSON_HANDS.pointUp, cheeks"
+    },
+    {
+     "t": 152.3,
+     "end": 153.3,
+     "cue": {
+      "word": "شراء",
+      "t": 152.28
+     },
+     "who": "buyer",
+     "action": "Looks at the three empty fingers that held his coins",
+     "acting": "slow blink; wet eyes"
+    },
+    {
+     "t": 153.4,
+     "end": 154.3,
+     "cue": {
+      "word": "المسروقة",
+      "t": 153.42
+     },
+     "who": "fx",
+     "action": "Balloon icon 1: a hand grabbing a bundle, crossed by a red X",
+     "acting": "she taps the air on the word",
+     "library": "iconBalloon (planned)"
+    },
+    {
+     "t": 154.8,
+     "end": 155.6,
+     "cue": {
+      "word": "المجهولة.",
+      "t": 154.84
+     },
+     "who": "fx",
+     "action": "Balloon icon 2: a wrapped parcel with a ?, crossed by a red X",
+     "acting": "he nods small and ashamed"
+    },
+    {
+     "t": 155.6,
+     "end": 156.1,
+     "who": "buyer",
+     "action": "His head drops and his eyes go to the bundle",
+     "acting": "shoulders down with a settle",
+     "library": "settleTo()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 149.6,
+     "text": "A TRICK!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 156.1
+   }
+  },
+  {
+   "id": "S16",
+   "start": 156.1,
+   "end": 160.4,
+   "paragraphs": [
+    8
+   ],
+   "set": "duskRoad",
+   "cast": [
+    "thief",
+    "monkey"
+   ],
+   "summary": "Far away the thief walks off with the money and his monkey.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Track right with the thief at zoom 1.3, y 700; an iris closes on the waving monkey from 159.9 to 160.4."
+   },
+   "composition": "Open road at dusk (Library sky, hill trees, ground at y 900). Thief walks from x 250 to x 720 (s 1.25), monkey on his right shoulder. Coins arc 120 units above his hand.",
+   "actions": [
+    {
+     "t": 156.2,
+     "end": 156.9,
+     "cue": {
+      "word": "أما",
+      "t": 156.2
+     },
+     "who": "set",
+     "action": "Cut to a dusk road outside the town; the market domes are small on the horizon behind",
+     "acting": "long shadow under the walker",
+     "library": "skyCycle(u 0.45), hillTrees(), ground()"
+    },
+    {
+     "t": 156.5,
+     "end": 157.7,
+     "cue": {
+      "word": "اللص",
+      "t": 156.52
+     },
+     "who": "thief",
+     "action": "Strolls along with the same lazy walk as at 1.18",
+     "acting": "smirk, lid 0.45, humming (mouth o pulses)",
+     "library": "walk(), footfalls()"
+    },
+    {
+     "t": 157.8,
+     "end": 158.7,
+     "cue": {
+      "word": "أخذ",
+      "t": 157.82
+     },
+     "who": "coins",
+     "action": "He tosses the three coins and catches them one by one",
+     "acting": "pupils follow the top coin; hand dips on each catch",
+     "library": "coinPile single coins, hop-style arcs"
+    },
+    {
+     "t": 158.8,
+     "end": 159.7,
+     "cue": {
+      "word": "ورحل",
+      "t": 158.78
+     },
+     "who": "thief",
+     "action": "Pockets the coins and walks on without looking back",
+     "acting": "pats the pocket twice",
+     "library": "walk()"
+    },
+    {
+     "t": 159.8,
+     "end": 160.4,
+     "cue": {
+      "word": "قرده،",
+      "t": 159.76
+     },
+     "who": "monkey",
+     "action": "On his shoulder the monkey turns to camera, tips its fez and waves goodbye as the iris closes",
+     "acting": "smirk, tail curling",
+     "library": "monkey handR wave, iris"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "iris",
+    "t": 160.4
+   }
+  },
+  {
+   "id": "S17",
+   "start": 160.4,
+   "end": 171.43,
+   "paragraphs": [
+    8
+   ],
+   "set": "home",
+   "cast": [
+    "buyer",
+    "wife"
+   ],
+   "summary": "The buyer opens the fancy cloth at last: old clothes. PAID 3, WORTH 0. Held ending and THE END.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Zoom 1.4 centred x 480, y 720 on the buyer and the table; slow push to 1.6 by 166.8; ease back to 1.2 for THE END at 168.2."
+   },
+   "composition": "Buyer at x 400 behind the table (x 520); wife at x 720 with folded arms, in frame the whole time. Box with the two counters top right. THE END on the top band, clear of both heads.",
+   "actions": [
+    {
+     "t": 160.5,
+     "end": 161.8,
+     "cue": {
+      "word": "وبقي",
+      "t": 160.5
+     },
+     "who": "buyer",
+     "action": "Alone at the table he slowly unties the gold cord",
+     "acting": "worried brow, lid 0.3; fingers hesitate once",
+     "library": "handLW/handRW"
+    },
+    {
+     "t": 161.9,
+     "end": 162.8,
+     "cue": {
+      "word": "المشتري",
+      "t": 161.9
+     },
+     "who": "wife",
+     "action": "Behind him his wife watches with folded arms",
+     "acting": "gaze on his hands, one slow blink",
+     "library": "PERSON_HANDS.folded"
+    },
+    {
+     "t": 162.9,
+     "end": 163.8,
+     "cue": {
+      "word": "صرة",
+      "t": 162.92
+     },
+     "who": "bundle",
+     "action": "The rich corners fall open one by one",
+     "acting": "open 0 to 1 with follow-through on the tassel",
+     "library": "clothBundle {wrap:'rich', open}"
+    },
+    {
+     "t": 163.9,
+     "end": 164.4,
+     "cue": {
+      "word": "ملابس",
+      "t": 163.86
+     },
+     "who": "oldClothes",
+     "action": "The same drab, patched heap; a third moth flutters out",
+     "acting": "he flinches at the moth",
+     "library": "moth path"
+    },
+    {
+     "t": 164.5,
+     "end": 165.1,
+     "cue": {
+      "word": "قديمة",
+      "t": 164.5
+     },
+     "who": "buyer",
+     "action": "Lifts the holed shirt with two fingers and looks through the hole at his wife",
+     "acting": "the exact pose of the thief at 70.86 (setup and payoff); his eye in the hole",
+     "library": "handRW"
+    },
+    {
+     "t": 165.8,
+     "end": 166.7,
+     "cue": {
+      "word": "تستحق",
+      "t": 165.8
+     },
+     "who": "lettering",
+     "action": "Box with two counters: 'PAID: 3' then 'WORTH: 0'",
+     "acting": "the 0 gives the same sad bounce as SOLD: 0 at 34.14",
+     "library": "S.box, S.counter"
+    },
+    {
+     "t": 166.8,
+     "end": 167.6,
+     "cue": {
+      "word": "دفعه.",
+      "t": 166.8
+     },
+     "who": "buyer",
+     "action": "Sinks onto the stool with the shirt in his lap and puts a hand to his head",
+     "acting": "looks up at his wife, then his eyes break away and his head drops (shame ending)",
+     "library": "person sit, seat:'stool', PERSON_HANDS.headHold, settleTo()"
+    },
+    {
+     "t": 167.7,
+     "end": 168.2,
+     "who": "wife",
+     "action": "She shakes her head once, then lays a hand on his shoulder",
+     "acting": "stern brow softens to level; no gloating",
+     "library": "handRW"
+    },
+    {
+     "t": 168.2,
+     "end": 171.43,
+     "who": "lettering",
+     "action": "'THE END' pops on the top band and holds to the last frame",
+     "acting": "both figures keep breathing and blinking under it; the shirt sleeve swings to rest",
+     "library": "S.title, breathe(), LIFE.t"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 165.9,
+     "text": "PAID: 3  WORTH: 0"
+    },
+    {
+     "t": 168.2,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 167.75,
+     "kind": "thud"
+    },
+    {
+     "t": 168.5,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 171.43
+   }
+  }
+ ],
+ "ending": {
+  "t": 168.2,
+  "description": "After the last word (167.44) the buyer sits slumped with the holed shirt in his lap; his wife shakes her head once and puts a hand on his shoulder. 'THE END' pops on the top band at 168.2 with a quiet chime at 168.5 and holds to 171.43 while both keep breathing and blinking."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان في مدينة رجل يعيش من السرقة،|وله قرد علمه أن يؤدي حركات مضحكة أمام الناس.|اعتاد الرجل الذهاب إلى الأسواق،|وكان يستعمل القرد ليشغل الناس بينما يبحث عن فرصة للسرقة.",
+   "en": "In a city lived a thief|with a trained monkey that performed amusing tricks.|He used it to distract marketgoers|while looking for a chance to steal."
+  },
+  {
+   "p": 2,
+   "ar": "وفي يوم رأى بائعًا يحمل ملابس قديمة مستعملة.|نادى البائع على بضاعته طويلًا، لكن أحدًا لم يرغب في شرائها.|تعب أخيرًا، فجمع الملابس في صرة وجلس ليستريح.",
+   "en": "One day he saw a seller offering old, worn clothes.|No one wanted them,|and the weary seller wrapped the clothes in a bundle and sat to rest."
+  },
+  {
+   "p": 3,
+   "ar": "اقترب اللص من البائع وجعل القرد يقفز ويلعب أمامه.|ضحك البائع، وصار يتابع حركات الحيوان باهتمام.|وفي تلك اللحظة مد اللص يده وأخذ صرة الملابس من دون أن ينتبه الرجل.",
+   "en": "The thief made his monkey leap and play before the seller.|While the seller watched, amused,|the thief quietly stole the bundle."
+  },
+  {
+   "p": 4,
+   "ar": "أخذ اللص القرد والصرة إلى مكان خال.|فتحها ورأى الملابس البالية،|ثم جمعها من جديد داخل قطعة قماش جميلة غالية الثمن،|حتى يبدو ما بداخلها أثمن مما هو في الحقيقة.",
+   "en": "The thief carried the monkey and bundle to a secluded spot.|He rewrapped the rags|in costly, beautiful fabric|to make the contents seem valuable."
+  },
+  {
+   "p": 5,
+   "ar": "ذهب إلى سوق آخر وعرض الصرة للبيع بسعر منخفض.|وضع شرطًا غريبًا: لا يجوز للمشتري فتحها قبل دفع المال.|كان يريد أن يظن الناس أن بداخلها شيئًا ثمينًا جدًا.",
+   "en": "In another market he offered the bundle cheaply,|with one strange condition: the buyer must not open it before paying.|He wanted people to imagine valuable contents."
+  },
+  {
+   "p": 6,
+   "ar": "رأى رجل قطعة القماش الجميلة، فأعجبته وفكر أنه وجد صفقة رائعة.|اشترى الصرة من غير أن يفحص ما فيها،|وأخذها إلى بيته وهو يتوقع أن يبيعها بربح كبير.",
+   "en": "A buyer admired the elegant wrapping, thought it a bargain,|and purchased it without inspecting it,|hoping to resell at a profit."
+  },
+  {
+   "p": 7,
+   "ar": "سألته زوجته عما اشترى،|فأخبرها عن الثمن القليل والربح الذي ينتظره.|قالت: «كيف تشتري شيئًا لا تعرف ما بداخله؟|ولماذا يبيعه صاحبه بهذا الرخص إذا كان ذا قيمة؟»",
+   "en": "His wife asked about the purchase.|Hearing of the low price and hoped-for profit,|she asked why he bought an unopened parcel|and why anything valuable would be sold so cheaply."
+  },
+  {
+   "p": 8,
+   "ar": "فهمت الزوجة أن وراء الصفقة خدعة،|وحذرته من شراء الأشياء المسروقة أو المجهولة.|أما اللص فقد أخذ المال ورحل مع قرده،|وبقي المشتري مع صرة من ملابس قديمة لا تستحق ما دفعه.",
+   "en": "She recognized the trick|and warned him against stolen or unknown goods.|The thief left with the money and monkey,|while the buyer remained with old clothes worth less than he had paid."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "marketStreet",
+   "reusable": true,
+   "effort": "L",
+   "description": "The planned market street (already requested by six stories), here with variants A and B, an alley option and a house-front end. See sets marketA, marketB, alley.",
+   "implementation": "One function marketStreet(ctx, {w, variant, alley, stalls:[{x, kind, cols}], dome, palm, door}) baked once per variant with bake(). Houses are K rectangles with brush outlines and red dot shading; arches by arc paths; awnings as striped polygons with a scalloped edge; goods as simple circles (fruit), trapezoids (pots) and folded rectangles (cloth). Sky is drawn live with skyCycle behind the baked layer (bake the street with a transparent sky)."
+  },
+  {
+   "type": "set",
+   "name": "palaceHall (variant merchantHouse)",
+   "reusable": true,
+   "effort": "M",
+   "description": "The planned arched interior in its modest merchant variant: wall, window, door, shelf, tiled floor, low table, stools. See set home.",
+   "implementation": "Baked layer: wall fill with dotPat shading, arch outline, window with a skyCycle-coloured pane, floor tiles as a perspective-free grid of 100-unit squares, table and shelf as rectangles; seatStool() from the Library for the stools."
+  },
+  {
+   "type": "prop",
+   "name": "clothBundle (with oldClothes and richCloth)",
+   "reusable": true,
+   "effort": "M",
+   "description": "Knotted cloth bundle with plain and rich wraps, an open state, rags or treasure contents and a peek corner; includes the loose shirt and the flat rich cloth. The heart of the story.",
+   "implementation": "Closed: an ellipse body (150 x 100) with 3 crease strokes and a knot of two leaf shapes; pattern drawn clipped to the body. open 0..1: body flattens to a 260 x 30 cloth while 4 corner triangles rotate down in turn (stagger 0.15); contents drawn between back and front passes. Rags are 5 rounded rectangles in grey, brown and dull green with patch squares and a hole (evenodd clip) on the shirt."
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned coin mound with removable single coins (3 coins, heaps of 10 and 30).",
+   "implementation": "Coins as discs stacked in seeded rows (K.rng for offsets); a coin in flight is the same disc on a hop-style arc with a width squeeze for the spin."
+  },
+  {
+   "type": "prop",
+   "name": "noPeekSign",
+   "reusable": false,
+   "effort": "S",
+   "description": "Sign board with a crossed-out eye and NO PEEKING!; flips from blank to front.",
+   "implementation": "Rectangle on a post; flip by scaling x through 0; eye as two arcs and a disc, red bar as a rotated rectangle; text with the style label font."
+  },
+  {
+   "type": "pose",
+   "name": "monkey rot (flip, handstand) and fez",
+   "reusable": true,
+   "effort": "S",
+   "description": "An optional rot field (radians about the body centre, about 90 units above the feet) for back flips, cartwheels and handstands, and an optional hat:\"fez\" drawn on the head. Off by default so the regression test stays identical.",
+   "implementation": "In the story first: wrap the monkey() call in ctx.translate/rotate about (x, y - 90*s); for the handstand add hop() to y so the hands meet the ground. Fez: red trapezoid 34 x 26 with a yellow tassel line that lags by 2 frames using swing()."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned wordless picture balloon (single mode) for the buyer boast (3 coins, coin heap) and the wife questions and warning (seller silhouette, price tag, gem with ?, two crossed-out icons).",
+   "implementation": "Library bubble() outline at a fixed size with a tail to the speaker; the icon is a small draw callback clipped inside; pop in with a 2-frame overshoot."
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned round picture-in-picture with an iris, used once (80.58 to 83.2) as a cutaway on the bundle showing the rags inside, and as the closing iris of S16.",
+   "implementation": "ctx.save, arc clip with radius eased 0 to 90, draw the open-bundle contents at 0.8 scale, restore, then a fat brush ring."
+  },
+  {
+   "type": "prop",
+   "name": "moth",
+   "reusable": true,
+   "effort": "S",
+   "description": "Tiny fluttering moth on a seeded zigzag path, the running gag for old clothes.",
+   "implementation": "Two triangles whose width follows abs(sin(t*75)); position = start + kfn path + K.noise wobble."
+  },
+  {
+   "type": "motion",
+   "name": "sneak",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned tiptoe option for walk(): high knees, a short hold on each toe. Used 60.5 to 61.5 for four steps.",
+   "implementation": "Drive the person ph from a stepped position function (four eased segments with 0.08 s holds) and add 6 units of body lift per step."
+  }
+ ],
+ "owner_questions": [
+  "The thief is shown unmasked (red cap, black tunic) with a 'THIEF' label instead of the masked striped thief of the Moonbeam film; default: unmasked.",
+  "The monkey wears a small red fez as its performer mark; default: yes.",
+  "English lettering added beyond the script: OLD CLOTHES!, SWIPE!, RAGS!?, OUTSIDE: FANCY, INSIDE: RAGS, ANOTHER MARKET, ONLY 3 COINS, NO PEEKING!, NOT CHECKED, A TRICK!, PAID: 3 WORTH: 0, SOLD: 0, HA HA!; default: all kept (the animator may drop SWIPE! and OUTSIDE: FANCY if the frame is crowded).",
+  "The price is shown as 3 coins (the script only says a low price) and the buyer dreams of 30; default: 3 and 30.",
+  "A moth flies out of the old clothes three times as a running gag (not in the script); default: kept.",
+  "The buyer opens the bundle on screen at the end (the script says only that he was left with old clothes); default: he opens it, with his wife present.",
+  "No written moral line at the end, only THE END; default: no moral line.",
+  "In S1 and S2 the thief only eyes and reaches toward purses and no theft from the crowd is shown (the script says he looked for a chance); default: no theft shown there."
+ ],
+ "implementation_notes": [
+  "Start from Library/template; world height 1230, ground y 900; marketStreet worlds are 1800 wide, so clamp the camera x to the world width used by each scene.",
+  "The person figure is front-facing only: stage every exchange side by side and show direction with gaze, tip, lean and hand targets. Walks across the frame use walk() and footfalls() on a position function.",
+  "The core staging rule of S5 and S6: thief on screen-left, bundle left of the seller, monkey on screen-right. Keep it in every frame of those scenes; the seller's gaze is driven by look() on the monkey position.",
+  "Mask on / mask off for the thief: friendly face only while a victim is looking at him; switch on the cue words given (50.70, 98.86).",
+  "Setup and payoff pairs to keep identical: the two-finger signal (14.66 and 45.02), the holed shirt held with two fingers (70.86 thief, 164.50 buyer), the sad counter bounce (34.14 and 165.80), the lazy stroll (1.18 and 156.52).",
+  "Thought clouds (thoughtCloud): three uses, all narrated thoughts (100.52 the crowd, 111.56 and 122.22 the buyer). Keep figures inside at least 110 px tall on screen; scale about 0.5 with at set to the bundle.",
+  "The 'LATER...' card at 84.0 hides the cut from the alley to Market B; put the camera cut at the card's covered midpoint.",
+  "Set LIFE.t = t each frame for auto-blinks; give explicit lid values the hand blinks listed in the actions. No blink for the thief from 55.5 to 58.2.",
+  "Sound effects only at the listed times (3.9, 21.05, 41.9, 63.35, 68.75, 167.75, 168.5), all in narration pauses, master 0.6. No coin or laugh sounds under speech.",
+  "Lettering never covers a face: use the top band (y 80..230 of the panel) or the free side of the frame. Headlines at least 44 px and labels at least 28 px on the 1280 x 720 scale.",
+  "Subtitles: chunk boundaries are given in subtitles; time each chunk from its first word to the next chunk first word using timing.json.",
+  "Panel-only shake is not needed in this film; do not add camera shake."
+ ],
+ "warnings": [
+  "Many human figures: up to 6 on screen in S1, S2 and S9. Keep extras at 3 to 5, reuse the same five, and drop them from close shots.",
+  "P4 ends and P5 starts at 84.08 with no pause, so the LATER card overlaps the first word of P5 (the long word at 84.08); the picture of Market B must be clear by 85.6, before the word for market at 86.38.",
+  "The word at 57.56 (the thief) has an interpolated time in the timeline; the reach is cued on the neighbouring words 56.48 and 57.56 instead.",
+  "The narration has only five pauses of 0.6 s or more, so the film has very few sound effects by design.",
+  "marketStreet and palaceHall are shared planned assets: build them to the generic descriptions in production/planned_assets.md so other films can use them."
+ ]
+}

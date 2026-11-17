@@ -1,0 +1,109 @@
+{
+ "story_id": "AN-105",
+ "title": "THE SHARPER OF ALEXANDRIA AND THE CHIEF OF POLICE",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T14:18:58",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a9a59a9e9c2519570.jsonl",
+ "agent_id": "a9a59a9e9c2519570",
+ "model_messages": {
+  "claude-fable-5-2": 31
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "15a59e6f128a0c47277b60adb76e3799d3b849b831945caa76f5b7bd1a3a811a",
+  "paragraphs": 8,
+  "segments": [
+   "AN-105-P01-S01",
+   "AN-105-P01-S02",
+   "AN-105-P01-S03",
+   "AN-105-P01-S04",
+   "AN-105-P01-S05",
+   "AN-105-P01-S06",
+   "AN-105-P01-S07",
+   "AN-105-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-105_THE_SHARPER_OF_ALEXANDRIA_AND_THE_CHIEF_OF_POLICE_full_slowed.mp3",
+  "sha256": "1048b79c20419dbc2dd1813e5da4fa394ebf7e87f36d5b87d23414ca8fdcdcd3",
+  "duration": 178.262
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-105_THE_SHARPER_OF_ALEXANDRIA_AND_THE_CHIEF_OF_POLICE_full_slowed.mp3.words.json",
+  "sha256": "b6e57e00daf1d7b5d639166162ff42a7fffca484fb25a1e4cc1f96a195736f77",
+  "manifest_status": "SUCCESS; METADATA MISMATCH",
+  "script_match": 0.996
+ },
+ "library_rev": "2e7a9d0",
+ "scenes": 22,
+ "actions": 205,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "person costume presets (soldier)",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "purse",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "saddlebag",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "stick, coinPile, balanceScale, padlock, hourglass, moth",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "poolBasin",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "lanesYard",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "dream wash",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "splash",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "coinEyes, flush",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "sneak, runInPlace, bumpChain",
+   "effort": "M"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The English is a condensed translation: it omits the soldier waiting (P2), the inn and the watching (P5), the crowd drawing near (P6), the chief's order and the scandal (P7, P8). Both texts are kept verbatim; chunk meanings therefore do not always line up.",
+  "There are almost no pauses in the narration, so sound effects must be few and very soft (see implementation notes).",
+  "The soldier/guard costume preset is planned but not yet in the Library; it is the largest new drawing here.",
+  "Up to nine people share the hall in S5 to S9 and S14 to S20: use two depth rows (y 870 and y 930), s 0.78 to 0.9, and check that no lettering or balloon covers a face.",
+  "S11 is dense (palm, wall and a full day and night in 6.5 s); if it reads as rushed, drop the palm gag and keep the wall."
+ ],
+ "coordinator_adjustment": "3-minute cap: end_hold 3.5 -> 1.73"
+}

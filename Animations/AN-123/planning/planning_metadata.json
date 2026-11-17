@@ -1,0 +1,108 @@
+{
+ "story_id": "AN-123",
+ "title": "THE LOVES OF THE BOY AND GIRL AT SCHOOL",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T14:44:36",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a972854752adfbcf0.jsonl",
+ "agent_id": "a972854752adfbcf0",
+ "model_messages": {
+  "claude-fable-5-2": 24
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "9c673a30a2cf2c384dd9749af97931e23a82d1328b0411965b9b36314ebb59f5",
+  "paragraphs": 8,
+  "segments": [
+   "AN-123-P01-S01",
+   "AN-123-P01-S02",
+   "AN-123-P01-S03",
+   "AN-123-P01-S04",
+   "AN-123-P01-S05",
+   "AN-123-P01-S06",
+   "AN-123-P01-S07",
+   "AN-123-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-123_THE_LOVES_OF_THE_BOY_AND_GIRL_AT_SCHOOL_full_slowed.mp3",
+  "sha256": "2da31b1e7f34b0478306e1628a4379b3ad9e914aee207f702586b8a625865fd7",
+  "duration": 170.799
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-123_THE_LOVES_OF_THE_BOY_AND_GIRL_AT_SCHOOL_full_slowed.mp3.words.json",
+  "sha256": "d3a6f2eea1296e50202fe0384886e9b7726c658ae8df882d8b595ced01168918",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "5a93429",
+ "scenes": 18,
+ "actions": 157,
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "writingTablet",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "schoolRoom (palaceHall dressing: kuttab)",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person youth option",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (judge)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "quillInk",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "portraitMedallion",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "scroll, foodTray, purse, hourglass, floorCushion",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "flush (soft option)",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "sneak",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "person laugh, handOver",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow, dream wash, painPulse",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The narration is dense: only three pauses of 0.6 s or more. Effects must stay sparse.",
+  "Up to ten figures share the room in S13 and S15; keep the back row small and baked where it does not move.",
+  "The person figure is front facing only: stage looks between the boy and girl with gaze and head tilt, and stage the window crowd with overlap rather than true back views.",
+  "youth, judge, quillInk, portraitMedallion, scroll, foodTray, purse, hourglass, floorCushion, flush, sneak, laugh, handOver, goldGlow are planned by other films and may not exist yet; fallbacks are given in new_assets.",
+  "Hand-size tablet bands are only 30 units high: colour, not detail, must carry the idea outside the inserts."
+ ]
+}

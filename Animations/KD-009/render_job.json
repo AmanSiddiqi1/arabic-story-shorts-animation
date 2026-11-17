@@ -1,0 +1,10 @@
+{
+ "story": "KD-009",
+ "cwd": "Animations/KD-009",
+ "build": "python3 build.py",
+ "render": "node render.mjs --workers 3 --crf 20 --frames ../../scratch/render-queue/KD-009/frames --out renders/KD-009_v1.mp4",
+ "qc": "python3 tools/production/qc.py KD-009 Animations/KD-009/renders/KD-009_v1.mp4 --record v1",
+ "notes": "run from the repository root with tools/production/render_queue.py; frames are deleted only after \"ffmpeg exit 0\"",
+ "implcheck": "PASS",
+ "film_duration": 165.29
+}

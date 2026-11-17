@@ -1,0 +1,109 @@
+{
+ "story_id": "AN-109",
+ "title": "IBRAHIM BIN AL-MAHDI AND THE MERCHANT'S SISTER",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T14:27:02",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a4f75a51d1a7e671b.jsonl",
+ "agent_id": "a4f75a51d1a7e671b",
+ "model_messages": {
+  "claude-fable-5-2": 28
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "58a1fa65ed054483ed4b32daeeef3777691f6d6b8bc755780ac2a8b4ace4a6bc",
+  "paragraphs": 8,
+  "segments": [
+   "AN-109-P01-S01",
+   "AN-109-P01-S02",
+   "AN-109-P01-S03",
+   "AN-109-P01-S04",
+   "AN-109-P01-S05",
+   "AN-109-P01-S06",
+   "AN-109-P01-S07",
+   "AN-109-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-109_IBRAHIM_BIN_AL_MAHDI_AND_THE_MERCHANT_S_SISTER_full_slowed.mp3",
+  "sha256": "922f1b7bf917cda7f39c1c5bcbed0499556575b612be143a29c2c7ecbe61e72b",
+  "duration": 170.56
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-109_IBRAHIM_BIN_AL_MAHDI_AND_THE_MERCHANT_S_SISTER_full_slowed.mp3.words.json",
+  "sha256": "adf49485c526067d5abb935d9a62ff2cd37bd95f300c5997ce393f46f98c8fa2",
+  "manifest_status": "SUCCESS; METADATA MISMATCH",
+  "script_match": 1.0
+ },
+ "library_rev": "2e7a9d0",
+ "scenes": 14,
+ "actions": 170,
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "ladyHand",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "oud",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person hold:'oud' (playOud)",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "musicNotes",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "stinkLines (aroma mode)",
+   "effort": "S"
+  },
+  {
+   "type": "camera",
+   "name": "taleZoom",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "inset circle",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "giftChest (treasureHoard chest), purse, scroll, foodTray, floorCushion",
+   "effort": "M"
+  },
+  {
+   "type": "expression",
+   "name": "flush (soft option)",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person laugh",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Long first Arabic chunks in P4 (13 words, 38.6-48.9 s) and P7 (14 words) and the second chunk of P8 (13 words): with only 4 chunks allowed per paragraph they are unavoidable; check that Noto Naskh 700 still fits the caption panel on three lines, and reduce size for those chunks only if needed.",
+  "English subtitles for P4-P8 are a summary of the Arabic, so the two captions will not say the same thing at every moment (owner question 1).",
+  "S9 is 25 s of two seated men: it depends on the balloons, the turban gag at 101.24 and gaze acting. If it feels static in stills, add a slow lamp-shadow drift and a tighter push-in on the confession rather than more lettering.",
+  "person hold:'oud' needs the instrument between the torso and the arms; if that layer order cannot be achieved from the scene file it requires an opt-in field in Library/cast/people.js (run the regression test: must stay 'all identical').",
+  "Many named figures (15 ids), all variants of one person function; keep at most 5 on screen at once (the plan never exceeds 5).",
+  "A woman's hand shown as the object of attraction and women presenting their hands: staged lightly and with dignity (the women are amused, the sister has her own reactions); flag for the owner's cultural review."
+ ]
+}

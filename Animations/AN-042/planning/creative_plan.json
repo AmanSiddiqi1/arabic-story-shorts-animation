@@ -1,0 +1,2645 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-042",
+ "title": "The Sparrow and the Eagle",
+ "duration": 163.501,
+ "end_hold": 3.0,
+ "logline": "A little sparrow watches an eagle carry off a lamb, tries the same trick on a fat ram, gets his feet tangled in the wool and ends up wingless in the shepherd's hut.",
+ "moral": "Know your own strength: copying someone far stronger than you ends badly.",
+ "tone": "Light comic fable played straight: the sparrow is earnest, never a fool on purpose; the comedy is scale (a perfect eagle dive at one quarter size). The last minute turns quiet and a little sad, with no cruelty shown on screen.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 8.2,
+   "kind": "setup",
+   "cue": {
+    "word": "السور",
+    "t": 8.2
+   },
+   "summary": "A little sparrow lives around a sheepfold and watches the flock from the fence."
+  },
+  {
+   "id": "B2",
+   "t": 15.96,
+   "kind": "inciting",
+   "cue": {
+    "word": "ينقض",
+    "t": 15.96
+   },
+   "summary": "A great eagle dives on a lamb."
+  },
+  {
+   "id": "B3",
+   "t": 25.3,
+   "kind": "rising",
+   "cue": {
+    "word": "وارتفع",
+    "t": 25.3
+   },
+   "summary": "The eagle lifts the lamb and carries it out of sight."
+  },
+  {
+   "id": "B4",
+   "t": 35.18,
+   "kind": "turn",
+   "cue": {
+    "word": "«لماذا",
+    "t": 35.18
+   },
+   "summary": "The admiring sparrow decides he can do the same: he has wings too."
+  },
+  {
+   "id": "B5",
+   "t": 48.08,
+   "kind": "rising",
+   "cue": {
+    "word": "كبشًا",
+    "t": 48.08
+   },
+   "summary": "He picks the biggest animal in the fold, a fat ram with tangled wool."
+  },
+  {
+   "id": "B6",
+   "t": 58.08,
+   "kind": "suspense",
+   "cue": {
+    "word": "الفرق",
+    "t": 58.08
+   },
+   "summary": "He never weighs his strength against the eagle's."
+  },
+  {
+   "id": "B7",
+   "t": 66.4,
+   "kind": "comic",
+   "cue": {
+    "word": "اندفع",
+    "t": 66.4
+   },
+   "summary": "He dives exactly like the eagle, lands on the ram and beats his wings."
+  },
+  {
+   "id": "B8",
+   "t": 80.38,
+   "kind": "comic",
+   "cue": {
+    "word": "لم",
+    "t": 80.38
+   },
+   "summary": "The ram does not move an inch."
+  },
+  {
+   "id": "B9",
+   "t": 90.7,
+   "kind": "surprise",
+   "cue": {
+    "word": "علقتا",
+    "t": 90.7
+   },
+   "summary": "When he tries to leave, his feet are caught in the matted wool."
+  },
+  {
+   "id": "B10",
+   "t": 101.96,
+   "kind": "emotion",
+   "cue": {
+    "word": "وتعبه.",
+    "t": 101.96
+   },
+   "summary": "Every pull leaves him more frightened and more tired."
+  },
+  {
+   "id": "B11",
+   "t": 118.32,
+   "kind": "climax",
+   "cue": {
+    "word": "أمسكه",
+    "t": 118.32
+   },
+   "summary": "The shepherd, who saw it all, picks him off the ram with one hand."
+  },
+  {
+   "id": "B12",
+   "t": 126.62,
+   "kind": "resolution",
+   "cue": {
+    "word": "فنتف",
+    "t": 126.62
+   },
+   "summary": "Angry, he plucks the wing feathers and ties the feet with string."
+  },
+  {
+   "id": "B13",
+   "t": 137.96,
+   "kind": "reveal",
+   "cue": {
+    "word": "سألوه",
+    "t": 137.96
+   },
+   "summary": "At home the children ask about the strange bird that cannot fly."
+  },
+  {
+   "id": "B14",
+   "t": 149.42,
+   "kind": "moral",
+   "cue": {
+    "word": "أقوى",
+    "t": 149.42
+   },
+   "summary": "He tried to do what a far stronger eagle had done."
+  },
+  {
+   "id": "B15",
+   "t": 156.46,
+   "kind": "emotion",
+   "cue": {
+    "word": "للطيران،",
+    "t": 156.46
+   },
+   "summary": "The sparrow stays before the children, unable to fly."
+  }
+ ],
+ "cast": [
+  {
+   "id": "sparrow",
+   "name": "the sparrow",
+   "library": "bird",
+   "base": "bird kind:'lark' (the brown Library bird) at s 0.7, crest kept low (crest 0.2 at rest) so it reads as a sparrow",
+   "look": "Small brown bird, cream chest, black bib patch under the beak if a palette entry is added (optional kind 'sparrow'). From S9 on the wings are drawn short (new field clipped).",
+   "new": false
+  },
+  {
+   "id": "eagle",
+   "name": "the eagle",
+   "library": "bird",
+   "base": "the planned bird kind 'hawk' (planned_assets: hooked beak, heavy brow, talons) with a new eagle palette",
+   "look": "Dark brown body, white head and tail, yellow hooked beak and feet, s 2.6 (wingspan about 420 units, four times the sparrow). Soars with locked wings; fields soar, fold, talons, grip.",
+   "new": true
+  },
+  {
+   "id": "ram",
+   "name": "the fat ram",
+   "library": null,
+   "base": "new sheep figure with ram:true, fat 1, tangle 1, s 1.0",
+   "look": "Cream wool cloud body about 290 wide x 210 tall, black face and legs, two yellow curled horns, matted grey-brown patch with burrs on the back.",
+   "new": true
+  },
+  {
+   "id": "ewes",
+   "name": "the flock (four ewes)",
+   "library": null,
+   "base": "sheep at s 0.7, seeds 1-4 for small differences (ear angle, wool outline, one with a grey face)",
+   "look": "White wool, black faces; never move in unison.",
+   "new": true
+  },
+  {
+   "id": "lamb",
+   "name": "the lamb",
+   "library": null,
+   "base": "sheep with lamb:true (s 0.42, bigger head and ears, longer legs)",
+   "look": "Very white, pink inner ears.",
+   "new": true
+  },
+  {
+   "id": "shepherd",
+   "name": "the shepherd",
+   "library": "person",
+   "base": "person costume:'villager', age 0.45, hold:'stick' (long staff drawn by the scene if the stick is too short)",
+   "look": "Green villager robe as in the catalogue with pal override sash brown; white turban; grey-flecked beard.",
+   "new": false
+  },
+  {
+   "id": "boy",
+   "name": "the shepherd's son",
+   "library": "person",
+   "base": "person costume:'servant', child:true",
+   "look": "Red cap, white tunic (catalogue CHILD (SERVANT)).",
+   "new": false
+  },
+  {
+   "id": "girl",
+   "name": "the shepherd's daughter",
+   "library": "person",
+   "base": "person costume:'maiden', child:true",
+   "look": "Yellow dress, red headband (catalogue CHILD (MAIDEN)).",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "sheepfold",
+   "library": null,
+   "new": true,
+   "description": "World 1600 x 1230, ground y 900. Sky by skyCycle (u 0.04-0.12 morning; 0.2 for S5-S9), Library hillTrees behind. A rail fence runs the full width behind the flock: posts every 130 units, 110 tall (tops y 790), two rails with tops at y 815 and y 860, brown with black brush outline. Corner post at x 240, thicker (34 wide) and taller (top y 740) with a flat cap: the sparrow's perch. Gate at x 1380-1500 (two posts, a diagonal-braced leaf that swings open 0..1). Far right behind the fence a small flat-roofed hut silhouette (180 wide, at x 1450, base on the horizon) and one Library tree. Grass band y 880-900 with tufts and a few daisies; pasture ground below in the Library ground colour tinted green. Flock marks: ewes at x 520, 760, 900, 1020 (feet y 920-960), lamb x 640 y 950, ram x 1150 y 920."
+  },
+  {
+   "id": "hutRoom",
+   "library": null,
+   "new": true,
+   "description": "The planned hutRoom cutaway (planned_assets), world 1000 x 1230, floor y 900: ochre back wall with red dot shading, roof beam at y 300, door opening on the right (x 780-880, y 620-900) showing the evening outside, small square window upper left (x 180-320, y 430-560) with a sky drawn by skyCycle u 0.38 to 0.46, a straw floor mat (x 240-620, y 900-930), a jug and a shelf; the Library seatStool at x 640."
+  }
+ ],
+ "props": [
+  {
+   "id": "string",
+   "library": null,
+   "new": true,
+   "description": "Red string: 0-2 loops around both ankles of the bird with a small bow, and a slack line (about 200 units, sagging curve) to a hand or lying on the floor."
+  },
+  {
+   "id": "feathers",
+   "library": null,
+   "new": true,
+   "description": "The planned featherFall effect: n small brown feathers (22 x 8) rocking down on seeded sway paths."
+  },
+  {
+   "id": "crumb",
+   "library": null,
+   "new": true,
+   "description": "Four wheat grains (yellow ovals 8 x 5) on the mat."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 10.0,
+   "paragraphs": [
+    1
+   ],
+   "set": "sheepfold",
+   "cast": [
+    "sparrow",
+    "ewes",
+    "lamb",
+    "ram"
+   ],
+   "summary": "Morning over the sheepfold. The little sparrow flies in over the flock, brakes, lands on the corner post and watches the sheep like a regular.",
+   "camera": {
+    "shot": "establishing",
+    "move": "crane",
+    "notes": "Start high on the sky (x 500, y 420, zoom 1.0) with the sparrow; crane down on \"حظيرة\" to (x 620, y 640, zoom 1.0) so fence and flock rise into view; ease to (x 430, y 700, zoom 1.35) as he lands on the post."
+   },
+   "composition": "Sparrow enters top-left and crosses right at y 330-420; flock fills the lower half of the panel between x 420 and 1250; corner post (x 240, top y 740) on the left third is his landing spot; ram stays half hidden at the right edge (x 1150) so his reveal is saved for S5.",
+   "actions": [
+    {
+     "t": 0.2,
+     "cue": {
+      "word": "عصفور",
+      "t": 0.32
+     },
+     "who": "sparrow",
+     "action": "flies in from off-left on a bobbing sine path (two flaps, short glide, two flaps), s 0.7",
+     "acting": "bright open eyes, gaze ahead-down [0.8,0.4], beak closed, cheerful; each glide dips 14 units",
+     "library": "bird {kind:'lark' as sparrow} fly:true, flap from path phase; flight path as a bezier (Lark flyBz pattern)"
+    },
+    {
+     "t": 1.7,
+     "cue": {
+      "word": "يطير",
+      "t": 1.74
+     },
+     "who": "sparrow",
+     "action": "loops once over the flock, banking (tip 0.25 into the turn)",
+     "acting": "head leads the turn by 3 frames, tail follows; gaze down at the sheep",
+     "library": "bird fly, tip; lookAt()"
+    },
+    {
+     "t": 2.9,
+     "cue": {
+      "word": "حظيرة",
+      "t": 2.96
+     },
+     "who": "camera",
+     "action": "cranes down: fence rails and the woolly backs rise into frame",
+     "acting": "eased 1.2 s move, hold after",
+     "library": "K.camAt keys in pairs"
+    },
+    {
+     "t": 3.7,
+     "cue": {
+      "word": "مليئة",
+      "t": 3.68
+     },
+     "who": "ewes",
+     "action": "four ewes graze; heads come up one by one (stagger 0.18 s) to look at the passing bird, chewing",
+     "acting": "never in unison: different chew phases, one flicks an ear, one keeps eating",
+     "library": "sheep {headDown, chew, earL/earR} + stagger(i)"
+    },
+    {
+     "t": 4.7,
+     "cue": {
+      "word": "بالأغنام،",
+      "t": 4.76
+     },
+     "who": "lettering",
+     "action": "label with arrow pops over the flock: SHEEPFOLD",
+     "acting": "pops with 10% overshoot, sits in the sky above the backs, never over a face",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 5.8,
+     "who": "lamb",
+     "action": "the lamb does two stiff little spring hops beside its mother (in the pause)",
+     "acting": "ears flap up on each take-off, landSquash 0.85 on each landing, tail wiggle",
+     "library": "sheep {lamb:true} + hop() + landSquash()"
+    },
+    {
+     "t": 6.3,
+     "cue": {
+      "word": "ويتوقف",
+      "t": 6.28
+     },
+     "who": "sparrow",
+     "action": "brakes in the air above the corner post: wings spread back, body upright, legs forward",
+     "acting": "anticipation: 0.3 s hover with fast shallow flaps, gaze on the post top",
+     "library": "bird fly, flap 1.4, tip -0.3"
+    },
+    {
+     "t": 8.1,
+     "cue": {
+      "word": "السور",
+      "t": 8.2
+     },
+     "who": "sparrow",
+     "action": "lands on the corner post: touch, squash, settle, two wing shuffles, tail flick",
+     "acting": "landSquash sq 0.82 then 1.05 then 1; wings fold with one late re-tuck (follow-through)",
+     "library": "bird fly:false + landSquash() + settleTo()"
+    },
+    {
+     "t": 8.7,
+     "cue": {
+      "word": "ليراقبها.",
+      "t": 8.72
+     },
+     "who": "sparrow",
+     "action": "watches the flock: head turns ewe to ewe in quick bird snaps, a happy head bob",
+     "acting": "saccade gaze plan over the four ewes and the lamb, blink between, small smile-chirp (beak 1.2 once)",
+     "library": "gazePlan(t, plan, 0.07), blink()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 4.76,
+     "text": "SHEEPFOLD"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 5.95,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 10.0
+   }
+  },
+  {
+   "id": "S2",
+   "start": 10.0,
+   "end": 19.8,
+   "paragraphs": [
+    1
+   ],
+   "set": "sheepfold",
+   "cast": [
+    "sparrow",
+    "eagle",
+    "ewes",
+    "lamb"
+   ],
+   "summary": "One morning a huge shadow slides over the flock: the eagle soars in, circles, picks the lamb and dives. The scene cuts a breath before contact.",
+   "camera": {
+    "shot": "wide",
+    "move": "whip",
+    "notes": "Hold (x 560, y 640, zoom 1.0); tilt up to the sky (y 380) on \"نسرًا\"; hold on the circling; on \"ينقض\" a fast eased tilt down (0.5 s) following the dive to (x 640, y 720, zoom 1.25)."
+   },
+   "composition": "Sparrow small on his post at lower left looking up-right (eye line to the eagle is the main diagonal); eagle enters top right, wingspan about 420 units (four sparrow lengths); lamb alone at x 640, y 950 in a gap of the flock so the dive line reads.",
+   "actions": [
+    {
+     "t": 10.0,
+     "cue": {
+      "word": "وفي",
+      "t": 10.0
+     },
+     "who": "set",
+     "action": "the sun lifts a little above the hills and the sky warms from dawn orange to morning yellow",
+     "acting": "slow, 1.5 s; long shadows shorten slightly",
+     "library": "skyCycle(ctx, u) with u 0.04 to 0.10 via kfn"
+    },
+    {
+     "t": 10.7,
+     "cue": {
+      "word": "صباح",
+      "t": 10.7
+     },
+     "who": "lettering",
+     "action": "caption box top-left: ONE MORNING...",
+     "acting": "style box, 1.6 s",
+     "library": "S.box"
+    },
+    {
+     "t": 11.2,
+     "who": "ewes",
+     "action": "a wide dark shadow slides across the grass and over the woolly backs from the right",
+     "acting": "each ewe looks up as the shadow reaches her (stagger by distance), chewing stops",
+     "library": "shadow = dark multiply ellipse 420 x 90 moving on the ground; sheep headDown 0, gaze up"
+    },
+    {
+     "t": 11.3,
+     "cue": {
+      "word": "رأى",
+      "t": 11.34
+     },
+     "who": "sparrow",
+     "action": "head snaps up and to the right, body freezes",
+     "acting": "gaze up-right [0.7,-0.8], lid 0, crest up 1, beak parts (beak 1.2); no blink for 1.5 s",
+     "library": "bird crest, headRot -0.35, noBlink"
+    },
+    {
+     "t": 12.1,
+     "cue": {
+      "word": "نسرًا",
+      "t": 12.18
+     },
+     "who": "eagle",
+     "action": "the eagle glides into the sky from top right, wings locked flat, fingers spread, s 2.6",
+     "acting": "heavy brow, yellow eye half lidded (lid 0.3), slow and effortless: no flapping at all, the opposite of the busy sparrow",
+     "library": "bird {kind:'hawk', pal eagle, fly:true, soar:1}"
+    },
+    {
+     "t": 12.6,
+     "cue": {
+      "word": "كبيرًا",
+      "t": 12.64
+     },
+     "who": "lettering",
+     "action": "label with arrow at the eagle: EAGLE",
+     "acting": "placed under the wing, away from the head",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 13.5,
+     "cue": {
+      "word": "يحلق",
+      "t": 13.52
+     },
+     "who": "eagle",
+     "action": "one lazy banked circle over the fold (ellipse 520 x 160), wingtips rocking",
+     "acting": "head stays level while the body banks (tip up to 0.3); pupils scanning the ground",
+     "library": "bird soar, tip; gazePlan"
+    },
+    {
+     "t": 14.5,
+     "cue": {
+      "word": "السماء،",
+      "t": 14.54
+     },
+     "who": "sparrow",
+     "action": "turns on the post to follow the circle with his whole head, shuffling his feet",
+     "acting": "gaze tracks the eagle (lookAt every frame), small hops of 4 units as he turns",
+     "library": "lookAt(), hop()"
+    },
+    {
+     "t": 15.2,
+     "cue": {
+      "word": "ثم",
+      "t": 15.18
+     },
+     "who": "eagle",
+     "action": "stalls at the top of the circle: head tilts down, the eye locks on the lamb, wings half fold",
+     "acting": "anticipation 0.7 s: lid opens to 0, brow 1, body pitches nose-down",
+     "library": "bird headRot 0.5, soar 0.4, anticipate()"
+    },
+    {
+     "t": 15.9,
+     "cue": {
+      "word": "ينقض",
+      "t": 15.96
+     },
+     "who": "eagle",
+     "action": "dives on a steep accelerating curve toward the lamb, wings swept back",
+     "acting": "stretch sq 1.15 along the dive, speed lines trail from the wingtips",
+     "library": "bird fold:1 + fallY-style ease-in on a bezier + speedLines"
+    },
+    {
+     "t": 16.5,
+     "cue": {
+      "word": "بسرعة",
+      "t": 16.56
+     },
+     "who": "ewes",
+     "action": "the ewes scatter left and right away from the dive line",
+     "acting": "staggered starts (0.1 s apart), short bleat mouths, ears back, dust at the first footfalls",
+     "library": "sheep walk() run amp, footfalls(), dustBurst, stagger(i)"
+    },
+    {
+     "t": 17.6,
+     "cue": {
+      "word": "حمل",
+      "t": 17.72
+     },
+     "who": "lamb",
+     "action": "the lamb is left alone in the gap; looks up, freezes, legs lock",
+     "acting": "eyes 'wide', ears down, tremble 2 units; the shadow shrinks and darkens around it",
+     "library": "sheep {lamb:true, eyes:wide}, tremble()"
+    },
+    {
+     "t": 18.2,
+     "cue": {
+      "word": "صغير.",
+      "t": 18.24
+     },
+     "who": "eagle",
+     "action": "flares 60 units above the lamb: wings snap open, legs swing forward, talons spread",
+     "acting": "wings overshoot open then settle; the frame holds this pose into the pause",
+     "library": "bird talons:1, soar 1, settleTo()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 10.7,
+     "text": "ONE MORNING..."
+    },
+    {
+     "t": 12.64,
+     "text": "EAGLE"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 19.5,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 19.8
+   }
+  },
+  {
+   "id": "S3",
+   "start": 19.8,
+   "end": 30.0,
+   "paragraphs": [
+    2
+   ],
+   "set": "sheepfold",
+   "cast": [
+    "eagle",
+    "lamb",
+    "ewes",
+    "sparrow"
+   ],
+   "summary": "The grab and the lift: talons close on the fleece, three heavy wingbeats raise the lamb, and the eagle carries it over the fence to a dot on the horizon.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "Start close on the grab (x 640, y 800, zoom 1.9); on \"وارتفع\" rise with the eagle and pull out to (x 760, y 560, zoom 0.95) so the fold shrinks under it; hold on the empty sky after it vanishes."
+   },
+   "composition": "Eagle above, lamb below on one vertical line at x 640; after the lift the pair travels up-right toward the vanish point (x 1480, y 300); the sparrow stays in frame bottom-left on his post, head turning to follow.",
+   "actions": [
+    {
+     "t": 20.2,
+     "cue": {
+      "word": "أمسك",
+      "t": 20.24
+     },
+     "who": "eagle",
+     "action": "contact: the talons close around the wool of the lamb's back",
+     "acting": "2-frame white flash covers the contact, dust ring, eagle squashes 0.9 then recovers",
+     "library": "flash + dustBurst + impactSquash(); bird talons 1 to grip 1"
+    },
+    {
+     "t": 20.9,
+     "cue": {
+      "word": "النسر",
+      "t": 20.94
+     },
+     "who": "lettering",
+     "action": "GRAB!",
+     "acting": "burst lettering to the left of the pair, 0.8 s",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 21.5,
+     "cue": {
+      "word": "بالحمل",
+      "t": 21.54
+     },
+     "who": "lamb",
+     "action": "bleats once, legs paddling, unharmed (the talons hold fleece only)",
+     "acting": "eyes 'wide', mouth open (talk 1), ears straight out",
+     "library": "sheep {lamb:true, talk}"
+    },
+    {
+     "t": 22.5,
+     "cue": {
+      "word": "مخالبه",
+      "t": 22.58
+     },
+     "who": "camera",
+     "action": "insert: push in on the yellow talons sunk into the white fleece",
+     "acting": "zoom to 2.6 for 1 s, then back",
+     "library": "K.camAt"
+    },
+    {
+     "t": 23.5,
+     "cue": {
+      "word": "القوية،",
+      "t": 23.52
+     },
+     "who": "eagle",
+     "action": "raises both wings high for the first stroke, chest out",
+     "acting": "anticipation: body sinks 10 units, wings up and back, brow 1",
+     "library": "bird wingsUp, anticipate()"
+    },
+    {
+     "t": 24.6,
+     "who": "eagle",
+     "action": "first huge downstroke (in the pause): a dust ring blows outward on the grass",
+     "acting": "grass tufts and a ewe's wool flatten away from the wind for 4 frames",
+     "library": "dustBurst ring, kick()"
+    },
+    {
+     "t": 25.3,
+     "cue": {
+      "word": "وارتفع",
+      "t": 25.3
+     },
+     "who": "eagle",
+     "action": "rises in three stepped wingbeats, each stroke lifting 70 units, sinking 15 between",
+     "acting": "lamb swings under the talons a beat late (damped swing), legs dangling",
+     "library": "bird flap from stroke list; swing() for the lamb"
+    },
+    {
+     "t": 26.3,
+     "cue": {
+      "word": "فوق",
+      "t": 26.36
+     },
+     "who": "camera",
+     "action": "cranes up and pulls out with the climb; fence and flock shrink below",
+     "acting": "1.4 s ease",
+     "library": "K.camAt"
+    },
+    {
+     "t": 26.9,
+     "cue": {
+      "word": "الحظيرة",
+      "t": 26.96
+     },
+     "who": "ewes",
+     "action": "the flock regroups and all heads follow the lamb up; the mother ewe steps forward and bleats",
+     "acting": "staggered head turns, one ewe keeps staring after the others look away",
+     "library": "sheep gaze via lookAt(), talk, stagger(i)"
+    },
+    {
+     "t": 28.3,
+     "cue": {
+      "word": "اختفى",
+      "t": 28.4
+     },
+     "who": "eagle",
+     "action": "glides away up-right with slow strokes and shrinks to a dot over the far hills",
+     "acting": "scale 2.6 down to 0.15 over 1.3 s, flaps slow down with distance",
+     "library": "bird s via kfn, fly"
+    },
+    {
+     "t": 29.0,
+     "cue": {
+      "word": "بعيدًا.",
+      "t": 29.08
+     },
+     "who": "fx",
+     "action": "the dot blinks out; one brown feather rocks down from the sky",
+     "acting": "only the feather moves: stillness after the action",
+     "library": "featherFall(n 1)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 20.94,
+     "text": "GRAB!"
+    },
+    {
+     "t": 21.6,
+     "text": "BAA!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 20.2,
+     "kind": "thud"
+    },
+    {
+     "t": 24.8,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 30.0
+   }
+  },
+  {
+   "id": "S4",
+   "start": 30.0,
+   "end": 41.0,
+   "paragraphs": [
+    2
+   ],
+   "set": "sheepfold",
+   "cast": [
+    "sparrow"
+   ],
+   "summary": "The sparrow stares after the eagle in awe, daydreams himself carrying a sheep, checks his own two wings and strikes a wobbly eagle pose.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Close on the sparrow on the corner post (x 300, y 640, zoom 2.4), sky behind; ease back to zoom 1.9 and up 60 units when the thought cloud opens; slow push-in to 2.6 on the eagle pose."
+   },
+   "composition": "Sparrow lower left third on the post, looking up-right; the thought cloud takes the upper right of the panel (centre about x 420, y 470, 330 x 240) with its tail to his head; nothing covers his face.",
+   "actions": [
+    {
+     "t": 30.0,
+     "cue": {
+      "word": "نظر",
+      "t": 30.0
+     },
+     "who": "sparrow",
+     "action": "stares at the empty spot in the sky, beak hanging open",
+     "acting": "gaze up-right [0.8,-0.6], lid 0, crest 1, completely still except a slow breathe()",
+     "library": "bird beak 1.4, crest; breathe()"
+    },
+    {
+     "t": 30.9,
+     "cue": {
+      "word": "العصفور",
+      "t": 30.86
+     },
+     "who": "sparrow",
+     "action": "one slow blink, then leans forward on tiptoe toward the sky",
+     "acting": "tip 0.12, stretch sq 1.06, tail up for balance",
+     "library": "bird tip, sq, blink"
+    },
+    {
+     "t": 32.1,
+     "cue": {
+      "word": "بإعجاب",
+      "t": 32.16
+     },
+     "who": "sparrow",
+     "action": "admiration: chest puffs, eyes shine, a tiny happy shiver",
+     "acting": "wet:true used as a sparkle highlight, sq 1.08, crest flutter, two 4-point star glints beside the eyes",
+     "library": "bird wet, sq; star glints via style emphasis marks"
+    },
+    {
+     "t": 32.6,
+     "who": "lettering",
+     "action": "WOW!",
+     "acting": "small burst above and behind his head",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 33.2,
+     "cue": {
+      "word": "وقال",
+      "t": 33.22
+     },
+     "who": "sparrow",
+     "action": "turns his head to the viewer side and brings one wingtip to his chin, thinking",
+     "acting": "gaze drifts up-left (saccade), lid 0.3, head tilt",
+     "library": "bird sag -0.8 (wing to chin), headRot 0.2, gazePlan saccades"
+    },
+    {
+     "t": 35.1,
+     "cue": {
+      "word": "«لماذا",
+      "t": 35.18
+     },
+     "who": "fx",
+     "action": "thought cloud pops (trail first): the sparrow himself, in the eagle's exact flare pose, lifting a whole sheep over the fence",
+     "acting": "inside: dream-sparrow at 2x his true size with a heroic brow; the dream sheep smiles",
+     "library": "thoughtCloud(ctx, 420, 470, 330, 240, t, {inside, scale 0.45})"
+    },
+    {
+     "t": 36.3,
+     "cue": {
+      "word": "مثله؟",
+      "t": 36.34
+     },
+     "who": "fx",
+     "action": "inside the cloud the dream-sparrow carries the sheep away in three easy flaps, copying the eagle's exit path",
+     "acting": "the real sparrow nods along, beak in a smile",
+     "library": "thoughtCloud inside(c, t) reusing the S3 carry rig"
+    },
+    {
+     "t": 37.6,
+     "cue": {
+      "word": "عندي",
+      "t": 37.64
+     },
+     "who": "sparrow",
+     "action": "cloud pops away; he unfolds his right wing and inspects it",
+     "acting": "gaze on the wingtip, proud lid 0.35",
+     "library": "bird wing spread (sag -0.85 one side)"
+    },
+    {
+     "t": 37.9,
+     "cue": {
+      "word": "جناحان",
+      "t": 37.94
+     },
+     "who": "sparrow",
+     "action": "unfolds the left wing too and gives two brisk test flaps",
+     "acting": "looks wing to wing (two gaze snaps); label TWO WINGS! with a forked arrow to both wingtips",
+     "library": "bird wingsUp/flap; S.label + S.arrow"
+    },
+    {
+     "t": 38.9,
+     "cue": {
+      "word": "كما",
+      "t": 38.94
+     },
+     "who": "sparrow",
+     "action": "strikes the eagle pose: wings wide, head high, fierce brow",
+     "acting": "holds 0.5 s, then wobbles on the post and windmills to catch his balance (comic undercut)",
+     "library": "bird wings spread, tip oscillation via swing(), settleTo()"
+    },
+    {
+     "t": 40.4,
+     "who": "sparrow",
+     "action": "recovers, shakes his feathers out and nods once, decided (in the pause)",
+     "acting": "sq 0.9 to 1.05 shake, firm closed beak, gaze forward",
+     "library": "bird sq, tremble() for the shake"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 32.6,
+     "text": "WOW!"
+    },
+    {
+     "t": 37.94,
+     "text": "TWO WINGS!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 37.3,
+     "kind": "chime"
+    },
+    {
+     "t": 40.5,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 41.0
+   }
+  },
+  {
+   "id": "S5",
+   "start": 41.0,
+   "end": 61.44,
+   "paragraphs": [
+    3
+   ],
+   "set": "sheepfold",
+   "cast": [
+    "sparrow",
+    "ewes",
+    "ram",
+    "eagle"
+   ],
+   "summary": "Choosing the prey. He hops along the rail, rejects the ordinary sheep, then sees the biggest thing in the fold: the fat ram with a dirty, tangled fleece. A size chart the sparrow never looks at tells the audience what he ignores.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Follow his hops along the rail (zoom 1.5); on \"كبشًا\" pan right 500 units to reveal the ram (x 1150, zoom 1.3); push in to the fleece on \"صوف\" (x 1150, y 700, zoom 2.6); cut back to a two-level shot with the sparrow at left for the comparison (x 760, y 640, zoom 1.15)."
+   },
+   "composition": "Sparrow on the back rail (y 815 rail top) moving left to right from x 240 to x 620; ram stands side-on at x 1150, feet y 920, facing left, filling a third of the panel after the pan; the comparison box sits in the sky at upper centre (x 560-960, y 160-420), clear of both faces.",
+   "actions": [
+    {
+     "t": 41.0,
+     "cue": {
+      "word": "بحث",
+      "t": 41.0
+     },
+     "who": "sparrow",
+     "action": "hops down from the post onto the top rail and hops along it, three hops",
+     "acting": "each hop: anticipate crouch, arc, landSquash; head scanning between hops",
+     "library": "hop(), anticipate(), landSquash()"
+    },
+    {
+     "t": 42.9,
+     "cue": {
+      "word": "حيوان",
+      "t": 42.94
+     },
+     "who": "sparrow",
+     "action": "looks at the nearest ewe, tilts his head, measuring her with a wing held out like a ruler",
+     "acting": "one eye closer (lid 0.4), head tilt, tongue-in-beak concentration",
+     "library": "bird headRot, sag, gaze lookAt(ewe)"
+    },
+    {
+     "t": 43.6,
+     "cue": {
+      "word": "كبير",
+      "t": 43.64
+     },
+     "who": "sparrow",
+     "action": "shakes his head: not big enough; hops on",
+     "acting": "two quick head shakes, dismissive wing flick",
+     "library": "bird headRot oscillation"
+    },
+    {
+     "t": 44.4,
+     "cue": {
+      "word": "يستطيع",
+      "t": 44.4
+     },
+     "who": "ewes",
+     "action": "the rejected ewe looks at him, chews, and goes back to the grass",
+     "acting": "slow blink, ear flick: completely unimpressed",
+     "library": "sheep chew, lid, headDown"
+    },
+    {
+     "t": 45.6,
+     "cue": {
+      "word": "يحمله.",
+      "t": 45.68
+     },
+     "who": "sparrow",
+     "action": "mimes a lift with both wings (up, heave), testing the idea",
+     "acting": "sq 0.9 then 1.1, eyes shut with effort then open and pleased",
+     "library": "bird wingsUp, sq"
+    },
+    {
+     "t": 47.0,
+     "cue": {
+      "word": "رأى",
+      "t": 47.0
+     },
+     "who": "sparrow",
+     "action": "freezes mid-hop landing: he has seen something off right",
+     "acting": "head snaps right, gaze [1,0.1], lid 0, crest shoots up, beak drops open",
+     "library": "bird crest 1, beak 1.5, noBlink"
+    },
+    {
+     "t": 48.0,
+     "cue": {
+      "word": "كبشًا",
+      "t": 48.08
+     },
+     "who": "camera",
+     "action": "pans right along the fence to reveal the ram, who fills the frame",
+     "acting": "0.8 s eased pan; the ram is already chewing, in no hurry",
+     "library": "K.camAt"
+    },
+    {
+     "t": 48.1,
+     "who": "lettering",
+     "action": "label with arrow: RAM",
+     "acting": "above his back, not over the head",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 48.7,
+     "cue": {
+      "word": "سمينًا",
+      "t": 48.74
+     },
+     "who": "ram",
+     "action": "the ram shifts his weight: the round belly sways and settles",
+     "acting": "sq 0.96 to 1.03 jiggle (two cycles), heavy lids (lid 0.45), jaw grinding sideways",
+     "library": "sheep {ram:true, fat 1, chew} + settleTo()"
+    },
+    {
+     "t": 49.5,
+     "cue": {
+      "word": "يقف",
+      "t": 49.52
+     },
+     "who": "ewes",
+     "action": "two ewes stand beside him and reach only to his shoulder",
+     "acting": "they glance up at him and shuffle aside",
+     "library": "sheep s 0.7 vs ram s 1.0"
+    },
+    {
+     "t": 51.3,
+     "cue": {
+      "word": "وعلى",
+      "t": 51.28
+     },
+     "who": "camera",
+     "action": "tilts up and pushes in on the ram's back",
+     "acting": "1.2 s ease to zoom 2.6",
+     "library": "K.camAt"
+    },
+    {
+     "t": 52.6,
+     "cue": {
+      "word": "صوف",
+      "t": 52.64
+     },
+     "who": "ram",
+     "action": "close on the fleece: deep piled curls, drawn as overlapping scallops with blue dot shading",
+     "acting": "the wool breathes slowly with him",
+     "library": "sheep wool layer; breathe()"
+    },
+    {
+     "t": 53.2,
+     "cue": {
+      "word": "كثيف",
+      "t": 53.18
+     },
+     "who": "fx",
+     "action": "the curls are thick: a fly lands on them and sinks to its knees",
+     "acting": "tiny gag, 0.6 s",
+     "library": "small dot fly on a seeded path"
+    },
+    {
+     "t": 54.0,
+     "cue": {
+      "word": "متشابك.",
+      "t": 54.02
+     },
+     "who": "ram",
+     "action": "the matted patch on the back shows: knotted strands, two burrs, a twig, a brownish tint",
+     "acting": "label with arrow: TANGLED WOOL (the trap, planted now for the payoff in S7)",
+     "library": "sheep tangle:1 (knot loops, burrs) + S.label + S.arrow"
+    },
+    {
+     "t": 55.2,
+     "cue": {
+      "word": "لم",
+      "t": 55.22
+     },
+     "who": "sparrow",
+     "action": "cut back wide: the sparrow on the rail rubs his wingtips together, eyes on the ram",
+     "acting": "eager lean (tip 0.15), half-lidded greedy smile, tail wagging",
+     "library": "bird tip, lid 0.35, tailDrop oscillation"
+    },
+    {
+     "t": 56.5,
+     "cue": {
+      "word": "يفكر",
+      "t": 56.5
+     },
+     "who": "sparrow",
+     "action": "dreamy stare at the ram: he sees only the prize",
+     "acting": "pupils fixed on the ram, slow blink, no glance anywhere else",
+     "library": "lookAt(ram), blink"
+    },
+    {
+     "t": 58.0,
+     "cue": {
+      "word": "الفرق",
+      "t": 58.08
+     },
+     "who": "fx",
+     "action": "comparison box opens in the sky: left half the eagle silhouette at scale, right half the sparrow at the same scale (a speck)",
+     "acting": "style box with a centre divider; the sparrow in the scene does not look at it",
+     "library": "S.box + bird drawn twice at true relative scale (2.6 vs 0.7)"
+    },
+    {
+     "t": 58.9,
+     "cue": {
+      "word": "قوته",
+      "t": 58.92
+     },
+     "who": "fx",
+     "action": "arrow and label to the speck: SPARROW; a tiny lamb icon under the eagle, a huge ram icon under the sparrow",
+     "acting": "the ram icon overflows its half of the box",
+     "library": "S.arrow + S.label; sheep drawn small"
+    },
+    {
+     "t": 59.8,
+     "cue": {
+      "word": "وقوة",
+      "t": 59.8
+     },
+     "who": "fx",
+     "action": "the eagle half flexes: label EAGLE, the silhouette pulses 8% larger",
+     "acting": "one pulse, then hold",
+     "library": "pulse()"
+    },
+    {
+     "t": 60.7,
+     "cue": {
+      "word": "النسر.",
+      "t": 60.76
+     },
+     "who": "sparrow",
+     "action": "still not looking at the chart, he crouches for take-off",
+     "acting": "anticipation crouch sq 0.85, gaze locked on the ram, brow fierce",
+     "library": "anticipate()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 48.1,
+     "text": "RAM"
+    },
+    {
+     "t": 54.02,
+     "text": "TANGLED WOOL"
+    },
+    {
+     "t": 58.92,
+     "text": "SPARROW"
+    },
+    {
+     "t": 59.8,
+     "text": "EAGLE"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 46.7,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 61.44
+   }
+  },
+  {
+   "id": "S6",
+   "start": 61.44,
+   "end": 82.66,
+   "paragraphs": [
+    4
+   ],
+   "set": "sheepfold",
+   "cast": [
+    "sparrow",
+    "ram",
+    "ewes"
+   ],
+   "summary": "The attempt. He copies the eagle beat for beat (climb, stall, dive, grab, heave) and the ram simply goes on chewing. A height counter stays at zero.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide for the climb and dive (x 1000, y 560, zoom 1.05), the same framing as the eagle's dive in S2 so the copy reads; push in to the ram's back for the grab (x 1150, y 720, zoom 2.4); pull back to a full shot of the unmoved ram on \"لكنه\" (x 1120, y 760, zoom 1.3)."
+   },
+   "composition": "Ram side-on at x 1150 facing left; the sparrow's dive line repeats the eagle's diagonal from top right at one quarter the size; the counter sits bottom-left of the panel above the caption gutter (x 110-330, y 1100-1200), away from both characters.",
+   "actions": [
+    {
+     "t": 61.4,
+     "cue": {
+      "word": "طار",
+      "t": 61.44
+     },
+     "who": "sparrow",
+     "action": "takes off from the rail and climbs in a steep busy spiral",
+     "acting": "fast shallow flaps (the eagle never flapped), determined brow, gaze up",
+     "library": "bird fly, flap 1.5; flight bezier"
+    },
+    {
+     "t": 63.5,
+     "cue": {
+      "word": "أعلى",
+      "t": 63.5
+     },
+     "who": "sparrow",
+     "action": "reaches his top, only about 300 units above the ram, and tries to soar with locked wings",
+     "acting": "he sinks at once and has to flap to hold height: two sags, two recoveries",
+     "library": "bird soar attempt then flap; kfn y"
+    },
+    {
+     "t": 64.2,
+     "cue": {
+      "word": "قليلًا،",
+      "t": 64.22
+     },
+     "who": "sparrow",
+     "action": "copies the eagle's stall: head tilts down, eye locks on the ram's back, wings half fold",
+     "acting": "same pose as the eagle at 15.2 s, held 0.6 s; a dashed target line from his eye to the tangled patch",
+     "library": "bird headRot 0.5 + anticipate(); dashed line via K path"
+    },
+    {
+     "t": 66.3,
+     "cue": {
+      "word": "اندفع",
+      "t": 66.4
+     },
+     "who": "sparrow",
+     "action": "dives, wings swept back, thin speed lines",
+     "acting": "stretch sq 1.15, eyes narrowed (lid 0.4), beak forward",
+     "library": "bird fold + ease-in bezier + speedLines"
+    },
+    {
+     "t": 67.4,
+     "cue": {
+      "word": "ظهر",
+      "t": 67.48
+     },
+     "who": "sparrow",
+     "action": "flares over the ram's back with talons out, exactly like the eagle",
+     "acting": "wings snap open, tiny feet spread wide: the pose is right, the size is the joke",
+     "library": "bird wings spread, feet forward"
+    },
+    {
+     "t": 67.9,
+     "cue": {
+      "word": "الكبش",
+      "t": 67.92
+     },
+     "who": "sparrow",
+     "action": "lands on the fleece: a soft sink of 6 units and a tiny puff of lint",
+     "acting": "no flash, no dust ring, no reaction below; lettering in small type: pff",
+     "library": "landSquash(); dustBurst with 3 small white particles"
+    },
+    {
+     "t": 68.6,
+     "cue": {
+      "word": "مثل",
+      "t": 68.6
+     },
+     "who": "ram",
+     "action": "keeps chewing; one ear flicks as if at a fly",
+     "acting": "lid 0.45, gaze forward, jaw rhythm unchanged",
+     "library": "sheep chew, earL pulse"
+    },
+    {
+     "t": 69.9,
+     "cue": {
+      "word": "غرز",
+      "t": 69.94
+     },
+     "who": "sparrow",
+     "action": "insert on his feet: he stamps them down into the curls, left then right",
+     "acting": "each foot sinks to the ankle; wool strands close over the toes (the trap, shown plainly)",
+     "library": "bird feet + wool strand overlay drawn after the bird"
+    },
+    {
+     "t": 70.9,
+     "cue": {
+      "word": "قدميه",
+      "t": 70.9
+     },
+     "who": "sparrow",
+     "action": "wriggles the feet deeper and grips, satisfied nod",
+     "acting": "gaze down at his feet, then up and fierce",
+     "library": "bird drop, gaze"
+    },
+    {
+     "t": 72.5,
+     "cue": {
+      "word": "وضرب",
+      "t": 72.52
+     },
+     "who": "sparrow",
+     "action": "raises both wings high and starts beating them with all his strength",
+     "acting": "anticipation up 0.25 s, then 8 strokes per second with arcs; body stretches up on each downstroke (sq 1.12)",
+     "library": "bird flap 2, wingsUp, sq pulse per stroke"
+    },
+    {
+     "t": 73.6,
+     "cue": {
+      "word": "جناحيه",
+      "t": 73.62
+     },
+     "who": "lettering",
+     "action": "FLAP! FLAP! FLAP!",
+     "acting": "three small words popping one per stroke beside the wings",
+     "library": "S.emphasis staggered"
+    },
+    {
+     "t": 74.5,
+     "cue": {
+      "word": "بقوة،",
+      "t": 74.56
+     },
+     "who": "ram",
+     "action": "the wind of the wings stirs four hairs of wool; nothing else moves",
+     "acting": "the ram blinks slowly",
+     "library": "wool strand sway; lid"
+    },
+    {
+     "t": 75.4,
+     "cue": {
+      "word": "منتظرًا",
+      "t": 75.42
+     },
+     "who": "sparrow",
+     "action": "stops, panting, and peeks over the ram's side at the ground to see how high they are",
+     "acting": "leans out (tip 0.3), gaze straight down, hopeful brows",
+     "library": "bird tip, headRot, lookAt(ground)"
+    },
+    {
+     "t": 75.6,
+     "who": "fx",
+     "action": "counter appears: HEIGHT 0",
+     "acting": "style counter; it flickers as if about to change and stays 0",
+     "library": "S.counter"
+    },
+    {
+     "t": 76.8,
+     "cue": {
+      "word": "يرتفع",
+      "t": 76.82
+     },
+     "who": "sparrow",
+     "action": "second effort, harder: eyes shut, head down, wings a blur, feet hauling upward",
+     "acting": "his own body rises 10 units, stretching his legs; the fleece tents up under his feet and springs back",
+     "library": "bird flap 2.4, eyes shut, sq 1.2; wool tent = 2 curve points lifted"
+    },
+    {
+     "t": 77.5,
+     "cue": {
+      "word": "الكبش",
+      "t": 77.52
+     },
+     "who": "ram",
+     "action": "side view of the hooves: all four planted, a daisy beside one hoof does not even tremble",
+     "acting": "arrow to the hooves; HEIGHT still 0",
+     "library": "S.arrow; camera insert"
+    },
+    {
+     "t": 78.4,
+     "cue": {
+      "word": "الأرض.",
+      "t": 78.44
+     },
+     "who": "ewes",
+     "action": "two ewes watch the performance, look at each other, and go back to grazing",
+     "acting": "staggered: glance, glance, heads down",
+     "library": "sheep gaze, headDown, stagger(i)"
+    },
+    {
+     "t": 79.0,
+     "cue": {
+      "word": "لكنه",
+      "t": 79.04
+     },
+     "who": "sparrow",
+     "action": "flops forward over his own feet, wings hanging, out of breath",
+     "acting": "sq 0.88, beak open panting, lid 0.5",
+     "library": "bird sag 1, beak, breathe() fast"
+    },
+    {
+     "t": 80.4,
+     "cue": {
+      "word": "لم",
+      "t": 80.38
+     },
+     "who": "ram",
+     "action": "full shot: the ram has not moved a hoof; he swallows, then tears off another mouthful of grass",
+     "acting": "slow head dip and return; label with arrow: NOT AN INCH",
+     "library": "sheep headDown, chew; S.label + S.arrow"
+    },
+    {
+     "t": 81.6,
+     "cue": {
+      "word": "من",
+      "t": 81.58
+     },
+     "who": "sparrow",
+     "action": "lifts his head and looks to the viewer for one beat",
+     "acting": "the single look to camera of the film: gaze [0,0.05], one blink",
+     "library": "gaze to camera"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 67.95,
+     "text": "pff"
+    },
+    {
+     "t": 73.62,
+     "text": "FLAP! FLAP! FLAP!"
+    },
+    {
+     "t": 75.6,
+     "text": "HEIGHT 0"
+    },
+    {
+     "t": 80.5,
+     "text": "NOT AN INCH"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 82.66
+   }
+  },
+  {
+   "id": "S7",
+   "start": 82.66,
+   "end": 103.04,
+   "paragraphs": [
+    5
+   ],
+   "set": "sheepfold",
+   "cast": [
+    "sparrow",
+    "ram"
+   ],
+   "summary": "The trap. He gives up and tries to leave, is yanked back by his own feet, discovers the knots, pulls again and again with less and less strength, and ends drooping and frightened on the ram's back.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on the ram's back with the sparrow (x 1150, y 700, zoom 2.0); insert zoom 3.2 on the feet at \"اكتشف\"; back to 2.0 for the pulls; slow push-in to 2.5 on his face for the fear and tiredness."
+   },
+   "composition": "Sparrow centred on the curve of the ram's back (about y 690), sky behind him so every pose is a clean silhouette; the ram's head stays in frame at the left edge so his indifference plays against the panic.",
+   "actions": [
+    {
+     "t": 82.7,
+     "cue": {
+      "word": "حاول",
+      "t": 82.66
+     },
+     "who": "sparrow",
+     "action": "shrugs, folds his wings, shakes himself: time to go",
+     "acting": "small disappointed frown, eyes to the sky",
+     "library": "bird sag, sq shake"
+    },
+    {
+     "t": 84.6,
+     "cue": {
+      "word": "العصفور",
+      "t": 84.64
+     },
+     "who": "sparrow",
+     "action": "crouches and springs into take-off",
+     "acting": "anticipate crouch 0.3 s, wings up",
+     "library": "anticipate(), bird wingsUp"
+    },
+    {
+     "t": 85.4,
+     "cue": {
+      "word": "الطيران",
+      "t": 85.44
+     },
+     "who": "sparrow",
+     "action": "rises 30 units, legs stretch long, and he is snapped back down onto the wool",
+     "acting": "stretch sq 1.25 at the top, 2-frame hold, then snap to sq 0.8 and a rebound",
+     "library": "rebound(), impactSquash(); legs drawn stretched (bird leg length field)"
+    },
+    {
+     "t": 86.2,
+     "cue": {
+      "word": "وحده،",
+      "t": 86.22
+     },
+     "who": "lettering",
+     "action": "BOING!",
+     "acting": "beside him, tilted",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 86.9,
+     "cue": {
+      "word": "لكنه",
+      "t": 86.9
+     },
+     "who": "sparrow",
+     "action": "sits stunned, feathers ruffled, blinks twice",
+     "acting": "crest crooked, gaze unfocused then down",
+     "library": "bird crest 0.5, blink x2"
+    },
+    {
+     "t": 88.5,
+     "cue": {
+      "word": "اكتشف",
+      "t": 88.56
+     },
+     "who": "sparrow",
+     "action": "bends down and looks between his legs at his feet",
+     "acting": "head upside down, gaze on the feet, brow raised",
+     "library": "bird headRot 1.2, drop"
+    },
+    {
+     "t": 89.5,
+     "cue": {
+      "word": "قدميه",
+      "t": 89.5
+     },
+     "who": "camera",
+     "action": "insert: both feet wrapped in grey-brown knotted strands, a burr stuck to one toe",
+     "acting": "zoom 3.2, hold 1.4 s",
+     "library": "K.camAt; sheep tangle overlay"
+    },
+    {
+     "t": 90.7,
+     "cue": {
+      "word": "علقتا",
+      "t": 90.7
+     },
+     "who": "lettering",
+     "action": "label with arrow at the knots: STUCK!",
+     "acting": "arrow wiggles once",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 91.9,
+     "cue": {
+      "word": "المتسخ",
+      "t": 91.92
+     },
+     "who": "fx",
+     "action": "the dirt shows: two small flies circle the patch and three wavy stink lines rise",
+     "acting": "the sparrow pulls his head back, beak wrinkled",
+     "library": "seeded fly dots; 3 sine strokes"
+    },
+    {
+     "t": 92.8,
+     "cue": {
+      "word": "المتشابك.",
+      "t": 92.8
+     },
+     "who": "sparrow",
+     "action": "tugs one foot with his beak; a strand stretches and pulls it back",
+     "acting": "eyes wide now (lid 0), first real worry",
+     "library": "bird headRot, strand = elastic line"
+    },
+    {
+     "t": 93.9,
+     "cue": {
+      "word": "شد",
+      "t": 93.92
+     },
+     "who": "sparrow",
+     "action": "pull one: full power beat of the wings, body straining upward",
+     "acting": "counter PULL 1; strands go taut and hum, wool tents 14 units",
+     "library": "bird flap 2, sq 1.2; S.counter"
+    },
+    {
+     "t": 95.7,
+     "cue": {
+      "word": "مرة",
+      "t": 95.72
+     },
+     "who": "sparrow",
+     "action": "pull two: weaker, lower, shorter",
+     "acting": "counter PULL 2; lid 0.25, beak open",
+     "library": "bird flap 1.5, sq 1.12"
+    },
+    {
+     "t": 96.9,
+     "cue": {
+      "word": "مرة،",
+      "t": 96.88
+     },
+     "who": "sparrow",
+     "action": "pull three: a few ragged flaps that barely lift him",
+     "acting": "counter PULL 3; wings out of time with each other",
+     "library": "bird flap 1, sag 0.4"
+    },
+    {
+     "t": 97.5,
+     "cue": {
+      "word": "وكلما",
+      "t": 97.48
+     },
+     "who": "ram",
+     "action": "turns his head back to look at the noise on his back, chewing",
+     "acting": "one slow blink at the sparrow, then he faces front again: not his problem",
+     "library": "sheep headTurn, lid, chew"
+    },
+    {
+     "t": 98.8,
+     "cue": {
+      "word": "حاول",
+      "t": 98.8
+     },
+     "who": "sparrow",
+     "action": "panic: twists left and right, flapping in bursts, the strands winding tighter",
+     "acting": "gaze darting (saccades), tremble 3 units, crest flat",
+     "library": "gazePlan(t, plan, 0.07), tremble(), bird crest 0"
+    },
+    {
+     "t": 100.3,
+     "cue": {
+      "word": "ازداد",
+      "t": 100.36
+     },
+     "who": "sparrow",
+     "action": "fear grows: he freezes, chest pumping, eyes wet",
+     "acting": "wet:true, lid 0, small fast breathe()",
+     "library": "bird wet, breathe()"
+    },
+    {
+     "t": 101.0,
+     "cue": {
+      "word": "اضطرابه",
+      "t": 101.0
+     },
+     "who": "sparrow",
+     "action": "a last flutter, three sweat drops",
+     "acting": "head whips to both sides",
+     "library": "tremble(); 3 drop marks"
+    },
+    {
+     "t": 101.9,
+     "cue": {
+      "word": "وتعبه.",
+      "t": 101.96
+     },
+     "who": "sparrow",
+     "action": "exhaustion: wings sag onto the wool, head sinks, eyelids droop",
+     "acting": "sag 1, lid 0.6, sq 0.9, slow heavy breathing; a single loose feather slides off the fleece",
+     "library": "bird sag, lid, sq; featherFall(n 1)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 86.22,
+     "text": "BOING!"
+    },
+    {
+     "t": 90.7,
+     "text": "STUCK!"
+    },
+    {
+     "t": 93.92,
+     "text": "PULL 1"
+    },
+    {
+     "t": 95.72,
+     "text": "PULL 2"
+    },
+    {
+     "t": 96.88,
+     "text": "PULL 3"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 103.04
+   }
+  },
+  {
+   "id": "S8",
+   "start": 103.04,
+   "end": 123.4,
+   "paragraphs": [
+    6
+   ],
+   "set": "sheepfold",
+   "cast": [
+    "shepherd",
+    "sparrow",
+    "ram",
+    "ewes",
+    "eagle",
+    "lamb"
+   ],
+   "summary": "The shepherd, who saw everything from the gate, walks in through his flock, finds the bird stuck fast and lifts him off the wool with one hand.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Reveal him at the gate (x 1380, y 660, zoom 1.3); track left with his walk to the ram; two-shot of shepherd and ram's back for the catch (x 1190, y 660, zoom 1.8), keeping his face and the sparrow both in frame (twoShot)."
+   },
+   "composition": "Shepherd enters at the gate on the right (x 1500) and walks left to x 1290, beside the ram's hindquarters; his hand comes down from upper right onto the sparrow at about (1160, 690); his thought cloud opens upper left of him over the sky.",
+   "actions": [
+    {
+     "t": 103.0,
+     "cue": {
+      "word": "كان",
+      "t": 103.04
+     },
+     "who": "camera",
+     "action": "cut to the gate: the shepherd stands with one hand on the gatepost and the other shading his eyes",
+     "acting": "he has clearly been there a while",
+     "library": "person {costume:'villager', hold:'stick'} handR to brow"
+    },
+    {
+     "t": 104.5,
+     "cue": {
+      "word": "الراعي",
+      "t": 104.52
+     },
+     "who": "shepherd",
+     "action": "lowers the hand; label with arrow: SHEPHERD",
+     "acting": "sun-browned villager, grey in the beard (age 0.45), frowning at the sky where the lamb went",
+     "library": "person age, brow 0.5, gaze up-left; S.label"
+    },
+    {
+     "t": 105.5,
+     "cue": {
+      "word": "شاهد",
+      "t": 105.54
+     },
+     "who": "fx",
+     "action": "his thought cloud opens: the eagle carrying the lamb away (the S3 image, small)",
+     "acting": "he shakes his head once at it, mouth tight",
+     "library": "thoughtCloud(... inside: eagle + lamb carry, scale 0.3)"
+    },
+    {
+     "t": 107.2,
+     "cue": {
+      "word": "يحمل",
+      "t": 107.18
+     },
+     "who": "fx",
+     "action": "inside the cloud the eagle flaps off with the lamb and is gone",
+     "acting": "the cloud empties for a beat",
+     "library": "thoughtCloud inside(c, t)"
+    },
+    {
+     "t": 108.3,
+     "cue": {
+      "word": "ثم",
+      "t": 108.34
+     },
+     "who": "fx",
+     "action": "the cloud refills: the tiny sparrow doing the same dive onto the ram",
+     "acting": "his brows go up, he huffs through his moustache",
+     "library": "thoughtCloud inside; person brow -0.4"
+    },
+    {
+     "t": 110.0,
+     "cue": {
+      "word": "العصفور",
+      "t": 110.04
+     },
+     "who": "shepherd",
+     "action": "cloud pops; he looks from the sky to the real sparrow on the ram and points his staff at it",
+     "acting": "gaze plan: sky, then the ram's back; chin up, unimpressed",
+     "library": "look(T, headPos, plan); PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 110.8,
+     "cue": {
+      "word": "يقلده.",
+      "t": 110.78
+     },
+     "who": "sparrow",
+     "action": "on the ram, small in the distance, one feeble copy of the eagle flare",
+     "acting": "the shepherd's eyes narrow (lid 0.4)",
+     "library": "bird wings spread weak"
+    },
+    {
+     "t": 111.9,
+     "cue": {
+      "word": "اقترب",
+      "t": 111.94
+     },
+     "who": "shepherd",
+     "action": "opens the gate and walks in toward the ram with steady steps, staff tapping",
+     "acting": "legs driven by distance (no sliding), dust at each footfall, staff plants every second step",
+     "library": "walk(SX, t), footfalls(), dustBurst"
+    },
+    {
+     "t": 112.8,
+     "cue": {
+      "word": "من",
+      "t": 112.8
+     },
+     "who": "ewes",
+     "action": "the ewes step aside for him one after another and look where he is going",
+     "acting": "staggered sidesteps, heads turning to the ram",
+     "library": "sheep walk, stagger(i)"
+    },
+    {
+     "t": 113.1,
+     "cue": {
+      "word": "الكبش",
+      "t": 113.14
+     },
+     "who": "sparrow",
+     "action": "hears the steps: head jerks up, sees him, eyes go wide",
+     "acting": "gaze on the shepherd, lid 0, crest up, tremble",
+     "library": "lookAt(), tremble()"
+    },
+    {
+     "t": 113.8,
+     "cue": {
+      "word": "ووجد",
+      "t": 113.84
+     },
+     "who": "shepherd",
+     "action": "stops at the ram, plants the staff and bends over the bird",
+     "acting": "person lean forward, head tilt, gaze down at the sparrow; one eyebrow up",
+     "library": "person lean, look()"
+    },
+    {
+     "t": 114.5,
+     "cue": {
+      "word": "الطائر",
+      "t": 114.52
+     },
+     "who": "sparrow",
+     "action": "frantic take-off attempts under the looming face: three flaps, three snaps back",
+     "acting": "each rise smaller (20, 12, 6 units)",
+     "library": "bird flap, rebound()"
+    },
+    {
+     "t": 115.8,
+     "cue": {
+      "word": "عاجزًا",
+      "t": 115.84
+     },
+     "who": "sparrow",
+     "action": "cannot move: he presses himself flat on the wool and looks up",
+     "acting": "sq 0.8, wet eyes, gaze up at the hand",
+     "library": "bird sq, wet"
+    },
+    {
+     "t": 116.9,
+     "cue": {
+      "word": "عن",
+      "t": 116.92
+     },
+     "who": "shepherd",
+     "action": "his free hand opens above the bird; its shadow covers the sparrow",
+     "acting": "anticipation: the hand hovers 0.6 s, fingers spread",
+     "library": "person handRW world target above the bird; anticipate()"
+    },
+    {
+     "t": 118.3,
+     "cue": {
+      "word": "أمسكه",
+      "t": 118.32
+     },
+     "who": "shepherd",
+     "action": "the hand closes around the sparrow",
+     "acting": "gentle but complete: only the head and tail show from the fist",
+     "library": "person handRW at the bird; fist = mitt drawn over the bird"
+    },
+    {
+     "t": 119.0,
+     "cue": {
+      "word": "بسهولة،",
+      "t": 119.06
+     },
+     "who": "shepherd",
+     "action": "lifts him off: the knotted strands stretch 40 units and let go one by one",
+     "acting": "lettering POP! on the last strand; the ram does not even look round",
+     "library": "elastic strand lines; S.emphasis"
+    },
+    {
+     "t": 120.0,
+     "cue": {
+      "word": "رغم",
+      "t": 120.04
+     },
+     "who": "sparrow",
+     "action": "struggles in the fist: head twisting, tail thrashing, pecks at the thumb",
+     "acting": "brow fierce and frightened at once; lettering PECK!",
+     "library": "bird headRot jab (bird mime peck)"
+    },
+    {
+     "t": 121.0,
+     "cue": {
+      "word": "محاولاته",
+      "t": 120.98
+     },
+     "who": "shepherd",
+     "action": "raises the fist to eye level and looks at his catch; the pecking changes nothing",
+     "acting": "flat stare, lid 0.3; the thumb does not flinch",
+     "library": "person handRW up, gaze at the fist"
+    },
+    {
+     "t": 122.2,
+     "cue": {
+      "word": "للهرب.",
+      "t": 122.22
+     },
+     "who": "sparrow",
+     "action": "one last wriggle, then he goes limp and looks up at the face",
+     "acting": "lid 0.4, beak shut",
+     "library": "bird lid"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 104.52,
+     "text": "SHEPHERD"
+    },
+    {
+     "t": 119.3,
+     "text": "POP!"
+    },
+    {
+     "t": 120.2,
+     "text": "PECK!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 123.2,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 123.4
+   }
+  },
+  {
+   "id": "S9",
+   "start": 123.4,
+   "end": 132.0,
+   "paragraphs": [
+    7
+   ],
+   "set": "sheepfold",
+   "cast": [
+    "shepherd",
+    "sparrow"
+   ],
+   "summary": "The punishment, told briefly and without cruelty on screen: an angry face, one quick motion hidden by the hand, a few feathers drifting down, short wings, and a string around the feet.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "Tight two-shot of the shepherd's head and shoulders with the bird in his hand at chest height (x 1260, y 610, zoom 2.6). Hold. The feathers fall through the bottom of the frame."
+   },
+   "composition": "Shepherd's face upper right, the fist with the sparrow lower left of it; both pairs of eyes in the upper half of the panel; sky and one fence post behind.",
+   "actions": [
+    {
+     "t": 123.9,
+     "cue": {
+      "word": "غضب",
+      "t": 123.94
+     },
+     "who": "shepherd",
+     "action": "anger arrives: brows drop into a V, mouth sets, he glances at the sky where his lamb went and back at the bird",
+     "acting": "brow 1, frown; gaze plan sky then bird (the anger has a reason)",
+     "library": "person brow 1, mouth frown, look()"
+    },
+    {
+     "t": 125.5,
+     "cue": {
+      "word": "من",
+      "t": 125.48
+     },
+     "who": "sparrow",
+     "action": "shrinks into the fist, head pulled down between the shoulders",
+     "acting": "sq 0.85, lid 0.2, gaze up at him",
+     "library": "bird drop, sq"
+    },
+    {
+     "t": 126.6,
+     "cue": {
+      "word": "فنتف",
+      "t": 126.62
+     },
+     "who": "shepherd",
+     "action": "spreads one of the bird's wings between finger and thumb; his other hand passes across it once, quickly",
+     "acting": "the moving hand covers the wing during the motion; the sparrow's eyes squeeze shut",
+     "library": "person handLW/handRW world targets; bird eyes shut"
+    },
+    {
+     "t": 127.4,
+     "who": "feathers",
+     "action": "five small brown feathers rock down from the hands and out of the bottom of the frame",
+     "acting": "seeded sway, each on its own timing",
+     "library": "featherFall(n 5)"
+    },
+    {
+     "t": 128.6,
+     "cue": {
+      "word": "ريش",
+      "t": 128.66
+     },
+     "who": "sparrow",
+     "action": "opens his eyes and looks at his wings: short rounded stubs now",
+     "acting": "lifts one, then the other; brows up, beak open",
+     "library": "bird clipped:1 (wing drawn at 45% length, no primaries)"
+    },
+    {
+     "t": 129.6,
+     "cue": {
+      "word": "وربط",
+      "t": 129.66
+     },
+     "who": "shepherd",
+     "action": "winds a red string twice around the two feet",
+     "acting": "two quick circular hand passes; face still stern but the brow eases to 0.6",
+     "library": "person handRW circling; string prop loops 0 to 2"
+    },
+    {
+     "t": 130.5,
+     "cue": {
+      "word": "قدميه",
+      "t": 130.56
+     },
+     "who": "string",
+     "action": "the loops sit around both ankles with a small bow; 200 units of string run to his fist",
+     "acting": "the sparrow tests it with one foot: it holds",
+     "library": "string {loops:2, bow:true}"
+    },
+    {
+     "t": 131.3,
+     "cue": {
+      "word": "بخيط.",
+      "t": 131.38
+     },
+     "who": "shepherd",
+     "action": "pulls the knot snug and tucks the bird under his arm, turning toward the gate",
+     "acting": "a short nod: done",
+     "library": "person turn (dir flip with squeeze), walk start"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 132.0,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S10",
+   "start": 132.0,
+   "end": 144.64,
+   "paragraphs": [
+    7
+   ],
+   "set": "hutRoom",
+   "cast": [
+    "shepherd",
+    "sparrow",
+    "boy",
+    "girl"
+   ],
+   "summary": "At home. The shepherd comes in and puts the bird down in front of his two children, who lean in, point and ask about the strange bird that cannot fly; the sparrow proves it with one failed hop.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "The card clears at about 133.2 on the hut interior (x 500, y 660, zoom 1.15); push in to the children and the bird on the mat (x 430, y 780, zoom 1.9) from \"أطفاله\"."
+   },
+   "composition": "Door on the right (x 820); children sitting on the mat at x 330 (girl) and x 520 (boy) facing each other; the sparrow is put down between them at x 425, floor y 900; the shepherd stands at x 660. Window on the back wall at upper left (x 180-320, y 430-560) showing evening sky, used again in S11.",
+   "actions": [
+    {
+     "t": 132.1,
+     "cue": {
+      "word": "ثم",
+      "t": 132.08
+     },
+     "who": "fx",
+     "action": "transition card LATER... covers the cut from the fold to the hut; behind it the sky moves to late afternoon",
+     "acting": "card about 1.1 s",
+     "library": "S.transition(..., {caption:'LATER...'}); skyCycle u 0.38 in the window"
+    },
+    {
+     "t": 133.3,
+     "cue": {
+      "word": "إلى",
+      "t": 133.6
+     },
+     "who": "girl",
+     "action": "card clears: the two children sit on the floor mat playing with pebbles",
+     "acting": "girl stacking, boy watching; neither has seen the door yet",
+     "library": "person {costume:'maiden', child:true, sit:1, seat:'floor'} and {costume:'servant', child:true, sit:1, seat:'floor'}"
+    },
+    {
+     "t": 133.9,
+     "cue": {
+      "word": "بيته",
+      "t": 133.92
+     },
+     "who": "shepherd",
+     "action": "ducks in through the door with the staff in one hand and the bird held in the other",
+     "acting": "walk in three steps; children's heads turn to him one after the other",
+     "library": "walk(), footfalls(); stagger(i) for the children"
+    },
+    {
+     "t": 134.7,
+     "cue": {
+      "word": "وألقاه",
+      "t": 134.66
+     },
+     "who": "shepherd",
+     "action": "bends and drops the bird onto the mat between them from hand height (about 60 units)",
+     "acting": "open hand, short fall, the string trailing after",
+     "library": "person lean, handRW; fallY()"
+    },
+    {
+     "t": 135.3,
+     "cue": {
+      "word": "أمام",
+      "t": 135.64
+     },
+     "who": "sparrow",
+     "action": "lands on his tied feet, tips over onto his side, scrambles upright",
+     "acting": "impact squash 0.8, rebound, stub wings out for balance, dizzy blink",
+     "library": "impactSquash(), rebound(), bird clipped:1"
+    },
+    {
+     "t": 136.2,
+     "cue": {
+      "word": "أطفاله،",
+      "t": 136.18
+     },
+     "who": "boy",
+     "action": "both children rock back, then lean in close",
+     "acting": "eyes wide, mouths in an o; the boy first, the girl 5 frames later",
+     "library": "person mouth 'o', tip; stagger"
+    },
+    {
+     "t": 137.3,
+     "cue": {
+      "word": "الذين",
+      "t": 137.28
+     },
+     "who": "girl",
+     "action": "the girl gets onto her knees to see better",
+     "acting": "kneel 1, hands on the mat, head tilted",
+     "library": "person kneel:1, child:true"
+    },
+    {
+     "t": 138.0,
+     "cue": {
+      "word": "سألوه",
+      "t": 137.96
+     },
+     "who": "boy",
+     "action": "the boy points at the bird and looks up at his father, asking",
+     "acting": "talk 0.8, brows raised; a small ? balloon above his head, clear of faces",
+     "library": "PERSON_HANDS.pointDown/pointFwd, talk, look(); style balloon"
+    },
+    {
+     "t": 139.3,
+     "cue": {
+      "word": "الطائر",
+      "t": 139.34
+     },
+     "who": "sparrow",
+     "action": "looks from one huge child face to the other, backing up until the string stops him",
+     "acting": "saccade gaze boy, girl, boy; small tremble",
+     "library": "gazePlan, tremble()"
+    },
+    {
+     "t": 140.0,
+     "cue": {
+      "word": "الغريب",
+      "t": 139.98
+     },
+     "who": "girl",
+     "action": "the girl tilts her head the other way and holds her palms up: what kind of bird is this?",
+     "acting": "PERSON_HANDS.palmsUp, talk 0.6, gaze up at her father",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 141.3,
+     "cue": {
+      "word": "لا",
+      "t": 141.26
+     },
+     "who": "sparrow",
+     "action": "tries to fly: crouch, spring, furious flapping of the short wings",
+     "acting": "rises 26 units, hangs for 4 frames, drops; the string never even goes taut",
+     "library": "anticipate(), hop() low arc, bird clipped flap"
+    },
+    {
+     "t": 142.3,
+     "cue": {
+      "word": "الطيران.",
+      "t": 142.34
+     },
+     "who": "sparrow",
+     "action": "plops back onto the mat and sits",
+     "acting": "landSquash 0.8; both children's heads follow him up and down",
+     "library": "landSquash(); lookAt() for the children"
+    },
+    {
+     "t": 143.6,
+     "who": "shepherd",
+     "action": "pulls the stool over and sits down (in the pause)",
+     "acting": "heavy sit with a settle; staff across his knees",
+     "library": "person sit:1, seat:'stool' + settleTo()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 138.0,
+     "text": "?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 143.9,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 144.64
+   }
+  },
+  {
+   "id": "S11",
+   "start": 144.64,
+   "end": 166.5,
+   "paragraphs": [
+    8
+   ],
+   "set": "hutRoom",
+   "cast": [
+    "shepherd",
+    "sparrow",
+    "boy",
+    "girl",
+    "eagle",
+    "ram"
+   ],
+   "summary": "The telling and the moral. The shepherd explains with a thought cloud that puts the eagle and the sparrow side by side; then the film stays on the flightless sparrow, who watches a far eagle cross the window and lowers his head. THE END.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium three-shot (x 480, y 700, zoom 1.5) with the cloud above the group; from \"وبقي\" a slow 8 s push-in on the sparrow (x 425, y 800, zoom 2.6) that keeps the window in the top-left corner until 159; final hold."
+   },
+   "composition": "Shepherd seated right (x 660), children left and centre on the mat, sparrow between them at x 425; the cloud (centre x 470, y 430, 380 x 260) sits above the children, tail to the shepherd's head; window upper left.",
+   "actions": [
+    {
+     "t": 144.6,
+     "cue": {
+      "word": "أخبرهم",
+      "t": 144.64
+     },
+     "who": "shepherd",
+     "action": "leans toward the children and begins to tell it, one finger raised",
+     "acting": "talk 0.7, calmer face now (brow 0.2), eye contact child to child",
+     "library": "person sit, talk, PERSON_HANDS.pointUp, look()"
+    },
+    {
+     "t": 145.3,
+     "cue": {
+      "word": "الراعي",
+      "t": 145.26
+     },
+     "who": "boy",
+     "action": "both children turn from the bird to their father and listen",
+     "acting": "girl sits back on her heels, boy props his chin on his hand",
+     "library": "PERSON_HANDS.chin; lookAt(shepherd)"
+    },
+    {
+     "t": 146.5,
+     "cue": {
+      "word": "حاول",
+      "t": 146.52
+     },
+     "who": "fx",
+     "action": "thought cloud opens above them: the little sparrow flapping on the ram's back, the ram chewing",
+     "acting": "the children look up into the cloud; the real sparrow looks up too and winces",
+     "library": "thoughtCloud(ctx, 470, 430, 380, 260, t, {inside, scale 0.4})"
+    },
+    {
+     "t": 147.4,
+     "cue": {
+      "word": "يفعل",
+      "t": 147.42
+     },
+     "who": "fx",
+     "action": "inside the cloud a HEIGHT 0 tag pops by the ram's hooves",
+     "acting": "the boy giggles (shoulders bob twice)",
+     "library": "S.counter inside the cloud; person sq pulse"
+    },
+    {
+     "t": 148.8,
+     "cue": {
+      "word": "نسر",
+      "t": 148.88
+     },
+     "who": "fx",
+     "action": "the cloud picture is pushed aside by the eagle swooping in with the lamb, filling two thirds of the cloud",
+     "acting": "children's eyes widen; the girl grabs her brother's sleeve",
+     "library": "thoughtCloud inside: eagle s large, lamb"
+    },
+    {
+     "t": 149.4,
+     "cue": {
+      "word": "أقوى",
+      "t": 149.42
+     },
+     "who": "fx",
+     "action": "in the cloud the eagle and the sparrow hover side by side at true scale; label with arrow on the eagle: STRONG",
+     "acting": "the sparrow in the cloud looks up at the eagle and gulps",
+     "library": "thoughtCloud inside; S.label"
+    },
+    {
+     "t": 150.5,
+     "cue": {
+      "word": "بكثير.",
+      "t": 150.6
+     },
+     "who": "shepherd",
+     "action": "shows it with his hands: arms spread wide for the eagle, then finger and thumb a pinch apart for the sparrow",
+     "acting": "armsOut then a pinch at eye level, eyebrows up on the pinch",
+     "library": "PERSON_HANDS.armsOut, then handR/handL close together"
+    },
+    {
+     "t": 151.7,
+     "who": "fx",
+     "action": "the cloud pops away (in the pause); everyone's eyes come down to the real bird",
+     "acting": "staggered: shepherd, girl, boy",
+     "library": "thoughtCloud p to 0; lookAt(sparrow)"
+    },
+    {
+     "t": 152.2,
+     "cue": {
+      "word": "وبقي",
+      "t": 152.18
+     },
+     "who": "camera",
+     "action": "begins the slow push-in on the sparrow on the mat",
+     "acting": "8 s ease",
+     "library": "K.camAt"
+    },
+    {
+     "t": 152.8,
+     "cue": {
+      "word": "العصفور",
+      "t": 152.8
+     },
+     "who": "sparrow",
+     "action": "sits very still between the two children, looking at the floor",
+     "acting": "lid 0.35, slow breathe(), string slack beside him",
+     "library": "bird lid, breathe()"
+    },
+    {
+     "t": 154.0,
+     "cue": {
+      "word": "الأطفال",
+      "t": 154.08
+     },
+     "who": "girl",
+     "action": "the girl lowers herself to his eye level, chin on her hands",
+     "acting": "soft face, mouth closed, slow blink",
+     "library": "person kneel + lean; lid"
+    },
+    {
+     "t": 154.9,
+     "cue": {
+      "word": "بلا",
+      "t": 154.88
+     },
+     "who": "sparrow",
+     "action": "lifts one short wing and looks at it",
+     "acting": "gaze on the wing, brows up (sad)",
+     "library": "bird clipped:1, wing raise"
+    },
+    {
+     "t": 155.9,
+     "cue": {
+      "word": "كاف",
+      "t": 155.9
+     },
+     "who": "sparrow",
+     "action": "lets the wing fall; lifts the other, lets it fall",
+     "acting": "each drop a little heavier; head sinks 6 units",
+     "library": "bird sag, drop"
+    },
+    {
+     "t": 156.4,
+     "cue": {
+      "word": "للطيران،",
+      "t": 156.46
+     },
+     "who": "sparrow",
+     "action": "looks up at the window and the evening sky",
+     "acting": "gaze up-left to the window, lid 0",
+     "library": "lookAt(window)"
+    },
+    {
+     "t": 157.5,
+     "cue": {
+      "word": "بعدما",
+      "t": 157.52
+     },
+     "who": "eagle",
+     "action": "far away in the window a small eagle silhouette glides across the orange sky, wings locked",
+     "acting": "crosses in 2.2 s; the sparrow's pupils follow it from frame edge to frame edge",
+     "library": "bird {kind:'hawk'} s 0.35 as a silhouette clipped to the window; lookAt()"
+    },
+    {
+     "t": 158.8,
+     "cue": {
+      "word": "محاولته",
+      "t": 158.84
+     },
+     "who": "sparrow",
+     "action": "the silhouette is gone; his eyes stay on the empty window a moment, then break away and his head drops",
+     "acting": "shame ending pattern: hold, break the look, head down",
+     "library": "bird drop, headRot, lid 0.5"
+    },
+    {
+     "t": 160.5,
+     "cue": {
+      "word": "الكبش",
+      "t": 160.52
+     },
+     "who": "sparrow",
+     "action": "a tiny thought cloud the size of his head: the ram, still chewing; it pops",
+     "acting": "he shakes his head once at it",
+     "library": "thoughtCloud small (120 x 90), inside: sheep ram head"
+    },
+    {
+     "t": 161.0,
+     "cue": {
+      "word": "بهذه",
+      "t": 161.04
+     },
+     "who": "girl",
+     "action": "the girl slides a few grains of wheat across the mat to him with one finger",
+     "acting": "gentle, eyes on him; the boy watches her do it",
+     "library": "person handRW; crumb prop"
+    },
+    {
+     "t": 162.4,
+     "cue": {
+      "word": "المؤلمة.",
+      "t": 162.46
+     },
+     "who": "sparrow",
+     "action": "looks at the grain, then closes his eyes: one tear, one long blink",
+     "acting": "wet:true, lid 0 to 1 over 0.6 s, small sigh (sq 1.03 to 0.95)",
+     "library": "bird wet, lid, sq"
+    },
+    {
+     "t": 163.6,
+     "who": "lettering",
+     "action": "THE END, held over the still group until 166.5",
+     "acting": "title in the sky-coloured upper wall area, clear of all faces; the sparrow breathes, the girl blinks",
+     "library": "S.title"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 149.42,
+     "text": "STRONG"
+    },
+    {
+     "t": 163.6,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 151.75,
+     "kind": "pop"
+    },
+    {
+     "t": 163.8,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 166.5
+   }
+  }
+ ],
+ "ending": {
+  "t": 163.6,
+  "description": "After the last word (163.32) the push-in has stopped on the sparrow sitting between the children, eyes closed, the grains in front of him, the empty window behind. THE END pops at 163.6 and holds to 166.5 with only breathing and one blink from the girl; a quiet chime at 163.8."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان عصفور صغير يطير فوق حظيرة مليئة بالأغنام،|ويتوقف أحيانًا على السور ليراقبها.|وفي صباح رأى نسرًا كبيرًا يحلق في السماء،|ثم ينقض بسرعة على حمل صغير.",
+   "en": "A little sparrow flew over a sheepfold|and sometimes watched the sheep from its fence.|One morning it saw a great eagle|swoop toward a young lamb."
+  },
+  {
+   "p": 2,
+   "ar": "أمسك النسر بالحمل بين مخالبه القوية،|وارتفع به فوق الحظيرة حتى اختفى بعيدًا.|نظر العصفور إليه بإعجاب وقال لنفسه:|«لماذا لا أفعل مثله؟ عندي جناحان كما عنده».",
+   "en": "The eagle seized the lamb in powerful talons|and carried it high away.|The admiring sparrow thought,|“Why not do the same? I too have wings.”"
+  },
+  {
+   "p": 3,
+   "ar": "بحث العصفور عن حيوان كبير يستطيع أن يحمله.|رأى كبشًا سمينًا يقف بين الأغنام،|وعلى ظهره صوف كثيف متشابك.|لم يفكر العصفور في الفرق بين قوته وقوة النسر.",
+   "en": "The sparrow sought a large animal to carry.|It saw a fat ram|with thick, tangled wool|and did not consider the difference between its own strength and the eagle’s."
+  },
+  {
+   "p": 4,
+   "ar": "طار إلى أعلى قليلًا،|ثم اندفع نحو ظهر الكبش مثل النسر.|غرز قدميه في الصوف، وضرب جناحيه بقوة،|منتظرًا أن يرتفع الكبش عن الأرض. لكنه لم يتحرك من مكانه.",
+   "en": "It rose|and swooped onto the ram’s back like the eagle,|digging its feet into the fleece and beating its wings.|The ram did not lift an inch."
+  },
+  {
+   "p": 5,
+   "ar": "حاول العصفور الطيران وحده،|لكنه اكتشف أن قدميه علقتا في الصوف المتسخ المتشابك.|شد جناحيه مرة بعد مرة،|وكلما حاول الإفلات ازداد اضطرابه وتعبه.",
+   "en": "The sparrow tried to fly away alone,|but its feet were caught in the filthy matted wool.|It pulled and beat its wings,|growing more frightened and exhausted."
+  },
+  {
+   "p": 6,
+   "ar": "كان الراعي قد شاهد النسر وهو يحمل الحمل،|ثم رأى العصفور يقلده.|اقترب من الكبش ووجد الطائر الصغير عاجزًا عن الحركة.|أمسكه بسهولة، رغم كل محاولاته للهرب.",
+   "en": "The shepherd had seen both the eagle’s success|and the sparrow’s imitation.|He approached the ram|and easily seized the trapped little bird."
+  },
+  {
+   "p": 7,
+   "ar": "غضب الراعي من العصفور، فنتف ريش جناحيه وربط قدميه بخيط.|ثم أخذه إلى بيته وألقاه أمام أطفاله،|الذين سألوه عن هذا الطائر الغريب الذي لا يستطيع الطيران.",
+   "en": "Angry, the shepherd pulled out the sparrow’s wing feathers, tied its feet with string,|and took it home.|His children asked about the strange bird that could not fly."
+  },
+  {
+   "p": 8,
+   "ar": "أخبرهم الراعي أنه حاول أن يفعل ما فعله نسر أقوى منه بكثير.|وبقي العصفور أمام الأطفال بلا ريش كاف للطيران،|بعدما انتهت محاولته لحمل الكبش بهذه الطريقة المؤلمة.",
+   "en": "The shepherd told them it had tried to do what a far stronger eagle had done.|The sparrow remained before the children, unable to fly,|after its painful attempt."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "sheep",
+   "description": "One woolly sheep figure for ewe, ram and lamb, reusable in every farm or shepherd story. Feet at (x, y), side view facing dir. At s 1: wool body a cloud 230 wide x 150 tall (fat 0) to 270 x 165 (fat 1) with its base 55 above the feet; four black legs 14 wide; black face 70 x 80 on a short neck, ears 40 x 16; small tail puff. Fields: ph, amp (walk), fat 0..1, chew, talk (bleat), headDown 0..1 (graze), headTurn -1..1 (look back), earL/earR, ram:true (two curled horns, each a 2-turn spiral of radius 34, yellow with brown rings), lamb:true (s x0.6, head 1.25x, legs 1.2x, no horns), tangle 0..1 (matted patch on the back: 60 x 26 area of grey-brown knot loops, two burrs, a twig), pal (white, cream, grey face), seed, eyes 'wide', plus the shared acting fields.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Wool: 9-11 overlapping circles along an ellipse from K.rng(seed), filled paper white with blue Ben-Day dot shading on the underside and a fat black brush outline (same recipe as the Library bush and cloud). Legs with walk() phases like the deer. Face: rounded box, the shared eye2 eyes, a sideways-sliding jaw for chew. Horns: two stroked spirals. Tangle: short random arcs and loops in a clipped patch with a brown multiply tint. Wrap with acting() in registry.js."
+  },
+  {
+   "type": "character",
+   "name": "hawk (bird kind)",
+   "description": "The planned bird of prey kind on the Library bird (hooked beak, heavy brow, talons), here with an eagle palette: dark brown body and wings, white head and tail, yellow beak and feet. Extra fields used by this film: soar 0..1 (wings locked flat with 5 spread finger feathers), fold 0..1 (wings swept back for the dive), talons 0..1 (legs swung forward, toes spread), grip 0..1 (toes closed on something), wingsUp.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Add the palette to the BIRD table and draw the wing as a long tapered polygon with finger notches when soar > 0; legs as two short thick strokes ending in three hooked toes that rotate with talons/grip. Scale 2.6 for the hero shots, 0.35 as a silhouette in the window."
+  },
+  {
+   "type": "set",
+   "name": "sheepfold",
+   "description": "Fenced pasture, 1600 wide, with a corner perch post, a gate and a far hut (dimensions under sets).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "bake() once: skyCycle or sky preset, hillTrees, far hut and tree, grass band with tufts; the fence as a separate function fence(ctx, {x0, x1, step, h, gate}) so other farm sets can use it; the gate leaf drawn live (rotation faked by scaling its width)."
+  },
+  {
+   "type": "set",
+   "name": "hutRoom",
+   "description": "The planned hut cutaway with a door on the right, a window upper left with a live sky, a floor mat, a jug and a shelf.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Flat wall and floor rectangles with dot shading, baked; window and door are holes filled by skyCycle(u) drawn first, so the far eagle silhouette can be clipped to the window rectangle."
+  },
+  {
+   "type": "pose",
+   "name": "bird clipped wings",
+   "description": "Bird field clipped 0..1: the wing is drawn at 45% length with a rounded end and no primary feathers; flap and sag still work.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Scale the wing polygon length by 1 - 0.55 * clipped about the shoulder and replace the tip with an arc. Off by default (regression safe)."
+  },
+  {
+   "type": "pose",
+   "name": "bird carry",
+   "description": "The planned carry option: an object (here the lamb, and the dream sheep) hangs from the talons and swings a beat late.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Scene-level rig: the load is drawn before the bird at the talon point plus swing(t) offset; grip closes the toes over it."
+  },
+  {
+   "type": "effect",
+   "name": "featherFall",
+   "description": "The planned effect: n feathers released at a point at t0 that rock down on seeded sway paths.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "For each feather: x = x0 + A sin(w (t - t0) + phase), y by a slow fall, rotation following the sway; a 22 x 8 leaf shape with a centre line."
+  },
+  {
+   "type": "effect",
+   "name": "woolSnare",
+   "description": "Elastic wool strands between the fleece and the bird's feet: slack, taut (straight, humming 1 unit), stretch up to 40 units, snap and recoil; also the fleece tenting up under a pull.",
+   "reusable": false,
+   "effort": "S",
+   "implementation": "Four quadratic curves from fixed fleece points to the ankle points; control point sag from 1 - tension; snap = retract over 3 frames with a small curl. Drawn after the bird so the strands cross the toes."
+  },
+  {
+   "type": "prop",
+   "name": "string",
+   "description": "Red string with ankle loops, a bow and a slack line (see props).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Two ellipses around the ankles, a bow of two loops, and a catenary-like quadratic curve to the other end; same idea as the planned rope (lead), thinner."
+  }
+ ],
+ "owner_questions": [
+  "The feather plucking is softened: the shepherd's hand hides the wing during one quick motion and we see only five feathers drifting down and the short wings afterwards (default: softened, no pulling shown).",
+  "\"Threw him before his children\" is staged as a short drop from hand height onto the floor mat, not a hard throw (default: short drop).",
+  "Added a gentle closing touch not in the script: the daughter slides a few grains of wheat to the sparrow in the last seconds (default: keep; remove if the ending should stay purely stern).",
+  "Added a far eagle silhouette crossing the hut window at 157.5 s as a silent echo of the opening (default: keep).",
+  "The lamb is shown unharmed and bleating while it is carried off; nothing is shown of what happens to it afterwards (default: as described).",
+  "Invented English lettering beyond labels: GRAB!, BAA!, WOW!, TWO WINGS!, pff, FLAP! FLAP! FLAP!, HEIGHT 0, NOT AN INCH, BOING!, STUCK!, PULL 1/2/3, POP!, PECK!, STRONG, ONE MORNING..., LATER... (default: keep all; about 16 items, trim on review if crowded).",
+  "The sparrow is the Library brown bird (kind lark) with the crest kept low rather than a newly drawn sparrow (default: reuse; a sparrow palette with a black bib is optional)."
+ ],
+ "implementation_notes": [
+  "Start from Library/template; world width 1600 for the sheepfold (camera clamps to WW), 1000 for the hut.",
+  "Set LIFE.t = t each frame so every sheep and person blinks on its own seed; give explicit lid values only where the plan asks.",
+  "The eagle dive (S2) and the sparrow dive (S6) should share one path function at two scales and the same camera framing: the copy is the joke.",
+  "All sparrow flight on bezier paths with flap phase from distance travelled (Lark flyBz pattern); the eagle soars with zero flap except the three lift strokes at 24.6, 25.3 and after.",
+  "Sheep never move in unison: give each a seed for chew phase and blink, and use stagger(i) of 0.1-0.2 s for every group reaction.",
+  "Use panel-only shake (template) only for the grab at 20.24 (2 units, 4 frames). No shake when the sparrow lands at 67.92: the absence is the gag.",
+  "Counters: HEIGHT 0 (75.6-81) and PULL 1-3 (93.92, 95.72, 96.88) with the style counter primitive; keep them out of the caption panel.",
+  "The LATER... card at 132.0 covers the set change; put the camera cut at its covered midpoint. The narrator speaks under the card, which is fine.",
+  "Sound effects only at the listed pause times (5.95, 19.5, 20.2, 24.8, 37.3, 40.5, 46.7, 123.2, 143.9, 151.75, 163.8), master 0.6; no effect for the comic landing or the pulls, they sit under speech.",
+  "Subtitle chunks are in \"subtitles\"; copy them to chunks_ar.txt and chunks_en.txt unchanged.",
+  "Keep every face and the sparrow above panel y 1250; in the hut the mat action sits at world y 780-900, so frame with the camera y at about 760-800."
+ ],
+ "warnings": [
+  "Three new drawn animals in effect (sheep with ram and lamb variants, and the planned hawk kind) plus two sets: this is a heavier build than a Library-only story. The sheep is one function with flags, which keeps it to one drawing.",
+  "The sparrow at s 0.7 is small next to the ram; every beat that depends on his face uses zoom 1.9 or more. Check phone legibility of the feet insert (89.5) and the fist shots (118-131).",
+  "The person figure is front-facing only: the shepherd bending over the ram and holding a bird relies on lean and world hand targets (handRW); arms are short (about 74 units), so place him close to the ram.",
+  "P7 packs anger, plucking, tying, the walk home and the children into 19 s; the plucking has only about 2 s (126.6-128.6). Keep it to the single hidden motion.",
+  "Words marked ~ in the timeline (في 91.38, عن 116.92, ريش 128.66) have interpolated times; no cue in this plan depends on them.",
+  "The planned hawk kind and hutRoom are not in the Library yet; if another film builds them first, reuse that drawing and add only the eagle palette and the window."
+ ]
+}

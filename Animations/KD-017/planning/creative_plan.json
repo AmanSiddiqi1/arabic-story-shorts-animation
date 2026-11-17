@@ -1,0 +1,2453 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "KD-017",
+ "title": "The Hesitant Thief",
+ "duration": 166.209,
+ "end_hold": 3.0,
+ "logline": "A servant and his friend are robbing the house when the owner knocks; the servant points his friend to the back door by the well, and the friend finds the open door but refuses to leave until he has found the well, so he is caught.",
+ "moral": "When the way out is in front of you, take it; fussing over a detail that does not matter costs you the chance.",
+ "tone": "Door-slamming farce: quick, light, built on one stubborn idea repeated while the knocking grows; no real menace.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 6.92,
+   "kind": "setup",
+   "cue": {
+    "word": "باب",
+    "t": 6.92
+   },
+   "summary": "The servant knows every door: FRONT DOOR left, BACK DOOR right."
+  },
+  {
+   "id": "B2",
+   "t": 11.4,
+   "kind": "setup",
+   "cue": {
+    "word": "السرقة.",
+    "t": 11.4
+   },
+   "summary": "He and a friend agree to steal from the house."
+  },
+  {
+   "id": "B3",
+   "t": 31.48,
+   "kind": "rising",
+   "cue": {
+    "word": "يجمعان",
+    "t": 31.48
+   },
+   "summary": "One night the family is out and the two fill sacks."
+  },
+  {
+   "id": "B4",
+   "t": 38.42,
+   "kind": "suspense",
+   "cue": {
+    "word": "وقتًا",
+    "t": 38.42
+   },
+   "summary": "They believe they have plenty of time (hourglass full)."
+  },
+  {
+   "id": "B5",
+   "t": 46.06,
+   "kind": "inciting",
+   "cue": {
+    "word": "طرقًا",
+    "t": 46.06
+   },
+   "summary": "Loud knocking: the owner is back."
+  },
+  {
+   "id": "B6",
+   "t": 61.9,
+   "kind": "turn",
+   "cue": {
+    "word": "البئر!»",
+    "t": 61.9
+   },
+   "summary": "Escape by the back door, by the well: the fatal extra detail."
+  },
+  {
+   "id": "B7",
+   "t": 69.8,
+   "kind": "reveal",
+   "cue": {
+    "word": "المفتوح.",
+    "t": 69.8
+   },
+   "summary": "The back door is open and the way out is clear."
+  },
+  {
+   "id": "B8",
+   "t": 73.36,
+   "kind": "surprise",
+   "cue": {
+    "word": "بئرًا",
+    "t": 73.36
+   },
+   "summary": "No well beside it, so he stops."
+  },
+  {
+   "id": "B9",
+   "t": 81.32,
+   "kind": "comic",
+   "cue": {
+    "word": "البئر",
+    "t": 81.32
+   },
+   "summary": "He runs back to ask where the well is."
+  },
+  {
+   "id": "B10",
+   "t": 101.28,
+   "kind": "comic",
+   "cue": {
+    "word": "كيف",
+    "t": 101.28
+   },
+   "summary": "How can I leave without seeing it? He plants his feet."
+  },
+  {
+   "id": "B11",
+   "t": 110.06,
+   "kind": "suspense",
+   "cue": {
+    "word": "يغضب.",
+    "t": 110.06
+   },
+   "summary": "The knocking grows and the owner gets angry."
+  },
+  {
+   "id": "B12",
+   "t": 121.42,
+   "kind": "comic",
+   "cue": {
+    "word": "البئر",
+    "t": 121.42
+   },
+   "summary": "Begged and pushed, he still asks about the missing well."
+  },
+  {
+   "id": "B13",
+   "t": 125.24,
+   "kind": "climax",
+   "cue": {
+    "word": "فُتح",
+    "t": 125.24
+   },
+   "summary": "The front door opens and the owner walks in."
+  },
+  {
+   "id": "B14",
+   "t": 142.02,
+   "kind": "climax",
+   "cue": {
+    "word": "فأمسك",
+    "t": 142.02
+   },
+   "summary": "He runs at last, too late, and is caught on the threshold."
+  },
+  {
+   "id": "B15",
+   "t": 157.0,
+   "kind": "comic",
+   "cue": {
+    "word": "البئر!»",
+    "t": 157.0
+   },
+   "summary": "I found the door, but I could not find the well!"
+  },
+  {
+   "id": "B16",
+   "t": 163.4,
+   "kind": "resolution",
+   "cue": {
+    "word": "وبقيت",
+    "t": 163.4
+   },
+   "summary": "The thief goes to the judge and the sacks stay in the house."
+  }
+ ],
+ "cast": [
+  {
+   "id": "servant",
+   "name": "the servant",
+   "library": "person",
+   "base": "person kind:'owner' body and face with costume preset 'servant'",
+   "look": "No nightcap. Small flat white cap, short dark moustache, plain blue-dot tunic to the knee with a yellow sash, bare forearms. Slightly shorter than the owner (s 0.92).",
+   "new": true
+  },
+  {
+   "id": "thief",
+   "name": "the friend (the thief)",
+   "library": "person",
+   "base": "person kind:'thief', v:1 (the yellow and red striped variant in the catalogue)",
+   "look": "Library thief as drawn: cap, eye mask, striped shirt. Taller and thinner than the servant (s 1.0). His calm, reasonable face is the joke.",
+   "new": false
+  },
+  {
+   "id": "owner",
+   "name": "the owner",
+   "library": "person",
+   "base": "person kind:'owner' with the planned costume preset 'merchant'",
+   "look": "Big white turban with a red jewel, full black beard, long yellow robe with red trim, round belly (width 1.15), s 1.05.",
+   "new": true
+  },
+  {
+   "id": "wife",
+   "name": "the owner's wife",
+   "library": "person",
+   "base": "person kind:'wife' with the planned costume preset 'lady'",
+   "look": "Headscarf and long red dress; a small gift bundle when leaving. No lines; background reactions only.",
+   "new": true
+  }
+ ],
+ "sets": [
+  {
+   "id": "house",
+   "library": null,
+   "description": "merchantHouse cutaway, world 1800 x 1230, floor y 900. Street x 0..400 (night skyline behind, one street lamp at x 150). Front wall x 380..420 with the FRONT DOOR gap y 610..900. Hall x 420..1280, ceiling y 380, flat roof with red parapet above. Shelf unit x 560..740 (three shelves at y 620, 700, 780), hanging lamp at (850, 470), carpet x 620..1080, two arch pillars at x 1000 and x 1180 in the back wall. Back wall x 1280..1320 with the BACK DOOR gap y 610..900. Yard x 1320..1800: garden wall top y 640, palm at x 1620, flowerpot at x 1560, open arched gate x 1680..1760 with stars beyond, moon at (1700, 240). Each door is a leaf seen nearly edge-on with an open field 0..1 (leaf width 16 closed to 110 open, swinging into the hall). Day and night palettes.",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "sack",
+   "library": null,
+   "description": "Lumpy brown sack about 110 wide x 130 tall with a fill field 0..1 (empty rag to full with bumps) and an optional object poking out. Planned by KD-013.",
+   "new": true
+  },
+  {
+   "id": "coin",
+   "library": null,
+   "description": "Flat yellow coin r 14 with a black rim and a shine tick; stacks. Planned by KD-013.",
+   "new": true
+  },
+  {
+   "id": "valuables",
+   "library": null,
+   "description": "Four flat shelf objects, each about 50..70 tall: gold cup, blue vase, silver plate, yellow candlestick. Also a broom (a 150 line with a yellow bristle wedge) for S1.",
+   "new": true
+  },
+  {
+   "id": "hourglass",
+   "library": null,
+   "description": "Time meter in panel space, top right: wooden frame 70 wide x 110 tall, two glass bulbs, yellow sand with fill 0..1 in the top bulb and the rest below, a thin falling stream while running; red variant when empty.",
+   "new": true
+  },
+  {
+   "id": "well",
+   "library": null,
+   "description": "Small above-ground well icon: stone ring 120 wide x 70 tall (two rows of grey blocks), two posts to a small red roof 150 wide at 190 above the ground, a rope and bucket. Options: s (icon scale 0.25 for balloons), ghost:true (dashed blue outline only), mark:'?' or 'x'.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 8.08,
+   "paragraphs": [
+    1
+   ],
+   "set": "house",
+   "cast": [
+    "servant"
+   ],
+   "summary": "Day. The servant sweeps the rich hall; the house geography is taught: FRONT DOOR on the left, BACK DOOR on the right.",
+   "camera": {
+    "shot": "establishing",
+    "move": "pull-out",
+    "notes": "Start medium on the servant (x 760, y 700, zoom 1.5); by 6.9 pull out to the full interior (x 850, y 640, zoom 1.0) so both doors are in frame."
+   },
+   "composition": "Cutaway house: front wall x 400, back wall x 1300, floor y 900, ceiling y 380. Servant centre, shelf of valuables behind him (x 560..740). Labels sit above the doors at y 560, never over the face.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 2.0,
+     "cue": {
+      "word": "عمل",
+      "t": 0.0
+     },
+     "who": "servant",
+     "action": "sweeps the carpet with a broom, three strokes, dust puffs at the bristles",
+     "acting": "content half smile, gaze down at the broom, natural blinks, small hbob on each stroke",
+     "library": "person {costume:'servant', handL/handR on the broom} + breathe() + dustBurst"
+    },
+    {
+     "t": 2.3,
+     "end": 3.4,
+     "cue": {
+      "word": "غني،",
+      "t": 2.52
+     },
+     "who": "valuables",
+     "action": "the gold cup, vase and candlestick on the shelf twinkle one after another",
+     "acting": "the servant's pupils flick to them (2-frame saccade) and back; lid drops to 0.3 for a moment",
+     "library": "S.emphasis sparkle; gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 3.54,
+     "end": 4.7,
+     "cue": {
+      "word": "وكان",
+      "t": 3.54
+     },
+     "who": "servant",
+     "action": "stops, leans on the broom and taps his temple",
+     "acting": "knowing look, brow -0.3, one slow blink, tip 0.05 onto the broom",
+     "library": "PERSON_HANDS.chin variant + settleTo"
+    },
+    {
+     "t": 4.78,
+     "end": 6.8,
+     "cue": {
+      "word": "كل",
+      "t": 4.78
+     },
+     "who": "servant",
+     "action": "counts on his fingers while his eyes travel across the house, left to right",
+     "acting": "gaze sweeps from the front door to the back door, head follows 4 px late",
+     "library": "look(T, head, [[4.78, frontDoor], [6.08, backDoor]])"
+    },
+    {
+     "t": 6.92,
+     "end": 8.0,
+     "cue": {
+      "word": "باب",
+      "t": 6.92
+     },
+     "who": "fx",
+     "action": "arrow + label FRONT DOOR pops over the left door, then BACK DOOR over the right door (0.35 s later); each door gives a small wiggle",
+     "acting": "servant spreads both arms toward the two doors (armsOut), proud",
+     "library": "S.label + S.arrow; PERSON_HANDS.armsOut"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 8.08
+   }
+  },
+  {
+   "id": "S2",
+   "start": 8.08,
+   "end": 22.36,
+   "paragraphs": [
+    1
+   ],
+   "set": "house",
+   "cast": [
+    "servant",
+    "thief",
+    "owner",
+    "wife"
+   ],
+   "summary": "The secret deal with the friend, then the routine shown once: owners out by the front door, friend in by the back door, loot turned to coins and shared.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Hold the full interior (x 850, y 640, zoom 1.0); push to x 1100, zoom 1.4 for the whisper 9.6-12.2, back to wide at 12.3; close on the coin split (x 800, y 720, zoom 1.7) from 17.4."
+   },
+   "composition": "The two doors work like a see-saw: front door shuts left, back door opens right. Coin split is centred, hands at y 760.",
+   "actions": [
+    {
+     "t": 8.08,
+     "end": 9.0,
+     "cue": {
+      "word": "لكنه",
+      "t": 8.08
+     },
+     "who": "servant",
+     "action": "sets the broom against the shelf; the smile turns sly",
+     "acting": "saccades left and right to check nobody watches, lid 0.4, brow 0.4",
+     "library": "gazePlan saccade mode"
+    },
+    {
+     "t": 9.08,
+     "end": 9.9,
+     "cue": {
+      "word": "اتفق",
+      "t": 9.08
+     },
+     "who": "thief",
+     "action": "the back door opens a crack and the friend's head pops in: cap, mask, two eyes",
+     "acting": "eyes wide then a grin; a tiny 'psst' wave of two fingers",
+     "library": "person {kind:'thief'} drawn before the door leaf (peek from cover)"
+    },
+    {
+     "t": 9.94,
+     "end": 11.3,
+     "cue": {
+      "word": "صديق",
+      "t": 9.94
+     },
+     "who": "servant",
+     "action": "tiptoes to the back door and whispers behind his hand; the friend cups an ear",
+     "acting": "speaker gaze on listener and listener on speaker; friend nods on the stress",
+     "library": "PERSON_HANDS.cupMouth / cupEar + lookAt"
+    },
+    {
+     "t": 11.4,
+     "end": 12.2,
+     "cue": {
+      "word": "السرقة.",
+      "t": 11.4
+     },
+     "who": "thief",
+     "action": "they shake hands; a small sack icon with a coin pops between their heads",
+     "acting": "friend winks at the lens (wink 'R'), servant smirks, both squash 0.95 on the shake",
+     "library": "handR targets meet; P.wink; S.emphasis"
+    },
+    {
+     "t": 12.5,
+     "end": 14.6,
+     "cue": {
+      "word": "كان",
+      "t": 12.3
+     },
+     "who": "owner",
+     "action": "the owner and his wife walk left across the hall and out of the front door; the servant bows them out",
+     "acting": "owner chin up, gaze ahead; wife two steps behind, not in step with him; servant's bow hides his grin",
+     "library": "walk() + footfalls() for both, stagger(1) on the wife"
+    },
+    {
+     "t": 13.66,
+     "end": 14.8,
+     "cue": {
+      "word": "يدخل",
+      "t": 13.66
+     },
+     "who": "thief",
+     "action": "at the back door crack only his eyes show, tracking the owners as they leave",
+     "acting": "pupils slide left with them, lids low",
+     "library": "lookAt(thiefHead, ownerHead)"
+    },
+    {
+     "t": 14.9,
+     "end": 15.5,
+     "cue": {
+      "word": "عندما",
+      "t": 14.9
+     },
+     "who": "set",
+     "action": "the front door shuts with a small bounce",
+     "acting": "servant straightens up from the bow in the same beat, mask off",
+     "library": "door leaf open 1 -> 0 with settleTo"
+    },
+    {
+     "t": 15.58,
+     "end": 17.2,
+     "cue": {
+      "word": "يخرج",
+      "t": 15.58
+     },
+     "who": "thief",
+     "action": "the back door swings open at once and he sneaks in on tiptoe with an empty sack",
+     "acting": "high knees, shoulders up, gaze on the shelf; each toe touch gets a tiny dust dot",
+     "library": "walk() with small amp + footfalls()"
+    },
+    {
+     "t": 17.6,
+     "end": 19.3,
+     "cue": {
+      "word": "يبيعان",
+      "t": 17.6
+     },
+     "who": "sack",
+     "action": "a full lumpy sack between them pops into a pile of six coins",
+     "acting": "both lean in, eyes follow the coins as they settle",
+     "library": "S.emphasis burst; coin stack with landSquash"
+    },
+    {
+     "t": 19.62,
+     "end": 20.6,
+     "cue": {
+      "word": "ويقسمان",
+      "t": 19.62
+     },
+     "who": "coin",
+     "action": "coins hop alternately to the servant's palm and the friend's palm, a counter ticks 1, 2, 3 on each side",
+     "acting": "heads nod with every coin, never in unison (friend 3 frames late)",
+     "library": "S.counter; hop(); stagger"
+    },
+    {
+     "t": 20.7,
+     "end": 21.3,
+     "cue": {
+      "word": "المال.",
+      "t": 20.7
+     },
+     "who": "servant",
+     "action": "both pocket the coins and pat the pocket",
+     "acting": "satisfied closed-eye smiles, one slow blink each",
+     "library": "lid ramp + PERSON_HANDS.chest"
+    },
+    {
+     "t": 21.4,
+     "end": 22.36,
+     "cue": {
+      "word": "المال.",
+      "t": 20.7
+     },
+     "who": "fx",
+     "action": "transition card ONE NIGHT... wipes across the panel; under its midpoint the set switches to night",
+     "acting": "none",
+     "library": "S.transition caption; camera key pair at p = 0.5"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 21.85,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 21.34,
+    "label": "ONE NIGHT..."
+   }
+  },
+  {
+   "id": "S3",
+   "start": 22.36,
+   "end": 34.98,
+   "paragraphs": [
+    2
+   ],
+   "set": "house",
+   "cast": [
+    "owner",
+    "wife",
+    "servant",
+    "thief"
+   ],
+   "summary": "Night. The family leaves by the front door to visit relatives; the friend arrives through the back door and the two fill two sacks.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Open on the front door and street (x 560, y 660, zoom 1.1); at 26.7 pan right with the servant to the back door (x 1050); settle medium on the shelf (x 720, y 700, zoom 1.5) from 30.0."
+   },
+   "composition": "Moon top right of the yard sky, hanging lamp lit at x 850. Sacks end at x 760 and x 860 on the floor; they stay there for the rest of the film.",
+   "actions": [
+    {
+     "t": 22.36,
+     "end": 23.5,
+     "cue": {
+      "word": "وفي",
+      "t": 22.36
+     },
+     "who": "set",
+     "action": "night version of the house: navy walls, stars, moon over the yard, the lamp throws a yellow halftone disc",
+     "acting": "servant holds the front door open, bowing",
+     "library": "bake a night layer; lamp disc r 170"
+    },
+    {
+     "t": 23.64,
+     "end": 25.6,
+     "cue": {
+      "word": "خرج",
+      "t": 23.64
+     },
+     "who": "owner",
+     "action": "the owner in his big turban and his wife step out of the front door and walk left along the street",
+     "acting": "owner strides, wife carries a small gift bundle, her gaze on the road; they do not look back",
+     "library": "walk() + footfalls(); person costume 'merchant' and 'lady'"
+    },
+    {
+     "t": 25.76,
+     "end": 26.6,
+     "cue": {
+      "word": "لزيارة",
+      "t": 25.76
+     },
+     "who": "servant",
+     "action": "waves them off, then closes the door and listens with an ear against it",
+     "acting": "polite smile while waving; gaze follows them out of frame; ear to the door, eyes up",
+     "library": "PERSON_HANDS.wave then cupEar"
+    },
+    {
+     "t": 26.72,
+     "end": 27.6,
+     "cue": {
+      "word": "أقاربهم.",
+      "t": 26.72
+     },
+     "who": "servant",
+     "action": "the smile drops into a grin; he trots to the back door and raps it twice",
+     "acting": "mask off, rubs his hands, quick steps",
+     "library": "walk()"
+    },
+    {
+     "t": 27.72,
+     "end": 28.9,
+     "cue": {
+      "word": "جاء",
+      "t": 27.72
+     },
+     "who": "thief",
+     "action": "the back door opens and the friend tiptoes in with two empty sacks over his shoulder",
+     "acting": "exaggerated sneak, gaze darting left and right although the house is empty",
+     "library": "walk() small amp; gazePlan saccades"
+    },
+    {
+     "t": 29.08,
+     "end": 29.8,
+     "cue": {
+      "word": "الصديق،",
+      "t": 29.08
+     },
+     "who": "sack",
+     "action": "he tosses one empty sack; it flutters across in an arc and the servant catches it",
+     "acting": "servant's eyes track the sack, small landSquash on the catch",
+     "library": "hop() arc for the sack; lookAt"
+    },
+    {
+     "t": 29.88,
+     "end": 31.3,
+     "cue": {
+      "word": "وبدأ",
+      "t": 29.88
+     },
+     "who": "servant",
+     "action": "both hurry to the shelf and open their sacks on the floor",
+     "acting": "eager, shoulders forward (tip 0.08)",
+     "library": "walk()"
+    },
+    {
+     "t": 31.48,
+     "end": 32.9,
+     "cue": {
+      "word": "يجمعان",
+      "t": 31.48
+     },
+     "who": "valuables",
+     "action": "vase, plate and candlestick leave the shelf one by one and drop into the sacks; each drop makes the sack bulge and bounce",
+     "acting": "hands alternate (servant, friend, servant); eyes on each object as it falls",
+     "library": "handR targets on the shelf; kick() on the sack"
+    },
+    {
+     "t": 33.0,
+     "end": 34.0,
+     "cue": {
+      "word": "ثمينة",
+      "t": 33.0
+     },
+     "who": "thief",
+     "action": "he holds the gold cup up to the lamp; it sparkles",
+     "acting": "eyes wide, mouth o, then a greedy smile; servant glances over, impatient",
+     "library": "S.emphasis sparkle; lookAt(cup)"
+    },
+    {
+     "t": 34.12,
+     "end": 34.9,
+     "cue": {
+      "word": "أكياس.",
+      "t": 34.12
+     },
+     "who": "sack",
+     "action": "the cup goes in; two full lumpy sacks stand side by side, a candlestick sticking out of one",
+     "acting": "both pat their sacks, pleased",
+     "library": "sack fill 0 -> 1"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 34.98
+   }
+  },
+  {
+   "id": "S4",
+   "start": 34.98,
+   "end": 43.08,
+   "paragraphs": [
+    2
+   ],
+   "set": "house",
+   "cast": [
+    "servant",
+    "thief"
+   ],
+   "summary": "False calm: they think they have all night. The hourglass meter appears full. The camera drifts to the silent front door.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "Two-shot at the shelf (x 790, y 700, zoom 1.5) until 40.5, then a slow drift left to x 620, zoom 1.2 so the still front door grows in the left of frame by 42.6."
+   },
+   "composition": "Hourglass meter in panel space top right (about x 900, y 150 of the 1080-wide frame), away from all heads. Front door enters frame left as an ominous shape.",
+   "actions": [
+    {
+     "t": 34.98,
+     "end": 36.0,
+     "cue": {
+      "word": "كانا",
+      "t": 34.98
+     },
+     "who": "thief",
+     "action": "sits down on his full sack and crosses his legs",
+     "acting": "long exhale (sq 0.96), lids 0.4",
+     "library": "person sit pose (planned 'person kneel / sit')"
+    },
+    {
+     "t": 36.16,
+     "end": 37.3,
+     "cue": {
+      "word": "يظنان",
+      "t": 36.16
+     },
+     "who": "hourglass",
+     "action": "the hourglass meter pops in, top bulb full",
+     "acting": "both glance up at nothing in particular, relaxed",
+     "library": "panel-space prop, fill 1.0"
+    },
+    {
+     "t": 37.44,
+     "end": 38.3,
+     "cue": {
+      "word": "أمامهما",
+      "t": 37.44
+     },
+     "who": "thief",
+     "action": "stretches both arms and yawns",
+     "acting": "lid 0.7, mouth open, head tips back",
+     "library": "aL/aR raised angles + anticipate"
+    },
+    {
+     "t": 38.42,
+     "end": 39.7,
+     "cue": {
+      "word": "وقتًا",
+      "t": 38.42
+     },
+     "who": "fx",
+     "action": "label PLENTY OF TIME under the hourglass",
+     "acting": "servant nods slowly in agreement",
+     "library": "S.label"
+    },
+    {
+     "t": 39.84,
+     "end": 41.2,
+     "cue": {
+      "word": "وأن",
+      "t": 39.84
+     },
+     "who": "servant",
+     "action": "polishes a silver plate on his sleeve and admires his reflection",
+     "acting": "smirk, one eyebrow up, slow blink",
+     "library": "handR circles on the plate"
+    },
+    {
+     "t": 41.3,
+     "end": 42.2,
+     "cue": {
+      "word": "لن",
+      "t": 41.3
+     },
+     "who": "thief",
+     "action": "flaps a lazy hand toward the front door: nobody is coming",
+     "acting": "eyes shut, smile, chin up",
+     "library": "PERSON_HANDS.wave, low amplitude"
+    },
+    {
+     "t": 42.3,
+     "end": 43.08,
+     "cue": {
+      "word": "قريبًا.",
+      "t": 42.28
+     },
+     "who": "camera",
+     "action": "drift ends with the closed front door large and perfectly still in the left of frame",
+     "acting": "suspense by stillness: only the lamp flame moves",
+     "library": "CAM keys in pairs for the hold"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 43.08
+   }
+  },
+  {
+   "id": "S5",
+   "start": 43.08,
+   "end": 56.22,
+   "paragraphs": [
+    3
+   ],
+   "set": "house",
+   "cast": [
+    "servant",
+    "thief",
+    "owner",
+    "wife"
+   ],
+   "summary": "The knock. Panic inside; the owner pounds and shouts outside; the hourglass starts to run.",
+   "camera": {
+    "shot": "wide",
+    "move": "whip",
+    "notes": "Inside wide including the door (x 640, y 660, zoom 1.15). At 47.82 whip left to x 430, zoom 1.3 so the street side and the owner are in frame with the wall in the middle. At 53.9 cut back to a two-shot of the pair (x 790, y 690, zoom 1.7)."
+   },
+   "composition": "Wall and door split the frame at 47.8-53.9: owner on the left (x 300), room on the right. KNOCK lettering on the street side of the door, clear of every head.",
+   "actions": [
+    {
+     "t": 43.08,
+     "end": 43.6,
+     "cue": {
+      "word": "فجأة،",
+      "t": 43.08
+     },
+     "who": "set",
+     "action": "the front door jolts once, hard; dust falls from the lintel",
+     "acting": "both freeze mid gesture; the plate jumps out of the servant's hands and he juggles it",
+     "library": "door leaf rot pulse + panel-only shake 4 px"
+    },
+    {
+     "t": 44.2,
+     "end": 45.3,
+     "cue": {
+      "word": "فجأة،",
+      "t": 43.08
+     },
+     "who": "thief",
+     "action": "both heads snap toward the door; the friend slides off his sack onto the floor",
+     "acting": "eyes wide, no blinks, impactSquash on his landing",
+     "library": "eyes:'wide', noBlink; impactSquash + rebound"
+    },
+    {
+     "t": 46.06,
+     "end": 47.7,
+     "cue": {
+      "word": "طرقًا",
+      "t": 46.06
+     },
+     "who": "set",
+     "action": "three knocks on the measured words (46.06, 46.74, 47.52): the door bucks on each, impact stars on the wood, the hanging lamp starts to swing",
+     "acting": "the pair flinch on each hit, the friend 3 frames after the servant; each flinch a little smaller",
+     "library": "strike cycle + swing() on the lamp; stagger"
+    },
+    {
+     "t": 47.82,
+     "end": 49.0,
+     "cue": {
+      "word": "الباب",
+      "t": 47.82
+     },
+     "who": "camera",
+     "action": "whip left: now we see the owner on the street side, fist raised against the door, his wife behind him",
+     "acting": "owner brow 0.6, wife arms folded",
+     "library": "CAM whip in 6 frames"
+    },
+    {
+     "t": 49.16,
+     "end": 50.4,
+     "cue": {
+      "word": "صاح",
+      "t": 49.16
+     },
+     "who": "owner",
+     "action": "steps back half a pace, fills his chest and cups both hands to his mouth",
+     "acting": "anticipation: sq 0.93 then stretch 1.06",
+     "library": "anticipate() + PERSON_HANDS.cupMouth"
+    },
+    {
+     "t": 52.44,
+     "end": 53.8,
+     "cue": {
+      "word": "«افتحوا",
+      "t": 52.44
+     },
+     "who": "owner",
+     "action": "shouts at the door; sound arcs fly from his mouth through the door into the room",
+     "acting": "mouth open (talk 1), turban shakes, tip 0.1 forward",
+     "library": "soundArcs at the source; talk"
+    },
+    {
+     "t": 53.92,
+     "end": 55.3,
+     "cue": {
+      "word": "خاف",
+      "t": 53.92
+     },
+     "who": "servant",
+     "action": "cut inside: the two grab each other and shake, knees knocking",
+     "acting": "tremble on both with different seeds, wet eyes on the friend, brows raised",
+     "library": "tremble(t, seed) + PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 55.38,
+     "end": 56.2,
+     "cue": {
+      "word": "الرجلان.",
+      "t": 55.38
+     },
+     "who": "thief",
+     "action": "both slowly turn their faces to the lens and gulp; the hourglass begins to trickle",
+     "acting": "the one shared look to camera, gaze [0, 0.05], a gulp as a drop pulse",
+     "library": "gaze to camera; hourglass fill 1.0 -> 0.9"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 46.06,
+     "text": "KNOCK! KNOCK!"
+    },
+    {
+     "t": 52.44,
+     "text": "OPEN UP!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 56.22
+   }
+  },
+  {
+   "id": "S6",
+   "start": 56.22,
+   "end": 65.18,
+   "paragraphs": [
+    3
+   ],
+   "set": "house",
+   "cast": [
+    "servant",
+    "thief"
+   ],
+   "summary": "The instruction. The servant says back door, by the well, and points. In the friend's head the well lands bigger than the door.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pull-out",
+    "notes": "Two-shot (x 790, y 690, zoom 1.7); from 62.5 pull out and slide right to the full interior (x 880, zoom 1.0) so the arrow can run from the servant's hand to the back door."
+   },
+   "composition": "Servant left (x 720) facing right, friend right (x 840). Servant's balloon above left, friend's thought cloud above right, both above head height (y 430..560).",
+   "actions": [
+    {
+     "t": 56.22,
+     "end": 57.5,
+     "cue": {
+      "word": "قال",
+      "t": 56.22
+     },
+     "who": "servant",
+     "action": "lets go first; eyes dart, then an idea",
+     "acting": "saccades left, right, then fixed on the back door; brow lifts",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 57.7,
+     "end": 58.5,
+     "cue": {
+      "word": "لصديقه:",
+      "t": 57.7
+     },
+     "who": "servant",
+     "action": "takes the friend by both shoulders and turns him to face right",
+     "acting": "friend's head lags the body by 3 frames",
+     "library": "handL/handR on the shoulders; turn with a squeeze not below 0.7"
+    },
+    {
+     "t": 58.66,
+     "end": 60.2,
+     "cue": {
+      "word": "«اهرب",
+      "t": 58.66
+     },
+     "who": "servant",
+     "action": "urgent whisper-shout into his ear",
+     "acting": "talk 0.9, brows up, body pumping on the stresses",
+     "library": "PERSON_HANDS.cupMouth + talk"
+    },
+    {
+     "t": 60.34,
+     "end": 61.4,
+     "cue": {
+      "word": "الباب",
+      "t": 60.34
+     },
+     "who": "fx",
+     "action": "a speech balloon over the servant shows a big door icon",
+     "acting": "servant jabs a finger at the icon",
+     "library": "S.box balloon with a door pictogram"
+    },
+    {
+     "t": 61.9,
+     "end": 62.5,
+     "cue": {
+      "word": "البئر!»",
+      "t": 61.9
+     },
+     "who": "well",
+     "action": "a small well icon pops beside the door in the balloon; in the friend's own thought cloud the same two icons appear with the WELL large and the door small",
+     "acting": "friend's eyes go up to his cloud and lock on the well; a slow understanding nod",
+     "library": "thoughtCloud (planned effect) + well prop at two sizes"
+    },
+    {
+     "t": 62.54,
+     "end": 64.3,
+     "cue": {
+      "word": "وأشار",
+      "t": 62.54
+     },
+     "who": "servant",
+     "action": "throws his whole arm out to point at the back door; an arrow shoots from his hand across the room and the back door glows",
+     "acting": "big readable arm angle, tip 0.1, gaze down the arm",
+     "library": "aR arm angle (not a hand target) + S.arrow"
+    },
+    {
+     "t": 64.4,
+     "end": 65.18,
+     "cue": {
+      "word": "بيده.",
+      "t": 64.4
+     },
+     "who": "thief",
+     "action": "nods four times, salutes, and drops into a sprinter's crouch",
+     "acting": "eager and obedient; anticipation sq 0.88",
+     "library": "anticipate()"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 65.18
+   }
+  },
+  {
+   "id": "S7",
+   "start": 65.18,
+   "end": 74.86,
+   "paragraphs": [
+    4
+   ],
+   "set": "house",
+   "cast": [
+    "thief",
+    "servant"
+   ],
+   "summary": "He runs to the back, finds the door open with the way out in plain view, then stops on the threshold because no well stands beside it.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Track him right (x 880 -> 1300, y 660, zoom 1.1). Hold on door and yard (x 1330, y 650, zoom 1.15) from 68.3: door, yard, garden gate and moon all in frame."
+   },
+   "composition": "Back door at x 1300, yard x 1320..1800, garden gate x 1680..1760 with a WAY OUT arrow. The ghost well is drawn at x 1480. His head at about (1290, 690) is the centre of interest.",
+   "actions": [
+    {
+     "t": 65.18,
+     "end": 67.5,
+     "cue": {
+      "word": "ركض",
+      "t": 65.18
+     },
+     "who": "thief",
+     "action": "sprints right across the hall",
+     "acting": "arms pumping, gaze fixed ahead, dust at each footfall",
+     "library": "walk(TX, t) + footfalls() + dustBurst"
+    },
+    {
+     "t": 67.6,
+     "end": 68.2,
+     "cue": {
+      "word": "الخلف،",
+      "t": 67.6
+     },
+     "who": "thief",
+     "action": "skids to a stop at the back door on his heels",
+     "acting": "lurch forward then settle back, sq 0.92",
+     "library": "lurch() + settleTo"
+    },
+    {
+     "t": 68.3,
+     "end": 69.1,
+     "cue": {
+      "word": "ووجد",
+      "t": 68.3
+     },
+     "who": "set",
+     "action": "he pulls the door: it swings wide and a wedge of moonlight falls into the hall",
+     "acting": "his face lights up in the moon wedge",
+     "library": "door leaf open 0 -> 1; yellow halftone wedge"
+    },
+    {
+     "t": 69.22,
+     "end": 70.9,
+     "cue": {
+      "word": "الباب",
+      "t": 69.22
+     },
+     "who": "fx",
+     "action": "the yard is revealed: garden wall, palm, an open gate with stars beyond; arrow + label WAY OUT at the gate",
+     "acting": "big smile, one foot lifts over the threshold",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 71.22,
+     "end": 72.4,
+     "cue": {
+      "word": "لكنه",
+      "t": 71.22
+     },
+     "who": "thief",
+     "action": "freezes with the foot in the air; the smile fades",
+     "acting": "held pose, only the pupils move; in the far background the servant is already wiping his brow in relief",
+     "library": "suspense by stillness; servant small at x 800"
+    },
+    {
+     "t": 72.5,
+     "end": 73.3,
+     "cue": {
+      "word": "لم",
+      "t": 72.5
+     },
+     "who": "thief",
+     "action": "looks left, right, up, down, shading his eyes with a hand",
+     "acting": "2-frame saccades with holds, head follows the bigger ones",
+     "library": "gazePlan(t, plan, 0.07) + handR at the brow"
+    },
+    {
+     "t": 73.36,
+     "end": 73.8,
+     "cue": {
+      "word": "بئرًا",
+      "t": 73.36
+     },
+     "who": "well",
+     "action": "a dashed outline of a well with a question mark blinks in the empty yard beside the door: what he expected to see",
+     "acting": "brow -0.6, mouth small o",
+     "library": "well prop with ghost:true (dashed blue line, no fill)"
+    },
+    {
+     "t": 73.86,
+     "end": 74.8,
+     "cue": {
+      "word": "بجانبه.",
+      "t": 73.86
+     },
+     "who": "thief",
+     "action": "checks behind the door leaf, then scratches his head",
+     "acting": "puzzled, foot comes back inside",
+     "library": "PERSON_HANDS.headHold, one hand"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 65.3,
+     "text": "ZOOM!"
+    },
+    {
+     "t": 73.4,
+     "text": "NO WELL?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 74.86
+   }
+  },
+  {
+   "id": "S8",
+   "start": 74.86,
+   "end": 83.52,
+   "paragraphs": [
+    4
+   ],
+   "set": "house",
+   "cast": [
+    "thief",
+    "servant"
+   ],
+   "summary": "He turns his back on the open door and runs all the way back to ask where the well is.",
+   "camera": {
+    "shot": "wide",
+    "move": "whip",
+    "notes": "Hold 0.7 s on the abandoned open door and gate after he leaves frame, then whip left to the servant (x 800, y 690, zoom 1.4); two-shot from 77.7."
+   },
+   "composition": "The empty doorway with the WAY OUT arrow stays on screen alone for a beat: the joke is the exit nobody uses. Then servant left (x 720), friend arrives at x 850.",
+   "actions": [
+    {
+     "t": 74.86,
+     "end": 76.0,
+     "cue": {
+      "word": "عاد",
+      "t": 74.86
+     },
+     "who": "thief",
+     "action": "turns away from the open door and runs back left",
+     "acting": "turn with a squeeze, then full sprint; the camera does not follow at first",
+     "library": "turnFlip-style squeeze for the person + walk()"
+    },
+    {
+     "t": 76.08,
+     "end": 76.9,
+     "cue": {
+      "word": "مسرعًا",
+      "t": 76.08
+     },
+     "who": "camera",
+     "action": "whip left to catch up with him",
+     "acting": "none",
+     "library": "CAM whip in 6 frames"
+    },
+    {
+     "t": 77.02,
+     "end": 77.6,
+     "cue": {
+      "word": "الخادم",
+      "t": 77.02
+     },
+     "who": "servant",
+     "action": "he was dragging a sack out of sight; he sees the friend coming back and does a double take",
+     "acting": "head turns away, snaps back; eyes wide, mouth o, sq 0.9",
+     "library": "settleTo overshoot"
+    },
+    {
+     "t": 77.7,
+     "end": 78.3,
+     "cue": {
+      "word": "وقال:",
+      "t": 77.7
+     },
+     "who": "thief",
+     "action": "skids in and politely taps the servant on the shoulder",
+     "acting": "calm, helpful expression, not out of breath",
+     "library": "handR target on the shoulder"
+    },
+    {
+     "t": 78.38,
+     "end": 79.9,
+     "cue": {
+      "word": "«وجدت",
+      "t": 78.38
+     },
+     "who": "thief",
+     "action": "jerks a thumb back toward the door and nods; a door icon with a tick appears in his balloon",
+     "acting": "proud of himself, small smile",
+     "library": "aR arm angle backward; S.box balloon"
+    },
+    {
+     "t": 80.68,
+     "end": 82.0,
+     "cue": {
+      "word": "أين",
+      "t": 80.68
+     },
+     "who": "thief",
+     "action": "opens both palms; the well icon with a question mark replaces the door in the balloon",
+     "acting": "earnest eyes straight at the servant, brow -0.5",
+     "library": "PERSON_HANDS.palmsUp + well prop"
+    },
+    {
+     "t": 82.12,
+     "end": 83.5,
+     "cue": {
+      "word": "تحدثت",
+      "t": 82.12
+     },
+     "who": "servant",
+     "action": "says nothing: one slow blink, then a deadpan look at the lens; the hourglass drops a notch",
+     "acting": "lid 0 -> 1 -> 0 over 0.5 s, gaze to camera",
+     "library": "hourglass fill 0.7 -> 0.6"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 83.52
+   }
+  },
+  {
+   "id": "S9",
+   "start": 83.52,
+   "end": 93.7,
+   "paragraphs": [
+    5
+   ],
+   "set": "house",
+   "cast": [
+    "servant",
+    "thief"
+   ],
+   "summary": "The servant explains: the well was only a landmark. Go.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Two-shot (x 790, y 690, zoom 1.6), slow push to 1.8 by 89.3; pop back to 1.3 at 91.56 for the shove so the slide reads."
+   },
+   "composition": "Servant left, friend right. The front door shakes at the left edge of frame when the camera is at 1.3.",
+   "actions": [
+    {
+     "t": 83.52,
+     "end": 85.1,
+     "cue": {
+      "word": "قال",
+      "t": 83.52
+     },
+     "who": "servant",
+     "action": "clamps both hands on his own head",
+     "acting": "stretch 1.08 then squash 0.92, eyes shut tight",
+     "library": "PERSON_HANDS.headHold + anticipate"
+    },
+    {
+     "t": 86.58,
+     "end": 87.6,
+     "cue": {
+      "word": "أذكر",
+      "t": 86.58
+     },
+     "who": "servant",
+     "action": "swats the friend's well icon out of the air; it bursts",
+     "acting": "sharp, brow 0.8",
+     "library": "S.emphasis pop"
+    },
+    {
+     "t": 88.22,
+     "end": 89.3,
+     "cue": {
+      "word": "لتعرف",
+      "t": 88.22
+     },
+     "who": "servant",
+     "action": "draws a tall door shape in the air with both hands; the arrow to the back door flashes again",
+     "acting": "talk 0.9 on every word, eyes locked on the friend",
+     "library": "handL/handR keyed path + S.arrow"
+    },
+    {
+     "t": 89.34,
+     "end": 90.4,
+     "cue": {
+      "word": "الباب!",
+      "t": 89.34
+     },
+     "who": "servant",
+     "action": "taps the friend's forehead twice",
+     "acting": "friend blinks on each tap",
+     "library": "handR target at the forehead"
+    },
+    {
+     "t": 90.56,
+     "end": 91.4,
+     "cue": {
+      "word": "إذا",
+      "t": 90.56
+     },
+     "who": "servant",
+     "action": "spins him to face the back door again",
+     "acting": "friend lets himself be turned like furniture",
+     "library": "turn with squeeze"
+    },
+    {
+     "t": 91.56,
+     "end": 92.4,
+     "cue": {
+      "word": "فاخرج",
+      "t": 91.56
+     },
+     "who": "servant",
+     "action": "shoves him; the friend slides two steps on his heels and stops",
+     "acting": "servant tip 0.15 into the shove; friend tip -0.1, heels leave short skid marks",
+     "library": "anticipate() + skid lines"
+    },
+    {
+     "t": 92.46,
+     "end": 93.6,
+     "cue": {
+      "word": "فورًا!»",
+      "t": 92.46
+     },
+     "who": "servant",
+     "action": "stamps a foot and points again; behind them the front door bucks",
+     "acting": "dust at the stamp; friend does not move",
+     "library": "footfalls dust; door rot pulse"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 91.6,
+     "text": "GO!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 93.7
+   }
+  },
+  {
+   "id": "S10",
+   "start": 93.7,
+   "end": 103.52,
+   "paragraphs": [
+    5
+   ],
+   "set": "house",
+   "cast": [
+    "thief",
+    "servant"
+   ],
+   "summary": "The friend's logic: you said there was a well; I looked; how can I leave without seeing it? He plants himself.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "Same two-shot (x 800, y 690, zoom 1.6). Static: the stillness of the friend against the servant's rising panic is the scene."
+   },
+   "composition": "Friend's thought cloud top right with the well; servant's body keeps twisting between friend (right) and the shaking front door (left).",
+   "actions": [
+    {
+     "t": 93.7,
+     "end": 95.0,
+     "cue": {
+      "word": "رد",
+      "t": 93.7
+     },
+     "who": "thief",
+     "action": "turns round again, unhurried, and raises one finger",
+     "acting": "patient, reasonable face, lid 0.2",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 95.2,
+     "end": 96.8,
+     "cue": {
+      "word": "«ولكنك",
+      "t": 95.2
+     },
+     "who": "thief",
+     "action": "points at the servant's chest",
+     "acting": "gentle accusation, brow 0.3",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 97.0,
+     "end": 98.5,
+     "cue": {
+      "word": "البئر",
+      "t": 97.0
+     },
+     "who": "well",
+     "action": "the well icon pops back in his thought cloud, larger than before; he points toward the yard",
+     "acting": "eyes up at the cloud, then along his arm",
+     "library": "thoughtCloud + aR arm angle"
+    },
+    {
+     "t": 98.64,
+     "end": 99.1,
+     "cue": {
+      "word": "بحثت",
+      "t": 98.64
+     },
+     "who": "thief",
+     "action": "mimes the search: hand over the eyes, head left and right",
+     "acting": "big clear head turns",
+     "library": "handR at the brow + gazePlan"
+    },
+    {
+     "t": 99.2,
+     "end": 100.1,
+     "cue": {
+      "word": "عنها",
+      "t": 99.2
+     },
+     "who": "servant",
+     "action": "looks from the friend to the front door and back, three times, faster each time",
+     "acting": "tremble rising, wet eyes",
+     "library": "gazePlan + tremble()"
+    },
+    {
+     "t": 100.18,
+     "end": 101.2,
+     "cue": {
+      "word": "أجدها.",
+      "t": 100.18
+     },
+     "who": "thief",
+     "action": "empty palms and a sad shake of the head; a red cross stamps over the cloud well",
+     "acting": "mouth frown, brow -0.6",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 101.28,
+     "end": 102.7,
+     "cue": {
+      "word": "كيف",
+      "t": 101.28
+     },
+     "who": "thief",
+     "action": "folds his arms and plants his feet apart",
+     "acting": "chin up, stubborn; small settle bounce",
+     "library": "PERSON_HANDS.folded + settleTo"
+    },
+    {
+     "t": 102.84,
+     "end": 103.5,
+     "cue": {
+      "word": "أراها؟»",
+      "t": 102.84
+     },
+     "who": "thief",
+     "action": "shuts his eyes and lifts his nose: he is not moving",
+     "acting": "lid 1; the servant silently screams at the ceiling (mouth open, no lettering)",
+     "library": "lid ramp"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 103.52
+   }
+  },
+  {
+   "id": "S11",
+   "start": 103.52,
+   "end": 111.3,
+   "paragraphs": [
+    6
+   ],
+   "set": "house",
+   "cast": [
+    "owner",
+    "wife"
+   ],
+   "summary": "Front door: the knocking grows and the owner's temper rises.",
+   "camera": {
+    "shot": "medium",
+    "move": "shake",
+    "notes": "Cut to the front door from inside (x 520, y 680, zoom 1.4) for the big knocks with panel-only shake; at 107.1 cut to the street side (x 300, y 690, zoom 1.6) on the owner."
+   },
+   "composition": "Door fills the left third inside. Outside: owner centre, wife behind at left, door at right edge of frame.",
+   "actions": [
+    {
+     "t": 103.52,
+     "end": 105.5,
+     "cue": {
+      "word": "ازدادت",
+      "t": 103.52
+     },
+     "who": "set",
+     "action": "bigger knocks: the door bulges inward on each, one hinge screw pops half out, dust rains from the lintel",
+     "acting": "panel-only shake 5 px on each hit, decaying",
+     "library": "strike cycle; panel-only shake"
+    },
+    {
+     "t": 105.66,
+     "end": 107.0,
+     "cue": {
+      "word": "أصوات",
+      "t": 105.66
+     },
+     "who": "valuables",
+     "action": "the vase left on the shelf hops toward the edge with each knock and teeters; the lamp swings wide",
+     "acting": "nobody there to catch it: it rocks, then settles back",
+     "library": "kick() + swing()"
+    },
+    {
+     "t": 107.12,
+     "end": 107.9,
+     "cue": {
+      "word": "الباب،",
+      "t": 107.12
+     },
+     "who": "owner",
+     "action": "outside: he hammers the door with both fists",
+     "acting": "brow 0.9, mouth open, turban bobbing a few frames behind the head",
+     "library": "aL/aR alternate strike cycle"
+    },
+    {
+     "t": 107.96,
+     "end": 108.8,
+     "cue": {
+      "word": "وبدأ",
+      "t": 107.96
+     },
+     "who": "owner",
+     "action": "stops, fists on hips, one foot tapping",
+     "acting": "jaw set; the wife leans away from him",
+     "library": "PERSON_HANDS.hipsHands + foot tap"
+    },
+    {
+     "t": 108.9,
+     "end": 110.0,
+     "cue": {
+      "word": "صاحب",
+      "t": 108.9
+     },
+     "who": "owner",
+     "action": "puts an ear to the door: faint sound arcs come through from inside",
+     "acting": "eyes slide sideways, one brow goes up: voices?",
+     "library": "PERSON_HANDS.cupEar + soundArcs"
+    },
+    {
+     "t": 110.06,
+     "end": 111.3,
+     "cue": {
+      "word": "يغضب.",
+      "t": 110.06
+     },
+     "who": "owner",
+     "action": "his face flushes red from the collar up and two steam puffs leave his turban",
+     "acting": "brow 1, tremble, hourglass down to a quarter",
+     "library": "flush (planned expression) + tremble()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 105.7,
+     "text": "BANG! BANG!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 111.3
+   }
+  },
+  {
+   "id": "S12",
+   "start": 111.3,
+   "end": 123.08,
+   "paragraphs": [
+    6
+   ],
+   "set": "house",
+   "cast": [
+    "servant",
+    "thief",
+    "owner"
+   ],
+   "summary": "At the back door the servant begs on his knees and pushes; the friend steps into the yard, free, and comes back in still asking about the well.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Back door area (x 1230, y 680, zoom 1.25): the pair, the open door and the yard gate all in frame. An inset circle (r 120, top left of the panel) shows the front door bulging from 116.8."
+   },
+   "composition": "Friend at x 1200 facing left, servant kneeling at x 1100; the open door and the WAY OUT gate sit one step to the right of the friend, in plain sight. Inset top left, hourglass top right.",
+   "actions": [
+    {
+     "t": 111.3,
+     "end": 112.7,
+     "cue": {
+      "word": "توسل",
+      "t": 111.3
+     },
+     "who": "servant",
+     "action": "drops to his knees and clasps his hands",
+     "acting": "wet eyes, brow -0.8, looking up at the friend",
+     "library": "person kneel (planned pose) + PERSON_HANDS.clasp"
+    },
+    {
+     "t": 113.86,
+     "end": 115.2,
+     "cue": {
+      "word": "«انسَ",
+      "t": 113.86
+     },
+     "who": "servant",
+     "action": "crosses both arms in a big X at the thought cloud well; the cloud wobbles but stays",
+     "acting": "talk 1, head shaking",
+     "library": "aL/aR arm angles"
+    },
+    {
+     "t": 115.32,
+     "end": 116.7,
+     "cue": {
+      "word": "الباب",
+      "t": 115.32
+     },
+     "who": "servant",
+     "action": "swings both arms to present the open door one step away; the WAY OUT arrow pulses",
+     "acting": "pleading smile, eyes flick door, friend, door",
+     "library": "PERSON_HANDS.reachBoth + S.arrow"
+    },
+    {
+     "t": 116.86,
+     "end": 118.8,
+     "cue": {
+      "word": "والنجاة",
+      "t": 116.86
+     },
+     "who": "servant",
+     "action": "gets behind him and pushes with a shoulder; the friend leans back and his heels plough 40 units toward the door; the inset shows the front door bulging",
+     "acting": "servant tip 0.25, feet slipping; friend tip -0.2, arms still folded",
+     "library": "walk() on the spot for the servant; inset circle (planned camera)"
+    },
+    {
+     "t": 118.94,
+     "end": 119.8,
+     "cue": {
+      "word": "لكن",
+      "t": 118.94
+     },
+     "who": "thief",
+     "action": "steps aside; the servant falls flat on the floor",
+     "acting": "friend does not even look down",
+     "library": "impactSquash + rebound"
+    },
+    {
+     "t": 119.96,
+     "end": 120.5,
+     "cue": {
+      "word": "ظل",
+      "t": 119.96
+     },
+     "who": "thief",
+     "action": "walks out into the yard, lifts a flowerpot and looks under it",
+     "acting": "serious, methodical",
+     "library": "walk(); handR lifts the pot"
+    },
+    {
+     "t": 120.56,
+     "end": 121.3,
+     "cue": {
+      "word": "يسأل",
+      "t": 120.56
+     },
+     "who": "thief",
+     "action": "comes back IN through the open door with empty palms",
+     "acting": "talk 0.7, brow -0.5",
+     "library": "walk() + PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 121.42,
+     "end": 123.0,
+     "cue": {
+      "word": "البئر",
+      "t": 121.42
+     },
+     "who": "well",
+     "action": "the well with a question mark returns to his thought cloud; he lifts a corner of the carpet to look there too",
+     "acting": "the servant, face down, beats the floor with one fist; hourglass nearly empty",
+     "library": "thoughtCloud; servant handR strike cycle"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 123.08
+   }
+  },
+  {
+   "id": "S13",
+   "start": 123.08,
+   "end": 137.2,
+   "paragraphs": [
+    7
+   ],
+   "set": "house",
+   "cast": [
+    "owner",
+    "wife",
+    "servant",
+    "thief"
+   ],
+   "summary": "The knocking stops. The front door opens; the owner comes in, finds the sacks, then sees the two men still arguing.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Front door from inside (x 560, y 670, zoom 1.3), held still to 125.2. Push to the sacks at 130.3 (x 780, y 760, zoom 1.8). At 133.6 pull out and pan right to the full interior (x 850, y 640, zoom 1.0): owner left, sacks centre, the arguing pair right."
+   },
+   "composition": "Owner's long shadow runs along the floor from the door to the sacks. In the final wide the owner (x 600) looks right across the sacks (x 760, 860) to the pair (x 1120, 1210).",
+   "actions": [
+    {
+     "t": 123.08,
+     "end": 125.1,
+     "cue": {
+      "word": "وأخيرًا،",
+      "t": 123.08
+     },
+     "who": "set",
+     "action": "silence: the door is still, the lamp slows, one last grain hangs in the hourglass neck",
+     "acting": "no character on screen; a held breath",
+     "library": "suspense by stillness"
+    },
+    {
+     "t": 125.24,
+     "end": 127.6,
+     "cue": {
+      "word": "فُتح",
+      "t": 125.24
+     },
+     "who": "set",
+     "action": "the loose hinge screw drops, the latch gives and the door swings slowly inward; street light throws the owner's long shadow across the floor",
+     "acting": "the shadow's turban reaches the sacks first",
+     "library": "door leaf open 0 -> 1 over 1.6 s; shadow as a dark skewed silhouette"
+    },
+    {
+     "t": 127.78,
+     "end": 130.2,
+     "cue": {
+      "word": "ودخل",
+      "t": 127.78
+     },
+     "who": "owner",
+     "action": "walks in with heavy steps; his wife peers round the door frame behind him",
+     "acting": "brow 0.8, gaze sweeping the room; dust on each footfall",
+     "library": "walk() + footfalls()"
+    },
+    {
+     "t": 130.32,
+     "end": 130.9,
+     "cue": {
+      "word": "رأى",
+      "t": 130.32
+     },
+     "who": "owner",
+     "action": "stops dead; his eyes drop to the two sacks",
+     "acting": "eyes wide, a 2-frame snap of the pupils",
+     "library": "gazePlan + settleTo"
+    },
+    {
+     "t": 130.98,
+     "end": 131.6,
+     "cue": {
+      "word": "الأكياس",
+      "t": 130.98
+     },
+     "who": "fx",
+     "action": "arrow and label MY THINGS! over the sacks; the candlestick sticking out glints",
+     "acting": "none",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 131.7,
+     "end": 133.4,
+     "cue": {
+      "word": "المملوءة",
+      "t": 131.7
+     },
+     "who": "owner",
+     "action": "lifts the gold cup out of a sack and recognises it",
+     "acting": "brow up, then hard down; mouth sets",
+     "library": "handR target; lookAt(cup)"
+    },
+    {
+     "t": 133.6,
+     "end": 134.5,
+     "cue": {
+      "word": "ثم",
+      "t": 133.6
+     },
+     "who": "owner",
+     "action": "hears voices; his eyes slide right, then his head follows",
+     "acting": "eyes first, head 4 frames late",
+     "library": "look(T, head, plan)"
+    },
+    {
+     "t": 134.58,
+     "end": 136.5,
+     "cue": {
+      "word": "الرجلين",
+      "t": 134.58
+     },
+     "who": "thief",
+     "action": "wide shot: the pair are still arguing in mime and notice nothing; the friend draws a well in the air, the servant points at the door, in turns",
+     "acting": "alternating talk, never both at once; the owner blinks twice with a flat stare",
+     "library": "talk alternation; blink"
+    },
+    {
+     "t": 136.75,
+     "end": 137.2,
+     "cue": {
+      "word": "يتجادلان.",
+      "t": 135.38
+     },
+     "who": "owner",
+     "action": "clears his throat; the two freeze, turn their heads slowly and look at the lens; an exclamation mark pops",
+     "acting": "held shock, eyes wide, no blinks",
+     "library": "noBlink; gaze to camera"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 125.3,
+     "text": "CREAK..."
+    }
+   ],
+   "sfx": [
+    {
+     "t": 136.9,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 137.2
+   }
+  },
+  {
+   "id": "S14",
+   "start": 137.2,
+   "end": 145.72,
+   "paragraphs": [
+    7
+   ],
+   "set": "house",
+   "cast": [
+    "thief",
+    "owner",
+    "servant"
+   ],
+   "summary": "Now he runs. Too late: the owner catches him by the collar on the threshold of the open door.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Wide (x 950, y 650, zoom 1.05) for the wind-up and chase, tracking right to x 1200; push to a medium on the catch at the threshold (x 1230, y 680, zoom 1.5) at 142.0."
+   },
+   "composition": "The catch happens in the open doorway itself, with the gate and the WAY OUT arrow visible just behind the friend's reaching hand.",
+   "actions": [
+    {
+     "t": 137.2,
+     "end": 138.5,
+     "cue": {
+      "word": "حاول",
+      "t": 137.2
+     },
+     "who": "thief",
+     "action": "decides to run: winds up, legs spin on the spot with a dust cloud before he moves",
+     "acting": "panic at last, eyes wide, sq 0.9 in the wind-up",
+     "library": "runInPlace (new motion) + dustBurst"
+    },
+    {
+     "t": 138.64,
+     "end": 139.0,
+     "cue": {
+      "word": "يهرب،",
+      "t": 138.64
+     },
+     "who": "thief",
+     "action": "shoots off toward the back door",
+     "acting": "stretch 1.1, arms reaching",
+     "library": "walk() fast"
+    },
+    {
+     "t": 139.12,
+     "end": 139.9,
+     "cue": {
+      "word": "لكن",
+      "t": 139.12
+     },
+     "who": "owner",
+     "action": "is already striding after him, robe flying, closing the gap",
+     "acting": "brow 1, gaze locked on the collar",
+     "library": "walk() + footfalls()"
+    },
+    {
+     "t": 140.0,
+     "end": 141.4,
+     "cue": {
+      "word": "الوقت",
+      "t": 140.0
+     },
+     "who": "hourglass",
+     "action": "the last grain falls; the hourglass turns red and tips over",
+     "acting": "none",
+     "library": "fill 0; red recolour"
+    },
+    {
+     "t": 141.52,
+     "end": 141.95,
+     "cue": {
+      "word": "فات،",
+      "t": 141.52
+     },
+     "who": "fx",
+     "action": "lettering TOO LATE! under the hourglass",
+     "acting": "none",
+     "library": "S.title small"
+    },
+    {
+     "t": 142.02,
+     "end": 143.0,
+     "cue": {
+      "word": "فأمسك",
+      "t": 142.02
+     },
+     "who": "owner",
+     "action": "his hand closes on the collar right on the threshold; the friend's body stretches forward, snaps back, and his legs keep running in the air",
+     "acting": "friend sq 1.15 then settle; owner braces, tip -0.1",
+     "library": "PERSON_HANDS.grip; settleTo; leg phase keeps cycling"
+    },
+    {
+     "t": 143.14,
+     "end": 144.1,
+     "cue": {
+      "word": "به",
+      "t": 143.14
+     },
+     "who": "owner",
+     "action": "reels him in and lifts him a little; the friend dangles and swings to a stop",
+     "acting": "legs slow down and hang; the servant peeks from behind a sack",
+     "library": "swing()"
+    },
+    {
+     "t": 145.25,
+     "end": 145.7,
+     "cue": {
+      "word": "البيت.",
+      "t": 144.16
+     },
+     "who": "owner",
+     "action": "sets him down on his feet",
+     "acting": "landSquash on the friend, a puff of dust",
+     "library": "landSquash"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 141.6,
+     "text": "TOO LATE!"
+    },
+    {
+     "t": 142.1,
+     "text": "GOTCHA!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 145.3,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 145.72
+   }
+  },
+  {
+   "id": "S15",
+   "start": 145.72,
+   "end": 157.68,
+   "paragraphs": [
+    8
+   ],
+   "set": "house",
+   "cast": [
+    "owner",
+    "thief",
+    "servant"
+   ],
+   "summary": "The owner asks why he did not use the back door. The friend, honestly puzzled: I found the door, but not the well.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "Two-shot built with twoShot(owner, thief, {margin: 120}) at the back door (about x 1200, y 680, zoom 1.5); the open door and gate stay visible at frame right."
+   },
+   "composition": "Owner left (x 1130) holding the collar, friend right (x 1240) facing him, the open door directly behind the friend. Thought cloud top centre, clear of both heads.",
+   "actions": [
+    {
+     "t": 145.72,
+     "end": 147.9,
+     "cue": {
+      "word": "سأل",
+      "t": 145.72
+     },
+     "who": "owner",
+     "action": "one hand on the collar, the other on his hip; he studies the friend",
+     "acting": "brow 0.5, head tilted, talk 0.7",
+     "library": "PERSON_HANDS.hipsHands; lookAt"
+    },
+    {
+     "t": 148.22,
+     "end": 149.6,
+     "cue": {
+      "word": "«لماذا",
+      "t": 148.22
+     },
+     "who": "owner",
+     "action": "points at the wide-open back door right behind the friend; the WAY OUT arrow flashes once more",
+     "acting": "genuine question, brow raised",
+     "library": "aR arm angle + S.arrow"
+    },
+    {
+     "t": 150.16,
+     "end": 151.4,
+     "cue": {
+      "word": "الخلفي؟»",
+      "t": 150.16
+     },
+     "who": "owner",
+     "action": "opens his free palm: well?",
+     "acting": "waits, one slow blink",
+     "library": "PERSON_HANDS.palmsUp one hand"
+    },
+    {
+     "t": 151.56,
+     "end": 152.9,
+     "cue": {
+      "word": "قال",
+      "t": 151.56
+     },
+     "who": "thief",
+     "action": "scratches his head and looks back at the door",
+     "acting": "gaze wanders door, yard, floor in slow saccades",
+     "library": "PERSON_HANDS.headHold one hand; gazePlan"
+    },
+    {
+     "t": 152.98,
+     "end": 153.5,
+     "cue": {
+      "word": "حيرة:",
+      "t": 152.98
+     },
+     "who": "thief",
+     "action": "confused face",
+     "acting": "one brow up and one down if possible (else brow -0.6), mouth small frown",
+     "library": "brow"
+    },
+    {
+     "t": 153.6,
+     "end": 155.0,
+     "cue": {
+      "word": "«وجدت",
+      "t": 153.6
+     },
+     "who": "thief",
+     "action": "the same thumb over the shoulder and proud nod as at 78.4",
+     "acting": "setup and payoff: identical arm angle",
+     "library": "aR arm angle backward"
+    },
+    {
+     "t": 155.2,
+     "end": 156.4,
+     "cue": {
+      "word": "لكنني",
+      "t": 155.2
+     },
+     "who": "servant",
+     "action": "in the background he covers his face and sinks behind a sack",
+     "acting": "only the top of his cap shows",
+     "library": "PERSON_HANDS.mouthCover; draw before the sack"
+    },
+    {
+     "t": 156.54,
+     "end": 157.6,
+     "cue": {
+      "word": "أجد",
+      "t": 156.54
+     },
+     "who": "well",
+     "action": "palms up; the well with its question mark appears in the cloud one last time",
+     "acting": "earnest, wet eyes, looking up at the owner for help",
+     "library": "PERSON_HANDS.palmsUp + thoughtCloud"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 157.68
+   }
+  },
+  {
+   "id": "S16",
+   "start": 157.68,
+   "end": 169.2,
+   "paragraphs": [
+    8
+   ],
+   "set": "house",
+   "cast": [
+    "owner",
+    "thief",
+    "servant"
+   ],
+   "summary": "The owner cannot believe it. He walks the friend out of the front door to the judge; the sacks stay in the house. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Stay in the two-shot until 161.2, then pull out to the full interior (x 850, y 640, zoom 1.0) for the walk out; from 163.4 a slow push toward the sacks (x 810, y 740, zoom 1.4) for the ending."
+   },
+   "composition": "Final frame: two sacks centre, gold cup beside them, the back door still open at the right with moonlight, THE END in the upper third.",
+   "actions": [
+    {
+     "t": 157.68,
+     "end": 158.7,
+     "cue": {
+      "word": "لم",
+      "t": 157.68
+     },
+     "who": "owner",
+     "action": "stares; looks at the door, at the friend, at the door again",
+     "acting": "three slow gaze shifts, mouth slightly open",
+     "library": "gazePlan"
+    },
+    {
+     "t": 158.78,
+     "end": 160.2,
+     "cue": {
+      "word": "يصدق",
+      "t": 158.78
+     },
+     "who": "owner",
+     "action": "lets go of the collar in disbelief; the friend does not run even now, he just straightens his shirt",
+     "acting": "owner long blink; friend polite",
+     "library": "lid ramp"
+    },
+    {
+     "t": 160.36,
+     "end": 161.2,
+     "cue": {
+      "word": "سمعه.",
+      "t": 160.36
+     },
+     "who": "owner",
+     "action": "turns to the lens and lays a hand over his face",
+     "acting": "the film's last look to camera",
+     "library": "PERSON_HANDS.headHold one hand; gaze to camera"
+    },
+    {
+     "t": 161.28,
+     "end": 162.7,
+     "cue": {
+      "word": "وأخذ",
+      "t": 161.28
+     },
+     "who": "owner",
+     "action": "takes him by the arm and walks him left across the hall toward the front door",
+     "acting": "friend keeps looking back over his shoulder at the yard",
+     "library": "walk() for both; lookAt(yard)"
+    },
+    {
+     "t": 162.78,
+     "end": 163.3,
+     "cue": {
+      "word": "الحاكم،",
+      "t": 162.78
+     },
+     "who": "fx",
+     "action": "they go out of the front door; arrow + label TO THE JUDGE points out to the street",
+     "acting": "none",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 163.4,
+     "end": 164.4,
+     "cue": {
+      "word": "وبقيت",
+      "t": 163.4
+     },
+     "who": "servant",
+     "action": "alone, he sheepishly lifts the candlestick out of a sack and puts it back on the shelf",
+     "acting": "head low, eyes down, shoulders dropped",
+     "library": "handR target on the shelf; shame posture"
+    },
+    {
+     "t": 164.5,
+     "end": 165.4,
+     "cue": {
+      "word": "الأكياس",
+      "t": 164.5
+     },
+     "who": "sack",
+     "action": "one sack slumps and the gold cup rolls out, rocks and settles with a glint",
+     "acting": "none",
+     "library": "swing() damped rock; S.emphasis sparkle"
+    },
+    {
+     "t": 165.48,
+     "end": 166.3,
+     "cue": {
+      "word": "البيت.",
+      "t": 165.48
+     },
+     "who": "camera",
+     "action": "push settles on the sacks with the open, unused back door glowing behind them",
+     "acting": "none",
+     "library": "CAM keys"
+    },
+    {
+     "t": 166.4,
+     "end": 169.2,
+     "cue": {
+      "word": "البيت.",
+      "t": 165.48
+     },
+     "who": "lettering",
+     "action": "THE END holds over the scene",
+     "acting": "none",
+     "library": "S.title"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 166.4,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 166.6,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 169.2
+   }
+  }
+ ],
+ "ending": {
+  "t": 166.4,
+  "description": "After the last word (166.02) THE END holds for about 2.8 s over the two full sacks in the hall, the gold cup beside them, and the back door still standing open in the moonlight. A quiet chime at 166.6. The film ends at 169.2."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "عمل خادم في بيت رجل غني، وكان يعرف كل غرفة وكل باب فيه.|لكنه اتفق مع صديق له على السرقة.|كان الصديق يدخل البيت عندما يخرج أصحابه،|ثم يبيعان ما يأخذانه ويقسمان المال.",
+   "en": "A servant worked in a wealthy man’s house and knew every room and every door.|But he made a plan to steal with a friend.|His friend came inside whenever the owners went out,|and they sold what they took and divided the money."
+  },
+  {
+   "p": 2,
+   "ar": "وفي ليلة، خرج أهل البيت لزيارة أقاربهم.|جاء الصديق، وبدأ الاثنان يجمعان أشياء ثمينة في أكياس.|كانا يظنان أن أمامهما وقتًا طويلًا، وأن أحدًا لن يعود قريبًا.",
+   "en": "One night, the family went out to visit relatives.|The friend arrived, and the two began putting valuable things into bags.|They thought they had plenty of time and that nobody would return soon."
+  },
+  {
+   "p": 3,
+   "ar": "فجأة، سمعا طرقًا قويًا على الباب الأمامي.|صاح صاحب البيت من الخارج: «افتحوا الباب!»|خاف الرجلان. قال الخادم لصديقه:|«اهرب بسرعة من الباب الخلفي، عند البئر!» وأشار إليه بيده.",
+   "en": "Suddenly, they heard loud knocking at the front door.|The owner shouted from outside, “Open the door!”|Both men were terrified. The servant told his friend,|“Quick! Escape through the back door by the well!” and pointed the way."
+  },
+  {
+   "p": 4,
+   "ar": "ركض اللص إلى الخلف، ووجد الباب المفتوح.|لكنه لم يرَ بئرًا بجانبه.|عاد مسرعًا إلى الخادم وقال:|«وجدت الباب، لكن أين البئر التي تحدثت عنها؟»",
+   "en": "The thief ran to the back and found the open door.|But he saw no well beside it.|He hurried back to the servant and said,|“I found the door, but where is the well you mentioned?”"
+  },
+  {
+   "p": 5,
+   "ar": "قال الخادم: «لم أذكر البئر إلا لتعرف مكان الباب!|إذا وجدته، فاخرج فورًا!»|رد اللص: «ولكنك قلت إن البئر هناك.|بحثت عنها ولم أجدها. كيف أخرج دون أن أراها؟»",
+   "en": "“I mentioned the well only to help you find the door!” the servant said.|“Once you find it, go out immediately!”|The thief replied, “But you said the well was there.|I looked and could not find it. How can I leave without seeing it?”"
+  },
+  {
+   "p": 6,
+   "ar": "ازدادت أصوات الطرق على الباب، وبدأ صاحب البيت يغضب.|توسل الخادم إلى صديقه: «انسَ البئر!|الباب أمامك، والنجاة قريبة!»|لكن اللص ظل يسأل عن البئر المفقودة.",
+   "en": "The knocking grew louder, and the owner became angry.|The servant begged his friend, “Forget the well!|The door is in front of you, and you can still escape!”|But the thief kept asking about the missing well."
+  },
+  {
+   "p": 7,
+   "ar": "وأخيرًا، فُتح الباب الأمامي، ودخل صاحب البيت.|رأى الأكياس المملوءة بأشيائه، ثم رأى الرجلين يتجادلان.|حاول اللص أن يهرب، لكن الوقت كان قد فات،|فأمسك به صاحب البيت.",
+   "en": "At last, the front door opened, and the owner came inside.|He saw bags filled with his belongings and then the two men arguing.|The thief tried to run, but it was too late,|and the owner caught him."
+  },
+  {
+   "p": 8,
+   "ar": "سأل صاحب البيت: «لماذا لم تهرب من الباب الخلفي؟»|قال اللص في حيرة: «وجدت الباب، لكنني لم أجد البئر!»|لم يصدق الرجل ما سمعه.|وأخذ اللص إلى الحاكم، وبقيت الأكياس في البيت.",
+   "en": "“Why did you not escape through the back door?” the owner asked.|The thief answered, confused, “I found the door, but I could not find the well!”|The owner could hardly believe it.|He took the thief to the judge, and the bags stayed in the house."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "palaceHall (variant merchantHouse)",
+   "description": "The planned merchant house interior, built here as a 1800-wide side cutaway with a street on the left, a yard on the right and two working doors (open 0..1), day and night palettes. Reusable for any house, robbery or guest story.",
+   "reusable": true,
+   "effort": "L",
+   "implementation": "One function per layer baked with bake(): sky/nightCity backdrop, walls as black-bordered rects with Ben-Day fills (hp dots), shelf, carpet, lamp (lamp swing drawn live), yard wall, palm (trunk rect + five leaf wedges), gate arch. Doors drawn live: a rect whose width is 16 + 94 * open, hinged on the wall, with a ring handle; shake = small rotation about the hinge. Coordinates are given in sets[0]."
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (servant)",
+   "description": "Adds a 'servant' preset to the planned person costume layer (flat cap, short tunic, sash). This film also uses the planned 'merchant' and 'lady' presets.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Optional costume field on person(): draws headwear, beard and robe shapes over the existing body after the torso and before the arms, so arm IK, gestures, gaze and blinks are unchanged. Default (no costume) must render exactly as now; run the regression test."
+  },
+  {
+   "type": "prop",
+   "name": "sack, coin, valuables",
+   "description": "Sack with fill 0..1, coin and four shelf valuables plus a broom (see props). Sack and coin are the drawings planned by KD-013.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Flat paths with black outline and one dot shade each; the sack is a closed bezier whose bumps scale with fill, neck tied with a short line."
+  },
+  {
+   "type": "prop",
+   "name": "well",
+   "description": "Above-ground well icon with ghost and mark options (see props); the story's running gag object. Reusable for village and yard scenes.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Blocks as rects in two offset rows, two post rects, a triangle roof, a line and a small bucket trapezoid. ghost:true strokes the same paths with setLineDash([10, 8]) in blue and no fill."
+  },
+  {
+   "type": "prop",
+   "name": "hourglass",
+   "description": "Panel-space time meter (see props) keyed: appears 36.16 at 1.0; 55.4 starts to run; 0.75 at 65.2; 0.6 at 83.5; 0.4 at 103.5; 0.25 at 111.3; 0.05 at 123.1; 0 and red at 140.0-141.5; hidden after 146.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Two triangles for the glass, sand as clipped rects by fill, a 3 px stream line when the value is falling; drawn after the world and before S.finish, in panel coordinates."
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "description": "The planned generic thought cloud, used for the friend's fixed idea (well with ? or x) and the servant's speech balloon icons.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Cloud outline from overlapping circles with a white fill and black stroke, three shrinking bubbles to the head, a draw callback for the contents; pops in with settleTo."
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "description": "The planned round picture-in-picture (r 120, top left of the panel) showing the bulging front door during 116.8-123.0.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Clip a circle in panel space, draw the world again with a second camera (x 430, y 720, zoom 0.9), stroke a fat black ring; open and close with a radius ramp."
+  },
+  {
+   "type": "pose",
+   "name": "person kneel / sit",
+   "description": "Planned kneel and sit fields: the servant kneels to beg (111.3-116.8), the friend sits on his sack (35.0-44.2).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "kneel 0..1 lowers the hips by up to 70 and draws the shins flat on the floor; sit 0..1 lowers the hips by 60 with thighs forward. Both keep the torso, arms and head code unchanged."
+  },
+  {
+   "type": "motion",
+   "name": "runInPlace",
+   "description": "Comic wind-up: the legs cycle at full run amplitude for about 1.2 s with no travel, dust building behind, then release into a real run; also used for the legs running in the air after the collar grab.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Return {ph, amp} from time instead of distance (ph = 22 * (t - t0), amp 1) and blend to walk(TX, t) at release so the phase is continuous."
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "description": "Planned anger flush 0..1 with steam puffs, for the owner at 110.06.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Red Ben-Day dots clipped to the face shape, rising from the chin with the value; two small white puffs with black outline drifting up from the turban."
+  }
+ ],
+ "owner_questions": [
+  "The script does not say what happens to the servant: by default he is not arrested on screen; he hides behind a sack and at the end sheepishly puts a candlestick back on the shelf.",
+  "Addition beyond the script at 119.96-121.3: the friend walks out into the yard, looks under a flowerpot and comes back inside; default is to keep it because it shows that he could have left.",
+  "An hourglass meter with the invented labels PLENTY OF TIME (38.4) and TOO LATE! (141.5) runs through the film; default is to keep it.",
+  "The judge is not shown; by default the owner walks the friend out of the front door under an arrow labelled TO THE JUDGE.",
+  "The owner's wife is added as a silent companion (the script says the family went out); default is to include her leaving, waiting at the door and peeking in.",
+  "Invented lettering by default: KNOCK! KNOCK!, OPEN UP!, ZOOM!, NO WELL?, GO!, BANG! BANG!, CREAK..., TOO LATE!, GOTCHA!, and the labels FRONT DOOR, BACK DOOR, WAY OUT, MY THINGS!."
+ ],
+ "implementation_notes": [
+  "World 1800 x 1230 with the floor at y 900 (the template uses 1000 wide; set WW = 1800 and clamp the camera to it). Minimum zoom 1.0 so the view never exceeds the world height.",
+  "The whole hall (x 350..1350) fits one zoom 1.0 shot at camera x 850: use it whenever both doors must be read together (6.9, 62.5, 133.6, 161.3).",
+  "Knocks are narrated, not heard: there is no knock sound effect because every knock falls inside a spoken word. Show them with door motion, impact stars, lamp swing and panel-only shake. Sound effects are only the four listed (21.85, 136.9, 145.3, 166.6), master 0.6.",
+  "Knock rhythm: drive door hits from one list. S5: 43.08, 46.06, 46.74, 47.52, then a hit every 0.9 s in the background while the camera is inside (soft, 2 px) up to 103.5; S11: every 0.55 s from 103.52 to 107.9 with rising amplitude; none after 108.0 except the bulges in the inset (116.9, 118.0, 119.1, 120.2, 121.3, 122.4); silence from 123.08.",
+  "The back door stays open from 68.3 to the end of the film. Never close it: the open exit in the background of every later shot is the point.",
+  "The friend never looks frightened between 74.86 and 136.7. Keep his face calm and reasonable; all panic belongs to the servant.",
+  "Use LIFE.t = t for automatic blinks; add hand blinks where a lid is set; noBlink during the held shocks (44.2-45.3, 136.75-137.2).",
+  "Arms that must read at phone size (pointing at the door, thumb over the shoulder, the X) use aL/aR arm angles, not hand targets.",
+  "Positions: packing spot servant x 700, friend x 820; sacks x 760 and x 860; argument spot S8-S10 servant x 720, friend x 850; S12 servant x 1100, friend x 1200; catch at x 1270.",
+  "Subtitles: chunk marks are in subtitles[]; copy them to chunks_ar.txt and chunks_en.txt and verify by program against the script."
+ ],
+ "warnings": [
+  "The planned assets merchant and lady costume presets, thoughtCloud, inset circle, kneel/sit and flush do not exist in Library yet; if another story builds them first, reuse them.",
+  "Edge-on doors must still read as doors: give each a strong frame, a ring handle on both faces and a visible swing; check a still at 46.1 and 68.6.",
+  "The inset circle (top left) and the hourglass (top right) share the top of the panel in S12: keep both clear of the thought cloud, which then sits top centre.",
+  "Sky presets: check that sky() has a night option; otherwise use the nightCity backdrop behind the street and a navy fill with stars over the yard."
+ ]
+}

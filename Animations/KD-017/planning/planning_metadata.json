@@ -1,0 +1,102 @@
+{
+ "story_id": "KD-017",
+ "title": "The Hesitant Thief",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T12:16:55",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a304d7d7f2e6df35c.jsonl",
+ "agent_id": "a304d7d7f2e6df35c",
+ "model_messages": {
+  "claude-fable-5-2": 16
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "15803b5f09d8079d8409b0e7fa1f98af172284386dd7e9fed410881aeada9ab0",
+  "paragraphs": 8,
+  "segments": [
+   "KD-017-P01-S01",
+   "KD-017-P01-S02",
+   "KD-017-P01-S03",
+   "KD-017-P01-S04",
+   "KD-017-P01-S05",
+   "KD-017-P01-S06",
+   "KD-017-P01-S07",
+   "KD-017-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/KD-017_The_Hesitant_Thief_full_slowed.mp3",
+  "sha256": "fbf80e11be65f90f9bcc47bd1ac4597ce71245c02aadb1513316b8138bf2766d",
+  "duration": 166.209
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/KD-017_The_Hesitant_Thief_full_slowed.mp3.words.json",
+  "sha256": "b447f95d55781d03be6951bf2c6e932887e20956f56ea6fe9970e330689f8d47",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.991
+ },
+ "library_rev": "7721db2",
+ "scenes": 16,
+ "actions": 127,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "palaceHall (variant merchantHouse)",
+   "effort": "L"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (servant)",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "sack, coin, valuables",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "well",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "hourglass",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "effort": "S"
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person kneel / sit",
+   "effort": "M"
+  },
+  {
+   "type": "motion",
+   "name": "runInPlace",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The planned assets merchant and lady costume presets, thoughtCloud, inset circle, kneel/sit and flush do not exist in Library yet; if another story builds them first, reuse them.",
+  "Edge-on doors must still read as doors: give each a strong frame, a ring handle on both faces and a visible swing; check a still at 46.1 and 68.6.",
+  "The inset circle (top left) and the hourglass (top right) share the top of the panel in S12: keep both clear of the thought cloud, which then sits top centre.",
+  "Sky presets: check that sky() has a night option; otherwise use the nightCity backdrop behind the street and a navy fill with stars over the yard."
+ ]
+}

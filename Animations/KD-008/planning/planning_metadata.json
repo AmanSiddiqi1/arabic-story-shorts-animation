@@ -1,0 +1,108 @@
+{
+ "story_id": "KD-008",
+ "title": "The Tortoise and the Two Ducks",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T11:49:21",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a600b3ad7484e25e7.jsonl",
+ "agent_id": "a600b3ad7484e25e7",
+ "model_messages": {
+  "claude-fable-5-2": 21
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "cce0fa585982340739e18ebccbbd0bf85f81e43ed8d0815105b2eb99e75bc034",
+  "paragraphs": 8,
+  "segments": [
+   "KD-008-P01-S01",
+   "KD-008-P01-S02",
+   "KD-008-P01-S03",
+   "KD-008-P01-S04",
+   "KD-008-P01-S05",
+   "KD-008-P01-S06",
+   "KD-008-P01-S07",
+   "KD-008-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/KD-008_The_Tortoise_and_the_Two_Ducks_full_slowed.mp3",
+  "sha256": "94f1b27e287fb6d6e198fa600dd1bbcc8eaa70a2d80c6cd714e1e21ec71d2d93",
+  "duration": 170.452
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/KD-008_The_Tortoise_and_the_Two_Ducks_full_slowed.mp3.words.json",
+  "sha256": "103f0c6331a1a64c152cd5ed58e53266fcad59073db4775cf75fa6a3e8be8c51",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "5fc1ffb",
+ "scenes": 11,
+ "actions": 116,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "duck",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "tortoise acting head, bite and dangle",
+   "effort": "M"
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "carryRig",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "pond",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "village",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "aerialStrip",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "villager",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "groundShadow",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "stick, pebble, snail, ball",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "New drawing load is above the usual four major assets (duck, tortoise acting fields, pond, village, aerialStrip, carryRig). The village and the villagers can be shared with KD-005; if time is short, drop the two extra onlookers and the ball.",
+  "The Library tortoise is small and simple; if extending it without changing its default look is awkward, build the heroine on the turtle head (talk, brow, mouth already exist) with the tortoise shell and legs, as a new optional variant.",
+  "The ending is a death in a children fable. It is staged off screen. Confirm that this restraint is what the series wants, and that no spoken or written moral should be added.",
+  "No pause exists around the fall (160.8 to 162.6) so no impact sound is planned; if a real silence is measured inside the long word at 162.58, a very soft thud could be considered.",
+  "The balloon I AM NOT A is invented lettering standing for the narrated intention to answer the people; remove it if only true sound words are wanted."
+ ]
+}

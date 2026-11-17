@@ -1,0 +1,98 @@
+{
+ "story_id": "AN-154",
+ "title": "ADI BIN ZAYD AND THE PRINCESS HIND",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T16:54:10",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a2e7c8475c2b928b8.jsonl",
+ "agent_id": "a2e7c8475c2b928b8",
+ "model_messages": {
+  "claude-fable-5-2": 26
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "23d9362500cc5f4d7c0c8f25daef68eeed61470b890803d3f91a5dd2647269f4",
+  "paragraphs": 8,
+  "segments": [
+   "AN-154-P01-S01",
+   "AN-154-P01-S02",
+   "AN-154-P01-S03",
+   "AN-154-P01-S04",
+   "AN-154-P01-S05",
+   "AN-154-P01-S06",
+   "AN-154-P01-S07",
+   "AN-154-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-154_ADI_BIN_ZAYD_AND_THE_PRINCESS_HIND_full_slowed.mp3",
+  "sha256": "df654f2d327ee7eeb1235726b9f32ea1ac7a56f11f4f6eff7905652d451988e9",
+  "duration": 177.501
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-154_ADI_BIN_ZAYD_AND_THE_PRINCESS_HIND_full_slowed.mp3.words.json",
+  "sha256": "178a6a0552a5962b6136e8adc79ae5616ab2cdfcaaea266a65fef5d423664ef7",
+  "manifest_status": "SUCCESS; METADATA MISMATCH",
+  "script_match": 0.992
+ },
+ "library_rev": "5a93429",
+ "scenes": 20,
+ "actions": 149,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "shrineYard",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "person costume preset 'guard'",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (sultan, princess, jinn pair)",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "heartMark",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "verseRibbon",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "portraitMedallion",
+   "effort": "S"
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "mysteryFace",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "diwan",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Tone risk: the last 40 s must not look comic. Slow the motion, drop squash and hops after 140.4, and keep the palette dimmed; the blocky figures can still carry grief through lid, wet, brow and head drop (see the guide's grief to resolve pattern).",
+  "S16 packs twelve actions into 13.6 s around very short words; if it feels rushed, drop the Adi half-step at 147.26 first, never the closed door or the WHY? hold.",
+  "The English subtitles are shorter than the Arabic, so some English chunks stay on screen a long time (notably P8).",
+  "Several small assets are planned by other films but not yet in Library (guard preset, verseRibbon, portraitMedallion, inset circle, mysteryFace, diwan, floorCushion, foodTray, shrineYard); each has a simple fallback described in new_assets.",
+  "Anchor coordinates for marketStreet, palaceHall and desertRoad are read from the catalogue and the guide: approximate, measure on the set (MARKET, HALL, MERCHANT, DESERT constants)."
+ ]
+}

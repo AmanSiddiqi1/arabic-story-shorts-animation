@@ -1,0 +1,10 @@
+# AN-138 library proposals (story drawings in src/, candidates for Library/)
+- `purse` (yp_props.js `ypPurse`): drawstring coin purse, fill 0..1 (flat to fat), inside-out limp state, mark text.
+- `coinPile` silver (`ypCoin`, `ypStack`, `ypHeap`): single coin with edge-on spin (sx), short stacks, a growing heap.
+- `sack` (`ypSack`): tied coin sack with squash, bulge and coin emblem; carried-on-back placement `ypBackSack` (with the person frame `ypM`).
+- `foodTray` (`ypTray`): brass tray with bread, rice, dates, cup; liftable domed cover and steam.
+- `ledger` (`ypLedger`): closed/open account book with tally strokes (0..30) and an UNTIL line with an empty box.
+- `diwan`, low table and unrolling rug (`ypDiwan` with sitter dent and cushion squash, `ypTable`, `ypRug`): guest-room dressing over palaceHall merchant (`ypRoom`).
+- `moonCounter` rows (`ypMoons`): n moons lighting in rows.
+- icons: `hourglass`, `padlock`, `moth`, open palm (`ypPalm`), heart door (`ypHeartDoor`), cloth bundle tying (`ypBundle`), strike stroke (`ypStrike`).
+- motion: `sneak` gait (`ypSneak`: high-kneed steps holding on each toe, with bob) for `walk()`.

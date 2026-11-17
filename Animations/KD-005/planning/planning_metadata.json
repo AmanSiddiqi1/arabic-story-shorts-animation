@@ -1,0 +1,109 @@
+{
+ "story_id": "KD-005",
+ "title": "The Raven and the Snake",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T11:40:13",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-abb4569efc20adccb.jsonl",
+ "agent_id": "abb4569efc20adccb",
+ "model_messages": {
+  "claude-fable-5-2": 17
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "05fc8df74b29554bebdf9b2a2b592c9cb023de6e99b53e135bdb8ed001d86524",
+  "paragraphs": 8,
+  "segments": [
+   "KD-005-P01-S01",
+   "KD-005-P01-S02",
+   "KD-005-P01-S03",
+   "KD-005-P01-S04",
+   "KD-005-P01-S05",
+   "KD-005-P01-S06",
+   "KD-005-P01-S07",
+   "KD-005-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/KD-005_The_Raven_and_the_Snake_full_slowed.mp3",
+  "sha256": "9525978b85e48c4664f8f821fb309ccf388421cb1f8d6eb9f2bbc447fa436854",
+  "duration": 159.304
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/KD-005_The_Raven_and_the_Snake_full_slowed.mp3.words.json",
+  "sha256": "73558291b01171131e85432d8c71813010cd573c21c767b41cda0f3b7b9ea3f6",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "5fc1ffb",
+ "scenes": 15,
+ "actions": 160,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "snake",
+   "effort": "L"
+  },
+  {
+   "type": "character",
+   "name": "jackal",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "villager",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "necklace",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "bird carry",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "burrow",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "tallTreeHome",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "chaseRoad",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "fightCloud",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "dayCycle",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The snake is the one large new character (effort L). If time is short, build path, out, wave, rear, limp and tongue first; coil and strike are only needed inside the small thought cloud and can be simple.",
+  "Person figures at s 0.45 in the plan board are near the 110 px legibility floor: check a still at phone size; if unreadable, replace them with two bold head-and-body icons.",
+  "islandHut, riverBank and figTree positions are taken from the catalogue picture, not measured: confirm the right-bank ground height and the roof ridge point before placing the woman, rock and raven.",
+  "The script says \"several people ran after him\"; the plan uses three (the woman and two men). Add a fourth villager variant only if the chase looks thin.",
+  "Carrying the dead snake away on the staff (137.6) is a staging choice to explain why the burrow stays empty; the script only says they killed it. Drop it if the client finds it too dark: leave the limp snake behind the mound instead and remove it under the day cycles.",
+  "The LATER card sits over the spoken words \"wa ba'da mudda\" (150.73-152.5); it is visual only, and subtitles stay readable in the caption panel."
+ ]
+}

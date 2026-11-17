@@ -1,0 +1,103 @@
+{
+ "story_id": "AN-113",
+ "title": "THE POOR MAN AND HIS FRIEND IN NEED",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T14:36:19",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a123ed6dcd608b3d9.jsonl",
+ "agent_id": "a123ed6dcd608b3d9",
+ "model_messages": {
+  "claude-fable-5-2": 24
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "ea05298d2e17c4be602d7de0f1f333a1b5562cef2dec7e6f7d5569aa1cad64e8",
+  "paragraphs": 8,
+  "segments": [
+   "AN-113-P01-S01",
+   "AN-113-P01-S02",
+   "AN-113-P01-S03",
+   "AN-113-P01-S04",
+   "AN-113-P01-S05",
+   "AN-113-P01-S06",
+   "AN-113-P01-S07",
+   "AN-113-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-113_THE_POOR_MAN_AND_HIS_FRIEND_IN_NEED_full_slowed.mp3",
+  "sha256": "f056f0170e859789f72079f49569cd27bf9605816507e62a9cc3766dbc028524",
+  "duration": 176.386
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-113_THE_POOR_MAN_AND_HIS_FRIEND_IN_NEED_full_slowed.mp3.words.json",
+  "sha256": "9847d315e4ad4ef0c9e023f2559b0706f80e0c86b44cd9b561ece49db8f23777",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.991
+ },
+ "library_rev": "5a93429",
+ "scenes": 17,
+ "actions": 168,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "marketStall kind 'jewel'",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "purse",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "saddlebag",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "jewels (with jewelBox)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "scroll",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "portraitMedallion",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "inset circle",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "handOver",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Nine people appear in total; S7 has six on screen at once. Keep the neighbours small (s 0.97 to 1.0) at the right edge and check phone legibility with a still at 60 s.",
+  "S15 packs three reveals into 15 s inside a cloud; if figures fall under 110 px, enlarge the cloud to 860 x 560 and drop the couple lower (heads near y 760) rather than shrinking the figures.",
+  "Seven new or planned small assets (purse, coinPile, saddlebag, jewels, scroll, portraitMedallion, goldGlow) are not in Library yet; if another film builds them first, reuse those functions.",
+  "The person figure is front-facing only: \"kisses her hand\" (148 s) and \"arms round shoulders\" (142 s) must read through tip, hand targets and proximity; check both with stills.",
+  "English subtitles are a condensed translation (see owner_questions SCRIPT entry)."
+ ]
+}

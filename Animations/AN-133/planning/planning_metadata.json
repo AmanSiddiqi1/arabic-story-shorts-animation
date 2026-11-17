@@ -1,0 +1,103 @@
+{
+ "story_id": "AN-133",
+ "title": "THE KAZI ABU YUSUF WITH HARUN AL-RASHID AND QUEEN ZUBAYDAH",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T15:08:53",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a9d7558e02c96ad04.jsonl",
+ "agent_id": "a9d7558e02c96ad04",
+ "model_messages": {
+  "claude-fable-5-2": 24
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "811f3a09ac5baff162a1a2794d06c26fdd9a44793de21014a080c345bd109bf1",
+  "paragraphs": 8,
+  "segments": [
+   "AN-133-P01-S01",
+   "AN-133-P01-S02",
+   "AN-133-P01-S03",
+   "AN-133-P01-S04",
+   "AN-133-P01-S05",
+   "AN-133-P01-S06",
+   "AN-133-P01-S07",
+   "AN-133-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-133_THE_KAZI_ABU_YUSUF_WITH_HARUN_AL_RASHID_AND_QUEEN_ZUBAYDAH_full_slowed.mp3",
+  "sha256": "75a47ee7085c8c368a4285e12b508aa012792bdaccef6ca32454292cee2e7e3d",
+  "duration": 175.259
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-133_THE_KAZI_ABU_YUSUF_WITH_HARUN_AL_RASHID_AND_QUEEN_ZUBAYDAH_full_slowed.mp3.words.json",
+  "sha256": "fb785cf49ebf9dd5215f712de635dc36bd7c082948323156ecc8305dcacd2d3c",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "5a93429",
+ "scenes": 20,
+ "actions": 198,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "bat",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "bedchamber",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "person costume preset 'judge'",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "fruitPair (fruitA, fruitB) with tray",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "spear",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "purse, jewels (jewelBox)",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "worryScribble",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "handOver, person laugh, headwear offset",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Sensitive subject: the Arabic and English subtitles name the stain verbatim. The picture stays abstract, but the owner should confirm the film is suitable for the channel (see owner_questions).",
+  "New code is moderate: bat, bedchamber dressing with bed, judge preset, fruit pair, plus several planned small helpers that may not be in Library yet (iconBalloon, flush, worryScribble, handOver, laugh, headwear offset, spear, purse, jewelBox, balanceScale icon). Build them small and generic.",
+  "The narration is dense with few pauses: 16 quiet effects are planned; cut the ones at 50.55, 143.55 and 162.63 first if any feel crowded.",
+  "S10 and S17 carry a lot inside thought clouds; keep the real characters almost still while the cloud acts so the eye is not split.",
+  "P4 timing: \"رفع\" starts at 64.88 but the next word is at 66.84, so the judge's walk to the bed (64.9 to 66.6) fills a long word span; keep that walk slow rather than adding beats."
+ ]
+}

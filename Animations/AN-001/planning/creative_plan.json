@@ -1,0 +1,2745 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-001",
+ "title": "The Bull and the Ass",
+ "duration": 176.25,
+ "end_hold": 3.0,
+ "logline": "A kind-hearted donkey teaches an overworked bull to play sick, the merchant who understands animals sends the donkey to plough instead, and the donkey has to scare the bull back to work with a lie.",
+ "moral": "Clever advice can land on the adviser; you only know another's work when you have carried it for a day.",
+ "tone": "Warm farmyard comedy of role reversal: lazy comfort, a sly plan, instant comeuppance, a second sly plan. Gentle, never cruel; the humour comes from faces, mirrored staging and the audience knowing more than the animals.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 3.36,
+   "kind": "setup",
+   "cue": {
+    "word": "ثور",
+    "t": 3.36
+   },
+   "summary": "A merchant's farm with a bull and a donkey."
+  },
+  {
+   "id": "B2",
+   "t": 8.42,
+   "kind": "setup",
+   "cue": {
+    "word": "ليحرث",
+    "t": 8.42
+   },
+   "summary": "The bull ploughs under the sun every day and comes home worn out."
+  },
+  {
+   "id": "B3",
+   "t": 19.98,
+   "kind": "comic",
+   "cue": {
+    "word": "ويستريح",
+    "t": 19.98
+   },
+   "summary": "The donkey eats well and sleeps most of the time."
+  },
+  {
+   "id": "B4",
+   "t": 28.7,
+   "kind": "inciting",
+   "cue": {
+    "word": "محظوظ.",
+    "t": 28.7
+   },
+   "summary": "The bull's complaint: you are lucky."
+  },
+  {
+   "id": "B5",
+   "t": 47.8,
+   "kind": "rising",
+   "cue": {
+    "word": "تظاهر",
+    "t": 47.8
+   },
+   "summary": "The donkey's plan: pretend to be ill, lie down, refuse food."
+  },
+  {
+   "id": "B6",
+   "t": 61.32,
+   "kind": "suspense",
+   "cue": {
+    "word": "سيظنون",
+    "t": 61.32
+   },
+   "summary": "Planted irony: the merchant listens at the window."
+  },
+  {
+   "id": "B7",
+   "t": 73.9,
+   "kind": "comic",
+   "cue": {
+    "word": "مستلقيًا،",
+    "t": 73.9
+   },
+   "summary": "The bull plays sick and the worker cannot move him."
+  },
+  {
+   "id": "B8",
+   "t": 85.32,
+   "kind": "reveal",
+   "cue": {
+    "word": "يفهم",
+    "t": 85.32
+   },
+   "summary": "The merchant understands animal speech and heard the plan."
+  },
+  {
+   "id": "B9",
+   "t": 96.38,
+   "kind": "turn",
+   "cue": {
+    "word": "الحمار",
+    "t": 96.38
+   },
+   "summary": "Take the donkey instead: the adviser pays for his advice."
+  },
+  {
+   "id": "B10",
+   "t": 102.86,
+   "kind": "rising",
+   "cue": {
+    "word": "ساعات",
+    "t": 102.86
+   },
+   "summary": "The donkey ploughs for hours and returns broken."
+  },
+  {
+   "id": "B11",
+   "t": 118.36,
+   "kind": "comic",
+   "cue": {
+    "word": "«شكرًا",
+    "t": 118.36
+   },
+   "summary": "The rested bull thanks him warmly; the donkey seethes at himself."
+  },
+  {
+   "id": "B12",
+   "t": 143.12,
+   "kind": "climax",
+   "cue": {
+    "word": "الجزار.»",
+    "t": 143.12
+   },
+   "summary": "The donkey's lie: stay ill and you go to the butcher."
+  },
+  {
+   "id": "B13",
+   "t": 143.96,
+   "kind": "emotion",
+   "cue": {
+    "word": "ارتجف",
+    "t": 143.96
+   },
+   "summary": "The bull trembles; the donkey hides a smirk."
+  },
+  {
+   "id": "B14",
+   "t": 155.8,
+   "kind": "resolution",
+   "cue": {
+    "word": "نهض",
+    "t": 155.8
+   },
+   "summary": "Next morning the bull leaps up, eats everything and goes to plough."
+  },
+  {
+   "id": "B15",
+   "t": 173.32,
+   "kind": "moral",
+   "cue": {
+    "word": "جرب",
+    "t": 173.32
+   },
+   "summary": "The donkey recovers, having tasted a day of his friend's work."
+  }
+ ],
+ "cast": [
+  {
+   "id": "bull",
+   "name": "the bull",
+   "library": null,
+   "base": "new quadruped built like the Library lion/deer (same walk, acting wrapper)",
+   "look": "Heavy red-brown ox with red Ben-Day shading, cream muzzle, yellow horns and nose ring, shoulder hump, tufted tail. About 420 x 290 at s 1; used at s 0.8.",
+   "new": true
+  },
+  {
+   "id": "donkey",
+   "name": "the donkey",
+   "library": null,
+   "base": "new quadruped built like the Library deer (same walk, acting wrapper)",
+   "look": "Small warm-grey donkey with blue dot shading, white muzzle and belly, very long independent ears, black brush mane, tufted tail. About 340 x 260 at s 1 (ears add 110); used at s 0.8.",
+   "new": true
+  },
+  {
+   "id": "merchant",
+   "name": "the merchant (farm owner)",
+   "library": "person",
+   "base": "person kind:'owner' with the planned costume preset 'merchant'",
+   "look": "Big yellow turban, blue dotted robe with red sash, black moustache and short beard, calm sly face.",
+   "new": false
+  },
+  {
+   "id": "worker",
+   "name": "the farm worker",
+   "library": "person",
+   "base": "person kind:'owner' as the planned 'villager' variant",
+   "look": "Small white cap, short paper-coloured tunic with rolled sleeves, red sash, moustache, a little thinner and 5 % shorter than the merchant.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "farmStable",
+   "library": null,
+   "new": true,
+   "description": "World 1600 x 1230, ground y 900. Open-fronted stable in cutaway on the left (x 60-900) and the farmyard with the merchant's house front on the right (x 980-1600). Time presets day, dusk, night, dawn. Full dimensions in new_assets."
+  },
+  {
+   "id": "ploughField",
+   "library": null,
+   "new": true,
+   "description": "World 1600 x 1230, ground y 900. Open field under a dayCycle sky with Library hillTrees, a far small farm at x 180, and furrow rows that are revealed by a progress value. Full dimensions in new_assets."
+  }
+ ],
+ "props": [
+  {
+   "id": "plough",
+   "library": null,
+   "new": true,
+   "description": "Wooden scratch plough with a neck yoke and two trace ropes; fields attached, dig, angle. See new_assets."
+  },
+  {
+   "id": "trough",
+   "library": null,
+   "new": true,
+   "description": "feedTrough: wooden manger 170 x 70 on short legs with fill 0..1 of yellow feed; two instances back to back at x 455 (bull) and x 545 (donkey), top edge y 800. See new_assets."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 5.2,
+   "paragraphs": [
+    1
+   ],
+   "set": "farmStable",
+   "cast": [
+    "merchant",
+    "bull",
+    "donkey"
+   ],
+   "summary": "Morning at the farm. The merchant stands proudly in the yard; the camera pans into the open-fronted stable where the bull and the donkey stand face to face at their troughs.",
+   "camera": {
+    "shot": "establishing",
+    "move": "pan",
+    "notes": "CAM {x:1100,y:690,zoom:1.0} held 0-1.5, eases to {x:500,y:690,zoom:1.12} by 3.3 and holds. One move only."
+   },
+   "composition": "Start: merchant at x 1150 in front of the farmhouse door (x 1400-1480), stable door post at x 900 on the left edge. End: bull left (head near x 440), donkey right (head near x 560), troughs and post between them, window above (x 440-560, y 400-540).",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 1.0,
+     "cue": {
+      "word": "كان",
+      "t": 0.0
+     },
+     "who": "set",
+     "action": "dawn-to-morning light: dayCycle at 0.28 (sun low right, visible over the yard), a songbird crosses",
+     "acting": "calm opening, nothing moves fast",
+     "library": "dayCycle (planned), songbird {fly:true}"
+    },
+    {
+     "t": 0.4,
+     "end": 1.6,
+     "cue": {
+      "word": "تاجر",
+      "t": 0.52
+     },
+     "who": "merchant",
+     "action": "stands in the yard, hands on hips, then sweeps one arm over his farm",
+     "acting": "proud small smile, chin up, gaze over the yard then toward the stable; blink at 1.2",
+     "library": "person costume 'merchant' + PERSON_HANDS.hipsHands -> armsOut (aR only), settleTo"
+    },
+    {
+     "t": 1.5,
+     "end": 3.3,
+     "cue": {
+      "word": "مزرعة",
+      "t": 1.68
+     },
+     "who": "camera",
+     "action": "pans left from the yard into the stable",
+     "acting": "eased, no overshoot",
+     "library": "K.camAt keys in pairs"
+    },
+    {
+     "t": 3.2,
+     "end": 3.9,
+     "cue": {
+      "word": "ثور",
+      "t": 3.36
+     },
+     "who": "bull",
+     "action": "lifts his head from the trough and looks at the lens; S.label BULL with a short arrow above his hump",
+     "acting": "ears forward, one slow blink, tail swish",
+     "library": "bull {headDown:0.6->0}, S.label, S.arrow"
+    },
+    {
+     "t": 3.8,
+     "end": 4.6,
+     "cue": {
+      "word": "وحمار.",
+      "t": 3.88
+     },
+     "who": "donkey",
+     "action": "one long ear flicks up, then the head; label DONKEY with arrow",
+     "acting": "lazy half lids (lid 0.35), chewing sideways, in no hurry: he reacts later and slower than the bull",
+     "library": "donkey {earL, earR, chew:1, lid:0.35}, S.label"
+    },
+    {
+     "t": 4.7,
+     "end": 5.2,
+     "who": "bull",
+     "action": "looks out of the door at the rising sun and sighs (nostril puff)",
+     "acting": "brow raised (brow -0.4), small head drop: he knows what is coming",
+     "library": "bull {snort:1, brow:-0.4, drop}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 3.36,
+     "text": "BULL"
+    },
+    {
+     "t": 3.88,
+     "text": "DONKEY"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 5.2,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 5.2
+   }
+  },
+  {
+   "id": "S2",
+   "start": 5.2,
+   "end": 13.7,
+   "paragraphs": [
+    1
+   ],
+   "set": "ploughField",
+   "cast": [
+    "bull",
+    "worker"
+   ],
+   "summary": "The bull's day: he drags the plough across the field under a big sun, the worker behind him; then trudges home worn out.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Tracks the bull left to right: CAM x = bullX + 80, y 700, zoom 1.15 from 6.2 to 11.0; at 11.1 a cut hidden by a 0.3 s sun-sweep to dusk light, bull now walking right to left (home)."
+   },
+   "composition": "Bull centre-left of the panel, plough and worker trailing left of him, the sun top right (panel x 760, y 200). A fresh dark furrow grows behind the share.",
+   "actions": [
+    {
+     "t": 5.6,
+     "end": 6.7,
+     "cue": {
+      "word": "الثور",
+      "t": 6.22
+     },
+     "who": "bull",
+     "action": "already yoked, leans into the yoke: anticipation dip then first heavy step",
+     "acting": "head low, jaw set, gaze on the ground ahead [0.8,0.5]",
+     "library": "bull {yoke:true, tip:0.08} + anticipate()"
+    },
+    {
+     "t": 6.7,
+     "end": 8.4,
+     "cue": {
+      "word": "يخرج",
+      "t": 6.78
+     },
+     "who": "bull",
+     "action": "walks out along the field, plough trailing",
+     "acting": "legs from walk(), slow 4-beat, body bobs on each footfall",
+     "library": "walk(BX), footfalls -> dustBurst"
+    },
+    {
+     "t": 8.3,
+     "end": 9.5,
+     "cue": {
+      "word": "ليحرث",
+      "t": 8.42
+     },
+     "who": "plough",
+     "action": "share bites the soil: clods fly, the furrow line draws behind it",
+     "acting": "the traces go taut with a small jerk; worker's arms take the kick",
+     "library": "plough {dig:0->1}, dustBurst (brown), ploughField {rows progress}"
+    },
+    {
+     "t": 8.6,
+     "end": 10.2,
+     "cue": {
+      "word": "الأرض",
+      "t": 9.46
+     },
+     "who": "worker",
+     "action": "walks behind gripping the plough handle, wipes his brow once",
+     "acting": "leaning forward (lean 0.12), eyes on the furrow",
+     "library": "person 'villager' + PERSON_HANDS.grip, walk()"
+    },
+    {
+     "t": 10.2,
+     "end": 11.1,
+     "cue": {
+      "word": "الشمس،",
+      "t": 10.4
+     },
+     "who": "set",
+     "action": "the sun pulses bigger with heat rays; three sweat drops pop off the bull",
+     "acting": "bull squints up at it (lid 0.6, gaze [0.3,-1]), tongue out a little",
+     "library": "sun() scaled 1.0->1.25, bull {tongue:0.4}"
+    },
+    {
+     "t": 11.1,
+     "end": 11.8,
+     "cue": {
+      "word": "ثم",
+      "t": 11.14
+     },
+     "who": "set",
+     "action": "light sweeps to dusk; yoke and plough are off",
+     "acting": "one continuous sky sweep, no card",
+     "library": "dayCycle 0.4 -> 0.72"
+    },
+    {
+     "t": 11.6,
+     "end": 12.4,
+     "cue": {
+      "word": "يعود",
+      "t": 11.76
+     },
+     "who": "bull",
+     "action": "trudges home right to left, hooves dragging dust lines",
+     "acting": "fatigue posture: head hangs below the shoulders, back swayed, half step length",
+     "library": "bull {sag:0.9, dir:-1}, walk() amp 0.5"
+    },
+    {
+     "t": 12.2,
+     "end": 13.2,
+     "cue": {
+      "word": "متعبًا.",
+      "t": 12.28
+     },
+     "who": "bull",
+     "action": "stops, legs splay, tongue hangs, a long breath",
+     "acting": "lid 0.7, wet false, ears down, sq 0.93 settle",
+     "library": "bull {sag:1, tongue:1, ears:-1}, settleTo, breathe()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 12.4,
+     "text": "PHEW!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 13.7,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 13.7
+   }
+  },
+  {
+   "id": "S3",
+   "start": 13.7,
+   "end": 22.6,
+   "paragraphs": [
+    1
+   ],
+   "set": "farmStable",
+   "cast": [
+    "donkey",
+    "bull"
+   ],
+   "summary": "Meanwhile the donkey's day: lying in clean straw, eating from a full trough, asleep most of the time. The bull collapses into the background.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "CAM {x:660,y:720,zoom:1.35} easing to zoom 1.6 by 20.0; hold."
+   },
+   "composition": "Donkey fills the right two thirds; his heaped yellow trough at x 545; the bull is a tired shape at the left edge (x 290), out of focus of the action.",
+   "actions": [
+    {
+     "t": 13.7,
+     "end": 14.4,
+     "who": "bull",
+     "action": "flops down in his stall at the left edge",
+     "acting": "impact squash, dust, then only breathing",
+     "library": "bull {lie:0->1}, impactSquash, dustBurst"
+    },
+    {
+     "t": 14.3,
+     "end": 15.2,
+     "cue": {
+      "word": "الحمار",
+      "t": 14.5
+     },
+     "who": "donkey",
+     "action": "is lying on his straw bed, legs tucked, tail flicking a fly",
+     "acting": "content smile, lid 0.5, gaze drifts to the bull then back to his food",
+     "library": "donkey {lie:1, mouth:'smile', tailSwish}"
+    },
+    {
+     "t": 16.4,
+     "end": 17.3,
+     "cue": {
+      "word": "الإسطبل،",
+      "t": 16.7
+     },
+     "who": "donkey",
+     "action": "stretches his neck and pats the straw: his kingdom",
+     "acting": "slow luxurious blink",
+     "library": "donkey {neck}, blink"
+    },
+    {
+     "t": 17.3,
+     "end": 18.2,
+     "cue": {
+      "word": "ويأكل",
+      "t": 17.42
+     },
+     "who": "donkey",
+     "action": "dips his muzzle into the heaped trough and comes up with a mouthful",
+     "acting": "eyes shut with pleasure (lid 1), ears swing back",
+     "library": "donkey {headDown:1, chew:1}, trough {fill:1->0.8}"
+    },
+    {
+     "t": 18.2,
+     "end": 19.9,
+     "cue": {
+      "word": "طعامًا",
+      "t": 18.28
+     },
+     "who": "donkey",
+     "action": "chews in big sideways circles; two grains fall",
+     "acting": "cheeks alternate, one ear rotates like a radar",
+     "library": "donkey {chew:1}, K.noise-free cyclic chew"
+    },
+    {
+     "t": 18.9,
+     "end": 19.8,
+     "cue": {
+      "word": "جيدًا",
+      "t": 18.92
+     },
+     "who": "fx",
+     "action": "a small heart pops over the trough",
+     "acting": "pops with overshoot, fades by 19.8",
+     "library": "heart()"
+    },
+    {
+     "t": 19.8,
+     "end": 20.8,
+     "cue": {
+      "word": "ويستريح",
+      "t": 19.98
+     },
+     "who": "donkey",
+     "action": "yawns hugely, head sinks onto his crossed forelegs",
+     "acting": "anticipation: head up, mouth 'open' wide, then the drop",
+     "library": "donkey {bray:0.6, lie:1, headDown:0.8}, anticipate"
+    },
+    {
+     "t": 20.8,
+     "end": 22.5,
+     "cue": {
+      "word": "معظم",
+      "t": 20.84
+     },
+     "who": "donkey",
+     "action": "asleep: sides rise and fall, ZZZ drifts up, one ear still twitches",
+     "acting": "lid 1, breathe() amplitude 4",
+     "library": "zzz(), breathe()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 20.0,
+     "text": "ZZZ"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 22.6,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 22.6
+   }
+  },
+  {
+   "id": "S4",
+   "start": 22.6,
+   "end": 37.0,
+   "paragraphs": [
+    2
+   ],
+   "set": "farmStable",
+   "cast": [
+    "bull",
+    "donkey"
+   ],
+   "summary": "Evening by lantern light. The aching bull looks across at the donkey and complains: you sleep and eat, I work all day.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot(bullHead, donkeyHead, {margin:120}) = about {x:500,y:700,zoom:1.3}; pushes to the bull (x 420, zoom 1.6) on the word for 'I' at 32.0, back to the two-shot by 36.2."
+   },
+   "composition": "Faces level across the troughs, bull left, donkey right, lantern between and above them (500,330) with its yellow halftone disc. Dusk sky in the window.",
+   "actions": [
+    {
+     "t": 22.6,
+     "end": 23.8,
+     "cue": {
+      "word": "وفي",
+      "t": 23.12
+     },
+     "who": "set",
+     "action": "stable in time:'dusk': orange wall, lantern lit, window sky orange to navy",
+     "acting": "lantern flame flickers on a seeded cycle",
+     "library": "farmStable {time:'dusk'}, dayCycle 0.75"
+    },
+    {
+     "t": 23.6,
+     "end": 24.4,
+     "cue": {
+      "word": "مساء،",
+      "t": 23.78
+     },
+     "who": "bull",
+     "action": "lies in his stall, rubbing one sore shoulder against the post",
+     "acting": "wince: lid 0.6, brow -0.5",
+     "library": "bull {lie:1}"
+    },
+    {
+     "t": 24.2,
+     "end": 25.4,
+     "cue": {
+      "word": "نظر",
+      "t": 24.32
+     },
+     "who": "bull",
+     "action": "raises his heavy head and turns his eyes, then head, to the donkey",
+     "acting": "eyes lead by 4 frames, then the head follows; gaze lookAt donkey",
+     "library": "lookAt(), gazePlan"
+    },
+    {
+     "t": 25.8,
+     "end": 26.9,
+     "cue": {
+      "word": "الحمار",
+      "t": 26.24
+     },
+     "who": "donkey",
+     "action": "chewing happily, notices the stare, stops mid-chew",
+     "acting": "ears prick, pupils slide to the bull, a straw hangs from his mouth",
+     "library": "donkey {chew:1->0, earL, earR}, lookAt"
+    },
+    {
+     "t": 27.4,
+     "end": 28.7,
+     "cue": {
+      "word": "«أنت",
+      "t": 27.66
+     },
+     "who": "bull",
+     "action": "points at the donkey with his muzzle and one horn",
+     "acting": "talk on; brow +0.4 (envy, not anger)",
+     "library": "bull {talk:0.8, headTurn}"
+    },
+    {
+     "t": 28.6,
+     "end": 29.5,
+     "cue": {
+      "word": "محظوظ.",
+      "t": 28.7
+     },
+     "who": "donkey",
+     "action": "small modest shrug of the ears",
+     "acting": "eyebrows up, half smile: he agrees",
+     "library": "donkey {earL:-0.3, earR:0.6, mouth:'smile'}"
+    },
+    {
+     "t": 29.4,
+     "end": 30.4,
+     "cue": {
+      "word": "تنام",
+      "t": 29.48
+     },
+     "who": "fx",
+     "action": "small speech picture over the bull: a donkey head with ZZZ",
+     "acting": "icon pops on the word, never over a face (above the post, y 430-560)",
+     "library": "bubble() with zzz icon"
+    },
+    {
+     "t": 30.3,
+     "end": 31.2,
+     "cue": {
+      "word": "وتأكل،",
+      "t": 30.44
+     },
+     "who": "fx",
+     "action": "icon changes to a heaped trough; the real donkey's trough gets an arrow",
+     "acting": "donkey glances down at his trough, guiltily",
+     "library": "bubble(), S.arrow"
+    },
+    {
+     "t": 31.8,
+     "end": 33.5,
+     "cue": {
+      "word": "أنا",
+      "t": 32.04
+     },
+     "who": "bull",
+     "action": "push-in; he thumps his chest with his chin and shows the yoke mark on his neck",
+     "acting": "wet eyes, brow -0.7, head shake on the stress",
+     "library": "bull {wet:true, yokeMark:true}, camera push-in"
+    },
+    {
+     "t": 33.4,
+     "end": 34.7,
+     "cue": {
+      "word": "طول",
+      "t": 33.54
+     },
+     "who": "fx",
+     "action": "speech picture: a tiny sun crossing the whole bubble over a plough",
+     "acting": "sun travels the arc in 1.2 s",
+     "library": "bubble() with mini dayCycle"
+    },
+    {
+     "t": 34.6,
+     "end": 35.5,
+     "cue": {
+      "word": "وأعود",
+      "t": 34.72
+     },
+     "who": "bull",
+     "action": "lets his head drop back to the floor",
+     "acting": "follow-through: ears and tail arrive late",
+     "library": "bull {headDown}, settleTo"
+    },
+    {
+     "t": 36.0,
+     "end": 36.9,
+     "cue": {
+      "word": "يؤلمني.»",
+      "t": 36.24
+     },
+     "who": "fx",
+     "action": "painPulse at his shoulder and hip, two small throbs",
+     "acting": "bull winces on each (lid snaps 0.8)",
+     "library": "painPulse (planned)"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 37.0
+   }
+  },
+  {
+   "id": "S5",
+   "start": 37.0,
+   "end": 45.05,
+   "paragraphs": [
+    2
+   ],
+   "set": "farmStable",
+   "cast": [
+    "donkey",
+    "bull"
+   ],
+   "summary": "The donkey feels sorry for him and thinks of a way to help.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "CAM on the donkey {x:640,y:660,zoom:1.7} easing to 1.9; the bull's back stays in the lower left corner."
+   },
+   "composition": "Donkey's head centre-right, room above his ears for the thought icons; the bull's hump and horn in the lower left for the eye line.",
+   "actions": [
+    {
+     "t": 37.0,
+     "end": 38.3,
+     "cue": {
+      "word": "شعر",
+      "t": 37.26
+     },
+     "who": "donkey",
+     "action": "stops chewing and really looks at the bull",
+     "acting": "ears droop slowly (to -0.6), brow -0.6, mouth small",
+     "library": "donkey {earL, earR, brow}"
+    },
+    {
+     "t": 38.9,
+     "end": 39.8,
+     "cue": {
+      "word": "بالشفقة",
+      "t": 39.0
+     },
+     "who": "donkey",
+     "action": "wet eyes; nudges his own full trough a hand's width toward the bull",
+     "acting": "wet true, one long blink, head tilt toward him",
+     "library": "donkey {wet:true}, trough x offset"
+    },
+    {
+     "t": 40.2,
+     "end": 41.4,
+     "cue": {
+      "word": "وفكر",
+      "t": 40.4
+     },
+     "who": "donkey",
+     "action": "looks up and away, one ear up and one down, taps a hoof",
+     "acting": "saccades: gazePlan with 0.07 ease, three snaps up-left, up-right, up",
+     "library": "gazePlan(t, plan, 0.07), donkey {raise}"
+    },
+    {
+     "t": 41.6,
+     "end": 42.4,
+     "cue": {
+      "word": "طريقة",
+      "t": 41.78
+     },
+     "who": "fx",
+     "action": "three small '?' dots rise from his head, the last one turning into a dim bulb",
+     "acting": "dots stagger 0.2 s apart",
+     "library": "cloud() dots, bulb() p 0.3"
+    },
+    {
+     "t": 42.3,
+     "end": 43.5,
+     "cue": {
+      "word": "تساعده",
+      "t": 42.4
+     },
+     "who": "donkey",
+     "action": "glances at the bull, then at the door, then back: a sly smile grows",
+     "acting": "mouth 'smirk', lid 0.3",
+     "library": "donkey {mouth:'smirk'}"
+    },
+    {
+     "t": 43.7,
+     "end": 44.7,
+     "cue": {
+      "word": "الراحة.",
+      "t": 43.86
+     },
+     "who": "fx",
+     "action": "the bulb lights fully with rays",
+     "acting": "donkey's ears snap straight up, sq 1.06 stretch",
+     "library": "bulb() p 1, settleTo"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 45.05,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 45.05
+   }
+  },
+  {
+   "id": "S6",
+   "start": 45.05,
+   "end": 67.2,
+   "paragraphs": [
+    3
+   ],
+   "set": "farmStable",
+   "cast": [
+    "donkey",
+    "bull",
+    "merchant"
+   ],
+   "summary": "The plan. The donkey whispers it and acts it out; a thought cloud between them shows a little bull doing each step. Behind them the merchant passes the window, stops and listens.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "Two-shot {x:500,y:640,zoom:1.2} (lower framing leaves y 300-560 free for the cloud and the window). Slow drift up 20 units over the scene; no cuts."
+   },
+   "composition": "Bull left, donkey right leaning over the troughs toward him. Plan cloud centred (500, 420), 380 x 240, from 50.2; it shrinks to (330, 330) at 56.7 so the window (x 440-560, y 400-540) is clear for the merchant.",
+   "actions": [
+    {
+     "t": 45.2,
+     "end": 46.8,
+     "cue": {
+      "word": "قال",
+      "t": 45.38
+     },
+     "who": "donkey",
+     "action": "checks left and right, then leans in over the troughs",
+     "acting": "conspirator: head low, ears back, gaze sweeps door then bull",
+     "library": "donkey {tip:0.1}, gazePlan"
+    },
+    {
+     "t": 46.7,
+     "end": 47.8,
+     "cue": {
+      "word": "«غدًا",
+      "t": 46.82
+     },
+     "who": "fx",
+     "action": "small sun icon rises over the donkey's head: tomorrow",
+     "acting": "pops and sets in 1 s",
+     "library": "mini sun() icon"
+    },
+    {
+     "t": 47.7,
+     "end": 48.9,
+     "cue": {
+      "word": "تظاهر",
+      "t": 47.8
+     },
+     "who": "donkey",
+     "action": "demonstrates: rolls his eyes up, tongue out, fake cough",
+     "acting": "mask on for one beat, then drops it and grins",
+     "library": "donkey {tongue:1, lid:0.8}"
+    },
+    {
+     "t": 49.4,
+     "end": 50.2,
+     "cue": {
+      "word": "مريض.",
+      "t": 49.54
+     },
+     "who": "bull",
+     "action": "tries the sick face: far too big, tongue out, eyes crossed",
+     "acting": "comic overacting; the donkey shakes his head: smaller",
+     "library": "bull {tongue:1, eyes:'x'} then {tongue:0.5, lid:0.7}"
+    },
+    {
+     "t": 50.2,
+     "end": 51.8,
+     "cue": {
+      "word": "إذا",
+      "t": 50.16
+     },
+     "who": "fx",
+     "action": "plan cloud opens between them with a small standing bull inside",
+     "acting": "three puff dots lead from the donkey's head",
+     "library": "thoughtCloud (planned), bull at s 0.32"
+    },
+    {
+     "t": 51.9,
+     "end": 53.0,
+     "cue": {
+      "word": "المحراث",
+      "t": 52.24
+     },
+     "who": "plough",
+     "action": "in the cloud: a small plough and yoke drop onto the little bull",
+     "acting": "little bull's knees dip under it",
+     "library": "plough at s 0.32 inside cloud"
+    },
+    {
+     "t": 53.5,
+     "end": 54.9,
+     "cue": {
+      "word": "استلق",
+      "t": 53.72
+     },
+     "who": "bull",
+     "action": "in the cloud: the little bull flops flat, legs out",
+     "acting": "donkey mimes it with both ears slapping down",
+     "library": "bull {lie:1} in cloud, donkey {earL:-1, earR:-1}"
+    },
+    {
+     "t": 55.5,
+     "end": 56.6,
+     "cue": {
+      "word": "ولا",
+      "t": 55.54
+     },
+     "who": "fx",
+     "action": "in the cloud: an up arrow over the little bull gets a red X",
+     "acting": "donkey shakes his head once on the word",
+     "library": "S.arrow + X mark"
+    },
+    {
+     "t": 56.7,
+     "end": 58.0,
+     "cue": {
+      "word": "وعندما",
+      "t": 56.68
+     },
+     "who": "merchant",
+     "action": "his turban and face slide into the window from the left, walking past with a lantern glow; he stops",
+     "acting": "eyebrows up, pupils drop to the two animals",
+     "library": "person 'merchant' clipped to the window rect, walk()"
+    },
+    {
+     "t": 58.3,
+     "end": 59.5,
+     "cue": {
+      "word": "يقدمون",
+      "t": 58.46
+     },
+     "who": "fx",
+     "action": "in the cloud: a full trough slides in front of the lying little bull",
+     "acting": "real bull's eyes follow it hungrily, he swallows",
+     "library": "trough at s 0.32"
+    },
+    {
+     "t": 60.2,
+     "end": 61.2,
+     "cue": {
+      "word": "لا",
+      "t": 60.32
+     },
+     "who": "bull",
+     "action": "in the cloud: the little bull turns his head away from the food, nose up; red X on the trough",
+     "acting": "real bull looks dismayed: brow -0.8, glance at his own trough",
+     "library": "bull {headTurn:-1} in cloud"
+    },
+    {
+     "t": 61.3,
+     "end": 62.6,
+     "cue": {
+      "word": "سيظنون",
+      "t": 61.32
+     },
+     "who": "merchant",
+     "action": "cups his ear at the window",
+     "acting": "one eyebrow up, a slow knowing smile; neither animal sees him",
+     "library": "PERSON_HANDS.cupEar, wink off"
+    },
+    {
+     "t": 63.3,
+     "end": 64.1,
+     "cue": {
+      "word": "تستطيع",
+      "t": 63.42
+     },
+     "who": "fx",
+     "action": "in the cloud: the worker icon scratches his head beside the lying bull, a '?' above",
+     "acting": "",
+     "library": "person 'villager' at s 0.3, PERSON_HANDS.headHold"
+    },
+    {
+     "t": 64.6,
+     "end": 65.9,
+     "cue": {
+      "word": "ويتركونك",
+      "t": 64.72
+     },
+     "who": "fx",
+     "action": "in the cloud: worker icon walks out; the little bull gets ZZZ and a smile",
+     "acting": "",
+     "library": "zzz() in cloud"
+    },
+    {
+     "t": 65.9,
+     "end": 66.8,
+     "cue": {
+      "word": "ترتاح.»",
+      "t": 66.0
+     },
+     "who": "bull",
+     "action": "real bull: slow delighted smile, he nods twice; donkey winks",
+     "acting": "bull tail swishes; donkey lid closes on the camera-side eye only for 6 frames",
+     "library": "bull {mouth:'smile'}, donkey {lid} pulse"
+    },
+    {
+     "t": 66.2,
+     "end": 67.1,
+     "who": "merchant",
+     "action": "strokes his moustache, then slides out of the window",
+     "acting": "smile under the hand; exit before the card",
+     "library": "PERSON_HANDS.moustache"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 53.9,
+     "text": "FLOP!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 67.2,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 67.2,
+    "label": "NEXT MORNING..."
+   }
+  },
+  {
+   "id": "S7",
+   "start": 67.2,
+   "end": 78.5,
+   "paragraphs": [
+    4
+   ],
+   "set": "farmStable",
+   "cast": [
+    "bull",
+    "worker",
+    "donkey"
+   ],
+   "summary": "Next morning. The bull plays sick; the worker finds him flat on the floor and cannot get him up to plough.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "CAM {x:470,y:700,zoom:1.15}, static so the physical comedy reads; panel-only shake (3 px) on the two heaves."
+   },
+   "composition": "Bull lying centre-left filling his stall, worker enters from the door on the right carrying the yoke, donkey at the right edge watching over his trough.",
+   "actions": [
+    {
+     "t": 67.3,
+     "end": 68.6,
+     "cue": {
+      "word": "فعل",
+      "t": 67.68
+     },
+     "who": "bull",
+     "action": "glances at the door, then arranges himself: flops, tongue out, one leg in the air",
+     "acting": "checks the donkey for approval; donkey nods",
+     "library": "bull {lie:1, tongue:0.6, legUp:1}"
+    },
+    {
+     "t": 69.5,
+     "end": 70.7,
+     "cue": {
+      "word": "نصحه",
+      "t": 69.7
+     },
+     "who": "donkey",
+     "action": "gives a tiny ear salute, then pretends to eat",
+     "acting": "mask: innocent, gaze into the trough",
+     "library": "donkey {earR:1, headDown:0.7}"
+    },
+    {
+     "t": 71.4,
+     "end": 73.2,
+     "cue": {
+      "word": "رآه",
+      "t": 71.62
+     },
+     "who": "worker",
+     "action": "walks in with the yoke over his shoulder, stops dead",
+     "acting": "double take: head forward, eyes wide, brow -0.6",
+     "library": "person 'villager', walk(), settleTo"
+    },
+    {
+     "t": 73.7,
+     "end": 74.8,
+     "cue": {
+      "word": "مستلقيًا،",
+      "t": 73.9
+     },
+     "who": "bull",
+     "action": "one eye opens a crack to check the worker, shuts the moment he looks",
+     "acting": "the peek: lid 1 -> 0.6 -> 1 in 10 frames",
+     "library": "bull {lid}"
+    },
+    {
+     "t": 74.8,
+     "end": 76.4,
+     "cue": {
+      "word": "ولم",
+      "t": 74.88
+     },
+     "who": "worker",
+     "action": "drops the yoke, grabs a horn with both hands and heaves",
+     "acting": "leans back 0.25, feet slip in place with dust; the bull does not move, only his head stretches",
+     "library": "PERSON_HANDS.grip, bull {neck stretch}, dustBurst"
+    },
+    {
+     "t": 76.5,
+     "end": 77.4,
+     "cue": {
+      "word": "يجعله",
+      "t": 76.66
+     },
+     "who": "worker",
+     "action": "runs round and pushes the rump with his shoulder",
+     "acting": "bull slides 20 units like a sack and rocks back",
+     "library": "person {lean:0.3}, swing() on the bull x"
+    },
+    {
+     "t": 77.3,
+     "end": 78.4,
+     "cue": {
+      "word": "يحرث",
+      "t": 77.42
+     },
+     "who": "worker",
+     "action": "holds up the plough handle, looks from it to the bull, lets his arms fall",
+     "acting": "defeated: palms up, shoulders drop; donkey hides a laugh behind his trough",
+     "library": "PERSON_HANDS.palmsUp, donkey {duck}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 76.7,
+     "text": "NOPE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 78.5
+   }
+  },
+  {
+   "id": "S8",
+   "start": 78.5,
+   "end": 90.2,
+   "paragraphs": [
+    4
+   ],
+   "set": "farmStable",
+   "cast": [
+    "worker",
+    "merchant",
+    "bull"
+   ],
+   "summary": "The worker reports to the merchant in the yard: the bull is ill. But the merchant understands animal speech and heard the plan last night.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Yard side: CAM {x:1200,y:690,zoom:1.3}; from 82.8 pushes in on the merchant {x:1260,y:640,zoom:1.9}; an inset circle opens upper left at 87.6."
+   },
+   "composition": "Worker left (x 1090) facing right, merchant right (x 1300) at his door facing left; the stable doorway with the lying bull visible in the far left of frame. Inset circle (panel x 260, y 330, r 190) clear of both faces.",
+   "actions": [
+    {
+     "t": 78.5,
+     "end": 79.6,
+     "cue": {
+      "word": "أخبر",
+      "t": 78.66
+     },
+     "who": "worker",
+     "action": "runs out of the stable to the merchant, pulls up short",
+     "acting": "run with arms pumping, a small skid and dust",
+     "library": "walk() amp 1.3, dustBurst"
+    },
+    {
+     "t": 79.6,
+     "end": 81.0,
+     "cue": {
+      "word": "صاحب",
+      "t": 79.66
+     },
+     "who": "merchant",
+     "action": "comes out of his door with a ledger scroll under his arm, eyebrows up",
+     "acting": "calm, gaze on the worker",
+     "library": "person 'merchant', PERSON_HANDS.chest"
+    },
+    {
+     "t": 81.3,
+     "end": 82.0,
+     "cue": {
+      "word": "الثور",
+      "t": 81.54
+     },
+     "who": "worker",
+     "action": "points back with his thumb at the stable",
+     "acting": "talks fast, worried brow",
+     "library": "PERSON_HANDS.pointFwd mirrored, talk"
+    },
+    {
+     "t": 82.0,
+     "end": 82.8,
+     "cue": {
+      "word": "مريض.",
+      "t": 82.04
+     },
+     "who": "worker",
+     "action": "mimes it: tongue out, head to one side, hands as horns",
+     "acting": "",
+     "library": "person {mouth:'o', tilt}"
+    },
+    {
+     "t": 82.8,
+     "end": 84.0,
+     "cue": {
+      "word": "لكن",
+      "t": 82.76
+     },
+     "who": "camera",
+     "action": "push-in on the merchant, who does not look worried at all",
+     "acting": "he looks past the worker toward the stable; one slow blink",
+     "library": "camera keys, gazePlan"
+    },
+    {
+     "t": 85.2,
+     "end": 86.5,
+     "cue": {
+      "word": "يفهم",
+      "t": 85.32
+     },
+     "who": "merchant",
+     "action": "taps his ear twice with one finger",
+     "acting": "sly: brow -0.4, half smile",
+     "library": "PERSON_HANDS.cupEar pulse"
+    },
+    {
+     "t": 86.4,
+     "end": 87.5,
+     "cue": {
+      "word": "الحيوانات،",
+      "t": 86.5
+     },
+     "who": "fx",
+     "action": "two tiny speech bubbles with a bull icon and a donkey icon float from the stable into his ear",
+     "acting": "they shrink as they arrive",
+     "library": "bubble() icons on a keyed path"
+    },
+    {
+     "t": 87.6,
+     "end": 88.6,
+     "cue": {
+      "word": "وسمع",
+      "t": 87.6
+     },
+     "who": "fx",
+     "action": "inset circle irises open: last night, the merchant at the stable window, hand to ear, the plan cloud inside",
+     "acting": "blue dream wash on the inset marks it as the past",
+     "library": "inset circle (planned), dream wash (planned)"
+    },
+    {
+     "t": 88.6,
+     "end": 89.9,
+     "cue": {
+      "word": "خطتهما",
+      "t": 88.6
+     },
+     "who": "merchant",
+     "action": "in the main picture he strokes his moustache and looks to the lens once",
+     "acting": "the one deliberate look to camera: gaze [0,0.05], then a wink",
+     "library": "PERSON_HANDS.moustache, P.wink"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 88.7,
+     "text": "AHA!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 90.2
+   }
+  },
+  {
+   "id": "S9",
+   "start": 90.2,
+   "end": 97.4,
+   "paragraphs": [
+    5
+   ],
+   "set": "farmStable",
+   "cast": [
+    "merchant",
+    "worker",
+    "donkey",
+    "bull"
+   ],
+   "summary": "The merchant gives the order: leave the bull, take the donkey. Whip pan to the donkey, whose smugness collapses.",
+   "camera": {
+    "shot": "medium",
+    "move": "whip",
+    "notes": "Yard CAM {x:1200,y:690,zoom:1.3} until 95.7; whip pan (0.25 s) left to the donkey {x:680,y:680,zoom:1.7} landing on 95.8; hold."
+   },
+   "composition": "First half: merchant right, worker left. Second half: donkey's face fills the frame, the worker's hand with the halter entering from the right edge, the bull's grin low in the left corner.",
+   "actions": [
+    {
+     "t": 90.3,
+     "end": 92.0,
+     "cue": {
+      "word": "قال",
+      "t": 90.48
+     },
+     "who": "merchant",
+     "action": "inset closes; he straightens and raises one finger",
+     "acting": "decision made: mouth set, eyes bright",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 92.7,
+     "end": 93.8,
+     "cue": {
+      "word": "للعامل:",
+      "t": 92.8
+     },
+     "who": "worker",
+     "action": "stands to attention, listening",
+     "acting": "nods on the stress",
+     "library": "person, lookAt merchant"
+    },
+    {
+     "t": 93.8,
+     "end": 95.1,
+     "cue": {
+      "word": "«اترك",
+      "t": 93.9
+     },
+     "who": "merchant",
+     "action": "waves the bull away with a flat hand toward the stable",
+     "acting": "light, almost amused",
+     "library": "PERSON_HANDS.wave"
+    },
+    {
+     "t": 95.6,
+     "end": 96.3,
+     "cue": {
+      "word": "وخذ",
+      "t": 95.8
+     },
+     "who": "merchant",
+     "action": "arm snaps out pointing at the donkey's stall; the camera whips along the arm",
+     "acting": "arm overshoots and settles",
+     "library": "PERSON_HANDS.pointFwd, camera whip"
+    },
+    {
+     "t": 96.2,
+     "end": 96.9,
+     "cue": {
+      "word": "الحمار",
+      "t": 96.38
+     },
+     "who": "donkey",
+     "action": "caught mid-chew with a mouthful of barley: freezes, ears shoot straight up",
+     "acting": "eyes wide, pupils tiny, suppress blinks",
+     "library": "donkey {eyes:'wide', earL:1, earR:1, noBlink:true}"
+    },
+    {
+     "t": 96.8,
+     "end": 97.4,
+     "cue": {
+      "word": "مكانه.»",
+      "t": 96.92
+     },
+     "who": "donkey",
+     "action": "the barley falls out of his mouth; he points a hoof at himself",
+     "acting": "ears fall one after the other; the bull behind him grins",
+     "library": "donkey {raise:1, mouth:'o'}, bull {mouth:'smile'}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 96.95,
+     "text": "ME?!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 97.4
+   }
+  },
+  {
+   "id": "S10",
+   "start": 97.4,
+   "end": 105.1,
+   "paragraphs": [
+    5
+   ],
+   "set": "ploughField",
+   "cast": [
+    "donkey",
+    "worker"
+   ],
+   "summary": "The worker harnesses the donkey to the plough and works him for hours: the sun crosses the whole sky while the furrows stack up.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "CAM {x:donkeyX+60, y:700, zoom:1.15}; from 102.3 a locked wide {x:800,y:720,zoom:1.0} for the time-lapse so the sun arc and the furrow rows both read."
+   },
+   "composition": "Donkey small under a huge sky, the plough bigger than it was behind the bull (same prop, the donkey is just smaller). Counter top left of the picture.",
+   "actions": [
+    {
+     "t": 97.5,
+     "end": 99.0,
+     "cue": {
+      "word": "ربط",
+      "t": 97.8
+     },
+     "who": "worker",
+     "action": "drops the yoke collar over the donkey's neck and pulls the strap tight",
+     "acting": "donkey's knees dip under it (sq 0.9), eyes roll to the plough",
+     "library": "plough {attached}, donkey {yoke:true}, anticipate"
+    },
+    {
+     "t": 99.6,
+     "end": 100.4,
+     "cue": {
+      "word": "المحراث",
+      "t": 99.72
+     },
+     "who": "plough",
+     "action": "the traces snap taut; the share drops into the soil",
+     "acting": "small dust kick",
+     "library": "plough {dig:1}"
+    },
+    {
+     "t": 100.3,
+     "end": 101.2,
+     "cue": {
+      "word": "بالحمار،",
+      "t": 100.38
+     },
+     "who": "donkey",
+     "action": "strains: hooves scrabble in place for half a second before the plough moves",
+     "acting": "runInPlace wind-up with dust, ears flat back, teeth showing",
+     "library": "runInPlace (planned), donkey {mouth:'grit'}"
+    },
+    {
+     "t": 101.2,
+     "end": 102.3,
+     "cue": {
+      "word": "وجعله",
+      "t": 101.26
+     },
+     "who": "worker",
+     "action": "clicks his tongue and walks behind, one hand on the handle",
+     "acting": "relaxed: this is a normal day for him",
+     "library": "walk(), PERSON_HANDS.grip"
+    },
+    {
+     "t": 102.3,
+     "end": 103.6,
+     "cue": {
+      "word": "ساعات",
+      "t": 102.86
+     },
+     "who": "set",
+     "action": "time-lapse: the sun runs its arc from left to right while the donkey crosses and recrosses",
+     "acting": "S.counter HOURS climbs 1 to 8",
+     "library": "dayCycle 0.3->0.7, S.counter"
+    },
+    {
+     "t": 103.6,
+     "end": 104.8,
+     "cue": {
+      "word": "طويلة",
+      "t": 103.66
+     },
+     "who": "donkey",
+     "action": "each crossing is slower and lower; furrow rows 1 to 5 appear in the foreground",
+     "acting": "fatigue blend 0 -> 0.8 across the passes",
+     "library": "donkey {sag}, ploughField {rows}"
+    },
+    {
+     "t": 104.7,
+     "end": 105.1,
+     "cue": {
+      "word": "الحقل.",
+      "t": 104.82
+     },
+     "who": "donkey",
+     "action": "stops at the end of a row, legs shaking",
+     "acting": "tremble 2 px, tongue out",
+     "library": "tremble()"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 105.1
+   }
+  },
+  {
+   "id": "S11",
+   "start": 105.1,
+   "end": 109.2,
+   "paragraphs": [
+    5
+   ],
+   "set": "ploughField",
+   "cast": [
+    "donkey",
+    "worker"
+   ],
+   "summary": "Close on the donkey at the end of the day: he is not used to this.",
+   "camera": {
+    "shot": "close",
+    "move": "static",
+    "notes": "CAM {x:donkeyX+40,y:700,zoom:1.9}, static; late orange light."
+   },
+   "composition": "Donkey's head and shoulders, the yoke on his neck, the worker's legs behind.",
+   "actions": [
+    {
+     "t": 105.3,
+     "end": 106.5,
+     "cue": {
+      "word": "لم",
+      "t": 105.44
+     },
+     "who": "donkey",
+     "action": "looks back at the plough, then at his own trembling knees",
+     "acting": "disbelief: brow -0.8, mouth open",
+     "library": "gazePlan, donkey {brow}"
+    },
+    {
+     "t": 106.8,
+     "end": 107.6,
+     "cue": {
+      "word": "الحمار",
+      "t": 106.98
+     },
+     "who": "donkey",
+     "action": "a sweat drop rolls down, he pants (sides pumping)",
+     "acting": "breathe() fast, amplitude 6",
+     "library": "breathe()"
+    },
+    {
+     "t": 107.5,
+     "end": 108.7,
+     "cue": {
+      "word": "معتادًا",
+      "t": 107.6
+     },
+     "who": "fx",
+     "action": "painPulse on shoulder, back and hip in turn",
+     "acting": "he flinches at each, a little less each time",
+     "library": "painPulse (planned)"
+    },
+    {
+     "t": 108.6,
+     "end": 109.2,
+     "cue": {
+      "word": "التعب،",
+      "t": 108.76
+     },
+     "who": "worker",
+     "action": "lifts the yoke off; the donkey sags a full head lower without it",
+     "acting": "follow-through: ears flop last",
+     "library": "donkey {yoke:false, sag:1}, settleTo"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 109.2
+   }
+  },
+  {
+   "id": "S12",
+   "start": 109.2,
+   "end": 114.1,
+   "paragraphs": [
+    5
+   ],
+   "set": "farmStable",
+   "cast": [
+    "donkey",
+    "bull"
+   ],
+   "summary": "Evening. The donkey drags himself into the stable and collapses on his straw.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "CAM follows him in from the door: {x:900,y:700,zoom:1.2} to {x:560,y:700,zoom:1.2}."
+   },
+   "composition": "Donkey enters right to left; the rested bull stands bright-eyed in his stall on the left, watching him come.",
+   "actions": [
+    {
+     "t": 109.3,
+     "end": 110.3,
+     "cue": {
+      "word": "وعاد",
+      "t": 109.42
+     },
+     "who": "donkey",
+     "action": "hobbles in through the door, each step a separate effort",
+     "acting": "walk() with amp 0.4 and a hitch on the near hind leg; head below his knees",
+     "library": "walk(DX), footfalls, donkey {sag:1}"
+    },
+    {
+     "t": 110.2,
+     "end": 110.9,
+     "cue": {
+      "word": "مساءً",
+      "t": 110.26
+     },
+     "who": "set",
+     "action": "dusk again: lantern lit, same light as last night",
+     "acting": "the mirror of S4 with the roles swapped",
+     "library": "farmStable {time:'dusk'}"
+    },
+    {
+     "t": 110.9,
+     "end": 111.8,
+     "cue": {
+      "word": "منهكًا",
+      "t": 110.9
+     },
+     "who": "donkey",
+     "action": "reaches his straw, knees fold front first, then the back end",
+     "acting": "two-stage collapse",
+     "library": "donkey {lie:0->1}"
+    },
+    {
+     "t": 111.8,
+     "end": 113.7,
+     "cue": {
+      "word": "ومتألمًا.",
+      "t": 111.82
+     },
+     "who": "donkey",
+     "action": "chin hits the straw, ears splay flat left and right, stars circle",
+     "acting": "lid 0.8, wet, one painPulse on his back",
+     "library": "impactSquash, star() x3 orbit, painPulse"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 112.0,
+     "text": "OUCH!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 114.05,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 114.1
+   }
+  },
+  {
+   "id": "S13",
+   "start": 114.1,
+   "end": 123.1,
+   "paragraphs": [
+    6
+   ],
+   "set": "farmStable",
+   "cast": [
+    "bull",
+    "donkey"
+   ],
+   "summary": "The fresh, happy bull thanks the flattened donkey for a lovely quiet day.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "Same two-shot as S4 {x:500,y:700,zoom:1.3} on purpose (mirror of the complaint), static."
+   },
+   "composition": "Bull left, now upright and bouncy; donkey right, flat on the straw with only his eyes moving. Lantern between them.",
+   "actions": [
+    {
+     "t": 114.3,
+     "end": 115.6,
+     "cue": {
+      "word": "استقبل",
+      "t": 114.42
+     },
+     "who": "bull",
+     "action": "trots two steps to the troughs, tail up",
+     "acting": "springy: sq 1.05 on each step, ears forward",
+     "library": "bull {tailUp:1}, hop() small"
+    },
+    {
+     "t": 116.1,
+     "end": 117.0,
+     "cue": {
+      "word": "بفرح",
+      "t": 116.28
+     },
+     "who": "bull",
+     "action": "big open smile, a little four-hoof bounce",
+     "acting": "eyes closed in a smile arc on the bounce",
+     "library": "hop(), landSquash, bull {mouth:'smile'}"
+    },
+    {
+     "t": 118.2,
+     "end": 119.0,
+     "cue": {
+      "word": "«شكرًا",
+      "t": 118.36
+     },
+     "who": "bull",
+     "action": "bows his head low to the donkey",
+     "acting": "sincere, he means it",
+     "library": "bull {headDown:0.7}, settleTo"
+    },
+    {
+     "t": 119.0,
+     "end": 120.1,
+     "cue": {
+      "word": "لنصيحتك!",
+      "t": 119.04
+     },
+     "who": "donkey",
+     "action": "only his pupils move up to the bull; one ear twitches",
+     "acting": "suspense by stillness: lid 0.6, mouth flat",
+     "library": "donkey {gaze}, noBlink"
+    },
+    {
+     "t": 120.7,
+     "end": 121.4,
+     "cue": {
+      "word": "قضيت",
+      "t": 120.8
+     },
+     "who": "fx",
+     "action": "bull's speech picture: himself lying in the sun with ZZZ and a full trough",
+     "acting": "pops above the post, clear of faces",
+     "library": "bubble() with bull icon + zzz"
+    },
+    {
+     "t": 121.9,
+     "end": 122.9,
+     "cue": {
+      "word": "هادئًا.»",
+      "t": 122.0
+     },
+     "who": "bull",
+     "action": "sighs happily and stretches like a cat, front legs forward",
+     "acting": "long contented blink",
+     "library": "bull {stretch:1}"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 123.1
+   }
+  },
+  {
+   "id": "S14",
+   "start": 123.1,
+   "end": 133.05,
+   "paragraphs": [
+    6
+   ],
+   "set": "farmStable",
+   "cast": [
+    "donkey",
+    "bull"
+   ],
+   "summary": "The donkey says nothing, furious with himself. Then he starts to think his way out.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "CAM on the donkey lying {x:680,y:780,zoom:1.8} easing to 2.1 by 131.8."
+   },
+   "composition": "Donkey's head on the straw at centre, the bull's legs and cheerful swishing tail at the left edge.",
+   "actions": [
+    {
+     "t": 123.2,
+     "end": 124.2,
+     "cue": {
+      "word": "لم",
+      "t": 123.44
+     },
+     "who": "donkey",
+     "action": "turns his face away from the bull to the lens side",
+     "acting": "mouth clamped, cheeks puffed",
+     "library": "donkey {headTurn:-0.6, mouth:'frown'}"
+    },
+    {
+     "t": 124.2,
+     "end": 125.9,
+     "cue": {
+      "word": "الحمار",
+      "t": 124.2
+     },
+     "who": "bull",
+     "action": "waits for an answer, tilts his head, shrugs and starts eating",
+     "acting": "simple and happy; he notices nothing",
+     "library": "bull {headDown:1, chew:1}"
+    },
+    {
+     "t": 126.8,
+     "end": 127.8,
+     "cue": {
+      "word": "غاضبًا",
+      "t": 126.98
+     },
+     "who": "donkey",
+     "action": "anger flush climbs his face, a small steam puff from each nostril",
+     "acting": "brow +1, ears pinned back",
+     "library": "flush (planned) 0->0.8, donkey {snort:1}"
+    },
+    {
+     "t": 127.8,
+     "end": 128.6,
+     "cue": {
+      "word": "نفسه.",
+      "t": 127.96
+     },
+     "who": "donkey",
+     "action": "bonks his own forehead on the straw once",
+     "acting": "self-directed: the flush drains at once into a sigh",
+     "library": "donkey {drop}, impactSquash small"
+    },
+    {
+     "t": 128.6,
+     "end": 129.9,
+     "cue": {
+      "word": "ثم",
+      "t": 128.6
+     },
+     "who": "donkey",
+     "action": "goes very still; then the eyes start darting",
+     "acting": "saccades left, right, up at the door",
+     "library": "gazePlan(t, plan, 0.07)"
+    },
+    {
+     "t": 129.9,
+     "end": 131.3,
+     "cue": {
+      "word": "كيف",
+      "t": 129.92
+     },
+     "who": "fx",
+     "action": "a small door icon and a small plough icon appear over his head; he looks from one to the other",
+     "acting": "icons pop on kayfa and on yakhruj",
+     "library": "cloud() dots + icons"
+    },
+    {
+     "t": 131.2,
+     "end": 132.6,
+     "cue": {
+      "word": "هذا",
+      "t": 131.5
+     },
+     "who": "donkey",
+     "action": "one ear rises slowly, then the other; the smirk comes back",
+     "acting": "lid 0.3, mouth 'smirk': the mask is ready",
+     "library": "donkey {earL, earR, mouth:'smirk'}"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 133.05,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 133.05
+   }
+  },
+  {
+   "id": "S15",
+   "start": 133.05,
+   "end": 143.8,
+   "paragraphs": [
+    7
+   ],
+   "set": "farmStable",
+   "cast": [
+    "donkey",
+    "bull"
+   ],
+   "summary": "The donkey's lie: I heard our owner say that if the bull is still ill tomorrow he goes to the butcher.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Two-shot {x:500,y:690,zoom:1.3}; slow push to 1.5 by 141.8; hard 2-frame punch to the bull's face {x:400,zoom:2.0} on the butcher word at 143.12."
+   },
+   "composition": "Donkey right, raised on his forelegs and leaning in; bull left, mouth full. Speech pictures appear in a strip above the post (y 380-540), read right to left with the Arabic: owner, bull, sun, cleaver.",
+   "actions": [
+    {
+     "t": 133.2,
+     "end": 134.8,
+     "cue": {
+      "word": "قال",
+      "t": 133.42
+     },
+     "who": "donkey",
+     "action": "pushes himself up on his forelegs with a groan and puts on a grave face",
+     "acting": "mask on: brow -0.7 (worried for his friend), smirk gone",
+     "library": "donkey {lie:1->0.5, brow:-0.7}"
+    },
+    {
+     "t": 134.8,
+     "end": 135.8,
+     "cue": {
+      "word": "أخيرًا:",
+      "t": 134.84
+     },
+     "who": "donkey",
+     "action": "clears his throat; the bull looks up, still chewing",
+     "acting": "bull's gaze to the donkey, relaxed",
+     "library": "lookAt"
+    },
+    {
+     "t": 135.8,
+     "end": 136.6,
+     "cue": {
+      "word": "«سمعت",
+      "t": 135.9
+     },
+     "who": "donkey",
+     "action": "cups one long ear forward with a hoof: I heard",
+     "acting": "glance at the window where the merchant stood",
+     "library": "donkey {earR:1, raise:1}"
+    },
+    {
+     "t": 136.6,
+     "end": 137.5,
+     "cue": {
+      "word": "صاحبنا",
+      "t": 136.68
+     },
+     "who": "fx",
+     "action": "speech picture 1: the merchant's turbaned head",
+     "acting": "",
+     "library": "bubble() with person 'merchant' head icon"
+    },
+    {
+     "t": 138.7,
+     "end": 139.7,
+     "cue": {
+      "word": "الثور",
+      "t": 138.8
+     },
+     "who": "fx",
+     "action": "picture 2: the bull lying down with his tongue out",
+     "acting": "the real bull stops chewing",
+     "library": "bubble() bull icon {lie:1}"
+    },
+    {
+     "t": 140.2,
+     "end": 141.0,
+     "cue": {
+      "word": "مريضًا",
+      "t": 140.22
+     },
+     "who": "bull",
+     "action": "swallows; his ears go slowly back",
+     "acting": "first worry: brow -0.4",
+     "library": "bull {ears:-0.5}"
+    },
+    {
+     "t": 141.0,
+     "end": 141.8,
+     "cue": {
+      "word": "غدًا،",
+      "t": 141.04
+     },
+     "who": "fx",
+     "action": "picture 3: a small rising sun",
+     "acting": "",
+     "library": "mini sun() icon"
+    },
+    {
+     "t": 141.8,
+     "end": 143.0,
+     "cue": {
+      "word": "فسيرسله",
+      "t": 141.82
+     },
+     "who": "donkey",
+     "action": "draws a slow line with his hoof from the bull to the door",
+     "acting": "holds the pause before the last word, eyes on the bull",
+     "library": "donkey {raise:1}, S.arrow dashed to the door"
+    },
+    {
+     "t": 143.0,
+     "end": 143.8,
+     "cue": {
+      "word": "الجزار.»",
+      "t": 143.12
+     },
+     "who": "fx",
+     "action": "picture 4 slams in bigger than the others: a hanging shop sign with a cleaver",
+     "acting": "2-frame white flash, panel-only shake 4 px; bull's eyes go wide",
+     "library": "butcherSign icon, shake inside the panel clip"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 143.8
+   }
+  },
+  {
+   "id": "S16",
+   "start": 143.8,
+   "end": 152.82,
+   "paragraphs": [
+    7
+   ],
+   "set": "farmStable",
+   "cast": [
+    "bull",
+    "donkey"
+   ],
+   "summary": "The bull shakes with fear. He has no idea the donkey only said it to send him back to work.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "From the bull close-up {x:400,y:680,zoom:2.0} pull out to the two-shot {x:500,y:690,zoom:1.3} by 147.4 so the donkey's hidden face is in frame."
+   },
+   "composition": "Bull left, shaking; the donkey right, turned three quarters away from him toward the lens, so the audience sees his face and the bull cannot.",
+   "actions": [
+    {
+     "t": 143.9,
+     "end": 145.3,
+     "cue": {
+      "word": "ارتجف",
+      "t": 143.96
+     },
+     "who": "bull",
+     "action": "whole body trembles; the feed falls out of his mouth",
+     "acting": "eyes 'wide', pupils small, noBlink; tremble grows 2 -> 5 px",
+     "library": "tremble(), bull {eyes:'wide', noBlink:true}"
+    },
+    {
+     "t": 145.3,
+     "end": 145.9,
+     "cue": {
+      "word": "الثور",
+      "t": 145.38
+     },
+     "who": "bull",
+     "action": "knees knock, tail between his legs, horns droop",
+     "acting": "secondary: the nose ring rattles a few frames late",
+     "library": "bull {tailDown:1, ears:-1}, swing() on the ring"
+    },
+    {
+     "t": 145.9,
+     "end": 147.0,
+     "cue": {
+      "word": "خوفًا.",
+      "t": 145.9
+     },
+     "who": "bull",
+     "action": "looks at the door, at his legs, gulps hard",
+     "acting": "gulp = quick neck bulge + lid snap",
+     "library": "gazePlan, bull {drop} pulse"
+    },
+    {
+     "t": 147.1,
+     "end": 148.2,
+     "cue": {
+      "word": "لم",
+      "t": 147.12
+     },
+     "who": "donkey",
+     "action": "turns his head away from the bull; the worried face melts into the smirk",
+     "acting": "mask off only while unseen: brow relaxes, mouth 'smirk', lid 0.35",
+     "library": "donkey {headTurn:-0.7, mouth:'smirk'}"
+    },
+    {
+     "t": 148.2,
+     "end": 149.3,
+     "cue": {
+      "word": "الحمار",
+      "t": 148.22
+     },
+     "who": "bull",
+     "action": "glances at the donkey for comfort",
+     "acting": "the donkey's worried mask snaps back on for exactly that glance, then off again",
+     "library": "mask on/off keyed to the bull's gazePlan"
+    },
+    {
+     "t": 150.3,
+     "end": 151.6,
+     "cue": {
+      "word": "ليعيده",
+      "t": 150.46
+     },
+     "who": "fx",
+     "action": "thought picture over the donkey: the bull under the yoke, with a big green tick; himself asleep beside it",
+     "acting": "small, clear of both faces (upper right)",
+     "library": "thoughtCloud (planned) with icons"
+    },
+    {
+     "t": 151.7,
+     "end": 152.6,
+     "cue": {
+      "word": "العمل.",
+      "t": 151.94
+     },
+     "who": "donkey",
+     "action": "one look to the lens and a wink, then lays his head down",
+     "acting": "the film's second and last look to camera",
+     "library": "donkey {gaze:[0,0.05]}, lid pulse"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 145.95,
+     "text": "GULP!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 152.82,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 152.82
+   }
+  },
+  {
+   "id": "S17",
+   "start": 152.82,
+   "end": 160.7,
+   "paragraphs": [
+    8
+   ],
+   "set": "farmStable",
+   "cast": [
+    "bull",
+    "donkey"
+   ],
+   "summary": "Next morning. The bull is on his feet before the sun is over the hill and empties his whole trough.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "CAM {x:400,y:700,zoom:1.4} static; the window sky runs night to dawn in the first second."
+   },
+   "composition": "Bull centre, his trough at the right of frame (x 455); the donkey's ears just visible at the right edge, still flat.",
+   "actions": [
+    {
+     "t": 152.9,
+     "end": 154.0,
+     "cue": {
+      "word": "في",
+      "t": 153.14
+     },
+     "who": "set",
+     "action": "window and door sky sweep from navy to dawn yellow; a cock-crow sound picture is NOT used (no sound over words)",
+     "acting": "lantern goes out with a small smoke wisp",
+     "library": "dayCycle 0.95 -> 0.25"
+    },
+    {
+     "t": 154.0,
+     "end": 155.7,
+     "cue": {
+      "word": "الصباح",
+      "t": 154.06
+     },
+     "who": "bull",
+     "action": "asleep with one eye already open on the door; the first sunbeam touches his nose",
+     "acting": "lid flickers; he has hardly slept (dark half-ring under the eye)",
+     "library": "bull {lie:1, lid:0.5}"
+    },
+    {
+     "t": 155.5,
+     "end": 156.7,
+     "cue": {
+      "word": "نهض",
+      "t": 155.8
+     },
+     "who": "bull",
+     "action": "anticipation crouch, then springs to all four feet in 4 frames",
+     "acting": "stretch sq 1.12 at the top, landSquash, dust at four hooves",
+     "library": "anticipate(), hop(), landSquash(), dustBurst x4"
+    },
+    {
+     "t": 157.1,
+     "end": 158.0,
+     "cue": {
+      "word": "بسرعة",
+      "t": 157.26
+     },
+     "who": "bull",
+     "action": "stands rigidly to attention, chest out, a quick look at the door: nobody yet",
+     "acting": "over-eager; speed lines fade behind him",
+     "library": "bull {tip:-0.04}, speed lines"
+    },
+    {
+     "t": 158.0,
+     "end": 159.0,
+     "cue": {
+      "word": "وأكل",
+      "t": 158.04
+     },
+     "who": "bull",
+     "action": "dives into the trough: head hammering up and down, straw flying",
+     "acting": "trough fill drops in steps with each bite",
+     "library": "bull {headDown:1, chew:1}, trough {fill:0.6->0.1}"
+    },
+    {
+     "t": 159.0,
+     "end": 159.9,
+     "cue": {
+      "word": "طعامه",
+      "t": 159.04
+     },
+     "who": "donkey",
+     "action": "one eye opens at the noise, watches, closes again with a tiny smile",
+     "acting": "the only movement on his side",
+     "library": "donkey {lid:1->0.5->1, mouth:'smile'}"
+    },
+    {
+     "t": 159.9,
+     "end": 160.7,
+     "cue": {
+      "word": "كله.",
+      "t": 159.96
+     },
+     "who": "bull",
+     "action": "lifts the empty trough to show it, licks it, a sparkle on the bare wood",
+     "acting": "proud glance toward the house: see, I am well",
+     "library": "trough {fill:0}, star() small white"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 157.3,
+     "text": "ZOOM!"
+    },
+    {
+     "t": 159.2,
+     "text": "CHOMP!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 160.7
+   }
+  },
+  {
+   "id": "S18",
+   "start": 160.7,
+   "end": 166.9,
+   "paragraphs": [
+    8
+   ],
+   "set": "farmStable",
+   "cast": [
+    "bull",
+    "worker",
+    "donkey"
+   ],
+   "summary": "The worker arrives; the bull is already waiting at the door and marches out to the field, back to the plough.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "CAM {x:640,y:700,zoom:1.15} panning right with the bull through the door to {x:1050,y:700,zoom:1.15} by 164.4; at 165.0 cut to ploughField is NOT made: the field is seen through the yard beyond (far furrows drawn at the yard's right edge)."
+   },
+   "composition": "Worker enters from the right carrying the yoke; bull meets him at the door (x 900); the donkey stays small on the left in the straw.",
+   "actions": [
+    {
+     "t": 160.9,
+     "end": 161.7,
+     "cue": {
+      "word": "وعندما",
+      "t": 161.0
+     },
+     "who": "bull",
+     "action": "trots to the stable door and waits there, tail swishing",
+     "acting": "ears forward on the footsteps outside",
+     "library": "walk(BX2), footfalls"
+    },
+    {
+     "t": 161.7,
+     "end": 162.8,
+     "cue": {
+      "word": "جاء",
+      "t": 161.7
+     },
+     "who": "worker",
+     "action": "walks in, braced for another fight, and stops in surprise",
+     "acting": "leans back, eyebrows up, the yoke half raised like a shield",
+     "library": "person 'villager', PERSON_HANDS.shield then palmsUp"
+    },
+    {
+     "t": 162.8,
+     "end": 163.5,
+     "cue": {
+      "word": "خرج",
+      "t": 162.82
+     },
+     "who": "bull",
+     "action": "ducks his own neck under the yoke and scoops it out of the worker's hands",
+     "acting": "the worker's empty hands stay in the air for 8 frames",
+     "library": "bull {headDown:0.5->0, yoke:true}"
+    },
+    {
+     "t": 163.5,
+     "end": 164.4,
+     "cue": {
+      "word": "معه",
+      "t": 163.5
+     },
+     "who": "bull",
+     "action": "marches out into the yard, the worker jogging to keep up",
+     "acting": "high-stepping walk, amp 1.2; worker scratches his head on the run",
+     "library": "walk(), PERSON_HANDS.headHold"
+    },
+    {
+     "t": 164.4,
+     "end": 165.8,
+     "cue": {
+      "word": "الحقل",
+      "t": 164.42
+     },
+     "who": "plough",
+     "action": "the plough waits at the field edge; the traces hook on as he passes without stopping",
+     "acting": "small jerk, then steady",
+     "library": "plough {attached}"
+    },
+    {
+     "t": 165.9,
+     "end": 166.9,
+     "cue": {
+      "word": "الحرث.",
+      "t": 166.12
+     },
+     "who": "bull",
+     "action": "leans in; a clean furrow starts behind him, dust at each hoof",
+     "acting": "set jaw, glad to be alive",
+     "library": "plough {dig:1}, dustBurst"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 166.9
+   }
+  },
+  {
+   "id": "S19",
+   "start": 166.9,
+   "end": 179.25,
+   "paragraphs": [
+    8
+   ],
+   "set": "farmStable",
+   "cast": [
+    "donkey",
+    "bull"
+   ],
+   "summary": "The donkey stays in the stable getting his breath back, having tasted one day of his friend's work. Through the window the bull ploughs in the distance. THE END.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "CAM on the donkey {x:680,y:740,zoom:1.7}; from 172.4 slow pull-out to {x:560,y:690,zoom:1.2} so the window with the far bull sits above him; hold from 176.0."
+   },
+   "composition": "Donkey lying on his straw lower right; the window (x 440-560, y 400-540) upper left of him with a tiny bull and plough crossing; THE END title in the upper third, clear of the donkey's face and the window.",
+   "actions": [
+    {
+     "t": 167.0,
+     "end": 167.9,
+     "cue": {
+      "word": "أما",
+      "t": 167.31
+     },
+     "who": "donkey",
+     "action": "lying flat, a wet cloth on his forehead, sides heaving slowly",
+     "acting": "lid 0.7, ears splayed",
+     "library": "donkey {lie:1}, breathe() amplitude 5"
+    },
+    {
+     "t": 168.6,
+     "end": 169.6,
+     "cue": {
+      "word": "فبقي",
+      "t": 168.76
+     },
+     "who": "donkey",
+     "action": "tries to lift his head, a painPulse in his back, puts it down again",
+     "acting": "small wince, then acceptance",
+     "library": "painPulse (planned), settleTo"
+    },
+    {
+     "t": 169.6,
+     "end": 170.5,
+     "cue": {
+      "word": "الإسطبل",
+      "t": 169.86
+     },
+     "who": "set",
+     "action": "morning light fills the stable; dust motes; his full trough untouched for once",
+     "acting": "",
+     "library": "farmStable {time:'day'}"
+    },
+    {
+     "t": 170.5,
+     "end": 171.4,
+     "cue": {
+      "word": "يلتقط",
+      "t": 170.58
+     },
+     "who": "donkey",
+     "action": "long breath in, cheeks puff, long breath out that flutters his lips and a straw",
+     "acting": "breath cloud puff on the out-breath",
+     "library": "donkey {snort:1}, breathe()"
+    },
+    {
+     "t": 172.3,
+     "end": 173.2,
+     "cue": {
+      "word": "بعد",
+      "t": 172.42
+     },
+     "who": "camera",
+     "action": "pull-out reveals the window: the far bull ploughing a line across it",
+     "acting": "bull at s 0.12 on a keyed path left to right, 6 s per crossing",
+     "library": "bull + plough at s 0.12 clipped to the window"
+    },
+    {
+     "t": 173.2,
+     "end": 174.5,
+     "cue": {
+      "word": "جرب",
+      "t": 173.32
+     },
+     "who": "donkey",
+     "action": "his eyes go to the window and follow the tiny bull",
+     "acting": "thought picture flashes for 1 s: himself under the yoke yesterday; he shudders",
+     "library": "gazePlan, thoughtCloud small, tremble() 0.5 s"
+    },
+    {
+     "t": 174.6,
+     "end": 175.9,
+     "cue": {
+      "word": "عمل",
+      "t": 174.74
+     },
+     "who": "donkey",
+     "action": "a slow rueful half smile; one ear lifts in a small salute to the bull",
+     "acting": "respect, not resentment: brow -0.3",
+     "library": "donkey {mouth:'smirk', earR:0.8}"
+    },
+    {
+     "t": 176.3,
+     "end": 179.25,
+     "who": "lettering",
+     "action": "THE END title pops with overshoot and holds; the donkey shuts his eyes and sleeps, the tiny bull keeps crossing",
+     "acting": "only breathing, an ear twitch at 177.8 and the far bull move during the hold",
+     "library": "S.title 'THE END', zzz(), S.finish last"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 176.3,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 176.6,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 179.25
+   }
+  }
+ ],
+ "ending": {
+  "t": 176.3,
+  "description": "After the last word (176.02) THE END pops in the upper third at 176.3 and holds to 179.25. The donkey sleeps on his straw, breathing; in the window above him the tiny bull keeps ploughing across. No added moral caption."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان تاجر يملك مزرعة فيها ثور وحمار.|كان الثور يخرج كل صباح ليحرث الأرض تحت الشمس، ثم يعود متعبًا.|أما الحمار فكان يعيش في الإسطبل، ويأكل طعامًا جيدًا ويستريح معظم الوقت.",
+   "en": "A merchant owned a farm with a bull and a donkey.|Every morning the bull went out to plow under the sun and returned exhausted.|The donkey lived in the stable, ate good food, and rested most of the time."
+  },
+  {
+   "p": 2,
+   "ar": "وفي مساء، نظر الثور إلى الحمار وقال:|«أنت محظوظ. تنام وتأكل،|أما أنا فأعمل طول النهار وأعود بجسم يؤلمني.»|شعر الحمار بالشفقة عليه، وفكر في طريقة تساعده على الراحة.",
+   "en": "One evening the bull looked at the donkey and said,|“You are lucky. You sleep and eat|while I work all day and come home aching.”|The donkey pitied him and thought of a way for him to rest."
+  },
+  {
+   "p": 3,
+   "ar": "قال الحمار: «غدًا تظاهر بأنك مريض.|إذا وضعوا المحراث عليك، استلق على الأرض ولا تقم.|وعندما يقدمون لك الطعام، لا تأكل.|سيظنون أنك لا تستطيع العمل، ويتركونك ترتاح.»",
+   "en": "The donkey said, “Tomorrow pretend to be ill.|If they put the plow on you, lie down and refuse to rise.|When they give you food, do not eat.|They will think you cannot work and let you rest.”"
+  },
+  {
+   "p": 4,
+   "ar": "فعل الثور ما نصحه به الحمار.|رآه العامل مستلقيًا، ولم يستطع أن يجعله يحرث الأرض.|أخبر صاحب المزرعة أن الثور مريض.|لكن التاجر كان يفهم كلام الحيوانات، وسمع خطتهما من قبل.",
+   "en": "The bull followed the donkey’s advice.|The worker saw him lying down and could not make him plow.|He told the farmer that the bull was ill.|But the merchant understood animal speech and had already heard their plan."
+  },
+  {
+   "p": 5,
+   "ar": "قال التاجر للعامل: «اترك الثور اليوم، وخذ الحمار مكانه.»|ربط العامل المحراث بالحمار، وجعله يعمل ساعات طويلة في الحقل.|لم يكن الحمار معتادًا هذا التعب، وعاد مساءً منهكًا ومتألمًا.",
+   "en": "The merchant told the worker, “Leave the bull today and take the donkey instead.”|The worker harnessed the donkey to the plow and made him work for hours.|Unused to such labor, the donkey returned exhausted and sore that evening."
+  },
+  {
+   "p": 6,
+   "ar": "استقبل الثور الحمار بفرح وقال: «شكرًا لنصيحتك! لقد قضيت يومًا هادئًا.»|لم يرد الحمار في البداية، لأنه كان غاضبًا من نفسه.|ثم فكر كيف يخرج من هذا الموقف.",
+   "en": "The bull greeted the donkey happily and said, “Thank you for your advice! I had a peaceful day.”|At first the donkey said nothing, angry with himself.|Then he thought about how to escape this situation."
+  },
+  {
+   "p": 7,
+   "ar": "قال الحمار أخيرًا: «سمعت صاحبنا يقول إن الثور إذا بقي مريضًا غدًا،|فسيرسله إلى الجزار.»|ارتجف الثور خوفًا.|لم يعرف أن الحمار يقول هذا الكلام ليعيده إلى العمل.",
+   "en": "At last the donkey said, “I heard our owner say that if the bull remains ill tomorrow,|he will send him to the butcher.”|The bull trembled with fear.|He did not know that the donkey was saying this to get him back to work."
+  },
+  {
+   "p": 8,
+   "ar": "في الصباح التالي، نهض الثور بسرعة وأكل طعامه كله.|وعندما جاء العامل، خرج معه إلى الحقل وعاد إلى الحرث.|أما الحمار فبقي في الإسطبل يلتقط أنفاسه،|بعد أن جرب يومًا من عمل صاحبه.",
+   "en": "The next morning the bull stood up quickly and ate all his food.|When the worker came, he went out to the field and began plowing again.|The donkey stayed in the stable recovering,|having tasted a day of his companion’s work."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "bull",
+   "reusable": true,
+   "effort": "L",
+   "description": "Ox/bull for any farm fable. Feet at (x,y), x at body centre, facing dir. At s 1: body 260 x 150 rounded box with its top 250 above the feet; shoulder hump +30; head 110 x 100 on a short thick neck, muzzle cream; two yellow horns 70 long curving forward; nose ring r 12; legs 26 wide, 105 long; tail 120 with tuft. Pose fields: ph, amp (walk), lie 0..1 (legs fold under, body drops 95, chin to the ground at 1), headDown 0..1 (eat), headTurn -1..1 (turn the head away), neck (stretch), talk, mouth (closed, smile, frown, o, open), brow, eyes (open, wide, x, shut), ears -1..1, tongue 0..1 (lolling), snort 0..1 (nostril puffs), sag 0..1 (fatigue: head below shoulders, swayed back, bent knees), stretch 0..1, legUp (one foreleg in the air while lying), tailUp, tailDown, yoke (draw the neck yoke), yokeMark (pale rubbed band on the neck), drop, plus shared gaze, lid, wet, sq, tip.",
+   "implementation": "New file Library-style cast function bull(ctx, P) following the lion: K.rr body, ellipse hump, legs as rounded rects driven by ph/amp exactly like lion legs so walk() and footfalls() work, head group translated/rotated by headDown, headTurn and drop, eye through eye2/EYE so the acting wrapper works, red dot shading with the style's dot fill clipped to the belly half. lie blends leg length to 20 % and lowers the body; sag is a blend of drop, back curve (quadratic top edge) and knee bend. Wrap with acting(bull, () => BULLC). Draw in the story first, move to Library after approval."
+  },
+  {
+   "type": "character",
+   "name": "donkey",
+   "reusable": true,
+   "effort": "L",
+   "description": "Donkey for any farm or travel fable. At s 1: body 220 x 120, top 215 above the feet; neck 80 long angled forward; head 120 x 70 long muzzle (white end); ears 110 x 30 each with separate angles earL, earR (-1 flat back/down .. 1 straight up); mane as 7 black brush spikes; legs 20 wide, 100 long; tail 100 with tuft. Pose fields: ph, amp, lie 0..1, headDown 0..1, headTurn -1..1, neck, talk, mouth (closed, smile, smirk, frown, o, open, grit), bray 0..1 (head back, mouth wide), chew 0..1, brow, eyes (open, wide, shut), tongue, snort, sag 0..1, raise 0..1 (near foreleg lifted to point or tap), duck 0..1, tailSwish, yoke, drop, plus shared fields.",
+   "implementation": "Same skeleton code as the bull with different proportions and palette (derive one quadruped base inside the file, two skins). Ears are two tapered K.poly leaves rotated about the skull; give them a 3-frame lag behind head moves. The camera-side wink is done with lid pulses (side view shows one eye). Wrap with acting()."
+  },
+  {
+   "type": "set",
+   "name": "farmStable",
+   "reusable": true,
+   "effort": "M",
+   "description": "Stable and yard in one 1600-wide world, ground y 900. Stable cutaway x 60-900: back wall y 250-900 (ochre with brown dot shading by day, orange at dusk, navy at night), roof beam y 230-250, thatch above to y 150 with a scalloped lower edge, side wall x 60-90, door post x 900-920 and open doorway to x 980. Window in the back wall x 440-560, y 400-540 showing the sky (and whatever is drawn behind it). Post between the troughs x 490-510, y 700-900. Lantern on a hook at (500, 250), lamp body at y 330, lit in dusk/night with a yellow halftone disc r 170. Straw bed mound x 610-800, 30 high (donkey side); thin straw x 200-380 (bull side). Home marks: bull x 290 facing right, donkey x 700 facing left. Yard x 980-1600: packed earth, a fence run x 980-1200 at y 800-900, house facade x 1250-1600 from y 380, door x 1400-1480, y 700-900, one window, far furrows drawn at the right edge of the yard beyond the fence.",
+   "implementation": "Bake per time preset with bake(); sky through the planned dayCycle (or Library sky presets day/dusk/dawn plus nightCity colours if dayCycle is not built yet). Draw order: sky, far yard, things behind the window (merchant, far bull), back wall with an evenodd window hole, lantern, floor, cast, troughs and post in front of the animals' chests, door post last. Reusable as any barn or stable."
+  },
+  {
+   "type": "set",
+   "name": "ploughField",
+   "reusable": true,
+   "effort": "S",
+   "description": "World 1600 x 1230, ground y 900. Sky dayCycle, Library hillTrees, a far farm silhouette (stable roof and house, 180 wide) at x 180 sitting on the horizon y 880, big sun on the cycle arc. Field soil below y 900 in a darker brown than Library ground. rows 0..5: horizontal furrow lines at y 950, 1005, 1060, 1115, 1170 across the full width, each a dark scalloped band 14 high with a lighter ridge above. live: the current furrow is a line on the ground at y 900 from startX to the plough share x.",
+   "implementation": "Library sky/hillTrees/ground with a colour option, furrows as K.poly scallops clipped to a width given by progress. Reusable for any field or farm work scene."
+  },
+  {
+   "type": "prop",
+   "name": "plough",
+   "reusable": true,
+   "effort": "M",
+   "description": "Scratch plough: beam 240 long and 14 thick rising forward at 20 degrees, handle 120 tall at the back with a grip at 105 above the ground (the worker's hand target), iron share a 60 x 34 dark triangle at the bottom rear. Yoke: curved wooden bar 110 wide that sits on the animal's neck, with two trace ropes back to the beam tip. Fields: x, y (share point), dir, s, angle, dig 0..1 (share sunk 18, clods), attached (traces drawn to a given yoke point; they sag when slack and straighten when taut).",
+   "implementation": "K.poly beam and share, the Library brush outline; traces as quadratic curves whose sag is a function of the distance to the yoke point; clods via dustBurst in brown on a seeded cycle while dig > 0 and speed > 0."
+  },
+  {
+   "type": "prop",
+   "name": "feedTrough",
+   "reusable": true,
+   "effort": "S",
+   "description": "Wooden manger 170 x 70 on four 30-high legs, plank lines, fill 0..1 as a heaped yellow mound with dot shading (0 shows bare boards with two crumbs), optional sparkle.",
+   "implementation": "K.rr box plus a clipped ellipse mound scaled by fill. Reusable for any animal feeding scene."
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "reusable": true,
+   "effort": "M",
+   "description": "The planned generic thought cloud (already requested by many stories): here a 380 x 240 plan board at (500, 420) in which small versions of the bull, plough, trough and worker act out each step, plus two small uses (S16, S19).",
+   "implementation": "Library cloud(ctx, cx, cy, rx, ry, fill, p, {inside}) with the inside callback drawing cast at s 0.3-0.32 in a clipped, scaled context, three lead-in dots toward the thinker."
+  },
+  {
+   "type": "effect",
+   "name": "dayCycle",
+   "reusable": true,
+   "effort": "M",
+   "description": "The planned sky that runs day, dusk, night, dawn with the sun and moon on arcs; used for the field time-lapse (102.3-104.8), the two evenings and the two mornings, and seen through the stable window and door.",
+   "implementation": "Blend the Library sky presets by a phase 0..1 and place sun() on a half ellipse; stars alpha from the night share."
+  },
+  {
+   "type": "effect",
+   "name": "painPulse",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned red throb at a point (rings plus three small stars) for the bull's aches (36.0) and the donkey's (107.5, 111.8, 168.6).",
+   "implementation": "Two expanding K.ring strokes with alpha falling, three star() calls on a short burst."
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned anger flush, here on the donkey at 126.8-128.0 (red dots climbing the face, two steam puffs).",
+   "implementation": "Red dot fill clipped to the head shape with a rising clip line; puffs with cloudFlat at small scale."
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "reusable": true,
+   "effort": "S",
+   "description": "The planned round picture-in-picture with an iris, used once (87.6-90.3) to replay the merchant listening at the window, with the planned dream wash to mark the past.",
+   "implementation": "Clip a circle r 190 at panel (260, 330), draw the stable at night through a second camera centred on the window, blue halftone wash, black brush ring."
+  },
+  {
+   "type": "prop",
+   "name": "butcherSign",
+   "reusable": true,
+   "effort": "S",
+   "description": "Icon only: a hanging wooden shop sign 120 x 90 on two chains with a black-and-white cleaver. No blood, no butcher character.",
+   "implementation": "K.rr board, cleaver as a rounded rect blade with a handle, swing() on the chains when it slams in."
+  }
+ ],
+ "owner_questions": [
+  "The merchant is shown listening at the stable window during the plan (56.7-67.1 s), before the narration reveals at 82.8-89.9 s that he had heard it; default: shown, quietly, and replayed in an inset at 87.6 s.",
+  "The butcher is shown only as a hanging shop sign with a cleaver inside the donkey's speech picture, with no blood and no butcher character; default: icon only.",
+  "The worker tries to move the bull by pulling a horn and pushing his rump, with no stick and no hitting; default: no hitting.",
+  "Invented English lettering is limited to BULL, DONKEY, PHEW!, ZZZ, FLOP!, NOPE!, AHA!, ME?!, OUCH!, GULP!, ZOOM!, CHOMP!, an HOURS counter and THE END; default: all kept.",
+  "The donkey ends with a rueful half smile and a small ear salute toward the distant bull (respect, no gloating) and no moral caption is added; default: as described.",
+  "Both time jumps to morning are handled differently: a NEXT MORNING... card at 67.2 s and a sky sweep without a card at 152.8 s (one card per film); default: one card."
+ ],
+ "implementation_notes": [
+  "Start from Library/template; world width is 1600 for both sets (WW = 1600), height 1230, ground 900; clamp the camera to the 1600 width. Minimum zoom is 1.0.",
+  "Build bull and donkey first as story files on one shared quadruped base with the lion's leg code so walk(), footfalls(), kick() and dustBurst work unchanged; wrap both with acting(); set LIFE.t = t for auto-blinks and use noBlink in the held shocks (96.2-97.4, 143.9-145.9).",
+  "Every cue time is the listed word start; anticipation may lead it by up to 1.5 s as given in each action's t. Whisper word starts can include about 0.4 s of preceding silence, so check the hard accents (95.8 whip pan, 143.12 butcher sign, 155.8 spring-up) against the audio envelope.",
+  "Mirrored staging is the main device: S4 and S13 use the same two-shot and lantern with the roles swapped; S2 and S10 use the same field path, plough and worker with the animals swapped; S7 and S18 are the same doorway with opposite outcomes. Reuse the same position functions and camera keys.",
+  "Speech and thought pictures always sit in the band y 300-560 above the post, never over a face; the plan cloud moves aside at 56.7 so the window is clear for the merchant.",
+  "The merchant behind the window is the full person figure drawn behind the wall and clipped by the window hole (head and shoulders visible): place his feet at y 1010 so his face is centred in the window.",
+  "Panel-only shake for the two heaves (75.6, 76.9) and the butcher sign (143.12); the caption panel never moves.",
+  "Sound: only the nine listed effects, all in listed pauses or after the last word, SND master 0.6. No animal voice effects over narration.",
+  "Subtitles are given as verbatim chunks in subtitles[]; copy them to chunks_ar.txt and chunks_en.txt and verify by program.",
+  "Icons inside bubbles are the real cast functions at small scale, not new drawings."
+ ],
+ "warnings": [
+  "Two new characters (bull, donkey) carry the whole film and neither exists in the Library; their faces must read at phone size, so test stills of the key expressions (sick act, smug, shocked, exhausted, smirk) before staging.",
+  "The side-view animals show one eye, so winks and peeks are lid pulses; make sure the 73.9 peek and the 151.9 wink read (hold at least 6 frames, add a small head turn to the lens).",
+  "S6 is 22 s in one set-up; it stays alive only if the plan cloud changes on every listed word and the merchant's entrance at 56.7 is clearly visible.",
+  "The 102.3-104.8 time-lapse has only 2.5 s for eight hours: keep it to three crossings, the sun arc and the counter.",
+  "dayCycle, thoughtCloud, painPulse, flush, inset circle, dream wash, runInPlace and the person costume presets are planned by other stories but not in the Library yet; if this film is built first it must create them under those names."
+ ]
+}

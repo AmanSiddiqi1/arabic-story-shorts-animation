@@ -1,0 +1,2897 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-109",
+ "title": "Ibrahim bin al-Mahdi and the Merchant's Sister",
+ "duration": 170.56,
+ "end_hold": 3.0,
+ "logline": "A prince out for a stroll follows his nose to a stranger's door and his heart to a hand at the window, bluffs his way in to dinner, wins the house over with a lute, and leaves with a bride: and the proof is standing in the caliph's court.",
+ "moral": "Honesty and open-handed generosity turn a gatecrasher into family, and are rewarded by the highest in the land.",
+ "tone": "Warm romantic comedy of manners: light, sly and good-natured. The humour is in Ibrahim's too-casual face and the double mistake at the door; the feeling is in the music and the hand.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.0,
+   "kind": "setup",
+   "cue": {
+    "word": "حكى",
+    "t": 0.0
+   },
+   "summary": "Frame: Ibrahim tells the caliph al-Ma'mun a story about himself; his young son stands by unremarked."
+  },
+  {
+   "id": "B2",
+   "t": 9.94,
+   "kind": "inciting",
+   "cue": {
+    "word": "شمّ",
+    "t": 9.94
+   },
+   "summary": "On a stroll he stops at a big house, caught by the smell of food."
+  },
+  {
+   "id": "B3",
+   "t": 15.74,
+   "kind": "turn",
+   "cue": {
+    "word": "يد",
+    "t": 15.74
+   },
+   "summary": "A woman's hand at the window: the food is forgotten."
+  },
+  {
+   "id": "B4",
+   "t": 24.56,
+   "kind": "rising",
+   "cue": {
+    "word": "الغرباء.",
+    "t": 24.56
+   },
+   "summary": "The tailor: the merchant who owns the house receives no strangers."
+  },
+  {
+   "id": "B5",
+   "t": 33.76,
+   "kind": "comic",
+   "cue": {
+    "word": "وظن",
+    "t": 33.76
+   },
+   "summary": "He follows two guests; each side takes him for the other's friend and he is welcomed."
+  },
+  {
+   "id": "B6",
+   "t": 50.82,
+   "kind": "rising",
+   "cue": {
+    "word": "تعزف",
+    "t": 50.82
+   },
+   "summary": "After the feast a singer plays the lute and sings of longing."
+  },
+  {
+   "id": "B7",
+   "t": 62.22,
+   "kind": "turn",
+   "cue": {
+    "word": "ناقصًا،",
+    "t": 62.22
+   },
+   "summary": "He says something is missing; she is angry and the guests are shocked."
+  },
+  {
+   "id": "B8",
+   "t": 73.8,
+   "kind": "emotion",
+   "cue": {
+    "word": "عزف",
+    "t": 73.8
+   },
+   "summary": "He plays and sings himself; she apologises; everyone praises him."
+  },
+  {
+   "id": "B9",
+   "t": 100.1,
+   "kind": "reveal",
+   "cue": {
+    "word": "الخلافة.",
+    "t": 100.1
+   },
+   "summary": "Alone with the host he admits he is of the caliph's family."
+  },
+  {
+   "id": "B10",
+   "t": 109.82,
+   "kind": "emotion",
+   "cue": {
+    "word": "اليد",
+    "t": 109.82
+   },
+   "summary": "He confesses the second reason he came: the hand. The merchant will help."
+  },
+  {
+   "id": "B11",
+   "t": 125.06,
+   "kind": "suspense",
+   "cue": {
+    "word": "يجد",
+    "t": 125.06
+   },
+   "summary": "The women of the house come one by one; none has the hand."
+  },
+  {
+   "id": "B12",
+   "t": 137.72,
+   "kind": "climax",
+   "cue": {
+    "word": "يدها،",
+    "t": 137.72
+   },
+   "summary": "The sister appears and he knows her hand."
+  },
+  {
+   "id": "B13",
+   "t": 144.56,
+   "kind": "resolution",
+   "cue": {
+    "word": "الزواج",
+    "t": 144.56
+   },
+   "summary": "Marriage on the spot, a generous dowry, and gifts that overflow his house."
+  },
+  {
+   "id": "B14",
+   "t": 162.56,
+   "kind": "surprise",
+   "cue": {
+    "word": "ابنًا",
+    "t": 162.56
+   },
+   "summary": "Back at court: the boy standing there is their son."
+  },
+  {
+   "id": "B15",
+   "t": 168.64,
+   "kind": "moral",
+   "cue": {
+    "word": "وقرّبه",
+    "t": 168.64
+   },
+   "summary": "The caliph honours the merchant's generosity and brings him near."
+  }
+ ],
+ "cast": [
+  {
+   "id": "ibrahim",
+   "name": "Ibrahim bin al-Mahdi",
+   "library": "person",
+   "base": "person {costume:'merchant', pal:{robe:GREEN, dot:GREEND, hc:C.yellow, jewel:C.red}}",
+   "look": "The catalogue 'MERCHANT PAL' look: green robe, yellow sash, big yellow turban with a red jewel and feather, short black beard, age 0.3. No crown: his rank is hidden until 96 s. Same costume in the court frame and inside the tale so he is always recognised. s 1.0.",
+   "new": false
+  },
+  {
+   "id": "caliph",
+   "name": "al-Ma'mun, the caliph",
+   "library": "person",
+   "base": "person {costume:'caliph'}",
+   "look": "Library caliph preset unchanged (red robe, blue cape, crown turban, grey beard), seated on the palaceHall throne (sit 1, seat bench, y = HALL.throne.sitY).",
+   "new": false
+  },
+  {
+   "id": "son",
+   "name": "Ibrahim's young son",
+   "library": "person",
+   "base": "person {costume:'prince', child:true}",
+   "look": "Child prince (catalogue 'CHILD (PRINCE)'): blue tunic that matches his mother's blue robe, small crown. Planted silently at the left of the court from the first frame; the payoff at 162.56.",
+   "new": false
+  },
+  {
+   "id": "merchant",
+   "name": "the merchant (the host)",
+   "library": "person",
+   "base": "person {costume:'merchant'}",
+   "look": "Library merchant preset unchanged (blue robe, white turban with red jewel, full black beard). s 1.0.",
+   "new": false
+  },
+  {
+   "id": "friendA",
+   "name": "first friend of the merchant",
+   "library": "person",
+   "base": "person {costume:'merchant', age:0.55, pal:{robe:BROWN, dot:BROWND, hc:C.white, jewel:C.blue}}",
+   "look": "Older, grey beard, brown robe; calm, dignified, reacts late.",
+   "new": false
+  },
+  {
+   "id": "friendB",
+   "name": "second friend of the merchant",
+   "library": "person",
+   "base": "person {costume:'villager', pal:{robe:C.red, dot:REDD, sash:C.yellow}}",
+   "look": "Younger, red tunic, small cap turban, moustache; eager, reacts first and biggest. s 0.95.",
+   "new": false
+  },
+  {
+   "id": "tailor",
+   "name": "the tailor",
+   "library": "person",
+   "base": "person {costume:'carpenter', sit:1, seat:'stool'}",
+   "look": "Carpenter preset as a craftsman (yellow shirt, brown apron) seated on a stool under the cloth stall, a strip of white cloth across his knees and a needle with a red thread in his right hand (drawn by the scene at P.hands).",
+   "new": false
+  },
+  {
+   "id": "singer",
+   "name": "the singer with the lute",
+   "library": "person",
+   "base": "person {costume:'maiden', hold:'oud'}",
+   "look": "Maiden preset unchanged (yellow dress, red sash, red headband), carrying and playing the oud. A proud professional: chin up, precise hands.",
+   "new": false
+  },
+  {
+   "id": "sister",
+   "name": "the merchant's sister",
+   "library": "person",
+   "base": "person {costume:'lady'}",
+   "look": "Lady preset unchanged (blue robe, white veil with a gold band). Her right wrist wears the gold bangle and red ring of the ladyHand prop (drawn by the scene at P.hands) so the hand is the same in the window, the memory inset and the reveal.",
+   "new": false
+  },
+  {
+   "id": "woman1",
+   "name": "first woman of the household",
+   "library": "person",
+   "base": "person {costume:'villageWoman'}",
+   "look": "Red dress, yellow headscarf; brisk. No bangle.",
+   "new": false
+  },
+  {
+   "id": "woman2",
+   "name": "second woman of the household",
+   "library": "person",
+   "base": "person {costume:'wife'}",
+   "look": "Yellow dotted dress, black bun (the Thief wife preset in the costume layer); shy. A blue bead bracelet, clearly not the bangle.",
+   "new": false
+  },
+  {
+   "id": "woman3",
+   "name": "third woman of the household",
+   "library": "person",
+   "base": "person {costume:'villageWoman', age:0.6, pal:{robe:GREEN, dot:GREEND, hc:C.white}}",
+   "look": "Older, green dress, white scarf; amused by the whole business. No jewellery.",
+   "new": false
+  },
+  {
+   "id": "witness1",
+   "name": "first witness",
+   "library": "person",
+   "base": "person {costume:'physician'}",
+   "look": "Physician preset as a learned elder (white robe, grey beard); carries the marriage scroll and a quill.",
+   "new": false
+  },
+  {
+   "id": "witness2",
+   "name": "second witness",
+   "library": "person",
+   "base": "person {costume:'ascetic', pal:{robe:C.paper}}",
+   "look": "Old, long white beard, stooped; arrives two steps behind, out of breath.",
+   "new": false
+  },
+  {
+   "id": "servant",
+   "name": "servants carrying the gifts (two copies)",
+   "library": "person",
+   "base": "person {costume:'servant'}",
+   "look": "Servant preset unchanged; the second copy has seed + 7 and a white cap (pal hc) so the two never move in unison.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "court",
+   "library": "palaceHall",
+   "description": "palaceHall({variant:'palace', wall:'paper', lampsLit:1, cushions:true}). Throne at the HALL.throne anchor (right), dais, carpet runner, door arch at the left with daylight. Floor y 900. One floorCushion on the dais to the left of the throne (x = HALL.throne.x - 150) stays empty until 169.66.",
+   "new": false
+  },
+  {
+   "id": "street",
+   "library": "marketStreet",
+   "description": "marketStreet({palette:'clear', stalls:[{x:60, kind:'cloth', cols:2}], palace:<default geometry>, palaceDoor:0}) with the palace facade used as the merchant's big house (right half; door at M.palace.door, balcony window at M.palace.balcony). The balcony window gets a live shutter drawn by the scene with townWindow (shutters 0..1). Ground y 900. The tailor's stool stands at x 250 in front of the cloth stall.",
+   "new": false
+  },
+  {
+   "id": "diningRoom",
+   "library": "palaceHall",
+   "description": "palaceHall({variant:'merchant', wall:'ochre', curtain:0, desk:false, u:0.3}). A low table (white cloth rectangle 420 x 26 at x 290..710, top y 850, drawn by the scene) carries three foodTrays; four floorCushions at x 200, 330, 560, 760 (sitY 900 - 30).",
+   "new": false
+  },
+  {
+   "id": "musicHall",
+   "library": "palaceHall",
+   "description": "The same house, another room: palaceHall({variant:'merchant', wall:'blue', shelves:false, desk:false, curtain:0..1, stools:[760], lampsLit:1, u}) where u (the window) runs 0.4 (late afternoon) to 0.78 (night) so time passes in the window. The curtain alcove (MERCHANT.curtain, right edge) has treasure:false and is the inner doorway of the women's rooms: singer, women and sister enter through it. Door with a leaf at the left (MERCHANT.door) for guests and witnesses. Floor cushions for guests at x 150, 270, 400, 540.",
+   "new": false
+  },
+  {
+   "id": "ibrahimHome",
+   "library": "palaceHall",
+   "description": "palaceHall({variant:'merchant', wall:'paper', shelves:false, desk:false, curtain:0, lamps:[500], u:0.25}): a bare, tidy room so the gifts read as an invasion. Door at the left (MERCHANT.door) through which everything arrives; hanging lamp at x 500, about y 330 (measure on the set).",
+   "new": false
+  }
+ ],
+ "props": [
+  {
+   "id": "oud",
+   "library": null,
+   "description": "Planned oud (lute), reused by name: pear body 110 x 150, round sound hole with a red rosette, short bent-back neck 120 long with 4 pegs, 4 string lines. Fields: rot, strum 0..1 (strings shiver 2 px), glow. Held across the body through person hold:'oud'.",
+   "new": true
+  },
+  {
+   "id": "ladyHand",
+   "library": null,
+   "description": "The hand that starts the story. Skin-colour hand, 5 tapered fingers, 90 wide x 130 tall at s 1, red nail dots, a gold bangle (yellow band 14 thick with 3 red dots) at the wrist, a red ring on the third finger, and 40 px of blue dotted sleeve. Fields: s, rot, curl 0..1 (fingers close on a shutter or curtain edge), wave, glint 0..1 (star on the bangle), plain:true (no bangle or ring, wider palm: the other women's hands), bead:true (blue bead bracelet).",
+   "new": true
+  },
+  {
+   "id": "foodTray",
+   "library": null,
+   "description": "Planned brass tray (reused by name) 150 wide: roast bird dome, rice mound, bread, dates; fill 1..0 empties it; steam curls while fill > 0.5.",
+   "new": true
+  },
+  {
+   "id": "floorCushion",
+   "library": null,
+   "description": "Planned loose floor cushion (reused by name) 100 x 30 in red, blue or yellow with dots.",
+   "new": true
+  },
+  {
+   "id": "scroll",
+   "library": null,
+   "description": "Planned scroll (reused by name): open 0..1 unrolls to 200 x 120 with wavy lines and a red seal that stamps on (seal 0..1). The marriage contract.",
+   "new": true
+  },
+  {
+   "id": "purse",
+   "library": null,
+   "description": "Planned fat coin purse (reused by name), 60 x 70, red with a yellow tie; three stack into the dowry.",
+   "new": true
+  },
+  {
+   "id": "giftChest",
+   "library": null,
+   "description": "The chest of the planned treasureHoard module (reused): 120 x 90 box, domed lid, yellow bands; variants by seed: closed chest, open chest with coinPile, rolled carpet (cylinder 200 x 50, red and blue stripes), cloth bolt stack, foodTray. Stacked on a grid to fill the room.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 6.0,
+   "paragraphs": [
+    1
+   ],
+   "set": "court",
+   "cast": [
+    "ibrahim",
+    "caliph",
+    "son"
+   ],
+   "summary": "The frame: in the caliph's court Ibrahim begins his tale; a thought cloud opens over him and we fall into it.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Wide on the hall 0-3.1 (zoom 1.0, centre 500,640), then ease toward the cloud above Ibrahim; 5.58-6.0 the cloud itself grows to fill the panel (taleZoom)."
+   },
+   "composition": "Caliph on the throne at the right (HALL.throne.x, about 800), Ibrahim standing at x 470 turned to him, the boy at x 250 half behind his father, hands clasped. Cloud at (430, 330), 420 x 280, clear of all three heads.",
+   "actions": [
+    {
+     "t": 0.0,
+     "cue": {
+      "word": "حكى",
+      "t": 0.0
+     },
+     "who": "camera",
+     "action": "establishing hold on the court; lamps flicker, everyone already alive (blinks via LIFE.t)",
+     "acting": "caliph relaxed, lid 0.2; Ibrahim mid-bow",
+     "library": "palaceHall + LIFE"
+    },
+    {
+     "t": 0.5,
+     "cue": {
+      "word": "إبراهيم",
+      "t": 0.5
+     },
+     "who": "ibrahim",
+     "action": "rises from the bow and starts telling: right hand opens toward the caliph (PERSON_HANDS.palmsUp.R), talk 0.7; label IBRAHIM pops under him",
+     "acting": "gaze lookAt(caliph), bright brows (brow -0.3), small forward tip 0.05 on each stress",
+     "library": "person talk, handR + S.label"
+    },
+    {
+     "t": 2.14,
+     "cue": {
+      "word": "للمأمون",
+      "t": 2.14
+     },
+     "who": "caliph",
+     "action": "leans forward on the throne, chin on his hand; label AL-MA'MUN with an arrow",
+     "acting": "gaze lookAt(ibrahim), brow -0.3 curious, tip 0.08, slow blink at 2.9",
+     "library": "PERSON_HANDS.chin + S.arrow/S.label"
+    },
+    {
+     "t": 2.6,
+     "who": "son",
+     "action": "shifts his weight and looks up at his father, then at the caliph",
+     "acting": "gaze snaps father, caliph, father (2-frame saccades); smile; idle breathe",
+     "library": "lookAt + breathe"
+    },
+    {
+     "t": 3.14,
+     "cue": {
+      "word": "أنه",
+      "t": 3.14
+     },
+     "who": "fx",
+     "action": "three trail bubbles pop upward from Ibrahim, then the thought cloud opens above him",
+     "acting": "Ibrahim glances up into it (gaze [0,-1]) then back to the caliph",
+     "library": "thoughtCloud(ctx, 430, 330, 420, 280, t, {p, tail, inside})"
+    },
+    {
+     "t": 3.88,
+     "cue": {
+      "word": "خرج",
+      "t": 3.88
+     },
+     "who": "ibrahim",
+     "action": "inside the cloud a small Ibrahim steps out of a doorway and strolls along the market street (the S2 set at scale 0.34)",
+     "acting": "mini figure: arms swinging, gaze wandering up at the roofs, carefree smile",
+     "library": "thoughtCloud inside() draws marketStreet + person {v:1, ...walk(IX, t)}"
+    },
+    {
+     "t": 4.38,
+     "cue": {
+      "word": "يتنزه،",
+      "t": 4.38
+     },
+     "who": "ibrahim",
+     "action": "the stroll continues; he whistles one note (a single musicNotes glyph) which plants his musical ear",
+     "acting": "mini figure mouth 'o', lid 0.3, light bounce on each footfall",
+     "library": "walk + footfalls + musicNotes n 1"
+    },
+    {
+     "t": 5.58,
+     "who": "camera",
+     "action": "taleZoom: the cloud swells past the panel edges until the street inside is the whole picture; the court fades under it",
+     "acting": "the caliph is the last thing visible at the right edge, still leaning in",
+     "library": "taleZoom (planned): cloud w,h and inside scale keyed 0.34 to 1.0 over 0.42 s"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.6,
+     "text": "IBRAHIM"
+    },
+    {
+     "t": 2.2,
+     "text": "AL-MA'MUN"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 5.8,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "zoom",
+    "t": 6.0,
+    "label": ""
+   }
+  },
+  {
+   "id": "S2",
+   "start": 6.0,
+   "end": 13.2,
+   "paragraphs": [
+    1
+   ],
+   "set": "street",
+   "cast": [
+    "ibrahim",
+    "tailor"
+   ],
+   "summary": "Inside the tale: Ibrahim stops dead in front of the big house because his nose has found dinner.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide street 6.0-9.0 (zoom 1.0); 9.0-11.5 ease to a medium on Ibrahim with the house door and balcony still in frame (zoom 1.35, centre 560,650)."
+   },
+   "composition": "House facade fills the right half (door cx about 790, balcony above it); cloth stall and the tailor small at the left edge as background life. Ibrahim walks left to right and stops at x 470, so the aroma has 300 px to travel to his nose.",
+   "actions": [
+    {
+     "t": 6.0,
+     "who": "ibrahim",
+     "action": "walking in at strolling speed from x 150, exactly the motion seen in the cloud",
+     "acting": "gaze up and around, smile",
+     "library": "walk(IX, t) + footfalls"
+    },
+    {
+     "t": 6.48,
+     "cue": {
+      "word": "فتوقف",
+      "t": 6.48
+     },
+     "who": "ibrahim",
+     "action": "stops mid-step: front foot hangs, body rocks forward then settles at x 470",
+     "acting": "head lifts, eyes widen, nostril lead: tip 0.1 then settleTo 0.03",
+     "library": "settleTo + anticipate"
+    },
+    {
+     "t": 7.28,
+     "cue": {
+      "word": "أمام",
+      "t": 7.28
+     },
+     "who": "ibrahim",
+     "action": "turns his head toward the house; pupils travel up the facade from door to roof",
+     "acting": "gaze lookAt(door) then lookAt(balcony); brow -0.4",
+     "library": "lookAt"
+    },
+    {
+     "t": 7.8,
+     "cue": {
+      "word": "بيت",
+      "t": 7.8
+     },
+     "who": "set",
+     "action": "the house shows off: the camera lets its full height read; an arrow and label BIG HOUSE point at the facade",
+     "acting": "tailor in the background glances up from his sewing, then back",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 8.98,
+     "cue": {
+      "word": "بعدما",
+      "t": 8.98
+     },
+     "who": "fx",
+     "action": "three aroma ribbons (stinkLines in aroma mode, yellow with small steam curls) snake out over the door and drift toward him",
+     "acting": "Ibrahim not yet looking at them; nose twitch (2 px head bob)",
+     "library": "stinkLines {mode:\"aroma\"} along a bezier door to nose"
+    },
+    {
+     "t": 9.94,
+     "cue": {
+      "word": "شمّ",
+      "t": 9.94
+     },
+     "who": "ibrahim",
+     "action": "two big sniffs: chest lifts on each (sq 1.05), eyes close, the ribbons bend into his nose",
+     "acting": "lid 1, blissful smile, tip 0.12 toward the house, hands float up (PERSON_HANDS.palmsUp)",
+     "library": "sq pulses + lid + handL/handR"
+    },
+    {
+     "t": 10.38,
+     "cue": {
+      "word": "رائحة",
+      "t": 10.38
+     },
+     "who": "ibrahim",
+     "action": "he is pulled two tiptoe steps along the ribbon toward the door, nose first",
+     "acting": "eyes still shut, body lagging behind the head",
+     "library": "walk with small amp + tip"
+    },
+    {
+     "t": 11.12,
+     "cue": {
+      "word": "طعام",
+      "t": 11.12
+     },
+     "who": "fx",
+     "action": "thought cloud (small, 220 x 160 at 300, 380): a steaming roast bird on a foodTray",
+     "acting": "tongue tip shows (mouth open), hand rubs his belly in circles",
+     "library": "thoughtCloud + foodTray {fill:1}; handR circle on the belly"
+    },
+    {
+     "t": 11.68,
+     "cue": {
+      "word": "شهي.",
+      "t": 11.68
+     },
+     "who": "ibrahim",
+     "action": "opens his eyes, delighted, and looks straight at the door as if to knock",
+     "acting": "gaze lookAt(door), mouth 'smile', one eager hop (hop 14 px + landSquash)",
+     "library": "hop + landSquash"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 10.0,
+     "text": "SNIFF! SNIFF!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 12.9,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 13.2,
+    "label": ""
+   }
+  },
+  {
+   "id": "S3",
+   "start": 13.2,
+   "end": 26.0,
+   "paragraphs": [
+    2
+   ],
+   "set": "street",
+   "cast": [
+    "ibrahim",
+    "tailor",
+    "sister"
+   ],
+   "summary": "A hand at the balcony window wipes dinner from his mind; the tailor tells him the owner admits no strangers.",
+   "camera": {
+    "shot": "medium",
+    "move": "tilt",
+    "notes": "Tilt up from Ibrahim to the balcony 13.5-14.6 and hold a tight shot on the window (zoom 2.3) for the hand; cut back wide at 16.6; ease left to a two-shot with the tailor 18.6-19.2 (twoShot, zoom 1.5)."
+   },
+   "composition": "Window shot: balcony window centred, Ibrahim's turban tip at the bottom edge so we know whose view it is. Tailor two-shot: tailor seated at x 250, Ibrahim standing at x 400; the house door stays visible at the right edge for the pointing.",
+   "actions": [
+    {
+     "t": 13.3,
+     "who": "set",
+     "action": "the balcony shutter creaks open a hand-width (shutters 0 to 0.3); dark inside",
+     "acting": "Ibrahim, hand raised to knock, freezes",
+     "library": "townWindow shutters keyed"
+    },
+    {
+     "t": 13.74,
+     "cue": {
+      "word": "لمح",
+      "t": 13.74
+     },
+     "who": "ibrahim",
+     "action": "his eyes flick up from the door to the window; the camera follows his eye line",
+     "acting": "gaze snap [0.4,-1]; the knocking hand hangs in the air",
+     "library": "lookAt + camera tilt"
+    },
+    {
+     "t": 14.78,
+     "cue": {
+      "word": "نافذة",
+      "t": 14.78
+     },
+     "who": "sister",
+     "action": "only her hand: fingers curl round the shutter edge from inside (ladyHand curl 1); nothing else of her is seen",
+     "acting": "a slow, unhurried movement",
+     "library": "ladyHand {curl:1} clipped to the window opening"
+    },
+    {
+     "t": 15.74,
+     "cue": {
+      "word": "يد",
+      "t": 15.74
+     },
+     "who": "sister",
+     "action": "the hand slides out onto the sill and rests, bangle catching the sun (one star glint); a faint blue sleeve behind",
+     "acting": "fingers drum once, little finger last",
+     "library": "ladyHand {glint:1}"
+    },
+    {
+     "t": 16.06,
+     "cue": {
+      "word": "امرأة،",
+      "t": 16.06
+     },
+     "who": "sister",
+     "action": "the hand turns, draws the shutter closed and is gone (shutters 0.3 to 0)",
+     "acting": "quick but graceful; the bangle is the last thing to vanish",
+     "library": "ladyHand rot + townWindow"
+    },
+    {
+     "t": 16.82,
+     "cue": {
+      "word": "فنسي",
+      "t": 16.82
+     },
+     "who": "ibrahim",
+     "action": "wide again: the roast-bird thought cloud above him pops like a soap bubble and the aroma ribbons fall limp to the ground",
+     "acting": "stunned: eyes 'wide', mouth 'o', arms dropped, sq 0.96; he does not even look at the door now",
+     "library": "thoughtCloud p 1 to 0 + stinkLines drop"
+    },
+    {
+     "t": 17.94,
+     "cue": {
+      "word": "الطعام.",
+      "t": 17.94
+     },
+     "who": "fx",
+     "action": "a new small cloud takes the old one's place: the ladyHand with its bangle, and one heart",
+     "acting": "dreamy half lids (lid 0.45), slow smile, sway 3 px",
+     "library": "thoughtCloud + ladyHand + heart"
+    },
+    {
+     "t": 18.7,
+     "who": "ibrahim",
+     "action": "shakes himself, looks about for someone to ask, spots the tailor and walks left to him (x 470 to 400)",
+     "acting": "gaze sweeps right, left, locks on the tailor",
+     "library": "walk + footfalls"
+    },
+    {
+     "t": 19.04,
+     "cue": {
+      "word": "سأل",
+      "t": 19.04
+     },
+     "who": "ibrahim",
+     "action": "asks: thumb jerked back over his shoulder at the house",
+     "acting": "talk 0.7, brow -0.4, leaning in (tip 0.08)",
+     "library": "aR angles for a readable thumb-back; talk"
+    },
+    {
+     "t": 19.74,
+     "cue": {
+      "word": "خياطًا",
+      "t": 19.74
+     },
+     "who": "tailor",
+     "action": "keeps sewing two more stitches (needle up, down), then looks up over the cloth; label THE TAILOR",
+     "acting": "lid 0.4 measuring him, gaze travels turban to shoes and back",
+     "library": "handRW needle path + lookAt + S.label"
+    },
+    {
+     "t": 20.64,
+     "cue": {
+      "word": "فعرف",
+      "t": 20.64
+     },
+     "who": "tailor",
+     "action": "answers: points the needle at the house",
+     "acting": "talk 0.6, matter of fact, one eyebrow up (brow -0.3)",
+     "library": "PERSON_HANDS.pointFwd.R + talk"
+    },
+    {
+     "t": 22.42,
+     "cue": {
+      "word": "لتاجر",
+      "t": 22.42
+     },
+     "who": "fx",
+     "action": "iconBalloon from the tailor (above the stall, clear of both heads): the merchant's head (blue turban, beard) over a small house icon",
+     "acting": "Ibrahim nods eagerly, gaze on the balloon",
+     "library": "iconBalloon with person {costume:\"merchant\"} head at scale 0.4"
+    },
+    {
+     "t": 23.24,
+     "cue": {
+      "word": "لا",
+      "t": 23.24
+     },
+     "who": "tailor",
+     "action": "shakes his head and crosses his forearms in a big X",
+     "acting": "mouth 'frown', lid 0.6, head left-right twice",
+     "library": "aL/aR crossing angles (reads at phone size)"
+    },
+    {
+     "t": 23.8,
+     "cue": {
+      "word": "يستقبل",
+      "t": 23.8
+     },
+     "who": "fx",
+     "action": "in the balloon the house door slams shut on a tiny stranger figure who bounces off; a red X stamps over it",
+     "acting": "tailor shrugs (PERSON_HANDS.palmsUp), back to his needle",
+     "library": "iconBalloon frame 2 + townDoor"
+    },
+    {
+     "t": 24.56,
+     "cue": {
+      "word": "الغرباء.",
+      "t": 24.56
+     },
+     "who": "ibrahim",
+     "action": "deflates: shoulders drop, then his eyes creep back up to the shut window",
+     "acting": "sq 0.95, lid 0.5, gaze lookAt(balcony); one finger taps his chin: he is not giving up",
+     "library": "PERSON_HANDS.chin + lookAt"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 19.8,
+     "text": "THE TAILOR"
+    },
+    {
+     "t": 23.3,
+     "text": "NO STRANGERS!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 13.3,
+     "kind": "chime"
+    },
+    {
+     "t": 18.85,
+     "kind": "pop"
+    },
+    {
+     "t": 25.9,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 26.0,
+    "label": ""
+   }
+  },
+  {
+   "id": "S4",
+   "start": 26.0,
+   "end": 38.64,
+   "paragraphs": [
+    3
+   ],
+   "set": "street",
+   "cast": [
+    "ibrahim",
+    "friendA",
+    "friendB",
+    "merchant",
+    "tailor"
+   ],
+   "summary": "He tags along behind two real guests; guests and host each take him for the other's friend, and he is welcomed in.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Wide 26.0-29.6 tracking the three walkers to the door; 30.0 settle on a group shot at the door (zoom 1.4, centre 700,600) that keeps both thought clouds and all four heads in frame."
+   },
+   "composition": "Door at the right (M.palace.door, stand on the step). Final line-up on the ground: friendB x 600, friendA x 680, Ibrahim x 520 half a step behind, merchant on the step at door cx about 790, one head higher. Clouds: friends' cloud at (420, 300), merchant's cloud at (800, 250); Ibrahim's face stays uncovered between them.",
+   "actions": [
+    {
+     "t": 26.0,
+     "who": "friendA",
+     "action": "the two friends stroll in from the left, chatting, heading for the door; friendB half a step ahead and gesturing",
+     "acting": "friendA calm, hands behind; friendB talk 0.6, lively",
+     "library": "walk(FX, t) for each with different phase"
+    },
+    {
+     "t": 26.44,
+     "cue": {
+      "word": "تبع",
+      "t": 26.44
+     },
+     "who": "ibrahim",
+     "action": "watches them pass, has the idea (finger up), and slips in behind them, copying their pace",
+     "acting": "gaze follows them, quick sly smile (brow -0.4), then a too-casual face",
+     "library": "PERSON_HANDS.pointUp then walk on the same speed curve, 90 px behind"
+    },
+    {
+     "t": 27.14,
+     "cue": {
+      "word": "رجلين",
+      "t": 27.14
+     },
+     "who": "friendB",
+     "action": "glances back over his shoulder at the stranger; Ibrahim answers with a confident little wave",
+     "acting": "friendB brow -0.3 then a polite nod; Ibrahim smile, PERSON_HANDS.wave",
+     "library": "lookAt + wave"
+    },
+    {
+     "t": 27.98,
+     "cue": {
+      "word": "يعرفان",
+      "t": 27.98
+     },
+     "who": "tailor",
+     "action": "in the background the tailor lowers his sewing and watches the three go by, mouth open",
+     "acting": "gaze follows Ibrahim; mouth 'o'; needle forgotten in mid air",
+     "library": "lookAt"
+    },
+    {
+     "t": 28.82,
+     "cue": {
+      "word": "التاجر.",
+      "t": 28.82
+     },
+     "who": "friendA",
+     "action": "knocks on the door (three small raps, the door shivers 2 px); all three stop",
+     "acting": "Ibrahim straightens his turban with both hands, a breath in (sq 1.04)",
+     "library": "handRW on the door + kick on the door"
+    },
+    {
+     "t": 29.7,
+     "who": "merchant",
+     "action": "the door swings open (townDoor open 0 to 1) and the merchant fills it, arms rising in greeting",
+     "acting": "broad smile to the friends; then his eyes land on the third man and stop",
+     "library": "townDoor + person armsOut"
+    },
+    {
+     "t": 30.0,
+     "cue": {
+      "word": "ظن",
+      "t": 30.0
+     },
+     "who": "fx",
+     "action": "thought cloud over the two friends: mini Ibrahim and the mini merchant arm in arm with a heart, an arrow from the cloud to the merchant",
+     "acting": "friendB nods to friendA: he must be HIS friend",
+     "library": "thoughtCloud inside: two persons at scale 0.4, heart"
+    },
+    {
+     "t": 30.88,
+     "cue": {
+      "word": "الرجلان",
+      "t": 30.88
+     },
+     "who": "friendA",
+     "action": "the friends step apart to make room and bow Ibrahim politely forward",
+     "acting": "friendA slow courteous tip 0.1; friendB a beat later (stagger), over-eager",
+     "library": "stagger(i) + tip"
+    },
+    {
+     "t": 32.36,
+     "cue": {
+      "word": "صديق",
+      "t": 32.36
+     },
+     "who": "ibrahim",
+     "action": "accepts the courtesy with a small hand-on-chest bow, as if he came here every week",
+     "acting": "gaze lookAt(merchant), serene smile, lid 0.3",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 33.76,
+     "cue": {
+      "word": "وظن",
+      "t": 33.76
+     },
+     "who": "fx",
+     "action": "second thought cloud over the merchant: mini Ibrahim standing between the two mini friends, their arms round his shoulders, a heart",
+     "acting": "merchant looks from the friends to Ibrahim and back, then beams: any friend of theirs",
+     "library": "thoughtCloud (second instance, seed 2)"
+    },
+    {
+     "t": 35.38,
+     "cue": {
+      "word": "أنه",
+      "t": 35.38
+     },
+     "who": "ibrahim",
+     "action": "the comedy beat: with both clouds hanging, he holds still, slides his pupils left to one cloud, right to the other, then looks at the camera",
+     "acting": "only the eyes move for 0.6 s; then a tiny shrug (shoulders 4 px) and an innocent smile",
+     "library": "gaze keys; suspense by stillness"
+    },
+    {
+     "t": 36.02,
+     "cue": {
+      "word": "صديقهما،",
+      "t": 36.02
+     },
+     "who": "fx",
+     "action": "both clouds pop together",
+     "acting": "all three hosts smiling at him",
+     "library": "thoughtCloud p to 0"
+    },
+    {
+     "t": 37.08,
+     "cue": {
+      "word": "فرحّبوا",
+      "t": 37.08
+     },
+     "who": "merchant",
+     "action": "throws both arms wide and steps aside from the doorway; the friends go in first",
+     "acting": "mouth 'open' laugh, talk 0.8, tip 0.06",
+     "library": "PERSON_HANDS.armsOut + walk"
+    },
+    {
+     "t": 37.9,
+     "cue": {
+      "word": "به.",
+      "t": 37.9
+     },
+     "who": "ibrahim",
+     "action": "walks in last; on the threshold he looks back up at the balcony window for one beat, then goes in and the door shuts",
+     "acting": "gaze lookAt(balcony), hopeful; quick step in",
+     "library": "walk + lookAt + townDoor closing"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 37.2,
+     "text": "WELCOME!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 29.8,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "wipe",
+    "t": 38.64,
+    "label": ""
+   }
+  },
+  {
+   "id": "S5",
+   "start": 38.64,
+   "end": 45.4,
+   "paragraphs": [
+    4
+   ],
+   "set": "diningRoom",
+   "cast": [
+    "ibrahim",
+    "merchant",
+    "friendA",
+    "friendB"
+   ],
+   "summary": "The rich table: the dinner his nose promised, eaten with gusto.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide on the table 38.64-41.5 (zoom 1.1), slow push to Ibrahim and the trays (zoom 1.5, centre 520,700) by 44.5."
+   },
+   "composition": "Low table x 290..710. Seated on floorCushions, all facing the viewer: friendB x 200, friendA x 330, Ibrahim x 560 (centre right, the star), merchant x 760 at the head. Three foodTrays on the cloth at x 370, 500, 630.",
+   "actions": [
+    {
+     "t": 38.64,
+     "cue": {
+      "word": "جلس",
+      "t": 38.64
+     },
+     "who": "ibrahim",
+     "action": "sits down onto his cushion (sit 0 to 1 over 0.6 s with a small bounce)",
+     "acting": "eyes on the food before he has landed; rubs his hands",
+     "library": "person {sit, seat:'floor'} + settleTo"
+    },
+    {
+     "t": 39.6,
+     "who": "merchant",
+     "action": "gestures over the table: please, begin",
+     "acting": "host pride, PERSON_HANDS.palmsUp, gaze sweeps his guests",
+     "library": "palmsUp"
+    },
+    {
+     "t": 40.4,
+     "cue": {
+      "word": "إبراهيم",
+      "t": 40.4
+     },
+     "who": "ibrahim",
+     "action": "breathes the steam in once more with closed eyes: the same sniff as in the street, now with the dish in front of him",
+     "acting": "lid 1, sq 1.05, blissful",
+     "library": "sq pulse (callback to 9.94)"
+    },
+    {
+     "t": 41.68,
+     "cue": {
+      "word": "مائدة",
+      "t": 41.68
+     },
+     "who": "fx",
+     "action": "the three trays steam; a counter-free visual: each tray is piled high (fill 1) with an arrow and label FEAST",
+     "acting": "friendB already reaching; friendA tucks his sleeve back first",
+     "library": "foodTray {fill:1} + S.label"
+    },
+    {
+     "t": 42.32,
+     "cue": {
+      "word": "غنية",
+      "t": 42.32
+     },
+     "who": "ibrahim",
+     "action": "eats: right hand goes tray to mouth three times on a steady rhythm, cheeks round",
+     "acting": "chew (jaw 2 px), eyes shut on each bite, eyebrows up in praise",
+     "library": "handRW to the tray then handR to the mouth, keyed loop"
+    },
+    {
+     "t": 43.22,
+     "cue": {
+      "word": "بالأطعمة،",
+      "t": 43.22
+     },
+     "who": "foodTray",
+     "action": "the trays empty in turn (fill 1 to 0.15), left one first; steam thins",
+     "acting": "friends lean back one after the other, hands on bellies (staggered)",
+     "library": "foodTray fill keys + stagger"
+    },
+    {
+     "t": 44.4,
+     "who": "ibrahim",
+     "action": "pats his belly, thumbs-up nod to the host; the merchant laughs and claps once to rise",
+     "acting": "contented half lids; merchant laugh (lid 0.9, tip -0.08)",
+     "library": "person laugh helper"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 41.8,
+     "text": "FEAST"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "whip",
+    "t": 45.4,
+    "label": ""
+   }
+  },
+  {
+   "id": "S6",
+   "start": 45.4,
+   "end": 66.0,
+   "paragraphs": [
+    4
+   ],
+   "set": "musicHall",
+   "cast": [
+    "ibrahim",
+    "merchant",
+    "friendA",
+    "friendB",
+    "singer"
+   ],
+   "summary": "In the music hall the singer plays and sings of longing; Ibrahim, delighted, still says something is missing, and she is furious.",
+   "camera": {
+    "shot": "wide",
+    "move": "drift",
+    "notes": "Whip-pan lands on the hall 45.4-46.2; wide to 50.2; medium on the singer 50.8-54.9 (zoom 1.5, centre 720,640); two-shot singer and Ibrahim 55-63 (twoShot); snap out to the wide for the guests gasp at 65.2."
+   },
+   "composition": "Guests on cushions in the left half, facing the viewer but looking right: friendB 150, friendA 270, merchant 400, Ibrahim 540. Singer's stool at x 760; curtain alcove at the right edge. Notes rise into the empty blue wall above (y 250..550).",
+   "actions": [
+    {
+     "t": 45.62,
+     "cue": {
+      "word": "انتقل",
+      "t": 45.62
+     },
+     "who": "camera",
+     "action": "whip pan (speed streaks) from the table to the music hall; the four men arrive and settle on cushions one after another",
+     "acting": "full and cheerful; friendB flops down, friendA lowers himself carefully",
+     "library": "sit keyed with stagger(i)"
+    },
+    {
+     "t": 47.38,
+     "cue": {
+      "word": "قاعة",
+      "t": 47.38
+     },
+     "who": "set",
+     "action": "the hall presents itself: lamps flicker on, the curtain at the right stirs",
+     "acting": "all four heads turn to the curtain, Ibrahim first",
+     "library": "palaceHall lampsLit + curtain 0.05 wobble"
+    },
+    {
+     "t": 48.98,
+     "cue": {
+      "word": "دخلت",
+      "t": 48.98
+     },
+     "who": "singer",
+     "action": "the curtain parts (curtain 0 to 0.6) and the singer walks in with the oud held across her body",
+     "acting": "chin up, eyes ahead, unhurried; small professional smile",
+     "library": "person {costume:'maiden', hold:'oud'} + walk"
+    },
+    {
+     "t": 50.2,
+     "cue": {
+      "word": "جارية",
+      "t": 50.2
+     },
+     "who": "singer",
+     "action": "sits on the stool at x 760, sets the oud on her knee, tests one string",
+     "acting": "sit 1 seat 'stool'; gaze down at the strings, lid 0.3",
+     "library": "sit + oud {strum}"
+    },
+    {
+     "t": 50.82,
+     "cue": {
+      "word": "تعزف",
+      "t": 50.82
+     },
+     "who": "singer",
+     "action": "plays: the right hand strums on a steady beat, the left walks the neck; black notes with yellow heads rise from the sound hole",
+     "acting": "head tilts with the beat, eyes half shut",
+     "library": "person hold oud: strum phase from t; musicNotes from the oud"
+    },
+    {
+     "t": 51.68,
+     "cue": {
+      "word": "العود",
+      "t": 51.68
+     },
+     "who": "friendB",
+     "action": "the guests start to sway, each on his own phase; friendB taps his knee",
+     "acting": "friendA eyes shut; merchant proud glance at his guests",
+     "library": "stagger + breathe"
+    },
+    {
+     "t": 52.28,
+     "cue": {
+      "word": "وأنشدت",
+      "t": 52.28
+     },
+     "who": "singer",
+     "action": "sings: head lifts, mouth opens on the long vowels, free hand opens outward between strums",
+     "acting": "talk 0.8 slow, lid 0.6, brow -0.5 (yearning)",
+     "library": "talk + handL"
+    },
+    {
+     "t": 54.38,
+     "cue": {
+      "word": "الشوق.",
+      "t": 54.38
+     },
+     "who": "fx",
+     "action": "the note heads turn red and two of them become small hearts that drift away and fade before arriving anywhere: longing",
+     "acting": "she looks far past the audience (gaze [-0.3,-0.6]), wet eyes",
+     "library": "musicNotes {heart:true} + wet"
+    },
+    {
+     "t": 54.92,
+     "cue": {
+      "word": "أعجب",
+      "t": 54.92
+     },
+     "who": "ibrahim",
+     "action": "is enchanted: hand on his chest, eyes closed, swaying with the song, nodding the beat a hair before she plays it",
+     "acting": "lid 1, smile, PERSON_HANDS.chest; the nod leading the beat is the clue that he is a musician",
+     "library": "chest + tip sway"
+    },
+    {
+     "t": 57.36,
+     "cue": {
+      "word": "بصوتها،",
+      "t": 57.36
+     },
+     "who": "ibrahim",
+     "action": "one note floats down to him; he catches it between two fingers and turns it over admiringly",
+     "acting": "gaze on the note, brow -0.4, impressed",
+     "library": "handRW to the note"
+    },
+    {
+     "t": 58.26,
+     "cue": {
+      "word": "لكنه",
+      "t": 58.26
+     },
+     "who": "ibrahim",
+     "action": "his eyes open; a tiny wince; the index finger rises (anticipation: the finger dips first)",
+     "acting": "brow 0.2, lid 0, mouth pressed; he cannot help himself",
+     "library": "anticipate + PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 59.34,
+     "cue": {
+      "word": "قال",
+      "t": 59.34
+     },
+     "who": "ibrahim",
+     "action": "speaks across the music; iconBalloon above him: a row of four notes on a staff line",
+     "acting": "talk 0.7, kindly meant, gaze lookAt(singer)",
+     "library": "iconBalloon + talk"
+    },
+    {
+     "t": 60.78,
+     "cue": {
+      "word": "أدائها",
+      "t": 60.78
+     },
+     "who": "singer",
+     "action": "her strumming hand slows and stops in mid air; the last notes in the air hang still",
+     "acting": "eyes slide to him without the head turning; lid 0.5",
+     "library": "strum amp to 0; musicNotes frozen"
+    },
+    {
+     "t": 62.22,
+     "cue": {
+      "word": "ناقصًا،",
+      "t": 62.22
+     },
+     "who": "fx",
+     "action": "in the balloon the third note fades to a dashed empty outline with a small question mark: something is missing",
+     "acting": "Ibrahim taps the gap with his finger, eyebrows raised helpfully",
+     "library": "iconBalloon frame 2"
+    },
+    {
+     "t": 63.0,
+     "who": "fx",
+     "action": "the hanging notes drop to the floor and bounce (silent)",
+     "acting": "the three other guests wince in sequence, friendB first",
+     "library": "musicNotes fall with fallY + rebound"
+    },
+    {
+     "t": 63.52,
+     "cue": {
+      "word": "فغضبت",
+      "t": 63.52
+     },
+     "who": "singer",
+     "action": "anger: she stands up off the stool (sit 1 to 0), the flush climbs her face, two steam puffs, the oud hugged to her chest",
+     "acting": "brow 1, mouth frown, sq 1.08 drawn up tall, then turns her head away from him (gaze [1,-0.3]), chin high",
+     "library": "flush + sit + tip -0.05"
+    },
+    {
+     "t": 64.38,
+     "cue": {
+      "word": "منه",
+      "t": 64.38
+     },
+     "who": "ibrahim",
+     "action": "the raised finger wilts; he shrinks on his cushion; the balloon pops",
+     "acting": "sq 0.92, eyes wide, mouth small; gaze flicks from her to the host",
+     "library": "sq + gaze"
+    },
+    {
+     "t": 65.22,
+     "cue": {
+      "word": "الضيوف.",
+      "t": 65.22
+     },
+     "who": "friendB",
+     "action": "the guests gasp, staggered: friendB hands to cheeks, friendA covers his mouth, the merchant grabs his turban; all three stare at Ibrahim",
+     "acting": "eyes wide, three different gestures, 3 frames apart",
+     "library": "PERSON_HANDS.cheeks / mouthCover / headHold + stagger"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 65.3,
+     "text": "GASP!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 66.0,
+    "label": ""
+   }
+  },
+  {
+   "id": "S7",
+   "start": 66.0,
+   "end": 84.0,
+   "paragraphs": [
+    5
+   ],
+   "set": "musicHall",
+   "cast": [
+    "ibrahim",
+    "merchant",
+    "friendA",
+    "friendB",
+    "singer"
+   ],
+   "summary": "Sorry for his word, he asks for the lute to show what he meant, plays and sings wonderfully; she apologises and the guests cheer.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on Ibrahim for the regret 66-70 (zoom 1.6); two-shot for the handover 70.3-72.5; slow push-in on his playing 73.8-77 (zoom 1.8, hall lights warming); two-shot again for the apology 77.4-81; wide at 81.2 for the applause."
+   },
+   "composition": "Same places as S6. Ibrahim stays on his cushion at x 540; the singer stands at x 760 beside her stool. The oud crosses the 220 px gap between them at shoulder height. Gold notes fill the wall above the whole group.",
+   "actions": [
+    {
+     "t": 66.0,
+     "cue": {
+      "word": "ندم",
+      "t": 66.0
+     },
+     "who": "ibrahim",
+     "action": "regret: his head sinks, one hand goes to the back of his neck",
+     "acting": "lid 0.5, mouth frown, gaze on the floor, slow blink; one sweat drop",
+     "library": "PERSON_HANDS.headHold (one hand) + lid"
+    },
+    {
+     "t": 67.78,
+     "cue": {
+      "word": "إبراهيم",
+      "t": 67.78
+     },
+     "who": "ibrahim",
+     "action": "he looks up at her turned back, then at the gasping guests, and swallows",
+     "acting": "gaze lookAt(singer) then left; brow -0.5 (worried)",
+     "library": "lookAt"
+    },
+    {
+     "t": 68.96,
+     "cue": {
+      "word": "كلمته،",
+      "t": 68.96
+     },
+     "who": "fx",
+     "action": "a faded copy of his four-note balloon reappears small beside his head; he bats it away and it crumbles",
+     "acting": "grimace at his own words, small head shake",
+     "library": "iconBalloon alpha 0.5 + handR swipe"
+    },
+    {
+     "t": 70.32,
+     "cue": {
+      "word": "وطلب",
+      "t": 70.32
+     },
+     "who": "ibrahim",
+     "action": "gets to his knees and holds out both hands toward the oud, asking",
+     "acting": "gaze lookAt(singer), open pleading brows, small bow of the head",
+     "library": "kneel 0.6 + PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 70.98,
+     "cue": {
+      "word": "عودًا",
+      "t": 70.98
+     },
+     "who": "singer",
+     "action": "turns back, looks him up and down, and thrusts the oud out at arm's length: go on then",
+     "acting": "one brow up (brow -0.4 after the anger), mouth flat, chin high",
+     "library": "handRW carries the oud; oud passes on an eased arc"
+    },
+    {
+     "t": 71.88,
+     "cue": {
+      "word": "ليبين",
+      "t": 71.88
+     },
+     "who": "ibrahim",
+     "action": "takes it, sits back, settles it on his knee, turns one peg and plucks a single test note (one small note pops)",
+     "acting": "suddenly at home: shoulders loosen, gaze down at the strings, a private smile",
+     "library": "person {hold:'oud'} + sit"
+    },
+    {
+     "t": 72.52,
+     "cue": {
+      "word": "قصده.",
+      "t": 72.52
+     },
+     "who": "singer",
+     "action": "folds her arms and waits, one foot tapping",
+     "acting": "lid 0.5, sceptical; guests lean in, friendB peeking through his fingers",
+     "library": "PERSON_HANDS.folded"
+    },
+    {
+     "t": 73.8,
+     "cue": {
+      "word": "عزف",
+      "t": 73.8
+     },
+     "who": "ibrahim",
+     "action": "plays: confident strum, faster and fuller than hers; large notes with yellow heads pour out and the lamps brighten",
+     "acting": "eyes closed, head back a little (tip -0.05), body rocking",
+     "library": "strum phase + musicNotes {big, gold} + goldGlow 0.4"
+    },
+    {
+     "t": 74.46,
+     "cue": {
+      "word": "وغنى",
+      "t": 74.46
+     },
+     "who": "ibrahim",
+     "action": "sings: mouth wide on the long notes, free fingers lifting off the strings at the ends of phrases",
+     "acting": "talk 0.9, lid 0.8, brow -0.6",
+     "library": "talk"
+    },
+    {
+     "t": 75.4,
+     "cue": {
+      "word": "أبياتًا",
+      "t": 75.4
+     },
+     "who": "fx",
+     "action": "the four-note row forms again, large, above the group, and this time the third note arrives",
+     "acting": "singer's tapping foot stops",
+     "library": "musicNotes row on a staff line"
+    },
+    {
+     "t": 76.06,
+     "cue": {
+      "word": "رائعة،",
+      "t": 76.06
+     },
+     "who": "fx",
+     "action": "the third note lands in the gap in gold with a star glint: the missing thing, found (payoff of 62.22)",
+     "acting": "friendA opens his eyes in surprise; merchant mouth open",
+     "library": "goldGlow on the note"
+    },
+    {
+     "t": 77.38,
+     "cue": {
+      "word": "فتغير",
+      "t": 77.38
+     },
+     "who": "singer",
+     "action": "her arms unfold, the flush drains, the head comes round, eyes widening",
+     "acting": "brow from 0.6 to -0.5, lid 0, gaze locked on his hands",
+     "library": "poseTo over 0.8 s with settleTo"
+    },
+    {
+     "t": 78.68,
+     "cue": {
+      "word": "الجارية",
+      "t": 78.68
+     },
+     "who": "singer",
+     "action": "she sinks back onto her stool without looking for it, one hand on her heart, eyes wet",
+     "acting": "wet true, slow blink, the smallest smile",
+     "library": "sit 1 + PERSON_HANDS.chest + wet"
+    },
+    {
+     "t": 79.5,
+     "cue": {
+      "word": "واعتذرت",
+      "t": 79.5
+     },
+     "who": "singer",
+     "action": "as his last note fades she rises and bows to him, hand on chest",
+     "acting": "tip 0.28, lid 1 during the bow, then gaze up at him, sincere",
+     "library": "tip + chest"
+    },
+    {
+     "t": 80.4,
+     "cue": {
+      "word": "منه،",
+      "t": 80.4
+     },
+     "who": "ibrahim",
+     "action": "shakes his head (no apology needed), bows back over the oud and offers it to her with both hands",
+     "acting": "warm smile, gaze lookAt(singer), tip 0.15",
+     "library": "handLW/handRW on the oud"
+    },
+    {
+     "t": 81.22,
+     "cue": {
+      "word": "وأشاد",
+      "t": 81.22
+     },
+     "who": "friendB",
+     "action": "applause: friendB springs to his feet clapping, friendA claps slowly with a nod, the merchant spreads his arms",
+     "acting": "staggered; friendB hop + landSquash, laughing",
+     "library": "hop + landSquash + stagger"
+    },
+    {
+     "t": 82.8,
+     "cue": {
+      "word": "بموهبته.",
+      "t": 82.8
+     },
+     "who": "merchant",
+     "action": "the host looks at his mystery guest with new eyes: a long considering look, hand stroking his beard",
+     "acting": "gaze lookAt(ibrahim), lid 0.4, brow -0.3: who IS this man",
+     "library": "PERSON_HANDS.chin"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 82.0,
+     "text": "BRAVO!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 84.0,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S8",
+   "start": 84.0,
+   "end": 91.4,
+   "paragraphs": [
+    5
+   ],
+   "set": "musicHall",
+   "cast": [
+    "ibrahim",
+    "merchant",
+    "friendA",
+    "friendB",
+    "singer"
+   ],
+   "summary": "The evening runs on into night; the other guests go, and Ibrahim is left alone with the master of the house.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide while the hall empties (84.4-88.5), then push in to a two-shot of the two men (zoom 1.5, centre 500,680) by 90.8."
+   },
+   "composition": "The window (MERCHANT.window, upper centre) is the clock: u 0.45 at 84.4 to 0.78 by 88.5 (sun down, moon and stars in). Leavers exit by the door at the left; the singer by the curtain at the right. Remaining pair: merchant x 400, Ibrahim x 540.",
+   "actions": [
+    {
+     "t": 84.38,
+     "cue": {
+      "word": "استمر",
+      "t": 84.38
+     },
+     "who": "set",
+     "action": "under the LATER card: the window sky runs from dusk to night, lamps grow warmer; a row of small spent notes lies on the floor",
+     "acting": "everyone a little slumped and content",
+     "library": "palaceHall u keyed 0.45 to 0.78 + lampsLit"
+    },
+    {
+     "t": 84.92,
+     "cue": {
+      "word": "المجلس",
+      "t": 84.92
+     },
+     "who": "ibrahim",
+     "action": "still playing softly; a slow sparse note or two",
+     "acting": "lid 0.6, easy smile",
+     "library": "strum small amp + musicNotes n 2"
+    },
+    {
+     "t": 86.28,
+     "cue": {
+      "word": "غادر",
+      "t": 86.28
+     },
+     "who": "friendA",
+     "action": "rises with a hand on his knee, bows to the host and walks out through the door at the left",
+     "acting": "tired, satisfied; a small wave to Ibrahim",
+     "library": "sit to 0 + walk + PERSON_HANDS.wave"
+    },
+    {
+     "t": 86.9,
+     "cue": {
+      "word": "بقية",
+      "t": 86.9
+     },
+     "who": "friendB",
+     "action": "yawns hugely, stretches, and follows, turning at the door for one last clap toward Ibrahim",
+     "acting": "mouth 'open' yawn, lid 0.9, then a grin",
+     "library": "walk + stagger"
+    },
+    {
+     "t": 87.48,
+     "cue": {
+      "word": "الضيوف،",
+      "t": 87.48
+     },
+     "who": "singer",
+     "action": "the singer takes her oud back, bows once more and leaves through the curtain, which falls shut",
+     "acting": "a look back at Ibrahim over her shoulder, smile",
+     "library": "walk + curtain 0.6 to 0"
+    },
+    {
+     "t": 88.7,
+     "cue": {
+      "word": "وبقي",
+      "t": 88.7
+     },
+     "who": "ibrahim",
+     "action": "the room is quiet: two men and two empty cushions; he folds his hands in his lap",
+     "acting": "gaze drifts up to the ceiling, toward upstairs: he has not forgotten the window",
+     "library": "gaze [0.3,-1]"
+    },
+    {
+     "t": 90.22,
+     "cue": {
+      "word": "صاحب",
+      "t": 90.22
+     },
+     "who": "merchant",
+     "action": "the host slides his cushion a little closer (two small scoots) and studies his guest",
+     "acting": "gaze lookAt(ibrahim), head tilted, lid 0.35, beard stroke",
+     "library": "x keyed in two eased hops + PERSON_HANDS.chin"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 91.4,
+    "label": ""
+   }
+  },
+  {
+   "id": "S9",
+   "start": 91.4,
+   "end": 116.64,
+   "paragraphs": [
+    6
+   ],
+   "set": "musicHall",
+   "cast": [
+    "ibrahim",
+    "merchant"
+   ],
+   "summary": "The merchant asks his real name; Ibrahim admits he is of the caliph's family, then confesses the two reasons he came: the smell, and the hand. The merchant offers to help.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Held two-shot (twoShot(merchant, ibrahim, {margin: 150})); push to Ibrahim alone for the confession 96.1-100 (zoom 1.9); snap back to the two-shot for the shock at 101.2; hold; slight push on the merchant for his decision 113.3."
+   },
+   "composition": "Night hall, lamp glow. Merchant x 380, Ibrahim x 620, both seated on the floor, heads at about y 700. Balloons open in the blue wall above (y 260..520): the speaker's balloon always over the OTHER side of the frame from his face, never over a face.",
+   "actions": [
+    {
+     "t": 91.4,
+     "cue": {
+      "word": "سأل",
+      "t": 91.4
+     },
+     "who": "merchant",
+     "action": "leans in and asks, one finger pointing politely at his guest",
+     "acting": "talk 0.6, lid 0.4, tip 0.1; gaze lookAt(ibrahim)",
+     "library": "PERSON_HANDS.pointFwd + talk"
+    },
+    {
+     "t": 93.88,
+     "cue": {
+      "word": "ضيفه",
+      "t": 93.88
+     },
+     "who": "ibrahim",
+     "action": "the too-casual smile from the doorstep comes back, a beat too late",
+     "acting": "gaze slides away to the door, back; blink",
+     "library": "gaze keys"
+    },
+    {
+     "t": 94.92,
+     "cue": {
+      "word": "اسمه",
+      "t": 94.92
+     },
+     "who": "fx",
+     "action": "iconBalloon from the merchant: a blank name card with a question mark, which flips over to another question mark",
+     "acting": "merchant: both brows up, waiting",
+     "library": "iconBalloon (two frames)"
+    },
+    {
+     "t": 95.36,
+     "cue": {
+      "word": "الحقيقي،",
+      "t": 95.36
+     },
+     "who": "ibrahim",
+     "action": "stillness: only his pupils move, to the door, to the host, down",
+     "acting": "held breath; suspense by stillness for 0.7 s",
+     "library": "gaze keys only"
+    },
+    {
+     "t": 96.12,
+     "cue": {
+      "word": "فاعترف",
+      "t": 96.12
+     },
+     "who": "ibrahim",
+     "action": "decides: a breath in (sq 1.05), back straight, hand flat on his chest",
+     "acting": "gaze lookAt(merchant), level and honest, brow 0",
+     "library": "anticipate + PERSON_HANDS.chest"
+    },
+    {
+     "t": 97.44,
+     "cue": {
+      "word": "إبراهيم",
+      "t": 97.44
+     },
+     "who": "ibrahim",
+     "action": "speaks his name plainly",
+     "acting": "talk 0.7, no gestures: the stillness is the dignity",
+     "library": "talk"
+    },
+    {
+     "t": 99.56,
+     "cue": {
+      "word": "أسرة",
+      "t": 99.56
+     },
+     "who": "fx",
+     "action": "inset circle opens above the merchant's side: the palace throne (the court set at small scale) with the caliph's crown above it",
+     "acting": "Ibrahim tips his head toward it, almost apologetic",
+     "library": "inset circle (planned) drawing palaceHall throne"
+    },
+    {
+     "t": 100.1,
+     "cue": {
+      "word": "الخلافة.",
+      "t": 100.1
+     },
+     "who": "fx",
+     "action": "the crown in the inset flashes gold and a small copy of it hovers for a second over Ibrahim's yellow turban",
+     "acting": "modest half smile; eyes down",
+     "library": "goldGlow + crown glyph"
+    },
+    {
+     "t": 101.24,
+     "cue": {
+      "word": "دهش",
+      "t": 101.24
+     },
+     "who": "merchant",
+     "action": "the shock: he jolts upright (stretch), his turban hops off his head and lands back askew, and he topples backward off his cushion",
+     "acting": "eyes 'wide', mouth 'o', sq 1.12 then tip -0.35 with impactSquash on landing",
+     "library": "anticipate + hop on the turban + impactSquash"
+    },
+    {
+     "t": 102.0,
+     "cue": {
+      "word": "الرجل",
+      "t": 102.0
+     },
+     "who": "merchant",
+     "action": "scrambles to his knees and bows low; Ibrahim, laughing, waves him up with both hands",
+     "acting": "merchant kneel 1, tip 0.3, lid 1; Ibrahim palmsUp lifting gesture",
+     "library": "kneel + PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 102.66,
+     "cue": {
+      "word": "وسأله",
+      "t": 102.66
+     },
+     "who": "merchant",
+     "action": "sits back on his heels, straightens the turban, and asks with open hands",
+     "acting": "talk 0.6, brow -0.5, head tilt",
+     "library": "PERSON_HANDS.palmsUp + talk"
+    },
+    {
+     "t": 104.02,
+     "cue": {
+      "word": "سبب",
+      "t": 104.02
+     },
+     "who": "fx",
+     "action": "iconBalloon from the merchant: his own front door with an arrow going in and a large question mark",
+     "acting": "merchant gestures from the door side to the floor: why HERE",
+     "library": "iconBalloon"
+    },
+    {
+     "t": 105.28,
+     "cue": {
+      "word": "ذكر",
+      "t": 105.28
+     },
+     "who": "ibrahim",
+     "action": "sheepish: rubs the back of his neck, then pats his belly",
+     "acting": "smile, lid 0.4, gaze down then up from under his brows",
+     "library": "PERSON_HANDS.headHold then belly pat"
+    },
+    {
+     "t": 107.08,
+     "cue": {
+      "word": "رائحة",
+      "t": 107.08
+     },
+     "who": "fx",
+     "action": "iconBalloon from Ibrahim, frame 1: the steaming foodTray with the aroma ribbon running to a small nose",
+     "acting": "he mimes the sniff again (sq 1.05, lid 1)",
+     "library": "iconBalloon + foodTray + stinkLines aroma"
+    },
+    {
+     "t": 107.76,
+     "cue": {
+      "word": "الطعام،",
+      "t": 107.76
+     },
+     "who": "merchant",
+     "action": "laughs out loud, slapping his knee",
+     "acting": "person laugh: mouth open, lid 0.9, tip -0.1, shoulders shaking",
+     "library": "person laugh helper"
+    },
+    {
+     "t": 108.44,
+     "cue": {
+      "word": "ثم",
+      "t": 108.44
+     },
+     "who": "ibrahim",
+     "action": "raises one finger: and there is more. His smile goes, replaced by something earnest",
+     "acting": "brow -0.3, gaze up toward the ceiling",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 109.82,
+     "cue": {
+      "word": "اليد",
+      "t": 109.82
+     },
+     "who": "fx",
+     "action": "frame 2 of his balloon: the balcony window with the shutter ajar and the ladyHand on the sill, bangle glinting, exactly as at 15.74 (dream wash edge)",
+     "acting": "Ibrahim looks at his own balloon, hand over his heart; one heart pops at 110.76",
+     "library": "iconBalloon + townWindow + ladyHand {glint:1} + heart"
+    },
+    {
+     "t": 110.76,
+     "cue": {
+      "word": "لمحها",
+      "t": 110.76
+     },
+     "who": "merchant",
+     "action": "the laugh dies; he looks at the balloon, then slowly over his shoulder at the curtain, then back at his guest",
+     "acting": "brow -0.6, gaze three keyed stops, lid 0.2",
+     "library": "gaze keys"
+    },
+    {
+     "t": 112.1,
+     "cue": {
+      "word": "النافذة،",
+      "t": 112.1
+     },
+     "who": "ibrahim",
+     "action": "realises what he has just said to the master of the house and braces: shoulders up, a wince",
+     "acting": "sq 0.95, lid 0.6, one eye peeking (wink L)",
+     "library": "wink + sq"
+    },
+    {
+     "t": 113.28,
+     "cue": {
+      "word": "فأبدى",
+      "t": 113.28
+     },
+     "who": "merchant",
+     "action": "instead of anger a slow knowing smile spreads; he slaps both knees and stands",
+     "acting": "mouth 'smile', brow -0.3, anticipate dip then up",
+     "library": "anticipate + sit to 0"
+    },
+    {
+     "t": 114.5,
+     "cue": {
+      "word": "استعدادًا",
+      "t": 114.5
+     },
+     "who": "merchant",
+     "action": "hand on chest, a small bow: at your service. Then his arm sweeps toward the curtain",
+     "acting": "gaze lookAt(ibrahim) then to the curtain; generous, a little amused",
+     "library": "PERSON_HANDS.chest then aR toward the curtain"
+    },
+    {
+     "t": 115.54,
+     "cue": {
+      "word": "لمساعدته.",
+      "t": 115.54
+     },
+     "who": "ibrahim",
+     "action": "un-braces, both eyes open, hands clasped in hope; he gets up too",
+     "acting": "wide hopeful eyes, brow -0.6, a bounce on his toes",
+     "library": "PERSON_HANDS.clasp + hop 8 px"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 116.64,
+    "label": ""
+   }
+  },
+  {
+   "id": "S10",
+   "start": 116.64,
+   "end": 134.0,
+   "paragraphs": [
+    7
+   ],
+   "set": "musicHall",
+   "cast": [
+    "ibrahim",
+    "merchant",
+    "woman1",
+    "woman2",
+    "woman3"
+   ],
+   "summary": "The women of the house come out one after another; none has the hand. Only the mother and the sister have not yet come.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Static wide (zoom 1.05) so the queue, Ibrahim and the pinned memory inset all read; a small push toward the curtain during the pause 133.4-134.0."
+   },
+   "composition": "Ibrahim standing at x 230 (left), the merchant at x 780 beside the curtain (right edge), the women stop at x 430, 530, 630. Pinned at top left (centre 190, 300, radius 105): the memory inset, the ladyHand on the sill, labelled THE HAND; it stays all scene as the reference. Beside it at (430, 300) a second circle shows each offered hand large.",
+   "actions": [
+    {
+     "t": 116.64,
+     "cue": {
+      "word": "دعا",
+      "t": 116.64
+     },
+     "who": "merchant",
+     "action": "walks to the curtain and claps his hands twice toward it",
+     "acting": "brisk, enjoying himself; talk 0.5",
+     "library": "walk + two keyed claps"
+    },
+    {
+     "t": 117.4,
+     "who": "fx",
+     "action": "the memory inset irises open at the top left with the label THE HAND and an arrow",
+     "acting": "Ibrahim looks up at it, then at the curtain, straightening his robe",
+     "library": "inset circle + S.label"
+    },
+    {
+     "t": 119.02,
+     "cue": {
+      "word": "نساء",
+      "t": 119.02
+     },
+     "who": "set",
+     "action": "the curtain bulges and three pairs of eyes peep through gaps at different heights, then vanish",
+     "acting": "whispering: the curtain shivers",
+     "library": "curtain wobble + eye dots"
+    },
+    {
+     "t": 120.3,
+     "cue": {
+      "word": "واحدة",
+      "t": 120.3
+     },
+     "who": "woman1",
+     "action": "first woman steps out briskly to x 430 and holds her hand out flat; the compare circle shows it: broad, no bangle; a red X",
+     "acting": "business-like, gaze straight at him, one brow up",
+     "library": "walk + PERSON_HANDS.reach + ladyHand {plain:true}"
+    },
+    {
+     "t": 121.28,
+     "cue": {
+      "word": "بعد",
+      "t": 121.28
+     },
+     "who": "woman2",
+     "action": "second woman comes to x 530, offers her hand shyly, half hidden in her sleeve: blue bead bracelet; red X",
+     "acting": "gaze down, lid 0.5, quick peek up at him",
+     "library": "walk + reach + ladyHand {bead:true}"
+    },
+    {
+     "t": 121.66,
+     "cue": {
+      "word": "أخرى،",
+      "t": 121.66
+     },
+     "who": "woman3",
+     "action": "third, older woman is already on her way, arrives at x 630 at 122.3, plants her hand out like a fortune-teller's client; plain; red X at 122.9",
+     "acting": "amused, mouth smile, gaze to the merchant: what is this about",
+     "library": "walk + reach + ladyHand {plain:true}"
+    },
+    {
+     "t": 123.16,
+     "cue": {
+      "word": "لكن",
+      "t": 123.16
+     },
+     "who": "ibrahim",
+     "action": "he has leaned to each hand in turn; now he straightens and shakes his head",
+     "acting": "gaze runs back along the three hands then up to the inset; mouth flat",
+     "library": "lookAt keys + head shake"
+    },
+    {
+     "t": 125.06,
+     "cue": {
+      "word": "يجد",
+      "t": 125.06
+     },
+     "who": "ibrahim",
+     "action": "his shoulders drop; a counter under the two circles reads 0 / 3",
+     "acting": "sq 0.96, lid 0.5, brow -0.5",
+     "library": "S.counter + sq"
+    },
+    {
+     "t": 126.2,
+     "cue": {
+      "word": "اليد",
+      "t": 126.2
+     },
+     "who": "woman1",
+     "action": "the women pull their hands back one by one, look at each other and shrug, out of step",
+     "acting": "woman3 chuckles; woman2 hides her hand behind her",
+     "library": "PERSON_HANDS.palmsUp + stagger"
+    },
+    {
+     "t": 126.7,
+     "cue": {
+      "word": "بينهن.",
+      "t": 126.7
+     },
+     "who": "woman3",
+     "action": "they file back through the curtain during the pause, woman3 last with a backward look at Ibrahim",
+     "acting": "curious, entertained",
+     "library": "walk + curtain"
+    },
+    {
+     "t": 128.0,
+     "cue": {
+      "word": "قال",
+      "t": 128.0
+     },
+     "who": "merchant",
+     "action": "thinks, finger on his beard, then the finger goes up",
+     "acting": "gaze up, lid 0.4, then eyes open on the idea",
+     "library": "PERSON_HANDS.chin then pointUp"
+    },
+    {
+     "t": 129.82,
+     "cue": {
+      "word": "أمه",
+      "t": 129.82
+     },
+     "who": "fx",
+     "action": "iconBalloon from the merchant: first icon, an old woman's head (oldWoman preset head at scale 0.4)",
+     "acting": "merchant counts one on his fingers",
+     "library": "iconBalloon"
+    },
+    {
+     "t": 130.4,
+     "cue": {
+      "word": "وأخته",
+      "t": 130.4
+     },
+     "who": "fx",
+     "action": "second icon beside it: a veiled head drawn as a blue silhouette with a question mark",
+     "acting": "counts two; Ibrahim's head comes up",
+     "library": "iconBalloon frame 2"
+    },
+    {
+     "t": 131.18,
+     "cue": {
+      "word": "فقط",
+      "t": 131.18
+     },
+     "who": "merchant",
+     "action": "holds up the two fingers: only these two",
+     "acting": "talk 0.6, brow -0.3",
+     "library": "aR raised + talk"
+    },
+    {
+     "t": 132.3,
+     "cue": {
+      "word": "تحضرا",
+      "t": 132.3
+     },
+     "who": "ibrahim",
+     "action": "leans toward the curtain, hope returning; the merchant calls softly through it",
+     "acting": "gaze lookAt(curtain), lid 0, held breath (sq 1.03)",
+     "library": "tip 0.08 + PERSON_HANDS.cupMouth (merchant)"
+    },
+    {
+     "t": 133.5,
+     "who": "set",
+     "action": "pause: nothing moves but the lamp flames and Ibrahim's eyes; then the curtain edge trembles",
+     "acting": "suspense by stillness",
+     "library": "curtain wobble 2 px"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 117.6,
+     "text": "THE HAND"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 127.6,
+     "kind": "whoosh"
+    },
+    {
+     "t": 133.8,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 134.0,
+    "label": ""
+   }
+  },
+  {
+   "id": "S11",
+   "start": 134.0,
+   "end": 142.94,
+   "paragraphs": [
+    7
+   ],
+   "set": "musicHall",
+   "cast": [
+    "ibrahim",
+    "merchant",
+    "sister",
+    "witness1",
+    "witness2"
+   ],
+   "summary": "The sister appears; he knows the hand at once. The merchant offers her in marriage on the spot and fetches witnesses.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "Start close on the curtain edge (zoom 2.2, centre 850,620) for the hand; pull out with her entrance to a three-shot by 136.4 (zoom 1.3); wide at 141.5 to let the witnesses in from the left."
+   },
+   "composition": "Curtain at the right edge; the sister stops at x 720. Ibrahim comes from x 230 to 480. The merchant steps between and a little behind them at x 600. The two circles from S10 slide together at top centre (400, 280) for the match. Witnesses enter from the door at the left to x 180 and 290.",
+   "actions": [
+    {
+     "t": 134.28,
+     "cue": {
+      "word": "وعندما",
+      "t": 134.28
+     },
+     "who": "sister",
+     "action": "fingers curl round the curtain edge from behind: the same hand, the same gesture as on the shutter, bangle glinting",
+     "acting": "slow; the curtain parts a hand-width",
+     "library": "ladyHand {curl:1, glint:1} over the curtain edge"
+    },
+    {
+     "t": 135.0,
+     "cue": {
+      "word": "ظهرت",
+      "t": 135.0
+     },
+     "who": "sister",
+     "action": "she steps out into the lamp light and stops, hands folded in front of her",
+     "acting": "gaze down, lid 0.3, then a quick curious look up at the stranger and away",
+     "library": "person {costume:'lady'} + walk + curtain 0 to 0.6"
+    },
+    {
+     "t": 135.52,
+     "cue": {
+      "word": "أخته",
+      "t": 135.52
+     },
+     "who": "merchant",
+     "action": "presents her with an open palm; label THE SISTER with an arrow",
+     "acting": "proud, fond; gaze on Ibrahim to watch his face",
+     "library": "PERSON_HANDS.palmsUp + S.label"
+    },
+    {
+     "t": 136.38,
+     "cue": {
+      "word": "عرف",
+      "t": 136.38
+     },
+     "who": "ibrahim",
+     "action": "he has already seen it: a jolt (anticipate dip, spring), two quick steps forward, finger pointing at her hand",
+     "acting": "eyes 'wide', mouth 'o' turning to a huge smile, hop + landSquash",
+     "library": "anticipate + hop + landSquash + PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 137.72,
+     "cue": {
+      "word": "يدها،",
+      "t": 137.72
+     },
+     "who": "fx",
+     "action": "the compare circle shows her hand; the memory circle slides over it and they fit exactly; green tick, gold glow, one heart",
+     "acting": "sister looks at her own hand, puzzled, then at him; a small smile she tries to hide",
+     "library": "inset circle x2 + goldGlow + heart"
+    },
+    {
+     "t": 138.32,
+     "cue": {
+      "word": "فعرض",
+      "t": 138.32
+     },
+     "who": "merchant",
+     "action": "looks from his guest to his sister and back (two snaps), grins, steps between them",
+     "acting": "brow -0.4, delighted schemer; hands rubbing",
+     "library": "gaze snaps + walk"
+    },
+    {
+     "t": 140.08,
+     "cue": {
+      "word": "زواجها",
+      "t": 140.08
+     },
+     "who": "merchant",
+     "action": "opens both arms, one hand toward each, and brings his palms together; iconBalloon: a scroll with a red seal and two small hearts",
+     "acting": "talk 0.7, tip 0.05, looks to Ibrahim for the answer",
+     "library": "PERSON_HANDS.armsOut to clasp + iconBalloon + scroll"
+    },
+    {
+     "t": 140.9,
+     "cue": {
+      "word": "منه",
+      "t": 140.9
+     },
+     "who": "ibrahim",
+     "action": "hand on chest, deep bow: yes. The sister lowers her eyes and nods once",
+     "acting": "Ibrahim tip 0.25; sister lid 0.8, soft flush (pink, no steam), smile",
+     "library": "PERSON_HANDS.chest + flush {soft:true}"
+    },
+    {
+     "t": 141.56,
+     "cue": {
+      "word": "وأحضر",
+      "t": 141.56
+     },
+     "who": "merchant",
+     "action": "spins to the door and calls through cupped hands",
+     "acting": "urgent and gleeful, on tiptoe",
+     "library": "PERSON_HANDS.cupMouth"
+    },
+    {
+     "t": 142.26,
+     "cue": {
+      "word": "الشهود.",
+      "t": 142.26
+     },
+     "who": "witness1",
+     "action": "the two witnesses hurry in through the left door: the first with the scroll under his arm and a quill behind his ear, the second two steps behind, puffing",
+     "acting": "witness1 brisk, gaze on the couple; witness2 stooped, mouth open, hand on his back",
+     "library": "walk + footfalls, different phase and speed"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 135.6,
+     "text": "THE SISTER"
+    },
+    {
+     "t": 137.8,
+     "text": "THAT HAND!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 142.94,
+    "label": ""
+   }
+  },
+  {
+   "id": "S12",
+   "start": 142.94,
+   "end": 147.0,
+   "paragraphs": [
+    8
+   ],
+   "set": "musicHall",
+   "cast": [
+    "ibrahim",
+    "merchant",
+    "sister",
+    "witness1",
+    "witness2"
+   ],
+   "summary": "The marriage is made with a generous dowry.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "Medium group shot (zoom 1.4, centre 480,680) around the scroll."
+   },
+   "composition": "Scroll unrolled on a floorCushion at x 480, y 860. Witnesses at the left (x 230, 330), Ibrahim x 430, merchant x 560 facing him over the scroll, sister x 700. The purse stack grows at x 480 beside the scroll.",
+   "actions": [
+    {
+     "t": 142.94,
+     "cue": {
+      "word": "تم",
+      "t": 142.94
+     },
+     "who": "witness1",
+     "action": "kneels and unrolls the scroll (open 0 to 1); the quill comes from behind his ear",
+     "acting": "precise, tongue between his teeth",
+     "library": "kneel + scroll {open}"
+    },
+    {
+     "t": 144.56,
+     "cue": {
+      "word": "الزواج",
+      "t": 144.56
+     },
+     "who": "ibrahim",
+     "action": "he and the merchant clasp hands over the scroll; the red seal stamps on; hearts above the couple",
+     "acting": "both smiling, gaze locked; sister looks up through her lashes",
+     "library": "handRW meeting point + scroll {seal:1} + heart"
+    },
+    {
+     "t": 145.3,
+     "cue": {
+      "word": "بمهر",
+      "t": 145.3
+     },
+     "who": "ibrahim",
+     "action": "sets a fat purse down beside the scroll",
+     "acting": "easy, generous gesture; gaze lookAt(sister)",
+     "library": "purse + handRW"
+    },
+    {
+     "t": 146.04,
+     "cue": {
+      "word": "سخي،",
+      "t": 146.04
+     },
+     "who": "purse",
+     "action": "then a second and a third on top (each lands with landSquash); the stack is taller than the kneeling witness",
+     "acting": "witnesses' pupils climb the stack; witness2's mouth falls open",
+     "library": "purse x3 + landSquash + stagger"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 144.7,
+     "text": "MARRIED!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "match-cut",
+    "t": 147.0,
+    "label": ""
+   }
+  },
+  {
+   "id": "S13",
+   "start": 147.0,
+   "end": 156.0,
+   "paragraphs": [
+    8
+   ],
+   "set": "ibrahimHome",
+   "cast": [
+    "ibrahim",
+    "sister",
+    "merchant",
+    "servant"
+   ],
+   "summary": "The merchant sends his sister to Ibrahim's house with so many gifts that the room runs out of space.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Static wide for the first gifts so the empty room registers; from 152.6 a slow push-in (zoom 1.0 to 1.25, toward the couple at the right) so the frame itself tightens with the room."
+   },
+   "composition": "Bare paper-walled room, door at the left. Couple stand at x 760 (Ibrahim) and x 850 (bride), right side. Gifts stack on a grid of 120 x 90 cells from x 140 rightward, floor up: column heights rise to the lamp (about y 330). By 155 the free floor is 180 px wide at the right.",
+   "actions": [
+    {
+     "t": 147.26,
+     "cue": {
+      "word": "وأرسل",
+      "t": 147.26
+     },
+     "who": "merchant",
+     "action": "match cut from the purse stack to an empty room: the door opens and the merchant ushers his sister in, then waves from the doorway and goes",
+     "acting": "merchant beaming, a brotherly pat on her shoulder; she looks around the new room",
+     "library": "townDoor (hall door) + walk"
+    },
+    {
+     "t": 149.1,
+     "cue": {
+      "word": "أخته",
+      "t": 149.1
+     },
+     "who": "sister",
+     "action": "the bride crosses the room to Ibrahim, who meets her with open hands",
+     "acting": "she smiles openly now; he bows his head; gaze to gaze",
+     "library": "walk + PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 150.54,
+     "cue": {
+      "word": "إبراهيم",
+      "t": 150.54
+     },
+     "who": "ibrahim",
+     "action": "they stand side by side at x 760 and 850, looking at the bare room, content",
+     "acting": "both gaze sweeps the emptiness; a shared small smile",
+     "library": "lookAt"
+    },
+    {
+     "t": 151.4,
+     "cue": {
+      "word": "مع",
+      "t": 151.4
+     },
+     "who": "servant",
+     "action": "a servant comes through the door with a chest and sets it down (landSquash)",
+     "acting": "cheerful, a nod to the couple",
+     "library": "person {costume:'servant'} + walk + giftChest"
+    },
+    {
+     "t": 151.92,
+     "cue": {
+      "word": "هدايا",
+      "t": 151.92
+     },
+     "who": "servant",
+     "action": "the second servant right behind with a rolled carpet on his shoulder and a tray; label GIFTS",
+     "acting": "puffing; the couple exchange a pleased look",
+     "library": "walk + giftChest variants + S.label"
+    },
+    {
+     "t": 152.6,
+     "cue": {
+      "word": "كثيرة",
+      "t": 152.6
+     },
+     "who": "giftChest",
+     "action": "now they arrive faster than anyone can carry them: chests, carpets, cloth bolts slide in from the door and stack, one every 0.3 s, a counter running GIFTS 3, 7, 12, 20",
+     "acting": "the couple's pupils go up and up; smiles becoming uncertain",
+     "library": "giftChest grid with staggered landSquash + S.counter"
+    },
+    {
+     "t": 153.34,
+     "cue": {
+      "word": "حتى",
+      "t": 153.34
+     },
+     "who": "giftChest",
+     "action": "a column reaches the hanging lamp and shoves it sideways; it swings",
+     "acting": "Ibrahim ducks his turban; bride hand to mouth",
+     "library": "swing on the lamp"
+    },
+    {
+     "t": 154.22,
+     "cue": {
+      "word": "ضاق",
+      "t": 154.22
+     },
+     "who": "ibrahim",
+     "action": "the stack advances on them; the couple back up until they are pressed shoulder to shoulder against the right wall",
+     "acting": "both sq 1.06 (squeezed thin), eyes wide, on tiptoe",
+     "library": "x keyed + sq"
+    },
+    {
+     "t": 155.08,
+     "cue": {
+      "word": "المكان.",
+      "t": 155.08
+     },
+     "who": "servant",
+     "action": "a last small box is pushed through the door by one hand; the door tries to shut, bounces on it twice, stays ajar",
+     "acting": "the couple look at each other and burst out laughing",
+     "library": "townDoor open keyed bounce + person laugh"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 152.0,
+     "text": "GIFTS"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "zoom",
+    "t": 156.0,
+    "label": ""
+   }
+  },
+  {
+   "id": "S14",
+   "start": 156.0,
+   "end": 173.5,
+   "paragraphs": [
+    8
+   ],
+   "set": "court",
+   "cast": [
+    "ibrahim",
+    "caliph",
+    "son",
+    "merchant"
+   ],
+   "summary": "Back in the court the tale closes: the boy standing there is their son. The caliph, charmed by the merchant's generosity, brings him near. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "taleZoom out: the gift room shrinks into the cloud over Ibrahim (156.0-156.9). Wide court to 162; ease left to favour the boy 162.5-164.5 (zoom 1.4); back to the full wide at 165.9 and hold through THE END."
+   },
+   "composition": "As S1: caliph on the throne right, Ibrahim x 470, the boy x 250. The merchant enters from the door arch at the left (x 90) and ends seated on the floorCushion on the dais at HALL.throne.x - 150. THE END title in the upper wall area (y 200..380), covering no face.",
+   "actions": [
+    {
+     "t": 156.0,
+     "who": "camera",
+     "action": "the crammed room pulls back and is the thought cloud above Ibrahim again, gifts still wobbling inside it",
+     "acting": "caliph in exactly his S1 pose, chin on hand, but now grinning",
+     "library": "taleZoom (reverse)"
+    },
+    {
+     "t": 156.28,
+     "cue": {
+      "word": "وختم",
+      "t": 156.28
+     },
+     "who": "ibrahim",
+     "action": "closes the tale with both palms opening outward; the cloud pops",
+     "acting": "talk 0.6, smile, gaze lookAt(caliph)",
+     "library": "PERSON_HANDS.palmsUp + thoughtCloud p to 0"
+    },
+    {
+     "t": 158.54,
+     "cue": {
+      "word": "أمام",
+      "t": 158.54
+     },
+     "who": "caliph",
+     "action": "sits back on the throne, chuckling, and wags a finger at his uncle",
+     "acting": "person laugh small (lid 0.7, tip -0.06)",
+     "library": "person laugh + PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 159.76,
+     "cue": {
+      "word": "موضحًا",
+      "t": 159.76
+     },
+     "who": "ibrahim",
+     "action": "raises one finger: one more thing",
+     "acting": "brow -0.4, a storyteller's pause; gaze lookAt(caliph)",
+     "library": "PERSON_HANDS.pointUp + anticipate"
+    },
+    {
+     "t": 161.84,
+     "cue": {
+      "word": "زوجته",
+      "t": 161.84
+     },
+     "who": "fx",
+     "action": "a small inset circle beside him: the bride (lady) with a heart",
+     "acting": "his face softens",
+     "library": "inset circle + person lady head"
+    },
+    {
+     "t": 162.56,
+     "cue": {
+      "word": "ابنًا",
+      "t": 162.56
+     },
+     "who": "ibrahim",
+     "action": "turns and extends his whole arm to the boy who has stood there since the first frame; arrow and label HIS SON!",
+     "acting": "gaze lookAt(son), proud; the inset slides to sit beside the boy, same blue",
+     "library": "aL toward the boy + S.arrow/S.label"
+    },
+    {
+     "t": 163.22,
+     "cue": {
+      "word": "حاضرًا",
+      "t": 163.22
+     },
+     "who": "son",
+     "action": "the boy steps forward two steps, bows neatly to the caliph, then cannot resist a wave",
+     "acting": "big smile, gaze lookAt(caliph); the wave is the catalogue PRINCE WAVE pose",
+     "library": "walk + tip 0.25 + aR wave"
+    },
+    {
+     "t": 164.22,
+     "cue": {
+      "word": "المجلس.",
+      "t": 164.22
+     },
+     "who": "caliph",
+     "action": "the caliph's surprise: eyes wide, looks from the boy to Ibrahim and back, then laughs and claps",
+     "acting": "eyes 'wide', brow -0.6, two gaze snaps, then laugh",
+     "library": "gaze snaps + person laugh"
+    },
+    {
+     "t": 165.9,
+     "cue": {
+      "word": "أعجب",
+      "t": 165.9
+     },
+     "who": "caliph",
+     "action": "nods slowly, impressed, hand on his heart",
+     "acting": "lid 0.3, warm",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 167.18,
+     "cue": {
+      "word": "بكرم",
+      "t": 167.18
+     },
+     "who": "fx",
+     "action": "iconBalloon over the caliph (upper left of him): a giftChest overflowing and a heart: the merchant's generosity",
+     "acting": "caliph looks at it, then toward the door",
+     "library": "iconBalloon + giftChest"
+    },
+    {
+     "t": 167.86,
+     "cue": {
+      "word": "التاجر",
+      "t": 167.86
+     },
+     "who": "merchant",
+     "action": "the merchant appears in the door arch at the left, turban in order, and bows deeply from the threshold",
+     "acting": "awed by the hall: gaze up at the lamps, then down; tip 0.3",
+     "library": "walk + tip"
+    },
+    {
+     "t": 168.64,
+     "cue": {
+      "word": "وقرّبه",
+      "t": 168.64
+     },
+     "who": "caliph",
+     "action": "beckons him with a rolling hand and points to the cushion beside the throne",
+     "acting": "smiling, gaze lookAt(merchant)",
+     "library": "PERSON_HANDS.wave then pointDown"
+    },
+    {
+     "t": 169.66,
+     "cue": {
+      "word": "إليه.",
+      "t": 169.66
+     },
+     "who": "merchant",
+     "action": "walks up the carpet, the boy grabs his hand on the way (uncle!), and he sits on the cushion at the caliph's side",
+     "acting": "merchant overwhelmed smile, wet eyes; boy hop of joy",
+     "library": "walk + sit {seat:'bench'} + hop"
+    },
+    {
+     "t": 170.5,
+     "who": "lettering",
+     "action": "THE END title pops in the upper wall; final tableau holds: caliph, merchant beside him, Ibrahim with a hand on his son's shoulder",
+     "acting": "everyone breathes and blinks on their own seeds; lamps flicker; Ibrahim gives the camera the same innocent look as on the doorstep",
+     "library": "S.title + LIFE + breathe"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 162.7,
+     "text": "HIS SON!"
+    },
+    {
+     "t": 170.5,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 170.6,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 173.5,
+    "label": ""
+   }
+  }
+ ],
+ "ending": {
+  "t": 170.5,
+  "description": "After the last word (170.32) the court tableau holds for 3 s: the caliph on his throne, the merchant seated on the cushion at his side, Ibrahim with a hand on his son's shoulder, the boy holding his uncle's sleeve. THE END pops at 170.5 in the upper wall. Blinks and lamp flicker keep it alive to 173.5."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "حكى إبراهيم بن المهدي للمأمون|أنه خرج يتنزه،|فتوقف أمام بيت كبير|بعدما شمّ رائحة طعام شهي.",
+   "en": "Ibrahim bin al-Mahdi told al-Ma'mun|that he had gone out for a stroll|and stopped in front of a large house|after smelling delicious food."
+  },
+  {
+   "p": 2,
+   "ar": "لمح خلف نافذة يد امرأة،|فنسي الطعام.|سأل خياطًا فعرف|أن البيت لتاجر لا يستقبل الغرباء.",
+   "en": "He glimpsed a woman's hand behind a window|and forgot about the food.|He asked a tailor and learned|that the house belonged to a merchant who did not receive strangers."
+  },
+  {
+   "p": 3,
+   "ar": "تبع رجلين يعرفان التاجر.|ظن الرجلان أنه صديق التاجر،|وظن التاجر أنه صديقهما،|فرحّبوا به.",
+   "en": "He followed two men who knew the merchant.|Each man thought he was the merchant's friend,|while the merchant thought he was their friend,|so they all welcomed him."
+  },
+  {
+   "p": 4,
+   "ar": "جلس إبراهيم إلى مائدة غنية بالأطعمة، ثم انتقل الحاضرون إلى قاعة للغناء.|دخلت جارية تعزف العود وأنشدت أبياتًا عن الشوق.|أعجب إبراهيم بصوتها، لكنه قال إن في أدائها شيئًا ناقصًا،|فغضبت منه أمام الضيوف.",
+   "en": "After a lavish meal,|an enslaved singer performed with a lute.|Ibrahim admired her music but said something was missing from the performance,|offending her and embarrassing the guests."
+  },
+  {
+   "p": 5,
+   "ar": "ندم إبراهيم على كلمته، وطلب عودًا ليبين قصده.|عزف وغنى أبياتًا رائعة،|فتغير موقف الجارية واعتذرت منه، وأشاد الحاضرون بموهبته.|استمر المجلس حتى غادر بقية الضيوف، وبقي إبراهيم مع صاحب البيت.",
+   "en": "Regretting his remark, Ibrahim took a lute|and performed beautifully.|The singer apologized, the guests praised his skill,|and eventually he was left alone with the host."
+  },
+  {
+   "p": 6,
+   "ar": "سأل التاجر ضيفه عن اسمه الحقيقي،|فاعترف إبراهيم بأنه من أسرة الخلافة.|دهش الرجل وسأله عن سبب مجيئه. ذكر إبراهيم رائحة الطعام،|ثم حكى عن اليد التي لمحها وراء النافذة، فأبدى التاجر استعدادًا لمساعدته.",
+   "en": "The merchant pressed for his guest’s identity|and learned he belonged to the caliphal family.|Ibrahim admitted that both the food|and the hand behind the window had drawn him in."
+  },
+  {
+   "p": 7,
+   "ar": "دعا التاجر نساء بيته واحدة بعد أخرى، لكن إبراهيم لم يجد صاحبة اليد بينهن.|قال التاجر إن أمه وأخته فقط لم تحضرا بعد.|وعندما ظهرت أخته عرف إبراهيم يدها،|فعرض التاجر زواجها منه وأحضر الشهود.",
+   "en": "The merchant called the women of his household in turn.|When his sister finally appeared,|Ibrahim recognized her hand.|The merchant immediately offered her in marriage and brought witnesses."
+  },
+  {
+   "p": 8,
+   "ar": "تم الزواج بمهر سخي،|وأرسل التاجر أخته إلى بيت إبراهيم مع هدايا كثيرة حتى ضاق بها المكان.|وختم إبراهيم حكايته أمام المأمون موضحًا أن له من زوجته ابنًا حاضرًا في المجلس.|أعجب الخليفة بكرم التاجر وقرّبه إليه.",
+   "en": "They married with a generous settlement|and lavish gifts.|Ibrahim told al-Ma’mun that their son now stood before him.|The caliph admired the merchant and brought him into his service."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "ladyHand",
+   "description": "A large, characterful woman's hand with a gold bangle and red ring (and plain / bead variants for other hands). The object the whole story turns on: seen at the window (15.74), in thought clouds and balloons, in the pinned memory inset, on the curtain edge (134.28) and on the sister's wrist. 90 x 130 at s 1, 40 px of blue dotted sleeve.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "One function ladyHand(ctx, x, y, {s, rot, curl, wave, glint, plain, bead, sleeve}). Palm = rounded rect in C.skin with the red Ben-Day dot shading of the person face; 4 fingers = tapered capsules whose tip angle is driven by curl (0 straight, 1 hooked 80 degrees over an edge), thumb a fifth capsule; nails = small red ellipses; bangle = yellow band 14 thick with black outline and 3 red dots; ring = red dot with black outline; glint = the star() helper scaled by glint. For the sister, draw the bangle alone at the person's P.hands position (bangle about 16 wide at s 1). Clip to the window or curtain opening when it comes from behind something."
+  },
+  {
+   "type": "prop",
+   "name": "oud",
+   "description": "Planned oud (lute), reused by name (AN-087, AN-089, AN-103). Pear body 110 x 150, rosette, bent neck 120 long with 4 pegs. Used by the singer and by Ibrahim; passes from hand to hand at 70.98 and 80.4.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "oud(ctx, x, y, {s, rot, strum, glow}): body = ellipse in brown with a yellow face and dot shading, sound hole = black circle with a red ring, neck = thin rect ending in a 40 degree bent peg box, 4 strings as lines that offset by sin(t*60)*2*strum. If another story has already added it to Library/, use that one."
+  },
+  {
+   "type": "pose",
+   "name": "person hold:'oud' (playOud)",
+   "description": "Playing pose for any person, standing or seated: the oud lies diagonally across the torso (neck up toward the figure's left), the right hand strums over the sound hole, the left hand moves along the neck.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Opt-in fields hold:'oud', strum (phase), fret 0..1 in Library/cast/people.js. The oud is drawn after the torso and before the arms at local (0, -110), rot -0.5; handR = sound hole + [0, 10*sin(strum)], handL = a point along the neck at fret, both through the existing arm IK. Nothing changes when hold is absent, so the regression test stays identical. Prototype in the scene first if the layer order can be had there (draw the person with arms hidden behind the instrument is not acceptable); otherwise add the opt-in field."
+  },
+  {
+   "type": "effect",
+   "name": "musicNotes",
+   "description": "Planned effect, reused by name: quaver glyphs released from a point that rise on seeded S-paths, rock and fade. Extra options used here: heart:true (the head becomes a small heart), big/gold (larger, yellow heads with a glint), frozen (hold positions), fall (drop with gravity and bounce), and a row mode (4 notes on a staff line with one slot empty or filled).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "musicNotes(ctx, x, y, t, {n, seed, col, head, heart, size, freezeAt, fallAt}); each note i is born at t0 + i*0.35 from K.rng(seed), position = origin + [sin path, -speed*age]; fallAt switches to fallY + rebound to the floor y 900. The row is drawn by the scene: a 260 px staff line with 4 note glyphs, slot 3 either dashed outline or gold."
+  },
+  {
+   "type": "effect",
+   "name": "stinkLines (aroma mode)",
+   "description": "The planned smell lines (AN-090) in a pleasant mode: three wavy yellow ribbons with small steam curls and no flies, which can follow a bezier from a source to a nose and can go limp and drop.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "stinkLines(ctx, path, t, {mode:'aroma', n:3, reach 0..1, limp 0..1}): each ribbon a polyline along the bezier with a travelling sine offset (amplitude 14, phase t*3 + i), stroke yellow 8 px with black outline 12 px behind; reach clips the length; limp lerps every point down to the ground line."
+  },
+  {
+   "type": "camera",
+   "name": "taleZoom",
+   "description": "Planned technique (AN-092), reused: enter a told story by letting the teller's thought cloud grow until its inside fills the panel (5.58-6.0), and leave it the same way in reverse (156.0-156.9).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "thoughtCloud(ctx, x, y, w, h, t, {inside, scale, at}) with w, h and scale keyed from (420, 280, 0.34) to (2600, 3200, 1.0) with an ease-in; the inside callback is the next scene's own drawWorld, so the first frame of S2 equals the last frame of the zoom. Draw the court underneath with alpha falling to 0."
+  },
+  {
+   "type": "effect",
+   "name": "inset circle",
+   "description": "Planned round picture-in-picture with an iris and black brush border, reused by name: the pinned memory of the hand (radius 105) and the compare circle in S10 and S11; the throne inset at 99.56; the bride inset at 161.84.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "insetCircle(ctx, x, y, r, p, draw): clip to a circle of radius r*easeOutBack(p), paper background, call draw(ctx), then a 10 px black ring with a slight brush taper and a yellow outer ring."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "description": "Planned wordless picture balloon, reused by name, in single and two-frame modes (tailor 22.42-24, the four-note row 59.34-64.4, the name card 94.92, why here 104.02, smell and hand 107.08-112, mother and sister 129.82-132, marriage 140.08, generosity 167.18).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "iconBalloon(ctx, x, y, w, h, p, {tail:[tx, ty], draw}): the style module's speech box with a tail to the speaker and the picture clipped inside; pop with easeOutBack on p."
+  },
+  {
+   "type": "prop",
+   "name": "giftChest (treasureHoard chest), purse, scroll, foodTray, floorCushion",
+   "description": "Planned small props reused under their planned names; see props for sizes. giftChest takes a seed for five variants so the pile is varied but cheap.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Flat shapes with the Halftone Pop outline (black 6 px), yellow bands, red or blue dot fills. The pile is a deterministic list: item i lands at cell (col = i % 5, row = floor(i / 5)) at time 152.6 + 0.3 * i^0.85 with landSquash; draw back rows first."
+  },
+  {
+   "type": "expression",
+   "name": "flush (soft option)",
+   "description": "The planned anger flush (red dots climbing the face plus steam puffs) for the singer at 63.52, and a soft option (pink cheeks only, no steam) for the bride at 140.9.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "flush(ctx, headX, headY, r, p, {soft}): clip to the head circle, fill red Ben-Day dots from the chin up to p of the head height; steam = two small cloud puffs rising from the temples unless soft."
+  },
+  {
+   "type": "pose",
+   "name": "person laugh",
+   "description": "Planned helper built from existing fields (mouth open, lid 0.8..1, tip back, shoulders shaking) so every film laughs the same way; used by the merchant, the couple and the caliph.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "laugh(P, t, t0, dur): returns {mouth:'open', lid: 0.85, tip: -0.08, y: P.y - 3*abs(sin((t - t0)*22))} blended in and out with settleTo."
+  }
+ ],
+ "owner_questions": [
+  "SCRIPT: the English translation is an abridgement of the Arabic in P4 to P8 (for example P4 omits sitting at the table, the move to the music hall and the verses of longing; P6 omits the merchant's astonishment, his question and his offer to help; P7 omits the failed search and 'only his mother and sister'; P8 omits sending the sister to Ibrahim's house until the place was too full). Both are kept verbatim; default: the picture follows the Arabic narration.",
+  "Ibrahim wears no crown or royal dress (green robe, yellow turban) both in the tale and in the court frame, so his rank stays hidden until 96 s and he is always recognisable; default: yes.",
+  "The singer (jariya, 'enslaved singer' in the English) is shown simply as a proud professional musician in the Library maiden costume, with no imagery of servitude; default: yes.",
+  "The hand is made recognisable by an invented gold bangle with red dots and a red ring (not in the script), so a phone viewer can tell it from the other women's hands; default: keep.",
+  "The sister's face is shown once she steps out (Library lady preset, veil over the hair); the three other women are shown fully and offer a hand each; the mother is never shown, only an icon; default: as described.",
+  "The son is placed silently in the court from the first frame as a set-up for the ending, and at the end he takes his uncle the merchant's hand (both additions beyond the script); default: keep.",
+  "The tale is staged inside Ibrahim's thought cloud (zoom in at 5.6 s, zoom out at 156 s) and at the end the merchant himself walks into the court and is seated beside the throne, as a literal picture of 'brought him near'; default: keep.",
+  "Invented comic lettering: SNIFF! SNIFF!, NO STRANGERS!, WELCOME!, FEAST, GASP!, BRAVO!, THE HAND, THE SISTER, THAT HAND!, MARRIED!, GIFTS, HIS SON!, plus name labels IBRAHIM, AL-MA'MUN, THE TAILOR, BIG HOUSE; default: keep all (cut FEAST and GIFTS first if it feels busy)."
+ ],
+ "implementation_notes": [
+  "Start from Library/template; set LIFE.t = t each frame so every person blinks on its own seed; give every figure an explicit gaze (lookAt) in every scene.",
+  "The person figure is front-facing only: 'turning to' someone is done with gaze, a 3-6 px head offset, tip, and by which arm gestures. Poses that must read at phone size use arm angles aL/aR (crossed forearms 23.24, thumb back 19.04, arm to the boy 162.56), not hand targets near the head.",
+  "Three interior sets are one function, palaceHall variant 'merchant', with different wall colour and options; bake each option set once. The curtain is live (curtain 0..1) and must be drawn in front of people who are behind it: draw the entering figure, then call the set's curtain piece again (or clip the figure at MERCHANT.curtain.x) so nobody is seen through it.",
+  "The street is marketStreet with the palace facade as the merchant's house; take door and balcony positions from the returned anchors (M.palace.door, M.palace.balcony) rather than the approximate numbers in this plan. The balcony shutter is a scene-drawn townWindow over the balcony opening.",
+  "taleZoom: S2's drawWorld is the inside callback of the S1 cloud, and S13's drawWorld is the inside callback of the S14 cloud, so both cuts are continuous. Hide any camera jump at the moment the cloud edge passes the panel border.",
+  "The ladyHand must be pixel-consistent everywhere (same function, same bangle); the match at 137.72 is two inset circles drawing the same function with the same parameters, sliding together.",
+  "Music is visual only. Do not synthesise lute phrases under the narration: the word list shows almost no gaps (word ends run into the next word). Allowed effect slots from the timeline: 5.58-6.48, 12.68-13.74, 18.68-19.04, 25.44-26.44, 29.60-30.00, 127.28-128.00, 133.40-134.28 and after 170.32. A soft two-note pluck may be tried at 133.8 instead of the chime.",
+  "Groups never move in unison: use stagger(i) with 2-4 frame offsets for the guests (S5-S8), the three women (S10) and the two witnesses (S11-S12), and give each a different gesture.",
+  "Balloons and clouds are placed in the upper wall or sky (y 250..550) on the side away from the speaker's face; check every lettering item against head positions with a contact sheet.",
+  "S13 gift pile: deterministic grid from a seeded list; the push-in is a camera move, not a set change. Keep the couple's faces above y 760 so the caption panel never competes.",
+  "Subtitle chunks are given in 'subtitles' (4 per paragraph); copy them into chunks_ar.txt / chunks_en.txt. Because the English is abridged, English chunks in P4-P8 are paired with the nearest Arabic chunk in time, not sentence for sentence.",
+  "Durations: film length 173.5 s = 170.56 s audio + about 3 s of THE END (end_hold 3.0)."
+ ],
+ "warnings": [
+  "Long first Arabic chunks in P4 (13 words, 38.6-48.9 s) and P7 (14 words) and the second chunk of P8 (13 words): with only 4 chunks allowed per paragraph they are unavoidable; check that Noto Naskh 700 still fits the caption panel on three lines, and reduce size for those chunks only if needed.",
+  "English subtitles for P4-P8 are a summary of the Arabic, so the two captions will not say the same thing at every moment (owner question 1).",
+  "S9 is 25 s of two seated men: it depends on the balloons, the turban gag at 101.24 and gaze acting. If it feels static in stills, add a slow lamp-shadow drift and a tighter push-in on the confession rather than more lettering.",
+  "person hold:'oud' needs the instrument between the torso and the arms; if that layer order cannot be achieved from the scene file it requires an opt-in field in Library/cast/people.js (run the regression test: must stay 'all identical').",
+  "Many named figures (15 ids), all variants of one person function; keep at most 5 on screen at once (the plan never exceeds 5).",
+  "A woman's hand shown as the object of attraction and women presenting their hands: staged lightly and with dignity (the women are amused, the sister has her own reactions); flag for the owner's cultural review."
+ ]
+}

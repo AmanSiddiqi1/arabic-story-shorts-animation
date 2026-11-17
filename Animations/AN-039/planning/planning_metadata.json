@@ -1,0 +1,143 @@
+{
+ "story_id": "AN-039",
+ "title": "The Mouse and the Ichneumon",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T12:48:50",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-aadbf2586949dbd34.jsonl",
+ "agent_id": "aadbf2586949dbd34",
+ "model_messages": {
+  "claude-fable-5-2": 20
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "9c6a7ac4525c02a3eb88008b6e324f9a8e44462b7d4010fd1bc5a7a39eabac83",
+  "paragraphs": 8,
+  "segments": [
+   "AN-039-P01-S01",
+   "AN-039-P01-S02",
+   "AN-039-P01-S03",
+   "AN-039-P01-S04",
+   "AN-039-P01-S05",
+   "AN-039-P01-S06",
+   "AN-039-P01-S07",
+   "AN-039-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-039_The_Mouse_and_the_Ichneumon_full_slowed.mp3",
+  "sha256": "23b773bf1de087b0e60a8c7afdfb5d2a50898ed75a282ecf4bfdc2de6e072d0d",
+  "duration": 170.59
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-039_The_Mouse_and_the_Ichneumon_full_slowed.mp3.words.json",
+  "sha256": "27b6f2fc12df136c94f3de010dbc309522548809665603fa240d975d9d62e4a7",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "7721db2",
+ "scenes": 16,
+ "actions": 170,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "mongoose",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "rat",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "villager",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (physician, merchant)",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person kneel / sit",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person lie / sit up in bed",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "villageYard",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "hutRoom",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "marketStreet",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "dryingMat",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "stick, coinPile, smallBowl",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "sack, coin, valuables",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "burrow",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "groundWindow",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "painPulse",
+   "effort": "S"
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Many assets this film relies on are planned by other stories but not yet in Library (rat, villager variants, physician and merchant presets, sit, kneel and lie poses, villageYard, hutRoom, marketStreet, thoughtCloud, iconBalloon, groundWindow, inset circle, stick, sack, burrow). If AN-039 is animated before them, it must build them; the only assets new to the whole plan are mongoose and dryingMat.",
+  "The mongoose and the mouse are small (about 95 and 55 units high). Use zoom 1.4 or more whenever they act alone, and keep faces at least 110 px on screen.",
+  "S1 to S3 use three sets in 20 s for the first paragraph. If time is short, S3 can be staged in the yard with the seller's stall as an inset circle.",
+  "The death of the mouse must stay calm and clear, never funny after the hit: no stars circling, no comic bounce after 136.06.",
+  "Three mongoose thefts, one replay in the wife's cloud and one in the inset use the same motion; write it once as a function of a local clock."
+ ]
+}

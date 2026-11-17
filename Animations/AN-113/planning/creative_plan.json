@@ -1,0 +1,2969 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-113",
+ "title": "The Poor Man and His Friend in Need",
+ "duration": 176.386,
+ "end_hold": 3.5,
+ "logline": "A ruined man borrows 500 dinars from an old friend, opens a jewel stall, and is showered with sudden luck, until a sealed note reveals that every stroke of luck was his friend in disguise.",
+ "moral": "The finest help is given so that the one helped never has to bow his head: true loyalty protects a friend's dignity as well as his purse.",
+ "tone": "Warm, gently comic mystery. The audience should enjoy the windfalls with the hero, sense that something is slightly off (the blue clue, the slipped smiles), and feel the reveal as a quiet lump in the throat rather than a punchline.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 2.18,
+   "kind": "setup",
+   "cue": {
+    "word": "خسر",
+    "t": 2.18
+   },
+   "summary": "A rich man loses everything; the room empties around him."
+  },
+  {
+   "id": "B2",
+   "t": 8.98,
+   "kind": "inciting",
+   "cue": {
+    "word": "نصحته",
+    "t": 8.98
+   },
+   "summary": "His wife urges him to turn to an old trusted friend."
+  },
+  {
+   "id": "B3",
+   "t": 19.52,
+   "kind": "emotion",
+   "cue": {
+    "word": "فقر",
+    "t": 19.52
+   },
+   "summary": "He confesses his poverty, ashamed."
+  },
+  {
+   "id": "B4",
+   "t": 24.34,
+   "kind": "turn",
+   "cue": {
+    "word": "وأعطاه",
+    "t": 24.34
+   },
+   "summary": "The friend listens, then gives 500 dinars to start again."
+  },
+  {
+   "id": "B5",
+   "t": 33.7,
+   "kind": "rising",
+   "cue": {
+    "word": "فاستأجر",
+    "t": 33.7
+   },
+   "summary": "He opens a stall in the jewel market and waits."
+  },
+  {
+   "id": "B6",
+   "t": 44.6,
+   "kind": "suspense",
+   "cue": {
+    "word": "ثلاثة",
+    "t": 44.6
+   },
+   "summary": "Three strangers arrive and ask about his father."
+  },
+  {
+   "id": "B7",
+   "t": 58.78,
+   "kind": "rising",
+   "cue": {
+    "word": "فشهدوا",
+    "t": 58.78
+   },
+   "summary": "Market neighbours vouch that he is the dead merchant's son."
+  },
+  {
+   "id": "B8",
+   "t": 69.02,
+   "kind": "surprise",
+   "cue": {
+    "word": "ثلاثون",
+    "t": 69.02
+   },
+   "summary": "Two bags: thirty thousand dinars and jewels, his \"inheritance\"."
+  },
+  {
+   "id": "B9",
+   "t": 97.14,
+   "kind": "surprise",
+   "cue": {
+    "word": "دفعت",
+    "t": 97.14
+   },
+   "summary": "A lady pays 3,000 for 500 dinars of jewels."
+  },
+  {
+   "id": "B10",
+   "t": 104.68,
+   "kind": "comic",
+   "cue": {
+    "word": "أبواب",
+    "t": 104.68
+   },
+   "summary": "The doors of fortune literally swing open behind him."
+  },
+  {
+   "id": "B11",
+   "t": 119.5,
+   "kind": "turn",
+   "cue": {
+    "word": "رفض",
+    "t": 119.5
+   },
+   "summary": "He tries to repay; the friend refuses: it was a gift."
+  },
+  {
+   "id": "B12",
+   "t": 126.32,
+   "kind": "suspense",
+   "cue": {
+    "word": "ورقة",
+    "t": 126.32
+   },
+   "summary": "A sealed note, to be opened only at home."
+  },
+  {
+   "id": "B13",
+   "t": 142.96,
+   "kind": "reveal",
+   "cue": {
+    "word": "أقارب",
+    "t": 142.96
+   },
+   "summary": "The three men were the friend's relatives."
+  },
+  {
+   "id": "B14",
+   "t": 148.5,
+   "kind": "reveal",
+   "cue": {
+    "word": "أم",
+    "t": 148.5
+   },
+   "summary": "The lady was the friend's mother."
+  },
+  {
+   "id": "B15",
+   "t": 152.4,
+   "kind": "climax",
+   "cue": {
+    "word": "أرسلها",
+    "t": 152.4
+   },
+   "summary": "All the money and jewels came secretly from the friend."
+  },
+  {
+   "id": "B16",
+   "t": 161.96,
+   "kind": "emotion",
+   "cue": {
+    "word": "يحرجه",
+    "t": 161.96
+   },
+   "summary": "He did it so his friend would never have to ask."
+  },
+  {
+   "id": "B17",
+   "t": 172.8,
+   "kind": "moral",
+   "cue": {
+    "word": "وفاء",
+    "t": 172.8
+   },
+   "summary": "Not an inheritance but the fruit of a loyal friendship that kept his dignity."
+  }
+ ],
+ "cast": [
+  {
+   "id": "man",
+   "name": "the man (once rich, later the jeweller)",
+   "library": "person",
+   "base": "person costume:'villager' (green tunic, small white turban with red band, black beard), age 0.35, s 1.0",
+   "look": "The same green figure in every scene so he is always found at once. S1 opening only (0-3.3 s): pal override {hc: C.yellow, jewel: C.red, sash: C.yellow} = his rich days; the yellow turban and sash pop back to plain white and red with the lost goods. From S5 on he wears a jeweller's apron (scene-drawn brown bib 60 x 90 over the tunic, as the carpenter preset's). In the youth memory (S4): age 0, no apron, s 0.9.",
+   "new": false
+  },
+  {
+   "id": "wife",
+   "name": "his wife",
+   "library": "person",
+   "base": "person costume:'villageWoman' (red dress, yellow veil), s 0.95",
+   "look": "Warm and practical; she is the one who thinks of the friend. Returns in the reading scenes as his listener.",
+   "new": false
+  },
+  {
+   "id": "friend",
+   "name": "the old friend",
+   "library": "person",
+   "base": "person costume:'merchant' (blue robe, big white turban with red jewel and feather, black beard), age 0.4, s 1.05",
+   "look": "Blue is HIS colour: every helper he secretly sends carries one blue item (the visual clue that pays off in the reveal). Calm, listening face; smiles with the eyes (lid 0.25) rather than grinning.",
+   "new": false
+  },
+  {
+   "id": "kin1",
+   "name": "first stranger, the spokesman (a relative of the friend)",
+   "library": "person",
+   "base": "person costume:'bedouin', pal {sash: C.blue}, age 0.6, s 1.05",
+   "look": "Tall, grey beard, cream robe, keffiyeh; a BLUE sash. Does the talking; dignified.",
+   "new": false
+  },
+  {
+   "id": "kin2",
+   "name": "second stranger (a relative of the friend)",
+   "library": "person",
+   "base": "person costume:'merchant', pal {robe: GREEN, dot: GREEND, hc: C.yellow, sash: C.blue} (the catalogue 'merchant pal' cell with a blue sash), s 0.98",
+   "look": "Stout, yellow turban; carries one bag. Eager; the worst actor of the three (he nearly smiles).",
+   "new": false
+  },
+  {
+   "id": "kin3",
+   "name": "third stranger (a relative of the friend)",
+   "library": "person",
+   "base": "person costume:'servant', pal {hc: C.blue}, age 0.1, s 0.92",
+   "look": "Young, white tunic, BLUE cap; carries the other bag; glances at the spokesman for cues.",
+   "new": false
+  },
+  {
+   "id": "lady",
+   "name": "the buyer (the friend's mother)",
+   "library": "person",
+   "base": "person costume:'lady' (blue robe, white veil, gold circlet), age 0.8, s 0.93",
+   "look": "Elderly, small, quick and decided; wears the friend's blue from head to foot. Soft eye lines; a tiny private smile only when the jeweller cannot see her face.",
+   "new": false
+  },
+  {
+   "id": "neighbourA",
+   "name": "market neighbour (witness)",
+   "library": "person",
+   "base": "person costume:'beanSeller', s 0.97",
+   "look": "Apron and small cap; quick to vouch.",
+   "new": false
+  },
+  {
+   "id": "neighbourB",
+   "name": "market neighbour (witness)",
+   "library": "person",
+   "base": "person costume:'carpenter', age 0.7, s 1.0",
+   "look": "Older, yellow shirt and leather apron; slower, nods gravely.",
+   "new": false
+  },
+  {
+   "id": "cat",
+   "name": "market cat (the only passer-by)",
+   "library": "cat",
+   "base": "cat pal 2 (orange), s 0.7",
+   "look": "Strolls past the empty stall once; a 3 s comic beat.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "home",
+   "library": "palaceHall",
+   "description": "The man's house: palaceHall({variant:'merchant', wall:'ochre', curtain:1, treasure:false, shelves:[], desk:false, stools:[640], door:{...default left door}}). A once-fine room stripped bare. For the first 3.3 s the same room is drawn FULL (default shelves with jars and cloth, desk [410,630,800] with coin stacks, treasure:true behind the open curtain) and the goods vanish in three groups; pale rectangles (wall tone mixed 12 % toward paper, no outline) stay on the wall where the shelves hung. Window pane shows the time of day: u 0.2 in S1-S2, u 0.48 (warm dusk) in S14-S17. Floor y 900.",
+   "new": false
+  },
+  {
+   "id": "friendHouse",
+   "library": "palaceHall",
+   "description": "The friend's house: palaceHall({variant:'merchant', wall:'blue', curtain:0, lampsLit:true}) with the default shelves and the desk [410,630,800] (coin stacks on it). Door on the left (use the returned anchors door.cx; default about x 40..250). The friend stands right of the desk at x 720, the visitor stops at x 300. Floor y 900.",
+   "new": false
+  },
+  {
+   "id": "jewelMarket",
+   "library": "marketStreet",
+   "description": "The jewel market: marketStreet({palette:'clear', palace:false, stalls:[{x:560, kind:'jewel', cols:[C.blue, C.white]}], props:[['crate', 880], ['pots', 120]], doors:[0,0,0]}) with three house doors in the row behind (use the returned doors[] anchors; they open one after another in S11). The man's stall is the new stall kind 'jewel' (blue and white awning, velvet tray on the counter). He sits behind the counter (person sit 0.5, drawn BEFORE the stall front so the counter hides his legs); customers stand on the street left of the stall at x 180..400, witnesses come from the right at x 800..900. Ground y 900; counter top from anchors stalls[0].counter (about y 800, measure on the set).",
+   "new": false
+  }
+ ],
+ "props": [
+  {
+   "id": "purse",
+   "library": null,
+   "description": "Planned fat coin purse (drawstring pouch about 60 x 70, yellow coin mark, fill 0..1; limp and hanging when empty). The friend's 500 dinars, and the same purse coming back in S12.",
+   "new": true
+  },
+  {
+   "id": "coinPile",
+   "library": null,
+   "description": "Planned coin mound (n coins, glint); spills from the open bag in S8 and is stacked on the counter in S10.",
+   "new": true
+  },
+  {
+   "id": "saddlebag",
+   "library": null,
+   "description": "Planned leather satchel (about 150 x 120 at this scale, flap, bulge 0..1, open 0..1). Two of them: the \"two bags\". Each has one BLUE buckle strap (the clue).",
+   "new": true
+  },
+  {
+   "id": "jewels",
+   "library": null,
+   "description": "Planned cut gems in four colours (each about 26 px, hexagon with one facet line and a glint) and the small jewelBox casket with a hinged lid; also a necklace = 9 gems on a drooping curve. On the tray, in the bag, in the lady's box.",
+   "new": true
+  },
+  {
+   "id": "scroll",
+   "library": null,
+   "description": "Planned small scroll used as the sealed note: rolled 90 x 26 with a red seal (seal 0..1), open 150 x 200 paper sheet with lines 0..4 of wavy writing arranged as two verse couplets (two half-lines per row with a gap in the middle).",
+   "new": true
+  },
+  {
+   "id": "portraitMedallion",
+   "library": null,
+   "description": "Planned round portrait (r 46 to 70) of a person head clipped to a circle, yellow rim: the friend (S2, S17) and the late father (S6, S7, S9, S17: the man's own face at age 1 with a white beard and the yellow turban of his rich days).",
+   "new": true
+  },
+  {
+   "id": "heart",
+   "library": "heart",
+   "description": "The Library heart prop (catalogue props: fig, worm, heart), red, about 60 px, beside the friend medallion at the moral.",
+   "new": false
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 8.98,
+   "paragraphs": [
+    1
+   ],
+   "set": "home",
+   "cast": [
+    "man",
+    "wife"
+   ],
+   "summary": "Rich to poor in one breath: the full room empties around him in three pops, his yellow turban turns plain, the purse hangs limp. His wife comes in with an empty bowl.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Hold wide (zoom 1.0, centre 500,700) for the full room until 3.3; ease to zoom 1.25 centred on the man (x 520, y 740) by 5.6 and hold."
+   },
+   "composition": "Man at x 520 facing camera, desk at 410..630 in front left of him, shelves upper left, treasure alcove right. Wife enters from the right at 6.7 and stops at x 700. Faces stay above y 760.",
+   "actions": [
+    {
+     "t": 0.0,
+     "cue": {
+      "word": "كان",
+      "t": 0.0
+     },
+     "who": "set",
+     "action": "full merchant room: shelves loaded, coin stacks on the desk, treasure glowing in the alcove",
+     "acting": "static, bright; lamp flicker only",
+     "library": "palaceHall variant merchant, treasure:true"
+    },
+    {
+     "t": 1.0,
+     "cue": {
+      "word": "غني",
+      "t": 1.0
+     },
+     "who": "man",
+     "action": "stands proud in the yellow turban and sash, hands on hips",
+     "acting": "chest out (sq 1.03), mouth smile, lid 0.3 (content), gaze sweeps his goods left to right",
+     "library": "person PERSON_HANDS.hipsHands + gazePlan"
+    },
+    {
+     "t": 2.18,
+     "end": 3.08,
+     "cue": {
+      "word": "خسر",
+      "t": 2.18
+     },
+     "who": "set",
+     "action": "shelf goods pop away (group 1), then desk coins at +0.4 (group 2)",
+     "acting": "each group shrinks to a dust puff in 4 frames; pale rectangle left on the wall",
+     "library": "two bakes (full and bare) with clip regions + dustBurst"
+    },
+    {
+     "t": 2.33,
+     "cue": {
+      "word": "خسر",
+      "t": 2.18
+     },
+     "who": "man",
+     "action": "head snaps to the shelves, then to the desk",
+     "acting": "eyes wide, brow -0.6, mouth o; saccade gaze (gazePlan ease 0.07)",
+     "library": "person gazePlan"
+    },
+    {
+     "t": 3.32,
+     "end": 3.92,
+     "cue": {
+      "word": "كله",
+      "t": 3.32
+     },
+     "who": "set",
+     "action": "treasure alcove empties and the curtain drops half shut (group 3); his turban and sash turn plain",
+     "acting": "last and biggest pop; curtain 1 to 0.5 with settleTo",
+     "library": "palaceHall curtain key + settleTo"
+    },
+    {
+     "t": 3.82,
+     "cue": {
+      "word": "كله",
+      "t": 3.32
+     },
+     "who": "man",
+     "action": "slumps: shoulders drop, hands fall",
+     "acting": "sq 0.95, tip 0.05, lid 0.45, mouth frown; one slow blink",
+     "library": "person sq, tip, lid"
+    },
+    {
+     "t": 4.48,
+     "end": 5.48,
+     "cue": {
+      "word": "وأصبح",
+      "t": 4.48
+     },
+     "who": "purse",
+     "action": "he lifts the purse, turns it upside down: nothing but one dust puff",
+     "acting": "purse limp (fill 0), swings once (swing)",
+     "library": "purse fill 0 + swing + dustBurst"
+    },
+    {
+     "t": 5.56,
+     "cue": {
+      "word": "عاجزًا",
+      "t": 5.56
+     },
+     "who": "man",
+     "action": "lets the arm fall, palms open",
+     "acting": "PERSON_HANDS.palmsUp for 0.6 s then down; gaze to floor [0,0.8]",
+     "library": "person palmsUp"
+    },
+    {
+     "t": 6.68,
+     "end": 7.78,
+     "cue": {
+      "word": "تدبير",
+      "t": 6.68
+     },
+     "who": "wife",
+     "action": "walks in from the right holding an empty bowl in both hands",
+     "acting": "walk without sliding; gaze on him, brow -0.4 (worried)",
+     "library": "person walk + footfalls; handLW/handRW on the bowl"
+    },
+    {
+     "t": 7.84,
+     "cue": {
+      "word": "بيته",
+      "t": 7.84
+     },
+     "who": "wife",
+     "action": "tilts the bowl toward him: empty",
+     "acting": "small head shake (shake 2 px, 2 cycles); he looks at the bowl then away",
+     "library": "person lookAt"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 2.3,
+     "text": "POOF!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 8.98
+   }
+  },
+  {
+   "id": "S2",
+   "start": 8.98,
+   "end": 15.84,
+   "paragraphs": [
+    1
+   ],
+   "set": "home",
+   "cast": [
+    "man",
+    "wife"
+   ],
+   "summary": "She advises him: go to your old friend. A portrait of the friend pops between them; hope returns to his face.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "twoShot(man, wife, {margin: 140}) at about zoom 1.5; hold."
+   },
+   "composition": "Man left at x 440 facing right, wife right at x 640 facing left; the medallion appears above and between them at (540, 470), clear of both heads.",
+   "actions": [
+    {
+     "t": 8.98,
+     "cue": {
+      "word": "نصحته",
+      "t": 8.98
+     },
+     "who": "wife",
+     "action": "sets the bowl on the stool and touches his sleeve",
+     "acting": "leans in (tip 0.06), talk 0.7 on her words, gaze lookAt his eyes",
+     "library": "person handRW to his arm, talk"
+    },
+    {
+     "t": 9.94,
+     "cue": {
+      "word": "زوجته",
+      "t": 9.74
+     },
+     "who": "man",
+     "action": "keeps his eyes down, listening",
+     "acting": "lid 0.5, gaze [0.2,0.7]; breathes (breathe)",
+     "library": "person breathe"
+    },
+    {
+     "t": 10.92,
+     "cue": {
+      "word": "يستعين",
+      "t": 10.92
+     },
+     "who": "wife",
+     "action": "points up and away toward the door (outside)",
+     "acting": "PERSON_HANDS.pointUp with the far hand, brow -0.3, encouraging nod",
+     "library": "person pointUp"
+    },
+    {
+     "t": 11.66,
+     "end": 12.16,
+     "cue": {
+      "word": "بصديق",
+      "t": 11.66
+     },
+     "who": "portraitMedallion",
+     "action": "the friend medallion pops in above them (blue robe, big turban, kind eyes)",
+     "acting": "pop with 10 % overshoot; the portrait blinks once",
+     "library": "portraitMedallion + settleTo"
+    },
+    {
+     "t": 12.74,
+     "cue": {
+      "word": "قديم",
+      "t": 12.54
+     },
+     "who": "man",
+     "action": "looks up at the portrait",
+     "acting": "gaze lookAt medallion, lid 0.45 to 0.1, brow from -0.5 to 0",
+     "library": "person look()"
+    },
+    {
+     "t": 13.28,
+     "cue": {
+      "word": "يعرفه",
+      "t": 13.28
+     },
+     "who": "man",
+     "action": "small remembered smile; then doubt, glances at his empty purse",
+     "acting": "mouth smile for 0.5 s, then eyes break down to the purse (shame at asking)",
+     "library": "person gazePlan"
+    },
+    {
+     "t": 14.12,
+     "cue": {
+      "word": "ويثق",
+      "t": 14.12
+     },
+     "who": "wife",
+     "action": "closes his hand over the purse and nods firmly",
+     "acting": "gaze locked on him, one firm nod (drop 6 px)",
+     "library": "person handLW"
+    },
+    {
+     "t": 14.96,
+     "cue": {
+      "word": "به",
+      "t": 14.96
+     },
+     "who": "man",
+     "action": "straightens, nods back, turns toward the door",
+     "acting": "sq 1.0 to 1.02, mouth set (closed), gaze to the door [-1,0]; anticipation dip before the first step",
+     "library": "person anticipate"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 15.84
+   }
+  },
+  {
+   "id": "S3",
+   "start": 15.84,
+   "end": 29.42,
+   "paragraphs": [
+    1,
+    2
+   ],
+   "set": "friendHouse",
+   "cast": [
+    "man",
+    "friend"
+   ],
+   "summary": "At the friend's house he tells his trouble with his head low. The friend listens to the end without interrupting, then gives him a purse of 500 dinars.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Wide on his entry (zoom 1.05); from 17.2 twoShot(man, friend) zoom 1.35; slow push to 1.5 on the listening friend 21.0-23.6; reframe to include the desk at 24.3."
+   },
+   "composition": "Door left; man walks in to x 300 (facing right). Friend at x 720 facing left, desk 410..630 between and slightly behind them. The 500 tag appears above the purse at about (520, 560).",
+   "actions": [
+    {
+     "t": 15.84,
+     "end": 17.14,
+     "cue": {
+      "word": "فذهب",
+      "t": 15.84
+     },
+     "who": "man",
+     "action": "enters through the opening door and walks in, slowing",
+     "acting": "walk, steps get shorter (hesitation); purse limp in his hand; gaze low",
+     "library": "person walk + footfalls; palaceHall doorOpen key"
+    },
+    {
+     "t": 16.66,
+     "cue": {
+      "word": "إليه",
+      "t": 16.36
+     },
+     "who": "friend",
+     "action": "turns from the shelves, opens both arms in welcome",
+     "acting": "brow -0.3, mouth smile, PERSON_HANDS.armsOut then settles; gaze lookAt the man",
+     "library": "person armsOut + settleTo"
+    },
+    {
+     "t": 17.24,
+     "cue": {
+      "word": "وأخبره",
+      "t": 17.24
+     },
+     "who": "man",
+     "action": "speaks, eyes on the floor; shows the empty purse",
+     "acting": "talk 0.6, lid 0.4, tip 0.06; purse held out limp",
+     "library": "person talk, handRW on the purse"
+    },
+    {
+     "t": 18.46,
+     "cue": {
+      "word": "أصابه",
+      "t": 18.46
+     },
+     "who": "friend",
+     "action": "smile fades into concern, one step closer",
+     "acting": "mouth closed, brow -0.5, head tilt; a half step (walk 30 units)",
+     "library": "person walk"
+    },
+    {
+     "t": 19.52,
+     "cue": {
+      "word": "فقر",
+      "t": 19.52
+     },
+     "who": "man",
+     "action": "head sinks, shoulders in",
+     "acting": "sq 0.95, lid 0.7, wet eyes, mouth frown",
+     "library": "person wet, sq"
+    },
+    {
+     "t": 20.3,
+     "cue": {
+      "word": "وضيق",
+      "t": 20.3
+     },
+     "who": "man",
+     "action": "covers his face with one hand for a moment",
+     "acting": "PERSON_HANDS.headHold (one hand), tremble 1 px",
+     "library": "person headHold + tremble"
+    },
+    {
+     "t": 21.02,
+     "end": 22.92,
+     "cue": {
+      "word": "استمع",
+      "t": 21.02
+     },
+     "who": "friend",
+     "action": "listens: hand to chin, perfectly still, eyes never leaving him",
+     "acting": "suspense by stillness: only blinks and one slow nod at 22.2; PERSON_HANDS.chin",
+     "library": "person chin; blink"
+    },
+    {
+     "t": 22.98,
+     "cue": {
+      "word": "الصديق",
+      "t": 22.98
+     },
+     "who": "man",
+     "action": "finishes, lets his hand drop, dares one look up",
+     "acting": "gaze up to the friend for 0.4 s then away",
+     "library": "person gazePlan"
+    },
+    {
+     "t": 23.64,
+     "cue": {
+      "word": "إليه",
+      "t": 23.64
+     },
+     "who": "friend",
+     "action": "lays a hand on his shoulder",
+     "acting": "handLW to the shoulder, lid 0.25 (warm eyes)",
+     "library": "person handLW"
+    },
+    {
+     "t": 24.34,
+     "end": 25.34,
+     "cue": {
+      "word": "وأعطاه",
+      "t": 24.34
+     },
+     "who": "friend",
+     "action": "turns to the desk, picks up a fat purse",
+     "acting": "quick, no hesitation: turn, reach (PERSON_HANDS.reach), lift with a little weight dip",
+     "library": "person reach; purse fill 1"
+    },
+    {
+     "t": 25.64,
+     "cue": {
+      "word": "خمسمئة",
+      "t": 25.64
+     },
+     "who": "purse",
+     "action": "the purse is pressed into his hands; tag 500 DINARS pops above it with an arrow",
+     "acting": "purse drops 8 px in his hands (weight), squash 0.9 and settle",
+     "library": "purse + S.counter/label + S.arrow"
+    },
+    {
+     "t": 26.62,
+     "cue": {
+      "word": "دينار",
+      "t": 26.62
+     },
+     "who": "man",
+     "action": "stares at the purse, then at the friend",
+     "acting": "eyes wide, brow -0.7, mouth o; gaze purse then friend",
+     "library": "person gazePlan"
+    },
+    {
+     "t": 27.38,
+     "cue": {
+      "word": "ليبدأ",
+      "t": 27.38
+     },
+     "who": "friend",
+     "action": "gestures outward, toward the door: go and begin",
+     "acting": "PERSON_HANDS.pointFwd toward the door, encouraging nod, talk 0.5",
+     "library": "person pointFwd"
+    },
+    {
+     "t": 28.4,
+     "cue": {
+      "word": "عملًا",
+      "t": 28.2
+     },
+     "who": "man",
+     "action": "presses the purse to his chest and bows his head in thanks",
+     "acting": "PERSON_HANDS.chest with the purse, tip 0.12, lid 1 for 0.3 s (grateful blink), wet eyes",
+     "library": "person chest, tip"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 25.64,
+     "text": "500 DINARS"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 29.42
+   }
+  },
+  {
+   "id": "S4",
+   "start": 29.42,
+   "end": 33.7,
+   "paragraphs": [
+    2
+   ],
+   "set": "jewelMarket",
+   "cast": [
+    "man"
+   ],
+   "summary": "He walks through the market weighing the purse; a round memory inset shows him as a young jeweller at a bench.",
+   "camera": {
+    "shot": "medium",
+    "move": "track",
+    "notes": "Camera tracks his walk left to right (zoom 1.3); the inset circle (r 190) sits upper right at (720, 430)."
+   },
+   "composition": "Man walks x 150 to 330. Inset: young man (age 0, s 0.9) seated at a small bench with a gem on it, a little hammer in the hand.",
+   "actions": [
+    {
+     "t": 29.42,
+     "cue": {
+      "word": "وكان",
+      "t": 29.42
+     },
+     "who": "man",
+     "action": "walks along the street, tossing the purse lightly in one hand, thinking",
+     "acting": "walk; gaze up-left (remembering), purse hop 14 px on each second step",
+     "library": "person walk + footfalls"
+    },
+    {
+     "t": 31.42,
+     "cue": {
+      "word": "عمل",
+      "t": 31.42
+     },
+     "who": "fx",
+     "action": "memory inset irises open: the young jeweller at his bench",
+     "acting": "iris 0 to r 190 in 0.3 s with overshoot; light dream wash (strength 0.3) inside",
+     "library": "inset circle + dream wash"
+    },
+    {
+     "t": 31.78,
+     "cue": {
+      "word": "صائغًا",
+      "t": 31.78
+     },
+     "who": "man",
+     "action": "in the inset the young man taps a ring with a tiny hammer, holds the gem to his eye",
+     "acting": "three quick taps (strike cycle), then gem to the eye, one eye shut (wink R), proud smile",
+     "library": "person age 0, sit 0.5, wink; strike cycle"
+    },
+    {
+     "t": 32.88,
+     "cue": {
+      "word": "شبابه",
+      "t": 32.88
+     },
+     "who": "man",
+     "action": "outside the inset he stops, looks at his own hand, closes it into a fist: he knows a trade",
+     "acting": "stops with settle; gaze hand then forward, mouth smile, brow 0.2 (resolve)",
+     "library": "person settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 31.9,
+     "text": "TINK!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "iris",
+    "t": 33.7
+   }
+  },
+  {
+   "id": "S5",
+   "start": 33.7,
+   "end": 42.86,
+   "paragraphs": [
+    2
+   ],
+   "set": "jewelMarket",
+   "cast": [
+    "man",
+    "cat"
+   ],
+   "summary": "He opens a stall in the jewel market, lays out a few gems, sits down and waits. Only a cat comes by.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Establishing wide on the stall (zoom 1.0) while it opens; push to zoom 1.35 on stall and man by 39.2; hold for the wait."
+   },
+   "composition": "Stall centred at x 560 (about 430..690). Man behind the counter. JEWELS sign on the awning valance. The cat crosses on the street in front, right to left, y 900.",
+   "actions": [
+    {
+     "t": 33.7,
+     "end": 34.7,
+     "cue": {
+      "word": "فاستأجر",
+      "t": 33.7
+     },
+     "who": "man",
+     "action": "hands two coins from the purse to a hand at the frame edge and gets a key",
+     "acting": "only the landlord's arm shows at the right frame edge; quick exchange, he nods",
+     "library": "person handRW; coinPile single coins"
+    },
+    {
+     "t": 34.92,
+     "end": 35.62,
+     "cue": {
+      "word": "دكانًا",
+      "t": 34.92
+     },
+     "who": "set",
+     "action": "the stall awning unrolls and the shutter board drops to become the counter",
+     "acting": "awning unrolls in 0.4 s with a bounce; counter lands with a 3 px shake (panel only)",
+     "library": "marketStall state 'closed' to open (keyed) + settleTo"
+    },
+    {
+     "t": 35.94,
+     "cue": {
+      "word": "سوق",
+      "t": 35.94
+     },
+     "who": "lettering",
+     "action": "sign JEWELS pops on the valance; a label JEWEL MARKET with an arrow at the street",
+     "acting": "pop with overshoot",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 37.22,
+     "end": 38.62,
+     "cue": {
+      "word": "واشترى",
+      "t": 37.22
+     },
+     "who": "jewels",
+     "action": "he sets gems on the velvet tray one by one: red, blue, green, a small necklace",
+     "acting": "four pops 0.3 s apart, each with a glint; the purse beside the tray goes from fat to half (fill 1 to 0.4)",
+     "library": "jewels + goldGlow strength 0.3; purse fill"
+    },
+    {
+     "t": 38.56,
+     "cue": {
+      "word": "البضاعة",
+      "t": 38.56
+     },
+     "who": "man",
+     "action": "nudges one gem straight with a fingertip, steps back to admire",
+     "acting": "fussy, proud; gaze tray, head tilt",
+     "library": "person handRW"
+    },
+    {
+     "t": 39.16,
+     "cue": {
+      "word": "وجلس",
+      "t": 39.16
+     },
+     "who": "man",
+     "action": "sits on his stool behind the counter, hands folded on it",
+     "acting": "sit blend 0 to 0.5 over 0.5 s with settle; bright expectant face (brow -0.3, smile)",
+     "library": "person sit 0.5, seat:'stool'; PERSON_HANDS.clasp"
+    },
+    {
+     "t": 40.34,
+     "cue": {
+      "word": "ينتظر",
+      "t": 40.34
+     },
+     "who": "man",
+     "action": "looks left... looks right... drums his fingers",
+     "acting": "gazePlan left 0.5 s, right 0.5 s; hand taps 4 times; smile shrinks a step each look",
+     "library": "person gazePlan + countedBeats for the taps"
+    },
+    {
+     "t": 41.14,
+     "end": 42.74,
+     "cue": {
+      "word": "الزبائن",
+      "t": 41.14
+     },
+     "who": "cat",
+     "action": "an orange cat strolls past the stall; he sits up hopeful, then sags when he sees it is a cat",
+     "acting": "cat walk GAIT.cat, tailUp 1, does not even look at him; man: sq 1.03 then 0.96, lid 0.4",
+     "library": "cat walk; person sq"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 35.0,
+     "text": "JEWELS"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 42.86
+   }
+  },
+  {
+   "id": "S6",
+   "start": 42.86,
+   "end": 52.86,
+   "paragraphs": [
+    3
+   ],
+   "set": "jewelMarket",
+   "cast": [
+    "man",
+    "kin1",
+    "kin2",
+    "kin3"
+   ],
+   "summary": "Three strangers arrive, each with one blue item. They ask after his father; he tells them his father is dead.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Start framed left on the three entering (zoom 1.15), pan right with them to a wide two-group shot (zoom 1.2) by 45.5; hold."
+   },
+   "composition": "Strangers stop at x 200 (kin3), 290 (kin2), 385 (kin1, nearest the stall); man behind the counter at x 560. Speech balloon with the father medallion above the gap at (470, 430), tail to kin1.",
+   "actions": [
+    {
+     "t": 42.86,
+     "end": 44.86,
+     "cue": {
+      "word": "جاء",
+      "t": 42.86
+     },
+     "who": "kin1",
+     "action": "the three walk in from the left in a line, the spokesman first",
+     "acting": "walk + footfalls; staggered (stagger(i) 0.25 s apart), different stride lengths, kin2 and kin3 each carry a saddlebag on the shoulder",
+     "library": "person walk, footfalls, stagger"
+    },
+    {
+     "t": 44.0,
+     "cue": {
+      "word": "الدكان",
+      "t": 44.0
+     },
+     "who": "man",
+     "action": "springs up from his stool: customers!",
+     "acting": "sit 0.5 to 0, sq 1.04 overshoot, big smile, sweeps a hand over the tray (PERSON_HANDS.armsOut one side)",
+     "library": "person settleTo"
+    },
+    {
+     "t": 44.6,
+     "end": 45.5,
+     "cue": {
+      "word": "ثلاثة",
+      "t": 44.6
+     },
+     "who": "fx",
+     "action": "counter 1, 2, 3 ticks over the three heads as each stops",
+     "acting": "each number pops as that man plants his feet",
+     "library": "S.counter"
+    },
+    {
+     "t": 45.74,
+     "cue": {
+      "word": "رجال",
+      "t": 45.54
+     },
+     "who": "kin1",
+     "action": "ignores the tray; studies the man's face instead",
+     "acting": "gaze locked on his face, head tilt, lid 0.3; kin3 looks at kin1 for the cue",
+     "library": "person lookAt"
+    },
+    {
+     "t": 46.86,
+     "cue": {
+      "word": "وسألوه",
+      "t": 46.86
+     },
+     "who": "kin1",
+     "action": "asks: open palm toward him",
+     "acting": "talk 0.7, PERSON_HANDS.palmsUp one hand, brow -0.3",
+     "library": "person talk, palmsUp"
+    },
+    {
+     "t": 48.18,
+     "cue": {
+      "word": "أبيه",
+      "t": 48.18
+     },
+     "who": "portraitMedallion",
+     "action": "speech balloon pops with the father medallion and a question mark",
+     "acting": "pop; the old face in the portrait is the man's own face aged, in the yellow turban",
+     "library": "portraitMedallion in a balloon (S.box) + settleTo"
+    },
+    {
+     "t": 48.86,
+     "cue": {
+      "word": "أخبرهم",
+      "t": 48.86
+     },
+     "who": "man",
+     "action": "the salesman smile drops; he lowers his eyes and answers quietly",
+     "acting": "mouth closed, lid 0.5, talk 0.4, hand to chest (PERSON_HANDS.chest)",
+     "library": "person chest"
+    },
+    {
+     "t": 50.52,
+     "cue": {
+      "word": "والده",
+      "t": 50.52
+     },
+     "who": "man",
+     "action": "small shake of the head",
+     "acting": "shake 2 px, wet eyes",
+     "library": "person wet"
+    },
+    {
+     "t": 51.32,
+     "cue": {
+      "word": "مات",
+      "t": 51.32
+     },
+     "who": "portraitMedallion",
+     "action": "the portrait in the balloon loses its colour (grey paper tone) and the question mark fades",
+     "acting": "colour to grey over 0.5 s; no grave, no skull",
+     "library": "mixHex on the medallion fill"
+    },
+    {
+     "t": 51.82,
+     "cue": {
+      "word": "مات",
+      "t": 51.32
+     },
+     "who": "kin1",
+     "action": "the three bow their heads, hands on chests, one after another",
+     "acting": "stagger 3 frames; lid 0.8; kin2 a beat late and peeks at the others",
+     "library": "person chest + stagger"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 44.6,
+     "text": "1 2 3"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 46.4,
+     "kind": "pop"
+    },
+    {
+     "t": 52.5,
+     "kind": "chime-low"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 52.86
+   }
+  },
+  {
+   "id": "S7",
+   "start": 52.86,
+   "end": 64.84,
+   "paragraphs": [
+    3
+   ],
+   "set": "jewelMarket",
+   "cast": [
+    "man",
+    "kin1",
+    "kin2",
+    "kin3",
+    "neighbourA",
+    "neighbourB"
+   ],
+   "summary": "Are you truly his son? He calls two market neighbours, who vouch for him. While he is looking at them, the strangers trade one quick satisfied glance.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "From zoom 1.3 on kin1 and the man (52.9) pull out to zoom 1.05 by 56.6 to admit the neighbours from the right; hold."
+   },
+   "composition": "Left group (three strangers) x 200..385; man at 560; neighbours arrive at x 800 and 890. The man's head and the father medallion are compared side by side at (560, 400) and (680, 400) with an equals sign between.",
+   "actions": [
+    {
+     "t": 52.86,
+     "cue": {
+      "word": "فسألوه",
+      "t": 52.86
+     },
+     "who": "kin1",
+     "action": "points at him, then at the portrait",
+     "acting": "PERSON_HANDS.pointFwd, brow -0.6 (asking, not accusing), talk 0.7",
+     "library": "person pointFwd"
+    },
+    {
+     "t": 54.4,
+     "cue": {
+      "word": "ابنه",
+      "t": 54.4
+     },
+     "who": "fx",
+     "action": "the father medallion (colour back) slides beside the man's head with = and ? between them",
+     "acting": "slide 0.3 s, settle",
+     "library": "portraitMedallion + S.label"
+    },
+    {
+     "t": 54.92,
+     "cue": {
+      "word": "فعلًا",
+      "t": 54.92
+     },
+     "who": "man",
+     "action": "hand on his chest: I am",
+     "acting": "PERSON_HANDS.chest, firm nod, brow 0.2",
+     "library": "person chest"
+    },
+    {
+     "t": 55.42,
+     "end": 56.42,
+     "cue": {
+      "word": "جمع",
+      "t": 55.42
+     },
+     "who": "man",
+     "action": "turns right, cups his mouth and calls, waving people over",
+     "acting": "PERSON_HANDS.cupMouth then wave; anticipation lean back before the call",
+     "library": "person cupMouth, wave, anticipate"
+    },
+    {
+     "t": 57.02,
+     "end": 58.22,
+     "cue": {
+      "word": "أهل",
+      "t": 57.02
+     },
+     "who": "neighbourA",
+     "action": "the bean seller hurries in from the right, wiping his hands; the old carpenter follows slower",
+     "acting": "two different walks (fast short steps, slow long ones), stagger 0.5 s",
+     "library": "person walk + footfalls"
+    },
+    {
+     "t": 58.3,
+     "who": "kin2",
+     "action": "in the pause the three strangers wait, hands folded, very correct",
+     "acting": "still; kin2 rocks on his heels once",
+     "library": "person folded"
+    },
+    {
+     "t": 58.78,
+     "cue": {
+      "word": "فشهدوا",
+      "t": 58.78
+     },
+     "who": "neighbourA",
+     "action": "points at the man with a big open hand and nods hard",
+     "acting": "PERSON_HANDS.pointFwd, talk 0.8, nod x2",
+     "library": "person pointFwd"
+    },
+    {
+     "t": 59.46,
+     "cue": {
+      "word": "أمامهم",
+      "t": 59.46
+     },
+     "who": "neighbourB",
+     "action": "raises one hand as an oath, grave nod",
+     "acting": "aR raised (angles about [2.45, 2.85]), lid 0.3, slow nod",
+     "library": "person aR"
+    },
+    {
+     "t": 60.7,
+     "cue": {
+      "word": "الرجل",
+      "t": 60.7
+     },
+     "who": "man",
+     "action": "looks from one neighbour to the other, grateful",
+     "acting": "gaze right (away from the strangers), small smile",
+     "library": "person gazePlan"
+    },
+    {
+     "t": 61.26,
+     "cue": {
+      "word": "ابن",
+      "t": 61.26
+     },
+     "who": "fx",
+     "action": "the ? between the two faces flips to a tick; label HIS SON! with an arrow to the man",
+     "acting": "flip in 3 frames, pop",
+     "library": "S.label + S.arrow + S.emphasis"
+    },
+    {
+     "t": 62.1,
+     "cue": {
+      "word": "التاجر",
+      "t": 62.1
+     },
+     "who": "kin2",
+     "action": "MASK OFF: behind the man's back kin2 and kin3 trade a quick pleased glance; kin1 stops it with a look",
+     "acting": "kin2 mouth smile for 0.5 s, kin3 gaze to kin2, kin1 gaze snaps at them (brow 0.4): both go blank again",
+     "library": "person gazePlan (ease 0.07), mouth"
+    },
+    {
+     "t": 64.1,
+     "who": "kin1",
+     "action": "in the pause kin1 nods once to the two carriers; they swing the bags off their shoulders",
+     "acting": "decisive nod; the bags swing (swing) as they come down",
+     "library": "person + swing"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 61.3,
+     "text": "HIS SON!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 58.4,
+     "kind": "pop"
+    },
+    {
+     "t": 64.3,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 64.84
+   }
+  },
+  {
+   "id": "S8",
+   "start": 64.84,
+   "end": 74.44,
+   "paragraphs": [
+    4
+   ],
+   "set": "jewelMarket",
+   "cast": [
+    "man",
+    "kin1",
+    "kin2",
+    "kin3"
+   ],
+   "summary": "Two heavy bags land on his counter: thirty thousand dinars, ornaments and precious stones. He is thunderstruck.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on the counter (zoom 1.5, centre 520, 740); push to 1.75 into the open bag at 69.0; ease back to 1.5 at 73.5 to show his whole reaction."
+   },
+   "composition": "Counter across the middle; bags land at x 480 and 600 on the counter; man behind, his face between and above the bags (keep it clear). Counter numerals above the bags at y 470.",
+   "actions": [
+    {
+     "t": 64.84,
+     "cue": {
+      "word": "عندئذ",
+      "t": 64.84
+     },
+     "who": "kin1",
+     "action": "steps aside with a small bow and an open hand toward the counter",
+     "acting": "formal; gaze on the man",
+     "library": "person palmsUp"
+    },
+    {
+     "t": 66.14,
+     "cue": {
+      "word": "سلموه",
+      "t": 66.14
+     },
+     "who": "saddlebag",
+     "action": "kin2 heaves bag one onto the counter: THUD, the tray gems hop",
+     "acting": "fallY the last 40 px, impactSquash, gems kick up 6 px; counter dips 4 px and rebounds",
+     "library": "saddlebag + fallY, impactSquash, rebound, kick"
+    },
+    {
+     "t": 66.69,
+     "cue": {
+      "word": "سلموه",
+      "t": 66.14
+     },
+     "who": "saddlebag",
+     "action": "kin3 sets bag two beside it, more carefully",
+     "acting": "smaller squash; kin3 pats it flat",
+     "library": "saddlebag + impactSquash"
+    },
+    {
+     "t": 67.12,
+     "cue": {
+      "word": "حقيبتين",
+      "t": 67.12
+     },
+     "who": "fx",
+     "action": "tag 2 BAGS with two short arrows",
+     "acting": "pop",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 68.1,
+     "end": 68.9,
+     "cue": {
+      "word": "فيهما",
+      "t": 68.1
+     },
+     "who": "kin1",
+     "action": "undoes the buckle of the first bag and folds the flap back",
+     "acting": "slow on purpose (he enjoys this); the man leans in",
+     "library": "saddlebag open 0 to 1"
+    },
+    {
+     "t": 69.02,
+     "end": 70.92,
+     "cue": {
+      "word": "ثلاثون",
+      "t": 69.02
+     },
+     "who": "coinPile",
+     "action": "gold light bursts from the open bag, coins brim over; a counter spins up",
+     "acting": "goldGlow 0 to 1 in 0.4 s; counter 0 to 30,000 by 70.9, landing with emphasis",
+     "library": "coinPile + goldGlow + S.counter"
+    },
+    {
+     "t": 69.92,
+     "cue": {
+      "word": "ألف",
+      "t": 69.92
+     },
+     "who": "man",
+     "action": "lit yellow from below, eyes huge",
+     "acting": "eyes wide, noBlink, brow -1, mouth o, sq 1.05 stretch",
+     "library": "person eyes:'wide'"
+    },
+    {
+     "t": 71.2,
+     "cue": {
+      "word": "وحلي",
+      "t": 71.2
+     },
+     "who": "jewels",
+     "action": "kin1 lifts a necklace out of the second bag; it swings",
+     "acting": "swing(t, 71.2, 0.5); glints stagger along the gems",
+     "library": "jewels necklace + swing"
+    },
+    {
+     "t": 72.3,
+     "end": 73.3,
+     "cue": {
+      "word": "وأحجار",
+      "t": 72.3
+     },
+     "who": "jewels",
+     "action": "four big gems roll out onto the counter: red, blue, green, white",
+     "acting": "each rolls 30..60 px and rocks to rest; star glints",
+     "library": "jewels + goldGlow glints"
+    },
+    {
+     "t": 73.54,
+     "cue": {
+      "word": "نفيسة",
+      "t": 73.54
+     },
+     "who": "man",
+     "action": "both hands fly to his cheeks; he looks from the bags to the three faces",
+     "acting": "PERSON_HANDS.cheeks, tremble 1.5 px, gaze bags then kin1",
+     "library": "person cheeks + tremble"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 66.14,
+     "text": "THUD!"
+    },
+    {
+     "t": 69.02,
+     "text": "30,000 DINARS"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 74.44
+   }
+  },
+  {
+   "id": "S9",
+   "start": 74.44,
+   "end": 85.5,
+   "paragraphs": [
+    4
+   ],
+   "set": "jewelMarket",
+   "cast": [
+    "man",
+    "kin1",
+    "kin2",
+    "kin3"
+   ],
+   "summary": "The spokesman explains: your father left these with us in trust, and we return them to his lawful heir. They bow and go; the last one cannot resist a look back.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pull-out",
+    "notes": "twoShot(kin1, man) zoom 1.4 for the speech; pull out to zoom 1.1 from 82.5 as the three leave to the left."
+   },
+   "composition": "Balloon above kin1 at (330, 400): a three-step picture story inside it (father medallion, the two bags, an arrow). The man right, behind the counter with the bags.",
+   "actions": [
+    {
+     "t": 74.44,
+     "cue": {
+      "word": "قالوا",
+      "t": 74.44
+     },
+     "who": "kin1",
+     "action": "speaks with one hand raised, the other on his chest",
+     "acting": "talk 0.7, steady gaze, slow blink; the story of an honest man",
+     "library": "person chest, talk"
+    },
+    {
+     "t": 75.86,
+     "cue": {
+      "word": "أباه",
+      "t": 75.86
+     },
+     "who": "portraitMedallion",
+     "action": "balloon: the father medallion (in colour) pops",
+     "acting": "pop",
+     "library": "portraitMedallion in S.box"
+    },
+    {
+     "t": 76.46,
+     "cue": {
+      "word": "ترك",
+      "t": 76.46
+     },
+     "who": "saddlebag",
+     "action": "balloon: two small bag icons slide from the father to a pair of open hands",
+     "acting": "slide 0.5 s with a settle",
+     "library": "saddlebag at s 0.35 + kfn"
+    },
+    {
+     "t": 78.78,
+     "cue": {
+      "word": "أمانة",
+      "t": 78.78
+     },
+     "who": "lettering",
+     "action": "label IN TRUST under the balloon picture",
+     "acting": "pop",
+     "library": "S.label"
+    },
+    {
+     "t": 80.18,
+     "cue": {
+      "word": "وفاته",
+      "t": 80.18
+     },
+     "who": "man",
+     "action": "listens with his hand over his mouth, eyes wet",
+     "acting": "PERSON_HANDS.mouthCover, wet, lid 0.3",
+     "library": "person mouthCover, wet"
+    },
+    {
+     "t": 81.02,
+     "cue": {
+      "word": "وإنهم",
+      "t": 81.02
+     },
+     "who": "kin1",
+     "action": "turns his open hand from himself to the man",
+     "acting": "handRW sweeps toward the man over 0.8 s",
+     "library": "person handRW"
+    },
+    {
+     "t": 82.54,
+     "cue": {
+      "word": "ليعيدوها",
+      "t": 82.54
+     },
+     "who": "fx",
+     "action": "a fat arrow runs from the balloon bags to the real bags on the counter",
+     "acting": "arrow draws on in 0.4 s",
+     "library": "S.arrow"
+    },
+    {
+     "t": 83.86,
+     "cue": {
+      "word": "وريثه",
+      "t": 83.86
+     },
+     "who": "lettering",
+     "action": "label THE HEIR with an arrow at the man",
+     "acting": "pop with emphasis; the man points at himself, unbelieving",
+     "library": "S.label + S.arrow; person pointDown at chest"
+    },
+    {
+     "t": 84.62,
+     "end": 85.52,
+     "cue": {
+      "word": "الشرعي",
+      "t": 84.62
+     },
+     "who": "kin1",
+     "action": "the three bow together (not in unison) and turn to go left",
+     "acting": "stagger 4 frames; turn with a squeeze, walk off",
+     "library": "person stagger, walk"
+    },
+    {
+     "t": 85.22,
+     "cue": {
+      "word": "الشرعي",
+      "t": 84.62
+     },
+     "who": "kin3",
+     "action": "MASK OFF: the youngest, last in line, looks back over his shoulder with a small grin, then hurries after the others",
+     "acting": "gaze back [1,0] 0.4 s, mouth smile; the man is staring at the bags and does not see",
+     "library": "person gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 78.78,
+     "text": "IN TRUST"
+    },
+    {
+     "t": 83.86,
+     "text": "THE HEIR"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 85.5,
+    "label": "SOON AFTER..."
+   }
+  },
+  {
+   "id": "S10",
+   "start": 85.5,
+   "end": 100.1,
+   "paragraphs": [
+    5
+   ],
+   "set": "jewelMarket",
+   "cast": [
+    "man",
+    "lady"
+   ],
+   "summary": "Soon after, an old lady in blue chooses jewels priced at 500 dinars and pays 3,000, waving away his protest.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "The SOON AFTER card covers 85.5-87.2 (camera cut hidden at its midpoint). Then wide for her entrance (zoom 1.15), twoShot(lady, man) zoom 1.45 from 90.6; push to 1.6 on the purses at 97.1."
+   },
+   "composition": "Lady enters from the left and stops at x 400 in front of the counter; man behind it at 560. The stall now looks richer (more gems on the tray, the two bags tucked under the counter). Price tag above the jewel box at (480, 520).",
+   "actions": [
+    {
+     "t": 85.5,
+     "end": 87.2,
+     "cue": {
+      "word": "وبعد",
+      "t": 85.5
+     },
+     "who": "fx",
+     "action": "transition card SOON AFTER... crosses the panel",
+     "acting": "S.transition; under it the tray fills with more gems",
+     "library": "S.transition caption 'SOON AFTER...'"
+    },
+    {
+     "t": 88.08,
+     "end": 89.48,
+     "cue": {
+      "word": "حضرت",
+      "t": 88.08
+     },
+     "who": "lady",
+     "action": "walks in from the left with short quick steps, a little stooped",
+     "acting": "walk with short stride, slight bob; gaze already on the tray",
+     "library": "person costume:'lady', age 0.8; walk + footfalls"
+    },
+    {
+     "t": 89.02,
+     "cue": {
+      "word": "امرأة",
+      "t": 88.82
+     },
+     "who": "man",
+     "action": "rises and greets her with a hand on his chest",
+     "acting": "sit to stand with settle, smile, small bow",
+     "library": "person chest"
+    },
+    {
+     "t": 90.66,
+     "end": 91.96,
+     "cue": {
+      "word": "واختارت",
+      "t": 90.66
+     },
+     "who": "lady",
+     "action": "points: this one, this one, and that",
+     "acting": "three quick jabs of the finger (PERSON_HANDS.pointDown), decided, no haggling",
+     "library": "person pointDown + countedBeats"
+    },
+    {
+     "t": 92.16,
+     "end": 93.06,
+     "cue": {
+      "word": "جواهر",
+      "t": 92.16
+     },
+     "who": "jewels",
+     "action": "he lays the three gems in a small jewel box and closes the lid",
+     "acting": "gems hop into the box 0.2 s apart; lid closes with a snap",
+     "library": "jewels jewelBox lid 1 to 0"
+    },
+    {
+     "t": 93.38,
+     "cue": {
+      "word": "ثمنها",
+      "t": 93.38
+     },
+     "who": "lettering",
+     "action": "price tag 500 pops over the box as he holds up five fingers",
+     "acting": "pop; he holds up an open hand (aR raised)",
+     "library": "S.label + person aR"
+    },
+    {
+     "t": 95.22,
+     "cue": {
+      "word": "دينار",
+      "t": 95.22
+     },
+     "who": "lady",
+     "action": "nods and sets a fat purse on the counter",
+     "acting": "purse lands with a small squash",
+     "library": "purse + impactSquash"
+    },
+    {
+     "t": 95.94,
+     "end": 97.04,
+     "cue": {
+      "word": "لكنها",
+      "t": 95.94
+     },
+     "who": "lady",
+     "action": "then another purse... and another... she keeps going",
+     "acting": "purses 2 and 3 land 0.45 s apart; she does not look up; his smile freezes",
+     "library": "purse x3 + impactSquash"
+    },
+    {
+     "t": 97.14,
+     "cue": {
+      "word": "دفعت",
+      "t": 97.14
+     },
+     "who": "purse",
+     "action": "six purses now stand in a row; the tag 500 is struck through",
+     "acting": "purses 4 to 6 land faster; red strike line across 500",
+     "library": "purse + S.emphasis"
+    },
+    {
+     "t": 97.7,
+     "end": 99.2,
+     "cue": {
+      "word": "ثلاثة",
+      "t": 97.7
+     },
+     "who": "fx",
+     "action": "counter rolls 500 to 3,000 above the purses",
+     "acting": "ticks 500 per purse and lands on 3,000 with a pop at 98.8",
+     "library": "S.counter"
+    },
+    {
+     "t": 98.78,
+     "cue": {
+      "word": "آلاف",
+      "t": 98.78
+     },
+     "who": "man",
+     "action": "both palms up, shaking his head: too much! pushes three purses back",
+     "acting": "PERSON_HANDS.palmsUp, shake, brow -0.8, talk 0.6; handLW pushes the purses 40 px",
+     "library": "person palmsUp, handLW"
+    },
+    {
+     "t": 99.4,
+     "end": 100.1,
+     "cue": {
+      "word": "دينار",
+      "t": 99.4
+     },
+     "who": "lady",
+     "action": "pushes them firmly back to him, pats his hand twice, takes the box and turns away; a tiny smile once her back is to him",
+     "acting": "pat pat; turn with a squeeze; mouth smile and lid 0.3 only after the turn (mask off, toward the camera)",
+     "library": "person handRW; mouth"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 93.38,
+     "text": "500"
+    },
+    {
+     "t": 98.78,
+     "text": "3,000!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 100.1
+   }
+  },
+  {
+   "id": "S11",
+   "start": 100.1,
+   "end": 109.34,
+   "paragraphs": [
+    5
+   ],
+   "set": "jewelMarket",
+   "cast": [
+    "man"
+   ],
+   "summary": "Alone, he stares at the pile, looks straight at us, and feels the doors of fortune opening: behind him the street doors swing open one after another, pouring gold light.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "Close-medium on the man and the purses (zoom 1.6) to 103.4; pull out to zoom 1.05 by 105.3 to show the three doors behind the stall."
+   },
+   "composition": "Man behind the counter at 560; the three house doors of the street row are behind him to the left, centre and right (use doors[] anchors, about x 180, 760 and 930; measure on the set). Light spills as yellow wedges on the ground.",
+   "actions": [
+    {
+     "t": 100.1,
+     "end": 101.3,
+     "cue": {
+      "word": "تعجب",
+      "t": 100.1
+     },
+     "who": "man",
+     "action": "looks at the purses, at the bags under the counter, back at the purses",
+     "acting": "saccades (gazePlan ease 0.07), mouth o, scratches his head (PERSON_HANDS.headHold one hand)",
+     "library": "person gazePlan, headHold"
+    },
+    {
+     "t": 101.6,
+     "cue": {
+      "word": "الرجل",
+      "t": 101.3
+     },
+     "who": "man",
+     "action": "looks straight into the lens: can you believe this?",
+     "acting": "the film's one look to camera: gaze [0,0.05], brow -0.9, a slow blink",
+     "library": "person gaze [0,0.05]"
+    },
+    {
+     "t": 102.5,
+     "cue": {
+      "word": "الأحداث",
+      "t": 102.5
+     },
+     "who": "man",
+     "action": "shrugs with both palms up, a slow smile starting",
+     "acting": "PERSON_HANDS.palmsUp, shoulders up 6 px, mouth to smile",
+     "library": "person palmsUp"
+    },
+    {
+     "t": 103.4,
+     "cue": {
+      "word": "وشعر",
+      "t": 103.4
+     },
+     "who": "man",
+     "action": "lays a hand on his heart and looks up",
+     "acting": "PERSON_HANDS.chest, gaze up, lid 0.2, breath in (sq 1.03)",
+     "library": "person chest"
+    },
+    {
+     "t": 104.68,
+     "cue": {
+      "word": "أبواب",
+      "t": 104.68
+     },
+     "who": "set",
+     "action": "door one of the street swings open: gold light inside",
+     "acting": "door open 0 to 0.9 in 0.35 s with overshoot; goldGlow wedge on the ground",
+     "library": "marketStreet doors:[..] keyed + goldGlow"
+    },
+    {
+     "t": 105.32,
+     "cue": {
+      "word": "الرزق",
+      "t": 105.32
+     },
+     "who": "set",
+     "action": "door two opens; a few coins roll out and spin flat",
+     "acting": "same, 0.6 s later; three coins roll with settle",
+     "library": "townDoor + coinPile single coins"
+    },
+    {
+     "t": 106.32,
+     "cue": {
+      "word": "فتحت",
+      "t": 106.32
+     },
+     "who": "set",
+     "action": "door three opens",
+     "acting": "same; all three now pour light",
+     "library": "townDoor + goldGlow"
+    },
+    {
+     "t": 107.3,
+     "end": 108.1,
+     "cue": {
+      "word": "فجأة",
+      "t": 107.3
+     },
+     "who": "man",
+     "action": "jumps at the last door, then laughs and throws both arms up",
+     "acting": "hop 20 px with landSquash; aL/aR raised (about [±2.45, ±2.85]); eyes shut happy",
+     "library": "person hop, landSquash, aL/aR"
+    },
+    {
+     "t": 108.5,
+     "who": "fx",
+     "action": "in the pause the light pulses once and the doors ease shut again (it was a feeling, not a fact)",
+     "acting": "goldGlow 1 to 0, doors 0.9 to 0 over 0.7 s",
+     "library": "kfn on door keys"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 108.3,
+     "kind": "chime"
+    },
+    {
+     "t": 109.1,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 109.34
+   }
+  },
+  {
+   "id": "S12",
+   "start": 109.34,
+   "end": 117.92,
+   "paragraphs": [
+    6
+   ],
+   "set": "friendHouse",
+   "cast": [
+    "man",
+    "friend"
+   ],
+   "summary": "He carries 500 dinars to his friend and holds the purse out with both hands: I have come to repay the loan.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide on his entry (zoom 1.05); push to twoShot zoom 1.4 by 112.8."
+   },
+   "composition": "Same blocking as S3 so the two visits rhyme, but now he walks tall: in from the door to x 320; friend at x 720 rises from a stool by the desk. Tag above the purse.",
+   "actions": [
+    {
+     "t": 109.34,
+     "end": 111.14,
+     "cue": {
+      "word": "حمل",
+      "t": 109.34
+     },
+     "who": "man",
+     "action": "strides in through the door with the fat purse held in front of him in both hands",
+     "acting": "walk with long even steps (compare the hesitant walk of S3), chin up, smile",
+     "library": "person walk + footfalls; handLW/handRW on the purse"
+    },
+    {
+     "t": 110.4,
+     "cue": {
+      "word": "دينار",
+      "t": 110.4
+     },
+     "who": "lettering",
+     "action": "tag 500 over the purse",
+     "acting": "pop",
+     "library": "S.label"
+    },
+    {
+     "t": 111.88,
+     "cue": {
+      "word": "صديقه",
+      "t": 111.88
+     },
+     "who": "friend",
+     "action": "looks up from the desk, rises, pleased to see him",
+     "acting": "sit 0.5 to 0, brow -0.3, smile, armsOut small",
+     "library": "person sit, armsOut"
+    },
+    {
+     "t": 112.82,
+     "cue": {
+      "word": "وقال",
+      "t": 112.82
+     },
+     "who": "man",
+     "action": "stops, takes a breath, and holds the purse out at arm's length",
+     "acting": "anticipate dip, then both arms extend (PERSON_HANDS.reachBoth), talk 0.7, proud",
+     "library": "person reachBoth, talk"
+    },
+    {
+     "t": 115.18,
+     "cue": {
+      "word": "يريد",
+      "t": 115.18
+     },
+     "who": "man",
+     "action": "small formal bow over the purse",
+     "acting": "tip 0.1, lid 0.4",
+     "library": "person tip"
+    },
+    {
+     "t": 115.74,
+     "cue": {
+      "word": "رد",
+      "t": 115.74
+     },
+     "who": "fx",
+     "action": "arrow from the purse to the friend, label REPAID?",
+     "acting": "arrow draws on",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 116.98,
+     "cue": {
+      "word": "اقترضه",
+      "t": 116.98
+     },
+     "who": "friend",
+     "action": "looks at the purse, then at him; does not take it",
+     "acting": "gaze purse 0.4 s then his eyes; hands stay at his sides; mouth closed (the pause before the refusal)",
+     "library": "person gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 110.4,
+     "text": "500"
+    },
+    {
+     "t": 115.74,
+     "text": "REPAID?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 117.92
+   }
+  },
+  {
+   "id": "S13",
+   "start": 117.92,
+   "end": 131.92,
+   "paragraphs": [
+    6
+   ],
+   "set": "friendHouse",
+   "cast": [
+    "man",
+    "friend"
+   ],
+   "summary": "The friend refuses: it was a gift from the start. Then he gives him a sealed note: do not open it until you are home.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot zoom 1.4; push to 1.7 on the two pairs of hands and the note at 125.7; back to 1.4 at 128.7."
+   },
+   "composition": "Man left x 320, friend right x 620 (he steps in close). Hands and purse at chest height between them, about (470, 720). GIFT label above at y 470.",
+   "actions": [
+    {
+     "t": 117.92,
+     "cue": {
+      "word": "لكن",
+      "t": 117.92
+     },
+     "who": "friend",
+     "action": "raises a flat palm: stop",
+     "acting": "PERSON_HANDS.shield with one hand, slow shake of the head, kind eyes (lid 0.25)",
+     "library": "person shield"
+    },
+    {
+     "t": 119.5,
+     "end": 120.3,
+     "cue": {
+      "word": "رفض",
+      "t": 119.5
+     },
+     "who": "friend",
+     "action": "closes the man's fingers over the purse and pushes it back to his chest",
+     "acting": "handLW/handRW on the purse; the purse travels 70 px back; the man resists 10 px then gives",
+     "library": "person handLW/handRW"
+    },
+    {
+     "t": 120.1,
+     "cue": {
+      "word": "وأخبره",
+      "t": 120.1
+     },
+     "who": "man",
+     "action": "protests, offers again",
+     "acting": "talk 0.5, brow -0.6, purse forward 30 px",
+     "library": "person talk"
+    },
+    {
+     "t": 122.08,
+     "cue": {
+      "word": "قدمه",
+      "t": 122.08
+     },
+     "who": "friend",
+     "action": "hand on his own heart",
+     "acting": "PERSON_HANDS.chest, talk 0.6, smile",
+     "library": "person chest"
+    },
+    {
+     "t": 122.9,
+     "cue": {
+      "word": "هدية",
+      "t": 122.9
+     },
+     "who": "lettering",
+     "action": "label A GIFT! with the 500 tag changing to a ribbon bow on the purse",
+     "acting": "pop with emphasis; small red bow drawn on the purse neck",
+     "library": "S.label + S.emphasis"
+    },
+    {
+     "t": 124.28,
+     "cue": {
+      "word": "البداية",
+      "t": 124.28
+     },
+     "who": "man",
+     "action": "gives in; lowers the purse, eyes wet, shakes his head smiling",
+     "acting": "wet, lid 0.4, mouth smile, sq 0.98",
+     "library": "person wet"
+    },
+    {
+     "t": 125.02,
+     "cue": {
+      "word": "ثم",
+      "t": 125.02
+     },
+     "who": "friend",
+     "action": "draws a small rolled note with a red seal from his sleeve",
+     "acting": "unhurried; holds it up between two fingers so we see the seal",
+     "library": "scroll seal 1 + person handRW"
+    },
+    {
+     "t": 126.32,
+     "cue": {
+      "word": "ورقة",
+      "t": 126.32
+     },
+     "who": "scroll",
+     "action": "the note passes into the man's free hand",
+     "acting": "hand to hand with a 4 px weight dip; both look at it",
+     "library": "scroll + handLW"
+    },
+    {
+     "t": 126.92,
+     "cue": {
+      "word": "وطلب",
+      "t": 126.92
+     },
+     "who": "man",
+     "action": "turns it over and starts to pick at the seal at once",
+     "acting": "curious, gaze on the seal, thumb at it",
+     "library": "person handRW"
+    },
+    {
+     "t": 128.72,
+     "cue": {
+      "word": "ألا",
+      "t": 128.72
+     },
+     "who": "friend",
+     "action": "claps his hand over the seal and wags a finger: not here",
+     "acting": "quick (3 frames), PERSON_HANDS.pointUp wagging 3 times, brows up, half a smile",
+     "library": "person pointUp"
+    },
+    {
+     "t": 129.72,
+     "cue": {
+      "word": "إلا",
+      "t": 129.72
+     },
+     "who": "friend",
+     "action": "points out through the door: at home",
+     "acting": "PERSON_HANDS.pointFwd toward the door; a tiny house icon pops by the door arch",
+     "library": "person pointFwd; S.label icon"
+    },
+    {
+     "t": 130.58,
+     "cue": {
+      "word": "بيته",
+      "t": 130.58
+     },
+     "who": "man",
+     "action": "tucks the note into his sash, puzzled, bows and turns to go",
+     "acting": "gaze note, friend, door; brow -0.4",
+     "library": "person gazePlan"
+    },
+    {
+     "t": 131.3,
+     "who": "friend",
+     "action": "MASK OFF in the pause: alone, the friend watches him leave and lets a broad, secret smile out",
+     "acting": "wink (P.wink R) toward the camera side, lid 0.3, hands fold behind him",
+     "library": "person wink, folded"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 122.9,
+     "text": "A GIFT!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 131.5,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 131.92
+   }
+  },
+  {
+   "id": "S14",
+   "start": 131.92,
+   "end": 139.2,
+   "paragraphs": [
+    7
+   ],
+   "set": "home",
+   "cast": [
+    "man",
+    "wife"
+   ],
+   "summary": "At home, with his wife beside him, he breaks the seal and finds verses that tell the truth.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on the couple (zoom 1.35); push to 1.7 on his face over the paper 136.4-138.9."
+   },
+   "composition": "The room is the same bare room as S1, now with a lit lamp and warm dusk in the window (u 0.48), and one stool. Man at x 470 seated on the stool facing camera, wife standing at x 620 leaning in. Paper held at chest height, its face tilted toward us.",
+   "actions": [
+    {
+     "t": 131.92,
+     "cue": {
+      "word": "فتح",
+      "t": 131.92
+     },
+     "who": "man",
+     "action": "sits, takes the note from his sash and thumbs the seal",
+     "acting": "sit 0.5 on the stool; careful hands; wife leans in (tip 0.07)",
+     "library": "person sit, seat:'stool'; scroll"
+    },
+    {
+     "t": 134.5,
+     "who": "scroll",
+     "action": "the seal snaps in the pause; two red halves fall",
+     "acting": "seal 1 to 0 in 2 frames, halves fall with fallY",
+     "library": "scroll seal + fallY"
+    },
+    {
+     "t": 134.92,
+     "cue": {
+      "word": "فوجد",
+      "t": 134.92
+     },
+     "who": "scroll",
+     "action": "the paper unrolls downward in his hands",
+     "acting": "unroll 0.4 s with a bounce at the end",
+     "library": "scroll open 0 to 1 + settleTo"
+    },
+    {
+     "t": 136.44,
+     "cue": {
+      "word": "أبياتًا",
+      "t": 136.44
+     },
+     "who": "scroll",
+     "action": "four lines of verse write themselves on, each as two half-lines",
+     "acting": "lines 0 to 4, 0.18 s apart, right to left",
+     "library": "scroll lines 0..4"
+    },
+    {
+     "t": 137.2,
+     "cue": {
+      "word": "تكشف",
+      "t": 137.2
+     },
+     "who": "man",
+     "action": "his eyes run along the lines right to left, faster and faster",
+     "acting": "gaze sweeps right to left 3 times; lid opens 0.3 to 0",
+     "library": "person gazePlan"
+    },
+    {
+     "t": 138.12,
+     "cue": {
+      "word": "الحقيقة",
+      "t": 138.12
+     },
+     "who": "man",
+     "action": "freezes; eyes wide; the paper trembles",
+     "acting": "eyes wide, noBlink, mouth o, tremble 1 px on the paper; wife looks from the paper to his face",
+     "library": "person eyes:'wide' + tremble"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 134.5,
+     "kind": "snap"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 139.2
+   }
+  },
+  {
+   "id": "S15",
+   "start": 139.2,
+   "end": 154.34,
+   "paragraphs": [
+    7
+   ],
+   "set": "home",
+   "cast": [
+    "man",
+    "wife",
+    "friend",
+    "kin1",
+    "kin2",
+    "kin3",
+    "lady"
+   ],
+   "summary": "The reveal, played in a big thought cloud above the note: the three strangers were the friend's relatives, the lady was his mother, and the money and jewels were sent by him in secret. Each time the friend steps into the picture in his blue.",
+   "camera": {
+    "shot": "wide",
+    "move": "tilt",
+    "notes": "Pull back and tilt up at 139.2 (zoom 1.1, centre 500, 620) so the cloud fills the upper panel and the couple sit below; hold. Small 3 % push on each of the three answers."
+   },
+   "composition": "Thought cloud 800 x 520 centred at (500, 400), trail down to the man's head at (470, 690). Inside scale 0.55 (figures about 125 px tall on screen). Couple below: man x 470, wife x 620, heads at about y 700, clear of the cloud.",
+   "actions": [
+    {
+     "t": 139.2,
+     "cue": {
+      "word": "الثلاثة",
+      "t": 139.2
+     },
+     "who": "fx",
+     "action": "the cloud pops open; inside, the three strangers stand in a row at the stall exactly as in S6",
+     "acting": "trail bubbles first, then the cloud (0.4 s); the three in their S6 poses, serious",
+     "library": "thoughtCloud(ctx, 500, 400, 800, 520, t, {inside, scale: 0.55})"
+    },
+    {
+     "t": 140.76,
+     "cue": {
+      "word": "جاءوا",
+      "t": 140.76
+     },
+     "who": "kin1",
+     "action": "in the cloud their blue items flash: sash, sash, cap",
+     "acting": "three glints in order, 0.2 s apart (S.emphasis rings)",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 142.16,
+     "cue": {
+      "word": "كانوا",
+      "t": 142.16
+     },
+     "who": "friend",
+     "action": "in the cloud the friend steps in behind the three and puts his arms round the shoulders of two of them",
+     "acting": "walk in 0.5 s; armsOut then down onto shoulders; his blue beside their blue",
+     "library": "person walk, handLW/handRW"
+    },
+    {
+     "t": 142.96,
+     "cue": {
+      "word": "أقارب",
+      "t": 142.96
+     },
+     "who": "kin2",
+     "action": "all three drop the act and grin; kin2 laughs out loud, kin3 waves",
+     "acting": "stagger 3 frames; mouth smile, kin2 talk pulses (laugh), kin3 PERSON_HANDS.wave",
+     "library": "person stagger, wave"
+    },
+    {
+     "t": 143.64,
+     "cue": {
+      "word": "صديقه",
+      "t": 143.64
+     },
+     "who": "lettering",
+     "action": "label HIS RELATIVES! under the group; below, the man's jaw drops",
+     "acting": "pop; man mouth open, brow -1; wife gasps (PERSON_HANDS.mouthCover)",
+     "library": "S.label; person mouthCover"
+    },
+    {
+     "t": 144.5,
+     "cue": {
+      "word": "والمرأة",
+      "t": 144.5
+     },
+     "who": "fx",
+     "action": "the cloud picture wipes to the lady in blue holding the jewel box",
+     "acting": "quick wipe right to left inside the cloud (0.25 s); she stands alone, composed",
+     "library": "thoughtCloud inside swap"
+    },
+    {
+     "t": 146.16,
+     "cue": {
+      "word": "اشترت",
+      "t": 146.16
+     },
+     "who": "lady",
+     "action": "in the cloud she shakes the box by her ear and smiles",
+     "acting": "box rattles (2 px), lid 0.3, smile",
+     "library": "person handRW"
+    },
+    {
+     "t": 147.68,
+     "cue": {
+      "word": "كانت",
+      "t": 147.68
+     },
+     "who": "friend",
+     "action": "the friend steps in beside her, bends and kisses her hand",
+     "acting": "walk in, tip 0.25 toward her, her hand raised to him",
+     "library": "person tip, handLW"
+    },
+    {
+     "t": 148.5,
+     "cue": {
+      "word": "أم",
+      "t": 148.5
+     },
+     "who": "lady",
+     "action": "she pats his cheek twice like a boy; he grins",
+     "acting": "pat pat (countedBeats), his eyes shut happy",
+     "library": "person handRW + countedBeats"
+    },
+    {
+     "t": 148.82,
+     "cue": {
+      "word": "الصديق",
+      "t": 148.82
+     },
+     "who": "lettering",
+     "action": "label HIS MOTHER!; below, the man slaps his forehead",
+     "acting": "pop; PERSON_HANDS.headHold, sq 0.96 then laugh breath",
+     "library": "S.label; person headHold"
+    },
+    {
+     "t": 149.6,
+     "cue": {
+      "word": "أما",
+      "t": 149.6
+     },
+     "who": "fx",
+     "action": "the cloud wipes to the two bags and the six purses on the counter",
+     "acting": "wipe; goldGlow 0.6",
+     "library": "saddlebag, purse, goldGlow"
+    },
+    {
+     "t": 150.9,
+     "cue": {
+      "word": "والحلي",
+      "t": 150.9
+     },
+     "who": "saddlebag",
+     "action": "the blue buckle straps on both bags flash",
+     "acting": "two glints",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 152.4,
+     "cue": {
+      "word": "أرسلها",
+      "t": 152.4
+     },
+     "who": "friend",
+     "action": "the friend appears at the cloud's edge and a dotted line runs from his hand to the bags and purses",
+     "acting": "dotted path draws on over 0.6 s",
+     "library": "S.arrow dotted + kfn"
+    },
+    {
+     "t": 153.68,
+     "cue": {
+      "word": "سرًا",
+      "t": 153.68
+     },
+     "who": "friend",
+     "action": "he puts a finger to his lips and winks",
+     "acting": "PERSON_HANDS.hush + wink R; label HIS GIFT!",
+     "library": "person hush, wink; S.label"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 143.64,
+     "text": "HIS RELATIVES!"
+    },
+    {
+     "t": 148.82,
+     "text": "HIS MOTHER!"
+    },
+    {
+     "t": 153.68,
+     "text": "HIS GIFT!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 154.34
+   }
+  },
+  {
+   "id": "S16",
+   "start": 154.34,
+   "end": 165.34,
+   "paragraphs": [
+    8
+   ],
+   "set": "home",
+   "cast": [
+    "man",
+    "wife",
+    "friend"
+   ],
+   "summary": "Why he did it: in the cloud the friend writes the note, then we see the whole plan as a map with him at the centre, and last the thing he spared his friend: asking for money face to face.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Same framing as S15 (zoom 1.1); hold. The cloud does the moving."
+   },
+   "composition": "Cloud as in S15. Plan map inside: friend medallion in the centre (r 70), three spokes to small icons (three heads, the lady, two bags), each spoke a dotted line.",
+   "actions": [
+    {
+     "t": 154.34,
+     "end": 155.94,
+     "cue": {
+      "word": "كتب",
+      "t": 154.34
+     },
+     "who": "friend",
+     "action": "cloud: the friend sits at his desk writing the note, tongue between his teeth in concentration",
+     "acting": "sit 0.5, hand moves along the line right to left, gaze on the paper; he blows on the ink",
+     "library": "person sit; scroll lines"
+    },
+    {
+     "t": 156.14,
+     "cue": {
+      "word": "الصديق",
+      "t": 156.14
+     },
+     "who": "man",
+     "action": "below, the man reads on, lips moving",
+     "acting": "talk 0.2 (murmur), gaze on the paper; wife reads over his shoulder",
+     "library": "person talk"
+    },
+    {
+     "t": 157.46,
+     "cue": {
+      "word": "دبّر",
+      "t": 157.46
+     },
+     "who": "fx",
+     "action": "cloud wipes to the plan map: friend medallion in the centre",
+     "acting": "medallion pops",
+     "library": "portraitMedallion"
+    },
+    {
+     "t": 157.94,
+     "end": 158.94,
+     "cue": {
+      "word": "ذلك",
+      "t": 157.94
+     },
+     "who": "fx",
+     "action": "three dotted spokes shoot out to the three strangers, the lady, the bags",
+     "acting": "spokes draw on 0.25 s apart (stagger), each icon pops at its end",
+     "library": "S.arrow dotted + stagger"
+    },
+    {
+     "t": 158.98,
+     "cue": {
+      "word": "كله",
+      "t": 158.58
+     },
+     "who": "lettering",
+     "action": "label THE PLAN above the map",
+     "acting": "pop",
+     "library": "S.label"
+    },
+    {
+     "t": 160.0,
+     "cue": {
+      "word": "يساعده",
+      "t": 160.0
+     },
+     "who": "fx",
+     "action": "a fourth spoke runs from the friend to a small figure of the man at his stall, standing tall",
+     "acting": "draws on; the little man straightens (sq 1.04)",
+     "library": "person at s 0.5 + S.arrow"
+    },
+    {
+     "t": 161.96,
+     "cue": {
+      "word": "يحرجه",
+      "t": 161.96
+     },
+     "who": "fx",
+     "action": "cloud wipes to the scene that never happened: the man with his hand out, head bowed, before the friend; drawn in grey",
+     "acting": "both figures in grey paper tone (statue-like, no colour) for 1.6 s",
+     "library": "person with mixHex grey palette"
+    },
+    {
+     "t": 162.8,
+     "cue": {
+      "word": "بطلب",
+      "t": 162.8
+     },
+     "who": "fx",
+     "action": "a red X strikes the grey picture out",
+     "acting": "two strokes, 3 frames each",
+     "library": "S.emphasis / seg strokes"
+    },
+    {
+     "t": 163.94,
+     "cue": {
+      "word": "أمامه",
+      "t": 163.94
+     },
+     "who": "fx",
+     "action": "the cloud shrinks back down its trail into the note",
+     "acting": "cloud p 1 to 0 over 0.5 s",
+     "library": "thoughtCloud p key"
+    },
+    {
+     "t": 164.7,
+     "who": "man",
+     "action": "lowers the paper to his knees and breathes out",
+     "acting": "long exhale (sq 1.02 to 0.97), lid 0.6",
+     "library": "person breathe"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 158.98,
+     "text": "THE PLAN"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 165.34
+   }
+  },
+  {
+   "id": "S17",
+   "start": 165.34,
+   "end": 179.89,
+   "paragraphs": [
+    8
+   ],
+   "set": "home",
+   "cast": [
+    "man",
+    "wife"
+   ],
+   "summary": "He understands: not an unknown inheritance, but the fruit of a friend's loyalty, which kept his dignity whole. He holds the note to his heart and stands straight. THE END.",
+   "camera": {
+    "shot": "close",
+    "move": "pull-out",
+    "notes": "Close on the man (zoom 1.8) 165.3-171.7; ease out to medium on the couple (zoom 1.3) by 174.3; hold through THE END."
+   },
+   "composition": "Man centre x 480, wife x 620. Two small pictures appear in turn upper left at (300, 420): the father medallion tagged THE HEIR, then the friend medallion with the heart. THE END title in the upper third, clear of both faces.",
+   "actions": [
+    {
+     "t": 165.34,
+     "cue": {
+      "word": "فهم",
+      "t": 165.34
+     },
+     "who": "man",
+     "action": "lifts his head; the surprise has gone, something quieter arrives",
+     "acting": "lid 0.6 to 0.2, wet eyes, mouth from o to a closed small smile; one slow blink",
+     "library": "person wet, lid"
+    },
+    {
+     "t": 167.86,
+     "cue": {
+      "word": "ثروته",
+      "t": 167.86
+     },
+     "who": "man",
+     "action": "glances at the purse on the stool beside him",
+     "acting": "gaze to the purse and back to the paper",
+     "library": "person gazePlan"
+    },
+    {
+     "t": 169.32,
+     "cue": {
+      "word": "لم",
+      "t": 169.32
+     },
+     "who": "portraitMedallion",
+     "action": "the father medallion with the tag THE HEIR pops upper left",
+     "acting": "pop",
+     "library": "portraitMedallion + S.label"
+    },
+    {
+     "t": 170.78,
+     "cue": {
+      "word": "مجهولًا",
+      "t": 170.78
+     },
+     "who": "fx",
+     "action": "the tag THE HEIR is struck through and the father picture slides away gently",
+     "acting": "one red stroke; slide out 0.4 s (gently, not a slap)",
+     "library": "S.emphasis + kfn"
+    },
+    {
+     "t": 171.7,
+     "cue": {
+      "word": "بل",
+      "t": 171.7
+     },
+     "who": "portraitMedallion",
+     "action": "the friend medallion pops in its place, winking once",
+     "acting": "pop with overshoot, wink",
+     "library": "portraitMedallion"
+    },
+    {
+     "t": 172.8,
+     "cue": {
+      "word": "وفاء",
+      "t": 172.8
+     },
+     "who": "heart",
+     "action": "a red heart pops beside the friend medallion and beats twice",
+     "acting": "pop, two pulses (sq 1.15)",
+     "library": "heart prop + pulse"
+    },
+    {
+     "t": 173.6,
+     "cue": {
+      "word": "صديق",
+      "t": 173.6
+     },
+     "who": "man",
+     "action": "a tear runs; he laughs once through it",
+     "acting": "wet, one tear drop, mouth smile, short shoulder shake",
+     "library": "person wet"
+    },
+    {
+     "t": 174.3,
+     "cue": {
+      "word": "حفظ",
+      "t": 174.3
+     },
+     "who": "man",
+     "action": "presses the note to his chest with both hands and rises from the stool",
+     "acting": "PERSON_HANDS.clasp at the chest; sit 0.5 to 0 with anticipation",
+     "library": "person clasp, anticipate"
+    },
+    {
+     "t": 175.24,
+     "cue": {
+      "word": "كرامته",
+      "t": 175.24
+     },
+     "who": "man",
+     "action": "stands at his full height, chin up; his wife lays a hand on his arm",
+     "acting": "sq 1.04 settle to 1.0, gaze out of the window (toward the friend), lid 0.2; wife smiles up at him",
+     "library": "person settleTo; lookAt"
+    },
+    {
+     "t": 176.5,
+     "who": "lettering",
+     "action": "THE END title pops and holds",
+     "acting": "style title; both keep breathing and blinking under it",
+     "library": "S.title"
+    },
+    {
+     "t": 177.4,
+     "who": "set",
+     "action": "the lamp gives one warm flicker; the window sky deepens a step",
+     "acting": "u 0.48 to 0.52",
+     "library": "palaceHall u key"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 176.5,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 176.4,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 179.89
+   }
+  }
+ ],
+ "ending": {
+  "t": 176.5,
+  "description": "After the last word (176.06) the man stands straight with the note pressed to his heart, his wife's hand on his arm, both looking toward the dusk window; the friend medallion and the heart stay upper left. THE END pops at 176.5 and holds until 179.89 with breathing, blinks and one lamp flicker."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان رجل غني قد خسر ماله كله،|وأصبح عاجزًا عن تدبير شؤون بيته.|نصحته زوجته أن يستعين بصديق قديم يعرفه ويثق به،|فذهب إليه وأخبره بما أصابه من فقر وضيق.",
+   "en": "A once-rich man lost his fortune|and could no longer support his household.|His wife urged him to ask|an old trusted friend for help."
+  },
+  {
+   "p": 2,
+   "ar": "استمع الصديق إليه، وأعطاه خمسمئة دينار ليبدأ عملًا جديدًا.|وكان الرجل قد عمل صائغًا في شبابه،|فاستأجر دكانًا في سوق الجواهر،|واشترى بعض البضاعة، وجلس ينتظر الزبائن.",
+   "en": "The friend gave him five hundred dinars.|Having worked as a jeweler in his youth,|the man rented a shop in the jewel market|and began trading again."
+  },
+  {
+   "p": 3,
+   "ar": "جاء إلى الدكان ثلاثة رجال، وسألوه عن أبيه.|أخبرهم أن والده قد مات، فسألوه إن كان ابنه فعلًا.|جمع بعض أهل السوق، فشهدوا أمامهم أن الرجل ابن ذلك التاجر المتوفى.",
+   "en": "Three men came asking about his father.|Told the father had died,|they asked witnesses from the market to confirm the jeweler was truly his son."
+  },
+  {
+   "p": 4,
+   "ar": "عندئذ سلموه حقيبتين|فيهما ثلاثون ألف دينار، وحلي وأحجار نفيسة.|قالوا إن أباه ترك هذه الأشياء عندهم أمانة قبل وفاته،|وإنهم جاءوا ليعيدوها إلى وريثه الشرعي.",
+   "en": "They handed him two bags|holding thirty thousand dinars and precious jewels,|saying his late father had entrusted the goods to them|for his heir."
+  },
+  {
+   "p": 5,
+   "ar": "وبعد قليل حضرت امرأة إلى الدكان،|واختارت جواهر كان ثمنها خمسمئة دينار، لكنها دفعت ثلاثة آلاف دينار.|تعجب الرجل من هذه الأحداث،|وشعر أن أبواب الرزق قد فتحت له فجأة.",
+   "en": "Soon a woman arrived|and bought jewels worth five hundred dinars for three thousand.|The astonished jeweler|believed fortune had unexpectedly returned."
+  },
+  {
+   "p": 6,
+   "ar": "حمل خمسمئة دينار إلى صديقه، وقال إنه يريد رد المال الذي اقترضه.|لكن الصديق رفض، وأخبره أنه قدمه هدية منذ البداية،|ثم أعطاه ورقة وطلب منه ألا يفتحها إلا في بيته.",
+   "en": "He brought five hundred dinars to repay his friend.|The friend refused, saying it had been a gift,|and handed him a sealed note to read at home."
+  },
+  {
+   "p": 7,
+   "ar": "فتح الرجل الورقة، فوجد فيها أبياتًا تكشف الحقيقة.|الثلاثة الذين جاءوا إلى السوق كانوا أقارب صديقه،|والمرأة التي اشترت الجواهر كانت أم الصديق،|أما الأموال والحلي فقد أرسلها الصديق سرًا.",
+   "en": "At home he read verses revealing the truth.|The three men were his friend’s relatives,|the buyer was his friend’s mother,|and all the money and jewels came from his friend."
+  },
+  {
+   "p": 8,
+   "ar": "كتب الصديق أنه دبّر ذلك كله|حتى يساعده من غير أن يحرجه بطلب المال أمامه.|فهم الرجل عندها أن ثروته الجديدة لم تكن ميراثًا مجهولًا،|بل ثمرة وفاء صديق حفظ كرامته.",
+   "en": "The note explained that the friend had arranged everything|to help without embarrassing him.|The new fortune was not a forgotten inheritance,|but an act of loyalty that preserved his dignity."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "marketStall kind 'jewel'",
+   "description": "A jeweller's stall for marketStreet/marketStall: counter with a dark blue velvet tray 150 x 16 (holds up to 8 gems), a T-stand 70 high with two necklaces, a small balance scale icon optional, awning in blue and white; state 'closed' (awning rolled, counter board up) to open is keyed 0..1 for the opening in S5.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "One more branch in marketStall beside fruit/cloth/seed: rectPts tray with dot shading, seg stand, jewels() for the goods. Add an 'open' 0..1 field: awning polygon height lerps from a 20 px roll to full; the counter board rotates 90 degrees about its hinge. Keep it out of the bake while it animates (33.7-36 s), baked afterwards."
+  },
+  {
+   "type": "prop",
+   "name": "purse",
+   "description": "Planned fat coin purse reused: drawstring pouch about 60 x 70, fill 0..1 (limp at 0), coin mark, optional red bow (S13).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "shape() blob whose width and sag depend on fill; neck with two seg strings; yellow disc mark; squash via the caller. Same function as the other films' purse."
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "description": "Planned coin mound reused (seeded stack of n yellow ellipses with red-dot shading and a glint), plus single rolling coins.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "ell() coins on a seeded heap profile; single coin = ell with rotation from distance rolled."
+  },
+  {
+   "type": "prop",
+   "name": "saddlebag",
+   "description": "Planned leather satchel reused: 150 x 120, flap with a buckle strap (strap colour option: blue here), bulge 0..1, open 0..1 showing the contents line (coins or gems).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Brown shape() body with a bulge-dependent bottom curve, flap polygon rotating about the top edge for open, seg strap and a small rect buckle; contents drawn by callback (coinPile / jewels) clipped to the mouth."
+  },
+  {
+   "type": "prop",
+   "name": "jewels (with jewelBox)",
+   "description": "Planned gems reused: hexagonal cut stones in red, blue, green, white (r 13 on the tray, r 22 in close shots), necklace of 9 gems on a drooping curve, casket 70 x 50 with a hinged lid.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "K.polygon points with one facet seg and a white glint; necklace = gems along a quadratic curve with swing(); casket = rectPts + lid rotating about the back edge."
+  },
+  {
+   "type": "prop",
+   "name": "scroll",
+   "description": "Planned scroll reused as the sealed note: rolled 90 x 26 with a red seal (seal 0..1, breaks into two halves), open 150 x 200 with lines 0..4 written as two half-lines per row (verse layout).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Paper rect with rolled ends (two ell), wavy seg lines revealed by a clip that grows right to left; seal = red disc with a notch, halves use fallY."
+  },
+  {
+   "type": "prop",
+   "name": "portraitMedallion",
+   "description": "Planned round portrait reused: any person head clipped to a circle r 46..70, yellow rim, blue-dot paper ground; can blink, wink and be greyed (grey 0..1).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "ctx.save, circle clip, draw person() scaled so the head fills the circle, restore, rim with shape(ell). grey via mixHex on the palette or a grey paper overlay with multiply-free alpha 0.75."
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "description": "Planned treasure light reused: tapering yellow rays, halftone disc and staggered star glints, strength 0..1 (the open bag in S8, the doors in S11).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Fan of thin triangles from the source with alpha by strength, K.rng seeded glint positions, 4-point stars pulsing on offsets."
+  },
+  {
+   "type": "effect",
+   "name": "inset circle",
+   "description": "Planned round picture-in-picture with an iris reused once (S4, the youth memory), with the planned dream wash at strength 0.3 inside.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Circle clip with a black brush rim, radius keyed 0..190 with settleTo; contents drawn by callback in world units scaled 0.6."
+  },
+  {
+   "type": "motion",
+   "name": "handOver",
+   "description": "A small object passes from one person's hand to another's (purse S3 and S13, note S13, purses S10): the object follows hand A, then eases to hand B over 0.25 s with a weight dip on arrival; both gazes follow it.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Pure function handOver(t, t0, dur, handA(t), handB(t)) returning the object position (lerp with ease-in-out plus a 4..8 px dip keyed on arrival) and a flag for which hand \"owns\" it; hands via person handLW/handRW world targets. This is the guide's recommended hand-over helper."
+  }
+ ],
+ "owner_questions": [
+  "SCRIPT: the English translation is a condensed summary of the Arabic (P1 omits \"so he went to him and told him of his poverty and hardship\"; P2 omits \"the friend listened\", \"to begin a new business\" and \"bought some goods and sat waiting for customers\"; P3 and P4 are compressed; P7 adds \"At home\"); both are kept verbatim and chunked by sense as closely as the wording allows.",
+  "Hidden clue added beyond the script: every helper the friend sends wears or carries one blue item (sashes, cap, bag straps, the lady's robe), matching the friend's blue robe, and the strangers and the lady each let one small smile slip when the jeweller is not looking; default: keep, because it makes the reveal a payoff on rewatch.",
+  "The father's death is shown only as his portrait losing its colour (no grave, no body); default: keep it this gentle.",
+  "The opening shows his riches vanishing in three pops and his yellow turban turning plain in the first 3.3 s (the script only says he lost his money); default: keep as the visual for \"lost his fortune\".",
+  "\"The doors of fortune opened\" is staged literally: three street doors swing open with gold light and then ease shut again; default: keep (it is the film's one comic flourish).",
+  "The reveal and the friend's motive are played inside a large thought cloud above the note, including a grey, struck-out picture of the man having to ask for money (the embarrassment the friend spared him); default: keep.",
+  "Invented English lettering (not narration): POOF!, 500 DINARS, TINK!, JEWELS, 1 2 3, HIS SON!, THUD!, 30,000 DINARS, IN TRUST, THE HEIR, 500, 3,000!, REPAID?, A GIFT!, HIS RELATIVES!, HIS MOTHER!, HIS GIFT!, THE PLAN, THE END; default: keep all 19 (mostly numbers and three reveal labels).",
+  "The time card over \"وبعد قليل\" reads SOON AFTER... instead of the usual LATER...; default: SOON AFTER...",
+  "The man stays in his modest green tunic to the end (no change into rich clothes) so the last image is about dignity, not wealth; default: keep.",
+  "His wife is present in the reading scenes (P7 and P8) although the script does not mention her there; default: keep her as the listener so he has someone to react with."
+ ],
+ "implementation_notes": [
+  "Timing: every cue in this plan is a start time from planning/inputs/timeline.md on the final MP3 (176.39 s). Build CUE from timing.json with w(p, n); do not retime by ear. Two words are interpolated in the timeline (P3 \"قد\" at 51.32, P6 \"خمسمئة\" at 110.14): cue on their neighbours (\"مات\" 51.32, \"دينار\" 110.40) as this plan does.",
+  "People: all nine humans are the Library person with costume presets and pal/age overrides listed in cast; no new character drawings. Give each a fixed seed for blinks and set LIFE.t = t once per frame.",
+  "Blue clue: define FRIEND_BLUE = C.blue once and pass it to kin1 pal.sash, kin2 pal.sash, kin3 pal.hc, the saddlebag strap and (by preset) the lady's robe. Do not add any other blue costume to the market scenes: neighbours are brown and yellow, the awning's blue is acceptable because it is the stall, not a person.",
+  "Mask on / mask off (guide section 9): the strangers' and the lady's smiles happen only while the man's gaze is elsewhere (S7 61.26-62.8 he looks right at the neighbours; S9 85.2 he stares at the bags; S10 99.4 her back is to him; S13 131.3 he has left). Key the man's gaze first, then place the smile inside that window.",
+  "Sets: palaceHall and marketStreet return anchors; take door, desk, stool, stalls[0] and doors[] positions from them rather than from the approximate numbers here (read from the catalogue image). The home is the merchant variant with shelves: [], desk: false, treasure: false; for 0-3.3 s draw the full variant and remove three clip regions on the cues (2.18, 2.58, 3.32).",
+  "The stall: draw the back of the stall, then the man (sit 0.5 on a stool at local x -22), then the counter front, the tray, gems and bags, then customers in front on the street. Customers never stand between the camera and his face: keep them left of x 400.",
+  "Rhyme S3 and S12: same camera, same marks; only his walk (short slowing steps vs long even steps), posture (tip 0.06 vs 0) and the purse (limp vs fat) differ.",
+  "Thought cloud (S15, S16): one thoughtCloud call 800 x 520 at (500, 400), scale 0.55, p keyed in at 139.2 and out at 163.94-164.45; the inside callback switches between six pictures (strangers, lady, bags, writing desk, plan map, grey struck-out begging) with a 0.25 s wipe (clip rect moving right to left). Keep every action inside the cloud outline and every figure at least 110 px on screen.",
+  "Counters: use the style counter for 500, 30,000 and 3,000 with comma formatting; the 30,000 spin runs 69.02-70.9 and the 3,000 lands on 98.78.",
+  "Camera: clamp to the world (1000 x 1230); faces of the seated couple in S14-S17 sit near y 700, so never frame lower than centre y 760. Apply hit shake (S5 counter, S8 THUD) inside the picture panel only.",
+  "Sound (SND master 0.6, only in the listed pauses): pop 46.4, low chime 52.5, pop 58.4, whoosh 64.3, chime 108.3, whoosh 109.1, pop 131.5, seal snap 134.5, end chime 176.4. The THUD of the bags at 66.14 is lettering and motion only (it falls on a spoken word).",
+  "Subtitles: use the subtitles array as chunks_ar.txt / chunks_en.txt (| marks); chunk times come from the Arabic word times. The English is shorter than the Arabic in P1-P3, so some English chunks sit under Arabic that says more; do not rewrite either.",
+  "End: last word ends 176.06; THE END pops at 176.5 and holds to 179.89 (end_hold 3.5)."
+ ],
+ "warnings": [
+  "Nine people appear in total; S7 has six on screen at once. Keep the neighbours small (s 0.97 to 1.0) at the right edge and check phone legibility with a still at 60 s.",
+  "S15 packs three reveals into 15 s inside a cloud; if figures fall under 110 px, enlarge the cloud to 860 x 560 and drop the couple lower (heads near y 760) rather than shrinking the figures.",
+  "Seven new or planned small assets (purse, coinPile, saddlebag, jewels, scroll, portraitMedallion, goldGlow) are not in Library yet; if another film builds them first, reuse those functions.",
+  "The person figure is front-facing only: \"kisses her hand\" (148 s) and \"arms round shoulders\" (142 s) must read through tip, hand targets and proximity; check both with stills.",
+  "English subtitles are a condensed translation (see owner_questions SCRIPT entry)."
+ ]
+}

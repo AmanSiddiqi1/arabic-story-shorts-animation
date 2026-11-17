@@ -1,0 +1,99 @@
+{
+ "story_id": "AN-042",
+ "title": "The Sparrow and the Eagle",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T13:00:56",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a2d9b0a95e5987c1b.jsonl",
+ "agent_id": "a2d9b0a95e5987c1b",
+ "model_messages": {
+  "claude-fable-5-2": 28
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "e4b60b348cbe5db2f6aba7c1c0bdef90d00d72c7cd7da2575bdf01e8254c7fd9",
+  "paragraphs": 8,
+  "segments": [
+   "AN-042-P01-S01",
+   "AN-042-P01-S02",
+   "AN-042-P01-S03",
+   "AN-042-P01-S04",
+   "AN-042-P01-S05",
+   "AN-042-P01-S06",
+   "AN-042-P01-S07",
+   "AN-042-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-042_The_Sparrow_and_the_Eagle_full_slowed.mp3",
+  "sha256": "cf21b97377e26bd5d6e5fb10e3edbd69c3562a3154c614c8f1b3607af59cb12d",
+  "duration": 163.501
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-042_The_Sparrow_and_the_Eagle_full_slowed.mp3.words.json",
+  "sha256": "7917f0da3dd56007829fa6e86f4e1919e5456bf85b528364595f0c623ba1887a",
+  "manifest_status": "MANUAL REVIEW",
+  "script_match": 0.986
+ },
+ "library_rev": "959278e",
+ "scenes": 11,
+ "actions": 162,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "sheep",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "hawk (bird kind)",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "sheepfold",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "hutRoom",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "bird clipped wings",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "bird carry",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "featherFall",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "woolSnare",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "string",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "timing manifest: MANUAL REVIEW (Out-of-range word timestamp detected and excluded)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Three new drawn animals in effect (sheep with ram and lamb variants, and the planned hawk kind) plus two sets: this is a heavier build than a Library-only story. The sheep is one function with flags, which keeps it to one drawing.",
+  "The sparrow at s 0.7 is small next to the ram; every beat that depends on his face uses zoom 1.9 or more. Check phone legibility of the feet insert (89.5) and the fist shots (118-131).",
+  "The person figure is front-facing only: the shepherd bending over the ram and holding a bird relies on lean and world hand targets (handRW); arms are short (about 74 units), so place him close to the ram.",
+  "P7 packs anger, plucking, tying, the walk home and the children into 19 s; the plucking has only about 2 s (126.6-128.6). Keep it to the single hidden motion.",
+  "Words marked ~ in the timeline (في 91.38, عن 116.92, ريش 128.66) have interpolated times; no cue in this plan depends on them.",
+  "The planned hawk kind and hutRoom are not in the Library yet; if another film builds them first, reuse that drawing and add only the eagle palette and the window."
+ ]
+}

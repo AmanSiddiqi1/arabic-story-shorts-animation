@@ -1,0 +1,128 @@
+{
+ "story_id": "KD-022",
+ "title": "The Ignorant Physician",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T12:24:21",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a51d0fada2d38702b.jsonl",
+ "agent_id": "a51d0fada2d38702b",
+ "model_messages": {
+  "claude-fable-5-2": 24
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "e2760ec81a8b9b03089e22afac90b29a3cabe22e254bc25ac833038b096c9aab",
+  "paragraphs": 8,
+  "segments": [
+   "KD-022-P01-S01",
+   "KD-022-P01-S02",
+   "KD-022-P01-S03",
+   "KD-022-P01-S04",
+   "KD-022-P01-S05",
+   "KD-022-P01-S06",
+   "KD-022-P01-S07",
+   "KD-022-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/KD-022_The_Ignorant_Physician_full_slowed.mp3",
+  "sha256": "f2663e5380aa0b20f27ed39770618294281dc81620b2d275e1a7df1311547288",
+  "duration": 171.487
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/KD-022_The_Ignorant_Physician_full_slowed.mp3.words.json",
+  "sha256": "a3a179af205649ff6469406944394cab425c63b5f95c112c59110b5246b81a12",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.996
+ },
+ "library_rev": "7721db2",
+ "scenes": 10,
+ "actions": 144,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "person costume presets (physician, king, prince, quack)",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "apothecary",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "medicineKit (medicineJar, mortar, recipeStrip)",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "stick, coinPile, smallBowl",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "oilLamp",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "blurVision",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "dayCycle",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "painPulse",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "dream wash",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person lie / sit up in bed",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "person kneel / sit",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "marketStreet",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "bedchamber",
+   "effort": "M"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Depends on several planned assets that are not in Library/ yet (person costume layer, lie and kneel/sit poses, marketStreet, bedchamber, thoughtCloud, dayCycle, painPulse, flush, oilLamp). If this story is animated before the stories that planned them, they must be built here first: the effort is larger than the four assets that are new to this plan suggest.",
+  "Six people share the sickroom in S7 and S8; at 9:16 the wide shots get crowded. Keep the officials near the door, use the two-shots given, and check a contact sheet for overlapping heads.",
+  "The story contains two deaths including a child-aged prince; the staging is deliberately indirect, but the owner should confirm the level (see owner_questions).",
+  "The word 'هو' at 156.74 has an interpolated time; the turban cue uses the same time as 'أيضًا' and is safe either way.",
+  "Arms are short (about 74 units at s 1): handing the bowl between people needs them within about 150 px of each other at s 1.35; stage the hand-overs accordingly."
+ ]
+}

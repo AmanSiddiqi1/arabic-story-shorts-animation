@@ -1,0 +1,2638 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "KD-009",
+ "title": "The Monkey and the Carpenter",
+ "duration": 162.29,
+ "end_hold": 3.0,
+ "logline": "A curious monkey who has watched a carpenter all morning decides the work is easy, pulls out the wedge that holds a sawn log open, and the log snaps shut on his own tail.",
+ "moral": "Do not meddle with work you do not understand; watching is not the same as knowing.",
+ "tone": "Light slapstick with a kind heart: a comic build of overconfidence, one sharp shock, real sympathy for the trapped monkey, and a gentle, forgiving rescue.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 2.92,
+   "kind": "setup",
+   "cue": {
+    "word": "نجار",
+    "t": 2.92
+   },
+   "summary": "The carpenter and his peaceful morning routine in front of the cottage."
+  },
+  {
+   "id": "B2",
+   "t": 15.0,
+   "kind": "setup",
+   "cue": {
+    "word": "فضولي",
+    "t": 15.0
+   },
+   "summary": "The curious monkey watches from the tree and copies what he sees."
+  },
+  {
+   "id": "B3",
+   "t": 39.48,
+   "kind": "rising",
+   "cue": {
+    "word": "الشق.",
+    "t": 39.48
+   },
+   "summary": "The wedge goes into the sawn gap: the key prop is planted."
+  },
+  {
+   "id": "B4",
+   "t": 44.76,
+   "kind": "reveal",
+   "cue": {
+    "word": "متباعدين،",
+    "t": 44.76
+   },
+   "summary": "The audience is shown what the wedge is for; the monkey only sees the sawing."
+  },
+  {
+   "id": "B5",
+   "t": 57.18,
+   "kind": "inciting",
+   "cue": {
+    "word": "وذهب",
+    "t": 57.18
+   },
+   "summary": "The carpenter leaves his tools and goes indoors: the yard is unguarded."
+  },
+  {
+   "id": "B6",
+   "t": 73.26,
+   "kind": "comic",
+   "cue": {
+    "word": "سهلًا،",
+    "t": 73.26
+   },
+   "summary": "Overconfidence: this work looks easy, I can do it too."
+  },
+  {
+   "id": "B7",
+   "t": 78.7,
+   "kind": "suspense",
+   "cue": {
+    "word": "الكبيرة.",
+    "t": 78.7
+   },
+   "summary": "He sits on the log and his tail drops into the gap, unnoticed."
+  },
+  {
+   "id": "B8",
+   "t": 95.76,
+   "kind": "rising",
+   "cue": {
+    "word": "تحركت",
+    "t": 95.76
+   },
+   "summary": "The wedge moves a little, which only encourages him."
+  },
+  {
+   "id": "B9",
+   "t": 105.78,
+   "kind": "climax",
+   "cue": {
+    "word": "وأغلق",
+    "t": 105.78
+   },
+   "summary": "The wedge is out and the log snaps shut on his tail."
+  },
+  {
+   "id": "B10",
+   "t": 119.5,
+   "kind": "emotion",
+   "cue": {
+    "word": "بألم",
+    "t": 119.5
+   },
+   "summary": "Trapped and in pain: every movement hurts more, so he freezes and cries."
+  },
+  {
+   "id": "B11",
+   "t": 128.88,
+   "kind": "turn",
+   "cue": {
+    "word": "وفهم",
+    "t": 128.88
+   },
+   "summary": "The carpenter understands at a glance and chooses to help."
+  },
+  {
+   "id": "B12",
+   "t": 136.22,
+   "kind": "resolution",
+   "cue": {
+    "word": "أخرج",
+    "t": 136.22
+   },
+   "summary": "He opens the gap with a tool and frees the tail gently."
+  },
+  {
+   "id": "B13",
+   "t": 155.7,
+   "kind": "moral",
+   "cue": {
+    "word": "يحاول",
+    "t": 155.7
+   },
+   "summary": "Back in the tree the monkey catches himself copying and stops: he watches from afar and touches nothing."
+  }
+ ],
+ "cast": [
+  {
+   "id": "carpenter",
+   "name": "the carpenter",
+   "library": "person",
+   "base": "person kind:'owner' as the planned 'villager' variant, costume 'carpenter'",
+   "look": "Stocky, kindly man: small white turban cap, short black beard and moustache, yellow tunic with rolled sleeves, brown apron with one pocket (the wedge lives there), bare forearms in skin tone. Scale 0.92.",
+   "new": true
+  },
+  {
+   "id": "monkey",
+   "name": "the curious monkey",
+   "library": "monkey",
+   "base": "Library monkey unchanged, with new optional fields tailPath, tail pinch/kink and armLen",
+   "look": "The brown monkey of The Monkey and the Turtle. Scale 0.75 in the tree and wides, 0.9 on the log.",
+   "new": false
+  },
+  {
+   "id": "bird",
+   "name": "the small bird (witness)",
+   "library": "songbird",
+   "base": "Library songbird, red",
+   "look": "Tiny red songbird that shares the branch, flees at the scream and returns for the last gag.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "villageYard",
+   "library": null,
+   "description": "World 1000 x 1230, ground y 900. Left third: forest edge (treeRow, hillTrees) and one big perch tree (trunk x 110, branch to the right with the perch at 215,540, leaf clumps that can be drawn in front of the monkey). Right edge: a cottage facade (x 820..1000, red roof, chimney, window at x 950, door at x 880 that opens 0..1 and shows a dim interior). Centre: open work ground. Sun on a keyed arc (dawn, morning, noon).",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "log",
+   "library": null,
+   "description": "splitLog: big log lying along the ground, x 330..670, 120 thick, on two chocks, end rings on the right end. States: whole; chalk line; kerf 0..1 (how far the cut runs in from the right end); gap 0..1 (the upper half hinges up from the end of the kerf, about 34 units open at the right end when 1). Can also be drawn carried at an angle.",
+   "new": true
+  },
+  {
+   "id": "wedge",
+   "library": null,
+   "description": "Small wooden wedge, 60 x 26, bright yellow with red end grain so it reads on the brown log; out 0..1 from the mouth of the gap; can be held in a hand, fly and bounce.",
+   "new": true
+  },
+  {
+   "id": "saw",
+   "library": null,
+   "description": "Hand saw: red handle, pale blade with a toothed lower edge; stroke offset along its length.",
+   "new": true
+  },
+  {
+   "id": "mallet",
+   "library": null,
+   "description": "Wooden mallet: brown handle, yellow block head.",
+   "new": true
+  },
+  {
+   "id": "prybar",
+   "library": null,
+   "description": "Iron pry bar (the \"tool\" of paragraph 7): dark blue-grey bar with a flattened, slightly hooked tip.",
+   "new": true
+  },
+  {
+   "id": "door",
+   "library": null,
+   "description": "A finished plank door leaning on the cottage wall (three planks, two cross bars, ring handle).",
+   "new": true
+  },
+  {
+   "id": "table",
+   "library": null,
+   "description": "A small four-legged table.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 19.74,
+   "paragraphs": [
+    1
+   ],
+   "set": "villageYard",
+   "cast": [
+    "carpenter",
+    "monkey",
+    "bird"
+   ],
+   "summary": "Morning in the yard between cottage and forest. The carpenter comes out, sits and builds a door and a table. Up in the tree a monkey watches and copies him.",
+   "camera": {
+    "shot": "establishing",
+    "move": "pan",
+    "notes": "Keys: 0-6.2 full wide {x:500,y:640,zoom:1.0} with a 12-unit drift right; 8.8-13.3 medium on the carpenter {x:680,y:760,zoom:1.6}; 13.78-14.4 eased pan up-left to the branch {x:250,y:560,zoom:1.9}; 17.24-18.3 pull out to {x:500,y:660,zoom:1.05} so monkey and carpenter share the frame."
+   },
+   "composition": "Forest edge and perch tree fill the left third (trunk x 110, branch perch at 215,540). Cottage on the right edge (door at x 880). Work spot at x 560-700 on the ground line y 900. The monkey is high left, the carpenter low right: one long diagonal eye line that the whole film keeps.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 2.5,
+     "cue": {
+      "word": "في",
+      "t": 0.0
+     },
+     "who": "set",
+     "action": "Morning yard: warm dawn sky, sun half up behind the hills, chimney smoke puffs, leaves of the forest row swaying",
+     "acting": "calm; three slow smoke puffs drift left, a cloud slides",
+     "library": "sky({preset:'dawn'}) + sun + hillTrees + treeRow + ground + new cottage; bake()"
+    },
+    {
+     "t": 0.78,
+     "end": 2.9,
+     "cue": {
+      "word": "صغيرة،",
+      "t": 0.78
+     },
+     "who": "camera",
+     "action": "Slow drift right toward the cottage",
+     "acting": "gentle ease, no cut",
+     "library": "CAM keys"
+    },
+    {
+     "t": 2.5,
+     "end": 3.6,
+     "cue": {
+      "word": "نجار",
+      "t": 2.92
+     },
+     "who": "carpenter",
+     "action": "Door opens and he walks out carrying a stool in one hand and a mallet in the other",
+     "acting": "fresh and cheerful: smile, gaze ahead then up at the sky, one blink; steps never slide",
+     "library": "person villager{costume:'carpenter'} + walk(CX,t) + footfalls"
+    },
+    {
+     "t": 3.56,
+     "end": 4.5,
+     "cue": {
+      "word": "يعمل",
+      "t": 3.56
+     },
+     "who": "carpenter",
+     "action": "Sets the stool down (small squash of the stool), stretches both arms up, rolls a sleeve",
+     "acting": "anticipation dip before the stretch, settleTo back to neutral, lids close on the stretch",
+     "library": "aL/aR about [2.45,2.85], settleTo, sq 1.05"
+    },
+    {
+     "t": 4.5,
+     "end": 5.6,
+     "cue": {
+      "word": "الغابة.",
+      "t": 4.78
+     },
+     "who": "bird",
+     "action": "A small red bird flits out of the forest row and lands on the perch branch; the branch dips",
+     "acting": "the carpenter glances left at it (gaze), then back to work",
+     "library": "songbird {fly:true, flap} then perched; swing() on the branch"
+    },
+    {
+     "t": 6.24,
+     "end": 7.3,
+     "cue": {
+      "word": "كل",
+      "t": 6.24
+     },
+     "who": "fx",
+     "action": "The sun pops fully over the hill with a ray burst; long shadows shorten a little",
+     "acting": "a bright start-of-day accent in the pause",
+     "library": "sun(ctx,x,y,t) on a keyed arc; S.emphasis"
+    },
+    {
+     "t": 7.2,
+     "end": 8.3,
+     "cue": {
+      "word": "يجلس",
+      "t": 7.42
+     },
+     "who": "carpenter",
+     "action": "Sits down on the stool with a little hop of the hips and a settle",
+     "acting": "anticipate before sitting, sq 0.94 on contact then settle; contented half lids",
+     "library": "person sit 0..1 (planned pose 'person kneel / sit') + anticipate + settleTo"
+    },
+    {
+     "t": 8.82,
+     "end": 9.5,
+     "cue": {
+      "word": "بيته",
+      "t": 8.82
+     },
+     "who": "camera",
+     "action": "Push in to a medium shot of the carpenter in front of his door",
+     "acting": "eased 0.7 s",
+     "library": "CAM keys"
+    },
+    {
+     "t": 9.56,
+     "end": 10.4,
+     "cue": {
+      "word": "ويصنع",
+      "t": 9.56
+     },
+     "who": "mallet",
+     "action": "Three mallet strikes on a peg: lift 0.3 s, whip down, damped rebound",
+     "acting": "eyes on the peg, tongue tip out, shoulders follow each hit; shavings hop on every strike",
+     "library": "strike cycle pattern (Guide 4, Fox branchTipY) + kick()"
+    },
+    {
+     "t": 10.4,
+     "end": 11.2,
+     "cue": {
+      "word": "أبوابًا",
+      "t": 10.4
+     },
+     "who": "door",
+     "action": "A finished door assembles against the cottage wall: three planks slide together, two cross bars and a ring handle pop on",
+     "acting": "he tips his head toward it proudly; overshoot and settle on each plank",
+     "library": "new prop door (rects + S.box pop) with settleTo"
+    },
+    {
+     "t": 11.24,
+     "end": 12.2,
+     "cue": {
+      "word": "وطاولات",
+      "t": 11.24
+     },
+     "who": "table",
+     "action": "A small table assembles in front of him: four legs stand up, the top drops on with a squash",
+     "acting": "he lifts both hands away as the top lands, then pats it",
+     "library": "new prop table; fallY + impactSquash for the top"
+    },
+    {
+     "t": 12.6,
+     "end": 13.7,
+     "cue": {
+      "word": "الخشب.",
+      "t": 12.6
+     },
+     "who": "carpenter",
+     "action": "Wipes his brow with the back of a hand, blows a curl of shaving off the table; curls of wood drift down",
+     "acting": "satisfied smile, slow blink, shoulders drop (sq 0.98)",
+     "library": "PERSON_HANDS.headHold variant on one hand, blink, breathe"
+    },
+    {
+     "t": 13.78,
+     "end": 14.4,
+     "cue": {
+      "word": "وكان",
+      "t": 13.78
+     },
+     "who": "camera",
+     "action": "Eased pan up and left along the eye line to the tree",
+     "acting": "the pan follows a single drifting leaf so the move is motivated",
+     "library": "CAM keys"
+    },
+    {
+     "t": 14.48,
+     "end": 15.0,
+     "cue": {
+      "word": "قرد",
+      "t": 14.48
+     },
+     "who": "monkey",
+     "action": "Two leaf clumps part and the monkey is revealed sitting on the branch, hands holding the leaves open",
+     "acting": "eyes wide and fixed on the carpenter (lookAt), brow raised -0.5, mouth small o",
+     "library": "monkey {handL, handR, brow:-0.5} + lookAt + crown circles drawn after him as the occluder"
+    },
+    {
+     "t": 15.0,
+     "end": 15.9,
+     "cue": {
+      "word": "فضولي",
+      "t": 15.0
+     },
+     "who": "monkey",
+     "action": "Head tilts one way then the other; eyes dart saw, mallet, table",
+     "acting": "saccades (2-frame snaps), a quick double blink, tail tip curls and uncurls",
+     "library": "gazePlan(t, plan, 0.07), blink, new tailPath"
+    },
+    {
+     "t": 15.9,
+     "end": 17.2,
+     "cue": {
+      "word": "يراقبه",
+      "t": 15.9
+     },
+     "who": "monkey",
+     "action": "Copies the hammering with a fist on the branch, two frames behind the carpenter, then looks at his own fist",
+     "acting": "eager copycat: smile grows, body bobs with each hit",
+     "library": "monkey handR keyed from the same hit list, delayed 0.07 s"
+    },
+    {
+     "t": 17.24,
+     "end": 18.3,
+     "cue": {
+      "word": "فوق",
+      "t": 17.24
+     },
+     "who": "camera",
+     "action": "Pull out to the wide: monkey high left, carpenter low right, a dotted eye line runs between them for one second",
+     "acting": "the carpenter never looks up; he keeps hammering",
+     "library": "CAM keys + S.arrow dashed"
+    },
+    {
+     "t": 18.3,
+     "end": 19.7,
+     "cue": {
+      "word": "قريبة.",
+      "t": 18.3
+     },
+     "who": "bird",
+     "action": "The bird hops along the branch, stares at the miming monkey, tilts its head",
+     "acting": "the monkey notices, stops mid-mime and hides the fist behind his back",
+     "library": "songbird + hop(); monkey gaze to the bird"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 15.0,
+     "text": "CURIOUS!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 5.9,
+     "kind": "chime"
+    },
+    {
+     "t": 13.55,
+     "kind": "tap"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 19.74
+   }
+  },
+  {
+   "id": "S2",
+   "start": 19.74,
+   "end": 40.6,
+   "paragraphs": [
+    2
+   ],
+   "set": "villageYard",
+   "cast": [
+    "carpenter",
+    "monkey"
+   ],
+   "summary": "One day he brings a big log from the forest, drops it on two chocks, saws a gap into its end and taps a small wedge into the gap.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Keys: 19.74-24 medium wide {x:420,y:700,zoom:1.15} tracking right with the walk to {x:540,y:720,zoom:1.25} by 25.4; 31.78-32.6 push in to the log end {x:650,y:790,zoom:2.0}; 36.88-37.6 insert on wedge and mouth {x:690,y:810,zoom:2.6}; hold to 40.6. 6-unit panel-only shake at 26.2."
+   },
+   "composition": "Log lies along the ground, x 330..670, 120 thick, on two chocks; its open end faces right toward the carpenter (he stands at x 760, facing left). The monkey stays in the top-left corner as a small watching figure in every wide frame. Tool row (saw, mallet, pry bar) on the ground at x 720..800.",
+   "actions": [
+    {
+     "t": 20.3,
+     "end": 21.4,
+     "cue": {
+      "word": "ذات",
+      "t": 20.22
+     },
+     "who": "carpenter",
+     "action": "Enters from the forest side, under the monkey tree, with the big log on his shoulder",
+     "acting": "heavy walk: knees bent, tip 0.08, short steps, cheeks puffed; steps drive dust",
+     "library": "walk(CX,t) with low amp + footfalls + dustBurst; splitLog drawn at shoulder with a bob from kick()"
+    },
+    {
+     "t": 21.44,
+     "end": 22.9,
+     "cue": {
+      "word": "وضع",
+      "t": 21.44
+     },
+     "who": "monkey",
+     "action": "Leans far out of the leaves to follow the log passing right below him",
+     "acting": "head turns with it, gaze plan locked to the log end; nearly overbalances and grabs the branch",
+     "library": "look(T, head, plan) + tip 0.25 + settleTo"
+    },
+    {
+     "t": 22.98,
+     "end": 24.1,
+     "cue": {
+      "word": "قطعة",
+      "t": 22.98
+     },
+     "who": "carpenter",
+     "action": "Staggers one sidestep under the weight, the log seesaws on his shoulder, a sweat drop flies",
+     "acting": "eyes squeezed (lid 0.7), mouth o; recovers with a settle",
+     "library": "sq 0.95, tremble(t,2), settleTo"
+    },
+    {
+     "t": 24.16,
+     "end": 25.4,
+     "cue": {
+      "word": "كبيرة",
+      "t": 24.16
+     },
+     "who": "camera",
+     "action": "Track right with him to the work spot; the log end rings fill a third of the frame for a moment",
+     "acting": "shows how big it is next to him",
+     "library": "CAM keys"
+    },
+    {
+     "t": 24.92,
+     "end": 26.1,
+     "cue": {
+      "word": "على",
+      "t": 24.92
+     },
+     "who": "carpenter",
+     "action": "Bends his knees, rocks back, shrugs the log off his shoulder",
+     "acting": "clear anticipation: crouch, then release with arms flung out",
+     "library": "anticipate(t, t0, 0.4, 0.1)"
+    },
+    {
+     "t": 26.2,
+     "end": 26.9,
+     "cue": {
+      "word": "الأرض.",
+      "t": 25.54
+     },
+     "who": "log",
+     "action": "Lands on the chocks in the pause: two-frame squash, small rebound, dust both sides, the mallet on the ground hops",
+     "acting": "carpenter hops back a step; the monkey on the branch bounces once",
+     "library": "fallY + impactSquash + rebound + dustBurst + panel-only shake"
+    },
+    {
+     "t": 26.88,
+     "end": 27.8,
+     "cue": {
+      "word": "أراد",
+      "t": 26.88
+     },
+     "who": "carpenter",
+     "action": "Hands on hips, walks his eyes along the log, then strokes his beard",
+     "acting": "thinking saccades along the log, one brow up",
+     "library": "PERSON_HANDS.hipsHands then chin; gazePlan"
+    },
+    {
+     "t": 27.82,
+     "end": 28.9,
+     "cue": {
+      "word": "يقسمها",
+      "t": 27.82
+     },
+     "who": "fx",
+     "action": "A dashed chalk line draws itself along the middle of the log from the right end",
+     "acting": "he traces it in the air with a finger as it draws",
+     "library": "S.arrow / dashed line keyed by B(t)"
+    },
+    {
+     "t": 28.92,
+     "end": 29.9,
+     "cue": {
+      "word": "نصفين،",
+      "t": 28.92
+     },
+     "who": "fx",
+     "action": "Ghost preview: a pale copy of the log separates into an upper and a lower half, numbered 1 and 2, then fades",
+     "acting": "he nods at the picture",
+     "library": "S.counter 1, 2 + alpha copy of splitLog"
+    },
+    {
+     "t": 30.0,
+     "end": 31.1,
+     "cue": {
+      "word": "فاستخدم",
+      "t": 30.0
+     },
+     "who": "carpenter",
+     "action": "Picks the saw from the tool row, flicks it so the blade wobbles, tests a tooth with his thumb",
+     "acting": "confident; small wince and thumb shake",
+     "library": "person handR IK to the saw handle; swing() for the blade wobble"
+    },
+    {
+     "t": 31.16,
+     "end": 32.4,
+     "cue": {
+      "word": "منشارًا",
+      "t": 31.16
+     },
+     "who": "saw",
+     "action": "Sawing into the right end along the chalk line: long strokes, sawdust sprays on each push",
+     "acting": "whole body rocks with the stroke (tip +-0.06), elbow leads, eyes on the cut",
+     "library": "stroke phase = sin of a keyed counter; particles from K.rng seeded per stroke"
+    },
+    {
+     "t": 31.78,
+     "end": 32.6,
+     "cue": {
+      "word": "حتى",
+      "t": 31.78
+     },
+     "who": "camera",
+     "action": "Push in to the log end",
+     "acting": "eased",
+     "library": "CAM keys"
+    },
+    {
+     "t": 32.46,
+     "end": 33.4,
+     "cue": {
+      "word": "فتح",
+      "t": 32.46
+     },
+     "who": "log",
+     "action": "The kerf line runs in from the right end and the upper half lifts: gap opens to a third",
+     "acting": "the saw strokes get freer as it opens",
+     "library": "splitLog {kerf 0..1, gap 0..0.35}"
+    },
+    {
+     "t": 32.9,
+     "end": 33.7,
+     "cue": {
+      "word": "شقًّا",
+      "t": 32.9
+     },
+     "who": "fx",
+     "action": "Arrow and label GAP point into the dark opening",
+     "acting": "label sits above the log, clear of both faces",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 33.74,
+     "end": 34.5,
+     "cue": {
+      "word": "وسطها.",
+      "t": 33.74
+     },
+     "who": "carpenter",
+     "action": "Stops, blows the dust out, shuts one eye and peers into the gap",
+     "acting": "wink R, lean in (tip 0.1); in the corner the monkey shuts one eye too",
+     "library": "person wink:'R'; monkey lid on a 0.1 s delay"
+    },
+    {
+     "t": 34.8,
+     "end": 35.2,
+     "who": "saw",
+     "action": "Lays the saw down on the tool row in the pause",
+     "acting": "blade wobble settles",
+     "library": "swing()"
+    },
+    {
+     "t": 35.18,
+     "end": 36.2,
+     "cue": {
+      "word": "ثم",
+      "t": 35.18
+     },
+     "who": "carpenter",
+     "action": "Takes a small wedge from his apron pocket and holds it up between finger and thumb",
+     "acting": "looks at it, then at the gap, measuring; small smile",
+     "library": "person handR IK up; wedge prop follows the hand"
+    },
+    {
+     "t": 36.32,
+     "end": 37.6,
+     "cue": {
+      "word": "قطعة",
+      "t": 36.32
+     },
+     "who": "wedge",
+     "action": "The wedge glints with an emphasis ring so the audience learns its shape and colour (bright yellow with red end grain)",
+     "acting": "held still for half a second: it is the key prop of the film",
+     "library": "S.emphasis ring"
+    },
+    {
+     "t": 36.88,
+     "end": 37.6,
+     "cue": {
+      "word": "صغيرة",
+      "t": 36.88
+     },
+     "who": "camera",
+     "action": "Insert close on the wedge and the mouth of the gap",
+     "acting": "eased",
+     "library": "CAM keys"
+    },
+    {
+     "t": 37.68,
+     "end": 38.7,
+     "cue": {
+      "word": "من",
+      "t": 37.68
+     },
+     "who": "monkey",
+     "action": "Seen small in the corner before the insert completes: hangs by his hands from the branch to get a better look",
+     "acting": "body swings, eyes locked on the wedge",
+     "library": "monkey aL/aR up + swing()"
+    },
+    {
+     "t": 38.74,
+     "end": 39.4,
+     "cue": {
+      "word": "داخل",
+      "t": 38.74
+     },
+     "who": "carpenter",
+     "action": "Pushes the wedge point into the mouth of the gap with his fingers",
+     "acting": "careful, lids low",
+     "library": "handR IK to (700,815)"
+    },
+    {
+     "t": 39.5,
+     "end": 40.6,
+     "cue": {
+      "word": "الشق.",
+      "t": 39.48
+     },
+     "who": "mallet",
+     "action": "Two mallet taps in the pause drive the wedge home: with each tap the upper half lifts and the gap opens fully",
+     "acting": "tap, look, tap; the log shivers and settles; he nods",
+     "library": "strike cycle on hits [40.3, 40.7]; splitLog gap 0.35 to 1 in two steps"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 20.0,
+     "text": "ONE DAY"
+    },
+    {
+     "t": 31.3,
+     "text": "ZZZ ZZZ"
+    },
+    {
+     "t": 32.9,
+     "text": "GAP"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 19.7,
+     "kind": "whoosh"
+    },
+    {
+     "t": 26.3,
+     "kind": "thud"
+    },
+    {
+     "t": 34.8,
+     "kind": "tap"
+    },
+    {
+     "t": 40.3,
+     "kind": "tok"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 40.6
+   }
+  },
+  {
+   "id": "S3",
+   "start": 40.6,
+   "end": 50.9,
+   "paragraphs": [
+    3
+   ],
+   "set": "villageYard",
+   "cast": [
+    "carpenter",
+    "monkey"
+   ],
+   "summary": "Why the wedge is there: it holds the two halves apart so the saw runs easily. This is the lesson the monkey misses.",
+   "camera": {
+    "shot": "close",
+    "move": "pull-out",
+    "notes": "Keys: 40.6-45.9 close on the mouth {x:660,y:800,zoom:2.4}; 46.08-46.9 pull out to medium {x:600,y:730,zoom:1.4} with the monkey visible top-left; hold to 50.9."
+   },
+   "composition": "The wedge sits dead centre of the close-up. Force arrows above and below the halves. After the pull-out the carpenter is right of the log, the monkey in the upper-left corner copying him.",
+   "actions": [
+    {
+     "t": 40.7,
+     "end": 41.7,
+     "cue": {
+      "word": "كانت",
+      "t": 41.08
+     },
+     "who": "mallet",
+     "action": "Last tap lands; the mallet lifts out of frame",
+     "acting": "the wedge sits snug",
+     "library": "strike cycle"
+    },
+    {
+     "t": 41.78,
+     "end": 43.0,
+     "cue": {
+      "word": "القطعة",
+      "t": 41.78
+     },
+     "who": "wedge",
+     "action": "Emphasis ring pulses on the wedge; arrow and label HOLDS IT OPEN",
+     "acting": "label above the log",
+     "library": "S.emphasis + S.arrow + S.label"
+    },
+    {
+     "t": 43.14,
+     "end": 44.0,
+     "cue": {
+      "word": "تُبقي",
+      "t": 43.14
+     },
+     "who": "fx",
+     "action": "Two red force arrows press the halves toward each other; the halves quiver against the wedge and cannot close",
+     "acting": "squeeze lines at the wedge faces",
+     "library": "S.arrow x2 + tremble(t,1) on gap"
+    },
+    {
+     "t": 44.04,
+     "end": 44.7,
+     "cue": {
+      "word": "النصفين",
+      "t": 44.04
+     },
+     "who": "carpenter",
+     "action": "His hand comes in and presses the upper half down as a test: it flexes a little and springs back",
+     "acting": "one firm push, a satisfied pat",
+     "library": "handR IK; splitLog gap dips 0.1 then settleTo 1"
+    },
+    {
+     "t": 44.76,
+     "end": 45.9,
+     "cue": {
+      "word": "متباعدين،",
+      "t": 44.76
+     },
+     "who": "fx",
+     "action": "A double-headed blue arrow stands in the gap",
+     "acting": "holds 1 s",
+     "library": "S.arrow double"
+    },
+    {
+     "t": 46.08,
+     "end": 46.9,
+     "cue": {
+      "word": "حتى",
+      "t": 46.08
+     },
+     "who": "camera",
+     "action": "Pull out to the medium shot",
+     "acting": "eased",
+     "library": "CAM keys"
+    },
+    {
+     "t": 46.92,
+     "end": 48.3,
+     "cue": {
+      "word": "يستطيع",
+      "t": 46.92
+     },
+     "who": "carpenter",
+     "action": "Nods, picks up the saw again, sets the blade in the open kerf",
+     "acting": "easy confidence, shoulders loose",
+     "library": "handR IK"
+    },
+    {
+     "t": 48.38,
+     "end": 49.2,
+     "cue": {
+      "word": "متابعة",
+      "t": 48.38
+     },
+     "who": "saw",
+     "action": "Saws deeper inside the open gap: smooth long strokes, no binding, the kerf line creeps left",
+     "acting": "body rocks gently, half the effort of before",
+     "library": "stroke phase; splitLog kerf 0.5 to 0.7"
+    },
+    {
+     "t": 49.28,
+     "end": 50.0,
+     "cue": {
+      "word": "عمله",
+      "t": 49.28
+     },
+     "who": "carpenter",
+     "action": "Whistles while sawing: two note glyphs drift up",
+     "acting": "lids half, lips pursed, head bobs",
+     "library": "mouth 'o', lid 0.4"
+    },
+    {
+     "t": 50.06,
+     "end": 50.9,
+     "cue": {
+      "word": "بسهولة.",
+      "t": 50.06
+     },
+     "who": "monkey",
+     "action": "In the corner he saws a twig across the branch with the same rhythm, tongue out",
+     "acting": "delighted; looks from his twig to the real saw",
+     "library": "monkey handR keyed to the stroke phase + 0.07 s"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 41.8,
+     "text": "HOLDS IT OPEN"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 40.7,
+     "kind": "tok"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 50.9,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S4",
+   "start": 50.9,
+   "end": 61.0,
+   "paragraphs": [
+    3
+   ],
+   "set": "villageYard",
+   "cast": [
+    "carpenter",
+    "monkey"
+   ],
+   "summary": "After a while the carpenter tires, leaves his tools by the log and goes indoors to eat and rest. The yard is empty; the monkey has his chance.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "Camera cut hidden under the LATER card (key pair at its midpoint). 51.5-57 medium {x:640,y:740,zoom:1.4}; 57.18-59.4 pan right with him to the door {x:800,y:740,zoom:1.4}; 60.0-61.0 pan back left and settle on log plus tree {x:440,y:680,zoom:1.15}."
+   },
+   "composition": "Sun now high (short shadows), a larger sawdust pile, the kerf two thirds along the log. Tool row in the foreground between log and door. When he has gone the frame holds: empty stool, open log, wedge, and two eyes in the tree.",
+   "actions": [
+    {
+     "t": 51.2,
+     "end": 52.9,
+     "cue": {
+      "word": "وبعد",
+      "t": 51.2
+     },
+     "who": "set",
+     "action": "Card clears on the same yard at midday: sun high, shadows short, more sawdust, kerf longer",
+     "acting": "he is still sawing, but slower",
+     "library": "sun on a keyed arc; splitLog kerf 0.7"
+    },
+    {
+     "t": 52.98,
+     "end": 54.4,
+     "cue": {
+      "word": "شعر",
+      "t": 52.98
+     },
+     "who": "carpenter",
+     "action": "Strokes slow and stop mid-stroke; shoulders sink, he leans on the saw",
+     "acting": "sq 0.96, tip 0.08, lids 0.5, slow blink",
+     "library": "breathe() deep + settleTo"
+    },
+    {
+     "t": 54.52,
+     "end": 55.3,
+     "cue": {
+      "word": "بالتعب.",
+      "t": 54.52
+     },
+     "who": "carpenter",
+     "action": "Wipes his brow, big yawn, pats his stomach as a rumble squiggle appears",
+     "acting": "mouth 'o' wide, eyes shut on the yawn, one sweat drop",
+     "library": "PERSON_HANDS.headHold then chest"
+    },
+    {
+     "t": 55.38,
+     "end": 56.1,
+     "cue": {
+      "word": "ترك",
+      "t": 55.38
+     },
+     "who": "saw",
+     "action": "He lays the saw on the ground beside the log",
+     "acting": "gentle, blade wobble",
+     "library": "handR IK down + swing()"
+    },
+    {
+     "t": 56.16,
+     "end": 57.1,
+     "cue": {
+      "word": "أدواته",
+      "t": 56.16
+     },
+     "who": "prybar",
+     "action": "The tool row glints one by one: saw, mallet, pry bar",
+     "acting": "three quick emphasis ticks, left to right",
+     "library": "S.emphasis x3 staggered 0.2 s"
+    },
+    {
+     "t": 57.18,
+     "end": 58.2,
+     "cue": {
+      "word": "وذهب",
+      "t": 57.18
+     },
+     "who": "carpenter",
+     "action": "Turns and walks to the cottage with a tired gait, rubbing his back",
+     "acting": "head low (drop), short steps; steps never slide",
+     "library": "walk(CX,t) + footfalls"
+    },
+    {
+     "t": 57.98,
+     "end": 59.0,
+     "cue": {
+      "word": "إلى",
+      "t": 57.98
+     },
+     "who": "monkey",
+     "action": "Eyes follow him across the yard, then snap back to the log; the smile spreads",
+     "acting": "gaze plan carpenter to log; smirk; tail tip flicks",
+     "library": "look() + mouth 'smirk'"
+    },
+    {
+     "t": 58.26,
+     "end": 59.4,
+     "cue": {
+      "word": "البيت",
+      "t": 58.26
+     },
+     "who": "camera",
+     "action": "Pan right with him as the door swings open",
+     "acting": "eased",
+     "library": "CAM keys; door {open 0..1}"
+    },
+    {
+     "t": 58.82,
+     "end": 59.5,
+     "cue": {
+      "word": "ليأكل",
+      "t": 58.82
+     },
+     "who": "fx",
+     "action": "Through the open door a steaming bowl waits on a table",
+     "acting": "he rubs his hands",
+     "library": "small bowl shape + two steam curls (K.noise sway)"
+    },
+    {
+     "t": 59.56,
+     "end": 60.6,
+     "cue": {
+      "word": "ويستريح.",
+      "t": 59.56
+     },
+     "who": "carpenter",
+     "action": "Steps inside; the door closes; his silhouette sits down at the window",
+     "acting": "sigh of relief, shoulders drop",
+     "library": "clip to the door opening (Guide 6, head into a hole)"
+    },
+    {
+     "t": 60.75,
+     "end": 61.0,
+     "who": "camera",
+     "action": "Pan back to the empty yard: stool, tools, the open log, and two eyes in the leaves",
+     "acting": "stillness; only the monkey pupils move (suspense by stillness)",
+     "library": "CAM keys + gazePlan"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 60.9,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 61.0
+   }
+  },
+  {
+   "id": "S5",
+   "start": 61.0,
+   "end": 79.9,
+   "paragraphs": [
+    4
+   ],
+   "set": "villageYard",
+   "cast": [
+    "monkey",
+    "bird"
+   ],
+   "summary": "The monkey climbs down, creeps to the log, tells himself the work is easy, and sits on the log. His tail drops into the gap.",
+   "camera": {
+    "shot": "medium",
+    "move": "track",
+    "notes": "Keys: 61.0-63.3 {x:260,y:660,zoom:1.5} following the descent; 64.1-65.5 track right with the scamper to {x:520,y:760,zoom:1.6}; 66.16-76.4 medium close on monkey and thought cloud {x:470,y:640,zoom:1.5}; 76.52-77.6 follow the hop to {x:600,y:760,zoom:1.8}; 78.7-79.9 small tilt down and push to {x:640,y:800,zoom:2.4} on the tail tip in the gap."
+   },
+   "composition": "Monkey works left to right, from his tree to the forbidden log, the cottage door always in the far right background as the threat. Thought cloud sits upper right, clear of his face. Final frame: his rump on the upper half near the open end, tail hanging down the camera side with its tip inside the dark gap.",
+   "actions": [
+    {
+     "t": 61.38,
+     "end": 62.6,
+     "cue": {
+      "word": "نزل",
+      "t": 61.38
+     },
+     "who": "monkey",
+     "action": "Checks left, right, the door; crouches and swings down from the branch to hug the trunk",
+     "acting": "coast-clear saccades, anticipation crouch, then commit",
+     "library": "gazePlan(…,0.07) + anticipate + hop()"
+    },
+    {
+     "t": 62.62,
+     "end": 63.3,
+     "cue": {
+      "word": "القرد",
+      "t": 62.62
+     },
+     "who": "monkey",
+     "action": "Slides down the trunk and lands on the ground with a squash and a dust puff",
+     "acting": "stretch on the slide, landSquash on contact, tail follows late",
+     "library": "fallY (short) + landSquash + dustBurst; tailPath lag"
+    },
+    {
+     "t": 63.36,
+     "end": 64.0,
+     "cue": {
+      "word": "الشجرة،",
+      "t": 63.36
+     },
+     "who": "bird",
+     "action": "The bird flutters up off the shaking branch and resettles higher",
+     "acting": "it will be the witness for the rest of the film",
+     "library": "songbird fly + hop"
+    },
+    {
+     "t": 64.1,
+     "end": 65.4,
+     "cue": {
+      "word": "واقترب",
+      "t": 64.1
+     },
+     "who": "monkey",
+     "action": "Three tiptoe hops toward the log; freezes between hops to stare at the door",
+     "acting": "each hop small with anticipation; on each freeze only the eyes move",
+     "library": "hop() x3 + landSquash; look() to the door"
+    },
+    {
+     "t": 65.48,
+     "end": 66.1,
+     "cue": {
+      "word": "الخشب.",
+      "t": 65.48
+     },
+     "who": "monkey",
+     "action": "Arrives; sniffs the log and raps it twice with a knuckle",
+     "acting": "head tilts to listen after the knock",
+     "library": "monkey handR IK + kick() on the log"
+    },
+    {
+     "t": 66.16,
+     "end": 67.2,
+     "cue": {
+      "word": "قال",
+      "t": 66.16
+     },
+     "who": "monkey",
+     "action": "Sits back on his haunches, one hand to his chin; camera settles on him",
+     "acting": "thinking pose, eyes up and to the side",
+     "library": "handR to chin, gaze [0.5,-0.6]"
+    },
+    {
+     "t": 67.3,
+     "end": 68.0,
+     "cue": {
+      "word": "نفسه:",
+      "t": 67.3
+     },
+     "who": "fx",
+     "action": "A thought cloud opens above and right of him",
+     "acting": "three bubble steps then the cloud; clear of his face",
+     "library": "thoughtCloud(box, drawInside) (planned effect) / cloud()"
+    },
+    {
+     "t": 68.08,
+     "end": 69.5,
+     "cue": {
+      "word": "«رأيت",
+      "t": 68.08
+     },
+     "who": "fx",
+     "action": "Inside the cloud: the little carpenter sawing",
+     "acting": "monkey eyes go up to the cloud",
+     "library": "person in the cloud at about 110 px, stroke phase"
+    },
+    {
+     "t": 69.58,
+     "end": 70.8,
+     "cue": {
+      "word": "يعمل",
+      "t": 69.58
+     },
+     "who": "fx",
+     "action": "Cloud: the little carpenter hammers, then saws again, as a small sun arcs over him",
+     "acting": "monkey nods along, mouth mimics the rhythm",
+     "library": "strike cycle + sun arc in the cloud"
+    },
+    {
+     "t": 70.88,
+     "end": 71.5,
+     "cue": {
+      "word": "الصباح.",
+      "t": 70.88
+     },
+     "who": "monkey",
+     "action": "Yawns at the memory, as if it were boring to watch",
+     "acting": "lids half, hand flap over the mouth",
+     "library": "mouth 'o', lid 0.5"
+    },
+    {
+     "t": 71.6,
+     "end": 73.2,
+     "cue": {
+      "word": "يبدو",
+      "t": 71.6
+     },
+     "who": "monkey",
+     "action": "Shrugs with both palms up and waves the work away",
+     "acting": "smirk, lids half, head wobble: pure overconfidence",
+     "library": "monkey handL/handR palms up; mouth 'smirk'"
+    },
+    {
+     "t": 73.26,
+     "end": 73.8,
+     "cue": {
+      "word": "سهلًا،",
+      "t": 73.26
+     },
+     "who": "lettering",
+     "action": "EASY! pops beside him",
+     "acting": "he flicks his fingers as it lands",
+     "library": "S.title small / Bangers lettering"
+    },
+    {
+     "t": 73.88,
+     "end": 75.8,
+     "cue": {
+      "word": "ويمكنني",
+      "t": 73.88
+     },
+     "who": "fx",
+     "action": "The cloud swaps: now the monkey himself in the carpenter cap saws heroically, sparkles, a neat stack of planks",
+     "acting": "monkey gazes at his fantasy, chest swelling (sq 1.06)",
+     "library": "cloud redraw with monkey + cap; S.emphasis sparkles"
+    },
+    {
+     "t": 75.86,
+     "end": 76.5,
+     "cue": {
+      "word": "مثله!»",
+      "t": 75.86
+     },
+     "who": "monkey",
+     "action": "Thumps his chest with both fists",
+     "acting": "proud grin, chin up",
+     "library": "handL/handR chest taps (as Monkey and Turtle)"
+    },
+    {
+     "t": 76.52,
+     "end": 77.3,
+     "cue": {
+      "word": "ثم",
+      "t": 76.52
+     },
+     "who": "monkey",
+     "action": "The cloud pops; he crouches and hops up onto the log",
+     "acting": "anticipate, stretch in the air, tail streams behind",
+     "library": "anticipate + hop(t, a, from, to, h)"
+    },
+    {
+     "t": 77.36,
+     "end": 78.6,
+     "cue": {
+      "word": "جلس",
+      "t": 77.36
+     },
+     "who": "monkey",
+     "action": "Lands sitting on the upper half near the open end; the half dips and the wedge creaks (two tiny squeeze lines)",
+     "acting": "landSquash, wriggles to get comfortable, pleased with himself",
+     "library": "landSquash; splitLog gap dips 0.06 and springs (platform reaction, Guide 6)"
+    },
+    {
+     "t": 78.7,
+     "end": 79.5,
+     "cue": {
+      "word": "الكبيرة.",
+      "t": 78.7
+     },
+     "who": "monkey",
+     "action": "His tail swishes twice, then drops down the side of the log and its tip slides into the gap",
+     "acting": "he does not notice: he is looking at the tools",
+     "library": "new monkey tailPath with swing() follow-through"
+    },
+    {
+     "t": 79.55,
+     "end": 79.9,
+     "who": "fx",
+     "action": "In the pause a small red arrow points at the tail tip inside the gap; no word",
+     "acting": "dramatic irony: the audience knows, he does not",
+     "library": "S.arrow"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 73.3,
+     "text": "EASY!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 79.8,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 79.9
+   }
+  },
+  {
+   "id": "S6",
+   "start": 79.9,
+   "end": 100.4,
+   "paragraphs": [
+    5
+   ],
+   "set": "villageYard",
+   "cast": [
+    "monkey"
+   ],
+   "summary": "He studies the wedge, cannot see what it is for, grabs it and pulls with all his strength. It moves a little, so he pulls harder.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Keys: 79.9-88.8 close {x:660,y:770,zoom:2.0}; 88.88-95.7 slow push to {x:670,y:780,zoom:2.3}; 96.82 a 20-unit tilt down so the tail in the gap is in the lower third; 98.08-100.4 push to zoom 2.5 with 3-unit panel-only shakes on each tug."
+   },
+   "composition": "Monkey sits on the upper half at x 600, facing right; the wedge sticks out of the open end at (700,815). His tail hangs on the camera side of the log into the gap at about x 650, always visible in the lower part of the frame while he pulls: the cause and the victim in one picture.",
+   "actions": [
+    {
+     "t": 80.38,
+     "end": 82.2,
+     "cue": {
+      "word": "نظر",
+      "t": 80.38
+     },
+     "who": "monkey",
+     "action": "Leans over the end of the log and peers down at the wedge, head tilting left then right",
+     "acting": "big curious eyes (brow -0.5), two blinks",
+     "library": "tip 0.3 + lookAt wedge + blink"
+    },
+    {
+     "t": 82.24,
+     "end": 83.4,
+     "cue": {
+      "word": "القطعة",
+      "t": 82.24
+     },
+     "who": "wedge",
+     "action": "Emphasis ring on the wedge, same ring as when the carpenter showed it",
+     "acting": "callback so the audience connects the two moments",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 83.52,
+     "end": 84.7,
+     "cue": {
+      "word": "داخل",
+      "t": 83.52
+     },
+     "who": "monkey",
+     "action": "Puts one eye right down to the mouth of the gap and looks inside; his own tail tip twitches in there, unseen by him",
+     "acting": "one eye shut, the other huge; the tail twitch is the joke",
+     "library": "lid on one side via a drawn patch or head turn; tailPath twitch"
+    },
+    {
+     "t": 84.78,
+     "end": 86.0,
+     "cue": {
+      "word": "ولم",
+      "t": 84.78
+     },
+     "who": "monkey",
+     "action": "Sits up and scratches his head; a question mark pops",
+     "acting": "brow knotted, mouth to one side",
+     "library": "handR IK to head; lettering ?"
+    },
+    {
+     "t": 86.08,
+     "end": 87.4,
+     "cue": {
+      "word": "لماذا",
+      "t": 86.08
+     },
+     "who": "monkey",
+     "action": "Looks back at the cottage door, then at the wedge again, palms up",
+     "acting": "the shrug says: what a silly thing to leave here",
+     "library": "gazePlan door to wedge; palms up"
+    },
+    {
+     "t": 87.42,
+     "end": 88.8,
+     "cue": {
+      "word": "النجار",
+      "t": 87.42
+     },
+     "who": "monkey",
+     "action": "Pokes the wedge with one finger, then flicks it: it does not budge",
+     "acting": "mild annoyance; brow comes down",
+     "library": "handR IK to wedge; wedge tremble 1 unit"
+    },
+    {
+     "t": 88.88,
+     "end": 90.5,
+     "cue": {
+      "word": "مدّ",
+      "t": 88.88
+     },
+     "who": "monkey",
+     "action": "Reaches a long arm down toward the wedge, fingers wiggling",
+     "acting": "slow, deliberate; eyes narrow (lid 0.3); the tail curls in anticipation",
+     "library": "new monkey armLen up to 1.5 + handR IK"
+    },
+    {
+     "t": 90.58,
+     "end": 91.9,
+     "cue": {
+      "word": "وأمسك",
+      "t": 90.58
+     },
+     "who": "monkey",
+     "action": "Grips it with one hand, then claps the other on top",
+     "acting": "two clear contacts; set jaw",
+     "library": "handL/handR IK to (700,812)"
+    },
+    {
+     "t": 91.94,
+     "end": 93.0,
+     "cue": {
+      "word": "ثم",
+      "t": 91.94
+     },
+     "who": "monkey",
+     "action": "Braces both feet against the end of the log and takes a deep breath",
+     "acting": "chest swells (sq 1.06), cheeks puff: the anticipation for the pull",
+     "library": "anticipate + breathe"
+    },
+    {
+     "t": 93.08,
+     "end": 93.9,
+     "cue": {
+      "word": "يسحبها",
+      "t": 93.08
+     },
+     "who": "monkey",
+     "action": "First pull: leans back with straight arms, the whole body a diagonal",
+     "acting": "tip -0.25, eyes squeezed, teeth showing, tremble",
+     "library": "tip, tremble(t,2), mouth 'open' with teeth"
+    },
+    {
+     "t": 93.94,
+     "end": 94.6,
+     "cue": {
+      "word": "بكل",
+      "t": 93.94
+     },
+     "who": "monkey",
+     "action": "Maximum strain: face goes red with dot shading, sweat drops fly, effort lines radiate",
+     "acting": "held a full half second so it reads",
+     "library": "red Ben-Day overlay on the face disc; S.emphasis lines"
+    },
+    {
+     "t": 94.62,
+     "end": 95.7,
+     "cue": {
+      "word": "قوته.",
+      "t": 94.62
+     },
+     "who": "monkey",
+     "action": "Lets go, slumps, pants with his tongue out; the wedge has not moved",
+     "acting": "sq 0.94, lids half, chest pumping",
+     "library": "settleTo + breathe fast"
+    },
+    {
+     "t": 95.76,
+     "end": 96.8,
+     "cue": {
+      "word": "تحركت",
+      "t": 95.76
+     },
+     "who": "wedge",
+     "action": "With a jerk the wedge slips out a few units; the upper half sags a hair and two creak lines appear",
+     "acting": "first sign of danger, quick and small",
+     "library": "wedge out 0 to 0.2; splitLog gap 1 to 0.94"
+    },
+    {
+     "t": 96.82,
+     "end": 97.3,
+     "cue": {
+      "word": "القطعة",
+      "t": 96.82
+     },
+     "who": "camera",
+     "action": "Small tilt down so the tail hanging in the narrowing gap is in clear view",
+     "acting": "the tail flicks happily",
+     "library": "CAM keys"
+    },
+    {
+     "t": 97.32,
+     "end": 98.0,
+     "cue": {
+      "word": "قليلًا،",
+      "t": 97.32
+     },
+     "who": "monkey",
+     "action": "Stares at the gap the wedge left behind, then breaks into a grin",
+     "acting": "eyes wide then smile: it works! He looks proud",
+     "library": "settleTo; mouth 'smile'"
+    },
+    {
+     "t": 98.08,
+     "end": 99.5,
+     "cue": {
+      "word": "فزاد",
+      "t": 98.08
+     },
+     "who": "monkey",
+     "action": "Regrips, wraps his feet round the log end and heaves in three rhythmic tugs",
+     "acting": "each tug has its own dip of anticipation; ears back, brow hard",
+     "library": "countedBeats-style tug list [98.3, 98.9, 99.5] with dip"
+    },
+    {
+     "t": 99.54,
+     "end": 100.4,
+     "cue": {
+      "word": "سحبه.",
+      "t": 99.54
+     },
+     "who": "wedge",
+     "action": "The wedge comes out a step per tug; dust falls from the gap, the halves shudder; only its tip is still inside",
+     "acting": "panel-only shake on each step; the tail hangs still",
+     "library": "wedge out 0.2, 0.45, 0.7, 0.9; shake"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 84.8,
+     "text": "?"
+    },
+    {
+     "t": 94.0,
+     "text": "HNNGH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 100.4
+   }
+  },
+  {
+   "id": "S7",
+   "start": 100.4,
+   "end": 121.3,
+   "paragraphs": [
+    6
+   ],
+   "set": "villageYard",
+   "cast": [
+    "monkey",
+    "bird"
+   ],
+   "summary": "The wedge flies out and the log snaps shut on his tail. He screams, tries to jump away and is yanked back; every movement hurts more.",
+   "camera": {
+    "shot": "close",
+    "move": "shake",
+    "notes": "Keys: 100.4-102.4 hold {x:670,y:780,zoom:2.5}; 102.48 snap pull out to {x:620,y:740,zoom:1.7} as he flies back; 104.98-105.7 whip to the insert on the tail in the gap {x:650,y:820,zoom:3.0}; 105.78 panel-only shake 10 units decaying over 0.5 s; 108.36 cut to medium {x:600,y:720,zoom:1.6}; 114.7-116.9 insert on the seam; 117-121.3 medium, slow push to zoom 1.9 on his face."
+   },
+   "composition": "The seam of the closed log is a horizontal line through the frame; the tail goes into it and does not come out. In the jump, the taut tail draws a straight diagonal from the seam to his rump. Keep SNAP! and YEOWW! in the upper band, never over his face.",
+   "actions": [
+    {
+     "t": 100.42,
+     "end": 101.2,
+     "cue": {
+      "word": "وفجأة",
+      "t": 100.42
+     },
+     "who": "fx",
+     "action": "A 2-frame white flash and a small ! over the wedge: it hangs by its tip, wobbling",
+     "acting": "everything else still for half a second (the long word gives the time)",
+     "library": "S.emphasis + hold"
+    },
+    {
+     "t": 101.3,
+     "end": 102.4,
+     "cue": {
+      "word": "خرجت",
+      "t": 102.48
+     },
+     "who": "monkey",
+     "action": "Winds up for the last heave: deep crouch, shoulders forward",
+     "acting": "anticipation held long; eyes on the wedge, tongue out",
+     "library": "anticipate(t, 101.3, 1.1, 0.12)"
+    },
+    {
+     "t": 102.48,
+     "end": 103.3,
+     "cue": {
+      "word": "خرجت",
+      "t": 102.48
+     },
+     "who": "wedge",
+     "action": "It pops out: the monkey flies backward along the log holding it over his head, legs in the air",
+     "acting": "stretch then a roll onto his back; surprise",
+     "library": "hop arc backward + sq 1.15"
+    },
+    {
+     "t": 103.4,
+     "end": 104.6,
+     "cue": {
+      "word": "القطعة",
+      "t": 103.4
+     },
+     "who": "monkey",
+     "action": "On his back he holds the wedge up in triumph",
+     "acting": "huge grin, eyes shut with pride: the last happy moment",
+     "library": "mouth 'smile', lid 1"
+    },
+    {
+     "t": 103.94,
+     "end": 104.9,
+     "cue": {
+      "word": "الصغيرة",
+      "t": 103.94
+     },
+     "who": "wedge",
+     "action": "It slips from his fingers, spins away in an arc and lands on the ground to the right, two bounces",
+     "acting": "it must stay visible on the ground for the rescue",
+     "library": "K keyed arc + rebound"
+    },
+    {
+     "t": 104.98,
+     "end": 105.7,
+     "cue": {
+      "word": "مكانها،",
+      "t": 104.98
+     },
+     "who": "log",
+     "action": "Insert: the upper half hangs open for a few frames, trembling, the tail tip lying inside",
+     "acting": "the held breath before the snap",
+     "library": "tremble on gap; CAM whip"
+    },
+    {
+     "t": 105.78,
+     "end": 106.8,
+     "cue": {
+      "word": "وأغلق",
+      "t": 105.78
+     },
+     "who": "log",
+     "action": "SNAP: the upper half slams shut, a 2-frame squash, dust jets from the seam, the panel shakes",
+     "acting": "white flash covers the contact frame",
+     "library": "splitLog gap to 0 with ease-in over 3 frames + impactSquash + dustBurst + shake"
+    },
+    {
+     "t": 106.86,
+     "end": 107.8,
+     "cue": {
+      "word": "الخشب",
+      "t": 106.86
+     },
+     "who": "fx",
+     "action": "Dust clears: the seam is a tight line with the tail going into it",
+     "acting": "one beat of silence in the picture",
+     "library": "dustBurst decay"
+    },
+    {
+     "t": 107.86,
+     "end": 108.3,
+     "cue": {
+      "word": "ذيل",
+      "t": 107.86
+     },
+     "who": "monkey",
+     "action": "Tail close: kinked at the seam, a red throb ring and three small stars pulse at the pinch",
+     "acting": "the tail above the seam stiffens straight",
+     "library": "new tail pinch state + painPulse effect"
+    },
+    {
+     "t": 108.36,
+     "end": 109.2,
+     "cue": {
+      "word": "القرد!",
+      "t": 108.36
+     },
+     "who": "monkey",
+     "action": "Still on his back and smiling, he feels it: the smile freezes, pupils shrink, he looks to camera, then slowly down at his tail",
+     "acting": "comedy beat: hold, realise, look to camera, gulp",
+     "library": "gaze [0,0.05] then lookAt seam; drop pulse (Guide 9)"
+    },
+    {
+     "t": 109.26,
+     "end": 110.4,
+     "cue": {
+      "word": "صرخ",
+      "t": 109.26
+     },
+     "who": "monkey",
+     "action": "Screams: head thrown back, mouth huge, fur spikes, sound arcs fly out",
+     "acting": "eyes 'wide' then shut, wet; whole body stretches (sq 1.12)",
+     "library": "mouth 'open' talk 1; sound arcs (soundArcs pattern)"
+    },
+    {
+     "t": 110.48,
+     "end": 111.0,
+     "cue": {
+      "word": "القرد",
+      "t": 110.48
+     },
+     "who": "bird",
+     "action": "The bird bolts off the branch in a burst of two feathers",
+     "acting": "the only witness flees",
+     "library": "songbird fly; K.rng feathers"
+    },
+    {
+     "t": 111.1,
+     "end": 112.0,
+     "cue": {
+      "word": "وحاول",
+      "t": 111.1
+     },
+     "who": "monkey",
+     "action": "Scrambles upright and crouches to leap away",
+     "acting": "panic: fast anticipation, eyes on the tree",
+     "library": "anticipate"
+    },
+    {
+     "t": 112.06,
+     "end": 112.6,
+     "cue": {
+      "word": "يقفز،",
+      "t": 112.06
+     },
+     "who": "monkey",
+     "action": "Leaps: the tail snaps taut as a straight line and yanks him to a dead stop in the air",
+     "acting": "full stretch (sq 1.2), arms reaching for the tree, eyes bulging",
+     "library": "hop arc clipped by tail length; tailPath straight"
+    },
+    {
+     "t": 112.68,
+     "end": 113.6,
+     "cue": {
+      "word": "لكنه",
+      "t": 112.68
+     },
+     "who": "monkey",
+     "action": "Springs back and slams down on the log with a deep squash",
+     "acting": "impact, rebound, stars",
+     "library": "impactSquash + rebound"
+    },
+    {
+     "t": 113.68,
+     "end": 114.6,
+     "cue": {
+      "word": "لم",
+      "t": 113.68
+     },
+     "who": "monkey",
+     "action": "A second, weaker try: grabs his tail with both hands and tugs once, yelps and lets go",
+     "acting": "smaller than the first (falling effort)",
+     "library": "handL/handR IK to the tail"
+    },
+    {
+     "t": 114.7,
+     "end": 116.1,
+     "cue": {
+      "word": "كان",
+      "t": 114.7
+     },
+     "who": "camera",
+     "action": "Insert on the seam: the tail flattened in the line",
+     "acting": "holds still",
+     "library": "CAM keys"
+    },
+    {
+     "t": 116.16,
+     "end": 116.9,
+     "cue": {
+      "word": "عالقًا،",
+      "t": 116.16
+     },
+     "who": "fx",
+     "action": "Arrow and label STUCK! at the seam",
+     "acting": "label above the log",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 117.0,
+     "end": 118.0,
+     "cue": {
+      "word": "وكلما",
+      "t": 117.0
+     },
+     "who": "monkey",
+     "action": "Back to the medium shot: he tries a tiny careful wiggle to the left",
+     "acting": "teeth clenched, one eye shut",
+     "library": "x offset 6 units"
+    },
+    {
+     "t": 118.04,
+     "end": 119.4,
+     "cue": {
+      "word": "تحرك",
+      "t": 118.04
+     },
+     "who": "fx",
+     "action": "Each small move sends a bigger red throb from the pinch: ring sizes 1, 2, 3, with OW! growing",
+     "acting": "he flinches harder each time",
+     "library": "painPulse with rising radius on moves [118.1, 118.6, 119.1]"
+    },
+    {
+     "t": 119.5,
+     "end": 120.1,
+     "cue": {
+      "word": "بألم",
+      "t": 119.5
+     },
+     "who": "monkey",
+     "action": "Stops moving altogether: frozen stiff, eyes wet, lip trembling, one tear",
+     "acting": "wet true, tremble 1 unit, brow -0.6",
+     "library": "wet, tremble(t,1)"
+    },
+    {
+     "t": 120.12,
+     "end": 121.3,
+     "cue": {
+      "word": "أكبر.",
+      "t": 120.12
+     },
+     "who": "monkey",
+     "action": "Turns only his eyes toward the cottage and lets out a long thin wail; the sound arcs travel across the yard to the window",
+     "acting": "head still, mouth small o; pleading",
+     "library": "gaze to the door; arcs moving source to listener"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 105.8,
+     "text": "SNAP!"
+    },
+    {
+     "t": 109.3,
+     "text": "YEOWW!"
+    },
+    {
+     "t": 116.2,
+     "text": "STUCK!"
+    },
+    {
+     "t": 118.1,
+     "text": "OW!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 121.2,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 121.3
+   }
+  },
+  {
+   "id": "S8",
+   "start": 121.3,
+   "end": 142.0,
+   "paragraphs": [
+    7
+   ],
+   "set": "villageYard",
+   "cast": [
+    "carpenter",
+    "monkey"
+   ],
+   "summary": "The carpenter hears, runs back, understands at a glance, levers the gap open with a pry bar, lifts the tail out gently and steps back so the monkey can calm down.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "whip",
+    "notes": "Keys: 121.3-124.2 medium on door and window {x:860,y:720,zoom:1.7}; 124.28-125.9 whip pan left with the run to the two-shot {x:650,y:740,zoom:1.5} from twoShot(carpenterHead, monkeyHead); 132.4-137.8 push to {x:670,y:780,zoom:2.1} for the rescue; 138.58-140 pull out to {x:620,y:730,zoom:1.3} to show the respectful distance."
+   },
+   "composition": "Carpenter on the right at x 760 (kneeling at x 735 for the rescue), monkey on the log at x 600: both faces in frame throughout the rescue, monkey looking up, carpenter looking down. The stray wedge lies on the ground at about x 800 so his eyes can find it.",
+   "actions": [
+    {
+     "t": 121.68,
+     "end": 122.7,
+     "cue": {
+      "word": "سمع",
+      "t": 121.68
+     },
+     "who": "carpenter",
+     "action": "In the window his head jerks up from the bowl, spoon in the air, one hand to his ear",
+     "acting": "eyes wide, chewing stops",
+     "library": "PERSON_HANDS.cupEar; clip to the window"
+    },
+    {
+     "t": 123.4,
+     "end": 124.2,
+     "cue": {
+      "word": "الصراخ،",
+      "t": 123.4
+     },
+     "who": "fx",
+     "action": "The wail arcs wash over the window; the spoon drops",
+     "acting": "he is already rising",
+     "library": "arcs; fallY for the spoon"
+    },
+    {
+     "t": 124.28,
+     "end": 125.2,
+     "cue": {
+      "word": "فعاد",
+      "t": 124.28
+     },
+     "who": "carpenter",
+     "action": "The door bangs open and he runs out, napkin still tucked in his collar",
+     "acting": "run: big amp, tip 0.15, arms pumping; dust on each step",
+     "library": "walk(CX,t) high speed + footfalls + dustBurst"
+    },
+    {
+     "t": 125.24,
+     "end": 126.0,
+     "cue": {
+      "word": "مسرعًا.",
+      "t": 125.24
+     },
+     "who": "camera",
+     "action": "Whip pan left with him to the log",
+     "acting": "motion streaks for 4 frames",
+     "library": "CAM keys"
+    },
+    {
+     "t": 126.3,
+     "end": 127.2,
+     "cue": {
+      "word": "رأى",
+      "t": 126.58
+     },
+     "who": "carpenter",
+     "action": "Skids to a stop with a heel dust trail and a settle; a ! pops in the pause",
+     "acting": "sq 0.92 then up; eyes wide on the monkey",
+     "library": "settleTo + dustBurst"
+    },
+    {
+     "t": 127.26,
+     "end": 128.1,
+     "cue": {
+      "word": "القرد",
+      "t": 127.26
+     },
+     "who": "monkey",
+     "action": "Looks up at him with wet eyes and points weakly at his tail",
+     "acting": "pleading: brow -0.6, lip quiver, small tremble",
+     "library": "wet, handR IK toward the seam"
+    },
+    {
+     "t": 128.2,
+     "end": 128.8,
+     "cue": {
+      "word": "الخشب،",
+      "t": 128.2
+     },
+     "who": "carpenter",
+     "action": "His eyes travel: the tail in the seam, then the wedge lying on the ground, then back to the monkey",
+     "acting": "three clean holds joined by quick eases",
+     "library": "look(T, head, plan)"
+    },
+    {
+     "t": 128.88,
+     "end": 129.8,
+     "cue": {
+      "word": "وفهم",
+      "t": 128.88
+     },
+     "who": "fx",
+     "action": "A dotted line links the three things he looked at: wedge, seam, tail",
+     "acting": "the audience reads his deduction",
+     "library": "S.arrow dashed x2"
+    },
+    {
+     "t": 129.82,
+     "end": 130.7,
+     "cue": {
+      "word": "ما",
+      "t": 129.82
+     },
+     "who": "carpenter",
+     "action": "Shakes his head once with a small sigh, half a smile: not angry",
+     "acting": "brow -0.3, lids soften",
+     "library": "mouth 'smile' small"
+    },
+    {
+     "t": 130.8,
+     "end": 132.3,
+     "cue": {
+      "word": "استخدم",
+      "t": 130.8
+     },
+     "who": "carpenter",
+     "action": "Shows the monkey an open calming palm, then picks the pry bar from the tool row",
+     "acting": "slow movements so as not to frighten him; the monkey shrinks back a little",
+     "library": "PERSON_HANDS.palmsUp one hand; handR IK to the bar"
+    },
+    {
+     "t": 132.36,
+     "end": 133.0,
+     "cue": {
+      "word": "أداة",
+      "t": 132.36
+     },
+     "who": "prybar",
+     "action": "The bar glints as he kneels at the open end of the log",
+     "acting": "kneel with a settle",
+     "library": "person kneel 0..1 (planned pose 'person kneel / sit')"
+    },
+    {
+     "t": 133.02,
+     "end": 133.8,
+     "cue": {
+      "word": "ليفتح",
+      "t": 133.02
+     },
+     "who": "carpenter",
+     "action": "Sets the bar tip in the seam and leans his weight on it",
+     "acting": "anticipation, then a steady push; jaw set",
+     "library": "handR IK on the bar end; tip 0.1"
+    },
+    {
+     "t": 133.84,
+     "end": 134.5,
+     "cue": {
+      "word": "الشق",
+      "t": 133.84
+     },
+     "who": "log",
+     "action": "The seam creaks open again: the upper half lifts",
+     "acting": "gap 0 to 0.8, creak lines",
+     "library": "splitLog gap"
+    },
+    {
+     "t": 134.56,
+     "end": 135.3,
+     "cue": {
+      "word": "جديد،",
+      "t": 134.56
+     },
+     "who": "monkey",
+     "action": "Flinches and screws his eyes shut, bracing for more pain",
+     "acting": "lid 1, shoulders up, tremble",
+     "library": "tremble(t,2)"
+    },
+    {
+     "t": 135.32,
+     "end": 136.2,
+     "cue": {
+      "word": "ثم",
+      "t": 135.32
+     },
+     "who": "carpenter",
+     "action": "Holding the bar down with one hand, slides the other under the tail",
+     "acting": "tongue tip out, eyes on the tail only",
+     "library": "handL IK to (655,815)"
+    },
+    {
+     "t": 136.22,
+     "end": 136.8,
+     "cue": {
+      "word": "أخرج",
+      "t": 136.22
+     },
+     "who": "carpenter",
+     "action": "Lifts the tail out slowly",
+     "acting": "slow ease over a full half second",
+     "library": "handL IK up; tailPath follows the hand"
+    },
+    {
+     "t": 136.84,
+     "end": 137.8,
+     "cue": {
+      "word": "ذيل",
+      "t": 136.84
+     },
+     "who": "monkey",
+     "action": "The tail comes free: flattened, with a zigzag kink, throbbing red; he opens one eye, then both",
+     "acting": "relief floods in: long breath out, shoulders drop",
+     "library": "tail kink state; painPulse small"
+    },
+    {
+     "t": 137.84,
+     "end": 138.5,
+     "cue": {
+      "word": "بحذر،",
+      "t": 137.84
+     },
+     "who": "carpenter",
+     "action": "Lays the tail across the monkey lap; the monkey hugs it to his chest",
+     "acting": "gentle; a small nod",
+     "library": "handL IK; monkey handL/handR to the tail"
+    },
+    {
+     "t": 138.58,
+     "end": 139.5,
+     "cue": {
+      "word": "وابتعد",
+      "t": 138.58
+     },
+     "who": "carpenter",
+     "action": "Eases the bar out (the seam closes softly), stands and backs away three steps, palms low and open",
+     "acting": "never turns his back; steps do not slide",
+     "library": "walk(CX,t) backward + footfalls"
+    },
+    {
+     "t": 139.58,
+     "end": 140.1,
+     "cue": {
+      "word": "عنه",
+      "t": 139.58
+     },
+     "who": "camera",
+     "action": "Pull out to show the space he has given",
+     "acting": "eased",
+     "library": "CAM keys"
+    },
+    {
+     "t": 140.7,
+     "end": 142.0,
+     "cue": {
+      "word": "يهدأ.",
+      "t": 140.7
+     },
+     "who": "monkey",
+     "action": "Breathing slows, the trembling fades, he blows on the tail tip; the carpenter crouches at a distance and waits",
+     "acting": "tremble decays to 0; two slow blinks; both gazes meet for a moment",
+     "library": "breathe slowing; tremble amplitude keyed down"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 126.3,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 142.0
+   }
+  },
+  {
+   "id": "S9",
+   "start": 142.0,
+   "end": 165.29,
+   "paragraphs": [
+    8
+   ],
+   "set": "villageYard",
+   "cast": [
+    "monkey",
+    "carpenter",
+    "bird"
+   ],
+   "summary": "The monkey leaps back to his tree and nurses his tail. The carpenter goes back to work. This time the monkey does not copy him: he watches from far away and touches nothing. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Keys: 142.0-144.6 wide following the leap {x:420,y:660,zoom:1.15}; 145.06-148.3 medium on the branch {x:250,y:560,zoom:1.9}; 150.18-152.9 pan to the carpenter {x:660,y:760,zoom:1.5}; 153.54-156.9 back on the monkey {x:250,y:560,zoom:2.0}; 157.66-160 slow pull out to the full wide {x:500,y:640,zoom:1.0} and hold to the end."
+   },
+   "composition": "The opening diagonal returns: monkey high left, carpenter low right, but now the monkey is deeper in the leaves and further back on the branch. Keep the upper middle of the wide frame empty for THE END.",
+   "actions": [
+    {
+     "t": 142.1,
+     "end": 142.6,
+     "who": "monkey",
+     "action": "In the pause: crouches on the log, eyes on the branch",
+     "acting": "anticipation; tail held in one hand",
+     "library": "anticipate"
+    },
+    {
+     "t": 142.68,
+     "end": 143.7,
+     "cue": {
+      "word": "قفز",
+      "t": 142.68
+     },
+     "who": "monkey",
+     "action": "Leaps from the log to the trunk and scrambles up to the branch, the sore tail trailing limp",
+     "acting": "stretch in flight; tail lags behind with no curl",
+     "library": "hop(log to trunk) + hop(trunk to branch); tailPath limp"
+    },
+    {
+     "t": 144.0,
+     "end": 145.0,
+     "cue": {
+      "word": "الشجرة،",
+      "t": 144.0
+     },
+     "who": "monkey",
+     "action": "Lands on the branch: squash, the branch bobs, three leaves fall",
+     "acting": "landSquash then settle",
+     "library": "landSquash + swing() on the branch"
+    },
+    {
+     "t": 145.06,
+     "end": 145.9,
+     "cue": {
+      "word": "وجلس",
+      "t": 145.06
+     },
+     "who": "monkey",
+     "action": "Shuffles back toward the trunk and sits",
+     "acting": "small, hunched (sq 0.93)",
+     "library": "settleTo"
+    },
+    {
+     "t": 145.94,
+     "end": 146.8,
+     "cue": {
+      "word": "الأغصان",
+      "t": 145.94
+     },
+     "who": "set",
+     "action": "Leaf clumps close in front of him so that only his face and the tail show",
+     "acting": "he pulls one clump closer like a blanket",
+     "library": "crown circles drawn after the monkey"
+    },
+    {
+     "t": 146.88,
+     "end": 148.3,
+     "cue": {
+      "word": "وهو",
+      "t": 146.88
+     },
+     "who": "monkey",
+     "action": "Cradles the kinked tail tip and blows on it; a small red throb answers each breath; he winces",
+     "acting": "wet eyes, lid 0.4, brow -0.5",
+     "library": "painPulse small; handL/handR IK"
+    },
+    {
+     "t": 148.8,
+     "end": 149.2,
+     "who": "carpenter",
+     "action": "Down below, in the pause, he taps the wedge back into the log with one mallet tap: the gap opens again",
+     "acting": "the monkey flinches at the tap",
+     "library": "strike cycle hit 148.8; splitLog gap 0 to 1"
+    },
+    {
+     "t": 149.3,
+     "end": 150.1,
+     "cue": {
+      "word": "نظر",
+      "t": 149.3
+     },
+     "who": "monkey",
+     "action": "His eyes come up over the tail and look down at the yard",
+     "acting": "gaze along the old diagonal",
+     "library": "lookAt carpenter"
+    },
+    {
+     "t": 150.18,
+     "end": 151.3,
+     "cue": {
+      "word": "النجار",
+      "t": 150.18
+     },
+     "who": "camera",
+     "action": "Pan down the eye line to the carpenter",
+     "acting": "eased",
+     "library": "CAM keys"
+    },
+    {
+     "t": 151.4,
+     "end": 152.2,
+     "cue": {
+      "word": "عاد",
+      "t": 151.4
+     },
+     "who": "carpenter",
+     "action": "Picks up the saw and sets it in the kerf",
+     "acting": "calm, unhurried; one glance up at the tree, a small smile",
+     "library": "handR IK; gaze to the tree"
+    },
+    {
+     "t": 152.22,
+     "end": 152.9,
+     "cue": {
+      "word": "عمله،",
+      "t": 152.22
+     },
+     "who": "saw",
+     "action": "Sawing resumes: the same easy rhythm as before",
+     "acting": "sawdust on each stroke",
+     "library": "stroke phase"
+    },
+    {
+     "t": 153.54,
+     "end": 154.1,
+     "cue": {
+      "word": "لكنه",
+      "t": 153.54
+     },
+     "who": "monkey",
+     "action": "By pure habit his free hand starts to make the sawing movement",
+     "acting": "eyes on the saw, hand moving on its own",
+     "library": "handR keyed to the stroke phase"
+    },
+    {
+     "t": 154.18,
+     "end": 155.1,
+     "cue": {
+      "word": "هذه",
+      "t": 154.18
+     },
+     "who": "monkey",
+     "action": "The tail throbs; he looks at his moving hand, then at the tail, and freezes",
+     "acting": "realisation: eyes wide, hand stops in mid-air",
+     "library": "gazePlan hand to tail; painPulse"
+    },
+    {
+     "t": 155.2,
+     "end": 156.3,
+     "cue": {
+      "word": "لم",
+      "t": 155.2
+     },
+     "who": "monkey",
+     "action": "Shakes his head fast and stuffs the hand under his arm",
+     "acting": "firm little frown; lesson learned",
+     "library": "head shake = sin over 0.6 s on dir or x; handR IK to armpit"
+    },
+    {
+     "t": 156.36,
+     "end": 157.0,
+     "cue": {
+      "word": "تقليده.",
+      "t": 156.36
+     },
+     "who": "lettering",
+     "action": "NOPE! pops beside the branch",
+     "acting": "small, clear of his face",
+     "library": "Bangers lettering"
+    },
+    {
+     "t": 157.66,
+     "end": 158.2,
+     "cue": {
+      "word": "بقي",
+      "t": 157.66
+     },
+     "who": "camera",
+     "action": "Slow pull out to the full wide yard",
+     "acting": "eased over 2.3 s",
+     "library": "CAM keys"
+    },
+    {
+     "t": 158.3,
+     "end": 159.2,
+     "cue": {
+      "word": "يراقب",
+      "t": 158.3
+     },
+     "who": "fx",
+     "action": "The dotted eye line from the opening returns between monkey and carpenter, longer now",
+     "acting": "holds one second",
+     "library": "S.arrow dashed"
+    },
+    {
+     "t": 159.24,
+     "end": 160.0,
+     "cue": {
+      "word": "بعيد،",
+      "t": 159.24
+     },
+     "who": "monkey",
+     "action": "Sinks a little deeper into the leaves, hugging the tail",
+     "acting": "only eyes, hands and tail show",
+     "library": "drop + leaves"
+    },
+    {
+     "t": 160.1,
+     "end": 161.2,
+     "cue": {
+      "word": "دون",
+      "t": 160.1
+     },
+     "who": "bird",
+     "action": "The bird flies back and lands boldly on the mallet handle in the tool row",
+     "acting": "it looks up at the monkey as if to invite him",
+     "library": "songbird fly then perched"
+    },
+    {
+     "t": 161.24,
+     "end": 162.2,
+     "cue": {
+      "word": "الأدوات.",
+      "t": 161.24
+     },
+     "who": "monkey",
+     "action": "Looks at the tools, then shows both palms and leans away: no thank you",
+     "acting": "head turned aside, lids shut, tail safely in his lap",
+     "library": "handL/handR palms out; tip -0.1"
+    },
+    {
+     "t": 162.4,
+     "end": 165.29,
+     "who": "lettering",
+     "action": "THE END in the empty upper middle; the carpenter keeps sawing, the monkey blows once more on his tail and blinks",
+     "acting": "held ending; nothing new starts",
+     "library": "S.title + S.finish last"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 156.4,
+     "text": "NOPE!"
+    },
+    {
+     "t": 162.4,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 142.3,
+     "kind": "whoosh"
+    },
+    {
+     "t": 148.8,
+     "kind": "tok"
+    },
+    {
+     "t": 153.2,
+     "kind": "pop"
+    },
+    {
+     "t": 157.4,
+     "kind": "chime"
+    },
+    {
+     "t": 163.0,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 165.29
+   }
+  }
+ ],
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "في قرية صغيرة، كان هناك نجار يعمل قرب الغابة. | كل صباح، يجلس أمام بيته ويصنع أبوابًا وطاولات من الخشب. | وكان قرد فضولي يراقبه من فوق شجرة قريبة.",
+   "en": "In a small village, a carpenter worked near the forest. | Every morning he sat outside his house making doors and tables from wood. | A curious monkey watched him from a nearby tree."
+  },
+  {
+   "p": 2,
+   "ar": "ذات يوم، وضع النجار قطعة خشب كبيرة على الأرض. | أراد أن يقسمها إلى نصفين، فاستخدم منشارًا حتى فتح شقًّا في وسطها. | ثم وضع قطعة صغيرة من الخشب داخل الشق.",
+   "en": "One day, the carpenter placed a large log on the ground. | He wanted to split it in two, so he used a saw to make a gap in its middle. | Then he put a small piece of wood inside the gap."
+  },
+  {
+   "p": 3,
+   "ar": "كانت القطعة الصغيرة تُبقي النصفين متباعدين، حتى يستطيع النجار متابعة عمله بسهولة. | وبعد وقت قصير، شعر النجار بالتعب. | ترك أدواته وذهب إلى البيت ليأكل ويستريح.",
+   "en": "The small piece kept the two halves apart so the carpenter could continue his work easily. | After a while, he grew tired. | He left his tools and went inside to eat and rest."
+  },
+  {
+   "p": 4,
+   "ar": "نزل القرد من الشجرة، واقترب من الخشب. | قال في نفسه: «رأيت النجار يعمل طوال الصباح. | يبدو هذا العمل سهلًا، ويمكنني أن أفعل مثله!» | ثم جلس على القطعة الكبيرة.",
+   "en": "The monkey climbed down from the tree and approached the log. | “I have watched the carpenter all morning,” he thought. | “This work looks easy. I can do it too!” | Then he sat on the large piece of wood."
+  },
+  {
+   "p": 5,
+   "ar": "نظر القرد إلى القطعة الصغيرة داخل الشق، ولم يفهم لماذا وضعها النجار هناك. | مدّ يده وأمسك بها، ثم أخذ يسحبها بكل قوته. | تحركت القطعة قليلًا، فزاد القرد سحبه.",
+   "en": "The monkey looked at the small piece in the gap and did not understand why the carpenter had put it there. | He reached out and pulled it with all his strength. | It moved a little, so he pulled harder."
+  },
+  {
+   "p": 6,
+   "ar": "وفجأة خرجت القطعة الصغيرة من مكانها، وأغلق الخشب على ذيل القرد! | صرخ القرد وحاول أن يقفز، لكنه لم يستطع. | كان ذيله عالقًا، وكلما تحرك شعر بألم أكبر.",
+   "en": "Suddenly, the small piece came out, and the log closed around the monkey’s tail! | The monkey cried out and tried to jump away, but he could not. | His tail was trapped, and every movement hurt more."
+  },
+  {
+   "p": 7,
+   "ar": "سمع النجار الصراخ، فعاد مسرعًا. | رأى القرد فوق الخشب، وفهم ما حدث. | استخدم أداة ليفتح الشق من جديد، ثم أخرج ذيل القرد بحذر، وابتعد عنه حتى يهدأ.",
+   "en": "The carpenter heard the cries and hurried back. | He saw the monkey on the log and understood what had happened. | He used a tool to open the gap again, carefully freed the monkey’s tail, and stepped back to let him calm down."
+  },
+  {
+   "p": 8,
+   "ar": "قفز القرد إلى الشجرة، وجلس بين الأغصان وهو يتألم. | نظر إلى النجار الذي عاد إلى عمله، لكنه هذه المرة لم يحاول تقليده. | بقي يراقب من بعيد، دون أن يلمس الأدوات.",
+   "en": "The monkey leaped into the tree and sat among the branches, still hurting. | He watched the carpenter return to his work, but this time he did not try to imitate him. | He stayed at a distance and did not touch the tools."
+  }
+ ],
+ "ending": {
+  "t": 162.4,
+  "description": "Full wide of the yard as at the start: the carpenter sawing at the wedged log, the bird on the mallet handle, the monkey deep in the leaves hugging his tail with his palms turned away from the tools. THE END appears at 162.4 in the empty upper middle and holds to 165.29; only idle motion (sawing, a blink, one breath on the tail) continues."
+ },
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "villager",
+   "description": "Reuses the planned 'villager' person variant (owner base, turban or cap, beard, tunic colour) and adds the costume preset 'carpenter': white turban cap, short beard, yellow tunic, brown apron with pocket, rolled sleeves.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Wrap person({kind:'owner'}) : draw the owner body with recoloured tunic (flat yellow, red dot shading), replace the nightcap by a turban cap (two stacked ellipses), add a beard arc under the mouth, and draw the apron as a rounded brown rect over the torso after the body and before the arms so the arm IK still works. All existing person fields (handL/handR, aL/aR, PERSON_HANDS, wink, walk fields, lean) pass through."
+  },
+  {
+   "type": "pose",
+   "name": "person kneel / sit",
+   "description": "Reuses the planned person pose fields sit 0..1 (on the stool, P1) and kneel 0..1 (at the log for the rescue, P7).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "sit: lower the hips by about 60 units, draw thighs horizontal toward the facing side and shins down; kneel: lower the hips by about 80, one shin flat on the ground behind, the other knee up. Blend linearly from the standing leg geometry; torso, head and arms unchanged so arm IK and gaze keep working."
+  },
+  {
+   "type": "pose",
+   "name": "monkey tailPath / pinch / armLen",
+   "description": "Optional monkey fields: tailPath (array of points or a function giving the tail centre line, so the tail can hang down the side of the log, lie in the gap, go taut, trail limp, be lifted by a hand), tailClip (a seam line below which the tail is hidden), tailKink (0..1 zigzag and flattening near a given point) and armLen (arm length multiplier up to 1.5 for the long reach to the wedge). Defaults keep the current look.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "When tailPath is present draw the tail as a thick stroked polyline through the points (black outline stroke, then fur stroke, then the ring bands at equal arc lengths as in the current tail) instead of the fixed curl; tailClip is a ctx.clip rectangle above the seam; tailKink offsets three points sideways and narrows the stroke. armLen scales both arm segments in the existing two-segment IK. Without these fields the monkey draws exactly as now (regression test must stay identical)."
+  },
+  {
+   "type": "set",
+   "name": "villageYard",
+   "description": "Village cottage yard at a forest edge: cottage facade with an opening door and a window, perch tree with a branch and foreground leaf clumps, forest row, keyed sun. Reusable for any village or craftsman story.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Bake the static layer: sky({preset}), hillTrees, treeRow limited to x < 420, ground, tree(ctx, 110, 900, opts with a right-hand branch). Cottage as a new sets function in the islandHut look: cream wall rect with blue dots, red roof polygon, chimney, window, door as a brown rect whose width scales with 1 - open and a navy interior behind it. Draw the leaf clumps (crown circles) again after the monkey as occluders. Sun and cloud drawn live."
+  },
+  {
+   "type": "prop",
+   "name": "splitLog (with wedge)",
+   "description": "The log with chalk line, kerf, hinged gap and wedge states described in props; the heart of this story.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Lower half: rounded brown rect with bark dashes and end rings (ellipse arcs) on the right. Upper half: same shape, rotated about the hinge point (the inner end of the kerf) by gap * 0.1 rad; the opening between them is filled dark navy. kerf sets the hinge x. Wedge: a yellow triangle with a red end face translated by out along the gap axis. Dust and creak lines from dustBurst and short strokes. All parameters are pure functions of t."
+  },
+  {
+   "type": "prop",
+   "name": "carpenterTools (saw, mallet, pry bar, stool, door, table)",
+   "description": "The small carpentry props listed in props, drawn as one module.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Each is 3 to 6 flat shapes with a black outline (rects, a toothed polygon for the saw edge, a ring for the door handle). Each takes x, y, rot, s so a hand target can carry it."
+  },
+  {
+   "type": "effect",
+   "name": "painPulse",
+   "description": "A red throb at a point: one or two expanding rings plus three small stars, with a size parameter so pain can visibly grow.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rings: stroked circles with radius and alpha from pulse(t, t0, 0.5); stars: 4-point polygons at seeded angles (K.rng). size multiplies the radius."
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "description": "Reuses the planned generic thought cloud large enough to stage action in (the memory of the carpenter working, then the monkey fantasy).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "cloud() outline at a given box with three lead-in bubbles, a clip to its interior and a callback that draws the inner mini scene at scale; keep inner figures at 110 px or more on screen."
+  }
+ ],
+ "implementation_notes": [
+  "Start from Library/template; world 1000 x 1230, ground y 900; set LIFE.t = t each frame for blinks; apply shake inside the panel clip only.",
+  "One timeline object CUE built from timing.json word starts; every action time in this plan is the listed word start or an offset from it. The SNAP is on the start of the word at 105.78.",
+  "Log state is three keyed scalars: kerf(t), gap(t), wedgeOut(t). gap: 0 until 32.46, 0.35 by 33.4, 1.0 after the taps at 40.3 and 40.7, small dips at 44.1 and 77.4, 0.94 at 95.8, stepping down to about 0.8 by 100.4, held until 105.78, then 0 in 3 frames; 0.8 from 133.84 to 138.6, 0, then 1 again at 148.8.",
+  "Monkey seat on the log: (600, 780), dir 1. Tail in the gap at about (650, 815). Wedge head at (700, 815). Carpenter work spot x 760, kneeling spot x 735. Stray wedge rests at about (800, 892) from 104.9 until he picks it up off screen before 148.8.",
+  "Use hop + landSquash for every monkey move on the ground (the Library monkey is a sitting figure, as in The Monkey and the Turtle); use walk + footfalls for every carpenter move so feet never slide.",
+  "The dotted eye line at 17.24 and 158.3 uses the same code so the ending mirrors the opening.",
+  "Lettering (14 items including THE END) sits in the upper band of the panel, never over a face; no dashes.",
+  "Sound: only the listed effects, all in narration pauses, SND master 0.6. Saw strokes, the snap and the scream are visual only.",
+  "New drawings are built in the story first; move them to Library (villager carpenter preset, villageYard, splitLog, tools, painPulse, monkey tail fields) after approval, then run the regression test."
+ ],
+ "warnings": [
+  "The SNAP at 105.78 has no narration pause around it (words run continuously from 102.48 to 109.26), so by the sound rule it is silent and carried by the picture (flash, dust, shake, lettering). Open question for the user: allow one very short, quiet thud exactly on the word boundary at 105.78?",
+  "Liberty in the staging: the split is drawn as a horizontal mouth opening at the end of the log (upper half hinging up) so the gap, the wedge and the tail all read from the side. A real rip cut would be vertical and invisible in a side view.",
+  "The monkey reach to the wedge needs longer arms than the current IK (new armLen). Fallback if it looks wrong: seat him at the very end of the log with his legs hanging either side of the wedge.",
+  "The Library monkey has no walk cycle; ground travel is by hops and the climb by two hops plus a trunk slide. If a real climb is wanted it is an extra pose.",
+  "The single LATER card falls at 50.9 (before \"after a short while\") and overlaps the first two words of that sentence for about 0.6 s of picture only; subtitles stay visible.",
+  "The carpenter tapping the wedge back in at 148.8 and the bird on the mallet are staging additions, not narrated; they do not contradict the script."
+ ]
+}

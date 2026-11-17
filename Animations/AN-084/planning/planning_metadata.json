@@ -1,0 +1,104 @@
+{
+ "story_id": "AN-084",
+ "title": "MA'AN SON OF ZAIDAH AND THE BADAWI",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T13:31:48",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a08ee898c05fbfbec.jsonl",
+ "agent_id": "a08ee898c05fbfbec",
+ "model_messages": {
+  "claude-fable-5-2": 23
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "c512197a7ec4f3bb4dc72edcfec6abc0dd82be85b4e4027200a5cab93565778e",
+  "paragraphs": 8,
+  "segments": [
+   "AN-084-P01-S01",
+   "AN-084-P01-S02",
+   "AN-084-P01-S03",
+   "AN-084-P01-S04",
+   "AN-084-P01-S05",
+   "AN-084-P01-S06",
+   "AN-084-P01-S07",
+   "AN-084-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-084_MA_AN_SON_OF_ZAIDAH_AND_THE_BADAWI_full_slowed.mp3",
+  "sha256": "0ca2dc043b8221c06b05957c8ce0f0ba6cbecf5b08994b2eca8e38b2c41bcf05",
+  "duration": 175.598
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-084_MA_AN_SON_OF_ZAIDAH_AND_THE_BADAWI_full_slowed.mp3.words.json",
+  "sha256": "d2b0784044f16f9fbbe43c3b97421db8448ba95268fad452648334c466e28abc",
+  "manifest_status": "MANUAL REVIEW",
+  "script_match": 0.991
+ },
+ "library_rev": "959278e",
+ "scenes": 12,
+ "actions": 134,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "horse",
+   "effort": "L"
+  },
+  {
+   "type": "character",
+   "name": "donkey",
+   "effort": "M"
+  },
+  {
+   "type": "motion",
+   "name": "rideOn",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "desertRoad",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "palaceHall",
+   "effort": "L"
+  },
+  {
+   "type": "prop",
+   "name": "throne",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "cucumberBasket",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "priceTags",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person laugh",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only); timing manifest: MANUAL REVIEW (Out-of-range word timestamp detected and excluded)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Four desert scenes share one location for 84 s (S2 to S6 after the chase). Variety must come from the thought clouds, the insert on the cucumbers, close shots and the growing tag staircase; do not let the two-shot sit unchanged for more than 4 s.",
+  "The horse and the rideOn rig are new and carry the first half; if the front-facing rider on a side-view mount reads badly, fall back to Ma'an standing beside the horse holding the reins from 11.4 on (he then mounts at 86.5).",
+  "P6 names only 'a thousand' and 'thirty'; the five steps between (119.1 to 122.6) are a silent visual replay and must stay quick so they do not suggest extra narration.",
+  "The recognition (131.08) depends on viewers seeing the same face: keep beard, brows and wink identical and use the inset match shot; do not rely on the label alone.",
+  "The throne tipping back at 149.0 is comic exaggeration of 'leaned backward'; keep it to about 6 degrees so it does not look like a fall.",
+  "Planned asset descriptions for donkey, desertRoad, palaceHall and coinPile are truncated in production/planned_assets.md; dimensions here are this film's needs and should be reconciled with the first story that builds them."
+ ]
+}

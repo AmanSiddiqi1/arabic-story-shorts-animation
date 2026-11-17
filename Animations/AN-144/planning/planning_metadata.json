@@ -1,0 +1,109 @@
+{
+ "story_id": "AN-144",
+ "title": "OMAR BIN AL-KHATTAB AND THE YOUNG BADAWI",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T16:14:01",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-af16913d6046d4fc4.jsonl",
+ "agent_id": "af16913d6046d4fc4",
+ "model_messages": {
+  "claude-fable-5-2": 23
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "b74dd678fde159d61af1536c5a544e6f169e48d47f2da94d399aa71a06126cfb",
+  "paragraphs": 8,
+  "segments": [
+   "AN-144-P01-S01",
+   "AN-144-P01-S02",
+   "AN-144-P01-S03",
+   "AN-144-P01-S04",
+   "AN-144-P01-S05",
+   "AN-144-P01-S06",
+   "AN-144-P01-S07",
+   "AN-144-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-144_OMAR_BIN_AL_KHATTAB_AND_THE_YOUNG_BADAWI_full_slowed.mp3",
+  "sha256": "9e2118519a9ab3492650982f4e0e94275a96c1b87f6608960ec652c6e3fca98e",
+  "duration": 166.901
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-144_OMAR_BIN_AL_KHATTAB_AND_THE_YOUNG_BADAWI_full_slowed.mp3.words.json",
+  "sha256": "859c36e0a16925c93edd06834f2d66b6e06b01c448e0970d968cf5bb5ad5667f",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.996
+ },
+ "library_rev": "5a93429",
+ "scenes": 16,
+ "actions": 174,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "orchard",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "stone",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "purse",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "balanceScale",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "sack",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "S"
+  },
+  {
+   "type": "camera",
+   "name": "taleZoom",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "dream wash",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "weekDots",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "heatShimmer",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person pant",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only); workbook Duration Rewrites says 'Pending audio verification': the final MP3 matches the revised script (verified)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Depiction of Umar and Abu Dharr is sensitive for part of the audience (see owner_questions); the staging works unchanged if they must be shown from behind or as silhouettes, except the eye-contact beat at 75.9-77.2, which would need to be carried by the youth eyes and a head turn.",
+  "The hall is crowded (8 figures in 1000 units): keep the seated row at s 0.78 and check stills at 8.9, 78.1 and 149.6 that no head is covered and every face is above the caption panel.",
+  "The palaceHall dais and throne defaults must be switched off or narrowed; check the option names (dais, throne: false) in sets/towns.js before staging and measure the door anchor rather than trusting the numbers here.",
+  "The front-facing person cannot show a profile throw: both throws read through arm angles (aR), body tip and the stone arc; test at phone size.",
+  "Lettering is near the limit (19 items with the LATER card). If any is cut, cut I DID IT. and JUSTICE! first; the three tags and WE FORGIVE! carry the moral.",
+  "Narration is dense with few pauses, so only six sound effects are planned; do not add more inside sentences."
+ ]
+}

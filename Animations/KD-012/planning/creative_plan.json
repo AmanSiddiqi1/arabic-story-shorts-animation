@@ -1,0 +1,2467 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "KD-012",
+ "title": "The Hare and the Elephants",
+ "duration": 164.795,
+ "end_hold": 4.0,
+ "logline": "A thirsty elephant herd tramples the hares' burrows on its way to a lake, until one small white hare stands on a rock, calls himself the moon's messenger and lets the king frighten himself with the moon's reflection.",
+ "moral": "A clear head and a clever word can protect the small from the mighty without a single blow.",
+ "tone": "Warm comic fable: the elephants are thirsty and careless, never cruel; the hare is brave and a little theatrical; the night scenes are hushed and playful rather than spooky.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 3.72,
+   "kind": "setup",
+   "cue": {
+    "word": "الفيلة",
+    "t": 3.72
+   },
+   "summary": "A herd of elephants lives happily by a pond at the forest edge."
+  },
+  {
+   "id": "B2",
+   "t": 10.06,
+   "kind": "inciting",
+   "cue": {
+    "word": "فجفّت",
+    "t": 10.06
+   },
+   "summary": "Drought: the pond dries to cracked mud and the herd must leave to find water."
+  },
+  {
+   "id": "B3",
+   "t": 27.26,
+   "kind": "reveal",
+   "cue": {
+    "word": "بحيرة",
+    "t": 27.26
+   },
+   "summary": "The scout finds a beautiful lake."
+  },
+  {
+   "id": "B4",
+   "t": 33.74,
+   "kind": "setup",
+   "cue": {
+    "word": "بيوت",
+    "t": 33.74
+   },
+   "summary": "The hares' homes are shown under the ground beside the lake."
+  },
+  {
+   "id": "B5",
+   "t": 47.22,
+   "kind": "turn",
+   "cue": {
+    "word": "فهدمت",
+    "t": 47.22
+   },
+   "summary": "A heavy foot crushes a burrow; three homes are lost while the elephants drink without noticing."
+  },
+  {
+   "id": "B6",
+   "t": 60.82,
+   "kind": "emotion",
+   "cue": {
+    "word": "بيت",
+    "t": 60.82
+   },
+   "summary": "The hares gather far away: soon no home will be safe."
+  },
+  {
+   "id": "B7",
+   "t": 64.9,
+   "kind": "rising",
+   "cue": {
+    "word": "«سأتحدث",
+    "t": 64.9
+   },
+   "summary": "The clever white hare will speak to the elephant king, from a safe distance."
+  },
+  {
+   "id": "B8",
+   "t": 76.92,
+   "kind": "suspense",
+   "cue": {
+    "word": "ونادى",
+    "t": 76.92
+   },
+   "summary": "From the top of a high rock he calls out to the approaching king."
+  },
+  {
+   "id": "B9",
+   "t": 84.8,
+   "kind": "surprise",
+   "cue": {
+    "word": "القمر!",
+    "t": 84.8
+   },
+   "summary": "The moon rises behind him as he declares himself its messenger."
+  },
+  {
+   "id": "B10",
+   "t": 94.98,
+   "kind": "comic",
+   "cue": {
+    "word": "توقف",
+    "t": 94.98
+   },
+   "summary": "The king stops dead and the herd piles into him."
+  },
+  {
+   "id": "B11",
+   "t": 113.04,
+   "kind": "reveal",
+   "cue": {
+    "word": "صورته",
+    "t": 113.04
+   },
+   "summary": "At the lake the moon's picture lies on the water."
+  },
+  {
+   "id": "B12",
+   "t": 132.08,
+   "kind": "climax",
+   "cue": {
+    "word": "واختفت",
+    "t": 132.08
+   },
+   "summary": "The king's own trunk stirs the water and the moon vanishes."
+  },
+  {
+   "id": "B13",
+   "t": 140.7,
+   "kind": "turn",
+   "cue": {
+    "word": "وتراجع",
+    "t": 140.7
+   },
+   "summary": "Terrified of the moon's anger, the king backs away."
+  },
+  {
+   "id": "B14",
+   "t": 151.98,
+   "kind": "resolution",
+   "cue": {
+    "word": "نؤذي",
+    "t": 151.98
+   },
+   "summary": "The king orders the herd to find water elsewhere and never harm the hares."
+  },
+  {
+   "id": "B15",
+   "t": 162.84,
+   "kind": "moral",
+   "cue": {
+    "word": "آمنة",
+    "t": 162.84
+   },
+   "summary": "The hares come home and their burrows are safe again."
+  }
+ ],
+ "cast": [
+  {
+   "id": "king",
+   "name": "the elephant king",
+   "library": "elephant",
+   "base": "elephant s 0.85 with the new crown option",
+   "look": "Largest elephant, small gold three-point crown between the ears. Starts smug, ends humble.",
+   "new": false
+  },
+  {
+   "id": "cow",
+   "name": "second elephant",
+   "library": "elephant",
+   "base": "elephant s 0.70",
+   "look": "Plain Library elephant, middle size, the steady follower.",
+   "new": false
+  },
+  {
+   "id": "scout",
+   "name": "young scout elephant",
+   "library": "elephant",
+   "base": "elephant s 0.56",
+   "look": "Smallest, playful, always a beat late; finds the lake.",
+   "new": false
+  },
+  {
+   "id": "hero",
+   "name": "the clever hare",
+   "library": "hare",
+   "base": "hare pal 0 (white), s 0.60",
+   "look": "The only white hare; upright, tidy ears, theatrical gestures.",
+   "new": false
+  },
+  {
+   "id": "elder",
+   "name": "the elder hare",
+   "library": "hare",
+   "base": "hare pal 2 (grey), s 0.62",
+   "look": "Grey, stooped, ears half down; speaks the colony's fear.",
+   "new": false
+  },
+  {
+   "id": "colony",
+   "name": "the hare colony",
+   "library": "hare",
+   "base": "four hares pal 1 (tan), s 0.46 / 0.50 / 0.52 / 0.55",
+   "look": "Tan hares with different sizes and ear rests; they never move in unison.",
+   "new": false
+  },
+  {
+   "id": "kit",
+   "name": "the kit",
+   "library": "hare",
+   "base": "hare pal 1, s 0.38",
+   "look": "Tiny tan hare with ears too long for it; the audience's heart.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "dryPlain",
+   "library": "sky + sun + treeRow + hillTrees + ground",
+   "description": "1000-wide day set: forest (treeRow) on the left third, hills, open ground, and the new pond piece (oblique ellipse 300 x 70 at 640, 960) whose level falls from 1 to 0.12.",
+   "new": false
+  },
+  {
+   "id": "lakeShore",
+   "library": null,
+   "description": "2000 x 1230 world, ground line y 900. Approach plain x 0..560 with outlier burrow B0 at x 470; tall rock base x 590..740 with ledges at (610, 810), (650, 720) and flat top y 610 (stand point 680, 610); burrow field x 780..1220 with B1 840, B2 950, B3 1060, B4 1170 and B5 on the back shore at 1330; clear shore strip to x 1420; lake x 1440..1960 drawn as an oblique water shape y 890..1130 with reeds and a flat stone at (1800, 900). Under the burrow field (y 900..1230) an earth cutaway with tunnels to rooms centred (840, 1010), (950, 1040), (1060, 1005), (1170, 1045), each about 120 x 86. Sky presets day, dusk, night, dawn.",
+   "new": true
+  },
+  {
+   "id": "thicketMeet",
+   "library": "thicket + bush + sky + ground",
+   "description": "1000-wide dusk set from Library pieces: sky preset dusk, thicket and two bushes, a tree stump at x 620 (brown cylinder 70 wide, 46 high, top y 854), and on the horizon a tiny lake and three elephant silhouettes.",
+   "new": false
+  }
+ ],
+ "props": [
+  {
+   "id": "pond",
+   "library": null,
+   "description": "Oblique water shape with a level parameter (shared name with KD-008): used small for the drying pond and wide for the lake.",
+   "new": true
+  },
+  {
+   "id": "burrow",
+   "library": null,
+   "description": "Hare burrow mound (shared name with KD-005): brown mound 110 wide, 44 high, dark arched doorway 46 wide; fields eyes, crack 0..1, collapse 0..1.",
+   "new": true
+  },
+  {
+   "id": "rock",
+   "library": null,
+   "description": "Tall grey boulder 150 wide, 290 high with two ledges and a flat top, dotted like the Library den rock.",
+   "new": true
+  },
+  {
+   "id": "moonReflection",
+   "library": null,
+   "description": "The moon's (or sun's) picture on water with wobble, breakUp, alpha and tint.",
+   "new": true
+  },
+  {
+   "id": "crown",
+   "library": null,
+   "description": "Small gold crown on the king, drawn by the elephant when crown:true.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 7.0,
+   "paragraphs": [
+    1
+   ],
+   "set": "dryPlain",
+   "cast": [
+    "king",
+    "cow",
+    "scout"
+   ],
+   "summary": "Happy home: three elephants at a full pond between the forest edge and the open plain.",
+   "camera": {
+    "shot": "establishing",
+    "move": "pull-out",
+    "notes": "Start zoom 1.5 centred (420, 700) on the herd at the pond, ease out to zoom 1.0 (500, 615) by 6.4 so the plain opens on the right."
+   },
+   "composition": "Forest (treeRow) fills the left third, the pond sits centre foreground (640, 960), the empty plain and the sun right. King left of the pond, cow drinking at it, scout on the right facing left. All heads above y 760.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 1.8,
+     "cue": {
+      "word": "غابة",
+      "t": 0.24
+     },
+     "who": "camera",
+     "action": "Opens close on the herd at the pond, forest behind; two songbirds cross the sky right to left.",
+     "acting": "Calm idle: each elephant on its own ear-flap rhythm (flapEar seeds differ), LIFE auto-blinks.",
+     "library": "sky, sun, treeRow, hillTrees, ground, songbird {fly}, bake()"
+    },
+    {
+     "t": 1.7,
+     "end": 3.2,
+     "cue": {
+      "word": "عاشت",
+      "t": 1.92
+     },
+     "who": "scout",
+     "action": "Dips trunk in the pond, lifts it and sprays an arc of water over its own back.",
+     "acting": "Playful: eyes shut with pleasure during the spray (eyes \"shut\"), tail flicks, sq 0.96 then 1.04 on the spray.",
+     "library": "elephant {trunk 0 to 0.9, tail} + drops()"
+    },
+    {
+     "t": 2.6,
+     "end": 4.0,
+     "cue": {
+      "word": "مجموعة",
+      "t": 2.66
+     },
+     "who": "cow",
+     "action": "Drinks: trunk down to the water, curls to the mouth, head bobs on each swallow.",
+     "acting": "Content half lids (lid 0.3), gaze on the water; ripple rings where the trunk enters.",
+     "library": "elephant {trunk, hbob} + ripple()"
+    },
+    {
+     "t": 3.6,
+     "end": 5.0,
+     "cue": {
+      "word": "الفيلة",
+      "t": 3.72
+     },
+     "who": "king",
+     "action": "Steps one pace forward and lifts his crowned head; a label names the herd.",
+     "acting": "Proud: chest out (drop slightly raised), slow blink, gaze over the plain to the right. The crown bounces 2 frames late.",
+     "library": "elephant {crown:true (new), ...walk(), hbob} + S.label \"THE HERD\" with arrow"
+    },
+    {
+     "t": 5.0,
+     "end": 6.9,
+     "cue": {
+      "word": "أرض",
+      "t": 5.12
+     },
+     "who": "camera",
+     "action": "Pull-out completes: the wide yellow plain is revealed on the right, grass tufts swaying.",
+     "acting": "All three elephants look out at the plain one after another (stagger 0.15 s): king first, scout last.",
+     "library": "K.camAt keys, lookAt(), stagger()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 3.8,
+     "text": "THE HERD"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 7.0,
+    "label": ""
+   }
+  },
+  {
+   "id": "S2",
+   "start": 7.0,
+   "end": 22.96,
+   "paragraphs": [
+    1
+   ],
+   "set": "dryPlain",
+   "cast": [
+    "king",
+    "cow",
+    "scout"
+   ],
+   "summary": "Drought as a time-lapse: suns cross the sky, a day counter spins, the pond shrinks to cracked mud; the thirsty herd sets off.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Static wide zoom 1.0 for the time-lapse (7.0-12.3); push in to zoom 1.5 on the pond and scout by 12.9; push to the king zoom 1.7 at 16.0; ease back to 1.1 at 18.2 for the walk-off."
+   },
+   "composition": "Sky takes the top half for the sun arcs; counter top-left inside the panel; pond centre; the three elephants never hide the pond.",
+   "actions": [
+    {
+     "t": 7.0,
+     "end": 10.0,
+     "cue": {
+      "word": "مرّ",
+      "t": 7.08
+     },
+     "who": "fx",
+     "action": "Time-lapse: the sun crosses the sky three times (each pass 1.0 s, left to right on an arc), elephant shadows swing with it; a counter runs DAY 1 to DAY 60.",
+     "acting": "Elephants hold still but sink a little with each pass (drop grows, ears lower by a third each day).",
+     "library": "sun(ctx,x,y,t) on an arc, halftoneShadow(), S.counter \"DAY\""
+    },
+    {
+     "t": 9.2,
+     "end": 10.4,
+     "cue": {
+      "word": "مطر،",
+      "t": 9.52
+     },
+     "who": "fx",
+     "action": "One small white cloud drifts in from the left over the herd, pauses, and drifts away without a drop.",
+     "acting": "Hope then let-down: three heads lift and follow it with their eyes (gaze up, earUp 0.6), then droop in turn, scout last with a sigh (sq 0.95).",
+     "library": "cloudFlat(), gazePlan(), stagger(), settleTo()"
+    },
+    {
+     "t": 10.0,
+     "end": 12.3,
+     "cue": {
+      "word": "فجفّت",
+      "t": 10.06
+     },
+     "who": "pond",
+     "action": "The pond level falls from 1 to 0.12; cracks spread outward over the dry bed as it shrinks.",
+     "acting": "Cow watches the waterline retreat from her trunk tip; she shuffles forward after it twice.",
+     "library": "pond {level} (new set piece), walk()"
+    },
+    {
+     "t": 12.3,
+     "end": 14.0,
+     "cue": {
+      "word": "وقلّ",
+      "t": 12.4
+     },
+     "who": "scout",
+     "action": "Probes the last puddle with its trunk and sucks hard: the puddle vanishes.",
+     "acting": "Eager, eyes wide then cross-eyed gaze down the trunk ([0.6, 0.8]); body leans in (tip 0.08).",
+     "library": "elephant {trunk 0, reach, tip}"
+    },
+    {
+     "t": 14.05,
+     "end": 14.5,
+     "who": "scout",
+     "action": "In the pause: lifts the trunk to drink and blows only a puff of dust.",
+     "acting": "Blink of surprise, ears pop out (earUp 0.8), then sag.",
+     "library": "dustBurst() at the trunk tip, anticipate()"
+    },
+    {
+     "t": 14.5,
+     "end": 16.0,
+     "cue": {
+      "word": "شعرت",
+      "t": 14.52
+     },
+     "who": "cow",
+     "action": "All three sag: tongues out, heads low, heat lines rise from their backs.",
+     "acting": "Tongue true, lid 0.55, ears down, slow heavy breathing (breathe at 0.5 Hz), steam wisps.",
+     "library": "elephant {tongue:true, drop, earUp:-0.3}, steam(), breathe()"
+    },
+    {
+     "t": 16.0,
+     "end": 17.6,
+     "cue": {
+      "word": "بعطش",
+      "t": 16.0
+     },
+     "who": "king",
+     "action": "Push-in on the king panting; two sweat drops fall; he swallows.",
+     "acting": "Wet tired eyes (lid 0.6), brow raised (brow -0.6), one long blink at 17.1.",
+     "library": "elephant {tongue, brow}, drops(), blink()"
+    },
+    {
+     "t": 17.3,
+     "end": 18.4,
+     "cue": {
+      "word": "وبدأت",
+      "t": 17.74
+     },
+     "who": "king",
+     "action": "Decision: head lifts, ears spread, trunk rises and points right across the plain.",
+     "acting": "Anticipation dip 0.3 s before the lift; eyes open fully (lid 0), gaze [1, -0.1]; the others look at his trunk, then where it points.",
+     "library": "anticipate(), elephant {trunk 0.55, reach, earUp 0.7}, settleTo(), lookAt()"
+    },
+    {
+     "t": 18.4,
+     "end": 20.5,
+     "cue": {
+      "word": "تبحث",
+      "t": 18.4
+     },
+     "who": "king",
+     "action": "The herd walks off to the right in single file: king, cow, then scout, who first has to turn around.",
+     "acting": "Heavy tired walk (amp 0.7), heads bob out of phase; dust and a faint panel shake on each king footfall.",
+     "library": "walk(), footfalls(), dustBurst(), kick(), turnFlip() for the scout"
+    },
+    {
+     "t": 20.5,
+     "end": 22.1,
+     "cue": {
+      "word": "تشرب",
+      "t": 20.56
+     },
+     "who": "scout",
+     "action": "Scout stops at the frame edge, looks back at the cracked pond, then trots to catch up.",
+     "acting": "Sad backward look (gaze back, lid 0.4), small shake of the head, then a quick comic trot (amp 1.1).",
+     "library": "elephant {hbob}, lookAt(), walk()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 14.1,
+     "text": "PFFT!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 14.25,
+     "kind": "pop"
+    },
+    {
+     "t": 22.5,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "wipe",
+    "t": 22.6,
+    "label": ""
+   }
+  },
+  {
+   "id": "S3",
+   "start": 22.96,
+   "end": 36.0,
+   "paragraphs": [
+    2
+   ],
+   "set": "lakeShore",
+   "cast": [
+    "king",
+    "cow",
+    "scout",
+    "hero",
+    "colony",
+    "kit"
+   ],
+   "summary": "The long march ends: the scout spots the lake. We meet the hares and see their homes under the ground.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Track the walking herd on the approach plain (x 0..560), zoom 1.2. At 27.0 whip-pan right to the lake (centre x 1650). At 29.0 pan back left to the burrow field (centre x 1000, zoom 1.5). At 33.2 tilt down so the ground line sits at one third of the panel and the underground cutaway fills the lower part (centre y 960)."
+   },
+   "composition": "Herd walks left to right; lake on the far right; burrow mounds between x 820 and 1180. In the cutaway the chambers must stay above the panel bottom edge.",
+   "actions": [
+    {
+     "t": 22.96,
+     "end": 25.4,
+     "cue": {
+      "word": "بعد",
+      "t": 22.96
+     },
+     "who": "king",
+     "action": "The three elephants trudge in from the left, slower than before, heads low, on dusty ground.",
+     "acting": "Fatigue: amp 0.6, tongues out, lid 0.6; the scout lags and stumbles once (sq dip).",
+     "library": "walk(), footfalls(), dustBurst(), elephant {tongue, drop}"
+    },
+    {
+     "t": 25.2,
+     "end": 26.4,
+     "cue": {
+      "word": "وجد",
+      "t": 25.52
+     },
+     "who": "scout",
+     "action": "The scout, last in line, lifts its head: its ears spring up before the head does.",
+     "acting": "Ears first (earUp 1), then head, then eyes wide; a sniff: trunk tip lifts and wiggles.",
+     "library": "elephant {earUp, earOff, trunk 0.4}, anticipate()"
+    },
+    {
+     "t": 26.9,
+     "end": 28.4,
+     "cue": {
+      "word": "بحيرة",
+      "t": 27.26
+     },
+     "who": "camera",
+     "action": "Whip-pan right to reveal the lake: wide blue water with reeds and a sparkle.",
+     "acting": "Sparkle stars twinkle on the water (seeded); an arrow and label mark it.",
+     "library": "pond {level:1, w:520} (new), star(), S.label \"THE LAKE\" + S.arrow"
+    },
+    {
+     "t": 27.9,
+     "end": 29.0,
+     "cue": {
+      "word": "جميلة.",
+      "t": 27.94
+     },
+     "who": "scout",
+     "action": "Back on the herd: the scout trumpets with its trunk straight up and bounces on the spot.",
+     "acting": "Joy: sq 1.06 hops (hop 14 units, landSquash), tail up; king and cow turn their heads toward the lake, tongues go in.",
+     "library": "elephant {trunk 1}, soundArcs(), hop(), landSquash()"
+    },
+    {
+     "t": 29.0,
+     "end": 30.4,
+     "cue": {
+      "word": "كانت",
+      "t": 29.08
+     },
+     "who": "camera",
+     "action": "Pan to the burrow field in front of the lake: five small mounds with dark doorways.",
+     "acting": "Stillness for half a second: only two pairs of eyes blink in the dark holes.",
+     "library": "burrow {state:\"eyes\"} (new prop), peekEyes()"
+    },
+    {
+     "t": 30.3,
+     "end": 31.0,
+     "cue": {
+      "word": "الأرانب",
+      "t": 30.42
+     },
+     "who": "colony",
+     "action": "First hare (tan) pops out of burrow B1 to the waist and looks around.",
+     "acting": "Ears up one at a time (earWig), nose twitch, gaze sweeps left then right.",
+     "library": "hare {pal:1, ears, earWig}, hop() small, settleTo()"
+    },
+    {
+     "t": 31.0,
+     "end": 31.7,
+     "cue": {
+      "word": "الصغيرة",
+      "t": 31.06
+     },
+     "who": "kit",
+     "action": "The tiny kit pops out of B2 and climbs onto its mound.",
+     "acting": "Big curious eyes (eyes \"wide\"), ears too long for its head flop once (ears 1 to 0.3 to 1).",
+     "library": "hare {pal:1, s:0.38}"
+    },
+    {
+     "t": 31.7,
+     "end": 32.4,
+     "cue": {
+      "word": "تعيش",
+      "t": 31.74
+     },
+     "who": "hero",
+     "action": "The white hare rises from B3, sits upright and washes one ear with a paw.",
+     "acting": "Relaxed half lids (lid 0.3), small smile; he is the only white one.",
+     "library": "hare {pal:0, raise 0.8, mouth:\"smile\"}"
+    },
+    {
+     "t": 32.4,
+     "end": 33.2,
+     "cue": {
+      "word": "حولها،",
+      "t": 32.46
+     },
+     "who": "colony",
+     "action": "Two more tan hares hop between the mounds, one after the other, around the lake side.",
+     "acting": "Out of step with each other (stagger 0.2 s); each landing squashes.",
+     "library": "hop(), landSquash(), stagger()"
+    },
+    {
+     "t": 33.2,
+     "end": 34.3,
+     "cue": {
+      "word": "بيوت",
+      "t": 33.74
+     },
+     "who": "camera",
+     "action": "Tilt down: the ground opens as a cutaway and shows tunnels leading to round rooms under each mound.",
+     "acting": "A label and arrow point to one room.",
+     "library": "lakeShore underground cutaway (new), S.label \"HOME\" + S.arrow"
+    },
+    {
+     "t": 34.3,
+     "end": 35.5,
+     "cue": {
+      "word": "تحت",
+      "t": 34.3
+     },
+     "who": "colony",
+     "action": "Inside the rooms: one hare asleep on straw, one nibbling a leaf, the kit sliding down its tunnel to land beside its mother.",
+     "acting": "Sleeper breathes (breathe, lid 1, zzz); kit lands with a squash and nuzzles in.",
+     "library": "hare {s:0.4}, zzz(), breathe(), fallY(), impactSquash()"
+    },
+    {
+     "t": 35.6,
+     "end": 36.0,
+     "who": "hero",
+     "action": "In the pause: a pebble on B3 hops and the white hare freezes mid-wash, one ear turning left.",
+     "acting": "First to notice: ear turns before the eyes (earWig), then gaze snaps left; the others notice nothing.",
+     "library": "kick(), hare {earWig}, gazePlan()"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 35.8,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 36.0,
+    "label": ""
+   }
+  },
+  {
+   "id": "S4",
+   "start": 36.0,
+   "end": 51.0,
+   "paragraphs": [
+    2,
+    3
+   ],
+   "set": "lakeShore",
+   "cast": [
+    "king",
+    "cow",
+    "scout",
+    "hero",
+    "colony",
+    "kit"
+   ],
+   "summary": "The thirsty herd runs straight for the water over the burrow field. Three burrows are crushed; the hares flee while the elephants drink without noticing.",
+   "camera": {
+    "shot": "wide",
+    "move": "shake",
+    "notes": "Wide zoom 1.15 following the charge (36.0-38.9); drop to a low angle zoom 1.7 at feet and burrows (38.9-45.4); close zoom 2.1 on the raised foot over B2 (45.4-47.2), panel-only shake on the slam; ease out to zoom 1.2 at 48.9 to show hares scattering left and elephants at the water right."
+   },
+   "composition": "Elephant eye line stays high and to the right (the water); hare eye line low and up at the feet. The counter sits top-left. In the close shot the foot enters from the top edge and B2 sits at the lower third with the cutaway room visible below it.",
+   "actions": [
+    {
+     "t": 36.0,
+     "end": 37.9,
+     "cue": {
+      "word": "أسرعت",
+      "t": 36.08
+     },
+     "who": "king",
+     "action": "The three elephants break into a run from the left, king in front.",
+     "acting": "Eyes locked on the lake (gaze [1, 0]), tongues out, ears streaming back (earOff); never a glance down.",
+     "library": "walk() with fast keys, footfalls(), dustBurst(), elephant {tongue, earOff}"
+    },
+    {
+     "t": 37.0,
+     "end": 38.3,
+     "cue": {
+      "word": "الفيلة",
+      "t": 37.14
+     },
+     "who": "colony",
+     "action": "Every footfall makes the mounds jump: pebbles hop, the hares bounce a few units and stare left.",
+     "acting": "Ears shoot up in a staggered row; eyes wide; the kit grabs its ears and pulls them down.",
+     "library": "kick(t, FALLS), stagger(), hare {eyes:\"wide\", ears}"
+    },
+    {
+     "t": 37.9,
+     "end": 38.9,
+     "cue": {
+      "word": "الماء،",
+      "t": 38.4
+     },
+     "who": "camera",
+     "action": "Short cut-in: the lake glittering ahead as the elephants see it, their shadows racing toward it.",
+     "acting": "The water is all they see.",
+     "library": "pond, star(), halftoneShadow()"
+    },
+    {
+     "t": 38.9,
+     "end": 40.5,
+     "cue": {
+      "word": "دون",
+      "t": 38.94
+     },
+     "who": "camera",
+     "action": "Low angle at ground level: huge feet pound past above small doorways; hares dive into the holes.",
+     "acting": "Each hare ducks on its own beat (stagger); the white hare dives last and peeks back out with one eye line up at the feet.",
+     "library": "hare {drop} into burrow (clip at the mound mouth), peekEyes(), stagger()"
+    },
+    {
+     "t": 40.5,
+     "end": 42.3,
+     "cue": {
+      "word": "جحور",
+      "t": 40.82
+     },
+     "who": "burrow",
+     "action": "An arrow and label mark the burrows; a foot lands beside B1 and the mound cracks but holds.",
+     "acting": "Near miss teaches the danger: dirt crumbs fall in the cutaway room, the sleeper wakes with a start.",
+     "library": "S.arrow + S.label \"BURROWS!\", burrow {crack:0.3}, dustBurst()"
+    },
+    {
+     "t": 42.4,
+     "end": 43.0,
+     "who": "king",
+     "action": "In the pause: a second foot thumps down between B1 and B2; the panel jolts.",
+     "acting": "Hares in the rooms bounce to the ceiling and back (hop), ears flat.",
+     "library": "footfalls(), panel-only shake, hop()"
+    },
+    {
+     "t": 43.08,
+     "end": 44.0,
+     "cue": {
+      "word": "كانت",
+      "t": 43.08
+     },
+     "who": "camera",
+     "action": "Cut close: the king's front foot lifts high, sole toward us, above B2.",
+     "acting": "The foot hangs for a beat; inside the room below, the mother and kit look up at the ceiling (gaze [0, -1]).",
+     "library": "elephant {lift 0 to 100, drop}, lookAt()"
+    },
+    {
+     "t": 44.0,
+     "end": 45.4,
+     "cue": {
+      "word": "خطوات",
+      "t": 44.02
+     },
+     "who": "fx",
+     "action": "Three footsteps counted on the three words: the other two elephants pass behind, each step shaking dust from the tunnel roof.",
+     "acting": "Kit trembles, mother pushes it toward the back tunnel.",
+     "library": "countedBeats() on 44.02, 44.70, 45.50, tremble(), dustBurst()"
+    },
+    {
+     "t": 45.5,
+     "end": 46.2,
+     "cue": {
+      "word": "ثقيلة،",
+      "t": 45.5
+     },
+     "who": "king",
+     "action": "The raised foot swells toward the lens as the word \"heavy\" is spoken; mother and kit scramble out by the back tunnel.",
+     "acting": "Anticipation: the foot lifts 10 units more before it drops.",
+     "library": "anticipate(), elephant {lift}"
+    },
+    {
+     "t": 46.3,
+     "end": 47.2,
+     "who": "burrow",
+     "action": "In the pause the foot slams down: B2 caves in, the room fills with soil, a dust ring bursts out.",
+     "acting": "Impact squash on the foot (2 frames), panel shake, then stillness and drifting dust.",
+     "library": "fallY(), impactSquash(), burrow {collapse 0 to 1}, dustBurst(), panel-only shake"
+    },
+    {
+     "t": 47.22,
+     "end": 48.0,
+     "cue": {
+      "word": "فهدمت",
+      "t": 47.22
+     },
+     "who": "fx",
+     "action": "Hold on the wreck: a counter appears, SAFE HOMES 5, and drops to 4.",
+     "acting": "Mother and kit stare at the ruin from behind the next mound, ears down, wet eyes.",
+     "library": "S.counter, hare {ears:-1, wet:true}"
+    },
+    {
+     "t": 48.0,
+     "end": 49.2,
+     "cue": {
+      "word": "بعض",
+      "t": 48.08
+     },
+     "who": "burrow",
+     "action": "Wider: cow flattens B3 and the scout flattens B4 on the way past; the counter drops to 3, then 2.",
+     "acting": "The white hare springs out of B3 a frame before it collapses (stretch sq 1.15).",
+     "library": "burrow {collapse}, hop(), S.counter"
+    },
+    {
+     "t": 49.2,
+     "end": 50.3,
+     "cue": {
+      "word": "وأخافت",
+      "t": 49.26
+     },
+     "who": "colony",
+     "action": "The hares scatter to the left in long frightened hops, one after another.",
+     "acting": "Scared pose: eyes wide, mouth \"o\", ears flat back; never in unison (stagger 0.12 s); the kit rides on its mother's back.",
+     "library": "hop(), landSquash(), stagger(), hare {eyes:\"wide\", mouth:\"o\", ears:-0.6}"
+    },
+    {
+     "t": 50.3,
+     "end": 51.0,
+     "cue": {
+      "word": "الأرانب.",
+      "t": 50.38
+     },
+     "who": "king",
+     "action": "Background right: three grey backs at the lake, trunks in the water, tails swinging happily.",
+     "acting": "Irony: content, eyes shut, not one head turns.",
+     "library": "elephant {dir:1, trunk 0, eyes:\"shut\", tail}, ripple()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 46.45,
+     "text": "CRUNCH!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 42.7,
+     "kind": "thud"
+    },
+    {
+     "t": 46.45,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 51.0,
+    "label": ""
+   }
+  },
+  {
+   "id": "S5",
+   "start": 51.0,
+   "end": 72.3,
+   "paragraphs": [
+    3,
+    4
+   ],
+   "set": "thicketMeet",
+   "cast": [
+    "hero",
+    "elder",
+    "colony",
+    "kit"
+   ],
+   "summary": "The hares meet far away at dusk. The grey elder states the fear; the white hare has an idea and promises to speak to the king from a safe distance.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Wide zoom 1.2 as they gather (51.0-54.8); medium zoom 1.6 on the elder and listeners (54.9-61.9); at 62.4 whip to the white hare on the right (zoom 1.9); 64.9 ease out to zoom 1.5 holding him on his stump left of centre with the listeners; 68.9 push to 1.8 on him."
+   },
+   "composition": "Elder on the left facing right, four listeners in the middle at different heights, white hare apart on the far right until 62.9 when he hops to a tree stump at x 620. Thought clouds always sit above heads, never over a face.",
+   "actions": [
+    {
+     "t": 51.0,
+     "end": 52.5,
+     "cue": {
+      "word": "تجمعت",
+      "t": 51.3
+     },
+     "who": "colony",
+     "action": "Dusk thicket. Tan hares hop in from the left one at a time and huddle.",
+     "acting": "Panting (breathe fast), looking back over their shoulders; each landing squashes.",
+     "library": "sky {preset:\"dusk\"}, thicket(), bush(), ground(), hop(), landSquash(), stagger()"
+    },
+    {
+     "t": 52.5,
+     "end": 53.5,
+     "cue": {
+      "word": "الأرانب",
+      "t": 52.54
+     },
+     "who": "kit",
+     "action": "The kit arrives last and burrows in between two adults so only its ears show.",
+     "acting": "Trembling ears (tremble), then one eye peeks out.",
+     "library": "tremble(), hare {s:0.38}"
+    },
+    {
+     "t": 53.5,
+     "end": 54.8,
+     "cue": {
+      "word": "مكان",
+      "t": 53.56
+     },
+     "who": "camera",
+     "action": "Far behind them, small on the horizon, the lake and three tiny grey shapes: a label marks the distance.",
+     "acting": "The hares all face away from it.",
+     "library": "S.label \"FAR AWAY\" + S.arrow, elephant at s 0.12 as flat silhouettes"
+    },
+    {
+     "t": 54.9,
+     "end": 56.2,
+     "cue": {
+      "word": "وقالت:",
+      "t": 54.9
+     },
+     "who": "elder",
+     "action": "The grey elder hare steps up and raises a paw to speak.",
+     "acting": "Stooped (tip 0.06), heavy brow, ears half down (ears 0.2); the listeners turn to him one by one.",
+     "library": "hare {pal:2, raise 0.7, talk}, lookAt(), stagger()"
+    },
+    {
+     "t": 56.2,
+     "end": 58.2,
+     "cue": {
+      "word": "«إذا",
+      "t": 56.24
+     },
+     "who": "elder",
+     "action": "A thought cloud opens above him: a small burrow and a grey foot coming down beside it.",
+     "acting": "Talk mouth on the stressed words; he looks up into his own cloud.",
+     "library": "cloud() with drawing inside (thoughtCloud if in Library), elephant foot = lift leg crop"
+    },
+    {
+     "t": 58.2,
+     "end": 59.1,
+     "cue": {
+      "word": "كل",
+      "t": 58.26
+     },
+     "who": "fx",
+     "action": "In the cloud a tiny sun crosses three times and the foot stamps on each pass: STOMP, STOMP, STOMP.",
+     "acting": "Listeners flinch smaller each time: full duck, half duck, ears only.",
+     "library": "countedBeats(), sun at s 0.3, hare {drop, ears}"
+    },
+    {
+     "t": 59.1,
+     "end": 60.4,
+     "cue": {
+      "word": "فلن",
+      "t": 59.18
+     },
+     "who": "fx",
+     "action": "The counter returns inside the cloud: SAFE HOMES 2, then 1.",
+     "acting": "Elder shakes his head slowly (nod left-right); wet eyes on two listeners.",
+     "library": "S.counter, hare {nod, wet}"
+    },
+    {
+     "t": 60.4,
+     "end": 61.9,
+     "cue": {
+      "word": "بيت",
+      "t": 60.82
+     },
+     "who": "fx",
+     "action": "The counter reaches 0 and the last burrow in the cloud crumbles; the cloud pops.",
+     "acting": "Ears droop down the row in a wave (stagger 0.15 s); the kit covers its eyes with its ears.",
+     "library": "cloud() pop, stagger(), hare {ears:-1, mouth:\"frown\", lid 0.4}"
+    },
+    {
+     "t": 61.95,
+     "end": 62.85,
+     "who": "hero",
+     "action": "In the pause: apart on the right, the white hare has been thinking, eyes darting; his ears snap straight up and a light bulb pops.",
+     "acting": "Saccades (gazePlan ease 0.07) for 0.4 s, then eyes wide and a slow smile.",
+     "library": "gazePlan(), bulb(), hare {ears 1, mouth:\"smile\"}, settleTo()"
+    },
+    {
+     "t": 62.9,
+     "end": 64.2,
+     "cue": {
+      "word": "قال",
+      "t": 62.9
+     },
+     "who": "hero",
+     "action": "He hops in two bounds onto a tree stump in the middle of the group.",
+     "acting": "Anticipation crouch, stretch in the air, squash on landing; every head turns to follow him (stagger).",
+     "library": "anticipate(), hop(), landSquash(), lookAt()"
+    },
+    {
+     "t": 64.2,
+     "end": 64.9,
+     "cue": {
+      "word": "ذكي:",
+      "t": 64.24
+     },
+     "who": "fx",
+     "action": "A label with an arrow names him.",
+     "acting": "He straightens his ears with both paws like a tie.",
+     "library": "S.label \"THE CLEVER ONE\" + S.arrow"
+    },
+    {
+     "t": 64.9,
+     "end": 66.5,
+     "cue": {
+      "word": "«سأتحدث",
+      "t": 64.9
+     },
+     "who": "hero",
+     "action": "He speaks, one paw raised like an orator.",
+     "acting": "Chest out (sq 1.06), brow confident (brow 0.5), gaze moving across the listeners.",
+     "library": "hare {talk, raise 1, brow}, gazePlan()"
+    },
+    {
+     "t": 66.5,
+     "end": 68.1,
+     "cue": {
+      "word": "ملك",
+      "t": 66.76
+     },
+     "who": "hero",
+     "action": "His own thought cloud: a huge crowned elephant head, with a tiny hare silhouette in front of it.",
+     "acting": "He points up into the cloud; listeners lean back, eyes wide, mouths \"o\".",
+     "library": "cloud() + elephant head crop {crown}, hare {raise 1}, tip -0.1 on listeners"
+    },
+    {
+     "t": 68.2,
+     "end": 68.85,
+     "who": "colony",
+     "action": "In the pause: the listeners look at each other in horror; one faints backward and is caught.",
+     "acting": "Two-frame look to each other, then back at him; the fainter tips to -0.5 and is propped up.",
+     "library": "gazePlan(), hare {rot, lid 1}, settleTo()"
+    },
+    {
+     "t": 68.9,
+     "end": 70.3,
+     "cue": {
+      "word": "لكنني",
+      "t": 68.9
+     },
+     "who": "hero",
+     "action": "He wags a paw: no. In the cloud a dotted line appears on the ground between hare and elephant.",
+     "acting": "Sly half lids (lid 0.4), one-sided lean (tip 0.05), smile.",
+     "library": "hare {raise wag via nod}, dashed line in cloud, S.label \"SAFE DISTANCE\""
+    },
+    {
+     "t": 70.3,
+     "end": 71.2,
+     "cue": {
+      "word": "أقترب",
+      "t": 70.34
+     },
+     "who": "hero",
+     "action": "He takes one exaggerated step back on the stump as the cloud elephant's foot comes down and misses by the length of the dotted line.",
+     "acting": "He looks down at the cloud foot, then winks at the group with a slow one-eyed lid if possible, otherwise a long blink.",
+     "library": "hop() small backward, cloud foot lift"
+    },
+    {
+     "t": 71.2,
+     "end": 72.2,
+     "cue": {
+      "word": "قدميه.»",
+      "t": 71.24
+     },
+     "who": "colony",
+     "action": "The listeners breathe out; ears rise halfway; the kit claps its paws.",
+     "acting": "Hope, not yet joy: ears 0.4, small smiles on two of them, the elder still doubtful (brow 0.6).",
+     "library": "hare {ears, mouth:\"smile\"}, stagger()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 58.3,
+     "text": "STOMP!"
+    },
+    {
+     "t": 68.4,
+     "text": "HIM?!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 62.4,
+     "kind": "chime"
+    },
+    {
+     "t": 68.5,
+     "kind": "pop"
+    },
+    {
+     "t": 72.2,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "wipe",
+    "t": 72.3,
+    "label": ""
+   }
+  },
+  {
+   "id": "S6",
+   "start": 72.3,
+   "end": 81.08,
+   "paragraphs": [
+    4
+   ],
+   "set": "lakeShore",
+   "cast": [
+    "hero",
+    "king",
+    "cow",
+    "scout",
+    "colony"
+   ],
+   "summary": "Evening at the lake. The white hare climbs the tall rock in three hops, hears the herd coming, and calls out to the king.",
+   "camera": {
+    "shot": "full",
+    "move": "crane",
+    "notes": "Start low at the rock base (centre 660, 780, zoom 1.7); crane up with the hops to the top (centre 680, 560) by 76.2; at 76.9 pull out to zoom 1.0 centred x 520 so the herd entering from the left and the first burrows on the right are both in frame."
+   },
+   "composition": "Rock right of centre with the hare on top against the dusk sky; elephants enter on the left third; burrows B1 and B2 on the right edge with ears poking out.",
+   "actions": [
+    {
+     "t": 72.46,
+     "end": 73.7,
+     "cue": {
+      "word": "وفي",
+      "t": 72.46
+     },
+     "who": "set",
+     "action": "Dusk sky over the lake shore; long shadows; the moon is not up yet. The white hare stands small at the foot of the tall rock.",
+     "acting": "He looks up the rock (gaze [0, -1]), gulps (sq 0.94 pulse).",
+     "library": "sky {preset:\"dusk\"}, rock (new prop), halftoneShadow()"
+    },
+    {
+     "t": 73.7,
+     "end": 74.5,
+     "cue": {
+      "word": "صعد",
+      "t": 73.78
+     },
+     "who": "hero",
+     "action": "First hop, to the lowest ledge (610, 810).",
+     "acting": "Crouch, stretch, squash on landing; ears trail one frame.",
+     "library": "anticipate(), hop(), landSquash()"
+    },
+    {
+     "t": 74.5,
+     "end": 75.0,
+     "cue": {
+      "word": "فوق",
+      "t": 74.56
+     },
+     "who": "hero",
+     "action": "Second hop, to the middle ledge (650, 720); a pebble falls away.",
+     "acting": "He wobbles (tip 0.12 to -0.06) and steadies.",
+     "library": "hop(), settleTo(), fallY() for the pebble"
+    },
+    {
+     "t": 75.0,
+     "end": 76.3,
+     "cue": {
+      "word": "صخرة",
+      "t": 75.02
+     },
+     "who": "hero",
+     "action": "Third and biggest hop to the flat top (680, 610), landing on the word \"high\"; the camera rises with him.",
+     "acting": "Lands low (sq 0.85), rises slowly, looks out to the left.",
+     "library": "hop(), landSquash(), K.camAt keys"
+    },
+    {
+     "t": 76.42,
+     "end": 76.9,
+     "who": "hero",
+     "action": "In the pause: the rock shudders, pebbles hop; he shrinks and trembles for a moment, then sets his jaw and puffs out his chest.",
+     "acting": "Fear mastered: sq 0.92 with tremble, then sq 1.08, ears straight up, brow 0.8.",
+     "library": "kick(), tremble(), settleTo()"
+    },
+    {
+     "t": 76.92,
+     "end": 77.6,
+     "cue": {
+      "word": "ونادى",
+      "t": 76.92
+     },
+     "who": "hero",
+     "action": "He cups a paw to his mouth and shouts; sound arcs leave his mouth to the left.",
+     "acting": "Head back, mouth wide open, eyes shut on the shout.",
+     "library": "hare {raise 0.9, talk 1, mouth:\"open\"}, soundArcs()"
+    },
+    {
+     "t": 77.4,
+     "end": 78.8,
+     "cue": {
+      "word": "ملك",
+      "t": 77.62
+     },
+     "who": "king",
+     "action": "Pull-out: the king and the two others walk in from the left, large and dark against the dusk.",
+     "acting": "Unhurried, sure of themselves: eyes \"smug\", ears swinging; they have not heard yet.",
+     "library": "walk(), footfalls(), elephant {eyes:\"smug\", crown}"
+    },
+    {
+     "t": 78.8,
+     "end": 79.5,
+     "cue": {
+      "word": "بصوت",
+      "t": 78.9
+     },
+     "who": "king",
+     "action": "The arcs arrive: the king's ears swing toward the rock before his head does.",
+     "acting": "earOff toward the sound first, head lag (hbob), then the eyes find the hare.",
+     "library": "elephant {earOff, earUp, hbob}, lookAt()"
+    },
+    {
+     "t": 79.5,
+     "end": 81.0,
+     "cue": {
+      "word": "الجميع.",
+      "t": 80.44
+     },
+     "who": "colony",
+     "action": "Everyone hears: pairs of ears pop out of the burrows on the right, cow and scout raise their heads; a hush falls.",
+     "acting": "Ears appear in a staggered row; the scout tilts its head.",
+     "library": "hare ears above burrow mouths (clip), stagger(), elephant {earUp}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 77.0,
+     "text": "O KING!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 76.65,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 81.08,
+    "label": ""
+   }
+  },
+  {
+   "id": "S7",
+   "start": 81.08,
+   "end": 102.3,
+   "paragraphs": [
+    5
+   ],
+   "set": "lakeShore",
+   "cast": [
+    "hero",
+    "king",
+    "cow",
+    "scout",
+    "colony"
+   ],
+   "summary": "The speech. The moon rises exactly behind the hare as he names himself its messenger. The king slows, then stops dead; a cloud covers the moon and he asks where he can see it.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Two-shot of hare on the rock (680, 610) and the king's head, zoom 1.35 centred (470, 600). At 84.6 tilt up 60 units to take in the rising moon. 86.6 quick pan right to the lake and back by 88.6. 91.4 pan down-right to the wrecked burrows and back. 94.9 widen to zoom 1.1 for the pile-up. 98.8 push to zoom 1.6 on the king's face and trunk."
+   },
+   "composition": "Hare high on the right, king lower on the left: the small one looks down, the big one looks up. The moon disc (r 110) sits directly behind the hare so he reads as a black-edged white figure inside it.",
+   "actions": [
+    {
+     "t": 81.08,
+     "end": 83.4,
+     "cue": {
+      "word": "قال",
+      "t": 81.08
+     },
+     "who": "king",
+     "action": "The king keeps walking slowly toward the rock, amused; the hare stands very straight and waits for silence.",
+     "acting": "King: eyes \"smug\", brow -0.6, slow walk (amp 0.5). Hare: still, only his ears quiver (earWig).",
+     "library": "walk(), elephant {eyes:\"smug\"}, hare {earWig}, twoShot()"
+    },
+    {
+     "t": 83.4,
+     "end": 84.1,
+     "cue": {
+      "word": "«أنا",
+      "t": 83.42
+     },
+     "who": "hero",
+     "action": "He taps his chest with a paw.",
+     "acting": "Chin up, eyes half shut with dignity (lid 0.3).",
+     "library": "hare {raise 0.4, talk}"
+    },
+    {
+     "t": 84.1,
+     "end": 84.8,
+     "cue": {
+      "word": "رسول",
+      "t": 84.16
+     },
+     "who": "set",
+     "action": "Behind him the moon begins to rise from behind the rock, pale yellow, big.",
+     "acting": "His fur gets a rim of light.",
+     "library": "moon(ctx,x,y,r) rising on a keyed y, sky dusk to deeper blue"
+    },
+    {
+     "t": 84.8,
+     "end": 86.5,
+     "cue": {
+      "word": "القمر!",
+      "t": 84.8
+     },
+     "who": "hero",
+     "action": "On \"the moon\" he throws a paw straight up: the moon stands full behind him and a label announces him.",
+     "acting": "Stretch sq 1.1, ears like two exclamation marks; stars pop out around the moon.",
+     "library": "hare {raise 1}, stars(), S.label \"MESSENGER OF THE MOON\""
+    },
+    {
+     "t": 85.4,
+     "end": 86.6,
+     "cue": {
+      "word": "إن",
+      "t": 85.48
+     },
+     "who": "king",
+     "action": "The king's smug look goes: his eyes travel up from the hare to the moon and his ears flatten.",
+     "acting": "Gaze plan hare to moon; eyes \"open\", brow rises, walk slows further.",
+     "library": "gazePlan(), elephant {earUp:-0.4, brow}"
+    },
+    {
+     "t": 86.6,
+     "end": 88.6,
+     "cue": {
+      "word": "هذه",
+      "t": 86.66
+     },
+     "who": "hero",
+     "action": "He sweeps a paw to the right, toward the lake; quick pan to the water with a moon-coloured glitter path on it, then back.",
+     "acting": "Possessive gesture, slow and wide; the cow and scout look at the lake, then at each other.",
+     "library": "hare {raise sweep}, pond glitter (star()), lookAt()"
+    },
+    {
+     "t": 88.6,
+     "end": 90.1,
+     "cue": {
+      "word": "القمر،",
+      "t": 88.62
+     },
+     "who": "fx",
+     "action": "An arrow draws itself from the moon down to the lake.",
+     "acting": "King follows the arrow with his eyes.",
+     "library": "S.arrow, gazePlan()"
+    },
+    {
+     "t": 90.1,
+     "end": 91.4,
+     "cue": {
+      "word": "غضب",
+      "t": 90.12
+     },
+     "who": "hero",
+     "action": "On \"angry\" he stamps a hind foot and his brows come down; above the king a thought cloud shows the moon with a frown.",
+     "acting": "Hare brow 1, mouth \"frown\"; king flinches (sq 0.97), trunk curls in.",
+     "library": "hare {brow 1}, cloud() with moon + two brow strokes, elephant {trunk 0.5}"
+    },
+    {
+     "t": 91.4,
+     "end": 92.9,
+     "cue": {
+      "word": "آذيتم",
+      "t": 91.42
+     },
+     "who": "hero",
+     "action": "He points down at the wrecked burrows; pan: two tan hares and the kit sit on the rubble of B2.",
+     "acting": "They look as sad as they can: ears down, wet eyes; one nudges the other, who then adds a sniff.",
+     "library": "hare {raise -0.6}, hare {ears:-1, wet:true}, teardrops()"
+    },
+    {
+     "t": 92.9,
+     "end": 94.9,
+     "cue": {
+      "word": "تعيش",
+      "t": 93.34
+     },
+     "who": "colony",
+     "action": "A label and arrow mark the ruin; the kit holds up a broken twig from its doorway.",
+     "acting": "King's gaze moves from the ruin to his own front foot and back.",
+     "library": "S.label \"HIS FRIENDS\" + S.arrow, gazePlan()"
+    },
+    {
+     "t": 94.9,
+     "end": 96.4,
+     "cue": {
+      "word": "توقف",
+      "t": 94.98
+     },
+     "who": "king",
+     "action": "The king stops dead with one front foot in the air; the cow bumps into him and the scout into her.",
+     "acting": "Skid dust, foot frozen (lift 70), ears wide, eyes wide; each bump passes a small lurch forward down the line.",
+     "library": "elephant {lift}, lurch(), bumpChain (new motion), dustBurst()"
+    },
+    {
+     "t": 96.4,
+     "end": 97.7,
+     "cue": {
+      "word": "ملك",
+      "t": 96.52
+     },
+     "who": "king",
+     "action": "He looks at his raised foot, moves it away from the nearest mound and sets it down very gently.",
+     "acting": "Eyes down, careful, a held breath then the foot touches without dust.",
+     "library": "elephant {lift 70 to 0}, anticipate()"
+    },
+    {
+     "t": 97.7,
+     "end": 98.8,
+     "cue": {
+      "word": "متعجبًا،",
+      "t": 97.72
+     },
+     "who": "set",
+     "action": "A long cloud slides across the moon and hides it.",
+     "acting": "King darts his eyes around the sky: left, right, up (saccades).",
+     "library": "cloudFlat() over moon, gazePlan() ease 0.07"
+    },
+    {
+     "t": 98.8,
+     "end": 100.5,
+     "cue": {
+      "word": "وسأل:",
+      "t": 98.84
+     },
+     "who": "king",
+     "action": "Push-in: he raises his trunk in a curl like a question mark and leans toward the rock.",
+     "acting": "Humble now: brow -0.6, head lower than the hare's feet, ears forward.",
+     "library": "elephant {trunk 0.75, earUp 0.5, drop, talk (new)}"
+    },
+    {
+     "t": 100.5,
+     "end": 102.1,
+     "cue": {
+      "word": "«وأين",
+      "t": 100.6
+     },
+     "who": "king",
+     "action": "He asks: head bobs on each word, trunk tip gestures at the empty sky.",
+     "acting": "While the king searches the sky the hare lets a small smile show, then puts the stern face back as the king looks down again.",
+     "library": "elephant {hbob, talk}, hare {mouth:\"smile\" then \"closed\", brow 1}"
+    },
+    {
+     "t": 102.14,
+     "end": 102.3,
+     "who": "hero",
+     "action": "In the pause he beckons with one paw and turns to hop down the far side of the rock.",
+     "acting": "One slow beckon; the king takes a first careful step after him.",
+     "library": "hare {raise}, turn via dir flip with squash"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 95.3,
+     "text": "BONK!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 102.3,
+    "label": "THAT NIGHT..."
+   }
+  },
+  {
+   "id": "S8",
+   "start": 102.3,
+   "end": 121.56,
+   "paragraphs": [
+    6
+   ],
+   "set": "lakeShore",
+   "cast": [
+    "hero",
+    "king",
+    "colony"
+   ],
+   "summary": "Night. The hare leads the king, tiptoeing between the burrows, to the lake edge. The moon shines above and its picture lies on the water. \"Look, and do not disturb him.\"",
+   "camera": {
+    "shot": "wide",
+    "move": "tilt",
+    "notes": "The LATER card covers 102.3-103.4 (cut the sky to night and the camera to the burrow field at the card midpoint). Track right with the king from x 900 to 1290 (zoom 1.3). At 106.6 settle on the lake framing: centre (1500, 690), zoom 1.25, which shows x 1100..1900 and y 200..1180. Tilt up to the sky at 107.1 (centre y 480), hold on the moon 109.9-111.9, tilt down to the water with the arrow by 113.4, then hold the full framing."
+   },
+   "composition": "Triangle: king on the left (x 1290, head near 1440, 670), sky moon top centre (1640, 300, r 80), reflection bottom centre (1640, 1000, r 62), hare on a flat stone on the right bank (1800, 900) facing left.",
+   "actions": [
+    {
+     "t": 102.3,
+     "end": 103.4,
+     "who": "fx",
+     "action": "Transition card THAT NIGHT... over the cut to night.",
+     "acting": "Card only.",
+     "library": "S.transition {caption}; sky {preset:\"night\"}, stars()"
+    },
+    {
+     "t": 103.4,
+     "end": 104.8,
+     "cue": {
+      "word": "أخذه",
+      "t": 103.08
+     },
+     "who": "hero",
+     "action": "The hare hops ahead along the shore in three light bounds, looking back to check the king follows.",
+     "acting": "Looks back over his shoulder between hops; ears bounce late.",
+     "library": "hop(), landSquash(), lookAt()"
+    },
+    {
+     "t": 104.2,
+     "end": 105.9,
+     "cue": {
+      "word": "الأرنب",
+      "t": 104.24
+     },
+     "who": "king",
+     "action": "The king tiptoes after him through the burrow field: each foot lifted high and placed between the mounds.",
+     "acting": "Eyes on his own feet, tongue tip out with concentration, trunk held up out of the way; ears of hidden hares duck as his shadow passes.",
+     "library": "elephant {lift pulses, trunk 0.6}, walk() slow, footfalls() without dust, hare ears (clip)"
+    },
+    {
+     "t": 105.9,
+     "end": 107.0,
+     "cue": {
+      "word": "البحيرة",
+      "t": 105.9
+     },
+     "who": "king",
+     "action": "He arrives at the edge of the lake and stops with his toes at the waterline; the hare reaches his stone on the right bank.",
+     "acting": "King exhales (sq settle); hare turns to face him (dir flip with squash).",
+     "library": "settleTo(), hop()"
+    },
+    {
+     "t": 107.1,
+     "end": 108.5,
+     "cue": {
+      "word": "ليلة",
+      "t": 107.14
+     },
+     "who": "camera",
+     "action": "Tilt up to a clear night sky full of stars; the cloud from before slides off the frame.",
+     "acting": "Stars twinkle on seeded phases.",
+     "library": "stars(), cloudFlat() exit"
+    },
+    {
+     "t": 108.5,
+     "end": 109.9,
+     "cue": {
+      "word": "كان",
+      "t": 108.56
+     },
+     "who": "king",
+     "action": "The king lifts his head to the sky.",
+     "acting": "Slow head rise (drop eases up), ears open, mouth slightly open.",
+     "library": "elephant {drop, earUp 0.6}, lookAt(moon)"
+    },
+    {
+     "t": 109.9,
+     "end": 111.9,
+     "cue": {
+      "word": "القمر",
+      "t": 109.9
+     },
+     "who": "set",
+     "action": "The moon, full and bright, with a slow pulsing halo of yellow dots.",
+     "acting": "King's eyes shine (wet highlight used as a glint); the hare bows his head to the moon for show.",
+     "library": "moon(), halftone glow pulse, hare {nod}"
+    },
+    {
+     "t": 111.9,
+     "end": 113.0,
+     "cue": {
+      "word": "وتظهر",
+      "t": 112.04
+     },
+     "who": "fx",
+     "action": "A dotted arrow travels from the moon straight down as the camera tilts with it to the water.",
+     "acting": "King's gaze rides down the arrow.",
+     "library": "S.arrow drawn progressively, gazePlan()"
+    },
+    {
+     "t": 113.0,
+     "end": 114.2,
+     "cue": {
+      "word": "صورته",
+      "t": 113.04
+     },
+     "who": "moonReflection",
+     "action": "On \"its picture\" a second moon appears on the dark water, soft-edged and swaying gently.",
+     "acting": "Fade in over 0.5 s with a slow wobble (wobble 0.08).",
+     "library": "moonReflection {x, y, r, wobble, breakUp} (new effect)"
+    },
+    {
+     "t": 114.2,
+     "end": 115.3,
+     "cue": {
+      "word": "سطح",
+      "t": 114.24
+     },
+     "who": "king",
+     "action": "The king looks from the moon in the sky to the moon in the water and back: a double take.",
+     "acting": "Up, down, up, down in 2-frame snaps, then his jaw drops and his ears go straight out.",
+     "library": "gazePlan() saccades, elephant {earUp 1}"
+    },
+    {
+     "t": 115.3,
+     "end": 116.8,
+     "cue": {
+      "word": "قال",
+      "t": 115.32
+     },
+     "who": "hero",
+     "action": "The hare draws himself up on his stone.",
+     "acting": "Priest-like calm: lid 0.35, slow blink, one ear tilted toward the king.",
+     "library": "hare {ears, lid}, blink()"
+    },
+    {
+     "t": 117.2,
+     "end": 118.6,
+     "cue": {
+      "word": "«انظر",
+      "t": 117.2
+     },
+     "who": "hero",
+     "action": "He points a paw down at the moon in the water.",
+     "acting": "Whole body leans with the point (tip 0.1); gaze on the reflection.",
+     "library": "hare {raise -0.5, tip}, lookAt()"
+    },
+    {
+     "t": 118.6,
+     "end": 119.6,
+     "cue": {
+      "word": "هنا،",
+      "t": 118.62
+     },
+     "who": "king",
+     "action": "The king lowers his head a little and stares at the reflection, toes shuffling back from the waterline.",
+     "acting": "Reverent: lid 0, brow -0.6, breath held (sq 1.03).",
+     "library": "elephant {drop, brow}"
+    },
+    {
+     "t": 119.6,
+     "end": 120.6,
+     "cue": {
+      "word": "تزعجه.»",
+      "t": 119.68
+     },
+     "who": "hero",
+     "action": "He lays a paw across his own mouth: hush.",
+     "acting": "Stern brow 0.8, eyes locked on the king; the king nods three quick small nods.",
+     "library": "hare {raise to mouth, brow}, elephant {hbob}"
+    },
+    {
+     "t": 120.6,
+     "end": 121.5,
+     "who": "set",
+     "action": "A held, silent beat: only the water moon sways and the king's pupils follow it.",
+     "acting": "Suspense by stillness.",
+     "library": "moonReflection wobble, gazePlan()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 104.6,
+     "text": "TIP TOE"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 102.6,
+     "kind": "whoosh"
+    },
+    {
+     "t": 121.0,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 121.56,
+    "label": ""
+   }
+  },
+  {
+   "id": "S9",
+   "start": 121.56,
+   "end": 142.96,
+   "paragraphs": [
+    7
+   ],
+   "set": "lakeShore",
+   "cast": [
+    "hero",
+    "king",
+    "colony"
+   ],
+   "summary": "The king bends to look and his trunk stirs the water. The moon breaks up and vanishes. The hare cries that he has angered it again. The king backs away in fear.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Push from the S8 framing to zoom 1.9 centred (1540, 900) on trunk tip, water and reflection, with the king's eye at the top-left and the hare at the right edge (121.56-125.5). Hold. At 133.9 ease out to zoom 1.3 (centre 1500, 720) for the hare's outburst and the retreat; at 140.7 track left with the king to centre x 1380."
+   },
+   "composition": "King's eye top-left, trunk coming down the left side, the reflection centre, hare top-right on his stone. Nothing covers the reflection except the ripples.",
+   "actions": [
+    {
+     "t": 121.56,
+     "end": 123.0,
+     "cue": {
+      "word": "انحنى",
+      "t": 121.56
+     },
+     "who": "king",
+     "action": "The king bends down: head lowers, front knees give a little, body tips forward.",
+     "acting": "Slow and careful (tip 0.1, drop toward the water), ears forward, eyes fixed on the water moon.",
+     "library": "elephant {drop, tip, earUp 0.4}, anticipate()"
+    },
+    {
+     "t": 123.0,
+     "end": 124.4,
+     "cue": {
+      "word": "ملك",
+      "t": 122.68
+     },
+     "who": "camera",
+     "action": "Push in close: his big eye and the small bright moon in the water.",
+     "acting": "The water moon is mirrored as a tiny yellow dot in his pupil.",
+     "library": "K.camAt keys, eyeAt()"
+    },
+    {
+     "t": 124.4,
+     "end": 125.5,
+     "cue": {
+      "word": "الصورة،",
+      "t": 124.5
+     },
+     "who": "king",
+     "action": "He leans closer still; his trunk, forgotten, hangs lower and lower toward the surface.",
+     "acting": "Eyes never leave the moon; the trunk tip sways on its own (swing).",
+     "library": "elephant {trunk 0, reach}, swing()"
+    },
+    {
+     "t": 125.5,
+     "end": 126.1,
+     "cue": {
+      "word": "فحرّك",
+      "t": 125.58
+     },
+     "who": "hero",
+     "action": "The hare's eyes flick to the trunk tip and back; his ears twitch.",
+     "acting": "He sees it coming and keeps quiet: a two-frame glance, the corner of a smile.",
+     "library": "gazePlan(), hare {earWig}"
+    },
+    {
+     "t": 126.1,
+     "end": 126.7,
+     "cue": {
+      "word": "الماء",
+      "t": 126.16
+     },
+     "who": "king",
+     "action": "The trunk tip touches the water: the first ring spreads.",
+     "acting": "No reaction from the king: he has not noticed.",
+     "library": "ripple() at the trunk tip"
+    },
+    {
+     "t": 126.7,
+     "end": 127.9,
+     "cue": {
+      "word": "بخرطومه",
+      "t": 126.74
+     },
+     "who": "king",
+     "action": "The trunk tip swishes left and right in the water; ring after ring travels toward the reflection.",
+     "acting": "Idle, absent-minded swish; an arrow marks the trunk.",
+     "library": "elephant {reach wag}, ripple() x4, S.arrow + S.label \"OOPS\""
+    },
+    {
+     "t": 127.9,
+     "end": 129.5,
+     "cue": {
+      "word": "دون",
+      "t": 127.92
+     },
+     "who": "fx",
+     "action": "The first ring reaches the water moon and its edge starts to shiver.",
+     "acting": "King blinks, puzzled (brow 0.3).",
+     "library": "moonReflection {wobble 0.08 to 0.35}"
+    },
+    {
+     "t": 129.6,
+     "end": 130.1,
+     "who": "king",
+     "action": "In the pause a single drop falls from his trunk into the centre of the reflection.",
+     "acting": "His eyes follow the drop down.",
+     "library": "drops(), fallY()"
+    },
+    {
+     "t": 130.12,
+     "end": 131.4,
+     "cue": {
+      "word": "اهتزت",
+      "t": 130.12
+     },
+     "who": "moonReflection",
+     "action": "The water moon shakes hard: it splits into sliding slices that pull apart.",
+     "acting": "King's eyes widen, ears rise by steps.",
+     "library": "moonReflection {wobble 1, breakUp 0 to 0.6}"
+    },
+    {
+     "t": 131.4,
+     "end": 132.0,
+     "cue": {
+      "word": "القمر",
+      "t": 131.46
+     },
+     "who": "king",
+     "action": "He jerks his trunk out of the water; drops fly.",
+     "acting": "Startle: sq 1.06 then 0.96, trunk curls tight (trunk 0.8).",
+     "library": "elephant {trunk}, drops(), settleTo()"
+    },
+    {
+     "t": 132.0,
+     "end": 133.1,
+     "cue": {
+      "word": "واختفت",
+      "t": 132.08
+     },
+     "who": "moonReflection",
+     "action": "The slices scatter into yellow slivers and wink out: the water is black and empty.",
+     "acting": "breakUp 1, alpha 0 by 132.7.",
+     "library": "moonReflection {breakUp 1, alpha}"
+    },
+    {
+     "t": 133.1,
+     "end": 133.9,
+     "cue": {
+      "word": "لحظة.",
+      "t": 133.12
+     },
+     "who": "king",
+     "action": "Frozen: the king stares at the empty water, trunk curled against his chest.",
+     "acting": "No blink (noBlink), pupils tiny, only a tremble in the ears.",
+     "library": "elephant {noBlink, earUp 1}, tremble()"
+    },
+    {
+     "t": 133.9,
+     "end": 135.2,
+     "cue": {
+      "word": "قال",
+      "t": 133.92
+     },
+     "who": "hero",
+     "action": "The hare springs up on his stone and throws both paws in the air.",
+     "acting": "Theatre: stretch sq 1.15, eyes wide, mouth open; anticipation crouch 0.25 s before.",
+     "library": "anticipate(), hop(), hare {raise 1, eyes:\"wide\", talk 1}"
+    },
+    {
+     "t": 135.2,
+     "end": 136.7,
+     "cue": {
+      "word": "«أرأيت؟",
+      "t": 135.28
+     },
+     "who": "hero",
+     "action": "He points at the empty water, then at the king.",
+     "acting": "Accusing: brow 1, lean forward (tip 0.12); the king shrinks (sq 0.95).",
+     "library": "hare {raise, brow 1, tip}"
+    },
+    {
+     "t": 136.7,
+     "end": 137.8,
+     "cue": {
+      "word": "أغضبته",
+      "t": 137.06
+     },
+     "who": "moonReflection",
+     "action": "On \"angered him\" the reflection comes back in trembling pieces, tinted red at the edges, as the water settles.",
+     "acting": "breakUp 1 to 0.3, red dot shading on the rim; the king recoils from it.",
+     "library": "moonReflection {breakUp, tint}"
+    },
+    {
+     "t": 137.8,
+     "end": 139.2,
+     "cue": {
+      "word": "مرة",
+      "t": 137.86
+     },
+     "who": "king",
+     "action": "The king's whole body trembles; his ears fold flat back; his crown slips over one eye.",
+     "acting": "Wet eyes, brow -0.6, tremble 3 units; he pushes the crown up with his trunk.",
+     "library": "tremble(), elephant {wet:true, earOff}, crown offset"
+    },
+    {
+     "t": 139.2,
+     "end": 140.6,
+     "cue": {
+      "word": "خاف",
+      "t": 139.28
+     },
+     "who": "king",
+     "action": "He bows low to the water in apology, eyes shut tight.",
+     "acting": "Deep drop, lid 1, trunk tucked; hare watches with half lids, satisfied.",
+     "library": "elephant {drop, lid 1, trunk 0.8}"
+    },
+    {
+     "t": 140.6,
+     "end": 142.0,
+     "cue": {
+      "word": "وتراجع",
+      "t": 140.7
+     },
+     "who": "king",
+     "action": "He backs away from the lake, still facing it, step by careful step.",
+     "acting": "Backward walk (x decreases, dir stays 1), head low, eyes on the water.",
+     "library": "walk() on a decreasing x, footfalls()"
+    },
+    {
+     "t": 142.0,
+     "end": 142.9,
+     "cue": {
+      "word": "إلى",
+      "t": 142.04
+     },
+     "who": "colony",
+     "action": "Behind him a tan hare pops out of the rubble of B4 and squeaks; the king freezes, looks back and shuffles a half-step forward again.",
+     "acting": "His ears swing back first (earOff), then the head; apologetic dip of the head to the small hare.",
+     "library": "soundArcs(), elephant {earOff, hbob}, hare {pal:1}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 131.5,
+     "text": "SPLISH!"
+    },
+    {
+     "t": 134.2,
+     "text": "AAH!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 129.8,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 142.96,
+    "label": ""
+   }
+  },
+  {
+   "id": "S10",
+   "start": 142.96,
+   "end": 153.4,
+   "paragraphs": [
+    8
+   ],
+   "set": "lakeShore",
+   "cast": [
+    "king",
+    "cow",
+    "scout",
+    "kit",
+    "colony"
+   ],
+   "summary": "Still night, on the approach plain. The king trumpets the herd together and gives his order: water elsewhere, and no harm to the hares.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "Centre (300, 660), zoom 1.3: king on the right facing left toward cow and scout. At 151.9 pan down-right to burrow B0 at x 470 by his feet (zoom 1.6)."
+   },
+   "composition": "King right of centre facing left, cow and scout left facing right, B0 with the kit in the right foreground. Thought cloud top-left.",
+   "actions": [
+    {
+     "t": 142.96,
+     "end": 144.8,
+     "cue": {
+      "word": "جمع",
+      "t": 142.96
+     },
+     "who": "king",
+     "action": "On the plain, the king raises his trunk and trumpets; arcs travel left.",
+     "acting": "Urgent: ears spread, eyes open, anticipation dip before the trumpet.",
+     "library": "anticipate(), elephant {trunk 1, dir:-1}, soundArcs()"
+    },
+    {
+     "t": 144.8,
+     "end": 146.0,
+     "cue": {
+      "word": "ملك",
+      "t": 144.86
+     },
+     "who": "cow",
+     "action": "Cow and scout hurry in from the left and stop in front of him, the scout a beat late and skidding.",
+     "acting": "Worried faces looking up at him; scout skids with dust and a small lurch.",
+     "library": "walk(), footfalls(), lurch(), dustBurst(), stagger()"
+    },
+    {
+     "t": 146.0,
+     "end": 147.6,
+     "cue": {
+      "word": "قطيعه",
+      "t": 146.02
+     },
+     "who": "king",
+     "action": "He glances back toward the lake, then leans to the herd to speak.",
+     "acting": "Nervous backward glance (gazePlan), then low confidential head (drop), trunk as a hand.",
+     "library": "gazePlan(), elephant {drop, talk}"
+    },
+    {
+     "t": 147.6,
+     "end": 149.1,
+     "cue": {
+      "word": "«سنبحث",
+      "t": 147.66
+     },
+     "who": "king",
+     "action": "His trunk points away to the far left horizon.",
+     "acting": "Firm: brow 0.3, trunk straight (trunk 0.5, reach); cow and scout look where it points.",
+     "library": "elephant {trunk, reach}, lookAt()"
+    },
+    {
+     "t": 149.1,
+     "end": 150.3,
+     "cue": {
+      "word": "ماء",
+      "t": 149.14
+     },
+     "who": "fx",
+     "action": "A thought cloud shows another pond far off beyond the hills, with an arrow.",
+     "acting": "Scout's tongue comes out at the picture of water.",
+     "library": "cloud() + pond small, S.arrow"
+    },
+    {
+     "t": 150.3,
+     "end": 151.0,
+     "cue": {
+      "word": "آخر،",
+      "t": 150.36
+     },
+     "who": "cow",
+     "action": "Cow nods; scout looks longingly over the king's shoulder at the lake.",
+     "acting": "Cow hbob nod; scout gaze to the right, ears droop.",
+     "library": "elephant {hbob}, lookAt()"
+    },
+    {
+     "t": 151.0,
+     "end": 151.9,
+     "cue": {
+      "word": "ولن",
+      "t": 151.08
+     },
+     "who": "king",
+     "action": "He shakes his head slowly and turns the scout's head away from the lake with his trunk.",
+     "acting": "Head shake by small rot swings; gentle, fatherly.",
+     "library": "elephant {rot swing, reach}"
+    },
+    {
+     "t": 151.9,
+     "end": 153.4,
+     "cue": {
+      "word": "هذه",
+      "t": 152.44
+     },
+     "who": "king",
+     "action": "His trunk lowers to point gently at the kit peeking from burrow B0 by his feet; the kit touches the trunk tip with its nose.",
+     "acting": "King: soft half lids, ears relaxed. Kit: wary ears, then a sniff and a tiny smile. Scout lifts its own foot away from the mound.",
+     "library": "elephant {trunk 0, reach, lid 0.3}, hare {s:0.38, ears}, elephant {lift 40}"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 153.4,
+    "label": ""
+   }
+  },
+  {
+   "id": "S11",
+   "start": 153.4,
+   "end": 168.79,
+   "paragraphs": [
+    8
+   ],
+   "set": "lakeShore",
+   "cast": [
+    "king",
+    "cow",
+    "scout",
+    "hero",
+    "colony",
+    "kit",
+    "elder"
+   ],
+   "summary": "Morning. The elephants walk away into the sunrise; the hares come home, rebuild, and celebrate around the white hare. THE END with the sun on the water.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Dissolve night to dawn over 0.8 s. Wide zoom 1.1 centred x 400 as the herd leaves left (153.4-156.4). Pan right to the burrow field (centre x 1000, zoom 1.4) by 157.6. At 162.8 ease out to zoom 1.1 centred x 1250 taking in burrows, shore and lake with the rising sun; hold for THE END."
+   },
+   "composition": "Herd small on the left walking away; rock centre-left with the hare on top; burrow field centre; lake and sun on the right. THE END sits in the sky top centre, clear of every face.",
+   "actions": [
+    {
+     "t": 153.4,
+     "end": 154.8,
+     "cue": {
+      "word": "رحلت",
+      "t": 153.6
+     },
+     "who": "king",
+     "action": "Dawn sky. The three elephants walk away to the left in single file, the sun rising behind the lake on the right.",
+     "acting": "Steady walk (amp 0.8); long shadows stretch ahead of them; scout in the middle now.",
+     "library": "sky {preset:\"dawn\"}, sun(), walk(), footfalls(), halftoneShadow()"
+    },
+    {
+     "t": 154.8,
+     "end": 155.8,
+     "cue": {
+      "word": "الفيلة",
+      "t": 154.8
+     },
+     "who": "hero",
+     "action": "On the rock the white hare watches them go, one paw shading his eyes.",
+     "acting": "Relaxed, ears swaying, a slow satisfied blink.",
+     "library": "hare {raise 0.9}, blink()"
+    },
+    {
+     "t": 155.8,
+     "end": 156.5,
+     "cue": {
+      "word": "الصباح.",
+      "t": 155.84
+     },
+     "who": "king",
+     "action": "The king, last in line, stops, looks back and raises his trunk in salute; then walks on out of frame.",
+     "acting": "Respectful: head dip (hbob), no smugness left.",
+     "library": "elephant {trunk 0.9, hbob}, turn of the head only"
+    },
+    {
+     "t": 156.5,
+     "end": 157.6,
+     "cue": {
+      "word": "وعادت",
+      "t": 156.52
+     },
+     "who": "colony",
+     "action": "Pan right: tan hares come hopping back from the right in a staggered line.",
+     "acting": "Ears high, each on its own rhythm; the elder slower, behind.",
+     "library": "hop(), landSquash(), stagger()"
+    },
+    {
+     "t": 157.6,
+     "end": 158.7,
+     "cue": {
+      "word": "الأرانب",
+      "t": 157.68
+     },
+     "who": "colony",
+     "action": "They spread out, each to its own mound.",
+     "acting": "Sniffing the doorways, looking around for feet (gaze sweeps), relaxing.",
+     "library": "gazePlan(), hare {earWig}"
+    },
+    {
+     "t": 158.7,
+     "end": 159.6,
+     "cue": {
+      "word": "جحورها،",
+      "t": 158.78
+     },
+     "who": "colony",
+     "action": "Two dive into the whole burrows B1 and B5; two start digging out B2: soil flies in puffs.",
+     "acting": "Digging = fast paw raise cycles with dust bursts behind; the mound grows back.",
+     "library": "hare {raise cycle}, dustBurst(), burrow {collapse 1 to 0}"
+    },
+    {
+     "t": 159.6,
+     "end": 160.7,
+     "cue": {
+      "word": "وفرحت",
+      "t": 159.66
+     },
+     "who": "colony",
+     "action": "Joy: hares bounce on the spot one after another like popcorn.",
+     "acting": "Stretch in the air (sq 1.12), smiles, ears flying.",
+     "library": "hop(), landSquash(), stagger(), hare {mouth:\"smile\"}"
+    },
+    {
+     "t": 160.7,
+     "end": 162.1,
+     "cue": {
+      "word": "لأن",
+      "t": 160.7
+     },
+     "who": "fx",
+     "action": "The counter returns: SAFE HOMES 2, 3, 4, 5 as B2, B3 and B4 pop back into shape.",
+     "acting": "Each restored mound gets a small spark and its owner's ears in the doorway.",
+     "library": "S.counter, burrow {collapse to 0}, star()"
+    },
+    {
+     "t": 162.1,
+     "end": 163.6,
+     "cue": {
+      "word": "أصبحت",
+      "t": 162.12
+     },
+     "who": "hero",
+     "action": "The white hare hops down from the rock into the middle of the colony; they crowd around him.",
+     "acting": "Three hops down the ledges; the kit hugs his leg; the elder gives him a slow nod.",
+     "library": "hop(), landSquash(), hare {nod}"
+    },
+    {
+     "t": 163.6,
+     "end": 164.6,
+     "cue": {
+      "word": "من",
+      "t": 163.68
+     },
+     "who": "hero",
+     "action": "He looks straight at the lens for one beat with a small smile, then back at his friends.",
+     "acting": "The film's only look to camera: gaze [0, 0.05], lid 0.3.",
+     "library": "hare {gaze, lid, mouth:\"smile\"}"
+    },
+    {
+     "t": 164.9,
+     "end": 166.2,
+     "who": "fx",
+     "action": "THE END rises in the sky; the sun, now up, lays its own bright disc on the lake.",
+     "acting": "Hares turn to look at the water.",
+     "library": "S.title \"THE END\", moonReflection {tint: sun yellow, r 70} reused for the sun"
+    },
+    {
+     "t": 166.2,
+     "end": 168.7,
+     "who": "kit",
+     "action": "The kit hops to the shore and pokes the sun on the water with one paw: it wobbles and settles. The hares laugh; hold.",
+     "acting": "Kit jumps back (sq 0.9), then giggles; ears of the whole row shake with laughter (earWig).",
+     "library": "moonReflection {wobble pulse}, ripple(), hare {earWig, mouth:\"smile\"}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 161.0,
+     "text": "SAFE!"
+    },
+    {
+     "t": 165.0,
+     "text": "THE END"
+    },
+    {
+     "t": 167.0,
+     "text": "HA HA!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 165.2,
+     "kind": "chime"
+    },
+    {
+     "t": 166.5,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 168.79,
+    "label": ""
+   }
+  }
+ ],
+ "ending": {
+  "t": 164.9,
+  "description": "After the last word (164.58) THE END rises in the dawn sky at 164.9 and holds to 168.79. The sun lays a bright disc on the lake; the kit pokes it, it wobbles like the moon did, and the hares laugh. No moral text on screen."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "في غابة بعيدة، عاشت مجموعة من الفيلة قرب أرض واسعة.|مرّ وقت طويل دون مطر، فجفّت البرك الصغيرة وقلّ الماء.|شعرت الفيلة بعطش شديد، وبدأت تبحث عن مكان جديد تشرب منه.",
+   "en": "In a distant forest, a herd of elephants lived near a wide plain.|A long time passed without rain, the small ponds dried up, and water became scarce.|The elephants grew very thirsty and began searching for a new place to drink."
+  },
+  {
+   "p": 2,
+   "ar": "بعد رحلة طويلة، وجد أحد الفيلة بحيرة جميلة.|كانت الأرانب الصغيرة تعيش حولها، في بيوت تحت الأرض.|أسرعت الفيلة نحو الماء، دون أن تنتبه إلى جحور الأرانب.",
+   "en": "After a long journey, one elephant found a beautiful lake.|Little hares lived all around it in homes beneath the ground.|The elephants hurried toward the water without noticing the hares’ burrows."
+  },
+  {
+   "p": 3,
+   "ar": "كانت خطوات الفيلة ثقيلة،|فهدمت بعض الجحور وأخافت الأرانب.|تجمعت الأرانب في مكان بعيد، وقالت:|«إذا عادت الفيلة كل يوم، فلن يبقى لنا بيت آمن.»",
+   "en": "The elephants’ footsteps were heavy.|They damaged some burrows and frightened the hares.|The hares gathered far away and said,|“If the elephants return every day, we will have no safe homes left.”"
+  },
+  {
+   "p": 4,
+   "ar": "قال أرنب ذكي: «سأتحدث إلى ملك الفيلة،|لكنني لن أقترب من قدميه.»|وفي المساء، صعد فوق صخرة عالية،|ونادى ملك الفيلة بصوت يسمعه الجميع.",
+   "en": "A clever hare said, “I will speak to the king of the elephants,|but I will not go near his feet.”|That evening he climbed onto a high rock|and called to the elephant king in a voice everyone could hear."
+  },
+  {
+   "p": 5,
+   "ar": "قال الأرنب: «أنا رسول القمر!|إن هذه البحيرة تخصّ القمر،|وقد غضب لأنكم آذيتم الأرانب التي تعيش بجانبها.»|توقف ملك الفيلة متعجبًا، وسأل: «وأين أرى القمر؟»",
+   "en": "“I am the messenger of the moon!” the hare declared.|“This lake belongs to the moon,|and he is angry because you have hurt the hares who live beside it.”|The elephant king stopped in surprise and asked, “Where can I see the moon?”"
+  },
+  {
+   "p": 6,
+   "ar": "أخذه الأرنب إلى حافة البحيرة في ليلة صافية.|كان القمر يلمع في السماء، وتظهر صورته على سطح الماء.|قال الأرنب: «انظر إلى القمر هنا، ولا تزعجه.»",
+   "en": "The hare led him to the lake’s edge on a clear night.|The moon was shining in the sky, and its reflection appeared on the surface of the water.|“Look at the moon here,” said the hare, “and do not disturb him.”"
+  },
+  {
+   "p": 7,
+   "ar": "انحنى ملك الفيلة ليرى الصورة، فحرّك الماء بخرطومه دون قصد.|اهتزت صورة القمر واختفت لحظة.|قال الأرنب: «أرأيت؟ لقد أغضبته مرة أخرى!»|خاف الملك وتراجع إلى الخلف.",
+   "en": "The elephant king bent down to look at the reflection and accidentally stirred the water with his trunk.|The moon’s image shook and disappeared for a moment.|“See?” said the hare. “You have angered him again!”|The king grew afraid and stepped back."
+  },
+  {
+   "p": 8,
+   "ar": "جمع ملك الفيلة قطيعه وقال:|«سنبحث عن ماء في مكان آخر، ولن نؤذي هذه الأرانب.»|رحلت الفيلة في الصباح.|وعادت الأرانب إلى جحورها، وفرحت لأن بيوتها أصبحت آمنة من جديد.",
+   "en": "The elephant king gathered his herd and said,|“We will find water somewhere else, and we will not harm these hares.”|The elephants left in the morning.|The hares returned to their burrows, happy that their homes were safe once more."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "lakeShore",
+   "description": "The film's main 2000-wide set: plain, rock, burrow field with underground cutaway, shore and lake, with four sky presets.",
+   "reusable": true,
+   "effort": "L",
+   "implementation": "Bake one layer per sky preset with bake(): sky({preset, w:2000}), hillTrees, ground at y 900, reeds as tapered green strokes. Cutaway: a shape() of darker earth (Library wellShaft earth colours and stone ellipses) from y 900 to 1230 between x 780 and 1220 with ragged side edges; tunnels as 34-wide dark rounded strokes from each mound mouth to its room; rooms as rounded rectangles with a straw line. Draw order: back sky, far bank, lake, ground, cutaway, room occupants, burrow mounds, cast, a front water lip strip so wading legs are covered."
+  },
+  {
+   "type": "set",
+   "name": "pond",
+   "description": "Oblique water ellipse with level 0..1 (planned by KD-008; same drawing). Wide version is the lake.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "pond(ctx, {x, y, w, h, level, t}): mud-coloured bed ellipse with ink outline; inside it a blue ellipse scaled by level (blue Ben-Day dots, two white highlight strokes moving slowly with t); when level < 0.5 draw seeded crack lines (seg) on the exposed bed, more as level falls. For the lake use a flatter custom outline (shape with 14 points) instead of an ellipse and level 1."
+  },
+  {
+   "type": "prop",
+   "name": "burrow",
+   "description": "Hare burrow mound with doorway and states (planned by KD-005 as a snake hole; same mound, hare-sized doorway).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "burrow(ctx, x, y, {eyes, crack, collapse, seed}): half-ellipse mound (shape, brown with red-brown dots), arched NAVY doorway. eyes: peekEyes() in the doorway. crack: 2-3 seeded zigzag seg lines growing from the top. collapse 0..1: lerp the mound height from 44 to 14, tilt the doorway arch shut, add 5 loose clods (small polygons) spread by seed. The matching room in the cutaway fills with earth by the same collapse value. Characters enter by clipping at the doorway line."
+  },
+  {
+   "type": "prop",
+   "name": "rock",
+   "description": "Tall climbable boulder with two ledges and a flat top.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "One shape() polygon in the den rock grey with dot shading on the right side, two ledge notches, a few seg crack lines; returns its anchor points {ledge1, ledge2, top}."
+  },
+  {
+   "type": "effect",
+   "name": "moonReflection",
+   "description": "A disc on water that sways, breaks into slices, scatters and re-forms. Also used for the sun at the end.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "moonReflection(ctx, {x, y, r, t, wobble, breakUp, alpha, tint}): cut the disc into 9 horizontal slices (clip rects); slice i is shifted in x by sin(t*5 + i*1.3) * r * 0.5 * wobble and, as breakUp rises, by a seeded offset up to 2.2 r while its height shrinks to 30 %; vertical squash 0.8 so it lies on the water; two crater ellipses that move with their slice; no ink outline, a pale cyan edge instead; alpha multiplies everything. All from t and K.rng seeds, so every frame is a pure function of time."
+  },
+  {
+   "type": "pose",
+   "name": "elephant crown / talk / wide eyes",
+   "description": "Optional elephant fields: crown:true (gold three-point crown between the ears, follows hbob), talk 0..1 (small lower-jaw wedge opening under the trunk base), eyes:\"wide\".",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "All default off so the regression test stays identical. Crown: yellow shape() 60 wide, 34 high with three points and red dots, drawn after the head at the head transform. talk: a pink-and-ink wedge at the trunk root rotated by talk * 0.35. wide: eye radius x 1.25 with a small pupil."
+  },
+  {
+   "type": "motion",
+   "name": "bumpChain",
+   "description": "A line of walkers concertinas when the leader stops: each follower closes up, bumps, lurches forward and settles back (named in the Capabilities Guide wish list).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "bumpChain(t, t0, i, gap): follower i reaches contact at t0 + 0.18 * i; returns {dx, tip, sq} from lurch() and settleTo(); the leader gets a small forward tip on each contact."
+  }
+ ],
+ "implementation_notes": [
+  "Start from Library/template; world size for lakeShore is 2000 x 1230 (set WW = 2000 and clamp the camera to it); dryPlain and thicketMeet are 1000 wide.",
+  "Set LIFE.t = t each frame so every character blinks; give each hare and elephant its own seed. Suppress blinks (noBlink) on the king at 133.1-133.9.",
+  "Elephant pose fields: x, y, s, dir, ph, amp, rot, bob, hbob, tail, lift, drop, trunk, reach, earUp, earOff, flapEar, eyes, brow, tongue. Check the sign of drop on a still before keying the bow (the catalogue uses negative values with the raised foot).",
+  "Hare pose fields: pal, ears, earWig, eyes, brow, mouth, talk, raise, nod, drop, squash, shake, rot plus shared gaze, lid, wet, sq, tip. The hare is drawn sitting upright; all travel is hop() with anticipate() and landSquash().",
+  "For the trunk touching the water (126.16) measure the trunk tip position on a still with trunk 0 and reach set, then place the king so the tip meets the water line; move the king, not the trunk.",
+  "Moon positions: rising behind the rock in S7 from (680, 760) at 84.1 to (680, 470) at 84.8 with r 110; in S8 and S9 the sky moon is at (1640, 300) r 80 and the reflection at (1640, 1000) r 62. Check moon() and stars() signatures in Library/sets/sky.js.",
+  "Elephants run with walk() on fast position keys; take FALLS from footfalls() for dust, kick() on pebbles and hares, and the panel-only shake (translate inside the panel clip so the caption panel never moves).",
+  "Counter SAFE HOMES: 5 at 47.22, 4 at 47.6, 3 at 48.2, 2 at 48.6; in the elder's cloud 2, 1, 0 between 59.18 and 61.0; at the end 2 to 5 between 160.7 and 162.0. Use the style's counter primitive.",
+  "The LATER card (THAT NIGHT...) covers 102.3-103.4; put the sky change, the cast move and the camera cut at its covered midpoint.",
+  "Sound: only the listed effects, all inside narration pauses, quiet (SND master 0.6); no effect during the hush at 120.6-121.5 except the soft chime at 121.0.",
+  "Lettering stays at twelve short items; none may cover a face; keep them in the sky or over the ground.",
+  "Subtitles use the standard caption panel from Library/core/subtitle.js with the chunk marks in the subtitles field; chunk times come from the word timings.",
+  "Draw calls end with the style finish every frame."
+ ],
+ "warnings": [
+  "Some narration words run long in the word timings (for example 108.56 and 81.08), so the listed start of the next word can be late or early by a few tenths; check the cues at 82.70, 96.52 and 109.90 against the audio on the first stills.",
+  "The underground cutaway and the oblique lake share one side view; if they clash, draw the cutaway as an inset panel with its own brush border.",
+  "The king is given a crown and the herd is three elephants (one small scout); the script says only \"a herd\" and \"one elephant\".",
+  "A cloud hides the moon at 97.7 so that the king's question makes sense; the narration does not mention it.",
+  "The elephant has no rear-foot lift, so the retreat gag at 142.0 uses ears and head only.",
+  "The hare has no wink; the group beat at 70.3 uses a long blink unless a per-eye lid is added."
+ ]
+}

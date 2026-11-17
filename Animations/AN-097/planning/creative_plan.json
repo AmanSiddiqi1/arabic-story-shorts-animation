@@ -1,0 +1,3010 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-097",
+ "title": "The Generous Dealing of Yahya the Barmecide with Mansur",
+ "duration": 168.24,
+ "end_hold": 3.0,
+ "logline": "A debtor must find a million dirhams before sunset; the generous Yahya raises it all, adds a famous jewel to win the caliph's mercy, and forgives the frightened man's ungrateful words.",
+ "moral": "True generosity does not wait for thanks, and it forgives what fear makes people say.",
+ "tone": "Warm court comedy with a ticking clock: suspense from the hourglass and the sinking sun, humour from the nearly empty strongbox, and a quiet, generous ending.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.0,
+   "kind": "setup",
+   "cue": {
+    "word": "أمر",
+    "t": 0.0
+   },
+   "summary": "Caliph Harun gives Salih the order."
+  },
+  {
+   "id": "B2",
+   "t": 9.0,
+   "kind": "inciting",
+   "cue": {
+    "word": "مليون",
+    "t": 9.0
+   },
+   "summary": "A million dirhams before sunset; the hourglass starts."
+  },
+  {
+   "id": "B3",
+   "t": 16.72,
+   "kind": "suspense",
+   "cue": {
+    "word": "فسيعاقب",
+    "t": 16.72
+   },
+   "summary": "The threat of severe punishment."
+  },
+  {
+   "id": "B4",
+   "t": 25.82,
+   "kind": "emotion",
+   "cue": {
+    "word": "فاشتد",
+    "t": 25.82
+   },
+   "summary": "Mansur has only a sliver of the sum; fear freezes him."
+  },
+  {
+   "id": "B5",
+   "t": 29.86,
+   "kind": "turn",
+   "cue": {
+    "word": "رق",
+    "t": 29.86
+   },
+   "summary": "The guard pities him and takes him to Yahya."
+  },
+  {
+   "id": "B6",
+   "t": 34.18,
+   "kind": "reveal",
+   "cue": {
+    "word": "يحيى",
+    "t": 34.18
+   },
+   "summary": "Yahya revealed, giving to the needy."
+  },
+  {
+   "id": "B7",
+   "t": 52.26,
+   "kind": "comic",
+   "cue": {
+    "word": "خمسة",
+    "t": 52.26
+   },
+   "summary": "The strongbox holds only 5,000 (and a moth)."
+  },
+  {
+   "id": "B8",
+   "t": 54.2,
+   "kind": "rising",
+   "cue": {
+    "word": "فبعث",
+    "t": 54.2
+   },
+   "summary": "Yahya sends to his sons without a pause."
+  },
+  {
+   "id": "B9",
+   "t": 68.78,
+   "kind": "climax",
+   "cue": {
+    "word": "يكفي",
+    "t": 68.78
+   },
+   "summary": "The total passes one million: enough, and more."
+  },
+  {
+   "id": "B10",
+   "t": 73.64,
+   "kind": "surprise",
+   "cue": {
+    "word": "جوهرة",
+    "t": 73.64
+   },
+   "summary": "Yahya adds the famous jewel."
+  },
+  {
+   "id": "B11",
+   "t": 92.66,
+   "kind": "suspense",
+   "cue": {
+    "word": "يأمل",
+    "t": 92.66
+   },
+   "summary": "Yahya's hope (thought cloud): the caliph will know the jewel and soften."
+  },
+  {
+   "id": "B12",
+   "t": 110.02,
+   "kind": "turn",
+   "cue": {
+    "word": "أنشد",
+    "t": 110.02
+   },
+   "summary": "Mansur, overcome by fear, recites ungrateful verses."
+  },
+  {
+   "id": "B13",
+   "t": 117.66,
+   "kind": "emotion",
+   "cue": {
+    "word": "استنكر",
+    "t": 117.66
+   },
+   "summary": "Salih rebukes him."
+  },
+  {
+   "id": "B14",
+   "t": 135.86,
+   "kind": "reveal",
+   "cue": {
+    "word": "عرف",
+    "t": 135.86
+   },
+   "summary": "Harun recognises the jewel; the heart Yahya hoped for appears."
+  },
+  {
+   "id": "B15",
+   "t": 140.78,
+   "kind": "resolution",
+   "cue": {
+    "word": "فأعادها",
+    "t": 140.78
+   },
+   "summary": "The caliph returns the jewel."
+  },
+  {
+   "id": "B16",
+   "t": 149.46,
+   "kind": "surprise",
+   "cue": {
+    "word": "يغضب",
+    "t": 149.46
+   },
+   "summary": "Yahya hears of the verses and is not angry."
+  },
+  {
+   "id": "B17",
+   "t": 165.56,
+   "kind": "moral",
+   "cue": {
+    "word": "كرم",
+    "t": 165.56
+   },
+   "summary": "Generosity that waits for no thanks."
+  }
+ ],
+ "cast": [
+  {
+   "id": "harun",
+   "name": "Caliph Harun al-Rashid",
+   "library": "person",
+   "base": "person costume:'caliph'",
+   "look": "Library caliph preset with age 0.35 and pal {beard black}: crown turban with the blue jewel, red robe, yellow trim. In the S8 memory inset and nowhere else the turban carries the big red jewel (pal jewel red, drawn 1.6x).",
+   "new": false
+  },
+  {
+   "id": "salih",
+   "name": "Salih the guard",
+   "library": "person",
+   "base": "person costume:'soldier' (planned preset, AN-087), blue palace tunic",
+   "look": "Pointed helmet with neck cloth (no nose bar, so the brows can act), moustache, blue tunic with yellow belt, hold:'spear'. Stern at first, kind underneath: the brow does the change.",
+   "new": true
+  },
+  {
+   "id": "mansur",
+   "name": "Mansur the debtor",
+   "library": "person",
+   "base": "person costume:'merchant' with the green palette of the catalogue cell MERCHANT PAL",
+   "look": "Big yellow turban, green robe, black beard; s 0.95 so he reads a little smaller than the guard. The turban tassel lags his head moves.",
+   "new": false
+  },
+  {
+   "id": "yahya",
+   "name": "Yahya ibn Khalid the Barmecide",
+   "library": "person",
+   "base": "person costume:'vizier', age 0.8",
+   "look": "Vizier preset with white beard (age 0.8, stoop kept small), navy robe, red cape, white turban with feather. Soft half lidded eyes and a smile are his default face.",
+   "new": false
+  },
+  {
+   "id": "treasurer",
+   "name": "Yahya's treasurer",
+   "library": "person",
+   "base": "person costume:'servant', age 0.5",
+   "look": "Servant preset with grey moustache, a ring of 3 keys at the sash (scene drawn, swings).",
+   "new": false
+  },
+  {
+   "id": "runnerA",
+   "name": "runner to al-Fadl",
+   "library": "person",
+   "base": "person costume:'servant', pal {hc red}",
+   "look": "Young servant, red cap.",
+   "new": false
+  },
+  {
+   "id": "runnerB",
+   "name": "runner to Jaafar",
+   "library": "person",
+   "base": "person costume:'servant', pal {hc blue, sash blue}",
+   "look": "Young servant, blue cap, 5 % shorter.",
+   "new": false
+  },
+  {
+   "id": "fadl",
+   "name": "al-Fadl (son, inset only)",
+   "library": "person",
+   "base": "person costume:'prince', pal {robe green}",
+   "look": "Prince preset with a short black beard option if available, green robe; seen only as a bust in an inset circle.",
+   "new": false
+  },
+  {
+   "id": "jaafar",
+   "name": "Jaafar (son, inset only)",
+   "library": "person",
+   "base": "person costume:'prince', pal {robe red}",
+   "look": "Prince preset, red robe, clean shaven; bust in an inset circle.",
+   "new": false
+  },
+  {
+   "id": "oldWoman",
+   "name": "needy old woman",
+   "library": "person",
+   "base": "person costume:'oldWoman'",
+   "look": "Library preset unchanged.",
+   "new": false
+  },
+  {
+   "id": "villager",
+   "name": "needy villager",
+   "library": "person",
+   "base": "person costume:'villager', age 0.55",
+   "look": "Library preset, green tunic with a patch.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "palaceHall",
+   "library": null,
+   "description": "The planned palaceHall, full palace variant (1000 x 1230): blue dotted back wall with three pointed arches, open door arch on the left (x 40..250, top y 480) showing the sky, dais x 560..900 top y 860, red runner carpet, checker floor, two lamps, floor y 900. The planned throne stands on the dais at x 730. Needs the option doorSky u so skyCycle shows through the arch (u 0.30 in S1, 0.49 in S13).",
+   "new": true
+  },
+  {
+   "id": "yahyaHall",
+   "library": null,
+   "description": "The same palaceHall function with variant:'vizierHouse': warm paper and yellow wall with red dot shading instead of blue, no throne; a low cushioned dais (x 600..860, top y 860) with a red bolster, a brass lamp each side (lit flag for night), the same left door arch with doorSky u. One function, one more palette: not a new set.",
+   "new": true
+  },
+  {
+   "id": "merchantHouse",
+   "library": null,
+   "description": "The planned palaceHall variant merchantHouse: plain wall, small window, door on the left, shelf, tiled floor, low table (x 380..560, top y 800) and a stool at x 640. Kept bare to show Mansur has little.",
+   "new": true
+  },
+  {
+   "id": "marketStreet",
+   "library": null,
+   "description": "The planned marketStreet, here at dusk (skyCycle u 0.45): house fronts, one closed stall, a lamp post; made 1600 wide (or tiled) so the camera can track the walkers about 300 units. Long shadows under the figures (flat dark ellipses stretched 2.5x).",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "throne",
+   "library": null,
+   "description": "Planned throne: high back 300 with pointed arch, seat 48 above its base, 150 wide.",
+   "new": true
+  },
+  {
+   "id": "hourglass",
+   "library": null,
+   "description": "Planned panel-space time meter (KD-017), drawn top right of the picture panel, 70 x 110 px. Level keys: appears 10.48 at 1.0; 0.8 at 25; 0.55 at 53.6; 0.45 at 60.4; 0.32 at 61.2 (after LATER); 0.2 at 86.2; 0.1 at 104; 0.03 at 128.0, then tick and fade by 129.5; returns empty at 160.26 to tip over and fade. Hidden in the close shots S8, S10, S14, S16.",
+   "new": true
+  },
+  {
+   "id": "coinPile",
+   "library": null,
+   "description": "Planned coin mound with a removable coin; n 6 for Mansur, n 10 in the strongbox, heaped in the sons' chests.",
+   "new": true
+  },
+  {
+   "id": "chest",
+   "library": null,
+   "description": "The chest from the planned treasureHoard module: 200 wide, 130 high, hinged lid (open 0..1), fill 0..1 of coins. Three instances: house strongbox (brown, nearly empty), al-Fadl chest (green band), Jaafar chest (red band).",
+   "new": true
+  },
+  {
+   "id": "sack",
+   "library": null,
+   "description": "Planned sack with fill 0..1, here 150 wide x 170 high with a round coin mark on the front; stands for the million when carried.",
+   "new": true
+  },
+  {
+   "id": "jewelBox",
+   "library": null,
+   "description": "Planned jewels module (AN-086): one large red cut gem, 48 across at s 1 (hexagon with 5 facet lines and a sliding white glint), in a gold casket 80 x 50 with a hinged lid. Always drawn with goldGlow when open. This is the story's key prop: keep its shape and colour identical every time it appears.",
+   "new": true
+  },
+  {
+   "id": "scroll",
+   "library": null,
+   "description": "Planned small scroll: the runner notes and the verse scroll in the balloons (4 wavy lines, no readable writing).",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 12.3,
+   "paragraphs": [
+    1
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "harun",
+    "salih"
+   ],
+   "summary": "Caliph Harun on his throne orders the guard Salih to collect a million dirhams from Mansur before sunset.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Open wide on the whole hall (x 500, y 640, zoom 1.0), hold 1.2 s, ease to a two-shot (x 560, y 700, zoom 1.45) by 4.1; hold; small drift up to the door arch sky at 11.1."
+   },
+   "composition": "Harun seated on the throne on the dais (throne base x 730, y 860), facing left. Salih enters by the door arch (x 40..250) and stops at x 360, y 900, facing right. Eye line runs up from Salih to Harun (the caliph is higher). Counter and hourglass in the top left of the panel, clear of both faces.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 1.2,
+     "cue": {
+      "word": "أمر",
+      "t": 0.0
+     },
+     "who": "harun",
+     "action": "Sits tall on the throne and raises his right arm in command.",
+     "acting": "brow 0.6 (stern), gaze straight left at the door, chin up; arm rises with anticipate() dip 0.2 s first, settleTo overshoot",
+     "library": "person {costume:'caliph', sit:1, seat:'bench', handR: PERSON_HANDS.pointFwd.R} + anticipate, settleTo"
+    },
+    {
+     "t": 0.4,
+     "end": 1.8,
+     "cue": {
+      "word": "الخليفة",
+      "t": 0.4
+     },
+     "who": "lettering",
+     "action": "Name label CALIPH HARUN pops beside the throne back with a short arrow.",
+     "acting": "label holds 2.2 s then fades",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 2.3,
+     "end": 4.0,
+     "cue": {
+      "word": "أحد",
+      "t": 2.48
+     },
+     "who": "salih",
+     "action": "Marches in from the door arch to x 360 with spear upright and stops with a heel click.",
+     "acting": "walk() legs from distance, footfalls dust; on the stop a 2 frame sq 0.94 then stretch; gaze lookAt(harun head)",
+     "library": "person {costume:'soldier', hold:'spear'} + walk, footfalls, landSquash"
+    },
+    {
+     "t": 4.1,
+     "end": 5.6,
+     "cue": {
+      "word": "واسمه",
+      "t": 4.1
+     },
+     "who": "salih",
+     "action": "Bows from the waist, hand on chest.",
+     "acting": "tip 0.22 for 0.5 s then back to 0.04, lid 1 during the bow, opens with gaze up at Harun",
+     "library": "tip, lid, PERSON_HANDS.chest"
+    },
+    {
+     "t": 4.98,
+     "end": 6.0,
+     "cue": {
+      "word": "صالح،",
+      "t": 4.98
+     },
+     "who": "lettering",
+     "action": "Name label SALIH under an arrow pointing at the guard.",
+     "acting": "pops with overshoot, holds 1.5 s",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 6.3,
+     "end": 7.5,
+     "cue": {
+      "word": "يأخذ",
+      "t": 6.3
+     },
+     "who": "harun",
+     "action": "Turns his open palm up and closes it into a fist: collect.",
+     "acting": "handR from palmsUp to grip over 0.5 s, brow 0.8, talk 0.7 on the stressed words",
+     "library": "PERSON_HANDS.palmsUp to grip, talk"
+    },
+    {
+     "t": 7.8,
+     "end": 9.0,
+     "cue": {
+      "word": "منصور",
+      "t": 8.28
+     },
+     "who": "fx",
+     "action": "An icon balloon above Harun shows the debtor: a small green merchant bust.",
+     "acting": "balloon tail to Harun, pops 0.25 s before the name; Salih gaze moves to the balloon",
+     "library": "iconBalloon (planned) with person {costume:'merchant'} bust at scale 0.45"
+    },
+    {
+     "t": 9.0,
+     "end": 10.4,
+     "cue": {
+      "word": "مليون",
+      "t": 9.0
+     },
+     "who": "fx",
+     "action": "A counter rolls up to 1,000,000 with a coin icon; coins tick across the top of the panel.",
+     "acting": "Salih eyes widen (brow -0.6) and his head pulls back 6 px; the spear tip wobbles (swing)",
+     "library": "S.counter + coin (coinPile single coin) + swing"
+    },
+    {
+     "t": 10.48,
+     "end": 12.3,
+     "cue": {
+      "word": "قبل",
+      "t": 10.48
+     },
+     "who": "harun",
+     "action": "Points past Salih to the door arch where the afternoon sun hangs; an hourglass appears in the top right corner, full.",
+     "acting": "gaze follows his own finger to the arch; Salih turns his head (gaze) to the sun, then back",
+     "library": "PERSON_HANDS.pointFwd, hourglass (planned, level 1.0), skyCycle u 0.30 seen through the arch"
+    },
+    {
+     "t": 11.12,
+     "end": 12.3,
+     "cue": {
+      "word": "غروب",
+      "t": 11.12
+     },
+     "who": "set",
+     "action": "Through the arch the sun slides a visible step down its arc and the sky warms.",
+     "acting": "u eases 0.30 to 0.36 in 1 s as a visual of the deadline; hourglass first grains fall",
+     "library": "skyCycle(ctx, u) + kfn"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.4,
+     "text": "CALIPH HARUN"
+    },
+    {
+     "t": 4.98,
+     "text": "SALIH"
+    },
+    {
+     "t": 11.2,
+     "text": "BEFORE SUNSET!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 12.3
+   }
+  },
+  {
+   "id": "S2",
+   "start": 12.3,
+   "end": 20.52,
+   "paragraphs": [
+    1
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "harun",
+    "salih"
+   ],
+   "summary": "The threat: if the money is late, severe punishment. Salih swallows and marches out.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Cut to Harun close (x 720, y 640, zoom 2.0), slow push to 2.3 by 16.7; at 18.1 pull back to the two-shot (zoom 1.45) for the exit."
+   },
+   "composition": "Harun face centred in the upper half of the panel; the icon balloon sits to the left of his head, never over it. At the end Salih walks out left with the hourglass still visible top right.",
+   "actions": [
+    {
+     "t": 12.3,
+     "end": 13.4,
+     "cue": {
+      "word": "وقال",
+      "t": 12.3
+     },
+     "who": "harun",
+     "action": "Leans forward on the throne and speaks low.",
+     "acting": "tip 0.10, lid 0.3 (narrowed), brow 0.9, talk 0.6; blinks suppressed for the stare",
+     "library": "tip, lid, brow, talk"
+    },
+    {
+     "t": 14.02,
+     "end": 15.2,
+     "cue": {
+      "word": "لم",
+      "t": 14.02
+     },
+     "who": "fx",
+     "action": "Icon balloon: a coin sack with a red X struck through it.",
+     "acting": "X strokes draw on in 0.2 s; Harun gaze flicks to it",
+     "library": "iconBalloon + sack (planned) + S.emphasis"
+    },
+    {
+     "t": 15.44,
+     "end": 16.7,
+     "cue": {
+      "word": "الوقت",
+      "t": 15.44
+     },
+     "who": "hourglass",
+     "action": "The hourglass tips into the close shot and pulses once; its last grain is drawn red in the balloon.",
+     "acting": "pulse scale 1.15 for 0.3 s",
+     "library": "hourglass (planned) pulse()"
+    },
+    {
+     "t": 16.72,
+     "end": 18.1,
+     "cue": {
+      "word": "فسيعاقب",
+      "t": 16.72
+     },
+     "who": "fx",
+     "action": "The balloon picture swaps to a barred prison window with a chain.",
+     "acting": "Harun raised finger comes down like a gavel (strike pattern: lift 0.3 s, whip down on the word, damped rebound)",
+     "library": "iconBalloon with bars drawn from 5 black rects + chain of 4 ovals; PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 18.14,
+     "end": 19.0,
+     "cue": {
+      "word": "عقابًا",
+      "t": 18.14
+     },
+     "who": "salih",
+     "action": "In the two-shot Salih swallows; his helmet dips.",
+     "acting": "gulp: drop pulse 5 px, lid long blink, gaze down then back up; brow -0.5",
+     "library": "pulse, lid, gaze"
+    },
+    {
+     "t": 19.04,
+     "end": 20.52,
+     "cue": {
+      "word": "شديدًا.",
+      "t": 19.04
+     },
+     "who": "salih",
+     "action": "Bows quickly, turns and marches out by the door arch.",
+     "acting": "tip 0.18 for 0.3 s, turnFlip, walk() out; spear tip trails by 2 frames; Harun gaze follows him then settles on the hourglass",
+     "library": "turnFlip, walk, footfalls"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 18.3,
+     "text": "GULP!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 20.52
+   }
+  },
+  {
+   "id": "S3",
+   "start": 20.52,
+   "end": 29.86,
+   "paragraphs": [
+    2
+   ],
+   "set": "merchantHouse",
+   "cast": [
+    "mansur",
+    "salih"
+   ],
+   "summary": "At Mansur's modest house: he has only a small bag of coins against a million. Fear freezes him.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Start medium on Mansur and his table (x 560, y 720, zoom 1.5); push to a close on his face (x 600, y 660, zoom 2.1) from 25.8 to 27.8; hold."
+   },
+   "composition": "Mansur stands right of the low table (table x 380..560, top y 800) at x 620, y 900. Salih waits in the doorway on the left (x 180), spear grounded, a tall dark shape. The counter 1,000,000 hangs top left as a target bar.",
+   "actions": [
+    {
+     "t": 20.52,
+     "end": 21.8,
+     "cue": {
+      "word": "لم",
+      "t": 20.52
+     },
+     "who": "mansur",
+     "action": "Turns out his purse over the table: a few coins fall and settle in a tiny pile.",
+     "acting": "gaze down at the coins, brow -0.7, mouth frown; coins fall with fallY and one rolls and tips",
+     "library": "person {costume:'merchant', pal green} handRW to the purse; coinPile (planned, n 6); fallY, rebound"
+    },
+    {
+     "t": 22.2,
+     "end": 23.0,
+     "cue": {
+      "word": "منصور",
+      "t": 22.2
+     },
+     "who": "lettering",
+     "action": "Name label MANSUR with an arrow.",
+     "acting": "pops, holds 1.4 s",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 23.54,
+     "end": 24.7,
+     "cue": {
+      "word": "جزء",
+      "t": 23.54
+     },
+     "who": "fx",
+     "action": "A second counter under the big one counts his pile: it stops at a tiny number and a thin bar fills only a sliver of the 1,000,000 bar.",
+     "acting": "Mansur gaze climbs from the pile up to the bar (gazePlan), head tilts back",
+     "library": "S.counter + S.box progress bar (sliver 3 %)"
+    },
+    {
+     "t": 25.04,
+     "end": 25.8,
+     "cue": {
+      "word": "المبلغ،",
+      "t": 25.04
+     },
+     "who": "salih",
+     "action": "In the doorway Salih taps the hourglass with one finger.",
+     "acting": "lid 0.3, patient not cruel; the tap makes the hourglass shake 2 frames",
+     "library": "PERSON_HANDS.pointUp, hourglass level 0.8"
+    },
+    {
+     "t": 25.82,
+     "end": 26.9,
+     "cue": {
+      "word": "فاشتد",
+      "t": 25.82
+     },
+     "who": "mansur",
+     "action": "Hands fly to his cheeks; he trembles.",
+     "acting": "tremble(t, 3), eyes wide, mouth o, wet true from 26.5, sq 0.95",
+     "library": "PERSON_HANDS.cheeks, tremble, wet"
+    },
+    {
+     "t": 26.94,
+     "end": 27.8,
+     "cue": {
+      "word": "خوفه",
+      "t": 26.94
+     },
+     "who": "mansur",
+     "action": "Knees give: he sinks onto the stool behind him.",
+     "acting": "sit blends 0 to 1 in 0.5 s with landSquash on the seat; turban tassel lags 2 frames",
+     "library": "sit, seat:'stool', landSquash"
+    },
+    {
+     "t": 27.78,
+     "end": 29.0,
+     "cue": {
+      "word": "وعجز",
+      "t": 27.78
+     },
+     "who": "mansur",
+     "action": "Holds his head; his eyes dart between pile, bar and hourglass and find nothing.",
+     "acting": "saccades gazePlan(t, plan, 0.07) pile, bar, hourglass, pile; brow -0.8",
+     "library": "PERSON_HANDS.headHold, gazePlan saccades"
+    },
+    {
+     "t": 29.04,
+     "end": 29.86,
+     "cue": {
+      "word": "التفكير.",
+      "t": 29.04
+     },
+     "who": "fx",
+     "action": "A small empty thought cloud pops above him with only a \"?\" that fades out.",
+     "acting": "cloud trail pops first; lid droops to 0.6, head drops 8 px",
+     "library": "thoughtCloud {scale 0.3} with S.emphasis ?"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 22.2,
+     "text": "MANSUR"
+    },
+    {
+     "t": 24.0,
+     "text": "NOT ENOUGH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 29.86
+   }
+  },
+  {
+   "id": "S4",
+   "start": 29.86,
+   "end": 40.86,
+   "paragraphs": [
+    2
+   ],
+   "set": "yahyaHall",
+   "cast": [
+    "mansur",
+    "salih",
+    "yahya",
+    "oldWoman",
+    "villager"
+   ],
+   "summary": "Salih pities Mansur and takes him to the house of Yahya the Barmecide, who is seen giving to the needy.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "whip",
+    "notes": "First 3.5 s stay in the merchant house as a tight two-shot (drawn with the merchantHouse set: x 520, y 680, zoom 1.9). On 33.42 whip right; the whip hides the set change to yahyaHall (camera key pair 0.01 s apart at the blur midpoint). Land wide on the hall (x 520, y 660, zoom 1.1), ease to zoom 1.35 on Yahya by 37.8."
+   },
+   "composition": "Hall: Yahya sits on a cushioned dais at x 700, y 860 facing left; the old woman and the villager stand before him at x 470 and x 380. Mansur and Salih appear in the door arch (x 40..250) at 39.8, small, looking in.",
+   "actions": [
+    {
+     "t": 29.86,
+     "end": 31.1,
+     "cue": {
+      "word": "رق",
+      "t": 29.86
+     },
+     "who": "salih",
+     "action": "His stern face softens; he leans the spear on the door frame.",
+     "acting": "brow from 0.4 to -0.4 over 0.6 s, lid slow blink, mouth closed to small frown of sympathy",
+     "library": "brow, lid, settleTo"
+    },
+    {
+     "t": 31.18,
+     "end": 32.0,
+     "cue": {
+      "word": "صالح،",
+      "t": 31.18
+     },
+     "who": "salih",
+     "action": "Crosses to Mansur and puts a hand on his shoulder.",
+     "acting": "walk() 3 steps, handRW on Mansur shoulder; Mansur looks up, wet eyes",
+     "library": "walk, handRW"
+    },
+    {
+     "t": 32.06,
+     "end": 33.4,
+     "cue": {
+      "word": "واصطحبه",
+      "t": 32.06
+     },
+     "who": "salih",
+     "action": "Helps him up and points out of the door: come.",
+     "acting": "Mansur sit 1 to 0 (anticipate dip first), Salih pointFwd to the left door, gaze to the door then back to Mansur; they start to walk",
+     "library": "sit blend, PERSON_HANDS.pointFwd, walk"
+    },
+    {
+     "t": 33.42,
+     "end": 34.1,
+     "cue": {
+      "word": "إلى",
+      "t": 33.42
+     },
+     "who": "camera",
+     "action": "Whip pan to Yahya's hall.",
+     "acting": "4 frame blur streaks, set swap hidden at the midpoint",
+     "library": "S.transition whip or CAM key pair"
+    },
+    {
+     "t": 34.18,
+     "end": 35.6,
+     "cue": {
+      "word": "يحيى",
+      "t": 34.18
+     },
+     "who": "yahya",
+     "action": "Revealed seated on his cushion, white bearded, smiling; name label YAHYA THE BARMECIDE.",
+     "acting": "mouth smile, lid 0.15 (soft eyes), breathe(); gaze on the old woman",
+     "library": "person {costume:'vizier', age 0.8, sit:1, seat:'bench'} + breathe; S.label"
+    },
+    {
+     "t": 35.62,
+     "end": 36.8,
+     "cue": {
+      "word": "البرمكي،",
+      "t": 35.62
+     },
+     "who": "yahya",
+     "action": "Places a full purse in the old woman's cupped hands.",
+     "acting": "handRW reaches to her hands (anticipation: draws back 0.15 s first); she bows, sq 0.96",
+     "library": "handRW; person {costume:'oldWoman', handL/R reachBoth}"
+    },
+    {
+     "t": 37.12,
+     "end": 37.8,
+     "cue": {
+      "word": "اشتهر",
+      "t": 37.12
+     },
+     "who": "oldWoman",
+     "action": "Hugs the purse and turns to leave, smiling.",
+     "acting": "mouth smile, wet happy eyes, small hop of joy",
+     "library": "hop, turnFlip"
+    },
+    {
+     "t": 37.8,
+     "end": 38.6,
+     "cue": {
+      "word": "بكرمه",
+      "t": 37.8
+     },
+     "who": "fx",
+     "action": "A small heart pops over Yahya and a soft gold glow rings him.",
+     "acting": "heart scale overshoot, fades by 39.5",
+     "library": "heart (Library) + goldGlow (planned) strength 0.4"
+    },
+    {
+     "t": 38.68,
+     "end": 39.8,
+     "cue": {
+      "word": "ومساعدة",
+      "t": 38.68
+     },
+     "who": "yahya",
+     "action": "Hands a loaf and a coin to the villager, who bows.",
+     "acting": "gaze moves to the villager; villager tip 0.2 bow, staggered 4 frames after the gift",
+     "library": "person {costume:'villager'}; stagger"
+    },
+    {
+     "t": 39.8,
+     "end": 40.86,
+     "cue": {
+      "word": "المحتاجين.",
+      "t": 39.8
+     },
+     "who": "mansur",
+     "action": "Mansur and Salih arrive in the door arch; Mansur peers in, wringing his hands.",
+     "acting": "Mansur half hidden behind Salih, clasp hands, brow -0.6; Yahya gaze lifts to the door",
+     "library": "PERSON_HANDS.clasp, lookAt"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 34.4,
+     "text": "YAHYA THE BARMECIDE"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 40.86
+   }
+  },
+  {
+   "id": "S5",
+   "start": 40.86,
+   "end": 49.3,
+   "paragraphs": [
+    3
+   ],
+   "set": "yahyaHall",
+   "cast": [
+    "yahya",
+    "mansur",
+    "salih",
+    "treasurer"
+   ],
+   "summary": "Yahya hears the story and at once tells his treasurer to bring whatever money there is.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "twoShot(yahya, mansur, {margin 120}) about x 560, y 690, zoom 1.5; one small reframe right at 45.7 to include the treasurer entering from the right edge."
+   },
+   "composition": "Mansur kneels at x 430, y 900 facing right; Yahya on the dais at x 700; Salih stands behind Mansur at x 300. The treasurer enters from the right (x 920). Icon balloon sits above and between the two heads.",
+   "actions": [
+    {
+     "t": 40.86,
+     "end": 42.7,
+     "cue": {
+      "word": "سمع",
+      "t": 40.86
+     },
+     "who": "mansur",
+     "action": "Kneels before Yahya and pours out the story with both hands.",
+     "acting": "kneel 0 to 1 in 0.5 s, palmsUp then reachBoth, talk 0.8, wet eyes, tremble 1.5",
+     "library": "kneel, PERSON_HANDS.palmsUp, reachBoth, talk, tremble"
+    },
+    {
+     "t": 41.6,
+     "end": 43.2,
+     "cue": {
+      "word": "يحيى",
+      "t": 42.74
+     },
+     "who": "fx",
+     "action": "Above Mansur an icon balloon replays the order in three small pictures: crown, 1,000,000, sinking sun.",
+     "acting": "the three frames pop one after another 0.4 s apart",
+     "library": "iconBalloon strip mode (planned)"
+    },
+    {
+     "t": 42.74,
+     "end": 43.9,
+     "cue": {
+      "word": "يحيى",
+      "t": 42.74
+     },
+     "who": "yahya",
+     "action": "Listens leaning forward, hand to his beard; nods once.",
+     "acting": "tip 0.08, gaze lookAt(mansur head), brow -0.3 (concern), nod on the last word",
+     "library": "PERSON_HANDS.chin, lookAt"
+    },
+    {
+     "t": 43.28,
+     "end": 44.5,
+     "cue": {
+      "word": "القصة،",
+      "t": 43.28
+     },
+     "who": "yahya",
+     "action": "Sits back; the decision is instant: his brows lift and he smiles. He raises one calming palm to Mansur.",
+     "acting": "settleTo upright, mouth smile, lid slow blink in the pause at 44.0",
+     "library": "settleTo, PERSON_HANDS.wave held as a calm palm"
+    },
+    {
+     "t": 44.58,
+     "end": 45.6,
+     "cue": {
+      "word": "وطلب",
+      "t": 44.58
+     },
+     "who": "yahya",
+     "action": "Claps twice toward the right side of the hall.",
+     "acting": "two claps 0.25 s apart with small spark lines; gaze to the right edge",
+     "library": "handL/handR keys, S.emphasis"
+    },
+    {
+     "t": 45.7,
+     "end": 46.9,
+     "cue": {
+      "word": "خازنه",
+      "t": 45.7
+     },
+     "who": "treasurer",
+     "action": "Hurries in from the right with a ring of keys, bows; label TREASURER.",
+     "acting": "walk() quick short steps, keys swing (swing), tip 0.15 bow",
+     "library": "person {costume:'servant', age 0.5} + walk, swing; S.label"
+    },
+    {
+     "t": 46.98,
+     "end": 48.4,
+     "cue": {
+      "word": "يحضر",
+      "t": 46.98
+     },
+     "who": "yahya",
+     "action": "Sweeps his arm wide: bring everything.",
+     "acting": "aR sweeps from chest to full armsOut, talk 0.7; treasurer nods and turns",
+     "library": "PERSON_HANDS.armsOut, talk"
+    },
+    {
+     "t": 48.44,
+     "end": 49.3,
+     "cue": {
+      "word": "من",
+      "t": 48.44
+     },
+     "who": "treasurer",
+     "action": "Runs off right; Mansur lifts his head with a first flicker of hope.",
+     "acting": "treasurer walk() fast with dust; Mansur brow from -0.8 to -0.3, gaze follows the treasurer",
+     "library": "walk, footfalls, dustBurst"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 45.9,
+     "text": "TREASURER"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 44.25,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 49.3
+   }
+  },
+  {
+   "id": "S6",
+   "start": 49.3,
+   "end": 60.8,
+   "paragraphs": [
+    3
+   ],
+   "set": "yahyaHall",
+   "cast": [
+    "yahya",
+    "mansur",
+    "salih",
+    "treasurer",
+    "runnerA",
+    "runnerB",
+    "fadl",
+    "jaafar"
+   ],
+   "summary": "The strongbox holds only five thousand dirhams. Yahya does not hesitate: he sends runners to his sons al-Fadl and Jaafar.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on the strongbox being set down at x 520 (x 540, y 740, zoom 1.6); insert push into the open box at 50.6 (zoom 2.4); back out to a wide (zoom 1.15) at 54.2 for the runners."
+   },
+   "composition": "Strongbox on the floor between Mansur and the dais (x 520, y 900, 200 wide, 130 high). Counters top left: target 1,000,000 above, found amount below. Runners leave by the left door arch and by the right edge; the two son insets sit in the top corners (left al-Fadl, right Jaafar), each 190 px across.",
+   "actions": [
+    {
+     "t": 49.3,
+     "end": 50.1,
+     "cue": {
+      "word": "لم",
+      "t": 49.3
+     },
+     "who": "treasurer",
+     "action": "Drags the heavy looking strongbox in and sets it down with a thump.",
+     "acting": "tip -0.15 pulling backwards, steps from walk(); the box lands with impactSquash 4 %",
+     "library": "chest (treasureHoard, planned) + walk, impactSquash"
+    },
+    {
+     "t": 50.14,
+     "end": 51.5,
+     "cue": {
+      "word": "يجد",
+      "t": 50.14
+     },
+     "who": "treasurer",
+     "action": "Unlocks and lifts the lid; everyone leans in.",
+     "acting": "lid opens 0 to 1 in 0.4 s with overshoot; Mansur, Salih and Yahya all tip 0.08 toward the box, staggered 3 frames",
+     "library": "chest {open}, stagger"
+    },
+    {
+     "t": 50.76,
+     "end": 52.2,
+     "cue": {
+      "word": "الخزانة",
+      "t": 50.76
+     },
+     "who": "chest",
+     "action": "Inside: a lot of empty dark space and one small coin pile in a corner. A moth flutters out.",
+     "acting": "the moth is a 2 triangle shape on a seeded S path; treasurer gaze to the camera for 0.4 s, embarrassed",
+     "library": "coinPile (n 10) in the chest, K.rng path"
+    },
+    {
+     "t": 52.26,
+     "end": 53.6,
+     "cue": {
+      "word": "خمسة",
+      "t": 52.26
+     },
+     "who": "fx",
+     "action": "The lower counter rolls to 5,000 and stops; its bar is a sliver against 1,000,000.",
+     "acting": "Mansur shoulders fall (sq 0.94), head drops, lid 0.6",
+     "library": "S.counter + S.box bar"
+    },
+    {
+     "t": 53.62,
+     "end": 54.2,
+     "cue": {
+      "word": "درهم،",
+      "t": 53.62
+     },
+     "who": "salih",
+     "action": "Glances at the hourglass, then at Yahya.",
+     "acting": "gazePlan hourglass then yahya; brow -0.4",
+     "library": "gazePlan, hourglass level 0.55"
+    },
+    {
+     "t": 54.2,
+     "end": 55.2,
+     "cue": {
+      "word": "فبعث",
+      "t": 54.2
+     },
+     "who": "yahya",
+     "action": "Unshaken, already standing: he snaps his fingers and two runners step up.",
+     "acting": "sit 1 to 0 fast with anticipate; brow 0.3 determined, mouth set; no pause between seeing and acting",
+     "library": "sit blend, anticipate; persons {costume:'servant', pal red} and {pal blue}"
+    },
+    {
+     "t": 55.28,
+     "end": 56.3,
+     "cue": {
+      "word": "يطلب",
+      "t": 55.28
+     },
+     "who": "yahya",
+     "action": "Points left and right; hands each runner a small sealed note.",
+     "acting": "pointFwd left then right, 0.4 s apart; runners bow in turn (stagger)",
+     "library": "PERSON_HANDS.pointFwd, scroll (planned) small"
+    },
+    {
+     "t": 56.6,
+     "end": 57.3,
+     "cue": {
+      "word": "ابنيه",
+      "t": 56.6
+     },
+     "who": "runnerA",
+     "action": "Both runners sprint out, one by the left arch and one off the right edge.",
+     "acting": "anticipate crouch 0.15 s, walk() at speed with dust and speed lines, caps lag",
+     "library": "walk, footfalls, dustBurst, speed lines"
+    },
+    {
+     "t": 57.3,
+     "end": 58.2,
+     "cue": {
+      "word": "الفضل",
+      "t": 57.3
+     },
+     "who": "fadl",
+     "action": "Inset circle top left: al-Fadl, a young prince, reads the note and nods at once.",
+     "acting": "iris opens 0.25 s; gaze down at the note then up, firm nod, mouth set",
+     "library": "inset circle (planned) with person {costume:'prince', pal green}; label AL-FADL"
+    },
+    {
+     "t": 58.22,
+     "end": 59.0,
+     "cue": {
+      "word": "وجعفر",
+      "t": 58.22
+     },
+     "who": "jaafar",
+     "action": "Inset circle top right: Jaafar reads and points to his own chest of coins.",
+     "acting": "iris opens; nod is 4 frames quicker than his brother, pointDown at a chest edge",
+     "library": "inset circle with person {costume:'prince', pal red}; label JAAFAR"
+    },
+    {
+     "t": 59.08,
+     "end": 60.38,
+     "cue": {
+      "word": "دون",
+      "t": 59.08
+     },
+     "who": "hourglass",
+     "action": "The hourglass runs visibly; through the door arch the sun is lower and more orange.",
+     "acting": "level 0.55 to 0.45, skyCycle u 0.36 to 0.40; Mansur watches it, hands clasped",
+     "library": "hourglass, skyCycle"
+    },
+    {
+     "t": 60.4,
+     "end": 60.8,
+     "who": "camera",
+     "action": "LATER... card wipes across the panel in the pause.",
+     "acting": "card covers the panel at its midpoint 60.8; insets close under it",
+     "library": "S.transition {caption:'LATER...'}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 52.4,
+     "text": "ONLY 5,000!"
+    },
+    {
+     "t": 57.4,
+     "text": "AL-FADL"
+    },
+    {
+     "t": 58.3,
+     "text": "JAAFAR"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 60.75,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 60.8,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S7",
+   "start": 60.8,
+   "end": 71.96,
+   "paragraphs": [
+    4
+   ],
+   "set": "yahyaHall",
+   "cast": [
+    "yahya",
+    "mansur",
+    "salih",
+    "treasurer",
+    "runnerA",
+    "runnerB"
+   ],
+   "summary": "Each son sends a large sum. The counter passes one million: enough to pay the debt, and more.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Wide on the hall (x 500, y 680, zoom 1.15). Small pan left to meet runner A at the arch (62.3), right for runner B (63.6), then centre and ease in to zoom 1.4 on the growing heap by 68.8."
+   },
+   "composition": "Three chests in a row on the floor: the house strongbox at x 520, the al-Fadl chest lands at x 360, the Jaafar chest at x 680. Yahya stands on the dais edge at x 800; Mansur at x 200 near the arch with Salih. The two counters merge into one running total top centre.",
+   "actions": [
+    {
+     "t": 61.2,
+     "end": 62.2,
+     "cue": {
+      "word": "أرسل",
+      "t": 61.2
+     },
+     "who": "camera",
+     "action": "The LATER card clears: same hall, the door sky a shade warmer.",
+     "acting": "skyCycle u 0.42; hourglass at 0.32",
+     "library": "S.transition clearing, skyCycle"
+    },
+    {
+     "t": 62.26,
+     "end": 63.5,
+     "cue": {
+      "word": "كل",
+      "t": 62.26
+     },
+     "who": "runnerA",
+     "action": "Runner A staggers in through the left arch hugging a big chest and drops it at x 360.",
+     "acting": "walk() heavy: short steps, tip -0.12 leaning back under the load, sq 0.95; the chest lands with impactSquash and dust",
+     "library": "chest, walk, impactSquash, dustBurst"
+    },
+    {
+     "t": 63.56,
+     "end": 64.2,
+     "cue": {
+      "word": "الابنين",
+      "t": 63.56
+     },
+     "who": "runnerB",
+     "action": "Runner B comes in from the right with a second chest and sets it at x 680, a beat after the first.",
+     "acting": "same load walk, mirrored; wipes his brow after",
+     "library": "chest, walk, stagger"
+    },
+    {
+     "t": 64.26,
+     "end": 65.1,
+     "cue": {
+      "word": "مبلغًا",
+      "t": 64.26
+     },
+     "who": "chest",
+     "action": "Both lids spring open: coins heaped above the rims, a gold glow.",
+     "acting": "lids open 4 frames apart with overshoot; glints star on a seeded stagger",
+     "library": "chest {open, fill 1}, coinPile, goldGlow 0.7"
+    },
+    {
+     "t": 65.18,
+     "end": 65.9,
+     "cue": {
+      "word": "كبيرًا،",
+      "t": 65.18
+     },
+     "who": "mansur",
+     "action": "Jaw drops; he takes one step forward, then looks at Salih to check it is real.",
+     "acting": "eyes wide, mouth o, gazePlan chests then salih then chests",
+     "library": "gazePlan, eyes wide"
+    },
+    {
+     "t": 65.96,
+     "end": 67.3,
+     "cue": {
+      "word": "فصار",
+      "t": 65.96
+     },
+     "who": "fx",
+     "action": "The running total rolls fast: 5,000 ... 500,000 ... its bar sweeps toward the 1,000,000 mark.",
+     "acting": "counter digits blur; coins arc from each chest to the counter as small ticks",
+     "library": "S.counter keyed with kfn, S.box bar"
+    },
+    {
+     "t": 67.84,
+     "end": 68.7,
+     "cue": {
+      "word": "يحيى",
+      "t": 67.84
+     },
+     "who": "yahya",
+     "action": "Watches the total calmly, hands folded, a small nod to each runner.",
+     "acting": "lid 0.2, mouth smile, two nods; breathe()",
+     "library": "PERSON_HANDS.folded, breathe"
+    },
+    {
+     "t": 68.78,
+     "end": 69.9,
+     "cue": {
+      "word": "يكفي",
+      "t": 68.78
+     },
+     "who": "fx",
+     "action": "The total hits 1,000,000: the bar fills, flashes, and a tick mark stamps on it.",
+     "acting": "2 frame white flash inside the panel, bar scale pulse 1.1",
+     "library": "S.counter, S.emphasis"
+    },
+    {
+     "t": 70.02,
+     "end": 70.6,
+     "cue": {
+      "word": "الدين",
+      "t": 70.02
+     },
+     "who": "mansur",
+     "action": "Hops for joy with both arms up.",
+     "acting": "anticipate crouch, hop() 40 px, landSquash; turban bobs late",
+     "library": "anticipate, hop, landSquash; aL/aR raised [2.45, 2.85]"
+    },
+    {
+     "t": 70.62,
+     "end": 71.3,
+     "cue": {
+      "word": "وزيادة.",
+      "t": 70.62
+     },
+     "who": "fx",
+     "action": "The counter keeps climbing past the mark and the bar spills over its end; the extra coins pile beside it.",
+     "acting": "overflow drawn as a small coinPile growing at the bar end; Salih raises his brows, impressed",
+     "library": "S.counter, coinPile"
+    },
+    {
+     "t": 71.4,
+     "end": 71.96,
+     "who": "yahya",
+     "action": "In the pause Yahya lifts one finger: wait, one more thing. He reaches inside his robe.",
+     "acting": "gaze to his own chest pocket, sly small smile, anticipation for the jewel",
+     "library": "PERSON_HANDS.pointUp then chest"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 69.0,
+     "text": "ENOUGH!"
+    },
+    {
+     "t": 70.7,
+     "text": "AND MORE!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 71.65,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 71.96
+   }
+  },
+  {
+   "id": "S8",
+   "start": 71.96,
+   "end": 82.64,
+   "paragraphs": [
+    4
+   ],
+   "set": "yahyaHall",
+   "cast": [
+    "yahya",
+    "mansur",
+    "salih",
+    "harun"
+   ],
+   "summary": "Yahya adds a precious jewel that the caliph's court knows well, and hands everything to Mansur.",
+   "camera": {
+    "shot": "insert",
+    "move": "push-in",
+    "notes": "Cut to an insert of Yahya's hands and the jewel (x 780, y 700, zoom 2.6) from 73.0; hold on the jewel with the memory inset until 79.5; pull back to a two-shot (zoom 1.45) for the handing over."
+   },
+   "composition": "The jewel is the single brightest thing in the film: a big red cut gem (48 px across at s 1) in a small gold casket. Memory inset top left shows it once on the caliph. In the two-shot Yahya is right (x 720), Mansur left (x 480), the sack and casket pass through the centre of the panel.",
+   "actions": [
+    {
+     "t": 71.96,
+     "end": 73.0,
+     "cue": {
+      "word": "وأضاف",
+      "t": 71.96
+     },
+     "who": "yahya",
+     "action": "Draws a small gold casket from his robe and holds it over the heap.",
+     "acting": "handRW lifts the casket to chest height; gaze on it, lid 0.2",
+     "library": "jewelBox (jewels module, planned), handRW"
+    },
+    {
+     "t": 73.06,
+     "end": 73.6,
+     "cue": {
+      "word": "المال",
+      "t": 73.06
+     },
+     "who": "camera",
+     "action": "Cut to the insert on the casket in his hands.",
+     "acting": "cut on the word",
+     "library": "CAM key"
+    },
+    {
+     "t": 73.64,
+     "end": 74.4,
+     "cue": {
+      "word": "جوهرة",
+      "t": 73.64
+     },
+     "who": "jewelBox",
+     "action": "The lid clicks open: a big red jewel, rays and star glints.",
+     "acting": "lid overshoot, goldGlow strength 0 to 1 in 0.3 s, red light tints Yahya's hands",
+     "library": "jewels {kind red, r 24}, goldGlow, S.emphasis"
+    },
+    {
+     "t": 74.5,
+     "end": 75.5,
+     "cue": {
+      "word": "نفيسة",
+      "t": 74.5
+     },
+     "who": "jewelBox",
+     "action": "The jewel turns a little: a glint travels across its facets.",
+     "acting": "facet highlight slides left to right in 0.6 s; Mansur and Salih faces lit at the frame edges, eyes wide",
+     "library": "jewels glint phase"
+    },
+    {
+     "t": 76.04,
+     "end": 77.1,
+     "cue": {
+      "word": "لها",
+      "t": 76.04
+     },
+     "who": "fx",
+     "action": "A round memory inset opens: the same jewel shining on Caliph Harun's turban at court.",
+     "acting": "iris opens 0.3 s, dream wash tint; an arrow links the jewel in the casket to the jewel in the inset",
+     "library": "inset circle (planned) with person {costume:'caliph'} + jewels; S.arrow"
+    },
+    {
+     "t": 77.12,
+     "end": 78.2,
+     "cue": {
+      "word": "معروف",
+      "t": 77.12
+     },
+     "who": "harun",
+     "action": "In the inset the caliph touches the jewel on his turban and smiles.",
+     "acting": "handR to the turban, mouth smile, one blink",
+     "library": "handR key"
+    },
+    {
+     "t": 78.3,
+     "end": 79.5,
+     "cue": {
+      "word": "مجلس",
+      "t": 78.3
+     },
+     "who": "fx",
+     "action": "Label HE WILL KNOW IT under the inset; the inset then irises shut.",
+     "acting": "label pops, holds 1.2 s; inset closes at 79.5",
+     "library": "S.label"
+    },
+    {
+     "t": 79.76,
+     "end": 80.7,
+     "cue": {
+      "word": "وسلم",
+      "t": 79.76
+     },
+     "who": "yahya",
+     "action": "Two-shot: Yahya sets the casket on top of a bulging coin sack and pushes both toward Mansur.",
+     "acting": "anticipate small draw back, then both hands forward (reachBoth); smile, gaze on Mansur eyes",
+     "library": "sack (planned, fill 1), PERSON_HANDS.reachBoth, anticipate"
+    },
+    {
+     "t": 80.72,
+     "end": 81.4,
+     "cue": {
+      "word": "الجميع",
+      "t": 80.72
+     },
+     "who": "yahya",
+     "action": "Sweeps an open hand over the chests: all of it.",
+     "acting": "armsOut one sided, talk 0.6",
+     "library": "PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 81.46,
+     "end": 82.64,
+     "cue": {
+      "word": "إلى",
+      "t": 81.46
+     },
+     "who": "mansur",
+     "action": "Takes the sack in both arms; its weight pulls him down a little, then he hugs it.",
+     "acting": "sq 0.93 on taking the weight then settleTo; wet eyes, mouth trembling smile",
+     "library": "handLW/handRW on the sack, settleTo, wet"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 73.8,
+     "text": "A JEWEL!"
+    },
+    {
+     "t": 78.4,
+     "text": "HE WILL KNOW IT"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 82.64
+   }
+  },
+  {
+   "id": "S9",
+   "start": 82.64,
+   "end": 91.62,
+   "paragraphs": [
+    5
+   ],
+   "set": "yahyaHall",
+   "cast": [
+    "yahya",
+    "mansur",
+    "salih"
+   ],
+   "summary": "Mansur thanks Yahya and leaves with Salih, carrying the money and the jewel.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "track",
+    "notes": "Two-shot (zoom 1.45) for the thanks; from 86.2 widen to zoom 1.15 and track left with the pair to the door arch; end on Yahya small on the right watching them go."
+   },
+   "composition": "Mansur at x 480 facing right, Yahya x 720. Exit path: x 480 to the arch at x 150. Salih shoulders one chest (the rest is implied by the sack with a big coin mark). Through the arch the sky is now orange.",
+   "actions": [
+    {
+     "t": 82.64,
+     "end": 84.4,
+     "cue": {
+      "word": "شكر",
+      "t": 82.64
+     },
+     "who": "mansur",
+     "action": "Sets the sack down and bows very low, hand on heart.",
+     "acting": "tip 0.3 held 0.8 s, lid 1, then up with wet eyes and a wide smile",
+     "library": "tip, PERSON_HANDS.chest, wet"
+    },
+    {
+     "t": 84.5,
+     "end": 85.2,
+     "cue": {
+      "word": "منصور",
+      "t": 84.5
+     },
+     "who": "mansur",
+     "action": "Seizes Yahya's hand in both of his.",
+     "acting": "handLW/handRW to Yahya hand, small shake 3 cycles; talk 0.8",
+     "library": "handLW, handRW, talk"
+    },
+    {
+     "t": 85.22,
+     "end": 86.2,
+     "cue": {
+      "word": "يحيى،",
+      "t": 85.22
+     },
+     "who": "yahya",
+     "action": "Gently lifts him by the elbow and waves the thanks away.",
+     "acting": "mouth smile, head shake small (gaze x swing), PERSON_HANDS.wave low",
+     "library": "PERSON_HANDS.wave"
+    },
+    {
+     "t": 86.24,
+     "end": 87.1,
+     "cue": {
+      "word": "ثم",
+      "t": 86.24
+     },
+     "who": "salih",
+     "action": "Points to the hourglass and the orange sky: time to go.",
+     "acting": "gaze to the arch, pointFwd; brow 0.3 (urgent, kind)",
+     "library": "PERSON_HANDS.pointFwd, hourglass 0.2"
+    },
+    {
+     "t": 87.16,
+     "end": 87.9,
+     "cue": {
+      "word": "خرج",
+      "t": 87.16
+     },
+     "who": "mansur",
+     "action": "Hoists the sack with the casket on top and turns to the door.",
+     "acting": "anticipate crouch, lift with stretch sq 1.05, turnFlip",
+     "library": "anticipate, turnFlip"
+    },
+    {
+     "t": 87.94,
+     "end": 88.7,
+     "cue": {
+      "word": "صالح",
+      "t": 87.94
+     },
+     "who": "salih",
+     "action": "Shoulders a chest and falls in beside him; they walk out together.",
+     "acting": "both walk() left, out of step with each other (phase offset 0.5); spear used as a staff",
+     "library": "walk, footfalls"
+    },
+    {
+     "t": 88.7,
+     "end": 89.5,
+     "cue": {
+      "word": "يحمل",
+      "t": 88.7
+     },
+     "who": "mansur",
+     "action": "Staggers a step under the weight and recovers.",
+     "acting": "tip wobble with swing(), sack squashes 5 % on each footfall (kick)",
+     "library": "swing, kick"
+    },
+    {
+     "t": 89.56,
+     "end": 90.1,
+     "cue": {
+      "word": "المال",
+      "t": 89.56
+     },
+     "who": "sack",
+     "action": "Coin mark on the sack glints.",
+     "acting": "one star glint",
+     "library": "goldGlow 0.3"
+    },
+    {
+     "t": 90.1,
+     "end": 91.62,
+     "cue": {
+      "word": "والجوهرة.",
+      "t": 90.1
+     },
+     "who": "jewelBox",
+     "action": "The casket on top gives one red glint as they pass under the arch and out; Yahya watches from the dais.",
+     "acting": "red glint; Yahya gaze follows them (lookAt), his smile fades to a thoughtful look",
+     "library": "jewels glint, lookAt"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 83.0,
+     "text": "THANK YOU!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 91.62
+   }
+  },
+  {
+   "id": "S10",
+   "start": 91.62,
+   "end": 104.0,
+   "paragraphs": [
+    5
+   ],
+   "set": "yahyaHall",
+   "cast": [
+    "yahya",
+    "harun",
+    "mansur"
+   ],
+   "summary": "Yahya's hope, shown as a thought cloud: the caliph will recognise the jewel, understand the help given, and soften toward the debtor.",
+   "camera": {
+    "shot": "medium",
+    "move": "drift",
+    "notes": "Medium on Yahya alone, low in the frame (x 640, y 560, zoom 1.3) so the cloud has the upper two thirds of the panel; a very slow drift up 30 units over the scene."
+   },
+   "composition": "Yahya stands at x 700, y 900, chin in hand, looking up left. Thought cloud 640 x 420 centred at (470, 360), trail to his head. Inside (scale 0.5): Harun on the left, the jewel between, a small Mansur on the right. Figures about 120 px tall on screen.",
+   "actions": [
+    {
+     "t": 91.62,
+     "end": 92.6,
+     "cue": {
+      "word": "وكان",
+      "t": 91.62
+     },
+     "who": "yahya",
+     "action": "Alone now: strokes his beard and looks up.",
+     "acting": "PERSON_HANDS.chin, gaze [-0.5, -0.7], lid 0.25, breathe()",
+     "library": "PERSON_HANDS.chin, breathe"
+    },
+    {
+     "t": 92.66,
+     "end": 93.4,
+     "cue": {
+      "word": "يأمل",
+      "t": 92.66
+     },
+     "who": "fx",
+     "action": "The thought cloud pops: trail bubbles first, then the cloud.",
+     "acting": "p 0 to 1 in 0.5 s",
+     "library": "thoughtCloud(ctx, 470, 360, 640, 420, t, {p, scale 0.5, inside})"
+    },
+    {
+     "t": 93.52,
+     "end": 94.1,
+     "cue": {
+      "word": "يتعرف",
+      "t": 93.52
+     },
+     "who": "harun",
+     "action": "In the cloud: Harun sits, the open casket is held up before him.",
+     "acting": "cloud Harun gaze snaps to the jewel",
+     "library": "person {costume:'caliph', sit 1} inside the cloud + jewelBox"
+    },
+    {
+     "t": 94.2,
+     "end": 95.4,
+     "cue": {
+      "word": "الخليفة",
+      "t": 94.2
+     },
+     "who": "harun",
+     "action": "Cloud Harun leans in; a \"!\" pops over his head.",
+     "acting": "tip 0.1, brow -0.6 (surprise), eyes wide",
+     "library": "S.emphasis !, tip"
+    },
+    {
+     "t": 95.44,
+     "end": 96.5,
+     "cue": {
+      "word": "الجوهرة،",
+      "t": 95.44
+     },
+     "who": "jewelBox",
+     "action": "The jewel in the cloud pulses with rays; a dotted line links it to a tiny Yahya portrait.",
+     "acting": "goldGlow pulse; dotted line draws on in 0.4 s",
+     "library": "goldGlow, S.arrow dotted"
+    },
+    {
+     "t": 96.56,
+     "end": 97.9,
+     "cue": {
+      "word": "فيدرك",
+      "t": 96.56
+     },
+     "who": "harun",
+     "action": "Cloud Harun touches his chin and nods slowly: he understands.",
+     "acting": "PERSON_HANDS.chin, lid 0.3, two slow nods",
+     "library": "PERSON_HANDS.chin"
+    },
+    {
+     "t": 97.98,
+     "end": 99.2,
+     "cue": {
+      "word": "المساعدة",
+      "t": 97.98
+     },
+     "who": "fx",
+     "action": "Small icons of the three chests stack up beside the tiny Yahya portrait.",
+     "acting": "three pops 0.25 s apart",
+     "library": "chest at scale 0.25"
+    },
+    {
+     "t": 99.26,
+     "end": 100.6,
+     "cue": {
+      "word": "قدمها،",
+      "t": 99.26
+     },
+     "who": "yahya",
+     "action": "The real Yahya closes his eyes a moment, hand on heart.",
+     "acting": "lid 1 for 0.6 s, PERSON_HANDS.chest, small smile",
+     "library": "lid, PERSON_HANDS.chest"
+    },
+    {
+     "t": 100.72,
+     "end": 101.4,
+     "cue": {
+      "word": "فيلين",
+      "t": 100.72
+     },
+     "who": "harun",
+     "action": "Cloud Harun's stern brow melts and he smiles.",
+     "acting": "brow 0.8 to -0.2 over 0.5 s, mouth frown to smile",
+     "library": "brow, mouth"
+    },
+    {
+     "t": 101.48,
+     "end": 102.1,
+     "cue": {
+      "word": "قلبه",
+      "t": 101.48
+     },
+     "who": "fx",
+     "action": "A red heart pops on cloud Harun's chest.",
+     "acting": "scale overshoot 1.2 then 1; two beats",
+     "library": "heart (Library)"
+    },
+    {
+     "t": 102.18,
+     "end": 103.3,
+     "cue": {
+      "word": "تجاه",
+      "t": 102.18
+     },
+     "who": "mansur",
+     "action": "Cloud Mansur, kneeling small on the right, is waved up by Harun and stands, free.",
+     "acting": "kneel 1 to 0, arms up",
+     "library": "kneel, aL/aR"
+    },
+    {
+     "t": 103.36,
+     "end": 104.0,
+     "cue": {
+      "word": "المديون.",
+      "t": 103.36
+     },
+     "who": "fx",
+     "action": "The cloud fades; Yahya opens his eyes to the empty doorway.",
+     "acting": "p 1 to 0 in 0.4 s; gaze to the arch",
+     "library": "thoughtCloud p"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 104.0
+   }
+  },
+  {
+   "id": "S11",
+   "start": 104.0,
+   "end": 117.66,
+   "paragraphs": [
+    6
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "mansur",
+    "salih"
+   ],
+   "summary": "On the road at dusk, fear gets the better of Mansur: he recites verses that suggest he went to his benefactor only because he was forced to.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Wide on the dusk street (zoom 1.15), tracking right with the walkers (camera x follows their midpoint from 380 to 620); push to a medium on Mansur (zoom 1.7) at 110.0 for the verses; reframe with twoShot to include Salih's face at 115.1."
+   },
+   "composition": "Street at skyCycle u 0.45 (dusk), long shadows. The pair walk left to right: Mansur ahead with the sack and casket, Salih a step behind with the chest. Verse balloon rises up left of Mansur's head, clear of both faces. Hourglass top right, nearly empty.",
+   "actions": [
+    {
+     "t": 104.0,
+     "end": 105.8,
+     "cue": {
+      "word": "لكن",
+      "t": 104.0
+     },
+     "who": "mansur",
+     "action": "Walking in the street, no longer smiling: he keeps glancing back over his shoulder.",
+     "acting": "walk(); gaze flicks back and up to the low sun (saccades), brow -0.6",
+     "library": "walk, gazePlan(t, plan, 0.07), skyCycle u 0.45"
+    },
+    {
+     "t": 105.92,
+     "end": 107.4,
+     "cue": {
+      "word": "منصور،",
+      "t": 105.92
+     },
+     "who": "mansur",
+     "action": "Slows; the sack droops in his arms.",
+     "acting": "walk amp falls with speed, sq 0.96, lid 0.4",
+     "library": "walk, speed"
+    },
+    {
+     "t": 107.56,
+     "end": 108.6,
+     "cue": {
+      "word": "وقد",
+      "t": 107.56
+     },
+     "who": "fx",
+     "action": "A small dark cloud with the barred window icon follows above his head.",
+     "acting": "reuses the prison bars picture from S2 at half size, bobbing on K.noise",
+     "library": "iconBalloon bars"
+    },
+    {
+     "t": 108.14,
+     "end": 109.9,
+     "cue": {
+      "word": "غلبه",
+      "t": 108.14
+     },
+     "who": "mansur",
+     "action": "Shivers; sweat drop; his eyes go wet.",
+     "acting": "tremble(t, 2.5), wet true, one sweat drop only",
+     "library": "tremble, wet"
+    },
+    {
+     "t": 110.02,
+     "end": 110.6,
+     "cue": {
+      "word": "أنشد",
+      "t": 110.02
+     },
+     "who": "mansur",
+     "action": "Lifts his chin and one hand and begins to recite.",
+     "acting": "anticipate breath in (sq 1.04), PERSON_HANDS.pointUp softened to a raised open hand, talk 0.8 in a sing song rhythm",
+     "library": "anticipate, talk"
+    },
+    {
+     "t": 110.62,
+     "end": 111.2,
+     "cue": {
+      "word": "الطريق",
+      "t": 110.62
+     },
+     "who": "set",
+     "action": "The street slides by: a stall and a lamp post pass behind them.",
+     "acting": "parallax from the camera track; shadows lengthen",
+     "library": "marketStreet layers"
+    },
+    {
+     "t": 111.26,
+     "end": 112.5,
+     "cue": {
+      "word": "أبياتًا",
+      "t": 111.26
+     },
+     "who": "fx",
+     "action": "A verse balloon rises from his mouth: a small scroll with four wavy lines in two pairs (no readable text) and two quaver notes.",
+     "acting": "lines draw on one by one, 0.25 s apart, in time with talk",
+     "library": "iconBalloon + scroll (planned) + musicNotes (planned, n 2)"
+    },
+    {
+     "t": 112.58,
+     "end": 113.8,
+     "cue": {
+      "word": "أوحت",
+      "t": 112.58
+     },
+     "who": "fx",
+     "action": "Inside the balloon the picture changes: a tiny Yahya portrait with a heart, and the heart cracks.",
+     "acting": "crack line draws on in 0.2 s; the heart halves slip 4 px",
+     "library": "heart (Library) with a zigzag crack overlay"
+    },
+    {
+     "t": 114.18,
+     "end": 115.1,
+     "cue": {
+      "word": "يلجأ",
+      "t": 114.18
+     },
+     "who": "fx",
+     "action": "Balloon picture: a tiny Mansur pushed toward Yahya's door by a big pointing hand.",
+     "acting": "the hand shoves twice; the figure slides, heels dug in",
+     "library": "person at scale 0.2, S.arrow"
+    },
+    {
+     "t": 115.14,
+     "end": 115.8,
+     "cue": {
+      "word": "المحسن",
+      "t": 115.14
+     },
+     "who": "salih",
+     "action": "Behind him Salih stops dead; his head turns to Mansur.",
+     "acting": "footfall stop with landSquash, gaze snaps to Mansur, brow -0.5 (disbelief)",
+     "library": "landSquash, lookAt"
+    },
+    {
+     "t": 115.86,
+     "end": 117.66,
+     "cue": {
+      "word": "إلا",
+      "t": 115.86
+     },
+     "who": "mansur",
+     "action": "Finishes with a shrug, palms up: only because I had to.",
+     "acting": "PERSON_HANDS.palmsUp shrug, gaze away from Salih, lid 0.5; balloon label ONLY BECAUSE I HAD TO",
+     "library": "PERSON_HANDS.palmsUp, S.label"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 116.0,
+     "text": "ONLY BECAUSE I HAD TO"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 117.66
+   }
+  },
+  {
+   "id": "S12",
+   "start": 117.66,
+   "end": 126.22,
+   "paragraphs": [
+    6
+   ],
+   "set": "marketStreet",
+   "cast": [
+    "mansur",
+    "salih"
+   ],
+   "summary": "Salih rebukes him: a poor reward for the man who saved him from ruin.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot(salih, mansur, {margin 110}) zoom 1.6, both faces in frame throughout; slow push to 1.8 by 122.8."
+   },
+   "composition": "Salih left (x 400) facing right, Mansur right (x 620) turned back toward him. The verse balloon is knocked away upper right. Memory inset of Yahya appears top centre between and above the heads.",
+   "actions": [
+    {
+     "t": 117.66,
+     "end": 118.6,
+     "cue": {
+      "word": "استنكر",
+      "t": 117.66
+     },
+     "who": "salih",
+     "action": "Sets the chest down hard and plants the spear.",
+     "acting": "chest impactSquash, dust; brow 0.9, mouth open",
+     "library": "impactSquash, dustBurst"
+    },
+    {
+     "t": 118.64,
+     "end": 119.2,
+     "cue": {
+      "word": "صالح",
+      "t": 118.64
+     },
+     "who": "salih",
+     "action": "Swats the verse balloon: it pops into paper bits.",
+     "acting": "arm swipe aR, balloon bursts into 8 seeded scraps that fall with fallY",
+     "library": "fallY, K.rng scraps"
+    },
+    {
+     "t": 119.26,
+     "end": 120.3,
+     "cue": {
+      "word": "كلامه،",
+      "t": 119.26
+     },
+     "who": "mansur",
+     "action": "Flinches and hugs the sack; shrinks.",
+     "acting": "sq 0.92, tip -0.1 away, eyes wide then down",
+     "library": "sq, tip"
+    },
+    {
+     "t": 120.4,
+     "end": 121.6,
+     "cue": {
+      "word": "وقال",
+      "t": 120.4
+     },
+     "who": "salih",
+     "action": "Wags a finger in Mansur's face.",
+     "acting": "PERSON_HANDS.pointFwd with 3 wags, talk 0.9, brow 0.9, tip 0.08",
+     "library": "PERSON_HANDS.pointFwd, talk"
+    },
+    {
+     "t": 122.14,
+     "end": 122.8,
+     "cue": {
+      "word": "جزاء",
+      "t": 122.14
+     },
+     "who": "fx",
+     "action": "Balloon from Salih: Yahya's open giving hand, answered by a thumbs down.",
+     "acting": "two frames pop 0.3 s apart",
+     "library": "iconBalloon strip"
+    },
+    {
+     "t": 122.84,
+     "end": 123.7,
+     "cue": {
+      "word": "سيئ",
+      "t": 122.84
+     },
+     "who": "lettering",
+     "action": "SHAME! in red beside Salih, clear of both faces.",
+     "acting": "emphasis pop with a 2 frame shake inside the panel only",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 123.74,
+     "end": 125.0,
+     "cue": {
+      "word": "لمن",
+      "t": 123.74
+     },
+     "who": "fx",
+     "action": "Memory inset: Yahya handing over the casket, exactly the S8 pose.",
+     "acting": "iris opens with dream wash; Salih points up at it",
+     "library": "inset circle replaying the S8 pose (setup and payoff)"
+    },
+    {
+     "t": 124.34,
+     "end": 125.3,
+     "cue": {
+      "word": "أنقذه",
+      "t": 124.34
+     },
+     "who": "mansur",
+     "action": "Looks up at the inset, then his eyes break away and his head drops.",
+     "acting": "shame ending pattern: gaze to inset 0.5 s, then down, lid 0.7, head drop 10 px",
+     "library": "gazePlan, lid"
+    },
+    {
+     "t": 125.38,
+     "end": 126.22,
+     "cue": {
+      "word": "الهلاك.",
+      "t": 125.38
+     },
+     "who": "salih",
+     "action": "Picks the chest up again, shakes his head and walks on; Mansur follows two steps behind now.",
+     "acting": "walk() right; order reversed from S11 (Salih leads), Mansur trails with small steps",
+     "library": "walk, footfalls"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 122.9,
+     "text": "SHAME!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 126.22
+   }
+  },
+  {
+   "id": "S13",
+   "start": 126.22,
+   "end": 135.86,
+   "paragraphs": [
+    7
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "harun",
+    "salih",
+    "mansur"
+   ],
+   "summary": "Back before the caliph just in time, Salih presents the money and the jewel, and also reports what Mansur said.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide on the palace hall (zoom 1.05) as they enter; ease to the two-shot of Harun and Salih (zoom 1.45) by 131.6; Mansur stays in frame at the left edge."
+   },
+   "composition": "Same blocking as S1 so the pictures rhyme: Harun on the throne (x 730), Salih at x 400, now with the chest and sack laid on the red runner at x 520 and the casket on top. Mansur stands back at x 200 by the arch, head low. Through the arch the sun sits on the horizon (u 0.49).",
+   "actions": [
+    {
+     "t": 126.22,
+     "end": 127.9,
+     "cue": {
+      "word": "رفع",
+      "t": 126.22
+     },
+     "who": "salih",
+     "action": "Strides in and lays the chest and sack before the throne; kneels on one knee and lifts the casket in both hands.",
+     "acting": "walk(), impactSquash on the chest, kneel 0.6, handLW/handRW raise the casket above head height (use aL/aR angles for the read)",
+     "library": "walk, kneel, handLW/handRW"
+    },
+    {
+     "t": 128.0,
+     "end": 128.7,
+     "cue": {
+      "word": "صالح",
+      "t": 128.0
+     },
+     "who": "hourglass",
+     "action": "The last grain hangs in the hourglass: it freezes, gets a tick mark and fades away.",
+     "acting": "pulse then alpha 1 to 0 by 129.5",
+     "library": "hourglass level 0.03, S.emphasis tick"
+    },
+    {
+     "t": 129.06,
+     "end": 129.8,
+     "cue": {
+      "word": "الخليفة",
+      "t": 129.06
+     },
+     "who": "harun",
+     "action": "Looks down at the heap; one eyebrow rises.",
+     "acting": "gaze to the chest, brow -0.4, lid 0.2",
+     "library": "gaze, brow"
+    },
+    {
+     "t": 129.86,
+     "end": 130.4,
+     "cue": {
+      "word": "المال",
+      "t": 129.86
+     },
+     "who": "chest",
+     "action": "The chest lid opens: coins; the counter 1,000,000 stamps PAID.",
+     "acting": "lid overshoot, glints; counter appears for 1.5 s only",
+     "library": "chest {open}, S.counter, S.label PAID"
+    },
+    {
+     "t": 130.48,
+     "end": 131.5,
+     "cue": {
+      "word": "والجوهرة،",
+      "t": 130.48
+     },
+     "who": "jewelBox",
+     "action": "The casket opens in Salih's raised hands: the red jewel lights the hall.",
+     "acting": "goldGlow 0 to 0.8; red tint on Harun face; Harun pupils snap to it and hold (anticipation of S14)",
+     "library": "jewels, goldGlow"
+    },
+    {
+     "t": 131.64,
+     "end": 132.7,
+     "cue": {
+      "word": "وأخبره",
+      "t": 131.64
+     },
+     "who": "salih",
+     "action": "Stands, leans in and speaks behind his hand.",
+     "acting": "kneel to stand, PERSON_HANDS.cupMouth, talk 0.6; gaze slides once to Mansur",
+     "library": "PERSON_HANDS.cupMouth, talk"
+    },
+    {
+     "t": 133.48,
+     "end": 134.5,
+     "cue": {
+      "word": "بما",
+      "t": 133.48
+     },
+     "who": "fx",
+     "action": "Icon balloon from Salih: tiny Mansur reciting, the verse scroll and the cracked heart.",
+     "acting": "reuses the S11 balloon pictures at small size, 2 frames 0.35 s apart",
+     "library": "iconBalloon strip"
+    },
+    {
+     "t": 134.58,
+     "end": 135.86,
+     "cue": {
+      "word": "منصور.",
+      "t": 134.58
+     },
+     "who": "mansur",
+     "action": "By the arch Mansur shrinks, hands clasped, eyes on the floor; Harun frowns at him for a beat.",
+     "acting": "sq 0.93, lid 0.6, tremble 1; Harun gaze to Mansur with brow 0.7, then back toward the jewel",
+     "library": "tremble, PERSON_HANDS.clasp, gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 130.0,
+     "text": "PAID!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 135.86
+   }
+  },
+  {
+   "id": "S14",
+   "start": 135.86,
+   "end": 142.84,
+   "paragraphs": [
+    7
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "harun",
+    "salih"
+   ],
+   "summary": "Harun recognises the jewel, is moved by Yahya's generosity, and sends it back to him.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Close on Harun and the casket (x 690, y 650, zoom 2.1), push to 2.4 by 139.9; pull back to zoom 1.5 at 140.8 for the return."
+   },
+   "composition": "Harun has taken the casket into his lap; his face upper centre, the jewel lower left of it. The memory inset from S8 flashes top left. The red frown of S1 and S2 is replaced by a soft face.",
+   "actions": [
+    {
+     "t": 135.86,
+     "end": 136.3,
+     "cue": {
+      "word": "عرف",
+      "t": 135.86
+     },
+     "who": "harun",
+     "action": "Takes the casket and stares: he knows it.",
+     "acting": "eyes wide, brow -0.7, head forward 6 px; a \"!\" pops",
+     "library": "S.emphasis !, handLW/handRW"
+    },
+    {
+     "t": 136.32,
+     "end": 137.0,
+     "cue": {
+      "word": "هارون",
+      "t": 136.32
+     },
+     "who": "fx",
+     "action": "The S8 memory inset flashes: the same jewel on his own turban.",
+     "acting": "iris open 0.2 s, hold 0.8 s, shut; arrow from the inset jewel to the real one",
+     "library": "inset circle, S.arrow"
+    },
+    {
+     "t": 137.06,
+     "end": 138.2,
+     "cue": {
+      "word": "الجوهرة،",
+      "t": 137.06
+     },
+     "who": "jewelBox",
+     "action": "The jewel glows; a tiny Yahya portrait appears in its glint.",
+     "acting": "goldGlow pulse; label YAHYA'S GIFT",
+     "library": "goldGlow, S.label"
+    },
+    {
+     "t": 138.34,
+     "end": 139.1,
+     "cue": {
+      "word": "وتأثر",
+      "t": 138.34
+     },
+     "who": "harun",
+     "action": "His eyes fill; hand goes to his heart.",
+     "acting": "wet true, lid 0.3, brow -0.3, long blink, PERSON_HANDS.chest",
+     "library": "wet, lid, PERSON_HANDS.chest"
+    },
+    {
+     "t": 139.14,
+     "end": 140.7,
+     "cue": {
+      "word": "بكرم",
+      "t": 139.14
+     },
+     "who": "fx",
+     "action": "A heart pops on his chest, the same heart Yahya hoped for in his thought cloud.",
+     "acting": "identical size and place to the S10 cloud heart (payoff)",
+     "library": "heart (Library)"
+    },
+    {
+     "t": 140.78,
+     "end": 141.7,
+     "cue": {
+      "word": "فأعادها",
+      "t": 140.78
+     },
+     "who": "harun",
+     "action": "Closes the casket gently and holds it out to Salih, pointing back the way they came.",
+     "acting": "anticipate, handRW out with the casket, PERSON_HANDS.pointFwd left with the other hand, mouth smile",
+     "library": "handRW, PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 141.74,
+     "end": 142.84,
+     "cue": {
+      "word": "إليه.",
+      "t": 141.74
+     },
+     "who": "salih",
+     "action": "Receives it with a bow and hurries out by the arch; Harun waves Mansur free with a flick of the hand.",
+     "acting": "tip 0.2 bow, turnFlip, walk(); Mansur lifts his head, stunned",
+     "library": "turnFlip, walk, PERSON_HANDS.wave"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 137.2,
+     "text": "YAHYA'S GIFT"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 142.84
+   }
+  },
+  {
+   "id": "S15",
+   "start": 142.84,
+   "end": 147.86,
+   "paragraphs": [
+    7
+   ],
+   "set": "yahyaHall",
+   "cast": [
+    "yahya",
+    "salih"
+   ],
+   "summary": "At night the jewel comes home to Yahya, and with it the news of what Mansur said after being helped.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "Two-shot in Yahya's hall at night (x 600, y 690, zoom 1.5). Static: only the two figures act."
+   },
+   "composition": "Lamps lit, the arch shows the night sky (u 0.72, moon). Yahya stands at x 700; Salih at x 480 holds out the casket.",
+   "actions": [
+    {
+     "t": 142.84,
+     "end": 143.4,
+     "cue": {
+      "word": "وبلغ",
+      "t": 142.84
+     },
+     "who": "salih",
+     "action": "Places the casket back in Yahya's hands.",
+     "acting": "handRW to Yahya hands, bow tip 0.15",
+     "library": "handRW, jewelBox"
+    },
+    {
+     "t": 143.42,
+     "end": 143.9,
+     "cue": {
+      "word": "يحيى",
+      "t": 143.42
+     },
+     "who": "yahya",
+     "action": "Looks at the jewel, surprised and then glad: his hope worked.",
+     "acting": "brow -0.5 then smile, red glint on his face",
+     "library": "brow, mouth, jewels glint"
+    },
+    {
+     "t": 144.54,
+     "end": 145.0,
+     "cue": {
+      "word": "خبر",
+      "t": 144.54
+     },
+     "who": "salih",
+     "action": "Hesitates, then speaks behind his hand.",
+     "acting": "gaze down first (reluctant), PERSON_HANDS.cupMouth, talk 0.5",
+     "library": "PERSON_HANDS.cupMouth, talk"
+    },
+    {
+     "t": 145.04,
+     "end": 146.2,
+     "cue": {
+      "word": "كلام",
+      "t": 145.04
+     },
+     "who": "fx",
+     "action": "The small balloon again: Mansur reciting, the cracked heart.",
+     "acting": "same pictures as S13, pops 0.3 s",
+     "library": "iconBalloon"
+    },
+    {
+     "t": 146.24,
+     "end": 147.86,
+     "cue": {
+      "word": "بعد",
+      "t": 146.24
+     },
+     "who": "yahya",
+     "action": "His smile stops. He looks at the balloon, very still; only his pupils move.",
+     "acting": "suspense by stillness: no body motion, gaze balloon then floor, lid 0.3; Salih watches him, bracing for anger",
+     "library": "gazePlan, lid"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 147.86
+   }
+  },
+  {
+   "id": "S16",
+   "start": 147.86,
+   "end": 158.98,
+   "paragraphs": [
+    8
+   ],
+   "set": "yahyaHall",
+   "cast": [
+    "yahya",
+    "salih",
+    "mansur"
+   ],
+   "summary": "Yahya is not angry. Fear and sorrow, he says, can make a person say what he does not mean.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Close on Yahya (x 700, y 650, zoom 2.0) with a slow push to 2.25; at 153.8 ease out to zoom 1.5 so the two small icons beside him and Salih's reaction are in frame."
+   },
+   "composition": "Yahya upper centre. The balloon with the cracked heart floats left of his head; he mends it. Icons FEAR (the barred window cloud) and SORROW (a tear drop) appear left, at eye height, with a small Mansur under them.",
+   "actions": [
+    {
+     "t": 147.86,
+     "end": 149.4,
+     "cue": {
+      "word": "لم",
+      "t": 147.86
+     },
+     "who": "yahya",
+     "action": "A breath in, eyes closed. Salih waits for the storm.",
+     "acting": "lid 1 for 0.8 s, sq 1.03 inhale then release; Salih brow -0.5",
+     "library": "lid, sq, breathe"
+    },
+    {
+     "t": 149.46,
+     "end": 150.1,
+     "cue": {
+      "word": "يغضب",
+      "t": 149.46
+     },
+     "who": "yahya",
+     "action": "Opens his eyes and smiles gently; shakes his head.",
+     "acting": "lid to 0.15, mouth smile, brow -0.2, small head shake (gaze x swing twice)",
+     "library": "lid, mouth, gaze"
+    },
+    {
+     "t": 150.84,
+     "end": 151.5,
+     "cue": {
+      "word": "منصور،",
+      "t": 150.84
+     },
+     "who": "fx",
+     "action": "He reaches up and pinches the cracked heart in the balloon back together; the crack disappears.",
+     "acting": "handRW to the balloon, the two halves close with a small overshoot",
+     "library": "handRW, heart"
+    },
+    {
+     "t": 152.72,
+     "end": 153.7,
+     "cue": {
+      "word": "قال",
+      "t": 152.72
+     },
+     "who": "yahya",
+     "action": "Raises a teaching finger and speaks.",
+     "acting": "PERSON_HANDS.pointUp, talk 0.7, gaze to Salih",
+     "library": "PERSON_HANDS.pointUp, talk"
+    },
+    {
+     "t": 153.84,
+     "end": 154.3,
+     "cue": {
+      "word": "الخوف",
+      "t": 153.84
+     },
+     "who": "fx",
+     "action": "Icon FEAR pops: the dark cloud with the barred window, over a small trembling Mansur.",
+     "acting": "pop with overshoot; small Mansur tremble 2",
+     "library": "iconBalloon, person at scale 0.35, tremble"
+    },
+    {
+     "t": 154.38,
+     "end": 155.2,
+     "cue": {
+      "word": "والحزن",
+      "t": 154.38
+     },
+     "who": "fx",
+     "action": "Icon SORROW pops beside it: a big tear drop.",
+     "acting": "pop 4 frames later; the small Mansur gets wet eyes",
+     "library": "S.box icon, wet"
+    },
+    {
+     "t": 155.6,
+     "end": 156.3,
+     "cue": {
+      "word": "يجعلان",
+      "t": 155.6
+     },
+     "who": "fx",
+     "action": "Both icons press down on the small Mansur: he squashes.",
+     "acting": "sq 1 to 0.8, arrows from the icons down to him",
+     "library": "sq, S.arrow"
+    },
+    {
+     "t": 157.06,
+     "end": 157.6,
+     "cue": {
+      "word": "يقول",
+      "t": 157.06
+     },
+     "who": "fx",
+     "action": "Out of the small Mansur's mouth squeezes the little verse scroll.",
+     "acting": "scroll pops out with a squeak stretch; he looks at it, surprised himself",
+     "library": "scroll, settleTo"
+    },
+    {
+     "t": 158.02,
+     "end": 158.98,
+     "cue": {
+      "word": "لا",
+      "t": 158.02
+     },
+     "who": "salih",
+     "action": "Salih's jaw drops, then he bows his head to Yahya in respect.",
+     "acting": "mouth o, brow -0.6, then tip 0.2 bow with lid 1; Yahya pats his shoulder",
+     "library": "tip, lid, handRW"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 154.0,
+     "text": "FEAR"
+    },
+    {
+     "t": 154.6,
+     "text": "SORROW"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 158.98
+   }
+  },
+  {
+   "id": "S17",
+   "start": 158.98,
+   "end": 171.24,
+   "paragraphs": [
+    8
+   ],
+   "set": "yahyaHall",
+   "cast": [
+    "yahya",
+    "mansur",
+    "oldWoman",
+    "villager"
+   ],
+   "summary": "The ordeal is over. At dawn Mansur walks free, and Yahya goes on giving, asking for no thanks. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Start medium on Yahya at the door arch (zoom 1.5) and pull out slowly to the full hall (zoom 1.05) by 164.3; hold for THE END."
+   },
+   "composition": "Dawn through the arch (skyCycle u 1.0 to 0.08). Mansur passes outside the arch left to right, free, without the sack. Yahya back on his cushion at x 700; the old woman and villager from S4 return at x 470 and x 380, so the film closes on the picture it opened Yahya with. THE END title in the upper third, clear of all faces.",
+   "actions": [
+    {
+     "t": 158.98,
+     "end": 160.2,
+     "cue": {
+      "word": "وهكذا",
+      "t": 158.98
+     },
+     "who": "set",
+     "action": "Night turns to dawn in the arch: stars fade, the sky goes yellow.",
+     "acting": "skyCycle u 0.72 to 1.0 in 1.2 s",
+     "library": "skyCycle, kfn"
+    },
+    {
+     "t": 160.26,
+     "end": 161.3,
+     "cue": {
+      "word": "انتهت",
+      "t": 160.26
+     },
+     "who": "hourglass",
+     "action": "The empty hourglass tips over on its side and fades; the barred window icon cracks and falls apart.",
+     "acting": "rot 0 to 1.57 with rebound, alpha out; bars drop with fallY",
+     "library": "hourglass, fallY, rebound"
+    },
+    {
+     "t": 161.32,
+     "end": 162.4,
+     "cue": {
+      "word": "المحنة،",
+      "t": 161.32
+     },
+     "who": "mansur",
+     "action": "Seen through the arch, Mansur walks by outside in the morning light, stretches his arms and breathes out.",
+     "acting": "walk() slow, aL/aR raised stretch, sq 1.05 then settle; he pauses, looks in toward Yahya, hand on heart, and walks on",
+     "library": "walk, PERSON_HANDS.chest"
+    },
+    {
+     "t": 162.44,
+     "end": 163.6,
+     "cue": {
+      "word": "وبقي",
+      "t": 162.44
+     },
+     "who": "yahya",
+     "action": "Sits back down on his cushion, the casket set aside, closed.",
+     "acting": "sit 0 to 1 with landSquash, breathe(); calm face",
+     "library": "sit, landSquash, breathe"
+    },
+    {
+     "t": 163.66,
+     "end": 164.3,
+     "cue": {
+      "word": "يحيى",
+      "t": 163.66
+     },
+     "who": "oldWoman",
+     "action": "The old woman and the villager come in again by the arch.",
+     "acting": "walk() in, out of step; Yahya gaze lifts and he smiles",
+     "library": "walk, stagger"
+    },
+    {
+     "t": 164.34,
+     "end": 165.5,
+     "cue": {
+      "word": "شاهدًا",
+      "t": 164.34
+     },
+     "who": "yahya",
+     "action": "Holds out a purse to the next person in need.",
+     "acting": "handRW with the purse, anticipate draw back first (same move as S4)",
+     "library": "handRW, anticipate"
+    },
+    {
+     "t": 165.56,
+     "end": 166.1,
+     "cue": {
+      "word": "كرم",
+      "t": 165.56
+     },
+     "who": "fx",
+     "action": "A soft gold glow and one heart rise over Yahya.",
+     "acting": "goldGlow 0.5, heart overshoot",
+     "library": "goldGlow, heart"
+    },
+    {
+     "t": 166.7,
+     "end": 167.4,
+     "cue": {
+      "word": "ينتظر",
+      "t": 166.7
+     },
+     "who": "yahya",
+     "action": "The villager starts a deep bow of thanks; Yahya waves it away, smiling, already turning to the next.",
+     "acting": "PERSON_HANDS.wave low, small head shake; gaze to the old woman",
+     "library": "PERSON_HANDS.wave"
+    },
+    {
+     "t": 167.46,
+     "end": 168.2,
+     "cue": {
+      "word": "الشكر.",
+      "t": 167.46
+     },
+     "who": "camera",
+     "action": "Camera settles on the wide hall; everyone holds a living pose (breathing, blinks).",
+     "acting": "LIFE.t auto blinks, breathe()",
+     "library": "LIFE, breathe"
+    },
+    {
+     "t": 168.3,
+     "end": 171.24,
+     "who": "lettering",
+     "action": "THE END pops in the upper third with a halftone burst and holds to the end of the film.",
+     "acting": "title overshoot 0.3 s; Yahya one slow blink at 169.5; the heart fades by 170.5",
+     "library": "S.title THE END"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 168.3,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 168.5,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 171.24
+   }
+  }
+ ],
+ "ending": {
+  "t": 168.3,
+  "description": "Dawn in Yahya's hall. Mansur has walked free past the arch; Yahya sits giving a purse to the same needy visitors as in S4 and waves away their thanks. THE END pops at 168.3 in the upper third and holds to 171.24 with everyone breathing and blinking."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "أمر الخليفة هارون الرشيد أحد حراسه، واسمه صالح،|أن يأخذ من رجل يدعى منصور مليون درهم قبل غروب الشمس.|وقال إن لم يدفع المال في الوقت المحدد، فسيعاقب عقابًا شديدًا.",
+   "en": "Caliph Harun ordered his guard Salih|to collect a million dirhams from Mansur before sunset,|threatening severe punishment if the money did not arrive."
+  },
+  {
+   "p": 2,
+   "ar": "لم يكن لدى منصور إلا جزء صغير من المبلغ،|فاشتد خوفه وعجز عن التفكير.|رق له صالح، واصطحبه إلى بيت يحيى بن خالد البرمكي،|الذي اشتهر بكرمه ومساعدة المحتاجين.",
+   "en": "Mansur possessed only a small part of the sum.|Seeing his distress,|Salih took him to Yahya ibn Khalid al-Barmaki,|a man renowned for generosity."
+  },
+  {
+   "p": 3,
+   "ar": "سمع يحيى القصة،|وطلب من خازنه أن يحضر ما عنده من نقود.|لم يجد في الخزانة إلا خمسة آلاف درهم،|فبعث يطلب العون من ابنيه الفضل وجعفر دون تأخير.",
+   "en": "Yahya heard the story|and checked his treasury,|finding only five thousand dirhams.|He immediately asked his sons al-Fadl and Jaafar for help."
+  },
+  {
+   "p": 4,
+   "ar": "أرسل كل واحد من الابنين مبلغًا كبيرًا،|فصار لدى يحيى ما يكفي لسداد الدين وزيادة.|وأضاف إلى المال جوهرة نفيسة كان لها تاريخ معروف في مجلس الخليفة،|وسلم الجميع إلى منصور.",
+   "en": "Each son sent a large sum,|enough to cover the debt and more.|Yahya added a valuable jewel familiar at the caliph’s court|and handed everything to Mansur."
+  },
+  {
+   "p": 5,
+   "ar": "شكر منصور يحيى،|ثم خرج مع صالح يحمل المال والجوهرة.|وكان يحيى يأمل أن يتعرف الخليفة إلى الجوهرة،|فيدرك مقدار المساعدة التي قدمها، فيلين قلبه تجاه الرجل المديون.",
+   "en": "Mansur thanked Yahya|and departed with Salih.|Yahya hoped the caliph would recognize the jewel,|understand his generosity, and show mercy to the debtor."
+  },
+  {
+   "p": 6,
+   "ar": "لكن منصور، وقد غلبه الخوف،|أنشد في الطريق أبياتًا أوحت بأنه لم يلجأ إلى المحسن إلا مضطرًا.|استنكر صالح كلامه،|وقال إن هذا جزاء سيئ لمن أنقذه من الهلاك.",
+   "en": "Yet on the way|Mansur recited verses suggesting he had sought help only from fear.|Salih rebuked him|for such ingratitude toward the man who had saved him."
+  },
+  {
+   "p": 7,
+   "ar": "رفع صالح إلى الخليفة المال والجوهرة، وأخبره كذلك بما قاله منصور.|عرف هارون الجوهرة،|وتأثر بكرم يحيى،|فأعادها إليه. وبلغ يحيى أيضًا خبر كلام الرجل بعد أن ساعده.",
+   "en": "Salih presented the money and jewel and reported Mansur’s words.|Harun recognized the jewel,|was moved by Yahya’s kindness,|and returned it to him."
+  },
+  {
+   "p": 8,
+   "ar": "لم يغضب يحيى من منصور،|بل قال إن الخوف والحزن قد يجعلان الإنسان يقول ما لا يريد.|وهكذا انتهت المحنة،|وبقي موقف يحيى شاهدًا على كرم لا ينتظر الشكر.",
+   "en": "Yahya did not resent Mansur.|He said fear and sorrow can make a person speak badly.|The crisis ended,|and his generosity stood without any demand for gratitude."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "person costume presets (soldier)",
+   "description": "Salih: the planned soldier/guard preset (AN-087, same idea as the AN-086 guard): pointed helmet with neck cloth, knee length blue tunic, wide yellow belt, round chest plate, boots, moustache, hold:'spear' (shaft 300). Option noseBar:false so the brows read.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "A COSTUME table entry in cast/people.js: helmet = half ellipse plus a triangle point and a rect neck cloth; chest plate = circle with dot fill; spear = line plus leaf polygon drawn at the hand when hold === 'spear'. Opt-in, so regression stays identical."
+  },
+  {
+   "type": "set",
+   "name": "palaceHall",
+   "description": "The planned arched interior with three uses in this film through options: full palace (throne), variant vizierHouse (warm palette, cushion dais, lamps with a lit flag) and variant merchantHouse (already planned). New option doorSky u draws skyCycle clipped inside the left door arch so the deadline is visible indoors.",
+   "reusable": true,
+   "effort": "L",
+   "implementation": "One function palaceHall(ctx, {variant, doorSky, lit}): bake the wall, arches (pointed arch = two arcs), checker floor and runner per variant; draw skyCycle(ctx, u) inside a clip of the door arch path each frame (not baked) and the hall over it."
+  },
+  {
+   "type": "set",
+   "name": "marketStreet",
+   "description": "The planned market street at dusk, wide enough for a 300 unit tracking walk, with a closed stall and a lamp post.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Planned function; add a width option (1600) and take the sky from skyCycle(u). Shadows are scene drawn ellipses."
+  },
+  {
+   "type": "prop",
+   "name": "throne",
+   "description": "Planned high-backed throne (seat 48, 150 wide, back 300).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rects plus a pointed arch path and a finial circle; the caliph uses sit:1, seat:'bench' on it."
+  },
+  {
+   "type": "prop",
+   "name": "treasureHoard",
+   "description": "Only the chest from the planned module, with open and fill fields and a band colour.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Box rect, lid as a rotated rounded rect about the back hinge, coin heap = coinPile clipped to the box mouth."
+  },
+  {
+   "type": "prop",
+   "name": "coinPile",
+   "description": "Planned coin mound (n coins, removable coin) and the single coin for the counter icon.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Seeded stack of yellow ellipses with black rims via K.rng."
+  },
+  {
+   "type": "prop",
+   "name": "sack",
+   "description": "Planned sack with fill and a coin mark.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Bezier bag outline scaled by fill, tied neck, circle mark."
+  },
+  {
+   "type": "prop",
+   "name": "jewels (with jewelBox)",
+   "description": "Planned gem and casket; one red gem 48 across with a sliding glint, casket lid open 0..1.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Hexagon polygon with facet lines; glint = thin white quad whose x is keyed by a phase; lid rotates about its back edge."
+  },
+  {
+   "type": "prop",
+   "name": "hourglass",
+   "description": "Planned panel-space time meter with level 0..1, pulse, tick and tip-over.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Two triangles and a frame; sand = clipped rects sized by level; a 2 px falling line while running."
+  },
+  {
+   "type": "prop",
+   "name": "scroll",
+   "description": "Planned small scroll with wavy lines.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rect with two rolled ends (circles) and sine polylines."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "description": "Planned wordless picture balloon (single and strip modes). Pictures used: merchant bust, sack with X, prison bars with chain, crown / 1,000,000 / sun strip, verse scroll with notes, cracked heart, pushed figure, giving hand and thumbs down, FEAR cloud.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Balloon outline from the style's box with a tail; content callback(c, t) clipped inside, like thoughtCloud's inside."
+  },
+  {
+   "type": "effect",
+   "name": "inset circle",
+   "description": "Planned round picture-in-picture with an iris: the two sons (57.3, 58.22), the jewel memory (76.04, 136.32) and Yahya's gift replayed (123.74).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Circle clip with a fat black ring; radius keyed for the iris; content callback."
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "description": "Planned treasure light: rays, halftone disc and star glints, strength 0..1. Used on the jewel, the chests and softly on Yahya.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Tapering triangles around a point plus seeded 4 point stars."
+  },
+  {
+   "type": "effect",
+   "name": "musicNotes",
+   "description": "Planned quaver glyphs (n 2) rising from the verse balloon.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Planned function; seeded S paths."
+  }
+ ],
+ "owner_questions": [
+  "The \"severe punishment\" is shown only as an icon (a barred prison window with a chain), never as violence; default: keep it as the prison icon.",
+  "The sons al-Fadl and Jaafar appear only as small inset portraits while runners carry notes and chests; default: insets, no separate scenes or sets for them.",
+  "The recited verses are shown as a scroll with wavy lines plus pictures (a cracked heart, a figure being pushed) and the short English label ONLY BECAUSE I HAD TO, with no invented Arabic verse text; default: no verse text.",
+  "Added comic touches not in the script: a moth flying out of the nearly empty strongbox and the labels ONLY 5,000!, ENOUGH!, AND MORE!, PAID!, SHAME!; default: keep them.",
+  "An hourglass meter stands for \"before sunset\" together with the sun sinking in the door arch; default: use both.",
+  "The jewel is shown in a memory inset on the caliph's own turban to explain \"a known history at the caliph's court\"; default: keep this invented detail.",
+  "The ending returns to Yahya giving to the needy at dawn while Mansur walks free past the door, without Mansur apologising (the script has no apology); default: no apology scene.",
+  "The Arabic of paragraph 7 ends with a sentence (the news reached Yahya) that the English translation leaves out, so the last English chunk \"and returned it to him.\" sits under that Arabic chunk; default: keep the supplied English unchanged."
+ ],
+ "implementation_notes": [
+  "All human figures are the Library person with costume presets; only the soldier preset is new. Set LIFE.t = t each frame so everyone blinks; add hand blinks where a lid is set.",
+  "Blocking rhyme: S1 and S13 use the same camera and positions in palaceHall; S4 and S17 use the same positions in yahyaHall. Reuse the pose functions.",
+  "Setup and payoff: the jewel (S8) returns identical in S10, S13, S14, S15; the heart on cloud Harun at 101.48 must match the real heart at 139.14 in size and place relative to the figure; the giving pose at 79.76 is replayed in the inset at 123.74.",
+  "Seated figures: Harun uses sit:1, seat:'bench' at the throne seat (throne base y 860, seat 48 up); Yahya the same on the cushion dais. Scene draws throne and cushion.",
+  "Carrying: sack and casket are scene drawn at the midpoint of handLW/handRW; add kick(t, FALLS) squash on each footfall so the load has weight.",
+  "Sky through the door arch: keys for u are 0.30 (0 s), 0.36 (12.3), 0.40 (60.4), 0.42 (61.2), 0.44 (91), street 0.45 to 0.47 (104 to 126), 0.49 (126.22 to 142.8), 0.72 (142.84 to 158.98), then 0.72 to 1.0 (158.98 to 160.2) and on to 0.08 by 164.",
+  "Counters use the style counter primitive; keep them top left or top centre, never over a face. Format with commas: 1,000,000 and 5,000.",
+  "The whip at 33.42 and the LATER card at 60.8 hide set or time changes with a camera key pair 0.01 s apart at the covered midpoint.",
+  "Sound: only four quiet effects (chime 44.25, whoosh 60.75, chime 71.65, chime 168.5), all in listed pauses or after the last word; master 0.6.",
+  "Panel-only shake for SHAME! at 122.84 and the 1,000,000 flash at 68.78; the caption panel never moves.",
+  "Lettering diet: name labels once each (CALIPH HARUN, SALIH, MANSUR, YAHYA THE BARMECIDE, TREASURER, AL-FADL, JAAFAR) plus about 12 short words; none may cover a face."
+ ],
+ "warnings": [
+  "The word رق (29.86) has an interpolated time in the timeline (it shares 29.86 with له); the softening of Salih may need a nudge of up to 0.3 s after listening.",
+  "Only three pauses of 0.6 s or more exist, so the film is almost silent apart from the narration: the comedy and suspense must read without sound.",
+  "palaceHall, marketStreet, the soldier preset and most props are planned assets that do not exist in Library yet; if another film builds them first, use those functions and only add the options listed here (variant vizierHouse, doorSky).",
+  "Eleven cast ids, but only four act at length (Harun, Salih, Mansur, Yahya); the rest are unchanged presets on screen for a few seconds each.",
+  "The person figure is front facing with no profile: for walking left or right rely on dir, gaze and tip; for the whisper use cupMouth and gaze rather than a turned head.",
+  "S10 thought cloud figures must stay at least 110 px tall on screen (scale 0.5 at camera zoom 1.3 gives about 150 px)."
+ ]
+}

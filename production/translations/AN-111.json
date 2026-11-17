@@ -1,0 +1,293 @@
+{
+ "story": "AN-111",
+ "paragraphs": [
+  {
+   "p": 1,
+   "chunks": [
+    {
+     "c": 1,
+     "ar": "كان رجل صالح من بني إسرائيل",
+     "en_old": "A devout Israelite",
+     "en_new": "A devout Israelite",
+     "verdict": "ok",
+     "note": ""
+    },
+    {
+     "c": 2,
+     "ar": "يعيش مع أسرته من غزل القطن.",
+     "en_old": "supported his family by selling the cotton thread they spun.",
+     "en_new": "lived with his family by spinning cotton.",
+     "verdict": "fixed",
+     "note": "selling thread belonged to next chunk"
+    },
+    {
+     "c": 3,
+     "ar": "كانت أسرته تغزل الخيوط كل يوم، فيبيعها،",
+     "en_old": "He used the proceeds",
+     "en_new": "Every day his family spun thread, and he sold it,",
+     "verdict": "fixed",
+     "note": "did not match Arabic chunk"
+    },
+    {
+     "c": 4,
+     "ar": "ثم يشتري قطنًا جديدًا وطعامًا بما يبقى من المال ليكفيهم يومهم.",
+     "en_old": "to buy more cotton and enough food for the day.",
+     "en_new": "then bought new cotton and food with the money left, enough for that day.",
+     "verdict": "fixed",
+     "note": "omitted 'with the money left'"
+    }
+   ]
+  },
+  {
+   "p": 2,
+   "chunks": [
+    {
+     "c": 1,
+     "ar": "وفي صباح خرج الرجل ليبيع الخيوط كما اعتاد.",
+     "en_old": "One morning",
+     "en_new": "One morning the man went out to sell the thread as usual.",
+     "verdict": "fixed",
+     "note": "omitted going out to sell thread"
+    },
+    {
+     "c": 2,
+     "ar": "قابله صديق يشكو الفقر والحاجة،",
+     "en_old": "a friend complained of desperate need.",
+     "en_new": "He met a friend who complained of poverty and need,",
+     "verdict": "fixed",
+     "note": "omitted 'met him'"
+    },
+    {
+     "c": 3,
+     "ar": "فتأثر بحاله وأعطاه كل ما قبضه من ثمن الغزل،",
+     "en_old": "The man gave him all the money from that day’s thread",
+     "en_new": "Moved by his plight, he gave him all he had been paid for the thread,",
+     "verdict": "fixed",
+     "note": "omitted 'moved by his plight'"
+    },
+    {
+     "c": 4,
+     "ar": "ثم رجع إلى البيت دون طعام أو قطن.",
+     "en_old": "and returned home without food or fresh cotton.",
+     "en_new": "and returned home without food or fresh cotton.",
+     "verdict": "ok",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "p": 3,
+   "chunks": [
+    {
+     "c": 1,
+     "ar": "سألته أسرته عما حدث،",
+     "en_old": "His family wondered",
+     "en_new": "His family asked him what had happened,",
+     "verdict": "fixed",
+     "note": "did not match Arabic chunk"
+    },
+    {
+     "c": 2,
+     "ar": "فأخبرهم أنه ساعد رجلًا محتاجًا.",
+     "en_old": "how they would eat.",
+     "en_new": "and he told them he had helped a man in need.",
+     "verdict": "fixed",
+     "note": "did not match Arabic chunk"
+    },
+    {
+     "c": 3,
+     "ar": "لم يبق في البيت شيء يمكن بيعه إلا طبق خشبي متشقق وجرة قديمة،",
+     "en_old": "Only a cracked wooden platter and an old jar remained to sell,",
+     "en_new": "Nothing was left in the house to sell but a cracked wooden platter and an old jar,",
+     "verdict": "fixed",
+     "note": "minor wording"
+    },
+    {
+     "c": 4,
+     "ar": "فأخذهما إلى السوق، لكن أحدًا لم يرغب فيهما.",
+     "en_old": "but nobody in the market would buy them.",
+     "en_new": "so he took them to the market, but no one wanted them.",
+     "verdict": "fixed",
+     "note": "omitted taking them to market"
+    }
+   ]
+  },
+  {
+   "p": 4,
+   "chunks": [
+    {
+     "c": 1,
+     "ar": "رأى بائع سمك يعرض سمكة منتفخة ذات رائحة كريهة،",
+     "en_old": "A fish seller had a swollen, foul-smelling fish",
+     "en_new": "He saw a fish seller offering a swollen, foul-smelling fish",
+     "verdict": "fixed",
+     "note": "omitted 'he saw', 'offering'"
+    },
+    {
+     "c": 2,
+     "ar": "ولم يجد من يشتريها.",
+     "en_old": "that no one wanted.",
+     "en_new": "that he could not sell to anyone.",
+     "verdict": "fixed",
+     "note": "minor wording"
+    },
+    {
+     "c": 3,
+     "ar": "اتفق الرجلان على تبديل السلع،",
+     "en_old": "They exchanged their unwanted goods,",
+     "en_new": "The two men agreed to swap their goods,",
+     "verdict": "fixed",
+     "note": "'unwanted' not in Arabic; 'agreed' missing"
+    },
+    {
+     "c": 4,
+     "ar": "فأخذ الرجل السمكة، وترك للبائع الطبق والجرة، ثم عاد إلى أسرته.",
+     "en_old": "and the man carried the fish home.",
+     "en_new": "so the man took the fish, left the platter and jar with the seller, and went back to his family.",
+     "verdict": "fixed",
+     "note": "omitted leaving platter and jar"
+    }
+   ]
+  },
+  {
+   "p": 5,
+   "chunks": [
+    {
+     "c": 1,
+     "ar": "فتحت الأسرة بطن السمكة لتعدها للطعام،",
+     "en_old": "When the family opened the fish,",
+     "en_new": "The family cut open the fish to prepare it for a meal",
+     "verdict": "fixed",
+     "note": "omitted 'to prepare it for food'"
+    },
+    {
+     "c": 2,
+     "ar": "فوجدت لؤلؤة كبيرة داخلها.",
+     "en_old": "they discovered a large pearl.",
+     "en_new": "and found a large pearl inside it.",
+     "verdict": "fixed",
+     "note": "minor wording"
+    },
+    {
+     "c": 3,
+     "ar": "فحصها الرجل، ورأى أنها لم تثقب من قبل.",
+     "en_old": "It had never been drilled.",
+     "en_new": "The man examined it and saw that it had never been drilled.",
+     "verdict": "fixed",
+     "note": "omitted 'the man examined it'"
+    },
+    {
+     "c": 4,
+     "ar": "وفي اليوم التالي حملها إلى خبير بالأحجار الكريمة ليسأله عن قيمتها.",
+     "en_old": "The next day the man took it to a jewel expert.",
+     "en_new": "The next day he took it to a gem expert to ask its value.",
+     "verdict": "fixed",
+     "note": "omitted 'to ask its value'"
+    }
+   ]
+  },
+  {
+   "p": 6,
+   "chunks": [
+    {
+     "c": 1,
+     "ar": "قال الخبير إن اللؤلؤة ثمينة،",
+     "en_old": "The expert",
+     "en_new": "The expert said the pearl was valuable,",
+     "verdict": "fixed",
+     "note": "omitted 'the pearl was valuable'"
+    },
+    {
+     "c": 2,
+     "ar": "لكنه نصحه بزيارة تاجر يملك مالًا أكثر.",
+     "en_old": "recommended a wealthier buyer.",
+     "en_new": "but advised him to visit a merchant with more money.",
+     "verdict": "fixed",
+     "note": "minor wording"
+    },
+    {
+     "c": 3,
+     "ar": "ذهب الرجل إليه، فدفع له سبعين ألف درهم مقابل اللؤلؤة،",
+     "en_old": "That merchant paid seventy thousand dirhams for the pearl,",
+     "en_new": "The man went to him, and the merchant paid seventy thousand dirhams for the pearl,",
+     "verdict": "fixed",
+     "note": "omitted 'the man went to him'"
+    },
+    {
+     "c": 4,
+     "ar": "وعاد إلى بيته يحمل ثروة لم يتوقعها.",
+     "en_old": "giving the family a fortune they had never imagined.",
+     "en_new": "and he returned home carrying a fortune he had never expected.",
+     "verdict": "fixed",
+     "note": "minor wording"
+    }
+   ]
+  },
+  {
+   "p": 7,
+   "chunks": [
+    {
+     "c": 1,
+     "ar": "عند باب البيت قابله فقير وطلب منه صدقة.",
+     "en_old": "At his door a beggar asked for help.",
+     "en_new": "At the door of his house a poor man asked him for charity.",
+     "verdict": "fixed",
+     "note": "minor wording"
+    },
+    {
+     "c": 2,
+     "ar": "تذكر الرجل كيف كان محتاجًا بالأمس،",
+     "en_old": "Remembering his own poverty,",
+     "en_new": "The man remembered how needy he had been the day before,",
+     "verdict": "fixed",
+     "note": "omitted 'the day before'"
+    },
+    {
+     "c": 3,
+     "ar": "فقسم المال نصفين، وقدم نصفه للفقير دون تردد، مع أن أسرته عانت الجوع منذ وقت قريب.",
+     "en_old": "the man immediately divided the money in half and offered the beggar one share.",
+     "en_new": "so he split the money in two and gave half to the poor man without hesitation, though his family had only just gone hungry.",
+     "verdict": "fixed",
+     "note": "omitted family's recent hunger"
+    }
+   ]
+  },
+  {
+   "p": 8,
+   "chunks": [
+    {
+     "c": 1,
+     "ar": "لكن الفقير أعاد المال إليه،",
+     "en_old": "The beggar returned the money",
+     "en_new": "But the poor man gave the money back",
+     "verdict": "fixed",
+     "note": "minor wording"
+    },
+    {
+     "c": 2,
+     "ar": "وقال إنه رسول أرسل لاختبار كرمه، وإنه نجح في الامتحان.",
+     "en_old": "and revealed he was a messenger sent to test the man’s generosity.",
+     "en_new": "and said he was a messenger sent to test his generosity, and that he had passed the test.",
+     "verdict": "fixed",
+     "note": "omitted 'he passed the test'"
+    },
+    {
+     "c": 3,
+     "ar": "شكر الرجل الله، وعاش مع أسرته في راحة،",
+     "en_old": "The family lived comfortably,",
+     "en_new": "The man thanked God and lived in comfort with his family,",
+     "verdict": "fixed",
+     "note": "omitted 'thanked God'"
+    },
+    {
+     "c": 4,
+     "ar": "بعدما ظل مستعدًا للعطاء حتى بعد غناه.",
+     "en_old": "and the man’s willingness to share had endured.",
+     "en_new": "having stayed ready to give even after becoming rich.",
+     "verdict": "fixed",
+     "note": "omitted 'even after becoming rich'"
+    }
+   ]
+  }
+ ]
+}

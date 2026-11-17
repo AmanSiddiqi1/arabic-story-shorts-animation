@@ -1,0 +1,129 @@
+{
+ "story_id": "AN-116",
+ "title": "WARDAN THE BUTCHER'S ADVENTURE WITH THE LADY AND THE BEAR",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T14:45:40",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-acd855bf7f5ac7fd8.jsonl",
+ "agent_id": "acd855bf7f5ac7fd8",
+ "model_messages": {
+  "claude-fable-5-2": 23
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "d6b8f5dc4ff987be7f8341316112837d7b385947e679933c0263be751d53a5a7",
+  "paragraphs": 8,
+  "segments": [
+   "AN-116-P01-S01",
+   "AN-116-P01-S02",
+   "AN-116-P01-S03",
+   "AN-116-P01-S04",
+   "AN-116-P01-S05",
+   "AN-116-P01-S06",
+   "AN-116-P01-S07",
+   "AN-116-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-116_WARDAN_THE_BUTCHER_S_ADVENTURE_WITH_THE_LADY_AND_THE_BEAR_full_slowed.mp3",
+  "sha256": "eb8d463df713bc8cb5ec1e39f33bdb6f3d5840a196e0c8cbad83362c191a75dd",
+  "duration": 173.613
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-116_WARDAN_THE_BUTCHER_S_ADVENTURE_WITH_THE_LADY_AND_THE_BEAR_full_slowed.mp3.words.json",
+  "sha256": "5c85e956e2b5fdf1be3d199b5df82eb36576d04621b69dc0e3f6d84a47d3546b",
+  "manifest_status": "SUCCESS; METADATA MISMATCH",
+  "script_match": 0.996
+ },
+ "library_rev": "5a93429",
+ "scenes": 14,
+ "actions": 179,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "bear",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (soldier)",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person blindfold",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person faceCover",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "rockyHill",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "caveChamber",
+   "effort": "L"
+  },
+  {
+   "type": "prop",
+   "name": "carryBasket",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "cleaver",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "butcherSign",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "treasureHoard",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "foodTray",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "marketBanner",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "hunterShadow",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "sneak",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Adult themes: the script names a sexual act between the woman and the bear and two killings. The staging hides all three, but the verbatim subtitles and the narration still state them; the owner must decide whether this film is published to a general audience.",
+  "No real pauses in the narration: only 4 sound effects are planned.",
+  "The supplied English is shorter than the Arabic in six paragraphs (see the SCRIPT entries in owner_questions).",
+  "caveChamber is the one large new set (effort L); the bear is a new character on the existing BEAST rig (effort M). Everything else is small or already planned by other films.",
+  "S1 day montage and S13 treasure time-lapse compress repeated actions into about 2 s each; check on stills that they read at phone size.",
+  "The person figure has no profile or back view; the 'turn away' beats rely on the squeeze flip and gestures."
+ ]
+}

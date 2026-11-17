@@ -1,0 +1,110 @@
+{
+ "story_id": "AN-152",
+ "title": "THE KING AND THE VIRTUOUS WIFE",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T16:34:53",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a33c2b3cfa535afc6.jsonl",
+ "agent_id": "a33c2b3cfa535afc6",
+ "model_messages": {
+  "claude-fable-5-2": 22
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "a66f73df7de8bd2c9209349893354bd53702cb127e768b04e42072fb7df8f07f",
+  "paragraphs": 8,
+  "segments": [
+   "AN-152-P01-S01",
+   "AN-152-P01-S02",
+   "AN-152-P01-S03",
+   "AN-152-P01-S04",
+   "AN-152-P01-S05",
+   "AN-152-P01-S06",
+   "AN-152-P01-S07",
+   "AN-152-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-152_THE_KING_AND_THE_VIRTUOUS_WIFE_full_slowed.mp3",
+  "sha256": "fd07146849b02fb8ad00b9e98da4c46ee035543695d857ea1cbe49f93bad9871",
+  "duration": 171.984
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-152_THE_KING_AND_THE_VIRTUOUS_WIFE_full_slowed.mp3.words.json",
+  "sha256": "abd1ef6934ab5fb28ca6a5b75a623da249a593267500db1a03f3212b4498826c",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "5a93429",
+ "scenes": 15,
+ "actions": 136,
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "fieldPicture (iconBalloon content)",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "cloakProp (worn state: cloakWorn)",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person costume 'caliph' crown:false",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "crownProp",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "worryScribble",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "bookStack (single book, with insert size)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "waterJug, smallBowl, giftChest, bindle",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "flush (soft option)",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "handOver, templeTap",
+   "effort": "S"
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Three long stretches share the yard set (S2 to S4, 37 s): variety must come from the camera (wide, two-shot, close on her eyes, book insert) and from the acting; do not let it sit in one framing for more than 6 s.",
+  "The parable is abstract: the audience must read field = wife and lion = king without words. The tenant must look like the husband (green, cap), the lion must wear the king's exact crown, and the king's thought cloud at 112.4 must show the real doorway. Check these three at phone size.",
+  "The advance scene must stay chaste and dignified; no touching, no leering close-up, the wife never cornered. Her power is stillness.",
+  "The person figure is front facing only: \"turning away\" is played with gaze, tip, folded arms and distance, not a back view.",
+  "The narration has only three pauses of 0.6 s or more, so the film is almost silent apart from the voice; do not add effects on words.",
+  "The cottage default geometry in villageYard may not accept the custom size as written; check towns.js and adjust, keeping the doorway at least 290 units high.",
+  "planned assets (iconBalloon, worryScribble, crownProp, bookStack, waterJug, smallBowl, giftChest, bindle, flush, handOver, templeTap, inset circle, caliph crown:false) may already exist in Library by the time this film is built; use the Library versions if so."
+ ]
+}

@@ -1,0 +1,2602 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-125",
+ "title": "Harun al-Rashid and Zubaydah in the Bath",
+ "duration": 175.55,
+ "end_hold": 3.5,
+ "logline": "The caliph builds his wife a hidden garden pool, cannot resist a peek, is caught, and is left with half a verse that only the quick poet Abu Nuwas can finish.",
+ "moral": "A quick, understanding mind can finish what another only began; wit is richly rewarded (and a garden built for privacy should be respected).",
+ "tone": "Light court comedy told with modesty: affection, a comic sneak, shared embarrassment, then the pleasure of clever verse. Nothing immodest is ever drawn.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 3.28,
+   "kind": "setup",
+   "cue": {
+    "word": "المحبة",
+    "t": 3.28
+   },
+   "summary": "Harun loves Zubaydah."
+  },
+  {
+   "id": "B2",
+   "t": 10.12,
+   "kind": "setup",
+   "cue": {
+    "word": "حوض",
+    "t": 10.12
+   },
+   "summary": "He builds her a garden with a wide pool fed from four sides."
+  },
+  {
+   "id": "B3",
+   "t": 19.98,
+   "kind": "setup",
+   "cue": {
+    "word": "حجبت",
+    "t": 19.98
+   },
+   "summary": "Trees close round the pool: it is private."
+  },
+  {
+   "id": "B4",
+   "t": 33.3,
+   "kind": "rising",
+   "cue": {
+    "word": "خلعت",
+    "t": 33.3
+   },
+   "summary": "On a hot day she bathes alone, behind the screen."
+  },
+  {
+   "id": "B5",
+   "t": 51.96,
+   "kind": "inciting",
+   "cue": {
+    "word": "وتسلل",
+    "t": 51.96
+   },
+   "summary": "Harun sneaks through the trees."
+  },
+  {
+   "id": "B6",
+   "t": 59.7,
+   "kind": "suspense",
+   "cue": {
+    "word": "يراقبها،",
+    "t": 59.7
+   },
+   "summary": "He watches from the leaves, against the garden's purpose."
+  },
+  {
+   "id": "B7",
+   "t": 70.36,
+   "kind": "surprise",
+   "cue": {
+    "word": "وجوده",
+    "t": 70.36
+   },
+   "summary": "She notices him."
+  },
+  {
+   "id": "B8",
+   "t": 77.22,
+   "kind": "comic",
+   "cue": {
+    "word": "عارية.",
+    "t": 77.22
+   },
+   "summary": "She ducks; the mantle slips; the veil tip still shows."
+  },
+  {
+   "id": "B9",
+   "t": 88.42,
+   "kind": "turn",
+   "cue": {
+    "word": "ابتعد",
+    "t": 88.42
+   },
+   "summary": "Embarrassed, he withdraws."
+  },
+  {
+   "id": "B10",
+   "t": 95.52,
+   "kind": "emotion",
+   "cue": {
+    "word": "ينشد",
+    "t": 95.52
+   },
+   "summary": "The scene stays with him; he begins a verse."
+  },
+  {
+   "id": "B11",
+   "t": 104.3,
+   "kind": "turn",
+   "cue": {
+    "word": "توقف",
+    "t": 104.3
+   },
+   "summary": "He is stuck after half a line."
+  },
+  {
+   "id": "B12",
+   "t": 120.0,
+   "kind": "surprise",
+   "cue": {
+    "word": "فهم",
+    "t": 120.0
+   },
+   "summary": "Abu Nuwas understands at once."
+  },
+  {
+   "id": "B13",
+   "t": 149.12,
+   "kind": "climax",
+   "cue": {
+    "word": "مواصلًا",
+    "t": 149.12
+   },
+   "summary": "The poem completes the caliph's thought."
+  },
+  {
+   "id": "B14",
+   "t": 153.88,
+   "kind": "resolution",
+   "cue": {
+    "word": "ابتسم",
+    "t": 153.88
+   },
+   "summary": "Harun smiles."
+  },
+  {
+   "id": "B15",
+   "t": 168.82,
+   "kind": "resolution",
+   "cue": {
+    "word": "هدية",
+    "t": 168.82
+   },
+   "summary": "A generous gift; the poet leaves happy."
+  }
+ ],
+ "cast": [
+  {
+   "id": "harun",
+   "name": "Caliph Harun al-Rashid",
+   "library": "person",
+   "base": "person costume:'caliph', age 0.25 (black beard), s 1.0",
+   "look": "Red dotted robe, blue cape, white turban with gold crown and blue jewel. Younger than the preset default: set age 0.25.",
+   "new": false
+  },
+  {
+   "id": "zubaydah",
+   "name": "Zubaydah",
+   "library": "person",
+   "base": "person costume:'lady', s 0.96",
+   "look": "Blue dotted robe, white veil with gold band and red jewel. The veil stays on in every shot. Behind the screen only her head and at most a sleeved forearm show.",
+   "new": false
+  },
+  {
+   "id": "abuNuwas",
+   "name": "Abu Nuwas, the poet",
+   "library": "person",
+   "base": "person costume:'poet' (planned by AN-103)",
+   "look": "Green robe, yellow sash, small tilted white turban with a hanging tail, short pointed black beard, quill in the turban.",
+   "new": true
+  },
+  {
+   "id": "sparrow",
+   "name": "garden sparrow (silent witness)",
+   "library": "bird",
+   "base": "bird kind:'sparrow', s 0.8",
+   "look": "Library sparrow. Comic conscience of the garden; not in the script.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "palaceGarden",
+   "library": null,
+   "new": true,
+   "description": "Walled palace garden strip, world 1600 x 1230, ground y 900. Back wall cream with crenellations, top y 600. Palace facade x 0..300 with a garden door (townDoor, x 70..230, top y 590). Pool (poolBasin) centre x 1080, water ellipse rx 300, ry 60 at y 905. Four rills: from the left (x 300..780, y 905), from the right (x 1380..1600), and two wall spouts at x 940 and x 1220 falling from y 600 to the back rim. Library trees at x 380, 700, 900, 1250, 1480 (crowns top y 300..380) with grow 0..1; perch branch at (760, 520). Hiding bush centre x 580, w 300, top y about 670, in the front pass with a leaf gap at y 700 (gap 0..1). Front foliage curtains (screenAmt 0..1) slide in from both panel edges. Flower beds as dot rows. Fields: build, beds, rills[4], grow[5], screenAmt, gap, door, u (time of day), front:true pass."
+  },
+  {
+   "id": "palaceHall",
+   "library": "palaceHall",
+   "new": false,
+   "description": "Library palaceHall, variant 'palace', wall 'paper': door arch left (x 40..250), three arches, dais and throne right (use the returned anchors A.throne, A.door, A.floor)."
+  }
+ ],
+ "props": [
+  {
+   "id": "poolBasin",
+   "library": null,
+   "new": true,
+   "description": "Planned by AN-105: stone-rimmed sunk pool with back and front passes. Here rx 300, ry 60, rim 24 thick, fields build, fill, glint."
+  },
+  {
+   "id": "bathScreen",
+   "library": null,
+   "new": true,
+   "description": "Planned by AN-090: folding screen. Here 3 panels, x 1000..1200, top y about 735 (set so the lady figure at s 0.96 shows head and neck only), base y 912; red frame, yellow panels with blue dots, fully opaque. Drawn AFTER the figure."
+  },
+  {
+   "id": "silverVessel",
+   "library": null,
+   "new": true,
+   "description": "Planned waterJug (AN-107), 60 x 110, in a silver palette (white body, pale blue dot shading, black outline), fields tilt, fill, glint."
+  },
+  {
+   "id": "mantle",
+   "library": null,
+   "new": true,
+   "description": "Her blue outer mantle as a flat cloth, 150 x 120, yellow trim; states: hanging over the screen top, lifted as a shield, fallen on the grass."
+  },
+  {
+   "id": "verseRibbon",
+   "library": null,
+   "new": true,
+   "description": "Planned by AN-103: paper band (40 wide) with squiggle writing that unrolls along a bezier; carries 70 px icons; here also a three-dot unfinished end and a join flash."
+  },
+  {
+   "id": "heart",
+   "library": "heart",
+   "new": false,
+   "description": "Library heart(ctx, x, y, r)."
+  },
+  {
+   "id": "purse",
+   "library": null,
+   "new": true,
+   "description": "Planned fat coin purse, yellow with a red tie, 70 x 80, two loose coins."
+  },
+  {
+   "id": "hourglass",
+   "library": null,
+   "new": true,
+   "description": "Planned hourglass, 60 x 100, used for one gag in S12."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 6.66,
+   "paragraphs": [
+    1
+   ],
+   "set": "palaceGarden",
+   "cast": [
+    "harun",
+    "zubaydah"
+   ],
+   "summary": "Portrait of the couple on the bare garden plot: Harun adores Zubaydah.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Start cam {x:330,y:720,zoom:1.5}; ease to zoom 1.75 by 5.0. Garden state build=0: only the back wall, palace door and bare ground."
+   },
+   "composition": "Harun at x 270, Zubaydah at x 400, both s 1.0, feet y 900; heads near panel centre height. Sun top right of frame. Nothing else on the plot yet.",
+   "actions": [
+    {
+     "t": 0.0,
+     "cue": {
+      "word": "كان",
+      "t": 0.0
+     },
+     "who": "harun",
+     "action": "stands facing us beside Zubaydah, breathing idle",
+     "acting": "gaze forward, small smile, breathe(); LIFE.t auto blinks",
+     "library": "person {costume:'caliph', age:0.25}"
+    },
+    {
+     "t": 0.9,
+     "cue": {
+      "word": "هارون",
+      "t": 1.06
+     },
+     "who": "lettering",
+     "action": "name label HARUN AL-RASHID with arrow pops over him",
+     "acting": "label box above the crown, never over the face",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 2.4,
+     "cue": {
+      "word": "شديد",
+      "t": 2.38
+     },
+     "who": "harun",
+     "action": "turns his eyes to her, hand to chest, leans toward her",
+     "acting": "gaze lookAt her face, lid 0.3 dreamy, mouth smile, tip 0.06, hand PERSON_HANDS.chest",
+     "library": "lookAt, settleTo"
+    },
+    {
+     "t": 3.3,
+     "cue": {
+      "word": "المحبة",
+      "t": 3.28
+     },
+     "who": "heart",
+     "action": "a red heart pops above and between them, bobbing",
+     "acting": "pop with overshoot (settleTo), slow bob",
+     "library": "heart(ctx, 335, 560, 34)"
+    },
+    {
+     "t": 4.2,
+     "cue": {
+      "word": "لزوجته",
+      "t": 4.14
+     },
+     "who": "zubaydah",
+     "action": "looks back at him and smiles, small head tilt",
+     "acting": "gaze lookAt Harun, mouth smile, lid 0.2, tip -0.04",
+     "library": "person {costume:'lady'}"
+    },
+    {
+     "t": 5.0,
+     "cue": {
+      "word": "زبيدة.",
+      "t": 5.06
+     },
+     "who": "lettering",
+     "action": "name label ZUBAYDAH with arrow pops over her",
+     "acting": "label on her outer side so both faces stay clear",
+     "library": "S.label + S.arrow"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 6.25,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 6.66
+   }
+  },
+  {
+   "id": "S2",
+   "start": 6.66,
+   "end": 23.42,
+   "paragraphs": [
+    1
+   ],
+   "set": "palaceGarden",
+   "cast": [
+    "harun",
+    "zubaydah"
+   ],
+   "summary": "Harun sweeps his arm and the garden builds itself: pool, water, four streams, then trees that close round the pool like a curtain.",
+   "camera": {
+    "shot": "establishing",
+    "move": "pull-out",
+    "notes": "Cut wide at 6.66 to cam {x:800,y:640,zoom:1.0}; drift right to x 1000 by 16; at 19.98 push to {x:1080,y:700,zoom:1.35} as the foliage closes."
+   },
+   "composition": "Couple small at left (x 270/400). Pool centre x 1080, y 905. Streams arrive from four directions. Trees rise behind and beside the pool; front foliage closes from both panel edges.",
+   "actions": [
+    {
+     "t": 6.66,
+     "cue": {
+      "word": "أنشأ",
+      "t": 6.66
+     },
+     "who": "harun",
+     "action": "anticipation dip (starts 6.4 in S1), then sweeps his right arm out toward the empty plot",
+     "acting": "anticipate() 0.25 s, aR sweep to about 2.0 rad, proud brow -0.3, gaze follows the hand",
+     "library": "anticipate, person aR"
+    },
+    {
+     "t": 7.7,
+     "cue": {
+      "word": "حديقة",
+      "t": 7.72
+     },
+     "who": "set",
+     "action": "garden beds, flower dots and hedges pop up in a left-to-right stagger",
+     "acting": "each bed pops with overshoot, 4 frames apart (stagger)",
+     "library": "palaceGarden {beds:0..1}, stagger"
+    },
+    {
+     "t": 8.4,
+     "cue": {
+      "word": "جميلة",
+      "t": 8.4
+     },
+     "who": "zubaydah",
+     "action": "hands to cheeks, delighted",
+     "acting": "eyes wide, mouth o then smile, PERSON_HANDS.cheeks, small hop",
+     "library": "hop, landSquash"
+    },
+    {
+     "t": 10.1,
+     "cue": {
+      "word": "حوض",
+      "t": 10.12
+     },
+     "who": "poolBasin",
+     "action": "the stone pool basin drops into the ground with a squash and a dust ring",
+     "acting": "impactSquash on the rim, dustBurst both sides",
+     "library": "poolBasin {build:0..1}, dustBurst"
+    },
+    {
+     "t": 10.6,
+     "cue": {
+      "word": "ماء",
+      "t": 10.6
+     },
+     "who": "poolBasin",
+     "action": "blue water rises to the rim",
+     "acting": "fill 0..1 over 0.5 s, two ripple rings",
+     "library": "poolBasin {fill}, ripple"
+    },
+    {
+     "t": 11.0,
+     "cue": {
+      "word": "واسع،",
+      "t": 11.0
+     },
+     "who": "lettering",
+     "action": "double-headed arrow across the pool shows its width",
+     "acting": "arrow grows from centre outwards",
+     "library": "S.arrow"
+    },
+    {
+     "t": 12.8,
+     "cue": {
+      "word": "الماء",
+      "t": 12.76
+     },
+     "who": "set",
+     "action": "first stream runs in from the left with moving white flow dashes",
+     "acting": "rill build 0..1 in 0.5 s, small splash where it meets the pool",
+     "library": "palaceGarden {rills:[0..1 x4]}"
+    },
+    {
+     "t": 13.3,
+     "cue": {
+      "word": "يجري",
+      "t": 13.26
+     },
+     "who": "set",
+     "action": "second stream runs in from the right",
+     "acting": "same, mirrored"
+    },
+    {
+     "t": 14.5,
+     "cue": {
+      "word": "جهات",
+      "t": 14.7
+     },
+     "who": "set",
+     "action": "third and fourth streams fall from two wall spouts at the back, one after the other",
+     "acting": "counter 1, 2, 3, 4 ticks beside each stream as it lands",
+     "library": "S.counter"
+    },
+    {
+     "t": 15.3,
+     "cue": {
+      "word": "مختلفة.",
+      "t": 15.28
+     },
+     "who": "lettering",
+     "action": "counter holds on 4 with a pop",
+     "acting": "emphasis pop on the number",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 17.2,
+     "cue": {
+      "word": "الأشجار",
+      "t": 17.4
+     },
+     "who": "set",
+     "action": "trees sprout: trunks stretch up and crowns inflate, one after another around the pool",
+     "acting": "grow 0..1 per tree, sq stretch 1.15 then settle, 5 frames apart",
+     "library": "tree() scaled about its base, settleTo, stagger"
+    },
+    {
+     "t": 18.6,
+     "cue": {
+      "word": "الحوض",
+      "t": 18.56
+     },
+     "who": "sparrow",
+     "action": "a sparrow flutters in and lands on the left tree branch",
+     "acting": "fly then perch with landSquash, looks round",
+     "library": "bird {kind:'sparrow', fly, flap}"
+    },
+    {
+     "t": 19.98,
+     "end": 22.3,
+     "cue": {
+      "word": "حجبت",
+      "t": 19.98
+     },
+     "who": "set",
+     "action": "front foliage slides in from both panel edges and closes over the pool like stage curtains",
+     "acting": "leaf masses ease in with overshoot; last gap closes on the final word",
+     "library": "palaceGarden {front:true, screenAmt:0..1}"
+    },
+    {
+     "t": 21.6,
+     "cue": {
+      "word": "الأنظار.",
+      "t": 21.68
+     },
+     "who": "lettering",
+     "action": "label PRIVATE! stamps on the closed foliage",
+     "acting": "S.emphasis stamp, slight rotation",
+     "library": "S.emphasis"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 21.7,
+     "text": "PRIVATE!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 16.55,
+     "kind": "water-bloop"
+    },
+    {
+     "t": 22.95,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 23.42
+   }
+  },
+  {
+   "id": "S3",
+   "start": 23.42,
+   "end": 33.0,
+   "paragraphs": [
+    2
+   ],
+   "set": "palaceGarden",
+   "cast": [
+    "zubaydah",
+    "sparrow"
+   ],
+   "summary": "A blazing day. Zubaydah comes into the garden, fanning herself, and delights in the clear water and the shade.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Cam {x:420,y:680,zoom:1.3} at the palace door; track right with her to {x:900,y:700,zoom:1.3} by 30.2."
+   },
+   "composition": "Big sun upper right with wobbling heat lines. Zubaydah walks left to right from the door (x 150) to the pool side (x 860). Sparrow panting on its branch (760, 520).",
+   "actions": [
+    {
+     "t": 23.5,
+     "cue": {
+      "word": "يوم",
+      "t": 24.1
+     },
+     "who": "set",
+     "action": "huge sun pulses, wavy heat lines rise from the ground",
+     "acting": "sun scale pulse 1.0..1.08, three wavy lines drift up",
+     "library": "sun(), K.noise wobble"
+    },
+    {
+     "t": 25.2,
+     "cue": {
+      "word": "الحر",
+      "t": 25.22
+     },
+     "who": "sparrow",
+     "action": "sparrow droops on the branch, beak open, panting",
+     "acting": "beak 1, sag -0.4, lid 0.5",
+     "library": "bird {kind:'sparrow', beak, sag}"
+    },
+    {
+     "t": 25.8,
+     "end": 28.0,
+     "cue": {
+      "word": "دخلت",
+      "t": 25.78
+     },
+     "who": "zubaydah",
+     "action": "walks in through the garden door, fanning her face with one hand",
+     "acting": "walk() no sliding, wave hand as a fan at 5 Hz, lid 0.4, mouth frown, one sweat drop",
+     "library": "walk, footfalls, PERSON_HANDS.wave"
+    },
+    {
+     "t": 28.2,
+     "cue": {
+      "word": "فأعجبها",
+      "t": 28.18
+     },
+     "who": "zubaydah",
+     "action": "stops, sees the pool, lights up",
+     "acting": "settleTo stop, eyes wide, brow -0.5, mouth o then smile, gaze lookAt pool",
+     "library": "lookAt, settleTo"
+    },
+    {
+     "t": 30.2,
+     "cue": {
+      "word": "صفاء",
+      "t": 30.24
+     },
+     "who": "poolBasin",
+     "action": "three sparkles glint across the clear water",
+     "acting": "star glints pop in sequence",
+     "library": "poolBasin {glint}"
+    },
+    {
+     "t": 31.5,
+     "cue": {
+      "word": "وظل",
+      "t": 31.5
+     },
+     "who": "set",
+     "action": "a dotted blue tree shadow slides over her as she steps under the branches",
+     "acting": "Ben-Day shadow overlay eases across; heat lines stop inside it"
+    },
+    {
+     "t": 32.4,
+     "cue": {
+      "word": "الأغصان.",
+      "t": 32.42
+     },
+     "who": "zubaydah",
+     "action": "shoulders drop, long relieved sigh, eyes closed",
+     "acting": "lid 1 for 0.5 s, sq 0.97 then 1, small puff of breath",
+     "library": "breathe"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 24.6,
+     "text": "SO HOT!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 33.0
+   }
+  },
+  {
+   "id": "S4",
+   "start": 33.0,
+   "end": 45.16,
+   "paragraphs": [
+    2
+   ],
+   "set": "palaceGarden",
+   "cast": [
+    "zubaydah",
+    "sparrow"
+   ],
+   "summary": "Discreet bath: she goes behind a folding screen at the pool edge. Only her veiled head and a hand with the silver vessel are ever seen.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Cam {x:1090,y:720,zoom:1.5}; pull back to zoom 1.15 on \"alone\" (38.06), return to 1.6 on the pouring (40.2)."
+   },
+   "composition": "bathScreen x 1000..1200, top y about 735, at the near pool edge; Zubaydah behind it at x 1100. Screen hides everything below the chin at all times. Sparrow branch upper left.",
+   "actions": [
+    {
+     "t": 33.0,
+     "cue": {
+      "word": "خلعت",
+      "t": 33.3
+     },
+     "who": "zubaydah",
+     "action": "walks behind the folding screen; from now on only her head shows above it",
+     "acting": "walk 0.8 s; the figure is drawn BEFORE the screen and clipped below the screen top",
+     "library": "walk; draw order person then bathScreen"
+    },
+    {
+     "t": 34.4,
+     "cue": {
+      "word": "ثيابها",
+      "t": 34.36
+     },
+     "who": "mantle",
+     "action": "her blue outer mantle is flung over the screen top and hangs there",
+     "acting": "cloth arcs up and flops with follow-through swing(); her head keeps its veil",
+     "library": "swing"
+    },
+    {
+     "t": 34.9,
+     "cue": {
+      "word": "ثيابها",
+      "t": 34.36
+     },
+     "who": "sparrow",
+     "action": "the sparrow politely turns its back and covers its eyes with a wing",
+     "acting": "dir flip with squeeze, sag 0.8 wing over the eye",
+     "library": "turnFlip, bird sag"
+    },
+    {
+     "t": 35.4,
+     "cue": {
+      "word": "ونزلت",
+      "t": 35.34
+     },
+     "who": "zubaydah",
+     "action": "steps down into the pool: her head sinks 45 units behind the screen",
+     "acting": "eased drop with a small bob, eyes close in relief, smile",
+     "library": "settleTo"
+    },
+    {
+     "t": 36.5,
+     "cue": {
+      "word": "الحوض",
+      "t": 36.54
+     },
+     "who": "poolBasin",
+     "action": "ripple rings spread from under the screen, small splash drops jump over its top",
+     "acting": "two rings, 5 drops on arcs",
+     "library": "ripple"
+    },
+    {
+     "t": 38.1,
+     "cue": {
+      "word": "وحدها،",
+      "t": 38.06
+     },
+     "who": "camera",
+     "action": "pull back: an empty, silent garden, only leaves swaying",
+     "acting": "hold 1 s of stillness; leaves sway 2 px"
+    },
+    {
+     "t": 40.2,
+     "cue": {
+      "word": "تغرف",
+      "t": 40.2
+     },
+     "who": "zubaydah",
+     "action": "her hand dips out of sight then rises above the screen holding the silver vessel",
+     "acting": "anticipation dip, arm aR raised to about 2.5 rad, glint on the vessel",
+     "library": "person aR, anticipate"
+    },
+    {
+     "t": 41.9,
+     "cue": {
+      "word": "فضي",
+      "t": 41.88
+     },
+     "who": "silverVessel",
+     "action": "the vessel flashes a star glint",
+     "acting": "one 4-point glint, 6 frames"
+    },
+    {
+     "t": 42.7,
+     "cue": {
+      "word": "وتسكبه",
+      "t": 42.72
+     },
+     "who": "silverVessel",
+     "action": "tilts and pours: a blue water arc falls behind the screen onto the top of her veil",
+     "acting": "tilt 0..1.2 rad, pourArc with drops; her eyes shut, happy shiver (tremble 1 px)",
+     "library": "waterJug {tilt}, pourArc"
+    },
+    {
+     "t": 44.2,
+     "cue": {
+      "word": "جسدها.",
+      "t": 44.28
+     },
+     "who": "zubaydah",
+     "action": "second scoop and pour, quicker; shakes drops off, content sigh",
+     "acting": "head shake 2 cycles, drops fly, lid 1 then open"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 36.7,
+     "text": "SPLASH!"
+    },
+    {
+     "t": 43.4,
+     "text": "AHH!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 42.48,
+     "kind": "drip"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 45.16
+   }
+  },
+  {
+   "id": "S5",
+   "start": 45.16,
+   "end": 56.4,
+   "paragraphs": [
+    3
+   ],
+   "set": "palaceGarden",
+   "cast": [
+    "harun",
+    "sparrow"
+   ],
+   "summary": "Harun hears the splashing from the palace door, slips out and tiptoes from tree to tree.",
+   "camera": {
+    "shot": "medium",
+    "move": "track",
+    "notes": "Cam {x:260,y:700,zoom:1.6} on Harun in the doorway; from 51.96 track right with him to {x:540,y:700,zoom:1.4}."
+   },
+   "composition": "Harun in the garden door (x 150). Sound arcs drift in from the right edge. Hiding places: trunk at x 380, big bush centred x 580 (top y about 670).",
+   "actions": [
+    {
+     "t": 45.2,
+     "cue": {
+      "word": "سمع",
+      "t": 45.16
+     },
+     "who": "fx",
+     "action": "splash sound arcs drift from the trees to the palace door",
+     "acting": "three arcs travel right to left, fading",
+     "library": "soundArcs"
+    },
+    {
+     "t": 45.9,
+     "cue": {
+      "word": "سمع",
+      "t": 45.16
+     },
+     "who": "harun",
+     "action": "in the doorway, cups an ear toward the sound",
+     "acting": "PERSON_HANDS.cupEar, gaze right, brow -0.5",
+     "library": "PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 47.9,
+     "cue": {
+      "word": "أنها",
+      "t": 47.86
+     },
+     "who": "fx",
+     "action": "small picture balloon: pool icon with a veiled head icon",
+     "acting": "iconBalloon pops beside his head, not over his face",
+     "library": "iconBalloon (planned)"
+    },
+    {
+     "t": 48.8,
+     "cue": {
+      "word": "الحوض،",
+      "t": 48.76
+     },
+     "who": "harun",
+     "action": "slow sly smile, eyebrows hop twice",
+     "acting": "mouth smirk/smile, brow -0.6 double pulse, lid 0.3"
+    },
+    {
+     "t": 49.4,
+     "cue": {
+      "word": "فخرج",
+      "t": 49.38
+     },
+     "who": "harun",
+     "action": "steps out of the door and looks left, right, left",
+     "acting": "walk 2 steps; gazePlan saccades (0.07 ease), head tilt follows",
+     "library": "walk, gazePlan"
+    },
+    {
+     "t": 51.2,
+     "cue": {
+      "word": "القصر",
+      "t": 51.18
+     },
+     "who": "set",
+     "action": "the door swings shut behind him",
+     "acting": "townDoor open 1..0 with a settle",
+     "library": "townDoor"
+    },
+    {
+     "t": 52.0,
+     "end": 54.0,
+     "cue": {
+      "word": "وتسلل",
+      "t": 51.96
+     },
+     "who": "harun",
+     "action": "tiptoes right: high slow steps, finger to lips",
+     "acting": "tiptoe (walk with stride 0.5, lift 1.6, sq 1.04 on each rise), PERSON_HANDS.hush, gaze ahead",
+     "library": "walk, footfalls, PERSON_HANDS.hush"
+    },
+    {
+     "t": 53.1,
+     "cue": {
+      "word": "الأشجار",
+      "t": 53.14
+     },
+     "who": "harun",
+     "action": "freezes flat behind the trunk at x 380, then peeks round it",
+     "acting": "draw Harun then trunk (front pass); one eye and crown tip edge out",
+     "library": "peek from cover pattern"
+    },
+    {
+     "t": 54.1,
+     "cue": {
+      "word": "ليراها",
+      "t": 54.06
+     },
+     "who": "harun",
+     "action": "dashes on tiptoe to the big bush and ducks behind it",
+     "acting": "quick 4 steps, anticipate then stop with settle; bush shakes",
+     "library": "walk, anticipate, settleTo"
+    },
+    {
+     "t": 55.1,
+     "cue": {
+      "word": "دون",
+      "t": 55.04
+     },
+     "who": "sparrow",
+     "action": "the sparrow on the branch above notices him and stares down",
+     "acting": "gaze lookAt Harun, brow 0.6, head tilt",
+     "library": "lookAt"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 52.3,
+     "text": "TIP TOE"
+    },
+    {
+     "t": 53.4,
+     "text": "SHH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 56.4
+   }
+  },
+  {
+   "id": "S6",
+   "start": 56.4,
+   "end": 67.62,
+   "paragraphs": [
+    3
+   ],
+   "set": "palaceGarden",
+   "cast": [
+    "harun",
+    "zubaydah",
+    "sparrow"
+   ],
+   "summary": "He parts the leaves and watches. The camera stays on HIS face; the bath is only the far screen. The narration notes the garden was built for privacy; the sparrow disapproves.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Cam {x:600,y:700,zoom:1.9} on the bush and his eyes; at 59.7 widen to {x:820,y:690,zoom:1.15} so the far screen (x 1000..1200) is in the right third; from 60.74 push back to his face zoom 1.8."
+   },
+   "composition": "Harun fully hidden in the bush at x 580; a leaf gap at y about 700 shows only his eyes and crown tip. Far right: screen with her veiled head and the water arc, small. Never a point-of-view shot.",
+   "actions": [
+    {
+     "t": 56.4,
+     "cue": {
+      "word": "وقف",
+      "t": 56.4
+     },
+     "who": "harun",
+     "action": "stops dead behind the bush; only the crown tip shows above it",
+     "acting": "bush settle wobble, crown tip trembles",
+     "library": "settleTo"
+    },
+    {
+     "t": 58.0,
+     "cue": {
+      "word": "الأوراق",
+      "t": 58.0
+     },
+     "who": "harun",
+     "action": "two hands push the leaves apart; his eyes appear in the gap",
+     "acting": "leaf clusters shift 30 units each side, eyes wide, gaze right",
+     "library": "person handLW/handRW on the leaf clusters"
+    },
+    {
+     "t": 59.7,
+     "cue": {
+      "word": "يراقبها،",
+      "t": 59.7
+     },
+     "who": "harun",
+     "action": "eyes fixed to the right, a slow blink, pupils big",
+     "acting": "gaze lookAt the screen, lid 0 then one slow blink, brow -0.4",
+     "library": "lookAt, blink"
+    },
+    {
+     "t": 60.2,
+     "cue": {
+      "word": "يراقبها،",
+      "t": 59.7
+     },
+     "who": "zubaydah",
+     "action": "far away, unaware: another scoop and pour behind the screen, humming",
+     "acting": "small figure, eyes shut, vessel tilt, pourArc",
+     "library": "pourArc"
+    },
+    {
+     "t": 61.8,
+     "cue": {
+      "word": "الحديقة",
+      "t": 62.16
+     },
+     "who": "lettering",
+     "action": "the PRIVATE! stamp from S2 reappears on the foliage with an arrow at the tree wall",
+     "acting": "stamp pops, then tilts as if embarrassed",
+     "library": "S.emphasis, S.arrow"
+    },
+    {
+     "t": 63.0,
+     "cue": {
+      "word": "صممت",
+      "t": 62.94
+     },
+     "who": "sparrow",
+     "action": "hops down the branch until it is right above the crown, glaring",
+     "acting": "two hops with landSquash, brow 1, gaze down",
+     "library": "hop, landSquash"
+    },
+    {
+     "t": 64.4,
+     "cue": {
+      "word": "لتمنح",
+      "t": 64.36
+     },
+     "who": "sparrow",
+     "action": "pecks the crown tip twice",
+     "acting": "beak jab strike cycle, crown tip dips 4 units each hit",
+     "library": "bird drop/headRot jab"
+    },
+    {
+     "t": 65.3,
+     "cue": {
+      "word": "المستحم",
+      "t": 65.24
+     },
+     "who": "harun",
+     "action": "flinches, eyes dart up, a hand shoos the bird, eyes go back to the gap",
+     "acting": "gazePlan up then right, lid flinch 0.6 for 3 frames",
+     "library": "gazePlan"
+    },
+    {
+     "t": 66.6,
+     "cue": {
+      "word": "خصوصية.",
+      "t": 66.62
+     },
+     "who": "lettering",
+     "action": "arrow from the word PRIVATE! bends down to point at the peeping eyes",
+     "acting": "arrow draws on, wobbles",
+     "library": "S.arrow"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 61.9,
+     "text": "PRIVATE!"
+    },
+    {
+     "t": 64.5,
+     "text": "PECK! PECK!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 67.62
+   }
+  },
+  {
+   "id": "S7",
+   "start": 67.62,
+   "end": 85.72,
+   "paragraphs": [
+    4
+   ],
+   "set": "palaceGarden",
+   "cast": [
+    "zubaydah",
+    "harun",
+    "sparrow"
+   ],
+   "summary": "She senses him, turns, blushes and ducks behind the screen; she grabs for her mantle but it slips away, so the top of her veil and her eyes still show.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Cam {x:1090,y:720,zoom:1.6} on the screen; at 70.36 quick two-shot {x:850,y:700,zoom:1.1} linking her eyes to the eyes in the bush; back to zoom 1.7 at 74.72."
+   },
+   "composition": "Screen centre frame, her head above it; bush with the eye gap at far left of the two-shot. Screen always covers from the chin down; when she ducks only eyes and veil top show.",
+   "actions": [
+    {
+     "t": 67.6,
+     "cue": {
+      "word": "لاحظت",
+      "t": 67.62
+     },
+     "who": "sparrow",
+     "action": "the sparrow chirps loudly toward the pool",
+     "acting": "beak open, two sound arcs",
+     "library": "soundArcs"
+    },
+    {
+     "t": 68.3,
+     "cue": {
+      "word": "لاحظت",
+      "t": 67.62
+     },
+     "who": "zubaydah",
+     "action": "stops mid pour, eyes open, listens",
+     "acting": "vessel freezes, lid 0, gaze saccades left and right",
+     "library": "gazePlan (0.07)"
+    },
+    {
+     "t": 70.4,
+     "cue": {
+      "word": "وجوده",
+      "t": 70.36
+     },
+     "who": "zubaydah",
+     "action": "her eyes land on the bush",
+     "acting": "gaze lookAt the leaf gap, pupils small",
+     "library": "lookAt"
+    },
+    {
+     "t": 71.3,
+     "cue": {
+      "word": "أخيرًا،",
+      "t": 71.3
+     },
+     "who": "fx",
+     "action": "a red ! pops over her head",
+     "acting": "single exclamation, pop with overshoot",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 72.1,
+     "cue": {
+      "word": "فالتفتت",
+      "t": 72.14
+     },
+     "who": "zubaydah",
+     "action": "whips her head round to face the bush",
+     "acting": "head tilt 6 px toward him with overshoot, veil tail lags 2 frames",
+     "library": "settleTo"
+    },
+    {
+     "t": 73.9,
+     "cue": {
+      "word": "إليه",
+      "t": 73.94
+     },
+     "who": "harun",
+     "action": "in the leaf gap his eyes go wide; he has been seen",
+     "acting": "eyes wide, lid 0, noBlink, leaves quiver"
+    },
+    {
+     "t": 74.7,
+     "cue": {
+      "word": "وشعرت",
+      "t": 74.72
+     },
+     "who": "zubaydah",
+     "action": "cheeks flush pink, mouth a small o, brows up",
+     "acting": "flush soft 0..1 over 0.5 s, brow -0.7",
+     "library": "flush (soft option, planned)"
+    },
+    {
+     "t": 75.6,
+     "cue": {
+      "word": "بالخجل",
+      "t": 75.58
+     },
+     "who": "silverVessel",
+     "action": "the vessel slips from her fingers and drops behind the screen",
+     "acting": "fallY, small splash drops",
+     "library": "fallY"
+    },
+    {
+     "t": 77.2,
+     "cue": {
+      "word": "عارية.",
+      "t": 77.22
+     },
+     "who": "zubaydah",
+     "action": "ducks: only eyes and veil top above the screen",
+     "acting": "anticipate 3 frames, drop 45 units with squash sq 0.9, tremble",
+     "library": "anticipate, impactSquash, tremble"
+    },
+    {
+     "t": 78.0,
+     "cue": {
+      "word": "حاولت",
+      "t": 78.0
+     },
+     "who": "zubaydah",
+     "action": "two hands reach over the screen top, feeling for the mantle",
+     "acting": "hands walk along the top edge, eyes stay on the bush",
+     "library": "person handLW/handRW"
+    },
+    {
+     "t": 79.4,
+     "cue": {
+      "word": "تستر",
+      "t": 79.34
+     },
+     "who": "mantle",
+     "action": "she grips the mantle and pulls it up as an extra shield in front of her face",
+     "acting": "cloth lifts 60 units, eyes vanish behind it"
+    },
+    {
+     "t": 80.8,
+     "cue": {
+      "word": "بيديها،",
+      "t": 80.74
+     },
+     "who": "zubaydah",
+     "action": "both fists hold the mantle high; it shakes",
+     "acting": "tremble 2 px on cloth and hands",
+     "library": "tremble"
+    },
+    {
+     "t": 81.7,
+     "cue": {
+      "word": "لكنها",
+      "t": 81.62
+     },
+     "who": "mantle",
+     "action": "the mantle slides out of her grip and falls outside the screen onto the grass",
+     "acting": "slips, fallY, flops with a squash; hands grab air twice",
+     "library": "fallY, impactSquash"
+    },
+    {
+     "t": 83.4,
+     "cue": {
+      "word": "تستطع",
+      "t": 83.38
+     },
+     "who": "zubaydah",
+     "action": "eyes pop back up, look at the fallen mantle, then at the bush",
+     "acting": "gazePlan down then left, brow -0.8, wet false",
+     "library": "gazePlan"
+    },
+    {
+     "t": 84.2,
+     "cue": {
+      "word": "إخفاءه",
+      "t": 84.18
+     },
+     "who": "zubaydah",
+     "action": "sinks again, but the veil top still sticks out; hands press it flat, it springs back up",
+     "acting": "veil tip spring (settleTo overshoot) twice",
+     "library": "settleTo"
+    },
+    {
+     "t": 85.0,
+     "cue": {
+      "word": "كله.",
+      "t": 85.02
+     },
+     "who": "lettering",
+     "action": "arrow points at the stubborn veil tip",
+     "acting": "short arrow, one wobble",
+     "library": "S.arrow"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 71.4,
+     "text": "!"
+    },
+    {
+     "t": 77.4,
+     "text": "EEK!"
+    },
+    {
+     "t": 82.0,
+     "text": "OOPS!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 85.72
+   }
+  },
+  {
+   "id": "S8",
+   "start": 85.72,
+   "end": 90.24,
+   "paragraphs": [
+    4
+   ],
+   "set": "palaceGarden",
+   "cast": [
+    "harun",
+    "sparrow"
+   ],
+   "summary": "Caught, Harun is the embarrassed one: he covers his eyes and backs away between the trees.",
+   "camera": {
+    "shot": "close",
+    "move": "track",
+    "notes": "Cam {x:590,y:700,zoom:1.8} on the bush; from 87.8 track left with him to {x:330,y:700,zoom:1.4}."
+   },
+   "composition": "Harun rises out of the bush at x 580, face clear of leaves, then exits left toward the palace door.",
+   "actions": [
+    {
+     "t": 85.7,
+     "cue": {
+      "word": "رأى",
+      "t": 85.72
+     },
+     "who": "harun",
+     "action": "pops up out of the bush, eyes wide, look to camera",
+     "acting": "gaze [0,0.05], noBlink, mouth o, leaves on his crown",
+     "library": "look to camera"
+    },
+    {
+     "t": 86.6,
+     "cue": {
+      "word": "هارون",
+      "t": 86.64
+     },
+     "who": "harun",
+     "action": "blushes and gulps",
+     "acting": "flush soft, drop pulse 4 px, lid blink twice fast",
+     "library": "flush (soft)"
+    },
+    {
+     "t": 87.2,
+     "cue": {
+      "word": "ذلك",
+      "t": 87.18
+     },
+     "who": "harun",
+     "action": "claps a hand over his own eyes and turns away",
+     "acting": "PERSON_HANDS.headHold or shield over the eyes, tip -0.08",
+     "library": "PERSON_HANDS.shield"
+    },
+    {
+     "t": 88.4,
+     "cue": {
+      "word": "ابتعد",
+      "t": 88.42
+     },
+     "who": "harun",
+     "action": "hurries off left on tiptoe, one hand still over his eyes, bumps the trunk",
+     "acting": "walk fast small steps, bump at x 380: 2 frame squash, leaves fall",
+     "library": "walk, footfalls, impactSquash"
+    },
+    {
+     "t": 89.3,
+     "cue": {
+      "word": "الأشجار.",
+      "t": 89.32
+     },
+     "who": "sparrow",
+     "action": "the sparrow chirps after him; the leaf gap closes",
+     "acting": "beak open, small hop; leaf clusters ease shut",
+     "library": "hop"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 88.9,
+     "text": "BONK!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 90.24,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S9",
+   "start": 90.24,
+   "end": 103.04,
+   "paragraphs": [
+    5
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "harun"
+   ],
+   "summary": "In the palace the scene will not leave his head (thought cloud of the screen, the vessel and her eyes). He starts to recite: a verse ribbon unrolls.",
+   "camera": {
+    "shot": "medium",
+    "move": "drift",
+    "notes": "Camera cut hidden under the LATER card midpoint. Cam {x:480,y:640,zoom:1.3}; slow drift up to keep the cloud (centre 560, 380) and his face both in frame."
+   },
+   "composition": "Harun paces on the hall floor x 330..520, feet y 900. Thought cloud 420 x 300 upper right, tail to his head. Verse ribbon later unrolls up and left from his mouth side.",
+   "actions": [
+    {
+     "t": 90.3,
+     "end": 92.0,
+     "cue": {
+      "word": "ظل",
+      "t": 90.24
+     },
+     "who": "harun",
+     "action": "paces slowly, hands behind his back, eyes far away",
+     "acting": "walk slow, gaze up right, lid 0.35, sigh",
+     "library": "walk"
+    },
+    {
+     "t": 92.0,
+     "cue": {
+      "word": "المشهد",
+      "t": 92.04
+     },
+     "who": "fx",
+     "action": "thought cloud pops: the pool, the screen, the silver vessel pouring, her veiled head",
+     "acting": "trail bubbles first, then the cloud; inside is the S4 picture, reduced",
+     "library": "thoughtCloud {inside, scale:0.5, at:[1100,760]}"
+    },
+    {
+     "t": 93.4,
+     "cue": {
+      "word": "الخليفة،",
+      "t": 93.42
+     },
+     "who": "harun",
+     "action": "stops, chin in hand, dreamy smile at the cloud",
+     "acting": "PERSON_HANDS.chin, gaze lookAt cloud, lid 0.4",
+     "library": "PERSON_HANDS.chin, lookAt"
+    },
+    {
+     "t": 94.9,
+     "cue": {
+      "word": "فأخذ",
+      "t": 94.92
+     },
+     "who": "harun",
+     "action": "straightens, clears his throat, raises one hand like an orator",
+     "acting": "anticipate, aR up, chest out (sq 1.04), eyes shut",
+     "library": "anticipate"
+    },
+    {
+     "t": 95.5,
+     "cue": {
+      "word": "ينشد",
+      "t": 95.52
+     },
+     "who": "verseRibbon",
+     "action": "a paper ribbon with squiggle writing unrolls from him in a rising curve",
+     "acting": "unroll 0..0.45, his mouth talk 0.7 in rhythm",
+     "library": "verseRibbon (planned) {unroll}"
+    },
+    {
+     "t": 97.1,
+     "cue": {
+      "word": "بيت",
+      "t": 97.08
+     },
+     "who": "lettering",
+     "action": "label HALF A VERSE with arrow at the ribbon end",
+     "acting": "label pops below the ribbon",
+     "library": "S.label"
+    },
+    {
+     "t": 98.9,
+     "cue": {
+      "word": "نظرة",
+      "t": 98.94
+     },
+     "who": "verseRibbon",
+     "action": "an eye icon and a glance line appear on the ribbon",
+     "acting": "icon pops on the band"
+    },
+    {
+     "t": 99.5,
+     "cue": {
+      "word": "شوق",
+      "t": 99.52
+     },
+     "who": "verseRibbon",
+     "action": "a small heart icon follows the eye",
+     "acting": "heart pop, pulse",
+     "library": "heart"
+    },
+    {
+     "t": 101.7,
+     "cue": {
+      "word": "حرارة",
+      "t": 101.74
+     },
+     "who": "harun",
+     "action": "soft blush, flame icon on the ribbon, hand to chest",
+     "acting": "flush soft, PERSON_HANDS.chest, sway",
+     "library": "flush (soft)"
+    },
+    {
+     "t": 102.5,
+     "cue": {
+      "word": "الحب.",
+      "t": 102.52
+     },
+     "who": "heart",
+     "action": "the heart on the ribbon doubles in size and beats twice",
+     "acting": "pulse 1.0..1.3 twice"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 103.04
+   }
+  },
+  {
+   "id": "S10",
+   "start": 103.04,
+   "end": 110.5,
+   "paragraphs": [
+    5
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "harun"
+   ],
+   "summary": "The verse stops dead. He cannot find the rest: the ribbon ends in three dots and droops.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Cam {x:470,y:660,zoom:1.7} on his face and the ribbon end; thought cloud fades out."
+   },
+   "composition": "Face left of centre, drooping ribbon end right of his head, clear of the face.",
+   "actions": [
+    {
+     "t": 103.1,
+     "cue": {
+      "word": "لكنه",
+      "t": 103.04
+     },
+     "who": "harun",
+     "action": "mouth open, hand in the air, nothing comes out",
+     "acting": "talk 0, mouth o held, eyes open, gaze at the ribbon end"
+    },
+    {
+     "t": 104.3,
+     "cue": {
+      "word": "توقف",
+      "t": 104.3
+     },
+     "who": "verseRibbon",
+     "action": "the ribbon jerks to a stop; its blank end droops with a swing",
+     "acting": "swing() damped, three dots appear one by one",
+     "library": "swing"
+    },
+    {
+     "t": 105.9,
+     "cue": {
+      "word": "فلم",
+      "t": 105.94
+     },
+     "who": "harun",
+     "action": "scratches his temple under the crown, eyes search the ceiling",
+     "acting": "gazePlan saccades up left, up right; brow 0.4",
+     "library": "gazePlan (0.07)"
+    },
+    {
+     "t": 107.3,
+     "cue": {
+      "word": "كيف",
+      "t": 107.3
+     },
+     "who": "fx",
+     "action": "a small ? pops beside his head",
+     "acting": "single question mark, not over the face",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 107.8,
+     "cue": {
+      "word": "يكمل",
+      "t": 107.76
+     },
+     "who": "harun",
+     "action": "tries again: mouth opens, one squiggle starts, then crumbles off the ribbon",
+     "acting": "talk pulse, squiggle breaks into 3 dots that fall"
+    },
+    {
+     "t": 109.6,
+     "cue": {
+      "word": "بدأها.",
+      "t": 109.62
+     },
+     "who": "harun",
+     "action": "arms drop, long sigh, shoulders sag",
+     "acting": "sq 0.96, lid 0.5, mouth frown",
+     "library": "breathe"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 107.3,
+     "text": "?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 110.5
+   }
+  },
+  {
+   "id": "S11",
+   "start": 110.5,
+   "end": 120.0,
+   "paragraphs": [
+    6
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "harun",
+    "abuNuwas"
+   ],
+   "summary": "He claps for Abu Nuwas. The poet strolls in and is handed the unfinished ribbon.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pull-out",
+    "notes": "Cam widens to {x:500,y:660,zoom:1.05}: door arch (x 40..250) left, Harun now seated on the throne (A.throne) right. Use twoShot(poet, harun) from 113.4."
+   },
+   "composition": "Abu Nuwas enters from the door arch and stops at x 380. Harun on the throne at about x 730. Ribbon passes right to left between them above waist height.",
+   "actions": [
+    {
+     "t": 110.5,
+     "cue": {
+      "word": "دعا",
+      "t": 110.5
+     },
+     "who": "harun",
+     "action": "seated on the throne, claps twice",
+     "acting": "two quick claps (hands meet), brows up, gaze to the door",
+     "library": "person {sit:1, seat:'bench', y:A.throne.sitY}"
+    },
+    {
+     "t": 112.2,
+     "end": 113.8,
+     "cue": {
+      "word": "الشاعر",
+      "t": 112.22
+     },
+     "who": "abuNuwas",
+     "action": "walks in through the door arch, relaxed, quill in his turban bobbing",
+     "acting": "walk, slight swagger tip 0.03, smile, turban tail lags",
+     "library": "person {costume:'poet'} (planned), walk, footfalls"
+    },
+    {
+     "t": 113.0,
+     "cue": {
+      "word": "أبا",
+      "t": 112.92
+     },
+     "who": "lettering",
+     "action": "name label ABU NUWAS, THE POET with arrow",
+     "acting": "label above him as he walks, stops with him",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 113.9,
+     "cue": {
+      "word": "وقال",
+      "t": 113.98
+     },
+     "who": "abuNuwas",
+     "action": "stops and bows with a flourish",
+     "acting": "anticipate, tip 0.35 bow and back, hand to chest",
+     "library": "anticipate, tip"
+    },
+    {
+     "t": 114.9,
+     "cue": {
+      "word": "أريد",
+      "t": 114.92
+     },
+     "who": "harun",
+     "action": "leans forward and points at the poet",
+     "acting": "talk 0.7, PERSON_HANDS.pointFwd, gaze lookAt poet",
+     "library": "PERSON_HANDS.pointFwd, lookAt"
+    },
+    {
+     "t": 116.3,
+     "cue": {
+      "word": "قصيدة",
+      "t": 116.34
+     },
+     "who": "verseRibbon",
+     "action": "Harun holds out the short half ribbon; it floats across to the poet",
+     "acting": "handOver with weight dip, both gazes follow it",
+     "library": "handOver (planned)"
+    },
+    {
+     "t": 117.3,
+     "cue": {
+      "word": "تبدأ",
+      "t": 117.26
+     },
+     "who": "lettering",
+     "action": "arrow on the first squiggle: START HERE",
+     "acting": "small label on the ribbon start",
+     "library": "S.label"
+    },
+    {
+     "t": 118.6,
+     "cue": {
+      "word": "العبارة.",
+      "t": 118.6
+     },
+     "who": "abuNuwas",
+     "action": "reads it with one raised brow, eyes run along the line",
+     "acting": "gaze sweeps right to left along the ribbon, brow -0.6 one side, smirk",
+     "library": "gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 117.3,
+     "text": "START HERE"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 119.65,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 120.0
+   }
+  },
+  {
+   "id": "S12",
+   "start": 120.0,
+   "end": 132.92,
+   "paragraphs": [
+    6
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "harun",
+    "abuNuwas"
+   ],
+   "summary": "The poet understands at once. No thinking time needed: his fame is quick wit and improvised verse.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Cam {x:400,y:650,zoom:1.6} on Abu Nuwas; at 126.35 pull to the two-shot zoom 1.15 so Harun reacts in frame."
+   },
+   "composition": "Poet centre left, face high in the panel; hourglass prop floats beside him then is waved away. Harun on the throne at right in the two-shot.",
+   "actions": [
+    {
+     "t": 120.0,
+     "cue": {
+      "word": "فهم",
+      "t": 120.0
+     },
+     "who": "abuNuwas",
+     "action": "eyes snap wide, finger shoots up: got it",
+     "acting": "PERSON_HANDS.pointUp with overshoot, brow -0.8, mouth smile",
+     "library": "PERSON_HANDS.pointUp, settleTo"
+    },
+    {
+     "t": 120.8,
+     "cue": {
+      "word": "الشاعر",
+      "t": 120.74
+     },
+     "who": "abuNuwas",
+     "action": "small wink toward the caliph",
+     "acting": "wink 'R', smirk",
+     "library": "person wink"
+    },
+    {
+     "t": 121.8,
+     "cue": {
+      "word": "فورًا،",
+      "t": 121.82
+     },
+     "who": "lettering",
+     "action": "AHA! pops above his finger",
+     "acting": "pop, clear of the face",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 123.2,
+     "cue": {
+      "word": "يحتج",
+      "t": 123.22
+     },
+     "who": "hourglass",
+     "action": "an hourglass pops up beside him; he flicks it away before a grain falls",
+     "acting": "pop in, then spins off screen on an arc with a puff",
+     "library": "hourglass (planned)"
+    },
+    {
+     "t": 124.5,
+     "cue": {
+      "word": "طويل",
+      "t": 124.5
+     },
+     "who": "abuNuwas",
+     "action": "shakes his head, palm out: no time needed",
+     "acting": "head shake 2 cycles, PERSON_HANDS.palmsUp one hand",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 125.2,
+     "cue": {
+      "word": "للتفكير.",
+      "t": 125.2
+     },
+     "who": "harun",
+     "action": "leans in on the throne, surprised and hopeful",
+     "acting": "brow -0.6, eyes wide, tip 0.08"
+    },
+    {
+     "t": 127.0,
+     "cue": {
+      "word": "مشهورًا",
+      "t": 127.04
+     },
+     "who": "abuNuwas",
+     "action": "pulls the quill from his turban and twirls it",
+     "acting": "quill spins 2 turns, gaze follows it, smile"
+    },
+    {
+     "t": 127.9,
+     "cue": {
+      "word": "بسرعة",
+      "t": 127.84
+     },
+     "who": "fx",
+     "action": "three speed lines and a small lightning bolt beside his head",
+     "acting": "bolt pops, lines streak"
+    },
+    {
+     "t": 129.4,
+     "cue": {
+      "word": "والقدرة",
+      "t": 129.4
+     },
+     "who": "abuNuwas",
+     "action": "cracks his knuckles, rolls his shoulders, plants his feet",
+     "acting": "sq 0.95 then 1.05, anticipate for the recital",
+     "library": "anticipate"
+    },
+    {
+     "t": 130.8,
+     "cue": {
+      "word": "ارتجال",
+      "t": 130.82
+     },
+     "who": "abuNuwas",
+     "action": "opens one arm wide like a singer, breath in",
+     "acting": "aL out, chest up, eyes shut"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 121.8,
+     "text": "AHA!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 132.67,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 132.92
+   }
+  },
+  {
+   "id": "S13",
+   "start": 132.92,
+   "end": 142.02,
+   "paragraphs": [
+    7
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "harun",
+    "abuNuwas"
+   ],
+   "summary": "He recites. The ribbon runs on from the caliph's half line and fills with pictures: the pool, the shade, the silver vessel.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "crane",
+    "notes": "Cam {x:500,y:600,zoom:1.15}; crane up 60 units as the ribbon arcs over both heads (ribbon path from the poet at (400, 640) up to (520, 380) and down toward (720, 520))."
+   },
+   "composition": "Poet left, Harun on the throne right, ribbon arching between and above them; icons 70 px, never on a face.",
+   "actions": [
+    {
+     "t": 132.9,
+     "cue": {
+      "word": "أنشد",
+      "t": 132.92
+     },
+     "who": "abuNuwas",
+     "action": "begins to recite, hand beating time",
+     "acting": "talk 0.8 in rhythm, hand beats on stresses, eyes half shut",
+     "library": "person talk"
+    },
+    {
+     "t": 133.8,
+     "cue": {
+      "word": "أبو",
+      "t": 133.82
+     },
+     "who": "verseRibbon",
+     "action": "the ribbon shoots on from the three dots: new squiggle lines race along it",
+     "acting": "unroll 0.45..1 over 6 s, dots turn into writing",
+     "library": "verseRibbon {unroll}"
+    },
+    {
+     "t": 134.9,
+     "cue": {
+      "word": "أبياتًا",
+      "t": 134.9
+     },
+     "who": "harun",
+     "action": "watches the ribbon pass over his head, mouth open",
+     "acting": "gaze tracks the ribbon tip, brow -0.5",
+     "library": "lookAt"
+    },
+    {
+     "t": 136.3,
+     "cue": {
+      "word": "الحوض",
+      "t": 136.26
+     },
+     "who": "verseRibbon",
+     "action": "pool icon pops on the ribbon",
+     "acting": "blue oval with rim, pop"
+    },
+    {
+     "t": 137.1,
+     "cue": {
+      "word": "وظلال",
+      "t": 137.06
+     },
+     "who": "verseRibbon",
+     "action": "tree icon with a dotted shadow pops next",
+     "acting": "pop, shadow slides out"
+    },
+    {
+     "t": 138.5,
+     "cue": {
+      "word": "والماء",
+      "t": 138.52
+     },
+     "who": "verseRibbon",
+     "action": "water drops icon",
+     "acting": "three drops fall along the band"
+    },
+    {
+     "t": 140.7,
+     "cue": {
+      "word": "الإناء",
+      "t": 140.74
+     },
+     "who": "verseRibbon",
+     "action": "silver vessel icon tilts and pours along the ribbon",
+     "acting": "tilt, small arc, glint"
+    },
+    {
+     "t": 141.3,
+     "cue": {
+      "word": "الفضي.",
+      "t": 141.32
+     },
+     "who": "harun",
+     "action": "nods, delighted: that is exactly what he saw",
+     "acting": "two nods (drop 5 px), smile, PERSON_HANDS.chest"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 142.02
+   }
+  },
+  {
+   "id": "S14",
+   "start": 142.02,
+   "end": 153.88,
+   "paragraphs": [
+    7
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "harun",
+    "abuNuwas"
+   ],
+   "summary": "The bold verses, shown only by reactions: hearts on the ribbon, the poet's wink, the caliph blushing and fanning himself. Then the ribbon closes into a finished loop.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Cam pushes from zoom 1.15 to {x:640,y:640,zoom:1.6} on Harun's reaction (145.4), back to the two-shot at 149.1 for the completed ribbon."
+   },
+   "composition": "Harun's face is the subject. The ribbon section above him carries only hearts, the screen icon and a veil icon. No body is ever drawn.",
+   "actions": [
+    {
+     "t": 142.0,
+     "cue": {
+      "word": "ثم",
+      "t": 142.02
+     },
+     "who": "abuNuwas",
+     "action": "pauses, looks left and right, leans in with a sly grin",
+     "acting": "gazePlan saccades, smirk, tip 0.1, hand cupMouth",
+     "library": "PERSON_HANDS.cupMouth, gazePlan"
+    },
+    {
+     "t": 143.4,
+     "cue": {
+      "word": "أضاف",
+      "t": 143.38
+     },
+     "who": "verseRibbon",
+     "action": "the ribbon colour warms to red trim and the squiggles get curlier",
+     "acting": "trim colour mixHex yellow to red",
+     "library": "mixHex"
+    },
+    {
+     "t": 144.4,
+     "cue": {
+      "word": "جريئًا",
+      "t": 144.42
+     },
+     "who": "lettering",
+     "action": "OOH! pops beside the ribbon",
+     "acting": "pop",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 145.4,
+     "cue": {
+      "word": "لجسد",
+      "t": 145.36
+     },
+     "who": "verseRibbon",
+     "action": "icon of the folding screen with a veiled head above it, ringed by hearts",
+     "acting": "same discreet picture as S4, pop"
+    },
+    {
+     "t": 145.9,
+     "cue": {
+      "word": "زبيدة",
+      "t": 145.92
+     },
+     "who": "harun",
+     "action": "eyes go wide, deep blush, glances at the door in case anyone hears",
+     "acting": "flush soft to 1, gaze saccade to the door and back, mouth o",
+     "library": "flush (soft), gazePlan"
+    },
+    {
+     "t": 146.6,
+     "cue": {
+      "word": "ولشوق",
+      "t": 146.62
+     },
+     "who": "heart",
+     "action": "hearts stream along the ribbon toward the caliph",
+     "acting": "five hearts, staggered, pulse",
+     "library": "heart, stagger"
+    },
+    {
+     "t": 147.6,
+     "cue": {
+      "word": "الخليفة",
+      "t": 147.6
+     },
+     "who": "harun",
+     "action": "fans his face with one hand, tugs his collar, cannot stop smiling",
+     "acting": "wave fan 5 Hz, smile, lid 0.3",
+     "library": "PERSON_HANDS.wave"
+    },
+    {
+     "t": 149.1,
+     "cue": {
+      "word": "مواصلًا",
+      "t": 149.12
+     },
+     "who": "verseRibbon",
+     "action": "the poet's new ribbon end swings round and joins the caliph's half line: one unbroken loop",
+     "acting": "ends meet with a click flash, join glows"
+    },
+    {
+     "t": 150.3,
+     "cue": {
+      "word": "المعنى",
+      "t": 150.3
+     },
+     "who": "lettering",
+     "action": "label COMPLETE! on the join with an arrow",
+     "acting": "stamp",
+     "library": "S.emphasis"
+    },
+    {
+     "t": 151.4,
+     "cue": {
+      "word": "عجز",
+      "t": 151.4
+     },
+     "who": "fx",
+     "action": "small recall of the drooping three dots (S10) in a faded inset, then they pop into writing",
+     "acting": "inset circle 120 px, 1 s"
+    },
+    {
+     "t": 153.0,
+     "cue": {
+      "word": "إكماله.",
+      "t": 153.02
+     },
+     "who": "abuNuwas",
+     "action": "finishes with a flourish and a low bow, quill back in the turban",
+     "acting": "aR sweep, tip 0.35, hold",
+     "library": "anticipate, tip"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 144.4,
+     "text": "OOH!"
+    },
+    {
+     "t": 150.3,
+     "text": "COMPLETE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 153.88
+   }
+  },
+  {
+   "id": "S15",
+   "start": 153.88,
+   "end": 167.54,
+   "paragraphs": [
+    8
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "harun",
+    "abuNuwas"
+   ],
+   "summary": "Harun beams and applauds: from one half line the poet read the whole story of the secret visit and the bath.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Cam {x:680,y:640,zoom:1.5} on Harun; at 161.26 two-shot zoom 1.15; a small thought cloud between them from 164.28."
+   },
+   "composition": "Harun on the throne; poet standing left, modest. Cloud (300 x 220) centred above and between them.",
+   "actions": [
+    {
+     "t": 153.9,
+     "cue": {
+      "word": "ابتسم",
+      "t": 153.88
+     },
+     "who": "harun",
+     "action": "a slow smile spreads into a grin",
+     "acting": "mouth closed to smile over 1 s, lid 0.2, brow -0.3"
+    },
+    {
+     "t": 156.5,
+     "cue": {
+      "word": "الرشيد",
+      "t": 156.46
+     },
+     "who": "harun",
+     "action": "laughs, shoulders bouncing",
+     "acting": "bounce 3 cycles (drop 4 px), eyes shut, HA HA! lettering"
+    },
+    {
+     "t": 158.4,
+     "cue": {
+      "word": "القصيدة.",
+      "t": 158.44
+     },
+     "who": "harun",
+     "action": "claps three times",
+     "acting": "hands meet on a strike cycle, small star at each clap"
+    },
+    {
+     "t": 159.6,
+     "cue": {
+      "word": "أعجبه",
+      "t": 159.58
+     },
+     "who": "harun",
+     "action": "points at the poet and shakes his head in wonder",
+     "acting": "PERSON_HANDS.pointFwd, head shake, brow -0.6",
+     "library": "PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 161.3,
+     "cue": {
+      "word": "الشاعر",
+      "t": 161.26
+     },
+     "who": "abuNuwas",
+     "action": "shrugs modestly, palms up, pleased with himself",
+     "acting": "PERSON_HANDS.palmsUp, smirk, lid 0.3",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 163.0,
+     "cue": {
+      "word": "شطر",
+      "t": 163.02
+     },
+     "who": "lettering",
+     "action": "counter 1 with the short half ribbon: ONE LINE",
+     "acting": "counter pops beside the half ribbon icon",
+     "library": "S.counter"
+    },
+    {
+     "t": 164.3,
+     "cue": {
+      "word": "قصة",
+      "t": 164.28
+     },
+     "who": "fx",
+     "action": "arrow from the ONE LINE icon to a thought cloud that opens between them",
+     "acting": "arrow draws, cloud trail then cloud",
+     "library": "thoughtCloud, S.arrow"
+    },
+    {
+     "t": 165.1,
+     "cue": {
+      "word": "الزيارة",
+      "t": 165.04
+     },
+     "who": "fx",
+     "action": "inside the cloud: the crown tip peeping from the bush",
+     "acting": "reduced S6 picture, bush shakes",
+     "library": "thoughtCloud inside"
+    },
+    {
+     "t": 166.5,
+     "cue": {
+      "word": "والحمام،",
+      "t": 166.54
+     },
+     "who": "fx",
+     "action": "the cloud picture slides to the screen with the veil top and the pouring vessel",
+     "acting": "pan inside the cloud, 0.5 s"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 156.6,
+     "text": "HA HA!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 159.36,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 167.54
+   }
+  },
+  {
+   "id": "S16",
+   "start": 167.54,
+   "end": 179.05,
+   "paragraphs": [
+    8
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "harun",
+    "abuNuwas"
+   ],
+   "summary": "A generous gift: a fat purse changes hands. Abu Nuwas leaves the palace happy, tossing the purse. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Cam {x:520,y:660,zoom:1.2} for the gift; from 170.3 track left with the poet to the door arch {x:330,y:680,zoom:1.3}; hold for THE END."
+   },
+   "composition": "Harun steps off the dais to x 600; poet at x 400. Exit through the door arch (x 40..250), bright day outside. THE END title upper centre, clear of both faces.",
+   "actions": [
+    {
+     "t": 167.5,
+     "cue": {
+      "word": "فمنحه",
+      "t": 167.54
+     },
+     "who": "harun",
+     "action": "stands, steps down from the dais holding out a fat purse",
+     "acting": "sit 1..0 with anticipation, walk 2 steps, purse in handRW",
+     "library": "person sit, walk, purse (planned)"
+    },
+    {
+     "t": 168.8,
+     "cue": {
+      "word": "هدية",
+      "t": 168.82
+     },
+     "who": "purse",
+     "action": "the purse passes to the poet; his hands dip under its weight",
+     "acting": "handOver 0.25 s, weight dip 12 px, coins clink lines",
+     "library": "handOver (planned)"
+    },
+    {
+     "t": 169.5,
+     "cue": {
+      "word": "سخية.",
+      "t": 169.5
+     },
+     "who": "abuNuwas",
+     "action": "eyes pop at the weight; two coins hop out of the purse mouth and drop back",
+     "acting": "eyes wide, brow -0.8, coins on small arcs",
+     "library": "hop"
+    },
+    {
+     "t": 170.3,
+     "cue": {
+      "word": "وغادر",
+      "t": 170.3
+     },
+     "who": "abuNuwas",
+     "action": "bows deeply, then turns to go",
+     "acting": "tip 0.4 bow, turnFlip toward the door",
+     "library": "turnFlip"
+    },
+    {
+     "t": 171.8,
+     "end": 174.4,
+     "cue": {
+      "word": "أبو",
+      "t": 171.8
+     },
+     "who": "abuNuwas",
+     "action": "walks to the door arch with a bounce in his step, tossing and catching the purse",
+     "acting": "walk with hop every 2nd step, purse toss arc 60 units, gaze follows it",
+     "library": "walk, footfalls, hop"
+    },
+    {
+     "t": 172.8,
+     "cue": {
+      "word": "القصر",
+      "t": 172.8
+     },
+     "who": "harun",
+     "action": "waves him off, then looks at the finished ribbon loop and smiles to himself",
+     "acting": "PERSON_HANDS.wave, then gaze up at the ribbon, lid 0.3",
+     "library": "PERSON_HANDS.wave"
+    },
+    {
+     "t": 173.5,
+     "cue": {
+      "word": "مسرورًا",
+      "t": 173.48
+     },
+     "who": "abuNuwas",
+     "action": "little skip through the doorway into the daylight",
+     "acting": "hop + landSquash, quill bobbing",
+     "library": "hop, landSquash"
+    },
+    {
+     "t": 174.5,
+     "cue": {
+      "word": "نال.",
+      "t": 174.42
+     },
+     "who": "abuNuwas",
+     "action": "last toss of the purse in the doorway, catches it, gone",
+     "acting": "toss, catch, exit; purse glint"
+    },
+    {
+     "t": 175.6,
+     "who": "lettering",
+     "action": "THE END title pops and holds to 179.05",
+     "acting": "S.title pop with overshoot; Harun blinks, ribbon sways",
+     "library": "S.title"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 169.6,
+     "text": "CLINK!"
+    },
+    {
+     "t": 175.6,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 175.75,
+     "kind": "chime"
+    },
+    {
+     "t": 176.9,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 179.05
+   }
+  }
+ ],
+ "ending": {
+  "t": 175.55,
+  "description": "Abu Nuwas has skipped out of the door arch with the purse; Harun on the hall floor looks up at the finished ribbon loop and smiles. THE END (S.title) pops at 175.6 and holds to 179.05, ribbon swaying, one blink."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان الخليفة هارون الرشيد شديد المحبة لزوجته زبيدة.|أنشأ لها حديقة جميلة فيها حوض ماء واسع،|وجعل الماء يجري إليه من جهات مختلفة.|ونمت الأشجار حول الحوض حتى حجبت من فيه عن الأنظار.",
+   "en": "Harun al-Rashid loved his wife Zubaydah|and built her a garden with a large pool.|Streams supplied it,|and dense trees screened anyone bathing there."
+  },
+  {
+   "p": 2,
+   "ar": "في يوم شديد الحر دخلت زبيدة الحديقة،|فأعجبها صفاء الماء وظل الأغصان.|خلعت ثيابها ونزلت إلى الحوض لتستحم وحدها،|وكانت تغرف الماء بإناء فضي وتسكبه على جسدها.",
+   "en": "On a very hot day|Zubaydah admired the pool and shade.|She undressed to bathe alone,|pouring water over herself from a silver vessel."
+  },
+  {
+   "p": 3,
+   "ar": "سمع هارون أنها في الحوض،|فخرج من القصر وتسلل بين الأشجار ليراها دون أن تعلم.|وقف خلف الأوراق الكثيفة يراقبها،|مع أن الحديقة صممت أصلًا لتمنح المستحم فيها خصوصية.",
+   "en": "Hearing she was at the pool,|Harun slipped behind the foliage|to watch her unseen,|even though the garden was designed to give its bather privacy."
+  },
+  {
+   "p": 4,
+   "ar": "لاحظت زبيدة وجوده أخيرًا، فالتفتت إليه وشعرت بالخجل لأنها عارية.|حاولت أن تستر جسدها بيديها، لكنها لم تستطع إخفاءه كله.|رأى هارون ذلك ثم ابتعد بين الأشجار.",
+   "en": "Zubaydah noticed him and turned, embarrassed at being naked.|She tried to cover herself with her hands but could not conceal everything.|Harun then withdrew."
+  },
+  {
+   "p": 5,
+   "ar": "ظل المشهد في ذهن الخليفة،|فأخذ ينشد شطرًا من بيت شعر يصف نظرة شوق أعادت إليه حرارة الحب.|لكنه توقف عند ذلك؛ فلم يعرف كيف يكمل الكلمات التي بدأها.",
+   "en": "The scene lingered in Harun’s mind.|He began a line about a loving glance renewing his longing,|but could not find words to finish the poem."
+  },
+  {
+   "p": 6,
+   "ar": "دعا الشاعر أبا نواس وقال له: أريد منك قصيدة تبدأ بهذه العبارة.|فهم الشاعر الطلب فورًا، ولم يحتج إلى وقت طويل للتفكير.|كان مشهورًا بسرعة البديهة والقدرة على ارتجال الشعر.",
+   "en": "He summoned Abu Nuwas and asked him to compose a poem beginning with that line.|The poet, known for improvisation,|answered almost immediately."
+  },
+  {
+   "p": 7,
+   "ar": "أنشد أبو نواس أبياتًا تصف الحوض وظلال الأشجار|والماء الذي يسيل من الإناء الفضي.|ثم أضاف وصفًا جريئًا لجسد زبيدة ولشوق الخليفة إليها،|مواصلًا المعنى الذي عجز هارون عن إكماله.",
+   "en": "Abu Nuwas described the shaded pool|and water from the silver vessel,|then added frank verses about Zubaydah’s body and Harun’s desire,|completing the thought."
+  },
+  {
+   "p": 8,
+   "ar": "ابتسم هارون الرشيد عندما سمع القصيدة.|أعجبه أن الشاعر التقط من شطر واحد قصة الزيارة السرية والحمام،|فمنحه هدية سخية.|وغادر أبو نواس القصر مسرورًا بما نال.",
+   "en": "Harun smiled at the poem.|Pleased that a single line had inspired the poet,|he gave him a generous gift,|and Abu Nuwas left delighted."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "palaceGarden",
+   "reusable": true,
+   "effort": "L",
+   "description": "Walled palace garden strip 1600 wide with pool, four rills, growing trees, a hiding bush with a leaf gap and closing front foliage (dimensions in sets).",
+   "implementation": "Bake wall, facade and beds with bake(); townDoor for the door; Library tree() scaled about its base for grow; bush() masses for the hiding bush and foliage curtains in a front pass (same pattern as countryRoad front:true); rills are blue strips with white dashes offset by t; shadow overlay with the style dot fill."
+  },
+  {
+   "type": "prop",
+   "name": "poolBasin",
+   "reusable": true,
+   "effort": "M",
+   "description": "Planned by AN-105; reuse the same function.",
+   "implementation": "Two ellipses (rim, water) split into back and front passes; fill raises the water ellipse; ripple() rings; glint stars."
+  },
+  {
+   "type": "prop",
+   "name": "bathScreen",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned by AN-090; three opaque folding panels on small feet.",
+   "implementation": "Three skewed rects with a brush outline and dot fill; draw after the hidden figure so nothing below its top edge is ever visible."
+  },
+  {
+   "type": "prop",
+   "name": "waterJug (silver palette)",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned by AN-107; silver palette and a pourArc.",
+   "implementation": "Path body + spout + handle, rotate by tilt about the handle; pourArc is a tapered quadratic stroke with 5 seeded drops (K.rng)."
+  },
+  {
+   "type": "character",
+   "name": "person costume preset 'poet'",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned by AN-103; Abu Nuwas.",
+   "implementation": "New COSTUME entry: green robe, yellow sash, small tilted turban with tail (tail angle lags head moves), pointed beard, quill line in the turban."
+  },
+  {
+   "type": "effect",
+   "name": "verseRibbon",
+   "reusable": true,
+   "effort": "M",
+   "description": "Planned by AN-103; plus dots end, icon slots and join.",
+   "implementation": "Sample a bezier to a polyline; stroke a 40 wide paper band up to unroll*length; squiggles from K.noise along it; icons placed at path fractions; droop by blending the last control point down with swing()."
+  },
+  {
+   "type": "expression",
+   "name": "flush (soft option)",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned: pink dot cheeks, no steam.",
+   "implementation": "Two red Ben-Day dot discs on the cheeks with alpha = amount, drawn after the face."
+  },
+  {
+   "type": "motion",
+   "name": "tiptoe",
+   "reusable": true,
+   "effort": "S",
+   "description": "Sneaking gait for the person figure: short stride, high knee, rise on each step.",
+   "implementation": "walk(xf, t, {stride: 0.5 * default}) plus sq 1 + 0.04 * step pulse and y lift 6 px from footfalls(); no sliding because phase still comes from distance."
+  },
+  {
+   "type": "prop",
+   "name": "purse, hourglass, mantle, iconBalloon, handOver",
+   "reusable": true,
+   "effort": "S",
+   "description": "Planned small props and helpers under their planned names; mantle is a simple cloth for this story.",
+   "implementation": "Flat paths; handOver eases the object from hand A to hand B over 0.25 s with a dip."
+  }
+ ],
+ "owner_questions": [
+  "Bath staging: Zubaydah is never shown undressed; she goes behind an opaque folding screen and only her veiled head (and a sleeved hand with the vessel) is seen. Default: yes, keep the screen in every bath shot.",
+  "Her veil stays on while she bathes and \"undressing\" is shown only as her outer mantle thrown over the screen. Default: yes.",
+  "The peeping is filmed on Harun's face in the leaves; there is never a view through his eyes, and the bath stays a small distant screen. Default: yes.",
+  "\"Could not conceal everything\" is played as a clean gag: the mantle slips away and the tip of her veil and her eyes keep showing above the screen. Default: use this gag.",
+  "Addition: Harun is shown ashamed when caught (blushes, covers his own eyes, bumps a tree as he leaves); the script only says he saw and withdrew. Default: keep.",
+  "Addition: a sparrow acts as the garden's conscience (turns its back, pecks the caliph's crown, scolds him). Default: keep.",
+  "The \"frank verses about her body\" are shown only through hearts on the verse ribbon, the same screen icon, and the caliph blushing; no figure is drawn. Default: yes.",
+  "Invented English lettering: PRIVATE!, SO HOT!, SPLASH!, AHH!, TIP TOE, SHH!, PECK! PECK!, EEK!, OOPS!, BONK!, AHA!, OOH!, COMPLETE!, HA HA!, CLINK!, START HERE and the labels HALF A VERSE and ONE LINE. Default: keep; say if any should go.",
+  "Title and story suitability: the title card is not shown on screen, but the subtitles carry the script words \"naked\" and \"body\" verbatim. Default: subtitles unchanged, as the rules require; the owner may prefer to hold this story back from a children's channel.",
+  "Harun is drawn young (caliph preset with a black beard, age 0.25). Default: yes.",
+  "SCRIPT: the English is a condensed paraphrase of the Arabic (for example P8 Arabic names \"the story of the secret visit and the bath\", P1 Arabic says water was made to run in \"from different directions\"); both are kept verbatim."
+ ],
+ "implementation_notes": [
+  "Discretion rule for the animator: in S4, S6, S7 and every thought cloud or ribbon icon, draw the lady figure fully clothed FIRST and the opaque bathScreen AFTER it; never draw skin other than face and hands; never reveal anything by moving the screen.",
+  "Start from Library/template; cues with w(p, n) from timing.json. All cue times in this plan are word starts from timeline.md.",
+  "Garden strip is 1600 wide: translate by camera; redraw palaceGarden front:true after the cast for the bush, trunks and foliage curtains (peek pattern: draw actor then occluder).",
+  "Set LIFE.t = t every frame for auto blinks; set noBlink during the caught stares (73.9 to 77.2 and 85.7 to 86.6).",
+  "Gaze: always lookAt() the partner or object; saccades with gazePlan(t, plan, 0.07) for scanning (49.4, 68.3, 105.9, 142.0).",
+  "Harun seated: person({costume:\"caliph\", age:0.25, sit:1, seat:\"bench\", x:A.throne.x, y:A.throne.sitY}). Use twoShot(poet, harun) for S11 to S15.",
+  "The LATER card at 90.24 hides the cut from the garden to the hall (camera keys 0.01 s apart at the card midpoint).",
+  "Panel-only shake on BONK! (88.9) and the pool drop (10.1); the caption panel never moves.",
+  "Effects (8 total, master 0.6) sit only in the measured gaps: 6.25, 16.55, 22.95, 42.48, 119.65, 132.67, 159.36, then 175.75 and 176.9 after the last word.",
+  "Thought cloud figures at least 110 px on screen; S9 cloud 420 x 300 at scale 0.5.",
+  "Call S.finish last every frame; lettering never covers a face; no en or em dashes."
+ ],
+ "warnings": [
+  "Subject matter: a bathing scene and a husband spying. The plan keeps it modest, but the narration and verbatim subtitles still say \"naked\" and \"body\"; the owner must decide if the story suits the channel.",
+  "The narration has only four real pauses, so the film has few sound effects by design.",
+  "Subtitle P6: the English chunks 2 and 3 are in the opposite order to the Arabic chunks 2 and 3 (the supplied translation reorders the sentence); a 2 chunk split would avoid this but makes the Arabic chunk 16 words long.",
+  "Word \"سمع\" (45.16) and \"لاحظت\" (67.62) have long listed durations (start times may include silence); check the onsets before locking the first action of S5 and S7.",
+  "bathScreen top y (about 735) must be measured against the lady figure so that only head and neck show standing, and only eyes and veil top when ducked 45 units.",
+  "The person figure is front facing only: turns toward the bush are head tilts plus gaze, not profiles."
+ ]
+}

@@ -1,0 +1,104 @@
+{
+ "story_id": "AN-090",
+ "title": "THE SWEEP AND THE NOBLE LADY",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T13:52:12",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-aa32ed24923e39d8b.jsonl",
+ "agent_id": "aa32ed24923e39d8b",
+ "model_messages": {
+  "claude-fable-5-2": 26
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "077f5978ed02fbd31a505ea16c31b1760b170ea7964bcbd9477a0d2e37e6dfa2",
+  "paragraphs": 8,
+  "segments": [
+   "AN-090-P01-S01",
+   "AN-090-P01-S02",
+   "AN-090-P01-S03",
+   "AN-090-P01-S04",
+   "AN-090-P01-S05",
+   "AN-090-P01-S06",
+   "AN-090-P01-S07",
+   "AN-090-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-090_THE_SWEEP_AND_THE_NOBLE_LADY_full_slowed.mp3",
+  "sha256": "dd43af38309fab5a6545e7e75df3b17e3b0ceb4297032b18fb9d022f10b96503",
+  "duration": 172.096
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-090_THE_SWEEP_AND_THE_NOBLE_LADY_full_slowed.mp3.words.json",
+  "sha256": "6494ed78047e91b8fce4a60a4fb57b06ccdf52c611d5953f0cdf35f8b2d6b4a4",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.995
+ },
+ "library_rev": "959278e",
+ "scenes": 16,
+ "actions": 159,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "kaabaCourt",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "palaceHall",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "marketStreet",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "donkey",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (sweep, pilgrim, guard)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "palanquin",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "bathScreen",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "stinkLines",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "rosewaterSprinkler + banquet dishes + candle",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "moonCounter",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only); workbook Duration Rewrites says 'Pending audio verification': the final MP3 matches the revised script (verified)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Adult theme: the plan relies on symbols (table talk, window sky, rose, cracked heart). Do not add beds, embraces, kisses or undress anywhere; the two leads never touch except the purse hand-over.",
+  "Religious setting: keep the Kaaba plain and dignified; the comedy sits on the people, never on the building; no lettering overlaps it.",
+  "Four planned-but-unbuilt assets are needed (donkey, marketStreet, palaceHall, guard preset) plus about five new small ones; if other films have built them first, reuse those functions and only add the options listed.",
+  "The narration has only four pauses, so the film is almost silent of effects; visual rhythm must carry the gags.",
+  "S10 and S13 are dense (15 s each with many pictograms); if phone legibility suffers, drop the tidy-servant rejection in S13 and the third gift pass in S10 first.",
+  "The person figure is front facing only: carrying, kneeling to the side and hand-overs must be staged with world hand targets and facing by dir; check stills for arm IK limits (arms about 74 units)."
+ ]
+}

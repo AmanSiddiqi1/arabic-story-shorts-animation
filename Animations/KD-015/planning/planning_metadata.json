@@ -1,0 +1,118 @@
+{
+ "story_id": "KD-015",
+ "title": "The Ascetic, the Ghee, and the Honey",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T12:08:57",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a2ed8d8c8d675d4f3.jsonl",
+ "agent_id": "a2ed8d8c8d675d4f3",
+ "model_messages": {
+  "claude-fable-5-2": 18
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "c371171ed6b3a6f3708deb7385735f4f412e1ce8e5418589f521816c6b3f85ff",
+  "paragraphs": 8,
+  "segments": [
+   "KD-015-P01-S01",
+   "KD-015-P01-S02",
+   "KD-015-P01-S03",
+   "KD-015-P01-S04",
+   "KD-015-P01-S05",
+   "KD-015-P01-S06",
+   "KD-015-P01-S07",
+   "KD-015-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/KD-015_The_Ascetic_the_Ghee_and_the_Honey_full_slowed.mp3",
+  "sha256": "6f11058be7a844c1bf28f7d3b2d20939474aa8ea5614d529f8a5c87e4c92bae6",
+  "duration": 168.144
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/KD-015_The_Ascetic_the_Ghee_and_the_Honey_full_slowed.mp3.words.json",
+  "sha256": "62b1b359c6ff80cfe77600afe40a406f4fba5c7f2e283e248cf1b080ad252d2f",
+  "manifest_status": "SUCCESS",
+  "script_match": 1.0
+ },
+ "library_rev": "7721db2",
+ "scenes": 8,
+ "actions": 121,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "hutRoom",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "hangingJar",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "goat",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "person costume presets (ascetic, richMan)",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "person kneel / sit",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "person child option",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "villager",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "thoughtCloud",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "gooSpill",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "dreamProps",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "stick, coinPile, smallBowl",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "dayCycle",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "flush",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Four of eight scenes play inside the thought cloud at small scale: figures there are about 150 world units tall; at zoom 1.4 that is over 200 px on screen, but check phone legibility on stills, and keep dream pictograms bold and few on screen at once.",
+  "The sit and kneel poses and the costume layer do not exist yet in the Library; this film cannot be staged without them. Build and approve them first (they are shared with AN-095, KD-009, KD-010).",
+  "P7 has no pause long enough for effects; the crash at 139.40 sits on a word boundary and must be short (under 0.2 s) and quiet, or dropped if it touches the word.",
+  "Stage 4 of the cloud hides the window and lamp; make sure the room still reads as the same hut (keep the mat, floor line and roof beam visible).",
+  "The asset list is long (hutRoom, hangingJar, goat, dreamProps, gooSpill plus planned shared assets); dreamProps can be cut down to stall, field, house, slate and palace if time is short."
+ ]
+}

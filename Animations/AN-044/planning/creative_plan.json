@@ -1,0 +1,2878 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-044",
+ "title": "The Merchant and the Two Sharpers",
+ "duration": 169.54,
+ "end_hold": 3.0,
+ "logline": "Two cheats join a rich merchant s caravan to rob him, but each secretly poisons the other to keep the whole prize, and the merchant travels on unharmed without ever learning the full story.",
+ "moral": "Whoever digs a pit for his partner falls into it himself: greed and betrayal destroy the traitors, and the honest man is saved without lifting a finger.",
+ "tone": "Dry comic irony. The two cheats are a double act (smooth leader, clumsy copycat) played as mirror images; the deaths are quick, bloodless and discreet; the merchant is warm and a little naive, and his ending is quiet relief rather than triumph.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.3,
+   "kind": "setup",
+   "cue": {
+    "word": "تاجر",
+    "t": 0.3
+   },
+   "summary": "A rich merchant of Sindah with many goods to sell in another city."
+  },
+  {
+   "id": "B2",
+   "t": 17.1,
+   "kind": "setup",
+   "cue": {
+    "word": "انطلق",
+    "t": 17.1
+   },
+   "summary": "He loads his camels and sets out on the long road."
+  },
+  {
+   "id": "B3",
+   "t": 22.6,
+   "kind": "inciting",
+   "cue": {
+    "word": "محتالان",
+    "t": 22.6
+   },
+   "summary": "Two cheats hear of the journey and decide to travel with him."
+  },
+  {
+   "id": "B4",
+   "t": 30.46,
+   "kind": "comic",
+   "cue": {
+    "word": "وتظاهرا",
+    "t": 30.46
+   },
+   "summary": "They pass behind a palm and come out dressed as merchants, with two tiny bundles."
+  },
+  {
+   "id": "B5",
+   "t": 34.5,
+   "kind": "rising",
+   "cue": {
+    "word": "رحب",
+    "t": 34.5
+   },
+   "summary": "The merchant welcomes them; behind his back, a wink."
+  },
+  {
+   "id": "B6",
+   "t": 59.14,
+   "kind": "rising",
+   "cue": {
+    "word": "أغنياء",
+    "t": 59.14
+   },
+   "summary": "At the first rest stop they plot to take his goods and be rich."
+  },
+  {
+   "id": "B7",
+   "t": 67.92,
+   "kind": "turn",
+   "cue": {
+    "word": "أخفى",
+    "t": 67.92
+   },
+   "summary": "Each hides a second idea: why share?"
+  },
+  {
+   "id": "B8",
+   "t": 83.42,
+   "kind": "reveal",
+   "cue": {
+    "word": "بالطريقة",
+    "t": 83.42
+   },
+   "summary": "The two secret thoughts are shown side by side: identical."
+  },
+  {
+   "id": "B9",
+   "t": 89.72,
+   "kind": "suspense",
+   "cue": {
+    "word": "سمًا",
+    "t": 89.72
+   },
+   "summary": "The first drips poison into a bowl and offers it with a smile."
+  },
+  {
+   "id": "B10",
+   "t": 101.18,
+   "kind": "comic",
+   "cue": {
+    "word": "مسمومًا",
+    "t": 101.18
+   },
+   "summary": "The second does the same trick, clumsier, and the tableau shows two smiles, two bowls, two hidden vials."
+  },
+  {
+   "id": "B11",
+   "t": 108.56,
+   "kind": "suspense",
+   "cue": {
+    "word": "قدماه",
+    "t": 108.56
+   },
+   "summary": "They eat what they gave each other, each watching the other swallow."
+  },
+  {
+   "id": "B12",
+   "t": 126.06,
+   "kind": "climax",
+   "cue": {
+    "word": "وماتا",
+    "t": 126.06
+   },
+   "summary": "The poison strikes both; mutual discovery; both fall."
+  },
+  {
+   "id": "B13",
+   "t": 135.74,
+   "kind": "reveal",
+   "cue": {
+    "word": "وجدهما",
+    "t": 135.74
+   },
+   "summary": "Next morning the merchant finds them and reads the clues."
+  },
+  {
+   "id": "B14",
+   "t": 143.32,
+   "kind": "emotion",
+   "cue": {
+    "word": "فهم",
+    "t": 143.32
+   },
+   "summary": "He understands they were never honest companions."
+  },
+  {
+   "id": "B15",
+   "t": 160.06,
+   "kind": "resolution",
+   "cue": {
+    "word": "تابع",
+    "t": 160.06
+   },
+   "summary": "Safe, he takes what they left and continues his journey."
+  },
+  {
+   "id": "B16",
+   "t": 166.08,
+   "kind": "moral",
+   "cue": {
+    "word": "بسبب",
+    "t": 166.08
+   },
+   "summary": "Crossed arrows over the two bowls: each died by the food the other prepared."
+  }
+ ],
+ "cast": [
+  {
+   "id": "merchant",
+   "name": "the merchant",
+   "library": "person",
+   "base": "person costume:'merchant' (blue dotted robe, big white turban with red jewel, black beard), s 1.0, age 0.35",
+   "look": "Round, open, honest face; smiles easily; brows usually raised. The catalogue MERCHANT cell as drawn.",
+   "new": false
+  },
+  {
+   "id": "sharperA",
+   "name": "sharper A, \"the first\" (tall, smooth leader)",
+   "library": "person",
+   "base": "Before 30.46: person costume:'villager' with pal {robe navy, dot black, hc black skull cap, sash red}. After: costume:'merchant' with pal {robe green, dot dark green, hc yellow, jewel red} = the catalogue MERCHANT PAL cell. s 1.05, thin pointed black beard, age 0.3",
+   "look": "Sly: brow -0.4, half lids, thin smile. Tag \"1\" when the narration says \"the first\".",
+   "new": false
+  },
+  {
+   "id": "sharperB",
+   "name": "sharper B, \"the second\" (short, eager copycat)",
+   "library": "person",
+   "base": "Before 30.46: costume:'villager' with pal {robe brown, hc red skull cap}. After: costume:'merchant' with pal {robe red, dot dark red, hc white, jewel blue, sash yellow}; moustache only (beard off if the preset allows, else a short beard). s 0.88, turban drawn 12 percent larger so it keeps slipping",
+   "look": "Wide eager eyes, copies A half a beat late with the wrong hand. Tag \"2\".",
+   "new": false
+  },
+  {
+   "id": "camel1",
+   "name": "lead camel (cloth bolts)",
+   "library": null,
+   "base": "new Library cast function camel(), pal 0 sand",
+   "look": "One-humped comic camel, bored half-lidded eyes, loose lower lip. Carries 3 cloth bolts.",
+   "new": true
+  },
+  {
+   "id": "camel2",
+   "name": "second camel (chest and sacks), the silent witness",
+   "library": null,
+   "base": "camel(), pal 1 darker brown, s 0.94",
+   "look": "Same drawing, darker; it is the one that watches the cheats and later points the merchant to them with its nose.",
+   "new": true
+  }
+ ],
+ "sets": [
+  {
+   "id": "desertRoad",
+   "library": null,
+   "description": "Reuses the planned name desertRoad (AN-095) with a city-edge option. World 2400 x 1230, ground y 900, skyCycle sky. City edge x 0-620: ochre wall top y 520 with crenellations, gate arch centred x 330 (opening 200 wide x 300 tall, navy inside), two domes and one tower behind (top y 260). Sandy road band y 900-960 running the full width with a milestone every 500. Three dune ridges (parallax 0.4, 0.6, 0.8) in yellow and orange with red dot shading. Palms at x 760, 1640 (the wipe palm, trunk 60 wide, drawn in FRONT of actors) and 2200. Low mud wall x 1340-1560, top y 770 (the cheats hiding place). Tiny far city silhouette on the horizon at x 2250.",
+   "new": true
+  },
+  {
+   "id": "desertCamp",
+   "library": null,
+   "description": "New reusable night/day campsite. World 2200 x 1230, ground y 900, skyCycle sky with dayCycle().night tint on the land. Left to right: big striped tent x 150-560 (peak y 520, door flap at x 420 that can lift), small tent x 600-800 (peak y 640, liftable flap), campfire x 930 (states unlit, lit, dead with a smoke thread), two cushions at x 860 and 990, camel line x 1080 and 1290 on a back plane y 880, palm x 1400, three road posts x 1300-1480, rock outcrop x 1500-1680 (top y 700, grey with blue dot shading) that screens the right part from the tents, the cheats mat x 1700-2060 (red carpet 360 x 18 with yellow fringe, top at y 900) with a small oil lamp at x 1880, and a dune lip directly behind the mat (crest y 880, 30 high) that hides anything lying behind it. Far tiny road over the last dune at x 2000-2200, y 760, for the departing caravan.",
+   "new": true
+  }
+ ],
+ "props": [
+  {
+   "id": "cargo",
+   "library": null,
+   "description": "camelLoad: cloth bolts (cylinders 120 x 34 in red, blue and yellow with a spiral end and two stripe bands), sacks (the planned sack, 70 x 90), a treasure chest (110 x 80, brown with yellow bands, lid angle 0..1 with glow), saddle frame with ropes; the same items lie in a pile on the ground or sit on a camel hump. Also the two tiny bindles (planned bindle: 40 px bundle on a 110 stick).",
+   "new": true
+  },
+  {
+   "id": "bowlA",
+   "library": null,
+   "description": "smallBowl (planned name) with options: rim colour (A yellow, B red), fill 0..1 of brown stew, steam (3 wavy lines), badge (green dot with a darker ring on the rim = poisoned, can pulse), upturned state. Bowl 90 wide x 46 tall. Bowl B is the same drawing with a red rim. Served from the planned foodTray (brass tray 200 wide).",
+   "new": true
+  },
+  {
+   "id": "vial",
+   "library": null,
+   "description": "poisonVial: small green glass bottle 22 x 46 with a cork and a white highlight; fields cork (on/off), tilt, level 0..1; drops are 6 px green teardrops. No skull or text on the bottle; the S.label \"POISON\" names it.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 11.16,
+   "paragraphs": [
+    1
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "merchant",
+    "camel1",
+    "camel2"
+   ],
+   "summary": "Noon at the gate of Sindah. The rich merchant stands among his piled goods and decides to sell them in a far city.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Keys: 0-1.0 hold wide on the gate (x 420, y 640, zoom 1.0); 1.0-3.4 ease to the merchant (x 470, y 700, zoom 1.45); hold; 7.8-9.3 pull out and pan right to (x 700, y 660, zoom 1.0) so the dotted route and the far city fit."
+   },
+   "composition": "City gate fills the left third (arch centre x 330). Merchant at x 470 facing the viewer; goods pile at x 560-700; two camels kneeling behind at x 800 and 1010 (back plane y 880). The far city is a tiny silhouette at x 1150 on the horizon in this framing (drawn as a ghost copy; the real one is at x 2250).",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 1.0,
+     "cue": {
+      "word": "كان",
+      "t": 0.0
+     },
+     "who": "set",
+     "action": "gate of Sindah in noon light, heat shimmer lines over the dunes, one camel flicks an ear",
+     "acting": "still world, only small life: ear flick, tail swish",
+     "library": "skyCycle(u 0.25), bake() the set"
+    },
+    {
+     "t": 0.3,
+     "end": 1.8,
+     "cue": {
+      "word": "تاجر",
+      "t": 0.3
+     },
+     "who": "merchant",
+     "action": "merchant walks out through the gate arch and stops, hands on hips",
+     "acting": "chest out, proud smile, gaze sweeps his goods (gazePlan), blink on stop, settle",
+     "library": "person {costume:'merchant'} + walk() + settleTo(), PERSON_HANDS.hipsHands"
+    },
+    {
+     "t": 1.06,
+     "end": 2.4,
+     "cue": {
+      "word": "غني",
+      "t": 1.06
+     },
+     "who": "fx",
+     "action": "S.label \"RICH MERCHANT\" with an arrow to him; a coin glint on his turban jewel",
+     "acting": "he lifts his chin a little as the label lands (tip -0.03)",
+     "library": "S.label, S.arrow"
+    },
+    {
+     "t": 2.62,
+     "end": 4.1,
+     "cue": {
+      "word": "مدينة",
+      "t": 2.62
+     },
+     "who": "merchant",
+     "action": "he thumbs back at the city behind him",
+     "acting": "gaze flicks left to the gate and back",
+     "library": "PERSON_HANDS.pointUp mirrored toward the gate (aL angles)"
+    },
+    {
+     "t": 4.16,
+     "end": 5.2,
+     "cue": {
+      "word": "سندة",
+      "t": 4.16
+     },
+     "who": "fx",
+     "action": "S.label \"SINDAH\" pops on the gate arch",
+     "acting": "pop with overshoot; merchant nods once",
+     "library": "S.label + settleTo"
+    },
+    {
+     "t": 5.2,
+     "end": 6.6,
+     "cue": {
+      "word": "ويملك",
+      "t": 5.2
+     },
+     "who": "cargo",
+     "action": "the goods pile is revealed item by item: 3 cloth bolts, 2 sacks, 1 chest, each hopping into place",
+     "acting": "merchant gaze follows each item down the row, small proud nods",
+     "library": "kick()/hop() on each item, gazePlan"
+    },
+    {
+     "t": 5.9,
+     "end": 7.7,
+     "cue": {
+      "word": "بضائع",
+      "t": 5.9
+     },
+     "who": "fx",
+     "action": "S.counter \"GOODS\" counts 1 to 6 as the items land",
+     "acting": "he pats the chest on 6 (handRW to the chest lid)",
+     "library": "S.counter, handRW"
+    },
+    {
+     "t": 7.8,
+     "end": 9.0,
+     "cue": {
+      "word": "يريد",
+      "t": 7.8
+     },
+     "who": "merchant",
+     "action": "he rubs his chin, then looks to the far right horizon",
+     "acting": "chin gesture, eyes narrow (lid 0.3), slow head turn of the gaze to the right",
+     "library": "PERSON_HANDS.chin, lookAt()"
+    },
+    {
+     "t": 9.02,
+     "end": 10.1,
+     "cue": {
+      "word": "مدينة",
+      "t": 9.28
+     },
+     "who": "fx",
+     "action": "a dotted route draws itself over the dunes to a tiny far city; S.arrow and label \"ANOTHER CITY\"",
+     "acting": "merchant points forward along the route, eager lean (tip 0.06)",
+     "library": "PERSON_HANDS.pointFwd, S.arrow, dashed K path"
+    },
+    {
+     "t": 10.1,
+     "end": 11.16,
+     "cue": {
+      "word": "أخرى",
+      "t": 10.1
+     },
+     "who": "merchant",
+     "action": "decision: he claps once and turns to the camels",
+     "acting": "anticipation dip then stretch (sq 0.94 to 1.04), smile",
+     "library": "anticipate(), PERSON_HANDS.clasp"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 5.2,
+     "kind": "pop"
+    },
+    {
+     "t": 11.16,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 11.16
+   }
+  },
+  {
+   "id": "S2",
+   "start": 11.16,
+   "end": 21.28,
+   "paragraphs": [
+    1
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "merchant",
+    "camel1",
+    "camel2"
+   ],
+   "summary": "He loads the camels with cloth and treasures, the camels rise, and the caravan sets off down the long road.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Keys: 11.16 cut to (x 880, y 690, zoom 1.1) on the kneeling camels; hold to 16.8; from 17.1 track with the lead camel (camera x = camel1 x - 60, zoom 1.0) to 21.28."
+   },
+   "composition": "Camel1 at x 800 and camel2 at x 1010 facing right, merchant between the pile (x 620) and camel1. After 17.1 the line walks right: merchant leads at the front on foot holding the lead rope, camel1, camel2. Dunes and palms pass behind (parallax 0.4).",
+   "actions": [
+    {
+     "t": 11.16,
+     "end": 12.7,
+     "cue": {
+      "word": "جهز",
+      "t": 11.16
+     },
+     "who": "merchant",
+     "action": "he tightens the saddle strap on camel1",
+     "acting": "both hands pull (reachBoth), small body rock twice; camel blinks slowly, chews",
+     "library": "handLW/handRW to the strap; camel {kneel:1, chew}"
+    },
+    {
+     "t": 11.64,
+     "end": 12.78,
+     "cue": {
+      "word": "جماله",
+      "t": 11.64
+     },
+     "who": "camel2",
+     "action": "camel2 turns its head to watch and grumbles",
+     "acting": "half lids (lid 0.5), lower lip wobble, ear flick: bored camel comedy",
+     "library": "camel {headTurn, talk, lid}"
+    },
+    {
+     "t": 12.78,
+     "end": 13.8,
+     "cue": {
+      "word": "وحمل",
+      "t": 12.78
+     },
+     "who": "cargo",
+     "action": "first cloth bolt arcs from the pile onto camel1; the camel sinks 6 units and springs back",
+     "acting": "merchant heaves with anticipation crouch; camel grunt (sq 0.97)",
+     "library": "hop() arc for the bolt, landSquash() on the camel"
+    },
+    {
+     "t": 13.84,
+     "end": 14.7,
+     "cue": {
+      "word": "الأقمشة",
+      "t": 13.84
+     },
+     "who": "cargo",
+     "action": "two more bolts (red, blue, yellow stripes) stack on camel1; S.label \"CLOTH\"",
+     "acting": "merchant wipes his brow after the third",
+     "library": "PERSON_HANDS.headHold one hand"
+    },
+    {
+     "t": 14.72,
+     "end": 15.5,
+     "cue": {
+      "word": "والأشياء",
+      "t": 14.72
+     },
+     "who": "cargo",
+     "action": "the chest and sacks go onto camel2, counter \"GOODS 6\" moves from the ground to above the camels",
+     "acting": "camel2 eyes widen at the weight then settle",
+     "library": "camel {eyes wide to open}, impactSquash small"
+    },
+    {
+     "t": 15.58,
+     "end": 16.8,
+     "cue": {
+      "word": "الثمينة",
+      "t": 15.58
+     },
+     "who": "fx",
+     "action": "the chest lid peeks open: yellow glow and three star glints, label \"TREASURE\"; he shuts it and pats it",
+     "acting": "merchant looks left and right before shutting it (saccades), a careful man",
+     "library": "gazePlan(t, plan, 0.07) saccades, K star glints"
+    },
+    {
+     "t": 16.84,
+     "end": 17.9,
+     "cue": {
+      "word": "انطلق",
+      "t": 17.1
+     },
+     "who": "camel1",
+     "action": "camels rise: rear end up first, then the front, with a lurch of the load",
+     "acting": "two-stage rise with overshoot; cargo lags one beat (follow-through)",
+     "library": "camel {kneel 1 to 0}, settleTo, lurch()"
+    },
+    {
+     "t": 17.1,
+     "end": 21.28,
+     "cue": {
+      "word": "انطلق",
+      "t": 17.1
+     },
+     "who": "merchant",
+     "action": "merchant leads the caravan off to the right on the lead rope",
+     "acting": "steady happy walk, gaze ahead, blinks; rope sags and swings",
+     "library": "walk(), footfalls() for dust puffs, swing() for the rope"
+    },
+    {
+     "t": 17.94,
+     "end": 19.6,
+     "cue": {
+      "word": "رحلة",
+      "t": 17.94
+     },
+     "who": "set",
+     "action": "the gate of Sindah slides out of frame left; dunes and palms roll past",
+     "acting": "camel heads bob out of phase with each other (never in unison)",
+     "library": "camera track + parallax layers"
+    },
+    {
+     "t": 18.72,
+     "end": 20.0,
+     "cue": {
+      "word": "طويلة",
+      "t": 18.72
+     },
+     "who": "fx",
+     "action": "the sun moves a little along its arc and the road stretches ahead with a small milestone passing",
+     "acting": "merchant mops his brow once without stopping",
+     "library": "skyCycle(u 0.25 to 0.30)"
+    },
+    {
+     "t": 20.08,
+     "end": 21.28,
+     "cue": {
+      "word": "الطريق",
+      "t": 20.08
+     },
+     "who": "camera",
+     "action": "the caravan passes a low mud wall and a palm; two pairs of eyes watch from behind the wall (first hint)",
+     "acting": "only eyes and two skull caps above the wall top, eyes track the chest left to right",
+     "library": "draw sharpers then the wall (occluder), lookAt()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 14.72,
+     "text": "CLOTH!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 16.84,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 21.28
+   }
+  },
+  {
+   "id": "S3",
+   "start": 21.28,
+   "end": 34.5,
+   "paragraphs": [
+    2
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "sharperA",
+    "sharperB",
+    "merchant",
+    "camel1",
+    "camel2"
+   ],
+   "summary": "Two sharpers behind a wall hear about the journey, agree to travel with him, grab a few tiny bundles and dress up as merchants.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Keys: 21.28 (x 1460, y 720, zoom 1.5) on the wall with the caravan small in the far right background; 27.9 ease to (x 1500, y 700, zoom 1.3) to include the palm; 32.0 hold."
+   },
+   "composition": "Mud wall x 1340-1560, top y 770. Sharper A (tall) at x 1410, sharper B (short) at x 1500, both behind the wall until 25.1. Wipe palm trunk at x 1640 (in front of the actors). The caravan is a small group at x 1900-2100, back plane, walking slowly.",
+   "actions": [
+    {
+     "t": 21.28,
+     "end": 22.5,
+     "cue": {
+      "word": "سمع",
+      "t": 21.28
+     },
+     "who": "sharperA",
+     "action": "sharper A rises from behind the wall with a hand cupped to his ear",
+     "acting": "one brow up, eyes slide toward the caravan, mouth a thin smile",
+     "library": "person {costume:'villager', pal dark} PERSON_HANDS.cupEar, lookAt()"
+    },
+    {
+     "t": 21.84,
+     "end": 23.4,
+     "cue": {
+      "word": "رجلان",
+      "t": 21.84
+     },
+     "who": "sharperB",
+     "action": "sharper B pops up beside him two frames later and copies the ear cup with the wrong hand",
+     "acting": "eager, wide eyes, looks at A to check he is doing it right",
+     "library": "stagger(1), PERSON_HANDS.cupEar mirrored"
+    },
+    {
+     "t": 22.6,
+     "end": 23.7,
+     "cue": {
+      "word": "محتالان",
+      "t": 22.6
+     },
+     "who": "fx",
+     "action": "S.label \"TWO CHEATS\" with two arrows",
+     "acting": "both freeze and slide their eyes to the label, then back",
+     "library": "S.label, S.arrow, saccades"
+    },
+    {
+     "t": 23.8,
+     "end": 25.0,
+     "cue": {
+      "word": "رحلته",
+      "t": 23.8
+     },
+     "who": "fx",
+     "action": "small icon balloon over the wall: camel + chest",
+     "acting": "A rubs finger and thumb; B licks his lips (mouth o to smile)",
+     "library": "thoughtCloud small (w 200) with camelLoad icon inside"
+    },
+    {
+     "t": 25.12,
+     "end": 26.2,
+     "cue": {
+      "word": "فاتفقا",
+      "t": 25.12
+     },
+     "who": "sharperA",
+     "action": "they turn to each other and shake hands over the wall top",
+     "acting": "matching sly grins, one firm pump, B pumps twice more (overdoes it)",
+     "library": "handRW/handLW meeting at one world point"
+    },
+    {
+     "t": 26.3,
+     "end": 27.8,
+     "cue": {
+      "word": "السفر",
+      "t": 26.3
+     },
+     "who": "sharperB",
+     "action": "B points after the caravan, A nods and both vault out from behind the wall",
+     "acting": "anticipation crouch, small hop, landing squash, dust",
+     "library": "anticipate(), hop(), landSquash(), dustBurst"
+    },
+    {
+     "t": 27.9,
+     "end": 29.0,
+     "cue": {
+      "word": "حملا",
+      "t": 27.9
+     },
+     "who": "sharperA",
+     "action": "each picks up one tiny bundle on a stick",
+     "acting": "A slings it with a flourish; B hugs his like a baby",
+     "library": "prop bindle drawn at hand (handRW)"
+    },
+    {
+     "t": 29.02,
+     "end": 30.4,
+     "cue": {
+      "word": "البضائع",
+      "t": 29.02
+     },
+     "who": "fx",
+     "action": "S.label \"GOODS?\" with an arrow to the two tiny bundles; a small counter \"2\" beside the merchant counter \"6\"",
+     "acting": "they look down at the bundles, then at each other, shrug",
+     "library": "S.label, PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 30.46,
+     "end": 32.0,
+     "cue": {
+      "word": "وتظاهرا",
+      "t": 30.46
+     },
+     "who": "sharperA",
+     "action": "they walk behind the palm trunk as plain rogues and come out the other side in big merchant turbans and robes",
+     "acting": "A strides out first adjusting his turban; B follows a beat late, turban slightly too big, pushes it up off his eyes",
+     "library": "costume change behind a foreground wipe: switch costume to 'merchant' with pal while x is inside the trunk; walk()"
+    },
+    {
+     "t": 32.02,
+     "end": 33.8,
+     "cue": {
+      "word": "تاجران",
+      "t": 33.0
+     },
+     "who": "sharperB",
+     "action": "both strike a merchant pose: belly out, hands on sash",
+     "acting": "A smooth and convincing; B checks A and copies, turban slips again",
+     "library": "PERSON_HANDS.hipsHands, stagger"
+    },
+    {
+     "t": 33.88,
+     "end": 34.5,
+     "cue": {
+      "word": "مثله",
+      "t": 33.88
+     },
+     "who": "fx",
+     "action": "S.label \"MERCHANTS\" appears, then a small \"?\" hops on after it",
+     "acting": "A glances to camera for one beat (the only lens look in this scene)",
+     "library": "S.label, gaze [0, 0.05]"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 33.0,
+     "text": "TA-DA!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 25.12,
+     "kind": "pop"
+    },
+    {
+     "t": 27.9,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 34.5
+   }
+  },
+  {
+   "id": "S4",
+   "start": 34.5,
+   "end": 42.6,
+   "paragraphs": [
+    2
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "merchant",
+    "sharperA",
+    "sharperB",
+    "camel1",
+    "camel2"
+   ],
+   "summary": "The merchant welcomes the two \"merchants\" warmly. Behind his back they trade a wink. The enlarged caravan walks on together.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "Keys: 34.5 (x 1900, y 700, zoom 1.4) three-shot; 39.1 pull out to (x 1950, y 680, zoom 1.0) and track right with the group to 42.6."
+   },
+   "composition": "Merchant at x 1960 centre-right facing the viewer, sharpers arrive from the left: A at x 1800, B at x 1700. Camels behind at x 2080 and 2260. Faces at y 690-720, well above the caption panel.",
+   "actions": [
+    {
+     "t": 34.5,
+     "end": 35.5,
+     "cue": {
+      "word": "رحب",
+      "t": 34.5
+     },
+     "who": "merchant",
+     "action": "merchant opens both arms wide in welcome",
+     "acting": "big honest smile, brows up, lean in (tip 0.05), overshoot and settle",
+     "library": "PERSON_HANDS.armsOut + settleTo"
+    },
+    {
+     "t": 35.54,
+     "end": 36.9,
+     "cue": {
+      "word": "بهما",
+      "t": 36.06
+     },
+     "who": "sharperA",
+     "action": "sharper A bows with a hand on his chest; B bows too low and his turban falls over his face",
+     "acting": "A oily smile, eyes up under the brows; B scrambles the turban back",
+     "library": "PERSON_HANDS.chest, tip 0.25 bow, stagger"
+    },
+    {
+     "t": 37.06,
+     "end": 38.1,
+     "cue": {
+      "word": "ظن",
+      "t": 37.78
+     },
+     "who": "merchant",
+     "action": "small thought cloud over the merchant: three smiling friends walking with a heart",
+     "acting": "his eyes go up to the cloud, content sigh (breathe)",
+     "library": "thoughtCloud(w 260, h 170) + heart()"
+    },
+    {
+     "t": 37.78,
+     "end": 39.0,
+     "cue": {
+      "word": "ظن",
+      "t": 37.78
+     },
+     "who": "sharperA",
+     "action": "while his eyes are up, A winks at B and B rubs his hands; the masks snap back when the merchant looks down",
+     "acting": "mask on / mask off: wink R, brow -0.4 sly; B stifled giggle (cheeks)",
+     "library": "P.wink = 'R', PERSON_HANDS.clasp rubbing"
+    },
+    {
+     "t": 39.1,
+     "end": 39.8,
+     "cue": {
+      "word": "يريدان",
+      "t": 39.1
+     },
+     "who": "merchant",
+     "action": "merchant waves them into the line: \"come along\"",
+     "acting": "wave, turns his gaze to the road ahead",
+     "library": "PERSON_HANDS.wave"
+    },
+    {
+     "t": 39.86,
+     "end": 40.7,
+     "cue": {
+      "word": "التجارة",
+      "t": 39.86
+     },
+     "who": "cargo",
+     "action": "the two tiny bundles are hung on camel2 next to the big load (size contrast)",
+     "acting": "camel2 looks back at the tiny bundles, then at the camera, unimpressed (lid 0.6)",
+     "library": "camel {headTurn, lid}"
+    },
+    {
+     "t": 40.76,
+     "end": 42.6,
+     "cue": {
+      "word": "والصحبة",
+      "t": 40.76
+     },
+     "who": "merchant",
+     "action": "all three walk off right together, merchant in front, the cheats behind him",
+     "acting": "merchant hums (small head bob); behind him A eyes the chest, B eyes A",
+     "library": "walk() x3 with different phase and stride, footfalls() dust, lookAt()"
+    },
+    {
+     "t": 41.88,
+     "end": 42.6,
+     "cue": {
+      "word": "الطريق",
+      "t": 41.88
+     },
+     "who": "fx",
+     "action": "sun slides lower, long shadows; sky warms toward dusk",
+     "acting": "no acting change, world change only",
+     "library": "skyCycle(u 0.30 to 0.42)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 34.5,
+     "text": "WELCOME!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 34.5,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "wipe",
+    "t": 42.6
+   }
+  },
+  {
+   "id": "S5",
+   "start": 42.6,
+   "end": 49.6,
+   "paragraphs": [
+    3
+   ],
+   "set": "desertCamp",
+   "cast": [
+    "merchant",
+    "sharperA",
+    "sharperB",
+    "camel1",
+    "camel2"
+   ],
+   "summary": "Dusk, the first rest stop. Camels kneel, the merchant settles at his tent by the fire, and the two sharpers slip away to sit alone behind a rock.",
+   "camera": {
+    "shot": "establishing",
+    "move": "pan",
+    "notes": "Keys: 42.6 wide on the camp (x 700, y 660, zoom 0.95); hold to 46.6; 46.8-48.7 pan right to the sharpers mat (x 1820, y 700, zoom 1.25)."
+   },
+   "composition": "Camp left to right: big tent x 150-560, small tent x 600-800, fire x 930, camels x 1080 and 1290, palm x 1400, rock x 1500-1680 (top y 700), sharpers mat centre x 1880. The rock hides the mat from the tent: show this in the wide first.",
+   "actions": [
+    {
+     "t": 42.6,
+     "end": 43.8,
+     "cue": {
+      "word": "عند",
+      "t": 42.6
+     },
+     "who": "set",
+     "action": "dusk camp revealed, first star, fire not yet lit",
+     "acting": "world only: tent flap sways, palm fronds drift",
+     "library": "skyCycle(u 0.45), bake() per sky step"
+    },
+    {
+     "t": 43.36,
+     "end": 44.4,
+     "cue": {
+      "word": "أول",
+      "t": 43.36
+     },
+     "who": "fx",
+     "action": "S.label \"FIRST STOP\"",
+     "acting": "pop and settle",
+     "library": "S.label"
+    },
+    {
+     "t": 44.44,
+     "end": 45.4,
+     "cue": {
+      "word": "توقفوا",
+      "t": 44.44
+     },
+     "who": "camel1",
+     "action": "camels fold down: front knees, then the rear, with a dust puff each",
+     "acting": "two-stage kneel, loads rock and settle, long camel blink",
+     "library": "camel {kneel 0 to 1}, dustBurst, settleTo"
+    },
+    {
+     "t": 45.94,
+     "end": 46.8,
+     "cue": {
+      "word": "للراحة",
+      "t": 45.94
+     },
+     "who": "merchant",
+     "action": "merchant stretches, yawns and lights the fire, then sits on a cushion by the tent",
+     "acting": "arms up stretch (aL/aR raised), yawn mouth o, lids droop",
+     "library": "person {sit, seat:'floor'}, campfire flame flicker from K.noise"
+    },
+    {
+     "t": 46.82,
+     "end": 47.7,
+     "cue": {
+      "word": "جلس",
+      "t": 46.82
+     },
+     "who": "sharperA",
+     "action": "the two sharpers tiptoe past the kneeling camels to the far side of the rock and sit on a mat",
+     "acting": "high knees, hush finger from A to B; B looks back at the tent",
+     "library": "walk() with small stride (sneak), PERSON_HANDS.hush, then sit seat:'floor'"
+    },
+    {
+     "t": 47.78,
+     "end": 48.7,
+     "cue": {
+      "word": "المحتالان",
+      "t": 47.78
+     },
+     "who": "camel2",
+     "action": "camel2 follows them with its eyes as they pass, chewing",
+     "acting": "only the pupils and jaw move: silent witness",
+     "library": "camel {chew}, lookAt()"
+    },
+    {
+     "t": 48.74,
+     "end": 49.6,
+     "cue": {
+      "word": "وحدهما",
+      "t": 48.74
+     },
+     "who": "fx",
+     "action": "S.label \"ALONE\" with an arrow to the mat; the rock sits between them and the tent",
+     "acting": "both check over their shoulders left, then lean in",
+     "library": "S.label, S.arrow, saccades"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 46.82,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 49.6
+   }
+  },
+  {
+   "id": "S6",
+   "start": 49.6,
+   "end": 64.9,
+   "paragraphs": [
+    3
+   ],
+   "set": "desertCamp",
+   "cast": [
+    "sharperA",
+    "sharperB",
+    "merchant"
+   ],
+   "summary": "Heads together, sharper A whispers the plan: the man carries a fortune; take his goods and be rich. B agrees and they plot in the sand.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "twoShot(A head, B head, {margin 150}) about (x 1880, y 690, zoom 1.5); 55.4-59.1 raise the frame 60 units to give the thought cloud room; 61.98 push to zoom 1.7 on the sand drawing between them."
+   },
+   "composition": "Sharper A sits at x 1800, sharper B at x 1960, both cross-legged on the mat (ground y 900), a small lamp between them at x 1880. Thought cloud centred (1880, 430), 520 x 330. Rock edge visible at the left of frame with the tent glow far behind it.",
+   "actions": [
+    {
+     "t": 49.6,
+     "end": 50.4,
+     "cue": {
+      "word": "قال",
+      "t": 49.6
+     },
+     "who": "sharperA",
+     "action": "A cups his mouth and leans to B",
+     "acting": "lean (tip 0.1), eyes on B, brow low and sly",
+     "library": "PERSON_HANDS.cupMouth, lookAt()"
+    },
+    {
+     "t": 50.38,
+     "end": 52.0,
+     "cue": {
+      "word": "أحدهما",
+      "t": 50.38
+     },
+     "who": "sharperB",
+     "action": "B leans in with a cupped ear",
+     "acting": "eager nods, eyes wide, mouth small o",
+     "library": "PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 52.12,
+     "end": 53.4,
+     "cue": {
+      "word": "هذا",
+      "t": 52.12
+     },
+     "who": "sharperA",
+     "action": "A jerks a thumb back over the rock toward the tent",
+     "acting": "gaze flicks to the tent glow and back; B looks where the thumb points",
+     "library": "aR angle thumb, gazePlan for both"
+    },
+    {
+     "t": 53.42,
+     "end": 55.3,
+     "cue": {
+      "word": "مالًا",
+      "t": 54.08
+     },
+     "who": "fx",
+     "action": "thought cloud pops: the merchant asleep beside his open chest, coins piled high, counter \"GOODS 6\"",
+     "acting": "both look up into the cloud; coin glints reflected as yellow dots in their eyes",
+     "library": "thoughtCloud(inside: small merchant lie + coinPile)"
+    },
+    {
+     "t": 54.52,
+     "end": 55.4,
+     "cue": {
+      "word": "كثيرًا",
+      "t": 54.52
+     },
+     "who": "sharperB",
+     "action": "B mouths \"wow\" and counts on his fingers, runs out of fingers",
+     "acting": "comic greed: eyes huge, fingers flick",
+     "library": "handR targets stepping, eyes wide"
+    },
+    {
+     "t": 55.44,
+     "end": 56.8,
+     "cue": {
+      "word": "أخذنا",
+      "t": 56.26
+     },
+     "who": "fx",
+     "action": "inside the cloud two small hands reach in and the chest slides away from the sleeper",
+     "acting": "A mimes the grab with both hands; B copies half a beat late",
+     "library": "PERSON_HANDS.reachBoth, stagger"
+    },
+    {
+     "t": 57.7,
+     "end": 59.1,
+     "cue": {
+      "word": "نصبح",
+      "t": 58.48
+     },
+     "who": "fx",
+     "action": "the cloud changes: the two of them in giant jewelled turbans sitting on the coin pile",
+     "acting": "A closes his eyes in bliss; B hugs himself",
+     "library": "thoughtCloud inside swap with a 3-frame pop"
+    },
+    {
+     "t": 59.14,
+     "end": 60.0,
+     "cue": {
+      "word": "أغنياء",
+      "t": 59.14
+     },
+     "who": "lettering",
+     "action": "lettering \"RICH!\" bursts beside the cloud (not over a face)",
+     "acting": "both throw their arms up, then hush each other at once",
+     "library": "S.emphasis, PERSON_HANDS.hush on both"
+    },
+    {
+     "t": 60.0,
+     "end": 61.0,
+     "cue": {
+      "word": "وافق",
+      "t": 60.0
+     },
+     "who": "sharperB",
+     "action": "B nods hard three times",
+     "acting": "turban slips over his eyes on the third nod; pushes it up",
+     "library": "drop pulses on the head, accessory lag by hand"
+    },
+    {
+     "t": 61.02,
+     "end": 61.9,
+     "cue": {
+      "word": "صاحبه",
+      "t": 61.02
+     },
+     "who": "sharperA",
+     "action": "they shake hands again; the cloud pops away",
+     "acting": "firm grin from A, but his eyes stay on B a beat too long (seed of P4)",
+     "library": "handRW meeting point, gaze hold"
+    },
+    {
+     "t": 61.98,
+     "end": 63.0,
+     "cue": {
+      "word": "وبدآ",
+      "t": 61.98
+     },
+     "who": "sharperA",
+     "action": "A draws in the sand with a stick: tent, chest, an arrow from the chest to two stick men",
+     "acting": "tongue tip out in concentration, B points to add an arrow",
+     "library": "stick line drawn progressively with K path"
+    },
+    {
+     "t": 62.96,
+     "end": 64.0,
+     "cue": {
+      "word": "يخططان",
+      "t": 62.96
+     },
+     "who": "fx",
+     "action": "S.label \"THE PLAN\" over the sand drawing",
+     "acting": "heads together, both nod in sync for once",
+     "library": "S.label"
+    },
+    {
+     "t": 64.08,
+     "end": 64.9,
+     "cue": {
+      "word": "لخداعه",
+      "t": 64.08
+     },
+     "who": "camera",
+     "action": "quick cutaway inset: the merchant by his fire, yawning, unaware",
+     "acting": "innocent sleepy blink",
+     "library": "inset circle (round picture-in-picture) at upper left"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 59.14,
+     "text": "RICH!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 60.0,
+     "kind": "pop"
+    },
+    {
+     "t": 64.9,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 64.9
+   }
+  },
+  {
+   "id": "S7",
+   "start": 64.9,
+   "end": 78.62,
+   "paragraphs": [
+    4
+   ],
+   "set": "desertCamp",
+   "cast": [
+    "sharperA",
+    "sharperB"
+   ],
+   "summary": "But each hides another idea. Push in on sharper A: why share? If I get rid of my partner I take everything.",
+   "camera": {
+    "shot": "close",
+    "move": "push-in",
+    "notes": "Keys: 64.9 two-shot (zoom 1.5); 67.9-70.0 push to sharper A alone (x 1790, y 640, zoom 2.1), B only as a shoulder at frame right; hold."
+   },
+   "composition": "Sharper A fills the lower left of the panel, his thought cloud upper right centred (1900, 380), 460 x 300, tail to his head. Night now: navy sky, lamp light yellow on the faces.",
+   "actions": [
+    {
+     "t": 65.04,
+     "end": 66.3,
+     "cue": {
+      "word": "لكن",
+      "t": 65.04
+     },
+     "who": "set",
+     "action": "night falls fully; the lamp becomes the main light",
+     "acting": "both smiles hold frozen a little too long",
+     "library": "skyCycle(u 0.5 to 0.7), night tint via dayCycle().night"
+    },
+    {
+     "t": 66.4,
+     "end": 67.8,
+     "cue": {
+      "word": "واحد",
+      "t": 66.4
+     },
+     "who": "sharperA",
+     "action": "both turn away from each other to \"tidy their bundles\": backs half turned",
+     "acting": "the smiles drop the instant they stop facing each other (mask off)",
+     "library": "mouth 'smile' to 'closed', brow +0.5"
+    },
+    {
+     "t": 67.92,
+     "end": 69.0,
+     "cue": {
+      "word": "أخفى",
+      "t": 67.92
+     },
+     "who": "fx",
+     "action": "S.label \"SECRET IDEA\" with an arrow to each head",
+     "acting": "A slides his eyes sideways toward B without turning his head",
+     "library": "S.label, gaze [0.9, 0]"
+    },
+    {
+     "t": 70.06,
+     "end": 71.4,
+     "cue": {
+      "word": "فكر",
+      "t": 70.06
+     },
+     "who": "sharperA",
+     "action": "A taps his temple; the three-bubble trail of a thought cloud pops up",
+     "acting": "eyes narrow (lid 0.4), slow smirk",
+     "library": "PERSON_HANDS.pointUp to the temple, thoughtCloud trail"
+    },
+    {
+     "t": 71.46,
+     "end": 72.5,
+     "cue": {
+      "word": "لماذا",
+      "t": 71.46
+     },
+     "who": "fx",
+     "action": "cloud opens: the coin pile with A and B icons on either side",
+     "acting": "A looks up into it",
+     "library": "thoughtCloud(inside: coinPile + two heads)"
+    },
+    {
+     "t": 72.6,
+     "end": 73.5,
+     "cue": {
+      "word": "أقسم",
+      "t": 72.6
+     },
+     "who": "fx",
+     "action": "a dotted line cuts the pile in two halves, label \"HALF\" on each",
+     "acting": "A frowns at his half, lip curls",
+     "library": "mouth 'frown', brow +0.8"
+    },
+    {
+     "t": 73.8,
+     "end": 74.5,
+     "cue": {
+      "word": "صاحبي",
+      "t": 73.8
+     },
+     "who": "sharperA",
+     "action": "he glances at the real B, who waves back cheerfully",
+     "acting": "A returns a huge fake smile, drops it as B looks away",
+     "library": "mask on / mask off, PERSON_HANDS.wave on B"
+    },
+    {
+     "t": 75.18,
+     "end": 76.4,
+     "cue": {
+      "word": "تخلصت",
+      "t": 75.18
+     },
+     "who": "fx",
+     "action": "in the cloud a red X stamps over the B icon and it drops out of the cloud",
+     "acting": "A flicks his fingers as if brushing off a crumb",
+     "library": "S.emphasis X, fallY for the icon"
+    },
+    {
+     "t": 76.46,
+     "end": 77.2,
+     "cue": {
+      "word": "لأخذت",
+      "t": 76.46
+     },
+     "who": "fx",
+     "action": "the two halves slide together into one pile under the A icon",
+     "acting": "A hugs the air with both arms",
+     "library": "PERSON_HANDS.reachBoth then chest"
+    },
+    {
+     "t": 77.24,
+     "end": 78.62,
+     "cue": {
+      "word": "كل",
+      "t": 77.24
+     },
+     "who": "fx",
+     "action": "label \"ALL MINE\" in the cloud; a crown lands on the A icon",
+     "acting": "eyes shut in bliss, then one eye opens to check B (wink L as a peek)",
+     "library": "P.wink peek, lid 1 then wink 'L'"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 77.24,
+     "text": "ALL MINE!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 70.06,
+     "kind": "pop"
+    },
+    {
+     "t": 78.62,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "whip",
+    "t": 78.62
+   }
+  },
+  {
+   "id": "S8",
+   "start": 78.62,
+   "end": 85.2,
+   "paragraphs": [
+    4
+   ],
+   "set": "desertCamp",
+   "cast": [
+    "sharperA",
+    "sharperB"
+   ],
+   "summary": "At the same moment the second sharper is thinking exactly the same betrayal. The two clouds end side by side, mirror images.",
+   "camera": {
+    "shot": "close",
+    "move": "pull-out",
+    "notes": "Keys: 78.62 whip to sharper B alone (x 1970, y 650, zoom 2.1); 82.1-83.4 pull out to the two-shot (x 1880, y 600, zoom 1.25) so both clouds fit above both heads."
+   },
+   "composition": "B lower right, his cloud upper left (mirror of S7). In the final two-shot: A cloud at (1700, 380), B cloud at (2060, 380), each 330 x 220, the men back to back beneath them.",
+   "actions": [
+    {
+     "t": 78.62,
+     "end": 79.3,
+     "cue": {
+      "word": "وفي",
+      "t": 78.62
+     },
+     "who": "camera",
+     "action": "whip pan from A to B",
+     "acting": "B caught mid fake-yawn, then his face sharpens",
+     "library": "CAM keys 0.2 s apart"
+    },
+    {
+     "t": 78.98,
+     "end": 80.0,
+     "cue": {
+      "word": "الوقت",
+      "t": 78.98
+     },
+     "who": "fx",
+     "action": "S.label \"SAME TIME\"",
+     "acting": "B taps his temple with the wrong hand, copying A without knowing it",
+     "library": "S.label, PERSON_HANDS.pointUp mirrored"
+    },
+    {
+     "t": 80.52,
+     "end": 81.2,
+     "cue": {
+      "word": "الثاني",
+      "t": 80.52
+     },
+     "who": "fx",
+     "action": "B cloud opens: the same coin pile with both icons",
+     "acting": "B bites his lip, eyes dart (saccades)",
+     "library": "thoughtCloud, gazePlan 0.07"
+    },
+    {
+     "t": 81.2,
+     "end": 82.0,
+     "cue": {
+      "word": "يفكر",
+      "t": 81.2
+     },
+     "who": "fx",
+     "action": "the same film plays fast in his cloud: halves, then a red X on the A icon",
+     "acting": "B giggles into his hand",
+     "library": "PERSON_HANDS.mouthCover"
+    },
+    {
+     "t": 82.08,
+     "end": 82.8,
+     "cue": {
+      "word": "خيانة",
+      "t": 82.08
+     },
+     "who": "fx",
+     "action": "crown lands on the B icon, \"ALL MINE\"",
+     "acting": "B hugs his bundle and rocks",
+     "library": "tip sway"
+    },
+    {
+     "t": 82.82,
+     "end": 83.4,
+     "cue": {
+      "word": "الأول",
+      "t": 82.82
+     },
+     "who": "camera",
+     "action": "pull out: both men back to back, both clouds visible, perfect mirror images",
+     "acting": "each peeks over his shoulder at the other at the same instant, both snap away",
+     "library": "twoShot(), gaze snaps, stagger 0"
+    },
+    {
+     "t": 83.42,
+     "end": 84.4,
+     "cue": {
+      "word": "بالطريقة",
+      "t": 83.42
+     },
+     "who": "fx",
+     "action": "an equals sign pops between the two clouds; S.label \"SAME IDEA!\"",
+     "acting": "both freeze, innocent whistling faces (mouth o)",
+     "library": "S.emphasis, S.label"
+    },
+    {
+     "t": 84.44,
+     "end": 85.2,
+     "cue": {
+      "word": "نفسها",
+      "t": 84.44
+     },
+     "who": "fx",
+     "action": "both clouds pop at once",
+     "acting": "both turn back to each other with identical huge smiles",
+     "library": "thoughtCloud p to 0, mask on"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 83.42,
+     "text": "SAME IDEA!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 78.62,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 85.2
+   }
+  },
+  {
+   "id": "S9",
+   "start": 85.2,
+   "end": 95.22,
+   "paragraphs": [
+    5
+   ],
+   "set": "desertCamp",
+   "cast": [
+    "sharperA",
+    "sharperB"
+   ],
+   "summary": "Sharper A takes a bowl of food, turns his back, drips poison into it and offers it to his partner with a show of generosity.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Keys: 85.2 (x 1790, y 700, zoom 1.7) on A; 88.6-89.7 insert push to the bowl in his hands (x 1770, y 770, zoom 2.6); 90.8 back out to the two-shot (x 1880, y 700, zoom 1.45)."
+   },
+   "composition": "A at x 1800 turned left away from B (the figure is front-facing: show \"back turned\" by placing his hands and the bowl on his far left side at x 1740 and his gaze over the right shoulder). B at x 1960 busy with his own bundle, eyes down.",
+   "actions": [
+    {
+     "t": 85.2,
+     "end": 86.1,
+     "cue": {
+      "word": "أخذ",
+      "t": 85.2
+     },
+     "who": "sharperA",
+     "action": "A lifts a bowl of stew from the food tray",
+     "acting": "careful hands, a glance over his shoulder at B",
+     "library": "handLW/handRW to the bowl, lookAt()"
+    },
+    {
+     "t": 86.88,
+     "end": 87.4,
+     "cue": {
+      "word": "الأول",
+      "t": 86.88
+     },
+     "who": "fx",
+     "action": "small tag \"1\" above sharper A (he is \"the first\")",
+     "acting": "tag hops once",
+     "library": "S.label small"
+    },
+    {
+     "t": 87.46,
+     "end": 88.5,
+     "cue": {
+      "word": "طعامًا",
+      "t": 87.46
+     },
+     "who": "bowlA",
+     "action": "the bowl steams: three wavy lines; it has a yellow rim (bowl A)",
+     "acting": "A sniffs, smiles",
+     "library": "bowl prop with steam from K.noise"
+    },
+    {
+     "t": 88.62,
+     "end": 89.6,
+     "cue": {
+      "word": "ووضع",
+      "t": 88.62
+     },
+     "who": "vial",
+     "action": "he slides a small green vial from his sleeve, thumb flicks the cork",
+     "acting": "eyes left, right, left (saccades); shoulders hunched",
+     "library": "gazePlan 0.07, vial at handR"
+    },
+    {
+     "t": 89.72,
+     "end": 90.7,
+     "cue": {
+      "word": "سمًا",
+      "t": 89.72
+     },
+     "who": "vial",
+     "action": "insert: three green drops fall into the stew, each makes a ring; the steam turns green for a moment; S.label \"POISON\" with arrow",
+     "acting": "in the close shot only the hands and the bowl; drops on a steady beat",
+     "library": "fallY drops, ripple rings, S.label"
+    },
+    {
+     "t": 90.78,
+     "end": 91.1,
+     "cue": {
+      "word": "ثم",
+      "t": 90.78
+     },
+     "who": "sharperA",
+     "action": "vial vanishes back into the sleeve; he gives the stew one stir with a finger and wipes it on his robe",
+     "acting": "quick, practised; smirk",
+     "library": "hand keys"
+    },
+    {
+     "t": 91.18,
+     "end": 92.2,
+     "cue": {
+      "word": "قدمه",
+      "t": 91.18
+     },
+     "who": "sharperA",
+     "action": "he turns and holds the bowl out to B with both hands",
+     "acting": "mask on: huge warm smile, brows up, slight bow (tip 0.08)",
+     "library": "PERSON_HANDS.reachBoth with the bowl, settleTo"
+    },
+    {
+     "t": 92.28,
+     "end": 93.2,
+     "cue": {
+      "word": "صاحبه",
+      "t": 92.28
+     },
+     "who": "sharperB",
+     "action": "B looks up, touched, hand to his chest: \"for me?\"",
+     "acting": "eyes wide, mouth o then smile",
+     "library": "PERSON_HANDS.chest"
+    },
+    {
+     "t": 93.24,
+     "end": 94.4,
+     "cue": {
+      "word": "متظاهرًا",
+      "t": 93.24
+     },
+     "who": "fx",
+     "action": "the green steam is visible to the viewer only as a tiny green skull-free swirl mark on the bowl rim (a green dot badge)",
+     "acting": "A keeps the smile; one bead of sweat",
+     "library": "green dot badge on bowlA: stays to the end of the film"
+    },
+    {
+     "t": 94.5,
+     "end": 95.22,
+     "cue": {
+      "word": "بالكرم",
+      "t": 94.5
+     },
+     "who": "sharperA",
+     "action": "A lays his free hand on his heart, the picture of kindness; a small halo ring pops over his turban and tilts",
+     "acting": "eyes shut modestly; the halo slips sideways",
+     "library": "PERSON_HANDS.chest, K ring with tilt"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 89.72,
+     "text": "DRIP!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 90.78,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 95.22
+   }
+  },
+  {
+   "id": "S10",
+   "start": 95.22,
+   "end": 105.72,
+   "paragraphs": [
+    5
+   ],
+   "set": "desertCamp",
+   "cast": [
+    "sharperA",
+    "sharperB"
+   ],
+   "summary": "The second sharper does exactly the same, poisoning a bowl for the first. Neither knows the other man s plan.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "Keys: 95.22 (x 1970, y 700, zoom 1.7) on B; 100.3 insert to his bowl (zoom 2.6); 102.6-103.6 pull out to the full two-shot (x 1880, y 690, zoom 1.3) for the tableau."
+   },
+   "composition": "Mirror of S9. In the last tableau: A at x 1800 holding bowl A (yellow rim), B at x 1960 holding bowl B (red rim), each with a vial hidden behind his back on the outer side, facing each other with smiles.",
+   "actions": [
+    {
+     "t": 95.22,
+     "end": 95.9,
+     "cue": {
+      "word": "أما",
+      "t": 95.22
+     },
+     "who": "sharperB",
+     "action": "B sets the gift bowl A down beside him untouched, and \"remembers\" something",
+     "acting": "finger up: \"wait!\", sly sideways look",
+     "library": "PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 96.56,
+     "end": 97.3,
+     "cue": {
+      "word": "الثاني",
+      "t": 96.56
+     },
+     "who": "fx",
+     "action": "small tag \"2\" above sharper B",
+     "acting": "tag hops",
+     "library": "S.label small"
+    },
+    {
+     "t": 97.32,
+     "end": 98.1,
+     "cue": {
+      "word": "ففعل",
+      "t": 97.32
+     },
+     "who": "sharperB",
+     "action": "B turns away with a second bowl (red rim)",
+     "acting": "same hunched shoulders as A in S9, copied pose (setup and payoff)",
+     "library": "reuse the S9 pose function mirrored"
+    },
+    {
+     "t": 98.12,
+     "end": 99.3,
+     "cue": {
+      "word": "الشيء",
+      "t": 98.12
+     },
+     "who": "fx",
+     "action": "S.label \"SAME TRICK\" pops",
+     "acting": "A, behind him, is busy polishing a spoon and sees nothing",
+     "library": "S.label"
+    },
+    {
+     "t": 99.34,
+     "end": 100.3,
+     "cue": {
+      "word": "وأعد",
+      "t": 99.34
+     },
+     "who": "vial",
+     "action": "B pulls out his own vial; fumbles the cork, catches it",
+     "acting": "clumsier than A: a juggle, a silent gasp, relief",
+     "library": "hop() on the cork, eyes wide"
+    },
+    {
+     "t": 101.18,
+     "end": 102.0,
+     "cue": {
+      "word": "مسمومًا",
+      "t": 101.18
+     },
+     "who": "vial",
+     "action": "insert: he empties the whole vial in, far too much; green steam; green dot badge on bowl B",
+     "acting": "one eye squeezed shut as he pours (wink), tongue out",
+     "library": "P.wink, fallY drops x6, ripple rings"
+    },
+    {
+     "t": 102.02,
+     "end": 102.6,
+     "cue": {
+      "word": "للأول",
+      "t": 102.02
+     },
+     "who": "sharperB",
+     "action": "B turns and offers bowl B to A with a bow",
+     "acting": "mask on: sugary smile; A accepts with both hands, equally sugary",
+     "library": "PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 102.64,
+     "end": 103.8,
+     "cue": {
+      "word": "غير",
+      "t": 103.18
+     },
+     "who": "camera",
+     "action": "pull out to the tableau: two smiling men, two green-badged bowls, two vials hidden behind two backs",
+     "acting": "both smiles identical; both hidden hands tighten on the vials",
+     "library": "twoShot(), hands via handLW/handRW behind the body line"
+    },
+    {
+     "t": 103.84,
+     "end": 104.9,
+     "cue": {
+      "word": "يعرف",
+      "t": 103.84
+     },
+     "who": "fx",
+     "action": "S.arrow from vial A to bowl A and from vial B to bowl B; S.counter \"POISONED BOWLS\" 1, 2",
+     "acting": "no face change: the stillness is the joke",
+     "library": "S.arrow, S.counter"
+    },
+    {
+     "t": 104.94,
+     "end": 105.72,
+     "cue": {
+      "word": "شريكه",
+      "t": 104.94
+     },
+     "who": "fx",
+     "action": "a \"?\" pops over each head, facing away from the other man s vial",
+     "acting": "tiny shrug from both at once",
+     "library": "S.emphasis small, PERSON_HANDS.palmsUp one hand"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 101.18,
+     "text": "GLUG!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 105.72,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 105.72
+   }
+  },
+  {
+   "id": "S11",
+   "start": 105.72,
+   "end": 122.48,
+   "paragraphs": [
+    6
+   ],
+   "set": "desertCamp",
+   "cast": [
+    "sharperA",
+    "sharperB"
+   ],
+   "summary": "They sit and eat what they gave each other. Neither suspects his own bowl, because each is busy enjoying the success of his own plan.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "twoShot (x 1880, y 700, zoom 1.4) with a very slow drift in to zoom 1.55 by 122; raise 40 units at 117.3 for the two small clouds."
+   },
+   "composition": "A at x 1800 with bowl B (red rim), B at x 1960 with bowl A (yellow rim): the bowls have crossed. Lamp between them. Both green badges stay visible on the rims at all times.",
+   "actions": [
+    {
+     "t": 105.8,
+     "end": 106.7,
+     "cue": {
+      "word": "جلس",
+      "t": 105.8
+     },
+     "who": "sharperA",
+     "action": "both settle cross-legged facing the viewer, bowls in laps",
+     "acting": "polite \"after you\" gestures to each other",
+     "library": "sit seat:'floor', PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 107.5,
+     "end": 108.3,
+     "cue": {
+      "word": "يأكلان",
+      "t": 107.5
+     },
+     "who": "sharperB",
+     "action": "B takes the first scoop; A follows a beat later",
+     "acting": "each watches the other s mouth, not his own food (lookAt the other s face)",
+     "library": "hand to mouth keys, chew via mouth cycle, stagger"
+    },
+    {
+     "t": 108.56,
+     "end": 109.3,
+     "cue": {
+      "word": "قدماه",
+      "t": 108.56
+     },
+     "who": "fx",
+     "action": "two curved S.arrows cross between them: \"FROM 1\" into B s bowl, \"FROM 2\" into A s bowl",
+     "acting": "both raise their bowls slightly as the arrows land, like a toast",
+     "library": "S.arrow x2"
+    },
+    {
+     "t": 109.32,
+     "end": 110.3,
+     "cue": {
+      "word": "لبعضهما",
+      "t": 109.32
+     },
+     "who": "sharperA",
+     "action": "they clink bowls",
+     "acting": "matching smiles; rims touch, small spark",
+     "library": "handRW meeting point, K star"
+    },
+    {
+     "t": 110.4,
+     "end": 111.8,
+     "cue": {
+      "word": "لم",
+      "t": 110.4
+     },
+     "who": "sharperA",
+     "action": "A eats heartily, eyes fixed on B s spoon going in",
+     "acting": "each time B swallows, A s smile widens one notch",
+     "library": "gaze lock, mouth chew cycle"
+    },
+    {
+     "t": 111.9,
+     "end": 113.6,
+     "cue": {
+      "word": "واحد",
+      "t": 112.22
+     },
+     "who": "sharperB",
+     "action": "B eats even faster, eyes fixed on A s spoon",
+     "acting": "each time A swallows, B does a tiny happy wiggle",
+     "library": "tip sway pulses on A s swallow times"
+    },
+    {
+     "t": 114.4,
+     "end": 115.3,
+     "cue": {
+      "word": "الطعام",
+      "t": 114.4
+     },
+     "who": "fx",
+     "action": "the green badges on both rims pulse once; a faint green wisp rises from each bowl",
+     "acting": "neither looks down: dramatic irony, the audience sees it",
+     "library": "badge pulse, wisp via K.noise path"
+    },
+    {
+     "t": 115.4,
+     "end": 116.2,
+     "cue": {
+      "word": "أمامه",
+      "t": 115.4
+     },
+     "who": "bowlA",
+     "action": "S.arrow down to each man s own bowl, label \"LOOK DOWN!\" wobbling",
+     "acting": "they do not; A even compliments the cook (kiss fingers)",
+     "library": "S.arrow, hand to lips"
+    },
+    {
+     "t": 116.26,
+     "end": 117.2,
+     "cue": {
+      "word": "مسموم",
+      "t": 116.26
+     },
+     "who": "fx",
+     "action": "both badges flash, the wisps curl into two small \"?\" shapes and fade",
+     "acting": "steady chewing",
+     "library": "badge flash"
+    },
+    {
+     "t": 117.28,
+     "end": 118.3,
+     "cue": {
+      "word": "لأنه",
+      "t": 117.28
+     },
+     "who": "fx",
+     "action": "a small thought cloud pops over each head (260 x 170)",
+     "acting": "eyes drift up dreamily while still chewing",
+     "library": "thoughtCloud x2"
+    },
+    {
+     "t": 118.4,
+     "end": 119.9,
+     "cue": {
+      "word": "مشغولًا",
+      "t": 118.4
+     },
+     "who": "fx",
+     "action": "in each cloud: himself alone on the coin pile, crowned",
+     "acting": "identical blissful half-lidded faces (lid 0.5)",
+     "library": "thoughtCloud inside reuse from S7/S8"
+    },
+    {
+     "t": 119.92,
+     "end": 121.3,
+     "cue": {
+      "word": "نجاح",
+      "t": 119.92
+     },
+     "who": "fx",
+     "action": "S.label \"MY PLAN WORKS!\" under each cloud",
+     "acting": "both chuckle with mouths full; shoulders bounce out of phase",
+     "library": "S.label, breathe() fast"
+    },
+    {
+     "t": 121.36,
+     "end": 122.48,
+     "cue": {
+      "word": "الخاصة",
+      "t": 121.36
+     },
+     "who": "sharperA",
+     "action": "both scrape their bowls clean and set them down upside down: empty",
+     "acting": "satisfied sighs, pats on bellies",
+     "library": "PERSON_HANDS.chest lowered to the belly"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 109.32,
+     "text": "CLINK!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 110.4,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 122.48
+   }
+  },
+  {
+   "id": "S12",
+   "start": 122.48,
+   "end": 127.28,
+   "paragraphs": [
+    6
+   ],
+   "set": "desertCamp",
+   "cast": [
+    "sharperA",
+    "sharperB"
+   ],
+   "summary": "A short time later the poison strikes both. Each realises, points at the other, and both topple back behind the mat. They are dead.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "shake",
+    "notes": "twoShot zoom 1.5; one small panel-only shake at 124.3; 126.06 fast pull to zoom 1.2 as they fall; hold on the empty mat with two bowls and two rolling turbans."
+   },
+   "composition": "Same positions. They fall backward and away from the viewer behind a low dune lip at the back edge of the mat (y 880), so after 126.6 only two pairs of shoes and the two fallen turbans show.",
+   "actions": [
+    {
+     "t": 122.48,
+     "end": 123.0,
+     "cue": {
+      "word": "وبعد",
+      "t": 122.48
+     },
+     "who": "fx",
+     "action": "the clouds pop; the lamp flame dips",
+     "acting": "both smiles freeze",
+     "library": "thoughtCloud p to 0"
+    },
+    {
+     "t": 123.1,
+     "end": 124.2,
+     "cue": {
+      "word": "وقت",
+      "t": 123.1
+     },
+     "who": "sharperA",
+     "action": "a gurgle: both look down at their own bellies, then at their own bowls, then at each other",
+     "acting": "three clean gaze snaps on a beat, in unison for once; brows shoot up",
+     "library": "gazePlan 0.07, brow -0.8"
+    },
+    {
+     "t": 124.3,
+     "end": 125.3,
+     "cue": {
+      "word": "أصابهما",
+      "t": 124.3
+     },
+     "who": "sharperB",
+     "action": "both clutch their bellies; faces turn green from the neck up",
+     "acting": "squash (sq 0.9), tremble, eyes wide, mouths wavy",
+     "library": "tremble(), anticipate(), green dot overlay rising (clip on the head)"
+    },
+    {
+     "t": 125.36,
+     "end": 126.0,
+     "cue": {
+      "word": "السم",
+      "t": 125.36
+     },
+     "who": "sharperA",
+     "action": "each points an accusing finger at the other and pulls out his own vial in the same instant: mutual discovery",
+     "acting": "outrage then horror; a look to camera from both (\"uh-oh\")",
+     "library": "PERSON_HANDS.pointFwd, gaze [0, 0.05]"
+    },
+    {
+     "t": 126.06,
+     "end": 127.0,
+     "cue": {
+      "word": "وماتا",
+      "t": 126.06
+     },
+     "who": "sharperB",
+     "action": "both stiffen and topple straight backward behind the dune lip; turbans pop off and roll to a stop; the vials drop on the mat",
+     "acting": "hold one frame rigid, then fall with real acceleration; feet up, a single bounce of the shoes, stillness",
+     "library": "fallY(), impactSquash(), rebound(), swing() for the turban roll"
+    },
+    {
+     "t": 127.0,
+     "end": 127.28,
+     "cue": {
+      "word": "وماتا",
+      "t": 126.06
+     },
+     "who": "set",
+     "action": "the lamp gutters out; held still frame",
+     "acting": "nothing moves but one turban rocking to rest",
+     "library": "settle only"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 124.3,
+     "text": "URK!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 127.28,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 127.28,
+    "label": "NEXT MORNING..."
+   }
+  },
+  {
+   "id": "S13",
+   "start": 127.28,
+   "end": 135.74,
+   "paragraphs": [
+    7
+   ],
+   "set": "desertCamp",
+   "cast": [
+    "merchant",
+    "camel1",
+    "camel2"
+   ],
+   "summary": "Morning. The merchant notices that his companions have been gone a long time and goes looking among the tents and along the road.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Under the card (midpoint 127.7) cut to (x 520, y 680, zoom 1.15) at the tents. Track with the merchant as he walks right: 130.66 to 135.7, ending at (x 1300, y 690, zoom 1.1) with the rock at frame right."
+   },
+   "composition": "Merchant comes out of the big tent at x 420. Two empty cushions by the dead fire at x 860 and 990 (the cheats places). Small tent x 600-800. Road posts and the palm at x 1400. The rock (x 1500-1680) is the goal at the right edge.",
+   "actions": [
+    {
+     "t": 127.7,
+     "end": 128.2,
+     "cue": {
+      "word": "لاحظ",
+      "t": 127.28
+     },
+     "who": "set",
+     "action": "morning sky, long soft shadows, smoke thread from the dead fire",
+     "acting": "camels chewing, calm",
+     "library": "skyCycle(u 0.08)"
+    },
+    {
+     "t": 128.24,
+     "end": 128.9,
+     "cue": {
+      "word": "التاجر",
+      "t": 128.24
+     },
+     "who": "merchant",
+     "action": "merchant ducks out of the tent flap, stretches",
+     "acting": "yawn, then a cheerful wave toward the two cushions that stops halfway",
+     "library": "PERSON_HANDS.wave, settleTo"
+    },
+    {
+     "t": 128.92,
+     "end": 129.9,
+     "cue": {
+      "word": "غيابهما",
+      "t": 128.92
+     },
+     "who": "fx",
+     "action": "two dotted outlines sit on the empty cushions for a moment with \"?\" each, then fade",
+     "acting": "his eyes go from one cushion to the other; smile fades to puzzled",
+     "library": "dashed person silhouettes, gazePlan"
+    },
+    {
+     "t": 129.94,
+     "end": 130.6,
+     "cue": {
+      "word": "الطويل",
+      "t": 129.94
+     },
+     "who": "merchant",
+     "action": "he looks at the sun height and scratches his head",
+     "acting": "brow raised, mouth small",
+     "library": "PERSON_HANDS.headHold one hand"
+    },
+    {
+     "t": 130.66,
+     "end": 131.8,
+     "cue": {
+      "word": "فخرج",
+      "t": 130.66
+     },
+     "who": "merchant",
+     "action": "he sets off to the right at a brisk walk",
+     "acting": "lean forward (tip 0.05), hand shading his eyes",
+     "library": "walk(), footfalls() dust"
+    },
+    {
+     "t": 131.86,
+     "end": 133.1,
+     "cue": {
+      "word": "يبحث",
+      "t": 131.86
+     },
+     "who": "merchant",
+     "action": "cups his mouth and calls",
+     "acting": "mouth open wide, head tips back",
+     "library": "PERSON_HANDS.cupMouth, talk 1"
+    },
+    {
+     "t": 133.5,
+     "end": 134.3,
+     "cue": {
+      "word": "الخيام",
+      "t": 133.5
+     },
+     "who": "merchant",
+     "action": "lifts the flap of the small tent: empty, only a startled beetle",
+     "acting": "leans in, pulls back, shrug",
+     "library": "handRW to the flap, PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 134.32,
+     "end": 135.0,
+     "cue": {
+      "word": "وعلى",
+      "t": 134.32
+     },
+     "who": "camel2",
+     "action": "camel2 slowly turns its head and stares toward the rock",
+     "acting": "the silent witness points with its nose; merchant follows the camel s gaze",
+     "library": "camel {headTurn 1}, lookAt()"
+    },
+    {
+     "t": 135.02,
+     "end": 135.74,
+     "cue": {
+      "word": "الطريق",
+      "t": 135.02
+     },
+     "who": "merchant",
+     "action": "he walks along the road posts toward the rock, sees two turbans lying past its edge",
+     "acting": "pace slows, hand comes down from his brow",
+     "library": "walk() slowing"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 131.86,
+     "text": "HELLO?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 130.66,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 135.74
+   }
+  },
+  {
+   "id": "S14",
+   "start": 135.74,
+   "end": 148.38,
+   "paragraphs": [
+    7
+   ],
+   "set": "desertCamp",
+   "cast": [
+    "merchant",
+    "sharperA",
+    "sharperB"
+   ],
+   "summary": "He finds them dead in the far spot. From what they left behind, the bowls, the vials and the false turbans, he understands they were never honest companions.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Keys: 135.74 reveal (x 1820, y 700, zoom 1.2): merchant at left, the mat scene at right; 139.6-141.5 push to the props on the mat (x 1880, y 800, zoom 1.9); 143.3 ease up to the merchant face (x 1760, y 660, zoom 1.9)."
+   },
+   "composition": "Merchant stops at x 1700. On the mat (x 1700-2060): two upturned bowls with green badges, two vials, two fallen turbans, the sand drawing of THE PLAN still there. The two bodies lie behind the dune lip: only shoes and a sleeve are visible; no faces.",
+   "actions": [
+    {
+     "t": 135.74,
+     "end": 136.9,
+     "cue": {
+      "word": "وجدهما",
+      "t": 135.74
+     },
+     "who": "merchant",
+     "action": "he rounds the rock and stops dead",
+     "acting": "whole-body recoil with overshoot (tip -0.1), eyes wide, hands fly up to his cheeks",
+     "library": "PERSON_HANDS.cheeks, settleTo"
+    },
+    {
+     "t": 137.1,
+     "end": 137.9,
+     "cue": {
+      "word": "ميتين",
+      "t": 137.1
+     },
+     "who": "set",
+     "action": "the still scene: two pairs of shoes, toes up, behind the dune lip; a fly circles",
+     "acting": "he lowers his hands slowly, wet eyes for one beat (he liked them)",
+     "library": "wet: true, lid slow blink"
+    },
+    {
+     "t": 138.22,
+     "end": 139.5,
+     "cue": {
+      "word": "مكان",
+      "t": 138.22
+     },
+     "who": "fx",
+     "action": "S.label \"FAR FROM CAMP\" with an arrow back toward the tiny tents",
+     "acting": "he glances back at the camp and again at the mat",
+     "library": "S.label, S.arrow, gazePlan"
+    },
+    {
+     "t": 139.64,
+     "end": 140.8,
+     "cue": {
+      "word": "وعندما",
+      "t": 139.64
+     },
+     "who": "merchant",
+     "action": "he kneels at the edge of the mat",
+     "acting": "careful, hand hovering over the things",
+     "library": "person {kneel: 1}, handRW hover"
+    },
+    {
+     "t": 140.84,
+     "end": 141.5,
+     "cue": {
+      "word": "عرف",
+      "t": 140.84
+     },
+     "who": "vial",
+     "action": "he picks up one vial, sniffs, jerks his head away; green wisp",
+     "acting": "nose wrinkle, eyes shut tight, arm at full length",
+     "library": "handRW, lid 1 pulse"
+    },
+    {
+     "t": 141.56,
+     "end": 142.2,
+     "cue": {
+      "word": "تركاه",
+      "t": 141.56
+     },
+     "who": "fx",
+     "action": "S.arrow to each clue in turn with tiny labels: \"POISON\", \"POISON\", \"FAKE TURBAN\"",
+     "acting": "his eyes follow the arrows (saccades)",
+     "library": "S.arrow x3, gazePlan 0.07"
+    },
+    {
+     "t": 142.26,
+     "end": 143.2,
+     "cue": {
+      "word": "وراءهما",
+      "t": 142.26
+     },
+     "who": "set",
+     "action": "his eye lands on the sand drawing: tent, chest, arrow to two stick men",
+     "acting": "he leans in, lips move as he reads it",
+     "library": "camera eases to the drawing"
+    },
+    {
+     "t": 143.32,
+     "end": 144.2,
+     "cue": {
+      "word": "فهم",
+      "t": 143.32
+     },
+     "who": "merchant",
+     "action": "realisation: he sits back on his heels, hand over his mouth",
+     "acting": "long exhale; not a light bulb, a sober \"oh\"",
+     "library": "PERSON_HANDS.mouthCover, breathe()"
+    },
+    {
+     "t": 145.04,
+     "end": 145.9,
+     "cue": {
+      "word": "لم",
+      "t": 145.04
+     },
+     "who": "fx",
+     "action": "small cloud: the two \"merchants\" bowing to him yesterday; their turbans lift off and the rogues skull caps show",
+     "acting": "he watches it, slowly shaking his head",
+     "library": "thoughtCloud + dream wash tint"
+    },
+    {
+     "t": 145.92,
+     "end": 147.2,
+     "cue": {
+      "word": "رفيقي",
+      "t": 145.92
+     },
+     "who": "fx",
+     "action": "S.label \"FRIENDS\" appears and a red strike line crosses it out",
+     "acting": "his brow sets, sad rather than angry",
+     "library": "S.label, K line"
+    },
+    {
+     "t": 147.28,
+     "end": 148.38,
+     "cue": {
+      "word": "صادقين",
+      "t": 147.28
+     },
+     "who": "merchant",
+     "action": "he stands, bows his head briefly over them, then turns to look back at his own camels",
+     "acting": "eyes close for a beat (lid 1), breath, eyes open toward his goods",
+     "library": "lid ramp, lookAt()"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 135.74,
+     "kind": "thud"
+    },
+    {
+     "t": 139.64,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 148.38
+   }
+  },
+  {
+   "id": "S15",
+   "start": 148.38,
+   "end": 161.28,
+   "paragraphs": [
+    8
+   ],
+   "set": "desertCamp",
+   "cast": [
+    "merchant",
+    "camel1",
+    "camel2"
+   ],
+   "summary": "The merchant has escaped the theft without ever learning the whole story. He takes the goods they left and continues on his way.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Keys: 148.38 (x 1200, y 690, zoom 1.25) merchant with his camels and intact load; 156.28 widen to zoom 1.0; 160.06 track right with the departing caravan to the right edge of the camp world."
+   },
+   "composition": "Merchant at x 1150 beside camel1 (x 1080) and camel2 (x 1290), still kneeling with the full load. Counter \"GOODS 6\" above the load. The rock at frame right with the mat beyond it.",
+   "actions": [
+    {
+     "t": 148.38,
+     "end": 149.3,
+     "cue": {
+      "word": "نجا",
+      "t": 148.38
+     },
+     "who": "merchant",
+     "action": "he hurries back to his camels and counts the load with a pointing finger",
+     "acting": "worried eyes scanning (saccades), finger hops along the bolts",
+     "library": "PERSON_HANDS.pointFwd keys, gazePlan"
+    },
+    {
+     "t": 149.4,
+     "end": 150.1,
+     "cue": {
+      "word": "التاجر",
+      "t": 149.4
+     },
+     "who": "fx",
+     "action": "S.counter \"GOODS\" ticks 1 to 6: all there, a small tick mark",
+     "acting": "shoulders drop with relief, hand to his chest",
+     "library": "S.counter, PERSON_HANDS.chest"
+    },
+    {
+     "t": 150.16,
+     "end": 151.2,
+     "cue": {
+      "word": "السرقة",
+      "t": 150.16
+     },
+     "who": "fx",
+     "action": "the sand-drawing arrow (chest to stick men) appears as a ghost over the chest and snaps in two; label \"SAFE!\"",
+     "acting": "he pats the chest twice, a breath out",
+     "library": "S.emphasis, K path break"
+    },
+    {
+     "t": 151.3,
+     "end": 152.4,
+     "cue": {
+      "word": "غير",
+      "t": 151.3
+     },
+     "who": "merchant",
+     "action": "he looks back toward the rock and shrugs, palms up",
+     "acting": "puzzled brows, small head shake",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 152.92,
+     "end": 154.0,
+     "cue": {
+      "word": "التفاصيل",
+      "t": 152.92
+     },
+     "who": "fx",
+     "action": "a small cloud over him holds only two bowls and a big \"?\" (he never saw the swap)",
+     "acting": "he scratches his beard looking at it",
+     "library": "thoughtCloud small, PERSON_HANDS.chin"
+    },
+    {
+     "t": 154.46,
+     "end": 156.2,
+     "cue": {
+      "word": "دارت",
+      "t": 154.46
+     },
+     "who": "fx",
+     "action": "for the viewer only: the two crossed arrows of S11 flash once in the cloud then fade before he can read them",
+     "acting": "he blinks, lets it go; the cloud pops",
+     "library": "S.arrow x2 alpha pulse"
+    },
+    {
+     "t": 156.28,
+     "end": 157.2,
+     "cue": {
+      "word": "وأخذ",
+      "t": 156.28
+     },
+     "who": "merchant",
+     "action": "he carries the two tiny bundles and the cheats few goods back from the mat",
+     "acting": "walks with one in each hand, not triumphant, matter of fact",
+     "library": "walk(), props at the hands"
+    },
+    {
+     "t": 157.3,
+     "end": 158.3,
+     "cue": {
+      "word": "البضائع",
+      "t": 157.3
+     },
+     "who": "cargo",
+     "action": "he hangs them on camel2; counter \"GOODS\" 6 to 8",
+     "acting": "camel2 glances back at the extra load, sighs through its lips",
+     "library": "S.counter, camel {headTurn, talk}"
+    },
+    {
+     "t": 159.22,
+     "end": 160.0,
+     "cue": {
+      "word": "ثم",
+      "t": 159.22
+     },
+     "who": "camel1",
+     "action": "camels rise, rear first; the load lurches and settles",
+     "acting": "two-stage rise, out of phase between the two camels",
+     "library": "camel {kneel 1 to 0}, settleTo"
+    },
+    {
+     "t": 160.06,
+     "end": 161.28,
+     "cue": {
+      "word": "تابع",
+      "t": 160.06
+     },
+     "who": "merchant",
+     "action": "he leads the caravan off to the right into the morning; one look back, then eyes forward",
+     "acting": "steady walk; the look back is short and thoughtful",
+     "library": "walk(), footfalls(), lookAt() then gaze ahead"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 150.16,
+     "text": "SAFE!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 156.28,
+     "kind": "pop"
+    },
+    {
+     "t": 159.22,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 161.28
+   }
+  },
+  {
+   "id": "S16",
+   "start": 161.28,
+   "end": 172.5,
+   "paragraphs": [
+    8
+   ],
+   "set": "desertCamp",
+   "cast": [
+    "merchant",
+    "camel1",
+    "camel2"
+   ],
+   "summary": "The moral picture: the two bowls on the empty mat, each cheat killed by the food the other prepared. The caravan grows small on the road. THE END.",
+   "camera": {
+    "shot": "insert",
+    "move": "pull-out",
+    "notes": "Keys: 161.28 low insert on the mat (x 1880, y 800, zoom 1.9); 166.08-168.6 slow pull out and up to (x 1900, y 640, zoom 1.0) so the caravan is seen small on the horizon road at the right; hold for THE END."
+   },
+   "composition": "Foreground mat with bowl A (yellow rim) on the right and bowl B (red rim) on the left, as they ended after the swap; a fallen turban behind each; tags \"1\" and \"2\" where the men sat (1 at x 1800, 2 at x 1960). No bodies in this framing: the camera is low and in front of the dune lip. Horizon road with the tiny caravan at upper right.",
+   "actions": [
+    {
+     "t": 161.28,
+     "end": 162.1,
+     "cue": {
+      "word": "أما",
+      "t": 161.28
+     },
+     "who": "set",
+     "action": "the quiet mat in morning light, the two upturned bowls, wind moves a turban tail",
+     "acting": "still life; only the wind",
+     "library": "K.noise sway"
+    },
+    {
+     "t": 162.14,
+     "end": 163.1,
+     "cue": {
+      "word": "المحتالان",
+      "t": 162.14
+     },
+     "who": "fx",
+     "action": "tags \"1\" and \"2\" pop where the two sat, each above a fallen turban",
+     "acting": "pop with overshoot",
+     "library": "S.label small x2"
+    },
+    {
+     "t": 163.96,
+     "end": 164.6,
+     "cue": {
+      "word": "مات",
+      "t": 163.96
+     },
+     "who": "fx",
+     "action": "both green badges pulse once",
+     "acting": "slow, not comic",
+     "library": "badge pulse"
+    },
+    {
+     "t": 164.62,
+     "end": 166.0,
+     "cue": {
+      "word": "واحد",
+      "t": 164.62
+     },
+     "who": "fx",
+     "action": "S.arrow from tag \"1\" curving across to the bowl in front of \"2\", labelled \"MADE BY 1\"",
+     "acting": "arrow draws itself over 0.8 s",
+     "library": "S.arrow"
+    },
+    {
+     "t": 166.08,
+     "end": 167.4,
+     "cue": {
+      "word": "بسبب",
+      "t": 166.08
+     },
+     "who": "fx",
+     "action": "the mirror S.arrow from tag \"2\" across to the bowl in front of \"1\", labelled \"MADE BY 2\": the two arrows form an X",
+     "acting": "second arrow in the other accent colour (red vs blue)",
+     "library": "S.arrow"
+    },
+    {
+     "t": 167.44,
+     "end": 168.5,
+     "cue": {
+      "word": "أعده",
+      "t": 167.44
+     },
+     "who": "camera",
+     "action": "pull out: the X of arrows over the mat in the foreground, the merchant s caravan small and safe on the horizon",
+     "acting": "tiny camel heads bob out of phase; merchant does not look back",
+     "library": "CAM keys, walk() on the small caravan"
+    },
+    {
+     "t": 168.58,
+     "end": 169.5,
+     "cue": {
+      "word": "الآخر",
+      "t": 168.58
+     },
+     "who": "fx",
+     "action": "S.box caption \"EACH FELL INTO THE TRAP HE SET\" under the X (above the caption panel, inside the picture)",
+     "acting": "hold",
+     "library": "S.box, text >= 44 px at 1280x720 scale"
+    },
+    {
+     "t": 169.6,
+     "end": 172.5,
+     "who": "lettering",
+     "action": "S.title \"THE END\" at the top of the picture; the caravan disappears over the last dune; S.finish last every frame",
+     "acting": "held ending 3 s; sun climbs a little",
+     "library": "S.title, skyCycle(u 0.08 to 0.12)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 169.6,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 161.28,
+     "kind": "chime"
+    },
+    {
+     "t": 169.5,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 172.5
+   }
+  }
+ ],
+ "ending": {
+  "t": 169.6,
+  "description": "After the last word (169.24) the picture holds on the foreground mat with the X of two crossed arrows over the two bowls and the box caption, while the merchant s caravan, small on the horizon road, walks over the last dune. S.title \"THE END\" from 169.6 to 172.5; one soft chime at 169.5."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان تاجر غني يعيش في مدينة اسمها سندة،|ويملك بضائع كثيرة يريد بيعها في مدينة أخرى.|جهز جماله وحمل عليها الأقمشة والأشياء الثمينة،|ثم انطلق في رحلة طويلة عبر الطريق.",
+   "en": "A wealthy merchant|in a city named Sindah|packed cloth and valuable goods on camels|and set out to trade in another city."
+  },
+  {
+   "p": 2,
+   "ar": "سمع رجلان محتالان عن رحلته، فاتفقا على السفر معه.|حملا بعض البضائع الصغيرة، وتظاهرا بأنهما تاجران مثله.|رحب الرجل بهما، لأنه ظن أنهما يريدان التجارة والصحبة في الطريق.",
+   "en": "Two cheats heard of his journey and joined him,|carrying a few goods and pretending to be merchants.|He welcomed their company."
+  },
+  {
+   "p": 3,
+   "ar": "عند أول مكان توقفوا فيه للراحة، جلس المحتالان وحدهما.|قال أحدهما للآخر: «هذا الرجل يحمل مالًا كثيرًا.|إذا أخذنا بضاعته فسوف نصبح أغنياء».|وافق صاحبه، وبدآ يخططان لخداعه.",
+   "en": "At the first rest stop,|the cheats agreed to steal the merchant’s valuable cargo|and become rich.|They began planning the theft."
+  },
+  {
+   "p": 4,
+   "ar": "لكن كل واحد منهما أخفى فكرة أخرى.|فكر الأول: «لماذا أقسم المال مع صاحبي؟|لو تخلصت منه لأخذت كل شيء».|وفي الوقت نفسه كان الثاني يفكر في خيانة الأول بالطريقة نفسها.",
+   "en": "Secretly, each thought:|“Why share the wealth?|If I get rid of my partner I can keep everything.”|Both planned to betray the other."
+  },
+  {
+   "p": 5,
+   "ar": "أخذ المحتال الأول طعامًا ووضع فيه سمًا،|ثم قدمه إلى صاحبه متظاهرًا بالكرم.|أما المحتال الثاني ففعل الشيء نفسه،|وأعد طعامًا مسمومًا للأول، من غير أن يعرف خطة شريكه.",
+   "en": "The first poisoned food|and offered it to his companion, pretending generosity.|The second independently|prepared poisoned food for the first."
+  },
+  {
+   "p": 6,
+   "ar": "جلس الاثنان يأكلان ما قدماه لبعضهما.|لم يشك أي واحد منهما في أن الطعام الذي أمامه مسموم،|لأنه كان مشغولًا بفكرة نجاح خطته الخاصة.|وبعد وقت قصير أصابهما السم وماتا.",
+   "en": "They ate the food they had exchanged.|Neither suspected the meal before him was poisoned,|each preoccupied with his own scheme.|Soon both died."
+  },
+  {
+   "p": 7,
+   "ar": "لاحظ التاجر غيابهما الطويل،|فخرج يبحث عنهما بين الخيام وعلى الطريق.|وجدهما ميتين في مكان بعيد.|وعندما عرف ما تركاه وراءهما، فهم أنهما لم يكونا رفيقي سفر صادقين.",
+   "en": "Noticing their long absence,|the merchant searched|and found them dead.|From what they left behind, he understood they had not been honest companions."
+  },
+  {
+   "p": 8,
+   "ar": "نجا التاجر من السرقة|من غير أن يعرف كل التفاصيل التي دارت بين الرجلين.|وأخذ البضائع التي تركاها، ثم تابع طريقه.|أما المحتالان فقد مات كل واحد منهما بسبب طعام أعده له الآخر.",
+   "en": "The merchant escaped the theft|without knowing every detail,|took the goods they left and continued his journey.|Each cheat had died from the food prepared by the other."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "camel",
+   "description": "One-humped comic camel for any caravan or desert story. About 400 wide x 370 tall at s 1 (hump top 300, head top 370), feet at (x, y), x at body centre, facing dir. Pose fields: ph, amp (walk; pacing gait, the two legs of one side move together), kneel 0..1 (0-0.5 front legs fold, 0.5-1 rear legs fold; body ends 120 lower), headTurn 0..1 (head swings back over the shoulder), neck -1..1 (down to graze / up), chew, talk (grumble, lower lip), ears, tailSwish, load (array of cargo items drawn on the hump), pal (0 sand, 1 brown, 2 white), plus the shared acting fields.",
+   "reusable": true,
+   "effort": "L",
+   "implementation": "One function in Library/cast, built like the deer/lion: body = rounded box 230 x 120 in sand with red-dot shading on the belly, hump = half ellipse 120 x 70 on top, neck = two tapered quads forming a shallow S (60 wide at the base, 34 at the head) so headTurn and neck are simple angle changes at two joints, head = rounded wedge 110 x 60 with a split upper lip, big lidded eye (eye2 from core/helpers so gaze/lid work), small round ears, four two-segment legs 150 long with knobbly knee circles and wide two-toed feet (walk() drives ph; for the pace gait give the same-side legs the same phase), tuft tail on swing(). kneel folds the lower leg segments under the body and translates the body down. Wrap with acting() in registry.js and add catalogue poses stand, walk, kneel, loaded, head turned."
+  },
+  {
+   "type": "set",
+   "name": "desertRoad",
+   "description": "The planned desert travel strip (AN-095) with a city-edge option for Sindah, a hiding wall, a foreground wipe palm and a far city (dimensions under sets).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Flat polygons baked with bake(): sky by skyCycle, three dune ridge polygons with K halftone dot fills, road band, wall and gate from rectangles and an arc, domes as half circles. Palm = the planned palmTree(ctx, x, baseY, {h, lean, fronds}) if it exists by then, otherwise a ringed tapered trunk and 7 frond arcs. Draw the wipe palm trunk after the actors."
+  },
+  {
+   "type": "set",
+   "name": "desertCamp",
+   "description": "Campsite with two tents, fire, cushions, camel line, palm, a screening rock, a carpet mat and a dune lip, usable at dusk, night and morning (dimensions under sets).",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Tents = triangles with striped panels (red and white, blue and white) and a flap quad whose angle is a parameter; fire = 3 log rects and a flame polygon flickering from K.noise; rock = irregular polygon with dot shading; mat = rect with fringe ticks; dune lip = a ground-coloured polygon drawn AFTER the fallen figures so it hides them. Bake three versions for dusk, night and morning tint (or tint the land with dayCycle().night at draw time)."
+  },
+  {
+   "type": "prop",
+   "name": "camelLoad (cloth bolts, chest, sacks, bindle)",
+   "description": "The cargo items listed under props, each a small function, usable on the ground or on a camel.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rounded rects and ellipses with stripe bands; chest lid rotates about its back edge with a yellow halftone glow and 3 K star glints when open."
+  },
+  {
+   "type": "prop",
+   "name": "smallBowl (rim colour, steam, poison badge) and poisonVial",
+   "description": "The planned smallBowl extended with rim colour, steam, a pulsing green badge and an upturned state; a small green vial with cork and drops.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Bowl = half ellipse with a coloured rim stroke; badge = green circle r 9 with a ring, scale pulsed by pulse(); steam = three sine paths with alpha from K.noise; vial = rounded rect + neck + cork; drops fall with fallY and make ripple rings in the stew."
+  },
+  {
+   "type": "effect",
+   "name": "poison face tint",
+   "description": "Green halftone dots that climb a person s face from the chin to the brow over about 0.6 s (used once, 124.3).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "After drawing the person, clip to a circle at the head centre (figure-local head position times s) and fill a green dot pattern whose top edge rises with t; same idea as the planned \"flush\" expression, so implement as flush with a colour parameter."
+  },
+  {
+   "type": "motion",
+   "name": "costume change behind a foreground wipe",
+   "description": "Planned in AN-095: a walker passes behind a foreground palm trunk and comes out in the next costume.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Switch the costume and pal fields at the time the figure s x equals the trunk centre; the trunk (60 wide) is drawn after the actors; figure width at s 1 is 120, so widen the trunk to 130 at body height with a frond clump or let the swap happen under a 2-frame star pop."
+  }
+ ],
+ "owner_questions": [
+  "The two cheats are given distinct looks and tags \"1\" and \"2\" (tall green-robed leader, short red-robed copycat) although the script does not describe them; default: yes.",
+  "The deaths are softened: faces turn comic green, both topple backward behind a dune lip, and afterwards only shoes and fallen turbans are shown, never faces or bodies in close view; default: yes.",
+  "A comic beat is added at 125.36 where each cheat points at the other and realises the double betrayal just before dying (the script only says the poison struck them and they died); default: keep.",
+  "The merchant \"understands\" from clues invented for the staging: the vials, the green-badged bowls, the fallen false turbans and the plan drawn in the sand; default: keep.",
+  "Invented on-screen lettering and labels (RICH MERCHANT, SINDAH, TWO CHEATS, GOODS?, TA-DA!, RICH!, ALL MINE!, SAME IDEA!, POISON, DRIP!, GLUG!, CLINK!, URK!, HELLO?, SAFE!, MADE BY 1, MADE BY 2) and the closing box caption \"EACH FELL INTO THE TRAP HE SET\"; default: keep all.",
+  "The LATER card reads \"NEXT MORNING...\" (the script says only that he noticed their long absence); default: NEXT MORNING...",
+  "The cheats first appear as plain rogues and change into merchant costume behind a palm on the word \"pretended\"; default: yes."
+ ],
+ "implementation_notes": [
+  "Start from Library/template; two baked sets (desertRoad for S1-S4, desertCamp for S5-S16). Use the panel-only shake of the template for the single shake at 124.3.",
+  "All three people are the Library person with costume and pal; never draw one-off humans. Use LIFE.t = t for automatic blinks and give explicit lid values only where listed (shock holds use P.noBlink).",
+  "The person figure is front-facing only. \"Turning his back\" in S9/S10 is staged by moving the bowl and both hands to the far side of the body (handLW/handRW), hunching (tip -0.06, sq 0.97) and sending the gaze over the shoulder toward the partner.",
+  "Bowl bookkeeping, which carries the whole story: bowl A (yellow rim) is poisoned by sharper 1 and eaten by sharper 2; bowl B (red rim) is poisoned by sharper 2 and eaten by sharper 1. From 102.0 to the end, bowl A sits in front of sharper 2 (x 1960) and bowl B in front of sharper 1 (x 1800). The green badge never leaves a bowl once applied (93.24 and 101.18).",
+  "Thought clouds: one at a time except the mirrored pair at 82.8-85.2 and 117.3-122.5; keep figures inside at least 110 px; clouds must not cover the thinkers faces (place above and to the outer side).",
+  "Camels never move in unison: offset ph by 0.5 and chew cycles by 0.37 s. Walk positions are functions of t passed to walk() and footfalls() so feet do not slide; the merchant leads at 95 units/s.",
+  "Mirror staging: write sharper A s poisoning pose function once and reuse it mirrored for B with a stagger and the clumsy additions.",
+  "Sound: narration is continuous with no pause of 0.6 s or more, so every effect sits on a word boundary after a comma or full stop, very quiet (SND master 0.6, gains 0.25 or less) and shorter than 0.15 s; if any effect masks a word in the mix, drop it. The safe gaps are 64.78-65.04, 105.64-105.80 and after 169.24.",
+  "Subtitles: use the chunk marks in \"subtitles\" (verbatim from story/script.json); chunk times come from the first word of each chunk in timing.json.",
+  "Fall behind the dune lip: draw order is mat, fallen figures (person lie:1 with lid 1, rotated so the head points away from camera is not possible, so simply translate them down and back by 40 units while lying), then the dune lip polygon, then bowls, vials and turbans in front.",
+  "Lettering never covers a face; headlines at least 44 px and labels at least 28 px at 1280x720 scale; no en or em dashes; call S.finish last every frame."
+ ],
+ "warnings": [
+  "The camel is a large new character (effort L) and is on screen in 9 of 16 scenes; draw and approve it first on a still sheet.",
+  "No narration pause reaches 0.6 s: effects must be very sparse and quiet; the listed sfx times are word boundaries, not true silences.",
+  "Poisoning and two deaths in a children s format: staged discreetly (see owner_questions 2 and 3); the owner may want it softer still.",
+  "The person figure has no profile or back view; the \"back turned\" and \"back to back\" staging depends on hands, gaze and prop placement reading clearly at phone size. Check with stills at 89.7, 103.8 and 83.4.",
+  "Sharper B without a beard depends on the merchant preset allowing the beard to be switched off; if not, give him a short grey-brown beard via pal.beard and keep the size difference as the main distinction.",
+  "The city name is written SINDAH as in the English script."
+ ]
+}

@@ -1,0 +1,92 @@
+{
+ "story_id": "AN-140",
+ "title": "THE SONS OF YAHYA BIN KHALID AND SAID BIN SALIM",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T15:29:32",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a8a4abf119b4c505f.jsonl",
+ "agent_id": "a8a4abf119b4c505f",
+ "model_messages": {
+  "claude-fable-5-2": 27
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "a78987376cbdb2b53fa7aeeb39ad5a1bc4b22561e3e13da1ca31b49bef211bb6",
+  "paragraphs": 8,
+  "segments": [
+   "AN-140-P01-S01",
+   "AN-140-P01-S02",
+   "AN-140-P01-S03",
+   "AN-140-P01-S04",
+   "AN-140-P01-S05",
+   "AN-140-P01-S06",
+   "AN-140-P01-S07",
+   "AN-140-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-140_THE_SONS_OF_YAHYA_BIN_KHALID_AND_SAID_BIN_SALIM_full_slowed.mp3",
+  "sha256": "82901620f05104198336480be70dd88c12a8e2b9ff5ae1314cec176c435981ad",
+  "duration": 171.934
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-140_THE_SONS_OF_YAHYA_BIN_KHALID_AND_SAID_BIN_SALIM_full_slowed.mp3.words.json",
+  "sha256": "d294260bd24eb988118112b4c7fbec2f93e66e4ec165515e226a165ce1c10761",
+  "manifest_status": "SUCCESS",
+  "script_match": 0.988
+ },
+ "library_rev": "5a93429",
+ "scenes": 17,
+ "actions": 151,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "mule (donkey option)",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "letterFrame",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "priceTags",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "iconBalloon",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "portraitMedallion",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "scroll",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "coinPile, purse, floorCushion",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "handOver",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The narration has almost no pauses; sound effects are limited to five.",
+  "The English translation is a summary and omits clauses in P4, P5, P6 and P8 (see owner_questions); English chunks therefore cannot track the Arabic exactly in those paragraphs.",
+  "Seven human characters plus the caliph: all are costume variants of the one Library person, distinguished by colour (Said green, Abdullah blue, Fadl navy, Jaafar red, creditors yellow/brown/blue-old). Keep these colours constant in clouds, balloons and medallions.",
+  "The person figure is front-facing only; walking in and out of doors relies on dir flips and the door leaf covering the figure."
+ ]
+}

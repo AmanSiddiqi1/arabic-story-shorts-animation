@@ -1,0 +1,135 @@
+{
+ "story_id": "AN-087",
+ "title": "IBRAHIM BIN AL-MAHDI AND THE BARBER-SURGEON",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-16T13:43:21",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a7e963f41bc29cdae.jsonl",
+ "agent_id": "a7e963f41bc29cdae",
+ "model_messages": {
+  "claude-fable-5-2": 21
+ },
+ "script": {
+  "source": "Audio Files/Script_Updated.xlsx",
+  "sha256": "391d4ec606ab5e02f1a8eccb28f6dd2e61cbd3b19d2e3347b11bf955dc3ccb2e",
+  "paragraphs": 8,
+  "segments": [
+   "AN-087-P01-S01",
+   "AN-087-P01-S02",
+   "AN-087-P01-S03",
+   "AN-087-P01-S04",
+   "AN-087-P01-S05",
+   "AN-087-P01-S06",
+   "AN-087-P01-S07",
+   "AN-087-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/AN-087_IBRAHIM_BIN_AL_MAHDI_AND_THE_BARBER_SURGEON_full_slowed.mp3",
+  "sha256": "01e5ca653fa33b419e3c9e6d32461f2f9dcc6b6bf39ea38bc6c4be295d5f362e",
+  "duration": 166.377
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/AN-087_IBRAHIM_BIN_AL_MAHDI_AND_THE_BARBER_SURGEON_full_slowed.mp3.words.json",
+  "sha256": "d0b215309243ebd6698b7ab2e0f191ad53fb14ed917acb11ad93439d22bd7e08",
+  "manifest_status": "SUCCESS; METADATA MISMATCH",
+  "script_match": 1.0
+ },
+ "library_rev": "959278e",
+ "scenes": 12,
+ "actions": 154,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "person costume presets (soldier)",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "cityBridge",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "oud",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "rewardPoster",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "curtain, barberKit",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person faceCover",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "coinEyes",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "palaceHall",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "palaceHall (variant merchantHouse)",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "marketStreet",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "effort": "S"
+  },
+  {
+   "type": "camera",
+   "name": "inset circle",
+   "effort": "M"
+  },
+  {
+   "type": "motion",
+   "name": "costume change behind a foreground wipe",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "splash",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "throne",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "coinPile, purse, foodTray, necklace, scroll",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "no Arabic title in workbook (metadata only)",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Most of the film depends on planned assets that may not exist yet (palaceHall + throne, merchantHouse variant, marketStreet, faceCover, iconBalloon, inset circle, coinPile, purse, foodTray, splash). If they are not in Library when this film is built, build them in the story to the planned specifications and move them to Library after approval.",
+  "The person figure is front-facing only: the shove, the grab and the hand clasp must be staged side by side with arm angles and world hand targets; test these three poses in stills first.",
+  "The disguise must stay readable as Ibrahim at phone size: keep the green and yellow, and show the beard peek early (62.7).",
+  "P5 packs two houses and a three-day stay into 25 s, and P8 four judgments into 19 s: keep each to one clear picture and do not add extra business.",
+  "S10 is 24.6 s in one set: the inset circle and the costume wipe carry the visual change; do not let the two seated men sit still under it.",
+  "P8 English has no sentence for the Arabic closing line (وهكذا انتهت محنة إبراهيم بالعفو والجزاء); the last English chunk stays on screen under it.",
+  "Sensitive content softened by design: the death demand, the punishment and the freed-slave back story are shown as symbols only (see owner_questions)."
+ ]
+}

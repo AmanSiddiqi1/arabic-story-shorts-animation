@@ -1,0 +1,102 @@
+# Arabic Story Shorts: Git holds source, scripts, timing and docs. Large media live in the shared
+# media folder (see media.config.json and DEVELOPMENT_SETUP.md), never in Git.
+
+# --- operating system / editors ---
+.DS_Store
+._*
+.Spotlight-V100/
+.Trashes/
+*.swp
+*~
+.vscode/
+.idea/
+
+# --- audio and video (local media folders; never in Git) ---
+*.mp3
+*.MP3
+*.wav
+*.m4a
+*.aac
+*.flac
+*.ogg
+*.aif
+*.aiff
+*.mp4
+*.MP4
+*.mov
+*.MOV
+*.m4v
+*.mkv
+*.webm
+*.avi
+*.zip
+/MP4s/
+/Originals/
+
+# --- built HTML players (they embed the narration audio; rebuild with build.py) ---
+Animations/**/* - Halftone Pop 9x16 - *.html
+
+# --- render outputs, frames, stills and review images (regenerable) ---
+frames/
+frames-*/
+renders/
+compare/
+stills/
+Animations/**/review/**/*.jpg
+Animations/**/review/**/*.png
+*.f32
+Library/tests/.tmp.html
+scratch/
+
+# --- environments, caches, model weights ---
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.cache/
+*.pt
+*.bin
+*.onnx
+*.safetensors
+.claude/skills/*/local.json
+
+# --- logs and temporary files ---
+*.log
+*.tmp
+tmp/
+
+# --- local machine settings and credentials (never commit) ---
+.media-root
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.mobileprovision
+credentials*.json
+secrets*.json
+.claude/settings.local.json
+
+# --- production database (local; Git keeps production/state.json) ---
+production/production.db*
+production/render.lock
+
+# Creator OS engine: external (claude-motion-faceless-skills); never copy kit.js / sound.js / halftone-pop.js into this repository
+**/kit.js
+**/sound.js
+**/halftone-pop.js
+Library/catalogue/catalogue.html
+
+# spreadsheets (scripts workbook etc.) stay local, never in Git
+Spreadsheets/
+*.xlsx
+*.xls
+~$*
+
+# Audio Files: only Final Done/ word timings and the timing manifest are in Git; narration-production logs, transcripts and backups stay local
+Audio Files/*
+!Audio Files/Final Done/
+Audio Files/Final Done/*
+!Audio Files/Final Done/*.words.json
+!Audio Files/Final Done/*.csv

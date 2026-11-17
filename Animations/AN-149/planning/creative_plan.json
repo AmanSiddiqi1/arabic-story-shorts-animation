@@ -1,0 +1,2460 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "AN-149",
+ "title": "The Schoolmaster Who Fell in Love by Report",
+ "duration": 171.9,
+ "end_hold": 3.0,
+ "logline": "A learned schoolmaster shuts his school and goes into mourning for a woman he has never seen, because of two lines sung by a passer-by under his window.",
+ "moral": "Learning is not judgment: do not build love, grief or any big conclusion on hearsay and an untested guess.",
+ "tone": "Dry, affectionate comedy of manners: a sympathetic set-up, a slow reveal in a sickroom mood, then two absurd leaps of logic shown as thought clouds, and a gentle visual punchline.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 4.88,
+   "kind": "setup",
+   "cue": {
+    "word": "فرأى",
+    "t": 4.88
+   },
+   "summary": "A travelling scholar finds a small school and a smartly dressed teacher drilling three children."
+  },
+  {
+   "id": "B2",
+   "t": 17.72,
+   "kind": "rising",
+   "cue": {
+    "word": "وأعجب",
+    "t": 17.72
+   },
+   "summary": "Three questions (language, grammar, poetry), three exact answers: the scholar is impressed."
+  },
+  {
+   "id": "B3",
+   "t": 36.22,
+   "kind": "setup",
+   "cue": {
+    "word": "يظن",
+    "t": 36.22
+   },
+   "summary": "The scholar's old assumption: schoolteachers have the book but not the lamp (learning without judgment). The book and lamp icons are planted for the ending."
+  },
+  {
+   "id": "B4",
+   "t": 48.5,
+   "kind": "inciting",
+   "cue": {
+    "word": "مغلقًا",
+    "t": 48.5
+   },
+   "summary": "On a later visit the school door is shut and locked."
+  },
+  {
+   "id": "B5",
+   "t": 56.22,
+   "kind": "suspense",
+   "cue": {
+    "word": "حزين",
+    "t": 56.22
+   },
+   "summary": "Neighbours: the teacher is at home grieving for someone he lost."
+  },
+  {
+   "id": "B6",
+   "t": 79.62,
+   "kind": "comic",
+   "cue": {
+    "word": "بالنفي",
+    "t": 79.62
+   },
+   "summary": "Father? Brother? Relative? The teacher shakes his head at each one."
+  },
+  {
+   "id": "B7",
+   "t": 83.26,
+   "kind": "turn",
+   "cue": {
+    "word": "امرأة",
+    "t": 83.26
+   },
+   "summary": "He grieves for a woman he loves."
+  },
+  {
+   "id": "B8",
+   "t": 97.38,
+   "kind": "surprise",
+   "cue": {
+    "word": "ير",
+    "t": 97.38
+   },
+   "summary": "He admits he has never once seen her; the scholar is thunderstruck."
+  },
+  {
+   "id": "B9",
+   "t": 116.84,
+   "kind": "reveal",
+   "cue": {
+    "word": "أم",
+    "t": 116.84
+   },
+   "summary": "Flashback: a passer-by sang under his window about a woman named Umm Amr."
+  },
+  {
+   "id": "B10",
+   "t": 124.04,
+   "kind": "comic",
+   "cue": {
+    "word": "فتعلق",
+    "t": 124.04
+   },
+   "summary": "He decided poets only praise great beauty, and fell in love on the spot."
+  },
+  {
+   "id": "B11",
+   "t": 135.3,
+   "kind": "turn",
+   "cue": {
+    "word": "رحلا",
+    "t": 135.3
+   },
+   "summary": "Two days later the same cheerful singer: Umm Amr and her donkey left and did not come back."
+  },
+  {
+   "id": "B12",
+   "t": 141.54,
+   "kind": "climax",
+   "cue": {
+    "word": "ماتت",
+    "t": 141.54
+   },
+   "summary": "The teacher concludes she is dead, shuts the school and puts on mourning."
+  },
+  {
+   "id": "B13",
+   "t": 148.82,
+   "kind": "reveal",
+   "cue": {
+    "word": "تؤكد",
+    "t": 148.82
+   },
+   "summary": "The song never said she died: GONE is not DEAD."
+  },
+  {
+   "id": "B14",
+   "t": 154.86,
+   "kind": "resolution",
+   "cue": {
+    "word": "تعجبًا",
+    "t": 154.86
+   },
+   "summary": "The scholar leaves more astonished than ever."
+  },
+  {
+   "id": "B15",
+   "t": 165.4,
+   "kind": "moral",
+   "cue": {
+    "word": "بيتين",
+    "t": 165.4
+   },
+   "summary": "Much learning, yet love and grief built on two lines of a song, with no knowledge of the woman or her fate."
+  }
+ ],
+ "cast": [
+  {
+   "id": "scholar",
+   "name": "the scholar (visitor)",
+   "library": "person",
+   "base": "person costume:'physician'",
+   "look": "White turban, grey beard, white robe with blue dots, yellow sash; age 0.6; s 1.1 outdoors, 1.15 in rooms. Calm, curious, raised brows. The audience's eyes.",
+   "new": false
+  },
+  {
+   "id": "teacher",
+   "name": "the schoolmaster",
+   "library": "person",
+   "base": "person costume:'merchant' recoloured (the 'merchant pal' look of people.png)",
+   "look": "Well dressed: big yellow turban with red jewel and plume, neat black beard, green robe with yellow trim, age 0.2. From S7 (and at the end of S12) the same figure in the MOURNING palette: pal {robe:'#26262e', dot:'#3c3c48', sleeve:'#26262e', hc:'#26262e', hd:'#3c3c48', sash:'#141414', trim:'#55555f'}, jewel hidden, wet eyes.",
+   "new": false
+  },
+  {
+   "id": "singer",
+   "name": "the passing singer",
+   "library": "person",
+   "base": "person costume:'villager' with pal {robe: C.red, dot:'#a3140e', sash: C.yellow}",
+   "look": "Carefree street singer with the planned oud; eyes shut while singing, bouncy walk. Same figure both days.",
+   "new": false
+  },
+  {
+   "id": "kids",
+   "name": "three pupils",
+   "library": "person",
+   "base": "person child:true in costumes 'servant', 'maiden', 'villager' (pal robe blue)",
+   "look": "Three children on mats with writing tablets; never move in unison (stagger).",
+   "new": false
+  },
+  {
+   "id": "neighbours",
+   "name": "two neighbours",
+   "library": "person",
+   "base": "person costume:'carpenter' and costume:'oldWoman'",
+   "look": "The carpenter steps out of his door; the old woman leans from an upper window (bust only).",
+   "new": false
+  },
+  {
+   "id": "ummAmr",
+   "name": "Umm Amr (imagined only)",
+   "library": "person",
+   "base": "person costume:'lady' with the mysteryFace overlay",
+   "look": "Appears ONLY inside balloons and thought clouds, never in the real world. Her face is always covered by a paper disc with a blue question mark (nobody in the film has seen her). In the teacher's fantasy she has goldGlow and star glints.",
+   "new": false
+  },
+  {
+   "id": "donkey",
+   "name": "Umm Amr's donkey (inside the song balloon)",
+   "library": "donkey",
+   "base": "donkey pal 0",
+   "look": "Grey donkey carrying ummAmr with rideOn, drawn small inside the balloon; silhouette:true in the ending cloud.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "townStreet",
+   "library": "marketStreet",
+   "description": "One street strip used for every exterior: marketStreet {w: 2000, palette:'clear', palace:false, props:[['barrel',180],['crate',1150]]} with three custom fronts (targets, measure on the set): SCHOOL front x 300..700, roof y 430, door x 440..560 top 690 bottom 900 (townDoor), sign board 220 x 70 centred (500, 640); NEIGHBOUR front x 760..1060, door cx 900, upper window centre (840, 560) 120 x 140 with shutters; TEACHER'S HOUSE x 1320..1680, two storeys, roof y 330, door x 1370..1470 top 700, upper window centre (1560, 500) 170 x 190 with a 200 x 18 sill ledge at y 595. Flashbacks use palette 'dusk' / u cycling plus the dream wash.",
+   "new": false
+  },
+  {
+   "id": "schoolRoom",
+   "library": "palaceHall",
+   "description": "Planned kuttab dressing of palaceHall {variant:'merchant', wall:'paper', curtain:1, desk:false, treasure:false}: floor y 900; door at the left (anchor door); window pane showing the time of day (u) at about (500, 430); three pupil mats at x 190, 310, 430 (y 925, front row); guest cushion at x 560; teacher's cushion at x 780 with a low book stand at x 860; shelf of spare tablets top right.",
+   "new": true
+  },
+  {
+   "id": "teacherRoom",
+   "library": "palaceHall",
+   "description": "The teacher's sitting room: palaceHall {variant:'merchant', wall:'ochre', curtain:1 (closed), desk:false, treasure:false, lampsLit:false}, shelves filled with books instead of jars (bookStack rows), window pane (u 0.3) at about (520, 430) as measured from the anchors, two floor cushions at x 380 and x 640, three book stacks on the floor at x 760..860 (he is learned), one book open face down beside him.",
+   "new": false
+  }
+ ],
+ "props": [
+  {
+   "id": "writingTablet",
+   "library": null,
+   "description": "Planned school tablet (lawh): board 70 x 95 with a handle tab, 4 ink bands; hand size for the pupils, 150 x 200 for the teacher's lesson board on the book stand.",
+   "new": true
+  },
+  {
+   "id": "oud",
+   "library": null,
+   "description": "Planned lute: pear body 90 x 120 (yellow, red rose hole), neck 110 bent back at the pegbox, 4 strings; held across the body, right hand strums (handRW oscillates 14 units at 6 Hz while singing).",
+   "new": true
+  },
+  {
+   "id": "iconBalloon",
+   "library": null,
+   "description": "Speech balloon with a picture inside (callback), smooth oval and a pointed tail to the speaker; holds busts, the row of ladies, the heart, the song picture.",
+   "new": true
+  },
+  {
+   "id": "songTower",
+   "library": null,
+   "description": "The moral diagram inside the scholar's last thought cloud: two small quaver notes as the foundation, a red heart block (120 wide) on them, a dark grave block (graveMarker, 110 x 150) on the heart; wobbles, then topples.",
+   "new": true
+  },
+  {
+   "id": "bookStack",
+   "library": null,
+   "description": "Planned 'book' prop stacked: each book 110 x 26, alternating red, blue, yellow covers with a paper page edge; n 0..6 pops on one at a time.",
+   "new": true
+  },
+  {
+   "id": "graveMarker",
+   "library": null,
+   "description": "Planned grave marker: rounded stone 110 x 150, paper colour with grey dots, low mound; no text.",
+   "new": true
+  },
+  {
+   "id": "schoolLock",
+   "library": "townDoor",
+   "description": "Door furniture drawn with townDoor options {shut:true, lock:true} plus a hanging CLOSED board 160 x 60 on two cords that swings (swing()).",
+   "new": false
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 4.88,
+   "paragraphs": [
+    1
+   ],
+   "set": "townStreet",
+   "cast": [
+    "scholar"
+   ],
+   "summary": "Establishing: the scholar strolls along a quiet street and notices the small school by the sound of chanting children.",
+   "camera": {
+    "shot": "establishing",
+    "move": "track",
+    "notes": "CAM x 350 to 500, y 640, zoom 1.0 to 1.2; settles on the school front as he stops."
+   },
+   "composition": "School front fills the middle third (door cx 500); scholar enters from the left edge on the ground line y 900, head about y 640; sun top right (820, 170).",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 3.1,
+     "cue": {
+      "word": "مر",
+      "t": 0.0
+     },
+     "who": "scholar",
+     "action": "walks in from x -80 to x 330, a book under his arm",
+     "acting": "unhurried scholar's walk, gaze ahead [1, 0.1], natural blinks, slight forward tip 0.03",
+     "library": "person {costume:'physician'} + walk(xf, t) + footfalls + blink"
+    },
+    {
+     "t": 1.98,
+     "cue": {
+      "word": "بمدرسة",
+      "t": 1.98
+     },
+     "who": "set",
+     "action": "the SCHOOL sign over the door pops (sq 1.15 settle) and an arrow points at the door",
+     "acting": "label arrives on the word 'school'",
+     "library": "style label + arrow, settleTo"
+    },
+    {
+     "t": 3.1,
+     "cue": {
+      "word": "صغيرة",
+      "t": 3.1
+     },
+     "who": "scholar",
+     "action": "slows and stops; head turns to the door, hand cups his ear",
+     "acting": "curious: brow -0.4, gaze lookAt(door), small lean toward the door (tip 0.06)",
+     "library": "PERSON_HANDS.cupEar + lookAt + soundArcs from the doorway"
+    },
+    {
+     "t": 4.2,
+     "who": "fx",
+     "action": "three small chant arcs pulse out of the open door; a pupil's tablet edge shows in the doorway",
+     "acting": "the sound invites him in",
+     "library": "soundArcs(ctx, 500, 800, ...)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 1.98,
+     "text": "SCHOOL"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 4.3,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 4.88
+   }
+  },
+  {
+   "id": "S2",
+   "start": 4.88,
+   "end": 22.62,
+   "paragraphs": [
+    1
+   ],
+   "set": "schoolRoom",
+   "cast": [
+    "scholar",
+    "teacher",
+    "kids"
+   ],
+   "summary": "Inside the school: the smart teacher drills three pupils, invites the visitor to sit, and answers three test questions perfectly.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "Wide zoom 1.0 until 12.7; then push to a two-shot of scholar (x 560) and teacher (x 780): twoShot keys, zoom about 1.5, centre (670, 730); pupils' heads stay in the bottom left corner."
+   },
+   "composition": "Pupils front left on mats (y 925), teacher right on his cushion facing left, lesson tablet on the stand at x 860; scholar appears in the door at the left and walks BEHIND the pupils (y 885) to the guest cushion. Question tokens travel along an arc at y 480..540 between the two heads.",
+   "actions": [
+    {
+     "t": 4.88,
+     "cue": {
+      "word": "فرأى",
+      "t": 4.88
+     },
+     "who": "teacher",
+     "action": "points at the big lesson tablet with one hand, beats time with the other",
+     "acting": "upright and proud (tip -0.03), brow 0.2, talk 0.7, gaze sweeping the three pupils with gazePlan",
+     "library": "person {costume:'merchant', pal green, sit:1, seat:'floor'} + PERSON_HANDS.pointUp + gazePlan"
+    },
+    {
+     "t": 5.54,
+     "cue": {
+      "word": "معلمًا",
+      "t": 5.54
+     },
+     "who": "scholar",
+     "action": "leans in at the doorway, half hidden by the door frame",
+     "acting": "only head and one shoulder; gaze on the teacher; an approving half smile",
+     "library": "person clipped at the door anchor + lookAt"
+    },
+    {
+     "t": 6.42,
+     "cue": {
+      "word": "حسن",
+      "t": 6.42
+     },
+     "who": "fx",
+     "action": "a tiny star glint on the teacher's turban jewel and sash; arrow from the scholar's eye line to the fine robe",
+     "acting": "shows 'well dressed' without words",
+     "library": "goldGlow strength 0.3 (star glints only)"
+    },
+    {
+     "t": 7.66,
+     "cue": {
+      "word": "يدرس",
+      "t": 7.66
+     },
+     "who": "kids",
+     "action": "chant with open mouths in a rolling wave, tablets raised on the beat; the smallest is a beat late",
+     "acting": "stagger(i) 0.12 s; third child glances at the stranger and gets distracted (gaze to door)",
+     "library": "person {child:true, sit:1, seat:'floor'} + stagger + writingTablet"
+    },
+    {
+     "t": 9.58,
+     "cue": {
+      "word": "دعاه",
+      "t": 9.58
+     },
+     "who": "teacher",
+     "action": "notices the visitor, stops the chant with a raised palm, then waves him in and points to the guest cushion",
+     "acting": "brows up, smile, small seated bow (tip 0.08)",
+     "library": "PERSON_HANDS.wave then pointFwd, anticipate"
+    },
+    {
+     "t": 10.88,
+     "end": 11.9,
+     "cue": {
+      "word": "إلى",
+      "t": 10.88
+     },
+     "who": "scholar",
+     "action": "walks from the door (x 120) to the guest cushion (x 560) behind the pupils; the pupils' heads turn to follow",
+     "acting": "polite nod on the way; kids' gazes track him with stagger",
+     "library": "walk + footfalls; kids lookAt(scholar)"
+    },
+    {
+     "t": 11.9,
+     "cue": {
+      "word": "الجلوس",
+      "t": 11.26
+     },
+     "who": "scholar",
+     "action": "sits cross-legged, robe settles",
+     "acting": "sit blend 0 to 1 in 0.5 s with landSquash 0.94 and settle",
+     "library": "person sit:1 seat:'floor' + landSquash"
+    },
+    {
+     "t": 12.7,
+     "cue": {
+      "word": "فتحدث",
+      "t": 12.7
+     },
+     "who": "camera",
+     "action": "push in to the two-shot",
+     "acting": "the conversation begins",
+     "library": "twoShot(scholar, teacher, {margin: 150})"
+    },
+    {
+     "t": 15.02,
+     "cue": {
+      "word": "اللغة",
+      "t": 15.02
+     },
+     "who": "scholar",
+     "action": "token 1 (a small tablet with letters as squiggles) flies from his raised finger to the teacher",
+     "acting": "talk 0.6, gaze on teacher, finger raised",
+     "library": "PERSON_HANDS.pointUp; token on a kfn arc"
+    },
+    {
+     "t": 15.64,
+     "cue": {
+      "word": "والنحو",
+      "t": 15.64
+     },
+     "who": "scholar",
+     "action": "token 2 (a little branching diagram for grammar) follows",
+     "acting": "leans in slightly, brow -0.3 testing",
+     "library": "token arc"
+    },
+    {
+     "t": 16.58,
+     "cue": {
+      "word": "والشعر",
+      "t": 16.58
+     },
+     "who": "scholar",
+     "action": "token 3 (a ribbon of verse lines for poetry) follows",
+     "acting": "a small challenging smile",
+     "library": "token arc"
+    },
+    {
+     "t": 16.9,
+     "cue": {
+      "word": "والشعر",
+      "t": 16.58
+     },
+     "who": "teacher",
+     "action": "answers each token in turn: taps it with a finger and it flips to a red tick (17.0, 17.4, 17.8); counter runs 1 / 3 to 3 / 3",
+     "acting": "quick confident talk, eyes on the scholar, no hesitation, chin up",
+     "library": "style counter + person talk + PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 17.72,
+     "cue": {
+      "word": "وأعجب",
+      "t": 17.72
+     },
+     "who": "scholar",
+     "action": "leans back, both brows up, slow impressed nod, hand to beard",
+     "acting": "sq 1.03 stretch then settle; lid 0.2 appreciative; smile",
+     "library": "settleTo + PERSON_HANDS.chin"
+    },
+    {
+     "t": 19.0,
+     "cue": {
+      "word": "سمع",
+      "t": 19.0
+     },
+     "who": "kids",
+     "action": "the three pupils look from teacher to scholar and back like a tennis match; the smallest claps once",
+     "acting": "gaze ping-pong with stagger; comic secondary motion",
+     "library": "gazePlan with saccade ease 0.07"
+    },
+    {
+     "t": 20.62,
+     "cue": {
+      "word": "دقيقة",
+      "t": 20.62
+     },
+     "who": "fx",
+     "action": "the three ticks glint together and line up under the counter 3 / 3",
+     "acting": "exact answers",
+     "library": "style emphasis"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 17.0,
+     "text": "3 / 3"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 12.3,
+     "kind": "thud"
+    },
+    {
+     "t": 22.0,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 22.62
+   }
+  },
+  {
+   "id": "S3",
+   "start": 22.62,
+   "end": 32.6,
+   "paragraphs": [
+    2
+   ],
+   "set": "schoolRoom",
+   "cast": [
+    "scholar",
+    "teacher",
+    "kids"
+   ],
+   "summary": "Many return visits in one shot: the window sky wheels through days, a VISIT counter ticks, and each visit adds a new knowledge medallion above the teacher.",
+   "camera": {
+    "shot": "wide",
+    "move": "drift",
+    "notes": "Zoom 1.1 centred (560, 700), slow drift right 30 units over the scene."
+   },
+   "composition": "Same room. The window (about (500, 430)) is the clock. Medallions (r 46) line up on an arc above the teacher at (700, 420), (790, 380), (880, 420). Counter top left.",
+   "actions": [
+    {
+     "t": 22.62,
+     "end": 24.6,
+     "cue": {
+      "word": "عاد",
+      "t": 22.62
+     },
+     "who": "scholar",
+     "action": "walks in through the door again and sits on the guest cushion",
+     "acting": "familiar now: a wave to the pupils, who wave back out of step",
+     "library": "walk + footfalls + sit; kids PERSON_HANDS.wave with stagger"
+    },
+    {
+     "t": 25.04,
+     "end": 26.4,
+     "cue": {
+      "word": "مرات",
+      "t": 25.04
+     },
+     "who": "set",
+     "action": "the window sky wheels day, night, day three times; on each turn the scholar's cushion pops (sq 0.92) and the pupils swap poses; counter VISIT 2, 3, 4",
+     "acting": "time compressed: he keeps coming back",
+     "library": "palaceHall u animated with kfn (3 cycles 25.0 to 26.4) + style counter"
+    },
+    {
+     "t": 26.48,
+     "cue": {
+      "word": "وكلما",
+      "t": 26.48
+     },
+     "who": "scholar",
+     "action": "asks with an open palm; teacher answers at once",
+     "acting": "talk alternates: scholar 26.5 to 28.2, teacher 28.3 to 29.8; listener always looks at the speaker",
+     "library": "person talk + lookAt"
+    },
+    {
+     "t": 28.26,
+     "cue": {
+      "word": "تحدث",
+      "t": 28.26
+     },
+     "who": "teacher",
+     "action": "answers with a finger count, one, two, three",
+     "acting": "easy and fluent, small rocking on the cushion (breathe)",
+     "library": "PERSON_HANDS.pointUp + breathe"
+    },
+    {
+     "t": 29.88,
+     "cue": {
+      "word": "اكتشف",
+      "t": 29.88
+     },
+     "who": "fx",
+     "action": "medallion 1 pops above the teacher: a star chart (astronomy)",
+     "acting": "scholar's eyes widen a step",
+     "library": "medallion disc + burst, settleTo"
+    },
+    {
+     "t": 31.02,
+     "cue": {
+      "word": "معرفة",
+      "t": 31.02
+     },
+     "who": "fx",
+     "action": "medallion 2 pops: an abacus (arithmetic)",
+     "acting": "scholar's brows rise further, mouth 'o'",
+     "library": "medallion disc"
+    },
+    {
+     "t": 31.82,
+     "cue": {
+      "word": "جديدة",
+      "t": 31.82
+     },
+     "who": "fx",
+     "action": "medallion 3 pops: an open book with a quill (law and letters)",
+     "acting": "scholar leans back, hand on his own turban",
+     "library": "medallion disc + PERSON_HANDS.headHold"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 25.04,
+     "text": "VISIT 4"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 32.6
+   }
+  },
+  {
+   "id": "S4",
+   "start": 32.6,
+   "end": 43.16,
+   "paragraphs": [
+    2
+   ],
+   "set": "schoolRoom",
+   "cast": [
+    "scholar",
+    "teacher"
+   ],
+   "summary": "The scholar wonders privately: he had always thought schoolteachers had the BOOK (learning) without the LAMP (judgment). Plants the two icons that pay off at the end.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium on the scholar, zoom 1.7 centred (520, 620) so the thought cloud above him (centre (430, 400), 420 x 300) is fully inside; the teacher stays at the right edge, soft."
+   },
+   "composition": "Scholar lower centre; cloud upper left; the real teacher lower right corner busy with a pupil's tablet. Cloud content at scale 0.3.",
+   "actions": [
+    {
+     "t": 32.6,
+     "cue": {
+      "word": "تعجب",
+      "t": 32.6
+     },
+     "who": "scholar",
+     "action": "strokes his beard, eyes drift up and away from the teacher",
+     "acting": "thinking saccades (gazePlan 0.07) up left; lid 0.25; a private half smile",
+     "library": "PERSON_HANDS.chin + gazePlan"
+    },
+    {
+     "t": 35.06,
+     "cue": {
+      "word": "لأنه",
+      "t": 35.06
+     },
+     "who": "fx",
+     "action": "thought cloud pops over him (trail first)",
+     "acting": "narrated private thought, so a cloud is right",
+     "library": "thoughtCloud(ctx, 430, 400, 420, 300, t, {p, tail})"
+    },
+    {
+     "t": 37.24,
+     "cue": {
+      "word": "معلمي",
+      "t": 37.24
+     },
+     "who": "fx",
+     "action": "inside the cloud: a plain grey schoolteacher figure appears with two child silhouettes at his knee",
+     "acting": "the stereotype, drawn in flat grey so it is clearly not our teacher",
+     "library": "person {costume:'villager', pal greys} + 2 child figures inside"
+    },
+    {
+     "t": 40.98,
+     "cue": {
+      "word": "العلم",
+      "t": 40.98
+     },
+     "who": "fx",
+     "action": "a BOOK icon pops over the grey teacher's left side with a green tick",
+     "acting": "learning: yes",
+     "library": "bookStack n 1 + tick"
+    },
+    {
+     "t": 42.4,
+     "cue": {
+      "word": "التفكير",
+      "t": 42.4
+     },
+     "who": "fx",
+     "action": "an oil LAMP icon pops on his right side, flickers and goes out with a curl of smoke; a red cross lands on it",
+     "acting": "judgment: no. This is the assumption",
+     "library": "lamp icon (teardrop flame, alpha flicker), smoke curl, style cross"
+    },
+    {
+     "t": 42.7,
+     "who": "scholar",
+     "action": "glances from the cloud down to the real teacher and gives a small shrug: this one seems different",
+     "acting": "gaze lookAt(teacher), brow -0.5, the cloud shrinks away",
+     "library": "lookAt + PERSON_HANDS.palmsUp small"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 43.16,
+    "label": "LATER..."
+   }
+  },
+  {
+   "id": "S5",
+   "start": 43.16,
+   "end": 58.72,
+   "paragraphs": [
+    3
+   ],
+   "set": "townStreet",
+   "cast": [
+    "scholar",
+    "neighbours"
+   ],
+   "summary": "A later visit: the school door is shut and locked. Two neighbours explain that the teacher is at home, grieving for someone he lost.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Under the LATER card cut to the street (camera key at the card's midpoint 43.9). Zoom 1.15 on the school door (500, 680); at 50.9 pan right to centre (700, 660) so door, scholar, carpenter (x 900) and the old woman's window (840, 560) are all in frame."
+   },
+   "composition": "Scholar at x 400 facing the door, then turns to face right. Carpenter steps out at x 900; old woman bust in the upper window. Answer balloon above the carpenter, centre (760, 380), 300 x 220, clear of all faces.",
+   "actions": [
+    {
+     "t": 43.9,
+     "cue": {
+      "word": "وفي",
+      "t": 43.16
+     },
+     "who": "set",
+     "action": "LATER card covers the cut; overcast 'cold' street palette, school sign still up",
+     "acting": "time has passed",
+     "library": "S.transition caption LATER... ; marketStreet palette:'cold'"
+    },
+    {
+     "t": 44.86,
+     "end": 46.5,
+     "cue": {
+      "word": "زيارة",
+      "t": 44.86
+     },
+     "who": "scholar",
+     "action": "walks in from the left to the school door, cheerful, a gift book under his arm",
+     "acting": "expecting another good talk: smile, brisk walk",
+     "library": "walk + footfalls"
+    },
+    {
+     "t": 46.54,
+     "cue": {
+      "word": "وجد",
+      "t": 46.54
+     },
+     "who": "scholar",
+     "action": "stops short; reaches for the door: it does not move",
+     "acting": "smile fades (mouth closed), brow -0.5, head tilts",
+     "library": "handRW to the door ring; anticipate"
+    },
+    {
+     "t": 48.5,
+     "cue": {
+      "word": "مغلقًا",
+      "t": 48.5
+     },
+     "who": "set",
+     "action": "push-in beat on the chain and padlock; the CLOSED board swings on its cords",
+     "acting": "the inciting image",
+     "library": "townDoor {shut:true, lock:true} + swing() on the board"
+    },
+    {
+     "t": 49.26,
+     "cue": {
+      "word": "سأله",
+      "t": 49.26
+     },
+     "who": "scholar",
+     "action": "knocks twice (hand taps, door shivers 2 units), steps back, looks up at the windows and around the empty street",
+     "acting": "puzzled gaze plan: door, up, left, right",
+     "library": "gazePlan + kick on the door"
+    },
+    {
+     "t": 50.88,
+     "cue": {
+      "word": "الجيران",
+      "t": 50.88
+     },
+     "who": "neighbours",
+     "action": "the carpenter's door opens and he steps out wiping his hands; the old woman's shutters open above and she leans out",
+     "acting": "they arrive a beat apart (stagger 0.4 s); both look at the scholar",
+     "library": "marketStreet doors/shutters keyed + person walk 2 steps"
+    },
+    {
+     "t": 51.82,
+     "cue": {
+      "word": "سبب",
+      "t": 51.82
+     },
+     "who": "scholar",
+     "action": "turns to them, points back at the locked door and opens his palms",
+     "acting": "asking: brow -0.6, talk 0.6",
+     "library": "PERSON_HANDS.pointFwd then palmsUp"
+    },
+    {
+     "t": 53.0,
+     "cue": {
+      "word": "فقالوا",
+      "t": 53.0
+     },
+     "who": "neighbours",
+     "action": "the carpenter answers; a balloon pops above him",
+     "acting": "talk 0.7; lowers his voice, glances down the street",
+     "library": "iconBalloon p pop + talk"
+    },
+    {
+     "t": 55.6,
+     "cue": {
+      "word": "بيته",
+      "t": 55.6
+     },
+     "who": "neighbours",
+     "action": "he points down the street to the right; in the balloon a small house front appears with the teacher's turban at its window",
+     "acting": "arrow along the street toward x 1500",
+     "library": "PERSON_HANDS.pointFwd + style arrow"
+    },
+    {
+     "t": 56.22,
+     "cue": {
+      "word": "حزين",
+      "t": 56.22
+     },
+     "who": "neighbours",
+     "action": "in the balloon the little teacher gets a big teardrop; the old woman shakes her head slowly and dabs her eye with her sleeve",
+     "acting": "sympathy: lid 0.5, mouth frown, head sway",
+     "library": "teardrops inside the balloon; person head sway via x offset"
+    },
+    {
+     "t": 57.94,
+     "cue": {
+      "word": "فقده",
+      "t": 57.94
+     },
+     "who": "scholar",
+     "action": "hand to his chest, eyes down a moment",
+     "acting": "concern: brow -0.7, lid 0.4, one long blink",
+     "library": "PERSON_HANDS.chest + blink"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 48.5,
+     "text": "CLOSED"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 58.72
+   }
+  },
+  {
+   "id": "S6",
+   "start": 58.72,
+   "end": 64.22,
+   "paragraphs": [
+    3
+   ],
+   "set": "townStreet",
+   "cast": [
+    "scholar",
+    "neighbours"
+   ],
+   "summary": "The scholar walks down the street to the teacher's house, prepares a condoling face and knocks.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Tracks with him along the strip: centre x 700 to 1450, y 640, zoom 1.15; ends with the house door (cx 1420) left of centre and the upper window (1560, 500) in frame."
+   },
+   "composition": "Scholar keeps about one third from the left of frame while walking. The upper window shutters of the teacher's house are closed (they open in the flashback).",
+   "actions": [
+    {
+     "t": 58.72,
+     "end": 62.0,
+     "cue": {
+      "word": "ذهب",
+      "t": 58.72
+     },
+     "who": "scholar",
+     "action": "nods thanks and walks right from x 520 to x 1340; the neighbours watch him go",
+     "acting": "purposeful; neighbours' gazes follow, the carpenter gives a small wave",
+     "library": "walk + footfalls; lookAt"
+    },
+    {
+     "t": 60.94,
+     "cue": {
+      "word": "ليواسيه",
+      "t": 60.94
+     },
+     "who": "scholar",
+     "action": "while walking, straightens his turban and sets a grave, sympathetic face",
+     "acting": "rehearsing condolence: mouth from neutral to gentle frown, brow -0.5; a tiny comic beat",
+     "library": "PERSON_HANDS.headHold one hand"
+    },
+    {
+     "t": 62.2,
+     "cue": {
+      "word": "ويعرف",
+      "t": 62.2
+     },
+     "who": "scholar",
+     "action": "stops at the door and knocks",
+     "acting": "three hand taps, respectful posture (tip 0.05)",
+     "library": "handRW to the door + kick"
+    },
+    {
+     "t": 63.14,
+     "cue": {
+      "word": "جرى",
+      "t": 63.14
+     },
+     "who": "set",
+     "action": "the door swings open a crack on darkness; a sniff line comes out",
+     "acting": "what is in there?",
+     "library": "townDoor open 0 to 0.35"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 64.22
+   }
+  },
+  {
+   "id": "S7",
+   "start": 64.22,
+   "end": 85.48,
+   "paragraphs": [
+    4
+   ],
+   "set": "teacherRoom",
+   "cast": [
+    "scholar",
+    "teacher"
+   ],
+   "summary": "The teacher sits in black, red-eyed, among his books. Who died: father, brother, a relative? No, no, no. He grieves for a woman he loves.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Wide zoom 1.0 for the reveal of the room (64.2 to 69.5), then push to a two-shot zoom 1.45 centred (510, 700): visible y about 276..1124, so balloons live at y 300..520."
+   },
+   "composition": "Teacher on the right cushion (x 640), slumped, facing left; scholar sits on the left cushion (x 380) facing right. Scholar's question balloon upper left, centre (330, 410), 330 x 200; teacher's answer balloon upper right, centre (720, 410), 280 x 220. Book stacks behind the teacher at x 760..860.",
+   "actions": [
+    {
+     "t": 64.22,
+     "cue": {
+      "word": "جلس",
+      "t": 64.22
+     },
+     "who": "teacher",
+     "action": "sits heavily on his cushion: the mourning-black version of his fine clothes, turban a little crooked",
+     "acting": "slump: tip 0.07, head low, lid 0.55, wet:true, slow breathe; gaze on the floor",
+     "library": "person {costume:'merchant', pal MOURNING, sit:1, seat:'floor', wet:true} + breathe"
+    },
+    {
+     "t": 65.44,
+     "end": 67.2,
+     "cue": {
+      "word": "المعلم",
+      "t": 65.44
+     },
+     "who": "scholar",
+     "action": "enters from the door, pauses at the sight, then sits on the left cushion",
+     "acting": "soft steps, gaze on the teacher, the rehearsed grave face",
+     "library": "walk + footfalls + sit + landSquash"
+    },
+    {
+     "t": 66.9,
+     "cue": {
+      "word": "ظهرت",
+      "t": 66.9
+     },
+     "who": "fx",
+     "action": "arrows pick out the signs one by one: black robe (66.9), wet eyes with one tear (67.4), a pile of damp handkerchiefs (68.3)",
+     "acting": "labels without words",
+     "library": "style arrow x3 + teardrops"
+    },
+    {
+     "t": 68.78,
+     "cue": {
+      "word": "الحزن",
+      "t": 68.78
+     },
+     "who": "teacher",
+     "action": "a long shuddering sigh; shoulders rise and fall; one tear rolls",
+     "acting": "sq 1.04 then 0.96, tremble 1.5 at the end of the breath",
+     "library": "anticipate + tremble + teardrops"
+    },
+    {
+     "t": 69.8,
+     "cue": {
+      "word": "سأله",
+      "t": 69.8
+     },
+     "who": "scholar",
+     "action": "leans in and asks gently; question balloon pops",
+     "acting": "tip 0.08, brow -0.6, talk 0.5, gaze on the teacher's eyes",
+     "library": "iconBalloon + lookAt"
+    },
+    {
+     "t": 74.02,
+     "cue": {
+      "word": "والده",
+      "t": 74.02
+     },
+     "who": "fx",
+     "action": "bust 1 pops in the balloon: an old man (white beard)",
+     "acting": "teacher: small slow head shake without looking up",
+     "library": "person bust {costume:'ascetic', age 1}; teacher x offset shake 1 cycle"
+    },
+    {
+     "t": 75.32,
+     "cue": {
+      "word": "أخوه",
+      "t": 75.32
+     },
+     "who": "fx",
+     "action": "bust 2 pops: a young man (short black beard)",
+     "acting": "teacher: a second, quicker head shake; a sniff",
+     "library": "person bust {costume:'villager', age 0}; shake 2 cycles"
+    },
+    {
+     "t": 76.76,
+     "cue": {
+      "word": "أقاربه",
+      "t": 76.76
+     },
+     "who": "fx",
+     "action": "bust 3 pops: a cluster of three small relatives",
+     "acting": "teacher: a third, impatient shake with the eyes squeezed shut; the scholar's finger count stalls at three",
+     "library": "3 child-size busts; lid 1 during the shake"
+    },
+    {
+     "t": 79.62,
+     "cue": {
+      "word": "بالنفي",
+      "t": 79.62
+     },
+     "who": "teacher",
+     "action": "one flat palm wave: all three busts get red crosses in a row (79.6, 79.8, 80.0)",
+     "acting": "eyes still down; the gesture is tired, not angry",
+     "library": "PERSON_HANDS.wave low + style cross with stagger"
+    },
+    {
+     "t": 80.38,
+     "cue": {
+      "word": "ثم",
+      "t": 80.38
+     },
+     "who": "teacher",
+     "action": "lifts his head at last and looks at the scholar; hand to his heart",
+     "acting": "lid opens 0.55 to 0.2, wet eyes shine, brow -0.8, mouth trembles",
+     "library": "PERSON_HANDS.chest + tremble 1"
+    },
+    {
+     "t": 82.24,
+     "cue": {
+      "word": "حزنه",
+      "t": 82.24
+     },
+     "who": "scholar",
+     "action": "his question balloon shrinks away; he waits, perfectly still",
+     "acting": "suspense by stillness: only a blink",
+     "library": "blink only"
+    },
+    {
+     "t": 83.26,
+     "cue": {
+      "word": "امرأة",
+      "t": 83.26
+     },
+     "who": "fx",
+     "action": "teacher's balloon pops: the figure of a lady with a paper disc and a blue question mark where her face should be",
+     "acting": "first appearance of the mystery face; the audience may wonder why",
+     "library": "iconBalloon + person {costume:'lady'} + mysteryFace"
+    },
+    {
+     "t": 83.9,
+     "cue": {
+      "word": "يحبها",
+      "t": 83.9
+     },
+     "who": "fx",
+     "action": "a red heart pops beside her and beats twice",
+     "acting": "teacher's lid lowers dreamily, a wet smile",
+     "library": "heart(ctx, x, y, r) with pulse"
+    },
+    {
+     "t": 84.9,
+     "who": "scholar",
+     "action": "sits back; brows shoot up; a silent 'oh'",
+     "acting": "mouth 'o', sq 1.03, small recoil tip -0.05",
+     "library": "settleTo"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 79.62,
+     "text": "NO!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 85.1,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 85.48
+   }
+  },
+  {
+   "id": "S8",
+   "start": 85.48,
+   "end": 107.66,
+   "paragraphs": [
+    5
+   ],
+   "set": "teacherRoom",
+   "cast": [
+    "scholar",
+    "teacher",
+    "ummAmr"
+   ],
+   "summary": "Consolation fails; the teacher confesses he has never seen her. The scholar's astonishment is the comic peak of the present-day story; he asks how.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "push-in",
+    "notes": "Same two-shot (zoom 1.45). At 93.4 push to zoom 1.75 on the teacher for the confession (centre (620, 640)); at 99.2 snap back to the two-shot with a 0.25 s panel shake of 6 px; at 106.6 tilt up toward the window for the match cut."
+   },
+   "composition": "Scholar shuffles from x 380 to x 470 so his hand reaches the teacher's shoulder. 'Many women' balloon above the scholar, centre (340, 400), 400 x 190. Confession balloon above the teacher, centre (720, 400), 260 x 230.",
+   "actions": [
+    {
+     "t": 85.48,
+     "cue": {
+      "word": "حاول",
+      "t": 85.48
+     },
+     "who": "scholar",
+     "action": "shuffles his cushion closer (two little scoots)",
+     "acting": "each scoot a small hop with landSquash 0.95",
+     "library": "hop + landSquash on a seated figure"
+    },
+    {
+     "t": 87.4,
+     "cue": {
+      "word": "تهدئته",
+      "t": 87.4
+     },
+     "who": "scholar",
+     "action": "pats the teacher's shoulder, pat, pat, pat",
+     "acting": "kind smile, brow -0.4; each pat squashes the teacher 0.97",
+     "library": "handRW to the shoulder + kick on teacher sq"
+    },
+    {
+     "t": 88.54,
+     "cue": {
+      "word": "فقال",
+      "t": 88.54
+     },
+     "who": "scholar",
+     "action": "speaks soothingly, free hand opens toward the window and the world outside",
+     "acting": "talk 0.6, gaze on the teacher then out of the window",
+     "library": "PERSON_HANDS.armsOut (one arm) + gazePlan"
+    },
+    {
+     "t": 91.66,
+     "cue": {
+      "word": "نساء",
+      "t": 91.66
+     },
+     "who": "fx",
+     "action": "balloon above the scholar: five small ladies in five robe colours pop in one by one along a row",
+     "acting": "cheerful, a little too practical",
+     "library": "iconBalloon + 5 x person {costume:'lady' / 'maiden' / 'villageWoman', pal variants} at scale 0.3, stagger 0.2 s"
+    },
+    {
+     "t": 92.28,
+     "cue": {
+      "word": "كثيرات",
+      "t": 92.28
+     },
+     "who": "teacher",
+     "action": "looks at the row, then turns his face away and shakes his head: none of them",
+     "acting": "lid 0.6, mouth frown, a loyal little sniff",
+     "library": "gaze away [-1, 0.2] + head shake"
+    },
+    {
+     "t": 93.44,
+     "cue": {
+      "word": "عندئذ",
+      "t": 93.44
+     },
+     "who": "teacher",
+     "action": "goes still; eyes slide sideways to the scholar and away again",
+     "acting": "guilty saccades (gazePlan 0.07); he has something to admit",
+     "library": "gazePlan"
+    },
+    {
+     "t": 94.6,
+     "cue": {
+      "word": "اعترف",
+      "t": 94.6
+     },
+     "who": "teacher",
+     "action": "looks down and twiddles his fingers; speaks small",
+     "acting": "talk 0.35, shoulders up (sq 0.97), clasped hands",
+     "library": "PERSON_HANDS.clasp"
+    },
+    {
+     "t": 97.38,
+     "cue": {
+      "word": "ير",
+      "t": 97.38
+     },
+     "who": "fx",
+     "action": "his balloon returns: the lady with the question-mark face, and beside her an eye icon that gets a red line through it",
+     "acting": "the mystery face is explained: he has never seen her",
+     "library": "iconBalloon + mysteryFace + eye icon + style cross"
+    },
+    {
+     "t": 98.78,
+     "cue": {
+      "word": "قط",
+      "t": 98.78
+     },
+     "who": "teacher",
+     "action": "tiny shrug, a sheepish wet smile",
+     "acting": "shoulders hop 4 units, gaze up at the scholar from under his brows",
+     "library": "PERSON_HANDS.palmsUp small"
+    },
+    {
+     "t": 98.9,
+     "who": "scholar",
+     "action": "frozen: one blink, then a second",
+     "acting": "hold before the laugh: nothing moves but the lids",
+     "library": "blink x2, noBlink otherwise"
+    },
+    {
+     "t": 99.22,
+     "cue": {
+      "word": "ازداد",
+      "t": 99.22
+     },
+     "who": "scholar",
+     "action": "recoils: rocks back, turban jumps and lands crooked, hands fly up",
+     "acting": "eyes 'wide', mouth 'open', tip -0.14 with settleTo overshoot, sq 1.06",
+     "library": "settleTo + PERSON_HANDS.armsOut + panel shake"
+    },
+    {
+     "t": 101.1,
+     "cue": {
+      "word": "دهشة",
+      "t": 101.1
+     },
+     "who": "scholar",
+     "action": "one slow look straight to the camera",
+     "acting": "the film's single lens stare: gaze [0, 0.05], lid 0.3, held 0.7 s",
+     "library": "gaze vector"
+    },
+    {
+     "t": 102.02,
+     "cue": {
+      "word": "وسأله",
+      "t": 102.02
+     },
+     "who": "scholar",
+     "action": "turns back, straightens the turban, palms up",
+     "acting": "talk 0.7, brow -0.9, leaning in (tip 0.1)",
+     "library": "PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 103.88,
+     "cue": {
+      "word": "أحب",
+      "t": 103.88
+     },
+     "who": "fx",
+     "action": "his balloon: heart, then (105.66) the crossed-out eye, a big blue question mark between them",
+     "acting": "the question as a picture: love without seeing?",
+     "library": "iconBalloon + heart + eye icon"
+    },
+    {
+     "t": 106.6,
+     "cue": {
+      "word": "في",
+      "t": 106.6
+     },
+     "who": "teacher",
+     "action": "sighs and lifts his eyes to the window; the camera follows his eye line",
+     "acting": "dreamy lid 0.4, a remembered smile; leads the cut",
+     "library": "lookAt(window) + camera tilt"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 92.0,
+     "text": "MANY!"
+    },
+    {
+     "t": 99.6,
+     "text": "WHAT?!"
+    },
+    {
+     "t": 102.96,
+     "text": "HOW?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "match-cut",
+    "t": 107.66
+   }
+  },
+  {
+   "id": "S9",
+   "start": 107.66,
+   "end": 117.9,
+   "paragraphs": [
+    6
+   ],
+   "set": "townStreet",
+   "cast": [
+    "teacher",
+    "singer"
+   ],
+   "summary": "Told flashback (dream wash): the teacher, in his fine green clothes, reads at his upper window; a carefree singer strolls underneath singing of a woman named Umm Amr.",
+   "camera": {
+    "shot": "wide",
+    "move": "tilt",
+    "notes": "Match cut window to window. Centre (1500, 560), zoom 1.25 (visible x 1100..1900, y 68..1052): window top, street bottom. Slow tilt down 40 units as the singer enters, back up with the notes."
+   },
+   "composition": "Teacher bust in the upper window (1560, 500), singer on the ground below walking left to right (x 1150 to 1480 during the scene), about 300 units under the sill. Notes rise on S-paths from the oud to the window. Dream wash corners mark the flashback.",
+   "actions": [
+    {
+     "t": 107.66,
+     "cue": {
+      "word": "قال",
+      "t": 107.66
+     },
+     "who": "fx",
+     "action": "dream wash fades in (blue halftone corners); warm 'dusk' street",
+     "acting": "marks the told story until 150.2",
+     "library": "dream wash strength 0.35 corners only"
+    },
+    {
+     "t": 109.26,
+     "cue": {
+      "word": "المعلم",
+      "t": 109.26
+     },
+     "who": "teacher",
+     "action": "reads a book at the open window, turning a page",
+     "acting": "content and scholarly: lid 0.3 on the page, lips moving slightly",
+     "library": "person bust clipped to the window opening, feet y about 665, s 0.95; handLW/handRW hold the book on the sill"
+    },
+    {
+     "t": 110.8,
+     "cue": {
+      "word": "سمع",
+      "t": 110.8
+     },
+     "who": "teacher",
+     "action": "one ear turns to the street: hand cups it; the book lowers",
+     "acting": "ear before eyes: head tilt, then gaze down left",
+     "library": "PERSON_HANDS.cupEar + soundArcs from off-screen left"
+    },
+    {
+     "t": 111.34,
+     "end": 117.9,
+     "cue": {
+      "word": "رجلًا",
+      "t": 111.34
+     },
+     "who": "singer",
+     "action": "ambles in from the left strumming the oud",
+     "acting": "bouncy walk (bob 6 units), head thrown back, eyes shut, big open-mouth song",
+     "library": "person {costume:'villager', pal red, eyes:'shut', talk 0.9} + walk + footfalls + oud"
+    },
+    {
+     "t": 112.82,
+     "cue": {
+      "word": "نافذته",
+      "t": 112.82
+     },
+     "who": "set",
+     "action": "arrow from the singer up to the window ledge as he passes under it",
+     "acting": "names the place the narration names",
+     "library": "style arrow"
+    },
+    {
+     "t": 114.58,
+     "cue": {
+      "word": "يغني",
+      "t": 114.58
+     },
+     "who": "fx",
+     "action": "quaver notes stream from the oud up to the window",
+     "acting": "the song is visible",
+     "library": "musicNotes(n 6, seeded S-paths)"
+    },
+    {
+     "t": 115.38,
+     "cue": {
+      "word": "امرأة",
+      "t": 115.38
+     },
+     "who": "fx",
+     "action": "one large note carries a small lady figure with the question-mark face",
+     "acting": "the song is about a woman nobody here has seen",
+     "library": "note + ummAmr at scale 0.25"
+    },
+    {
+     "t": 116.84,
+     "cue": {
+      "word": "أم",
+      "t": 116.84
+     },
+     "who": "lettering",
+     "action": "the name UMM AMR letters on in the notes' path, in red, and drifts up to the window",
+     "acting": "the only thing he actually learns: a name",
+     "library": "style label, Bangers, 60 px"
+    },
+    {
+     "t": 117.4,
+     "who": "teacher",
+     "action": "leans right out over the sill watching the name float up",
+     "acting": "eyes wide, mouth a small 'o', gaze follows the letters",
+     "library": "lookAt(label) + tip 0.1"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 116.84,
+     "text": "UMM AMR"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 117.9
+   }
+  },
+  {
+   "id": "S10",
+   "start": 117.9,
+   "end": 128.16,
+   "paragraphs": [
+    6
+   ],
+   "set": "townStreet",
+   "cast": [
+    "teacher",
+    "singer",
+    "ummAmr"
+   ],
+   "summary": "The leap of logic: poets only praise great beauty, so she must be dazzling. He falls in love with a picture he invented.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Push to zoom 1.7 centred (1470, 430): the window with the teacher on the right, the thought cloud on the left (centre (1300, 330), 380 x 300). The singer's head leaves the bottom of the frame by 121."
+   },
+   "composition": "Cloud left, teacher right, tail from the cloud to his turban. Hearts rise from his head toward the top right. The book falls out of the bottom of the frame.",
+   "actions": [
+    {
+     "t": 117.9,
+     "cue": {
+      "word": "ظن",
+      "t": 117.9
+     },
+     "who": "teacher",
+     "action": "finger to his chin, eyes roll up: reasoning",
+     "acting": "the same thinking pose the scholar used in S4 (deliberate echo): PERSON_HANDS.chin, saccades",
+     "library": "PERSON_HANDS.chin + gazePlan 0.07"
+    },
+    {
+     "t": 119.66,
+     "cue": {
+      "word": "الشعراء",
+      "t": 119.66
+     },
+     "who": "fx",
+     "action": "thought cloud pops; inside, a tiny poet with a scroll bows deeply toward an empty pedestal",
+     "acting": "his premise",
+     "library": "thoughtCloud + person {costume:'villager'} holding the planned scroll, kneel 0.5"
+    },
+    {
+     "t": 120.8,
+     "cue": {
+      "word": "يمدحونها",
+      "t": 120.8
+     },
+     "who": "singer",
+     "action": "walks on out of frame to the right, still singing, never looking up",
+     "acting": "he has no idea what he started",
+     "library": "walk continues to x 1950"
+    },
+    {
+     "t": 122.5,
+     "cue": {
+      "word": "لجمالها",
+      "t": 122.5
+     },
+     "who": "fx",
+     "action": "on the pedestal a lady rises with goldGlow rays, star glints and a jewelled veil, but her face is still the question-mark disc",
+     "acting": "his conclusion: all glamour, no information",
+     "library": "ummAmr + goldGlow strength 0 to 1 + mysteryFace"
+    },
+    {
+     "t": 123.4,
+     "cue": {
+      "word": "العظيم",
+      "t": 123.4
+     },
+     "who": "fx",
+     "action": "the glow flares, the cloud swells 10 percent and the question mark sparkles too",
+     "acting": "'great' beauty",
+     "library": "goldGlow 1.3 + cloud scale pulse"
+    },
+    {
+     "t": 124.04,
+     "cue": {
+      "word": "فتعلق",
+      "t": 124.04
+     },
+     "who": "teacher",
+     "action": "melts: cheeks in both hands on the sill, three hearts pop from his turban one after another",
+     "acting": "lid 0.45, wide smile, head tilt, sq 0.96 sag of bliss; hearts with stagger 0.3 s",
+     "library": "PERSON_HANDS.cheeks + heart() x3 rising"
+    },
+    {
+     "t": 125.24,
+     "cue": {
+      "word": "بها",
+      "t": 125.24
+     },
+     "who": "teacher",
+     "action": "the forgotten book slides off the sill and drops out of the window",
+     "acting": "follow-through: learning literally falls away",
+     "library": "fallY from the sill (y 595) to the ground (y 900), lands 127.3 with a 2-frame squash"
+    },
+    {
+     "t": 127.3,
+     "who": "fx",
+     "action": "the book hits the street: small dust puff; the teacher does not notice",
+     "acting": "pause beat for the thud",
+     "library": "dustBurst + impactSquash"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 127.35,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 128.16
+   }
+  },
+  {
+   "id": "S11",
+   "start": 128.16,
+   "end": 137.58,
+   "paragraphs": [
+    7
+   ],
+   "set": "townStreet",
+   "cast": [
+    "teacher",
+    "singer",
+    "ummAmr",
+    "donkey"
+   ],
+   "summary": "Two days pass at the window. The same singer returns, just as cheerful: Umm Amr and her donkey went away and did not come back.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Pull out to the S9 framing (centre (1500, 560), zoom 1.25) during the sky wheel; hold."
+   },
+   "composition": "Teacher at the window with one small heart hovering. Singer enters left as before. Song balloon above the singer, upper left: centre (1290, 330), 380 x 230, tail to his mouth; inside it a little road runs left to right.",
+   "actions": [
+    {
+     "t": 128.16,
+     "end": 129.5,
+     "cue": {
+      "word": "وبعد",
+      "t": 128.16
+     },
+     "who": "set",
+     "action": "the sky wheels through two nights (u 0.3 to 2.3) in 1.3 s; a counter ticks; the teacher stays at the window the whole time, chin on his fist",
+     "acting": "lovesick waiting; the fallen book still lies in the street",
+     "library": "marketStreet u via kfn + style counter"
+    },
+    {
+     "t": 129.58,
+     "cue": {
+      "word": "سمع",
+      "t": 129.58
+     },
+     "who": "teacher",
+     "action": "ear cups again, heart bobs; he straightens his turban",
+     "acting": "eager: gaze snaps down left, smile",
+     "library": "PERSON_HANDS.cupEar + lookAt"
+    },
+    {
+     "t": 130.38,
+     "end": 137.5,
+     "cue": {
+      "word": "الرجل",
+      "t": 130.38
+     },
+     "who": "singer",
+     "action": "the same singer ambles in with the same bounce and the same grin",
+     "acting": "identical cheerful acting on purpose: this is not a sad song",
+     "library": "walk + footfalls + oud, talk 0.9, eyes 'shut'"
+    },
+    {
+     "t": 131.54,
+     "cue": {
+      "word": "يغني",
+      "t": 131.54
+     },
+     "who": "fx",
+     "action": "notes rise; the song balloon pops above him",
+     "acting": "this time we see what the song says",
+     "library": "musicNotes + iconBalloon"
+    },
+    {
+     "t": 133.06,
+     "cue": {
+      "word": "أم",
+      "t": 133.06
+     },
+     "who": "fx",
+     "action": "in the balloon: the lady with the question-mark face",
+     "acting": "teacher beams and leans out",
+     "library": "ummAmr inside at scale 0.3"
+    },
+    {
+     "t": 134.02,
+     "cue": {
+      "word": "وحمارها",
+      "t": 134.02
+     },
+     "who": "fx",
+     "action": "the donkey pops in under her; she is riding it",
+     "acting": "a homely detail against his glamorous cloud",
+     "library": "rideOn(ctx, 'donkey', D, {costume:'lady'}) inside the balloon"
+    },
+    {
+     "t": 135.3,
+     "end": 136.2,
+     "cue": {
+      "word": "رحلا",
+      "t": 135.3
+     },
+     "who": "fx",
+     "action": "the donkey trots along the little road and out of the balloon's right edge",
+     "acting": "cheerful trot, ears up, tail swishing",
+     "library": "donkey walk(xf, t, {stride: GAIT.donkey * s}) clipped by the balloon"
+    },
+    {
+     "t": 136.78,
+     "cue": {
+      "word": "يعودا",
+      "t": 136.78
+     },
+     "who": "fx",
+     "action": "the balloon holds on the empty road: two dust puffs, a milestone, nothing else",
+     "acting": "all the song says: gone, not back",
+     "library": "dustBurst inside the balloon"
+    },
+    {
+     "t": 137.0,
+     "who": "singer",
+     "action": "shrugs on the last note and strolls on toward the right",
+     "acting": "still smiling; the news means nothing to him",
+     "library": "PERSON_HANDS.palmsUp one beat, walk on"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 128.5,
+     "text": "2 DAYS LATER"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 137.58
+   }
+  },
+  {
+   "id": "S12",
+   "start": 137.58,
+   "end": 146.58,
+   "paragraphs": [
+    7
+   ],
+   "set": "townStreet",
+   "cast": [
+    "teacher",
+    "kids"
+   ],
+   "summary": "The second leap: he decides she is dead. He wails, runs to the school, locks it and turns black with mourning.",
+   "camera": {
+    "shot": "medium",
+    "move": "whip",
+    "notes": "Push to zoom 1.7 on the window and cloud (as S10) for 137.6 to 142.2; whip pan left along the strip at 142.26 to the school door (centre (520, 680), zoom 1.2); hold."
+   },
+   "composition": "First half: cloud left (1300, 330), teacher right at the window. Second half: school door centre, teacher at x 560, three pupils at x 300, 360, 420 holding tablets.",
+   "actions": [
+    {
+     "t": 137.58,
+     "cue": {
+      "word": "فهم",
+      "t": 137.58
+     },
+     "who": "teacher",
+     "action": "freezes with the smile still on his face; the hovering heart stops bobbing",
+     "acting": "held shock: eyes 'wide', noBlink, only the pupils move from the empty balloon to nothing",
+     "library": "gaze plan; smile fades over 0.8 s"
+    },
+    {
+     "t": 139.96,
+     "cue": {
+      "word": "الكلمات",
+      "t": 139.96
+     },
+     "who": "fx",
+     "action": "his thought cloud pops again showing the empty road from the song",
+     "acting": "he is 'reading' the words",
+     "library": "thoughtCloud with the road inside"
+    },
+    {
+     "t": 141.54,
+     "cue": {
+      "word": "ماتت",
+      "t": 141.54
+     },
+     "who": "fx",
+     "action": "in his cloud a grave marker thumps up out of the empty road; the glow goes grey",
+     "acting": "his invention, not the song's",
+     "library": "graveMarker rising with landSquash + goldGlow fade"
+    },
+    {
+     "t": 141.8,
+     "who": "teacher",
+     "action": "the heart over his turban cracks in two; head thrown back, mouth wide, tears spring",
+     "acting": "wail: wet:true, teardrops both eyes, tremble 3, tip -0.1",
+     "library": "heart split + teardrops + tremble"
+    },
+    {
+     "t": 142.26,
+     "cue": {
+      "word": "فأغلق",
+      "t": 142.26
+     },
+     "who": "camera",
+     "action": "whip pan left down the street to the school",
+     "acting": "speed of his decision",
+     "library": "CAM key pair 142.26 to 142.6 + speed lines"
+    },
+    {
+     "t": 143.4,
+     "cue": {
+      "word": "المدرسة",
+      "t": 143.4
+     },
+     "who": "teacher",
+     "action": "runs in from the right, slams the school door, snaps the padlock and hangs the CLOSED board; the pupils jump at the slam",
+     "acting": "frantic: fast walk, sq 0.9 at the slam, board swings; kids hop with stagger",
+     "library": "walk + townDoor shut + swing() + hop on kids"
+    },
+    {
+     "t": 144.0,
+     "who": "kids",
+     "action": "the three pupils look at the lock, at each other, then throw their tablets up and skip off left",
+     "acting": "school is out: the film's one cheer, small and quick",
+     "library": "hop + stagger; tablets on fallY arcs"
+    },
+    {
+     "t": 144.5,
+     "cue": {
+      "word": "ولبس",
+      "t": 144.5
+     },
+     "who": "teacher",
+     "action": "spins on the spot and comes round in the mourning palette, turban crooked",
+     "acting": "the costume change hidden in the squeeze of the turn",
+     "library": "turnFlip(t, [144.6], 0.5) + pal cross-fade at the squeeze"
+    },
+    {
+     "t": 145.74,
+     "cue": {
+      "word": "الحزن",
+      "t": 145.74
+     },
+     "who": "teacher",
+     "action": "slumps and shuffles off right toward home, head down, one tear trail",
+     "acting": "tip 0.08, lid 0.6, slow heavy footfalls",
+     "library": "walk at half speed + footfalls"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 141.9,
+     "text": "SOB!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 146.58
+   }
+  },
+  {
+   "id": "S13",
+   "start": 146.58,
+   "end": 150.2,
+   "paragraphs": [
+    7
+   ],
+   "set": "townStreet",
+   "cast": [
+    "singer",
+    "ummAmr",
+    "donkey"
+   ],
+   "summary": "Insert, the point of the story: the song said GONE; DEAD was only his guess.",
+   "camera": {
+    "shot": "insert",
+    "move": "static",
+    "notes": "Flat insert over a dimmed street (the singer small, walking away at the bottom): two pictures side by side filling the panel width, each 400 x 330, centres (270, 520) and (730, 520) in panel space."
+   },
+   "composition": "Left: the song balloon (donkey and rider leaving along the road). Right: the teacher's cloud (the grave). Captions under each. A red question mark lands on the right picture.",
+   "actions": [
+    {
+     "t": 146.58,
+     "cue": {
+      "word": "مع",
+      "t": 146.58
+     },
+     "who": "fx",
+     "action": "the two pictures slide in from left and right and settle",
+     "acting": "a clear comparison, held still so it reads",
+     "library": "settleTo on x; iconBalloon + thoughtCloud"
+    },
+    {
+     "t": 147.46,
+     "cue": {
+      "word": "الأغنية",
+      "t": 147.46
+     },
+     "who": "fx",
+     "action": "left picture: the donkey and rider trot out again, in a loop of the same 1 s",
+     "acting": "what was sung",
+     "library": "donkey walk loop inside"
+    },
+    {
+     "t": 148.82,
+     "cue": {
+      "word": "تؤكد",
+      "t": 148.82
+     },
+     "who": "fx",
+     "action": "a big red question mark stamps onto the grave in the right picture; the cloud wobbles",
+     "acting": "never confirmed",
+     "library": "style emphasis stamp + swing() on the cloud"
+    },
+    {
+     "t": 149.56,
+     "cue": {
+      "word": "موتها",
+      "t": 149.56
+     },
+     "who": "singer",
+     "action": "far down the street the singer strolls away, still strumming, a last note floating",
+     "acting": "innocent cause of it all",
+     "library": "walk + musicNotes n 1"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 146.8,
+     "text": "THE SONG: GONE"
+    },
+    {
+     "t": 147.2,
+     "text": "HIS GUESS: DEAD?"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 150.2
+   }
+  },
+  {
+   "id": "S14",
+   "start": 150.2,
+   "end": 156.84,
+   "paragraphs": [
+    8
+   ],
+   "set": "townStreet",
+   "cast": [
+    "scholar",
+    "teacher"
+   ],
+   "summary": "Present day again (dream wash off): the scholar comes out of the teacher's house, looks back up at the window and shakes his head in wonder.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Starts on the house door (centre (1420, 700), zoom 1.4) and pulls out to zoom 1.15 centred (1380, 620) to include the upper window."
+   },
+   "composition": "Scholar exits the door and walks left to x 1230. The mourning teacher's bust is visible in the upper window (1560, 500), dabbing his eyes. The dropped book from the flashback still lies under the window at x 1560.",
+   "actions": [
+    {
+     "t": 150.2,
+     "cue": {
+      "word": "خرج",
+      "t": 150.2
+     },
+     "who": "scholar",
+     "action": "steps out of the door and closes it softly behind him",
+     "acting": "careful, as if leaving a sickroom; then lets out a breath (sq 1.03 to 0.98)",
+     "library": "walk 3 steps + townDoor close + anticipate"
+    },
+    {
+     "t": 152.02,
+     "cue": {
+      "word": "العالم",
+      "t": 152.02
+     },
+     "who": "scholar",
+     "action": "walks a few steps left, stops, and notices the fallen book in the street; picks it up and dusts it",
+     "acting": "small callback: he rescues the book the lover dropped",
+     "library": "walk + handRW reach to the ground with a knee dip (sq 0.9)"
+    },
+    {
+     "t": 153.7,
+     "cue": {
+      "word": "وهو",
+      "t": 153.7
+     },
+     "who": "scholar",
+     "action": "turns and looks back up at the window",
+     "acting": "gaze lookAt(window), brow -0.8",
+     "library": "lookAt"
+    },
+    {
+     "t": 154.0,
+     "who": "teacher",
+     "action": "at the window: a loud nose blow into a handkerchief, shoulders heaving",
+     "acting": "tremble 2, lid 1, comic not cruel",
+     "library": "person bust, MOURNING pal, PERSON_HANDS.mouthCover + tremble"
+    },
+    {
+     "t": 154.86,
+     "cue": {
+      "word": "تعجبًا",
+      "t": 154.86
+     },
+     "who": "scholar",
+     "action": "slow head shake, eyebrows as high as they go, a helpless open-palm shrug",
+     "acting": "more astonished than in S8, but quiet this time: the contrast is the joke",
+     "library": "PERSON_HANDS.palmsUp + head sway + settleTo"
+    },
+    {
+     "t": 156.14,
+     "cue": {
+      "word": "ذي",
+      "t": 156.14
+     },
+     "who": "scholar",
+     "action": "tucks the rescued book under his arm and turns to go",
+     "acting": "one last glance up; small smile of disbelief",
+     "library": "gazePlan"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "none",
+    "t": 156.84
+   }
+  },
+  {
+   "id": "S15",
+   "start": 156.84,
+   "end": 174.9,
+   "paragraphs": [
+    8
+   ],
+   "set": "townStreet",
+   "cast": [
+    "scholar",
+    "teacher",
+    "ummAmr",
+    "donkey",
+    "kids"
+   ],
+   "summary": "The moral as a picture in the scholar's thought cloud: a tall stack of books beside a tower of love and grief that stands on two tiny song notes. It topples. THE END.",
+   "camera": {
+    "shot": "medium",
+    "move": "track",
+    "notes": "Tracks left with the walking scholar, zoom 1.25, scholar kept at lower centre left (panel x about 380, feet near the panel bottom); the cloud is fixed in panel space, upper two thirds: centre (540, 400) panel, 640 x 470. Ends passing the locked school."
+   },
+   "composition": "Cloud interior (world units at scale 0.5): left third the book stack with the mini teacher (green) beside it; right two thirds the songTower; far right the lady and donkey question marks. Tail to the scholar's turban. THE END centred over the cloud's lower edge after the fall.",
+   "actions": [
+    {
+     "t": 156.84,
+     "end": 171.5,
+     "cue": {
+      "word": "فقد",
+      "t": 156.84
+     },
+     "who": "scholar",
+     "action": "walks slowly left along the street, hands behind his back, eyes up in thought",
+     "acting": "pensive walk at half stride, gaze up right into the cloud, natural blinks",
+     "library": "walk + footfalls + gazePlan"
+    },
+    {
+     "t": 158.22,
+     "cue": {
+      "word": "عرف",
+      "t": 158.22
+     },
+     "who": "fx",
+     "action": "thought cloud pops; inside, the mini teacher in his fine green clothes",
+     "acting": "the scholar weighs what he saw",
+     "library": "thoughtCloud(ctx, ..., {scale: 0.5})"
+    },
+    {
+     "t": 159.6,
+     "cue": {
+      "word": "يحفظ",
+      "t": 159.6
+     },
+     "who": "fx",
+     "action": "books pop into a stack beside the mini teacher, one per beat up to six (159.6 to 160.9), topped with a green tick",
+     "acting": "many sciences: true, and admirable",
+     "library": "bookStack n 0..6 + tick"
+    },
+    {
+     "t": 160.9,
+     "cue": {
+      "word": "كثيرة",
+      "t": 160.9
+     },
+     "who": "fx",
+     "action": "the BOOK icon from S4 flashes above the stack; the unlit LAMP icon pops beside it and stays dark",
+     "acting": "payoff of the planted icons: the old assumption was right about this one",
+     "library": "book + lamp icons"
+    },
+    {
+     "t": 161.72,
+     "cue": {
+      "word": "لكنه",
+      "t": 161.72
+     },
+     "who": "fx",
+     "action": "the stack slides to the left third; empty ground on the right",
+     "acting": "'but'",
+     "library": "kfn slide"
+    },
+    {
+     "t": 162.98,
+     "cue": {
+      "word": "بنى",
+      "t": 162.98
+     },
+     "who": "fx",
+     "action": "the mini teacher starts building: he heaves a block up",
+     "acting": "busy, proud builder acting; anticipate before each lift",
+     "library": "person handLW/handRW + anticipate"
+    },
+    {
+     "t": 163.44,
+     "cue": {
+      "word": "حبًا",
+      "t": 163.44
+     },
+     "who": "fx",
+     "action": "a big red heart block is set in mid-air at shoulder height",
+     "acting": "love",
+     "library": "heart() as a block"
+    },
+    {
+     "t": 164.16,
+     "cue": {
+      "word": "وحزنًا",
+      "t": 164.16
+     },
+     "who": "fx",
+     "action": "the dark grave block is set on top of the heart",
+     "acting": "grief",
+     "library": "graveMarker dark"
+    },
+    {
+     "t": 165.4,
+     "cue": {
+      "word": "بيتين",
+      "t": 165.4
+     },
+     "who": "fx",
+     "action": "the view inside the cloud tilts down: the whole tower stands on two tiny quaver notes; arrow and label 2 SONGS",
+     "acting": "the reveal of the foundation; the tower starts to sway",
+     "library": "note() x2 + style arrow + swing()"
+    },
+    {
+     "t": 166.38,
+     "cue": {
+      "word": "الغناء",
+      "t": 166.38
+     },
+     "who": "scholar",
+     "action": "stops walking and looks up at the swaying tower, wincing",
+     "acting": "one eye half shut (wink 'L' with lid 0.5), shoulders up",
+     "library": "person wink + sq 0.97"
+    },
+    {
+     "t": 168.94,
+     "cue": {
+      "word": "حقيقة",
+      "t": 168.94
+     },
+     "who": "fx",
+     "action": "right of the tower: the lady with the question-mark face fades in",
+     "acting": "her truth: unknown",
+     "library": "ummAmr + mysteryFace, alpha in"
+    },
+    {
+     "t": 170.84,
+     "cue": {
+      "word": "مصيرها",
+      "t": 170.84
+     },
+     "who": "fx",
+     "action": "below her: the donkey silhouette on a road that ends in a second question mark",
+     "acting": "her fate: unknown",
+     "library": "donkey {silhouette:true} + road line"
+    },
+    {
+     "t": 171.6,
+     "who": "fx",
+     "action": "after the last word the two notes slip: heart and grave topple, bounce once and lie in a heap; the book stack does not even wobble",
+     "acting": "the punchline, in the final pause",
+     "library": "fallY + impactSquash + rebound; dust inside the cloud"
+    },
+    {
+     "t": 172.0,
+     "who": "scholar",
+     "action": "flinches at the crash, then a small shrug and a smile; behind him the three pupils play ball by the locked school",
+     "acting": "release: sq 0.94 then settle, PERSON_HANDS.palmsUp, kids hop with stagger",
+     "library": "landSquash + hop"
+    },
+    {
+     "t": 172.5,
+     "who": "lettering",
+     "action": "THE END letters on over the fallen tower and holds to 174.9",
+     "acting": "held 2.4 s after it lands (3.4 s after the last word)",
+     "library": "style title"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 165.6,
+     "text": "2 SONGS"
+    },
+    {
+     "t": 172.5,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 171.8,
+     "kind": "thud"
+    },
+    {
+     "t": 172.7,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 174.9
+   }
+  }
+ ],
+ "ending": {
+  "t": 171.6,
+  "description": "After the last word (171.54) the tower of heart and grave slips off its two song notes and collapses in the scholar's thought cloud while the book stack stands; he flinches, shrugs and smiles; pupils play by the locked school. THE END at 172.5, held to 174.9."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "مر عالم ذات يوم بمدرسة صغيرة،|فرأى معلمًا حسن الهيئة يدرس الصغار.|دعاه المعلم إلى الجلوس، فتحدث معه العالم في اللغة والنحو والشعر،|وأعجب بما سمع من أجوبة دقيقة.",
+   "en": "A scholar passed a small school|and met a well-dressed teacher.|He tested him in language, grammar and poetry,|and was impressed by his answers."
+  },
+  {
+   "p": 2,
+   "ar": "عاد العالم إلى المدرسة مرات كثيرة،|وكلما تحدث مع المعلم اكتشف معرفة جديدة.|تعجب في نفسه، لأنه كان يظن أن معلمي الأطفال|لا يجمعون دائمًا بين العلم وحسن التفكير.",
+   "en": "The scholar visited repeatedly|and discovered more knowledge each time.|He had assumed that schoolteachers|seldom combined learning with sound judgment."
+  },
+  {
+   "p": 3,
+   "ar": "وفي زيارة لاحقة وجد باب المدرسة مغلقًا.|سأله الجيران عن سبب الإغلاق،|فقالوا إن المعلم في بيته حزين على شخص فقده.|ذهب العالم إليه ليواسيه ويعرف ما جرى.",
+   "en": "On a later visit the school was closed.|Neighbors said|the teacher was mourning someone,|so the scholar went to his house to offer sympathy."
+  },
+  {
+   "p": 4,
+   "ar": "جلس المعلم وقد ظهرت عليه علامات الحزن.|سأله ضيفه من الذي مات، أهو والده أم أخوه أم أحد أقاربه؟|أجاب المعلم بالنفي،|ثم قال إن حزنه على امرأة يحبها.",
+   "en": "The teacher sat looking miserable.|Asked whether his father, brother or relative had died,|he said no:|he was grieving for a woman he loved."
+  },
+  {
+   "p": 5,
+   "ar": "حاول العالم تهدئته، فقال إن في الدنيا نساء كثيرات.|عندئذ اعترف المعلم بأنه لم ير تلك المرأة قط.|ازداد العالم دهشة،|وسأله كيف أحب إنسانة لم يقابلها في حياته.",
+   "en": "The scholar tried to console him,|but the teacher admitted he had never even seen the woman.|The visitor asked|how such love had begun."
+  },
+  {
+   "p": 6,
+   "ar": "قال المعلم إنه سمع رجلًا يمر تحت نافذته|وهو يغني عن امرأة اسمها أم عمرو.|ظن أن الشعراء لا يمدحونها إلا لجمالها العظيم،|فتعلق بها من ذلك اليوم.",
+   "en": "The teacher had heard a passerby|sing admiringly of a woman named Umm Amr.|Assuming she must be extraordinarily beautiful,|he fell in love with her."
+  },
+  {
+   "p": 7,
+   "ar": "وبعد يومين سمع الرجل نفسه يغني|أن أم عمرو وحمارها رحلا ولم يعودا.|فهم المعلم من الكلمات أنها ماتت، فأغلق المدرسة ولبس ثياب الحزن،|مع أن الأغنية لم تؤكد موتها.",
+   "en": "Two days later the same singer said|Umm Amr and her donkey had gone and not returned.|The teacher took this to mean she was dead,|although the song never said so."
+  },
+  {
+   "p": 8,
+   "ar": "خرج العالم من البيت وهو أشد تعجبًا من ذي قبل.|فقد عرف أن الرجل يحفظ علومًا كثيرة،|لكنه بنى حبًا وحزنًا على بيتين من الغناء،|دون أن يعرف حقيقة المرأة أو مصيرها.",
+   "en": "The scholar departed astonished.|The teacher knew many disciplines,|yet had built both a romance and a period of mourning|upon two songs and an untested guess."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "schoolRoom",
+   "description": "Planned kuttab dressing of palaceHall variant 'merchant' (AN-123): three pupil mats (140 x 40 striped ovals), guest cushion and teacher cushion (floorCushion 120 x 36), low X-frame book stand 90 high carrying a 150 x 200 lesson tablet, shelf of 5 spare tablets, inkpot. Positions in sets.schoolRoom.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Call palaceHall({variant:'merchant', wall:'paper', curtain:1, desk:false, shelves:false}) and draw the dressing on top with K shapes in one function schoolRoom(ctx, o) that returns anchors {mats:[x], guest, teacherSeat, stand, window, door}. Bake the static part."
+  },
+  {
+   "type": "prop",
+   "name": "writingTablet",
+   "description": "Planned lawh (AN-123): board with handle tab and 4 ink bands; s parameter for hand size (70 x 95) and stand size (150 x 200).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rounded rect in pale wood with black outline, tab on top, 4 wavy ink lines (seeded), optional n lines written 0..4."
+  },
+  {
+   "type": "prop",
+   "name": "oud",
+   "description": "Planned lute (AN-087 and others): pear body 90 x 120, bent pegbox neck 110, rose hole, 4 strings; drawn across the singer's body at 25 degrees, behind his hands.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Ellipse + tapered quad neck + short angled pegbox; draw before the person's arms (use P.hands for the strum hand, handRW oscillating 14 units at 6 Hz)."
+  },
+  {
+   "type": "effect",
+   "name": "musicNotes",
+   "description": "Planned: n quaver glyphs released from a point, rising on seeded S-paths, rocking and fading; black with yellow or red heads. One variant carries a small picture (the lady) on a large note.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Library note(ctx, x, y, s, col) on paths x0 + sin, y0 - v * age; alpha by age; seeded with K.rng."
+  },
+  {
+   "type": "effect",
+   "name": "iconBalloon",
+   "description": "Speech balloon that holds a picture: iconBalloon(ctx, x, y, w, h, t, {p, tail:[x, y], inside(c, t), scale, at}). Same contract as thoughtCloud but a smooth oval with one pointed tail. Sizes used: 260..400 wide, 190..230 high. Close in purpose to the planned answerBalloon; make one function serve both.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Ellipse path + triangular tail, white fill, 7 px black outline, pop with settleTo on p; clip and draw inside() scaled about o.at exactly as thoughtCloud does."
+  },
+  {
+   "type": "expression",
+   "name": "mysteryFace",
+   "description": "Overlay for a person whose face is unknown: a paper-colour disc (radius = head radius + 2, about 32 at s 1) with a blue Bangers question mark, drawn over the face after the person; headwear and veil stay visible.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "After person(ctx, P), draw a disc at the head centre (measure: about y - 196 * s for a standing figure; use the seat from rideOn when riding) and the '?' glyph; optional star glint."
+  },
+  {
+   "type": "pose",
+   "name": "mourning palette",
+   "description": "Costume palette override for grief: any preset in near-black with grey dots and no jewel (values in cast.teacher.look), plus crooked headwear (rotate the head group 0.08 rad if the figure allows, otherwise shift the turban 4 units).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "A constant MOURN_PAL passed as pal; cross-fade from the green palette with mixHex inside turnFlip's squeeze at 144.6."
+  },
+  {
+   "type": "prop",
+   "name": "songTower",
+   "description": "The moral diagram: two quaver notes (each about 40 high) as feet, a heart block 120 wide on them, a dark graveMarker 110 x 150 on the heart; total height about 330 inside the cloud; sway angle from swing(), topple at 171.6 (heart rolls left, grave falls right, one bounce).",
+   "reusable": false,
+   "effort": "M",
+   "implementation": "Compose from Library note(), heart() and the planned graveMarker; rotate the group about the notes' base for the sway; for the fall use fallY + impactSquash + rebound per piece with fixed seeds."
+  },
+  {
+   "type": "prop",
+   "name": "bookStack",
+   "description": "Planned 'book' prop stacked n high (each 110 x 26, red, blue, yellow covers, paper page edge, slight seeded x offsets); also used as shelf rows in teacherRoom and as the single hand book (closed 90 x 26, open 120 x 70).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rounded rects with a paper strip on one side; n animated with settleTo pops."
+  },
+  {
+   "type": "prop",
+   "name": "graveMarker",
+   "description": "Planned grave marker (AN-095, AN-143): rounded stone 110 x 150 on a low mound, paper colour with grey halftone, dark variant for the tower.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Rect with a semicircular top, mound ellipse, K halftone fill."
+  },
+  {
+   "type": "effect",
+   "name": "dream wash",
+   "description": "Planned blue halftone corner vignette at strength 0.35 (legendFrame style, no ribbon) marking the told flashback from 107.66 to 150.20.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "Four corner radial dot fields drawn in panel space after the world and before finish."
+  },
+  {
+   "type": "effect",
+   "name": "goldGlow",
+   "description": "Planned treasure light (rays, halftone disc, star glints, strength 0..1.3) behind the imagined lady; star glints alone at strength 0.3 for 'well dressed'.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "As planned by KD-031: tapering yellow ray triangles rotating slowly, glints from K.rng seeds."
+  },
+  {
+   "type": "set",
+   "name": "townStreet fronts (school front, two-storey house front)",
+   "description": "Two custom fronts on marketStreet: a school front with a sign board, and a two-storey house with a door and an upper window with a sill ledge that a bust can lean on. Dimensions in sets.townStreet.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Use marketStreet's houses option if it accepts the geometry, otherwise draw with townDoor and townWindow over a flat front; the window bust is a person clipped to the opening (draw wall, clip rect of the opening, person, sill ledge on top)."
+  }
+ ],
+ "owner_questions": [
+  "SCRIPT: the English is a condensed translation of the Arabic (for example P1 omits the invitation to sit, P5 omits 'there are many women in the world', P8 words the last clause differently); both are kept verbatim as supplied.",
+  "Umm Amr is never shown in the real world: she appears only inside balloons and thought clouds, always with a question mark disc over her face; default yes, because nobody in the story has seen her.",
+  "Added comic business beyond the script: the pupils cheer and skip away when the school is locked (144.0) and play by the school at the end; default kept, about 2 s in total.",
+  "Added prop business: the teacher's book falls out of the window when he falls in love (125.2) and the scholar picks it up at the end (152.0); default kept.",
+  "Invented lettering (16 items): SCHOOL, 3 / 3, VISIT 4 (counter), LATER..., CLOSED, NO!, MANY!, WHAT?!, HOW?, UMM AMR, 2 DAYS LATER, SOB!, THE SONG: GONE, HIS GUESS: DEAD?, 2 SONGS, THE END; default all kept.",
+  "The moral is drawn as a tower of love and grief standing on two song notes that topples after the last word, and the BOOK and LAMP icons stand for learning and judgment; default kept (no extra narration).",
+  "Death is shown only as a plain grave marker inside a thought cloud (no body, no funeral); default kept.",
+  "The scholar is costumed with the 'physician' preset (white turban, grey beard) and the teacher with the green 'merchant' look; default kept, say if a dedicated 'scholar' preset is preferred."
+ ],
+ "implementation_notes": [
+  "Copy Library/template to Animations/AN-149; cues come from timing.json words via w(p, n): every cue in this plan gives the Arabic word and its start time, so look the index up by time.",
+  "Set LIFE.t = t each frame so all figures blink; give every figure a gaze target (lookAt / look) in every shot; listeners look at the speaker.",
+  "One street strip (townStreet, w 2000) serves S1, S5, S6, S9 to S15; bake it once per palette ('clear', 'cold', 'dusk'); translate by camX. School door cx 500, neighbour door cx 900, teacher's door cx 1420, teacher's upper window centre (1560, 500). These are targets: build the fronts to them and export the anchors.",
+  "Window bust: draw the house wall, then clip to the window opening and draw the person standing with feet about 70 units below the sill (feet y 665 for sill y 595 at s 0.95), then the sill ledge on top, so he can lean out (tip) and rest hands on the ledge with handLW/handRW.",
+  "Seated figures: sit:1, seat:'floor' on the cushions; shuffles are small hop() arcs with landSquash; the shoulder pat uses handRW at the teacher's shoulder (teacher x - 30, y - 150 * s, measure).",
+  "Head shakes: the person has no head-only yaw; use a 6 unit x oscillation of the whole seated figure with gaze flipping left/right (2 to 3 cycles at 3 Hz) and lid 1 for the third one.",
+  "Balloons and clouds: keep every figure inside at least about 110 px tall on screen; never cover a face; tails end 20 units above the speaker's headwear. Use thoughtCloud for thoughts (S4, S10, S12, S15) and iconBalloon for speech and song (S5, S7, S8, S11).",
+  "Flashback S9 to S13: draw the dream wash in panel space; the teacher wears the GREEN palette until the turnFlip at 144.6; in S7, S8, S14 he wears MOURNING.",
+  "LATER card at 43.16 to about 44.7 (the narrator says only the first word 'and on' during it); put the camera cut at its covered midpoint.",
+  "Two-day wheel (128.16 to 129.5): animate o.u with kfn from 0.3 to 2.3 (use u mod 1); on the strip place your own sun/moon if skyCycle's arc is off screen at camX 1100.",
+  "Sound: only 7 effects, all in the listed pauses or after the last word: pop 4.3, thud 12.3, chime 22.0, pop 85.1, thud 127.35, thud 171.8, chime 172.7; SND master 0.6. No effect for the knocks or the door slam (no pauses there): show them with motion and small impact lines.",
+  "Panel-only shake for the recoil at 99.22 (6 px, 0.25 s) and the tower fall at 171.8 (4 px).",
+  "Film length: 171.90 + 3.0 = 174.90 s. THE END appears at 172.5 and holds to the end."
+ ],
+ "warnings": [
+  "Narration is dense: only five pauses of 0.6 s or more, so effects are few and most comedy must read silently.",
+  "Word 'مات' at 73.28 is interpolated (shares its time with the next word); no action is cued to it. Bust cues use 74.02, 75.32, 76.76.",
+  "The person figure is front-facing only: the teacher at the window and the singer below cannot face each other in profile, so the link is made with gaze, soundArcs, the note stream and the arrow.",
+  "Many pictures-in-balloons: keep them large (figures at least 110 px) and one at a time, or the two-shot scenes will look cluttered on a phone.",
+  "The custom fronts on marketStreet (school, two-storey house with a lean-out window) may need drawing by hand from townDoor/townWindow if the houses option cannot express them."
+ ]
+}
