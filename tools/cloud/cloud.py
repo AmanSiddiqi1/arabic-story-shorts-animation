@@ -131,7 +131,7 @@ def cmd_submit(a):
     while active():
         if not a.when_idle: sys.exit('a render run is already active (' + ', '.join(str(r['databaseId']) for r in active()) + '); wait for it or use --when-idle')
         print('waiting for the active run ...'); time.sleep(60)
-    est = quota_used_mb() + len(ids) * FILM_MB
+    est = quota_used_mb() + len(ids) * FILM_MB if not PUBLIC else 0    # the 500 MB artifact quota applies to private repositories only
     if est > QUOTA_MB and not a.override: sys.exit(f'artifact storage would reach about {est:.0f} MB (free quota 500 MB). Fetch finished films and run: python3 tools/cloud/cloud.py purge')
     req = uuid.uuid4().hex[:8]
     gh('workflow', 'run', WF, '--ref', 'main', '-f', f'stories={" ".join(ids)}', '-f', f'version={a.version}', '-f', f'request_id={req}',
