@@ -17,3 +17,10 @@ Inputs checked: planning_metadata shas match timeline.json, the final MP3 and it
 - Peek "through fingers" (S20) is hands at the cheeks with one eye shut: person() draws the head over the hands.
 - Envier's cap spinning in the air (63.24) and cap sliding over one eye (160.46) not drawn (cap is part of the headwear).
 - The envier "bites his cap" (46.52) replaced by full flush, tremble and steam.
+
+## v2 (revision from Fable review 1)
+- Envier's back-row spot in court: x 325 between petitioners 245 and 405; he steps forward to x 480 (`K14_ENP`), used for the rest of S19/S20.
+- The open hand stays on the measured onset of لكن (163.0), not the Whisper start 162.18; the fist is held from 161.5.
+- S15: brazier at x 222 (left of the kneeling man); princess x 830 right of the sultan (690) to match S16's order.
+- Cavern scenes S11/S12 allow the camera below y 1230 (`K14_DEEP`); `k14Shaft({deep})` fills the extra earth.
+- stills.mjs honours OUTDIR (writes test stills outside the story folder).

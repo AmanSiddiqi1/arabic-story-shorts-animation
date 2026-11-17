@@ -47,7 +47,7 @@ function k14Yard(ctx, t, o = {}) {
     for (const px of [W.x0 + 8, W.x1 - 8]) shape(c, K.rectPts(px - 9, W.beam - 6, 18, W.rim - W.beam + 10), WOOD, { lw: 5, seed: 417, dot: C.black, pitch: 8, rad: 0.16, da: 0.35 });
     shape(c, K.rectPts(W.x0 - 14, W.beam - 18, W.x1 - W.x0 + 28, 18), WOOD, { lw: 5, seed: 418, dot: C.black, pitch: 8, rad: 0.16, da: 0.35 });
     shape(c, ell(W.cx, W.beam + 6, 14, 14, 14), '#8c8a94', { lw: 4, seed: 419 });
-    shape(c, ell(W.cx, W.rim, W.rx, 20, 30), STONE2, { lw: 6, seed: 420 }); shape(c, ell(W.cx, W.rim + 3, W.rx - 12, 13, 26), NAVY2, { lw: 4, seed: 421 });
+    shape(c, ell(W.cx, W.rim, W.rx, 20, 30), STONE2, { lw: 6, seed: 420 }); shape(c, ell(W.cx, W.rim + 3, W.rx - 12, 13, 26), '#0c0f22', { lw: 4, seed: 421 });   // v2: a dark empty mouth (the well is dry)
   });
   palmTree(ctx, K14_YARD.palm, 900, { h: 540, lean: -24, t, sway: 1 });
   // the door and its warm light
@@ -75,12 +75,15 @@ function k14Bucket(ctx, x, y, lift = 0, rot = 0) { ctx.save(); ctx.translate(x, 
 // ---------- the well cutaway + cavern ----------
 // Library wellShaft: ground line y 520, shaft x 560..800 (stone walls 524..560 and 800..836). Floor of sand at y 1190.
 // cavern pocket left of the shaft: x 80..500, y 860..1190 (floor 1185); lamp on a rock at (305, 1150)
-const K14_CAVE = { floor: 1185, lamp: [305, 1146], A: [215, 1185], B: [390, 1185], pts: [[80, 1185], [92, 1000], [150, 900], [270, 862], [400, 878], [492, 950], [505, 1080], [500, 1188]] };
+// v2: jinn moved right (A 290, B 450) so the jinn and the listening man fit one closer frame
+const K14_CAVE = { floor: 1185, lamp: [368, 1146], A: [290, 1185], B: [450, 1185], pts: [[80, 1185], [92, 1000], [150, 900], [270, 862], [400, 878], [492, 950], [505, 1080], [500, 1188]] };
 function k14Shaft(ctx, t, o = {}) {
   const u = o.u ?? 0.3; ctx.save(); ctx.beginPath(); ctx.rect(-10, -10, 1020, 535); ctx.clip(); skyCycle(ctx, u, { t, hills: false }); ctx.restore();
   wellShaft(ctx);
-  shape(ctx, [[562, 1232], [566, 1196], [620, 1180], [700, 1176], [770, 1186], [798, 1232]], '#f2d27a', { lw: 5, seed: 440, dot: '#c98a3a', pitch: 9, rad: 0.2, da: 0.45 });
-  const n = dayCycle(u).night; townDim(ctx, -10, -10, 1020, 1250, n * 0.9 + (o.dark || 0));
+  if (o.deep) { shape(ctx, [[-10, 1225], [1010, 1225], [1010, 1480], [-10, 1480]], EARTH, { lw: 0, dot: EARTHD, pitch: 12, rad: 0.22, da: 0.7 });   // v2: earth below the old frame for the lower camera
+    shape(ctx, [[60, 1185], [540, 1185], [540, 1480], [60, 1480]], '#7a4212', { lw: 5, seed: 441, dot: '#5b3010', pitch: 9, rad: 0.2, da: 0.5 }); }
+  shape(ctx, [[562, o.deep ? 1480 : 1232], [566, 1196], [620, 1180], [700, 1176], [770, 1186], [798, o.deep ? 1480 : 1232]], '#f2d27a', { lw: 5, seed: 440, dot: '#c98a3a', pitch: 9, rad: 0.2, da: 0.45 });
+  const n = dayCycle(u).night; townDim(ctx, -10, -10, 1020, o.deep ? 1500 : 1250, n * 0.9 + (o.dark || 0));
   return n;
 }
 // the cavern, revealed by an iris of lamplight (cave 0..1); inner(ctx) draws the jinn inside the clip
@@ -91,8 +94,8 @@ function k14Cavern(ctx, t, cave, inner, o = {}) {
   ctx.fillStyle = '#5b3010'; ctx.fillRect(60, 840, 470, 380); ctx.fillStyle = dotPat(ctx, '#7a4212', 12, 0.3); ctx.fillRect(60, 840, 470, 380);
   const lit = o.lit ?? 1; if (lit > 0) { ctx.save(); ctx.globalAlpha = 0.5 * lit; ctx.fillStyle = dotPat(ctx, C.yellow, 12, 0.4); ctx.beginPath(); ctx.arc(lx, ly - 30, 230, 0, 7); ctx.fill(); ctx.restore(); }
   shape(ctx, [[60, 1240], [60, 1185], [540, 1185], [540, 1240]], '#7a4212', { lw: 5, seed: 441, dot: '#5b3010', pitch: 9, rad: 0.2, da: 0.5 });
-  shape(ctx, [[110, 1186], [118, 1132], [176, 1118], [230, 1130], [240, 1186]], STONE2, { lw: 5, seed: 442, dot: STONED, pitch: 8, rad: 0.2, da: 0.4 });   // jinn A's rock (top ~1125)
-  shape(ctx, [[278, 1186], [284, 1152], [326, 1150], [334, 1186]], STONE, { lw: 4.5, seed: 443 });
+  shape(ctx, [[180, 1186], [188, 1132], [246, 1118], [300, 1130], [310, 1186]], STONE2, { lw: 5, seed: 442, dot: STONED, pitch: 8, rad: 0.2, da: 0.4 });   // jinn A's rock (top ~1125)
+  shape(ctx, [[341, 1186], [347, 1152], [389, 1150], [397, 1186]], STONE, { lw: 4.5, seed: 443 });
   // oil lamp
   shape(ctx, [[lx - 22, ly + 4], [lx + 24, ly + 4], [lx + 34, ly - 6], [lx - 30, ly - 8]], '#c98a3a', { lw: 4, seed: 444 });
   if (lit > 0) shape(ctx, [[lx + 20, ly - 8], [lx + 28, ly - 8 - 22 * lit - 3 * Math.sin(t * 12)], [lx + 36, ly - 8]], C.yellow, { lw: 3, seed: 445 });

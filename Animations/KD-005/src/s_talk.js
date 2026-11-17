@@ -1,11 +1,11 @@
 // ===== KD-005 scenes S6-S8: "do not!", the replay strike, strength is not the answer, the whisper, the plan board =====
 
 // ---------------- S6 44.0-58.0 ----------------
-const K5S6 = { a: 44.0, ww: 1000, cam: [[44, { x: 555, y: 640, zoom: 1.45 }], [51.69, { x: 545, y: 650, zoom: 1.5 }], [51.7, { x: 850, y: 850, zoom: 2.4 }], [52.59, { x: 850, y: 850, zoom: 2.4 }], [52.6, { x: 420, y: 730, zoom: 1.8 }], [55.9, { x: 420, y: 730, zoom: 1.8 }], [57.6, { x: 340, y: 770, zoom: 2.2 }], [58, { x: 340, y: 770, zoom: 2.2 }]],
+const K5S6 = { a: 44.0, ww: 1000, cam: [[44, K5_CLOUDCAM], [51.69, K5_CLOUDCAM], [51.7, { x: 850, y: K5_GLY(2.4), zoom: 2.4 }], [52.59, { x: 850, y: K5_GLY(2.4), zoom: 2.4 }], [52.6, K5_TIGHT], [55.9, K5_TIGHT], [57.6, { x: 320, y: K5_GLY(2.2), zoom: 2.2 }], [58, { x: 320, y: K5_GLY(2.2), zoom: 2.2 }]],
   rv(t) {
     const P = { x: 428, y: 686, dir: -1, seed: 3, sq: 1.04 * breathe(t, 3), gaze: lookAt([395, 610], [300, 780]), lid: Math.max(0.25, blink(t, 3)) };
     if (t >= 44.2 && t < 46.54) P.gaze = lookAt([395, 610], [K5_CLOUD[0], K5_CLOUD[1]]);
-    if (t >= 46.54) { P.sq = settleTo(t, 46.54, 1.04, 0.9, 0.2, 0.15); P.eyes = 'wide'; P.lid = 0; P.gaze = lookAt([395, 610], [300, 780]); P.x = 428 + 6 * K5_B(t, 46.54, 0.15); }
+    if (t >= 46.54) { P.sq = settleTo(t, 46.54, 1.04, 0.9, 0.2, 0.15); P.eyes = 'wide'; P.lid = 0; P.beak = 0; P.drop = 6; P.sag = 0.3; P.gaze = lookAt([395, 610], [300, 780]); P.x = 428 + 6 * K5_B(t, 46.54, 0.15) + 10 * pulse(t, 46.54, 0.12); }   // beak shut, head down, flinch toward the trunk
     if (t >= 48.1 && t < 50.9) { P.gaze = t < 49.5 ? lookAt([395, 610], [790, 560]) : [0.5, kfn(t, [[49.5, -0.2], [50.8, 1]])]; P.drop = 4 + 6 * K5_B(t, 49.5, 1.2); }
     if (t >= 50.9) { P.sq = 0.85 + 0.02 * Math.sin(t * 30) * (t < 51.7 ? 1 : 0); P.eyes = 'wide'; P.sag = 0.45; P.x = 434 + tremble(t, 1.5) * (t < 51.7 ? 1 : 0); P.drop = 6; P.beak = pulse(t, 51.0, 0.25) * 0.6; }
     if (t >= 52.7) { P.eyes = 'open'; P.sq = 0.95; P.sag = -0.55 - 0.2 * Math.max(0, Math.sin((t - 52.7) * 12)); P.gaze = [0.6, -0.4]; P.headRot = 0.15; P.drop = 0; }
@@ -15,15 +15,16 @@ const K5S6 = { a: 44.0, ww: 1000, cam: [[44, { x: 555, y: 640, zoom: 1.45 }], [5
     return P;
   },
   jk(t) {
-    const P = { x: 200, y: K5_GR, s: 0.8, dir: 1, seed: 7, sit: 0.4, plant: true, gaze: lookAt([300, 780], [420, 620]), tailUp: 0.4, headUp: -0.12 };
-    if (t >= 44.2) { const up = K5_B(t, 44.6, 0.6, 'inOut'); P.sit = 0.4 * (1 - up) + 0.06 * pulse(t, 44.2, 0.4); P.plant = up < 0.9; P.gaze = gazePlan(t, [[44.2, [1, -0.4]], [44.9, [0.3, -0.2]], [45.3, [1, -0.4]], [45.7, [0.3, -0.2]], [46.1, [0.9, -0.5]]], 0.12); P.rot = Math.sin((t - 44.2) * 9) * 0.03 * (t < 46.3 ? 1 : 0); P.ears = 0; }
-    if (t >= 46.54) { P.raise = K5_B(t, 46.54, 0.1); P.brow = 1; P.talk = k5Talk(t, [[46.54, 48.08], [48.08, 52.66]], 0.9); P.mouth = t < 47.4 ? 'open' : 'closed'; P.gaze = lookAt([300, 780], [420, 620]); }
-    if (t >= 48.2) { P.raise = blend(t, 48.2, 48.5, 1, 0); P.brow = 0.4; P.gaze = lookAt([300, 780], [700, 520]); }
+    const P = { x: 200, y: K5_GR, s: 0.8, dir: 1, seed: 7, sit: K5_SIT, plant: true, gaze: lookAt([300, 780], [420, 620]), tailUp: 0.4, headUp: -0.12 };
+    if (t >= 44.2) { const up = K5_B(t, 44.6, 0.6, 'inOut'); P.sit = K5_SIT * (1 - up) + 0.06 * pulse(t, 44.2, 0.4); P.plant = up < 0.9; P.gaze = gazePlan(t, [[44.2, [1, -0.4]], [44.9, [0.3, -0.2]], [45.3, [1, -0.4]], [45.7, [0.3, -0.2]], [46.1, [0.9, -0.5]]], 0.12); P.rot = Math.sin((t - 44.2) * 9) * 0.03 * (t < 46.3 ? 1 : 0); P.ears = 0; }
+    if (t >= 46.3) { P.ears = t < 46.5 ? 0.5 : 0; P.headUp = t < 46.54 ? 0.06 * k5u(t, 46.44, 46.54) : -0.1; P.gaze = lookAt([300, 780], [420, 620]); }   // ears snap up a frame before the head
+    if (t >= 46.44) { P.raise = t < 46.54 ? 0 : settleTo(t, 46.54, 0, 1, 0.25, 0.15); P.brow = 1; P.eyes = t < 48.08 ? 'wide' : 'open'; P.talk = k5Talk(t, [[46.54, 48.08], [48.08, 52.66]], 0.9); P.mouth = t < 47.6 ? 'open' : 'closed'; P.pawTo = [182, -102]; }   // the stop paw, held through "tafal" 
+    if (t >= 48.2) { P.raise = blend(t, 48.2, 48.5, 1, 0); P.brow = 0.4; P.headUp = -0.06; P.gaze = lookAt([300, 780], k5CW(700, 560)); }
     if (t >= 50.9) { P.gaze = lookAt([300, 780], [420, 620]); P.brow = 0; }
     if (t >= 51.7) { P.drop = 6; }
-    if (t >= 53.4) { P.gaze = gazePlan(t, [[53.4, [1, -0.3]], [53.8, [0.4, -0.1]], [54.1, [1, -0.3]]], 0.25); P.lid = Math.max(0.45, blink(t, 7)); P.drop = 4; P.talk = k5Talk(t, [[52.66, 55.94]], 0.6); }
-    if (t >= 54.28) { P.raise = 0.85 + 0.15 * (pulse(t, 54.28, 0.25) + pulse(t, 54.8, 0.25)); P.headUp = -0.05 + 0.08 * (pulse(t, 54.28, 0.25) + pulse(t, 54.8, 0.25)); P.mouth = 'smile'; P.lid = Math.max(0.2, blink(t, 7)); P.gaze = lookAt([300, 780], [420, 620]); }
-    if (t >= 55.9) { P.gaze = gazePlan(t, [[55.9, [1, 0.3]], [56.15, lookAt([300, 780], [420, 620])]], 0.07); P.drop = 12; P.ears = 0.5; P.raise = 0.5 + 0.35 * Math.max(0, Math.sin((t - 55.94) * 14)) * (t < 56.6 ? 1 : 0); P.headUp = 0.05; P.talk = k5Talk(t, [[55.94, 58.26]], 0.5); }
+    if (t >= 53.4) { const sh = t < 54.15 ? Math.sin((t - 53.42) * 26) * K.clamp((54.15 - t) * 3) : 0; P.gaze = [0.9 * (sh > 0 ? 1 : 0.2), -0.3]; P.headUp = 0.08 * sh; P.rot = 0.02 * sh; P.lid = Math.max(0.45, blink(t, 7)); P.drop = 4; P.talk = k5Talk(t, [[52.66, 55.94]], 0.6); }   // head shake on "laysat"
+    if (t >= 54.28) { P.rot = 0; P.raise = K5_B(t, 54.28, 0.15) * (0.92 + 0.08 * (pulse(t, 54.45, 0.2) + pulse(t, 54.8, 0.2))); P.headUp = 0.12 + 0.06 * (pulse(t, 54.45, 0.2) + pulse(t, 54.8, 0.2)); P.pawTo = [100, -158]; P.mouth = 'smile'; P.lid = Math.max(0.2, blink(t, 7)); P.gaze = lookAt([300, 780], [420, 620]); }
+    if (t >= 55.9) { P.gaze = gazePlan(t, [[55.9, [1, 0.3]], [56.15, lookAt([300, 780], [420, 620])]], 0.07); P.drop = 12; P.ears = 0.5; P.raise = 0.5 + 0.35 * Math.max(0, Math.sin((t - 55.94) * 14)) * (t < 56.6 ? 1 : 0); P.headUp = 0.05; P.pawTo = [150, -130]; P.talk = k5Talk(t, [[55.94, 58.26]], 0.5); }
     if (t >= 56.6) { P.mouth = 'smile'; P.lid = Math.max(0.45, blink(t, 7)); P.tailUp = 0.45 + 0.35 * pulse(t, 56.9, 0.35); P.raise = blend(t, 56.6, 57.0, 0.5, 0); }
     return P;
   },
@@ -33,28 +34,28 @@ const K5S6 = { a: 44.0, ww: 1000, cam: [[44, { x: 555, y: 640, zoom: 1.45 }], [5
     if (ins) { const tg = pulse(t, 52.0, 0.35); if (tg > 0) { ctx.save(); ctx.strokeStyle = C.red; ctx.lineWidth = 3; ctx.lineCap = 'round'; const [bx, by] = K5_HOME.burrow, L = 30 * tg; ctx.beginPath(); ctx.moveTo(bx - 2, by - 14); ctx.lineTo(bx - 2 - L, by - 10); ctx.lineTo(bx - 8 - L, by - 15); ctx.moveTo(bx - 2 - L, by - 10); ctx.lineTo(bx - 8 - L, by - 6); ctx.stroke(); ctx.restore(); } }
     const J = this.jk(t); k5Jackal(ctx, J); const P = this.rv(t); k5Raven(ctx, P, t);
     k5Cloud(ctx, t, k5HeadPos(P));
-    if (t >= 49.5 && t < 51.4) { const u = k5u(t, 49.5, 50.8), x = 640 - 40 * u, y = fallY(t, 49.5, 50.8, 600, 930); if (y < 925) bird(ctx, { kind: 'crow', x, y, s: 0.5, fly: true, flap: -0.8, rot: u * 9, eyes: 'x' }); for (let i = 0; i < 2; i++) feather(ctx, t, { t0: 49.6 + i * 0.2, t1: 51.5, a: [640, 610], b: [600 + i * 80, 880], col: '#2a2a33' }); }
-    if (t >= 54.28 && t < 55.9) { const sp = pulse(t, 54.28, 0.4) + pulse(t, 54.8, 0.4); k5Spark(ctx, J.x + 80, 735, 22 * sp, t * 3); }
+    if (t >= 54.28 && t < 55.9) { const sp = pulse(t, 54.4, 0.4) + pulse(t, 54.8, 0.4); k5Spark(ctx, J.x + 70, 755, 22 * sp, t * 3); }   // at the paw tip
   },
   over(ctx, t, cam, S) {
-    if (t >= 46.6 && t < 48.0) { const [x, y] = k5P(380, 700, cam); sfx(ctx, 'NO!', x, y - 40, 84, K5_B(t, 46.6, 0.2), { rot: -0.1, fill: C.red }); }
-    if (t >= 48.9 && t < 50.2) { const [x, y] = k5P(K5_CLOUD[0] + 40, K5_CLOUD[1] - 150, cam); sfx(ctx, 'SNAP!', x, y, 72, K5_B(t, 48.9, 0.2), { rot: 0.1 }); }
+    if (t >= 46.54 && t < 48.0) { const [x, y] = k5P(262, 660, cam); sfx(ctx, 'NO!', x, y, 84, K5_B(t, 46.54, 0.2), { rot: 0.12, fill: C.red }); }   // v2: beside the jackal who says it
+    if (t >= 48.8 && t < 50.2) { const [x, y] = k5P(...k5CW(745, 500), cam); sfx(ctx, 'SNAP!', x, y, 66, K5_B(t, 48.8, 0.2), { rot: 0.1 }); }
   } };
 
 // ---------------- S7 58.0-63.4: hop down, lean in, the whisper ----------------
-const K5S7 = { a: 58.0, ww: 1000, cam: [[58, { x: 400, y: 760, zoom: 1.7 }], [59.0, { x: 360, y: 790, zoom: 1.9 }], [62.7, { x: 340, y: 795, zoom: 2.6 }], [63.4, { x: 330, y: 790, zoom: 4.6 }]],
+const K5S7 = { a: 58.0, ww: 1000, cam: [[58, { x: 380, y: 740, zoom: 1.7 }], [59.0, { x: 350, y: 770, zoom: 1.9 }], [62.7, { x: 345, y: 800, zoom: 2.6 }], [63.4, { x: 345, y: 805, zoom: 4.6 }]],
   rv(t) {
     const P = { x: 428, y: 686, dir: -1, seed: 3 };
     P.sq = anticipate(t, 58.0, 0.26, 0.16);
-    if (t >= 58.26) { const f = k5u(t, 58.26, 58.9); P.x = K.lerp(428, 400, f); P.y = K.lerp(686, 862, f * f) - 70 * Math.sin(Math.PI * f) * (1 - f * 0.5); if (f < 1) { P.fly = true; P.flap = 0.5 + 0.3 * Math.sin(t * 14); P.sq = 1.1; } else P.sq = landSquash(t, 58.9, 0.18); }
-    if (t >= 59.1) { const [hx, hy] = hop(t, 59.1, 0.35, 400, 378, 14); P.x = hx; P.y = 862 - hy; P.sq = landSquash(t, 59.45, 0.12); P.tailDrop = -0.5 * pulse(t, 59.45, 0.3); }
-    P.gaze = lookAt(k5HeadPos(P), [320, 770]);
-    if (t >= 59.86) { P.headRot = 0.35 * K5_B(t, 59.86, 0.25); P.gaze = lookAt(k5HeadPos(P), [320, 760]); }
-    if (t >= 61.9) { P.eyes = t > 62.2 ? 'wide' : 'open'; P.drop = 5 * (pulse(t, 62.0, 0.2) + pulse(t, 62.4, 0.2)); P.gaze = gazePlan(t, [[61.9, [-0.8, -0.6]], [62.05, [-0.4, -0.2]], [62.25, [-0.9, -0.7]], [62.45, [-0.5, -0.5]]], 0.07); }
+    if (t >= 58.26) { const f = k5u(t, 58.26, 58.9); P.x = K.lerp(428, 410, f); P.y = K.lerp(686, 861, f * f) - 70 * Math.sin(Math.PI * f) * (1 - f * 0.5); if (f < 1) { P.fly = true; P.flap = 0.5 + 0.3 * Math.sin(t * 14); P.sq = 1.1; } else P.sq = landSquash(t, 58.9, 0.18); }
+    if (t >= 59.1) { const [hx, hy] = hop(t, 59.1, 0.35, 410, 442, 14); P.x = hx; P.y = K.lerp(861, 873, k5u(t, 59.1, 59.45)) - hy; P.sq = landSquash(t, 59.45, 0.12); P.tailDrop = -0.5 * pulse(t, 59.45, 0.3); }   // v2: lands on the stone's far shoulder, clear of the jackal
+    P.gaze = lookAt(k5HeadPos(P), [300, 790]); P.lid = Math.max(0.3, blink(t, 3));
+    if (t >= 59.86) { P.headRot = 0.55 * K5_B(t, 59.86, 0.3); P.gaze = [-0.6, -0.7]; }   // head cocked: crown and ear side toward the jackal, beak down
+    if (t >= 61.88) { P.lid = t < 62.3 ? 0 : 0; P.eyes = t >= 62.3 ? 'wide' : 'open'; P.drop = 6 * (pulse(t, 61.88, 0.22) + pulse(t, 62.3, 0.22)); P.gaze = [-0.8, -0.6]; }   // eye widens in two steps, two nods
     return P;
   },
-  jk(t) { const P = { x: 200, y: K5_GR, s: 0.8, dir: 1, seed: 7, mouth: 'smile', lid: Math.max(0.35, blink(t, 7)), gaze: lookAt([300, 780], [395, 790]), tailUp: 0.4 };
-    if (t >= 60.8) { const g = K5_B(t, 60.8, 0.3); P.drop = 14 * g; P.headUp = 0.18 * g; P.raise = 0.8 * g; P.mouth = 'closed'; P.talk = k5Talk(t, [[60.84, 62.76]], 0.35); P.gaze = gazePlan(t, [[60.8, [1, 0.4]], [61.2, [1, -0.5]], [61.4, [0.8, 0.5]]], 0.08); }
+  jk(t) { const xf = (tt) => kfn(tt, [[58.4, 200], [58.9, 174]]), P = { y: K5_GR, s: 0.8, dir: 1, seed: 7, ...walk(xf, t, { stride: 21, amp: 60 }), mouth: 'smile', lid: Math.max(0.35, blink(t, 7)), gaze: lookAt([300, 780], [420, 800]), tailUp: 0.4 };   // a half step back makes room
+    if (t >= 60.5) { const g = K5_B(t, 60.5, 0.3); P.drop = 5 * g; P.headUp = 0.06 * g; P.mouth = 'closed'; P.talk = k5Talk(t, [[60.84, 62.76]], 0.35); P.gaze = gazePlan(t, [[60.5, [1, 0.3]], [61.2, [1, -0.2]], [61.5, [0.9, 0.4]]], 0.08); }
+    if (t >= 61.06) { P.raise = K5_B(t, 61.06, 0.25); P.pawTo = [150, -118]; }   // the whisper paw beside the muzzle
     return P; },
   draw(ctx, t) { k5Home(ctx, t); k5Burrow(ctx, ...K5_HOME.burrow, {}); k5Jackal(ctx, this.jk(t)); k5Raven(ctx, this.rv(t), t); },
   over() {} };

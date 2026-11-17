@@ -169,12 +169,11 @@ function k31manMarket(t) {
   } else {   // S7: not here
     cageState = 'man'; carry = 1; P.handL = K31CARRYHL; P.handR = K31CARRYHR; P.mouth = 'smile'; P.gaze = lookAt(k31head(P), [P.x + 40, 820]);
     if (t < 65.6) { const up = k31e(t, 62.68, 0.5) * (1 - k31e(t, 65.1, 0.45)); carry = 1 + up; P.handR = k31lp(K31CARRYHR, [76, -78], up); P.handL = k31lp(K31CARRYHL, [24, -150], up);
-      if (t >= 63.3 && t < 65.0) P.handL = k31lp([24, -150], [70, -112], k31e(t, 63.3, 0.4) * (1 - k31e(t, 64.94, 0.3)));
-      P.gaze = lookAt(k31head(P), [P.x + 80, 760]); if (t >= 64.18) { P.mouth = 'closed'; P.brow = -0.4; } if (t >= 64.94) { P.tilt = 0.08 * Math.sin((t - 64.94) * 14) * (1 - k31e(t, 64.94, 0.8)); P.lid = 0.4; } }
+      P.gaze = lookAt(k31head(P), [P.x + 80, 780]); if (t >= 64.18) { P.mouth = 'closed'; P.brow = -0.4; } if (t >= 65.25) { P.tilt = 0.1 * Math.sin((t - 65.25) * 16) * (1 - k31e(t, 65.25, 0.7)); P.lid = 0.4; } }
     if (t >= 65.6) { P.mouth = 'closed'; P.brow = -0.4; }
     if (t >= 66.32 && t < 68.3) { P.gaze = k31sac(t, [[66.32, [-1, -0.05]], [66.8, [1, -0.05]], [67.3, [-1, -0.05]], [67.8, [0.3, 0.6]]]); P.look = k31sac(t, [[66.42, -0.6], [66.9, 0.6], [67.4, -0.6], [67.9, 0]]); }
     if (t >= 68.3 && t < 70.9) { carry = 2; P.handR = [76, -78]; P.handL = [24, -150]; P.gaze = lookAt(k31head(P), [P.x + 76, 760]); P.brow = -0.5; P.mouth = 'closed'; }
-    if (t >= 70.98) { P.gaze = k31sac(t, [[70.98, [-1, 0]], [73.5, [-1, 0]]]); P.look = t > 71.08 ? -0.4 : 0; P.brow = -0.5; }
+    if (t >= 70.98) { P.gaze = t < 72.98 ? [0.5, 0.6] : [-1, 0]; P.look = t < 73.12 ? 0 : -0.5 * k31e(t, 73.12, 0.15); P.brow = t < 72.98 ? -0.3 : -0.7; P.eyes = t >= 72.98 && t < 73.6 ? 'wide' : 'open'; }
     if (t >= 73.78) { P.handL = [-10, -126]; P.handR = [74, -118]; P.brow = 0.5; P.gaze = [1, -0.05]; P.look = 0.4; carry = 2.5; }
     P.lid = P.lid || blink(t, 4);
   }
@@ -221,7 +220,7 @@ function k31marketBirds(t, man) {
   if (t >= 62.68 && t < 69.84) { A.drop = 8; A.crest = 0.3; B.crest = 0.3; A.gazeTo = mh; B.gazeTo = mh; }
   if (t >= 68.3 && t < 70.9) { A.gazeTo = null; B.gazeTo = null; A.crest = 0.1; B.crest = 0.1;
     if (t >= 69.32) { A.beak = 1.2 * k31e(t, 69.32, 0.3); A.lid = Math.max(0.6, blinkA); B.dx = 22; B.dir = 1; B.drop = 8 * k31tap(t, [69.4, 69.7], 0.22); B.headRot = 0.4 * k31tap(t, [69.4, 69.7], 0.22); if (t > 70.1) { B.headRot = -0.3; B.gaze = [0, -1]; } }
-    if (t >= 69.84) { A.sag = -0.5; B.sag = -0.5; A.sq = 0.92; B.sq = 0.92; A.lid = Math.max(0.7, blinkA); B.lid = Math.max(0.7, blinkB); A.crest = 0; B.crest = 0; } }
+    if (t >= 69.32) { const d = k31e(t, 69.32, 0.3); A.sag = 0.5 * d; B.sag = 0.5 * d; A.sq = 1 - 0.08 * d; B.sq = 1 - 0.08 * d; A.lid = Math.max(0.7 * d, blinkA); B.lid = Math.max(0.7 * d, blinkB); A.crest = 0; B.crest = 0; A.drop = 8 * d; A.beak = 0.9 * k31tap(t, [69.4, 69.85, 70.3], 0.35); } }
   if (t >= 70.9) { A.sq = 0.92; B.sq = 0.92; A.crest = 0; B.crest = 0; A.lid = Math.max(0.5, blinkA); if (t >= 73.78) { A.sq = 0.85; B.sq = 0.85; A.drop = 10; B.drop = 10; } }
   return { A, B };
 }
@@ -235,10 +234,11 @@ function k31drawMarket(ctx, t) {
   for (const [x0, x1, y] of [[205, 455, 598], [790, 1010, 598]]) { ctx.save(); ctx.lineWidth = 3; ctx.strokeStyle = C.black; for (let x = x0; x < x1; x += 22) { const sw = 4 * Math.sin(t * 3 + x * 0.05); ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + sw, y + 16); ctx.stroke(); } ctx.restore(); }
   // S7 busy street: a cart wheel rolling through
   if (k31in(t, 66.5, 69.5)) { const x = K.lerp(1100, -120, (t - 66.5) / 3), r = 46; ctx.save(); ctx.translate(x, 900 - r); ctx.rotate(-(x - 1100) / r); ctx.beginPath(); ctx.arc(0, 0, r, 0, 7); ctx.lineWidth = 12; ctx.strokeStyle = C.black; ctx.stroke(); ctx.lineWidth = 6; ctx.strokeStyle = WOOD; ctx.stroke(); for (let i = 0; i < 4; i++) { ctx.rotate(Math.PI / 4); seg(ctx, -r + 6, 0, r - 6, 0, 6, WOOD, 3); } ctx.restore(); }
+  // S7 v2: passers-by crossing in the foreground of the market wide (66.4-68.3), drawn after the cast (see k31passers)
   // S7: the second hunter behind the corner (drawn before the corner pier), the net shadow on the wall
   if (k31in(t, 71.98, 73.4)) { const u = k31e(t, 71.98, 1.0), x = K.lerp(520, 200, u); ctx.save(); ctx.globalAlpha = 0.45 * (1 - k31e(t, 73.0, 0.3)); const hoop = ell(x, 640, 70, 62, 22); ctx.fillStyle = dotPat(ctx, NAVY2, 9, 0.38); K.poly(ctx, hoop, true); ctx.fill(); ctx.lineWidth = 10; ctx.strokeStyle = NAVY2; ctx.beginPath(); ctx.moveTo(x + 50, 690); ctx.lineTo(x + 170, 820); ctx.stroke(); ctx.restore(); }
-  if (k31in(t, 72.9, 74.52)) { const pk = k31e(t, 72.98, 0.35) * (1 - k31e(t, 73.85, 0.2)), P2 = { ...K31HUNT2, x: 96 + 40 * pk, y: K31GR, dir: 1, tip: 0.1 * pk, lid: 0.3, brow: 0.5, mouth: 'closed', gaze: [1, 0.25], handR: [70, -150], handL: [-30, -90] };
-    if (pk > 0.01) { person(ctx, P2); const hn = k31hand(P2, 1, [70, -150]); k31handNet(ctx, hn[0], hn[1] + 40, 0.35, 34); } }
+  if (k31in(t, 72.7, 74.52)) { const pk = k31e(t, 72.7, 0.35) * (1 - k31e(t, 73.85, 0.25)), P2 = { ...K31HUNT2, x: 110 + 95 * pk, y: K31GR, s: 1.3, dir: 1, tip: 0.12 * pk, lid: 0.3, brow: 0.5, mouth: 'smile', gaze: [1, 0.25], handR: [70, -150], handL: [-30, -90] };   // v2: 30 % larger, further into frame
+    if (pk > 0.01) { person(ctx, P2); const hn = k31hand(P2, 1, [70, -150]); k31handNet(ctx, hn[0], hn[1] + 40, 0.35, 48); } }
   if (t >= 62.68 && t < 74.52) { shape(ctx, [[96, 902], [96, 430], [158, 430], [158, 902]], '#e8c48a', { lw: 7, seed: 141, dot: '#c98a3a', pitch: 12, rad: 0.15, da: 0.35 }); }
   // the cage on the crate (or carried), the birds inside
   let cx = K31CAGE.x, cy = K31CAGE.y, cs = K31CAGE.s, rot = 0;
@@ -246,7 +246,11 @@ function k31drawMarket(ctx, t) {
   if (H && t >= 59.0 && t < 59.2) cx -= 20 * k31e(t, 59.0, 0.2);
   if (t >= 59.2 && M.cageState === 'man') cx -= 20;
   let carried = null;
-  if (M.cageState === 'man') { const k = Math.min(1, M.carry); const loc = M.carry > 1 && M.carry <= 2 ? k31lp(K31CARRY, [76, -152], M.carry - 1) : (M.carry > 2 ? [36, -92] : K31CARRY); const c2 = k31carried(M.P, loc); cx = K.lerp(cx, c2.x, k); cy = K.lerp(cy, c2.y, k); rot = 0.05 * Math.sin(t * 2) * (M.P.amp || 0); carried = true; }
+  if (M.cageState === 'man') { const k = Math.min(1, M.carry); const loc = M.carry > 1 && M.carry <= 2 ? k31lp(K31CARRY, t < 68.3 ? [72, -112] : [104, -150], M.carry - 1) : (M.carry > 2 ? [36, -92] : K31CARRY); const c2 = k31carried(M.P, loc); cx = K.lerp(cx, c2.x, k); cy = K.lerp(cy, c2.y, k); rot = 0.05 * Math.sin(t * 2) * (M.P.amp || 0); carried = true; }
+  // v2: carried cage at chest height for the latch, beside (not over) the face for the hunger close-up
+  // v2 يطلق (64.94): one finger goes to the latch, freezes, and comes back (the cage is at chest height)
+  if (carried && t >= 64.4 && t < 65.6) { const k = k31e(t, 64.45, 0.45) * (1 - k31e(t, 65.2, 0.35)), latch = [cx + 26 * cs, cy - 60 * cs]; M.P.handL = k31lp(M.P.handL, k31W2L(M.P, [latch[0] - 4, latch[1] + 2]), k); }
+  if (carried && t >= 68.3 && t < 70.9) { M.P.handL = k31W2L(M.P, [cx - 52, cy - 70]); M.P.handR = k31W2L(M.P, [cx + 8, cy + 4]); }
   const base = { A: { x: 0, y: 0 }, B: { x: 0, y: 0 } };
   const drawCage = () => { const fy = k31cagePerch(cy, cs), bs = cs * 0.96, bA = { x: cx + 30, y: fy, s: bs, dir: -1, pal: 0, seed: 3 }, bB = { x: cx - 24, y: fy, s: bs, dir: -1, pal: 1, seed: 7 };
     const A = k31applyBird(Bd.A, bA), B = k31applyBird(Bd.B, bB); if (carried) { const bob = 2 * Math.sin(t * 7) * (M.P.amp || 0); A.y += bob; B.y += bob * 0.8; }
@@ -255,6 +259,7 @@ function k31drawMarket(ctx, t) {
   if (!carried) drawCage();
   person(ctx, M.P);
   if (carried) drawCage();
+  if (k31in(t, 66.3, 68.4)) k31passers(ctx, t);
   // coins
   if (M.coinHand) k31coin(ctx, M.coinHand[0] + 8, M.coinHand[1] - 12 - 0 * (t - 42.22 > 0 && t < 42.97 ? 1 : 0), 11);
   if (H && H.palm) for (let i = 0; i < Math.min(2, H.coin); i++) k31coin(ctx, H.palm[0] - 6 + i * 12, H.palm[1] - 10, 11, { flat: 0.4 });
@@ -264,42 +269,54 @@ function k31drawMarket(ctx, t) {
   if (H && H.palm && t >= 57.74 && t < 58.45) [[57.74, 57.98], [58.25, 58.45]].forEach(([a, b], i) => { if (k31in(t, a, b)) { const src = k31hand(M.P, 1, M.P.handR), u = k31e(t, a, b - a); k31coin(ctx, K.lerp(src[0], H.palm[0] - 6 + i * 12, u), K.lerp(src[1] - 12, H.palm[1] - 10, u) - 20 * Math.sin(Math.PI * u), 11); } });
   return { man: M.P, hunter: H && H.P, A: base.A, B: base.B, cage: [cx, cy] };
 }
-// S5 thought cloud: the hand takes one bird out; the heart cracks
+function k31passers(ctx, t) {
+  const walkers = [[66.3, 68.3, 1150, -200, -1, 'merchant', { robe: C.blue, dot: '#2a4fae', hc: C.white, hd: '#d8d0c0', sash: C.yellow }], [66.55, 68.4, -220, 1150, 1, 'villager', {}], [66.9, 68.4, 1150, 250, -1, 'beanSeller', { robe: '#2e8b4a', dot: '#1e5c30', apron: false }]];
+  for (const [a, b, x0, x1, dir, costume, pal] of walkers) { if (t < a || t > b) continue; const xf = (tt) => K.lerp(x0, x1, K.clamp((tt - a) / (b - a)));
+    person(ctx, { costume, pal, s: 1.2, y: 1010, dir, seed: 70 + a * 10, mouth: 'closed', gaze: [dir, 0], ...walk(xf, t, { stride: 36 }) }); }
+}
+// S5 thought cloud (v2: 1.7x larger, in the sky above the roofline): the hand takes one bird out, the other reaches through the bars; the heart splits
 function k31cloudS5(ctx, t, man) {
-  const p = k31e(t, 40.32, 0.5) * (1 - k31e(t, 53.6, 0.3)); if (p <= 0) return; const h = k31head(man), tc = t < 46.98 || t >= 52.4 ? t : 46.98;
-  thoughtCloud(ctx, 300, 420, 340, 260, t, { p, tail: [h[0] - 30, h[1] - 50], bg: C.white, scale: 0.36, at: [500, 760], inside: (c) => {
-    const cxx = 500, cyy = 1020, out = tc >= 44.42, shut = k31e(tc, 45.3, 0.25), lift = k31e(tc, 44.42, 0.6);
-    const ins = { x: cxx - 40, y: k31cageFloor(cyy, 1.8), s: 1.2, dir: 1, pal: 1, crest: 0, noBlink: true, lid: 0.2 };
-    if (tc >= 46.16) { ins.x = cxx + 20 * k31e(tc, 46.16, 0.4); ins.headRot = -0.5 * k31e(tc, 46.16, 0.4); ins.wet = true; ins.beak = 1; ins.shake = tremble(t, 1.5); ins.drop = -10; }
-    k31cage(c, cxx, cyy, 1.8, 'back'); k31hoopoe(c, ins);
-    const hx = K.lerp(cxx + 30, 720, lift), hy = K.lerp(k31cageFloor(cyy, 1.8) - 60, 620, lift);
-    if (!out || lift < 0.4) k31hoopoe(c, { x: cxx + 40, y: k31cageFloor(cyy, 1.8) - 200 * lift, s: 1.2, dir: -1, pal: 0, crest: 0, noBlink: true });
-    k31cage(c, cxx, cyy, 1.8, 'front', { door: 1.4 * k31e(tc, 43.0, 0.3) * (1 - shut) });
-    if (tc >= 43.18) { const ax = K.lerp(1000, hx + 30, k31e(tc, 43.18, 0.6)), ay = K.lerp(300, hy - 10, k31e(tc, 43.18, 0.6)); seg(c, 1100, 250, ax + 30, ay - 20, 70, C.white, 6); shape(c, ell(ax, ay, 46, 40, 20), C.white, { lw: 6, seed: 150, dot: C.skin, pitch: 8, rad: 0.3 });
-      if (out && lift >= 0.4) { k31hoopoe(c, { x: hx - 20, y: hy + 60, s: 1.2, dir: -1, pal: 0, crest: 0.1, gaze: [-0.5, 1], noBlink: true }); } }
-    if (tc >= 44.42 && tc < 46.98) sfx(c, '1', 820, 560, 120, k31e(tc, 44.5, 0.3), { fill: C.yellow });
-    if (t >= 52.4) { const k = k31e(t, 52.4, 0.15), sep = 60 * k31e(t, 52.6, 0.6); k31crackHeart(c, 560, 560, 70, k, sep); }
-    else if (tc >= 46.16) heart(c, 560, 560, 70);
+  const p = k31e(t, 40.32, 0.5) * (1 - k31e(t, 53.6, 0.3)); if (p <= 0) return; const h = k31head(man), tc = t < 48.3 || t >= 52.4 ? t : 48.3;
+  thoughtCloud(ctx, 430, 250, 600, 420, t, { p, tail: [h[0] - 20, h[1] - 60], bg: C.white, scale: 0.6, at: [520, 740], inside: (c) => {
+    const cxx = 400, cyy = 1000, cs = 1.8, fl = k31cageFloor(cyy, cs), lift = k31e(tc, 44.42, 0.7), shut = k31e(tc, 45.3, 0.3);
+    // the hand: in from the upper right on يشتري (43.18), into the open door, lifts bird A out and up to the right on واحدًا (44.42)
+    const reach = k31e(tc, 43.18, 0.7), door0 = [cxx + 10, fl - 90], up = [800, 600];
+    const hx = tc < 44.42 ? K.lerp(1250, door0[0] + 40, reach) : K.lerp(door0[0] + 40, up[0], lift), hy = tc < 44.42 ? K.lerp(260, door0[1] - 30, reach) : K.lerp(door0[1] - 30, up[1], lift);
+    // bird B, left behind: on الآخر (46.16) it presses to the bars, neck stretched up toward A, beak open, trembling
+    const reachB = k31e(tc, 46.16, 0.45), B = { x: cxx - 60 + 120 * reachB, y: fl, s: 2.0, dir: 1, pal: 1, crest: 0, noBlink: true, lid: 0.15, headRot: -0.55 * reachB, drop: -14 * reachB, beak: reachB > 0.5 ? 0.9 + 0.3 * Math.abs(Math.sin(t * 9)) : 0, shake: reachB > 0.5 ? tremble(t, 2) : 0, wet: reachB > 0.5, tip: -0.15 * reachB, sag: -0.5 * reachB };
+    k31cage(c, cxx, cyy, cs, 'back'); k31hoopoe(c, B);
+    const inCage = tc < 44.42;
+    if (inCage) k31hoopoe(c, { x: cxx + 70, y: fl, s: 2.0, dir: -1, pal: 0, crest: 0, noBlink: true, lid: 0.3, gaze: reach > 0.6 ? [0.6, -0.8] : [-1, 0], sq: 1 - 0.06 * reach });
+    k31cage(c, cxx, cyy, cs, 'front', { door: 1.5 * k31e(tc, 42.9, 0.3) * (1 - shut) });
+    if (!inCage) { const A = { x: hx - 10, y: hy + 130, s: 2.0, dir: -1, pal: 0, crest: 0, noBlink: true, lid: 0.35, sag: 0.9, tailDrop: 0.8, drop: 10, gaze: lookAt([hx - 30, hy + 50], [B.x + 30, fl - 90]), wet: tc > 46.16, rot: 0.05 * Math.sin(t * 3) };
+      k31hoopoe(c, A); }
+    if (tc >= 43.18) { seg(c, 1300, hy - 300, hx + 50, hy - 40, 76, C.white, 7); shape(c, ell(hx, hy, 54, 46, 20), C.white, { lw: 7, seed: 150, dot: C.skin, pitch: 8, rad: 0.3 }); }
+    if (tc >= 44.42 && tc < 48.2) sfx(c, '1', 860, 900, 160, k31e(tc, 44.5, 0.3), { fill: C.yellow });
+    // the heart between them, split on يفرقهما (52.40): two halves with a clear gap drift toward each bird
+    if (t >= 52.4) { const k = k31e(t, 52.4, 0.15), sep = 90 * k31e(t, 52.55, 0.7), dr = 70 * k31e(t, 52.6, 0.9);
+      for (const sd of [-1, 1]) { const ox = sd < 0 ? -sep * 1.4 : sep * 1.2, oy = sd < 0 ? dr : -dr * 0.3, rot = sd * 0.25 * k31e(t, 52.55, 0.7); c.save(); c.translate(600 + ox, 560 + oy); c.rotate(rot); c.beginPath(); c.rect(sd < 0 ? -200 : 0, -200, 200, 400); c.clip(); heart(c, 0, 0, 95); c.restore(); }
+      if (sep < 3) { c.save(); c.lineWidth = 7; c.strokeStyle = C.black; c.beginPath(); const r = 95, pts = [[0, -r * 0.55], [-r * 0.15, -r * 0.2], [r * 0.12, r * 0.05], [-r * 0.1, r * 0.35], [0, r * 0.8]], n = Math.max(1, Math.round(k * 4)); c.moveTo(600 + pts[0][0], 560 + pts[0][1]); for (let i = 1; i <= n; i++) c.lineTo(600 + pts[i][0], 560 + pts[i][1]); c.stroke(); c.restore(); } }
+    else if (tc >= 46.16) heart(c, 600, 560, 95 * K.ease.back(K.clamp((tc - 46.16) / 0.35)) * (1 + 0.05 * Math.sin(t * 6)));
   } });
 }
-
 // ---------- S16: the palace front ----------
 function k31drawS16(ctx, t) {
-  const xf = (tt) => k31kv(tt, [[164.72, 360], [165.2, 362], [168.4, 640]]);
+  const xf = (tt) => k31kv(tt, [[164.72, 360], [165.2, 362], [168.4, 640]]);   // v2: stops in clear wall under the shop window; the awning post moved to the far end
   const stepY = (x) => (x < 470 ? 872 : (x < 520 ? 886 : 900));
   const P = k31man({ ...walk(xf, t, { stride: 34 }), dir: 1, seed: 11 }); P.y = stepY(P.x) + (P.amp > 0.1 ? 0 : 0);
-  const hopK = (x0) => { const a = (x0 - 360) / 280 * 3.68 + 164.72; return pulse(t, a - 0.18, 0.3); };
-  P.y -= 10 * (hopK(470) + hopK(520)); P.sq = landSquash(t, (470 - 360) / 280 * 3.68 + 164.72 + 0.12, 0.04) * landSquash(t, (520 - 360) / 280 * 3.68 + 164.72 + 0.12, 0.04);
+  const stepT = (x0) => 165.2 + (x0 - 362) / 278 * 3.2, hopK = (x0) => pulse(t, stepT(x0) - 0.18, 0.3);
+  P.y -= 10 * (hopK(470) + hopK(520)); P.sq = landSquash(t, stepT(470) + 0.12, 0.04) * landSquash(t, stepT(520) + 0.12, 0.04);
   P.handL = [-6, -108]; P.handR = [70, -108]; P.mouth = 'smile'; P.wet = t < 166.5; P.gaze = lookAt(k31head(P), [P.x + 60, 800]);
-  const birdKeysA = [[170.1, -80, 300], [170.9, 250, 260], [171.4, 560, 300], [171.9, 790, 548]], birdKeysB = [[170.25, -160, 330], [171.05, 170, 290], [171.6, 520, 330], [172.15, 840, 548]];
+  const birdKeysA = [[170.1, 1080, 330], [170.9, 960, 400], [171.4, 860, 440], [171.9, 790, 548]], birdKeysB = [[170.25, 1140, 360], [171.05, 1020, 420], [171.6, 920, 450], [172.15, 860, 548]];   // v2: in from the right, below the THE END card
   if (t >= 167.8 && t < 169.02) { P.handR = [70, -108 - 12 * k31tap(t, [168.1, 168.4], 0.2)]; P.gaze = [0.3, 0.8]; }
   if (t >= 169.02) { P.gaze = lookAt(k31head(P), t < 170.1 ? [760, 360] : [k31flight(t, birdKeysA, 'strong').x, k31flight(t, birdKeysA, 'strong').y - 30]); P.drop = -4; P.lid = Math.max(blink(t, 4), k31long(t, 169.4, 0.5)); }
-  if (t >= 170.8) { P.handR = k31kv(t, [[170.8, [70, -108]], [171.1, PERSON_HANDS.wave.R], [172.6, PERSON_HANDS.wave.R], [173.1, [70, -108]]]); P.handR = [P.handR[0] + (t < 172.6 ? 10 * Math.sin(t * 10) : 0), P.handR[1]]; P.mouth = t < 172.6 ? 'open' : 'smile'; }
+  if (t >= 170.8) { P.handR = k31kv(t, [[170.8, [70, -108]], [171.1, PERSON_HANDS.wave.R]]); const amp = K.lerp(10, 5, k31e(t, 172.3, 0.8)), fq = K.lerp(10, 6, k31e(t, 172.3, 0.8)); P.handR = [P.handR[0] + amp * Math.sin((t - 170.8) * fq), P.handR[1] + (t > 172.3 ? 8 : 0)]; P.mouth = t < 172.4 ? 'open' : 'smile';
+    const F = k31flight(t, t < 172.15 ? birdKeysA : birdKeysB, 'strong'); P.gaze = lookAt(k31head(P), [Math.min(F.x, 900), F.y - 30]); }   // v2: the wave keeps going (slower, smaller) to the last frame, eyes on the birds
   if (t >= 172.6) P.sq = breathe(t, 2, 0.02);
   marketStreet(ctx, { ...K31STC, palaceDoor: 1 - k31e(t, 166.0, 0.6), lit: 0.6, t });
   // awning over the shop on the right; its front rod is where the birds land
   { const sw = 2 * Math.sin(t * 2.2); shape(ctx, [[690, 500], [960, 500], [980, 562 + sw], [670, 562 + sw]], C.red, { lw: 6, seed: 160, dot: C.white, pitch: 9, rad: 0.2, da: 0.5 }); for (let x = 690; x < 960; x += 54) { ctx.save(); ctx.beginPath(); ctx.moveTo(x, 500); ctx.lineTo(x + 27, 500); ctx.lineTo(x + 29, 562 + sw); ctx.lineTo(x - 2, 562 + sw); ctx.closePath(); ctx.fillStyle = C.white; ctx.fill(); ctx.restore(); }
-    seg(ctx, 660, 564 + sw, 990, 564 + sw, 9, WOOD, 3.5); seg(ctx, 680, 568, 680, 900, 8, WOOD, 3.5); }
+    seg(ctx, 660, 564 + sw, 990, 564 + sw, 9, WOOD, 3.5); seg(ctx, 972, 568, 972, 900, 8, WOOD, 3.5); }
   // the king waves once from the balcony window
   if (t >= 166.6 && t < 168.6) { ctx.save(); ctx.beginPath(); ctx.rect(305, 320, 110, 122); ctx.clip(); const k = k31e(t, 166.6, 0.4) * (1 - k31e(t, 168.2, 0.4)); person(ctx, { ...K31KING, x: 360, y: 560 - 60 * k, s: 0.7, mouth: 'smile', handR: [60 + 8 * Math.sin(t * 10), -200], gaze: [0.6, 0.6] }); ctx.restore(); }
   const jarPos = k31L2W(P, [32, -62]);
@@ -313,8 +330,8 @@ function k31cloudS16(ctx, t, man) {
   const p = k31e(t, 169.02, 0.5) * (1 - k31e(t, 170.6, 0.4)); if (p <= 0) return; const h = k31head(man);
   ctx.save(); ctx.globalAlpha *= 1 - 0.6 * k31e(t, 170.4, 0.6);
   thoughtCloud(ctx, 760, 360, 300, 220, t, { p, tail: [h[0] + 20, h[1] - 50], bg: C.yellow, scale: 0.32, at: [500, 640], inside: (c) => {
-    seg(c, 200, 700, 800, 700, 30, WOOD, 6); fig(c, 300, 760, 30); fig(c, 720, 770, 30);
-    k31hoopoe(c, { x: 430, y: 688, s: 1.3, dir: 1, pal: 1, crest: 1, noBlink: true, lid: 0.3 }); k31hoopoe(c, { x: 580, y: 688, s: 1.3, dir: -1, pal: 0, crest: 1, noBlink: true, lid: 0.3 });
-    heart(c, 505, 470, 50 * (1 + 0.06 * Math.sin(t * 5))); } });
+    seg(c, 100, 760, 900, 760, 34, WOOD, 6); fig(c, 200, 820, 30); fig(c, 820, 830, 30);
+    k31hoopoe(c, { x: 370, y: 744, s: 2.6, dir: 1, pal: 1, crest: 1, noBlink: true, lid: 0.3 }); k31hoopoe(c, { x: 640, y: 744, s: 2.6, dir: -1, pal: 0, crest: 1, noBlink: true, lid: 0.3 });
+    heart(c, 505, 470, 60 * (1 + 0.06 * Math.sin(t * 5))); } });
   ctx.restore();
 }

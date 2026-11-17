@@ -17,3 +17,10 @@ Decisions the plan left open or that the measured set changed:
 - Limit line (136.12) is a vertical red dotted line at the terrace edge (x 598), with YOUR LIMIT below it on the rock; reads more clearly than a line along the ground at phone size.
 - Falcon medallion: a round inset (story code) with the old falcon close-up, parked at (352, 690) beside the fox's face, "=" and SAME TRICK between them; both blink together at 120.62.
 - Sound: exactly the plan's nine cues (rumbles at 3.62, 41.4, 164.7 built from SND tones; paper ruffle 11.9; pop 20.45; three trot ticks 21.1-21.38; ticks 42.2 and 56.0; chime 165.05), all inside measured pauses.
+
+## v2 (Fable round 1) decisions
+- Walk-away ends at x 305 and the moral two-shot is zoom 0.97 (fox tail and crow whole); kicked pebble starts at x 290.
+- Medallion at (740, 720) r 78 over the chasm; the heart lifts 150 / right 30 while it is up. SAME TRICK sits above the fox's head (above the medallion it covered the nest).
+- Crow pointing wing, crest, flat hunter shadow, paws-over-mouth, lick, drop/splash and fleeing-bird V are story code in src/f41_cast.js (proposed in library_proposals.md).
+- Fox ears are one Library field, so "one ear after the other" was not possible; both flatten together at 145.21.
+- Sky: u 0.25 from t 0 (S1 summit now the same blue); sun drawn by the story so it can fade under the story clouds.

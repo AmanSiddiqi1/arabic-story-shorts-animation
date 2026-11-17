@@ -67,3 +67,51 @@ function f41Scales(ctx, x, y, tilt, left, right) {
 }
 // dotted line along a list of points, drawn up to fraction p
 function f41Dotted(ctx, pts, p, col = C.black, w = 7, gap = 18) { const q = K.trim(pts, K.clamp(p)); if (q.length < 2) return; ctx.save(); ctx.setLineDash([2, gap]); ctx.lineCap = 'round'; ctx.lineWidth = w; ctx.strokeStyle = col; ctx.beginPath(); ctx.moveTo(q[0][0], q[0][1]); for (const v of q.slice(1)) ctx.lineTo(v[0], v[1]); ctx.stroke(); ctx.restore(); }
+
+// ===== v2 additions (Fable round 1) =====
+// the Library bird frame (cast/birds.js): origin at the feet, scaled by dir * s; head=true adds the head rotation about the neck
+function f41BirdFrame(ctx, P, head) { const s = P.s || 1, dir = P.dir ?? 1; ctx.translate(P.x + (P.shake || 0), P.y); if (P.rot) ctx.rotate(P.rot); ctx.scale(dir * s, s);
+  if (head) { const hx = 32, hy = -64 + (P.drop || 0), hr = P.headRot || 0; if (hr) { ctx.translate(hx - 14, hy + 16); ctx.rotate(hr); ctx.translate(-(hx - 14), -(hy + 16)); } } }
+// crow crest (drawn BEFORE the bird so the head covers the roots): c 0 flat .. 1 raised
+function f41CrowCrest(ctx, P, c) { if (c <= 0.02) return; ctx.save(); f41BirdFrame(ctx, P, true); const hx = 32, hy = -64 + (P.drop || 0);
+  [[-14, -0.5], [-4, -0.15], [6, 0.2]].forEach(([dx, a], i) => { const L = 16 + 16 * c; shape(ctx, [[hx + dx - 7, hy - 10], [hx + dx - 6 + Math.sin(a - 0.5) * L, hy - 12 - Math.cos(a - 0.5) * L], [hx + dx + 6, hy - 14]], '#1a1a22', { lw: 4, seed: 60 + i }); });
+  ctx.restore(); }
+// pointing wing for a dark bird: a separate feathered wing with a paper-white rim so it reads against the black body.
+// k 0 folded .. 1 fully out; ang: direction of the tip in the bird frame (0 = straight ahead, + = downwards)
+const F41_WING = [[0, -12], [40, -18], [78, -14], [106, -6], [88, -1], [98, 5], [77, 6], [85, 12], [60, 12], [30, 16], [0, 12]];
+function f41CrowWing(ctx, P, k, ang = 0.35) { if (k <= 0.02) return; ctx.save(); f41BirdFrame(ctx, P, false); ctx.translate(-4, -48);
+  ctx.rotate(K.lerp(2.5, ang, Math.min(1, k))); const sc = K.lerp(0.55, 1, Math.min(1, k)) * (k > 1 ? k : 1); ctx.scale(sc, sc);
+  ctx.save(); K.poly(ctx, F41_WING, true); ctx.lineJoin = 'round'; ctx.lineWidth = 12; ctx.strokeStyle = C.white; ctx.stroke(); ctx.restore();
+  shape(ctx, F41_WING, '#1a1a22', { lw: 4.5, seed: 64 });
+  ctx.save(); ctx.lineCap = 'round'; ctx.lineWidth = 3; ctx.strokeStyle = C.white; ctx.beginPath(); ctx.moveTo(10, -9); ctx.quadraticCurveTo(50, -15, 92, -7); ctx.stroke();
+  ctx.lineWidth = 2.5; ctx.strokeStyle = '#4a4a5a'; for (const [x0, x1] of [[40, 70], [36, 62], [30, 52]]) { ctx.beginPath(); ctx.moveTo(x0 - 20, 2 + (x0 - 30) * 0.1); ctx.lineTo(x1, 5 + (70 - x1) * 0.1); ctx.stroke(); } ctx.restore();
+  ctx.restore(); }
+// a pointing gesture: anticipation (wing pulled back) 0.15 s, throw with a little overshoot, hold, settle. Returns {k, back}
+function f41Point(t, t0, hold = 0.8, settle = 0.4) { if (t < t0 - 0.15 || t > t0 + 0.14 + hold + settle) return { k: 0, back: 0 };
+  if (t < t0) return { k: 0, back: pulse(t, t0 - 0.15, 0.3) };
+  const th = K.ease.back(K.clamp((t - t0) / 0.14)), st = F41B(t, t0 + 0.14 + hold, settle); return { k: th * (1 - st), back: 0 }; }
+// the crow drawn with its v2 extras: crest (P.crestUp), the Library bird, then the pointing wing (P.wingK, P.wingAng)
+function f41DrawCrow(ctx, P) { f41CrowCrest(ctx, P, P.crestUp || 0); bird(ctx, P); f41CrowWing(ctx, P, P.wingK || 0, P.wingAng ?? 0.35); }
+
+// lick: the tongue sweeps out of the mouth and across the muzzle (u 0..1), a long red tongue in the fox head frame
+function f41Lick(ctx, F, u) { if (u <= 0 || u >= 1) return; const out = Math.sin(Math.PI * u), a = K.lerp(0.9, -1.3, u);
+  const m = f41FoxPt(F, 46, 18), dir = F.dir ?? 1, s = F.s || 1; ctx.save(); ctx.translate(m[0], m[1]); ctx.scale(dir * s, s); ctx.rotate(a);
+  const L = 10 + 34 * out; shape(ctx, [[-2, -7], [L * 0.7, -9], [L, -4], [L + 4, 2], [L, 8], [L * 0.7, 9], [-2, 7]], '#ff5a7a', { lw: 4, seed: 71 });
+  seg(ctx, 4, 0, L * 0.75, 0, 1, '#c8204a', 2); ctx.restore(); }
+// a drop (tear or drool): #fffaf0 with a blue edge, r about 6 world units; splash: 0..1 after landing
+function f41Drop(ctx, x, y, r = 6, splash = 0) { ctx.save(); if (splash <= 0) { ctx.translate(x, y); ctx.beginPath(); ctx.moveTo(0, -r * 1.9); ctx.quadraticCurveTo(r, -r * 0.5, r, r * 0.3); ctx.arc(0, r * 0.3, r, 0, Math.PI); ctx.quadraticCurveTo(-r, -r * 0.5, 0, -r * 1.9);
+    ctx.fillStyle = C.white; ctx.fill(); ctx.lineWidth = 3; ctx.strokeStyle = C.blue; ctx.stroke(); ctx.fillStyle = '#9fc4ff'; ctx.beginPath(); ctx.arc(r * 0.35, r * 0.5, r * 0.35, 0, 7); ctx.fill(); }
+  else { ctx.globalAlpha *= 1 - splash; ctx.fillStyle = C.white; ctx.strokeStyle = C.blue; ctx.lineWidth = 2.5; for (const sd of [-1, -0.4, 0.4, 1]) { ctx.beginPath(); ctx.arc(x + sd * (6 + 18 * splash), y - 4 - 16 * Math.sin(Math.PI * splash) * (1.2 - Math.abs(sd) * 0.5), 3.2, 0, 7); ctx.fill(); ctx.stroke(); } }
+  ctx.restore(); }
+// flat single-tone silhouette: draws fn in black on an offscreen layer (no overlaps, no inner grey), clipped to a polygon,
+// the bottom faded out between fadeY0 and fadeY1 (world y), then composited once at alpha a
+function f41FlatShadow(ctx, clip, a, fadeY0, fadeY1, fn) {
+  const cv = ctx.canvas, L = K.cached('f41shadowL', () => K.layer(cv.width, cv.height)), c = L.getContext('2d'), M = ctx.getTransform();
+  c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, L.width, L.height); c.setTransform(M);
+  c.save(); K.poly(c, clip, true); c.clip(); c.filter = 'brightness(0)'; fn(c); c.restore();
+  c.save(); c.globalCompositeOperation = 'destination-out'; const g = c.createLinearGradient(0, fadeY0, 0, fadeY1); g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,1)'); c.fillStyle = g; c.fillRect(-2000, fadeY0, 5000, fadeY1 - fadeY0 + 400); c.restore();
+  ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = a; ctx.drawImage(L, 0, 0); ctx.restore(); }
+// both forepaws pressed over the muzzle (k 0..1 slides them up from the chest): two orange paws with black pads
+function f41PawsOverMouth(ctx, F, k) { if (k <= 0.02) return; const m = f41FoxPt(F, 56, 16), c = f41FoxPt(F, 10, 90), s = F.s || 1, dir = F.dir ?? 1;
+  [[-8, 0], [12, -6]].forEach(([dx, dy], i) => { const x = K.lerp(c[0], m[0] + dx * s * dir, k), y = K.lerp(c[1], m[1] + dy * s, k);
+    seg(ctx, x - 30 * s * dir, y + 60 * s, x, y, 15 * s, i ? FOXC : FOXD, 4); shape(ctx, ell(x + 4 * s * dir, y, 17 * s, 13 * s, 12), FOXC, { lw: 3.5, seed: 80 + i }); shape(ctx, ell(x + 12 * s * dir, y, 6 * s, 9 * s, 8), C.black, { lw: 0 }); }); }

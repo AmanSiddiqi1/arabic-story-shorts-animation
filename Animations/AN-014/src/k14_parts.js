@@ -49,7 +49,11 @@ function k14Horns(ctx, P) { const s = (P.s || 1) * (P.child ? 0.62 * 1.25 : 1);
   for (const sd of [-1, 1]) { const b = k14L2W(P, sd * 20, k14HeadY(P) - 26), tip = [b[0] + sd * 14 * s, b[1] - 34 * s]; shape(ctx, [[b[0] - 9 * s, b[1] + 4 * s], [b[0] + 9 * s, b[1] + 4 * s], [b[0] + sd * 12 * s, b[1] - 18 * s], tip, [b[0] - sd * 4 * s, b[1] - 14 * s]], C.yellow, { lw: 4, seed: 300 + sd }); } }
 
 // ---------- props ----------
-function k14Sandal(ctx, x, y, s = 1, rot = 0) { ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s); shape(ctx, ell(0, 0, 26, 9, 16), '#a8741a', { lw: 4, seed: 310 }); seg(ctx, -6, -6, 8, -10, 5, '#6e4a10', 2); ctx.restore(); }
+// v2: a readable sandal (sole + two red straps), lying on its side; s 1 is about 60 x 22
+function k14Sandal(ctx, x, y, s = 1, rot = 0) { ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s);
+  shape(ctx, [[-30, 2], [-32, -6], [-24, -12], [10, -12], [28, -10], [33, -3], [28, 4], [-26, 6]], '#a8741a', { lw: 4.5, seed: 310, dot: '#6e4a10', pitch: 6, rad: 0.25, da: 0.5 });
+  ctx.lineCap = 'round'; for (const [a, b] of [[[-14, -12], [-4, -24]], [[6, -12], [14, -22]]]) { ctx.lineWidth = 9; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.moveTo(...a); ctx.lineTo(...b); ctx.stroke(); ctx.lineWidth = 5; ctx.strokeStyle = C.red; ctx.stroke(); }
+  ctx.lineWidth = 9; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.moveTo(-6, -24); ctx.lineTo(16, -22); ctx.stroke(); ctx.lineWidth = 5; ctx.strokeStyle = C.red; ctx.stroke(); ctx.restore(); }
 function k14Crown(ctx, x, y, s = 1, rot = 0, o = {}) { ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s);
   if (o.glow) { ctx.save(); ctx.globalAlpha = 0.35 * o.glow; ctx.fillStyle = dotPat(ctx, C.yellow, 10, 0.4); ctx.beginPath(); ctx.arc(0, -20, 70, 0, 7); ctx.fill(); ctx.restore(); }
   shape(ctx, [[-36, 0], [-38, -40], [-20, -18], [0, -48], [20, -18], [38, -40], [36, 0], [-36, 0]], C.yellow, { lw: 5, seed: 311, dot: C.red, pitch: 8, rad: 0.2, da: 0.5 });
@@ -65,7 +69,7 @@ function k14Basket(ctx, x, y, s = 1, rot = 0) { ctx.save(); ctx.translate(x, y);
 function k14Rubbish(ctx, x, y, amt) { if (amt <= 0.02) return; const r = K.rng(77); for (let i = 0; i < 9; i++) { if (i / 9 > amt) continue; const px = x + (r() - 0.5) * 110 * amt, py = y - r() * 26 * amt, kind = i % 3;
   if (kind === 0) shape(ctx, ell(px, py, 14, 8, 10), '#7a4212', { lw: 3, seed: 330 + i }); else if (kind === 1) shape(ctx, [[px - 12, py], [px + 10, py - 14], [px + 16, py - 2]], C.white, { lw: 3, seed: 330 + i }); else seg(ctx, px - 14, py, px + 14, py - 6, 5, '#3f9d4a', 2); } }
 // a fishbone of seven thin hairs between two hands / in a balloon
-function k14Hairs(ctx, x, y, n, s = 1, o = {}) { for (let i = 0; i < n; i++) { const a = -0.6 + (i / 6) * 1.2; ctx.save(); ctx.lineWidth = 3.2 * s; ctx.strokeStyle = o.col || C.white; ctx.lineCap = 'round'; ctx.shadowColor = C.black; ctx.beginPath(); ctx.moveTo(x, y); ctx.quadraticCurveTo(x + Math.sin(a) * 20 * s, y - 30 * s, x + Math.sin(a) * 34 * s, y - 60 * s); ctx.stroke(); ctx.restore(); }
+function k14Hairs(ctx, x, y, n, s = 1, o = {}) { for (const pass of o.ol ? [0, 1] : [1]) for (let i = 0; i < n; i++) { const a = -0.6 + (i / 6) * 1.2; ctx.save(); ctx.lineWidth = pass ? 3.2 * s * (o.ol ? 1.6 : 1) : 3.2 * s * 1.6 + 4; ctx.strokeStyle = pass ? o.col || C.white : C.black; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(x, y); ctx.quadraticCurveTo(x + Math.sin(a) * 20 * s, y - 30 * s, x + Math.sin(a) * 34 * s, y - 60 * s); ctx.stroke(); ctx.restore(); }
   if (o.flash) for (let i = 0; i < 3; i++) star(ctx, x + (i - 1) * 26 * s, y - 70 * s, 12 * s * o.flash, C.yellow, i); }
 // small brazier: bowl on three legs; flare 0..1 jumps the flame
 function k14Brazier(ctx, x, y, t, flare = 0, lit = 1) {
@@ -112,4 +116,45 @@ function k14Squiggle(ctx, x, y, tx, ty, p) { if (p <= 0) return; k14Balloon(ctx,
 // white flash (2 frames) for impacts
 function k14Flash(ctx, t, t0, d = 0.07) { if (t >= t0 && t < t0 + d) { ctx.save(); ctx.globalAlpha = 0.85; ctx.fillStyle = C.white; ctx.fillRect(0, 0, K14_VW, K14_VH); ctx.restore(); } }
 // petals: seeded fall over [a, b], never inside the face boxes (faces: [[x, y, r]])
-function k14Petals(ctx, t, a, b, faces = []) { if (t < a || t > b + 2) return; const r = K.rng(141); for (let i = 0; i < 26; i++) { const t0 = a + r() * (b - a), x0 = 80 + r() * 840, sp = 120 + r() * 80, u = t - t0; if (u < 0 || u > 4) continue; const x = x0 + Math.sin(u * 2 + i) * 30, y = 120 + u * sp; if (faces.some(([fx, fy, fr]) => Math.hypot(x - fx, y - fy) < fr)) continue; ctx.save(); ctx.globalAlpha = Math.min(1, (4 - u)); shape(ctx, ell(x, y, 10, 6, 10).map(([px, py]) => [x + (px - x) * Math.cos(u * 3 + i) - (py - y) * Math.sin(u * 3 + i), y + (px - x) * Math.sin(u * 3 + i) + (py - y) * Math.cos(u * 3 + i)]), i % 2 ? C.red : '#f07a8a', { lw: 2.5, seed: 360 + i }); ctx.restore(); } }
+function k14Petals(ctx, t, a, b, faces = [], cut = 1e9) { if (t < a || t > b + 2 || t >= cut) return; const cutA = K.clamp((cut - t) / 0.3); const r = K.rng(141); for (let i = 0; i < 26; i++) { const t0 = a + r() * (b - a), x0 = 80 + r() * 840, sp = 120 + r() * 80, u = t - t0; if (u < 0 || u > 4) continue; const x = x0 + Math.sin(u * 2 + i) * 30, y = 120 + u * sp; if (faces.some(([fx, fy, fr]) => Math.hypot(x - fx, y - fy) < fr)) continue; ctx.save(); ctx.globalAlpha = Math.min(1, (4 - u)) * cutA; shape(ctx, ell(x, y, 10, 6, 10).map(([px, py]) => [x + (px - x) * Math.cos(u * 3 + i) - (py - y) * Math.sin(u * 3 + i), y + (px - x) * Math.sin(u * 3 + i) + (py - y) * Math.cos(u * 3 + i)]), i % 2 ? C.red : '#f07a8a', { lw: 2.5, seed: 360 + i }); ctx.restore(); } }
+
+// ---------- v2 additions ----------
+// the evil spirit as a separate little ghost (dark blue-black sheet, wavy tail, two yellow eyes). (x, y) = centre of its head; tail points to (tx, ty).
+// o: {s, alarm 0..1, stretch 0..1 (pulled up into a streak), alpha}
+function k14Ghost(ctx, x, y, t, o = {}) {
+  const s = o.s ?? 1, a = o.alpha ?? 1, al = K.clamp(o.alarm || 0), st = K.clamp(o.stretch || 0); if (a <= 0.01) return;
+  const tx = o.tx ?? x, ty = o.ty ?? y + 60 * s, dx = tx - x, dy = ty - y, L = Math.max(1, Math.hypot(dx, dy)), nx = dx / L, ny = dy / L, px = -ny, py = nx;
+  ctx.save(); ctx.globalAlpha *= a; ctx.translate(x, y); ctx.scale(1 - 0.45 * st, 1 + 1.6 * st); ctx.translate(-x, -y);
+  // body: round head tapering into a wavy tail toward (tx, ty)
+  const R = 22 * s, ta = Math.atan2(ny, nx), arc = [];
+  for (let i = 0; i <= 16; i++) { const an = ta + Math.PI / 2 + (i / 16) * Math.PI; arc.push([x + Math.cos(an) * R, y + Math.sin(an) * R]); }   // +p side -> back -> -p side
+  const n = 10, side = (sd) => { const run = []; for (let k = 1; k <= n; k++) { const u = k / n, w = R * (1 - u) * (1 - 0.15 * Math.sin(u * 9 + t * 8)), wig = Math.sin(u * 7 - t * 9) * 7 * s * u, d = u * L * 0.85;
+      run.push([x + nx * d + px * (sd * w + wig), y + ny * d + py * (sd * w + wig)]); } return run; };
+  const poly = [...arc, ...side(-1), ...side(1).reverse()];
+  shape(ctx, poly.concat([poly[0]]), '#1e1a3a', { lw: 5, seed: 371, dot: '#3a3470', pitch: 6, rad: 0.25, da: 0.5 });
+  // eyes and mouth (face looks at the viewer, slightly toward the tail side)
+  for (const sd of [-1, 1]) { ctx.save(); ctx.fillStyle = C.yellow; ctx.beginPath(); ctx.ellipse(x + sd * 8 * s, y - 2 * s, (4 + 2.5 * al) * s, (5 + 3.5 * al) * s, 0, 0, 7); ctx.fill(); ctx.fillStyle = C.black; ctx.beginPath(); ctx.arc(x + sd * 8 * s, y - 1 * s, (1.8 + 0.6 * al) * s, 0, 7); ctx.fill();
+    if (al < 0.5) { ctx.strokeStyle = C.yellow; ctx.lineWidth = 3 * s; ctx.beginPath(); ctx.moveTo(x + sd * 15 * s, y - 12 * s); ctx.lineTo(x + sd * 3 * s, y - 7 * s); ctx.stroke(); } ctx.restore(); }
+  ctx.strokeStyle = C.yellow; ctx.lineWidth = 2.6 * s; ctx.beginPath(); if (al > 0.5) ctx.arc(x, y + 10 * s, 4 * s, 0, 7); else { ctx.moveTo(x - 7 * s, y + 10 * s); ctx.lineTo(x - 2 * s, y + 6 * s); ctx.lineTo(x + 2 * s, y + 10 * s); ctx.lineTo(x + 7 * s, y + 6 * s); } ctx.stroke();
+  ctx.restore();
+}
+// the ghost circling above a head h = [x, y] (head centre), r = head radius; 1.6 s orbit, always above the eyes
+function k14GhostOn(ctx, h, r, t, o = {}) {
+  const w = 2 * Math.PI * t / 1.6, s = o.s ?? r / 30, lift = o.lift || 0;
+  const gx = h[0] + Math.cos(w) * 1.5 * r + (o.dx || 0), gy = h[1] - 2.3 * r + Math.sin(w) * 0.35 * r - lift;
+  k14Ghost(ctx, gx, gy, t, { s: s * 0.8, alarm: o.alarm, stretch: o.stretch, alpha: o.alpha, tx: h[0] - Math.cos(w) * 0.3 * r, ty: h[1] - r * 0.95 - lift * 0.6 });
+}
+// the cat's tail tip in world units (the same maths as Library cat(), read only); P as passed to cat()
+function k14CatTip(P) {
+  const s = P.s || 1, dir = P.dir ?? 1, ph = (P.ph || 0) * Math.sign(dir || 1), amp = P.amp ?? 0, sit = K.clamp(P.sit || 0), cr = K.clamp(P.crouch || 0), ar = K.clamp(P.arch || 0);
+  const A = -0.62 * sit, piv = [-50, -48], dy = BEAST.bob(ph, amp, 2) + 24 * cr - 12 * ar, T = (p) => { const q = BEAST.rot(p, A, piv); return [q[0], q[1] + dy]; };
+  const r = T([-68, -82]), u = K.clamp(P.tailUp ?? (0.35 + 0.65 * ar)), cu = P.tailCurl ?? 0.3;
+  const pts = K.bezier(r, [r[0] - 40, r[1] + 20 - 70 * u], [r[0] - 40 + 30 * u, r[1] + 50 - 160 * u], [r[0] - 30 + 40 * u + cu * 22, r[1] + 70 - 190 * u], 14);
+  const e2 = pts[pts.length - 1], prev = pts[pts.length - 2], ang = Math.atan2(e2[1] - prev[1], e2[0] - prev[0]); let p = e2;
+  for (let k = 1; k <= 4; k++) { const a2 = ang + cu * 0.5 * k; p = [p[0] + Math.cos(a2) * 7, p[1] + Math.sin(a2) * 7]; }
+  return [P.x + dir * s * p[0], P.y + s * p[1]];
+}
+// bold white hairs fanning up from a point (the cat's tail tip); n of 7, len in world px
+function k14TipHairs(ctx, x, y, n, len = 26) { for (const pass of [0, 1]) for (let i = 0; i < n; i++) { const a = -Math.PI / 2 + (i - 3) * 0.26; ctx.save(); ctx.lineCap = 'round'; ctx.lineWidth = pass ? 3.4 : 7; ctx.strokeStyle = pass ? C.white : C.black; ctx.beginPath(); ctx.moveTo(x, y); ctx.quadraticCurveTo(x + Math.cos(a) * len * 0.5 + 3, y + Math.sin(a) * len * 0.5, x + Math.cos(a) * len, y + Math.sin(a) * len); ctx.stroke(); ctx.restore(); } }
+// a balloon drawn at scale k around its centre (tail target in world units)
+function k14BalloonK(ctx, cx, cy, w, h, tx, ty, p, inside, k = 1) { ctx.save(); ctx.translate(cx, cy); ctx.scale(k, k); k14Balloon(ctx, 0, 0, w, h, (tx - cx) / k, (ty - cy) / k, p, inside); ctx.restore(); }

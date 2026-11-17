@@ -14,7 +14,7 @@ function a01Sky(ctx, u, t, o = {}) {
   const arc = (v) => [K.lerp(o.x0 ?? 1020, o.x1 ?? 1580, v), (o.hor ?? 820) - Math.sin(Math.PI * v) * (o.h ?? 560)];
   const sv = (u + 0.04) / 0.58, mv = (((u - 0.46) % 1) + 1) % 1 / 0.58;
   ctx.save(); ctx.beginPath(); ctx.rect(0, 0, A01_WW, 900); ctx.clip();
-  if (mv >= 0 && mv <= 1) { const m = arc(mv); moon(ctx, m[0], m[1], 60); }
+  if (mv >= 0 && mv <= 1) { const m = arc(mv); if (m[1] < 560) moon(ctx, m[0], m[1], 60); }   // v2: no moon sitting on the fence line (review note 10)
   if (o.sun !== false && sv >= 0 && sv <= 1) { const p = o.sunAt || arc(sv); ctx.save(); ctx.translate(p[0], p[1]); ctx.scale(o.sunS || 0.8, o.sunS || 0.8); sun(ctx, 0, 0, t); ctx.restore(); }
   ctx.restore(); return d;
 }

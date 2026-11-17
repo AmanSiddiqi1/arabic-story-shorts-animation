@@ -15,3 +15,11 @@ Decisions the plan left open, or changed after measuring the sets:
 - **Sound**: the plan's effect cues except **147.8 pop**, which falls inside speech (no pause between 144.97 and 149.06); 24.4 rustle uses the `paper` voice.
 - **Time of day**: u 0.25; the EVERY DAY montage runs three quick sun passes (DAY 1, 2, 3 at 3.92, 4.47, 5.02); late light 147-157 ends at u 0.38 (0.42 read as dull lavender).
 - **Insets**: crow on the branch (64.0-71.5, swells to fill the panel as it dives), cat in the bush with the leopard's shadow and paw (104.6-107.0), shepherd patting dog1 (160.0-161.45).
+
+## v2 (Fable round 1) decisions
+- Leopard S5 keys: held steps 43.5-45.35 to x 676 (nose ~910, past the trunk at 760); cat steps back to CX0+60 at 46.1; bars measured from the leopard nose / cat head / trunk centre (ratio ~1:2, labelled 2 STEPS and 4 STEPS).
+- Hill-tree row baked through story-local an40HillTrees with a clearing 990-1340 (same rng as Library hillTrees, so other trees are unchanged).
+- Bush eyes moved to (1290, 822). Leopard reaches the bush from the LEFT in the 104.6-107.3 inset, turns off screen at 108.4, paw up from 109.6.
+- S13/S14: dogs 2010/2100/2190, nearer by 35 per dog (y offsets 0/35/70), drawn back to front; leopard pushed back to 1350. Forest camera may go below zoom 1 (sky/ground fills like the pasture).
+- Pasture: flock and shepherds +80; pull-out at zoom 0.46; crow hover x 340 and scaled 1.6x in the wide.
+- S16 dogs in the foreground band (y 995, s x1.25) drawn after the friends; leopard eyes at (458, 742).

@@ -16,3 +16,11 @@ Film 163.3 s = narration 159.304 s + 4.0 s THE END hold (plan `duration + end_ho
 
 ## Pipeline notes
 - `ctx.filter` on the fox costs a little per frame but renders correctly in headless Chromium.
+
+## v2 (Fable round 1) decisions
+- Right stub raised to (668, 566) so the raven sits clear of the villagers' heads in S12/S13; trunk layer redrawn (all home-tree shots show the higher stub).
+- Snake default width 28 (was 22). Climb path starts with a rise out of the hole (head held at the hump 11.9-12.76) and ends above the chicks.
+- Fox `raise` paw is hidden under the head at s 0.8; k5Jackal draws a visible raised foreleg over the head instead (`raise` + `pawTo`, fox-local).
+- Cloud mime: K5_CLOUD (590, 372, 400x270), inside at 1.55x centred on (742, 574); sand floor.
+- Exit order is man2 (from behind the trunk), man1, woman (see review/revision_1.md note 1).
+- S14 uses skyCycle for the whole scene (no static-sky to cycle switch).

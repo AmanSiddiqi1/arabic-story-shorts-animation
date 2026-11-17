@@ -1,4 +1,5 @@
 // ===== AN-014 village scenes: S1 (0-9.88), S2 (9.88-19.2), S3 (19.2-28.1), S4 (28.1-30.42), S7 (42.7-47.6) =====
+const K14_ABOVE_GROUND = [-100, -100, 1200, 1003];   // everything above the low wall's base (y 903)
 const K14_HD = (x, s = 0.9) => [x, 900 - 176 * s / 0.9];   // standing head centre at scale s
 
 // ---------- S1: two doors, the loved man, the envier at the edge ----------
@@ -47,7 +48,7 @@ function k14S1(ctx, t) {
     if (loaf) k14Loaf(ctx, loaf[0], loaf[1], 0.8);
   }
   k14LowWall(ctx);
-  if (t < 3.5) { ctx.save(); ctx.globalAlpha = K.clamp((3.5 - t) / 0.3); k14Dash(ctx, [[150, 900], [300, 760], [450, 770], [640, 770], [740, 760], [890, 900]], K14B(t, 2.04, 0.9)); ctx.restore(); }
+  // v2: the dashed 'one neighbourhood' chain is replaced by a NEIGHBOURS label (k14Over)
 }
 
 // ---------- S2: envy at the wall, the swatted heart, the thought cloud ----------
@@ -66,7 +67,7 @@ function k14S2(ctx, t) {
   if (t >= 15.4) { tg = [380, 470]; E.mouth = t < 17.96 ? 'frown' : 'smile'; E.lid = 0.25; if (t >= 15.8) E.mouth = t < 17.96 ? 'closed' : 'smile'; }
   if (t >= 17.04 && t < 17.96) { E.drop = 5 * (pulse(t, 17.04, 0.26) + pulse(t, 17.3, 0.26) + pulse(t, 17.6, 0.26)); E.handLW = [532 + 8 * Math.sin(t * 9), 766]; E.handRW = [574, 768]; }
   if (t >= 17.96) { const r = Math.sin(t * 22) * 8; E.handLW = [548 + r, 765]; E.handRW = [570 - r, 768]; E.sq = 1 + 0.02 * Math.sin(t * 16); E.brow = 1; }
-  k14Act(ctx, E, t, 3, tg);
+  k14Clip(ctx, K14_ABOVE_GROUND, () => k14Act(ctx, E, t, 3, tg));   // v2: behind the wall nothing shows below its base
   k14LowWall(ctx);
   // hearts drift over the wall toward him; the third is swatted
   K14_S2H.forEach((h, i) => { if (t < h[0]) return; const [x, y] = k14HeartPos(t, h); if (i === 2 && t >= 14.72) return; const fade = i < 2 ? K.clamp((15.2 - t) / 0.3) : 1; if (fade <= 0) return; heart(ctx, x, y, 22 * K.ease.back(K.clamp((t - h[0]) / 0.25)), { alpha: fade }); });
@@ -120,7 +121,7 @@ function k14S3(ctx, t) {
     if (t >= 19.2 && t < 20.45) { const h = K.clamp((t - 19.75) / 0.4); E.handLW = [530 - 60 * h, 760 - 40 * h]; E.handRW = [590 - 40 * h, 752 - 50 * h]; E.sq = anticipate(t, 19.55, 0.2, 0.06); E.mouth = 'smile'; E.gaze = t < 19.6 ? [Math.sin(t * 14), 0] : [-1, 0.2]; }
     if (t >= 22.16 && t < 22.95) { E.mouth = t < 22.5 ? 'smile' : 'o'; E.brow = t < 22.5 ? 1 : -0.4; E.handLW = [530, 772]; E.handRW = [596, 772]; }
     if (t >= 24.44) { E.lid = 0.55; E.handLW = [530, 772]; E.handRW = [596, 772]; }
-    if (E.y < 975) k14Act(ctx, E, t, 3, E.gaze ? null : [270, 760]);
+    if (E.y < 975) k14Clip(ctx, K14_ABOVE_GROUND, () => k14Act(ctx, E, t, 3, E.gaze ? null : [270, 760]));
     if (t >= 19.75 && t < 20.45) { const h = K.clamp((t - 19.75) / 0.4); k14Basket(ctx, 500 - 30 * h, 720 - 30 * h, 0.8, -2.2 * h); }
     if (t >= 19.95 && t < 20.4) { const r = K.rng(78); for (let i = 0; i < 7; i++) { const u2 = K.clamp((t - 19.95 - i * 0.02) / 0.4); shape(ctx, ell(K.lerp(480, 300 + r() * 70, u2), 700 + (900 - 700) * u2 * u2 - 90 * Math.sin(Math.PI * u2), 9, 6, 8), i % 2 ? '#7a4212' : C.white, { lw: 3, seed: 520 + i }); } }
   }
@@ -152,7 +153,7 @@ function k14S4(ctx, t) {
   E.y = 900 - lift; E.sq = Math.min(landSquash(t, 29.98, 0.1), landSquash(t, 30.22, 0.1));
   if (t >= 29.78 && t < 30.24) { E.aL = K14_UP.aL; E.aR = K14_UP.aR; }
   if (t >= 30.24) { E.handLW = [520 + 30 * Math.sin(t * 20), 772]; E.handRW = [600, 772]; E.mouth = 'closed'; E.gaze = [0.3, 0.6]; }
-  k14Act(ctx, E, t, 3, E.gaze ? null : K14_HD(kfn(t, K14_S4X)));
+  k14Clip(ctx, K14_ABOVE_GROUND, () => k14Act(ctx, E, t, 3, E.gaze ? null : K14_HD(kfn(t, K14_S4X))));
   k14LowWall(ctx);
   // the kind man: bindle, hand on his own door, then the walk out
   const P = k14W(k14GM(t, { mouth: 'closed' }), K14_S4X, t, 24);

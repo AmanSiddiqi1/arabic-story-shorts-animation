@@ -1,7 +1,7 @@
 // ===== KD-005 The Raven and the Snake: local assets (snake, burrow, necklace, sparkle, home tree set, river and chase sets, jackal tint,
 // fight cloud, staff, dashed line). Drawn in this story only (Library/ untouched); proposed in ../library_proposals.md. Prefix k5 / K5_.
 const K5_GR = 900, K5_VW = 1000, K5_VH = 1230;
-const K5_HOME = { trunk: 560, nest: [500, 345], perch: [425, 346], low: [438, 686], stub: [668, 684], twig: [604, 213], stone: [395, 862], burrow: [860, 890] };
+const K5_HOME = { trunk: 560, nest: [500, 345], perch: [425, 346], low: [438, 686], stub: [668, 566], twig: [604, 213], stone: [395, 862], burrow: [860, 890] };
 const K5_B = (t, a, d, e = 'lin') => K.beat(t, a, d, e);
 const k5bake = (key, w, h, k, draw) => K.cached('kd5:' + key, () => { const c = K.layer(Math.round(w * k), Math.round(h * k)), x = c.getContext('2d'); x.scale(k, k); draw(x); return c; });
 const k5P = (x, y, c) => [500 + (x - c.x) * c.zoom, 615 + (y - c.y) * c.zoom];   // world -> panel (overlay) coordinates
@@ -31,10 +31,10 @@ function k5Neck(ctx, x, y, o = {}) {
 
 // ---------- snake ----------
 // k5Snake(ctx, pts, o): pts = [[x, y, u], ...] from tail to head, u = 0 (tail tip) .. 1 (head) for the taper.
-// o: w (body width 22), head (true), lid 0..1, eyes ('open' | 'x'), gaze [gx, gy], tongue 0..1, mouth 0..1, alpha
+// o: w (body width 28; v2: 30% thicker than v1's 22), head (true), lid 0..1, eyes ('open' | 'x'), gaze [gx, gy], tongue 0..1, mouth 0..1, alpha
 const K5_SNK = { body: '#2a2a36', hi: '#5c5c78' };
 function k5Snake(ctx, pts, o = {}) {
-  if (!pts || pts.length < 2) return; const w0 = o.w || 22, n = pts.length;
+  if (!pts || pts.length < 2) return; const w0 = o.w || 28, n = pts.length;
   const wd = (u) => w0 * (u < 0.7 ? 0.28 + 0.72 * Math.sin(Math.min(1, u / 0.7) * Math.PI / 2) : 1 - 0.12 * (u - 0.7) / 0.3);
   ctx.save(); if (o.alpha != null) ctx.globalAlpha *= o.alpha; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
   for (const pass of [0, 1, 2]) for (let i = 1; i < n; i++) { const a = pts[i - 1], b = pts[i], w = wd(b[2] ?? i / (n - 1));
@@ -74,9 +74,10 @@ function k5Track(raw) {
 // split a slice into runs by flag (1 = behind the trunk)
 function k5Runs(pts) { const runs = []; let cur = null; for (const p of pts) { const f = p[3] ? 1 : 0; if (!cur || cur.f !== f) { if (cur) cur.p.push(p); cur = { f, p: cur ? [cur.p[cur.p.length - 1], p] : [p] }; runs.push(cur); } else cur.p.push(p); } return runs; }
 // the climb: hole -> ground -> 1.5 turns round the trunk -> fork -> over the nest rim
-const K5_CLIMB = k5Track((() => { const r = [[860, 878, 0], [842, 892, 0], [800, 902, 0], [740, 904, 0], [680, 902, 0], [630, 898, 0], [606, 884, 0]];
+// v2: the head first rises out of the hole and holds (the hump), then the body pours down and along the ground
+const K5_CLIMB = k5Track((() => { const r = [[860, 884, 0], [858, 852, 0], [848, 826, 0], [830, 812, 0], [808, 814, 0], [790, 836, 0], [774, 870, 0], [752, 896, 0], [710, 904, 0], [660, 902, 0], [626, 896, 0], [606, 884, 0]];
   for (let k = 1; k <= 60; k++) { const f = k / 60, ph = f * 3 * Math.PI, y = 884 - f * 434, x = 560 + 46 * Math.cos(ph); r.push([x, y, Math.sin(ph) < 0 ? 1 : 0]); }
-  return r.concat([[505, 410, 0], [478, 368, 0], [462, 328, 0], [470, 298, 0], [492, 284, 0], [512, 281, 0]]); })());
+  return r.concat([[528, 400, 0], [556, 352, 0], [572, 302, 0], [566, 262, 0], [546, 238, 0], [524, 234, 0], [504, 242, 0]]); })());   // v2: up behind the far rim, head held above the chicks
 const K5_HOMEIN = k5Track([[520, 906, 0], [600, 908, 0], [680, 906, 0], [760, 904, 0], [820, 898, 0], [848, 888, 0], [860, 878, 0]]);
 const K5_RISE = k5Track((() => { const r = [[860, 880, 0], [858, 858, 0], [852, 836, 0]]; for (let k = 1; k <= 24; k++) { const f = k / 24, y = 836 - f * 150; r.push([848 + 26 * Math.sin(f * 2 * Math.PI), y, 0]); } r.push([838, 676, 0], [820, 670, 0]); return r; })());
 
@@ -102,7 +103,14 @@ function k5BurrowShade(ctx, x, y, s = 1) { ctx.save(); ctx.translate(x, y); ctx.
   const g = ctx.createRadialGradient(0, -20, 2, 0, -20, 30); g.addColorStop(0, NAVY2); g.addColorStop(0.45, NAVY2); g.addColorStop(1, 'rgba(13,34,96,0)'); ctx.fillStyle = g; ctx.fillRect(-40, -50, 80, 60); ctx.restore(); }
 
 // ---------- jackal: the Library fox in a sandy jackal tint (a canvas filter; the fox drawing itself is unchanged) ----------
-function k5Jackal(ctx, P) { ctx.save(); ctx.filter = 'saturate(0.42) brightness(1.06) sepia(0.25)'; fox(ctx, P); ctx.restore(); }
+// v2: the fox's own raised paw (raise) is hidden under its head at this scale, so a raised paw is drawn here, in front of the head:
+//   raise 0..1 lifts the near forepaw from the ground toward P.pawTo (fox-local, default [165, -150], the stop sign), pad facing forward
+function k5Jackal(ctx, P) { ctx.save(); ctx.filter = 'saturate(0.42) brightness(1.06) sepia(0.25)';
+  const r = K.clamp(P.raise || 0); fox(ctx, r > 0.001 && !(P.plant && P.sit > 0) ? { ...P, raise: 1e-6 } : P);
+  if (r > 0.001 && !(P.plant && P.sit > 0)) { const s = P.s || 1, dir = P.dir ?? 1, to = P.pawTo || [165, -150], ex = K.lerp(70, to[0], r), ey = K.lerp(-14, to[1], r);
+    ctx.save(); ctx.translate(P.x, P.y); if (P.rot) ctx.rotate(P.rot); ctx.scale(dir * s, s); ctx.translate(-60, 0); ctx.rotate(-0.55 * (P.sit || 0)); ctx.translate(60, 0);
+    seg(ctx, 54, -84, ex, ey, 18, FOXC, 4.5); shape(ctx, ell(ex + 4, ey - 4, 10, 18, 12), C.black, { lw: 3, seed: 3 }); ctx.restore(); }
+  ctx.restore(); }
 
 // ---------- raven: the Library crow + a beak grip point for the necklace / worm ----------
 function k5Grip(P, fx = 70) {
@@ -153,7 +161,7 @@ function k5TreeTrunk(x) {
   shape(x, [[530, 380], [392, 352], [392, 340], [534, 362]], WOOD, wd);                       // nest ledge (perch left of the nest)
   shape(x, [[528, 720], [428, 694], [424, 684], [528, 700]], WOOD, wd);                       // low bare branch, tip (430, 690)
   seg(x, 470, 704, 448, 676, 6, WOOD, 3.5);
-  shape(x, [[600, 708], [686, 690], [688, 680], [600, 690]], WOOD, wd);                       // right stub over the burrow side
+  shape(x, [[600, 592], [686, 574], [688, 564], [600, 574]], WOOD, wd);                       // right stub over the burrow side (v2: raised clear of the villagers' heads)
   for (const [cx, cy, cr] of [[520, 300, 46], [606, 300, 44]]) { x.beginPath(); x.arc(cx, cy, cr, 0, 7); x.fillStyle = GREEN; x.fill(); x.lineWidth = 7; x.strokeStyle = C.black; x.stroke(); x.fillStyle = dotPat(x, GREEND, 11, 0.28); x.beginPath(); x.arc(cx, cy, cr - 4, 0, 7); x.fill(); }
   for (const [rx, ry, a, b] of [[540, 904, 46, 14], [590, 906, 40, 12]]) shape(x, ell(rx, ry, a, b, 18), WOOD, { lw: 6, seed: 33 });
   shape(x, ell(395, 884, 50, 24, 20), STONE, { lw: 6, seed: 34, dot: STONED, pitch: 8, rad: 0.2, da: 0.5 });   // root stone, top ~862
@@ -165,7 +173,7 @@ const k5HomeTrunk = () => k5bake('homeTrunk', 1000, 1230, 2, (c) => { k5TreeTrun
 // draw the home set: o.u (time of day, live sky), o.behind(ctx) (things behind the trunk), o.night (0..1 darkening)
 function k5Home(ctx, t, o = {}) {
   if (o.u != null) { ctx.save(); ctx.beginPath(); ctx.rect(0, 0, 1000, 1230); ctx.clip(); skyCycle(ctx, o.u, { t }); ctx.restore(); }
-  else { ctx.drawImage(k5HomeSkyUp(), 0, -900, 1000, 900); ctx.drawImage(k5HomeSky(), 0, 0, 1000, 1230); sun(ctx, 860, 140, t); cloudFlat(ctx, 160 + ((t * 5) % 1300) - 200, 120, 0.7); }
+  else { ctx.drawImage(k5HomeSkyUp(), 0, -900, 1000, 900); ctx.drawImage(k5HomeSky(), 0, 0, 1000, 1230); sun(ctx, 860, 140, t); if (o.cloud !== false) cloudFlat(ctx, 160 + ((t * 5) % 1300) - 200, 120, 0.7); }
   ctx.drawImage(k5HomeLand(), 0, 0, 1000, 1230);
   if (o.behind) o.behind(ctx);
   ctx.drawImage(k5HomeTrunk(), 0, 0, 1000, 1230);

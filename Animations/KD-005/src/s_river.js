@@ -25,7 +25,7 @@ function k5RiverRv(t) {
   if (t >= 89.0) P.gaze = lookAt([rx - 32, ry - 64], K5_RIV.rock);
   if (t >= 91.7) { P.lid = Math.max(0.3, blink(t, 3) * 0); P.gaze = lookAt([rx - 32, ry - 64], K5_RIV.rock); }
   if (t >= 93.3) { P.gaze = gazePlan(t, [[93.3, lookAt([rx - 32, ry - 64], [742, 640])], [93.55, lookAt([rx - 32, ry - 64], K5_RIV.rock)]], 0.07); P.sq = anticipate(t, 93.3, 0.6, 0.18) * (t > 93.9 ? 0.82 : 1); P.sag = -0.3 * K5_B(t, 93.4, 0.3); P.lid = 0.25; P.brow = 1; }
-  if (t >= 94.2) { const u = k5u(t, 94.2, 95.3), b = K.bezier([rx, ry], [700, 420], [700, 760], [892, 796], 30), q = b[Math.round(K.ease.in(u) * 30)]; if (u < 1) return { ...P, x: q[0], y: q[1], fly: true, flap: u < 0.7 ? -0.6 : 0.9, sq: 1.15, rot: u < 0.6 ? -0.7 * (1 - u) : 0, dir: u < 0.45 ? -1 : 1, brow: 1 }; }
+  if (t >= 94.2) { const u = k5u(t, 94.2, 95.3), b = K.bezier([rx, ry], [925, 470], [945, 700], [892, 796], 30), q = b[Math.round(K.ease.in(u) * 30)]; if (u < 1) return { ...P, x: q[0], y: q[1], fly: true, flap: u < 0.7 ? -0.6 : 0.9, sq: 1.15, rot: u < 0.6 ? -0.7 * (1 - u) : 0, dir: u < 0.45 ? -1 : 1, brow: 1 }; }
   if (t >= 95.3) { Object.assign(P, { x: 892, y: 796, dir: -1, sq: landSquash(t, 95.3, 0.1) * 0.9, sag: 0, brow: 0.5, lid: 0, gaze: lookAt([860, 730], [742, 640]) }); }
   if (t >= 96.1 && t < 97.0) { P.gaze = lookAt([860, 730], [742, 650]); P.noBlink = true; }
   if (t >= 97.0) { const d = pulse(t, 97.0, 0.6); P.drop = 16 * d; P.headRot = -0.6 * d; P.gaze = [-0.6, 1]; P.sq = 0.9 + 0.12 * K5_B(t, 97.4, 0.4); }
@@ -61,7 +61,7 @@ const K5S10 = { a: 94.0, ww: 1000, cam: [[94, { x: 780, y: 620, zoom: 1.5 }], [9
     if (t > 94.3 && t < 95.3) { const v = [P.x, P.y - 40]; c.save(); c.strokeStyle = C.white; c.lineWidth = 6; c.lineCap = 'round'; for (let i = 0; i < 3; i++) { c.beginPath(); c.moveTo(v[0] + 30 - i * 10, v[1] - 70 - i * 18); c.lineTo(v[0] + 90 - i * 10, v[1] - 170 - i * 18); c.stroke(); } c.restore(); }
     k5Raven(c, P, t);
   }); },
-  over(ctx, t, cam, S) { if (t >= 94.5 && t < 95.6) { const [x, y] = k5P(760, 500, cam); sfx(ctx, 'SWOOP!', x, y, 70, K5_B(t, 94.5, 0.25), { rot: -0.15 }); } } };
+  over(ctx, t, cam, S) { if (t >= 94.5 && t < 95.6) { const [x, y] = k5P(800, 450, cam); sfx(ctx, 'SWOOP!', Math.min(760, x), Math.max(170, y), 70, K5_B(t, 94.5, 0.25), { rot: -0.15 }); } } };
 
 // ---------------- S11 101.8-120.4: the cry, then the chase ----------------
 const k5Man = (i, o) => ({ costume: 'villager', s: 0.82, seed: 20 + i, ...(i === 2 ? { pal: { robe: '#7aa6e8', dot: C.blue, hc: C.red }, age: 0.45 } : {}), ...o });
@@ -79,14 +79,16 @@ function k5RiverPeople(t) {
 }
 // chase part (from 106.4): positions of the raven and the three runners
 const K5_RX = [[106.4, 300], [107.7, 520], [108.9, 700], [109.3, 760], [110.1, 850], [111.5, 900], [112.3, 1080], [114.0, 1080], [114.6, 1530], [115.3, 1530], [115.9, 1980], [116.6, 1980], [117.6, 2200], [118.4, 2350], [119.7, 2560], [120.4, 2820]];
-const K5_RY = [[106.4, 470], [107.7, 520], [108.9, 560], [109.3, 505], [110.1, 520], [111.5, 505], [112.3, 546], [114.0, 546], [114.3, 480], [114.6, 546], [115.3, 546], [115.6, 480], [115.9, 546], [116.6, 546], [117.6, 470], [118.4, 460], [119.7, 450], [120.4, 400]];
+const K5_RY = [[106.4, 470], [107.7, 520], [108.9, 560], [109.3, 590], [109.5, 560], [110.1, 520], [111.5, 505], [112.3, 546], [114.0, 546], [114.3, 480], [114.6, 546], [115.3, 546], [115.6, 480], [115.9, 546], [116.6, 546], [117.6, 470], [118.4, 460], [119.7, 450], [120.4, 400]];
 const K5_M1 = (t) => kfn(t, [[106.4, 120], [108.9, 600], [109.6, 720], [110.1, 760], [111.5, 880], [112.3, 960], [113.2, 1035], [114.0, 1050], [115.2, 1460], [115.9, 1590], [116.5, 1890], [117.6, 2080], [118.4, 2180], [119.8, 2400], [120.4, 2480]], 'lin');
-const K5_W = (t) => K5_M1(t - 0.35) - 70;
-const K5_M2 = (t) => kfn(t, [[106.4, -60], [108.9, 340], [110.1, 520], [111.0, 520], [112.5, 760], [113.2, 860], [115.2, 1120], [116.5, 1500], [118.4, 1850], [120.4, 2200]], 'lin');
+const K5_W = (t) => K5_M1(t - 0.3) - 115;   // v2: the woman keeps 115+ behind man1 at every stop
+const K5_M2LAG = (t) => kfn(t, [[110.1, 0], [111.0, 0.9]], 'lin');
+const K5_M2 = (t) => K5_M1(t - 0.6 - K5_M2LAG(t)) - 230;   // man2 always last; halts to puff 110.1-111.0
 const K5_FALLS = [K5_M1, K5_W, K5_M2].map((f) => footfalls(f, 106.4, 120.4, 30));
 const k5ChaseRv = (t) => { const x = kfn(t, K5_RX, 'inOut'), y = kfn(t, K5_RY, 'inOut'), v = speed((tt) => kfn(tt, K5_RX, 'inOut'), t), perched = Math.abs(v) < 20 && y > 540;
   const P = { x, y, s: 1.05, dir: 1, seed: 3, fly: !perched, flap: perched ? 0 : Math.sin(t * (Math.abs(v) > 120 ? 13 : 6)), gaze: [-1, 0.6], neck: { ang: perched ? swing(t, 112.3, 0.3) : -K.clamp(v / 500, -0.6, 0.6) + 0.15 * Math.sin(t * 6), s: 0.8, spark: 0 } };
   if (perched) { P.sq = landSquash(t, [112.3, 114.6, 115.9].reduce((a, b) => (t >= b ? b : a), 112.3), 0.14); }
+  for (const [a, b] of [[113.28, 113.95], [114.66, 115.25]]) if (t >= a && t < b) { P.dir = -1; P.sq = (P.sq || 1) * (1 - 0.15 * pulse(t, a - 0.05, 0.15)); P.gaze = [0.3, 0.6]; P.headRot = 0.15; P.beak = 0; P.neck.ang = 0.45 * Math.sin((t - a - 0.1) * 18) * (t > a + 0.1 && t < a + 0.55 ? 1 : 0); P.neck.spark = k5u(t, a + 0.1, a + 0.5); }   // v2: whole head back to the pursuers, one deliberate shake
   if (t >= 117.6 && t < 118.3) { P.neck.ang = 0.5 * Math.sin((t - 117.6) * 22); P.neck.spark = Math.max(k5u(t, 117.6, 117.9), k5u(t, 117.95, 118.25)); }
   if (t >= 118.4) P.gaze = [1, 0.2];
   return P; };
@@ -95,7 +97,7 @@ function k5ChasePeople(t) {
   // man1 with the staff
   { const P = k5Man(1, { y: K5_GR, dir: 1, ...walk(K5_M1, t, { stride: 32, amp: 70 }), lean: 0.14, brow: 1, mouth: 'open' }); P.amp = Math.min(1.3, P.amp * 1.3);
     let sa = 0.6; P.aR = [0.9, 1.6];
-    if (t >= 108.9 && t < 110.0) { P.sq = anticipate(t, 108.9, 0.15, 0.12) * (t > 109.6 ? landSquash(t, 109.6, 0.14) : 1); P.y = K5_GR - hop(t, 109.05, 0.55, 0, 0, 46)[1]; P.aR = [2.7, 2.9]; sa = kfn(t, [[109.05, -0.7], [109.4, 1.4]], 'in'); P.mouth = 'open'; }
+    if (t >= 108.9 && t < 110.0) { P.sq = anticipate(t, 108.9, 0.15, 0.12) * (t > 109.6 ? landSquash(t, 109.6, 0.14) : 1); P.y = K5_GR - hop(t, 109.05, 0.55, 0, 0, 46)[1]; P.aR = [2.7, 2.9]; sa = kfn(t, [[109.05, -1.0], [109.3, -0.25], [109.42, 0.15], [109.7, 1.0]], 'lin'); P.mouth = 'open'; }   // v2: an upward arc that passes just under the raven's tail
     if (t >= 113.2 && t < 114.1) { P.gaze = lookAt([P.x, 700], hp); P.aR = [2.4, 2.9]; sa = 0.3; P.lean = 0; }
     P.gaze = P.gaze || lookAt([P.x, 700], hp); out.push({ P, staff: sa }); }
   // the woman
@@ -104,7 +106,7 @@ function k5ChasePeople(t) {
     if (t >= 113.3 && t < 114.1) { P.gaze = lookAt([P.x, 700], hp); P.handR = PERSON_HANDS.pointUp.R; }
     out.push({ P }); }
   // man2, puffing, holding his cap
-  { const P = k5Man(2, { y: K5_GR, dir: 1, ...walk(K5_M2, t, { stride: 26, amp: 70 }), lean: 0.1, handL: [-26, -222], mouth: 'o', gaze: lookAt([K5_M2(t), 700], hp) });
+  { const P = k5Man(2, { y: K5_GR, dir: 1, ...walk(K5_M2, t, { stride: 26, amp: 70 }), lean: 0.24, handL: [-26, -222], mouth: 'o', gaze: lookAt([K5_M2(t), 700], hp) });   // bent over, puffing
     if (t >= 110.1 && t < 111.0) { P.lean = 0.35; P.handL = PERSON_HANDS.hipsHands.L; P.handR = PERSON_HANDS.hipsHands.R; P.lid = 0.4; P.mouth = 'open'; }
     if (t >= 110.6 && t < 111.0) { P.handR = PERSON_HANDS.wave.R; P.lean = 0.25; }
     out.push({ P }); }
@@ -113,7 +115,7 @@ function k5ChasePeople(t) {
 }
 const K5S11 = { a: 101.8, ww: 1000,
   cam: [[101.8, { x: 760, y: 680, zoom: 1.5 }], [106.39, { x: 760, y: 640, zoom: 1.45 }]],
-  camFn(t) { if (t < 106.4) return null; const R = k5ChaseRv(t), m = K5_M1(t); let x = (m + R.x) / 2 + 80; if (t >= 118.4) x = K.lerp(x, 2560, K5_B(t, 118.4, 1.3, 'inOut')); return { x, y: 640, zoom: 1.15 }; },
+  camFn(t) { if (t < 106.4) return null; const R = k5ChaseRv(t), m = K5_M1(t); let x = (m + R.x) / 2 + 10; if (t >= 118.4) x = K.lerp(x, 2560, K5_B(t, 118.4, 1.3, 'inOut')); return { x, y: K5_GLY(1.25, 0.82), zoom: 1.25 }; },   // v2: closer, ground near 82 %
   wwAt(t) { return t < 106.4 ? 1000 : K5_CW; },
   draw(ctx, t) {
     if (t < 106.4) { k5RiverScene(ctx, t, (c) => { const { W, out } = k5RiverPeople(t);
@@ -128,12 +130,13 @@ const K5S11 = { a: 101.8, ww: 1000,
     if (t >= 116.6 && t < 117.6) for (const o of out) { const s = o.P.s, a = [o.P.x + 6, o.P.y - 200 * s]; const g = k5Grip(R); k5Dash(ctx, a, [g[0], g[1] + 40], K5_B(t, 116.6 + stagger(out.indexOf(o), 0.1), 0.3), { w: 4, col: C.yellow }); }
     for (const o of out.slice().reverse()) { person(ctx, o.P); if (o.staff != null) { const h = k5Hand(o.P, 1, o.P.aR); k5Staff(ctx, h, o.staff, 175, 50); k5Fist(ctx, h, 0.82); } }
     k5Raven(ctx, R, t);
+    if (t >= 109.42) feather(ctx, t, { t0: 109.42, t1: 111.2, a: [R.x - 60, 560], b: [K5_M1(109.42) + 140, 890], col: '#2a2a33' });
     if (t >= 107.7 && t < 108.95) { const m = out[0].P, top = [m.x + 30, m.y - 230 * 0.82], g = [R.x, R.y - 10]; const p = K5_B(t, 107.7, 0.3); k5Dash(ctx, [top[0] + 70, top[1] - 6], [top[0] + 70, K.lerp(top[1], g[1] + 10, p)], 1, { w: 5, col: C.white }); }
   },
   over(ctx, t, cam, S) {
     if (t >= 102.0 && t < 103.4) { const [x, y] = k5P(742, 540, cam); sfx(ctx, 'HEY!', x - 60, y - 40, 90, K5_B(t, 102.0, 0.2), { rot: -0.12, fill: C.red }); }
     if (t >= 108.0 && t < 108.95) { const R = k5ChaseRv(t), m = K5_M1(t), [x, y] = k5P(m + 100, (R.y + 700) / 2, cam); S.label(ctx, 'NOT TOO HIGH', x + 140, y, K5_B(t, 108.0, 0.3), { align: 'center', size: 40 }); }
-    if (t >= 109.4 && t < 110.2) { const [x, y] = k5P(K5_M1(t) + 60, 520, cam); sfx(ctx, 'SWISH!', x, y - 40, 60, K5_B(t, 109.4, 0.2), { rot: 0.1, fill: C.white }); }
+    if (t >= 109.4 && t < 110.2) { const [x, y] = k5P(K5_M1(109.4) - 30, 610, cam); sfx(ctx, 'SWISH!', x, y, 60, K5_B(t, 109.4, 0.2), { rot: -0.1, fill: C.white }); }   // v2: on the staff's arc, below and behind the bird
     const tc = t >= 115.3 ? 3 : t >= 114.46 ? 2 : t >= 113.28 ? 1 : 0;
     if (tc > 0 && t < 118.4) { S.label(ctx, 'TREE', 170, 150, K5_B(t, 113.28, 0.3), { align: 'center', size: 40 }); S.counter(ctx, tc, 170, 290, K5_B(t, [113.28, 114.46, 115.3][tc - 1], 0.3), { size: 90 }); }
   } };

@@ -48,23 +48,27 @@ function k31tree(ctx, t, figGlint = -1) {
 }
 
 // ---------- the man in the grove ----------
-const k31groveX = (t) => k31kv(t, [[79.6, 170], [95.2, 170], [95.7, 330], [110.24, 330], [110.8, 370], [129.5, 370], [130.3, 505], [147.5, 505], [147.8, 492], [148.4, 492], [149.8, 230]]);
+const k31groveX = (t) => k31kv(t, [[79.6, 200], [95.2, 200], [95.7, 330], [110.24, 330], [110.8, 370], [129.5, 370], [130.3, 505], [147.5, 505], [147.8, 492], [148.4, 492], [149.8, 230]]);
 function k31manGrove(t, birds) {
   const xf = k31groveX, P = k31man({ ...walk(xf, t, { stride: t > 148 ? 24 : 34 }), dir: 1, seed: 11 });
   const bA = birds.A, bB = birds.B, mid = [(bA.x + bB.x) / 2, Math.min(bA.y, bB.y) - 30];
   let cage = null, jarHands = null;
   P.gaze = lookAt(k31head(P), mid);
-  if (t < 89.28) {   // S9: the release
-    P.kneel = settleTo(t, 79.96, 0, 1, 0.5, 0.06); P.sq = anticipate(t, 79.8, 0.2, 0.06);
-    const set = k31e(t, 80.0, 0.6), carry = k31carried(P);
-    cage = { x: K.lerp(carry.x, 270, set), y: K.lerp(carry.y, 900, set) - 3 * pulse(t, 80.6, 0.15) };
-    P.handL = set < 1 ? k31W2L(P, [cage.x - 62, cage.y - 75]) : [10, -96]; P.handR = set < 1 ? k31W2L(P, [cage.x + 62, cage.y - 75]) : [40, -96];
-    if (t >= 80.6 && t < 81.62) { P.handR = k31W2L(P, [k31kv(t, [[80.6, 300], [81.02, 296], [81.6, 250]]), 852]); P.gaze = lookAt(k31head(P), [270, 840]); }
-    if (t >= 81.62) { P.handL = [-58, -96]; P.handR = [58, -96]; P.tip = -0.08 * k31e(t, 81.62, 0.5); P.lid = Math.max(0.2, blink(t, 4)); P.mouth = 'smile'; P.gaze = lookAt(k31head(P), [270, 830]); }
-    if (t >= 83.3) P.gaze = lookAt(k31head(P), [bA.x, bA.y - 30]);
-    if (t >= 84.94) { const k = k31e(t, 84.94, 0.35) * (1 - k31e(t, 86.6, 0.5)); P.kneel = 1 - 0.5 * k; P.handL = k31lp([-58, -96], [88, -140], k); P.handR = k31lp([58, -96], [104, -150], k); P.tip = 0.08 * k; P.mouth = k > 0.5 ? 'o' : 'smile'; P.brow = -0.6 * k; }
+  if (t < 89.28) {   // S9: the release (v2: three-quarter to the cage, one hand steadies the top, the other opens the door slowly; eyes on the birds)
+    P.kneel = settleTo(t, 79.96, 0, 1, 0.5, 0.06); P.sq = anticipate(t, 79.8, 0.2, 0.06); P.look = 0.5 * k31e(t, 80.0, 0.4);
+    const set = k31e(t, 79.9, 0.6), carry = k31carried(P), CG = [270, 900];
+    cage = { x: K.lerp(carry.x, CG[0], set), y: K.lerp(carry.y, CG[1], set) - 3 * pulse(t, 80.5, 0.15) };
+    cage.door = K.clamp(1.9 * k31e(t, 81.02, 0.75) + 0.04 * swing(t, 81.8, 1, 2, 4), 0, 1.9);
+    const doorEdge = [CG[0] + 0.75 * (30 - 60 * Math.cos(Math.min(cage.door, 1.62))), CG[1] - 0.75 * 62], top = [CG[0] - 52, CG[1] - 122];
+    P.gaze = lookAt(k31head(P), [CG[0], 830]); P.mouth = 'smile'; P.brow = 0.1;
+    if (set < 1) { P.handL = k31W2L(P, [cage.x - 62, cage.y - 75]); P.handR = k31W2L(P, [cage.x + 62, cage.y - 75]); }
+    else { const g = k31e(t, 80.5, 0.35), rel = k31e(t, 81.7, 0.4);
+      P.handL = k31lp(k31W2L(P, [cage.x - 62, cage.y - 75]), [36, -122], g);   // steadies the near side of the cage (the far arm cannot reach the ring) P.handR = k31lp(k31W2L(P, [cage.x + 62, cage.y - 75]), k31W2L(P, doorEdge), g);
+      if (rel > 0) { P.handL = k31lp(P.handL, [6, -88], rel); P.handR = k31lp(P.handR, [44, -86], rel); }
+      P.tip = 0.1 * g * (1 - rel) - 0.08 * k31e(t, 81.8, 0.5); P.tilt = 0.1 * k31e(t, 81.02, 0.5); P.brow = 0.35; P.lid = Math.max(blink(t, 4) * (t < 80.9 ? 1 : 0), k31long(t, 81.15, 0.7)); }
+    if (t >= 82.4) P.gaze = lookAt(k31head(P), [bA.x, bA.y - 30]);
+    if (t >= 84.94) { const k = k31e(t, 84.94, 0.35) * (1 - k31e(t, 86.6, 0.5)); P.kneel = 1 - 0.5 * k; P.handL = k31lp([6, -88], [88, -140], k); P.handR = k31lp([44, -86], [104, -150], k); P.tip = 0.08 * k - 0.08 * (1 - k); P.mouth = k > 0.5 ? 'o' : 'smile'; P.brow = -0.6 * k; P.tilt = 0; P.look = 0.5 * (1 - k); }
     if (t >= 86.6) { P.gaze = lookAt(k31head(P), [bA.x, bA.y - 30]); P.mouth = 'smile'; }
-    cage.door = K.clamp(1.9 * k31e(t, 81.02, 0.9) + 0.04 * swing(t, 81.92, 1, 2, 4), 0, 1.9);
   } else if (t < 105.56) {   // S10
     P.kneel = 1 - k31e(t, 92.98, 0.45); P.sq = anticipate(t, 92.8, 0.2, 0.05) * (t > 93.0 && t < 93.6 ? 1.03 : 1); cage = { x: 270, y: 900, door: 1.9 };
     P.handL = [-58, -96]; P.handR = [58, -96]; P.mouth = 'smile';
@@ -87,7 +91,7 @@ function k31manGrove(t, birds) {
     if (t >= 114.0) { P.aR = null; P.handR = PERSON_HANDS.pointDown.R; P.gaze = [0.6, 0.8]; P.talk = 0; }
     if (t >= 115.38 && t < 116.0) P.y = K31GR - 8 * pulse(t, 115.2, 0.25);
     if (t >= 116.56) { P.handR = [40, -100]; P.handL = [-60, -150]; P.gaze = lookAt(k31head(P), [265, 365]); }
-    if (t >= 120.48) { P.handL = PERSON_HANDS.armsOut.L; P.handR = PERSON_HANDS.armsOut.R; P.brow = -0.8; P.mouth = 'o'; P.gaze = lookAt(k31head(P), mid); }
+    if (t >= 120.2) { P.handL = PERSON_HANDS.armsOut.L; P.handR = PERSON_HANDS.armsOut.R; P.brow = -0.8; P.mouth = 'o'; P.gaze = lookAt(k31head(P), mid); }
     if (!cage) cage = t < 107.4 ? { x: 270, y: 900, door: 1.9 } : { x: 214, y: 900, rot: -150 / 70 + 0.3 };
   } else if (t < 130.44) {   // S12: the answer
     cage = { x: 214, y: 900, rot: -150 / 70 + 0.3 };
@@ -101,7 +105,7 @@ function k31manGrove(t, birds) {
       P.handR = dig ? k31lp([84, -58], [24, -118], 0.5 + 0.5 * Math.sin(ph)) : [60, -90]; P.handL = dig ? k31lp([80, -62], [10, -124], 0.5 - 0.5 * Math.sin(ph)) : [20, -96];
       P.sq = 1 - 0.02 * Math.abs(Math.sin(ph)); }
     else if (t < 135.1) { P.tip = 0.3; P.handR = [84, -60]; P.handL = [80, -64]; P.gaze = [0, 0.05]; P.eyes = 'wide'; P.noBlink = true; P.mouth = 'o'; }
-    else if (t < 135.92) { const u = k31e(t, 135.1, 0.7); P.tip = K.lerp(0.3, -0.1, u); P.sq = anticipate(t, 135.1, 0.2, 0.08); P.lid = 0.5; P.mouth = 'closed'; jarHands = true; }
+    else if (t < 135.92) { const u = k31e(t, 135.1, 0.7); P.tip = K.lerp(0.3, -0.1, u); P.sq = anticipate(t, 135.1, 0.2, 0.08); P.lid = t < 135.3 ? 0 : k31blinkAt(t, [135.32]); P.eyes = t < 135.3 ? 'wide' : 'open'; P.brow = t < 135.3 ? -0.8 : -0.3; P.noBlink = true; P.mouth = t < 135.3 ? 'o' : 'closed'; jarHands = true; }
     else { P.tip = 0; P.gaze = lookAt(k31head(P), [650, 840]); P.handL = [10, -96]; P.handR = [40, -96]; }
     if (t >= 136.24 && t < 137.14) { P.handR = k31W2L(P, [640 + 26 * Math.sin((t - 136.24) * 14), 850]); P.tilt = 0.08; P.mouth = 'smile'; }
     if (t >= 137.14 && t < 138.4) { const up = k31e(t, 137.6, 0.5); P.handR = k31W2L(P, [640 + 50 * up, 790 - 30 * up]); P.handL = k31W2L(P, [612, 795]); P.gaze = lookAt(k31head(P), [650, 790]); }
@@ -110,8 +114,10 @@ function k31manGrove(t, birds) {
     if (t >= 140.5) { P.handL = [-40, -100]; P.aR = t < 141.0 ? [2.6, 2.95] : null; P.handR = t < 141.0 ? null : [96, -150]; if (t >= 141.0) P.handL = [80, -150]; P.gaze = t < 140.85 ? [0.5, -0.8] : lookAt(k31head(P), [650, 800]); P.mouth = 'open'; P.sq = 1 + 0.05 * Math.abs(Math.sin((t - 140.5) * 9)) * (t < 142.2 ? 1 : 0); P.talk = t > 141.0 ? 0.7 + 0.3 * Math.sin(t * 16) : 0; }
   } else {   // S14: thanks and farewell
     cage = { x: 214, y: 900, rot: -150 / 70 + 0.3 };
-    P.kneel = 1 - k31e(t, 142.5, 0.4); P.handR = PERSON_HANDS.chest.R; P.handL = [-40, -96]; P.tip = 0.15 * pulse(t, 142.8, 0.9); P.lid = Math.max(0.6 * pulse(t, 142.8, 0.9), blink(t, 4)); P.mouth = 'smile';
-    if (t >= 144.42 && t < 146.6) { P.handL = [-48, -168]; P.handR = [48, -168]; P.gaze = [0, -1]; P.lid = Math.max(0.4, blink(t, 4)); P.talk = 0.4 * Math.abs(Math.sin(t * 8)); P.drop = -6; }
+    // شكر (142.50): hand on chest, a clear bow of head and torso, eyes up to the branch; ودعا (144.42): forearms forward, palms open and up, head up, lids softly closed
+    P.kneel = 1 - k31e(t, 142.5, 0.4); P.handR = PERSON_HANDS.chest.R; P.handL = [-40, -96]; const bow = pulse(t, 142.75, 1.4); P.tip = 0.15 * bow; P.drop = 10 * bow; P.mouth = 'smile'; P.brow = 0.3;
+    P.gaze = lookAt(k31head(P), [(bA.x + bB.x) / 2, bA.y - 30]); P.lid = blink(t, 4);
+    if (t >= 144.42 && t < 146.6) { const k = k31e(t, 144.42, 0.35); P.handL = k31lp([-40, -96], [-52, -128], k); P.handR = k31lp(PERSON_HANDS.chest.R, [62, -128], k); P.gaze = [0.1, -1]; P.drop = -6 * k; P.tilt = -0.08 * k; P.lid = Math.max(blink(t, 4), t > 144.8 && t < 145.45 ? k31e(t, 144.8, 0.15) * (1 - k31e(t, 145.3, 0.15)) : 0); P.mouth = 'smile'; P.tip = 0; }
     if (t >= 145.7 && t < 146.6) P.gaze = lookAt(k31head(P), [bA.x, bA.y]);
     if (t >= 146.6 && t < 147.24) { const u = k31e(t, 146.6, 0.3); P.handR = k31W2L(P, [K.lerp(730, 650, u), K.lerp(890, 778, u) + 6 * k31tap(t, [146.95, 147.1], 0.12)]); P.tip = 0.15 * (1 - u * 0.5); P.gaze = [0.4, 0.8]; }
     if (t >= 147.24) { P.sq = anticipate(t, 147.24, 0.25, 0.08) * (t > 147.5 ? 0.97 : 1); P.handL = [-6, -108]; P.handR = [70, -108]; P.tip = t < 148.4 ? -0.05 : -0.06; P.lid = t < 147.7 ? 0.5 : blink(t, 4); jarHands = 'carry'; }
@@ -131,7 +137,7 @@ function k31groveBirds(t, man) {
   if (t < 89.28) {
     // inside the cage, to the door sill, the weak flight
     const cy = k31cagePerch(900, 0.75), cfl = k31cageFloor(900, 0.75);
-    if (t < 82.4) { A.x = 300; A.y = cy; A.s = 0.72; A.crest = 0.1; B.x = 244; B.y = cy; B.s = 0.72; B.crest = 0.1; A.lid = Math.max(0.5, ba); B.lid = Math.max(0.4, bb); if (t > 81.6) { A.gaze = lookAt([296, 840], mh); B.gaze = lookAt([246, 840], mh); } A.inCage = B.inCage = true; }
+    if (t < 82.4) { A.x = 300; A.y = cy; A.s = 0.72; A.crest = 0.1; B.x = 244; B.y = cy; B.s = 0.72; B.crest = 0.1; A.lid = Math.max(0.5, ba); B.lid = Math.max(0.4, bb); if (t > 81.62) { const g = k31sac(t, [[81.62, 0], [81.95, 1], [82.15, 2]]); A.gaze = g === 0 ? [0.3, 0.7] : g === 1 ? lookAt([296, 840], mh) : [-1, 0]; B.gaze = g === 0 ? [0.4, 0.7] : g === 1 ? lookAt([246, 840], mh) : [1, 0]; if (g === 2) B.dir = 1; A.crest = 0.1 + 0.3 * k31e(t, 81.7, 0.3); B.crest = A.crest; A.lid = ba; B.lid = bb; } A.inCage = B.inCage = true; }
     else if (t < 83.3) { const [hx, lift] = hop(t, 82.4, 0.3, 300, 274, 16); A.x = hx; A.y = K.lerp(cy, cfl, k31e(t, 82.4, 0.3)) - lift; A.s = 0.72; A.sq = landSquash(t, 82.7, 0.1); A.lid = Math.max(k31blinkAt(t, [82.85, 83.05], 0.12), 0); A.crest = 0.3; A.gaze = t > 83.1 ? [-1, 0.2] : [0.6, -0.3]; A.out = true;
       B.x = 244; B.y = cy; B.s = 0.72; B.inCage = true; B.crest = 0.2; }
     else { const fa = k31flight(t, K31FA, 'weak'), fb = k31flight(t, K31FB, 'weak'); Object.assign(A, fa, { s: 0.74, out: true, eyes: t < 84.94 ? 'wide' : 'open', crest: 0 }); Object.assign(B, fb, { s: 0.74, out: true, eyes: t < 84.94 ? 'wide' : 'open', crest: 0 });
@@ -160,7 +166,11 @@ function k31groveBirds(t, man) {
     if (t >= 109.36 && t < 110.3) { A.sq = 1 - 0.1 * pulse(t, 109.4, 0.3); B.sq = 1 - 0.1 * pulse(t, 109.45, 0.3); A.eyes = B.eyes = 'wide'; }
     if (t >= 110.3) { A.lid = ba; B.lid = bb; }
     if (t >= 112.68 && t < 114.0) { A.tip = -0.15; B.tip = -0.12; }
-    if (t >= 120.48) { A.scratch = k31e(t, 120.48, 0.3); A.scratchJ = 4 * Math.sin(t * 20); A.lid = 0.4; A.gaze = [0.5, -0.4]; B.headRot = 0.55; B.gaze = [0.2, 1]; B.drop = 6; B.dir = -1; }
+    if (t >= 116.56 && t < 120.48) { const k = k31e(t, 116.56, 0.4); A.crest = K.lerp(0.05, 0.7, k); B.crest = K.lerp(0.05, 0.7, k); A.gaze = lookAt(k31hHead(A), mh); B.gaze = lookAt(k31hHead(B), mh); B.dir = -1; }
+    // بكما (120.48): caught out. Crests drop in two frames; A scratches his head with a foot, B studies her toes and shuffles sideways (5 frames later)
+    if (t >= 120.48) { A.crest = 0; B.crest = 0; A.scratch = k31e(t, 120.48, 0.25); A.scratchJ = 4 * Math.sin(t * 20); A.lid = 0.4; A.gaze = [0.5, -0.4]; A.sq = 1 - 0.08 * k31e(t, 120.48, 0.12); A.drop = 4;
+      const b = k31e(t, 120.65, 0.15); B.headRot = 0.6 * b; B.gaze = [0.2, 1]; B.drop = 8 * b; B.dir = -1; B.sq = 1 - 0.08 * b; B.lid = 0.3;
+      B.x = 480 + 7 * Math.sin(Math.max(0, t - 120.7) * 14) * (t < 121.15 ? 1 : 0); B.y = k31perchY(B.x, t) - 3 * Math.abs(Math.sin(Math.max(0, t - 120.7) * 14)) * (t < 121.15 ? 1 : 0); }
   } else if (t < 130.44) {   // S12: she answers
     const [hx1, l1] = hop(t, 121.22, 0.3, 480, 468, 10), [hx2, l2] = hop(t, 121.6, 0.3, 468, 455, 10), bx = t < 121.6 ? hx1 : hx2;
     B.x = bx; B.y = k31perchY(bx, t) - l1 - l2; B.sq = landSquash(t, 121.52, 0.1) * landSquash(t, 121.9, 0.1); A.x = 540; A.y = k31perchY(540, t); A.tip = -0.1 * k31e(t, 121.22, 0.4); A.crest = 0.3; B.crest = 0.3;
@@ -168,8 +178,8 @@ function k31groveBirds(t, man) {
     if (t >= 122.46) { B.crest = 0.5; B.sq = 1.05; B.drop = -4; B.lid = Math.max(bb, k31long(t, 123.0, 0.45)); }
     if (t >= 124.0) { B.gaze = [0, -1]; B.headRot = -0.3; B.lid = 0.2; }
     if (t >= 125.2) { B.crest = K.clamp(settleTo(t, 125.2, 0.5, 1, 0.4, 0.2), 0, 1.2); B.sag = -0.8 * k31e(t, 125.2, 0.3); B.beak = t < 127.1 ? 0.9 + 0.4 * Math.abs(Math.sin(t * 13)) : 0; B.headRot = -0.15; }
-    if (t >= 127.18) { B.cover = settleTo(t, 127.18, 0, 1, 0.3, 0.1); B.drop = 6; B.sag = 0; A.cover = settleTo(t, 127.38, 0, 1, 0.3, 0.1); A.drop = 6; }
-    if (t >= 128.58) { B.cover = 1 - k31e(t, 128.58, 0.25); A.cover = 1 - k31e(t, 128.78, 0.25); B.gaze = lookAt(k31hHead(B), mh); B.headRot = 0.15; B.drop = 3 * pulse(t, 128.9, 0.4); B.sag = -0.35 * pulse(t, 128.9, 0.4); B.lid = 0.2; B.beak = 0; }
+    if (t >= 127.18) { B.cover = settleTo(t, 127.18, 0, 1, 0.25, 0.1); B.drop = 6; B.sag = 0; A.headRot = 0.45 * (pulse(t, 127.4, 0.45) + pulse(t, 127.95, 0.45)); A.drop = 8 * (pulse(t, 127.4, 0.45) + pulse(t, 127.95, 0.45)); A.crest = 0.6; }
+    if (t >= 128.58) { B.cover = 1 - k31e(t, 128.58, 0.25); B.gaze = lookAt(k31hHead(B), mh); B.headRot = 0.15; B.drop = 3 * pulse(t, 128.9, 0.4); B.sag = -0.35 * pulse(t, 128.9, 0.4); B.lid = 0.2; B.beak = 0; }
   } else if (t < 145.7) {   // S13 and the bow of S14
     A.x = 540; B.x = 470; A.y = k31perchY(540, t); B.y = k31perchY(470, t); A.crest = 0.4; B.crest = 0.4;
     const hole = [640, 900]; A.gaze = lookAt(k31hHead(A), t < 135.9 ? hole : [650, 860]); B.gaze = lookAt(k31hHead(B), t < 135.9 ? hole : [650, 860]);
@@ -203,7 +213,7 @@ function k31drawGrove(ctx, t) {
   const cg = M.cage, cgB = cg ? (cg.rot ? (() => { const cx = cg.x, cy = cg.y - 56; return [cx - Math.sin(cg.rot) * 56, cy + Math.cos(cg.rot) * 56]; })() : [cg.x, cg.y]) : null;
   if (cg) k31cage(ctx, cgB[0], cgB[1], 0.75, 'back', { rot: cg.rot });
   if (Bd.B.inCage) k31hoopoe(ctx, Bd.B); if (Bd.A.inCage) k31hoopoe(ctx, Bd.A);
-  if (cg && !cg.held) k31cage(ctx, cgB[0], cgB[1], 0.75, 'front', { door: cg.door ?? 1.9, rot: cg.rot, latch: 1 });
+  if (cg && !cg.held) k31cage(ctx, cgB[0], cgB[1], 0.75, 'front', { door: cg.door ?? 1.9, rot: cg.rot, latch: 1, hingeR: true });
   // the jar out of the ground (S13 on, S14)
   let jar = null;
   if (jarOut && t < 147.24) { const x = K.lerp(K31JAR.x, 650, jarU), y = K.lerp(K31JAR.y, 900, jarU) - (jarDown ? 0 : 0); jar = { x, y, sq: jarDown ? landSquash(t, 135.92, 0.06) : 1 }; }
@@ -212,7 +222,7 @@ function k31drawGrove(ctx, t) {
   if (jar && t < 135.92) { const hs = [k31W2L(P, [jar.x - 60, jar.y - 78]), k31W2L(P, [jar.x + 60, jar.y - 78])]; P.handL = hs[0]; P.handR = hs[1]; }
   person(ctx, P);
   if (dug && t < 135.1) ctx.restore();
-  if (cg && cg.held) k31cage(ctx, cgB[0], cgB[1], 0.75, 'front', { door: 1.9 });
+  if (cg && cg.held) k31cage(ctx, cgB[0], cgB[1], 0.75, 'front', { door: 1.9, hingeR: true });
   // clods flying left from each scoop
   if (k31in(t, 130.6, 134.6)) for (let k = 0; k < 24; k++) { const a = 130.6 + k / 6, d = t - a; if (d > 0 && d < 0.6) { const r = K.rng(200 + k), vx = -(120 + r() * 120), vy = -(140 + r() * 80); shape(ctx, ell(620 + vx * d, 890 + vy * d + 450 * d * d, 7 + r() * 4, 6, 8), K31SOIL, { lw: 3, seed: 180 + k }); } }
   // the jar, the lid, the coins
@@ -220,12 +230,12 @@ function k31drawGrove(ctx, t) {
   const jarClip = jar && t < 135.92; if (jarClip) { ctx.save(); ctx.beginPath(); ctx.rect(-50, -50, 1100, 952); ctx.rect(592, 900, 96, hd + 4); ctx.clip(); }
   if (jar) { const fill = t >= 139.66 ? k31e(t, 139.66, 0.3) : (t >= 138.4 ? 0.3 : 0); k31jar(ctx, jar.x, jar.y, K31JAR.s, { lid: !lidOff && t < 146.82 + 0.35 ? !lidOff : true, soil: t < 136.24 ? 1 : K.lerp(1, 0.3, k31e(t, 136.24, 0.9)), fill: lidOff || t < 146.82 ? fill : 0, sq: jar.sq, glint: 0 }); }
   if (jarClip) ctx.restore();
-  if (jar && t >= 135.92) dustBurst(ctx, jar.x, 898, t - 135.92, 6, 8, 16, 60, 0.6, 7);
+  if (jar && t >= 135.92 && t < 136.6) for (let k = 0; k < 6; k++) { const d = t - 135.92, r = K.rng(300 + k), vx = (k % 2 ? 1 : -1) * (60 + r() * 70), vy = -(80 + r() * 60); ctx.save(); ctx.globalAlpha *= 1 - K.clamp(d / 0.6); shape(ctx, ell(jar.x + vx * d, 896 + vy * d + 400 * d * d, 6 + r() * 4, 5, 8), K31SOIL, { lw: 3, seed: 310 + k }); ctx.restore(); }   // v2: brown clods, not pale dust
   if (lidOff) k31jarLid(ctx, lidPos[0], lidPos[1] + (t < 138.4 ? 10 : 0), K31JAR.s, t < 138.4 ? 0.3 : 0.15);
   if (t >= 146.82 && t < 147.24) { const u = k31e(t, 146.6, 0.3); /* the lid travels back with the hand */ }
   if (t >= 139.66 && t < 149.56) [[0, -1, 0.9], [1, 1, 1.25]].forEach(([i, sd, dur]) => { const d = t - 139.86 - i * 0.25; if (d < 0) return; const u = K.clamp(d / dur), x = 650 + sd * (20 + 120 * K.ease.out(u)), r = 12, flat = i === 0 && u >= 1 ? K.clamp((d - dur) / 0.3) : 0;
     k31coin(ctx, x, 896 - r * (1 - flat * 0.6) - 40 * Math.sin(Math.PI * Math.min(1, d / 0.35)) * (d < 0.35 ? 1 : 0), r, { rot: sd * (x - 650) / r, flat }); });
-  if (k31in(t, 138.4, 147.24)) k31goldGlow(ctx, 650, 790, 170, t, k31e(t, 138.4, 0.3) * (t > 146.6 ? 1 - k31e(t, 146.6, 0.3) : 1));
+  if (k31in(t, 138.4, 147.24)) k31goldGlow(ctx, 650, 790, 170, t, k31e(t, 138.4, 0.3) * (1 - 0.72 * k31e(t, 142.5, 0.6)) * (t > 146.6 ? 1 - k31e(t, 146.6, 0.3) : 1));   // v2: closes to a soft glow for the thanks
   if (t >= 140.5 && t < 141.0 && P.aR) { const h = k31hand(P, 1, [Math.sin(2.6) * 38 + Math.sin(2.95) * 36 + 31, -132 + Math.cos(2.6) * 38 + Math.cos(2.95) * 36]); k31twoFingers(ctx, h[0], h[1] - 6, 1.3); }
   // the carried jar (S14)
   if (t >= 147.24) { const cj = k31L2W(P, P.dir > 0 ? [32, -62] : [32, -62]), lift = k31e(t, 147.24, 0.35), from = [650, 900]; const jx = K.lerp(from[0], cj[0], lift), jy = K.lerp(from[1], cj[1], lift); k31jar(ctx, jx, jy, 0.55 + 0.25 * (1 - lift), { lid: true, glint: t >= 147.68 ? (t - 147.68) / 0.6 : 0 }); }
@@ -239,7 +249,8 @@ function k31drawGrove(ctx, t) {
   // footfall dust on the heavy walk out
   if (t >= 148.4) for (const f of footfalls(k31groveX, 148.4, 149.6, 24)) dustBurst(ctx, f.x, 898, t - f.t, 3, 5, 9, 20, 0.4, Math.round(f.t * 10));
   // the cloud shadow (S12)
-  if (k31in(t, 124.76, 126.6)) { const u = (t - 124.76) / 1.6, x = K.lerp(250, 760, u); ctx.save(); ctx.globalAlpha = 0.3 * Math.sin(Math.PI * u); ctx.fillStyle = dotPat(ctx, C.blue, 10, 0.4); ctx.fillRect(x - 130, 380, 260, 220); ctx.restore(); }
+  if (k31in(t, 125.2, 126.9)) { const u = (t - 125.2) / 1.7, x = K.lerp(-300, 1300, K.ease.inOut(u)), a = 0.16 * Math.sin(Math.PI * u);   // v2: a soft, wide, travelling cloud shadow
+    ctx.save(); ctx.fillStyle = dotPat(ctx, C.blue, 10, 0.4); for (let i = -6; i <= 6; i++) { ctx.globalAlpha = a * Math.cos((i / 7) * Math.PI / 2) ** 2; ctx.fillRect(x + i * 40 - 20, -50, 40, 1400); } ctx.restore(); }
   // the heart drifting down (S10)
   if (k31in(t, 94.54, 96.0)) { const u = (t - 94.54) / 1.46, mh = k31head(P); heart(ctx, K.lerp(515, mh[0] + 20, u) + 20 * Math.sin(u * 9), K.lerp(470, mh[1] - 70, u), 22); }
   return { man: P, A: Bd.A, B: Bd.B };
@@ -256,9 +267,11 @@ function k31trap(c, tl, o = {}) {
   else { const sw = o.swing || 0; c.save(); c.translate(sx, 900); c.rotate(sw); birds.forEach((b, i) => k31hoopoe(c, { ...b, x: -60 + i * 90, y: 0 })); k31mesh(c, [[-190, 6], [-140, -150], [0, -190], [140, -150], [190, 6]], 30, 8, 1); c.restore(); }
   if (o.hunter) { const k = o.hunter; c.save(); c.beginPath(); c.rect(0, 0, 1000, 780 + 30); c.clip(); k31hunter(c, { ...K31HUNT, x: 840, y: 1000 - 160 * k, s: 1.1, dir: -1, lid: 0.4, brow: -0.4, mouth: 'smile', gaze: [-1, 0.4] }, { net: false }); c.restore(); bush(c, { x: 840, w: 260, h: 170, seed: 4 }); }
 }
-function k31cloudNet(ctx, t, man) {
+function k31cloudNet(ctx, t, man, R = {}) {
   const p = k31e(t, 116.56, 0.5) * (1 - k31e(t, 129.3, 0.3)); if (p <= 0) return; const h = k31head(man);
-  thoughtCloud(ctx, 265, 400, 300, 220, t, { p, tail: [h[0] - 30, h[1] - 50], bg: C.yellow, scale: 0.34, at: [500, 840], inside: (c) => {
+  // v2: on أمسكت (119.68) the cloud moves up beside the birds for the close framing; from أجاب (121.22) its trail points to the speaking bird
+  const u = k31e(t, 119.68, 0.45), cw = K.lerp(300, 216, u), ch = K.lerp(220, 160, u), bh = R.B ? k31hHead(R.B) : [455, 470];
+  thoughtCloud(ctx, K.lerp(265, 345, u), K.lerp(400, 352, u), cw, ch, t, { p, tail: t < 121.22 ? [h[0] - 30, h[1] - 50] : [bh[0] - 6, bh[1] - 26], bg: C.yellow, scale: 0.34 * cw / 300, at: [500, 840], inside: (c) => {
     if (t < 121.22) { const tl = t - 117.72; if (t < 117.72) { k31trap(c, -1, {}); return; } const shut = t >= 119.68 ? k31e(t, 119.68, 0.1) : 0; k31trap(c, Math.min(tl, 1.95), { hunter: t >= 118.44 ? k31e(t, 118.44, 0.4) : 0, closed: shut, swing: shut > 0.5 ? swing(t, 119.78, 0.2, 1.5, 2) : 0 }); return; }
     if (t < 125.9) { k31trap(c, 1.95, { hunter: 1, closed: 1 }); return; }
     const tl = t - 125.9, fadeA = t < 126.46 ? 1 : 1 - 0.85 * k31e(t, 126.46, 0.5), snap = t >= 127.86;

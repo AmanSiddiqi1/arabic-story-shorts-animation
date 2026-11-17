@@ -9,7 +9,7 @@ const F41_FOX_TALK = [[27.1, 30.95], [31.35, 36.3], [64.6, 66.1], [66.95, 68.3],
 const F41_CROW_TALK = [[45.24, 46.0], [46.7, 50.1], [50.3, 53.5], [54.16, 55.85], [56.9, 57.3], [58.9, 61.2], [88.68, 89.7], [92.0, 93.9], [100.6, 101.4], [102.2, 103.3], [104.0, 105.0], [116.66, 119.1], [120.2, 120.9],
   [122.48, 124.2], [132.9, 134.4], [136.0, 137.2], [138.7, 139.5], [140.4, 141.3], [152.84, 153.9]];
 // sky: morning until the wipe (the dawn-to-day cross-fade is hidden under it), then plain day; the warmth comes from F41_WARM (a multiply tint), dusk under the LATER card
-const F41_U = (t) => kfn(t, [[0, 0.1], [21.45, 0.1], [21.62, 0.25], [160.9, 0.25], [161.2, 0.47], [F41_DUR, 0.48]], 'lin');
+const F41_U = (t) => kfn(t, [[0, 0.25], [160.9, 0.25], [161.2, 0.47], [F41_DUR, 0.48]], 'lin');
 const F41_WARM = (t) => kfn(t, [[0, 0], [61, 0.05], [100, 0.12], [144, 0.32], [160.9, 0.42], [161.2, 0.7], [F41_DUR, 0.75]], 'lin');
 
 // ---------- fox: position functions ----------
@@ -19,10 +19,10 @@ const F41_FX2 = (t) => kfn(t, [[20.95, 540], [21.54, 1060]], 'in');
 const F41_FX3 = (t) => kfn(t, [[21.54, -170], [23.2, 440]], 'out');
 const F41_FX4 = (t) => kfn(t, [[63.72, 440], [64.4, 500]]);
 const F41_FX5 = (t) => kfn(t, [[102.3, 500], [102.7, 482]]);
-const F41_FXW = (t) => kfn(t, [[148.95, 392], [152.04, 262], [152.3, 252], [153.94, 190]], 'lin');
-const F41_FX12 = (t) => (t < 163.46 ? kfn(t, [[161.55, 980], [162.7, 520]], 'out') : kfn(t, [[163.46, 520], [164.5, 240]], 'in'));
+const F41_FXW = (t) => kfn(t, [[148.95, 392], [152.04, 340], [152.3, 334], [153.94, 305]], 'lin');
+const F41_FX12 = (t) => (t < 163.2 ? kfn(t, [[161.15, 1020], [162.74, 540]], 'out') : kfn(t, [[163.2, 540], [164.3, 250]], 'in'));
 const F41_FALLS = [...footfalls(F41_FX3, 21.6, 23.2, F41_ST), ...footfalls(F41_FX2, 20.95, 21.54, F41_ST)];
-const F41_FALLS12 = footfalls(F41_FX12, 161.55, 164.5, F41_ST);
+const F41_FALLS12 = footfalls(F41_FX12, 161.15, 164.3, F41_ST);
 
 // crow anchors
 const F41_NEST = [790, 610], F41_CY = 592;
@@ -55,15 +55,15 @@ function f41FoxFoot(t) {   // S1, S2, S12 at the foot of the mountain
   }
   // S12 home at dusk
   const W = walk(F41_FX12, t, { stride: F41_ST }); Object.assign(P, W); P.amp = W.amp * 0.6; P.dir = -1; P.ears = f41Ears(-0.6); P.headUp = 0.15; P.lid = 0.4; P.tip = 0.04;
-  if (f41In(t, 162.78, 163.46)) { P.headUp = -0.35 * F41B(t, 162.78, 0.25); P.gaze = [0.7, -1]; P.ears = f41Ears(0); P.lid = Math.max(0.2, 0.9 * pulse(t, 163.05, 0.25)); }
-  if (t >= 163.46) P.tailUp = 0.1 + 0.4 * pulse(t, 164.1, 0.3);
+  if (f41In(t, 162.74, 163.3)) { P.ears = f41Ears(K.lerp(-0.6, 0.6, F41B(t, 162.74, 0.12))); const k = F41B(t, 162.9, 0.25) * (1 - F41B(t, 163.15, 0.2)); P.headUp = K.lerp(0.15, -0.6, k); P.gaze = [1, -1]; P.lid = 0.15; P.tip = 0; P.drop = -6 * k; }
+  if (t >= 163.2) P.tailUp = 0.1 + 0.4 * pulse(t, 164.0, 0.3);
   return f41Lid(P, t, 21);
 }
 
 function f41FoxTop(t) {   // S3-S11 on the terrace
   const P = { y: F41_GT, s: 0.8, dir: 1, seed: 21, x: 440, ears: f41Ears(0.8), tailUp: 0.5, mouth: 'smile', brow: -0.4, lid: 0.3 };
   if (t < 23.2) { Object.assign(P, walk(F41_FX3, t, { stride: F41_ST })); P.tailUp = 0.9; P.ears = f41Ears(1); P.lid = 0; P.brow = 0; }
-  else if (t < 63.72) P.x = 440; else if (t < 64.4) Object.assign(P, walk(F41_FX4, t, { stride: F41_ST })); else if (t < 102.3) P.x = 500; else if (t < 137.28) P.x = F41_FX5(t);
+  else if (t < 63.72) P.x = 440; else if (t < 64.4) Object.assign(P, walk(F41_FX4, t, { stride: F41_ST })); else if (t < 102.3) { P.x = 500; if (f41In(t, 90.1, 93.7)) { const W = walk(F41_FXH, t, { stride: F41_ST }); P.x = W.x; P.ph = W.ph; P.amp = W.amp; } } else if (t < 137.28) P.x = F41_FX5(t);
   else if (t < 148.95) { const [hx, lift] = hop(t, 137.45, 0.35, 482, 392, 34); P.x = hx; P.y -= lift; }
   const crowH = f41CrowHead({ x: F41_CXF(t), y: F41_CY, s: 1.2, dir: -1 }), eye = () => f41FoxEye(P), toCrow = () => lookAt(eye(), crowH);
   P.gaze = toCrow(); P.talk = talk(t, F41_FOX_TALK);
@@ -93,11 +93,12 @@ function f41FoxTop(t) {   // S3-S11 on the terrace
     if (t < 41.65) P.gaze = [0.2, 1];
   }
   else if (t < 50) {   // inspected; the shadow behind him (he sees nothing)
-    P.sit = 0.4 * F41B(t, 43.0, 0.4); P.plant = true; P.tailUp = wag(0.12, 2); if (t >= 48.6) P.tailUp += 0.4 * pulse(t, 48.6, 0.3);
+    P.sit = 0.4 * F41B(t, 43.0, 0.4); P.plant = true; P.tailUp = wag(0.12, 2);
+    if (f41In(t, 48.95, 49.95)) { const k = F41B(t, 48.95, 0.15) * (1 - F41B(t, 49.7, 0.25)); P.gaze = [-1, -0.5]; P.eyes = k > 0.5 ? 'wide' : 'open'; P.lid = 0; P.tailUp = K.lerp(P.tailUp, 1.3, k); P.puff = 1 + 0.45 * k; P.ears = f41Ears(-0.6 * k); P.mouth = 'closed'; P.headUp = -0.1 * k; }
   }
   else if (t < 57.54) {   // 'and I am a bird': the tongue; the innocent look
     P.sit = 0.4; P.plant = true;
-    if (t >= 52.44 && t < 53.6) { P.mouth = 'smile'; P.plant = false; P.raise = t < 52.72 ? 0 : 1 * F41B(t, 52.72, 0.12); if (t >= 52.72) { P.eyes = 'wide'; P.lid = 0; P.brow = -0.7; } }
+    if (t >= 52.44 && t < 54.0) { P.mouth = 'smile'; P.lid = t < 52.79 ? 0.5 : 0; P.brow = -0.5; if (t >= 52.79) { const k = F41B(t, 52.79, 0.1) * (1 - F41B(t, 53.75, 0.25)); P.plant = false; P.raise = 0.6 * k; P.reach = 0; P.eyes = 'wide'; P.brow = -0.8; P.ears = f41Ears(-1); P.mouth = 'closed'; P.headUp = 0.38 * k; P.sq = 1 - 0.04 * pulse(t, 52.79, 0.3); } }
     if (t >= 55.2) { P.sit = 0.5; P.plant = false; P.raise = 0.7 * F41B(t, 55.2, 0.25); P.brow = -0.7; P.lid = 0; P.headUp = -0.08; }
   }
   else if (t < 62.78) {   // the heart bursts; he watches the dots fall
@@ -113,7 +114,7 @@ function f41FoxTop(t) {   // S3-S11 on the terrace
     if (t < 66.88) { P.raise = F41B(t, 64.5, 0.25); P.sq = 1 + 0.04 * F41B(t, 64.5, 0.3); P.lid = 0.3; }
     else if (t < 68.36) { const u = (t - 66.88) / 1.42; P.reach = F41B(t, 66.88, 0.2); P.headUp = K.lerp(-0.25, 0.2, u); P.gaze = lookAt(eye(), [K.lerp(100, 1000, u), 600]); }
     else { P.sit = 0.6 * F41B(t, 68.36, 0.35); P.raise = 0.7; P.lid = 1; P.headUp = -0.15; P.noBlink = true;
-      if (f41In(t, 70.3, 71.0)) { P.lid = 0.75; P.gaze = toCrow(); }
+      if (f41In(t, 70.35, 70.9)) { P.lid = 0; P.gaze = toCrow(); P.brow = -0.6; }
       if (t >= 71.0 && t < 71.5) P.lid = 1;
       if (t >= 71.5) { P.lid = 0; P.eyes = 'wide'; P.raise = 0.7 * (1 - F41B(t, 71.6, 0.3)); P.brow = -0.7; }
     }
@@ -121,15 +122,20 @@ function f41FoxTop(t) {   // S3-S11 on the terrace
   else if (t < 85.76) {   // tells his tale; waits, grinning
     P.sit = 0.4; P.brow = -0.3; P.raise = 0.8; P.gaze = t < 74 || t > 81.4 ? toCrow() : lookAt(eye(), [400, 330]);
     if (t >= 81.52) { P.raise = 0; P.reach = 0.8 * F41B(t, 81.52, 0.3); P.brow = -0.6; P.tailUp = wag(0.2); }
-    if (t >= 82.34) { P.reach = 0; P.plant = true; P.brow = -0.5; P.tip = 0.06 * F41B(t, 84.14, 0.4); P.tailUp = wag(0.22); }
+    if (t >= 82.34) { P.reach = 0; P.plant = false; P.reach = 0.75 * F41B(t, 82.5, 0.3); P.headUp = -0.12; P.mouth = 'smile'; P.brow = -0.6; P.ears = f41Ears(1); P.lid = 0.15; P.tip = 0.05 * F41B(t, 84.14, 0.4); P.tailUp = 0.65 + 0.25 * Math.sin((t - 82.34) * 2 * Math.PI * 3); P.gaze = toCrow(); }
   }
   else if (t < 92.6) {   // the flat look; the cloud swept away; nods
-    P.sit = 0.4; P.plant = true; P.brow = -0.5; P.tip = 0.06 * (1 - F41B(t, 87.0, 0.6)); P.tailUp = 0.65 + 0.22 * (1 - F41B(t, 85.76, 1.6)) * Math.sin(t * 2 * Math.PI * 4);
-    if (f41In(t, 87.7, 88.2)) { P.eyes = 'wide'; P.lid = 0; P.sq = 0.96; }
-    if (t >= 91.0) { P.ears = f41Ears(1); P.headUp = 0.13 * (pulse(t, 91.0, 0.35) + pulse(t, 91.45, 0.35) + pulse(t, 91.9, 0.35)); }
+    P.sit = 0.4; P.plant = true; P.brow = -0.5; P.mouth = 'smile'; P.tip = 0.05 * (1 - F41B(t, 87.0, 0.6)); P.ears = f41Ears(K.lerp(1, 0.2, F41B(t, 87.3, 0.4)));
+    { const ph = (t - 82.34) * 2 * Math.PI * 3, am = 0.25 * (1 - K.clamp((t - 85.76) / 2.08)); P.tailUp = 0.65 + am * Math.sin(ph); }   // the wag slows to a stop by 87.84
+    if (t < 87.2) { P.plant = false; P.reach = 0.75 * (1 - F41B(t, 86.7, 0.45)); P.gaze = toCrow(); }
+    if (f41In(t, 87.7, 88.2)) { P.eyes = 'wide'; P.lid = 0; P.sq = 0.96; P.mouth = 'closed'; }
+    if (f41In(t, 87.84, 89.9)) P.mouth = 'closed';
+    if (t >= 89.9) { const k = F41B(t, 90.1, 0.3); P.sit = 0.4 * (1 - k); P.plant = k < 0.5; P.ears = f41Ears(K.lerp(0.2, 1, k)); P.tailUp = K.lerp(0.65, 0.95, k) + 0.1 * k * Math.sin(t * 2 * Math.PI * 3); P.brow = -0.7; P.headUp = -0.12 * k; P.lid = 0; P.mouth = 'smile'; P.sq = 1 + 0.03 * pulse(t, 90.1, 0.4); }
   }
   else if (t < 103.32) {   // 'but you': the wolf; caught again
-    P.sit = 0.4; P.plant = true; P.headUp = 0.1 * (1 - F41B(t, 93.6, 0.5)); P.mouth = 'smile';
+    P.sit = 0.4 * F41B(t, 93.7, 0.5); P.plant = true; P.headUp = 0.1 * (1 - F41B(t, 93.6, 0.5)); P.mouth = 'smile';
+    if (t < 93.28) { P.ears = f41Ears(1); P.tailUp = 0.95 + 0.1 * Math.sin(t * 2 * Math.PI * 3); P.brow = -0.7; P.lid = 0; P.headUp = -0.12; }
+    else if (t < 93.9) { P.eyes = 'wide'; P.lid = 0; P.brow = 0; P.ears = f41Ears(-0.3); P.tailUp = 0.95; P.headUp = 0; P.sq = 1 - 0.04 * pulse(t, 93.28, 0.25); }   // freezes
     if (t >= 93.9 && t < 97.08) P.gaze = lookAt(eye(), [400, 330]);
     if (t >= 97.08 && t < 99.6) { P.ears = f41Ears(-1); P.brow = -0.8; P.sq = 0.95; P.lid = 0; P.eyes = 'wide';
       P.gaze = look(t, eye(), [[97.08, [300, 760]], [97.4, [800, 760]], [97.75, [300, 700]], [98.1, [820, 600]], [98.5, [250, 820]], [98.9, crowH], [99.25, [300, 760]]], 0.07); }
@@ -141,7 +147,8 @@ function f41FoxTop(t) {   // S3-S11 on the terrace
     P.sit = 0.4 * F41B(t, 103.5, 0.4); P.plant = true; P.mouth = 'smile'; P.brow = -0.4; P.lid = 0.3; P.gaze = t < 115.8 ? lookAt(eye(), [400, 330]) : toCrow();
     if (t >= 119.14 && t < 120.18) P.gaze = lookAt(eye(), f41Heart(t).p);
     if (f41In(t, 120.62, 120.84)) { P.lid = 1; P.noBlink = true; }
-    if (t >= 121.28) { P.gaze = lookAt(eye(), [360, 700]); P.eyes = 'wide'; P.lid = 0; P.mouth = 'closed'; P.ears = f41Ears(-0.6); P.brow = -0.5; }
+    if (t >= 120.0 && t < 121.76) { P.gaze = lookAt(eye(), F41_MEDAL); P.lid = 0.3; P.brow = -0.4; }
+    if (t >= 121.76) { P.gaze = lookAt(eye(), F41_MEDAL); P.eyes = 'wide'; P.lid = 0; P.mouth = 'closed'; P.ears = f41Ears(-1); P.brow = -0.5; P.sq = 1 - 0.03 * pulse(t, 121.76, 0.3); }
   }
   else if (t < 137.28) {   // the sparrow; the limit
     P.sit = 0.4; P.plant = true; P.mouth = 'closed'; P.brow = -0.3; P.lid = 0.3; P.ears = f41Ears(-0.2); P.gaze = t < 132.3 ? lookAt(eye(), [400, 330]) : toCrow();
@@ -153,20 +160,25 @@ function f41FoxTop(t) {   // S3-S11 on the terrace
     else if (t < 138.2) { P.sq = t < 137.8 ? 1.1 : landSquash(t, 137.8, 0.12); P.ears = f41Ears(-1); P.eyes = 'wide'; P.lid = 0; P.puff = 1.35; P.mouth = 'o'; P.tailUp = 0.7; }
     else { P.ears = f41Ears(-0.8); P.mouth = 'closed'; P.brow = -0.6; P.puff = K.lerp(1.35, 1, F41B(t, 138.2, 1)); }
     if (t >= 140.52 && t < 141.34) { P.reach = 0.6 * F41B(t, 140.52, 0.25); P.brow = -0.8; P.mouth = 'smile'; P.ears = f41Ears(0); P.gaze = lookAt(eye(), f41Heart(t).p); }
-    if (t >= 142.44) { P.gaze = lookAt(eye(), f41Heart(t).p); P.ears = f41Ears(-0.4 - 0.6 * F41B(t, 142.6, 1)); P.headUp = 0.25 * F41B(t, 142.6, 1); }
+    if (t >= 142.44) { P.gaze = lookAt(eye(), f41Heart(t).p); P.ears = f41Ears(-0.4); P.headUp = 0.25 * F41B(t, 142.6, 1); P.plant = false; P.reach = 0.55 * F41B(t, 142.44, 0.3); P.mouth = 'o'; }
   }
   else {   // S11 lets go, walks away, sad then angry; stops; turns back; the admission
-    P.mouth = 'closed'; P.brow = -0.2; P.ears = f41Ears(-1); P.tailUp = 0; P.lid = 0.5; P.sq = t < 145.6 ? K.lerp(1, 0.93, F41B(t, 143.94, 0.8)) : 0.96;
-    if (t < 145.66) { P.headUp = 0.25; P.gaze = [0.4, 1]; }
-    else if (t < 148.58) { P.headUp = t < 146.5 ? 0.05 : 0.25; P.gaze = t < 146.5 ? toCrow() : [0, 1]; P.lid = t < 146.5 ? 0.3 : 0.6; }
+    // the collapse in steps: paw down (143.94), ears (145.21), tail, head and wet eyes (146.38), one look up at her (147.76), the turn (148.58)
+    P.mouth = 'closed'; P.brow = -0.2 - 0.3 * F41B(t, 146.38, 0.5); P.lid = K.lerp(0.2, 0.55, F41B(t, 146.38, 0.6)); P.headUp = 0.25 + 0.1 * F41B(t, 146.38, 0.6);
+    P.plant = false; P.reach = 0.55 * (1 - F41B(t, 143.94, 0.45));
+    P.ears = f41Ears(K.lerp(-0.4, -1, F41B(t, 145.21, 0.25)));
+    P.tailUp = 0.5 * (1 - F41B(t, 146.38, 0.35)) + swing(t, 146.73, 0.12, 1.6, 2.5); P.tip = 0.08 * F41B(t, 146.38, 0.6);
+    P.sq = K.lerp(1, 0.94, F41B(t, 146.38, 0.6)); P.gaze = [0.4, 1];
+    if (t >= 146.38) P.wet = true;
+    if (f41In(t, 147.76, 148.4)) { P.gaze = toCrow(); P.lid = 0.25; }
     const TR = turnFlip(t, [[0, 1], [148.58, -1], [155.94, 1], [160.62, -1]], 0.7); P.dir = TR.dir; P.y += 10 * TR.sink;
     if (t >= 148.58 && t < 155.94) { P.x = t < 148.95 ? 392 : F41_FX(t); if (t >= 148.95) { const W = walk(F41_FXW, t, { stride: F41_ST }); P.ph = W.ph; P.amp = Math.min(0.6, W.amp); }
       P.headUp = 0.3; P.tip = 0.06; P.lid = 0.5; P.gaze = [0.2, 0.8];
-      if (t >= 149.9 && t < 152.04) P.wet = true;
+      if (t < 152.04) P.wet = true;
       if (t >= 152.04 && t < 153.94) { P.brow = 1; P.ears = f41Ears(1); P.mouth = t < 152.9 ? 'open' : 'closed'; P.sq = 1 - 0.06 * pulse(t, 152.04, 0.25); P.headUp = 0; P.tip = 0.02; P.lid = 0.2; P.gaze = [1, 0]; }
       if (t >= 153.94) { P.amp = 0; P.plant = false; P.raise = 0.5 * F41B(t, 153.94, 0.2); P.brow = K.lerp(1, 0.3, F41B(t, 154.3, 1)); P.ears = f41Ears(t < 154.84 ? 0.4 : 1); P.headUp = 0; P.gaze = t < 155.2 ? [1, 0] : [1, -0.6]; P.tip = 0; }
     } else if (t >= 155.94) {
-      P.x = 190; P.sit = 0.5 * F41B(t, 156.4, 0.5); P.plant = true; P.brow = K.lerp(0.3, 0, F41B(t, 155.94, 0.8)); P.ears = f41Ears(0); P.gaze = toCrow(); P.lid = 0.3; P.headUp = -0.1;
+      P.x = 305; P.sit = 0.5 * F41B(t, 156.4, 0.5); P.plant = true; P.brow = K.lerp(0.3, 0, F41B(t, 155.94, 0.8)); P.ears = f41Ears(0); P.gaze = toCrow(); P.lid = 0.3; P.headUp = -0.1;
       if (t >= 157.46 && t < 159.8) { P.plant = false; P.reach = 0.8 * F41B(t, 157.46, 0.3); P.mouth = 'smile'; P.brow = -0.3; }
       if (t >= 159.8) { P.plant = false; P.raise = 0.45 * F41B(t, 159.85, 0.2); P.mouth = 'smile'; P.brow = -0.3; }
       if (t >= 160.4) { P.headUp = -0.1 + 0.15 * pulse(t, 160.4, 0.3); P.sit = 0.5 * (1 - F41B(t, 160.45, 0.2)); }
@@ -175,10 +187,11 @@ function f41FoxTop(t) {   // S3-S11 on the terrace
   return f41Lid(P, t, 21);
 }
 const F41_FX = (t) => (t < 148.95 ? 392 : F41_FXW(t));
+const F41_FXH = (t) => kfn(t, [[90.2, 500], [90.55, 516], [93.3, 516], [93.62, 500]]);
 
 // ---------- the crow ----------
 const F41_CROW_FLY = [[120, 330], [520, 230], [760, 420], [838, 592]];
-function f41Crow(t) {
+function f41CrowBase(t) {
   const P = { kind: 'crow', x: F41_CXF(t), y: F41_CY, s: 1.2, dir: -1, seed: 9, lid: 0.35, sq: 1 };
   if (t < 9.3) {   // S1 flies in and lands
     const u = K.ease.inOut(K.clamp((t - 8.3) / 1.0));
@@ -211,9 +224,11 @@ function f41Crow(t) {
     if (t < 44.54) { P.tip = 0.12 * F41B(t, 42.7, 0.3); P.lid = 0.4; const fe = fp ? f41FoxEye(fp) : [520, 800];
       P.gaze = look(t, head(), [[42.7, fe], [43.05, [fe[0] + 30, fe[1] + 30]], [43.4, [fe[0] - 40, 890]], [43.7, fe]], 0.07); }
     else if (t < 46.04) { P.sag = -0.3; P.headRot = -0.05; }
-    else if (t < 50.14) { P.sag = -0.8 * F41B(t, 46.04, 0.15) * (1 - 0.5 * F41B(t, 48.5, 1.2)); P.headRot = -0.15; }
-    else if (t < 51.4) { P.sag = 0.3 * F41B(t, 50.14, 0.3); P.headRot = 0.15; }
-    else if (t < 54.12) { P.sq = K.lerp(0.97, 0.85, F41B(t, 51.4, 0.3)) ; P.x += tremble(t, 1.5) * (t < 53.2 ? 1 : 0); P.eyes = t < 51.9 ? 'wide' : 'open'; P.lid = t < 51.9 ? 0 : 0.3; P.drop = 6; }
+    else if (t < 50.14) { P.headRot = -0.15; }
+    else if (t < 54.12) {   // 'and I am a bird': pulls back and down over the eggs, wing spread over the nest; one slow blink at his clap
+      const k = F41B(t, 50.34, 0.3) * (1 - F41B(t, 53.7, 0.4)); P.sq = K.lerp(0.97, 0.88, k); P.x -= 15 * k; P.drop = 6 * k; P.headRot = -0.1 * k; P.wingK = k; P.wingAng = 0.62; P.crestUp = k;
+      P.eyes = f41In(t, 50.34, 53.0) ? 'wide' : 'open'; P.lid = 0; if (t < 52.6) P.x += tremble(t, 1.2) * k;
+      if (t >= 53.0) { P.lid = Math.max(0.3, pulse(t, 53.05, 0.75)); P.noBlink = true; } }
     else if (t < 56.34) { P.headRot = 0.4 * F41B(t, 54.12, 0.3); P.sag = -0.4; P.lid = 0; }
     else if (t < 57.34) { P.headRot = kfn(t, [[56.34, 0], [56.6, -0.25], [56.85, 0.25], [57.1, -0.15], [57.34, 0]]); if (t < 56.6) { P.eyes = 'shut'; } }
     else if (t < 59.06) { const back = F41B(t, 57.34, 0.2) * (1 - F41B(t, 57.54, 0.08)), jab = F41B(t, 57.54, 0.1) * (1 - F41B(t, 57.9, 0.4));
@@ -224,28 +239,27 @@ function f41Crow(t) {
   }
   if (t < 103.32) {
     P.lid = 0.4;
-    if (f41In(t, 67.0, 71.1)) { P.headRot = 0.5 + 0.05 * Math.sin(t * 9); P.lid = 0.5; P.sag = 0.3; }
+    if (f41In(t, 67.0, 71.1)) { P.headRot = 0.5 + 0.05 * Math.sin(t * 9) - 0.15 * F41B(t, 70.45, 0.08); P.lid = 0.5; P.sag = 0.3; }
     if (f41In(t, 71.1, 72.1)) { P.lid = 0.3; P.noBlink = true; }
     if (f41In(t, 72.1, 82.34)) { P.headRot = 0.1; P.gaze = t > 74 && t < 81 ? lookAt(head(), [400, 330]) : toFox(); }
-    if (f41In(t, 82.34, 85.76)) { P.headRot = 0.3; P.gaze = lookAt(head(), [400, 330]); }
-    if (f41In(t, 85.76, 87.46)) { P.lid = 0.5; P.noBlink = true; }
+    if (f41In(t, 82.34, 87.46)) { P.headRot = 0.25 * F41B(t, 83.5, 2.0); P.gaze = t < 83.5 ? lookAt(head(), [400, 330]) : toFox(); if (f41In(t, 85.8, 86.6)) { P.lid = Math.max(0.4, pulse(t, 85.8, 0.8)); P.noBlink = true; } }
     if (f41In(t, 87.46, 88.6)) { const k = F41B(t, 87.46, 0.15) * (1 - F41B(t, 87.61, 0.1)), sw = F41B(t, 87.61, 0.25) * (1 - F41B(t, 88.0, 0.5)); P.sag = 0.3 * k - 0.9 * sw; P.tip = -0.1 * sw; }
-    if (f41In(t, 89.7, 92.6)) { P.headRot = 0.15 * pulse(t, 90.0, 0.6); P.sag = -0.2; }
-    if (f41In(t, 92.6, 100.58)) { P.sag = -0.8 * F41B(t, 92.6, 0.12) * (1 - F41B(t, 94.4, 0.6)); P.tip = 0.06; P.drop = 4; }
+    if (f41In(t, 89.7, 92.6)) { const n = pulse(t, 90.0, 0.32) + pulse(t, 90.42, 0.32); P.headRot = 0.3 * n; P.drop = 8 * n; P.sag = -0.2; P.lid = 0.25; }
+    if (f41In(t, 92.6, 100.58)) { P.tip = 0.06; P.drop = 4; }
     if (t >= 100.58) { P.sag = 0.4; P.sq = 0.93; P.drop = 8; if (t >= 101.48 && t < 101.8) P.gaze = [-0.4, 1]; }
     return f41Lid(P, t, 9);
   }
   if (t < 132.3) {
     P.lid = 0.4; P.gaze = t < 115.8 && !f41In(t, 109, 111) ? lookAt(head(), [400, 330]) : toFox();
     if (t < 104.9) { P.sq = settleTo(t, 103.32, 0.93, 1.04, 0.5); P.sag = -0.3 * F41B(t, 103.4, 0.3); }
-    if (f41In(t, 119.14, 120.1)) { P.sag = -0.8 * F41B(t, 119.14, 0.12); }
+    if (f41In(t, 119.14, 120.1)) { P.headRot = -0.1; }
     if (f41In(t, 122.48, 124.1)) { P.sag = -0.5 * F41B(t, 122.48, 0.2); P.headRot = 0.2; }
     return f41Lid(P, t, 9);
   }
   if (t < 143.94) {
     P.sq = K.lerp(1, 1.08, F41B(t, 133.22, 0.4)); P.lid = 0.3; P.sag = -0.2;
     P.drop = -4 * (pulse(t, 134.46, 0.2) + pulse(t, 135.16, 0.2)); P.tip = 0.05 * (pulse(t, 134.46, 0.2) + pulse(t, 135.16, 0.2));
-    if (f41In(t, 138.22, 139.56)) { P.sag = -0.9 * F41B(t, 138.22, 0.15); P.headRot = -0.2; P.beak = Math.max(P.beak, 1.0); }
+    if (f41In(t, 138.22, 139.56)) { P.headRot = -0.2; P.beak = Math.max(P.beak, 1.0); }
     if (f41In(t, 139.56, 141.34)) { P.sag = -0.5; P.tip = 0.15 * F41B(t, 139.56, 0.2); P.sq = 0.92; }
     if (f41In(t, 141.34, 142.44)) { P.lid = 1; P.noBlink = true; P.headRot = kfn(t, [[141.34, 0.25], [141.7, -0.25], [142.1, 0]]); }
     if (t >= 142.44) P.gaze = lookAt(head(), f41Heart(t).p);
@@ -260,6 +274,15 @@ function f41Crow(t) {
   return f41Lid(P, t, 9);
 }
 
+// v2: the crow's gestures on top of the base timeline: a pointing wing on the four accusations, the crest, a head bob while she talks
+const F41_POINTS = [[46.04, 2.2], [93.28, 1.0], [119.14, 1.0], [138.22, 1.2]];
+const F41_CRESTS = [[47.78, 50.14], [93.28, 95.0], [120.68, 121.9], [138.98, 141.3]];
+function f41Crow(t) { const P = f41CrowBase(t); if (t < 21.54) return P;
+  for (const [t0, hold] of F41_POINTS) { const pt = f41Point(t, t0, hold); if (pt.back) P.sag = (P.sag || 0) + 0.5 * pt.back; if (pt.k > (P.wingK || 0)) { P.wingK = pt.k; const fe = f41FoxEye(f41FoxTop(t)), sc = P.s || 1; P.wingAng = K.clamp(Math.atan2(fe[1] - (P.y - 48 * sc), (fe[0] - P.x) * (P.dir ?? 1)), 0.15, 0.9); } }
+  for (const [a, b] of F41_CRESTS) if (f41In(t, a, b + 0.3)) P.crestUp = Math.max(P.crestUp || 0, F41B(t, a, 0.12) * (1 - F41B(t, b, 0.3)));
+  if (talk(t, F41_CROW_TALK) > 0) { const b = Math.max(0, Math.sin(t * 2 * Math.PI * 2.4)); P.drop = (P.drop || 0) + 5 * b; P.headRot = (P.headRot || 0) - 0.05 * b; }
+  return P; }
+
 // ---------- hearts ----------
 function f41Heart(t) {   // {p: [x, y], r, a, show}
   if (t >= 32.66 && t < 57.75) {   // the first heart
@@ -271,7 +294,8 @@ function f41Heart(t) {   // {p: [x, y], r, a, show}
   }
   if (t >= 66.18 && t < 143.94) {   // the second, bigger heart
     let p = [645, 640 + 7 * Math.sin(t * 1.8)], r = 44 * settleTo(t, 66.18, 0.2, 1, 0.5, 0.2) * (1 + 0.15 * (pulse(t, 66.18, 0.3) + pulse(t, 66.88, 0.3)));
-    p[1] += 14 * F41B(t, 71.1, 0.8); if (f41In(t, 119.14, 120.4)) p[0] += tremble(t, 3, 14);
+    p[1] += 14 * F41B(t, 71.1, 0.8) - 20 * F41B(t, 90.1, 0.35) * (1 - F41B(t, 93.28, 0.3)); if (f41In(t, 119.14, 120.4)) p[0] += tremble(t, 3, 14);
+    { const k = F41B(t, 115.9, 0.6) * (1 - F41B(t, 122.3, 0.6)); p[1] -= 150 * k; p[0] += 30 * k; }
     if (t >= 140.52) p = [K.lerp(p[0], 655, F41B(t, 140.52, 0.6)), p[1] - 40 * F41B(t, 140.52, 0.6) * (1 - F41B(t, 141.4, 0.8))];
     let a = 1; if (t >= 142.44) { const u = K.clamp((t - 142.44) / 1.5); r *= K.lerp(1, 0.35, u); p = [p[0] + 14 * Math.sin(u * Math.PI * 3), K.lerp(p[1], 1150, u * u)]; a = 1 - K.clamp((u - 0.8) / 0.2); }
     return { p, r, a, show: true, which: 2 };
@@ -288,7 +312,7 @@ function f41Burst(ctx, t) { const t0 = 57.75; if (t < t0 || t > 62.2) return; co
 const F41_PEBBLES = [[23.25, 596, 895, 30], [23.38, 586, 897, 18], [64.3, 598, 896, 26], [137.3, 596, 896, 22], [137.34, 586, 902, 36], [137.4, 578, 898, 10]];
 function f41Pebbles(ctx, t) {
   F41_PEBBLES.forEach(([t0, x0, y0, vx], i) => { const d = t - t0; if (d < 0 || d > 1.2) return; f41Pebble(ctx, x0 + vx * d, y0 + 700 * d * d, 7 - (i % 3), i + 3); });
-  { const d = t - 152.1; if (d > 0 && d < 1.0) f41Pebble(ctx, 215 - 330 * d, 893 - 260 * d + 600 * d * d, 7, 9); }   // the kicked pebble
+  { const d = t - 152.1; if (d > 0 && d < 1.0) f41Pebble(ctx, 290 - 330 * d, 893 - 260 * d + 600 * d * d, 7, 9); }   // the kicked pebble
 }
 
 // ---------- story clouds (world space) ----------
@@ -387,13 +411,14 @@ function f41Falcon(t) {
   const age = F41B(t, 110.88, 0.5); P.age = age;
   if (age > 0) { P.sq *= 1 - 0.08 * age; P.drop = 10 * age; P.lid = 0.5 * age; P.brow = K.lerp(0.6, -0.2, age); P.tip = -0.05 * age; }
   if (f41In(t, 111.42, 112.26)) { const k = (t - 111.42) / 0.84; P.sag = (k < 0.55 ? -0.5 * F41B(t, 111.42, 0.25) : K.lerp(-0.5, 0.6, F41B(t, 111.88, 0.3))) + 0.08 * Math.sin(t * 50) * (k < 0.6 ? 1 : 0); }
-  if (t >= 112.26) { P.sag = 0.4; P.lid = 0.6; P.brow = -0.6; P.headRot = 0.15; }
-  if (f41In(t, 113.0, 113.92)) P.sag = 0.1 + 0.25 * Math.sin((t - 113) * 12);
-  if (f41In(t, 113.92, 114.9)) { P.headRot = -0.5 * F41B(t, 113.92, 0.15) * (1 - F41B(t, 114.3, 0.1)); P.tip = 0.25 * pulse(t, 114.3, 0.3); }
-  if (t >= 114.9) { P.lid = 1; P.noBlink = true; P.beak = 0.3 * (Math.sin(t * 14) + 1); }
+  if (t >= 112.26) { P.sag = 0.4; P.lid = 0.3; P.brow = -0.4; P.headRot = 0.1; P.smile = true; }
+  if (f41In(t, 113.0, 113.92)) { const k = F41B(t, 113.0, 0.15); P.sag = 0.4 + 1.2 * k; P.headRot = 0.1 - 0.25 * k; P.look = k; }   // 'look over there!'
+  if (f41In(t, 113.92, 114.9)) { const k = F41B(t, 113.92, 0.12) * (1 - F41B(t, 114.35, 0.3)); P.x -= 70 * k; P.tip = 0.35 * k; P.headRot = 0.35 * k; P.smile = false; }
+  if (t >= 114.9) { P.lid = 1; P.noBlink = true; P.beak = 0.3 * (Math.sin(t * 14) + 1); P.smile = false; }
   return P;
 }
-function f41DrawFalcon(c, P) { c.save(); if (P.age) c.filter = `grayscale(${0.85 * P.age})`; bird(c, P); c.restore(); }
+const F41_WORMX = 395;
+function f41DrawFalcon(c, P) { c.save(); if (P.age) c.filter = `grayscale(${0.85 * P.age})`; bird(c, P); c.restore(); if (P.smile) f41HawkSmile(c, P); }
 function f41InsideFalcon(c, t, medal) {
   const tp = K.clamp((t - 109.56) / 1.24), bgc = tp <= 0 || tp >= 1 ? F41_PAPER : tp < 0.35 ? mixHex(F41_PAPER, '#f0883a', tp / 0.35) : tp < 0.65 ? mixHex('#f0883a', '#1d2a60', (tp - 0.35) / 0.3) : mixHex('#1d2a60', '#e9f0ff', (tp - 0.65) / 0.35);
   c.fillStyle = bgc; c.fillRect(-300, 200, 1600, 1100);
@@ -406,15 +431,19 @@ function f41InsideFalcon(c, t, medal) {
     if (t >= 107.4 + d) { P.x -= 18 * F41B(t, 107.4 + d, 0.2); P.tip = -0.12 * pulse(t, 107.4 + d, 0.5); }
     if (t >= 108.5 + d) { P.x -= 40 * F41B(t, 108.5 + d, 0.3); P.tip = (P.tip || 0) - 0.18 * pulse(t, 108.5 + d, 0.8); P.eyes = t < 109.3 ? 'wide' : 'open'; }
     if (t >= 111.5 + d * 1.5) { P.sq = 1.05; P.gaze = i === 1 ? [-1, 0] : [1, 0]; P.x += 22 * F41B(t, 111.8 + d * 1.5, 0.25); }
-    if (t >= 113.0 + d * 1.5) { P.x += 40 * F41B(t, 113.1 + d * 1.5, 0.3); P.gaze = lookAt([P.x, by - 80], [FP.x, FP.y - 120]); }
-    if (f41In(t, 113.98, 114.9)) { P.dir = -1; P.gaze = [-1, -0.8]; }
-    if (t >= 114.9) { P.dir = t < 114.9 + d * 2 ? -1 : 1; if (t >= 114.9 + d * 2) { if (i === 0) P.beak = 1.2; if (i === 1) P.sag = -0.8; if (i === 2) P.headRot = 0.3; } }
+    if (t >= 112.26) { P.gaze = lookAt([P.x, by - 80], [F41_WORMX, by - 20]); P.sq = 1; }   // the worm in front of them
+    if (f41In(t, 113.0, 114.9)) { P.dir = -1; P.gaze = [-1, -0.6]; P.headRot = 0.15; }   // all three look where he points (the one unison)
+    if (t >= 114.9) { const back = t >= 114.9 + stagger(i, 0.15); P.dir = back ? 1 : -1; if (back) { P.eyes = 'wide'; P.lid = 0; P.gaze = [0.6, 0.7]; if (i === 0) P.beak = 1.2; if (i === 1) P.sag = -0.8; if (i === 2) P.headRot = 0.3; } }
     if (k === 'r' && f41In(t, 107.2, 107.95)) { P.beak = 0.3; worm(c, P.x + 44, P.y - 70, t); }
-    if (k === 'b' && f41In(t, 112.9, 114.42)) worm(c, P.x + 40 * P.dir, P.y - 70, t);
+
     if (t >= 108.5 + d && t < 109.3) P.x += tremble(t, 1.5, 10);
     bird(c, f41Lid(P, t, 40 + i)); });
-  if (f41In(t, 107.95, 108.6) || f41In(t, 114.42, 114.9)) worm(c, FP.x - 80, FP.y - 100 + FP.drop, t);
+  if (f41In(t, 107.95, 108.6)) worm(c, FP.x - 80, FP.y - 100 + FP.drop, t);
+  // the worm on the branch in front of the small birds (112.26), taken at 113.92 (bigger: at least 20 px on screen)
+  if (f41In(t, 112.26, 114.1)) { c.save(); c.translate(F41_WORMX, by - 18); c.scale(2.4, 2.4); worm(c, 12, 0, t); c.restore(); }
+  else if (f41In(t, 114.1, 114.9)) { c.save(); c.translate(FP.x - 70, FP.y - 160 + (FP.drop || 0)); c.scale(1.6, 1.6); worm(c, 10, 0, t); c.restore(); }
   f41DrawFalcon(c, FP);
+  if (FP.look) { c.save(); c.globalAlpha = FP.look; sfx(c, 'LOOK!', FP.x - 330, FP.y - 330, 80, f41Pop(t, 113.0, 0.25), { rot: -0.1, fill: C.yellow }); S0.arrow(c, [FP.x - 200, FP.y - 260], [FP.x - 470, FP.y - 230], F41B(t, 113.05, 0.3), { width: 14, bend: 0.1 }); c.restore(); }
   feather(c, t, { t0: 111.65, t1: 112.9, a: [FP.x - 10, by - 60], b: [FP.x - 60, 1000], col: '#c8c0b0' });
   if (medal) return FP;
 }
@@ -456,26 +485,37 @@ function f41Clouds(ctx, t, fox) {
   if (f41In(t, 37.86, 41.4)) thoughtCloud(ctx, 330, 625, 280, 200, t, { p: K.clamp((t - 37.86) / 0.6) * (1 - K.clamp((t - 41.25) / 0.12)), tail: fh, inside: f41InsidePrivate, scale: 0.58, at: [500, 700], bg: C.yellow, seed: 8 });
   // S6 his tale (paper); swept away by her wing at 87.84
   if (f41In(t, 72.1, 88.2)) { const slide = kfn(t, [[77.3, 0], [77.9, 100]]), gone = K.clamp((t - 87.84) / 0.3);
-    ctx.save(); if (gone > 0) { ctx.translate(400, 300); ctx.rotate(-0.15 * gone); ctx.translate(-400 - 160 * gone, -300); ctx.globalAlpha = 1 - gone; }
-    thoughtCloud(ctx, 420, 300, 560, 380, t, { p: K.clamp((t - 72.1) / 0.9), tail: gone > 0 ? null : fm, inside: f41InsideFlea, scale: 0.5, at: [500 + slide, 700], bg: F41_PAPER, seed: 12 }); ctx.restore();
+    ctx.save(); if (gone > 0) { ctx.translate(478, 300); ctx.rotate(-0.15 * gone); ctx.translate(-478 - 160 * gone, -300); ctx.globalAlpha = 1 - gone; }
+    thoughtCloud(ctx, 478, 300, 515, 380, t, { p: K.clamp((t - 72.1) / 0.9), tail: gone > 0 ? null : fm, inside: f41InsideFlea, scale: 0.5, at: [500 + slide, 700], bg: F41_PAPER, seed: 12 }); ctx.restore();
     if (gone > 0) for (let i = 0; i < 8; i++) { const a = i * 0.8, r = 40 + 260 * gone; ctx.save(); ctx.globalAlpha = 1 - gone; ctx.beginPath(); ctx.arc(400 + Math.cos(a) * r, 300 + Math.sin(a) * r * 0.6, 22 * (1 - gone) + 4, 0, 7); ctx.fillStyle = C.white; ctx.fill(); ctx.lineWidth = 5; ctx.strokeStyle = C.black; ctx.stroke(); ctx.restore(); } }
   // S7 her memory (blue)
-  if (f41In(t, 93.96, 100.1)) thoughtCloud(ctx, 390, 300, 540, 370, t, { p: K.clamp((t - 93.96) / 0.8) * (1 - K.clamp((t - 99.64) / 0.4)), tail: cb, inside: f41InsideWolf, scale: 0.5, at: [500, 700], bg: '#cfe0ff', seed: 17 });
+  if (f41In(t, 93.96, 100.1)) thoughtCloud(ctx, 462, 300, 497, 370, t, { p: K.clamp((t - 93.96) / 0.8) * (1 - K.clamp((t - 99.64) / 0.4)), tail: cb, inside: f41InsideWolf, scale: 0.5, at: [500, 700], bg: '#cfe0ff', seed: 17 });
   // S8 her falcon tale (paper), then the medallion
-  if (f41In(t, 104.94, 116.0)) thoughtCloud(ctx, 390, 300, 540, 370, t, { p: K.clamp((t - 104.94) / 0.8) * (1 - K.clamp((t - 115.72) / 0.28)), tail: cb, inside: (c, tt) => f41InsideFalcon(c, tt), scale: 0.5, at: [500, 700], bg: F41_PAPER, seed: 21 });
+  if (f41In(t, 104.94, 116.0)) thoughtCloud(ctx, 462, 300, 497, 370, t, { p: K.clamp((t - 104.94) / 0.8) * (1 - K.clamp((t - 115.72) / 0.28)), tail: cb, inside: (c, tt) => f41InsideFalcon(c, tt), scale: 0.5, at: [430, 700], bg: F41_PAPER, seed: 21 });
   // S9 the sparrow (paper)
-  if (f41In(t, 124.22, 132.6)) thoughtCloud(ctx, 390, 300, 540, 370, t, { p: K.clamp((t - 124.22) / 0.8) * (1 - K.clamp((t - 132.3) / 0.25)), tail: cb, inside: f41InsideSparrow, scale: 0.5, at: [500, 720], bg: F41_PAPER, seed: 26 });
-  if (f41In(t, 132.3, 134.2)) { const u = (t - 132.3) / 1.9; ctx.save(); ctx.globalAlpha = 1 - u; shape(ctx, ell(430 + 40 * Math.sin(u * 9), 320 + 520 * u, 12, 9, 10), C.white, { lw: 3, seed: 4 }); ctx.restore(); }
+  if (f41In(t, 124.22, 132.6)) thoughtCloud(ctx, 462, 300, 497, 370, t, { p: K.clamp((t - 124.22) / 0.8) * (1 - K.clamp((t - 132.3) / 0.25)), tail: cb, inside: f41InsideSparrow, scale: 0.5, at: [500, 720], bg: F41_PAPER, seed: 26 });
+  if (f41In(t, 132.3, 134.2)) { const u = (t - 132.3) / 1.9; ctx.save(); ctx.globalAlpha = 1 - u; shape(ctx, ell(470 + 40 * Math.sin(u * 9), 320 + 520 * u, 12, 9, 10), C.white, { lw: 3, seed: 4 }); ctx.restore(); }
 }
+const F41_MEDAL = [740, 720];
+// a sweet smile at the hawk's gape (head frame of cast/birds2.js birdHawk)
+function f41HawkSmile(ctx, P) { const s = P.s || 1, dir = P.dir ?? 1, hy = -124 + (P.drop || 0); ctx.save(); ctx.translate(P.x, P.y); ctx.scale(dir * s, s); if (P.headRot) { ctx.translate(10, hy + 18); ctx.rotate(P.headRot); ctx.translate(-10, -(hy + 18)); }
+  ctx.lineWidth = 4; ctx.lineCap = 'round'; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.moveTo(30, hy + 6); ctx.quadraticCurveTo(38, hy + 16, 52, hy + 8); ctx.stroke(); ctx.beginPath(); ctx.moveTo(27, hy + 3); ctx.lineTo(31, hy + 9); ctx.stroke(); ctx.restore(); }
 // the falcon medallion (115.72-122.48): the old smiling falcon parked beside the fox's face
 function f41Medal(ctx, t) {
   if (t < 115.8 || t >= 122.48) return; const g = K.ease.back(f41Pop(t, 115.8, 0.35)) * (1 - K.clamp((t - 122.2) / 0.2)), m = F41B(t, 116.6, 1.4);
-  const cx = K.lerp(390, 352, m), cy = K.lerp(300, 690, m), r = 92 * g; if (r < 2) return;
+  const cx = K.lerp(462, F41_MEDAL[0], m), cy = K.lerp(300, F41_MEDAL[1], m), r = 78 * g; if (r < 2) return;
   ctx.save(); ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7); ctx.clip(); ctx.fillStyle = F41_PAPER; ctx.fillRect(cx - r, cy - r, 2 * r, 2 * r);
-  const FP = f41Falcon(Math.min(t, 114.0)); FP.x = 600; FP.y = 790; FP.lid = f41In(t, 120.62, 120.84) ? 1 : 0.6; FP.noBlink = true; FP.gaze = [-0.8, 0.3]; FP.dir = 1;
-  ctx.translate(cx, cy); ctx.scale(0.8, 0.8); ctx.translate(-614, -690); seg(ctx, 300, 780, 900, 790, 24, WOOD, 5); f41DrawFalcon(ctx, FP); ctx.restore();
+  const FP = f41Falcon(Math.min(t, 112.5)); FP.x = 600; FP.y = 790; FP.lid = f41In(t, 120.62, 120.84) ? 1 : 0.3; FP.brow = -0.4; FP.headRot = 0.08; FP.sag = 0.2; FP.noBlink = true; FP.gaze = [-0.8, 0.3]; FP.dir = -1;
+  ctx.translate(cx, cy); ctx.scale(0.8, 0.8); ctx.translate(-586, -650); seg(ctx, 300, 780, 900, 790, 24, WOOD, 5); FP.smile = true; f41DrawFalcon(ctx, FP); ctx.restore();
   ctx.save(); ctx.lineWidth = 10; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7); ctx.stroke(); ctx.restore();
 }
+
+// a fleeing bird silhouette: a flapping gull-wing V with a small body (s 1: about 90 units wide)
+function f41FleeBird(ctx, x, y, s, f) { ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.fillStyle = C.black; ctx.strokeStyle = C.black; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.lineWidth = 11;
+  ctx.beginPath(); ctx.moveTo(-46, -18 * f); ctx.quadraticCurveTo(-22, -26 * f - 10, 0, 0); ctx.quadraticCurveTo(22, -26 * f - 10, 46, -18 * f); ctx.stroke(); ctx.beginPath(); ctx.ellipse(-4, 4, 16, 9, -0.2, 0, 7); ctx.fill(); ctx.beginPath(); ctx.moveTo(-18, 6); ctx.lineTo(-34, 0); ctx.lineTo(-32, 14); ctx.fill(); ctx.restore(); }
+// how much a story cloud covers the summit sky (the sun fades out under it)
+const F41_CLOUDS = [[72.1, 88.2], [93.96, 100.1], [104.94, 116.0], [124.22, 132.6]];
+const f41CloudUp = (t) => F41_CLOUDS.reduce((m, [a, b]) => Math.max(m, K.clamp(Math.min((t - a) / 0.3, (b - t) / 0.3))), 0);
 
 // ---------- the world ----------
 function f41World(ctx, t, cam) {
@@ -485,17 +525,18 @@ function f41World(ctx, t, cam) {
   // nest and crow (from the landing on; the nest is always there)
   const top = t >= 21.54 && t < 161.15, foot = !top;
   nestDraw(ctx, F41_NEST[0], F41_NEST[1], { nb: 1, t, eggs: 3, rock: t >= 9.3 && t < 10 ? 0.04 * K.spring(t, 9.3, 1, 9, 6) : 0 });
-  if (t >= 8.3) bird(ctx, f41Crow(t));
+  if (t >= 8.3) f41DrawCrow(ctx, f41Crow(t));
   if (t >= 9.3 && t < 10.2) for (let i = 0; i < 2; i++) { const d = t - 9.3 - i * 0.05; seg(ctx, 760 + i * 50, 560 - 40 * Math.sin(Math.PI * K.clamp(d / 0.5)), 776 + i * 50, 566 - 40 * Math.sin(Math.PI * K.clamp(d / 0.5)), 3, '#f2d27a', 1.5); }
   // the fox
   const fxP = top ? f41FoxTop(t) : f41FoxFoot(t);
   // the hunter shadow on the wall (47.04-50.0), 2 frames late
-  if (f41In(t, 47.04, 50.3)) { const lag = f41FoxTop(t - 0.067), g = K.lerp(1.15, 1.75, F41B(t, 47.04, 0.74)) * K.lerp(1, 1 / 1.6, F41B(t, 49.4, 0.8)), sx = 160;
-    const SP = { ...lag, x: sx, y: 884, s: 0.8 * g, mouth: 'open', brow: 1, ears: f41Ears(1), raise: 1, plant: false, sit: 0, reach: 0, lid: 0, gaze: null, talk: 0, eyes: 'open', tailUp: 0.15 };
-    if (f41In(t, 48.6, 48.9)) SP.headUp = 0.2 * pulse(t, 48.6, 0.3);
-    f41HunterShadow(ctx, fox, SP, F41_WALL, 0.6 * f41Fade(t, 47.04, 50.3, 0.4), (c) => { c.translate(sx, 884); c.transform(1, 0, -0.55, 1, 0, 0); c.scale(1, 1.1); c.translate(-sx, -884); });
-    if (t >= 48.54) for (let i = 0; i < 3; i++) { const u = K.clamp((t - 48.54 - i * 0.12) / 1.2); if (u <= 0 || u >= 1) continue; ctx.save(); K.poly(ctx, F41_WALL, true); ctx.clip(); ctx.filter = 'brightness(0)'; ctx.globalAlpha = 0.8;
-      songbird(ctx, { x: K.lerp(340, 20, u), y: 620 - i * 50 + 20 * Math.sin(u * 9 + i), s: 0.55, dir: -1, fly: true, flap: t * 20 + i }); ctx.restore(); } }
+  if (f41In(t, 47.04, 50.3)) { const g = K.lerp(1.6, 1.85, F41B(t, 47.04, 0.74)) * K.lerp(1, 0.75, F41B(t, 49.5, 0.7)), sx = 95, sy = 845;
+    const SP = { x: sx, y: sy, s: 0.8 * g, dir: 1, mouth: 'open', brow: 1, ears: f41Ears(1), raise: 1, reach: 0.6, plant: false, sit: 0.35, headUp: -0.25 - 0.1 * pulse(t, 48.54, 0.4), lid: 0, talk: 0, eyes: 'open', tailUp: 0.3, ph: 0, amp: 0 };
+    f41FlatShadow(ctx, F41_WALL, 0.55 * f41Fade(t, 47.04, 50.3, 0.4), 790, 860, (c) => { c.translate(sx, sy); c.transform(1, 0, -0.3, 1, 0, 0); c.translate(-sx, -sy); fox(c, SP);
+      // claws on the raised paws, a row of teeth in the open jaws
+      const pw = f41FoxPt({ ...SP, headUp: 0 }, 70, 70); for (let i = 0; i < 3; i++) shape(c, [[pw[0] + 20 + i * 12, pw[1] - 30 + i * 8], [pw[0] + 46 + i * 12, pw[1] - 24 + i * 8], [pw[0] + 26 + i * 12, pw[1] - 18 + i * 8]], C.black, { lw: 2 }); });
+    if (t >= 48.54) for (let i = 0; i < 3; i++) { const u = K.clamp((t - 48.54 - stagger(i, 0.12)) / 1.3); if (u <= 0 || u >= 1) continue; ctx.save(); ctx.filter = 'brightness(0)'; ctx.globalAlpha = 0.85 * (1 - K.clamp((u - 0.8) / 0.2));
+      f41FleeBird(ctx, K.lerp(300 - i * 70, -60 - i * 40, u), K.lerp(640 - i * 70, 260 - i * 60, u) + 20 * Math.sin(u * 9 + i), 1.6 - 0.2 * i, Math.sin(t * 22 + i * 2)); ctx.restore(); } }
   // the tail drag line (149.9-152.0)
   if (f41In(t, 149.9, 154.5)) { ctx.save(); ctx.globalAlpha = 0.6 * (1 - K.clamp((t - 153.5) / 1)); ctx.lineWidth = 4; ctx.strokeStyle = STONED; ctx.beginPath(); ctx.moveTo(F41_FX(149.9) + 110, 897); ctx.lineTo(F41_FX(Math.min(t, 152.0)) + 110, 897); ctx.stroke(); ctx.restore(); }
   // footfall dust
@@ -504,13 +545,16 @@ function f41World(ctx, t, cam) {
   const fe = f41FoxEye(fxP);
   // small fox props: tongue, sweat, flush, steam, tear, bone, belly arcs
   if (top) {
-    if (f41In(t, 38.84, 39.04) || f41In(t, 52.44, 52.72)) { const m = f41FoxPt(fxP, 52, 22); f41Tongue(ctx, m[0], m[1], 1, 0.8); }
+    if (f41In(t, 38.84, 39.04)) { const m = f41FoxPt(fxP, 52, 22); f41Tongue(ctx, m[0], m[1], 1, 0.8); }
+    if (f41In(t, 52.44, 52.74)) f41Lick(ctx, fxP, (t - 52.44) / 0.3);
+    if (f41In(t, 52.79, 54.0)) f41PawsOverMouth(ctx, fxP, F41B(t, 52.79, 0.1) * (1 - F41B(t, 53.75, 0.25)));
+    if (f41In(t, 52.6, 53.8)) { const m = f41FoxPt(f41FoxTop(52.6), 60, 26), u = K.clamp((t - 52.7) / 0.9); f41Drop(ctx, m[0] + 60 * u, t < 52.7 ? m[1] + 10 * (t - 52.6) / 0.1 : fallY(t, 52.7, 53.6, m[1] + 10, 1250), 5); }
     if (f41In(t, 41.5, 42.6)) f41Sweat(ctx, fe[0] - 30, fe[1] - 30 + 30 * (t - 41.5), f41Fade(t, 41.5, 42.6, 0.15), 0.9);
     if (f41In(t, 97.3, 99.6)) f41Sweat(ctx, fe[0] - 34, fe[1] - 34 + 22 * ((t - 97.3) % 1.1), f41Fade(t, 97.3, 99.6, 0.15), 0.9);
-    if (f41In(t, 41.3, 42.0)) soundArcs(ctx, fxP.x + 20, fxP.y - 60, -1, t, C.red);
+    if (f41In(t, 41.3, 42.2)) { soundArcs(ctx, fxP.x + 14, fxP.y - 58, -1, t, C.red); soundArcs(ctx, fxP.x + 30, fxP.y - 52, 1, t, C.red); }
     if (f41In(t, 152.04, 156.8)) { const hc = f41FoxPt(fxP, 14, 4); f41Flush(ctx, hc[0], hc[1], 30, F41B(t, 152.04, 0.3) * (1 - F41B(t, 155.94, 0.8))); }
     if (f41In(t, 152.1, 153.2)) { ctx.save(); ctx.globalAlpha = f41Fade(t, 152.1, 153.2, 0.2); const ea = f41FoxPt(fxP, -6, -40); steam(ctx, ea[0], ea[1], t); ctx.restore(); }
-    if (f41In(t, 151.36, 153.0)) teardrops(ctx, t, 151.36, 151.4, () => f41FoxEye(f41FoxTop(151.36)), { groundY: 900, rate: 1, vx: -10 });
+    if (f41In(t, 150.78, 152.2)) { const e = f41FoxEye(f41FoxTop(150.78)), x0 = e[0] - 4, y = fallY(t, 150.9, 151.42, e[1] + 6, 896); if (t < 150.9) f41Drop(ctx, x0, e[1] + 6, 8 * F41B(t, 150.78, 0.12)); else if (t < 151.42) f41Drop(ctx, x0 - 10 * (t - 150.9), y, 8); else f41Drop(ctx, x0 - 5, 896, 8, K.clamp((t - 151.42) / 0.35)); }
     if (f41In(t, 152.84, 153.9)) soundArcs(ctx, 770, 520, -1, t, C.white);
   } else if (t < 12.38) {
     f41Bone(ctx, 650 + 8 * F41B(t, 4.98, 0.4), 2094, 70, K.lerp(0.1, -0.45, F41B(t, 4.98, 0.4)) + swing(t, 5.38, 0.08, 2));
@@ -540,16 +584,19 @@ function f41CaveEyes(ctx, x, y, lids, look, sc = 1) {
 }
 
 // ---------- camera ----------
+const F41_CLD = { x: 572, y: 470, zoom: 1.24 };   // v2 cloud framing: the crow whole on the right, the cloud's left lobe inside
 const F41_CAM = [[0, { x: 430, y: 1930, zoom: 1.35 }], [2.4, { x: 430, y: 1930, zoom: 1.35 }], [3.4, { x: 500, y: 1700, zoom: 1.0 }], [6.9, { x: 500, y: 1700, zoom: 1.0 }], [9.4, { x: 600, y: 640, zoom: 1.25 }], [12.37, { x: 600, y: 640, zoom: 1.25 }],
-  [12.38, { x: 560, y: 1790, zoom: 1.15 }], [18.6, { x: 560, y: 1790, zoom: 1.15 }], [20.2, { x: 580, y: 1900, zoom: 1.3 }], [20.9, { x: 580, y: 1900, zoom: 1.3 }], [21.53, { x: 700, y: 1900, zoom: 1.2 }],
+  [12.38, { x: 560, y: 1790, zoom: 1.15 }], [18.6, { x: 560, y: 1790, zoom: 1.15 }], [20.3, { x: 650, y: 1900, zoom: 1.45 }], [20.9, { x: 650, y: 1900, zoom: 1.45 }], [21.53, { x: 720, y: 1900, zoom: 1.35 }],
   [21.54, { x: 480, y: 760, zoom: 1.05 }], [23.4, { x: 480, y: 760, zoom: 1.05 }], [23.9, { x: 560, y: 700, zoom: 1.2 }], [36.4, { x: 560, y: 700, zoom: 1.2 }], [37.4, { x: 420, y: 760, zoom: 1.7 }], [41.2, { x: 420, y: 760, zoom: 1.7 }],
-  [42.5, { x: 560, y: 700, zoom: 1.2 }], [46.8, { x: 575, y: 700, zoom: 1.2 }], [47.6, { x: 480, y: 690, zoom: 1.05 }], [49.6, { x: 480, y: 690, zoom: 1.05 }], [50.6, { x: 580, y: 700, zoom: 1.2 }], [64.5, { x: 580, y: 700, zoom: 1.2 }],
-  [67.6, { x: 600, y: 720, zoom: 1.35 }], [71.4, { x: 600, y: 720, zoom: 1.35 }], [72.6, { x: 520, y: 470, zoom: 1.35 }], [82.0, { x: 520, y: 470, zoom: 1.35 }], [82.8, { x: 580, y: 700, zoom: 1.2 }],
-  [92.6, { x: 580, y: 700, zoom: 1.2 }], [93.9, { x: 520, y: 450, zoom: 1.3 }], [99.4, { x: 520, y: 450, zoom: 1.3 }], [100.4, { x: 620, y: 760, zoom: 1.35 }], [103.3, { x: 620, y: 760, zoom: 1.35 }], [104.9, { x: 520, y: 450, zoom: 1.3 }],
-  [115.7, { x: 520, y: 450, zoom: 1.3 }], [116.6, { x: 580, y: 700, zoom: 1.2 }], [120.2, { x: 580, y: 700, zoom: 1.2 }], [121.2, { x: 500, y: 720, zoom: 1.5 }], [122.3, { x: 500, y: 720, zoom: 1.5 }], [123.2, { x: 520, y: 450, zoom: 1.3 }],
-  [132.3, { x: 520, y: 450, zoom: 1.3 }], [133.0, { x: 570, y: 720, zoom: 1.2 }], [138.2, { x: 570, y: 720, zoom: 1.2 }], [139.6, { x: 720, y: 640, zoom: 1.6 }], [140.5, { x: 570, y: 720, zoom: 1.2 }], [148.6, { x: 570, y: 720, zoom: 1.2 }],
-  [152.8, { x: 480, y: 720, zoom: 1.2 }], [155.9, { x: 500, y: 700, zoom: 1.1 }], [157.4, { x: 500, y: 700, zoom: 1.1 }], [160.3, { x: 480, y: 700, zoom: 1.25 }], [161.14, { x: 480, y: 700, zoom: 1.25 }],
-  [161.15, { x: 600, y: 1800, zoom: 1.2 }], [162.6, { x: 600, y: 1800, zoom: 1.2 }], [163.4, { x: 520, y: 1300, zoom: 0.62 }], [163.6, { x: 520, y: 1300, zoom: 0.62 }], [164.4, { x: 380, y: 1800, zoom: 1.3 }], [F41_DUR, { x: 380, y: 1800, zoom: 1.3 }]];
+  [42.5, { x: 560, y: 700, zoom: 1.2 }], [45.7, { x: 575, y: 700, zoom: 1.2 }], [46.3, { x: 735, y: 620, zoom: 1.5 }], [47.0, { x: 735, y: 620, zoom: 1.5 }], [47.7, { x: 470, y: 690, zoom: 1.0 }], [49.9, { x: 470, y: 690, zoom: 1.0 }],
+  [50.6, { x: 650, y: 700, zoom: 1.45 }], [53.6, { x: 650, y: 700, zoom: 1.45 }], [54.4, { x: 580, y: 700, zoom: 1.2 }], [64.5, { x: 580, y: 700, zoom: 1.2 }],
+  [67.6, { x: 600, y: 720, zoom: 1.35 }], [71.4, { x: 600, y: 720, zoom: 1.35 }], [72.6, F41_CLD], [82.0, F41_CLD], [82.8, { x: 580, y: 700, zoom: 1.2 }],
+  [92.5, { x: 580, y: 700, zoom: 1.2 }], [93.0, { x: 735, y: 620, zoom: 1.5 }], [93.9, { x: 735, y: 620, zoom: 1.5 }], [94.6, F41_CLD], [99.4, F41_CLD], [100.4, { x: 620, y: 760, zoom: 1.35 }], [103.3, { x: 620, y: 760, zoom: 1.35 }], [104.9, F41_CLD],
+  [115.7, F41_CLD], [116.6, { x: 580, y: 700, zoom: 1.2 }], [120.3, { x: 580, y: 700, zoom: 1.2 }], [121.2, { x: 625, y: 690, zoom: 1.4 }], [122.3, { x: 625, y: 690, zoom: 1.4 }], [123.2, F41_CLD],
+  [132.3, F41_CLD], [133.0, { x: 570, y: 720, zoom: 1.2 }], [138.2, { x: 570, y: 720, zoom: 1.2 }], [139.6, { x: 720, y: 640, zoom: 1.6 }], [140.5, { x: 570, y: 720, zoom: 1.2 }], [145.2, { x: 570, y: 720, zoom: 1.2 }],
+  [147.6, { x: 520, y: 760, zoom: 1.42 }], [148.5, { x: 520, y: 760, zoom: 1.42 }], [149.6, { x: 520, y: 720, zoom: 1.2 }], [152.8, { x: 500, y: 720, zoom: 1.15 }], [155.9, { x: 550, y: 700, zoom: 0.97 }], [159.8, { x: 550, y: 700, zoom: 0.97 }],
+  [160.7, { x: 585, y: 680, zoom: 1.07 }], [161.14, { x: 585, y: 680, zoom: 1.07 }],
+  [161.15, { x: 520, y: 1300, zoom: 0.62 }], [162.8, { x: 520, y: 1300, zoom: 0.62 }], [163.8, { x: 380, y: 1800, zoom: 1.3 }], [F41_DUR, { x: 380, y: 1800, zoom: 1.3 }]];
 function f41Cam(t) { const c = K.camAt(F41_CAM, t), z = c.zoom; return { x: K.clamp(c.x, F41_X0 + 500 / z, F41_X1 - 500 / z), y: K.clamp(c.y, 615 / z, F41_WH - 615 / z), zoom: z }; }
 const f41P = (x, y, c) => [500 + (x - c.x) * c.zoom, 615 + (y - c.y) * c.zoom];
 const f41Shake = (t) => K.spring(t, 137.28, 3, 16, 9) + K.spring(t, 152.04, 3, 16, 9);
@@ -563,21 +610,22 @@ function f41Over(ctx, t, cam, S, fox) {
   if (f41In(t, 3.6, 4.6)) { const p = P(fox.x + 70, fox.y - 200); word('GRRR...', p[0], p[1], 3.6, 4.6, 72, { rot: -0.08, fill: C.red }); }
   if (f41In(t, 9.88, 11.8)) { const n = P(790, 585); lab('NEST', n[0] - 260, n[1] - 220, 9.88, 11.8); arr([n[0] - 200, n[1] - 180], [n[0] - 60, n[1] - 30], 9.95, 11.8, { width: 18, bend: 0.15 }); }
   word('TOO HIGH!', 640, 200, 17.6, 18.7, 78, { rot: -0.06, fill: C.red });
-  if (f41In(t, 41.4, 42.4)) { const p = P(fox.x - 30, fox.y - 200); word('GRRR!', p[0] - 40, p[1], 41.4, 42.4, 84, { rot: 0.08, fill: C.red }); }
+  if (f41In(t, 41.4, 42.4)) { const p = P(fox.x - 40, fox.y + 12); word('GRRR!', p[0], p[1], 41.4, 42.4, 72, { rot: 0.06, fill: C.red }); }   // at the belly, like every belly growl
   if (f41In(t, 54.12, 55.8)) { const p = P(645, 560); word('?', p[0], p[1], 54.12, 55.8, 130, { fill: C.yellow }); }
   if (f41In(t, 57.75, 58.9)) { const p = P(690, 470); word('POP!', p[0] - 50, p[1] - 30, 57.75, 58.9, 84, { rot: -0.1, fill: C.red }); }
-  if (f41In(t, 70.5, 71.6)) { const p = P(fox.x - 60, fox.y - 260); word('TRUST ME!', p[0], p[1], 70.5, 71.6, 70, { rot: -0.06 }); }
+  if (f41In(t, 70.5, 71.6)) { const p = P(fox.x + 40, fox.y - 330); lab('TRUST ME!', p[0], p[1], 70.5, 71.6, { size: 50 }); }
   word('OUCH!', 700, 300, 79.5, 80.5, 84, { rot: 0.1, fill: C.red });
   if (f41In(t, 87.9, 88.7)) { const p = P(470, 330); word('SWISH!', p[0], p[1], 87.9, 88.7, 80, { rot: -0.1 }); }
   if (f41In(t, 102.14, 103.32)) { const a = P(560, 870), b = P(735, 870), m = [(a[0] + b[0]) / 2, a[1]]; arr(m, [a[0] - 10, a[1]], 102.14, 103.32, { width: 16, bend: 0 }); arr(m, [b[0] + 10, b[1]], 102.14, 103.32, { width: 16, bend: 0 }); lab('SAFE HERE', b[0] + 20, b[1] + 110, 102.3, 103.32, { size: 44 }); }
   word('MINE!', 540, 300, 108.6, 109.5, 84, { rot: -0.08, fill: C.red });
-  if (f41In(t, 120.68, 122.4)) { const m = P(352, 690), f = fox ? P(...f41FoxPt(fox, 30, 0)) : P(540, 790); lab('SAME TRICK', (m[0] + f[0]) / 2, m[1] - 190, 120.68, 122.4, { size: 50 }); word('=', (m[0] + f[0]) / 2 + 6, (m[1] + f[1]) / 2 - 10, 120.68, 122.4, 130, { fill: C.yellow }); }
+  if (f41In(t, 120.68, 122.4)) { const m = P(...F41_MEDAL), f = fox ? P(...f41FoxPt(fox, 40, 0)) : P(560, 790), mr = 78 * cam.zoom, ex = (m[0] - mr + f[0]) / 2 + 6, ey = (m[1] + f[1]) / 2;
+    lab('SAME TRICK', f[0] - 60, m[1] - mr - 30, 120.68, 122.4, { size: 50 }); word('=', ex, ey, 120.68, 122.4, 110, { fill: C.yellow }); }
   word('STUCK!', 590, 330, 130.8, 132.2, 84, { rot: 0.08, fill: C.red });
   if (f41In(t, 136.9, 138.3)) { const p = P(560, 1010); lab('YOUR LIMIT', p[0], p[1], 136.9, 138.3, { size: 44 }); }
   if (f41In(t, 139.9, 141.0)) { const p = P(640, 520); word('KEEP OUT!', p[0] - 40, p[1], 139.9, 141.0, 70, { rot: -0.06, fill: C.red }); }
-  if (f41In(t, 152.2, 153.1) && fox) { const p = P(fox.x - 60, fox.y - 220); word('GRRR!', p[0], p[1], 152.2, 153.1, 80, { rot: -0.08, fill: C.red }); }
+  if (f41In(t, 152.2, 153.1) && fox) { const p = P(fox.x + 40, fox.y - 260); word('HMPH!', p[0], p[1], 152.2, 153.1, 80, { rot: -0.08, fill: C.white }); }   // anger: not the belly's GRRR
   if (f41In(t, 153.2, 154.4)) { const p = P(700, 420); word('WHY?', p[0] - 30, p[1], 153.2, 154.4, 80, { rot: 0.06, fill: C.yellow }); }
-  if (f41In(t, 159.14, 161.0) && fox) { const a = P(...f41FoxPt(fox, 120, -10)), b = P(770, 560); arr(a, b, 159.14, 161.0, { width: 18, bend: -0.15 }); lab('CRAFTIER!', b[0] + 10, b[1] - 200, 159.8, 161.0, { size: 50 }); }
+  if (f41In(t, 159.14, 161.0) && fox) { const a = P(...f41FoxPt(fox, 120, -10)), b = P(760, 570); arr(a, b, 159.14, 161.0, { width: 18, bend: -0.15 }); lab('CRAFTIER!', (a[0] + b[0]) / 2, Math.min(a[1], b[1]) - 150, 159.78, 161.0, { size: 50 }); }
   if (f41In(t, 164.7, 165.7)) { const p = P(330, 1960); word('GRRR...', p[0] + 150, p[1] - 70, 164.7, 165.7, 66, { rot: -0.06, fill: C.red }); }
 }
 // the cave-to-summit wipe (21.38-21.70): a slanted halftone band crosses the panel, the cut is under it
@@ -592,7 +640,8 @@ const SCENE = {
     const px = 54, py = 54, pw = 972, ph = 1196, sh = f41Shake(t);
     S.box(ctx, px, py, pw, ph, 1, { fill: C.blue, lw: 11, seed: 3 });
     ctx.save(); ctx.beginPath(); ctx.rect(px + 9, py + 9, pw - 18, ph - 18); ctx.clip(); ctx.translate(px + sh * 0.8, py - sh * 0.5); ctx.scale(pw / F41_WW, ph / 1230);
-    const u = F41_U(t); skyCycle(ctx, u, { t, hills: false });
+    const u = F41_U(t), sd = skyCycle(ctx, u, { t, hills: false, sun: false }), sa = 1 - f41CloudUp(t);
+    if (sd.sun && sa > 0) { ctx.save(); ctx.globalAlpha *= sa; ctx.beginPath(); ctx.rect(0, 0, 1000, 920); ctx.clip(); sun(ctx, sd.sun[0], sd.sun[1], t); ctx.restore(); }
     const cam = f41Cam(t); ctx.save(); K.camera(ctx, F41_WW, 1230, cam); const fxP = f41World(ctx, t, cam); ctx.restore();
     const dusk = F41_WARM(t); if (dusk > 0) { ctx.save(); ctx.globalCompositeOperation = 'multiply'; ctx.globalAlpha = 0.6 * dusk; ctx.fillStyle = '#ffc890'; ctx.fillRect(0, 0, F41_WW, 1230); ctx.restore(); }
     f41Over(ctx, t, cam, S, fxP);

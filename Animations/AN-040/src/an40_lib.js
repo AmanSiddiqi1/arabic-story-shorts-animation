@@ -9,8 +9,13 @@
 //   tailUp, tailTuck 0..1, tw (tail tip twitch -1..1), whisk (-1 back .. 1 forward), eyes, drop, nod, shake, rot, silhouette}
 const AN40_LEO = { body: C.yellow, far: '#d9a40c', dot: C.red, cream: CREAM, ros: C.black, rc: '#b5701a' };
 const AN40_ROS = (() => { const r = K.rng(404), out = []; let n = 0; while (out.length < 20 && n++ < 400) { const x = -118 + r() * 226, y = -170 + r() * 68; if (Math.pow(x / 124, 2) + Math.pow((y + 128) / 48, 2) < 0.8 && out.every((q) => Math.hypot(q[0] - x, q[1] - y) > 30)) out.push([x, y, 9 + r() * 4]); } return out; })();
+const an40Hex = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+const an40Mix = (a, b, k) => { const A = an40Hex(a), Bc = an40Hex(b); return '#' + A.map((v, i) => Math.round(v + (Bc[i] - v) * k).toString(16).padStart(2, '0')).join(''); };
+// P.shade 0..1: the leopard inside the dark forest, one uniform navy tint (the cream belly band takes the body colour)
+const an40LeoPal = (sh) => { if (!(sh > 0.001)) return AN40_LEO; const m = (c) => an40Mix(c, '#14204a', 0.62 * sh), body = m(AN40_LEO.body);
+  return { body, far: m(AN40_LEO.far), dot: m(AN40_LEO.dot), cream: an40Mix(m(AN40_LEO.cream), body, sh), ros: AN40_LEO.ros, rc: m(AN40_LEO.rc) }; };
 function an40LeopardRaw(ctx, P) {
-  const s = P.s || 1, dir = P.dir ?? 1, pal = AN40_LEO, sil = !!P.silhouette, col = (c) => (sil ? C.black : c);
+  const s = P.s || 1, dir = P.dir ?? 1, pal = an40LeoPal(P.shade), sil = !!P.silhouette, col = (c) => (sil ? C.black : c);
   const ph = (P.ph || 0) * Math.sign(dir || 1), amp = P.amp ?? 0, cr = K.clamp(P.crouch || 0), R = P.stride ?? 30, dy = BEAST.bob(ph, amp, 3) + 44 * cr;
   ctx.save(); ctx.translate(P.x + (P.shake ? Math.sin(P.shake * 50) * 3 : 0), P.y); if (P.rot) ctx.rotate(P.rot); ctx.scale(dir * s, s);
   const defs = [[92, 1.5 * Math.PI, true, false], [-92, Math.PI, false, false], [-78, 0, false, true], [106, 0.5 * Math.PI, true, true]];
@@ -145,13 +150,30 @@ function an40CatLie(ctx, P) {
     shape(ctx, ell(P.x + dir * 72 * s, P.y - 7 * s, 16 * s, 8 * s, 14), pal.body, { lw: 4 * s, seed: 3 }); ctx.restore(); }
 }
 
+// ---------- puffed cat: pointed fur tufts behind the Library cat's body and tail (same frame as cat(), standing pose) ----------
+function an40CatTuftsRaw(ctx, P) {
+  const pf = K.clamp(P.puff || 0), ar = K.clamp(P.arch || 0); if (pf < 0.05 || (P.sit || 0) > 0.3 || (P.lie || 0) > 0.1) return;
+  const s = P.s || 1, dir = P.dir ?? 1, cr = K.clamp(P.crouch || 0), dy = 24 * cr - 12 * ar, pal = CAT_PAL[P.pal || 0] || CAT_PAL[0];
+  ctx.save(); ctx.translate(P.x + (P.shake ? Math.sin(P.shake * 50) * 3 : 0), P.y); ctx.scale(dir * s, s);
+  const n = 11; for (let i = 0; i < n; i++) { const a = Math.PI + (i + 0.5) / n * Math.PI, c = Math.cos(a), sn = Math.sin(a), x = -5 + 66 * c, y0 = -78 + 28 * sn - ar * 40 * Math.max(0, 1 - Math.pow((x + 5) / 66, 2)) + dy;
+    const nx = c * 0.6, ny = -0.8 + 0.2 * Math.abs(c), L = (14 + 10 * (i % 2)) * pf, w = 9;
+    shape(ctx, [[x - w * ny * -1 - w * 0.6, y0 + 4], [x + nx * L, y0 + ny * L - 6 * pf], [x + w * 0.6, y0 + 4]], pal.body, { lw: 4, seed: 70 + i }); }
+  ctx.restore();
+}
+const an40CatTufts = acting(an40CatTuftsRaw, (P) => (CAT_PAL[P.pal || 0] || CAT_PAL[0]).body);
+
 // ---------- sets ----------
 // forestEdge: world AN40_FW x 1230, ground 900. Forest wall x 0..520 (navy darkness behind the trunks), big tree trunk x 760.
 const AN40_FW = 2500, AN40_TREE = { x: 760, w: 120, top: 260, crowns: [[820, 210, 190], [660, 290, 150], [990, 280, 160], [1120, 340, 120], [560, 340, 110]] };
 const AN40_BRANCH = { root: [870, 420], tip: [1000, 392], perch: [960, 394] };
 function an40Hills(ctx, d, w) { const hl = d ? d.hills : SKY.day.hills; for (let i = 0; i * 420 < w + 300; i++) { const [, by, br, col] = hl[i % 3]; ctx.beginPath(); ctx.ellipse(120 + i * 420, by, br, br * 0.5, 0, Math.PI, 0); ctx.fillStyle = col; ctx.fill(); ctx.lineWidth = 6; ctx.strokeStyle = C.black; ctx.stroke(); } }
+// hill tree row as Library hillTrees (same rng draws), but no tree whose crown centre falls in [skip0, skip1]: keeps a clear sky behind the cat's head
+function an40HillTrees(ctx, o = {}) {
+  const GR = o.y ?? 900, x = ctx, r = K.rng(o.seed ?? 4), sk = o.skip || [0, -1]; for (let i = 0; i < (o.n ?? 12); i++) { const cx = 40 + i * 84 + r() * 30, h = 70 + r() * 60, cr = 38 + r() * 14; if (cx >= sk[0] && cx <= sk[1]) continue;
+    x.beginPath(); x.arc(cx, GR - h, cr, 0, 7); x.fillStyle = GREEND; x.fill(); x.lineWidth = 6; x.strokeStyle = C.black; x.stroke(); x.fillStyle = WOOD; x.fillRect(cx - 6, GR - h + cr - 4, 12, h - cr + 6); }
+}
 function an40ForestLand(c) {   // everything but the sky and the live parts (baked)
-  hillTrees(c, { n: 20, seed: 9 });
+  an40HillTrees(c, { n: 20, seed: 9, skip: [990, 1340] });
   // forest darkness and the back trees
   c.fillStyle = NAVY2; c.beginPath(); c.moveTo(-10, 900); c.lineTo(-10, 330); c.quadraticCurveTo(260, 300, 540, 400); c.lineTo(560, 900); c.fill();
   c.fillStyle = dotPat(c, '#06123a', 9, 0.32); c.fill(); c.lineWidth = 6; c.strokeStyle = C.black; c.stroke();

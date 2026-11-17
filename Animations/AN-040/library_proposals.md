@@ -8,3 +8,10 @@
 - `chaseRoad` loop mode (set): `an40Chase(ctx, D, t, o)` parallax strip driven by one distance function, landmarks, a growing home tree, grass that flattens under the runners.
 - `insetCircle` (camera): `an40Inset(ctx, cx, cy, r, p, draw)` round picture in picture with iris.
 - `runInPlace` (motion): `an40RunInPlace(xf, t, t0, t1, stride, rate)` leg spin before a bolt.
+
+## v2 additions (proposals only)
+- an40HillTrees: hillTrees with a `skip: [x0, x1]` clearing (head-clearance for held character spots).
+- an40Leopard `shade` field: uniform depth tint for a figure inside a dark forest (palette mix, no gradient).
+- an40CatTufts: pointed fur tufts behind a puffed cat (could become a `spiky` option on the Library cat).
+- gapBar(a, b, label): bar on the ground line between two measured world x positions (from the S5 diagram).
+- leadFollow lure framing: camera keyed on the bait's landing 0.25 s ahead, bait at 1/3, pursuer at 2/3.

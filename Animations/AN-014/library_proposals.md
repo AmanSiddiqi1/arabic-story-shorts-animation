@@ -7,3 +7,7 @@
 - `k14Balloon` picture balloon + icons (`k14IconPrincess`, `k14IconBowl`, `k14Tick`, `k14Squiggle`).
 - Props: `k14Brazier`, `k14StandLamp`, `k14Crown`, `k14Sandal`, `k14Purse`, `k14Chest`, `k14Robe`, `k14Bindle`, `k14Broom`, `k14Basket`, `k14Bucket`, `k14Hairs`.
 - `k14Inset` round flashback inset; `k14Palm` open hand overlay.
+
+## v2 additions
+- `k14Ghost` / `k14GhostOn` (src/k14_parts.js): small evil-spirit ghost (dark sheet, wavy tail, yellow eyes; alarm, stretch) and an orbit helper that circles above a head without covering the eyes. Candidate Library fx `spiritGhost`.
+- `k14CatTip` (src/k14_parts.js): read-only tail-tip position of the Library cat; better as a `catAnchors(P)` export in cast/small.js so props can attach to the tail.

@@ -26,7 +26,7 @@ const SCENE = {
     if (t >= 62.85 && t < 63.85) { ctx.save(); ctx.globalAlpha = t < 63.4 ? K.ease.in((t - 62.85) / 0.55) : 1 - K.ease.out((t - 63.4) / 0.45); ctx.fillStyle = C.paper; ctx.fillRect(-20, -20, 1040, 1270); ctx.fillStyle = dotPat(ctx, C.yellow, 12, 0.3); ctx.fillRect(-20, -20, 1040, 1270); ctx.restore(); }
     if (t >= 120.32 && t < 120.5) { ctx.save(); ctx.globalAlpha = 0.75; ctx.strokeStyle = C.white; ctx.lineWidth = 12; for (let i = 0; i < 10; i++) { const y = 60 + i * 120; ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(1000, y + 20); ctx.stroke(); } ctx.restore(); }
     if (t >= 150.4 && t < 151.9) S.transition(ctx, K5_VW, K5_VH, (t - 150.4) / 1.5, { caption: 'LATER...' });
-    if (t >= 159.6) S.title(ctx, 'THE END', 500, 150, K5_B(t, 159.6, 0.8), { size: 80, align: 'center' });
+    if (t >= 159.6) S.title(ctx, 'THE END', 640, 118, K5_B(t, 159.6, 0.8), { size: 80, align: 'center' });   // v2: up and right, clear of the raven's head
     ctx.restore(); subtitle(ctx, W, H, t, 1);
     LIFE.t = null;
     S.finish(ctx, W, H, t);   // always last

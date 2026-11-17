@@ -16,3 +16,12 @@ Decisions the plan left open, or changes measured on the actual sets:
 - S12 cloud: one thought cloud at (265, 400) holds the question (S11) and the answer (S12); the camera for S12 is {410..420, 480, 1.75..1.9}.
 - S2 wipe: a story-drawn left-to-right band (the Library transition always prints a caption).
 - Skipped: the cap lifting 6 px at 138.4 (headwear is part of the person drawing); the master's purse is implied by the hand at the sash.
+
+## v2 (Fable round 1) decisions
+- Camera: every wide re-keyed so the ground band is under ~15 % (y <= 900 - 430/zoom); one establishing second kept at 21.0 (market) and 164.7 (palace front); grove before 101.5 and 105.6-121 framed from the grass line up. Soil only for the ground windows and the dig.
+- S5 cloud: 600 x 420 at world (430, 250), scale 0.6 (cage s 1.8 = 184 world units), camera (440, 470, 1.36) so the cloud sits over the roofline and the man's face stays clear.
+- S9: man moved from x 170 to 200 so his hands reach the cage; the far hand cannot reach the cage ring, so it steadies the near side. The grove cage door is now hinged on the right (o.hingeR) so it swings away from his arm.
+- S11/S12: from 119.68 the camera pushes to (436, 530, 2.2) and the net cloud moves to (345, 352), 216 wide, so it fits the close framing; its trail switches to the speaking bird at 121.22. Bird A nods while B covers her eyes (A no longer covers).
+- S15: the king stands on the dais at x 745 (does not step down); the jar is set at 590/610 and slid to 550 by the king on احتفظ; the man puts the lid back on at 159.2-159.7 so the rays close to a glow by لكن.
+- S16: the awning post moved to the far right end (x 972) and the man stops at 640 under the shop window (clear wall); the real hoopoes fly in from the right below the THE END card.
+- S7: passers-by are library person() figures (merchant, villager, beanSeller) at s 1.2, y 1010 in the foreground 66.3-68.4.

@@ -2,10 +2,13 @@
 // kind man: village green robe (to 33.98), plain white robe at the prayer house (to 129.7), fine blue robe at the palace; yellow sash throughout
 const K14_GMV = { costume: 'villager', pal: { robe: '#3f9d4a', dot: '#2b7a38', sash: C.yellow }, age: 0.25 };
 const K14_GMY = { costume: 'physician', pal: { robe: C.white, dot: '#b9b4c6', sash: C.yellow }, age: 0.3 };
-const K14_GMP = { costume: 'merchant', pal: { robe: C.blue, dot: NAVY, sash: C.yellow, trim: C.yellow, belly: 0, head: 'turban', hc: C.white, hd: C.blue, band: C.yellow }, age: 0.3 };
+// v2: the palace robe is built on the physician preset so the long beard grown at the prayer house stays to the end
+const K14_GMP = { costume: 'physician', pal: { robe: C.blue, dot: NAVY, sash: C.yellow, trim: C.yellow, head: 'turban', hc: C.white, hd: C.blue, band: C.yellow }, age: 0.3 };
 // the envier: brown robe, red cap, tight brow; years later older with a patched robe
 const K14_EN = { costume: 'villager', pal: { robe: '#8a501a', dot: '#5b3010', sash: '#3a3a4a', head: 'cap', hc: C.red, hd: null, band: '#a8160f' }, age: 0.3 };
 const K14_ENO = { costume: 'villager', pal: { robe: '#6e4a10', dot: '#4a3010', sash: '#3a3a4a', head: 'cap', hc: '#a8160f', hd: null, band: '#5b3010', patches: C.blue }, age: 0.6 };
+// v2: the red cap is the envier's alone. Palace servants wear livery (blue turban, blue sash, no moustache); the second follower a green turban.
+const K14_LIVERY = { costume: 'servant', pal: { head: 'turban', hc: C.blue, hd: NAVY, band: C.yellow, sash: C.blue, tache: false } };
 const K14_SULTAN = { costume: 'caliph', pal: { head: 'bigTurban' } };
 const K14_PRINCESS = { costume: 'lady', pal: { robe: C.red, dot: '#a8160f' } };
 const K14_JA = { costume: 'villager', child: true, pal: { robe: C.red, dot: '#a8160f', sash: C.yellow, pants: '#a8160f', head: 'none', belly: 1 }, horns: true, tint: ['#ff6a4a', 0.75] };

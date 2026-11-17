@@ -127,7 +127,10 @@ function k31hoopoeRaw(ctx, P) {
   if (!sil) { eyeAt(ctx, hx + 4, hy - 4, P.eyes || 'open', 0.8);
     if (P.brow) { ctx.save(); ctx.lineWidth = 4.5; ctx.lineCap = 'round'; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.moveTo(hx - 6, hy - 17 - P.brow * 2); ctx.lineTo(hx + 11, hy - 12 + P.brow * 5); ctx.stroke(); ctx.restore(); } }
   ctx.restore();
-  if (!P.fly && cover >= 0.4) foldWing();   // the wing raised over the eyes is drawn in front of the head
+  if (!P.fly && cover >= 0.4) {   // the wing raised across the eyes, drawn in front of the head (v2: a clear barred wing over the face)
+    const k = K.clamp((cover - 0.4) / 0.6); ctx.save(); ctx.translate(K.lerp(-4, hx + 6, k), K.lerp(-40, hy - 2, k)); ctx.rotate(K.lerp(-1.2, -0.35, k));
+    const w = ell(-4, 0, 30, 13, 16); K.poly(ctx, w, true); ctx.fillStyle = C.black; ctx.fill(); if (!sil) { ctx.save(); K.poly(ctx, w, true); ctx.clip(); ctx.fillStyle = C.white; for (const bx of [-22, -10, 2]) ctx.fillRect(bx, -16, 5, 32); ctx.restore(); }
+    ink(ctx, w, 4, 6); ctx.restore(); }
   ctx.restore();
 }
 const k31hoopoe = acting(k31hoopoeRaw, (P) => (K31HP[P.pal || 0] || K31HP[0]).body);
@@ -166,12 +169,14 @@ function k31cage(ctx, x, y, s, part, o = {}) {
     ctx.lineWidth = 7; ctx.strokeStyle = C.black; for (const hy of [-60, sh]) { ctx.beginPath(); ctx.ellipse(0, hy, W, 9, 0, 0, Math.PI); ctx.stroke(); }
     ctx.lineWidth = 3.5; ctx.strokeStyle = C.yellow; for (const hy of [-60, sh]) { ctx.beginPath(); ctx.ellipse(0, hy, W, 9, 0, 0, Math.PI); ctx.stroke(); }
     // door frame and leaf (hinged on the left edge; the leaf narrows as it swings toward us, then flips to the left)
+    ctx.save(); if (o.hingeR) ctx.scale(-1, 1);   // v2: door hinged on the right edge (swings away from a figure on the left)
     const lw = (dx1 - dx0) * Math.cos(door), lx1 = dx0 + lw;
     ctx.save(); ctx.lineWidth = 2.5; ctx.strokeStyle = C.black; ctx.strokeRect(dx0, dTop, dx1 - dx0, -14 - dTop); ctx.restore();
     if (Math.abs(lw) > 1.5) { ctx.save(); ctx.lineWidth = 4; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.moveTo(dx0, -16); ctx.lineTo(lx1, -16 - 6 * Math.sin(door)); ctx.lineTo(lx1, dTop - 6 * Math.sin(door)); ctx.lineTo(dx0, dTop); ctx.closePath(); ctx.stroke();
       ctx.lineWidth = 3; ctx.strokeStyle = C.yellow; ctx.stroke(); for (const f of [0.33, 0.66]) { const bx = dx0 + lw * f; ctx.lineWidth = 3.5; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.moveTo(bx, -16 - 6 * Math.sin(door) * f); ctx.lineTo(bx, dTop - 6 * Math.sin(door) * f); ctx.stroke(); } ctx.restore(); }
     shape(ctx, ell(0, top - 9, 11, 11, 14), C.yellow, { lw: 4, seed: 83 }); shape(ctx, ell(0, top - 9, 4, 4, 10), C.paper, { lw: 2.5, seed: 84 });
     if (o.latch != null) shape(ctx, ell(dx1 - 4, -60, 6, 6, 10), C.red, { lw: 2.5, seed: 85 });
+    ctx.restore();
   }
   ctx.restore();
 }
@@ -187,7 +192,8 @@ function k31jar(ctx, x, y, s, o = {}) {
   for (const sd of [-1, 1]) { ctx.save(); ctx.lineWidth = 9; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.arc(sd * 52, -112, 16, sd > 0 ? -1.4 : Math.PI - 1.7, sd > 0 ? 1.7 : Math.PI + 1.4); ctx.stroke(); ctx.lineWidth = 5; ctx.strokeStyle = K31CLAY; ctx.stroke(); ctx.restore(); }
   shape(ctx, body, K31CLAY, { lw: 6, seed: 91, dot: K31CLAYD, pitch: 8, rad: 0.22, da: 0.5 });
   if ((o.cutaway || 0) > 0) { ctx.save(); K.poly(ctx, body, true); ctx.clip(); ctx.globalAlpha *= o.cutaway; ctx.fillStyle = K31SOILD; ctx.fillRect(-70, -145, 140, 150);
-    for (let row = 0; row < 9; row++) for (let k = -4; k <= 4; k++) { const cx = k * 15 + (row % 2) * 7, cy = -10 - row * 14; if (Math.abs(cx) < 64 - Math.abs(cy + 70) * 0.25) k31coin(ctx, cx, cy, 9, { flat: 0.55 }); }
+    ctx.fillStyle = K31GOLDD; ctx.fillRect(-70, -112, 140, 120);   // v2: a heap of round coins (overlapping discs, some tilted), not a cell pattern
+    { const rg = K.rng(77); for (let i = 0; i < 46; i++) { const row = Math.floor(i / 6), cx = -52 + rg() * 104, cy = -8 - row * 13 - rg() * 8; if (cy < -112 || Math.abs(cx) > 64 - Math.abs(cy + 70) * 0.3) continue; k31coin(ctx, cx, cy, 11 + rg() * 3, { flat: 0.15 + rg() * 0.5, rot: (rg() - 0.5) * 1.2 }); } }
     ctx.restore(); ink(ctx, body, 6, 91); }
   shape(ctx, [[-36, -136], [36, -136], [38, -148], [-38, -148]], '#d97a3a', { lw: 5, seed: 92 });
   if ((o.fill || 0) > 0) { const f = o.fill; for (let k = 0; k < 9; k++) { const cx = -28 + k * 7, cy = -150 - Math.abs(Math.sin(k * 1.7)) * 14 * f - (k % 3) * 3 * f; k31coin(ctx, cx, cy, 10, { flat: 0.45 }); } }

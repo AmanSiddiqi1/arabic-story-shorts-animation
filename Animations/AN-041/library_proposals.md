@@ -8,3 +8,10 @@
 - small effects: tongue tip (f41Tongue), sweat drop (f41Sweat), flush (f41Flush), scales (f41Scales), dotted path (f41Dotted), cave eyes (f41CaveEyes).
 - fox anchor helper (f41FoxPt / f41FoxEye) and plan-ears mapping (f41Ears): head-frame points to world for the Library fox.
 - hawk `age` (0..1) field: today emulated with a grayscale filter (f41DrawFalcon).
+
+## v2 additions (Fable round 1)
+- `crowWing` (opt-in pointing wing for dark birds: separate feathered wing with a paper-white rim, aimed by angle) and `pointGesture(t, t0, hold)` (anticipation, throw, hold, settle): `f41CrowWing`, `f41Point`.
+- `crowCrest` (crest feathers for kind 'crow', drawn behind the head): `f41CrowCrest`.
+- `flatShadow` (single-tone silhouette on an offscreen layer, clipped, with a ground fade): `f41FlatShadow`.
+- `foxLick` and `pawsOverMouth` overlays for the Library fox: `f41Lick`, `f41PawsOverMouth`.
+- `drop` (tear/drool with blue edge and splash): `f41Drop`; `fleeBird` (gull-wing V silhouette): `f41FleeBird`; `hawkSmile`: `f41HawkSmile`.

@@ -1,12 +1,13 @@
 // ===== AN-014 road and yard scenes: S5 road (30.42-33.98); S6 prayer house, S8 false friend, S9 the shove, S13 rescue,
 // S14 the sultan, S15 the cure, S16 joy (all in the shrine yard) =====
 const K14_WELL = K14_YARD.well;
+const K14_SANDAL = [738, 846];
 const k14Sit = (P) => k14Head(P);
 
 // ---------- S5: the road away ----------
 const K14_S5X = [[30.42, 520], [31.4, 880], [32.8, 1330], [33.2, 1420]];
 function k14S5(ctx, t) {
-  const gx = kfn(t, [[30.42, 520], [33.2, 1420]], 'out'), camX = gx - 430, u = k14Lin(t, [[30.42, 0.12], [33.6, 0.42]]);
+  const gx = kfn(t, [[30.42, 520], [33.2, 1420]], 'out'), camX = gx - 430, u = k14Lin(t, [[30.42, 0.3], [33.6, 0.42]]);   // v2: daytime only (no dawn flicker)
   ctx.save(); ctx.translate(-camX, 0);
   countryRoad(ctx, { w: 3000, u, camX, city: 'left', t });
   { const a = Math.PI * K.clamp((u - 0.05) / 0.5); sun(ctx, camX + 500 - Math.cos(a) * 330, 760 - Math.sin(a) * 420, t); }
@@ -59,32 +60,40 @@ function k14S6(ctx, t) {
 }
 
 // ---------- S8: the false friend ----------
-const K14_S8E = [[48.0, 1080], [49.15, 790], [49.8, 790], [50.45, 412], [54.56, 412], [54.82, 372], [55.95, 615]];
+// v2: the envier pulls on his smile beside the palm (x 905, right of the well), never inside it; the two listeners sit left of the door
+const K14_S8E = [[47.75, 1080], [48.85, 905], [49.8, 905], [50.45, 412], [54.56, 412], [54.82, 372], [55.95, 615]];
+const K14_S8SEAT = [0, 105, 172];
 const K14_S8G = [[54.56, 300], [55.85, 668]];
 function k14S8(ctx, t) {
   const d = k14Yard(ctx, t, { u: 0.32, door: 1, lamp: 1 });
   // two listeners still sitting
-  for (const i of [1, 2]) { const V = k14Visitor(t, i, { sit: 1, amp: 0, x: K14_SEATS[i] }); const tg = t > 53.8 && t < 54.6 ? k14Sit(k14Visitor(t, 3 - i, { sit: 1, x: K14_SEATS[3 - i] })) : [kfn(t, K14_S8G), 724]; if (t > 53.8 && t < 54.6) V.mouth = 'o'; k14Act(ctx, V, t, 40 + i, tg); }
+  k14WellFront(ctx, d.night);   // v2: nobody is inside the well in this scene, so its front goes behind the actors
+  for (const i of [1, 2]) { const V = k14Visitor(t, i, { sit: 1, amp: 0, x: K14_S8SEAT[i], dir: 1 }); const other = k14Sit(k14Visitor(t, 3 - i, { sit: 1, x: K14_S8SEAT[3 - i], dir: 1 }));
+    let tg = t > 53.8 && t < 54.6 ? other : [kfn(t, K14_S8G), 724]; if (t > 53.8 && t < 54.6) V.mouth = 'o';
+    if (t >= 54.62 && t < 55.3) { V.handR = [PERSON_HANDS.wave.R[0] + 12 * Math.sin(t * 16 + i), PERSON_HANDS.wave.R[1]]; tg = [450, 724]; V.mouth = 'smile'; }
+    if (t >= 55.3) { tg = other; V.talk = talk(t, [[55.4 + i * 0.2, 56.6]], i); }
+    k14Act(ctx, V, t, 40 + i, tg); }
   // kind man
   const P = k14W(k14GM(t, { dir: 1 }), K14_S8G, t);
   const ex = k14X(K14_S8E);
   let pt = t < 50.0 ? [ex(t), 724] : [ex(t), 726];
   if (t >= 50.45 && t < 51.12) { P.eyes = 'shut'; P.handRW = [ex(t) + 4, 800]; P.mouth = 'smile'; }
   if (t >= 52.95 && t < 53.6) pt = [790, 830];
-  if (t >= 53.68 && t < 54.5) { P.handR = [86, -132]; P.drop = 5 * pulse(t, 54.0, 0.4); pt = [545, 830]; }
+  if (t >= 53.68 && t < 54.5) { P.dir = -1; P.handR = [86, -132]; P.drop = 5 * pulse(t, 54.0, 0.4); pt = [140, 830]; }
   if (t >= 54.56) pt = [1000, 760];
   // envier
   const E = k14W(k14EN(t, { dir: -1, mouth: 'frown', brow: 1 }), K14_S8E, t, t > 54.6 ? 18 : 27);
   let et = [300, 724];
-  if (t < 49.2) { E.tip = 0.06; et = [300, 760]; }
+  if (t < 48.9) { E.tip = 0.06; et = [300, 760]; }
   if (t >= 49.28 && t < 49.8) { const k = K.clamp((t - 49.28) / 0.3); E.handL = PERSON_HANDS.cheeks.L; E.handR = PERSON_HANDS.cheeks.R; E.mouth = k > 0.5 ? 'smile' : 'frown'; E.brow = K.lerp(1, -0.3, k); E.lid = 0.3; if (t > 49.62) E.handR = PERSON_HANDS.chin.R; }
   if (t >= 49.8) { E.mouth = 'smile'; E.brow = -0.3; E.lid = 0.3; }
   if (t >= 50.2 && t < 50.45) { E.handL = PERSON_HANDS.armsOut.L; E.handR = PERSON_HANDS.armsOut.R; }
   if (t >= 50.45 && t < 51.12) { E.handLW = [270, 790]; E.handRW = [334, 772]; const off = t >= 50.62 && t < 50.97; if (off) { E.mouth = 'frown'; E.brow = 1; et = [700, 700]; } }
-  if (t >= 51.16 && t < 51.6) { E.handR = PERSON_HANDS.hush.R; et = [545, 820]; }
+  if (t >= 51.16 && t < 51.6) { E.handR = PERSON_HANDS.hush.R; et = [140, 820]; }
   if (t >= 51.6 && t < 52.4) { E.handR = PERSON_HANDS.cupMouth.R; E.tip = 0.1; }
   if (t >= 52.88 && t < 53.7) { E.handL = [-104, -166]; E.brow = -0.3 + 0.5 * Math.sin(t * 22); }
-  if (t >= 54.56) { E.dir = 1; E.mouth = 'smile'; if (t > 55.0 && Math.abs(ex(t) - kfn(t, K14_S8G)) < 90) E.handRW = [kfn(t, K14_S8G) - 26, 806]; et = t > 55.15 && t < 55.5 ? [100, 760] : [kfn(t, K14_S8G), 726]; }
+  if (t >= 54.56) { E.dir = 1; E.mouth = 'smile'; if (t > 55.0 && Math.abs(ex(t) - kfn(t, K14_S8G)) < 90) E.handRW = [kfn(t, K14_S8G) - 26, 806]; et = [kfn(t, K14_S8G), 726];
+    if (t >= 54.6 && t < 54.92) { et = [140, 830]; E.mouth = 'frown'; E.brow = 1; E.lid = 0.15; } }   // v2: a glance back at the listeners, mask off
   const enFirst = t >= 50.45 && t < 51.12 ? false : true;
   if (enFirst) { k14Act(ctx, E, t, 3, et); k14Act(ctx, P, t, 1, pt); } else { k14Act(ctx, P, t, 1, pt); k14Act(ctx, E, t, 3, et); }
   if (t < 48.0) {} else if (t < 49.2) for (const tk of [48.3, 48.6, 48.9]) dustBurst(ctx, ex(tk) + 20, 902, t - tk, 4, 5, 10, 22, 0.4, 7);
@@ -92,8 +101,7 @@ function k14S8(ctx, t) {
   if (t < 56.44) shape(ctx, ell(812, 822, 9, 6, 10), STONE2, { lw: 3, seed: 540 });
   else if (t < 56.8) k14ClipOut(ctx, [700, 836, 160, 400], () => shape(ctx, ell(812 - 10 * (t - 56.44), fallY(t, 56.44, 56.75, 822, 960), 9, 6, 10), STONE2, { lw: 3, seed: 540 }));
   const fl = t >= 56.55, cd = t - 56.55;
-  bird(ctx, { kind: 'crow', x: fl ? 840 + cd * 300 : 840, y: fl ? 668 - cd * 260 : 668, s: 0.55, dir: 1, fly: fl, flap: fl ? Math.sin(t * 30) : 0 });
-  k14WellFront(ctx, d.night);
+  bird(ctx, { kind: 'crow', x: fl ? 840 + cd * 300 : 840, y: fl ? 668 - cd * 260 : 668, s: 0.55, dir: 1, fly: fl, flap: fl ? Math.sin(t * 30) : 0, gaze: t < 50.4 ? [1, 0.4] : undefined });
 }
 
 // ---------- S9: the shove ----------
@@ -123,9 +131,9 @@ function k14S9(ctx, t) {
     const w = (t - 60.55) * 40; P.aL = [-2 + Math.sin(w) * 1.2, -2.4 + Math.sin(w + 1) * 1.2]; P.aR = [2 + Math.cos(w) * 1.2, 2.4 + Math.cos(w + 1) * 1.2]; P.eyes = 'wide'; P.mouth = 'o'; P.noBlink = true;
   }
   if (!falling || t < 61.5) { if (falling) k14ClipOut(ctx, [700, 834, 170, 420], () => k14Act(ctx, P, t, 1, null)); }
-  if (t >= 60.75) k14Sandal(ctx, 742, 826, 0.75, 0.1);
   if (!run || !bolt) { if (!falling) { k14WellFront(ctx, d.night); k14Act(ctx, P, t, 1, pt); k14Act(ctx, E, t, 3, et); } else { k14WellFront(ctx, d.night); k14Act(ctx, E, t, 3, et); } }
   else { k14WellFront(ctx, d.night); k14Act(ctx, E, t, 3, et); }
+  if (t >= 60.75) k14Sandal(ctx, ...K14_SANDAL, 1.15, -0.08);   // v2: the sandal left on the front of the rim, drawn over it
   dustBurst(ctx, 780, 828, t - 62.55, 6, 6, 12, 30, 0.6, 9);
   if (bolt) for (let k = 0; k < 4; k++) { const tk = 63.6 + k * 0.1; dustBurst(ctx, kfn(tk, [[63.54, 662], [64.0, 1160]], 'in') - 30, 902, t - tk, 4, 6, 12, 24, 0.45, 11 + k); }
   if (run && !bolt) dustBurst(ctx, 662, 902, t - 63.3, 5, 5, 10, 24, 0.3, 13);
@@ -133,7 +141,7 @@ function k14S9(ctx, t) {
 
 // ---------- S13: dawn; the followers find him ----------
 const K14_F1 = { costume: 'villager', pal: { robe: C.red, dot: '#a8160f' }, s: 0.86, y: 900 };
-const K14_F2 = { costume: 'servant', s: 0.84, y: 900 };
+const K14_F2 = { costume: 'servant', pal: { head: 'turban', hc: C.white, hd: '#3f9d4a', band: '#3f9d4a', sash: '#3f9d4a', tache: false }, s: 0.84, y: 900 };   // v2: green turban, no red cap
 const K14_F1X = [[99.5, 250], [100.2, 450], [101.08, 450], [101.6, 672], [105.5, 672], [105.8, 610]], K14_F2X = [[99.7, 250], [100.4, 600], [102.9, 600], [103.45, 885]];
 const K14_HEAVE = [104.45, 104.8, 105.15];
 function k14S13(ctx, t) {
@@ -157,7 +165,7 @@ function k14S13(ctx, t) {
   if (t < 100.24) { F1.handR = PERSON_HANDS.cupMouth.R; F1.talk = talk(t, [[99.6, 100.2]]); t1 = [Math.sin(t * 4) > 0 ? 900 : 100, 700]; F2.handR = PERSON_HANDS.cupMouth.R; F2.talk = talk(t, [[99.8, 100.3]], 1); t2 = [Math.sin(t * 4 + 2) > 0 ? 950 : 150, 700]; }
   if (t >= 100.24 && t < 101.5) { t2 = t < 100.55 ? [930, 600] : [600, 900]; if (t >= 100.6 && t < 101.2) { F2.handRW = [612, 860 - bucketLift]; F2.tip = 0.08; } if (t >= 101.2) { F2.handL = PERSON_HANDS.palmsUp.L; F2.handR = PERSON_HANDS.palmsUp.R; F2.mouth = 'frown'; F2.brow = -0.5; } }
   let sandal = t >= 101.9 ? (t < 106.0 ? 'held' : 'give') : 'rim';
-  if (t >= 101.6 && t < 102.62) { t1 = t < 101.9 ? [742, 826] : [kfn(t, K14_F2X), 724]; if (t >= 101.9) { F1.handRW = [700, 760]; F1.mouth = 'o'; } }
+  if (t >= 101.6 && t < 102.62) { t1 = t < 101.9 ? K14_SANDAL : [kfn(t, K14_F2X), 724]; if (t >= 101.9) { F1.handRW = [700, 760]; F1.mouth = 'o'; } }
   if (t >= 102.0 && t < 102.62) t2 = [742, 760];
   if (t >= 102.62 && t < 103.58) { F1.handR = PERSON_HANDS.cupEar.R; F2.handR = PERSON_HANDS.cupEar.R; t1 = t2 = [780, 836]; F2.dir = t > 103.4 ? -1 : 1; }
   if (t >= 103.58 && t < 104.34) { F1.tip = 0.12; F2.dir = -1; F2.tip = 0.12; F1.handRW = [760, 790 + 14 * Math.sin(t * 14)]; F2.handRW = [810, 790 + 14 * Math.sin(t * 14 + 1)]; F1.mouth = F2.mouth = 'smile'; t1 = t2 = [780, 860]; }
@@ -165,8 +173,8 @@ function k14S13(ctx, t) {
   if (t >= 105.6) { F2.dir = -1; F1.mouth = F2.mouth = 'smile'; t1 = t2 = [720, 740]; if (t >= 106.3) { F1.handRW = [680, 800]; sandal = 'give'; } }
   if (t >= 101.6 && t < 106.3 && sandal === 'held' && !F1.handRW && !F1.handLW) F1.handRW = [705, 770];
   k14Act(ctx, F2, t, 51, t2); k14Act(ctx, F1, t, 52, t1);
-  if (sandal === 'rim') k14Sandal(ctx, 742, 826, 0.75, 0.1);
-  else { const hw = F1.handRW || F1.handLW || [705, 770]; k14Sandal(ctx, hw[0], hw[1] + 6, 0.75, -0.4); }
+  if (sandal === 'rim') k14Sandal(ctx, ...K14_SANDAL, 1.15, -0.08);
+  else { const hw = F1.handRW || F1.handLW || [705, 770]; k14Sandal(ctx, hw[0], hw[1] + 14, 1.15, -0.4); }
   if (t >= 102.62 && t < 103.7) soundArcs(ctx, 780, 800, 0, t);
 }
 
@@ -199,67 +207,78 @@ function k14S14(ctx, t) {
   for (const f of K14_SUF) dustBurst(ctx, f.x, 902, t - f.t, 4, 6, 12, 22, 0.4, Math.round(f.t * 10));
   // princess
   if (t >= 110.3) { if (t >= 111.78) k14Ill(Pr, t, K.clamp((t - 111.6) / 0.3)); else { Pr.mouth = 'frown'; Pr.pale = 0.6; } k14Act(ctx, Pr, t, 62, k14Head(S1));
-    if (t >= 111.6) { const h = k14Head(Pr); k14Wisp(ctx, h[0], h[1] - 10, t, { s: 0.42, r: 80, alpha: K.clamp((t - 111.6) / 0.4) }); } }
+    if (t >= 111.6) k14GhostOn(ctx, k14Head(Pr), k14HeadR(Pr), t, { alpha: K.clamp((t - 111.6) / 0.4) }); }   // v2: the spirit as a ghost circling above her head
 }
 
 // ---------- S15: the cat, the hairs, the brazier; the spirit leaves ----------
-const K14_CATX = [[112.44, 40], [113.8, 385]], K14_CATX2 = [[115.95, 385], [116.75, 236]], K14_CATX3 = [[124.7, 236], [125.6, 336]];
+// v2: the seven white hairs are drawn big on the cat's tail tip; each count lifts one strand into his hand (tail tip -> hand); the brazier
+// sits just left of him so hand, hairs and flame read as one group; the cat strolls off to the right (never through him);
+// the princess stands right of her father (the same order as the next shot) and the spirit is a ghost circling above her head.
+const K14_CATX = [[112.44, 40], [113.8, 385]], K14_CATX2 = [[116.15, 385], [116.85, 505]], K14_CATX3 = [[124.7, 505], [125.6, 410]];
 const K14_PLUCK = [114.5, 114.75, 115.0, 115.25, 115.5, 115.78, 116.05];
+const K14_BRZ = [222, 905], K14_S15PR = 830, K14_S15SU = 690;
 function k14CatP(t, o = {}) {
-  const s = 0.42, P = { pal: 0, y: 905, s, dir: 1, tailUp: 1, tailHairs: 7, ears: 1 };
-  let xf = k14X(K14_CATX); if (t >= 115.95) { xf = k14X(K14_CATX2); P.dir = -1; } if (t >= 124.7) { xf = k14X(K14_CATX3); P.dir = 1; }
+  const s = 0.42, P = { pal: 0, y: 905, s, dir: 1, tailUp: 1, tailHairs: 0, ears: 1 };
+  let xf = k14X(K14_CATX); if (t >= 116.15) xf = k14X(K14_CATX2); if (t >= 124.7) { xf = k14X(K14_CATX3); P.dir = -1; }
   Object.assign(P, walk(xf, t, { stride: GAIT.cat * s }));
   return Object.assign(P, o);
 }
+const k14SmokeAt = (u, t) => [K.lerp(K14_BRZ[0], K14_S15PR, u) + Math.sin(u * 9 + t * 2) * 22, 830 - 400 * Math.sin(u * Math.PI * 0.9) - 30 * u];
 function k14S15(ctx, t) {
   const d = k14Yard(ctx, t, { u: 0.3, door: 1, lamp: 1 });
   k14WellFront(ctx, d.night);
   const H = countedBeats(t, K14_PLUCK), n = H.n;
   // brazier and smoke
-  const flare = t >= 116.36 ? Math.exp(-(t - 116.36) * 3) : 0;
-  k14Brazier(ctx, 460, 905, t, flare, t >= 113.0 ? 1 : 0.6);
+  const flare = t >= 116.42 ? Math.exp(-(t - 116.42) * 3) : 0;
+  k14Brazier(ctx, K14_BRZ[0], K14_BRZ[1], t, flare, t >= 113.0 ? 1 : 0.6);
   if (t >= 116.5 && t < 121.2) { const pr = K.clamp((t - 116.5) / 2.4); ctx.save(); ctx.globalAlpha = 0.85 * K.clamp((121.2 - t) / 0.5);
-    for (let i = 0; i < 16; i++) { const u = i / 15 * pr, x = K.lerp(460, 690, u) + Math.sin(u * 9 + t * 2) * 26, y = 830 - 200 * Math.sin(u * Math.PI * 0.9) - u * 40; ctx.beginPath(); ctx.arc(x, y, 12 + 10 * u, 0, 7); ctx.fillStyle = C.white; ctx.fill(); ctx.lineWidth = 3; ctx.strokeStyle = '#b9b4c6'; ctx.stroke(); }
-    ctx.restore(); for (let i = 0; i < 7; i++) { const u = K.clamp(pr - i * 0.08); if (u > 0 && u < 1) star(ctx, K.lerp(460, 690, u) + Math.sin(u * 9 + t * 2) * 26, 830 - 200 * Math.sin(u * Math.PI * 0.9) - u * 40 - 26, 9, C.yellow, t * 3 + i); } }
-  // kind man: kneels, strokes, plucks, burns
-  const P = k14GM(t, { x: 300, dir: 1, mouth: 'smile' }), C1 = k14CatP(t);
+    for (let i = 0; i < 18; i++) { const u = i / 17 * pr, [x, y] = k14SmokeAt(u, t); ctx.beginPath(); ctx.arc(x, y, 12 + 10 * u, 0, 7); ctx.fillStyle = C.white; ctx.fill(); ctx.lineWidth = 3; ctx.strokeStyle = '#b9b4c6'; ctx.stroke(); }
+    ctx.restore(); for (let i = 0; i < 7; i++) { const u = K.clamp(pr - i * 0.08); if (u > 0 && u < 1) { const [x, y] = k14SmokeAt(u, t); star(ctx, x, y - 26, 9, C.yellow, t * 3 + i); } } }
+  // the cat (computed first: his hand follows its tail tip)
+  const C1 = k14CatP(t);
+  if (t >= 113.96 && t < 114.5) { C1.arch = 1; C1.lid = 1; C1.noBlink = true; }
+  if (t >= 114.5 && t < 116.15) C1.ears = 1 - 1.4 * H.accent;
+  if (t >= 115.5 && t < 115.95) C1.lick = pulse(t, 115.5, 0.45);
+  if (t >= 116.85 && t < 124.7) { C1.sit = 1; C1.gaze = [1, -0.2]; }
+  if (t >= 125.6) { C1.tip = 0.06 * Math.sin(t * 6); C1.sit = 0; C1.lid = 0.5; }
+  const tip = k14CatTip(C1);
+  // kind man: kneels, strokes, plucks hair by hair, turns and burns them
+  const P = k14GM(t, { x: 300, dir: 1, mouth: 'smile' });
   P.kneel = blend(t, 113.8, 114.1, 0, 1) * (1 - blend(t, 122.8, 123.2, 0, 1));
-  let pt = [C1.x + 60, 860];
+  let pt = [C1.x + 60, 860], hairsAt = null;
   if (t >= 113.96 && t < 114.45) { const u = (t - 113.96) / 0.45; P.handRW = [K.lerp(420, 345, u), K.lerp(835, 845, u)]; }
-  if (t >= 114.45 && t < 116.3) { const pinch = H.accent; P.handRW = [326 + 4 * pinch, 790 + 6 * pinch]; P.handL = [30, -100]; pt = [326, 790]; }
-  if (t >= 116.1 && t < 116.36) { P.handRW = [360, 760]; pt = [360, 740]; }
-  if (t >= 116.36 && t < 117.2) { P.handRW = [K.lerp(400, 446, K.clamp((t - 116.36) / 0.15)), 832]; P.tip = -0.08 * Math.exp(-(t - 116.4) * 4); pt = [460, 800]; }
+  if (t >= 114.45 && t < 116.14) { let last = -1; for (const k of K14_PLUCK) if (t >= k) last = k; const dd = last < 0 ? 1 : t - last, up = last < 0 ? 0 : 50 * Math.sin(Math.PI * K.clamp(dd / 0.25));
+    P.handRW = [tip[0] + 2, tip[1] + 4 - up]; P.handL = [30, -100]; pt = [tip[0], tip[1] - 10]; hairsAt = n > 0 ? [P.handRW[0], P.handRW[1] - 4] : null; }
+  if (t >= 116.14) { P.dir = -1; }
+  if (t >= 116.14 && t < 116.42) { const u = K.ease.inOut(K.clamp((t - 116.14) / 0.2)); P.handRW = [K.lerp(330, K14_BRZ[0] + 14, u), K.lerp(790, 812, u)]; pt = [K14_BRZ[0], 860]; hairsAt = [P.handRW[0], P.handRW[1] - 4]; }
+  if (t >= 116.42 && t < 117.2) { P.handRW = [K14_BRZ[0] + 14, 812]; P.handR = undefined; P.tip = -0.06 * Math.exp(-(t - 116.42) * 4); pt = [K14_BRZ[0], 840]; }
+  if (t >= 117.2) P.dir = 1;
   if (t >= 117.22 && t < 118.9) { pt = [120, 300]; P.drop = 5 * pulse(t, 118.2, 0.4); }
-  if (t >= 118.9) pt = [700, 700];
-  if (t >= 121.8) pt = [700, 724];
+  if (t >= 118.9) pt = [K14_S15PR - 20, 700];
+  if (t >= 121.8) pt = [K14_S15PR - 20, 724];
   if (t >= 125.1) { P.handR = PERSON_HANDS.chest.R; }
   k14Act(ctx, P, t, 1, pt);
-  if (t >= 114.5 && t < 116.4) { const h = P.handRW; k14Hairs(ctx, h[0], h[1], n, 0.45); }
-  if (t >= 116.36 && t < 116.6) k14Hairs(ctx, 446, K.lerp(832, 860, (t - 116.36) / 0.24), 7, 0.45);
+  if (hairsAt) k14Hairs(ctx, hairsAt[0], hairsAt[1], Math.max(n, t >= 116.14 ? 7 : 0), 0.55, { ol: true });
+  // the open hand drops seven white strands into the bowl, then the flare
+  if (t >= 116.42 && t < 116.7) { const u = K.clamp((t - 116.42) / 0.26); for (let i = 0; i < 7; i++) { const x = K14_BRZ[0] + 4 + (i - 3) * 5, y = K.lerp(806, 850, u * u) + (i % 3) * 3; ctx.save(); ctx.lineCap = 'round'; for (const [w, c] of [[6, C.black], [3, C.white]]) { ctx.lineWidth = w; ctx.strokeStyle = c; ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + 4 * Math.sin(i + t * 20), y - 18); ctx.stroke(); } ctx.restore(); } }
   // memory icons pop back out of his turban
-  if (t >= 112.5 && t < 113.7) { const h = k14Head(P), a = K.clamp((113.7 - t) / 0.3); ctx.save(); ctx.globalAlpha = a; [[-50, '7'], [0, 'hair'], [50, 'cat']].forEach(([dx, k], i) => { const u = K.ease.back(K.clamp((t - 112.5 - i * 0.15) / 0.3)), x = h[0] + dx * u, y = h[1] - 60 - 50 * u; if (k === '7') sfx(ctx, '7', x, y, 40 * u, 1); else if (k === 'hair') k14Hairs(ctx, x, y + 20, 7, 0.4 * u); else cat(ctx, { x: x + 10, y: y + 22, s: 0.22 * u, silhouette: true, tailUp: 1, tailHairs: 7 }); }); ctx.restore(); }
-  // the cat
-  if (t >= 113.96 && t < 114.5) { C1.arch = 1; C1.lid = 1; C1.noBlink = true; }
-  if (t >= 114.5 && t < 115.95) { C1.ears = 1 - 1.4 * H.accent; C1.tailHairs = 7 - n; }
-  if (t >= 115.95) C1.tailHairs = 0;
-  if (t >= 115.5 && t < 115.95) C1.lick = pulse(t, 115.5, 0.45);
-  if (t >= 116.75 && t < 124.7) { C1.sit = 1; C1.gaze = [1, -0.2]; }
-  if (t >= 125.6) { C1.tip = 0.06 * Math.sin(t * 6); C1.sit = 0; C1.lid = 0.5; }
+  if (t >= 112.5 && t < 113.7) { const h = k14Head(P), a = K.clamp((113.7 - t) / 0.3); ctx.save(); ctx.globalAlpha = a; [[-50, '7'], [0, 'hair'], [50, 'cat']].forEach(([dx, k], i) => { const u = K.ease.back(K.clamp((t - 112.5 - i * 0.15) / 0.3)), x = h[0] + dx * u, y = h[1] - 60 - 50 * u; if (k === '7') sfx(ctx, '7', x, y, 40 * u, 1); else if (k === 'hair') k14Hairs(ctx, x, y + 20, 7, 0.4 * u, { ol: true }); else cat(ctx, { x: x + 10, y: y + 22, s: 0.22 * u, silhouette: true, tailUp: 1, tailHairs: 7 }); }); ctx.restore(); }
   cat(ctx, C1);
-  // princess and sultan
-  const S1 = k14SultanP(t, { x: 820, amp: 0, ph: 0, dir: -1 }), Pr = k14PrincessP(t, { x: 680, amp: 0, ph: 0, dir: -1 });
+  if (t < 116.15) k14TipHairs(ctx, tip[0], tip[1], 7 - n, 24);
+  // princess (right) and sultan (left, facing her)
+  const S1 = k14SultanP(t, { x: K14_S15SU, amp: 0, ph: 0, dir: 1 }), Pr = k14PrincessP(t, { x: K14_S15PR, amp: 0, ph: 0, dir: -1 });
   const ill = t < 121.76 ? 1 : K.clamp(1 - (t - 121.76) / 0.7);
   k14Ill(Pr, t, ill);
   if (t >= 121.76) { const dd = Math.min(t - 121.76, 0.64); Pr.spinT = 121.76 * 3 + 3 * dd * (1 - dd / 1.28); Pr.spiral = K.clamp((122.45 - t) / 0.25); Pr.pale = K.clamp(1 - (t - 121.76) / 1.2); Pr.lid = Math.max(pulse(t, 122.55, 0.18), pulse(t, 122.85, 0.18)); Pr.mouth = 'closed'; }
   if (t >= 123.14) { Pr.sq = settleTo(t, 123.14, 0.94, 1, 0.4); Pr.mouth = 'smile'; Pr.aL = Pr.aR = undefined; Pr.noBlink = false; }
   S1.wet = true; S1.brow = -0.5; let crot = 0;
-  if (t >= 123.78) { S1.eyes = t < 124.2 ? 'wide' : 'open'; S1.mouth = t < 124.4 ? 'o' : 'smile'; S1.brow = -0.2; crot = -0.25 * K.clamp((t - 123.8) / 0.3); }
-  if (t >= 125.14) { const u = K.clamp((t - 125.14) / 0.35); Pr.x = K.lerp(680, 742, u); S1.x = K.lerp(820, 792, u); S1.handLW = [Pr.x - 20, 790]; S1.handRW = [Pr.x + 4, 770]; Pr.handLW = [S1.x - 10, 780]; Pr.handRW = [S1.x + 20, 796]; Pr.lid = 0.9; S1.lid = 0.9; }
+  if (t >= 123.78) { S1.eyes = t < 124.2 ? 'wide' : 'open'; S1.mouth = t < 124.4 ? 'o' : 'smile'; S1.brow = -0.2; crot = 0.25 * K.clamp((t - 123.8) / 0.3); }
+  if (t >= 125.14) { const u = K.clamp((t - 125.14) / 0.35); Pr.x = K.lerp(K14_S15PR, 808, u); S1.x = K.lerp(K14_S15SU, 728, u); S1.handLW = [Pr.x - 4, 770]; S1.handRW = [Pr.x + 18, 792]; Pr.handLW = [S1.x + 12, 780]; Pr.handRW = [S1.x - 16, 796]; Pr.lid = 0.9; S1.lid = 0.9; }
   k14Act(ctx, S1, t, 61, k14Head(Pr)); k14SultanCrown(ctx, S1, S1, 0, crot);
   k14Act(ctx, Pr, t, 62, t < 123.14 ? null : k14Head(S1));
-  // the spirit: recoils, is drawn out, shoots up
-  if (t < 121.2) { const h = k14Head(Pr), st = K.clamp((t - 120.18) / 0.4), lift = t > 120.55 ? (t - 120.55) * 2400 : 0;
-    k14Wisp(ctx, h[0], h[1] - 10, t, { s: 0.42, r: t >= 119.0 ? 55 : 80, alarm: t >= 119.0 ? 1 : 0, stretch: st, lift, alpha: K.clamp((120.9 - t) / 0.15) }); }
+  // the spirit: circles above her head, recoils from the smoke, is drawn up and out
+  if (t < 121.2) { const h = k14Head(Pr), r = k14HeadR(Pr), al = t >= 119.0 ? 1 : 0, st = K.clamp((t - 120.18) / 0.4), lift = (t >= 119.0 ? 18 * K.clamp((t - 119.0) / 0.3) : 0) + (t > 120.55 ? (t - 120.55) * 2400 : 0);
+    k14GhostOn(ctx, h, r, t, { alarm: al, stretch: st, lift, dx: t >= 119.0 ? 26 * K.clamp((t - 119.0) / 0.3) : 0, alpha: K.clamp((120.9 - t) / 0.15) }); }
   k14Flash(ctx, t, 120.72);
 }
 
@@ -268,23 +287,23 @@ function k14S16(ctx, t) {
   const d = k14Yard(ctx, t, { u: 0.3, door: 1, lamp: 1 });
   k14WellFront(ctx, d.night);
   const C1 = { pal: 0, x: 300, y: 905, s: 0.42, dir: 1, sit: 1, tailUp: 0.6, tailHairs: 0 };
-  const lifted = t >= 127.85, P = k14GM(t, { x: lifted ? 450 : 420, dir: 1, mouth: 'smile' });
-  if (lifted) { P.y = 900 - 40 * K.clamp((t - 127.85) / 0.2); P.ph = swing(t, 127.9, 1.4, 1.6, 0.6); P.amp = 0.9; P.mouth = 'open'; P.eyes = t < 128.2 ? 'wide' : 'open'; }
+  const lifted = t >= 127.85, P = k14GM(t, { x: lifted ? 432 : 420, dir: 1, mouth: 'smile' });
+  if (lifted) { P.y = 900 - 34 * K.clamp((t - 127.85) / 0.2); P.ph = swing(t, 127.9, 1.4, 1.6, 0.6); P.amp = 0.9; P.mouth = 'open'; P.eyes = t < 128.2 ? 'wide' : 'open'; }
   else { P.handR = t < 127.5 ? PERSON_HANDS.chest.R : undefined; }
   const H1 = hop(t, 126.1, 0.5, 0, 0, 70)[1], H2 = hop(t, 126.75, 0.5, 0, 0, 55)[1];
-  const S1 = k14SultanP(t, { x: kfn(t, [[127.55, 600], [127.85, 492]]), amp: 0, ph: 0, dir: -1, mouth: 'smile', brow: -0.2 });
+  const S1 = k14SultanP(t, { x: kfn(t, [[127.55, 600], [127.85, 512]]), amp: 0, ph: 0, dir: -1, mouth: 'smile', brow: -0.2 });
   S1.y = 900 - H1 - H2; S1.sq = Math.min(anticipate(t, 125.9, 0.2, 0.1), landSquash(t, 126.6, 0.16), landSquash(t, 127.25, 0.14)); if (t < 127.3 && (H1 > 0 || H2 > 0)) { S1.aL = K14_UP.aL; S1.aR = K14_UP.aR; S1.mouth = 'open'; }
-  if (lifted) { S1.handLW = [P.x - 30, 810]; S1.handRW = [P.x + 30, 790]; S1.mouth = 'open'; }
+  if (lifted) { S1.handLW = [P.x + 6, 800]; S1.handRW = [P.x + 20, 780]; S1.mouth = 'open'; }
   const Pr = k14PrincessP(t, { x: 760, amp: 0, ph: 0, mouth: 'smile' });
   if (t >= 128.54) { Pr.handR = PERSON_HANDS.mouthCover.R; Pr.handL = PERSON_HANDS.mouthCover.L; Pr.eyes = 'shut'; Pr.x += tremble(t, 1.2); }
   C1.gaze = lookAt([C1.x + 60, 820], [P.x, P.y]);
   cat(ctx, C1);
   k14Act(ctx, Pr, t, 62, k14Head(S1));
-  if (lifted) { k14Act(ctx, P, t, 1, k14Head(S1)); k14Act(ctx, S1, t, 61, k14Head(P)); }
+  if (lifted) { k14Act(ctx, S1, t, 61, k14Head(P)); k14SultanCrown(ctx, S1, S1, 0, swing(t, 127.37, 0.2, 2.2, 3)); P.gaze = [0.3, 0.2]; k14Act(ctx, P, t, 1, null); }   // v2: the hero in front, face to camera, sultan hugging from behind
   else { k14Act(ctx, P, t, 1, k14Head(S1)); k14Act(ctx, S1, t, 61, [600, 500]); }
   // crown floats behind each jump and wobbles back on
   const lagLift = (hop(t - 0.12, 126.1, 0.5, 0, 0, 92)[1] + hop(t - 0.12, 126.75, 0.5, 0, 0, 74)[1]) - (H1 + H2);
-  k14SultanCrown(ctx, S1, S1, Math.max(0, lagLift), swing(t, 126.72, 0.25, 2.2, 3) + swing(t, 127.37, 0.2, 2.2, 3));
+  if (!lifted) k14SultanCrown(ctx, S1, S1, Math.max(0, lagLift), swing(t, 126.72, 0.25, 2.2, 3) + swing(t, 127.37, 0.2, 2.2, 3));
 }
 
 // ---------- yard lettering ----------
@@ -298,8 +317,8 @@ function k14YardOver(ctx, t, cam, S) {
     wellShaft(c); c.save(); c.globalAlpha = 0.5; c.fillStyle = NAVY2; c.fillRect(0, 0, 1000, 1230); c.restore();
     const G = k14GM(115, { x: 600, y: 1186, s: 0.85, dir: -1, tip: -0.1, handR: PERSON_HANDS.cupEar.R, mouth: 'closed', noBlink: true, gaze: [-1, 0] }); k14Person(c, G);
     soundArcs(c, 560, 1060, 1, t); }, { scale: 0.8, at: [600, 1080], bg: NAVY2 });
-  k14Word(ctx, S, t, 'POOF!', 800, 470, cam, 120.4, 121.6, 110);
-  k14Label(ctx, S, t, 'CURED!', 680, 560, cam, 123.14, 124.6);
-  if (t >= 123.14 && t < 124.4) k14Spark(ctx, t, 123.14, ...k14P(680, 700, cam), 4, 90, 1.2);
+  k14Word(ctx, S, t, 'POOF!', 830, 470, cam, 120.4, 121.6, 110);
+  k14Label(ctx, S, t, 'CURED!', 790, 560, cam, 123.14, 124.6);
+  if (t >= 123.14 && t < 124.4) k14Spark(ctx, t, 123.14, ...k14P(K14_S15PR, 700, cam), 4, 90, 1.2);
   k14Word(ctx, S, t, 'HA HA!', 720, 520, cam, 128.54, 129.6, 100);
 }

@@ -9,3 +9,8 @@
 7. `chaseRoad`: 3000-wide strip with three perch trees (branch tips at y 548) and the home tree at the far end.
 8. `personHand(P, side, armAngles)` + `staff(ctx, hand, angle)`: hand position for the person figure from arm angles, and a free staff (raise, swipe, two-fist grip, carry over the shoulder).
 9. Fox `pal: 'jackal'` (tan/sand), replacing the canvas-filter tint used here.
+
+## From v2 (Fable round 1)
+- `fox` raised-paw visibility: an opt-in `pawFront` (draw the raised forepaw after the head, with a target) so stop/temple/whisper gestures read at small scale (story version: k5Jackal in src/assets.js).
+- `K5_GLY(z, f)` camera helper: camera y that puts the ground line at fraction f of the panel (Guide: zoomed ground shots at ~80 %).
+- Day-cycle timing table without holds (K5_U14 pattern) as a Guide example: no sky state under 6 frames.
