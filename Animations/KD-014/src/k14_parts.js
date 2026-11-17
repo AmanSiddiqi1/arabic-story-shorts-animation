@@ -91,7 +91,8 @@ function windSpirit(ctx, x, y, s, t, W = {}) {
 // ---------- mountainMassif(ctx, t, M): the mountain seen from its foot (base x 60..1060, peak (600, 120), ground 900) ----------
 // M: {lidL, lidR, gazeL, gazeR, gaze, brow, mouth 'smile' | 'line' | 'wobble' | 'frown', talk, holeA 1 (open) | 'plug', holeB 0..1, lit 0..1 (warm light in hole A), sleep}
 const K14_MTN = [[40, 908], [150, 720], [250, 610], [330, 470], [420, 360], [500, 230], [560, 160], [600, 118], [650, 170], [700, 230], [770, 330], [850, 450], [930, 600], [1000, 720], [1080, 908]];
-const K14_HOLE_A = [700, 885], K14_HOLE_B = [636, 882];
+const K14_HOLE_A = [700, 885], K14_HOLE_B = [636, 884];
+const K14_MS = 0.34;   // v2 mouse scale on the mountain (people s 0.95: human : mouse height >= 4.5 : 1)
 function mountainMassif(ctx, t, M = {}) {
   ctx.drawImage(bake('k14mtn', 1220, 1000, (x) => { x.translate(110, 0);
     shape(x, K14_MTN, K14_ROCK, { lw: 9, seed: 140, dot: K14_ROCKD, pitch: 11, rad: 0.24, da: 0.5 });
@@ -117,11 +118,12 @@ function mountainMassif(ctx, t, M = {}) {
   else { ctx.beginPath(); const cv = m === 'smile' ? 26 : m === 'frown' ? -20 : 0;
     for (let k = 0; k <= 14; k++) { const u = k / 14, xx = mx - 85 + 170 * u, zig = (k % 2 ? 6 : -4) + (m === 'wobble' ? Math.sin(u * 8 + t * 20) * 8 : 0); ctx.lineTo(xx, my + zig + cv * Math.sin(Math.PI * u)); } ctx.stroke(); }
   ctx.restore();
-  // holes
-  if ((M.holeB || 0) > 0) { const k = K.clamp(M.holeB); shape(ctx, ell(K14_HOLE_B[0], K14_HOLE_B[1] - 6, 26 * k, 22 * k, 18), K14_HOLE, { lw: 4, seed: 181 }); }
+  // holes (v2: mouse-sized; B is the mouse's front door after the boulder plugs A). M.lit lights A, M.litB lights B (with a glow on the ground in front)
+  if ((M.holeB || 0) > 0) { const k = K.clamp(M.holeB), [bx, by] = K14_HOLE_B, lb = K.clamp(M.litB || 0);
+    shape(ctx, [[bx - 17 * k, by + 8], [bx - 17 * k, by - 6 * k], [bx - 9 * k, by - 18 * k], [bx, by - 21 * k], [bx + 9 * k, by - 18 * k], [bx + 17 * k, by - 6 * k], [bx + 17 * k, by + 8]], lb ? mixHex(K14_HOLE, '#ffd98a', lb) : K14_HOLE, { lw: 3.5, seed: 181 });
+    if (lb) { ctx.save(); const pu = 0.85 + 0.15 * Math.sin(t * Math.PI); ctx.globalAlpha = 0.6 * lb * pu; ctx.fillStyle = dotPat(ctx, C.yellow, 4, 0.4); const gr = 1 + 1.6 * K.clamp(M.glowBig || 0); ctx.beginPath(); ctx.arc(bx, by - 6, 30 * gr, 0, 7); ctx.fill(); ctx.beginPath(); ctx.ellipse(bx, by + 14, 46 * gr, 9 * gr, 0, 0, 7); ctx.fill(); ctx.restore(); } }
   const [hx, hy] = K14_HOLE_A;
-  shape(ctx, [[hx - 30, hy + 15], [hx - 30, hy - 8], [hx - 16, hy - 26], [hx, hy - 30], [hx + 16, hy - 26], [hx + 30, hy - 8], [hx + 30, hy + 15]], M.lit ? mixHex(K14_HOLE, '#ffd98a', K.clamp(M.lit)) : K14_HOLE, { lw: 4, seed: 180 });
-  if (M.lit) { ctx.save(); ctx.globalAlpha = 0.55 * K.clamp(M.lit) * (0.9 + 0.1 * Math.sin(t * 7)); ctx.fillStyle = dotPat(ctx, C.yellow, 6, 0.35); ctx.beginPath(); ctx.arc(hx, hy + 2, 40, 0, 7); ctx.fill(); ctx.restore(); }
+  shape(ctx, [[hx - 18, hy + 9], [hx - 18, hy - 5], [hx - 10, hy - 16], [hx, hy - 19], [hx + 10, hy - 16], [hx + 18, hy - 5], [hx + 18, hy + 9]], M.lit ? mixHex(K14_HOLE, '#ffd98a', K.clamp(M.lit)) : K14_HOLE, { lw: 3.5, seed: 180 });
 }
 function mountainBoulder(ctx, x, y, r, rot, sq = 1) {
   ctx.save(); ctx.translate(x, y); ctx.scale(1 + (1 - sq) * 0.6, sq); ctx.rotate(rot);

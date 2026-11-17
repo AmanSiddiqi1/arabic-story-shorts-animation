@@ -153,7 +153,7 @@ function k17Pot(ctx, x, y, lift = 0, tilt = 0) { ctx.save(); ctx.translate(x, y 
 // well icon: stone ring, two posts, little red roof, rope and bucket. o.ghost: dashed blue outline only; o.mark: '?' | 'x'
 function k17Well(ctx, x, y, s = 1, o = {}) {
   ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
-  if (o.ghost) { ctx.setLineDash([16, 12]); ctx.lineWidth = 7; ctx.strokeStyle = '#9cc4ff'; ctx.lineJoin = 'round';
+  if (o.ghost) { ctx.setLineDash([16, 12]); ctx.lineWidth = o.ghostW || 7; ctx.strokeStyle = o.ghostC || '#9cc4ff'; ctx.lineJoin = 'round';
     ctx.beginPath(); ctx.rect(-60, -70, 120, 70); ctx.moveTo(-50, -70); ctx.lineTo(-50, -170); ctx.moveTo(50, -70); ctx.lineTo(50, -170); ctx.moveTo(-80, -160); ctx.lineTo(0, -200); ctx.lineTo(80, -160); ctx.stroke(); ctx.setLineDash([]); }
   else {
     seg(ctx, -50, -60, -50, -170, 10, K17_WOOD, 3.5); seg(ctx, 50, -60, 50, -170, 10, K17_WOOD, 3.5);
@@ -197,3 +197,10 @@ function k17Flush(ctx, P, k) { if (k <= 0) return; const h = k17Head(P), s = P.s
 function k17Chalk(ctx, pts, u, alpha = 1) { const q = K.trim(pts, K.clamp(u)); if (q.length < 2) return; ctx.save(); ctx.globalAlpha = alpha; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.lineWidth = 12; ctx.strokeStyle = C.black; K.poly(ctx, q); ctx.stroke(); ctx.lineWidth = 7; ctx.strokeStyle = C.white; K.poly(ctx, q); ctx.stroke(); ctx.restore(); }
 // sparkle (4-point twinkle)
 function k17Twinkle(ctx, x, y, t, t0, r = 26) { const d = t - t0; if (d < 0 || d > 0.6) return; const k = Math.sin(Math.PI * d / 0.6); ctx.save(); ctx.translate(x, y); ctx.rotate(d * 3); ctx.scale(k, k); shape(ctx, [[0, -r], [r * 0.22, -r * 0.22], [r, 0], [r * 0.22, r * 0.22], [0, r], [-r * 0.22, r * 0.22], [-r, 0], [-r * 0.22, -r * 0.22]], C.white, { lw: 3.5, seed: 380 }); ctx.restore(); }
+// palm over the face (drawn after the person: the Library draws the arms behind the head). P.facePalm 0..1 fades it in on the near eye
+function k17FacePalm(ctx, P) { const k = P.facePalm || 0; if (k <= 0) return; const s = (P.s || 1), h = k17L2W(P, 13, -204 + (P.drop || 0)); ctx.save(); ctx.globalAlpha *= K.clamp(k * 1.5); ctx.translate(h[0], h[1]); ctx.rotate(-0.25 * (P.dir || 1)); ctx.scale(s, s);
+  shape(ctx, [[-15, 18], [-17, -6], [-14, -24], [-6, -27], [-1, -29], [6, -27], [12, -24], [17, -16], [17, 18]], C.white, { lw: 3.5, seed: 390, dot: C.skin, pitch: 5, rad: 0.3 });
+  ctx.lineWidth = 2.5; ctx.strokeStyle = C.black; for (const x of [-7, 1, 9]) { ctx.beginPath(); ctx.moveTo(x, -22); ctx.lineTo(x, -8); ctx.stroke(); } ctx.restore(); }
+// paper-white outer keyline behind a red comic word (same transform as the Library sfx), so red reads on the navy night
+function k17Keyline(ctx, text, x, y, size, p, o = {}) { const k = K.ease.back(K.clamp(p)); if (k <= 0) return; ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot || 0); ctx.scale(k * (o.sx || 1), k);
+  ctx.font = K.font(size, BF, 400); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.lineJoin = 'round'; ctx.lineWidth = size * 0.2 + 10; ctx.strokeStyle = C.white; ctx.strokeText(text, 0, 0); ctx.restore(); }

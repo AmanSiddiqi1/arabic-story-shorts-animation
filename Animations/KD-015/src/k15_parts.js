@@ -75,7 +75,7 @@ function k15Goat(ctx, o) {
   // body
   shape(ctx, ell(0, by, bw, bh, 26), col, { lw: 4.5, seed: 832, dot: cow ? null : '#b9b4c6', pitch: 7, rad: 0.22, da: 0.35 });
   if (cow) { shape(ctx, ell(-bw * 0.3, by - bh * 0.25, bw * 0.3, bh * 0.45, 14), C.black, { lw: 0 }); shape(ctx, ell(bw * 0.35, by + bh * 0.2, bw * 0.22, bh * 0.35, 12), C.black, { lw: 0 }); shape(ctx, ell(bw * 0.2, by + bh * 0.85, 12, 7, 10), '#f7a8b8', { lw: 3 }); }
-  else if (!kid) shape(ctx, ell(-bw * 0.2, by - bh * 0.1, bw * 0.35, bh * 0.5, 14), patch, { lw: 0 });
+  else if (!kid) shape(ctx, ell(-bw * 0.15, by - bh * 0.1, bw * 0.48, bh * 0.68, 14), patch, { lw: 0 });   // v2: larger patch so goats read against the paper
   // neck and head (head dips to graze)
   const nx = bw * 0.8, ny = by - bh * 0.5, hx = nx + 22 + hd * 10, hy = ny - (kid ? 20 : 26) + hd * (leg + 10), hr = kid ? 18 : cow ? 22 : 17;
   seg(ctx, bw * 0.55, by - bh * 0.2, hx - 4, hy + 4, cow ? 26 : 18, col, 4);
@@ -120,7 +120,12 @@ function k15Field(ctx, x0, x1, y, u, h = 46) {   // a green field unrolled from 
   if (u < 1) { shape(ctx, ell(xe, y + h / 2, 14, h / 2 + 2, 16), K15GRASS, { lw: 4, seed: 872 }); ctx.save(); ctx.lineWidth = 2.5; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.arc(xe, y + h / 2, 7, 0, 5); ctx.stroke(); ctx.restore(); }
 }
 function k15Wheat(ctx, x, y, h, sway) { seg(ctx, x, y, x + sway, y - h, 3, K15GRASSD, 0); if (h > 20) { for (let k = 0; k < 4; k++) shape(ctx, ell(x + sway + (k % 2 ? 4 : -4), y - h + 6 + k * 7, 4, 6, 8), K15WHEAT, { lw: 2, seed: 873 + k }); } }
-function k15Sheaf(ctx, x, y, s = 1) { ctx.save(); ctx.translate(x, y); ctx.scale(s, s); shape(ctx, [[-14, 0], [14, 0], [8, -30], [22, -64], [-22, -64], [-8, -30]], K15WHEAT, { lw: 4, seed: 881, dot: '#e0a800', pitch: 6, rad: 0.25, da: 0.4 }); seg(ctx, -11, -30, 11, -30, 6, C.red, 2); ctx.restore(); }
+function k15Sheaf(ctx, x, y, s = 1) {   // v2: a bundle of 7 stalks fanned out, ears at the top, tied in the middle
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  for (let i = -3; i <= 3; i++) { const bx = i * 3, tx = i * 8, ty = -66 + Math.abs(i) * 3; seg(ctx, bx, 0, tx * 0.35, -30, 4, K15WHEAT, 1.5); seg(ctx, tx * 0.35, -30, tx, ty, 4, K15WHEAT, 1.5);
+    shape(ctx, ell(tx + i * 0.6, ty - 7, 4.5, 9, 10), K15WHEAT, { lw: 2.5, seed: 881 + i + 3, dot: '#e0a800', pitch: 5, rad: 0.25, da: 0.4 }); }
+  seg(ctx, -9, -30, 9, -30, 6, C.red, 2); ctx.restore();
+}
 function k15Sack(ctx, x, y, s = 1) { ctx.save(); ctx.translate(x, y); ctx.scale(s, s); shape(ctx, [[-24, 0], [24, 0], [28, -30], [14, -52], [20, -62], [-20, -62], [-14, -52], [-28, -30]], '#e8d2a0', { lw: 4, seed: 882, dot: '#b08a4a', pitch: 7, rad: 0.2, da: 0.4 }); seg(ctx, -14, -52, 14, -52, 4, C.red, 1.5); ctx.restore(); }
 function k15Loaf(ctx, x, y, s = 1, steamT = -1) { ctx.save(); ctx.translate(x, y); ctx.scale(s, s); shape(ctx, ell(0, -14, 26, 15, 18).filter(([, yy]) => yy <= -2).concat([[24, -2], [-24, -2]]), '#d98a2a', { lw: 4, seed: 883 }); for (const k of [-10, 0, 10]) seg(ctx, k - 4, -22, k + 4, -14, 2, C.black, 0);
   if (steamT >= 0) for (let i = 0; i < 2; i++) { const u = (steamT * 0.8 + i / 2) % 1; ctx.save(); ctx.globalAlpha = (1 - u) * Math.min(1, u * 4); ctx.lineWidth = 3; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.moveTo(-6 + i * 12, -32 - u * 30); ctx.quadraticCurveTo(2 + i * 12, -40 - u * 30, -6 + i * 12, -50 - u * 30); ctx.stroke(); ctx.restore(); }

@@ -13,7 +13,7 @@ const K14R_bake = () => bake('k14river', 1000, 1230, (x) => {
 });
 // hawk path (dir -1, facing left)
 const K14R_HX = (t) => t < 8.4 ? kfn(t, [[4.38, 1090], [8.4, 360]], 'out') : kfn(t, [[8.56, 360], [11.6, -170]], 'in');
-const K14R_HY = (t) => (t < 8.4 ? kfn(t, [[4.38, 110], [8.4, 135]]) : kfn(t, [[8.56, 135], [11.6, 70]])) + 6 * Math.sin(t * 5.2);
+const K14R_HY = (t) => (t < 8.4 ? kfn(t, [[4.38, 450], [5.5, 410], [8.4, 135]])   /* v2: enters below the sun, against plain sky */ : kfn(t, [[8.56, 135], [11.6, 70]])) + 6 * Math.sin(t * 5.2);
 const K14R_GRIP = (t) => [K14R_HX(t) + 4, K14R_HY(t) + 74];   // where the carried mouse hangs (measured on stills)
 // mouse fall: release 8.56 (0.2 s tug up), fall to the crown clump, bounce, drop out of the leaves, land 11.34
 function k14rMousePos(t) {

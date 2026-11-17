@@ -12,9 +12,9 @@ const k14Shake = (t) => K.spring(t, 23.2, 4, 12, 9) + K.spring(t, 80.7, 3, 12, 1
 // rank strip state (sun, cloud, wind, mountain, mouse) and when it hides (close shots, faces near the top)
 function k14Rank(t) {
   const tag = t < 69.74 ? 0 : t < 70.3 ? (t - 69.74) / 0.56 : t < 78.6 ? 1 : t < 79.2 ? 1 + (t - 78.6) / 0.6 : t < 90.78 ? 2 : t < 91.4 ? 2 + (t - 90.78) / 0.62 : t < 113.34 ? 3 : t < 113.9 ? 3 + (t - 113.34) / 0.56 : 4;
-  const hide = [[0, 56.54], [65.5, 66.0], [100.32, 101.4], [108.0, 109.6], [114.2, 118.7], [126.74, 162.9]];
+  const hide = [[0, 56.54], [65.5, 66.0], [100.32, 101.4], [108.0, 109.6], [114.2, 122.4], [126.74, 163.9]];
   let alpha = 1; for (const [a, b] of hide) if (t >= a - 0.25 && t < b + 0.25) alpha = Math.min(alpha, t < a ? (a - t) / 0.25 : t > b ? (t - b) / 0.25 : 0);
-  return { n: 5, times: [56.54, 69.74, 78.6, 90.78, 113.34], q5T: 110.42, tag: t >= 165.0 ? -1 : tag, tagT: 61.88, star4: 101.44, heart: 162.98, alpha };
+  return { n: 5, times: [56.54, 69.74, 78.6, 90.78, 113.34], q5T: 110.42, tag: t >= 164.7 ? -1 : tag, tagT: 61.88, star4: 101.44, heart: 162.98, alpha };
 }
 const SCENE = {
   duration: K14_DUR,
@@ -35,11 +35,11 @@ const SCENE = {
     // whip pan into S9 (85.84): speed streaks for 0.25 s
     if (t >= 85.84 && t < 86.1) { const u = (t - 85.84) / 0.26; ctx.save(); ctx.globalAlpha = 0.8 * (1 - u); ctx.fillStyle = C.white; const r = K.rng(9); for (let i = 0; i < 26; i++) ctx.fillRect(-100 + r() * 1100 - u * 400, r() * 1230, 200 + r() * 300, 6 + r() * 8); ctx.restore(); }
     // flashes on the bursts
-    k14Flash(ctx, t, 23.2); k14Flash(ctx, t, 156.32);
+    k14Flash(ctx, t, 23.2);   // v2: the second POOF (156.32) uses the same burst without a full-panel flash
     if (t >= 34.6 && t < 37.1) { S.transition(ctx, K14_VW, K14_VH, (t - 34.6) / 2.5, { caption: 'YEARS LATER...' });
       if (t >= 35.9 && t < 36.95) { const n = Math.min(15, 1 + Math.floor((t - 35.9) / 0.07)); ctx.save(); ctx.globalAlpha = K.clamp((36.95 - t) / 0.15); S.counter(ctx, n, 500, 860, K14B(t, 35.9, 0.3), { size: 110 }); S.label(ctx, 'YEARS', 500, 990, 1, { size: 40, align: 'center' }); ctx.restore(); } }
     rankStrip(ctx, t, k14Rank(t));
-    if (t >= 165.0) S.title(ctx, 'THE END', 500, 340, K14B(t, 165.0, 0.9), { size: 84, align: 'center' });
+    if (t >= 165.0) S.title(ctx, 'THE END', 500, 1090, K14B(t, 165.0, 0.9), { size: 84, align: 'center' });   // v2: in the empty ground band under the mountain
     ctx.restore(); subtitle(ctx, W, H, t, 1);
     LIFE.t = null;
     S.finish(ctx, W, H, t);   // always last

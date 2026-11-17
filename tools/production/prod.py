@@ -253,7 +253,7 @@ def cmd_done(c, a):
     else:
         n = {'review': 1, 'review2': 2}[stage]; f = REPO / 'Animations' / sid / 'review' / f'fable_review_{n}.md'
         if not f.exists(): sys.exit(f'{f} missing')
-        txt = f.read_text(encoding='utf8'); verdict = next((v for v in ('REVISE', 'PASS WITH NOTES', 'PASS') if v in txt[:600]), 'UNKNOWN')
+        txt = f.read_text(encoding='utf8'); vl = next((l for l in txt.splitlines() if l.strip().lower().startswith('verdict:')), txt[:600]); verdict = next((v for v in ('REVISE', 'PASS WITH NOTES', 'PASS') if v in vl), 'UNKNOWN')
         c.execute('INSERT OR REPLACE INTO reviews VALUES (?,?,?,?,?,?,?)', (sid, n, want, t['agent_id'], str(f.relative_to(REPO)), verdict, db.now()))
         out = f'review {n}: {verdict}'
     c.execute("UPDATE tasks SET status='done', finished=?, outputs=? WHERE id=?", (db.now(), out, t['id'])); c.commit()

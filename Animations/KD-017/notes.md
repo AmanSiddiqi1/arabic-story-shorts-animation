@@ -24,3 +24,6 @@ Code: src/k17_parts.js (house set, doors, props, icons, helpers), k17_cast.js (s
 - The friend's "one brow up, one down" (152.98): brow -0.6 with a frown (the thief mask has no brows).
 - The servant does not rap on the back door at 27.0; the friend opens it as he arrives.
 - Not rendered to video (code-only stage); checked with contact sheets at every scene's key beats and implcheck.
+
+## v2 revision (Fable review 1)
+See review/revision_1.md. New positions: argument 650 / 805 (shove to 900 and back to 840), S10b pair stays at 720 / 840 to 107.12, S12 pair 1000 / 1110 (servant falls from 1012, friend returns to 1330), interrogation owner 1200 / thief 1328. Owner S2 walk uses a linear track (k17OWx / k17WFx). k17FacePalm draws a palm over the face after the person (arms are drawn behind the head in the Library).

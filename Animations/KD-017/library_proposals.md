@@ -10,3 +10,6 @@
 - `k17Flush(ctx, P, k)`: anger flush over a person's face; `k17Impact` (knock stars), `k17Dust` (lintel dust), `k17Chalk` (outline drawn in the air), `k17Twinkle`.
 - Motion: `k17Pound(t, hits)` (fist arm angles keyed to hit times: raise, strike on the hit, recoil), `k17Dir(t, list)` (turns with a short squeeze), run-in-place on a slipping mat (S14), `k17Walk` (walk fields from a keyed track with no stride on cuts).
 - Camera: inset circle that redraws the world through a second camera (k17Over, 116.86-122.7).
+- `facePalm(ctx, P, k)`: a palm drawn over the face after the person (the person draws its arms behind the head, so hand-to-face gestures are hidden); v2 160.36.
+- `keylineSfx`: an sfx word with a paper-white outer keyline for red lettering on dark backgrounds.
+- `iconBalloon(ctx, {icons, kind})`: the misunderstanding balloon pair (Fable note).

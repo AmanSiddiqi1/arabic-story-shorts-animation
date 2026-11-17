@@ -11,3 +11,10 @@ Decisions the plan left open or that the set geometry forced:
 - Cross-eyed last drop: gaze straight down at the nose with half lids (no per-eye gaze in the rig).
 - The dream father and son are drawn a little larger from S5 on (father 0.75, son 0.8 child) for phone legibility.
 - Sound: only the plan's listed effects, each inside a narration pause; no room bed.
+
+## v2 (Fable review 1) decisions
+- The swing goes through the boy: the dream father and son sink 95 units (boy also 40 left, father 25 right) from 126.5 (`K15BOYD`), and the raise/swing poses are K15TOP/K15END; the boy is split along the stick from K15CROSS = 130.24 (crossing point computed once from the stick pose).
+- S1: the jar rope is 400 (was 360) so the man can stand one body width right of the jar (x 495) and reach its mouth (`k15W2L` converts the mouth to a hand target).
+- Stage-2 dream drawn 1.5x about (600, 548) with ground at world 566; stage-3 dream and the dream self 1.45x about (700, 566), blending back to 1x over 86.0-87.6 for S5. Coins are spent at 71.0 (pop) instead of staying beside the house; the neighbours walk in from the left. Nine of twelve goats trot out on "abi'u" (53.78) so the cows have room.
+- Camera 42-58.6 and 64-80.7 moved 50-70 units down so the dreamer shows from the waist up.
+- No whoosh added for the swing at 130.10 (the gap before it is the silence under the raised stick; a whoosh at 129.3-130.0 would play before the motion).

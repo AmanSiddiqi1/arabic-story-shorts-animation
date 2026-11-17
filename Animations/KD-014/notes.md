@@ -22,3 +22,12 @@ Code: src/k14_parts.js (drawings), k14_river.js (S1-S3), k14_yard.js (S4-S6), k1
 - No separate "groom with huge shoulders" drawing: the black villager silhouette swells 1.9x and bursts the cloud.
 - The father's shoulder-turn shield (15.48) is hands closing over the mouse plus a backward tip.
 - Not rendered to video (code-only stage); checked with contact sheets at the plan's key beats and implcheck.
+
+## v2 revision (Fable round 1, 2026-11-17)
+- Scale: people stay s 0.95; mice on the mountain are s 0.34 (K14_MS) from 113.34, so a standing person is at least 4.5 times a sitting mouse. Holes shrunk to mouse size (A 36 x 28 arch, B 34 x 29 arch). The boulder now stays in hole A after 120.5; hole B (636) is the mouse's front door for the rest of the film, and the light comes on there.
+- S12 framings: mouse level zoom 6 (126.74-132.62) and 5.5 (133.78-135.08, 137.6-139.6 sandal insert); three-shot zoom 3.2 at (515, 754), ground band about 12 %. Father kneels at x 505; the daughter stands at 420 (behind him in depth), steps back to 405 on HUMAN.
+- The father's stick is dropped from 126.74 (it cluttered the zoom-6 shot); he goes home holding the folded scarf to his chest.
+- The sandal is a story-local sole (`k14Sole`, about 80 wide, 2.3 times the 34-wide door) drawn on her near foot in the 137.6-139.6 insert; the plan's 3x was not used because her drawn foot is only 30 wide.
+- S13: father steps back to 460 when he stands (144.3-144.8) so the she-mouse (545) and the he-mouse (606) can meet nose to nose in front of the door; S14 door beat: he bows at 700 (right of the door), she waits on the threshold at 606.
+- Sky: from 72.9 the sun, cloud and wind sit 90 units lower (K14S_DY) so faces stay under the rank strip; the wind is drawn after the blue shade and at s 1.6 (1.25 flattened).
+- The second POOF has no panel flash (same burst as the first).
