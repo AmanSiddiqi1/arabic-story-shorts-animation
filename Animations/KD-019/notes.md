@@ -13,3 +13,10 @@ Decisions the plan left open or the drawn sets forced:
 - Flight wings: side-view V wings, near and far wing at different angles, flap from time. The flight pose puts the head forward.
 - Sound effects use 'pop' for the plan's 'plop' (no plop in sound.js); all are in the listed pauses.
 - The S13 and S16 thought clouds are smaller than the S5/S7 ones; figures inside are about 110-130 px at the scene zoom.
+
+## v2 (Fable review 1) decisions
+- The bird's bank spot K19BX moved 176 -> 86 (and the S3 shuffle, strike key and dashed outline with it) so the beak stays clear of the crab in the two-shots; the sad head droops (headRot 0.35) from 24.4; the crab is redrawn over the reed clump in 24.4-43.3 and 92.6-100.1. S5/S7 cameras and clouds re-centred so the bird is fully in frame.
+- Hill: no leg stretch (legExt 0); approach framed at zoom 1.75 so the ledge and bones stay below frame until the pan at 116.72; camera keys 110.94-133.93 re-measured.
+- Climax: the pair climbs 160 units from 133.94 (K19LIFT, the bird pulls up before landing) and is framed at zoom 2.2 against plain sky. The head comes down to the right of the crab (head local (165..175, -60), beak toward him), the wing is held up from 138.4. The crab lunges from the feet onto the neck at 140.5 (the feet open at 140.56, not at 141.52 as planned) and hangs from the neck point u 0.55, 222 crab units below it; the head then yanks forward to a straight outstretched neck (head (200, -172)) for the fight, so the grip sits on a clear straight stretch. The plan's "head left of the crab" at the death is on the right in v2 (the head was on the right throughout), hanging clear of the crab against sky.
+- Aftermath: the dead bird lies at x -20 (partly out of frame), the crab lands at x 262 in the open.
+- Fixed a v1 bug: fish velocity was NaN (array index on an object), so every fish was drawn with only the front half of its body and no swim phase; fish now render whole and turn/tilt with their motion.

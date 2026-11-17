@@ -134,8 +134,8 @@ function k22drawS34(ctx, t) {
   cloudFlat(ctx, 300 + t * 5, 230, 0.8);
   k22stall(ctx, t, { closed: true }); k22stallFront(ctx, t, { closed: true });
   // gossips: S3 heads together at the stall; S4 small in the background
-  const gA = { costume: 'villager', y: K22GR, s: 1.25, x: 380, dir: 1, talk: 0, mouth: 'smile' }, gB = { costume: 'villageWoman', y: K22GR, s: 1.2, x: 480, dir: -1, mouth: 'smile' };
-  if (!S4) { gA.talk = 0.4 + 0.4 * Math.sin(t * 13) * (Math.sin(t * 1.7) > 0); gB.talk = Math.sin(t * 1.7) <= 0 ? 0.4 + 0.4 * Math.sin(t * 12) : 0; gA.tip = 0.08; gB.tip = 0.08;
+  const gA = { costume: 'villager', y: K22GR, s: 1.25, x: 335, dir: 1, talk: 0, mouth: 'smile' }, gB = { costume: 'villageWoman', y: K22GR, s: 1.2, x: 515, dir: -1, mouth: 'smile' };
+  if (!S4) { gA.talk = 0.4 + 0.4 * Math.sin(t * 13) * (Math.sin(t * 1.7) > 0); gB.talk = Math.sin(t * 1.7) <= 0 ? 0.4 + 0.4 * Math.sin(t * 12) : 0; gA.tip = 0.05; gB.tip = 0.05;
     gA.handR = [70 + 14 * Math.sin(t * 6), -140]; gB.handR = [60, -130 + 10 * Math.sin(t * 5)]; gA.gaze = k22eye(gA, k22head(gB)); gB.gaze = k22eye(gB, k22head(gA));
     if (Math.floor(t * 0.7) % 2) { gA.gaze = [1, -0.3]; } }
   else { gA.x = 90; gB.x = 170; gA.s = gB.s = 0.95; gA.y = gB.y = K22GR - 4; gA.dir = gB.dir = 1; gA.gaze = gB.gaze = [1, 0]; gA.handR = PERSON_HANDS.pointFwd.R; }
@@ -148,7 +148,13 @@ function k22drawS34(ctx, t) {
   // the thought cloud: coins, then a crown with a tiny him bowing
   const cp = !S4 ? k22e(t, 49.52, 0.6) : 1 - k22e(t, 55.0, 0.25);
   if (cp > 0 && t < 55.3) thoughtCloud(ctx, 360, 390, 320, 250, t, { p: cp, tail: k22L2W(Q.P, [40, -250]), bg: C.yellow, scale: 0.55, at: [540, 800], inside: (c) => {
-    const n = Math.floor(K.clamp((t - 51.6) / 1.4) * 12); k22coins(c, 420, 900, n, 1.6); if (n > 3) k22glint(c, 460 + 40 * Math.sin(t * 3), 790, 26);
-    if (t > 53.1) { const k = K.ease.back(K.clamp((t - 53.1) / 0.35)); k22crown(c, 420, 700 - 30 * (1 - k), 1.4 * k);
-      if (t > 54.4) { const mini = { x: 700, y: 960, s: 1.0, dir: -1, tip: 0.3 * pulse(t, 54.5, 0.8) + 0.05, mouth: 'smile', gaze: [-1, 0.3], noBlink: true }; k22quack(c, mini, {}); } } } });
+    // v2: the story he heard first (bed and bowl from the gossip balloon), pushed aside by a sparkle on fursa, then big coins, then the crown and him bowing
+    const pa = k22e(t, 50.76, 0.5, 'in'), ia = 1 - K.clamp((t - 51.0) / 0.35);
+    if (t < 51.4 && ia > 0) { const k = K.ease.back(K.clamp((t - 49.9) / 0.35)); c.save(); c.globalAlpha *= ia;
+      c.save(); c.translate(400 - 260 * pa, 830); c.scale(k, k); shape(c, K.rectPts(-110, -20, 220, 50), '#a8160f', { lw: 7, seed: 600 }); shape(c, K.rectPts(-118, -34, 236, 20), C.white, { lw: 6, seed: 601 }); shape(c, ell(80, -46, 40, 18, 16), C.white, { lw: 6, seed: 602 }); shape(c, ell(70, -66, 24, 24, 16), C.skin, { lw: 6, seed: 603 }); c.restore();
+      c.save(); c.translate(690 + 260 * pa, 800); c.scale(k, k); k22bowl(c, 0, 0, { s: 2.6 }); c.restore(); c.restore(); }
+    if (k22in(t, 50.7, 51.7)) k22glint(c, 540, 800, 120 * K.ease.back(K.clamp((t - 50.76) / 0.3)) * (1 - K.clamp((t - 51.4) / 0.3)));
+    const n = Math.floor(K.clamp((t - 52.48) / 1.0) * 12); k22coins(c, 560, 1010, n, 3.0); if (n > 3) k22glint(c, 600 + 60 * Math.sin(t * 3), 840, 40);
+    if (t > 54.15) { const k = K.ease.back(K.clamp((t - 54.15) / 0.35)); shape(c, ell(400, 660, 120 * k, 95 * k, 24), C.white, { lw: 7, seed: 604 }); k22crown(c, 400, 710 - 30 * (1 - k), 1.6 * k);
+      if (t > 54.35) { const mini = { x: 730, y: 985, s: 1.4, dir: -1, tip: 0.3 * pulse(t, 54.5, 0.6) + 0.05, mouth: 'smile', gaze: [-1, 0.3], noBlink: true }; k22quack(c, mini, {}); } } } });
 }

@@ -5,3 +5,8 @@
 - `firstBadge` (k26Badge: tear, half).
 - `iconBalloon` (k26Balloon), strip frame (k26Frame), red X stamp (k26X), mini icon figures.
 - `sleepMeter` (k26Meter), `insetCircle` (k26Inset), dashed sight line (k26Dash), hut darkness pass that keeps the cast in full colour (k26HutDark).
+
+## From the v2 revision
+- implcheck guard: fail when `counter()` gets a non-numeric value (the v1 "NAN"), and scan rendered text for NaN/undefined.
+- Framing check: warn when the ground line in a shot sits above ~80 % of panel height (a camera clamped at zoom 1.0 cannot move down).
+- Window escape: `diveThrough(window, t)` (arc to the window, then inverted legs kicking clipped to the frame).

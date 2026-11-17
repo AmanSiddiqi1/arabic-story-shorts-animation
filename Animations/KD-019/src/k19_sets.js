@@ -56,7 +56,7 @@ const K19LEDGE = 780;
 const K19ROCKPTS = [[-20, 1090], [120, 960], [230, 840], [300, K19LEDGE + 2], [420, K19LEDGE - 2], [560, K19LEDGE + 1], [700, K19LEDGE - 1], [760, K19LEDGE], [800, 690], [850, 560], [900, 420], [940, 470], [980, 600], [1020, 640], [1020, 1250], [-20, 1250]];
 const k19hillLand = () => k19bake('hillLand', (x) => {
   // far ridges
-  shape(x, [[-20, 700], [140, 610], [300, 650], [470, 590], [640, 640], [800, 600], [1020, 660], [1020, 900], [-20, 900]], '#8a6d74', { lw: 6, seed: 75, dot: '#6a4d5a', pitch: 10, rad: 0.3, da: 0.5 });
+  shape(x, [[-20, 700], [140, 610], [300, 650], [470, 590], [640, 640], [800, 600], [1020, 660], [1020, 1250], [-20, 1250]], '#8a6d74', { lw: 6, seed: 75, dot: '#6a4d5a', pitch: 10, rad: 0.3, da: 0.5 });
   shape(x, K19ROCKPTS, K19ROCK, { lw: 8, seed: 76, dot: K19ROCKD, pitch: 9, rad: 0.32, da: 0.55 });
   // ledge top light band and cracks
   shape(x, [[300, K19LEDGE + 2], [760, K19LEDGE], [752, K19LEDGE + 18], [306, K19LEDGE + 20]], '#c3c6ca', { lw: 0 });

@@ -12,3 +12,9 @@ Decisions the plan left open, or changes measured on the actual sets:
 - S10 end: the old physician taps back and sits on his stool (172.4).
 - The plan's chunk 7/2 splits "العلاج | الصحيح؟»" across two subtitles; kept as planned.
 - The quack uses the beanSeller body (no beard, moustache) recoloured, with his own detachable turban (k22turban) so it can slip over his eyes and roll away.
+
+## v2 (Fable round 1) blocking decisions
+- Stool moved to x 925. In S2 the king steps back behind the bed to x 500 for the tray beat; the tray is held low in front of the physician (x ~760, y ~840).
+- S7/S8: the tall official carries the bowl to the king, then leaves through the door (117.6). He comes back on 142.1, passes behind the man, takes the bowl from the bed (rest point K22BOWLBED 604,764) and holds it out at x 490. He backs out right after the S9 hand-over and is not in S10.
+- The man is at x 255 for S8 and the king steps back to x 700 for the order. In S10 the king kneels at x 505 and the physician stands at x 650 to the end (he does not sit back down). The turban settles at x 425.
+- Face overlays (flush, green) are drawn with multiply, eyes cut out, capped alpha (proposal: Library faceFx "under the features" rule).

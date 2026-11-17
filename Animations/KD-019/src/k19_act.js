@@ -5,7 +5,7 @@ const k19E = (t, a, d, e = 'inOut') => K.ease[e](K.clamp((t - a) / d));
 const k19P = (t, a, d) => pulse(t, a, d);
 // set by time: pond 0-77.22, hill 77.22-89.25 (card midpoint), pond 89.25-101.56, flight 101.56-110.94, hill 110.94-151.9, pond 151.9-end
 const k19set = (t) => t < 77.22 ? 'pond' : t < 89.25 ? 'hill' : t < 101.56 ? 'pond' : t < 110.94 ? 'flight' : t < 151.9 ? 'hill' : 'pond';
-const K19BX = 176;                                   // the bird's spot on the bank
+const K19BX = 86;                                    // the bird's spot on the bank (v2: 60 further left, clear of the crab)
 const K19CS = 0.8;                                   // crab scale
 // head keys: [t, x | 'D' (default head), y, headRot, ease]; outside the key span the default head is used
 function k19hk(t, P, keys) {
@@ -24,7 +24,7 @@ function k19leap(t, t0, d, A, B, h) { const u = K.clamp((t - t0) / d); return [K
 
 // ---------------------------------------------------------------- the bird
 const K19BLEG = (xf) => (t) => walk(xf, t, { stride: 9, amp: 40 });
-const k19bx3 = (t) => kfn(t, [[14.4, 150], [15.2, K19BX]]);            // S3 shuffle
+const k19bx3 = (t) => kfn(t, [[14.4, 60], [15.2, K19BX]]);            // S3 shuffle
 const k19bx8 = (t) => kfn(t, [[71.2, K19BX], [71.8, 220]]);           // S8 step to the edge
 function k19birdPose(t) {
   const P = { x: K19BX, y: 600, s: 1, dir: 1, age: 1, neck: 0.45, brow: -0.6, lid: 0.42, headRot: 0.15, sq: breathe(t, 2, 0.015) };
@@ -65,14 +65,15 @@ function k19birdPose(t) {
     const sink = k19E(t, 17.02, 0.8); P.neck = t < 15.3 ? 0.35 : K.lerp(0.45, 0.2, sink); P.lid = K.lerp(0.42, 0.55, sink); P.brow = K.lerp(-0.6, -0.8, sink); P.wet = t > 17.2;
     if (k19in(t, 17.86, 19.6)) gt = [k19teaseFish(t)[0], 690];
     if (k19in(t, 19.2, 19.4)) { P.lid = 1; P.headRot = (P.headRot || 0.15) - 0.15; }
-    k19hk(t, P, [[19.58, 'D', 0, 0], [20.2, 52, -168, -0.05], [20.3, 143, -62, 1.0, 'in'], [20.55, 143, -62, 1.0], [20.82, 'D', 0, 0, 'out']]);
+    k19hk(t, P, [[19.58, 'D', 0, 0], [20.2, 52, -168, -0.05], [20.3, 203, -62, 1.0, 'in'], [20.55, 203, -62, 1.0], [20.82, 'D', 0, 0, 'out']]);
     if (k19in(t, 19.58, 20.2)) { P.x += tremble(t, 1.6, 12); P.lid = 0.2; }
     if (t > 20.82) { const sl = k19E(t, 20.82, 0.6); P.neck = K.lerp(0.2, 0.12, sl); P.lid = K.lerp(0.55, 0.7, sl); P.tip = 0.08 * sl; P.wet = true; }
     if (t > 22.8) { P.lid = 0.62; }
     if (k19in(t, 27.88, 28.9)) { P.sq = 1 + 0.035 * k19P(t, 27.88, 1.0); }
-    if (t > 30.12) { gt = [k19crabX(t), 470]; P.headRot = 0.15 + 0.25 * k19E(t, 30.12, 0.36); P.lid = 0.55; }
+    if (t > 24.4) P.headRot = 0.15 + 0.2 * k19E(t, 24.4, 0.6);   // v2: the sad head droops so the beak stays clear of the crab
+    if (t > 30.12) { gt = [k19crabX(t), 470]; P.headRot = 0.35 + 0.05 * k19E(t, 30.12, 0.36); P.lid = 0.55; }
   } else if (t < 43.88) {                                                         // S5 the lie
-    P.sit = 1; P.neck = 0.42; P.lid = 0.5; P.brow = -0.8; P.wet = true; P.headRot = 0.22;
+    P.sit = 1; P.neck = 0.42; P.lid = 0.5; P.brow = -0.8; P.wet = true; P.headRot = 0.35;
     P.talk = talk(t, [[32.11, 34.16], [34.68, 39.74], [40.3, 43.06]]);
     gt = [k19crabX(t), 480]; if (k19in(t, 30.94, 31.64)) gt = K.lerp(0, 1, 1) && [900, 300];
     if (k19in(t, 30.94, 31.6)) { P.wingTo = [70, -110]; P.wingAmt = k19P(t, 30.94, 0.66) > 0 ? K.clamp(k19P(t, 30.94, 0.66) * 1.6) : 0; }
@@ -80,7 +81,7 @@ function k19birdPose(t) {
     if (k19in(t, 32.6, 39.2)) gt = Math.floor((t - 32.6) / 1.7) % 2 ? [k19crabX(t), 480] : [620, 220];
     if (k19in(t, 39.26, 39.75)) { P.wingTo = [250, 10]; P.wingAmt = K.clamp(k19P(t, 39.26, 0.5) * 1.6); gt = t < 39.5 ? [480, 680] : [k19crabX(t), 480]; }
     if (k19in(t, 39.74, 40.7)) { P.x += tremble(t, 3, 10); P.neck = 0.2; P.brow = -1; }
-    if (k19in(t, 43.3, 43.85)) { P.lid = 0.6 - 0.35 * k19P(t, 43.3, 0.55); gt = [430, 700]; }
+    if (k19in(t, 43.3, 43.88)) { P.lid = 0.4; P.wet = false; P.brow = 1; P.smirk = 1; P.talk = 0; gt = [430, 700]; }   // the mask slips once the crab has dived
   } else if (t < 77.22) {                                                         // S6 gather, S7 the offer, S8 two a day
     P.sit = 1 - k19E(t, 44.2, 0.8); P.neck = K.lerp(0.3, 0.6, k19E(t, 44.2, 0.8)); P.lid = 0.45; P.brow = -0.5; gt = [520, 680];
     if (k19in(t, 53.58, 54.5)) { P.wingTo = [110, -330]; P.wingAmt = K.clamp(k19P(t, 53.58, 0.95) * 1.5); if (k19in(t, 54.0, 54.3)) P.lid = 1; }
@@ -97,7 +98,7 @@ function k19birdPose(t) {
     if (t >= 74.44) P.x = 220;
     k19hk(t, P, [[71.86, 'D', 0, 0], [72.0, 70, -260, 0.0], [72.4, 81, -57, 1.0, 'inOut'], [73.3, 81, -57, 1.0], [73.7, 'D', 0, 0]]);
     if (k19in(t, 71.86, 73.3)) { P.beak = k19E(t, 71.9, 0.3); gt = [420, 680]; }
-    const hold = []; if (t > 72.8) hold.push({ pal: 0, ph: t * 16 }); if (t > 73.2) hold.push({ pal: 2, ph: t * 14 + 1 }); if (hold.length) P.hold = hold;
+    const hold = []; if (t > 72.8) hold.push({ pal: 0, ph: t * 16, s: 0.31 }); if (t > 72.93) hold.push({ pal: 2, ph: t * 14 + 1, s: 0.31 }); if (hold.length) P.hold = hold;
     if (t > 73.25 && t < 73.4) P.beak = 0.25; if (t >= 73.4) P.beak = 0.2;
     if (t >= 74.44) {                                                             // take-off
       const crouch = anticipate(t, 74.44, 0.3, 0.12); P.sq = t < 74.74 ? crouch : 1 + 0.12 * k19P(t, 74.74, 0.3);
@@ -133,7 +134,7 @@ function k19birdPose(t) {
     P.belly = 1; P.neck = 0.55; P.lid = 0.5; P.brow = -0.3; gt = [t < 92.6 ? kfn(t, [[91.28, 420], [92.6, 322]]) : 322, 520];
     k19hk(t, P, [[90.46, 'D', 0, 0], [90.7, 52, -150, 1.4], [90.95, 60, -146, 1.3], [91.2, 'D', 0, 0]]);
     if (k19in(t, 90.95, 91.45)) { P.wingTo = [128, -228]; P.wingAmt = K.clamp(k19P(t, 90.95, 0.5) * 1.6); }
-    if (k19in(t, 96.95, 97.94)) { P.lid = 0.5; P.gaze = null; gt = gazePlan(t, [[96.95, [330, 470]], [97.15, [330, 600]], [97.4, [335, 470]], [97.6, [330, 590]], [97.8, [330, 480]]], 0.07); P.beak = 0.15 * k19P(t, 97.3, 0.12); P.glint = k19P(t, 97.3, 0.5); P.brow = 0.4; }
+    if (k19in(t, 96.95, 97.94)) { P.lid = 0.5; P.gaze = null; gt = gazePlan(t, [[96.95, [330, 470]], [97.15, [330, 600]], [97.4, [335, 470]], [97.6, [330, 590]], [97.8, [330, 480]]], 0.07); P.beak = 0.15 * k19P(t, 97.3, 0.12); P.glint = k19P(t, 97.3, 0.5); P.brow = 1; P.lid = 0.4; P.smirk = 1; }
     if (k19in(t, 97.94, 99.3)) { P.headRot = 0.15 + 0.45 * k19P(t, 97.94, 0.7); P.lid = 0.35; P.brow = -0.3; P.wingTo = [200, -140]; P.wingAmt = K.clamp(k19P(t, 98.4, 0.8) * 1.4); }
     if (t >= 99.3) {
       const crab = { x: 322, y: 602 }, hov = [crab.x - 4, crab.y - 82];
@@ -149,7 +150,7 @@ function k19birdPose(t) {
   } else if (t < 151.9) {                                                         // S12-S15 the hill and the fight
     k19hillBird(t, P); gt = P._gt || gt;
   } else {                                                                        // S15 end, S16: on his back by the pond
-    Object.assign(P, { x: 170, y: 446, rot: Math.PI - 0.32, limp: 1, eyes: 'x', belly: 1, sit: 0, neck: 0.3, noBlink: true, feet: 0 });
+    Object.assign(P, { x: -20, y: 446, rot: Math.PI - 0.32, limp: 1, eyes: 'x', belly: 1, sit: 0, neck: 0.3, noBlink: true, feet: 0 });
     P.sq = impactSquash(t, 151.98, 0.75); P.y += rebound(t, 151.98, 14, 0.25);
     P.legKick = k19P(t, 152.5, 0.25);
     if (t >= 168.02) P.alpha = 0;
@@ -160,46 +161,52 @@ function k19birdPose(t) {
   return P;
 }
 
-// S12 - S15 on the hill: descent, hover, the curl, the grip, the fight, the fall
-const K19HOV = [531, 468];
-const K19CURL = [[170, -120], [90, 40]];         // neck control points (local) for the curl under the body                       // hover origin: the crab hangs at (535, 550)
+// S12 - S15 on the hill: descent, hover, the threat, the grip, the fight, the fall (v2: no leg stretch, the pair climbs into open sky from 133.94)
+const K19HOV = [531, 468];                       // hover origin; the crab hangs under the feet at about (535, 550)
+const K19LIFT = (t) => -160 * k19E(t, 133.94, 1.3);   // the bird pulls up before landing: grip and fight are framed against plain sky
+const K19SQ = [146.96, 147.74, 148.34];          // the three squeezes (ضغط, بكل, قوته)
+const K19CHOKE = 0.55;                           // neck point the pincers hold
+const K19HANGL = 222;                             // crab feet below the held neck point (crab units)
+const K19HFIGHT = [200, -172];                   // head while choking (local): neck stretched straight forward, crab hangs from its middle
 function k19hillBird(t, P) {
   Object.assign(P, { fly: true, feet: 1, grip: 1, neck: 0.55, lid: 0.45, brow: -0.2, belly: 1, sq: 1, gaze: null });
-  P._gt = [535, 700]; P.legExt = t < 141.52 ? 70 * k19E(t, 112.8, 2.0) : 70;
+  P._gt = [535, 700]; P.legExt = 0;
   if (t < 115.24) {
     const u = k19E(t, 110.94, 3.9, 'out'), c0 = k19add(K19HOV, [-10, -144]), c = k19mix([90, 140], c0, u), rot = K.lerp(0.25, 0, u);
     const o = k19flyAt(c[0], c[1], 1, 1, rot); P.x = o[0]; P.y = o[1]; P.rot = rot;
     P.flap = t < 113.78 ? 0.35 + 0.65 * (k19P(t, 111.8, 0.4) + k19P(t, 112.3, 0.4)) * Math.sin((t - 111.8) * 15) : Math.sin((t - 113.78) * 5.5);
   } else if (t < 133.94) {
     P.x = K19HOV[0]; P.y = K19HOV[1] + 6 * Math.sin(t * 5.5); P.flap = Math.sin(t * 5.5);
-    if (t > 129.44) { P.brow = 1; P.lid = 0.5; P.beak = 0.3 * k19E(t, 129.44, 0.6); P._gt = [535, 470]; }
-    k19hk(t, P, [[129.44, 'D', 0, 0], [130.2, 130, 10, 1.5], [133.94, 130, 10, 1.5]]);
-  } else if (t < 142.38) {                                                        // S14
-    const rear = k19E(t, 133.94, 0.4) * (1 - k19E(t, 134.9, 0.5)); P.rot = -0.35 * rear; P.x = K19HOV[0]; P.y = K19HOV[1] + 6 * Math.sin(t * 5.5);
-    P.flap = t < 134.9 ? Math.sin(t * 16) : Math.sin(t * 5.5); P.brow = 1; P.lid = 0.4; P.beak = 0.3;
-    k19hk(t, P, [[133.94, 130, 10, 1.5], [135.68, 130, 10, 1.5], [136.4, -70, 30, 0.9], [142.38, -70, 30, 0.9]]);
-    P.neckC = K19CURL; P.neckCAmt = k19E(t, 135.68, 0.72);
-    if (t > 135.68) { P.beak = K.lerp(0.3, 1, k19E(t, 135.68, 0.7)); P.drool = K.clamp((t - 136.0) / 1.5); P._gt = [540, 520]; }
-    if (k19in(t, 139.46, 140.56)) { const N = k19BirdPt(P, 'neck', 0.7); P._gt = [N[0] + 50, N[1] - 40]; P.pin = true; if (t > 139.95) { P.gaze = [0, 0.05]; } }
-    if (t >= 140.56) { P.beak = 0.8; P.drool = 0; P.eyes = 'wide'; P.choke = 0.5 * k19E(t, 140.56, 0.07); P.chokeAt = 0.7; P.brow = -1; P._gt = [600, 300]; }
-    if (t >= 141.52) { P.grip = 1 - k19E(t, 141.52, 0.12); P.feet = K.lerp(1, 0.35, k19E(t, 141.52, 0.3)); }
+    if (t > 129.44) { P.brow = 1; P.lid = 0.5; P.beak = 0.3 * k19E(t, 129.44, 0.6); P._gt = [535, 520]; }
+    k19hk(t, P, [[129.44, 'D', 0, 0], [130.2, 165, -60, 2.0], [133.94, 165, -60, 2.0]]);
+  } else if (t < 142.38) {                                                        // S14 the threat and the grip
+    const rear = k19E(t, 133.94, 0.4) * (1 - k19E(t, 134.9, 0.5)); P.rot = -0.25 * rear; P.x = K19HOV[0]; P.y = K19HOV[1] + K19LIFT(t) + 6 * Math.sin(t * 5.5) * (t < 140.56 ? 1 : 0.3);
+    P.flap = t < 135.2 ? 0.45 + 0.55 * Math.sin(t * 16) : Math.sin(t * 5.5); P.brow = 1; P.lid = 0.4; P.beak = 0.3;
+    // wing held up on the far side while the pincers rise and close
+    if (t > 138.4) P.flap = K.lerp(Math.sin(t * 5.5), 0.95 + 0.05 * Math.sin(t * 9), k19E(t, 138.4, 0.25));
+    k19hk(t, P, [[133.94, 165, -60, 2.0], [135.68, 165, -60, 2.0], [136.3, 175, -60, 2.05], [140.25, 175, -60, 2.05], [140.56, 172, -48, 2.2, 'in'], [141.52, 172, -48, 2.2], [141.95, K19HFIGHT[0], K19HFIGHT[1], -0.25, 'out'], [142.38, K19HFIGHT[0], K19HFIGHT[1], -0.25]]);
+    if (t > 135.68) { P.beak = K.lerp(0.3, 0.6, k19E(t, 135.68, 0.4)); P.drool = K.clamp((t - 136.0) / 1.5); P.lid = 0.4; P.brow = 1; P._gt = k19add(k19grip(P), [0, 40]); }
+    if (k19in(t, 139.46, 140.56)) { P.eyes = 'wide'; P.pupil = 5; P.lid = 0; P.noBlink = true; P.brow = -0.6; const N = k19BirdPt(P, 'neck', K19CHOKE); P._gt = t < 139.75 ? [N[0] + 20, N[1] + 30] : [N[0] - 30, N[1] + 20]; if (t > 139.85) { P.gaze = [0, 0.05]; } }
+    if (k19in(t, 140.25, 140.56)) P.beak = K.lerp(0.6, 1, k19E(t, 140.25, 0.3));
+    if (t >= 140.56) { P.beak = 0.9; P.drool = 0; P.eyes = 'wide'; P.pupil = 2.4; P.noBlink = true; P.choke = 0.35 * k19E(t, 140.56, 0.07); P.chokeAt = K19CHOKE; P.brow = -1; P._gt = [700, 100]; P.flap = Math.sin(t * 19); }
+    if (t >= 140.56) { P.grip = 1 - k19E(t, 140.56, 0.1); P.feet = K.lerp(1, 0.4, k19E(t, 140.6, 0.3)); }
   } else {                                                                        // S15 the fight
     const T = t - 142.38, w8 = Math.PI * 2 / 2.6;
-    let c = [525 + 230 * Math.sin(w8 * T), 360 + 70 * Math.sin(2 * w8 * T)];
-    const calm = k19E(t, 145.0, 0.6); c = k19mix(c, [520, 330], calm);
-    let fall = 0; if (t > 149.22) c[1] += 40 * k19E(t, 149.22, 0.7); if (t > 151.1) { fall = fallY(t, 151.1, 151.9, 0, 900); c[1] += fall; }
-    P.rot = 0.2 * Math.cos(w8 * T) * (1 - calm); const o = k19flyAt(c[0], c[1], 1, 1, P.rot); P.x = o[0]; P.y = o[1];
+    let c = [525 + 150 * Math.sin(w8 * T), 290 + 40 * Math.sin(2 * w8 * T) - 120 * (1 - k19E(t, 142.38, 0.8))];
+    const calm = k19E(t, 145.0, 0.6); c = k19mix(c, [520, 240], calm);
+    if (t > 151.1) c[1] += fallY(t, 151.1, 151.9, 0, 900);
+    const n = countedBeats(t, K19SQ, { decay: 9 }), amp = t < K19SQ[0] ? 1 : [1, 0.6, 0.35, 0.2][n.n], fade = 1 - k19E(t, 149.22, 0.7);
+    P.rot = (0.2 * Math.cos(w8 * T) * (1 - calm)) + (t < 149.96 ? 0.04 * n.accent : 0); const o = k19flyAt(c[0], c[1], 1, 1, P.rot); P.x = o[0]; P.y = o[1];
     P.loop = k19E(t, 144.56, 0.64) * Math.PI * 2;
-    const beat = k19in(t, 147.74, 148.0) ? 0 : 1, decay = 1 - k19E(t, 149.22, 0.7);
-    P.flap = Math.sin(t * 17 + 0.6 * Math.sin(t * 5)) * beat * K.lerp(1, 0.35, 1 - decay) * (t > 149.96 ? 0 : 1) + (t > 149.96 ? -0.3 : 0);
-    P.eyes = 'wide'; P.brow = -1; P.beak = 0.7; P.choke = 0.55; P.chokeAt = 0.7; P.grip = 0; P.feet = 0.4; P._gt = [600, 250];
-    P.head = [-70, 30]; P.headAmt = 1; P.headRot = 0.9; P.neckC = K19CURL;
-    if (k19in(t, 143.7, 144.5)) { const sh = Math.sin((t - 143.7) * 2 * Math.PI * 5); P.head = [-70 + 45 * sh, 30 - 20 * Math.abs(sh)]; P.headRot = 0.9 + 0.4 * sh; }
-    if (t > 149.96) { P.head = k19mix([-70, 30], [-20, 80], k19E(t, 149.96, 0.4)); P.headRot = K.lerp(0.9, 1.5, k19E(t, 149.96, 0.4)); }
-    if (k19in(t, 144.56, 145.2)) P.feet = 0.5 + 0.5 * Math.sin(t * 30);
-    const n = countedBeats(t, [146.96, 147.74, 148.34]); P.choke = 0.55 + 0.12 * n.n;
-    if (n.n >= 2) P.eyes = 'wide'; if (t > 149.22) { P.lid = K.lerp(0, 0.7, k19E(t, 149.22, 0.7)); P.eyes = 'open'; }
-    if (t > 149.96) { P.limp = k19E(t, 149.96, 0.35); P.eyes = 'x'; P.noBlink = true; P.choke = 0.9; }
+    P.flap = t < 149.96 ? Math.sin(t * 17 + 0.6 * Math.sin(t * 5)) * amp * fade : 0;
+    P.eyes = 'wide'; P.pupil = 2.4; P.noBlink = true; P.brow = -1; P.beak = 0.7; P.chokeAt = K19CHOKE; P.grip = 0; P.feet = 0.4; P._gt = [700, 100];
+    P.head = [...K19HFIGHT]; P.headAmt = 1; P.headRot = -0.25;
+    if (k19in(t, 143.7, 144.5)) { const sh = Math.sin((t - 143.7) * 2 * Math.PI * 5); P.head = [K19HFIGHT[0] + 10 * sh, K19HFIGHT[1] - 40 * sh]; P.headRot = -0.25 - 0.5 * sh; }
+    // the three squeezes: neck pinches deeper each time, head jolts, beak snaps open, eyes pop
+    P.choke = [0.3, 0.4, 0.7, 1.0][n.n] * (1 - 0.25 * Math.exp(-n.since * 14)) + 0.25 * n.accent;
+    if (n.n > 0 && t < 149.96) { P.headRot = -0.25 - 0.55 * n.accent; P.head = [K19HFIGHT[0] + 12 * n.accent, K19HFIGHT[1] - 26 * n.accent]; P.beak = 0.7 + 0.3 * n.accent; P.pupil = 2.4 - 0.8 * n.accent; P.sq = 1 + 0.05 * n.accent; }
+    if (t > 149.22) { P.lid = K.lerp(0, 0.6, k19E(t, 149.22, 0.7)); P.eyes = 'open'; P.pupil = null; P.beak = K.lerp(P.beak, 0.4, k19E(t, 149.22, 0.6)); }
+    if (t > 149.96) { const u = k19E(t, 149.96, 0.35); P.limp = u; P.limpHead = [228, -80]; P.limpRot = 1.7; P.eyes = 'x'; P.lid = 0; P.beak = K.lerp(0.4, 0.8, u); P.choke = 1.0; }
   }
 }
 
@@ -242,7 +249,7 @@ function k19crabPose(t) {
       const xf = (tt) => kfn(tt, [[50.7, 640], [52.3, 372]]); const W = walk(xf, t, { stride: 7, amp: 40 }); P.x = W.x; P.ph = W.ph; P.amp = W.amp; P.y = k19crabY(P.x); P.gazeT = [300, 380];
       if (t > 52.3) { P.x = 372; P.y = k19crabY(372); }
       if (t > 66.6 && t < 67.44) { P.rot = 0.08 * Math.sin((t - 66.6) * 18); P.pinR = [100, -150 + 25 * Math.sin(t * 14)]; P.openR = 0.7; P.mouth = 'smile'; P.gazeT = [460, 680]; }
-      if (t >= 67.44) { const xf2 = (tt) => kfn(tt, [[67.6, 372], [69.0, 318]]); const W2 = walk(xf2, t, { stride: 7, amp: 40 }); P.x = W2.x; P.ph = W2.ph; P.amp = W2.amp; P.y = k19crabY(P.x); P.gazeT = [460, 700]; }
+      if (t >= 67.44) { const xf2 = (tt) => kfn(tt, [[67.6, 372], [69.8, 50]]); const W2 = walk(xf2, t, { stride: 7, amp: 40 }); P.x = W2.x; P.ph = W2.ph; P.amp = W2.amp; P.y = k19crabY(P.x); P.gazeT = [460, 700]; }
       if (k19in(t, 73.38, 77.22)) { const slow = 1 - k19E(t, 76.2, 1.0); P.pinR = [110, -150 + 30 * Math.sin(t * 12) * slow]; P.openR = 0.8; P.gazeT = k19BirdPt(k19birdPose(t), 'eye'); P.mouth = 'smile'; }
     }
   } else if (t < 89.25) { P.alpha = 0; }
@@ -255,7 +262,7 @@ function k19crabPose(t) {
     if (k19in(t, 93.56, 94.1)) { const hp = hop(t, 93.56, 0.4, 0, 0, 26); P.y -= hp[1]; P.sq = landSquash(t, 93.96, 0.14); }
     if (k19in(t, 94.2, 95.5)) { const f = Math.sin((t - 94.2) * 16); P.pinL = [-140, -90 - 40 * f]; P.pinR = [140, -90 - 40 * f]; P.openL = P.openR = 0.6; }
     if (k19in(t, 95.5, 96.24)) { P.pinR = [170, -130]; P.openR = 0.1; P.gazeT = [900, 380]; }
-    if (k19in(t, 96.24, 99.3)) { P.pinL = [-24, -70]; P.pinR = [24, -70]; P.openL = P.openR = 0; P.stalkL = -0.25; P.stalkR = -0.3; P.mouth = 'smile'; }
+    if (k19in(t, 96.24, 99.3)) { P.pinL = [-92, -22]; P.pinR = [92, -22]; P.openL = P.openR = 0.15; P.stalkL = -0.2; P.stalkR = -0.25; P.stalk = 1.3; P.mouth = 'smile'; }
     if (t >= 99.3) P.gazeT = [300, 300];
     if (t > 100.1) { const b = k19birdPose(t), g = k19grip(b); P.x = g[0]; P.y = g[1] + 92; P.dangle = k19E(t, 100.3, 0.3); P.legSwing = swing(t, 100.58, 0.35, 1.6, 2); P.mouth = 'smile';
       if (t > 100.58) { P.pinL = [-60, 20]; P.pinR = [90, -120 + 30 * Math.sin(t * 12)]; P.openR = 0.6; P.gazeT = [520, 760]; } }
@@ -272,16 +279,20 @@ function k19crabPose(t) {
   } else if (t < 151.9) { k19hillCrab(t, P); }
   else {                                                                          // S15 end, S16, S17 at the pond
     if (t < 154.42) {
-      const q = t < 152.4 ? k19leap(t, 151.98, 0.42, [200, 560], [330, 602], 110) : [330, 602, 0]; P.x = q[0]; P.y = q[1]; P.rot = t < 152.4 ? q[2] * 0.5 : 0; P.sq = impactSquash(t, 152.4, 0.6);
+      // lands in the open on the bank, right of the bird and clear of the reeds: squash, bounce up, two tired breaths
+      const q = t < 152.4 ? k19leap(t, 151.98, 0.42, [70, 540], [262, 602], 110) : [262, 602, 0]; P.x = q[0]; P.y = q[1]; P.rot = t < 152.4 ? q[2] * 0.5 : 0; P.sq = impactSquash(t, 152.4, 0.6);
       if (t < 151.98) P.alpha = 0;
-      P.pinL = [-110, -150]; P.pinR = [110, -150]; P.openL = P.openR = 0.6; P.eyes = 'wide'; P.mouth = 'pant'; P.brow = 0.6; P.stalk = 1.1; P.gazeT = [200, 540];
-      if (t > 152.78) P.sq = 1 + 0.03 * Math.sin(t * 9);
-      if (t > 153.3) { const u = k19E(t, 153.3, 1.0); P.pinL = k19mix([-110, -150], K19_PIN_REST.L, u); P.pinR = k19mix([110, -150], K19_PIN_REST.R, u); P.gazeT = [500, 660]; }
+      if (k19in(t, 152.75, 153.15)) P.y -= hop(t, 152.75, 0.4, 0, 0, 30)[1];
+      P.pinL = [-110, -150]; P.pinR = [110, -150]; P.openL = P.openR = 0.6; P.eyes = 'wide'; P.mouth = 'pant'; P.brow = 0.6; P.stalk = 1.1; P.gazeT = [500, 560];
+      if (t > 153.15) { const u = k19E(t, 153.15, 0.5); P.sq = landSquash(t, 153.15, 0.1) * (1 - 0.06 * Math.max(0, Math.sin((t - 153.15) * 2 * Math.PI / 0.62))); P.pinL = k19mix([-110, -150], [-100, -8], u); P.pinR = k19mix([110, -150], [100, -8], u); P.openL = P.openR = 0.3; P.stalk = K.lerp(1.1, 0.7, u); P.eyes = 'open'; P.lid = 0.35; P.brow = -0.3; }
     } else if (t < 168.02) {
-      const xf = (tt) => kfn(tt, [[155.84, 330], [156.98, 372], [158.4, 600]], 'lin'); const W = walk(xf, t, { stride: 7, amp: t < 157 ? 90 : 50 }); P.x = W.x; P.ph = W.ph; P.amp = W.amp; P.y = k19crabY(P.x);
-      P.stalk = 0.8; P.brow = -0.6; P.mouth = 'frown'; P.gazeT = [170, 520];
-      if (t < 155.84) { if (k19in(t, 154.9, 155.25)) P.lid = 1; P.sq = 1 - 0.06 * k19P(t, 155.3, 0.5); }
-      if (t > 155.6) P.gazeT = [600, 1000];
+      // one look back at the bird (عاد 154.42), then a slow scuttle into the water (الماء 156.98)
+      const xf = (tt) => kfn(tt, [[155.5, 262], [156.98, 372], [158.4, 600]], 'lin'); const W = walk(xf, t, { stride: 7, amp: 50 }); P.x = W.x; P.ph = W.ph; P.amp = W.amp * 0.6; P.y = k19crabY(P.x);
+      P.stalk = 0.7; P.brow = -0.6; P.mouth = 'frown'; P.gazeT = [40, 470]; P.pinL = [-100, -8]; P.pinR = [100, -8]; P.openL = P.openR = 0.3;
+      if (t < 154.92) { const u = k19E(t, 154.42, 0.2); P.stalkL = -0.3 * u; P.stalkR = -0.3 * u; P.rot = -0.06 * u; }
+      if (k19in(t, 154.92, 155.25)) P.lid = 1;
+      if (t < 155.5) P.sq = 1 - 0.06 * k19P(t, 155.25, 0.5);
+      if (t > 155.3) P.gazeT = [600, 1000];
       if (t > 158.4) { P.x = 600; P.y = k19crabY(600); P.gazeT = [560, 980]; }
       if (k19in(t, 159.18, 160.76)) { P.pinR = [40, -170]; P.openR = 0.1; P.talk = talk(t, [[159.18, 160.7]]) * 0.6; P.gazeT = [300, 600]; }
       if (t > 160.76) { const u = k19E(t, 160.76, 0.9); P.pinL = k19mix([-120, -110], [-110, -10], u); P.pinR = k19mix([120, -110], [110, -10], u); P.openL = P.openR = K.lerp(1, 0.6, u); P.gazeT = [600, 1100]; P.stalk = 0.7; P.wet = true; }
@@ -325,32 +336,41 @@ function k19hillCrab(t, P) {
     if (k19in(t, 132.34, 132.7)) P.lid = 1;
     if (t > 132.7) { P.eyes = 'open'; P.wet = false; P.stalk = settleTo(t, 132.7, 0.8, 1.0, 0.4); P.brow = 1; P.mouth = 'set'; P.gazeT = [640, 440]; P.sq = 1 + 0.03 * k19P(t, 132.8, 0.5); }
     if (t > 133.3) { const u = k19E(t, 133.3, 0.6); P.pinL = k19mix([-56, 30], [-110, -10], u); P.pinR = k19mix([56, 30], [110, -10], u); P.openL = P.openR = K.lerp(0.2, 1, u); }
-  } else if (t < 141.52) {                                                        // S14 the rise and the grip
-    P.stalk = 1.0; P.brow = 1; P.mouth = 'set'; P.pinL = [-110, -10]; P.pinR = [110, -10]; P.openL = P.openR = 1; P.legSwing = 0.35 * Math.sin((t - 133.94) * 8) * (1 - k19E(t, 134.9, 0.6));
-    const N = k19BirdPt(b, 'neck', 0.7); P.gazeT = N;
-    if (t > 136.42) { P.sq = t < 136.8 ? anticipate(t, 136.42, 0.38, 0.12) : 1; const u = k19E(t, 136.8, 1.8, 'inOut'); const C2 = { ...P }; k19aimTips(C2, [N[0] - 40, N[1] - 30], [N[0] + 40, N[1] - 30]); P.pinL = k19mix([-110, -10], C2.pinL, u); P.pinR = k19mix([110, -10], C2.pinR, u); }
+  } else if (t < 140.5) {                                                         // S14 the rise (the crab lunges onto the neck at 140.5)
+    P.stalk = 1.0; P.brow = 1; P.mouth = 'set'; P.pinL = [-110, -10]; P.pinR = [110, -10]; P.openL = P.openR = 1; P.legSwing = 0.35 * Math.sin((t - 133.94) * 8) * (1 - k19E(t, 134.9, 0.6)) + 0.1 * Math.sin(t * 5.5 - 0.6);
+    const N = k19BirdPt(b, 'neck', K19CHOKE); P.gazeT = N;
+    if (t > 136.42) { P.sq = t < 136.8 ? anticipate(t, 136.42, 0.38, 0.12) : 1; const u = k19E(t, 136.8, 1.78, 'inOut'); const C2 = { ...P }; k19aimTips(C2, [N[0] - 60, N[1] - 40], [N[0] + 50, N[1] - 50]); P.pinL = k19mix([-110, -10], C2.pinL, u); P.pinR = k19mix([110, -10], C2.pinR, u); }
     if (t > 138.58) { P.glintL = k19P(t, 138.7, 0.6); P.glintR = k19P(t, 138.85, 0.6); }
     if (k19in(t, 139.46, 140.4)) { P.openL = P.openR = t < 139.75 ? 1 - k19E(t, 139.46, 0.12) : k19E(t, 139.85, 0.15); }
-    if (t >= 140.56) { const C2 = { ...P }; k19aimTips(C2, [N[0] - 6, N[1]], [N[0] + 6, N[1]]); const u = k19E(t, 140.5, 0.07, 'in'); P.pinL = k19mix(P.pinL, C2.pinL, u); P.pinR = k19mix(P.pinR, C2.pinR, u); P.openL = P.openR = 1 - u; P.eyes = 'open'; P.sq = 1 - 0.06 * k19P(t, 140.56, 0.2); }
+    if (t >= 140.5) { const C2 = { ...P }; k19aimTips(C2, [N[0] - 8, N[1] + 4], [N[0] + 8, N[1] - 4]); const u = k19E(t, 140.5, 0.06, 'in'); P.pinL = k19mix(P.pinL, C2.pinL, u); P.pinR = k19mix(P.pinR, C2.pinR, u); P.openL = P.openR = 1 - u; P.eyes = 'open'; P.sq = 1 - 0.08 * k19P(t, 140.56, 0.2); P.brow = 1; }
   } else {                                                                        // hanging from the neck (141.52 on); drawn in the neck frame
-    P.neckHang = true; P.pinL = [-20, -150]; P.pinR = [20, -150]; P.openL = P.openR = 0; P.dangle = 1; P.stalk = 1.0; P.brow = 1; P.mouth = 'set';
-    P.hang = swing(t, 141.52, 0.45, 1.3, 1.6); P.legSwing = swing(t, 141.6, 0.5, 2.0, 1.5);
-    if (t > 142.38 && t < 145.24) { const T = t - 142.38; P.hang = 0.35 * Math.sin(T * 5.2 - 0.6); P.legSwing = 0.4 * Math.sin(T * 7); }
-    if (k19in(t, 143.7, 144.5)) P.hang = 0.7 * Math.sin((t - 143.77) * 2 * Math.PI * 5);
-    if (t >= 145.24) P.hang = swing(t, 145.24, 0.4, 1.2, 2.2);
-    if (t > 145.92) { P.eyes = 'shut'; P.brow = 1; P.shake = tremble(t, 1.5, 12); const n = countedBeats(t, [146.96, 147.74, 148.34]); P.sq = 1 - 0.06 * n.accent - 0.03 * n.dip; if (n.n === 3) P.shake = tremble(t, 3 * n.accent + 1, 14); }
-    if (t > 149.3) { P.eyes = 'open'; P.shake = 0; }
+    P.neckHang = true; P.pinL = [-34, -175]; P.pinR = [34, -175]; P.openL = P.openR = 0; P.dangle = 1; P.stalk = 1.0; P.brow = 1; P.mouth = 'set';
+    // swung out from the feet to under the neck: the body hangs to the left of the grip, clear of the head
+    P.hangIn = k19E(t, 140.5, 0.1, 'out'); P.openL = P.openR = 1 - k19E(t, 140.52, 0.06, 'in'); P.sq = 1 - 0.1 * k19P(t, 140.56, 0.2);
+    P.hang = K.lerp(0.25, 0.1, k19E(t, 141.9, 0.5)) + swing(t, 140.6, 0.3, 1.3, 1.6) + swing(t, 141.6, 0.25, 1.3, 1.6); P.legSwing = swing(t, 140.62, 0.6, 2.0, 1.5) + swing(t, 141.6, 0.4, 2.0, 1.5);
+    if (t > 142.38 && t < 145.24) { const T = t - 142.38; P.hang = 0.1 + 0.3 * Math.sin(T * 5.2 - 0.6); P.legSwing = 0.45 * Math.sin(T * 5.2 - 1.6); }
+    if (k19in(t, 143.7, 144.5)) P.hang = 0.1 + 0.45 * Math.sin((t - 143.77) * 2 * Math.PI * 5);
+    if (t >= 145.24) { P.hang = 0.1 + swing(t, 145.24, 0.3, 1.2, 2.2); P.legSwing = swing(t, 145.3, 0.4, 1.2, 2.2) + 0.12 * Math.sin(t * 6 - 0.4); }
+    if (t > 145.92 && t < 149.3) { const n = countedBeats(t, K19SQ, { decay: 9 }); P.eyes = n.n ? 'shut' : 'open'; P.brow = 1.2; P.mouth = 'set';
+      P.openL = P.openR = 0.45 * n.dip + (n.n === 0 ? 0.25 * k19E(t, 146.3, 0.5) : 0) * (t < K19SQ[0] - 0.12 ? 1 : 0);
+      P.sq = 1 - 0.12 * n.accent; P.stalk = 1 - 0.3 * n.accent + 0.12 * n.dip; P.shake = tremble(t, 1 + 2 * n.n * Math.max(0.3, n.accent), 13);
+      P.legSwing += 0.35 * n.accent * Math.sin(t * 30); P.lift = 10 * n.accent; }
+    if (t > 149.3) { P.eyes = 'open'; P.shake = 0; P.brow = 0.2; P.stalk = settleTo(t, 149.3, 1.0, 1.15, 0.4); }
+    if (t > 149.96 && t < 151.1) { P.hang = 0.1; P.legSwing = 0.1 * Math.sin(t * 6); P.gazeT = k19BirdPt(b, 'eye'); }
     if (t > 151.5) { P.neckHang = false; P.letGo = true; P.pinL = [-120, -60]; P.pinR = [120, -60]; P.openL = P.openR = 0.8; P.eyes = 'wide'; P.dangle = 0.3; }
   }
 }
 
 // ---------------------------------------------------------------- the fish
 const K19F = [{ pal: 0, s: 0.52 }, { pal: 0, s: 0.66 }, { pal: 0, s: 0.68 }, { pal: 0, s: 0.64 }, { pal: 1, s: 0.66 }, { pal: 1, s: 0.7 }, { pal: 1, s: 0.56 }, { pal: 1, s: 0.68 }, { pal: 2, s: 0.8 }, { pal: 2, s: 0.74 }, { pal: 2, s: 0.78 }, { pal: 2, s: 0.74 }];
-const K19GONE = { 0: 72.6, 8: 73.0, 1: 86.66, 5: 86.66, 2: 87.4, 9: 87.4, 4: 88.1, 10: 88.1 };
+const K19GONE = { 0: 72.8, 8: 72.93, 1: 86.66, 5: 86.66, 2: 87.4, 9: 87.4, 4: 88.1, 10: 88.1 };
 const K19SURV = [3, 6, 7, 11];
 const k19home = (i) => [505 + (i % 4) * 128 + ((i >> 2) % 2) * 44, 735 + (i >> 2) * 98];
 const k19idle = (i, t, c, ax = 55, ay = 14, sp = 0.55) => [c[0] + ax * Math.sin(sp * t + i * 1.7), c[1] + ay * Math.sin(sp * 1.6 * t + i * 2.3)];
-const K19SURFH = [[400, 652], [462, 658], [524, 650], [586, 656], [648, 650], [710, 657], [772, 652], [440, 740], [520, 752], [600, 744], [680, 754], [760, 742]];
+const K19SURFH = [[400, 652], [458, 668], [528, 650], [592, 676], [650, 655], [716, 684], [776, 658], [436, 742], [508, 716], [566, 768], [690, 724], [752, 760]];
+// v2: independent bobbing and a small tilt per fish so the gathered audience does not read as two strips
+const k19bob = (i, t) => (3 + (i * 7) % 5) * Math.sin(t * (1.6 + 0.23 * (i % 4)) + i * 1.9);
+const K19TILT = [0.08, -0.1, 0.14, -0.04, 0.1, -0.14, 0.05, -0.12, 0.12, -0.06, 0.15, -0.1];
 const k19teaseFish = (t) => [K.lerp(560, 420, k19E(t, 17.86, 0.8)) + 20 * Math.sin(t * 3), 690];
 const k19school6 = (i, t) => { const a = i / 12 * Math.PI * 2 + 0.3 * Math.sin(t * 0.7); return [760 + 130 * Math.cos(a) + 10 * Math.sin(t * 1.3 + i), 870 + 85 * Math.sin(a) + 6 * Math.sin(t * 1.7 + i)]; };
 const k19panic = (i) => { const a = i / 12 * Math.PI * 2 + 0.4; return [Math.cos(a), Math.sin(a)]; };
@@ -373,14 +393,14 @@ function k19fishXY(i, t) {
   if (t < 54.5) { const sc = k19school6(i, t); let q = k19wash(k19idle(i, t, H), sc, (t - 43.88) / 1.2);
     if (t > 48.78) { const d = k19panic(i), u = k19E(t, 48.78 + st, 0.6, 'out'); q = [sc[0] + d[0] * 230 * u, Math.min(1040, Math.max(680, sc[1] + d[1] * 150 * u))]; }
     if (i === 2 && t > 50.0) q = k19wash(q, [828, 1010], (t - 50.0) / 0.4);
-    if (t > 50.7) { const u = k19E(t, 50.7 + st * 1.5, 1.3); const from = (() => { const d = k19panic(i), s2 = k19school6(i, 50.7); return [s2[0] + d[0] * 230, Math.min(1040, Math.max(680, s2[1] + d[1] * 150))]; })(); q = k19wash(from, K19SURFH[i], u); if (i === 2) q = k19wash([828, 1010], K19SURFH[i], u); if (u >= 1) return { x: K19SURFH[i][0], y: K19SURFH[i][1] + 3 * Math.sin(t * 2 + i), face: -1, surf: 1 }; return { x: q[0], y: q[1], surf: u > 0.85 ? (u - 0.85) / 0.15 : 0 }; }
+    if (t > 50.7) { const u = k19E(t, 50.7 + st * 1.5, 1.3); const from = (() => { const d = k19panic(i), s2 = k19school6(i, 50.7); return [s2[0] + d[0] * 230, Math.min(1040, Math.max(680, s2[1] + d[1] * 150))]; })(); q = k19wash(from, K19SURFH[i], u); if (i === 2) q = k19wash([828, 1010], K19SURFH[i], u); if (u >= 1) return { x: K19SURFH[i][0], y: K19SURFH[i][1] + k19bob(i, t), face: -1, surf: 1 }; return { x: q[0], y: q[1], surf: u > 0.85 ? (u - 0.85) / 0.15 : 0 }; }
     return { x: q[0], y: q[1], face: t > 45.96 + st && t < 48.78 ? -1 : null }; }
-  if (t < 77.22) { let [x, y] = K19SURFH[i]; y += 3 * Math.sin(t * 2 + i);
+  if (t < 77.22) { let [x, y] = K19SURFH[i]; y += k19bob(i, t);
     if (k19in(t, 61.7, 63.3)) y += (4 + (i % 4) * 4) * k19P(t, 61.7 + st * 0.3, 1.2);
-    if (i === 0 && t > 69.36) { [x, y] = k19wash([x, y], [420, 664], (t - 69.36) / 0.6); }
-    if (i === 8 && t > 69.36) { [x, y] = k19wash([x, y], [466, 676], (t - 69.5) / 0.6); }
-    if (i === 0 && t > 72.48) { const L = k19leap(t, 72.48, 0.32, [420, 664], [362, 646], 90); return { x: L[0], y: L[1], rot: L[2], leap: true }; }
-    if (i === 8 && t > 72.88) { const L = k19leap(t, 72.88, 0.32, [466, 676], [366, 646], 90); return { x: L[0], y: L[1], rot: L[2], leap: true }; }
+    if (i === 0 && t > 69.36) { [x, y] = k19wash([x, y], [440, 664], (t - 69.36) / 0.6); }
+    if (i === 8 && t > 69.36) { [x, y] = k19wash([x, y], [505, 676], (t - 69.5) / 0.6); }
+    if (i === 0 && t > 72.48) { const L = k19leap(t, 72.48, 0.32, [440, 664], [348, 618], 150); return { x: L[0], y: L[1], rot: L[2], leap: true }; }
+    if (i === 8 && t > 72.61) { const L = k19leap(t, 72.61, 0.32, [505, 676], [352, 622], 170); return { x: L[0], y: L[1], rot: L[2], leap: true }; }
     return { x, y, face: t > 58.4 + st * 0.5 && t < 60.3 + st * 0.5 ? 1 : -1, surf: 1 }; }
   if (t < 89.25) return null;
   if (t < 101.56) { if (!K19SURV.includes(i)) return null; const k = K19SURV.indexOf(i), c = [600 + k * 50, 820 + (k % 2) * 40]; let q = k19idle(i, t, c, 40, 10, 0.4);
@@ -389,9 +409,9 @@ function k19fishXY(i, t) {
   if (!K19SURV.includes(i)) return null;
   const k = K19SURV.indexOf(i);
   if (t < 154.42) { const s0 = [520 + k * 60, 820], s1 = [430 + k * 60, 655]; const q = k19wash(s0, s1, (t - 153.3 - k * 0.15) / 0.6); return { x: q[0], y: q[1] + 3 * Math.sin(t * 2 + k), face: -1, surf: t > 153.6 + k * 0.15 ? 1 : 0 }; }
-  if (t < 168.02) { const ring = [[455, 900], [770, 985], [520, 830], [700, 860]], from = [[420 + k * 60, 700], [480 + k * 60, 740]][k % 2], tgt = i === 6 ? [720, 1005] : ring[k];
+  if (t < 168.02) { const ring = [[775, 958], [738, 1016], [858, 930], [892, 1000]], from = [[420 + k * 60, 700], [480 + k * 60, 740]][k % 2], tgt = ring[k];
     let q = k19wash(from, tgt, (t - 158.42 - k * 0.2) / 0.8); q = [q[0] + 4 * Math.sin(t * 1.5 + k), q[1] + 3 * Math.sin(t * 2 + k)];
-    if (t > 161.82 && i === 11) q[1] += 22 * k19E(t, 162.2, 0.6);
+    q[1] += 16 * k19E(t, 161.82 + k * 0.12, 0.5);   // staggered grief: each sinks a little, one after another
     return { x: q[0], y: q[1], face: tgt[0] < 600 ? 1 : -1, turn: i === 7 && t > 162.0 && t < 165.0 }; }
   const c = [520 + k * 55, 860 + (k % 2) * 40]; let q = k19idle(i, t, c, 30, 10, 0.5);
   if (t > 170.84) q = k19wash(q, [420 + k * 60, 655], (t - 170.84 - k * 0.15) / 0.6);
@@ -401,11 +421,11 @@ function k19fishXY(i, t) {
 }
 function k19fishPose(i, t) {
   const p = k19fishXY(i, t); if (!p) return null; const F = K19F[i];
-  const a = k19fishXY(i, t - 0.05), b = k19fishXY(i, t + 0.05), vx = a && b ? (b[0] - a[0]) / 0.1 : 0, vy = a && b ? (b[1] - a[1]) / 0.1 : 0, v = Math.hypot(vx, vy);
+  const a = k19fishXY(i, t - 0.05), b = k19fishXY(i, t + 0.05), vx = a && b ? (b.x - a.x) / 0.1 : 0, vy = a && b ? (b.y - a.y) / 0.1 : 0, v = Math.hypot(vx, vy);
   let dir = p.face ?? (Math.abs(vx) > 15 ? Math.sign(vx) : (k19fishXY(i, t - 0.6) && p.x - k19fishXY(i, t - 0.6).x < 0 ? -1 : 1));
   if (p.leap) dir = 1;
   const P = { x: p.x, y: p.y, s: F.s, pal: F.pal, dir, ph: t * 7 + i * 1.3 + v * 0.02, amp: K.clamp(0.25 + v / 300, 0.25, 0.9), seed: i * 3, rot: p.rot ?? (v > 30 && !p.surf ? K.clamp(Math.atan2(vy, Math.abs(vx)) * 0.5, -0.4, 0.4) : 0) };
-  if (p.surf) { P.rot = K.lerp(P.rot, -0.75, p.surf); }
+  if (p.surf) { P.rot = K.lerp(P.rot, -0.75 + (t < 77.22 ? K19TILT[i] : 0), p.surf); }
   if (p.leap) { P.sq = 1.12; P.eyes = 'wide'; P.mouth = 'o'; }
   const st = stagger(i, 0.07), head = [P.x + dir * 40 * F.s, P.y - 10];
   if (p.surf) P.gaze = lookAt(head, t < 89 ? [290, 380] : [190, 560]);
@@ -426,9 +446,9 @@ function k19fishPose(i, t) {
   if (k19in(t, 69.36, 70.6) && i !== 0 && i !== 8) P.fin = 0.6 + 0.4 * Math.sin(t * 12 + i);
   if (k19in(t, 73.38, 77.22)) { const slow = 1 - k19E(t, 75.6, 1.2); P.fin = (0.5 + 0.5 * Math.sin((t - st) * 13)) * slow; const b = k19birdPose(t); P.gaze = lookAt(head, k19BirdPt(b, 'eye')); P.mouth = 'smile'; }
   if (k19in(t, 100.58, 101.56)) P.fin = 0.5 + 0.5 * Math.sin(t * 13 + i);
-  if (k19in(t, 153.3, 154.42)) { P.eyes = 'wide'; P.mouth = 'o'; P.gaze = lookAt(head, [200, 540]); }
+  if (k19in(t, 153.3, 154.42)) { P.eyes = 'wide'; P.mouth = 'o'; P.gaze = lookAt(head, [262, 560]); }
   if (k19in(t, 158.42, 168.02)) P.gaze = lookAt(head, [600, 980]);
-  if (t > 161.82 && t < 168.02) { P.wet = true; if (i === 3) P.mouth = 'o'; if (i === 7 && p.turn) P.dir = -P.dir; if (i === 6 && k19in(t, 163.4, 164.6)) { P.finPt = 1; P.gaze = lookAt(head, [700, 760]); } if (t > 165.9) { P.rot = 0.3; P.lid = 0.5; } }
+  if (t > 161.82 && t < 168.02) { const g = k19E(t, 161.82 + K19SURV.indexOf(i) * 0.12, 0.4); if (g > 0) { P.wet = true; P.rot = 0.32 * g; P.lid = 0.6 * g; P.mouth = 'frown'; } if (i === 7 && p.turn) P.dir = -P.dir; if (i === 6 && k19in(t, 163.4, 164.6)) { P.finPt = 1; P.rot = 0; P.lid = 0.2; P.gaze = lookAt(head, [640, 760]); } }
   if (k19in(t, 171.6, 172.4)) { P.y += 6 * k19P(t, 171.6, 0.4); P.eyes = 'wide'; }
   if (k19in(t, 170.84, 174.6) && !p.leap) P.gaze = lookAt(head, [200, 560]);
   return P;

@@ -19,3 +19,10 @@ Code: src/k26_parts.js (helpers, cow, devil costume wrapper, props, balloons, st
 - The thief's knees-high sneak uses the plain figure's straight legs with a body tilt and bob (no knee bend).
 - Ascetic's pat on the shoulder by the tall neighbour (156.54) and the two neighbours peering out of the window are replaced by shrugs at the door.
 - Thief foot under the flopping arm (112.2) is approximate (the arm falls toward him, he lifts it away).
+
+## v2 revision (2026-11-17, fable_review_1)
+- Camera: `k26Cam` places the hut floor at ~90 % of the panel (900 - 490/z) and road/yard at ~86 %; wides never use zoom 1.0 (the clamp kept the camera centred there). A key with `fy: 1` sets its own y (the THE END push to the window).
+- Hut geography v2: sleeper hips x 530 (head ~414), mat 370..630, cow lying at x 825 s 0.55, quarrel spot devil 185 / thief 300 (badge midpoint K26_MID 242), shout: thief 495 behind the sleeper, devil 175; after the waking: neighbours 140/205/270, thief 430, devil 545, ascetic 705.
+- Yard: bush h 92 (chest-up two-shot), ascetic x 630 watering then stroking the cow, cow x 860; handshake point K26_YSHAKE (252, 738).
+- Road: opening pair starts further right (ascetic 370, cow 180); YES! behind the trunk at x 566; reveal 22.6-29.4 panned at zoom 1.25-1.3.
+- SLEEP meter upper left at scale 0.75; AWAKE! label at 141.22.

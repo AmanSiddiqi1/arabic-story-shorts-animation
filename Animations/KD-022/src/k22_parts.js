@@ -46,9 +46,13 @@ function k22headXf(ctx, P) {
 }
 // face overlays in head-local space: flush (anger, climbing red dots), green (poison / illness), sweat, tear (0..1 progress), mouthLine
 function k22faceFx(ctx, o) {
-  if (o.flush > 0 || o.green > 0) { ctx.save(); K.poly(ctx, ell(0, 0, 35, 36, 36), true); ctx.clip();
-    if (o.flush > 0) { const top = 37 - 74 * o.flush; ctx.globalAlpha = 0.85; ctx.fillStyle = dotPat(ctx, C.red, 7, 0.42); ctx.fillRect(-40, top, 80, 80); }
-    if (o.green > 0) { const top = 37 - 70 * o.green; ctx.globalAlpha = 0.9; ctx.fillStyle = dotPat(ctx, GREEN, 7, 0.4); ctx.fillRect(-40, top, 80, 80); }
+  // v2: emotion colour goes UNDER the features: multiply (black lines stay black), the eyes cut out, capped alpha, never above the brow line
+  if (o.flush > 0 || o.green > 0) { const lk = (o.look || 0) * 3, ew = o.wide ? 16 : 13, eh = o.wide ? 19 : 15;
+    ctx.save(); ctx.beginPath(); ctx.ellipse(0, 0, 34, 35, 0, 0, Math.PI * 2); for (const sd of [-1, 1]) { ctx.moveTo(sd * 13 + lk + ew, -4); ctx.ellipse(sd * 13 + lk, -4, ew, eh, 0, 0, Math.PI * 2); } ctx.clip('evenodd');
+    ctx.globalCompositeOperation = 'multiply';
+    for (const [v, col, a] of [[o.flush, C.red, 0.45], [o.green, GREEN, 0.5]]) { if (!(v > 0)) continue; const top = K.lerp(37, -22, v);
+      ctx.globalAlpha = a; ctx.fillStyle = dotPat(ctx, col, 7, 0.42); ctx.fillRect(-40, top, 80, 80);
+      ctx.globalAlpha = Math.min(0.6, a + 0.15) * K.clamp(v * 1.5); for (const sd of [-1, 1]) { ctx.beginPath(); ctx.arc(sd * 22, 13, 12, 0, Math.PI * 2); ctx.fill(); } }
     ctx.restore(); }
   if (o.pale > 0) { ctx.save(); K.poly(ctx, ell(0, 0, 35, 36, 36), true); ctx.clip(); ctx.globalAlpha = 0.5 * o.pale; ctx.fillStyle = dotPat(ctx, GREEN, 8, 0.32); for (const sd of [-1, 1]) { ctx.beginPath(); ctx.arc(sd * 21, 12, 12, 0, 7); ctx.fill(); } ctx.restore(); }
   const drop = (x, y, r, col) => { ctx.save(); ctx.fillStyle = col; ctx.strokeStyle = C.black; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.moveTo(x, y - r * 1.9); ctx.quadraticCurveTo(x + r, y - r * 0.4, x + r, y + r * 0.2); ctx.arc(x, y + r * 0.2, r, 0, Math.PI); ctx.quadraticCurveTo(x - r, y - r * 0.4, x, y - r * 1.9); ctx.fill(); ctx.stroke(); ctx.restore(); };
@@ -71,12 +75,12 @@ function k22turban(ctx, x, y, o = {}) {
 // draws a person and the face overlays; o: flush, green, pale, sweat, tear, dots, t (sweat phase)
 function k22person(ctx, P, o = {}) {
   person(ctx, P); if (!o.flush && !o.green && !o.pale && !o.sweat && !(o.tear > 0) && !o.dots) return;
-  ctx.save(); k22headXf(ctx, P); k22faceFx(ctx, o); ctx.restore();
+  ctx.save(); k22headXf(ctx, P); k22faceFx(ctx, { ...o, look: P.look, wide: P.eyes === 'wide' }); ctx.restore();
 }
 // the ignorant man: beanSeller body (no beard, moustache) in yellow; the turban is his own drawable (o.slip covers the eyes, o.trot lags)
 function k22quack(ctx, P, o = {}) {
   const Q = { ...P, costume: 'beanSeller', pal: K22QPAL, age: 0.3 };
-  person(ctx, Q); ctx.save(); k22headXf(ctx, Q); k22faceFx(ctx, o);
+  person(ctx, Q); ctx.save(); k22headXf(ctx, Q); k22faceFx(ctx, { ...o, look: Q.look, wide: Q.eyes === 'wide' });
   if (!o.noTurban) k22turban(ctx, 2 + (o.tx || 0), -36 + (o.slip || 0), { rot: o.trot || 0 }); ctx.restore();
 }
 
@@ -150,11 +154,12 @@ function k22lamp(ctx, x, y, t, flame, smoke = 0) {
     for (let k = 0; k <= 12; k++) { const u = k / 12, yy = y - 40 - u * 140 * (0.3 + smoke), xx = x + 44 + Math.sin(u * 7 + smoke * 5) * 10 * u; k ? ctx.lineTo(xx, yy) : ctx.moveTo(xx, yy); } ctx.stroke(); ctx.restore(); }
 }
 // painPulse: a throbbing red star of rings at (x, y); size 0..2.2, the beat rate in Hz
-function k22pain(ctx, x, y, t, size, rate = 1.6) {
+function k22pain(ctx, x, y, t, size, rate = 1.6, hollow = false) {   // hollow (v2, S7): rings and spikes only, no filled centre
   if (size <= 0.02) return; const ph = (t * rate) % 1, beat = Math.exp(-ph * 5);
   ctx.save(); ctx.translate(x, y); const r = 16 * size * (1 + 0.35 * beat);
   ctx.globalAlpha = 0.85; for (let i = 0; i < 8; i++) { const a = i * Math.PI / 4 + 0.2; seg(ctx, Math.cos(a) * r * 1.2, Math.sin(a) * r * 1.2, Math.cos(a) * r * (1.7 + 0.4 * beat), Math.sin(a) * r * (1.7 + 0.4 * beat), 5, C.red, 2); }
-  ctx.globalAlpha = 1; shape(ctx, ell(0, 0, r, r, 18), C.red, { lw: 3.5, seed: 140, dot: '#a8160f', pitch: 6, rad: 0.3, da: 0.5 });
+  ctx.globalAlpha = 1; if (hollow) { ctx.lineWidth = 9; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.arc(0, 0, r, 0, Math.PI * 2); ctx.stroke(); ctx.lineWidth = 5; ctx.strokeStyle = C.red; ctx.stroke(); }
+  else shape(ctx, ell(0, 0, r, r, 18), C.red, { lw: 3.5, seed: 140, dot: '#a8160f', pitch: 6, rad: 0.3, da: 0.5 });
   ctx.globalAlpha = 0.6 * (1 - ph); ctx.lineWidth = 4; ctx.strokeStyle = C.red; ctx.beginPath(); ctx.arc(0, 0, r * (1.2 + ph * 1.6), 0, 7); ctx.stroke(); ctx.restore();
 }
 // blurVision: the same picture drawn twice, shifted (14 px at amount 1) at alpha 0.55, under a soft halftone veil. No canvas filters.

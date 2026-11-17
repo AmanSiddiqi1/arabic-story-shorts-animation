@@ -187,9 +187,9 @@ function k26Meter(ctx, x, y, v, t, k) { if (k <= 0) return; const n = Math.round
   ctx.save(); ctx.translate(x, y); ctx.scale(K.ease.back(K.clamp(k)), K.ease.back(K.clamp(k)));
   const H = 10 * (ch + gap) + 14; ctx.fillStyle = 'rgba(20,20,20,0.85)'; ctx.fillRect(-cw / 2 - 8 + 6, -6 + 6, cw + 16, H); ctx.fillStyle = C.white; ctx.fillRect(-cw / 2 - 8, -6, cw + 16, H); ctx.lineWidth = 5; ctx.strokeStyle = C.black; ctx.strokeRect(-cw / 2 - 8, -6, cw + 16, H);
   for (let i = 0; i < 10; i++) { const yy = (9 - i) * (ch + gap) + 2, on = i < n; ctx.fillStyle = on ? (n <= 3 ? C.red : n <= 6 ? C.yellow : C.blue) : '#e8e0c8'; ctx.fillRect(-cw / 2, yy, cw, ch); ctx.lineWidth = 3; ctx.strokeStyle = C.black; ctx.strokeRect(-cw / 2, yy, cw, ch); }
-  ctx.font = K.font(34, BF, 400); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.lineJoin = 'round';
-  const lab = n <= 0 ? 'AWAKE!' : 'SLEEP'; ctx.lineWidth = 7; ctx.strokeStyle = C.black; ctx.strokeText(lab, 0, -30); ctx.fillStyle = n <= 0 ? C.red : C.yellow; ctx.fillText(lab, 0, -30);
-  ctx.font = K.font(40, BF, 400); ctx.strokeText(String(Math.max(0, n)), 0, H + 18); ctx.fillStyle = C.white; ctx.fillText(String(Math.max(0, n)), 0, H + 18);
+  ctx.font = K.font(44, BF, 400); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.lineJoin = 'round';
+  const lab = n <= 0 ? 'AWAKE!' : 'SLEEP'; ctx.lineWidth = 8; ctx.strokeStyle = C.black; ctx.strokeText(lab, 0, -34); ctx.fillStyle = n <= 0 ? C.red : C.yellow; ctx.fillText(lab, 0, -34);
+  ctx.font = K.font(56, BF, 400); ctx.strokeText(String(Math.max(0, n)), 0, H + 26); ctx.fillStyle = C.white; ctx.fillText(String(Math.max(0, n)), 0, H + 26);
   ctx.restore(); }
 
 // ---------- inset circle (panel space): draw(c) in world units centred on world point at, zoom z ----------

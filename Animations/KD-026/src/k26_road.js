@@ -3,11 +3,11 @@ const K26_RW = 2000;
 const K26_RPL = [{ kind: 'tree', x: 520 }, { kind: 'wall', x: 800, w: 130, h: 120 }, { kind: 'bush', x: 1060, w: 220, h: 160, seed: 5 }, { kind: 'wall', x: 1560, w: 200, h: 80 }];
 const K26_RU = [[0, 0.44], [5.4, 0.46], [6.7, 0.5, 'lin'], [12.6, 0.53], [33.34, 0.58, 'lin']];
 // ascetic and cow positions (the rope tug at 3.38: the cow stops for a tuft, he is pulled back half a step)
-const K26_AX = k26Fn([[0, 150], [3.38, 495, 'lin'], [3.7, 520, 'out'], [3.92, 508], [5.4, 690, 'lin'], [11.92, 880, 'out'], [14.15, 935], [15.1, 935], [15.8, 960, 'in'], [21.66, 1400, 'lin'], [33.34, 1580, 'lin']]);
-const K26_CXk = k26Fn([[0, -40], [3.38, 305, 'lin'], [3.95, 309, 'out'], [4.45, 350, 'in'], [5.4, 500, 'lin']]);
+const K26_AX = k26Fn([[0, 370], [3.38, 620, 'lin'], [3.7, 640, 'out'], [3.92, 630], [5.4, 720, 'lin'], [11.92, 880, 'out'], [14.15, 935], [15.1, 935], [15.8, 965, 'in'], [17.14, 1110, 'lin'], [21.66, 1430, 'lin'], [33.34, 1600, 'lin']]);
+const K26_CXk = k26Fn([[0, 180], [3.38, 430, 'lin'], [3.95, 434, 'out'], [4.45, 460, 'in'], [5.4, 530, 'lin']]);
 const K26_CX = (t) => (t < 5.4 ? K26_CXk(t) : K26_AX(t) - 190);
 // thief: behind the tree trunk (x 520), peeks, slides out, sneaks to the low wall (800), then to the bush (1060)
-const K26_TX = k26Fn([[0, 540], [12.5, 540], [13.0, 566, 'out'], [14.38, 566], [14.5, 540, 'out'], [15.4, 540], [15.9, 645, 'out'], [17.14, 645], [18.4, 735], [18.8, 735], [19.4, 790, 'out'], [22.0, 790], [24.2, 1040], [33.34, 1040]]);
+const K26_TX = k26Fn([[0, 540], [12.5, 540], [13.0, 566, 'out'], [14.38, 566], [14.5, 540, 'out'], [15.4, 540], [15.9, 566, 'out'], [17.14, 566], [18.4, 735], [18.8, 735], [19.4, 790, 'out'], [22.0, 790], [24.2, 1040], [33.34, 1040]]);
 // devil: behind the trunk, leans out, steps out, glides to the low wall
 const K26_DXr = k26Fn([[0, 530], [23.2, 530], [23.7, 584, 'out'], [24.02, 584], [24.5, 640, 'out'], [24.74, 640], [26.15, 785], [33.34, 785]]);
 const K26_RFALLS = footfalls(K26_TX, 17.14, 24.3, K26_STRIDE * 0.95);
@@ -51,7 +51,7 @@ function k26RoadThief(t) {
   if (k26In(t, 13.46, 14.38)) { P.gaze = look(t, [P.x, 700], [[13.46, [P.x + 60, 690]], [13.5, cowH]], 0.07); P.mouth = 'smile'; }
   if (k26In(t, 14.38, 15.4)) { P.gaze = [-0.4, 0]; P.mouth = 'o'; }
   if (k26In(t, 15.4, 16.16)) { const o = Math.sin(t * 22) * 6; P.handL = [24 + o, -140]; P.handR = [30 - o, -134]; P.drop = 6; }
-  if (k26In(t, 16.16, 17.14)) { P.handL = [30, -128]; P.handR = t < 16.4 ? [70, -170] : [34, -132]; P.sq = t < 16.4 ? anticipate(t, 16.16, 0.24, 0.07) : settleTo(t, 16.4, 0.93, 1, 0.4); P.drop = 8 * pulse(t, 16.45, 0.3); P.mouth = 'smile'; }
+  if (k26In(t, 16.16, 17.14)) { P.handL = [30, -128]; P.handR = t < 16.4 ? [70, -170] : t < 16.62 ? [34, -132] : PERSON_HANDS.hush.R; if (t >= 16.62) P.gaze = [0, 0.05]; P.sq = t < 16.4 ? anticipate(t, 16.16, 0.24, 0.07) : settleTo(t, 16.4, 0.93, 1, 0.4); P.drop = 8 * pulse(t, 16.45, 0.3); P.mouth = 'smile'; }
   if (sneak) { P.tip = 0.12; P.handL = [22, -132]; P.handR = [30, -122]; P.y -= Math.abs(Math.sin(P.ph)) * 6 * P.amp; }
   if (k26In(t, 18.4, 18.8)) { P.tip = 0.04; P.eyes = 'wide'; P.noBlink = true; }   // freezes: the cow looked back
   if (k26In(t, 18.02, 19.5)) { P.handR = t < 18.8 ? PERSON_HANDS.grip.R : [60 + 30 * K.clamp((t - 18.8) / 0.3), -150]; }
@@ -96,7 +96,7 @@ function k26RoadWorld(ctx, t, cam) {
   person(ctx, A);
   k26Rope(ctx, k26Hand(A, 0), ropeA, k26In(t, 3.38, 3.95) ? 0.05 : t >= 3.95 && t < 4.4 ? 0.4 : 1);
   // grass tuft she stops for
-  if (t < 5) { const gx = 410; for (let k = -2; k <= 2; k++) seg(ctx, gx + k * 6, K26_GR + 2, gx + k * 9, K26_GR - 22 + (t > 3.6 ? 12 : 0), 4, GREEN2, 2); }
+  if (t < 5) { const gx = 535; for (let k = -2; k <= 2; k++) seg(ctx, gx + k * 6, K26_GR + 2, gx + k * 9, K26_GR - 22 + (t > 3.6 ? 12 : 0), 4, GREEN2, 2); }
   // thought cloud: the daydream (6.5-12.3)
   if (t >= 6.4 && t < 12.3) { const h = k26Head(A), p = t < 11.92 ? K.clamp((t - 6.4) / 1.1) : 1 - K.clamp((t - 11.92) / 0.35);
     thoughtCloud(ctx, h[0] - 20, h[1] - 250, 520, 340, t, { p, tail: [h[0] + 10, h[1] - 50], bg: CREAM, scale: 0.52, at: [500, 840], inside: (c) => k26Dream(c, t) }); }
@@ -113,11 +113,11 @@ function k26Dream(c, t) {
   if (k26In(t, 9.94, 10.7)) for (let i = 0; i < 3; i++) { const u = ((t * 3 + i / 3) % 1); shape(c, ell(670, 905 + u * 90, 5, 8, 8), C.white, { lw: 2 }); }
   // DAY 1..5 with stacking bowls
   const days = [10.68, 10.92, 11.14, 11.38, 11.62], n = days.filter((d) => t >= d).length;
-  if (n > 0) { c.save(); S0.counter(c, 'DAY ' + n, 500, 600, 1, { size: 90, seed: 70 + n }); c.restore(); for (let i = 0; i < n; i++) k26Bowl(c, 430 + (i % 3) * 60 + (i >= 3 ? 30 : 0), 1020 - (i >= 3 ? 30 : 0), 1.6, 1); }
+  if (n > 0) { c.save(); S0.label(c, 'DAY', 380, 700, 1, { size: 80, align: 'center' }); S0.counter(c, n, 610, 740, k26B(t, days[n - 1], 0.25), { size: 90, seed: 70 + n }); c.restore(); for (let i = 0; i < n; i++) k26Bowl(c, 430 + (i % 3) * 60 + (i >= 3 ? 30 : 0), 1020 - (i >= 3 ? 30 : 0), 1.6, 1); }
 }
-const K26_RCAM = [[0, { x: 500, y: 690, zoom: 1.15 }], [4.4, { x: 700, y: 690, zoom: 1.15 }], [4.95, { x: 900, y: 660, zoom: 1.15 }], [5.4, { x: 900, y: 660, zoom: 1.15 }], [6.3, { x: 760, y: 600, zoom: 1.5 }], [11.92, { x: 830, y: 600, zoom: 1.5 }],
-  [12.5, { x: 680, y: 700, zoom: 1.6 }], [16.16, { x: 690, y: 700, zoom: 1.6 }], [16.9, { x: 840, y: 690, zoom: 1.2 }], [21.66, { x: 860, y: 690, zoom: 1.2 }], [23.6, { x: 960, y: 615, zoom: 1.0 }],
-  [29.4, { x: 960, y: 615, zoom: 1.0 }], [30.4, { x: 820, y: 700, zoom: 1.7 }], [32.3, { x: 830, y: 690, zoom: 1.8 }], [33.34, { x: 830, y: 690, zoom: 1.8 }]];
+const K26_RCAM = [[0, { x: 470, y: 690, zoom: 1.15 }], [4.4, { x: 700, y: 690, zoom: 1.15 }], [4.95, { x: 830, y: 660, zoom: 1.15 }], [5.4, { x: 840, y: 660, zoom: 1.15 }], [6.3, { x: 760, y: 600, zoom: 1.5 }], [11.92, { x: 830, y: 600, zoom: 1.5 }],
+  [12.5, { x: 680, y: 700, zoom: 1.6 }], [16.16, { x: 690, y: 700, zoom: 1.6 }], [16.9, { x: 840, y: 690, zoom: 1.2 }], [21.66, { x: 880, y: 690, zoom: 1.2 }], [22.6, { x: 760, y: 615, zoom: 1.25 }],
+  [24.9, { x: 760, y: 615, zoom: 1.25 }], [25.9, { x: 1220, y: 615, zoom: 1.25 }], [26.5, { x: 1220, y: 615, zoom: 1.25 }], [27.3, { x: 900, y: 615, zoom: 1.3 }], [29.4, { x: 900, y: 615, zoom: 1.3 }], [30.4, { x: 820, y: 700, zoom: 1.7 }], [32.3, { x: 830, y: 690, zoom: 1.8 }], [33.34, { x: 830, y: 690, zoom: 1.8 }]];
 // panel-space lettering for the road
 function k26RoadOver(ctx, t, cam, S, W) {
   const P = (x, y) => k26P(x, y, cam);
@@ -126,7 +126,7 @@ function k26RoadOver(ctx, t, cam, S, W) {
   k26Lab(ctx, S, t, 'HOME', 760, 560, 4.5, 5.6); k26Arr(ctx, S, t, [760, 590], [975, 640], 4.5, 5.6, { bend: 0.15 });
   { const h = P(K26_TX(13), 700); k26Lab(ctx, S, t, 'THIEF', h[0] + 150, h[1] - 140, 12.66, 14.3); k26Arr(ctx, S, t, [h[0] + 140, h[1] - 120], [h[0] + 50, h[1] - 40], 12.66, 14.3, { bend: -0.2 }); }
   if (k26In(t, 13.46, 14.25)) { const a = P(K26_TX(t) + 10, 712), b = P(W.cow.headW[0], W.cow.headW[1]); k26Dash(ctx, a, b, k26B(t, 13.46, 0.3)); }
-  if (k26In(t, 16.16, 17.2)) { const h = P(K26_TX(t), 705); S.emphasis(ctx, h[0], h[1], 120, k26B(t, 16.16, 0.4) * k26Fade(t, 16.16, 17.2, 0.15), { word: 'YES!', wx: 0.6, wy: 0.9 }); }
+  if (k26In(t, 16.16, 16.9)) { const h = P(K26_TX(t), 705); S.emphasis(ctx, h[0], h[1], 84, k26B(t, 16.16, 0.4) * k26Fade(t, 16.16, 16.9, 0.15), { word: 'YES!', wx: 0.6, wy: 0.9 }); }
   // the thief's icon balloon (18.02-20.25)
   if (k26In(t, 18.02, 20.25)) { const h = P(K26_TX(t), 700 - (t > 19.45 ? -40 : 0)), bx = h[0] + 170, by = h[1] - 230;
     ctx.save(); ctx.globalAlpha = k26Fade(t, 18.02, 20.25, 0.15); k26Balloon(ctx, bx, by, 290, 210, [h[0] + 40, h[1] - 60], k26B(t, 18.02, 0.35, 'lin'), (c) => {
@@ -136,8 +136,8 @@ function k26RoadOver(ctx, t, cam, S, W) {
   // devil
   { const d = P(640, 690); k26Lab(ctx, S, t, 'DEVIL', d[0] - 40, d[1] - 170, 24.02, 25.4); k26Arr(ctx, S, t, [d[0] - 40, d[1] - 150], [d[0] - 10, d[1] - 70], 24.02, 25.4, { bend: 0.2 }); }
   if (k26In(t, 25.5, 26.7)) { const a = P(K26_DXr(t) + 30, 640), b = P(Math.min(K26_AX(t), 1440), 660); ctx.save(); ctx.globalAlpha = k26Fade(t, 25.5, 26.7, 0.15); S.arrow(ctx, a, b, k26B(t, 25.5, 0.6), { width: 18, bend: -0.35 }); ctx.restore(); }
-  if (k26In(t, 26.78, 33.34)) { const d = W.D, h = P(d.x, d.y - 205 * 1.08 * (d.sq ?? 1)), bx = Math.min(800, h[0] + 200), by = Math.max(170, h[1] - 230);
-    ctx.save(); ctx.globalAlpha = k26Fade(t, 26.78, 33.34, 0.2); k26Balloon(ctx, bx, by, 280, 210, [h[0] + 40, h[1] - 40], k26B(t, 26.78, 0.35, 'lin'), (c) => {
+  if (k26In(t, 26.78, 33.34)) { const d = W.D, h = P(d.x, d.y - 205 * 1.08 * (d.sq ?? 1)), bx = Math.min(780, h[0] + 210), by = Math.max(210, h[1] - 260);
+    ctx.save(); ctx.globalAlpha = k26Fade(t, 26.78, 33.34, 0.2); k26Balloon(ctx, bx, by, 364, 273, [h[0] + 40, h[1] - 40], k26B(t, 26.78, 0.35, 'lin'), (c) => { c.scale(1.3, 1.3);
       if (t < 29.6) { k26IconCow(c, -10, 70, 0.42); if (t >= 28.56) k26X(c, 0, 10, 80, k26B(t, 28.56, 0.25, 'lin')); }
       else { k26IconMan(c, 0, 92, 0.5, { mouth: 'smile', lid: t >= 32.34 ? 1 : 0, lie: 0 }); if (t >= 32.34) { moon(c, -90, -50, 26); k26Zs(c, 50, -40, 3, 24, C.blue); } } }); ctx.restore(); }
   if (k26In(t, 31.16, 32.34)) { const s0 = P(W.D.x + 100, 700); k26Arr(ctx, S, t, [s0[0] + 40, s0[1]], [960, s0[1] - 20], 31.2, 32.34, { bend: 0.1 }); }

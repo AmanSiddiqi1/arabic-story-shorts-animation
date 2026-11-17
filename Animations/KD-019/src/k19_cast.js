@@ -20,8 +20,8 @@ function k19BirdGeo(P) {
   const bc = [-10, -150 + sit * 80 + age * 6], nb = [bc[0] + 58, bc[1] - 26], n = P.neck ?? 0.45;
   let hd = P.fly ? [nb[0] + K.lerp(62, 80, n), nb[1] + K.lerp(-8, -70, n)] : [nb[0] + K.lerp(18, 32, n), nb[1] + K.lerp(-28, -138, n) + age * 8];
   if (P.head) hd = k19mix(hd, P.head, P.headAmt ?? 1);
-  if (limp) hd = k19mix(hd, [nb[0] + 36, nb[1] + 100], limp);
-  const hr = K.lerp(P.headRot ?? 0.12, 1.45, limp), d = [hd[0] - nb[0], hd[1] - nb[1]], L = Math.hypot(d[0], d[1]) || 1, pp = [-d[1] / L, d[0] / L], bend = (P.curl ?? 0.16) * L;
+  if (limp) hd = k19mix(hd, P.limpHead || [nb[0] + 36, nb[1] + 100], limp);
+  const hr = K.lerp(P.headRot ?? 0.12, P.limpRot ?? 1.45, limp), d = [hd[0] - nb[0], hd[1] - nb[1]], L = Math.hypot(d[0], d[1]) || 1, pp = [-d[1] / L, d[0] / L], bend = (P.curl ?? 0.16) * L;
   let c1 = k19add(k19add(nb, d, 0.33), pp, bend), c2 = k19add(k19add(nb, d, 0.68), pp, -bend * 0.8);
   if (P.neckC) { const k = P.neckCAmt ?? 1; c1 = k19mix(c1, P.neckC[0], k); c2 = k19mix(c2, P.neckC[1], k); }
   const H = (v) => k19add(hd, k19rot(v, hr)), open = Math.max(P.beak || 0, (P.talk || 0) * 0.55);
@@ -77,15 +77,16 @@ function k19BirdRaw(ctx, P) {
   if (age > 0.3) { ctx.save(); ctx.globalAlpha *= K.clamp((age - 0.3) / 0.5); shape(ctx, [[-30, -4], [-18, -22], [0, -27], [-6, -19], [-22, -8]], K19G.brow, { lw: 3, seed: 39 }); ctx.restore(); }
   // beak: lower mandible (opens), held fish, upper mandible
   const op = g.open * 0.6; ctx.save(); ctx.translate(20, 3); ctx.rotate(op); shape(ctx, [[0, -1], [70, 1], [66, 11], [2, 11]], K19G.beak, { lw: 4, seed: 40 }); ctx.fillStyle = K19G.spot; ctx.beginPath(); ctx.arc(56, 5, 4.5, 0, 7); ctx.fill(); ctx.restore();
-  if (P.hold) P.hold.forEach((f, i) => { ctx.save(); ctx.translate(52 - i * 18, 6 + op * 30); ctx.rotate(1.35 + i * 0.25 + 0.15 * Math.sin(f.ph || 0)); k19fish(ctx, { x: 0, y: 0, s: 0.24, pal: f.pal, ph: f.ph || 0, amp: f.amp ?? 0.9, eyes: f.eyes || 'wide', lid: 0, noBlink: true, mouth: 'o' }); ctx.restore(); });
+  if (P.hold) P.hold.forEach((f, i) => { ctx.save(); ctx.translate(52 - i * 18, 6 + op * 30); ctx.rotate(1.35 + i * 0.25 + 0.15 * Math.sin(f.ph || 0)); k19fish(ctx, { x: 0, y: 0, s: f.s ?? 0.24, pal: f.pal, ph: f.ph || 0, amp: f.amp ?? 0.9, eyes: f.eyes || 'wide', lid: 0, noBlink: true, mouth: f.mouth || 'o', fin: f.fin }); ctx.restore(); });
   shape(ctx, [[18, -10], [60, -9], [98, -3], [118, 5], [112, 12], [98, 6], [20, 5]], K19G.beak, { lw: 4.5, seed: 41 });
+  if (P.smirk) { ctx.save(); ctx.globalAlpha *= K.clamp(P.smirk); ctx.lineCap = 'round'; ctx.strokeStyle = C.black; ctx.lineWidth = 4.5; ctx.beginPath(); ctx.moveTo(8, 2); ctx.quadraticCurveTo(16, 16, 32, 8); ctx.stroke(); ctx.restore(); }
   if (P.drool) { ctx.save(); ctx.globalAlpha *= K.clamp(P.drool); ctx.fillStyle = '#cfe4ff'; ctx.strokeStyle = C.black; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.ellipse(108, 18 + P.drool * 18, 4, 7 + P.drool * 5, 0, 0, 7); ctx.fill(); ctx.stroke(); ctx.restore(); }
   // eye + brow
   const ex = 6, ey = -8, eyes = P.eyes || 'open', lid = K.clamp(P.lid || 0);
   if (eyes === 'x') { seg(ctx, ex - 8, ey - 8, ex + 8, ey + 8, 3, C.black, 1.5); seg(ctx, ex - 8, ey + 8, ex + 8, ey - 8, 3, C.black, 1.5); }
   else if (eyes === 'shut' || lid > 0.95) { ctx.save(); ctx.lineWidth = 4.5; ctx.strokeStyle = C.black; ctx.lineCap = 'round'; ctx.beginPath(); ctx.arc(ex, ey - 2, 8, 0.15 * Math.PI, 0.85 * Math.PI); ctx.stroke(); ctx.restore(); }
   else { const big = eyes === 'wide', rx = big ? 11 : 8.5, ry = big ? 12 : 9.5; shape(ctx, ell(ex, ey, rx, ry, 18), C.white, { lw: 3.5, seed: 42 });
-    const gz = P.gaze || [1, 0.2], gl = Math.max(1, Math.hypot(gz[0], gz[1])), gx0 = gz[0] * dir / gl, gy0 = gz[1] / gl, gv = k19rot([gx0, gy0], -g.hr - (P.rot || 0) * Math.sign(dir || 1)), pr = big ? 2.8 : (P.pin ? 2.6 : 4.2);
+    const gz = P.gaze || [1, 0.2], gl = Math.max(1, Math.hypot(gz[0], gz[1])), gx0 = gz[0] * dir / gl, gy0 = gz[1] / gl, gv = k19rot([gx0, gy0], -g.hr - (P.rot || 0) * Math.sign(dir || 1)), pr = P.pupil ?? (big ? 2.8 : (P.pin ? 2.6 : 4.2));
     ctx.fillStyle = C.black; ctx.beginPath(); ctx.arc(ex + gv[0] * (rx - pr - 1.5), ey + gv[1] * (ry - pr - 1.5), pr, 0, 7); ctx.fill();
     if (P.glint) { ctx.save(); ctx.globalAlpha *= P.glint; star(ctx, ex + 4, ey - 6, 9 + 5 * P.glint, C.white, 0.3); ctx.restore(); }
     if (lid > 0.02) { ctx.save(); K.poly(ctx, ell(ex, ey, rx, ry, 18), true); ctx.clip(); const ly = ey - ry + 2 * ry * lid; ctx.fillStyle = K19G.body; ctx.fillRect(ex - rx - 2, ey - ry - 2, 2 * rx + 4, ly - ey + ry + 2); ctx.strokeStyle = C.black; ctx.lineWidth = 3.5; ctx.beginPath(); ctx.moveTo(ex - rx, ly); ctx.lineTo(ex + rx, ly); ctx.stroke(); ctx.restore(); }
