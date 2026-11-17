@@ -20,6 +20,8 @@ function kdL2W(P, lx, ly, upper = true) {
 // head centre (eyes are 4 above it, 13 to each side)
 const kdHead = (P) => kdL2W(P, (P.look || 0) * 4, -195 + (P.drop || 0) + PEOPLE.dress(P).age * 6);
 const kdHand = (P, i) => (P.hands ? kdL2W(P, P.hands[i][0], P.hands[i][1]) : kdHead(P));
+// redraw a person's hands on top (after an animal drawn in front of the body), so a touch stays readable; which = [0 (L), 1 (R)]
+function kdHandsOver(ctx, P, which = [0, 1]) { for (const i of which) { const h = kdHand(P, i); shape(ctx, ell(h[0], h[1], 12 * (P.s || 1), 12 * (P.s || 1), 12), C.white, { lw: 3.5, seed: 5, dot: C.skin, pitch: 5, rad: 0.3 }); } }
 // shared acting for people: explicit blink (keeps P.hands on the same object), gaze at a world point
 function kdLife(P, t, seed, target) { P.lid = Math.max(P.lid || 0, P.eyes === 'wide' ? 0 : blink(t, seed)); if (target) P.gaze = lookAt(kdHead(P), target); return P; }
 

@@ -65,6 +65,7 @@ function kd10Insect(ctx, P) {
     if (P.arm2) kd10Limb(ctx, [[18, -70 + dy], kd10Knee([18, -70 + dy], P.arm2, -12), P.arm2], 6, dark, 3.5);
     const armT = P.arm || (air > 0 ? [40, -40] : gait(2, 36));
     kd10Limb(ctx, [[22, -66 + dy], kd10Knee([22, -66 + dy], armT, P.arm ? -14 : -10), armT], 6.5, body, 3.5);
+    if (P.digit) kd10Limb(ctx, [armT, [armT[0] + 2, armT[1] - 22 * P.digit]], 4.5, body, 3);
     if (P.bundle && P.bundleFront) kd10FleaBundle(ctx, P, dy);
     // head
     const hx = 26, hy = -126 + dy;
@@ -232,7 +233,7 @@ function kd10GiantArm(ctx, o = {}) {
   shape(ctx, [[680, 900], ...fa, [1010, 900], [680, 900]], skin, { ...sk, seed: 111 });
   shape(ctx, [[860, 900], [856, 712], [880, 698], [1010, 690], [1010, 900], [860, 900]], C.white, { lw: 6, seed: 112, dot: C.blue, pitch: 9, rad: 0.3, da: 0.6 });
   ctx.save(); ctx.strokeStyle = C.yellow; ctx.lineWidth = 9; ctx.beginPath(); ctx.moveTo(860, 900); ctx.lineTo(857, 714); ctx.stroke(); ctx.restore();
-  if (o.bump) { const r = 18 + 6 * o.bump; shape(ctx, ell(780, topY(780) + 4, r * 1.3, r * 0.7, 18), C.red, { lw: 4, seed: 113 }); }
+  if (o.bump) { const r = 9 + 3 * o.bump; shape(ctx, ell(780, topY(780) + 6, r * 1.2, r * 0.7, 16), '#f58f8f', { lw: 3, seed: 113 }); }
   // hand (back of the hand, fingers pointing left, fingertips at x 520)
   shape(ctx, [[700, 900], [690, 800], [640, 792], [600, 800], [600, 900], [700, 900]], skin, { ...sk, seed: 114 });
   const fingers = [[0, 806, 0], [1, 830, 0.6], [2, 854, 0.3], [3, 876, 0.1]];
@@ -260,12 +261,20 @@ function kd10FloorBake() {
     shape(c, [[10, 232], [140, 232], [128, 360], [146, 420], [116, 520], [124, 900], [26, 900], [34, 520], [4, 420], [22, 360], [10, 232]], KD10_COL.wood, { lw: 6, seed: 123, dot: KD10_COL.woodD, pitch: 9, rad: 0.3, da: 0.6 });
     // tiles
     c.fillStyle = KD10_COL.tile; c.fillRect(0, 900, 1000, 330); c.fillStyle = dotPat(c, C.red, 10, 0.24); c.globalAlpha = 0.35; c.fillRect(0, 900, 1000, 330); c.globalAlpha = 1;
-    c.strokeStyle = C.black; c.lineWidth = 6; c.beginPath(); c.moveTo(0, 900); c.lineTo(620, 900); c.moveTo(700, 900); c.lineTo(1000, 900); c.stroke();
-    c.lineWidth = 5; for (const x of [200, 420]) { c.beginPath(); c.moveTo(x, 900); c.lineTo(x - 30, 1230); c.stroke(); } c.beginPath(); c.moveTo(0, 1080); c.lineTo(1000, 1080); c.stroke();
-    // the crack (grout gap) 60 deep, navy
-    shape(c, [[620, 900], [700, 900], [694, 960], [628, 962], [620, 900]], KD10_COL.night, { lw: 5, seed: 124 });
-    c.beginPath(); c.moveTo(660, 962); c.lineTo(650, 1080); c.stroke();
+    c.strokeStyle = C.black; c.lineWidth = 6; c.beginPath(); c.moveTo(0, 900); c.lineTo(1000, 900); c.stroke();
+    c.lineWidth = 5; for (const x of [200, 420, 880]) { c.beginPath(); c.moveTo(x, 900); c.lineTo(x - 30, 1230); c.stroke(); } c.beginPath(); c.moveTo(0, 1080); c.lineTo(1000, 1080); c.stroke();
+    // the crack: a jagged fissure lying in the floor plane (v2), paper-chipped rim, hairline branches
+    kd10CrackDraw(c);
   });
+}
+const KD10_CRACK = [[572, 948], [600, 940], [622, 944], [640, 930], [662, 936], [684, 928], [706, 940], [728, 938], [752, 950], [728, 958], [704, 966], [684, 977], [660, 970], [638, 979], [618, 965], [598, 962], [572, 948]];
+function kd10CrackDraw(c) {
+  c.save(); c.lineCap = 'round'; c.lineJoin = 'round'; c.strokeStyle = C.black;
+  c.lineWidth = 3; for (const pts of [[[572, 948], [548, 943], [528, 953], [510, 950]], [[752, 950], [776, 945], [794, 957]], [[662, 974], [656, 994], [664, 1010]], [[600, 941], [592, 928]]]) { c.beginPath(); pts.forEach((p, i) => (i ? c.lineTo(p[0], p[1]) : c.moveTo(p[0], p[1]))); c.stroke(); }
+  c.restore();
+  shape(c, KD10_CRACK, '#0a1640', { lw: 6, seed: 124 });
+  // chipped paper-coloured edge along the far rim
+  for (const [x, y, w] of [[600, 940, 12], [640, 930, 10], [684, 928, 12], [728, 938, 9]]) shape(c, [[x - w, y - 2], [x, y - 9], [x + w, y - 1], [x - w, y - 2]], '#fbf2da', { lw: 2.5, seed: x });
 }
 function kd10FloorView(ctx, t, o = {}) {
   ctx.drawImage(kd10FloorBake(), 0, 0, 1000, 1230);
@@ -312,6 +321,15 @@ function kd10Pinch(ctx, x, y, p, o = {}) {
   ctx.restore();
 }
 
+// giant fingertip (left) and thumb tip (right) descending from the top onto a point (x, yb = bottom of the tips); gap between them
+function kd10Tips(ctx, x, yb, gap = 70, o = {}) {
+  const sk = { dot: C.skin, pitch: 9, rad: 0.28, da: 0.7 };
+  const tip = (cx, w, sd, seed) => { const pts = [[cx - w / 2, yb - 900]]; for (let i = 0; i <= 12; i++) { const a = Math.PI - i * Math.PI / 12; pts.push([cx + Math.cos(a) * w / 2, yb - w * 0.55 + Math.sin(a) * w * 0.55 - (i === 0 || i === 12 ? 0 : 0)]); } pts.push([cx + w / 2, yb - 900], [cx - w / 2, yb - 900]);
+    shape(ctx, pts, C.white, { lw: 7, seed, ...sk });
+    shape(ctx, ell(cx + sd * w * 0.12, yb - w * 0.42, w * 0.26, w * 0.34, 16), '#fde3dc', { lw: 4, seed: seed + 1 });
+    ctx.save(); ctx.strokeStyle = C.black; ctx.lineWidth = 5; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(cx - w * 0.32, yb - w * 1.25); ctx.quadraticCurveTo(cx, yb - w * 1.32, cx + w * 0.32, yb - w * 1.25); ctx.stroke(); ctx.restore(); };
+  tip(x - gap / 2 - 80, 160, 1, 171); tip(x + gap / 2 + 90, 180, -1, 173);
+}
 // ===== macro lens: circular inset with a fat ring and a tapering pointer to a panel point. inside(ctx) draws in lens-local coords
 // (0,0 = lens centre). p = pop (0..1+)
 function kd10Lens(ctx, cx, cy, r, p, to, inside) {
@@ -322,7 +340,7 @@ function kd10Lens(ctx, cx, cy, r, p, to, inside) {
   ctx.save(); ctx.beginPath(); ctx.arc(cx, cy, rr, 0, 7); ctx.clip(); ctx.fillStyle = KD10_COL.night; ctx.fillRect(cx - rr, cy - rr, rr * 2, rr * 2);
   ctx.translate(cx, cy); ctx.scale(k, k); inside(ctx); ctx.restore();
   ctx.save(); ctx.lineWidth = 16; ctx.strokeStyle = C.yellow; ctx.beginPath(); ctx.arc(cx, cy, rr + 6, 0, 7); ctx.stroke(); ctx.restore();
-  ink(ctx, [...ell(cx, cy, rr + 14, rr + 14, 48), [cx + rr + 14, cy]], 8, 162); ink(ctx, [...ell(cx, cy, rr - 1, rr - 1, 48), [cx + rr - 1, cy]], 5, 163);
+  { const o = ell(cx, cy, rr + 14, rr + 14, 48), i = ell(cx, cy, rr - 1, rr - 1, 48); ink(ctx, [...o, o[0]], 8, 162); ink(ctx, [...i, i[0]], 5, 163); }   // v2: closed on the first point (no stray chord)
   // glint
   ctx.save(); ctx.globalAlpha *= 0.5; ctx.strokeStyle = C.white; ctx.lineWidth = 8; ctx.lineCap = 'round'; ctx.beginPath(); ctx.arc(cx, cy, rr * 0.82, -2.6, -2.0); ctx.stroke(); ctx.restore();
 }
@@ -341,7 +359,7 @@ function kd10Meter(ctx, x, y, v, p, o = {}) {
     ctx.strokeStyle = C.black; ctx.lineWidth = 3; ctx.strokeRect(sx, 14, 18, 36); }
   // DEEP mark at segment 9
   ctx.fillStyle = C.red; ctx.fillRect(130 + 9 * 24 - 4, 6, 4, 52);
-  if (o.deep !== false) { ctx.font = K.font(30, BF, 400); ctx.textAlign = 'center'; ctx.lineWidth = 6; ctx.strokeStyle = C.black; ctx.strokeText('DEEP', 130 + 9 * 24 - 2, 92); ctx.fillStyle = C.yellow; ctx.fillText('DEEP', 130 + 9 * 24 - 2, 92); }
+  if (o.deep !== false) { ctx.font = K.font(34, BF, 400); ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.lineWidth = 7; ctx.strokeStyle = C.black; ctx.strokeText('DEEP', 392, 33); ctx.fillStyle = C.yellow; ctx.fillText('DEEP', 392, 33); }
   ctx.restore();
 }
 // a 4-point twinkle star

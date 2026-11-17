@@ -14,3 +14,9 @@
 
 ## Pipeline friction
 - `stills/` written inside the story folder by sh.sh (git-ignored).
+
+## v2 revision (Fable review 1), decisions
+- Subtitles now come from the scene (`story.json` subtitle: 'scene', `subtitle()` at the end of src/main.js): the same layout as Library/core/subtitle.js, plus balanced wrapping (`k7wrapBal`). The text is unchanged.
+- Peeks: no inset close-up. The eye is about 45-50 px wide at 1080 once the float is lowered to y 516.
+- Fish 3 close-up at 153.3-154.84 is set above the weeds (560, 735) so the weeds do not cover her face. The bag lifts from there.
+- S8 bolts: one arrow drawn beside her path (offset) plus one X per impact (`K7BOLTS` in main.js).

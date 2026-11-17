@@ -21,3 +21,9 @@ Film length 166.0 s (narration 162.544 + 3.5 s hold).
 - The basket lid lift in S19 (155.94) is a reach and a look into the basket; the lid is not animated.
 - Pupils "small" (100.18) has no field on the person eye; brows, sweat and tremble carry it.
 - Full render, qc.py: not run (campaign rule); checked with stills and contact sheets in stills/.
+
+## v2 (Fable review 1) decisions
+- Note 3: took the "goat ahead, no bump" option; S9 now starts on the S8 camera so 77.0 is no longer a visible cut; thief 2 leaves right and peeks back from the frame edge (77.3-77.8). The stop uses the measured onset of the word (78.04 s, silencedetect), the climax uses 128.78 for فك and the ambush 141.77 for خرج.
+- The goat's standing place right of the wall is now KD_GOAT15 = 2360 (S12-S17); the dropped rope lies at KD_ROPEG 2200..2320. S17 hiding places: wall 2150 (thief 3), bush 2440 (thief 2, rises above the bush top), right side of the tree trunk 2625 (leader).
+- S15: the arm reach (74 px) cannot touch a neck 150 px away, so the knot is worked under the goat's chin at close range and then he steps back half a pace (130.0-130.55) holding the loop up; that step gives the clear air for the goat's look up.
+- Subtitles: story.json "subtitle": "scene" with a copy of the library caption plus balanced line breaks (layout only; text and timing unchanged).

@@ -19,3 +19,10 @@ Film 169.84 s (narration 166.84 + 3.0 THE END hold). Subtitles: plan chunks (4 p
 - Master, servant A and B crowd the middle of the room at 107.
 - Insect turn-arounds are simple flips with a squash (no head tuck).
 - Mattress lift and blanket shake are simple.
+
+## v2 (revise stage, Fable review 1) decisions
+- Room lamp light: actors are drawn into an offscreen layer (kd10ActorLayer) with their own night tint, so the lamp discs light the set under them.
+- The macro-lens device is reused for HER HOME (115.36), the pinched hand (138.2) and the ending sill (161.76).
+- The servant cannot reach the window sill (arm solver reach ~74 px at s 1.42), so the flick is staged under the window with the dot arcing up and out through it.
+- Floor macro: ground line moved to y 945 (tile plane); crack is a fissure at y 928..979 (KD10_CRACK).
+- Bed shot of the capture now ends at 138.14 (was 137.9).

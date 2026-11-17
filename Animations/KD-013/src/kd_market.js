@@ -57,7 +57,7 @@ const KS1 = {
     kdMarketBack(ctx, t);
     if (t < 1.9) for (const [i, y0] of [[0, 230], [1, 290]]) songbird(ctx, { x: -60 + 640 * t + i * 90, y: y0 + 8 * Math.sin(t * 9 + i), s: 0.55, fly: true, flap: t * 22 + i, dir: 1, col: i ? C.yellow : C.red });
     const A = kdAsc1(t); const ah = kdHead(A);
-    const Sp = kdSeller1(t, ah); person(ctx, Sp); kdStallDraw(ctx, t); kdHay(ctx, 540, KD_GR);
+    const Sp = kdSeller1(t, ah); person(ctx, Sp); kdStallDraw(ctx, t); kdHay(ctx, 490, KD_GR);
     const G = kdGoat1(t); kdGoatShadow(ctx, G); kdGoat(ctx, G); const nk = kdGoatNeck(G);
     halftoneShadow(ctx, A.x, KD_GR + 4, 60, 0.3); person(ctx, A);
     for (const f of KD_FALLS1) dustBurst(ctx, f.x + (f.odd ? 14 : -14), KD_GR - 2, t - f.t, 3, 5, 10, 20, 0.45, Math.round(f.t * 10));
@@ -77,53 +77,69 @@ const KS1 = {
     if (t >= 7.3 && t < 8.5) { const [cx, cy] = kdP(640, 700, cam); ctx.save(); ctx.globalAlpha = kdFade(t, 7.3, 8.5, 0.2); sfx(ctx, 'CLINK!', cx, cy, 52, KB(t, 7.3, 0.25), { rot: -0.1 }); ctx.restore(); }
   },
 };
-// ---------------- S19: back at the market ----------------
-const KD_AX19 = (t) => kfn(t, [[154.5, 1080], [155.28, 880]], 'out');
-const KD_FALLS19 = footfalls(KD_AX19, 154.5, 155.4, 26);
+// ---------------- S19: back at the market (v2: the search is acted on the words; inset top-right, clear of him) ----------------
+// 154.5 strides in (brows up, flush); 155.94 leans over the counter and looks behind it; 156.3 bends and looks under;
+// 156.8 turns to the basket, lifts its lid and looks inside; 157.3 straightens, looks left and right (?); 157.58 hands on hips, foot tapping;
+// 158.1 looks LEFT, away from the inset; 161.02 scratches his head.
+const KD_AX19 = (t) => kfn(t, [[154.5, 1080], [155.4, 800]], 'out');
+const KD_FALLS19 = footfalls(KD_AX19, 154.5, 155.5, 26);
+const KD_LID19 = [870, 848];
+function kdLid19(t) { if (t < 156.95) return KD_LID19; const u = KB(t, 156.95, 0.2), d = t < 157.4 ? 0 : KB(t, 157.4, 0.2); return [KD_LID19[0] - 6 * (u - d), KD_LID19[1] - 46 * (u - d)]; }
 function kdAsc19(t) {
   const P = { costume: 'ascetic', s: 1, dir: -1, y: KD_GR, ...walk(KD_AX19, t), brow: 1, mouth: 'frown', aL: [0.25, -0.5], aR: [0.25, -0.5] };
   let tg = [600, 760];
-  if (t >= 155.28) { P.aL = P.aR = null; P.tip = settleTo(t, 155.28, 0, 0.2); tg = [700, 850]; }
-  if (t >= 155.94) { P.tip = 0.08; const k = Math.floor((t - 155.94) / 0.2) % 3; tg = [[680, 560], [740, 600], [860, 860]][k]; if (t > 156.25) P.handRW = [870, 850]; }
-  if (t >= 156.54) { P.tip = 0; P.handRW = null; P.handR = [36, -200]; P.brow = blend(t, 156.54, 157.5, 1, -0.5); P.mouth = 'o'; const k = Math.floor((t - 156.54) / 0.32); P.look = [-1, 1, -1][Math.min(2, k)]; tg = [[200, 700], [1000, 700], [200, 700]][Math.min(2, k)]; P.tilt = -0.06 * P.look; }
-  if (t >= 157.5) { P.handR = null; P.look = 0; P.tilt = 0; P.brow = -0.5; P.mouth = 'closed'; tg = [500, 900]; }
-  if (t >= 161.02) { P.handR = [26 + 4 * Math.sin(t * 20), -228]; P.tilt = 0.08; tg = [620, 820]; P.brow = -0.6; }
-  if (t >= 162.6) { P.handR = t < 163.4 ? P.handR : null; P.tilt = 0.08; }
+  if (t < 155.4) { P.tip = 0.12; const sw = Math.sin(P.ph); P.aL = [0.6 * sw, 0.9 * sw + 0.3]; P.aR = [-0.6 * sw, -0.9 * sw + 0.3]; }
+  if (t >= 155.4) { P.aL = P.aR = null; P.tip = settleTo(t, 155.4, 0.12, 0, 0.3); tg = [650, 760]; P.handL = [-40, -112]; P.handR = [36, -110]; }
+  if (t >= 155.94 && t < 156.3) { P.tip = 0.38 * KB(t, 155.94, 0.2); P.drop = 10; tg = [640, 830]; P.handL = [-70, -150]; P.handR = [-20, -150]; P.look = -0.6; }
+  if (t >= 156.3 && t < 156.8) { P.kneel = KB(t, 156.3, 0.2); P.tip = 0.3; P.drop = 8; tg = [700, 900]; P.handL = [-50, -60]; P.handR = [10, -70]; P.look = -0.4; }
+  if (t >= 156.8 && t < 157.3) { P.dir = 1; P.kneel = 1 - KB(t, 156.8, 0.2); P.tip = 0.22; P.handRW = kdLid19(t); P.handL = [-30, -110]; tg = [880, 880]; P.eyes = 'wide'; }
+  if (t >= 157.3 && t < 157.58) { P.dir = 1; P.tip = 0.1; P.handRW = kdLid19(t); tg = [880, 880]; }
+  if (t >= 157.3 && t < 158.1) { const k = Math.floor((t - 157.3) / 0.27); P.look = [-1, 1, -1][Math.min(2, k)]; P.tilt = -0.06 * P.look; P.mouth = 'o'; P.brow = 0.6; if (t >= 157.58) { P.dir = -1; P.tip = 0; P.handRW = null; P.handL = PERSON_HANDS.hipsHands.L; P.handR = PERSON_HANDS.hipsHands.R; } tg = [P.x + P.look * 400 * (P.dir || 1), 700]; }
+  if (t >= 158.1) { P.dir = -1; P.look = -0.6; P.tilt = 0.04; P.brow = 0.8; P.mouth = 'frown'; tg = [300, 720]; P.handL = PERSON_HANDS.hipsHands.L; P.handR = PERSON_HANDS.hipsHands.R; P.y = KD_GR - 3 * Math.abs(Math.sin(t * 9)); }
+  if (t >= 161.02) { P.handR = [26 + 4 * Math.sin(t * 20), -228]; P.tilt = 0.08; tg = [400, 820]; P.brow = -0.6; P.mouth = 'closed'; P.look = -0.3; }
+  if (t >= 163.4) P.handR = PERSON_HANDS.hipsHands.R;
   kdLife(P, t, 3, tg); P.sq = breathe(t, 3, 0.012);
   return P;
 }
+function kdBasketLid(ctx, t) { const [x, y] = kdLid19(t); shape(ctx, ell(x, y, 44, 9, 16), '#d9a441', { lw: 4, seed: 171 }); shape(ctx, ell(x, y - 9, 8, 6, 10), '#b07a3a', { lw: 3, seed: 172 }); }
 const KS19 = {
   a: 153.8, ww: 1000,
-  cam: [[153.8, { x: 700, y: 720, zoom: 1.5 }], [162.5, { x: 700, y: 720, zoom: 1.5 }], [163.6, { x: 560, y: 720, zoom: 1.1 }], [170, { x: 560, y: 720, zoom: 1.1 }]],
+  cam: [[153.8, { x: 760, y: 730, zoom: 1.4 }], [162.5, { x: 760, y: 730, zoom: 1.4 }], [163.6, { x: 600, y: 720, zoom: 1.1 }], [170, { x: 600, y: 720, zoom: 1.1 }]],
   draw(ctx, t) {
-    kdMarketBack(ctx, t); kdStallDraw(ctx, t); kdHay(ctx, 540, KD_GR);
-    const A = kdAsc19(t); halftoneShadow(ctx, A.x, KD_GR + 4, 60, 0.3); person(ctx, A); kdFlush(ctx, A, t < 157 ? 0.6 : blend(t, 157, 158, 0.6, 0));
+    kdMarketBack(ctx, t); kdStallDraw(ctx, t); kdHay(ctx, 490, KD_GR);
+    const A = kdAsc19(t); halftoneShadow(ctx, A.x, KD_GR + 4, 60, 0.3); person(ctx, A); kdBasketLid(ctx, t); if (A.handRW) kdHandsOver(ctx, A, [1]);
+    kdFlush(ctx, A, t < 157 ? 0.6 : blend(t, 157, 158, 0.6, 0.3));
     for (const f of KD_FALLS19) dustBurst(ctx, f.x, KD_GR - 2, t - f.t, 3, 5, 11, 22, 0.45, Math.round(f.t * 10));
+    if (t >= 157.6 && t < 161.0) { const ft = Math.abs(Math.sin(t * 9)); if (ft > 0.9) dustBurst(ctx, A.x - 20, KD_GR - 2, 0.1, 2, 3, 6, 10, 0.3, 3); }
   },
   over(ctx, t, cam, S) {
-    if (t >= 156.7 && t < 158.0) { const [qx, qy] = kdP(690, 470, cam); ctx.save(); ctx.globalAlpha = kdFade(t, 156.7, 158.0, 0.2); kdQ(ctx, qx, qy, KB(t, 156.7, 0.3), 90); ctx.restore(); }
+    if (t >= 157.3 && t < 158.3) { const [qx, qy] = kdP(...kdHead(kdAsc19(t)), cam); ctx.save(); ctx.globalAlpha = kdFade(t, 157.3, 158.3, 0.2); kdQ(ctx, qx - 20, qy - 130, KB(t, 157.3, 0.3), 80); ctx.restore(); }
     if (t >= 157.58) kdInset(ctx, t, S);
     if (t >= 162.6) { S.title(ctx, 'THE END', 300, 300, KB(t, 162.6, 0.8), { size: 84, align: 'center' }); }
   },
 };
-// ---------- the round inset (top-right of the picture): the goat on the road with the leader, far away ----------
-const KD_LX19 = (t) => kfn(t, [[155, 2740], [158.7, 2880], [159.0, 2870]], 'lin');
+// ---------- the round inset (top-right, in clear sky): the goat being led away, large; only the thief's rope hand at the rim ----------
+const KD_IN = { cx: 745, cy: 240, r: 195 };
+function kdInsetGoat(t) {
+  const plant = 159.06, xw = (u) => kfn(u, [[155, 2600], [plant, 2740]], 'lin'), G = { s: 0.85, dir: 1, y: KD_GR, ...walk(xw, t, { stride: 20 }), chew: t, t, fat: 1, gaze: [1, -0.1] };
+  if (t >= plant) { G.amp = 0; G.x = 2740; G.tip = -0.1 * K.clamp((t - plant) / 0.2); G.earLift = 0.6; G.gaze = [1, -0.2]; G.sq = settleTo(t, plant, 0.94, 1, 0.3); }
+  if (t >= 160.22 && t < 161.0) { G.talk = 1; G.chew = null; G.sq = 1.05; G.tailUp = 1; G.headTilt = -0.25; G.lid = 0.6; }
+  if (t >= 161.02) { G.gaze = [-0.2, 0.15]; G.tip = -0.05; G.headTilt = 0; G.lid = Math.max(kdSlowBlink(t, [161.5, 163.2]), 0.15); }
+  return G;
+}
 function kdInset(ctx, t, S) {
-  const cx = 760, cy = 330, r0 = 190, r = r0 * K.ease.back(K.clamp((t - 157.58) / 0.45)); if (r <= 1) return;
-  const cam = { x: 2790, y: 790, zoom: 1.25 };
-  ctx.save(); ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7); ctx.clip(); ctx.translate(cx, cy); ctx.scale(cam.zoom * r / r0, cam.zoom * r / r0); ctx.translate(-cam.x, -cam.y);
+  const { cx, cy, r: r0 } = KD_IN, r = r0 * K.ease.back(K.clamp((t - 157.58) / 0.45)); if (r <= 1) return;
+  const G = kdInsetGoat(t), cam = { x: G.x + 22, y: 812, zoom: 1.3 }, k = cam.zoom * r / r0, toP = (w) => [cx + (w[0] - cam.x) * k, cy + (w[1] - cam.y) * k];
+  const hand = [cam.x + (r0 * 0.9 * Math.cos(-0.75)) / cam.zoom, cam.y + (r0 * 0.9 * Math.sin(-0.75)) / cam.zoom + 6 * Math.sin(t * 6) * (t < 159.06 ? 1 : 0)];
+  ctx.save(); ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7); ctx.clip(); ctx.translate(cx, cy); ctx.scale(k, k); ctx.translate(-cam.x, -cam.y);
   countryRoad(ctx, { w: KD_RW, places: KD_PLACES, camX: cam.x - 300, house: { x: 2950 } });
-  const gx = kfn(t, [[155, 2600], [158.7, 2740]], 'lin'), plant = t >= 158.7;
-  const L = { costume: 'thief', s: 1, dir: plant ? -1 : 1, y: KD_GR, ...walk(KD_LX19, t), mouth: 'smile' }; if (plant) { L.amp = 0; L.x = 2875; L.eyes = t < 159.4 ? 'wide' : 'open'; L.mouth = 'o'; L.tip = 0.1 * lurch(t, 158.75, 1); }
-  const G = { s: 0.85, dir: 1, y: KD_GR, ...walk((u) => kfn(u, [[155, 2600], [158.7, 2740]], 'lin'), t, { stride: 20 }), chew: plant ? t : null, t, fat: 1, gaze: [1, 0] };
-  if (plant) { G.amp = 0; G.x = 2740; G.tip = -0.12 * K.clamp((t - 158.7) / 0.2); G.earLift = 0.8; G.gaze = [1, -0.2]; }
-  if (t >= 159.8 && t < 160.9) { G.talk = 1; G.sq = 1.06; G.tailUp = 1; G.headTilt = -0.25; G.lid = 0.6; }
-  if (t >= 161.02) { G.gaze = [-0.75, 0.12]; G.tip = 0; G.headTilt = 0; G.lid = Math.max(t > 162.9 && t < 163.2 ? 1 : 0, (t > 161.6 && t < 161.9) ? 0.85 : 0.2); }
-  kdLife(L, t, 11, [G.x, 760]);
-  kdGoatShadow(ctx, G); kdGoat(ctx, G); person(ctx, L); kdTurban(ctx, L, 0.3); const nk = kdGoatNeck(G); kdLoop(ctx, nk, 0.85); kdRope(ctx, nk, kdHand(L, 0), plant ? 30 : 110);
-  if (t >= 159.8 && t < 160.9) soundArcs(ctx, nk[0] + 70, nk[1] - 40, 1, t, C.black);
+  kdGoatShadow(ctx, G); kdGoat(ctx, G); const nk = kdGoatNeck(G); kdLoop(ctx, nk, 0.85); kdRope(ctx, nk, hand, t < 159.06 ? 90 : 60);
+  // the thief's arm reaching in from the right rim
+  seg(ctx, hand[0] + 80, hand[1] - 70, hand[0] + 6, hand[1] - 4, 20, C.white, 4.5); shape(ctx, ell(hand[0], hand[1], 13, 13, 12), C.white, { lw: 3.5, seed: 5, dot: C.skin, pitch: 5, rad: 0.3 });
+  if (t >= 160.22 && t < 161.0) soundArcs(ctx, nk[0] + 70, nk[1] - 40, 1, t, C.black);
   ctx.restore();
   ctx.save(); ctx.lineWidth = 14; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7); ctx.stroke(); ctx.restore();
-  if (t >= 159.8 && t < 162.4) { ctx.save(); ctx.globalAlpha = kdFade(t, 159.8, 162.4, 0.2); sfx(ctx, 'MAAA!', cx - 10, cy - 120, 62, KB(t, 159.8, 0.3), { rot: -0.08 }); ctx.restore(); }
-  if (t >= 160.22 && t < 162.6) { ctx.save(); ctx.globalAlpha = kdFade(t, 160.22, 162.6, 0.2); S.label(ctx, 'STILL A GOAT', cx - 330, cy + 60, KB(t, 160.3, 0.3), { align: 'center', size: 46, fill: C.yellow }); S.arrow(ctx, [cx - 250, cy + 70], [cx - 90, cy + 70], KB(t, 160.4, 0.3, 'out'), { width: 16 }); ctx.restore(); }
+  const hz = kdGoatHead(G), [mx, my] = toP([hz[0] + 22, hz[1]]);
+  if (t >= 160.22 && t < 162.4) { ctx.save(); ctx.globalAlpha = kdFade(t, 160.22, 162.4, 0.2); sfx(ctx, 'MAAA!', mx - 10, my - 95, 54, KB(t, 160.22, 0.3), { rot: -0.08 }); ctx.restore(); }
+  if (t >= 160.22 && t < 162.6) { ctx.save(); ctx.globalAlpha = kdFade(t, 160.22, 162.6, 0.2); S.label(ctx, 'STILL A GOAT', 300, cy - 40, KB(t, 160.3, 0.3), { align: 'center', size: 46, fill: C.yellow }); S.arrow(ctx, [330, cy + 10], [cx - r0 - 8, cy + 30], KB(t, 160.4, 0.3, 'out'), { width: 16 }); ctx.restore(); }
 }
