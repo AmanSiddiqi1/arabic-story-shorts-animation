@@ -5,10 +5,10 @@ const LIB = findLib(path.dirname(fileURLToPath(import.meta.url))), req = createR
 const { chromium } = req('playwright-core'); const { ARGS, EXE } = await import(pathToFileURL(path.join(LIB, 'core/render/browser.mjs')).href);
 const here = path.dirname(fileURLToPath(import.meta.url)), CFG = JSON.parse(fs.readFileSync(path.join(here, 'story.json'), 'utf8'));
 const file = path.join(here, `${CFG.title} - Halftone Pop 9x16 - ${process.env.TAG || 'Noto Naskh Arabic'}.html`);
-const times = process.argv.slice(2).map(Number); fs.mkdirSync(path.join(here, 'stills'), { recursive: true });
+const times = process.argv.slice(2).map(Number); const OUTD = process.env.OUT || path.join(here, 'stills'); fs.mkdirSync(OUTD, { recursive: true });
 const name = (t) => 't' + t.toFixed(2).replace('.', '_').padStart(8, '0') + '.jpg';
 const b = await chromium.launch({ executablePath: EXE, args: ARGS }); const p = await b.newPage({ viewport: { width: 540, height: 960 } });
 p.on('pageerror', (e) => console.log('PAGEERR', e.message)); p.on('console', (m) => m.type() === 'error' && console.log('CONSOLE', m.text()));
 await p.goto(pathToFileURL(file).href); await p.waitForFunction('window.__ready', null, { timeout: 60000 });
-for (const t of times) { const d = await p.evaluate((t) => { window.seek(t); return document.getElementById('c').toDataURL('image/jpeg', 0.9); }, t); fs.writeFileSync(path.join(here, 'stills', name(t)), Buffer.from(d.split(',')[1], 'base64')); console.log('stills/' + name(t)); }
+for (const t of times) { const d = await p.evaluate((t) => { window.seek(t); return document.getElementById('c').toDataURL('image/jpeg', 0.9); }, t); fs.writeFileSync(path.join(OUTD, name(t)), Buffer.from(d.split(',')[1], 'base64')); console.log(path.join(OUTD, name(t))); }
 await b.close();

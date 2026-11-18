@@ -60,7 +60,8 @@ function hkCal(t) {
     if (t > 59.02) { P.mouth = t < 61.9 ? 'o' : 'closed'; P.brow = t < 63.44 ? -0.7 : -0.4; P.sq *= t < 60.6 ? K.lerp(1, 1.05, hkB(t, 59.02, 0.2)) : 1; }
     if (hkIn(t, 59.0, 60.2)) P.noBlink = true;
     if (hkIn(t, 59.02, 60.0)) P.hat = [0, -6 * hkPulse(t, 59.1, 0.3), 0];
-    L = [[0, [-36, -100]], [58.6, [-20, -150], 0.35]]; if (t > 59.02) L = [[0, [-20, -150]]];
+    L = [[0, [-36, -100]]];   // v2 (review note 4): the cup stays on his knee; it tips forward in his slack hand at 59.0 and he rights it at 60.4
+    if (P.gob && t > 58.95 && t < 60.75) P.gob = { ...P.gob, tilt: -0.75 * hkB(t, 58.95, 0.25) * (1 - hkB(t, 60.4, 0.3)), fill: 0.5 - 0.2 * hkB(t, 59.1, 0.6) };
     R = [[0, [40, -70]], [62.04, [80, -100], 0.2], [62.3, [100, -170], 0.9], [63.44, HKH.chin, 0.3]];
     if (t > 63.44) { P.lid = 0.35; P.mouth = 'smile'; }
   }
@@ -82,7 +83,7 @@ function hkCal(t) {
   if (t >= 108.56 && t < 121.9) {   // S11
     G = [[108.56, [410, 720]], [110.18, [340, 400]], [112.6, [600, 300]], [113.34, [500, 1050]], [115.06, [380, 1060]], [115.5, [560, 1060]], [115.95, [800, 1060]], [116.9, [620, 1060]], [117.74, [830, 520]], [118.6, [410, 720]], [120.34, [500, 300]], [121.0, [410, 720]]];
     if (hkIn(t, 116.3, 116.55)) P.lid = hkPulse(t, 116.3, 0.25);
-    L = [[0, [-20, -150]], [121.3, [-36, -100], 0.5]]; if (t > 121.3) { P.lid = 0.2 + 0.8 * hkPulse(t, 121.4, 0.45); P.mouth = 'closed'; }
+    L = [[0, [-36, -100]]]; if (t > 121.3) { P.lid = 0.2 + 0.8 * hkPulse(t, 121.4, 0.45); P.mouth = 'closed'; }
     if (t > 108.56 && t < 110.18) P.after = (c, Q) => { const h = hkHandW(Q, 'R'); shape(c, ell(h[0], h[1] - 6, 14, 14, 14), '#c21a3a', { lw: 3, seed: 880 }); };
   }
   if (t >= 121.9 && t < 131.18) {   // S12: the wonder, the cloud, the cup set down, he stands
@@ -109,9 +110,9 @@ function hkCal(t) {
     P.talk = hkIn(t, 138.28, 139.0) ? 0.5 + 0.4 * Math.abs(Math.sin(t * 12)) : 0; P.mouth = 'closed';
   }
   if (HK_S16(t)) {   // S16 standing at 370, facing the owner at 250
-    P.sit = 0; P.x = 370;
+    P.sit = 0; P.x = 380;
     G = [[151.5, [700, 880]], [152.9, [680, 820]], [154.12, [860, 800]], [154.5, [260, 720]], [157.78, [260, 760]]];
-    R = [[0, [40, -70]], [154.12, { w: [860, 800] }, 0.15], [154.3, { w: [270, 760] }, 0.7], [155.6, [40, -70], 0.4], [155.96, HKH.up, 0.25], [157.1, [40, -80], 0.3], [159.18, [95, -150], 0.25], [160.88, [30, -120], 0.4]];
+    R = [[0, [40, -70]], [154.12, { w: [860, 800] }, 0.15], [154.3, { w: [300, 770] }, 0.7], [155.6, [40, -70], 0.4], [155.96, HKH.up, 0.25], [157.1, [40, -80], 0.3], [159.18, [95, -150], 0.25], [160.88, [30, -120], 0.4]];
     L = [[0, [-40, -70]], [159.18, [-95, -150], 0.25], [160.88, [-40, -80], 0.4]];
     if (t > 159.18 && t < 160.88) { const g = 0.12 * hkB(t, 159.2, 0.8); P.aR = null; P.aL = null; R = [[0, { a: [1.6 + g, 1.75 + g] }]]; L = [[0, { a: [-1.6 - g, -1.75 - g] }]]; }
     P.talk = hkIn(t, 155.96, 157.1) || hkIn(t, 158.3, 159.9) ? 0.35 + 0.45 * Math.abs(Math.sin(t * 10)) : 0; if (t > 155.96) P.lid = 0.2;
@@ -171,12 +172,15 @@ function hkMer(t) {
     }
   }
   if (HK_S16(t)) {   // S16 standing at 250
-    P.x = 250; P.y = 900; P.sit = 0; P.lean = 0; P.drop = 0; P.mouth = t < 153.62 ? 'smile' : t < 156.4 ? 'o' : 'o';
-    G = [[151.5, [370, 700]], [152.9, [620, 840]], [153.62, [500, 820]], [153.72, [620, 820]], [153.82, [740, 820]], [153.92, [860, 820]], [154.4, [370, 700]], [155.5, [-100, 700]], [155.75, [370, 700]]];
-    P.brow = t > 153.62 ? (t > 155.22 ? -0.8 : -0.7) : 0; if (hkIn(t, 153.6, 154.0)) P.noBlink = true;
-    R = [[0, [-18, -112]], [155.22, HKH.chest, 0.15], [156.4, HKH.cheek, 0.15], [160.88, HKH.heart, 0.3]];
-    L = [[0, [22, -105]], [156.4, [-34, -180], 0.15], [160.88, [-36, -62], 0.3]];
-    P.kneel = hkB(t, 156.9, 0.3) * (1 - hkB(t, 160.88, 0.4)); if (hkIn(t, 156.4, 156.95)) P.x += tremble(t, 2);
+    // v2 (review note 7): a body width from the caliph; "me?" finger to chest, a look over his shoulder, then cheeks, tremble, eyes wide, kneel
+    P.x = 210; P.y = 900; P.sit = 0; P.lean = 0; P.drop = 0; P.mouth = t < 153.62 ? 'smile' : 'o';
+    G = [[151.5, [380, 700]], [152.9, [620, 840]], [153.62, [500, 820]], [153.72, [620, 820]], [153.82, [740, 820]], [153.92, [860, 820]], [154.4, [380, 700]], [155.7, [-100, 690]], [156.15, [380, 700]]];
+    P.brow = t > 153.62 ? (t > 155.22 ? -0.8 : -0.7) : 0; if (hkIn(t, 153.6, 154.0) || hkIn(t, 157.0, 158.6)) P.noBlink = true;
+    if (hkIn(t, 157.0, 160.88)) P.eyes = 'wide';
+    if (hkIn(t, 155.7, 156.15)) P.tilt = -0.08;
+    R = [[0, [-18, -112]], [155.22, HKH.chest, 0.15], [157.0, HKH.cheek, 0.15], [160.88, HKH.heart, 0.3]];
+    L = [[0, [22, -105]], [157.0, [-34, -180], 0.15], [160.88, [-36, -62], 0.3]];
+    P.kneel = hkB(t, 157.35, 0.3) * (1 - hkB(t, 160.88, 0.4)); if (hkIn(t, 157.0, 157.6)) P.x += tremble(t, 2.5);
     if (t > 160.88) { P.wet = true; P.mouth = 'smile'; P.lean = 0.15 * hkPulse(t, 161.1, 0.6); }
   }
   P.gaze = hkGP(t, P, G, t > 153.6 && t < 154.0 ? 0.07 : 0.18); hkArms(t, P, R, L);
@@ -228,7 +232,7 @@ function hkGuard(i, t) {
   if (t < tw) { const xf = (tt) => kfn(tt, [[35.9 + i * 0.3, 120], [tw, sx]], 'inOut'), W = hkWalk(xf, t, 12); Object.assign(P, { x: W.x, y: 885, ph: W.ph, amp: W.amp, dir: 1, gaze: [1, 0] }); P.aR = hkArm(t, P, 1, [[0, [44, -112]]]); return P; }
   const ts = 39.22 + i * 0.3; P.sit = hkB(t, ts, 0.35); P.seat = 'floor';
   if (i === 0) { P.y = 879 + 12 * hkB(t, ts + 0.2, 0.2) - 6 * hkB(t, 40.6, 0.4); P.mouth = t > ts + 0.25 && t < 40.8 ? 'o' : 'closed'; P.eyes = t > ts + 0.25 && t < 40.4 ? 'wide' : undefined; }
-  P.spearRot = i === 1 ? -1.35 * hkB(t, 39.3, 0.4) : 0;
+  P.spearRot = i === 1 ? -1.35 * hkB(t, 39.3, 0.4) * (1 - hkB(t, 40.0, 0.45)) : 0;   // v2: planted upright again (review note 9)
   let G = [[0, [600, 760]], [43.2 + i * 0.1, [140, 720]], [45.2, [520, 1000]], [47.7, [770, 760]], [48.3, [850, 980]], [50.4, [600, 760]]], R = [[0, [44, -112]]], L = [[0, [-36, -62]]];
   if (i === 0 && t >= 49.5 && t < 50.3) { R = [[0, [44, -112]], [49.5, { w: [842, 972] }, 0.15], [49.7, [40, -130], 0.15]]; P.sq = 0.97; P.x += tremble(t, 3, 11) * (t > 49.65 ? 1 : 0); P.mouth = 'o'; }
   if (i === 0 && t >= 106.48 && t < 108.56) { G = [[106.48, [770, 760]], [107.6, [900, 860]]]; L = [[0, [-36, -62]], [106.6, [-90, -140], 0.2], [107.2, [-60, -100], 0.3]]; P.look = hkIn(t, 106.6, 107.1) ? 4 * Math.sin((t - 106.6) * 20) : 0; }
@@ -242,7 +246,7 @@ function hkGuard(i, t) {
 const HK_EMERGE = [[330, -1, 255], [640, 1, 715], [930, -1, 862], [140, 1, 205]];   // trunk (or gate) x, step direction, first stand x
 function hkServ(i, t) {
   const S = HK_SERV[i];
-  if (HK_S16(t)) { if (i > 1) return null; const P = hkP(S, i ? 120 : 180, 880, 0.9, 1, { mouth: 'smile', gaze: [1, 0] }); if (i === 0 && hkIn(t, 155.22, 156.4)) { P.aR = hkArm(t, P, 1, [[155.3, HKH.fwd, 0.15]]); P.gaze = [1, 0.1]; } return P; }
+  if (HK_S16(t)) { if (i > 1) return null; const P = hkP(S, i ? 55 : 110, 880, 0.9, 1, { mouth: 'smile', gaze: [1, 0] }); if (i === 0 && hkIn(t, 155.22, 156.4)) { P.aR = hkArm(t, P, 1, [[155.3, HKH.fwd, 0.15]]); P.gaze = [1, 0.1]; } return P; }
   if (t < 30.62) return null;
   const [tx, sd, x0] = HK_EMERGE[i], t0 = 31.92 + i * 0.15;
   if (t < 42.84) {
@@ -281,17 +285,25 @@ function hkServ(i, t) {
   }
   if (t >= 58.22 && t < 64.18) { if (i !== 3) return null; const xf = (tt) => kfn(tt, [[60.6, -20], [61.0, 210]], 'out'), P = hkP(S, xf(t), 885, 0.95, 1, { mouth: 'o', seed: 32, tip: -0.15 * hkPulse(t, 60.95, 0.5), gaze: [1, 0] });
     P.after = (c) => { if (t > 60.6 && t < 61.2) for (let k = 0; k < 4; k++) seg(c, xf(t) - 60 - k * 18, 720 + k * 40, xf(t) - 140 - k * 18, 720 + k * 40, 5, C.white, 2); }; if (t > 61.0) P.sq = landSquash(t, 61.0, 0.1); return P; }
-  if (t >= 99.1 && t < 108.56) {   // S10: the chain
-    const x = [250, 340, 430, 510][i], P = hkP(S, x, 878, 0.92, 1, { mouth: 'smile' }), ph = (t - 101.44) * 6 - i * 0.9;
+  if (t >= 99.1 && t < 108.56) {   // S10: the chain (v2, review note 12): spaced out to the owner's left, one pomegranate tray travels hand to hand over the heads
+    const x = [95, 200, 305, 505][i], P = hkP(S, x, 878, 0.92, 1, { mouth: 'smile' }), ph = (t - 101.44) * 6 - i * 0.9, tp = hkPassTray(t);
     if (t < 101.44) { P.gaze = hkG(P, [200, 780]); P.aL = hkArm(t, P, -1, [[0, [-36, -62]]]); return P; }
-    P.y += 3 * Math.max(0, Math.sin(ph)); P.gaze = hkG(P, [x + 60 * Math.cos(ph), 780]);
-    const reachL = 0.5 + 0.5 * Math.cos(ph);
+    P.y += 3 * Math.max(0, Math.sin(ph)); P.gaze = tp ? hkG(P, tp) : hkG(P, [x + 60 * Math.cos(ph), 780]);
+    const reachL = 0.5 + 0.5 * Math.cos(ph), near = tp ? K.clamp(1 - (Math.abs(tp[0] - x) - 40) / 50) : 0;
     P.aL = armTo(-1, HK_SH, [K.lerp(-36, -80, reachL), K.lerp(-62, -130, reachL)]); P.aR = armTo(1, HK_SH, [K.lerp(36, 80, 1 - reachL), K.lerp(-62, -130, 1 - reachL)]);
-    if (i === 3 && t > 105.0) { P.kneel = hkB(t, 105.1, 0.35); P.drop = 6 * hkB(t, 105.3, 0.3); P.gaze = [1, 0.4]; P.aR = hkArm(t, P, 1, [[0, { w: [545, 815] }]]); P.aL = hkArm(t, P, -1, [[0, { w: [515, 815] }]]); P.x = 505; P.y = 900;
-      P.after = (c) => hkTray(c, 530, 825, 0.7, 'pomeg', {}); }
+    if (near > 0) { const aR = hkAng(P, 1, { w: [tp[0] + 14, tp[1] + 4] }), aL = hkAng(P, -1, { w: [tp[0] - 14, tp[1] + 4] }); P.aR = P.aR.map((v, j) => K.lerp(v, aR[j], near)); P.aL = P.aL.map((v, j) => K.lerp(v, aL[j], near)); }
+    if (i === 3 && t > 104.9) { const k = hkB(t, 104.9, 0.4); P.x = K.lerp(505, 520, k); P.y = K.lerp(878, 905, k); P.z = 901; P.kneel = hkB(t, 105.1, 0.35); P.drop = 6 * hkB(t, 105.3, 0.3); P.gaze = [1, 0.4];
+      P.aR = hkArm(t, P, 1, [[0, { w: [tp[0] + 14, tp[1] + 4] }]]); P.aL = hkArm(t, P, -1, [[0, { w: [tp[0] - 14, tp[1] + 4] }]]); }
+    if (i === 3) P.after = (c) => { if (tp) hkTray(c, tp[0], tp[1], 0.7, 'pomeg', {}); };
     return P;
   }
   return null;
+}
+// the S10 pomegranate tray: from the heap, hand to hand over the heads, to the kneeling servant in front of the caliph
+function hkPassTray(t) {
+  if (t < 101.44) return null; const K0 = [[101.44, 160, 860, 0], [101.95, 95, 676, 60], [102.6, 200, 676, 60], [103.25, 305, 676, 60], [104.3, 505, 676, 120], [105.45, 545, 815, 0]];
+  for (let k = 1; k < K0.length; k++) { const [t1, x1, y1, h] = K0[k], [t0, x0, y0] = K0[k - 1]; if (t < t1) { const u = K.ease.inOut(K.clamp((t - t0) / (t1 - t0 - 0.12))); return [K.lerp(x0, x1, u), K.lerp(y0, y1, u) - h * Math.sin(Math.PI * u)]; } }
+  return [545, 815];
 }
 // ---------- the boy ----------
 function hkBoy(t) {
@@ -315,18 +327,24 @@ function hkBoy(t) {
 
 // ---------- the garden, drawn ----------
 function hkGarden(ctx, t, cam) {
-  ctx.drawImage(hkGardenBack(), 0, 0, 1000, 1230); hkGardenShade(ctx, t);
+  // v2 (review note 4): in the 115-117.7 close-up the back set slides 80 px so the trunk no longer rises out of the caliph's crown
+  const bx = t < 115.06 || t > 118.3 ? 0 : t < 117.7 ? 80 : 80 * (1 - hkB(t, 117.7, 0.6));
+  ctx.drawImage(hkGardenBack(), bx, 0, 1000, 1230); if (bx) ctx.drawImage(hkGardenBack(), 0, 0, bx + 2, 1230, 0, 0, bx + 2, 1230); hkGardenShade(ctx, t);
   // the vizier's bay horse waits outside the gate (seen through the arch), gallops off (S14)
   if (t > 137.68 && t < 140.4) { ctx.save(); K.poly(ctx, townArchPts(HK_GIN.gate[0], HK_GIN.gate[1], HK_GIN.gateTop, 900, 'pointed'), true); ctx.clip();
     const hx = t < 139.9 ? 170 : K.lerp(170, -150, K.ease.in(K.clamp((t - 139.9) / 0.45))), HP = { x: hx, y: 880, s: 0.42, dir: -1, pal: 1, gallop: t > 139.9 ? 1 : 0, ph: t * 14, amp: t > 139.9 ? 1 : 0, seed: 31 };
     if (t > 139.85) rideOn(ctx, 'horse', HP, { costume: 'vizier', s: 0.4, seed: 61 }); else horse(ctx, HP); ctx.restore(); }
   // rugs
   if (t >= 34.12) { hkRug(ctx, 250, 505, 885, 985, hkB(t, 34.12, 0.6, 'out') * (1 + 0.06 * hkPulse(t, 34.5, 0.3)), 0); hkRug(ctx, 950, 600, 885, 985, hkB(t, 34.6, 0.6, 'out'), 1); hkRug(ctx, 200, 950, 985, 1095, hkB(t, 35.0, 0.7, 'out'), 2, { skew: 20 }); }
+  // S13: the light shaft (v2, review note 8): behind the figures, about 15 % opacity, three narrow beams
+  if (t > 131.18 && t < 137.68) { const k = (0.6 + 0.4 * hkB(t, 132.58, 0.5)) * hkB(t, 131.18, 0.5) * (1 - hkB(t, 136.9, 0.7)); ctx.save(); ctx.fillStyle = '#fff3a8';
+    [[850, 890, 520, 580, 0.16], [905, 935, 600, 650, 0.13], [955, 980, 680, 720, 0.1]].forEach(([a, b, c, d, o]) => { ctx.globalAlpha = o * k; ctx.beginPath(); ctx.moveTo(a, 150); ctx.lineTo(b, 150); ctx.lineTo(d, 905); ctx.lineTo(c, 905); ctx.closePath(); ctx.fill(); }); ctx.restore(); }
   // the heap at the gate (S10)
   if (t > 99.1 && t < 108.56) hkHeap(ctx, t);
+  if (HK_S16(t)) { ctx.save(); ctx.globalAlpha *= 0.5; hkGlow(ctx, 680, 860, 380, t, 0.8 * hkB(t, 152.9, 0.8)); ctx.restore(); }   // v2 (review note 7): the chest rays behind every figure, half opacity
   const C0 = hkCushions(t), people = [];
   const add = (P, z) => { if (P) people.push([z ?? P.y, P]); };
-  for (let i = 0; i < 4; i++) add(hkServ(i, t), 870 + i * 0.1);
+  for (let i = 0; i < 4; i++) { const P = hkServ(i, t); add(P, P && P.z ? P.z : 870 + i * 0.1); }
   add(hkViz(t), t > 138.66 && t < 140.4 ? 860 : undefined); add(hkGuard(0, t)); add(hkGuard(1, t)); add(hkMer(t), 899); add(hkCal(t), 900); add(hkBoy(t), t < 36.08 ? 901 : 899.5);
   // cushions under the seated (draw first), the tower over the boy (after)
   C0.filter((c) => t >= 36.08 + c.i * 0.12).forEach((c) => hkDrawCushion(ctx, c));
@@ -353,9 +371,6 @@ function hkGarden(ctx, t, cam) {
   if (t > 42.3 && t < 42.84) hkLeaf(ctx, t, 42.3, [775, 690], [900, 560], 0.5);
   // fruit glints
   for (const [x, y, a] of [[520, 958, 113.95], [850, 975, 114.3], [430, 1030, 114.6], [520, 958, 134.6], [700, 980, 134.85], [850, 975, 135.1], [620, 1040, 135.35]]) { const k = hkPulse(t, a, 0.45); if (k) star(ctx, x, y, 16 * k, C.white, t * 3); }
-  // S13: the light shaft and the golden light
-  if (t > 131.18 && t < 137.68) { const k = 0.25 + 0.35 * hkB(t, 132.58, 0.5) - 0.2 * hkB(t, 135.7, 0.6); ctx.save(); ctx.globalAlpha = k; ctx.fillStyle = '#fff3a8'; ctx.beginPath(); ctx.moveTo(860, 150); ctx.lineTo(960, 150); ctx.lineTo(700, 910); ctx.lineTo(500, 910); ctx.closePath(); ctx.fill(); ctx.restore();
-    hkGlow(ctx, 520, 1000, 520, t, 0.4 * hkB(t, 134.6, 0.6) * (1 - hkB(t, 136.8, 0.6))); }
   // S8: the sun icon over the roofline
   if (t > 83.72 && t < 84.45) { const u = hkB(t, 83.72, 0.62, 'lin'); ctx.save(); ctx.translate(K.lerp(720, 940, u), 450 - 70 * Math.sin(Math.PI * u)); ctx.scale(0.3, 0.3); sun(ctx, 0, 0, t); ctx.restore(); }
   if (t > 83.1 && t < 83.8) for (const [x, a] of [[738, 83.15], [830, 83.3], [922, 83.45]]) { const k = hkPulse(t, a, 0.35); if (k) star(ctx, x, 525, 14 * k, C.white, 0); }
@@ -372,8 +387,7 @@ function hkGarden(ctx, t, cam) {
 function hkHeap(ctx, t) { const R = K.rng(7), kinds = ['fruit', 'jugs', 'cushion', 'bread', 'sweets', 'dome', 'rice'];
   for (let i = 0; i < 14; i++) { const row = Math.floor(i / 4), x = 140 + (i % 4) * 36 + row * 14 + R() * 8, y = 900 - row * 46, t0 = 100.4 + i * 0.07; if (t < t0) continue; hkSprite(ctx, kinds[i % 7], x, fallY(t, t0, t0 + 0.2, y - 160, y) - rebound(t, t0 + 0.2, 6), 0.62); } }
 function hkChestsS16(ctx, t) {
-  if (!HK_S16(t)) return; const glow = 0.8 * hkB(t, 152.9, 0.8);
-  hkGlow(ctx, 680, 860, 380, t, glow);
+  if (!HK_S16(t)) return;
   [500, 620, 740, 860].forEach((x, i) => { const y = i === 3 ? fallY(t, 151.6, 151.9, 870, 905) : 905; hkChest(ctx, x, y, 0.88, { lid: hkB(t, 152.9 + i * 0.15, 0.3), fill: 1, sq: i === 3 ? impactSquash(t, 151.9, 0.85) : 1 }); });
   if (t > 160.0 && t < 160.9) { const a = hkPulse(t, 160.0, 0.9); hkGhostChest(ctx, 980, 905, 0.88, a); hkGhostChest(ctx, 1100, 905, 0.88, a * 0.7); sfx(ctx, '+', 960, 760, 80, a, { fill: C.yellow }); }
   if (t > 160.2 && t < 160.8) { const b = hkBoy(t), h = [b.x - 18, b.y - 118]; for (const dx of [-9, 9]) star(ctx, h[0] + dx, h[1], 9 * hkPulse(t, 160.2, 0.6), C.yellow, t * 4); }
@@ -381,7 +395,7 @@ function hkChestsS16(ctx, t) {
 function hkGardenClouds(ctx, t) {
   const cal = hkCal(t), ch = hkHead(cal), mh = hkHead(hkMer(t));
   // S7-S8: the suspicion cloud
-  if (t > 68.74 && t < 79.6) thoughtCloud(ctx, 500, 455, 500, 300, t, { p: hkB(t, 68.74, 0.5, 'lin') * (1 - hkB(t, 79.3, 0.3, 'lin')), tail: [ch[0] - 20, ch[1] - 50], scale: 0.42, at: [600, 780], bg: '#dff0ff', seed: 6, inside: (c) => hkDreamSpy(c, t) });
+  if (t > 68.74 && t < 79.6) thoughtCloud(ctx, 500, 455, 500, 300, t, { p: hkB(t, 68.74, 0.5, 'lin') * (1 - hkB(t, 79.3, 0.3, 'lin')), tail: [ch[0] - 20, ch[1] - 50], scale: 0.63, at: [600, 700], bg: '#dff0ff', seed: 6, inside: (c) => hkDreamSpy(c, t) });   // v2 (review note 11): inner scene 1.5x, ground line low
   if (t > 79.3 && t < 79.9) { const u = hkB(t, 79.3, 0.5, 'out'); for (let i = 0; i < 6; i++) { const a = i * Math.PI / 3; ctx.save(); ctx.globalAlpha = 1 - u; shape(ctx, ell(500 + Math.cos(a) * 220 * (0.7 + u), 455 + Math.sin(a) * 130 * (0.7 + u), 30, 26, 14), C.white, { lw: 4, seed: 890 }); ctx.restore(); } }
   // S11: the banquet balloon that sags and blows away
   if (t > 110.18 && t < 113.3) { const drift = hkB(t, 112.6, 0.7, 'in'), sag = hkB(t, 111.58, 0.8);
@@ -391,15 +405,15 @@ function hkGardenClouds(ctx, t) {
       { sy: 1 - 0.3 * sag, rot: 0.15 * drift }); }
   // S12: one tray = one coin, the pile bursts the cloud
   if (t > 124.74 && t < 129.98) { const p = hkB(t, 124.74, 0.4, 'lin') * (1 - hkB(t, 129.4, 0.5, 'lin')), burst = hkB(t, 125.82, 0.35);
-    const CY = 350, H = t < 125.12 ? 0 : t < 125.32 ? 40 : t < 125.52 ? 110 : t < 125.82 ? 200 : 200 + 140 * burst;
+    const CY = 350, H = t < 125.12 ? 0 : t < 125.32 ? 40 : t < 125.52 ? 90 : t < 125.82 ? 150 : 150 + 90 * burst;
     if (burst > 0) hkGlow(ctx, 470, 450 - H * 0.4, 260, t, 0.7 * burst * p);
     ctx.save(); if (burst > 0) { ctx.translate(430, CY); ctx.scale(1, 1 + 0.08 * hkPulse(t, 125.82, 0.5)); ctx.translate(-430, -CY); }
     thoughtCloud(ctx, 430, CY, 480, 320, t, { p, tail: [ch[0] - 20, ch[1] - 55], scale: 1, at: [0, 0], bg: '#fff7d0', seed: 9, inside: (c) => {
-      if (t > 124.9) { hkSprite(c, 'fruit', -150, -30, 0.8); sfx(c, '=', -80, -60, 60, hkB(t, 125.0, 0.2), { fill: C.white }); hkCoin(c, -10, -60, 34, { col: HK_GOLD, dot: HK_GOLDD, spin: t * 3 }); }
-      const fl = [125.12, 125.32, 125.52].filter((a) => t > a).length; if (fl) { c.save(); c.translate(130, -70); c.scale(1, Math.abs(Math.cos((t - [125.12, 125.32, 125.52][fl - 1]) * 15)) * (t - 125.52 < 0.12 ? 1 : 1)); c.fillStyle = [C.yellow, C.blue, '#e2701a'][(fl - 1) % 3]; c.fillRect(-45, -35, 90, 70); ink(c, K.rectPts(-45, -35, 90, 70), 4, 892); c.restore(); }
-      if (H > 0 && burst <= 0) hkCoinPile(c, 40, 160, 220, H, { col: HK_GOLD, dot: HK_GOLDD, seed: 5 }); } });
+      if (t > 124.9) { hkSprite(c, 'fruit', -135, 22, 1.4); const e = hkB(t, 125.0, 0.2); if (e > 0) for (const dy of [-16, 16]) shape(c, K.rectPts(-72, -40 + dy - 8 * e, 56, 16 * e), C.white, { lw: 4, seed: 895 }); hkCoin(c, 40, -38, 52, { col: HK_GOLD, dot: HK_GOLDD, spin: t * 3 }); }   // v2: 2x
+      const fl = [125.12, 125.32, 125.52].filter((a) => t > a).length; if (fl) { c.save(); c.translate(150, -45); c.scale(0.6, 0.6); c.scale(1, Math.abs(Math.cos((t - [125.12, 125.32, 125.52][fl - 1]) * 15)) * (t - 125.52 < 0.12 ? 1 : 1)); c.fillStyle = [C.yellow, C.blue, '#e2701a'][(fl - 1) % 3]; c.fillRect(-45, -35, 90, 70); ink(c, K.rectPts(-45, -35, 90, 70), 4, 892); c.restore(); }
+      if (H > 0 && burst <= 0) hkCoinPile(c, 40, 165, 240, H, { col: HK_GOLD, dot: HK_GOLDD, seed: 5 }); } });
     ctx.restore();
-    if (burst > 0) { ctx.save(); ctx.globalAlpha *= p; hkCoinPile(ctx, 470, 500, 240, H, { col: HK_GOLD, dot: HK_GOLDD, seed: 5 }); ctx.restore(); }
+    if (burst > 0) { ctx.save(); ctx.globalAlpha *= p; hkCoinPile(ctx, 470, 515, 240 + 120 * burst, H, { col: HK_GOLD, dot: HK_GOLDD, seed: 5 }); ctx.restore(); }
   }
   // S16: the caliph's balloon: the goblet with a heart, then a cushion and a tray
   if (t > 157.78 && t < 161.0) hkBalloon(ctx, 420, 410, 320, 210, [ch[0] + 20, ch[1] - 60], hkB(t, 157.78, 0.3, 'lin') * (1 - hkB(t, 160.8, 0.2, 'lin')), (c) => {
@@ -420,8 +434,8 @@ function hkDreamSpy(c, t) {
   else { const tt = frozen ? 77.0 : t, spots = [380, 520, 660], x = spots[Math.floor(tt * 5) % 3] + 0 * Math.sin(tt), P = hkP(HK_MER, x, 900, 1.1, 1, { seed: 72, mouth: 'o', eyes: 'wide', ph: tt * 30, amp: frozen ? 0 : 1, tip: 0.1 });
     hkDraw(c, P); if (!frozen) drops(c, x + 40, 640, t, 3);
     [71.6, 72.0, 72.4].forEach((a, k) => { if (t > a) hkTray(c, 300 + k * 0, 900 - k * 34, 1.2 * K.ease.back(K.clamp((t - a) / 0.2)), ['fruit', 'sweets', 'dome'][k]); }); }
-  if (t > 73.64 && t < 77.0) sfx(c, '?', 520, 650, 380, hkB(t, 73.64, 0.3, 'lin'), { fill: C.yellow });
-  for (const [a, x0, y0, x1, y1] of [[77.0, 150, 380, 900, 1000], [77.3, 900, 380, 150, 1000]]) { const u = hkB(t, a, 0.15, 'lin'); if (u > 0) { c.save(); c.lineCap = 'round'; c.lineWidth = 60; c.strokeStyle = C.red; c.beginPath(); c.moveTo(x0, y0); c.lineTo(K.lerp(x0, x1, u), K.lerp(y0, y1, u)); c.stroke(); c.restore(); } }
+  if (t > 73.64 && t < 77.0) sfx(c, '?', 870, 600, 250, hkB(t, 73.64, 0.3, 'lin'), { fill: C.yellow });   // v2: in the right half, beside the owner
+  for (const [a, x0, y0, x1, y1] of [[77.0, 250, 480, 950, 930], [77.3, 950, 480, 250, 930]]) { const u = hkB(t, a, 0.15, 'lin'); if (u > 0) { c.save(); c.lineCap = 'round'; c.lineWidth = 60; c.strokeStyle = C.red; c.beginPath(); c.moveTo(x0, y0); c.lineTo(K.lerp(x0, x1, u), K.lerp(y0, y1, u)); c.stroke(); c.restore(); } }
 }
 // S10 overlay: the dismount replayed in an inset circle (top right of the panel)
 function hkReplay(ctx, t) {

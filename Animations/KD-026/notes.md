@@ -26,3 +26,9 @@ Code: src/k26_parts.js (helpers, cow, devil costume wrapper, props, balloons, st
 - Yard: bush h 92 (chest-up two-shot), ascetic x 630 watering then stroking the cow, cow x 860; handshake point K26_YSHAKE (252, 738).
 - Road: opening pair starts further right (ascetic 370, cow 180); YES! behind the trunk at x 566; reveal 22.6-29.4 panned at zoom 1.25-1.3.
 - SLEEP meter upper left at scale 0.75; AWAKE! label at 141.22.
+
+## v3 fix (2026-11-18, fable_review_2)
+- Hut cow s 0.72 (K26_HCOWS) at x 832, rump redrawn over the corner post; sleeper lies at x 510 (mat 350..610), roll on 111.9 slides 6 (head as in v2).
+- Peg/knot moved from the corner (860, 700) to the back wall (770, 730): the person arm (74 units) cannot reach the corner peg from beside the cow's head. Ascetic ties from x 690; double reach thief at x 682 (K26_REACHX), cow drawn in front.
+- Climax: thief kneels at x 515 (K26_SHOUTX), devil lands at 700 (K26_DLANDX); Z's rise up-left (k26ZLeft) from 125.94, none from 139.5; badge halves tucked at the belt 125.94-143.7.
+- Neighbours drawn after the front layer (in front of the door leaf, clipped at x 140), at 170/228/290, exit 157.1-158.9.

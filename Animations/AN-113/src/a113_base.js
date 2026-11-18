@@ -59,7 +59,7 @@ function pmAng(P, sd, v) { if (v.a) return v.a; return armTo(sd, PM_SH, v.w ? pm
 function pmArm(t, P, sd, keys) { return pmTr(t, keys.map(([t0, v, d]) => [t0, (tt) => pmAng(P, sd, typeof v === 'function' ? v(tt) : v), d])); }
 const PMH = { side: [36, -80], sideL: [-36, -80], chest: [6, -122], chestL: [-6, -118], chin: [16, -160], hips: [40, -82], hipsL: [-40, -82], fwd: [100, -150], palm: [62, -104], palmL: [-62, -104],
   up: [44, -205], wave: [64, -196], head: [44, -212], headL: [-44, -212], cheek: [34, -182], cheekL: [-34, -182], mouth: [10, -172], mouthL: [-6, -168], clasp: [30, -134], claspL: [24, -140],
-  foldL: [22, -105], foldR: [-18, -112], out: [95, -150], outL: [-95, -150], sash: [18, -82], raise: { a: [2.45, 2.85] }, raiseL: { a: [-2.45, -2.85] }, hush: [8, -170], down: [80, -74] };
+  foldL: [22, -105], foldR: [-18, -112], out: [95, -150], outL: [-95, -150], sash: [18, -82], raise: { a: [2.45, 2.85] }, raiseL: { a: [-2.45, -2.85] }, hush: [8, -170], down: [80, -74], hang: [33, -61], hangL: [-33, -61], wring: [22, -94], wringL: [12, -98] };
 function pmLook(t, P, plan, ease = 0.2) { const pl = []; for (const [a, p] of plan) { if (pl.length && a > t) break; pl.push([a, typeof p === 'function' ? p(t) : p]); } return lookAt(pmHead(P), gazePlan(t, pl, ease)); }
 // walk from a position function: legs from the distance travelled, amplitude from the speed (feet never slide)
 function pmWalk(xf, t, stride = 13) { const x = xf(t), v = Math.abs(speed(xf, t)); return { x, ph: x / stride, amp: v < 4 ? 0 : K.clamp(v / 70) }; }
@@ -206,10 +206,11 @@ function pmStall(ctx, layer, o = {}) {
   const sg = o.sign ?? 0; if (sg > 0.01) { c.save(); c.translate((x0 + x1) / 2, aw - 34); c.scale(sg, sg); shape(c, K.rectPts(-92, -30, 184, 56), C.yellow, { lw: 5, seed: 589 }); c.font = K.font(46, BF, 400); c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillStyle = C.black; c.fillText('JEWELS', 0, 0); c.restore(); seg(c, x0 + 40, aw - 4, x0 + 40, aw - 10, 3, C.black, 0); }
 }
 // the street: four house fronts with three doors (left, centre right, right) behind the stall
-const PM_HOUSES = [{ x0: -10, x1: 300, top: 480, col: 0, door: [135, 225, 650, 'round'], windows: [[40, 560, 70, 86]] }, { x0: 308, x1: 610, top: 520, col: 1, windows: [[340, 600, 74, 86], [505, 600, 74, 86]] },
-  { x0: 618, x1: 860, top: 470, col: 2, door: [720, 800, 650, 'round'], windows: [] }, { x0: 868, x1: 1010, top: 500, col: 0, door: [890, 970, 650, 'round'], windows: [] }];
-const PM_DOORS = [180, 760, 930];
-function pmMarketSet(ctx, t, doors = [0, 0, 0]) { return marketStreet(ctx, { palette: 'clear', palace: false, houses: PM_HOUSES, doors, props: [['pots', 330, {}], ['sacks', 1030, {}]], t }); }
+// v2: four doors (one per house) so the doors-of-fortune shot can stay close: x centres 255, 384, 760, 915
+const PM_HOUSES = [{ x0: -10, x1: 330, top: 480, col: 0, door: [215, 295, 650, 'round'], windows: [[40, 560, 70, 86]] }, { x0: 338, x1: 610, top: 520, col: 1, door: [356, 412, 668, 'round'], windows: [[505, 600, 74, 86]] },
+  { x0: 618, x1: 860, top: 470, col: 2, door: [720, 800, 650, 'round'], windows: [] }, { x0: 868, x1: 1010, top: 500, col: 0, door: [880, 950, 650, 'round'], windows: [] }];
+const PM_DOORS = [255, 384, 760, 915];
+function pmMarketSet(ctx, t, doors = [0, 0, 0, 0]) { return marketStreet(ctx, { palette: 'clear', palace: false, houses: PM_HOUSES, doors, props: [['pots', 330, {}], ['sacks', 1030, {}]], t }); }
 // homes
 const pmHomeO = (o = {}) => ({ variant: 'merchant', wall: 'ochre', shelves: [], desk: false, treasure: false, curtain: 0.5, ...o });
 const pmFriendO = (o = {}) => ({ variant: 'merchant', wall: 'blue', curtain: 0, lampsLit: 1, ...o });

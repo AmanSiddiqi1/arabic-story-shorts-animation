@@ -8,7 +8,7 @@ const HK_FALLS = [...HK_FG, ...HK_RG].map((f) => hkFalls(f, 0, 11.2, 12));
 const HK_HFALLS = footfalls(hkHX, 0, 10.6, GAIT.horse * 0.8);
 // the caliph on foot after the dismount (S3)
 const hkCalX3 = (t) => kfn(t, [[28.2, 1250], [28.4, 1250], [29.8, 1590], [30.4, 1640]], 'inOut');
-const hkMerX3 = (t) => kfn(t, [[21.82, 1580], [22.3, 1380], [28.4, 1380], [29.3, 1570], [29.8, 1630]], 'inOut');
+const hkMerX3 = (t) => kfn(t, [[21.82, 1232], [22.4, 1380], [28.4, 1380], [29.3, 1570], [29.8, 1630]], 'inOut');
 const HK_CALF3 = hkFalls(hkCalX3, 28.3, 30.4, 13);
 
 function hkGuardWalkP(i, xf, t, front, extra = {}) {
@@ -46,8 +46,9 @@ function hkRoadA(ctx, t, cam) {
   }
   // jug stand
   const jugA = t < 17.88 ? 0 : t < 18.5 ? 0.9 * hkB(t, 17.88, 0.25) : 0.9 * (1 - hkB(t, 18.35, 0.2));
+  let merFront = null;
   if (merOn) {
-    const M = hkMerS2(t, HX); behind.push(M); gobMer = M;
+    const M = hkMerS2(t, HX); if (M.onRoad) merFront = M; else behind.push(M); gobMer = M;
   }
   // the caliph in S3 on foot, and the owner on the road
   let calFoot = null, merRoad = null, vizFoot = null;
@@ -61,7 +62,7 @@ function hkRoadA(ctx, t, cam) {
   if (t < 21.82) { hkStand(ctx, HK_ROAD.stand, 880); hkJug(ctx, HK_ROAD.stand + 6, 820, 0.62, { tilt: -jugA }); }
   if (gobMer && t >= 17.88 && t < 18.5) hkPour(ctx, HK_ROAD.stand + 6, 820, 0.62, -jugA, HK_ROAD.stand - 30, 792, jugA);
   // gate leaf, wall
-  const open = t < 21.82 ? 0 : t < 23.06 ? 0.35 : settleTo(t, 23.06, 0.35, 1, 0.5, 0.05);
+  const open = t < 18.3 ? 0 : t < 23.06 ? 0.75 * settleTo(t, 18.3, 0, 1, 0.3, 0.08) : settleTo(t, 23.06, 0.75, 1, 0.5, 0.05);   // v2: flung open as the owner runs out (18.3)
   hkGateLeaf(ctx, open); ctx.drawImage(hkRoadWall(), 0, 0, 2200, 920);
   // road actors: rear guards, vizier's bay, the white horse with the caliph, front guards
   for (let i = 0; i < 2; i++) { const xf = HK_RG[i]; if (t < 30.62) front.push(['g', hkGuardWalkP(i + 2, xf, t, false, { gaze: t > 10.8 ? hkG({ ...HK_GRD[0], x: xf(t), y: 900, s: 0.9 }, [1330, 760]) : [1, 0] })]); }
@@ -79,7 +80,7 @@ function hkRoadA(ctx, t, cam) {
   const ps = 0.76, cal = hkCalRider(t, HP, ps);
   front.push(['h', () => { if (t < 27.85) { rideOn(ctx, 'horse', HP, cal); if (cal.__gob) { const h = hkHandW(hkRiderP(HP, ps, { aR: cal.aR, aL: cal.aL }), 'R'); hkGoblet(ctx, h[0], h[1] + 9, 0.6, cal.__gob); } } else horse(ctx, HP); }]);
   for (let i = 0; i < 2; i++) if (t < 30.62) { const G = hkGuardWalkP(i, HK_FG[i], t, true); if (i === 0 && t > 29.4) Object.assign(G, hkGateGuard(t)); front.push(['g', G]); }
-  for (const P of [calFoot, merRoad, vizFoot]) if (P && !P.inGate) front.push(['p', P]);
+  for (const P of [calFoot, merRoad, vizFoot, merFront]) if (P && !P.inGate) front.push(['p', P]);
   for (const [k, v] of front) { if (k === 'h') v(); else hkDraw(ctx, v); }
   // dust on footfalls
   HK_FALLS.forEach((L, i) => L.forEach((f) => dustBurst(ctx, f.x, 898, t - f.t, 3, 4, 9, 20, 0.45, 100 + i * 37 + Math.round(f.t * 10))));
@@ -97,37 +98,41 @@ function hkRoadA(ctx, t, cam) {
   // the guard's spear stopped by the arch (S3)
   if (hkIn(t, 29.9, 30.2)) star(ctx, 1600, 650, 22 * hkPulse(t, 29.9, 0.3), C.yellow, t * 5);
 }
-// the owner in S2: seated, springs up, runs to the jug, pours, hurries to the wall and hands the cup up, takes it back
+// the owner in S2: seated, springs up, runs to the jug, pours, then (v2, review note 3) runs out through the gate and along the road to stand
+// in front of the horse's head, reaching the cup up on tiptoe; the caliph leans down to take it (19.3); he takes it back at 21.5
+const HK_MX2 = [[16.82, 1355], [17.8, 1438], [18.4, 1438], [18.72, 1590], [19.12, 1232]];
+const hkMerX2 = (t) => kfn(t, HK_MX2, 'inOut');
+const hkMerY2 = (t) => K.lerp(880, 900, hkB(t, 18.66, 0.16));
 function hkMerS2(t, HX) {
-  const x = kfn(t, [[16.82, 1355], [17.8, 1438], [18.52, 1438], [19.25, 1212]], 'inOut');
-  const P = hkP(HK_MER, x, 880, 1, t < 16.82 ? 1 : t < 18.52 ? 1 : -1, { seed: 71 });
-  const run = hkIn(t, 16.82, 17.8) || hkIn(t, 18.52, 19.25);
-  if (run) { const W = hkWalk((tt) => kfn(tt, [[16.82, 1355], [17.8, 1438], [18.52, 1438], [19.25, 1212]], 'inOut'), t, 10); P.ph = W.ph; P.amp = Math.min(1.2, W.amp * 1.2); P.tip = 0.12; }
-  P.sit = t < 16.28 ? 1 : 1 - hkB(t, 16.28, 0.3); P.seat = 'bench'; P.sq = anticipate(t, 16.18, 0.1, 0.08) * (t > 18.52 && t < 19.5 ? K.lerp(1, 1.06, hkB(t, 18.9, 0.3)) : 1);
+  const x = hkMerX2(t), y = hkMerY2(t), onRoad = t >= 18.76;
+  const P = hkP(HK_MER, x, y, 1, t < 18.7 ? 1 : -1, { seed: 71, onRoad });
+  const run = hkIn(t, 16.82, 17.8) || hkIn(t, 18.4, 19.12);
+  if (run) { const W = hkWalk(hkMerX2, t, 10); P.ph = W.ph; P.amp = Math.min(1.2, W.amp * 1.2); P.tip = 0.12 * Math.sign(P.dir); }
+  P.sit = t < 16.28 ? 1 : 1 - hkB(t, 16.28, 0.3); P.seat = 'bench'; P.sq = anticipate(t, 16.18, 0.1, 0.08) * (t > 19.0 && t < 19.7 ? K.lerp(1, 1.06, hkB(t, 19.0, 0.2)) * (1 - 0.06 * hkB(t, 19.45, 0.25)) + 0.06 * hkB(t, 19.45, 0.25) * 0 : 1);
+  if (t > 19.0 && t < 19.7) P.y -= 8 * hkB(t, 19.0, 0.15) * (1 - hkB(t, 19.45, 0.25));   // tiptoe
   if (t < 16.28) P.sq *= (t > 12.08 && t < 13.3 ? 1 - 0.02 * hkPulse(t, 12.6, 0.7) : breathe(t, 3));
-  const cup = [1200, 742];
-  P.gaze = t < 14.9 ? [0.2, 0.6] : t < 16.82 ? hkG(P, [1130, 600]) : t < 18.52 ? hkG(P, [1470, 800]) : t < 20.7 ? hkG(P, [1150, 620]) : hkG(P, [1130, 640]);
+  P.gaze = t < 14.9 ? [0.2, 0.6] : t < 16.82 ? hkG(P, [1130, 600]) : t < 18.4 ? hkG(P, [1470, 800]) : t < 18.85 ? [P.dir, 0] : t < 20.7 ? hkG(P, [1170, 640]) : hkG(P, [1150, 650]);
   P.lid = t < 14.9 ? Math.max(0.45, hkIn(t, 12.6, 12.9) ? 1 : 0) : undefined;
   P.mouth = t < 14.9 ? 'smile' : t < 16.82 ? 'o' : t < 20.7 ? 'closed' : 'smile'; P.brow = hkIn(t, 14.9, 16.82) ? -0.6 : hkIn(t, 19.66, 20.7) ? -0.4 : 0.1; P.noBlink = hkIn(t, 14.9, 15.5);
-  hkArms(t, P, [[0, [40, -150]], [12.08, [8, -168], 0.3], [13.3, [40, -150], 0.3], [16.28, [60, -110], 0.2], [17.8, { w: [1478, 770] }, 0.2], [18.52, { w: [1185, 742] }, 0.4], [19.66, [30, -134], 0.3], [21.2, { w: [1190, 720] }, 0.3]],
-    [[0, [-60, -100]], [16.28, [-60, -110], 0.2], [17.8, { w: [1440, 800] }, 0.2], [18.52, { w: [1215, 742] }, 0.4], [19.66, [-24, -140], 0.3], [21.2, [-60, -110], 0.3]]);
+  hkArms(t, P, [[0, [40, -150]], [12.08, [8, -168], 0.3], [13.3, [40, -150], 0.3], [16.28, [60, -110], 0.2], [17.8, { w: [1478, 770] }, 0.2], [18.4, [60, -110], 0.15], [19.0, { w: [1222, 682] }, 0.2], [19.4, [30, -150], 0.3], [19.66, [30, -134], 0.3], [21.2, { w: [1212, 704] }, 0.3]],
+    [[0, [-60, -100]], [16.28, [-60, -110], 0.2], [17.8, { w: [1440, 800] }, 0.2], [18.4, [60, -120], 0.15], [19.0, { w: [1232, 690] }, 0.2], [19.4, [-24, -140], 0.3], [21.2, [-60, -110], 0.3]]);
   if (t < 14.9 || hkIn(t, 13.3, 14.9)) P.aR = [P.aR[0] + (t < 14.9 ? 0.25 * Math.sin(t * 5) : 0), P.aR[1]];   // fanning himself
   // the goblet: his own sip (12.08), the poured cup (17.88), up to the rider (19.3), back to him (21.5)
   if (t < 16.28) P.gob = { side: 'R', fill: 0.6, tilt: hkIn(t, 12.08, 13.3) ? 0.6 * hkPulse(t, 12.08, 1.2) : 0 };
-  else if (t >= 17.88 && t < 19.3) P.gob = { side: 'L', fill: t < 17.95 ? 0 : hkB(t, 17.95, 0.5, 'lin') };
+  else if (t >= 17.88 && t < 19.3) P.gob = { side: 'L', fill: t < 17.95 ? 0 : hkB(t, 17.95, 0.4, 'lin') };
   else if (t >= 21.5) P.gob = { side: 'R', fill: 0, glint: hkPulse(t, 21.55, 0.4) };
   P.talk = 0; return P;
 }
 function hkCalRider(t, HP, ps) {
   const R = hkRiderP(HP, ps, { seed: 81 });
-  const P = { costume: 'caliph', s: ps, lurch: lurch(t, 10.5, 0.18) + (t > 18.4 && t < 20 ? 0.12 * hkB(t, 18.4, 0.3) * (1 - hkB(t, 19.5, 0.4)) : 0), seed: 81 };
+  const P = { costume: 'caliph', s: ps, lurch: lurch(t, 10.5, 0.18) + (t > 18.6 && t < 20 ? 0.16 * hkB(t, 18.6, 0.4) * (1 - hkB(t, 19.45, 0.4)) : 0) + (t > 20.95 && t < 21.9 ? 0.12 * hkPulse(t, 20.95, 0.9) : 0), seed: 81 };
   P.lid = t < 7.54 ? Math.max(0.25, hkIn(t, 2.4, 2.75) ? 1 : 0) : undefined; if (hkIn(t, 19.66, 20.6)) P.lid = 1;
-  P.gaze = t < 6.62 ? [1, 0] : t < 10.66 ? lookAt(hkHead(R), [1200, 480]) : t < 23.8 ? lookAt(hkHead(R), t < 19.6 ? [1240, 740] : [1300, 760]) : hkGP(t, R, [[23.8, [1590, 700]], [24.3, [880, 600]], [24.9, [1380, 680]]], 0.12);
+  P.gaze = t < 6.62 ? [1, 0] : t < 10.66 ? lookAt(hkHead(R), [1200, 480]) : t < 23.8 ? lookAt(hkHead(R), t < 19.6 ? [1290, 760] : [1300, 760]) : hkGP(t, R, [[23.8, [1590, 700]], [24.3, [880, 600]], [24.9, [1380, 680]]], 0.12);
   P.brow = hkIn(t, 6.62, 7.54) ? -0.3 : hkIn(t, 14.18, 15.6) ? -0.2 : 0; P.mouth = t > 7.54 && t < 14.18 ? 'smile' : t > 20.7 ? 'smile' : 'closed';
   P.talk = hkIn(t, 14.18, 15.6) ? 0.4 + 0.5 * Math.abs(Math.sin(t * 11)) : 0; P.drop = 6 * hkPulse(t, 27.18, 0.45);
   if (t > 10.66 && t < 12.0) P.tilt = 0.06;
   const reinsR = [52, -118], reinsL = [34, -122];
-  P.aR = hkArm(t, R, 1, [[0, reinsR], [14.18, HKH.wave, 0.25], [14.7, [10, -170], 0.25], [15.7, reinsR, 0.3], [18.6, { w: [1196, 744] }, 0.6], [19.4, [12, -168], 0.3], [20.7, [50, -130], 0.3], [21.15, { w: [1190, 720] }, 0.3], [21.6, reinsR, 0.3], [23.8, [16, -160], 0.3], [25.2, reinsR, 0.3]]);
+  P.aR = hkArm(t, R, 1, [[0, reinsR], [14.18, HKH.wave, 0.25], [14.7, [10, -170], 0.25], [15.7, reinsR, 0.3], [18.7, { w: [1222, 688] }, 0.5], [19.4, [12, -168], 0.3], [20.7, [50, -130], 0.3], [21.15, { w: [1212, 704] }, 0.3], [21.6, reinsR, 0.3], [23.8, [16, -160], 0.3], [25.2, reinsR, 0.3]]);
   P.aL = hkArm(t, R, -1, [[0, hkMir(reinsL)]]);
   if (hkIn(t, 14.7, 15.6)) P.aR = [P.aR[0], P.aR[1] + 0.25 * Math.sin((t - 14.7) * 9)];
   const hold = t >= 19.3 && t < 21.5; const hd = hold ? { fill: t < 19.66 ? 1 : 1 - hkB(t, 19.66, 0.9, 'lin'), tilt: hkIn(t, 19.66, 20.6) ? -1.1 * hkPulse(t, 19.66, 1.0) : 0, glint: hkPulse(t, 20.7, 0.4) } : null;
@@ -215,7 +220,7 @@ function hkRoadEnd(ctx, t, cam) {
   items.forEach((f) => f());
   // the owner at the gate with the goblet; the boy hops for joy
   const M = hkMerS17(t); hkDraw(ctx, M);
-  const by = hkP(HK_BOY, 1660, 900 - 26 * Math.abs(Math.sin((t - 170.6) * 7)) * (t > 170.6 && t < 172.0 ? 1 : 0), 1, -1, { mouth: 'smile', gaze: hkG(M, [1590, 700]) }); hkDraw(ctx, by);
+  const by = hkP(HK_BOY, 1475, 900 - 26 * Math.abs(Math.sin((t - 170.6) * 7)) * (t > 170.6 && t < 172.0 ? 1 : 0), 1, -1, { mouth: 'smile', gaze: [1, -0.4] }); hkDraw(ctx, by);
   // the last drop from the rim
   const gp = hkHandW(M, 'L'); if (hkIn(t, 167.3, 168.3)) { const y = fallY(t, 167.3, 167.75, gp[1] - 30, 900); if (t < 167.75) shape(ctx, [[gp[0] + 18, y - 10], [gp[0] + 24, y + 4], [gp[0] + 12, y + 4], [gp[0] + 18, y - 10]], TEAR, { lw: 2.5, seed: 801 }); else ripple(ctx, gp[0] + 18, 902, 167.75, t, 0.4); }
   if (hkIn(t, 167.02, 167.7)) star(ctx, gp[0] + 14, gp[1] - 40, 22 * hkPulse(t, 167.02, 0.6), C.white, t * 3);
@@ -225,16 +230,20 @@ function hkRoadEnd(ctx, t, cam) {
   for (let i = 0; i < 2; i++) { const u = K.clamp((t - 172.3 - i * 0.25) / 1.2); if (t > 172.3) songbird(ctx, { x: K.lerp(1300 + i * 300, 1780 + i * 180, u), y: K.lerp(300, 470 - i * 20, u) - 30 * Math.sin(Math.PI * u), s: 0.8, fly: u < 1, flap: t * 30 + i, col: i ? C.yellow : C.red, dir: 1 }); }
   if (t > 173.3) for (let i = 0; i < 3; i++) hkLeaf(ctx, t, 173.3 + i * 0.9, [1420 + i * 330, 480], [1380 + i * 330, 880], 2.0);
 }
+// v2 (review note 2): on سببًا (168.24) he turns to the chests and holds the cup out toward them (so the moral arrow runs goblet -> chests and
+// crosses no face); on يتوقعها (170.54) both palms up, brows up, eyes to camera, held without a blink to 172.4
 function hkMerS17(t) {
-  const P = hkP(HK_MER, 1590, 900, 1, -1, { seed: 71 }); P.sq = breathe(t, 2);
-  P.mouth = 'smile'; P.brow = t > 170.54 ? -0.6 : 0;
-  P.gaze = t < 166.38 ? hkG(P, [hkHX17(t), 650]) : t < 168.24 ? hkG(P, [1560, 860]) : t < 169.44 ? hkG(P, [K.lerp(1580, 1900, hkB(t, 168.24, 1.0)), K.lerp(800, 780, hkB(t, 168.24, 1.0))]) : t < 170.54 ? hkG(P, [1900, 820]) : t < 171.7 ? [0, 0.05] : hkG(P, [1000, 600]);
+  const tf = turnFlip(t, [[0, -1], [168.24, 1]], 0.35);
+  const P = hkP(HK_MER, 1590, 900, 1, tf.dir, { seed: 71 }); P.sq = breathe(t, 2) * (1 - 0.04 * tf.sink);
+  P.mouth = 'smile'; P.brow = t > 170.54 && t < 172.6 ? -0.7 : 0;
+  P.gaze = t < 166.38 ? hkG(P, [hkHX17(t), 650]) : t < 168.24 ? hkG(P, [1560, 860]) : t < 169.44 ? hkG(P, [K.lerp(1700, 1900, hkB(t, 168.4, 1.0)), 800]) : t < 170.54 ? hkG(P, [1880, 820]) : t < 172.4 ? [0, 0.05] : hkG(P, [1000, 600]);
+  if (hkIn(t, 170.54, 172.4)) P.noBlink = true;
   P.drop = 6 * hkB(t, 166.38, 0.3) * (1 - hkB(t, 168.3, 0.3));
   const wave = hkIn(t, 165.3, 166.38);
-  hkArms(t, P, [[0, [36, -62]], [165.3, HKH.wave, 0.25], [166.38, [36, -62], 0.3], [170.54, [60, -100], 0.25]],
-    [[0, [-40, -110]], [166.38, [-30, -120], 0.3], [170.54, [-60, -100], 0.25], [171.7, { a: [-2.3, -2.6] }, 0.4]]);
+  hkArms(t, P, [[0, [36, -62]], [165.3, HKH.wave, 0.25], [166.38, [36, -62], 0.3], [170.54, [-96, -138], 0.25], [172.4, [36, -62], 0.4]],
+    [[0, [-40, -110]], [166.38, [-30, -120], 0.3], [168.4, [-96, -122], 0.35], [170.54, [-96, -138], 0.25], [172.4, [-40, -110], 0.4]]);
   if (wave) P.aR = [P.aR[0] + 0.3 * Math.sin(t * 11), P.aR[1]];
-  if (t > 170.54 && t < 171.7) P.sq *= 1 + 0.02 * hkPulse(t, 170.6, 0.4);
+  if (t > 170.54 && t < 172.4) { P.sq *= 1 + 0.03 * hkPulse(t, 170.6, 0.4); P.drop = -4 * hkB(t, 170.54, 0.2); }
   P.gob = { side: 'L', fill: 0, glint: hkPulse(t, 167.02, 0.6) };
   return P;
 }

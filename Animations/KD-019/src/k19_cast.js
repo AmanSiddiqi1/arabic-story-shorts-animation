@@ -88,7 +88,7 @@ function k19BirdRaw(ctx, P) {
   else { const big = eyes === 'wide', rx = big ? 11 : 8.5, ry = big ? 12 : 9.5; shape(ctx, ell(ex, ey, rx, ry, 18), C.white, { lw: 3.5, seed: 42 });
     const gz = P.gaze || [1, 0.2], gl = Math.max(1, Math.hypot(gz[0], gz[1])), gx0 = gz[0] * dir / gl, gy0 = gz[1] / gl, gv = k19rot([gx0, gy0], -g.hr - (P.rot || 0) * Math.sign(dir || 1)), pr = P.pupil ?? (big ? 2.8 : (P.pin ? 2.6 : 4.2));
     ctx.fillStyle = C.black; ctx.beginPath(); ctx.arc(ex + gv[0] * (rx - pr - 1.5), ey + gv[1] * (ry - pr - 1.5), pr, 0, 7); ctx.fill();
-    if (P.glint) { ctx.save(); ctx.globalAlpha *= P.glint; star(ctx, ex + 4, ey - 6, 9 + 5 * P.glint, C.white, 0.3); ctx.restore(); }
+    if (P.glint) { ctx.save(); ctx.globalAlpha *= P.glint; star(ctx, ex + 6, ey - 8, 12 + 14 * P.glint, C.yellow, 0.3); ctx.restore(); }
     if (lid > 0.02) { ctx.save(); K.poly(ctx, ell(ex, ey, rx, ry, 18), true); ctx.clip(); const ly = ey - ry + 2 * ry * lid; ctx.fillStyle = K19G.body; ctx.fillRect(ex - rx - 2, ey - ry - 2, 2 * rx + 4, ly - ey + ry + 2); ctx.strokeStyle = C.black; ctx.lineWidth = 3.5; ctx.beginPath(); ctx.moveTo(ex - rx, ly); ctx.lineTo(ex + rx, ly); ctx.stroke(); ctx.restore(); }
     if (P.wet) { ctx.fillStyle = TEAR; ctx.strokeStyle = C.black; ctx.lineWidth = 2; ctx.beginPath(); ctx.ellipse(ex + 2, ey + ry + 6, 3.5, 5, 0, 0, 7); ctx.fill(); ctx.stroke(); } }
   if (eyes !== 'x') { const b = P.brow ?? -0.3; ctx.save(); ctx.lineCap = 'round'; ctx.strokeStyle = age > 0.5 ? '#5d646c' : C.black; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(ex - 13, ey - 15 - b * 2 + (b < 0 ? -b * 3 : 0)); ctx.lineTo(ex + 13, ey - 15 + b * 6); ctx.stroke(); ctx.restore(); }

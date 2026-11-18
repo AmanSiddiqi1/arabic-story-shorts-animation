@@ -2,18 +2,20 @@
 // Geography (measured on hutRoom): walls 110..890, floor 900, door in the left wall (opening y 640..900), stool + lamp x 240 (moved from the
 // plan's 430 so the argument spot is free), mat 440..700, sleeper hips x 580 (head x ~464, y ~854), cow lying at x 700 facing left, peg (860, 700),
 // window 480..580 x 420..520, argument spot devil 300 / thief 390. See notes.md.
-const K26_HUT = { palette: 'night', window: [480, 420, 100, 100], peg: [860, 700], mat: [370, 630], stool: 240, lampAt: [240, 852], niche: false, hook: false, jug: 160, shelf: [640, 800, 600] };
-const K26_KNOT = [866, 704], K26_STOOLLAMP = [244, 852], K26_HOOK = [300, 700];
+const K26_HUT = { palette: 'night', window: [480, 420, 100, 100], peg: [770, 730], mat: [350, 610], stool: 240, lampAt: [240, 852], niche: false, hook: false, jug: 160, shelf: [640, 800, 600] };
+const K26_KNOT = [776, 734], K26_STOOLLAMP = [244, 852], K26_HOOK = [300, 700];
 const K26_MID = 242;   // v2: the quarrel spot moved left (devil ~205, thief ~320) so the sleeper's head (x 444) has clear floor
+const K26_REACHX = 682;   // v3: the double reach: thief just left of the cow's head (she is drawn in front of him); peg moved to (770, 730) so his arm can come about 20 short of the knot
+const K26_SHOUTX = 515, K26_DLANDX = 700;   // v3: the thief kneels on the floor behind the sleeper's hips; the devil lands on the cow side
 const K26_AX2 = 705, K26_TEND = 430, K26_DEND = 545;   // after the waking: neighbours at the door, intruders in the middle, the ascetic on the right
 // ---------- positions ----------
-const K26_HTX = k26Fn([[63.41, -120], [73.92, 30], [75.6, 450, 'lin'], [76.42, 450], [77.6, 790, 'inOut'], [79.54, 790], [80.5, 300, 'inOut'], [86.5, 300], [87.0, 312, 'out'], [105.8, 312], [106.35, 286, 'out'], [116.6, 290], [119.7, 296], [121.94, 290], [122.4, 306, 'out'],
-  [125.94, 306], [126.3, 495, 'lin'], [143.7, 495], [144.3, K26_TEND, 'out'], [149.98, K26_TEND], [150.2, K26_TEND + 40, 'in'], [150.35, K26_TEND + 18, 'out'], [150.74, K26_TEND + 18]]);
+const K26_HTX = k26Fn([[63.41, -120], [73.92, 30], [75.6, 450, 'lin'], [76.42, 450], [77.6, K26_REACHX, 'inOut'], [79.54, K26_REACHX], [80.5, 300, 'inOut'], [86.5, 300], [87.0, 312, 'out'], [105.8, 312], [106.35, 286, 'out'], [116.6, 290], [119.7, 296], [121.94, 290], [122.4, 306, 'out'],
+  [125.94, 306], [126.3, K26_SHOUTX, 'lin'], [143.7, K26_SHOUTX], [144.3, K26_TEND, 'out'], [149.98, K26_TEND], [150.2, K26_TEND + 40, 'in'], [150.35, K26_TEND + 18, 'out'], [150.74, K26_TEND + 18]]);
 const K26_HDX = (t) => (t < 76.42 ? Math.min(300, K26_HTX(t - 0.4)) : k26Path(t, [[76.42, 300], [77.4, 310, 'out'], [79.54, 310], [80.5, 185, 'inOut'], [86.5, 185], [87.0, 205, 'out'], [104.9, 205], [106.35, 180, 'out'], [118.7, 180], [118.96, 188, 'out'], [121.94, 188], [122.4, 175, 'out'],
-  [133.64, 175], [134.49, 640, 'lin'], [143.9, 640], [144.5, K26_DEND, 'out'], [149.98, K26_DEND], [150.2, K26_DEND - 40, 'in'], [150.35, K26_DEND - 18, 'out'], [151.34, K26_DEND - 18]]));
-const K26_HAX = k26Fn([[63.41, -40], [63.84, -40], [64.9, 222, 'out'], [65.3, 222], [66.1, 222], [66.9, 780, 'inOut'], [68.0, 790], [68.6, 620, 'inOut'], [69.0, 620], [69.6, 490, 'inOut']]);
-const K26_HCX = k26Fn([[63.41, -180], [64.76, -180], [65.6, 150, 'out'], [66.2, 150], [66.95, 720, 'inOut'], [67.4, 825, 'out'], [157.18, 825], [158.0, 800, 'inOut']]);
-const K26_HCOWTURN = [[0, 1], [66.95, -1]];
+  [133.64, 175], [134.49, K26_DLANDX, 'lin'], [143.7, K26_DLANDX], [144.2, K26_DEND, 'out'], [149.98, K26_DEND], [150.2, K26_DEND - 40, 'in'], [150.35, K26_DEND - 18, 'out'], [151.34, K26_DEND - 18]]));
+const K26_HAX = k26Fn([[63.41, -40], [63.84, -40], [64.9, 222, 'out'], [65.3, 222], [66.1, 222], [66.9, 690, 'inOut'], [68.0, 696], [68.6, 620, 'inOut'], [69.0, 620], [69.6, 490, 'inOut']]);
+const K26_HCX = k26Fn([[63.41, -180], [64.76, -180], [65.6, 150, 'out'], [66.2, 150], [66.95, 727, 'inOut'], [67.4, 832, 'out'], [157.18, 832], [158.0, 812, 'inOut']]);   // v3: cow s 0.72, rump past the corner post
+const K26_HCOWTURN = [[0, 1], [66.95, -1]], K26_HCOWS = 0.72;   // v3: back from 0.55 (dog sized) to 0.72
 const K26_HTFALLS = footfalls(K26_HTX, 73.92, 80.5, K26_STRIDE * 0.95), K26_HAFALLS = footfalls(K26_HAX, 63.84, 69.6, K26_STRIDE);
 // sleep meter keys (value 0..10) and visibility
 const K26_SLEEP = [[72.14, 0], [72.6, 10], [75.64, 10], [75.7, 9], [76.2, 10], [97.54, 10], [97.6, 8], [98.4, 9], [107.66, 9], [107.7, 8], [112.36, 8], [112.4, 7], [116.76, 7], [116.8, 6], [118.96, 6], [119.0, 5], [119.66, 5], [119.7, 4], [122.66, 4], [122.7, 3],
@@ -48,11 +50,11 @@ function k26HutAscetic(t, W) {
     if (k26In(t, 71.5, 71.85)) { P.aL = [-2.6, -2.9]; P.aR = [2.6, 2.9]; P.handL = null; P.handR = null; P.mouth = 'open'; P.lid = 1; P.sq = 1.03; }
     if (k26In(t, 71.85, 72.14)) { P.mouth = 'o'; P.sq = anticipate(t, 71.8, 0.1, 0.05); P.tip = 0.12; P.gaze = [-1, 0.3]; P.handL = [20, -110]; P.handR = [28, -112]; }
   } else if (t < 143.7) { // asleep
-    const u = k26B(t, 72.14, 0.45, 'inOut'); P.x = K.lerp(490, 530, u); P.y = 888; P.sit = 1 - u; P.seat = 'floor'; P.lie = u; P.dir = 1; P.lid = 1; P.mouth = 'o'; P.noBlink = true;
+    const u = k26B(t, 72.14, 0.45, 'inOut'); P.x = K.lerp(490, 510, u); P.y = 888; P.sit = 1 - u; P.seat = 'floor'; P.lie = u; P.dir = 1; P.lid = 1; P.mouth = 'o'; P.noBlink = true;
     P.tilt = 0.06 * Math.sin(t * 1.9) + 0.15 * pulse(t, 75.64, 0.8); P.sq = 1 + 0.02 * Math.sin(t * 2.2);
     P.handL = [16, -100]; P.handR = [24, -96];
     if (k26In(t, 97.54, 98.6)) { P.handR = [26 + 4 * Math.sin(t * 30), -172]; P.brow = 0.5; P.mouth = t < 97.9 ? 'open' : 'closed'; }
-    if (t >= 111.9 && t < 141) { const r = k26B(t, 111.9, 0.35); P.x -= 26 * r; P.tilt += 0.18 * r; P.aR = t < 112.4 ? [K.lerp(0.4, -2.5, k26B(t, 112.05, 0.3)), K.lerp(0.3, -2.3, k26B(t, 112.05, 0.3))] : t < 113.0 ? [K.lerp(-2.5, -2.0, k26B(t, 112.4, 0.6)), -2.1] : [-2.0, -2.1]; P.handR = null; }
+    if (t >= 111.9 && t < 141) { const r = k26B(t, 111.9, 0.35); P.x -= 6 * r;   /* v3: 6 (was 26) so the head stays where it was in v2 now that he lies 20 further left */ P.tilt += 0.18 * r; P.aR = t < 112.4 ? [K.lerp(0.4, -2.5, k26B(t, 112.05, 0.3)), K.lerp(0.3, -2.3, k26B(t, 112.05, 0.3))] : t < 113.0 ? [K.lerp(-2.5, -2.0, k26B(t, 112.4, 0.6)), -2.1] : [-2.0, -2.1]; P.handR = null; }
     if (t >= 119.7) P.brow = 0.6; if (k26In(t, 127.34, 128.8)) { P.x += tremble(t, 4, 10); P.tilt += tremble(t, 0.08, 7); }
     if (t >= 139.52) { P.brow = t < 139.9 ? 0.2 : t < 140.54 ? 0.8 : 1; P.mouth = t >= 140.54 ? 'frown' : 'o'; P.tilt += 0.06 * pulse(t, 139.6, 0.3);
       if (t >= 142.0) { P.lid = 0; P.wink = t < 142.4 ? 'R' : null; P.mouth = 'o'; P.brow = t < 142.9 ? 0.3 : -0.9; P.eyes = t >= 142.9 ? 'wide' : 'open';
@@ -64,7 +66,7 @@ function k26HutAscetic(t, W) {
     if (k26In(t, 145.14, 148.8)) P.gaze = lookAt([P.x, 700], [140, 760]);
     if (k26In(t, 148.8, 150.7)) P.gaze = lookAt([P.x, 700], [K26_TEND + 50, 700]);
     if (k26In(t, 150.7, 152.4)) P.gaze = lookAt([P.x, 700], [530, 470]);
-    if (k26In(t, 152.4, 154.88)) { P.gaze = lookAt([P.x, 700], [K26_DEND, 890]); P.brow = -0.4; P.mouth = 'o'; }
+    if (k26In(t, 152.4, 154.88)) { P.gaze = lookAt([P.x, 700], [K26_DEND, 890]); P.brow = -0.4; P.mouth = 'o'; P.handR = [-24, -118]; }   // v3: stick held across his body, clear of the knot (STILL TIED)
     if (t >= 154.88) { const s = k26B(t, 155.5, 0.7, 'inOut'); P.y = K.lerp(K26_GR, 888, s); P.sit = s; P.seat = 'floor'; P.brow = -0.2; P.mouth = 'smile'; P.handR = t < 156.4 ? PERSON_HANDS.chest.R : [50, -110]; P.lid = k26In(t, 155.6, 156.0) ? 1 : 0.15;
       P.gaze = lookAt([P.x, 700], W.cowHead); P.drop = 4 * pulse(t, 155.0, 1.2); }
     if (k26In(t, 158.68, 159.8)) { P.handRW = [W.cowHead[0] - 10, W.cowHead[1] + 10]; P.lid = 1; P.mouth = 'open'; P.talk = 0.5 + 0.4 * Math.abs(Math.sin(t * 12)); P.tilt = 0.12; P.wet = true; }
@@ -77,7 +79,7 @@ function k26HutAscetic(t, W) {
 }
 function k26HutCow(t, W) {
   const tf = turnFlip(t, K26_HCOWTURN, 0.5);
-  const P = { y: K26_GR, s: 0.55, ...walk(K26_HCX, t, { stride: K26_COWSTRIDE * 0.55, amp: 50 }), dir: tf.dir, lid: 0.3, seed: 4 };
+  const P = { y: K26_GR, s: K26_HCOWS, ...walk(K26_HCX, t, { stride: K26_COWSTRIDE * K26_HCOWS, amp: 50 }), dir: tf.dir, lid: 0.3, seed: 4 };
   P.tailSwish = Math.sin(t * 2.1) * 0.5; P.bell = Math.sin(t * 6) * 0.25 * P.amp;
   P.lie = t < 67.4 ? 0 : t < 157.18 ? settleTo(t, 67.4, 0, 1, 0.6, 0.06) : t < 158.1 ? 1 - k26B(t, 157.18, 0.4) : k26B(t, 158.1, 0.45, 'inOut');
   if (k26In(t, 65.2, 66.0)) P.sq = t < 65.5 ? 0.86 : settleTo(t, 65.5, 0.86, 1, 0.45, 0.2);
@@ -87,7 +89,7 @@ function k26HutCow(t, W) {
   if (k26In(t, 69.84, 71.5)) P.chew = (t - 69.84) * 2.5;
   const T = W.T, D = W.D;
   if (t >= 72.14) { P.lid = 0.85; P.gaze = lookAt(W.cowHead, [W.lastX, 700]); }
-  if (k26In(t, 79.54, 80.2)) P.lid = 0.25;
+  if (k26In(t, 78.0, 80.2)) P.lid = 0.25;   // v3: eyes open on the thief from 78.0
   if (k26In(t, 94.26, 95.0)) { P.ears = 0.8 * Math.sin((t - 94.26) * 30); P.lid = 0.85; }
   if (t >= 117.86 && t < 145.14) { P.lid = 0.05; P.headUp = 22; const turn = Math.floor((t - 117.86) / 0.45) % 2 === 0; const tgt = turn ? [D.x, 690] : [T.x, 712]; P.gaze = lookAt(W.cowHead, tgt); P.headA = turn ? 0.08 : -0.08; P.ears = 0.6; }
   if (k26In(t, 122.74, 123.66)) { P.lid = 1; P.ears = 1; P.headDown = 0.25; P.noBlink = true; }
@@ -105,12 +107,12 @@ function k26HutCow(t, W) {
 function k26HutThief(t, W) {
   const sneak = t < 77.6 && !k26In(t, 75.6, 76.42);
   const P = { kind: 'thief', y: K26_GR, s: 0.95, dir: 1, ...walk(K26_HTX, t, { stride: K26_STRIDE * 0.95, amp: 40 }), mouth: 'closed', seed: 8 };
-  const myH = [P.x, 712], dH = [W.D.x, 690], sleepH = [414, 854];
+  const myH = [P.x, 712], dH = [W.D.x, 690], sleepH = [394, 854];
   P.gaze = lookAt(myH, sleepH);
   if (t < 75.6) { P.handR = PERSON_HANDS.hush.R; P.tip = 0.12; }
   if (sneak) { P.tip = 0.12; P.y -= Math.abs(Math.sin(P.ph)) * 6 * P.amp; if (t >= 76.42) { P.handL = [22, -132]; P.handR = [30, -122]; P.gaze = lookAt(myH, K26_KNOT); } }
   if (k26In(t, 75.6, 76.42)) { const fr = walk(K26_HTX, 75.45, { stride: K26_STRIDE * 0.95, amp: 40 }); P.ph = fr.ph; P.amp = 1; P.tip = 0.12; P.gaze = [0, 0.05]; P.eyes = 'wide'; P.noBlink = true; P.handR = PERSON_HANDS.hush.R; if (t > 76.1) { P.amp = 0; P.mouth = 'o'; P.eyes = 'open'; } }
-  if (k26In(t, 77.6, 79.54)) { P.tip = 0.2; P.handRW = [K26_KNOT[0] - 24, K26_KNOT[1] + 8]; P.mouth = 'open'; P.gaze = lookAt(myH, K26_KNOT); P.noBlink = true; if (t >= 78.82) { P.gaze = gazePlan(t, [[78.82, lookAt(myH, dH)]], 0.07); P.eyes = 'wide'; P.mouth = 'o'; } }
+  if (k26In(t, 77.6, 79.54)) { P.tip = 0.2; P.handRW = [K26_KNOT[0] - 20, K26_KNOT[1] + 4]; P.tip = 0.26; P.mouth = 'open'; P.gaze = lookAt(myH, K26_KNOT); P.noBlink = true; if (t >= 78.82) { P.gaze = gazePlan(t, [[78.82, lookAt(myH, dH)]], 0.07); P.eyes = 'wide'; P.mouth = 'o'; } }
   if (k26In(t, 79.54, 80.5)) { P.dir = -1; P.handL = [-60 + 20 * Math.sin(t * 30), -170]; P.handR = [60 - 20 * Math.sin(t * 30), -170]; P.mouth = 'o'; P.gaze = lookAt(myH, dH); }
   if (t >= 80.5) { P.dir = -1; P.gaze = lookAt(myH, dH); P.look = 0.6; }   // v2: turned in toward the devil
   if (k26In(t, 86.5, 100.0)) { P.sq = 0.94; P.tip = -0.05; }   // the devil looms, the thief shrinks
@@ -136,7 +138,7 @@ function k26HutThief(t, W) {
   if (k26In(t, 107.06, 108.9)) { P.handL = [-104, -150]; P.handR = PERSON_HANDS.pointUp.R; P.talk = talk(t, [[107.06, 108.4]], 2) * 0.8; P.gaze = t < 107.6 ? lookAt(myH, W.cowHead) : lookAt(myH, dH); P.tip = 0.08; if (t >= 108.3) { P.handR = [118, -150]; P.handL = [-30, -120]; P.tip = 0.12 + 0.06 * pulse(t, 108.3, 0.3); } }
   if (k26In(t, 109.0, 109.64)) { P.handR = [44 + 10 * Math.sin(t * 30), -215]; }
   if (k26In(t, 109.64, 111.4)) { P.handL = [-22, -238 + 6 * Math.sin(t * 16)]; P.handR = [22, -238 - 6 * Math.sin(t * 16)]; P.mouth = 'open'; P.talk = 0.3; P.lid = 0.3; }
-  if (k26In(t, 111.44, 113.06)) { P.eyes = 'wide'; P.noBlink = true; P.gaze = lookAt(myH, [410, 880]); P.mouth = 'o'; P.look = -0.7; if (t > 112.4) { P.tip = -0.2; P.handL = [-(70 - 30 * k26B(t, 112.5, 0.4)), -60]; } }
+  if (k26In(t, 111.44, 113.06)) { P.eyes = 'wide'; P.noBlink = true; P.gaze = lookAt(myH, [390, 880]); P.mouth = 'o'; P.look = -0.7; if (t > 112.4) { P.tip = -0.2; P.handL = [-(70 - 30 * k26B(t, 112.5, 0.4)), -60]; } }
   if (k26In(t, 113.06, 115.2)) { P.handL = PERSON_HANDS.palmsUp.L; P.handR = PERSON_HANDS.palmsUp.R; P.talk = talk(t, [[113.4, 115.1]], 1) * 0.7; P.gaze = lookAt(myH, dH); }
   if (k26In(t, 115.22, 115.78)) { const h = Math.sin((t - 115.22) * 17); P.tip = -0.15; P.handL = [-50 - 14 * h, -130]; P.handR = [-30 - 14 * h, -140]; P.mouth = 'closed'; }
   // S11 louder
@@ -146,19 +148,22 @@ function k26HutThief(t, W) {
   // S12 the idea, the shout
   if (k26In(t, 123.66, 125.0)) { P.gaze = gazePlan(t, [[123.66, lookAt(myH, dH)], [123.9, lookAt(myH, sleepH)], [124.3, lookAt(myH, dH)], [124.6, lookAt(myH, sleepH)]], 0.07); P.mouth = 'smile'; P.handR = [40, -150]; }
   if (k26In(t, 125.0, 125.94)) { P.tip = -0.15; P.sq = K.lerp(1, 0.92, k26B(t, 125.0, 0.7)); P.drop = -10; P.mouth = 'o'; P.handL = [-40, -110]; P.handR = [40, -110]; }
-  if (t >= 125.94 && t < 143.7) { P.dir = t < 134.0 ? -1 : 1; P.look = 0.5; P.gaze = lookAt([P.x, 712], sleepH); const [, l] = hop(t, 125.94, 0.36, 0, 0, 50); P.y -= l; P.sq = landSquash(t, 126.3, 0.15);
-    // v2: the thief shouts from the far side of the sleeper's head, clear of the devil
+  if (t >= 125.94 && t < 143.7) { P.dir = t < 134.0 ? -1 : 1; P.look = 0.5; P.gaze = lookAt([P.x, 740], sleepH); const [, l] = hop(t, 125.94, 0.36, 0, 0, 50); P.y -= l; P.sq = landSquash(t, 126.3, 0.15);
+    // v3: lands kneeling on the floor behind the sleeper's hips (window side of the head), leaning over the head; only a hand touches him
+    P.kneel = t < 126.3 ? 0 : k26B(t, 126.3, 0.2); P.tip = t < 134.0 ? 0.12 : 0.04;
     if (t < 127.72) { P.handL = [-40, -150]; P.handR = [60, -175]; P.talk = talk(t, [[126.86, 127.32]]) * 0.6; P.eyes = 'wide'; P.noBlink = true; }
-    else if (t < 128.8) { P.sq = settleTo(t, 127.72, 1, 1.1, 0.35); P.handR = PERSON_HANDS.cupMouth.R; P.handL = [-34, -178]; P.tip = 0.14; P.talk = talk(t, [[127.72, 128.7]]) * 0.8; }
-    else if (t < 129.88) { P.handR = PERSON_HANDS.cupMouth.R; P.handL = [-34, -178]; P.tip = 0.24; P.talk = 1; P.sq = 1.06; P.eyes = 'wide'; }
+    else if (t < 128.12) { P.sq = settleTo(t, 127.72, 1, 1.1, 0.35); P.handR = PERSON_HANDS.cupMouth.R; P.handL = [-34, -178]; P.talk = talk(t, [[127.72, 128.1]]) * 0.8; }
+    else if (t < 128.8) { const A = W.A; P.handRW = [A.x - 70 + 6 * Math.sin(t * 40), 862 + 4 * Math.cos(t * 40)]; P.handL = [-34, -178]; P.talk = talk(t, [[128.12, 128.7]]) * 0.8; P.gaze = lookAt([P.x, 740], sleepH); }   // shakes his shoulder
+    else if (t < 129.88) { P.handR = PERSON_HANDS.cupMouth.R; P.handL = [-34, -178]; P.tip = 0.2; P.talk = 1; P.sq = 1.06; P.eyes = 'wide'; }
     else if (t < 131.7) { P.handR = [118, -158]; P.handL = [-30, -110]; P.talk = t < 130.56 ? 0.5 : 0.9; P.gaze = lookAt(myH, dH); P.tip = 0.08 + 0.05 * pulse(t, 130.56, 0.3); P.brow = 1; }
-    else if (t < 132.42) { const d = k26B(t, 131.7, 0.6); P.handL = [-30, -250 + 70 * d]; P.handR = [30, -250 + 70 * d]; P.talk = 0.6; P.gaze = lookAt(myH, dH); }
-    else if (t < 133.64) { P.gaze = lookAt(myH, dH); P.mouth = 'smile'; P.handL = PERSON_HANDS.folded.L; P.handR = PERSON_HANDS.folded.R; P.tip = -0.04; }
+    else if (t < 132.42) { const d = k26B(t, 131.7, 0.5, 'inOut'); P.handL = [-K.lerp(80, 42, d), K.lerp(-262, -176, d)]; P.handR = [K.lerp(80, 42, d), K.lerp(-262, -176, d)]; P.talk = 0.6; P.gaze = lookAt(myH, dH); P.tip = 0.04;   // the sack over a head
+      if (t >= 132.25) { P.handL = [-40, -110]; P.handR = [40, -110]; } }
+    else if (t < 133.64) { P.gaze = lookAt(myH, dH); P.mouth = 'smile'; P.handL = PERSON_HANDS.folded.L; P.handR = PERSON_HANDS.folded.R; P.tip = 0; }
     else if (t < 134.96) { P.gaze = lookAt(myH, dH); P.mouth = 'o'; P.handR = [40, -120]; P.eyes = 'wide'; }
     else if (t < 136.26) { P.mouth = 'open'; P.eyes = 'wide'; P.noBlink = true; P.drop = 6; P.gaze = lookAt(myH, dH); }
-    else if (t < 137.38) { P.handL = [-24, -232]; P.handR = [24, -232]; P.mouth = 'o'; P.gaze = [0.2, -1]; P.drop = 8; }
-    else { P.handR = [104, -160]; P.gaze = lookAt(myH, dH); P.mouth = 'frown'; P.brow = 1; P.sq = 1 + 0.02 * Math.sin(t * 14); }
-    if (t >= 139.52) { P.handR = [104, -160]; if (t >= 142.9) { P.eyes = 'wide'; P.gaze = lookAt(myH, [560, 800]); P.mouth = 'o'; } } }
+    else if (t < 138.54) { P.handR = PERSON_HANDS.chest.R; P.handL = [-40, -110]; P.mouth = 'o'; P.brow = -0.6; P.look = 0.6 * Math.sin((t - 136.4) * 9); P.gaze = [0, 0.05]; P.drop = -2; }   // his own "who, me?"
+    else { P.handR = [96, -172]; P.gaze = lookAt(myH, dH); P.mouth = 'frown'; P.brow = 1; P.sq = 1 + 0.02 * Math.sin(t * 14); }   // crossed pointing, short of the devil
+    if (t >= 139.52) { P.handR = [96, -172]; if (t >= 142.9) { P.eyes = 'wide'; P.gaze = lookAt(myH, [560, 800]); P.mouth = 'o'; } } }
   if (t >= 143.7 && t < 149.98) { P.dir = 1; P.handLW = null; P.handR = [70, -170]; P.handL = [60, -150]; P.eyes = 'wide'; P.mouth = 'open'; P.noBlink = true; P.x += tremble(t, 2.5, 11); P.gaze = lookAt([P.x, 712], [K26_AX2, 700]);
     if (t >= 145.14) P.gaze = lookAt([P.x, 712], [140, 760]);
     if (t >= 148.86) { P.handL = [-40, -96]; P.handR = [-34, -100]; P.mouth = 'o'; P.gaze = [0.3, -1]; P.x = K26_HTX(t); P.eyes = 'open'; P.lid = 0.3; P.noBlink = true; P.tilt = 0.1 * Math.sin(t * 6); } }
@@ -169,12 +174,12 @@ function k26HutThief(t, W) {
 function k26HutDevil(t, W) {
   const sneak = t < 77.4 && !k26In(t, 75.6, 76.42);
   const P = { x: K26_HDX(t), y: K26_GR, s: 1.08, dir: 1, mouth: 'smile', lid: 0.4, seed: 12, ...walk(K26_HDX, t, { stride: K26_STRIDE * 1.08, amp: 45 }) };
-  const myH = [P.x, 690], tH = [W.T.x, 712], sleepH = [414, 854];
+  const myH = [P.x, 690], tH = [W.T.x, 712], sleepH = [394, 854];
   P.gaze = lookAt(myH, sleepH);
   if (sneak && t >= 74.3) { P.tailHold = true; P.tip = 0.08; P.capeLag = 30 * P.amp; P.sack = { open: 0, rot: -2.6 }; P.handR = [30, -200]; P.y -= Math.abs(Math.sin(P.ph)) * 5 * P.amp; }
   if (k26In(t, 75.6, 76.42)) { const fr = walk(K26_HDX, 75.45, { stride: K26_STRIDE * 1.08, amp: 45 }); P.ph = fr.ph; P.amp = 1; P.tailHold = true; P.sack = { open: 0, rot: -2.6 }; P.handR = [30, -200]; P.gaze = [0, 0.05]; P.eyes = 'wide'; P.lid = 0; P.noBlink = true; if (t > 76.1) { P.amp = 0; P.eyes = 'open'; P.mouth = 'o'; } }
   if (k26In(t, 76.42, 77.78)) { P.sack = { open: k26B(t, 77.0, 0.5), rot: Math.PI }; P.handR = [60, -170]; P.gaze = lookAt(myH, sleepH); P.lid = 0.5; }
-  if (k26In(t, 77.78, 79.54)) { const d = k26B(t, 77.78, 1.0, 'inOut'); P.sack = { open: 1, rot: Math.PI }; P.handRW = [406, K.lerp(740, 776, d)]; P.tip = 0.12; P.mouth = 'open'; P.lid = 0.3; P.noBlink = true; if (t >= 78.82) { P.gaze = gazePlan(t, [[78.82, lookAt(myH, tH)]], 0.07); P.eyes = 'wide'; P.lid = 0; P.mouth = 'o'; } }
+  if (k26In(t, 77.78, 79.54)) { const d = k26B(t, 77.78, 1.0, 'inOut'); P.sack = { open: 1, rot: Math.PI }; P.handRW = [386, K.lerp(740, 776, d)]; P.tip = 0.12; P.mouth = 'open'; P.lid = 0.3; P.noBlink = true; if (t >= 78.82) { P.gaze = gazePlan(t, [[78.82, lookAt(myH, tH)]], 0.07); P.eyes = 'wide'; P.lid = 0; P.mouth = 'o'; } }
   if (k26In(t, 79.54, 80.5)) { P.handL = [-60 + 20 * Math.sin(t * 30 + 1), -170]; P.handR = [60 - 20 * Math.sin(t * 30 + 1), -170]; P.mouth = 'o'; P.gaze = lookAt(myH, tH); P.sack = null; }
   if (t >= 80.5) { P.gaze = lookAt(myH, tH); P.look = 0.6; }
   if (k26In(t, 86.5, 100.0)) { P.sq = 1.05; P.tip = 0.08; }   // v2: he looms during his case
@@ -200,7 +205,7 @@ function k26HutDevil(t, W) {
   if (k26In(t, 107.0, 116.6)) { P.lid = 0.5; P.mouth = 'closed'; P.handL = PERSON_HANDS.folded.L; P.handR = PERSON_HANDS.folded.R; P.tailLash = 0.15 * Math.sin(t * 4); P.tip = -0.06 - 0.06 * pulse(t, 108.3, 0.5); }
   if (k26In(t, 103.52, 116.6)) P.tip = Math.min(P.tip || 0, -0.06);   // v2: the listener leans back
   if (k26In(t, 109.64, 111.4)) { P.brow = 1; P.mouth = 'frown'; }
-  if (k26In(t, 111.44, 113.06)) { P.eyes = 'wide'; P.lid = 0; P.noBlink = true; P.gaze = lookAt(myH, [410, 880]); }
+  if (k26In(t, 111.44, 113.06)) { P.eyes = 'wide'; P.lid = 0; P.noBlink = true; P.gaze = lookAt(myH, [390, 880]); }
   if (k26In(t, 115.78, 116.6)) { P.lid = 1 - Math.abs(1 - 2 * K.clamp((t - 115.78) / 0.6)); P.noBlink = true; }
   // S11
   if (k26In(t, 116.6, 120.76)) { P.tip = 0.06; P.talk = talk(t, [[117.9, 119.6]], 1) * 0.9; P.handR = [70, -150]; P.brow = 1; P.lid = 0.2; if (t >= 118.96) { P.sq = 1.06; P.capeFlare = 1; } }
@@ -215,8 +220,8 @@ function k26HutDevil(t, W) {
   if (k26In(t, 132.42, 133.64)) { P.sq = K.lerp(1, 0.92, k26B(t, 132.42, 0.9)); P.tip = -0.12; P.capeFlare = 1; P.steam = 1; P.brow = 1; P.mouth = 'frown'; P.lid = 0.3; }
   if (t >= 133.64 && t < 143.75) { const [, l] = hop(t, 133.64, 0.85, 0, 0, 170); P.y -= l; P.sq = t < 134.49 ? 1.08 : landSquash(t, 134.49, 0.16); P.capeLag = t < 134.49 ? 60 : 0; P.capeFlare = t < 134.49 ? 1 : 0; P.dir = t < 134.0 ? 1 : -1; P.gaze = lookAt(myH, tH); P.brow = 1;
     if (t >= 134.96 && t < 136.26) { P.handL = [-34, -178]; P.handR = PERSON_HANDS.cupMouth.R; P.talk = 1; }
-    if (t >= 136.26) { P.handR = [104, -160]; P.talk = t < 137.38 ? 0.8 : 0; P.mouth = 'frown'; }
-    if (t >= 137.38) { P.handL = [-104, -150]; P.sq = 1 + 0.02 * Math.sin(t * 14 + 2); }
+    if (t >= 136.26) { P.handR = [100, -106]; P.handL = [-34, -100]; P.talk = t < 137.38 ? 0.8 : 0; P.mouth = 'frown'; }   // v3: stops short of the thief, below his chin; badge half down by his side
+    if (t >= 137.38) { P.sq = 1 + 0.02 * Math.sin(t * 14 + 2); }
     if (t >= 142.9) { P.eyes = 'wide'; P.lid = 0; P.gaze = lookAt(myH, [560, 800]); P.mouth = 'o'; } }
   if (t >= 143.75 && t < 149.98) { const [, l] = hop(t, 143.9, 0.55, 0, 0, 90); P.y -= l; P.dir = -1; P.handR = [70, -160]; P.handL = [60, -140]; P.eyes = 'wide'; P.lid = 0; P.mouth = 'open'; P.noBlink = true; P.x += tremble(t, 2.5, 10);
     if (t >= 148.86) { P.handL = [-40, -96]; P.handR = [-34, -100]; P.mouth = 'o'; P.gaze = [-0.3, -1]; P.x = K26_HDX(t); P.eyes = 'open'; P.lid = 0.3; P.dir = -1; P.tilt = -0.1 * Math.sin(t * 6 + 1); } }
@@ -227,21 +232,26 @@ function k26HutDevil(t, W) {
 // neighbours: tall man with the lamp, short one with a stick, a woman with a ladle (staggered entrances)
 function k26Neighbours(t) {
   const out = [];
-  [{ x: 205, s: 1.05, costume: 'villager', i: 0 }, { x: 140, s: 0.85, costume: 'servant', i: 1, hold: 'stick' }, { x: 270, s: 0.92, costume: 'villageWoman', i: 2 }].forEach((N) => {
-    const t0 = 146.86 + stagger(N.i, 0.14), xf = k26Fn([[t0, -120 - N.i * 30], [t0 + 0.6, N.x, 'out'], [166.66 + stagger(N.i, 0.25), N.x], [168.4 + stagger(N.i, 0.25), -160, 'in']]);
+  [{ x: 228, s: 1.05, costume: 'villager', i: 0 }, { x: 170, s: 0.85, costume: 'servant', i: 1, hold: 'stick' }, { x: 290, s: 0.92, costume: 'villageWoman', i: 2 }].forEach((N) => {
+    const t0 = 146.86 + stagger(N.i, 0.14), xf = k26Fn([[t0, -120 - N.i * 30], [t0 + 0.6, N.x, 'out'], [157.1 + stagger(N.i, 0.2), N.x], [158.5 + stagger(N.i, 0.2), -160, 'in']]);   // v3: they wave and leave after the lamp is hung
     if (t < t0) return;
     const P = { y: K26_GR, s: N.s, dir: 1, costume: N.costume, ...walk(xf, t, { stride: K26_STRIDE * N.s, amp: 55 }), seed: 20 + N.i, mouth: 'o', eyes: 'wide', hold: N.hold };
     if (N.i === 1) P.pal = { robe: '#3f9d4a', dot: '#2b7a38' };
     const h = [P.x, 700]; P.gaze = t < 147.6 + stagger(N.i) ? [1, 0] : look(t, h, [[147.6 + stagger(N.i, 0.2), [K26_AX2, 700]], [148.2 + stagger(N.i, 0.2), [K26_TEND + 50, 700]], [150.74, [530, 470]], [152.4, [K26_DEND, 890]], [154.88, [K26_AX2, 760]]], 0.15);
     if (N.i === 0) { P.handR = t < 156.54 ? [56, -150] : t < 157.0 ? null : [40, -110]; if (k26In(t, 156.54, 157.0)) P.handRW = [K26_HOOK[0] + 4, K26_HOOK[1] + 20]; }
     if (N.i === 1) P.handR = t < 154.88 ? [40, -170] : [40, -110];
-    if (N.i === 2) { P.handR = t >= 147.9 && t < 154.88 ? [96, -160] : [50, -120]; }
+    if (N.i === 2) { P.handR = t >= 147.9 && t < 154.88 ? [44, -176] : [50, -120]; }   // v3: ladle raised, not reaching toward the thief
     if (t >= 154.88) { P.eyes = 'open'; P.mouth = 'smile'; }
     if (k26In(t, 156.6, 157.2) && N.i > 0) { P.handL = PERSON_HANDS.palmsUp.L; P.handR = PERSON_HANDS.palmsUp.R; }
-    if (k26In(t, 166.66, 168.0)) { P.handR = [64, -196 + 8 * Math.sin(t * 12 + N.i)]; P.mouth = 'smile'; }
-    if (t > 166.66 + stagger(N.i, 0.25) + 0.3) P.dir = -1;
+    if (k26In(t, 157.0, 158.6) && !(N.i === 0 && t < 157.0)) { P.handR = [64, -196 + 8 * Math.sin(t * 12 + N.i)]; P.mouth = 'smile'; }   // small wave
+    if (t > 157.1 + stagger(N.i, 0.2) + 0.1) P.dir = -1;
     out.push(P); });
   return out;
+}
+// v3: the sleeper's Z's rising up-LEFT (toward the empty wall), count from the sleep meter: 3 at 10-7, 2 at 6-3, 1 small at 2, one faint shrinking Z at 1
+function k26ZLeft(ctx, x, y, t, v) {
+  const n = v >= 7 ? 3 : v >= 3 ? 2 : 1, small = v <= 2 ? 0.75 : 1, fade = v <= 1 ? 0.7 * (1 - K.clamp((t - 135.0) / 4.5)) : 0.6, shrink = v <= 1 ? 1 - 0.5 * K.clamp((t - 135.0) / 4.5) : 1;
+  for (let i = 0; i < n; i++) { const u = ((t * 0.33 + i / n) % 1), sz = (30 + u * 30) * small * shrink; ctx.save(); ctx.globalAlpha = fade * Math.min(1, u * 5) * (1 - Math.pow(u, 3)); sfx(ctx, 'Z', x - u * 70 + Math.sin(u * 6 + i) * 8, y - u * 140, sz, 1, { rot: 0.2 - u * 0.4, fill: C.white }); ctx.restore(); }
 }
 // ---------- the world ----------
 function k26HutWorld(ctx, t, o = {}) {
@@ -258,8 +268,8 @@ function k26HutWorld(ctx, t, o = {}) {
   // lamp: carried, on the stool, blown out; the neighbours' lamp; hung on the hook
   const W = { T: { x: K26_HTX(t) }, D: { x: K26_HDX(t) } };
   const cow0 = k26HutCow(t, { ...W, cowHead: [K26_HCX(t) - 120, 760], lastX: 400 }); W.cowHead = k26CowHead(cow0);
-  W.lastX = t < 79.54 ? (t < 77.6 ? K26_HTX(t) : 800) : (Math.floor(t / 2) % 2 ? K26_HTX(t) : K26_HDX(t));
-  const cow = k26HutCow(t, W), A = k26HutAscetic(t, W);
+  W.lastX = t < 79.54 ? (t < 77.6 ? K26_HTX(t) : K26_REACHX) : (Math.floor(t / 2) % 2 ? K26_HTX(t) : K26_HDX(t));
+  const cow = k26HutCow(t, W), A = k26HutAscetic(t, W); W.A = A;
   const T = k26HutThief(t, W); W.T = T; const D = k26HutDevil(t, W); W.D = D;
   let lampPos = null, lampOn = 0;
   if (t >= 65.0 && t < 146.86) { lampPos = K26_STOOLLAMP; lampOn = t < 71.95 ? 1 : 1 - k26B(t, 71.95, 0.1, 'lin'); }
@@ -280,7 +290,7 @@ function k26HutWorld(ctx, t, o = {}) {
     if (t >= 64.0 && t < 65.0) { const h = k26Hand(A, 1); k26Lamp(ctx, h[0] + 6, h[1] + 8, 1, t); }
   };
   // cast order: intruders behind the sleeper and the cow (they stand deeper in the room)
-  const thiefFront = k26In(t, 76.42, 80.5);   // v2: at the knot the thief stands in front of the cow's rump
+  const thiefFront = false;   // v3: the cow is drawn in front of the thief at the knot (she stays fully visible)
   const intr = () => { if (t >= 74.32 && t < 151.6) k26Devil(ctx, D);
     if (t >= 73.92 && t < 151.44 && !thiefFront) person(ctx, T);
     else if (t >= 151.44 && t < 151.84) { ctx.save(); ctx.beginPath(); ctx.rect(480, 420, 100, 100); ctx.clip(); person(ctx, { kind: 'thief', x: 530, y: 436, s: 0.66, rot: Math.PI, dir: 1, ph: t * 36, amp: 1, noBlink: true, sq: 1 }); ctx.restore(); }
@@ -299,18 +309,25 @@ function k26HutWorld(ctx, t, o = {}) {
   // the badge
   if (!cu) k26BadgeWorld(ctx, t, T, D);
   // neighbours and their lamp
-  for (const N of NB) { person(ctx, N); if (N === NB[0] && t < 156.54) { const h = k26Hand(N, 1); k26Lamp(ctx, h[0] + 6, h[1] + 4, 1, t); L = { x: h[0], y: h[1], R: 260, on: 1 }; } if (N === NB[2]) { const h = k26Hand(N, 1); k26Ladle(ctx, [h[0] - 8, h[1] + 14], [h[0] + 24, h[1] - 40]); } }
+  if (NB[0] && t < 156.54) L = { x: NB[0].x + 56 * NB[0].s * NB[0].dir, y: NB[0].y - 150 * NB[0].s, R: 260, on: 1 };   // v3: the neighbours are drawn after the front layer (below)
   if (t >= 156.54) { const hx = K26_HOOK; const u = k26B(t, 156.54, 0.4); const p = t < 157.0 ? [K.lerp(310, hx[0], u), K.lerp(740, hx[1] + 44, u)] : [hx[0], hx[1] + 44]; seg(ctx, hx[0] - 10, hx[1], hx[0] + 4, hx[1], 6, WOOD, 2); if (t >= 157.0) seg(ctx, hx[0], hx[1], p[0], p[1] - 20, 2, C.black, 0); k26Lamp(ctx, p[0], p[1], 1, t); }
   hutRoom(ctx, { ...K26_HUT, sky: false, layer: 'front', door, dark: 0, t });
   // darkness over the walls and roof (the front layer)
   k26HutDark(ctx, dk, L, [[96, 190, 816, 64], [100, 250, 40, 652], [858, 250, 40, 652]]);
+  // v3: neighbours stand in front of the open door leaf (clipped at the wall's inner face, so they still come in through the doorway)
+  if (NB.length) { ctx.save(); ctx.beginPath(); ctx.rect(140, 0, 900, 1230); ctx.clip();
+    for (const N of NB) { person(ctx, N); if (N === NB[0] && t < 156.54) { const h = k26Hand(N, 1); k26Lamp(ctx, h[0] + 6, h[1] + 4, 1, t); } if (N.costume === 'villageWoman') { const h = k26Hand(N, 1); k26Ladle(ctx, [h[0] - 8, h[1] + 14], [h[0] + 14, h[1] - 44]); } }
+    ctx.restore(); }
+  // v3: the cow's rump is drawn again over the corner post (she lies in front of it)
+  if (!cu && t >= 66.9) { ctx.save(); ctx.beginPath(); ctx.rect(852, 720, 120, 200); ctx.clip(); k26Cow(ctx, cow); ctx.restore(); }
   // light glows
   if (lampOn > 0) k26Glow(ctx, K26_STOOLLAMP[0] + 18, K26_STOOLLAMP[1] - 40, 190, lampOn * 0.8);
   if (t >= 64.0 && t < 65.0) { const h = k26Hand(A, 1); k26Glow(ctx, h[0], h[1] - 20, 200, 0.8); }
   if (t >= 146.86 && t < 156.54 && NB[0]) { const h = k26Hand(NB[0], 1); k26Glow(ctx, h[0], h[1] - 20, 200 + 260 * k26B(t, 148.34, 0.5), 0.9); }
   if (t >= 156.54) k26Glow(ctx, K26_HOOK[0] + 10, K26_HOOK[1] + 20, 420, 0.6);
   // sleeper's Z Z Z, sweat, poof, sack, puff of breath
-  if (t >= 72.3 && t < 140.6 && !k26In(t, 75.64, 76.6) && !k26In(t, 97.54, 98.8) && !k26In(t, 111.9, 113.2) && !k26In(t, 127.34, 129.9)) { ctx.save(); ctx.globalAlpha = t >= 119.7 ? 0.55 : 0.9; zzz(ctx, 450, 800, t * (t >= 119.7 ? 0.6 : 1)); ctx.restore(); }
+  if (t >= 72.3 && t < 125.94 && !k26In(t, 75.64, 76.6) && !k26In(t, 97.54, 98.8) && !k26In(t, 111.9, 113.2)) { ctx.save(); ctx.globalAlpha = t >= 119.7 ? 0.55 : 0.9; zzz(ctx, 430, 800, t * (t >= 119.7 ? 0.6 : 1)); ctx.restore(); }
+  if (t >= 125.94 && t < 139.5 && !k26In(t, 127.34, 129.9)) k26ZLeft(ctx, 350, 812, t, k26SleepV(t));   // v3: up and to the LEFT, away from the thief; thinned with the meter
   if (k26In(t, 140.54, 140.9)) { ctx.save(); ctx.globalAlpha = 1 - (t - 140.54) / 0.36; star(ctx, 490, 760, 40 * k26B(t, 140.54, 0.15), C.white, 0.3); ctx.restore(); }
   if (k26In(t, 71.85, 72.2)) { ctx.save(); ctx.lineWidth = 5; ctx.strokeStyle = C.white; ctx.lineCap = 'round'; for (let i = 0; i < 3; i++) { const u = K.clamp((t - 71.85) / 0.3); ctx.beginPath(); ctx.moveTo(450 - u * 200, 700 + i * 14); ctx.lineTo(420 - u * 200, 700 + i * 14 + 6); ctx.stroke(); } ctx.restore(); }
   for (const [a, b, P] of [[75.64, 76.42, T], [75.64, 76.42, D], [148.86, 149.9, T], [148.86, 149.9, D], [97.54, 98.6, T]]) if (k26In(t, a, b)) { const h = k26Head(P); drops(ctx, h[0] + 40, h[1] - 30, t, 1, '#9ec2ff'); }
@@ -338,7 +355,9 @@ function k26BadgeWorld(ctx, t, T, D) {
   if (t < 121.94) { k26Badge(ctx, K26_MID + 6 * Math.sin(t * 9), 768, 0.9); return; }
   const tr = k26B(t, 121.94, 0.25, 'back');
   if (t < 122.1) { k26Badge(ctx, K26_MID, 768, 0.9, { tear: tr }); return; }
-  if (t < 149.98) { if (D.alpha !== 0) k26Badge(ctx, hD[0], hD[1] - 6, 0.75, { half: 'L', tear: 1, rot: -0.3 }); k26Badge(ctx, hT[0], hT[1] - 6, 0.75, { half: 'R', tear: 1, rot: 0.3 }); return; }
+  if (t < 149.98) {   // v3: during the shouting (125.94-143.7) both halves are tucked in the belts, so no badge crosses a face; the devil's half goes to his low left hand on «هذا»
+    const sh = t >= 125.94 && t < 143.7, hD2 = sh ? (t >= 136.26 && D.hands ? k26Hand(D, 0) : [D.x - 8 * (D.dir || 1), D.y - 92 * 1.08]) : hD, hT2 = sh ? [T.x + 14 * (T.dir || 1), T.y - (T.kneel ? 100 : 110) * 0.95] : hT;
+    if (D.alpha !== 0) k26Badge(ctx, hD2[0], hD2[1] - 6, sh ? 0.6 : 0.75, { half: 'L', tear: 1, rot: -0.3 }); k26Badge(ctx, hT2[0], hT2[1] - 6, sh ? 0.6 : 0.75, { half: 'R', tear: 1, rot: 0.3 }); return; }
   const u = K.clamp((t - 149.98) / 0.6), y1 = K.lerp(760, 884, u * u);
   if (t < 165.3) k26Badge(ctx, K.lerp(K26_DEND - 20, 610, u), y1, 0.75, { half: 'L', tear: 1, rot: u * 1.4 }); k26Badge(ctx, K.lerp(K26_TEND + 30, 400, u), y1, 0.75, { half: 'R', tear: 1, rot: -u * 1.2 });
   if (t >= 165.3) { const h = [K26_AX2 - 30, 700]; k26Badge(ctx, h[0], h[1], 0.75, { half: 'L', tear: 1, rot: Math.sin((t - 165.3) * 4) }); }
@@ -359,7 +378,7 @@ function k26HutOver(ctx, t, cam, S, W) {
   const wb = (txt, at, a, b, size, side) => { if (!k26In(t, a, b)) return; k26Balloon(ctx, at[0] + side * 60, at[1] - 150, txt.length * size * 0.5 + 60, size * 2.1, [at[0] + side * 10, at[1] - 40], k26B(t, a, 0.3, 'lin') * k26Fade(t, a, b, 0.15), (c) => sfx(c, txt, 0, 4, size, 1, { fill: C.white })); };
   wb('ME FIRST!', tH, 82.18, 83.6, 36, 1); wb('NO, ME!', dH, 83.58, 85.1, 36, -1);
   // the double reach: gap arrows (77.78-79.5)
-  if (k26In(t, 77.9, 79.54)) { ctx.save(); ctx.globalAlpha = k26Fade(t, 77.9, 79.54, 0.15); const h = P(K26_KNOT[0] - 22, K26_KNOT[1] + 4), k = P(K26_KNOT[0], K26_KNOT[1]); k26Dash(ctx, [h[0], h[1] - 30], [k[0], k[1] - 30], 1, C.yellow); const s0 = P(408, 790), s1 = P(408, 826); k26Dash(ctx, [s0[0] - 50, s0[1]], [s1[0] - 50, s1[1]], 1, C.yellow); ctx.restore(); }
+  if (k26In(t, 77.9, 79.54)) { ctx.save(); ctx.globalAlpha = k26Fade(t, 77.9, 79.54, 0.15); const h = P(K26_KNOT[0] - 22, K26_KNOT[1] + 4), k = P(K26_KNOT[0], K26_KNOT[1]); k26Dash(ctx, [h[0], h[1] - 30], [k[0], k[1] - 30], 1, C.yellow); const s0 = P(388, 790), s1 = P(388, 826); k26Dash(ctx, [s0[0] - 50, s0[1]], [s1[0] - 50, s1[1]], 1, C.yellow); ctx.restore(); }
   // S9 the devil's balloon, then his strip (blue); S10 the thief's strip (red)
   if (k26In(t, 88.78, 90.9)) { const f = t < 90.7 ? 1 : 1 - (t - 90.7) / 0.2; k26Balloon(ctx, 260, 240, 300, 220, [dH[0] - 10, dH[1] - 40], k26B(t, 88.78, 0.3, 'lin') * f, (c) => { const d = k26B(t, 88.9, 0.7, 'inOut'); k26Sack(c, 40, -10, 0.75, { open: 1 }); c.save(); c.beginPath(); c.rect(-200, -200, 400, 190 + 80 * (1 - d)); c.clip(); k26IconMan(c, 40 - 60 * (1 - d), 30 + 60 * (1 - d), 0.42, { mouth: 'o', lid: 1 }); c.restore(); if (t >= 89.86) k26Badge(c, -70, -30, 0.8 * k26Pop(t, 89.86, 0.25)); }); }
   const strip = (a, b, col, frames) => { if (!k26In(t, a, b)) return; const out = b - t < 0.3 ? (b - t) / 0.3 : 1; ctx.save(); ctx.globalAlpha = out;
@@ -391,7 +410,7 @@ function k26HutOver(ctx, t, cam, S, W) {
   { const m = P(K26_DEND + 40, 600); k26Word(ctx, t, 'POOF!', m[0], m[1], 151.34, 152.4, 90, { fill: C.white }); }
   // S14 labels
   { const s = P(K26_DEND - 10, 870), k = P(K26_KNOT[0], K26_KNOT[1]); k26Lab(ctx, S, t, 'EMPTY', s[0], s[1] - 140, 153.28, 154.9); k26Arr(ctx, S, t, [s[0], s[1] - 120], [s[0], s[1] - 30], 153.28, 154.9, { bend: 0.1 });
-    k26Lab(ctx, S, t, 'STILL TIED', Math.min(820, k[0] - 120), k[1] - 170, 153.5, 154.9); k26Arr(ctx, S, t, [Math.min(820, k[0] - 120), k[1] - 150], [k[0] - 6, k[1] - 10], 153.5, 154.9, { bend: -0.2 });
+    k26Lab(ctx, S, t, 'STILL TIED', Math.min(820, k[0] + 70), k[1] - 170, 153.5, 154.9); k26Arr(ctx, S, t, [Math.min(820, k[0] + 70), k[1] - 150], [k[0] + 8, k[1] - 12], 153.5, 154.9, { bend: 0.2 });   // v3: from the right, clear of his face
     if (k26In(t, 153.82, 154.9)) { ctx.save(); ctx.globalAlpha = k26Fade(t, 153.82, 154.9, 0.15); S.label(ctx, 'STOLEN:', 360, 250, k26B(t, 153.82, 0.35), { size: 52, align: 'center' }); S.counter(ctx, 0, 640, 270, k26B(t, 153.95, 0.35), { size: 80 }); ctx.restore(); } }
   // sleep meter (right edge of the panel)
   if (t >= 72.14 && t < 145.6) { const v = k26SleepV(t), fl = (k26In(t, 75.64, 76.2) && Math.floor(t * 12) % 2) || (k26In(t, 122.7, 123.6) && Math.floor(t * 8) % 2) ? 0.5 : 1; ctx.save(); ctx.globalAlpha = fl * K.clamp((145.6 - t) / 0.4); ctx.translate(80, 360); ctx.scale(0.75, 0.75); k26Meter(ctx, 0, 0, v, t, k26B(t, 72.14, 0.3)); ctx.restore(); }
@@ -399,7 +418,7 @@ function k26HutOver(ctx, t, cam, S, W) {
   // S15 insets: how close each one came, then the quarrel that undid them
   if (t >= 159.64 && t < 165.3) { const open = k26B(t, 159.64, 0.4, 'back'), close2 = t > 164.9 ? 1 - k26B(t, 164.9, 0.4) : 1, merge = k26B(t, 163.08, 0.6, 'inOut');
     const r = 150 * open * close2, xl = K.lerp(240, 500, merge), xr = K.lerp(760, 500, merge), cy = 250;
-    if (merge < 1) { k26Inset(ctx, xl, cy, r, [800, 720], 1.0, (c) => k26HutWorld(c, 78.4, { inset: true })); k26Inset(ctx, xr, cy, r, [410, 800], 1.2, (c) => k26HutWorld(c, 78.4, { inset: true }), { col: C.red }); }
+    if (merge < 1) { k26Inset(ctx, xl, cy, r, [720, 770], 1.0, (c) => k26HutWorld(c, 78.4, { inset: true })); k26Inset(ctx, xr, cy, r, [390, 800], 1.2, (c) => k26HutWorld(c, 78.4, { inset: true }), { col: C.red }); }
     if (merge > 0.6) k26Inset(ctx, 500, cy, r * (1 + 0.15 * merge) * K.clamp((merge - 0.6) / 0.2), [K26_MID, 740], 1.4, (c) => k26HutWorld(c, t < 164.2 ? 121.4 : 122.2, { inset: true }));
     if (k26In(t, 161.32, 163.08)) { ctx.save(); ctx.globalAlpha = k26Fade(t, 161.32, 163.08, 0.15) * (0.75 + 0.25 * Math.sin(t * 10)); k26Dash(ctx, [xl + 20, cy - 70], [xl + 50, cy - 70], 1, C.yellow); k26Dash(ctx, [xr - 10, cy + 10], [xr - 10, cy + 50], 1, C.yellow); ctx.restore();
       k26Lab(ctx, S, t, 'SO CLOSE', xl, cy + r + 50, 161.32, 163.08, { size: 40 }); k26Lab(ctx, S, t, 'SO CLOSE', xr, cy + r + 50, 161.5, 163.08, { size: 40 }); } }

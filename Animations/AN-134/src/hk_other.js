@@ -1,58 +1,86 @@
 // ===== AN-134 other sets: S6 high view (feastSpread), S9 house diagram (hundredWindows), S15 treasury and the coin insert =====
-// ---------- S6: high view of the lawn, the hundred trays ----------
-const hkFeastT = (i) => 54.22 + 2.1 * Math.sqrt(i / 100);              // the ticks speed up
-const hkFeastN = (t) => Math.min(100, Math.floor(100 * Math.pow(K.clamp((t - 54.22) / 2.1), 2) + 1e-9));
-function hkHighBack() { return bake('hk:high', 1000, 1230, (c) => {
-  c.fillStyle = HK_LAWN; c.fillRect(0, 0, 1000, 1230); c.fillStyle = dotPat(c, HK_LAWND, 12, 0.3); c.fillRect(0, 0, 1000, 1230);
-  hkRug(c, 40, 960, 640, 1100, 1, 0, { skew: 40 });
-  for (let i = 0; i < 12; i++) shape(c, ell(-40 + i * 95, 40 + (i % 2) * 40, 120, 90, 24), GREEN, { lw: 6, seed: 830 + i, dot: GREEND, pitch: 10, rad: 0.3, da: 0.5 });
-  shape(c, K.rectPts(-10, 1150, 1020, 100), HK_CREAM, { lw: 5, seed: 836, dot: HK_CREAMD, pitch: 9, rad: 0.2, da: 0.4 }); }); }
+// ---------- S6: high view of the lawn, the hundred trays (v2, review note 5) ----------
+// one 10 x 10 block fills the panel (about 80 px per tray), the first trays land at 53.9 and the hundredth on مئة (56.32); on كل (57.36) the view
+// pulls back while two more blocks (sweets, jugs) slide in from the sides at the same tray size; the three watchers sit small on the lawn below
+const hkFeastT = (i) => 53.9 + 2.42 * Math.sqrt(i / 100);              // the ticks speed up
+const hkFeastN = (t) => (t < 53.9 ? 0 : Math.min(100, Math.floor(100 * Math.pow(K.clamp((t - 53.9) / 2.42), 2) + 1e-9) + 1));
+const HK_HI = { yTop: 330, yBot: 1000, w: 820, gap: 880, c: [500, 450] };
+const hkHighK = (t) => 1 - 0.5 * hkB(t, 57.36, 0.5);                  // pull-back scale about HK_HI.c
+const hkHighDX = (t) => 600 * (1 - hkB(t, 57.36, 0.55));                // the side blocks slide in from outside
+function hkHighBlocks(t) { const dx = hkHighDX(t); return [['fruit', 500], ['sweets', 500 - HK_HI.gap - dx], ['jugs', 500 + HK_HI.gap + dx]]; }
+const hkHighP = (x, y, t) => { const k = hkHighK(t); return [HK_HI.c[0] + (x - HK_HI.c[0]) * k, HK_HI.c[1] + (y - HK_HI.c[1]) * k]; };
+function hkHiRug(ctx, cx) { const x0 = cx - 460, w = 920, y0 = 250, h = 810;
+  shape(ctx, K.rectPts(x0, y0, w, h), C.yellow, { lw: 6, seed: 831, dot: HK_ORANGE, pitch: 10, rad: 0.25, da: 0.4 });
+  shape(ctx, K.rectPts(x0 + 26, y0 + 26, w - 52, h - 52), C.red, { lw: 5, seed: 832, dot: '#a8160f', pitch: 12, rad: 0.18, da: 0.35 }); }
+function hkBlock(ctx, kind, cx, pop) {
+  for (let r = 0; r < 10; r++) { const u = r / 9, sc = K.lerp(0.72, 1, u), y = K.lerp(HK_HI.yTop, HK_HI.yBot, u), pitch = HK_HI.w / 10 * sc;
+    for (let i = 0; i < 10; i++) { const p = pop((9 - r) * 10 + i); if (p <= 0) continue; hkSprite(ctx, kind, cx + (i - 4.5) * pitch, y + 10, pitch / 82 * K.ease.back(K.clamp(p))); } }
+}
 function hkHigh(ctx, t, cam) {
-  ctx.drawImage(hkHighBack(), 0, 0, 1000, 1230); hkGardenShade(ctx, t);
-  const blocks = [['fruit', 500, (i) => (t - hkFeastT(i)) / 0.12], ['sweets', 180, (i) => (t - 57.36 - i * 0.003) / 0.15], ['jugs', 820, (i) => (t - 57.8 - i * 0.003) / 0.15]];
-  for (const [kind, cx, pop] of blocks) hkFeast(ctx, kind, cx, 690, 1040, 310, pop);
-  // the guests small at the bottom edge, looking up at it all
-  const g = [hkP(HK_CAL, 600, 1230, 0.55, -1, { sit: 1, seat: 'floor', mouth: t > 56.3 ? 'o' : 'closed', gaze: [0, -1], seed: 81 }), hkP(HK_VIZ, 770, 1235, 0.55, -1, { sit: 1, seat: 'floor', gaze: [-0.3, -1], seed: 61 }), hkP(HK_MER, 400, 1235, 0.55, 1, { mouth: 'smile', handL: [22, -105], handR: [-18, -112], seed: 71 })];
-  g.forEach((P) => hkDraw(ctx, P));
+  ctx.fillStyle = HK_LAWN; ctx.fillRect(-200, -200, 1400, 1630); ctx.fillStyle = dotPat(ctx, HK_LAWND, 12, 0.3); ctx.fillRect(-200, -200, 1400, 1630);
+  const k = hkHighK(t); ctx.save(); ctx.translate(HK_HI.c[0], HK_HI.c[1]); ctx.scale(k, k); ctx.translate(-HK_HI.c[0], -HK_HI.c[1]);
+  if (k < 1) { ctx.fillStyle = HK_LAWN; ctx.fillRect(-2500, -1500, 6000, 4500); ctx.fillStyle = dotPat(ctx, HK_LAWND, 12, 0.3); ctx.fillRect(-2500, -1500, 6000, 4500); }
+  const B = hkHighBlocks(t);
+  B.forEach(([kind, cx], j) => { if (j && t < 57.36) return; hkHiRug(ctx, cx); hkBlock(ctx, kind, cx, j ? () => 1 : (i) => (t - hkFeastT(i)) / 0.12); });
+  // the three watchers, small on the lawn strip below, heads up, eyes on the row that is filling
+  const row = 9 - Math.floor(Math.min(99, Math.max(0, hkFeastN(t) - 1)) / 10), fy = K.lerp(HK_HI.yTop, HK_HI.yBot, row / 9);
+  const g = [hkP(HK_MER, 330, 1200, 0.45, 1, { mouth: 'smile', handL: [22, -105], handR: [-18, -112], seed: 71 }), hkP(HK_CAL, 500, 1205, 0.45, -1, { sit: 1, seat: 'floor', mouth: t > 56.3 ? 'o' : 'closed', seed: 81 }), hkP(HK_VIZ, 660, 1205, 0.45, -1, { sit: 1, seat: 'floor', seed: 61 })];
+  g.forEach((P, i) => { P.gaze = hkG(P, t > 57.36 ? [[180, 500, 820][i] * 0 + (i - 1) * 900 + 500, 600] : [K.lerp(100, 900, ((t * 1.7 + i * 0.3) % 1)), fy]); P.tilt = -0.12; hkDraw(ctx, P); });
+  ctx.restore();
   // the crane: leaves sweep across while the view changes
-  if (t < 54.0) { ctx.save(); const u = hkB(t, 53.5, 0.5); for (let i = 0; i < 9; i++) shape(ctx, ell(-100 + i * 140, -200 + 900 * u + (i % 2) * 120, 150, 120, 20), GREEN, { lw: 6, seed: 840 + i, dot: GREEND, pitch: 10, rad: 0.3, da: 0.5 }); ctx.restore(); }
+  if (t < 54.0) { const u = hkB(t, 53.5, 0.5); for (let i = 0; i < 9; i++) shape(ctx, ell(-100 + i * 140, -200 + 900 * u + (i % 2) * 120, 150, 120, 20), GREEN, { lw: 6, seed: 840 + i, dot: GREEND, pitch: 10, rad: 0.3, da: 0.5 }); }
 }
 
-// ---------- S9: the house diagram ----------
-const HK_WAVES = [['dome', 94.72], ['jugs', 95.68], ['cushion', 96.76]];
+// ---------- S9: the house diagram (v2, review note 6) ----------
+// the diagram is drawn in its own units (house base y 900) and placed 15 % larger with the base at panel y 1100 (hkDG maps diagram -> world);
+// the owner presents at the facade's left edge, 1.6x larger, his telescoping pointer touching what he names; three large busts wave on جارية;
+// each wave sends 25 big icons that build a heap at the door (food, then drinks, then comforts) with its tag beside it
+const HK_DGS = 1.15, hkDG = (x, y) => [500 + (x - 500) * HK_DGS, 1100 + (y - 900) * HK_DGS];
+const HK_WAVES = [['dome', 94.72, 330, 'fruit'], ['jugs', 95.68, 500, 'jugs'], ['cushion', 96.76, 670, 'cushion']];
 const HK_WR = (() => { const r = K.rng(21), a = []; for (let i = 0; i < 300; i++) a.push(r()); return a; })();
+const HK_BUSTW = [23, 46, 77], HK_BUSTT = [89.92, 90.02, 90.12];
+const hkWinOn = (i, t) => { const k = HK_BUSTW.indexOf(i); if (k >= 0) return t > HK_BUSTT[k]; const r = Math.floor(i / 10), c = i % 10; return t > 90.15 + 0.66 * ((r + c) / 18); };
+const hkDiagN = (t) => (t < 89.92 ? 0 : t < 90.15 ? HK_BUSTT.filter((a) => t > a).length : Math.min(100, 3 + Math.round(97 * K.clamp((t - 90.15) / 0.69))));
+// heap slot j (0..24) of a wave: a pyramid 7-6-5-4-3 on the lawn in front of the door
+function hkHeapSlot(hx, j) { let row = 0, n = 7, k = j; while (k >= n) { k -= n; row++; n--; } return [hx + (k - (n - 1) / 2) * 27, 965 - row * 22]; }
+const hkWaveT0 = (w, j) => HK_WAVES[w][1] + j * 0.034, HK_WTRAV = 0.5;
 function hkDiagram(ctx, t, cam) {
-  ctx.fillStyle = C.yellow; ctx.fillRect(0, 0, 1000, 1230); ctx.fillStyle = dotPat(ctx, HK_ORANGE, 14, 0.25); ctx.fillRect(0, 0, 1000, 1230);
-  ctx.fillStyle = HK_LAWN; ctx.fillRect(0, 900, 1000, 330); ink(ctx, [[0, 902], [1000, 902]], 6, 850);
-  const rise = settleTo(t, 87.22, 300, 0, 0.9, 0.06); ctx.save(); ctx.translate(0, rise); ctx.beginPath(); ctx.rect(0, -400, 1000, 1302 - rise); ctx.clip();
+  ctx.fillStyle = C.yellow; ctx.fillRect(-200, -200, 1400, 1630); ctx.fillStyle = dotPat(ctx, HK_ORANGE, 14, 0.25); ctx.fillRect(-200, -200, 1400, 1630);
+  ctx.save(); ctx.translate(500, 1100); ctx.scale(HK_DGS, HK_DGS); ctx.translate(-500, -900);
+  ctx.fillStyle = HK_LAWN; ctx.fillRect(-400, 900, 1800, 400); ink(ctx, [[-400, 902], [1400, 902]], 6, 850);
+  const rise = settleTo(t, 87.22, 300, 0, 0.9, 0.06); ctx.save(); ctx.translate(0, rise); ctx.beginPath(); ctx.rect(-400, -600, 1800, 1502 - rise); ctx.clip();
   ctx.drawImage(hkFacade(), 0, 0, 1000, 1000);
-  const busts = [92, 95, 97];
-  hkWindows(ctx, (i) => { const r = Math.floor(i / 10), c = i % 10; return t > 89.38 + 1.1 * ((r + c) / 18) ? 1 : 0; }, t, { heads: t > 89.92, busts: t > 89.92 ? busts : [] });
-  // three women of the household at the bottom row, waving at different phases
-  if (t > 89.92) busts.forEach((i, k) => { const [x, y] = hkWinXY(i); ctx.save(); ctx.beginPath(); ctx.rect(x, y, HK_HW.ww, HK_HW.wh); ctx.clip();
-    const P = hkP(k === 1 ? { costume: 'lady' } : { costume: 'maiden', pal: k ? { robe: C.red } : undefined }, x + 23, y + 70, 0.2, 1, { mouth: 'smile', seed: 90 + k }); P.aR = [2.4 + 0.3 * Math.sin(t * 8 + k * 2), 2.6]; P.alpha = hkB(t, 89.92 + k * 0.15, 0.2); hkDraw(ctx, P); ctx.restore(); });
+  const bustK = (k) => hkB(t, HK_BUSTT[k], 0.25) * (1 - hkB(t, 91.55, 0.3));
+  hkWindows(ctx, (i) => (hkWinOn(i, t) ? 1 : 0), t, { heads: t > 89.92, busts: HK_BUSTW.filter((i, k) => bustK(k) > 0.05) });
   // the highlighted window ring
   if (t > 91.72 && t < 93.0) { const [x, y] = hkWinXY(29); ctx.lineWidth = 6; ctx.strokeStyle = C.red; ctx.beginPath(); ctx.arc(x + 23, y + 19, 36 + 4 * Math.sin(t * 8), 0, 7); ctx.stroke(); }
   // the sun arc over the roof
-  if (t > 93.78 && t < 94.7) { const u = hkB(t, 93.78, 0.7, 'lin'); ctx.save(); ctx.translate(K.lerp(220, 780, u), 140 - 90 * Math.sin(Math.PI * u)); ctx.scale(0.35, 0.35); sun(ctx, 0, 0, t); ctx.restore(); }
-  // the tray from window 29 to the door (93.0-93.7)
-  if (t > 93.0 && t < 93.75) { const u = hkB(t, 93.0, 0.7), [x, y] = hkWinXY(29); hkSprite(ctx, 'fruit', K.lerp(x + 23, 500, u), K.lerp(y + 38, 870, u) - 80 * Math.sin(Math.PI * u), 0.5); }
-  // three waves of icons: every window drops one, they stream to the door
-  HK_WAVES.forEach(([kind, a], w) => { if (t < a || t > a + 1.6) return; for (let i = 0; i < 100; i++) { const t0 = a + HK_WR[w * 100 + i] * 0.6, u = (t - t0) / 0.75; if (u < 0 || u > 1) continue; const [x, y] = hkWinXY(i), e = K.ease.inOut(u);
-    hkSprite(ctx, kind, K.lerp(x + 23, 500 + (HK_WR[(w * 100 + i + 7) % 300] - 0.5) * 40, e), K.lerp(y + 36, 880, e) - 40 * Math.sin(Math.PI * u), 0.3 * (1 - 0.4 * e)); } });
-  // the merged stream pours out of the door to the right
-  if (t > 97.7) for (let i = 0; i < 18; i++) { const u = ((t - 97.7) * 0.9 + i / 18) % 1, kind = HK_WAVES[i % 3][0]; if (t - 97.7 < i / 18 / 0.9) continue; hkSprite(ctx, kind, 520 + u * 560, 890 - 14 * Math.abs(Math.sin(u * 12)), 0.32); }
+  if (t > 93.78 && t < 94.7) { const u = hkB(t, 93.78, 0.7, 'lin'); ctx.save(); ctx.translate(K.lerp(220, 780, u), 120 - 80 * Math.sin(Math.PI * u)); ctx.scale(0.35, 0.35); sun(ctx, 0, 0, t); ctx.restore(); }
   ctx.restore();
-  // the presenter with his pointer
-  const P = hkP(HK_MER, 110, 900, 0.7, 1, { seed: 71, mouth: 'smile', lid: 0.2 });
+  // three women lean out of their windows as large busts and wave (جارية 89.92), then settle back as the rest of the windows fill
+  HK_BUSTW.forEach((i, k) => { const b = bustK(k); if (b <= 0.01) return; const [x, y] = hkWinXY(i), sill = y + HK_HW.wh; ctx.save(); ctx.beginPath(); ctx.rect(x - 90, y - 200, HK_HW.ww + 180, sill - (y - 200)); ctx.clip();
+    const P = hkP(k === 1 ? { costume: 'lady' } : { costume: 'maiden', pal: k ? { robe: C.red } : undefined }, x + 23, sill + 132 * 0.95 + 8 + (1 - b) * 150, 0.95, k === 2 ? -1 : 1, { mouth: 'smile', seed: 90 + k });
+    P.aR = [2.4 + 0.35 * Math.sin(t * 9 + k * 2), 2.6]; P.gaze = [0, 0.1]; hkDraw(ctx, P); ctx.restore();
+    ink(ctx, [[x - 6, sill], [x + HK_HW.ww + 6, sill]], 5, 860 + k); });
+  // the tray from window 29 to the door (93.0-93.75): the first item of the heap
+  if (t > 93.0) { const u = hkB(t, 93.0, 0.7), [x, y] = hkWinXY(29), e = hkHeapSlot(HK_WAVES[0][2], 0); hkSprite(ctx, 'fruit', K.lerp(x + 23, e[0] - 30, u), K.lerp(y + 38, e[1], u) - 90 * Math.sin(Math.PI * u), 0.62); }
+  // three waves: 25 windows each send a big icon that lands on its heap in front of the door; landed icons stay
+  HK_WAVES.forEach(([kind, a, hx, k2], w) => { if (t < a) return; for (let j = 0; j < 25; j++) { const t0 = hkWaveT0(w, j), u = (t - t0) / HK_WTRAV; if (u < 0) continue;
+    const wi = Math.floor(HK_WR[w * 100 + j] * 100), [x, y] = hkWinXY(wi), e = hkHeapSlot(hx, j), q = K.ease.inOut(K.clamp(u)), kind2 = j % 2 && w === 0 ? k2 : kind;
+    hkSprite(ctx, kind2, K.lerp(x + 23, e[0], q), K.lerp(y + 36, e[1], q) - 70 * Math.sin(Math.PI * q) + (u >= 1 ? -2 * hkPulse(t, t0 + HK_WTRAV, 0.15) : 0), 0.6 * (u < 1 ? K.lerp(0.75, 1, q) : 1)); } });
+  // the presenter with his telescoping pointer
+  const P = hkP(HK_MER, 150, 900, 0.97, 1, { seed: 71, mouth: 'smile', lid: 0.2 });
   P.talk = hkIn(t, 85.94, 87.1) || hkIn(t, 89.0, 90.5) || hkIn(t, 94.6, 97.6) ? 0.4 + 0.5 * Math.abs(Math.sin(t * 10)) : 0;
-  const tgt = t < 89.3 ? [400, 300] : t < 91.6 ? [K.lerp(250, 760, hkB(t, 89.4, 1.1)), 260] : t < 93.0 ? [760, 330] : t < 94.6 ? [500, 820] : t < 97.7 ? [500, 860] : [300, 950];
-  P.gaze = hkG(P, tgt); hkArms(t, P, [[0, { w: [200, 700] }], [85.94, { w: [190, 640] }, 0.3], [97.7, [36, -62], 0.4]], [[0, [-36, -62]], [97.7, [-60, -100], 0.3]]);
-  P.sq = t > 97.7 ? 1 + 0.02 * hkPulse(t, 97.9, 0.4) : breathe(t, 4);
-  P.after = (c, Q) => { if (t > 97.9) return; const h = hkHandW(Q, 'R'), d = Math.hypot(tgt[0] - h[0], tgt[1] - h[1]), L = 160, e = [h[0] + (tgt[0] - h[0]) / d * L, h[1] + (tgt[1] - h[1]) / d * L]; seg(c, h[0], h[1], e[0], e[1], 6, HK_WOODC, 3); shape(c, ell(e[0], e[1], 6, 6, 8), C.red, { lw: 2, seed: 851 }); };
+  const wv = t < 95.68 ? 0 : t < 96.76 ? 1 : 2, heapTop = hkHeapSlot(HK_WAVES[wv][2], 20);
+  const tgt = t < 89.3 ? [400, 330] : t < 91.6 ? [K.lerp(230, 760, hkB(t, 89.92, 1.5)), K.lerp(330, 260, hkB(t, 89.92, 1.5))] : t < 93.0 ? hkWinXY(29).map((v, i) => v + [23, 30][i]) : t < 94.6 ? [470, 830] : t < 97.7 ? [heapTop[0], heapTop[1] - 30] : [500, 930];
+  P.gaze = hkG(P, tgt); const aim = [tgt[0] - 150, tgt[1] - 770], al = Math.hypot(aim[0], aim[1]);
+  hkArms(t, P, [[0, { w: [150 + aim[0] / al * 120, 770 + aim[1] / al * 120] }], [97.9, [36, -62], 0.4]], [[0, [-36, -62]], [97.9, [-60, -100], 0.3]]);
+  P.sq = t > 97.9 ? 1 + 0.02 * hkPulse(t, 98.1, 0.4) : breathe(t, 4);
+  P.after = (c, Q) => { if (t > 97.9) return; const h = hkHandW(Q, 'R'), d = Math.hypot(tgt[0] - h[0], tgt[1] - h[1]), L = Math.max(60, d - 4), e = [h[0] + (tgt[0] - h[0]) / d * L, h[1] + (tgt[1] - h[1]) / d * L]; seg(c, h[0], h[1], e[0], e[1], 5, HK_WOODC, 2.5); shape(c, ell(e[0], e[1], 6, 6, 8), C.red, { lw: 2, seed: 851 }); };
   hkDraw(ctx, P);
+  ctx.restore();
   // the inset: one woman sets a tray on her sill, pats it, smiles
-  hkInset(ctx, 700, 360, 200, hkB(t, 91.72, 0.2, 'lin') * (1 - hkB(t, 92.75, 0.2, 'lin')), (c) => {
+  hkInset(ctx, 700, 380, 200, hkB(t, 91.72, 0.2, 'lin') * (1 - hkB(t, 92.75, 0.2, 'lin')), (c) => {
     c.fillStyle = '#f2d27a'; c.fillRect(-150, -150, 300, 300); c.fillStyle = C.yellow; c.fillRect(-100, -110, 200, 170); ink(c, K.rectPts(-100, -110, 200, 170), 6, 852);
     const W = hkP({ costume: 'maiden' }, -10, 160, 0.8, 1, { mouth: 'smile', seed: 93 }); hkArms(t, W, [[0, { w: [30, 50] }], [92.3, { w: [40, 40] }, 0.2]], [[0, { w: [-40, 50] }]]);
     if (t > 92.3) W.aR = [W.aR[0] + 0.15 * Math.sin(t * 18), W.aR[1]]; W.gaze = hkG(W, [40, 50]); c.save(); c.beginPath(); c.rect(-100, -110, 200, 170); c.clip(); hkDraw(c, W); c.restore();

@@ -11,3 +11,5 @@
 - `hkRoadFar` / `hkRoadMid` / `hkRoadWall` / `hkGateLeaf` / `hkStand` and `hkGardenBack` / `hkGardenShade` / `hkTrunkFront` [orchard, views road and inside].
 - `HK_GRD` + `hkHelmet` + `hkSpear` [person costume preset 'guard', hold 'spear', pennant].
 - `hkBalloon` (picture balloon with tail), `hkHat` (headwear drawn separately for a crown hop).
+- v2 `hkSevenBar` [counterSevenBar]: continental cross-bar on the 7s of S.counter (Bangers 7 reads as 1 at large sizes).
+- v2 rule for the guide: overlays (bursts, arrows, rays, light shafts, held props) must be checked against every face and key number on the beat they land; arrows start at the object, not the label, and route around heads.

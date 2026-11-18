@@ -19,3 +19,9 @@ Decisions the plan left open or the measured set changed:
 - S14-S17: the man sits on a stool (seat 'stool') at 470; the 500-dinar purse lies on the floor beside the stool; the open letter is drawn in front of him.
 - Thought cloud: centre (500, 360), 840 x 480 (raised so the couple's heads stay clear), inside scale 0.72 (figures about 150 px on screen; the plan map is drawn 0.68 smaller inside). Friend's arms round the relatives: he is drawn behind them and his hands are drawn on their shoulders.
 - Title card THE POOR MAN AND / HIS FRIEND IN NEED for the first 2.1 s (series convention).
+
+## v2 (Fable round 1) decisions
+- Market street now has four doors (one per house: x 255, 384, 760, 915) so the doors-of-fortune shot can stay at zoom 1.3. This slightly changes the background of all market shots and the market pictures in the cloud.
+- In S11 the man walks out from behind the counter to x 835 on وشعر (103.4), so he is seen full length while the doors open around him. The door order (left, far right, near left, beside him) follows the stressed words.
+- The thought cloud, the verse inset, the 30,000 and 3,000 counters and the S17 medallions/heart/THE HEIR are drawn in panel space (independent of the camera).
+- S3: the friend stops at 505. The shoulder touch from v1 is dropped (out of reach with the gap the review asked for). He hands the purse over with his near hand.

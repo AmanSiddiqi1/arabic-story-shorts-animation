@@ -45,7 +45,7 @@ function a135CanePiece(ctx, x, y, o = {}) {
   ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot || 0); ctx.scale(s, s);
   const cy = (u) => lm * 60 * Math.pow(Math.abs(u - 0.5) * 2, 1.6), ww = (u) => w / 2 * (1 - tw * 0.45 * Math.exp(-Math.pow((u - 0.5) / 0.18, 2)));
   const top = [], bot = []; for (let k = 0; k <= N; k++) { const u = k / N, px = (u - 0.5) * len * (1 - lm * 0.15); top.push([px, cy(u) - ww(u)]); bot.unshift([px, cy(u) + ww(u)]); }
-  const col = mixHex(A135_CANE.a, A135_CANE.dry, Math.max(1 - (o.lush ?? 1), tw * 0.5));
+  const col = o.col || mixHex(A135_CANE.a, A135_CANE.dry, Math.max(1 - (o.lush ?? 1), tw * 0.5));   // v2: o.col overrides the fill
   shape(ctx, [...top, ...bot, top[0]], col, { lw: 4, seed: 41 });
   ctx.strokeStyle = C.black; ctx.lineCap = 'round'; ctx.lineWidth = 3.5;
   for (let k = 1; k < 5; k++) { const u = k / 5, px = (u - 0.5) * len * (1 - lm * 0.15); ctx.beginPath(); ctx.moveTo(px, cy(u) - ww(u)); ctx.lineTo(px, cy(u) + ww(u)); ctx.stroke(); }
@@ -133,10 +133,11 @@ function a135Crown(ctx, x, y, s = 1, o = {}) {
 // saddlebag(ctx, x, y, s, o): leather satchel, top centre (x, y), 70 x 60 at s 1; the flap half open with the crown tips showing (o.crown)
 function a135Bag(ctx, x, y, s = 1, o = {}) {
   ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot || 0); ctx.scale(s, s);
-  if (o.crown) { ctx.save(); ctx.beginPath(); ctx.rect(-40, -60, 80, 62); ctx.clip(); a135Crown(ctx, -4, 26 - (o.lift || 0), 0.7, { rot: -0.08 }); ctx.restore(); }
+  if (o.crown) { ctx.save(); ctx.beginPath(); ctx.rect(-40, -80, 80, 82); ctx.clip(); a135Crown(ctx, -4, 26 - (o.lift || 0), 0.7, { rot: -0.08 }); ctx.restore(); }
   shape(ctx, [[-35, 0], [35, 0], [38, 52], [26, 62], [-26, 62], [-38, 52], [-35, 0]], '#8a501a', { lw: 4.5, seed: 95, dot: '#5b3010', pitch: 8, rad: 0.2, da: 0.4 });
+  const fl = K.clamp(o.flap || 0); ctx.save(); if (fl > 0) { ctx.translate(0, -4); ctx.scale(1, 1 - 1.7 * fl); ctx.translate(0, 4); }   // v2: o.flap lifts the flap (0..1)
   shape(ctx, [[-36, -2], [-10, -6], [-6, 24], [-24, 30], [-38, 18], [-36, -2]], '#a8641e', { lw: 4, seed: 96 });
-  shape(ctx, ell(-20, 22, 5, 5, 10), C.yellow, { lw: 2, seed: 97 });
+  shape(ctx, ell(-20, 22, 5, 5, 10), C.yellow, { lw: 2, seed: 97 }); ctx.restore();
   ctx.restore();
 }
 // hitching post at x (ground 900)

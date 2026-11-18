@@ -106,7 +106,7 @@ function k26YardWorld(ctx, t) {
   ctx.save(); ctx.translate(K26_YBUSH.x, K26_GR); ctx.rotate(shake * 0.006); ctx.translate(-K26_YBUSH.x, -K26_GR); bush(ctx, K26_YBUSH); ctx.restore();
   if (k26In(t, 35.3, 37.3)) for (let i = 0; i < 3; i++) { const v = (t - 35.35 - i * 0.12) / 1.6; if (v > 0 && v < 1) k26Leaf(ctx, 200 + i * 50 + 20 * Math.sin(v * 8 + i), 760 + v * 140, Math.sin(v * 7 + i)); }
   // handshake spark
-  if (k26In(t, 57.0, 58.14)) { dustBurst(ctx, K26_YSHAKE[0], K26_YSHAKE[1], t - 57.05, 6, 4, 9, 30, 0.45, 3); star(ctx, K26_YSHAKE[0], K26_YSHAKE[1] - 24, 22 * k26Pop(t, 57.0, 0.2) * k26Fade(t, 57.0, 58.14, 0.2), C.yellow, t * 4); }
+  if (k26In(t, 57.0, 58.14)) { dustBurst(ctx, K26_YSHAKE[0], K26_YSHAKE[1], t - 57.05, 6, 4, 9, 30, 0.45, 3); star(ctx, K26_YSHAKE[0], K26_YSHAKE[1] - 30, 33 * k26Pop(t, 57.0, 0.2) * k26Fade(t, 57.0, 58.14, 0.2), C.yellow, t * 4); }
   // the shared thought cloud: lit window and lamp, flame out, Z Z Z
   if (t >= 58.98 && t < 62.98) { const p = K.clamp((t - 58.98) / 0.8) * K.clamp((62.98 - t) / 0.25);
     thoughtCloud(ctx, 380, 420, 380, 260, t, { p, tail: [255, 640], bg: CREAM, scale: 0.36, at: [500, 760], inside: (c) => {

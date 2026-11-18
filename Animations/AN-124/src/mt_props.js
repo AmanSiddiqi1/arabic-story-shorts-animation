@@ -4,8 +4,8 @@ const MT_POLE = '#5b3010', MT_TENT = '#262230', MT_TENTD = '#4a4060', MT_GREEN =
 // ---------- desertCamp: bedouin camp, world 1600 x 1230, ground y 900 ----------
 // desertCamp(ctx, o): o {u (time of day), t, camX (camera left x, dune parallax), lamps: [7 x 0..1], swing: [7 x radians], pulse (disc pulse 0..1),
 //   fire 0..1, farLit 0..1, slit 0..1 (small tent door lit), deco 0..1 (flags), layer: 'back' | 'front'}. Returns the anchors (MT_CAMP).
-const MT_CAMP = { W: 1600, ground: 900, poles: [560, 800, 1040], tops: [520, 470, 520], cush: [740, 860], post: 560, drum: [400, 475], guests: [1080, 1160], fire: 1235,
-  kids: [1300, 1355], palm: 1420, lip: { x0: 1500, crest: [1560, 848] }, gap: [1500, 840], smallTent: [120, 400, 260, 600], far: [1250, 1380, 1500] };
+const MT_CAMP = { W: 1600, ground: 900, poles: [560, 800, 1040], tops: [520, 470, 520], cush: [740, 860], post: 560, drum: [400, 475], guests: [1120, 1188], fire: 1245,
+  kids: [1300, 1368], palm: 1420, lip: { x0: 1500, crest: [1560, 848] }, gap: [1500, 840], smallTent: [120, 400, 260, 600], far: [1250, 1380, 1500] };
 // the roof line (top edge of the tent band) from pole top to pole top with a sag
 function mtRoofY(x) {
   const P = MT_CAMP.poles, T = MT_CAMP.tops;
@@ -23,9 +23,16 @@ function mtRopeY(x) {
 }
 const MT_LAMPX = [620, 740, 860, 980, 1110, 1230, 1350];
 const mtLampPos = (i) => [MT_LAMPX[i], mtRopeY(MT_LAMPX[i]) + 46];
+// v2: the moon sits off the lettering: right of the tent (clear of the S11 cloud) until the S15 cut, then left for THE END
+const mtMoonAt = (t) => (t < 150.32 ? [1290, 200] : [610, 210]);
+// v2: night dim with a soft top edge (no hard band across the sky)
+function mtDimGrad(ctx, x, y0, w, y1, a, soft = 240) {
+  if (a <= 0.001) return; ctx.save(); const g = ctx.createLinearGradient(0, y0, 0, y0 + soft); g.addColorStop(0, 'rgba(10,26,74,0)'); g.addColorStop(1, 'rgba(10,26,74,' + (0.42 * a).toFixed(3) + ')');
+  ctx.fillStyle = g; ctx.fillRect(x, y0, w, y1 - y0); ctx.restore();
+}
 function mtSunMoon(ctx, u, t) {
   const d = dayCycle(u);
-  if (d.night > 0.05) { ctx.save(); ctx.globalAlpha *= K.clamp(d.night * 1.3); moon(ctx, 900, 230, 66); ctx.restore(); }
+  const mp = mtMoonAt(t); if (d.night > 0.05) { ctx.save(); ctx.globalAlpha *= K.clamp(d.night * 1.3); moon(ctx, mp[0], mp[1], 66); ctx.restore(); }
   const v = (((u % 1) + 1) % 1) / 0.5; if (v > 0 && v < 1) sun(ctx, 250 + 1100 * v, 830 - 640 * Math.sin(Math.PI * v), t);
 }
 function mtSmallTent(c, lit) {
@@ -81,7 +88,8 @@ function desertCamp(ctx, o = {}) {
   }
   const d = skyCycle(ctx, u, { w: 1600, t, sun: false, moon: false, hills: false });
   mtSunMoon(ctx, u, t);
-  desertRoad(ctx, { w: 1600, sky: false, sun: false, night: d.night, road: false, palms: [], milestones: [], camX: o.camX || 0 });
+  desertRoad(ctx, { w: 1600, sky: false, sun: false, night: 0, road: false, palms: [], milestones: [], camX: o.camX || 0 });
+  mtDimGrad(ctx, 0, 420, 1600, 1240, d.night);   // v2: the road's own night dim, with a soft top edge
   townBake(ctx, 'mtFar', 1180, 740, 380, 100, (c) => mtFarTents(c));
   if ((o.farLit || 0) > 0) { ctx.save(); ctx.globalAlpha = o.farLit; for (const [i, x] of A.far.entries()) shape(ctx, [[x - 6, 813 - (i % 2) * 8], [x, 796 - (i % 2) * 8], [x + 6, 813 - (i % 2) * 8]], '#ffcf4a', { lw: 2, seed: 715 + i }); ctx.restore(); }
   palmTree(ctx, A.palm, 904, { h: 430, lean: 18, t, sway: 1, nuts: 2 });
@@ -90,7 +98,8 @@ function desertCamp(ctx, o = {}) {
   if ((o.slit || 0) > 0) { ctx.save(); ctx.globalAlpha = o.slit; shape(ctx, [[A.smallTent[2] - 30, 902], [A.smallTent[2] - 8, 780], [A.smallTent[2] + 8, 780], [A.smallTent[2] + 30, 902]], '#ffcf4a', { lw: 4, seed: 702 }); ctx.restore(); }
   // front poles (the left one is the tally post, thicker): behind the cast, so nobody is cut by a pole
   MT_CAMP.poles.forEach((x, i) => seg(ctx, x, 904, x, MT_CAMP.tops[i] + 4, i === 0 ? 18 : 10, MT_POLE, 3.5));
-  townDim(ctx, 0, 420, 1600, 485, d.night * 0.6);
+  mtDimGrad(ctx, 0, 420, 1600, 905, d.night * 0.6);
+  if ((o.tentDim || 0) > 0) { ctx.save(); ctx.globalAlpha = o.tentDim; ctx.fillStyle = '#0a1a4a'; K.poly(ctx, [...[530, 600, 700, 800, 900, 1000, 1070].map((x) => [x, mtRoofY(x) - 14]), [1076, 934], [524, 934]], true); ctx.fill(); ctx.restore(); }
   tallyMarks(ctx, A.post, 650, o.tally ?? 7, { hop: o.tallyHop || 0, glow: o.tallyGlow || 0 });
   mtFire(ctx, A.fire, t, o.fire || 0);
   // lamp rope, flags and the seven lamps (live)
@@ -203,13 +212,24 @@ function musicNotes(ctx, x, y, t, o = {}) {
     const sd = seeds[i], to = o.to, ex = to ? to[0] : x + (sd - 0.5) * 120, ey = to ? to[1] : y - 130 - sd * 40, px = K.lerp(x, ex, a) + Math.sin(a * 6 + sd * 9) * 16, py = K.lerp(y, ey, a);
     ctx.save(); ctx.globalAlpha *= Math.min(1, a * 5) * Math.min(1, (1 - a) * 3); ctx.translate(px, py); ctx.rotate(0.25 * Math.sin(t * 5 + i)); note(ctx, 0, 0, (o.s ?? 0.9) * (0.8 + 0.3 * sd), o.col || C.black); ctx.restore(); }
 }
-// ---------- faceCover: the head cloth drawn across the lower face (eyes stay clear); k 0..1 slides it in from the far side; puff bulges it ----------
+// ---------- faceCover (v2): the keffiyeh's own tail pulled diagonally across nose and mouth, dusty tan with fold lines and a loose end
+//   to the shoulder; the top edge rises from the near cheek to the far temple and stays below both eyes (eye centre y -4, bottom +8).
+//   k 0..1 slides it in from the far side; puff bulges it (breath); thicker brows while covered so the eyes still act.
+const MT_COVER = '#d2b07a', MT_COVERD = '#a8741a';
 function mtFaceCover(ctx, P, k, puff = 0) {
-  if (k <= 0.01) return; const h = mtHead(P), s = mtS(P), dir = P.dir || 1, tip = (P.tip || 0) * Math.sign(dir);
+  if (k <= 0.01) return; const h = mtHead(P), s = mtS(P), dir = P.dir || 1, tip = (P.tip || 0) * Math.sign(dir), lk = P.look || 0, hx = lk * 4;
   ctx.save(); ctx.translate(h[0], h[1]); ctx.rotate(tip); ctx.scale(s * dir, s);
-  const pts = [[-42, 8], [-20, 7], [0, 6 - puff], [20, 7], [42, 8], [38, 30], [22, 46 + puff], [0, 52 + puff], [-22, 46 + puff], [-38, 30]];
-  ctx.beginPath(); ctx.rect(-50, -10, 8 + 92 * K.clamp(k), 80); ctx.clip();
-  shape(ctx, [...pts, pts[0]], C.white, { lw: 5, seed: 790, dot: C.red, pitch: 7, rad: 0.2, da: 0.4 });
-  ctx.lineWidth = 2.5; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.moveTo(-30, 20); ctx.quadraticCurveTo(0, 30 + puff, 30, 18); ctx.moveTo(-24, 34); ctx.quadraticCurveTo(0, 42 + puff, 24, 32); ctx.stroke();
+  ctx.save(); ctx.beginPath(); ctx.rect(50 - 100 * K.clamp(k), -40, 140, 160); ctx.clip(); ctx.translate(0, P.coverDrop || 0);
+  // loose end hanging from the far side down to the shoulder
+  shape(ctx, [[30, 14], [44, 4], [52, 40], [50, 78], [36, 84], [34, 50]], MT_COVER, { lw: 4.5, seed: 791, dot: MT_COVERD, pitch: 7, rad: 0.22, da: 0.45 });
+  // the wrap: near cheek (low) up to the far temple, round under the chin
+  const pts = [[-41, 12], [-20, 10.5 - puff * 0.3], [4, 10 - puff * 0.5], [22, 9], [36, -2], [43, -12], [46, 12], [40, 34], [22, 50 + puff], [0, 55 + puff], [-24, 48 + puff], [-40, 32]];
+  shape(ctx, [...pts, pts[0]], MT_COVER, { lw: 5, seed: 790, dot: MT_COVERD, pitch: 7, rad: 0.22, da: 0.45 });
+  ctx.lineCap = 'round'; ctx.lineWidth = 2.6; ctx.strokeStyle = C.black; ctx.beginPath();
+  ctx.moveTo(-34, 30); ctx.quadraticCurveTo(0, 24 + puff, 38, 10); ctx.moveTo(-26, 42); ctx.quadraticCurveTo(4, 38 + puff, 36, 24); ctx.moveTo(-10, 50 + puff); ctx.quadraticCurveTo(14, 46 + puff, 32, 38); ctx.stroke();
+  ctx.restore();
+  // heavier brows while covered (same place as the Library brows)
+  if (k > 0.5) { const br = P.brow || 0, ey = -4; ctx.lineCap = 'round'; ctx.lineWidth = 9; ctx.strokeStyle = C.black;
+    for (const sd of [-1, 1]) { const bx = hx + sd * 13 + lk * 3; ctx.beginPath(); ctx.moveTo(bx - sd * 10, ey - 19 + br * 8); ctx.lineTo(bx + sd * 10, ey - 19 - br * 4); ctx.stroke(); } }
   ctx.restore();
 }

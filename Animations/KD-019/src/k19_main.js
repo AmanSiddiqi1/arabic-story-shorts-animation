@@ -81,13 +81,14 @@ function k19drawCrab(ctx, C, t, b) {
   if (C.dangle && C.hang != null) { ctx.save(); ctx.translate(C.x, C.y - 92); ctx.rotate(C.hang); k19crab(ctx, { ...C, x: 0, y: 92 }); ctx.restore(); return; }
   k19crab(ctx, C);
 }
-const K19SPL = [[5.15, 600, 642, 0.5], [5.6, 720, 642, 0.8], [8.12, 352, 646, 0.8], [10.1, 352, 646, 0.6], [12.57, 352, 646, 0.4], [20.35, 470, 646, 0.4], [43.55, 420, 642, 1.0], [72.48, 440, 646, 0.5], [72.61, 505, 646, 0.5], [157.0, 372, 642, 0.7], [173.95, 520, 642, 0.6], [174.4, 660, 642, 0.8]];
+const K19SPL = [[5.15, 600, 642, 0.5], [5.6, 720, 642, 0.8], [8.12, 462, 646, 0.8], [10.1, 462, 646, 0.6], [12.57, 460, 646, 0.4], [20.35, 470, 646, 0.4], [43.55, 420, 642, 1.0], [72.48, 440, 646, 0.5], [72.61, 505, 646, 0.5], [157.0, 372, 642, 0.7], [173.95, 520, 642, 0.6], [174.4, 660, 642, 0.8]];
 function k19pondWorld(ctx, t) {
   // sky + sun
   if (k19in(t, 5.78, 10.4)) k19pondSky(ctx, 'dawn'); else if (t >= 168.02) k19pondSky(ctx, 'night', 'dawn', k19E(t, 168.02, 0.8)); else k19pondSky(ctx, 'day');
   if (k19in(t, 6.46, 8.0)) { const u = ((t - 6.46) / 0.77) % 1; sun(ctx, K.lerp(40, 960, u), 470 - 330 * Math.sin(Math.PI * u), t * 3); }
   else if (k19in(t, 5.78, 10.4)) sun(ctx, 820, 330, t);
   else if (t >= 168.02) sun(ctx, 860, kfn(t, [[168.02, 640], [171.6, 470]]), t * 0.4);
+  else if (k19in(t, 91.2, 101.56)) { const a = 1 - k19E(t, 91.2, 0.5); if (a > 0.01) { ctx.save(); ctx.globalAlpha *= a; sun(ctx, 560, 205, t); ctx.restore(); } }   // v3: no sun behind the FISH counter in the two-shot
   else sun(ctx, 560, 205, t);
   if (t < 168.02 && !k19in(t, 5.78, 10.4)) { cloudFlat(ctx, 150 + ((t * 6) % 1300) - 200, 120, 0.8); cloudFlat(ctx, 700 + ((t * 4) % 1300) - 300, 240, 0.6); }
   ctx.drawImage(k19pondLand(), 0, 0, K19W, K19H);
@@ -119,24 +120,24 @@ function k19pondWorld(ctx, t) {
   if (crabUnder && C.y < 680) { /* crab straddling the surface: redraw the stalks above water already handled by the tint clip */ }
   // splashes, rings, dust, drops
   for (const [ts, x, y, sz] of K19SPL) k19splash(ctx, x, y, t - ts, sz);
-  ripple(ctx, 360, 642, 13.85, t, 0.8); ripple(ctx, 432, 642, 21.55, t, 0.6); ripple(ctx, 455, 642, 19.25, t, 0.4);
+  ripple(ctx, 470, 642, 13.85, t, 0.8); ripple(ctx, 432, 642, 21.55, t, 0.6); ripple(ctx, 455, 642, 19.25, t, 0.4);
   dustBurst(ctx, K19BX, 598, t - 15.75, 6, 8, 16, 40, 0.5, 3); dustBurst(ctx, 220, 598, t - 74.74, 8, 10, 20, 60, 0.6, 5);
   dustBurst(ctx, 20, 592, t - 151.98, 12, 14, 40, 150, 0.8, 7); dustBurst(ctx, 262, 600, t - 152.4, 6, 8, 16, 40, 0.5, 9);
-  if (k19in(t, 12.57, 13.85)) { const tip = k19BirdPt(b, 'tip'), u = t < 13.6 ? 0 : (t - 13.6) / 0.25, x0 = t < 13.6 ? tip[0] : K.lerp(tip[0], 360, u), y0 = t < 13.6 ? tip[1] : K.lerp(tip[1], 640, u * u); const pts = []; for (let k = 0; k <= 6; k++) pts.push([x0 + 8 * Math.sin(t * 6 + k), y0 + k * 9]); ctx.save(); ctx.lineCap = 'round'; ctx.strokeStyle = C.black; ctx.lineWidth = 10; K.poly(ctx, pts, false); ctx.stroke(); ctx.strokeStyle = GREEN2; ctx.lineWidth = 5; K.poly(ctx, pts, false); ctx.stroke(); ctx.restore(); }
+  if (k19in(t, 12.57, 13.85)) { const tip = k19BirdPt(b, 'tip'), u = t < 13.6 ? 0 : (t - 13.6) / 0.25, x0 = t < 13.6 ? tip[0] : K.lerp(tip[0], 470, u), y0 = t < 13.6 ? tip[1] : K.lerp(tip[1], 640, u * u); const pts = []; for (let k = 0; k <= 6; k++) pts.push([x0 + 8 * Math.sin(t * 6 + k), y0 + k * 9]); ctx.save(); ctx.lineCap = 'round'; ctx.strokeStyle = C.black; ctx.lineWidth = 10; K.poly(ctx, pts, false); ctx.stroke(); ctx.strokeStyle = GREEN2; ctx.lineWidth = 5; K.poly(ctx, pts, false); ctx.stroke(); ctx.restore(); }
   if (k19in(t, 17.45, 18.1)) { const tip = k19BirdPt(b, 'tip'), u = (t - 17.45) / 0.65; ctx.save(); ctx.globalAlpha *= 1 - u; shape(ctx, ell(tip[0] + 20 + 30 * u, tip[1] - 10 - 20 * u, 14 + 12 * u, 10 + 8 * u, 14), C.white, { lw: 3.5, seed: 150 }); ctx.restore(); }
   if (k19in(t, 18.5, 19.25)) { const tip = k19BirdPt(b, 'tip'), u = (t - 18.5) / 0.7; k19bubble(ctx, K.lerp(450, tip[0], u) + 6 * Math.sin(t * 9), K.lerp(690, tip[1] + 6, K.ease.inOut(u)), 12, 1); }
   if (k19in(t, 19.2, 19.4)) { const tip = k19BirdPt(b, 'tip'); star(ctx, tip[0], tip[1], 18 * (1 - (t - 19.2) / 0.2), C.white, 0); }
   if (k19in(t, 20.9, 21.55)) { const e = k19BirdPt(b, 'eye'), tip = k19BirdPt(b, 'tip'), u = K.clamp((t - 20.9) / 0.4), v = K.clamp((t - 21.3) / 0.25); const x = v > 0 ? tip[0] : K.lerp(e[0] + 8, tip[0], u), y = v > 0 ? K.lerp(tip[1] + 8, 640, v * v) : K.lerp(e[1] + 12, tip[1] + 8, u); shape(ctx, [[x, y - 10], [x + 6, y + 1], [x, y + 7], [x - 6, y + 1]], TEAR, { lw: 2.5, seed: 151 }); }
   if (k19in(t, 90.95, 91.6)) { const tip = k19BirdPt(b, 'tip'), u = (t - 90.95) / 0.65; ctx.save(); ctx.globalAlpha *= 1 - u; shape(ctx, ell(tip[0] + 10, tip[1] - 30 - 20 * u, 10 + 8 * u, 8 + 6 * u, 12), C.white, { lw: 3, seed: 152 }); ctx.restore(); }
   // feathers
-  k19featherFall(ctx, t, 11.5, 13.2, [150, 470], [250, 597], 1);
+  k19featherFall(ctx, t, 11.5, 13.2, [210, 470], [250, 597], 1);
   if (t < 77) k19featherFall(ctx, t, 74.8, 76.6, [220, 520], [260, 597], 1);
   if (t >= 168.02) { const st = 0.12 * Math.sin(t * 2.2) * (t < 170 ? 1 : 0.4); k19feather(ctx, 178, 596, 0.08 + st, 1.1); }
   // S17: the dashed outline where he stood
   if (k19in(t, 169.32, 170.5)) { const a = (t < 169.94 ? (Math.floor(t * 12) % 2 ? 0.9 : 0.4) : 1 - k19E(t, 169.94, 0.5)); ctx.save(); ctx.translate(K19BX - 176, 0); ctx.globalAlpha *= a; ctx.setLineDash([12, 10]); ctx.lineWidth = 6; ctx.strokeStyle = C.white; ctx.beginPath(); ctx.ellipse(166, 456, 90, 52, -0.08, 0, 7); ctx.moveTo(278, 362); ctx.arc(248, 362, 30, 0, 7); ctx.moveTo(214, 438); ctx.quadraticCurveTo(222, 392, 240, 386); ctx.moveTo(172, 505); ctx.lineTo(172, 598); ctx.moveTo(190, 505); ctx.lineTo(190, 598); ctx.stroke(); ctx.restore(); }
   // thought clouds and balloons on the pond
   if (k19in(t, 31.64, 43.5)) { const hd = k19BirdPt(b, 'eye'), p = t < 43.2 ? K.clamp((t - 31.64) / 0.7) : 1 - K.clamp((t - 43.2) / 0.25); thoughtCloud(ctx, 540, 215, 400, 290, t, { p, tail: [hd[0] + 20, hd[1] - 30], inside: k19insideNet, scale: 0.38, at: [500, 740] }); }
-  if (k19in(t, 46.6, 48.0)) { const p = t < 47.7 ? K.clamp((t - 46.6) / 0.3) : 1 - K.clamp((t - 47.7) / 0.3); thoughtCloud(ctx, 790, 590, 380, 250, t, { p, tail: [C.x + 30, C.y - 130], scale: 0.3, at: [500, 760], inside: (c, tt) => { k19net(c, [[250, 560], [750, 560], [720, 900], [280, 900]], { nu: 7, nv: 5, lw: 7, bulge: [500, 800, 0, 160, 50] }); k19fisherman(c, 150, 1000, 1.35, { handR: [80, -150] }); k19fisherman(c, 850, 1000, 1.35, { handL: [-80, -150], pal: { robe: '#e0b46a', hc: C.red } }); } }); }
+  if (k19in(t, 46.6, 48.0)) { const p = t < 47.7 ? K.clamp((t - 46.6) / 0.3) : 1 - K.clamp((t - 47.7) / 0.3); thoughtCloud(ctx, 530, 588, 380, 250, t, { p, tail: [C.x + 30, C.y - 130], scale: 0.3, at: [500, 760], inside: (c, tt) => { k19net(c, [[250, 560], [750, 560], [720, 900], [280, 900]], { nu: 7, nv: 5, lw: 7, bulge: [500, 800, 0, 160, 50] }); k19fisherman(c, 150, 1000, 1.35, { handR: [80, -150] }); k19fisherman(c, 850, 1000, 1.35, { handL: [-80, -150], pal: { robe: '#e0b46a', hc: C.red } }); } }); }
   if (k19in(t, 56.92, 64.45)) { const hd = k19BirdPt(b, 'eye'), p = t < 64.1 ? K.clamp((t - 56.92) / 0.6) : 1 - K.clamp((t - 64.1) / 0.3); thoughtCloud(ctx, 500, 225, 400, 290, t, { p, tail: [hd[0] + 30, hd[1] - 40], scale: 0.4, at: [560, 740], inside: (c, tt) => k19insideDream(c, tt, { path: tt < 58.4 ? 0 : k19E(tt, 58.4, 0.9), brim: tt > 60.44 ? 1 : 0, man: tt > 61.7 ? K.clamp((tt - 61.7) / 1.0) : 0, cross: tt > 63.26 ? K.clamp((tt - 63.26) / 0.3) : 0 }) }); }
   if (k19in(t, 95.58, 97.0)) { const p = t < 96.7 ? K.clamp((t - 95.58) / 0.35) : 1 - K.clamp((t - 96.7) / 0.3); thoughtCloud(ctx, 430, 400, 180, 130, t, { p, tail: [C.x + 20, C.y - 130], scale: 0.17, at: [690, 760], inside: (c, tt) => { k19pondIcon(c, 690, 830, 250, 80); palmTree(c, 940, 820, { h: 300, s: 0.6, t: tt }); } }); }
   if (k19in(t, 160.76, 167.8)) { const p = t < 167.46 ? K.clamp((t - 160.76) / 0.5) : 1 - K.clamp((t - 167.46) / 0.3); thoughtCloud(ctx, 640, 760, 400, 220, t, { p, tail: [C.x + 20, C.y - 120], scale: 0.3, at: [520, 820], inside: (c, tt) => {
@@ -180,7 +181,7 @@ function k19hillWorld(ctx, t) {
   // the death: one feather drifts down from the limp body
   if (t > 150.1 && t < 152) { const b0 = k19birdPose(150.1), E = k19BirdPt(b0, 'neck', 0.3); k19featherFall(ctx, t, 150.1, 152.6, E, [E[0] + 60, E[1] + 420], 1.1); }
   // S9: the gulp, S11-13 clouds
-  if (k19in(t, 122.04, 129.7)) { const p = t < 129.44 ? K.clamp((t - 122.04) / 0.45) : 1 - K.clamp((t - 129.44) / 0.25); thoughtCloud(ctx, 715, 480, 240, 215, t, { p, tail: [C.x + 40, C.y - 110], scale: K.lerp(0.5, 0.24, k19E(t, 124.3, 0.4)), at: [540, 770], inside: k19insideCrab }); }
+  if (k19in(t, 122.04, 129.7)) { const p = t < 129.44 ? K.clamp((t - 122.04) / 0.45) : 1 - K.clamp((t - 129.44) / 0.25); thoughtCloud(ctx, 715, 390, 240, 215, t, { p, tail: [C.x + 40, C.y - 110], scale: K.lerp(0.5, 0.24, k19E(t, 124.3, 0.4)), at: [540, 770], inside: k19insideCrab }); }
   k19boulders(ctx);
 }
 const K19BCT = [117.32, 117.55, 117.78, 118.1, 118.3, 118.5, 118.7, 118.9];
@@ -208,11 +209,11 @@ const K19CAM = [
   [77.22, k19c(500, 615, 1.0)], [81.2, k19c(500, 615, 1.0)], [82.2, k19c(520, 640, 1.5)], [86.6, k19c(520, 640, 1.5)], [87.3, k19c(520, 640, 1.15)], [89.24, k19c(520, 640, 1.15)],
   [89.25, k19c(500, 615, 1.0)], [91.2, k19c(500, 615, 1.0)], [91.9, k19c(300, 450, 1.9)], [99.3, k19c(300, 450, 1.9)], [100.2, k19c(320, 400, 1.5)], [101.55, k19c(320, 400, 1.5)],
   [101.56, k19c(480, 600, 1.4)], [105.76, k19c(480, 600, 1.4)], [106.6, k19c(500, 700, 1.15)], [109.28, k19c(500, 700, 1.15)], [109.9, k19c(480, 560, 1.7)], [110.93, k19c(480, 560, 1.7)],
-  [110.94, k19c(300, 330, 1.75)], [112.86, k19c(430, 350, 1.75)], [114.8, k19c(525, 360, 1.75)], [115.23, k19c(525, 360, 1.75)],
-  [115.24, k19c(535, 455, 3.0)], [116.71, k19c(535, 455, 3.0)], [116.72, k19c(380, 740, 2.0)], [120.1, k19c(680, 740, 2.0)], [120.77, k19c(680, 740, 2.0)],
-  [120.78, k19c(535, 480, 2.6)], [122.03, k19c(535, 480, 2.6)],
-  [122.04, k19c(625, 490, 2.3)], [129.44, k19c(625, 490, 2.3)], [130.2, k19c(565, 440, 1.9)], [133.93, k19c(565, 440, 1.9)],
-  [133.94, k19c(545, 400, 1.6)], [135.4, k19c(560, 280, 2.2)], [141.5, k19c(560, 280, 2.2)], [142.2, k19c(615, 280, 2.2)], [142.37, k19c(615, 280, 2.2)],
+  [110.94, k19c(300, 240, 1.75)], [112.86, k19c(430, 260, 1.75)], [114.8, k19c(525, 270, 1.75)], [115.23, k19c(525, 270, 1.75)],
+  [115.24, k19c(535, 365, 3.0)], [116.71, k19c(535, 365, 3.0)], [116.72, k19c(380, 740, 2.0)], [120.1, k19c(680, 740, 2.0)], [120.77, k19c(680, 740, 2.0)],
+  [120.78, k19c(535, 390, 2.6)], [122.03, k19c(535, 390, 2.6)],
+  [122.04, k19c(625, 400, 2.3)], [129.44, k19c(625, 400, 2.3)], [130.2, k19c(565, 350, 1.9)], [133.93, k19c(565, 350, 1.9)],
+  [133.94, k19c(545, 310, 1.6)], [135.4, k19c(560, 280, 2.2)], [141.5, k19c(560, 280, 2.2)], [142.2, k19c(615, 280, 2.2)], [142.37, k19c(615, 280, 2.2)],
   [142.38, k19c(525, 512, 1.2)], [145.4, k19c(525, 512, 1.2)], [145.92, k19c(640, 290, 2.2)], [148.9, k19c(640, 290, 2.2)], [149.6, k19c(630, 300, 2.0)], [151.1, k19c(630, 300, 2.0)], [151.89, k19c(525, 900, 1.2)],
   [151.9, k19c(500, 615, 1.0)], [153.0, k19c(500, 615, 1.0)], [154.0, k19c(270, 500, 1.9)], [156.9, k19c(290, 500, 1.9)], [158.4, k19c(660, 845, 1.6)], [159.2, k19c(660, 845, 1.6)], [161.8, k19c(680, 880, 1.9)], [168.01, k19c(680, 880, 1.9)],
   [168.02, k19c(300, 480, 1.6)], [170.8, k19c(300, 480, 1.6)], [171.6, k19c(500, 615, 1.0)], [K19DUR, k19c(500, 615, 1.0)],
@@ -251,8 +252,8 @@ function k19overlays(ctx, t, cam, S) {
   { const b = k19birdPose(84.2), hd = k19BirdPt(b, 'eye'), q = P(hd[0] + 170, hd[1] - 40); k19word(ctx, 'GULP!', q, t, 84.2, 85.1, 84, { fill: C.yellow, rot: 0.1 }); }
   if (k19in(t, 100.58, 101.4)) { const b = k19birdPose(100.8), g = k19grip(b); const q = P(g[0] + 140, g[1] - 60); ctx.save(); ctx.globalAlpha *= 1 - k19E(t, 101.15, 0.25); S.arrow(ctx, q, P(g[0] + 20, g[1] + 10), k19E(t, 100.58, 0.3, 'out'), { width: 18, bend: 0.2 }); ctx.restore(); }
   k19word(ctx, 'BONES!', [300, 560], t, 116.9, 118.2, 104, { fill: C.white, rot: -0.06 });
-  if (k19in(t, 131.6, 133.6)) { ctx.save(); ctx.globalAlpha *= 1 - k19E(t, 133.3, 0.3); const c = P(535, 540); S.arrow(ctx, [c[0] - 330, c[1] - 200], [c[0] - 90, c[1] - 30], k19E(t, 131.6, 0.35, 'back'), { width: 24, bend: 0.25, color: C.red }); ctx.restore(); }
-  k19word(ctx, 'NEXT!', [K.clamp(k19toP(cam, 535, 540)[0] - 330, 180, 800), K.clamp(k19toP(cam, 535, 540)[1] - 250, 130, 900)], t, 131.65, 133.4, 96, { fill: C.red, rot: -0.1 });
+  if (k19in(t, 131.6, 133.6)) { ctx.save(); ctx.globalAlpha *= 1 - k19E(t, 133.3, 0.3); const c = P(535, 450); S.arrow(ctx, [c[0] - 330, c[1] - 200], [c[0] - 90, c[1] - 30], k19E(t, 131.6, 0.35, 'back'), { width: 24, bend: 0.25, color: C.red }); ctx.restore(); }
+  k19word(ctx, 'NEXT!', [K.clamp(k19toP(cam, 535, 450)[0] - 330, 180, 800), K.clamp(k19toP(cam, 535, 450)[1] - 250, 130, 900)], t, 131.65, 133.4, 96, { fill: C.red, rot: -0.1 });
   k19word(ctx, 'SNAP!', [250, 760], t, 140.6, 141.8, 120, { fill: C.yellow, rot: -0.12 });
   k19word(ctx, 'THUD!', [760, 260], t, 152.3, 153.4, 110, { fill: C.yellow, rot: 0.1 });
   // speed lines of the fall

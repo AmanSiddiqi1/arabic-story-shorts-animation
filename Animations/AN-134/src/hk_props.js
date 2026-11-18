@@ -178,8 +178,9 @@ function hkGardenBack() { return bake('hk:garden', 1000, 1230, (c) => {
   // trunks and the canopy
   for (const x of HK_GIN.trunks) shape(c, [[x - 23, 890], [x - 17, 380], [x + 17, 380], [x + 23, 890]], HK_WOODC, { lw: 5, seed: 758 + x, dot: HK_WOODD, pitch: 8, rad: 0.2, da: 0.4 });
   const crowns = []; for (let i = 0; i < 9; i++) crowns.push([-40 + i * 135, 260 + (i % 2) * 70, 130 + (i % 3) * 14]);
+  // v2 (review note 10): a back row of crowns fills the top edge instead of the flat dark band
+  for (let i = 0; i < 9; i++) shape(c, ell(-70 + i * 140, 50 + (i % 2) * 40, 150, 120, 30), GREEN2, { lw: 6, seed: 790 + i, dot: GREEND, pitch: 10, rad: 0.3, da: 0.5 });
   for (const [x, y, r] of crowns) shape(c, ell(x, y, r, r * 0.8, 30), GREEN, { lw: 6, seed: 760 + x, dot: GREEND, pitch: 10, rad: 0.3, da: 0.5 });
-  shape(c, K.rectPts(-10, -10, 1020, 170), GREEND, { lw: 0 }); c.fillStyle = dotPat(c, '#1f5a28', 10, 0.35); c.fillRect(-10, -10, 1020, 170);
   for (let i = 0; i < 26; i++) { const k = crowns[i % 9]; shape(c, ell(k[0] + (R() - 0.5) * 180, k[1] + (R() - 0.5) * 140, 10, 10, 10), i % 2 ? C.red : HK_ORANGE, { lw: 2.5, seed: 9 }); } }); }
 function hkGardenShade(ctx, t) { ctx.save(); ctx.globalAlpha = 0.16; ctx.fillStyle = '#1f5a28';
   for (let i = 0; i < 7; i++) { const x = ((i * 173 + t * 9 * (i % 2 ? 1 : -0.7)) % 1200 + 1200) % 1200 - 100, y = 940 + (i * 53) % 220; ctx.beginPath(); ctx.ellipse(x, y, 70 + (i % 3) * 20, 18, 0, 0, 7); ctx.fill(); } ctx.restore(); }

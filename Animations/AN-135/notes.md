@@ -21,3 +21,12 @@ Decisions the plan left open or the measured sets changed:
 - S13 balloon moved to (610, 455) so it stays in the push-in frame.
 - S16: villagers from the left to x 70 / 175 / 268, the horse (repositioned at the dissolve) at x 150 facing right behind them; it bites the woman's cane bundle at 171.4. Final camera zoom 1.2 instead of 1.0 so the people read.
 - Transitions: wipes S2->S3, S4->S5, S5->S6; THAT EVENING... card 98.2-99.6 (layout swaps under it at 98.9); dissolve S15->S16 at 159.4; cuts elsewhere.
+
+v2 (Fable round 1, 2026-11-18) decisions:
+- Evening horse now comes back from the LEFT and stands at x 190 facing RIGHT, head at about x 326 inside the two-shot (note 4). No headTurn in the evening: the yawn (105.9), the look down at the cane (124.42), the accusing stare (137.98-139.6: neck up, ears flat, half lids) and the ears-up at 155.4 are all played facing the king. For the crown (156.4) the king walks back to x 222 in front of the horse and takes it from the bag; the horse no longer moves.
+- Yard camera ground constant A135_G k 370 -> 430 (note 12): less bare ground; balloons moved to stay in frame (S8 balloon x 360, S12 wide balloon 525/470 580x210, S13 balloon 600/500).
+- Hut bowl moved to x 440 (left of the kneeling girl) and the camera tightened to zoom 2.4-2.6 (the review's 1.7 would not have filled the panel width).
+- Evening bowl level 0.3 with the cross-section always on; morning cross-section 37.0-47.4 at the brim.
+- The red line at 144.26 lands on stalk 2 (the one bowing away from the king), which then bows further.
+- S16 camera ends at (462, 640, zoom 1.15) instead of the review's 1.0: x 27..897 in frame, the villagers (85/150/215) and the TAX sack (150, 360) fully inside, the people still readable. Horse at x 175 facing right; the woman carries her bundle forward so the horse's bite (171.2-172.4) is on the bundle's top.
+- Saddlebag `flap` field (lifts the flap) used at 2.0 on the road and 41.25 in the insert.

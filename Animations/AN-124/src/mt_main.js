@@ -8,7 +8,8 @@ const MT_RX = (t) => (t < 5.0 ? kfn(t, [[0, 330], [3.4, 720], [5.0, 1250]], 'lin
 function mtRoad(ctx, t, camX) {
   const u = mtUAt(t), d = dayCycle(u);
   ctx.save(); ctx.translate(camX, 0); skyCycle(ctx, u, { w: 1000, t, hills: false, moonR: 70 }); ctx.restore();
-  const A = desertRoad(ctx, { w: 2400, sky: false, sun: false, night: d.night, city: 'left', palms: [900, 1600], rocks: [1950], milestones: [1180, 2180], camX });
+  const A = desertRoad(ctx, { w: 2400, sky: false, sun: false, night: 0, city: 'left', palms: [900, 1600], rocks: [1180, 1950], milestones: [], camX });   // v2: no milestone (it read as a headstone)
+  mtDimGrad(ctx, 0, 420, 2400, 1240, d.night);   // v2: soft-edged night dim (no hard band)
   // the king on the wall top above the gate
   if (t > 2.45 && t < 5.4) { const k = mtB(t, 2.45, 0.25), K0 = { x: 420, y: 524 + 30 * (1 - k), s: 0.5, costume: 'caliph', dir: 1, seed: 3, alpha: k, brow: 0.9, mouth: 'open' };
     const snap = t > 2.62 ? settleTo(t, 2.62, 0, 1, 0.3, 0.15) : 0; K0.sq = anticipate(t, 2.42, 0.2, 0.06); K0.tip = 0.1 * snap; K0.handR = [K.lerp(36, 100, snap), K.lerp(-62, -160, snap)]; K0.handL = [-30, -120];
@@ -33,6 +34,9 @@ function mtRoad(ctx, t, camX) {
   desertRoad(ctx, { w: 2400, front: true, lip: null });
   return A;
 }
+
+// v2 S2: the passing horseman rides the far dune right of the tent, slowly: enters 13.22, passes 14.24, gone behind the tent by 15.6
+const MT_HORSE_X = (t) => K.lerp(1330, 990, K.clamp((t - 13.1) / 2.6));
 
 // ---------- camp: props attached to people ----------
 function mtDrawUma(ctx, t, P) {
@@ -82,16 +86,16 @@ function mtDrawDrummer(ctx, t, P) {
 }
 
 // ---------- camp: the frame ----------
-function mtLamps(t) {
+function mtLamps(t) {   // v2: a real dim to 0.35 on "had seemed sad" (166.74-168.18)
   return [0, 1, 2, 3, 4, 5, 6].map((i) => { const a = 56.06 + i * 0.18; let v = t < a ? 0 : t < a + 0.15 ? 1.4 * mtB(t, a, 0.15) : 1; if (t >= a + 0.15 && t < a + 0.4) v = 1 + 0.4 * (1 - mtB(t, a + 0.15, 0.25));
-    if (mtIn(t, 166.74, 168.3)) v *= 1 - 0.5 * (mtB(t, 166.74, 0.12) - mtB(t, 167.9, 0.4)); if (mtIn(t, 163.32, 164.0)) v *= 1 + 0.25 * mtPulse(t, 163.32, 0.6); return v; });
+    if (mtIn(t, 166.74, 168.6)) v *= 1 - 0.65 * (mtB(t, 166.74, 0.12) - mtB(t, 168.18, 0.4)); if (mtIn(t, 163.32, 164.0)) v *= 1 + 0.25 * mtPulse(t, 163.32, 0.6); return v; });
 }
 function mtCamp(ctx, t, cam) {
   const u = mtUAt(t), b = mtBeat(t), play = mtPlaying(t) && !mtIn(t, 166.74, 167.3);
-  const swing0 = swing(t, 149.4, 0.12, 1.3, 1.8), swingAll = t > 164.9 ? 0.05 * Math.sin(t * 2.6) : 0;
+  const swing0 = swing(t, 149.4, 0.12, 1.3, 1.8), tentDim = mtIn(t, 166.74, 168.6) ? 0.38 * (mtB(t, 166.74, 0.15) - mtB(t, 168.18, 0.4)) : 0, swingAll = t > 164.9 ? 0.05 * Math.sin(t * 2.6) : 0;
   desertCamp(ctx, { u, t, camX: cam.x - 500 / cam.zoom, lamps: mtLamps(t), swing: [0, 1, 2, 3, 4, 5, 6].map((i) => (i === 0 ? swing0 : 0) + swingAll * Math.sin(i + 1)), pulse: play ? Math.max(0, 1 - b * 4) : 0,
-    fire: t < 59.48 ? 0 : mtB(t, 59.48, 0.5), slit: t < 59.48 ? 0 : mtB(t, 59.7, 0.5), farLit: t < 59.48 ? 0 : mtB(t, 59.6, 0.6), deco: t < 54.9 ? 0 : 1, tally: t < 11.5 ? 6 : 7, tallyHop: [41.62, 42.12, 42.64].reduce((s, a) => s + 2 * mtPulse(t, a, 0.2), 0), tallyGlow: mtIn(t, 154.5, 156.6) ? 0.8 : 0,
-    behind: (c) => { if (mtIn(t, 12.6, 15.4)) { const xf = (tt) => K.lerp(1560, 250, K.clamp((tt - 12.7) / 2.5)), H = { ...mtWalk(xf, t, GAIT.horse * 0.4), y: 836, s: 0.4, dir: -1, pal: 1, seed: 111 }; H.gallop = 0.6; rideOn(c, 'horse', H, { costume: 'servant', seed: 113 }); }
+    fire: t < 59.48 ? 0 : mtB(t, 59.48, 0.5), slit: t < 59.48 ? 0 : mtB(t, 59.7, 0.5), farLit: t < 59.48 ? 0 : mtB(t, 59.6, 0.6), deco: t < 54.9 ? 0 : 1, tentDim, tally: t < 10.94 ? 6 : 7, tallyHop: [41.62, 42.12, 42.64].reduce((s, a) => s + 2 * mtPulse(t, a, 0.2), 0), tallyGlow: mtIn(t, 154.5, 156.6) ? 0.8 : mtIn(t, 10.94, 11.4) ? 1 - mtB(t, 10.94, 0.46) : 0,
+    behind: (c) => { if (mtIn(t, 13.1, 15.8)) { const H = { ...mtWalk(MT_HORSE_X, t, GAIT.horse * 0.45), y: 838, s: 0.45, dir: -1, pal: 1, seed: 111 }; H.gallop = 0.3; rideOn(c, 'horse', H, { costume: 'servant', seed: 113, gaze: [-1, 0] }); }
       mtDustDevil(c, 1320, 818, t, mtIn(t, 37.8, 39.1) ? Math.sin(Math.PI * (t - 37.8) / 1.3) : 0); } });
   // cushions
   if (mtIn(t, 21.54, 30.1)) mtCushion(ctx, 700, C.red, C.yellow);
@@ -102,7 +106,8 @@ function mtCamp(ctx, t, cam) {
   const items = [], add = (P, f, z = 0) => P && items.push([P.y + z, () => f(ctx, t, P)]);
   add(mtUma(t), mtDrawUma, 0.5);
   add(mtGroom(t), mtDrawGroom, 0.2);
-  add(mtFather(t), mtDrawFather, 1); add(mtMother(t), (c, tt, P) => person(c, P), 1);
+  const pz = t > 46.7 ? -1 : 1;   // v2 S5: the parents stand behind her line (drawn before her) so her face stays clear
+  add(mtFather(t), mtDrawFather, pz); add(mtMother(t), (c, tt, P) => person(c, P), pz);
   add(mtSuitor1(t), mtDrawSuitor); add(mtSuitor2(t), mtDrawSuitor, -0.5);
   for (const G of mtGossips(t)) add(G, (c, tt, P) => person(c, P));
   for (const i of [0, 1]) { add(mtDrummer(t, i), mtDrawDrummer); add(mtGuest(t, i), (c, tt, P) => person(c, P), 1); add(mtKid(t, i), (c, tt, P) => person(c, P), 3 - i); }
@@ -115,6 +120,9 @@ function mtCamp(ctx, t, cam) {
     ctx.restore(); }]);
   add(mtPoet(t), mtDrawPoet, 0.8);
   const ball = mtBall(t); if (ball) items.push([905, () => shape(ctx, ell(ball[0], ball[1], 11, 11, 14), C.red, { lw: 3.5, seed: 830, dot: C.yellow, pitch: 6, rad: 0.25 })]);
+  // v2 S8: the guests left of the children sink into shadow so the poet and the children carry the shot
+  const s8 = mtIn(t, 73.3, 86.2) ? Math.min(mtB(t, 73.3, 0.4), 1 - mtB(t, 85.8, 0.4)) : 0;
+  items.push([901.5, () => { if (s8 > 0) { ctx.save(); const g = ctx.createLinearGradient(1160, 0, 1285, 0); g.addColorStop(0, 'rgba(10,26,74,' + (0.5 * s8).toFixed(3) + ')'); g.addColorStop(1, 'rgba(10,26,74,0)'); ctx.fillStyle = g; ctx.fillRect(900, 600, 385, 340); ctx.restore(); } }]);
   items.sort((a, c) => a[0] - c[0]).forEach((it) => it[1]());
   desertCamp(ctx, { layer: 'front', u, t });
   mtCampFx(ctx, t);
@@ -131,12 +139,12 @@ function mtCampFx(ctx, t) {
   if (mtIn(t, 24.6, 30.1)) { const k = mtPop(t, 24.66, 0.3), pu = 1 + 0.15 * (mtPulse(t, 24.66, 0.35) + mtPulse(t, 25.42, 0.35) + mtPulse(t, 29.55, 0.35)); heart(ctx, 622, 690 - 8 * Math.sin(t * 2), 24 * k * pu); }
   // S4: the father's picture balloon: a new tent with a sun, then the messenger struck through
   const fb = mtIn(t, 34.3, 36.2) ? 1 : mtIn(t, 39.7, 41.4) ? 2 : 0;
-  if (fb) { const a = fb === 1 ? 34.3 : 39.7, e = fb === 1 ? 36.2 : 41.4; iconBalloon(ctx, 470, 470, 220, 160, mtB(t, a, 0.3, 'lin') * (1 - mtB(t, e - 0.2, 0.2, 'lin')), [585, 650], (c) => {
+  if (fb) { const a = fb === 1 ? 34.3 : 39.7, e = fb === 1 ? 36.2 : 41.4; iconBalloon(ctx, 800, 420, 220, 160, mtB(t, a, 0.3, 'lin') * (1 - mtB(t, e - 0.2, 0.2, 'lin')), [620, 640], (c) => {   // v2: over the tent roof, clear of the rising sun
     if (fb === 1) { c.fillStyle = '#9fd0ff'; c.fillRect(-110, -80, 220, 160); sun(c, 50, -28, t); shape(c, [[-80, 50], [-50, -10], [-20, -18], [10, 50]], MT_TENT, { lw: 4, seed: 840, dot: MT_TENTD, pitch: 8, rad: 0.2 }); c.fillStyle = '#e6c27a'; c.fillRect(-110, 50, 220, 30); seg(c, -110, 50, 110, 50, 3, C.black, 0); }
     else { if (t < 39.8) { c.fillStyle = C.white; c.fillRect(-110, -80, 220, 160); } horse(c, { x: 10, y: 50, s: 0.28, dir: -1, silhouette: true, gallop: 0.6, ph: t * 8, amp: 1 }); person(c, { x: 4, y: 0, s: 0.28, costume: 'servant', silhouette: true, sit: 1, seat: 'bench', dir: -1 });
       const k = mtB(t, 39.82, 0.2, 'lin'); if (k > 0) { c.save(); c.lineCap = 'round'; c.lineWidth = 16; c.strokeStyle = C.black; c.beginPath(); c.moveTo(-80, 50); c.lineTo(-80 + 160 * k, 50 - 110 * k); c.stroke(); c.lineWidth = 9; c.strokeStyle = C.red; c.stroke(); c.restore(); } } }); }
   // S8: the picture strip of the news
-  if (mtIn(t, 78.3, 85.9)) iconBalloon(ctx, 1260, 560, 380, 170, mtB(t, 78.3, 0.3, 'lin') * (1 - mtB(t, 85.6, 0.3, 'lin')), [1355, 790], (c) => {
+  if (mtIn(t, 78.3, 85.9)) iconBalloon(ctx, 1268, 555, 370, 170, mtB(t, 78.3, 0.3, 'lin') * (1 - mtB(t, 85.6, 0.3, 'lin')), [MT_CAMP.kids[1] - 6, 722], (c) => {   // v2: tail ends above the boy's head
     c.fillStyle = '#fff3d6'; c.fillRect(-190, -85, 380, 170);
     portraitMedallion(c, -125, 0, 52, { costume: 'lady', pal: MT_U_WED, mouth: 'closed' }, { bg: '#ffd9e0' });
     const kp = mtPop(t, 79.9, 0.3), out = mtB(t, 83.14, 0.3); if (kp > 0 && out < 1) { c.save(); c.globalAlpha = 1 - out; c.translate(0, 40 * out); c.scale(kp, kp); portraitMedallion(c, 0, 0, 52, { costume: 'bedouin', age: 0, mouth: 'smile' }); mtX(c, 0, 0, 40, mtB(t, 82.46, 0.13, 'lin'), 12); c.restore(); }
@@ -155,7 +163,9 @@ function mtCampFx(ctx, t) {
   if (M && mtIn(t, 122.41, 130.6)) { const p = mtB(t, 122.41, 3.1, 'lin'), end = verseRibbon(ctx, RIB, t, { p: Math.max(0.01, p), col: C.blue, curl: mtB(t, 125.5, 0.6), seed: 773, fade: mtB(t, 129.9, 0.7, 'lin') });
     if (mtIn(t, 128.5, 130.8)) { const c = MT_RIB_END(); const k = mtPop(t, 128.56, 0.3) * (1 - mtB(t, 130.4, 0.4)), pu = 1 + 0.15 * (mtPulse(t, 128.9, 0.35) + mtPulse(t, 129.4, 0.35)); heart(ctx, c[0], c[1], 24 * k * pu); } }
   // S14: the groom's short yellow verse, bowing between the two like a bridge
-  if (G && mtIn(t, 141.44, 144.4)) { const m = mtMouth(G); verseRibbon(ctx, [[m[0] + 10, m[1] - 6], [m[0] + 50, 540], [890, 520], [905, 600]], t, { p: mtB(t, 141.44, 0.9, 'lin'), col: C.yellow, seed: 774, fade: mtB(t, 143.6, 0.8, 'lin') }); }
+  if (G && mtIn(t, 141.44, 144.4)) { const m = mtMouth(G); verseRibbon(ctx, [[m[0] + 12, m[1] - 4], [m[0] + 110, 540], [870, 500], [950, 630]], t, { p: mtB(t, 141.44, 1.0, 'lin'), col: C.yellow, seed: 774, fade: mtB(t, 143.6, 0.8, 'lin') }); }
+  // v2 S9: the singer's '?' while she stares at the hooded stranger
+  if (mtIn(t, 91.4, 92.2)) { const g = mtGuest(t, 1), h = mtHead(g); sfx(ctx, '?', h[0] + 6, h[1] - 78, 64, mtPop(t, 91.4, 0.2) * (1 - mtB(t, 92.0, 0.2)), { fill: C.yellow }); }
   // S15: the rumour undone beside the post
   if (mtIn(t, 155.5, 156.9)) iconBalloon(ctx, 450, 590, 160, 140, mtB(t, 155.5, 0.25, 'lin') * (1 - mtB(t, 156.6, 0.3, 'lin')), [548, 690], (c) => {
     portraitMedallion(c, 0, 0, 48, { costume: 'bedouin', age: 0.35, mouth: t > 156.0 ? 'smile' : 'closed' }, { grey: 1 - mtB(t, 155.9, 0.4) });
@@ -166,7 +176,7 @@ function mtCampFx(ctx, t) {
   if (t > 168.78) { const k = mtPop(t, 168.78, 0.4), pu = 1 + 0.08 * Math.sin((t - 168.78) * 6); heart(ctx, 815, 560 - 6 * Math.sin(t * 2), 62 * k * pu); musicNotes(ctx, 815, 560, t, { t0: 168.9, gap: 0.35, n: 30, loop: true, seed: 11, life: 1.6 }); }
   if (mtIn(t, 103.7, 104.9) && U) { const m = mtMouth(U); for (let i = 0; i < 3; i++) { const u = K.clamp((t - 104.1 - i * 0.1) / 0.7); if (u <= 0 || u >= 1) continue; ctx.save(); ctx.globalAlpha = 1 - u; shape(ctx, ell(m[0] + 20 + 40 * u, m[1] - 6 - 10 * u, 6 + 8 * u, 4 + 6 * u, 12), C.white, { lw: 3, seed: 850 + i }); ctx.restore(); } }
 }
-const MT_RIB = (t) => { const M = mtPoet(Math.max(t, 70)), m = mtMouth(M); return [[m[0] - 12, m[1] - 2], [m[0] - 60, 560], [990, 540], [925, 640]]; };
+const MT_RIB = (t) => { const M = mtPoet(Math.max(t, 70)), m = mtMouth(M); return [[m[0] - 14, m[1] - 2], [m[0] - 20, 500], [850, 450], [862, 630]]; };   // v2: from his covered mouth over to her
 const MT_RIB_END = () => { const r = MT_RIB(126); const a = r[3], b = mtBz(r, 0.97), ang = Math.atan2(a[1] - b[1], a[0] - b[0]); return [a[0] + Math.cos(ang - Math.PI / 2) * 30, a[1] + Math.sin(ang - Math.PI / 2) * 30]; };
 function mtCloudInside(c, t) {   // drawn in a 1000 x 1230 world at scale 0.36 around (500, 700)
   const ph = t < 114.0 ? 0 : t < 117.88 ? 1 : 2;
@@ -185,21 +195,22 @@ function mtCloudInside(c, t) {   // drawn in a 1000 x 1230 world at scale 0.36 a
 }
 
 // ---------- camera ----------
-const MT_CAM = [[9.1, 800, 700, 1.15], [9.7, 800, 700, 1.15], [16.4, 760, 655, 1.35], [17.2, 760, 655, 1.35], [17.7, 560, 655, 1.35], [21.53, 560, 655, 1.35],
+// v2: wides framed so the carpet / foot line sits at about 84% of the panel (y = 900 - 430 / zoom); close shots stay on faces
+const MT_CAM = [[9.1, 850, 593, 1.4], [15.6, 850, 593, 1.4], [16.4, 760, 581, 1.35], [17.2, 760, 581, 1.35], [17.7, 560, 581, 1.35], [21.53, 560, 581, 1.35],
   [21.54, 700, 695, 1.7], [26.6, 700, 695, 1.7], [27.2, 740, 695, 1.7], [30.09, 740, 695, 1.7],
-  [30.1, 700, 655, 1.3], [39.6, 730, 655, 1.3], [41.4, 610, 675, 1.6], [43.49, 610, 675, 1.6],
-  [43.5, 880, 640, 1.05], [47.4, 880, 640, 1.05], [50.0, 700, 675, 1.6], [52.4, 700, 675, 1.6], [53.7, 740, 675, 1.6], [53.8, 740, 675, 1.6], [54.5, 700, 755, 1.9], [54.89, 700, 755, 1.9],
-  [54.9, 790, 410, 1.5], [55.2, 790, 410, 1.5], [57.6, 790, 650, 1.2], [65.03, 815, 650, 1.2],
-  [65.04, 1165, 690, 1.15], [70.9, 1165, 690, 1.15], [72.0, 1050, 690, 1.15], [73.29, 1050, 690, 1.15],
-  [73.3, 1267, 695, 1.5], [79.2, 1267, 695, 1.5], [82.0, 1337, 655, 1.9], [85.89, 1337, 655, 1.9],
-  [85.9, 1300, 655, 1.6], [88.5, 1300, 655, 1.6], [91.2, 1120, 690, 1.25], [93.59, 1120, 690, 1.25],
-  [93.6, 830, 685, 1.45], [97.5, 830, 685, 1.45], [98.4, 860, 685, 1.9], [100.8, 860, 685, 1.9], [101.6, 830, 685, 1.45], [105.2, 830, 685, 1.45], [106.5, 820, 690, 1.2], [108.63, 820, 690, 1.2],
-  [108.64, 960, 615, 1.5], [117.9, 1020, 615, 1.5], [118.99, 1020, 615, 1.5],
-  [119.0, 1100, 645, 1.7], [122.4, 1100, 645, 1.7], [126.5, 930, 645, 1.3], [129.67, 930, 645, 1.3],
-  [129.68, 960, 655, 1.35], [132.7, 960, 655, 1.35], [133.8, 790, 685, 1.9], [136.99, 790, 685, 1.9],
-  [137.0, 880, 665, 1.4], [139.0, 880, 665, 1.4], [146.2, 700, 640, 1.05], [150.31, 700, 640, 1.05],
-  [150.32, 900, 675, 1.5], [153.6, 900, 675, 1.5], [154.4, 690, 675, 1.5], [156.6, 690, 675, 1.5], [157.3, 820, 675, 1.5], [158.3, 820, 675, 1.5], [160.0, 820, 695, 1.8], [163.8, 820, 695, 1.8],
-  [164.0, 820, 695, 1.6], [170.4, 820, 615, 1.0], [177, 820, 615, 1.0]];
+  [30.1, 700, 575, 1.3], [39.6, 730, 575, 1.3], [41.4, 610, 675, 1.6], [43.49, 610, 675, 1.6],
+  [43.5, 880, 540, 1.15], [47.4, 880, 540, 1.15], [50.0, 688, 750, 2.15], [52.4, 688, 750, 2.15], [53.6, 700, 762, 1.9], [54.89, 700, 762, 1.9],
+  [54.9, 790, 410, 1.5], [55.2, 790, 410, 1.5], [57.6, 790, 545, 1.2], [65.03, 815, 545, 1.2],
+  [65.04, 1165, 535, 1.15], [70.9, 1165, 535, 1.15], [72.0, 1050, 535, 1.15], [73.29, 1050, 535, 1.15],
+  [73.3, 1267, 615, 1.5], [79.2, 1267, 615, 1.5], [82.0, 1337, 665, 1.9], [85.89, 1337, 665, 1.9],
+  [85.9, 1300, 635, 1.6], [88.5, 1300, 635, 1.6], [91.2, 1080, 556, 1.25], [93.59, 1080, 556, 1.25],
+  [93.6, 860, 603, 1.45], [97.5, 860, 603, 1.45], [98.4, 860, 685, 1.9], [100.8, 860, 685, 1.9], [101.6, 860, 603, 1.45], [105.2, 860, 603, 1.45], [106.5, 840, 545, 1.2], [108.63, 840, 545, 1.2],
+  [108.64, 960, 615, 1.5], [117.9, 1000, 615, 1.5], [118.99, 1000, 615, 1.5],
+  [119.0, 945, 650, 1.7], [122.4, 945, 650, 1.7], [126.5, 930, 590, 1.3], [129.67, 930, 590, 1.3],
+  [129.68, 935, 600, 1.35], [131.5, 935, 600, 1.35], [132.1, 935, 672, 1.85], [132.74, 935, 672, 1.85], [133.6, 735, 700, 2.1], [136.99, 735, 700, 2.1],
+  [137.0, 735, 700, 2.1], [137.5, 700, 765, 2.3], [138.98, 700, 765, 2.3], [139.54, 830, 613, 1.5], [144.3, 815, 613, 1.5], [146.1, 815, 613, 1.5], [147.1, 690, 535, 1.15], [150.31, 690, 535, 1.15],
+  [150.32, 840, 625, 1.5], [153.6, 840, 625, 1.5], [154.4, 690, 625, 1.5], [156.6, 690, 625, 1.5], [157.3, 820, 625, 1.5], [158.3, 820, 625, 1.5], [160.0, 820, 695, 1.8], [163.8, 820, 695, 1.8],
+  [164.0, 820, 695, 1.6], [170.4, 915, 556, 1.25], [177, 915, 556, 1.25]];
 function mtCam(t) {
   const k = MT_CAM, i = k.findIndex((q) => t < q[0]); let c;
   if (i <= 0) { const q = k[i < 0 ? k.length - 1 : 0]; c = { x: q[1], y: q[2], zoom: q[3] }; }
@@ -218,15 +229,16 @@ function mtOverlays(ctx, t, cam, S, road) {
     const r = P(MT_RX(t), 540), rl = K.clamp(r[0] - 60, 300, 700);
     lab('AL-MUTALAMMIS, THE POET', rl, r[1] - 200, 1.2, 2.5, { size: 46 }); arr([rl, r[1] - 150], [r[0], r[1] - 40], 1.3, 2.5, { bend: 0.15 });
     const k = P(420, 420), kl = K.clamp(k[0] + 190, 220, 780); lab('KING AL-NUMAN', kl, k[1] - 130, 3.1, 4.3, { size: 42, fill: C.yellow }); arr([kl - 40, k[1] - 85], [k[0] + 30, k[1] - 20], 3.2, 4.3, { bend: -0.2 });
-    if (mtIn(t, 7.7, 9.0)) { const n = 1 + Math.min(2, Math.floor((mtTr(t, [[0, 0.75], [6.9, 2.75, 1.9]]) - 0.75) * 1.0 + 0.6)); ctx.save(); ctx.globalAlpha = mtFade(t, 7.7, 9.0); S.label(ctx, 'YEAR ' + n, 160, 150, mtB(t, 7.7, 0.3), { size: 50, align: 'center', fill: C.yellow }); ctx.restore(); }
+    if (mtIn(t, 6.92, 9.0)) { const n = 1 + Math.min(6, Math.floor((t - 6.92) / 0.27)), tick = (t - 6.92) % 0.27 < 0.08 && n > 1 ? 1.12 : 1;   // v2: YEAR 1..7 across "a long time"
+      ctx.save(); ctx.globalAlpha = mtFade(t, 6.92, 9.0, 0.15); ctx.translate(170, 150); ctx.scale(tick, tick); S.label(ctx, 'YEAR ' + n, 0, 0, mtB(t, 6.92, 0.2), { size: 50, align: 'center', fill: n === 7 ? C.yellow : C.white }); ctx.restore(); }
     return;
   }
   // S2
   { const U = mtUma(t); if (U) { const h = P(...mtHead(U)); lab('UMAYMAH, HIS WIFE', K.clamp(h[0], 260, 740), h[1] - 190, 10.1, 11.9, { size: 44 }); arr([K.clamp(h[0], 260, 740), h[1] - 150], [h[0], h[1] - 70], 10.2, 11.9); } }
-  lab('NEWS?', ...P(1060, 560), 13.6, 14.8, { size: 52, fill: C.yellow });
+  lab('NEWS?', ...P(1110, 620), 13.6, 15.0, { size: 52, fill: C.yellow });
   lab('DEAD?', ...P(345, 420), 19.75, 21.4, { size: 50, fill: C.white });
   // S3
-  word('NO!', ...P(800, 600), 27.8, 28.9, 96, { fill: C.red, rot: -0.08 });
+  word('NO!', ...P(628, 592), 27.8, 28.9, 96, { fill: C.red, rot: -0.08 });   // v2: over the dark tent wall, above her raised hand
   // S4
   if (mtIn(t, 42.65, 43.5)) { ctx.save(); ctx.globalAlpha = mtFade(t, 42.65, 43.5, 0.15); S.counter(ctx, 7, ...P(470, 640), mtB(t, 42.65, 0.3), { size: 80 }); S.label(ctx, 'YEARS', ...P(470, 720), mtB(t, 42.75, 0.3), { size: 44, align: 'center', fill: C.yellow }); ctx.restore(); }
   // S5: suitors counter
@@ -255,6 +267,7 @@ function mtOverlays(ctx, t, cam, S, road) {
   // S15
   if (mtIn(t, 154.6, 156.5)) { ctx.save(); ctx.globalAlpha = mtFade(t, 154.6, 156.5, 0.15); S.counter(ctx, 7, ...P(650, 560), mtB(t, 154.6, 0.3), { size: 76 }); S.label(ctx, 'YEARS', ...P(650, 630), mtB(t, 154.7, 0.3), { size: 42, align: 'center', fill: C.yellow }); ctx.restore(); }
   word('DUM!', ...P(380, 680), 163.4, 164.3, 64, { fill: C.yellow, rot: -0.1 });
+  word('GRRMPH', ...P(1235, 640), 170.44, 171.5, 44, { fill: C.white, rot: 0.06 });
   // THE END
   if (t >= 171.5) S.title(ctx, 'THE END', 500, 200, mtB(t, 171.5, 0.8), { size: 84, align: 'center' });
 }
@@ -268,7 +281,7 @@ const SCENE = {
     S.box(ctx, px, py, pw, ph, 1, { fill: C.blue, lw: 11, seed: 3 });
     ctx.save(); ctx.beginPath(); ctx.rect(px + 9, py + 9, pw - 18, ph - 18); ctx.clip(); ctx.translate(px, py); ctx.scale(pw / 1000, ph / 1230);
     const road = t < 9.1;
-    const cam = road ? { x: MT_RCX(t) + 500, y: 700, zoom: 1.2 } : mtCam(t);
+    const cam = road ? { x: MT_RCX(t) + 500, y: 585, zoom: 1.2 } : mtCam(t);   // v2: road framed lower (ground at about 80% of the panel)
     ctx.save(); K.camera(ctx, 1000, 1230, cam);
     if (road) mtRoad(ctx, t, MT_RCX(t)); else mtCamp(ctx, t, cam);
     ctx.restore();

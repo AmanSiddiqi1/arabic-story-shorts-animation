@@ -22,17 +22,18 @@ function pmManS1(t) {
   const P = pmC('man', { x: 690, dir: 1 }), sl = t >= 3.82;
   if (t < 3.32) P.pal = { hc: C.yellow, sash: C.yellow, jewel: C.red };
   P.sq = (sl ? settleTo(t, 3.82, 1.03, 0.95, 0.5) : 1.03) * breathe(t, 2);
-  P.tip = 0.05 * pmB(t, 3.82, 0.5); P.drop = 6 * pmB(t, 3.82, 0.5) + 6 * pulse(t, 2.33, 0.25);
+  P.tip = 0.05 * pmB(t, 3.82, 0.5); P.drop = 8 * pmB(t, 3.82, 0.5) + 6 * pulse(t, 2.33, 0.25);
   const wide = pmIn(t, 2.33, 3.9); P.eyes = wide ? 'wide' : 'open';
-  P.lid = wide ? null : t < 2.33 ? 0.3 : Math.max(0.45, pulse(t, 4.15, 0.5));
+  P.lid = wide ? null : t < 2.33 ? 0.3 : Math.max(0.5, pulse(t, 4.15, 0.5));
   if (wide) P.noBlink = true;
   P.brow = t < 2.33 ? -0.1 : -0.6; P.mouth = t < 2.18 ? 'smile' : t < 3.82 ? 'o' : 'frown';
   P.look = pmTr(t, [[0, 0], [2.33, -0.7, 0.07], [2.62, -0.2, 0.07], [3.36, 0.8, 0.07], [3.95, 0, 0.3], [6.9, 0.6, 0.3], [8.35, -0.4, 0.3]]);
-  P.aR = pmArm(t, P, 1, [[0, PMH.hips], [3.82, PMH.side, 0.45], [4.48, [52, -150], 0.35], [5.56, PMH.palm, 0.3], [6.16, [38, -92], 0.45]]);
-  P.aL = pmArm(t, P, -1, [[0, PMH.hipsL], [3.82, PMH.sideL, 0.45], [5.56, PMH.palmL, 0.3], [6.16, PMH.sideL, 0.45]]);
-  const turn = pmB(t, 4.8, 0.22) * (1 - pmB(t, 5.3, 0.25));
-  P.held = [pmManPurse(P, 0, t >= 4.48, Math.PI * turn + swing(t, 5.55, 0.35, 1.3, 2.2)), (ctx) => { if (pmIn(t, 4.98, 5.6)) { const h = pmHandW(P, 'R'); dustBurst(ctx, h[0], h[1] - 30, t - 4.98, 5, 6, 12, 26, 0.55, 3); } }];
-  P.gaze = pmLook(t, P, [[0, [300, 480]], [1.0, [520, 780]], [1.7, [880, 700]], [2.33, [330, 470]], [2.62, [520, 790]], [3.36, [880, 720]], [3.95, [700, 1100]], [4.6, () => pmHandW(P, 'R')], [5.56, [640, 1150]], [6.9, [880, 700]], [7.9, [820, 790]], [8.35, [560, 1100]]], 0.1);
+  // v2: no hand on the hip; arms fall at 3.82, the limp purse is turned out at 5.0, then both arms hang again
+  P.aR = pmArm(t, P, 1, [[0, PMH.hips], [3.82, PMH.hang, 0.45], [4.6, [56, -146], 0.35], [5.56, PMH.palm, 0.3], [6.16, PMH.hang, 0.5]]);
+  P.aL = pmArm(t, P, -1, [[0, PMH.hipsL], [3.82, PMH.hangL, 0.45], [5.56, PMH.palmL, 0.3], [6.16, PMH.hangL, 0.5]]);
+  const turn = pmB(t, 5.0, 0.22) * (1 - pmB(t, 5.5, 0.25));
+  P.held = [pmManPurse(P, 0, t >= 4.6, Math.PI * turn + swing(t, 5.55, 0.35, 1.3, 2.2)), (ctx) => { if (pmIn(t, 5.18, 5.8)) { const h = pmHandW(P, 'R'); dustBurst(ctx, h[0], h[1] - 30, t - 5.18, 5, 6, 12, 26, 0.55, 3); } }];
+  P.gaze = pmLook(t, P, [[0, [300, 480]], [1.0, [520, 780]], [1.7, [880, 700]], [2.33, [330, 470]], [2.62, [520, 790]], [3.36, [880, 720]], [3.95, [700, 1100]], [4.7, () => pmHandW(P, 'R')], [5.56, [640, 1150]], [6.9, [880, 700]], [7.9, [820, 790]], [8.35, [560, 1100]]], 0.1);
   return pmFin(t, P);
 }
 function pmWifeS1(t) {
@@ -53,8 +54,8 @@ function pmManS2(t) {
   P.brow = pmTr(t, [[8.98, -0.5], [12.74, 0, 0.4], [13.85, -0.5, 0.3], [14.96, 0.15, 0.3]]);
   P.mouth = pmIn(t, 13.28, 13.8) ? 'smile' : pmIn(t, 13.85, 14.9) ? 'frown' : 'closed';
   P.look = pmTr(t, [[8.98, 0.3], [12.74, 0.4, 0.3], [14.96, -0.7, 0.3]]);
-  P.aR = pmArm(t, P, 1, [[0, [38, -92]], [13.6, [60, -112], 0.35], [14.96, [40, -96], 0.4]]);
-  P.aL = pmArm(t, P, -1, [[0, PMH.sideL]]);
+  P.aR = pmArm(t, P, 1, [[0, PMH.hang], [13.6, [60, -112], 0.35], [14.96, [40, -96], 0.4]]);
+  P.aL = pmArm(t, P, -1, [[0, PMH.hangL], [14.96, PMH.sideL, 0.4]]);
   P.held = [pmManPurse(P, 0, pmIn(t, 13.6, 15.2))];
   P.gaze = pmLook(t, P, [[8.98, [520, 1100]], [9.6, [585, 1000]], [12.74, [528, 455]], [13.85, () => pmHandW(P, 'R')], [14.3, [585, 715]], [14.96, [140, 720]]], 0.15);
   return pmFin(t, P);
@@ -80,30 +81,31 @@ function pmFriendHouse1(ctx, t) {
   if (t < 24.85) pmPurse(ctx, PM_DESKPURSE[0], PM_DESKPURSE[1] - 2, 0.9, { fill: 1 });
   pmDraw(ctx, t, F); pmDraw(ctx, t, M);
   // the fat purse: desk -> friend's left hand -> the man's two hands
-  if (t >= 24.85) { const fh = pmHandW(F, 'L'), a = pmHandW(M, 'R'), b = pmHandW(M, 'L'), mh = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+  if (t >= 24.85) { const fh = pmHandW(F, 'R'), a = pmHandW(M, 'R'), b = pmHandW(M, 'L'), mh = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
     const p = t < 25.38 ? fh : pmHandOver(t, 25.38, 0.26, fh, mh, 8); pmPurse(ctx, p[0], p[1] + 46, 0.95, { fill: 1, sq: impactSquash(t, 25.64, 0.88) }); }
 }
 function pmManS3(t) {
   const xf = (tt) => 120 + 210 * K.ease.out(K.clamp((tt - 15.84) / 1.35)), P = pmC('man', { ...pmWalk(xf, t, 11), dir: 1 });
-  P.tip = 0.06 * pmB(t, 17.1, 0.3) * (1 - pmB(t, 26.6, 0.3)) + 0.12 * pmWin(t, 28.4, 29.6, 0.25) + 0.03 * pmWin(t, 22.98, 23.4, 0.1) * -1;
-  P.sq = (t < 19.52 ? 1 : settleTo(t, 19.52, 1, 0.95, 0.5) + 0.05 * pmB(t, 25.64, 0.6)) * breathe(t, 3, 0.015);
-  P.drop = 7 * (1 - pmB(t, 26.62, 0.3)) - 3 * pmWin(t, 22.98, 23.4, 0.1);
+  const up = pmWin(t, 22.98, 23.6, 0.12);   // v2: the single look up at the friend
+  P.tip = 0.05 * pmB(t, 17.1, 0.3) * (1 - pmB(t, 26.6, 0.3)) * (1 - up) + 0.12 * pmWin(t, 28.4, 29.6, 0.25);
+  P.sq = (t < 17.24 ? 1 : settleTo(t, 17.24, 1, 0.95, 0.5) + 0.05 * pmB(t, 25.64, 0.6)) * breathe(t, 3, 0.015);
+  P.drop = 9 * (1 - pmB(t, 26.62, 0.3)) * (1 - 0.8 * up);
   P.x += pmIn(t, 20.3, 22.9) ? tremble(t, 1, 8) : 0;
-  P.lid = t < 19.52 ? 0.4 : t < 22.98 ? 0.7 : t < 26.62 ? 0.4 : t < 28.4 ? 0 : Math.max(0.2, pmWin(t, 28.5, 28.85, 0.08));
-  if (pmIn(t, 22.98, 23.4)) P.lid = 0.15;
+  P.lid = t < 17.24 ? 0.4 : t < 26.62 ? K.lerp(0.45, 0.15, up) : t < 28.4 ? 0 : Math.max(0.2, pmWin(t, 28.5, 28.85, 0.08));
   P.eyes = pmIn(t, 26.62, 28.3) ? 'wide' : 'open'; if (P.eyes === 'wide') { P.lid = null; P.noBlink = true; }
   P.wet = pmIn(t, 19.52, 23.6) || t > 28.3;
-  P.brow = t < 26.62 ? -0.5 : t < 28.3 ? -0.7 : -0.3;
+  P.brow = t < 26.62 ? K.lerp(-0.5, 0.3, up) : t < 28.3 ? -0.7 : -0.3;
   P.mouth = pmIn(t, 19.52, 22.98) ? 'frown' : pmIn(t, 26.62, 28.3) ? 'o' : t > 28.6 ? 'smile' : 'closed';
   P.talk = talk(t, [[17.24, 19.5], [19.52, 21.0]]) * 0.55;
-  const F = () => [xfF(t), 698];
-  P.aR = pmArm(t, P, 1, [[0, PMH.side], [17.24, [76, -122], 0.35], [19.4, PMH.side, 0.4], [24.34, PMH.sash, 0.3], [25.2, [44, -124], 0.3], [28.4, [8, -124], 0.4]]);
-  P.aL = pmArm(t, P, -1, [[0, PMH.sideL], [20.3, [-10, -186], 0.3], [22.98, PMH.sideL, 0.3], [25.2, [22, -118], 0.3], [28.4, [-4, -118], 0.4]]);
-  P.held = [t < 24.6 ? pmManPurse(P, 0, true, swing(t, 17.6, 0.3, 1.4, 2)) : pmManPurse(P, 0, false)];
-  P.gaze = pmLook(t, P, [[15.84, [400, 1000]], [17.24, [500, 1050]], [19.52, [380, 1100]], [22.98, F], [23.4, [420, 1080]], [25.2, () => pmHandW(P, 'R')], [26.62, () => pmHandW(P, 'R')], [27.0, F], [28.4, [380, 1050]]], 0.15);
+  const F = () => [xfF(t), 690], tr = (tt) => tremble(tt, 2.2, 10);
+  // hands wringing low at the sash (trembling), one open empty palm on فقر, then reaching for the purse
+  P.aR = pmArm(t, P, 1, [[0, PMH.hang], [17.24, () => [PMH.wring[0] + tr(t), PMH.wring[1]], 0.4], [19.52, PMH.palm, 0.3], [20.3, () => [PMH.wring[0] + tr(t), PMH.wring[1]], 0.4], [24.97, [64, -118], 0.35], [28.4, [8, -124], 0.4]]);
+  P.aL = pmArm(t, P, -1, [[0, PMH.hangL], [17.24, () => [PMH.wringL[0] - tr(t), PMH.wringL[1]], 0.4], [24.97, [52, -124], 0.35], [28.4, [-4, -118], 0.4]]);
+  P.held = [pmManPurse(P, 0, false)];
+  P.gaze = pmLook(t, P, [[15.84, [400, 1000]], [17.24, [430, 960]], [19.52, () => pmHandW(P, 'R')], [20.3, [440, 980]], [22.98, F], [23.6, [430, 960]], [24.97, [446, 752]], [25.64, () => pmHandW(P, 'R')], [27.0, F], [28.4, [380, 1050]]], 0.12);
   return pmFin(t, P);
 }
-const xfF = (tt) => pmTr(tt, [[15.84, 650], [18.46, 622, 0.5], [22.95, 430, 0.65]]);
+const xfF = (tt) => pmTr(tt, [[15.84, 650], [18.46, 622, 0.5], [22.95, 505, 0.65]]);   // v2: stops 75 px short of v1 so there is air between them
 function pmFriendS3(t) {
   const xf = xfF, P = pmC('friend', { ...pmWalk(xf, t, 13), dir: -1 });
   P.mouth = pmIn(t, 16.66, 18.46) || t > 25.0 ? 'smile' : 'closed'; P.brow = t < 18.46 ? -0.3 : t < 25.0 ? -0.5 : -0.2;
@@ -113,8 +115,9 @@ function pmFriendS3(t) {
   P.tip = -0.04 * pmWin(t, 24.4, 25.2, 0.2) + 0.04 * pmWin(t, 25.3, 25.8, 0.15);
   const M = () => pmHead(pmManS3(t));
   P.look = pmTr(t, [[15.84, 0.6], [16.5, 0, 0.3], [24.34, -0.8, 0.2], [25.25, 0, 0.3]]);
-  P.aR = pmArm(t, P, 1, [[0, PMH.side], [16.66, PMH.out, 0.3], [17.4, PMH.side, 0.5], [21.02, PMH.chin, 0.4], [22.92, PMH.side, 0.3], [23.55, () => ({ w: pmW(pmManS3(t), [31, -140]) }), 0.25], [24.34, PMH.side, 0.3], [27.38, PMH.fwd, 0.3], [28.3, PMH.side, 0.4]]);
-  P.aL = pmArm(t, P, -1, [[0, PMH.sideL], [16.66, PMH.outL, 0.3], [17.4, PMH.sideL, 0.5], [24.34, { w: [470, 778] }, 0.45], [24.95, [-30, -150], 0.3], [25.38, () => { const M2 = pmManS3(t), a = pmHandW(M2, 'R'), b = pmHandW(M2, 'L'); return { w: [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2] }; }, 0.26], [25.9, PMH.sideL, 0.4]]);
+  const mh = () => { const M2 = pmManS3(t), a = pmHandW(M2, 'R'), b = pmHandW(M2, 'L'); return { w: [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2] }; };
+  P.aR = pmArm(t, P, 1, [[0, PMH.side], [16.66, PMH.out, 0.3], [17.4, PMH.side, 0.5], [21.02, PMH.chin, 0.4], [22.92, PMH.side, 0.3], [24.34, { w: PM_DESKPURSE.map((v, i) => v - (i ? 22 : 0)) }, 0.45], [24.95, [56, -146], 0.3], [25.38, mh, 0.26], [25.9, PMH.side, 0.4], [27.38, PMH.fwd, 0.3], [28.3, PMH.side, 0.4]]);
+  P.aL = pmArm(t, P, -1, [[0, PMH.sideL], [16.66, PMH.outL, 0.3], [17.4, PMH.sideL, 0.5]]);
   P.gaze = pmLook(t, P, [[15.84, [300, 470]], [16.5, M], [24.34, [470, 790]], [25.25, M]], 0.2);
   return pmFin(t, P);
 }

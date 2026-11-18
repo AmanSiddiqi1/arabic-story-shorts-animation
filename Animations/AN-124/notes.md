@@ -18,3 +18,10 @@ Decisions the plan left open or the measured set changed:
 - S1 rider's keffiyeh tail lag and the fading footprints are reduced to a few marks on the dune; the YEAR counter reads YEAR 1..3 with the sky wheel.
 - The S8 picture strip: Umaymah, then his portrait with the X; on 83.14 his portrait drops away and the groom's slides in with a ring between them.
 - faceCover is drawn by the story over the Library person (cloth from below the eyes to the chin, eyes always clear); full cover 89.4-117.8, 0.85 after the finger's-width loosening, off 131.54-131.84.
+
+## v2 (Fable round 1) decisions
+- Camp layout v2: guests 1120/1188, fire 1245, children 1300 (girl) / 1368 (boy), poet kneels at 1450 in S8, stands at 1010 (S9-S12, feet y 918, drawn after the crowd), 980 from 119.98, 990 in S13-S14.
+- S14 handover happens left of Umaymah (poet crosses in front of her), so from 146 the poet is on her left; S15 starts with him at 800 (was 950).
+- Night dim: desertRoad gets night 0 and the story draws `mtDimGrad` (soft-topped) instead, removing the hard band at y 420.
+- Moon at (1290, 200) until 150.32, then (610, 210). Camel at 1425 after 150.32.
+- YEAR counter 1..7 but only two day/night sky turns (more would flash at 3-4 Hz).

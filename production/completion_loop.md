@@ -27,3 +27,6 @@ python3 tools/cloud/cloud.py list               # runs still going / finished bu
 - Owner attention (subtitle text): AN-001 English at 161.12-166.86 drops 'with him', 'he' ambiguous (Fable review 1).
 - Owner attention (subtitle text): AN-014 stray comma in English at 28.65; AN-040 English mixes 'it'/'he' for the animals (Fable review 1).
 - Owner attention: KD-015 v3 (last round) - check one-goat/cow layout 54-63 s, narrow stick-to-jar gap 128-130 s, point at 30.6-32.9 s.
+- Owner attention: AN-001 v2 160.7-161.4 s the bull passes through the post/troughs/donkey for ~0.7 s (Fable round 2 polish note A; PASS WITH NOTES, no v3).
+- Owner attention: KD-026 v3 - peg moved off the corner (weakens 'tied in a corner'), thief's legs hidden in the double reach, neighbours cut by left edge ~1 s as they leave.
+- Owner attention: KD-019 v3 - fish audience rows slightly overlapping tails; pincers now a raised V; bird jumps 60 units at the 5.78 s cut.

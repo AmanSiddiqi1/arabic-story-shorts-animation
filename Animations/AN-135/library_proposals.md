@@ -9,3 +9,5 @@
 - `powderSprinkle` (a135Powder), `aroma` curls (a135Aroma).
 - `silhouette` (a135Silhouette): draws any figure as a flat black silhouette (lit windows) via a cached layer.
 - `hitchingPost` (a135Post).
+- v2: `saddlebag` gains `flap` (0..1, lifts the flap so the contents show); `canePiece` gains `col` (fill override, e.g. a pale spent stalk).
+- v2 guide rule (from Fable): a quantity the story compares (full vs low bowl) must be visible on the real prop in both scenes, not only in a balloon; tableau extras must stand fully inside the panel.

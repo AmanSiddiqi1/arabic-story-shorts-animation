@@ -6,17 +6,29 @@ const PM_ROLL = [[72.3, 425], [72.55, 446], [72.8, 405], [73.05, 386]];   // gem
 
 // ---------- state of the stall and the street ----------
 const pmOpen = (t) => (t < 34.92 ? 0 : settleTo(t, 34.92, 0, 1, 0.7, 0.08));
-function pmDoorsS11(t) { if (t < 104.6 || t > 109.4) return [0, 0, 0]; const cl = pmB(t, 108.6, 0.7); return [104.68, 105.32, 106.32].map((a) => settleTo(t, a, 0, 0.9, 0.4, 0.15) * (1 - cl)); }
+// v2: the doors of fortune, one per stressed word, each a proper event (leaf swings with overshoot, the opening fills with process yellow,
+// a ray fan climbs the wall and spills across the street, coins roll out toward him)
+const PM_DOORT = [[0, 104.68], [3, 105.32], [1, 106.32], [2, 107.04]];   // [door index, time]: أبواب, الرزق, فتحت, له (beside him, so the hop at 107.3 has a cause)
+function pmDoorsS11(t) { const d = [0, 0, 0, 0]; if (t < 104.6 || t > 109.4) return d; const cl = pmB(t, 108.7, 0.6); PM_DOORT.forEach(([i, a]) => { d[i] = (t < a ? 0 : settleTo(t, a, 0, 1, 0.35, 0.18)) * (1 - cl); }); return d; }
 function pmDoorLight(ctx, t, doors) {
-  doors.forEach((d, i) => { if (d < 0.05) return; const x = PM_DOORS[i], k = d / 0.9 * (1 + 0.4 * pulse(t, 108.3, 0.5));
-    ctx.save(); ctx.globalAlpha = 0.45 * K.clamp(k); ctx.fillStyle = '#ffe680'; ctx.beginPath(); ctx.moveTo(x - 40, PM_GR); ctx.lineTo(x + 40, PM_GR); ctx.lineTo(x + 110, 1060); ctx.lineTo(x - 110, 1060); ctx.fill();
-    ctx.fillStyle = dotPat(ctx, C.yellow, 10, 0.35); ctx.fill(); ctx.restore(); pmGlow(ctx, x, 800, 150, t, K.clamp(k), { seed: i + 3, a0: -Math.PI * 0.95, a1: -Math.PI * 0.05 }); });
+  doors.forEach((d, i) => { if (d < 0.03) return; const H = PM_HOUSES[i].door, x = PM_DOORS[i], k = K.clamp(d) * (1 + 0.35 * pulse(t, 108.3, 0.5));
+    // the opening, lit solid yellow, then the leaf drawn over it
+    townDoor(ctx, H[0], H[1], H[2], 900, K.clamp(d), { arch: H[3], paint: WOOD, inside: (c) => { c.fillStyle = C.yellow; c.fillRect(H[0], H[2] - 20, H[1] - H[0], 940 - H[2]); c.fillStyle = dotPat(c, C.red, 10, 0.22); c.fillRect(H[0], H[2] - 20, H[1] - H[0], 940 - H[2]); } });
+    ctx.save(); ctx.globalAlpha = 0.42 * K.clamp(k); ctx.fillStyle = '#ffe680'; ctx.beginPath(); ctx.moveTo(H[0], 900); ctx.lineTo(H[1], 900); ctx.lineTo(x + 100, 1060); ctx.lineTo(x - 100, 1060); ctx.fill();
+    ctx.fillStyle = dotPat(ctx, C.yellow, 10, 0.4); ctx.fill(); ctx.restore();
+    pmGlow(ctx, x, H[2] + 30, 150, t, 0.75 * K.clamp(k), { seed: i + 3, n: 9, a0: -Math.PI * 0.97, a1: -Math.PI * 0.03 }); });
+}
+// two coins roll out of each door toward the middle of the street
+function pmDoorCoins(ctx, t) {
+  if (!pmIn(t, 104.7, 109.4)) return;
+  PM_DOORT.forEach(([i, a], n) => [0, 1].forEach((j) => { const t0 = a + 0.18 + j * 0.14; if (t < t0) return; const x0 = PM_DOORS[i], dirx = x0 < 600 ? 1 : -1, xe = x0 + dirx * (70 + 45 * j), u = pmB(t, t0, 0.7, 'out'),
+    x = K.lerp(x0, xe, u), y = 912 + 10 * j - 18 * Math.abs(Math.sin(u * 7)) * (1 - u); pmCoin(ctx, x, y, 11, u < 1 ? Math.cos((t - t0) * 16) : Math.max(0.25, 0.6 * Math.exp(-(t - t0 - 0.7) * 3))); }));
 }
 
 // ---------- the scene ----------
 function pmMarketScene(ctx, t) {
   const doors = pmDoorsS11(t), op = pmOpen(t);
-  pmMarketSet(ctx, t, doors); pmDoorLight(ctx, t, doors);
+  pmMarketSet(ctx, t, [0, 0, 0, 0]); pmDoorLight(ctx, t, doors);
   const st = { open: op, awning: t < 34.92 ? 0 : settleTo(t, 34.92, 0, 1, 0.45, 0.12), sign: pmPop(t, 35.94, 0.35), t };
   let M = null; const street = [];
   if (t < 33.7) street.push(pmManS4(t));
@@ -30,7 +42,7 @@ function pmMarketScene(ctx, t) {
   if (M) pmDraw(ctx, t, M);
   pmStall(ctx, 'front', st);
   pmCounterItems(ctx, t, M, street);
-  if (pmIn(t, 105.4, 109.4)) [[805, 105.5], [835, 105.62], [868, 105.75]].forEach(([xe, a], i) => { if (t < a) return; const u = pmB(t, a, 0.7, 'out'), x = K.lerp(PM_DOORS[1] + 10, xe, u); pmCoin(ctx, x, 896 - 18 * Math.abs(Math.sin(u * 7)) * (1 - u), 11, u < 1 ? Math.cos((t - a) * 16) : Math.max(0.25, 0.6 * Math.exp(-(t - a - 0.7) * 3))); });
+  pmDoorCoins(ctx, t);
   street.filter(Boolean).sort((a, b) => a.y - b.y || a.x - b.x).forEach((P) => pmDraw(ctx, t, P));
   if (pmIn(t, 41.1, 42.86)) { const xf = (tt) => kfn(tt, [[41.14, 940], [42.74, 120]], 'lin'), W = walk(xf, t, { stride: GAIT.cat * 0.7 }); cat(ctx, { ...W, y: 965, s: 0.7, dir: -1, pal: 2, tailUp: 1, gaze: [-1, 0], seed: 41 }); }
   if (pmIn(t, 33.7, 34.85)) pmLandlord(ctx, t);
@@ -123,13 +135,13 @@ function pmManS6(t) {
   return pmFin(t, P);
 }
 function pmKinS6(i, t) {
-  const X = [385, 290, 200][i], x0 = [-100, -210, -300][i], ta = [44.6, 44.9, 45.2][i], xf = (tt) => kfn(tt, [[42.86, x0], [ta, X]], 'out');
+  const X = [390, 280, 160][i], x0 = [-100, -210, -330][i], ta = [44.6, 44.9, 45.2][i], xf = (tt) => kfn(tt, [[42.86, x0], [ta, X]], 'out');
   const P = pmC(PM_KIN[i], { ...pmWalk(xf, t, [15, 12, 12][i]), dir: 1 });
   const tb = [51.82, 52.22, 51.95][i], bow = pmWin(t, tb, tb + 0.9, 0.25), rock = i === 1 ? 0.03 * Math.sin((t - 58.3) * 9) * pmWin(t, 58.3, 59.0, 0.15) : 0;
   P.sq = breathe(t, 5 + i, 0.012) * landSquash(t, ta, 0.04); P.tip = 0.12 * bow + rock; P.drop = 10 * bow + (i === 0 ? pmNods(t, [64.1], 0.35, 10) : 0);
   P.tilt = i === 0 ? 0.1 * pmWin(t, 45.74, 47.0, 0.3) : 0;
   P.lid = i === 0 ? (pmIn(t, 45.74, 47.0) ? 0.3 : 0.15) + 0.6 * bow : 0.1 + 0.65 * bow;
-  P.mouth = (i === 1 && pmIn(t, 62.1, 62.62)) ? 'smile' : (i === 2 && pmIn(t, 62.2, 62.55)) ? 'smile' : 'closed';
+  P.mouth = (i === 1 && pmIn(t, 62.05, 62.8)) ? 'smile' : (i === 2 && pmIn(t, 62.15, 62.75)) ? 'smile' : 'closed';   // v2: the slip, held a little longer under the push-in
   P.brow = i === 0 ? (pmIn(t, 62.35, 63.0) ? 0.5 : -0.3) : i === 1 ? -0.1 : -0.3;
   P.talk = i === 0 ? talk(t, [[47.2, 48.6], [52.91, 55.5]]) * 0.7 : 0;
   const fold = pmB(t, 58.0 + i * 0.1, 0.4) * (1 - pmB(t, 64.0, 0.3));
@@ -137,14 +149,14 @@ function pmKinS6(i, t) {
     P.aL = pmArm(t, P, -1, [[0, PMH.sideL], [58.0, PMH.foldL, 0.4], [63.9, PMH.sideL, 0.3]]); }
   else { const off = pmB(t, 64.1 + (i - 1) * 0.12, 0.35); P.aL = pmArm(t, P, -1, [[0, [-36, -162]], [64.1 + (i - 1) * 0.12, [-6, -104], 0.35]]);
     P.aR = pmArm(t, P, 1, [[0, PMH.side], [tb, PMH.chest, 0.3], [tb + 1.0, PMH.side, 0.3], [58.1, PMH.foldR, 0.4], [64.1 + (i - 1) * 0.12, [26, -104], 0.35]]);
-    P.held = [(ctx) => { const sh = pmW(P, [-46, -64]), a = pmHandW(P, 'R'), b = pmHandW(P, 'L'), fr = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2 + 64], p = [K.lerp(sh[0], fr[0], off), K.lerp(sh[1], fr[1], off)];
-      if (off < 0.5) { const st = pmW(P, [-20, -150]); ctx.save(); ctx.lineWidth = 6; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.moveTo(st[0], st[1]); ctx.lineTo(p[0], p[1] - 60); ctx.stroke(); ctx.restore(); }
-      pmBag(ctx, p[0], p[1], { s: i === 1 ? 0.78 : 0.74, rot: 0.08 * (1 - off) + swing(t, 64.5 + (i - 1) * 0.12, 0.25, 1.3, 2.5) }); }]; }
+    P.held = [(ctx) => { const sh = pmW(P, [-30, -58]), a = pmHandW(P, 'R'), b = pmHandW(P, 'L'), fr = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2 + 64], p = [K.lerp(sh[0], fr[0], off), K.lerp(sh[1], fr[1], off)];
+      if (off < 0.5) { const st = pmW(P, [-14, -150]); ctx.save(); ctx.lineWidth = 6; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.moveTo(st[0], st[1]); ctx.lineTo(p[0], p[1] - 60); ctx.stroke(); ctx.restore(); }
+      pmBag(ctx, p[0], p[1], { s: i === 1 ? 0.7 : 0.66, rot: 0.08 * (1 - off) + swing(t, 64.5 + (i - 1) * 0.12, 0.25, 1.3, 2.5) }); }]; }
   void fold;
   const Mh = [580, 707];
   P.gaze = pmLook(t, P, i === 0 ? [[42.86, [560, 760]], [45.74, Mh], [51.82, [420, 1000]], [52.86, Mh], [57.2, [850, 700]], [58.8, Mh], [62.35, [250, 700]], [62.85, Mh], [64.1, [250, 800]]]
     : i === 1 ? [[42.86, [520, 775]], [46.0, Mh], [52.4, [385, 700]], [52.9, Mh], [57.2, [850, 700]], [59.0, Mh], [62.1, [200, 700]], [62.5, Mh]]
-      : [[42.86, [520, 760]], [45.9, [385, 690]], [47.0, Mh], [57.2, [850, 700]], [59.0, Mh], [62.1, [290, 700]], [62.5, Mh]], 0.1);
+      : [[42.86, [520, 760]], [45.9, [390, 690]], [47.0, Mh], [57.2, [850, 700]], [59.0, Mh], [62.15, [280, 700]], [62.6, Mh]], 0.1);
   return pmFin(t, P);
 }
 function pmNbS7(i, t) {
@@ -178,24 +190,24 @@ function pmManS8(t) {
   return pmFin(t, P);
 }
 function pmKinS8(i, t) {
-  const xk = i === 0 ? [[64.84, 385], [64.9, 330, 0.6], [67.4, 395, 0.5], [85.05, -200, 1.6]] : i === 1 ? [[64.84, 290], [65.0, 392, 0.8], [66.4, 290, 0.6], [85.12, -210, 1.5]] : [[64.84, 200], [65.75, 382, 0.6], [67.3, 210, 0.6], [85.5, -150, 1.0]];
-  const xf = (tt) => pmTr(tt, xk), P = pmC(PM_KIN[i], { ...pmWalk(xf, t, 13), dir: (i === 2 ? t < 84.98 : t < 84.95) ? 1 : -1 });
-  const tb = 84.62 + stagger(i, 0.13), bow = pmWin(t, tb, tb + 0.4, 0.15);
+  const xk = i === 0 ? [[64.84, 390], [64.9, 330, 0.6], [67.4, 395, 0.5], [85.05, -200, 1.6]] : i === 1 ? [[64.84, 280], [65.0, 392, 0.8], [66.4, 280, 0.6], [85.12, -210, 1.5]] : [[64.84, 160], [65.75, 382, 0.6], [67.3, 170, 0.6], [85.42, -150, 1.0]];
+  const xf = (tt) => pmTr(tt, xk), P = pmC(PM_KIN[i], { ...pmWalk(xf, t, 13), dir: (i === 2 ? t < 85.42 : t < 84.95) ? 1 : -1 });
+  const tb = i === 2 ? 84.62 : 84.62 + stagger(i, 0.13), bow = pmWin(t, tb, tb + 0.35, 0.12);
   P.sq = breathe(t, 5 + i, 0.012) * (i === 1 ? anticipate(t, 65.7, 0.15, 0.06) : 1); P.tip = 0.12 * bow + (i === 0 ? 0.1 * pmWin(t, 64.9, 65.6, 0.2) : 0) + (i === 1 ? 0.06 * pmWin(t, 65.85, 66.2, 0.08) : 0);
   P.drop = 8 * bow + (i === 0 ? 6 * pmWin(t, 64.9, 65.6, 0.2) : 0);
   P.lid = i === 0 ? (pmIn(t, 68.1, 69.0) ? 0.35 : 0.15) : 0.1; P.brow = i === 0 ? -0.2 : -0.1;
-  P.mouth = (i === 2 && pmIn(t, 85.2, 86.4)) || (i === 0 && pmIn(t, 68.2, 68.9)) ? 'smile' : 'closed';
+  P.mouth = (i === 2 && pmIn(t, 84.95, 86.4)) || (i === 0 && pmIn(t, 68.2, 68.9)) ? 'smile' : 'closed'; if (i === 2 && pmIn(t, 85.0, 85.4)) P.wink = 'R';
   P.talk = i === 0 ? talk(t, [[74.44, 75.41], [75.71, 80.9], [81.39, 84.5]]) * 0.7 : 0;
   if (i === 0) { P.aR = pmArm(t, P, 1, [[0, PMH.side], [64.9, [90, -118], 0.3], [65.9, PMH.side, 0.4], [67.9, { w: [470, 744] }, 0.3], [68.3, () => ({ w: [470 + 10 * Math.sin(t * 8), 744 - 46 * pmB(t, 68.3, 0.6)] }), 0.1], [69.0, PMH.side, 0.35],
     [71.2, { w: [470, 712] }, 0.2], [71.45, { w: [430, 640] }, 0.4], [73.55, { w: [432, 744] }, 0.3], [74.0, PMH.side, 0.3], [74.44, [70, -186], 0.3], [81.02, [10, -124], 0.2], [81.25, PMH.fwd, 0.8], [82.4, PMH.side, 0.4], [84.62, PMH.chest, 0.2], [85.2, PMH.side, 0.3]]);
     P.aL = pmArm(t, P, -1, [[0, PMH.sideL], [74.44, PMH.chestL, 0.3], [81.0, PMH.sideL, 0.4]]); }
   else if (i === 1) { P.aR = pmArm(t, P, 1, [[0, [26, -104]], [65.85, { w: [466, 690] }, 0.18], [66.1, [40, -116], 0.25], [66.6, PMH.side, 0.3], [84.75, PMH.chest, 0.2], [85.3, PMH.side, 0.3]]);
     P.aL = pmArm(t, P, -1, [[0, [-6, -104]], [65.85, { w: [470, 700] }, 0.18], [66.1, PMH.sideL, 0.4]]); }
-  else { P.aR = pmArm(t, P, 1, [[0, [26, -104]], [66.45, { w: [470, 726] }, 0.2], [66.86, () => ({ w: [470, 712 + 10 * (pulse(t, 66.9, 0.15) + pulse(t, 67.1, 0.15))] }), 0.1], [67.25, PMH.side, 0.3], [84.88, PMH.chest, 0.2], [85.3, PMH.side, 0.3]]);
-    P.aL = pmArm(t, P, -1, [[0, [-6, -104]], [66.45, { w: [476, 730] }, 0.2], [66.8, PMH.sideL, 0.3]]); }
+  else { const wv = 12 * Math.sin((t - 85.0) * 18); P.aR = pmArm(t, P, 1, [[0, [26, -104]], [66.45, { w: [470, 726] }, 0.2], [66.86, () => ({ w: [470, 712 + 10 * (pulse(t, 66.9, 0.15) + pulse(t, 67.1, 0.15))] }), 0.1], [67.25, PMH.side, 0.3], [84.62, PMH.chest, 0.15], [84.98, PMH.side, 0.2]]);
+    P.aL = pmArm(t, P, -1, [[0, [-6, -104]], [66.45, { w: [476, 730] }, 0.2], [66.8, PMH.sideL, 0.3], [84.98, () => [-60 - wv, -192], 0.12], [85.42, PMH.sideL, 0.25]]); }
   const Mh = [650, 707];
   P.gaze = pmLook(t, P, i === 0 ? [[64.84, Mh], [67.9, [470, 760]], [69.1, Mh], [71.2, [470, 720]], [71.5, () => pmHandW(P, 'R')], [73.6, Mh]]
-    : i === 1 ? [[64.84, [466, 760]], [66.4, Mh], [68.0, [470, 760]], [69.5, Mh]] : [[64.84, [470, 770]], [67.2, [395, 690]], [68.0, [470, 760]], [69.5, Mh], [85.22, [1000, 700]], [85.62, [-200, 700]]], 0.12);
+    : i === 1 ? [[64.84, [466, 760]], [66.4, Mh], [68.0, [470, 760]], [69.5, Mh]] : [[64.84, [470, 770]], [67.2, [395, 690]], [68.0, [470, 760]], [69.5, Mh], [84.98, [400, 640]], [85.42, [-200, 700]]], 0.12);
   return pmFin(t, P);
 }
 
@@ -232,15 +244,19 @@ function pmManS10(t) {
 
 // ---------- S11: alone with the purses; the doors of fortune ----------
 function pmManS11(t) {
-  const P = pmC('man', { x: 560, dir: 1, pal: PM_APRON }), [, lift] = hop(t, 107.3, 0.45, 0, 0, 22); P.y -= lift;
-  const cam = pmIn(t, 101.6, 102.5), jump = pmIn(t, 107.3, 108.4);
-  P.sq = breathe(t, 3, 0.012) * anticipate(t, 107.1, 0.2, 0.08) * landSquash(t, 107.75, 0.14) * (1 + 0.03 * pmWin(t, 103.4, 104.6, 0.3)) * (1 + 0.02 * pmWin(t, 102.5, 103.3, 0.2));
-  P.drop = 5 * pmWin(t, 102.5, 103.3, 0.2) - 3 * pmWin(t, 103.4, 104.6, 0.3);
-  P.eyes = jump ? 'shut' : 'open'; P.lid = jump ? null : cam ? Math.max(0.05, pulse(t, 102.0, 0.4)) : pmIn(t, 103.4, 104.6) ? 0.2 : 0.05; if (cam) P.noBlink = true;
-  P.brow = cam ? -0.9 : t < 101.6 ? -0.5 : -0.2; P.mouth = jump ? 'open' : t < 101.6 ? 'o' : t < 102.5 ? 'closed' : 'smile';
+  // v2: on وشعر he comes out from behind the counter to the open street (x 835, between two doors) so the doors happen around him
+  const xf = (tt) => pmTr(tt, [[100.1, 560], [103.45, 835, 0.95]]), W = pmWalk(xf, t, 13), out = t > 104.35;
+  const P = pmC('man', { ...W, dir: out ? -1 : 1, pal: PM_APRON }), [, lift] = hop(t, 107.3, 0.45, 0, 0, 30); P.y -= lift;
+  const cam = pmIn(t, 101.6, 102.5), jump = pmIn(t, 107.3, 108.9);
+  P.sq = breathe(t, 3, 0.012) * anticipate(t, 107.1, 0.2, 0.08) * landSquash(t, 107.75, 0.14) * (1 + 0.03 * pmWin(t, 103.4, 104.4, 0.3)) * (1 + 0.02 * pmWin(t, 102.5, 103.3, 0.2));
+  P.drop = 5 * pmWin(t, 102.5, 103.3, 0.2) - 3 * pmWin(t, 104.6, 107.0, 0.3);
+  P.eyes = pmIn(t, 107.3, 107.9) ? 'shut' : pmIn(t, 104.68, 107.2) ? 'wide' : 'open'; P.noBlink = P.eyes !== 'open' || cam;
+  P.lid = P.eyes !== 'open' ? null : cam ? Math.max(0.05, pulse(t, 102.0, 0.4)) : 0.05;
+  P.brow = cam ? -0.9 : t < 101.6 ? -0.5 : pmIn(t, 104.68, 107.2) ? 0.5 : -0.2; P.mouth = jump ? 'open' : t < 101.6 ? 'o' : t < 102.5 ? 'closed' : pmIn(t, 104.68, 107.2) ? 'o' : 'smile';
   const scr = 6 * Math.sin(t * 22) * pmWin(t, 100.3, 101.3, 0.1);
-  P.aR = pmArm(t, P, 1, [[0, [40, -100]], [102.5, PMH.palm, 0.3], [103.4, PMH.chest, 0.3], [104.6, [40, -100], 0.4], [107.2, PMH.raise, 0.15], [108.3, [40, -100], 0.5]]);
-  P.aL = pmArm(t, P, -1, [[0, [-40, -100]], [100.3, () => [-44 + scr, -212], 0.25], [101.3, [-40, -100], 0.3], [102.5, PMH.palmL, 0.3], [103.4, [-40, -100], 0.3], [107.2, PMH.raiseL, 0.15], [108.3, [-40, -100], 0.5]]);
-  P.gaze = cam ? [0, 0.05] : pmLook(t, P, [[100.1, [530, 790]], [100.4, [760, 880]], [100.75, [530, 790]], [101.05, [750, 870]], [102.5, [500, 640]], [103.4, [620, 300]], [104.68, [180, 780]], [105.32, [760, 760]], [106.32, [930, 760]], [107.0, [600, 700]], [108.5, [500, 790]]], 0.07);
+  P.aR = pmArm(t, P, 1, [[0, [40, -100]], [102.5, PMH.palm, 0.3], [103.4, PMH.chest, 0.3], [104.4, [40, -100], 0.4], [107.2, PMH.raise, 0.15], [108.9, [40, -100], 0.4]]);
+  P.aL = pmArm(t, P, -1, [[0, [-40, -100]], [100.3, () => [-44 + scr, -212], 0.25], [101.3, [-40, -100], 0.3], [102.5, PMH.palmL, 0.3], [103.4, PMH.sideL, 0.3], [107.2, PMH.raiseL, 0.15], [108.9, [-40, -100], 0.4]]);
+  P.gaze = cam ? [0, 0.05] : pmLook(t, P, [[100.1, [530, 790]], [100.4, [760, 880]], [100.75, [530, 790]], [101.05, [750, 870]], [102.5, [500, 640]], [103.4, [900, 760]], [104.4, [600, 760]], [104.68, [255, 720]], [105.32, [915, 720]], [106.32, [384, 730]], [107.04, [760, 720]], [107.55, [835, 1300]], [107.95, [835, 2400]]], 0.07);
+  if (t > 107.9) P.gaze = [0, 0.05];   // delighted look to camera, held to 108.9
   return pmFin(t, P);
 }

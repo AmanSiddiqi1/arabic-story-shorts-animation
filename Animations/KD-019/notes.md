@@ -20,3 +20,9 @@ Decisions the plan left open or the drawn sets forced:
 - Climax: the pair climbs 160 units from 133.94 (K19LIFT, the bird pulls up before landing) and is framed at zoom 2.2 against plain sky. The head comes down to the right of the crab (head local (165..175, -60), beak toward him), the wing is held up from 138.4. The crab lunges from the feet onto the neck at 140.5 (the feet open at 140.56, not at 141.52 as planned) and hangs from the neck point u 0.55, 222 crab units below it; the head then yanks forward to a straight outstretched neck (head (200, -172)) for the fight, so the grip sits on a clear straight stretch. The plan's "head left of the crab" at the death is on the right in v2 (the head was on the right throughout), hanging clear of the crab against sky.
 - Aftermath: the dead bird lies at x -20 (partly out of frame), the crab lands at x 262 in the open.
 - Fixed a v1 bug: fish velocity was NaN (array index on an object), so every fish was drawn with only the front half of its body and no swim phase; fish now render whole and turn/tilt with their motion.
+
+## v3 (Fable review 2) decisions
+- Hill hover K19HOV (531, 378), K19LIFT 70: the approach camera at zoom 1.75 is at the world-top clamp, so the raise moves the pair up in frame rather than moving the camera; climax positions from 135.24 are unchanged.
+- Fish shoreline clamp (k19shoreX) applies to swimming fish before 135.4 only (leaps and surfaced fish exempt) so the approved aftermath and ending stay pixel-identical.
+- S2 bird at x 260 (S1 stays at 200; 5.78 is a camera cut). The fallen feather still lands at x 250.
+- 44.5-48.78 audience: fixed slots K19AUD; net cloud at (530, 588).
