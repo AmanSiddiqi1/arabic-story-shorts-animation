@@ -16,3 +16,10 @@ Decisions the plan left open or that the measured sets changed:
 - The 1000 counter, coin stacks and EVERY DAY sit in panel space between the two heads; the ledger with the UNTIL box is held beside the treasurer's face (not in front of it).
 - Sound: the plan's five effects (thud 7.72, chime 15.86, pop 22.4, pop 41.95, chime 172.6) plus the template bed.
 - Skipped / simplified: toe curl and foot lift on the caught coin (no foot field: the coin lands on his near foot while he holds mid-step); turban/keys accessory lag only on the keys (swing); per-eye brows. The S14 opening is the full room (not an inset panel).
+
+## v2 (revision 1, Fable round 1), decisions
+- S13: servant at x 470 (YP_ZX), the house interior stays dark until 123.58 so the peeking eyes and the gap read; the sack is drawn snagged on the right jamb while he is in the gap.
+- Fear cloud geometry in YP_FC (panel 500,330, 950x580, content scale 1.0 at [600,720]); coin column x 765..855 world, red line y 650.
+- Vision push: camera (584,445,2.2) 154.5-160.4; cloud lerps to (480,425,920,760) scale 1.28.
+- S8 time: ypS8U replaces ypDays; DAY label = ypDayIdx, WEEK label = ypWeekIdx.
+- Ledger beat in S7 opens at 57.2 (panel held to 57.38).

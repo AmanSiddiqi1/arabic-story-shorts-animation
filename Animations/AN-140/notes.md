@@ -18,3 +18,11 @@ Decisions the plan left open / measured on the set:
 - Final morning: dusk to u 1.08 over 1.1 s and the street palette cross-fades to 'clear'.
 
 Skipped (small): the servant's cap trailing, the turban actually slipping (head tilt only), fingers curling (the hand withdraws instead), robe flutter while running.
+
+## v2 (Fable review 1), decisions
+- Abdullah's desk is now a low writing desk (top y 846) with the coin piles at its far right end (3-4 coins); his hands work the coins at [672, 836] / [735, 838].
+- Room camera: wides only on entrances; two-shots 1.7-1.85x; closes 2.2x; 1.5x where a cloud needs the top 45 percent.
+- Fear cloud drawn at scale 0.55 around [500, 850] (cloud 920 x 540 at panel 500, 285); small Said s 1.2 in front of the giant brothers (s 2.6).
+- Night passage: sky layers (u 0.8 night, u 1.03 dawn, no moon) cross-faded over the u 0.45 dusk instead of sweeping u (avoids the orange dusk preset and the moon).
+- Creditors' exchange point x 962 (Said 1100); leavers walk on y 965, the queue on y 930.
+- The v1 stills folder was moved to scratch/AN-140-v2/v1_stills_backup (regenerable, ignored by Git).

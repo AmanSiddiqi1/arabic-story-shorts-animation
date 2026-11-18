@@ -31,3 +31,5 @@ python3 tools/cloud/cloud.py list               # runs still going / finished bu
 - Owner attention: KD-026 v3 - peg moved off the corner (weakens 'tied in a corner'), thief's legs hidden in the double reach, neighbours cut by left edge ~1 s as they leave.
 - Owner attention: KD-019 v3 - fish audience rows slightly overlapping tails; pincers now a raised V; bird jumps 60 units at the 5.78 s cut.
 - GitHub submissions were capped at 12 per rolling 24 h (a local guard in cloud.py/plan.py, not a GitHub limit); raised to 100 on 2026-11-18 at the owner's request. Never --override. 2026-11-18 09:41: cap reached; next slots from 17:14 local. Pending runs: v3 KD-015 KD-019 KD-026; v2 AN-104 AN-105 AN-108 AN-111 AN-112 AN-113 AN-124 AN-134 (+AN-135); later batch-5 v2s.
+- Owner attention (subtitle text): AN-145 English chunk at 113.97-119.62 ends with a comma where the Arabic ends with a full stop (Fable review 1).
+- Owner attention (subtitle text): AN-146 English at 165.83 s 'and asking for his cloak back.' tense mismatch (Fable review 1).

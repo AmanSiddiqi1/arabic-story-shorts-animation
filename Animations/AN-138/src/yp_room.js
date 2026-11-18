@@ -33,10 +33,28 @@ function ypSceneRoomS5(ctx, t, F) {
 }
 
 // ---------- S8: the days and weeks spin past ----------
+// v2 (note 7): a new pose with every DAY / WEEK label, the tray on his knees for يأكل 68.02 (hand to mouth twice, cheeks full)
+const YP_LAP = [700, 846];   // tray rim on his knees (world)
 function ypGuestS8(t) {
   const G = ypGuest({ x: 700, y: YP_SITY, dir: -1, sit: 1, seat: 'bench', mouth: 'smile', sq: breathe(t, 4, 0.02) }, t);
   G.gaze = lookAt([700, 600], gazePlan(t, [[61.28, [560, 400]], [62.3, [300, 450]], [63.2, [730, 260]], [63.9, [560, 400]]], 0.3));
-  if (ypIn(t, 68.02, 68.65)) { const k = ((t - 68.02) / 0.2) % 1; G.handRW = k < 0.5 ? [640, 822] : null; G.handR = k < 0.5 ? null : PERSON_HANDS.mouthCover.R; G.lid = 1; G.sq = 1 + 0.03 * Math.sin((t - 68.02) * 30); }
+  // he tries the cushion: two bounces, then settles back
+  if (ypIn(t, 62.4, 63.3)) { G.sq = 1 - 0.07 * Math.abs(Math.sin((t - 62.4) * Math.PI / 0.3)); G.mouth = 'open'; G.handL = PERSON_HANDS.palmsUp.L; G.handR = PERSON_HANDS.palmsUp.R; }
+  if (ypIn(t, 63.3, 64.32)) { G.handL = PERSON_HANDS.headHold.L; G.handR = PERSON_HANDS.headHold.R; G.tip = -0.08 * ypE(t, 63.3, 0.3); G.lid = 0.5; }
+  if (ypIn(t, 64.32, 67.7)) { const i = t < 66.2 ? ypDayIdx(t) : 6 + ypWeekIdx(t) - 1;   // 0..6 days, 7..9 weeks
+    const pose = [0, 1, 2, 3, 4, 5, 6, 2, 3, 7][i]; G.gaze = [-0.8, 0.1];
+    if (pose === 0) { G.handL = PERSON_HANDS.folded.L; G.handR = PERSON_HANDS.folded.R; G.mouth = 'smile'; }
+    if (pose === 1) { G.handRW = [770, 826 + 8 * Math.abs(Math.sin(t * 22))]; G.handR = null; G.gaze = lookAt([700, 600], [770, 830]); }
+    if (pose === 2) { G.aL = [-2.45, -2.8]; G.aR = [2.45, 2.8]; G.mouth = 'open'; G.lid = 0.9; G.sq = 1.04; }
+    if (pose === 3) { G.handL = PERSON_HANDS.headHold.L; G.handR = PERSON_HANDS.headHold.R; G.tip = -0.1; G.lid = 0.6; }
+    if (pose === 4) { G.handR = PERSON_HANDS.mouthCover.R; G.handL = PERSON_HANDS.folded.L; G.lid = 0.3; G.mouth = 'closed'; }
+    if (pose === 5) { G.handR = [54 + 10 * Math.sin(t * 30), -196]; G.gaze = [0.2, -0.4]; G.mouth = 'o'; }
+    if (pose === 6) { G.lie = 0.45; G.sit = 0.55; G.y = K.lerp(YP_SITY, YP_ROOM.diwan[2] + 4, 0.45); G.handL = [-44, -214]; G.handR = [40, -216]; G.lid = 0.7; }
+    if (pose === 7) { G.handL = PERSON_HANDS.folded.L; G.handR = PERSON_HANDS.folded.R; G.lid = 0.55; G.mouth = 'smile'; G.sq = 1.03; } }
+  // يأكل: tray on his knees, hand to mouth twice, cheeks full
+  if (ypIn(t, 67.7, 68.62)) { G.gaze = lookAt([700, 600], YP_LAP); G.mouth = 'closed';
+    const bite = Math.max(pulse(t, 67.78, 0.3), pulse(t, 68.1, 0.3)); G.handR = ypL2([24, -62], PERSON_HANDS.mouthCover.R, bite); G.handL = [30, -66];
+    if (t >= 68.0) { G.lid = 0.4; G.sq = 1 + 0.02 * Math.sin((t - 68.0) * 26); } }
   const lie = ypE(t, 68.6, 0.5) * (1 - 0.5 * ypE(t, 70.0, 0.3));
   if (t >= 68.6) { G.sit = 1 - lie; G.lie = lie; G.y = K.lerp(YP_SITY, YP_ROOM.diwan[2] + 4, lie); G.handL = [-44, -214]; G.handR = [40, -216]; G.lid = 1; G.mouth = 'smile'; G.gaze = null; G.x = 700; }
   if (t >= 69.84) { G.lid = 0; G.wink = 'L'; G.gaze = lookAt([700, 700], [500, 720]); }
@@ -44,16 +62,19 @@ function ypGuestS8(t) {
   if (t >= 70.6) { G.handR = [44, -150]; G.wink = t < 71.2 ? 'L' : null; G.lid = t > 71.2 ? 0.6 : 0; }
   return G;
 }
+// puffed cheeks while chewing
+function ypCheeks(ctx, P, a) { if (a <= 0) return; ypOnBody(ctx, P, (c) => { const y = ypHdY(P) + 14; c.globalAlpha *= a; for (const sd of [-1, 1]) shape(c, ell(sd * 30, y, 12 * a, 10 * a, 12), C.white, { lw: 3.5, seed: 17, dot: C.skin, pitch: 5, rad: 0.25, da: 0.5 }); }); }
 function ypSceneRoomS8(ctx, t, F) {
   const u = ypU(t);
   ypRoom(ctx, t, { u, dent: 0.8, dentX: 700 });
   ypDrawHeap(ctx, t);
   const G = ypGuestS8(t);
-  if (t < 68.6) ypTray(ctx, 630, 832, 0.55, { noCover: true, t });
+  const trK = ypE(t, 67.6, 0.2) * (1 - ypE(t, 68.62, 0.25)), trayD = () => ypTray(ctx, K.lerp(610, YP_LAP[0], trK), K.lerp(832, YP_LAP[1], trK), K.lerp(0.55, 0.75, trK), { noCover: true, t });
+  if (t < 69.0 && trK < 0.5) trayD();
   const sx = (tt) => kfn(tt, [[69.0, -60], [69.8, 470]], 'out');
   if (t >= 69.0) { const S = ypServA({ ...ypWalk(sx, t, 1.05), dir: 1, handR: PERSON_HANDS.reach.R, gaze: [1, 0.2] }); if (t > 71.2) S.handR = ypL2([60, -100], [96, -190], Math.abs(Math.sin((t - 71.2) * Math.PI / 0.28))); person(ctx, S);
     if (t < 70.35) ypPurse(ctx, ...ypPt(S, 105, -160), 0.8, { mark: '1000', markSize: 18 }); }
-  person(ctx, G);
+  person(ctx, G); if (t < 69.0 && trK >= 0.5) trayD(); ypCheeks(ctx, G, ypEnv(t, 68.0, 68.62, 0.08));
   if (t >= 68.6 && t < 69.84) zzz(ctx, 760, 700, t);
   // the purses fly to the heap
   const hp = ypPt(G, 44, -150);
@@ -68,15 +89,16 @@ function ypRoomDim(ctx, t, u, lamp = 1) { const n = ypRoomNight(t, u); ypNight(c
 // ---------- S9: mornings, purses and the growing heap ----------
 function ypSceneRoomS9(ctx, t, F) {
   const u = ypU(t), D = YP_ROOM.door, rep = [77.92, 78.14, 78.36, 78.58];
-  ypRoom(ctx, t, { u, dent: 0.8, dentX: 700, doorOpen: ypEnv(t, 74.6, 79.4, 0.3) });
+  ypRoom(ctx, t, { u, dent: 0.8, dentX: 700, doorOpen: ypEnv(t, 74.4, 80.0, 0.3) });
   // morning beam from the window toward the door
   if (t >= 73.42) { ctx.save(); ctx.globalAlpha = 0.35 * ypE(t, 73.42, 0.6); ctx.fillStyle = dotPat(ctx, C.yellow, 11, 0.4); K.poly(ctx, [[515, 470], [605, 470], [300, 900], [70, 900]], true); ctx.fill(); ctx.restore(); }
   const top = ypDrawHeap(ctx, t);
   // the treasurer in the doorway with a purse marked 1000, then the quick repeats
-  if (ypIn(t, 74.8, 79.4)) { const r = rep.findIndex((r0) => t >= r0 && t < r0 + 0.22), k = r >= 0 ? r + 1 : 0;
-    const T = ypTreas({ x: 150, alpha: ypEnv(t, 74.8, 79.4, 0.2), tip: (0.15 - k * 0.03) * (pulse(t, 75.0, 0.5) + (r >= 0 ? pulse(t, rep[r], 0.2) : 0)), mouth: 'smile', handR: t < 75.6 || r >= 0 ? PERSON_HANDS.reach.R : null, gaze: lookAt([150, 680], [320, 680]) });
+  if (ypIn(t, 74.6, 79.8)) { const r = rep.findIndex((r0) => t >= r0 && t < r0 + 0.22), k = r >= 0 ? r + 1 : 0, tx = (tt) => kfn(tt, [[74.6, -40], [75.0, 150], [79.3, 150], [79.75, -40]], 'inOut');
+    ctx.save(); ctx.beginPath(); ctx.rect(D[0] + 6, -100, 3000, 2000); ctx.clip();
+    const T = ypTreas({ ...ypWalk(tx, t, 1.1), dir: t < 79.3 ? 1 : -1, tip: (0.15 - k * 0.03) * (pulse(t, 75.0, 0.5) + (r >= 0 ? pulse(t, rep[r], 0.2) : 0)), mouth: 'smile', handR: t < 75.6 || r >= 0 ? PERSON_HANDS.reach.R : null, gaze: lookAt([150, 680], [320, 680]) });
     T.ledgerUnder = true; person(ctx, T); ypOnBody(ctx, T, (c) => ypLedger(c, -40, -110, 0.6, { open: 0 }));
-    if (t < 75.6 || r >= 0) ypPurse(ctx, ...ypPt(T, 108, -160), 0.85, { mark: '1000', markSize: 18 }); }
+    if (t < 75.6 || r >= 0) ypPurse(ctx, ...ypPt(T, 108, -160), 0.85, { mark: '1000', markSize: 18 }); ctx.restore(); }
   rep.forEach((t0, i) => { const a = ypArc(t, t0 + 0.02, YP_LAND[5 + i] - t0 - 0.02, [250, 760], [YP_ROOM.heap + (i % 2 ? 24 : -24), 880], 80); if (a) ypPurse(ctx, a[0], a[1], 0.8, { rot: (t - t0) * 10, mark: '1000', markSize: 18 }); });
   // the guest
   const gx = (tt) => kfn(tt, [[79.38, 330], [79.7, 270], [81.3, 270], [81.9, 410]], 'inOut');

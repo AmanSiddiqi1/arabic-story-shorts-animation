@@ -22,9 +22,10 @@ function ypYahHall(t) {
     if (ypIn(t, 141.6, 143.4)) { P.gaze = lookAt(YP_YH, [330, 690]); }
     if (ypIn(t, 142.2, 143.5)) { P.handR = ypTr(t, [[142.25, 143.5, [74, -196], 0.15]], P.handR); }
     if (ypIn(t, 144.4, 149.0)) { P.handR = PERSON_HANDS.chin.R; P.tilt = -0.07 * ypEnv(t, 144.4, 149.0, 0.3); P.brow = -0.5; P.gaze = [-1, 0.05]; }
-    if (t >= 149.06) { P.handR = PERSON_HANDS.palmsUp.R; P.handL = PERSON_HANDS.palmsUp.L; P.drop = 4 * Math.abs(Math.sin((t - 149.06) * 9)) * ypEnv(t, 149.06, 149.9, 0.1); P.mouth = 'open'; P.lid = 0.4; if (t > 149.9) { P.mouth = 'smile'; P.lid = 0; } }
+    if (t >= 149.06) { const b = ypEnv(t, 149.1, 149.7, 0.08); P.handR = PERSON_HANDS.chest.R; P.handL = PERSON_HANDS.folded.L; P.mouth = 'smile'; P.tilt = 0; P.brow = 0;
+      P.lid = t < 149.7 ? 1 : 0.6 * (1 - ypE(t, 149.7, 0.3)); P.sq = 1 + b * (Math.sin((t - 149.1) * 2 * Math.PI * 4) > 0 ? 0.02 : -0.03); P.look = 0.5 * Math.sin((t - 149.06) * 2 * Math.PI / 0.9) * ypEnv(t, 149.06, 150.0, 0.15); }
   } else {   // S16: he speaks; then watches the vision
-    P.talk = ypIn(t, 150.14, 152.7) ? 0.8 * talk(t, [[150.14, 152.7]]) : 0; P.handR = ypIn(t, 150.14, 152.9) ? PERSON_HANDS.palmsUp.R : PERSON_HANDS.folded.R; P.gaze = lookAt(YP_YH, [430, 690]);
+    P.talk = ypIn(t, 150.14, 152.7) ? 0.45 * talk(t, [[150.14, 152.7]]) : 0; P.handR = ypIn(t, 150.14, 152.9) ? ypTr(t, [[150.14, 152.9, PERSON_HANDS.palmsUp.R, 0.3]], PERSON_HANDS.chest.R) : PERSON_HANDS.folded.R; P.mouth = 'smile'; P.gaze = lookAt(YP_YH, [430, 690]);
     if (t >= 152.9) { P.gaze = [-0.6, -0.8]; P.lid = 0.15; }
   }
   return P;
@@ -37,16 +38,17 @@ function ypTreasP(t) {
   if (ypIn(t, 45.1, 45.7)) T.tip = 0.14 * pulse(t, 45.15, 0.5);
   T.brow = 0;
   if (t >= 48.7 && t < 50.88) { T.sq = 1 + 0.03 * ypEnv(t, 48.7, 49.8, 0.1); T.lid = 0; T.brow = -0.4; }
-  if (ypIn(t, 49.95, 50.3)) T.gaze = [0, 0.05];
-  if (t >= 50.24 && t < 56.52) { T.drop = 5 * pulse(t, 50.24, 0.3); T.brow = -0.6; T.gaze = [0.3, 0.9]; }
-  if (t >= 56.52) { T.tip = 0.06 * ypE(t, 56.52, 0.3); T.brow = -0.5; T.lid = Math.max(pulse(t, 59.45, 0.18), pulse(t, 59.75, 0.18)); }
+  if (ypIn(t, 49.95, 50.24)) T.gaze = [0, 0.05];
+  if (t >= 50.24 && t < 57.2) { T.drop = 5 * pulse(t, 50.84, 0.3); T.brow = -0.6; T.gaze = [0.3, 0.9]; }
+  if (ypIn(t, 50.24, 50.84)) { T.gaze = [0, 0]; T.eyes = 'wide'; T.brow = 0.6; T.sq = 1 - 0.06 * pulse(t, 50.42, 0.3); T.mouth = 'o'; }   // look to camera, gulp
+  if (t >= 57.2) { T.tip = 0.06 * ypE(t, 57.2, 0.3); T.brow = -0.5; T.lid = Math.max(pulse(t, 59.45, 0.18), pulse(t, 59.75, 0.18)); }
   if (t >= 60.34) { const sh = pulse(t, 60.34, 0.45); T.drop = -6 * sh; T.tip = 0.15 * pulse(t, 60.7, 0.5); T.mouth = 'smile'; T.brow = 0; }
   return T;
 }
 function ypLedgerState(t) {   // where the ledger is and how open
   if (t < 45.34) return null;
-  if (t < 56.52) { const o = ypE(t, 45.34, 0.3); return { x: 512, y: 770, s: 0.9, open: o, n: t > 50.3 ? Math.min(12, (t - 50.3) * 14) : 0, until: false }; }
-  const up = ypE(t, 56.52, 0.35) * (1 - ypE(t, 60.5, 0.35)); return { x: K.lerp(512, 575, up), y: K.lerp(770, 715, up), s: K.lerp(0.9, 1.15, up), open: t < 60.4 ? 1 : 1 - ypE(t, 60.4, 0.12), n: 12, until: true };
+  if (t < 57.2) { const o = ypE(t, 45.34, 0.3); return { x: 512, y: 770 + 40 * ypEnv(t, 50.24, 50.84, 0.12), s: 0.9, open: o, n: t > 50.84 ? Math.min(12, (t - 50.84) * 14) : 0, until: false }; }
+  const up = ypE(t, 57.2, 0.35) * (1 - ypE(t, 60.5, 0.35)); return { x: K.lerp(512, 575, up), y: K.lerp(770, 715, up), s: K.lerp(0.9, 1.15, up), open: t < 60.4 ? 1 : 1 - ypE(t, 60.4, 0.12), n: 12, until: true };
 }
 function ypSceneHall67(ctx, t, F) {
   ypHall(ctx, t, { u: 0.3 });
@@ -54,13 +56,14 @@ function ypSceneHall67(ctx, t, F) {
   if (t >= 44.3) {
     const T = ypTreasP(t), L = ypLedgerState(t);
     if (L) { T.handLW = [L.x - 50 * L.s, L.y + 30 * L.s]; T.handL = null;
-      const q = t >= 56.52 ? [L.x + 30 * L.s, L.y + 4 * L.s - 26 * ypE(t, 57.0, 0.3)] : [L.x + 16 + (t > 50.3 ? 14 * K.noise(t * 9, 3) : 0), L.y - 8 + (t > 50.3 ? 8 * K.noise(t * 11, 5) : 0)];
+      const wr = t > 50.84, q = t >= 57.2 ? [L.x + 30 * L.s, L.y + 4 * L.s - 26 * ypE(t, 57.5, 0.3)] : [L.x + 16 + (wr ? 14 * K.noise(t * 9, 3) : 0), L.y - 8 + (wr ? 8 * K.noise(t * 11, 5) : 0)];
       T.handRW = q; T.handR = null; }
     else T.handR = [40, -70];
     person(ctx, T);
     ypOnBody(ctx, T, (c) => ypKeys(c, 26, -82, swing(t, 45.15, 0.6, 1.6, 2) + (t < 45.15 ? 0.4 * Math.sin(t * 14) : 0)));
     if (!L) ypOnBody(ctx, T, (c) => ypLedger(c, -40, -112, 0.7, { open: 0 }));
     else { ypLedger(ctx, L.x, L.y, L.s, { open: L.open, n: L.n, until: L.until }); if (L.open > 0.5) ypQuill(ctx, T.handRW[0], T.handRW[1], -0.5, 0.8); }
+    if (ypIn(t, 50.3, 51.1)) ypSweat(ctx, ...ypPt(T, -34, -236), (t - 50.3) / 0.8);
     F.heads.T = ypHead(T); F.ledger = L;
   }
   // S7: a covered tray crosses the hall
@@ -92,8 +95,10 @@ function ypServantsHall(t) {
     if (ypIn(t, 142.34, 143.2)) { B.tip = -0.18 * lurch(t, 142.34, 1) - 0.06; B.handR = PERSON_HANDS.pointFwd.R; B.amp = 0.45; B.ph = 1.3; B.gaze = lookAt([B.x, 690], YP_YH); B.mouth = 'o'; }
     if (ypIn(t, 143.2, 144.4)) { B.handR = [40 + 6 * Math.sin(t * 20), -216]; B.brow = -0.5; B.mouth = 'closed'; B.gaze = lookAt([B.x, 690], YP_YH); }
     if (t >= 144.4) { A.gaze = [-0.2, -0.9]; B.gaze = [-0.1, -0.9]; }
+    if (t >= 149.06) { const r = ypE(t, 149.2, 0.4); A.drop = 6 * r; B.drop = 6 * r; A.tip = 0; B.tip = 0; A.handR = null; B.handR = null; A.handL = null; B.handL = null; A.lid = 0.3 * r; B.lid = 0.3 * r;
+      A.mouth = t > 149.4 ? 'smile' : 'o'; B.mouth = t > 149.5 ? 'smile' : 'o'; A.gaze = ypIn(t, 149.4, 149.9) ? lookAt([A.x, 690], [B.x, 690]) : lookAt([A.x, 690], YP_YH); B.gaze = ypIn(t, 149.45, 149.9) ? lookAt([B.x, 690], [A.x, 690]) : lookAt([B.x, 690], YP_YH); }
   } else {
-    A.mouth = 'closed'; B.mouth = 'closed'; A.tilt = 0.08; B.tilt = -0.06;
+    A.mouth = 'smile'; B.mouth = 'smile'; A.tilt = 0.08; B.tilt = -0.06; A.drop = 6; B.drop = 6;
     if (t >= 152.9) { A.gaze = [0.1, -1]; B.gaze = [0.2, -1]; A.mouth = 'o'; B.mouth = 'o'; }
     if (t >= 160.44) { A.gaze = lookAt([A.x, 690], [B.x, 690]); B.gaze = lookAt([B.x, 690], [A.x, 690]); A.mouth = 'smile'; B.mouth = 'smile'; }
   }

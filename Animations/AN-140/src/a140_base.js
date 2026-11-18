@@ -77,13 +77,13 @@ function a140Purse(ctx, x, y, s = 1) { ctx.save(); ctx.translate(x, y); ctx.scal
 // floor cushion (Said's seat in the Barmakid hall), bottom centre
 function a140Cushion(ctx, x, y, w = 130) { shape(ctx, [[x - w / 2, y], [x - w / 2 + 6, y - 26], [x + w / 2 - 6, y - 26], [x + w / 2, y]], C.red, { lw: 5, seed: 650, dot: C.yellow, pitch: 8, rad: 0.2, da: 0.5 });
   for (const sd of [-1, 1]) shape(ctx, ell(x + sd * (w / 2 - 4), y - 26, 8, 8, 10), C.yellow, { lw: 3, seed: 651 }); }
-// Abdullah's low desk (front of him), coin stacks; stack n of the third pile grows with o.extra
-function a140Desk(ctx, x0, x1, top, o = {}) { const GR = 900, cx = (x0 + x1) / 2;
-  for (const lx of [x0 + 18, x1 - 18]) seg(ctx, lx, top + 18, lx, GR, 11, A140_WOOD, 3.5);
-  shape(ctx, K.rectPts(x0, top + 18, x1 - x0, 46), '#c98a3a', { lw: 5, seed: 655, dot: '#7a4212', pitch: 8, rad: 0.2, da: 0.4 });
+// Abdullah's low writing desk (v2: low top so he is clear above it), coin stacks at the far right end; the last pile grows with o.extra
+function a140Desk(ctx, x0, x1, top, o = {}) { const GR = 900;
+  for (const lx of [x0 + 18, x1 - 18]) seg(ctx, lx, top + 30, lx, GR, 11, A140_WOOD, 3.5);
+  shape(ctx, K.rectPts(x0, top + 16, x1 - x0, 22), '#c98a3a', { lw: 5, seed: 655, dot: '#7a4212', pitch: 8, rad: 0.2, da: 0.4 });
   shape(ctx, K.rectPts(x0 - 8, top, x1 - x0 + 16, 18), BARKY, { lw: 5, seed: 656 });
-  const piles = [[-70, 4], [-40, 6], [50, 3 + (o.extra || 0)]]; for (const [dx, n] of piles) for (let k = 0; k < n; k++) shape(ctx, ell(cx + dx, top - 6 - k * 9, 15, 6, 14), C.yellow, { lw: 3, seed: 657 });
-  shape(ctx, [[cx + 74, top - 3], [cx + 100, top - 3], [cx + 100, top - 22], [cx + 74, top - 22]], '#3a3a4a', { lw: 3.5, seed: 658 }); }
+  const piles = [[x1 - 74, 3], [x1 - 42, 3 + (o.extra || 0)]]; for (const [px, n] of piles) for (let k = 0; k < n; k++) shape(ctx, ell(px, top - 6 - k * 9, 15, 6, 14), C.yellow, { lw: 3, seed: 657 });
+  shape(ctx, [[x0 + 14, top - 3], [x0 + 40, top - 3], [x0 + 40, top - 22], [x0 + 14, top - 22]], '#3a3a4a', { lw: 3.5, seed: 658 }); }
 
 // ---------- portrait medallion: a person's head in a rimmed circle (rim in the character's colour) ----------
 // who: 'said' | 'fadl' | 'jaafar' | 'abd'; o: gaze, mouth, brow, lid, wink, alpha, glow

@@ -1,8 +1,8 @@
 // ===== AN-140 Abdullah ibn Malik's room (merchant palaceHall, ochre): S3-S6 21.6-63.1, S10-S12 86.6-122.4 =====
 // door 60..200 (leaf), window 510..610 (time of day), Said's stool at 428 (Said sits at x 450), Abdullah on a bench at 680 behind the desk 550..790.
-const A140_RD = { stool: 428, sx: 450, ax: 680, desk: [550, 790, 800] };
+const A140_RD = { stool: 428, sx: 450, ax: 680, desk: [550, 790, 846] };
 const a140RoomU = (t) => t < 86.6 ? 0.25 : t < 94.72 ? 0.33 : kfn(t, [[94.72, 0.33], [97.0, 0.45], [122.4, 0.47]]);
-const A140_BILLDESK = [566, 794];
+const A140_BILLDESK = [600, 842];
 
 // ---------- Said in the room ----------
 function a140RoomSaid(t) {
@@ -29,7 +29,7 @@ function a140RoomSaid(t) {
     P.gaze = gazePlan(t, [[0, [-1, 0]], [42.2, [0.1, 0.9]], [42.88, [-0.7, 0.6]], [43.7, lookAt([450, 749], A)]], 0.2); P.drop = -4 * pulse(t, 42.65, 0.25);
     if (t >= 42.88) { P.handR = [30 + 6 * Math.sin(t * 10), -205]; P.lid = 0.35; P.mouth = 'frown'; }
     if (t >= 43.7) { P.handR = PERSON_HANDS.chest.R; P.lid = 0; P.talk = talk(t, [[43.7, 45.6]]); P.brow = -0.6; }
-    if (t >= 45.7) { P.x += t < 46.3 ? tremble(t, 2) : 0; P.gaze = [-0.1, -1]; P.talk = 0; P.mouth = 'o'; }
+    if (t >= 45.7) { P.x += tremble(t, t < 46.3 ? 2.2 : 1.2, 8); P.gaze = [-0.1, -1]; P.talk = 0; P.mouth = 'o'; P.sq = (P.sq ?? 1) * (1 - 0.05 * pulse(t, 46.6, 0.35)); P.drop = 4 * pulse(t, 46.6, 0.35); }
     if (t >= 49.12) P.sq = 1 - 0.04 * pulse(t, 49.12, 0.4);
     if (t >= 51.38) { P.drop = 8 * a140E(t, 51.38, 0.4); P.lid = 0.6; P.mouth = 'frown'; P.sq = 0.95; P.gaze = [0, 1]; P.handR = [24, -64]; }
   } else if (t < 63.1) { // S6
@@ -54,12 +54,15 @@ function a140RoomSaid(t) {
     if (t >= 104.78) { P.handR = [6, -198]; P.lid = 1; P.drop = 4; }
   } else { // S12
     P.sit = 1; P.handR = PERSON_HANDS.chin.R; P.handL = [-24, -64]; P.lid = 0.5; P.mouth = 'frown'; P.gaze = [0, 0.6]; P.sq = breathe(t, 3, 0.02);
-    if (t >= 109.56) { P.sq = settleTo(t, 109.56, 1.06, 1, 0.4); P.eyes = 'wide'; P.lid = null; P.handR = [24, -64]; P.brow = -0.5; P.mouth = 'o'; look([250, 720]); }
+    if (t >= 108.48) { const k = pulse(t, 108.48, 0.4); P.y -= 16 * k; P.sq = 1 + 0.07 * k; P.tilt = -0.1 * k; P.eyes = 'wide'; P.lid = null; P.brow = -0.6; P.mouth = 'o';
+      P.handR = a140Lp([24, -64], [44, -150], k); P.handL = a140Lp([-24, -64], [-44, -150], k); P.gaze = [-1, -0.05]; }
+    if (t >= 109.56) { P.eyes = 'wide'; P.handR = [24, -64]; P.handL = [-24, -64]; look([250, 720]); }
+    if (t >= 110.22) P.tip = -0.12 * a140E(t, 110.22, 0.3) * (1 - a140E(t, 111.3, 0.4));
     if (t >= 112.88) { P.gaze = gazePlan(t, [[0, P.gaze], [112.95, [0.05, -1]], [114.4, [-0.4, -0.9]], [115.9, [0.1, -1]], [118.1, [0.5, -0.9]], [120.9, [0.6, -0.8]]], 0.2); P.mouth = 'o'; P.eyes = 'wide'; }
-    if (t >= 114.28) P.talk = 0.15 * Math.min(4, Math.floor((t - 114.28) / 0.3) + 1);
-    if (t >= 116.98) { P.sit = 1 - 0.5 * a140E(t, 116.98, 0.4); P.brow = -0.8; P.handL = [-34, -90]; P.handR = [34, -90]; }
-    if (t >= 120.86) { P.sit = 0.5 - 0.5 * a140E(t, 120.86, 0.4); P.talk = 0; P.mouth = 'o'; }
-    if (t >= 121.54) { look([A140_RD.ax, 749]); P.eyes = 'open'; }
+    if (t >= 114.28) { P.sit = 1 - 0.5 * a140E(t, 114.28, 0.4); P.mouth = 'open'; P.handL = [-34, -90]; P.handR = [34, -90]; P.brow = -0.8; }
+    if (t >= 116.98) { const u = a140E(t, 116.98, 0.4); P.sit = 0.5 - 0.5 * u; P.handL = a140Lp([-34, -90], PERSON_HANDS.headHold.L, u); P.handR = a140Lp([34, -90], PERSON_HANDS.headHold.R, u); P.mouth = 'o'; }
+    if (t >= 119.76) { const xf = (tt) => kfn(tt, [[119.76, A140_RD.sx], [120.3, 410]]); Object.assign(P, walk(xf, t)); P.sit = 0; P.handL = [-34, -100]; P.handR = [34, -100]; P.gaze = [-1, -0.2]; }
+    if (t >= 121.54) { look([A140_RD.ax, 749]); P.eyes = 'open'; P.mouth = 'smile'; }
   }
   return P;
 }
@@ -67,25 +70,25 @@ function a140RoomSaid(t) {
 function a140RoomAbd(t, saidH) {
   const P = a140Who(A140_ABD, { x: A140_RD.ax, y: 900, dir: -1, sit: 1, seat: 'bench', mouth: 'smile', brow: -0.2 });
   const H = a140Head(P), S = saidH || [450, 749]; P.gaze = lookAt(H, S);
-  const coins = () => { P.handRW = [612 + 8 * Math.sin(t * 5), 790 - 4 * Math.abs(Math.sin(t * 5))]; P.handLW = [660, 792]; P.gaze = lookAt(H, [620, 790]); P.lid = 0.35; };
+  const coins = () => { P.handRW = [672 + 8 * Math.sin(t * 5), 836 - 4 * Math.abs(Math.sin(t * 5))]; P.handLW = [735, 838]; P.gaze = lookAt(H, [690, 836]); P.lid = 0.35; };
   if (t < 31.2) {
     if (t < 22.78) coins();
-    else { P.handLW = [660, 792]; P.handRW = [630, 792]; P.brow = -0.3; }
+    else { P.handLW = [735, 838]; P.handRW = [690, 838]; P.brow = -0.3; }
     if (t >= 23.3) { P.handRW = null; P.handR = PERSON_HANDS.wave.R; P.handR = [64 + 8 * Math.sin(t * 10) * (t < 24.2 ? 1 : 0), -196]; }
     if (t >= 24.3) { P.handR = [86, -96]; P.talk = talk(t, [[24.3, 25.2]]); }
-    if (t >= 25.4) { P.handR = null; P.handRW = [628, 792]; P.drop = 3 * pulse(t, 26.3, 0.3) + 3 * pulse(t, 28.0, 0.3); }
+    if (t >= 25.4) { P.handR = null; P.handRW = [690, 838]; P.drop = 3 * pulse(t, 26.3, 0.3) + 3 * pulse(t, 28.0, 0.3); }
     if (a140In(t, 28.75, 29.6)) P.gaze = lookAt(H, A140_BILLDESK);
     if (t >= 30.6) { P.handRW = null; P.handR = [16 + 4 * Math.sin(t * 6), -158]; P.lid = 0.2; P.mouth = 'closed'; }
   } else if (t < 41.7) {
-    P.tip = 0.05 * a140E(t, 31.38, 0.4); P.talk = talk(t, [[31.38, 33.6], [34.2, 37.2], [39.3, 41.5]]); P.handLW = [660, 792]; P.handR = [60, -110];
+    P.tip = 0.05 * a140E(t, 31.38, 0.4); P.talk = talk(t, [[31.38, 33.6], [34.2, 37.2], [39.3, 41.5]]); P.handLW = [735, 838]; P.handR = [60, -110];
     if (t >= 33.55) { P.drop = -4 * pulse(t, 33.55, 0.2); P.handR = [44 + (a140In(t, 34.18, 35.2) ? 12 * Math.sin((t - 34.18) * Math.PI * 4) : 0), -205]; P.look = a140In(t, 34.18, 35.2) ? -0.5 * Math.sin((t - 34.18) * Math.PI * 4) : 0; P.brow = 0.2; }
     if (a140In(t, 37.4, 38.9)) P.gaze = [-0.2, -1];
     if (t >= 39.3) { P.handR = PERSON_HANDS.pointFwd.R; P.drop = 4 * pulse(t, 39.4, 0.3); P.brow = -0.1; }
     if (t >= 40.46) { const u = a140E(t, 40.46, 0.5); P.handR = a140Lp(PERSON_HANDS.pointFwd.R, [104, -182], u); P.gaze = u > 0.3 ? [-1, -0.05] : P.gaze; }
   } else if (t < 52.0) {
-    P.handLW = [660, 792]; P.handR = [16 + 3 * Math.sin(t * 4), -158]; P.mouth = 'closed'; P.brow = -0.1; if (t >= 45.7) P.lid = 0.2;
+    P.handLW = [735, 838]; P.handR = [16 + 3 * Math.sin(t * 4), -158]; P.mouth = 'closed'; P.brow = -0.1; if (t >= 45.7) P.lid = 0.2;
   } else if (t < 63.1) {
-    if (t < 52.45) { P.sit = 1 - a140E(t, 52.02, 0.4); P.handLW = [660, 792]; }
+    if (t < 52.45) { P.sit = 1 - a140E(t, 52.02, 0.4); P.handLW = [735, 838]; }
     else { const xf = (tt) => kfn(tt, [[52.45, A140_RD.ax], [53.5, 540]]); Object.assign(P, walk(xf, t)); P.sit = 0; P.seat = null; }
     const sh = [478, 790];
     if (t >= 53.4) { P.handRW = sh; P.handL = [-24, -100]; P.mouth = 'smile'; P.gaze = lookAt(a140Head(P), [450, 760]); }
@@ -99,14 +102,16 @@ function a140RoomAbd(t, saidH) {
     if (t >= 88.18) { P.brow = -0.5; P.handRW = null; P.handR = [60, -110]; P.mouth = 'closed'; }
     if (t >= 91.38) { P.handR = PERSON_HANDS.moustache.R; P.mouth = 'smile'; P.lid = 0.3; }
   } else if (t < 105.3) {
-    P.handLW = [660, 792]; P.handR = [86, -70 + 8 * (pulse(t, 92.3, 0.2) + pulse(t, 92.6, 0.2))]; P.gaze = lookAt(H, [430, 860]); P.talk = talk(t, [[92.4, 93.8]]);
-    if (t >= 93.0) P.gaze = lookAt(H, S);
-    if (t >= 96.3) { P.handR = PERSON_HANDS.pointUp.R; P.tilt = 0.1; P.brow = -0.4; P.wink = a140In(t, 96.55, 96.95) ? 'R' : null; P.talk = talk(t, [[96.3, 97.2]]); }
-    if (t >= 97.36) { P.tilt = 0; P.handR = null; const u = a140E(t, 97.4, 0.5); P.handRW = a140Lp([612, 788], [645, 762], u); P.gaze = lookAt(H, [630, 790]); P.lid = 0.35; }
+    P.handLW = [735, 838]; P.talk = talk(t, [[92.4, 93.8]]); P.gaze = lookAt(H, [430, 860]);
+    { const u = a140E(t, 92.1, 0.3) * (1 - a140E(t, 94.0, 0.35)); P.tip = 0.14 * u; P.handR = a140Lp([60, -110], [118, -96 + 14 * (pulse(t, 92.62, 0.22) + pulse(t, 92.95, 0.22))], u); }
+    if (t >= 93.3) P.gaze = lookAt(H, S);
+    if (a140In(t, 94.5, 96.3)) { const u = a140E(t, 94.5, 0.3); P.handR = a140Lp([60, -110], [52, -228], u); P.gaze = u > 0.4 ? lookAt(H, [560, 330]) : P.gaze; P.brow = -0.3; }
+    if (t >= 96.3) { P.handR = PERSON_HANDS.pointUp.R; P.tilt = 0.1; P.brow = -0.4; P.mouth = 'smile'; P.gaze = lookAt(H, S); P.wink = a140In(t, 96.5, 97.05) ? 'R' : null; P.talk = talk(t, [[96.3, 96.5]]); }
+    if (t >= 97.36) { P.tilt = 0; P.handR = null; const u = a140E(t, 97.4, 0.5); P.handRW = a140Lp([672, 834], [748, 806], u); P.gaze = lookAt(H, [720, 820]); P.lid = 0.35; }
     if (t >= 98.2) coins();
     if (t >= 101.78) { P.gaze = lookAt(H, S); P.lid = 0.2; P.mouth = 'closed'; P.handRW = null; P.handR = PERSON_HANDS.chin.R; }
   } else {
-    if (t < 108.48) coins(); else { P.gaze = lookAt(H, [250, 720]); P.handLW = [660, 792]; P.handR = [60, -110]; P.mouth = 'closed'; }
+    if (t < 108.48) coins(); else { P.gaze = lookAt(H, [250, 720]); P.handLW = [735, 838]; P.handR = [60, -110]; P.mouth = 'closed'; }
     if (t >= 112.88) P.gaze = [-0.4, -0.9];
     if (t >= 118.0) P.mouth = 'smile';
     if (t >= 121.54) { P.handR = PERSON_HANDS.moustache.R; P.gaze = lookAt(H, S); P.brow = -0.3; P.lid = 0.3; P.tilt = 0.06; }
@@ -142,21 +147,21 @@ function a140RoomWorld(ctx, t, cam) {
   if (!front) person(ctx, abd);
   a140Desk(ctx, A140_RD.desk[0], A140_RD.desk[1], A140_RD.desk[2], { extra: t >= 97.9 && t < 122.4 ? 1 : 0 });
   if (t >= 29.1 || (t >= 28.7 && said.handRW)) { const onDesk = t >= 29.1; const p = onDesk ? A140_BILLDESK : said.handRW; a140Bill(ctx, p[0], p[1] - (onDesk ? 3 : 10), 0.5, { flat: onDesk ? 0.85 : 0, rot: onDesk ? 0.2 : -0.2 }); }
-  if (a140In(t, 97.4, 97.9)) a140Coin(ctx, ...a140Lp([612, 780], [645, 754], a140E(t, 97.4, 0.5)), 12, 0.6);
+  if (a140In(t, 97.4, 97.9)) a140Coin(ctx, ...a140Lp([672, 826], [748, 800], a140E(t, 97.4, 0.5)), 12, 0.6);
   if (front) person(ctx, abd);
   if (t >= 108.48 && t < 122.4) { const V = a140RoomServ(t); person(ctx, V); W.serv = a140Head(V);
-    for (const f of [108.75, 109.15, 109.55, 109.95]) a140Dust(ctx, (60 + 190 * (f - 108.5) / 1.72) - 10, 900, t, f, 3, Math.round(f * 10));
-    a140Dust(ctx, 270, 900, t, 110.22, 7, 9); }
+    a140Dust(ctx, 270, 900, t, 110.22, 3, 9); }
   person(ctx, said);
   W.said = sh; W.abd = a140Head(abd);
   return W;
 }
-// cameras (world 1000 x 1230)
+// cameras (world 1000 x 1230). v2: one wide on each entrance, then two-shots at about 1.7x (heads near panel y 650-730, floor in the lower quarter) and single closes
 const A140_CAMROOM = [
-  [21.6, { x: 470, y: 700, zoom: 1.25 }], [31.19, { x: 470, y: 700, zoom: 1.25 }],
-  [31.2, { x: 565, y: 720, zoom: 1.5 }], [36.6, { x: 565, y: 720, zoom: 1.5 }], [37.4, { x: 565, y: 680, zoom: 1.5 }], [41.69, { x: 565, y: 680, zoom: 1.5 }],
-  [41.7, { x: 440, y: 700, zoom: 1.7 }], [45.4, { x: 440, y: 700, zoom: 1.7 }], [46.2, { x: 480, y: 580, zoom: 1.25 }], [51.99, { x: 480, y: 580, zoom: 1.25 }],
-  [52.0, { x: 540, y: 720, zoom: 1.45 }], [62.3, { x: 540, y: 720, zoom: 1.45 }], [62.9, { x: 470, y: 715, zoom: 1.7 }], [63.1, { x: 470, y: 715, zoom: 1.7 }],
-  [86.6, { x: 550, y: 720, zoom: 1.4 }], [91.99, { x: 550, y: 720, zoom: 1.4 }],
-  [92.0, { x: 550, y: 720, zoom: 1.35 }], [98.0, { x: 550, y: 720, zoom: 1.35 }], [100.5, { x: 470, y: 690, zoom: 1.6 }], [105.29, { x: 470, y: 690, zoom: 1.6 }],
-  [105.3, { x: 500, y: 660, zoom: 1.1 }], [108.3, { x: 500, y: 660, zoom: 1.1 }], [108.55, { x: 455, y: 660, zoom: 1.1 }], [109.2, { x: 500, y: 660, zoom: 1.1 }], [112.0, { x: 500, y: 650, zoom: 1.25 }], [122.4, { x: 500, y: 650, zoom: 1.25 }]];
+  [21.6, { x: 470, y: 700, zoom: 1.25 }], [24.4, { x: 470, y: 700, zoom: 1.25 }], [25.4, { x: 540, y: 700, zoom: 1.7 }], [31.19, { x: 540, y: 700, zoom: 1.7 }],
+  [31.2, { x: 565, y: 712, zoom: 1.8 }], [36.6, { x: 565, y: 712, zoom: 1.8 }], [37.4, { x: 565, y: 700, zoom: 1.75 }], [41.69, { x: 565, y: 700, zoom: 1.75 }],
+  [41.7, { x: 450, y: 712, zoom: 2.2 }], [45.3, { x: 450, y: 712, zoom: 2.2 }], [46.1, { x: 565, y: 672, zoom: 1.5 }], [51.99, { x: 565, y: 672, zoom: 1.5 }],
+  [52.0, { x: 510, y: 712, zoom: 1.85 }], [62.3, { x: 510, y: 712, zoom: 1.85 }], [62.8, { x: 450, y: 712, zoom: 2.2 }], [63.1, { x: 450, y: 712, zoom: 2.2 }],
+  [86.6, { x: 500, y: 680, zoom: 1.15 }], [88.0, { x: 500, y: 680, zoom: 1.15 }], [88.7, { x: 550, y: 712, zoom: 1.75 }], [94.4, { x: 550, y: 712, zoom: 1.75 }],
+  [95.2, { x: 560, y: 640, zoom: 1.5 }], [97.0, { x: 560, y: 640, zoom: 1.5 }], [98.0, { x: 545, y: 712, zoom: 1.75 }], [99.9, { x: 545, y: 712, zoom: 1.75 }],
+  [100.4, { x: 450, y: 712, zoom: 2.2 }], [101.5, { x: 450, y: 712, zoom: 2.2 }], [102.2, { x: 480, y: 680, zoom: 1.6 }], [105.29, { x: 480, y: 680, zoom: 1.6 }],
+  [105.3, { x: 500, y: 660, zoom: 1.1 }], [109.4, { x: 500, y: 660, zoom: 1.1 }], [110.2, { x: 465, y: 700, zoom: 1.6 }], [122.4, { x: 465, y: 700, zoom: 1.6 }]];

@@ -47,13 +47,14 @@ function m5Blink(P, t, seed, lid = 0) { P.lid = Math.min(1, Math.max(lid, blink(
 
 // ---------- strike cycle (front-facing figure: arm angles + tool rotation) ----------
 // r: 0 contact pose, 1 raised; rest 0.15. hits = list of contact times. o.lift (0.45 s), o.whip (0.13 s)
-function m5Strike(t, hits, o = {}) { const lift = o.lift ?? 0.45, whip = o.whip ?? 0.13, rest = o.rest ?? 0.15, top = o.top ?? 1; let r = rest, contact = null;
+// v2: after each contact the pick is thrown back within 2 frames (rebound o.back), trembles 0.3 s, then settles to the raised rest
+function m5Strike(t, hits, o = {}) { const lift = o.lift ?? 0.45, whip = o.whip ?? 0.13, rest = o.rest ?? 0.5, top = o.top ?? 1, back = o.back ?? 0.24; let r = rest, contact = null;
   for (const h of hits) { const a = h - whip - 0.12 - lift;
     if (t < a) break;
     if (t < a + lift) { r = K.lerp(rest, top, K.ease.inOut((t - a) / lift)); break; }
     if (t < h - whip) { r = top + 0.04 * Math.sin((t - a - lift) * 20); break; }
     if (t < h) { const u = (t - (h - whip)) / whip; r = K.lerp(top, 0, u * u); break; }
-    contact = t - h; r = Math.min(rest, 0.32 * Math.exp(-contact * 7) * Math.abs(Math.sin(contact * 12)) + rest * K.clamp(contact / 0.5)); }
+    contact = t - h; r = contact < 0.067 ? back * contact / 0.067 : contact < 0.35 ? back + 0.05 * Math.sin(contact * 70) * (1 - (contact - 0.067) / 0.283) : K.lerp(back, rest, K.ease.inOut(K.clamp((contact - 0.35) / 0.4))); }
   return { r, contact }; }
 // apply the strike to a person: both hands on the shaft; returns the tool angle (world, radians) for m5Pick
 function m5StrikePose(P, r) { const k = K.clamp(r);
@@ -80,26 +81,27 @@ function m5Torch(ctx, x, y, t, o = {}) { const s = o.s ?? 0.5, ang = o.ang ?? -0
     shape(ctx, [[fx + dx - 8 * s, fy], [fx + dx + Math.sin(t * 9 + i) * 5 * s, fy - h], [fx + dx + 8 * s, fy]], i === 1 ? C.yellow : C.red, { lw: 3 * s, seed: 510 + i }); }
   return [fx, fy - 14 * s]; }
 function m5Glow(ctx, x, y, r, a = 0.55, col = C.yellow) { if (r <= 0 || a <= 0) return; ctx.save(); ctx.globalAlpha = a; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.clip(); ctx.fillStyle = dotPat(ctx, col, 9, 0.38); ctx.fillRect(x - r, y - r, 2 * r, 2 * r); ctx.globalAlpha = a * 0.35; ctx.fillStyle = col; ctx.fillRect(x - r, y - r, 2 * r, 2 * r); ctx.restore(); }
-function m5Coin(ctx, x, y, r = 11, sx = 1, col = M5_GOLD) { ctx.save(); ctx.translate(x, y); ctx.scale(Math.max(0.12, Math.abs(sx)), 1); shape(ctx, ell(0, 0, r, r, 14), col, { lw: Math.max(2, r * 0.25), seed: 520, dot: '#e0a800', pitch: 4, rad: 0.25, da: 0.6 }); ctx.restore(); }
+function m5Coin(ctx, x, y, r = 11, sx = 1, col = M5_GOLD) { ctx.save(); ctx.translate(x, y); ctx.scale(Math.max(0.12, Math.abs(sx)), 1); shape(ctx, ell(0, 0, r, r, 14), col, { lw: Math.max(2, r * 0.25), seed: 520, dot: col === C.red ? '#a8160f' : '#e0a800', pitch: 4, rad: 0.25, da: 0.6 }); ctx.restore(); }
 // ghost coin: dashed red outline only
 function m5Ghost(ctx, x, y, r = 11) { ctx.save(); ctx.setLineDash([5, 4]); ctx.lineWidth = 3; ctx.strokeStyle = C.red; ctx.beginPath(); ctx.ellipse(x, y, r, r * 0.42, 0, 0, 7); ctx.stroke(); ctx.restore(); }
 // coin mound: base centre (x, y), w wide, fill 0..1
 function m5Mound(ctx, x, y, w, fill = 1, o = {}) { if (fill <= 0.01) return; const h = w * 0.42 * fill, pts = []; for (let i = 0; i <= 16; i++) { const f = i / 16; pts.push([x - w / 2 + w * f, y - h * Math.sin(Math.PI * f) ** 0.8]); }
   if (o.ghost) { ctx.save(); ctx.setLineDash([8, 6]); ctx.lineWidth = 4; ctx.strokeStyle = C.red; K.poly(ctx, pts, true); ctx.stroke(); ctx.restore(); for (let i = 0; i < 5; i++) m5Ghost(ctx, x - w * 0.3 + i * w * 0.15, y - h * 0.5 + (i % 2) * h * 0.2, w * 0.07); return; }
-  shape(ctx, pts, M5_GOLD, { lw: 4, seed: 521, dot: '#e0a800', pitch: 6, rad: 0.28, da: 0.7 });
-  const r = K.rng(o.seed || 9); for (let i = 0; i < Math.round(9 * fill); i++) { const f = 0.15 + r() * 0.7; m5Coin(ctx, x - w / 2 + w * f, y - h * Math.sin(Math.PI * f) ** 0.8 * (0.35 + r() * 0.55), w * 0.06, 1); } }
+  const red = !!o.red, mc = red ? C.red : M5_GOLD, md = red ? '#a8160f' : '#e0a800';
+  shape(ctx, pts, mc, { lw: 4, seed: 521, dot: md, pitch: 6, rad: 0.28, da: 0.7 });
+  const r = K.rng(o.seed || 9); for (let i = 0; i < Math.round(9 * fill); i++) { const f = 0.15 + r() * 0.7; m5Coin(ctx, x - w / 2 + w * f, y - h * Math.sin(Math.PI * f) ** 0.8 * (0.35 + r() * 0.55), w * 0.06, 1, mc); } }
 function m5Gem(ctx, x, y, r, col) { shape(ctx, [[x - r, y - r * 0.3], [x - r * 0.5, y - r], [x + r * 0.5, y - r], [x + r, y - r * 0.3], [x, y + r]], col, { lw: 3, seed: 530 }); seg(ctx, x - r * 0.5, y - r * 0.3, x + r * 0.5, y - r * 0.3, 1, C.white, 0); }
 // pay chest (the caliph's): base centre (x, y), 150 x 100 at s 1, open 0..1, fill 0..1
 function m5Chest(ctx, x, y, o = {}) { const s = o.s ?? 1, op = K.clamp(o.open || 0), fill = o.fill ?? 1, old = !!o.old;
-  const body = old ? '#5f7a5a' : '#8a5a14', bodyD = old ? '#3a4a36' : '#5b3010', band = old ? '#9aa0a8' : C.yellow;
+  const red = !!o.red, body = old ? '#5f7a5a' : red ? C.red : '#8a5a14', bodyD = old ? '#3a4a36' : red ? '#a8160f' : '#5b3010', band = old ? '#9aa0a8' : C.yellow;
   ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot || 0); ctx.scale(s * (o.sqx || 1), s * (o.sqy || 1));
-  if (op > 0.05) { const lift = 70 * Math.sin(op * Math.PI / 2); shape(ctx, [[-75, -100], [-70, -100 - lift], [70, -100 - lift], [75, -100]], old ? '#4a6046' : '#6a3e10', { lw: 5, seed: 540 }); }
+  if (op > 0.05) { const lift = 70 * Math.sin(op * Math.PI / 2); shape(ctx, [[-75, -100], [-70, -100 - lift], [70, -100 - lift], [75, -100]], old ? '#4a6046' : red ? '#a8160f' : '#6a3e10', { lw: 5, seed: 540 }); }
   shape(ctx, K.rectPts(-75, -100, 150, 100), body, { lw: 6, seed: 541, dot: bodyD, pitch: 8, rad: 0.22, da: 0.45 });
   if (op > 0.05 && fill > 0.01) { m5Mound(ctx, 0, -98, 140, fill, { seed: 3 }); if (o.jewels) { m5Gem(ctx, -30, -104 - 26 * fill, 12, C.red); m5Gem(ctx, 18, -110 - 30 * fill, 13, C.blue); m5Gem(ctx, 44, -100 - 14 * fill, 10, '#2f9a3e'); } }
   for (const bx of [-50, 50]) shape(ctx, K.rectPts(bx - 8, -100, 16, 100), band, { lw: 3.5, seed: 542 });
   shape(ctx, K.rectPts(-11, -80, 22, 20), old ? M5_GREY : C.yellow, { lw: 3.5, seed: 543 });
   if (old) seg(ctx, -6, -70, 8, -62, 3, C.black, 0);
-  if (op <= 0.05) shape(ctx, [[-79, -100], [-72, -126], [72, -126], [79, -100]], old ? '#4a6046' : '#a8741a', { lw: 6, seed: 544, dot: bodyD, pitch: 8, rad: 0.2, da: 0.35 });
+  if (op <= 0.05) shape(ctx, [[-79, -100], [-72, -126], [72, -126], [79, -100]], old ? '#4a6046' : red ? C.red : '#a8741a', { lw: 6, seed: 544, dot: bodyD, pitch: 8, rad: 0.2, da: 0.35 });
   ctx.restore(); }
 // ledger: open book centred at (x, y), fill 0..1 tally strokes, rot
 function m5Ledger(ctx, x, y, o = {}) { const s = o.s ?? 0.6, f = o.fill ?? 0.3, open = o.open ?? 1; ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot || 0); ctx.scale(s, s);
@@ -149,11 +151,11 @@ function m5Sand(ctx, key, box, draw, p, t, o = {}) { const [bx, by, bw, bh] = bo
   const cut = by + bh * K.clamp(p * 1.15 - 0.1);
   if (p < 1) { ctx.save(); ctx.beginPath(); ctx.rect(bx - 5, cut, bw + 10, by + bh - cut + 5); ctx.clip(); ctx.drawImage(L, bx, by, bw, bh);
     if (p > 0) { ctx.globalAlpha = 0.55; ctx.fillStyle = SANDL; ctx.fillRect(bx, cut, bw, 14); } ctx.restore(); }
-  if (p <= 0) return; const r = K.rng(o.seed || 5), n = 90, wind = o.wind ?? 1;
+  if (p <= 0) return; const r = K.rng(o.seed || 5), n = o.n || 90, wind = o.wind ?? 1, gr = o.grain || 2.5;
   ctx.save(); ctx.fillStyle = '#e0a13a'; ctx.strokeStyle = C.black; ctx.lineWidth = 1;
   for (let i = 0; i < n; i++) { const gx = bx + r() * bw, gy = by + r() * bh, rel = (gy - by) / bh, st = rel / 1.15 + 0.08, age = (p - st) * (o.dur || 2.2); if (age <= 0) continue;
     const x = gx + wind * (120 * age + 40 * age * age) + 8 * Math.sin(age * 5 + i), y = gy - 30 * age + 20 * Math.sin(age * 3 + i * 0.7), a = K.clamp(1 - age / 1.6); if (a <= 0) continue;
-    ctx.globalAlpha = a; ctx.beginPath(); ctx.arc(x, y, 2.5 + (i % 3), 0, 7); ctx.fill(); ctx.stroke(); }
+    ctx.globalAlpha = a; ctx.beginPath(); ctx.arc(x, y, gr + (i % 4) * (o.grain ? 1 : 0.67), 0, 7); ctx.fill(); ctx.stroke(); }
   ctx.restore(); }
 // round inset (panel space): draw(c) in world units, centred on world point `at` with zoom z
 function m5Inset(ctx, cx, cy, r, k, at, z, draw) { if (k <= 0) return; ctx.save(); ctx.translate(cx, cy); ctx.scale(k, k); ctx.beginPath(); ctx.arc(0, 0, r, 0, 7); ctx.save(); ctx.clip(); ctx.fillStyle = C.paper || '#fbf2da'; ctx.fillRect(-r, -r, 2 * r, 2 * r); ctx.scale(z, z); ctx.translate(-at[0], -at[1]); draw(ctx); ctx.restore();

@@ -5,20 +5,26 @@ const YP_ROOM = { diwan: [600, 880, 836], table: [330, 450, 822], heap: 520, doo
 const YP_HOUSE = marketStreetAnchors({ palace: 'lit' }).palace;   // door x 680..820, top 560, step 872
 
 // ---------- the window clock: one time of day for every guest-room scene (dayCycle u) ----------
-function ypDays(t) {   // number of turned days in S8 (fractional)
-  if (t < 63.82) return 0; if (t < 64.32) return 0.75 * ypE(t, 63.82, 0.5, 'in');
-  if (t < 66.2) return 0.75 + (t - 64.32) / 0.27; return 0.75 + (66.2 - 64.32) / 0.27 + (t - 66.2) / 0.2;
+// v2 (note 7): DAY 1..7 one smooth day each 0.27 s (64.32..66.2), WEEK 2..4 one sweep each (66.2..67.6), then a steady afternoon
+const ypDayIdx = (t) => Math.min(6, Math.max(0, Math.floor((t - 64.32) / 0.27)));
+const ypWeekIdx = (t) => (t < 66.2 ? 0 : t < 66.67 ? 2 : t < 67.13 ? 3 : 4);
+function ypS8U(t) {
+  if (t < 64.32) return 0.25;
+  if (t < 66.2) return 0.25 + (t - 64.32) / 0.27;
+  const u0 = 0.25 + 1.88 / 0.27;                       // about 7.21 (noon)
+  if (t < 67.13) return u0 + 2 * (t - 66.2) / 0.93;
+  return u0 + 2 + (10.35 - u0 - 2) * ypE(t, 67.13, 0.47, 'out');   // settles on 10.35 (afternoon)
 }
 function ypU(t) {
   if (t < 61.28) return 0.25;
-  if (t < 72.24) return 0.25 + ypDays(t);
+  if (t < 72.24) return ypS8U(t);
   if (t < 84.13) return kfn(t, [[72.24, 0.9], [73.42, 1.02]], 'out');
   if (t < 127.24) return 0.75;
   if (t < 150) return 1.05;
   return 1.05 + (t >= 155 ? (Math.min(t, 160.6) - 155) / 0.15 : 0);   // the S16 vision spins again
 }
 // room dimming from the time of day; strobing kept soft while time spins
-const ypRoomNight = (t, u) => dayCycle(u).night * (ypIn(t, 63.9, 72.24) || ypIn(t, 155, 160.7) ? 0.35 : 1);
+const ypRoomNight = (t, u) => dayCycle(u).night * (ypIn(t, 63.9, 72.24) || ypIn(t, 155, 160.7) ? 0.22 : 1);
 
 // ---------- street: Yahya's house is the marketStreet palace facade ----------
 function ypStreet(ctx, t, o = {}) {

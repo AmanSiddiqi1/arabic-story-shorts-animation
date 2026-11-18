@@ -30,12 +30,12 @@ function a140S789World(ctx, t, cam) {
     if (t >= 70.9) { const k = settleTo(t, 70.9, 0, 1, 0.35); S.handL = a140Lp([-20, -110], PERSON_HANDS.armsOut.L, k); S.handR = a140Lp([6, -114], PERSON_HANDS.armsOut.R, k); S.gaze = lookAt(a140Head(S), [735, 715]); }
     if (t >= 71.6) { S.talk = talk(t, [[71.6, 72.2]]); S.handL = PERSON_HANDS.palmsUp.L; S.handR = PERSON_HANDS.palmsUp.R; S.brow = -0.5; }
     if (t >= 74.58) { const u = a140E(t, 74.58, 0.3); S.handL = a140Lp(PERSON_HANDS.palmsUp.L, A140_PRAY.handL, u); S.handR = a140Lp(PERSON_HANDS.palmsUp.R, A140_PRAY.handR, u); S.gaze = [0.1, -1]; S.mouth = 'smile'; S.brow = -0.4; S.talk = 0; }
-    if (t >= 76.66) { S.gaze = lookAt(a140Head(S), [700, 730]); S.handR = a140Lp(A140_PRAY.handR, [92, -140], a140E(t, 76.9, 0.5)); }
-    if (t >= 78.06) S.mouth = 'smile';
-    if (t >= 79.68) { S.gaze = lookAt(a140Head(S), gazePlan(t, [[0, [700, 730]], [79.68, [640, 790]], [80.0, [790, 790]], [80.4, a140W(S, [92, -140])]], 0.07)); S.brow = -0.7; }
-    if (t >= 80.4) S.gaze = gazePlan(t, [[0, S.gaze], [80.4, [0.6, 0.8]]], 0.4);
-    if (t >= 80.98) S.handR = a140Lp([92, -140], [40, -112], a140E(t, 81.1, 0.9));
-    if (t >= 82.24) { S.mouth = t < 82.6 ? 'smile' : t < 82.75 ? 'closed' : 'frown'; S.lid = Math.max(0.45 * a140E(t, 82.24, 0.5), pulse(t, 82.9, 0.45)); S.drop = 8 * a140E(t, 82.4, 0.6); }
+    if (t >= 76.66) S.gaze = lookAt(a140Head(S), [700, 730]);
+    // v2 turn: the brothers' hands come down empty at 78.06; Said is the last one still praying (down at 78.46)
+    if (t >= 78.46) { const u = a140E(t, 78.46, 0.3); S.handL = a140Lp(A140_PRAY.handL, [-28, -92], u); S.handR = a140Lp(A140_PRAY.handR, [30, -92], u); S.mouth = 'smile'; S.lid = null; }
+    if (t >= 79.68) { S.gaze = lookAt(a140Head(S), gazePlan(t, [[0, [700, 730]], [79.68, [610, 790]], [80.08, [772, 790]], [80.98, a140W(S, [92, -122])]], 0.1)); S.brow = -0.7; }
+    if (t >= 80.98) { S.handR = a140Lp([30, -92], [92, -122], a140E(t, 80.98, 0.3)); S.mouth = 'closed'; }
+    if (t >= 82.24) { const u = a140E(t, 82.24, 0.5); S.handR = a140Lp([92, -122], [26, -70], u); S.handL = a140Lp([-28, -92], [-26, -70], u); S.mouth = t < 82.5 ? 'closed' : 'frown'; S.lid = Math.max(0.5 * u, pulse(t, 82.9, 0.45)); S.drop = 8 * a140E(t, 82.4, 0.6); S.sq = 1 - 0.04 * u; S.gaze = [0.3, 0.9]; }
   } else { // S9: up, a short bow, back to the door
     const xf = (tt) => kfn(tt, [[84.8, A140_BH.sx], [85.7, 150], [86.0, 150], [86.6, 70]]); Object.assign(S, walk(xf, t, { stride: 16, amp: 150 }));
     S.sit = 1 - a140E(t, 83.96, 0.4); S.seat = 'floor'; S.handL = [-24, -84]; S.handR = [24, -84]; S.drop = 8; S.mouth = 'frown'; S.lid = 0.4; S.gaze = [0, 0.7];
@@ -57,8 +57,9 @@ function a140S789World(ctx, t, cam) {
       P.drop = 4 * (i === 0 ? pulse(t, 72.2, 0.4) + pulse(t, 73.1, 0.4) : pulse(t, 72.5, 0.4)); P.mouth = 'closed'; P.lid = 0.1;
       if (a140In(t, 72.76, 73.16)) P.gaze = lookAt(H, i === 0 ? JH : FH);
       if (t >= 73.7) { const B = a140Brother(i === 0 ? 'fadl' : 'jaafar', t, { mode: 'pray', t0: 73.7 }); P.handL = B.handL; P.handR = B.handR; P.tip = 0; if (B.gaze) { P.gaze = B.gaze; P.lid = B.lid; } P.talk = t >= 75.34 && t < 77.5 ? 0.3 * Math.abs(Math.sin(t * 9 + i)) : 0; P.drop = 0; }
-      if (t >= 77.6) { const u = a140E(t, 77.6, 0.22), v = a140E(t, 77.9, 0.3); P.handL = a140Lp(a140Lp(A140_PRAY.handL, [-14, -192], u), A140_LAP.handL, v); P.handR = a140Lp(a140Lp(A140_PRAY.handR, [14, -192], u), A140_LAP.handR, v); P.lid = a140In(t, 77.7, 77.95) ? 1 : 0.2; P.gaze = lookAt(H, sH); P.talk = 0; }
-      if (t >= 78.06) { P.handL = A140_LAP.handL; P.handR = A140_LAP.handR; P.lid = null; P.gaze = lookAt(H, sH); } }
+      if (t >= 78.06) { const d = 78.06 + stagger(i, 0.13), u = a140E(t, d, 0.3), v = a140E(t, 79.4, 0.4); // hands down, open and empty, then resting
+        P.handL = a140Lp(a140Lp(A140_PRAY.handL, [-62, -96], u), A140_LAP.handL, v); P.handR = a140Lp(a140Lp(A140_PRAY.handR, [62, -96], u), A140_LAP.handR, v);
+        P.lid = u > 0.5 ? null : P.lid; P.gaze = u > 0.5 ? lookAt(H, sH) : P.gaze; P.talk = 0; P.mouth = 'smile'; P.drop = 4 * pulse(t, 80.1 + stagger(i, 0.2), 0.45); } }
     if (t >= 83.9) { P.handL = A140_LAP.handL; P.handR = A140_LAP.handR; P.tip = 0; P.lid = null; P.gaze = lookAt(H, sH); P.drop = 0; }
   }
   // the cup Jaafar sets down
@@ -66,14 +67,14 @@ function a140S789World(ctx, t, cam) {
   person(ctx, F); person(ctx, J);
   shape(ctx, [[cup[0] - 10, cup[1] + 14], [cup[0] + 10, cup[1] + 14], [cup[0] + 13, cup[1] - 6], [cup[0] - 13, cup[1] - 6]], C.yellow, { lw: 3.5, seed: 720 });
   // rays over the prayer
-  if (t >= 75.34 && t < 77.7) for (const P of [F, J]) { const h = a140W(P, [0, -150]); a140Rays(ctx, h[0], h[1] - 20, 120, 0.55 * a140Env(t, 75.34, 77.7, 0.4), t, 9); }
+  if (t >= 75.34 && t < 78.06) for (const P of [F, J]) { const h = a140W(P, [0, -150]); a140Rays(ctx, h[0], h[1] - 20, 120, 0.55 * Math.min(K.clamp((t - 75.34) / 0.4), K.clamp((78.06 - t) / 0.1)), t, 9); }
   // Said (silhouette in the bright arch as he leaves)
   if (t >= 85.6) { const k = a140E(t, 85.6, 0.4); ctx.save(); ctx.filter = `brightness(${1 - 0.75 * k})`; ctx.globalAlpha *= 1 - a140E(t, 86.2, 0.35); person(ctx, S); ctx.restore(); } else person(ctx, S);
-  W.fadl = FH; W.jaafar = JH; W.palm = a140W(S, [92, -140]); W.saidP = S;
+  W.fadl = FH; W.jaafar = JH; W.palm = a140W(S, [92, -122]); W.saidP = S;
   return W;
 }
 const A140_CAMHALL = [[63.1, { x: 500, y: 615, zoom: 1.0 }], [64.3, { x: 500, y: 615, zoom: 1.0 }], [69.4, { x: 560, y: 650, zoom: 1.25 }], [71.59, { x: 560, y: 650, zoom: 1.25 }],
-  [71.6, { x: 600, y: 690, zoom: 1.4 }], [78.0, { x: 600, y: 690, zoom: 1.4 }], [79.0, { x: 420, y: 740, zoom: 2.0 }], [83.89, { x: 415, y: 745, zoom: 2.05 }],
+  [71.6, { x: 600, y: 690, zoom: 1.4 }], [81.64, { x: 600, y: 690, zoom: 1.4 }], [82.5, { x: 420, y: 740, zoom: 2.0 }], [83.89, { x: 415, y: 745, zoom: 2.05 }],
   [83.9, { x: 500, y: 640, zoom: 1.05 }], [86.6, { x: 500, y: 640, zoom: 1.05 }]];
 
 // ================= the letter flashback =================
@@ -151,21 +152,24 @@ function a140CloudTruth(c, t) {
   person(c, F); person(c, J); person(c, S);
   if (t >= 165.04) { const hp = a140W(J, [-40, -110]); a140Letter(c, hp[0], hp[1] - 10, 0.5, { roll: 1, seal: true, rot: 0.4 }); }
 }
-// S5: his fear: the giant brothers look down on a tiny Said
+// S5: his fear (v2): two giant brothers look straight down at a small Said in front of them (drawn at cloud scale 0.55, at [500, 850])
 function a140CloudFear(c, t) {
-  c.fillStyle = '#ffe9a8'; c.fillRect(-200, 0, 1400, 1300); c.fillStyle = dotPat(c, C.red, 14, 0.2); c.fillRect(-200, 0, 1400, 1300);
-  shape(c, K.rectPts(-200, 1080, 1400, 200), C.blue, { lw: 6, seed: 730, dot: NAVY, pitch: 12, rad: 0.2, da: 0.4 });
-  const rise = 240 * (1 - a140E(t, 46.6, 0.6, 'out'));
-  const B = (base, x, i) => { const P = a140Who(base, { x, y: 1330 + rise, s: 3.0, dir: i ? -1 : 1, lid: 0.5, brow: 0.5, tilt: -0.12 * (i ? -1 : 1), mouth: 'closed', handL: [-30, -100], handR: [30, -100], gaze: [0, 0.7], noBlink: true });
+  c.fillStyle = '#ffe9a8'; c.fillRect(-500, 0, 2000, 1600); c.fillStyle = dotPat(c, C.red, 14, 0.2); c.fillRect(-500, 0, 2000, 1600);
+  shape(c, K.rectPts(-500, 1080, 2000, 400), C.blue, { lw: 6, seed: 730, dot: NAVY, pitch: 12, rad: 0.2, da: 0.4 });
+  const rise = 260 * (1 - a140E(t, 46.4, 0.7, 'out')), SH = [500, 1250 - 195 * 1.2];
+  const B = (base, x, i) => { const P = a140Who(base, { x, y: 1170 + rise, s: 2.6, dir: i ? -1 : 1, lid: 0.5, brow: 0.5, tip: 0.14, mouth: 'closed', handL: [-30, -100], handR: [30, -100], noBlink: true });
+    P.gaze = lookAt(a140Head(P), SH);
     if (t >= 48.38) P.talk = talk(t, [[48.4 + i * 0.4, 48.8 + i * 0.4], [49.2 + i * 0.3, 49.6 + i * 0.3]]);
-    if (t >= 48.38 && i === 1) P.handR = [70 + 20 * Math.sin(t * 14), -150];
-    if (t >= 49.96) { P.handL = PERSON_HANDS.folded.L; P.handR = PERSON_HANDS.folded.R; P.gaze = [i ? 1 : -1, -0.3]; P.lid = a140In(t, 49.96, 50.6) ? 1 : 0.5; P.talk = 0; }
+    if (t >= 48.38 && t < 49.96 && i === 1) P.handR = [70 + 20 * Math.sin(t * 14), -150];
+    if (t >= 49.96) { P.handL = PERSON_HANDS.folded.L; P.handR = PERSON_HANDS.folded.R; P.lid = a140In(t, 49.96, 50.4) ? 0.85 : 0.55; P.talk = 0; P.tip = 0.16; }
     return P; };
-  person(c, B(A140_FADL, 260, 0)); person(c, B(A140_JAAF, 740, 1));
-  const S = a140Who(A140_SAID, { x: 500, y: 1110, s: 0.95, dir: 1, gaze: [0, -1], brow: -0.6, mouth: 'o', handL: [-24, -100], handR: [24, -100], noBlink: true });
-  if (t >= 49.12) { S.sq = 1 - 0.15 * a140E(t, 49.12, 0.3); S.handR = PERSON_HANDS.reach.R; }
+  person(c, B(A140_FADL, 200, 0)); person(c, B(A140_JAAF, 800, 1));
+  const S = a140Who(A140_SAID, { x: 500, y: 1250, s: 1.2, dir: 1, gaze: [-0.5, -0.86], brow: -0.6, mouth: 'o', handL: PERSON_HANDS.palmsUp.L, handR: PERSON_HANDS.palmsUp.R, noBlink: true });
+  S.gaze = gazePlan(t, [[0, [-0.5, -0.86]], [47.5, [0.5, -0.86]], [48.6, [-0.5, -0.86]], [49.4, [0.5, -0.86]], [50.3, [0, -1]], [51.38, [0.4, 0.9]]], 0.15);
+  S.x += tremble(t, 1.5, 7);
+  if (t >= 49.12) S.sq = 1 - 0.12 * a140E(t, 49.12, 0.3);
   person(c, S);
-  return a140W(S, PERSON_HANDS.reach.R);
+  return a140W(S, PERSON_HANDS.palmsUp.R);
 }
 // S11: his creditors waiting at his door
 function a140CloudDoor(c, t) {

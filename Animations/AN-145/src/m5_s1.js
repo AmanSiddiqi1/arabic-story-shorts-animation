@@ -3,7 +3,7 @@ const M5_CAL = { costume: 'caliph', age: 0.35, seed: 11 }, M5_VIZ = { costume: '
 const M5_W1 = { costume: 'villager', age: 0.1, seed: 31 }, M5_W2 = { costume: 'servant', seed: 37 }, M5_W3 = { costume: 'carpenter', age: 0.55, seed: 41 };
 const M5_X = [690, 815];   // the chalk X on the dig block
 // S5/S6 working places: tip of the pick lands on the dig block (see notes.md)
-const M5_WK = { w1: [527, 905, 1, 0.75], w3: [850, 915, -1, 0.78], w2: [960, 935, -1, 0.75] };
+const M5_WK = { w1: [527, 905, 1, 0.75], w3: [850, 915, -1, 0.78], w2: [925, 935, -1, 0.75] };
 function m5Dust(ctx, falls, t, s = 0.5, gy = 900) { for (const f of falls) dustBurst(ctx, f.x + (f.odd ? 60 : -40) * s, gy - 2, t - f.t, 4, 6 * s * 2, 12 * s * 2, 40 * s * 2, 0.5, Math.round(f.t * 10)); }
 function m5Spark(ctx, x, y, t, t0, s = 1) { const d = t - t0; if (d < 0 || d > 0.45) return; const u = d / 0.45, r = K.rng(Math.round(t0 * 100));
   ctx.save(); ctx.lineCap = 'round'; for (let i = 0; i < 8; i++) { const a = -Math.PI * (0.1 + 0.8 * r()), l = (30 + 40 * r()) * s; ctx.globalAlpha = 1 - u; ctx.lineWidth = 6 * s; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.moveTo(x + Math.cos(a) * l * u * 0.4, y + Math.sin(a) * l * u * 0.4); ctx.lineTo(x + Math.cos(a) * l * (0.4 + u), y + Math.sin(a) * l * (0.4 + u)); ctx.stroke(); ctx.lineWidth = 3 * s; ctx.strokeStyle = C.yellow; ctx.stroke(); }
@@ -31,7 +31,7 @@ function m5S1(ctx, t) {
   rideOn(ctx, 'horse', Hc, cp);
 }
 function m5O1(ctx, t, cam, S, P) {
-  if (t < 2.7) { const off = -1300 * M5B(t, 2.05, 0.5, 'in'); ctx.save(); ctx.translate(off, 0); S.title(ctx, 'AL-MAAMUN AND', 500, 240, M5B(t, 0.3, 0.7), { size: 64, align: 'center' }); S.title(ctx, 'THE PYRAMIDS', 500, 330, M5B(t, 0.5, 0.7), { size: 72, align: 'center' }); ctx.restore(); }
+  if (t < 2.7) { const off = -1300 * M5B(t, 2.05, 0.5, 'in'); ctx.save(); ctx.translate(off, 0); S.title(ctx, 'AL-MAAMUN AND', 500, 290, M5B(t, 0.3, 0.7), { size: 64, align: 'center' }); S.title(ctx, 'THE PYRAMIDS', 500, 440, M5B(t, 0.5, 0.7), { size: 72, align: 'center' }); ctx.restore(); }
   if (m5In(t, 5.16, 8.9)) { ctx.save(); ctx.globalAlpha = m5Fade(t, 5.16, 8.9, 0.25); const [x, y] = P(330, 1010); S.label(ctx, 'EGYPT', x, y, M5B(t, 5.16, 0.35), { size: 54, align: 'center' }); S.arrow(ctx, [x - 10, y - 30 * cam.zoom], P(300, 915), M5B(t, 5.3, 0.4), { width: 16, bend: 0.2 }); ctx.restore(); }
 }
 
@@ -97,7 +97,7 @@ function m5S3(ctx, t) {
     shape(ctx, [[-90, 70], [0, -70], [90, 70]], M5_STONE, { lw: 6, seed: 712, dot: C.red, pitch: 7, rad: 0.2, da: 0.4 }); m5Glow(ctx, 0, 48, 34, 0.7); m5Mound(ctx, 0, 62, 60, 1, { seed: 4 });
     if (t > 17.92) { ctx.save(); ctx.setLineDash([8, 6]); ctx.lineWidth = 5; ctx.strokeStyle = C.red; ctx.beginPath(); ctx.moveTo(0, -78); ctx.lineTo(0, K.lerp(-78, 36, M5B(t, 17.92, 0.5))); ctx.stroke(); ctx.restore(); shape(ctx, [[-8, K.lerp(-78, 36, M5B(t, 17.92, 0.5)) - 6], [8, K.lerp(-78, 36, M5B(t, 17.92, 0.5)) - 6], [0, K.lerp(-78, 36, M5B(t, 17.92, 0.5)) + 8]], C.red, { lw: 3, seed: 713 }); }
     ctx.restore(); } }
-  if (t > 20.14) { const pu = 1 + 0.12 * (m5Pulse(t, 20.5, 0.3) + m5Pulse(t, 20.85, 0.3)); ctx.save(); ctx.translate(700, 610); ctx.scale(pu, pu); m5Q(ctx, 0, 0, 130, M5B(t, 20.14, 0.35)); ctx.restore(); }
+  if (t > 20.14) { const pu = 1 + 0.12 * (m5Pulse(t, 20.5, 0.3) + m5Pulse(t, 20.85, 0.3)); ctx.save(); ctx.translate(690, 800); ctx.scale(pu, pu); m5Q(ctx, 0, 0, 110, M5B(t, 20.14, 0.35)); ctx.restore(); }
 }
 
 // ---------- S4 the order (21.80 - 32.96) ----------
@@ -158,35 +158,44 @@ function m5S5(ctx, t) {
   for (const k of order) { const [x, y, dir, s] = M5_WK[k], base = k === 'w1' ? M5_W1 : k === 'w2' ? M5_W2 : M5_W3; const W = { ...base, x, y, s, dir }; let ang, bend = 0, holdUp = false;
     if (k === 'w1') { const st = m5Strike(t, M5_HIT.w1, { lift: t > 38 ? 0.9 : 0.45, top: t > 38 ? 0.75 : 1 }); ang = m5StrikePose(W, t < 33.6 ? 0.98 : st.r); if (st.contact != null && st.contact < 0.4) { W.x += tremble(t, 3, 14) * K.clamp(1 - st.contact / 0.4); W.lid = st.contact < 0.1 ? 1 : 0; W.mouth = 'open'; }
       if (t > 38.8) { W.lid = Math.max(W.lid || 0, 0.3); } W.gaze = m5Look(t, W, [[0, M5_X], [lookTimes.w1, [850, 760]], [42.5, [230, 720]]]); }
-    if (k === 'w3') { const st = m5Strike(t, M5_HIT.w3, { rest: 0.1 }); let r = t < 33.6 ? 0.98 : st.r; if (st.contact != null) { r = Math.max(r, 1.1 * Math.exp(-st.contact * 3) * K.clamp(st.contact / 0.15)); W.x += 26 * M5B(t, 35.5, 0.4); W.sq = st.contact < 0.3 ? 1.06 : 1; W.eyes = st.contact < 0.8 ? 'wide' : undefined; }
+    if (k === 'w3') { const st = m5Strike(t, M5_HIT.w3, {}); let r = t < 33.6 ? 0.98 : st.r; if (st.contact != null) { r = Math.max(r, 1.1 * Math.exp(-st.contact * 3) * K.clamp(st.contact / 0.15)); W.x += 26 * M5B(t, 35.5, 0.4); W.sq = st.contact < 0.3 ? 1.06 : 1; W.eyes = st.contact < 0.8 ? 'wide' : undefined; }
       if (t > 39.58) { r = 0.05; ang = m5StrikePose(W, r); W.handL = null; W.aL = null; W.handL = [8, -214 + 4 * Math.sin(t * 8)]; ang = W.dir > 0 ? 1.45 : Math.PI - 1.45; W.aR = [0.5, 0.8]; W.sq = breathe(t, 3, 0.03); W.lid = m5Pulse(t, 39.8, 0.6) * 0.9; }
       else ang = m5StrikePose(W, r);
       W.gaze = m5Look(t, W, [[0, M5_X], [lookTimes.w3, [527, 720]], [42.5, [230, 720]]]); }
     if (k === 'w2') { const st = m5Strike(t, M5_HIT.w2, { top: 0.85 }); let r = t < 33.6 ? 0.7 : st.r;
       if (st.contact != null) { bend = M5B(t, 36.52, 0.3, 'out'); if (t > 36.75) { holdUp = true; r = K.lerp(st.r, 0.55, M5B(t, 36.75, 0.3)); } W.gaze = t < 37.0 ? [0, -0.9] : t < 37.7 ? m5Look(t, W, [[37.0, [900, 600]]]) : [0, 0.05]; W.lid = m5Pulse(t, 37.0, 0.5) * 0.9; }
       ang = m5StrikePose(W, r); if (holdUp) ang = W.dir > 0 ? -1.2 : Math.PI + 1.2;
+      if (m5In(t, 37.4, 40.2)) { // v2: the hooked pick lowered to eye level, a look at it, then one look to the lens (10 frames)
+        const u = M5B(t, 37.4, 0.35) * (1 - M5B(t, 39.7, 0.4)), tR = armTo(1, M5_SH, [44, -112]), tL = armTo(-1, M5_SH, [24, -104]);
+        W.aR = W.aR.map((a, i) => K.lerp(a, tR[i], u)); W.aL = W.aL.map((a, i) => K.lerp(a, tL[i], u)); ang = K.lerp(ang, Math.PI + 1.14, u);
+        const hh = m5W(W, m5HandL(1, W.aR)), ph = [hh[0] + Math.cos(ang) * 96, hh[1] + Math.sin(ang) * 96];
+        W.gaze = t < 38.6 ? lookAt(m5Head(W), ph) : t < 38.94 ? [0, 0.05] : lookAt(m5Head(W), ph); W.brow = t < 38.6 ? 0.5 : -0.3; W.mouth = t < 38.6 ? 'o' : 'frown'; W.lid = 0; }
       if (t > 40.2) { W.sit = M5B(t, 40.2, 0.5); W.seat = 'floor'; W.aL = null; W.aR = null; W.handL = M5H.lowL; W.handR = [40, -96]; W.lid = 0.6; W.mouth = 'frown'; W.gaze = m5Look(t, W, [[40.2, [960, 1000]], [lookTimes.w2, [850, 760]]]); } }
     if (k !== 'w2' || t < 40.2) m5Blink(W, t, W.seed, W.lid || 0);
     person(ctx, W);
     if (k === 'w2' && t > 40.2) m5Pick(ctx, W.x - 90, 930, -0.1, 0.75, 1);
     else m5Pick(ctx, ...m5Hand(W, 'R'), ang, 0.75, bend);
     if (k === 'w1' && t > 38.9 && t < 41) drops(ctx, m5Head(W)[0] + 30, m5Head(W)[1] - 20, t, 1); }
-  m5Spark(ctx, 690, 833, t, 34.76); m5Spark(ctx, 687, 843, t, 35.44); m5Spark(ctx, 797, 868, t, 36.5, 0.7); m5Spark(ctx, 690, 840, t, 39.42, 0.6);
+  m5Spark(ctx, 690, 833, t, 34.76); m5Spark(ctx, 687, 843, t, 35.44); m5Spark(ctx, 762, 868, t, 36.5, 0.7); m5Spark(ctx, 690, 840, t, 39.42, 0.6);
 }
 function m5O5(ctx, t, cam, S, P) {
   if (m5In(t, 35.44, 36.4)) { const [x, y] = P(760, 640); ctx.save(); ctx.globalAlpha = m5Fade(t, 35.44, 36.4, 0.15); sfx(ctx, 'CLANG!', x, y, 92, M5B(t, 35.44, 0.2), { rot: 0.08, fill: C.white }); ctx.restore(); }
   if (m5In(t, 37.38, 43.2)) { ctx.save(); ctx.globalAlpha = m5Fade(t, 37.38, 43.2, 0.25); const k = m5Pop(t, 37.38, 0.3); ctx.translate(500, 140); ctx.scale(k, k);
-    shape(ctx, K.rectPts(-210, -28, 420, 56), C.white, { lw: 7, seed: 720 }); const f = 0.03 * M5B(t, 37.7, 0.9, 'out'); shape(ctx, K.rectPts(-206, -24, Math.max(4, 412 * f), 48), C.red, { lw: 0 });
-    ctx.font = K.font(46, BF, 400); ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.lineWidth = 7; ctx.strokeStyle = C.black; ctx.lineJoin = 'round'; ctx.strokeText(Math.round(f * 100) + '%', 222, 4); ctx.fillStyle = C.yellow; ctx.fillText(Math.round(f * 100) + '%', 222, 4); ctx.restore(); }
+    ctx.translate(-80, 0); shape(ctx, K.rectPts(-300, -40, 600, 80), C.white, { lw: 8, seed: 720 }); const f = 0.03 * M5B(t, 37.7, 0.9, 'out'); shape(ctx, K.rectPts(-295, -35, Math.max(8, 590 * f), 70), C.red, { lw: 0 });
+    shape(ctx, [[318, -50], [450, -50], [450, 50], [318, 50]], C.white, { lw: 8, seed: 721 }); // v2: the number on a white tab, black, 70 px
+    ctx.font = K.font(76, BF, 400); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = C.black; ctx.fillText(Math.round(f * 100) + '%', 384, 6); ctx.restore(); }
 }
 
 // ---------- S6 the time-lapse of costs (43.20 - 53.68) ----------
 const M5_S6U = (t) => t < 46.4 ? K.lerp(0.2, 3.2, K.clamp((t - 43.2) / 3.2)) : 3.24;
-const M5_S6H = { w1: Array.from({ length: 13 }, (_, i) => 43.3 + i * 0.5), w3: Array.from({ length: 13 }, (_, i) => 43.47 + i * 0.5), w2: Array.from({ length: 13 }, (_, i) => 43.62 + i * 0.5) };
+// v2 time-lapse: the strike cycles run on a warped clock (4.5x from 43.4 to 46.4, easing back to 1x by 46.9); pure function of t
+function m5S6W(t) { const a = 43.2, b = 43.4, c = 46.4, d = 46.9, m = 3.5, Eb = m * (b - a) / 2, Ec = Eb + m * (c - b);
+  const e = t < a ? 0 : t < b ? m * (t - a) ** 2 / (2 * (b - a)) : t < c ? Eb + m * (t - b) : t < d ? Ec + m * ((t - c) - (t - c) ** 2 / (2 * (d - c))) : Ec + m * (d - c) / 2; return t + e; }
+const M5_S6H = { w1: Array.from({ length: 40 }, (_, i) => 43.3 + i * 0.5), w3: Array.from({ length: 40 }, (_, i) => 43.47 + i * 0.5), w2: Array.from({ length: 40 }, (_, i) => 43.62 + i * 0.5) };
 const M5_S6CHEST = [190, 935], M5_S6HEAP = [700, 990];
 const m5S6Fill = (t) => m5Tr(t, [[0, 1], [50.25, 0.7, 0.6], [51.18, 0.4, 0.6], [52.2, 0.05, 1.0]]);
 const m5S6Count = (t) => Math.round(t < 47.66 ? 0 : t < 50.4 ? 10 * M5B(t, 47.7, 2.5, 'lin') : t < 51.14 ? K.lerp(10, 30, M5B(t, 50.46, 0.5)) : t < 52.14 ? K.lerp(30, 60, M5B(t, 51.14, 0.6)) : K.lerp(60, 100, M5B(t, 52.14, 1.2)));
-function m5Arc(ctx, a, b, t, t0, d = 0.45, n = 3, h = 120) { for (let i = 0; i < n; i++) { const s = t0 + i * 0.08, u = K.clamp((t - s) / d); if (u <= 0 || u >= 1) continue; m5Coin(ctx, K.lerp(a[0], b[0], u), K.lerp(a[1], b[1], u) - h * Math.sin(Math.PI * u), 12, Math.cos((t - s) * 16)); } }
+function m5Arc(ctx, a, b, t, t0, d = 0.45, n = 3, h = 120, r = 18) { for (let i = 0; i < n; i++) { const s = t0 + i * 0.08, u = K.clamp((t - s) / d); if (u <= 0 || u >= 1) continue; m5Coin(ctx, K.lerp(a[0], b[0], u), K.lerp(a[1], b[1], u) - h * Math.sin(Math.PI * u), r, Math.cos((t - s) * 16)); } }
 function m5S6(ctx, t) {
   const u = M5_S6U(t), d = dayCycle(u), sx = d.sun ? (500 - d.sun[0]) * 0.8 : 0;
   m5Face(ctx, { t, u, xMark: 1, dig: K.lerp(0.17, 0.4, M5B(t, 43.4, 3.0, 'lin')), shadow: d.sun ? sx : null });
@@ -207,12 +216,12 @@ function m5S6(ctx, t) {
   person(ctx, V); m5Ledger(ctx, ...m5Hand(V, 'L'), { open: 1, s: 0.45, fill: K.clamp(0.25 + (t - 47.6) / 6), rot: 0.2 }); m5Pen(ctx, ...m5Hand(V, 'R'), -0.5);
   // workers: fast strike loop through the time-lapse, then they take their pay
   for (const k of ['w1', 'w3', 'w2']) { const [x, y, dir, s] = M5_WK[k], base = k === 'w1' ? M5_W1 : k === 'w2' ? M5_W2 : M5_W3; const W = { ...base, x, y, s, dir }; let ang;
-    if (t < 50.0) { const st = m5Strike(t, M5_S6H[k], { lift: 0.18, whip: 0.08 }); ang = m5StrikePose(W, t > 49.6 ? K.lerp(st.r, 0.1, M5B(t, 49.6, 0.3)) : st.r); W.gaze = m5Look(t, W, [[0, M5_X]]); W.lid = k === 'w2' ? 0.4 : 0.2; }
-    else { const tc = k === 'w1' ? 50.65 : k === 'w3' ? 50.75 : 50.95; W.aR = null; W.aL = null; W.handL = [-40, -128]; W.handR = [56, -132]; W.y -= hop(t, tc, 0.3, 0, 0, 14)[1]; W.mouth = t > tc ? 'smile' : 'closed'; W.gaze = m5Look(t, W, [[50.0, [190, 830]], [tc + 0.3, [x + dir * 40, y - 120]], [52.2, [800, 1060]]]); ang = null;
+    if (t < 50.0) { const st = m5Strike(m5S6W(t), M5_S6H[k], { lift: 0.18, whip: 0.08, rest: 0.3 }); ang = m5StrikePose(W, t > 49.6 ? K.lerp(st.r, 0.1, M5B(t, 49.6, 0.3)) : st.r); W.gaze = m5Look(t, W, [[0, M5_X]]); W.lid = k === 'w2' ? 0.4 : 0.2; }
+    else { const tc = k === 'w1' ? 50.65 : k === 'w3' ? 50.75 : 50.95; W.aR = null; W.aL = null; W.handL = [-40, -128]; W.handR = t < tc ? m5Tr(t, [[0, [56, -132]], [tc - 0.4, [72, -186], 0.25]]) : m5Tr(t, [[tc, [72, -186]], [tc + 0.1, [40, -128], 0.3]]); W.sq = landSquash(t, tc + 0.3, 0.1); W.y -= hop(t, tc, 0.3, 0, 0, 14)[1]; W.mouth = t > tc ? 'smile' : 'closed'; W.gaze = m5Look(t, W, [[50.0, [190, 830]], [tc + 0.3, [x + dir * 40, y - 120]], [52.2, [800, 1060]]]); ang = null;
       if (k === 'w1' && m5In(t, 51.3, 51.75)) { W.handR = [60, -190]; } }
     m5Blink(W, t, W.seed, W.lid || 0); person(ctx, W);
     if (ang != null) m5Pick(ctx, ...m5Hand(W, 'R'), ang, 0.75); else if (k === 'w1' && m5In(t, 51.3, 51.75)) { const h = m5Hand(W, 'R'), u2 = M5B(t, 51.45, 0.3, 'lin'); m5Pick(ctx, K.lerp(h[0], 690, u2), K.lerp(h[1], 960, u2) - 80 * Math.sin(Math.PI * u2), -2 + 5 * u2, 0.55, 1); }
-    if (t > 50.2) { const tc = k === 'w1' ? 50.65 : k === 'w3' ? 50.75 : 50.95; if (t > tc) m5Coin(ctx, ...m5Hand(W, 'R'), 12, 1); m5Arc(ctx, [190, 860], m5Hand(W, 'R'), t, tc - 0.45, 0.45, 1, 140); } }
+    if (t > 50.2) { const tc = k === 'w1' ? 50.65 : k === 'w3' ? 50.75 : 50.95; if (t > tc) m5Coin(ctx, ...m5Hand(W, 'R'), 18, 1); m5Arc(ctx, [190, 860], m5Hand(W, 'R'), t, tc - 0.45, 0.45, 1, 140); } }
   m5Arc(ctx, [190, 860], [M5_S6HEAP[0], M5_S6HEAP[1] - 30], t, 51.14, 0.5, 3, 160);
   // the camel hauls a block on a sled across the foreground
   if (m5In(t, 52.1, 53.68)) { const xf = (tt) => K.lerp(1200, 520, M5B(tt, 52.1, 1.6, 'lin')), Cm = { ...walk(xf, t, { stride: GAIT.camel * 0.55 }), y: 1120, s: 0.55, dir: -1, chew: (Math.sin(t * 9) + 1) / 2, lid: 0.4, saddle: true };

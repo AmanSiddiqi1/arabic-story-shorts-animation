@@ -41,20 +41,21 @@ function a140PalaceIcon(c, x, y, s) { c.save(); c.translate(x, y); c.scale(s, s)
   shape(c, [[-120, 0], [-120, -150], [-90, -150], [-90, -175], [-60, -175], [-60, -150], [60, -150], [60, -175], [90, -175], [90, -150], [120, -150], [120, 0]], '#fff3d6', { lw: 5, seed: 740, dot: C.blue, pitch: 11, rad: 0.18, da: 0.35 });
   shape(c, townArchPts(-50, 50, -130, 0, 'pointed'), C.yellow, { lw: 5, seed: 741, dot: C.red, pitch: 8, rad: 0.2, da: 0.45 }); townDoor(c, -32, 32, -110, 0, 0, { arch: 'pointed', paint: '#a8261a' });
   const d = ell(0, -150, 40, 46, 24).filter(([, y]) => y <= -149); shape(c, d.concat([[-40, -150]]), C.yellow, { lw: 5, seed: 742 }); c.restore(); }
-function a140NewsStrip(c, t) {   // the servant's news: door, four mules, loads, the messenger with the sealed letter, two medallions
-  a140HouseIcon(c, -300, 110, 0.6, { door: 0.3 });
-  for (let i = 0; i < 4; i++) { const t0 = [114.28, 114.6, 115.04, 115.3][i], k = K.clamp((t - t0) / 0.25); if (k <= 0) continue; const x = -170 + i * 92, hopY = 14 * Math.sin(Math.PI * k) * (k < 1 ? 1 : 0);
+function a140NewsStrip(c, t) {   // the servant's news (v2, full-width layout -460..460): door, four mules with coloured loads, x 4, the messenger with the sealed letter, two medallions
+  shape(c, K.rectPts(-470, 128, 940, 60), '#d9c69a', { lw: 4, seed: 752 });
+  a140HouseIcon(c, -370, 132, 0.72, { door: 0.3 });
+  for (let i = 0; i < 4; i++) { const t0 = [114.28, 114.6, 115.04, 115.3][i], k = K.clamp((t - t0) / 0.25); if (k <= 0) continue; const x = -222 + i * 126, ms = 0.38, hopY = 16 * Math.sin(Math.PI * k) * (k < 1 ? 1 : 0);
     const tl = 115.86 + stagger(i, 0.15), loaded = t >= tl, sq = loaded ? 1 - 0.07 * Math.exp(-(t - tl) * 6) : landSquash(t, t0 + 0.25, 0.1);
-    const M = { x, y: 112 - hopY, s: 0.3, dir: 1, silhouette: true, sq, earL: 0.8 - 1.2 * pulse(t, t0 + 0.2, 0.25), tailSwish: Math.sin(t * 3 + i) };
-    if (loaded) { const dy = Math.min(1, (t - tl) / 0.15); M.load = dy >= 1 ? ['chest', 'sack'] : []; }
+    const M = { x, y: 132 - hopY, s: ms, dir: 1, silhouette: true, sq, earL: 0.8 - 1.2 * pulse(t, t0 + 0.2, 0.25), tailSwish: Math.sin(t * 3 + i), load: [] };
     a140Mule(c, M);
-    if (loaded && t - tl < 0.15) { const d = (t - tl) / 0.15; packLoad(c, ['chest', 'sack'], ...a140MuleBack(x, 112 - 60 * (1 - d), 0.3), 0.3); }
-    if (t >= 116.98) a140Glint(c, x - 2, 20, 14, ((t - 116.98 - i * 0.2) % 1.1) / 0.45); }
-  if (t >= 118.04) { const a = a140E(t, 118.04, 0.3), P = a140Who(A140_MSGR, { x: 195 - 30 * (1 - a), y: 118, s: 0.5, dir: -1, handL: [-30, -100], handR: [30, -100], noBlink: true });
+    if (loaded) { const d = Math.min(1, (t - tl) / 0.15); packLoad(c, ['chest', 'sack'], ...a140MuleBack(x, 132 - 60 * (1 - d), ms), ms); }
+    if (t >= 116.98) a140Glint(c, x - 2, 132 - 238 * ms - 30, 18, ((t - 116.98 - i * 0.2) % 1.1) / 0.45); }
+  if (t >= 115.04) { const k = K.clamp((t - 115.04) / 0.3); sfx(c, 'x', -60, -62, 50, k, { fill: C.red }); S0.counter(c, 4, 10, -62, k, { size: 48 }); }
+  if (t >= 118.04) { const a = a140E(t, 118.04, 0.3), P = a140Who(A140_MSGR, { x: 285 - 30 * (1 - a), y: 150, s: 0.72, dir: -1, handL: [-30, -100], handR: [30, -100], noBlink: true });
     if (t >= 119.76) P.handR = [40, -215]; a140Sil(c, (k) => { k.globalAlpha *= a; person(k, P); });
-    if (t >= 119.76) { const k = K.ease.back(K.clamp((t - 119.76) / 0.3)), hp = a140W(P, [40, -215]); a140Letter(c, hp[0], hp[1] - 14, 0.5 * k, { roll: 1, seal: true, rot: -0.2 }); } }
-  if (t >= 120.86) a140Medal(c, 285, -48, 40 * K.ease.back(K.clamp((t - 120.86) / 0.3)), 'fadl', { gaze: [-0.5, 0.2] });
-  if (t >= 121.54) a140Medal(c, 285, 52, 40 * K.ease.back(K.clamp((t - 121.54) / 0.3)), 'jaafar', { gaze: [-0.5, -0.2] });
+    if (t >= 119.76) { const k = K.ease.back(K.clamp((t - 119.76) / 0.3)), hp = a140W(P, [40, -215]); a140Letter(c, hp[0], hp[1] - 20, 0.95 * k, { roll: 1, seal: true, rot: -0.2 }); } }
+  if (t >= 120.86) a140Medal(c, 392, -72, 42 * K.ease.back(K.clamp((t - 120.86) / 0.3)), 'fadl', { gaze: [-0.5, 0.2] });
+  if (t >= 121.54) a140Medal(c, 392, 50, 42 * K.ease.back(K.clamp((t - 121.54) / 0.3)), 'jaafar', { gaze: [-0.5, -0.2] });
 }
 
 // ---------- lettering and panel-space pieces ----------
@@ -79,9 +80,9 @@ function a140Over(ctx, t, sc, cam, W, S) {
         for (const [who, dx, t0] of [['fadl', -95, 37.84], ['jaafar', 95, 38.0]]) a140Medal(c, dx, -58, 44 * K.ease.back(K.clamp((t - t0) / 0.3)), who, { gaze: [dx > 0 ? -0.3 : 0.3, 0.2] }); });
       lab('THE BARMAKIDS', 500, 490, 37.9, 41.2, { size: 48, fill: C.yellow }); }
     if (a140In(t, 45.7, 52.0) && W.said) { const h = P(W.said), p = a140E(t, 45.7, 0.6, 'out') * (1 - a140E(t, 51.6, 0.4)); let palm = null;
-      thoughtCloud(ctx, 440, 330, 560, 420, t, { p, tail: [h[0], h[1] - 50], bg: '#ffe9a8', scale: 0.42, at: [500, 760], inside: (c) => { palm = a140CloudFear(c, t); } });
-      word('HMPH!', 760, 170, 48.38, 49.9, 76, { fill: C.red, rot: 0.1 });
-      if (palm && t >= 51.38) { const pp = [440 + 0.42 * (palm[0] - 500), 330 + 0.42 * (palm[1] - 760)]; lab('NOTHING', 760, 450, 51.38, 52.0, { size: 48 }); arr([700, 420], [pp[0] + 10, pp[1]], 51.4, 52.0, { bend: 0.2 }); } }
+      thoughtCloud(ctx, 500, 285, 920, 540, t, { p, tail: [h[0], h[1] - 60], bg: '#ffe9a8', scale: 0.55, at: [500, 850], inside: (c) => { palm = a140CloudFear(c, t); } });
+      word('HMPH!', 500, 205, 48.38, 49.9, 54, { fill: C.red, rot: 0.06 });
+      if (palm && t >= 51.38) { const pp = [500 + 0.55 * (palm[0] - 500), 285 + 0.55 * (palm[1] - 850)]; lab('NOTHING', 800, 470, 51.38, 52.0, { size: 46 }); arr([740, 450], [pp[0] + 14, pp[1] - 4], 51.4, 52.0, { bend: 0.2, width: 13 }); } }
     if (a140In(t, 59.5, 63.0) && W.abd) { const h = P(W.abd), p = a140E(t, 59.5, 0.35, 'out') * (1 - a140E(t, 62.6, 0.3));
       a140Balloon(ctx, 680, 300, 360, 270, p, [h[0] + 10, h[1] - 60], (c) => { c.fillStyle = '#9cc4ff'; c.fillRect(-180, -135, 360, 270); shape(c, K.rectPts(-180, 95, 360, 40), '#d9c69a', { lw: 4, seed: 751 });
         const sh = t >= 61.28 ? tremble(t, 2, 11) : 0, crowd = a140E(t, 61.28, 0.6); a140HouseIcon(c, 0, 100, 0.85, { shiver: sh });
@@ -91,8 +92,9 @@ function a140Over(ctx, t, sc, cam, W, S) {
       thoughtCloud(ctx, 400, 340, 500, 360, t, { p, tail: [h[0], h[1] - 50], bg: '#9cc4ff', scale: 0.75, at: [600, 760], inside: (c) => a140CloudDoor(c, t) }); }
     if (W.serv) word('BANG!', 230, 420, 108.55, 109.6, 110, { fill: C.yellow, rot: -0.12 });
     if (a140In(t, 112.88, 122.4) && W.serv) { const h = P(W.serv), p = a140E(t, 112.88, 0.35, 'out');
-      a140Balloon(ctx, 500, 330, 760, 250, p, [h[0] + 20, h[1] - 60], (c) => { c.fillStyle = '#fff3d6'; c.fillRect(-380, -125, 760, 250); c.fillStyle = dotPat(c, C.blue, 12, 0.18); c.fillRect(-380, -125, 760, 250); a140NewsStrip(c, t); });
-      if (t >= 115.04) { ctx.save(); ctx.globalAlpha *= a140Env(t, 115.04, 122.4, 0.2); S.counter(ctx, 4, 650, 535, K.clamp((t - 115.04) / 0.3), { size: 52 }); ctx.restore(); word('x', 590, 522, 115.04, 122.4, 46, { fill: C.white }); } }
+      // v2: full-width strip that grows rightward as each item lands (content laid out for the full 920 width, centre at panel x 500)
+      const edge = kfn(t, [[112.88, -250], [114.28, -250], [114.45, -110], [114.6, -110], [114.77, 10], [115.04, 10], [115.21, 130], [115.3, 130], [115.47, 250], [118.04, 250], [118.24, 345], [120.86, 345], [121.06, 460]]), w = edge + 460;
+      a140Balloon(ctx, 40 + w / 2, 295, w, 350, p, [h[0] + 20, h[1] - 60], (c) => { c.fillStyle = '#fff3d6'; c.fillRect(-w / 2, -175, w, 350); c.fillStyle = dotPat(c, C.blue, 12, 0.18); c.fillRect(-w / 2, -175, w, 350); c.translate(460 - w / 2, 0); a140NewsStrip(c, t); }); }
   }
   if (sc === 'hall') {
     if (W.fadl && t < 71.0) { const f = P(W.fadl), j = P(W.jaafar), sh = t >= 67.44 ? 1 - 0.2 * a140E(t, 67.44, 0.3) : 1;
@@ -101,7 +103,7 @@ function a140Over(ctx, t, sc, cam, W, S) {
       if (t >= 67.44) { ctx.save(); ctx.globalAlpha *= a140Env(t, 67.44, 71.0, 0.2); S.title(ctx, 'SONS OF YAHYA', 500, 150, a140E(t, 67.44, 0.7), { size: 54, align: 'center' }); ctx.restore(); } }
     if (a140In(t, 71.08, 72.4) && W.said) { const h = P(W.said), p = a140E(t, 71.08, 0.3, 'out') * (1 - a140E(t, 72.1, 0.3));
       a140Balloon(ctx, h[0] + 40, h[1] - 250, 230, 200, p, [h[0] + 10, h[1] - 50], (c) => { a140HouseIcon(c, 50, 90, 0.42); for (let i = 0; i < 6; i++) a140Bill(c, -55 + (i % 2) * 6, 80 - i * 26, 0.62, { flat: 0.55, rot: (i % 2 ? 0.08 : -0.06) }); }); }
-    if (a140In(t, 80.98, 83.9) && W.palm) { const p = P(W.palm); lab('NO MONEY', p[0] + 150, p[1] - 230, 80.98, 83.9, { size: 56 }); arr([p[0] + 120, p[1] - 190], [p[0] + 10, p[1] - 30], 81.05, 83.9, { bend: 0.15 }); }
+    if (a140In(t, 80.98, 82.6) && W.palm) { const p = P(W.palm); lab('NO MONEY', p[0] + 110, p[1] - 250, 80.98, 82.6, { size: 56 }); arr([p[0] + 90, p[1] - 210], [p[0] + 12, p[1] - 30], 81.05, 82.6, { bend: 0.15 }); }
   }
   if (sc === 'letter' || (sc === 's1617' && t < 150.84)) { // tags in the letter
     for (let i = 0; i < 4; i++) { const [txt, ic, t0] = A140_TAGS[i]; if (t < t0) continue; const k = t < t0 + 0.3 ? settleTo(t, t0, 1.6, 1, 0.3, 0.1) : 1; const [x, y] = A140_TAGPOS[i];
@@ -113,11 +115,13 @@ function a140Over(ctx, t, sc, cam, W, S) {
       for (let i = 0; i < 4; i++) { const t0 = 150.84 + stagger(i, 0.07), u = a140E(t, t0, 0.45, 'out'); if (u <= 0) continue; const [x, y] = A140_COLPOS[i];
         ctx.save(); ctx.globalAlpha *= a; a140Tag(ctx, K.lerp(src[0], x, u), K.lerp(src[1], y, u) - 80 * Math.sin(Math.PI * u), 1, A140_TAGS[i][0], A140_TAG_ICON[A140_TAGS[i][1]], { s: K.lerp(0.3, 0.8, u), size: 46 }); ctx.restore(); }
       if (t >= 153.2) { const roll = t < 155.06 ? Math.min(3, Math.floor((t - 153.2) / 0.6) + 1) * 1000000 : 3300000, k = t >= 155.06 ? settleTo(t, 155.06, 1.25, 1, 0.3, 0.12) : 1;
-        ctx.save(); ctx.globalAlpha *= a; ctx.translate(250, 490); ctx.scale(k, k); S.counter(ctx, roll, 0, 0, K.clamp((t - 153.2) / 0.3), { size: 66 }); ctx.restore();
-        if (t >= 155.06) { ctx.save(); ctx.globalAlpha *= a * (1 - a140E(t, 155.3, 0.6)); S.emphasis(ctx, 250, 470, 170, a140E(t, 155.06, 0.4), { word: 'WOW!' }); ctx.restore(); }
-        lab('DIRHAMS', 250, 585, 156.68, 157.6, { size: 46, fill: C.yellow }); } }
+        // v2: a sum rule under the fourth tag, the total burst below the column (never on an addend), WOW! up and right of the digits
+        ctx.save(); ctx.globalAlpha *= a * K.clamp((t - 153.0) / 0.2); seg(ctx, 50, 386, 330, 386, 9, C.black, 0); ctx.restore();
+        ctx.save(); ctx.globalAlpha *= a; ctx.translate(250, 565); ctx.scale(k, k); S.counter(ctx, roll, 0, 0, K.clamp((t - 153.2) / 0.3), { size: 60 }); ctx.restore();
+        if (t >= 155.06) { ctx.save(); ctx.globalAlpha *= a * (1 - a140E(t, 155.6, 0.6)); S.emphasis(ctx, 560, 440, 110, a140E(t, 155.06, 0.4), { word: 'WOW!' }); ctx.restore(); }
+        lab('DIRHAMS', 250, 680, 156.68, 157.6, { size: 46, fill: C.yellow }); } }
     if (a140In(t, 159.66, 166.9) && W.said) { const h = P(W.said), p = a140E(t, 159.66, 0.6, 'out') * (1 - a140E(t, 166.56, 0.3));
-      thoughtCloud(ctx, 470, 330, 620, 430, t, { p, tail: [h[0] - 20, h[1] - 60], bg: '#9cc4ff', scale: 0.8, at: [640, 770], inside: (c) => a140CloudTruth(c, t) }); }
+      thoughtCloud(ctx, 420, 268, 620, 430, t, { p, tail: [h[0] - 30, h[1] - 80], bg: '#9cc4ff', scale: 0.8, at: [640, 770], inside: (c) => a140CloudTruth(c, t) }); }
     if (t >= 172.2) { const k = a140E(t, 172.2, 0.9); S.title(ctx, 'THE END', 500, 170, k, { size: 86, align: 'center' }); const hk = K.ease.back(K.clamp((t - 172.6) / 0.4)); if (hk > 0) heart(ctx, 760, 110 - 8 * Math.sin((t - 172.6) * 2), 28 * hk); }
   }
 }

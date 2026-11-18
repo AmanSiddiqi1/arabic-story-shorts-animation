@@ -11,3 +11,11 @@
 - `priceTag(ctx, S, x, y, label, value, p, colour)` (`m5Tag`).
 - `sandDissolve(ctx, key, box, draw, p, t)` (`m5Sand`): a figure crumbles from the head down into wind-blown grains (cached layer, pure in t).
 - `insetCircle(ctx, cx, cy, r, k, at, zoom, draw)` (`m5Inset`).
+
+## v2 additions (Fable round 1)
+- `tunnelInterior(ctx, t)` (`m5TunBack` / `m5Tun` / `m5EndWall`): close interior of a stone passage (back wall, rubble floor, breakable end wall with crack and tumbling blocks) for big figures inside a monument.
+- `flatLight(ctx, x, y, r, a)` (`m5Light`): process-yellow light disc with a ring of yellow dots, drawn behind figures (never over faces).
+- `planOutlinePeel` (`m5Chips` with `m5DashRect`): a red dashed plan outline that peels off left to right as falling red chips (an intention given up).
+- `equalsBars`: a plain two-bar equals sign drawn as shapes (S9 overlay) instead of the lettering font; `m5Mound(..., {red: true})` for a same-shape cost pile.
+- Pattern: time-lapse strike cycles on a warped clock (`m5S6W`, closed-form piecewise speed ramp), pure in t.
+- Guide note: in the 1000 x 1230 desert world, people scenes read at zoom 1.5 or more with the ground in the lower third; zoom 1.0 only for short scale shots.

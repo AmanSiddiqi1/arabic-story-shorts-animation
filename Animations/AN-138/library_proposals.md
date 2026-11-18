@@ -8,3 +8,4 @@
 - `moonCounter` rows (`ypMoons`): n moons lighting in rows.
 - icons: `hourglass`, `padlock`, `moth`, open palm (`ypPalm`), heart door (`ypHeartDoor`), cloth bundle tying (`ypBundle`), strike stroke (`ypStrike`).
 - motion: `sneak` gait (`ypSneak`: high-kneed steps holding on each toe, with bob) for `walk()`.
+- v2: Capabilities Guide rules from Fable round 1: a sleeper/bystander that a sneaking character passes sits off the walking line and behind it (smaller, a little up the wall); use `kneel: 1` (or lower the anchor) rather than partial kneel. Also: open-doorway clip helper (`ypDoorClip`: draw a figure inside a half-open door), coin column with a limit line (`ypCoinCol`).

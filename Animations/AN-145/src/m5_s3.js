@@ -4,7 +4,7 @@ const M5_BUILDER = { costume: 'carpenter', age: 0.35, pal: { robe: '#fffaf0', do
 
 // ---------- S12 the building replay (107.66 - 119.62) ----------
 const M5_DROP = (() => { const out = [], all = [...M5_BLOCKS[2], ...M5_BLOCKS[3], ...M5_BLOCKS[4]]; let k = 0;
-  all.forEach((B) => { const guided = B.n === 2 && B.i === 0, last = B === all[all.length - 1]; out.push({ B, t: guided ? 116.0 : last ? 117.04 : 113.5 + 0.18 * k++, guided, last }); }); return out; })();
+  all.forEach((B) => { const guided = B.n === 2 && B.i === 0, last = B === all[all.length - 1]; out.push({ B, t: guided ? 116.0 : last ? 117.04 : 111.94 + 0.17 * k++, guided, last }); }); return out; })();
 function m5Teller(t, x, y, extra = {}) { return { ...M5_TELLER, x, y, s: 0.85, dir: 1, sit: 1, seat: 'floor', ...extra }; }
 function m5S12(ctx, t) {
   m5Face(ctx, { t, u: 0.25, upper: false, blocks: (c) => { for (const d of M5_DROP) { if (t < d.t - (d.guided ? 1.0 : 0.45)) continue; const B = d.B; let dy = 0, dx = 0, sq = 1;
@@ -29,9 +29,9 @@ function m5S12(ctx, t) {
 }
 function m5O12(ctx, t, cam, S, P) {
   // storyteller inset (the tale is told)
-  if (t < 110.9) { const k = m5Pop(t, 107.66, 0.35), out = M5B(t, 110.0, 0.6, 'in'); ctx.save(); ctx.translate(-260 * out, -200 * out); m5Inset(ctx, 230, 1000, 180, k * (1 - out * 0.6), [360, 800], 1.25, (c) => { m5Camp(c, { t }); m5Fire(c, t, 520, 905);
-      const T = m5Teller(t, 330, 915); T.talk = talk(t, [[107.7, 110.6]]) * 0.6; T.handR = t < 109.12 ? PERSON_HANDS.pointUp.R : m5Tr(t, [[109.12, [70, -180]], [109.3, [60, -240], 0.5]]); T.handL = M5H.lowL; T.gaze = t < 108.3 ? [0, 0.05] : [0.3, -1]; T.mouth = 'smile'; person(c, T); }); ctx.restore(); }
-  if (m5In(t, 110.74, 113.4)) { ctx.save(); ctx.globalAlpha = m5Fade(t, 110.74, 113.4, 0.3); S.title(ctx, 'WONDER OF THE WORLD', 500, 160, M5B(t, 110.74, 0.8), { size: 62, align: 'center' }); ctx.restore();
+  if (t < 112.1) { const k = m5Pop(t, 107.66, 0.35), out = M5B(t, 111.5, 0.6, 'in'); ctx.save(); ctx.translate(-260 * out, -200 * out); m5Inset(ctx, 230, 1000, 180, k * (1 - out * 0.6), [360, 800], 1.25, (c) => { m5Camp(c, { t }); m5Fire(c, t, 520, 905);
+      const T = m5Teller(t, 330, 915); T.talk = talk(t, [[107.7, 111.6]]) * 0.6; T.handR = t < 109.12 ? PERSON_HANDS.pointUp.R : m5Tr(t, [[109.12, [70, -180]], [109.3, [60, -240], 0.5]]); T.handL = M5H.lowL; T.gaze = t < 108.3 ? [0, 0.05] : [0.3, -1]; T.mouth = 'smile'; person(c, T); }); ctx.restore(); }
+  if (m5In(t, 110.74, 113.4)) { ctx.save(); ctx.globalAlpha = m5Fade(t, 110.74, 113.4, 0.3); S.title(ctx, 'WONDER OF THE WORLD', 500, 400, M5B(t, 110.74, 0.8), { size: 62, align: 'center' }); ctx.restore();
     for (let i = 0; i < 10; i++) { const a = i / 10 * Math.PI * 2 + t * 1.2, [x, y] = P(620 + Math.cos(a) * 380, 500 + Math.sin(a) * 330); star(ctx, x, y, 14 * m5Pop(t, 111.94 + i * 0.05, 0.3), C.yellow, t * 2); } }
   if (m5In(t, 115.7, 117.0)) { ctx.save(); ctx.globalAlpha = m5Fade(t, 115.7, 117.0, 0.15); const k = M5B(t, 115.7, 0.4); const a = P(390, 560), b = P(390, 560 - 144), c = P(760, 560), d = P(760, 390); S.arrow(ctx, a, [b[0], K.lerp(a[1], b[1], 1)], k, { width: 12, bend: 0 }); S.arrow(ctx, c, d, k, { width: 12, bend: 0, color: C.red }); ctx.restore(); }
 }
@@ -62,7 +62,7 @@ function m5S13(ctx, t) {
 function m5O13(ctx, t, cam, S, P) {
   if (m5In(t, 121.26, 124.0)) { ctx.save(); ctx.globalAlpha = m5Fade(t, 121.26, 124.0, 0.2); S.label(ctx, 'IRON', 250, 470, M5B(t, 121.26, 0.3), { size: 62, align: 'center' }); S.arrow(ctx, [300, 490], [420, 545], M5B(t, 121.35, 0.3), { width: 16 }); ctx.restore(); }
   if (m5In(t, 121.9, 124.6)) { ctx.save(); ctx.globalAlpha = m5Fade(t, 121.9, 124.6, 0.2); S.label(ctx, 'LEAD', 760, 760, M5B(t, 121.9, 0.3), { size: 62, align: 'center' }); S.arrow(ctx, [700, 720], [600, 610], M5B(t, 122.0, 0.3), { width: 16 }); ctx.restore(); }
-  if (m5In(t, 127.84, 129.8)) { ctx.save(); ctx.globalAlpha = m5Fade(t, 127.84, 129.8, 0.2); sfx(ctx, '? ? ?', 500, 1070, 96, M5B(t, 127.84, 0.3), { fill: C.yellow }); ctx.restore(); }
+  if (m5In(t, 127.84, 129.8)) { ctx.save(); ctx.globalAlpha = m5Fade(t, 127.84, 129.8, 0.2); sfx(ctx, '? ? ?', 790, 200, 80, M5B(t, 127.84, 0.3), { fill: C.yellow }); ctx.restore(); }
 }
 
 // ---------- S14 + S15 the storyteller by the fire (129.80 - 152.62) ----------
@@ -88,13 +88,16 @@ function m5Camp2(ctx, t) {
   const raised = m5Win(t, 137.58, 142.4, 0.3); T.aR = raised > 0 ? [K.lerp(0.6, 2.6, raised), K.lerp(0.9, 2.2, raised)] : null; T.aL = raised > 0 ? [K.lerp(-0.6, -2.4, raised), K.lerp(-0.9, -2.1, raised)] : null;
   if (raised > 0.5) { T.aR = [T.aR[0] + tremble(t, 0.04, 5), T.aR[1]]; T.eyes = 'wide'; T.brow = -0.9; T.tip += 0.03 * Math.sin(t * 2.5); }
   if (!T.aR) { T.handR = m5Tr(t, [[0, [44, -96]], [132.54, PERSON_HANDS.pointUp.R, 0.4], [134.5, [70, -140], 0.4], [146.26, M5H.temple, 0.25], [146.5, [44, -200], 0.08], [146.6, M5H.temple, 0.08], [146.75, [90, -150], 0.3], [148.0, [44, -96], 0.5]]); T.handL = [-44, -96]; }
+  // v2 laugh on 142.32: head back, mouth open, three shoulder bounces over 0.9 s, a hand slapping his knee
+  const laugh = m5Win(t, 142.32, 143.3, 0.15); if (laugh > 0) { T.tip = -0.10 * laugh; T.mouth = 'open'; T.tilt = -0.12 * laugh; T.lid = 0.6 * laugh; T.sq = 1 - 0.05 * Math.abs(Math.sin((t - 142.32) * Math.PI * 3 / 0.9)) * laugh; T.aR = null; T.aL = null;
+    T.handR = [60, -46 - 26 * Math.abs(Math.sin((t - 142.32) * Math.PI * 3 / 0.9))]; T.handL = [-44, -96]; }
   T.gaze = t < 132.54 ? m5Look(t, T, [[0, [650, 840]]]) : t < 142.32 ? m5Look(t, T, [[132.54, [560, 420]], [137.58, [650, 840]]]) : t < look(0) ? m5Look(t, T, [[142.32, [650, 840]], [146.75, [560, 420]], [147.5, [650, 840]]]) : lookAt(m5Head(T), pyr);
-  m5Blink(T, t, 61, s15 ? 0.1 : 0.3);
+  if (!laugh) m5Blink(T, t, 61, s15 ? 0.1 : 0.3);
   // children: kid1 believes, kid2 doubts
   const hide = t < 145.18 ? M5B(t, 141.38, 0.4) : 1 - M5B(t, 145.18, 0.4);
-  const K1 = { ...M5_KID1, x: K.lerp(600, 745, hide), y: 918 - hop(t, 145.5, 0.35, 0, 0, 16)[1], s: 0.85, dir: hide > 0.5 ? -1 : -1, sit: 1, seat: 'floor', tip: 0.1 * m5Win(t, 131.02, 141.3, 0.4) };
+  const K1 = { ...M5_KID1, x: K.lerp(600, 745, hide), y: 918 - hop(t, 144.04, 0.35, 0, 0, 22)[1], s: 0.85, dir: hide > 0.5 ? -1 : -1, sit: 1, seat: 'floor', tip: 0.1 * m5Win(t, 131.02, 141.3, 0.4) };
   K1.handL = [10, -84]; K1.handR = [-6, -80]; K1.eyes = m5In(t, 134.0, 142.3) ? 'wide' : undefined; K1.mouth = m5In(t, 134.64, 135.5) ? 'o' : m5In(t, 135.9, 136.6) || t > 145.18 ? 'smile' : 'closed';
-  K1.sq = landSquash(t, 145.85, 0.08) * (1 - 0.03 * m5Pulse(t, 135.54, 0.3)); K1.x += m5In(t, 135.54, 135.8) ? 6 * m5Pulse(t, 135.54, 0.26) : 0;
+  K1.sq = landSquash(t, 144.39, 0.14) * (1 - 0.03 * m5Pulse(t, 135.54, 0.3)); K1.x += m5In(t, 135.54, 135.8) ? 6 * m5Pulse(t, 135.54, 0.26) : 0;
   K1.gaze = t < 132.6 ? m5Look(t, K1, [[0, [330, 760]]]) : t < look(1) ? m5Look(t, K1, [[132.6, [560, 400]], [141.38, [560, 400]], [145.3, [330, 760]]]) : lookAt(m5Head(K1), pyr);
   const K2 = { ...M5_KID2, x: 700, y: 918, s: 0.85, dir: -1, sit: 1, seat: 'floor', brow: t < 136.66 ? 0.35 : t < 137.6 ? -0.4 : t > 148.7 ? -0.2 : 0.35, tip: 0.06 * m5Win(t, 131.1, 141.0, 0.4) + 0.1 * m5Win(t, 136.66, 137.6, 0.2) };
   K2.handL = [10, -84]; K2.handR = m5In(t, 141.6, 145.0) ? [-70 + 4 * Math.sin(t * 10), -150] : [-6, -80]; K2.drop = 5 * (m5Pulse(t, 148.9, 0.4) + m5Pulse(t, 149.35, 0.4));
@@ -103,11 +106,11 @@ function m5Camp2(ctx, t) {
   person(ctx, T); person(ctx, K1); person(ctx, K2);
   m5Fire(ctx, t, 500, 905);
   // the story cloud
-  if (m5In(t, 132.54, 148.7)) { const sh = m5Pulse(t, 144.04, 0.25), p = t < 147.24 ? M5B(t, 132.54, 1.0, 'lin') : 1 - M5B(t, 147.24, 1.2, 'in'), h = m5Head(T), sk = t < 147.24 ? 1 : 1 - 0.6 * M5B(t, 147.24, 1.2, 'in'), cx = K.lerp(h[0], 560, sk), cy = K.lerp(h[1] - 80, 400, sk);
+  if (m5In(t, 132.54, 148.7)) { const sh = m5Pulse(t, 144.04, 0.25), p = t < 147.24 ? M5B(t, 132.54, 1.0, 'lin') : 1 - M5B(t, 147.24, 1.2, 'in'), h = m5Head(T), sk = t < 147.24 ? 1 : 1 - 0.6 * M5B(t, 147.24, 1.2, 'in'), cx = K.lerp(h[0], 525, sk), cy = K.lerp(h[1] - 80, 440, sk);
     ctx.save(); ctx.translate(cx, cy); ctx.scale(sk * (1 + 0.05 * sh), sk * (1 - 0.05 * sh)); ctx.translate(-cx, -cy);
-    thoughtCloud(ctx, cx, cy, 620, 400, t, { p, tail: t < 147.24 ? [h[0] + 10, h[1] - 50] : null, bg: '#0b0820', scale: 1, at: [0, 0], seed: 4, inside: (c) => m5Legends(c, t) });
+    thoughtCloud(ctx, cx, cy, 600, 370, t, { p, tail: t < 147.24 ? [h[0] + 10, h[1] - 50] : null, bg: '#0b0820', scale: 1, at: [0, 0], seed: 4, inside: (c) => m5Legends(c, t) });
     ctx.restore();
-    if (t > 144.04 && t < 147.3) { const k = t < 144.12 ? 1.4 : 1; ctx.save(); ctx.translate(560, 400); ctx.rotate(-0.22); ctx.scale(k * m5Pop(t, 144.04, 0.12) * (1 - M5B(t, 147.0, 0.3)), k * m5Pop(t, 144.04, 0.12) * (1 - M5B(t, 147.0, 0.3)));
+    if (t > 144.04 && t < 147.3) { const k = t < 144.12 ? 1.4 : 1; ctx.save(); ctx.translate(525, 440); ctx.rotate(-0.22); ctx.scale(k * m5Pop(t, 144.04, 0.12) * (1 - M5B(t, 147.0, 0.3)), k * m5Pop(t, 144.04, 0.12) * (1 - M5B(t, 147.0, 0.3)));
       ctx.lineWidth = 12; ctx.strokeStyle = C.red; ctx.strokeRect(-220, -64, 440, 128); ctx.font = K.font(110, BF, 400); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = C.red; ctx.fillText('LEGEND', 0, 8); ctx.restore(); } }
   if (m5In(t, 148.5, 149.4)) { const u = M5B(t, 148.5, 0.9); [[-40, -10], [10, -40], [50, 0]].forEach(([dx, dy], i) => { ctx.save(); ctx.globalAlpha = 1 - u; shape(ctx, ell(430 + dx + dx * u, 640 + dy - 40 * u, 16 + 10 * u, 14 + 8 * u, 12), C.white, { lw: 3, seed: 770 + i }); ctx.restore(); }); }
   if (m5In(t, 151.8, 152.62)) m5Q(ctx, 700, 520, 90, M5B(t, 151.8, 0.3) * (1 - M5B(t, 152.3, 0.3)), C.yellow);
@@ -115,27 +118,37 @@ function m5Camp2(ctx, t) {
 function m5S14(ctx, t) { m5Camp2(ctx, t); }
 function m5S15(ctx, t) { m5Camp2(ctx, t); }
 function m5O15(ctx, t, cam, S, P) {
-  if (m5In(t, 148.7, 150.6)) { const [x, y] = P(560, 470); ctx.save(); ctx.globalAlpha = m5Fade(t, 148.7, 150.6, 0.25); S.label(ctx, 'NOT PROVEN FACT', x, y, M5B(t, 148.7, 0.35), { size: 46, align: 'center' }); ctx.restore(); }
+  if (m5In(t, 148.7, 150.6)) { const [x, y] = P(540, 600); ctx.save(); ctx.globalAlpha = m5Fade(t, 148.7, 150.6, 0.25); S.label(ctx, 'NOT PROVEN FACT', x, y, M5B(t, 148.7, 0.35), { size: 46, align: 'center' }); ctx.restore(); }
 }
 
 // ---------- S16 + S17 sand and time, the bow (152.62 - end) ----------
 const m5U = (t) => t < 160.22 ? K.lerp(0.02, 0.22, M5B(t, 152.62, 5.0)) : t < 163.84 ? K.lerp(0.22, 6.0, M5B(t, 160.22, 3.62, 'in')) : K.lerp(6.0, 6.45, M5B(t, 163.84, 0.9, 'out')) + 0.02 * M5B(t, 165, 12, 'lin');
-const M5_ANC = [{ ...M5_BUILDER, x: 420, y: 905, s: 0.5, dir: -1, seed: 81, ta: 158.06 }, { ...M5_BUILDER, age: 0.6, x: 480, y: 905, s: 0.5, dir: -1, seed: 83, ta: 158.6 }];
-function m5King(t) { return { costume: 'prince', age: 0.5, pal: { robe: C.white, dot: '#d6d2e0', sash: C.yellow, hc: C.yellow }, x: 330, y: 905, s: 0.5, dir: 1, handL: M5H.hipL, handR: M5H.hipR, seed: 87, gaze: lookAt([330, 810], [560, 250]), mouth: 'smile' }; }
+// v2: the ancient builders and the king stand large in the foreground (feet y 1010), looking up at their work, and blow away as sand
+const M5_ANC = [{ ...M5_BUILDER, x: 330, y: 1010, s: 1.1, dir: 1, seed: 81, ta: 158.52 }, { ...M5_BUILDER, age: 0.6, x: 460, y: 1010, s: 1.1, dir: 1, seed: 83, ta: 159.3 }];
+const M5_KX = 610;
+function m5King(t) { return { costume: 'prince', age: 0.5, pal: { robe: C.white, dot: '#d6d2e0', sash: C.yellow, head: 'keffiyeh', hc: C.yellow, hd: C.blue }, x: M5_KX, y: 1010, s: 1.1, dir: -1, handL: [-30, -150], handR: M5H.hipR, seed: 87, mouth: 'closed' }; }
+// the king's marks: a tall white double crown with a gold circlet, and a crook staff
+function m5KingProps(ctx, P, o = {}) { const h = m5Head(P), s = P.s, hd = P.dir || 1;
+  const sh = m5Hand(P, 'L'); seg(ctx, sh[0], sh[1] - 120 * s, sh[0], P.y, 8 * s, '#c58a18', 3.5 * s); ctx.save(); ctx.lineWidth = 12 * s; ctx.strokeStyle = C.black; ctx.lineCap = 'round'; ctx.beginPath(); ctx.arc(sh[0] - 14 * s * hd, sh[1] - 120 * s, 14 * s, 0, Math.PI, true); ctx.stroke(); ctx.lineWidth = 6 * s; ctx.strokeStyle = C.yellow; ctx.stroke(); ctx.restore();
+  shape(ctx, [[h[0] - 30 * s, h[1] - 34 * s], [h[0] - 22 * s, h[1] - 90 * s], [h[0] - 6 * s, h[1] - 120 * s], [h[0] + 6 * s, h[1] - 120 * s], [h[0] + 22 * s, h[1] - 90 * s], [h[0] + 30 * s, h[1] - 34 * s]], C.white, { lw: 5 * s, seed: 785, dot: '#d6d2e0', pitch: 6, rad: 0.2, da: 0.4 });
+  shape(ctx, ell(h[0], h[1] - 120 * s, 9 * s, 9 * s, 12), C.red, { lw: 3 * s, seed: 786 });
+  if (!o.noCirclet) shape(ctx, K.rectPts(h[0] - 33 * s, h[1] - 44 * s, 66 * s, 14 * s), C.yellow, { lw: 4 * s, seed: 787 }); }
 function m5S16(ctx, t) {
   m5Far(ctx, { u: m5U(t), t, scar: K.clamp((t - 163.0) / 0.6), pulse: 0.8 * m5Pulse(t, 157.18, 0.8) });
-  const fade = M5B(t, 155.82, 1.2);
+  const fade = M5B(t, 155.82, 0.8);
   if (fade <= 0) return;
   ctx.save(); ctx.globalAlpha = fade;
-  // tools on the sand, covered by sand afterwards
-  if (t > 158.06 && t < 160.4) { ctx.save(); ctx.globalAlpha *= 1 - M5B(t, 159.6, 0.6); m5Pick(ctx, 400, 902, -0.05, 0.4); m5Pick(ctx, 470, 902, 3.1, 0.4); ctx.restore(); }
-  M5_ANC.forEach((B, i) => { const P = { ...B, handL: M5H.lowL, handR: t < 157.1 ? [20 + 6 * Math.sin(t * 6 + i), -214] : M5H.lowR, gaze: lookAt([B.x, 810], [560, 250]), lid: m5In(t, 156.2, 156.4 + i * 0.2) ? 0.6 : 0 };
-    if (t < B.ta) person(ctx, P); else m5Sand(ctx, 'b' + i, [B.x - 70, 760, 140, 150], (c) => person(c, { ...P, handR: M5H.lowR, lid: 0 }), M5B(t, B.ta, 1.2, 'lin'), t, { seed: 9 + i }); });
-  const Kg = m5King(t); Kg.lid = 0.5 * M5B(t, 161.0, 0.8);
-  if (t < 161.68) person(ctx, Kg); else m5Sand(ctx, 'king', [260, 760, 140, 150], (c) => person(c, { ...Kg, lid: 0.5 }), M5B(t, 161.68, 0.8, 'lin'), t, { seed: 13 });
-  if (t > 161.75) { const d = t - 161.75, fall = Math.min(1, d / 0.3), x = 330 + 70 * K.clamp((d - 0.3) / 0.9) * (1 - 0.3 * K.clamp((d - 0.3) / 0.9)), y = K.lerp(808, 900, fall * fall), roll = d > 0.3 ? Math.max(0.2, Math.abs(Math.cos((d - 0.3) * 9)) * Math.exp(-(d - 0.3) * 2.5)) : 1;
-    ctx.save(); ctx.globalAlpha *= 1 - M5B(t, 162.9, 0.9); ctx.translate(x, y); ctx.scale(1, d > 1.2 ? 0.25 : Math.max(0.25, roll)); shape(ctx, ell(0, -8, 16, 8, 16), C.yellow, { lw: 3, seed: 780 }); ctx.restore();
-    if (t > 162.36) { ctx.save(); ctx.globalAlpha *= M5B(t, 162.36, 1.2); shape(ctx, [[360, 904], [385, 892], [430, 890], [455, 904]], SANDL, { lw: 3, seed: 781 }); ctx.restore(); } }
+  // tools on the sand at their feet, covered by sand afterwards
+  if (t < 160.6) { ctx.save(); ctx.globalAlpha *= 1 - M5B(t, 159.8, 0.7); m5Pick(ctx, 250, 1012, -0.05, 0.8); m5Shovel(ctx, 540, 1014, 3.05, 0.8); ctx.restore(); }
+  M5_ANC.forEach((B, i) => { const P = { ...B, handL: M5H.lowL, handR: t < 157.1 ? [20 + 6 * Math.sin(t * 6 + i), -214] : M5H.lowR, gaze: lookAt([B.x, 790], [560, 250]), tilt: -0.08, lid: m5In(t, 156.2, 156.4 + i * 0.2) ? 0.6 : 0, mouth: t > 157.18 ? 'smile' : 'closed' };
+    if (t < B.ta) person(ctx, P); else m5Sand(ctx, 'B' + i, [B.x - 120, 700, 240, 320], (c) => person(c, { ...P, handR: M5H.lowR, lid: 0 }), M5B(t, B.ta, 1.2, 'lin'), t, { seed: 9 + i, n: 75, grain: 4, dur: 1.6 }); });
+  const Kg = m5King(t); Kg.gaze = lookAt([M5_KX, 790], [560, 250]); Kg.tilt = -0.08; Kg.lid = 0.4 * M5B(t, 161.0, 0.6);
+  if (t < 161.68) { person(ctx, Kg); m5KingProps(ctx, Kg); }
+  else m5Sand(ctx, 'K', [M5_KX - 130, 600, 260, 420], (c) => { person(c, { ...Kg, lid: 0.4 }); m5KingProps(c, Kg, { noCirclet: true }); }, M5B(t, 161.68, 1.2, 'lin'), t, { seed: 13, n: 80, grain: 4, dur: 1.6 });
+  // the circlet drops, rolls (damped, 0.7 s) and a sand ripple covers it on 162.36
+  if (t > 161.68) { const h = m5Head({ ...Kg }), d = t - 161.72, fall = K.clamp(d / 0.3), y0 = h[1] - 37 * 1.1, gy = 1004, roll = K.clamp((d - 0.3) / 0.7), x = h[0] + 110 * (1 - (1 - roll) ** 2), y = K.lerp(y0, gy, fall * fall) - (d > 0.3 ? 14 * Math.abs(Math.sin(roll * 9)) * (1 - roll) : 0), sx = d < 0.3 ? 1 : Math.max(0.35, Math.abs(Math.cos(roll * 7)) * (1 - 0.6 * roll));
+    ctx.save(); ctx.translate(x, y); ctx.scale(sx, 1); shape(ctx, ell(0, -10, 36, 14, 18), C.yellow, { lw: 5, seed: 780 }); shape(ctx, ell(0, -10, 24, 7, 14), '#c98a3a', { lw: 3, seed: 788 }); ctx.restore();
+    if (t > 162.36) { const u = M5B(t, 162.36, 0.8); ctx.save(); ctx.beginPath(); ctx.rect(x - 70, gy - 40 * u, 140, 60); ctx.clip(); shape(ctx, [[x - 70, gy + 8], [x - 40, gy - 30 * u], [x + 10, gy - 36 * u], [x + 60, gy - 18 * u], [x + 80, gy + 8]], SANDL, { lw: 4, seed: 781, dot: C.red, pitch: 12, rad: 0.16, da: 0.35 }); ctx.restore(); } }
   ctx.restore();
 }
 function m5S17(ctx, t) {
@@ -148,18 +161,19 @@ function m5S17(ctx, t) {
     if (t > 174.6) { const r = K.rng(5); c.save(); c.fillStyle = '#e0a13a'; for (let i = 0; i < 30; i++) { const ph = (t * 0.6 + r()) % 1, x = 120 + ph * 420, y = 880 + r() * 30 - 10 * Math.sin(ph * 6 + i); c.globalAlpha = Math.sin(Math.PI * ph) * 0.8; c.beginPath(); c.arc(x, y, 2 + (i % 3), 0, 7); c.fill(); } c.restore(); } } });
   if (t > 166.56) { for (let i = 0; i < 5; i++) { const k = m5Pop(t, 166.56 + i * 0.15, 0.3); if (k > 0) star(ctx, 420 + i * 70, 120 + (i % 2) * 50, 7 * k, C.white, 0); } star(ctx, 560, 250, 20 * m5Pop(t, 167.3, 0.3) * (0.8 + 0.2 * Math.sin(t * 6)), C.white, t); }
   // the caliph, the vizier and the camel cross right to left
-  const xf = (tt) => tt < 172.56 ? K.lerp(1150, 330, M5B(tt, 167.92, 1.06, 'out')) : K.lerp(330, -320, M5B(tt, 172.56, 3.0, 'in'));
+  const xf = (tt) => tt < 172.56 ? K.lerp(1150, 330, M5B(tt, 167.92, 1.06, 'out')) : K.lerp(330, -800, M5B(tt, 172.56, 2.5, 'in'));
   const cam = (tt) => xf(tt - 0.25) + 330, vz = (tt) => xf(tt - 0.12) + 170;
   if (t > 167.6) {
     const Cm = { ...walk(cam, t, { stride: GAIT.camel * 0.42 }), y: 930, s: 0.42, dir: -1, saddle: true, load: ['chest', 'sack'], chew: (Math.sin(t * 8) + 1) / 2, lid: 0.4 }; camel(ctx, Cm);
-    const Vh = { ...walk(vz, t, { stride: GAIT.horse * 0.42 }), y: 930, s: 0.42, pal: 1, dir: -1 }; rideOn(ctx, 'horse', Vh, { ...M5_VIZ, gaze: t > 168.98 && t < 172.5 ? lookAt([vz(t), 790], [300, 890]) : [-1, 0], lurch: -lurch(t, 169.1, 0.2) });
-    const H = { ...walk(xf, t, { stride: GAIT.horse * 0.42 }), y: 930, s: 0.42, dir: -1, earL: t > 168.98 ? 1 : 0.6, earR: t > 168.98 ? 1 : 0.6, tailSwish: Math.sin(t * 2.2) * 0.5 };
-    const bow = m5Win(t, 171.4, 172.5, 0.3), cp = { ...M5_CAL, lurch: -lurch(t, 168.98, 0.22), drop: 10 * bow, mouth: m5In(t, 170.62, 171.3) ? 'smile' : 'closed', gaze: t < 168.98 ? [-1, 0] : t < 172.56 ? (bow > 0.2 ? [0, 0.6] : lookAt([xf(t), 790], [300, 890])) : [-1, 0] };
-    cp.lid = m5In(t, 171.6, 171.87) ? 1 : m5In(t, 170.62, 171.3) ? 0.3 : 0;
-    cp.handR = t > 171.3 && t < 172.6 ? M5H.chestR : m5In(t, 170.7, 171.2) ? [70, -190] : [52, -118]; cp.handL = [34, -122]; if (m5In(t, 170.7, 171.2)) cp.handR = [60 + 20 * Math.sin((t - 170.7) * 12), -190];
+    const vbow = m5Win(t, 171.6, 172.5, 0.25), Vh = { ...walk(vz, t, { stride: GAIT.horse * 0.42 }), y: 930, s: 0.42, pal: 1, dir: -1, headDown: 0.8 * vbow }; rideOn(ctx, 'horse', Vh, { ...M5_VIZ, gaze: vbow > 0.3 ? [0, 0.7] : t > 168.98 && t < 172.5 ? lookAt([vz(t), 790], [300, 890]) : [-1, 0], lurch: -lurch(t, 169.1, 0.2), tip: 0.35 * vbow, drop: 8 * vbow, lid: vbow > 0.5 ? 1 : 0, handR: vbow > 0.2 ? M5H.chestR : undefined });
+    const bow = m5Win(t, 171.4, 172.45, 0.22), H = { ...walk(xf, t, { stride: GAIT.horse * 0.42 }), y: 930, s: 0.42, dir: -1, earL: t > 168.98 ? 1 : 0.6, earR: t > 168.98 ? 1 : 0.6, tailSwish: Math.sin(t * 2.2) * 0.5, headDown: 1.0 * bow };
+    const cp = { ...M5_CAL, lurch: -lurch(t, 168.98, 0.22), drop: 12 * bow, tip: 0.42 * bow, mouth: m5In(t, 170.62, 171.3) ? 'smile' : 'closed', gaze: t < 168.98 ? [-1, 0] : t < 172.56 ? (bow > 0.2 ? [0, 0.6] : lookAt([xf(t), 790], [300, 890])) : [-1, 0] };
+    cp.lid = bow > 0.4 ? 1 : m5In(t, 170.62, 170.9) ? 0.3 : 0;
+    cp.handR = t > 171.25 && t < 172.6 ? M5H.chestR : m5In(t, 170.62, 171.25) ? m5Tr(t, [[170.62, [30, -200]], [170.85, [120, -150], 0.25]]) : [52, -118]; cp.handL = [34, -122];
     rideOn(ctx, 'horse', H, cp);
-    if (m5In(t, 170.62, 171.5)) { const hx = xf(t) - 10, burst = t > 171.1; if (!burst) { const k = m5Pop(t, 170.62, 0.3); ctx.save(); ctx.translate(hx - 10, 700); ctx.scale(k, k); shape(ctx, ell(0, 0, 50, 36, 24), C.white, { lw: 4, seed: 790 }); m5Mound(ctx, 0, 16, 56, 1, { seed: 3 }); ctx.restore(); }
-      else { const u = M5B(t, 171.1, 0.4); for (let i = 0; i < 6; i++) { const a = i * Math.PI / 3; ctx.save(); ctx.globalAlpha = 1 - u; shape(ctx, ell(hx - 10 + Math.cos(a) * 50 * u, 700 + Math.sin(a) * 40 * u, 8, 8, 10), C.white, { lw: 2, seed: 791 }); ctx.restore(); } } } }
+    // the coin balloon (about 190 px wide at zoom 1.9); his forearm sweeps it aside and it pops at 171.1
+    if (m5In(t, 170.62, 171.5)) { const hx = xf(t) - 30, burst = t > 171.1, push = 60 * M5B(t, 170.85, 0.25); if (!burst) { const k = m5Pop(t, 170.62, 0.3); ctx.save(); ctx.translate(hx - 20 - push, 690); ctx.scale(k, k); shape(ctx, ell(0, 0, 52, 38, 24), C.white, { lw: 3, seed: 790 }); m5Mound(ctx, 0, 18, 60, 1, { seed: 3 }); ctx.restore(); }
+      else { const u = M5B(t, 171.1, 0.4); for (let i = 0; i < 8; i++) { const a = i * Math.PI / 4; ctx.save(); ctx.globalAlpha = 1 - u; shape(ctx, ell(hx - 80 + Math.cos(a) * 60 * u, 690 + Math.sin(a) * 45 * u, 7, 7, 10), C.white, { lw: 2, seed: 791 }); ctx.restore(); } } } }
 }
 function m5O17(ctx, t, cam, S, P) {
   if (m5In(t, 169.64, 171.0)) { ctx.save(); ctx.globalAlpha = m5Fade(t, 169.64, 171.0, 0.2); S.arrow(ctx, P(200, 780), P(290, 880), M5B(t, 169.64, 0.4), { width: 16, bend: 0.2 }); ctx.restore(); }

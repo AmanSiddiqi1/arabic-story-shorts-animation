@@ -22,3 +22,10 @@ Decisions the plan left open or the measured set changed:
 - S16/S17 sky: one continuous u track (dawn 0.02 to 0.22, racing 0.22 to 6.0 from 160.22, braking to dusk 6.45 at 163.84). Night and warm tints dim the whole far view (a clipped tint showed a band across the pyramid).
 - S17 far caravans pass behind the great pyramid (clipped by it) on the far dune at the right.
 - Dissolves at 107.66 (0.5 s), 129.8 (0.6 s) and 152.62 (0.7 s); LATER card 64.0-66.12 with the cut at its covered midpoint 65.06.
+
+## v2 (Fable review 1) decisions
+- S7/S8 close shots use a new tunnel-interior set at camera zoom 1.0 (workers s 1.4) instead of zooming 3.4-4.0 into the 60-unit section tunnel: a push-in on the section (59.86-61.19) then a cut at 61.2. In S7 the pick worker (w1) sits down; there are only two men in the tunnel.
+- S5: the curl gag stays with w2 (hit on 36.5, off the X), so only one pick is on the X at a time; the reviewer's suggested camera x 720 is beyond the clamp at zoom 1.5-1.6, so w2 moved from x 960 to 925 and the shot is zoom 1.5 at x 667.
+- S9/S10: the dug opening in the wall is no longer drawn (it sat behind the right pan and read as a black dome).
+- S16: the builders and king stand large in the foreground (s 1.1, feet y 1010) and the camera also pushes to zoom 1.6 (155.82-160.2), easing to 1.25 for the racing days and the king's dissolve.
+- S17: bow tip 0.42 (rider rig needs more than the suggested 0.22 to read); the caravan exits by 175.2.

@@ -11,9 +11,11 @@ const A140_SD = { x0: 1130, x1: 1230, top: 640, cx: 1180 }, A140_SW = [990, 530,
 const A140_MULES = [100, 300, 500, 700], A140_MS = 0.72, A140_HX = 960;   // mule line (S13-S17) and the heap centre
 const a140W = (P, l) => { const s = P.s || 1, d = Math.sign(P.dir || 1); return [P.x + l[0] * s * d, P.y + l[1] * s * (P.sq ?? 1)]; };
 
-function a140Sky(ctx, u, cam, t) { ctx.save(); ctx.translate(cam.x - 500, 0); skyCycle(ctx, u, { w: 1000, t, hills: false }); ctx.restore(); }
+function a140Sky(ctx, u, cam, t, o = {}) { ctx.save(); ctx.translate(cam.x - 500, 0); skyCycle(ctx, u, { w: 1000, t, hills: false });
+  for (const [uu, a] of [[0.8, o.night || 0], [1.03, o.dawn || 0]]) if (a > 0) { ctx.save(); ctx.globalAlpha *= a; skyCycle(ctx, uu, { w: 1000, t, hills: false, moon: false }); ctx.restore(); }
+  ctx.restore(); }
 function a140StreetSet(ctx, t, cam, o) {
-  a140Sky(ctx, o.u, cam, t);
+  a140Sky(ctx, o.u, cam, t, o);
   const so = { w: 1600, sky: false, palace: false, houses: A140_HOUSES, doors: [0, 0], stalls: [{ x: 170, kind: 'fruit', state: 'closed', w: 240 }], props: [['crate', 450, {}], ['pots', 1520, {}]], t };
   marketStreet(ctx, { ...so, palette: o.pal || 'clear' });
   if (o.toClear > 0) { ctx.save(); ctx.globalAlpha *= o.toClear; marketStreet(ctx, { ...so, palette: 'clear' }); ctx.restore(); }
@@ -146,32 +148,35 @@ function a140Mules(ctx, t, o = {}) {
 }
 function a140S13World(ctx, t, cam) {
   const W = {}; a140StreetSet(ctx, t, cam, { u: 0.45, pal: 'dusk' });
-  const sx = a140SaidX(t), S = a140Who(A140_SAID, { x: sx, y: 900, s: 0.95, dir: 1, brow: -0.4, mouth: 'o' });
+  const sx = a140SaidX(t), S = a140Who(A140_SAID, { x: sx, y: 900 + 30 * (1 - a140E(t, 123.9, 0.45)), s: 0.95, dir: 1, brow: -0.4, mouth: 'o' });
   // creditors behind the mules
   for (let i = 0; i < 3; i++) { const P = a140Cred(i, t, 200 + i * 200, { y: 878, s: A140_CR[i].s * 0.9 }); const h = a140Head(P);
     P.gaze = t < 124.5 ? lookAt(h, [sx, 720]) : lookAt(h, [A140_MULES[i + 1] - 10, 690]); if (t >= 123.96 + stagger(i)) { P.mouth = 'o'; P.eyes = 'wide'; P.brow = -0.4; } P.handL = [-34, -86]; P.handR = i === 2 ? [40, -90] : [34, -86];
     person(ctx, P); a140HeldBill(ctx, a140W(P, P.handL), 0.5, 0.3); }
   a140Mules(ctx, t);
   // messenger at the door
-  const M = a140Who(A140_MSGR, { x: 1200, y: 900, dir: -1, mouth: 'smile' }); M.gaze = lookAt(a140Head(M), [sx, 720]); M.handR = [40, -120];
+  const M = a140Who(A140_MSGR, { x: 1200, y: 900, dir: -1, mouth: 'smile' }); M.gaze = lookAt(a140Head(M), [sx, 720]); M.handR = [40, -120]; M.handL = [-24, -80];
   const hs = [1080 + 40, 810], mh = a140W(M, [40, -120]);
-  if (t >= 125.14) { M.tip = 0.2 * pulse(t, 125.0, 0.9); M.handRW = a140Lp(mh, hs, a140E(t, 125.14, 0.35)); M.handR = null; if (t > 125.6) { M.handR = [30, -90]; M.handRW = null; } M.gaze = lookAt(a140Head(M), hs); }
+  if (t >= 125.14) { M.tip = 0.2 * pulse(t, 125.0, 0.9); M.handRW = a140Lp(mh, hs, a140E(t, 125.14, 0.35)); M.handR = null; if (t > 125.6) { M.handR = [24, -80]; M.handRW = null; } M.gaze = lookAt(a140Head(M), hs); }
+  if (t >= 125.92) { M.gaze = lookAt(a140Head(M), [1080, 800]); M.tip = 0.08 * a140E(t, 125.92, 0.4); M.mouth = 'o'; }
   person(ctx, M);
   // servant behind Said
   const vxf = (tt) => kfn(tt, [[122.6, -350], [124.9, 960]], 'out'), V = a140Who(A140_SERV, { y: 900, dir: 1, mouth: 'open', ...walk(vxf, t) });
   V.tip = 0.1 * K.clamp(V.amp); V.gaze = lookAt(a140Head(V), [1150, 700]); if (t >= 124.9) { V.mouth = 'smile'; V.handL = [-30, -90]; V.handR = [30, -90]; V.sq = 1 + 0.03 * Math.sin(t * 9); }
+  if (t >= 125.92) { V.gaze = lookAt(a140Head(V), [1080, 800]); V.tip = 0.09 * a140E(t, 125.92, 0.4); V.mouth = 'o'; V.sq = 1; }
   if (V.x > -150) person(ctx, V);
   // Said
   Object.assign(S, walk(a140SaidX, t, { amp: 140 })); const run = K.clamp(S.amp);
   S.tip = 0.12 * run + lurch(t, 124.36, 0.18); S.gaze = [1, -0.1];
+  if (a140In(t, 123.3, 123.85)) { S.gaze = [-1, -0.1]; S.tilt = -0.08 * pulse(t, 123.3, 0.55); S.eyes = 'wide'; }
   if (run > 0.1) { const sn = Math.sin(S.ph); S.handL = [-30 + 34 * sn, -125]; S.handR = [30 - 34 * sn, -125]; }
   let let0 = null, letRoll = 1;
   if (t >= 124.36) { S.mouth = 'o'; S.gaze = lookAt(a140Head(S), [1180, 760]); S.handL = [-30, -110]; S.handR = [36, -110]; }
   if (t >= 125.0) { S.handRW = t < 125.49 ? a140Lp(a140W(S, [36, -110]), [1130, 810], a140E(t, 125.0, 0.35)) : null; S.handR = t < 125.49 ? null : [36, -110]; }
   if (t >= 125.49) { // letter in both hands, in front of him
-    const op = a140E(t, 125.92, 0.55), tr = t >= 126.72 ? tremble(t, 3, 11) : 0; letRoll = 1 - op;
+    const op = a140E(t, 125.92, 0.55), tr = t >= 126.72 ? tremble(t, 4, 11) : 0; letRoll = 1 - op;
     let0 = [1080 + tr, 815 + tr * 0.5]; S.handLW = [let0[0] - K.lerp(40, 52, op), let0[1] + 4]; S.handRW = [let0[0] + K.lerp(40, 52, op), let0[1] + 4]; S.handL = S.handR = null;
-    S.gaze = lookAt(a140Head(S), [let0[0], let0[1] - 20]); S.brow = -0.5; S.mouth = 'closed'; if (t >= 126.72) { S.wet = true; S.drop = 4 * pulse(t, 127.2, 0.4); S.mouth = 'o'; } }
+    S.gaze = lookAt(a140Head(S), [let0[0], let0[1] - 20]); S.brow = -0.5; S.mouth = 'closed'; if (t >= 126.72) { S.wet = true; S.drop = 4 * pulse(t, 127.2, 0.4); S.mouth = 'closed'; S.x += tr * 0.3; S.gaze = lookAt(a140Head(S), [let0[0] + 28 - 56 * (((t - 126.72) * 1.4) % 1), let0[1] - 40]); } }
   person(ctx, S); W.said = a140Head(S);
   // the letter: in the messenger's hand, handed over, opened
   if (t < 125.14) a140Letter(ctx, mh[0], mh[1] - 6, 0.5, { roll: 1, seal: true, rot: -0.3 });
@@ -185,25 +190,26 @@ const A140_CAM13 = [[122.4, { x: 455, y: 640, zoom: 1.1 }], [124.4, { x: 1000, y
 
 // ---------- S16 + S17 ----------
 const A140_TOSS = [[151.7, 3], [152.5, 4]];          // [toss time, heap item]; the chest leaves the mule at 700, lands 0.45 s later
-const A140_PURSE = [[156.28, 0], [157.6, 1], [158.3, 2]];   // Said hands a purse to creditor i
+const A140_PURSE = [[156.28, 0], [156.95, 1], [157.7, 2]];   // Said hands a purse to creditor i (v2: fat, sly, old, one at a time)
+const A140_CKEYS = [[[149.6, 760], [155.6, 760], [156.0, 962], [156.6, 962], [157.9, 200]],
+  [[149.6, 640], [156.5, 640], [156.85, 962], [157.25, 962], [158.5, 200]],
+  [[149.6, 520], [157.05, 520], [157.55, 962], [158.05, 962], [159.2, 300]]];
 function a140CredLate(i, t) {
-  // queue in front (y 940), step up to Said, take the purse, bow, leave left
-  const [tp] = A140_PURSE[i], start = [520, 400, 280][i];
-  const keys = i === 0 ? [[149.6, start], [155.3, start], [156.05, 990], [157.1, 990], [158.6, 300]] : i === 1 ? [[149.6, start], [156.3, start], [156.7, 640], [157.0, 640], [157.4, 990], [158.2, 990], [160.0, 300]] : [[149.6, start], [156.3, start], [156.8, 520], [157.5, 520], [158.1, 990], [158.9, 990], [161.2, 300]];
-  const xf = (tt) => kfn(tt, keys), leaving = t > keys[keys.length - 2][0];
-  const P = a140Cred(i, t, xf(t), { y: 940, ...walk(xf, t) }); P.dir = leaving ? -1 : 1;
+  // waits in the queue (y 930), steps up to Said's left (x 975), takes the purse, bows his head, walks off left in front (y 965)
+  const [tp] = A140_PURSE[i], keys = A140_CKEYS[i], tl = keys[3][0];
+  const xf = (tt) => kfn(tt, keys), leaving = t > tl;
+  const P = a140Cred(i, t, xf(t), { y: 930 + 35 * a140E(t, tl, 0.35), ...walk(xf, t) }); P.dir = leaving ? -1 : 1;
   const h = a140Head(P); P.gaze = lookAt(h, [1100, 730]); P.handL = [-34, -100]; P.handR = i === 2 ? [40, -90] : [34, -100];
-  if (t >= tp - 0.5 && t < tp + 0.45) { P.handR = [70, -120]; if (i === 2) P.hold = null; }
-  if (t >= 156.3 && t < tp - 0.5 && i > 0) { P.handR = [70, -110]; P.handL = [-20, -120]; P.mouth = 'smile'; }   // eager hands
-  if (t >= tp + 0.2) { P.brow = -0.4; P.mouth = 'smile'; P.tip = 0.28 * pulse(t, tp + 0.25, 0.7) * (P.dir); }
-  if (leaving) P.gaze = [-1, 0.1];
-  return { P, xf, paid: t >= tp + 0.2, tp };
+  if (t >= tp - 0.35 && t < tp + 0.25) { P.handR = [70, -120]; if (i === 2) P.hold = null; }
+  if (t >= tp + 0.15) { P.brow = K.lerp(A140_CR[i].brow, -0.4, a140E(t, tp + 0.15, 0.3)); P.mouth = 'smile'; P.drop = 7 * pulse(t, tp + 0.25, 0.4); P.tip = 0.12 * pulse(t, tp + 0.25, 0.4); }
+  if (leaving) { P.gaze = [-1, 0.1]; P.handR = [30, -100]; }
+  return { P, xf, paid: t >= tp + 0.05, tp };
 }
 function a140S1617World(ctx, t, cam) {
   const W = {}, S17 = t >= 157.2;
-  const morn = a140E(t, 169.58, 1.1), u = t < 169.58 ? 0.45 : 0.45 + 0.63 * morn;
+  const u = 0.45, night = a140E(t, 168.9, 0.75), dawn = a140E(t, 169.55, 1.05);   // v2: dusk, a short deep blue, dawn (no moon, no orange step)
   const sOpen = t < 169.58 ? 0 : t < 174.0 ? a140E(t, 169.58, 0.6) : 1 - 0.9 * a140E(t, 174.0, 0.6);
-  a140StreetSet(ctx, t, cam, { u, pal: 'dusk', toClear: a140E(t, 169.9, 0.8), door: sOpen, lit: a140E(t, 169.7, 0.6), shut: t < 169.58 ? 0 : a140E(t, 169.7, 0.6), winLit: a140E(t, 169.7, 0.6) });
+  a140StreetSet(ctx, t, cam, { u, night, dawn, pal: 'dusk', toClear: a140E(t, 169.65, 0.95), door: sOpen, lit: a140E(t, 169.7, 0.6), shut: t < 169.58 ? 0 : a140E(t, 169.7, 0.6), winLit: a140E(t, 169.7, 0.6) });
   // servant leads the last mule in (170.88); the mule passes behind the heap and Said and goes in at the door
   const mxf = (tt) => kfn(tt, [[170.88, 700], [173.6, 1340]], 'lin'), vxf = (tt) => kfn(tt, [[170.88, 790], [172.3, 1185]], 'lin');
   const loads = S17 ? [[], [], [], []] : [['chest', 'sack'], ['chest', 'sack'], ['chest', 'sack'], t < 151.7 + 0.2 ? ['chest', 'sack'] : t < 152.5 + 0.2 ? ['sack'] : []];
@@ -218,7 +224,9 @@ function a140S1617World(ctx, t, cam) {
     let carry = null;
     for (const [tt, item] of A140_TOSS) { if (t >= tt - 0.5 && t < tt) { V.handLW = [690, 710]; V.handRW = [720, 700]; V.tip = 0.1; }
       if (t >= tt && t < tt + 0.45) { const u = (t - tt) / 0.45, dst = a140HeapPos(item, A140_HX, 900, 0.9); carry = [K.lerp(705, dst[0], u), K.lerp(690, dst[1] - 30, u) - 120 * Math.sin(Math.PI * u), item, u]; V.dir = 1; V.handL = [-20, -200]; V.handR = [20, -200]; V.gaze = lookAt(a140Head(V), carry); } }
-    if (S17) { V.dir = 1; V.gaze = lookAt(a140Head(V), [1100, 720]); V.handL = [-30, -100]; V.handR = [30, -100]; if (t >= 168.34) V.mouth = 'open'; }
+    if (S17) { V.dir = 1; V.gaze = lookAt(a140Head(V), [1100, 720]); V.handL = [-24, -84]; V.handR = [24, -84]; if (t >= 168.34) V.mouth = 'open';
+      if (a140In(t, 160.4, 162.6)) { V.dir = -1; V.gaze = lookAt(a140Head(V), [720, 720]); V.handR = null; V.handRW = [742, 742 + 8 * (pulse(t, 160.9, 0.3) + pulse(t, 161.4, 0.3) + pulse(t, 161.9, 0.3))]; V.mouth = 'smile'; }
+      if (a140In(t, 166.56, 168.0)) { V.gaze = lookAt(a140Head(V), [960, 560]); V.tip = -0.06; V.mouth = 'o'; } }
     person(ctx, V);
     W.carry = carry; }
   // the heap (3 items at 149.6, +2 tossed, all 9 after the cut to S17)
@@ -226,24 +234,36 @@ function a140S1617World(ctx, t, cam) {
   a140Heap(ctx, A140_HX, 900, n, t, 0.9, { landT: land, glint: t >= 155.06 });
   if (W.carry) { const [x, y, item, u] = W.carry; ctx.save(); ctx.translate(x, y); ctx.rotate(u * 0.6 - 0.3); packLoad(ctx, [A140_HEAP[item][2]], 0, 30, 0.9); ctx.restore(); }
   // messenger right of the door
-  if (t < 173.4) { const M = a140Who(A140_MSGR, { x: 1290, y: 900, dir: -1, mouth: 'smile' }); M.gaze = lookAt(a140Head(M), [1100, 720]); M.handL = PERSON_HANDS.clasp.L; M.handR = PERSON_HANDS.clasp.R; if (t >= 155.06) M.tip = 0.12 * pulse(t, 155.2, 0.8); person(ctx, M); }
-  // Said
+  { const mxf = (tt) => kfn(tt, [[172.6, 1290], [173.8, 1580]]), M = a140Who(A140_MSGR, { y: 900, dir: -1, mouth: 'smile', ...walk(mxf, t) }); M.gaze = lookAt(a140Head(M), [1100, 720]);
+    M.handL = [-24, -76]; M.handR = [24, -76];
+    if (a140In(t, 153.2, 155.06)) M.gaze = lookAt(a140Head(M), [680, 600]);
+    if (t >= 155.06) M.drop = 6 * pulse(t, 155.1, 0.45);
+    if (t >= 155.6) { M.handL = [14, -100]; M.handR = [-8, -104]; }
+    if (t >= 168.3) M.tip = 0.24 * pulse(t, 168.3, 0.9);
+    if (t >= 172.6) { M.dir = 1; M.gaze = [1, 0]; M.handL = [-24, -84]; M.handR = [24, -84]; }
+    if (M.x < 1560) person(ctx, M); }
+  // Said (v2): the letter goes to one hand at his side after the match cut, so his body acts the climax
   const S = a140Who(A140_SAID, { x: 1100, y: 900, s: 0.95, dir: -1, brow: -0.7, mouth: 'smile', wet: true });
-  let letP = [1100, 815], letA = 1, purse = null;
-  const LH = () => { S.handLW = [letP[0] - 52, letP[1] + 4]; S.handRW = [letP[0] + 52, letP[1] + 4]; S.handL = S.handR = null; };
+  let letP = [1100, 815], letA = 1, letS = 0.6, purse = null;
+  const side = [1150, 808], LH = () => { S.handLW = [letP[0] - 52, letP[1] + 4]; S.handRW = [letP[0] + 52, letP[1] + 4]; S.handL = S.handR = null; };
+  const SIDE = (k) => { letP = a140Lp([1100, 815], side, k); letS = K.lerp(0.6, 0.32, k); S.handLW = [letP[0], letP[1] + 30 * letS / 0.32 * 0.7]; S.handL = null; };
   if (!S17) {
-    letP = [1100, kfn(t, [[149.64, 815], [150.4, 850]])]; LH(); S.gaze = t < 150.84 ? lookAt(a140Head(S), [1060, 640]) : [-0.7, -0.8];
+    if (t < 150.0) LH(); else { SIDE(a140E(t, 150.0, 0.4)); S.handR = a140Lp([-24, -100], PERSON_HANDS.cheeks.R, a140E(t, 150.4, 0.35)); S.handRW = null; }
+    S.gaze = t < 150.84 ? lookAt(a140Head(S), [1060, 640]) : [-0.7, -0.8]; S.mouth = 'o';
     S.drop = 2 * Math.sin(t * 13) * (t < 150.6 ? 1 : 0);
-    if (t >= 153.2) { const m = Math.min(3, Math.floor((t - 153.2) / 0.6) + 1); S.tip = -0.035 * m; S.mouth = 'o'; }
-    if (t >= 155.06) { S.tip = -0.1 + 0.06 * a140E(t, 155.3, 0.4); S.handLW = S.handRW = null; S.handL = PERSON_HANDS.cheeks.L; S.handR = PERSON_HANDS.cheeks.R; S.mouth = 'open'; S.eyes = 'wide'; letA = 0; }
-    if (t >= 155.06) { letP = [1146, 846]; letA = 0.7; }
-  }
-  if (t >= 155.8) { // purses to the creditors: the letter goes to his left hand, the right hand gives
-    S.mouth = 'smile'; S.eyes = 'open'; S.tip = 0; S.handLW = [1138, 840]; S.handL = null; S.handR = [30, -105]; S.handRW = null; S.gaze = lookAt(a140Head(S), [990, 730]); letA = 0.7; letP = [1140, 812];
-    for (const [tp, i] of A140_PURSE) { if (t >= tp - 0.5 && t < tp + 0.2) { const u = a140E(t, tp - 0.5, 0.45); S.handRW = a140Lp(a140W(S, [20, -100]), [1040, 790], u); S.handR = null; purse = [S.handRW[0], S.handRW[1] + 14]; } } }
+    if (t >= 153.2) { const m = Math.min(3, Math.floor((t - 153.2) / 0.6) + 1), k = settleTo(t, 153.2 + (m - 1) * 0.6, m - 1, m, 0.25); S.y -= 5 * k; S.sq = 1 + 0.015 * k; S.gaze = lookAt(a140Head(S), [680, 600]); S.mouth = 'open'; S.eyes = 'wide'; S.brow = -0.3; }
+    if (t >= 155.06) { const hp = hop(t, 155.06, 0.42, 0, 0, 30); S.y = 900 - hp[1]; S.sq = t < 155.48 ? 1.04 : landSquash(t, 155.48, 0.14); S.tilt = 0.12 * pulse(t, 155.06, 0.7);
+      S.handR = a140Lp(PERSON_HANDS.cheeks.R, [44, -205], a140E(t, 155.06, 0.15) * (1 - a140E(t, 155.6, 0.3))); S.mouth = 'open'; S.eyes = 'wide'; }
+  } else SIDE(1);
+  if (t >= 155.8 && t < 158.6) { // purses to the creditors: the free (right) hand gives, one at a time
+    S.mouth = 'smile'; S.eyes = 'open'; S.tip = 0; S.handR = [24, -100]; S.handRW = null; S.gaze = lookAt(a140Head(S), [975, 730]); S.brow = -0.5;
+    for (const [tp] of A140_PURSE) { if (t >= tp - 0.4 && t < tp + 0.05) { const u = a140E(t, tp - 0.4, 0.3); S.handRW = a140Lp(a140W(S, [24, -100]), [1028, 815], u); S.handR = null; purse = [S.handRW[0], S.handRW[1] + 14]; } } }
   if (S17) {
-    if (t >= 158.52) { letA = 1; letP = [1100, 830]; LH(); S.gaze = gazePlan(t, [[0, [0, 1]], [158.52, [-0.2, 0.9]], [159.2, [0.3, -0.9]]], 0.4); S.brow = K.lerp(-0.6, -0.9, a140E(t, 159.2, 0.6)); S.mouth = t >= 159.2 ? 'o' : 'closed'; S.wet = true; }
-    if (t >= 159.66 && t < 166.56) { S.gaze = [-0.3, -0.95]; S.mouth = t >= 163.78 ? 'smile' : 'o'; }
+    if (t >= 158.52) { S.gaze = gazePlan(t, [[0, [0.5, 0.85]], [158.52, [0.5, 0.85]], [159.3, [-0.6, -0.8]]], 0.7); S.brow = K.lerp(-0.6, -0.9, a140E(t, 159.2, 0.6)); S.mouth = t >= 159.3 ? 'o' : 'closed'; S.wet = true;
+      S.handR = a140Lp([24, -100], PERSON_HANDS.chest.R, a140E(t, 159.2, 0.5)); S.handRW = null; }
+    if (t >= 159.66 && t < 166.56) { S.gaze = [-0.6, -0.8]; S.mouth = 'o'; S.handR = PERSON_HANDS.chest.R; }
+    if (t >= 163.78 && t < 166.56) { S.brow = K.lerp(-0.9, -0.15, a140E(t, 163.78, 0.3)); S.mouth = 'smile'; S.eyes = 'wide'; }
+    if (t >= 165.04 && t < 166.56) { S.handR = a140Lp(PERSON_HANDS.chest.R, PERSON_HANDS.hush.R, a140E(t, 165.04, 0.25)); S.eyes = 'open'; S.wink = a140In(t, 165.4, 165.9) ? 'R' : null; }
     if (t >= 166.56) { letA = 0; S.handLW = S.handRW = null; S.handL = [-30, -100]; S.handR = [30, -100]; S.mouth = 'o'; S.gaze = gazePlan(t, [[0, [-0.4, 0.3]], [166.7, [-0.4, -0.2]], [167.14, [-0.3, -1]]], 0.4); }
     if (t >= 167.14) { S.tip = -0.1 * a140E(t, 167.14, 0.4) * (1 - a140E(t, 168.0, 0.3)); S.tilt = -0.14 * pulse(t, 167.4, 0.9); S.handR = t < 168.0 ? a140Lp([30, -100], [14, -246], a140E(t, 167.45, 0.25)) : [30, -100]; }
     if (t >= 168.0) { S.sq = anticipate(t, 168.0, 0.34, 0.1) * landSquash(t, 168.8, 0.14); S.y = 900 - hop(t, 168.34, 0.46, 0, 0, 34)[1]; if (t >= 168.2 && t < 169.2) { S.eyes = 'shut'; S.mouth = 'open'; } S.handL = [-44, -150]; S.handR = [44, -150]; }
@@ -257,11 +277,10 @@ function a140S1617World(ctx, t, cam) {
   const late = [0, 1, 2].map((i) => a140CredLate(i, t));
   ctx.save(); if (t >= 173.4) a140DoorClip(ctx); person(ctx, S); ctx.restore(); W.said = a140Head(S);
   if (t >= 173.4) a140DoorLeaf(ctx, sOpen);
-  if (letA > 0) a140Letter(ctx, letP[0], letP[1], letA < 1 ? 0.4 : 0.6, { roll: 0, seal: true, broken: true, rot: letA < 1 ? 0.2 : 0 });
-  if (t >= 155.8 && t < 155.8 + 0.3) a140Purse(ctx, ...a140W(S, [30, -95]), 0.6);
+  if (letA > 0) a140Letter(ctx, letP[0], letP[1], letS, { roll: 0, seal: true, broken: true, rot: 0.12 * (letS < 0.5 ? 1 : 0) });
   if (purse) a140Purse(ctx, purse[0], purse[1], 0.6);
-  for (let i = 2; i >= 0; i--) { const { P, paid, tp } = late[i]; if (P.x < 300 || (t < 149.6)) continue; person(ctx, P);
-    const bh = a140W(P, P.handL); if (!paid) a140HeldBill(ctx, bh, 0.5, 0.15); else { const d = t - tp - 0.2, fx = bh[0] - 20 * d, fy = Math.min(905, bh[1] + 160 * d * d * 4); a140Bill(ctx, fx + 10 * Math.sin(d * 9), fy, 0.5, { rot: Math.sin(d * 7) * 0.6, struck: 1, flat: fy >= 904 ? 0.9 : 0 }); }
+  for (const i of [0, 1, 2].sort((a, b) => late[a].P.y - late[b].P.y)) { const { P, paid, tp } = late[i]; if (P.x < 200 || (t < 149.6)) continue; person(ctx, P);
+    a140HeldBill(ctx, a140W(P, P.handL), 0.5, 0.15, a140E(t, tp + 0.1, 0.3));
     if (paid) a140Purse(ctx, ...a140W(P, P.handR), 0.6);
     if (i === 0) W.c1 = a140Head(P); }
   W.heapTop = a140HeapTop(A140_HX, 900); W.letter = [letP[0], letP[1], 0.6];

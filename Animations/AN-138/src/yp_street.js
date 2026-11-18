@@ -3,6 +3,9 @@ const YP_HX = (t) => kfn(t, [[0.42, -220], [7.4, 300]], 'out');
 const YP_HX2 = (t) => kfn(t, [[12.5, 300], [14.6, -420]], 'in');          // the horse led away (empty) while the camera is close
 const YP_YX = (t) => kfn(t, [[14.8, 250], [16.0, 420]], 'inOut');        // Yahya on foot
 const YP_GX = 610;                                                          // the poor man at the steps
+// v2: full kneel on the plea (grounded by the Library), lifted by Yahya from 20.68 with a small settle
+const ypKneel = (t) => (t < 20.06 || t >= 21.6 ? 0 : t < 20.68 ? ypE(t, 20.06, 0.35) : 1 - ypE(t, 20.68, 0.72));
+const ypGuestElbow = (t) => [YP_GX - 22, 720 + 32 * ypKneel(t)];   // world point Yahya takes hold of (the guest faces left, s 1.2)
 
 // ---------- the poor man in S1-S4 ----------
 function ypGuestStreet(t) {
@@ -26,7 +29,7 @@ function ypGuestStreet(t) {
   if (ypIn(t, 16.18, 22.98)) { P.mouth = 'smile'; }
   if (ypIn(t, 18.14, 21.0)) { P.brow = -0.5; P.mouth = 'closed'; }
   P.talk = ypIn(t, 16.18, 16.8) ? 0.7 * talk(t, [[16.18, 16.8]]) : ypIn(t, 18.14, 20.0) ? 0.8 * talk(t, [[18.14, 20.0]], 1) : 0;
-  if (t >= 20.06 && t < 21.6) { P.kneel = 0.5 * ypE(t, 20.06, 0.4) * (1 - ypE(t, 20.85, 0.6)); P.wet = true; P.x += t < 20.85 ? tremble(t, 1.5) : 0; }
+  if (t >= 20.06 && t < 21.6) { P.kneel = ypKneel(t); P.wet = true; P.x += t < 20.68 ? tremble(t, 1.5) : 0; P.sq = 1 + 0.05 * pulse(t, 21.15, 0.35); }
   // S3: his trouble, the purse, the moth, the clasp, hope
   if (t >= 22.98) {
     P.talk = ypIn(t, 22.98, 25.4) ? 0.8 * talk(t, [[22.98, 25.4]], 2) : ypIn(t, 27.5, 28.2) ? 0.6 * talk(t, [[27.5, 28.2]]) : 0;
@@ -54,7 +57,7 @@ function ypYahStreet(t) {
   P.gaze = lookAt(yh, gh);
   if (ypIn(t, 16.8, 17.6)) { P.handR = PERSON_HANDS.chest.R; P.handL = null; P.drop = 5 * pulse(t, 16.9, 0.45); P.lid = pulse(t, 16.95, 0.3); }
   if (ypIn(t, 18.14, 20.6)) P.tilt = 0.07 * ypEnv(t, 18.14, 20.6, 0.3);
-  if (ypIn(t, 20.68, 21.7)) { const k = ypEnv(t, 20.68, 21.7, 0.25); P.tip = 0.12 * k; P.handRW = [YP_GX - 26, 760 + 30 * (1 - ypE(t, 20.85, 0.6))]; P.handR = null; P.look = 0.6 * Math.sin((t - 21.0) * 14) * ypEnv(t, 21.0, 21.6, 0.1); }
+  if (ypIn(t, 20.68, 21.7)) { const k = ypEnv(t, 20.68, 21.7, 0.25); P.tip = 0.12 * k; P.handRW = ypGuestElbow(t); P.handR = null; P.look = 0.6 * Math.sin((t - 21.0) * 14) * ypEnv(t, 21.0, 21.6, 0.1); }
   // S3: listens, slow blink, thinks, smiles, nods
   if (t >= 22.98) { P.tilt = 0.06 * ypE(t, 24.18, 0.6); P.lid = pulse(t, 24.3, 0.45); P.mouth = t < 30.74 ? 'closed' : 'smile'; }
   if (ypIn(t, 26.32, 27.0)) P.gaze = lookAt(yh, ypMothPos(t));
@@ -97,6 +100,7 @@ function ypSceneArrival(ctx, t, F) {
     horse(ctx, H); const S = ypServA({ ...ypWalk((tt) => YP_HX2(tt) - 150, t, 1.05), dir: -1, handLW: [hx - 100, 700] }); person(ctx, S);
   }
   if (t >= 12.5) person(ctx, ypYahStreet(t));
+  if (G.kneel > 0.05) ypShadow(ctx, G.x, YP_GR, 70, 0.3 * G.kneel);
   person(ctx, G);
   // his flat purse on the sash, later the empty purse turned inside out
   if (t < 25.62) ypOnBody(ctx, G, (c) => ypPurse(c, 22, -70, 0.9, { fill: 0 }));
@@ -111,41 +115,61 @@ function ypSceneArrival(ctx, t, F) {
 }
 const YP_HFALLS = footfalls(YP_HX, 0.42, 7.4, GAIT.horse * 0.8);
 
-// ---------- S13: the night escape ----------
-const YP_ESC_X = (t) => (t < 118.6 ? 770 : t < 118.76 ? kfn(t, [[118.6, 770], [118.76, 715]], 'out') : t < 120.6 ? ypSneak(715, 520, 118.76, 119.5, t, 3).x : kfn(t, [[120.6, 520], [125.22, 130], [127.24, -40]], 'inOut'));
+// ---------- S13: the night escape (v2: re-blocked, Fable notes 1 and 10) ----------
+// path: inside the half-open door (clipped) -> the sack jams and pops out onto the step on البيت 118.22 -> one step down ->
+// a freeze on سرًا 118.76 (eyes on the sleeper) -> the sneak past the dozing servant, who sits against the wall off the walking line ->
+// clear of him: the look back with the half-raised hand (دون 119.58, dropped on وداع 120.08) -> the walk away; the door drifts open behind him
+const YP_ZX = 470;                                   // the dozing servant (steps run 630..870)
+const YP_ESC_SN = [630, 255, 118.95, 119.55];        // the sneak: x0, x1, t0, t1
+const YP_ESC_X = (t) => (t < 118.22 ? kfn(t, [[117.75, 812], [118.22, 790]], 'out')
+  : t < 118.95 ? kfn(t, [[118.22, 790], [118.36, 722], [118.62, 644], [118.76, 630]], 'out')
+  : t < 120.6 ? ypSneak(...YP_ESC_SN, t, 3).x
+  : kfn(t, [[120.6, 255], [125.22, 100], [127.24, -30]], 'inOut'));
+const YP_ESC_Y = (t) => (t < 118.36 ? 872 : t < 118.62 ? K.lerp(872, 900, ypE(t, 118.36, 0.26, 'in')) - 16 * Math.sin(Math.PI * K.clamp((t - 118.36) / 0.26)) : 900);
+const YP_ESC_DOOR = (t) => (t < 117.28 ? 0 : t < 117.7 ? 0.2 * ypE(t, 117.28, 0.3) : t < 123.58 ? K.lerp(0.2, 0.5, ypE(t, 117.7, 0.3)) : K.lerp(0.5, 1, ypE(t, 123.58, 1.6)));
+const YP_ESC_GLOW = (t) => ypE(t, 123.58, 1.6);
 function ypGuestEscape(t) {
-  const x = YP_ESC_X(t), far = ypE(t, 125.22, 2.0), P = ypGuest({ x, y: x > 650 ? 872 : K.lerp(900, 872, K.clamp((x - 600) / 50)), dir: -1, mouth: 'closed', brow: -0.5, tip: 0.22, sq: 0.95 }, t);
+  const x = YP_ESC_X(t), far = ypE(t, 125.22, 2.0), P = ypGuest({ x, y: YP_ESC_Y(t), dir: -1, mouth: 'closed', brow: -0.5, tip: 0.22, sq: 0.95 }, t);
   P.y -= 40 * far; P.s = K.lerp(1.2, 0.8, far);
-  const sn = ypSneak(715, 520, 118.76, 119.5, t, 3);
-  if (ypIn(t, 118.76, 119.5)) { P.ph = sn.ph; P.amp = sn.amp; P.y -= sn.bob; P.drop = 8; P.gaze = lookAt([x, 650], [590, 760]); }
-  else if (t >= 120.6) Object.assign(P, walk(YP_ESC_X, t, { stride: 26 * P.s * 0.8 }), { x });
-  if (ypIn(t, 119.1, 119.24)) { P.ph = sn.ph; P.amp = 0.4; }   // frozen mid-step at the snore
-  const tf = turnFlip(t, [[0, -1], [119.42, 1], [120.08, -1]], 0.35); P.dir = tf.dir; P.drop = (P.drop || 0) + 6 * tf.tuck;
-  if (ypIn(t, 119.5, 120.1)) { P.gaze = lookAt([x, 650], [750, 680]); P.handR = ypL2(ypRest.R, [62, -170], Math.sin(Math.PI * K.clamp((t - 119.58) / 0.45))); P.tip = 0.1; P.brow = -0.7; P.wet = true; }
-  else { P.handR = [56, -64]; P.handL = [-30, -186]; }
-  if (ypIn(t, 118.22, 118.62)) { P.tip = 0.22 + 0.12 * Math.abs(Math.sin((t - 118.22) * 16)); }
+  P.handR = [56, -64]; P.handL = [-30, -186];
+  if (t < 118.22) { P.tip = 0.04; P.lean = 0.02; P.sq = 1 - 0.03 * Math.abs(Math.sin((t - 117.75) * 12)); P.gaze = [-1, 0.1]; P.brow = -0.8; P.mouth = 'frown'; P.handR = [70, -120];   // straining at the jammed sack
+    if (t > 117.95) P.x += 6 * Math.sin((t - 117.95) * 24) * ypEnv(t, 117.95, 118.22, 0.05); }
+  else if (t < 118.76) { Object.assign(P, walk(YP_ESC_X, t, { stride: 26 * 1.2 * 0.9 }), { x }); P.sq = landSquash(t, 118.62, 0.12); P.gaze = [-1, 0.3]; }
+  else if (t < 118.95) { P.ph = 0.9; P.amp = 0.35; P.drop = 8; P.gaze = lookAt([x, 650], [YP_ZX, 790]); P.brow = -0.9; P.mouth = 'o'; P.lid = 0; }   // freeze
+  else if (t < 119.55) { const sn = ypSneak(...YP_ESC_SN, t, 3); P.ph = sn.ph; P.amp = sn.amp; P.y -= sn.bob; P.drop = 8; P.gaze = lookAt([x, 650], [YP_ZX, 790]); P.mouth = 'closed'; }
+  if (t >= 120.6) Object.assign(P, walk(YP_ESC_X, t, { stride: 26 * P.s * 0.8 }), { x });
+  const tf = turnFlip(t, [[0, -1], [119.58, 1], [120.12, -1]], 0.3); P.dir = tf.dir; P.drop = (P.drop || 0) + 6 * tf.tuck;
+  if (ypIn(t, 119.55, 120.3)) { P.gaze = lookAt([x, 650], [760, 690]); P.handR = ypL2([56, -64], [46, -206], ypEnv(t, 119.58, 120.08, 0.18)); P.tip = 0.1; P.brow = -0.7; P.wet = true; P.mouth = 'frown'; }
   if (t >= 120.6) { P.gaze = [-1, 0.1]; P.mouth = t > 121.6 ? 'smile' : 'closed'; P.brow = 0; }
   if (ypIn(t, 123.58, 124.7)) { P.lid = 1; P.mouth = 'smile'; P.handL = ypL2([-30, -186], [-44, -150], Math.abs(Math.sin((t - 123.58) * 6))); }
   return P;
 }
 // sack on his back: drawn before him, behind the shoulder on the trailing side
 function ypBackSack(ctx, P, t, o = {}) { const k = (P.s || 1.2) / 1.2, q = ypPt(P, -44, -120), sg = Math.sign(P.dir || 1); ypSack(ctx, q[0], q[1] + 95 * k, 1.1 * k * (o.scale || 1), { rot: -sg * (0.2 + (P.tip || 0) * 0.5), sq: o.sq ?? 1 }); }
+// clip to the open part of the house door (the leaf is hinged on the left)
+function ypDoorClip(ctx, open) { const D = YP_HOUSE.door, gap = D.x0 + (D.x1 - D.x0) * (1 - open); K.poly(ctx, townArchPts(D.x0, D.x1, D.top, D.bottom + 40, 'pointed'), true); ctx.clip(); ctx.beginPath(); ctx.rect(gap, D.top - 40, D.x1 - gap + 2, D.bottom - D.top + 80); ctx.clip(); }
 function ypSceneEscape(ctx, t, F) {
-  const door = t < 117.28 ? 0 : t < 118.22 ? 0.25 * ypE(t, 117.28, 0.35) : t < 126.5 ? K.lerp(0.25, 0.6, ypE(t, 118.3, 0.4)) : K.lerp(0.6, 1, ypE(t, 126.5, 0.7));
-  ypStreet(ctx, t, { palette: 'cold', u: 0.75, door, light: door * (t > 126.5 ? 1 : 0.6) });
-  ypDoorGlow(ctx, t > 126.5 ? 1 : 0.8, door);
+  const door = YP_ESC_DOOR(t), glow = YP_ESC_GLOW(t);
+  ypStreet(ctx, t, { palette: 'cold', u: 0.75, door, light: glow });
+  ypDoorGlow(ctx, glow, door);
   const D = YP_HOUSE.door, gap = D.x0 + (D.x1 - D.x0) * (1 - door);
-  if (ypIn(t, 117.45, 118.22)) for (const dx of [-8, 10]) { const lk = Math.sin((t - 117.45) * 5); shape(ctx, ell(gap + 14 + dx, 704, 8, 10, 12), C.white, { lw: 3, seed: 901 }); ctx.fillStyle = C.black; ctx.beginPath(); ctx.arc(gap + 14 + dx + 3 * lk, 706, 3.5, 0, 7); ctx.fill(); }
-  // the dozing servant left of the steps
-  const Z = ypServA({ x: 590, sit: 1, seat: 'floor', lid: 1, mouth: 'o', drop: 6 + 7 * pulse(t, 119.1, 0.5), tilt: -0.15, handL: PERSON_HANDS.folded.L, handR: PERSON_HANDS.folded.R, sq: breathe(t, 2, 0.03) }); person(ctx, Z);
-  zzz(ctx, 620, 650, t);
-  if (t >= 118.22) { const G = ypGuestEscape(t); const stuck = ypIn(t, 118.22, 118.62);
-    ypBackSack(ctx, G, t, { sq: stuck ? 0.82 : 1 + 0.08 * pulse(t, 118.62, 0.25) + 0.06 * (pulse(t, 123.6, 0.2) + pulse(t, 123.85, 0.2)) });
-    person(ctx, G); const h = ypPt(G, 56, -64); packLoad(ctx, ['bindle'], h[0], h[1] + 40 * G.s / 1.2, 0.45 * G.s / 1.2);
+  // eyes peeking in the dark gap
+  if (ypIn(t, 117.42, 117.78)) for (const dx of [-7, 9]) { const lk = Math.sin((t - 117.42) * 9); shape(ctx, ell(gap + 13 + dx, 704, 7, 9, 12), C.white, { lw: 3, seed: 901 }); ctx.fillStyle = C.black; ctx.beginPath(); ctx.arc(gap + 13 + dx - 2.5 * lk, 706, 3.2, 0, 7); ctx.fill(); }
+  // the dozing servant against the wall, left of the steps and off the walking line; a snort when the man freezes
+  const hic = pulse(t, 118.76, 0.22);
+  const Z = ypServA({ x: YP_ZX, y: 884, s: 0.95, sit: 1, seat: 'floor', lid: 1, mouth: hic > 0 ? 'closed' : 'o', drop: 6 + 9 * hic, tilt: -0.15, handL: PERSON_HANDS.folded.L, handR: PERSON_HANDS.folded.R, sq: breathe(t, 2, 0.03) }); person(ctx, Z);
+  if (!ypIn(t, 118.74, 119.05)) zzz(ctx, YP_ZX + 30, 640, t);
+  if (t >= 117.75) { const G = ypGuestEscape(t), inside = t < 118.22;
+    const sq = inside ? 0.84 : 1 + 0.1 * pulse(t, 118.22, 0.25) + 0.06 * (pulse(t, 123.6, 0.2) + pulse(t, 123.85, 0.2));
+    if (inside) { ctx.save(); ctx.beginPath(); ctx.rect(YP_HOUSE.door.x0 + (YP_HOUSE.door.x1 - YP_HOUSE.door.x0) * (1 - door), 0, 600, 1200); ctx.clip(); ypBackSack(ctx, G, t, { sq }); ctx.restore(); }   // the sack snagged on the jamb
+    ctx.save(); if (inside) ypDoorClip(ctx, door);
+    if (!inside) ypBackSack(ctx, G, t, { sq }); person(ctx, G); const h = ypPt(G, 56, -64); packLoad(ctx, ['bindle'], h[0], h[1] + 40 * G.s / 1.2, 0.45 * G.s / 1.2);
+    ctx.restore();
+    if (ypIn(t, 118.22, 118.5)) dustBurst(ctx, D.x1 - 30, 800, t - 118.22, 5, 6, 12, 30, 0.4, 1182);
     if (t > 120.6 && t < 125.4) for (const f of YP_EFALLS) dustBurst(ctx, f.x, YP_GR - 4, t - f.t, 3, 3, 7, 16, 0.35, Math.round(f.t * 10));
     F.heads.G = ypHead(G);
   }
-  ypNight(ctx, 0.75, [[750, 760, 230 + 60 * door]]);
+  ypNight(ctx, 0.75, [[750, 760, 200 + 90 * glow]]);
   if (F.heads.G) {
     // padlocked-sack thought, above and ahead of him
     const p = ypEnv(t, 122.84, 124.64, 0.25); if (p > 0) { const hh = F.heads.G; thoughtCloud(ctx, hh[0] + 90, hh[1] - 200, 220, 170, t, { p: K.clamp(p * 1.5), tail: [hh[0] - 20, hh[1] - 50], scale: 0.42, at: [0, -60], inside: (c) => { ypSack(c, 0, 80, 1); ypPadlock(c, 0, -60, 1.4); } }); }
@@ -161,16 +185,22 @@ function ypSceneDawn(ctx, t, F) {
   ypDoorGlow(ctx, 0.9 + 0.1 * Math.sin(t * 1.7), 1);
   // doves cross the sky
   [[0, 300], [0.35, 345]].forEach(([dl, y], i) => { const k = (t - 162.54 - dl) / 3.4; if (k < 0 || k > 1) return; bird(ctx, { kind: 'dove', pal: 0, x: K.lerp(-60, 1060, k), y: y - 30 * Math.sin(Math.PI * k), s: 0.4, dir: 1, fly: true, flap: Math.sin(t * 13 + i * 2) }); });
-  // the tiny figure far down the street with his sack, going out of sight
-  if (ypIn(t, 161.06, 166.4)) { const fx = (tt) => kfn(tt, [[161.06, 230], [166.3, -40]], 'lin'), x = fx(t);
-    const P = ypGuest({ ...walk(fx, t, { stride: 26 * 0.35 }), y: 880, s: 0.35, dir: -1, tip: 0.25, handL: [-30, -186], handR: [56, -64] }, t); if (ypIn(t, 164.9, 165.4)) P.gaze = [1, 0];
-    ypBackSack(ctx, P, t); person(ctx, P); const q = ypPt(P, -38, -150); ypGlint(ctx, q[0], q[1] - 20, 22, (t - 165.58) / 0.6); }
-  // Yahya comes into the doorway; a servant sets a fresh tray on the top step
-  const D = YP_HOUSE.door, ya = ypE(t, 167.6, 0.9);
-  if (ya > 0) { const P = ypYahya({ x: 752, y: K.lerp(862, 872, ya), alpha: ya, dir: -1, mouth: 'smile', lid: 0.2, gaze: [-1, 0.05], handR: t > 168.5 ? PERSON_HANDS.chest.R : PERSON_HANDS.folded.R, handL: PERSON_HANDS.folded.L });
-    P.lid = Math.max(0.2, pulse(t, 171.18, 0.7)); P.drop = 6 * pulse(t, 171.3, 0.8); P.tilt = -0.04;
-    ctx.save(); K.poly(ctx, townArchPts(D.x0 - 30, D.x1 + 30, D.top - 60, D.bottom + 30, 'pointed'), true); ctx.clip(); person(ctx, P); ctx.restore(); F.heads.Y = ypHead(P); }
+  // v2 (note 3): the man at walking scale, back to the house, crossing right to left with his load; one look back on برحيل 164.26
+  const YP_DX = (tt) => kfn(tt, [[161.06, 790], [164.26, 335], [164.72, 335], [166.5, -110]], 'lin');
+  if (ypIn(t, 161.06, 166.6)) { const x = YP_DX(t), s = 1.08;
+    const P = ypGuest({ ...walk(YP_DX, t, { stride: 26 * s * 0.85 }), y: YP_GR, s, dir: -1, tip: 0.12, mouth: 'closed', gaze: [-1, 0.1], handL: [-30, -186], handR: [56, -64] }, t);
+    const tf = turnFlip(t, [[0, -1], [164.3, 1], [164.66, -1]], 0.22); P.dir = tf.dir; P.drop = 4 * tf.tuck;
+    if (ypIn(t, 164.26, 164.72)) { P.gaze = lookAt([x, 650], [750, 700]); P.lid = 0.25; P.mouth = 'closed'; P.brow = -0.3; P.amp = 0; }
+    ypShadow(ctx, x, YP_GR, 46, 0.22); ypBackSack(ctx, P, t); person(ctx, P); const h = ypPt(P, 56, -64); packLoad(ctx, ['bindle'], h[0], h[1] + 36, 0.4);
+    const q = ypPt(P, -38, -150); ypGlint(ctx, q[0] + 8, q[1] - 16, 34, (t - 165.58) / 0.6); F.heads.G = ypHead(P); }
+  // Yahya already standing in the lit doorway (full alpha, clipped to the arch); a servant sets a fresh tray on the top step
+  const D = YP_HOUSE.door;
+  if (t >= 166.6) { const P = ypYahya({ x: 752, y: 872, dir: -1, mouth: 'smile', brow: -0.3, gaze: [-1, 0.05], handL: [6, -122], handR: t < 168.3 ? PERSON_HANDS.chest.R : ypL2(PERSON_HANDS.chest.R, PERSON_HANDS.palmsUp.R, ypE(t, 168.3, 0.5)) });   // hand on the chest, the other open toward the street
+    P.lid = pulse(t, 171.18, 0.8); P.drop = 5 * pulse(t, 171.3, 0.8); P.tilt = -0.05; P.sq = 1 + 0.015 * Math.sin(t * 2.2);
+    ctx.save(); K.poly(ctx, townArchPts(D.x0 - 30, D.x1 + 30, D.top - 60, D.bottom + 30, 'pointed'), true); ctx.clip(); person(ctx, P); ypWideSmile(ctx, P); ctx.restore(); F.heads.Y = ypHead(P); }
   const bend = ypEnv(t, 168.6, 169.7, 0.25);
   if (t > 167.9) { const S = ypServA({ ...ypWalk((tt) => kfn(tt, [[167.9, 1060], [168.6, 900], [169.9, 900], [171.0, 1090]], 'inOut'), t, 1.05), y: 872, dir: -1, tip: 0.35 * bend, handRW: ypIn(t, 168.75, 169.6) ? [862, 858] : null, handR: ypIn(t, 168.75, 169.6) ? null : [70, -110], gaze: [-1, 0.6] }); if (t > 169.6) S.dir = 1; person(ctx, S);
     const hp = t > 168.75 ? [862, 868] : ypPt(S, 70, -104); ypTray(ctx, hp[0], hp[1], 0.6, { noCover: true, t }); }
 }
+// a broad smile that shows below the moustache (the vizier's own smile sits under it)
+function ypWideSmile(ctx, P) { ypOnBody(ctx, P, (c) => { const y = ypHdY(P) + 34; c.lineCap = 'round'; c.lineWidth = 5; c.strokeStyle = C.black; c.beginPath(); c.arc((P.look || 0) * 4, y - 8, 15, 0.18 * Math.PI, 0.82 * Math.PI); c.stroke(); }); }
