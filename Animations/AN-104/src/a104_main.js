@@ -74,7 +74,7 @@ function a104Overlays(ctx, t, F, cam) {
     for (let i = 0; i < 4; i++) { const t0 = 30.1 + i * 0.2; if (t >= t0 && t < 31.6) { const D = a104DogP(i, t), h = V(a104DogHead(D)); ctx.save(); ctx.globalAlpha = 1 - K.clamp((t - 31.3) / 0.3); S0.counter(ctx, i + 1, h[0], h[1] - 110 * cam.zoom / 1.4, K.clamp((t - t0) / 0.3), { size: 70 }); ctx.restore(); } }
     for (let i = 0; i < 4; i++) { const t0 = 32.5 + i * 0.25; if (t >= t0 && t < t0 + 0.45) { const r = V(a104DogRing(a104DogP(i, t))); a104Glint(ctx, r[0], r[1], 30, pulse(t, t0, 0.45)); } }
     if (t >= 34.18 && t < 35.4) a104Name(ctx, t, 'GOLD', 34.18, 1.1, [500, 330], V(a104DogRing(a104DogP(0, t))));
-    if (t >= 37.26 && t < 38.4) { const D = a104DogP(2, t), r = a104DogRing(D), s = a104Stake(2); a104Name(ctx, t, 'SILVER', 37.26, 1.05, [560, 360], V([(r[0] + s[0]) / 2, (r[1] + s[1]) / 2 + 20])); }
+    if (t >= 37.26 && t < 38.4) { a104Name(ctx, t, 'SILVER', 37.26, 1.05, [560, 360], V(a104ChainPt(2, a104DogP(2, t), t, 0.33))); }
     if (t >= 39.86 && t < 41.1) { const d = V([a104DishX0(0), 905]); a104Word(ctx, t, 'SOLID GOLD!', 39.86, 1.2, [560, 300], { size: 58 }); }
     if (t >= 48.56 && t < 49.6 && F.S) a104Name(ctx, t, 'HUNGRIER!', 48.56, 0.95, [560, 300], V(a104Pt(F.S, 10, -110)), { fill: C.red, color: C.white });
     if (t >= 57.0 && t < 58.6) { const d = a104Dish1(t); ctx.save(); ctx.globalAlpha = 1 - K.clamp((t - 58.3) / 0.3); S0.arrow(ctx, V([d.x + 10, 870]), V([200, 800]), K.clamp((t - 57.0) / 0.45), { width: 22, bend: 0.25 }); ctx.restore(); }
@@ -113,7 +113,7 @@ function a104Overlays(ctx, t, F, cam) {
         const fr = (i, t0, draw) => { const k = K.ease.back(K.clamp((t - t0) / 0.3)); if (k <= 0) return; c.save(); c.translate(-205 + i * 205, 0); c.scale(k, k); c.fillStyle = C.paper; c.fillRect(-92, -92, 184, 184); c.save(); c.beginPath(); c.rect(-92, -92, 184, 184); c.clip(); draw(c); c.restore(); c.lineWidth = 6; c.strokeStyle = C.black; c.strokeRect(-92, -92, 184, 184); c.restore(); };
         fr(0, 139.96, (c2) => { c2.save(); c2.translate(0, 70); person(c2, a104Mk('poor', { x: 0, y: 0, s: 0.62, sit: 1, seat: 'floor', mouth: 'frown', brow: -0.6, handL: [-14, -100], handR: [18, -100] })); c2.restore(); a104Arcs(c2, 30, 10, 20, ((t - 140) % 0.8) / 0.8); if (t >= 141.96) a104X(c2, 0, 20, 50, (t - 141.96) / 0.3); });
         fr(1, 140.5, (c2) => { a104Dish(c2, -40, 74, { s: 0.7 }); a104Dog(c2, { x: 60, y: 80, s: 0.5, dir: -1, pal: 1, collar: 'gold', raise: 1, pawW: [-10, 50], lid: 0.3, tailWag: t * 6 }); });
-        fr(2, 141.0, (c2) => { a104Dish(c2, 0, 50, { s: 1.0, glint: ((t * 0.8) % 2) / 0.9 }); if (t >= 142.48) { for (let i = 0; i < 3; i++) a104Scroll(c2, -50 + i * 50, -50, 0.5); a104X(c2, 0, -50, 70, (t - 142.48) / 0.3); } });
+        fr(2, 141.0, (c2) => { a104Dish(c2, 0, 50, { s: 1.0, glint: ((t * 0.8) % 2) / 0.9 }); if (t >= 142.48) { for (let i = 0; i < 3; i++) a104Scroll(c2, -50 + i * 50, -50, 0.5); c2.save(); c2.translate(0, -52); c2.scale(1, 0.58); a104X(c2, 0, 0, 72, (t - 142.48) / 0.3); c2.restore(); /* v3: X on the scrolls only, dish left clean */ } });
       }); }
     const dishIc = [V([555, 640])[0], V([555, 640])[1]];
     if (t >= 154.86 && t < 161.0) { const p = K.ease.back(K.clamp((t - 154.86) / 0.3)) * (1 - K.clamp((t - 160.7) / 0.3)); if (p > 0.02) { ctx.save(); ctx.translate(dishIc[0], dishIc[1]); ctx.scale(p, p);

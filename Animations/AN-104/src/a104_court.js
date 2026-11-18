@@ -51,7 +51,7 @@ function a104StrangerCourt(t) {
     if (t >= 50.9 && t < 52.04) { P.gaze = t < 51.4 ? [0.2, 0.95] : P.gaze; P.sq = 0.95; }
     if (t >= 52.04 && t < 54.3) { P.lid = Math.max(0.15, pulse(t, 53.5, 0.3)); P.sq = breathe(t, 3, 0.015) * 0.97; P.wet = true; }
     if (t >= 54.3 && t < 58.8) { P.brow = -0.7; P.mouth = 'o'; P.gaze = lookAt(a104Head(P), t < 55.5 ? dh : t < 57.0 ? dish : dh); }
-    if (t >= 58.8) { const k = a104Env(t, 58.8, 61.6, 0.25); P.handR = a104L2(P.handR, PERSON_HANDS.chest.R, k); P.brow = 0.6; P.mouth = 'o'; P.tip = -0.07 * a104Env(t, 58.85, 59.6, 0.15);
+    if (t >= 58.8) { const k = a104Env(t, 58.8, 61.6, 0.25); P.handR = a104L2(P.handR, PERSON_HANDS.chest.R, k); P.mouth = 'o'; /* v3: a raised-brow "me?" (brow 0.6 drew a glare): brows up to 60.7, head tilt toward the dog and a small rise on وتناول */ P.brow = t < 60.7 ? -0.8 : K.lerp(-0.8, -0.5, a104E(t, 60.7, 0.3)); P.tip = 0.08 * a104Env(t, 59.18, 59.75, 0.15); P.drop = -6 * a104Env(t, 59.18, 60.7, 0.2);
       P.gaze = gazePlan(t, [[0, lookAt(a104Head(P), dh)], [59.4, [0.95, -0.25]], [59.9, [0.6, -0.8]], [60.5, lookAt(a104Head(P), dh)]], 0.07); P.look = 0.3 * Math.sin((t - 59.4) * 6) * a104Env(t, 59.4, 60.5); }
   } else {             // S6: hesitation, the meal, the dish
     P.handL = [-22, -86]; P.handR = [22, -86]; P.mouth = 'closed'; P.lid = 0.15; P.brow = -0.6;
@@ -171,19 +171,28 @@ function a104DogP(i, t) {
   return P;
 }
 // each dog's floor stake (the chain end): under its belly at the first mark
-const a104Stake = (i) => [A104_DOGS[i].x + 74 * A104_DOGS[i].s, A104_DOGS[i].y - 2];   // v2: behind the hind legs, so the chain never crosses the head
+const a104Stake = (i) => [A104_DOGS[i].x + 74 * A104_DOGS[i].s, A104_DOGS[i].y + 14];   // v2: behind the hind legs; v3: 16 units toward the camera so the post stands clear
 function a104DrawDog(ctx, i, t) {
   const P = a104DogP(i, t), D = A104_DOGS[i], dish = i === 0 ? a104Dish1(t) : { x: a104DishX0(i), y: D.y + 8, fill: K.clamp((t - A104_FILLT[i]) / 0.3) * (1 - 0.5 * K.clamp((t - A104_EATT[i]) / 40)), tilt: 0 };
   const dishFill = dish.fill * (1 + 0.15 * pulse(t, A104_FILLT[i] + 0.3, 0.25));
   const glint = i === 0 && t >= 39.6 && t < 41.0 ? (t - 39.6) / 1.4 : i === 0 && t >= 73.9 && t < 74.6 ? (t - 73.9) / 0.7 : ((t * 0.25 + i * 0.37) % 3) / 0.9;
   const drawDish = () => { if (i === 0 && t >= 39.86 && t < 41.3) a104Rays(ctx, dish.x, dish.y - 30, 120, a104Env(t, 39.86, 41.3, 0.3) * (t < 40.4 ? 1 : 0.5), t);
     if (!(i === 0 && t >= 82.0)) a104Dish(ctx, dish.x, dish.y, { s: D.s * 0.9, fill: dishFill, steam: t, glint, tilt: dish.tilt }); };
-  a104DogChain(ctx, i, P, t); a104Dog(ctx, P); if (i === 0) return drawDish; drawDish(); return dish;
+  a104Dog(ctx, P); a104DogChain(ctx, i, P, t); if (i === 0) return drawDish; drawDish(); return dish;
+}
+// v3: post and chain drawn after the dog, the chain running back from the collar ring over the shoulder and flank to the post (never toward the head)
+function a104ChainGeo(i, P, t) {
+  const r = a104DogRing(P), s = a104Stake(i), slack = Math.max(10, 70 - Math.abs(r[0] - s[0]) * 0.25);
+  return { r, s, b: [s[0], s[1] - 44], slack, sw: i === 2 ? swing(t, 35.0, 30, 2.4, 1.6) : 0 };
+}
+// a point u (0 ring .. 1 post) along dog i's chain, matching a104Chain's curve
+function a104ChainPt(i, P, t, u) {
+  const g = a104ChainGeo(i, P, t), a = g.r, b = g.b, m = [(a[0] + b[0]) / 2 + g.sw, (a[1] + b[1]) / 2 + g.slack];
+  return [(1 - u) * (1 - u) * a[0] + 2 * u * (1 - u) * m[0] + u * u * b[0], (1 - u) * (1 - u) * a[1] + 2 * u * (1 - u) * m[1] + u * u * b[1]];
 }
 function a104DogChain(ctx, i, P, t) {
-  const r = a104DogRing(P), s = a104Stake(i), slack = Math.max(10, 70 - Math.abs(r[0] - s[0]) * 0.25);
-  const sw = i === 2 ? swing(t, 35.0, 30, 2.4, 1.6) : 0, gl = t >= 36.2 && t < 37.4 ? (t - 36.2 - i * 0.12) / 0.8 : -1;
-  a104Post(ctx, s[0], s[1], s[1] - 22); a104Chain(ctx, r, [s[0], s[1] - 44], { sag: slack, swing: sw, glint: gl, links: 10 });
+  const g = a104ChainGeo(i, P, t), gl = t >= 36.2 && t < 37.4 ? (t - 36.2 - i * 0.12) / 0.8 : -1;
+  a104Post(ctx, g.s[0], g.s[1], g.s[1] - 22); a104Chain(ctx, g.r, g.b, { sag: g.slack, swing: g.sw, glint: gl, links: 10 });
 }
 
 // ---------- the court world ----------

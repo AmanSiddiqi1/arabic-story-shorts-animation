@@ -1,4 +1,5 @@
 // ===== AN-104 the poor owner's hut (S13 hut part to S16, 131.84-172.09) =====
+const A104_KIND_BROW = -0.45;   // v3: raised, soft brows for the owner (brow 0 draws as a frown on this costume)
 const A104_OWNX = 640, A104_VISX = 460, A104_ODOGX = 575, A104_MAT = [540, 790];
 const A104_HUT = { palette: 'day', doorSide: 'left', mat: A104_MAT, jug: 845, shelf: [700, 860, 460], jar: false, hook: false };
 const a104HutDoor = (t) => kfn(t, [[133.2, 0.5], [133.8, 1], [167.6, 1], [168.5, 0.5]]);
@@ -11,26 +12,28 @@ function a104Owner(t) {
   const P = a104Mk('poorLord', { x: A104_OWNX, y: 900, dir: -1, sit: 1, seat: 'floor', lid: 0.45, mouth: 'closed', brow: 0 });
   const vis = a104Visitor(t), vh = a104Head(vis), dogH = a104DogHead(a104OldDog(t));
   const mend = (k) => { P.handL = [-16, -88]; P.handR = [18 + 6 * Math.sin(t * 5) * k, -92 - 12 * Math.abs(Math.sin(t * 2.5)) * k]; P.gaze = [0.1, 0.9]; };
-  const straight = a104E(t, 152.12, 1.0); P.lean = -0.1 * straight; P.drop = 4 * (1 - straight) - 4 * straight; P.sq = 1 + 0.03 * straight;
+  const straight = a104E(t, 152.5, 0.34); /* v3: straightens on وقال (152.84) */ P.lean = -0.1 * straight; P.drop = 4 * (1 - straight) - 4 * straight; P.sq = 1 + 0.03 * straight;
   P.drop += 4;
   if (t < 137.26) mend(1);
   else if (t < 139.18) { P.gaze = lookAt(a104Head(P), vh); P.brow = -0.3; P.mouth = 'smile'; P.lid = 0.25; P.handL = [-18, -78]; P.handR = [18, -78]; }
   else if (t < 143.54) { // follows the balloon frames, then nods
     P.gaze = lookAt(a104Head(P), gazePlan(t, [[0, vh], [139.96, [330, 520]], [140.5, [470, 520]], [141.0, [610, 520]], [141.4, dogH], [141.9, [470, 520]], [142.6, vh]], 0.15));
     P.handL = [-18, -78]; P.handR = [18, -78]; P.mouth = 'smile'; P.lid = 0.3; if (t > 142.48) P.drop += 8 * pulse(t, 142.6, 0.8); }
-  else if (t < 147.7) { P.gaze = lookAt(a104Head(P), vh); P.mouth = 'smile'; P.lid = 0.3; P.handL = [-18, -78]; P.handR = [18, -78]; }
+  else if (t < 147.7) { P.gaze = lookAt(a104Head(P), vh); P.mouth = 'smile'; P.brow = A104_KIND_BROW; P.lid = 0.2; P.handL = [-18, -78]; P.handR = [18, -78]; }
   else if (t < 152.12) { // v2: a readable "no": a shield palm between his chest and the purse, two slow head shakes, then both hands push the purse home
-    P.gaze = lookAt(a104Head(P), vh); P.mouth = 'smile'; P.lid = 0.3; P.noBlink = true;
-    const sh = a104Env(t, 148.0, 149.2, 0.12), ph = Math.sin(2 * Math.PI * (t - 148.0) / 0.6);
+    P.gaze = lookAt(a104Head(P), vh); P.mouth = 'smile'; P.brow = A104_KIND_BROW; P.lid = 0.2; P.noBlink = true;
+    // v3: keyed to the spoken رفض (148.83): palm up 148.35-148.83, two head shakes 148.85-150.05, palm held to 150.6
+    const sh = a104Env(t, 148.85, 150.05, 0.12), ph = Math.sin(2 * Math.PI * (t - 148.85) / 0.6);
     P.look = 0.4 * ph * sh; P.tip = 0.04 * ph * sh;
-    const kR = K.ease.inOut(a104Env(t, 147.96, 150.75, 0.3)), kP = a104E(t, 150.55, 0.35), kW = a104E(t, 151.9, 0.4), pu = a104PurseAt(t);
+    const kR = K.ease.inOut(a104Env(t, 148.35, 150.75, 0.48)), kP = a104E(t, 150.55, 0.35), kW = a104E(t, 151.9, 0.4), pu = a104PurseAt(t);
     P.tip += 0.1 * kP * (1 - kW);
     const restL = a104Pt(P, -18, -78), restR = a104Pt(P, 18, -78);
     let hR = a104L2(restR, [566, 798], kR), hL = restL;
     if (t >= 150.55) { hR = a104L2(hR, [pu[0] + 30, pu[1] + 28], kP); hL = a104L2(hL, [pu[0] + 34, pu[1] + 56], kP); hR = a104L2(hR, restR, kW); hL = a104L2(hL, restL, kW); }
     P.handRW = hR; P.handLW = hL; }
   else { P.gaze = lookAt(a104Head(P), vh); P.mouth = 'smile'; P.lid = 0.3; P.handL = [-18, -78]; P.handR = [18, -78];
-    const sp = t < 162.13; if (sp) { P.talk = 0.45 + 0.25 * Math.sin(t * 7); }
+    if (t < 152.9) { P.brow = A104_KIND_BROW; P.lid = 0.2; }
+    const sp = t >= 152.84 && t < 162.13; /* v3: speech starts on وقال */ if (sp) { P.talk = 0.45 + 0.25 * Math.sin(t * 7); }
     if (t >= 153.5 && t < 155.0) { P.handR = t < 154.2 ? PERSON_HANDS.chest.R : [78, -140 + 8 * Math.sin((t - 154.2) * 16)]; }   // v2: palm out, "not me" (was a hand at the head)
     if (t >= 156.1 && t < 157.6) { const k = a104Env(t, 156.1, 157.7, 0.3); P.handRW = a104L2(a104Pt(P, 18, -78), [dogH[0] + 10, dogH[1] + 10], k); P.gaze = lookAt(a104Head(P), dogH); }
     if (t >= 157.4 && t < 158.44) P.gaze = lookAt(a104Head(P), dogH);
@@ -53,7 +56,7 @@ function a104Visitor(t) {
     if (t >= 145.34 && t < 146.2) { P.handLW = undefined; P.handL = [-4, -120]; P.drop = 6 + 10 * pulse(t, 145.4, 0.7); P.wet = true; }
     if (t >= 146.2 && t < 147.9) { P.drop = 16 * a104Env(t, 146.2, 147.9, 0.3); P.lid = 0.8; P.gaze = [0.3, 0.9]; }
     if (t >= 149.34 && t < 150.6) { P.brow = -0.8; P.mouth = 'o'; P.gaze = lookAt(a104Head(P), t < 149.8 ? pu : a104Head(a104OwnerLite(t))); P.drop = 0; }
-    if (t >= 150.6 && t < 152.12) { const pl = a104PurseAt(t - 0.12); P.handLW = [pl[0] - 18, pl[1] + 34]; P.handRW = [pl[0] + 18, pl[1] + 34]; P.brow = 0.4 * a104E(t, 150.95, 0.3); P.wet = t > 151.0; P.mouth = 'o'; P.lid = 0; P.noBlink = true; P.gaze = lookAt(a104Head(P), a104Head(a104OwnerLite(t))); P.drop = 4 * pulse(t, 151.5, 0.4); }
+    if (t >= 150.6 && t < 152.12) { const pl = a104PurseAt(t - 0.12); P.handLW = [pl[0] - 18, pl[1] + 34]; P.handRW = [pl[0] + 18, pl[1] + 34]; P.brow = -0.6 * a104E(t, 150.95, 0.3); P.wet = t > 151.0; P.mouth = 'o'; P.lid = 0; P.noBlink = true; P.gaze = lookAt(a104Head(P), a104Head(a104OwnerLite(t))); P.drop = 4 * pulse(t, 151.5, 0.4); }
     if (t >= 152.12) { P.gaze = lookAt(a104Head(P), a104Head(a104OwnerLite(t))); P.mouth = 'o'; P.brow = -0.5; }
     if (t >= 157.6 && t < 160.4) { P.gaze = lookAt(a104Head(P), [470, 860]); P.mouth = 'open'; P.wet = true; P.lid = 0.2; P.brow = -0.3; if (t >= 157.9) { const dh = a104DogHead(a104OldDog(t)); P.handRW = a104L2([pu[0] + 18, pu[1] + 34], [dh[0] + 42, dh[1] + 4], a104Env(t, 157.9, 160.2, 0.3)); } }
     if (t >= 160.4) { P.gaze = lookAt(a104Head(P), a104Head(a104OwnerLite(t))); P.mouth = 'closed'; P.wet = true; }
@@ -76,6 +79,7 @@ function a104PurseAt(t) {
   let p = a104L2([470, 840], out, a104E(t, 143.54, 0.6));
   if (t >= 149.34) p = a104L2(p, hi, a104E(t, 149.4, 0.5));
   if (t >= 150.6) p = a104L2(p, chest, a104E(t, 150.9, 0.6));
+  if (t >= 155.8) p = a104L2(p, [chest[0] - 45, chest[1] + 40], a104E(t, 155.82, 0.4));   // v3: lowered to his far thigh on بل, so the dog's head lies on plain robe
   p = [p[0] + tremble(t, 1.2) * a104Env(t, 146.2, 147.9), p[1]];
   return p;
 }
@@ -87,8 +91,8 @@ function a104OldDog(t) {
   if (t >= 140.5 && t < 142.0) { P.drop = -16 * a104Env(t, 140.5, 142.0, 0.3); P.gaze = [0, -1]; P.lid = 0.3; }
   if (t >= 141.12 && t < 142.0) { P.tailWag = 1.6 * (pulse(t, 141.15, 0.3) + pulse(t, 141.5, 0.3)) * 2; P.wagAmp = 0.5; }
   if (t >= 155.6 && t < 157.26) { P.ears = 0.7 * a104E(t, 155.6, 0.25); P.earFlick = pulse(t, 155.65, 0.4); P.lid = t < 155.9 ? 1 : K.lerp(1, 0.35, a104E(t, 155.9, 0.3)); P.gaze = lookAt(a104DogHead(P), t < 156.3 ? [A104_OWNX, 760] : [A104_VISX, 760]); }
-  if (t >= 156.1 && t < 169.5) { const up = settleTo(t, 156.1, 0, 1, 1.1, 0.05), dn = a104E(t, 158.6, 0.5); P.lie = 1 - K.clamp(up); P.sit = K.clamp(up); P.x = A104_ODOGX - 28 * K.clamp(up) * (1 - a104E(t, 168.0, 1.2)); P.lid = t < 157.0 ? P.lid : 0.25; P.tailWag = t * 4; P.wagAmp = 0.45 * (1 - dn * 0.5); P.tongue = 0.7 * a104E(t, 157.26, 0.2) * (1 - dn);
-    P.raise = a104E(t, 156.75, 0.5) * (1 - a104E(t, 158.6, 0.35)); P.pawW = [A104_VISX + 4, 876]; P.sq = (P.sq || 1) * landSquash(t, 157.26, 0.07, 12); P.gaze = lookAt(a104DogHead(P), [A104_VISX, 700]); P.ears = 0.3; }
+  if (t >= 156.1 && t < 169.5) { const up = settleTo(t, 156.1, 0, 1, 1.1, 0.05), dn = a104E(t, 158.6, 0.5); P.lie = 1 - K.clamp(up); P.sit = K.clamp(up); P.x = A104_ODOGX - 28 * K.clamp(up) * (1 - a104E(t, 168.0, 1.2)); P.lid = t < 157.0 ? P.lid : 0.25; P.tailWag = t * 4; P.wagAmp = 0.45 * (1 - dn * 0.5); P.tongue = 0.7 * a104E(t, 157.26, 0.2) * (1 - a104E(t, 157.72, 0.18)); /* v3: tongue out 157.26-157.9 only */
+    P.raise = a104E(t, 156.75, 0.5) * K.clamp(settleTo(t, 159.4, 1, 0, 0.45, 0.06)); P.farFold = a104E(t, 156.3, 0.6) * (1 - a104E(t, 159.4, 0.5)); /* v3: paw held on the knee to 159.4, far foreleg folded */ P.pawW = [A104_VISX + 4, 876]; P.sq = (P.sq || 1) * landSquash(t, 157.26, 0.07, 12); P.gaze = lookAt(a104DogHead(P), [A104_VISX, 700]); P.ears = 0.3; }
   if (t >= 160.44 && t < 169.5) { P.gaze = lookAt(a104DogHead(P), a104Head(a104Visitor(Math.min(t, 166)))); }
   if (t >= 167.6 && t < 169.5) P.gaze = lookAt(a104DogHead(P), a104Head(a104OwnerLite(t)));
   if (t >= 169.5) { P.lie = a104E(t, 169.5, 0.6); P.sit = 1 - P.lie; P.lid = K.lerp(0.25, 0.7, P.lie); P.tailWag = 1.6 * pulse(t, 170.0, 0.35) * 2; P.wagAmp = 0.5; }

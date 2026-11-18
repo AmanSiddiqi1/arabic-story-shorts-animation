@@ -36,3 +36,6 @@ python3 tools/cloud/cloud.py list               # runs still going / finished bu
 - Owner attention (subtitle text, not visible on screen): AN-149 chunks_en.txt chunk at 93.89 starts lower case after a full stop (Fable review 1).
 - Owner attention: AN-092 v2 151.5-152.1 s Ja'far briefly drawn across the Caliph's face (Fable round 2 polish; PASS WITH NOTES, no v3).
 - Owner attention: AN-097 v2 154.2-156.9 s the SORROW label is clipped by the balloon outline and reads 'SORROV' (Fable round 2 polish; PASS WITH NOTES, no v3).
+- Owner attention: AN-112 v2 168.0-168.9 s 'YEARS PASS' clipped by the right panel edge ('YEARS PAS') (Fable round 2 polish; PASS WITH NOTES, no v3).
+- Owner attention: AN-134 English subtitle size issue from Fable round 1 not fixed (Library caption code frozen during the loop); pointer arrows end on the owner's head at 136.2-137.4 and 167.2-168.2 (round 2 polish).
+- Owner attention: AN-124 v2 regression 153.6-154.2 s Umaymah slides fully behind the poet on the reunion line (~12 frames; v1 did not); 144.9-145.4 s poet covers her and a duplicate flower appears at 145.4 (Fable round 2: PASS WITH NOTES, v3 left to the owner).

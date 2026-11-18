@@ -71,6 +71,7 @@ function a104DogRaw(ctx, P) {
     if (!fore && sit > 0) { const Fs = [hx + 40, 0], Ks = [hx + 6, -34]; Ft = BEAST.lp(Ft, Fs, sit); Kn = BEAST.lp(Kn, Ks, sit); }
     if (lie > 0) { if (fore) { const Fl = [hx + 66 + (near ? 8 : 0), 0]; Ft = BEAST.lp(Ft, Fl, lie); Kn = BEAST.lp(Kn, BEAST.ik(H, Fl, 44, 50, -1), lie); }
       else { const Fl = [hx + 46, 0], Kl = [hx + 4, -24]; Ft = BEAST.lp(Ft, Fl, lie); Kn = BEAST.lp(Kn, Kl, lie); } }
+    if (fore && !near && P.farFold > 0) { const ff = K.clamp(P.farFold), Ff = [H[0] + 14, H[1] + 62]; Ft = BEAST.lp(Ft, Ff, ff); Kn = BEAST.lp(Kn, BEAST.ik(H, Ff, 44, 50, -1), ff); }   // v3: far foreleg folded under the chest
     if (fore && near && rz > 0) {
       let tg = P.pawW ? [(P.pawW[0] - P.x) / (dir * s), (P.pawW[1] - P.y) / s] : [H[0] + 62, H[1] + 40];
       const d = Math.hypot(tg[0] - H[0], tg[1] - H[1]), mx = 108; if (d > mx) tg = [H[0] + (tg[0] - H[0]) * mx / d, H[1] + (tg[1] - H[1]) * mx / d];
