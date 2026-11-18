@@ -32,7 +32,7 @@ function m5Far(ctx, o = {}) { const u = o.u ?? 0.22, t = o.t || 0, d = skyCycle(
   if (o.pulse > 0) { ctx.save(); ctx.globalAlpha = K.clamp(o.pulse); ctx.lineJoin = 'round'; ctx.lineWidth = 18; ctx.strokeStyle = C.yellow; K.poly(ctx, [[160, 900], [560, 250], [960, 900]]); ctx.stroke(); ctx.lineWidth = 6; ctx.strokeStyle = C.black; ctx.stroke(); ctx.restore(); }
   if (o.pulseB > 0) { ctx.save(); ctx.globalAlpha = K.clamp(o.pulseB); ctx.lineWidth = 10; ctx.strokeStyle = C.yellow; K.poly(ctx, [[20, 885], [190, 520], [360, 885]]); ctx.stroke(); ctx.restore(); }
   if (o.pulseC > 0) { ctx.save(); ctx.globalAlpha = K.clamp(o.pulseC); ctx.lineWidth = 8; ctx.strokeStyle = C.yellow; K.poly(ctx, [[-50, 890], [70, 690], [190, 890]]); ctx.stroke(); ctx.restore(); }
-  if (o.outline > 0) m5DashRect(ctx, 220, 640, 470, 900, o.outline, { t, w: 8, dash: [16, 10] });
+  if (o.outline > 0) m5DashRect(ctx, ...(o.rect || [220, 640, 470, 900]), o.outline, { t, w: 8, dash: [16, 10] });   // v3: o.rect (S11 draws it higher, clear of every head)
   return d; }
 
 // ---------- face view: the bottom courses as a stepped wall ----------

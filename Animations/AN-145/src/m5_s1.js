@@ -97,7 +97,7 @@ function m5S3(ctx, t) {
     shape(ctx, [[-90, 70], [0, -70], [90, 70]], M5_STONE, { lw: 6, seed: 712, dot: C.red, pitch: 7, rad: 0.2, da: 0.4 }); m5Glow(ctx, 0, 48, 34, 0.7); m5Mound(ctx, 0, 62, 60, 1, { seed: 4 });
     if (t > 17.92) { ctx.save(); ctx.setLineDash([8, 6]); ctx.lineWidth = 5; ctx.strokeStyle = C.red; ctx.beginPath(); ctx.moveTo(0, -78); ctx.lineTo(0, K.lerp(-78, 36, M5B(t, 17.92, 0.5))); ctx.stroke(); ctx.restore(); shape(ctx, [[-8, K.lerp(-78, 36, M5B(t, 17.92, 0.5)) - 6], [8, K.lerp(-78, 36, M5B(t, 17.92, 0.5)) - 6], [0, K.lerp(-78, 36, M5B(t, 17.92, 0.5)) + 8]], C.red, { lw: 3, seed: 713 }); }
     ctx.restore(); } }
-  if (t > 20.14) { const pu = 1 + 0.12 * (m5Pulse(t, 20.5, 0.3) + m5Pulse(t, 20.85, 0.3)); ctx.save(); ctx.translate(690, 800); ctx.scale(pu, pu); m5Q(ctx, 0, 0, 110, M5B(t, 20.14, 0.35)); ctx.restore(); }
+  if (t > 20.14) { const pu = 1 + 0.12 * (m5Pulse(t, 20.5, 0.3) + m5Pulse(t, 20.85, 0.3)); ctx.save(); ctx.translate(743, 790); ctx.scale(pu, pu); m5Q(ctx, 0, 0, 110, M5B(t, 20.14, 0.35)); ctx.restore(); }
 }
 
 // ---------- S4 the order (21.80 - 32.96) ----------
@@ -142,7 +142,7 @@ function m5O4(ctx, t, cam, S, P) {
 }
 
 // ---------- S5 the strikes (32.96 - 43.20) ----------
-const M5_HIT = { w1: [34.76, 39.42], w3: [35.44], w2: [36.5] };
+const M5_HIT = { w1: [34.76, 39.42], w3: [35.44], w2: [36.5] }, M5_S5W3 = 790;   // v3: w3's S5 place (was 850, stacked on w2)
 function m5S5(ctx, t) {
   const dig = 0.08 * M5B(t, 34.76, 0.1) + 0.04 * M5B(t, 35.44, 0.1) + 0.03 * M5B(t, 36.5, 0.1) + 0.02 * M5B(t, 39.42, 0.1);
   m5Face(ctx, { t, u: 0.24, xMark: 1, dig });
@@ -156,9 +156,10 @@ function m5S5(ctx, t) {
   // workers
   const order = ['w1', 'w3', 'w2'], lookTimes = { w1: 41.9, w3: 42.05, w2: 42.2 };
   for (const k of order) { const [x, y, dir, s] = M5_WK[k], base = k === 'w1' ? M5_W1 : k === 'w2' ? M5_W2 : M5_W3; const W = { ...base, x, y, s, dir }; let ang, bend = 0, holdUp = false;
+    if (k === 'w3') { W.x = K.lerp(x, M5_S5W3, M5B(t, 32.96, 0.55)); W.ph = W.x / 13; W.amp = m5In(t, 32.96, 33.5) ? 0.7 : 0; }   // v3: one step left so he stands clear of w2
     if (k === 'w1') { const st = m5Strike(t, M5_HIT.w1, { lift: t > 38 ? 0.9 : 0.45, top: t > 38 ? 0.75 : 1 }); ang = m5StrikePose(W, t < 33.6 ? 0.98 : st.r); if (st.contact != null && st.contact < 0.4) { W.x += tremble(t, 3, 14) * K.clamp(1 - st.contact / 0.4); W.lid = st.contact < 0.1 ? 1 : 0; W.mouth = 'open'; }
       if (t > 38.8) { W.lid = Math.max(W.lid || 0, 0.3); } W.gaze = m5Look(t, W, [[0, M5_X], [lookTimes.w1, [850, 760]], [42.5, [230, 720]]]); }
-    if (k === 'w3') { const st = m5Strike(t, M5_HIT.w3, {}); let r = t < 33.6 ? 0.98 : st.r; if (st.contact != null) { r = Math.max(r, 1.1 * Math.exp(-st.contact * 3) * K.clamp(st.contact / 0.15)); W.x += 26 * M5B(t, 35.5, 0.4); W.sq = st.contact < 0.3 ? 1.06 : 1; W.eyes = st.contact < 0.8 ? 'wide' : undefined; }
+    if (k === 'w3') { const st = m5Strike(t, M5_HIT.w3, {}); let r = t < 33.6 ? 0.98 : st.r; if (st.contact != null) { r = Math.max(r, 1.1 * Math.exp(-st.contact * 3) * K.clamp(st.contact / 0.15)); W.x += 16 * M5B(t, 35.5, 0.4); W.sq = st.contact < 0.3 ? 1.06 : 1; W.eyes = st.contact < 0.8 ? 'wide' : undefined; }
       if (t > 39.58) { r = 0.05; ang = m5StrikePose(W, r); W.handL = null; W.aL = null; W.handL = [8, -214 + 4 * Math.sin(t * 8)]; ang = W.dir > 0 ? 1.45 : Math.PI - 1.45; W.aR = [0.5, 0.8]; W.sq = breathe(t, 3, 0.03); W.lid = m5Pulse(t, 39.8, 0.6) * 0.9; }
       else ang = m5StrikePose(W, r);
       W.gaze = m5Look(t, W, [[0, M5_X], [lookTimes.w3, [527, 720]], [42.5, [230, 720]]]); }
@@ -166,8 +167,8 @@ function m5S5(ctx, t) {
       if (st.contact != null) { bend = M5B(t, 36.52, 0.3, 'out'); if (t > 36.75) { holdUp = true; r = K.lerp(st.r, 0.55, M5B(t, 36.75, 0.3)); } W.gaze = t < 37.0 ? [0, -0.9] : t < 37.7 ? m5Look(t, W, [[37.0, [900, 600]]]) : [0, 0.05]; W.lid = m5Pulse(t, 37.0, 0.5) * 0.9; }
       ang = m5StrikePose(W, r); if (holdUp) ang = W.dir > 0 ? -1.2 : Math.PI + 1.2;
       if (m5In(t, 37.4, 40.2)) { // v2: the hooked pick lowered to eye level, a look at it, then one look to the lens (10 frames)
-        const u = M5B(t, 37.4, 0.35) * (1 - M5B(t, 39.7, 0.4)), tR = armTo(1, M5_SH, [44, -112]), tL = armTo(-1, M5_SH, [24, -104]);
-        W.aR = W.aR.map((a, i) => K.lerp(a, tR[i], u)); W.aL = W.aL.map((a, i) => K.lerp(a, tL[i], u)); ang = K.lerp(ang, Math.PI + 1.14, u);
+        const u = M5B(t, 37.4, 0.35) * (1 - M5B(t, 39.7, 0.4)), tR = armTo(1, M5_SH, [68, -104]), tL = armTo(-1, M5_SH, [34, -100]);   // v3: held upright beside his own head, clear of w3
+        W.aR = W.aR.map((a, i) => K.lerp(a, tR[i], u)); W.aL = W.aL.map((a, i) => K.lerp(a, tL[i], u)); ang = K.lerp(ang, 1.5 * Math.PI - 0.12, u);
         const hh = m5W(W, m5HandL(1, W.aR)), ph = [hh[0] + Math.cos(ang) * 96, hh[1] + Math.sin(ang) * 96];
         W.gaze = t < 38.6 ? lookAt(m5Head(W), ph) : t < 38.94 ? [0, 0.05] : lookAt(m5Head(W), ph); W.brow = t < 38.6 ? 0.5 : -0.3; W.mouth = t < 38.6 ? 'o' : 'frown'; W.lid = 0; }
       if (t > 40.2) { W.sit = M5B(t, 40.2, 0.5); W.seat = 'floor'; W.aL = null; W.aR = null; W.handL = M5H.lowL; W.handR = [40, -96]; W.lid = 0.6; W.mouth = 'frown'; W.gaze = m5Look(t, W, [[40.2, [960, 1000]], [lookTimes.w2, [850, 760]]]); } }
@@ -176,7 +177,7 @@ function m5S5(ctx, t) {
     if (k === 'w2' && t > 40.2) m5Pick(ctx, W.x - 90, 930, -0.1, 0.75, 1);
     else m5Pick(ctx, ...m5Hand(W, 'R'), ang, 0.75, bend);
     if (k === 'w1' && t > 38.9 && t < 41) drops(ctx, m5Head(W)[0] + 30, m5Head(W)[1] - 20, t, 1); }
-  m5Spark(ctx, 690, 833, t, 34.76); m5Spark(ctx, 687, 843, t, 35.44); m5Spark(ctx, 762, 868, t, 36.5, 0.7); m5Spark(ctx, 690, 840, t, 39.42, 0.6);
+  m5Spark(ctx, 690, 833, t, 34.76); m5Spark(ctx, 687 - (850 - M5_S5W3), 843, t, 35.44); m5Spark(ctx, 762, 868, t, 36.5, 0.7); m5Spark(ctx, 690, 840, t, 39.42, 0.6);
 }
 function m5O5(ctx, t, cam, S, P) {
   if (m5In(t, 35.44, 36.4)) { const [x, y] = P(760, 640); ctx.save(); ctx.globalAlpha = m5Fade(t, 35.44, 36.4, 0.15); sfx(ctx, 'CLANG!', x, y, 92, M5B(t, 35.44, 0.2), { rot: 0.08, fill: C.white }); ctx.restore(); }

@@ -29,3 +29,8 @@ Decisions the plan left open or the measured set changed:
 - S9/S10: the dug opening in the wall is no longer drawn (it sat behind the right pan and read as a black dome).
 - S16: the builders and king stand large in the foreground (s 1.1, feet y 1010) and the camera also pushes to zoom 1.6 (155.82-160.2), easing to 1.25 for the racing days and the king's dissolve.
 - S17: bow tip 0.42 (rider rig needs more than the suggested 0.22 to read); the caravan exits by 175.2.
+
+## v3 (fix pass from fable_review_2.md)
+- S11 plan outline now world [420, 480, 690, 680] on the pyramid face (M5_S11O, passed to m5Far as `rect`), clear of all figures; X at its centre.
+- S5: w3 stands at M5_S5W3 = 790 (steps there 32.96-33.5); S4 and S6 keep M5_WK.w3 = 850.
+- S10: the chest cannot be lifted above the vizier's turban with the person rig's arm length, so it is held up and forward beside the head (decision recorded in review/revision_2.md).

@@ -39,3 +39,5 @@ python3 tools/cloud/cloud.py list               # runs still going / finished bu
 - Owner attention: AN-112 v2 168.0-168.9 s 'YEARS PASS' clipped by the right panel edge ('YEARS PAS') (Fable round 2 polish; PASS WITH NOTES, no v3).
 - Owner attention: AN-134 English subtitle size issue from Fable round 1 not fixed (Library caption code frozen during the loop); pointer arrows end on the owner's head at 136.2-137.4 and 167.2-168.2 (round 2 polish).
 - Owner attention: AN-124 v2 regression 153.6-154.2 s Umaymah slides fully behind the poet on the reunion line (~12 frames; v1 did not); 144.9-145.4 s poet covers her and a duplicate flower appears at 145.4 (Fable round 2: PASS WITH NOTES, v3 left to the owner).
+- Owner attention: AN-149 v2 regression 51.2-58.6 s the scholar is half out of frame at the left edge during the neighbour exchange (Fable round 2 polish; PASS WITH NOTES, v3 left to the owner).
+- Owner attention: AN-145 v3 (last round) - vizier holds the chest beside his head, not above the turban, overlapping the red coin pile at 96.1-97.3 s; w3 jumps 30 units at the S4/S5 cut (masked by the cut).

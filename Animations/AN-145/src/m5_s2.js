@@ -119,12 +119,15 @@ function m5S9(ctx, t) {
   const tilt = m5Tilt(t), still = m5In(t, 82.32, 82.52);
   // the chest of the find, carried in by the foreman
   const chX = (tt) => m5Tr(tt, [[0, 1150], [72.3, 370, 0.9]]), W3x = (tt) => m5Tr(tt, [[0, 1220], [72.3, 440, 0.9], [73.8, 1250, 1.0]]);
-  if (t < 74.9) { const W3 = { ...M5_W3, ...m5Walk(W3x, t, 13), y: 975, s: 0.78, dir: t < 73.5 ? -1 : 1, handL: [70, -120], handR: [86, -116], mouth: 'smile', gaze: [-1, 0.4] }; if (t > 73.5) { W3.handL = M5H.lowL; W3.handR = M5H.lowR; } person(ctx, W3); }
-  const chestOpen = M5B(t, 73.4, 0.4); m5Chest(ctx, chX(t), 1010 - (t < 73.16 ? 60 : 60 * (1 - M5B(t, 73.16, 0.3))), { s: 0.55, old: true, open: chestOpen, fill: K.lerp(1, 0.2, M5B(t, 74.6, 2.3)), jewels: t < 76 });
   const sc = m5Scale(ctx, M5_SC.x, M5_SC.y, tilt, { level: still || m5In(t, 82.32, 83.7) ? m5Win(t, 82.32, 83.7, 0.1) : 0,
     left: (c, x, y) => { const f = M5B(t, 74.6, 2.3); if (f > 0) m5Mound(c, x, y, 120, Math.max(0.15, f), { seed: 8 }); },
     right: (c, x, y) => { const f = M5B(t, 76.94, 1.36); if (f > 0) m5Mound(c, x, y, 120, Math.max(0.15, f), { seed: 8, red: true }); } });
-  for (let i = 0; i < 14; i++) { const s0 = 74.6 + i * 0.16, u = K.clamp((t - s0) / 0.4); if (u > 0 && u < 1) { const a = [370, 930], b = [sc.pans[0][0], sc.pans[0][1] - 20]; (i % 4 === 3 ? (c, x, y) => m5Gem(c, x, y, 9, [C.red, C.blue, '#2f9a3e'][i % 3]) : (c, x, y) => m5Coin(c, x, y, 11, Math.cos(t * 14 + i)))(ctx, K.lerp(a[0], b[0], u), K.lerp(a[1], b[1], u) - 110 * Math.sin(Math.PI * u)); } }
+  // v3: the foreman and the chest are drawn after the scale, so he walks wholly in front of the red cloth (feet below its edge y 950);
+  // chest carried at waist height, set down in front of the cloth (contact on bihisab 73.30), red and yellow like the hoard chest of S8
+  const chestOpen = M5B(t, 73.4, 0.4), chY = t < 73.0 ? 922 : K.lerp(922, 1010, M5B(t, 73.0, 0.3, 'in'));
+  if (t < 74.9) { const W3 = { ...M5_W3, ...m5Walk(W3x, t, 13), y: 975, s: 0.78, dir: t < 73.5 ? -1 : 1, handL: [70, -120], handR: [86, -116], mouth: 'smile', gaze: [-1, 0.4] }; if (t > 73.0) { const u = M5B(t, 73.0, 0.3); W3.handL = [70, K.lerp(-120, -60, u)]; W3.handR = [86, K.lerp(-116, -56, u)]; W3.sq = 1 - 0.06 * m5Pulse(t, 73.2, 0.4); } if (t > 73.5) { W3.handL = M5H.lowL; W3.handR = M5H.lowR; } person(ctx, W3); }
+  m5Chest(ctx, chX(t), chY, { s: 0.55, red: true, open: chestOpen, fill: K.lerp(1, 0.2, M5B(t, 74.6, 2.3)), jewels: t < 76 });
+  for (let i = 0; i < 14; i++) { const s0 = 74.6 + i * 0.16, u = K.clamp((t - s0) / 0.4); if (u > 0 && u < 1) { const a = [370, 965], b = [sc.pans[0][0], sc.pans[0][1] - 20]; (i % 4 === 3 ? (c, x, y) => m5Gem(c, x, y, 9, [C.red, C.blue, '#2f9a3e'][i % 3]) : (c, x, y) => m5Coin(c, x, y, 11, Math.cos(t * 14 + i)))(ctx, K.lerp(a[0], b[0], u), K.lerp(a[1], b[1], u) - 110 * Math.sin(Math.PI * u)); } }
   // v2: what he paid arrives as red coins on arcs from the vizier's ledger (76.94 - 78.32)
   for (let i = 0; i < 9; i++) { const s0 = 76.94 + i * 0.12, u = K.clamp((t - s0) / 0.4); if (u > 0 && u < 1) { const a = [M5_S9V[0] - 40, M5_S9V[1] - 100], b = [sc.pans[1][0] - 20 + (i % 3) * 20, sc.pans[1][1] - 20]; m5Coin(ctx, K.lerp(a[0], b[0], u), K.lerp(a[1], b[1], u) - 120 * Math.sin(Math.PI * u), 13, Math.cos(t * 14 + i), C.red); } }
   // the caliph
@@ -172,15 +175,19 @@ function m5S10(ctx, t) {
   P.gaze = t < 88.7 ? [0.2, 0] : t < 89.7 ? m5Look(t, P, [[88.7, sc.pans[0]], [89.05, sc.pans[1]], [89.4, sc.pans[0]]], 0.06) : t < 91.74 ? [0.3, -0.5] : t < 93.76 ? [0.2, 0.8] : t < 94.34 ? lookAt(m5Head(P), zw) : [0, 0.05];
   P.lid = Math.min(1, lid); if (t < 94.34) m5Blink(P, t, 11, P.lid); person(ctx, P);
   const V = { ...M5_VIZ, x: M5_S9V[0], y: M5_S9V[1], s: 0.75, dir: -1, brow: -0.6, mouth: t > 96.12 ? 'smile' : 'closed' };
-  // v2 two-shot from 96.12: the chest upside down at arm's length above his head, two shakes, one coin, an apologetic smile
-  const shk = t > 96.3 && t < 96.9 ? 14 * Math.sin((t - 96.3) * Math.PI * 2 / 0.3) : 0;
-  V.gaze = t < 96.12 ? [0.3, -1] : t < 96.9 ? [0.1, -1] : t < 97.0 ? [-0.3, 0.8] : [-0.6, 0.6]; if (t > 96.12) { V.brow = 0.5; V.tip = 0.04 * Math.sin((t - 96.3) * 21) * (shk ? 1 : 0); }
-  if (t > 96.12) { const u = M5B(t, 96.12, 0.25); V.aR = [K.lerp(1.6, 2.3, u), K.lerp(1.6, 2.2, u)]; V.aL = [K.lerp(1.2, 2.0, u), K.lerp(1.3, 2.3, u)]; }
+  // v3 two-shot from 96.12: the empty chest held upside down at full reach, up and forward of his head (the rig's arm cannot lift it
+  // clear above the turban, so it is held beside it, toward the caliph, and the face stays clear); two 8-degree shakes on 96.12 and 96.45,
+  // one coin drops from the open mouth and spins flat, his eyes follow it, then the apologetic smile to the caliph (screen left)
+  const shk = 0.14 * (m5Pulse(t, 96.12, 0.12) - m5Pulse(t, 96.24, 0.12) + m5Pulse(t, 96.45, 0.12) - m5Pulse(t, 96.57, 0.12));
+  const coinT = 96.66, CS = 0.5;
+  if (t > 96.12) { V.brow = 0.5; V.handR = [54, -198]; V.handL = m5Tr(t, [[0, M5H.lowL], [96.98, [14, -112], 0.2]]); V.mouth = t < 96.95 ? 'o' : 'smile'; }
   else { V.handR = [40 + 10 * Math.sin(t * 14), -170]; V.handL = M5H.ledgerL; }
+  const h = m5Hand(V, 'R'), cx0 = h[0] - 37.5, coin = (d) => { const fall = Math.min(1, d / 0.3); return [K.lerp(cx0, cx0 - 30, fall), K.lerp(h[1] + 10, 975, fall * fall)]; };
+  V.gaze = t < 96.12 ? [0.3, -1] : t < coinT ? lookAt(m5Head(V), [cx0, h[1] - 25]) : t < 96.98 ? lookAt(m5Head(V), coin(t - coinT)) : [-1, 0.15];
   m5Blink(V, t, 17); person(ctx, V);
   if (t < 96.12) m5Ledger(ctx, ...m5Hand(V, 'R'), { open: 0, s: 0.45, rot: 0.6 * Math.sin(t * 14) });
-  else { const h = m5Hand(V, 'R'), h2 = m5Hand(V, 'L'), cx = (h[0] + h2[0]) / 2 + shk, cy = (h[1] + h2[1]) / 2 - 95, rot = Math.PI * M5B(t, 96.12, 0.3); m5Chest(ctx, cx, cy, { s: 0.55, open: 1, fill: 0, rot });
-    if (t > 96.62) { const d = t - 96.62, fall = Math.min(1, d / 0.3), y = K.lerp(cy + 60, 975, fall * fall), x = cx - 30 * fall, sp = d < 0.3 ? Math.cos(d * 20) : Math.max(0.25, Math.abs(Math.cos(d * 14)) * Math.exp(-(d - 0.3) * 3)); m5Coin(ctx, x, y, 16, sp); } }
+  else { ctx.save(); ctx.translate(h[0], h[1]); ctx.rotate(shk); m5Chest(ctx, -37.5, -50, { s: CS, open: 1, fill: 0, rot: Math.PI }); ctx.restore();
+    if (t > coinT) { const d = t - coinT, [x, y] = coin(d), sp = d < 0.3 ? Math.cos(d * 20) : Math.max(0.25, Math.abs(Math.cos(d * 14)) * Math.exp(-(d - 0.3) * 3)); m5Coin(ctx, x, y, 16, sp); } }
 }
 function m5O10(ctx, t, cam, S, P) {
   ctx.save(); ctx.globalAlpha = 1 - M5B(t, 95.0, 0.4); [[240, 'FOUND', C.yellow], [760, 'SPENT', C.red]].forEach(([x, l, col]) => { ctx.save(); ctx.translate(x, 160); ctx.scale(0.75, 0.75); m5Tag(ctx, S, 0, 0, l, 100, 1, col); ctx.restore(); });
@@ -193,16 +200,16 @@ function m5O10(ctx, t, cam, S, P) {
 }
 
 // ---------- S11 the departure (97.28 - 107.66). v2: clear staging, the chest loaded in a close shot, the plan outline peels off ----------
-const M5_S11O = [220, 640, 470, 900];   // the demolition outline on the great pyramid (far view)
+const M5_S11O = [420, 480, 690, 680];   // v3: the demolition outline on bare stone of the great pyramid's face, bottom edge above every head and tool (far view)
 function m5Chips(ctx, t, t0) { // the outline's dashes peel off left to right and fall as red chips
-  const [x0, y0, x1, y1] = M5_S11O, per = [[x0, y1, x0, y0], [x0, y0, x1, y0], [x1, y0, x1, y1]], r = K.rng(31);
-  per.forEach(([ax, ay, bx, by], si) => { for (let i = 0; i < 9; i++) { const f = (i + 0.5) / 9, x = K.lerp(ax, bx, f), y = K.lerp(ay, by, f), d = t - t0 - (x - x0) / (x1 - x0) * 0.35 - r() * 0.05; const vx = (r() - 0.3) * 80, rr = r() * 6;
+  const [x0, y0, x1, y1] = M5_S11O, per = [[x0, y1, x0, y0], [x0, y0, x1, y0], [x1, y0, x1, y1], [x0, y1, x1, y1]], r = K.rng(31);
+  per.forEach(([ax, ay, bx, by], si) => { for (let i = 0; i < 9; i++) { const f = (i + 0.5) / 9, x = K.lerp(ax, bx, f), y = K.lerp(ay, by, f), d = t - t0 - (x - x0) / (x1 - x0) * 0.35 - r() * 0.05; const vx = 40 + r() * 90, rr = r() * 6;   // v3: peel in the direction of the caliph's sweep (to the right)
     const hz = ay === by; ctx.save(); if (d > 0) { ctx.translate(x + vx * d, y + 700 * d * d); ctx.rotate(rr * d * 3); ctx.globalAlpha = K.clamp(1 - (d - 0.5) / 0.4); } else ctx.translate(x, y);
     if (ctx.globalAlpha > 0.02 && y + 700 * Math.max(0, d) ** 2 < 905) { ctx.lineCap = 'round'; ctx.lineWidth = 16; ctx.strokeStyle = C.black; ctx.beginPath(); hz ? (ctx.moveTo(-9, 0), ctx.lineTo(9, 0)) : (ctx.moveTo(0, -9), ctx.lineTo(0, 9)); ctx.stroke(); ctx.lineWidth = 8; ctx.strokeStyle = C.red; ctx.stroke(); }
     ctx.restore(); } }); }
 function m5S11(ctx, t) {
   const draw = M5B(t, 99.25, 0.35, 'lin');
-  m5Far(ctx, { u: 0.3, t, scar: 1, outline: t < 100.62 ? draw : 0 });
+  m5Far(ctx, { u: 0.3, t, scar: 1, outline: t < 100.62 ? draw : 0, rect: M5_S11O });
   if (t >= 100.62 && t < 102.0) m5Chips(ctx, t, 100.62);
   const ride = (tt) => K.lerp(215, -320, M5B(tt, 105.2, 2.0, 'in')), vr = (tt) => K.lerp(90, -420, M5B(tt, 105.4, 2.0, 'in')), cr = (tt) => K.lerp(430, -280, M5B(tt, 105.6, 1.9, 'in'));
   // vizier waits mounted at the far left
@@ -214,9 +221,10 @@ function m5S11(ctx, t) {
   const Cm = { ...walk(cr, t, { stride: GAIT.camel * 0.5 }), y: 905, s: 0.5, dir: -1, kneel: m5Tr(t, [[0, 1], [98.14, 0, 0.66]]), chew: (Math.sin(t * 8) + 1) / 2, lid: 0.4, talk: m5Pulse(t, 98.2, 0.5), saddle: true, load: t > 97.9 ? ['chest'] : undefined };
   camel(ctx, Cm);
   if (t < 104.6) { const P = { ...M5_CAL, x: 310, y: 905, s: 0.5, dir: 1, brow: -0.3, mouth: 'closed' }; P.dir = turnFlip(t, [[0, 1], [104.0, -1]], 0.4).dir;
-    P.gaze = t < 98.0 ? lookAt(m5Head(P), [500, 830]) : t < 98.8 ? m5Look(t, P, [[98.0, [480, 800]]]) : t < 99.6 ? [0.3, -0.8] : t < 100.62 ? lookAt(m5Head(P), [345, 700]) : [1, 0];
+    P.gaze = t < 98.0 ? lookAt(m5Head(P), [500, 830]) : t < 98.8 ? m5Look(t, P, [[98.0, [480, 800]]]) : t < 99.6 ? [0.3, -0.8] : t < 101.2 ? lookAt(m5Head(P), [555, 580]) : [1, 0];
     P.look = t > 100.62 && t < 101.4 ? Math.sin((t - 100.62) * 14) * 0.6 : 0; m5Blink(P, t, 11, t > 100.62 && t < 102.2 ? 0.3 : 0); if (t > 100.62 && t < 102.2) P.mouth = 'smile';
-    P.handR = m5Tr(t, [[0, M5H.hipR], [100.4, [60, -200], 0.2], [100.62, [100, -150], 0.45], [101.2, M5H.hipR, 0.3], [102.22, [70, -200], 0.25], [103.4, M5H.hipR, 0.4]]); P.handL = M5H.hipL;
+    P.handR = m5Tr(t, [[0, M5H.hipR], [100.2, [20, -250], 0.3], [100.62, [130, -170], 0.35], [101.3, M5H.hipR, 0.3],   // v3: raised, then one sweep across toward the outline on hdm 100.62
+     [102.22, [70, -200], 0.25], [103.4, M5H.hipR, 0.4]]); P.handL = M5H.hipL;
     P.y -= hop(t, 104.3, 0.3, 0, 0, 30)[1]; if (t > 104.3) P.x = K.lerp(310, 225, M5B(t, 104.3, 0.3)); person(ctx, P); }
   else { const H = { ...walk(ride, t, { stride: GAIT.horse * 0.5 }), y: 905, s: 0.5, dir: -1, earL: 1, earR: 1, tailSwish: Math.sin(t * 2.5) * 0.5 }; rideOn(ctx, 'horse', H, { ...M5_CAL, gaze: [-1, 0], mouth: 'closed', lurch: -lurch(t, 104.6, 0.2) }); }
   // workers stand clear at the right; w3 and w1 carry the chest to the saddle first (contact 97.9)
@@ -236,6 +244,6 @@ function m5S11(ctx, t) {
   if (m5In(t, 105.5, 107.0)) { const hx = ride(t) + 10, k = m5Pop(t, 105.5, 0.4) * (1 - M5B(t, 106.7, 0.3, 'in')), bx = Math.max(240, hx + 70); if (k > 0.01) thoughtCloud(ctx, bx, 600, 200 * k, 140 * k, t, { p: K.clamp(k), tail: hx > 0 ? [hx + 10, 760] : null, scale: 1, at: [0, 0], inside: (c) => { const sw = M5B(t, 106.0, 0.4); if (sw < 1) m5Icon(c, 'pyramid', 0, 0, (1 - sw) * k); if (sw > 0) { m5Icon(c, 'throne', -30, 4, 0.8 * sw * k); m5Icon(c, 'scroll', 40, 10, 0.7 * sw * k); } } }); }
 }
 function m5O11(ctx, t, cam, S, P) {
-  if (m5In(t, 100.62, 101.5)) { const [x, y] = P(345, 770), k = m5Pop(t, 100.62, 0.25); ctx.save(); ctx.globalAlpha = m5Fade(t, 100.62, 101.5, 0.2); ctx.translate(x, y); ctx.scale(k, k); ctx.lineCap = 'round'; for (const [w, c] of [[22, C.black], [12, C.red]]) { ctx.lineWidth = w; ctx.strokeStyle = c; ctx.beginPath(); ctx.moveTo(-40, -40); ctx.lineTo(40, 40); ctx.moveTo(40, -40); ctx.lineTo(-40, 40); ctx.stroke(); } ctx.restore(); }
+  if (m5In(t, 100.62, 101.6)) { const [x0, y0, x1, y1] = M5_S11O, [x, y] = P((x0 + x1) / 2, (y0 + y1) / 2), k = 1.3 * m5Pop(t, 100.62, 0.25); ctx.save(); ctx.globalAlpha = m5Fade(t, 100.62, 101.6, 0.2); ctx.translate(x, y); ctx.scale(k, k); ctx.lineCap = 'round'; for (const [w, c] of [[22, C.black], [12, C.red]]) { ctx.lineWidth = w; ctx.strokeStyle = c; ctx.beginPath(); ctx.moveTo(-40, -40); ctx.lineTo(40, 40); ctx.moveTo(40, -40); ctx.lineTo(-40, 40); ctx.stroke(); } ctx.restore(); }   // v3: centred on the outline (bare stone), 1.3x
   if (m5In(t, 103.12, 104.6)) { const [x, y] = P(420, 640); ctx.save(); ctx.globalAlpha = m5Fade(t, 103.12, 104.6, 0.15); sfx(ctx, 'STOP!', x, y, 100, M5B(t, 103.12, 0.25), { fill: C.red, rot: -0.05 }); ctx.restore(); }
 }
