@@ -7737,6 +7737,27 @@
 "msg": "v3 -> MP4s/THE MAN WHO STOLE THE DISH OF GOLD WHEREIN THE DOG ATE - Halftone Pop 9x16 - Noto Naskh Arabic.mp4",
 "story_id": "AN-104",
 "t": "2026-11-18T16:07:42"
+},
+{
+"id": 1097,
+"kind": "cloud-render",
+"msg": "v3: PASS run 44265014478 commit 181cc92ec5",
+"story_id": "AN-145",
+"t": "2026-11-18T17:08:23"
+},
+{
+"id": 1098,
+"kind": "done",
+"msg": "fix v3 Animations/AN-145/renders/AN-145_v3.mp4 (claude-opus-5-5)",
+"story_id": "AN-145",
+"t": "2026-11-18T17:08:31"
+},
+{
+"id": 1099,
+"kind": "finalized",
+"msg": "v3 -> MP4s/AL-MAAMUN AND THE PYRAMIDS OF EGYPT - Halftone Pop 9x16 - Noto Naskh Arabic.mp4",
+"story_id": "AN-145",
+"t": "2026-11-18T17:08:43"
 }
 ],
 "plans": [
@@ -10137,6 +10158,16 @@
 "status": "PASS",
 "story_id": "AN-104",
 "version": "v3"
+},
+{
+"created": "2026-11-18T17:08:23",
+"duration": 177.867,
+"path": "Animations/AN-145/renders/AN-145_v3.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 177.867}, \"end_hold\": 4.01, \"decode\": \"OK\", \"lufs\": -15.2, \"sync\": {\"lag_ms\": 0, \"corr\": 0.999}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-18T08:51:12\", \"cloud_run\": \"44265014478\", \"cloud_commit\": \"181cc92ec56219785f614a97e713c37bc0b0ea56\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "AN-145",
+"version": "v3"
 }
 ],
 "reviews": [
@@ -12333,7 +12364,7 @@
 "words_status": "SUCCESS"
 },
 {
-"approval": "none",
+"approval": "pending",
 "assembly_file": null,
 "collection": "One Thousand and One Nights",
 "completed_before": 0,
@@ -12352,7 +12383,7 @@
 "segments": "[\"AN-145-P01-S01\", \"AN-145-P01-S02\", \"AN-145-P01-S03\", \"AN-145-P01-S04\", \"AN-145-P01-S05\", \"AN-145-P01-S06\", \"AN-145-P01-S07\", \"AN-145-P01-S08\"]",
 "title_ar": null,
 "title_en": "AL-MAAMUN AND THE PYRAMIDS OF EGYPT",
-"updated": "2026-11-17T15:44:45",
+"updated": "2026-11-18T17:08:43",
 "words_file": "AN-145_AL_MAAMUN_AND_THE_PYRAMIDS_OF_EGYPT_full_slowed.mp3.words.json",
 "words_sha": "3f66d0f6f495457bb452b2f82d4c64be096fe538afa0015d543a09eaaa212951",
 "words_status": "SUCCESS; METADATA MISMATCH"
@@ -18302,15 +18333,15 @@
 {
 "agent_id": "a2af6169b77f291d5",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-18T17:08:31",
 "id": 311,
 "model": "opus",
-"notes": null,
-"outputs": null,
+"notes": "tokens {\"turns\": 40, \"input_tokens\": 90, \"cache_creation_input_tokens\": 168752, \"cache_read_input_tokens\": 3668437, \"output_tokens\": 42167}",
+"outputs": "v3 Animations/AN-145/renders/AN-145_v3.mp4",
 "pid": null,
 "stage": "fix",
 "started": "2026-11-18T16:00:27",
-"status": "running",
+"status": "done",
 "story_id": "AN-145"
 }
 ],
