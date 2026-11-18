@@ -8,7 +8,7 @@ import argparse, datetime, json, os, pathlib, subprocess, sys
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 import common
 
-HARD_MAX, WARN_AT, DAY_RUNS = 8, 3, 100   # DAY_RUNS: local runaway guard, not a GitHub limit (was 12 until 2026-11-18)
+HARD_MAX, WARN_AT, DAY_RUNS = 10, 3, 100   # HARD_MAX matches max-parallel 10 (was 8 until 2026-11-18); DAY_RUNS: local runaway guard, not a GitHub limit (was 12 until 2026-11-18)
 
 def gh_json(path):
     return json.loads(subprocess.check_output(['gh', 'api', '--paginate', path], text=True) or 'null')

@@ -12,7 +12,7 @@
   retry   RUN                        re-run failed jobs of a run (once per run)
   publish ID --run RUN --version v1 --approved [--local]   save an APPROVED, QC-passed film as a GitHub Release asset
   purge                              delete live render artifacts (frees the 500 MB artifact quota)
-Guards: clean+pushed source, narration uploaded, no run already active, artifact quota, <=8 films per submit (>3 needs --yes),
+Guards: clean+pushed source, narration uploaded, no run already active, artifact quota, <=10 films per submit (>3 needs --yes),
 <=100 submissions per rolling 24 h (runaway backstop; GitHub itself has no such limit), and no third attempt of an unchanged source that already failed twice."""
 import argparse, base64, hashlib, json, pathlib, re, shutil, subprocess, sys, tempfile, time, uuid
 sys.path.insert(0, str(pathlib.Path(__file__).parent)); sys.path.insert(0, str(pathlib.Path(__file__).parents[1] / 'production'))
@@ -21,7 +21,7 @@ REPO = common.REPO; WF = common.WORKFLOW; INPUTS = common.DEPS['render']['releas
 SLUG = json.loads((pathlib.Path(__file__).parent / 'target.json').read_text())['render_repo']   # render repository (set in main)
 PUBLIC = True
 LEDGER = REPO / 'production' / 'cloud' / 'ledger.json'     # local, Git-ignored; everything can be rebuilt from `gh run list`
-MB = 1 << 20; QUOTA_MB, FILM_MB = 480, 235; WARN_AT, HARD_MAX, DAY_SUBMITS = 3, 8, 100   # DAY_SUBMITS: local runaway guard (was 12 until 2026-11-18)
+MB = 1 << 20; QUOTA_MB, FILM_MB = 480, 235; WARN_AT, HARD_MAX, DAY_SUBMITS = 3, 10, 100   # HARD_MAX matches max-parallel 10 (was 8 until 2026-11-18); DAY_SUBMITS: local runaway guard (was 12 until 2026-11-18)
 
 def origin_slug():
     m = re.search(r'github\.com[:/]([^/]+/[^/.]+?)(\.git)?$', common.git('remote', 'get-url', 'origin').strip()); return m.group(1)

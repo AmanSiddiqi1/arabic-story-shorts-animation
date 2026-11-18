@@ -25,7 +25,7 @@ Interrupted session: `cloud.py list` shows recent runs (the title carries the st
 | 60 min per film; standard runner only | `timeout-minutes` |
 | 1 retry, transient failures only, first 20 min; deterministic failures (build, page errors, QC, checksum) never retried | render_one.py |
 | Identical render skipped (same source + Library + engines + settings + narration => same fingerprint => live artifact exists) | plan.py (`--force` / `submit --force` overrides) |
-| <= 8 films per submit; > 3 needs `--yes` (ask the owner); <= 100 runs per rolling 24 h (local runaway backstop; raised from 12 on 2026-11-18; GitHub sets no such limit) | cloud.py + plan.py |
+| <= 10 films per submit (raised from 8 on 2026-11-18, to match max-parallel 10); > 3 needs `--yes` (ask the owner); <= 100 runs per rolling 24 h (local runaway backstop; raised from 12 on 2026-11-18; GitHub sets no such limit) | cloud.py + plan.py |
 | Same unchanged source failed twice => refused | cloud.py ledger |
 | Artifact quota (free 500 MB, one film ~220 MB) checked before submit | cloud.py; `purge` frees it |
 | Test renders: artifacts, 3 days. Approved films: Release asset (2 GB limit, not counted in the quota, not in Git history) | render.yml / publish.yml |
