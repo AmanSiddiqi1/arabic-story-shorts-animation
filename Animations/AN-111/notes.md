@@ -23,3 +23,7 @@ Decisions the plan left open or the measured sets changed:
 - S25: the rags bleach by redrawing the figure in a white palette clipped below a rising line; the column of light (no wings, no face) rises and shrinks to a star; the balance scale stands between the two men, the tick beside it.
 - Transitions: comic wipe (0.4 s slanted edge) where the plan says wipe, a 0.5 s dissolve S26 -> S27, cuts elsewhere.
 - No title card (the plan lists only the eleven lettered words and THE END).
+
+## v2 (Fable round 1)
+- See review/revision_1.md. Positions: poor man x 662 (arrives 134.6-135.74 from the right); given sacks at 600/632, pushed back to 546/580; the hero gives from x 522, 538 after the half step, kneels at 452 from 163.3.
+- Shop two-shot zoom 2.7 (desk top about panel y 850); pearl r 15 on a navy cloth at (530, 776).

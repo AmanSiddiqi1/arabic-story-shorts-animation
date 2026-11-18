@@ -29,7 +29,7 @@ const a111Talk = (t, amp = 0.7, seed = 0) => amp * Math.max(0, Math.sin(t * 13 +
 // dust motes in a light shaft
 function a111Motes(ctx, x0, y0, t, n = 8) { ctx.save(); ctx.fillStyle = C.white; for (let i = 0; i < n; i++) { const r = K.rng(400 + i), u = ((t * 0.05 + r()) % 1); ctx.globalAlpha = 0.5 * Math.sin(Math.PI * u); ctx.beginPath(); ctx.arc(x0 + r() * 220 - 120 * u, y0 + u * 320, 3, 0, 7); ctx.fill(); } ctx.restore(); }
 // a cloth tied over the nose (the wife cutting the fish)
-function a111NoseCloth(ctx, P) { const a = a111W(P, [-36, -187]), b = a111W(P, [36, -187]), c = a111W(P, [33, -166]), d = a111W(P, [-33, -166]); shape(ctx, [a, b, c, d, a], C.white, { lw: 3.5, seed: 720, dot: C.blue, pitch: 6, rad: 0.2, da: 0.3 }); }
+function a111NoseCloth(ctx, P, dn = 0) { const y = 26 * dn, a = a111W(P, [-36, -187 + y]), b = a111W(P, [36, -187 + y]), c = a111W(P, [33, -166 + y]), d = a111W(P, [-33, -166 + y]); shape(ctx, [a, b, c, d, a], C.white, { lw: 3.5, seed: 720, dot: C.blue, pitch: 6, rad: 0.2, da: 0.3 }); }
 // a face lit from below (coin light, pearl glow)
 function a111FaceLight(ctx, P, k, col = '#ffe680') { if (k <= 0.01) return; const h = a111Head(P), s = a111S(P) * (P.child ? 1.25 : 1); ctx.save(); ctx.globalAlpha = 0.35 * k; ctx.fillStyle = col; ctx.beginPath(); ctx.ellipse(h[0], h[1] + 14 * s, 34 * s, 26 * s, 0, 0, 7); ctx.fill(); ctx.restore(); }
 // a lens screwed into one eye (the jewel expert): side 1 = the figure's right eye

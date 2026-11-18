@@ -72,6 +72,7 @@ function a98Road13(ctx, t, camX, out) {
   if (t >= 134.52) R.sq = 1 + 0.04 * pulse(t, 134.52, 0.25);
   if (t >= 133.68 && t < 134.4) { R.handR = [-14, -128]; R.lid = a98In(t, 133.85, 134.0) ? 0.8 : 0; R.mouth = 'frown'; }
   const seat = rideOn(ctx, 'horse', H, R, { reins: !(t >= 133.68 && t < 134.4) });
+  a98RiderCloak(ctx, seat, s * 1.4, -1, t);   // v2: the gift cloak stays on
   // lead ropes
   const hand = [seat.x + 30 * s, seat.y - 70 * s]; let prev = hand;
   for (const hd of heads) { ctx.save(); ctx.strokeStyle = '#7a4212'; ctx.lineWidth = 3.5; ctx.beginPath(); ctx.moveTo(prev[0], prev[1]); ctx.quadraticCurveTo((prev[0] + hd[0]) / 2, Math.max(prev[1], hd[1]) + 40, hd[0], hd[1]); ctx.stroke(); ctx.restore(); prev = [hd[0] + 120 * s, 900 - 230 * s]; }

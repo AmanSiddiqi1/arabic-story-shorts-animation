@@ -20,3 +20,13 @@ Decisions the plan left open or that the measured sets changed:
 - Camera: plan zooms were raised (two-shots 1.8-2.6, street 1.7-2.3) with the ground at about 80 % of the panel so figures read at phone size.
 - Sound: the template bed plus six quiet effects at 61.95, 64.9, 83.2, 147.72, 168.75, 170.0 (all in measured pauses or after the last word, 168.39); master 0.6 at render.
 - Skipped: a separate `sneak` gait (the tiptoe is walk with larger amplitude, a lifted body and toe bob); per-frame awning flutter (the stalls are baked); the boy's chest "peek" shows only a glow and a small lid lift.
+
+## v2 (Fable review 1) decisions
+- World hand targets now win over body-local ones for every figure (`a104Lid`). In v1 most `handLW/handRW` reaches (the meal, the dish to the chest, the dish onto the goldsmith's counter, porter/visitor reaches) were silently cancelled by a rest pose set earlier; v2 reaches actually play.
+- Court invitation two-shot: dog1 backs to x 470 (not 520), camera {x 355, y 720, zoom 1.6} for 55.2-66.2 and 70.3-71.8; meal push-in {x 300, y 767, zoom 2.2} 66.8-69.4.
+- Chain stakes moved behind each dog (x + 74 s), drawn before the dog.
+- Sneak (S3): camera {x 255, y 715, zoom 1.9} until 26.14; dog1 stays at the right edge (cannot be moved without changing S4 marks).
+- S9/S10 shot held until 110.95, when the YEARS LATER card fully covers the panel (transition p 0.5 at 111.0).
+- Neighbour points left, away from the palace; the whip into the hut now pans left (camera 1740 -> 1280, streaks reversed).
+- Hut: old dog moves 28 units toward the visitor while it sits up (156.1) and is drawn over the visitor's lap 156.1-161.6 so its face stays clear; it lies down at 169.5 beside the owner (chin on the foot skipped: it would need the dog to flip direction).
+- Ending camera: medium shot {x 440, zoom 1.65} for the visitor's look-back (door edge at left), then push-in to {x 600, zoom 2.4} by 169.6 under THE END.

@@ -1,0 +1,86 @@
+Verdict: REVISE
+
+# AN-112 Abu Hassan al-Ziyadi and the Khorasan Man: Fable review, round 1 (v1, 174.9 s)
+
+Reviewed: all 30 strips of `review/v1_pack/strips/` in order, plus full-size frames pulled into `review/v1_pack/extra/` (montages `m1..m13.jpg`, `n1..n3.jpg`). Narration, subtitle text and timing were not touched and must not be.
+
+## Summary
+
+The story is told correctly and in order, every beat of the plan is present, the ending holds, and the subtitles are verbatim, well placed and readable in both languages (three-line Arabic at 5.1-14.0 s still fits). No blockers. What works well and must be kept: the moth and PURSE: 0 (5.8-8.5), the purse thud and counter (24.4-26.0), the two-arrow terms of the deposit with the bow (33.3-41.3), the sunrise and knock (56.7-59.0), the crossed-out MECCA cloud (66.6), the mule looking back with two question marks (88.3-89.5), the three story boxes (100.6-102.9), the NIGHT 1/2/3 counter, the bare-room arrows (143.2-144.0), the turban dropping over his eyes (160.2) and the balloon hopping along the listeners (168.7-171.5).
+
+It is a REVISE because the two emotional high points lose their acting to props and overlaps: in the forgiveness scene (133-150 s) Abu Hassan's face is behind two purses for 17 seconds and the "closing palm" that the plan calls the heart of the film cannot be seen; the guards' reveal (89.7-94.6 and 114.6) has no visible guard face at all. Added to that are four pieces of lettering that collide with each other or are on screen too short to read. All fixes are staging, z-order and timing; nothing needs a new drawing.
+
+## Notes
+
+### 1. 133.3-150.6 s, MAJOR: Abu Hassan's face is hidden behind the purses through the whole forgiveness scene
+- What: from "عرض" (133.26) to the wipe at 150.5 Abu holds two purses stacked at chin height. They cover his mouth, beard and at times one eye (frames 135.7, 143.5, 145.6, 148.7, 149.6). In the close-up 139.2-142.5 he is cut by the right panel edge, leaving half a face and two cropped purses.
+- Why: this is the payoff of the film. The plan wants Abu at peace (straight turban), offering, then moved. None of his reactions can be read, and three purses on his side of the desk blur the simple idea "one purse, 10,000, offered in full".
+- Fix: Abu carries only ONE purse home (the repay purse); the other two can sit on the bare shelf or on the floor by the mat from 128.2 as a quiet sign of the fresh start. At "عرض" 133.26 he lowers it to the desk with both hands and slides it across (lands in the visitor's palm at "المبلغ" 134.56 as now). From 134.6 his hands are empty: `PERSON_HANDS.reachBoth` open toward the visitor on "كاملًا" 135.38, then one hand to the chest while he tells the Caliph's story (137.62). During the tears (139.26-147) keep Abu fully inside the frame: either keep the two-shot, or limit the push so Abu's whole head stays at least 60 px inside the right edge. Give him a listening pose: `brow` -0.5, `wet` 0.6 from 141.5, `gaze` on the visitor, `tip` slightly toward him, one slow blink at 144.
+
+### 2. 145.2-150.6 s, MAJOR: the closing palm and the refusal are not readable
+- What: at "طالبه" 145.20 the Khorasani is holding the purse in both hands, so there is no open palm to close (frame 145.6). The refusal (147.48-149.3) is three small slides of a purse that is one of three, and the final "hand on Abu's shoulder" at "الدراهم" 149.74 lands on the purses in front of Abu's face (frame 150.1).
+- Why: the plan's mirror with S7 (the same open palm that demanded "MY MONEY / NOW!" at 68.1-70.1 now closes) is the film's best idea and it is lost.
+- Fix: after the purse lands in his palm (134.56) he sets it on HIS end of the desk by 138.5 so both hands are free. 139.26 "بكى": `teardrops`, sleeve wipe as now. 142.56-144.0: the look round the room with the arrows (keep). At 144.4 he raises the same open palm as S7 (`PERSON_HANDS.reach`, identical height and framing to 68.5); on "طالبه" 145.20 the fingers close into a fist and the hand drops to his chest by 145.9, with a 0.4 s hold and a small push-in on the hand. "عفا" 147.48: he pushes the single purse across the desk to Abu; 148.00 Abu pushes it back; "ورفض" 148.52 he pushes it harder so it bumps Abu's belly (`landSquash` on the purse, Abu `sq` 0.94); "أخذ" 149.28 folded arms and one eye opening as now; "الدراهم" 149.74 he steps in and the hand lands on Abu's shoulder (Abu's hands are down holding the purse at belt height, so the shoulder is clear). Abu's tear at 150.0 can stay.
+
+### 3. 89.7-94.6 s and 113.7-115.7 s, MAJOR: the guards have no visible faces; the mule's head is covered
+- What: in the street (frames 91.6, 92.3, 93.6) guard 1 is behind the portrait scroll and the mule's head, guard 2 is behind the mule's rump; only two helmets and two spears read. The portrait scroll sits exactly on the mule's head. In court the guard's head is a flat blue or red block with no face (frames 98.6, 101.6, 160.7, 163.3, 165.3; it looks like the neck cloth or a back view drawn over the face), and at "يبحث" 114.62 he holds the portrait in front of his own face, so the planned grin does not exist on screen.
+- Why: surprise 2 of the plan ("the guards are not arresting him") needs a stern face in the street and the same face grinning at 114.62. Without faces the guards are furniture and the payoff of the portrait is only half delivered.
+- Fix: street: stop the mule 120 px further left, bring guard 1 to stand clear in FRONT of the mule's nose (x gap at least 40 px, facing left toward Abu) and guard 2 clear behind the tail, both drawn in front of the set and not overlapped by the animal. Guard 1 holds the portrait up at arm's length ABOVE the mule's head and beside Abu's face (scroll centre about 150 px right of Abu's head, same height) so face and drawing can be compared at "يبحثون" 91.12; his eyes flick portrait, Abu, portrait (`gaze`), `brow` 0.5 stern; guard 2, 0.3 s late, leans to check guard 1. The sealed order then comes up in guard 2's hand as now. Keep the mule's ears flat and its head visible. Court: make the guard face the camera three-quarter with a real face (check why the head renders as a flat block in `a112_court.js`); at 114.62 he holds the portrait beside his head, not over it, `mouth: 'smile'`, `brow` -0.3, and taps the drawing once; guard and portrait must stay inside the frame until 116.0.
+
+### 4. 124.96-125.9 s and 135.38-136.6 s, MAJOR: lettering printed on top of the counters
+- What: "WOW!" (S.emphasis at 500, 210) lands on the last digits of the 50,000 counter (frame 125.5 reads "50,00" + WOW!). "ALL OF IT" (470, 545) lands on the 10,000 counter (frame 135.7: the number is unreadable behind the label).
+- Why: both numbers are the point of their beats (the total gift; the full sum returned).
+- Fix: 125.0: move WOW! to the left over Abu (about x 250, y 330 in panel space, clear of the counter and of both heads), or drop it and let the counter's own burst and Abu's hop carry the beat. 135.38: show the counter at 10,000 from 135.38 to 136.0 alone, then replace it (not overlay) with "ALL OF IT" 136.0-137.4 at the same place; or put the label under the purse in the visitor's hands with an arrow to the purse.
+
+### 5. 0.2-4.3 s, MAJOR (first impression): the title's first line is half hidden
+- What: the title is two stacked yellow boxes; "ABU HASSAN AND" is cut through the middle by the box "THE KHORASAN MAN" (frame 2.0, and every strip frame 0.7-4.0).
+- Why: it is the first thing the viewer reads and it looks broken.
+- Fix: raise the first line by about 45 px (or reduce the overlap of the two boxes to 6-8 px) so the whole of "ABU HASSAN AND" is readable; keep both boxes above the pavement line and off Abu's feet. Check a still at 2.0.
+
+### 6. 62.2-70.1 s, MAJOR: the news of the father's death is delivered with hands on hips
+- What: both men stand in the default hands-on-hips idle for most of 62-68 (frames 64.1, 66.3). The Khorasani's brow reads stern rather than grieving, no tear is visible at "مات" 64.38, and Abu listens in the same pose. The father in the cloud is a small waving outline in a mostly empty cloud.
+- Why: this is the hinge that turns the comedy into dread. Nobody is a villain (plan section 1); a stern man with fists on his hips reads as an accuser, which makes the later tears feel unprepared.
+- Fix: Khorasani 62.2-66.5: head lowered (`tip` forward 0.15, `sq` 0.94), `brow` -0.6, `lid` 0.4, `wet` 0.8, `gaze` down, one hand flat on the chest, the other hanging; on "أباه" 63.76 he looks up to the cloud, on "مات" 64.38 one `teardrops` drop and a slow blink. Father cloud: draw the father about 1.6 times larger and centred, standing still with a gentle smile (no wave), fading 64.4-65.2 as now. Abu 62.5-66.5: hand to his mouth then to his chest, `brow` -0.5, a small step toward the visitor at 65.0 (sympathy first), THEN his gaze slides to the empty purse on the peg at 66.6 and he swallows (`sq` 0.92) so the audience sees him remember. The open palm at "ويريد" 68.14 stays, but tired and patient, not angry: `brow` -0.2, `lid` 0.5. Consider making "NOW!" smaller or changing it to "TODAY" in black, since the red shout fights the grief.
+
+### 7. 13.34-14.2 s, 60.9-61.55 s, 77.6-78.5 s, 148.6-149.4 s, MAJOR: key lettering is on screen too briefly, or covered
+- What: "DEBTS!" appears at 13.34 and the wipe covers it from about 13.6 (about 0.3 s readable; strip 13.5-13.7). "ALREADY?!" is up 0.65 s at the top edge beside the window while the empty purse is held in front of Abu's face, hiding one eye and his mouth (frame 61.1). "A FRIEND HAS IT" is up 0.9 s, half of it fading over the cloud tail (frame 77.7). "KEEP IT!" is 0.8 s in olive on the ochre wall, low contrast and far from the speaker (frame 148.7).
+- Why: these four words carry the debt, the shock, the lie and the refusal for viewers who do not read Arabic.
+- Fix: DEBTS!: show from "عليه" 12.62 to 13.96 and start the wipe no earlier than 13.96 (there is a pause to 14.54). ALREADY?!: 60.84 to 62.1, moved to sit above Abu's head and clear of the window (about y 380), and keep the purse OUT of his hand in this shot (it is on the peg before and after, frames 58.7 and 61.5, so the hand-held purse is also a continuity jump); both hands go to his turban instead. A FRIEND HAS IT: 77.38 to 78.7 fully opaque, placed inside or directly under the cloud, not on its tail. KEEP IT!: red or white with black outline, from 148.52 to 149.9, placed above the Khorasani's pushing hand.
+
+### 8. 105.2-112.6 s, MINOR to MAJOR: the dream is a small figure in a large empty frame, and the portrait covers the balloon text
+- What: the bed is about a third of the panel width and the Caliph about 110 px tall in a 1060 x 1300 navy field (frames 108.0, 109.6, 110.8). After the first sit-up (107.64) he stays in one tilted pose from 109.2 to 112.5 (3.3 s). At "بمساعدة" 110.54 the portrait scroll is drawn over the end of "ABU HASSAN!" (frame 110.8).
+- Why: this is the one formal change of the film (plan section 4) and the explanation of the whole rescue; it should be the richest picture, not the emptiest.
+- Fix: scale bed and Caliph by about 1.7 and lower them so the bed spans x 250-800; keep the moon top left and the balloon top right. Three clear beats on "تكررت" 108.30: lie, bolt up (`anticipate` + `landSquash`), flop back, each with its NIGHT label, each wake-up more tired (`lid` 0.2, 0.4, 0.6; turban more crooked). On "تأمره" 109.12 the arrow pokes him and he hops (`hop`) and salutes or nods. At 110.54 the portrait unrolls BELOW the balloon, between balloon and Caliph, and he looks at it and points (`gaze` to the scroll, `PERSON_HANDS.reach`), then throws the blanket off at 111.8 as if getting up to act.
+
+### 9. 116.1-127.7 s, MINOR: the three gifts are staged on top of the people
+- What: the first purse lands at the left panel edge with its label "TO REPAY THE TRUST" fading in over it and an arrow pointing out of frame (frames 118.8, strip 119.0-120.0). The servant boy walks and stands in front of Abu (frame 120.6) and later sits on the big purse in front of the Caliph's body (frame 125.5), so one of the two principals is covered for most of 120-126. "FOR A FRESH START" sits in the bottom right corner away from its purse.
+- Why: Abu's growing disbelief across the three purses is the fun of this scene, and the Caliph's pleasure in giving is his character.
+- Fix: widen the shot a little or shift the landing spots right (about x 360, 500, 660) so purse 1 is fully in frame; boy enters and exits BEHIND the purses and to the left of Abu, never crossing either man; he lets go of the big purse and stumbles back out of frame at 124.9 instead of sitting on it. Each label directly under its own purse, fully opaque for at least 1.2 s, no arrow leaving the frame. Abu escalates: 116.7 blink and `brow` -0.3; 120.42 double take (head turn to the Caliph and back); 123.74 jaw drop `mouth: 'o'`, small hop at the 50,000; bow at 126.58 as now.
+
+### 10. 46.2-55.9 s, MINOR: the spending scene hides Abu and stacks graphics
+- What: the coin glow rays cover Abu's mouth and chin from 46.5 to 55.0; the camera pan to the door at 47.2-48.5 leaves him cut by the right edge (frame 47.6); from 52.3 the PURSE counter sits on top of the hope cloud and "PLENTY OF TIME" is jammed under it (frame 54.5). Only one shopkeeper is seen at the door.
+- Why: the plan wants "the counter running down under his contented face"; the false comfort before the knock is what makes the knock funny.
+- Fix: hold the purse lower (lap height) with shorter rays so the face is clear; keep Abu inside the frame during the door pan (pan less, or cut the pan and let coins arc to the door in a wider shot); move the hope cloud to the top RIGHT above Abu, leaving the counter alone at top left; let "PLENTY OF TIME" stand 53.28-55.6 inside the cloud. Show the contented face: `mouth: 'smile'`, `lid` 0.6, a small sway, then the empty purse flops at 54.7.
+
+### 11. 78.8-82.3 s, MINOR: the sleepless night is hard to read
+- What: Abu lies with his head at the far right, rotated 90 degrees, under a grey overlay; the empty purse beside his head looks like a second object on the floor, and the figure does not change between 78.7 and 81.2 apart from the blanket at 82.0 (frames 80.0, 81.7).
+- Why: 3.5 s is short; the image has to say "awake and afraid" at a glance.
+- Fix: push in to a medium shot on the head and shoulders (zoom about 1.5), keep the moonbeam ON his face so the whites of the eyes are the brightest thing in frame, eyes darting left, right, up on "قلقًا" 80.50 (`gaze` keyframes, no blink), one full turn-over at 80.9, then the blanket over the head at "ينام" 81.70. Move the purse to the peg or under his hand, not at his crown.
+
+### 12. 84.5-85.0 s and 162.2-165.9 s, MINOR polish
+- 84.5-85.0: the sky jumps from night blue through olive to flat yellow in half a second and the moon vanishes; ease it over about 1.2 s around "الفجر" 84.54 (`skyCycle`), moon setting rather than disappearing.
+- 164.4-165.8: the salary purse and sealed scroll are held up by the boy in front of Abu's chest and partly behind the boy's head (frame 165.3); have the boy stop to Abu's left and hold them out at arm's length so both are seen, and let Abu lift the oversized turban off one eye to look at them (ties the turban gag to the ending at 172.6).
+- 58.4-59.3: KNOCK KNOCK! is drawn next to the window in the pre-pan framing, not at the door; put it at the door (as at 14.8 and 129.7).
+
+## Subtitles and faithfulness
+- Arabic verbatim, large, centred; English blue below, readable at phone size; chunk changes follow the speech. No overflow found. No change requested.
+- English is accurate to the Arabic as it stands. On-screen comic lettering (THE APPOINTED DAY for "يوم رسمي", MEDINA, SALARY, EVERY MONTH) agrees with the narration.
+- Family-friendly: the father's death (fading figure) and the "if I die" milestone are gentle; the robber cloud is harmless. Mecca and Medina are neutral signpost and palm-town images.
+
+## Reusable techniques worth adding to the Library
+- Mirror gesture: the same framing and hand pose used twice with opposite meaning (S7 demand, S17 closing palm). Worth a line in the guide under emotional storytelling once it reads.
+- "Counter then label" rule: a counter and a label never share a spot at the same time; replace, do not overlay (would have prevented note 4). Also "no prop above the collarbone of a speaking or reacting character" (notes 1, 7, 10).
+- The full-panel dream cloud (thoughtCloud grown to the frame, court visible in the corners) is a good transition device; record the scale guidance (subject at least a third of the panel height).
+- Purse with fill/open/bow and the running counter, the sealed scroll with portrait, the soldier and judge presets are all reusable as planned.
+
+Second review advice: Yes. A second Fable review of v2 is warranted, limited to 60-70 s, 89-95 s, 105-127 s and 128-151 s. Notes 1, 2, 3 and 6 re-stage acting in the film's emotional core (new hand poses, new blocking, z-order of guards and mule), which can introduce fresh overlaps or timing slips against the words; the lettering fixes (4, 5, 7) only need the animator's own stills at 2.0, 13.4, 61.2, 77.9, 125.5, 135.7 and 149.0.

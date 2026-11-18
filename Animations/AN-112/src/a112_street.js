@@ -58,7 +58,8 @@ function a112Street(ctx, t, cam) {
 // ---------------- S10-S11: the dawn street ----------------
 const A112_DW = 2000, A112_LANES = [480, 1010];
 // mule x: out of the lane at the left, plods to the fork, stops (86.82); led to the palace from 94.64
-const a112MuleX = (t) => a112Tr(t, [[0, 240], [83.25, 740, 3.55], [94.64, 1520, 1.75]]);
+const a112MuleX = (t) => a112Tr(t, [[0, 240], [83.25, 620, 3.55], [94.64, 1400, 1.75]]);
+const A112_G1X = 950, A112_G2X = 290;   // v2: guard 1 clear in front of the mule's nose, guard 2 clear behind its tail
 function a112Mule(t) {
   const W = walk(a112MuleX, t, { stride: GAIT.donkey * 1.12 });
   const P = { ...W, y: 900, s: 1.12, pal: 1, dir: 1, seed: 71 };
@@ -86,42 +87,52 @@ function a112DrawGuard(ctx, t, P, col) {
   person(ctx, P);
   const c = a112W(P, [0, -122]); shape(ctx, ell(c[0], c[1], 20 * a112S(P), 20 * a112S(P), 18), STONE2, { lw: 4, seed: 67, dot: STONED, pitch: 6, rad: 0.2 });
   a112Hat(ctx, P, 'helmet', { col: col === C.red ? C.blue : C.red });
-  if (P.spear !== false) { const h = a112HandW(P, 'R'); a112Spear(ctx, h[0], h[1] - (P.spearUp || 0), a112S(P), (P.dir || 1) * 0.04, 340); }
+  if (P.spear !== false) { const h = a112HandW(P, P.spearSide || 'R'); a112Spear(ctx, h[0], h[1] - (P.spearUp || 0), a112S(P), P.spearLean ?? (P.dir || 1) * 0.04, 340); }
 }
 function a112Guard1(t) {   // leader, red; comes out of the right lane, stern; carries the portrait
-  const xf = (tt) => a112Tr(tt, [[0, A112_LANES[1] + 60], [89.74, 930, 0.7], [94.64, 1720, 1.75]]), W = a112Walk(xf, t, 24);
-  const P = { ...A112_GUARD(C.red), ...W, y: 900, s: 1.0, seed: 81, dir: t < 94.64 ? -1 : 1 };
+  const xf = (tt) => a112Tr(tt, [[0, A112_LANES[1] + 80], [89.74, A112_G1X, 0.7], [94.64, A112_G1X + 780, 1.75]]), W = a112Walk(xf, t, 24);
+  const P = { ...A112_GUARD(C.red), ...W, y: 900, s: 1.08, seed: 81, dir: t < 94.64 ? -1 : 1 };
   if (P.amp < 0.04) P.amp = 0;
-  P.brow = 0.8; P.mouth = 'frown'; P.talk = talk(t, [[91.3, 92.0], [92.9, 93.6]], 0) * 0.6; P.drop = a112Nods(t, [92.02], 0.3, 12);
-  P.gaze = a112Look(t, P, [[0, [800, 690]], [91.12, [860, 760]], [91.4, [800, 680]], [91.7, [860, 760]], [92.0, [690, 700]], [92.02, [600, 700]], [92.4, [800, 680]], [94.64, [1900, 700]]], 0.12);
-  P.aR = a112Arm(t, P, 1, [[0, [30, -100]]]); P.aL = a112Arm(t, P, -1, [[0, A112H.restL], [91.12, [60, -150], 0.3], [94.4, A112H.restL, 0.2], [94.64, (tt) => ({ w: [a112MuleX(tt) + 230, 700] }), 0.3]]);
+  P.brow = 0.5; P.mouth = 'frown'; P.talk = talk(t, [[92.1, 92.45], [92.9, 93.6]], 0) * 0.6; P.drop = a112Nods(t, [92.02], 0.3, 10);
+  // eyes flick portrait, Abu, portrait, Abu (91.12-92.0)
+  const por = () => a112G1Portrait(t, P).c, ab = () => a112RiderHead(t);
+  P.gaze = a112Look(t, P, [[0, ab], [91.12, por], [91.45, ab], [91.75, por], [92.0, ab], [94.64, [1900, 700]]], 0.1);
+  P.spearLean = -0.2 * a112Win(t, 90.9, 94.3, 0.3) - 0.04;
+  P.aR = a112Arm(t, P, 1, [[0, [30, -100]], [90.9, [66, -186], 0.3], [94.2, [30, -100], 0.25]]);
+  P.aL = a112Arm(t, P, -1, [[0, A112H.restL], [94.64, (tt) => ({ w: [a112MuleX(tt) + 230, 700] }), 0.3]]);
   return P;
 }
 function a112Guard2(t) {   // taller, blue, always half a beat late; out of the left lane behind the mule
-  const xf = (tt) => a112Tr(tt, [[0, A112_LANES[0] - 40], [90.46, 590, 0.7], [94.9, 1290, 1.75]]), W = a112Walk(xf, t, 25);
-  const P = { ...A112_GUARD(C.blue), ...W, y: 900, s: 1.05, seed: 82, dir: 1 };
+  const xf = (tt) => a112Tr(tt, [[0, A112_LANES[0] - 20], [90.46, A112_G2X, 0.7], [94.9, A112_G2X + 780, 1.75]]), W = a112Walk(xf, t, 25);
+  const P = { ...A112_GUARD(C.blue), ...W, y: 900, s: 1.12, seed: 82, dir: 1 };
   if (P.amp < 0.04) P.amp = 0;
   P.brow = 0.5; P.mouth = 'closed'; P.drop = -4 + a112Nods(t, [92.3], 0.3, 10);
-  P.gaze = a112Look(t, P, [[0, [740, 680]], [91.4, [930, 700]], [92.48, [600, 760]], [93.1, [760, 690]], [94.9, [1500, 700]]], 0.15);
+  P.tip = 0.12 * a112Win(t, 91.42, 92.3, 0.2);   // half a beat late: leans in to check guard 1's portrait
+  P.gaze = a112Look(t, P, [[0, a112RiderHead(t)], [91.42, () => a112G1Portrait(t, a112Guard1(t)).c], [92.0, a112RiderHead(t)], [92.48, [400, 760]], [93.1, a112RiderHead(t)], [94.9, [1500, 700]]], 0.15);
   P.aR = a112Arm(t, P, 1, [[0, [30, -100]]]); P.aL = a112Arm(t, P, -1, [[0, A112H.restL], [92.48, [70, -140], 0.3], [94.6, A112H.restL, 0.3]]);
   return P;
 }
+// Abu's head on the mule (world), from the rider rig
+function a112RiderHead(t) { const M = a112Mule(t), st = mountSeat('donkey', M); return [st.x + 6, st.y - 168]; }
+// guard 1's portrait: held up by its bottom roll at arm's length, above the mule's head, beside Abu's face. Returns the top point and the centre
+// v2: the portrait hangs from the tip of his raised spear, above the mule's head and beside Abu's face
+function a112G1Portrait(t, G1) { const h = a112HandW(G1, 'R'), ln = G1.spearLean ?? -0.2, k = 220 * a112S(G1), tx = h[0] + Math.sin(ln) * k, ty = h[1] - Math.cos(ln) * k + 8, L = 150, s = 0.95, len = A112B(t, 91.12, 0.35);
+  return { x: tx, y: ty, len, L, s, c: [tx, ty + L * s * 0.45] }; }
 function a112Dawn(ctx, t, cam) {
-  const u = a112Tr(t, [[0, 0.9], [84.24, 1.0, 1.4]]) % 1;
+  const u = a112Tr(t, [[0, 0.86], [83.7, 0.999, 2.1]]);   // v2: night eases to dawn over about 1.6 s around 84.54, the moon sets
   marketStreet(ctx, { w: A112_DW, palette: 'cold', u: u === 0 ? 0.999 : u, stalls: [{ x: 280, kind: 'cloth', state: 'closed' }, { x: 1250, kind: 'pots', state: 'closed' }], palace: 'lit', palaceDoor: A112B(t, 96.3, 0.5), windowsLit: 0.3 + 0.7 * A112B(t, 84.6, 0.4), t, camX: cam.x - 500 / cam.zoom });
   // the two lane mouths of the fork (dark openings) and the light from the palace door
   for (const lx of A112_LANES) { shape(ctx, townArchPts(lx - 62, lx + 62, 600, 900, 'round'), '#0a1a4a', { lw: 7, seed: 480 }); }
   if (t > 96.3) { const L = A112B(t, 96.3, 0.5), D = marketStreetAnchors({ w: A112_DW }).palace.door; ctx.save(); ctx.globalAlpha = 0.45 * L; ctx.fillStyle = C.yellow; K.poly(ctx, [[D.x0, 872], [D.x1, 872], [D.x1 + 120, 1000], [D.x0 - 160, 1000]], true); ctx.fill(); ctx.restore(); }
   const G1 = a112Guard1(t), G2 = a112Guard2(t), M = a112Mule(t), R = a112Rider(t);
   const g1in = t > 89.74, g2in = t > 90.46;
-  if (g2in) a112DrawGuard(ctx, t, G2, C.blue);
   // S10 start: Abu leads the mule out, then hops on (83.0)
   if (t < 83.0) { const Ab = { x: a112Tr(t, [[0, 140], [82.32, 300, 0.6]]), y: 900 - hop(t, 82.75, 0.3, 0, 0, 30)[1], s: 1.12, dir: 1, costume: 'physician', age: 0.55, seed: 31, lid: 0.5, mouth: 'frown', handR: [70, -130] };
     Object.assign(Ab, { ph: Ab.x / 24, amp: t < 82.9 ? 1 : 0 }); donkey(ctx, { ...M, x: 330 }); person(ctx, Ab); }
   else { const mp = { ...M, sq: landSquash(t, 83.0, 0.05) }; rideOn(ctx, 'donkey', mp, { ...R, s: 1.06, bob: 0 }); }
+  if (g2in) a112DrawGuard(ctx, t, G2, C.blue);   // both guards in front of the mule, clear of it
   if (g1in) { const P = { ...G1 }; a112DrawGuard(ctx, t, P, C.red);
-    // the spear tip slides into view first
-    if (a112In(t, 91.12, 94.6)) { const h = a112HandW(P, 'L'); a112Scroll(ctx, h[0] - 34, h[1] - 70, { L: 150, w: 80, len: A112B(t, 91.12, 0.35), portrait: A112B(t, 91.4, 0.3), s: 0.95 }); } }
+    if (a112In(t, 91.12, 94.3)) { const Pt = a112G1Portrait(t, P); ctx.save(); ctx.globalAlpha = 1 - A112B(t, 94.0, 0.3); a112Scroll(ctx, Pt.x, Pt.y, { L: Pt.L, w: 84, len: Pt.len, portrait: A112B(t, 91.4, 0.3), s: Pt.s, lines: false }); ctx.restore(); } }
   if (g2in && a112In(t, 92.48, 94.6)) { const h = a112HandW(G2, 'L'); a112Scroll(ctx, h[0] + 30, h[1] - 70, { L: 150, w: 80, len: A112B(t, 92.48, 0.3), seal: A112B(t, 92.7, 0.3), lines: true, s: 0.95 }); }
   // the bundle of reins: guard1 leads the mule
   if (t > 94.9) { const h = a112HandW(G1, 'L'), m = [M.x + 190 * M.s, M.y - 250 * M.s]; ctx.save(); ctx.lineWidth = 4; ctx.strokeStyle = '#5b3a1e'; ctx.beginPath(); ctx.moveTo(m[0], m[1]); ctx.quadraticCurveTo((m[0] + h[0]) / 2, Math.max(m[1], h[1]) + 30, h[0], h[1]); ctx.stroke(); ctx.restore(); }

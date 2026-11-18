@@ -73,7 +73,7 @@ function a104DogRaw(ctx, P) {
       else { const Fl = [hx + 46, 0], Kl = [hx + 4, -24]; Ft = BEAST.lp(Ft, Fl, lie); Kn = BEAST.lp(Kn, Kl, lie); } }
     if (fore && near && rz > 0) {
       let tg = P.pawW ? [(P.pawW[0] - P.x) / (dir * s), (P.pawW[1] - P.y) / s] : [H[0] + 62, H[1] + 40];
-      const d = Math.hypot(tg[0] - H[0], tg[1] - H[1]), mx = 91; if (d > mx) tg = [H[0] + (tg[0] - H[0]) * mx / d, H[1] + (tg[1] - H[1]) * mx / d];
+      const d = Math.hypot(tg[0] - H[0], tg[1] - H[1]), mx = 108; if (d > mx) tg = [H[0] + (tg[0] - H[0]) * mx / d, H[1] + (tg[1] - H[1]) * mx / d];
       Ft = BEAST.lp(Ft, tg, rz); Kn = BEAST.lp(Kn, BEAST.ik(H, tg, 44, 50, -1), rz);
     }
     return { H, Kn, F: Ft, near, fore }; });

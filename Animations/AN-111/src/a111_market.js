@@ -45,7 +45,8 @@ const A111_S6FX = a111X([[26.5, 990], [27.85, 640], [36.3, 640], [37.3, 940]]);
 const A111_PALM6 = [556, 780];
 function a111S6(ctx, t, cam) {
   a111Mkt(ctx, t, cam, A111_MKT_A);
-  a111Keeper(ctx, t, 450, { costume: 'bedouin', seed: 41 }, { mouth: 'smile', hR: a111In(t, 24.1, 25.1) ? { w: [400, 740] } : [30, -100], gaze: t < 25.5 ? [-0.6, 0.3] : [0.2, 0.2] });
+  const kx = a111X([[25.3, 450], [26.4, 290]]);   // after the sale the keeper moves off to tidy the far end of his stall (no second face behind the hero)
+  a111Keeper(ctx, t, kx(t), { costume: 'bedouin', seed: 41 }, { mouth: 'smile', hR: a111In(t, 24.1, 25.1) ? { w: [400, 740] } : t > 26.4 ? { w: [270, 770] } : [30, -100], gaze: t < 25.5 ? [-0.6, 0.3] : t < 26.4 ? [-0.8, 0.1] : [-0.3, 0.6] });
   a111Counter(ctx, 224, 536, 790); a111Skein(ctx, 300, 778, { n: 3, s: 0.6 });
   const Hh = a111P(A111_HERO, { y: 900, ...a111Walk(A111_S6HX, t) }), F = a111P(A111_FRIEND, { y: 900, ...a111Walk(A111_S6FX, t, 0.7) });
   const fx = F.x, leaving = t > 36.3;
@@ -76,23 +77,22 @@ function a111S6(ctx, t, cam) {
 }
 
 // ---------- S10 (58.90-64.70): nobody wants the platter or the jar ----------
-const A111_S10HX = a111X([[58.9, 420], [59.8, 640]]), A111_S10LX = a111X([[60.0, 1080], [60.55, 790], [61.3, 790], [62.7, 230]]), A111_S10SX = a111X([[61.35, 210], [61.85, 520], [62.45, 520], [63.3, 160]]);
+const A111_S10HX = a111X([[58.9, 420], [59.8, 640]]), A111_S10LX = a111X([[59.6, 1080], [60.35, 772], [61.55, 772], [62.95, 230]]), A111_S10SX = a111X([[61.4, 210], [61.9, 478], [62.85, 478], [63.5, 160]]);
 function a111S10(ctx, t, cam) {
   a111Mkt(ctx, t, cam, A111_MKT_B); a111Counter(ctx, 964, 1276, 790);
-  const Hh = a111P(A111_HERO, { y: 900, ...a111Walk(A111_S10HX, t) }), L = a111P(A111_LADY, { y: 892, ...a111Walk(A111_S10LX, t, 0.86) }), Sv = a111P(A111_SERVANT, { y: 904, ...a111Walk(A111_S10SX, t, 0.86) });
+  const Hh = a111P(A111_HERO, { y: 900, ...a111Walk(A111_S10HX, t) }), L = a111P(A111_LADY, { y: t < 61.55 ? 892 : K.lerp(892, 866, a111B(t, 61.55, 0.4)), ...a111Walk(A111_S10LX, t, 0.86) }), Sv = a111P(A111_SERVANT, { y: 904, ...a111Walk(A111_S10SX, t, 0.86) });
   const sink = 12 * a111B(t, 61.3, 0.3) + 16 * a111B(t, 63.46, 0.35);
   Hh.hR = t < 59.8 ? [26, -128] : a111Mix([26, -128], [70 - sink, -138 + sink * 2], a111B(t, 59.8, 0.3)); Hh.hL = t < 59.8 ? [-26, -128] : a111Mix([-26, -128], [-70 + sink, -138 + sink * 2], a111B(t, 59.8, 0.3));
   Hh.sq = t > 63.46 ? 0.97 : 1; Hh.lid = t > 63.46 && t < 64.4 ? Math.max(0.4, blink(t, 3)) : null; Hh.mouth = t < 61.3 ? 'smile' : 'closed'; Hh.brow = t > 64.4 ? -0.6 : -0.3;
   Hh.drop = t > 63.46 && t < 64.4 ? 6 : -4 * pulse(t, 64.5, 0.3); Hh.look = t > 64.4 ? 0.6 * a111B(t, 64.4, 0.2) : 0;
   a111Gz(Hh, gazePlan(t, [[0, [800, 760]], [60.5, () => a111Head(L)], [61.5, () => a111Head(Sv)], [63.46, [640, 860]], [64.4, [1100, 780]]], 0.12));
   Hh.after = (c, Q) => { a111Platter(c, Q.HR[0] + 10, Q.HR[1] - 18, { r: 34, ry: 0.92, crack: 1 }); a111Jar(c, Q.HL[0] - 6, Q.HL[1] + 22, { h: 70, chip: true, rot: swing(t, 62.0, 0.12, 3, 4) }); };
-  L.mouth = a111In(t, 60.7, 61.4) ? 'frown' : 'closed'; L.look = a111In(t, 60.8, 61.3) ? 0.7 * Math.sin((t - 60.8) * 25) : 0; L.hR = [30, -110]; L.hL = [-30, -100];
-  a111Gz(L, t < 61.3 ? [Hh.x + 80, 760] : [200, 800]);
-  Sv.hR = a111HT(t, Sv, [[0, [36, -70]], [61.85, () => ({ w: Hh.HL ? [Hh.HL[0] - 10, Hh.HL[1] + 2] : [600, 800] }), 0.2], [62.15, [36, -70], 0.2]]);
-  Sv.hL = a111In(t, 62.2, 62.8) ? [-60 + 10 * Math.sin(t * 22), -190] : [-36, -70]; Sv.brow = a111In(t, 61.8, 62.8) ? -0.5 : 0; Sv.mouth = t > 62.2 ? 'frown' : 'closed';
-  a111Gz(Sv, t < 62.4 ? [Hh.x - 70, 790] : [100, 800]);
+  L.mouth = a111In(t, 60.7, 61.6) ? 'frown' : 'closed'; L.look = a111Shake(t, 60.8, 0.6, 0.8); L.tip = a111Shake(t, 60.8, 0.6, 0.06); L.hR = a111In(t, 60.9, 61.5) ? [56 + 8 * Math.sin(t * 20), -150] : [30, -110]; L.hL = [-30, -100];
+  a111Gz(L, t < 60.35 ? [Hh.x + 80, 760] : t < 61.55 ? (Hh.HR ? [Hh.HR[0] + 10, Hh.HR[1] - 18] : [700, 760]) : [200, 800]);
+  Sv.hR = a111HT(t, Sv, [[0, [36, -70]], [61.95, [60, -120], 0.2], [62.15, [36, -70], 0.2]]);
+  Sv.hL = a111In(t, 62.2, 62.8) ? [-60 + 10 * Math.sin(t * 22), -190] : [-36, -70]; Sv.look = a111Shake(t, 62.2, 0.55, 0.6); Sv.brow = a111In(t, 61.8, 62.8) ? -0.5 : 0; Sv.mouth = t > 62.2 ? 'frown' : 'closed';
+  a111Gz(Sv, t < 61.9 ? [Hh.x - 70, 790] : t < 62.85 ? (Hh.HL ? [Hh.HL[0] - 6, Hh.HL[1] + 20] : [600, 800]) : [100, 800]);
   a111Draw(ctx, t, L); a111Draw(ctx, t, Hh); a111Draw(ctx, t, Sv);
-  if (a111In(t, 62.0, 62.6) && Hh.HL) soundArcs(ctx, Hh.HL[0] - 30, Hh.HL[1] - 10, -1, t - 62.0, C.black);
 }
 
 // ---------- S11 (64.70-75.30): the fish stall: one swollen, stinking fish that nobody wants ----------
@@ -113,32 +113,33 @@ function a111S11(ctx, t, cam) {
   a111FishStall(ctx, t, cam, Sl);
   a111Fish(ctx, A111_FISH[0], A111_FISH[1] - 6 * puff, { s: 0.74, puff, rot: 0.04 * pulse(t, 70.0, 0.25) - 0.04 * pulse(t, 70.25, 0.25) });
   a111Stink(ctx, A111_FISH[0], A111_FISH[1] - 30, t, a111B(t, 71.18, 0.5), { n: 4 });
-  const Hh = a111P(A111_HERO, { y: 900, ...a111Walk(A111_S11HX, t) }); Hh.hR = [70, -138 + 28]; Hh.hL = [-70, -138 + 28]; Hh.brow = t < 66.2 ? 0.3 : -0.3; Hh.tip = -0.03 * a111B(t, 64.9, 0.3) * (1 - a111B(t, 66.2, 0.4));
+  const Hh = a111P(A111_HERO, { y: 900, ...a111Walk(A111_S11HX, t) }); Hh.hR = [70, -138 + 28]; Hh.hL = [-70, -138 + 28]; Hh.brow = -0.35; Hh.tip = 0.07 * a111B(t, 64.9, 0.3) * (1 - a111B(t, 66.2, 0.4)); Hh.mouth = 'o'; Hh.lid = t < 66.2 ? 0.35 : null;   // a curious sniff, not a scowl
   a111Gz(Hh, [1060, 760]); Hh.look = 0.5; Hh.after = (c, Q) => { a111Platter(c, Q.HR[0] + 10, Q.HR[1] - 18, { r: 34, ry: 0.92, crack: 1 }); a111Jar(c, Q.HL[0] - 6, Q.HL[1] + 22, { h: 70, chip: true }); };
   if (t < 66.4 || t > 73.3) a111Draw(ctx, t, Hh);
+  if (a111In(t, 64.9, 66.2)) { const n = a111Head(Hh), s = a111S(Hh); ctx.save(); ctx.lineWidth = 3.5; ctx.strokeStyle = C.black; ctx.lineCap = 'round'; for (let i = 0; i < 3; i++) { const u = ((t - 64.9) * 1.6 + i / 3) % 1, x0 = n[0] + 30 * s + 50 * s * u, y0 = n[1] + 6 * s - 10 * s * (i - 1); ctx.globalAlpha = Math.sin(Math.PI * u); ctx.beginPath(); ctx.moveTo(x0 + 18 * s, y0); ctx.quadraticCurveTo(x0 + 9 * s, y0 - 6 * s, x0, y0); ctx.stroke(); } ctx.restore(); }
   const Pp = a111P(A111_PASSER, { y: 904, ...a111Walk(A111_S11PX, t, 0.88) });
   if (a111In(t, 73.4, 74.9)) { const back = t > 73.95; Pp.dir = back ? -1 : 1; Pp.eyes = t > 73.8 ? 'wide' : 'open'; Pp.hR = t > 73.85 ? A111H.mouth : [36, -70]; Pp.hL = t > 73.85 ? A111H.mouthL : [-36, -70]; Pp.sq = a111In(t, 73.85, 74.0) ? 0.9 : 1; a111Gz(Pp, t < 73.85 ? A111_FISH : [1700, 760]); a111Draw(ctx, t, Pp); }
 }
 
 // ---------- S12 (75.30-84.60): the swap ----------
-const A111_S12HX = a111X([[75.3, 870], [78.0, 870], [78.3, 985], [78.9, 985], [79.05, 935], [80.4, 935], [80.9, 862], [83.6, 862], [84.6, 760]]), A111_S12SX = a111X([[75.3, 1160], [77.4, 1150], [81.1, 1150], [81.55, 1010]]);
+const A111_S12HX = a111X([[75.3, 870], [78.0, 870], [78.3, 985], [78.9, 985], [79.05, 935], [80.4, 935], [80.9, 862], [83.6, 862], [84.6, 760]]), A111_S12SX = a111X([[75.3, 1160], [77.4, 1150], [81.1, 1150], [81.55, 1045]]);
 function a111S12(ctx, t, cam) {
   const Sl = a111P(A111_SELLER, { y: 866, ...a111Walk(A111_S12SX, t, 0.92) }), Hh = a111P(A111_HERO, { y: 900, ...a111Walk(A111_S12HX, t) });
   const shake = a111In(t, 78.38, 78.9) ? 8 * Math.sin((t - 78.38) * Math.PI * 4) : 0, HS = [1050, 722 + shake];
   const placed = t > 79.2, lifted = t > 79.75, fishHand = () => Hh.HR || [1000, 760];
   // seller: looks at the platter, tilts his head, shakes, hugs the platter, plants the fan in the jar, waves, a free breath
-  Sl.hL = a111HT(t, Sl, [[0, [-36, -80]], [78.2, { w: HS }, 0.2], [78.95, [-36, -80], 0.3], [81.62, { w: [975, 784] }, 0.25], [81.95, [-6, -126], 0.3], [82.3, { w: [950, 712] }, 0.3], [82.8, [-20, -130], 0.3]]);
-  Sl.hR = a111HT(t, Sl, [[0, [36, -80]], [81.62, [10, -126], 0.3], [83.22, [62 + 8 * Math.sin(t * 16), -196], 0.25]]);
+  Sl.hL = a111HT(t, Sl, [[0, [-36, -80]], [78.2, { w: HS }, 0.2], [78.95, [-36, -80], 0.3], [81.62, { w: [975, 784] }, 0.25], [81.95, [-6, -126], 0.3], [82.3, { w: [926, 712] }, 0.3], [82.8, [-20, -130], 0.3]]);
+  Sl.hR = a111HT(t, Sl, [[0, [36, -80]], [81.62, [10, -126], 0.3]]);
   Sl.tilt = 0.2 * a111B(t, 76.56, 0.25) * (1 - a111B(t, 77.6, 0.3)); Sl.brow = a111In(t, 75.4, 77.6) ? -0.5 : 0; Sl.mouth = t > 78.2 ? 'smile' : 'closed';
   Sl.tip = (a111In(t, 78.1, 78.95) ? -0.1 : 0) + (a111In(t, 82.2, 82.9) ? -0.12 : 0) + 0.06 * (pulse(t, 82.0, 0.3) + pulse(t, 82.9, 0.3)); Sl.sq = t > 83.22 ? 1 + 0.04 * a111B(t, 83.3, 0.4) : 1; Sl.lid = a111In(t, 83.4, 83.85) ? 1 : null;
   a111Gz(Sl, gazePlan(t, [[0, () => (Hh.HR || [960, 780])], [76.5, () => (Hh.HR || [960, 780])], [77.6, () => a111Head(Hh)], [79.2, [975, 780]], [81.9, [975, 780]], [83.2, () => a111Head(Hh)]], 0.12));
-  Sl.after = (c, Q) => { if (t > 81.85) a111Platter(c, (Q.HL[0] + Q.HR[0]) / 2, Q.HR[1] - 4, { r: 32, ry: 0.92, crack: 1 }); if (t < 82.5) a111Fan(c, Q.HL[0], Q.HL[1], -0.4, 0.8); };
+  Sl.after = (c, Q) => { if (t > 81.85) { const m = a111W(Q, [2, -112]); a111Platter(c, m[0], m[1], { r: 30, ry: 0.92, crack: 1 }); } if (t < 82.5) a111Fan(c, Q.HL[0], Q.HL[1], -0.4, 0.8); a111Sigh(c, Q, t, 83.3, -1); };
   a111FishStall(ctx, t, cam, Sl, () => {
     if (placed && t < 81.8) a111Platter(ctx, 978, 782, { r: 32, ry: 0.4, crack: 1 });
-    if (placed) { a111Jar(ctx, 944, 792, { h: 70, chip: true }); if (t > 82.5) a111Fan(ctx, 946, 728, 0.15, 0.8); }
+    if (placed) { a111Jar(ctx, 944, 792, { h: 70, chip: true }); if (t > 82.5) a111Fan(ctx, 940, 736, -0.25, 0.8); }
     if (!lifted) a111Fish(ctx, A111_FISH[0], A111_FISH[1] - 6, { s: 0.74, puff: 1 });
   });
-  Hh.hR = a111HT(t, Hh, [[0, [70, -110]], [78.2, { w: HS }, 0.2], [78.95, [70, -110], 0.25], [79.06, { w: [976, 782] }, 0.25], [79.45, { w: [992, 764] }, 0.2], [79.75, [96, -150], 0.4]]);
+  Hh.hR = a111HT(t, Hh, [[0, [70, -110]], [78.2, { w: HS }, 0.2], [78.95, [70, -110], 0.25], [79.06, { w: [976, 782] }, 0.25], [79.45, { w: [992, 764] }, 0.2], [79.75, [96, -150], 0.4], [81.4, [60, -96], 0.5]]);
   Hh.hL = a111HT(t, Hh, [[0, [-70, -110]], [79.06, { w: [946, 786] }, 0.25], [79.45, [-36, -80], 0.3]]);
   Hh.brow = a111In(t, 75.4, 77.6) ? -0.55 : -0.2; Hh.tilt = -0.2 * a111B(t, 76.56 + a111St(1), 0.25) * (1 - a111B(t, 77.6, 0.3)); Hh.mouth = a111In(t, 78.2, 79.2) ? 'smile' : 'closed';
   Hh.lid = t > 79.3 ? Math.max(0.3, blink(t, 3)) : null; Hh.look = t > 79.5 ? -0.6 : 0.4; Hh.sq = anticipate(t, 79.3, 0.3, 0.04);
@@ -146,5 +147,5 @@ function a111S12(ctx, t, cam) {
   Hh.after = (c, Q) => { if (!placed) { a111Platter(c, Q.HR[0] + 10, Q.HR[1] - 18, { r: 34, ry: 0.92, crack: 1 }); a111Jar(c, Q.HL[0] - 6, Q.HL[1] + 22, { h: 70, chip: true }); }
     if (lifted) { const h = fishHand(), sw = swing(t, 79.9, 0.35, 1.3, 1.6) + swing(t, 83.6, 0.2, 1.6, 2); c.save(); c.translate(h[0], h[1]); c.rotate(1.15 + sw); a111Fish(c, 70, 0, { s: 0.7, puff: 1, tail: 0.3 * Math.sin(t * 4) }); c.restore(); a111Stink(c, h[0] + 30, h[1] + 40, t, 0.8, { n: 2, h: 110, flies: 1 }); } };
   a111Draw(ctx, t, Hh);
-  if (!lifted) a111Stink(ctx, A111_FISH[0], A111_FISH[1] - 30, t, 1, { n: 4 });
+  if (!lifted) a111Stink(ctx, A111_FISH[0], A111_FISH[1] - 30, t, 1 - 0.7 * a111B(t, 77.5, 0.2) * (1 - a111B(t, 79.0, 0.2)), { n: 4 });
 }

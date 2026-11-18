@@ -6,3 +6,8 @@
 - `hourglass` panel time meter (`a97Hourglass`).
 - `scroll` (`a97Scroll`), `musicNotes` (`a97Notes`), `prisonIcon` / fear cloud that cracks apart (`a97Prison`), `crackHeart` (`a97CrackHeart`), `tear` (`a97Tear`), `moth` (`a97Moth`).
 - `iconBalloon` (`a97Balloon`), `inset` circle with dream wash (`a97Inset`, `a97Bust`), money `bar` with overflow (`a97Bar`), `lampPost` (`a97LampPost`).
+
+## From v2 (Fable round 1)
+- `casketHero` / held-glow rule: a glowing held object in a close shot keeps its lid behind and its rays inside a radius that clears the holder's face.
+- `smileUnderMoustache` (`bigSmile` field): a person's smile drawn below the moustache, since the engine smile hides under `tache`.
+- Thought cloud push-in: animate `thoughtCloud` w/h/scale/at together to grow it to the panel width (figures >= 110 px) and back.

@@ -67,7 +67,7 @@ function a98Over(ctx, t, cam, S, W) {
     if (t < 1.7) { ctx.save(); ctx.globalAlpha *= 1 - K.clamp((t - 1.4) / 0.3); S.title(ctx, 'THE FORGED LETTER', 500, 150, a98E(t, 0.05, 0.7), { size: 60, align: 'center' }); ctx.restore(); }
     if (W.fh) { const h = P(...W.fh); lab('A POOR MAN OF IRAQ', 330, 250, 1.84, 4.4); arr([360, 295], [h[0] - 20, h[1] - 70], 1.9, 4.4, { bend: 0.15 }); }
     if (a98In(t, 9.3, 18.0)) { const g = P(520 + (330 - 500) * 0.55, 400 + (940 - 760) * 0.55); lab('GOVERNOR OF ARMENIA', g[0] - 40, g[1] + 20, 9.3, 18.0, { size: 32 });
-      const k = K.ease.back(K.clamp((t - 9.5) / 0.3)); if (k > 0) { ctx.save(); ctx.globalAlpha *= a98Env(t, 9.3, 18.0, 0.2); ctx.translate(g[0] - 190, g[1] + 6); ctx.scale(k * 0.32, k * 0.32); a98Mountains(ctx, [[0, 120, 120], [70, 90, 100]], 0); ctx.restore(); } }
+      const k = K.ease.back(K.clamp((t - 9.5) / 0.3)); if (k > 0) { ctx.save(); ctx.globalAlpha *= a98Env(t, 9.3, 18.0, 0.2); ctx.translate(g[0] - 175, g[1] - 26); ctx.scale(k * 0.32, k * 0.32);   /* v2: sitting on top of the label box, never over the letters */ a98Mountains(ctx, [[0, 120, 120], [70, 90, 100]], 0); ctx.restore(); } }
     if (a98In(t, 15.2, 18.0)) { const g = P(520 + (670 - 500) * 0.55, 400 + (940 - 760) * 0.55); lab('VIZIER YAHYA', g[0] + 60, g[1] + 20, 15.2, 18.0, { size: 32 }); }
     if (a98In(t, 21.56, 29.0)) a98ForgeInsert(ctx, t);
     a98Stamp(ctx, t, 'FORGED!', 770, 200, 21.56, 29.0);
@@ -92,6 +92,7 @@ const SCENE = {
     const Wd = sc === 'hut' ? a98HutWorld(ctx, t, cam) : sc === 'road' ? a98RoadWorld(ctx, t, cam) : sc === 'gov' ? a98GovWorld(ctx, t, cam) : sc === 'viz' ? a98VizWorld(ctx, t, cam) : a98StreetWorld(ctx, t, cam);
     ctx.restore();
     a98Over(ctx, t, cam, S, Wd || {});
+    if (sc === 'street') a98Tags(ctx, t, cam, S);
     for (const c of [31.6, 35.0, 129.68, 135.4, 167.0]) a98Wipe(ctx, t, c);
     for (const c of [83.28, 105.04]) a98Wipe(ctx, t, c, C.blue);
     if (t >= 72.0 && t < 73.24) S.transition(ctx, 1000, 1230, (t - 72.0) / 1.24, { caption: 'DAYS PASS...' });

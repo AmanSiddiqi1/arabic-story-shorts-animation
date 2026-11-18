@@ -84,7 +84,7 @@ function a112HatShape(ctx, kind, o = {}) {
     ctx.save(); ctx.lineWidth = 4; ctx.strokeStyle = C.black; ctx.lineCap = 'round'; for (const j of [0, 1, 2]) { ctx.beginPath(); ctx.ellipse(0, -28 - j * 14, 54 - j * 8, 13, -0.12, 0.1, Math.PI - 0.4); ctx.stroke(); } ctx.restore();
     shape(ctx, ell(0, -74, 22, 12, 16), NAVY, { lw: 4, seed: 19 }); shape(ctx, ell(18, -40, 8, 9, 12), C.yellow, { lw: 3, seed: 20 }); ctx.restore(); }
   else if (kind === 'helmet') { const col = o.col || C.red;
-    shape(ctx, [[-44, 10], [-40, -20], [40, -20], [44, 10], [30, 26], [-30, 26]].map(([x, y]) => [x, y + 4]).concat([[-44, 14]]), col, { lw: 4, seed: 64, dot: C.black, pitch: 7, rad: 0.15, da: 0.3 });   // neck cloth behind the face edge
+    // (v2: the neck cloth is drawn only behind the head by a112HelmetBack, so the face stays visible)
     shape(ctx, [[-40, -18], [-36, -46], [-14, -66], [0, -86], [14, -66], [36, -46], [40, -18], [-40, -18]], STONE2, { lw: 5, seed: 65, dot: STONED, pitch: 7, rad: 0.2, da: 0.4 });
     seg(ctx, -40, -20, 40, -20, 9, C.yellow, 3); seg(ctx, 0, -86, 0, -100, 5, C.yellow, 2); shape(ctx, ell(0, -48, 7, 8, 10), col, { lw: 3, seed: 66 }); }
 }
@@ -96,7 +96,7 @@ function a112HelmetBack(ctx, P, col) {
 
 // ---------- props ----------
 // purse: drawstring coin purse. Origin = the neck (cord) point; the bag hangs below it. 110 x 120 at s 1 when full.
-// o: s, fill 0..1 (0 limp sock .. 1 round), open 0..1, bow 0..1, rot, sq, sw (tassel swing, radians), glow 0..1, flop (limp bend -1..1)
+// o: s, fill 0..1 (0 limp sock .. 1 round), open 0..1, bow 0..1, rot, sq, sw (tassel swing, radians), glow 0..1, rayK (glow size factor), flop (limp bend -1..1)
 function a112Purse(ctx, x, y, o = {}) {
   const s = o.s ?? 1, f = K.clamp(o.fill ?? 1), op = K.clamp(o.open || 0), sw = o.sw || 0, fl = o.flop ?? 0.4;
   ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot || 0); ctx.scale(s * (o.sqx ?? (1 + (1 - (o.sq ?? 1)) * 0.6)), s * (o.sq ?? 1));
@@ -105,8 +105,8 @@ function a112Purse(ctx, x, y, o = {}) {
   shape(ctx, [...body, body[0]], A112_BROWN, { lw: 5, seed: 401, dot: C.red, pitch: 8, rad: 0.22, da: 0.45 });
   if (f > 0.5) { ctx.save(); ctx.globalAlpha = (f - 0.5) * 1.2; ctx.lineWidth = 3; ctx.strokeStyle = A112_BROWND; ctx.beginPath(); ctx.moveTo(-W * 0.4, 30); ctx.quadraticCurveTo(-W * 0.55, 70, -W * 0.3, 100); ctx.moveTo(W * 0.35, 34); ctx.quadraticCurveTo(W * 0.5, 72, W * 0.25, 98); ctx.stroke(); ctx.restore(); }
   // frilled top above the cord, or the open mouth
-  if (op > 0.05) { const mw = K.lerp(16, 46, op), mh = K.lerp(4, 14, op);
-    if (o.glow) { ctx.save(); ctx.globalAlpha = 0.5 * o.glow; ctx.fillStyle = C.yellow; ctx.beginPath(); ctx.arc(0, -10, 60 * op, 0, 7); ctx.fill(); ctx.restore(); for (let i = 0; i < 7; i++) { const a = -Math.PI * (0.15 + 0.7 * i / 6); seg(ctx, Math.cos(a) * 40 * op, -6 + Math.sin(a) * 40 * op, Math.cos(a) * 64 * op, -6 + Math.sin(a) * 64 * op, 5, C.yellow, 2); } }
+  if (op > 0.05) { const mw = K.lerp(16, 46, op), mh = K.lerp(4, 14, op), rk = o.rayK ?? 1;
+    if (o.glow) { ctx.save(); ctx.globalAlpha = 0.5 * o.glow; ctx.fillStyle = C.yellow; ctx.beginPath(); ctx.arc(0, -10, 60 * op * rk, 0, 7); ctx.fill(); ctx.restore(); for (let i = 0; i < 7; i++) { const a = -Math.PI * (0.15 + 0.7 * i / 6); seg(ctx, Math.cos(a) * 40 * op * rk, -6 + Math.sin(a) * 40 * op * rk, Math.cos(a) * 64 * op * rk, -6 + Math.sin(a) * 64 * op * rk, 5, C.yellow, 2); } }
     shape(ctx, ell(0, -4, mw, mh, 20), A112_BROWND, { lw: 4, seed: 402 });
     if (f > 0.05) for (let i = 0; i < 4; i++) shape(ctx, ell(-mw * 0.5 + i * mw * 0.33, -4 - (i % 2) * 3, 8 * op, 4 * op, 10), A112_SILVER, { lw: 2.5, seed: 403 + i }); }
   else shape(ctx, [[-14, 0], [-22, -14], [-10, -22], [0, -16], [10, -22], [22, -14], [14, 0], [-14, 0]], A112_BROWN, { lw: 4, seed: 404 });
@@ -204,4 +204,14 @@ function a112HomeExtras(ctx, t, o = {}) {
   // patched sleeping mat
   shape(ctx, [[700, 900], [710, 884], [950, 884], [944, 900], [700, 900]], '#c9a46a', { lw: 4, seed: 458, dot: '#a8741a', pitch: 8, rad: 0.2, da: 0.4 });
   shape(ctx, K.rectPts(820, 885, 30, 12), C.blue, { lw: 3, seed: 459 });
+}
+
+// an open palm (fingers up) that closes into a fist: drawn over a person's hand at world (x, y). open 1 = flat palm, 0 = fist. s = figure scale, dir = facing
+function a112Palm(ctx, x, y, open, s = 1, dir = 1) {
+  const o = K.clamp(open); ctx.save(); ctx.translate(x, y); ctx.scale(s * dir, s);
+  for (let i = 0; i < 4; i++) { const fx = -9 + i * 6.5, L = K.lerp(5, 17 - Math.abs(i - 1.5) * 2.5, o); shape(ctx, K.rectPts(fx - 3.6, -10 - L, 7.2, L + 6), C.white, { lw: 3, seed: 600 + i, dot: C.skin, pitch: 5, rad: 0.3 }); }
+  shape(ctx, [[10, -2], [10 + 12 * o, -10 - 4 * o], [14 + 10 * o, -6 - 2 * o], [14, 4], [10, -2]], C.white, { lw: 3, seed: 605, dot: C.skin, pitch: 5, rad: 0.3 });   // thumb
+  shape(ctx, ell(0, 0, 14, 13, 14), C.white, { lw: 3.5, seed: 606, dot: C.skin, pitch: 5, rad: 0.3 });
+  if (o < 0.5) { ctx.save(); ctx.lineWidth = 2.5; ctx.strokeStyle = C.black; for (let i = 0; i < 3; i++) { ctx.beginPath(); ctx.moveTo(-6 + i * 6.5, -12); ctx.lineTo(-6 + i * 6.5, -6); ctx.stroke(); } ctx.restore(); }
+  ctx.restore();
 }

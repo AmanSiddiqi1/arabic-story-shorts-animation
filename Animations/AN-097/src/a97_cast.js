@@ -23,7 +23,7 @@ const a97Lid = (P, t) => { if (P.lid != null && P.lid < 0.9 && !P.noBlink) P.lid
 // draw one actor: pre (behind), the figure, helmet, spear, post (in front)
 function a97Draw(ctx, P) {
   if (P.hidden) return; for (const f of P.pre || []) f(ctx);
-  person(ctx, P); if (P.helm) a97Helmet(ctx, P); if (P.spear) a97Spear(ctx, P, P.spear.hand, P.spear.rot || 0, P.spear);
+  person(ctx, P); if (P.bigSmile) a97Smile(ctx, P, P.bigSmile, P.smileCol); if (P.helm) a97Helmet(ctx, P); if (P.spear) a97Spear(ctx, P, P.spear.hand, P.spear.rot || 0, P.spear);
   for (const f of P.post || []) f(ctx);
 }
 
@@ -35,15 +35,15 @@ function a97HarunP(t) {
   P.handR = a97Tr(t, [[0.12, 2.6, (tt) => [44, -205 + 6 * Math.exp(-(tt - 0.5) * 6) * Math.cos((tt - 0.5) * 20)]], [6.3, 6.85, PERSON_HANDS.palmsUp.R], [6.85, 7.8, [62, -150]],
     [10.48, 12.3, PERSON_HANDS.pointFwd.R], [12.3, 14.0, [60, -128]], [16.2, 18.1, gavel, 0.12],
     [129.86, 131.4, [40, -110]], [135.86, 138.34, [10, -98]], [138.34, 140.6, PERSON_HANDS.chest.R], [140.78, 142.84, [96, -146]]], [40, -98]);
-  P.handL = a97Tr(t, [[135.86, 140.7, [-36, -98]], [140.78, 141.7, [70, -168]], [141.74, 142.84, (tt) => [64 + 14 * Math.sin(tt * 18), -184]]], [-40, -98]);
+  P.handL = a97Tr(t, [[135.86, 140.7, [-36, -98]], [140.78, 141.7, [70, -168]], [141.74, 142.84, (tt) => [96 + 26 * Math.sin((tt - 141.74) * 15), -132]]], [-40, -98]);
   P.drop = 4 * pulse(t, 0, 0.3) - 3 * (t > 0.3 && t < 1.2 ? Math.exp(-(t - 0.3) * 5) : 0);
   if (a97In(t, 12.3, 18.1)) { P.tip = 0.1 * a97E(t, 12.3, 0.5) * (1 - a97E(t, 17.7, 0.4)); P.lid = 0.3; P.brow = 0.9; P.noBlink = t < 16.72; }
   if (a97In(t, 129.06, 130.48)) { P.brow = -0.4; P.lid = 0.2; }
   if (a97In(t, 130.48, 134.58)) { P.brow = -0.2; P.lid = 0; P.noBlink = true; P.mouth = 'o'; }
   if (a97In(t, 134.58, 135.86)) { P.brow = 0.7; P.lid = 0.3; P.mouth = 'frown'; }
   if (a97In(t, 135.86, 138.34)) { P.eyes = 'wide'; P.brow = -0.7; P.mouth = 'o'; P.tip = 0.06 * a97E(t, 135.86, 0.3); }
-  if (a97In(t, 138.34, 140.78)) { P.wet = true; P.brow = -0.3; P.lid = a97In(t, 138.6, 139.05) ? 1 : 0.3; P.mouth = t > 139.14 ? 'smile' : 'closed'; }
-  if (t >= 140.78) { P.mouth = 'smile'; P.brow = -0.2; P.lid = 0.2; P.wet = true; P.tip = 0.06 * a97Env(t, 140.78, 142.84, 0.3); }
+  if (a97In(t, 138.34, 140.78)) { P.wet = true; P.brow = -0.7; P.lid = a97In(t, 138.4, 138.95) ? Math.sin(Math.PI * (t - 138.4) / 0.55) : 0.2; P.noBlink = true; P.mouth = 'closed'; P.bigSmile = a97E(t, 139.14, 0.4); P.smileCol = C.black; }
+  if (t >= 140.78) { P.mouth = 'closed'; P.bigSmile = 1; P.smileCol = C.black; P.brow = -0.2; P.lid = 0.2; P.wet = true; P.tip = 0.06 * a97Env(t, 140.78, 142.84, 0.3); }
   P.talk = talk(t, A97_H_TALK, 0.3) * 0.6;
   return P;
 }
@@ -121,18 +121,22 @@ function a97SceneMerchant(t) {
 }
 
 // ---------- S11-S12 the street at dusk (world 1600 wide) ----------
-const a97MX11 = (t) => kfn(t, [[104.0, 380], [105.92, 500], [110.0, 620], [115.5, 760]], 'lin');
-const a97SX11 = (t) => a97MX11(Math.min(t, 115.14)) - 190;
+// v2: they walk briskly (each backward glance slows Mansur), he stops dead on وقد, Salih closes one more step and faces him
+const a97MX11 = (t) => kfn(t, [[104.0, 330], [104.3, 365], [104.75, 378], [105.1, 410], [105.55, 422], [107.3, 600], [107.56, 612], [110.0, 612], [115.5, 760]], 'inOut');
+const a97SX11 = (t) => (t < 107.56 ? a97MX11(t) - 190 : kfn(t, [[107.56, 422], [108.5, 462], [110.0, 462], [115.14, a97MX11(115.14) - 190]], 'inOut'));
 function a97SalX12(t) { const x0 = a97MX11(115.14) - 190; return t < 125.38 ? x0 : kfn(t, [[125.38, x0], [126.22, x0 + 90]], 'in'); }
 function a97SceneStreet(t) {
   const mw = { ...a97Walker(a97MX11, t, 24) }; if (t >= 115.5) { mw.x = a97MX11(115.5); mw.amp = 0; }
   const M = a97Mk('mansur', { ...mw, y: 900, s: A97_MS, dir: t < 117.66 ? 1 : -1, brow: -0.6, mouth: 'closed', lid: 0.3 });
   if (t < 115.5) M.amp *= t < 105.92 ? 1 : 0.7;
-  const sackPt = (P) => [P.x + P.dir * 34 * P.s, P.y - 80 * P.s];
+  const sag = 15 * a97Env(t, 107.7, 110.1, 0.3), sackPt = (P) => [P.x + P.dir * 34 * P.s, P.y - 80 * P.s + sag];
   // sack hug
   let sq = 1 + kick(t, A97_FALLS11, 0.03, 9, 8); if (a97In(t, 119.26, 120.6)) sq = 0.92 + 0.08 * a97E(t, 120.0, 0.6);
-  if (a97In(t, 105.92, 117.6)) M.sq = 0.96; if (a97In(t, 119.26, 120.6)) { M.sq = 0.92 + 0.06 * a97E(t, 120.0, 0.6); M.tip = -0.1 * a97Env(t, 119.26, 120.6, 0.2); M.eyes = 'wide'; }
-  if (a97In(t, 108.14, 110.0)) { M.x += tremble(t, 2.5); M.wet = true; M.brow = -0.8; }
+  if (a97In(t, 110.1, 117.6)) M.sq = 0.96; if (a97In(t, 119.26, 120.6)) { M.sq = 0.92 + 0.06 * a97E(t, 120.0, 0.6); M.tip = -0.1 * a97Env(t, 119.26, 120.6, 0.2); M.eyes = 'wide'; }
+  // the two glances back at the sinking sun, then fear takes hold (107.56-110)
+  for (const g of [104.3, 105.1]) { const e = a97Env(t, g, g + 0.5, 0.12); if (e > 0) { M.look = -0.9 * e; M.tilt = -0.07 * e; M.brow = -0.7; } }
+  const fear = a97Env(t, 107.56, 110.1, 0.2);
+  if (fear > 0) { M.eyes = 'wide'; M.brow = -0.9; M.wet = true; M.mouth = 'o'; M.x += tremble(t, 5.5 * fear, 11); M.sq = (t < 107.9 ? landSquash(t, 107.56, 0.1) : 1) * (1 - 0.07 * fear); }
   const hold = !a97In(t, 110.0, 117.66);
   const sp = sackPt(M);
   if (hold) a97Carry(M, sp[0], sp[1] + 4, 46);
@@ -157,7 +161,8 @@ function a97SceneStreet(t) {
   const hM = a97Head(M), hS = a97Head(S), HUD = a97V2W(t, 500, 250);
   M.gaze = gazePlan(t, [[104, [1, 0.1]], [104.3, [-1, -0.2]], [104.6, [1, 0.1]], [105.1, [-0.9, -0.6]], [105.4, [1, 0.1]], [107.6, [0.4, -0.9]], [108.4, [1, 0.3]], [110.02, [0.6, -0.5]], [115.14, [1, 0.6]],
     [117.66, lookAt(hM, hS)], [119.3, [0.3, 0.9]], [120.4, lookAt(hM, hS)], [122.2, [0.4, 0.8]], [124.34, lookAt(hM, HUD)], [124.84, [0.7, 0.9]]], t > 104 && t < 105.6 ? 0.07 : 0.22);
-  S.gaze = gazePlan(t, [[104, lookAt(hS, hM)], [107.0, [1, -0.1]], [115.14, lookAt(hS, hM)], [123.74, [0.4, -1]], [124.3, lookAt(hS, hM)], [125.38, [1, 0]]]);
+  if (a97In(t, 108.5, 110.1)) { S.brow = -0.4; S.tip = 0.06 * a97Env(t, 108.5, 110.1, 0.3); }
+  S.gaze = gazePlan(t, [[104, lookAt(hS, hM)], [107.0, [1, -0.1]], [107.7, lookAt(hS, hM)], [115.14, lookAt(hS, hM)], [123.74, [0.4, -1]], [124.3, lookAt(hS, hM)], [125.38, [1, 0]]]);
   a97Lid(M, t); a97Lid(S, t);
   const chestS = 0.55;
   const pre = [], postS = [];

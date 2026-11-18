@@ -19,3 +19,9 @@ Decisions the plan left open or that the measured sets changed:
 - "Counted" money: 600 found at Mansur's house (plan: "tiny number"); running total overflows to 1,250,000 for AND MORE!.
 - Sound: chime 44.3, whoosh 60.6, chime 71.7, chime 168.5 (all in measured pauses / after the last word).
 - Skipped: turban tassel lag (no Library field); treasurer's look-to-camera kept short; Harun's single raised eyebrow is a whole-brow raise (no per-side brow).
+
+## v2 (revision from fable_review_1.md; details in review/revision_1.md)
+- New story helpers: `a97CasketHero` (close-shot casket, lid behind, thin rays in a fixed radius) and `a97Smile` (visible smile under a moustache, via `P.bigSmile`).
+- Chests after LATER moved to 370 / 520 / 670 (pair clear of the left edge); treasurer leaves before the runners; runner A leaves after delivering.
+- شكر real onset 84.04 (silencedetect 80-87 s: silence 82.64-84.04 and 85.90-86.91).
+- Review word times for S11 were one word early; staged on the timeline words (وقد 107.56, غلبه 108.14, الخوف 108.72).

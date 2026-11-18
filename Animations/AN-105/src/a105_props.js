@@ -92,7 +92,7 @@ function a105Bag(ctx, x, y, s = 1, o = {}) {
   const sl = K.clamp(o.slit || 0);
   if (sl > 0.01) {   // diagonal cut with a triangular flap hanging down, dark inside
     const a = [-40, 40], z = [40, 92], m = a105L2(a, z, sl);
-    shape(ctx, [a, [m[0] + 6 * sl, m[1] - 12 * sl], m, [m[0] - 18 * sl, m[1] + 6 * sl], a], '#1a120c', { lw: 3.5, seed: 372 });
+    shape(ctx, [a, [m[0] + 6 * sl, m[1] - 12 * sl], m, [m[0] - 18 * sl, m[1] + 6 * sl], a], o.slitCol || '#1a120c', { lw: 3.5, seed: 372 });
     shape(ctx, [a, m, [K.lerp(a[0], m[0], 0.5) - 10, K.lerp(a[1], m[1], 0.5) + 22 * sl], a], A105_LEATHERD, { lw: 3.5, seed: 373 });
     if (o.purseIn) a105Purse(ctx, m[0] * 0.5 + 4, m[1] * 0.5 + 54, 0.42);
   }
@@ -237,7 +237,7 @@ function a105Splash(ctx, x, y, d, s = 1) {
   for (let k = 0; k < 2; k++) { const dd = d - k * 0.25; if (dd < 0) continue; ctx.save(); ctx.globalAlpha = K.clamp(1 - dd / 1.1); ctx.lineWidth = 5; ctx.strokeStyle = C.white; ctx.beginPath(); ctx.ellipse(x, y + 10, 40 + 160 * dd, 10 + 30 * dd, 0, 0, 7); ctx.stroke(); ctx.restore(); }
 }
 // wet footprints: list of [x, y, t0]; they fade over `fade` seconds
-function a105Prints(ctx, list, t, fade = 30) { ctx.save(); for (const [x, y, t0] of list) { if (t < t0) continue; const a = 0.75 * K.clamp(1 - (t - t0) / fade); if (a <= 0) continue; ctx.globalAlpha = a; ctx.fillStyle = '#2a5bb0'; ctx.beginPath(); ctx.ellipse(x, y, 13, 5, 0, 0, 7); ctx.fill(); } ctx.restore(); }
+function a105Prints(ctx, list, t, fade = 30) { ctx.save(); for (const [x, y, t0] of list) { if (t < t0) continue; const a = 0.75 * K.clamp(1 - (t - t0) / fade); if (a <= 0) continue; ctx.globalAlpha = a; ctx.fillStyle = '#2a5bb0'; ctx.beginPath(); ctx.ellipse(x, y, 17, 7, 0, 0, 7); ctx.fill(); } ctx.restore(); }
 
 // ---------- lanes yard (new set, world 1600 x 1230, ground y 900) ----------
 const A105_LANES = [[120, 260], [330, 470], [540, 680]], A105_POOL = [760, 1140], A105_YDOOR = [1380, 1560, 600];

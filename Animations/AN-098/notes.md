@@ -20,3 +20,9 @@ Decisions the plan left open or that the measured set changed:
 - S17: single-screen street (w 1000) so the palace door and Yahya's balcony stay in frame at THE END; five horses would exceed the four-horse limit, so string 2 is one horse.
 
 Skipped (small): foot tap while waiting (no single-leg field); turban tipping off at the horse's nuzzle (tilt only); per-servant bows in S16.
+
+## v2 (Fable review 1)
+- Captions: story copy of the Library subtitle with balanced line breaks (src/a98_sub.js; "subtitle": "scene").
+- Bows use `lean` (upper body about the hips) instead of `tip` (whole-figure rotation about the feet), which looked stiff on a kneeling figure.
+- S16 layout: forger 235, set A chest 330 + heap 432, set B chest 625 + heap 727, Yahya back on the dais at 810. Heap A pours in after the clap so the two sets are identical.
+- S17: palace moved to x0 600 (door 750..890, balcony 820); the procession clip is x < door right jamb. End camera zoom 1.15 (1.25 would cut group 2).

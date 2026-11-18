@@ -1,17 +1,17 @@
 // ===== AN-112 main: scene dispatch, camera, lettering (panel space 1000 x 1230), transitions, sound =====
-const A112_CAM = [[0, 500, 615, 1.0], [2.1, 500, 615, 1.0], [3.6, 420, 700, 1.5], [9.2, 420, 700, 1.5], [10.4, 430, 680, 1.2], [13.99, 430, 680, 1.2],
-  [14.0, 480, 650, 1.25], [16.3, 480, 650, 1.25], [17.0, 450, 650, 1.35], [21.13, 450, 650, 1.35],
+const A112_CAM = [[0, 500, 615, 1.0], [2.1, 500, 615, 1.0], [3.6, 420, 700, 1.5], [9.2, 420, 700, 1.5], [10.4, 430, 680, 1.2], [14.24, 430, 680, 1.2],
+  [14.25, 480, 650, 1.25], [16.3, 480, 650, 1.25], [17.0, 450, 650, 1.35], [21.13, 450, 650, 1.35],
   [21.14, 500, 660, 1.4], [24.2, 500, 660, 1.4], [24.45, 495, 690, 1.8], [26.0, 495, 690, 1.8], [26.4, 500, 640, 1.4], [30.17, 500, 640, 1.4],
   [30.18, 440, 650, 1.35], [38.2, 520, 650, 1.35], [38.6, 560, 680, 1.7], [41.31, 560, 680, 1.7],
-  [41.32, 500, 650, 1.35], [47.0, 500, 650, 1.35], [47.35, 380, 660, 1.35], [48.5, 380, 660, 1.35], [48.85, 640, 660, 1.35], [50.5, 640, 660, 1.35], [51.0, 620, 640, 1.6], [56.19, 620, 640, 1.6],
-  [56.2, 760, 720, 1.4], [58.8, 760, 720, 1.4], [59.0, 330, 680, 1.4], [60.4, 330, 680, 1.4], [60.75, 720, 700, 1.9], [61.55, 720, 700, 1.9],
+  [41.32, 500, 650, 1.35], [47.0, 500, 650, 1.35], [47.35, 450, 700, 1.2], [48.5, 450, 700, 1.2], [48.85, 640, 660, 1.35], [50.5, 640, 660, 1.35], [51.0, 620, 640, 1.6], [56.19, 620, 640, 1.6],
+  [56.2, 760, 720, 1.4], [58.25, 760, 720, 1.4], [58.65, 330, 680, 1.4], [60.4, 330, 680, 1.4], [60.75, 720, 700, 1.9], [61.55, 720, 700, 1.9],
   [61.56, 480, 650, 1.35], [67.9, 420, 660, 1.6], [67.99, 420, 660, 1.6], [68.0, 470, 650, 1.35], [70.13, 470, 650, 1.35],
   [70.14, 640, 660, 1.9], [71.3, 640, 660, 1.9], [72.3, 500, 650, 1.4], [78.77, 500, 650, 1.4],
-  [78.78, 760, 760, 1.5], [82.31, 800, 780, 2.0],
+  [78.78, 640, 800, 1.6], [82.31, 660, 820, 2.1],
   [96.96, 500, 640, 1.05], [97.6, 500, 640, 1.05], [99.8, 520, 690, 1.4], [112.59, 520, 690, 1.4], [112.6, 470, 690, 1.4], [116.07, 470, 690, 1.4],
-  [116.08, 470, 820, 1.5], [124.0, 480, 800, 1.5], [125.9, 420, 770, 1.8], [127.87, 420, 770, 1.8],
+  [116.08, 470, 800, 1.35], [125.9, 470, 790, 1.35], [127.87, 470, 780, 1.45],
   [127.88, 470, 650, 1.35], [134.3, 470, 650, 1.35], [134.7, 460, 690, 1.6], [136.5, 480, 650, 1.35], [139.25, 480, 650, 1.35],
-  [139.26, 330, 660, 1.9], [142.4, 330, 660, 1.9], [143.0, 520, 650, 1.35], [146.8, 520, 650, 1.35], [147.4, 500, 690, 1.6], [150.75, 500, 690, 1.6],
+  [140.2, 450, 690, 1.7], [142.4, 450, 690, 1.7], [143.0, 520, 650, 1.35], [144.3, 520, 650, 1.35], [145.0, 440, 730, 1.6], [146.4, 440, 730, 1.6], [147.0, 500, 690, 1.45], [150.75, 500, 690, 1.45],
   [150.76, 500, 330, 1.6], [153.0, 500, 640, 1.05], [156.5, 500, 640, 1.05], [157.2, 510, 700, 1.4], [160.0, 490, 690, 1.4], [160.3, 470, 700, 1.9], [161.6, 470, 700, 1.9], [162.2, 450, 650, 1.3], [165.85, 450, 650, 1.3],
   [165.86, 500, 720, 1.5], [168.6, 500, 720, 1.5], [169.8, 500, 615, 1.0], [A112_DUR + 1, 500, 615, 1.0]];
 function a112KeyCam(t) { const k = A112_CAM, i = k.findIndex((q) => t < q[0]); let c;
@@ -22,14 +22,14 @@ function a112Cam(t) {
   let c, W = 1000;
   if (t >= 82.32 && t < 96.96) {   // the dawn street: track the mule (road ahead), hold on the fork, then follow the group
     W = A112_DW; const mx = a112MuleX(t);
-    const zoom = a112Tr(t, [[0, 1.15], [89.74, 1.4, 0.6], [94.64, 1.2, 0.6]]), x = a112Tr(t, [[0, mx + 120], [89.74, 790, 0.6], [94.64, (tt) => a112MuleX(tt) + 260, 0.6]]);
+    const zoom = a112Tr(t, [[0, 1.15], [89.74, 1.25, 0.6], [94.64, 1.2, 0.6]]), x = a112Tr(t, [[0, mx + 120], [89.74, 640, 0.6], [94.64, (tt) => a112MuleX(tt) + 260, 0.6]]);
     c = { x: t < 89.74 ? mx + 120 : x, y: a112Tr(t, [[0, 690], [89.74, 690]]), zoom };
   } else c = a112KeyCam(t);
   if (a112In(t, 70.2, 71.3)) { c.x += tremble(t, 3, 13); c.y += tremble(t + 0.3, 2, 11); }
   const z = c.zoom; return { x: K.clamp(c.x, 500 / z, W - 500 / z), y: K.clamp(c.y, 615 / z, 1230 - 615 / z), zoom: z };
 }
 const a112P = (x, y, c) => [500 + (x - c.x) * c.zoom, 615 + (y - c.y) * c.zoom];
-function a112Scene(t) { return t < 14 ? 'street' : t < 82.32 ? 'home' : t < 96.96 ? 'dawn' : t < 127.88 ? 'court' : t < 150.76 ? 'home' : t < 165.86 ? 'court' : 'judge'; }
+function a112Scene(t) { return t < 14.25 ? 'street' : t < 82.32 ? 'home' : t < 96.96 ? 'dawn' : t < 127.88 ? 'court' : t < 150.76 ? 'home' : t < 165.86 ? 'court' : 'judge'; }
 function a112World(ctx, t, cam) {
   const sc = a112Scene(t);
   if (sc === 'street') a112Street(ctx, t, cam);
@@ -62,12 +62,12 @@ function a112Overlays(ctx, t, cam, S) {
   const word = (txt, wx, wy, a, b, size = 76, o = {}) => { if (!a112In(t, a, b)) return; const [x, y] = o.panel ? [wx, wy] : P(wx, wy); ctx.save(); ctx.globalAlpha = a112Fade(t, a, b, 0.15); sfx(ctx, txt, x, y, size, K.clamp((t - a) / 0.25), o); ctx.restore(); };
   const count = (v, x, y, a, b, o = {}) => { if (!a112In(t, a, b)) return; ctx.save(); ctx.globalAlpha = a112Fade(t, a, b, 0.2); S.counter(ctx, v, x, y, A112B(t, a, 0.3), { size: 80, ...o }); ctx.restore(); };
   // title
-  if (t < 4.6) { ctx.save(); ctx.globalAlpha = a112Fade(t, -1, 4.6, 0.4); S.title(ctx, 'ABU HASSAN AND', 500, 1010, A112B(t, 0.2, 0.7), { size: 56, align: 'center' }); S.title(ctx, 'THE KHORASAN MAN', 500, 1090, A112B(t, 0.45, 0.7), { size: 62, align: 'center' }); ctx.restore(); }
+  if (t < 4.6) { ctx.save(); ctx.globalAlpha = a112Fade(t, -1, 4.6, 0.4); S.title(ctx, 'ABU HASSAN AND', 500, 958, A112B(t, 0.2, 0.7), { size: 56, align: 'center' }); S.title(ctx, 'THE KHORASAN MAN', 500, 1090, A112B(t, 0.45, 0.7), { size: 62, align: 'center' }); ctx.restore(); }
   if (sc === 'street') {
     lab('ABU HASSAN', 400, 470, 0.7, 2.4); arr([400, 500], [400, 600], 0.8, 2.4, { bend: 0 });
     lab('BAGHDAD', 270, 330, 3.88, 5.0, { fill: C.yellow });
     if (a112In(t, 7.28, 8.6)) { const fl = Math.floor((t - 7.28) / 0.22) % 2; lab('PURSE: 0', 560, 560, 7.28, 8.6, { color: fl ? C.red : C.black }); }
-    lab('DEBTS!', 430, 560, 13.34, 14.2, { color: C.red, size: 58, shake: true });
+    lab('DEBTS!', 430, 560, 12.62, 14.1, { color: C.red, size: 58, shake: true });
   }
   if (sc === 'home') {
     word('KNOCK KNOCK!', 230, 520, 14.84, 15.9, 58, { rot: -0.08 }); lab('FROM KHORASAN', 300, 455, 17.02, 18.6); arr([300, 480], [300, 560], 17.1, 18.6, { bend: 0 });
@@ -78,31 +78,33 @@ function a112Overlays(ctx, t, cam, S) {
     arr([540, 640], [700, 560], 37.76, 41.3, { bend: -0.2 }); lab('IF I DIE: YOURS', 720, 470, 37.76, 41.3, { size: 42 });
     if (a112In(t, 47.4, 55.6)) { const Q = a112PurseState(t), v = Math.round(Q.fill * 10000 / 500) * 500; ctx.save(); ctx.globalAlpha = a112Fade(t, 47.4, 55.6, 0.25); S.label(ctx, 'PURSE', 170, 140, 1, { size: 36 }); ctx.translate(v === 0 ? tremble(t, 3, 6) : 0, 0); S.counter(ctx, v, 170, 260, A112B(t, 47.4, 0.3), { size: 66, color: v === 0 ? C.red : C.black }); ctx.restore(); }
     word('PAID!', 260, 560, 48.0, 48.9, 64, { fill: C.red, rot: -0.1 });
-    lab('PLENTY OF TIME', 520, 470, 54.14, 55.3, { size: 40 });
-    word('KNOCK KNOCK!', 600, 560, 58.4, 59.3, 58, { rot: -0.08 }); word('ALREADY?!', 700, 470, 60.9, 61.55, 70, { rot: 0.06, fill: C.white });
-    lab('MY MONEY', 446, 560, 69.12, 70.14, { size: 44 }); arr([446, 590], [446, 735], 69.12, 70.14, { bend: 0 }); word('NOW!', 590, 470, 69.38, 70.14, 66, { fill: C.red });
-    word('TOMORROW!', 560, 520, 74.7, 75.7, 64, { fill: C.yellow }); lab('A FRIEND HAS IT', 700, 520, 77.6, 78.5, { size: 40 });
+    lab('PLENTY OF TIME', 735, 470, 53.28, 55.6, { size: 34 });
+    word('KNOCK KNOCK!', 230, 520, 58.4, 59.4, 58, { rot: -0.08 });
+    if (a112In(t, 60.84, 62.1)) { const h = P(...a112Head(a112Abu(t, true))); word('ALREADY?!', h[0] - 40, Math.max(90, h[1] - 250 * cam.zoom / 1.6), 60.84, 62.1, 70, { rot: 0.06, fill: C.white, panel: true }); }
+    lab('MY MONEY', 446, 560, 69.12, 70.14, { size: 44 }); arr([446, 590], [446, 735], 69.12, 70.14, { bend: 0 }); lab('TODAY', 640, 560, 69.38, 70.3, { size: 42 });
+    word('TOMORROW!', 560, 520, 74.7, 75.7, 64, { fill: C.yellow }); lab('A FRIEND HAS IT', 690, 505, 77.38, 78.75, { size: 40 });
     if (a112In(t, 81.3, 82.32)) { const [x, y] = P(820, 640); ctx.save(); ctx.globalAlpha = a112Fade(t, 81.3, 82.32, 0.15); sfx(ctx, 'Z Z Z', x, y, 60, 1, { fill: C.white, rot: -0.1 }); seg(ctx, x - 90, y + 20, K.lerp(x - 90, x + 90, A112B(t, 81.4, 0.25)), y - 20, 12, C.red, 3); ctx.restore(); lab('NO SLEEP', 820, 560, 81.4, 82.32, { size: 40 }); }
     word('KNOCK KNOCK!', 230, 520, 129.76, 130.7, 58, { rot: -0.08 });
-    if (a112In(t, 135.38, 136.6)) { count(10000, 470, 470, 135.38, 136.6, { size: 66 }); lab('ALL OF IT', 470, 545, 135.5, 136.6, { size: 40 }); }
-    arr([300, 360], [330, 440], 143.0, 144.3, { bend: 0 }); arr([760, 780], [830, 880], 143.3, 144.3, { bend: 0 }); arr([380, 640], [425, 760], 143.6, 144.3, { bend: 0 });
-    lab('IF ONLY I HAD KNOWN', 500, 360, 145.92, 147.2, { size: 40 }); word('KEEP IT!', 380, 520, 148.6, 149.4, 64, { rot: -0.06 });
+    count(10000, 470, 500, 135.38, 136.05, { size: 66 }); lab('ALL OF IT', 470, 500, 136.0, 137.4, { size: 44 });
+    arr([300, 360], [330, 440], 143.0, 144.3, { bend: 0 }); arr([700, 790], [760, 880], 143.3, 144.3, { bend: 0 }); arr([380, 640], [425, 760], 143.6, 144.3, { bend: 0 });
+    lab('IF ONLY I HAD KNOWN', 470, 500, 145.92, 147.3, { size: 40 });
+    if (a112In(t, 148.52, 149.9)) { const hk = a112HandW(a112Khor(Math.min(t, 148.9)), 'R'); word('KEEP IT!', hk[0] - 10, hk[1] - 190, 148.52, 149.9, 64, { rot: -0.06, fill: C.red }); }
   }
   if (sc === 'dawn') {
     const M = a112Mule(t), seat = mountSeat('donkey', M);
     if (a112In(t, 88.72, 89.74)) { ctx.save(); ctx.globalAlpha = a112Fade(t, 88.72, 89.74, 0.15); const [x1, y1] = P(seat.x + 20, seat.y - 290), [x2, y2] = P(M.x + 230, M.y - 330); a112Q(ctx, x1, y1, K.clamp((t - 88.72) / 0.25), 90, -0.1); a112Q(ctx, x2, y2, K.clamp((t - 88.92) / 0.25), 80, 0.1); ctx.restore(); }
     word('UH OH!', seat.x + 20, seat.y - 320, 92.05, 92.95, 58, { fill: C.white, rot: -0.06 });
-    if (a112In(t, 93.08, 94.6)) { const G2 = a112Guard2(t), h = a112HandW(G2, 'L'); lab('ORDER OF', 960, 330, 93.08, 94.6, { size: 38 }); lab('CALIPH AL-MAAMUN', 960, 385, 93.15, 94.6, { size: 38 }); arr([1000, 410], [h[0] + 40, h[1] - 10], 93.2, 94.6, { bend: -0.2 }); }
+    if (a112In(t, 93.08, 94.6)) { const G2 = a112Guard2(t), h = a112HandW(G2, 'L'); lab('ORDER OF', 400, 395, 93.08, 94.6, { size: 38 }); lab('CALIPH AL-MAAMUN', 400, 445, 93.15, 94.6, { size: 38 }); arr([380, 475], [h[0] + 40, h[1] - 90], 93.2, 94.6, { bend: 0.2 }); }
   }
   if (sc === 'court') {
     lab('CALIPH AL-MAAMUN', 720, 470, 97.98, 99.3, { size: 42 }); arr([720, 495], [720, 560], 98.0, 99.3, { bend: 0 });
     word('PHEW!', 330, 560, 115.3, 116.08, 60, { fill: C.white, rot: -0.06 });
     if (a112In(t, 117.4, 127.88)) { const v = t < 121.3 ? 10000 : t < 124.96 ? 10000 + Math.round(10000 * A112B(t, 121.3, 0.5) / 1000) * 1000 : 20000 + Math.round(30000 * A112B(t, 124.96, 0.6, 'out') / 1000) * 1000;
       const pop = 1 + 0.15 * a112Pulse(t, 125.6, 0.3); ctx.save(); ctx.globalAlpha = a112Fade(t, 117.4, 127.88, 0.2); ctx.translate(500, 230); ctx.scale(pop, pop); S.counter(ctx, v, 0, 0, A112B(t, 117.4, 0.3), { size: 70 }); ctx.restore();
-      if (a112In(t, 125.0, 125.9)) S.emphasis(ctx, 500, 210, 150, A112B(t, 125.0, 0.5), { word: 'WOW!' }); }
-    lab('TO REPAY THE TRUST', 330, 1040, 118.68, 120.4, { size: 40 }); arr([280, 1000], [160, 950], 118.8, 120.4, { bend: 0.2 });
-    lab('FOR YOUR NEEDS', 470, 1040, 122.7, 123.75, { size: 40 }); if (a112In(t, 122.7, 123.75)) { const [x, y] = P(600, 1040); a112Loaf(ctx, x, y - 18, 1.2 * a112Pop(t, 122.8)); }
-    lab('FOR A FRESH START', 560, 1080, 125.9, 127.6, { size: 40 });
+      if (a112In(t, 125.0, 126.0)) S.emphasis(ctx, 215, 330, 130, A112B(t, 125.0, 0.5), { word: 'WOW!' }); }
+    lab('TO REPAY THE TRUST', 330, 1030, 118.4, 119.9, { size: 38 });
+    lab('FOR YOUR NEEDS', 500, 1030, 122.4, 123.9, { size: 38 });
+    lab('FOR A FRESH START', 620, 1080, 125.9, 127.7, { size: 38 });
     if (a112In(t, 108.3, 109.4)) { const n = t < 108.6 ? 1 : t < 108.9 ? 2 : 3; ctx.save(); ctx.globalAlpha = a112Fade(t, 108.3, 109.4, 0.15); S.label(ctx, 'NIGHT ' + n, 500, 150, 1, { size: 46, fill: C.yellow }); ctx.restore(); }
     if (t >= 150.76) {
       if (a112In(t, 151.56, 152.9)) { ctx.save(); ctx.globalAlpha = a112Fade(t, 151.56, 152.9, 0.2); S.title(ctx, 'THE APPOINTED DAY', 500, 1080, A112B(t, 151.56, 0.6), { size: 56, align: 'center' }); ctx.restore(); }
@@ -122,7 +124,7 @@ function a112Overlays(ctx, t, cam, S) {
       ctx.restore(); }
   }
   // transitions: wipes between places, NEXT MORNING card, the dissolve into the years
-  for (const tc of [14.0, 82.32, 96.96, 127.88, 150.76]) if (a112In(t, tc - 0.35, tc + 0.35)) a112Wipe(ctx, 1000, 1230, (t - tc + 0.35) / 0.7);
+  for (const [tc, hw] of [[14.25, 0.29], [82.32, 0.35], [96.96, 0.35], [127.88, 0.35], [150.76, 0.35]]) if (a112In(t, tc - hw, tc + hw)) a112Wipe(ctx, 1000, 1230, (t - tc + hw) / (2 * hw));
   if (t >= 55.3 && t < 57.1) S.transition(ctx, 1000, 1230, (t - 55.3) / 1.8, { caption: 'NEXT MORNING...' });
   if (t >= 171.9) S.title(ctx, 'THE END', 500, 190, A112B(t, 171.9, 0.8), { size: 84, align: 'center' });
 }

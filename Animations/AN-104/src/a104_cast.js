@@ -20,7 +20,8 @@ const A104_LOOK = {
 };
 const a104Mk = (name, o) => ({ ...A104_LOOK[name], ...o, pal: { ...(A104_LOOK[name].pal || {}), ...((o && o.pal) || {}) } });
 // hand blinks on top of an explicit lid
-const a104Lid = (P, t) => { if (P.lid != null && P.lid < 0.9 && !P.noBlink) P.lid = Math.max(P.lid, blink(t, P.seed || 1)); return P; };
+// v2: a world hand target wins over a body-local one (person() reads handL/handR first, so a leftover rest pose silently cancelled every reach)
+const a104Lid = (P, t) => { if (P.handLW) P.handL = undefined; if (P.handRW) P.handR = undefined; if (P.lid != null && P.lid < 0.9 && !P.noBlink) P.lid = Math.max(P.lid, blink(t, P.seed || 1)); return P; };
 const a104Walk = (P, xf, t, k = 1, stride = 26) => { const w = walk(xf, t, { stride }); P.x = w.x; P.ph = w.ph; P.amp = w.amp * k; return P; };
 // the stranger's look over the film (age and costume swaps hidden on the S9 night passes and under the YEARS LATER card)
 function a104StrangerLook(t) {
@@ -33,12 +34,15 @@ function a104Patches(ctx, P) {
 }
 // the debt scrolls riding on his back (behind the figure; peeking over the shoulders). n scrolls, bob lag, pop-in per scroll
 function a104BackScrolls(ctx, P, t, n, popT) {
+  if ((P.alpha ?? 1) <= 0.01) return;   // v2: the scrolls share the figure's visibility (no scrolls floating on a shut door)
+  ctx.save(); ctx.globalAlpha *= P.alpha ?? 1;
   const spots = [[-44, -232, -0.3], [-16, -252, 0.1], [-62, -262, -0.5]];
   for (let i = 0; i < Math.min(3, n); i++) {
     const t0 = popT ? popT[i] : -10, k = K.ease.back(K.clamp((t - t0) / 0.25)); if (k <= 0) continue;
     const bob = 3 * Math.sin(t * 6 + i) * (P.amp || 0) + 4 * Math.sin(((P.ph || 0) - 0.6) * 2) * (P.amp || 0), q = a104Pt(P, spots[i][0], spots[i][1] + bob - (1 - k) * 40);
     a104Scroll(ctx, q[0], q[1], 0.75 * (P.s || 1) * k, { rot: spots[i][2] + 0.05 * Math.sin(t * 3 + i) });
   }
+  ctx.restore();
 }
 // draw a person with the shared extras
 function a104Person(ctx, P) { person(ctx, P); a104Patches(ctx, P); }

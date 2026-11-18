@@ -9,7 +9,7 @@ const a104U = (t) => (t < 97.8 ? 0.3 : t < 101.4 ? kfn(t, [[97.8, 0.3], [101.4, 
 function a104LookAt(t) { if (t >= 97.8 && t < 101.4) { const u = a104U(t); return u < 0.78 ? 'poor' : u < 1.78 ? 'mid' : 'rich'; } return a104StrangerLook(t); }
 
 // ---------- S1: the walk through the city ----------
-const a104X1 = (t) => kfn(t, [[0, -80], [2.0, 150], [3.5, 290], [5.0, 290], [6.4, 470], [7.0, 520], [8.55, 525], [8.86, 545], [11.6, 850]], 'lin');
+const a104X1 = (t) => kfn(t, [[0, -80], [2.0, 70], [3.5, 100], [5.0, 100], [6.6, 440], [7.0, 505], [8.55, 515], [8.86, 535], [11.6, 850]], 'lin');
 function a104S1(t) {
   const P = a104Mk('poor', { y: 900, dir: 1, mouth: 'frown', brow: -0.4, lid: 0.35 }); a104Walk(P, a104X1, t, 0.7);
   const pops = [2.16, 2.5, 2.84]; let sq = 1; for (const p0 of pops) sq *= landSquash(t, p0, 0.06, 10);
@@ -26,8 +26,8 @@ function a104S1(t) {
 function a104Keeper(t) {
   const P = a104Mk('keeper', { x: A104_POTS.x, y: 842, dir: 1, mouth: 'closed', gaze: [0.2, 0.8] });
   P.handR = [30 + 8 * Math.sin(t * 2.3), -70]; P.handL = [-30, -70];
-  if (t >= 3.3 && t < 6.2) { const S = a104S1(t); P.gaze = lookAt([P.x, 700], a104Head(S)); P.lid = 0.5; P.mouth = 'frown';
-    P.look = 0.45 * Math.sin((t - 4.2) * 11) * a104Env(t, 4.2, 5.0, 0.1); P.handR = a104Tr(t, [[4.55, 5.6, (tt) => [72 + 22 * Math.sin((tt - 4.6) * 12), -120]]], P.handR); }
+  if (t >= 3.3 && t < 6.2) { const S = a104S1(t); P.dir = -1; P.gaze = lookAt([P.x, 700], a104Head(S)); P.lid = 0.5; P.mouth = 'frown'; P.brow = -0.5;
+    P.look = 0.4 * Math.sin((t - 4.6) * 10) * a104Env(t, 4.6, 5.6, 0.12); P.handR = a104Tr(t, [[4.5, 5.9, [64, -218]]], P.handR, 0.18); P.handL = a104Tr(t, [[4.5, 5.9, [-20, -150]]], P.handL, 0.18); }
   return a104Lid(P, t);
 }
 // a moth flutters off from the empty pocket
@@ -81,7 +81,9 @@ function a104Buyer(t) {
 }
 // where the dish is in S7: under the robe, on the counter, in the goldsmith's teeth, set aside
 function a104Dish7(ctx, t, S, B) {
-  if (t < 88.2) { if (t >= 85.06 && t < 85.5) { const q = a104Pt(S, 4, -100); a104Glint(ctx, q[0], q[1], 22, pulse(t, 85.06, 0.4)); } return; }
+  if (t < 88.2) { if ((S.alpha ?? 1) < 0.5) return; const q = a104Pt(S, 6, -100);
+    if (t < 87.8) { a104Dish(ctx, q[0], q[1] + 22, { s: 0.42, tilt: -0.5, glint: t >= 85.06 && t < 85.5 ? (t - 85.06) / 0.44 : -1 }); if (t >= 85.06 && t < 85.5) a104Glint(ctx, q[0], q[1], 22, pulse(t, 85.06, 0.4)); return; }
+    const k = a104E(t, 87.8, 0.4); a104Dish(ctx, K.lerp(q[0], 1700, k), K.lerp(q[1] + 22, 782, k), { s: K.lerp(0.42, 0.7, k), tilt: -0.5 * (1 - k) }); return; }
   let x = 1700, y = 782, tilt = 0;
   if (t >= 88.5 && t < 89.5) { const k = a104Env(t, 88.5, 89.5, 0.2); x = K.lerp(1700, 1795, k); y = K.lerp(782, 700, k); tilt = -0.9 * k; }
   if (t >= 89.5) { x = 1860; y = 782; }
@@ -174,7 +176,7 @@ function a104PorterChest(ctx, P, t, open) { const hd = a104Head(P), bob = 3 * Ma
 
 // ---------- the street world ----------
 function a104StreetWorld(ctx, t, cam) {
-  const ruin = t >= 120 && t < 131.84, u = a104U(t), S9 = t >= 97.8 && t < 110.2;
+  const ruin = t >= 120 && t < 131.84, u = a104U(t), S9 = t >= 97.8 && t < 110.95;
   const doors = [0, a104Env(t, 10.3, 11.5, 0.3), 0, a104Env(t, 9.9, 10.9, 0.25)];
   const A = marketStreet(ctx, { w: A104_SW, palette: ruin ? 'dusk' : 'clear', palace: ruin ? 'shut' : true, shut: ruin ? 1 : 0, palaceDoor: ruin ? 0 : a104PalaceDoor(t), t, camX: cam.x - 500 / cam.zoom,
     u: S9 ? u : undefined, doors, shutters: [1, 1, ruin ? 0.2 : 1 - 0.7 * a104Env(t, 10.5, 11.4, 0.3), 1, 1, 1, ruin ? 0 : 1], windowsLit: S9 ? K.clamp(dayCycle(u).night * 1.4) : undefined });
@@ -198,7 +200,7 @@ function a104StreetWorld(ctx, t, cam) {
     a104DebtColumn(ctx, S, t); a104Person(ctx, S); const q = a104Pt(S, 30, -66); a104Purse(ctx, q[0], q[1], 0.55, { rot: swing(t, 92.66, 0.3) });
     if (t >= 93.9 && t < 94.6) { const c = a104L2([q[0], q[1]], [1400, 760], a104E(t, 93.9, 0.5)); a104Coin(ctx, c[0], c[1] - 40 * pulse(t, 93.9, 0.5), 9); }
     if (t >= 97.2) { const L = a104Mk('guestB', { x: kfn(t, [[97.2, 1700], [97.6, 1610]], 'lin'), y: 900, s: 0.8, dir: -1, gaze: [-0.6, 0.2] }); a104Walk(L, (tt) => kfn(tt, [[97.2, 1700], [97.6, 1610]], 'lin'), t, 1, 22); person(ctx, L); } }
-  else if (t < 110.2) { const S = a104S9(t); out.S = S; a104Customers(ctx, t);
+  else if (t < 110.95) { const S = a104S9(t); out.S = S; a104Customers(ctx, t);
     if (t < 100.9) { const q = a104Pt(S, 18, -82); a104Scroll(ctx, q[0], q[1], 0.42 * (1 - K.clamp((t - 100.75) / 0.15)), { struck: K.clamp((t - 100.3) / 0.4), rot: 0.3 }); }
     if (t >= 103.74) { const P = a104Mk('porter', { y: 900, dir: 1, mouth: 'smile' }); const xf = (tt) => kfn(tt, [[103.74, 1250], [104.3, 1500], [104.6, 1500], [105.4, 1250]], 'lin'); a104Walk(P, xf, t, 1, 18); if (t > 104.3) P.dir = -1;
       P.handLW = t < 104.3 ? [P.x - 26, 810] : undefined; P.handRW = t < 104.3 ? [P.x + 26, 810] : undefined; if (P.x > 1240) person(ctx, P); }
@@ -253,16 +255,16 @@ function a104RuinCast(ctx, t, out) {
     const N = a104Mk('neighbour', { y: 900, dir: 1, mouth: 'closed', lid: 0.4 }); const nx = (tt) => kfn(tt, [[126.8, 1480], [128.1, 1680]], 'lin'); a104Walk(N, nx, t, 0.7, 20);
     N.gaze = t < 128.9 ? lookAt(a104Head(N), a104Head(S)) : t < 130.1 ? [0.9, -0.5] : [0.95, -0.1];
     if (t >= 128.9 && t < 130.1) { N.look = 0.4 * Math.sin((t - 128.9) * 7) * a104Env(t, 128.9, 130.1, 0.2); N.lid = 0.6 + 0.3 * pulse(t, 129.2, 0.6); N.mouth = 'frown'; }
-    if (t >= 130.2) { N.handR = a104L2([37, -58], [96, -150], settleTo(t, 130.2, 0, 1, 0.35, 0.15)); N.mouth = 'closed'; }
+    if (t >= 130.2) { N.dir = -1; N.gaze = [-0.95, -0.1]; N.handR = a104L2([37, -58], [96, -150], settleTo(t, 130.2, 0, 1, 0.35, 0.15)); N.mouth = 'closed'; }
     person(ctx, N); out.N = N;
-    if (t >= 130.4) { const tip = a104Pt(N, 100, -170); a104Dash(ctx, tip, [2400, 560], (t - 130.4) / 0.8, C.black); }
+    if (t >= 130.4) { const tip = a104Pt(N, 100, -170); a104Dash(ctx, tip, [tip[0] - 420, 700], (t - 130.4) / 0.8, C.black); }
   }
   if (t >= 127.2) { S.dir = -1; S.gaze = lookAt(a104Head(S), out.N ? a104Head(out.N) : [1700, 700]);
     if (t < 128.0) S.handR = PERSON_HANDS.pointFwd.R; else if (t < 128.9) { S.handL = PERSON_HANDS.palmsUp.L; S.handR = PERSON_HANDS.palmsUp.R; } S.brow = -0.6; S.mouth = 'o';
     if (t >= 128.6 && t < 128.9) S.dir = 1;
-    if (t >= 130.3) { S.gaze = [0.95, -0.05]; S.handR = undefined; S.handL = undefined; } }
+    if (t >= 130.3) { S.dir = -1; S.gaze = [0.95, -0.05]; S.handR = undefined; S.handL = undefined; } }
   person(ctx, Pt); if (t < 126.1) a104PorterChest(ctx, Pt, t, 0); else { const hd = a104Head(Pt); a104Chest(ctx, K.lerp(hd[0] + 4, Pt.x + 40, down), K.lerp(hd[1] - 30, 900, down), 0.55); }
-  if (t >= 130.3) Pt.gaze = [0.95, -0.1];
+  if (t >= 130.3) { Pt.dir = -1; Pt.gaze = [0.95, -0.1]; }
   if (t >= 125.04 && t < 126.4) a104Ghost(ctx, t, a104Env(t, 125.04, 126.3, 0.35) * 0.5);
   person(ctx, S); a104Purse(ctx, ...a104Pt(S, 40, -50), 0.5, {});
   out.S = S; out.P = Pt;

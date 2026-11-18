@@ -8,3 +8,7 @@
 - dream frame (a112DreamFrame): a thoughtCloud that grows from a thinker's head to fill the panel and shrinks back.
 - small props: travel bundle (a112Bundle), basket with loaves (a112Basket, a112Loaf), moth (a112Moth), signpost (a112Sign), comic story box (a112StoryBox), wipe panel (a112Wipe).
 - rig helpers (a112W, a112Loc, a112Head, a112HandW, a112Arm): body-local/world conversion for the costumed person (also in AN-099 as a99*); worth one shared `personRig` in Library.
+
+## v2 additions (Fable round 1)
+- `a112Palm(ctx, x, y, open, s, dir)`: an open palm with fingers that closes into a fist (open 1..0), drawn over a person's hand; useful for demand / forgive mirror gestures (person hands are plain circles).
+- Note for any future soldier/helmet headwear: draw neck cloths only BEHIND the head; drawn in front they hide the face (AN-112 v1 bug).

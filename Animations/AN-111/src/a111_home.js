@@ -164,14 +164,14 @@ function a111S14(ctx, t) {
   const W = a111P(A111_WIFE, { x: 520, y: 884, kneel: 1 }), Hh = a111P(A111_HERO, { x: 360, y: 900, kneel: 1 }), ch = a111P(A111_CHILD, { x: 690, y: 902, kneel: 1 });
   const fishC = [522, 868], cut = a111B(t, 89.64, 1.3, 'lin'), open = a111B(t, 91.0, 0.6), puff = t < 89.64 ? 1 : K.lerp(1, 0.3, cut);
   const hollow = [fishC[0], fishC[1] + 10], glow = a111B(t, 93.0, 1.2) * 0.6 + 0.6 * a111B(t, 94.34, 0.3, 'back') - 0.2 * a111B(t, 95.0, 1.5);
-  const pearlUp = a111B(t, 94.34, 0.55), pearl = [K.lerp(hollow[0], 540, pearlUp), K.lerp(hollow[1], 780, pearlUp)];
+  const pearlUp = a111B(t, 94.34, 0.55), WH = a111Head(W), pearl = [K.lerp(hollow[0], WH[0] - 54, pearlUp), K.lerp(hollow[1], WH[1] - 2, pearlUp)];
   // wife: sleeves, knife along the belly, flap open, reaches in, lifts the pearl
   const knifeAt = [fishC[0] - 38 + 76 * cut, fishC[1] + 14];
-  W.hR = a111HT(t, W, [[0, [30, -110]], [87.2, [-20, -116], 0.25], [87.6, [24, -118], 0.25], [88.0, [40, -110], 0.3], [89.5, { w: knifeAt }, 0.2], [90.0, () => ({ w: knifeAt }), 0.01], [91.0, { w: [fishC[0] + 30, fishC[1] + 20] }, 0.3], [91.8, { w: [hollow[0] + 6, hollow[1] + 2] }, 0.4], [94.34, () => ({ w: pearl }), 0.05], [96.0, [30, -150], 0.4]]);
+  W.hR = a111HT(t, W, [[0, [30, -110]], [87.2, [-20, -116], 0.25], [87.6, [24, -118], 0.25], [88.0, [40, -110], 0.3], [89.5, { w: knifeAt }, 0.2], [90.0, () => ({ w: knifeAt }), 0.01], [91.0, { w: [fishC[0] + 30, fishC[1] + 20] }, 0.3], [91.8, { w: [hollow[0] + 6, hollow[1] + 2] }, 0.4], [94.34, () => ({ w: [pearl[0] + 4, pearl[1] + 12] }), 0.05], [96.0, [30, -150], 0.4]]);
   W.hL = a111HT(t, W, [[0, [-30, -110]], [87.2, [20, -116], 0.25], [87.6, [-24, -118], 0.25], [88.0, { w: [fishC[0] - 50, fishC[1] - 6] }, 0.35], [94.4, [-40, -130], 0.4]]);
-  W.after = (c, Q) => { a111NoseCloth(c, Q); if (a111In(t, 88.1, 91.0)) a111Knife(c, Q.HR[0], Q.HR[1], -2.2); };
-  W.eyes = t > 92.6 ? 'wide' : 'open'; W.mouth = t > 94.6 ? 'o' : 'closed';
-  a111Gz(W, t < 94.34 ? [fishC[0], fishC[1] + 10] : t < 95.0 ? pearl : pearl);
+  W.after = (c, Q) => { a111NoseCloth(c, Q, 1.5 * a111B(t, 92.6, 0.35)); if (a111In(t, 88.1, 91.0)) a111Knife(c, Q.HR[0], Q.HR[1], -2.2); };
+  W.eyes = t > 92.6 ? 'wide' : 'open'; W.mouth = t > 94.5 ? 'o' : 'closed'; W.lean = 0.1 * a111B(t, 92.6, 0.4) * (1 - a111B(t, 94.34, 0.4));
+  a111Gz(W, t < 94.34 ? [fishC[0], fishC[1] + 10] : pearl);
   // hero: holds his breath, leans in, the held stare, sits back with a hand to his forehead
   Hh.lean = 0.12 * a111B(t, 88.8, 0.4) - 0.2 * a111B(t, 95.95, 0.35); Hh.sq = t < 91 && t > 88.8 ? 1.03 : 1; Hh.mouth = t > 95.2 ? 'o' : 'closed'; Hh.eyes = t > 95.2 ? 'wide' : 'open';
   Hh.lid = a111In(t, 88.8, 92.8) ? Math.max(0.3, blink(t, 3)) : null; Hh.hR = a111HT(t, Hh, [[0, [36, -90]], [95.95, A111H.forehead, 0.3]]); Hh.hL = [-36, -90];
@@ -182,12 +182,15 @@ function a111S14(ctx, t) {
   const hp = hop(t, 96.0, 0.35, 0, 0, 16); ch.y = 902 - hp[1]; ch.sq = landSquash(t, 96.35, 0.12);
   a111Gz(ch, t < 94.34 ? fishC : pearl);
   if (a111In(t, 95.0, 96.0)) W.noBlink = true;
+  const glowAt = t < 94.34 ? hollow : pearl, glowR = (34 + 22 * a111B(t, 94.34, 0.4)) * (t < 94.34 ? 1 : 0.6);
+  const drawGlow = () => { if (glow > 0.01) { ctx.save(); ctx.globalAlpha = 0.85; a111Glow(ctx, glowAt[0], glowAt[1], glowR, glow, t, { col: 'white', rays: 10 }); ctx.restore(); } };
+  a111Arms(W); if (t >= 94.34) drawGlow();
   a111Draw(ctx, t, Hh); a111Draw(ctx, t, W); a111Draw(ctx, t, ch);
   // the board and the fish in front of the wife
   shape(ctx, [[420, 904], [624, 904], [634, 924], [410, 924], [420, 904]], WOOD, { lw: 4.5, seed: 732, dot: BARKY, pitch: 8, rad: 0.18, da: 0.4 });
   a111Fish(ctx, fishC[0], fishC[1], { s: 0.62, puff, open, cut: t < 91 ? cut : 0, tail: 0.1 * Math.sin(t * 2) * (1 - cut) });
   a111Stink(ctx, fishC[0] + 60, fishC[1] - 20, t, t < 89.64 ? 0.9 : K.lerp(0.9, 0.2, cut) * (1 - a111B(t, 93.0, 0.5)), { n: 2, h: 90, flies: 1 });
-  if (glow > 0.01) { ctx.save(); ctx.globalAlpha = 0.85; a111Glow(ctx, t < 94.34 ? hollow[0] : pearl[0], t < 94.34 ? hollow[1] : pearl[1], 34 + 22 * a111B(t, 94.34, 0.4), glow, t, { col: 'white', rays: 10 }); ctx.restore(); for (const P of [W, Hh, ch]) a111FaceLight(ctx, P, glow * 0.8, '#fff6c8'); }
+  if (t < 94.34) drawGlow(); if (glow > 0.01) for (const P of [W, Hh, ch]) a111FaceLight(ctx, P, glow * 0.8, '#fff6c8');
   if (t > 94.2) { a111Pearl(ctx, pearl[0], pearl[1], 15, { glint: a111B(t, 94.34, 0.3) * (1 - a111B(t, 95.2, 0.6)), grot: t }); if (a111In(t, 95.06, 95.95)) { for (const P of [W, Hh, ch]) { const h = a111Head(P), s = a111S(P) * (P.child ? 1.25 : 1); for (const sd of [-1, 1]) { ctx.fillStyle = C.white; ctx.beginPath(); ctx.arc(h[0] + sd * 13 * s + 2, h[1] - 6 * s, 2.6 * s, 0, 7); ctx.fill(); } } } }
   a111HutFront(ctx, t, { u: 0.4 });
 }

@@ -17,19 +17,19 @@ const A97_CAM = [
   [33.5, { x: 520, y: 660, zoom: 1.1 }], [34.3, { x: 520, y: 660, zoom: 1.1 }], [37.8, { x: 620, y: 700, zoom: 1.35 }], [39.3, { x: 620, y: 700, zoom: 1.35 }], [39.9, { x: 500, y: 660, zoom: 1.1 }], [40.85, { x: 500, y: 660, zoom: 1.1 }],
   [40.86, { x: 560, y: 690, zoom: 1.5 }], [45.5, { x: 560, y: 690, zoom: 1.5 }], [46.2, { x: 620, y: 690, zoom: 1.4 }], [49.29, { x: 620, y: 690, zoom: 1.4 }],
   [49.3, { x: 560, y: 740, zoom: 1.6 }], [50.5, { x: 560, y: 740, zoom: 1.6 }], [51.0, { x: 520, y: 800, zoom: 2.4 }], [53.9, { x: 520, y: 800, zoom: 2.4 }], [54.5, { x: 500, y: 700, zoom: 1.15 }], [60.79, { x: 500, y: 700, zoom: 1.15 }],
-  [60.8, { x: 500, y: 680, zoom: 1.15 }], [61.6, { x: 500, y: 680, zoom: 1.15 }], [62.4, { x: 435, y: 680, zoom: 1.15 }], [63.4, { x: 435, y: 680, zoom: 1.15 }], [64.0, { x: 565, y: 680, zoom: 1.15 }], [65.0, { x: 520, y: 690, zoom: 1.2 }],
-  [68.8, { x: 500, y: 720, zoom: 1.3 }], [73.05, { x: 500, y: 720, zoom: 1.3 }],
-  [73.06, { x: 800, y: 700, zoom: 2.6 }], [79.75, { x: 800, y: 700, zoom: 2.6 }], [79.76, { x: 655, y: 700, zoom: 1.45 }], [86.2, { x: 655, y: 700, zoom: 1.45 }], [87.0, { x: 500, y: 680, zoom: 1.15 }], [90.0, { x: 435, y: 680, zoom: 1.15 }], [91.61, { x: 435, y: 680, zoom: 1.15 }],
+  [60.8, { x: 500, y: 680, zoom: 1.15 }], [61.6, { x: 500, y: 680, zoom: 1.15 }], [62.4, { x: 450, y: 680, zoom: 1.15 }], [63.4, { x: 450, y: 680, zoom: 1.15 }], [64.0, { x: 560, y: 680, zoom: 1.15 }], [65.0, { x: 500, y: 690, zoom: 1.15 }],
+  [68.8, { x: 490, y: 700, zoom: 1.15 }], [73.05, { x: 490, y: 700, zoom: 1.15 }],
+  [73.06, { x: 800, y: 722, zoom: 2.5 }], [79.75, { x: 800, y: 722, zoom: 2.5 }], [79.76, { x: 655, y: 700, zoom: 1.45 }], [86.2, { x: 655, y: 700, zoom: 1.45 }], [87.0, { x: 500, y: 680, zoom: 1.15 }], [90.0, { x: 435, y: 680, zoom: 1.15 }], [91.61, { x: 435, y: 680, zoom: 1.15 }],
   [91.62, { x: 640, y: 560, zoom: 1.3 }], [103.99, { x: 640, y: 530, zoom: 1.3 }],
-  [126.22, { x: 500, y: 640, zoom: 1.05 }], [127.8, { x: 500, y: 640, zoom: 1.05 }], [131.6, { x: 540, y: 700, zoom: 1.45 }], [135.85, { x: 540, y: 700, zoom: 1.45 }],
-  [135.86, { x: 690, y: 650, zoom: 2.1 }], [139.9, { x: 690, y: 650, zoom: 2.4 }], [140.6, { x: 690, y: 650, zoom: 2.4 }], [141.2, { x: 560, y: 690, zoom: 1.5 }], [142.83, { x: 560, y: 690, zoom: 1.5 }],
-  [142.84, { x: 600, y: 690, zoom: 1.5 }], [147.85, { x: 600, y: 690, zoom: 1.5 }], [147.86, { x: 700, y: 650, zoom: 2.0 }], [153.6, { x: 700, y: 650, zoom: 2.25 }], [154.4, { x: 640, y: 640, zoom: 1.5 }], [158.97, { x: 640, y: 640, zoom: 1.5 }],
+  [126.22, { x: 500, y: 640, zoom: 1.05 }], [127.8, { x: 500, y: 640, zoom: 1.05 }], [131.6, { x: 480, y: 700, zoom: 1.28 }], [135.85, { x: 480, y: 700, zoom: 1.28 }],
+  [135.86, { x: 690, y: 650, zoom: 2.1 }], [139.9, { x: 690, y: 650, zoom: 2.4 }], [140.6, { x: 690, y: 650, zoom: 2.4 }], [141.2, { x: 470, y: 690, zoom: 1.3 }], [142.83, { x: 450, y: 690, zoom: 1.3 }],
+  [142.84, { x: 600, y: 690, zoom: 1.5 }], [147.85, { x: 600, y: 690, zoom: 1.5 }], [147.86, { x: 700, y: 650, zoom: 2.0 }], [153.6, { x: 700, y: 650, zoom: 2.25 }], [154.4, { x: 600, y: 640, zoom: 1.4 }], [158.97, { x: 600, y: 640, zoom: 1.4 }],
   [158.98, { x: 330, y: 660, zoom: 1.5 }], [161.0, { x: 330, y: 660, zoom: 1.5 }], [164.3, { x: 500, y: 640, zoom: 1.05 }], [A97_DUR, { x: 500, y: 640, zoom: 1.05 }]];
 // the street: the camera follows the walkers (world 1600 wide)
 function a97StreetCam(t) {
   const m = a97MX11(Math.min(t, 115.5)), s = t < 117.66 ? a97SX11(t) : a97SalX12(t), mid = (m + s) / 2;
-  if (t < 110) return { x: mid + 80, y: 680, zoom: 1.15 };
-  if (t < 115.1) { const k = a97E(t, 110, 0.8); return { x: K.lerp(mid + 80, m - 60, k), y: K.lerp(680, 640, k), zoom: K.lerp(1.15, 1.7, k) }; }
+  if (t < 107.5) return { x: mid + 80, y: 680, zoom: 1.15 };
+  if (t < 115.1) { const k = a97E(t, 107.5, 0.8); return { x: K.lerp(mid + 80, m - 60, k), y: K.lerp(680, 640, k), zoom: K.lerp(1.15, 1.7, k) }; }
   if (t < 117.66) { const k = a97E(t, 115.1, 0.6); return { x: K.lerp(m - 60, mid, k), y: K.lerp(640, 670, k), zoom: K.lerp(1.7, 1.5, k) }; }
   return { x: mid, y: 680, zoom: K.lerp(1.6, 1.8, a97E(t, 117.66, 5.1)) };
 }
@@ -105,10 +105,15 @@ function a97WorldFx(ctx, t, F) {
   // S4: heart and glow over Yahya as he gives
   if (a97In(t, 37.8, 39.6)) { const h = F.heads.Y, k = K.ease.back(K.clamp((t - 37.8) / 0.3)), a = 1 - K.clamp((t - 39.1) / 0.5); ctx.save(); ctx.globalAlpha = a; a97Glow(ctx, h[0], h[1] - 30, 120, 0.4, t); heart(ctx, h[0] - 10, h[1] - 150 - 20 * K.clamp((t - 37.8) / 1.8), 24 * k); ctx.restore(); }
   // S11: the fear cloud follows Mansur (prison icon)
-  if (a97In(t, 107.56, 117.66)) { const h = F.heads.M, k = K.ease.back(K.clamp((t - 107.56) / 0.35)), a = 1 - K.clamp((t - 117.2) / 0.4); ctx.save(); ctx.globalAlpha = a; ctx.translate(h[0] - 10, h[1] - 150 + 8 * Math.sin(t * 2.3)); ctx.scale(k * 0.55, k * 0.55); a97Prison(ctx, 0, 0, 1, { dark: true }); ctx.restore(); }
-  if (a97In(t, 108.14, 109.6)) { const h = F.heads.M; a97Sweat(ctx, h[0] + 30, h[1] - 20, (t - 108.2) / 1.2); }
+  // v2: on غلبه the fear pops big on a cream thought disc right above him (pulse on الخوف), then shrinks to a small cloud for the walk
+  if (a97In(t, 108.14, 117.66)) { const h = F.heads.M, k = K.ease.back(K.clamp((t - 108.14) / 0.35)), a = 1 - K.clamp((t - 117.2) / 0.4), big = 1 - a97E(t, 110.6, 0.5), pu = 1 + 0.15 * pulse(t, 108.72, 0.35);
+    const cx = h[0] - 10 * (1 - big), cy = h[1] - K.lerp(150, 190, big) + 8 * Math.sin(t * 2.3) * (1 - big), sc = K.lerp(0.55, 1.1, big) * k * pu;
+    ctx.save(); ctx.globalAlpha = a;
+    if (big > 0.02) { ctx.save(); ctx.globalAlpha = a * big; for (const [f, r] of [[0.45, 9], [0.7, 14]]) { ctx.beginPath(); ctx.arc(K.lerp(h[0] + 20, cx, f), K.lerp(h[1] - 70, cy + 90, f), r * k, 0, 7); ctx.fillStyle = '#fff3d6'; ctx.fill(); ctx.lineWidth = 5; ctx.strokeStyle = C.black; ctx.stroke(); }
+      ctx.beginPath(); ctx.arc(cx, cy, 120 * k * pu, 0, 7); ctx.fillStyle = '#fff3d6'; ctx.fill(); ctx.lineWidth = 8; ctx.strokeStyle = C.black; ctx.stroke(); ctx.restore(); }
+    ctx.translate(cx, cy); ctx.scale(sc, sc); a97Prison(ctx, 0, 0, 1, { dark: true }); ctx.restore(); }
+  for (const [t0, dx] of [[108.3, 34], [108.95, -30], [109.5, 36]]) if (a97In(t, t0, t0 + 1.0)) { const h = F.heads.M; a97Sweat(ctx, h[0] + dx, h[1] - 22, (t - t0) / 1.0); }
   // S14: the heart Yahya hoped for (same size and place as in his thought cloud)
-  if (t >= 139.14 && t < 142.84 && F.actors[0]) { const H = F.actors[0], p = a97Pt(H, 0, -122), k = K.ease.back(K.clamp((t - 139.14) / 0.3)), beat = 1 + 0.08 * Math.max(0, Math.sin((t - 139.14) * 7)); heart(ctx, p[0], p[1], 20 * k * beat); }
   // S15-S16: the verse balloon in the world (Yahya mends the cracked heart)
   if (a97In(t, 145.04, 152.6)) {
     const b = A97_BAL15(t), p = K.clamp((t - 145.04) / 0.3), a = 1 - K.clamp((t - 152.1) / 0.5), tail = t < 147.86 ? [540, 690] : [665, 700];
@@ -122,23 +127,25 @@ function a97WorldFx(ctx, t, F) {
 }
 
 // ---------- overlay pieces (view units) ----------
-const A97_HG = [[10.48, 1], [25, 0.8], [53.6, 0.55], [59.08, 0.55], [60.4, 0.45], [61.2, 0.32], [86.2, 0.2], [104, 0.1], [128, 0.03]];
+const A97_HG = [[10.48, 1], [25, 0.8], [53.6, 0.55], [59.08, 0.55], [60.4, 0.45], [61.2, 0.32], [86.2, 0.2], [104, 0.1], [128, 0.03], [128.4, 0.03], [128.95, 0]];
 function a97HourglassOver(ctx, t) {
-  const show = (t >= 10.48 && t < 71.96) || (t >= 82.64 && t < 91.62) || (t >= 104 && t < 129.5) || (t >= 160.26 && t < 161.4);
+  // v2: stays on through the hand-over; hidden only in the jewel close-up and the hope-cloud push, with 0.3 s fades
+  const show = (t >= 10.48 && t < 73.06) || (t >= 79.76 && t < 93.5) || (t >= 103.36 && t < 130.4) || (t >= 160.26 && t < 161.4);
   if (!show) return;
+  const fade = t < 73.06 && t >= 72.76 ? (73.06 - t) / 0.3 : a97In(t, 79.76, 80.06) ? (t - 79.76) / 0.3 : a97In(t, 93.2, 93.5) ? (93.5 - t) / 0.3 : a97In(t, 103.36, 103.66) ? (t - 103.36) / 0.3 : 1;
   const lv = t >= 160 ? 0 : kfn(t, A97_HG, 'inOut'), pop = K.ease.back(K.clamp((t - 10.48) / 0.35));
   let s = (t < 12 ? pop : 1) * (1 + 0.15 * pulse(t, 15.44, 0.3)), x = 915, y = 128 + tremble(t, a97In(t, 25.04, 25.3) ? 3 : 0, 20) * 0, rot = 0, alpha = 1;
   if (a97In(t, 25.04, 25.3)) x += 4 * Math.sin(t * 90);
-  if (t >= 128.7 && t < 129.5) alpha = 1 - (t - 128.7) / 0.8;
+  if (t >= 128.0 && t < 130.4) { const g = a97E(t, 128.0, 0.35) * (1 - a97E(t, 129.75, 0.45)); s *= 1 + g + 0.12 * pulse(t, 128.4, 0.3); x -= 60 * g; y += 30 * g; alpha = 1 - K.clamp((t - 129.9) / 0.5); }
   if (t >= 160.26) { rot = Math.PI / 2 * K.clamp((t - 160.26) / 0.4) - 0.12 * swing(t, 160.66, 1, 2.2, 5); alpha = 1 - K.clamp((t - 160.9) / 0.5); s = K.ease.back(K.clamp((t - 160.26) / 0.2)); }
-  a97Hourglass(ctx, x, y, lv, t, { s, rot, alpha, run: t > 10.9 && t < 128.0, red: a97In(t, 15.44, 16.7) || a97In(t, 128.0, 129.5), tick: t >= 128.3 ? (t - 128.3) / 0.25 : 0 });
+  a97Hourglass(ctx, x, y, lv, t, { s, rot, alpha: alpha * fade, run: t > 10.9 && t < 128.0, red: a97In(t, 15.44, 16.7) || a97In(t, 128.0, 129.0), tick: t >= 129.0 ? (t - 129.0) / 0.25 : 0 });
 }
 // money meter: counter (style primitive) + bar
 function a97Meter(ctx, t, value, frac, o = {}) {
   const x = o.x ?? 250, y = o.y ?? 150, a = o.alpha ?? 1; if (a <= 0) return; ctx.save(); ctx.globalAlpha *= a;
   S0.counter(ctx, Math.round(value), x, y, o.p ?? 1, { size: o.size || 60, seed: 77 });
   if (frac != null) a97Bar(ctx, x - 170, y + 52, 340, 30, Math.max(frac, o.min || 0), { over: o.over || 0, flash: o.flash || 0 });
-  if (o.sub != null) { ctx.font = K.font(42, BF, 400); ctx.textAlign = 'left'; ctx.lineWidth = 7; ctx.strokeStyle = C.white; ctx.lineJoin = 'round'; const tx = 'FOUND: ' + K.fmt(o.sub); ctx.strokeText(tx, x - 170, y + 130); ctx.fillStyle = C.red; ctx.fillText(tx, x - 170, y + 130); }
+  if (o.sub != null) { ctx.font = K.font(60, BF, 400); ctx.textAlign = 'left'; ctx.lineWidth = 9; ctx.strokeStyle = C.white; ctx.lineJoin = 'round'; const tx = 'FOUND: ' + K.fmt(o.sub); ctx.strokeText(tx, x + 190, y + 40); ctx.fillStyle = C.red; ctx.fillText(tx, x + 190, y + 40); }
   ctx.restore();
 }
 function a97Money(ctx, t) {
@@ -152,8 +159,8 @@ function a97Money(ctx, t) {
     if (a97In(t, 68.78, 69.9)) { ctx.save(); ctx.translate(690, 216); ctx.scale(1 + 0.1 * pulse(t, 68.78, 0.3), 1 + 0.1 * pulse(t, 68.78, 0.3)); ctx.lineCap = 'round'; ctx.lineWidth = 14; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.moveTo(-24, 0); ctx.lineTo(-6, 18); ctx.lineTo(26, -22); ctx.stroke(); ctx.lineWidth = 7; ctx.strokeStyle = A97_GREEN; ctx.stroke(); ctx.restore(); }
     if (a97In(t, 65.96, 68.9)) for (let i = 0; i < 8; i++) { const t0 = 65.96 + i * 0.32, u = (t - t0) / 0.6; if (u <= 0 || u >= 1) continue; const cam = a97Cam(t), src = a97W2V(i % 2 ? A97_CH.B : A97_CH.A, 820, cam); a97Coin(ctx, K.lerp(src[0], 500, u), K.lerp(src[1], 210, u) - 120 * Math.sin(Math.PI * u), 14, Math.cos(u * 10)); }
   }
-  if (a97In(t, 129.86, 131.4)) { a97Meter(ctx, t, 1e6, 1, { p: K.clamp((t - 129.86) / 0.3), x: 300, y: 150, alpha: 1 - K.clamp((t - 131.0) / 0.4) });
-    const k = K.ease.back(K.clamp((t - 130.0) / 0.25)); if (k > 0) { ctx.save(); ctx.globalAlpha = 1 - K.clamp((t - 131.0) / 0.4); ctx.translate(430, 150); ctx.rotate(-0.2); ctx.scale(k * 1.6 - (k - 1) * 0.6, k * 1.6 - (k - 1) * 0.6); ctx.lineWidth = 8; ctx.strokeStyle = C.red; ctx.strokeRect(-110, -44, 220, 88); ctx.font = K.font(72, BF, 400); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = C.red; ctx.fillText('PAID!', 0, 4); ctx.restore(); } }
+  if (a97In(t, 129.86, 131.6)) { a97Meter(ctx, t, 1e6, 1, { p: K.clamp((t - 129.86) / 0.3), x: 500, y: 140, alpha: 1 - K.clamp((t - 131.2) / 0.4) });
+    const k = K.ease.back(K.clamp((t - 130.1) / 0.25)); if (k > 0) { ctx.save(); ctx.globalAlpha = 1 - K.clamp((t - 131.2) / 0.4); ctx.translate(560, 290); ctx.rotate(-0.2); ctx.scale(k * 1.6 - (k - 1) * 0.6, k * 1.6 - (k - 1) * 0.6); ctx.lineWidth = 8; ctx.strokeStyle = C.red; ctx.strokeRect(-110, -44, 220, 88); ctx.font = K.font(72, BF, 400); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = C.red; ctx.fillText('PAID!', 0, 4); ctx.restore(); } }
 }
 // a name label with an arrow to a head (view coords)
 function a97Name(ctx, t, text, t0, dur, at, head, o = {}) {
@@ -177,12 +184,13 @@ function a97Insets(ctx, t, F, cam) {
   // S8 / S14: memory, the jewel on the caliph's turban
   const memory = (c, smile) => { const P = a97Harun0({ mouth: smile ? 'smile' : 'closed', handR: smile ? [30, -236] : [40, -110], lid: smile && a97In(t, 77.6, 77.8) ? 1 : 0 }); a97Bust(c, P, 1.25); a97Jewel(c, 18, -45 * 1.25, 18, ((t * 0.8) % 1.6) / 0.6); };
   if (a97In(t, 76.04, 79.9)) { const p = K.clamp((t - 76.04) / 0.3) * (1 - K.clamp((t - 79.5) / 0.3)); a97Inset(ctx, 230, 280, 150, p, (c) => memory(c, t > 77.12), { dream: true, ring: C.yellow });
-    if (p > 0.9 && t < 79.4) { const cam = a97Cam(t), j = a97W2V(790, 720, cam); S0.arrow(ctx, [j[0] - 30, j[1] - 40], [300, 380], K.clamp((t - 76.4) / 0.4), { width: 14, bend: -0.2 }); }
-    a97Name(ctx, t, 'HE WILL KNOW IT', 78.3, 1.3, [260, 480], null, { size: 40 }); }
-  if (a97In(t, 136.32, 137.2)) { const p = K.clamp((t - 136.32) / 0.2) * (1 - K.clamp((t - 136.95) / 0.2)); a97Inset(ctx, 220, 260, 140, p, (c) => memory(c, false), { dream: true, ring: C.yellow }); }
-  // S14: Yahya's portrait in the jewel's light
-  if (a97In(t, 137.06, 138.5) && F.cas) { const j = a97W2V(F.cas[0], F.cas[1] - 30, cam), p = K.clamp((t - 137.06) / 0.25) * (1 - K.clamp((t - 138.2) / 0.3)); a97Inset(ctx, j[0] - 150, j[1] - 170, 80, p, (c) => a97Bust(c, a97Mk('yahya', { mouth: 'smile', lid: 0.15 }), 0.85), { ring: A97_JEWEL });
-    a97Name(ctx, t, "YAHYA'S GIFT", 137.2, 1.3, [j[0] - 150, j[1] - 60], null, { size: 38 }); }
+    if (p > 0.9 && t < 79.4) { const cam = a97Cam(t), j = a97W2V(A97_JC[0] - 40, A97_JC[1] - 50, cam); S0.arrow(ctx, [j[0] - 20, j[1] - 10], [300, 400], K.clamp((t - 76.4) / 0.4), { width: 14, bend: -0.2 }); }
+    a97Name(ctx, t, 'HE WILL KNOW IT', 78.3, 1.3, [200, 470], null, { size: 36 }); }
+  // S14 (v2): one inset, top-left, held 136.32-138.2: Yahya holding the same jewel (the 73.6 pose)
+  if (a97In(t, 136.32, 138.5)) { const p = K.clamp((t - 136.32) / 0.25) * (1 - K.clamp((t - 138.2) / 0.3)); a97Inset(ctx, 175, 205, 125, p, (c) => {
+      const Y = a97Mk('yahya', { x: 25, y: 200, s: 1.2, dir: -1, mouth: 'closed', lid: 0.15, brow: -0.1, gaze: [0, 0.05] }); a97Carry(Y, -28, 135, 40); person(c, Y); a97Smile(c, Y, 1);
+      a97CasketHero(c, -28, 164, 0.94, { open: 1, lift: 1, t, jr: 40, rayR: 82, glint: ((t * 0.8) % 1.6) / 0.6 }); }, { dream: true, ring: C.yellow });
+    a97Name(ctx, t, "YAHYA'S GIFT", 136.5, 1.95, [175, 365], null, { size: 36 }); }
   // S12: memory of Yahya handing over the casket (the S8 pose)
   if (a97In(t, 123.74, 125.5)) { const p = K.clamp((t - 123.74) / 0.3) * (1 - K.clamp((t - 125.1) / 0.3)); a97Inset(ctx, 500, 250, 140, p, (c) => {
     const Y = a97Mk('yahya', { x: 40, y: 175, s: 0.8, dir: -1, mouth: 'smile', lid: 0.15, tip: 0.12, handRW: [-30, 58], handLW: [-2, 62] }); person(c, Y); a97Sack(c, -40, 120, 0.4); a97Casket(c, -44, 52, 0.45);
@@ -225,42 +233,58 @@ function a97Balloons(ctx, t, F, cam) {
     const M = a97Mk('mansur', { x: -70, y: 85, s: 0.42, dir: 1, talk: 0.6 + 0.3 * Math.sin(t * 9), handR: [70, -196] }); person(c, M);
     if (t > 133.83) { a97Scroll(c, 30, -30, 0.5, 1); a97CrackHeart(c, 90, 40, 28, 1, 3); } }); }
   // S10: Yahya's hope (thought cloud)
-  if (a97In(t, 92.66, 103.8)) { const hy = hv('Y'), p = K.clamp((t - 92.66) / 0.5) * (1 - K.clamp((t - 103.36) / 0.4));
-    thoughtCloud(ctx, 470, 370, 660, 440, t, { p, tail: [hy[0] - 20, hy[1] - 70], scale: 0.62, at: [560, 760], bg: '#fff3d6', inside: (c) => a97Hope(c, t) }); }
-  // S16: FEAR and SORROW squeeze the verse out of a small Mansur
-  if (a97In(t, 153.84, 158.98)) { const a = 1 - K.clamp((t - 158.5) / 0.4), pop = (t0) => K.ease.back(K.clamp((t - t0) / 0.3)), press = a97E(t, 155.6, 0.5);
-    ctx.save(); ctx.globalAlpha = a;
-    seg(ctx, 120, 570, 360, 570, 5, C.black, 0);
-    const M = a97Mk('mansur', { x: 240, y: 570, s: 0.6, dir: 1, brow: -0.7, mouth: t > 157.06 ? 'o' : 'frown', wet: t > 154.6, sq: 1 - 0.2 * press, eyes: t > 157.06 ? 'wide' : 'open', gaze: t > 157.2 ? [0.6, -0.4] : [0, 0.4] }); M.x += tremble(t, 2); person(ctx, M);
-    let k = pop(153.84); if (k > 0) { ctx.save(); ctx.translate(140, 300 + 30 * press); ctx.scale(k * 0.9, k * 0.9); a97Prison(ctx, 0, 0, 1, { dark: true }); ctx.restore(); a97Name(ctx, t, 'FEAR', 154.0, 4.7, [140, 210], null, { size: 40 }); }
-    k = pop(154.38); if (k > 0) { ctx.save(); ctx.translate(345, 300 + 30 * press); ctx.scale(k * 1.15, k * 1.15); a97Tear(ctx, 0, 0, 34); ctx.restore(); a97Name(ctx, t, 'SORROW', 154.6, 4.1, [350, 210], null, { size: 40 }); }
-    if (t > 155.6) { S0.arrow(ctx, [150, 360], [215, 430], K.clamp((t - 155.6) / 0.3), { width: 12 }); S0.arrow(ctx, [335, 360], [270, 430], K.clamp((t - 155.7) / 0.3), { width: 12 }); }
-    if (t > 157.06) { const k2 = K.ease.back(K.clamp((t - 157.06) / 0.3)); a97Scroll(ctx, 240 + 80 * k2, 440 - 20 * k2, 0.42 * k2 * (1 + 0.2 * pulse(t, 157.06, 0.3)), 1, { rot: 0.2 }); }
-    ctx.restore(); }
+  // v2: the cloud grows to the panel width (push-in 93.5-94.1, pull back 102.8-103.36) so the figures inside read
+  if (a97In(t, 92.66, 103.8)) { const hy = hv('Y'), p = K.clamp((t - 92.66) / 0.5) * (1 - K.clamp((t - 103.36) / 0.4)), z = a97E(t, 93.5, 0.6) * (1 - a97E(t, 102.9, 0.45));
+    thoughtCloud(ctx, K.lerp(470, 500, z), K.lerp(370, 365, z), K.lerp(660, 960, z), K.lerp(440, 640, z), t, { p, tail: [hy[0] - 20, hy[1] - 70], scale: K.lerp(0.62, 1.08, z), at: [K.lerp(560, 500, z), K.lerp(760, 735, z)], bg: '#fff3d6', inside: (c) => a97Hope(c, t) }); }
+  // S16 (v2): Yahya's idea balloon: FEAR and SORROW squeeze the verse out of Mansur
+  if (a97In(t, 152.72, 158.98)) { const hy = hv('Y'), a = 1 - K.clamp((t - 158.5) / 0.4), pop = (t0) => K.ease.back(K.clamp((t - t0) / 0.35)), press = a97E(t, 155.6, 0.4);
+    ctx.save(); ctx.globalAlpha = a; a97Balloon(ctx, 430, 300, 580, 390, [hy[0] - 30, hy[1] + 10], K.clamp((t - 152.72) / 0.35), (c) => {
+      c.fillStyle = '#fff3d6'; c.fillRect(-300, -200, 600, 400); seg(c, -150, 160, 150, 160, 5, C.black, 0);
+      const M = a97Mk('mansur', { x: 0, y: 160, s: 0.95, dir: 1, brow: -0.7, mouth: t > 157.06 ? 'o' : 'frown', wet: t > 154.6, sq: 1 - 0.2 * press, eyes: t > 157.06 ? 'wide' : 'open', gaze: t > 157.2 ? [0.8, -0.3] : [0, 0.3] });
+      if (t > 155.6) M.x += tremble(t, 3 * press, 11); if (t > 157.06) { M.handR = PERSON_HANDS.cheeks.R; M.handL = PERSON_HANDS.cheeks.L; }
+      person(c, M);
+      // FEAR drops in from the left, SORROW from the right; both press on يجعلان
+      let k = pop(153.84); if (k > 0) { const x = K.lerp(-330, -150, Math.min(1, k)) + 50 * press, sq = 1 - 0.18 * pulse(t, 154.1, 0.22) - 0.12 * pulse(t, 155.85, 0.22);
+        c.save(); c.translate(x, 10); c.scale(0.8 * (2 - sq), 0.8 * sq); a97Prison(c, 0, 0, 1, { dark: true }); c.restore();
+        a97Name(c, t, 'FEAR', 153.95, 3.15, [-165, -100], null, { size: 42 }); }
+      k = pop(154.38); if (k > 0) { const x = K.lerp(330, 150, Math.min(1, k)) - 50 * press, sq = 1 - 0.18 * pulse(t, 154.65, 0.22) - 0.12 * pulse(t, 155.85, 0.22);
+        c.save(); c.translate(x, 20); c.scale(2 - sq, sq); a97Tear(c, 0, 0, 40); c.restore();
+        a97Name(c, t, 'SORROW', 154.5, 2.6, [165, -100], null, { size: 42 }); }
+      if (t > 155.6) { S0.arrow(c, [-150, 90], [-70, 90], K.clamp((t - 155.6) / 0.3), { width: 12 }); S0.arrow(c, [150, 90], [70, 90], K.clamp((t - 155.7) / 0.3), { width: 12 }); }
+      // the verse shoots out of his mouth on يقول
+      if (t > 157.06) { const u = K.clamp((t - 157.06) / 0.35), k2 = K.ease.back(u), hm = a97Head(M); a97Scroll(c, K.lerp(hm[0] + 20, 85, k2), K.lerp(hm[1] + 20, -60, k2), 0.55 * Math.max(0.2, k2), 1, { rot: 0.25 * k2 });
+        if (u < 1 || t < 157.8) S0.emphasis(c, 0, -150, 36, K.clamp((t - 157.1) / 0.35), { word: 'POP!', wx: 0, wy: 0 }); }
+    }); ctx.restore(); }
   // S17: the fear cloud falls apart
   if (a97In(t, 160.26, 161.6)) { ctx.save(); ctx.translate(230, 260); a97Prison(ctx, 0, 0, 0.9, { dark: true, crack: K.clamp((t - 160.4) / 1.0) }); ctx.restore(); }
 }
 // inside Yahya's thought cloud (world-like units, at [560, 760] lands on the cloud centre)
 function a97Hope(c, t) {
   palaceHall(c, { t, outside: a97Outside(t, 0.47) });
-  const H = a97Mk('harun', { x: A97_TX, y: A97_SITY, s: 1, dir: -1, sit: 1, seat: 'bench', brow: K.lerp(0.8, -0.2, a97E(t, 100.72, 0.5)), mouth: t > 100.9 ? 'smile' : 'closed' });
-  if (a97In(t, 94.2, 96.56)) { H.tip = 0.1; H.brow = -0.6; H.eyes = 'wide'; }
-  if (a97In(t, 96.56, 100.72)) { H.handR = PERSON_HANDS.chin.R; H.lid = 0.3; H.drop = 5 * (pulse(t, 96.9, 0.5) + pulse(t, 97.6, 0.5)); H.brow = 0.3; }
-  if (t >= 102.18) H.handR = a97L2([60, -120], [80, -200], a97E(t, 102.18, 0.3));
-  H.gaze = t < 93.52 ? [-1, 0.2] : lookAt(a97Head(H), [470, 660]);
-  person(c, H);
-  if (t >= 101.48) { const p = a97Pt(H, 0, -122), k = K.ease.back(K.clamp((t - 101.48) / 0.3)), beat = 1 + 0.08 * Math.max(0, Math.sin((t - 101.48) * 7)); heart(c, p[0], p[1], 20 * k * beat); }
-  if (a97In(t, 94.2, 95.4)) S0.emphasis(c, 700, 560, 70, K.clamp((t - 94.2) / 0.4), { word: '!' });
-  const S = a97SalihBase({ x: 470, y: 900, kneel: 0.6, aL: [-2.4, -2.8], aR: [2.45, 2.85], spear: null, handR: null }); person(c, S); a97Helmet(c, S);
-  const cp = a97Pt(S, 0, -258), op = t < 93.52 ? 0 : 1; a97Casket(c, cp[0], cp[1] + 24, 0.7, { open: op, glow: op * (1 + 0.3 * pulse(t, 95.44, 0.6)), t, glint: ((t * 0.7) % 1.5) / 0.6 });
-  // tiny Yahya portrait linked to the jewel, the three chests stack beside it
-  const yp = [260, 560]; if (t >= 95.44) { const k = K.clamp((t - 95.44) / 0.4); c.save(); c.setLineDash([12, 12]); c.lineWidth = 6; c.strokeStyle = C.black; c.beginPath(); c.moveTo(cp[0], cp[1] - 10); c.lineTo(K.lerp(cp[0], yp[0], k), K.lerp(cp[1] - 10, yp[1], k)); c.stroke(); c.restore();
-    a97Inset(c, yp[0], yp[1], 70, k, (cc) => a97Bust(cc, a97Mk('yahya', { mouth: 'smile', lid: 0.15 }), 0.75), { ring: C.yellow }); }
-  for (let i = 0; i < 3; i++) { const k = K.ease.back(K.clamp((t - 97.98 - i * 0.25) / 0.25)); if (k > 0) { c.save(); c.translate(140, 700 - i * 52); c.scale(k, k); a97Chest(c, 0, 0, 0.4, { band: [A97_GREEN, C.yellow, C.red][i] }); c.restore(); } }
-  // a small Mansur kneels on the left, freed by a wave
-  const free = a97E(t, 102.18, 0.4); const M = a97Mk('mansur', { x: 320, y: 905, s: 0.85, dir: 1, kneel: 1 - free, mouth: free > 0.5 ? 'smile' : 'frown', brow: -0.6 * (1 - free), wet: true, handR: free > 0.5 ? null : PERSON_HANDS.clasp.R, handL: free > 0.5 ? null : PERSON_HANDS.clasp.L });
-  if (free > 0.5) { M.aL = [-2.45, -2.8]; M.aR = [2.45, 2.8]; M.y -= hop(t, 102.6, 0.4, 0, 0, 24)[1]; }
+  const lean = a97Env(t, 95.44, 96.7, 0.25), heartK = t < 100.72 ? 0 : a97E(t, 100.72, 0.6);
+  const H = a97Mk('harun', { x: A97_TX, y: A97_SITY, s: 1, dir: -1, sit: 1, seat: 'bench', brow: K.lerp(0.7, -0.6, heartK), mouth: 'closed', smileCol: C.black, bigSmile: heartK });
+  if (lean > 0) { H.tip = 0.14 * lean; H.brow = -0.6; H.eyes = 'wide'; H.mouth = 'o'; }
+  if (a97In(t, 96.7, 100.72)) { H.handR = PERSON_HANDS.chin.R; H.lid = 0.3; H.drop = 5 * (pulse(t, 97.98, 0.5) + pulse(t, 99.26, 0.5)); H.brow = 0.2; }
+  if (t >= 100.72) { H.handR = a97L2([40, -98], PERSON_HANDS.chest.R, a97E(t, 100.72, 0.4)); H.wet = true; }
+  if (t >= 102.18) H.handL = a97L2([-40, -98], [-90, -170], a97E(t, 102.18, 0.3));
+  const S = a97SalihBase({ x: 470, y: 900, kneel: 0.6, spear: null, handR: [70, -112], handL: [36, -112], tip: 0.12 });
+  const cp = a97Pt(S, 56, -100), op = t < 93.52 ? 0 : 1;
+  H.gaze = t < 93.52 ? [-1, 0.2] : lookAt(a97Head(H), cp);
+  if (t >= 100.72) H.gaze = lookAt(a97Head(H), [320, 760]);
+  person(c, H); a97Smile(c, H, H.bigSmile, C.black);
+  if (t >= 101.2) { const p = a97Pt(H, 4, -118), k = K.ease.back(K.clamp((t - 101.2) / 0.3)), beat = 1 + 0.12 * Math.max(0, Math.sin((t - 101.5) * 7)); heart(c, p[0], p[1], 34 * k * beat); }
+  if (a97In(t, 95.44, 96.7)) { const h = a97Head(H); S0.emphasis(c, h[0] + 20, h[1] - 105, 55, K.clamp((t - 95.44) / 0.35), { word: '!', wx: 0, wy: 0 }); }
+  S.gaze = lookAt(a97Head(S), a97Head(H)); person(c, S); a97Helmet(c, S);
+  const gl = ((t * 0.7) % 1.5) / 0.6; a97Casket(c, cp[0], cp[1] + 24 - 14 * a97E(t, 95.3, 0.3), 0.75, { open: op, glow: op * (1 + 0.3 * pulse(t, 95.44, 0.6)), t, glint: gl });
+  // Yahya's portrait linked to the jewel (on فيدرك), the three chests stack beside it
+  const yp = [345, 520]; if (t >= 96.56) { const k = K.clamp((t - 96.56) / 0.4); c.save(); c.setLineDash([14, 12]); c.lineWidth = 7; c.strokeStyle = C.black; c.beginPath(); c.moveTo(cp[0], cp[1] - 40); c.lineTo(K.lerp(cp[0], yp[0], k), K.lerp(cp[1] - 40, yp[1], k)); c.stroke(); c.restore();
+    a97Inset(c, yp[0], yp[1], 82, k, (cc) => a97Bust(cc, a97Mk('yahya', { mouth: 'smile', lid: 0.15 }), 1.1), { ring: C.yellow }); }
+  for (let i = 0; i < 3; i++) { const k = K.ease.back(K.clamp((t - 97.98 - i * 0.25) / 0.25)); if (k > 0) { c.save(); c.translate(345, 905 - i * 50); c.scale(k, k); a97Chest(c, 0, 0, 0.38, { band: [A97_GREEN, C.yellow, C.red][i] }); c.restore(); } }
+  // Mansur kneels at the left under a prison cloud; on الرجل المديون the bars fall and his arms go up
+  const free = a97E(t, 102.18, 0.35); const M = a97Mk('mansur', { x: 200, y: 905, s: 0.9, dir: 1, kneel: 1 - free, mouth: free > 0.5 ? 'open' : 'frown', brow: -0.6 * (1 - free), wet: true, handR: free > 0.5 ? null : PERSON_HANDS.clasp.R, handL: free > 0.5 ? null : PERSON_HANDS.clasp.L, gaze: free > 0.5 ? [0.5, -0.8] : [1, -0.2] });
+  if (free > 0.3) { M.aL = [-2.45, -2.8]; M.aR = [2.45, 2.8]; M.y -= hop(t, 102.4, 0.4, 0, 0, 30)[1]; }
   person(c, M);
+  if (t >= 99.26 && t < 103.8) { const h = a97Head(M), k = K.ease.back(K.clamp((t - 99.26) / 0.3)); c.save(); c.translate(h[0] + 10, h[1] - 150); c.scale(k * 0.9, k * 0.9); a97Prison(c, 0, 0, 1, { dark: true, crack: K.clamp((t - 102.18) / 0.8) }); c.restore(); }
 }
 
 // ---------- lettering ----------
@@ -278,10 +302,10 @@ function a97Lettering(ctx, t, F, cam) {
   a97Word(ctx, t, 'ENOUGH!', 69.0, 1.5, [500, 330], { size: 56 });
   a97Word(ctx, t, 'AND MORE!', 70.7, 1.25, [760, 330], { size: 50, fill: C.red, color: C.white });
   a97Word(ctx, t, 'A JEWEL!', 73.8, 1.4, [700, 200], { size: 52 });
-  if (t > 83) a97Word(ctx, t, 'THANK YOU!', 83.0, 1.4, hv('M') ? [hv('M')[0] - 60, hv('M')[1] - 190] : [400, 400], { size: 44, fill: C.white, balloon: true });
+  if (t > 83.9 && t < 85.4 && hv('M')) { const h = hv('M'); a97Balloon(ctx, h[0] - 90, h[1] - 230, 300, 130, [h[0] + 10, h[1] - 40], K.clamp((t - 83.95) / 0.3) * (1 - K.clamp((t - 85.1) / 0.3)), (c) => { c.font = K.font(50, BF, 400); c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillStyle = C.black; c.fillText('THANK YOU!', 0, 4); }); }
   a97Word(ctx, t, 'ONLY BECAUSE I HAD TO', 116.0, 1.6, [500, 470], { size: 40, fill: C.white });
   if (a97In(t, 122.84, 123.7)) { const h = hv('S'); S0.emphasis(ctx, h[0] + 10, h[1] - 10, 120, K.clamp((t - 122.84) / 0.4), { word: 'SHAME!', wx: -0.4, wy: 1.5 }); }
-  if (a97In(t, 135.86, 136.6)) { const h = hv('H'); S0.emphasis(ctx, h[0], h[1], 110, K.clamp((t - 135.86) / 0.3), { word: '!', wx: 0.9, wy: 0.9 }); }
+  if (a97In(t, 135.86, 136.7)) { const h = hv('H'); S0.emphasis(ctx, h[0] + 70, h[1] - 230, 55, K.clamp((t - 135.86) / 0.3), { word: '!', wx: 0, wy: 0 }); }
 }
 
 // ---------- the scene ----------

@@ -37,6 +37,11 @@ function a97OnBody(ctx, P, fn, head) {
   if (head) { const hx = (P.look || 0) * 4, hy = a97HdY(P); ctx.translate(hx, hy); ctx.rotate(P.tilt || 0); ctx.translate(-hx, -hy); }
   fn(ctx); ctx.restore();
 }
+// v2: a wide smile drawn under a moustache (the engine smile hides under it); k 0..1 opens the curve, col for dark beards
+function a97Smile(ctx, P, k = 1, col = C.black) {
+  if (k <= 0.02) return; a97OnBody(ctx, P, (c) => { const hx = (P.look || 0) * 4, hy = a97HdY(P) + 27; c.save(); c.lineCap = 'round'; c.strokeStyle = col; c.lineWidth = 6;
+    c.beginPath(); c.moveTo(hx - 17, hy - 5 * k); c.quadraticCurveTo(hx, hy + 11 * k, hx + 17, hy - 5 * k); c.stroke(); c.restore(); }, true);
+}
 // soldier helmet (Salih): steel dome with a point and a red neck cloth; brim sits above the brows so they can act
 function a97Helmet(ctx, P) {
   a97OnBody(ctx, P, (c) => {
@@ -149,6 +154,27 @@ function a97Casket(ctx, x, y, s = 1, o = {}) {
   ctx.restore();
 }
 
+// hero casket for close shots (v2): lid hinged at the back (opaque, stands behind the box), a larger jewel that lifts out with
+// an overshoot, and thin tapered rays at low alpha kept inside rayR (so they never reach the holder's face).
+// o: open 0..1, lift 0..1 (eased with overshoot by the caller), jr jewel radius, rayR, t, glint
+function a97CasketHero(ctx, x, y, s = 1, o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  const op = K.clamp(o.open || 0), jr = o.jr ?? 40, jy = -50 - (o.lift || 0) * 22 - 6 * op;
+  if (op > 0.05) {
+    const lt = -44 - 92 * op; shape(ctx, [[-40, -44], [-56, lt], [56, lt], [40, -44], [-40, -44]], A97_GOLD, { lw: 4.5, seed: 322, dot: C.red, pitch: 7, rad: 0.2, da: 0.4 });
+    shape(ctx, ell(0, lt + 10, 5, 5, 10), A97_JEWEL, { lw: 2.5, seed: 323 });
+    const rr = o.rayR ?? jr * 2.1, a0 = (o.t || 0) * 0.35; ctx.save(); ctx.globalAlpha *= 0.4 * op; ctx.fillStyle = C.yellow; ctx.strokeStyle = C.black; ctx.lineWidth = 1.5;
+    for (let i = 0; i < 9; i++) { const a = a0 + i / 9 * Math.PI * 2, r0 = jr * 1.15, r1 = rr * (0.85 + 0.15 * Math.sin((o.t || 0) * 3 + i * 1.7)), w = jr * 0.13, ca = Math.cos(a), sa = Math.sin(a);
+      ctx.beginPath(); ctx.moveTo(ca * r0 - sa * w, jy + sa * r0 + ca * w); ctx.lineTo(ca * r1, jy + sa * r1); ctx.lineTo(ca * r0 + sa * w, jy + sa * r0 - ca * w); ctx.closePath(); ctx.fill(); ctx.stroke(); }
+    ctx.restore();
+    shape(ctx, K.rectPts(-36, -56, 72, 12), C.red, { lw: 3, seed: 320 });
+    a97Jewel(ctx, 0, jy, jr * (0.6 + 0.4 * op), o.glint ?? -1);
+  } else { const lidTop = -44 - 16 - 36 * 0; shape(ctx, [[-42, -44], [-40, lidTop + 6], [-28, lidTop], [28, lidTop], [40, lidTop + 6], [42, -44], [-42, -44]], A97_GOLD, { lw: 4.5, seed: 322, dot: C.red, pitch: 7, rad: 0.2, da: 0.4 }); shape(ctx, ell(0, -52, 5, 5, 10), A97_JEWEL, { lw: 2.5, seed: 323 }); }
+  shape(ctx, K.rectPts(-40, -44, 80, 44), C.yellow, { lw: 5, seed: 321, dot: C.red, pitch: 7, rad: 0.22, da: 0.5 });
+  seg(ctx, -40, -24, 40, -24, 4, A97_GOLD, 2);
+  ctx.restore();
+}
+
 // ---------- hourglass (panel time meter), scroll, notes, prison icon, cracked heart, moth ----------
 // (x, y) centre, 72 x 112 view units at s 1; level 0..1 sand left in the top bulb; o.rot, o.alpha, o.red (last grain red), o.run (falling stream)
 function a97Hourglass(ctx, x, y, level, t, o = {}) {
@@ -226,7 +252,7 @@ function a97Inset(ctx, cx, cy, r, p, inner, o = {}) {
   ctx.save(); ctx.beginPath(); ctx.arc(cx, cy, rr, 0, 7); ctx.fillStyle = o.bg || C.paper; ctx.fill(); ctx.clip();
   if (o.dream) { ctx.fillStyle = dotPat(ctx, '#3f7be6', 10, 0.3); ctx.globalAlpha = 0.35; ctx.fillRect(cx - rr, cy - rr, rr * 2, rr * 2); ctx.globalAlpha = 1; }
   ctx.translate(cx, cy); ctx.scale(rr / r, rr / r); inner(ctx); ctx.restore();
-  ctx.save(); ctx.lineWidth = 12; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.arc(cx, cy, rr, 0, 7); ctx.stroke(); if (o.ring) { ctx.lineWidth = 5; ctx.strokeStyle = o.ring; ctx.beginPath(); ctx.arc(cx, cy, rr - 8, 0, 7); ctx.stroke(); } ctx.restore();
+  ctx.save(); ctx.lineWidth = 12; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.arc(cx, cy, rr, 0, 7); ctx.stroke(); if (o.ring && rr > 12) { ctx.lineWidth = 5; ctx.strokeStyle = o.ring; ctx.beginPath(); ctx.arc(cx, cy, rr - 8, 0, 7); ctx.stroke(); } ctx.restore();
 }
 // person bust inside an inset or balloon: draws the figure so its head lands at (0, 0) at scale s
 function a97Bust(ctx, P, s) { const age = P.age ?? (COSTUME[P.costume] || {}).age ?? 0.3, hy = -195 + age * 6; person(ctx, { ...P, x: 0, y: -hy * s, s }); }

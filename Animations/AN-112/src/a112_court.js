@@ -42,24 +42,26 @@ function a112CourtAbu(t, light = false) {
   P.sq = breathe(t, 7) * landSquash(t, 98.5, 0.05) * (a112In(t, 115.18, 116.08) ? 0.9 + 0.14 * A112B(t, 115.4, 0.5) : 1) * (late ? impactSquash(t, 160.26, 0.85) : 1);
   P.tip = (late ? 0.25 * a112Win(t, 154.62, 155.3, 0.2) + 0.1 * a112Win(t, 164.4, 165.1, 0.2) : 0.5 * a112Win(t, 126.58, 127.4, 0.2) + 0.08 * a112Win(t, 97.2, 98.4, 0.2) + 0.06 * a112Win(t, 119.44, 120.3, 0.2));
   P.drop = (late ? 0 : 4) + a112Nods(t, [99.9, 100.6], 0.3, 4);
-  P.look = late ? a112Tr(t, [[0, 0], [158.46, 0.6], [158.7, -0.9, 0.2], [158.95, 0.9, 0.2], [159.2, 0, 0.2]]) : 0;
+  P.look = late ? a112Tr(t, [[0, 0], [158.46, 0.6], [158.7, -0.9, 0.2], [158.95, 0.9, 0.2], [159.2, 0, 0.2]]) : a112Tr(t, [[0, 0], [120.42, -0.9, 0.1], [120.6, 0.9, 0.12], [120.85, 0, 0.15]]);   // 120.42 double take
+  if (!late) P.y = 900 - hop(t, 125.0, 0.32, 0, 0, 22)[1];   // a small hop at the 50,000
   P.tilt = 0.1 * a112Win(t, 103.84, 104.7, 0.2) - 0.08 * a112Win(t, 158.7, 159.1, 0.12);
   P.talk = talk(t, [[99.82, 102.0], [115.4, 116.0]], 0.2) * 0.75;
-  P.mouth = a112In(t, 115.18, 116.08) ? 'open' : a112In(t, 160.6, 166) || a112In(t, 153.0, 155.0) || a112In(t, 120.0, 122.7) ? 'smile' : a112In(t, 122.8, 123.7) || a112In(t, 158.46, 159.2) ? 'o' : a112In(t, 112.6, 115.1) ? 'frown' : 'closed';
-  P.brow = a112Tr(t, [[0, -0.5], [103.84, -0.6], [104.8, -0.4], [113.6, -0.7], [115.18, -0.2], [122.8, -0.8], [123.8, -0.3], [153, -0.2], [158.46, -0.6], [160.6, -0.3]]);
+  P.mouth = a112In(t, 115.18, 116.08) ? 'open' : a112In(t, 160.6, 166) || a112In(t, 153.0, 155.0) || a112In(t, 120.0, 122.7) ? 'smile' : a112In(t, 122.8, 125.6) || a112In(t, 158.46, 159.2) ? 'o' : a112In(t, 112.6, 115.1) ? 'frown' : 'closed';
+  P.brow = a112Tr(t, [[0, -0.5], [103.84, -0.6], [104.8, -0.4], [113.6, -0.7], [115.18, -0.2], [116.7, -0.3], [122.8, -0.8], [125.7, -0.3], [153, -0.2], [158.46, -0.6], [160.6, -0.3]]);
   P.eyes = a112In(t, 160.3, 160.8) ? 'wide' : 'open';
   P.wet = a112In(t, 99.82, 102.9) || a112In(t, 115.18, 127.9);
-  let lid = 0.3 * a112Win(t, 119.44, 120.6, 0.2) + 0.8 * (a112Pulse(t, 103.9, 0.18) + a112Pulse(t, 104.25, 0.18)) + 0.3 * a112Win(t, 97.2, 98.5, 0.2);
+  let lid = 0.3 * a112Win(t, 119.44, 120.6, 0.2) + 1.0 * a112Win(t, 116.75, 117.0, 0.08) + 0.8 * (a112Pulse(t, 103.9, 0.18) + a112Pulse(t, 104.25, 0.18)) + 0.3 * a112Win(t, 97.2, 98.5, 0.2);
   if (P.eyes !== 'wide') lid = Math.max(lid, blink(t, 31)); P.lid = Math.min(1, lid);
   const CH = () => a112Head(a112Caliph(t)), G = () => a112Head(a112CourtGuard(t, 0));
   P.gaze = a112Look(t, P, [[0, [400, 960]], [98.5, [400, 980]], [99.82, CH], [100.6, [270, 520]], [101.06, [440, 520]], [101.42, [610, 520]], [101.9, CH], [113.7, G], [114.62, G], [115.18, CH],
-    [116.7, [300, 970]], [117.3, CH], [119.44, [300, 960]], [120.42, [450, 970]], [121.0, CH], [122.8, [300, 900]], [123.1, [450, 970]], [123.4, CH], [123.74, [600, 970]], [125, CH],
+    [116.7, [330, 970]], [117.3, CH], [119.44, [330, 960]], [120.42, CH], [120.6, [500, 960]], [121.0, CH], [122.8, [500, 960]], [123.4, CH], [123.74, (tt) => [a112P3(tt)[0], 950]], [125.3, CH],
     [153.02, [400, 300]], [153.8, CH], [157.18, [200, 700]], [158.46, [560, 650]], [159.22, (tt) => a112TurbanPos(tt)], [160.6, CH], [162.2, [300, 330]], [163.8, CH], [164.38, [560, 800]], [165.0, CH]], 0.14);
   const R = [[0, A112H.rest], [97.2, [30, -126], 0.3], [99.82, A112H.palm, 0.3], [100.4, [60, -140], 0.25], [100.8, A112H.palm, 0.25], [101.3, [60, -140], 0.25], [101.8, A112H.palm, 0.25], [102.9, [30, -110], 0.3],
-    [119.44, { w: [300, 930] }, 0.3], [119.9, [28, -100], 0.35], [126.5, [70, -60], 0.2], [127.4, [28, -100], 0.3],
-    [154.62, A112H.chest, 0.2], [155.3, A112H.rest, 0.3], [158.7, A112H.chest, 0.2], [159.2, A112H.rest, 0.3], [160.6, [30, -214], 0.15], [160.9, A112H.rest, 0.3], [164.38, { w: [560, 790] }, 0.3], [165.0, [50, -126], 0.3]];
+    [119.44, { w: [340, 930] }, 0.3], [119.9, [28, -100], 0.35], [126.5, [70, -60], 0.2], [127.4, [28, -100], 0.3],
+    [154.62, A112H.chest, 0.2], [155.3, A112H.rest, 0.3], [158.7, A112H.chest, 0.2], [159.2, A112H.rest, 0.3], [160.6, [30, -214], 0.15], [160.9, A112H.rest, 0.3], [164.2, (tt) => ({ w: a112HandW(a112Servant(tt), 'R') }), 0.3], [164.75, [52, -100], 0.3]];
   const L = [[0, A112H.restL], [97.2, [-6, -126], 0.3], [99.82, A112H.palmL, 0.3], [100.4, [-50, -150], 0.25], [100.8, A112H.palmL, 0.25], [101.3, [-50, -150], 0.25], [101.8, A112H.palmL, 0.25], [102.9, [-6, -110], 0.3],
-    [119.44, { w: [270, 930] }, 0.3], [119.9, [-6, -100], 0.35], [126.5, [60, -60], 0.2], [127.4, [-6, -100], 0.3], [164.38, { w: [530, 790] }, 0.3], [165.0, [-10, -126], 0.3]];
+    [119.44, { w: [315, 930] }, 0.3], [119.9, [-6, -100], 0.35], [126.5, [60, -60], 0.2], [127.4, [-6, -100], 0.3], [164.9, [-30, -224], 0.25]];
+  if (late && a112In(t, 163.7, 165.9)) P.dir = -1;   // turns to the boy behind him
   P.aR = a112Arm(t, P, 1, R); P.aL = a112Arm(t, P, -1, L);
   return P;
 }
@@ -71,35 +73,37 @@ function a112TurbanPos(t) {
   if (t < 159.9) { const u = A112B(t, 159.22, 0.68); return [K.lerp(cu[0], top[0], u), K.lerp(cu[1], top[1], u) - 40 * Math.sin(Math.PI * u)]; }
   const u = A112B(t, 159.9, 0.36, 'in'); return [K.lerp(top[0], h[0], u), K.lerp(top[1], h[1], u)];
 }
+// S15 big purse x: pushed in front of the boy, shoved across to the Caliph's feet (lands 124.9)
+function a112P3(t) { const S = a112Servant(Math.min(t, 124.3)); return [t < 124.3 ? S.x + 100 : K.lerp(S.x + 100, 600, A112B(t, 124.3, 0.6, 'out')), 860]; }
 // ---------------- palace servant boy ----------------
 function a112Servant(t) {
   const late = a112CourtLate(t);
-  const xf = late ? (tt) => a112Tr(tt, [[0, -80], [157.4, 570, 1.0], [159.5, 330, 0.8], [163.4, 560, 0.9], [164.9, -80, 1.2]]) + (late ? 18 * Math.sin((tt - 157.4) * 6) * a112Win(tt, 157.5, 158.3, 0.2) : 0)
-    : (tt) => a112Tr(tt, [[0, -80], [116.1, 300, 0.55], [117.0, -80, 0.6], [119.85, 450, 0.55], [120.7, -80, 0.65], [123.74, 640, 1.15], [126.0, -80, 1.0]]);
+  const xf = late ? (tt) => a112Tr(tt, [[0, -80], [157.4, 570, 1.0], [159.5, 330, 0.8], [163.3, 362, 0.3], [165.2, -80, 1.0]]) + (late ? 18 * Math.sin((tt - 157.4) * 6) * a112Win(tt, 157.5, 158.3, 0.2) : 0)
+    : (tt) => a112Tr(tt, [[0, -80], [115.5, 245, 0.6], [116.9, -80, 0.7], [119.2, 245, 0.6], [120.55, -80, 0.7], [122.7, 200, 0.9], [124.3, 235, 0.25], [124.85, 175, 0.3], [125.3, -80, 0.7]]);   // v2: always left of Abu
   const P = { costume: 'servant', child: true, s: 1.1, seed: 95, ...a112Walk(xf, t, 18), y: 900 };
-  P.dir = (late ? a112In(t, 159.5, 160.3) || a112In(t, 164.9, 166) : a112In(t, 116.7, 117.6) || a112In(t, 120.42, 121.4) || a112In(t, 125.4, 127)) ? -1 : 1;
-  if (!late && a112In(t, 123.74, 124.9)) P.dir = -1;   // drags the big purse backwards
+  P.dir = (late ? a112In(t, 159.5, 160.3) || a112In(t, 165.15, 166) : a112In(t, 116.85, 117.8) || a112In(t, 120.5, 121.5) || a112In(t, 125.25, 127)) ? -1 : 1;
   if (P.amp < 0.04) P.amp = 0;
   P.hidden = P.x < -40;
-  P.mouth = a112In(t, 120.42, 121.4) || a112In(t, 124.9, 125.4) ? 'open' : 'smile';
-  P.sit = !late && a112In(t, 124.9, 125.4) ? a112Win(t, 124.9, 125.4, 0.1) : 0; P.seat = 'floor';
-  P.tip = !late && a112In(t, 123.74, 124.9) ? -0.15 * Math.abs(Math.sin((t - 123.74) * Math.PI * 2.6)) : 0;
+  P.mouth = a112In(t, 123.4, 124.3) || a112In(t, 124.4, 125.2) ? 'open' : 'smile';
+  P.sit = 0; P.seat = 'floor';
+  P.tip = !late ? 0.14 * a112Win(t, 122.9, 124.35, 0.2) - 0.18 * a112Win(t, 124.4, 125.1, 0.12) : 0;   // leans into the big purse, stumbles back after the shove
   P.gaze = late && t < 158.4 ? [0, -1] : [1, 0.2];
   if (late && t < 159.25) { P.aR = A112H.raise.a; P.aL = A112H.raiseL.a; }
-  else if (!late && (a112In(t, 116.0, 116.7) || a112In(t, 119.8, 120.42))) { P.aR = A112H.raise.a; P.aL = A112H.raiseL.a; }
-  else if (!late && a112In(t, 123.74, 124.9)) { P.handR = [-60, -100]; P.handL = [-70, -96]; }
-  else if (late && a112In(t, 163.8, 164.6)) { P.handR = [70, -120]; }
+  else if (!late && (a112In(t, 115.0, 116.45) || a112In(t, 118.7, 119.95))) { P.aR = A112H.raise.a; P.aL = A112H.raiseL.a; }
+  else if (!late && (a112In(t, 116.45, 116.8) || a112In(t, 119.95, 120.3))) { P.handR = A112H.fwd; P.handL = [60, -150]; }   // the toss
+  else if (!late && a112In(t, 122.5, 124.45)) { P.handR = [66, -104]; P.handL = [56, -98]; }   // pushing the big purse
+  else if (late && a112In(t, 163.5, 164.5)) { P.handR = [78, -128]; P.handL = [70, -120]; }   // holds the salary and the order out at arm's length
   return P;
 }
 // ---------------- guards in the court ----------------
 function a112CourtGuard(t, i) {
   const late = a112CourtLate(t), P = { ...A112_GUARD(i ? C.blue : C.red), y: 900, s: i ? 1.0 : 0.95, seed: 81 + i, dir: 1, x: late ? (i ? 265 : 25) : 225 };
-  P.brow = 0.6; P.mouth = a112In(t, 114.62, 116.2) ? 'smile' : 'frown'; P.drop = a112Nods(t, [114.7], 0.3, 6);
+  P.brow = late ? 0.6 : a112Tr(t, [[0, 0.6], [114.62, -0.3, 0.2]]); P.mouth = a112In(t, 114.62, 116.2) ? 'smile' : 'frown'; P.drop = a112Nods(t, [114.7, 115.3], 0.3, 6);
   P.lid = blink(t, 81 + i);
-  P.gaze = a112Look(t, P, [[0, [600, 700]], [114.62, [430, 720]]], 0.2);
+  P.gaze = a112Look(t, P, [[0, [600, 700]], [114.62, [430, 720]], [115.2, [330, 700]], [115.5, [430, 720]]], 0.15);
   P.aR = [0.3, 0.4];
   P.spearUp = late ? 18 * a112Pulse(t, 152.4 + (i ? 0.15 : 0), 0.3) : 0;
-  if (!late && a112In(t, 114.4, 116.5)) { P.aL = a112Arm(t, P, -1, [[0, A112H.restL], [114.62, [50, -200], 0.25], [115.0, [60, -186], 0.12], [115.2, [50, -200], 0.12]]); }
+  if (!late && a112In(t, 114.4, 116.5)) { P.aL = a112Arm(t, P, -1, [[0, A112H.restL], [114.62, [84, -176], 0.25]]); }
   return P;
 }
 
@@ -110,35 +114,36 @@ function a112Court(ctx, t, cam) {
   const Ca = a112Caliph(t), Ab = a112CourtAbu(t), Sv = a112Servant(t);
   const guards = late ? [a112CourtGuard(t, 0), a112CourtGuard(t, 1)] : (t >= 112.6 && t < 116.2 ? [a112CourtGuard(t, 0)] : t < 102.9 ? [a112CourtGuard(t, 0)] : []);
   guards.forEach((G, i) => a112DrawGuard(ctx, t, G, i ? C.blue : C.red));
-  if (!late && t >= 114.4 && t < 116.5 && guards[0]) { const h = a112HandW(guards[0], 'L'); a112Scroll(ctx, h[0], h[1] - 120, { L: 150, w: 80, portrait: 1, s: 0.95 }); }
+  if (!late && t >= 114.4 && t < 116.5 && guards[0]) { const h = a112HandW(guards[0], 'L'), tap = 8 * a112Pulse(t, 115.2, 0.22); a112Scroll(ctx, h[0] + 34, h[1] - 64 + tap, { L: 150, w: 80, portrait: 1, s: 0.9, len: A112B(t, 114.62, 0.25) }); }   // beside his grinning face, one tap
+  // the servant boy (behind the purses, left of Abu) and what he carries
+  if (!Sv.hidden) {
+    person(ctx, Sv);
+    if (!late && (a112In(t, 115.0, 116.45) || a112In(t, 118.7, 119.95))) { const h = a112HandW(Sv, 'R'), h2 = a112HandW(Sv, 'L'); a112Purse(ctx, (h[0] + h2[0]) / 2, (h[1] + h2[1]) / 2 - 64, { s: 0.85 }); }
+    if (late && t < 159.22) { const h = a112HandW(Sv, 'R'), h2 = a112HandW(Sv, 'L'); a112TurbanCushion(ctx, (h[0] + h2[0]) / 2, (h[1] + h2[1]) / 2 - 4, 0.8); }
+    if (late && t >= 159.22 && t < 163.4) { const h = a112HandW(Sv, 'R'), h2 = a112HandW(Sv, 'L'); a112TurbanCushion(ctx, (h[0] + h2[0]) / 2, (h[1] + h2[1]) / 2 - 4, 0.8, false); }
+    if (late && a112In(t, 163.5, 164.5)) { const h = a112HandW(Sv, 'R'), h2 = a112HandW(Sv, 'L'), k = A112B(t, 163.5, 0.3); ctx.save(); ctx.globalAlpha = k; a112Purse(ctx, h2[0], h2[1] - 44, { s: 0.45 }); a112Scroll(ctx, h[0] + 6, h[1] - 52, { L: 60, w: 50, s: 0.6, seal: 1, rot: -1.4, lines: false }); ctx.restore(); }
+  }
   person(ctx, Ca);
   // Abu and the gift purses (S15)
-  const pursesS15 = !late && t >= 116.7;
+  const pursesS15 = !late && t >= 116.45;
   if (pursesS15) {
-    const p1 = t < 119.44 ? [300, 905] : (() => { const h = a112HandW(Ab, 'R'), u = A112B(t, 119.44, 0.4); return [K.lerp(300, h[0] - 10, u), K.lerp(905, h[1] - 14, u)]; })();
-    if (t >= 120.42) a112Purse(ctx, 450, 905, { s: 0.85, sq: impactSquash(t, 120.42, 0.8) });
-    if (t >= 124.9) a112Purse(ctx, 620, 860, { s: 1.5, sq: impactSquash(t, 124.9, 0.8), rot: 0.05 });
+    if (t >= 120.42) a112Purse(ctx, 500, 905, { s: 0.85, sq: impactSquash(t, 120.42, 0.8) });
     person(ctx, Ab); a112Hat(ctx, Ab, 'scholar', { dx: 6, rot: -0.14, tail: swing(t, 127.0, 0.8) });
-    a112Purse(ctx, p1[0], p1[1], { s: 0.85, sq: impactSquash(t, 116.7, 0.8) });
+    if (t >= 116.7) { const p1 = t < 119.44 ? [330, 905] : (() => { const h = a112HandW(Ab, 'R'), u = A112B(t, 119.44, 0.4); return [K.lerp(330, h[0] - 10, u), K.lerp(905, h[1] - 14, u)]; })();
+      a112Purse(ctx, p1[0], p1[1], { s: 0.85, sq: impactSquash(t, 116.7, 0.8) }); }
   } else {
     person(ctx, Ab);
     const onHead = late && t >= 160.26;
     if (!onHead) a112Hat(ctx, Ab, 'scholar', late ? { dx: 0, rot: 0 } : { dx: 6, rot: -0.14 });
-    else a112Hat(ctx, Ab, 'judge', { k: 1.15, dy: a112Tr(t, [[0, 34], [160.6, 6, 0.3]]), rot: 0 });
+    else a112Hat(ctx, Ab, 'judge', { k: 1.15, dy: a112Tr(t, [[0, 34], [160.6, 6, 0.3], [164.95, -12, 0.3]]), rot: -0.18 * A112B(t, 164.95, 0.3) });   // 164.95: lifts it off one eye to look at the salary
   }
-  // servant and what he carries
-  if (!Sv.hidden) {
-    if (!late && a112In(t, 123.74, 124.9)) { const sx = Sv.x + 90; a112Purse(ctx, sx, 860 - 6 * Math.abs(Math.sin((t - 123.74) * Math.PI * 2.6)), { s: 1.5, rot: -0.3 }); }
-    person(ctx, Sv);
-    if (!late && (a112In(t, 116.0, 116.7) || a112In(t, 119.8, 120.42))) { const h = a112HandW(Sv, 'R'); a112Purse(ctx, h[0] - 8, h[1] - 70, { s: 0.85 }); }
-    if (late && t < 159.22) { const h = a112HandW(Sv, 'R'), h2 = a112HandW(Sv, 'L'); a112TurbanCushion(ctx, (h[0] + h2[0]) / 2, (h[1] + h2[1]) / 2 - 4, 0.8); }
-    if (late && t >= 159.22 && t < 164.6) { const h = a112HandW(Sv, 'R'), h2 = a112HandW(Sv, 'L'); a112TurbanCushion(ctx, (h[0] + h2[0]) / 2, (h[1] + h2[1]) / 2 - 4, 0.8, false); }
-    if (late && a112In(t, 163.8, 164.6)) { const h = a112HandW(Sv, 'R'); a112Purse(ctx, h[0], h[1] - 40, { s: 0.45 }); a112Scroll(ctx, h[0] + 20, h[1] - 50, { L: 60, w: 50, s: 0.6, seal: 1, rot: -1.4, lines: false }); }
-  }
+  // S15: the big purse, pushed in by the boy and shoved across the floor in front of everyone (123.0-124.9); the two tossed purses fly over Abu
+  if (!late && t >= 122.7) { const x = a112P3(t)[0]; a112Purse(ctx, x, 860 - 4 * Math.abs(Math.sin((t - 122.7) * Math.PI * 2.4)) * (t < 124.3 ? 1 : 0), { s: 1.5, sq: impactSquash(t, 124.9, 0.8), rot: t < 124.9 ? -0.05 : 0.05 }); }
+  if (!late) for (const [a, d, to] of [[116.45, 0.25, [330, 905]], [119.95, 0.47, [500, 905]]]) if (a112In(t, a, a + d)) { const S2 = a112Servant(a), fr = a112HandW(S2, 'R'), u = (t - a) / d; a112Purse(ctx, K.lerp(fr[0], to[0], u), K.lerp(fr[1] - 64, to[1], u) - (d > 0.3 ? 220 : 60) * Math.sin(Math.PI * u), { s: 0.85, rot: 2 * u * (d > 0.3 ? 1 : 0.3) }); }
   if (late && t >= 159.22 && t < 160.26) { const p = a112TurbanPos(t); ctx.save(); ctx.translate(p[0], p[1]); ctx.scale(1.1, 1.1); a112HatShape(ctx, 'judge', { k: 1.15 }); ctx.restore(); }
-  if (late && t >= 164.6) { const h = a112HandW(Ab, 'R'); a112Purse(ctx, h[0], h[1] - 40, { s: 0.45, sq: 1 + 0.1 * a112Pulse(t, 165.1, 0.3) }); a112Scroll(ctx, h[0] + 26, h[1] - 50, { L: 60, w: 50, s: 0.6, seal: 1, rot: -1.4, lines: false }); }
+  if (late && t >= 164.5) { const h = a112HandW(Ab, 'R'); a112Purse(ctx, h[0] + 14, h[1] - 44, { s: 0.45, sq: 1 + 0.1 * a112Pulse(t, 165.1, 0.3) }); a112Scroll(ctx, h[0] - 30, h[1] - 56, { L: 60, w: 50, s: 0.6, seal: 1, rot: -1.4, lines: false }); }
   // dust when the big purse tips over, spear-butt thumps (S18)
-  if (a112In(t, 124.9, 125.5)) dustBurst(ctx, 620, 900, t - 124.9, 6, 8, 16, 40, 0.5, 6);
+  if (a112In(t, 124.9, 125.5)) dustBurst(ctx, 600, 900, t - 124.9, 6, 8, 16, 40, 0.5, 6);
   if (late && a112In(t, 152.4, 153.2)) { dustBurst(ctx, 60, 900, t - 152.6, 4, 6, 12, 24, 0.4, 3); dustBurst(ctx, 330, 900, t - 152.75, 4, 6, 12, 24, 0.4, 5); }
 }
 // ---------------- S13 the dream (inside the thought cloud) ----------------
@@ -150,37 +155,48 @@ function a112DreamPicture(c, t, small = false) {
   const nt = small ? 3 : (t < 108.3 ? 1 : t < 108.6 ? 2 : t < 108.9 ? 3 : 3), ph = small ? 1 : a112In(t, 108.3, 109.05) ? ((t - 108.3) % 0.3) / 0.3 : 1;
   const my = 300 + (ph < 1 ? 200 * Math.sin(Math.PI * ph) : 0); if (ph > 0.4 && ph < 0.6) { c.save(); c.globalAlpha = 0.5; c.fillStyle = C.yellow; c.fillRect(-300, -300, 1600, 1830); c.restore(); }
   moon(c, 230, my, 90);
-  // bed: frame, pillow, bedpost with the crown
+  // v2: bed and Caliph drawn 1.4x larger and lower in the full dream (group mapped by gm); the small retelling keeps the old size
+  const gk = small ? 1 : 1.4, gy = small ? 800 : 935, gm = (p) => [520 + (p[0] - 520) * gk, gy + (p[1] - 800) * gk];
+  c.save(); c.translate(520, gy); c.scale(gk, gk); c.translate(-520, -800);
   shape(c, K.rectPts(250, 760, 560, 40), C.yellow, { lw: 6, seed: 500, dot: C.red, pitch: 9, rad: 0.2, da: 0.4 }); for (const lx of [262, 798]) seg(c, lx, 800, lx, 880, 14, C.yellow, 4);
   seg(c, 812, 870, 812, 640, 14, C.yellow, 4); seg(c, 248, 870, 248, 680, 14, C.yellow, 4);
   const cb = 632; shape(c, [[786, cb], [790, cb - 30], [802, cb - 14], [812, cb - 40], [822, cb - 14], [834, cb - 30], [838, cb], [786, cb]], C.yellow, { lw: 4.5, seed: 501, dot: C.red, pitch: 6, rad: 0.2, da: 0.5 });
   shape(c, ell(400, 744, 60, 26, 20), C.white, { lw: 5, seed: 502 });
-  const wake = small ? 0 : Math.max(a112Win(t, 107.9, 108.25, 0.12), a112Win(t, 108.42, 108.56, 0.06), a112Win(t, 108.72, 108.86, 0.06), a112Win(t, 109.0, 109.12, 0.05), t > 109.12 ? 1 : 0);
-  const sitUp = small ? 0 : (t > 111.7 ? 1 : 0.8 * wake);
+  // three nights on "takarrarat" (108.30-109.12): lie, bolt up, flop back; each wake more tired (lid 0.2, 0.4, 0.6) and the turban more crooked
+  const bolts = [107.9, 108.36, 108.64, 108.92], night = t < 108.3 ? 0 : t < 108.6 ? 1 : t < 108.9 ? 2 : 3;
+  const wake = small ? 0 : Math.max(a112Win(t, 107.9, 108.22, 0.08), a112Win(t, 108.36, 108.52, 0.06), a112Win(t, 108.64, 108.8, 0.06), a112Win(t, 108.92, 109.06, 0.05), t > 109.12 ? 1 : 0);
+  const sitUp = small ? 0 : (t > 111.7 ? 1 : 0.85 * wake);
   const pokes = small ? 0 : a112Pulse(t, 109.6, 0.3) + a112Pulse(t, 110.1, 0.3);
-  const P = { x: 520, y: 760, s: 1.15, dir: 1, costume: 'caliph', age: 0.4, pal: { head: 'smallTurban' }, lie: 1 - sitUp, seed: 91, sq: 1 + 0.1 * pulse(t, 107.9, 0.4), tip: -0.08 * pokes };
-  P.lid = small ? 1 : t < 107.9 ? 1 : t > 111.7 ? Math.max(0.4, blink(t, 91)) : wake > 0.5 ? 0 : 0.6; P.eyes = !small && wake > 0.5 && t < 111.7 ? 'wide' : 'open'; if (P.eyes === 'wide') delete P.lid;
-  P.mouth = !small && wake > 0.5 ? (t > 111.7 ? 'smile' : 'o') : 'closed';
+  const stretch = small ? 0 : bolts.reduce((a, b) => a + a112Pulse(t, b, 0.22), 0);
+  const P = { x: 520, y: 760 - (small ? 0 : 26 * pokes), s: 1.15, dir: 1, costume: 'caliph', age: 0.4, pal: { head: 'smallTurban' }, lie: 1 - sitUp, seed: 91, sq: 1 + 0.12 * stretch, tilt: small ? 0 : -0.07 * night * (t < 109.3 ? 1 : 0.4) };
+  P.lid = small ? 1 : t < 107.9 ? 1 : t > 111.7 ? Math.max(0.2, blink(t, 91)) : wake > 0.5 ? (night ? 0.2 * night : 0) : 0.7;
+  P.eyes = !small && wake > 0.5 && t < 108.3 ? 'wide' : 'open'; if (P.eyes === 'wide') delete P.lid;
+  P.mouth = !small && wake > 0.5 ? (t > 111.7 ? 'smile' : t > 109.12 ? 'closed' : 'o') : 'closed';
+  const scr = [790, 470];   // the portrait (in picture coordinates): below the balloon, between it and the Caliph
   if (!small && t > 107.9 && t < 109.1) P.gaze = [Math.sin(t * 9), -0.2];
-  if (!small && t > 109.12) P.gaze = lookAt([520, 600], [760, 330]);
+  if (!small && t > 109.12) P.gaze = t > 110.54 && t < 111.7 ? lookAt(gm([540, 560]), scr) : lookAt(gm([540, 560]), [700, 300]);
+  if (!small && a112In(t, 109.7, 110.5)) { P.handR = [40, -196]; P.drop = 6 * a112Pulse(t, 110.25, 0.25); }   // salutes and nods
+  if (!small && a112In(t, 110.54, 111.7)) P.handR = PERSON_HANDS.reach.R;   // points at the portrait
   if (t > 111.7 && !small) { P.handL = [-60, -100]; P.handR = [60, -100]; P.drop = a112Nods(t, [111.9, 112.25], 0.3, 8); }
   person(c, P);
-  // blanket (rises and falls while asleep)
-  const br = small || t < 107.9 ? 4 * Math.sin(t * 2.4) : 0, bt = K.lerp(746, 790, sitUp);
-  shape(c, [[430, 800], [440, bt - br], [600, bt - 8 - br], [760, bt - br], [790, 800], [430, 800]], C.blue, { lw: 5, seed: 503, dot: NAVY, pitch: 9, rad: 0.25, da: 0.5 });
+  // blanket (rises and falls while asleep); thrown off at 111.8
+  const br = small || t < 107.9 ? 4 * Math.sin(t * 2.4) : 0, bt = K.lerp(746, 790, sitUp), off = small ? 0 : A112B(t, 111.8, 0.5, 'out');
+  c.save(); c.translate(380 * off, -160 * Math.sin(Math.PI * Math.min(1, off)) + 120 * off); c.rotate(0.6 * off); c.globalAlpha *= 1 - K.clamp((off - 0.6) / 0.4);
+  shape(c, [[430, 800], [440, bt - br], [600, bt - 8 - br], [760, bt - br], [790, 800], [430, 800]], C.blue, { lw: 5, seed: 503, dot: NAVY, pitch: 9, rad: 0.25, da: 0.5 }); c.restore();
   if ((small || t < 107.6) && !wake) zzz(c, 420, 620, t);
+  c.restore();
+  if (!small && t > 110.54) a112Scroll(c, scr[0], scr[1] - 90, { L: 160, w: 100, portrait: A112B(t, 110.54, 0.3), len: A112B(t, 110.54, 0.35), s: 1.3 });
   // the glowing jagged balloon (from 107.64 in the film; always in the small retelling)
   const bp = small ? 1 : A112B(t, 107.64, 0.3), glow = 0.6 + 0.4 * Math.sin(t * 8);
-  if (bp > 0) { const bx = K.lerp(1100, 700, bp), by = 300; c.save(); c.globalAlpha = 0.35 * glow; c.fillStyle = C.yellow; c.beginPath(); c.arc(bx, by, 230, 0, 7); c.fill(); c.restore();
+  if (bp > 0) { const bx = K.lerp(1100, 700, bp), by = small ? 300 : 250; c.save(); c.globalAlpha = 0.35 * glow; c.fillStyle = C.yellow; c.beginPath(); c.arc(bx, by, 230, 0, 7); c.fill(); c.restore();
     c.save(); c.translate(bx, by); const pts = []; for (let i = 0; i < 22; i++) { const a = i / 22 * Math.PI * 2, r = i % 2 ? 150 : 190; pts.push([Math.cos(a) * r * 1.25, Math.sin(a) * r * 0.85]); } pts.push(pts[0]);
     shape(c, pts, C.yellow, { lw: 7, seed: 504, dot: C.red, pitch: 10, rad: 0.18, da: 0.4 });
-    if (!small && t > 110.54) { c.save(); c.translate(140, -30); a112Scroll(c, 0, -60, { L: 150, w: 90, portrait: A112B(t, 110.54, 0.3), s: 1 }); c.restore(); }
     c.font = K.font(70, BF, 400); c.textAlign = 'center'; c.textBaseline = 'middle'; c.lineWidth = 10; c.strokeStyle = C.white; c.lineJoin = 'round';
-    const tx = !small && t > 110.54 ? -60 : 0; c.strokeText('HELP', tx, -40); c.strokeText('ABU HASSAN!', tx, 40); c.fillStyle = C.red; c.fillText('HELP', tx, -40); c.fillText('ABU HASSAN!', tx, 40); c.restore();
+    const tx = 0; c.strokeText('HELP', tx, -40); c.strokeText('ABU HASSAN!', tx, 40); c.fillStyle = C.red; c.fillText('HELP', tx, -40); c.fillText('ABU HASSAN!', tx, 40); c.restore();
     // speed lines as it swoops in
     if (!small && a112In(t, 107.64, 108.1)) for (let i = 0; i < 4; i++) seg(c, bx + 200 + i * 20, by - 80 + i * 50, bx + 320 + i * 40, by - 80 + i * 50, 6, C.white, 2);
     // the arrow that pokes him (109.12-110.4)
-    if (!small && a112In(t, 109.12, 110.6)) { const tip = [600 + 30 * pokes, 650 + 20 * pokes], from = [bx - 140, by + 130]; c.save(); c.globalAlpha = a112Fade(t, 109.12, 110.6, 0.15); S0.arrow(c, from, [K.lerp(from[0], tip[0], 0.6 + 0.4 * pokes), K.lerp(from[1], tip[1], 0.6 + 0.4 * pokes)], A112B(t, 109.12, 0.3), { width: 26, bend: -0.1 }); c.restore(); } }
+    if (!small && a112In(t, 109.12, 110.6)) { const tip = gm([600 + 30 * pokes, 650 + 20 * pokes]), from = [bx - 140, by + 130]; c.save(); c.globalAlpha = a112Fade(t, 109.12, 110.6, 0.15); S0.arrow(c, from, [K.lerp(from[0], tip[0], 0.6 + 0.4 * pokes), K.lerp(from[1], tip[1], 0.6 + 0.4 * pokes)], A112B(t, 109.12, 0.3), { width: 26, bend: -0.1 }); c.restore(); } }
 }
 // the dream frame: a thought cloud grows from the Caliph's head until its scalloped edge sits inside the panel (104.72-106.1), shrinks back at 112.6
 function a112DreamFrame(ctx, t, cam) {

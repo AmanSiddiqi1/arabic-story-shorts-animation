@@ -130,7 +130,7 @@ function a98Rift(ctx, x, y, h, o = {}) { const op = K.clamp(o.open ?? 1), cl = K
 function a98Feud(ctx, cx, cy, r, o = {}) { const gap = o.gap ?? r * 3.4, gi = o.gazeIn || 0, pA = o.pA ?? 1, pY = o.pY ?? 1;
   ctx.save(); if (o.alpha != null) ctx.globalAlpha *= o.alpha;
   const gA = [K.lerp(-1, 1, gi), 0.05], gY = [K.lerp(1, -1, gi), 0.05];
-  if (o.open || o.webs) a98Rift(ctx, cx, cy, r * 2.5, { open: o.open, close: o.close, webs: o.webs, webFall: o.webFall, alpha: o.riftAlpha });
+  if ((o.open || o.webs) && !(o.close >= 1)) a98Rift(ctx, cx, cy, r * 2.5, { open: o.open, close: o.close, webs: o.webs, webFall: o.webFall, alpha: o.riftAlpha });   // v2: hidden once closed
   a98Medal(ctx, cx - gap / 2, cy, r * K.ease.back(K.clamp(pA)), 'abd', { gaze: gA, nod: o.nodA || 0, mouth: gi > 0.6 ? 'smile' : (o.mouthA || 'closed'), brow: gi > 0.5 ? -0.2 : 0.6, t: o.t });
   a98Medal(ctx, cx + gap / 2, cy, r * K.ease.back(K.clamp(pY)), 'yah', { gaze: gY, nod: o.nodY || 0, mouth: gi > 0.6 ? 'smile' : 'closed', brow: gi > 0.5 ? -0.2 : 0.3, glow: o.glowY, t: o.t });
   if (o.heart > 0) heart(ctx, cx, cy - r * 1.25, r * 0.42 * K.ease.back(K.clamp(o.heart)));

@@ -12,3 +12,7 @@
 10. `balanceScale` (`a111Scale`): coins against a heart, tilt.
 11. Small effects: `a111Ghost` (dashed crossed-out ghost icon), `a111Cross` / `a111Tick`.
 12. Rig helpers worth generalising (a111_rig.js): `a111Arms` (per-frame hand targets in local or world space resolved to arm angles, returning world hand points), `a111HT` (hand tracks that mix world and local targets), `a111Head`/`a111Mouth` world points; and the `a111Give` setup-and-payoff gesture.
+
+## v2 additions
+13. `drawn7` (a111_main.js `a111Txt7` / `a111With7`): draws a clear path "7" (bar, slanted stem, crossbar) inside any `fillText`/`strokeText` call, so `S.counter` and `sfx` numbers with 7 never read as 1 in Bangers.
+14. Doorway exit/entry without fades (S28): figures that reach the threshold are drawn inside the door frame, shrinking slightly while a room-shadow fill closes over them.

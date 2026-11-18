@@ -19,3 +19,9 @@ Decisions the plan left open or that the measured sets changed:
 - Inn: hutRoom night, door right, mattress 250..520 (head left), stool + lamp at 560, a story mat 600..840. S2 right half stays black; S12/S13 use the same framings (wide 1.15, bag close-up zoom 1.9 at (330, 760)).
 - Sound: thud 23.82, whoosh 95.4, chime 114.9, whoosh 142.62, thud 165.48, chime 178.2 (all in measured pauses or after the last word, gains 0.2-0.5).
 - Skipped / simplified: per-guest S16 heap is a forward topple to a floor sit with dizzy stars (no pile physics); laundry-line wave is a travelling flap; the S22 wet footprints run from the table to the door as static prints.
+
+v2 (Fable round 1), decisions:
+- Hall rows: guests upstage x 300/365/430/495 (y 868); guard A by the door at 120 (staff in the outer hand); soldier downstage at 200 (y 940); sharper 560/590; bundle by the door at x 70 (y 905). S15: guests 280-445, soldier 505, guard B 230. S19-S20: guard A at 690, soldier's exit stops at 215.
+- Hall camera: medium shots are the default; for zoom > 1.15 the camera y is blended to 940 - 380/zoom (feet low in the panel).
+- Inn room shifted 65 px right (mattress 315-585, bag 270, stool/lamp 625, mat 665-860) so the thief kneels on the far side of the bag; S2's dark strip (x 136-230) and silhouette sit there too.
+- The chief's slid turban is a copy of the Library 'tallTurban' drawing (a105TurbanDown); the original is suppressed with pal.head 'none' from 177.34.

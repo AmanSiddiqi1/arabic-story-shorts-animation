@@ -14,21 +14,21 @@ function a104Dish1(t) {
   if (t >= 80.6) { const ch = a104Pt(a104Mk('poor', { x: 175, y: 935, dir: 1, kneel: 1 }), 0, -70), k = a104E(t, 80.9, 1.1); x = K.lerp(x, ch[0], k); y = K.lerp(y, ch[1], k); tilt = -0.15 * k; }
   // fill: dog1's slow meal, then the man's three scoops
   let fill = K.clamp((t - A104_FILLT[0]) / 0.3); if (t > 44.9) fill -= 0.15 * K.clamp((t - 44.9) / 4.4);
-  if (t > 66.8) fill = K.lerp(fill, 0.62, a104E(t, 66.8, 0.35)); if (t > 67.4) fill = K.lerp(fill, 0.3, a104E(t, 67.4, 0.3)); if (t > 67.85) fill = K.lerp(fill, 0, a104E(t, 67.85, 0.3));
+  for (const [b0, f] of [[66.82, 0.6], [67.4, 0.3], [67.98, 0]]) if (t > b0) fill = K.lerp(fill, f, a104E(t, b0, 0.08));   // steps down as each pinch leaves the dish
   return { x, y, tilt, fill };
 }
 
 // ---------- the stranger in the court ----------
-const a104SX3 = (t) => (t < 23.4 ? a104GuestX(2, t) - 75 : t < 24.7 ? a104GuestX(2, 23.4) - 75 + (t > 23.6 ? 20 * a104E(t, 23.6, 1.1) : 0) : kfn(t, [[24.7, a104GuestX(2, 23.4) - 55], [26.05, 140]]));
+const a104SX3 = (t) => (t < 23.4 ? a104GuestX(2, t) - 75 : t < 23.9 ? a104GuestX(2, 23.4) - 75 : kfn(t, [[23.9, a104GuestX(2, 23.4) - 75], [26.05, 140]]));   // v2: a 0.5 s freeze on ينتبه, then the scuttle to the corner
 function a104StrangerCourt(t) {
   const P = a104Mk('poor', { y: 905, dir: 1, mouth: 'frown', brow: -0.5, lid: 0.3 });
   const T = t;
   if (t < 26.1) {   // the sneak and the walk to the corner
-    P.x = a104SX3(t); a104Walk(P, a104SX3, t, 0.9); P.y = t < 24.7 ? 905 : K.lerp(905, 935, a104E(t, 24.7, 1.35));
+    P.x = a104SX3(t); a104Walk(P, a104SX3, t, 0.9); P.y = t < 23.9 ? 905 : K.lerp(905, 935, a104E(t, 23.9, 2.1)); if (t >= 23.9 && t < 24.7) P.dir = -1;
     P.sq = t < 24.7 ? 0.92 : K.lerp(0.92, 1, a104E(t, 24.7, 0.4)); P.tip = 0.06;
     P.gaze = gazePlan(t, [[0, [0.9, -0.3]], [22.0, [0.9, -0.2]], [22.3, [-0.2, -0.1]], [22.6, [0.95, -0.35]], [22.9, [0.2, -0.2]], [23.4, [0.0, -0.95]], [23.9, [0.95, -0.2]], [24.7, [-0.9, 0.3]]], 0.07);
-    P.eyes = t >= 23.4 && t < 23.62 ? 'wide' : undefined; P.lid = t >= 23.4 && t < 23.62 ? null : 0.1;
-    if (t >= 23.4 && t < 23.62) { P.amp = 0; P.mouth = 'o'; }
+    P.eyes = t >= 23.4 && t < 23.9 ? 'wide' : undefined; P.lid = t >= 23.4 && t < 23.9 ? null : 0.1;
+    if (t >= 23.4 && t < 23.9) { P.amp = 0; P.mouth = 'o'; P.sq = 0.88; P.gaze = [-0.5, -0.8]; P.x += tremble(t, 1.0); }
     if (t >= 24.7) { P.lid = Math.max(0.2, pulse(t, 24.75, 0.45)); P.mouth = 'smile'; P.drop = 4 * a104E(t, 24.7, 0.4); P.sq = K.lerp(P.sq, 0.98, 0.5); }
     return a104Lid(P, t);
   }
@@ -51,7 +51,7 @@ function a104StrangerCourt(t) {
     if (t >= 50.9 && t < 52.04) { P.gaze = t < 51.4 ? [0.2, 0.95] : P.gaze; P.sq = 0.95; }
     if (t >= 52.04 && t < 54.3) { P.lid = Math.max(0.15, pulse(t, 53.5, 0.3)); P.sq = breathe(t, 3, 0.015) * 0.97; P.wet = true; }
     if (t >= 54.3 && t < 58.8) { P.brow = -0.7; P.mouth = 'o'; P.gaze = lookAt(a104Head(P), t < 55.5 ? dh : t < 57.0 ? dish : dh); }
-    if (t >= 58.8) { const k = a104Env(t, 58.8, 61.6, 0.25); P.handR = a104L2(P.handR, PERSON_HANDS.chest.R, k); P.brow = -0.9; P.mouth = 'o';
+    if (t >= 58.8) { const k = a104Env(t, 58.8, 61.6, 0.25); P.handR = a104L2(P.handR, PERSON_HANDS.chest.R, k); P.brow = 0.6; P.mouth = 'o'; P.tip = -0.07 * a104Env(t, 58.85, 59.6, 0.15);
       P.gaze = gazePlan(t, [[0, lookAt(a104Head(P), dh)], [59.4, [0.95, -0.25]], [59.9, [0.6, -0.8]], [60.5, lookAt(a104Head(P), dh)]], 0.07); P.look = 0.3 * Math.sin((t - 59.4) * 6) * a104Env(t, 59.4, 60.5); }
   } else {             // S6: hesitation, the meal, the dish
     P.handL = [-22, -86]; P.handR = [22, -86]; P.mouth = 'closed'; P.lid = 0.15; P.brow = -0.6;
@@ -62,10 +62,15 @@ function a104StrangerCourt(t) {
     // crawl to the dish (sit -> kneel), eat, sit back on his heels
     const kx = kfn(t, [[65.46, 140], [66.6, 228], [68.3, 228], [69.5, 175]]);
     if (t >= 65.46) { P.x = kx; P.sit = 1 - a104E(t, 65.46, 0.5); P.kneel = a104E(t, 65.6, 0.6); P.seat = undefined; P.tip = 0.12 * a104Env(t, 65.46, 66.7, 0.3); P.y = 935 + 4 * Math.abs(Math.sin((t - 65.46) * 9)) * a104Env(t, 65.5, 66.6, 0.1); if (t > 66.6) P.kneel = settleTo(t, 66.6, 1, 1, 0.3, 0.05); }
-    if (t >= 66.7 && t < 68.3) { const scoops = [66.8, 67.42, 67.88], mouthP = a104Pt(P, 4, a104HdY(P) + 26);
-      let hand = [d.x - 10, d.y - 40]; for (const s0 of scoops) { const u = (t - s0) / (s0 === 66.8 ? 0.55 : 0.4); if (u >= 0 && u < 1) hand = a104L2([d.x - 10, d.y - 40], mouthP, Math.sin(Math.PI * u)); }
-      P.handRW = hand; P.handL = [-10, -96]; P.gaze = lookAt(a104Head(P), dishP); P.lid = t > 67.3 && t < 67.8 ? 1 : 0.2; P.wet = true; P.mouth = t > 67.0 ? 'o' : 'closed'; P.tip = 0.08; }
-    if (t >= 68.26 && t < 70.8) { P.mouth = 'smile'; P.lid = 0.55; P.brow = -0.2; P.handR = [10 + 4 * Math.sin(t * 9) * a104Env(t, 68.6, 69.6), -96]; P.handL = [-18, -90]; P.wet = true; P.sq = 1 + 0.03 * pulse(t, 68.3, 1.2); }
+    if (t >= 66.6 && t < 68.3) { // v2: three hand-to-mouth bites (careful, faster, eyes shut and chewing)
+      const bites = [[66.7, 0.6], [67.3, 0.55], [67.9, 0.4]], mouthP = a104Pt(P, 8, a104HdY(P) + 24), dsh = [d.x - 14, d.y - 36];
+      let hand = dsh; for (const [b0, du] of bites) { const u = (t - b0) / du; if (u >= 0 && u < 1) hand = a104L2(dsh, mouthP, Math.sin(Math.PI * Math.min(1, u * 1.25))); }
+      P.handRW = hand; P.handL = [-10, -96]; P.tip = 0.08; P.wet = true; P.noBlink = true;
+      P.gaze = lookAt(a104Head(P), t < 67.3 ? dh : dishP); P.lid = t < 67.3 ? 0.2 : t < 67.9 ? 0.35 : 1;
+      const chew = t > 66.95 ? Math.abs(Math.sin((t - 66.95) * 14)) : 0; P.mouth = chew > 0.5 ? 'closed' : 'o'; P.sq = 1 - 0.035 * chew; if (t >= 67.9) P.mouth = 'closed'; }
+    if (t >= 68.26 && t < 70.8) { // he sits back, hands on his belly, a long blink and a small smile
+      const k = a104E(t, 68.26, 0.4); P.mouth = 'smile'; P.lid = Math.max(0.35, a104Env(t, 68.5, 69.4, 0.2)); P.noBlink = t < 69.5; P.brow = -0.1; P.handLW = undefined; P.handRW = undefined;
+      P.handR = [12, -84]; P.handL = [-14, -80]; P.wet = true; P.tip = K.lerp(0.08, -0.05, k) * (1 - a104E(t, 69.6, 0.4)); P.drop = 6 * k; P.sq = 1 + 0.02 * pulse(t, 68.4, 1.0) + 0.02 * Math.sin((t - 68.3) * 4) * a104Env(t, 68.3, 69.4); }
     if (t >= 69.76 && t < 72.3) { P.gaze = lookAt(a104Head(P), dh); P.mouth = 'smile'; if (t >= 70.82) { P.drop = 9 * pulse(t, 70.85, 0.6); P.lid = Math.max(0.3, pulse(t, 70.9, 0.4)); } }
     if (t >= 72.3 && t < 75.6) { P.gaze = lookAt(a104Head(P), t < 74.6 ? dishP : dh); P.brow = -0.8; P.mouth = 'o'; P.sq = t > 73.9 ? K.lerp(0.93, 1, a104E(t, 73.9, 0.35)) : 1; P.handL = [-30, -110]; P.handR = [30, -110]; if (t > 73.9) P.eyes = t < 74.4 ? 'wide' : undefined; }
     if (t >= 75.6 && t < 78.18) { P.gaze = lookAt(a104Head(P), gazePlan(t, [[0, dh], [76.6, [480, 560]], [77.42, dh]], 0.2)); P.brow = -0.7; P.mouth = 'o'; }
@@ -95,9 +100,9 @@ function a104Guest(i, t) {
 function a104Servant(t) {   // servantA: bows at the door (S3), ladles the food with servantB (S5)
   if (t < 41.68) {
     const P = a104Mk('servantA', { x: 300, y: 905, dir: 1, handR: PERSON_HANDS.chest.R, mouth: 'smile' });
-    const bows = [21.0, 21.6, 22.45]; let b = 0; for (const b0 of bows) b = Math.max(b, pulse(b0 === 22.45 ? t : t, b0, b0 === 22.45 ? 0.95 : 0.6));
+    const bows = [[20.7, 0.6], [21.42, 0.9], [22.3, 1.0]]; let b = 0; for (const [b0, d] of bows) b = Math.max(b, pulse(t, b0, d));
     P.drop = 26 * b; P.sq = 1 - 0.06 * b; P.lid = b > 0.5 ? 1 : 0.2; P.gaze = lookAt([300, 720], [a104GuestX(0, t), 760]);
-    if (t >= 23.3 && t < 24.9) { P.drop = 0; P.lid = 0; P.gaze = gazePlan(t, [[0, [-0.6, -0.8]], [24.2, [0.9, -0.2]]], 0.25); P.look = -0.3 * a104Env(t, 23.4, 24.2); P.mouth = 'closed'; }
+    if (t >= 23.3 && t < 24.9) { P.drop = 0; P.lid = 0; P.sq = 1.03; P.gaze = gazePlan(t, [[0, [0.5, -0.85]], [24.2, [0.9, -0.2]]], 0.25); P.look = -0.3 * a104Env(t, 23.4, 24.2); P.mouth = 'closed'; }
     if (t >= 24.6) { const xf = (tt) => kfn(tt, [[24.6, 300], [27.0, 560], [41.0, 560]]); a104Walk(P, xf, t, 1, 24); P.gaze = [0.9, -0.2]; P.handR = null; if (t > 27) P.alpha = 1 - K.clamp((t - 27) / 0.5); }
     return a104Lid(P, t);
   }
@@ -146,13 +151,17 @@ function a104DogP(i, t) {
   if (t >= 50.32) { P.headTilt = 0.25 * a104E(t, 50.32, 0.4) * (1 - a104E(t, 52.0, 0.4)); P.brow = -0.4; }
   if (t >= 52.04 && t < 54.3) { P.lid = Math.max(0.25, pulse(t, 53.0, 0.35)); P.sq = breathe(t, 5, 0.015); P.tailWag = 0; P.wagAmp = 0;
     if (t >= 53.18) P.gaze = lookAt(a104DogHead(P), gazePlan(t, [[0, man], [53.3, [a104DishX0(0), 920]], [53.9, man]], 0.2)); }
-  const dx = kfn(t, [[54.5, 430], [55.6, 520], [71.4, 520], [72.25, 430], [72.5, 430], [72.95, 385], [73.5, 385], [73.95, 340]]);
-  if (t >= 54.3) { const xf = (tt) => kfn(tt, [[54.5, 430], [55.6, 520], [71.4, 520], [72.25, 430], [72.5, 430], [72.95, 385], [73.5, 385], [73.95, 340]]); const w = walk(xf, t, { stride: A104_DOG_STRIDE * D.s }); P.x = dx; P.ph = w.ph; P.amp = w.amp;
-    P.headDown = 0.3 * pulse(t, 54.3, 0.4); P.headTilt = 0; P.brow = 0; P.gaze = lookAt(a104DogHead(P), man); P.sit = settleTo(t, 55.6, 0, 1, 0.45, 0.06); P.lid = 0.25; P.wagAmp = 0.2; P.tailWag = t * 1.6; }
-  if (t >= 56.2 && t < 61.0) { P.headDown = 0.3 * (pulse(t, 56.98, 0.45) + pulse(t, 57.68, 0.45) + pulse(t, 60.5, 0.45)); P.raise = a104Env(t, 57.96, 58.9, 0.25); P.ears = 0.4; }
-  if (t >= 61.0) { P.lie = a104E(t, 61.0, 0.8); P.sit = 1 - P.lie; P.tailWag = 1.4 * pulse(t, 61.9, 0.35) + 1.4 * pulse(t, 64.75, 0.5); P.wagAmp = 0.5; }
-  if (t >= 69.76) { P.tongue = 0.6 * a104Env(t, 69.9, 71.3, 0.3); P.headTilt = 0.15 * a104Env(t, 69.9, 71.3); P.tailWag = t * 3; P.wagAmp = 0.35; }
-  if (t >= 71.4) { P.lie = 1 - a104E(t, 71.4, 0.45); P.sit = 0; }
+  const dx = kfn(t, [[54.5, 430], [55.4, 470], [71.4, 470], [72.15, 430], [72.5, 430], [72.95, 395], [73.5, 395], [73.95, 365]]);
+  if (t >= 54.3) { const xf = (tt) => kfn(tt, [[54.5, 430], [55.4, 470], [71.4, 470], [72.15, 430], [72.5, 430], [72.95, 395], [73.5, 395], [73.95, 365]]); const w = walk(xf, t, { stride: A104_DOG_STRIDE * D.s }); P.x = dx; P.ph = w.ph; P.amp = w.amp;
+    P.headDown = 0.3 * pulse(t, 54.3, 0.4); P.headTilt = 0; P.brow = 0; P.gaze = lookAt(a104DogHead(P), man); P.sit = settleTo(t, 55.4, 0, 1, 0.45, 0.06); P.lid = 0.25; P.wagAmp = 0.2; P.tailWag = t * 1.6; }
+  if (t >= 55.4 && t < 61.0) { // v2 beats: nod at the dish (طبقه), paw up + nod (يدعوه), one pat toward the dish (الاقتراب), a third nod (60.2)
+    P.headDown = 0.45 * (pulse(t, 55.5, 0.5) + pulse(t, 57.0, 0.45) + pulse(t, 60.2, 0.5)); P.ears = 0.4 + 0.3 * pulse(t, 57.0, 0.6);
+    P.raise = Math.max(a104Env(t, 56.98, 57.85, 0.2), a104Env(t, 57.96, 58.7, 0.2));
+    if (t >= 57.9) { const pat = Math.sin(Math.PI * K.clamp((t - 57.96) / 0.6)); P.pawW = [a104DishX0(0) + 95, 938 - 40 * (1 - pat)]; }
+    P.gaze = lookAt(a104DogHead(P), t >= 55.4 && t < 56.0 || t >= 57.96 && t < 58.5 ? [a104DishX0(0), 910] : man); }
+  if (t >= 61.0) { P.lie = a104E(t, 61.0, 0.8); P.sit = 1 - P.lie; P.drop = -44 * P.lie; P.headDown = 0; P.lid = 0.25; P.gaze = lookAt(a104DogHead(P), [180, 790]); P.tailWag = 1.4 * pulse(t, 61.9, 0.35) + 1.4 * pulse(t, 64.75, 0.5) + 0.8 * Math.sin((t - 66) * 1.5) * a104Env(t, 66.0, 69.7, 0.4); P.wagAmp = 0.5; }
+  if (t >= 69.76) { P.tongue = 0.7 * a104Env(t, 70.1, 71.3, 0.2); P.headTilt = 0.15 * a104Env(t, 69.9, 71.3); P.tailWag = t * 3; P.wagAmp = 0.35; }
+  if (t >= 71.4) { P.lie = 1 - a104E(t, 71.4, 0.45); P.sit = 0; P.drop = -44 * P.lie; }
   // the two pushes and the paw on the rim
   const dsh = a104Dish1(t), rim = [dsh.x + 46, dsh.y - 30];
   if (t >= 71.9 && t < 75.6) { P.raise = Math.max(a104Env(t, 72.0, 72.9, 0.25), a104Env(t, 73.1, 73.95, 0.2), a104Env(t, 74.4, 75.6, 0.25)); P.pawW = rim; P.gaze = lookAt(a104DogHead(P), t < 74.3 ? [rim[0], rim[1]] : man); P.ears = 0.5; P.headDown = 0.25 * (pulse(t, 72.3, 0.5) + pulse(t, 73.35, 0.5)); P.tip = -0.03 * (pulse(t, 72.05, 0.4) + pulse(t, 73.1, 0.35)); }
@@ -162,19 +171,19 @@ function a104DogP(i, t) {
   return P;
 }
 // each dog's floor stake (the chain end): under its belly at the first mark
-const a104Stake = (i) => [A104_DOGS[i].x - 18, A104_DOGS[i].y + 4];
+const a104Stake = (i) => [A104_DOGS[i].x + 74 * A104_DOGS[i].s, A104_DOGS[i].y - 2];   // v2: behind the hind legs, so the chain never crosses the head
 function a104DrawDog(ctx, i, t) {
   const P = a104DogP(i, t), D = A104_DOGS[i], dish = i === 0 ? a104Dish1(t) : { x: a104DishX0(i), y: D.y + 8, fill: K.clamp((t - A104_FILLT[i]) / 0.3) * (1 - 0.5 * K.clamp((t - A104_EATT[i]) / 40)), tilt: 0 };
   const dishFill = dish.fill * (1 + 0.15 * pulse(t, A104_FILLT[i] + 0.3, 0.25));
   const glint = i === 0 && t >= 39.6 && t < 41.0 ? (t - 39.6) / 1.4 : i === 0 && t >= 73.9 && t < 74.6 ? (t - 73.9) / 0.7 : ((t * 0.25 + i * 0.37) % 3) / 0.9;
   const drawDish = () => { if (i === 0 && t >= 39.86 && t < 41.3) a104Rays(ctx, dish.x, dish.y - 30, 120, a104Env(t, 39.86, 41.3, 0.3) * (t < 40.4 ? 1 : 0.5), t);
     if (!(i === 0 && t >= 82.0)) a104Dish(ctx, dish.x, dish.y, { s: D.s * 0.9, fill: dishFill, steam: t, glint, tilt: dish.tilt }); };
-  a104Dog(ctx, P); a104DogChain(ctx, i, P, t); if (i === 0) return drawDish; drawDish(); return dish;
+  a104DogChain(ctx, i, P, t); a104Dog(ctx, P); if (i === 0) return drawDish; drawDish(); return dish;
 }
 function a104DogChain(ctx, i, P, t) {
   const r = a104DogRing(P), s = a104Stake(i), slack = Math.max(10, 70 - Math.abs(r[0] - s[0]) * 0.25);
   const sw = i === 2 ? swing(t, 35.0, 30, 2.4, 1.6) : 0, gl = t >= 36.2 && t < 37.4 ? (t - 36.2 - i * 0.12) / 0.8 : -1;
-  a104Post(ctx, s[0], s[1], s[1] - 22); a104Chain(ctx, r, [s[0], s[1] - 30], { sag: slack, swing: sw, glint: gl, links: 10 });
+  a104Post(ctx, s[0], s[1], s[1] - 22); a104Chain(ctx, r, [s[0], s[1] - 44], { sag: slack, swing: sw, glint: gl, links: 10 });
 }
 
 // ---------- the court world ----------
@@ -188,12 +197,14 @@ function a104CourtWorld(ctx, t) {
   // back-row dogs, servant, walking guests, front-row dogs, the stranger
   const out = { lord, dogs: [] };
   a104DrawDog(ctx, 3, t); a104DrawDog(ctx, 1, t);
+  const S = t >= 21.55 ? a104StrangerCourt(t) : null;
+  const sneaking = S && t < 24.7;   // v2: while he slips past he is behind the bowing servant
+  if (sneaking) { a104BackScrolls(ctx, S, t, 3); a104Person(ctx, S); }
   const sv = a104Servant(t); if (sv) person(ctx, sv);
   floor.forEach((g) => person(ctx, g));
   a104Servers(ctx, t);
-  const S = t >= 21.55 ? a104StrangerCourt(t) : null;
   const behind = S && S.y < 930;   // while he sneaks he is behind the front row of dogs
-  if (S && behind) { a104BackScrolls(ctx, S, t, 3); a104Person(ctx, S); }
+  if (S && behind && !sneaking) { a104BackScrolls(ctx, S, t, 3); a104Person(ctx, S); }
   a104DrawDog(ctx, 2, t); const dish1 = a104DrawDog(ctx, 0, t); if (!S || behind) dish1();
   if (S && !behind) { a104BackScrolls(ctx, S, t, 3); a104Person(ctx, S); if (t < 80.6) dish1(); }
   if (t >= 80.6) { const d = a104Dish1(t); a104Dish(ctx, d.x, d.y, { s: 0.81, fill: 0, tilt: d.tilt, glint: ((t - 80.6) % 2) / 0.8 }); }
