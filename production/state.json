@@ -7758,6 +7758,48 @@
 "msg": "v3 -> MP4s/AL-MAAMUN AND THE PYRAMIDS OF EGYPT - Halftone Pop 9x16 - Noto Naskh Arabic.mp4",
 "story_id": "AN-145",
 "t": "2026-11-18T17:08:43"
+},
+{
+"id": 1100,
+"kind": "cloud-render",
+"msg": "v2: PASS run 44273279913 commit 0e165734fc",
+"story_id": "AN-040",
+"t": "2026-11-18T18:04:33"
+},
+{
+"id": 1101,
+"kind": "done",
+"msg": "revise v2 Animations/AN-040/renders/AN-040_v2.mp4 (claude-opus-5-5)",
+"story_id": "AN-040",
+"t": "2026-11-18T18:04:39"
+},
+{
+"id": 1102,
+"kind": "claim",
+"msg": "review2 claimed (fable)",
+"story_id": "AN-040",
+"t": "2026-11-18T18:04:59"
+},
+{
+"id": 1103,
+"kind": "agent",
+"msg": "review2 agent a4541b5f3edb3c5e6",
+"story_id": "AN-040",
+"t": "2026-11-18T18:05:05"
+},
+{
+"id": 1104,
+"kind": "done",
+"msg": "review2 review 2: PASS WITH NOTES (claude-fable-5-2)",
+"story_id": "AN-040",
+"t": "2026-11-18T18:07:56"
+},
+{
+"id": 1105,
+"kind": "finalized",
+"msg": "v2 -> MP4s/The Cat and the Crow - Halftone Pop 9x16 - Noto Naskh Arabic.mp4",
+"story_id": "AN-040",
+"t": "2026-11-18T18:07:56"
 }
 ],
 "plans": [
@@ -10168,6 +10210,16 @@
 "status": "PASS",
 "story_id": "AN-145",
 "version": "v3"
+},
+{
+"created": "2026-11-18T18:04:33",
+"duration": 167.1,
+"path": "Animations/AN-040/renders/AN-040_v2.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 167.1}, \"end_hold\": 3.0, \"decode\": \"OK\", \"lufs\": -15.1, \"sync\": {\"lag_ms\": 0, \"corr\": 0.997}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-18T09:42:39\", \"cloud_run\": \"44273279913\", \"cloud_commit\": \"0e165734fca1339c042eb514a7a1220cab53c2e7\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "AN-040",
+"version": "v2"
 }
 ],
 "reviews": [
@@ -10935,6 +10987,15 @@
 "round": 2,
 "story_id": "AN-151",
 "verdict": "PASS WITH NOTES"
+},
+{
+"agent_id": "a4541b5f3edb3c5e6",
+"created": "2026-11-18T18:07:56",
+"model": "claude-fable-5-2",
+"path": "Animations/AN-040/review/fable_review_2.md",
+"round": 2,
+"story_id": "AN-040",
+"verdict": "PASS WITH NOTES"
 }
 ],
 "stories": [
@@ -11064,7 +11125,7 @@
 "words_status": "SUCCESS"
 },
 {
-"approval": "none",
+"approval": "pending",
 "assembly_file": "Audio Files/Complete_Stories_20pct_Completed_Revised/AN-040_The_Cat_and_the_Crow_full_slowed.mp3.assembly.json",
 "collection": "One Thousand and One Nights",
 "completed_before": 0,
@@ -11083,7 +11144,7 @@
 "segments": "[\"AN-040-P01-S01\", \"AN-040-P01-S02\", \"AN-040-P01-S03\", \"AN-040-P01-S04\", \"AN-040-P01-S05\", \"AN-040-P01-S06\", \"AN-040-P01-S07\", \"AN-040-P01-S08\"]",
 "title_ar": "القط والغراب",
 "title_en": "The Cat and the Crow",
-"updated": "2026-11-17T15:44:08",
+"updated": "2026-11-18T18:07:56",
 "words_file": "AN-040_The_Cat_and_the_Crow_full_slowed.mp3.words.json",
 "words_sha": "c09687aaecefbe84791cc44fccd32ae171544784bf1a982f035553a589d51b56",
 "words_status": "SUCCESS"
@@ -17157,15 +17218,15 @@
 {
 "agent_id": "a739647da9cbe94c1",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-18T18:04:39",
 "id": 227,
 "model": "opus",
-"notes": null,
-"outputs": null,
+"notes": "tokens {\"turns\": 74, \"input_tokens\": 156, \"cache_creation_input_tokens\": 246268, \"cache_read_input_tokens\": 11732375, \"output_tokens\": 96814}",
+"outputs": "v2 Animations/AN-040/renders/AN-040_v2.mp4",
 "pid": null,
 "stage": "revise",
 "started": "2026-11-18T06:22:37",
-"status": "running",
+"status": "done",
 "story_id": "AN-040"
 },
 {
@@ -18343,6 +18404,20 @@
 "started": "2026-11-18T16:00:27",
 "status": "done",
 "story_id": "AN-145"
+},
+{
+"agent_id": "a4541b5f3edb3c5e6",
+"attempt": 1,
+"finished": "2026-11-18T18:07:56",
+"id": 312,
+"model": "fable",
+"notes": null,
+"outputs": "review 2: PASS WITH NOTES",
+"pid": null,
+"stage": "review2",
+"started": "2026-11-18T18:04:59",
+"status": "done",
+"story_id": "AN-040"
 }
 ],
 "usage_log": [
