@@ -64,7 +64,7 @@ function smBookStack(ctx, x, y, n, o = {}) { const s = o.s || 1, cols = o.cols |
     ctx.save(); ctx.translate(x + dx * s, y0 - (1 - kk) * 30 * s); ctx.scale(kk, kk); smBook(ctx, 0, 0, s, { col: cols[i % cols.length], rot: (r() - 0.5) * 0.06 }); ctx.restore(); } }
 // graveMarker: rounded stone (110 x 150 at s 1) on a low mound; (x, y) = ground point; o: {dark, rise 0..1 (out of the ground), rot}
 function smGrave(ctx, x, y, s = 1, o = {}) { const rise = o.rise ?? 1; if (rise <= 0) return; ctx.save(); ctx.translate(x, y);
-  shape(ctx, ell(0, -2, 90 * s, 16 * s, 24), o.dark ? '#3c3c48' : '#a8741a', { lw: 4, seed: 851 });
+  if (!o.noMound) shape(ctx, ell(0, -2, 90 * s, 16 * s, 24), o.dark ? '#3c3c48' : '#a8741a', { lw: 4, seed: 851 });
   ctx.save(); ctx.beginPath(); ctx.rect(-80 * s, -260 * s, 160 * s, 254 * s); ctx.clip(); ctx.translate(0, (1 - rise) * 160 * s); if (o.rot) ctx.rotate(o.rot); ctx.scale(s, s);
   const pts = [[-55, -6]]; for (let i = 0; i <= 14; i++) { const a = Math.PI + i / 14 * Math.PI; pts.push([Math.cos(a) * 55, -95 + Math.sin(a) * 55]); } pts.push([55, -6], [-55, -6]);
   shape(ctx, pts, o.dark ? '#8c8a94' : C.paper, { lw: 5, seed: 852, dot: o.dark ? '#4a4a58' : '#b9b4c6', pitch: 8, rad: 0.22, da: 0.45 }); if (o.dark) { ctx.lineWidth = 4; ctx.strokeStyle = '#4a4a58'; ctx.beginPath(); ctx.moveTo(-30, -110); ctx.lineTo(30, -110); ctx.moveTo(-26, -92); ctx.lineTo(26, -92); ctx.stroke(); } ctx.restore(); ctx.restore(); }

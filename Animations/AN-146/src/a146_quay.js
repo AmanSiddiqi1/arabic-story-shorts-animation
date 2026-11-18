@@ -4,7 +4,8 @@ const a146PolyAt = (pts, u) => { const L = []; let tot = 0; for (let i = 1; i < 
   let r = u * tot; for (let i = 0; i < L.length; i++) { if (r <= L[i]) { const f = r / L[i]; return [K.lerp(pts[i][0], pts[i + 1][0], f), K.lerp(pts[i][1], pts[i + 1][1], f)]; } r -= L[i]; } return pts[pts.length - 1]; };
 
 // ---------- S13 123.6..132.6 ----------
-const A146_S13M = a146X([[123.6, 150], [125.4, 410]]), A146_S13D = a146X([[123.6, 330], [125.72, 880]]), A146_S13C = a146X([[123.6, 120], [125.8, 680]]);
+// v2: the driver leads the camel in first and parks it right of the door (toward the sea); the merchant follows a pace behind, the door stays clear
+const A146_S13M = a146X([[123.6, 40], [125.4, 410]]), A146_S13D = a146X([[123.6, 560], [125.72, 1160]]), A146_S13C = a146X([[123.6, 300], [125.8, 930]]);
 function a146S13(ctx, t) {
   const door = t < 131.54 ? 0 : settleTo(t, 131.95, 0, 0.7, 0.45, 0.08);
   a146Quay(ctx, { t, door });
@@ -35,7 +36,6 @@ function a146S14(ctx, t) {
   a146Stack(ctx, A146_SX, 900, { sq: [0, 1, 2, 3].map(tap), tassel: swing(t, 137.64, 0.4) + swing(t, 138.95, 0.5), only: gone ? [1, 2, 3] : undefined });
   if (!held) a146CloakDrape(ctx, A146_SX, 900, 1, lift, t);
   const M = a146Mer(A146_S14M(t), { ...a146Step(A146_S14M, t), dir: t > 145.0 && t < 145.7 ? -1 : 1 }); if (t >= 144.0) { M.pal = { cape: C.red, capeDot: '#8a1410' }; M.cloak = 1; }
-  M.alpha = K.clamp((t - 132.6) / 0.3);
   if (a146In(t, 135.72, 136.0)) M.ph = 1.0, M.amp = 0;
   const knot = [pts[2][0] + 40, pts[2][1] - 55];
   if (t < 134.14) M.gaze = [1, 0.1];
@@ -67,20 +67,25 @@ function a146S14(ctx, t) {
 }
 
 // ---------- S15 146.9..154.3 and S16 154.3..168.3 and S17 168.3..179.98: one quay timeline ----------
-const A146_QM = a146X([[146.9, 470], [150.64, 470], [154.3, 920], [156.32, 980], [174.12, 980], [177.2, 1640]]);
-const A146_QC = a146X([[146.9, 600], [150.64, 600], [154.3, 1130], [156.32, 1190], [174.2, 1190], [177.4, 1900]]);
-const A146_QD = a146X([[146.9, 780], [150.64, 780], [154.3, 1360], [156.32, 1420], [174.25, 1420], [177.6, 2100]]);
-const A146_QI = a146X([[153.0, 520], [155.7, 790], [174.64, 790], [177.0, 300]]);
-const A146_QLAND = [148.2, 148.5, 148.8, 149.1], A146_TICKS = [163.0, 163.3, 163.68, 164.1];
+// v2: confrontation marks thief 760, merchant 980, camel 1300 (whole camel and load in the wide shot); the parting is a slow walk (about 70 px/s) so both parties stay in frame to 180 s
+const A146_QM = a146X([[146.9, 470], [150.64, 470], [154.3, 920], [156.32, 980], [174.12, 980], [180.6, 1440]]);
+const A146_QC = a146X([[146.9, 600], [150.64, 600], [154.3, 1230], [156.32, 1300], [174.2, 1300], [180.6, 1760]]);
+const A146_QD = a146X([[146.9, 780], [150.64, 780], [154.3, 1560], [156.32, 1680], [174.25, 1680], [180.6, 2110]]);
+const A146_QI = a146X([[153.0, 520], [155.7, 760], [174.64, 760], [180.6, 560]]);
+const A146_QLAND = [148.2, 148.5, 148.8, 149.1], A146_TICKS = [163.0, 163.35, 163.7, 164.05];
 function a146Quay2(ctx, t) {
   a146Quay(ctx, { t, door: 0.7, sail: t > 176.6 ? 0.5 + 0.5 * K.clamp((t - 176.6) / 0.6) : 0.5 });
+  // v2: the closing wide shot goes below zoom 1, so the quay front continues below the strip
+  if (t > 173.5) { shape(ctx, [[-10, 1232], [1810, 1232], [1810, 1760], [-10, 1760]], '#cdb68a', { lw: 0, seed: 502, dot: '#a8741a', pitch: 12, rad: 0.16, da: 0.35 });
+    ctx.save(); ctx.lineWidth = 3.5; ctx.strokeStyle = 'rgba(20,20,20,0.5)'; for (const ry of [1240, 1360, 1500, 1660]) { ctx.beginPath(); ctx.moveTo(-10, ry); ctx.lineTo(1810, ry); ctx.stroke(); }
+    for (let k = 0; k < 3; k++) { const y0 = [1240, 1360, 1500][k], y1 = [1360, 1500, 1660][k], st = 210 + k * 30; for (let x = (k % 2) * st / 2; x < 1810; x += st) { ctx.beginPath(); ctx.moveTo(x, y0 + 3); ctx.lineTo(x, y1 - 3); ctx.stroke(); } } ctx.restore(); }
   const nb = A146_QLAND.filter((a) => t >= a).length;
   // camel: kneeling to 149.8, walks, stops 156.32 and looks back, grins at the laugh, leaves
   const Cm = { ...walk(A146_QC, t, { stride: GAIT.camel * 1.0 }), y: 900, s: 1.0, dir: 1, pal: 0, chew: (t % 1.3) / 1.3, lid: 0.5 };
   Cm.kneel = t < 149.8 ? 1 : 1 - K.ease.inOut(K.clamp((t - 149.8) / 0.8)); Cm.rot = swing(t, 150.6, 0.03, 1.2, 2); Cm.sq = A146_QLAND.reduce((s, a) => s * (1 - 0.03 * pulse(t, a, 0.25)), 1);
-  Cm.headTurn = t < 156.32 ? 0 : t < 174.0 ? (t < 156.7 ? K.ease.inOut((t - 156.32) / 0.38) : 1 - (a146In(t, 157.32, 158.6) ? 0.25 * (1 - Math.cos((t - 157.32) / 1.28 * Math.PI * 2)) / 2 * 2 : 0)) : 1 - K.clamp((t - 174.0) / 0.4);
-  Cm.headTurn *= 0.62;   // over the shoulder (a full turn hides the head behind the load)
-  if (a146In(t, 157.32, 158.6)) Cm.lid = Math.max(0.5, pulse(t, 157.6, 0.18), pulse(t, 158.2, 0.18)); if (a146In(t, 169.64, 171.0)) { Cm.mouth = 'smile'; Cm.talk = 0.5 * Math.abs(Math.sin(t * 8)); }
+  // v2 camel gag on 157.32: neck swings back toward the thief (far), blink, toward the merchant (near), blink, then holds (kept under 0.5: past it the head hides behind the load)
+  Cm.headTurn = t < 156.32 ? 0 : t < 174.0 ? a146Tr(t, [[156.32, 0], [156.32, 0.4, 0.38], [157.32, 0.48, 0.25], [158.0, 0.34, 0.22], [158.7, 0.44, 0.3]]) : 0.44 * (1 - K.clamp((t - 174.0) / 0.4));
+  if (pulse(t, 157.82, 0.16) > 0.3 || pulse(t, 158.52, 0.16) > 0.3) Cm.eyes = 'shut'; if (a146In(t, 169.64, 171.0)) { Cm.mouth = 'smile'; Cm.talk = 0.5 * Math.abs(Math.sin(t * 8)); }
   // driver
   const D = a146Drv(A146_QD(t), { ...a146Walk(A146_QD, t, 1.2), dir: t < 150.4 ? -1 : 1 }); D.tip = lurch(t, 156.32, 0.12); D.gaze = t < 150.6 ? a146LookAt(D, [600, 700]) : t < 152 ? a146LookAt(D, [1190, 600]) : t < 156.32 ? [1, 0] : [-1, 0.1];
   if (a146In(t, 169.64, 171.2)) { D.mouth = 'open'; D.lid = 0.6; }
@@ -91,36 +96,41 @@ function a146Quay2(ctx, t) {
   const cloakI = t >= 171.9; I.pal = cloakI ? { ...A146_IMP_PAL } : { beard: A146_IMP_PAL.beard }; I.cloak = cloakI ? 1 : 0;
   const mh = a146Head(M), ih = a146Head(I), seat = mountSeat('camel', Cm), load = [seat.x, seat.y - 30];
   // merchant acting
-  M.mouth = 'smile'; M.gaze = t < 150.64 ? a146LookAt(M, load) : t < 156.32 ? [1, 0] : t < 168.52 ? a146LookAt(M, ih) : t < 173.44 ? a146LookAt(M, ih) : [1, 0];
+  M.mouth = 'smile'; if (a146In(t, 156.6, 173.44)) M.look = 1; M.gaze = t < 150.64 ? a146LookAt(M, load) : t < 156.32 ? [1, 0] : t < 168.52 ? a146LookAt(M, ih) : t < 173.44 ? a146LookAt(M, ih) : [1, 0];
   if (a146In(t, 160.46, 167.52)) { M.brow = -0.3; M.lid = 0.35; M.mouth = 'closed'; M.drop = (M.drop || 0) + a146Nods(t, [163.7, 164.2], 0.35, 5); }
   if (a146In(t, 167.52, 168.52)) { M.gaze = a146Gaze(t, M, [[167.52, a146W(M, [-24, -150])], [167.95, ih]], 0.25); M.mouth = 'closed'; }
-  if (a146In(t, 168.52, 170.4)) { M.eyes = 'shut'; M.mouth = 'open'; M.tilt = -0.14; M.sq = [168.6, 168.95, 169.3, 169.65].reduce((s, a) => s + 0.05 * pulse(t, a, 0.3) - 0.03 * pulse(t, a + 0.17, 0.15), 1); }
+  // v2 laugh on 168.52: arms unfold, hands to the belly, head back, eyes shut, mouth wide, four shoulder bounces (0.44 s each) to 170.3
+  const laugh = a146In(t, 168.52, 170.4);
+  if (laugh) { M.eyes = 'shut'; M.mouth = 'open'; M.tilt = -0.18; M.sq = 1 + 0.04 * Math.sin((t - 168.52) / 0.44 * Math.PI * 2) * K.clamp((170.3 - t) / 0.15); M.y -= 8 * Math.abs(Math.sin((t - 168.52) / 0.44 * Math.PI)); }
   if (a146In(t, 172.6, 173.2)) { M.wink = 'R'; M.brow = -0.4; }
   M.hR = a146HT(t, M, [[146.9, A146H.rest], [147.2, { w: [560, 770] }, 0.2], [148.0, (tt) => ({ w: [seat.x - 30, seat.y - 20 - 50 * A146_QLAND.reduce((s, a) => s + pulse(tt, a - 0.3, 0.3), 0)] }), 0.2], [148.96, { w: [seat.x - 20, seat.y - 60] }, 0.12], [149.2, A146H.rest, 0.3],
-    [160.46, PERSON_HANDS.folded.R, 0.3], [167.52, PERSON_HANDS.folded.R], [170.48, { a: [2.7, 2.6] }, 0.3], [170.9, { a: [1.5, 1.3] }, 0.15], [171.3, A146H.rest, 0.3], [172.14, PERSON_HANDS.palmsUp.R, 0.25], [173.3, A146H.rest, 0.3], [175.68, PERSON_HANDS.wave.R, 0.25], [176.4, A146H.rest, 0.3]]);
-  M.hL = a146HT(t, M, [[146.9, A146H.restL], [147.2, { w: [540, 790] }, 0.2], [149.2, A146H.restL, 0.3], [160.46, PERSON_HANDS.folded.L, 0.3], [168.4, A146H.restL, 0.3], [172.14, PERSON_HANDS.palmsUp.L, 0.25], [173.3, A146H.restL, 0.3]]);
-  M.tip = (a146In(t, 170.3, 170.9) ? -0.1 : 0) + 0.04 * pulse(t, 148.96, 0.4);
+    [160.46, PERSON_HANDS.folded.R, 0.3], [167.52, PERSON_HANDS.folded.R], [168.52, A146H.belly, 0.18], [170.48, { a: [2.7, 2.6] }, 0.3], [170.9, { a: [1.5, 1.3] }, 0.15], [171.3, A146H.rest, 0.3], [172.14, PERSON_HANDS.palmsUp.R, 0.25], [173.3, A146H.rest, 0.3], [175.68, PERSON_HANDS.wave.R, 0.25], [176.4, A146H.rest, 0.3]]);
+  M.hL = a146HT(t, M, [[146.9, A146H.restL], [147.2, { w: [540, 790] }, 0.2], [149.2, A146H.restL, 0.3], [160.46, PERSON_HANDS.folded.L, 0.3], [168.52, A146H.bellyL, 0.18], [170.4, A146H.restL, 0.3], [172.14, PERSON_HANDS.palmsUp.L, 0.25], [173.3, A146H.restL, 0.3]]);
+  M.tip = (a146In(t, 170.3, 170.9) ? -0.1 : 0) + 0.04 * pulse(t, 148.96, 0.4) - (laugh ? 0.15 * K.clamp((t - 168.52) / 0.15) * K.clamp((170.4 - t) / 0.15) : 0);
   // impostor acting: sprint, shout, the climb of his eyes, counting, slump, sheepish, pointing, pleading, the shiver; the nervous laugh, the bow, leaving
   I.tilt = t < 171.9 ? (t < 159.6 ? 0.14 : 0.22) : 0; I.mouth = t < 156.0 ? 'open' : 'closed';
   if (t < 156.32) { I.gaze = a146LookAt(I, mh); I.sq = 1 + 0.02 * Math.sin(t * 18); }
   else if (t < 158.1) I.gaze = a146LookAt(I, mh);
-  else if (t < 159.6) { I.gaze = a146LookAt(I, load); I.mouth = 'o'; }
-  else if (t < 160.46) { I.sq = 0.9; I.tip = 0.08; I.lid = 0.5; I.gaze = [0, 0.4]; I.mouth = 'frown'; }
+  else if (t < 159.6) { const bp = (k) => [seat.x + [-58, 58, -46, 56][k], seat.y + [6, 6, -58, -58][k] - 10]; I.gaze = a146LookAt(I, bp(Math.min(3, Math.floor((t - 158.1) / 0.36)))); I.mouth = 'o'; I.eyes = 'wide'; }   // v2: pupils step up the four bales
+  else if (t < 160.46) { I.sq = 0.9; I.tip = 0.08; I.lid = 0.5; I.gaze = [0, 0.4]; I.mouth = 'frown'; I.brow = 0.6; I.drop = 8; }
   else if (t < 165.4) { I.mouth = 'smile'; I.talk = talk(t, [[160.5, 165.3]]) * 0.7; I.brow = -0.5; I.gaze = a146In(t, 162.6, 164.5) ? a146LookAt(I, load) : a146LookAt(I, mh); }
   else if (t < 168.52) { I.gaze = a146In(t, 165.4, 166.68) ? a146Gaze(t, I, [[165.4, a146W(M, [-24, -150])], [165.75, mh], [166.1, a146W(M, [-24, -150])], [166.4, mh]], 0.07) : a146LookAt(I, mh); I.brow = -0.7;
     if (t >= 166.68) { I.kneel = 0.3 * K.clamp((t - 166.68) / 0.3); I.wet = true; } if (t >= 167.52) { I.x += tremble(t, 2, 12); I.sq = 0.96; } }
-  else if (t < 171.28) { I.gaze = t < 169.9 ? a146LookAt(I, a146W(M, [-24, -150])) : a146LookAt(I, mh); I.talk = a146In(t, 169.9, 170.6) ? 0.5 * Math.abs(Math.sin(t * 12)) : 0; I.mouth = 'smile'; I.brow = -0.5; }
-  else { I.gaze = t < 173.57 ? a146LookAt(I, mh) : a146In(t, 175.68, 176.3) ? [1, 0] : [-1, 0]; I.mouth = 'smile'; I.tip = 0.3 * pulse(t, 172.14, 0.8); if (a146In(t, 175.68, 176.3)) I.look = 1; if (t > 174.64) I.sq = 0.97; }
-  if (t > 171.9 && t < 172.3) I.drop = -8 * pulse(t, 171.9, 0.35);
+  else if (t < 171.28) { I.gaze = a146LookAt(I, mh); I.mouth = t < 169.6 ? 'o' : 'smile'; I.brow = -0.5; I.talk = a146In(t, 169.9, 170.6) ? 0.4 * Math.abs(Math.sin(t * 12)) : 0;
+    if (t < 169.6) { I.eyes = 'wide'; I.x -= 26 * K.ease.out(K.clamp((t - 168.6) / 0.2)) * (1 - K.clamp((t - 169.3) / 0.3)); I.y -= hop(t, 168.6, 0.22, 0, 0, 14)[1]; } }   // v2: flinch on the first HA, hopeful half smile at 169.6
+  else { I.gaze = t < 173.57 ? a146LookAt(I, mh) : a146In(t, 176.6, 177.4) ? [1, -0.1] : [-1, 0]; I.mouth = 'smile'; if (t > 174.64) I.sq = 0.97;
+    const b = a146Bow(t, 172.0, 0.35, 0.2); I.tip = b.tip; I.sq = (I.sq ?? 1) * b.sq; I.lid = b.lid; I.drop = (I.drop || 0) + 8 * b.k; }   // v2: hand-on-chest bow, feet planted
+  if (t > 171.9 && t < 172.0) I.drop = -8 * pulse(t, 171.9, 0.35);
+  if (I.dir === 1 && t > 156.0 && t < 173.57) I.look = 1;
   const cnt = [158.62, 158.9, 159.15, 159.4], cb = countedBeats(t, cnt);
-  I.hR = a146HT(t, I, [[153.0, [60, -150]], [155.8, PERSON_HANDS.cupMouth.R, 0.15], [156.5, A146H.rest, 0.3], [158.5, (tt) => [96, -150 + 14 * countedBeats(tt, cnt).n], 0.15], [159.6, A146H.rest, 0.3], [160.46, PERSON_HANDS.palmsUp.R, 0.25],
+  I.hR = a146HT(t, I, [[153.0, [60, -150]], [155.8, PERSON_HANDS.cupMouth.R, 0.15], [156.5, A146H.rest, 0.3],  [160.46, PERSON_HANDS.palmsUp.R, 0.25],
     [162.16, PERSON_HANDS.pointFwd.R, 0.2], [162.6, PERSON_HANDS.pointUp.R, 0.2], [163.4, PERSON_HANDS.palmsUp.R, 0.25], [165.4, [60, -132], 0.2], [166.68, PERSON_HANDS.clasp.R, 0.25], [167.52, PERSON_HANDS.folded.R, 0.2],
-    [168.6, A146H.rest, 0.3], [172.14, A146H.chest, 0.2], [172.9, A146H.rest, 0.3], [175.68, PERSON_HANDS.wave.R, 0.25], [176.3, A146H.rest, 0.3]]);
+    [168.6, A146H.rest, 0.3], [172.14, A146H.chest, 0.2], [172.9, A146H.rest, 0.3], [176.6, PERSON_HANDS.wave.R, 0.2], [177.3, A146H.rest, 0.3]]);
   I.hL = a146HT(t, I, [[153.0, [-60, -150]], [156.5, A146H.restL, 0.3], [160.46, PERSON_HANDS.palmsUp.L, 0.25], [165.4, A146H.restL, 0.3], [166.68, PERSON_HANDS.clasp.L, 0.25], [167.52, PERSON_HANDS.folded.L, 0.2], [168.6, A146H.restL, 0.3], [174.64, [-10, -132], 0.3]]);
   if (t >= 174.64) I.hR = I.hR;
   // bales: on the ground by the door until each one lands on the camel
   const gp = a146StackPts(380, 900, 0.7); [0, 1, 2, 3].forEach((k) => { if (t < A146_QLAND[k] - 0.3) a146Bale(ctx, gp[k][0], gp[k][1], { col: ['red', 'blue', 'yellow', 'green'][k], s: 0.7, knot: k === 2 }); });
-  camel(ctx, Cm); a146CamelLoad(ctx, Cm, nb, { t, land: A146_QLAND, tassel: swing(t, 149.1, 0.4) + 0.2 * Math.sin(t * 4) * (Cm.amp > 0.1 ? 1 : 0), ticks: A146_TICKS });
+  camel(ctx, Cm); a146CamelLoad(ctx, Cm, nb, { t, land: A146_QLAND, tassel: swing(t, 149.1, 0.4) + 0.2 * Math.sin(t * 4) * (Cm.amp > 0.1 ? 1 : 0), ticks: A146_TICKS, tickFade: 1 - K.clamp((t - 165.1) / 0.3) });
   A146_QLAND.forEach((a, k) => { if (a146In(t, a - 0.3, a)) { const q = (t - a + 0.3) / 0.3, x = K.lerp(gp[k][0], seat.x, q), y = K.lerp(gp[k][1] - 40, seat.y, q) - 90 * Math.sin(Math.PI * q); a146Bale(ctx, x, y + 30, { col: ['red', 'blue', 'yellow', 'green'][k], s: 0.6, rot: q * 1.5, knot: k === 2 }); } });
   a146Person(ctx, D); a146Person(ctx, M);
   // the cloak: thrown at 170.9, over his head 171.28..171.9, then his cape again
@@ -129,7 +139,6 @@ function a146Quay2(ctx, t) {
   if (a146In(t, 171.28, 171.9)) { const sq = landSquash(t, 171.28, 0.15); a146Cloak(ctx, ih[0], ih[1] - 46, { tw: 70, bw: 170, h: 230 * sq, t, wave: 0.2 }); }
   if (a146In(t, 155.84, 156.6)) soundArcs(ctx, ih[0] + 50, ih[1] + 10, 1, t, C.black);
   if (a146In(t, 154.56, 155.8)) for (const f of footfalls(A146_QI, 154.56, 155.7, 24 * 1.25)) if (t >= f.t && t < f.t + 0.5) dustBurst(ctx, f.x, 902, t - f.t, 3, 5, 10, 22, 0.5, Math.round(f.t * 10));
-  if (a146In(t, 158.62, 159.6)) { const n = cb.n; if (n) { ctx.save(); ctx.font = K.font(54, BF, 400); ctx.textAlign = 'center'; ctx.lineWidth = 8; ctx.strokeStyle = C.black; ctx.strokeText(String(n), ih[0] - 70, ih[1] - 70); ctx.fillStyle = C.yellow; ctx.fillText(String(n), ih[0] - 70, ih[1] - 70); ctx.restore(); } }
   if (a146In(t, 159.6, 160.4)) { const u = (t - 159.6) / 0.8; ctx.save(); ctx.globalAlpha = 1 - u; shape(ctx, ell(ih[0] + 40 + u * 30, ih[1] + 20, 14 + u * 10, 10 + u * 6, 12), C.white, { lw: 3, seed: 650 }); ctx.restore(); }
   return { M, I, D, Cm, seat, load };
 }

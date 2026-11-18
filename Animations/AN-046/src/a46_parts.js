@@ -250,20 +250,24 @@ function a46cage(ctx, x, y, s, part, o = {}) {
   const bar = (bx, w, colr) => { ctx.beginPath(); ctx.moveTo(bx, -14); ctx.lineTo(bx, sh); ctx.quadraticCurveTo(bx, top, 0, top); ctx.lineWidth = w; ctx.strokeStyle = colr; ctx.stroke(); };
   ctx.lineCap = 'round';
   if (part === 'back') {
-    ctx.save(); ctx.globalAlpha *= 0.55; for (const bx of bars) bar(bx * 0.9 + 9, 3, '#3a3a4a'); ctx.restore();
+    ctx.save(); ctx.globalAlpha *= 0.55; for (const bx of bars) bar(bx * 0.9 + 9, 3, '#3a3a4a');
+    if (o.doorBack) { const d0 = (o.dx ?? -30) * 0.9 + 9; ctx.lineWidth = 3; ctx.strokeStyle = '#3a3a4a'; ctx.strokeRect(d0, -104, 54, 88); for (const f of [0.33, 0.66]) { ctx.beginPath(); ctx.moveTo(d0 + 54 * f, -16); ctx.lineTo(d0 + 54 * f, -104); ctx.stroke(); } }   // v3: door on the far side (behind the bird)
+    ctx.restore();
     shape(ctx, [[-W - 6, 0], [W + 6, 0], [W + 2, -16], [-W - 2, -16]], WOOD, { lw: 4.5, seed: 81, dot: '#7a4e12', pitch: 7, rad: 0.2, da: 0.5 });
   } else {
     const dx0 = o.dx ?? -30, dx1 = dx0 + 60, dTop = -104, open = door > 0.05;
+    const ry = o.ring ?? -60;   // v3: middle ring height (S15 moves it below the badge)
     for (const bx of bars) { if (open && bx > dx0 && bx < dx1) { ctx.beginPath(); ctx.moveTo(bx, dTop); ctx.lineTo(bx, sh); ctx.quadraticCurveTo(bx, top, 0, top); ctx.lineWidth = bw[0]; ctx.strokeStyle = C.black; ctx.stroke(); ctx.lineWidth = bw[1]; ctx.strokeStyle = STONE2; ctx.stroke(); continue; }
       bar(bx, bw[0], C.black); bar(bx, bw[1], STONE2); }
-    ctx.lineWidth = 7; ctx.strokeStyle = C.black; for (const hy of [-60, sh]) { ctx.beginPath(); ctx.ellipse(0, hy, W, 9, 0, 0, Math.PI); ctx.stroke(); }
-    ctx.lineWidth = 3.5; ctx.strokeStyle = C.yellow; for (const hy of [-60, sh]) { ctx.beginPath(); ctx.ellipse(0, hy, W, 9, 0, 0, Math.PI); ctx.stroke(); }
+    ctx.lineWidth = 7; ctx.strokeStyle = C.black; for (const hy of [ry, sh]) { ctx.beginPath(); ctx.ellipse(0, hy, W, 9, 0, 0, Math.PI); ctx.stroke(); }
+    ctx.lineWidth = 3.5; ctx.strokeStyle = C.yellow; for (const hy of [ry, sh]) { ctx.beginPath(); ctx.ellipse(0, hy, W, 9, 0, 0, Math.PI); ctx.stroke(); }
+    if (o.doorBack) { shape(ctx, ell(0, top - 9, 11, 11, 14), C.yellow, { lw: 4, seed: 83 }); shape(ctx, ell(0, top - 9, 4, 4, 10), C.paper, { lw: 2.5, seed: 84 }); ctx.restore(); return; }
     const lw = (dx1 - dx0) * Math.cos(door), lx1 = dx0 + lw;
     ctx.save(); ctx.lineWidth = 2.5; ctx.strokeStyle = C.black; ctx.strokeRect(dx0, dTop, dx1 - dx0, -14 - dTop); ctx.restore();
     if (Math.abs(lw) > 1.5) { ctx.save(); ctx.lineWidth = 4; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.moveTo(dx0, -16); ctx.lineTo(lx1, -16 - 6 * Math.sin(door)); ctx.lineTo(lx1, dTop - 6 * Math.sin(door)); ctx.lineTo(dx0, dTop); ctx.closePath(); ctx.stroke();
       ctx.lineWidth = 3; ctx.strokeStyle = C.yellow; ctx.stroke(); for (const f of [0.33, 0.66]) { const bx = dx0 + lw * f; ctx.lineWidth = 3.5; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.moveTo(bx, -16 - 6 * Math.sin(door) * f); ctx.lineTo(bx, dTop - 6 * Math.sin(door) * f); ctx.stroke(); } ctx.restore(); }
     shape(ctx, ell(0, top - 9, 11, 11, 14), C.yellow, { lw: 4, seed: 83 }); shape(ctx, ell(0, top - 9, 4, 4, 10), C.paper, { lw: 2.5, seed: 84 });
-    shape(ctx, ell(dx1 - 4, -60, 6, 6, 10), C.red, { lw: 2.5, seed: 85 });
+    shape(ctx, ell(dx1 - 4, ry, 6, 6, 10), C.red, { lw: 2.5, seed: 85 });
   }
   ctx.restore();
 }

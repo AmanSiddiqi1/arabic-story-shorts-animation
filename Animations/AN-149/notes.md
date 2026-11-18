@@ -17,3 +17,6 @@ Decisions the plan left open or the measured sets changed:
 - S12: pupils at x 270 / 330 / 390, the teacher stops at x 600 right of the school door; costume change inside turnFlip at 144.6 (palette cross-fade at 144.83).
 - S15: the scholar walks 1452 -> 760 and stops at 166.38; the camera then drifts to x 600 so the locked school and the playing pupils are in frame. The foundation of two notes is hidden by a small mist until 2 SONGS (165.4) and the inner view tilts down 35 units; the grave block is grey stone with two plain lines (no religious mark).
 - Head shakes are x oscillations of the whole figure (front-facing person), gaze flipping, lid 1 on the third (plan note).
+
+## v2 (Fable review 1)
+- See review/revision_1.md. Decisions: recoil kept on the silence-refined onset 99.82 (review said 99.22, the Whisper end of the previous word); THE END moved into the empty top of the moral cloud (panel y 300) because the larger cloud fills the sky; dream wash now drawn under the figures (SM_PTF panel transform); the S13 insert no longer draws the street.

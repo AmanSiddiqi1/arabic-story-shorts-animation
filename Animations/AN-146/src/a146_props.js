@@ -10,7 +10,7 @@ function a146Bale(ctx, x, y, o = {}) {
   const s = o.s ?? 1, sq = o.sq ?? 1, w = 150, h = 105, [c0, c1] = A146_BALE[o.col || 'red'];
   ctx.save(); ctx.translate(x, y); if (o.rot) ctx.rotate(o.rot); ctx.scale(s * (1 + (1 - sq) * 0.6), s * sq); if (o.alpha != null) ctx.globalAlpha *= o.alpha;
   const body = [[-w / 2 + 8, 0], [-w / 2, -14], [-w / 2 + 2, -h + 16], [-w / 2 + 14, -h], [w / 2 - 14, -h], [w / 2 - 2, -h + 16], [w / 2, -14], [w / 2 - 8, 0], [-w / 2 + 8, 0]];
-  if (o.ghost) { ctx.save(); ctx.setLineDash([14, 10]); ctx.lineWidth = 6; ctx.strokeStyle = o.ghostCol || C.black; K.poly(ctx, body, true); ctx.stroke(); ctx.restore(); ctx.restore(); return; }
+  if (o.ghost) { ctx.save(); if (o.tint > 0) { ctx.save(); ctx.globalAlpha *= o.tint; ctx.fillStyle = c0; K.poly(ctx, body, true); ctx.fill(); ctx.restore(); } ctx.setLineDash([14, 10]); ctx.lineWidth = 6; ctx.strokeStyle = o.ghostCol || C.black; K.poly(ctx, body, true); ctx.stroke(); ctx.restore(); ctx.restore(); return; }
   shape(ctx, body, c0, { lw: 5, seed: 300, dot: c1, pitch: 9, rad: 0.24, da: 0.55 });
   ctx.save(); ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(20,20,20,0.45)'; for (const fy of [-0.3, -0.55, -0.78]) { ctx.beginPath(); ctx.moveTo(-w / 2 + 6, h * fy); ctx.quadraticCurveTo(0, h * fy - 6, w / 2 - 6, h * fy); ctx.stroke(); } ctx.restore();
   for (const bx of [-40, 40]) seg(ctx, bx, -h + 2, bx + 2, -2, 9, A146_ROPE, 3);
@@ -37,8 +37,12 @@ function a146CamelLoad(ctx, P, n = 4, o = {}) {
   ctx.save(); ctx.translate(st.x, st.y); ctx.rotate(st.rot);
   const spots = [[-58 * sd, 6, 'red'], [58 * sd, 6, 'blue'], [-46 * sd, -58, 'yellow'], [56 * sd, -58, 'green']];
   for (let i = 0; i < Math.min(n, 4); i++) { const [bx, by, col] = spots[i], d = land[i] != null ? landSquash(o.t, land[i], 0.2, 12) : 1;
-    a146Bale(ctx, bx, by + 40 * s, { col, s, sq: d, knot: i === 2, tassel: o.tassel || 0, tick: o.ticks ? K.clamp((o.t - o.ticks[i]) / 0.3) * (o.t >= o.ticks[i] ? 1 : 0) : 0 }); }
+    a146Bale(ctx, bx, by + 40 * s, { col, s, sq: d, knot: i === 2, tassel: o.tassel || 0 }); }
   if (n > 0) seg(ctx, -100 * s, -10, 100 * s, -10, 6, A146_ROPED, 2);
+  // v2: ticks in a second pass, on each bale's face (the upper bales no longer hide the lower ticks); o.tickFade fades them all out
+  if (o.ticks) for (let i = 0; i < Math.min(n, 4); i++) { const [bx, by] = spots[i], k = o.t >= o.ticks[i] ? K.clamp((o.t - o.ticks[i]) / 0.3) : 0, f = o.tickFade ?? 1; if (k <= 0 || f <= 0) continue;
+    ctx.save(); ctx.globalAlpha *= f; ctx.translate(bx + 10 * s, by + 40 * s - 60 * s); ctx.rotate(-st.rot); ctx.scale(0.9 * K.ease.back(k), 0.9 * K.ease.back(k)); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    ctx.lineWidth = 22; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.moveTo(-22, 0); ctx.lineTo(-6, 18); ctx.lineTo(26, -22); ctx.stroke(); ctx.lineWidth = 12; ctx.strokeStyle = '#5fd05a'; ctx.stroke(); ctx.restore(); }
   ctx.restore(); return st;
 }
 
@@ -131,7 +135,7 @@ function a146Portrait(ctx, x, y, r, o = {}) {
 }
 // a picture balloon: rounded box (cx, cy, w, h) with a tail to `tail`, p pop; cells [{p, draw(c)}] laid out left to right (drawn at cell centres)
 function a146Balloon(ctx, cx, cy, w, h, tail, p, cells = [], o = {}) {
-  const k = K.ease.back(K.clamp(p)); if (k <= 0) return;
+  const k = K.ease.back(K.clamp(p)); if (k < 0.03) return;   // v2: a near-zero scale sent the tail point (divided by k) to huge coordinates and crashed the page at 41.7 s
   ctx.save(); ctx.translate(cx, cy); ctx.scale(k, k);
   const pts = ell(0, 0, w / 2, h / 2, 40);
   if (tail) { const tx = (tail[0] - cx) / k, ty = (tail[1] - cy) / k, a = Math.atan2(ty, tx), b0 = [Math.cos(a - 0.25) * w * 0.38, Math.sin(a - 0.25) * h * 0.38], b1 = [Math.cos(a + 0.25) * w * 0.38, Math.sin(a + 0.25) * h * 0.38];
@@ -158,13 +162,17 @@ function a146Lantern(ctx, x, y, s = 1, t = 0, lit = 1) {
   if (lit) shape(ctx, ell(0, 38, 4, 8, 10), C.red, { lw: 0 });
   ctx.restore();
 }
-// night overlay: navy alpha a over rect r = [x, y, w, h] with soft stepped holes (circles [x, y, rad] or polygons {pts})
+// night overlay: navy alpha a over rect r = [x, y, w, h] with soft stepped holes (circles [x, y, rad] or polygons {pts}).
+// v2: the dark is clipped to the outside of each hole in turn (one even-odd clip per hole, intersected), so overlapping holes form
+// a union (v1 used one even-odd path for all holes, where two overlapping pools cancelled back to darkness). No offscreen layer.
 function a146Dark(ctx, a, r, holes = []) {
-  if (a <= 0.001) return; const steps = [1, 0.8, 0.6];
-  for (const k of steps) { ctx.save(); ctx.beginPath(); ctx.rect(r[0], r[1], r[2], r[3]);
-    for (const h of holes) { if (h.pts) { const c = h.c || [0, 0], sc = 0.7 + 0.3 * k; h.pts.forEach((p, i) => { const px = c[0] + (p[0] - c[0]) * sc, py = c[1] + (p[1] - c[1]) * sc; i ? ctx.lineTo(px, py) : ctx.moveTo(px, py); }); ctx.closePath(); }
-      else { ctx.moveTo(h[0] + h[2] * k, h[1]); ctx.arc(h[0], h[1], h[2] * k, 0, Math.PI * 2); } }
-    ctx.fillStyle = NAVY2; ctx.globalAlpha = 1 - Math.pow(1 - Math.min(0.97, a), 1 / steps.length); ctx.fill('evenodd'); ctx.restore(); }
+  if (a <= 0.001) return; const steps = [1, 0.8, 0.6], al = 1 - Math.pow(1 - Math.min(0.97, a), 1 / steps.length);
+  for (const k of steps) { ctx.save();
+    for (const h of holes) { if (!h.pts && h[2] * k <= 0) continue; ctx.beginPath(); ctx.rect(r[0], r[1], r[2], r[3]);
+      if (h.pts) { const c = h.c || [0, 0], sc = 0.7 + 0.3 * k; h.pts.forEach((p, i) => { const px = c[0] + (p[0] - c[0]) * sc, py = c[1] + (p[1] - c[1]) * sc; i ? ctx.lineTo(px, py) : ctx.moveTo(px, py); }); ctx.closePath(); }
+      else { ctx.moveTo(h[0] + h[2] * k, h[1]); ctx.arc(h[0], h[1], h[2] * k, 0, Math.PI * 2); }
+      ctx.clip('evenodd'); }
+    ctx.fillStyle = NAVY2; ctx.globalAlpha *= al; ctx.fillRect(r[0], r[1], r[2], r[3]); ctx.restore(); }
 }
 // a small dust puff on the ground
 const a146Dust = (ctx, x, y, t, t0, n = 5, seed = 1) => dustBurst(ctx, x, y, t - t0, n, 8, 18, 46, 0.6, seed);

@@ -20,7 +20,7 @@ Interrupted session: `cloud.py list` shows recent runs (the title carries the st
 | Guard | Where |
 |---|---|
 | Never on push; only `workflow_dispatch` by the repo owner | render.yml |
-| <= 2 renders at once | `strategy.max-parallel: 2` |
+| <= 10 renders at once (raised from 2 on 2026-11-18; GitHub Free allows 20 concurrent jobs per account, shared by all its repositories) | `strategy.max-parallel: 10` |
 | 1 batch run at a time (a second waits; GitHub keeps only ONE pending run and cancels older pending ones, so the client refuses to submit while a run is active, or waits with `--when-idle`) | workflow `concurrency` + cloud.py |
 | 60 min per film; standard runner only | `timeout-minutes` |
 | 1 retry, transient failures only, first 20 min; deterministic failures (build, page errors, QC, checksum) never retried | render_one.py |
@@ -31,7 +31,7 @@ Interrupted session: `cloud.py list` shows recent runs (the title carries the st
 | Test renders: artifacts, 3 days. Approved films: Release asset (2 GB limit, not counted in the quota, not in Git history) | render.yml / publish.yml |
 
 Limits that cannot be shared: GitHub concurrency and `max-parallel` apply per repository/workflow. Another repository (for example the public
-snapshot) has its own independent pool; the 2-render cap is not shared between repositories.
+snapshot) has its own independent pool; the 10-render cap is not shared between repositories.
 
 ## Details
 - **Narration.** Only the final combined MP3s from `Audio Files/Final Done/` are used (never the paragraph clips, pauses or other production folders). They are not in Git. They sit in the `narration-inputs` Release of the PRIVATE repository; the public runner reads them with two Actions secrets on the public repo: `NARRATION_REPO` (owner/name of the private repo) and `NARRATION_TOKEN` (fine-grained token, Contents: read on that one repository, nothing else). The runner checks each file's SHA-256 against `production/state.json`. Putting the MP3s in the public repo's own release is possible (`inputs --to-render-repo --confirm-public-rights`) but only after the owner has cleared the rights.

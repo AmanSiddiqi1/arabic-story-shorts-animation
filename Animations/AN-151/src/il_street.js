@@ -10,13 +10,13 @@ const IL_HOUSES = [
 const IL_NWIN = [690, 505, 120, 130];          // neighbour's shuttered window (x, y, w, h)
 const IL_STEP = [300, 545, 852];               // the woman's doorstep block (x0, x1, top), 48 high: a seated figure's hips land on it
 const IL_NOTICE = [1840, 690];                 // the wall notice on the mosque wall (S1)
-const IL_SIGN = [1450, 440];                   // SCHOOL sign hooks (cx, y)
+const IL_SIGN = [1450, 392];                   // SCHOOL sign hooks (cx, y)
 
 // ---------- impostor in the street ----------
 function ilImpStreet(t) {
   const P = ilWho(IL_IMP, { y: 900, dir: 1 }); let broom = null, tab = null, chalk = null, turban = t >= 21.24;
   if (t < 9.28) { // S1: sweeping, the notice, the mask, the passer-by
-    P.x = kfn(t, [[1.72, 1960], [2.84, 1940]]); const sw = t < 1.72 ? Math.sin(t * Math.PI * 4) : 0;
+    P.x = kfn(t, [[1.72, 1960], [2.84, 1940], [7.2, 1940], [7.42, 1918]]); const sw = t < 1.72 ? Math.sin(t * Math.PI * 4) : 0;
     P.tip = 0.06 * sw * (t < 1.72 ? 1 : 0); P.gaze = [0.3, 0.8]; P.lid = Math.max(0.25, blink(t, 3));
     if (t < 3.38) { const f = [2040 + 26 * sw, 897], h0 = [P.x + 30 + 8 * sw, 775]; broom = [h0, f]; P.handRW = h0; P.handLW = ilLp(h0, f, 0.35); }
     if (t >= 1.72) { P.gaze = look(t, [P.x, 700], [[1.72, [2100, 900]], [1.9, IL_NOTICE], [2.84, [1800, 640]], [3.0, [1880, 740]], [3.12, [1790, 720]], [3.24, [1880, 640]]], 0.07);
@@ -27,9 +27,11 @@ function ilImpStreet(t) {
     if (t >= 5.5 && t < 5.94) { P.handL = PERSON_HANDS.palmsUp.L; P.handR = PERSON_HANDS.palmsUp.R; P.drop = 4; P.mouth = 'frown'; P.tip = -0.08 * (1 - ilE(t, 5.5, 0.3)); }
     if (t >= 5.94) { P.tip = 0; P.tilt = 0; P.gaze = [0, 0.05]; P.brow = -0.4; P.mouth = 'smile'; P.lid = Math.max(0.3, blink(t, 3)); P.sq = settleTo(t, 5.94, 1, 1.03, 0.35); broom = [[P.x + 46, 770], [P.x + 52, 897]]; P.handRW = [P.x + 46, 770]; P.handL = null; P.handR = null; }
     if (t >= 6.9) P.gaze = look(t, [P.x, 700], [[6.9, [2300, 760]], [7.3, [2170, 700]]]);
-    if (t >= 7.42) { P.handL = [-16, -160]; P.lid = Math.max(0.4, blink(t, 3)); P.drop = 6 * pulse(t, 7.55, 0.5); }
-    if (t >= 8.1) { P.wink = 'R'; P.gaze = [0, 0.05]; P.lid = 0; P.handL = null; P.drop = 0; }
-    if (chalk == null && t >= 5.5) chalk = 1;
+    if (t >= 7.42 && t < 8.05) { broom = [[P.x + 58, 772], [P.x + 74, 897]]; P.handRW = null; P.handR = PERSON_HANDS.chin.R; P.handR = [16 + 5 * Math.sin(t * 16), -160];   // the wise chin stroke
+      const u = ilE(t, 7.5, 0.45, 'lin'); P.handLW = [K.lerp(1880, 1846, u), 700 + 4 * Math.sin(u * 20)]; P.gaze = lookAt([P.x, 700], P.handLW); P.lid = 0.45; P.brow = -0.5; P.tip = -0.05; P.mouth = 'closed'; }
+    if (t >= 8.05) { broom = [[P.x + 58, 772], [P.x + 74, 897]]; P.handRW = null; P.handR = null; P.handLW = null; P.tip = 0; }
+    if (t >= 8.1) { P.wink = 'R'; P.gaze = [0, 0.05]; P.lid = 0; P.handL = null; P.drop = 0; P.mouth = 'smile'; }
+    if (chalk == null && t >= 5.5) chalk = t < 5.9 ? 1 : 0;
     return { P, broom, chalk, turban: false };
   }
   if (t < 13.34) { // S2: the idea, the door, the sign, the children
@@ -48,9 +50,10 @@ function ilImpStreet(t) {
     if (t >= 26.4) { P.gaze = look(t, [P.x, 700], [[26.4, [1200, 820]], [26.9, [1300, 860]]]); P.lid = Math.max(0.35, blink(t, 3)); }
     let slump = 0, hand = null;
     if (t >= 27.5) { P.handL = PERSON_HANDS.armsOut.L; P.handLW = null; tab = false; P.gaze = [-0.4, 0.6]; P.mouth = 'smile'; }
-    if (t >= 28.08) { P.tip = 0.2 * ilE(t, 28.08, 0.25); slump = 0.7 * ilE(t, 28.12, 0.2) * (1 - ilE(t, 28.42, 0.2)); if (t >= 28.25) { hand = true; P.handR = [30, -228 + 26 * ilE(t, 28.08, 0.25)]; }
+    let bowTip = 0;
+    if (t >= 28.08) { P.tip = 0.2 * ilE(t, 28.08, 0.25); slump = 0.5 * ilE(t, 28.12, 0.2) * (1 - ilE(t, 28.5, 0.15)); bowTip = 0.44 * ilE(t, 28.1, 0.18) * (1 - ilE(t, 28.5, 0.15)); if (t >= 28.2) { hand = true; P.handL = [-46, -232]; P.handR = [52, -226]; }
       if (t >= 28.4) P.gaze = gazePlan(t, [[28.4, [-0.9, 0]], [28.55, [-0.6, -0.2]]], 0.06); }
-    return { P, tab, slump, turban };
+    return { P, tab, slump, turban, bowTip };
   }
   return null;
 }
@@ -87,11 +90,11 @@ function ilStreetWorld(ctx, t, cam) {
   if (t < 9.28) {
     const I = ilImpStreet(t);
     ilTablet(ctx, IL_NOTICE[0], IL_NOTICE[1], 2.0, { bands: 4 });
-    L.push([880, () => { if (t < 6.78) return; const xf = (u) => kfn(u, [[6.78, 2420], [7.42, 2170], [8.35, 2170], [9.28, 1640]], 'lin'); const B = ilWho(IL_BED, { ...walk(xf, t, { stride: 24 }), y: 880, dir: -1, gaze: [-1, 0.1] });
-      if (t >= 7.2 && t < 8.35) { B.gaze = lookAt([B.x, 700], [1960, 700]); B.mouth = 'smile'; B.drop = 5 * pulse(t, 7.7, 0.5); }
-      if (t >= 8.1 && t < 8.5) { B.handR = PERSON_HANDS.chest.R; B.tip = 0.08 * pulse(t, 8.1, 0.4); } R.bed = ilHead(B); person(ctx, B); }]);
+    L.push([880, () => { if (t < 6.78) return; const xf = (u) => kfn(u, [[6.78, 2420], [7.42, 2170], [7.95, 2170], [9.28, 2480]], 'lin'); const B = ilWho(IL_BED, { ...walk(xf, t, { stride: 24 }), y: 880, dir: t < 7.95 ? -1 : 1, gaze: [-1, 0.1] });
+      if (t >= 7.2 && t < 7.95) { B.gaze = lookAt([B.x, 700], t < 7.6 ? [1850, 690] : [1960, 700]); B.mouth = 'o'; B.brow = -0.5; B.drop = 6 * (pulse(t, 7.55, 0.2) + pulse(t, 7.75, 0.2)); B.handR = PERSON_HANDS.chest.R; }
+      if (t >= 7.95) { B.gaze = [1, 0.1]; B.mouth = 'smile'; } R.bed = ilHead(B); person(ctx, B); }]);
     L.push([900, () => { const P = I.P; if (I.broom) ilBroom(ctx, I.broom[0], I.broom[1]); person(ctx, P); R.imp = ilHead(P); }]);
-    if (I.chalk > 0) { ctx.save(); ctx.lineWidth = 3; ctx.strokeStyle = C.black; ctx.lineCap = "round"; ctx.beginPath(); const n = Math.floor(40 * I.chalk), r = K.rng(9); for (let k = 0; k < n; k++) ctx.lineTo(1860 + r() * 50, 680 + r() * 45); ctx.stroke(); ctx.restore(); }
+    if (I.chalk > 0) { ctx.save(); if (t >= 5.5) ctx.globalAlpha *= 1 - ilE(t, 5.55, 0.33); ctx.lineWidth = 3; ctx.strokeStyle = C.black; ctx.lineCap = "round"; ctx.beginPath(); const n = Math.floor(40 * I.chalk), r = K.rng(9); for (let k = 0; k < n; k++) ctx.lineTo(1860 + r() * 50, 680 + r() * 45); ctx.stroke(); ctx.restore(); }
     for (const [ts, fx] of [[0.25, 2040], [0.75, 2050], [1.25, 2035]]) dustBurst(ctx, fx, 896, t - ts, 4, 4, 8, 22, 0.5, Math.round(ts * 10));
   }
   if (t < 9.28) { if (t >= 0.9 && t < 1.7) { const g = (t - 0.9) / 0.8; ilStar(ctx, 2120 + 40 * g, 250 + 30 * g, 26 * Math.sin(Math.PI * g)); } }
@@ -103,8 +106,8 @@ function ilStreetWorld(ctx, t, cam) {
   // ---- S4 ----
   if (t >= 21.24 && t < 28.7) {
     const I = ilImpStreet(t);
-    L.push([900, () => { person(ctx, I.P); const h = ilHead(I.P), hl = ilHead(ilImpStreet(t - 0.1).P); R.imp = h;
-      ilTurban(ctx, h.x, h.y, { s: h.s, rot: h.rot, wob: (hl.rot - h.rot) * 0.8 + 0.03 * Math.sin(t * 2.2), slump: I.slump, side: -1, feather: 0.12 * Math.sin(t * 2.6) + (hl.x - h.x) * 0.01, glint: (t - 23.4) / 0.6 });
+    L.push([920, () => { person(ctx, I.P); const h = ilHead(I.P), hl = ilHead(ilImpStreet(t - 0.1).P); R.imp = h;
+      ilTurban(ctx, h.x, h.y, { s: h.s, rot: h.rot, wob: (hl.rot - h.rot) * 0.8 + 0.03 * Math.sin(t * 2.2) - (I.bowTip || 0) - 0.06 * pulse(t, 28.2, 0.3), slump: I.slump, side: -1, feather: 0.12 * Math.sin(t * 2.6) + (hl.x - h.x) * 0.01, glint: (t - 23.4) / 0.6 });
       if (I.tab) ilTablet(ctx, I.P.x + 26, 800, 0.85, { rot: 0.25 }); }]);
     const stop = 22.78, pk = [[700, 1040], [780, 1150]];
     [IL_LADY, IL_BED].forEach((base, i) => { const xf = (u) => kfn(u, [[21.64 + i * 0.1, pk[i][0]], [stop, pk[i][1]]], 'out');
@@ -117,11 +120,11 @@ function ilStreetWorld(ctx, t, cam) {
         person(ctx, P); R[i ? 'bed' : 'lady'] = ilHead(P); }]); });
     // the four children: trail the parents (skipping), stop, then go to the door one by one (A eager first, D last, looking back)
     const kidStop = [1315, 1260, 1205, 1095], kidGo = [27.14, 27.3, 27.45, 27.6], kidDur = [0.45, 0.6, 0.7, 1.0];
-    for (let i = 0; i < 4; i++) { const xf = (u) => kfn(u, [[21.64 + 0.15 * i, kidStop[i] - 400], [stop + 0.25 + 0.06 * i, kidStop[i]], [kidGo[i], kidStop[i]], [kidGo[i] + kidDur[i], 1450]], 'inOut');
+    for (let i = 0; i < 4; i++) { const xf = (u) => kfn(u, [[21.64 + 0.15 * i, kidStop[i] - 400], [stop + 0.25 + 0.06 * i, kidStop[i]], [kidGo[i], kidStop[i]], [kidGo[i] + kidDur[i] * 1.5, 1590]], 'inOut');
       L.push([912 + i, () => { const W = walk(xf, t, { stride: 16 }), P = ilWho(IL_PUP[i], { ...W, y: 912 + i - Math.abs(Math.sin(W.ph * 0.5)) * 10 * W.amp, dir: 1, gaze: [1, -0.2] });
         if (t >= stop + 0.3) P.gaze = lookAt([P.x, 780], [1450, 640]); if (t >= 24.32 && t < 26.4) P.mouth = 'o';
         if (i === 3 && t >= 27.6) { P.gaze = [-1, -0.3]; P.brow = -0.5; }
-        const fade = 1 - K.clamp((t - kidGo[i] - kidDur[i] + 0.05) / 0.3); if (fade <= 0) return; P.alpha = fade; person(ctx, P); }]); }
+        if (P.x > 1585) return; ctx.save(); if (t >= kidGo[i]) { ctx.beginPath(); ctx.rect(0, 0, 1514, 1230); ctx.clip(); } person(ctx, P); ctx.restore(); }]); }
   }
   // ---- S10, S11, S13: the woman's doorstep ----
   if (t >= 86.06 && t < 124.32) ilDoorstep(ctx, t, L, R);
@@ -144,6 +147,7 @@ function ilWomanSt(t) {
     if (t >= 101.26 && t < 102.4) { P.handR = [26 + 6 * Math.sin(t * 9), -194]; P.gaze = [-0.3, 0.8]; P.brow = -0.4; P.mouth = 'frown'; }
     if (t >= 102.4) { P.gaze = lookAt([470, 700], [585, 760]); P.handR = null; P.mouth = 'closed'; P.lid = Math.max(0, blink(t, 7)); P.brow = -0.3; }
     if (t >= 102.94) letter.hidden = true;
+    if (t >= 104.9) { P.handR = PERSON_HANDS.chest.R; P.sq = K.lerp(0.96, 1, ilE(t, 105.0, 0.8)); P.lid = 0.4; P.mouth = t < 105.3 ? 'closed' : 'smile'; P.wet = true; P.gaze = lookAt([470, 700], [585, 760]); }
     if (t >= 105.48) { P.tip = 0.1 * ilE(t, 105.48, 0.4); P.lid = 0; }
     if (t >= 106.2) { P.wet = false; P.mouth = 'smile'; P.lid = Math.max(0.3, blink(t, 7)); P.brow = -0.2; P.tip = 0.06; }
   } else { // S13: stands up in one move, fists on hips, snatches the letter, marches
@@ -162,15 +166,16 @@ function ilDoorstep(ctx, t, L, R) {
   L.push([900, () => { person(ctx, W.P); const h = ilHead(W.P); R.wom = h; R.womP = W.P;
     if (!W.letter.hidden) { const hp = ilHandW(W.P, W.letter.hand === 'L' ? 0 : 1); if (hp) ilLetter(ctx, hp[0], hp[1] - (W.letter.high ? 30 : 0), W.letter.s, { crumple: W.letter.crumple || 0, fold: W.letter.fold || 0, rot: W.letter.high ? -0.2 : 0.3 }); } }]);
   // the two children
-  for (let i = 0; i < 2; i++) { const st = [365, 310][i];
-    const xf = (u) => kfn(u, [[86.6 + 0.2 * i, 1080 + 60 * i], [88.6 + 0.4 * i, st], [104.86 + 0.34 * i, st], [105.1 + 0.34 * i, [400, 345][i]], [121.9 + 0.15 * i, [400, 345][i]], [124.3, 1180 - 80 * i]], 'lin');
+  for (let i = 0; i < 2; i++) { const st = [342, 284][i];
+    const xf = (u) => kfn(u, [[86.6 + 0.2 * i, 1080 + 60 * i], [88.6 + 0.4 * i, st], [121.9 + 0.15 * i, st], [124.3, 1180 - 80 * i]], 'lin');
     L.push([905 + i, () => { const Wk = walk(xf, t, { stride: 14 }), P = ilWho(IL_KID[i], { ...Wk, y: 905, dir: -1, gaze: lookAt([0, 0], [-0.3, -1]), brow: -0.6 });
       if (t >= 88.6 + 0.4 * i) { P.dir = 1; P.gaze = lookAt([P.x, 800], [470, 720]); }
-      const up = t < 104.86 + 0.34 * i ? 0 : t < 118.7 ? 1 : 1 - ilE(t, 118.7 + 0.1 * i, 0.2);
-      const hp = hop(t, 104.86 + 0.34 * i, 0.25, 0, 0, 26)[1]; P.y = 905 - 53 * up - hp; P.sq = landSquash(t, 105.11 + 0.34 * i, 0.12);
+      // hops of joy (104.86): anticipation, 28 px up, arms up, squash on landing; staggered 0.2 s, each on its own spot beside the mother
+      const h0 = 104.98 + 0.2 * i, hp = hop(t, h0, 0.34, 0, 0, 28)[1]; P.y = 905 - hp; P.sq = anticipate(t, h0 - 0.14, 0.14, 0.1) * landSquash(t, h0 + 0.34, 0.14);
+      if (t >= h0 - 0.05 && t < h0 + 0.9) { P.aL = [-2.5, -2.9]; P.aR = [2.5, 2.9]; P.mouth = 'open'; }
       const cry = t >= 89.8 + 0.35 * i && t < 97.42 + 0.4 * i; if (cry) { P.eyes = 'shut'; P.mouth = 'open'; P.tilt = -0.15; P.lid = null; }
       if (t >= 97.42 + 0.4 * i && t < 104.86) { P.gaze = lookAt([P.x, 790], [640, 420]); P.mouth = 'o'; }
-      if (t >= 104.86 + 0.34 * i && t < 118.08) { P.gaze = lookAt([P.x, 740], [585, 760]); P.mouth = 'o'; }
+      if (t >= 104.86 && t < 118.08) { P.gaze = lookAt([P.x, 740], [585, 760]); if (t >= 104.98 + 0.2 * i + 0.9) P.mouth = 'smile'; }
       if (t >= 118.7) { P.eyes = 'wide'; P.gaze = lookAt([P.x, 760], [470, 700]); P.y += 0; P.x -= 12 * ilE(t, 118.7, 0.2); }
       if (t >= 121.9) { P.dir = 1; P.gaze = [1, 0]; P.eyes = null; P.mouth = 'o'; if (i === 1) P.y -= hop(t, 122.6, 0.3, 0, 0, 16)[1]; }
       person(ctx, P); R['kid' + i] = ilHead(P); }]); }
@@ -183,7 +188,7 @@ function ilDoorstep(ctx, t, L, R) {
       if (t >= 94.94 && t < 102.02) { P.tip = 0; P.handL = null; P.handR = [36, -206]; note = ilW(P, [44, -236]); P.brow = -0.3; }
       if (t >= 102.02) { P.handR = PERSON_HANDS.reach.R; P.gaze = lookAt([600, 700], [500, 770]); }
       if (t >= 102.94) { P.handR = [56, -150]; page = ilW(P, [62, -172]); P.gaze = lookAt([600, 710], page); }
-      if (t >= 103.62 && t < 118.08) { const rd = K.clamp((t - 103.62) / 2.4); P.handL = [44 - 30 * ((rd * 6) % 1), -168 + 12 * Math.floor(rd * 6) * 0.35]; finger = true; P.gaze = lookAt([600, 708], [page[0] + 18 - 36 * ((rd * 6) % 1), page[1]]); P.talk = talk(t, [[103.62, 106.2]]); }
+      if (t >= 103.62 && t < 118.08) { const rd = K.clamp((t - 103.62) / 2.4); P.handL = [44 - 30 * ((rd * 6) % 1), -168 + 12 * Math.floor(rd * 6) * 0.35]; finger = true; P.gaze = lookAt([600, 708], [page[0] + 18 - 36 * ((rd * 6) % 1), page[1]]); P.talk = talk(t, [[103.62, 106.2]]); if (t >= 105.48 && t < 105.9) P.gaze = lookAt([600, 700], [470, 690]); }
       if (t >= 118.08) { finger = false; P.handL = null; P.tip = -0.1 * ilE(t, 118.7, 0.2); P.gaze = lookAt([600, 700], [470, 700]); P.eyes = t < 119.3 ? 'wide' : null; }
       if (t >= 120.48) { page = null; P.handR = [56, -150]; P.lid = pulse(t, 120.6, 0.2); }
       if (t >= 121.9) { P.handR = [64 + 12 * Math.sin(t * 12), -196]; P.mouth = 'smile'; P.gaze = [1, 0]; P.tip = 0; }

@@ -2,7 +2,7 @@ name: Render films
 
 # Cloud rendering of finished animation source. NEVER runs on push: it is started explicitly with
 #   python3 tools/cloud/cloud.py submit KD-008 ...        (wraps `gh workflow run`)
-# Limits: at most 2 renders at a time (matrix max-parallel), 1 batch run at a time (concurrency group), 60 min per film,
+# Limits: at most 10 renders at a time (matrix max-parallel; GitHub Free allows 20 concurrent jobs per account), 1 batch run at a time (concurrency group), 60 min per film,
 # at most 1 automatic retry (transient failures only), batch size and 24 h run limits enforced in tools/cloud/plan.py.
 on:
   workflow_dispatch:
@@ -20,7 +20,7 @@ permissions:
   actions: read      # plan job lists existing artifacts / recent runs (duplicate + usage guards)
 
 # One batch run at a time; a second submission waits (GitHub keeps ONE pending run and cancels older pending ones,
-# so the client refuses to submit while a run is active). Together with max-parallel this is the hard 2-render cap.
+# so the client refuses to submit while a run is active). Together with max-parallel this is the hard 10-render cap.
 concurrency:
   group: render-queue
   cancel-in-progress: false
@@ -53,7 +53,7 @@ jobs:
     timeout-minutes: 60
     strategy:
       fail-fast: false
-      max-parallel: 2                # the two-render limit
+      max-parallel: 10               # the ten-render limit (was 2 until 2026-11-18)
       matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
     name: render ${{ matrix.id }} ${{ matrix.version }}
     steps:

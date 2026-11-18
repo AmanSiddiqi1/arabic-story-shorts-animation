@@ -96,13 +96,22 @@ function an83Bow(ctx, x, y, rot, o = {}) {
   seg(ctx, 20, -10, 28, 10, 10, C.red, 2.5);
   ctx.restore();
 }
-// purse (drawstring pouch): (x, y) = neck; hangs along +y rotated by rot. o: {open, s}. Gathered frill above a yellow cord with dangling ends.
+// purse (drawstring pouch): (x, y) = neck; hangs along +y rotated by rot. o: {open, s, flap (-1..1, sides swing when shaken), t}.
+// v3: half the old size, a limp tan leather pouch with sagging sides and two long yellow drawstrings that dangle toward the ground.
 function an83Purse(ctx, x, y, rot = 0, o = {}) {
-  const s = o.s || 1; ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s);
-  shape(ctx, an83Close([[-9, 4], [9, 4], [20, 16], [30, 34], [30, 50], [20, 60], [-20, 60], [-30, 50], [-30, 34], [-20, 16]]), '#c8481a', { lw: 4, seed: 860, dot: '#7a2410', pitch: 7, rad: 0.25, da: 0.5 });
-  shape(ctx, an83Close([[-9, 6], [-16, -8], [-8, -3], [-3, -12], [3, -3], [9, -12], [12, -2], [17, -8], [9, 6]]), '#e2672a', { lw: 3, seed: 863 });
-  if (o.open) shape(ctx, ell(0, -6, 10 * o.open, 3.5, 12), C.black, { lw: 1.5 });
-  seg(ctx, -12, 6, 12, 6, 6, C.yellow, 2.5); seg(ctx, 10, 6, 18, 22, 4, C.yellow, 2); seg(ctx, 12, 6, 24, 18, 4, C.yellow, 2);
+  const s = (o.s || 1) * 0.55, f = (o.flap || 0) * 9, tt = o.t || 0; ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s);
+  // limp body: narrow neck, sides bulge and sag, the bottom droops in the middle; the sides swing with the shake
+  shape(ctx, an83Close([[-7, 4], [7, 4], [16 + f, 14], [25 + f, 30], [27 + 0.6 * f, 46], [20 + 0.3 * f, 57], [6, 62], [-6, 62], [-20 + 0.3 * f, 57], [-27 + 0.6 * f, 46], [-25 + f, 30], [-16 + f, 14]]), '#d39a58', { lw: 4, seed: 860, dot: '#8a5a2a', pitch: 7, rad: 0.22, da: 0.45 });
+  for (const [x0, y0, x1, y1] of [[-10, 16, -6, 30], [10, 16, 6, 32], [-2, 40, 4, 52]]) seg(ctx, x0 + 0.5 * f, y0, x1 + f, y1, 2.5, '#8a5a2a', 0);   // wrinkles in the soft leather
+  shape(ctx, an83Close([[-7, 6], [-13, -5], [-6, -2], [-2, -9], [2, -2], [7, -9], [10, -2], [14, -6], [7, 6]]), '#e6b674', { lw: 3, seed: 863 });   // gathered neck
+  if (o.open) shape(ctx, ell(0, -5, 8 * o.open, 3, 12), C.black, { lw: 1.5 });
+  seg(ctx, -10, 5, 10, 5, 6, C.yellow, 2.5);
+  // two long drawstrings, hanging world-down from the neck, swaying a little
+  const dn = [Math.sin(rot), Math.cos(rot)], pr = [dn[1], -dn[0]];
+  for (const sd of [-1, 1]) { const sw = 10 * Math.sin(tt * 7 + sd) + 6 * (o.flap || 0), x0 = sd * 8, L = 62 + 8 * sd;
+    const m = [x0 + dn[0] * L * 0.5 + pr[0] * sw * 0.5 + sd * 5, 5 + dn[1] * L * 0.5 + pr[1] * sw * 0.5], e = [x0 + dn[0] * L + pr[0] * sw + sd * 8, 5 + dn[1] * L + pr[1] * sw];
+    for (const [w, c] of [[7, C.black], [3.5, C.yellow]]) { ctx.lineWidth = w; ctx.strokeStyle = c; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(x0, 5); ctx.quadraticCurveTo(m[0], m[1], e[0], e[1]); ctx.stroke(); }
+    shape(ctx, ell(e[0], e[1], 5, 5, 10), C.yellow, { lw: 2.5, seed: 864 }); }   // knotted ends
   ctx.restore();
 }
 // coin (icon or falling piece)

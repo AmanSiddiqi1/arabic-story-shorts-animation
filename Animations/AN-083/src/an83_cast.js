@@ -37,19 +37,22 @@ const an83Lid = (P, t, v) => { P.lid = Math.max(v, P.noBlink ? 0 : blink(t, P.se
 const AN83_MXA = (t) => an83Path(t, [[0.44, -80], [6.0, 520], [8.8, 650], [10.3, 700, 'out'], [11.0, 700], [11.4, 720, 'inOut']]);
 const AN83_MXB = (t) => an83Path(t, [[20.0, 900], [23.4, 1180, 'out'], [29.02, 1180], [30.9, 1270, 'inOut'], [54.3, 1270], [54.8, 1315, 'inOut'], [59.5, 1315], [60.2, 1270, 'inOut']]);
 // S16: Ma'an last to leave, a turn and a wave at 164.4, then up the dune
-const AN83_MXC = (t) => an83Path(t, [[107.95, 1270], [108.7, 1250, 'inOut'], [159.9, 1250], [160.6, 1232, 'in'], [164.3, 1050], [164.45, 1044, 'out'], [165.3, 1044], [165.7, 1030, 'in'], [169.9, 900]]);
+const AN83_MXC = (t) => an83Path(t, [[107.95, 1270], [108.7, 1250, 'inOut'], [159.9, 1250], [160.6, 1232, 'in'], [164.3, 1050], [164.45, 1044, 'out'], [165.3, 1044], [165.7, 1036, 'in'], [169.9, 962]]);
 const an83MX = (t) => t < 20 ? AN83_MXA(t) : t < 90.45 ? AN83_MXB(t) : AN83_MXC(t);
 const AN83_1A = (t) => an83Path(t, [[0.9, -260], [6.0, 370], [10.43, 600, 'out']]);
 // S5 the huntsmen hurry round BEHIND Ma'an and girl1 (upstage) to girl2 and girl3, and back
-const AN83_1B = (t) => an83Path(t, [[20.0, 770], [23.55, 1040, 'out'], [29.3, 1040], [31.0, 1160, 'inOut'], [37.9, 1160], [39.75, 1665, 'inOut'], [44.85, 1665], [47.6, 1160, 'inOut'], [160.1, 1160], [160.7, 1140, 'in'], [166.0, 900], [169.9, 790]]);
+const AN83_1B = (t) => an83Path(t, [[20.0, 770], [23.55, 1040, 'out'], [29.3, 1040], [31.0, 1160, 'inOut'], [37.9, 1160], [39.75, 1665, 'inOut'], [44.85, 1665], [47.6, 1160, 'inOut'], [160.1, 1160], [160.7, 1140, 'in'], [166.0, 940], [169.9, 892]]);
 const AN83_2A = (t) => an83Path(t, [[1.4, -390], [6.0, 250], [10.57, 490, 'out']]);
-const AN83_2B = (t) => an83Path(t, [[20.0, 670], [22.0, 850], [22.5, 868, 'out'], [23.7, 940, 'inOut'], [29.5, 940], [31.3, 1100, 'inOut'], [38.0, 1100], [40.35, 1850, 'inOut'], [44.9, 1850], [48.3, 1100, 'inOut'], [159.95, 1100], [160.5, 1080, 'in'], [165.15, 820], [165.5, 812, 'out'], [166.2, 812], [169.9, 690, 'in']]);
+const AN83_2B = (t) => an83Path(t, [[20.0, 670], [22.0, 850], [22.5, 868, 'out'], [23.7, 940, 'inOut'], [29.5, 940], [31.3, 1100, 'inOut'], [38.0, 1100], [40.35, 1850, 'inOut'], [44.9, 1850], [48.3, 1100, 'inOut'], [159.95, 1100], [160.5, 1080, 'in'], [165.15, 862], [165.5, 856, 'out'], [166.2, 856], [169.9, 825, 'in']]);
 const an83X1 = (t) => t < 20 ? AN83_1A(t) : AN83_1B(t), an83X2 = (t) => t < 20 ? AN83_2A(t) : AN83_2B(t);
 // depth (y offset, negative = upstage): man2 half behind man1; both run upstage in S5
 const AN83_1Y = (t) => an83Path(t, [[37.9, 0], [38.3, -40, 'inOut'], [39.3, -40], [39.75, -6, 'inOut'], [44.85, -6], [45.3, -40, 'inOut'], [47.1, -40], [47.6, 0, 'inOut']]);
 const AN83_2Y = (t) => t < 20 ? 0 : an83Path(t, [[20, -12], [38.0, -12], [38.4, -52, 'inOut'], [39.8, -52], [40.35, -4, 'inOut'], [44.9, -4], [45.4, -52, 'inOut'], [47.8, -52], [48.3, -12, 'inOut']]);
 // receding up the dune (S16): 0..1 by 166.0
-const an83Rec = (t, t0) => K.ease.inOut(K.clamp((t - t0) / (166.0 - t0)));
+// v3: they keep walking away to the last frame: an eased start, then steady, scale down to 0.45 by 169.9 (no stop at 166)
+const an83Rec = (t, t0) => { const u = K.clamp((t - t0) / (AN83_DUR - t0)); return (u < 0.15 ? u * u / 0.3 : u - 0.075) / 0.925; };
+// walking into depth: legs keep cycling with the distance walked up the dune (380 world units over the recession), stride matched to the current scale
+const an83RecWalk = (P, r, still = 0, amp = 0.65) => { if (r <= 0) return; P.ph = (P.ph || 0) + 380 * r / (29 * amp * P.s); P.amp = Math.max((P.amp || 0) * (1 - still), amp * K.clamp(r * 12) * (1 - still)); };
 // girls: lip of the front dune, entrance paths and later marks
 function an83LipY(x) { return an83Path(x, [[1450, 902], [1520, 860], [1560, 850], [1680, 856], [2010, 870]]); }
 const AN83_GIRL = [   // [rise start, crest time, flat time, xa (behind), xc (crest), mark x]
@@ -91,7 +94,7 @@ function an83Maan(t) {
   // facing
   let tf; if (t < 20) tf = turnFlip(t, [[0, 1], [11.0, -1]], 0.35); else if (t < 70.4) tf = turnFlip(t, [[0, 1], [49.4, -1]], 0.35); else tf = turnFlip(t, [[0, 1], [159.85, -1], [164.4, 1], [165.3, -1]], 0.35);
   P.dir = tf.dir; P.sq = 1 - 0.04 * tf.sink;
-  if (t >= 160.6) { const r = an83Rec(t, 160.6); P.y = AN83_GR - 60 * r; P.s = 1 - 0.45 * r; }
+  if (t >= 160.6) { const r = an83Rec(t, 160.6); P.y = AN83_GR - 80 * r; P.s = 1 - 0.55 * r; an83RecWalk(P, r, K.clamp(Math.min((t - 164.2) / 0.2, (165.5 - t) / 0.2))); }
   const g1h = an83Hd(AN83_GX[0](t), 0.9, AN83_GR + AN83_GY[0](t)), g2h = an83Hd(AN83_GX[1](t), 0.86, AN83_GR + AN83_GY[1](t)), g3h = an83Hd(AN83_GX[2](t), 0.8, AN83_GR + AN83_GY[2](t));
   const m1h = an83Hd(an83X1(t), 0.98), m2h = an83Hd(an83X2(t), 0.95), IN = [AN83_INW[0], AN83_INW[1] + 40];
   let hL = AN83_DL, hR = AN83_DR, lid = 0, gz = null;
@@ -203,7 +206,7 @@ function an83Man1(t) {
   const P = { costume: 'bedouin', age: 0.45, s: 0.98, y: AN83_GR, seed: 41, mouth: 'closed' };
   Object.assign(P, an83Walk(an83X1, t, 0.98, 0.75)); const tf = turnFlip(t, [[0, 1], [39.45, -1], [47.55, 1], [160.1, -1]], 0.4); P.dir = tf.dir; P.sq = 1 - 0.04 * tf.sink;
   if (t >= 20) P.y = AN83_GR + AN83_1Y(t);
-  if (t >= 160.7) { const r = an83Rec(t, 160.7); P.y = AN83_GR - 60 * r; P.s = 0.98 * (1 - 0.45 * r); }
+  if (t >= 160.7) { const r = an83Rec(t, 160.7); P.y = AN83_GR - 80 * r; P.s = 0.98 * (1 - 0.54 * r); an83RecWalk(P, r); }
   const Mh = an83Hd(an83MX(t)), m2h = an83Hd(an83X2(t), 0.95), g1h = an83Hd(AN83_GX[0](t), 0.9), g2h = an83Hd(AN83_GX[1](t), 0.86);
   let gz = Mh, lid = 0, hL = AN83_DL, hR = AN83_DR;
   if (t < 11.4) { P.tip = 0.03 * (1 - AN83_B(t, 7, 2)); if (t > 8.8) lid = 0.3; if (t >= 10.43) { P.mouth = 'frown'; lid = 0.4; } }
@@ -264,7 +267,7 @@ function an83Man2(t) {
   const P = { costume: 'bedouin', pal: AN83_PAL.man2, age: 0.15, s: 0.95, y: AN83_GR, seed: 53, mouth: 'closed' };
   Object.assign(P, an83Walk(an83X2, t, 0.95, 0.75)); const tf = turnFlip(t, [[0, 1], [40.05, -1], [48.25, 1], [159.95, -1]], 0.4); P.dir = tf.dir; P.sq = 1 - 0.04 * tf.sink;
   if (t >= 20) P.y = AN83_GR + AN83_2Y(t);
-  if (t >= 160.5) { const r = an83Rec(t, 160.5); P.y = AN83_GR - 12 - 60 * r; P.s = 0.95 * (1 - 0.45 * r); }
+  if (t >= 160.5) { const r = an83Rec(t, 160.5); P.y = AN83_GR - 12 - 80 * r; P.s = 0.95 * (1 - 0.53 * r); an83RecWalk(P, r, K.clamp(Math.min((t - 165.05) / 0.1, (166.3 - t) / 0.15))); }
   const Mh = an83Hd(an83MX(t)), m1h = an83Hd(an83X1(t), 0.98), g1h = an83Hd(AN83_GX[0](t), 0.9), g3h = an83Hd(AN83_GX[2](t), 0.8);
   let gz = Mh, lid = 0, hL = AN83_DL, hR = AN83_DR;
   if (t < 11.4) {
@@ -382,15 +385,17 @@ function an83Girl(t, i) {
     if (t >= 84.04) { P.drop = 6 * (1 - AN83_B(t, 84.05, 0.3)); P.eyes = 'wide'; P.noBlink = t < 84.9; P.brow = -0.7 * (1 - AN83_B(t, 85.1, 0.4)); P.mouth = t < 85.0 ? 'o' : 'smile';
       gz = gazePlan(t, [[84.04, i === 0 ? gh[1] : i === 1 ? gh[0] : gh[1]], [84.6 + st, i === 0 ? gh[2] : gh[0]]], 0.25); }
     if (i === 0 && t >= 85.44) { gz = gh[1]; P.sq *= 1 + 0.03 * pulse(t, 85.44, 0.5); P.tip = 0.08 * AN83_B(t, 85.85, 0.3); hR = an83HR(t, [[85.8, AN83_DR], [85.95, an83L(P, AN83_GX[1](t) - 20, 798), 0.2]]); P.bundle = 'L'; hL = [18, -118]; }
+    if (i === 1 && t >= 85.44) { P.bundle = 'L'; hL = [-30, -72]; }   // v3: on her far side, away from girl1's face
     if (i > 0 && t >= 86.0) { gz = gh[0]; P.tip = (i === 1 ? 0.09 : 0.11) * AN83_B(t, 86.05, 0.3); if (i === 2) P.y -= 10 * AN83_B(t, 86.1, 0.3); }
   } else if (t < 100.18) {   // S10 only Ma'an does this
     if (i === 0) {
-      P.talk = an83Talk(t, [[88.57, 89.84], [92.45, 94.68], [95.27, 98.6]], 0.7); P.bundle = 'L'; hL = [18, -118]; P.arrowR = true; gz = t < 89.84 ? gh[1] : F.Mh;
-      hR = an83HR(t, [[88.0, [40, -150]], [89.95, [100, -154], 0.3]]); if (t < 89.84) { hR = [40, -150 + 10 * Math.sin(t * 13)]; P.look = 0.5 * Math.sin(t * 9); }
+      P.talk = an83Talk(t, [[88.57, 92.06], [92.45, 94.68], [95.27, 98.6]], 0.7); P.bundle = 'L'; hL = [18, -118]; P.arrowR = true; gz = t < 89.84 ? gh[1] : F.Mh;
+      hR = an83HR(t, [[88.0, [40, -100]], [89.95, [100, -154], 0.3]]); if (t < 89.84) { hR = [40, -100 + 8 * Math.sin(t * 13)];   /* v3: the single arrow held low, clear of the faces */ P.look = 0.5 * Math.sin(t * 9); }
       if (an83In(t, 89.84, 90.2)) P.sq *= 1 + 0.03 * Math.sin(Math.PI * (t - 89.84) / 0.36);
       if (t >= 94.86) { P.aR = [K.lerp(0.3, 2.65, AN83_B(t, 94.86, 0.5)), K.lerp(0.2, 2.85, AN83_B(t, 94.86, 0.5))]; gz = an83W(P, ...an83HandL(1, null, P.aR)); gz = [gz[0], gz[1] - 80]; }
     } else {
       const g0 = 90.56 + i * 0.1;   // the gasp, staggered 3 and 6 frames after the name
+      if (i === 1 && t < g0) { P.bundle = 'L'; hL = [-30, -72]; }
       gz = t < g0 ? gh[0] : gazePlan(t, [[g0, F.Mh], [92.6, an83W(P, 24, -190)], [93.1, F.Mh], [94.0, [AN83_GX[0](t), 560]]], 0.12);
       if (t >= g0 && t < 93.2) { P.eyes = 'wide'; P.noBlink = true; P.mouth = 'o'; P.bundle = 'tuck'; const H = i === 1 ? PERSON_HANDS.mouthCover : PERSON_HANDS.cheeks; hL = an83HL(t, [[g0, AN83_DL], [g0 + 0.01, H.L, 0.15]]); hR = an83HR(t, [[g0, AN83_DR], [g0 + 0.01, H.R, 0.15]]); P.sq *= 1 + 0.03 * pulse(t, g0, 0.4); }
     }
@@ -400,14 +405,14 @@ function an83Girl(t, i) {
     if (i === 0) P.talk = an83Talk(t, [[101.53, 103.0], [103.76, 104.3]], 0.6);
     P.tip = 0.07 + (i ? 0.01 : 0); P.drop = 3 * pulse(t, 102.4 + i * 0.3, 0.4) + 3 * pulse(t, 103.2 + i * 0.25, 0.4);
     if (an83In(t, 101.0 + i * 0.6, 101.5 + i * 0.6) && i > 0) gz = [1250, 700];
-    P.bundle = 'L'; hL = [10, -110];
+    P.bundle = 'L'; hL = i === 0 ? AN83_HIP : [10, -82];   // v3: the speaker's sheaf at her hip, the others at chest height
     if (t >= 103.76 && t < 104.95) { const st = 103.85 + i * 0.1; hR = an83L(P, ctr[0], ctr[1] - [0, 10, 20][i] - 4 * pulse(t, 104.3, 0.25)); if (t < st) hR = an83HR(t, [[st - 0.3, AN83_DR], [st, hR]]); }
     if (t >= 104.96 && t < 106.2) { const st = 105.0 + i * 0.3; if (t >= st) hR = an83HR(t, [[st, AN83_DR], [st + 0.01, [44, -205]]]); P.tip = 0.02; gz = [P.x, 600]; }
     if (t >= 105.92) gz = [1540, 560];
     if (t >= 107.26) { P.tip = 0; gz = F.Mh; if (i === 0) { hR = an83HR(t, [[107.26, AN83_DR], [107.5, [4, -122]]]); P.drop = -3; } }
   } else if (t < 144.06) {   // S12-S14 the verses
     const rec = t < 121.4 ? 0 : t < 135.2 ? 1 : 2;
-    gz = rec === i ? F.Mh : gh[rec]; P.bundle = 'L'; hL = [10, -110];
+    gz = rec === i ? F.Mh : gh[rec]; P.bundle = 'L'; hL = rec === i ? AN83_HIP : [10, -82];   // v3: reciter one hand at the hip, listeners chest height
     if (t >= 110.6 && t < 143.4 && rec !== i) gz = gazePlan(t, [[110.6, gh[rec]], [111.8 + i * 0.4, IN], [118.0 + i * 0.3, gh[0]], [119.3, IN], [122.4, gh[1]], [125.1 + i * 0.3, IN], [131.4, gh[1]], [132.8, IN], [134.4, gh[1]], [136.0, gh[2]], [137.5 + i * 0.3, IN], [143.4, gh[2]]], 0.3);
     if (i === 0) {
       if (t < 121.4) { P.talk = an83Talk(t, [[108.89, 116.54], [116.94, 121.34]], 0.65); lid = 0.3; P.drop = -3;
@@ -418,7 +423,7 @@ function an83Girl(t, i) {
     }
     if (i === 1) {
       if (rec === 1) { P.talk = an83Talk(t, [[122.69, 126.0], [126.53, 131.2], [131.71, 135.34]], 0.8); gz = t > 124.38 && t < 131.2 ? IN : F.Mh;
-        hL = an83HL(t, [[121.9, [10, -110]], [122.7, [-95, -150]], [124.4, [10, -110]], [128.0, [-95, -150]], [129.5, [10, -110]]]); P.bundle = an83In(t, 122.7, 124.4) || an83In(t, 128.0, 129.5) ? 'R' : 'L';
+        hL = AN83_HIP; P.bundle = 'L';   // v3: the sheaf stays at her hip; the right hand keeps the gestures
         hR = an83HR(t, [[121.9, AN83_DR], [122.7, [95, -150]], [124.4, [60, -104]], [126.7, [44, -205]], [128.0, [95, -150]], [129.5, [60, -104]], [131.2, [44, -205]], [132.9, [60, -104]], [134.08, AN83_DR]]);
         if (an83In(t, 131.3, 132.9)) hR = [hR[0] + 10 * Math.sin(t * 2 * Math.PI / 0.4), hR[1]];
         if (t >= 134.08) { P.sq *= 1 - 0.08 * pulse(t, 134.3, 0.7); P.tip = 0.1 * pulse(t, 134.3, 0.7); gz = gh[2]; } }
@@ -457,6 +462,8 @@ function an83Girl(t, i) {
   return P;
 }
 const AN83_GH = [10, -82];
+const AN83_CHIN = 31;            // v3: chin below the head centre (figure-local), for the sheaf face clearance
+const AN83_HIP = [-6, -68];      // v3: a reciter's sheaf hand, one hand at hip height
 
 // ===================== PROPS CARRIED AND HANDED OVER =====================
 // Fills F.pre[key] (drawn before that figure: slung behind the body), F.post[key] (after it: in the hands) and F.top (after everyone:
@@ -572,12 +579,23 @@ function an83Props(t, F) {
   // ---- the girls' bundles and single arrows ----
   for (let i = 0; i < 3; i++) {
     const P = g[i]; if (!P.bundle) continue;
-    if (P.lift) { P.handL = [P.handL[0], P.handL[1] - P.lift]; P.handR = [P.handR[0], P.handR[1] - P.lift]; }
+    if (P.lift) { P.handL = [P.handL[0] + 0.8 * P.lift, P.handL[1]]; P.handR = [P.handR[0] + 0.8 * P.lift, P.handR[1]]; }   // v3: the S15 show is a push forward, not a raise in front of the face
+    // v3 face clearance: from 76.7 on, a held sheaf's highest gold tip stays >= 10 screen px below the holder's chin
+    // (the hands are lowered until it does; tuck / face and the single raised arrows are separate props and exempt)
+    if (t >= 76.7 && (P.bundle === 'L' || P.bundle === 'R' || P.bundle === 'both')) {
+      const zw = 10 / (an83Cam(t).zoom * 0.972), sb = P.s * 1.25, rb = 0.22 * Math.sign(P.dir);
+      const topOf = (w) => Math.min(...[0, 1, 2, 3, 4].map((k) => w[1] + Math.sin(-Math.PI / 2 + rb + (k / 4 - 0.5) * 1.15) * (k % 2 ? 58 : 70) * sb)) - 6 * sb;
+      const gripOf = () => { const hl = an83HandW(P, -1), hr = an83HandW(P, 1); return P.bundle === 'L' ? hl : P.bundle === 'R' ? hr : an83Lerp(hl, hr, 0.5); };
+      const chin = an83W(P, (P.look || 0) * 4, -195 + (P.drop || 0) + an83Age(P) * 6 + AN83_CHIN)[1];
+      for (let it = 0; it < 4; it++) { const need = chin + zw - topOf(gripOf()); if (need <= 0.3) break; const dl = need / (P.s * (P.sq ?? 1));
+        if (P.bundle !== 'R' && P.handL) P.handL = [P.handL[0], P.handL[1] + dl]; if (P.bundle !== 'L' && P.handR) P.handR = [P.handR[0], P.handR[1] + dl]; }
+      P.bundleSlip = Math.max(0, chin + zw - topOf(gripOf()));   // the arm cannot reach lower: the sheaf slides down in the fist
+    } else P.bundleSlip = 0;
     const hl = an83HandW(P, -1), hr = an83HandW(P, 1);
     let w = P.bundle === 'L' ? hl : P.bundle === 'R' ? hr : an83Lerp(hl, hr, 0.5), rot = 0.22 * Math.sign(P.dir);
     if (P.bundle === 'tuck') { w = lw(P, [-24, -112]); rot = -0.35 * P.dir; }
     if (P.bundle === 'face') { w = lw(P, [14, -150]); rot = 0.1 * Math.sign(P.dir); }
-    w = [w[0], w[1] + (P.bundle === 'both' ? 0 : P.bundleDip || 0)];
+    w = [w[0], w[1] + (P.bundle === 'both' ? 0 : P.bundleDip || 0) + (P.bundleSlip || 0)];
     // one slow glint at a time, cycling girl1 -> girl2 -> girl3 every 2.4 s from 76.7 to the end (plus the S16 waves)
     const gl = (k) => { let v = 0; const wave = (t0) => { const d = t - t0; return d > 0 && d < 0.45 ? d / 0.45 : 0; };
       if (t >= 76.7) { const n = Math.floor((t - 76.7) / 2.4), t0 = 76.7 + n * 2.4; if (n % 3 === i && k === (n * 2 + 1) % 5) v = wave(t0); }
@@ -590,16 +608,19 @@ function an83Props(t, F) {
       post.g1.push((c) => { an83Arrow(c, tip[0], tip[1], ang, { s: P.s * 1.1, len: 100, head: 1.9, fl: 0.6, flc: CREAM, glint: K.clamp((t - 82.2) / 0.5) });
         const hd = an83HeadW(P); c.save(); c.globalAlpha = 0.5 * e; c.fillStyle = dotPat(c, C.yellow, 7, 0.5); c.beginPath(); c.ellipse(hd[0] + 10 * P.dir, hd[1] + 4, 26 * P.s, 20 * P.s, 0, 0, 7); c.fill(); c.restore(); }); }
   }
-  { const P = g[0]; if (P.arrowR) { const h = an83HandW(P, 1); let ang = -Math.PI / 2 + 0.25 * Math.sin(t * 13) * (t < 89.84 ? 1 : 0); if (t >= 89.84 && t < 94.86) ang = K.lerp(-Math.PI / 2, P.dir > 0 ? 0 : Math.PI, AN83_B(t, 89.95, 0.3)); if (t >= 94.86) ang = K.lerp(P.dir > 0 ? 0 : Math.PI, -Math.PI / 2, AN83_B(t, 94.86, 0.5));
+  { const P = g[0]; if (P.arrowR) { const h = an83HandW(P, 1); const a0 = -Math.PI / 2 + 0.6;   /* she faces right (toward girl2) until 89.9 */ let ang = a0 + 0.2 * Math.sin(t * 13) * (t < 89.84 ? 1 : 0); if (t >= 89.84 && t < 94.86) ang = K.lerp(a0, P.dir > 0 ? 0 : Math.PI, AN83_B(t, 89.95, 0.3)); if (t >= 94.86) ang = K.lerp(P.dir > 0 ? 0 : Math.PI, -Math.PI / 2, AN83_B(t, 94.86, 0.5));
     const reach = t >= 94.86 ? K.lerp(62, 112, AN83_B(t, 94.86, 0.5)) : 62, tip = [h[0] + Math.cos(ang) * reach * P.s, h[1] + Math.sin(ang) * reach * P.s]; F.g1Tip = tip; post.g0.push((c) => an83Arrow(c, tip[0], tip[1], ang, { s: P.s * 1.1, len: 100, head: 2.0, fl: 0.6, flc: CREAM, glint: t >= 99.5 ? K.clamp((t - 99.5) / 0.6) : 0 })); } }
   { const P = g[2]; if (P.holdUp) { P.aR = [K.lerp(0.3, 2.55, P.holdUp), K.lerp(0.2, 2.85, P.holdUp)]; P.handR = null; const h = an83HandW(P, 1), tip = [h[0], h[1] - 66 * P.s]; F.g3Tip = tip; post.g2.push((c) => an83Arrow(c, tip[0], tip[1], -Math.PI / 2, { s: P.s * 1.1, len: 100, head: 1.9, fl: 0.6, flc: CREAM, glint: K.clamp((t - 83.2) / 0.6) })); }
     if (t >= 162.0) { P.earArrow = true; if (t < 162.45) { const h = an83HandW(P, 1); post.g2.push((c) => an83Arrow(c, h[0] - 30 * P.dir, h[1] - 50 * P.s, -Math.PI / 2 - 0.5 * P.dir, { s: P.s, len: 100, head: 1.8, fl: 0.6, flc: CREAM })); }
       else post.g2.push(loc(P, (c) => an83Arrow(c, -26, -266, -Math.PI / 2 - 0.45, { s: 0.9, len: 100, head: 1.8, fl: 0.6, flc: CREAM }))); } }
   // ---- the purse (man1, 55.7-57.4) ----
-  if (m1.purse) { const h = an83HandW(m1, 1), up = AN83_B(t, 55.62, 0.22) * (1 - 0.7 * AN83_B(t, 56.6, 0.2)); top.push((c) => an83Purse(c, h[0], h[1] + 4, Math.PI * up * (m1.dir > 0 ? 1 : -1), { s: 1.15 * m1.s, open: up })); F.purseMouth = [h[0], h[1] + 4 - 4 * up]; }
+  if (m1.purse) { const h = an83HandW(m1, 1), up = AN83_B(t, 55.62, 0.22) * (1 - 0.7 * AN83_B(t, 56.6, 0.2)); const flap = an83In(t, 55.95, 56.75) ? Math.sin((t - 55.95) * 21 - 0.6) * Math.min(1, (56.75 - t) / 0.2) : 0; top.push((c) => an83Purse(c, h[0], h[1] + 4, Math.PI * up * (m1.dir > 0 ? 1 : -1), { s: 1.15 * m1.s, open: up, flap, t })); F.purseMouth = [h[0], h[1] + 4 - 4 * up]; }
   // the moth and the dust that fall out of the empty purse (56.0-57.3)
   if (an83In(t, 55.95, 57.4)) { const h = F.purseMouth || an83HandW(m1, 1), u = (t - 55.95) / 1.45;
     top.push((c) => { c.save(); c.globalAlpha = Math.min(1, (57.4 - t) / 0.3); for (let k = 0; k < 6; k++) { const v = K.clamp(u * 1.6 - k * 0.08); if (v <= 0 || v >= 1) continue; c.globalAlpha = 0.7 * (1 - v); shape(c, ell(h[0] + (k - 2.5) * 6 + 18 * v * Math.sin(k * 2.1), h[1] + 8 + 90 * v, 5 + 7 * v, 5 + 7 * v, 10), '#e8d8a8', { lw: 2, seed: 900 + k }); }
-      c.globalAlpha = 1; const mx = h[0] + 26 * Math.sin(u * 9), my = h[1] + 16 + 120 * u - 30 * Math.abs(Math.sin(u * 14)), fl = Math.abs(Math.sin(t * 26));
-      for (const sd of [-1, 1]) shape(c, an83Close([[mx, my], [mx + sd * 18, my - 10 * fl - 4], [mx + sd * 15, my + 7]]), '#d8c8a8', { lw: 2.5, seed: 905 }); shape(c, ell(mx, my, 3.5, 8, 10), '#6a5a4a', { lw: 2 }); c.restore(); }); }
+      c.globalAlpha = 1;
+      // v3: the moth at 2x; it tumbles out with the dust, then after the second shake (56.55) flutters up and away on a looping path for 0.6 s
+      const v = K.clamp((t - 55.95) / 0.6), bx = h[0] + 8 * Math.sin(9), by = h[1] + 46, w = Math.max(0, (t - 56.55) / 0.6), sx = m1.dir > 0 ? 1 : -1;
+      const mx = t < 56.55 ? h[0] + sx * 4 * v + 8 * Math.sin(v * 9) : bx + sx * (4 + 50 * w * w + 12 * Math.sin(w * 3 * Math.PI)), my = t < 56.55 ? h[1] + 16 + 30 * v : by - 300 * Math.pow(w, 0.7) + 20 * (1 - Math.cos(w * 3 * Math.PI)), fl = Math.abs(Math.sin(t * 26));
+      for (const sd of [-1, 1]) shape(c, an83Close([[mx, my], [mx + sd * 36, my - 20 * fl - 8], [mx + sd * 30, my + 14]]), '#e8dcc0', { lw: 3, seed: 905, dot: '#a89070', pitch: 6, rad: 0.25, da: 0.5 }); shape(c, ell(mx, my, 7, 16, 10), '#6a5a4a', { lw: 2.5 }); c.restore(); }); }
 }

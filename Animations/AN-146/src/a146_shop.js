@@ -25,7 +25,8 @@ function a146S7(ctx, t) {
   else if (t < 56.06) { P.eyes = 'wide'; P.gaze = a146LookAt(P, [130, 880]); P.look = -1; P.mouth = 'o'; }
   else if (t < 58.14) { P.gaze = t < 56.6 ? a146LookAt(P, [130, 700]) : a146LookAt(P, [x - 30, 880]); P.lid = t > 56.6 ? 0.45 : 0; }
   else if (t < 65.3) { P.gaze = a146In(t, 60.8, 62.6) ? a146LookAt(P, [300, 520]) : a146LookAt(P, [x - 40, 880]); P.lid = a146In(t, 60.8, 62.6) ? 0.1 : 0.5; P.brow = 0.3; P.talk = talk(t, [[60.7, 62.4]]) * 0.4; P.drop = a146Nods(t, [60.8, 61.3, 61.92], 0.25, 5); }
-  else { const two = t > 65.7; P.gaze = two ? [0, 0.05] : a146LookAt(P, [150, 700]); if (!two) P.wink = 'R'; P.brow = -0.4; P.mouth = two ? 'smile' : 'closed'; P.lid = two ? 0.3 : 0; }
+  else { const grin = t > 65.5; P.gaze = a146LookAt(P, [150, 700]); P.wink = 'R'; P.brow = -0.4; P.mouth = grin ? 'smile' : 'closed'; P.lid = 0; }   // v2: left eye opens on 65.30, grin 0.2 s later, held
+  if (a146In(t, 63.84, 65.3)) P.lid = 0.9;   // v2: eyes down, absorbed, while the watchman hushes
   P.hR = a146HT(t, P, [[51.6, A146H.rest], [52.3, { w: [500, 780] }, 0.2], [53.6, A146H.rest, 0.3], [54.1, (tt) => [30 + 5 * Math.sin(tt * 16), -134], 0.2], [55.2, PERSON_HANDS.cupEar.R, 0.12], [56.06, { w: [330, 560] }, 0.1], [56.25, A146H.rest, 0.1], [58.14, PERSON_HANDS.chin.R, 0.25]]);
   P.hL = a146HT(t, P, [[51.6, A146H.restL], [52.3, { w: [490, 784] }, 0.2], [53.6, A146H.restL, 0.3], [54.1, (tt) => [24 - 5 * Math.sin(tt * 16), -140], 0.2], [55.3, A146H.restL, 0.2], [58.14, [10, -100], 0.25],
     [60.7, [-62, -206], 0.15], [62.6, [10, -100], 0.25]]);
@@ -44,7 +45,7 @@ function a146S7(ctx, t) {
   // dark room: candle light discs, a moonlit pane, the lantern line under the door, eyes in the dark
   const holes = [[MERCHANT.window.x0 + 50, MERCHANT.window.top + 70, 70]];
   if (lit1 > 0) holes.push([f1[0], f1[1], 260 * K.ease.out(K.clamp((t - 53.38) / 0.5))]);
-  if (!W.hidden) holes.push([W.HR[0], W.HR[1] - 20, 170]); if (t >= 63.25) holes.push([A146_CAND2[0], A146_CAND2[1] - 60, 200]);
+  if (!W.hidden) { holes.push([W.HR[0], W.HR[1] - 20, 170]); const wh = a146Head(W); if (t > 57.3) holes.push([wh[0], wh[1] + 10, 125 * (W.alpha ?? 1)]); }   // v2: his own face lit by his candle if (t >= 63.25) holes.push([A146_CAND2[0], A146_CAND2[1] - 60, 200]);
   if (door > 0.05) holes.push({ pts: [[60, 600], [200, 600], [420, 905], [420, 1230], [60, 1230]], c: [130, 800] });
   a146Dark(ctx, 0.85, [-60, -60, 1120, 1360], holes);
   if (lit1 > 0) a146Glow(ctx, f1[0], f1[1], 80, 0.25); if (t >= 63.25) a146Glow(ctx, A146_CAND2[0], A146_CAND2[1] - 50, 70, 0.22);
@@ -98,22 +99,26 @@ function a146S8(ctx, t) {
 }
 
 // ---------- S11 101.2..111.0: the morning mess, the empty corner ----------
-const A146_S11X = a146X([[101.9, 130], [102.42, 130], [102.9, 230], [103.9, 230], [104.4, 330], [106.0, 330], [107.4, 560]]);
-const A146_TASSEL = [680, 892];
+const A146_S11X = a146X([[101.2, 30], [102.42, 130], [102.9, 230], [103.9, 230], [104.4, 290], [106.0, 290], [107.4, 560]]);
+const A146_TASSEL = [680, 892], A146_S11STUB = [[436, 800], [398, 899]];
 function a146S11(ctx, t) {
-  const door = t < 101.94 ? 0 : settleTo(t, 101.94, 0, 0.9, 0.5, 0.08);
+  const door = settleTo(t, 101.2, 0.45, 0.9, 0.5, 0.08);   // v2: the cut lands with the door already swinging
   a146Hall(ctx, t, { u: 0.22, door });
   // the light shaft through the open door sweeps the floor
   if (door > 0.05) { ctx.save(); ctx.globalAlpha = 0.28 * door; ctx.fillStyle = dotPat(ctx, C.yellow, 12, 0.36); K.poly(ctx, [[60, 600], [200, 600], [200 + 300 * door, 905], [200 + 520 * door, 1230], [60, 1230]], true); ctx.fill(); ctx.restore(); }
   // wax stubs, puddles and the drip trail down the desk leg; open ledgers; the empty corner and the fallen tassel
   shape(ctx, ell(560, 899, 56, 6, 14), A146_WAX, { lw: 3, seed: 640 }); seg(ctx, 600, 806, 604, 896, 5, A146_WAX, 2);
-  a146Candle(ctx, A146_CAND1[0], A146_CAND1[1], { lit: 0, melt: 0.95 }); a146Candle(ctx, A146_CAND2[0], A146_CAND2[1], { lit: 0, melt: 0.95 });
+  // v2: two big burnt-down stubs clear of the coins: one at the desk's left end (wax puddle, drips over the edge), one on the floor below
+  shape(ctx, ell(436, 801, 46, 7, 16), A146_WAX, { lw: 3.5, seed: 642 }); for (const [dx, dl] of [[-30, 26], [-14, 40]]) shape(ctx, [[412 + dx + 30, 800], [418 + dx + 30, 800], [418 + dx + 30, 800 + dl], [415 + dx + 30, 806 + dl], [412 + dx + 30, 800 + dl]], A146_WAX, { lw: 2.5, seed: 643 });
+  a146Candle(ctx, A146_S11STUB[0][0], A146_S11STUB[0][1], { lit: 0, melt: 0.92, s: 2.0, seed: 5 });
   A146_BOOKS.forEach(([a, b], k) => { if (k === 0 && t >= 105.24) return; a146Ledger(ctx, b[0], b[1], { open: 1, s: 0.9 }); }); a146Ledger(ctx, 470, 893, { open: 1, s: 0.9, col: C.blue });
-  if (t >= 107.62) { const bl = t < 108.2 ? (Math.sin((t - 107.62) * 22) > 0 ? 1 : 0.15) : 0.5; ctx.save(); ctx.globalAlpha = bl; a146Stack(ctx, A146_STK, 900, { ghost: true }); ctx.restore(); }
+  shape(ctx, ell(A146_S11STUB[1][0], 904, 44, 7, 14), A146_WAX, { lw: 3, seed: 644 }); a146Candle(ctx, A146_S11STUB[1][0], 906, { lit: 0, melt: 0.9, s: 1.5, seed: 6 });   // v2: the second stub on the floor, in front of the books
+  if (t >= 107.62) { const bl = t < 108.2 ? (Math.sin((t - 107.62) * 22) > 0 ? 1 : 0.15) : 1, gp = a146StackPts(A146_STK, 900);   // v2: black dashes, each with a faint tint of its colour pulsing in turn
+    ctx.save(); ctx.globalAlpha = bl; ['red', 'blue', 'yellow', 'green'].forEach((c, i) => a146Bale(ctx, gp[i][0], gp[i][1], { col: c, ghost: true, tint: 0.22 + 0.4 * pulse(t, 108.34 + [0, 1, 3, 2][i] * 0.22, 0.45), rot: i === 3 ? 0.03 : i === 2 ? -0.02 : 0 })); ctx.restore(); }
   const got = t >= 110.45;
-  if (!got) { ctx.save(); ctx.translate(A146_TASSEL[0], A146_TASSEL[1]); ctx.rotate(1.4); shape(ctx, [[-7, -12], [7, -12], [11, 16], [-11, 16], [-7, -12]], C.yellow, { lw: 3, seed: 303, dot: C.red, pitch: 5, rad: 0.2, da: 0.4 }); ctx.restore(); }
+  if (!got) { ctx.save(); ctx.translate(A146_TASSEL[0], A146_TASSEL[1]); ctx.rotate(1.4); ctx.scale(1.7, 1.7); shape(ctx, [[-7, -12], [7, -12], [11, 16], [-11, 16], [-7, -12]], C.yellow, { lw: 3, seed: 303, dot: C.red, pitch: 5, rad: 0.2, da: 0.4 }); ctx.restore(); }
   // the merchant
-  const x = A146_S11X(t), P = a146Mer(x, a146Step(A146_S11X, t)); P.alpha = K.clamp((t - 102.0) / 0.3);
+  const x = A146_S11X(t), P = a146Mer(x, a146Step(A146_S11X, t));
   if (a146In(t, 102.9, 103.3)) { P.ph = 1.2; P.amp = 0.7; }
   P.drop = a146In(t, 102.9, 103.4) ? -4 : 0; P.tip = -0.04 * pulse(t, 102.9, 0.6) + 0.15 * pulse(t, 105.24, 0.6) + 0.12 * pulse(t, 110.2, 0.6);
   if (t < 103.36) P.gaze = [0.4, -0.3];
@@ -125,11 +130,11 @@ function a146S11(ctx, t) {
   if (t >= 108.34) { const up = t < 109.58; P.sq = up ? settleTo(t, 108.34, 1, 1.12, 0.25, 0.1) : K.lerp(1.12, 0.92, K.clamp((t - 109.58) / 0.25)) + 0.08 * K.clamp((t - 110.1) / 0.4);
     P.drop = up ? -14 * pulse(t, 108.34, 0.25) : 0; if (up) { P.eyes = 'wide'; P.mouth = 'open'; } else { P.lid = t > 109.95 ? 0.45 : 0.2; P.brow = t > 109.95 ? -0.4 : 0; P.mouth = t > 109.95 ? 'closed' : 'frown'; P.drop = a146Nods(t, [110.0, 110.7], 0.45, 6); } }
   const lg = [380, 885];
-  P.hR = a146HT(t, P, [[101.9, [30, -100]], [102.9, A146H.rest, 0.3], [104.5, { w: [A146_CAND2[0] + 10, 796] }, 0.2], [104.85, [20, -150], 0.25], [105.2, { w: lg }, 0.2], [105.5, [60, -160], 0.3], [106.4, A146H.rest, 0.3],
+  P.hR = a146HT(t, P, [[101.9, [30, -100]], [102.9, A146H.rest, 0.3], [104.3, { w: [A146_S11STUB[0][0] + 22, 794] }, 0.2], [104.85, (tt) => [22 + 4 * Math.sin(tt * 30), -156], 0.25], [105.2, { w: lg }, 0.2], [105.5, [60, -160], 0.3], [106.4, A146H.rest, 0.3],
     [108.34, PERSON_HANDS.headHold.R, 0.12], [109.58, A146H.rest, 0.3], [110.2, { w: A146_TASSEL }, 0.25], [110.5, [44, -140], 0.3]]);
   P.hL = a146HT(t, P, [[101.9, A146H.restL], [104.85, [10, -150], 0.25], [105.2, A146H.restL, 0.3], [108.34, PERSON_HANDS.headHold.L, 0.12], [109.58, A146H.restL, 0.3]]);
   a146Person(ctx, P);
   if (a146In(t, 105.4, 106.5)) { ctx.save(); ctx.translate(P.HR[0], P.HR[1]); ctx.rotate(1.3 + swing(t, 105.5, 0.4)); a146Ledger(ctx, 50, 0, { open: 1, s: 0.9 }); ctx.restore(); }
-  if (got) { ctx.save(); ctx.translate(P.HR[0], P.HR[1]); ctx.rotate(swing(t, 110.5, 0.5)); seg(ctx, 0, 0, 0, 24, 4, A146_ROPED, 1.5); shape(ctx, [[-7, 22], [7, 22], [11, 48], [-11, 48], [-7, 22]], C.yellow, { lw: 3, seed: 303, dot: C.red, pitch: 5, rad: 0.2, da: 0.4 }); ctx.restore(); }
+  if (got) { ctx.save(); ctx.translate(P.HR[0], P.HR[1]); ctx.rotate(swing(t, 110.5, 0.5)); ctx.scale(1.5, 1.5); seg(ctx, 0, 0, 0, 24, 4, A146_ROPED, 1.5); shape(ctx, [[-7, 22], [7, 22], [11, 48], [-11, 48], [-7, 22]], C.yellow, { lw: 3, seed: 303, dot: C.red, pitch: 5, rad: 0.2, da: 0.4 }); ctx.restore(); }
   return { P };
 }

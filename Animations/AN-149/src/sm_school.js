@@ -36,7 +36,7 @@ function smSchTeacher(t, sc) {
     P.talk = smTalk(t, [[28.9, 30.3]], 0.75, 10); P.sq = breathe(t, 3, 0.02);
     P.x += 3 * Math.sin(t * 1.9);
   } else {   // S4: busy with a pupil's tablet (soft, at the right edge)
-    P.hR = [70, -128]; P.hL = [-20, -128]; P.gaze = [0.3, 0.8]; P.lid = 0.3; P.mouth = 'closed';
+    P.hR = [60, -96]; P.hL = [-14, -98]; P.gaze = [0.3, 0.8]; P.lid = 0.3; P.mouth = 'smile'; P.tip = -0.05;
     if (t > 42.7) { P.gaze = smLookAt(P, scH); P.lid = null; P.mouth = 'smile'; }
   }
   return P;
@@ -122,14 +122,16 @@ function smTokens(ctx, t, sc) {
 function smMedallions(ctx, t) { if (!smIn(t, 30.3, 32.6)) return; [[30.35, 700, 420, 'stars'], [31.02, 790, 370, 'abacus'], [31.82, 880, 420, 'book']].forEach(([a, x, y, k]) => { if (t >= a) smMedallion(ctx, x, y + 3 * Math.sin(t * 2.4 + x), 46, k, (t - a) / 0.35, t); }); }
 // ---------- the assumption cloud (S4) ----------
 function smAssumeCloud(ctx, t, sc) {
-  if (!smIn(t, 35.27, 43.3)) return; const top = smTop(sc), p = Math.min(K.clamp((t - 35.27) / 0.7), K.clamp((43.25 - t) / 0.35));
+  if (!smIn(t, 35.27, 43.45)) return; const top = smTop(sc), p = Math.min(K.clamp((t - 35.27) / 0.7), K.clamp((43.45 - t) / 0.15));   // v2 (note 8): the finished cloud holds to 43.3
   thoughtCloud(ctx, 445, 450, 400, 290, t, { p, tail: [top[0] - 10, top[1] - 10], scale: 0.6, at: [500, 760], bg: '#eeeae0', inside: (c) => {
     const g = smB(t, 37.24, 0.4), gp = { robe: SM_GREY, dot: SM_GREYD, sleeve: SM_GREY, hc: '#d6d2e0', hd: SM_GREYD, sash: SM_GREYD, band: SM_GREYD, pants: '#c9c6d2' };
     if (g > 0) { c.save(); c.globalAlpha = g; for (const [x, s] of [[360, 1], [640, 0.95]]) smPerson(c, { x, y: 900, s, child: true, costume: 'servant', pal: gp, mouth: 'open', noBlink: true, gaze: [x < 500 ? 1 : -1, -0.3], hR: [24, -150], hL: [-24, -150] });
       smPerson(c, { x: 500, y: 900 + 30 * (1 - g), s: 1, costume: 'villager', pal: gp, age: 0.5, noBlink: true, mouth: 'closed', gaze: [0, 0.2], hR: SM_H.palmR, hL: SM_H.palmL }); c.restore(); }
-    if (t >= 40.98) { const k = K.ease.back(K.clamp((t - 40.98) / 0.35)); c.save(); c.translate(270, 660); c.scale(k * 1.6, k * 1.6); smBook(c, 0, 0, 1, { col: C.red, open: 1 }); c.restore(); smTick(c, 300, 560, 50, (t - 41.3) / 0.3); }
-    if (t >= 42.0 || (t >= 41.6)) { const k = K.ease.back(K.clamp((t - 41.6) / 0.35)), lit = t < 42.4 ? 1 : t < 42.7 ? 0.6 * (1 - (t - 42.4) / 0.3) * (0.5 + 0.5 * Math.sin(t * 60)) : 0;
-      c.save(); c.translate(730, 650); c.scale(k * 1.5, k * 1.5); smLampIcon(c, 0, 0, 1, lit, t, t >= 42.6 ? (t - 42.6) / 0.7 : 0); c.restore(); smCross(c, 760, 610, 70, (t - 42.75) / 0.3); }
+    // v2 (note 8): BOOK and LAMP about 110 px, low on either side of the grey teacher
+    if (t >= 40.98) { const k = K.ease.back(K.clamp((t - 40.98) / 0.35)); c.save(); c.translate(352, 688); c.scale(k * 1.3, k * 1.3); smBook(c, 0, 0, 1, { col: C.red, open: 1 }); c.restore(); smTick(c, 395, 640, 46, (t - 41.15) / 0.3); }
+    if (t >= 41.66) { const k = K.ease.back(K.clamp((t - 41.66) / 0.35)), lit = t < 42.4 ? 1 : t < 42.55 ? 0.6 * (1 - (t - 42.4) / 0.15) : 0;
+      c.save(); c.translate(640, 700); c.scale(k * 0.95, k * 0.95); smLampIcon(c, 0, 0, 1, lit, t, t >= 42.45 ? (t - 42.45) / 0.8 : 0); c.restore();
+      if (t >= 42.4) dustBurst(c, 712, 670, t - 42.4, 6, 4, 9, 40, 0.5, 8); smCross(c, 650, 680, 62, (t - 42.4) / 0.25); }
   } });
 }
 // ---------- draw the school ----------
@@ -141,11 +143,11 @@ function smSchool(ctx, t, cam) {
   smCushion(ctx, SM_SCH.guest, 906, 130, C.blue, C.white); smCushion(ctx, SM_SCH.seat, 906, 140, C.red, C.yellow);
   if (t >= 6.42 && t < 7.6) { const h = smHead(st.T), q = pulse(t, 6.42, 0.6), q2 = pulse(t, 6.8, 0.6); star(ctx, h[0] + 2, h[1] - 52, 16 * q, C.white); star(ctx, h[0] + 10, h[1] + 120, 14 * q2, C.white); }
   smPerson(ctx, st.T);
-  if (t >= 32.6) { const h = st.T.HR, hl = st.T.HL; smTablet(ctx, (h[0] + hl[0]) / 2, (h[1] + hl[1]) / 2 - 20, 0.8, { rot: 0.3, n: 3, seed: 5 }); }
+  if (t >= 32.6) { const h = st.T.HR, hl = st.T.HL; smTablet(ctx, (h[0] + hl[0]) / 2, (h[1] + hl[1]) / 2 + 8, 0.7, { rot: 0.5, n: 3, seed: 5 }); }   // v2 (note 8): held low, his face visible
   if (!sc.behind) smPerson(ctx, sc);
   st.kids.forEach((P, i) => { smPerson(ctx, P); if (P.tab) { const a = P.HR, b = P.HL; smTablet(ctx, (a[0] + b[0]) / 2, (a[1] + b[1]) / 2 + 10, 0.52, { rot: -0.1 + i * 0.1, n: 2 + i, seed: 20 + i }); } });
   if (smIn(t, 4.88, 9.72)) for (let k = 0; k < 3; k++) { const h = smHead(st.kids[k]); if (pulse(t, 5 + k * 0.12, 0.6) || true) { const q = Math.abs(Math.sin((t - k * 0.12) * Math.PI * 1.6)); if (q > 0.6) seg(ctx, h[0] + 30, h[1] - 40, h[0] + 46, h[1] - 58, 3, C.black, 0); } }
   smTokens(ctx, t, sc); smMedallions(ctx, t); smAssumeCloud(ctx, t, sc);
   return st;
 }
-const SM_SCHOOL_CAM = [[4.88, 480, 700, 1.2], [12.77, 480, 700, 1.2], [13.7, 670, 700, 1.5], [22.61, 670, 700, 1.5], [22.62, 560, 700, 1.1], [32.6, 590, 700, 1.1], [33.5, 500, 650, 1.7], [43.93, 500, 650, 1.7]];
+const SM_SCHOOL_CAM = [[4.88, 480, 700, 1.2], [12.77, 480, 700, 1.2], [13.7, 670, 700, 1.5], [22.61, 670, 700, 1.5], [22.62, 560, 700, 1.1], [32.6, 590, 700, 1.1], [33.5, 545, 650, 1.7], [43.93, 545, 650, 1.7]];   // v2 (note 8): framing shifted right so the real teacher is in

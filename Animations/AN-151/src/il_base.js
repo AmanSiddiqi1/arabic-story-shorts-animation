@@ -179,7 +179,7 @@ function ilMosqueBack(ctx) { const M = IL_MOSQUE; ctx.drawImage(bake('il_mosque'
   townDoor(ctx, M.door[0], M.door[1], M.door[2], 880, 0, { arch: 'pointed', paint: IL_GREEN });
 }
 // the SCHOOL sign: board 240 x 70 hanging on two chains from hooks at (cx +- 90, hookY); drop 0..1 (falls from the top), a = swing angle
-function ilSign(ctx, cx, hookY, drop, a) { if (drop <= 0) return; const L = 70 * drop, bx = cx, by = hookY + L;
+function ilSign(ctx, cx, hookY, drop, a) { if (drop <= 0) return; const L = 48 * drop, bx = cx, by = hookY + L;
   ctx.save(); ctx.translate(cx, hookY); ctx.rotate(a); ctx.translate(-cx, -hookY);
   for (const sd of [-1, 1]) { ctx.save(); ctx.lineWidth = 3; ctx.strokeStyle = C.black; for (let k = 0; k < 5; k++) { ctx.beginPath(); ctx.ellipse(cx + sd * 90, hookY + (k + 0.5) * L / 5, 4, L / 10 + 1, 0, 0, 7); ctx.stroke(); } ctx.restore(); }
   shape(ctx, K.rectPts(bx - 120, by, 240, 70), C.yellow, { lw: 6, seed: 242, dot: C.red, pitch: 8, rad: 0.2, da: 0.4 });

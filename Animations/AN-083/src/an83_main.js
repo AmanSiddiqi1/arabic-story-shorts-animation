@@ -23,11 +23,12 @@ const AN83_CAM = [
 function an83Cam(t) { const c = K.camAt(AN83_CAM, t), z = c.zoom; return { x: K.clamp(c.x, 500 / z, AN83_WW - 500 / z), y: K.clamp(c.y, 615 / z, AN83_VH - 615 / z), zoom: z }; }
 const an83P = (x, y, c) => [500 + (x - c.x) * c.zoom, 615 + (y - c.y) * c.zoom];
 const an83Insert = (t) => t >= 65.84 && t < 69.9;
-const AN83_SUNSET = [300, 470];   // panel point where the sun sits at the end (just above the far dune at the final framing)
+const AN83_SUNSET = [250, 525];   // panel point where the sun sits at the end (v3: lower, the disc just above the far dune, left third, clear of THE END)
 const AN83_U = () => 0.25, AN83_WARM = (t) => kfn(t, [[161.6, 0], [165.1, 1]], 'inOut');
 // the sun fades out whenever an inset or a sky icon row needs that corner
-const AN83_SUNOFF = [[79.0, 80.24], [110.28, 121.65], [124.38, 135.25], [137.16, 144.6], [154.2, 158.5]];
-const an83SunA = (t) => AN83_SUNOFF.reduce((a, [p, q]) => Math.min(a, 1 - K.clamp(Math.min((t - p + 0.3) / 0.3, (q + 0.3 - t) / 0.3))), 1);
+// v3: hidden continuously through the three verses (110.0-144.6), and it shrinks / grows (0.25 s, rays included) instead of fading (no grey disc)
+const AN83_SUNOFF = [[79.0, 80.24], [110.0, 144.6], [154.2, 158.5]];
+const an83SunA = (t) => AN83_SUNOFF.reduce((a, [p, q]) => Math.min(a, 1 - K.clamp(Math.min((t - p + 0.25) / 0.25, (q + 0.25 - t) / 0.25))), 1);
 // footfall dust (sampled once)
 const AN83_FALLS = [...footfalls(AN83_MXA, 0.5, 10.3, 29 * 0.8), ...footfalls(AN83_MXB, 20.0, 23.4, 29 * 0.7).map((f) => ({ ...f, big: true })), ...footfalls(an83X1, 20.0, 23.55, 29 * 0.75 * 0.98), ...footfalls(an83X2, 20.0, 23.7, 29 * 0.75 * 0.95)];
 
@@ -39,7 +40,7 @@ function an83Sky(ctx, t, cam) {
   // the sun stays in the top left of the frame (sky-locked); it sinks and warms at the end
   const k = AN83_WARM(t), px = K.lerp(170, AN83_SUNSET[0], k), py = K.lerp(175, AN83_SUNSET[1], k), sw = [cam.x + (px - 500) / cam.zoom, cam.y + (py - 615) / cam.zoom], sa = an83SunA(t);
   const pulseS = (1 + 0.12 * pulse(t, 3.0, 1.0)) * (1 + 0.15 * k);
-  if (sa > 0.01) { ctx.save(); ctx.globalAlpha *= sa; ctx.translate(sw[0], sw[1]); ctx.scale(pulseS / cam.zoom, pulseS / cam.zoom); sun(ctx, 0, 0, t);
+  if (sa > 0.01) { const ss = K.ease.inOut(sa); ctx.save(); ctx.translate(sw[0], sw[1]); ctx.scale(ss * pulseS / cam.zoom, ss * pulseS / cam.zoom); sun(ctx, 0, 0, t);
   if (k > 0) { ctx.save(); ctx.globalAlpha *= 0.7 * k; ctx.fillStyle = '#ff7a1a'; ctx.beginPath(); ctx.arc(0, 0, 66, 0, 7); ctx.fill(); ctx.restore(); }
   if (t < 30) { ctx.globalAlpha = 0.5 * (1 - K.clamp((t - 23) / 6)); ctx.lineWidth = 6; ctx.strokeStyle = C.white; for (let i = 0; i < 2; i++) { const r = 130 + ((t * 40 + i * 50) % 100); ctx.globalAlpha *= 1; ctx.beginPath(); ctx.arc(0, 0, r, 0, 7); ctx.stroke(); } }
   ctx.restore(); }
@@ -145,11 +146,18 @@ function an83Verse2(c, t) {
     if (catchK > 0.9) { const hh = F2.foeHands; for (let k = 0; k < Math.min(4, Math.floor((t - 130.95) / 0.25) + 1); k++) an83Coin(c, hh[0] - 8 + k * 6, hh[1] - 6 - k * 5, 9, k); } }
   if (fr > 0.01) F2.friendHands = an83HandW({ costume: 'villager', s: 0.52 * fr, x: 118, y: 380, dir: 1, aL: [-2.5, -2.8], aR: [2.5, 2.8] }, 1);
   // the giver
-  if (app > 0.01) { const P = { costume: 'bedouin', pal: AN83_PAL.maan, age: 0.3, s: s * app, x: 230, y: 380, dir: 1, seed: 98, mouth: 'smile' }; if (t >= 126.76) { const u = AN83_B(t, 126.76, 0.4); P.handL = an83Lerp(AN83_DL, [-95, -150], u); P.handR = an83Lerp(AN83_DR, [95, -150], u); }
+  if (app > 0.01) { const P = { costume: 'bedouin', pal: AN83_PAL.maan, age: 0.3, s: s * app, x: 230, y: 380, dir: 1, seed: 98, mouth: 'smile' };
+    // v3: on "taqul" (125.36) he reaches into his sash, lifts both hands full of coins (one glint), and opens them wide so the first coins leave on "yu'ti" (127.34)
+    P.handL = an83HL(t, [[0, AN83_DL], [125.36, [-12, -84], 0.3], [125.85, [-58, -128], 0.5], [126.95, [-95, -150], 0.39]]); P.handR = an83HR(t, [[0, AN83_DR], [125.36, [12, -84], 0.3], [125.85, [58, -128], 0.5], [126.95, [95, -150], 0.39]]);
+    if (an83In(t, 125.6, 126.3)) P.gaze = [0.2, 0.4]; else if (an83In(t, 126.3, 127.3)) P.gaze = [0.6, -0.3];
     an83Local(c, P, (k) => an83Quiver(k, 30, -190, { rot: 0.4, n: 6, open: 1 })); person(c, P); AN83_HELM(c, P);
-    // the shower of gold to both sides, without a break
-    if (t >= 128.12) { const hl = an83HandW(P, -1), hr = an83HandW(P, 1);
-      for (let k = 0; k < 80; k++) { const t0 = 128.12 + k * 0.11; if (t0 > t) break; const u = (t - t0) / 0.75; if (u >= 1) continue; const L = k % 2 === 0, from = L ? hl : hr, to = L ? (F2.friendHands || [128, 300]) : (F2.foeHands || [332, 300]), x = K.lerp(from[0], to[0], u), y = K.lerp(from[1], to[1], u) - 120 * Math.sin(Math.PI * u);
+    // gold in his palms from the sash until it is thrown (125.7-127.6)
+    if (an83In(t, 125.7, 127.6)) { const a = K.clamp((t - 125.7) / 0.15) * K.clamp((127.6 - t) / 0.26); c.save(); c.globalAlpha = a;
+      for (const sd of [-1, 1]) { const h = an83HandW(P, sd); for (let k = 0; k < 3; k++) an83Coin(c, h[0] + (k - 1) * 9, h[1] - 8 - (k % 2) * 6, 11, k * 0.7); }
+      const g = K.clamp((t - 126.2) / 0.5); if (g > 0 && g < 1) { const h = an83HandW(P, 1); star(c, h[0] + 6, h[1] - 18, 20 * Math.sin(Math.PI * g), C.white, g * 2); } c.restore(); }
+    // the shower of gold to both sides, without a break (v3: from "yu'ti" 127.34)
+    if (t >= 127.34) { const hl = an83HandW(P, -1), hr = an83HandW(P, 1);
+      for (let k = 0; k < 80; k++) { const t0 = 127.34 + k * 0.11; if (t0 > t) break; const u = (t - t0) / 0.75; if (u >= 1) continue; const L = k % 2 === 0, from = L ? hl : hr, to = L ? (F2.friendHands || [128, 300]) : (F2.foeHands || [332, 300]), x = K.lerp(from[0], to[0], u), y = K.lerp(from[1], to[1], u) - 120 * Math.sin(Math.PI * u);
         if (k % 4 < 2) an83Coin(c, x, y, 15, t * 8 + k); else an83Arrow(c, x, y, L ? Math.PI + 0.6 * (u - 0.5) * 2 : 0.6 * (u - 0.5) * 2, { s: 0.5, head: 1.7, fl: 0.7 }); } } }
   const lab = (txt, x, y, a) => { if (t < a) return; c.save(); c.globalAlpha = K.clamp((t - a) / 0.2); c.font = `30px ${BF}`; c.textAlign = 'center'; c.lineWidth = 6; c.strokeStyle = C.black; c.fillStyle = C.white; c.strokeText(txt, x, y); c.fillText(txt, x, y); c.restore(); };
   lab('FRIEND', 140, 205, 129.0); lab('FOE', 330, 205, 130.35);
@@ -191,7 +199,7 @@ function an83Memory(c, t) {   // the S4 handover as one frozen frame, in a 220 x
 function an83InsertDraw(ctx, t) {
   const g = ctx.createLinearGradient(0, 0, 0, 1230); g.addColorStop(0, '#fffaf0'); g.addColorStop(1, '#ffd96a'); ctx.fillStyle = g; ctx.fillRect(0, 0, 1000, 1230);
   ctx.save(); ctx.globalAlpha = 0.25; ctx.fillStyle = dotPat(ctx, C.blue, 14, 0.25); ctx.fillRect(0, 0, 1000, 1230); ctx.restore();
-  sun(ctx, 170, 170, t); an83Heat(ctx, 0, 1000, 1100, t, 0.6);
+  an83Heat(ctx, 0, 1000, 1100, t, 0.6);   // v3: no sun on the insert's paper background
   const S3 = 6.0, rim = 800, glow = AN83_B(t, 69.12, 0.25);
   // the first arrow: nock first, the head last (it hangs head down from his fingers)
   // v2: the head stays hidden in the quiver until the word: slow rise, a hesitation at 67.8, 6 frames of stillness, then it clears the rim on "al-dhahab" 69.22

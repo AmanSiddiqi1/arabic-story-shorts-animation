@@ -23,3 +23,6 @@ v2 (Fable round 1, see review/revision_1.md):
 - Stone post moved 540 -> 440 (summit bake) so the peacock stands in the open at x 650 during the election; the sparrow flies to his place by the throne at 28.65 (not 32.76).
 - All birds drawn through `a46bird` (large badge `a46medal`, wing cover, glint, canvas-filter tints for the two fighters). Peacock gained `headFlip` and `tapF`; cage gained `bars`/`thin`/`dx`; net 'bag' gained `ground`/`light`, 'thrown' is see-through with trailing weights.
 - S11-S15 one sky (u 0.3). S15 is drawn on a plain sky + ground (no glade). S16 sun placed via `a46glade(..., { sunAt })`; S16 camFn gives the 0.9 s cut-in following the cage.
+
+v3 (Fable round 2, see review/revision_2.md):
+- S16 post and peacock gated at t >= 171.0; the ghost sparrow on the post removed (bare post). S15 push-in to (950, 775, 3.2) 159.4-160.4; cage `ring`/`doorBack` options for S15 only. Bundle rests on the fists until 135.64. S6 crow 0 lands at 625 (was 560); camera 650 -> 720 over 57.8-60.9.

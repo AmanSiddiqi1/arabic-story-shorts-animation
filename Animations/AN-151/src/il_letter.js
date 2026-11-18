@@ -26,27 +26,31 @@ function ilCloudScholar(c, t) { c.fillStyle = '#9cc4ff'; c.fillRect(0, 300, 1000
 // ---------- inside: the far husband on a walking camel (S6) ----------
 function ilCloudFar(c, t) { c.fillStyle = '#ffe9a8'; c.fillRect(0, 300, 1000, 900); sun(c, 760, 470, t); ilDunes(c, 820); ilCamelRide(c, t, (u) => 300 + (u - 48) * 40, 900, 0.9); }
 // ---------- inside: her fear (S8): the husband standing, then he greys and tips over ----------
-function ilCloudFear(c, t) { const g = ilE(t, 71.8, 0.6); c.fillStyle = mixHex('#ffe9a8', '#9aa6c4', g); c.fillRect(0, 300, 1000, 900); c.fillStyle = dotPat(c, mixHex(C.red, '#5a6a8a', g), 14, 0.2); c.fillRect(0, 300, 1000, 900);
-  shape(c, K.rectPts(0, 900, 1000, 300), mixHex('#f2d27a', '#8c8a94', g), { lw: 6, seed: 305 });
+// cropped to him (no horizon): waves (70.8), the wave freezes (71.6), tips over (71.80), lands flat and greys (72.48) with a dust puff
+function ilCloudFear(c, t) { const g = ilE(t, 72.3, 0.25); c.fillStyle = mixHex('#ffe9a8', '#9aa6c4', g); c.fillRect(0, 300, 1000, 900); c.fillStyle = dotPat(c, mixHex(C.red, '#5a6a8a', g), 14, 0.2); c.fillRect(0, 300, 1000, 900);
+  shape(c, ell(520, 902, 200, 16, 24), mixHex('#e8b25a', '#8c8a94', g), { lw: 4, seed: 305 });
   c.save(); if (g > 0) c.filter = `grayscale(${g}) brightness(${1 - 0.15 * g})`;
-  const lie = ilE(t, 71.8, 0.6); ilHusband(c, t, 500 + 30 * lie, 900 - 10 * lie, 1.1, { lid: lie > 0.3 ? 1 : blink(t, 61), mouth: lie > 0.3 ? 'closed' : 'smile', P: { lie, handR: lie < 0.1 ? PERSON_HANDS.wave.R : null } }); c.restore(); }
+  const lie = ilE(t, 71.8, 0.6, 'in'), wv = t < 71.6 ? Math.sin((t - 70.8) * 12) : Math.sin((71.6 - 70.8) * 12);
+  ilHusband(c, t, 500 + 40 * lie, 900 - 10 * lie, 1.1, { lid: lie > 0.3 ? 1 : blink(t, 61), mouth: lie > 0.3 ? 'closed' : t < 71.6 ? 'smile' : 'o', P: { lie, eyes: t >= 71.6 && lie < 0.3 ? 'wide' : null, handR: lie < 0.1 ? [64 + 12 * wv, -196] : null } });
+  c.save(); c.globalAlpha *= 0.8; dustBurst(c, 640, 900, t - 72.42, 5, 8, 16, 70, 0.6, 5); c.restore(); c.restore(); }
 // ---------- inside: the neighbour's news (S11): the husband waving, the tick, he mounts the camel toward a small house ----------
-function ilBalloonNews(c, t) { c.fillStyle = '#fff3d6'; c.fillRect(-400, -300, 800, 600); c.fillStyle = dotPat(c, C.blue, 12, 0.16); c.fillRect(-400, -300, 800, 600);
-  shape(c, K.rectPts(-400, 110, 800, 200), '#f2d27a', { lw: 5, seed: 306 }); ilHouseIcon(c, 300, 112, 0.9);
-  if (t < 100.28) ilHusband(c, t, -150, 112, 0.75, { P: { handR: [64 + 12 * Math.sin(t * 10), -196] } });
-  else { const xf = (u) => K.lerp(-120, 120, K.clamp((u - 100.6) / 1.8)); if (t < 100.6) { const u = ilE(t, 100.28, 0.32); ilCamelRide(c, t, () => -120, 112, 0.5, { empty: true }); ilHusband(c, t, K.lerp(-150, -125, u), 112 - 90 * Math.sin(Math.PI * u * 0.9), 0.75); }
-    else ilCamelRide(c, t, xf, 112, 0.5); }
-  ilTick(c, 230, -150, (t - 99.66) / 0.35, 1.0); }
+// cropped to him, large: waving and smiling, the tick at 99.66 ('well'), the camel walks in and he mounts it at 100.28 ('will return')
+function ilBalloonNews(c, t) { c.fillStyle = '#fff3d6'; c.fillRect(-420, -320, 840, 640); c.fillStyle = dotPat(c, C.blue, 12, 0.16); c.fillRect(-420, -320, 840, 640);
+  const G = 262; shape(c, ell(0, G + 4, 380, 22, 24), '#f2d27a', { lw: 4, seed: 306 });
+  const cx = (u) => kfn(u, [[99.9, -620], [100.28, -150], [100.62, -150], [102.4, 60]], 'out');
+  if (t >= 99.9) { if (t < 100.62) ilCamelRide(c, t, cx, G, 1.0, { empty: true }); else ilCamelRide(c, t, cx, G, 1.0); }
+  if (t < 100.62) { const u = t < 100.28 ? 0 : ilE(t, 100.28, 0.34); ilHusband(c, t, K.lerp(-40, -150, u), G - 160 * Math.sin(Math.PI * u * 0.9), 1.6, { P: { handR: u > 0 ? [60, -200] : [64 + 12 * Math.sin(t * 10), -196], aL: u > 0 ? [-2.4, -2.8] : null } }); }
+  ilTick(c, 250, -150, (t - 99.66) / 0.35, 2.0); }
 // ---------- the told picture (S15): the husband lies down, the quilt rolls round him, the snuffer puts out a candle ----------
 function ilToldPicture(c, t) { c.fillStyle = IL_PAPER; c.fillRect(0, 300, 1000, 900); shape(c, K.rectPts(-50, 900, 1100, 300), '#efdcae', { lw: 5, seed: 307 });
-  if (t < 136.96) return; const pop = K.ease.back(K.clamp((t - 136.96) / 0.3)), lie = ilE(t, 137.44, 0.4), hx = 520;
+  const pop = 1, lie = ilE(t, 137.44, 0.4), hx = 560;   // the husband stands there from the moment the cloud opens
   c.save(); c.translate(hx, 900); c.scale(pop, pop); c.translate(-hx, -900);
   ilHusband(c, t, hx, 900, 1.1, { lid: lie > 0.4 ? 1 : blink(t, 61), mouth: lie > 0.4 ? 'closed' : 'smile', P: { lie } });
-  const wr = ilE(t, 138.3, 0.8), rock = swing(t, 139.1, 0.05, 1.5, 2.2); if (wr > 0) ilQuiltWrap(c, hx + 150, 900, 1.05, wr * 0.85, rock);
+  const wr = ilE(t, 138.3, 0.8), rock = swing(t, 139.1, 0.05, 1.5, 2.2); if (wr > 0) ilQuiltWrap(c, hx + 170, 900, 1.45, wr * 0.85, rock);
   if (wr > 0) { const P = ilWho(IL_HUS, { x: hx, y: 900, s: 1.1, lie, lid: 1, mouth: 'closed', noBlink: true }); const h = ilHead(P); }
   c.restore();
-  if (t >= 141.04) { const u = K.clamp((t - 141.04) / 0.45), x = K.lerp(1000, 300, u), y = 880 - 160 * Math.sin(Math.PI * u) * (u < 1 ? 1 : 0); ilSnuffer(c, x, y - 40 * (1 - landSquash(t, 141.49, 0.1)), 1.1, { dir: -1, dip: t >= 141.54 ? ilE(t, 141.6, 0.5) : 0 }); }
-  if (t >= 141.54) { const k = K.ease.back(K.clamp((t - 141.54) / 0.25)); c.save(); c.translate(150, 900); c.scale(k, k); ilCandle(c, 0, 0, t, 1.2, { out: t >= 142.16 ? 1 : 0, smoke: t - 142.16 }); c.restore(); } }
+  if (t >= 141.04) { const u = K.clamp((t - 141.04) / 0.45), x = K.lerp(1000, 400, u), y = 880 - 160 * Math.sin(Math.PI * u) * (u < 1 ? 1 : 0); ilSnuffer(c, x, y - 40 * (1 - landSquash(t, 141.49, 0.1)), 1.1, { dir: -1, dip: t >= 141.54 ? ilE(t, 141.6, 0.5) : 0 }); }
+  if (t >= 141.54) { const k = K.ease.back(K.clamp((t - 141.54) / 0.25)); c.save(); c.translate(290, 900); c.scale(k, k); ilCandle(c, 0, 0, t, 1.2, { out: t >= 142.16 ? 1 : 0, smoke: t - 142.16 }); c.restore(); } }
 
 // ---------- S12: inside the letter (panel space, 1000 x 1230) ----------
 const IL_SUNS = (i) => 111.44 + 0.1 * i;
@@ -55,15 +59,18 @@ function ilLetterWorld(ctx, t) {
   ctx.fillStyle = IL_PAPER; ctx.fillRect(0, 0, 1000, 1230);
   // the squiggle text lines part like curtains
   const part = ilE(t, 106.5, 0.8); for (let i = 0; i < 9; i++) { const yy = 380 + i * 50; for (const sd of [-1, 1]) { ctx.beginPath(); for (let k = 0; k <= 14; k++) { const x = 500 + sd * (20 + k * 28) + sd * part * 520; ctx.lineTo(x, yy + 6 * Math.sin(k * 1.4 + i)); } ctx.lineWidth = 7; ctx.strokeStyle = 'rgba(29,91,208,0.55)'; ctx.stroke(); } }
-  ctx.save(); ctx.translate(dx, 0); ctx.translate(480, 860); ctx.scale(1.25, 1.25); ctx.translate(-480, -780);
+  ctx.save(); ctx.translate(dx, 0); ctx.translate(480, 760); ctx.scale(1.25, 1.25); ctx.translate(-480, -780);
   ctx.globalAlpha *= part; shape(ctx, [[-100, 860], [200, 830], [420, 860], [700, 820], [1100, 850], [1100, 1240], [-100, 1240]], '#f2d27a', { lw: 6, seed: 310, dot: '#d9a441', pitch: 12, rad: 0.18, da: 0.35 });
   seg(ctx, -100, 860, 1100, 860, 1, C.black, 0); ilHouseIcon(ctx, 930, 860, 1.0); ctx.globalAlpha = 1;
   // ten sun tokens (days) along the top
-  for (let i = 0; i < 10; i++) { const k = K.ease.back(K.clamp((t - IL_SUNS(i)) / 0.25)); if (k <= 0) continue; const x = 180 + i * 71; ctx.save(); ctx.translate(x, 300); ctx.scale(k * 0.32, k * 0.32); sun(ctx, 0, 0, t); ctx.restore(); }
+  for (let i = 0; i < 10; i++) { const k = K.ease.back(K.clamp((t - IL_SUNS(i)) / 0.25)); if (k <= 0) continue; const x = 180 + i * 71; ctx.save(); ctx.globalAlpha *= 1 - 0.6 * ilE(t, 113.2, 0.4); ctx.translate(x, 380); ctx.scale(k * 0.32, k * 0.32); sun(ctx, 0, 0, t); ctx.restore(); }
   // the camel and the husband
-  const mounted = t >= 110.8, cx = (u) => kfn(u, [[110.8, 560], [118.08, 720]], 'lin');
+  // from 113.2 the camel and rider shrink to 60 percent and step back to the left on the horizon: the gifts get the centre of the page
+  const mounted = t >= 110.8, cx = (u) => kfn(u, [[110.8, 560], [113.2, 610]], 'lin'), shr = ilE(t, 113.2, 0.6);
+  if (shr > 0) { const px = cx(t), tx = K.lerp(px, 250, shr), sc = K.lerp(1, 0.6, shr); ctx.save(); ctx.translate(tx, 850); ctx.scale(sc, sc); ctx.translate(-px, -850); }
   if (!mounted) { const M = { x: 560, y: 850, s: 0.85, dir: 1, saddle: true, load: ['rug', 'sack'], chew: 0.3 * Math.abs(Math.sin(t * 2)), lid: blink(t, 64), tailSwish: Math.sin(t * 2) }; camel(ctx, M); }
-  else { const tossH = t >= 113.18 && t < 113.7 ? [-60, -230] : null; ilCamelRide(ctx, t, cx, 850, 0.85, { load: ['rug', 'sack'], gaze: t >= 113.18 && t < 114.9 ? [-0.8, 0.5] : [1, 0], handR: tossH }); }
+  else { const tossH = t >= 114.3 && t < 114.7 ? [60, -230] : null; ilCamelRide(ctx, t, cx, 850, 0.85, { load: t < 114.4 ? ['rug', 'sack'] : ['sack'], gaze: t >= 114.3 && t < 115.4 ? [1, 0.3] : t >= 115.66 ? [1, -0.2] : [1, 0], handR: tossH }); }
+  if (shr > 0) ctx.restore();
   if (t >= 106.9 && !mounted) { const u = ilE(t, 107.28, 0.5), r = 70 * (1 - u); // portrait medallion grows into the man
     if (r > 2) { ctx.save(); ctx.globalAlpha *= 1 - u; const px = K.lerp(500, 300, u), py = K.lerp(240, 620, u); ctx.beginPath(); ctx.arc(px, py, r, 0, 7); ctx.fillStyle = '#ffe9a8'; ctx.fill(); ctx.save(); ctx.clip(); ilHusband(ctx, t, px, py + 222 * r / 58, r / 58, { lid: 0 }); ctx.restore(); ctx.lineWidth = 5; ctx.strokeStyle = C.black; ctx.stroke(); ctx.restore(); }
     if (u > 0) { ctx.save(); ctx.globalAlpha *= u; const hop2 = t >= 110.42 ? hop(t, 110.42, 0.4, 300, 470, 120) : [300, 0];
@@ -71,22 +78,37 @@ function ilLetterWorld(ctx, t) {
       if (t >= 109.18 && t < 109.6) P.P.handR = [64 + 12 * Math.sin(t * 14), -196]; if (t >= 109.6 && t < 110.42) P.P.handR = [4 + 8 * pulse(t, 109.7, 0.15) + 8 * pulse(t, 109.95, 0.15), -120];
       if (t >= 110.42) { P.P.aL = [-2.4, -2.8]; P.P.aR = [2.4, 2.8]; P.gaze = [1, -0.2]; }
       ilHusband(ctx, t, hop2[0], 850 - hop2[1], 1.0, P); ctx.restore(); } }
-  if (t >= 109.6) ilTick(ctx, 235, 560, (t - 109.6) / 0.35, 1.2);
-  // the quilt bundle (tossed 113.18, lands 114.84, unrolls) and the snuffer (115.66, dips 116.56) by the candle
-  if (t >= 113.18) { const u = K.clamp((t - 113.18) / 1.66), from = [cx(113.18) - 40, 640], p = ilLp(from, [480, 930], u), y = p[1] - 260 * Math.sin(Math.PI * u) * (u < 1 ? 1 : 0);
-    const un = t < 114.84 ? 0 : ilE(t, 114.84, 0.6, 'out'); ilQuilt(ctx, t < 114.84 ? p[0] : 480 + 150 * un * 0 , t < 114.84 ? y : 930, t < 114.84 ? 0.9 : 1.2 * landSquash(t, 114.84, 0.12, 10), { unroll: un }); }
-  if (t >= 115.66) { const u = K.clamp((t - 115.66) / 0.5), p = ilLp([cx(115.66) - 40, 620], [700, 1000], u), y = p[1] - 200 * Math.sin(Math.PI * u) * (u < 1 ? 1 : 0); ilCandle(ctx, 880, 1010, t, 1.4, { out: t >= 116.95 ? 1 : 0, smoke: t - 116.95 });
-    ilSnuffer(ctx, p[0], y, 1.4, { dip: t >= 116.56 ? ilE(t, 116.56, 0.4) * (1 - ilE(t, 117.3, 0.4)) : 0, rot: u < 1 ? (1 - u) * 3 : 0 }); }
+  if (t >= 109.6) { ctx.save(); ctx.globalAlpha *= 1 - ilE(t, 113.2, 0.3); ilTick(ctx, 235, 560, (t - 109.6) / 0.35, 1.2); ctx.restore(); }
   ctx.restore();
+  ilLetterGifts(ctx, t);
 }
+// the two gifts in the centre of the page (panel units): the quilt (114.84, unrolls left to right) and the candle snuffer (115.66, dips 116.56, smoke 117.38)
+const IL_QUILT = { x0: 310, x1: 710, y0: 642, y1: 842 };
+function ilLetterGifts(ctx, t) { const Q = IL_QUILT;
+  if (t >= 114.4) { if (t < 114.84) { const u = ilE(t, 114.4, 0.44, 'in'), p = ilLp([170, 760], [Q.x0 + 40, Q.y1], u); ilQuilt(ctx, p[0], p[1] - 220 * Math.sin(Math.PI * u), 1.3, { unroll: 0 }); }
+    else { const un = ilE(t, 114.98, 0.55, 'out'); if (un < 0.02) { const b = hop(t, 114.84, 0.14, 0, 0, 22)[1]; ctx.save(); ctx.translate(Q.x0 + 40, Q.y1 - b); ctx.scale(1, landSquash(t, 114.84, 0.2, 12)); ilQuilt(ctx, 0, 0, 1.3, { unroll: 0 }); ctx.restore(); }
+      else { const xr = K.lerp(Q.x0 + 20, Q.x1, un); ctx.save(); ctx.beginPath(); ctx.rect(Q.x0 - 10, Q.y0 - 10, xr - Q.x0 + 10, Q.y1 - Q.y0 + 20); ctx.clip();
+        ctx.fillStyle = 'rgba(20,20,20,0.85)'; ctx.fillRect(Q.x0 + 9, Q.y0 + 9, Q.x1 - Q.x0, Q.y1 - Q.y0); ilQuiltPatches(ctx, [[Q.x0, Q.y0], [Q.x1, Q.y0], [Q.x1, Q.y1], [Q.x0, Q.y1]], 6, 3); ctx.restore();
+        if (un < 0.98) { const r = 14 + 26 * (1 - un); shape(ctx, ell(xr, (Q.y0 + Q.y1) / 2, r, (Q.y1 - Q.y0) / 2 + 6, 24), C.red, { lw: 5, seed: 210, dot: C.yellow, pitch: 7, rad: 0.2, da: 0.45 }); } } } }
+  if (t >= 114.84) { ctx.save(); ctx.globalAlpha *= ilEnv(t, 114.84, 118.06, 0.2); S0.label(ctx, 'QUILT', (Q.x0 + Q.x1) / 2, Q.y1 + 76, ilE(t, 114.84, 0.35), { size: 56, align: 'center' }); ctx.restore(); }
+  if (t >= 115.66) { const cxn = 850, base = 850, k = K.ease.back(K.clamp((t - 115.66) / 0.25)); ctx.save(); ctx.translate(cxn, base); ctx.scale(k, k); ilCandle(ctx, 0, 0, t, 1.8, { out: ilE(t, 116.7, 0.15), smoke: t - 117.38 }); ctx.restore();
+    // the snuffer cone (bottom centre cb) with its handle rising up-left: rises in, hovers over the flame, dips on 116.56, lifts with the smoke
+    const rise = ilE(t, 115.7, 0.5, 'out'), dip = ilE(t, 116.56, 0.22) * (1 - ilE(t, 117.3, 0.3)), cb = [K.lerp(cxn + 120, cxn, rise), K.lerp(1100, 636, rise) + 80 * dip + 4 * Math.sin(t * 5) * (1 - dip)];
+    ilConeSnuffer(ctx, cb[0], cb[1]);
+    ctx.save(); ctx.globalAlpha *= ilEnv(t, 116.0, 118.06, 0.2); S0.label(ctx, 'CANDLE SNUFFER', 590, 460, ilE(t, 116.0, 0.35), { size: 50, align: 'center' }); ctx.restore(); } }
+// a candle snuffer seen from the side: brass cone (bottom centre x, y; 74 wide, 70 tall) and a long handle up to the left with a ring
+function ilConeSnuffer(ctx, x, y) { const top = [x, y - 70], end = [x - 190, y - 230];
+  seg(ctx, top[0] - 6, top[1] + 6, end[0], end[1], 10, IL_BRASS, 3); shape(ctx, ell(end[0] - 8, end[1] - 8, 16, 16, 14), IL_BRASS, { lw: 4, seed: 218 }); shape(ctx, ell(end[0] - 8, end[1] - 8, 7, 7, 10), IL_PAPER, { lw: 3, seed: 217 });
+  shape(ctx, [[x - 12, y - 72], [x + 12, y - 72], [x + 38, y], [x - 38, y]], C.yellow, { lw: 5, seed: 219, dot: C.red, pitch: 7, rad: 0.2, da: 0.45 }); shape(ctx, ell(x, y - 74, 8, 8, 10), IL_BRASS, { lw: 3, seed: 216 }); ilStar(ctx, x - 14, y - 40, 8); }
 // the woman's face in an inset circle (lower left), reacting to the letter
 function ilWomanInset(ctx, t, x, y, r) { const k = K.ease.back(K.clamp((t - 107.0) / 0.4)) * (1 - ilE(t, 117.9, 0.2)); if (k <= 0.02) return; const rr = r * k, s = rr / 58;
   const P = ilWho(IL_WOM, { x, y: y + 222 * s, s, gaze: [0.3, -0.5], mouth: 'o', brow: -0.6, wet: t < 109.6, lid: Math.max(0.2, blink(t, 7)), noBlink: true });
-  if (t >= 109.6) { P.lid = Math.max(0, blink(t, 7)); P.mouth = 'o'; P.brow = -0.3; }
+  if (t >= 109.6) { P.lid = Math.max(0.25, blink(t, 7)); P.mouth = 'smile'; P.brow = -0.3; P.gaze = [0.4, 0.3]; }
   if (t >= 111.76 && t < 114.0) { P.talk = talk(t, [[111.8, 113.8]]); P.gaze = [0.2, 0.4]; }
-  if (t >= 116.56) { P.tilt = 0.12 * ilE(t, 116.56, 0.4); P.mouth = 'o'; P.brow = -0.5; }
-  if (t >= 117.38) { P.tilt = 0.05; P.mouth = 'smile'; P.lid = 0.3; P.brow = K.lerp(-0.4, 0.5, ilE(t, 117.6, 0.4)); }
+  if (t >= 114.84) { P.gaze = [0.6, 0.6]; }
+  if (t >= 117.38) { P.tilt = 0.2 * ilE(t, 117.38, 0.3); P.mouth = 'o'; P.lid = 0; P.gaze = [0.7, 0.7]; }
   shape(ctx, ell(x, y, rr + 10, rr + 10, 30), C.red, { lw: 5, seed: 312, dot: C.yellow, pitch: 7, rad: 0.18, da: 0.35 });
   ctx.save(); ctx.beginPath(); ctx.arc(x, y, rr, 0, 7); ctx.clip(); ctx.fillStyle = '#9cc4ff'; ctx.fillRect(x - rr, y - rr, 2 * rr, 2 * rr); person(ctx, P);
   if (t >= 111.76 && t < 114.0) { const n = Math.min(5, 1 + Math.floor((t - 111.76) / 0.4)); for (let f = 0; f < n; f++) seg(ctx, x - 40 * s + f * 14 * s, y + 70 * s, x - 40 * s + f * 14 * s, y + 40 * s, 6 * s, C.white, 2); }
-  ctx.restore(); ink(ctx, ell(x, y, rr, rr, 30), 4, 313); }
+  ctx.restore(); ink(ctx, ell(x, y, rr, rr, 30), 4, 313);
+  if (t >= 117.38) { const q = K.ease.back(K.clamp((t - 117.38) / 0.25)); ctx.save(); ctx.translate(x + rr + 30, y - rr * 0.4); ctx.scale(q, q); ctx.font = K.font(64, BF, 400); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.lineWidth = 10; ctx.strokeStyle = C.black; ctx.strokeText('?', 0, 0); ctx.fillStyle = C.white; ctx.fillText('?', 0, 0); ctx.restore(); } }

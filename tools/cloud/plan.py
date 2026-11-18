@@ -52,7 +52,7 @@ def main():
         fp = common.fingerprint(i); name = common.artifact_name(i, a.version, fp)
         if name in live and not a.force: skipped.append((i, name))
         else: include.append({'id': i, 'version': a.version, 'fp': fp, 'artifact': name})
-    lines = ['### Render plan', f'commit `{os.environ.get("GITHUB_SHA", "?")[:10]}`, version `{a.version}`, at most 2 renders at a time', '',
+    lines = ['### Render plan', f'commit `{os.environ.get("GITHUB_SHA", "?")[:10]}`, version `{a.version}`, at most 10 renders at a time', '',
              '| story | action | fingerprint |', '|---|---|---|']
     lines += [f'| {x["id"]} | render | `{x["fp"][:12]}` |' for x in include]
     lines += [f'| {i} | skipped: identical render already exists (`{n}`); use force to repeat | |' for i, n in skipped]

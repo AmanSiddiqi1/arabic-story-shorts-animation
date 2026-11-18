@@ -43,13 +43,13 @@ function smS1(ctx, t) {
   for (const f of footfalls(SM_S1X, 0.05, 3.1, 24 * 1.1)) dustBurst(ctx, f.x, 898, t - f.t, 3, 4, 9, 18, 0.4, Math.round(f.t * 10));
 }
 // ---------- S5-S6: the locked school, the neighbours, the walk to his house ----------
-const SM_S5X = smX([[44.86, -70], [46.7, 400], [49.95, 400], [50.3, 372], [58.85, 372], [62.15, 1335]]);
+const SM_S5X = smX([[44.86, -70], [46.7, 310], [49.95, 310], [50.3, 290], [58.85, 290], [62.15, 1335]]);   // v2 (note 11): stops left of the CLOSED board
 function smScholarS5(t) {
   const w = smWalk(SM_S5X, t, 1.1), P = { ...w, y: 900, s: 1.1, costume: 'physician', age: 0.6, seed: 31, dir: 1, mouth: 'smile', brow: -0.3, hL: [-30, -104] };
   const door = [480, 790], carp = [990, 690], old = [840, 524];
   if (t < 46.79) { P.gaze = [1, 0.05]; return P; }
   P.mouth = t < 47.4 ? 'smile' : 'closed'; P.brow = -0.5 * smB(t, 46.79, 0.4);
-  P.hR = smHT(t, P, [[46.79, SM_H.rest], [46.9, { w: [452, 792] }, 0.3], [47.3, { w: [446, 796] }, 0.08], [47.4, { w: [452, 792] }, 0.08], [47.6, SM_H.rest, 0.4], [49.35, { w: [470, 760] }, 0.2], [49.55, { w: [478, 762] }, 0.08], [49.7, { w: [470, 760] }, 0.08], [49.85, { w: [478, 762] }, 0.08], [50.05, SM_H.rest, 0.3]]);
+  P.hR = smHT(t, P, [[46.79, SM_H.rest], [46.9, { w: [418, 792] }, 0.3], [47.3, { w: [428, 796] }, 0.08], [47.4, { w: [418, 792] }, 0.08], [47.6, SM_H.rest, 0.4], [49.35, { w: [418, 760] }, 0.2], [49.55, { w: [428, 762] }, 0.08], [49.7, { w: [418, 760] }, 0.08], [49.85, { w: [428, 762] }, 0.08], [50.05, SM_H.rest, 0.3]]);
   P.tip = 0.05 * smB(t, 46.79, 0.3) * (1 - smB(t, 47.6, 0.4));
   P.gaze = smGaze(t, P, [[46.79, door], [48.4, [500, 760]], [50.3, [470, 560]], [50.75, [120, 700]], [51.0, carp]], 0.12);
   if (t >= 51.82) { P.gaze = smGaze(t, P, [[51.82, carp], [52.0, door], [52.4, carp], [53.4, carp], [56.3, old], [57.0, carp], [57.94, [440, 900]], [58.6, carp]], 0.2);
@@ -73,23 +73,25 @@ function smCarpenter(t) {
   P.talk = smTalk(t, [[53.38, 54.5], [54.6, 58.1]], 0.7); P.brow = -0.3;
   return P;
 }
-function smOldWoman(t) { if (t < 51.28) return null; const P = { x: 840, y: 668, s: 0.85, costume: 'oldWoman', seed: 52, dir: 1, mouth: 'frown', tip: 0.04 * smB(t, 51.28, 0.5) };
+function smOldWoman(t) { if (t < 51.28) return null; const P = { x: 840, y: 668, s: 0.85, costume: 'oldWoman', pal: { hc: '#f4efe0', hd: '#d8cfb8' }, seed: 52, dir: 1, mouth: 'frown', tip: 0.04 * smB(t, 51.28, 0.5) };
   P.gaze = smLookAt(P, [SM_S5X(t), 690]); P.x += smShakeX(t, 56.22, 1.6, 5, 2);
   P.hR = smTr(t, [[51.28, SM_H.rest], [56.5, SM_H.eyeR, 0.35], [57.6, SM_H.rest, 0.4]]); if (t >= 56.4 && t < 57.6) { P.lid = 0.6; P.gaze = [0, 0.5]; }
   return P; }
 // the carpenter's answer balloon (S5) and the knock and sniff lines
 function smS5Balloon(ctx, t, C2) {
   if (!smIn(t, 53.38, 58.72)) return; const p = Math.min(K.clamp((t - 53.38) / 0.3), K.clamp((58.72 - t) / 0.2)), top = smTop(C2);
-  smBalloon(ctx, 770, 330, 310, 200, p, [top[0] - 30, top[1] - 6], (c) => {
+  smBalloon(ctx, 770, 330, 340, 220, p, [top[0] - 30, top[1] - 6], (c) => {
     c.fillStyle = '#bfe0ff'; c.fillRect(-160, -110, 320, 220);
-    const hk = K.ease.back(K.clamp((t - 55.6) / 0.35));
-    if (hk > 0) { c.save(); c.translate(0, 20); c.scale(hk, hk); shape(c, K.rectPts(-80, -90, 160, 190), TOWN_WALLS.cold[0], { lw: 5, seed: 971, dot: '#9aa4be', pitch: 8, rad: 0.15 });
-      shape(c, townArchPts(-24, 24, 30, 100, 'round'), NAVY2, { lw: 4, seed: 972 }); shape(c, townArchPts(-40, 40, -76, 8, 'round'), NAVY2, { lw: 4, seed: 973 });
-      c.save(); K.poly(c, townArchPts(-40, 40, -76, 8, 'round'), true); c.clip(); const P = { x: 0, y: 55, s: 0.42, costume: 'merchant', pal: SM_MOURN, age: 0.2, noBlink: true, lid: 0.55, mouth: 'frown', gaze: [0, 0.6], wet: true }; smPerson(c, P);
-      if (t >= 56.22) { const h = smHead(P), u = ((t - 56.22) * 0.9) % 1; c.restore(); c.save(); const k = K.ease.back(K.clamp((t - 56.22) / 0.3)); c.translate(h[0] + 24, h[1] + 8 + u * 24); c.scale(k * 1.6, k * 1.6);
-        c.beginPath(); c.moveTo(0, -11); c.quadraticCurveTo(6, -3, 6, 2); c.arc(0, 2, 6, 0, Math.PI); c.quadraticCurveTo(-6, -3, 0, -11); c.fillStyle = TEAR; c.fill(); c.lineWidth = 2.5; c.strokeStyle = C.black; c.stroke(); }
-      c.restore(); c.restore(); }
-    else smQ(c, 0, 0, 120, K.clamp((t - 53.6) / 0.3), C.red, 0.05);
+    // v2 (note 10): the mini teacher on المعلم 54.64 (fills the balloon), his house around him on بيته 55.60, the tear on حزين 56.22
+    const bk = K.ease.back(K.clamp((t - 54.64) / 0.3)), hk = K.ease.back(K.clamp((t - 55.6) / 0.35));
+    if (bk > 0) { c.save(); c.translate(0, 18);
+      if (hk > 0) { c.save(); c.scale(hk, hk); shape(c, K.rectPts(-150, -95, 300, 200), TOWN_WALLS.cold[0], { lw: 5, seed: 971, dot: '#9aa4be', pitch: 8, rad: 0.15 }); shape(c, townArchPts(-62, 62, -60, 100, 'round'), NAVY2, { lw: 5, seed: 973 }); c.restore(); }
+      c.save(); if (hk > 0.98) { K.poly(c, townArchPts(-60, 60, -58, 100, 'round'), true); c.clip(); } c.scale(bk, bk);
+      const P = { x: 0, y: 205, s: 0.95, costume: 'merchant', pal: SM_MOURN, age: 0.2, noBlink: true, lid: 0.55, mouth: 'frown', gaze: [0, 0.6], wet: true }; smPerson(c, P); c.restore();
+      if (t >= 56.22) { const P2 = { x: 0, y: 205, s: 0.95, costume: 'merchant', age: 0.2 }, h = smHead(P2), u = ((t - 56.22) * 0.9) % 1, k = K.ease.back(K.clamp((t - 56.22) / 0.3)); c.save(); c.translate(h[0] + 30, h[1] + 10 + u * 30); c.scale(k * 2, k * 2);
+        c.beginPath(); c.moveTo(0, -11); c.quadraticCurveTo(6, -3, 6, 2); c.arc(0, 2, 6, 0, Math.PI); c.quadraticCurveTo(-6, -3, 0, -11); c.fillStyle = TEAR; c.fill(); c.lineWidth = 2.5; c.strokeStyle = C.black; c.stroke(); c.restore(); }
+      c.restore(); }
+    if (bk <= 0) smQ(c, 0, 0, 120, K.clamp((t - 53.6) / 0.3), C.red, 0.05);
   });
 }
 function smS5(ctx, t) {
@@ -99,7 +101,7 @@ function smS5(ctx, t) {
   const C2 = smCarpenter(t), P = smScholarS5(t);
   smPerson(ctx, C2); smPerson(ctx, P); smBook(ctx, P.HL[0] + 4, P.HL[1] - 6, 0.6, { col: C.red, rot: 1.35 });
   for (const f of footfalls(SM_S5X, 44.9, 62.2, 24 * 1.1)) dustBurst(ctx, f.x, 898, t - f.t, 3, 4, 9, 18, 0.4, Math.round(f.t * 10));
-  for (const k of [47.3, 49.55, 49.85]) smImpact(ctx, 466, 780, 26, pulse(t, k, 0.25), 4, Math.PI);
+  for (const k of [47.3, 49.55, 49.85]) smImpact(ctx, 436, 780, 26, pulse(t, k, 0.25), 4, Math.PI);
   for (const k of [62.3, 62.55, 62.8]) smImpact(ctx, 1396, 760, 22, pulse(t, k, 0.22), 4, 0);
   if (t >= 63.4) { ctx.save(); ctx.globalAlpha = smFade(t, 63.4, 64.3, 0.2); ctx.lineWidth = 4; ctx.strokeStyle = C.black; for (let k = 0; k < 2; k++) { ctx.beginPath(); for (let j = 0; j <= 10; j++) ctx.lineTo(1470 + j * 6 + (t - 63.4) * 30, 760 + k * 22 + Math.sin(j * 1.2 + t * 8) * 5); ctx.stroke(); } ctx.restore(); }
   smS5Balloon(ctx, t, C2);
@@ -109,7 +111,8 @@ const SM_S5_CAM = [[43.93, 460, 700, 1.4], [48.5, 460, 700, 1.4], [48.9, 500, 77
 function smS5Cam(t) { if (t < 58.85) return smCamK(SM_S5_CAM, t, 2000); const x = SM_S5X(t) + 230, k = smB(t, 58.85, 0.8); return smCamK([[0, K.lerp(690, Math.min(1500, x), k), K.lerp(690, 640, k), K.lerp(1.3, 1.2, k)]], t, 2000); }
 
 // ---------- S9-S12: the told flashback at the upper window (dusk, dream wash) ----------
-const SM_SING1 = smX([[111.34, 1050], [117.9, 1470], [121.6, 1980]]), SM_SING2 = smX([[130.38, 1050], [137.0, 1400], [137.5, 1400], [140.6, 1980]]);
+// v2 (note 6): he strolls out of frame (brisker) before the push-ins; the dream wash is drawn under the figures so he keeps his colours
+const SM_SING1 = smX([[111.34, 1050], [117.3, 1560], [118.7, 1990]]), SM_SING2 = smX([[130.38, 1050], [137.0, 1400], [137.5, 1400], [138.7, 1990]]);
 function smSinger(t) {
   const day2 = t >= 128.16, xf = day2 ? SM_SING2 : SM_SING1, t0 = day2 ? 130.38 : 111.34; if (t < t0 - 0.05 || xf(t) > 1975) return null;
   const w = smWalk(xf, t, 1.05), P = { ...w, y: 900 - 7 * Math.abs(Math.sin(w.ph * 0.5)) * w.amp, s: 1.05, costume: 'villager', pal: SM_SINGER, age: 0.3, seed: 61, dir: 1, eyes: 'shut', mouth: 'smile', tip: -0.04 };
@@ -120,7 +123,7 @@ function smSinger(t) {
 }
 function smSingerDraw(ctx, P) { if (!P) return; smPerson(ctx, P); const b = smW(P, [6, -116]); smOud(ctx, b[0], b[1], 0.8 * P.s, -0.85); shape(ctx, ell(P.HR[0], P.HR[1], 11, 11, 12), C.white, { lw: 3.5, seed: 981, dot: C.skin, pitch: 5, rad: 0.3 }); }
 function smFbTeacher(t) {
-  if (t >= 142.3) return null;
+  if (t >= 142.45) return null;
   const P = smBust({ pal: SM_GREEN, mouth: 'smile' }), down = [1250, 760];
   if (t < 110.8) { P.hR = { w: [1535, 586] }; P.hL = { w: [1588, 586] }; P.lid = 0.3; P.gaze = [0.1, 0.9]; P.talk = 0.15 * Math.abs(Math.sin(t * 7)); P.mouth = 'closed'; return P; }
   if (t < 117.9) { P.hR = smHT(t, P, [[110.8, { w: [1535, 586] }], [110.85, SM_H.cupR, 0.3]]); P.hL = { w: [1588, 586] }; P.tilt = 0.1 * smB(t, 110.8, 0.4); P.look = -0.6;
@@ -138,17 +141,18 @@ function smFbTeacher(t) {
     return P; }
   // S12: the second leap
   P.hR = { w: [1532, 588] }; P.hL = { w: [1590, 588] }; P.s = 1.0; P.y = 678;
-  P.eyes = t < 141.8 ? 'wide' : 'open'; P.noBlink = true; P.mouth = t < 138.6 ? 'smile' : 'closed'; P.gaze = smGaze(t, P, [[137.58, [1290, 330]], [138.6, [1290, 330]], [139.0, [1360, 420]], [139.96, [1360, 300]]], 0.5);
-  if (t >= 141.8) { P.mouth = 'open'; P.wet = true; P.brow = -0.9; P.gaze = [0, -1]; P.drop = 6; P.x += tremble(t, 3, 9); P.hR = SM_H.head; P.hL = SM_H.headL; }
+  P.eyes = t < 141.54 ? 'wide' : 'open'; P.noBlink = true; P.mouth = t < 138.6 ? 'smile' : 'closed'; P.gaze = smGaze(t, P, [[137.58, [1290, 330]], [138.6, [1290, 330]], [139.0, [1360, 420]], [139.96, [1360, 300]]], 0.5);
+  if (t >= 141.54) { P.mouth = 'open'; P.wet = true;   // v2 (note 11): the wail starts on ماتت and holds 0.9 s before the whip
+    P.brow = -0.9; P.gaze = [0, -1]; P.drop = 6; P.x += tremble(t, 3, 9); P.hR = SM_H.head; P.hL = SM_H.headL; }
   return P;
 }
 // the lady on the big note (S9) and the drifting name
 function smLadyNote(t) { const u = smB(t, 115.38, 1.8, 'out'); return [K.lerp(1300, 1405, u) + 20 * Math.sin(u * 7), K.lerp(720, 470, u)]; }
-function smNamePos(t) { const u = smB(t, 116.84, 1.4, 'out'); return [K.lerp(1300, 1380, u), K.lerp(640, 360, u)]; }
+function smNamePos(t) { const u = smB(t, 116.84, 0.6, 'out'); return [K.lerp(1420, 1440, u), K.lerp(300, 240, u)]; }   // v2 (note 6): in the open sky above the roof
 function smMiniLady(c, x, y, s, t, o = {}) { const P = { x, y, s, costume: 'lady', seed: 71, noBlink: true, mouth: 'smile', hR: o.arms ? SM_H.armOut : [20, -120], hL: o.arms ? SM_H.armOutL : [-20, -120], ...o.P }; smPerson(c, P); smMystery(c, P, { t, glint: o.glint }); return P; }
 // the book on the sill: reading, then slipping off (125.24) and landing in the street (127.3)
 function smSillBook(t) { return (ctx) => {
-  if (t >= 142.3 && t < 150.2) return;   // in S12 after the whip the strip is seen from the school; the book lies in the street (drawn by smStreetBook)
+  if (t >= 142.45 && t < 150.2) return;   // in S12 after the whip the strip is seen from the school; the book lies in the street (drawn by smStreetBook)
   if (t < 125.24 || t >= 150.2) { if (t < 125.24) { const flip = pulse(t, 109.26, 0.5); smBook(ctx, 1560, 588, 0.95, { col: C.blue, open: 1 - 0.3 * flip }); } return; }
   const slide = smB(t, 125.24, 1.36, 'in'), x = K.lerp(1560, 1470, slide);
   if (t < 126.6) { smBook(ctx, x, 588, 0.95, { col: C.blue, open: 1 - slide * 0.7, rot: -0.3 * K.clamp((x - 1500) / -40) }); return; }
@@ -156,17 +160,18 @@ function smSillBook(t) { return (ctx) => {
 function smStreetBook(ctx, t) { if (t < 127.3 || t >= 152.95) return; const q = impactSquash(t, 127.3, 0.6); ctx.save(); ctx.translate(SM_ST.book[0], SM_ST.book[1]); ctx.scale(2 - q, q); smBook(ctx, 0, -10, 0.95, { col: C.blue, rot: 0.08 }); ctx.restore(); dustBurst(ctx, SM_ST.book[0], 895, t - 127.3, 6, 5, 11, 40, 0.6, 7); }
 // thought cloud at the window (S10 love, S12 death)
 function smFbCloud(ctx, t, T) {
-  const love = smIn(t, 119.66, 128.3), dead = smIn(t, 139.96, 142.35); if (!love && !dead) return;
-  const p = love ? Math.min(K.clamp((t - 119.66) / 0.6), K.clamp((128.3 - t) / 0.3)) : Math.min(K.clamp((t - 139.96) / 0.5), K.clamp((142.35 - t) / 0.1)), sw = love ? 1 + 0.1 * pulse(t, 123.4, 0.9) : 1;
+  const love = smIn(t, 119.66, 128.3), dead = smIn(t, 139.96, 142.45); if (!love && !dead) return;
+  const p = love ? Math.min(K.clamp((t - 119.66) / 0.6), K.clamp((128.3 - t) / 0.3)) : Math.min(K.clamp((t - 139.96) / 0.5), K.clamp((142.45 - t) / 0.1)), sw = love ? 1 + 0.1 * pulse(t, 123.4, 0.9) : 1;
   const top = T ? smTop(T) : [1540, 430];
   thoughtCloud(ctx, 1350, 290, 360 * sw, 280 * sw, t, { p, tail: [top[0] - 26, top[1] + 4], scale: 0.55 * sw, at: [560, 800], bg: love ? '#fff3c4' : (t >= 141.54 ? '#d6d2e0' : '#e6eef8'), inside: (c) => {
     if (love) { // the poet bows to an empty pedestal; the lady rises in glory, face unknown
       shape(c, K.rectPts(560, 830, 160, 70), STONE2, { lw: 5, seed: 991, dot: STONED, pitch: 8, rad: 0.15 }); shape(c, K.rectPts(545, 815, 190, 20), STONE, { lw: 5, seed: 992 });
-      const bow = 0.5 + 0.2 * Math.sin(t * 3); smPerson(c, { x: 330, y: 900, s: 1, costume: 'villager', kneel: bow, tip: 0.25 * bow, noBlink: true, lid: 0.6, mouth: 'smile', hR: SM_H.fwd, hL: SM_H.fwdL, gaze: [1, 0] });
-      c.save(); c.translate(420, 760); c.rotate(-0.3); shape(c, K.rectPts(-40, -12, 80, 24), C.white, { lw: 4, seed: 993 }); c.restore();
+      // v2 (note 7): the poet is a white-and-blue figure, upright on the pedestal's ground line, bowing on يمدحونها 120.80 with the scroll held out
+      const bow = settleTo(t, 120.8, 0, 1, 0.4, 0.15) * (0.85 + 0.15 * Math.sin((t - 120.8) * 3)), PO = { x: 410, y: 900, s: 0.9, costume: 'villager', pal: { robe: C.white, dot: '#9ec3ff', sleeve: C.white, sash: C.blue, hc: C.blue, hd: '#0d2f80' }, age: 0.5, seed: 81, dir: 1, tip: 0.22 * bow, noBlink: true, lid: 0.5, mouth: 'smile', hR: SM_H.fwd, hL: SM_H.chestL, gaze: [1, 0.2] }; smPerson(c, PO);
+      c.save(); c.translate(PO.HR[0] + 18, PO.HR[1] - 4); c.rotate(-0.15); shape(c, K.rectPts(-34, -11, 68, 22), C.white, { lw: 4, seed: 993 }); seg(c, -34, -11, -34, 11, 7, C.yellow, 3); c.restore();
       if (t >= 122.5) { const r = smB(t, 122.5, 0.7, 'out'), g = r * (1 + 0.4 * pulse(t, 123.4, 1.0)); smGlow(c, 640, 640, 230, g, t); smMiniLady(c, 640, 815 + 120 * (1 - r), 1.0, t, { glint: 0.6 + 0.6 * pulse(t, 123.4, 0.9), P: { alpha: r } }); } }
     else { // the song's empty road, then the grave he invents
-      shape(c, [[100, 900], [900, 880], [900, 1000], [100, 1000]], SANDL, { lw: 5, seed: 994, dot: C.red, pitch: 10, rad: 0.15 }); desertMilestone(c, 780, 890);
+      shape(c, [[100, 900], [900, 880], [900, 1000], [100, 1000]], SANDL, { lw: 5, seed: 994, dot: C.red, pitch: 10, rad: 0.15 }); palmTree(c, 820, 895, { s: 0.42, fronds: 7, nuts: 0, t });
       if (t >= 141.54) { const r = smB(t, 141.54, 0.25, 'out'); smGrave(c, 500, 895, 1.4 * landSquash(t, 141.8, 0.1), { rise: r }); dustBurst(c, 500, 890, t - 141.6, 8, 8, 16, 70, 0.6, 3); } }
   } });
 }
@@ -174,12 +179,12 @@ function smFbCloud(ctx, t, T) {
 function smFbHearts(ctx, t, T) { if (!T) return; const h = smTop(T);
   if (smIn(t, 124.48, 128.16)) [124.5, 124.8, 125.1].forEach((a, i) => { const u = (t - a) / 2.2; if (u < 0 || u > 1) return; heart(ctx, h[0] + (i - 1) * 40 + 10 * Math.sin(u * 8 + i), h[1] - 20 - 160 * u, 18 * K.ease.back(K.clamp(u * 5)), { alpha: 1 - Math.max(0, u - 0.7) / 0.3 }); });
   if (smIn(t, 128.16, 141.8)) { const bob = t < 137.58 ? 8 * Math.sin(t * 3.2) + 10 * pulse(t, 129.89, 0.5) : 0; heart(ctx, h[0] + 6, h[1] - 34 + bob, 18); }
-  if (smIn(t, 141.8, 142.3)) smHeartSplit(ctx, h[0] + 6, h[1] - 34, 18, smB(t, 141.8, 0.25));
-  if (t >= 141.8 && t < 142.3) { const e = smHead(T); teardrops(ctx, t, 141.8, 142.3, [e[0] - 14, e[1]], { groundY: 600, rate: 10, vx: -40 }); teardrops(ctx, t, 141.85, 142.3, [e[0] + 14, e[1]], { groundY: 600, rate: 10, vx: 40 }); } }
+  if (smIn(t, 141.8, 142.45)) smHeartSplit(ctx, h[0] + 6, h[1] - 34, 18, smB(t, 141.8, 0.25));
+  if (t >= 141.6 && t < 142.45) { const e = smHead(T); teardrops(ctx, t, 141.6, 142.45, [e[0] - 14, e[1]], { groundY: 600, rate: 10, vx: -40 }); teardrops(ctx, t, 141.65, 142.45, [e[0] + 14, e[1]], { groundY: 600, rate: 10, vx: 40 }); } }
 // the song balloon of day two (S11) and its contents (reused by the S13 insert)
 function smSongPic(c, t, tt, o = {}) {   // balloon-local units, centre (0, 0), about 380 x 230
   c.fillStyle = '#ffe9b0'; c.fillRect(-210, -150, 420, 300); shape(c, [[-210, 92], [210, 84], [210, 150], [-210, 150]], SANDL, { lw: 4, seed: 1001, dot: C.red, pitch: 8, rad: 0.15 });
-  c.save(); c.translate(160, 90); c.scale(0.5, 0.5); desertMilestone(c, 0, 0); c.restore();
+  palmTree(c, 175, 94, { s: 0.17, fronds: 7, nuts: 0, t });   // v2 (Fable note 2): a palm marks the road's end, never a stone
   const lady = K.clamp((tt - 133.06) / 0.3), don = K.clamp((tt - 134.02) / 0.3), gone = tt >= 135.3 ? (tt - 135.3) / 0.9 : 0;
   if (don <= 0 && lady > 0) { c.save(); c.translate(-40, 92); c.scale(K.ease.back(lady), K.ease.back(lady)); smMiniLady(c, 0, 0, 0.62, t); c.restore(); }
   if (don > 0 && gone < 1.6) { const xf = (q) => (q < 135.3 ? -40 : -40 + (q - 135.3) * 380), x = xf(tt), k = K.ease.back(don);
@@ -192,17 +197,20 @@ function smS11Balloon(ctx, t, sg) { if (!smIn(t, 131.54, 137.75)) return; const 
   smBalloon(ctx, 1300, 330, 420, 290, p, [h[0] + 10, h[1] - 20], (c) => smSongPic(c, t, t)); }
 // the flashback street: S9-S12
 function smFb(ctx, t, cam) {
-  const u = smFbU(t), whip = t >= 142.3;
+  const u = smFbU(t), whip = t >= 142.45;
   const shut = whip ? K.clamp((t - 143.45) / 0.3) : 0, sw = swing(t, 143.9, 0.3, 1.3, 1.1);
   smStreetSet(ctx, t, { palette: 'dusk', u, doors: [whip ? (t < 143.3 ? 0.8 : 0.8 * (1 - smB(t, 143.3, 0.15, 'in'))) : 0.8, 0, 0], shut, board: whip ? K.clamp((t - 143.8) / 0.15) : 0, swing: sw });
   const d = dayCycle(((u % 1) + 1) % 1); if (d.moon) {}
   smOldWin(ctx, t, { ow: 0 }, null);
+  // v2 (note 5): a stronger dream wash on the set only (panel corners), under the figures so nobody is dimmed
+  { ctx.save(); ctx.setTransform(SM_PTF); smDreamWash(ctx, 0.6 * smFade(t, 107.66, 146.58, 0.5)); ctx.restore(); }
   const T = smFbTeacher(t); smTeachWin(ctx, t, { tw: 1, lit: whip ? 0 : 0.6 }, T, smSillBook(t));
   smStreetBook(ctx, t);
   const sg = smSinger(t); smSingerDraw(ctx, sg);
   if (sg) for (const f of footfalls(t < 128.16 ? SM_SING1 : SM_SING2, t < 128.16 ? 111.34 : 130.38, t < 128.16 ? 121.6 : 140.6, 24 * 1.05)) dustBurst(ctx, f.x, 898, t - f.t, 3, 4, 8, 16, 0.35, Math.round(f.t * 10));
   // notes and the lady on the big note (S9), notes of day two (S11)
   if (sg) { const ob = smW(sg, [6, -116]); smNotes(ctx, ob[0] - 10, ob[1] - 70, t, { t0: t < 128.16 ? 112.0 : 131.0, t1: t < 128.16 ? 120.5 : 137.2, gap: 0.32, life: 1.6, to: t < 128.16 && t > 114.4 ? [1560, 470] : null, seed: t < 128.16 ? 5 : 8, s: 1.1 }); }
+  if (smIn(t, 110.9, 113.2)) smNotes(ctx, 1235, 840, t, { t0: 110.9, t1: 111.7, gap: 0.22, life: 1.4, to: [1490, 560], seed: 12, s: 1.1 });   // v2 (note 5): his first notes reach the window before he is seen
   if (smIn(t, 115.38, 117.9)) { const [x, y] = smLadyNote(t), a = smFade(t, 115.38, 117.9, 0.25); ctx.save(); ctx.globalAlpha = a; note(ctx, x, y + 40, 2.4, C.red); smMiniLady(ctx, x - 14, y + 16, 0.36, t); ctx.restore(); }
   smFbCloud(ctx, t, T); smFbHearts(ctx, t, T); smS11Balloon(ctx, t, sg);
   if (whip) smFbSchool(ctx, t);
@@ -231,8 +239,9 @@ function smFbSchool(ctx, t) {
     if (t < 144.4 + d) { const a = kp.HR, b = kp.HL; smTablet(ctx, (a[0] + b[0]) / 2, (a[1] + b[1]) / 2 - 14, 0.55, { n: 3, seed: 20 + i }); }
     else { const q = t - 144.4 - d; if (q < 1.4) smTablet(ctx, x0 + (i - 1) * 40 + q * 60, 640 - 420 * q + 520 * q * q, 0.55, { rot: q * 9 * (i % 2 ? 1 : -1), n: 3, seed: 20 + i }); } });
 }
-const SM_FB_CAM = [[107.66, 1500, 560, 1.4], [111.4, 1490, 600, 1.4], [114.5, 1480, 640, 1.4], [116.8, 1490, 560, 1.4], [117.9, 1490, 560, 1.4], [118.9, 1470, 430, 1.7], [128.16, 1470, 430, 1.7], [129.5, 1440, 600, 1.4],
-  [137.58, 1440, 600, 1.4], [138.5, 1470, 430, 1.7], [142.3, 1470, 430, 1.7], [142.62, 560, 680, 1.2], [146.58, 560, 680, 1.2]];
+// v2 (note 5): open close on the reading bust (zoom 1.6), pull back and down on رجلًا 111.34 to reveal the street
+const SM_FB_CAM = [[107.66, 1560, 520, 1.85], [111.34, 1560, 520, 1.85], [112.4, 1490, 600, 1.4], [114.5, 1480, 640, 1.4], [116.8, 1490, 560, 1.4], [117.9, 1490, 560, 1.4], [118.9, 1470, 430, 1.7], [128.16, 1470, 430, 1.7], [129.5, 1440, 600, 1.4],
+  [137.58, 1440, 600, 1.4], [138.5, 1470, 430, 1.7], [142.45, 1470, 430, 1.7], [142.75, 560, 680, 1.2], [146.58, 560, 680, 1.2]];
 
 // ---------- S14-S15: present day; the scholar leaves, rescues the book, walks home thinking ----------
 const SM_S14X = smX([[150.6, 1420], [151.6, 1398], [152.3, 1398], [152.9, 1452], [156.84, 1452], [166.38, 760]]);

@@ -62,3 +62,15 @@ const a146Steps = (t, falls, amp = 3) => kick(t, falls, amp, 11, 9);
 // dashed line helper (world units)
 function a146Dash(ctx, a, b, p = 1, o = {}) { if (p <= 0) return; const x = K.lerp(a[0], b[0], p), y = K.lerp(a[1], b[1], p); ctx.save(); ctx.setLineDash(o.dash || [16, 12]); ctx.lineCap = 'round';
   ctx.lineWidth = (o.w || 7) + 6; ctx.strokeStyle = C.black; ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(x, y); ctx.stroke(); ctx.lineWidth = o.w || 7; ctx.strokeStyle = o.col || C.red; ctx.stroke(); ctx.restore(); }
+// v2 bow: feet planted, tip capped, the rest of the bow from squash, a lowered head and arms swept out; a small rise (0.12 s) before it.
+//   returns {k (0..1 bow amount), tip, sq, lid}; a = bow start, d = hold length (down 0.22 s, hold, up 0.3 s)
+function a146Bow(t, a, d = 0.5, amt = 0.26) {
+  const k = t < a ? 0 : t < a + 0.22 ? K.ease.out((t - a) / 0.22) : t < a + 0.22 + d ? 1 : 1 - K.ease.inOut(K.clamp((t - a - 0.22 - d) / 0.3));
+  const rise = 0.035 * pulse(t, a - 0.14, 0.14);
+  return { k, tip: Math.min(0.3, amt) * k, sq: 1 + rise - 0.1 * k, lid: 0.8 * k };
+}
+// apply a bow (sum of several) to a person: tip, sq, lid, head drop, gaze down, both arms swept out to the sides
+function a146ApplyBow(P, b) { if (b.k <= 0.001) return; P.tip = (P.tip || 0) + b.tip; P.sq = (P.sq ?? 1) * b.sq; P.lid = Math.max(P.lid || 0, b.lid); P.drop = (P.drop || 0) + 10 * b.k;
+  P.gaze = [P.gaze ? P.gaze[0] * (1 - b.k) : 0, K.lerp(P.gaze ? P.gaze[1] : 0, 1, b.k)];
+  const R = Array.isArray(P.hR) ? P.hR : A146H.rest, L = Array.isArray(P.hL) ? P.hL : A146H.restL;
+  P.hR = a146Mix(R, [78, -70], b.k); P.hL = a146Mix(L, [-78, -70], b.k); }

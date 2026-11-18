@@ -11,3 +11,9 @@
 - `goldGlow` (`smGlow`): rays and star glints behind a figure.
 - `lampIcon`, `smTick`, `smCross`, `smEyeIcon`, `smMedallion` (knowledge emblems), `smClosedBoard` (swinging CLOSED sign), `smImpact` (knock lines), `smSpeed` (whip-pan lines).
 - Set pieces: `schoolRoom` dressing (mats, cushions, book stand with lesson tablet, tablet shelf: `smSchoolDressing`, `smStand`, `smMat`, `smCushion`) and the window-bust pattern (`smTeachWin` + `smBust`: person clipped to a townWindow with a sill ledge on top).
+
+## v2 additions (Fable review 1)
+- `graveMarker` gained `noMound` (stone only, for stacking it on other props).
+- `riseFromGround` reveal pattern (S15 tower): clip the content to the ground line and slide it up with `settleTo` instead of hiding it behind a cover patch. Guide rule proposed by Fable: never hide a later reveal behind a colour-matched patch; and props inside "evidence" pictures must not share a silhouette with the thing being denied (milestone vs grave).
+- `panelWashUnderFigures`: draw a panel-space vignette (dream wash) between the set and the figures (store the panel transform before `K.camera`, `setTransform` it inside the segment) so characters keep full colour.
+- `compareInsert` (S13): two stacked framed pictures on a Ben-Day field with caption labels and a thought tail to a bust; reusable for "what was said vs what he assumed".

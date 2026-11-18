@@ -157,7 +157,8 @@ function a46fightWorld(ctx, t, o = {}) {   // S11-S13 shared ground action (figh
   if (!o.noHunter) {
     const HP = a46throwHunter(t);
     a46hunter(ctx, HP); a46bushFront(ctx);
-    if (t >= A46_S13.rise) { a46upper(ctx, HP, 812, a46hunter); if (t < A46_S13.release) { const hd = a46pHead(HP); ctx.save(); ctx.translate(hd[0], hd[1] - 96); ctx.scale(1.6, 1.6); a46net(ctx, 'roll', { x: 0, y: 0, rot: 0.1 }); ctx.restore(); } }
+    if (t >= A46_S13.rise) { a46upper(ctx, HP, 812, a46hunter); if (t < A46_S13.release) { const hw = HP.hands ? HP.hands.map((q) => a46L2W(HP, q)) : null, hd = a46pHead(HP), bc = hw ? [(hw[0][0] + hw[1][0]) / 2, (hw[0][1] + hw[1][1]) / 2 - 30] : [hd[0], hd[1] - 96];   // v3: the bundle sits on the fists until the whip
+      ctx.save(); ctx.translate(bc[0], bc[1]); ctx.scale(2.3, 1.15); a46net(ctx, 'roll', { x: 0, y: 0, rot: 0.1 }); ctx.restore(); } }
     else { const f = a46featherW(HP), up = (t >= A46_S11.feather ? 12 * a46e(t, A46_S11.feather, 0.4) : 0) + (t >= A46_S13.feather ? 22 * a46e(t, A46_S13.feather, 0.3) : 0); a46feather(ctx, f[0] + 20, f[1] + 48 - up - 3 * a46tap(t, [116.0, 124.0], 0.3), -0.3 + 0.15 * a46e(t, A46_S13.feather, 0.3), 1);
       if (a46in(t, A46_S13.eyes, A46_S13.rise)) { const k = a46e(t, A46_S13.eyes, 0.15), bx = A46_BUSH - 40, by = 800; ctx.save(); ctx.globalAlpha = k; shape(ctx, ell(bx, by, 52, 24, 20), '#0d2a12', { lw: 0 });   // the eyes in the bush
         for (const dx of [-17, 17]) { ctx.save(); ctx.translate(bx + dx, by); ctx.scale(1, Math.max(0.1, k)); eye2(ctx, 0, 0, 'open', -0.9, 0.3, 0, C.white, false); ctx.restore(); } ctx.restore(); } }
@@ -308,10 +309,10 @@ function a46cloud15b(c, t) {   // the danger he feared from the start: the net a
 function a46s15(ctx, t) {
   const T = A46_S15; skyCycle(ctx, a46U11(t), { t, w: 1600, hills: false, sun: false }); ground(ctx, { w: 1600 });
   const C0 = A46_CAGE15, crot = swing(t, 150.78, 0.03, 1.6, 2);
-  a46cage(ctx, C0[0], C0[1], A46_CS15, 'back', { rot: crot });
+  a46cage(ctx, C0[0], C0[1], A46_CS15, 'back', { rot: crot, doorBack: true, dx: 20 });
   const sp = a46s15Sp(t); a46bird(ctx, { ...sp, glint: (t - T.look - 0.3) / 0.6 });
   if (t >= T.fall && t < T.out) { const L = a46badgeLoose(t); a46medal(ctx, L.x, L.y, A46_SPS15 * 1.15, L.rot); }
-  a46cage(ctx, C0[0], C0[1], A46_CS15, 'front', { rot: crot, bars: A46_BARS15, thin: true, dx: 20 });
+  a46cage(ctx, C0[0], C0[1], A46_CS15, 'front', { rot: crot, bars: A46_BARS15, thin: true, dx: 20, doorBack: true, ring: -28 });
   if (t >= T.out) { const L = a46badgeLoose(t); a46medal(ctx, L.x, L.y, A46_SPS15 * 1.15, L.rot, { limp: L.limp }); }
   const H = a46sHead(sp), p1 = a46e(t, T.cloud, 0.5, 'lin') * (1 - a46e(t, T.net, 0.25)), p2 = a46e(t, T.net - 0.1, 0.45, 'lin') * (1 - a46e(t, T.fade, 0.4));
   if (p1 > 0) thoughtCloud(ctx, 880, 590, 190, 140, t, { p: p1, tail: [H[0] - 10, H[1] - 26], scale: 0.22, at: [600, 830], bg: C.blue, inside: a46cloud15a });
@@ -340,7 +341,7 @@ function a46s16(ctx, t) {
   a46medal(ctx, A46_BADGE[0], A46_BADGE[1], A46_SPS15 * 1.15, 1.3, { limp: 1 });
   if (a46in(t, T.glint, T.glint + 0.6)) a46glint(ctx, A46_BADGE[0] + 4, A46_BADGE[1] - 10, 30, (t - T.glint) / 0.6);
   // the far king (v2): in profile on the mountain top, long neck, crest, closed train hanging, a foot tapping, beside an empty post
-  { const mx = A46_MTN[0] + 18, my = 682; shape(ctx, [[mx - 62, my], [mx - 58, my - 30], [mx - 44, my - 32], [mx - 40, my]], STONE2, { lw: 3, seed: 190 }); a46ghostSp(ctx, mx - 51, my - 31, 0.28, 1, 0.55);
+  if (t >= 171.0) { const mx = A46_MTN[0] + 18, my = 682; shape(ctx, [[mx - 62, my], [mx - 58, my - 30], [mx - 44, my - 32], [mx - 40, my]], STONE2, { lw: 3, seed: 190 });   // v3: gated (no early reveal); the ghost outline removed, the post beside him stays bare
     const P = { x: mx, y: my, s: 0.26, dir: -1, t, fan: 0, crown: 1, neck: 1.08, gaze: [-1, 0.2], tapF: a46tap(t, [171.7, 172.3, 172.9, 173.5, 174.1, 174.7, 175.3, 175.9], 0.3), lid: Math.max(0.3, blink(t, 61)) };
     P.headRot = 0.15 * Math.sin(t * 0.9); a46pea(ctx, P); }
   if (t >= 171.0) return;   // the men are gone by the time the camera leaves the badge

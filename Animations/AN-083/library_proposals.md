@@ -14,3 +14,7 @@
 - Camera helper `an83Ck(t, x, zoom)` putting feet at a fixed fraction of the panel height (`AN83_FY`).
 - "Reveal insert" pattern (an83InsertDraw): plain gradient, one arm from the frame edge, one prop, radial burst on the cue word.
 - Drawstring `purse` with gathered frill and cord ends; falling dust and moth for "empty purse".
+
+## v3 (round-2 review)
+- Held-prop face clearance clamp (`an83_cast.js`, bundle loop): lowers the holding hands until a held sheaf's top is >= 10 screen px below the holder's chin (zoom-aware), slide-in-fist fallback; deliberate raises are separate props. Candidate for a shared held-bundle helper.
+- `an83Purse` v3: limp leather drawstring pouch with swinging sides and gravity-hanging drawstrings (`flap`, `t` options).

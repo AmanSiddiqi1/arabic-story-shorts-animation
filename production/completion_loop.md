@@ -21,7 +21,7 @@ python3 tools/cloud/cloud.py list               # runs still going / finished bu
 - A running review/revise task whose agent is gone: `prod.py release <ID> <stage>` and launch it again.
 - A finished run not yet fetched: `cloud.py fetch <run> --purge`.
 - Network errors stop agents ("ENOTFOUND"): resume the same agent (SendMessage) or release and relaunch.
-- max_opus raised (6, then 9) in this loop: revise tasks stay 'running' until their cloud v2 is fetched, with no agent alive; actual Opus agents are still kept to 3 at a time.
+- max_opus raised (6, 9, 25, then 32 on 2026-11-18) in this loop: revise tasks stay 'running' until their cloud v2 is fetched, with no agent alive; actual Opus agents are still kept to 3 at a time.
 - Owner attention (subtitle text, not changed by the loop): KD-015 English at 127.08 s omits 'in the air' (Fable review 1).
 - sync_public.py / make_public.py / cloud.py submit need a fully clean tracked tree, so Opus revisions run in waves of up to 3; commit, push, sync and submit only between waves (when no Opus agent is editing).
 - Owner attention (subtitle text): AN-001 English at 161.12-166.86 drops 'with him', 'he' ambiguous (Fable review 1).
@@ -33,3 +33,6 @@ python3 tools/cloud/cloud.py list               # runs still going / finished bu
 - GitHub submissions were capped at 12 per rolling 24 h (a local guard in cloud.py/plan.py, not a GitHub limit); raised to 100 on 2026-11-18 at the owner's request. Never --override. 2026-11-18 09:41: cap reached; next slots from 17:14 local. Pending runs: v3 KD-015 KD-019 KD-026; v2 AN-104 AN-105 AN-108 AN-111 AN-112 AN-113 AN-124 AN-134 (+AN-135); later batch-5 v2s.
 - Owner attention (subtitle text): AN-145 English chunk at 113.97-119.62 ends with a comma where the Arabic ends with a full stop (Fable review 1).
 - Owner attention (subtitle text): AN-146 English at 165.83 s 'and asking for his cloak back.' tense mismatch (Fable review 1).
+- Owner attention (subtitle text, not visible on screen): AN-149 chunks_en.txt chunk at 93.89 starts lower case after a full stop (Fable review 1).
+- Owner attention: AN-092 v2 151.5-152.1 s Ja'far briefly drawn across the Caliph's face (Fable round 2 polish; PASS WITH NOTES, no v3).
+- Owner attention: AN-097 v2 154.2-156.9 s the SORROW label is clipped by the balloon outline and reads 'SORROV' (Fable round 2 polish; PASS WITH NOTES, no v3).

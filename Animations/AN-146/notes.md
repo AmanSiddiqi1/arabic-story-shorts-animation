@@ -19,3 +19,9 @@ Decisions the plan left open or the measured sets changed:
 - S14: the cloak lift folds the whole front up (left flap first) so all four bale faces and the knot show; the first bale is handed to the driver in the doorway at 145.52.
 - S15-S16: merchant 470 -> 920 (154.3) -> 980 (156.32); the impostor runs in from x 520.
 - Counters and labels sit in the sky band (panel y 230-250) or beside heads, never on faces.
+
+v2 (Fable review 1), decisions:
+- `a146Dark` clips the dark to the outside of each hole in turn (intersected even-odd clips), so holes form a union. (An offscreen layer + destination-out version crashed the 5400-frame scan: canvas snapshots pile up within one task.)
+- S9 restaged (camel 230, driver 510, stack at the door 640, impostor 810, watchman 925); the watchman's exit right / re-entry left pushing the camel is a staging gag added to keep the camel's entry from the left.
+- Quay: confrontation marks thief 760, merchant 980, camel 1300, driver 1680 (off the wide shot); ending camera zoom 0.85 (below the strip's height, so a quay extension is drawn under y 1232 after 173.5 s).
+- Camel headTurn kept under 0.5 (past it the head flips behind the load).

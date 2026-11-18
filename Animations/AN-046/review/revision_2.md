@@ -1,0 +1,10 @@
+# AN-046 revision 2 (v3 source), answers to fable_review_2.md
+
+Narration, subtitles, chunking, word timing and film length (176.33 s) unchanged. Stills: scratch/AN-046-v3/v3a.jpg, v3b.jpg, v3c.jpg.
+
+1. Far king before his reveal (164.5-171.0): DONE. `a46s16` draws the stone post and the mountain peacock only when t >= 171.0 (camera is on the badge at zoom 2.4 then, so the pop is off screen); the bare mountain stays as scenery. Checked 164.6, 165.0, 168.1, 169.5, 170.9, 171.0 (no peacock) and 171.4, 172.5, 175.0 (present). The hunter's face is still in the 167.86-168.76 cut-in as in v2 (not restaged).
+2. Cage close-up (150.8-164.5): DONE. Clouds keep the old framing; camera holds zoom 2.35 to 159.4, then pushes in to `a46cam(950, 775, 3.2)` by 160.4 and holds to 164.5 (tilt keys at 161.5-162.8 removed). Cage about 480 px of the 972 px panel, head about 110 px; the badge's resting place (x 878) stays in frame. Middle ring moved from -60 to -28 (below the badge); the door frame and latch moved to the far side of the cage, drawn faint behind the bird, clear of the tail (`a46cage` options `ring`, `doorBack`, used only in S15). The optional zoom 2.6 opening was not done (clouds would need re-placing).
+3. Empty place beside the king (171.3-176.3): DONE (option 1). The ghost sparrow is removed; the bare post stands beside him under THE END. A clean white dashed outline was tried first and still read as smoke at this scale.
+4. Net bundle floats (135.2-135.64): DONE. Until the release the bundle centre is the midpoint of the two fists (from the drawn hand positions) raised 30 units, drawn after the hands, flatter and wider (scale 2.3 x 1.15) so it rests on both fists; release on the whip unchanged.
+5. Crows half out of frame (58.7-60.4): DONE. Camera starts at `a46cam(650, 770, 1.8)` at 57.8 and eases to 720 by 60.9; the front crow lands 65 units further right (x0 625, x1 735, approach from -15), so the two crows no longer overlap. Both whole and separate at 59.3 and 60.14; the 63.1 SNAP bag unchanged.
+Not required items (ghost at 42-45, sun ray at 170.5, fist height at 146.3): SKIPPED (not needed for v3, kept conservative).

@@ -1,5 +1,6 @@
 // ===== AN-149 rig: timing helpers, body-local <-> world for the Library person, tracks (pattern of the AN-135 rig, prefix sm) =====
-const SM_DUR = 174.9;      // 171.897 narration + 3.0 end hold (plan)
+const SM_DUR = 174.9;
+let SM_PTF = null;        // panel transform (before the camera), for panel-space drawing inside a world-space segment      // 171.897 narration + 3.0 end hold (plan)
 const SM_SH = -132;        // shoulder y of the person figure (body-local)
 const smB = (t, a, d, e = 'inOut') => K.ease[e](K.clamp((t - a) / Math.max(1e-6, d)));
 const smIn = (t, a, b) => t >= a && t < b;

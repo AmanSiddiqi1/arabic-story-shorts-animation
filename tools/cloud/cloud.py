@@ -5,7 +5,7 @@
                                      put in the public render repository's release (publishing them: the owner must have cleared the rights)
   sync-check                         verify the public repo's snapshot is exactly the current private HEAD
   (global) --private                 target the private repository (fallback pipeline) instead of the public render repository
-  submit  ID... [--version v1] [--yes] [--force] [--when-idle]   start a render run (one run at a time, 2 films at a time inside it)
+  submit  ID... [--version v1] [--yes] [--force] [--when-idle]   start a render run (one run at a time, up to 10 films at a time inside it)
   status  [RUN]  [--watch]           progress of a run (default: the latest)
   fetch   [RUN]  [--force] [--purge] download MP4 + QC report into Animations/<ID>/renders|qc, record in production.db
   list                               recent render runs (works after an interrupted session: no local state needed)

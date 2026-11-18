@@ -19,3 +19,9 @@ Decisions the plan left open / measured on the set:
 - The woman is drawn through palaceHall `behind` while she is in the doorway (enter S6/S14, exit S16 with her children; the door closes over them).
 
 Skipped or simplified (small): the knee save of the stack (13.9, done as a body counter-tip), the scarf slipping in the wail, the S10 tears falling at each footfall (steady tear drops instead), the robe arranging at 157.7 (pose only), the "?" sound arcs from C's reading (squiggle notes instead).
+
+## v2 (revision 1, from review/fable_review_1.md; details in review/revision_1.md)
+- Pupil D's mat moved from x 500 to 470 (whole film) so the teaching pupil can stand left of the lesson stand (x 560) without overlap.
+- The woman stands at x 600 in S15-S16 (where she stops in S14), so she no longer hides pupil D.
+- Letter world (S12) raised 100 px; the gifts are drawn in panel space (ilLetterGifts) with a new story-local side-view snuffer (ilConeSnuffer).
+- The woman's inset in S12 is top-left; she has no drawable brows, so "one brow up" is played as head tilt + "o" + a "?".

@@ -7,3 +7,7 @@
 5. `storeroom(ctx, o)` (`a146Store` + `a146StoreCone`): cutaway with a back-left doorway, day light cone, crates, barrels, jars, shelf.
 6. Small props: `candle` (melt, lit, flicker), `ledger` (closed/open, page flip), `keyRing` (swing, glint), silver `coin` + `coinFly`, `portraitMedallion`, picture `balloon` with cells, `silhouette` icon cache (`a146Sil`), guard `helmet` + `lantern`, `nightOverlay` with soft light holes (`a146Dark`).
 7. Costume preset `guard` (servant body in yellow with blue sash + pointed helmet).
+
+v2 additions (from Fable review 1):
+- `darkOverlay(ctx, a, rect, holes)` (`a146Dark`, src/a146_props.js): night/dark-room overlay with soft stepped light holes made by intersecting one even-odd clip per hole, so overlapping lights form a union (an offscreen layer + destination-out also works visually but exhausts memory in long single-task scans) (replaces even-odd versions that cancel where two lights overlap).
+- `bow(t, a, d, amt)` + `applyBow(P, b)` (`a146Bow`, `a146ApplyBow`, src/a146_rig.js): feet-planted bow with capped tip, squash, head drop, lowered lids and swept arms, small rise before.

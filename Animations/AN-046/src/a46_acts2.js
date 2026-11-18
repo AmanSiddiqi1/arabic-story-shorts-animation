@@ -14,7 +14,7 @@ function a46s6Hunter(t) {
   if (t >= A46_S6.up) { const k = settleTo(t, A46_S6.up, 0, 1, 0.25, 0.12); P.kneel = 1 - Math.min(1, k); P.lean = -0.22 * k; P.sq = 0.82 + 0.18 * k; P.handR = P.handL = null; const hl = 14 * a46tap(t, [63.4, 63.75], 0.3); P.handLW = [1050 + hl, 800]; P.handRW = [1078 + hl, 780]; P.mouth = 'smile'; P.brow = -0.5; P.look = -1; P.dir = -1; }   // v2: stands up out of the bush hauling the rope
   P.lid = Math.max(0, blink(t, 37)); return P;
 }
-const A46_CROW = [{ land: 59.1, x0: 560, x1: 700, s: 1.22, from: [-80, 380] }, { land: 59.27, x0: 470, x1: 610, s: 1.14, from: [-170, 380] }];   // v2: 90 apart, the second 5 frames behind
+const A46_CROW = [{ land: 59.1, x0: 625, x1: 735, s: 1.22, from: [-15, 380] }, { land: 59.27, x0: 470, x1: 610, s: 1.14, from: [-170, 380] }];   // v2: the second 5 frames behind; v3: 155 apart (both whole and separate)
 function a46s6Crow(i, t) {
   const C0 = A46_CROW[i], d = i * 0.17, P = { kind: 'crow', s: C0.s, dir: 1, seed: 80 + i, y: A46_GR };
   if (t < C0.land) { if (t < C0.land - 1.2) return null; Object.assign(P, a46fly(t, [[C0.land - 1.2, C0.from[0], C0.from[1]], [C0.land, C0.x0, A46_GR]], { hz: 4, arc: -30, ph: i })); P.fly = true; return P; }
