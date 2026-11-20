@@ -30,21 +30,35 @@ function abBox(ctx, x, y, w, h) {   // device-pixel bbox of the world rect aroun
   const x1 = Math.min(cv.width, Math.ceil(Math.max(...pts.map((q) => q[0])))), y1 = Math.min(cv.height, Math.ceil(Math.max(...pts.map((q) => q[1]))));
   return { m, x0, y0, bw: x1 - x0, bh: y1 - y0 };
 }
-// abCel(ctx, [x, y, w, h], draw, o): o.m colour model name (or o.tint + o.k), o.rim neon rim colour, o.light [lx, ly], o.alpha
+// abCel(ctx, [x, y, w, h], draw, o): o.m colour model name (or o.tint + o.k), o.rim neon rim colour, o.light [lx, ly], o.alpha,
+// o.shade: a HARD shade shape on the side away from the light (the art minus itself shifted toward the light by o.shadeD units),
+// multiplied in the given tone; o.line: outlines lifted to this colour (a 'lighten' pass: the dark purple trace becomes a dark
+// version of the fills, so lines no longer read black at phone size). Nested calls use their own layers (depth).
+let AB_DEPTH = 0;
 function abCel(ctx, bb, draw, o = {}) {
-  const M = o.m ? AB_MODEL[o.m] : { tint: o.tint || '#ffffff', k: o.k ?? 0 }, k = (o.k ?? M.k) * (o.extra ?? 1);
-  if (k < 0.01 && !o.rim) { if (o.alpha != null) { ctx.save(); ctx.globalAlpha *= o.alpha; draw(ctx); ctx.restore(); } else draw(ctx); return; }
+  const M = o.tint ? { tint: o.tint, k: o.k ?? 0 } : o.m ? AB_MODEL[o.m] : { tint: '#ffffff', k: o.k ?? 0 }, k = (o.k ?? M.k) * (o.extra ?? 1);
+  if (k < 0.01 && !o.rim && !o.shade && !o.line) { if (o.alpha != null) { ctx.save(); ctx.globalAlpha *= o.alpha; draw(ctx); ctx.restore(); } else draw(ctx); return; }
   const B = abBox(ctx, ...bb); if (B.bw <= 2 || B.bh <= 2) return;
-  const cv = ctx.canvas, A = abLay('a', cv.width, cv.height), a = A.getContext('2d'), T = abLay('b', cv.width, cv.height), b = T.getContext('2d');
+  const dep = AB_DEPTH++, cv = ctx.canvas, A = abLay('a' + dep, cv.width, cv.height), a = A.getContext('2d'), T = abLay('b' + dep, cv.width, cv.height), b = T.getContext('2d');
+  try {
   for (const g of [a, b]) { g.setTransform(1, 0, 0, 1, 0, 0); g.globalCompositeOperation = 'source-over'; g.globalAlpha = 1; g.clearRect(B.x0, B.y0, B.bw, B.bh); }
   a.save(); a.beginPath(); a.rect(B.x0, B.y0, B.bw, B.bh); a.clip(); a.setTransform(B.m); draw(a); a.restore();
+  const sc = Math.hypot(B.m.a, B.m.b), cp = (op) => { b.globalCompositeOperation = op; b.drawImage(A, B.x0, B.y0, B.bw, B.bh, B.x0, B.y0, B.bw, B.bh); };
+  const onto = (op) => { a.save(); a.beginPath(); a.rect(B.x0, B.y0, B.bw, B.bh); a.clip(); a.globalCompositeOperation = op; a.drawImage(T, B.x0, B.y0, B.bw, B.bh, B.x0, B.y0, B.bw, B.bh); a.restore(); };
   if (k >= 0.01) {   // multiply the model tint into the art, alpha kept
-    b.drawImage(A, B.x0, B.y0, B.bw, B.bh, B.x0, B.y0, B.bw, B.bh); b.globalCompositeOperation = 'multiply'; b.fillStyle = M.tint; b.fillRect(B.x0, B.y0, B.bw, B.bh);
-    b.globalCompositeOperation = 'destination-in'; b.drawImage(A, B.x0, B.y0, B.bw, B.bh, B.x0, B.y0, B.bw, B.bh);
-    a.globalAlpha = Math.min(1, k * 1.6); a.globalCompositeOperation = 'source-atop'; a.drawImage(T, B.x0, B.y0, B.bw, B.bh, B.x0, B.y0, B.bw, B.bh); a.globalAlpha = 1; a.globalCompositeOperation = 'source-over';
+    b.clearRect(B.x0, B.y0, B.bw, B.bh); cp('source-over'); b.globalCompositeOperation = 'multiply'; b.fillStyle = M.tint; b.fillRect(B.x0, B.y0, B.bw, B.bh);
+    cp('destination-in'); a.globalAlpha = Math.min(1, k * 1.6); onto('source-atop'); a.globalAlpha = 1;
   }
-  if (o.rim) {      // hard neon rim on the light side: the art minus itself shifted toward the light
-    const [lx, ly] = o.light || [-1, -1], l = Math.hypot(lx, ly) || 1, d = (o.rimW ?? 3.5) * Math.hypot(B.m.a, B.m.b);
+  if (o.line) {     // coloured lines: lighten every pixel to at least the line colour, then keep the art's alpha
+    b.clearRect(B.x0, B.y0, B.bw, B.bh); cp('source-over'); b.globalCompositeOperation = 'lighten'; b.fillStyle = o.line; b.fillRect(B.x0, B.y0, B.bw, B.bh); cp('destination-in'); onto('source-atop');
+  }
+  if (o.shade) {    // hard shade on the far side: the art minus itself shifted toward the light
+    const [lx, ly] = o.shadeLight || o.light || [-1, -1], l = Math.hypot(lx, ly) || 1, d = (o.shadeD ?? 15) * sc;
+    b.clearRect(B.x0, B.y0, B.bw, B.bh); cp('source-over'); b.globalCompositeOperation = 'destination-out'; b.drawImage(A, B.x0, B.y0, B.bw, B.bh, B.x0 + lx / l * d, B.y0 + ly / l * d, B.bw, B.bh);
+    b.globalCompositeOperation = 'source-in'; b.fillStyle = o.shade; b.fillRect(B.x0, B.y0, B.bw, B.bh); onto('multiply');
+  }
+  if (o.rim) {      // hard neon rim on the light side: the art minus itself shifted away from the light
+    const [lx, ly] = o.light || [-1, -1], l = Math.hypot(lx, ly) || 1, d = (o.rimW ?? 3.5) * sc;
     b.globalCompositeOperation = 'copy'; b.drawImage(A, B.x0, B.y0, B.bw, B.bh, B.x0, B.y0, B.bw, B.bh);
     b.globalCompositeOperation = 'destination-out'; b.drawImage(A, B.x0, B.y0, B.bw, B.bh, B.x0 - lx / l * d, B.y0 - ly / l * d, B.bw, B.bh);
     b.globalCompositeOperation = 'source-in'; b.fillStyle = o.rim; b.fillRect(B.x0, B.y0, B.bw, B.bh); b.globalCompositeOperation = 'source-over';
@@ -53,7 +67,18 @@ function abCel(ctx, bb, draw, o = {}) {
   ctx.drawImage(A, B.x0, B.y0, B.bw, B.bh, B.x0, B.y0, B.bw, B.bh);
   if (o.rim) { ctx.globalAlpha *= o.rimAlpha ?? 0.95; ctx.drawImage(T, B.x0, B.y0, B.bw, B.bh, B.x0, B.y0, B.bw, B.bh); }
   ctx.restore();
+  } finally { AB_DEPTH--; }
 }
+// the cast finish per colour model: light direction, hard shade tone (multiplied), line colour, optional rim
+const AB_FIN = {
+  dawn: { light: [1, -0.5], shade: '#c4a2c8', line: '#5a3448' }, morning: { light: [1, -0.8], shade: '#bcb2de', line: '#47395c' },
+  afternoon: { light: [-1, -0.6], shade: '#caa2bc', line: '#583448' }, dusk: { light: [-1, -0.2], shade: '#a486c8', line: '#3e2858', rim: '#ffa070' },
+  late: { light: [-1, -0.2], shade: '#9a86c8', line: '#342650' }, cave: { light: [1, -0.3], shade: '#b88ac8', line: '#4a2a3a' },
+  lamp: { light: [1, -0.3], shade: '#9c8ad8', line: '#4a2a44', rim: '#ffb860' }, night: { light: [1, -0.3], shade: '#8a7ac8', line: '#30284e' },
+  predawn: { light: [1, -0.4], shade: '#9a9ad0', line: '#2e2e52' }, gold: { light: [1, -0.2], shade: '#c890a8', line: '#5a2a2a' }, sil: {},
+};
+// abCast(ctx, P, w, h, draw, m, o): a person-sized cel through the story finish (the palette already carries the model tint)
+function abCast(ctx, P, w, h, draw, m, o = {}) { const s = P.s || 1, F = AB_FIN[m] || {}; abCel(ctx, [P.x, P.y + 10 * s, w * s, h * s], draw, { k: 0, ...F, rim: null, ...o }); }
 
 // ---------- timing helpers ----------
 const AB_T2 = (t) => celStep(t, THEME.celFps || 12);     // characters on twos
@@ -107,39 +132,61 @@ function abBlob(ctx, cx, cy, rx, ry, fill, shade, o = {}) { celShade(ctx, ell(cx
 const abDark = (c, k = 0.45) => abMul(c, '#2b1a3a', k);
 
 // ---------- props ----------
-// sesameRock: the great rock (seam at x, base y), 650 x 650 at s 1. o: {open 0..1, crack 0..1, glow 0..1, model, s, t, light}
-const AB_ROCK_COL = {
-  afternoon: ['#c49a74', '#7e5a6c', '#f6cf98'], dusk: ['#7a5486', '#45305e', '#ff9a5a'], late: ['#4f4072', '#2c2148', '#9c7ad8'],
-  predawn: ['#3a3a5e', '#22223e', '#8ab0d0'], sil: ['#241830', '#160e20', '#3a2a4a'],
+// sesameRock: the great rock (seam at x, base y), 650 x 650 at s 1. o: {open 0..1, crack 0..1, glow 0..1, model, s, t}
+// Closed and uncracked it is ONE painted mass (airbrushed top light, darker base, soft asymmetric weathering, moss patches, a warm
+// sunset rim in the dusk models): no seam line, so the split is a real reveal. Split, the same painting is clipped into two halves.
+const AB_ROCK_COL = {   // fill, shade, top light, contact shadow, rim (dusk side)
+  afternoon: ['#c49a74', '#7e5a6c', '#f6d4a4', '#6a4a5a', null], dusk: ['#8a5a8a', '#46305e', '#e89aa0', '#2a1a40', '#ff9a5a'],
+  late: ['#5a4878', '#2c2148', '#9c7ad8', '#1a1230', '#d87a6a'], predawn: ['#4a4a72', '#24243e', '#9ab4d8', '#141a36', '#ffc8a0'],
+  sil: ['#241830', '#160e20', '#3a2a4a', '#0e0814', null],
 };
+const AB_ROCK_L = [[0, -650], [-130, -632], [-230, -560], [-292, -430], [-322, -260], [-330, -110], [-318, 4], [0, 4]];
+const AB_ROCK_R = [[0, -650], [120, -626], [236, -540], [300, -400], [326, -220], [332, -70], [322, 4], [0, 4]];
+const AB_ROCK_ALL = [...AB_ROCK_L.slice(0, -1), ...AB_ROCK_R.slice(1, -1).reverse()];
+function abRockPaint(m) {
+  return K.cached('ab:rockpaint:' + m, () => { const Q = 1.5, c = K.layer(840 * Q, 840 * Q), x = c.getContext('2d'), [fill, shade, hi, , rim] = AB_ROCK_COL[m] || AB_ROCK_COL.afternoon, R = K.rng(71);
+    x.scale(Q, Q); x.translate(420, 720);
+    x.save(); K.poly(x, AB_ROCK_ALL, true); x.clip();
+    const g = x.createLinearGradient(0, -650, 0, 0); g.addColorStop(0, abMul(fill, hi, 0.5)); g.addColorStop(0.55, fill); g.addColorStop(1, abMul(shade, fill, 0.3)); x.fillStyle = g; x.fillRect(-400, -700, 800, 720);
+    abGlaze(x, -150, -470, 360, hi, 0.55); abGlaze(x, 210, -130, 380, abDark(shade, 0.3), 0.55); abGlaze(x, 260, -420, 220, abDark(shade, 0.2), 0.3);
+    x.save(); x.filter = 'blur(5px)'; for (const [bx, by, bw, bh, a] of [[-120, -300, 260, 46, 0.22], [110, -470, 200, 36, 0.18], [-40, -150, 330, 50, 0.2], [190, -260, 160, 40, 0.16]]) { x.fillStyle = K.rgba(abDark(shade, 0.25), a); x.beginPath(); x.ellipse(bx, by, bw, bh, -0.12, 0, 7); x.fill(); } x.restore();
+    x.save(); x.filter = 'blur(1.5px)'; x.lineCap = 'round';   // soft asymmetric weathering, never a vertical line at the seam
+    for (let i = 0; i < 16; i++) { const px = -290 + R() * 600, py = -600 + R() * 580; if (Math.abs(px) < 50) continue; const len = 30 + R() * 90, an = -0.6 + R() * 1.2 + (R() < 0.5 ? Math.PI : 0);
+      x.strokeStyle = K.rgba(abDark(shade, 0.35), 0.25 + R() * 0.3); x.lineWidth = 2 + R() * 3; x.beginPath(); x.moveTo(px, py); x.quadraticCurveTo(px + Math.cos(an) * len * 0.5 + 10, py + Math.sin(an) * len * 0.5 + 12, px + Math.cos(an) * len, py + Math.sin(an) * len); x.stroke(); }
+    x.restore();
+    x.save(); x.filter = 'blur(7px)'; for (const [mx, my, mr, a] of [[-250, -30, 70, 0.55], [-110, -10, 50, 0.45], [230, -20, 60, 0.4], [-285, -300, 34, 0.35], [140, -560, 28, 0.25]]) { x.fillStyle = K.rgba(abMul('#5f9a4a', fill, 0.45), a); x.beginPath(); x.ellipse(mx, my, mr, mr * 0.5, 0, 0, 7); x.fill(); } x.restore();
+    if (rim) { const rg = x.createLinearGradient(-340, 0, -120, 0); rg.addColorStop(0, K.rgba(rim, 0.95)); rg.addColorStop(1, K.rgba(rim, 0)); x.save(); x.filter = 'blur(3px)'; x.strokeStyle = rg; x.lineWidth = 34; K.poly(x, AB_ROCK_ALL, true); x.stroke(); x.restore(); }
+    x.restore();
+    x.save(); x.strokeStyle = abDark(shade, 0.45); x.lineWidth = 4; x.lineJoin = 'round'; K.poly(x, AB_ROCK_ALL, true); x.stroke(); x.restore();
+    return c; });
+}
+function abRockShadow(m) { return K.cached('ab:rockshadow:' + m, () => { const c = K.layer(1000, 200), x = c.getContext('2d'); x.filter = 'blur(14px)'; x.fillStyle = K.rgba((AB_ROCK_COL[m] || AB_ROCK_COL.afternoon)[3], 0.55); x.beginPath(); x.ellipse(500, 100, 420, 46, 0, 0, 7); x.fill(); return c; }); }
 function abRock(ctx, x, y, o = {}) {
-  const s = o.s || 1, op = K.clamp(o.open || 0), cr = K.clamp(o.crack || 0), gl = o.glow ?? 0, [fill, shade, hi] = AB_ROCK_COL[o.model || 'afternoon'], L = o.light || [-1, -0.6], t = o.t || 0;
+  const s = o.s || 1, op = K.clamp(o.open || 0), cr = K.clamp(o.crack || 0), gl = K.clamp(o.glow ?? 0), m = o.model || 'afternoon', [fill, shade] = AB_ROCK_COL[m], t = o.t || 0, img = abRockPaint(m);
   ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
-  const left = [[0, -650], [-130, -632], [-230, -560], [-292, -430], [-322, -260], [-330, -110], [-318, 4], [0, 4]];
-  const right = [[0, -650], [120, -626], [236, -540], [300, -400], [326, -220], [332, -70], [322, 4], [0, 4]];
-  // the door behind the halves: an arched opening full of gold light, three steps going down
-  if (op > 0.01 || gl > 0.01) {
+  ctx.drawImage(abRockShadow(m), -500, -90, 1000, 200);
+  // the door behind the halves: an arched opening full of gold light, three steps going down (only while the rock is open)
+  if (op > 0.005) {
     const D = townArchPts(-110, 110, -330, 2, 'round');
     ctx.save(); K.poly(ctx, D, true); const g = ctx.createRadialGradient(0, -90, 10, 0, -120, 300); g.addColorStop(0, '#fff6c8'); g.addColorStop(0.4, '#ffc84a'); g.addColorStop(1, '#b8601a');
     ctx.fillStyle = g; ctx.fill(); ctx.clip(); for (let k = 0; k < 3; k++) { ctx.fillStyle = k % 2 ? '#e89a2a' : '#ffd36a'; ctx.fillRect(-120 + k * 14, -40 + k * 16, 240 - k * 28, 9); }
+    if (o.inside) o.inside(ctx);   // figures going down the steps, clipped to the opening
     ctx.restore(); ink(ctx, D, 4, 3, '#6a3a1a');
   }
-  const half = (pts, sd) => { ctx.save(); ctx.translate(sd * 115 * op, 0);
-    celShade(ctx, pts, fill, shade, { light: L, off: 46, hi: o.model === 'sil' ? null : hi, lw: 4, line: abDark(shade, 0.4) });
-    ctx.save(); K.poly(ctx, pts, true); ctx.clip(); ctx.strokeStyle = abDark(shade, 0.3); ctx.lineWidth = 3; ctx.globalAlpha = 0.6;   // facet lines and a few cracks
-    for (const q of [[[sd * 60, -560], [sd * 180, -380], [sd * 160, -200]], [[sd * 240, -320], [sd * 120, -150], [sd * 200, 0]], [[sd * 40, -300], [sd * 90, -120]]]) { ctx.beginPath(); K.poly(ctx, q); ctx.stroke(); }
-    ctx.globalAlpha = 0.5; ctx.fillStyle = abMul('#5f9a4a', fill, 0.5); for (const [mx, my, mr] of [[sd * 250, -40, 50], [sd * 110, -14, 40], [sd * 280, -300, 28]]) { ctx.beginPath(); ctx.ellipse(mx, my, mr, mr * 0.45, 0, 0, 7); ctx.fill(); }
-    ctx.restore(); ctx.restore(); };
-  half(left, -1); half(right, 1);
+  if (op <= 0.005 && cr <= 0.001) ctx.drawImage(img, -420, -720, 840, 840);
+  else for (const [pts, sd] of [[AB_ROCK_L, -1], [AB_ROCK_R, 1]]) { ctx.save(); ctx.translate(sd * 115 * op, 0); ctx.save(); K.poly(ctx, pts, true); ctx.clip(); ctx.drawImage(img, -420, -720, 840, 840);
+    if (op > 0.005) { ctx.strokeStyle = abDark(shade, 0.3); ctx.lineWidth = 10; ctx.beginPath(); ctx.moveTo(0, -650); ctx.lineTo(0, 4); ctx.stroke(); } ctx.restore();
+    ctx.strokeStyle = abDark(shade, 0.45); ctx.lineWidth = 4; ctx.lineJoin = 'round'; K.poly(ctx, pts, true); ctx.stroke(); ctx.restore(); }
   // the crack of light climbing the seam
-  if (cr > 0 && op < 0.95) { const top = -650 * cr; ctx.save(); ctx.lineCap = 'round'; ctx.shadowColor = '#ffd36a'; ctx.shadowBlur = 24; ctx.strokeStyle = '#fff3b0'; ctx.lineWidth = 6 + 20 * op;
+  if (cr > 0 && op < 0.95) { const top = -650 * cr; ctx.save(); ctx.lineCap = 'round'; ctx.shadowColor = '#ffd36a'; ctx.shadowBlur = 24; ctx.strokeStyle = '#fff3b0'; ctx.lineWidth = (6 + 20 * op) * Math.min(1, cr * 3);
     ctx.beginPath(); ctx.moveTo(0, 0); for (let yy = 0; yy >= top; yy -= 40) ctx.lineTo(Math.sin(yy * 0.05) * 6, yy); ctx.stroke(); ctx.restore(); }
   ctx.restore();
-  // light: halation in the doorway and a wedge of gold on the ground fanning toward the viewer's left
-  if (gl > 0.01) { const w0 = 110 * s * Math.max(op, 0.08);
-    ctx.save(); ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = 0.55 * gl; ctx.fillStyle = '#ffcf5a';
+  // light: halation in the doorway and a wedge of gold on the ground fanning toward the viewer's left (tied to the opening)
+  const gk = gl * Math.min(1, op * 6 + (cr > 0 ? 0.5 * cr : 0));
+  if (gk > 0.01) { const w0 = 110 * s * Math.max(op, 0.08);
+    ctx.save(); ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = 0.55 * gk; ctx.fillStyle = '#ffcf5a';
     ctx.beginPath(); ctx.moveTo(x - w0, y + 2); ctx.lineTo(x + w0, y + 2); ctx.lineTo(x - 80 * s, y + 140 * s); ctx.lineTo(x - (500 + 200 * op) * s, y + 120 * s); ctx.closePath(); ctx.fill(); ctx.restore();
-    abGlow(ctx, x, y - 160 * s, 420 * s * (0.6 + 0.4 * op), gl * (0.8 + 0.05 * Math.sin(t * 9)), '#ffc24a'); }
+    abGlow(ctx, x, y - 160 * s, 420 * s * (0.6 + 0.4 * op), gk * (0.8 + 0.05 * Math.sin(t * 9)), '#ffc24a'); }
 }
 // sack: fill 1 = round and heavy, 0 = flat and folded. a coin mark on it. rot radians
 function abSack(ctx, x, y, s = 1, fill = 1, o = {}) {
@@ -147,7 +194,7 @@ function abSack(ctx, x, y, s = 1, fill = 1, o = {}) {
   ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot || 0); ctx.scale(s, s * (o.sq || 1));
   if (f > 0.2) { const w = 50 + 14 * f, h = 40 + 46 * f;
     celShade(ctx, [[-w, 0], [-w - 6, -h * 0.5], [-w * 0.6, -h], [-16, -h - 6], [-10, -h - 26], [10, -h - 26], [16, -h - 6], [w * 0.6, -h], [w + 6, -h * 0.5], [w, 0]], col, sh, { light: [-1, -1], off: 14, lw: 3.5, line: abDark(sh) });
-    seg(ctx, -16, -h - 8, 16, -h - 8, 5, abDark(sh, 0.2), 0); if (o.coin) { abBlob(ctx, 0, -h * 0.45, 14, 14, '#ffd36a', '#c88a1a', { lw: 2.5 }); }
+    seg(ctx, -16, -h - 8, 16, -h - 8, o.tie ? 8 : 5, o.tie || abDark(sh, 0.2), o.tie ? 1.5 : 0); if (o.coin) { abBlob(ctx, 0, -h * 0.45, 14, 14, '#ffd36a', '#c88a1a', { lw: 2.5 }); }
   } else { const fl = o.flap || 0;
     celShade(ctx, [[-56, 0], [-60, -14], [-20, -20 - fl * 0.3], [30, -22 - fl], [64 + fl * 0.5, -18 - fl * 1.2], [58, 0]], col, sh, { light: [-1, -1], off: 8, lw: 3, line: abDark(sh) }); }
   ctx.restore();
@@ -203,13 +250,13 @@ function abCart(ctx, x, y, o = {}) {
 // map card drawn on: house, dotted road through trees, rock (p 0..1); a dark tag box with a cyan rule (the style's label look)
 function abMapCard(ctx, x, y, p, s = 1, rot = 0) {
   if (p <= 0) return; ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s);
-  ctx.fillStyle = 'rgba(14,10,24,0.92)'; ctx.strokeStyle = '#7fe3ff'; ctx.lineWidth = 4; ctx.beginPath(); ctx.roundRect(-150, -100, 300, 200, 14); ctx.fill(); ctx.stroke();
+  ctx.fillStyle = 'rgba(40,30,70,0.94)'; ctx.strokeStyle = '#7fe3ff'; ctx.lineWidth = 6; ctx.beginPath(); ctx.roundRect(-150, -100, 300, 200, 14); ctx.fill(); ctx.stroke();
   const q = (a, b) => K.clamp((p - a) / (b - a));
   if (q(0, 0.25) > 0) { ctx.globalAlpha = q(0, 0.25); shape(ctx, K.rectPts(-122, 10, 44, 34), '#f3e2b8', { lw: 3 }); shape(ctx, [[-128, 12], [-100, -14], [-72, 12]], C.red, { lw: 3 }); ctx.fillStyle = '#ffd36a'; ctx.fillRect(-106, 24, 10, 12); ctx.globalAlpha = 1; }
   const path = K.bezier([-70, 30], [-20, -40], [40, 70], [80, 10], 30), n = Math.floor(path.length * q(0.2, 0.75));
-  ctx.fillStyle = '#fff1b8'; for (let i = 0; i < n; i += 3) { ctx.beginPath(); ctx.arc(path[i][0], path[i][1], 4, 0, 7); ctx.fill(); }
-  if (q(0.3, 0.6) > 0) { ctx.globalAlpha = q(0.3, 0.6); for (const [tx, ty] of [[-30, -40], [10, 40]]) { shape(ctx, [[tx - 14, ty + 10], [tx, ty - 22], [tx + 14, ty + 10]], GREEN, { lw: 2.5 }); } ctx.globalAlpha = 1; }
-  if (q(0.7, 1) > 0) { ctx.globalAlpha = q(0.7, 1); abRock(ctx, 112, 40, { s: 0.09, model: 'afternoon', crack: 1, glow: o_glow(p) }); ctx.globalAlpha = 1; }
+  ctx.save(); ctx.fillStyle = '#fff6c8'; ctx.shadowColor = '#ffd36a'; ctx.shadowBlur = 10; for (let i = 0; i < n; i += 3) { ctx.beginPath(); ctx.arc(path[i][0], path[i][1], 7, 0, 7); ctx.fill(); } ctx.restore();
+  if (q(0.3, 0.6) > 0) { ctx.globalAlpha = q(0.3, 0.6); for (const [tx, ty] of [[-30, -40], [10, 40]]) { shape(ctx, [[tx - 20, ty + 14], [tx, ty - 30], [tx + 20, ty + 14]], '#7ae08a', { lw: 3 }); } ctx.globalAlpha = 1; }
+  if (q(0.7, 1) > 0) { ctx.globalAlpha = q(0.7, 1); abRock(ctx, 108, 50, { s: 0.13, model: 'afternoon', crack: 1, glow: o_glow(p) }); ctx.globalAlpha = 1; }
   ctx.restore();
 }
 const o_glow = (p) => K.clamp((p - 0.85) * 6);

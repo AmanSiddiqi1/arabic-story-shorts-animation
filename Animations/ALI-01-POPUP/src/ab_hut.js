@@ -8,7 +8,7 @@ function abHutPrint() {
     abSkyBand(c, 0, AB_GR, AB_MX(NAVY2, FIGC, 0.45), AB_MX(FIGC, C.red, 0.25)); stars(c, { n: 40, h: 700 });
     shape(c, ell(940, 120, 40, 40, 24), CREAM, { lw: 4, seed: 300 });
     abHillPrint(c, 800, 70, AB_MX(FIGC, NAVY2, 0.5), 301);
-    abPage(c, AB_MX(EARTH, FIGC, 0.35)); bookFold(c, 0, AB_WW, AB_GR);
+    abPage(c, AB_MX(EARTH, FIGC, 0.35)); abFold(c);
   });
 }
 const abUS = () => abMem(AB_G, 'set', () => ({
@@ -20,7 +20,7 @@ const abUS = () => abMem(AB_G, 'set', () => ({
 // ---------- positions ----------
 const AB_UALIX = [[105.5, 900], [106.3, 640], [117.75, 640], [118.3, 520], [120.35, 500]];
 const AB_UALIXF = (t) => kfn(t, AB_UALIX, 'out');
-const AB_UCASX = [[113.87, 935], [114.55, 905], [116.25, 905], [116.6, 780], [117.75, 780], [118.4, 640], [119.05, 640], [119.4, 600], [119.61, 590], [120.35, 640], [131.25, 640], [131.8, 760]];
+const AB_UCASX = [[113.87, 935], [114.55, 905], [116.25, 905], [116.6, 780], [117.75, 780], [118.4, 690], [119.05, 672], [119.61, 658], [120.35, 680], [131.25, 680], [131.8, 780]];
 const AB_UCASXF = (t) => kfn(t, AB_UCASX, 'inOut');
 const AB_UWIFEX = [[107.11, 422], [107.6, 440], [118.9, 440], [119.3, 420]];
 const AB_UWIFEXF = (t) => kfn(t, AB_UWIFEX, 'inOut');
@@ -33,21 +33,22 @@ function abHutCast(t) {
   if (t < 106.3) { A.tip = 0.1; A.mouth = 'open'; A.handR = [20, -122]; A.handL = [-12, -118]; A.gaze = [-1, 0]; }
   else if (t < 107.11) { A.handR = t < 106.7 ? [20, -122] : PERSON_HANDS.hush.R; A.handL = t < 106.7 ? [-12, -118] : PERSON_HANDS.pointFwd.R.map((v, i) => (i ? v - 20 : -v)); A.gaze = t < 106.7 ? [1, -0.1] : [-1, 0.3]; A.lid = Math.abs(t - 106.4) < 0.07 ? 1 : 0; A.brow = 0.4; }
   else if (t < 108.0) { A.handRW = [548, 850 - 30 * Math.sin(Math.PI * K.clamp((t - 107.11) / 0.6))]; A.gaze = lookAt([ax, 770], [520, 870]); A.mouth = 'smile'; A.tip = 0.06; }
-  else if (t < 108.95) { const u = pulse(t, 108.3, 0.7); A.aL = [-0.3 - 2.15 * u, -0.2 - 2.65 * u]; A.aR = [0.3 + 2.15 * u, 0.2 + 2.65 * u]; A.talk = 0.8 * Math.abs(Math.sin(t * 11)); A.gaze = lookAt([ax, 770], [AB_UWIFEXF(t), 770]); A.eyes = 'wide'; }
+  else if (t < 108.95) { const u = flow(t, [[108.0, 0], [108.37, 1], [108.8, 1], [108.95, 0.4]]); A.aL = [-0.3 + (AB_ARMS_UP.aL[0] + 0.3) * u, -0.2 + (AB_ARMS_UP.aL[1] + 0.2) * u]; A.aR = [0.3 + (AB_ARMS_UP.aR[0] - 0.3) * u, 0.2 + (AB_ARMS_UP.aR[1] - 0.2) * u]; A.talk = 0.8 * Math.abs(Math.sin(t * 11)); A.gaze = lookAt([ax, 770], [AB_UWIFEXF(t), 770]); A.eyes = 'wide'; A.sq = 1 + 0.04 * u + breathe(t, 3, 0.014) - 1; A.x += tremble(t, 1.2, 8) * u; }
   else if (t < 109.8) { A.handLW = [AB_UWIFEXF(t) + 40, 830]; A.handRW = [AB_UWIFEXF(t) + 46, 840]; A.tip = 0.06; A.gaze = [-1, 0]; A.talk = 0.4 * Math.abs(Math.sin(t * 9)); }
-  else if (t < 111.3) { A.handR = PERSON_HANDS.hush.R; A.brow = 0.6; A.gaze = gazePlan(t, [[109.8, [-1, 0]], [110.1, [1, -0.1]], [110.6, [-1, 0]]], 0.07); A.lid = Math.abs(t - 110.1) < 0.06 ? 1 : 0; }
-  else if (t < 113.2) { A.gaze = lookAt([ax, 770], [AB_UWIFEXF(t), 770]); A.mouth = 'smile'; A.lid = 0.25; }
+  else if (t < 111.3) { A.handR = PERSON_HANDS.hush.R; A.brow = 0.6; A.gaze = gazePlan(t, [[109.8, [-1, 0]], [110.1, [1, -0.1]], [110.37, [-1, 0.1]]], 0.07); A.lid = Math.abs(t - 110.1) < 0.06 ? 1 : 0; A.dir = -1; A.tip = blend(t, 110.37, 110.6, 0, 0.08) + idleSway(t, 5, 0.015, 2.2); A.drop = 2 * osc(t, 0.8); }
+  else if (t < 113.2) { A.dir = -1; A.gaze = lookAt([ax, 770], [AB_UWIFEXF(t), 760]); A.mouth = 'smile'; A.lid = 0.25 + 0.75 * pulse(t, 112.4, 0.16); A.tip = 0.03 + idleSway(t, 5, 0.025, 2.4); A.handR = [26, -118 + 4 * osc(t, 1.1)]; }
   else if (t < 116.25) { A.gaze = t < 114.0 ? [1, -0.1] : [-1, 0]; A.mouth = 'smile'; }
   else if (t < 117.75) { A.eyes = t < 116.6 ? 'wide' : undefined; A.gaze = t < 116.7 ? [-1, 0] : [0.2, -1]; A.mouth = 'o'; }
-  else if (t < 119.61) { A.tip = t < 119.05 ? -0.06 : -0.1; A.handL = PERSON_HANDS.palmsUp.L; A.handR = PERSON_HANDS.palmsUp.R; A.gaze = [1, 0]; A.sq *= t > 119.05 ? 0.95 : 1; A.mouth = 'frown'; A.brow = -0.4; A.dir = 1; }
-  else if (t < 120.35) { A.dir = 1; A.sq = 0.93; A.lid = 0.5; A.gaze = [1, 0.3]; A.mouth = 'frown'; }
+  else if (t < 120.35) { A.dir = 1; A.tip = flow(t, [[117.75, 0], [118.47, -0.05], [119.05, -0.09], [119.61, -0.13], [120.2, -0.13]]) + idleSway(t, 5, 0.01, 1.6); A.handL = PERSON_HANDS.palmsUp.L; A.handR = PERSON_HANDS.palmsUp.R; A.mouth = 'frown'; A.brow = -0.4;
+    A.gaze = gazePlan(t, [[117.75, [1, 0]], [118.6, [-0.6, 0.5]], [119.15, [-0.8, -0.2]], [119.7, [-0.3, 0.9]]], 0.07); A.lid = pulse(t, 118.55, 0.14) + pulse(t, 119.7, 0.14); A.sq *= 1 - 0.015 * Math.max(0, Math.sin((t - 118.47) * 3)); }
+  else if (t < 120.89) { A.dir = 1; A.sq = 0.93 + breathe(t, 3, 0.01) - 1; A.lid = 0.5; A.gaze = [0.3, 0.8]; A.mouth = 'frown'; A.drop = 6 * flow(t, [[120.35, 0], [120.6, 1], [120.89, 0.4]]); A.tip = -0.04; }
   else if (t < 121.3) { A.dir = 1; A.handR = PERSON_HANDS.cupMouth.R; A.talk = 0.3 * Math.abs(Math.sin(t * 13)); A.gaze = [1, 0]; A.tip = 0.05; }
   else if (t < 123.2) { A.dir = 1; A.brow = -0.6; A.gaze = lookAt([ax, 770], [AB_UCASXF(t), 760]); A.mouth = 'frown'; }
   else if (t < 126.99) { A.dir = 1; A.brow = -0.6; A.gaze = lookAt([ax, 770], [640, 760]); if (t > 124.73 && t < 125.4) { A.handRW = [604, 830 + 6 * Math.sin(t * 20)]; A.tip = 0.05; } }
   else if (t < 128.27) { A.dir = 1; A.gaze = [1, 0]; A.lid = 0.3; A.brow = -0.3; }
-  else if (t < 129.51) { A.dir = 1; A.sq = blend(t, 128.27, 128.6, 1, 0.95); A.lid = 0.4; A.gaze = t < 128.8 ? [-1, 0] : [0.4, 1]; if (t > 128.8) { A.handRW = [540 + 14 * osc(t, 0.15), 868]; A.tip = 0.08; } }
-  else if (t < 130.77) { A.dir = 1; A.gaze = lookAt([ax, 770], [540, 680]); if (t > 130.3) { A.handR = [70, -150]; A.eyes = 'wide'; } }
-  else if (t < 131.2) { A.dir = 1; A.handR = PERSON_HANDS.cupMouth.R; A.tip = 0.08; A.talk = 0.3 * Math.abs(Math.sin(t * 13)); A.gaze = [1, 0]; }
+  else if (t < 130.09) { A.dir = 1; A.sq = blend(t, 128.27, 128.6, 1, 0.95) + breathe(t, 3, 0.012) - 1; A.lid = 0.45; A.brow = -0.3; A.gaze = t < 128.8 ? [-1, 0] : [0.3, 1]; A.lid += 0.55 * pulse(t, 129.2, 0.18); if (t > 128.8) { A.handRW = [528 + 22 * osc(t, 0.6) + 6 * osc(t, 0.13), 866 - 3 * Math.abs(osc(t, 0.3))]; A.tip = 0.06 + 0.02 * osc(t, 1.3); } }
+  else if (t < 130.77) { A.dir = 1; A.handRW = [552 + tremble(t, 2, 7), 862 - 10 * K.clamp((t - 130.09) / 0.15)]; A.eyes = 'wide'; A.mouth = 'o'; A.gaze = lookAt([ax, 770], [AB_UCASXF(t), 720]); A.tip = -0.04 * pulse(t, 130.1, 0.4); }
+  else if (t < 131.2) { A.dir = 1; A.handR = PERSON_HANDS.cupMouth.R; A.tip = 0.12; A.talk = 0.3 * Math.abs(Math.sin(t * 13)); A.gaze = [1, 0]; }
   else { A.dir = 1; A.handR = PERSON_HANDS.pointUp.R; A.brow = 0.5; A.gaze = [1, 0]; A.mouth = 'o'; }
   // the wife
   const wx = AB_UWIFEXF(t), sit = t < 107.11 ? 1 : blend(t, 107.11, 107.45, 1, 0), wtf = turnFlip(t, [[0, -1], [105.6, 1]], 0.4);
@@ -55,11 +56,13 @@ function abHutCast(t) {
   if (t < 105.5) { Wf.handL = [16, -120]; Wf.handR = [26, -126]; Wf.gaze = [0.4, 0.6]; }
   if (t > 105.6 && t < 105.75) Wf.lid = 1;
   if (t >= 107.6 && t < 108.0) { Wf.handL = PERSON_HANDS.cheeks.L; Wf.handR = PERSON_HANDS.cheeks.R; Wf.eyes = 'wide'; Wf.sq = 1.05; Wf.mouth = 'o'; }
-  if (t >= 108.0 && t < 108.95) Wf.gaze = lookAt([wx, 770], gazePlan(t, [[108, [540, 760]], [108.4, [ax, 770]], [108.7, [540, 760]]], 0.07));
+  if (t >= 108.0 && t < 108.95) { Wf.gaze = lookAt([wx, 770], gazePlan(t, [[108, [545, 560]], [108.4, [ax, 700]], [108.7, [545, 560]]], 0.07)); Wf.handL = PERSON_HANDS.cheeks.L; Wf.handR = t < 108.5 ? PERSON_HANDS.cheeks.R : PERSON_HANDS.mouthCover.R; Wf.eyes = 'wide'; Wf.sq = 1.03 + breathe(t, 7, 0.015) - 1; }
   if (t >= 108.95 && t < 109.8) { Wf.gaze = [1, 0]; Wf.handR = [60, -130]; }
+  if (t >= 110.37 && t < 110.97) { Wf.tip = -0.05 * blend(t, 110.37, 110.55, 0, 1) + 0.02 * osc(t, 0.5); Wf.eyes = 'wide'; Wf.drop = 3 * osc(t, 0.4); Wf.gaze = lookAt([wx, 770], [ax - 30, 740]); }
   if (t >= 110.97 && t < 111.7) { const n = flow(t, [[110.97, 0], [111.12, 1], [111.27, 0], [111.42, 1], [111.57, 0]]); Wf.drop = 8 * n; Wf.handR = t < 111.4 ? PERSON_HANDS.mouthCover.R : [22 + 8 * Math.sin(t * 25), -172]; Wf.handL = PERSON_HANDS.mouthCover.L; Wf.lid = 0.3; }
   if (t >= 111.3 && t < 112.4) { Wf.handRW = [K.lerp(560, 520, K.clamp((t - 111.4) / 0.4)), 850]; Wf.handL = undefined; }
-  if (t >= 112.4 && t < 113.2) { Wf.gaze = [1, 0]; Wf.mouth = 'smile'; }
+  if (t >= 111.67 && t < 113.2) { Wf.gaze = lookAt([wx, 770], [ax, 760]); Wf.mouth = 'smile'; Wf.tip = idleSway(t, 171, 0.03, 2.1); Wf.lid = pulse(t, 112.6, 0.16); }
+  if (t >= 118.47 && t < 120.35) { Wf.gaze = lookAt([wx, 770], [AB_UCASXF(t), 740]); Wf.tip = -0.06 + 0.04 * osc(t, 0.9); Wf.x -= 6 * Math.max(0, osc(t, 1.1)); }
   if (t >= 116.25 && t < 117.75) { Wf.gaze = t < 116.7 ? [1, 0] : [-0.2, -1]; Wf.eyes = t < 116.6 ? 'wide' : undefined; }
   if (t >= 119.05 && t < 121.3) { Wf.gaze = [1, 0]; Wf.tip = -0.05; Wf.handL = [40, -120]; }
   if (t >= 121.3) { Wf.handL = PERSON_HANDS.headHold.L; Wf.handR = PERSON_HANDS.headHold.R; Wf.lid = 0.4; Wf.mouth = 'frown'; Wf.gaze = [1, 0]; }
@@ -73,12 +76,12 @@ function abHutCast(t) {
     if (peek) { C2.tip = 0.28; C2.amp = 0; C2.gaze = t < 115.35 ? [-1, 0] : lookAt([cx - 40, 760], gazePlan(t, [[115.35, [500, 850]], [115.6, [300, 850]], [115.85, [780, 905]]], 0.07)); if (t > 115.85) C2.brow = -0.5; }
     else if (t < 117.75) { C2.kneel = flow(t, [[116.6, 0], [116.85, 0.6], [117.0, 0.6], [117.2, 0]]); coinHeld = t > 116.9; C2.handRW = t > 116.9 ? [cx - 30, 760 - 40 * K.clamp((t - 117.0) / 0.3)] : [780, 905 - 20]; C2.gaze = t < 116.9 ? [0, 1] : [-0.2, -0.6];
       if (t > 117.2) { C2.mouth = 'open'; C2.brow = 0.8 * pulse(t, 117.3, 0.4); C2.handRW = [cx - 4, 778]; } }
-    else if (t < 120.35) { C2.tip = 0.12; C2.brow = 0.8; C2.gaze = lookAt([cx, 760], [ax, 770]); C2.handR = t < 119.05 ? PERSON_HANDS.pointFwd.R : [80, -110]; coinHeld = true; if (t > 119.05 && t < 119.61) { C2.handRW = [580, 860]; C2.handR = undefined; } C2.talk = 0.5 * Math.abs(Math.sin(t * 10)); }
+    else if (t < 120.35) { C2.tip = flow(t, [[117.75, 0.04], [118.47, 0.12], [119.05, 0.16], [119.61, 0.22], [120.2, 0.2]]); C2.brow = 0.8; C2.gaze = lookAt([cx, 760], [ax, 770]); C2.handR = t < 119.05 ? PERSON_HANDS.pointFwd.R : [80, -110]; coinHeld = true; if (t > 119.05 && t < 119.61) { C2.handRW = [600, 862]; C2.handR = undefined; } C2.talk = 0.5 * Math.abs(Math.sin(t * 10)); }
     else if (t < 123.2) { C2.gaze = lookAt([cx, 760], [545, 760]); if (t > 121.3) { C2.eyes = 'wide'; C2.mouth = 'smile'; C2.sq = 1.05; const w = osc(t, 0.5); C2.handL = [10 + 10 * w, -122]; C2.handR = [24 - 10 * w, -126]; } }
     else if (t < 126.99) { C2.gaze = [-0.2, -1]; C2.mouth = 'smile'; const w = osc(t, t > 125.47 ? 0.3 : 0.5); C2.handL = [10 + 10 * w, -122]; C2.handR = [24 - 10 * w, -126]; if (t > 125.47) { C2.sq = 1.06; C2.y -= 6; } if (t > 126.35) C2.coinEyes = true; }
     else if (t < 129.51) { C2.handR = [72, -150 + 8 * osc(t, 0.2)]; C2.sq = 1 + 0.03 * Math.abs(Math.sin((t - 127) * Math.PI / 0.4)); C2.brow = 0.6; C2.gaze = [-1, 0]; C2.talk = 0.4 * Math.abs(Math.sin(t * 9)) * (t < 127.8 ? 1 : 0); }
-    else if (t < 130.77) { C2.gaze = lookAt([cx, 760], [540, 680]); C2.eyes = 'wide'; if (t > 130.2) { C2.handRW = t < 130.3 ? [575, 640] : [cx - 40, 780]; } }
-    else if (t < 131.25) { C2.handL = PERSON_HANDS.cupEar.R.map((v, i) => (i ? v : -v)); C2.drop = 6 * Math.abs(Math.sin(t * 16)); C2.gaze = [1, -0.1]; C2.handRW = [cx + 40, 790]; }
+    else if (t < 130.77) { C2.gaze = lookAt([cx, 760], [540, 680]); C2.eyes = 'wide'; C2.drop = 4 * osc(t, 0.35); C2.tip = 0.06 * pulse(t, 130.15, 0.5); if (t > 130.2) { C2.handRW = t < 130.3 ? [575, 640] : [cx - 40, 780]; } }
+    else if (t < 131.25) { C2.dir = 1; C2.handL = undefined; C2.gaze = [0.4, 0.7]; C2.handRW = [cx + 40, 790]; C2.tip = 0.08; C2.mouth = 'smile'; C2.drop = 2 * osc(t, 0.4); }
     else { const tf = turnFlip(t, [[0, -1], [131.25, 1]], 0.35); C2.dir = tf.dir; C2.gaze = [1, 0]; C2.handRW = [cx + 40, 780]; C2.tip = 0.1; }
   }
   return { A, sackA, Wf, C2, peek, coinHeld };
@@ -109,6 +112,11 @@ function abHut(ctx, t) {
     if (t > 116.25 && t < 116.9) for (let i = 0; i < 2; i++) { const g = pulse(t, 116.25 + i * 0.25, 0.4); if (g > 0) abStar(ctx, 770 + i * 22, 890 - i * 14, 12 * g, t * 4, C.white); } }
   // front pass of the room: side walls, roof slab and the door leaf, folded with the room card
   if (kR > 0.02) { ctx.save(); ctx.translate(0, 935); ctx.scale(1, kR); ctx.translate(0, -935); hutRoom(ctx, { ...AB_HUTO, layer: 'front', door, t }); ctx.restore(); }
+  // the picture card drops in on two strings above their heads and keeps swinging (108.37-111.2 and 120.4-123.0)
+  for (const [a, op, b] of [[108.0, 108.5, 111.2], [120.35, 121.3, 123.0]]) { if (t < a || t > b + 0.5) continue;
+    const drop = (1 - K.ease.back(K.clamp((t - a) / 0.45))) + K.ease.in(K.clamp((t - b) / 0.45)), hy = 600 - 520 * drop, rot = swing(t, a + 0.45, 0.1, 0.9, 1.1) + idleSway(t, 330, 0.025, 2.4), o = K.ease.back(K.clamp((t - op) / 0.6)), cx = 560;
+    ctx.save(); ctx.translate(cx, 200); ctx.rotate(rot); ctx.translate(-cx, -200); ctx.strokeStyle = '#d9c9a0'; ctx.lineWidth = 2.5; for (const sx of [-70, 70]) { ctx.beginPath(); ctx.moveTo(cx + sx, 200); ctx.lineTo(cx + sx, hy - 150); ctx.stroke(); }
+    abLive(ctx, cx, hy + 6, 240, 210, (c) => { c.beginPath(); c.rect(cx - 200, hy - 400, 400, 401); c.clip(); c.translate(cx, hy); c.scale(0.9, 0.9); c.translate(-cx, -hy); abStoryCard(c, t, cx, hy + 20, o, op); }, 1); ctx.restore(); }
   // warm lamp light, rose shadows
   if (kR > 0.02) { const lp = AB_HA.lamp, g = ctx.createRadialGradient(lp[0], lp[1] - 30, 60, lp[0], lp[1] - 30, 620); g.addColorStop(0, 'rgba(255,214,150,0)'); g.addColorStop(1, AB_MX(C.red, NAVY2, 0.55));
     ctx.save(); ctx.globalCompositeOperation = 'multiply'; ctx.globalAlpha = 0.6 * kR; ctx.fillStyle = g; ctx.fillRect(90, 196, 820, 740); ctx.restore(); }
@@ -121,7 +129,6 @@ function abHutTable(ctx, t, H, SP, kA, pop) {
       if (cov < 1 || i % 3 === 0) abLive(ctx, x, y, 24, 22, (c) => abCoin(c, x, y - 6, 8, 0.6 + 0.4 * Math.abs(Math.cos(i))), kA, { border: 3, shadow: 0.3 }); } }
   if (t > 111.4) { const k = K.ease.back(K.clamp((t - 111.4) / 0.4)), lift = t > 119.05 && t < 120.35 ? 0.4 * pulse(t, 119.1, 1.2) : 0; abPut(ctx, SP.cloth, Math.min(1, k) * (1 - lift), { dx: 0 }); }
   // the picture card (108.0-111.3 and 120.35-123.0) and the map (128.27-130.3)
-  for (const [a, op, b] of [[108.0, 108.4, 111.3], [120.35, 121.3, 123.0]]) { const k = abK(t, a, { out: b, dur: 0.4 }); if (k > 0.02) { const o = K.ease.back(K.clamp((t - op) / 0.6)); abLive(ctx, 545, 872, 240, 210, (c) => { c.translate(545, 872); c.scale(0.62, 0.62); c.translate(-545, -872); abStoryCard(c, t, 545, 872, o, op); }, k); } }
   if (t > 128.8 && t < 129.6) abLive(ctx, 540, 878, 70, 20, (c) => shape(c, K.rectPts(510, 866, 60, 10), AB_MX(CREAM, SAND, 0.3), { lw: 2.5, seed: 320 }), 1, { border: 3 });
   if (t > 129.51 && t < 130.3) { const k = K.ease.back(K.clamp((t - 129.51) / 0.35)), x = 545, y = K.lerp(866, 600, k), d = K.clamp((t - 129.51) / 0.62); abLive(ctx, x, y + 60, 160, 130, (c) => { c.translate(x, y); c.scale(0.7 * Math.max(0.2, k), 0.7 * Math.max(0.2, k)); abMapCard(c, 0, 0, d, 0); }, 1, { border: 5 }); }
 }
@@ -133,14 +140,14 @@ function abCassimExtras(c, t, H) {
 }
 function abHutOver(ctx, t, cam, S) {
   const H = abHutCast(t);
-  if (t > 110.37 && t < 111.6) { const [x, y] = abToPanel(H.A.x + 70, 690, cam); ctx.save(); abFade(ctx, t, 110.37, 111.6); S.label(ctx, 'SHHH!', x, y, abB(t, 110.4, 0.5), { size: 40, tilt: 0.06 }); ctx.restore(); }
+  if (t > 110.37 && t < 111.6) { const [x, y] = abToPanel(H.A.x - 90, 690, cam); ctx.save(); abFade(ctx, t, 110.37, 111.6); S.label(ctx, 'SHHH!', x, y, abB(t, 110.4, 0.5), { size: 40, tilt: 0.06 }); ctx.restore(); }
   if (t > 114.55 && t < 116.6) { const [x, y] = abToPanel(720, 560, cam), to = abToPanel(870, 700, cam); ctx.save(); abFade(ctx, t, 114.55, 116.6); S.label(ctx, 'CASSIM', x, y, abB(t, 114.6, 0.5), { size: 36 }); S.arrow(ctx, [x + 40, y + 34], to, abB(t, 114.8, 0.4), { bend: -0.25, width: 16 }); ctx.restore(); }
   if (t > 116.25 && t < 117.0) { const a = abToPanel(870, 760, cam), b = abToPanel(790, 880, cam); ctx.save(); abFade(ctx, t, 116.25, 117.0, 0.2); S.arrow(ctx, a, b, abB(t, 116.3, 0.3), { bend: 0.2, width: 14 }); ctx.restore(); }
   // three question bubbles from both sides, bigger each time, folding away in order at 120.35
-  [[118.47, 650, 560, 34, 0.08], [119.05, 430, 520, 44, -0.06], [119.61, 560, 470, 56, 0.03]].forEach(([ta, wx, wy, sz, tl], i) => { if (t < ta || t > 120.6 + i * 0.12) return; const [x, y] = abToPanel(wx, wy, cam), to = abToPanel(H.C2 ? H.C2.x : 640, 720, cam);
+  [[118.47, 800, 600, 34, 0.08], [119.05, 640, 540, 44, -0.06], [119.61, 740, 470, 56, 0.03]].forEach(([ta, wx, wy, sz, tl], i) => { if (t < ta || t > 120.6 + i * 0.12) return; const [x, y] = abToPanel(wx, wy, cam), to = abToPanel(H.C2 ? H.C2.x - 30 : 650, 735, cam);
     ctx.save(); ctx.globalAlpha = K.clamp((120.6 + i * 0.12 - t) / 0.25); S.label(ctx, '?', x, y, abB(t, ta, 0.4), { balloon: true, to, size: sz, tilt: tl }); ctx.restore(); });
   // S9: Cassim's thought cloud of gold (123.5-126.35), swelling, then bursting into coins
-  if (t > 123.5 && t < 126.4) { const sw = 1 + 0.25 * K.ease.inOut(K.clamp((t - 125.47) / 0.8)), [x, y] = abToPanel(600, 470, cam), tl = abToPanel(620, 720, cam), z = cam.zoom * 0.8;
+  if (t > 123.5 && t < 126.4) { const sw = 1 + 0.25 * K.ease.inOut(K.clamp((t - 125.47) / 0.8)), [x, y] = abToPanel(600, 470, cam), tl = abToPanel(690, 720, cam), z = cam.zoom * 0.8;
     thoughtCloud(ctx, x, y, 300 * z * sw, 220 * z * sw, t, { p: K.clamp((t - 123.5) / 0.6), tail: tl, fill: C.white, lw: 6, scale: 0.42 * sw * cam.zoom * 0.8, at: [500, 900], bg: AB_MX(C.yellow, C.white, 0.75), inside: (c) => { const g = K.clamp((t - 125.47) / 0.8); abCoinPile(c, 500, 1010, 520 * (0.75 + 0.35 * g), 300 * (0.7 + 0.5 * g), 1, 9); } }); }
   if (t > 126.35 && t < 127.6) for (let i = 0; i < 8; i++) { const u = K.clamp((t - 126.35) / 1.2), [x, y] = abToPanel(500 + i * 30 + 20 * Math.sin(i), 420 + u * 500 + i * 6, cam); ctx.save(); ctx.globalAlpha = 1 - u; abCoin(ctx, x, y, 14 * cam.zoom * 0.6, Math.abs(Math.cos(t * 9 + i)), 0); ctx.restore(); }
 }

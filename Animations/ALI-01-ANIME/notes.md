@@ -19,3 +19,11 @@ Plan checked against inputs: MP3 and words.json SHA-256 match planning_metadata.
 ## Not done / simplified
 - Turban tails and the leader's separate cloak ribbon are drawn as cloak ribbons on riders only (the Library person has no turban tail field).
 - The horses turning to face left (60.9) flip direction with a squash instead of a turnFlip tuck.
+
+## Revision 1 (v2 source) decisions
+- Impact frames stay at the measured onsets 45.45 / 85.74; the gap after "سمسم" is filled (push-in, glowing words, cloak, light band) instead of moving the hit to 44.86.
+- Door close in S7 moved to 54.0-54.75 (was 53.88-55.13) so every figure is inside the arch first; S8 no longer starts a close at 62.4 (it contradicted S9).
+- Trunk phases (abForestFront `ph`, world units at parallax 1.6): S2 -374 (crosses at 8.0), S5 124 (35.8, then exits at 37.4), ride -81 (104.9).
+- S12: Ali walks on to x 860 so the camera can follow him at 1.6 past gold, silver and cloth; S13 is a separate set-up (bust, insert, medium at x 580 by the chest).
+- S17: the cart speed after 133.6 is 200 units/s (was 260) so the freeze wide (cam x 1850, zoom 1.0) holds the cart at left and the rock (x 2150, s 0.5) on the right.
+- Cast finish (`AB_FIN`): per-model light direction, shade tone and line colour; people's skin keeps its Library colour, only shaded and rimmed.

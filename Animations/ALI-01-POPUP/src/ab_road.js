@@ -7,7 +7,7 @@ function abRoadPrint() {
     abSlot(c, 700, 560, 700, 892, 10);
     abPage(c, P.page); const road = []; for (let i = 0; i <= 20; i++) { const u = i / 20; road.push([K.lerp(1000, 120, u), K.lerp(968, 900, u * u)]); }
     shape(c, [...road.map(([x, y], i) => [x, y - 20 * (1 - i / 26)]), ...road.slice().reverse().map(([x, y], i) => [x, y + 24 * (0.3 + i / 26)])], P.path, { lw: 0, dot: AB_MX(P.path, EARTH, 0.4), pitch: 8, rad: 0.22, da: 0.45 });
-    bookFold(c, 0, AB_WW, AB_GR);
+    abFold(c);
   });
 }
 const abRS = () => abMem(AB_G, 'set', () => {
@@ -19,11 +19,14 @@ const abRS = () => abMem(AB_G, 'set', () => {
     trees: [[450, 640, 0], [640, 660, 1]].map(([x, top, i]) => abSprite('rtree' + i, x, 900, 200, 900 - top + 100, (c) => abTreeArt(c, { x, base: 900, top, w: 34, pal: P, seed: 430 + i, crowns: [[x, top, 64], [x - 44, top + 34, 44], [x + 44, top + 30, 46]] }))),
     house: abSprite('house', 940, 905, 140, 330, (c) => { shape(c, K.rectPts(880, 600, 125, 305), AB_MX(C.white, SAND, 0.35), { lw: 5, seed: 440, dot: SAND, pitch: 10, rad: 0.2, da: 0.4 }); shape(c, K.rectPts(870, 588, 140, 22), C.yellow, { lw: 4, seed: 441 });
       townWindow(c, 925, 660, 50, 60, { arch: 'pointed', shutters: true }); shape(c, townArchPts(900, 960, 790, 905, 'pointed'), GREEND, { lw: 4, seed: 442 }); }),
+    stone: abSprite('rstone', AB_RSTONE - 30, 972, 60, 34, (c) => shape(c, ell(AB_RSTONE - 30, 962, 22, 12, 14), STONE2, { lw: 3, seed: 421, dot: STONED, pitch: 6, rad: 0.2, da: 0.4 }), { border: 4 }),
     q: abSprite('qcard', 150, 650, 120, 130, (c) => { shape(c, ell(150, 590, 50, 56, 24), C.yellow, { lw: 5, seed: 108 }); c.font = `400 84px "${BF}"`; c.textAlign = 'center'; c.textBaseline = 'middle'; c.lineWidth = 12; c.strokeStyle = C.black; c.strokeText('?', 150, 594); c.fillStyle = C.white; c.fillText('?', 150, 594); }, { border: 5 }),
   };
 });
-const AB_RCASX = [[132.3, 1080], [134.4, 560], [135.0, 540], [135.2, 620], [135.6, 620], [136.6, 420], [138.8, 420], [140.6, 230]];
+const AB_RCASX = [[132.3, 1080], [134.4, 560], [135.0, 540], [135.2, 620], [135.6, 620], [135.87, 560], [136.6, 440], [138.8, 430], [140.6, 300]];
 const AB_RCASXF = (t) => kfn(t, AB_RCASX, 'inOut');
+// the stone he stumbles over because his nose is in the map (found once: the time he passes x 770)
+const AB_RSTONE = 770, AB_RSTUMBLE = (() => { let a = 132.3, b = 134.4; for (let i = 0; i < 30; i++) { const m = (a + b) / 2; if (AB_RCASXF(m) > AB_RSTONE) a = m; else b = m; } return a; })();
 const AB_RMULX = [[132.6, 1250], [134.4, 760], [135.6, 740], [136.6, 700], [138.8, 700], [140.6, 520]];
 const AB_RMULXF = (t) => kfn(t, AB_RMULX, 'inOut');
 const AB_RMUL_FALLS = footfalls(AB_RMULXF, 132.6, 140.6, GAIT.donkey * 0.68);
@@ -31,28 +34,34 @@ function abRoadCas(t) {
   const x = AB_RCASXF(t), far = K.clamp((480 - x) / 250), s = AB_CAS.s * (1 - 0.55 * far);
   const P = { ...AB_CAS, s, x, y: K.lerp(962, 905, far), ...walk(AB_RCASXF, t, { stride: 24 * s / AB_CAS.s }), dir: speed(AB_RCASXF, t) > 1 ? 1 : -1, sq: breathe(t, 13, 0.014), tip: 0.1 + idleSway(t, 181, 0.02, 2.5), gaze: [0, -0.9], mouth: 'smile', brow: 0.3 };
   let map = { up: true, flip: 0 };
-  P.handLW = [x - 52 * s / 0.86, P.y - 205 * s / 0.86]; P.handRW = [x - 20 * s / 0.86, P.y - 210 * s / 0.86];
+  const k = s / 0.86; P.handLW = [x - 64 * k, P.y - 112 * k]; P.handRW = [x - 22 * k, P.y - 108 * k]; P.gaze = [-0.4, 0.8]; P.tip = 0.1 + idleSway(t, 181, 0.02, 2.5);
+  const st = pulse(t, AB_RSTUMBLE, 0.4); if (st > 0) { P.tip += 0.16 * st; P.eyes = 'wide'; P.mouth = 'o'; P.drop = 6 * st; P.y -= 10 * pulse(t, AB_RSTUMBLE + 0.05, 0.25); }
   if (t > 134.95 && t < 135.9) { P.dir = 1; P.tip = 0; P.handLW = undefined; P.handRW = [x + 40, P.y - (t < 135.2 ? 120 : 190)]; P.eyes = 'wide'; P.gaze = [1, -0.2]; map = { up: false }; if (t > 135.6) { P.handRW = [x + 70, P.y - 170 - 30 * K.clamp((t - 135.6) / 0.2)]; } }
-  if (t >= 135.9 && t < 136.63) { P.dir = -1; P.tip = 0.1 * (1 - K.clamp((t - 136.4) / 0.25)) + 0.04 * Math.exp(-(t - 136.6) * 8) * (t > 136.6 ? 1 : 0); }
+  if (t >= 135.87 && t < 136.63) { P.dir = -1; P.tip = 0.1 * (1 - K.clamp((t - 136.2) / 0.25)) + 0.04 * Math.exp(-(t - 136.6) * 8) * (t > 136.6 ? 1 : 0); P.gaze = [-0.3, 0.7]; }
   if (t >= 136.63 && t < 138.8) { P.dir = -1; P.tip = 0; map.flip = flow(t, [[136.63, 0], [136.85, 1], [137.15, 1], [137.35, 0]]); P.brow = -0.6; P.mouth = 'frown'; P.talk = 0.2 * Math.abs(Math.sin(t * 12));
-    if (t > 137.0) { P.handLW = undefined; P.handL = PERSON_HANDS.headHold.L; P.drop = 3 * Math.sin(t * 18); } P.gaze = [-0.2, -0.7]; }
+    if (t > 137.0) { P.handLW = undefined; P.handL = PERSON_HANDS.headHold.L; P.drop = 3 * Math.sin(t * 18); } P.gaze = [-0.2, 0.6]; P.lid = pulse(t, 137.0, 0.16); }
+  if (t >= 138.8) { P.gaze = [-0.3, 0.8]; P.mouth = 'smile'; P.brow = 0.2; }
   return { P, map };
 }
 function abRoad(ctx, t) {
   AB_G = 'road';
-  const SP = abRS(), t0 = AB_RD.t0 + 0.1, F = AB_RD.fold, pop = (d) => abK(t, t0, { delay: d, out: F + d * 0.25 }), kA = abK(t, t0, { delay: 0.3, out: F + 0.3 });
+  const SP = abRS(), t0 = AB_RD.t0 + 0.1, F = AB_RD.fold, pop = (d) => abK(t, t0, { delay: d, out: F + d * 0.25 }), kA = abK(t, t0, { delay: 0.3, out: F + 0.3 }), kC = abK(t, t0, { delay: 0.3, out: 140.75 });
   ctx.drawImage(abRoadPrint(), 0, 0, AB_WW, AB_WH);
-  const sy = flow(t, [[131.8, 820], [133, 700], [140, 640]]); abSunStick(ctx, 700, sy, null, { col: AB_MX(C.yellow, C.white, 0.5), ray: AB_MX(C.yellow, C.white, 0.3), r: 46, key: 'pale' });
+  const sy = flow(t, [[131.8, 820], [133, 700], [143.44, 600]]); abSunStick(ctx, 700, sy, null, { col: AB_MX(C.yellow, C.white, 0.5), ray: AB_MX(C.yellow, C.white, 0.3), r: 46, key: 'pale' });
   abPut(ctx, SP.forest, pop(0)); abPut(ctx, SP.trees[0], pop(0.3), { rot: idleSway(t, 450, 0.015, 2.8) }); abPut(ctx, SP.trees[1], pop(0.35), { rot: idleSway(t, 451, 0.015, 3.3) });
   // Cassim passes behind the far rock at the very end (drawn before it once he is that far)
   const Cs = abRoadCas(t), behind = Cs.P.x < 300;
-  const casDraw = () => { if (t < 132.3) return; abLive(ctx, Cs.P.x, Cs.P.y, 260 * Cs.P.s / 0.86, 330 * Cs.P.s / 0.86, (c) => { abPerson(c, Cs.P); if (Cs.map.up !== false) { const h = Cs.P.handRW || [Cs.P.x, Cs.P.y - 180]; c.save(); c.translate(h[0] - 20, h[1] - 10); c.scale(0.45 * Cs.P.s / 0.86, 0.45 * Cs.P.s / 0.86 * (1 - 2 * Cs.map.flip)); abMapCard(c, 0, 0, 1, 0); c.restore(); } }, kA); };
+  const casDraw = () => { if (t < 132.3) return; abLive(ctx, Cs.P.x, Cs.P.y, 260 * Cs.P.s / 0.86, 330 * Cs.P.s / 0.86, (c) => { abPerson(c, Cs.P); if (Cs.map.up !== false) { const h = Cs.P.handRW || Cs.P.handLW || [Cs.P.x - 40, Cs.P.y - 150]; c.save(); c.translate(h[0] - 22 * Cs.P.s / 0.86, h[1] - 2 * Cs.P.s / 0.86); c.scale(0.45 * Cs.P.s / 0.86, 0.45 * Cs.P.s / 0.86 * (1 - 2 * Cs.map.flip)); abMapCard(c, 0, 0, 1, 0); c.restore(); } }, kC); };
   if (behind) casDraw();
   // the far rock, the sparrow, the ? on a string: these stay up at the end
   abPut(ctx, SP.rock, abK(t, t0, { delay: 0.1 }));
   if (t > 137.51) { const k = K.ease.back(K.clamp((t - 137.93) / 0.5)), sw = swing(t, 137.93, 0.25, 0.8, 0.7) + idleSway(t, 460, 0.04, 2.6); ctx.save(); ctx.translate(150, 400 - (1 - k) * 420); ctx.rotate(sw); ctx.strokeStyle = '#6b5a48'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(0, -500); ctx.lineTo(0, 106); ctx.stroke(); ctx.translate(-150, -430); abPut(ctx, SP.q, 1, { rot: 0.15 * Math.sin(t * 1.3) }); ctx.restore(); }
-  abLive(ctx, 150, 680 + idleSway(t, 72, 1.5, 1.1), 60, 60, (c) => bird(c, { kind: 'sparrow', x: 150, y: 680 + idleSway(t, 72, 1.5, 1.1), s: 0.3, dir: 1, seed: 71, gaze: [1, 0.3], lid: t > 140.5 && t < 140.65 ? 1 : 0 }), abK(t, t0, { delay: 0.3 }), { border: 4 });
-  abPut(ctx, SP.mile, pop(0.4)); abPut(ctx, SP.house, pop(0.2));
+  { const hops = [[140.6, 150, 176], [141.55, 176, 204], [142.7, 204, 182]]; let bx = 150, by = 0, sq = 1, dir = 1;
+    for (const [h0, a, b] of hops) { if (t >= h0) { const [hx, hl] = hop(t, h0, 0.28, a, b, 16); bx = hx; by = hl; sq = landSquash(t, h0 + 0.28, 0.2); dir = b > a ? 1 : -1; } }
+    const sy2 = 680 - by + idleSway(t, 72, 1.2, 1.1), look = t > 141.9 && t < 142.6 ? [0.2, 1] : [1, 0.3];
+    abLive(ctx, bx, sy2, 60, 60, (c) => bird(c, { kind: 'sparrow', x: bx, y: sy2, s: 0.3, dir, seed: 71, gaze: look, sq, lid: Math.max(pulse(t, 140.45, 0.15), pulse(t, 142.75, 0.15)) }), abK(t, t0, { delay: 0.3 }), { border: 4 }); }
+  abSlot(ctx, 150, 952, 250, 952, 6); abRockTab(ctx, 0.12 * pulse(t, 142.0, 0.22) + 0.05 * pulse(t, 142.3, 0.15), 245, 952, 0.62);
+  abPut(ctx, SP.mile, pop(0.4)); abPut(ctx, SP.stone, pop(0.45), { dx: 0, rot: 0.08 * pulse(t, AB_RSTUMBLE, 0.3) }); abPut(ctx, SP.house, pop(0.2));
   // mule and cart (one card), the slipping sack, the moth
   const mx = AB_RMULXF(t), M = { x: mx, y: 968, s: 0.68, pal: 1, dir: -1, seed: 55, ...walk(AB_RMULXF, t, { stride: GAIT.donkey * 0.68 }), earL: -0.4 + idleSway(t, 56, 0.1, 2), earR: -0.4 + idleSway(t, 57, 0.1, 2.4), lid: 0.45, tailSwish: osc(t, 2) * 0.4 };
   if (t > 135.0 && t < 135.8) M.earR = 0.8; if (t > 136.63 && t < 138.8) { M.headTurn = 0.7; M.lid = flow(t, [[137.2, 0.45], [137.45, 1], [137.75, 0.45]]); }
@@ -66,6 +75,8 @@ function abRoad(ctx, t) {
   return { Cs };
 }
 function abRoadOver(ctx, t, cam, S) {
-  if (t > 134.0 && t < 135.2) { const cx = AB_RMULXF(t) + 150, [x, y] = abToPanel(cx + 20, 690, cam), to = abToPanel(cx, 850, cam); ctx.save(); abFade(ctx, t, 134.0, 135.2); S.arrow(ctx, [x - 20, y - 60], to, abB(t, 134.05, 0.4), { bend: 0.15, width: 16 }); ctx.restore(); }
-  if (t > 139.2) S.title(ctx, 'THE END', 500, 1130, K.clamp((t - 139.2) / 1.2), { size: 80, align: 'center' });
+  // the 10 badge (echo of the 1 in the cave) over the pile of empty sacks
+  if (t > 134.01 && t < 135.3) { const cx = AB_RMULXF(t) + 150, [x, y] = abToPanel(cx - 20, 690, cam); ctx.save(); abFade(ctx, t, 134.01, 135.3); S.counter(ctx, 10, x, y, abB(t, 134.01, 0.4), { size: 80 }); ctx.restore(); }
+  // THE END hangs at the upper right over the printed hills (strings clear of the rock) and keeps a slow swing
+  if (t > 139.2) { ctx.save(); ctx.translate(700, -200); ctx.rotate(0.025 * Math.sin((t - 139.2) * 1.7) * K.clamp((t - 140.0) / 0.8)); ctx.translate(-700, 200); S.title(ctx, 'THE END', 700, 330, (t - 139.2) / 1.2, { size: 72, align: 'center' }); ctx.restore(); }
 }

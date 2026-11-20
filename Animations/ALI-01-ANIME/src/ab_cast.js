@@ -12,18 +12,20 @@ const AB_RIDER0 = [   // indigo, plum, rust (+ face cloths in different colours)
   { robe: '#5a2a5a', dot: '#3e1a3e', cape: '#2a2032', capeDot: '#1a1220', hc: '#3a5a8a', hd: '#202a4a', beard: '#1a1210' },
   { robe: '#8a3a1e', dot: '#5e2410', cape: '#3a2a20', capeDot: '#241a12', hc: '#e8d2a0', hd: '#8a6a3a', beard: '#2a1a10' },
 ];
-function abAli(ctx, P, m = 'morning', extra = 1) { const pal = abPal(AB_ALI0, m, extra); pal.sash = AB_ACC; pal.band = AB_ACC; person(ctx, { costume: 'villager', s: 0.95, age: 0.25, ...P, pal }); return P; }
-function abWife(ctx, P, m = 'morning') { person(ctx, { costume: 'villageWoman', s: 0.92, age: 0.25, ...P, pal: abPal(AB_WIFE0, m) }); return P; }
-function abKid(ctx, P, m = 'morning') { person(ctx, { costume: 'servant', child: true, s: 1, ...P, pal: abPal(AB_KID0, m) }); return P; }
-function abCassim(ctx, P, m = 'night') { person(ctx, { costume: 'merchant', s: 1.1, age: 0.4, ...P, pal: abPal(AB_CAS0, m) }); return P; }
-function abLeader(ctx, P, m = 'afternoon') { person(ctx, { costume: 'bedouin', s: 1.08, age: 0.4, brow: 0.7, ...P, pal: abPal(AB_LEAD0, m) }); return P; }
-function abMan(ctx, i, P, m = 'afternoon') { person(ctx, { costume: 'bedouin', s: 0.95, ...P, pal: abPal(AB_RIDER0[i % 3], m) }); return P; }
+// every person goes through the story's cel finish (abCast: hard shade away from the light, coloured lines, optional rim via P.fin)
+const abPerson = (ctx, P, m, D) => { abCast(ctx, P, 360, 330, (c) => person(c, D), m, P.fin || {}); return P; };
+function abAli(ctx, P, m = 'morning', extra = 1) { const pal = abPal(AB_ALI0, m, extra); pal.sash = AB_ACC; pal.band = AB_ACC; return abPerson(ctx, { s: 0.95, ...P }, m, { costume: 'villager', s: 0.95, age: 0.25, ...P, pal }); }
+function abWife(ctx, P, m = 'morning') { return abPerson(ctx, { s: 0.92, ...P }, m, { costume: 'villageWoman', s: 0.92, age: 0.25, ...P, pal: abPal(AB_WIFE0, m) }); }
+function abKid(ctx, P, m = 'morning') { return abPerson(ctx, { s: 0.75, ...P }, m, { costume: 'servant', child: true, s: 1, ...P, pal: abPal(AB_KID0, m) }); }
+function abCassim(ctx, P, m = 'night') { return abPerson(ctx, { s: 1.1, ...P }, m, { costume: 'merchant', s: 1.1, age: 0.4, ...P, pal: abPal(AB_CAS0, m) }); }
+function abLeader(ctx, P, m = 'afternoon') { return abPerson(ctx, { s: 1.08, ...P }, m, { costume: 'bedouin', s: 1.08, age: 0.4, brow: 0.7, ...P, pal: abPal(AB_LEAD0, m) }); }
+function abMan(ctx, i, P, m = 'afternoon') { return abPerson(ctx, { s: 0.95, ...P }, m, { costume: 'bedouin', s: 0.95, ...P, pal: abPal(AB_RIDER0[i % 3], m) }); }
 // world position of a person's hand after drawing (P.hands is figure-local)
 function abHand(P, i = 1) { const h = (P.hands || [[0, -100], [0, -100]])[i], s = P.s || 1, d = Math.sign(P.dir || 1); return [P.x + d * s * h[0], P.y + s * h[1] * (P.sq || 1)]; }
 
 // animals through the tint pass (bb: feet x, y, width, height)
-function abDonkey(ctx, P, m, o = {}) { const s = P.s || 1; abCel(ctx, [P.x, P.y, 360 * s, 360 * s], (c) => donkey(c, P), { m, ...o }); }
-function abHorse(ctx, P, m, o = {}) { const s = P.s || 1; abCel(ctx, [P.x, P.y, 420 * s, 380 * s], (c) => horse(c, P), { m, ...o }); }
+function abDonkey(ctx, P, m, o = {}) { const s = P.s || 1; abCel(ctx, [P.x, P.y, 380 * s, 380 * s], (c) => donkey(c, P), { m, ...(AB_FIN[m] || {}), shadeD: 18, rim: null, ...o }); }
+function abHorse(ctx, P, m, o = {}) { const s = P.s || 1; abCel(ctx, [P.x, P.y, 440 * s, 400 * s], (c) => horse(c, P), { m, ...(AB_FIN[m] || {}), shadeD: 18, rim: null, ...o }); }
 // a rider (person on a horse) as one cel, with a cloak ribbon streaming on a travelling sine (4 drawings)
 function abCloak(ctx, seat, dir, s, t, col, len = 1) {
   const tc = AB_T3(t), d = Math.sign(dir || 1), x0 = seat.x - d * 14 * s, y0 = seat.y - 120 * s, pts = [], pts2 = [];
@@ -34,9 +36,9 @@ function abRider(ctx, i, H, PP, m, o = {}) {
   const s = H.s || 1, cape = (i < 0 ? AB_LEAD0 : AB_RIDER0[i % 3]).cape;
   abCel(ctx, [H.x, H.y, 460 * s, 640 * s], (c) => {
     if (o.cloak) { const seat = mountSeat('horse', H); abCloak(c, seat, H.dir, s, o.t || 0, abMul(cape, AB_MODEL[m].tint, AB_MODEL[m].k), o.cloak); }
-    if (o.sacks) { const seat = mountSeat('horse', H), d = Math.sign(H.dir || 1), bob = o.sackBob || 0; abSack(c, seat.x - d * 60 * s, seat.y + 40 * s + bob, s * 0.6 * (o.flat ? 1 : 1), o.flat ? 0 : 1, { coin: o.coin, sq: 1 - Math.abs(bob) * 0.012 }); }
+    if (o.sacks) { const seat = mountSeat('horse', H), d = Math.sign(H.dir || 1), bob = o.sackBob || 0; abSack(c, seat.x - d * 60 * s, seat.y + 40 * s + bob, s * 0.6 * (o.sackS || 1), o.flat ? 0 : 1, { coin: o.coin, sq: 1 - Math.abs(bob) * 0.008 }); }
     rideOn(c, 'horse', H, { costume: 'bedouin', s: s * (i < 0 ? 1.08 : 0.95), brow: i < 0 ? 0.7 : 0.3, ...PP, pal: abPal(i < 0 ? AB_LEAD0 : AB_RIDER0[i % 3], m) });
-  }, { m, ...o });
+  }, { m, ...(AB_FIN[m] || {}), shadeD: 18, rim: null, ...o });
 }
 // baked silhouette strip: 11 small riders in one of 4 gallop drawings (cheap crowd: reuse with offsets)
 function abSilStrip(f, dir = 1) {

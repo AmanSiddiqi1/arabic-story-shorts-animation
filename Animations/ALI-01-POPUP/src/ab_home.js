@@ -10,7 +10,7 @@ function abHomePrint(gold) {
     abSlot(c, 520, 270, 520, 892, 10);
     abPage(c, P.page); const path = [[1000, 965], [700, 975], [450, 960], [150, 950], [0, 955]];
     shape(c, [...path.map(([x, y]) => [x, y - 18]), ...path.slice().reverse().map(([x, y]) => [x, y + 22])], P.path, { lw: 0, dot: AB_MX(P.path, EARTH, 0.4), pitch: 8, rad: 0.22, da: 0.45 });
-    bookFold(c, 0, AB_WW, AB_GR);
+    abFold(c);
   });
 }
 const abHS = () => abMem(AB_G, 'set', () => {
@@ -71,7 +71,7 @@ function abHomeAli(t) {
   if (t > 12.85 && t < 13.5) { P.handL = [-30, -104]; P.handR = [30, -130]; P.gaze = [1, 0.2]; }
   return { P, axe };
 }
-function abMothAt(t) { const u = K.clamp((t - 6.6) / 2.0); return [K.lerp(600, 380, u) + 30 * Math.sin(u * 12), K.lerp(830, 380, u)]; }
+function abMothAt(t) { const u = K.clamp((t - 6.55) / 2.2); return [K.lerp(645, 360, u) + 34 * Math.sin(u * 12), K.lerp(835, 330, u)]; }   // out of the pouch, up past his nose
 function abHome(ctx, t) {
   AB_G = 'home';
   const SP = abHS(), out = AB_HOME.out, pop = (d) => abK(t, 0.3, { delay: d, out: out + d * 0.12 }), kA = abK(t, 0.3, { delay: 0.3, out: out + 0.1 });
@@ -118,6 +118,8 @@ function abHome(ctx, t) {
     const ax = A.axe; if (ax && !ax.held) abAxe(c, ax.x, ax.y, ax.a, 0.85);
     abPerson(c, P, { patches: true });
     if (ax && ax.held) { const h = P.handRW || [P.x + 34 * Math.sign(P.dir), P.y - 165]; abAxe(c, h[0], h[1] + 10, ax.a ?? -0.6 * Math.sign(P.dir), 0.85); }
+    // the empty pouch turned inside out on فقيرًا (6.46), shaken once
+    if (t > 6.3 && t < 7.7) { const inv = K.ease.back(K.clamp((t - 6.4) / 0.25)), sh = 0.25 * Math.sin((t - 6.4) * 26) * Math.exp(-(t - 6.4) * 4); c.save(); c.translate(P.x + 34, P.y - 118); c.rotate(Math.PI * inv + sh); abSack(c, 0, 18, 30, 34, 0.25, { seed: 175, col: AB_MX(CREAM, SAND, 0.4) }); c.restore(); }
   }, kA);
   if (t > 6.5 && t < 9.0) abLive(ctx, ...abMothAt(t), 60, 40, (c) => abMoth(c, ...abMothAt(t), t, 1), 1, { border: 4 });
   abPullTab(ctx, 520, 1180, K.ease.back(K.clamp((t - 8.3) / 0.5)), 1);

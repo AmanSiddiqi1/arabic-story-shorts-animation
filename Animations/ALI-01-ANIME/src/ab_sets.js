@@ -57,8 +57,8 @@ function abGladeBack(ctx, m, t, o = {}) {
   abLeafBlobs(ctx, T.fol[0] - 40, T.fol[1] - 20, T.fol[2] * 0.95, m, 33, t, o.rip || 0);
 }
 // the front passes: thicket leaves over the donkey; the foliage curtain over Ali (gap: 0 closed .. 1 the eye gap, cover 0..1)
-function abThicketFront(ctx, m, t) { const [f, s, h] = AB_LEAF[m], R = K.rng(55);
-  for (let i = 0; i < 12; i++) { const x = AB_THICKET.x - 170 + (i % 6) * 66 + R() * 14, y = AB_THICKET.top + (i < 6 ? 150 : 70) + R() * 40, r = 62 + R() * 24; abBlob(ctx, x + Math.sin(t * 1.4 + i) * 2, y, r, r * 0.8, f, s, { hi: i % 2 ? h : null, off: r * 0.3, lw: 3, line: abDark(s, 0.4) }); } }
+function abThicketFront(ctx, m, t, minX = -1e9) { const [f, s, h] = AB_LEAF[m], R = K.rng(55);
+  for (let i = 0; i < 12; i++) { const x = AB_THICKET.x - 170 + (i % 6) * 66 + R() * 14, y = AB_THICKET.top + (i < 6 ? 150 : 70) + R() * 40, r = 62 + R() * 24; if (x < minX) continue; abBlob(ctx, x + Math.sin(t * 1.4 + i) * 2, y, r, r * 0.8, f, s, { hi: i % 2 ? h : null, off: r * 0.3, lw: 3, line: abDark(s, 0.4) }); } }
 function abFoliageFront(ctx, m, t, cover, o = {}) {
   if (cover <= 0) return; const T = AB_TREE, [gx, gy, gw, gh] = T.gap, [f, s, h] = AB_LEAF[m], R = K.rng(77), rip = o.rip || 0;
   ctx.save(); if (o.hole) { ctx.beginPath(); ctx.rect(-1e4, -1e4, 2e4, 2e4); ctx.roundRect(gx - gw / 2, gy - gh / 2 * o.hole, gw, gh * o.hole, 22); ctx.clip('evenodd'); }
@@ -102,8 +102,8 @@ function abForestLayer(name, m) {
         abBlob(c, x, 120 + q * 60, 170, 120, P.can[0], P.can[1], { off: 40, lw: 3, line: abDark(P.can[1], 0.4) }); } }); }
     if (name === 'path') { abGrad(c, 0, 880, w, 350, [[0, P.gnd[0]], [1, P.gnd[1]]]); c.save(); c.filter = 'blur(2px)'; c.fillStyle = P.path; c.fillRect(0, 892, w, 56); c.restore();
       const xs = Array.from({ length: 16 }, () => [R() * w, 0.6 + R() * 0.8]); wrap(() => { for (const [x, s] of xs) for (let k = -3; k <= 3; k++) { c.save(); c.translate(x, 960); c.rotate(k * 0.32); celShade(c, [[0, 0], [-10 * s, -40 * s], [0, -90 * s], [10 * s, -40 * s]], P.can[0], P.can[1], { off: 5, lw: 2.5 }); c.restore(); } }); }
-    if (name === 'front') wrap(() => { for (const [x, tw] of [[700, 120], [1350, 140]]) { c.fillStyle = P.front; c.fillRect(x - tw / 2, -10, tw, 1250); }
-      for (const x of [300, 1000, 1700]) { c.beginPath(); c.ellipse(x, 1200, 150, 60, 0, 0, 7); c.fill(); } });
+    if (name === 'front') wrap(() => { const x = 900, tw = 78; c.fillStyle = P.front; c.beginPath(); c.moveTo(x - tw / 2, -10); c.lineTo(x + tw / 2, -10); c.lineTo(x + tw / 2 + 8, 1250); c.lineTo(x - tw / 2 - 8, 1250); c.closePath(); c.fill();
+      c.beginPath(); c.ellipse(x + 30, 1215, 110, 40, 0, 0, 7); c.fill(); });
   });
 }
 // draw a tileable layer at parallax r with the camera (zoom about the panel centre)
@@ -125,7 +125,9 @@ function abForest(ctx, cam, t, m, o = {}) {
   abLayer(ctx, abForestLayer('far', m), cam, 0.25); abLayer(ctx, abForestLayer('mid', m), cam, 0.5); if (o.shafts !== false) abShafts(ctx, cam, t, AB_FOREST[m].shaft, o.shaftA ?? 0.16);
   abLayer(ctx, abForestLayer('path', m), cam, 1);
 }
-function abForestFront(ctx, cam, m) { const img = abForestLayer('front', m); for (const [d, a] of [[0, 0.9], [8, 0.35], [16, 0.2]]) { ctx.save(); ctx.globalAlpha = a; abLayer(ctx, img, { ...cam, x: cam.x + d / 1.6 }, 1.6); ctx.restore(); } }
+// one narrow dark trunk per 2000-unit tile at parallax 1.6, smeared 16 units behind it; o.ph phases the layer so the trunk never
+// crosses the subject near a word cue (phases computed per shot, see notes.md)
+function abForestFront(ctx, cam, m, o = {}) { const img = abForestLayer('front', m), sd = o.dir ?? 1; for (const [d, a] of [[0, 0.92], [8, 0.35], [16, 0.18]]) { ctx.save(); ctx.globalAlpha = a; abLayer(ctx, img, { ...cam, x: cam.x - (o.ph || 0) / 1.6 + sd * d / 1.6 }, 1.6); ctx.restore(); } }
 
 // ---------- dawnTown: the dawn sky with lit cloud undersides, and the far town roofs with three glowing windows ----------
 function abDawnSky() { return abBakeAt('dawnSky', 1000, 1230, (c, w) => { abGrad(c, 0, 0, w, 1230, [[0, '#24306e'], [0.3, '#5a5aa8'], [0.55, '#e88a9a'], [0.72, '#ffc89a'], [0.85, '#fff0c8']]);

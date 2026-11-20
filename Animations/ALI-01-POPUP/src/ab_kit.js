@@ -79,7 +79,9 @@ const AB_KID = { costume: 'servant', child: true, s: 0.8, seed: 29, pal: { robe:
 const AB_CAS = { costume: 'merchant', s: 0.86, age: 0.3, seed: 37, pal: { robe: GREEN, dot: GREEND, hc: C.yellow, hd: C.red, sash: AB_MX(C.yellow, EARTH, 0.35), trim: C.yellow } };
 const AB_LEAD = { costume: 'bedouin', s: 0.72, seed: 41, brow: 0.6, pal: { robe: AB_MX(FIGC, NAVY2, 0.6), dot: NAVY2, cape: C.red, capeDot: AB_MX(C.red, '#5a1010', 0.5), hc: C.red, hd: AB_MX(C.red, '#5a1010', 0.5), band: NAVY2, beard: C.black } };
 const AB_THIEF_ROBES = [AB_MX(NAVY2, STONED, 0.5), AB_MX(EARTHD, GREEND, 0.4), AB_MX(C.red, '#3a1010', 0.55), AB_MX(GREEND, NAVY2, 0.6)];
-const abThief = (i) => ({ costume: 'bedouin', s: 0.66, seed: 31 + i, pal: { robe: AB_THIEF_ROBES[i], dot: AB_MX(AB_THIEF_ROBES[i], C.black, 0.4), cape: AB_MX(AB_THIEF_ROBES[i], C.black, 0.25), capeDot: C.black, hc: AB_MX(NAVY2, C.black, 0.3), hd: C.red, band: C.red } });
+// v2: menacing by default (brow down, heavy lids, flat or grinning mouths); thief 1 (rider 3) stays the nervous one
+const AB_THIEF_FACE = [{ brow: 0.65, lid: 0.45, mouth: 'smile' }, { brow: -0.4, lid: 0, mouth: 'o' }, { brow: 0.7, lid: 0.5, mouth: 'closed' }, { brow: 0.55, lid: 0.4, mouth: 'smile' }];
+const abThief = (i) => ({ costume: 'bedouin', s: 0.66, seed: 31 + i, ...AB_THIEF_FACE[i], pal: { robe: AB_THIEF_ROBES[i], dot: AB_MX(AB_THIEF_ROBES[i], C.black, 0.4), cape: AB_MX(AB_THIEF_ROBES[i], C.black, 0.25), capeDot: C.black, hc: AB_MX(NAVY2, C.black, 0.3), hd: C.red, band: C.red } });
 const AB_ARMS_UP = { aL: [-2.45, -2.85], aR: [2.45, 2.85] };
 // draw a Library person with this story's extras (Ali Baba's robe patches) inside the body transform
 function abPerson(ctx, P, o = {}) {
@@ -98,6 +100,12 @@ function abPage(ctx, col, seed = 3) {
 function abHillPrint(ctx, y, amp, col, seed, dot) {
   const g = nz(seed), pts = [[0, AB_GR]]; for (let x = 0; x <= AB_WW; x += 20) pts.push([x, y - amp * (0.5 + 0.5 * g.n2(x * 0.004, seed))]); pts.push([AB_WW, AB_GR]);
   shape(ctx, pts, col, { lw: 3.5, seed, dot: dot || AB_MX(col, C.black, 0.3), pitch: 10, rad: 0.2, da: 0.4 });
+}
+// a stronger crease than the style's default: bookFold with a deeper shadow, plus a darker ink line and a soft highlight below it
+function abFold(ctx) {
+  bookFold(ctx, 0, AB_WW, AB_GR, { depth: 40 });
+  ctx.save(); ctx.strokeStyle = 'rgba(60,35,15,0.55)'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(0, AB_GR + 1); ctx.lineTo(AB_WW, AB_GR + 1); ctx.stroke();
+  ctx.strokeStyle = 'rgba(255,248,230,0.45)'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(0, AB_GR + 5); ctx.lineTo(AB_WW, AB_GR + 5); ctx.stroke(); ctx.restore();
 }
 // ---------- paper tree (palette-aware twin of Library tree()) ----------
 // o: {x (trunk centre), base, top, w (trunk), crowns [[cx, cy, r]], branch (polygon), pal {leaf, leafD, trunk}, slot (climb slot line)}
@@ -198,6 +206,31 @@ function abThiefChain(ctx, t, x0, y, open, n = 12, seed = 5, dir = 1) {
       c.drawImage(doll, -pw / 2 + (i % 2 ? 0 : 0) - pw / 2 + pw / 2, -88, pw * 2, 90); if (i % 2) { c.fillStyle = 'rgba(40,20,10,0.12)'; c.fillRect(-pw / 2, -88, pw * 2, 90); } c.restore(); }
   }, 1, { border: 4, shadow: 0.7 });
 }
+// v2 chain: a real concertina of paper dolls standing on the back row, anchored at xR and unfolding leftward panel by panel (open 0..1,
+// each panel with its own back() overshoot); alternate panels turned (narrower, sheared) and shaded. sc = doll scale (1.8 = v2 size).
+function abChain2(ctx, t, xR, y, open, n = 8, seed = 5, sc = 1.8) {
+  if (open <= 0.001) return;
+  const pw = 46 * sc, ph = 90 * sc, doll = K.cached('ab-doll2', () => { const c = K.layer(92 * AB_R * 1.8, 92 * AB_R * 1.8), g = c.getContext('2d'); g.scale(AB_R * 1.8, AB_R * 1.8);
+    horse(g, { x: 46, y: 88, s: 0.13, dir: -1, silhouette: true }); g.fillStyle = AB_MX(FIGC, NAVY2, 0.45); g.strokeStyle = C.black; g.lineWidth = 2;
+    g.beginPath(); g.ellipse(46, 40, 9, 15, 0, 0, 7); g.fill(); g.stroke(); g.beginPath(); g.arc(46, 20, 8, 0, 7); g.fill(); g.stroke(); g.fillStyle = C.red; g.beginPath(); g.arc(46, 15, 5, 0, 7); g.fill();
+    g.fillStyle = CREAM; g.beginPath(); g.ellipse(58, 46, 8, 7, 0, 0, 7); g.fill(); g.stroke(); return c; });
+  const P = []; let x = xR;
+  for (let i = 0; i < n; i++) { const raw = K.clamp(open * n - i); if (raw <= 0) break; const k = K.ease.back(raw), turned = i % 2 === 1, w = pw * k * (turned ? 0.78 : 1); P.push({ i, x0: x - w, w, k, turned }); x -= w; }
+  if (!P.length) return;
+  const half = Math.ceil(P.length / 2), groups = [P.slice(0, half), P.slice(half)].filter((g) => g.length);
+  for (const G of groups) {
+    const gx0 = Math.min(...G.map((q) => q.x0)), gx1 = Math.max(...G.map((q) => q.x0 + q.w));
+    abLive(ctx, (gx0 + gx1) / 2, y, gx1 - gx0 + 30, ph + 30, (c) => {
+      for (const q of G) { const bob = idleSway(t, seed + q.i, 2.5, 1.3 + (q.i % 3) * 0.2);
+        c.save(); c.translate(q.x0, y + bob); if (q.turned) c.transform(1, -0.08, 0, 1, 0, 0);
+        c.scale(q.w / pw, 1);
+        c.fillStyle = q.turned ? AB_MX(CREAM, SAND, 0.55) : CREAM; c.fillRect(0, -ph * 0.62, pw, ph * 0.07); c.fillRect(0, -ph * 0.06, pw, ph * 0.06);   // the joining bands of the folded strip
+        c.drawImage(doll, pw / 2 - ph * 0.51, -ph * 1.02, ph * 1.02, ph * 1.02);
+        if (q.turned) { c.fillStyle = 'rgba(40,20,10,0.22)'; c.fillRect(0, -ph * 1.02, pw, ph * 1.02); }
+        c.restore(); }
+    }, 1, { border: 4, shadow: 0.7 });
+  }
+}
 // ---------- small props ----------
 function abAxe(ctx, hx, hy, ang, s = 1) {   // hand at (hx, hy), the head at the far end, ang = handle angle (0 = up)
   ctx.save(); ctx.translate(hx, hy); ctx.rotate(ang); ctx.scale(s, s);
@@ -232,7 +265,8 @@ function abDust(ctx, x, y, t, t0, seed = 1, sc = 1) {   // a puff of small paper
 function abCart(ctx, x, y, s, wheel, n, bounce, t, dir = -1) {   // two-wheeled cart (box 170 x 60, wheel r 42, shafts), heaped with n flat sacks
   ctx.save(); ctx.translate(x, y); ctx.scale(dir * s, s);
   const by = -60 - bounce;
-  for (let i = 0; i < n; i++) { const fx = -70 + (i % 5) * 34, fy = by - 52 - Math.floor(i / 5) * 18 + lagged((u) => Math.sin(u * 13 + i) * 4, t, 0.08, 1); shape(ctx, [[fx - 22, fy + 16], [fx - 18, fy - 8 + Math.sin(t * 9 + i) * 3], [fx + 22, fy - 10], [fx + 24, fy + 14]], CREAM, { lw: 3, seed: 95 + i, dot: SAND, pitch: 6, rad: 0.2, da: 0.4 }); }
+  // v2: a tall pile, one flat sack per layer (countable)
+  for (let i = 0; i < n; i++) { const fx = -10 + ((i * 7) % 5 - 2) * 8, fy = by - 64 - i * 14 + lagged((u) => Math.sin(u * 13 + i) * 4, t, 0.08, 1) * (1 + i * 0.15); shape(ctx, [[fx - 40, fy + 8], [fx - 36, fy - 6 + Math.sin(t * 9 + i) * 2], [fx + 38, fy - 8], [fx + 42, fy + 7]], i % 2 ? CREAM : AB_MX(CREAM, SAND, 0.4), { lw: 3, seed: 95 + i, dot: SAND, pitch: 6, rad: 0.2, da: 0.4 }); }
   seg(ctx, 80, by - 6, 190, by - 26, 9, WOOD, 3);
   shape(ctx, K.rectPts(-95, by - 50, 180, 56), WOOD, { lw: 4.5, seed: 96, dot: EARTHD, pitch: 8, rad: 0.18, da: 0.4 });
   ctx.save(); ctx.strokeStyle = EARTHD; ctx.lineWidth = 3; for (const yy of [-36, -22]) { ctx.beginPath(); ctx.moveTo(-90, by + yy + 6); ctx.lineTo(80, by + yy + 6); ctx.stroke(); } ctx.restore();

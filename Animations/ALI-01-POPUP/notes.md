@@ -25,3 +25,13 @@ Decisions the plan left open or that were measured on the set and adjusted.
 - Road timing: Cassim reaches x 560 at 134.4 and the mule and cart (cart 150 behind the mule) arrive earlier than planned (mule 1250 -> 760 by 134.4) so the cart and its sacks are on the page when the strip arrow points at them; the slipping sack falls 134.3-135.15 and Cassim steps back to 620 to catch it.
 - The hide spot for the donkey is x 875 facing right (at 925 its head left the page).
 - Skipped details (small): capes blowing toward the opening door (46.2), moss tufts popping back over the seam (68.1), the star glint beside Ali Baba's eyes (86.9); the twig at 75.3 is a falling leaf card.
+
+# v2 (revise round 1) decisions
+- Rock tab: 1.6x `abPullTab` at (345, 1180) pointing left, travels 125 world units; the printed groove runs from the seam (270, 923) down and along to the tab. The tab value is `abRockState(t).tab` (open + jerk / twitch pulses).
+- Door clip (`abDoorClip`): arch + x > seam + a strip below the arch; walkers inside it are drawn between rockR and rockL. Thief paths end at x 110 / start at 120 (behind the left half); walking speed 360.
+- The concertina stands on the upper ridge road (y 702): on the back row (905) the riders cover it entirely.
+- Climb x 712 (left of the trunk card); the ground mark AB_ALIX uses 712 for 25.55-77.9 accordingly. Tree-mode Ali is clipped at y 558 (+92 when the toes gag runs).
+- Cave v2 layout: arch cards inner ellipses (478 x 650) and (432 x 592) about (500, 905); doorway x 730..870; gold 430 / silver 150 / cloth 240 (front) / big sacks 600-690 / tiny sack 545 / chest 470 (front). Slab closes 102.14-103.15 so Ali Baba can be seen hurrying out through the narrowing gap (the narration's order is closed, then hurried).
+- Hut: Cassim's question marks all come from his side (he no longer crosses to Ali Baba's left) to keep 150 px between the figures. Camera y lowered (floor near the lower third).
+- Road: badge "10" on وأكياسه (134.01) since the cart is off-frame at 133.07 in the travelling shot. Cassim ends at x 300 (in front of the rock) and folds at 140.75.
+- `motion.mjs`: a local motion scan (per-second frame difference on the story panel, seeks in the built player); not part of the build.

@@ -12,9 +12,11 @@ function abWords(ctx, S, words, times, x, y, t, o = {}) {
   ctx.save(); ctx.font = `400 ${size * (K.layout(1080, 1920).s || 1)}px "Lalezar"`; const ws = words.map((w) => ctx.measureText(w).width); ctx.restore();
   const total = ws.reduce((a, b) => a + b, 0) + gap * (words.length - 1); x = K.clamp(x, 70 + total / 2, 930 - total / 2); let cx = x + total / 2;
   ctx.save(); if (o.gone && t > o.gone) ctx.globalAlpha *= 1 - K.clamp((t - o.gone) / 0.3);
-  words.forEach((w, i) => { const wx = cx - ws[i] / 2; cx -= ws[i] + gap; if (t < times[i]) return;
-    const wb = o.wobble ? Math.sin(AB_T3(t) * 17 + i * 2) * o.wobble : 0;
-    S.title(ctx, w, wx, y + wb, K.clamp((t - times[i]) / 0.5), { font: 'Lalezar', size, align: 'center', glow: o.glow }); });
+  words.forEach((w, i) => { let wx = cx - ws[i] / 2, wy = y; cx -= ws[i] + gap; if (t < times[i]) return;
+    if (o.stack) { wx = o.stackX ?? x; wy = y + i * size * 1.08; }   // one word per line, first word on top (above the speaker's hand)
+    const wb = o.wobble ? Math.sin(AB_T3(t) * 17 + i * 2) * o.wobble : 0, pop = o.pop ? 1 + 0.18 * Math.max(0, 1 - (t - times[i]) / 0.25) : 1;
+    ctx.save(); if (pop !== 1) { ctx.translate(wx, wy); ctx.scale(pop, pop); ctx.translate(-wx, -wy); }
+    S.title(ctx, w, wx, wy + wb, K.clamp((t - times[i]) / 0.5), { font: 'Lalezar', size, align: 'center', glow: o.glow }); ctx.restore(); });
   ctx.restore();
 }
 // tape tracking noise band (a roll of torn lines), in canvas pixels inside the story panel
