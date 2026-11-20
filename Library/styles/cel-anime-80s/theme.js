@@ -48,8 +48,11 @@ function castFinish(ctx, x, y, w, h, draw, o = {}) {
 function celShade(ctx, pts, fill, shade, o = {}) {
   const [lx, ly] = o.light || [-1, -1], l = Math.hypot(lx, ly) || 1, off = o.off ?? 10, dx = lx / l * off, dy = ly / l * off;
   ctx.save(); K.poly(ctx, pts, true); ctx.fillStyle = fill; ctx.fill(); ctx.clip();
-  ctx.beginPath(); ctx.rect(-1e4, -1e4, 2e4, 2e4); K.poly(ctx, pts.map(([x, y]) => [x + dx, y + dy]), true); ctx.fillStyle = shade; ctx.fill('evenodd');
-  if (o.hi) { ctx.beginPath(); ctx.rect(-1e4, -1e4, 2e4, 2e4); K.poly(ctx, pts.map(([x, y]) => [x - dx * 0.6, y - dy * 0.6]), true); ctx.fillStyle = o.hi; ctx.globalAlpha = 0.85; ctx.fill('evenodd'); }
+  // the crescent = (everything minus the shape shifted by (sx, sy)) inside the clip. Build the path by hand: K.poly starts a new
+  // path, which would drop the big rect and fill the whole shifted shape (fixed 2026-11-21).
+  const crescent = (sx, sy) => { ctx.beginPath(); ctx.rect(-1e4, -1e4, 2e4, 2e4); pts.forEach(([x, y], i) => (i ? ctx.lineTo(x + sx, y + sy) : ctx.moveTo(x + sx, y + sy))); ctx.closePath(); };
+  crescent(dx, dy); ctx.fillStyle = shade; ctx.fill('evenodd');
+  if (o.hi) { crescent(-dx * 0.6, -dy * 0.6); ctx.fillStyle = o.hi; ctx.globalAlpha = 0.85; ctx.fill('evenodd'); }
   ctx.restore();
   if (o.lw !== 0) ink(ctx, pts, o.lw || 4, o.seed || 1, o.line || C.black);
 }

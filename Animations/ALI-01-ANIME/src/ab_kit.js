@@ -78,7 +78,10 @@ const AB_FIN = {
   predawn: { light: [1, -0.4], shade: '#9a9ad0', line: '#2e2e52' }, gold: { light: [1, -0.2], shade: '#c890a8', line: '#5a2a2a' }, sil: {},
 };
 // abCast(ctx, P, w, h, draw, m, o): a person-sized cel through the story finish (the palette already carries the model tint)
-function abCast(ctx, P, w, h, draw, m, o = {}) { const s = P.s || 1, F = AB_FIN[m] || {}; abCel(ctx, [P.x, P.y + 10 * s, w * s, h * s], draw, { k: 0, ...F, rim: null, ...o }); }
+// people only (v3, Fable review 2 note 3): in the night, lamp and cave models the hard shade is a narrow shape (shadeD) so skin keeps
+// its own colour on the lit two thirds of the face; in the cave the shade is warm amber (the violet stays the 4 px rim)
+const AB_PSHADE = { lamp: { shadeD: 6 }, night: { shadeD: 6 }, cave: { shade: '#d8a27c', shadeD: 5 } };
+function abCast(ctx, P, w, h, draw, m, o = {}) { const s = P.s || 1, F = AB_FIN[m] || {}; abCel(ctx, [P.x, P.y + 10 * s, w * s, h * s], draw, { k: 0, ...F, ...(AB_PSHADE[m] || {}), rim: null, ...o }); }
 
 // ---------- timing helpers ----------
 const AB_T2 = (t) => celStep(t, THEME.celFps || 12);     // characters on twos
@@ -130,6 +133,7 @@ function abSpeed(ctx, rect, t, o = {}) {
 // a cel blob (flat fill + hard shade + coloured line), the building block for the props below
 function abBlob(ctx, cx, cy, rx, ry, fill, shade, o = {}) { celShade(ctx, ell(cx, cy, rx, ry, o.n || 24), fill, shade, { light: o.light || [-1, -1], off: o.off ?? Math.min(rx, ry) * 0.35, hi: o.hi, lw: o.lw ?? 3.5, line: o.line }); }
 const abDark = (c, k = 0.45) => abMul(c, '#2b1a3a', k);
+const abLight = (c, k = 0.4) => abHex(...K.hex(c).map((v) => v + (255 - v) * k));
 
 // ---------- props ----------
 // sesameRock: the great rock (seam at x, base y), 650 x 650 at s 1. o: {open 0..1, crack 0..1, glow 0..1, model, s, t}
@@ -261,28 +265,50 @@ function abMapCard(ctx, x, y, p, s = 1, rot = 0) {
 }
 const o_glow = (p) => K.clamp((p - 0.85) * 6);
 
+// abCS(ctx, pts, fill, shade, o): a cel shape whose FILL is the lit majority and whose SHADE is a hard crescent on the side away
+// from the light (o.light, o.off), optional hi crescent on the light side, coloured outline. (Used for the close-up heads and hands,
+// so a head's lit skin is the same colour as the puppet's skin.)
+function abCS(ctx, pts, fill, shade, o = {}) {
+  const [lx, ly] = o.light || [-1, -1], l = Math.hypot(lx, ly) || 1, off = o.off ?? 10, dx = lx / l * off, dy = ly / l * off;
+  ctx.save(); K.poly(ctx, pts, true); ctx.fillStyle = fill; ctx.fill(); ctx.clip();
+  const cres = (sx, sy, col, a) => { ctx.save(); ctx.beginPath(); ctx.rect(-1e4, -1e4, 2e4, 2e4); pts.forEach((p, i) => (i ? ctx.lineTo(p[0] + sx, p[1] + sy) : ctx.moveTo(p[0] + sx, p[1] + sy))); ctx.closePath(); ctx.fillStyle = col; ctx.globalAlpha = a; ctx.fill('evenodd'); ctx.restore(); };
+  cres(dx, dy, shade, 1); if (o.hi) cres(-dx * 0.5, -dy * 0.5, o.hi, 0.75);
+  ctx.restore();
+  if (o.lw !== 0) ink(ctx, pts, o.lw || 4, 1, o.line || C.black);
+}
 // ---------- the anime face (model sheet: one head function for every close-up) ----------
 // abFace(ctx, x, y, k, F): head centre (x, y), scale k (1 = head about 500 units wide). F:
 //   who 'ali' | 'cassim', gaze [gx, gy] (-1..1), lid 0..1 (lidL / lidR override per eye), iris 0.4..1.2 (shrinks in fear),
 //   brow -1 (raised, worried) .. 1 (angry), mouth 'none' | 'set' | 'o' | 'smile' | 'grin' | 'talk', talk 0..1, coin 0..1 (coin pupils),
 //   reflect(ctx, r) drawn inside each iris (r = iris radius), sweat 0..1 (bead slides), m colour model, rim colour, hand 0..1 (hand over the mouth)
+// v3 model sheet (Fable review 2 note 2): the heads take skin, turban and facial hair from the puppets' tables. Skin = the puppet skin
+// (C.skin) in every colour model (only the shade crescent takes the model); Ali: cream turban, vermilion band, moustache + small
+// goatee; Cassim: saffron turban (= AB_CAS0.hc / hd in ab_cast.js), red jewel, white feather, wide moustache, no chin beard.
 const AB_FACE = {
-  ali: { skin: '#f2bf98', shade: '#c98a72', line: '#6a3a2a', iris: '#6b3e22', irisD: '#3e2012', tur: '#f4ecdc', turS: '#c9bda4', band: AB_ACC, beard: '#2a1a14', beardK: 'short' },
-  cassim: { skin: '#f0b890', shade: '#c7846a', line: '#5e3020', iris: '#4a3018', irisD: '#24140a', tur: '#f2a71b', turS: '#b8700c', band: '#c8481a', beard: '#2a1612', beardK: 'full', jewel: C.red },
+  ali: { skin: C.skin, shade: '#d99a80', line: '#6a3a2a', iris: '#6b3e22', irisD: '#3e2012', tur: '#f6efe0', turS: '#cfc4ae', band: AB_ACC, beard: '#2a1a14', beardK: 'goatee' },
+  cassim: { skin: C.skin, shade: '#d99a80', line: '#5e3020', iris: '#4a3018', irisD: '#24140a', tur: '#f2a71b', turS: '#c07a10', band: '#c8481a', beard: '#2a1612', beardK: 'tache', jewel: '#e8364f', feather: true },
 };
+// the shade crescent per colour model (lilac only as a narrow shape at night; warm in the cave and in gold light)
+const AB_FSHADE = { night: '#c08a9a', lamp: '#c88c88', cave: '#d08a62', gold: '#d48a5a', late: '#b88aa0', dusk: '#c48a96', predawn: '#b88c9c' };
 function abFace(ctx, x, y, k, F = {}) {
   const D = AB_FACE[F.who || 'ali'], M = F.m ? AB_MODEL[F.m] : null, col = (c) => (M ? abMul(c, M.tint, M.k * 0.55) : c), lw = (w) => w / Math.max(0.5, Math.sqrt(k));
-  const skin = col(D.skin), sh = col(D.shade), line = D.line, gz = F.gaze || [0, 0], fat = F.who === 'cassim' ? 1.12 : 1;
+  const skin = D.skin, sh = AB_FSHADE[F.m] || D.shade, line = D.line, gz = F.gaze || [0, 0], fat = F.who === 'cassim' ? 1.12 : 1;
+  const celShade = abCS;   // the heads use the lit-majority cel (see abCS)
   ctx.save(); ctx.translate(x, y); ctx.scale(k, k);
   // neck and collar (only shows on wider views)
   celShade(ctx, [[-110, 220], [110, 220], [150, 420], [-150, 420]], skin, sh, { light: [-1, -0.4], off: 30, lw: lw(3), line });
   // face: long egg with a soft-point chin
   const face = [[-200 * fat, -150], [-208 * fat, -10], [-190 * fat, 110], [-140 * fat, 220], [-60, 285], [0, 300], [60, 285], [140 * fat, 220], [190 * fat, 110], [208 * fat, -10], [200 * fat, -150], [0, -200]];
-  celShade(ctx, face, skin, sh, { light: F.light || [-1, -0.5], off: 44, lw: lw(3.5), line });
+  celShade(ctx, face, skin, sh, { light: F.light || [-1, -0.5], off: 70, lw: lw(3.5), line });
   for (const sd of [-1, 1]) celShade(ctx, ell(sd * 214 * fat, 30, 30, 52, 16), skin, sh, { light: [-sd, 0], off: 12, lw: lw(3), line });   // ears
   // beard
-  if (D.beardK === 'full') celShade(ctx, [[-196 * fat, 60], [-170, 200], [-90, 300], [0, 330], [90, 300], [170, 200], [196 * fat, 60], [150, 120], [80, 210], [0, 225], [-80, 210], [-150, 120]], col(D.beard), abDark(D.beard, 0.4), { light: [-1, -1], off: 14, lw: lw(3), line: '#120806' });
-  else celShade(ctx, [[-170, 150], [-120, 250], [-50, 296], [0, 304], [50, 296], [120, 250], [170, 150], [110, 200], [50, 236], [0, 240], [-50, 236], [-110, 200]], col(D.beard), abDark(D.beard, 0.4), { light: [-1, -1], off: 10, lw: lw(3), line: '#120806' });
+  const bc = D.beard, bo = { light: [-1, -1], off: 8, lw: lw(3), line: '#120806' };
+  if (D.beardK === 'tache') {   // Cassim: the puppet's wide moustache (two heavy wings under the nose, tips curling up)
+    for (const sd of [-1, 1]) celShade(ctx, [[sd * 4, 140], [sd * 60, 138], [sd * 120, 128], [sd * 168, 96], [sd * 176, 116], [sd * 150, 160], [sd * 96, 180], [sd * 40, 176], [sd * 4, 166]], bc, abDark(bc, 0.4), bo);
+  } else {                      // Ali: the puppet's moustache and a small goatee on the chin
+    for (const sd of [-1, 1]) celShade(ctx, [[sd * 4, 142], [sd * 50, 140], [sd * 96, 150], [sd * 112, 170], [sd * 70, 168], [sd * 30, 166], [sd * 4, 162]], bc, abDark(bc, 0.4), bo);
+    celShade(ctx, [[-38, 236], [38, 236], [44, 262], [20, 300], [0, 310], [-20, 300], [-44, 262]], bc, abDark(bc, 0.4), bo);
+  }
   // nose: a shadow plane and one stroke
   ctx.save(); ctx.fillStyle = sh; ctx.beginPath(); ctx.moveTo(6, 30); ctx.lineTo(30, 128); ctx.lineTo(4, 136); ctx.closePath(); ctx.fill();
   ctx.strokeStyle = line; ctx.lineWidth = lw(4); ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(-4, 132); ctx.lineTo(22, 138); ctx.stroke(); ctx.restore();
@@ -322,11 +348,12 @@ function abFace(ctx, x, y, k, F = {}) {
   if (F.sweat > 0) { const sy = -60 + 110 * F.sweat, sx = 176; ctx.save(); ctx.globalAlpha = K.clamp(4 * (1 - F.sweat)); celShade(ctx, [[sx, sy - 34], [sx + 14, sy - 2], [sx, sy + 12], [sx - 14, sy - 2]], '#cfeaff', '#7fb0e0', { light: [-1, -1], off: 5, lw: lw(3), line: '#3a5a9a' }); ctx.restore(); }
   // turban: a cloth dome over the brow, folds as hard cels, the accent band for Ali
   const T = [[-250 * fat, -120], [-262 * fat, -230], [-200, -380], [-60, -450], [80, -446], [210, -370], [262 * fat, -230], [250 * fat, -120], [120, -150], [0, -158], [-120, -150]];
-  celShade(ctx, T, col(D.tur), col(D.turS), { light: [-1, -1], off: 34, hi: '#ffffff', lw: lw(4), line: abDark(D.turS, 0.3) });
+  celShade(ctx, T, col(D.tur), col(D.turS), { light: [-1, -1], off: 34, hi: abLight(col(D.tur), 0.45), lw: lw(4), line: abDark(D.turS, 0.3) });
   ctx.save(); ctx.strokeStyle = col(D.turS); ctx.lineWidth = lw(7); for (const q of [[[-230, -200], [-40, -300], [200, -280]], [[-200, -300], [0, -380], [180, -350]]]) { ctx.beginPath(); K.poly(ctx, q); ctx.stroke(); } ctx.restore();
   const bandCol = F.who === 'ali' ? AB_ACC : col(D.band);
   ctx.save(); ctx.strokeStyle = bandCol; ctx.lineWidth = 26; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(-246 * fat, -136); ctx.quadraticCurveTo(0, -176, 246 * fat, -136); ctx.stroke(); ctx.restore();
-  if (D.jewel) { abBlob(ctx, 0, -190, 30, 34, D.jewel, '#8a1010', { hi: '#ffb0b0', lw: lw(3) }); abGlint(ctx, -10, -200, 30, ((F.t || 0) * 0.8) % 1); }
+  if (D.feather) { ctx.save(); ctx.translate(16, -214); ctx.rotate(0.38); celShade(ctx, [[-14, 0], [-22, -110], [-6, -230], [10, -250], [20, -120], [14, 0]], '#fffaf0', '#cfc8de', { light: [-1, -0.2], off: 9, lw: lw(3), line: abDark(D.turS, 0.3) }); ctx.restore(); }
+  if (D.jewel) { celShade(ctx, ell(0, -190, 30, 34, 20), D.jewel, '#8a1010', { light: [-1, -1], off: 12, hi: '#ffb0b0', lw: lw(3), line: '#5a0a0a' }); abGlint(ctx, -10, -200, 30, ((F.t || 0) * 0.8) % 1); }
   // a hand over the mouth (Ali hiding)
   if (F.hand > 0) { const hy = 420 - 230 * F.hand; celShade(ctx, [[-150, hy + 40], [-120, hy - 50], [-40, hy - 70], [60, hy - 66], [140, hy - 40], [160, hy + 60], [120, hy + 200], [-130, hy + 200]], skin, sh, { light: [-1, -1], off: 20, lw: lw(3.5), line });
     ctx.save(); ctx.strokeStyle = line; ctx.lineWidth = lw(3); for (const fx of [-60, 0, 60]) { ctx.beginPath(); ctx.moveTo(fx, hy - 60); ctx.lineTo(fx + 6, hy + 10); ctx.stroke(); } ctx.restore(); }

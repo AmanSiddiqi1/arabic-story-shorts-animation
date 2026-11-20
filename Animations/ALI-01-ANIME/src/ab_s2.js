@@ -227,7 +227,9 @@ AB_SHOTS.push({ a: 56.6, b: 62.55, ww: 2400, cam: (t) => (t < 59.88 ? { x: 1760 
   over: (ctx, t) => { if (t < 59.88) { const tc = AB_T3(t), droop = tc < 58.7 ? flow(tc, [[57.64, 0.2], [58.2, 0.6], [58.6, 0.9], [58.7, 0.9]]) : 0; abLeafFrame(ctx, t, { m: 'dusk', gaze: tc < 58.7 ? [0.4, 0.5] : [0.9, 0.2], lid: droop, iris: tc > 58.7 ? 1.12 : 1 }); } } });
 
 // ---------- S9 62.55-70.48: Close Sesame from the saddle (medium, nothing held dead); the rock seals and heals; a sparrow; they ride ----------
-const AB_S9_ARM = [[63.8, 0], [63.96, -0.25], [64.12, 1.15], [64.3, 0.95], [64.6, 1.0], [65.0, 1.6], [65.4, 1.75], [65.8, 1.7], [66.2, 1.72]];
+// v3 (Fable review 2 note 4): the arm nearer the rock is thrown above head height on "أغلق" 64.06 with overshoot and settle, sweeps
+// the rock shut, and is down by 66.8; the cloak hangs (6-drawing sway), kicks out three drawings late on the throw and falls back
+const AB_S9_ARM = [[63.8, 0], [63.96, -0.25], [64.12, 1.18], [64.3, 0.94], [64.5, 1.02], [64.7, 1.0], [65.0, 1.6], [65.4, 1.75], [65.8, 1.7], [66.2, 1.72], [66.8, 2.5]];
 function abS9World(ctx, t, cam) {
   const tc = AB_T2(t), m = 'dusk', close = K.clamp((t - 66.3) / 1.1), open = 1 - K.ease.inOut(close), flick = t > 65.8 && t < 65.87 ? 0.4 : 1, heal = 1 - K.clamp((t - 67.42) / 1.08);
   abBackRow(ctx, t, m, 0.7);
@@ -235,24 +237,28 @@ function abS9World(ctx, t, cam) {
   // the frieze of riders, already turned to the left; they shuffle while he calls, and move off after the leader's nod
   abByY(AB_HL.slice(1)).forEach((h) => { const k = AB_HL.indexOf(h), go = 69.9 + 0.13 * k, xf = (u) => h.x - (u > go ? 60 * (u - go) * (u - go) : 0) - 8 * Math.sin(Math.PI * beatIn(u, 63.0 + 0.2 * k, 63.6 + 0.2 * k));
     const H = { ...abLineHorse(h, k, tc), ...walk(xf, tc, { stride: GAIT.horse * h.s }), dir: -1, headDown: 0, earL: 0.6, earR: 0.5 };
-    abRider(ctx, h.i, H, { gaze: tc > 64.1 + 0.1 * k && tc < 66.4 ? [1, -0.1] : [-1, 0], lid: abLid(t, 160 + k, [64.1 + 0.1 * k]), tip: idleSway(tc, 161 + k, 0.02, 2.2) }, m, { cloak: 0.7, t, sacks: true, flat: true, rim: open > 0.1 ? '#ffb070' : null, light: [1, -0.2], rimAlpha: open }); });
+    abRider(ctx, h.i, H, { gaze: tc > 64.1 + 0.1 * k && tc < 66.4 ? [1, -0.1] : [-1, 0], lid: abLid(t, 160 + k, [64.1 + 0.1 * k]), tip: idleSway(tc, 161 + k, 0.02, 2.2) }, m, { cloak: 0.7, t, sacks: true, flat: true, rim: open > 0.1 ? '#ffb070' : null, light: [1, -0.2], rimAlpha: open, hang: 1 - beatIn(tc, go, go + 0.5), ph: 0.53 * k + 0.2 }); });
   // the leader on the black horse: the horse shifts its weight and tosses its head (63.2); he turns in the saddle toward the rock
   // with a blink, throws the arm out on "أغلق" and sweeps it shut
   const turn = tc > 69.8, lx = (u) => (u > 69.8 ? 1620 - 50 * (u - 69.8) * (u - 69.8) : 1620 + 6 * osc(u, 2.6)), H = { x: lx(tc), y: 905, s: 0.86, pal: 2, dir: turn ? -1 : 1, ...walk(lx, tc, { stride: GAIT.horse * 0.86 }),
-    rear: 0.4 * pulse(tc, 62.6, 1.0), neck: 0.5 * pulse(tc, 63.2, 0.45) + idleSway(tc, 171, 0.06, 2.3), headDown: 0.15 * pulse(tc, 63.4, 0.4), tailSwish: osc(tc, 1.6) + 0.5 * pulse(tc, 63.25, 0.5), earL: 0.5 + idleSway(tc, 172, 0.2, 1.7), earR: 0.4 + 0.5 * pulse(tc, 64.1, 0.3), lid: abLid(t, 173) };
+    rear: 0.4 * pulse(tc, 62.6, 1.0), neck: 0.5 * pulse(tc, 63.2, 0.45) + idleSway(tc, 171, 0.06, 2.3) + 0.25 * pulse(tc, 67.7, 0.6), headDown: 0.15 * pulse(tc, 63.4, 0.4) + 0.2 * pulse(tc, 68.4, 0.7), tailSwish: osc(tc, 1.6) + 0.5 * pulse(tc, 63.25, 0.5), earL: 0.5 + idleSway(tc, 172, 0.2, 1.7), earR: 0.4 + 0.5 * pulse(tc, 64.1, 0.3) + 0.3 * pulse(tc, 66.4, 0.4), lid: abLid(t, 173),
+    // moving hold: a fore hoof paws twice, a snort, a breath in the barrel
+    raise: Math.max(pulse(tc, 65.2, 0.4), pulse(tc, 67.2, 0.36), 0.8 * pulse(tc, 68.8, 0.36)), snort: pulse(tc, 66.9, 0.35), sq: breathe(tc, 172, 0.012) };
+  const hang = (1 - beatIn(tc, 69.8, 70.3)) * (1 - 0.75 * pulse(tc, 64.06 + 0.25, 0.6));
   const a = flow(tc, AB_S9_ARM) + lagged((u) => flow(u, AB_S9_ARM), tc, 0.1, 0.35);
-  const PP = { gaze: turn ? [-1, 0] : tc < 63.5 ? [-1, 0.1] : [1, -0.3], brow: 0.7, lid: tc > 69.3 && tc < 69.8 ? 0.3 : abLid(t, 170, [63.5]), tip: tc < 63.5 ? -0.04 : 0.05 * beatIn(tc, 63.5, 63.8) + idleSway(tc, 174, 0.015, 2.1), mouth: 'closed', talk: abTalk(t, 64.28, 65.5, 5), lurch: 0.04 * pulse(tc, 63.2, 0.5) };
+  const PP = { gaze: turn ? [-1, 0] : tc < 63.5 ? [-1, 0.1] : tc > 66.2 && tc < 68.5 ? [1, 0.15 + 0.1 * beatIn(tc, 66.4, 67.6)] : [1, -0.3], brow: 0.7, lid: tc > 69.3 && tc < 69.8 ? 0.3 : abLid(t, 170, [63.5]), tip: tc < 63.5 ? -0.04 : 0.05 * beatIn(tc, 63.5, 63.8) + idleSway(tc, 174, 0.015, 2.1), mouth: 'closed', talk: abTalk(t, 64.28, 65.5, 5), lurch: 0.04 * pulse(tc, 63.2, 0.5) };
   if (PP.talk) PP.mouth = 'open';
-  if (tc > 63.8 && tc < 66.6) PP.handR = a < 0 ? [20, -120] : a <= 1 ? [K.lerp(30, 110, Math.min(a, 1.15)), K.lerp(-120, -232, Math.min(a, 1.15))] : [K.lerp(110, -40, a - 1), K.lerp(-232, -150, a - 1)];
-  if (tc > 69.3 && tc < 69.8) PP.drop = 8 * pulse(tc, 69.35, 0.4);   // a nod
-  abRider(ctx, -1, H, PP, m, { cloak: 1.1, t, rim: open > 0.1 ? '#ffd76a' : null, light: [1, -0.3], rimAlpha: open });
+  if (tc > 63.8 && tc < 66.8) PP.handR = a < 0 ? [20, -120] : a <= 1 ? [K.lerp(30, 128, Math.min(a, 1.18)), K.lerp(-120, -336, Math.min(a, 1.18))] : a <= 1.75 ? [K.lerp(128, -40, (a - 1) / 0.75), K.lerp(-340, -170, (a - 1) / 0.75)] : [K.lerp(-40, 20, (a - 1.75) / 0.75), K.lerp(-170, -118, (a - 1.75) / 0.75)];
+  if (tc > 63.96 && tc < 65.0) PP.sq = 1 + 0.07 * Math.max(0, Math.min(1, a)) * (1 - beatIn(tc, 64.6, 65.0));   // stretch up into the throw
+  if (tc > 67.8 && tc < 68.3) PP.drop = 7 * pulse(tc, 67.85, 0.4);   // one nod as the seam heals
+  abRider(ctx, -1, H, PP, m, { cloak: 1.1, t, rim: open > 0.1 ? '#ffd76a' : null, light: [1, -0.3], rimAlpha: open, hang, ph: 0.1 });
   // a sparrow lands on the rock, pecks, hops and tilts its head: an ordinary rock
   if (t > 68.6) { const u = K.clamp((t - 68.6) / 0.35), hp = beatIn(tc, 69.3, 69.5), x = K.lerp(2000, 1700, u) - 26 * hp, y = K.lerp(160, 270, u) - 30 * Math.sin(Math.PI * u) - 18 * Math.sin(Math.PI * hp), fly = u < 1;
     bird(ctx, { kind: 'sparrow', x, y, s: 0.7, dir: -1, fly, flap: fly ? Math.sin(AB_T2(t) * 30) : 0, beak: !fly && tc < 69.3 && Math.sin(AB_T2(t) * 9) > 0.3 ? 1 : 0, headRot: !fly ? (tc > 69.55 ? 0.5 : 0.4 * Math.max(0, Math.sin(AB_T2(t) * 9))) : 0 }); }
 }
 function abS9Cam(t) { if (t < 66.2) return { x: 1650, y: 700, zoom: 1.75 }; return K.camAt([[67.4, { x: 1800, y: 620, zoom: 1.1 }], [69.2, { x: 1720, y: 615, zoom: 1.0 }]], t); }
 AB_SHOTS.push({ a: 62.55, b: 70.48, ww: 2400, cam: abS9Cam, under: abGladeWide('dusk'), world: abS9World,
-  over: (ctx, t, cam, S) => { if (t < 66.2) { const [hx] = abP(1720, 600, cam); abWords(ctx, S, ['أغلق', 'يا', 'سمسم'], [64.28, 64.78, 64.94], hx, 150, t, { size: 90, stack: true, stackX: hx, pop: true, gone: 65.6, glow: '#8a5cff' });
+  over: (ctx, t, cam, S) => { if (t < 66.2) { const [hx] = abP(1720, 600, cam); abWords(ctx, S, ['أغلق', 'يا', 'سمسم'], [64.28, 64.78, 64.94], hx, 120, t, { size: 84, stack: true, stackX: hx - 70, pop: true, gone: 65.6, glow: '#8a5cff' });
       if (t > 64.0) abBands(ctx, [0, 0, 1000, 1230], t, { cols: ['#c8a0ff', '#ffb070'], alpha: 0.13, w: 150, speed: 300, n: 2 }); }
     else abLeafFrame(ctx, t, { m: 'dusk', gaze: [0.9, 0.35] }); } });
 

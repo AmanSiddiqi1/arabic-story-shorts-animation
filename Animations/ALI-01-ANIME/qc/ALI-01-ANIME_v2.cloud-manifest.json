@@ -1,0 +1,83 @@
+{
+ "story": "ALI-01-ANIME",
+ "version": "v2",
+ "result": "PASS",
+ "reason": "",
+ "transient": false,
+ "attempts": 1,
+ "commit": "f7ee1b458a1471642745257dff07d1ecdee57689",
+ "fingerprint": "4c9567386ea81a6ba5ccc34bb2097e72ff7e725ad1772784d5877a15fbde53f0",
+ "artifact": "render-ALI-01-ANIME-v2-4c9567386ea8",
+ "run_id": "44820068975",
+ "run_attempt": "1",
+ "run_url": "https://github.com/AmanSiddiqi1/arabic-story-shorts-animation/actions/runs/44820068975",
+ "runner": {
+  "os": "Linux",
+  "cpus": 4
+ },
+ "deps": {
+  "_comment": "External dependencies the cloud runner fetches. Pinned to the exact commits the local Mac renders use (changing a pin changes every render fingerprint, so films re-render).",
+  "lemo_opuscar": {
+   "repo": "lemomo-ai/lemo-opuscar",
+   "sha": "413a6bd6d78ebd3bdd5abaec9538a26867f890df"
+  },
+  "motion_skills": {
+   "repo": "kevinbadi/claude-motion-faceless-skills",
+   "sha": "ca04944b268c38d0c7218069f312b425781ce834"
+  },
+  "playwright_core": "1.63.0",
+  "node": "22",
+  "render": {
+   "fps": 30,
+   "crf": 20,
+   "release_tag_inputs": "narration-inputs"
+  }
+ },
+ "timings_s": {
+  "narration_s": 3.0,
+  "build_s": 0.1,
+  "render_s": 450.4,
+  "workers": 4,
+  "frames": 4288,
+  "wall": 511.6
+ },
+ "mp4": {
+  "file": "ALI-01-ANIME_v2.mp4",
+  "bytes": 213744573,
+  "sha256": "62de8e7f8f5bcce5dbaed14e1c77dbc07faa86e778fcf2271b48c52cf46c6086"
+ },
+ "source_revision": {
+  "private_commit": "13abe855514f70bce24d1e9377b6634040b68cb8",
+  "export_sha256": "179ea75fddf73808ddc877db5c08d54f39c5fcaad36625e644cf9e972baef64c",
+  "files": 3268,
+  "exported": "2026-11-20T21:24:15Z"
+ },
+ "qc": {
+  "format": {
+   "video": [
+    "h264",
+    1080,
+    1920,
+    "30/1"
+   ],
+   "audio": [
+    "aac",
+    "48000"
+   ],
+   "duration": 142.933
+  },
+  "end_hold": 4.0,
+  "decode": "OK",
+  "lufs": -15.0,
+  "sync": {
+   "lag_ms": 0,
+   "corr": 0.996
+  },
+  "black": [],
+  "frozen_from": [],
+  "result": "PASS",
+  "fails": [],
+  "checked": "2026-11-20T21:34:28"
+ },
+ "generated": "2026-11-20T21:34:28Z"
+}

@@ -26,16 +26,25 @@ function abHand(P, i = 1) { const h = (P.hands || [[0, -100], [0, -100]])[i], s 
 // animals through the tint pass (bb: feet x, y, width, height)
 function abDonkey(ctx, P, m, o = {}) { const s = P.s || 1; abCel(ctx, [P.x, P.y, 380 * s, 380 * s], (c) => donkey(c, P), { m, ...(AB_FIN[m] || {}), shadeD: 18, rim: null, ...o }); }
 function abHorse(ctx, P, m, o = {}) { const s = P.s || 1; abCel(ctx, [P.x, P.y, 440 * s, 400 * s], (c) => horse(c, P), { m, ...(AB_FIN[m] || {}), shadeD: 18, rim: null, ...o }); }
-// a rider (person on a horse) as one cel, with a cloak ribbon streaming on a travelling sine (4 drawings)
-function abCloak(ctx, seat, dir, s, t, col, len = 1) {
-  const tc = AB_T3(t), d = Math.sign(dir || 1), x0 = seat.x - d * 14 * s, y0 = seat.y - 120 * s, pts = [], pts2 = [];
-  for (let k = 0; k <= 6; k++) { const u = k / 6, wv = Math.sin(tc * 14 - k * 1.1) * 14 * u * s; pts.push([x0 - d * u * 150 * s * len, y0 + u * 30 * s + wv]); pts2.push([x0 - d * u * 150 * s * len, y0 + u * 30 * s + wv + (36 - 20 * u) * s]); }
+// a rider (person on a horse) as one cel, with a cloak ribbon tied to speed (v3, Fable review 2 note 4): hang 0 = streaming back
+// on a travelling sine (4 drawings, galloping); hang 1 = hanging behind the saddle as a tapered ribbon whose tip sways on a calm
+// 6-drawing cycle (standing). ph: the rider's own phase seed.
+function abCloak(ctx, seat, dir, s, t, col, len = 1, hang = 0, ph = 0) {
+  const tc = AB_T3(t), d = Math.sign(dir || 1), x0 = seat.x - d * 14 * s, y0 = seat.y - 120 * s, pts = [], pts2 = [], h = K.clamp(hang);
+  const q = Math.floor((t + ph) * 4) / 4;   // calm cycle: 6 drawings of 0.25 s
+  for (let k = 0; k <= 6; k++) { const u = k / 6, wv = Math.sin(tc * 14 - k * 1.1) * 14 * u * s, sw = Math.sin(q * Math.PI * 2 / 1.5 - u * 1.4) * 16 * u * u * s;
+    const sx = x0 - d * u * 150 * s * len, sy = y0 + u * 30 * s + wv, hx = x0 - d * (16 + 58 * u + 14 * Math.sin(Math.PI * u)) * s * len - d * sw, hy = y0 + u * 118 * s;
+    const x = K.lerp(sx, hx, h), y = K.lerp(sy, hy, h), wid = (36 - 20 * u) * s * (1 - 0.3 * h * u);
+    pts.push([x, y]); pts2.push([x - d * wid * h, y + wid * (1 - h)]); }
   celShade(ctx, [...pts, ...pts2.reverse()], col, abDark(col, 0.45), { light: [-d, -1], off: 6 * s, lw: 3 });
 }
 function abRider(ctx, i, H, PP, m, o = {}) {
-  const s = H.s || 1, cape = (i < 0 ? AB_LEAD0 : AB_RIDER0[i % 3]).cape;
+  const s = H.s || 1, cape = (i < 0 ? AB_LEAD0 : AB_RIDER0[i % 3]).cape, hang = o.hang ?? 1 - K.clamp((H.amp || 0) * 1.5 + (H.gallop ? 1 : 0));
+  const cloak = (c, col) => { const seat = mountSeat('horse', H); abCloak(c, seat, H.dir, s, o.t || 0, col, o.cloak, hang, o.ph ?? i * 0.37); };
+  // the leader's cloak keeps its crimson in the saddle: drawn once-tinted outside the cel tint pass (same colour as on foot)
+  if (o.cloak && i < 0) cloak(ctx, abMul(cape, AB_MODEL[m].tint, AB_MODEL[m].k));
   abCel(ctx, [H.x, H.y, 460 * s, 640 * s], (c) => {
-    if (o.cloak) { const seat = mountSeat('horse', H); abCloak(c, seat, H.dir, s, o.t || 0, abMul(cape, AB_MODEL[m].tint, AB_MODEL[m].k), o.cloak); }
+    if (o.cloak && i >= 0) cloak(c, abMul(cape, AB_MODEL[m].tint, AB_MODEL[m].k));
     if (o.sacks) { const seat = mountSeat('horse', H), d = Math.sign(H.dir || 1), bob = o.sackBob || 0; abSack(c, seat.x - d * 60 * s, seat.y + 40 * s + bob, s * 0.6 * (o.sackS || 1), o.flat ? 0 : 1, { coin: o.coin, sq: 1 - Math.abs(bob) * 0.008 }); }
     rideOn(c, 'horse', H, { costume: 'bedouin', s: s * (i < 0 ? 1.08 : 0.95), brow: i < 0 ? 0.7 : 0.3, ...PP, pal: abPal(i < 0 ? AB_LEAD0 : AB_RIDER0[i % 3], m) });
   }, { m, ...(AB_FIN[m] || {}), shadeD: 18, rim: null, ...o });

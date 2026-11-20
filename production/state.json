@@ -8024,6 +8024,97 @@
 "msg": "revise agent ac13d085690eb0eaf",
 "story_id": "ALI-01-POPUP",
 "t": "2026-11-21T04:36:07"
+},
+{
+"id": 1138,
+"kind": "cloud-render",
+"msg": "v2: PASS run 44820068975 commit f7ee1b458a",
+"story_id": "ALI-01-ANIME",
+"t": "2026-11-21T05:59:51"
+},
+{
+"id": 1139,
+"kind": "cloud-render",
+"msg": "v2: PASS run 44820068975 commit f7ee1b458a",
+"story_id": "ALI-01-POPUP",
+"t": "2026-11-21T06:14:14"
+},
+{
+"id": 1140,
+"kind": "done",
+"msg": "revise v2 Animations/ALI-01-POPUP/renders/ALI-01-POPUP_v2.mp4 (claude-opus-5-5)",
+"story_id": "ALI-01-POPUP",
+"t": "2026-11-21T06:14:24"
+},
+{
+"id": 1141,
+"kind": "done",
+"msg": "revise v2 Animations/ALI-01-ANIME/renders/ALI-01-ANIME_v2.mp4 (claude-opus-5-5)",
+"story_id": "ALI-01-ANIME",
+"t": "2026-11-21T06:14:24"
+},
+{
+"id": 1142,
+"kind": "claim",
+"msg": "review2 claimed (fable)",
+"story_id": "ALI-01-ANIME",
+"t": "2026-11-21T06:14:57"
+},
+{
+"id": 1143,
+"kind": "claim",
+"msg": "review2 claimed (fable)",
+"story_id": "ALI-01-POPUP",
+"t": "2026-11-21T06:14:57"
+},
+{
+"id": 1144,
+"kind": "agent",
+"msg": "review2 agent ac23da0a6bdc3fc35",
+"story_id": "ALI-01-POPUP",
+"t": "2026-11-21T06:15:12"
+},
+{
+"id": 1145,
+"kind": "agent",
+"msg": "review2 agent a161880ee0b032fdd",
+"story_id": "ALI-01-ANIME",
+"t": "2026-11-21T06:15:12"
+},
+{
+"id": 1146,
+"kind": "done",
+"msg": "review2 review 2: PASS WITH NOTES (claude-fable-5-2)",
+"story_id": "ALI-01-POPUP",
+"t": "2026-11-21T06:20:41"
+},
+{
+"id": 1147,
+"kind": "finalized",
+"msg": "v2 -> MP4s/Open Sesame - Paper Pop-up 9x16 - Baloo Bhaijaan 2.mp4",
+"story_id": "ALI-01-POPUP",
+"t": "2026-11-21T06:20:41"
+},
+{
+"id": 1148,
+"kind": "done",
+"msg": "review2 review 2: REVISE (claude-fable-5-2)",
+"story_id": "ALI-01-ANIME",
+"t": "2026-11-21T06:22:04"
+},
+{
+"id": 1149,
+"kind": "claim",
+"msg": "fix claimed (opus)",
+"story_id": "ALI-01-ANIME",
+"t": "2026-11-21T06:22:04"
+},
+{
+"id": 1150,
+"kind": "agent",
+"msg": "fix agent a859132209d477342",
+"story_id": "ALI-01-ANIME",
+"t": "2026-11-21T06:22:15"
 }
 ],
 "plans": [
@@ -10520,6 +10611,26 @@
 "status": "PASS",
 "story_id": "ALI-01-POPUP",
 "version": "v1"
+},
+{
+"created": "2026-11-21T05:59:51",
+"duration": 142.933,
+"path": "Animations/ALI-01-ANIME/renders/ALI-01-ANIME_v2.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 142.933}, \"end_hold\": 4.0, \"decode\": \"OK\", \"lufs\": -15.0, \"sync\": {\"lag_ms\": 0, \"corr\": 0.996}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-20T21:34:28\", \"cloud_run\": \"44820068975\", \"cloud_commit\": \"f7ee1b458a1471642745257dff07d1ecdee57689\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "ALI-01-ANIME",
+"version": "v2"
+},
+{
+"created": "2026-11-21T06:14:14",
+"duration": 143.433,
+"path": "Animations/ALI-01-POPUP/renders/ALI-01-POPUP_v2.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 143.433}, \"end_hold\": 4.5, \"decode\": \"OK\", \"lufs\": -15.1, \"sync\": {\"lag_ms\": 0, \"corr\": 0.993}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-20T21:36:15\", \"cloud_run\": \"44820068975\", \"cloud_commit\": \"f7ee1b458a1471642745257dff07d1ecdee57689\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "ALI-01-POPUP",
+"version": "v2"
 }
 ],
 "reviews": [
@@ -11313,6 +11424,24 @@
 "path": "Animations/ALI-01-POPUP/review/fable_review_1.md",
 "round": 1,
 "story_id": "ALI-01-POPUP",
+"verdict": "REVISE"
+},
+{
+"agent_id": "ac23da0a6bdc3fc35",
+"created": "2026-11-21T06:20:41",
+"model": "claude-fable-5-2",
+"path": "Animations/ALI-01-POPUP/review/fable_review_2.md",
+"round": 2,
+"story_id": "ALI-01-POPUP",
+"verdict": "PASS WITH NOTES"
+},
+{
+"agent_id": "a161880ee0b032fdd",
+"created": "2026-11-21T06:22:04",
+"model": "claude-fable-5-2",
+"path": "Animations/ALI-01-ANIME/review/fable_review_2.md",
+"round": 2,
+"story_id": "ALI-01-ANIME",
 "verdict": "REVISE"
 }
 ],
@@ -14368,7 +14497,7 @@
 "words_status": "SUCCESS"
 },
 {
-"approval": "none",
+"approval": "pending",
 "assembly_file": null,
 "collection": "Ali Baba",
 "completed_before": 0,
@@ -14387,7 +14516,7 @@
 "segments": "[\"ALI-01-P01-S01\", \"ALI-01-P01-S02\", \"ALI-01-P01-S03\", \"ALI-01-P01-S04\", \"ALI-01-P01-S05\", \"ALI-01-P01-S06\", \"ALI-01-P01-S07\", \"ALI-01-P01-S08\"]",
 "title_ar": "افتح يا سمسم",
 "title_en": "Open Sesame",
-"updated": "2026-11-21T02:21:08",
+"updated": "2026-11-21T06:20:41",
 "words_file": "ALI-01_Open_Sesame_slowed.mp3.words.json",
 "words_sha": "049afad2993d1976a175384e3f241825eaef6f44cc2494e8565e10013d4aac3d",
 "words_status": "supplied"
@@ -18874,30 +19003,72 @@
 {
 "agent_id": "a56acd392225c802d",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-21T06:14:24",
 "id": 319,
 "model": "opus",
-"notes": null,
-"outputs": null,
+"notes": "tokens {\"turns\": 72, \"input_tokens\": 148, \"cache_creation_input_tokens\": 337729, \"cache_read_input_tokens\": 16209242, \"output_tokens\": 151284}",
+"outputs": "v2 Animations/ALI-01-ANIME/renders/ALI-01-ANIME_v2.mp4",
 "pid": null,
 "stage": "revise",
 "started": "2026-11-21T04:34:18",
-"status": "running",
+"status": "done",
 "story_id": "ALI-01-ANIME"
 },
 {
 "agent_id": "ac13d085690eb0eaf",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-21T06:14:24",
 "id": 320,
+"model": "opus",
+"notes": "tokens {\"turns\": 76, \"input_tokens\": 152, \"cache_creation_input_tokens\": 314534, \"cache_read_input_tokens\": 16931471, \"output_tokens\": 130910}",
+"outputs": "v2 Animations/ALI-01-POPUP/renders/ALI-01-POPUP_v2.mp4",
+"pid": null,
+"stage": "revise",
+"started": "2026-11-21T04:35:54",
+"status": "done",
+"story_id": "ALI-01-POPUP"
+},
+{
+"agent_id": "a161880ee0b032fdd",
+"attempt": 1,
+"finished": "2026-11-21T06:22:04",
+"id": 321,
+"model": "fable",
+"notes": null,
+"outputs": "review 2: REVISE",
+"pid": null,
+"stage": "review2",
+"started": "2026-11-21T06:14:57",
+"status": "done",
+"story_id": "ALI-01-ANIME"
+},
+{
+"agent_id": "ac23da0a6bdc3fc35",
+"attempt": 1,
+"finished": "2026-11-21T06:20:41",
+"id": 322,
+"model": "fable",
+"notes": null,
+"outputs": "review 2: PASS WITH NOTES",
+"pid": null,
+"stage": "review2",
+"started": "2026-11-21T06:14:57",
+"status": "done",
+"story_id": "ALI-01-POPUP"
+},
+{
+"agent_id": "a859132209d477342",
+"attempt": 1,
+"finished": null,
+"id": 323,
 "model": "opus",
 "notes": null,
 "outputs": null,
 "pid": null,
-"stage": "revise",
-"started": "2026-11-21T04:35:54",
+"stage": "fix",
+"started": "2026-11-21T06:22:04",
 "status": "running",
-"story_id": "ALI-01-POPUP"
+"story_id": "ALI-01-ANIME"
 }
 ],
 "usage_log": [

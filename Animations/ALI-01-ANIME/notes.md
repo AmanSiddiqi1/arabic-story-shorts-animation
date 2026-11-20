@@ -27,3 +27,10 @@ Plan checked against inputs: MP3 and words.json SHA-256 match planning_metadata.
 - S12: Ali walks on to x 860 so the camera can follow him at 1.6 past gold, silver and cloth; S13 is a separate set-up (bust, insert, medium at x 580 by the chest).
 - S17: the cart speed after 133.6 is 200 units/s (was 260) so the freeze wide (cam x 1850, zoom 1.0) holds the cart at left and the rock (x 2150, s 0.5) on the right.
 - Cast finish (`AB_FIN`): per-model light direction, shade tone and line colour; people's skin keeps its Library colour, only shaded and rimmed.
+
+## v3 fix round (Fable review 2, notes 1-4) decisions
+- S17 camera tracks at cam x = cart x - 47 (zoom 1.7): cart bed at about 58% of the panel width, Cassim's head near 60%. Freeze wide: cam x 1596, zoom 1.0 (cart centre at about 32%; zoom below 1.0 would show past the 1230-unit world bottom). End rock moved to x 1975, s 0.36 so it sits where it was on screen (right) without covering the mule.
+- The three words fall in real time (not frozen), so the last word (cue 137.51) lands at 137.98 on the road during the pull to the wide and lies dim behind the cart in the end frame.
+- EMPTY SACKS tag sits under the ribbons (above the road), not above them: above the ribbons is where the word stack sits.
+- Skin: both puppets and close-up heads use the Library skin (C.skin) in every colour model; only the shade crescent takes the model (people in lamp/night use shadeD 6, cave shadeD 5 with a warm amber shade, violet stays the 4 px rim). The close-up heads use the local `abCS` (see library_proposals.md 15).
+- 64.06 call: rideOn's arm length cannot put the hand above the keffiyeh, so the hand is thrown up-forward to brow height clear of the head, with a 7% stretch of the figure into the throw.

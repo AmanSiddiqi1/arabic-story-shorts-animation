@@ -31,6 +31,7 @@ AB_SHOTS.push({ a: 89.48, b: 95.4, ww: 1600, cam: (t) => ({ x: AB_S12_X(t) + 210
 // ---------- S13 95.4-101.3: the emotional centre in three held drawings, no cut to a wide ----------
 // a hand seen from the side, fingers down; curl 0..1 folds the fingers in. (x, y) = the knuckles, k scale, sd -1 | 1 (thumb side)
 function abHandCel(ctx, x, y, k, curl = 0, sd = 1, F = AB_FACE.ali) {
+  const celShade = abCS;   // lit-majority cel: the hands are the puppet's skin
   ctx.save(); ctx.translate(x, y); ctx.scale(k * sd, k);
   celShade(ctx, [[-60, -300], [60, -300], [64, -40], [-64, -40]], '#8f8a40', '#64612a', { light: [-1, -0.3], off: 22, lw: 4, line: '#3e3a14' });   // sleeve
   celShade(ctx, [[-56, -50], [56, -50], [66, 20], [50, 70], [-50, 70], [-66, 20]], F.skin, F.shade, { light: [-1, -0.4], off: 18, lw: 4, line: F.line });   // back of the hand
@@ -308,7 +309,9 @@ AB_SHOTS.push({ a: 126.99, b: 131.81, ww: 1000, cam: (t) => K.camAt([[130.77, { 
 const AB_FREEZE = 137.93;
 const AB_CX = (t) => { const u = t - 132.6; return u <= 0 ? 420 : u < 1 ? 420 + 130 * u * u : 550 + 200 * (u - 1); };
 const AB_CASSIM_HOP = (t) => t < 132.0 ? [300, 0] : t < 132.35 ? hop(t, 132.0, 0.35, 300, 400, 120) : [400, 0];
-const AB_END_ROCK = [2150, 900, 0.5], AB_WIDE = { x: 1850, y: 615, zoom: 1.0 };
+// v3 (Fable review 2 note 1): the cart rides at ~58% of the panel width (a third of the frame free behind it); the wide after the
+// freeze puts the whole cart near 32% of the width, the rock where it was on screen, and the last dropped word on the road behind
+const AB_END_ROCK = [1975, 900, 0.36], AB_WIDE = { x: 1596, y: 615, zoom: 1.0 }, AB_CAMDX = -47;
 function abPredawnSky() { return abBakeAt('predawnSky', 1000, 1230, (c, w) => {
   abGrad(c, 0, 0, w, 1230, [[0, '#10143c'], [0.3, '#1e2560'], [0.5, '#3a3c7a'], [0.6, '#8a6a9a'], [0.655, '#f3b89a'], [0.7, '#c89aa8']]);
   abGlaze(c, 640, 800, 380, '#ffd0a8', 0.5);
@@ -328,10 +331,10 @@ function abS17Under(ctx, tt, cam) {
   abLayer(ctx, abPredawnHills(0), cam, 0.3, 40); abLayer(ctx, abPredawnHills(1), cam, 0.6, 20); abLayer(ctx, abPredawnGround(), cam, 1);
 }
 // empty sacks as pale ribbons streaming off the back of the cart (a 4-drawing cycle on a travelling sine)
-function abSackRibbons(ctx, x0, y0, tt, k = 1) {
+function abSackRibbons(ctx, x0, y0, tt, k = 1, flap = 0) {
   const f = Math.floor(tt * 8) % 4, cols = ['#efe6d2', '#d8cbb0', '#e6dcc4', '#cfc0a2'];
   cols.forEach((col, i) => { const len = (150 + 30 * i) * k, pts = [], pts2 = [], yb = y0 - i * 12;
-    for (let j = 0; j <= 6; j++) { const u = j / 6, wv = Math.sin(f * Math.PI / 2 + i * 1.3 - j * 1.1) * 16 * u; pts.push([x0 - u * len, yb + u * 18 + wv]); pts2.push([x0 - u * len, yb + u * 18 + wv + 30 * (1 - 0.5 * u)]); }
+    for (let j = 0; j <= 6; j++) { const u = j / 6, wv = Math.sin(f * Math.PI / 2 + i * 1.3 - j * 1.1) * 16 * u - (i === 1 ? flap * 90 * u * u : 0); pts.push([x0 - u * len, yb + u * 18 + wv]); pts2.push([x0 - u * len, yb + u * 18 + wv + 30 * (1 - 0.5 * u)]); }
     celShade(ctx, [...pts, ...pts2.reverse()], col, abMul(col, '#6a6aa0', 0.45), { light: [1, -1], off: 8, lw: 3, line: '#4a4060' }); });
 }
 function abS17World(ctx, tt, cam) {
@@ -346,36 +349,45 @@ function abS17World(ctx, tt, cam) {
   if (tc < 132.0) { Object.assign(CP, { x: 300, handL: [60, -150], handR: [70, -170], mouth: 'smile' }); const u = beatIn(tc, 131.85, 132.0); for (let i = 0; i < 3; i++) abSack(ctx, K.lerp(360, 410 + i * 30, u), K.lerp(740, 780, u) - 60 * Math.sin(Math.PI * u), 0.5, 0, { rot: u * 2 + i }); }
   if (!inCart) { groundShadow(ctx, hx2, 903, 90, lift, { flat: true, color: '#141a46' }); if (tc >= 132.0) Object.assign(CP, { x: hx2, y: 900 - lift - 85 * beatIn(tc, 132.0, 132.35), handL: [-40, -200], handR: [40, -210] }); abCassim(ctx, CP, m); }
   const by = 900 - 95 - bounce;
-  if (tc > 132.0) abSackRibbons(ctx, cx - 120, by - 40, tt, 0.9);
+  if (tc > 132.0) abSackRibbons(ctx, cx - 120, by - 26, tt, 0.78 * K.ease.out(K.clamp((tc - 132.0) / 0.5)), lagged((u) => pulse(u, 134.01, 0.42), AB_T2(tt), 0.08, 1) * (tt < AB_FREEZE ? 1 : 0));
   abCart(ctx, cx, 900, { wheel, tilt, bounce, load: false, t, inside: inCart ? (c) => {
     for (let i = 0; i < 4; i++) abSack(c, -96 + i * 50, -46 - (i % 2) * 10, 0.62, 0, { flap: 6 * Math.sin(AB_T3(tt) * 9 + i * 1.7), col: i % 2 ? '#e6dcc4' : '#d8cbb0', shade: '#9a90a8', rot: -0.1 + 0.05 * i });
     const P = { ...CP, x: -20, y: 10 - lagged((u) => 3 * Math.abs(Math.sin(AB_CX(u) * 0.045)), tc, 0.08, 1), handR: tc > 132.45 ? [96 + 4 * jit, -226 + 6 * jit] : [90, -140], handL: [70, -140] };
     // the turban tail streams back, lagging the lean
-    const tx = -20 - 34, ty = P.y - 214, pts = [], pts2 = []; for (let j = 0; j <= 5; j++) { const u = j / 5, wv = Math.sin(Math.floor(tt * 8) * 1.6 - j * 1.2) * 8 * u; pts.push([tx - u * 80, ty + u * 26 + wv]); pts2.push([tx - u * 80, ty + u * 26 + wv + 14]); }
+    const tx = -20 - 34, ty = P.y - 228, pts = [], pts2 = []; for (let j = 0; j <= 5; j++) { const u = j / 5, wv = Math.sin(Math.floor(tt * 8) * 1.6 - j * 1.2) * 8 * u; pts.push([tx - u * 80, ty + u * 26 + wv]); pts2.push([tx - u * 80, ty + u * 26 + wv + 14]); }
     celShade(c, [...pts, ...pts2.reverse()], abMul('#f2a71b', AB_MODEL[m].tint, AB_MODEL[m].k), '#9a6a2a', { light: [1, -1], off: 4, lw: 2.5 });
     abCassim(c, P, m); const h = abHand(P, 1); c.save(); c.strokeStyle = '#3a2a3a'; c.lineWidth = 4; c.lineCap = 'round'; c.beginPath(); c.moveTo(h[0], h[1]); c.quadraticCurveTo(h[0] + 60, h[1] - 70 - 10 * jit, h[0] + 120, h[1] - 40 + 14 * jit); c.stroke(); c.restore(); } : null });
   if (inCart) { ctx.save(); ctx.strokeStyle = '#c8a070'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(cx + 60, 900 - 95 - 150); ctx.quadraticCurveTo(cx + 200, 760, M.x + 120, 900 - 200); ctx.stroke(); ctx.restore(); }
   if (cx > 600) for (const f of [0, 1]) dustBurst(ctx, cx - 60, 902, ((t * 2 + f * 0.5) % 1) * 0.5, 3, 3, 7, 18, 0.5, f + Math.floor(t * 2));
 }
-// the three words: on the heap from 133.0; each slides off the back on its word (هل 135.87, سيتذكر 136.63, كيف 137.51), drops to the
-// road with a small bounce and dims; the camera leaves them behind
-const AB_DROP = [135.87, 136.63, 137.51];
-function abS17Words(ctx, tt, cam, S) {
-  const t = Math.min(tt, AB_FREEZE); if (t < 133.0) return;
-  ['افتح', 'يا', 'سمسم'].forEach((w, i) => { const tf = AB_DROP[i], heap = (u) => [AB_CX(u) - 40 + (i - 1) * 18, 900 - 95 - 3 * Math.abs(Math.sin(AB_CX(u) * 0.045)) - 70 - (2 - i) * 58];
-    let x, y, a = K.clamp((t - 133.0) / 0.4), glow = '#ffd36a';
-    if (t < tf) [x, y] = heap(t);
-    else { const [x0, y0] = heap(tf), sl = beatIn(t, tf, tf + 0.18), xb = AB_CX(tf) - 175; x = K.lerp(x0, xb, sl) - 30 * K.clamp((t - tf - 0.18) / 0.4);
-      y = t < tf + 0.18 ? y0 : t < tf + 0.5 ? fallY(t, tf + 0.18, tf + 0.5, y0, 880) : 880 - 22 * Math.sin(Math.PI * beatIn(t, tf + 0.5, tf + 0.72));
-      a = 1 - 0.55 * K.clamp((t - tf - 0.5) / 0.6); glow = undefined; }
-    const [px, py] = abP(x, y, cam); ctx.save(); ctx.globalAlpha = a; S.title(ctx, w, px, py, 1, { font: 'Lalezar', size: 60 * Math.min(1.2, cam.zoom / 1.7), glow, align: 'center' }); ctx.restore(); });
+// the three words (v3): from 133.07 stacked on the sack heap behind Cassim's back (lowest on the cart rim, clear of his turban); on
+// each cue (هل 135.87, سيتذكر 136.63, كيف 137.51) the top word tips over the tail board, drops on an arc to the road in 0.35 s,
+// squashes on contact with one small bounce, dims, and stays put in the world while the tracking camera leaves it behind
+const AB_DROP = [135.87, 136.63, 137.51], AB_WSIZE = 56;
+const abHeapWord = (i, u) => [AB_CX(u) - 130, 900 - 95 - 3 * Math.abs(Math.sin(AB_CX(u) * 0.045)) - 50 - 17 - (2 - i) * 34];
+function abS17WordAt(i, t) {   // world x, y (centre), rotation, squash, alpha, glow on/off
+  const tf = AB_DROP[i]; let a = K.clamp((t - 133.07) / 0.3);
+  if (t < tf) { const [x, y] = abHeapWord(i, t); return { x, y, r: 0, sx: 1, sy: 1, a, glow: true }; }
+  const [x0, y0] = abHeapWord(i, tf), tip = beatIn(t, tf, tf + 0.12), xl = x0 - 10, yl = 900 - 12;
+  if (t < tf + 0.12) return { x: x0 - 6 * tip, y: y0, r: -0.42 * tip, sx: 1, sy: 1, a: 1, glow: true };
+  const v = K.clamp((t - tf - 0.12) / 0.35);
+  if (v < 1) return { x: K.lerp(x0 - 6, xl, v), y: K.lerp(y0, yl, v * v) - 26 * Math.sin(Math.PI * v) * (1 - v), r: K.lerp(-0.42, -0.9, v), sx: 1, sy: 1, a: 1, glow: true };
+  const w = t - tf - 0.47, sq = w < 0.1 ? Math.sin(Math.PI * w / 0.1) : 0, bo = 14 * pulse(w, 0.08, 0.22), r = K.lerp(-0.9, -0.12, K.ease.out(K.clamp(w / 0.16)));
+  return { x: xl, y: yl - bo, r, sx: 1 + 0.12 * sq, sy: 1 - 0.15 * sq, a: 1 - 0.55 * K.clamp(w / 0.4), glow: w < 0.12 };
 }
-function abS17Cam(tt) { const t = Math.min(tt, AB_FREEZE), track = { x: AB_CX(t) + 110, y: 697, zoom: 1.7 }; if (tt < AB_FREEZE) return track;
+function abS17Words(ctx, tt, cam, S) {
+  const t = tt; if (t < 133.07) return;   // real time: the last word finishes its fall (lands 137.98) during the pull to the wide
+  ['افتح', 'يا', 'سمسم'].forEach((w, i) => { const W = abS17WordAt(i, t), [px, py] = abP(W.x, W.y, cam), sz = AB_WSIZE * cam.zoom / 1.7;
+    ctx.save(); ctx.globalAlpha *= W.a; ctx.translate(px, py); ctx.rotate(W.r); ctx.scale(W.sx, W.sy);
+    S.title(ctx, w, 0, 0, 1, { font: 'Lalezar', size: sz, glow: W.glow ? '#ffd36a' : undefined, align: 'center' }); ctx.restore(); });
+}
+function abS17Cam(tt) { const t = Math.min(tt, AB_FREEZE), track = { x: AB_CX(t) + AB_CAMDX, y: 697, zoom: 1.7 }; if (tt < AB_FREEZE) return track;
   const u = K.ease.inOut(K.clamp((tt - AB_FREEZE) / 0.6)); return { x: K.lerp(track.x, AB_WIDE.x, u), y: K.lerp(track.y, AB_WIDE.y, u), zoom: K.lerp(track.zoom, AB_WIDE.zoom, u) }; }
 AB_SHOTS.push({ a: 131.81, b: 1e9, ww: 3000, cam: abS17Cam, under: abS17Under, world: abS17World,
   over: (ctx, tt, cam, S) => {
     abLayer(ctx, abGrassStrip(), cam, 1.6, -10);   // foreground grass silhouette, sliding fastest
     abS17Words(ctx, tt, cam, S);
+    if (tt > 134.01 && tt < 135.9) { const [lx, ly] = abP(AB_CX(Math.min(tt, AB_FREEZE)) - 205, 900 - 40, cam); ctx.save(); ctx.globalAlpha *= 1 - K.clamp((tt - 135.7) / 0.2); S.label(ctx, 'EMPTY SACKS', lx, ly, K.clamp((tt - 134.01) / 0.35), { size: 40 }); ctx.restore(); }
     if (tt >= AB_FREEZE) { const [rx, ry] = abP(AB_END_ROCK[0], AB_END_ROCK[1] - 160, cam), w = K.clamp((tt - AB_FREEZE - 0.4) / 0.3), R = K.rng(17 + (Math.floor(tt * 12) % 2));
       if (w > 0) { ctx.save(); ctx.globalAlpha = 0.4 * w; ctx.strokeStyle = '#e8ecff'; ctx.lineCap = 'round';   // speed lines centred on the rock (on twos)
         for (let i = 0; i < 34; i++) { const an = R() * Math.PI * 2, r0 = 270 + R() * 60, r1 = r0 + 160 + R() * 320; ctx.lineWidth = 2 + R() * 4; ctx.beginPath(); ctx.moveTo(rx + Math.cos(an) * r0, ry + Math.sin(an) * r0 * 0.9); ctx.lineTo(rx + Math.cos(an) * r1, ry + Math.sin(an) * r1 * 0.9); ctx.stroke(); } ctx.restore(); }
