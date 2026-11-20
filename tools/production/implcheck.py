@@ -12,6 +12,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).parent))
 import db
 
 REPO = db.REPO
+sys.path.insert(0, str(REPO / 'Library')); import style   # style profile: player file name
 AR_STRIP = re.compile('[ؐ-ًؚ-ٰٟۖ-ۭـ]')
 
 def words(s, ar):
@@ -57,7 +58,7 @@ def run(sid, stills=False):
     b = subprocess.run([sys.executable, 'build.py'], cwd=d, capture_output=True, text=True)
     if b.returncode: E.append('build.py failed: ' + (b.stderr or b.stdout)[-400:]); html = None
     else:
-        html = d / f"{cfg['title']} - Halftone Pop 9x16 - Noto Naskh Arabic.html"
+        html = d / (style.film_name(cfg) + '.html')
         if not html.exists(): E.append(f'player not found after build: {html.name}'); html = None
     if html:
         args = ['node', str(REPO / 'tools' / 'production' / 'smoke.mjs'), str(html), '--n', '48']

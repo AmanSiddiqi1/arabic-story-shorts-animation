@@ -2,6 +2,29 @@
 
 Each plan proceeds with its stated default unless you say otherwise. Answer by story ID.
 
+## ALI-01-ANIME Open Sesame
+
+- The film ends on a question, so a TO BE CONTINUED card would suit the anime medium; default used: the standard THE END card (139.0 to 142.94).
+- The magic words are shown on screen as Arabic display lettering in Lalezar (افتح يا سمسم at 42.76 and 82.84, أغلق يا سمسم at 64.06), copied from the script; default: shown, with no English version beside them (the English subtitle carries it).
+- Added staging not in the script: Ali Baba hides the donkey in a thicket and later rides it home; his wife and one child wave him off in the opening (the family); default: kept.
+- Added staging: Cassim first appears spying through the window and ends by not listening to the words (they drift past his ear and fall off the cart), which hints at the answer to the last question; default: kept as a visual hint only.
+- Cassim's cart is drawn by a brown donkey rather than pushed by hand; default: donkey cart.
+- The forty thieves are 1 leader, 6 drawn riders and 33 silhouettes with a counter running to 40; default: this mix rather than forty drawn figures.
+- The script does not say Ali Baba speaks to close the door at 101.30; default: he mimes the leader's gesture with moving lips and no lettering.
+
+## ALI-01-POPUP Open Sesame
+
+- The forty thieves are shown as five full riders, a concertina paper-doll chain of twelve more along the ridge and a counter badge running to 40 (default: yes; drawing forty separate actors is not feasible).
+- Ali Baba's "family" is shown as a wife and one small son, the son asleep in the hut scene (default: yes).
+- The spoken phrases appear as English typed bubbles OPEN SESAME! (leader at 42.8, Ali Baba at 82.9) and CLOSE SESAME! (64.1), matching the supplied translation (default: yes, English only).
+- Small invented gags beyond the script: the donkey hiding behind a bush with its ears showing, a moth flying out of Ali Baba's empty pouch and later out of Cassim's empty sack, Cassim biting the coin, a coin rolling to the door as the way Cassim "noticed the new coins" (default: keep all four).
+- How Cassim learns the place and the words is staged as Ali Baba drawing a small map and whispering in his ear, with Cassim visibly not listening properly (default: yes; it sets up the last line).
+- The thieves wear dark robes and headcloths with no masks and no drawn weapons; only the leader has a small dagger shape in his sash (default: yes, no violence shown).
+- The style profile says the book and desk never move, so "the book opens" is staged as a blank flyleaf lifting off the first spread in the first 0.9 s instead of the cover swinging open (default: flyleaf; narration starts at 0.00 so there is no room for a longer opening).
+- "Much later" is shown as a page turn to the same clearing reprinted in dusk colours, with the paper sun sliding down its slot (default: yes).
+- The film ends on THE END with a paper question mark over the shut rock, not TO BE CONTINUED, although this is story ALI-01 (default: THE END).
+- Ali Baba closing the door at 102.1 is shown without a speech bubble because the narration does not quote him there (default: no bubble).
+
 ## AN-001 The Bull and the Ass
 
 - The merchant is shown listening at the stable window during the plan (56.7-67.1 s), before the narration reveals at 82.8-89.9 s that he had heard it; default: shown, quietly, and replayed in an inset at 87.6 s.

@@ -4,7 +4,9 @@ const findLib = (d) => { if (process.env.LIB) return process.env.LIB; for (let x
 const LIB = findLib(path.dirname(fileURLToPath(import.meta.url))), req = createRequire(path.join(LIB, 'package.json'));
 const { chromium } = req('playwright-core'); const { ARGS, EXE } = await import(pathToFileURL(path.join(LIB, 'core/render/browser.mjs')).href);
 const here = path.dirname(fileURLToPath(import.meta.url)), CFG = JSON.parse(fs.readFileSync(path.join(here, 'story.json'), 'utf8'));
-const file = path.join(here, `${CFG.title} - Halftone Pop 9x16 - ${process.env.TAG || 'Noto Naskh Arabic'}.html`);
+const findUp = (d, name) => { for (let x = d; ; x = path.dirname(x)) { if (fs.existsSync(path.join(x, 'Library', 'lib.py'))) return path.join(x, name); if (path.dirname(x) === x) throw new Error('Kalila wa Dimna folder not found'); } };
+const ST = await import(pathToFileURL(findUp(here, 'Library/style.mjs')).href);   // style profile: player file name
+const file = path.join(here, ST.filmName(CFG, process.env.TAG) + '.html');
 const times = process.argv.slice(2).map(Number); fs.mkdirSync(path.join(here, 'stills'), { recursive: true });
 const name = (t) => 't' + t.toFixed(2).replace('.', '_').padStart(8, '0') + '.jpg';
 const b = await chromium.launch({ executablePath: EXE, args: ARGS }); const p = await b.newPage({ viewport: { width: 540, height: 960 } });

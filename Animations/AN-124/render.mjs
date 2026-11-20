@@ -1,6 +1,6 @@
-// node render.mjs [--html player.html] [--out file.mp4] [--fps 30] [--workers 3] [--from s] [--to s] [--frames dir] [--tag "Noto Naskh Arabic"] [--force]
+// node render.mjs [--html player.html] [--out file.mp4] [--fps 30] [--workers 3] [--from s] [--to s] [--frames dir] [--tag "<Arabic font family>"] [--force]
 // Loads the built player headless, seeks every frame (pure function of t), pipes JPEGs to ffmpeg with the narration + synthesized effects.
-// Default output: MP4s/<title> - Halftone Pop 9x16 - <font>.mp4 in this repository (Library/media.mjs local mode; <shared root>/final-mp4s/ only when a shared media root is set). Refuses to overwrite an existing file unless --force.
+// Default output: MP4s/<title> - <style fileLabel, e.g. Halftone Pop 9x16> - <font>.mp4 in this repository (Library/media.mjs local mode; <shared root>/final-mp4s/ only when a shared media root is set). Refuses to overwrite an existing file unless --force.
 import { createRequire } from 'module'; import { pathToFileURL, fileURLToPath } from 'url'; import fs from 'fs'; import path from 'path'; import { spawnSync } from 'child_process';
 const findLib = (d) => { if (process.env.LIB) return process.env.LIB; for (let x = d; ; x = path.dirname(x)) { const c = path.join(x, 'lemo-opuscar'); if (fs.existsSync(path.join(c, 'core/render/page.mjs'))) return c; if (path.dirname(x) === x) throw new Error('lemo-opuscar library not found: set LIB=/path/to/lemo-opuscar'); } };
 const findUp = (d, name) => { for (let x = d; ; x = path.dirname(x)) { if (fs.existsSync(path.join(x, 'Library', 'lib.py'))) return path.join(x, name); if (path.dirname(x) === x) throw new Error('Kalila wa Dimna folder not found'); } };
@@ -8,9 +8,10 @@ const LIB = findLib(path.dirname(fileURLToPath(import.meta.url))), req = createR
 const { chromium } = req('playwright-core'); const { ARGS, EXE } = await import(pathToFileURL(path.join(LIB, 'core/render/browser.mjs')).href);
 const here = path.dirname(fileURLToPath(import.meta.url)), CFG = JSON.parse(fs.readFileSync(path.join(here, 'story.json'), 'utf8'));
 const M = await import(pathToFileURL(findUp(here, 'Library/media.mjs')).href); // media resolver (media.config.json: local folders by default)
+const ST = await import(pathToFileURL(findUp(here, 'Library/style.mjs')).href); // style profile (story.json "style", default halftone-pop): file names
 const a = process.argv.slice(2), opt = (k, d) => { const i = a.indexOf('--' + k); return i < 0 ? d : a[i + 1]; };
-const TAG = opt('tag', 'Noto Naskh Arabic'), file = path.resolve(opt('html', path.join(here, `${CFG.title} - Halftone Pop 9x16 - ${TAG}.html`)));
-const FPS = +opt('fps', 30), N = +opt('workers', 3), outFile = opt('out', path.join(M.finalDir(), `${CFG.title} - Halftone Pop 9x16 - ${TAG}.mp4`));
+const TAG = opt('tag', ST.arabicFamily(CFG)), file = path.resolve(opt('html', path.join(here, ST.filmName(CFG, TAG) + '.html')));
+const FPS = +opt('fps', 30), N = +opt('workers', 3), outFile = opt('out', path.join(M.finalDir(), ST.filmName(CFG, TAG) + '.mp4'));
 if (fs.existsSync(outFile) && !a.includes('--force')) { console.log('refusing to overwrite ' + outFile + ' (use --out for a test, or --force)'); process.exit(1); }
 fs.mkdirSync(path.dirname(outFile), { recursive: true });
 const dir = opt('frames', path.join(here, 'frames')); fs.mkdirSync(dir, { recursive: true });

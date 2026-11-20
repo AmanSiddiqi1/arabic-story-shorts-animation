@@ -44,3 +44,7 @@ python3 tools/cloud/cloud.py list               # runs still going / finished bu
 
 ## Status 2026-11-18 (loop complete)
 41/41 in-scope films: v1 rendered (cloud, QC PASS), Fable round 1 (all REVISE), v2 rendered, Fable round 2 (34 PASS WITH NOTES, 7 REVISE), v3 rendered for those 7 (KD-015 KD-019 KD-026 AN-046 AN-083 AN-104 AN-145; fixes checked on frames, no third full review). All 41 finalized in MP4s/ with approval=pending; nothing published as a Release. 15 GitHub render runs, 0 failed jobs. Not done: KD-009 / KD-012 subtitle-refresh renders (low priority, outside the loop). Stale task rows (interrupted/released) for AN-001, AN-014, KD-026, AN-104, AN-112, AN-046, AN-083, AN-084 are superseded by later completed tasks.
+
+## Subtitle refresh (2026-11-18)
+- KD-009 v3 (run 44285694793) and KD-012 v4 (run 44287519684): QC PASS; only the re-translated English chunk changed (KD-009 at 92.6 s, KD-012 at 49.3 s), checked on frames.
+- Installed in `MP4s/`; the previously approved files are in `MP4s/_approved_before_subtitle_refresh/`. Approval set back to pending for the owner to confirm the new subtitles.

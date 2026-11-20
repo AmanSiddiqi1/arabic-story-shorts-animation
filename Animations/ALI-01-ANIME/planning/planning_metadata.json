@@ -1,0 +1,78 @@
+{
+ "story_id": "ALI-01-ANIME",
+ "title": "Open Sesame",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-21T02:31:21",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-aacc399503d41b524.jsonl",
+ "agent_id": "aacc399503d41b524",
+ "model_messages": {
+  "claude-fable-5-2": 24
+ },
+ "script": {
+  "source": "Spreadsheets/Script_Updated.xlsx",
+  "sha256": "b39d369daf89e9a4c086c215290c32abdcb02c642beaa56e7be5ff2af6341d81",
+  "paragraphs": 8,
+  "segments": [
+   "ALI-01-P01-S01",
+   "ALI-01-P01-S02",
+   "ALI-01-P01-S03",
+   "ALI-01-P01-S04",
+   "ALI-01-P01-S05",
+   "ALI-01-P01-S06",
+   "ALI-01-P01-S07",
+   "ALI-01-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/ALI-01_Open_Sesame_slowed.mp3",
+  "sha256": "ad249a483b2a6d040d18693078c8ea31933c0bc59be8b932dd8f96d1c98a6031",
+  "duration": 138.938
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/ALI-01_Open_Sesame_slowed.mp3.words.json",
+  "sha256": "049afad2993d1976a175384e3f241825eaef6f44cc2494e8565e10013d4aac3d",
+  "manifest_status": "supplied",
+  "script_match": 1.0
+ },
+ "library_rev": "3ff2438",
+ "scenes": 17,
+ "actions": 141,
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "sesameRock",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "treasureCave",
+   "effort": "L"
+  },
+  {
+   "type": "effect",
+   "name": "celPlates",
+   "effort": "L"
+  },
+  {
+   "type": "prop",
+   "name": "handcart",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "treeClimb and leafHide",
+   "effort": "M"
+  }
+ ],
+ "input_notes": "style variant of ALI-01 (cel-anime-80s); script from Google Sheet \"Sinbad Arabian Nights and Ebony Horse\" (Drive: ChatGPT Projects/Arabic Stories), tab All Scripts, rows 26-33, read 2026-11-21",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "Library cast drawings are front-facing comic figures; this style wants more refined heads. Do not redraw the cast: rely on the style's flat shade, coloured lines, rim light, silhouettes against the light and the eye close-up function to carry the anime feel.",
+  "Per-set colour models for Library cast need the offscreen tint pattern; check faces in the dusk and night stills for pink or grey skin and weaken the multiplier on the head if needed.",
+  "Forty riders: keep the silhouette strip cheap (one baked strip of 11 rider shapes reused three times with offsets) and check frame time during S5 and S10.",
+  "The climb and the eye gap are new poses; check with a contact sheet of every 4th frame from 25.6 to 30.6 and 74.1 to 77.0.",
+  "The pauses are short (0.6 to 1.3 s): keep each effect under 0.5 s and quiet."
+ ]
+}

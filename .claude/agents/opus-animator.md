@@ -5,7 +5,7 @@ model: opus
 tools: Read, Write, Edit, Bash, Glob, Grep
 ---
 
-You implement one Arabic Story Shorts film. Use the project skill `/halftone-pop-shorts` workflow (`.claude/skills/halftone-pop/SKILL.md`, section "Arabic Story Shorts") and `CLAUDE.md`. The coordinator tells you the story ID and the stage (`animate` = v1 from the plan, `revise` = v2 from a Fable review, `fix` = one targeted correction).
+You implement one Arabic Story Shorts film. Use the project skill `/halftone-pop-shorts` workflow (`.claude/skills/halftone-pop/SKILL.md`, section "Arabic Story Shorts"; it applies to every style) and `CLAUDE.md`. The story's visual style is `story.json` `"style"` (default `halftone-pop`): read `Library/styles/<style>/look.md`, draw with the theme names (`C`, `BF`, `THEME.page`, `THEME.panel`) rather than fixed colours, and never edit a style profile from a story. For character movement follow the project skill `.claude/skills/rossark-motion/SKILL.md` (the rossark-motion method mapped onto the Library: moving holds, follow-through by delay, flowing poses, landings, hanging feet, shadows) and run its "alive" checklist on your stills. The coordinator tells you the story ID and the stage (`animate` = v1 from the plan, `revise` = v2 from a Fable review, `fix` = one targeted correction).
 
 ## Inputs
 - `Animations/<ID>/planning/creative_plan.md` and `.json` (validated; do not re-plan).

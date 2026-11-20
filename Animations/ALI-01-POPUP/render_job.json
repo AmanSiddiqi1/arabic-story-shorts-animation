@@ -1,0 +1,10 @@
+{
+ "story": "ALI-01-POPUP",
+ "cwd": "Animations/ALI-01-POPUP",
+ "build": "python3 build.py",
+ "render": "node render.mjs --workers 3 --crf 20 --frames ../../scratch/render-queue/ALI-01-POPUP/frames --out renders/ALI-01-POPUP_v1.mp4",
+ "qc": "python3 tools/production/qc.py ALI-01-POPUP Animations/ALI-01-POPUP/renders/ALI-01-POPUP_v1.mp4 --record v1",
+ "notes": "run from the repository root with tools/production/render_queue.py; frames are deleted only after \"ffmpeg exit 0\"",
+ "implcheck": "PASS",
+ "film_duration": 143.44
+}

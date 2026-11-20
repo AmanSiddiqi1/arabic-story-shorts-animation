@@ -3,7 +3,7 @@ import hashlib, json, pathlib, re, subprocess
 
 REPO = pathlib.Path(__file__).resolve().parents[2]
 DEPS = json.loads((pathlib.Path(__file__).parent / 'deps.json').read_text())
-ID_RE = re.compile(r'^(KD|AN)-\d{3}$')
+ID_RE = re.compile(r'^(KD|AN)-\d{3}$|^[A-Z]{2,6}-\d{2,3}(-[A-Z0-9]{2,10})?$')   # KD-009, AN-145, ALI-01-POPUP
 VER_RE = re.compile(r'^v\d{1,3}$')
 WORKFLOW = 'render.yml'
 # source folders inside Animations/<ID>/ that do not influence the film (outputs, stills, notes)

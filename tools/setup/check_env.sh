@@ -11,7 +11,7 @@ gh auth status >/dev/null 2>&1 && ok "gh (GitHub CLI) signed in" "$(gh api user 
 # Lemo-Opuscar (playwright-core + Chromium launch flags) is found from $LIB or a lemo-opuscar folder beside/above the repo
 L="$LIB"; d="$REPO"; while [ -z "$L" ] && [ "$d" != "/" ]; do [ -f "$d/lemo-opuscar/core/render/page.mjs" ] && L="$d/lemo-opuscar"; d="$(dirname "$d")"; done
 if [ -n "$L" ] && [ -d "$L/node_modules/playwright-core" ]; then ok "Lemo-Opuscar (renderer)" "$L"
-# Creator OS engine (kit.js, sound.js, halftone-pop.js) from claude-motion-faceless-skills (not stored in this repo)
+# Creator OS engine (kit.js, sound.js and the style modules, e.g. halftone-pop.js) from claude-motion-faceless-skills (not stored in this repo)
 if M=$(python3 "$REPO/Library/engine.py" 2>/dev/null); then ok "Creator OS engine" "$M"; else no "Creator OS engine" "" "git clone https://github.com/kevinbadi/claude-motion-faceless-skills.git next to this repo (or set MOTION_STYLES)"; fi
   node --input-type=module -e "import {createRequire} from 'module'; import {pathToFileURL} from 'url'; const L=process.argv[1]; const {chromium}=createRequire(L+'/package.json')('playwright-core'); const {ARGS,EXE}=await import(pathToFileURL(L+'/core/render/browser.mjs').href); const b=await chromium.launch({executablePath:EXE,args:ARGS}); await b.close(); console.log('ok')" "$L" >/dev/null 2>&1 && ok "headless Chromium launches" "" || no "headless Chromium" "" "cd $L && npx playwright-core install chromium-headless-shell (see DEVELOPMENT_SETUP.md)"
 else no "Lemo-Opuscar (renderer)" "" "git clone https://github.com/lemomo-ai/lemo-opuscar.git next to this repo, then npm ci in it (or set LIB=/path)"; fi
@@ -26,6 +26,9 @@ for s in Animations/*/story.json; do d="$(dirname "$s")"; [ -f "$d/build.py" ] |
   n="$(cd "$d" && python3 -c "import json,sys,pathlib;sys.path.insert(0,'../../Library');import media;print(media.resolve(pathlib.Path('.').resolve()/json.load(open('story.json')).get('narration','narration.mp3')))")"
   [ -f "$n" ] && ok "narration $(basename "$d")" "${n#$M/}" || no "narration $(basename "$d")" "$n" "the narration file is missing (local mode: restore it into the story folder; shared mode: tools/media/sync_media.py copy)"; done
 [ "$(ls Library/fonts/*.woff2 2>/dev/null | wc -l)" -gt 0 ] && ok "embedded fonts (Noto Naskh etc.)" "Library/fonts/*.woff2" || no "embedded fonts" "" "Library/fonts is missing: re-clone"
+for s in $(python3 Library/style.py 2>/dev/null | awk '{print $1}'); do r="$(python3 Library/style.py --check 2>&1 | grep " $s")"; case "$r" in ok*) ok "style profile $s" "Library/styles/$s";; *) no "style profile $s" "" "${r#FAIL }";; esac; done
+RM="${ROSSARK_MOTION:-}"; [ -z "$RM" ] && for d in "$REPO" "$(dirname "$REPO")" "$(dirname "$(dirname "$REPO")")"; do [ -f "$d/rossark-motion-skill/SKILL.md" ] && RM="$d/rossark-motion-skill" && break; done
+[ -n "$RM" ] && [ -f "$RM/SKILL.md" ] && ok "character-motion method" "$RM" || no "character-motion method" "" "git clone https://github.com/rossark0/rossark-motion-skill.git next to this repo (read by /rossark-motion-shorts)"
 [ -f .claude/skills/halftone-pop/SKILL.md ] && ok "project skill" "/halftone-pop-shorts" || no "project skill" "" "re-clone (.claude/skills/halftone-pop)"
 [ "$(git config core.hooksPath)" = tools/git/hooks ] && ok "git guard hooks" "core.hooksPath=tools/git/hooks" || no "git guard hooks" "" "git config core.hooksPath tools/git/hooks   (this repository only)"
 echo; [ $bad = 0 ] && echo "All checks passed." || echo "$bad check(s) need attention."; exit $bad

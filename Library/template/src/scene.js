@@ -47,9 +47,9 @@ const SCENE = {
   duration: DUR,
   draw(ctx, W, H, t, S) {
     S0 = S; const sh = K.spring(t, CUE.roar, 6, 10, 6) + kick(t, FALLS, 1.5, 11, 9);
-    S.background(ctx, W, H, t, { dot: C.blue });
+    S.background(ctx, W, H, t, THEME.page);          // page and panel framing come from the style theme
     const px = 54, py = 54, pw = 972, ph = 1196;
-    S.box(ctx, px, py, pw, ph, 1, { fill: C.blue, lw: 11, seed: 3 });
+    S.box(ctx, px, py, pw, ph, 1, THEME.panel);
     ctx.save(); ctx.beginPath(); ctx.rect(px + 9, py + 9, pw - 18, ph - 18); ctx.clip(); ctx.translate(px + sh * 0.8, py - sh * 0.5); ctx.scale(pw / WW, ph / WH);   // shake the picture only; the caption panel stays still
     const cam = camAt(t); ctx.save(); K.camera(ctx, WW, WH, cam); drawWorld(ctx, t); ctx.restore(); overlays(ctx, t, cam, S);
     ctx.restore(); subtitle(ctx, W, H, t, 1);

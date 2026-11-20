@@ -2,7 +2,7 @@
 
 New characters, sets, props, poses and techniques requested by validated creative plans. Planners: reuse a name here when it fits your story (same drawing, different costume/palette/pose) instead of inventing a new one. None of these exist in `Library/` yet unless the guide says so.
 
-## character (57)
+## character (58)
 
 - **hawk (bird kind)** (7: AN-036, AN-038, AN-041, AN-042, AN-086, KD-011, KD-014): The planned bird of prey kind on the Library bird (hooked beak, heavy brow, talons). This film uses pal 0 falcon (brown, cream barred chest, eye stripe, pointed wings) and pal 1 vulture (dark body, bare pink head, white ruff), plus a silhouette option (all black) for thought clouds and distant shots, and carry (a small shape drawn at the talons).
 - **villager** (7: AN-039, KD-005, KD-007, KD-008, KD-009, KD-015, KD-026): The planned person variants 'villager' (farmer with patches, sick friend with a pale tone) and 'villageWoman' (the wife).
@@ -58,11 +58,12 @@ New characters, sets, props, poses and techniques requested by validated creativ
 - **person costume presets (servant)** (1: KD-017): Adds a 'servant' preset to the planned person costume layer (flat cap, short tunic, sash). This film also uses the planned 'merchant' and 'lady' presets.
 - **person costume presets (sweep, pilgrim, guard)** (1: AN-090): Three presets on the Library costume layer: 'sweep' (ragged short tunic with two patches, frayed cap, bare feet, smudge: 0..3 soot marks on the face), 'pilgrim' (plain white robe, bare head, bare feet, beard by age), and the planned 'guard' (AN-086). 'emir' is an alias of vizier with a green palette.
 - **snake** (1: KD-005): Black snake whose body follows any path: slither on the ground, spiral up a trunk, coil asleep, rear, strike, lie limp. Pose fields: path (array of points or a function of arc length), out 0..1 (how much has left the hole), wave (phase), rear 0..1, coil 0..1, strike 0..1, limp, tongue 0..1, mouth 0..1, eyes (open | x), plus gaze, lid, alpha.
+- **thiefChain** (1: ALI-01-POPUP): Concertina paper-doll chain: n identical small riders joined at the hands, unfolding panel by panel. Stands for the rest of the forty. Fields: open 0..1, n (12), x0, y, seed.
 - **waterBird** (1: KD-019): Large wading or sea bird (kinds gull, later heron, pelican, stork) for pond and shore fables. Standing 300 tall x 260 wide at s 1, feet at (x,y). Fields: age 0..1, belly 0..1, neck 0..1, headRot, beak 0..1, talk, brow, eyes (open, wide, x), ph/amp (two-leg walk), sit 0..1, fly + flap (wingspan 420), wing -1..1 (near wing as an arm), wingsUp 0..1, hold (fish, fish2), gulp 0..1 (bulge position along the neck), feet (open, grip), choke 0..1 with chokeAt (pinch point on the neck), limp 0..1, plus the shared acting fields.
 - **windSpirit** (1: KD-014): The wind as five tapering brush bands following one bezier path, with elementFace in the leading curl; states idle, coil (anticipation), blow (bands straighten, speed lines), flat (pancake on impact), limp.
 - **wolf** (1: AN-041): The Library fox figure with a wolf palette and s 1.25 (as the planned jackal is a fox palette).
 
-## set (66)
+## set (68)
 
 - **marketStreet** (11: AN-039, AN-045, AN-087, AN-090, AN-092, AN-095, AN-097, KD-011...): The planned market street with one seed stall.
 - **palaceHall** (6: AN-084, AN-087, AN-088, AN-089, AN-090, AN-097): The planned arched interior, full palace variant, 1000 x 1230: blue dotted back wall with three pointed arches, open door arch on the left (x 40..250, top y 480) showing the day outside and a hitching post, dais x 560..900 top y 860, red runner carpet, checker floor, two lamps.
@@ -84,6 +85,7 @@ New characters, sets, props, poses and techniques requested by validated creativ
 - **schoolRoom** (2: AN-149, AN-151): Planned kuttab dressing of palaceHall variant 'merchant' (AN-123): three pupil mats (140 x 40 striped ovals), guest cushion and teacher cushion (floorCushion 120 x 36), low X-frame book stand 90 high carrying a 150 x 200 lesson tablet, shelf of 5 spare tablets, inkpot. Positions in sets.schoolRoom.
 - **shrineYard** (2: AN-014, AN-154): Domed prayer house, old well and palm in a quiet yard (dimensions in sets). Door open/closed, light spill, well with rim, posts, crossbeam, rope and bucket.
 - **storeroom** (2: AN-146, KD-011): The planned storeroom cutaway (KD-011), used dark with a door light cone, crates and barrels on the left and a clear floor at x 560..860 for the bale stack.
+- **treasureCave** (2: ALI-01-ANIME, ALI-01-POPUP): The gold-lit cave interior described under sets (1600 x 1230), a painted plate with an emissive pair and cel treasure on top. Reusable for any treasure vault or den with a palette option.
 - **apothecary** (1: KD-022): Medicine store interior: navy dotted wall, three shelves (y 330, 500, 670; x 120..880) with 7 jars each, worktable x 300..700 with top at y 760, door on the left with open and closed states, four hanging herb bunches. Reusable for any physician, alchemist, perfumer or spice-merchant story (it is the planned 'storeroom' idea with shelves of jars).
 - **bedMacro** (1: KD-010): Macro bedding landscape (views bed and floor) with the nook, the giant hand and forearm, the pale background face and the floor crack (see sets).
 - **burrowChamber** (1: AN-043): Cutaway underground room for any den, burrow or cave interior. World 1000 x 1230, floor y 900. Brown earth with dark dot shading fills the frame; a rounded cavity (x 110..930, y 500..930, navy-brown interior with blue dots) is cut into it. Door arch on the left: x 150..320, 190 high, showing sky by option doorSky u (skyCycle). Five hanging roots from the ceiling; a curtain of 6 root strands at x 800..920 hiding an alcove with a date hoard (option hoard 0..1, spill n). Options: dark 0..1 (navy overlay with the door light cone left clear), shadow (a polygon cast on the floor from an actor outlin
@@ -121,6 +123,7 @@ New characters, sets, props, poses and techniques requested by validated creativ
 - **riverShore** (1: AN-036): A river seen from its near bank, for any shore fable: far bank on a raised horizon, wide water band, sand bank in front that slopes into foreground water on the right. Options: w (world width), shoreX, sky preset or dayCycle, variant 'rocks' (boulders, reed clump with back and front passes, far rock, bones on/off) and variant 'tree' (one leaning tree, lily pads). Dimensions are in the two set entries.
 - **rockyHill (terrace view: hermitLedge)** (1: AN-075): The top terrace of the planned rockyHill with a sitting rock, crumb slab and dead snag; dimensions in sets.hermitLedge.
 - **schoolRoom (palaceHall dressing: kuttab)** (1: AN-123): School dressing for the merchant variant of palaceHall: mats, teacher cushion, book stand, inkpots, a shelf of spare tablets; and a feast dressing (cloth, trays, pennants, extra lamps). Reusable for any school, study circle or scribes' room.
+- **sesameRock** (1: ALI-01-POPUP): The great rock with the hidden door, a pop-up card with a sliding mechanism. 520 wide x 560 tall at scale 1 (base at the feet point). Fields: crack 0..1, open 0..1, glow 0..1, palette (day, dusk), moss true/false, s.
 - **sheepfold** (1: AN-042): Fenced pasture, 1600 wide, with a corner perch post, a gate and a far hut (dimensions under sets).
 - **tallTreeHome** (1: KD-005): The home set composed from Library sky, hillTrees, ground and tree() with tall custom opts, plus named anchor points (nest fork, low branch, lookout twig, root stone).
 - **towerChamber** (1: AN-085): Dark vault interior lit by a wedge of light from a doorway, with a plinth and a wall niche (dimensions under sets). Reusable for crypts, cellars, treasure vaults and caves with a door.
@@ -131,7 +134,7 @@ New characters, sets, props, poses and techniques requested by validated creativ
 - **walledGarden** (1: AN-142): Walled garden strip 1600 wide with a central gate in the back wall, an apple tree west, a pear tree east, a bench, a fountain and a domed prayer house beyond the east wall (all dimensions in sets.walledGarden).
 - **wellCavern** (1: AN-014): A cavern overlay for the Library wellShaft: rounded pocket in the earth beside the shaft with a rock, a lamp and a lit disc, opened by an iris.
 
-## prop (171)
+## prop (175)
 
 - **coinPile** (12: AN-041, AN-045, AN-084, AN-089, AN-097, AN-098, AN-099, AN-107...): Planned coin mound with a removable coin.
 - **purse** (10: AN-092, AN-105, AN-107, AN-108, AN-112, AN-113, AN-126, AN-132...): The planned fat coin purse.
@@ -193,6 +196,7 @@ New characters, sets, props, poses and techniques requested by validated creativ
 - **carpenterTools (saw, mallet, pry bar, stool, door, table)** (1: KD-009): The small carpentry props listed in props, drawn as one module.
 - **carpetRoll** (1: AN-134): A rug 420 x 120 (on the lawn as a flat parallelogram, skew 30) with unroll 0..1: at 0 a roll (ellipse end r 26 with a spiral, length 120) that can be carried on a shoulder; as unroll grows the flat part extends from the start edge and the roll shrinks and travels; fringe at both ends; col and border options, pattern none / diamonds.
 - **carryBasket** (1: AN-116): Porter's basket 120 x 100 with strap; fill 'goods' / 'empty' / 'gold', level 0..1; back-carry or hand-carry.
+- **cart** (1: ALI-01-POPUP): Two-wheeled mule cart, 230 long x 130 tall: plank box 170 x 60, two shafts 110 long to the harness, spoked wheel r 42 (8 spokes), field wheel (angle), load (items for packLoad or flat sacks), bounce. Could be the planned handcart (KD-011) with a shafts option.
 - **chainLine** (1: AN-104): Sagging chain of links between two points with swing and a travelling glint (see props). Reusable for prisoners, wells, lamps, anchors.
 - **chick** (1: KD-016): Standalone chick with fields x, y, s, rot, flap, open, gaze, tuft (only the head tuft visible, for the fox mouth).
 - **cistern** (1: AN-136): Stone trough with a water level field and spill; reusable as any trough, basin or well head.
@@ -232,6 +236,7 @@ New characters, sets, props, poses and techniques requested by validated creativ
 - **goldDish** (1: AN-104): Shallow gold dish 110 x 60 with fill, steam, glint and tilt (see props). Can be the planned smallBowl function with a gold palette and the wide size if that is drawn first.
 - **grapeBunch** (1: AN-038): Hanging bunch of grapes with eaten 0..1 and swing.
 - **greetingIcon** (1: AN-086): Hand over heart pictogram with pop, X, fallen and glint states: the film's running sign for the missing and finally given greeting.
+- **handcart** (1: ALI-01-ANIME): Two-wheeled cart (planned name, KD-011): bed 260 x 60 with slatted sides 50 high, bed floor 95 above the ground, two spoked wheels r 62 (8 spokes), two shafts 190 long to the animal's collar, option load (a heap of flat sacks drawn as 6 overlapping ribbons). Fields: x, y, wheel (angle from distance / 62), tilt, bounce.
 - **handClasp** (1: AN-136): Close-up of a man's hand gripping a woman's hand, parameterised by sleeve colours; reuses the planned ladyHand for hand B. Used full panel (S5, S10), as inset panels at scale 0.42 (S12, S13, S19, S20), tiny in a thought cloud (S15) and as a balloon icon (S17, S18).
 - **hangingBasket** (1: AN-089): Person-sized woven basket on ropes with swing, dip and taut fields, front and back passes, optional flowers.
 - **hangingJar (floor state, water fill)** (1: AN-141): The planned clay jar with the oval cutaway window, standing on the floor without its rope, with a blue water fill, a slosh angle and room for a creature drawn inside the window.
@@ -282,6 +287,7 @@ New characters, sets, props, poses and techniques requested by validated creativ
 - **scroll, coinPile, crownProp, saddlebag** (1: AN-135): Planned small props reused under their planned names: the tax scroll (open, torn and stamped states, house and coin icons), the coin pile in the thought cloud (n 3..40), the gold crown in two sizes, the saddlebag behind the saddle with the crown tips showing.
 - **scroll, coinPile, purse, treasureHoard chest, foodTray** (1: AN-104): Planned small props reused under their planned names (debt scrolls with a struck state, coin mound, purse, small chest, tray).
 - **scroll, foodTray, purse, hourglass, floorCushion** (1: AN-123): Planned small props reused under their planned names (contract scroll with seal, three feast trays, gift purse, the struck hourglass, the teacher's cushion).
+- **sesameRock** (1: ALI-01-ANIME): Great rock 650 wide x 650 high (x 1500..2150, top y 250, base y 900) with a vertical seam at x 1820 and an arched door 220 x 330 (x 1710..1930, top y 570) hidden behind the two halves. Fields: open 0..1 (each half slides 115 units outward), crack 0..1 (a gold line of light climbing the seam from the base), glow 0..1 (door light and the wedge on the ground), model ('afternoon' | 'dusk' | 'late' | 'silhouette'), s (scale, used at 0.22 on the horizon). Reusable for any magic door, sealed cave or treasure rock.
 - **sheep** (1: AN-041): Simple sheep and lamb for the sparrow tale; reusable for shepherd stories.
 - **shovel** (1: AN-131): Planned shovel (AN-114): shaft 150 x 8 brown, blade 40 x 52 grey with a rounded tip, drawn about a grip point at 60 from the top with rot; usable as an icon.
 - **shovel, torch, bars, bread, chest, coinPile, purse** (1: AN-114): Small props (dimensions in props); chest, coinPile, purse and bread are planned names.
@@ -295,6 +301,7 @@ New characters, sets, props, poses and techniques requested by validated creativ
 - **stone** (1: AN-144): Small grey stone with rot, used on the ground, in a hand and on two throw arcs.
 - **stoneFigure** (1: AN-082): Faceless veiled stone statue on a plinth, 150 tall, with rock and glow fields.
 - **stonePlatform + keyRing** (1: AN-142): Two small props: the bare stone platform with two steps, and the key ring.
+- **storyCard and mapCard** (1: ALI-01-POPUP): Two small picture cards used in the hut: the miniature rock that opens, and the scrap map that draws itself.
 - **string** (1: AN-042): Red string with ankle loops, a bow and a slack line (see props).
 - **sugarcane (with caneField)** (1: AN-135): The only major new drawing. sugarcane(ctx, x, baseY, {h: 360, w: 22, lush: 0..1, bend, sway, t, seed}): an upright stalk of 8 segments (alternating #9bc53d and #86b52f, black node rings 4 thick, black brush outline), slightly zigzag (2 units per node), topped by 5 leaf blades 120 long drawn as tapering green strokes. lush 1: 22 wide, bright, leaves up at 40 to 70 degrees. lush 0: 13 wide, colour mixed toward #c9a544, leaves hanging below horizontal, the top third bowed over by bend (radians, up to 0.9). Loose piece: {cut: true, len: 220, rot, twist: 0..1, limp}: twist narrows the middle to 55 
 - **sword, roastSpit** (1: AN-082): The dream sword with a glint, and the camp spit with meat chunks and loose skewers (see props).
@@ -305,7 +312,7 @@ New characters, sets, props, poses and techniques requested by validated creativ
 - **waterskin, carryBasket (cloth cover), foodTray (cover), floorCushion, portraitMedallion** (1: AN-153): Small props already planned by other films, reused under their planned names.
 - **well** (1: KD-017): Above-ground well icon with ghost and mark options (see props); the story's running gag object. Reusable for village and yard scenes.
 
-## pose (32)
+## pose (34)
 
 - **person kneel / sit** (9: AN-039, AN-095, KD-009, KD-014, KD-015, KD-017, KD-022, KD-026...): The planned sit 0..1 for the wife on her stool (most of the film) and kneel for the physician at the bedside.
 - **person lie / sit up in bed** (5: AN-036, AN-039, KD-010, KD-022, KD-026): The planned lie pose for the Library person, used only for the still body behind the reeds (no blanket, no pillow, eyes not shown).
@@ -339,6 +346,8 @@ New characters, sets, props, poses and techniques requested by validated creativ
 - **reclineOnMount** (1: AN-143): A person lying along the back of a donkey (head toward the rump, feet toward the head), then sitting up into the normal rideOn seat. No new drawing: the Library lie pose placed at mountSeat.
 - **templeTap** (1: AN-099): Person hand to the temple with a single tap (mind, thinking, clever). Used by the caliph in S6 and the stranger in S13 and S16. Candidate entry PERSON_HANDS.temple.
 - **thief disguise turban** (1: AN-107): The planned thief disguise overlay (KD-013), turban item only: a small white turban drawn over the cap of the thief kind, following head moves; also drawable as a loose prop.
+- **treeClimb and leafHide** (1: ALI-01-ANIME): A person climbing a trunk (4 key poses cycled on twos, hands and feet on trunk points, body sway, reversed for the descent) and hiding in foliage so that only the eyes show in a dark gap.
+- **trunk climb and leaf-gap eyes** (1: ALI-01-POPUP): Ali Baba riding the slot in the trunk in hitches with alternating world hand targets, and his eyes alone visible in the leaf flap gap.
 
 ## expression (8)
 
@@ -376,7 +385,7 @@ New characters, sets, props, poses and techniques requested by validated creativ
 - **strikeCycle** (1: AN-145): The guide's strike cycle (Fox branch) applied to a person with a pickaxe: lift 0.3 s, whip down, contact on the cue, damped rebound; a slow variant with doubled period for fatigue.
 - **tiptoe** (1: AN-125): Sneaking gait for the person figure: short stride, high knee, rise on each step.
 
-## effect (64)
+## effect (66)
 
 - **iconBalloon** (30: AN-014, AN-036, AN-038, AN-039, AN-045, AN-046, AN-087, AN-089...): Planned wordless picture balloon in strip mode for the jinn gossip (three frames) and single mode for the news in S7.
 - **thoughtCloud** (19: AN-001, AN-036, AN-038, AN-039, KD-005, KD-007, KD-008, KD-009...): The planned generic thought cloud (already requested by many stories): here a 380 x 240 plan board at (500, 420) in which small versions of the bull, plough, trough and worker act out each step, plus two small uses (S16, S19).
@@ -409,6 +418,7 @@ New characters, sets, props, poses and techniques requested by validated creativ
 - **stinkLines** (2: AN-090, AN-111): Smell lines with flies, with a rose option (see props). Running gag of the film; reusable for rubbish, old fish, perfume (rose mode).
 - **answerBalloon** (1: AN-099): Speech balloon with icon content and a badge. answerBalloon(ctx, x, y, w, h, t, {p (pop 0..1), tail:[x, y], icon:'knot'|'wedge'|'pieces'|'whole'|'wide'|'lamp'|'dots', tangle (1..2 extra loops), untie 0..1 (knot to straight line), col, grow 0..1 (wide: 220x160 to 820x330, icons book, star, crescent, compass pop at grow 0.2, 0.45, 0.7, 0.9), mark:'?'|'tick'|null}). Default size 380 x 240; small 150 x 110.
 - **blurVision** (1: KD-022): Weak-sight point of view: whatever is drawn inside is shown doubled and drifting with a pale halftone veil, strength 0..1. Used three times (stall shelf, tray, bowl) so the audience learns it once and recognises it later.
+- **celPlates** (1: ALI-01-ANIME): The painted background layer and its light tools for this style: paintPlate(key, w, h, draw, model) and the plates dawnTown, forestMorning (4 tileable layers), rockAfternoon / rockDusk / rockLate (the rockGlade strip in three colour models, including the tall hide tree and thicket with front passes), nightTown, preDawn; lightBands(ctx, rect, t, {col, angle, w, speed}) sweeping coloured bands over a held cel with source-atop; speedLines(ctx, rect, t, {dir, n, seed}); the colour model table MODEL = {morning, afternoon, dusk, cave, night, predawn} with lit / shade / line multipliers and a skin co
 - **claimPile** (1: AN-092): A wobbling stack of tiles tied to the bag by a three-bubble trail: add tiles on cue times, sway, droop, collapse.
 - **crowdDots** (1: AN-092): Dozens of tiny heads (dot with two eye dots, optional raised hand) for thousands of witnesses and the queue in the judge's balloon.
 - **dream frame (full-panel thoughtCloud)** (1: AN-112): A thought cloud that grows from a character until its edge becomes the panel frame, for a narrated dream or flashback, then shrinks back.
@@ -431,6 +441,7 @@ New characters, sets, props, poses and techniques requested by validated creativ
 - **painPulse, dream wash, inset circle, flush** (1: AN-114): Planned small effects reused under their planned names: the bump (76.9), the dream tint inside clouds, the memory inset (137.4), the man's blush (103.3).
 - **poison face tint** (1: AN-044): Green halftone dots that climb a person s face from the chin to the brow over about 0.6 s (used once, 124.3).
 - **powderSprinkle** (1: AN-135): A pinch of powder: 12 small dots falling from a hand point with slight sideways drift, landing as specks; plus two aroma curls (planned stinkLines in aroma mode).
+- **pullTab (with sunOnStick and slideStrip)** (1: ALI-01-POPUP): The visible paper mechanisms of the style: a tab at the page bottom that slides when something works; a sun (or moon) disc on a paper stick moving in a slot in the board; a strip of small silhouettes sliding along a slot.
 - **rain** (1: AN-095): Slanted rain streaks with ground splashes and puddle rings.
 - **rankStrip** (1: KD-014): Five-slot chain of 56 px icons (sun, cloud, wind, mountain, mouse) with small arrows, a hopping STRONGEST? tag, a crown and finally a heart; drawn in panel space at the top of the picture, hidden during S1-S5, S12 and close shots where it would crowd a face.
 - **rift** (1: AN-098): The quarrel drawn as a red zigzag crack between two things: 8 segments, height 220 to 300, draw-on from the top (open 0..1), zip shut from the bottom (close 0..1), optional cobwebs at the top corners (age), alpha.

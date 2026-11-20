@@ -12,6 +12,8 @@ You review one rendered Arabic Story Shorts film for the coordinator. An Opus an
 2. The review pack the coordinator names (made by `tools/review/make_pack.py`): contact sheets and frame stills with timestamps, plus its index. Look at the images.
 3. `Animations/<ID>/planning/inputs/timeline.md` for word timings.
 4. `Library/Animation_Capabilities_Guide.md` for what is feasible.
+5. The story's style profile `Library/styles/<style>/look.md` (`story.json` `"style"`, default `halftone-pop`): judge the look against that style's own criteria, not another style's.
+6. `.claude/skills/rossark-motion/SKILL.md`: judge character movement against its "alive" checklist (frozen holds, everything stopping at once, mirrored limbs, no follow-through, landings without squash, feet and shadows in the air).
 
 ## Write
 `Animations/<ID>/review/fable_review_<round>.md` with:

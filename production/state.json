@@ -49,20 +49,20 @@
 "value": ""
 },
 {
-"key": "only_ids",
-"value": "KD-005,KD-007,KD-008,KD-010,KD-011,KD-013,KD-014,KD-015,KD-016,KD-017,KD-019,KD-022,KD-026,KD-031,AN-001,AN-014,AN-040,AN-041,AN-045,AN-046,AN-083,AN-084,AN-092,AN-097,AN-098,AN-099,AN-104,AN-105,AN-108,AN-111,AN-112,AN-113,AN-124,AN-134,AN-135,AN-138,AN-140,AN-145,AN-146,AN-149,AN-151"
-},
-{
 "key": "pause_production",
 "value": "0"
 },
 {
-"key": "pause_planning",
-"value": "1"
-},
-{
 "key": "max_opus",
 "value": "32"
+},
+{
+"key": "only_ids",
+"value": "KD-005,KD-007,KD-008,KD-010,KD-011,KD-013,KD-014,KD-015,KD-016,KD-017,KD-019,KD-022,KD-026,KD-031,AN-001,AN-014,AN-040,AN-041,AN-045,AN-046,AN-083,AN-084,AN-092,AN-097,AN-098,AN-099,AN-104,AN-105,AN-108,AN-111,AN-112,AN-113,AN-124,AN-134,AN-135,AN-138,AN-140,AN-145,AN-146,AN-149,AN-151,ALI-01-POPUP,ALI-01-ANIME"
+},
+{
+"key": "pause_planning",
+"value": "1"
 }
 ],
 "events": [
@@ -7800,6 +7800,146 @@
 "msg": "v2 -> MP4s/The Cat and the Crow - Halftone Pop 9x16 - Noto Naskh Arabic.mp4",
 "story_id": "AN-040",
 "t": "2026-11-18T18:07:56"
+},
+{
+"id": 1106,
+"kind": "cloud-render",
+"msg": "v3: PASS run 44285694793 commit 76016af257",
+"story_id": "KD-009",
+"t": "2026-11-18T18:52:44"
+},
+{
+"id": 1107,
+"kind": "cloud-render",
+"msg": "v4: PASS run 44287519684 commit 76016af257",
+"story_id": "KD-012",
+"t": "2026-11-18T19:31:25"
+},
+{
+"id": 1108,
+"kind": "finalized",
+"msg": "v3 subtitle refresh -> MP4s/ (approved film backed up in MP4s/_approved_before_subtitle_refresh/); creative unchanged, owner to confirm",
+"story_id": "KD-009",
+"t": "2026-11-18T19:32:37"
+},
+{
+"id": 1109,
+"kind": "finalized",
+"msg": "v4 subtitle refresh -> MP4s/ (approved film backed up in MP4s/_approved_before_subtitle_refresh/); creative unchanged, owner to confirm",
+"story_id": "KD-012",
+"t": "2026-11-18T19:32:37"
+},
+{
+"id": 1110,
+"kind": "import",
+"msg": "ALI-01 variants: ALI-01-POPUP, ALI-01-ANIME",
+"story_id": null,
+"t": "2026-11-21T02:21:08"
+},
+{
+"id": 1111,
+"kind": "config",
+"msg": "only_ids=KD-005,KD-007,KD-008,KD-010,KD-011,KD-013,KD-014,KD-015,KD-016,KD-017,KD-019,KD-022,KD-026,KD-031,AN-001,AN-014,AN-040,AN-041,AN-045,AN-046,AN-083,AN-084,AN-092,AN-097,AN-098,AN-099,AN-104,AN-105,AN-108,AN-111,AN-112,AN-113,AN-124,AN-134,AN-135,AN-138,AN-140,AN-145,AN-146,AN-149,AN-151,ALI-01-POPUP,ALI-01-ANIME",
+"story_id": null,
+"t": "2026-11-21T02:22:08"
+},
+{
+"id": 1112,
+"kind": "config",
+"msg": "pause_planning=0",
+"story_id": null,
+"t": "2026-11-21T02:22:09"
+},
+{
+"id": 1113,
+"kind": "claim",
+"msg": "plan claimed (fable)",
+"story_id": "ALI-01-ANIME",
+"t": "2026-11-21T02:22:09"
+},
+{
+"id": 1114,
+"kind": "claim",
+"msg": "plan claimed (fable)",
+"story_id": "ALI-01-POPUP",
+"t": "2026-11-21T02:22:09"
+},
+{
+"id": 1115,
+"kind": "config",
+"msg": "pause_planning=1",
+"story_id": null,
+"t": "2026-11-21T02:22:09"
+},
+{
+"id": 1116,
+"kind": "agent",
+"msg": "plan agent a045e4308cb85426d",
+"story_id": "ALI-01-POPUP",
+"t": "2026-11-21T02:22:39"
+},
+{
+"id": 1117,
+"kind": "agent",
+"msg": "plan agent aacc399503d41b524",
+"story_id": "ALI-01-ANIME",
+"t": "2026-11-21T02:22:39"
+},
+{
+"id": 1118,
+"kind": "plan-accepted",
+"msg": "v1 17 scenes 141 actions 0 warnings",
+"story_id": "ALI-01-ANIME",
+"t": "2026-11-21T02:31:21"
+},
+{
+"id": 1119,
+"kind": "claim",
+"msg": "implement claimed (opus)",
+"story_id": "ALI-01-ANIME",
+"t": "2026-11-21T02:31:27"
+},
+{
+"id": 1120,
+"kind": "agent",
+"msg": "implement agent a0f872dcd8726f28c",
+"story_id": "ALI-01-ANIME",
+"t": "2026-11-21T02:31:43"
+},
+{
+"id": 1121,
+"kind": "plan-accepted",
+"msg": "v1 10 scenes 156 actions 0 warnings",
+"story_id": "ALI-01-POPUP",
+"t": "2026-11-21T02:35:46"
+},
+{
+"id": 1122,
+"kind": "claim",
+"msg": "implement claimed (opus)",
+"story_id": "ALI-01-POPUP",
+"t": "2026-11-21T02:35:46"
+},
+{
+"id": 1123,
+"kind": "agent",
+"msg": "implement agent a3d35d08e2fe382ec",
+"story_id": "ALI-01-POPUP",
+"t": "2026-11-21T02:36:05"
+},
+{
+"id": 1124,
+"kind": "done",
+"msg": "implement Implementation Complete - Awaiting Render (film 142.94 s, est. render 45.0 min) (claude-opus-5-5)",
+"story_id": "ALI-01-ANIME",
+"t": "2026-11-21T03:23:31"
+},
+{
+"id": 1125,
+"kind": "done",
+"msg": "implement Implementation Complete - Awaiting Render (film 143.44 s, est. render 9.6 min) (claude-opus-5-5)",
+"story_id": "ALI-01-POPUP",
+"t": "2026-11-21T03:28:47"
 }
 ],
 "plans": [
@@ -9278,6 +9418,42 @@
 "version": 1,
 "warnings": "[]",
 "words_sha": "6d05eb8d202c79d1e72a79bc7e5b631efe65ff994275bf233866e641d5e62588"
+},
+{
+"agent_id": "aacc399503d41b524",
+"created": "2026-11-21T02:31:21",
+"json_path": "Animations/ALI-01-ANIME/planning/creative_plan.json",
+"library_rev": "3ff2438",
+"md_path": "Animations/ALI-01-ANIME/planning/creative_plan.md",
+"model": "claude-fable-5-2",
+"mp3_sha": "ad249a483b2a6d040d18693078c8ea31933c0bc59be8b932dd8f96d1c98a6031",
+"n_actions": 141,
+"n_scenes": 17,
+"new_assets": "[{\"type\": \"prop\", \"name\": \"sesameRock\", \"effort\": \"M\"}, {\"type\": \"set\", \"name\": \"treasureCave\", \"effort\": \"L\"}, {\"type\": \"effect\", \"name\": \"celPlates\", \"effort\": \"L\"}, {\"type\": \"prop\", \"name\": \"handcart\", \"effort\": \"S\"}, {\"type\": \"pose\", \"name\": \"treeClimb and leafHide\", \"effort\": \"M\"}]",
+"script_sha": "b39d369daf89e9a4c086c215290c32abdcb02c642beaa56e7be5ff2af6341d81",
+"status": "validated",
+"story_id": "ALI-01-ANIME",
+"version": 1,
+"warnings": "[]",
+"words_sha": "049afad2993d1976a175384e3f241825eaef6f44cc2494e8565e10013d4aac3d"
+},
+{
+"agent_id": "a045e4308cb85426d",
+"created": "2026-11-21T02:35:46",
+"json_path": "Animations/ALI-01-POPUP/planning/creative_plan.json",
+"library_rev": "3ff2438",
+"md_path": "Animations/ALI-01-POPUP/planning/creative_plan.md",
+"model": "claude-fable-5-2",
+"mp3_sha": "ad249a483b2a6d040d18693078c8ea31933c0bc59be8b932dd8f96d1c98a6031",
+"n_actions": 156,
+"n_scenes": 10,
+"new_assets": "[{\"type\": \"set\", \"name\": \"sesameRock\", \"effort\": \"M\"}, {\"type\": \"set\", \"name\": \"treasureCave\", \"effort\": \"L\"}, {\"type\": \"character\", \"name\": \"thiefChain\", \"effort\": \"M\"}, {\"type\": \"prop\", \"name\": \"cart\", \"effort\": \"S\"}, {\"type\": \"effect\", \"name\": \"pullTab (with sunOnStick and slideStrip)\", \"effort\": \"S\"}, {\"type\": \"prop\", \"name\": \"storyCard and mapCard\", \"effort\": \"S\"}, {\"type\": \"pose\", \"name\": \"trunk climb and leaf-gap eyes\", \"effort\": \"S\"}]",
+"script_sha": "b39d369daf89e9a4c086c215290c32abdcb02c642beaa56e7be5ff2af6341d81",
+"status": "validated",
+"story_id": "ALI-01-POPUP",
+"version": 1,
+"warnings": "[]",
+"words_sha": "049afad2993d1976a175384e3f241825eaef6f44cc2494e8565e10013d4aac3d"
 }
 ],
 "renders": [
@@ -10220,6 +10396,26 @@
 "status": "PASS",
 "story_id": "AN-040",
 "version": "v2"
+},
+{
+"created": "2026-11-18T18:52:44",
+"duration": 165.3,
+"path": "Animations/KD-009/renders/KD-009_v3.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 165.3}, \"end_hold\": 3.01, \"decode\": \"OK\", \"lufs\": -15.0, \"sync\": {\"lag_ms\": 0, \"corr\": 0.996}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-18T10:38:53\", \"cloud_run\": \"44285694793\", \"cloud_commit\": \"76016af2572cee0125d2386fae3a2bc56d93679a\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "KD-009",
+"version": "v3"
+},
+{
+"created": "2026-11-18T19:31:25",
+"duration": 168.8,
+"path": "Animations/KD-012/renders/KD-012_v4.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 168.8}, \"end_hold\": 4.01, \"decode\": \"OK\", \"lufs\": -15.0, \"sync\": {\"lag_ms\": 0, \"corr\": 0.995}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-18T11:16:52\", \"cloud_run\": \"44287519684\", \"cloud_commit\": \"76016af2572cee0125d2386fae3a2bc56d93679a\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "KD-012",
+"version": "v4"
 }
 ],
 "reviews": [
@@ -13725,7 +13921,7 @@
 "words_status": "SUCCESS"
 },
 {
-"approval": "approved",
+"approval": "pending",
 "assembly_file": "Audio Files/Complete_Stories_20pct/KD-009_The_Monkey_and_the_Carpenter_full_slowed.mp3.assembly.json",
 "collection": "Kalila wa Dimna",
 "completed_before": 0,
@@ -13744,7 +13940,7 @@
 "segments": "[\"KD-009-P01-S01\", \"KD-009-P01-S02\", \"KD-009-P01-S03\", \"KD-009-P01-S04\", \"KD-009-P01-S05\", \"KD-009-P01-S06\", \"KD-009-P01-S07\", \"KD-009-P01-S08\"]",
 "title_ar": "القرد والنجار",
 "title_en": "The Monkey and the Carpenter",
-"updated": "2026-11-17T15:45:20",
+"updated": "2026-11-18T19:32:37",
 "words_file": "KD-009_The_Monkey_and_the_Carpenter_full_slowed.mp3.words.json",
 "words_sha": "bc7cf17bcc16f779bbe0f9b0264fc8431b5bf298bdbf30b70b3566f3c431c510",
 "words_status": "SUCCESS"
@@ -13800,7 +13996,7 @@
 "words_status": "SUCCESS"
 },
 {
-"approval": "approved",
+"approval": "pending",
 "assembly_file": "Audio Files/Complete_Stories_20pct/KD-012_The_Hare_and_the_Elephants_full_slowed.mp3.assembly.json",
 "collection": "Kalila wa Dimna",
 "completed_before": 0,
@@ -13819,7 +14015,7 @@
 "segments": "[\"KD-012-P01-S01\", \"KD-012-P01-S02\", \"KD-012-P01-S03\", \"KD-012-P01-S04\", \"KD-012-P01-S05\", \"KD-012-P01-S06\", \"KD-012-P01-S07\", \"KD-012-P01-S08\"]",
 "title_ar": "الأرنب والفيلة",
 "title_en": "The Hare and the Elephants",
-"updated": "2026-11-17T15:45:22",
+"updated": "2026-11-18T19:32:37",
 "words_file": "KD-012_The_Hare_and_the_Elephants_full_slowed.mp3.words.json",
 "words_sha": "becef70b69de4d02e80780625c9e6adfc5378deaff46039e3665cebfa56a3a7a",
 "words_status": "SUCCESS"
@@ -14048,6 +14244,56 @@
 "words_file": "KD-031_The_Pair_of_Hoopoes_and_the_Treasure_full_slowed.mp3.words.json",
 "words_sha": "8129f1f06e67f04689dd19c2c303d067aa0962a2efaf59b5e131b0c6a6d52a15",
 "words_status": "SUCCESS"
+},
+{
+"approval": "none",
+"assembly_file": null,
+"collection": "Ali Baba",
+"completed_before": 0,
+"eligible": 1,
+"folder": "Animations/ALI-01-POPUP",
+"id": "ALI-01-POPUP",
+"input_notes": "style variant of ALI-01 (paper-popup); script from Google Sheet \"Sinbad Arabian Nights and Ebony Horse\" (Drive: ChatGPT Projects/Arabic Stories), tab All Scripts, rows 26-33, read 2026-11-21",
+"input_status": "ok",
+"match_ratio": 1.0,
+"mp3_duration": 138.938,
+"mp3_file": "ALI-01_Open_Sesame_slowed.mp3",
+"mp3_sha": "ad249a483b2a6d040d18693078c8ea31933c0bc59be8b932dd8f96d1c98a6031",
+"n_paragraphs": 8,
+"para_min_ratio": 1.0,
+"script_sha": "b39d369daf89e9a4c086c215290c32abdcb02c642beaa56e7be5ff2af6341d81",
+"segments": "[\"ALI-01-P01-S01\", \"ALI-01-P01-S02\", \"ALI-01-P01-S03\", \"ALI-01-P01-S04\", \"ALI-01-P01-S05\", \"ALI-01-P01-S06\", \"ALI-01-P01-S07\", \"ALI-01-P01-S08\"]",
+"title_ar": "افتح يا سمسم",
+"title_en": "Open Sesame",
+"updated": "2026-11-21T02:21:08",
+"words_file": "ALI-01_Open_Sesame_slowed.mp3.words.json",
+"words_sha": "049afad2993d1976a175384e3f241825eaef6f44cc2494e8565e10013d4aac3d",
+"words_status": "supplied"
+},
+{
+"approval": "none",
+"assembly_file": null,
+"collection": "Ali Baba",
+"completed_before": 0,
+"eligible": 1,
+"folder": "Animations/ALI-01-ANIME",
+"id": "ALI-01-ANIME",
+"input_notes": "style variant of ALI-01 (cel-anime-80s); script from Google Sheet \"Sinbad Arabian Nights and Ebony Horse\" (Drive: ChatGPT Projects/Arabic Stories), tab All Scripts, rows 26-33, read 2026-11-21",
+"input_status": "ok",
+"match_ratio": 1.0,
+"mp3_duration": 138.938,
+"mp3_file": "ALI-01_Open_Sesame_slowed.mp3",
+"mp3_sha": "ad249a483b2a6d040d18693078c8ea31933c0bc59be8b932dd8f96d1c98a6031",
+"n_paragraphs": 8,
+"para_min_ratio": 1.0,
+"script_sha": "b39d369daf89e9a4c086c215290c32abdcb02c642beaa56e7be5ff2af6341d81",
+"segments": "[\"ALI-01-P01-S01\", \"ALI-01-P01-S02\", \"ALI-01-P01-S03\", \"ALI-01-P01-S04\", \"ALI-01-P01-S05\", \"ALI-01-P01-S06\", \"ALI-01-P01-S07\", \"ALI-01-P01-S08\"]",
+"title_ar": "افتح يا سمسم",
+"title_en": "Open Sesame",
+"updated": "2026-11-21T02:21:08",
+"words_file": "ALI-01_Open_Sesame_slowed.mp3.words.json",
+"words_sha": "049afad2993d1976a175384e3f241825eaef6f44cc2494e8565e10013d4aac3d",
+"words_status": "supplied"
 }
 ],
 "tasks": [
@@ -18418,6 +18664,62 @@
 "started": "2026-11-18T18:04:59",
 "status": "done",
 "story_id": "AN-040"
+},
+{
+"agent_id": "aacc399503d41b524",
+"attempt": 1,
+"finished": "2026-11-21T02:31:21",
+"id": 313,
+"model": "fable",
+"notes": null,
+"outputs": "plan v1",
+"pid": null,
+"stage": "plan",
+"started": "2026-11-21T02:22:09",
+"status": "done",
+"story_id": "ALI-01-ANIME"
+},
+{
+"agent_id": "a045e4308cb85426d",
+"attempt": 1,
+"finished": "2026-11-21T02:35:46",
+"id": 314,
+"model": "fable",
+"notes": null,
+"outputs": "plan v1",
+"pid": null,
+"stage": "plan",
+"started": "2026-11-21T02:22:09",
+"status": "done",
+"story_id": "ALI-01-POPUP"
+},
+{
+"agent_id": "a0f872dcd8726f28c",
+"attempt": 1,
+"finished": "2026-11-21T03:23:31",
+"id": 315,
+"model": "opus",
+"notes": "tokens {\"turns\": 71, \"input_tokens\": 154, \"cache_creation_input_tokens\": 361482, \"cache_read_input_tokens\": 15179129, \"output_tokens\": 185021}",
+"outputs": "Implementation Complete - Awaiting Render (film 142.94 s, est. render 45.0 min)",
+"pid": null,
+"stage": "implement",
+"started": "2026-11-21T02:31:27",
+"status": "done",
+"story_id": "ALI-01-ANIME"
+},
+{
+"agent_id": "a3d35d08e2fe382ec",
+"attempt": 1,
+"finished": "2026-11-21T03:28:47",
+"id": 316,
+"model": "opus",
+"notes": "tokens {\"turns\": 98, \"input_tokens\": 196, \"cache_creation_input_tokens\": 744311, \"cache_read_input_tokens\": 23220500, \"output_tokens\": 179945}",
+"outputs": "Implementation Complete - Awaiting Render (film 143.44 s, est. render 9.6 min)",
+"pid": null,
+"stage": "implement",
+"started": "2026-11-21T02:35:46",
+"status": "done",
+"story_id": "ALI-01-POPUP"
 }
 ],
 "usage_log": [

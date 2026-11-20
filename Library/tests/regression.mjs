@@ -1,6 +1,8 @@
 // node regression.mjs
 // Checks that every library drawing is pixel-identical to the drawing in its original story when no acting fields are used,
 // and that the library loads with no duplicate top-level names. Uses frozen copies of the original story drawing files in tests/reference/.
+// Then checks every other style profile (Library/styles/<id>/): its theme.js defines every top-level name the Halftone theme
+// defines (the theme contract), the library loads with it and its engine style module without errors, and the cast draws.
 import { createRequire } from 'module'; import { pathToFileURL, fileURLToPath } from 'url'; import fs from 'fs'; import path from 'path'; import { execFileSync } from 'child_process';
 const findLib = (d) => { if (process.env.LIB) return process.env.LIB; for (let x = d; ; x = path.dirname(x)) { const c = path.join(x, 'lemo-opuscar'); if (fs.existsSync(path.join(c, 'core/render/page.mjs'))) return c; if (path.dirname(x) === x) throw new Error('lemo-opuscar not found'); } };
 const here = path.dirname(fileURLToPath(import.meta.url)), LIBDIR = path.dirname(here), ROOT = path.dirname(LIBDIR), OL = findLib(here), req = createRequire(path.join(OL, 'package.json'));
@@ -30,8 +32,8 @@ const CASES = [
   ['thief story', 'thief-and-the-moonbeam', ['scene_a.js'], [
     [`person(c, ${P({ kind: 'thief', v: 1, ph: 1, amp: 1, talk: 0.5 })})`], [`person(c, ${P({ kind: 'owner', mouth: 'smile', aL: [1, 2] })})`], [`person(c, ${P({ kind: 'wife', look: -1, mouth: 'o' })})`]]],
 ];
-const page = (scripts, calls) => `<!doctype html><html><body><canvas id="c" width="400" height="400"></canvas>
-<script>window.MS = { styles: {}, register(s) { this.styles[s.id] = s; } };</script><script>${engine}</script>
+const page = (scripts, calls, eng = engine) => `<!doctype html><html><body><canvas id="c" width="400" height="400"></canvas>
+<script>window.MS = { styles: {}, register(s) { this.styles[s.id] = s; } };</script><script>${eng}</script>
 <script>window.ARABIC_FONT = 'Noto Naskh Arabic'; window.ARABIC_WEIGHT = 700;</script>
 <script>${scripts}</script>
 <script>window.shots = ${JSON.stringify(calls)}.map((code) => { const cv = document.getElementById('c'), c = cv.getContext('2d'); c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, 400, 400); new Function('c', code)(c); return Array.from(c.getImageData(0, 0, 400, 400).data); });</script></body></html>`;
@@ -44,5 +46,20 @@ const dup = Object.entries(names).filter(([, n]) => n > 1).map(([k]) => k); if (
 for (const [label, story, files, calls] of CASES) {
   const src = anim(story), orig = await shoot(page(files.map((f) => rd(path.join(src, f))).join('\n'), calls.map((c) => c[0]))), lib = await shoot(page(libjs, calls.map((c) => c[1] || c[0])));
   calls.forEach((c, i) => { let d = 0; for (let k = 0; k < orig[i].length; k++) if (orig[i][k] !== lib[i][k]) d++; const nonblank = orig[i].some((v, k) => k % 4 === 3 && v > 0); const ok = d === 0 && nonblank; if (!ok) fail++; console.log((ok ? 'same ' : 'DIFF ') + label.padEnd(14) + (c[1] || c[0]).slice(0, 70) + (ok ? '' : `  (${d} bytes differ${nonblank ? '' : ', blank'})`)); });
+}
+// 3. other style profiles: theme contract + loads and draws
+const py = (code, ...args) => execFileSync('python3', ['-c', 'import sys, json; sys.path.insert(0, sys.argv[1]); ' + code, LIBDIR, ...args]).toString();
+const topNames = (js) => new Set([...js.matchAll(/^(?:function|const|let)\s+([A-Za-z_$][\w$]*)/gm)].map((m) => m[1]));
+const themeOf = (id) => py('import lib; print(lib.read(lib.theme_rel(sys.argv[2])))', id);
+const contract = topNames(themeOf('halftone-pop'));
+for (const id of py('import style; print(" ".join(style.available()))').trim().split(/\s+/).filter((x) => x && x !== 'halftone-pop')) {
+  const miss = [...contract].filter((n) => !topNames(themeOf(id)).has(n)), lj = py('import lib; print(lib.library_js(sys.argv[2]))', id);
+  const nm = {}; for (const m of lj.matchAll(/^(?:function|const|let)\s+([A-Za-z_$][\w$]*)/gm)) nm[m[1]] = (nm[m[1]] || 0) + 1;
+  const dupS = Object.entries(nm).filter(([, n]) => n > 1).map(([k]) => k);
+  const eng = py('import lib; print(lib.engine_scripts(sys.argv[2]))', id);   // kit + sound + the profile's style module (Creator OS or its own)
+  let err = '';
+  try { const sh = await shoot(page(lj, ['lion(c, ' + P({}) + ')', 'person(c, ' + P({ kind: 'owner' }) + ')', 'bubble(c, 200, 120, 200, 110, 120, 260, 1, "HA!")', 'castFinish(c, 200, 330, 260, 300, (k) => hare(k, ' + P({}) + '))'], eng)); if (!sh.every((px) => px.some((v, k) => k % 4 === 3 && v > 0))) err = 'a test drawing came out blank'; } catch (e) { err = e.message.slice(0, 200); }
+  const ok = !miss.length && !dupS.length && !err; if (!ok) fail++;
+  console.log((ok ? 'style ' : 'STYLE ') + id.padEnd(16) + (ok ? 'theme contract met, loads and draws' : [miss.length && 'theme is missing: ' + miss.join(', '), dupS.length && 'duplicate names: ' + dupS.join(', '), err].filter(Boolean).join('; ')));
 }
 await b.close(); console.log(fail ? `${fail} problem(s)` : 'all identical'); process.exit(fail ? 1 : 0);

@@ -201,6 +201,30 @@ Limits / next: the rider is the front-facing person (no profile) seated with `si
 
 ---
 
+## 14. Visual styles (style profiles, added 2026-11-21)
+- **What:** a story can be made in another visual style without changing the workflow. `story.json` `"style"` picks a profile in `Library/styles/<id>/` (default `halftone-pop`, used by every film so far).
+- **What changes with the style:** the engine style module (`S.title`, `S.label`, `S.arrow`, `S.box`, `S.counter`, `S.emphasis`, `S.transition`, `S.background`, `S.finish`: same calls, the medium's own look), the palette `C` and shared tones, the lettering font `BF`, the fill texture `dotPat` (Ben-Day dots in Halftone), the outline brush `ink`, the subtitle colours and caption panel, the player and MP4 names.
+- **What stays the same:** every cast, prop, set and motion helper and its pose and acting fields, the layout, timing, subtitles (Arabic verbatim) and sound.
+- **How to stage for any style:** frame the page and panel with `S.background(ctx, W, H, t, THEME.page)` and `S.box(ctx, 54, 54, 972, 1196, 1, THEME.panel)` (as in the template), use palette names (`C.yellow`, `GREEN`...) and `BF` rather than fixed colours or font names, and keep comic words short (they are drawn in the style's lettering).
+- **Adding a style:** [styles/README.md](styles/README.md).
+
+## 15. Acting that never freezes: flowing poses, follow-through, moving holds, ground shadows (added 2026-11-21)
+From the character-motion method (`/rossark-motion-shorts`, `.claude/skills/rossark-motion/SKILL.md`). All in `Library/motion.js`, pure functions of `t`.
+- **`flow(t, keys)`**: a chain of key poses `[[t0, v0], [t1, v1], ...]` (seconds) passed through with a continuous speed and no overshoot. Use it for acting channels (lean `tip`, head `nod`, an arm `raise`, ears): with `kfn` or `blend` the character eases to a dead stop at every key and reads as a robot. Repeat a value to hold; define the keys once, outside `draw`.
+- **`lagged(f, t, delay = 0.09, k = 0.45)`**: follow-through by delay. Add it to a child part so it trails its parent: `P.raise = flow(t, RAISE) + lagged((u) => flow(u, RAISE), t, 0.12, 0.5)`. Counter-motion: `head = own(t) - 0.45 * lean(t - 0.11)`. Ears, tails, hands and hair arrive after the body, with no spring wobble.
+- **`idleSway(t, seed, amp, period = 3)`** (moving holds): two waves of different periods, phased by seed. Add a little to every channel while a character is on screen (`tip` 0.02-0.035, `nod` ~0.03, limbs a few degrees, ears 0.05-0.1, `squash` via `breathe`), each with its own seed so left and right never mirror.
+- **`osc(t, period, phase)`** and **`beatIn(t, a, b)`**: a -1..1 wave, and a time window as 0..1 for one beat (an accent switched on for a few words).
+- **`groundShadow(ctx, x, y, w, lift, o)`**: a contact shadow that stays on the ground and shrinks and fades as the body rises (`lift` in world units), filled with the style's texture (Ben-Day dots in Halftone) or solid (`{ flat: true }`). Draw it before the character, at the feet's ground point, for every hop, jump, float or fall.
+- **The "alive" checklist** (before a review): nothing frozen while on screen; no moment where every part stops at once; head and limb ends arrive after the body; left and right differ; the weight moves at least once; a head turn with a blink; landings squash (`impactSquash`, `landSquash`); anything in the air has a shrinking shadow and hanging feet; props enter already moving and the eyes follow them.
+- **Example** (hare hops in and holds a living pose):
+  ```js
+  const RAISE = [[0, 0], [3.2, 0], [3.8, 0.9], [5.0, 0.9], [5.6, 0.3]];
+  const [x, lift] = hop(t, 0.4, 0.6, -150, 160, 120);
+  groundShadow(ctx, x, GR, 120, lift);
+  hare(ctx, { x, y: GR - lift, s: 0.9, raise: flow(t, RAISE) + lagged((u) => flow(u, RAISE), t, 0.12, 0.5) + idleSway(t, 12, 0.06, 2.3),
+              nod: idleSway(t, 11, 0.03, 4.4), ears: 1 + idleSway(t, 14, 0.08, 1.9), squash: 1 - impactSquash(t, 1.0), lid: blink(t, 4) });
+  ```
+
 ## Recommended next (from Fable reviews, not yet implemented)
 - Lessons from the Thief comparison review: poses must read at phone size (use arm angles for big shapes); keep flashback action inside its cloud; speech balloons never over the speaker; decorative camera tilts must not crop heads.
 - From the Thief review: `leapAndFall` bundle, `getUpHurt` sequence, `gripRope`/`slidePole` as reusable person moves, `sneak` gait option for `walk`, a `bumpChain` accordion for a line of walkers, `peerOverEdge`, `lag()` for accessories, a `poseTo()` standard transition.

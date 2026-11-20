@@ -1,7 +1,7 @@
 (async function () {
-  const S = MS.styles['halftone-pop'], cv = document.getElementById('c'), ctx = cv.getContext('2d'), W = 1080, H = 1920, D = SCENE.duration;
+  const S = MS.styles[window.STYLE.engineStyle], cv = document.getElementById('c'), ctx = cv.getContext('2d'), W = 1080, H = 1920, D = SCENE.duration;
   const $ = (i) => document.getElementById(i), nar = $('nar');
-  const specs = [['400 60px "Bangers"', 'Abc'], [`${window.ARABIC_WEIGHT} 60px "${window.ARABIC_FONT}"`, 'لُصوص «شُولَمْ»،']];
+  const specs = [...window.STYLE.fonts.map((f) => [`${f.style === 'italic' ? 'italic ' : ''}${f.weight} 60px "${f.family}"`, f.sample || 'Abc']), [`${window.ARABIC_WEIGHT} 60px "${window.ARABIC_FONT}"`, 'لُصوص «شُولَمْ»،']];
   await Promise.all(specs.map(([f, s]) => document.fonts.load(f, s)));
   let t = 0, playing = false, stopFx = null, t0 = 0, from = 0;
   const fmt = (x) => Math.floor(x / 60) + ':' + String(Math.floor(x % 60)).padStart(2, '0');

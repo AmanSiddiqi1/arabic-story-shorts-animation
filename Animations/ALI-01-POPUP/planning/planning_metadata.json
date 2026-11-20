@@ -1,0 +1,88 @@
+{
+ "story_id": "ALI-01-POPUP",
+ "title": "Open Sesame",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-21T02:35:46",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a045e4308cb85426d.jsonl",
+ "agent_id": "a045e4308cb85426d",
+ "model_messages": {
+  "claude-fable-5-2": 22
+ },
+ "script": {
+  "source": "Spreadsheets/Script_Updated.xlsx",
+  "sha256": "b39d369daf89e9a4c086c215290c32abdcb02c642beaa56e7be5ff2af6341d81",
+  "paragraphs": 8,
+  "segments": [
+   "ALI-01-P01-S01",
+   "ALI-01-P01-S02",
+   "ALI-01-P01-S03",
+   "ALI-01-P01-S04",
+   "ALI-01-P01-S05",
+   "ALI-01-P01-S06",
+   "ALI-01-P01-S07",
+   "ALI-01-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/ALI-01_Open_Sesame_slowed.mp3",
+  "sha256": "ad249a483b2a6d040d18693078c8ea31933c0bc59be8b932dd8f96d1c98a6031",
+  "duration": 138.938
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/ALI-01_Open_Sesame_slowed.mp3.words.json",
+  "sha256": "049afad2993d1976a175384e3f241825eaef6f44cc2494e8565e10013d4aac3d",
+  "manifest_status": "supplied",
+  "script_match": 1.0
+ },
+ "library_rev": "3ff2438",
+ "scenes": 10,
+ "actions": 156,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "sesameRock",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "treasureCave",
+   "effort": "L"
+  },
+  {
+   "type": "character",
+   "name": "thiefChain",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "cart",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "pullTab (with sunOnStick and slideStrip)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "storyCard and mapCard",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "trunk climb and leaf-gap eyes",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "style variant of ALI-01 (paper-popup); script from Google Sheet \"Sinbad Arabian Nights and Ebony Horse\" (Drive: ChatGPT Projects/Arabic Stories), tab All Scripts, rows 26-33, read 2026-11-21",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "castFinish cost with five riders, five horses, the chain, the rock halves and the tree on screen (34-70 s) is the main performance risk: group and bake as described, and check render time per frame early.",
+  "The front-facing person has no profile: the climb, the mounted riders and the walk into the door rely on staging (trunk slot, rideOn, arch clip). If the climb reads poorly, make it more openly a paper mechanism (the figure rigid, sliding in hitches).",
+  "hutRoom inside a popCard: confirm the baked room draws correctly through castFinish and take the door and mattress positions from the HUT anchors; the Cassim peek needs him drawn before the right wall and clipped by it.",
+  "Spreads 2 and 3 hold for 73 s on one layout; the dusk reprint, the camera reframing and the mechanisms must carry the variety.",
+  "The page turn at 131.8 happens while the narrator is speaking (no pause there), so it has no sound effect."
+ ]
+}

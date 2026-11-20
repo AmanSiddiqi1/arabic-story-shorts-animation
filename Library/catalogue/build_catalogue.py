@@ -1,11 +1,16 @@
 # Builds catalogue.html: every cast member in its sample poses, an acting demo, props and sets. Render it with: node catalogue.mjs
+#   python3 build_catalogue.py [--style <id>]   (default halftone-pop -> this folder; another style -> Library/styles/<id>/catalogue/,
+#   render it with: node catalogue.mjs --style <id>)
 import pathlib, sys
 HERE = pathlib.Path(__file__).resolve().parent; sys.path.insert(0, str(HERE.parent))
 from lib import head_scripts, font_css
+import style
+STY = sys.argv[sys.argv.index('--style') + 1] if '--style' in sys.argv else style.DEFAULT
+P = style.load(STY); OUT = HERE if STY == style.DEFAULT else P['dir'] / 'catalogue'
 page = f"""<!doctype html><html><head><meta charset="utf-8"><title>Kalila wa Dimna library catalogue</title>
-<style>{font_css('naskh')} body{{margin:0;background:#fbf2da}} canvas{{display:block}}</style></head><body>
+<style>{font_css('naskh', STY)} body{{margin:0;background:{P['catalogue']['background'] if 'catalogue' in P else '#fff'}}} canvas{{display:block}}</style></head><body>
 <canvas id="cast"></canvas><canvas id="sets"></canvas><canvas id="people"></canvas><canvas id="animals"></canvas>
-{head_scripts('naskh')}
+{head_scripts('naskh', None, STY)}
 <script>
 const T = 2.0, CW = 300, CH = 330, LW = 230;
 function label(c, text, x, y, size = 30, col = C.black) {{ c.font = K.font(size, BF, 400); c.fillStyle = col; c.textAlign = 'center'; c.fillText(text, x, y); }}
@@ -53,6 +58,6 @@ function drawAnimals() {{
       c.save(); c.beginPath(); c.rect(x0 + 4, y0 + 4, AW - 8, AH - 8); c.clip(); c.strokeStyle = '#c9b88a'; c.lineWidth = 2; c.beginPath(); c.moveTo(x0 + 10, y0 + AH - 60); c.lineTo(x0 + AW - 10, y0 + AH - 60); c.stroke();
       try {{ cell.draw(c, x0 + AW / 2, y0 + AH - 60, r.s); }} catch (e) {{ console.error('animals ' + r.name + ' ' + cell.label + ': ' + e.stack); }} c.restore(); label(c, cell.label, x0 + AW / 2, y0 + AH - 18, 22); }}); }});
 }}
-Promise.all([document.fonts.load('40px Bangers'), document.fonts.ready]).then(() => {{ try {{ drawCast(); }} catch (e) {{ console.error("cast: " + e.stack); }} try {{ drawSets(); }} catch (e) {{ console.error("sets: " + e.stack); }} try {{ drawPeople(); }} catch (e) {{ console.error("people: " + e.stack); }} try {{ drawAnimals(); }} catch (e) {{ console.error("animals: " + e.stack); }} window.__ready = true; }});
+Promise.all([document.fonts.load('40px "' + BF + '"'), document.fonts.ready]).then(() => {{ try {{ drawCast(); }} catch (e) {{ console.error("cast: " + e.stack); }} try {{ drawSets(); }} catch (e) {{ console.error("sets: " + e.stack); }} try {{ drawPeople(); }} catch (e) {{ console.error("people: " + e.stack); }} try {{ drawAnimals(); }} catch (e) {{ console.error("animals: " + e.stack); }} window.__ready = true; }});
 </script></body></html>"""
-(HERE / 'catalogue.html').write_text(page, encoding='utf8'); print('catalogue.html', round(len(page) / 1e6, 2), 'MB')
+OUT.mkdir(parents=True, exist_ok=True); (OUT / 'catalogue.html').write_text(page, encoding='utf8'); print(OUT / 'catalogue.html', round(len(page) / 1e6, 2), 'MB')

@@ -7,7 +7,7 @@ REPO="$(cd "$(dirname "$0")/../.." && pwd)"; STORY="${1:-lion-and-the-hare}"; FR
 D="$REPO/Animations/$STORY"; [ -f "$D/story.json" ] || { echo "no story $D"; exit 1; }
 M="$(python3 "$REPO/Library/media.py")"; S="$M/scratch/$USER/smoke-$STORY"
 [ -d "$M/scratch" ] && mkdir -p "$S" || { S="$REPO/scratch/smoke-$STORY"; mkdir -p "$S"; }
-TITLE="$(python3 -c "import json;print(json.load(open('$D/story.json'))['title'])")"; NAME="$TITLE - Halftone Pop 9x16 - Noto Naskh Arabic"
+NAME="$(python3 -c "import sys; sys.path.insert(0, sys.argv[1]); import style; print(style.story_film_name(sys.argv[2]))" "$REPO/Library" "$D")"
 FINAL="$(python3 "$REPO/Library/media.py" "MP4s/$NAME.mp4")"; [ -f "$FINAL" ] || { echo "approved film not found: $FINAL"; exit 1; }
 echo "== build into $S"; (cd "$D" && BUILD_OUT_DIR="$S" python3 build.py)
 OUT="$S/smoke-$FROM-$TO.mp4"; [ -f "$OUT" ] && mv "$OUT" "$OUT.prev"

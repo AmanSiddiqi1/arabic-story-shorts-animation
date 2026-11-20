@@ -1,0 +1,2769 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "ALI-01-ANIME",
+ "title": "Open Sesame",
+ "duration": 138.938,
+ "end_hold": 4.0,
+ "logline": "A poor woodcutter hiding in a tree sees forty thieves open a rock with two words, takes only a little of their treasure, and loses the secret to his greedy brother.",
+ "moral": "Contentment keeps a man safe; greed stops listening. (The film ends on the open question, not on a stated moral.)",
+ "tone": "80s cel adventure: quiet painted worlds, a small flat hero, suspense by stillness, two bright impact frames, a gold-lit peak still, a wry cliffhanger.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.54,
+   "kind": "setup",
+   "cue": {
+    "word": "علي",
+    "t": 0.54
+   },
+   "summary": "Ali Baba, a poor woodcutter with a family and a donkey in a small town."
+  },
+  {
+   "id": "B2",
+   "t": 18.03,
+   "kind": "inciting",
+   "cue": {
+    "word": "سمع",
+    "t": 18.034
+   },
+   "summary": "He hears horses coming fast; the donkey hears them first."
+  },
+  {
+   "id": "B3",
+   "t": 25.61,
+   "kind": "suspense",
+   "cue": {
+    "word": "فصعد",
+    "t": 25.614
+   },
+   "summary": "Fearing thieves, he climbs a tall tree and hides until only his eyes show."
+  },
+  {
+   "id": "B4",
+   "t": 35.02,
+   "kind": "rising",
+   "cue": {
+    "word": "أربعون",
+    "t": 35.02
+   },
+   "summary": "Forty men with heavy sacks reach a great rock."
+  },
+  {
+   "id": "B5",
+   "t": 42.76,
+   "kind": "surprise",
+   "cue": {
+    "word": "«افتح",
+    "t": 42.76
+   },
+   "summary": "The leader calls Open Sesame."
+  },
+  {
+   "id": "B6",
+   "t": 44.86,
+   "kind": "reveal",
+   "cue": {
+    "word": "فانشقت",
+    "t": 44.86
+   },
+   "summary": "The rock splits and a secret door appears."
+  },
+  {
+   "id": "B7",
+   "t": 57.03,
+   "kind": "rising",
+   "cue": {
+    "word": "وبعد",
+    "t": 57.034
+   },
+   "summary": "Much later they come out, mount and close the rock with Close Sesame."
+  },
+  {
+   "id": "B8",
+   "t": 74.7,
+   "kind": "turn",
+   "cue": {
+    "word": "نزل",
+    "t": 74.702
+   },
+   "summary": "Ali Baba climbs down carefully and approaches the rock."
+  },
+  {
+   "id": "B9",
+   "t": 82.84,
+   "kind": "climax",
+   "cue": {
+    "word": "«افتح",
+    "t": 82.842
+   },
+   "summary": "He repeats the words and the door opens before his eyes."
+  },
+  {
+   "id": "B10",
+   "t": 90.82,
+   "kind": "reveal",
+   "cue": {
+    "word": "ذهبًا",
+    "t": 90.823
+   },
+   "summary": "Gold, silver and costly cloth."
+  },
+  {
+   "id": "B11",
+   "t": 98.8,
+   "kind": "emotion",
+   "cue": {
+    "word": "كيسًا",
+    "t": 98.803
+   },
+   "summary": "Amazed, yet he takes only one small sack."
+  },
+  {
+   "id": "B12",
+   "t": 110.97,
+   "kind": "emotion",
+   "cue": {
+    "word": "تحدث",
+    "t": 110.972
+   },
+   "summary": "He tells his wife and asks her to tell no one."
+  },
+  {
+   "id": "B13",
+   "t": 115.35,
+   "kind": "turn",
+   "cue": {
+    "word": "لاحظ",
+    "t": 115.352
+   },
+   "summary": "Cassim notices the new coins and presses until he knows the secret."
+  },
+  {
+   "id": "B14",
+   "t": 126.35,
+   "kind": "comic",
+   "cue": {
+    "word": "الذهب.",
+    "t": 126.347
+   },
+   "summary": "Cassim can think only of gold and barely listens to the words."
+  },
+  {
+   "id": "B15",
+   "t": 137.93,
+   "kind": "suspense",
+   "cue": {
+    "word": "يخرج؟",
+    "t": 137.927
+   },
+   "summary": "He sets off with cart and empty sacks: would he remember how to get out?"
+  }
+ ],
+ "cast": [
+  {
+   "id": "ali",
+   "name": "Ali Baba",
+   "library": "person",
+   "base": "person costume:'villager' with pal overrides",
+   "look": "Poor woodcutter: faded olive knee robe with two patches, cream trousers, small white turban, short black beard, age 0.25, s 0.95. ONE ACCENT: vermilion sash and turban band (#ff3b2f), redrawn untinted in every colour model. Wood axe at the shoulder in P1.",
+   "new": false
+  },
+  {
+   "id": "wife",
+   "name": "Ali Baba's wife",
+   "library": "person",
+   "base": "person costume:'villageWoman' recoloured",
+   "look": "Dusty rose long robe, cream headscarf, age 0.25, s 0.92. Warm, quick hands.",
+   "new": false
+  },
+  {
+   "id": "child",
+   "name": "their child",
+   "library": "person",
+   "base": "person costume:'servant', child:true",
+   "look": "Small boy in an off-white tunic, seen only in S1 (the family).",
+   "new": false
+  },
+  {
+   "id": "donkey",
+   "name": "the donkey",
+   "library": "donkey",
+   "base": "donkey pal 0 (grey)",
+   "look": "Grey donkey with a wood bundle load in P1; the comic witness. Ears act first.",
+   "new": false
+  },
+  {
+   "id": "leader",
+   "name": "the leader of the thieves",
+   "library": "person",
+   "base": "person costume:'bedouin' with pal overrides, on horse pal 2 via rideOn",
+   "look": "Black robe, crimson cloak (ribbon), dark keffiyeh with a gold agal, full black beard, heavy brow 0.7, s 1.08. Black horse with a white blaze.",
+   "new": false
+  },
+  {
+   "id": "riders",
+   "name": "the forty thieves",
+   "library": "person",
+   "base": "6 cel riders: person costume:'bedouin' in three dark palettes (indigo, plum, rust) on horse pal 1 and 2 via rideOn; 33 silhouette riders on a strip",
+   "look": "Dark cloaks, face cloths in different colours, each with a seed for bob, lean, beard and cloak phase. Sacks at the saddle (full going in, flat coming out).",
+   "new": false
+  },
+  {
+   "id": "cassim",
+   "name": "Cassim, the rich brother",
+   "library": "person",
+   "base": "person costume:'merchant' with pal overrides",
+   "look": "Emerald long robe with gold trim and sash, big saffron turban with a red jewel, full beard, belly 1, age 0.4, s 1.1. coinEyes when he sees gold.",
+   "new": false
+  },
+  {
+   "id": "mule",
+   "name": "Cassim's cart animal",
+   "library": "donkey",
+   "base": "donkey pal 1 (brown)",
+   "look": "Brown donkey in a collar pulling the cart in S17.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "homeYard",
+   "library": "villageYard",
+   "description": "Ali Baba's cottage yard at dawn: villageYard with sky:false over the painted plate 'dawnTown' (tall peach to cobalt sky, far town roofs with three lit windows). Cottage default position, axe peg by the door, a missing roof tile. Ground y 900.",
+   "new": false
+  },
+  {
+   "id": "forestMorning",
+   "library": null,
+   "description": "Looping painted morning forest for side tracking: 4 layers, each 2000 wide and tileable. Far: pale blue-green trunks in mist (parallax 0.25). Mid: violet-blue trunks 60..90 wide with mint canopy (0.5). Path layer: ochre earth path at y 900 with fern clumps (1.0). Front: dark trunks and ferns (1.6, 16 px horizontal smear). Slanting gold light shafts 120 wide at 25 degrees as an additive layer. Also the locked chopping view: fallen trunk 200 x 60 at x 560..760.",
+   "new": true
+  },
+  {
+   "id": "rockGlade",
+   "library": null,
+   "description": "The main strip, 2400 x 1230, ground y 900, painted in three colour models (afternoon amber, dusk violet-rose with a low orange sun at the left, late dusk). Thicket at x 220 (300 x 190, with a front pass). Tall hide tree at x 520: trunk 90 wide from y 900 to y 330, perch branch at y 400 to x 700, foliage mass centre (540, 300) radius 260 with a front pass and an eye gap 120 x 46 at (600, 372). Path along y 900. Horse line x 1150..1480. sesameRock at x 1500..2150, top y 250. A dark leaf frame overlay (top left corner, 380 x 300) is used in wides of the rock as Ali Baba's point of view.",
+   "new": true
+  },
+  {
+   "id": "treasureCave",
+   "library": null,
+   "description": "Cave interior plate 1600 x 1230, floor y 900: door opening at the left x 60..280 with steps and dusk violet outside; rough arched ceiling with 9 stalactites (front layer); back wall glow painted as a soft gold radial; gold zone x 420..760 (coin mounds up to 260 high, open chest 200 x 150, vases), silver zone x 800..1080 (ewers, plates, pale coin heaps, cool glow), cloth zone x 1120..1480 (12 bales stacked 3 high, 5 bolts hanging from a rope at y 420). Row of sacks at x 420..520 in three sizes.",
+   "new": true
+  },
+  {
+   "id": "hutNight",
+   "library": "hutRoom",
+   "description": "hutRoom with palette 'night', lamp 1 on a stool at x 505, mat, door on the left, window upper right showing the moonlit sky (Cassim's head appears in it through the window callback). Night colour model: indigo walls, warm lamp circle, gold coin light from the mat.",
+   "new": false
+  },
+  {
+   "id": "roadDawn",
+   "library": "countryRoad",
+   "description": "countryRoad (w 3000, sky:false) over the painted plate 'preDawn' (indigo to pale teal sky, last stars, a thin peach band on the horizon), with the house lit at the left and sesameRock drawn at scale 0.22 on the horizon at strip x 2500, base y 880.",
+   "new": false
+  }
+ ],
+ "props": [
+  {
+   "id": "sesameRock",
+   "library": null,
+   "description": "The great rock with its hidden door: see new_assets.",
+   "new": true
+  },
+  {
+   "id": "sack",
+   "library": null,
+   "description": "Planned sack with fill 0..1 and a coin mark: full and heavy on the thieves' saddles and shoulders, flat when they leave, three sizes in the cave (Ali Baba's is s 0.5), a flapping heap of empty ones on Cassim's cart.",
+   "new": true
+  },
+  {
+   "id": "handcart",
+   "library": null,
+   "description": "Planned cart (KD-011 handcart) with a pair of shafts for the donkey: see new_assets.",
+   "new": true
+  },
+  {
+   "id": "woodBundle",
+   "library": null,
+   "description": "Planned stick bundle (AN-153 'boulder (with axe, woodBundle)'): 9 billets 120 long tied with two ropes, 130 x 70; and the wood axe (handle 110, wedge head 40 x 30).",
+   "new": true
+  },
+  {
+   "id": "coinPile",
+   "library": null,
+   "description": "Planned coin mound with a removable single coin, gold and silver palettes; in this style with a backlit glow (goldGlow) behind it.",
+   "new": true
+  },
+  {
+   "id": "clothBale",
+   "library": null,
+   "description": "Planned tied bale of cloth 150 x 105 with a col option; hanging bolts use packLoad 'bolt'.",
+   "new": true
+  },
+  {
+   "id": "mapCard",
+   "library": null,
+   "description": "Planned map card 300 x 200: house icon, dotted road, rock icon (instead of a city); here a dark box with a cyan rule in the style's label look.",
+   "new": true
+  },
+  {
+   "id": "purse",
+   "library": null,
+   "description": "Planned coin purse, empty state, for the poverty beat at 6.46.",
+   "new": true
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 7.78,
+   "paragraphs": [
+    1
+   ],
+   "set": "homeYard",
+   "cast": [
+    "ali",
+    "wife",
+    "child",
+    "donkey"
+   ],
+   "summary": "Dawn over a small town. Multiplane crane down a painted dawn sky to Ali Baba's poor cottage yard; the chrome title flickers on over the sky; the family sees the woodcutter off.",
+   "camera": {
+    "shot": "establishing",
+    "move": "crane",
+    "notes": "Camera on ones. 0.0 {x:500,y:330,zoom:1.5} on the painted sky and far town roofs; 2.6-4.6 eased crane down to {x:520,y:700,zoom:1.35}; 5.4-7.6 slow push to {x:470,y:740,zoom:1.6} on Ali Baba. Three plates slide at different rates during the crane (sky 0.3, far town 0.6, yard 1)."
+   },
+   "composition": "Cottage at the right (villageYard default, door about x 760, measure on the set), Ali Baba at x 430, wife at x 600 in the doorway side, child at x 520, donkey tethered at x 210 facing right. Faces between y 600 and 720. Title sits in the sky band y 150..420 and is gone before the crane lands.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 2.6,
+     "cue": {
+      "word": "عاش",
+      "t": 0.0
+     },
+     "who": "camera",
+     "action": "held painted dawn sky (peach to cobalt gradient, lit cloud undersides), far town roofs as a soft silhouette with three glowing windows; chrome title OPEN SESAME flickers on at 12 fps with a star glint, Arabic line in Lalezar under it",
+     "acting": "nothing but the title and a slow cloud drift moves: held plate",
+     "library": "S.title('OPEN SESAME') + S.title('افتح يا سمسم', {font:'Lalezar'}); plate 'dawnTown' (celPlates)"
+    },
+    {
+     "t": 0.54,
+     "end": 2.2,
+     "cue": {
+      "word": "علي",
+      "t": 0.54
+     },
+     "who": "ali",
+     "action": "seen small in the yard below as the title holds: he tightens his sash (the one vermilion accent on screen)",
+     "acting": "head down to the knot, then up; one blink on the head lift",
+     "library": "person {costume:'villager', pal: ALI} handL/handR at the sash; blink"
+    },
+    {
+     "t": 1.94,
+     "end": 3.6,
+     "cue": {
+      "word": "أسرته",
+      "t": 1.94
+     },
+     "who": "wife",
+     "action": "steps out of the door with the child at her skirt; the child runs two steps to Ali Baba",
+     "acting": "wife smiles, gaze on Ali Baba; child arrives 4 frames after her, arms up",
+     "library": "person {costume:'villageWoman'}; person {costume:'servant', child:true}; walk() + stagger"
+    },
+    {
+     "t": 2.6,
+     "end": 4.6,
+     "cue": {
+      "word": "بلدة",
+      "t": 3.16
+     },
+     "who": "camera",
+     "action": "crane down from the sky to the yard: the little town slides up behind the cottage roof",
+     "acting": "the title flickers off in 3 drawings as the roofs rise",
+     "library": "CAM keys; plates with parallax"
+    },
+    {
+     "t": 3.72,
+     "end": 4.7,
+     "cue": {
+      "word": "صغيرة،",
+      "t": 3.72
+     },
+     "who": "ali",
+     "action": "pats the child's head, looks up at the low roof with a missing tile, shrugs",
+     "acting": "gaze to the child then the roof; small one-shoulder shrug, lagged head",
+     "library": "handRW to the child's head; flow() on tip; lagged()"
+    },
+    {
+     "t": 4.72,
+     "end": 6.4,
+     "cue": {
+      "word": "حطابًا",
+      "t": 5.52
+     },
+     "who": "ali",
+     "action": "takes the axe from the wall peg and swings it onto his shoulder: boxed tag ALI BABA appears beside him",
+     "acting": "anticipation dip 0.2 s, the axe head arrives 2 drawings after the arm, body settles under the weight",
+     "library": "anticipate(); axe prop held at handR; S.label('ALI BABA')"
+    },
+    {
+     "t": 6.46,
+     "end": 7.6,
+     "cue": {
+      "word": "فقيرًا.",
+      "t": 6.46
+     },
+     "who": "ali",
+     "action": "turns his empty purse upside down: nothing falls; he smiles anyway and the wife hands him a small flat bread",
+     "acting": "brows up (brow -0.4), half smile; wife's gaze follows the purse then his face; child copies the shrug late",
+     "library": "purse prop (planned) empty state; handLW; lookAt()"
+    },
+    {
+     "t": 7.0,
+     "end": 7.78,
+     "cue": {
+      "word": "فقيرًا.",
+      "t": 6.46
+     },
+     "who": "donkey",
+     "action": "flicks an ear and looks back at him: time to go",
+     "acting": "headTurn 0.6, one ear up one flat, tail swish",
+     "library": "donkey {headTurn, earL, earR, tailSwish}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.3,
+     "text": "OPEN SESAME"
+    },
+    {
+     "t": 5.6,
+     "text": "ALI BABA"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 7.78
+   }
+  },
+  {
+   "id": "S2",
+   "start": 7.78,
+   "end": 16.45,
+   "paragraphs": [
+    1
+   ],
+   "set": "forestMorning",
+   "cast": [
+    "ali",
+    "donkey"
+   ],
+   "summary": "Every morning: side tracking through the painted morning forest with the donkey, then chopping and loading wood for the market.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "7.78-11.9 side tracking right on ones, 4 parallax layers (far blue trunks 0.25, mid trunks 0.5, path 1, foreground ferns and trunks 1.6 with a 16 px horizontal smear). 11.96 cut to a locked medium {x:560,y:720,zoom:1.5} on the chopping. 14.4-15.2 slight pull-out to show the loaded donkey."
+   },
+   "composition": "Tracking: Ali Baba at panel x 430 leading the donkey on a short rope (donkey at panel x 250), both facing right; light shafts cross them. Chopping: fallen trunk at x 560..760, Ali Baba at x 500 facing right, donkey at x 300 facing right, watching.",
+   "actions": [
+    {
+     "t": 7.78,
+     "end": 9.3,
+     "cue": {
+      "word": "كل",
+      "t": 7.78
+     },
+     "who": "ali",
+     "action": "walks right through slanting gold light shafts, axe on the shoulder, rope in the other hand",
+     "acting": "relaxed stride on twos, head bob lagged; gaze ahead, a glance up at the canopy at 8.66 with a blink",
+     "library": "walk(xf, t) with celStep(t,12); lagged(); look()"
+    },
+    {
+     "t": 8.66,
+     "end": 10.1,
+     "cue": {
+      "word": "صباح",
+      "t": 8.66
+     },
+     "who": "set",
+     "action": "the morning colour model: mint and gold canopy, cool blue-violet trunks, shafts of light sweep across the two held walk cels as they pass (light moves, not the drawings)",
+     "acting": "light bands over the cels with source-atop, weaker on faces",
+     "library": "lightBands (celPlates) + castFinish()"
+    },
+    {
+     "t": 9.38,
+     "end": 10.9,
+     "cue": {
+      "word": "حماره",
+      "t": 10.18
+     },
+     "who": "donkey",
+     "action": "trots behind on the rope, stops to sniff a fern; the rope goes taut and Ali Baba is tugged back half a step",
+     "acting": "ears forward to the fern, then one ear back to him; Ali Baba looks over his shoulder, patient smile; donkey gives in with a head toss",
+     "library": "donkey walk(GAIT.donkey), headDown, earL/earR; lurch() on Ali Baba; rope line"
+    },
+    {
+     "t": 10.96,
+     "end": 11.9,
+     "cue": {
+      "word": "الغابة",
+      "t": 11.26
+     },
+     "who": "camera",
+     "action": "the forest deepens: foreground trunks wipe past, far plate darkens to deep green",
+     "acting": "tracking continues; a sparrow crosses the gap",
+     "library": "plate layers; bird {kind:'sparrow', fly:true}"
+    },
+    {
+     "t": 11.96,
+     "end": 12.8,
+     "cue": {
+      "word": "وجمع",
+      "t": 11.96
+     },
+     "who": "ali",
+     "action": "cut on the word: first axe blow on the fallen trunk",
+     "acting": "lift 0.3 s, whip down, contact frame held 2 frames with a small white impact star; chips fly",
+     "library": "strike cycle (guide section 4), aL/aR arm angles, impactSquash on the log"
+    },
+    {
+     "t": 12.82,
+     "end": 13.5,
+     "cue": {
+      "word": "الحطب",
+      "t": 12.82
+     },
+     "who": "ali",
+     "action": "second and third blows; the log splits into three billets",
+     "acting": "each blow a little faster; shoulders drop after the last, one breath",
+     "library": "strike cycle; breathe()"
+    },
+    {
+     "t": 12.9,
+     "end": 13.5,
+     "cue": {
+      "word": "الحطب",
+      "t": 12.82
+     },
+     "who": "donkey",
+     "action": "blinks on each blow, ears flick back on contact",
+     "acting": "ears arrive 2 drawings late; chewing between blows",
+     "library": "donkey {chew, earL, earR}; blink on threes celStep(t,8)"
+    },
+    {
+     "t": 13.5,
+     "end": 14.4,
+     "cue": {
+      "word": "ليبيعه",
+      "t": 13.5
+     },
+     "who": "ali",
+     "action": "lifts the tied wood bundle onto the donkey's back",
+     "acting": "knees bend under the weight, donkey sinks 6 units and springs back",
+     "library": "woodBundle prop; donkey load; landSquash"
+    },
+    {
+     "t": 14.46,
+     "end": 15.2,
+     "cue": {
+      "word": "السوق.",
+      "t": 14.68
+     },
+     "who": "ali",
+     "action": "pats the load, points down the path toward the far town roofs: off to market",
+     "acting": "PERSON_HANDS.pointFwd, gaze along the arm; donkey sighs (sag 0.3) then steps off",
+     "library": "person hands pointFwd; donkey {sag}"
+    },
+    {
+     "t": 15.3,
+     "end": 16.45,
+     "cue": {
+      "word": "السوق.",
+      "t": 14.68
+     },
+     "who": "set",
+     "action": "pause: held painted still, only a leaf falls and the light shafts drift",
+     "acting": "moving hold: idleSway on both, tail swish",
+     "library": "idleSway(); leaf particle from K.rng"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 15.7,
+     "kind": "blip"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 16.45
+   }
+  },
+  {
+   "id": "S3",
+   "start": 16.45,
+   "end": 25.61,
+   "paragraphs": [
+    2
+   ],
+   "set": "rockGlade",
+   "cast": [
+    "ali",
+    "donkey",
+    "riders"
+   ],
+   "summary": "One day: the donkey hears it first. Hooves, dust on the far path, a held close-up of Ali Baba's eyes: riders, perhaps thieves.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "16.45 medium {x:480,y:720,zoom:1.4} at the foot of the tall tree. 19.4-21.0 whip pan left to the far path {x:140,y:640,zoom:1.3} and back. 22.41 cut to an extreme close-up of the eyes (held bust with light bands). 23.81 cut to a long view through the trunks."
+   },
+   "composition": "rockGlade strip (2400 wide): tall hide tree at x 520, thicket at x 220, path runs right to the great rock at x 1500..2150 (not yet seen). Ali Baba at x 620 facing right tying the load, donkey at x 420 facing right. Riders approach from the LEFT edge.",
+   "actions": [
+    {
+     "t": 16.45,
+     "end": 18.0,
+     "cue": {
+      "word": "في",
+      "t": 16.454
+     },
+     "who": "ali",
+     "action": "another day, same glade: tightening the rope on the wood bundle, humming",
+     "acting": "head tilts with the knot, relaxed lids (lid 0.2)",
+     "library": "person hands grip; idleSway"
+    },
+    {
+     "t": 17.6,
+     "end": 18.7,
+     "cue": {
+      "word": "سمع",
+      "t": 18.034
+     },
+     "who": "donkey",
+     "action": "both ears snap up and swing to the left before anyone else reacts; head follows late",
+     "acting": "ears first, head 3 drawings later, eyes wide",
+     "library": "donkey {earL:1, earR:1, headTurn}, lagged()"
+    },
+    {
+     "t": 18.03,
+     "end": 19.3,
+     "cue": {
+      "word": "سمع",
+      "t": 18.034
+     },
+     "who": "ali",
+     "action": "freezes mid knot, cups an ear toward the left",
+     "acting": "only the pupils move for half a second, then PERSON_HANDS.cupEar; lid 0",
+     "library": "gazePlan saccade; PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 19.41,
+     "end": 20.9,
+     "cue": {
+      "word": "خيول",
+      "t": 19.414
+     },
+     "who": "set",
+     "action": "whip pan left: far down the path a low dust cloud with dark rider shapes inside it, sound arcs leaving it; pebbles hop on the path in the foreground",
+     "acting": "the dust plate loops, speed lines inside it only",
+     "library": "silhouette horses in a looping strip; soundArcs; kick() on pebbles"
+    },
+    {
+     "t": 20.07,
+     "end": 21.6,
+     "cue": {
+      "word": "بسرعة.",
+      "t": 21.014
+     },
+     "who": "riders",
+     "action": "the dust cloud doubles in size in three stepped jumps (closer, closer, closer)",
+     "acting": "three held drawings, each with a 1 frame white edge flash",
+     "library": "scale steps on celStep(t,8); speedLines"
+    },
+    {
+     "t": 21.7,
+     "end": 22.4,
+     "cue": {
+      "word": "خاف",
+      "t": 22.414
+     },
+     "who": "donkey",
+     "action": "pause: stamps a hoof and pulls at the rope, wanting to go",
+     "acting": "raise 1 then down, tail up",
+     "library": "donkey {raise, tailUp}"
+    },
+    {
+     "t": 22.41,
+     "end": 23.7,
+     "cue": {
+      "word": "خاف",
+      "t": 22.414
+     },
+     "who": "ali",
+     "action": "extreme close-up, held: his eyes wide, irises shrink in three drawings, a single sweat bead slides; green and gold light bands sweep the held cel",
+     "acting": "lid 0, brow -0.6, pupils tiny; a hard blink on 23.07",
+     "library": "close-up at zoom 3.2 with outline scale 0.6; lightBands"
+    },
+    {
+     "t": 23.81,
+     "end": 24.6,
+     "cue": {
+      "word": "الفرسان",
+      "t": 23.814
+     },
+     "who": "riders",
+     "action": "long view between trunks: riders in dark cloaks flicker past the gaps, sacks bouncing at the saddles",
+     "acting": "each gap shows a different rider (seeded), never the same phase",
+     "library": "rideOn('horse') x3 in gaps + silhouettes; stagger(i)"
+    },
+    {
+     "t": 24.61,
+     "end": 25.6,
+     "cue": {
+      "word": "لصوصًا،",
+      "t": 24.614
+     },
+     "who": "ali",
+     "action": "boxed thought tag THIEVES? beside his head; he swallows, looks at the donkey, looks up the tree",
+     "acting": "gaze: riders, donkey, up (three saccades, each held); gulp drop of 4 units",
+     "library": "S.label('THIEVES?'); gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 24.61,
+     "text": "THIEVES?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 22.0,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 25.61
+   }
+  },
+  {
+   "id": "S4",
+   "start": 25.61,
+   "end": 34.5,
+   "paragraphs": [
+    2
+   ],
+   "set": "rockGlade",
+   "cast": [
+    "ali",
+    "donkey"
+   ],
+   "summary": "He hides the donkey, climbs the tall tree, vanishes into the leaves until only his eyes show, and watches the path.",
+   "camera": {
+    "shot": "full",
+    "move": "tilt",
+    "notes": "25.61 full shot {x:470,y:700,zoom:1.2}. 26.4-28.2 tilt up the trunk following the climb to {x:560,y:430,zoom:1.5}. 29.6 push to {x:600,y:380,zoom:2.4} on the eye gap. 31.25-33.3 slow pan right along his eye line to the empty path and the first sight of the great rock {x:1250,y:560,zoom:1.0}."
+   },
+   "composition": "Hide tree: trunk 90 wide at x 520 from y 900 up to y 330; perch branch at y 400 running right to x 700; foliage mass centred (540, 300) radius about 260, drawn again as a front pass with an eye gap 120 x 46 at (600, 372). Thicket at x 220 (300 wide, 190 high) hides the donkey.",
+   "actions": [
+    {
+     "t": 25.61,
+     "end": 26.4,
+     "cue": {
+      "word": "فصعد",
+      "t": 25.614
+     },
+     "who": "ali",
+     "action": "shoves the donkey rump-first behind the thicket; the long ears stay sticking out, he pushes them down with one hand",
+     "acting": "quick, on twos; the ears spring back up once, he presses again, finger to lips",
+     "library": "donkey behind the thicket front pass; PERSON_HANDS.hush"
+    },
+    {
+     "t": 26.45,
+     "end": 27.4,
+     "cue": {
+      "word": "إلى",
+      "t": 26.454
+     },
+     "who": "ali",
+     "action": "jumps for the trunk and climbs: hand over hand, feet walking up the bark",
+     "acting": "anticipation crouch, stretch on the jump; climb as 4 repeated key poses on twos, body sways side to side, sash tail lags",
+     "library": "anticipate(); hop(); climb cycle with handLW/handRW on trunk points; lagged() on the sash ribbon"
+    },
+    {
+     "t": 27.45,
+     "end": 28.2,
+     "cue": {
+      "word": "عالية",
+      "t": 27.454
+     },
+     "who": "camera",
+     "action": "tilt up the tall trunk: the ground and the thicket (with two ears) drop out of frame",
+     "acting": "bark and leaves slide on ones while he moves on twos",
+     "library": "CAM keys"
+    },
+    {
+     "t": 28.21,
+     "end": 29.2,
+     "cue": {
+      "word": "واختبأ",
+      "t": 28.214
+     },
+     "who": "ali",
+     "action": "swings a leg over the branch at y 400 and pulls his knees in; the branch dips 8 units and springs",
+     "acting": "sit 1 on the branch, hugging the trunk; damped branch bounce",
+     "library": "person {sit:1, seat:'bench'}; swing() on the branch"
+    },
+    {
+     "t": 29.27,
+     "end": 30.6,
+     "cue": {
+      "word": "أوراقها،",
+      "t": 29.654
+     },
+     "who": "ali",
+     "action": "pulls the leaves closed like a curtain: the foliage front pass covers him, only two eyes remain in the dark gap",
+     "acting": "eyes blink once, then go wide",
+     "library": "front foliage pass; eyes drawn alone in the gap (person clipped to the gap)"
+    },
+    {
+     "t": 30.73,
+     "end": 31.2,
+     "cue": {
+      "word": "ثم",
+      "t": 30.734
+     },
+     "who": "donkey",
+     "action": "insert: in the thicket one eye opens between the leaves and looks the same way",
+     "acting": "the comic echo, 0.4 s only",
+     "library": "donkey clipped by thicket; lid"
+    },
+    {
+     "t": 31.25,
+     "end": 32.4,
+     "cue": {
+      "word": "راقب",
+      "t": 31.254
+     },
+     "who": "ali",
+     "action": "his pupils slide to the right; the camera follows the eye line along the empty path",
+     "acting": "pupils lead, camera follows 4 frames later",
+     "library": "gaze [1, 0.25]; CAM pan"
+    },
+    {
+     "t": 32.43,
+     "end": 33.3,
+     "cue": {
+      "word": "مكانه.",
+      "t": 32.654
+     },
+     "who": "set",
+     "action": "the pan ends on the great rock, huge and blank in warm afternoon light, the riders' dust arriving at the left edge",
+     "acting": "small flat world against a large painted rock: first reveal, no label",
+     "library": "sesameRock (closed); plate 'rockAfternoon'"
+    },
+    {
+     "t": 33.4,
+     "end": 34.5,
+     "cue": {
+      "word": "مكانه.",
+      "t": 32.654
+     },
+     "who": "riders",
+     "action": "pause: hoof dust rolls into frame, one horse's nose and a rein enter at the left edge",
+     "acting": "props enter already moving",
+     "library": "horse {gallop}, dustBurst"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 33.9,
+     "kind": "riser"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 34.5
+   }
+  },
+  {
+   "id": "S5",
+   "start": 34.5,
+   "end": 40.46,
+   "paragraphs": [
+    3
+   ],
+   "set": "rockGlade",
+   "cast": [
+    "leader",
+    "riders",
+    "ali"
+   ],
+   "summary": "Forty riders with heavy sacks stream past under the tree and rein up before the great rock.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "34.5 side tracking shot {zoom:1.25} moving right with the column, speed lines and a looping ground plate. 38.2 cut to the wide of the rock {x:1700,y:615,zoom:1.0}, locked, with a dark leaf frame in the top left corner (Ali Baba's hiding place) to keep his point of view."
+   },
+   "composition": "Tracking: leader at panel x 620, two cel riders behind him at 420 and 240, a silhouette row behind them higher on the plate. Wide: rock fills x 1500..2150, top y 250; riders pull up along x 1220..1480, small against it.",
+   "actions": [
+    {
+     "t": 34.5,
+     "end": 35.0,
+     "cue": {
+      "word": "وصل",
+      "t": 34.5
+     },
+     "who": "leader",
+     "action": "bursts in at full gallop on a black horse, red cloak streaming as a ribbon",
+     "acting": "leaning forward (tip 0.12), brow 0.7, eyes fixed ahead",
+     "library": "rideOn('horse', {pal:2, gallop:1}, {costume:'bedouin', pal: LEADER}); cloak ribbon on a travelling sine"
+    },
+    {
+     "t": 35.02,
+     "end": 36.5,
+     "cue": {
+      "word": "أربعون",
+      "t": 35.02
+     },
+     "who": "riders",
+     "action": "the column passes: 6 cel riders in two depth rows plus 33 silhouette riders in the dust behind; a chrome counter runs 1 to 40",
+     "acting": "no two in phase: stagger(i), per-rider seeds for bob, lean and cloak; one looks back, one yawns",
+     "library": "rideOn x6 (horse pal 1 and 2), silhouette strip, S.counter to 40"
+    },
+    {
+     "t": 36.54,
+     "end": 37.3,
+     "cue": {
+      "word": "بأكياس",
+      "t": 36.54
+     },
+     "who": "riders",
+     "action": "insert on a saddle: a bulging sack thumps at every stride, a coin glints at its neck",
+     "acting": "sack squashes on each hoof contact, 2 frame lag behind the horse",
+     "library": "sack prop (planned) on horse load; footfalls(); kick()"
+    },
+    {
+     "t": 37.32,
+     "end": 38.1,
+     "cue": {
+      "word": "ثقيلة",
+      "t": 37.32
+     },
+     "who": "riders",
+     "action": "a tired horse at the back sags under two sacks; its rider thumps its neck",
+     "acting": "horse headDown 0.4, ears flat; the heavy read",
+     "library": "horse {load:['sack','sack'], headDown, earL:-0.6}"
+    },
+    {
+     "t": 38.2,
+     "end": 39.4,
+     "cue": {
+      "word": "صخرة",
+      "t": 38.72
+     },
+     "who": "leader",
+     "action": "wide: reins up in front of the rock, the horse half rears and drops; the column bunches up behind him in an accordion stop",
+     "acting": "rear 0.6 then settle; riders arrive 2 to 5 drawings late each",
+     "library": "horse {rear}; lurch() on riders; stagger"
+    },
+    {
+     "t": 39.44,
+     "end": 40.4,
+     "cue": {
+      "word": "كبيرة.",
+      "t": 39.44
+     },
+     "who": "ali",
+     "action": "top left, between the leaves: his eyes track the leader, then drop to count the sacks",
+     "acting": "pupils only; one slow blink",
+     "library": "eye gap in the leaf frame; gazePlan"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 35.1,
+     "text": "40"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 40.46
+   }
+  },
+  {
+   "id": "S6",
+   "start": 40.46,
+   "end": 50.32,
+   "paragraphs": [
+    3
+   ],
+   "set": "rockGlade",
+   "cast": [
+    "leader",
+    "riders",
+    "ali"
+   ],
+   "summary": "The leader calls the words. An impact frame, a seam of gold light, and the rock splits to show a secret door.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "40.46 medium on the leader before the rock {x:1560,y:660,zoom:1.5}, seen from behind three-quarters so the rock towers over him. 42.5 locked. 44.86 impact frame, then wide {x:1820,y:600,zoom:1.05}. 46.9-48.3 push in to the door {x:1820,y:700,zoom:1.6}. 48.34 cut to the eye gap for the reaction."
+   },
+   "composition": "Leader on foot at x 1600 facing right toward the seam at x 1820. Door arch 220 wide and 330 high (x 1710..1930, top y 570). The Arabic words sit in the band y 300..470 above his head, never over his face.",
+   "actions": [
+    {
+     "t": 40.46,
+     "end": 41.7,
+     "cue": {
+      "word": "نادى",
+      "t": 40.46
+     },
+     "who": "leader",
+     "action": "swings down from the saddle and walks to the rock; the men fall silent behind him",
+     "acting": "landing squash, cloak settles 3 drawings later; chin up",
+     "library": "hop() + landSquash(); walk(); lagged() cloak"
+    },
+    {
+     "t": 41.74,
+     "end": 42.7,
+     "cue": {
+      "word": "قائدهم:",
+      "t": 41.74
+     },
+     "who": "leader",
+     "action": "boxed tag LEADER; he plants his feet and draws a breath, one arm rising",
+     "acting": "anticipation: chest lifts (sq 1.04), arm back before it goes up",
+     "library": "S.label('LEADER'); anticipate(); aR arm angle"
+    },
+    {
+     "t": 42.76,
+     "end": 44.7,
+     "cue": {
+      "word": "«افتح",
+      "t": 42.76
+     },
+     "who": "leader",
+     "action": "throws the arm out at the rock and calls: the words appear in glowing Lalezar, one word per spoken word, lit from behind",
+     "acting": "talk on threes (lip flaps celStep(t,8)), arm overshoots and settles; the men behind lean in",
+     "library": "talk; settleTo(); S.title('افتح يا سمسم', {font:'Lalezar'}) words on 42.76, 43.62, 43.80"
+    },
+    {
+     "t": 44.2,
+     "end": 44.86,
+     "cue": {
+      "word": "فانشقت",
+      "t": 44.86
+     },
+     "who": "set",
+     "action": "one beat of total stillness: the words fade, dust hangs, a horse's ear turns",
+     "acting": "hold the peak before the hit",
+     "library": "moving hold"
+    },
+    {
+     "t": 44.86,
+     "end": 45.4,
+     "cue": {
+      "word": "فانشقت",
+      "t": 44.86
+     },
+     "who": "set",
+     "action": "IMPACT FRAME: 2 frames inverted, radial speed lines from the seam; a thin gold line of light runs up the rock from the ground to the top",
+     "acting": "the leader is a black silhouette for the 2 frames",
+     "library": "S.emphasis({rect: panel}) + sesameRock {crack: 0..1}"
+    },
+    {
+     "t": 45.4,
+     "end": 46.8,
+     "cue": {
+      "word": "الصخرة",
+      "t": 46.16
+     },
+     "who": "set",
+     "action": "the two halves grind apart 115 units each; grit falls from the seam, gold light widens into a wedge on the ground",
+     "acting": "slow start, constant grind, small panel shake",
+     "library": "sesameRock {open: 0..1}; dustBurst; panel-only shake"
+    },
+    {
+     "t": 46.9,
+     "end": 47.8,
+     "cue": {
+      "word": "وظهر",
+      "t": 46.9
+     },
+     "who": "riders",
+     "action": "men and horses lit from the front by the gold light, magenta rim on their backs; two horses shy sideways",
+     "acting": "staggered flinch; horses ears flat then forward",
+     "library": "castFinish({rim, light}); horse {earL, earR}; stagger"
+    },
+    {
+     "t": 47.88,
+     "end": 48.3,
+     "cue": {
+      "word": "باب",
+      "t": 47.88
+     },
+     "who": "set",
+     "action": "push in: an arched doorway inside the split, glowing gold, steps going down",
+     "acting": "backlit glow with halation, a star glint at the keystone",
+     "library": "sesameRock door; goldGlow (planned)"
+    },
+    {
+     "t": 48.34,
+     "end": 49.0,
+     "cue": {
+      "word": "سري.",
+      "t": 48.34
+     },
+     "who": "ali",
+     "action": "cut to the eye gap: his eyes pop wide, gold reflected as a small sliding highlight in each pupil; a leaf shakes",
+     "acting": "lid 0, brows up, a tremble of 2 units",
+     "library": "eyes in the gap; tremble()"
+    },
+    {
+     "t": 49.1,
+     "end": 50.3,
+     "cue": {
+      "word": "سري.",
+      "t": 48.34
+     },
+     "who": "ali",
+     "action": "pause: he claps a hand over his own mouth; the leaves close a little",
+     "acting": "PERSON_HANDS.mouthCover seen through the gap",
+     "library": "PERSON_HANDS.mouthCover"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 41.74,
+     "text": "LEADER"
+    },
+    {
+     "t": 42.76,
+     "text": "افتح يا سمسم"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 49.5,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 50.32
+   }
+  },
+  {
+   "id": "S7",
+   "start": 50.32,
+   "end": 57.03,
+   "paragraphs": [
+    4
+   ],
+   "set": "rockGlade",
+   "cast": [
+    "leader",
+    "riders",
+    "ali"
+   ],
+   "summary": "The men carry their sacks into the glowing door as backlit silhouettes; the door closes behind them. Tape transition: much later.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Locked wide of the rock {x:1760,y:620,zoom:1.1} with the leaf frame top left. 53.88-55.2 slow push to the closing seam {zoom:1.35}. Tape tracking transition from 56.2."
+   },
+   "composition": "Men walk left to right from the horse line (x 1250..1500) into the door at x 1820. Horses stay tethered along x 1150..1480. Seen against the light every man is a dark cel with a gold rim.",
+   "actions": [
+    {
+     "t": 50.32,
+     "end": 51.4,
+     "cue": {
+      "word": "دخل",
+      "t": 50.324
+     },
+     "who": "leader",
+     "action": "goes in first, cloak last through the door",
+     "acting": "does not look back",
+     "library": "walk(); castFinish({rim:'#ffd76a', light:[1,0]})"
+    },
+    {
+     "t": 50.84,
+     "end": 53.2,
+     "cue": {
+      "word": "الرجال",
+      "t": 50.844
+     },
+     "who": "riders",
+     "action": "the file follows: 6 cel men each with a sack on the shoulder, then a stream of small silhouettes; long shadows fan out from the door across the ground",
+     "acting": "each bends differently under the sack (seeded tip 0.05..0.14), one hitches his sack up, one stumbles on the step",
+     "library": "person walk() + stagger(i); sack on shoulder; shadow polygons"
+    },
+    {
+     "t": 52.04,
+     "end": 53.2,
+     "cue": {
+      "word": "بأكياسهم،",
+      "t": 52.044
+     },
+     "who": "riders",
+     "action": "the last man looks back over the glade; his gaze sweeps past the tree; the eye gap snaps shut; he turns and goes in",
+     "acting": "suspense by stillness: 0.5 s where only his head turns",
+     "library": "lookAt(); lid on the eye gap"
+    },
+    {
+     "t": 53.28,
+     "end": 55.2,
+     "cue": {
+      "word": "أغلق",
+      "t": 53.884
+     },
+     "who": "set",
+     "action": "the halves grind shut: the wedge of light on the ground narrows to a line, then to nothing",
+     "acting": "the glow shrinks with the gap, colour model falls back to plain afternoon",
+     "library": "sesameRock {open: 1..0}"
+    },
+    {
+     "t": 55.24,
+     "end": 56.1,
+     "cue": {
+      "word": "خلفهم.",
+      "t": 55.244
+     },
+     "who": "set",
+     "action": "plain rock again; forty horses wait, tails swishing out of sync, one grazes",
+     "acting": "moving hold on the horse line",
+     "library": "horse {tailSwish, headDown}; idleSway with seeds"
+    },
+    {
+     "t": 55.6,
+     "end": 56.2,
+     "cue": {
+      "word": "خلفهم.",
+      "t": 55.244
+     },
+     "who": "ali",
+     "action": "the eye gap opens again; he breathes out, leaves flutter",
+     "acting": "long blink, shoulders drop",
+     "library": "eyes in the gap; breathe()"
+    },
+    {
+     "t": 56.2,
+     "end": 57.03,
+     "cue": {
+      "word": "وبعد",
+      "t": 57.034
+     },
+     "who": "set",
+     "action": "white flash and tape tracking noise across the picture with the caption MUCH LATER...; under it the plate is swapped for the dusk colour model",
+     "acting": "the cut is hidden at the covered midpoint",
+     "library": "S.transition({rect: panel, caption:'MUCH LATER...'})"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 56.3,
+     "kind": "glitch"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 56.2,
+    "label": "MUCH LATER..."
+   }
+  },
+  {
+   "id": "S8",
+   "start": 57.03,
+   "end": 62.55,
+   "paragraphs": [
+    4
+   ],
+   "set": "rockGlade",
+   "cast": [
+    "leader",
+    "riders",
+    "ali"
+   ],
+   "summary": "The same composition repainted at dusk. The men come out with empty sacks and mount.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Exactly the S7 framing {x:1760,y:620,zoom:1.1} so the colour model change reads (an earlier composition repainted). 59.88 cut to a medium on the horse line {x:1380,y:680,zoom:1.4}."
+   },
+   "composition": "Dusk model: violet and rose sky, orange low sun behind the trunks at the left, long blue shadows pointing right, the rock a dark plum mass with an orange rim on its left edge.",
+   "actions": [
+    {
+     "t": 57.03,
+     "end": 58.9,
+     "cue": {
+      "word": "وبعد",
+      "t": 57.034
+     },
+     "who": "set",
+     "action": "dusk plate holds: the shadows have swung and stretched, one horse sleeps standing, a moth crosses the low sun",
+     "acting": "held still with a slow 20 unit pan; only tails and the moth move",
+     "library": "plate 'rockDusk'; horse {lid:1}"
+    },
+    {
+     "t": 57.64,
+     "end": 58.9,
+     "cue": {
+      "word": "وقت",
+      "t": 57.644
+     },
+     "who": "ali",
+     "action": "in the leaf frame his eyes droop, close, and jerk open",
+     "acting": "lid 0.2 to 0.9 and snap to 0 on a head bob",
+     "library": "lid flow(); blink"
+    },
+    {
+     "t": 58.6,
+     "end": 59.8,
+     "cue": {
+      "word": "خرجوا",
+      "t": 59.004
+     },
+     "who": "set",
+     "action": "the seam of light cracks open again and the men walk out, sacks now empty and folded over an arm",
+     "acting": "lighter steps than going in, one tosses his flat sack and catches it",
+     "library": "sesameRock {open}; walk(); sack {fill:0}"
+    },
+    {
+     "t": 59.88,
+     "end": 60.8,
+     "cue": {
+      "word": "وركبوا",
+      "t": 59.884
+     },
+     "who": "riders",
+     "action": "they mount: hops into the saddles one after another along the line",
+     "acting": "anticipation crouch, hop, the horse sinks and springs; never two at once",
+     "library": "hop() + landSquash; rideOn(); stagger(i) 0.12 s"
+    },
+    {
+     "t": 60.86,
+     "end": 61.6,
+     "cue": {
+      "word": "خيولهم.",
+      "t": 60.864
+     },
+     "who": "riders",
+     "action": "horses wake, toss heads and turn to face left, the way they came",
+     "acting": "headTurn flips with a squeeze, ears forward",
+     "library": "horse {headTurn}; turnFlip()"
+    },
+    {
+     "t": 61.7,
+     "end": 62.55,
+     "cue": {
+      "word": "صاح",
+      "t": 62.554
+     },
+     "who": "leader",
+     "action": "pause: last out, he steps into the stirrup and swings up, cloak ribbon arcing over the saddle",
+     "acting": "the cloak follows by 3 drawings",
+     "library": "rideOn(); lagged() cloak"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 62.1,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 62.55
+   }
+  },
+  {
+   "id": "S9",
+   "start": 62.55,
+   "end": 70.48,
+   "paragraphs": [
+    4
+   ],
+   "set": "rockGlade",
+   "cast": [
+    "leader",
+    "riders",
+    "ali"
+   ],
+   "summary": "From the saddle the leader shouts the closing words; the rock seals and looks like any rock.",
+   "camera": {
+    "shot": "medium",
+    "move": "pull-out",
+    "notes": "62.55 low medium on the mounted leader against the dusk sky {x:1620,y:560,zoom:1.6}. 66.2 cut to the wide {x:1800,y:620,zoom:1.1}; 67.4-69.2 slow pull-out to {zoom:1.0}."
+   },
+   "composition": "Leader on the black horse at x 1620 facing right, turned to the door. Words in the band y 230..400 to the right of his head. After 66.2 the rock is centred and the riders are a dark frieze along the bottom left.",
+   "actions": [
+    {
+     "t": 62.55,
+     "end": 63.9,
+     "cue": {
+      "word": "صاح",
+      "t": 62.554
+     },
+     "who": "leader",
+     "action": "wheels the horse to face the door, stands in the stirrups",
+     "acting": "horse half rear 0.4; his chin lifts, breath in",
+     "library": "horse {rear}; anticipate()"
+    },
+    {
+     "t": 64.06,
+     "end": 65.5,
+     "cue": {
+      "word": "«أغلق",
+      "t": 64.064
+     },
+     "who": "leader",
+     "action": "shouts with a sweep of the arm across his body: the closing words in Lalezar, cooler (violet and white chrome) than the opening ones",
+     "acting": "talk on threes, arm cuts the air right to left with follow-through in the sleeve",
+     "library": "talk; S.title('أغلق يا سمسم', {font:'Lalezar'}) words on 64.06, 64.78, 64.94"
+    },
+    {
+     "t": 65.56,
+     "end": 66.2,
+     "cue": {
+      "word": "فعادت",
+      "t": 66.204
+     },
+     "who": "set",
+     "action": "pause: the gold light flickers once, as if it heard",
+     "acting": "2 frame dim",
+     "library": "sesameRock glow"
+    },
+    {
+     "t": 66.2,
+     "end": 67.4,
+     "cue": {
+      "word": "فعادت",
+      "t": 66.204
+     },
+     "who": "set",
+     "action": "the halves slide together; the wedge of light sweeps across the riders' faces and shuts",
+     "acting": "light band crossing held cels",
+     "library": "sesameRock {open: 1..0}; lightBands"
+    },
+    {
+     "t": 67.42,
+     "end": 68.5,
+     "cue": {
+      "word": "الصخرة",
+      "t": 67.424
+     },
+     "who": "set",
+     "action": "the seam line heals from the top down and is gone; dust settles",
+     "acting": "crack 1..0",
+     "library": "sesameRock {crack}"
+    },
+    {
+     "t": 68.6,
+     "end": 69.3,
+     "cue": {
+      "word": "كانت.",
+      "t": 68.604
+     },
+     "who": "set",
+     "action": "a sparrow lands on the rock and pecks at it: an ordinary rock",
+     "acting": "tiny, calm, the proof",
+     "library": "bird {kind:'sparrow'}; hop()"
+    },
+    {
+     "t": 69.3,
+     "end": 70.48,
+     "cue": {
+      "word": "كانت.",
+      "t": 68.604
+     },
+     "who": "leader",
+     "action": "pause: nods once, pulls the rein; the column starts to move left",
+     "acting": "satisfied half lid (lid 0.3)",
+     "library": "horse walk(); stagger"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 64.06,
+     "text": "أغلق يا سمسم"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 65.85,
+     "kind": "stamp"
+    },
+    {
+     "t": 69.75,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 70.48
+   }
+  },
+  {
+   "id": "S10",
+   "start": 70.48,
+   "end": 78.0,
+   "paragraphs": [
+    5
+   ],
+   "set": "rockGlade",
+   "cast": [
+    "ali",
+    "riders",
+    "donkey"
+   ],
+   "summary": "The riders gallop away under the tree. Ali Baba waits until the dust is gone, then climbs down with great care.",
+   "camera": {
+    "shot": "full",
+    "move": "tilt",
+    "notes": "70.48 view at branch height {x:560,y:430,zoom:1.5}: his eyes above, riders streaking below. 72.6 hold on the empty path. 74.1-76.2 tilt down the trunk with the descent to {x:500,y:720,zoom:1.3}."
+   },
+   "composition": "Riders cross left along the ground strip as speed streaks (dusk model: dark plum cels with orange rims). Ali Baba on the branch at y 400; he lands at x 600.",
+   "actions": [
+    {
+     "t": 70.48,
+     "end": 72.0,
+     "cue": {
+      "word": "انتظر",
+      "t": 70.482
+     },
+     "who": "riders",
+     "action": "the column gallops left under the tree: speed lines, the looping ground plate, cloaks as ribbons; the leaves blow sideways in their wind",
+     "acting": "every rider a different lean and bob; the foliage edge ripples on a travelling sine",
+     "library": "rideOn x6 {gallop:1}; speedLines; stagger; foliage ribbon"
+    },
+    {
+     "t": 71.14,
+     "end": 72.6,
+     "cue": {
+      "word": "علي",
+      "t": 71.142
+     },
+     "who": "ali",
+     "action": "eye gap: his pupils follow them from right to left, counting under his breath",
+     "acting": "pupils sweep, tiny lip movements seen as the leaves part",
+     "library": "gazePlan; talk 0.2"
+    },
+    {
+     "t": 72.64,
+     "end": 74.0,
+     "cue": {
+      "word": "اختفت",
+      "t": 72.642
+     },
+     "who": "set",
+     "action": "the last dust thins and drifts; the path is empty, the sound arcs shrink to nothing at the left edge",
+     "acting": "three seconds earlier it was chaos; now a held dusk painting with crickets of light (fireflies)",
+     "library": "dustBurst fade; soundArcs; firefly dots from K.rng"
+    },
+    {
+     "t": 74.12,
+     "end": 75.4,
+     "cue": {
+      "word": "نزل",
+      "t": 74.702
+     },
+     "who": "ali",
+     "action": "parts the leaves, lowers one foot, feels for the bark, then comes down the trunk hand under hand",
+     "acting": "the foot gropes twice before it trusts the hold; looks down, then over each shoulder",
+     "library": "climb cycle reversed on twos; handLW/handRW; lookAt()"
+    },
+    {
+     "t": 75.44,
+     "end": 76.2,
+     "cue": {
+      "word": "الشجرة",
+      "t": 75.442
+     },
+     "who": "camera",
+     "action": "tilt down with him; the rock stays in the right of the frame, small and dark",
+     "acting": "camera on ones",
+     "library": "CAM keys"
+    },
+    {
+     "t": 76.2,
+     "end": 76.98,
+     "cue": {
+      "word": "بحذر.",
+      "t": 76.202
+     },
+     "who": "ali",
+     "action": "drops the last metre and lands in a crouch, freezes, listens",
+     "acting": "landing squash sq 0.82, hands out, then only the eyes move left, right",
+     "library": "fallY(); impactSquash(); groundShadow(); gazePlan saccades"
+    },
+    {
+     "t": 77.0,
+     "end": 78.0,
+     "cue": {
+      "word": "بحذر.",
+      "t": 76.202
+     },
+     "who": "donkey",
+     "action": "pause: two ears then the whole head rise out of the thicket and look at him: well?",
+     "acting": "ears first; Ali Baba waves it back down with a flat palm",
+     "library": "donkey behind thicket front pass; PERSON_HANDS.wave low"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 77.4,
+     "kind": "blip"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 78.0
+   }
+  },
+  {
+   "id": "S11",
+   "start": 78.0,
+   "end": 89.48,
+   "paragraphs": [
+    5
+   ],
+   "set": "rockGlade",
+   "cast": [
+    "ali"
+   ],
+   "summary": "A small man before a huge rock. He remembers the words, says them, and the door opens before his eyes.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "78.0 wide {x:1600,y:615,zoom:1.0}: he is 15 percent of the frame height. 79.8 medium two-thirds view {x:1640,y:690,zoom:1.6}. 85.02 impact frame, back to the wide {x:1780,y:620,zoom:1.1}. 87.6 cut to an extreme close-up of his eyes."
+   },
+   "composition": "Ali Baba tiptoes from x 1100 to x 1620, facing right. The rock is a dark plum wall with an orange rim; his vermilion sash is the brightest thing in the dusk frame until the door opens.",
+   "actions": [
+    {
+     "t": 78.0,
+     "end": 78.9,
+     "cue": {
+      "word": "اقترب",
+      "t": 78.002
+     },
+     "who": "ali",
+     "action": "tiptoes toward the rock in a sneak walk, body low, arms out for balance",
+     "acting": "short high steps on twos, head turtled in, long shadow behind him",
+     "library": "walk() with a short stride; tip 0.1; groundShadow"
+    },
+    {
+     "t": 78.94,
+     "end": 79.8,
+     "cue": {
+      "word": "الصخرة،",
+      "t": 78.942
+     },
+     "who": "ali",
+     "action": "stops an arm's length from the stone, touches it with one finger: cold, solid, he knocks twice",
+     "acting": "finger pull-back after the touch; ear to the rock",
+     "library": "handRW to the rock; PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 79.82,
+     "end": 80.5,
+     "cue": {
+      "word": "وردد",
+      "t": 79.822
+     },
+     "who": "ali",
+     "action": "steps back three paces, clears his throat, glances behind him",
+     "acting": "gaze back left with a blink on the head turn",
+     "library": "walk() backward; blink"
+    },
+    {
+     "t": 80.6,
+     "end": 81.7,
+     "cue": {
+      "word": "الكلمات",
+      "t": 80.602
+     },
+     "who": "ali",
+     "action": "counts the words on his fingers, lips moving, looks up to the right to remember",
+     "acting": "gaze [0.6,-0.7] remembering; three finger taps on 80.6, 81.38, 81.76",
+     "library": "handL/handR targets; gazePlan"
+    },
+    {
+     "t": 81.76,
+     "end": 82.8,
+     "cue": {
+      "word": "سمعها:",
+      "t": 81.762
+     },
+     "who": "ali",
+     "action": "small memory flash: a 6 frame cut-in of the leader's thrown arm in afternoon colours with tape tracking edges",
+     "acting": "a tape rewind as punctuation, picture only",
+     "library": "inset of S6 pose; tracking noise strip"
+    },
+    {
+     "t": 82.84,
+     "end": 84.8,
+     "cue": {
+      "word": "«افتح",
+      "t": 82.842
+     },
+     "who": "ali",
+     "action": "copies the pose badly: arm out, eyes squeezed shut, and says it; the same Lalezar words, half the size and a little wobbly",
+     "acting": "talk on threes; lid 1; knees together; the arm trembles",
+     "library": "PERSON pose aR; tremble(); S.title('افتح يا سمسم', {font:'Lalezar', small})"
+    },
+    {
+     "t": 84.4,
+     "end": 85.0,
+     "cue": {
+      "word": "فانفتح",
+      "t": 85.022
+     },
+     "who": "ali",
+     "action": "nothing; he opens one eye",
+     "acting": "wink 'L' open, the other shut: the comic beat before the hit",
+     "library": "person {wink}"
+    },
+    {
+     "t": 85.02,
+     "end": 85.6,
+     "cue": {
+      "word": "فانفتح",
+      "t": 85.022
+     },
+     "who": "set",
+     "action": "IMPACT FRAME: 2 frames inverted with radial lines; the gold seam runs up the rock",
+     "acting": "he is a tiny black silhouette in the flash",
+     "library": "S.emphasis({rect: panel}); sesameRock {crack}"
+    },
+    {
+     "t": 85.6,
+     "end": 87.5,
+     "cue": {
+      "word": "الباب",
+      "t": 86.422
+     },
+     "who": "set",
+     "action": "the door grinds open; gold light pours over him, throwing his shadow far back across the ground; he shields his face, then lowers the arm",
+     "acting": "castFinish gold key light from the right with a pink rim on his back; PERSON_HANDS.shield then down; he leans back (tip -0.1) and slowly forward",
+     "library": "sesameRock {open}; castFinish({rim:'#ff7ad9', light:[1,-0.2]}); flow() on tip"
+    },
+    {
+     "t": 87.6,
+     "end": 88.3,
+     "cue": {
+      "word": "عينيه.",
+      "t": 87.602
+     },
+     "who": "ali",
+     "action": "extreme close-up, held: both eyes fill the frame, the arched door reflected gold in each iris with a highlight sliding across",
+     "acting": "eye opening in three drawings; no blink",
+     "library": "close-up eyes drawn at zoom 3.4; sliding highlight"
+    },
+    {
+     "t": 88.4,
+     "end": 89.48,
+     "cue": {
+      "word": "عينيه.",
+      "t": 87.602
+     },
+     "who": "ali",
+     "action": "pause: back to the wide; he looks left, looks right, and steps into the light",
+     "acting": "one deep breath (sq 1.04) before the first step",
+     "library": "breathe(); walk()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 82.84,
+     "text": "افتح يا سمسم"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 88.9,
+     "kind": "riser"
+    }
+   ],
+   "transition_out": {
+    "type": "match-cut",
+    "t": 89.48
+   }
+  },
+  {
+   "id": "S12",
+   "start": 89.48,
+   "end": 95.4,
+   "paragraphs": [
+    6
+   ],
+   "set": "treasureCave",
+   "cast": [
+    "ali"
+   ],
+   "summary": "Inside: a slow pan across one painted peak still of gold, silver and costly cloth, with Ali Baba a small backlit figure in the doorway.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Hold the peak: one long pan on ones across the 1600 wide cave plate, x 500 at 89.48 to x 1100 at 94.4, zoom 1.0, y 615. Three parallax layers (stalactite foreground 1.4, treasure 1, back wall glow 0.6)."
+   },
+   "composition": "Door opening at the left (x 60..280, dusk violet outside); gold mounds x 420..760; silver x 800..1080; cloth x 1120..1480. Ali Baba stands at x 330 in the door light, about 200 units tall, his shadow reaching toward the gold.",
+   "actions": [
+    {
+     "t": 89.48,
+     "end": 90.7,
+     "cue": {
+      "word": "وجد",
+      "t": 89.483
+     },
+     "who": "ali",
+     "action": "steps through the door and stops dead: a dark cel with a violet rim from outside and a gold key light from the hoard",
+     "acting": "one step, then frozen except a slow breath",
+     "library": "castFinish({rim:'#8f7cff', light:[1,0]}); breathe()"
+    },
+    {
+     "t": 90.82,
+     "end": 91.5,
+     "cue": {
+      "word": "ذهبًا",
+      "t": 90.823
+     },
+     "who": "set",
+     "action": "the pan reaches the gold: coin mounds up to 260 high, an open chest, star glints popping in sequence; tag GOLD",
+     "acting": "glints on a 12 fps stagger, a light band slides over the mound",
+     "library": "coinPile, treasureHoard chest (planned), goldGlow, lightBands; S.label('GOLD')"
+    },
+    {
+     "t": 91.56,
+     "end": 92.5,
+     "cue": {
+      "word": "وفضة",
+      "t": 91.563
+     },
+     "who": "set",
+     "action": "silver: ewers, plates and pale coin heaps in a cool white-blue glow; tag SILVER",
+     "acting": "cooler glints, slower",
+     "library": "coinPile silver palette; S.label('SILVER')"
+    },
+    {
+     "t": 92.56,
+     "end": 93.8,
+     "cue": {
+      "word": "وأقمشة",
+      "t": 92.563
+     },
+     "who": "set",
+     "action": "cloth: stacked bales and bolts hanging from a rope in crimson, emerald, saffron and violet, hems rippling as ribbons; tag CLOTH",
+     "acting": "cloth cycle of 4 drawings on a travelling sine",
+     "library": "clothBale (planned), packLoad 'bolt'; ribbon cycle; S.label('CLOTH')"
+    },
+    {
+     "t": 93.84,
+     "end": 94.5,
+     "cue": {
+      "word": "ثمينة.",
+      "t": 93.843
+     },
+     "who": "set",
+     "action": "one coin slides off a mound and rolls toward the camera, spinning down flat",
+     "acting": "the only fast thing in the shot",
+     "library": "coin from coinPile; spin scale x"
+    },
+    {
+     "t": 94.55,
+     "end": 95.4,
+     "cue": {
+      "word": "ثمينة.",
+      "t": 93.843
+     },
+     "who": "ali",
+     "action": "pause: far left, he lifts both hands to his head",
+     "acting": "PERSON_HANDS.headHold, tiny in frame",
+     "library": "PERSON_HANDS.headHold"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 90.82,
+     "text": "GOLD"
+    },
+    {
+     "t": 91.56,
+     "text": "SILVER"
+    },
+    {
+     "t": 92.56,
+     "text": "CLOTH"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 94.95,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 95.4
+   }
+  },
+  {
+   "id": "S13",
+   "start": 95.4,
+   "end": 105.57,
+   "paragraphs": [
+    6
+   ],
+   "set": "treasureCave",
+   "cast": [
+    "ali",
+    "donkey"
+   ],
+   "summary": "Amazed, but he takes only one small sack of coins, closes the door and hurries home.",
+   "camera": {
+    "shot": "medium",
+    "move": "static",
+    "notes": "95.4 held bust of Ali Baba with gold light bands {x:520,y:640,zoom:2.2}. 97.3 medium among the treasure {x:560,y:720,zoom:1.4}. 101.3 cut outside, wide of the rock at late dusk {x:1780,y:620,zoom:1.1}. 102.72 side tracking shot left along the path, speed lines."
+   },
+   "composition": "Bust: face in the upper middle, gold mound soft behind. Medium: big open chest at x 640, a row of sacks at x 420..520 in three sizes, the smallest at x 430. Tracking: Ali Baba riding the donkey at panel x 520 facing left, the small sack hugged to his chest.",
+   "actions": [
+    {
+     "t": 95.4,
+     "end": 97.2,
+     "cue": {
+      "word": "دهش",
+      "t": 95.403
+     },
+     "who": "ali",
+     "action": "held bust: mouth falls open in three drawings, gold bands sweep across the held cel, coin glints wink in his eyes",
+     "acting": "lid 0, brow -0.7, mouth 'o'; a slow head shake of disbelief with the turban tail lagging",
+     "library": "lightBands; flow() on tip; lagged()"
+    },
+    {
+     "t": 96.36,
+     "end": 97.2,
+     "cue": {
+      "word": "الكنوز،",
+      "t": 96.363
+     },
+     "who": "ali",
+     "action": "his hands rise by themselves toward the big chest",
+     "acting": "hands lead, body leans after them (tip 0.1)",
+     "library": "PERSON_HANDS.reachBoth"
+    },
+    {
+     "t": 97.3,
+     "end": 98.2,
+     "cue": {
+      "word": "لكنه",
+      "t": 97.303
+     },
+     "who": "ali",
+     "action": "stops; pulls the hands back and closes them; shakes his head once, firmly",
+     "acting": "the decision: brows level, mouth set, a blink on the head shake",
+     "library": "flow() on hands; blink"
+    },
+    {
+     "t": 98.28,
+     "end": 99.4,
+     "cue": {
+      "word": "كيسًا",
+      "t": 98.803
+     },
+     "who": "ali",
+     "action": "walks past the chest and the big sacks, bends and picks up the smallest sack with two fingers",
+     "acting": "passes the big sack with a sideways glance, weight shift onto the front foot to bend",
+     "library": "walk(); handRW to the sack; sack {fill:1, s:0.5}"
+    },
+    {
+     "t": 99.5,
+     "end": 100.3,
+     "cue": {
+      "word": "صغيرًا",
+      "t": 99.503
+     },
+     "who": "ali",
+     "action": "holds it up to his eye: tag ONE SMALL SACK; it is the size of his hand",
+     "acting": "pleased half smile, gaze on the sack",
+     "library": "S.label('ONE SMALL SACK')"
+    },
+    {
+     "t": 100.42,
+     "end": 101.2,
+     "cue": {
+      "word": "النقود،",
+      "t": 100.423
+     },
+     "who": "ali",
+     "action": "a coin peeks from the sack mouth and glints; he tucks it in and ties the string, bows a thank-you to the hoard",
+     "acting": "quick tidy hands; small bow with the head arriving late",
+     "library": "goldGlow small; lagged()"
+    },
+    {
+     "t": 101.3,
+     "end": 102.1,
+     "cue": {
+      "word": "وأغلق",
+      "t": 101.303
+     },
+     "who": "ali",
+     "action": "outside: he mimes the leader's sweep, lips moving; the halves slide shut and the gold wedge leaves his face",
+     "acting": "no lettering this time (the script does not quote it); colour model drops from gold back to dusk in the same shot",
+     "library": "sesameRock {open: 1..0}; talk; castFinish off"
+    },
+    {
+     "t": 102.14,
+     "end": 102.7,
+     "cue": {
+      "word": "الباب",
+      "t": 102.143
+     },
+     "who": "ali",
+     "action": "pats the closed rock twice like a horse and runs to the thicket",
+     "acting": "run on twos, sack hugged",
+     "library": "walk() fast"
+    },
+    {
+     "t": 102.72,
+     "end": 103.6,
+     "cue": {
+      "word": "وعاد",
+      "t": 102.723
+     },
+     "who": "ali",
+     "action": "tracking: on the donkey at a hard trot toward home, wood bundle forgotten behind him",
+     "acting": "leaning forward, looking back once over his shoulder with a blink",
+     "library": "rideOn('donkey', {...walk(xf,t,{stride:GAIT.donkey})}, {costume:'villager'}); lurch"
+    },
+    {
+     "t": 103.64,
+     "end": 104.4,
+     "cue": {
+      "word": "مسرعًا.",
+      "t": 103.643
+     },
+     "who": "donkey",
+     "action": "speed lines and a looping dusk-to-night forest plate; the donkey's ears streaming back, eyes wide at the unusual hurry",
+     "acting": "ears lag the head, tail straight out",
+     "library": "donkey {earL:-0.8, earR:-0.8, tailUp}; speedLines; looping plate"
+    },
+    {
+     "t": 104.45,
+     "end": 105.57,
+     "cue": {
+      "word": "مسرعًا.",
+      "t": 103.643
+     },
+     "who": "set",
+     "action": "pause: the first stars come out over the far town roofs; a lit window grows ahead",
+     "acting": "sky plate cross-steps from dusk violet to night indigo in 3 held steps",
+     "library": "plate 'nightTown'"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 99.5,
+     "text": "ONE SMALL SACK"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 105.0,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 105.57
+   }
+  },
+  {
+   "id": "S14",
+   "start": 105.57,
+   "end": 113.26,
+   "paragraphs": [
+    7
+   ],
+   "set": "hutNight",
+   "cast": [
+    "ali",
+    "wife"
+   ],
+   "summary": "Home at night. A locked two-shot by lamplight: he tells his wife and asks her to tell no one.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "Locked two-shot with lip flaps {x:500,y:700,zoom:1.5}. 108.37 a small picture balloon between them. 110.97 push in slightly to {zoom:1.7}."
+   },
+   "composition": "hutRoom night palette: Ali Baba kneeling at x 400 facing right, wife sitting on the floor at x 610 facing left, the lamp on a stool at x 505 between and behind them, the open sack on the mat at x 505 glowing gold. The window (set anchor, upper right) shows the night sky.",
+   "actions": [
+    {
+     "t": 105.57,
+     "end": 106.5,
+     "cue": {
+      "word": "أخبر",
+      "t": 105.572
+     },
+     "who": "ali",
+     "action": "bursts in, shuts the door with his back, drops to his knees and pours the coins onto the mat",
+     "acting": "out of breath (fast breathe), eyes on the door first, then on her",
+     "library": "hutRoom {door}; person {kneel:1}; breathe()"
+    },
+    {
+     "t": 106.55,
+     "end": 107.8,
+     "cue": {
+      "word": "زوجته",
+      "t": 107.112
+     },
+     "who": "wife",
+     "action": "her hands fly to her cheeks; the coins light her face gold from below",
+     "acting": "PERSON_HANDS.cheeks, lid 0; gold underlight as a hard-edged shape on the cel",
+     "library": "PERSON_HANDS.cheeks; castFinish({light:[0,1]}); goldGlow"
+    },
+    {
+     "t": 107.83,
+     "end": 108.9,
+     "cue": {
+      "word": "رأى،",
+      "t": 108.372
+     },
+     "who": "ali",
+     "action": "talks fast on threes: a picture balloon shows the rock splitting with a gold seam",
+     "acting": "hands draw the split in the air, apart; she looks from the balloon to him",
+     "library": "talk; iconBalloon (planned) with a small sesameRock; S.label({balloon:true, to})"
+    },
+    {
+     "t": 108.95,
+     "end": 110.3,
+     "cue": {
+      "word": "وطلب",
+      "t": 108.952
+     },
+     "who": "ali",
+     "action": "takes her hands in his, lowers his voice",
+     "acting": "leans in (tip 0.08), brows up, gaze locked on hers",
+     "library": "handRW/handLW; lookAt()"
+    },
+    {
+     "t": 110.37,
+     "end": 111.6,
+     "cue": {
+      "word": "تحدث",
+      "t": 110.972
+     },
+     "who": "ali",
+     "action": "finger to his lips; a small tag SHHH! beside him",
+     "acting": "PERSON_HANDS.hush, eyes flick to the window and back",
+     "library": "PERSON_HANDS.hush; S.label('SHHH!')"
+    },
+    {
+     "t": 111.67,
+     "end": 112.5,
+     "cue": {
+      "word": "أحدًا.",
+      "t": 111.672
+     },
+     "who": "wife",
+     "action": "nods twice, copies the hush, and pulls a cloth over the coins: the gold light on their faces goes out and only the lamp is left",
+     "acting": "her nod lags his; the cloth lands with a soft settle; one coin stays uncovered at the edge",
+     "library": "PERSON_HANDS.hush; cloth shape; goldGlow strength to 0.15"
+    },
+    {
+     "t": 112.5,
+     "end": 113.26,
+     "cue": {
+      "word": "لكن",
+      "t": 113.262
+     },
+     "who": "set",
+     "action": "the uncovered coin glints once; behind them, in the window, a turban rises into the moonlight",
+     "acting": "nobody in the room sees it",
+     "library": "townWindow inside callback; cassim head"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 110.97,
+     "text": "SHHH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 113.26
+   }
+  },
+  {
+   "id": "S15",
+   "start": 113.26,
+   "end": 123.81,
+   "paragraphs": [
+    7
+   ],
+   "set": "hutNight",
+   "cast": [
+    "ali",
+    "wife",
+    "cassim"
+   ],
+   "summary": "Brother Cassim notices the new coins and keeps asking until he knows the secret of the cave.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "113.26 close on the window {x:700,y:470,zoom:2.2} (measure the window anchor). 115.35 insert on the coin. 117.75 medium three-shot {x:500,y:700,zoom:1.35}, locked, with three jump cuts in framing on the three question words. 120.35 push in on the brothers {x:450,y:670,zoom:1.9}."
+   },
+   "composition": "Cassim is bigger than everyone in the room (s 1.1, belly), in emerald and gold against their plain colours. In the three-shot: Ali Baba at x 380, Cassim moving around him, wife at x 700 half turned away.",
+   "actions": [
+    {
+     "t": 113.26,
+     "end": 114.5,
+     "cue": {
+      "word": "أخاه",
+      "t": 113.872
+     },
+     "who": "cassim",
+     "action": "his face fills the window, lit cold blue by the moon with a pink rim: fat turban with a jewel, small eyes scanning the room",
+     "acting": "pupils sweep left to right in saccades",
+     "library": "person {costume:'merchant', pal: CASSIM}; castFinish({rim}); gazePlan saccade"
+    },
+    {
+     "t": 114.55,
+     "end": 115.3,
+     "cue": {
+      "word": "قاسم",
+      "t": 114.552
+     },
+     "who": "cassim",
+     "action": "boxed tag CASSIM under the window",
+     "acting": "one eyebrow up",
+     "library": "S.label('CASSIM')"
+    },
+    {
+     "t": 115.35,
+     "end": 116.2,
+     "cue": {
+      "word": "لاحظ",
+      "t": 115.352
+     },
+     "who": "cassim",
+     "action": "his eyes stop: insert on the one uncovered coin, a highlight sliding across it, soft lamp bokeh behind",
+     "acting": "insert with bokeh and a sliding highlight: this object matters",
+     "library": "coin close-up; bokeh discs on the plate"
+    },
+    {
+     "t": 116.25,
+     "end": 117.6,
+     "cue": {
+      "word": "النقود",
+      "t": 116.252
+     },
+     "who": "cassim",
+     "action": "back on his face: both pupils turn into small gold coins; the door bangs open and he is inside",
+     "acting": "coinEyes pop with a 2 frame overshoot; Ali Baba and wife jump (sq 0.9) and she pulls the cloth tighter",
+     "library": "coinEyes (planned); hutRoom {door:1}; impactSquash on the couple"
+    },
+    {
+     "t": 117.75,
+     "end": 118.4,
+     "cue": {
+      "word": "وظل",
+      "t": 117.752
+     },
+     "who": "cassim",
+     "action": "looms over Ali Baba, pointing at the cloth: where from?",
+     "acting": "PERSON_HANDS.pointDown; Ali Baba shakes his head, eyes down",
+     "library": "PERSON_HANDS.pointDown; talk"
+    },
+    {
+     "t": 118.47,
+     "end": 119.0,
+     "cue": {
+      "word": "يسأل",
+      "t": 118.472
+     },
+     "who": "cassim",
+     "action": "jump cut: now on Ali Baba's other side, closer; a ? balloon pops over him",
+     "acting": "same pose, mirrored, 15 percent bigger in frame",
+     "library": "S.label('?', {balloon:true}); dir flip"
+    },
+    {
+     "t": 119.05,
+     "end": 119.55,
+     "cue": {
+      "word": "عنها",
+      "t": 119.052
+     },
+     "who": "cassim",
+     "action": "jump cut: closer again, nose to nose, second and third ? balloons stack up",
+     "acting": "Ali Baba leans back (tip -0.15), sweat bead; the wife hides her face in her scarf",
+     "library": "S.label('?'); tip; PERSON_HANDS.mouthCover on wife"
+    },
+    {
+     "t": 119.61,
+     "end": 120.3,
+     "cue": {
+      "word": "حتى",
+      "t": 119.612
+     },
+     "who": "ali",
+     "action": "looks to his wife for help, looks at the door, sags",
+     "acting": "gaze wife, door, floor; shoulders drop, long blink",
+     "library": "gazePlan; sq 0.96"
+    },
+    {
+     "t": 120.35,
+     "end": 121.3,
+     "cue": {
+      "word": "عرف",
+      "t": 120.352
+     },
+     "who": "ali",
+     "action": "gives in: cups a hand and whispers into Cassim's ear",
+     "acting": "PERSON_HANDS.cupMouth; Cassim bends with a hand behind his ear, eyes wide to camera",
+     "library": "PERSON_HANDS.cupMouth / cupEar"
+    },
+    {
+     "t": 121.37,
+     "end": 122.6,
+     "cue": {
+      "word": "الكهف",
+      "t": 121.372
+     },
+     "who": "cassim",
+     "action": "a picture balloon over his head: the rock with its gold seam; his mouth spreads into a grin with the gold glow on his teeth",
+     "acting": "smile grows over 4 drawings, half lids; the ? balloons burst one by one",
+     "library": "iconBalloon with sesameRock + goldGlow; mouth 'smile'"
+    },
+    {
+     "t": 122.65,
+     "end": 123.81,
+     "cue": {
+      "word": "العجيب.",
+      "t": 121.932
+     },
+     "who": "ali",
+     "action": "pause: he already regrets it; reaches a hand after Cassim, who is rubbing his palms and not looking",
+     "acting": "worried brows, wet eyes for a moment",
+     "library": "PERSON_HANDS.reach; wet:true"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 114.55,
+     "text": "CASSIM"
+    },
+    {
+     "t": 118.47,
+     "text": "?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 123.2,
+     "kind": "stamp"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 123.81
+   }
+  },
+  {
+   "id": "S16",
+   "start": 123.81,
+   "end": 131.81,
+   "paragraphs": [
+    8
+   ],
+   "set": "hutNight",
+   "cast": [
+    "cassim",
+    "ali"
+   ],
+   "summary": "Cassim can think only of gold. He takes the place and the words from Ali Baba, hardly listening.",
+   "camera": {
+    "shot": "extreme-close",
+    "move": "static",
+    "notes": "123.81 extreme close-up of Cassim's eyes, held with gold light bands {zoom:3.2}. 126.99 two-shot at the doorway {x:520,y:690,zoom:1.5}. 130.77 slight push on Cassim's ear {zoom:1.8}."
+   },
+   "composition": "Two-shot: Ali Baba at x 380 facing right, Cassim at x 640 facing left but already half turned to the door on the right. A map card floats between their heads at y 380..560.",
+   "actions": [
+    {
+     "t": 123.81,
+     "end": 125.4,
+     "cue": {
+      "word": "قاسم",
+      "t": 124.727
+     },
+     "who": "cassim",
+     "action": "held extreme close-up: coin pupils, tiny coins raining as reflections down his irises, gold bands sweeping",
+     "acting": "stillness as drama; one slow greedy blink",
+     "library": "coinEyes; lightBands; outline scale 0.5"
+    },
+    {
+     "t": 125.47,
+     "end": 126.9,
+     "cue": {
+      "word": "الذهب.",
+      "t": 126.347
+     },
+     "who": "cassim",
+     "action": "a thought picture grows over the frame edge: him sitting on a mountain of gold; chrome word GOLD! flashes once",
+     "acting": "the mound rises in 4 held steps",
+     "library": "thoughtCloud(inside: coinPile + cassim sit); S.emphasis({word:'GOLD!'})"
+    },
+    {
+     "t": 126.99,
+     "end": 128.2,
+     "cue": {
+      "word": "أخذ",
+      "t": 126.987
+     },
+     "who": "cassim",
+     "action": "two-shot: grabs Ali Baba by the sleeve and holds out an open palm: tell me",
+     "acting": "PERSON_HANDS.palmsUp on one hand, the other gripping; Ali Baba's gaze on the grip",
+     "library": "handRW to the sleeve; PERSON_HANDS.palmsUp"
+    },
+    {
+     "t": 128.27,
+     "end": 129.4,
+     "cue": {
+      "word": "علي",
+      "t": 128.487
+     },
+     "who": "ali",
+     "action": "reluctantly draws the way: a map card with the hut, a dotted path through trees, and the rock",
+     "acting": "slow hand, worried glance at Cassim on each dot",
+     "library": "mapCard (planned): house icon, dotted road, rock icon"
+    },
+    {
+     "t": 129.51,
+     "end": 130.7,
+     "cue": {
+      "word": "الصخرة",
+      "t": 130.087
+     },
+     "who": "cassim",
+     "action": "snatches the map card out of the air and stuffs it into his sash; the rock icon glows",
+     "acting": "snatch in 2 drawings, card follows the hand",
+     "library": "mapCard to the hand; lagged()"
+    },
+    {
+     "t": 130.77,
+     "end": 131.81,
+     "cue": {
+      "word": "والكلمات،",
+      "t": 130.767
+     },
+     "who": "ali",
+     "action": "says the words carefully: three small Lalezar words drift from his mouth toward Cassim's ear; Cassim is already looking at the door, and the words slide past his ear",
+     "acting": "Ali Baba earnest, finger raised (pointUp); Cassim's gaze on the door, nodding without listening",
+     "library": "PERSON_HANDS.pointUp; words as small chrome glyphs on a path; gaze"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 126.35,
+     "text": "GOLD!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 131.81
+   }
+  },
+  {
+   "id": "S17",
+   "start": 131.81,
+   "end": 142.94,
+   "paragraphs": [
+    8
+   ],
+   "set": "roadDawn",
+   "cast": [
+    "cassim",
+    "ali",
+    "wife",
+    "mule"
+   ],
+   "summary": "Cassim sets off with his cart and a heap of empty sacks toward the far rock. Would he remember how to get out? Freeze frame, THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "131.81 side tracking right with the cart {zoom:1.2}, three parallax layers, pre-dawn colour model. 135.87 the track slows and the camera lets him go: pull-out to a wide {zoom:1.0} with the rock on the horizon. 137.93 freeze frame. THE END from 139.0, slow 12 unit drift up during the hold."
+   },
+   "composition": "Cart at panel x 480 moving right, mule in front at x 660, Cassim standing in the cart at x 450. Ali Baba and his wife small in the lit doorway at the far left, shrinking. The rock is a dark shape on the horizon at the right (sesameRock at scale 0.22, base y 880), with a hair of gold light in its seam.",
+   "actions": [
+    {
+     "t": 131.81,
+     "end": 132.4,
+     "cue": {
+      "word": "ثم",
+      "t": 131.807
+     },
+     "who": "cassim",
+     "action": "pre-dawn outside: he throws an armful of empty sacks into a cart and climbs up",
+     "acting": "hop into the cart, the cart dips on its axle and rocks",
+     "library": "hop() + landSquash; handcart (planned) {tilt}"
+    },
+    {
+     "t": 132.49,
+     "end": 133.0,
+     "cue": {
+      "word": "انطلق",
+      "t": 132.487
+     },
+     "who": "cassim",
+     "action": "snaps the reins: the mule leans into the collar and the cart rolls right",
+     "acting": "anticipation back-lean then forward lurch",
+     "library": "donkey {pal:1} walk(GAIT.donkey); lurch()"
+    },
+    {
+     "t": 133.07,
+     "end": 133.9,
+     "cue": {
+      "word": "بعربته",
+      "t": 133.067
+     },
+     "who": "cassim",
+     "action": "tracking: wheels turning with the distance travelled, cart bouncing on the ruts",
+     "acting": "he bounces a drawing later than the cart; whip arm up",
+     "library": "handcart {wheel angle from xf}; kick(); lagged()"
+    },
+    {
+     "t": 134.01,
+     "end": 135.0,
+     "cue": {
+      "word": "وأكياسه",
+      "t": 134.007
+     },
+     "who": "set",
+     "action": "the heap of empty sacks flaps behind him like flags; one blows off and lands on the road",
+     "acting": "ribbon cycle on a travelling sine; the lost sack tumbles",
+     "library": "sack {fill:0} ribbons; K.rng tumble"
+    },
+    {
+     "t": 135.11,
+     "end": 135.8,
+     "cue": {
+      "word": "الفارغة.",
+      "t": 135.107
+     },
+     "who": "ali",
+     "action": "far behind in the lit doorway: Ali Baba raises a hand, calling something; his wife holds his arm",
+     "acting": "tiny figures; his accent sash is the only warm red in the blue frame",
+     "library": "person small s 0.5; PERSON_HANDS.cupMouth"
+    },
+    {
+     "t": 135.87,
+     "end": 136.6,
+     "cue": {
+      "word": "هل",
+      "t": 135.867
+     },
+     "who": "set",
+     "action": "the camera lets the cart go; the three glowing words that drifted past his ear now trail behind the cart and drop off one by one, fading on the road",
+     "acting": "each word dims and falls on a narration word: 135.87, 136.63, 137.51",
+     "library": "Lalezar glyphs with alpha; fallY()"
+    },
+    {
+     "t": 136.63,
+     "end": 137.5,
+     "cue": {
+      "word": "سيتذكر",
+      "t": 136.627
+     },
+     "who": "set",
+     "action": "wide: the rock on the horizon, a hair of gold in its seam; a large chrome ? flickers on above it",
+     "acting": "backlit glow, star glint",
+     "library": "sesameRock small; S.title('?')"
+    },
+    {
+     "t": 137.51,
+     "end": 137.9,
+     "cue": {
+      "word": "كيف",
+      "t": 137.507
+     },
+     "who": "cassim",
+     "action": "a small dark cart crawling toward the big dark rock under a paling sky",
+     "acting": "small flat figure in a huge painted world",
+     "library": "silhouette cel"
+    },
+    {
+     "t": 137.93,
+     "end": 138.7,
+     "cue": {
+      "word": "يخرج؟",
+      "t": 137.927
+     },
+     "who": "set",
+     "action": "FREEZE FRAME on the word: radial lines from the rock seam, 2 frame inverted flash, then the held still",
+     "acting": "everything stops except the CRT and a slow drift",
+     "library": "S.emphasis({rect: panel}); held frame"
+    },
+    {
+     "t": 139.0,
+     "end": 142.94,
+     "cue": {
+      "word": "يخرج؟",
+      "t": 137.927
+     },
+     "who": "set",
+     "action": "chrome THE END flickers on over the held still, with a light sweep and a star glint; tape tracking noise rolls once at 141.6",
+     "acting": "held 3.9 s",
+     "library": "S.title('THE END'); tracking noise strip"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 136.63,
+     "text": "?"
+    },
+    {
+     "t": 139.0,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 139.1,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 142.94
+   }
+  }
+ ],
+ "ending": {
+  "t": 137.93,
+  "description": "Freeze frame on the last word (137.93): Cassim's cart small on the pre-dawn road, the rock on the horizon with a hair of gold light, a chrome ? above it. Chrome THE END flickers on at 139.0 and is held to 142.94 with a slow drift and one roll of tape tracking noise."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "عاش علي بابا مع أسرته في بلدة صغيرة، وكان حطابًا فقيرًا.|كل صباح أخذ حماره إلى الغابة|وجمع الحطب ليبيعه في السوق.",
+   "en": "Ali Baba lived with his family in a small town and worked as a poor woodcutter.|Each morning he took his donkey to the forest|and gathered wood to sell at market."
+  },
+  {
+   "p": 2,
+   "ar": "في أحد الأيام سمع أصوات خيول تقترب بسرعة.|خاف أن يكون الفرسان لصوصًا، فصعد إلى شجرة عالية|واختبأ بين أوراقها، ثم راقب الطريق من مكانه.",
+   "en": "One day he heard horses approaching quickly.|Afraid that the riders were thieves, he climbed a tall tree,|hid among its leaves, and watched the path below."
+  },
+  {
+   "p": 3,
+   "ar": "وصل أربعون رجلًا بأكياس ثقيلة إلى صخرة كبيرة.|نادى قائدهم: «افتح يا سمسم!»|فانشقت الصخرة وظهر باب سري.",
+   "en": "Forty men carrying heavy sacks reached a large rock.|Their leader called, “Open Sesame!”|The rock split open, revealing a secret door."
+  },
+  {
+   "p": 4,
+   "ar": "دخل الرجال الكهف بأكياسهم، ثم أغلق الباب من خلفهم.|وبعد وقت طويل خرجوا وركبوا خيولهم.|صاح القائد: «أغلق يا سمسم!» فعادت الصخرة كما كانت.",
+   "en": "The men entered the cave carrying their sacks, and the door closed behind them.|Much later they came out and mounted their horses.|The leader called, “Close Sesame!” and the rock returned to normal."
+  },
+  {
+   "p": 5,
+   "ar": "انتظر علي بابا حتى اختفت الخيول، ثم نزل من الشجرة بحذر.|اقترب من الصخرة، وردد الكلمات التي سمعها: «افتح يا سمسم!»|فانفتح الباب أمام عينيه.",
+   "en": "Ali Baba waited until the horses disappeared, then carefully descended the tree.|He approached the rock and repeated the words he had heard: “Open Sesame!”|The door opened before his eyes."
+  },
+  {
+   "p": 6,
+   "ar": "وجد في الكهف ذهبًا وفضة وأقمشة ثمينة.|دهش من الكنوز، لكنه أخذ كيسًا صغيرًا من النقود،|وأغلق الباب وعاد مسرعًا.",
+   "en": "Inside, he found gold, silver, and costly cloth.|Though amazed by the treasure, he took only a small sack of coins,|closed the door, and hurried home."
+  },
+  {
+   "p": 7,
+   "ar": "أخبر علي بابا زوجته بما رأى، وطلب منها ألا تحدث أحدًا.|لكن أخاه قاسم لاحظ النقود الجديدة،|وظل يسأل عنها حتى عرف سر الكهف العجيب.",
+   "en": "Ali Baba told his wife what he had seen and asked her not to tell anyone.|But his brother Cassim noticed the new coins|and kept asking questions until he discovered the cave’s secret."
+  },
+  {
+   "p": 8,
+   "ar": "لم يفكر قاسم إلا في الذهب.|أخذ من علي بابا مكان الصخرة والكلمات، ثم انطلق بعربته وأكياسه الفارغة.|هل سيتذكر كيف يخرج؟",
+   "en": "Cassim could think only of gold.|He learned the rock’s location and the magic words from Ali Baba, then set off with his cart and empty sacks.|Would he remember how to get out?"
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "sesameRock",
+   "reusable": true,
+   "effort": "M",
+   "description": "Great rock 650 wide x 650 high (x 1500..2150, top y 250, base y 900) with a vertical seam at x 1820 and an arched door 220 x 330 (x 1710..1930, top y 570) hidden behind the two halves. Fields: open 0..1 (each half slides 115 units outward), crack 0..1 (a gold line of light climbing the seam from the base), glow 0..1 (door light and the wedge on the ground), model ('afternoon' | 'dusk' | 'late' | 'silhouette'), s (scale, used at 0.22 on the horizon). Reusable for any magic door, sealed cave or treasure rock.",
+   "implementation": "Outline from about 14 points with 3 facet planes; draw each half with celShade(ctx, pts, fill, shade, {light, hi}) clipped to its side of the seam and translated by open * 115. Behind the halves: door arch (townArchPts pointed) filled with a gold radial gradient plus 3 steps; over it an additive halation disc scaled by glow. Ground wedge: a 4 point polygon from the door foot fanning left 500 units, alpha 0.5 * glow. Grit: dustBurst at the seam top and base while open changes. Moss patches and a few cracks are painted in the plate pass (soft), facets are cel (hard)."
+  },
+  {
+   "type": "set",
+   "name": "treasureCave",
+   "reusable": true,
+   "effort": "L",
+   "description": "The gold-lit cave interior described under sets (1600 x 1230), a painted plate with an emissive pair and cel treasure on top. Reusable for any treasure vault or den with a palette option.",
+   "implementation": "bake() the plate: dark umber to plum vertical gradient, soft gold radial glows behind each zone (ctx radialGradient, alpha 0.5), rock wall strokes blurred 2 px at bake time (ctx.filter blur), stalactites as celShade triangles on a separate front layer. Treasure as cels: coinPile mounds (ellipse stacks with hard highlight crescents), chest (rounded box, lid open 0.8), ewers and plates (silver palette), clothBale x12, hanging bolts as ribbons (4 drawing sine cycle). Glints: 4 point stars popped on celStep(t,12) with seeded offsets. goldGlow (planned) for the halation: additive radial + star glints, strength 0..1."
+  },
+  {
+   "type": "effect",
+   "name": "celPlates",
+   "reusable": true,
+   "effort": "L",
+   "description": "The painted background layer and its light tools for this style: paintPlate(key, w, h, draw, model) and the plates dawnTown, forestMorning (4 tileable layers), rockAfternoon / rockDusk / rockLate (the rockGlade strip in three colour models, including the tall hide tree and thicket with front passes), nightTown, preDawn; lightBands(ctx, rect, t, {col, angle, w, speed}) sweeping coloured bands over a held cel with source-atop; speedLines(ctx, rect, t, {dir, n, seed}); the colour model table MODEL = {morning, afternoon, dusk, cave, night, predawn} with lit / shade / line multipliers and a skin colour per set.",
+   "implementation": "paintPlate bakes once: sky by linear gradient (2 to 4 stops per model), airbrushed clouds as blurred ellipses with a lighter underside, land shapes filled flat then softened with ctx.filter = 'blur(1.5px)' and glazed with 2 or 3 large radial gradients (sun side warm, far side cool); Library sets (villageYard, countryRoad, hutRoom) are baked through the same glaze so they sit in the painted world. Cels are never glazed. Cast colour models: draw the character through the castFinish offscreen pattern, multiply by MODEL.lit with source-atop at the listed strength, then redraw Ali Baba's sash and turban band in the pure accent and keep the face skin from the model table (do not let the tint turn faces pink or grey). lightBands and speedLines are drawn on ones."
+  },
+  {
+   "type": "prop",
+   "name": "handcart",
+   "reusable": true,
+   "effort": "S",
+   "description": "Two-wheeled cart (planned name, KD-011): bed 260 x 60 with slatted sides 50 high, bed floor 95 above the ground, two spoked wheels r 62 (8 spokes), two shafts 190 long to the animal's collar, option load (a heap of flat sacks drawn as 6 overlapping ribbons). Fields: x, y, wheel (angle from distance / 62), tilt, bounce.",
+   "implementation": "celShade rectangles for the bed and slats, wheels as circle + spokes rotated by wheel; shafts as two lines to the donkey's shoulder point (mountSeat or measured). Cassim stands in it as person clipped at the slat top. Empty sacks: sack {fill:0} shapes with a travelling sine on their free ends."
+  },
+  {
+   "type": "pose",
+   "name": "treeClimb and leafHide",
+   "reusable": true,
+   "effort": "M",
+   "description": "A person climbing a trunk (4 key poses cycled on twos, hands and feet on trunk points, body sway, reversed for the descent) and hiding in foliage so that only the eyes show in a dark gap.",
+   "implementation": "Use handLW/handRW world targets on alternating trunk points 70 apart; legs from the walk phase with a short stride, drawn with the figure offset 30 to the side of the trunk and tip 0.12 toward it; y from flow() keys sampled at celStep(t,12). leafHide: draw the person, then the foliage front pass with an evenodd hole (rounded rect 120 x 46) so only the eye band shows; for the close view draw two eyes (the style's eye primitive via person clipped at zoom 2.4) inside the gap."
+  }
+ ],
+ "owner_questions": [
+  "The film ends on a question, so a TO BE CONTINUED card would suit the anime medium; default used: the standard THE END card (139.0 to 142.94).",
+  "The magic words are shown on screen as Arabic display lettering in Lalezar (افتح يا سمسم at 42.76 and 82.84, أغلق يا سمسم at 64.06), copied from the script; default: shown, with no English version beside them (the English subtitle carries it).",
+  "Added staging not in the script: Ali Baba hides the donkey in a thicket and later rides it home; his wife and one child wave him off in the opening (the family); default: kept.",
+  "Added staging: Cassim first appears spying through the window and ends by not listening to the words (they drift past his ear and fall off the cart), which hints at the answer to the last question; default: kept as a visual hint only.",
+  "Cassim's cart is drawn by a brown donkey rather than pushed by hand; default: donkey cart.",
+  "The forty thieves are 1 leader, 6 drawn riders and 33 silhouettes with a counter running to 40; default: this mix rather than forty drawn figures.",
+  "The script does not say Ali Baba speaks to close the door at 101.30; default: he mimes the leader's gesture with moving lips and no lettering."
+ ],
+ "implementation_notes": [
+  "Style: cel-anime-80s. Frame with S.background(ctx, W, H, t, THEME.page) and S.box(ctx, 54, 54, 972, 1196, 1, THEME.panel); S.finish last (the CRT pass). Use palette names and BF, never fixed Halftone colours.",
+  "Twos: every character pose channel is evaluated at tc = celStep(t, THEME.celFps) (12 fps); blinks, lip flaps and eye openings at celStep(t, 8). Camera, plates, lightBands, speedLines, glows, dust and the CRT run on ones (t). Never step the camera.",
+  "Four layers per shot in this order: painted plate (baked, soft), cels (cast and props, flat with celShade hard shade and coloured lines), light (goldGlow, lightBands, castFinish rim), then S.finish.",
+  "Colour models: morning (S1-S2), afternoon amber (S3-S7), dusk violet-rose (S8-S11, S13 outside), cave gold (S12-S13), night indigo with lamp (S14-S16), pre-dawn teal (S17). Each is a plate repaint plus a cel multiplier from MODEL, not a filter over the frame. Ali Baba's vermilion sash and turban band are redrawn in the pure accent in every model.",
+  "Cues: use w(p, n) from timing.json; the cue times in this plan are the word starts in timeline.md. Impact frames at 44.86, 85.02 and 137.93 are silent (they fall inside speech); sound goes only in the listed pauses.",
+  "Groups: riders use stagger(i) and a seed each (bob phase, lean, cloak phase, beard, face cloth colour); horses in the line get separate tailSwish and ear seeds. Never two mounts or two flinches on the same frame.",
+  "Moving holds on twos: idleSway on tip and head for everyone on screen, breathe() on sq, lagged() for the sash tail, turban tail, cloaks, donkey ears. Held close-ups are truly held cels with light moving over them (lightBands), plus blinks.",
+  "Close-ups (22.41, 48.34, 87.6, 123.81): draw the person at zoom 3.2 to 3.4 with the outline width scaled by 0.5 to 0.6; if the Library eyes look too simple at that size, draw the eye band as a small story function (almond lid line, oval iris with two highlights) using the same gaze and lid values.",
+  "The same framing must be used for S7 and S8 ({x:1760,y:620,zoom:1.1}) so the repainted dusk plate reads as time passed; swap plates at the covered midpoint of S.transition (56.6).",
+  "Panel-only shake for the rock grinding (45.4-46.8, 85.6-87.5), amplitude 3 units; the caption strip never moves.",
+  "Arabic display words: S.title(text, {font:'Lalezar'}) one word per spoken word, in the band above the speaker, removed 0.4 s after the last word; check right-to-left shaping in a still.",
+  "Lettering budget: 18 items (title, tags, three Arabic calls, counter, ?, GOLD!, THE END). Sound: 14 effects, all inside pauses of timeline.md, master 0.6.",
+  "World heights stay 1230; the tall tree fits (perch at y 400). Camera clamp as in the template; rockGlade and treasureCave are strips, so clamp x to their widths."
+ ],
+ "warnings": [
+  "Library cast drawings are front-facing comic figures; this style wants more refined heads. Do not redraw the cast: rely on the style's flat shade, coloured lines, rim light, silhouettes against the light and the eye close-up function to carry the anime feel.",
+  "Per-set colour models for Library cast need the offscreen tint pattern; check faces in the dusk and night stills for pink or grey skin and weaken the multiplier on the head if needed.",
+  "Forty riders: keep the silhouette strip cheap (one baked strip of 11 rider shapes reused three times with offsets) and check frame time during S5 and S10.",
+  "The climb and the eye gap are new poses; check with a contact sheet of every 4th frame from 25.6 to 30.6 and 74.1 to 77.0.",
+  "The pauses are short (0.6 to 1.3 s): keep each effect under 0.5 s and quiet."
+ ]
+}

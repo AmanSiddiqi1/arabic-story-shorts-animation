@@ -363,7 +363,8 @@ def cmd_finalize(c, a):
     if s['completed_before']: sys.exit('approved earlier film; never finalised again')
     r = c.execute("SELECT * FROM renders WHERE story_id=? AND status='PASS' ORDER BY version DESC", (sid,)).fetchone()
     if not r: sys.exit('no passing render')
-    src = REPO / r['path']; dst = REPO / 'MP4s' / f"{s['title_en']} - Halftone Pop 9x16 - Noto Naskh Arabic.mp4"
+    src = REPO / r['path']; sys.path.insert(0, str(REPO / 'Library')); import style   # the story's style profile names the file
+    dst = REPO / 'MP4s' / (style.story_film_name(REPO / 'Animations' / sid, title=s['title_en']) + '.mp4')
     if dst.exists(): sys.exit(f'refusing to overwrite {dst.name}')
     shutil.copy2(src, dst)
     c.execute("UPDATE stories SET approval='pending', updated=? WHERE id=?", (db.now(), sid)); c.commit()

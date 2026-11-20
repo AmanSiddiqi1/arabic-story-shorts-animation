@@ -7,9 +7,10 @@ Later stories reuse these drawings, so the work on a new story can go into stagi
 ## Layout
 ```
 Library/
-  core/        kit.js, sound.js, halftone-pop.js (Creator OS engine, unchanged copies), helpers.js (ink, shapes, lettering,
-               balloons, person figure, eyes), subtitle.js, player.js
-  palette.js   shared colours (the style palette C lives in core/helpers.js)
+  styles/      style profiles (README.md): <id>/style.json + theme.js (palette C and shared tones, lettering font BF, dot
+               texture dotPat, outline brush ink, THEME subtitle/panel settings) + look.md; halftone-pop is the default
+  core/        helpers.js (shapes, lettering, balloons, person figure, eyes), subtitle.js, player.js; the Creator OS engine
+               (kit.js, sound.js, style modules) is read from claude-motion-faceless-skills by engine.py
   cast/        lion (+ lionFace), hare, deer, fox, monkey, turtle + tortoise, bird (lark, crow, coloured) + songbird, elephant, frog
                (person is in core/helpers.js); people.js: person costumes (costume, pal, age, child) and poses (sit, seat, kneel, lie);
                hooves.js: horse, donkey, camel, rideOn (a person on a mount), mountSeat, packLoad, BEAST leg rig + GAIT strides;
@@ -20,10 +21,12 @@ Library/
                river; tree (+ TREE presets), treeRow, bush, thicket, figTree; den, wellShaft, riverBank, islandHut, houseRoom, houseRoof;
                towns.js: marketStreet, palaceHall (palace / merchant), desertRoad, hutRoom, villageYard + yardLeaves, countryRoad,
                townDoor, townWindow, marketStall, townProp, palmTree, hangingLamp, rainStreaks (guide section 12)
-  motion.js    blink, lookAt, blend, pulse, speed, walk, footfalls, kick, hop, landSquash, anticipate, tremble
+  motion.js    blink, lookAt, blend, pulse, speed, walk, footfalls, kick, hop, landSquash, anticipate, tremble (and more, see the guide);
+               character-motion method (2026-11-21): flow, lagged, osc, beatIn, idleSway, groundShadow
   registry.js  the shared acting wrapper and the catalogue lists (CAST, PROPS, SETS)
   fonts/       Bangers + the three Arabic fonts (embedded by the build)
-  lib.py       head_scripts(), font_css(), library_js(): used by a story's build.py
+  lib.py       head_scripts(), font_css(), library_js(): used by a story's build.py (each takes the story's style)
+  style.py     style profiles: load(), film_name(), --check (style.mjs: the same for render.mjs / stills.mjs)
   template/    new-story starter (build.py, render.mjs, stills.mjs, sh.sh, sheet.py, tx.py, align.py, story.json, src/scene.js)
   catalogue/   build_catalogue.py + catalogue.mjs -> cast.png, sets.png, people.png (costumes and poses), animals.png (round 3 animals, walk frames, riders)
   tests/       regression.mjs: every library drawing is pixel-identical to its original story's drawing
@@ -31,7 +34,7 @@ Library/
 
 ## Starting a new story
 1. Copy the template: `cp -R Library/template Animations/<story-slug>`.
-2. Edit `story.json`: the title and the paths to the story's Arabic and English script files.
+2. Edit `story.json`: the title, the style (`"style"`, a profile in `styles/`; default `halftone-pop`) and the paths to the story's Arabic and English script files.
 3. Put the narration in the folder as `narration.mp3`.
 4. Run `tx.py`, then mark the subtitle chunks (`chunks_ar.txt` / `chunks_en.txt`) and run `align.py`. See [../tools/transcription/README.md](../tools/transcription/README.md).
 5. Write the story in `src/scene.js`. It starts as a working example: a lion walks in, a hare reacts, and cues are taken from word times.

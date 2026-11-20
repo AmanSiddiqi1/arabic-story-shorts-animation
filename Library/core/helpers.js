@@ -1,9 +1,9 @@
 // ===== shared helpers: brush ink, dot fills, shapes, lettering, balloons, comic figure (person), eyes =====
 // Source: scene_a.js (identical in all five finished stories) + eye2/bake/EYE added for the library.
 // ===== scene helpers: brush ink, dot patterns, comic figures, props =====
-const C = { paper: '#fbf2da', black: '#141414', yellow: '#ffd21f', red: '#e2231a', blue: '#1d5bd0', skin: '#f05a5a', white: '#fffaf0' };
-const NAVY = '#16337f', NAVY2 = '#0d2260', WALL = '#1a3b8c', WOOD = '#a8741a';
-const BF = 'Bangers', AF = window.ARABIC_FONT || 'Cairo', AW = window.ARABIC_WEIGHT || 800;
+// The style's palette (C, NAVY...), lettering font BF, dot texture dotPat and outline brush ink come from the story's
+// style theme (Library/styles/<style>/theme.js), loaded before this file.
+const AF = window.ARABIC_FONT || 'Cairo', AW = window.ARABIC_WEIGHT || 800;
 const kfn = (t, keys, ease = 'inOut') => {
   if (t <= keys[0][0]) return keys[0][1];
   for (let i = 1; i < keys.length; i++) if (t <= keys[i][0]) { const [t0, v0] = keys[i - 1], [t1, v1] = keys[i]; return K.lerp(v0, v1, K.ease[ease](K.clamp((t - t0) / (t1 - t0)))); }
@@ -14,28 +14,7 @@ const talk = (t, list, ph = 0) => inI(t, list) ? 0.45 + 0.55 * Math.abs(Math.sin
 
 const NZ = new Map();
 const nz = (seed) => { if (!NZ.has(seed)) NZ.set(seed, K.noise(seed)); return NZ.get(seed); };
-function dotPat(ctx, col, pitch, rad) {
-  const tile = K.cached(`sc-dots:${col}:${pitch}:${rad}`, () => {
-    const n = Math.max(3, Math.round(pitch)), c = K.layer(n * 2, n * 2), x = c.getContext('2d');
-    x.fillStyle = col;
-    for (const [cx, cy] of [[0, 0], [n * 2, 0], [0, n * 2], [n * 2, n * 2], [n, n]]) { x.beginPath(); x.arc(cx, cy, n * rad, 0, Math.PI * 2); x.fill(); }
-    return c;
-  });
-  return ctx.createPattern(tile, 'repeat');
-}
 const densify = (pts, step) => { const out = []; for (let i = 1; i < pts.length; i++) { const a = pts[i - 1], b = pts[i], n = Math.max(1, Math.ceil(Math.hypot(b[0] - a[0], b[1] - a[1]) / step)); for (let k = 0; k < n; k++) out.push([K.lerp(a[0], b[0], k / n), K.lerp(a[1], b[1], k / n)]); } out.push(pts[pts.length - 1]); return out; };
-// closed brush outline (same swelling line as the style's own border), pts = closed polyline
-function ink(ctx, pts, w = 5, seed = 1, color = C.black) {
-  const p = densify(pts, 12), g = nz(seed), L = [], R = []; let acc = 0;
-  for (let i = 0; i < p.length; i++) {
-    if (i) acc += Math.hypot(p[i][0] - p[i - 1][0], p[i][1] - p[i - 1][1]);
-    const a = p[Math.max(0, i - 1)], b = p[Math.min(p.length - 1, i + 1)], dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy) || 1, hw = 0.5 * w * (0.82 + 0.3 * g.n2(acc * 0.012, 3));
-    L.push([p[i][0] - dy / l * hw, p[i][1] + dx / l * hw]); R.push([p[i][0] + dy / l * hw, p[i][1] - dx / l * hw]);
-  }
-  ctx.save(); ctx.fillStyle = color; ctx.beginPath(); L.forEach((q, i) => i ? ctx.lineTo(q[0], q[1]) : ctx.moveTo(q[0], q[1]));
-  for (let i = R.length - 1; i >= 0; i--) ctx.lineTo(R[i][0], R[i][1]);
-  ctx.closePath(); ctx.fill(); ctx.lineWidth = w * 0.7; ctx.strokeStyle = color; ctx.lineJoin = 'round'; K.poly(ctx, p); ctx.stroke(); ctx.restore();
-}
 const bbox = (pts) => { let a = 1e9, b = 1e9, c = -1e9, d = -1e9; for (const [x, y] of pts) { a = Math.min(a, x); b = Math.min(b, y); c = Math.max(c, x); d = Math.max(d, y); } return [a, b, c - a, d - b]; };
 // fill + optional Ben-Day dots + brush outline
 function shape(ctx, pts, fill, o = {}) {

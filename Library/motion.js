@@ -71,3 +71,47 @@ function lurch(t, tBrake, amp = 0.28) { return t < tBrake ? 0 : amp * Math.exp(-
 // twoShot(a, b, {margin: 150, minZoom: 1, maxZoom: 2.4, w: 1000, h: 1230}): camera {x, y, zoom} that keeps two world points (heads) in the panel
 function twoShot(a, b, o = {}) { const m = o.margin ?? 150, w = o.w ?? 1000, h = o.h ?? 1230; const dx = Math.abs(a[0] - b[0]) + 2 * m, dy = Math.abs(a[1] - b[1]) + 2 * m;
   return { x: (a[0] + b[0]) / 2, y: (a[1] + b[1]) / 2, zoom: K.clamp(Math.min(w / dx, h / dy), o.minZoom ?? 1, o.maxZoom ?? 2.4) }; }
+
+// ---------- added 2026-11-21: character-motion method (rossark-motion-skill, /rossark-motion-shorts) ----------
+// flow(t, keys): acting curve through key poses [[t0, v0], [t1, v1], ...] (seconds). Unlike kfn (which eases to a stop at every key),
+// it passes through each key with a continuous speed and never overshoots one (monotone cubic). Repeat a value to hold a pose;
+// before the first key / after the last it holds the end value. Use for lean, head turn, arm angles, any chain of poses.
+const FLOW_SLOPES = new WeakMap();
+function flow(t, keys) {
+  const n = keys.length; if (t <= keys[0][0] || n < 2) return keys[0][1]; if (t >= keys[n - 1][0]) return keys[n - 1][1];
+  let m = FLOW_SLOPES.get(keys);
+  if (!m) {   // Fritsch-Carlson slopes, computed once per keys array
+    const d = []; for (let i = 0; i < n - 1; i++) d.push((keys[i + 1][1] - keys[i][1]) / (keys[i + 1][0] - keys[i][0]));
+    m = [0]; for (let i = 1; i < n - 1; i++) m.push(d[i - 1] * d[i] <= 0 ? 0 : (d[i - 1] + d[i]) / 2);   // 0 at a turning point: no overshoot
+    m.push(0);
+    for (let i = 0; i < n - 1; i++) { if (d[i] === 0) { m[i] = 0; m[i + 1] = 0; continue; } const a = m[i] / d[i], b = m[i + 1] / d[i], h = a * a + b * b; if (h > 9) { const s = 3 / Math.sqrt(h); m[i] = s * a * d[i]; m[i + 1] = s * b * d[i]; } }
+    FLOW_SLOPES.set(keys, m);
+  }
+  let i = 0; while (t > keys[i + 1][0]) i++;
+  const [t0, v0] = keys[i], [t1, v1] = keys[i + 1], h = t1 - t0, u = (t - t0) / h, u2 = u * u, u3 = u2 * u;
+  return (2 * u3 - 3 * u2 + 1) * v0 + (u3 - 2 * u2 + u) * h * m[i] + (-2 * u3 + 3 * u2) * v1 + (u3 - u2) * h * m[i + 1];
+}
+// lagged(f, t, delay = 0.09, k = 0.45): follow-through by delay, not springs. Offset to ADD to a child part so it trails its parent f(t):
+// when the parent swings the child lags, then catches up with no overshoot. Forearms, hands, tails, ears, hair:
+//   P.elbow = flow(t, ELBOW) + lagged((u) => flow(u, SHOULDER), t);   counter-motion: head = own(t) - 0.45 * lean(t - 0.11)
+function lagged(f, t, delay = 0.09, k = 0.45) { return k * (f(t - delay) - f(t)); }
+// osc(t, period, phase = 0): smooth -1..1 wave (sway, bob, breath); phase in cycles. beatIn(t, a, b): a window [a, b] as 0..1 (one beat).
+function osc(t, period, phase = 0) { return Math.sin(2 * Math.PI * (t / period + phase)); }
+function beatIn(t, a, b) { return K.clamp((t - a) / (b - a)); }
+// idleSway(t, seed, amp, period = 3): a "moving hold": small life on one channel from two waves of different periods, phased by seed.
+// Give every part its own seed so left and right never mirror (limbs: amp 2-4 deg as radians, tip: 0.02-0.035, head: 0.03).
+function idleSway(t, seed, amp, period = 3) { const ph = K.rng(seed * 104729)(); return amp * (0.67 * osc(t, period, ph) + 0.33 * osc(t, period * 0.6, ph + 0.3)); }
+// groundShadow(ctx, x, y, w, lift = 0, o): contact shadow on the ground at (x, y) for a body of width w lifted by `lift` units:
+// it stays on the floor and shrinks and fades with height (scale 1 - lift / o.fall, default 220), so a jump or a float reads.
+// Filled with the style's own texture (dotPat: Ben-Day dots in Halftone, like fx halftoneShadow), or solid with o.flat.
+// o: { h: thickness (default w * 0.12: a pill for a side view; ~w * 0.3 for a view from above), color (C.black), alpha (0.5; flat 0.22), fall, flat }
+function groundShadow(ctx, x, y, w, lift = 0, o = {}) {
+  const s = K.clamp(1 - Math.max(0, lift) / (o.fall ?? 220), 0.25, 1), rx = (w / 2) * s, ry = (o.h ?? w * 0.12) * s;
+  ctx.save(); ctx.globalAlpha *= (o.alpha ?? (o.flat ? 0.22 : 0.5)) * (0.45 + 0.55 * s);
+  ctx.beginPath(); ctx.ellipse(x, y, rx, ry, 0, 0, Math.PI * 2);
+  if (o.flat) { ctx.fillStyle = o.color || C.black; ctx.fill(); } else { ctx.clip(); ctx.fillStyle = dotPat(ctx, o.color || C.black, 7, 0.32); ctx.fillRect(x - rx - 2, y - ry - 2, rx * 2 + 4, ry * 2 + 4); }
+  ctx.restore();
+}
+// celStep(t, fps = 12): time held on a step grid, for drawings "on twos" (12 fps) or threes (8 fps) in limited-animation styles
+// (80s cel anime). Pose a character with celStep(t) while the camera, light and effects keep the full t.
+function celStep(t, fps = 12) { return Math.floor(t * fps + 1e-6) / fps; }
