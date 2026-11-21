@@ -64,7 +64,7 @@ function sbRoc(ctx, P, part = 'all') {
     ctx.fillStyle = col(f); K.poly(ctx, main, true); ctx.fill(); for (const L of lobes) if (!L.row) { ctx.fillStyle = col(L.tip ? (far ? SB_ROCP.tipS : SB_ROCP.tip) : f); ctx.beginPath(); ctx.arc(L.c[0], L.c[1], L.r, 0, 7); ctx.fill(); }
     if (!sil) { // hard cel shade: a crescent on each feather lobe away from the light, a lilac row of coverts
       for (const L of lobes) { if (L.row) { ctx.fillStyle = far ? SB_ROCP.farS : '#eee6fb'; ctx.beginPath(); ctx.arc(L.c[0], L.c[1], L.r, 0, Math.PI); ctx.fill(); continue; }
-        ctx.save(); ctx.beginPath(); ctx.arc(L.c[0], L.c[1], L.r, 0, 7); ctx.clip(); ctx.fillStyle = L.tip ? (far ? sbDark(SB_ROCP.tipS, 0.2) : SB_ROCP.tipS) : sh; ctx.beginPath(); ctx.rect(L.c[0] - L.r - 2, L.c[1] - L.r - 2, 2 * L.r + 4, 2 * L.r + 4); ctx.arc(L.c[0] - L.r * 0.2, L.c[1] - L.r * 0.35, L.r * 0.92, 0, 7, true); ctx.fill('evenodd'); ctx.restore(); }
+        ctx.save(); ctx.beginPath(); ctx.arc(L.c[0], L.c[1], L.r, 0, 7); ctx.clip(); ctx.fillStyle = L.tip ? (far ? sbDark(SB_ROCP.tipS, 0.2) : SB_ROCP.tipS) : sbMix(f, sh, 0.4 + 0.6 * sp); ctx.beginPath(); ctx.rect(L.c[0] - L.r - 2, L.c[1] - L.r - 2, 2 * L.r + 4, 2 * L.r + 4); ctx.arc(L.c[0] - L.r * 0.2, L.c[1] - L.r * 0.35, L.r * 0.92, 0, 7, true); ctx.fill('evenodd'); ctx.restore(); }
       ctx.strokeStyle = sbMix(sh, lineC, 0.25); ctx.lineWidth = Math.max(1.5, LW * 0.7); ctx.beginPath(); LE.forEach((p, i) => { const q = TE[i], x = K.lerp(p[0], q[0], 0.62), y = K.lerp(p[1], q[1], 0.62); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); ctx.stroke(); }
     ctx.restore();
     return far ? null : Tp;

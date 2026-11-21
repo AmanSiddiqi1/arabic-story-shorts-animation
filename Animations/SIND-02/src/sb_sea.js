@@ -78,7 +78,8 @@ function sbSeaBack(ctx, t, sea, x0, x1, o = {}) {
   sbGrad(ctx, x0, hz - 2, x1 - x0, 140, [[0, W[0]], [1, W[1]]]); ctx.fillStyle = W[1]; ctx.fillRect(x0, hz + 136, x1 - x0, 2400);
   for (let li = 0; li <= (o.to ?? 1); li++) sbSeaLayer(ctx, li, t, sea, x0, x1);
 }
-function sbSeaFront(ctx, t, sea, x0, x1, o = {}) { for (let li = o.from ?? 2; li <= 3; li++) sbSeaLayer(ctx, li, t, sea, x0, x1, { alpha: o.alpha?.[li - 2] }); }
+// o.mid(ctx): drawn between the ship layer (2) and the front layer (3): reflections, rings, flotsam that sit on the water
+function sbSeaFront(ctx, t, sea, x0, x1, o = {}) { for (let li = o.from ?? 2; li <= 3; li++) { sbSeaLayer(ctx, li, t, sea, x0, x1, { alpha: o.alpha?.[li - 2] }); if (li === 2 && o.mid) o.mid(ctx); } }
 // a horizontal light path on the water (sun or moon): broken dashes from the horizon down to y1, column centred at x, half width w
 function sbLightPath(ctx, t, x, hz, y1, w, col = '#fff2c8', a = 0.8, joined = 0) {
   const R = K.rng(77), tc = SB_T3(t); ctx.save(); ctx.globalCompositeOperation = 'screen';
@@ -139,4 +140,119 @@ function sbSchool(ctx, cx, cy, t, n = 14, o = {}) {
   for (let i = 0; i < n; i++) { const ax = (R() - 0.5) * 220, ay = (R() - 0.5) * 110, ph = R() * 6, a = Math.atan2(ay, ax || 1);
     const x = cx + ax + Math.sin(tc * 1.3 + ph) * 14 + Math.cos(a) * 360 * sc * sc, y = cy + ay + Math.sin(tc * 2.1 + ph) * 8 + Math.sin(a) * 260 * sc * sc;
     sbFish(ctx, x, y, (o.s || 0.42) * (0.8 + R() * 0.4), sc > 0.2 ? (Math.cos(a) >= 0 ? 1 : -1) : dir, { flick: Math.sin(tc * 14 + ph) }); }
+}
+
+// ===================== sea framing kit (SIND-01 revision 1, series rule) =====================
+// Rule for every open-sea shot: the subject's waterline at 62-68% of the panel height, a reflection under every floating thing,
+// the foreground crest band (sbSeaFore) across the bottom of the panel, and one living thing per shot (fish, dolphins, gulls,
+// flotsam). No sea frame should keep more than ~15% of the panel as unbroken flat blue.
+
+// the foreground crest band: the nearest water, across the bottom h (fraction of the panel, default 0.14), sliding faster than the
+// rest (parallax o.par, default 1.8) with a lighter lip, a dark line, foam caps and dashes on threes. Draw it LAST over the sea, in
+// world units with the shot camera cam ({x, y, zoom}). o: {h, par, amp (panel units), col, lip, alpha, drift (units/s)}
+function sbSeaFore(ctx, t, sea, cam, o = {}) {
+  const W = sbWaterCols(sea), z = cam.zoom || 1, tc = SB_T3(t), H = (o.h ?? 0.15) * 1230, base = 1230 - H;   // panel units
+  const amp = o.amp ?? Math.min(34, 12 + (sea.amp ?? 6) * 0.6), par = o.par ?? 1.8, drift = ((sea.scroll || 0) * par + (o.drift ?? 34)) * tc;
+  const col = o.col || sbMix(W[4], '#162e78', 0.28), lip = o.lip || sbMix(col, W[5], 0.5), pts = [];
+  const U = (px) => px + cam.x * z * par + drift;                       // pattern coordinate (panel units): faster than the world
+  const Y = (px) => { const u = U(px); return base + amp * (0.6 * Math.sin(u * 0.0105 + tc * 1.5) + 0.4 * Math.sin(u * 0.023 - tc * 1.1)); };
+  for (let px = -40; px <= 1040; px += 20) pts.push([px, Y(px)]);
+  ctx.save(); ctx.setTransform(ctx.getTransform().multiply(new DOMMatrix([1 / z, 0, 0, 1 / z, cam.x - 500 / z, cam.y - 615 / z]))); // panel units
+  if (o.alpha != null) ctx.globalAlpha *= o.alpha;
+  ctx.beginPath(); ctx.moveTo(-40, 1300); for (const p of pts) ctx.lineTo(p[0], p[1]); ctx.lineTo(1040, 1300); ctx.closePath(); ctx.fillStyle = col; ctx.fill();
+  ctx.lineJoin = 'round'; ctx.strokeStyle = lip; ctx.lineWidth = 14; ctx.beginPath(); pts.forEach((p, i) => (i ? ctx.lineTo(p[0], p[1] + 9) : ctx.moveTo(p[0], p[1] + 9))); ctx.stroke();
+  ctx.strokeStyle = sbDark(col, 0.4); ctx.lineWidth = 3; ctx.beginPath(); pts.forEach((p, i) => (i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]))); ctx.stroke();
+  // foam caps on the crests (where the line turns over), and dashes in the body, all travelling with the pattern
+  ctx.fillStyle = W[6]; ctx.strokeStyle = W[6]; ctx.lineCap = 'round';
+  for (let px = -40; px <= 1040; px += 10) { const y0 = Y(px - 10), y1 = Y(px), y2 = Y(px + 10); if (y1 < y0 && y1 <= y2 && y1 < base - amp * 0.35) { ctx.globalAlpha = 0.95; for (let k = -2; k <= 2; k++) { ctx.beginPath(); ctx.arc(px + k * 13, Y(px + k * 13) + 2 - (2 - Math.abs(k)) * 2, 7 - Math.abs(k), 0, 7); ctx.fill(); } } }
+  const R = K.rng(97), span = 1200;
+  for (let i = 0; i < 14; i++) { const fx = ((((R() * span - drift * 1.0) % span) + span) % span) - 100, fy = Y(fx) + 26 + R() * (H - 40), len = 24 + R() * 50, on = Math.floor(tc * 8 / 3 + i) % 4;
+    if (on === 0) continue; ctx.globalAlpha = 0.5 + 0.3 * R(); ctx.lineWidth = 4 + R() * 3; ctx.beginPath(); ctx.moveTo(fx, fy); ctx.lineTo(fx + len, fy - 2); ctx.stroke(); }
+  ctx.restore();
+}
+// mid-water streaks: long flat lighter and darker cels in the near water (between y0 and y1, world units), stepping on threes;
+// o.li the layer whose colour they are cut from (default 3, the front)
+function sbSeaStreaks(ctx, t, sea, x0, x1, y0, y1, o = {}) {
+  const W = sbWaterCols(sea), tc = SB_T3(t), R = K.rng(o.seed || 61), n = o.n || 9, d = (sea.scroll || 0) * 1.2 * tc + (o.drift ?? 14) * tc, span = x1 - x0 + 400;
+  ctx.save(); ctx.lineCap = 'round';
+  for (let i = 0; i < n; i++) { const yy = y0 + (y1 - y0) * (i + R() * 0.6) / n, x = x0 - 200 + ((((R() * span - d * (0.6 + (yy - y0) / (y1 - y0 + 1))) % span) + span) % span), len = 90 + R() * 220, lit = i % 3 !== 1;
+    ctx.globalAlpha = (o.a ?? 0.8) * (0.6 + 0.4 * R()); const bc = W[1 + (o.li ?? 3)]; ctx.strokeStyle = lit ? sbMix(bc, W[5], 0.42) : sbDark(bc, 0.22); ctx.lineWidth = 5 + 5 * (yy - y0) / (y1 - y0 + 1);
+    ctx.beginPath(); ctx.moveTo(x, yy + Math.sin(tc * 2 + i) * 2); ctx.lineTo(x + len, yy + Math.sin(tc * 2 + i + 1) * 2); ctx.stroke(); }
+  ctx.restore();
+}
+// a broken reflection under a floating thing: rows of dashes in its colours (hull, band, sail stripes...), wobbling on threes.
+// (x, y) the waterline centre, w the width, cols top to bottom, o {rows, gap, a, sway}
+function sbReflect(ctx, x, y, w, cols, t, o = {}) {
+  const tc = SB_T3(t), rows = o.rows || 6, gap = o.gap || 9, R = K.rng(o.seed || 23);
+  ctx.save();
+  for (let i = 0; i < rows; i++) { const v = i / rows, ww = w * (1 - v * 0.45), yy = y + 5 + i * gap, col = cols[Math.min(cols.length - 1, Math.floor(v * cols.length))], sw = Math.sin(tc * 3.1 + i * 1.7) * (o.sway ?? 10) * (0.4 + v);
+    ctx.globalAlpha = (o.a ?? 0.6) * (1 - v * 0.75); ctx.fillStyle = col;
+    let xx = x - ww / 2 + sw; const end = x + ww / 2 + sw; while (xx < end) { const seg = Math.min(end - xx, ww * (0.18 + R() * 0.3)); ctx.fillRect(xx, yy, seg, gap * 0.55); xx += seg + ww * (0.04 + R() * 0.08); } }
+  ctx.restore();
+}
+// a dolphin (side view) facing dir, s scale (1 = 200 long), rot; o {flick}
+function sbDolphin(ctx, x, y, s = 1, dir = 1, o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot || 0); ctx.scale(dir * s, s); const fl = (o.flick || 0) * 10, line = '#1e2a58';
+  celShade(ctx, [[-88, -2], [-112, -26 + fl], [-104, -2 + fl * 0.5], [-114, 22 + fl], [-86, 6]], '#5a7ab8', '#3a5490', { light: [0, -1], off: 5, lw: 2.5, line });
+  celShade(ctx, [[-10, -34], [6, -62], [22, -34]], '#5a7ab8', '#3a5490', { light: [-1, -1], off: 4, lw: 2.5, line });
+  const B = [[-90, 0], [-60, -22], [-10, -36], [40, -32], [74, -18], [98, -10], [112, -6], [98, 2], [70, 8], [30, 18], [-30, 16], [-70, 8]];
+  celShade(ctx, B, '#7a9ad0', '#4f6aa8', { light: [-0.4, -1], off: 10, hi: '#b8d0f0', lw: 3, line });
+  ctx.save(); K.poly(ctx, B, true); ctx.clip(); ctx.fillStyle = '#d8e4f4'; ctx.beginPath(); ctx.ellipse(20, 20, 80, 14, 0, 0, 7); ctx.fill(); ctx.restore();
+  celShade(ctx, [[20, 6], [6, 30], [36, 12]], '#5a7ab8', '#3a5490', { light: [0, -1], off: 3, lw: 2, line });
+  ctx.fillStyle = '#141a30'; ctx.beginPath(); ctx.arc(76, -12, 4, 0, 7); ctx.fill(); ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(75, -13, 1.4, 0, 7); ctx.fill();
+  ctx.strokeStyle = line; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(92, -2); ctx.quadraticCurveTo(86, 2, 76, 0); ctx.stroke(); ctx.restore();
+}
+// a dolphin leap from x0 to x1 on the water line y (u 0..1 of the arc, h height); entry and exit splashes and rings
+function sbDolphinLeap(ctx, x0, x1, y, u, h = 120, s = 0.6) {
+  if (u <= -0.1 || u >= 1.4) return; const dir = x1 > x0 ? 1 : -1;
+  if (u > 0 && u < 1) { const x = K.lerp(x0, x1, u), yy = y - h * 4 * u * (1 - u), rot = Math.atan2(-h * 4 * (1 - 2 * u), Math.abs(x1 - x0)) * dir; sbDolphin(ctx, x, yy + 10 * s, s, dir, { rot, flick: Math.sin(u * 14) }); }
+  sbRing(ctx, x0, y + 3, (u + 0.1) / 0.6, 90 * s, { lw: 3 }); sbRing(ctx, x1, y + 3, (u - 0.95) / 0.45, 110 * s, { lw: 3 });
+  if (u > 0.92 && u < 1.25) sbSplash(ctx, x1, y, (u - 0.92) * 1.6, 0.35 * s / 0.6);
+}
+// a flying fish: the silver fish with two spread pectoral wings (glide), on an arc like sbFishJump
+function sbFlyingFish(ctx, x0, x1, y, u, h = 70, s = 0.5) {
+  if (u <= 0 || u >= 1) return; const x = K.lerp(x0, x1, u), yy = y - h * Math.sin(Math.PI * u), dir = x1 > x0 ? 1 : -1, tc = SB_T3(u * 3);
+  ctx.save(); ctx.translate(x, yy); ctx.scale(dir * s, s); const fl = Math.sin(tc * 30) * 6;
+  for (const k of [1, -1]) celShade(ctx, [[-6, -4], [-46, -38 - fl * k], [-30, -6]], k > 0 ? '#e8f4ff' : '#b8cce8', '#7a94b8', { light: [0, -1], off: 4, lw: 2, line: '#2a4a7a' });
+  ctx.restore(); sbFish(ctx, x, yy, s, dir, { rot: -Math.cos(Math.PI * u) * 0.35 * dir, flick: Math.sin(u * 30) });
+  sbRing(ctx, x0, y + 3, u / 0.4, 50 * s, { lw: 2 }); if (u > 0.8) sbRing(ctx, x1, y + 3, (u - 0.8) / 0.2, 30 * s, { lw: 2 });
+}
+// a school seen from above the surface: dark fish shadows gliding under the water (cx, cy), drifting at v units/s
+function sbSchoolShadow(ctx, cx, cy, t, n = 12, o = {}) {
+  const R = K.rng(o.seed || 71), tc = SB_T2(t), dir = o.dir || 1; ctx.save(); ctx.globalAlpha = o.a ?? 0.32; ctx.fillStyle = o.col || '#0f2a6a';
+  for (let i = 0; i < n; i++) { const ax = (R() - 0.5) * 260, ay = (R() - 0.5) * 50, ph = R() * 6, x = cx + ax + Math.sin(tc * 1.2 + ph) * 12, y = cy + ay + Math.sin(tc * 1.9 + ph) * 4;
+    ctx.beginPath(); ctx.ellipse(x, y, 22, 6, 0, 0, 7); ctx.fill(); ctx.beginPath(); ctx.moveTo(x - dir * 20, y); ctx.lineTo(x - dir * 34, y - 7); ctx.lineTo(x - dir * 34, y + 7); ctx.closePath(); ctx.fill(); }
+  ctx.restore();
+}
+// flotsam bobbing on the water at (x, y): 'wood' (driftwood with a stub), 'pot' (the camp pot on its side), 'turban' (the plum turban
+// unwinding). rot radians, s scale
+function sbFlotsam(ctx, kind, x, y, t, o = {}) {
+  const s = o.s || 1, tc = SB_T3(t); ctx.save(); ctx.translate(x, y); ctx.rotate((o.rot || 0) + 0.06 * Math.sin(tc * 2.3 + (o.seed || 0))); ctx.scale(s, s);
+  if (kind === 'wood') { celShade(ctx, [[-70, -6], [66, -10], [74, 2], [66, 12], [-68, 12], [-76, 2]], '#b0845a', '#7a5432', { light: [-0.3, -1], off: 6, lw: 3, line: '#4a2a14' }); celShade(ctx, [[20, -8], [36, -30], [44, -26], [32, -6]], '#b0845a', '#7a5432', { light: [-1, -1], off: 3, lw: 2.5, line: '#4a2a14' }); }
+  else if (kind === 'pot') { ctx.rotate(1.2); celShade(ctx, [[-30, -20], [30, -20], [34, 2], [24, 26], [-24, 26], [-34, 2]], '#5a5a72', '#363648', { light: [-1, -1], off: 8, hi: '#8a8aa8', lw: 3, line: '#1a1a2a' }); shape(ctx, ell(0, -20, 32, 7, 16), '#2a2a3a', { lw: 2.5 }); }
+  else if (kind === 'turban') { sbRibbon(ctx, 28, 2, 0.1, 90, 16, t, { col: '#9a5ab8', shade: '#6a3a88', amp: 5, freq: 5 }); celShade(ctx, ell(0, -6, 34, 20, 18), '#9a5ab8', '#6a3a88', { light: [-1, -1], off: 8, hi: '#c89ae0', lw: 3, line: '#3a1a4a' }); seg(ctx, -28, -6, 26, -14, 4, '#6a3a88', 0); }
+  ctx.restore();
+  sbRing(ctx, x, y + 6, ((t * 0.7 + (o.seed || 0) * 0.37) % 1), 40 * s, { lw: 2, a: 0.6 });
+}
+// a proper travelling swell for close-ups and set pieces: a hump of water with the crest strip, dark line, foam lip and spray, drawn
+// as a cel (never a flat block). (x crest centre, y base line, w half width, h height); col from the sea palette (o.li layer, default 3);
+// with o.li set the hump sits on that layer's own surface line (o.dy below it) so it merges into the water at both ends
+function sbSwell(ctx, x, y, w, h, t, sea, o = {}) {
+  if (h < 2) return; const W = sbWaterCols(sea), col = o.col || W[1 + (o.li ?? 3)], tc = SB_T3(t), pts = [];
+  for (let i = -16; i <= 16; i++) { const u = i / 16, g = Math.exp(-u * u * 3.2), lean = (o.lean ?? 0.25) * w * g * (1 - Math.abs(u)), px = x + u * w * 1.2 - lean, by = o.li != null && o.onLayer !== false ? seaY(px, t, o.li, sea) + (o.dy || 0) : y; pts.push([px, by - h * g + (g > 0.2 ? Math.sin(tc * 5 + i) * 2 : 0)]); }
+  ctx.save(); if (o.alpha != null) ctx.globalAlpha *= o.alpha;
+  ctx.beginPath(); ctx.moveTo(pts[0][0], y + (o.bottom ?? 2400)); for (const p of pts) ctx.lineTo(p[0], p[1]); ctx.lineTo(pts[pts.length - 1][0], y + (o.bottom ?? 2400)); ctx.closePath(); ctx.fillStyle = col; ctx.fill();
+  ctx.lineJoin = 'round'; ctx.strokeStyle = sbMix(col, W[5], 0.45); ctx.lineWidth = 12; ctx.beginPath(); pts.forEach((p, i) => (i ? ctx.lineTo(p[0], p[1] + 8) : ctx.moveTo(p[0], p[1] + 8))); ctx.stroke();
+  ctx.strokeStyle = sbDark(col, 0.35); ctx.lineWidth = 3; ctx.beginPath(); pts.forEach((p, i) => (i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]))); ctx.stroke();
+  // foam lip on the crest, spray flecks above it
+  ctx.fillStyle = W[6]; for (let i = 12; i <= 20; i++) { const p = pts[i], r = 9 + 6 * Math.exp(-Math.pow((i - 15) / 3, 2)); ctx.beginPath(); ctx.arc(p[0], p[1] + 2, r * (h / 160 + 0.4), 0, 7); ctx.fill(); }
+  const R = K.rng(5 + Math.floor(tc * 8)); for (let i = 0; i < 7; i++) { const p = pts[12 + Math.floor(R() * 8)]; ctx.globalAlpha = 0.85; ctx.beginPath(); ctx.arc(p[0] + (R() - 0.5) * 40, p[1] - 10 - R() * 30, 3 + R() * 4, 0, 7); ctx.fill(); }
+  ctx.restore();
+}
+// the near water in one call (after sbSeaFront): streaks in the front layer down to the crest band, then the crest band.
+// o: {streaks: false, n, fore: {...sbSeaFore options}}
+function sbSeaNear(ctx, t, sea, cam, o = {}) {
+  const z = cam.zoom || 1, top = cam.y + (1230 * (1 - (o.fore?.h ?? 0.15)) - 615) / z, y0 = Math.max(sea.y[3] + 30, cam.y - 615 / z), x0 = cam.x - 560 / z, x1 = cam.x + 560 / z;
+  if (o.streaks !== false && top - y0 > 40) sbSeaStreaks(ctx, t, sea, x0, x1, y0, top - 16, { n: o.n || Math.max(3, Math.round((top - y0) * z / 40)), a: o.a });
+  sbSeaFore(ctx, t, sea, cam, o.fore || {});
 }

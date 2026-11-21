@@ -5,7 +5,7 @@
 // Never a tint over the cast. New dressing: the rose bower (hide spot at x 1210, a trellis arc with climbing roses behind the horse
 // and one movable rose branch in a front layer), a sundial, butterflies, a live gate leaf, and a hedge patch that can shiver.
 // Episodes 4-5 copy this file unchanged. Anchors EH_PG3 (plus EH_PGARDEN).
-const EH_PG3 = { hide: 1210, bower: [1050, 1370], branch: [1085, 905], peek: [1010, 720], sundial: 700, stool: 1190, gate: [1380, 1500], hinge: 1500, path: 820 };
+const EH_PG3 = { hide: 1210, bower: [1050, 1370], branch: [1085, 905], peek: [1040, 720], sundial: 700, stool: 1190, gate: [1380, 1500], hinge: 1500, path: 820 };
 const EH_GDAY = {
   day: { sky: [[0, '#3a8ef0'], [0.5, '#6ab0f8'], [0.82, '#a8dcff'], [1, '#cfeeff']], cloud: ['#ffffff', '#cfe0f6'], hills: '#8ac8a0', water: [['#3a9ae8', '#6ac0f8', '#2a80d8']], bank: ['#5ab07a', '#4a9a6a'], sun: [-120, -520] },
   golden: { sky: [[0, '#5a8ae0'], [0.45, '#90a8e8'], [0.75, '#ffd8a8'], [1, '#ffe2a0']], cloud: ['#fff6ea', '#ffc890'], hills: '#b8b090', water: [['#5a9ae0', '#ffd890', '#4a80c8']], bank: ['#6ab070', '#5a9a62'], sun: [1700, 300] },

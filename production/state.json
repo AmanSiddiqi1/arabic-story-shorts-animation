@@ -8892,6 +8892,76 @@
 "msg": "v1: PASS run 44887577079 commit ba5f56133c",
 "story_id": "ALI-02",
 "t": "2026-11-21T17:14:07"
+},
+{
+"id": 1262,
+"kind": "claim",
+"msg": "review claimed (fable)",
+"story_id": "ALI-02",
+"t": "2026-11-21T17:19:23"
+},
+{
+"id": 1263,
+"kind": "agent",
+"msg": "review agent a14354338b72be1b9",
+"story_id": "ALI-02",
+"t": "2026-11-21T17:19:23"
+},
+{
+"id": 1264,
+"kind": "agent",
+"msg": "review agent a14354338b72be1b9",
+"story_id": "ALI-02",
+"t": "2026-11-21T17:19:57"
+},
+{
+"id": 1265,
+"kind": "done",
+"msg": "review review 1: UNKNOWN (claude-fable-5-2)",
+"story_id": "ALI-02",
+"t": "2026-11-21T17:19:57"
+},
+{
+"id": 1266,
+"kind": "claim",
+"msg": "revise claimed (opus)",
+"story_id": "ALI-02",
+"t": "2026-11-21T17:19:57"
+},
+{
+"id": 1267,
+"kind": "agent",
+"msg": "revise agent ab260c0e698daf69f",
+"story_id": "ALI-02",
+"t": "2026-11-21T17:20:09"
+},
+{
+"id": 1268,
+"kind": "done",
+"msg": "implement Implementation Complete - Awaiting Render (film 147.48 s, est. render 42.0 min) (claude-opus-5-5)",
+"story_id": "ALI-03",
+"t": "2026-11-21T17:28:16"
+},
+{
+"id": 1269,
+"kind": "claim",
+"msg": "implement claimed (opus)",
+"story_id": "ALI-04",
+"t": "2026-11-21T17:28:17"
+},
+{
+"id": 1270,
+"kind": "agent",
+"msg": "implement agent a4baa0c9603ff99e2",
+"story_id": "ALI-04",
+"t": "2026-11-21T17:28:36"
+},
+{
+"id": 1271,
+"kind": "cloud-render",
+"msg": "v1: PASS run 44889012072 commit a2578e2da1",
+"story_id": "HORSE-02",
+"t": "2026-11-21T17:33:10"
 }
 ],
 "plans": [
@@ -11692,6 +11762,16 @@
 "status": "PASS",
 "story_id": "ALI-02",
 "version": "v1"
+},
+{
+"created": "2026-11-21T17:33:10",
+"duration": 151.5,
+"path": "Animations/HORSE-02/renders/HORSE-02_v1.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 151.5}, \"end_hold\": 4.01, \"decode\": \"OK\", \"lufs\": -14.9, \"sync\": {\"lag_ms\": 0, \"corr\": 0.999}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-21T09:29:19\", \"cloud_run\": \"44889012072\", \"cloud_commit\": \"a2578e2da12dc4b4b62e072e0b7aac57c5b95101\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "HORSE-02",
+"version": "v1"
 }
 ],
 "reviews": [
@@ -12522,6 +12602,15 @@
 "round": 1,
 "story_id": "SIND-01",
 "verdict": "REVISE"
+},
+{
+"agent_id": "a14354338b72be1b9",
+"created": "2026-11-21T17:19:57",
+"model": "claude-fable-5-2",
+"path": "Animations/ALI-02/review/fable_review_1.md",
+"round": 1,
+"story_id": "ALI-02",
+"verdict": "UNKNOWN"
 }
 ],
 "stories": [
@@ -20729,15 +20818,15 @@
 {
 "agent_id": "ab0ec4c0464a54433",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-21T17:28:16",
 "id": 342,
 "model": "opus",
-"notes": null,
-"outputs": null,
+"notes": "tokens {\"turns\": 83, \"input_tokens\": 176, \"cache_creation_input_tokens\": 426268, \"cache_read_input_tokens\": 21235174, \"output_tokens\": 204675}",
+"outputs": "Implementation Complete - Awaiting Render (film 147.48 s, est. render 42.0 min)",
 "pid": null,
 "stage": "implement",
 "started": "2026-11-21T16:39:23",
-"status": "running",
+"status": "done",
 "story_id": "ALI-03"
 },
 {
@@ -20809,6 +20898,48 @@
 "started": "2026-11-21T17:07:12",
 "status": "running",
 "story_id": "HORSE-03"
+},
+{
+"agent_id": "a14354338b72be1b9",
+"attempt": 1,
+"finished": "2026-11-21T17:19:57",
+"id": 348,
+"model": "fable",
+"notes": null,
+"outputs": "review 1: UNKNOWN",
+"pid": null,
+"stage": "review",
+"started": "2026-11-21T17:19:23",
+"status": "done",
+"story_id": "ALI-02"
+},
+{
+"agent_id": "ab260c0e698daf69f",
+"attempt": 1,
+"finished": null,
+"id": 349,
+"model": "opus",
+"notes": null,
+"outputs": null,
+"pid": null,
+"stage": "revise",
+"started": "2026-11-21T17:19:57",
+"status": "running",
+"story_id": "ALI-02"
+},
+{
+"agent_id": "a4baa0c9603ff99e2",
+"attempt": 1,
+"finished": null,
+"id": 350,
+"model": "opus",
+"notes": null,
+"outputs": null,
+"pid": null,
+"stage": "implement",
+"started": "2026-11-21T17:28:17",
+"status": "running",
+"story_id": "ALI-04"
 }
 ],
 "usage_log": [
@@ -21054,6 +21185,15 @@
 "resets": "2026-11-17T00:59Z",
 "t": "2026-11-16T23:45:57",
 "weekly_pct": 79.0
+},
+{
+"active": 6,
+"done_v1": 49,
+"id": 28,
+"note": "13-story 80s cel job: 13 plans, 6 implements, 3 reviews done; Fable weekly 74%",
+"resets": "2026-11-24T01:00Z",
+"t": "2026-11-21T17:27:58",
+"weekly_pct": 68.0
 }
 ]
 }

@@ -14,7 +14,12 @@ function sbS9World(ctx, t, cam) {
   const tc = SB_T2(t), sea = SB_S9SEA;
   sbSky(ctx, 'day', cam); sbSun(ctx, 1500, 190, 48, '#fff6c8', '#ffe0a0', 0.6); sbSeaBack(ctx, t, sea, 0, 2000);
   // the last hump of grass, vanishing
-  const hump = 1 - K.clamp((t - 69.9) / 1.4); if (hump > 0) { const hy = seaY(400, t, 2, sea) + 10 - 30 * hump; celShade(ctx, ell(400, hy, 110 * hump + 20, 30 * hump + 6, 24).filter((q) => q[1] <= hy + 1), '#4fb86a', '#2f8a50', { light: [-0.3, -1], off: 8, lw: 3 }); }
+  // rev 1: the last patch is the whale's grey-blue back awash (3 figure-widths), a strip of grass on it, water streaming off; it drops away under him
+  const hump = 1 - K.clamp((t - 70.65) / 1.0); if (hump > 0) { const hy = seaY(400, t, 2, sea) + 10 - 34 * hump, rx = 150 * hump + 30;
+    celShade(ctx, ell(400, hy, rx, 34 * hump + 6, 28).filter((q) => q[1] <= hy + 1), SB_WH.back, SB_WH.shade, { light: [-0.3, -1], off: 10, hi: '#8a9ac8', lw: 3.5, line: SB_WH.line });
+    celShade(ctx, ell(400, hy - 30 * hump, rx * 0.55, 8 * hump + 2, 18).filter((q) => q[1] <= hy - 30 * hump + 1), '#4fb86a', '#2f8a50', { light: [-0.3, -1], off: 4, lw: 2.5 });
+    for (const sd of [-1, 1]) sbFoamLine(ctx, [[400 + sd * rx * 0.9, hy - 8], [400 + sd * (rx + 20), hy + 2]], t + sd, { w: 8 });
+    for (let k = 0; k < 4; k++) { const u = ((t * 1.5 + k / 4) % 1); ctx.save(); ctx.globalAlpha = 0.8 * (1 - u); ctx.fillStyle = '#e8fbff'; ctx.fillRect(400 + (k - 1.5) * rx * 0.5, hy - 28 * hump + u * 26, 4, 10); ctx.restore(); } }
   // the skiff, dragged away by the whale's swirl, tips over a swell and is gone
   const skx = SB_SK9X(t); if (t < 76.0) { const f = sbFloat(skx, t, sea, 2, 90); sbSkiff(ctx, { x: skx, y: f.y, s: 0.9, pitch: f.rot, oar: tc * 7, row: 0.6, oars: true, crew: (c) => sbOnDeck(c, 0.9, (q) => {
     for (let k = 0; k < 3; k++) { const P = sbAlive(t, 150 + k, { x: -20 + k * 34, y: -12, s: 0.6, dir: -1, gaze: [-1, 0.2], mouth: 'o' }); if (k === 0 && t > 73.46) { P.tip = -0.3; P.handR = PERSON_HANDS.reach.R; } sbSailor(q, k, P); } }) });
@@ -25,8 +30,11 @@ function sbS9World(ctx, t, cam) {
   if (t < 71.72) { const [x, lift] = hop(t, 70.65, 1.07, 400, 660, 160), base = seaY(400, t, 2, sea) - 10 - 30 * hump, y = t < 70.65 ? base : K.lerp(base, seaY(660, t, 2, sea), K.clamp((t - 70.65) / 1.07)) - lift;
     if (t > 70.65) groundShadow(ctx, x, seaY(x, t, 2, sea) + 6, 90, lift, { flat: true, color: '#1a3a7a' });
     const P = sbAlive(t, 11, { x, y, dir: 1, bare: true, wind: -0.8, gaze: [1, 0.2], mouth: 'closed' });
-    P.sq *= t < 70.65 ? 1 - 0.18 * K.clamp((t - 69.9) / 0.4) : 1 + 0.12 * pulse(t, 70.65, 0.5); P.tip += t > 70.65 ? 0.3 : 0.1;
-    if (t > 70.65) { P.aL = [2.4, 2.6]; P.aR = [2.3, 2.5]; P.legs = 0.9; } else P.handL = P.handR = undefined;
+    // rev 1: a look at the boats, a look down at the water at his knees, then the crouch with the arms back (3 drawings) and the spring
+    // along an arc up and right, arms thrown forward, legs trailing apart, turban tail and sash late
+    P.sq *= t < 70.65 ? 1 - 0.2 * sbF(t, [[70.05, 0], [70.4, 1]]) : 1 + 0.12 * pulse(t, 70.65, 0.5); P.tip += t > 70.65 ? 0.35 : 0.1 + 0.15 * sbF(t, [[70.05, 0], [70.4, 1]]);
+    if (t < 70.05) P.gaze = [1, 0.7];
+    if (t > 70.65) { P.aL = [1.5, 1.4]; P.aR = [1.6, 1.5]; P.legs = 0.9; P.wind = -1; } else if (t > 70.05) { P.aL = [-0.5, -0.3]; P.aR = [-0.6, -0.4]; } else P.handL = P.handR = undefined;
     sbSinbad(ctx, P); }
   else if (t > 71.9) { const x = SB_SW9X(t), wy = seaY(x, t, 2, sea), under = t > 75.56 && t < 76.3, ph = sbCrawl(t), cough = t > 76.3 && t < 76.9;
     const o = { crawl: ph, k: t > 77.2 && t < 79.42 ? 0.5 : 1, depth: under ? 230 : t < 72.32 ? 200 - 70 * K.clamp((t - 71.9) / 0.4) : 130, dir: t > 77.15 ? -1 : 1, mouth: cough ? 'open' : 'closed', lid: cough ? 1 : 0, wind: -0.6, tip: t > 79.42 ? 0.3 : 0.18, drop: t > 79.42 ? 6 : 0 };
@@ -43,7 +51,7 @@ function sbS9World(ctx, t, cam) {
   sbSeaFront(ctx, t, sea, 0, 2000, { mid: (c) => {
     // the camp's flotsam drifts past the swimmer: the plum turban unwinding and the pot; rings round him on every stroke
     if (t > 75.2) sbFlotsam(c, 'turban', 1600 - 60 * (t - 70), seaY(1600 - 60 * (t - 70), t, 2, sea) + 4, t, { s: 0.8, seed: 2 });
-    sbFlotsam(c, 'pot', 420 + 40 * (t - 70), seaY(420 + 40 * (t - 70), t, 2, sea) + 6, t, { s: 0.8, seed: 5 });
+    if (t > 75.6) sbFlotsam(c, 'pot', 420 + 40 * (t - 70), seaY(420 + 40 * (t - 70), t, 2, sea) + 6, t, { s: 0.8, seed: 5 });
     sbFlotsam(c, 'wood', 1500 - 30 * (t - 70), seaY(1500 - 30 * (t - 70), t, 2, sea) + 4, t, { s: 0.9, rot: 0.1, seed: 7 });
     if (t > 72.32 && !(t > 75.56 && t < 76.3)) { const x = SB_SW9X(t), ph = sbCrawl(t); sbRing(c, x, seaY(x, t, 2, sea) + 6, ((ph / (2 * Math.PI)) % 1), 70, { lw: 3, a: 0.7 }); } } });
   sbSeaNear(ctx, t, sea, cam);
@@ -65,7 +73,7 @@ const SB_D10X = (t) => 790 + (t - 83.5) * 7, SB_D10S = (t) => t < 85.44 ? 0.17 :
 function sbS10Hide(t) { const out = []; for (const [t0, h, x0] of [[86.0, 105, 980], [87.3, 135, 1010]]) { const u = (t - t0) / 1.5; if (u > 0 && u < 1) out.push({ x: x0 - 260 * u, h: h * Math.sin(Math.PI * u), w: 190 }); } return out; }
 function sbS10Plank(t, sea) { const f = sbFloat(SB_PX10, t, sea, 2, 110), dip = 20 * Math.exp(-(t - 80.9) * 5) * Math.cos((t - 80.9) * 12) * (t > 80.9 ? 1 : 0); return { x: SB_PX10, y: f.y - 6 + dip, rot: f.rot }; }
 function sbS10World(ctx, t, cam) {
-  const tc = SB_T2(t), sea = SB_S10SEA, cu = t > 82.2 && t < 83.5;
+  const tc = SB_T2(t), sea = SB_S10SEA, cu = t > 82.2 && t < 83.501;
   sbSky(ctx, 'gold', cam); sbSun(ctx, 260, 430, 56, '#fff1c0', '#ffb070', 1); sbSeaBack(ctx, t, sea, -200, 1600); sbLightPath(ctx, t, 260, 602, 830, 70, '#ffe0a0', 0.6);
   // the dhow far off on the horizon, smaller in held steps; two mid-layer swells rise in front of it, it reappears smaller, then is gone
   if (t > 83.5 && t < 88.0) { const x = SB_D10X(t), s = SB_D10S(t), y = seaY(x, t, 0, sea) + 2; sbDhow(ctx, { x, y, s, t, far: true, sail: 1 }); sbReflect(ctx, x, y, 520 * s, ['#a8643a', '#fbf3df', '#d0285a'], t, { rows: 3, gap: 5, a: 0.5, sway: 4 });
@@ -90,9 +98,9 @@ function sbS10World(ctx, t, cam) {
     // one drop runs off the turban tail
     const tt = sbPt(Q, [-34, -10]), du = ((t - 82.3) % 0.7) / 0.7; ctx.save(); ctx.globalAlpha = 1 - du * 0.6; sbBlob(ctx, tt[0] - 4, tt[1] + 60 * du * du, 4, 6, '#bfe8ff', '#6aaee0', { lw: 1.5, off: 2 }); ctx.restore(); }
   // a real swell (crest strip, dark line, foam lip) runs past in front, below his chin, on "قوته" 82.78
-  if (t > 83.3 && t < 83.5) drops(ctx, pl.x - 40, pl.y - 70, t, 2, '#bfe8ff');
+  if (t > 83.3 && t < 83.501) drops(ctx, pl.x - 40, pl.y - 70, t, 2, '#bfe8ff');
   sbSeaFront(ctx, t, sea, -200, 1600, { mid: (c) => { if (t > 83.5) sbReflect(c, pl.x, seaY(pl.x, t, 2, sea), 240, ['#c8925a', '#f7f0e0', SB_ACC], t, { rows: 5, gap: 8, a: 0.45 });
-    if (t > 82.78 && t < 83.5) { const u = (t - 82.78) / 0.72, by = seaY(pl.x, t, 2, sea) + 12; sbSwell(c, pl.x - 380 + u * 760, by, 110, (by - pl.y - 12) * Math.sin(Math.PI * Math.min(1, u * 1.1)), t, sea, { li: 2, dy: 2, lean: 0.35 }); } } });
+    if (t > 82.78 && t < 83.501) { const u = (t - 82.78) / 0.72, by = seaY(pl.x, t, 2, sea) + 12; sbSwell(c, pl.x - 380 + u * 760, by, 110, (by - pl.y - 12) * Math.sin(Math.PI * Math.min(1, u * 1.1)), t, sea, { li: 2, dy: 2, lean: 0.35 }); } } });
   // life: a fish school shadow crossing under him while the ship goes (and a flying fish on the second swell)
   if (t > 83.5) { sbSchoolShadow(ctx, 1100 - (t - 83.5) * 120, 1010, t, 12, { dir: -1, a: 0.28 }); sbFlyingFish(ctx, 1050, 760, 960, (t - 86.9) / 0.9, 70, 0.45); }
   sbSeaFore(ctx, t, sea, cam, { amp: cu ? 14 : undefined });

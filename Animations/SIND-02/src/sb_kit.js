@@ -175,6 +175,10 @@ function sbFace(ctx, x, y, k, F = {}) {
     const b0 = ey - 66 - (by < 0 ? -by * 26 : 0), inner = by > 0 ? by * 18 : by * 20;
     ctx.lineWidth = lw(9); ctx.strokeStyle = D.hair; ctx.beginPath(); ctx.moveTo(ex - sd * ew * 0.95, b0 + inner); ctx.quadraticCurveTo(ex, b0 - 16, ex + sd * ew * 1.1, b0 + 8); ctx.stroke(); ctx.restore();
   }
+  // SIND-02: F.bare = no turban (the cloth is rope): a blue-black hair cap with three spiky tufts instead
+  if (F.bare) { sbCS(ctx, [[-214, -60], [-226, -190], [-160, -300], [-40, -350], [90, -346], [190, -290], [228, -180], [214, -60], [150, -150], [40, -190], [-70, -186], [-160, -140]], '#2a2030', '#120a18', { light: [-1, -1], off: 26, lw: lw(4), line: '#120a18' });
+    for (const [x, a] of [[-90, -0.5], [10, 0], [110, 0.5]]) sbCS(ctx, [[x - 40, -320], [x + Math.sin(a) * 130, -320 - Math.cos(a) * 130], [x + 40, -320]], '#2a2030', '#120a18', { light: [-1, -1], off: 10, lw: lw(3), line: '#120a18' });
+    ctx.restore(); return; }
   // tangerine turban (the accent) with a white band, folds as hard cels
   const T = [[-246, -120], [-258, -230], [-196, -380], [-60, -446], [80, -442], [206, -366], [258, -230], [246, -120], [120, -150], [0, -158], [-120, -150]];
   sbCS(ctx, T, D.tur, D.turS, { light: [-1, -1], off: 34, hi: sbLight(D.tur, 0.35), lw: lw(4), line: sbDark(D.turS, 0.3) });

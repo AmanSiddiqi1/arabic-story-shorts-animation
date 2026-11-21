@@ -11,8 +11,8 @@ const EH_QUEEN = { costume: 'lady', s: 0.95, age: 0.45, pal: { robe: '#d88ad0', 
 const EH_PLUGEAR = { R: [30, -196] };
 
 // ---------- twoRiders ----------
-// front seat 30 ahead of the single-rider seat, rear seat 40 behind it and 4 lower (horse-local units at s 1)
-const EH_SEAT2 = { front: 30, rear: -40, rearDy: 4 };
+// front seat 36 ahead of the single-rider seat, rear seat 56 behind it and 4 lower (horse-local units at s 1)
+const EH_SEAT2 = { front: 36, rear: -56, rearDy: 4 };
 function ehSeatShift(H, d, dy = 0) { const a = ehHorsePt(H, [0, 0]), b = ehHorsePt(H, [d, dy]); return { ...H, x: H.x + b[0] - a[0], y: H.y + b[1] - a[1] }; }
 // a rider's frame: hip centre and rotation (seat frame of rideOn) for a mount P on the given seat shift
 function ehRiderFrame(H, d, dy = 0, lurch = 0, bob = 0, ps = 1) { const Hs = ehSeatShift(H, d, dy), seat = mountSeat('horse', Hs), sg = Math.sign(H.dir || 1); return { x: seat.x, y: seat.y - bob * ps, rot: seat.rot + lurch * sg, sg, ps }; }
@@ -100,7 +100,7 @@ function turbanScrap(ctx, x, y, s = 1, rot = 0, o = {}) {
 function ghostOutline(ctx, polys, k, t, o = {}) {
   if (k <= 0.01) return; const fl = Math.floor(EH_T2(t) * 12) % 2 ? 1 : 0.7;
   ctx.save(); ctx.globalAlpha *= k * fl; ctx.setLineDash(o.dash || [12, 9]); ctx.lineDashOffset = -t * 20; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
-  ctx.shadowColor = o.glow || '#bfe6ff'; ctx.shadowBlur = 14; ctx.strokeStyle = o.col || '#fffaf0'; ctx.lineWidth = o.w || 5;
+  ctx.shadowColor = o.glow || '#bfe6ff'; ctx.shadowBlur = 18; ctx.strokeStyle = o.col || '#fffaf0'; ctx.lineWidth = o.w || 7;
   for (const p of polys) { if (p.circle) { ctx.beginPath(); ctx.arc(p.circle[0], p.circle[1], p.circle[2], 0, 7); ctx.stroke(); } else { K.poly(ctx, p, !p.open); ctx.stroke(); } }
   ctx.restore();
 }

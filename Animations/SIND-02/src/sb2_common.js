@@ -46,3 +46,8 @@ function sbInset(ctx, t, a, b, x, y, r, draw) { if (t < a || t > b) return; cons
 function sbRocIcon(ctx, x, y, w, t, o = {}) { sbRoc(ctx, { x, y, s: w / 3000, dir: o.dir || 1, spread: 1, ...sbRocFlap(t, 1.2), sil: o.col || '#9a7ad8', t, tuck: 1 }); }
 // a sweat drop beside a head (world), on threes
 function sbSweat(ctx, Q, t) { const p = sbPt(Q, [44, -20]), u = (SB_T3(t) * 1.4) % 1; ctx.save(); ctx.globalAlpha *= 1 - u * 0.6; ctx.translate(p[0], p[1] + u * 26); ctx.scale(Q.s || 1, Q.s || 1); ctx.fillStyle = '#8fd0ff'; ctx.beginPath(); ctx.moveTo(0, -12); ctx.quadraticCurveTo(8, 0, 0, 7); ctx.quadraticCurveTo(-8, 0, 0, -12); ctx.fill(); ctx.strokeStyle = '#2a5a9a'; ctx.lineWidth = 2; ctx.stroke(); ctx.restore(); }
+// the plan in a balloon: the roc flying with a tiny Sinbad hanging under its ankle on an orange line (world units for thoughtCloud.inside)
+function sbRocCarryIcon(k, t, x = 560, y = 640, s = 0.42) { const R = { x, y, s, dir: -1, t, spread: 1, ...sbRocFlap(t, 1.2), tuck: 0.5, sil: '#8a6ac8' }; sbRoc(k, R);
+  const ak = sbRocAnkle(R), sw = 0.25 * Math.sin(SB_T2(t) * 4), L = 200, fx = ak[0] + Math.sin(sw) * L, fy = ak[1] + Math.cos(sw) * L;
+  k.save(); k.strokeStyle = SB_ACC; k.lineWidth = 9; k.beginPath(); k.moveTo(ak[0], ak[1]); k.lineTo(fx, fy); k.stroke(); k.restore();
+  sbSinbad(k, { x: fx, y: fy + 220, s: 0.95, t, handLW: [fx - 6, fy + 8], handRW: [fx + 6, fy + 2], gaze: [0, 1] }); }

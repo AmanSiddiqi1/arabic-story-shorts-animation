@@ -153,9 +153,7 @@ function sbS8World(ctx, t, cam, S) {
 }
 function sbS8Over(ctx, t, cam, S) {
   if (t > 55.78 && t < 56.9) { const h = sbP(340, 680, cam); thoughtCloud(ctx, 360, 300, 440, 300, t, { p: K.clamp((t - 55.78) / 0.45), tail: [h[0], h[1] - 30], fill: '#fff6ea', scale: 0.3, at: [500, 700], seed: 7,
-    inside: (k) => { k.fillStyle = '#a89ad8'; k.beginPath(); k.moveTo(-200, 1100); k.lineTo(150, 760); k.lineTo(400, 960); k.lineTo(650, 720); k.lineTo(1000, 1000); k.lineTo(1200, 1100); k.closePath(); k.fill();
-      sbRocIcon(k, 520, 420, 1000, t, { col: '#7a5ab8' }); const sw = 0.25 * Math.sin(SB_T2(t) * 4), ax = 470, ay = 470, fx = ax + Math.sin(sw) * 260, fy = ay + Math.cos(sw) * 260; k.strokeStyle = SB_ACC; k.lineWidth = 10; k.beginPath(); k.moveTo(ax, ay); k.lineTo(fx, fy); k.stroke();
-      sbSinbad(k, { x: fx, y: fy + 230, s: 1, t, handLW: [fx - 8, fy + 10], handRW: [fx + 8, fy + 4] }); } }); }
+    inside: (k) => { k.fillStyle = '#a89ad8'; k.beginPath(); k.moveTo(-200, 1100); k.lineTo(150, 860); k.lineTo(400, 1000); k.lineTo(650, 840); k.lineTo(1000, 1020); k.lineTo(1200, 1100); k.closePath(); k.fill(); sbRocCarryIcon(k, t, 600, 560, 0.4); } }); }
   if (t > 61.3 && t < 62.4) { const p = sbP(540, 680, cam); sbSay(ctx, S, [[61.3, 'EASY, BIG BIRD...']], t, p[0] + 80, p[1] - 260, [p[0] + 10, p[1] - 70], { gone: 62.2, size: 44 }); }
   // the cut-in: the great eye half opens, rolls down, sees nothing, closes (lid on threes)
   sbInset(ctx, t, 62.36, 63.0, 720, 300, 220, (c, w) => { c.save(); c.scale(w / 1000, w / 1000); sbGrad(c, 0, 0, 1000, 1000, [[0, '#86c2f6'], [1, '#d2ecfa']]);

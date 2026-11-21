@@ -53,9 +53,15 @@ function a2S13World(ctx, t, cam) {
   if (tc < 108.5) { Cp.tip = 0.1 * K.clamp(Cp.amp); Cp.handL = [20, -120]; Cp.handR = [34, -118]; co.fa = 0.9; }
   else if (tc < 111.34) { Cp.tip = 0.25 * (1 - beatIn(tc, 109.6, 110.2)) + 0.05; Cp.handL = [24, -112]; Cp.handR = [36, -116]; co.sweat = ((tc - 108.5) / 1.2) % 1; co.fa = 1.0; Cp.gaze = [1, 0.4]; }
   else if (tc < 115.38) { Cp.handL = [18, -128]; Cp.handR = [30, -124]; Cp.lid = 0.3; Cp.gaze = [-0.6, 0.3]; Cp.tip = -0.04; Cp.tilt = -0.06; co.fa = 0.7; if (tc > 112.2 && tc < 112.8) Cp.gaze = [1, 0.6]; }
-  else { const sh = K.ease.inOut(beatIn(tc, 115.38, 117.1)); Cp.gaze = [0.3, 1]; Cp.drop = 10 * sh; Cp.sq = (1 - 0.04 * sh) * breathe(tc, 53, 0.02); Cp.tip = 0.06 * sh; Cp.lid = 0.4; co.blush = Math.min(3, Math.floor(sh * 4)) / 3; co.droop = 0.6 * beatIn(tc - 0.2, 115.38, 117.1); co.fa = 0.6;
-    Cp.handL = [-30, -100 + 20 * sh]; Cp.handR = [36, -100 + 20 * sh]; sackAt = tc < 115.9 ? 'hug' : tc < 116.3 ? 'slide' : 'ground'; Cp.x += 3 * Math.sin(tc * 6) * beatIn(tc, 116.3, 116.6) * (1 - beatIn(tc, 116.9, 117.1));
-    if (tc >= 117.2) { Cp.gaze = [1, -0.6]; Cp.lid = 0.4 + 0.6 * abBlinkAt(AB_T3(t), 117.6); Cp.drop = 6; }
+  else { // v2 (note 11): eyes drop first, then the head sinks, shoulders in, the hands leave the hips and meet low in front, fiddling;
+    // a small lean away from Ali Baba, the feather drooping last, a strong blush
+    const eye = beatIn(tc, 115.38, 115.6), sh = K.ease.inOut(beatIn(tc, 115.6, 116.7)), hd = K.ease.inOut(beatIn(tc, 115.8, 116.5));
+    Cp.gaze = [K.lerp(1, 0.3, eye), K.lerp(0, 1, eye)]; Cp.drop = 12 * sh; Cp.sq = (1 - 0.05 * sh) * breathe(tc, 53, 0.02); Cp.tip = -0.07 * sh + idleSway(tc, 54, 0.015, 2.1); Cp.tilt = 0.08 * sh; Cp.lid = 0.3 + 0.2 * eye;
+    co.blush = Math.min(4, Math.floor(sh * 5)) / 4 * 1.3; co.droop = 0.9 * beatIn(tc - 0.35, 115.6, 116.9); co.fa = 0.6;
+    const fid = 4 * Math.sin(tc * 9); Cp.handL = [K.lerp(18, 2, hd), K.lerp(-128, -78 + fid, hd)]; Cp.handR = [K.lerp(30, 16, hd), K.lerp(-124, -80 - fid, hd)];
+    sackAt = tc < 115.9 ? 'hug' : tc < 116.3 ? 'slide' : 'ground';
+    if (tc >= 117.2 && tc < 117.6) { Cp.x += 6 * pulse(tc, 117.25, 0.3); Cp.tip = 0.05; Cp.gaze = [1, 0.8]; }
+    if (tc >= 117.6) { Cp.gaze = [1, -0.6]; Cp.lid = 0.4 + 0.6 * abBlinkAt(AB_T3(t), 117.6); Cp.drop = 6; }
     if (tc >= 117.94) { Cp.handR = PERSON_HANDS.chest.R; Cp.handL = [-20, -110]; Cp.drop = 2; co.blush = 0.6;
       if (tc > 118.3) { Cp.handRW = [350, 800]; Cp.handLW = [340, 812]; Cp.handR = null; Cp.tip = 0.22 * beatIn(tc, 118.3, 118.6) * (1 - beatIn(tc, 119.6, 120.0)); Cp.tilt = 0.12 * pulse(tc, 118.5, 0.5); } }
     if (tc >= 118.86 && tc < 120.18) { Cp.talk = abTalk(t, 118.86, 120.18, 24); Cp.mouth = 'open'; Cp.gaze = [1, -0.3]; Cp.lid = 0; }
@@ -67,7 +73,8 @@ function a2S13World(ctx, t, cam) {
   const [bx, by] = a2BodyPt(Cp, 30, -110, A2_CAS);
   if (sackAt === 'hug') abSack(ctx, bx + 8, by + 46, 0.6, 1, { coin: true, rot: -0.1 });
   else if (sackAt === 'slide') { const u = beatIn(tc, 115.9, 116.3); abSack(ctx, K.lerp(bx + 8, cx + 40, u), K.lerp(by + 46, 906, u * u), 0.6, 1, { coin: true, rot: -0.1 + 0.3 * u }); }
-  if (sackAt === 'ground') { const push = K.ease.out(beatIn(tc, 122.3, 122.7)); abSack(ctx, K.lerp(310, 360, push), 906, 0.6, 1, { coin: true, rot: 0.2 - 0.2 * push }); if (tc > 122.3 && tc < 122.8) Cp.tip = -0.05; }
+  // on «قاسم» 117.20 he pushes the sack away with one foot (a nudge of the hip; the sack scoots toward Ali Baba)
+  if (sackAt === 'ground') { const push = K.ease.out(beatIn(tc, 117.2, 117.55)); abSack(ctx, K.lerp(310, 372, push), 906, 0.6, 1, { coin: true, rot: 0.2 - 0.25 * push, sq: 1 - 0.08 * pulse(tc, 117.3, 0.2) }); }
   a2Ali(ctx, A, m, { shc: '#8a5a3a' }); a2Cas(ctx, Cp, m, co);
 }
 function a2S13Over(ctx, t, cam, S) {
@@ -75,26 +82,40 @@ function a2S13Over(ctx, t, cam, S) {
   abSay(ctx, S, [[110.81, 'YOUR GREED...'], [112.76, 'YOUR GREED PUT US IN DANGER!']], t, 520, 280, [ax, ay], { size: 44, gone: 114.05 });
   if (t > 112.2 && t < 113.0) S.arrow(ctx, abP(380, 700, cam), abP(330, 820, cam), K.clamp((t - 112.2) / 0.3), { color: '#7fe3ff' });
   if (t > 114.08 && t < 115.45) thoughtCloud(ctx, 520, 300, 360, 220, t, { p: K.clamp((t - 114.08) / 0.35) * (1 - K.clamp((t - 115.25) / 0.2)), tail: [ax - 30, ay + 10], bg: '#ffe2b8', inside: (c) => {
-    c.save(); c.translate(500, 900); c.scale(2.4, 2.4); c.translate(-500, -900); abCel(c, [430, 900, 300, 320], (cc) => abLeader(cc, { x: 430, y: 900, dir: 1, handR: [90, -190], handL: [-60, -150] }, 'morning'), { tint: '#2b1a3a', k: 0.9 });
-    abStandCloak(c, { x: 430, y: 900, s: 1.08, dir: 1 }, t, AB_LEAD0.cape, 1.2, 1.4); c.restore();
-    for (const [x, s] of [[620, 0.9], [700, 0.7]]) { c.save(); c.fillStyle = '#2b1a3a'; c.beginPath(); c.ellipse(x, 820, 40 * s, 60 * s, 0, 0, 7); c.fill(); c.beginPath(); c.arc(x, 740 - 20 * s, 26 * s, 0, 7); c.fill(); c.restore(); } } });
+    c.save(); c.translate(500, 900); c.scale(2.4, 2.4); c.translate(-500, -900); abStandCloak(c, { x: 470, y: 900, s: 1.08, dir: 1 }, t, AB_LEAD0.cape, 1.2, 1.4); abLeader(c, { x: 470, y: 900, dir: 1, handR: [96, -196], handL: [-60, -150], brow: 1, mouth: 'open', gaze: [1, 0.1] }, 'morning'); c.restore(); } });
   abSay(ctx, S, [[118.86, 'THANK YOU, BROTHER!']], t, 360, 300, [cx, cy], { size: 50, gone: 120.4 });
-  if (t > 122.1 && t < 123.2) thoughtCloud(ctx, 260, 330, 260, 190, t, { p: K.clamp((t - 122.1) / 0.3) * (1 - K.clamp((t - 123.0) / 0.2)), tail: [cx, cy], inside: (c) => { abRock(c, 500, 860, { s: 0.42, model: 'morning' });
+  if (t > 122.1 && t < 123.2) thoughtCloud(ctx, 300, 330, 346, 252, t, { p: K.clamp((t - 122.1) / 0.3) * (1 - K.clamp((t - 123.0) / 0.2)), tail: [cx, cy], inside: (c) => { abRock(c, 500, 860, { s: 0.42, model: 'morning' });
     c.save(); c.strokeStyle = '#e8364f'; c.lineWidth = 28; c.lineCap = 'round'; const k = K.clamp((t - 122.4) / 0.25); c.beginPath(); c.moveTo(380, 600); c.lineTo(K.lerp(380, 620, k), K.lerp(600, 880, k)); c.stroke(); if (k >= 1) { const k2 = K.clamp((t - 122.65) / 0.25); c.beginPath(); c.moveTo(620, 600); c.lineTo(K.lerp(620, 380, k2), K.lerp(600, 880, k2)); c.stroke(); } c.restore(); } });
 }
 AB_SHOTS.push({ a: 106.88, b: 125.27, ww: 1000, cam: a2Cam(A2_S13_CAM), world: a2S13World, over: a2S13Over });
 
 // ---------- S14 125.27-142.69: sunset at the rock; the leader reads the prints; the threat; the far town; THE END ----------
 const A2_S14_CAM = (t) => { if (t < 136.86) return K.camAt([[125.27, { x: 1650, y: 615, zoom: 1.0 }], [128.1, { x: 1650, y: 615, zoom: 1.0 }], [128.9, { x: 1600, y: 680, zoom: 1.3 }], [130.2, { x: 1600, y: 680, zoom: 1.3 }], [130.9, { x: 1640, y: 640, zoom: 1.1 }]], t);
-  const u = K.ease.inOut(beatIn(t, 136.86, 137.7)); if (t < 137.7) return { x: K.lerp(1640, 620, u), y: K.lerp(640, 600, u), zoom: K.lerp(1.1, 1.0, u) }; return { x: 620 - 18 * (t - 137.7), y: 600, zoom: 1.0 }; };
-const A2_LPX = (t) => kfn(t, [[128.3, 1640], [128.7, 1570], [128.75, 1570], [129.1, 1640]], 'inOut');
+  // v2 (note 3): the whip pan ends with the tree in the left third and the town centre-right, then a slow drift to the last frame
+  const u = K.ease.inOut(beatIn(t, 136.86, 137.7)); if (t < 137.7) return { x: K.lerp(1640, 820, u), y: K.lerp(640, 600, u), zoom: K.lerp(1.1, 1.0, u) }; return { x: 820 - 12 * (t - 137.7), y: 600, zoom: 1.0 }; };
+// v2 (note 8): the leader walks along the prints on «وقف» and stops on «الصخرة»; crouches to them on «يفكر» (note 10)
+const A2_LPX = (t) => kfn(t, [[125.27, 1790], [127.38, 1640]], 'inOut');
+const A2_TOWN = { x: 470, base: 862, s: 0.62 }, A2_DOME = [470 + 0.62 * 700, 700];   // the dome is measured on the still (notes.md)
 const A2_S14_MEN = [{ i: 0, x0: 1300, x1: 1500, y: 884, s: 0.88 }, { i: 1, x0: 1380, x1: 1550, y: 878, s: 0.86 }, { i: 2, x0: 1450, x1: 1595, y: 872, s: 0.84 }, { i: 3, x0: 2040, x1: 1705, y: 880, s: 0.86 }, { i: 4, x0: 2120, x1: 1765, y: 874, s: 0.84 }];
+const A2_RIDE = [[-1, 2], [0, 4], [1, 3], [2, 0], [3, 5], [4, 1]];
+const A2_RIDX = (t, k) => K.lerp(1380 + 64 * k, 900 + 64 * k, K.clamp((t - 137.9) / 3.6));
+function a2TownRiders(ctx, t) { const tc = AB_T2(t);
+  abDust(ctx, A2_RIDX(t, 5) + 110, 900, 360, 70, t, 0.55 * (1 - K.clamp((t - 141.6) / 1.1)), '#e8a88a');
+  for (let k = 5; k >= 0; k--) { const [i, pal] = A2_RIDE[k], xf = (u) => A2_RIDX(u, k), x = xf(tc), u = K.clamp((t - 137.9) / 3.6), s = K.lerp(0.15, 0.1, u), y = K.lerp(888, 874, u);
+    const a = 1 - K.clamp((t - 141.1 - 0.08 * k) / 0.4); if (a <= 0.02) continue;
+    const H = { x, y, s, dir: -1, pal, ...walk(xf, tc, { stride: GAIT.horse * s * 1.6 }), tailSwish: 0.6 }; H.gallop = 1; H.amp = 1;
+    ctx.save(); ctx.globalAlpha *= a; abRider(ctx, i, H, { gaze: [1, 0], mouth: 'closed' }, 'dusk', { cloak: 0.9, t, hang: 0, ph: k * 0.4 }); ctx.restore(); } }
+// the hiding tree alone (no thicket) for the last shot, so the town is not covered
+function a2GladeTree(ctx, m, t) { const T = AB_TREE, [bk, bs] = AB_BARK[m];
+  celShade(ctx, [[T.x - 52, AB_GR + 4], [T.x - 40, 700], [T.x - 44, T.top], [T.x + 44, T.top], [T.x + 40, 700], [T.x + 52, AB_GR + 4]], bk, bs, { light: [-1, -0.3], off: 22, lw: 4, line: abDark(bs, 0.4) });
+  celShade(ctx, [[T.x + 30, T.perch - 14], [T.branchTo, T.perch - 6], [T.branchTo + 6, T.perch + 6], [T.x + 30, T.perch + 18]], bk, bs, { light: [-1, -1], off: 8, lw: 3.5, line: abDark(bs, 0.4) });
+  abLeafBlobs(ctx, T.fol[0] - 40, T.fol[1] - 20, T.fol[2] * 0.95, m, 33, t, 0); }
 function a2S14World(ctx, t, cam) {
   const tc = AB_T2(t), m = 'dusk', sh = '#4a2e48';
-  a2FarTown(ctx, t, 110, 800, 0.72, 1);
-  abGladeBack(ctx, m, t);
+  a2SunsetTown(ctx, t, A2_TOWN.x, A2_TOWN.base, A2_TOWN.s);
+  a2GladeTree(ctx, m, t);
   a2Prints(ctx, 1720, 300, { lit: t > 129.2 && t < 130.3 ? beatIn(t, 129.2, 130.2) : null, col: 'rgba(60,20,40,0.6)' });
-  a2StandHorses(ctx, t, m, { shc: sh, P: (h, k, tc2) => (k === 2 ? { headDown: 0.7 + 0.2 * osc(tc2, 2.6) } : null) });
+  if (t < 137.0) a2StandHorses(ctx, t, m, { shc: sh, P: (h, k, tc2) => (k === 2 ? { headDown: 0.7 + 0.2 * osc(tc2, 2.6) } : k === 0 && tc2 > 125.6 && tc2 < 127.6 ? { headDown: 0.35 * Math.abs(Math.sin((tc2 - 125.6) * 5)), earL: 1 } : null) });
   abRock(ctx, 1820, 900, { model: m, t });
   if (t > 134.3 && t < 134.9) abGlint(ctx, 1820, K.lerp(880, 300, beatIn(t, 134.3, 134.9)), 46, beatIn(t, 134.3, 134.9));
   // the sparrow back on the rock top, hopping along it
@@ -103,6 +124,8 @@ function a2S14World(ctx, t, cam) {
   // the men: two groups, then a ragged half circle (130.22), idle business, the shared look
   A2_S14_MEN.forEach((M, j) => { const xf = (u) => kfn(u, [[130.3 + 0.15 * j, M.x0], [130.3 + 0.15 * j + 0.8, M.x1]], 'inOut'), x = xf(tc), toL = x < 1640;
     const P = { x, y: M.y, s: M.s, dir: tc < 130.3 ? (M.x0 < 1640 ? 1 : -1) : toL ? 1 : -1, ...walk(xf, tc, { stride: 22 }), gaze: [1, -0.1], lid: abLid(t, 190 + j), tip: idleSway(tc, 191 + j, 0.025, 2.3 + 0.4 * j), sq: breathe(tc, 192 + j), handL: [-30, -110], handR: [34, -112], brow: 0.5 };
+    if (tc < 128.6) { if (j === 0 && tc > 125.8 && tc < 126.7) { P.dir = -P.dir; P.gaze = [1, -0.2]; } if (j === 1 && tc > 126.0 && tc < 127.0) { P.handL = [20, -134 + 4 * Math.sin(tc * 30)]; P.handR = [26, -130]; }
+      if (j === 3 && tc > 126.5 && tc < 127.5) { P.handL = [-30, -230]; P.handR = [36, -236]; P.mouth = 'o'; P.tilt = -0.1; } if (j === 4 && tc > 125.4 && tc < 126.4) { P.tip = 0.05 * Math.sin(tc * 12); P.gaze = [-1, 0.3]; } }
     if (tc > 131.62 && tc < 133.5) { if (j === 0) { P.talk = 0.3 * Math.abs(Math.sin(tc * 8)); P.mouth = 'open'; } if (j === 1) { P.handL = [-20, -96 + 4 * Math.sin(tc * 20)]; P.handR = [24, -96]; } if (j === 3) P.handR = [70, -150]; P.gaze = tc < 131.9 + 0.12 * j ? [-1, 0.2] : [1, -0.1]; }
     if (tc > 134.3) P.gaze = [toL ? 1 : -1, -0.4];
     if (tc > 135.02 && tc < 135.5) { P.gaze = [j % 2 ? 1 : -1, 0]; P.tilt = 0.06 * pulse(tc, 135.1 + 0.08 * j, 0.3); }
@@ -110,9 +133,11 @@ function a2S14World(ctx, t, cam) {
     a2Man(ctx, M.i, P, m, { shc: sh, t }); });
   // the leader
   const P = { x: A2_LPX(tc), y: 902, dir: -1, ...walk(A2_LPX, tc, { stride: 26 }), gaze: [1, 0.3], lid: abLid(t, 150, [126.4, 130.3]), brow: 0.8, tip: idleSway(tc, 151, 0.015, 3.2), sq: breathe(tc, 152), handL: [-34, -100], handR: [40, -110], mouth: 'closed' };
-  if (tc > 126.36 && tc < 128.1) { const cr = K.ease.inOut(beatIn(tc, 126.36, 126.7)) * (1 - beatIn(tc, 127.9, 128.1)); P.kneel = 0.8 * cr; P.handRW = cr > 0.5 ? [1590, 930] : null; P.gaze = tc > 127.38 && tc < 127.7 ? [0.3, -1] : [0.8, 0.9]; }
-  if (tc >= 128.1 && tc < 129.14) { P.handR = [16, -164 + 6 * osc(tc, 0.4)]; P.gaze = [1, 0.5]; P.dir = tc > 128.72 && tc < 128.75 ? 1 : tc > 128.75 && tc < 129.1 ? 1 : -1; }
-  if (tc >= 129.14 && tc < 130.22) { P.gaze = gazePlan(tc, [[129.14, [1, 0.6]], [129.6, [1, 0.3]], [130.0, [1, -0.1]]]); P.handR = [16, -164]; }
+  if (tc < 127.38) { P.gaze = [1, 0.85]; P.tip = 0.08; P.lid = 0.3; }
+  if (tc >= 127.38 && tc < 128.1) { P.gaze = gazePlan(tc, [[127.38, [1, 0.8]], [127.7, [0.2, -0.6]]]); P.handL = PERSON_HANDS.hipsHands.L; P.handR = PERSON_HANDS.hipsHands.R; }
+  if (tc >= 128.1 && tc < 129.4) { const cr = K.ease.inOut(beatIn(tc, 128.1, 128.4)) * (1 - K.ease.inOut(beatIn(tc, 129.14, 129.4))); P.kneel = 0.6 * cr; P.sq *= landSquash(tc, 128.4, 0.08); P.handRW = cr > 0.5 ? [1592, 928] : null; P.handL = [-20, -120];
+    P.gaze = gazePlan(tc, [[128.1, [1, 0.9]], [128.6, [1, 0.6]], [128.9, [1, 0.3]]]); P.tip = 0.12 * cr; }
+  if (tc >= 129.4 && tc < 130.22) { P.gaze = gazePlan(tc, [[129.4, [1, 0.3]], [130.0, [1, -0.1]]]); P.handR = [16, -164 + 4 * osc(tc, 0.5)]; }
   if (tc >= 130.22 && tc < 132.62) { P.dir = 1; P.gaze = gazePlan(tc, [[130.22, [1, 0]], [131.0, [-1, 0]], [131.6, [1, 0]]]); P.handL = PERSON_HANDS.hipsHands.L; P.handR = PERSON_HANDS.hipsHands.R; }
   if (tc >= 132.62 && tc < 133.6) { P.dir = 1; P.handR = tc < 133.2 ? [30, -205 + 8 * Math.abs(Math.sin((tc - 132.62) * 10))] : [50, -230]; P.brow = 1; P.talk = abTalk(t, 133.05, 133.6, 31); P.mouth = P.talk ? 'open' : 'closed'; }
   if (tc >= 133.6 && tc < 134.26) { P.dir = 1; P.handR = [56 + 6 * pulse(tc, 133.6, 0.2), -232]; P.talk = abTalk(t, 133.6, 134.26, 32); P.mouth = 'open'; }
@@ -120,18 +145,21 @@ function a2S14World(ctx, t, cam) {
   if (tc >= 135.54) { P.dir = -1; const a = a2ArmVal(tc, 135.52); P.handR = a2ArmHand(a); P.sq *= anticipate(tc, 135.6, 0.4, 0.06); P.talk = abTalk(t, 136.16, 138.18, 34); P.mouth = P.talk ? 'open' : 'closed'; P.gaze = [1, -0.1]; }
   a2Lead(ctx, t, P, m, { shc: sh, kick: tc > 135.54 ? 0.6 * pulse(tc, 136.1, 0.5) : 0 });
   // the riders sweep through the foreground toward the town in silhouette, two rows, shrinking
-  if (t > 138.2) { const u = t - 138.2; for (const [row, y, s, sp, sd] of [[0, 1000, 0.5, 520, 0], [1, 1080, 0.62, 640, 2]]) { const k = 1 - 0.35 * K.clamp(u / 4.5); abSilRow(ctx, 1300 - sp * u - row * 160, y - 60 * K.clamp(u / 4.5), t, s * k, -1, 0.92, sd); }
-    for (const f of [0, 1]) dustBurst(ctx, 900 - 520 * (t - 138.2) + 400, 1000, ((t * 2 + f * 0.5) % 1) * 0.6, 4, 6, 12, 30, 0.6, f + Math.floor(t * 2)); }
+  // v2 (note 3): one row of six coloured riders on the road at the foot of the town, entering from the right already galloping,
+  // shrinking toward the gate (the leader's black horse and crimson cape first), a dust trail behind; gone by 141.8, dust settles
+  if (t > 137.9) a2TownRiders(ctx, t);
 }
 AB_SHOTS.push({ a: 125.27, b: 1e9, ww: 2400, cam: A2_S14_CAM, under: a2GladeUnder('dusk'), world: a2S14World,
   over: (ctx, t, cam, S) => {
     if (t > 129.14 && t < 130.4) { const [hx, hy] = abP(1640, 900 - 240, cam); thoughtCloud(ctx, 330, 330, 300, 200, t, { p: K.clamp((t - 129.14) / 0.35) * (1 - K.clamp((t - 130.22) / 0.15)), tail: [hx - 20, hy], bg: '#ffe2c8', inside: (c) => {
-      for (const [x, s] of [[420, 1.25], [600, 0.8]]) { c.save(); c.fillStyle = '#2b1a3a'; c.beginPath(); c.ellipse(x, 820, 60 * s, 90 * s, 0, 0, 7); c.fill(); c.beginPath(); c.arc(x, 700 - 20 * s, 40 * s, 0, 7); c.fill(); c.font = `italic 800 ${80 * s}px "Barlow Semi Condensed"`; c.fillStyle = '#ffd36a'; c.textAlign = 'center'; c.fillText('?', x, 728 - 20 * s); c.restore(); } } }); }
+      // v2 (note 10): two pairs of slipper prints, one large and one small, twice the old size, with a question mark
+      for (const [x, s] of [[400, 1.5], [620, 1.0]]) for (const [dx, dy, r] of [[-24, 40, -0.15], [24, -20, 0.15]]) { c.save(); c.translate(x + dx * s, 760 + dy * s); c.rotate(r); c.fillStyle = '#5a2a3a'; c.beginPath(); c.ellipse(0, 0, 26 * s, 58 * s, 0, 0, 7); c.fill(); c.fillStyle = '#8a4a5a'; c.beginPath(); c.ellipse(0, -30 * s, 18 * s, 18 * s, 0, 0, 7); c.fill(); c.restore(); }
+      c.save(); c.font = 'italic 800 150px "Barlow Semi Condensed"'; c.fillStyle = '#e8364f'; c.textAlign = 'center'; c.fillText('?', 760, 720); c.restore(); } }); }
     const lx = A2_LPX(t), [px, py] = abP(lx, 900 - 260, cam);
     if (t > 133.6 && t < 134.5) S.counter(ctx, 2, 170, 560, K.clamp((t - 133.6) / 0.3) * (1 - K.clamp((t - 134.25) / 0.25)), { size: 110, color: '#ffd36a' });
     abSay(ctx, S, [[133.6, 'TWO KNOW OUR SECRET!']], t, K.clamp(px, 320, 680), 330, [px, py], { size: 50, gone: 135.1 });
-    if (t > 136.86) abSay(ctx, S, [[136.86, 'SEARCH THE TOWN!']], t, K.clamp(px, 270, 730), 330, [px, py], { size: 50, gone: 138.3 });
+    if (t > 136.16 && t < 137.3) abSay(ctx, S, [[136.16, 'SEARCH THE TOWN!']], t, px, 330, [px, py], { size: 54, gone: 136.95 });
     if (t > 136.86 && t < 137.7) abSpeed(ctx, [0, 0, 1000, 1230], t, { dir: 1, n: 26, alpha: 0.5 * Math.sin(Math.PI * beatIn(t, 136.86, 137.7)) });
-    if (t >= 137.74 && t < 138.4) { const [x, y] = abP(500, 760, cam); S.emphasis(ctx, x, y, 200, K.clamp((t - 137.74) / 0.6), { rect: [0, 0, 1000, 1230], word: '', seed: 17 }); }
-    if (t > 137.9 && t < 139.6) { const [x, y] = abP(760, 700, cam); S.arrow(ctx, [x + 90, y - 280], [x, y - 40], K.clamp((t - 137.9) / 0.35), { color: '#7fe3ff' }); }
+    if (t >= 137.74 && t < 138.4) { const [x, y] = abP(A2_DOME[0], A2_DOME[1], cam); S.emphasis(ctx, x, y, 200, K.clamp((t - 137.74) / 0.6), { rect: [0, 0, 1000, 1230], word: '', seed: 17 }); }
+    if (t > 137.74 && t < 139.2) { const [x, y] = abP(A2_DOME[0], A2_DOME[1], cam); ctx.save(); ctx.globalAlpha *= 1 - K.clamp((t - 138.8) / 0.4); S.arrow(ctx, [x + 150, y - 260], [x + 10, y - 50], K.clamp((t - 137.74) / 0.35), { color: '#7fe3ff' }); ctx.restore(); }
     if (t > 139.0) S.title(ctx, 'THE END', 500, 420 - 10 * K.clamp((t - 139.0) / 3.7), K.clamp((t - 139.0) / 0.9), { size: 110, align: 'center' }); } });

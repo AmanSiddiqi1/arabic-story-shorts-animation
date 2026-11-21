@@ -84,7 +84,12 @@ function sbS22World(ctx, t, cam, S) { const tc = SB_T2(t), sea = SB2_SEA22;
   sbSeaBack(ctx, t, sea, -200, 1400); sbLightPath(ctx, t, 800, 600, 820, 70, '#fff2c8', 0.8);
   sbGulls(ctx, t - 145, 1300, 300, -120, 2, 12, 0.32);
   const D = sbS22Dhow(t); D.crew = (c) => sbOnDeck(c, D.s, (q) => sbS22Crew(q, t, D)); D.light = (c, SP) => { if (t > 142.7 && t < 143.8) { const u = (t - 142.7) / 1.1; c.save(); c.globalCompositeOperation = 'multiply'; c.fillStyle = 'rgba(150,120,200,0.5)'; c.fillRect(-400 + 800 * u, -700, 260, 800); c.restore(); } };
-  sbDhow(ctx, D); sbWake(ctx, D.x, D.y, D.s, 1, t, 0.6); sbSeaFront(ctx, t, sea, -200, 1400, { from: 3 });
+  sbDhow(ctx, D); sbWake(ctx, D.x, D.y, D.s, 1, t, 0.6);
+  sbSeaFront(ctx, t, sea, -200, 1400, { from: 2, mid: (c) => { sbReflect(c, D.x, D.y + 4, 560, ['#a8643a', '#2ab0b0', '#fbf3df', '#1f9a6a'], t, { rows: 6, gap: 10, a: 0.5, seed: 9 }); sbReflect(c, 800, 830, 120, ['#fff2c0', '#ffc070'], t, { rows: 4, gap: 9, a: 0.5, seed: 10 }); } });
+  // one living thing: dolphins keep pace with the ship home (two leaps), a school under the gold water
+  sbSchoolShadow(ctx, 300 + 60 * Math.sin(t * 0.5), 1000, t, 12, { seed: 73, col: '#3a3a8a' });
+  for (let i = 0; i < 2; i++) { const t0 = 141.2 + i * 2.6; sbDolphinLeap(ctx, 820 + i * 60, 1060 + i * 60, 960, (t - t0) / 1.0, 130, 0.6); sbDolphinLeap(ctx, 900 + i * 60, 1140 + i * 60, 990, (t - t0 - 0.3) / 1.0, 110, 0.5); }
+  sbSeaNear(ctx, t, sea, cam);
 }
 function sbS22Crew(c, t, D) { const tc = SB_T2(t), dy = -80 * D.s, up = t > 142.7 && t < 143.4;
   // three sailors sitting round him: one gapes, one laughs and slaps his knee, one shakes his head
@@ -104,7 +109,7 @@ function sbS22Crew(c, t, D) { const tc = SB_T2(t), dy = -80 * D.s, up = t > 142.
 }
 function sbS22Over(ctx, t, cam, S) {
   if (t > 141.5 && t < 142.9) { const h = sbP(490, 580, cam); thoughtCloud(ctx, 660, 300, 440, 300, t, { p: K.clamp((t - 141.5) / 0.45), tail: [h[0] + 30, h[1] - 20], fill: '#fff6ea', scale: 0.3, at: [500, 700], seed: 11,
-    inside: (k) => { sbRocIcon(k, 520, 420, 1000, t, { col: '#9a7ad8' }); const sw = 0.25 * Math.sin(SB_T2(t) * 4), ax = 470, ay = 470, fx = ax + Math.sin(sw) * 260, fy = ay + Math.cos(sw) * 260; k.strokeStyle = SB_ACC; k.lineWidth = 10; k.beginPath(); k.moveTo(ax, ay); k.lineTo(fx, fy); k.stroke(); sbSinbad(k, { x: fx, y: fy + 230, s: 1, t, handLW: [fx - 8, fy + 10], handRW: [fx + 8, fy + 4] }); } }); }
+    inside: (k) => { sbRocCarryIcon(k, t, 600, 600, 0.42); } }); }
   if (t > 143.7) S.title(ctx, 'THE END', 500, 230, K.clamp((t - 143.7) / 0.8), { size: 104, align: 'center' });
 }
 SB_SHOTS.push({ a: 140.9, b: 148.5, free: true, cam: sbKeys([[140.9, { x: 520, y: 615, zoom: 1 }], [147.82, { x: 460, y: 615, zoom: 1 }]]), world: sbS22World, over: sbS22Over });

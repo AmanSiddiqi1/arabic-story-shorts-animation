@@ -49,7 +49,7 @@ function sbValleyFloorPlate() {
 // valley ledges (live cels so they can sit in front of actors): a lip 40 thick with a hard shade under it
 function sbLedge(ctx, x0, x1, y, col = '#d89aa0') { const P = [[x0 - 20, y + 4], [x0, y - 10], [x1, y - 12], [x1 + 30, y + 2], [x1 + 10, y + 34], [x0 + 20, y + 40]]; celShade(ctx, P, col, sbDark(col, 0.3), { light: [0, -1], off: 16, lw: 3.5, line: '#5a2a4a', hi: sbLight(col, 0.3) }); }
 function sbValleyLedges(ctx) { for (const [a, b, y] of SB_VAL.ledges) sbLedge(ctx, a, b, y); const [l0, l1, ly] = SB_VAL.lowLedge; sbLedge(ctx, l0, l1, ly, '#c88aa0');
-  const [[sx0, sy0], [sx1, sy1]] = SB_VAL.shelf; celShade(ctx, [[sx0 + 40, sy0 - 8], [sx1 - 20, sy1 - 6], [sx1 + 10, sy1 + 26], [sx0 + 50, sy0 + 30]], '#e0a8a0', '#a87070', { light: [0, -1], off: 10, lw: 3, line: '#5a2a4a' }); }
+  const [[sx0, sy0], [sx1, sy1]] = SB_VAL.shelf; celShade(ctx, [[sx0 + 60, sy0 - 8], [sx1 - 30, sy1 - 6], [sx1 - 10, sy1 + 60], [sx0 + 80, sy0 + 70]], '#e8b0a0', '#a87070', { light: [0, -1], off: 22, lw: 3.5, line: '#5a2a4a', hi: '#f8d0c0' }); }
 // height of the shelf surface at x (between the nest ledge and the rim)
 const sbShelfY = (x) => { const [[x0, y0], [x1, y1]] = SB_VAL.shelf; return K.lerp(y0, y1, K.clamp((x0 - x) / (x0 - x1))) - 8; };
 // the eagles' stick nest on the nest ledge (centre x 1230): back part, eaglets go between, front part

@@ -6,3 +6,5 @@
 - `islandShore` (sb_sets.js).
 - Props: `chest` (band + star / crown seal, lid, glow), `campfire`, `cookPot`, `plank`, `spyglass`, `waterskin`, `foodTray` (sb_ship.js).
 - Helpers: `personPoint` (sbPt: world point on a Library person in any pose), `ribbon` (sbRibbon), `cumulus` (sbCumulus), `swimmer` pose (sbSwimmer), `animeFace` (sbFace).
+- (rev 1) `seaFraming` (sb_sea.js): sbSeaFore (foreground crest band), sbSeaStreaks, sbReflect, sbSwell (cel travelling swell), sbSeaNear, plus life: sbDolphin/sbDolphinLeap, sbFlyingFish, sbSchoolShadow, sbFlotsam.
+- (rev 1) `gripHand` and `cling` pose (sb_cast.js): sbGripHand (forearm + fingers curled on an edge), sbCling (over a floating plank).

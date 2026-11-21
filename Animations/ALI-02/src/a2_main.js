@@ -15,7 +15,7 @@ const SCENE = {
     ctx.restore();
     if (t >= A2_TAPE[0] && t < A2_TAPE[1]) S.transition(ctx, W, H, K.clamp((t - A2_TAPE[0]) / (A2_TAPE[1] - A2_TAPE[0])), { rect: AB_PANEL, caption: 'BACK HOME...' });
     for (const c of [33.46, 35.18, 35.72]) abTracking(ctx, t, c - 0.02, 0.15);    // the three jump cuts
-    abTracking(ctx, t, 47.46, 0.15); abTracking(ctx, t, 141.4, 0.55);
+    abTracking(ctx, t, 46.84, 0.15);   // v2: no tape tear in the last held shot (note 3)
     subtitle(ctx, W, H, t, 1);
     S.finish(ctx, W, H, t);   // the CRT pass, always last
   },

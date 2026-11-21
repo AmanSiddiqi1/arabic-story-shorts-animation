@@ -78,19 +78,19 @@ function sbValOver(ctx, t, cam, S) {
   // the insert (78.3 - 79.1): finger and thumb turn a stone against the sun; seven rays slide across his cheek as shapes
   if (t >= 78.3 && t < 79.1) { const tc = SB_T3(t), k = Math.floor((t - 78.3) / 0.2), rot = [0, 0.4, 0.9, 1.3][Math.min(3, k)];
     sbGrad(ctx, 0, 0, 1000, 1230, [[0, '#ffd8c8'], [0.6, '#f4c8b8'], [1, '#e8a8a8']]); sbGlow(ctx, 760, 160, 400, 0.8, '#fff0c0');
-    sbFace(ctx, 420, 1040, 1.05, { gaze: [0.3, -1], iris: 1.1, brow: -0.6, mouth: 'o', reflect: (c, r) => { c.fillStyle = 'rgba(220,245,255,0.8)'; c.beginPath(); c.moveTo(-r * 0.3, -r * 0.2); c.lineTo(0, -r * 0.6); c.lineTo(r * 0.3, -r * 0.2); c.lineTo(0, r * 0.3); c.closePath(); c.fill(); } });
-    sbRays(ctx, 520, 470, 820, 1, 1.9 + rot * 0.2);
-    for (const [x0, y0, x1, y1] of [[640, 1230, 560, 520], [380, 1230, 470, 530]]) { ctx.save(); ctx.lineCap = 'round'; ctx.strokeStyle = '#6a3a2a'; ctx.lineWidth = 92; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke(); ctx.strokeStyle = C.skin; ctx.lineWidth = 84; ctx.stroke(); ctx.restore(); }
-    sbGem(ctx, 515, 470, 92, { rot, glow: 0.8 }); sbGlint(ctx, 470, 420, 70, ((t - 78.3) * 2.5) % 1); }
+    sbFace(ctx, 430, 930, 0.95, { bare: true, gaze: [0.4, -1], iris: 1.1, brow: -0.6, mouth: 'o', reflect: (c, r) => { c.fillStyle = 'rgba(220,245,255,0.8)'; c.beginPath(); c.moveTo(-r * 0.3, -r * 0.2); c.lineTo(0, -r * 0.6); c.lineTo(r * 0.3, -r * 0.2); c.lineTo(0, r * 0.3); c.closePath(); c.fill(); } });
+    sbRays(ctx, 590, 470, 760, 1, 2.0 + rot * 0.2);
+    for (const [x0, y0, x1, y1, w] of [[1000, 760, 640, 520, 58], [1000, 640, 650, 420, 50]]) { ctx.save(); ctx.lineCap = 'round'; ctx.strokeStyle = '#6a3a2a'; ctx.lineWidth = w + 8; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke(); ctx.strokeStyle = C.skin; ctx.lineWidth = w; ctx.stroke(); ctx.restore(); }
+    sbGem(ctx, 590, 470, 80, { rot, glow: 0.8 }); sbGlint(ctx, 550, 420, 70, ((t - 78.3) * 2.5) % 1); }
 }
 SB_SHOTS.push({ a: 68.46, b: 79.9, free: true, cam: sbKeys([[68.46, { x: 760, y: -1150, zoom: 0.6 }], [69.7, { x: 680, y: 250, zoom: 0.6 }], [70.6, { x: 600, y: 300, zoom: 0.62 }], [71.92, { x: 500, y: 560, zoom: 0.8 }], [75.7, { x: 520, y: 560, zoom: 0.8 }], [78.3, { x: 820, y: 420, zoom: 0.62 }], [79.9, { x: 830, y: 420, zoom: 0.62 }]]), world: sbValWorld, over: sbValOver });
 
 // ---------- S13 + S14 (79.9 - 92.48): the walls, the snakes, the five stones, the failed climb, thinking ----------
 const SB2_SNAKE_A = [[250, 860], [262, 845], [300, 880], [380, 905], [460, 915], [540, 905]];   // out of the crevice along the floor
-const SB2_COIL = sbCoilPath(220, 612, 100, 2.4, 0.6);
+const SB2_COIL = sbCoilPath(230, 600, 110, 1.7, 0.4).map(([x, y], i, A) => [x, y + (y - 600) * 0.4]);
 function sbSnakes(ctx, t) { const tc = SB_T2(t);
   // B: asleep in a coil on the low ledge (always)
-  sbSnake(ctx, SB2_COIL, t, { pal: 1, w: 52, wave: 4, lid: 1, dir: 1, headRot: 0.2 });
+  sbSnake(ctx, SB2_COIL, t, { pal: 2, w: 46, wave: 4, lid: 1, dir: 1, headRot: 0.2 });
   if (t > 118) return;
   // C: a tail sliding out of sight between the right boulders (84.96 - 86.2)
   if (t > 84.96 && t < 86.4) { const u = K.clamp((t - 84.96) / 1.3); sbSnake(ctx, [[1000 + 200 * u, 900], [1080 + 200 * u, 895], [1160 + 140 * u, 890], [1200, 888]].map((p) => [Math.min(p[0], 1200), p[1]]), t, { pal: 2, w: 46, wave: 10, out: 1 - u, lid: 1 }); }

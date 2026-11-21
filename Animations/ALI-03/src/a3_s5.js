@@ -66,9 +66,9 @@ function a3S15World(ctx, t, cam) {
 }
 function a3S15Over(ctx, t, cam, S) {
   const lx = A3_S15_LX(AB_T2(t)), [hx, hy] = abP(lx, 680, cam);
-  if (t > 118.2 && t < 120.8) abSay(ctx, S, [[118.3, 'SOMEONE ON THIS STREET...'], [119.96, '...IS CLEVERER THAN US!']], t, K.clamp(hx, 330, 670), hy - 200, [hx, hy - 30], { size: 48, gone: 120.68 });
-  if (t > 121.6 && t < 122.0) abSay(ctx, S, [[121.6, '...IS CLEVERER THAN US!']], t, K.clamp(hx, 330, 670), hy - 200, [hx, hy - 30], { size: 48, gone: 121.75, pop: false });
-  if (t > 124.3 && t < 125.9) abSay(ctx, S, [[124.42, 'I WILL COME MYSELF.']], t, K.clamp(hx, 330, 670), hy - 200, [hx, hy - 30], { size: 52, gone: 125.6 });
+  if (t > 118.2 && t < 120.8) abSay(ctx, S, [[118.3, 'SOMEONE ON THIS STREET...'], [119.96, '...IS CLEVERER THAN US!']], t, K.clamp(hx, 400, 600), hy - 200, [hx, hy - 30], { size: 48, gone: 120.68 });
+  if (t > 121.6 && t < 122.0) abSay(ctx, S, [[121.6, '...IS CLEVERER THAN US!']], t, K.clamp(hx, 400, 600), hy - 200, [hx, hy - 30], { size: 48, gone: 121.75, pop: false });
+  if (t > 124.3 && t < 125.9) abSay(ctx, S, [[124.42, 'I WILL COME MYSELF.']], t, K.clamp(hx, 400, 600), hy - 200, [hx, hy - 30], { size: 52, gone: 125.6 });
 }
 AB_SHOTS.push({ a: 116.2, b: 120.7, ww: 2000, cam: a3Cam([[116.2, { x: 500, y: 680, zoom: 1.3 }], [120.7, { x: 490, y: 690, zoom: 1.5 }]]), world: a3S15World, over: a3S15Over });
 AB_SHOTS.push({ a: 120.7, b: 121.6, panel: (ctx, t, S) => { const tc = AB_T2(t); a3Eyes(ctx, t, { who: 'leader', gaze: [0.15, 0], lid: [0.2, 0.3, 0.4, 0.5][Math.min(3, Math.floor((tc - 120.7) * 6))], brow: 1, glint: 1 });
@@ -104,7 +104,7 @@ function a3S16Over(ctx, t, cam, S) {
   const [mx, my] = abP(900, 700, cam);
   if (t > 131.7 && t < 133.0) a3PicBalloon(ctx, K.clamp(mx, 250, 750), my - 230, 320, 220, [mx, my - 30], K.clamp((t - 131.7) / 0.25) * (1 - K.clamp((t - 132.8) / 0.2)), (c) => { const bx = K.clamp(mx, 250, 750), by = my - 230;
     a3Sneaker(c, bx - 60, by + 90, 0.62, t * 9, { q: true }); if (t > 132.1) a3Sneaker(c, bx + 60, by + 90, 0.62, t * 9 + 1.5, { q: true, col: '#8a5a3a' }); });
-  if (t > 133.0 && t < 134.3) abSay(ctx, S, [[133.16, 'BEWARE OF STRANGERS!']], t, K.clamp(mx + 40, 330, 670), my - 190, [mx, my - 30], { size: 52, gone: 134.1 });
+  if (t > 133.0 && t < 134.3) abSay(ctx, S, [[133.16, 'BEWARE OF STRANGERS!']], t, K.clamp(mx + 40, 400, 600), my - 190, [mx, my - 30], { size: 52, gone: 134.1 });
 }
 AB_SHOTS.push({ a: 128.3, b: 134.6, ww: 2000, cam: a3Cam([[128.3, { x: 960, y: 680, zoom: 1.35 }], [129.6, { x: 960, y: 680, zoom: 1.35 }], [129.9, { x: 600, y: 615, zoom: 1.0 }], [130.4, { x: 1500, y: 615, zoom: 1.0 }], [130.8, { x: 960, y: 680, zoom: 1.35 }], [134.6, { x: 975, y: 680, zoom: 1.35 }]]), world: a3S16World, over: a3S16Over });
 
@@ -151,13 +151,13 @@ function a3S17bWorld(ctx, t, cam) {
   if (t > 140.38 && t < 141.2) abBands(ctx, [300, 700, 700, 260], t, { cols: ['#ffd08a'], alpha: 0.22, w: 70, speed: 500, n: 2, angle: -0.6 });
 }
 function a3S17Over(ctx, t, cam, S) {
-  if (t > 142.3 && t < 143.6) { const [hx, hy] = abP(840, 690, cam); abSay(ctx, S, [[142.35, 'A BED FOR THE NIGHT?']], t, K.clamp(hx, 330, 670), hy - 200, [hx, hy - 30], { size: 52, gone: 143.3 }); }
+  if (t > 142.3 && t < 143.6) { const [hx, hy] = abP(840, 690, cam); abSay(ctx, S, [[142.35, 'A BED FOR THE NIGHT?']], t, K.clamp(hx, 400, 600), hy - 200, [hx, hy - 30], { size: 52, gone: 143.3 }); }
   if (t > 143.4) S.title(ctx, 'TO BE CONTINUED...', 500, 175, K.clamp((t - 143.4) / 1.0), { size: 70, align: 'center' });
 }
 function a3RingInsert(ctx, t) {
   const tc = AB_T2(t); a3WoodBg(ctx, '#7a4a2a'); abGlow(ctx, 160, 240, 420, 0.5, '#ffb860');
   const knocks = [141.6, 141.85, 142.1]; let pull = 1; for (const k of knocks) { const d = tc - k; if (d > -0.12 && d < 0.13) pull = Math.min(pull, d < 0 ? -d / 0.12 : d / 0.13); }
-  const sc = 1.7 - 0.08 * (1 - pull), hx = 520 + 40 * pull, hy = 600 + 30 * pull;
+  const sc = 2.5 - 0.12 * (1 - pull), hx = 560 + 60 * pull, hy = 640 + 40 * pull;
   for (const k of knocks) if (t > k && t < k + 0.25) a3Puff(ctx, 470, 680, (t - k) / 0.25, 5, 7, '#c89a6a');
   a3BigHand(ctx, hx, hy, sc, { sleeve: '#ecc062', sleeveD: '#d8a43a', curl: 1, skin: '#e8b08a', rot: 2.4, ring: { glint: tc > 142.1 ? K.clamp((t - 142.1) / 0.3) : 0 } });
 }

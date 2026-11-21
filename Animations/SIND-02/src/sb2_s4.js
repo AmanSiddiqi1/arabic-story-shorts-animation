@@ -8,10 +8,10 @@ function sbSlab1(t) {
   if (t < 118.22) { const u = K.ease.in(K.clamp((t - 110.0) / 0.5)); return { x: K.lerp(760, 700, u), y: K.lerp(764, 822, u), rot: K.lerp(0, SB_FLAT, u), sq: t > 110.5 ? impactSquash(t, 110.5, 0.9) * (t > 113.2 && t < 113.6 ? 0.96 : 1) : 1 }; }
   return null; }
 // slab 2: thrown from the rim (96.74), bounces down ledge to ledge, lands at (900, 822) (98.0); the eagle takes it (104.02)
-const SB2_BOUNCE = [[96.74, [1150, -1440]], [97.05, [1200, -650]], [97.35, [1100, -130]], [97.62, [1060, 390]], [98.0, [900, 822]]];
+const SB2_BOUNCE = [[96.74, [1150, -1440]], [97.05, [1200, -650]], [97.35, [1100, -130]], [97.62, [1060, 390]], [98.0, [1020, 822]]];
 function sbSlab2(t) { if (t < 96.74) return null; if (t < 98.0) { let i = 0; while (i < SB2_BOUNCE.length - 2 && t >= SB2_BOUNCE[i + 1][0]) i++; const [t0, a] = SB2_BOUNCE[i], [t1, b] = SB2_BOUNCE[i + 1], u = (t - t0) / (t1 - t0);
     return { x: K.lerp(a[0], b[0], u), y: K.lerp(a[1], b[1], u) - 120 * Math.sin(Math.PI * u), rot: SB_FLAT + t * 6, s: 1 }; }
-  return { x: 900, y: 822, rot: SB_FLAT, sq: impactSquash(t, 98.0, 0.85) }; }
+  return { x: 1020, y: 822, rot: SB_FLAT, sq: impactSquash(t, 98.0, 0.85) }; }
 // the eagle (Library hawk, eagle palette, s 2.2): its talons on the knob of a slab
 const SB2_ES = 2.2;
 function sbEagleAt(ctx, knob, t, o = {}) { const fly = !!o.fly, dir = o.dir || 1, x = knob[0] + (fly ? 114 * dir : -4 * SB2_ES * dir), y = knob[1] + (fly ? 0 : 0);
@@ -19,7 +19,7 @@ function sbEagleAt(ctx, knob, t, o = {}) { const fly = !!o.fly, dir = o.dir || 1
 // Sinbad strapped to the front of a slab, drawn inside its frame (one rot turns both): bands 0..2, lie k (on top when flat)
 function sbStrapped(c, t, P0, bands, flat) { const off = 46 * flat; c.save(); c.translate(off, 0);
   const P = sbLive(t, 11, { x: 0, y: 150, dir: 1, cloth: 'none', mouth: 'closed', ...P0 }); const Q = sbSin2(c, P);
-  for (let i = 0; i < bands; i++) { const y = i ? -40 : 30; celShade(c, [[-96, y - 8], [96, y - 8], [96, y + 8], [-96, y + 8]], SB_ACC, SB_ACCD, { light: [0, -1], off: 4, lw: 2.5, line: '#8a3a0e' }); }
+  for (let i = 0; i < bands; i++) { const y = i ? -40 : 30; celShade(c, [[-84, y - 8], [84, y - 8], [84, y + 8], [-84, y + 8]], SB_ACC, SB_ACCD, { light: [0, -1], off: 4, lw: 2.5, line: '#8a3a0e' }); }
   c.restore(); return Q; }
 const sbKnob = (S) => [S.x + Math.sin(S.rot) * 196 * (S.s || 1), S.y - Math.cos(S.rot) * 196 * (S.s || 1)];
 
@@ -39,14 +39,14 @@ function sbS15World(ctx, t, cam, S) { const tc = SB_T2(t);
   sbDiamondValley(ctx, t, cam);
   // three tiny throwers on the rim swing the second joint (96.74)
   for (let i = 0; i < 3; i++) { const sw = Math.sin(Math.PI * 2 * K.clamp((t - 96.2) / 0.5)) * (t < 96.74 ? 1 : 0); sbTrader(ctx, i, sbLive(t, 90 + i, { x: 1060 + i * 90, y: -1400, s: 0.5, dir: -1, aL: [1.2 + sw * (0.4 + 0.1 * i), 1.3], aR: [1.2 + sw * 0.4, 1.3], gaze: [-0.3, 1] })); }
-  if (t > 96.0 && t < 96.74) sbSlab(ctx, 1150, -1440 + 30 * Math.sin((t - 96.2) * 12), { rot: SB_FLAT, s: 0.6 });
+  if (t > 96.0 && t < 96.74) sbSlab(ctx, 1150, -1480 + 30 * Math.sin((t - 96.2) * 12), { rot: SB_FLAT, s: 0.6 });
   if (t > 96.74 && t < 98.1) sbDots(ctx, SB2_BOUNCE.map(([, p]) => p), 0.6, 6);
   if (t > 92.5 && t < 93.58) { const r = 20 + 160 * K.clamp((t - 92.5) / 1.0); ctx.save(); ctx.globalAlpha = 0.3; ctx.fillStyle = '#3a2a5a'; ctx.beginPath(); ctx.ellipse(700, 912, r, r * 0.3, 0, 0, 7); ctx.fill(); ctx.restore(); }
   const A = sbSlab1(t), B = sbSlab2(t);
   if (A) sbSlab(ctx, A.x, A.y, { rot: A.rot, sq: A.sq, wobble: A.wobble, stuck: 5 });
   if (B) sbSlab(ctx, B.x, B.y, { rot: B.rot, sq: B.sq, s: B.s, stuck: 4 });
   if (t > 93.58 && t < 94.4) { dustBurst(ctx, 640, 905, t - 93.58, 8, 8, 20, 140, 0.8, 1); dustBurst(ctx, 760, 905, t - 93.58, 8, 8, 20, 140, 0.8, 6); for (let i = 0; i < 6; i++) { const u = (t - 93.6) / 0.5; if (u < 1) sbGem(ctx, 600 + i * 40 + 60 * u * (i - 2.5) / 2.5, 905 - 70 * Math.sin(Math.PI * u) * (0.6 + 0.4 * (i % 2)), 9, { rot: u * 6 + i }); } }
-  if (t > 98.0 && t < 98.6) dustBurst(ctx, 900, 905, t - 98.0, 6, 6, 14, 90, 0.6, 2);
+  if (t > 98.0 && t < 98.6) dustBurst(ctx, 1020, 905, t - 98.0, 6, 6, 14, 90, 0.6, 2);
   const P = sbS15SinP(t); groundShadow(ctx, P.x, 905, 80, 900 - P.y, { flat: true }); const Q = sbSin2(ctx, P);
   if (t > 100.94) { const h = sbHandW(Q, t > 101.9 ? 0 : 1); sbGem(ctx, h[0], h[1] - 8, 10, { rot: 0.3, glow: 0.5 }); }
 }
@@ -55,13 +55,13 @@ function sbS15Over(ctx, t, cam, S) {
   if (t > 101.64 && t < 102.1) { const p = sbP(700, 740, cam); sbTag(ctx, S, 'STICKY!', p[0] + 120, p[1] - 220, t, 101.7, 102.4, { size: 50 }); S.arrow(ctx, [p[0] + 70, p[1] - 180], [p[0] + 10, p[1] - 90], K.clamp((t - 101.75) / 0.3)); }
   // the insert (99.94 - 100.94): the underside of the joint with five diamonds pressed into the fat, glinting in turn
   if (t >= 99.94 && t < 100.94) { sbGrad(ctx, 0, 0, 1000, 1230, [[0, '#f0c8b8'], [1, '#d898a8']]); ctx.save(); ctx.translate(500, 615); ctx.scale(4.2, 4.2); sbSlab(ctx, 30, 0, { rot: 0, stuck: 0 }); ctx.restore();
-    for (let i = 0; i < 5; i++) { const x = 230 + (i % 2) * 40, y = 260 + i * 170; sbGem(ctx, x, y, 40, { rot: i * 0.5, glow: 0.4, tint: ['#bfeaff', '#ffd8f0', '#d8ffe8'][i % 3] }); const u = (t - 99.94 - i * 0.18) / 0.3; if (u > 0 && u < 1) sbGlint(ctx, x, y - 20, 60, u); } }
+    for (let i = 0; i < 5; i++) { const x = 340 + (i % 2) * 24, y = 330 + i * 140; sbGem(ctx, x, y, 40, { rot: i * 0.5, glow: 0.4, tint: ['#bfeaff', '#ffd8f0', '#d8ffe8'][i % 3] }); const u = (t - 99.94 - i * 0.18) / 0.3; if (u > 0 && u < 1) sbGlint(ctx, x, y - 20, 60, u); } }
 }
 SB_SHOTS.push({ a: 92.48, b: 102.1, free: true, cam: sbKeys([[92.48, { x: 800, y: 430, zoom: 0.85 }], [96.22, { x: 800, y: 430, zoom: 0.85 }], [96.7, { x: 1000, y: -1100, zoom: 0.85 }], [97.3, { x: 1000, y: -1100, zoom: 0.85 }], [97.7, { x: 780, y: 430, zoom: 0.85 }], [98.6, { x: 720, y: 620, zoom: 1.15 }], [102.1, { x: 720, y: 620, zoom: 1.15 }]]), world: sbS15World, over: sbS15Over });
 
 // ---------- S16 (102.1 - 109.75): the eagle takes the second joint up to its nest; AHA! ----------
 const SB2_EAG = (t) => { // knob position of slab 2 while carried, and the eagle state
-  const pts = [[104.02, [900 - 196, 822]], [104.6, [880, 520]], [105.2, [930, 250]], [105.96, [960, -700]], [106.5, [1060, -1230]], [106.86, [1080, -1090 - 196 + 136]]];
+  const pts = [[104.02, [1020 - 196, 822]], [104.6, [900, 520]], [105.2, [930, 250]], [105.96, [960, -700]], [106.5, [1060, -1230]], [106.86, [1080, -1090 - 196 + 136]]];
   let i = 0; while (i < pts.length - 2 && t >= pts[i + 1][0]) i++; const [t0, a] = pts[i], [t1, b] = pts[i + 1], u = K.ease.inOut(K.clamp((t - t0) / (t1 - t0)));
   return [K.lerp(a[0], b[0], u), K.lerp(a[1], b[1], u)]; };
 function sbS16World(ctx, t, cam, S) { const tc = SB_T2(t);
@@ -69,19 +69,19 @@ function sbS16World(ctx, t, cam, S) { const tc = SB_T2(t);
   sbStickNest(ctx, 'back'); for (let i = 0; i < 2; i++) sbEaglet(ctx, 1200 + i * 60, -1090, { s: 0.8, bob: 8 * Math.abs(Math.sin(tc * (2.6 + i * 0.7) + i * 1.7)), beak: Math.sin(tc * 5 + i * 2) > 0.5 ? 1 : 0, gaze: t > 106.86 ? [-1, 0.3] : [0, 1], tilt: t > 106.86 ? -0.3 : 0 }); sbStickNest(ctx, 'front');
   sbSnakes(ctx, t);
   // the circling shadow (102.1 - 103.36)
-  if (t > 102.1 && t < 103.5) { const a = tc * 3, r = 220 - 120 * K.clamp((t - 102.1) / 1.2); ctx.save(); ctx.globalAlpha = 0.25; ctx.fillStyle = '#3a2a5a'; ctx.beginPath(); ctx.ellipse(880 + Math.cos(a) * r, 930 + Math.sin(a) * r * 0.2, 120, 30, 0, 0, 7); ctx.fill(); ctx.restore(); }
+  if (t > 102.1 && t < 103.5) { const a = tc * 3, r = 220 - 120 * K.clamp((t - 102.1) / 1.2); ctx.save(); ctx.globalAlpha = 0.25; ctx.fillStyle = '#3a2a5a'; ctx.beginPath(); ctx.ellipse(980 + Math.cos(a) * r, 930 + Math.sin(a) * r * 0.2, 120, 30, 0, 0, 7); ctx.fill(); ctx.restore(); }
   const A = sbSlab1(t); const P = sbLive(t, 11, { x: 640, y: 900, dir: 1, cloth: 'sling', mouth: 'closed', gaze: [0.6, -0.6] }, [102.9, 104.6]);
   if (t > 102.88) { P.kneel = 1; P.x = 650; P.gaze = t < 104.02 ? [1, 0.1] : look(tc, [650, 700], [[104.02, [900, 700]], [104.6, [920, 300]], [105.2, [950, -400]]]); P.tip = t > 104.62 ? -0.15 * K.clamp((t - 104.62) / 0.5) : 0; if (t > 105.2) { P.kneel = 0; P.sit = 1; P.seat = 'floor'; P.sq *= landSquash(tc, 105.2, 0.14); } }
   sbSin2(ctx, P);
   if (A) sbSlab(ctx, A.x, A.y, { rot: A.rot, stuck: 5 });
   // the eagle: drops in (103.36), grips, looks hard left and right, three beats (104.02), climbs with the joint swinging, sets it down (106.86)
   if (t > 103.0) { let knob, fly, flap, sq = 1, hr = 0, swg = 0;
-    if (t < 103.6) { const u = K.clamp((t - 103.0) / 0.6); knob = [K.lerp(500, 704, u), K.lerp(200, 822, u * u)]; fly = true; flap = Math.sin(tc * 14); }
-    else if (t < 104.02) { knob = [704, 822]; fly = false; sq = landSquash(tc, 103.6, 0.15) * anticipate(tc, 103.8, 0.22, 0.12); hr = t < 103.75 ? 0 : t < 103.9 ? -0.35 : 0.35; }
+    if (t < 103.6) { const u = K.clamp((t - 103.0) / 0.6); knob = [K.lerp(560, 824, u), K.lerp(200, 822, u * u)]; fly = true; flap = Math.sin(tc * 14); }
+    else if (t < 104.02) { knob = [824, 822]; fly = false; sq = landSquash(tc, 103.6, 0.15) * anticipate(tc, 103.8, 0.22, 0.12); hr = t < 103.75 ? 0 : t < 103.9 ? -0.35 : 0.35; }
     else if (t < 106.86) { knob = SB2_EAG(t); fly = true; flap = Math.sin(tc * 11); swg = 0.25 * Math.sin((tc - 104.1) * 4.2 - 0.6) * Math.exp(-(t - 104.02) * 0.5); }
     else { knob = [1080, -1090 - 60]; fly = false; sq = landSquash(tc, 106.86, 0.12); hr = 0.25 * Math.sin(tc * 2); }
     if (t > 104.02) { const r = SB_FLAT + K.clamp((t - 104.02) / 0.5) * (Math.PI / 2) + swg, c = [knob[0] - Math.sin(r) * 196, knob[1] + Math.cos(r) * 196]; if (t < 106.86) sbSlab(ctx, c[0], c[1], { rot: r, stuck: 4 }); else sbSlab(ctx, 1040, -1090 - 78, { rot: SB_FLAT, stuck: 4 }); }
-    else sbSlab(ctx, 900, 822, { rot: SB_FLAT, stuck: 4, sq: t > 103.6 ? 0.96 : 1 });
+    else sbSlab(ctx, 1020, 822, { rot: SB_FLAT, stuck: 4, sq: t > 103.6 ? 0.96 : 1 });
     sbEagleAt(ctx, knob, t, { fly, flap, sq, headRot: hr, dir: t < 104.02 ? 1 : 1 }); }
   else { const B = sbSlab2(t); if (B) sbSlab(ctx, B.x, B.y, { rot: B.rot, stuck: 4 }); }
 }
@@ -95,8 +95,8 @@ function sbS16bWorld(ctx, t, cam, S) { const tc = SB_T2(t); sbDiamondValley(ctx,
   const P = sbLive(t, 11, { x: 600, y: 900, dir: 1, cloth: 'sling', sit: 1, seat: 'floor', mouth: 'closed' }, [108.4, 108.7, 109.0]);
   P.gaze = gazePlan(SB_T3(t), [[108.16, [0.5, -1]], [108.4, [1, 0.2]], [108.7, [-0.2, 1]]], 0.12); P.mouth = t > 108.9 ? 'smile' : 'closed'; if (t > 109.1) { P.handR = PERSON_HANDS.pointUp.R; P.brow = -0.4; }
   sbSin2(ctx, P); const A = sbSlab1(t); sbSlab(ctx, A.x, A.y, { rot: A.rot, stuck: 5 }); }
-function sbS16bOver(ctx, t, cam, S) { if (t > 108.3 && t < 109.75) S.title(ctx, 'AHA!', 300, 300, K.clamp((t - 108.3) / 0.4), { size: 92, align: 'center' });
-  if (t > 108.9) { const h = sbP(600, 690, cam); thoughtCloud(ctx, 640, 330, 460, 300, t, { p: K.clamp((t - 108.9) / 0.45), tail: [h[0] + 30, h[1] - 30], fill: '#fff6ea', scale: 0.32, at: [500, 760], seed: 9,
+function sbS16bOver(ctx, t, cam, S) { if (t > 108.3 && t < 109.75) S.title(ctx, 'AHA!', 220, 200, K.clamp((t - 108.3) / 0.4), { size: 84, align: 'center' });
+  if (t > 108.9) { const h = sbP(600, 690, cam); thoughtCloud(ctx, 690, 380, 460, 300, t, { p: K.clamp((t - 108.9) / 0.45), tail: [h[0] + 30, h[1] - 30], fill: '#fff6ea', scale: 0.32, at: [500, 760], seed: 9,
     inside: (k) => { const sw = 0.12 * Math.sin(SB_T2(t) * 3); bird(k, { kind: 'hawk', pal: 1, s: 2.4, x: 600, y: 520, fly: true, flap: Math.sin(SB_T2(t) * 9), grip: 1 }); const kn = [480, 520]; k.save(); k.translate(kn[0], kn[1]); k.rotate(sw); sbSlab(k, 0, 196, { rot: 0, front: (c) => sbStrapped(c, t, { aR: [2.6, 2.9], mouth: 'smile', gaze: [0, 0] }, 2, 0) }); k.restore(); } }); } }
 SB_SHOTS.push({ a: 108.16, b: 109.75, free: true, cam: sbKeys([[108.16, { x: 640, y: 620, zoom: 1.15 }], [109.75, { x: 660, y: 620, zoom: 1.15 }]]), world: sbS16bWorld, over: sbS16bOver });
 

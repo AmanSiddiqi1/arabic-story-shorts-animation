@@ -170,7 +170,7 @@ function h1SkyOver(ctx, t, S, H, PP) {
   if (t >= 106.55 && t < 107.0) { const [x, y] = ehHorsePt(H, [190, -320]); S.title(ctx, 'TOK', Math.min(900, x + 40), y - 60, K.clamp((t - 106.55) / 0.15), { size: 48, align: 'center' }); }
   // the memory (S12, v2 note 10): a large thought cloud, a crop of the horse's head and neck with the inventor pointing, DOWN flashing at the ear as at 63.68
   if (t >= 109.2 && t < 113.6) { const p = t < 113.42 ? K.clamp((t - 109.2) / 1.1) : 1 - K.clamp((t - 113.42) / 0.18);
-    thoughtCloud(ctx, 380, 330, 700, 540, t, { p, tail: [head[0] - 40, head[1] - 60], scale: 1.05, at: [1150, 650], bg: '#bfe6ff', seed: 5, inside: (c) => h1Memory(c, t) }); }
+    thoughtCloud(ctx, 380, 330, 700, 540, t, { p, tail: [head[0] - 40, head[1] - 60], scale: 1.05, at: [1100, 600], bg: '#bfe6ff', seed: 5, inside: (c) => h1Memory(c, t) }); }
   if (t >= 127.22 && t < 129.9) h1Say(ctx, S, [[127.3, 'PERHAPS THIS IS...'], [128.5, ['PERHAPS THIS IS', 'MY WAY TO SAFETY...']]], t, head[0] - 60, head[1] - 210, [head[0], head[1] - 60], { gone: 129.7, size: 40 });
   if (t >= 134.3) { const p = K.clamp((t - 134.3) / 0.9); S.title(ctx, 'TO BE CONTINUED...', 500, 160, p, { size: 74, align: 'center', glow: '#ff7ad9' }); }
 }

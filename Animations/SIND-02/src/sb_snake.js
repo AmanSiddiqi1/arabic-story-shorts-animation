@@ -30,7 +30,7 @@ function sbSnake(ctx, path, t, o = {}) {
     ctx.fillStyle = pal.pat; ctx.beginPath(); ctx.moveTo(-r * 1.2, 0); ctx.lineTo(0, -r); ctx.lineTo(r * 1.2, 0); ctx.lineTo(0, r); ctx.closePath(); ctx.fill(); ctx.strokeStyle = pal.line; ctx.lineWidth = 2; ctx.stroke(); ctx.restore(); }
   ctx.restore();
   // head: a rounded wedge at the path end, sleepy eyes, tongue and yawn
-  const H = pts[m - 1], Hb = pts[m - 4], dir = o.dir ?? (H[0] >= Hb[0] ? 1 : -1), ang = Math.atan2(H[1] - Hb[1], (H[0] - Hb[0]) * dir) * 0.6 + (o.headRot || 0), hw = w * 0.85, mo = K.clamp(o.mouth || 0);
+  const H = pts[m - 1], Hb = pts[Math.max(0, m - 4)], dir = o.dir ?? (H[0] >= Hb[0] ? 1 : -1), ang = Math.atan2(H[1] - Hb[1], (H[0] - Hb[0]) * dir) * 0.6 + (o.headRot || 0), hw = w * 0.85, mo = K.clamp(o.mouth || 0);
   ctx.save(); ctx.translate(H[0], H[1]); ctx.scale(dir, 1); ctx.rotate(ang);
   if (o.tongue > 0) { const tl = 40 * o.tongue * w / 70; ctx.strokeStyle = '#e8364f'; ctx.lineWidth = 5; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(hw * 1.3, 8); ctx.lineTo(hw * 1.3 + tl, 8); ctx.lineTo(hw * 1.3 + tl + 12, 0); ctx.moveTo(hw * 1.3 + tl, 8); ctx.lineTo(hw * 1.3 + tl + 12, 16); ctx.stroke(); }
   if (mo > 0.02) celShade(ctx, [[0, 6], [hw * 1.3, 10], [hw * 1.1, 10 + hw * 0.9 * mo], [0, 20 + hw * 0.4 * mo]], '#c8405a', '#8a2a3a', { light: [0, -1], off: 6, lw: 3, line: pal.line });

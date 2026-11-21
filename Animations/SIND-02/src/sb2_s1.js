@@ -107,7 +107,13 @@ function sbS2World(ctx, t, cam) {
   // climbers in the air between the deck and the skiff (drawn in the world)
   for (const c of SB2_SKC) { const u = (t - c.at) / 0.24; if (u < 0 || u >= 1) continue; const a = sbDhowPt(D, -40 + c.lx * 0.4, -80), b = [Sk.x + c.lx, Sk.y - 14], x = K.lerp(a[0], b[0], u), y = K.lerp(a[1], b[1], u) - 50 * Math.sin(Math.PI * u);
     sbS2Person(ctx, c.who, t, { x, y, gaze: [0, 1], aL: [2.2, 2.6], aR: [2.2, 2.6], mouth: c.who === 'm1' ? 'o' : 'smile' }); }
+  sbReflect(ctx, D.x, D.y + 4, 520, ['#a8643a', '#2ab0b0', '#fbf3df', '#d0285a'], t, { rows: 6, gap: 10, a: 0.5, seed: 5 });
+  if (t > 8.4) sbReflect(ctx, Sk.x, Sk.y + 4, 220, ['#a8643a', '#2ab0b0'], t, { rows: 3, gap: 8, a: 0.45, seed: 6 });
   sbSeaLayer(ctx, 3, t, sea, -200, 2600);
+  // one living thing in the near water: a school under the surface, then two dolphins racing the skiff to the island
+  sbSchoolShadow(ctx, 760 + 80 * Math.sin(t * 0.4), 1010, t, 12, { seed: 72 });
+  for (let i = 0; i < 2; i++) sbDolphinLeap(ctx, 620 + i * 120 + (t > 9.92 ? 500 : 0), 900 + i * 120 + (t > 9.92 ? 500 : 0), 960 + i * 30, ((t - (t > 9.92 ? 10.3 : 6.0) - i * 0.35) / 0.9), 120, 0.55);
+  sbSeaNear(ctx, t, sea, cam);
   // landing: everyone out on the sand, the fat merchant kisses the ground
   if (t >= 11.2) sbS2Beach(ctx, t, Sk);
 }

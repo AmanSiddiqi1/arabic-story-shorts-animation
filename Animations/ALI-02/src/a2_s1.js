@@ -15,13 +15,14 @@ function a2S1Cassim(ctx, t, m, mode) {
   if (tc < 2.3) { P.gaze = [0.4, -1]; P.tip = -0.06; }   // lands looking up the rock face
   else if (tc < 3.55) { P.gaze = gazePlan(tc, [[2.3, [-1, 0]], [2.7, [-1, 0.1]], [3.05, [1, 0]], [3.4, [0.6, -0.4]]]); P.mouth = 'smile'; P.handL = [18 + 4 * osc(tc, 0.3), -138]; P.handR = [28 - 4 * osc(tc, 0.3), -132]; P.drop = 3; }
   const a = a2ArmVal(tc, A2_S1_T0); if (tc > 4.3 && tc < 6.4) { P.handR = a2ArmHand(a); P.gaze = [1, -0.4]; P.eyes = 'wide'; P.sq *= anticipate(tc, 4.3, 0.45, 0.06); P.talk = abTalk(t, 4.9, 6.28, 2); if (P.talk) P.mouth = 'open'; }
-  if (tc > 3.55 && tc < 4.3) P.sq *= 1 + 0.03 * beatIn(tc, 3.9, 4.25);   // chest out, breath in
+  if (tc > 3.55 && tc < 4.3) { P.sq *= 1 + 0.03 * beatIn(tc, 3.9, 4.25); P.lid = 0.3; P.tip = -0.05; P.mouth = 'grin'; P.grin = 1;   // chest out, smug lids, a last hand rub
+    P.handL = [18 + 5 * osc(tc, 0.22), -132]; P.handR = [30 - 5 * osc(tc, 0.22), -128]; }
   if (tc >= 6.4) { P.handR = [40, -140]; P.mouth = 'grin'; P.grin = 1; P.amp = Math.min(P.amp, 0.8); }
   const coin = K.clamp((t - 6.28) / 0.2) * (1 - K.clamp((t - 6.9) / 0.2));
   const draw = (c, xx, yy, k) => { const Q = { ...P, x: xx, y: yy, s: 1.1 * k }; a2Cas(c, Q, m, { shadow: mode === 'out', shc: A2_SH, coin, fa: 0.35 - lagged((u) => 0.4 * (A2_S1_X(u) - 1680) / 235, tc, 0.12, 1) });
     const h = a2Hand(Q, 0, A2_CAS); abSack(c, h[0] - 8, h[1] + 10, 0.5 * k, 0, { flap: 6 * Math.sin(t * 8), rot: 0.3 }); abSack(c, h[0] - 2, h[1] + 4, 0.46 * k, 0, { flap: 5 * Math.sin(t * 7 + 1), rot: 0.1, col: '#b88c58' }); };
-  if (mode === 'out' && x < AB_DIN - 100) { draw(ctx, x, 900, 1); return P; }
-  a2DoorFig(ctx, t, x, 900, draw, mode, { maxDark: 0.75, rim: '#ffd76a' }); return P;
+  if (mode === 'out' && x < AB_DIN) { draw(ctx, x, 900, 1); return P; }   // v2 (note 2): no silhouette before the door line
+  a2DoorFig(ctx, t, x, 900, draw, mode, { maxDark: 0.45 * K.clamp((x - AB_DIN) / (AB_DEND - AB_DIN)), rim: '#ffd76a' }); return P;
 }
 function a2S1World(ctx, t, cam) {
   const tc = AB_T2(t), m = 'dawn', op = A2_S1_OPEN(t), crack = K.clamp((t - 5.8) / 0.45) * (op > 0 || t < 7.4 ? 1 : 0), glow = K.clamp((t - 5.8) / 0.6) * (1 - K.clamp((t - 7.9) / 0.3));
@@ -51,11 +52,11 @@ function a2S1World(ctx, t, cam) {
     bird(ctx, { kind: 'sparrow', x: bx, y: by, s: 0.5, dir: -1, fly, flap: fly ? Math.sin(tc * 26) : 0, tip: idleSway(tc, 71, 0.05, 1.3) }); }
 }
 function a2S1Over(ctx, t, cam, S) {
-  if (t > 0.3 && t < 3.6) { const off = t > 3.1 ? [1, 0, 1, 0, 0, 0][Math.min(5, Math.floor((t - 3.1) * 12))] : 1;
+  if (t > 0.3 && t < 2.9) { const off = t > 2.4 ? [1, 0, 1, 0, 0, 0][Math.min(5, Math.floor((t - 2.4) * 12))] : 1;
     if (off) { const dy = (cam.y - 470) * -0.5; S.title(ctx, 'THE FORGOTTEN', 500, 190 + dy, K.clamp((t - 0.3) / 1.0), { size: 88, align: 'center' }); S.title(ctx, 'PASSWORD', 500, 290 + dy, K.clamp((t - 0.45) / 1.0), { size: 88, align: 'center' });
       if (t > 0.9) S.title(ctx, 'الكلمات المنسية', 500, 420 + dy, K.clamp((t - 0.9) / 1.0), { size: 74, align: 'center', font: 'Lalezar', glow: '#8a5cff' }); } }
   if (t > 4.6 && t < 6.9) { const x = A2_S1_X(AB_T2(t)), [hx, hy] = abP(x, 900 - 230, cam); abSay(ctx, S, [[4.895, 'OPEN...'], [5.66, 'OPEN SESAME!']], t, Math.min(hx + 40, 760), 260, [hx, hy], { size: 56, gone: 6.6 }); }
-  if (t > 1.0 && t < 2.6) { const [x, y] = abP(1180, 560, cam); S.label(ctx, 'CASSIM', x, y, K.clamp((t - 1.0) / 0.4), { size: 40 }); }
+  if (t > 2.5 && t < 3.9) { const [x, y] = abP(1180, 560, cam); S.label(ctx, 'CASSIM', x, y, K.clamp((t - 2.5) / 0.4), { size: 40 }); }
 }
 AB_SHOTS.push({ a: 0, b: 8.22, ww: 2400, cam: a2Cam(A2_S1_CAM), under: a2GladeUnder('dawn'), world: a2S1World, over: a2S1Over });
 
@@ -72,7 +73,7 @@ function a2Heap(ctx, t, o = {}) { A2_HEAP.forEach(([x, s, r], i) => { if (o.skip
 function a2BigSack(ctx, t, o = {}) { abSack(ctx, A2_BIG[0], A2_BIG[1] - (o.lift || 0), 1.05, 1, { coin: true, sq: o.sq || 1, tie: '#c8481a' }); }
 
 // ---------- S2 8.22-14.55: the pan to the gold; five sacks fill (counter); the big one wins ----------
-const A2_S2_CAM = [[8.22, { x: 520, y: 690, zoom: 1.5 }], [10.9, { x: 640, y: 690, zoom: 1.5 }], [14.55, { x: 652, y: 690, zoom: 1.5 }]];
+const A2_S2_CAM = [[8.22, { x: 1060, y: 615, zoom: 1.0 }], [9.0, { x: 1000, y: 615, zoom: 1.0 }], [10.0, { x: 760, y: 650, zoom: 1.2 }], [10.9, { x: 640, y: 690, zoom: 1.5 }], [14.55, { x: 652, y: 690, zoom: 1.5 }]];
 const A2_LIFT = [[11.6, 0], [11.9, 0], [12.25, 12], [12.46, 11], [13.36, 2], [13.38, 0]];
 function a2S2Cassim(ctx, t, m) {
   const tc = AB_T2(t); let x = 560, P = { x, y: 902, dir: 1, kneel: 1, mouth: 'grin', grin: 0.9, gaze: [1, 0.4], lid: abLid(t, 55), tip: 0.06 + idleSway(tc, 56, 0.02, 2.2), sq: breathe(tc, 57, 0.015), fin: A2_GOLDRIM };
@@ -166,9 +167,14 @@ AB_SHOTS.push({ a: 19.9, b: 20.92, panel: (ctx, t, S) => { const tc = AB_T3(t);
   a2EyesClose(ctx, t, { gaze: gazePlan(tc, [[19.9, [-0.8, -0.3]], [20.12, [0.8, -0.2]], [20.32, [-0.8, -0.2]], [20.7, [0, 0.4]]]), lid: abBlinkAt(tc, 20.5), iris: 0.85, brow: -0.8, mouth: 'o', sweat: K.clamp((t - 19.95) / 0.9), t }, { dx: tremble(t, 1.5, 7) }); } });
 
 // ---------- S4 20.92-33.46: OPEN WHEAT! OPEN BARLEY! nothing; the tilt up the slab; he slides down; the light cools; the heart ----------
-const A2_S4_CAM = [[20.92, { x: 420, y: 680, zoom: 1.35 }], [25.74, { x: 430, y: 670, zoom: 1.35 }], [27.0, { x: 330, y: 560, zoom: 1.3 }], [29.9, { x: 360, y: 600, zoom: 1.3 }], [31.0, { x: 380, y: 720, zoom: 1.7 }], [33.46, { x: 372, y: 724, zoom: 1.72 }]];
+// v2 (note 4): 25.74 a real low framing on the door (floor near the bottom edge, the slab big, Cassim small at its foot); 28.84 the
+// cold repaint of the cave; then the heart push-in
+const A2_S4_CAM = (t) => t < 25.74 ? K.camAt([[20.92, { x: 420, y: 680, zoom: 1.35 }], [25.74, { x: 430, y: 670, zoom: 1.35 }]], t)
+  : t < 28.84 ? K.camAt([[25.74, { x: 262, y: 652, zoom: 1.9 }], [28.84, { x: 262, y: 646, zoom: 1.95 }]], t)
+  : K.camAt([[28.84, { x: 360, y: 640, zoom: 1.3 }], [29.9, { x: 360, y: 620, zoom: 1.3 }], [31.0, { x: 380, y: 720, zoom: 1.7 }], [33.46, { x: 372, y: 724, zoom: 1.72 }]], t);
+const A2_COOL = (t) => K.clamp((t - 28.84) / 0.5);
 const A2_S4_T1 = 21.764, A2_S4_X = (t) => kfn(t, [[26.2, 380], [26.5, 302]], 'inOut');
-const A2_S4_DIM = (t) => 0.4 * K.clamp((t - 28.84) / 1.0);
+const A2_S4_DIM = (t) => 0.2 * K.clamp((t - 28.84) / 1.0);
 const A2_BEATS = [30.58, 31.08, 31.58, 32.08, 32.55, 32.95];
 function a2Beat(t) { let v = 0; for (const b of A2_BEATS) if (t >= b && t < b + 0.3) v = Math.max(v, Math.exp(-(t - b) * 9)); return v; }
 function a2S4Cassim(ctx, t, m) {
@@ -192,7 +198,7 @@ function a2S4Cassim(ctx, t, m) {
   a2Cas(ctx, P, m, o); return P;
 }
 function a2S4World(ctx, t, cam) {
-  const tc = AB_T2(t), dim = A2_S4_DIM(t); a2CaveWorld(ctx, t, cam, { door: {}, dim: dim / 0.4, liveT: t - 0.4 * Math.max(0, t - 28.84) });
+  const tc = AB_T2(t), dim = A2_S4_DIM(t); a2CaveWorld(ctx, t, cam, { door: {}, dim: dim / 0.4, cool: A2_COOL(t), liveT: t - 0.4 * Math.max(0, t - 28.84) });
   a2CoinTrail(ctx, {}); a2BigSack(ctx, t); a2Heap(ctx, t);
   // his shadow on the slab grows as the light cools
   if (t > 27.42) { const g = 1 + 0.5 * K.clamp((t - 28.84) / 1.0); ctx.save(); ctx.globalAlpha = 0.3; ctx.fillStyle = '#1a0c14'; ctx.beginPath(); ctx.ellipse(250, 860 - 60 * g, 50 * g, 90 * g, 0, 0, 7); ctx.fill(); ctx.restore(); }
@@ -209,7 +215,7 @@ function a2Echo(ctx, t, cam, t0, k = 1) {   // two echo rings travel from his mo
   for (let i = 0; i < 2; i++) { const u = (t - t0 - i * 0.12) / 0.7; if (u < 0 || u > 1) continue; const out = u < 0.5, v = out ? u * 2 : (u - 0.5) * 2, x = out ? K.lerp(345, 285, v) : K.lerp(285, 345, v), r = (out ? 40 + 60 * v : 100 - 50 * v) * k;
     const [px, py] = abP(x, 690, cam); ctx.save(); ctx.globalAlpha = 0.8 * (1 - v * 0.6) * (out ? 1 : 0.6); ctx.strokeStyle = '#ffe6a0'; ctx.lineWidth = 6; ctx.lineCap = 'round'; ctx.beginPath(); ctx.arc(px, py, r * cam.zoom, out ? Math.PI - 0.8 : -0.8, out ? Math.PI + 0.8 : 0.8); ctx.stroke(); ctx.restore(); }
 }
-AB_SHOTS.push({ a: 20.92, b: 33.46, ww: 1600, cam: a2Cam(A2_S4_CAM), under: a2CaveUnder(A2_S4_DIM), world: a2S4World,
+AB_SHOTS.push({ a: 20.92, b: 33.46, ww: 1600, cam: A2_S4_CAM, under: a2CaveUnder(A2_S4_DIM), world: a2S4World,
   over: (ctx, t, cam, S) => { abStalactites(ctx, cam);
     const [hx, hy] = abP(A2_S4_X(t), 900 - 240, cam);
     abSay(ctx, S, [[22.404, 'OPEN...'], [23.18, 'OPEN WHEAT!']], t, 590, 330, [hx, hy], { size: 52, gone: 23.98, icon: t > 23.18 ? (c, x, y) => a2Grain(c, 'wheat', x, y, 1.1, -0.2) : null });
@@ -219,13 +225,16 @@ AB_SHOTS.push({ a: 20.92, b: 33.46, ww: 1600, cam: a2Cam(A2_S4_CAM), under: a2Ca
 
 // ---------- S5 33.46-43.88: three jump cuts (rice, lentils, beans), the grain ring, the sesame seed unnoticed, he sits, he thinks ----------
 const A2_JC = [33.46, 35.18, 35.72];
-const A2_S5_CAM = (t) => t < 35.18 ? { x: 400, y: 690, zoom: 1.6 } : t < 35.72 ? { x: 400, y: 688, zoom: 1.5 } : K.camAt([[36.4, { x: 400, y: 690, zoom: 1.4 }], [42.3, { x: 520, y: 660, zoom: 1.15 }], [43.88, { x: 526, y: 660, zoom: 1.14 }]], t);
+// v2 (note 4): three different set-ups for the three jump cuts (door and Cassim from the right; a close two-thirds figure pounding
+// the slab; the wide from behind the sacks, door and Cassim small), then the pull-out to the whole room for the lonely sit
+const A2_S5_CAM = (t) => t < 35.18 ? { x: 228, y: 668, zoom: 2.2 + 0.04 * beatIn(t, 33.46, 35.18) } : t < 35.72 ? { x: 262, y: 702, zoom: 2.6 }
+  : t < 36.4 ? { x: 560, y: 615, zoom: 1.0 } : K.camAt([[36.4, { x: 400, y: 690, zoom: 1.4 }], [39.4, { x: 420, y: 680, zoom: 1.3 }], [41.2, { x: 520, y: 615, zoom: 1.0 }], [43.88, { x: 540, y: 615, zoom: 1.0 }]], t);
 const A2_S5_X = (t) => kfn(t, [[37.6, 330], [38.7, 330], [39.4, 352], [40.0, 340]], 'inOut');
 const A2_S5_SIT = 40.1, A2_S5_LAND = 40.38;
 function a2S5Cassim(ctx, t, m) {
   const tc = AB_T2(t), P = { x: 380, y: 902, dir: -1, mouth: 'closed', gaze: [1, 0], lid: abLid(t, 64), tip: idleSway(tc, 65, 0.02, 2.4), sq: breathe(tc, 66, 0.02), fin: A2_GOLDRIM, brow: 0.4 }, o = { shc: A2_SH, fa: 0.35 };
   if (tc < 35.18) { P.handR = a2ArmHand(tc < 34.1 ? a2ArmVal(tc, 33.46) : 1 + 0.03 * osc(tc, 0.7)); P.handL = PERSON_HANDS.hipsHands.L; P.brow = 0.8; P.talk = abTalk(t, 33.6, 35.18, 7); P.mouth = P.talk ? 'open' : 'closed'; P.gaze = [1, -0.3]; P.tip = 0.04 + idleSway(tc, 65, 0.02, 2.4); }
-  else if (tc < 35.72) { P.handR = [34, -180]; P.handL = [20, -176]; P.sq = 1.05; P.y = 896; P.lid = 1; P.talk = abTalk(t, 35.18, 35.72, 8); P.mouth = 'open'; P.tip = -0.06; o.fa = 0.55 + 0.1 * Math.sin(tc * 30); }
+  else if (tc < 35.72) { const b1 = Math.abs(Math.sin((tc - 35.18) * 22)), b2 = Math.abs(Math.sin((tc - 35.18) * 22 + 1.4)); P.x = 318; P.handR = [74, -186 + 40 * b1]; P.handL = [62, -170 + 40 * b2]; P.sq = 1.03; P.lid = 1; P.talk = abTalk(t, 35.18, 35.72, 8); P.mouth = 'open'; P.tip = 0.08 + 0.04 * b1; P.brow = 1; o.fa = 0.55 + 0.15 * Math.sin(tc * 30); }
   else if (tc < 37.62) { P.x = 330; P.kneel = 1; P.tip = 0.12; P.handR = tc < 36.4 ? [70, -150 + 12 * Math.abs(Math.sin(tc * 26))] : [40, -110]; P.handL = [-20, -110]; P.lid = tc < 36.4 ? 0.6 : 0; P.mouth = tc < 36.4 ? 'open' : 'o';
     if (tc >= 36.4) { const a = tc * 2.2 * 1.0; P.gaze = [Math.cos(a), Math.sin(a) * 0.6]; P.tip = 0.03; } }
   else { const st = beatIn(tc, 37.62, 37.9); P.x = A2_S5_X(tc); Object.assign(P, walk(A2_S5_X, tc, { stride: 22 })); P.kneel = 1 - st; P.dir = -1;
@@ -233,13 +242,14 @@ function a2S5Cassim(ctx, t, m) {
     else if (tc < A2_S5_SIT) { const a = tc * 4.4; P.gaze = [Math.cos(a), Math.sin(a) * 0.6]; P.tip = 0.08 * osc(tc, 0.9); P.tilt = -0.1 * osc(tc, 0.9); P.mouth = 'o'; P.handL = [-50, -110]; P.handR = [56, -116]; o.fa = 0.35 - 0.3 * osc(tc, 0.9); }
     else { const sd = K.clamp((tc - A2_S5_SIT) / 0.28); P.x = 340; P.amp = 0; P.sit = sd; P.seat = 'floor'; P.sq = landSquash(tc, A2_S5_LAND, 0.14) * breathe(tc, 66, 0.02); P.gaze = [0.2, 0.6]; P.lid = 0.4; P.mouth = 'closed'; P.brow = -0.4;
       const fl = beatIn(tc - 0.12, A2_S5_LAND, A2_S5_LAND + 0.3); P.handL = [K.lerp(-50, 6, fl), K.lerp(-110, -84, fl)]; P.handR = [K.lerp(56, 18, fl), K.lerp(-116, -88, fl)]; o.fa = 0.8 + lagged((u) => 0.4 * beatIn(u, A2_S5_SIT, A2_S5_LAND), tc, 0.15, 1);
-      if (tc > 41.62) { P.tip = -0.12 * K.ease.inOut(beatIn(tc, 41.62, 41.95)); P.gaze = [1, 0.1]; P.lid = 0.3; }
+      if (tc > 41.62) { P.tip = -0.12 * K.ease.inOut(beatIn(tc, 41.62, 41.95)); P.gaze = [1, 0.1]; P.lid = 0.3; P.drop = 6 * beatIn(tc, 41.62, 42.0); o.fa = 0.8 + 0.4 * beatIn(tc - 0.2, 41.62, 42.1); }
+      if (tc > 42.32 && tc < 43.02) { const r = flow(tc, [[42.32, 0], [42.5, 1], [42.7, 1.15], [42.9, 0.4], [43.02, 0]]); P.handR = [K.lerp(18, -96, r), K.lerp(-88, -40, r)]; P.gaze = [1, 0.8]; P.lid = 0.45; P.tip = -0.12 - 0.08 * r; }
       if (tc > 43.02) { P.tip = -0.08; P.handR = [16, -160]; P.handL = [-28 + 4 * Math.abs(osc(tc, 0.33)), -200]; P.lid = 0.4 + 0.6 * abBlinkAt(AB_T3(t), 43.5); P.gaze = [-0.4, -0.7]; } } }
   a2Cas(ctx, P, m, o); return P;
 }
 function a2S5Head(t) { const tc = AB_T2(t); if (tc < 37.62) return [330 - 6, 902 - 180]; if (tc < A2_S5_SIT) return [A2_S5_X(tc), 902 - 230]; return [340, 902 - 170]; }
 function a2S5World(ctx, t, cam) {
-  const tc = AB_T2(t); a2CaveWorld(ctx, t, cam, { door: { open: 0 }, dim: 0.85, liveT: 28.84 + 0.6 * (t - 28.84) });
+  const tc = AB_T2(t); a2CaveWorld(ctx, t, cam, { door: { open: 0 }, dim: 0.85, cool: 1, liveT: 28.84 + 0.6 * (t - 28.84) });
   a2CoinTrail(ctx, {}); a2BigSack(ctx, t);
   const sl = K.ease.inOut(beatIn(tc, 41.62, 41.95)); a2Heap(ctx, t, { slump: sl });
   if (tc > 41.7 && tc < 43.88) for (let k = 0; k < 5; k++) { const u = ((t - 41.7) * 1.4 + k / 5) % 1; abBlob(ctx, 418 + u * 50, 892 + u * 18, 7, 3.5, '#ffcf3a', '#c07a12', { lw: 2, off: 2 }); }
@@ -248,12 +258,20 @@ function a2S5World(ctx, t, cam) {
   if (ring) a2Ring(ctx, hx, hy, tc, ro, 'back');
   const P = a2S5Cassim(ctx, t, 'cave');
   if (ring) a2Ring(ctx, hx, hy, tc, ro, 'front');
-  if (tc >= 38.72 && tc < 41.6) { const u = (t - 38.72) / 2.9, sx = hx + 210 - 60 * u, sy = hy - 90 + 30 * Math.sin(u * 6); a2Grain(ctx, 'sesame', sx, sy, 0.9, t, { glow: 0.5 + 0.3 * Math.sin(t * 6) }); }
+  // the sesame seed drifts past him, big enough to read, while his eyes go everywhere else (v2: 2.2x, through the sit)
+  if (tc >= 38.72 && tc < 43.4) { const u = (t - 38.72) / 4.68, sx = K.lerp(hx + 240, 190, u), sy = hy - 110 + 60 * u + 26 * Math.sin(u * 9), fade = 1 - K.clamp((t - 43.0) / 0.4);
+    ctx.save(); ctx.globalAlpha *= fade; a2Grain(ctx, 'sesame', sx, sy, 2.2, t * 1.3, { glow: 0.6 + 0.3 * Math.sin(t * 6) }); ctx.restore(); }
+  // the coin he pushes away with one finger (42.5)
+  { const u = K.ease.out(K.clamp((tc - 42.55) / 0.5)); abBlob(ctx, 290 - 70 * u, 912 - 10 * Math.sin(Math.PI * u), 9, 4.5, '#ffcf3a', '#c07a12', { lw: 2, off: 2, hi: '#fff3b0' }); }
   if (tc > A2_S5_LAND && tc < A2_S5_LAND + 0.7) dustBurst(ctx, 340, 905, t - A2_S5_LAND, 6, 4, 9, 40, 0.6, 17);
 }
 AB_SHOTS.push({ a: 33.46, b: 43.88, ww: 1600, cam: A2_S5_CAM, under: a2CaveUnder(() => 0.34), world: a2S5World,
   over: (ctx, t, cam, S) => { abStalactites(ctx, cam);
     const [hx, hy] = abP(360, 900 - 240, cam);
-    abSay(ctx, S, [[34.74, 'OPEN RICE?'], [35.18, 'OPEN RICE? LENTILS?'], [35.72, 'OPEN RICE? LENTILS? BEANS?']], t, 560, 280, [hx, hy], { size: 50, gone: 36.55, pop: true, icon: (c, x, y) => a2Grain(c, t < 35.18 ? 'rice' : t < 35.72 ? 'lentil' : 'bean', x, y, 1.1, 0) });
+    // v2 (note 9): one word per cut, large, the balloon on the speaker in each set-up
+    const cx = t < 35.18 ? 380 : t < 35.72 ? 318 : 330, [sx, sy] = abP(cx, 900 - 240, cam), by = t < 35.18 ? 300 : t < 35.72 ? 230 : 330;
+    if (t < 36.55) abSay(ctx, S, [[34.74, 'OPEN RICE?'], [35.18, 'LENTILS?'], [35.72, 'BEANS?']], t, K.clamp(sx - 120, 200, 800), by, [sx, Math.min(sy, by + 200)], { size: 66, gone: 36.4, pop: true, icon: (c, x, y) => a2Grain(c, t < 35.18 ? 'rice' : t < 35.72 ? 'lentil' : 'bean', x, y, 1.6, 0) });
+    // the wide from behind the sacks: two big full sacks out of focus in the foreground
+    if (t >= 35.72 && t < 36.4) { ctx.save(); ctx.filter = 'blur(3px)'; abSack(ctx, 760, 1330, 2.6, 1, { coin: true, rot: -0.1 }); abSack(ctx, 980, 1300, 2.3, 1, { coin: true, rot: 0.15 }); ctx.restore(); }
     if (t > 43.02) { const [tx, ty] = abP(345, 700, cam); thoughtCloud(ctx, 640, 360, 280, 190, t, { p: K.clamp((t - 43.02) / 0.35), tail: [tx + 20, ty - 20], inside: (c) => a2Grain(c, 'sesame', 500, 700, 3.6, 0.2, { blur: 5, glow: 0.4 }) });
       S.title(ctx, '?', 640, 380, K.clamp((t - 43.3) / 0.3), { size: 90, align: 'center', glow: '#ffd36a' }); } } });

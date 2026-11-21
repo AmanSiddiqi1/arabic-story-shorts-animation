@@ -19,12 +19,18 @@ function abSay(ctx, S, steps, t, x, y, to, o = {}) {
   const pop = o.pop === false ? 1 : 1 + 0.12 * Math.max(0, 1 - (t - t0) / 0.2), wb = o.wobble ? Math.sin(AB_T3(t) * 17) * o.wobble : 0;
   ctx.save(); if (o.gone && t > o.gone) ctx.globalAlpha *= 1 - K.clamp((t - o.gone) / 0.25);
   ctx.translate(x, y + wb); ctx.scale(pop, pop); ctx.translate(-x, -y - wb);
-  const r = S.label(ctx, txt, x, y + wb, K.clamp((t - steps[0][0]) / 0.3), { size: o.size || 52, balloon: !o.tag, to: o.tag ? null : to, color: o.col });
-  if (o.icon && r && r.w) o.icon(ctx, x - r.w / 2 - 34, y + wb - (o.size || 52) * 0.3);
+  // v2 (review 1 note 9): the box is clamped inside the panel with a 24 px margin; the tail stays on the speaker
+  let size = o.size || 52, w = a2LabelW(S, txt, size); const room = 1000 - 2 * A2_MARGIN - (o.icon ? 70 : 0); if (w > room) { size *= room / w; w = room; }
+  const lo = A2_MARGIN + w / 2 + (o.icon ? 70 : 0), hi = 1000 - A2_MARGIN - w / 2; ctx.translate(K.clamp(x, lo, hi) - x, 0); if (to) to = [to[0] - (K.clamp(x, lo, hi) - x), to[1]];
+  const r = S.label(ctx, txt, x, y + wb, K.clamp((t - steps[0][0]) / 0.3), { size, balloon: !o.tag, to: o.tag ? null : to, color: o.col });
+  if (o.icon && r && r.w) o.icon(ctx, x - r.w / 2 - 34, y + wb - size * 0.3);
   ctx.restore();
 }
-// a plain tag (no tail): THUMP THUMP, CLOP CLOP, CLATTER!, WAIT!
-function a2Tag(ctx, S, text, x, y, t, a, b, o = {}) { if (t < a || t > b + 0.25) return; ctx.save(); if (t > b) ctx.globalAlpha *= 1 - K.clamp((t - b) / 0.25); const pop = 1 + 0.15 * Math.max(0, 1 - (t - a) / 0.2); ctx.translate(x, y); ctx.scale(pop, pop); ctx.rotate(o.rot || 0); S.label(ctx, text, 0, 0, K.clamp((t - a) / 0.3), { size: o.size || 46, color: o.col }); ctx.restore(); }
+// label width in panel units (the style's label measures with the canvas size only, so an offscreen canvas of the same size gives it)
+const A2_MARGIN = 34;   // 24 px inside the panel's 9 px clip, in panel units
+function a2LabelW(S, text, size) { return K.cached('a2lw:' + size + ':' + text, () => { const c = K.layer(1080, 1920), x = c.getContext('2d'); x.globalAlpha = 0; return S.label(x, text, 500, 500, 1, { size }).w || 0; }); }
+// a plain tag (no tail): THUMP THUMP, CLOP CLOP, CLATTER!, WAIT!  (v2: clamped inside the panel like the balloons)
+function a2Tag(ctx, S, text, x, y, t, a, b, o = {}) { if (t < a || t > b + 0.25) return; { const w = a2LabelW(S, text, o.size || 46) * 1.15; x = K.clamp(x, A2_MARGIN + w / 2, 1000 - A2_MARGIN - w / 2); } ctx.save(); if (t > b) ctx.globalAlpha *= 1 - K.clamp((t - b) / 0.25); const pop = 1 + 0.15 * Math.max(0, 1 - (t - a) / 0.2); ctx.translate(x, y); ctx.scale(pop, pop); ctx.rotate(o.rot || 0); S.label(ctx, text, 0, 0, K.clamp((t - a) / 0.3), { size: o.size || 46, color: o.col }); ctx.restore(); }
 // tape tracking noise band (torn lines) inside the story panel, canvas pixels
 function abTracking(ctx, t, t0, dur = 0.5) {
   const u = (t - t0) / dur; if (u < 0 || u > 1) return; const [x, y, w, h] = AB_PANEL, cv = ctx.canvas, R = K.rng(1 + Math.floor(t * 30)), by = y + h * u;
@@ -211,9 +217,15 @@ function a2CaveDoor(ctx, t, o = {}) {
 }
 // the cave room: baked cels, the chest, the live bolts and glints, the door; dim 0..1 cools the gold (light, not the cast)
 function a2CaveWorld(ctx, t, cam, o = {}) {
-  ctx.drawImage(abCaveCels(), 0, 0, 1600, 1230); const g = 1 - 0.45 * (o.dim || 0);
-  abChest(ctx, 770, 906, 1.0, 0.85); abGlow(ctx, 770, 800, 260, (0.6 + 0.1 * Math.sin(t * 3)) * g, '#ffc84a');
+  ctx.drawImage(abCaveCels(), 0, 0, 1600, 1230); const cool = K.clamp(o.cool || 0), g = (1 - 0.45 * (o.dim || 0)) * (1 - 0.6 * cool);
+  abChest(ctx, 770, 906, 1.0, 0.85);
   abCaveLive(ctx, o.liveT ?? t);
+  // v2 (review 1 note 4): the cold cave is a repaint of the set (walls and heaps pushed to dusty blue-violet), never a tint over the
+  // cast: figures are drawn after this pass. The gold survives only as a rim glow on the mound.
+  if (cool > 0.01) { ctx.save(); ctx.globalCompositeOperation = 'multiply'; ctx.globalAlpha = 0.62 * cool; ctx.fillStyle = '#7480c8'; ctx.fillRect(-800, -200, 3200, 1630); ctx.restore();
+    ctx.save(); ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = 0.14 * cool; ctx.fillStyle = '#9aa8e8'; ctx.fillRect(-800, -200, 3200, 1630); ctx.restore();
+    abGlow(ctx, 640, 770, 170, 0.35 * cool, '#ffc84a'); }
+  abGlow(ctx, 770, 800, 260, (0.6 + 0.1 * Math.sin(t * 3)) * g, '#ffc84a');
   abGlow(ctx, 600, 760, 520, 0.35 * g, '#ffb84a'); abGlow(ctx, 940, 780, 300, 0.25, '#cfe0ff');
   a2CaveDoor(ctx, t, o.door || {});
 }
@@ -316,3 +328,28 @@ function a2Inset(ctx, t, rect, p, f) { if (p <= 0) return; const [x, y, w, h] = 
 
 // the mule cart stands here at the rock from S1 on (bed centre; the mule at +290)
 const A2_CARTX = 1140;
+
+// ---------- v2 (review 1 note 1): the back-of-head cover cel ("turned away" without a back-view rig) ----------
+// Drawn over a front-facing Library person after it: the head cloth seen from behind (no features, two cord rings) and the cape
+// hanging down the back on the camera side, narrow enough that pointing or shading arms still read. P: the drawn pose, pal: its
+// palette ({hc, hd, cape}), o: { s, age } defaults for the body points. k 0..1 (0 = face visible: a turn of the head).
+function a2BackCel(ctx, P, pal, o = {}, k = 1) {
+  if (k <= 0.02) return; const s = (P.s ?? o.s ?? 0.95) * (P.sq ?? 1), [hx, hy] = a2HeadPt(P, 0, 0, o), d = Math.sign(P.dir || 1);
+  ctx.save(); ctx.globalAlpha *= K.clamp(k);
+  if (pal.cape) { const sl = a2BodyPt(P, -28, -158, o), sr = a2BodyPt(P, 28, -158, o), hr = a2BodyPt(P, 34, -40, o), hl = a2BodyPt(P, -36, -36, o), sw = Math.sin((o.t || 0) * 2.2 + (o.ph || 0)) * 4 * s;
+    celShade(ctx, [sl, sr, [hr[0] + sw, hr[1]], [hl[0] + sw, hl[1]]], pal.cape, abDark(pal.cape, 0.45), { light: [d, -1], off: 9 * s, lw: 3, line: abDark(pal.cape, 0.6) }); }
+  const pts = ell(hx, hy - 4 * s, 43 * s, 46 * s, 22);
+  celShade(ctx, pts, pal.hc, abDark(pal.hc, 0.3), { light: [d, -1], off: 10 * s, lw: 3.5, line: abDark(pal.hc, 0.6) });
+  celShade(ctx, [[hx - 34 * s, hy + 20 * s], [hx + 34 * s, hy + 20 * s], [hx + 44 * s, hy + 62 * s], [hx - 44 * s, hy + 62 * s]], pal.hc, abDark(pal.hc, 0.3), { light: [d, -1], off: 8 * s, lw: 3, line: abDark(pal.hc, 0.6) });
+  ctx.save(); ctx.lineWidth = 6 * s; ctx.strokeStyle = '#1a1020'; for (const j of [0, 1]) { ctx.beginPath(); ctx.ellipse(hx, hy - 26 * s - j * 9 * s, 40 * s, 10 * s, 0, 0, Math.PI * 2); ctx.stroke(); } ctx.restore();
+  ctx.restore();
+}
+
+// ---------- v2 (review 1 note 3): the town at sunset for the last shot (the yard's village repainted warm, lit windows) ----------
+function a2DuskTown() { return abBakeAt('a2duskTown', 1400, 420, (c) => { c.translate(0, -480); c.drawImage(abVillage(), 0, 0);
+  c.globalCompositeOperation = 'source-atop'; const g = c.createLinearGradient(0, 480, 0, 900); g.addColorStop(0, 'rgba(255,150,110,0.45)'); g.addColorStop(1, 'rgba(150,80,140,0.45)'); c.fillStyle = g; c.fillRect(0, 480, 1400, 420);
+  c.globalCompositeOperation = 'source-over'; }); }
+// x, base: where the town's ground line sits (world); s scale; windows twinkle on twos
+function a2SunsetTown(ctx, t, x, base, s) { ctx.drawImage(a2DuskTown(), x, base - 392 * s, 1400 * s, 420 * s);
+  const R = K.rng(35), tc = AB_T2(t); for (let i = 0; i < 16; i++) { const wx = x + (60 + R() * 1280) * s, wy = base - (30 + R() * 90) * s, on = Math.sin(tc * 2.3 + i * 2.1) > -0.6;
+    if (on) { ctx.fillStyle = '#ffe9a0'; ctx.fillRect(wx, wy, 7 * s / 0.62, 8 * s / 0.62); abGlow(ctx, wx + 3, wy + 4, 22, 0.55, '#ffcf6a'); } } }
