@@ -1,0 +1,10 @@
+{
+ "story": "HORSE-02",
+ "cwd": "Animations/HORSE-02",
+ "build": "python3 build.py",
+ "render": "node render.mjs --workers 3 --crf 20 --frames ../../scratch/render-queue/HORSE-02/frames --out renders/HORSE-02_v1.mp4",
+ "qc": "python3 tools/production/qc.py HORSE-02 Animations/HORSE-02/renders/HORSE-02_v1.mp4 --record v1",
+ "notes": "run from the repository root with tools/production/render_queue.py; frames are deleted only after \"ffmpeg exit 0\"",
+ "implcheck": "PASS",
+ "film_duration": 151.49
+}

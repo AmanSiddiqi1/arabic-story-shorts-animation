@@ -53,7 +53,7 @@ function a3Sneaker(ctx, x, y, s, ph, o = {}) { ctx.save(); ctx.translate(x, y); 
   if (o.q) { ctx.font = `800 54px "${BF}"`; ctx.fillStyle = '#ffd36a'; ctx.textAlign = 'center'; ctx.fillText('?', 4, -190); } ctx.restore(); }
 
 // ---------- the arch entrance: figures come out of the dark passage (x < 150) ----------
-function a3ArchFig(ctx, x, y, draw, w = 320) { const u = K.clamp((x - 20) / 130); if (u <= 0.02) return; if (u >= 0.99) { draw(ctx); return; }
+function a3ArchFig(ctx, x, y, draw, w = 320) { const u = K.clamp((x + 40) / 110); if (u <= 0.02) return; if (u >= 0.99) { draw(ctx); return; }
   abCel(ctx, [x, y, w, 330], (c) => draw(c), { tint: '#1e1830', k: 0.9 * (1 - u), alpha: K.clamp(u * 2.2) }); }
 
 // ---------- the big hand for inserts (ALI-01 abHandCel with a sleeve colour): o {sleeve, sleeveD, curl, chalk, white, brush, ring} ----------
@@ -95,7 +95,7 @@ const A3_MKT_A = marketStreetAnchors(A3_MKT);
 
 // ---------- the glade (S1, S11): ALI-02's morning model, the rock, the far town, two grazing horses ----------
 function a3GladeBack(ctx, t, cam) {
-  a2FarTown(ctx, t, 1135, 800, 0.18);
+  a2FarTown(ctx, t, 1150, 812, 0.22);
   abRock(ctx, 1820, 900, { model: 'morning', t });
   const tc = AB_T2(t);
   [[2005, 3, 0], [2095, 1, 1]].forEach(([x, pal, k]) => { const P = { x, y: 870, s: 0.6, dir: k ? -1 : 1, pal, headDown: 1, chew: Math.abs(Math.sin(tc * 5 + k)), tailSwish: osc(tc, 1.9 + k * 0.4, k * 0.3), earL: 0.3 + idleSway(tc, 140 + k, 0.3, 1.7), earR: 0.2 + idleSway(tc, 150 + k, 0.3, 2.2), lid: abLid(t, 160 + k) };

@@ -93,3 +93,38 @@ function sbSwimmer(ctx, x, wy, t, o = {}) {
   if (o.handLW) delete P.aL; if (o.handRW) delete P.aR;
   return sbSinbad(ctx, P);
 }
+
+// ---------- a hand gripping an edge (close-ups; SIND-01 revision 1) ----------
+// the bare forearm from (ax, ay) to the knuckles on the edge at (x, y), the back of the hand on top, four fingers curled over and down
+// the near face, the thumb along the top. s scale (1 = 1.3x the Library hand at Sinbad's size), sq 0..1 squeeze (fingers tighten,
+// knuckles whiten), dir +1 / -1 which way the fingers point (toward the camera side). o {skin, shade, line}
+function sbGripHand(ctx, ax, ay, x, y, s = 1, sq = 0, o = {}) {
+  const skin = o.skin || C.skin, sh = o.shade || '#d99a80', line = o.line || '#6a3a2a', dir = o.dir || 1;
+  const ang = Math.atan2(y - ay, x - ax), w = 13 * s, nx = -Math.sin(ang) * w, ny = Math.cos(ang) * w;
+  celShade(ctx, [[ax + nx, ay + ny], [x + nx * 0.9, y + ny * 0.9 - 4 * s], [x - nx * 0.9, y - ny * 0.9 - 4 * s], [ax - nx, ay - ny]], skin, sh, { light: [-1, -1], off: 5 * s, lw: 2.5, line });
+  // fingers: curled over the edge, down the near face (shorter and tighter with the squeeze)
+  for (let k = 0; k < 4; k++) { const fx = x + (k - 1.5) * 9.5 * s * dir, fl = (17 - 5 * sq - Math.abs(k - 1.5) * 2) * s;
+    celShade(ctx, [[fx - 4.6 * s, y - 4 * s], [fx + 4.6 * s, y - 4 * s], [fx + 4.4 * s, y + fl - 3 * s], [fx, y + fl], [fx - 4.4 * s, y + fl - 3 * s]], skin, sh, { light: [-1, -1], off: 2.5 * s, lw: 2, line }); }
+  // back of the hand on top of the edge, the thumb along it
+  celShade(ctx, ell(x, y - 8 * s, 22 * s, 11 * s, 18), skin, sh, { light: [-1, -1], off: 4 * s, hi: sbLight(skin, 0.4), lw: 2.5, line });
+  celShade(ctx, ell(x - dir * 22 * s, y - 6 * s, 9 * s, 6 * s, 12), skin, sh, { light: [-1, -1], off: 2 * s, lw: 2, line });
+  // knuckles: hard highlights that whiten with the squeeze
+  for (let k = 0; k < 4; k++) { ctx.save(); ctx.globalAlpha = 0.5 + 0.5 * sq; ctx.fillStyle = sbMix(sbLight(skin, 0.5), '#ffffff', sq); ctx.beginPath(); ctx.ellipse(x + (k - 1.5) * 9.5 * s * dir, y - 4 * s, 3.4 * s, 2.2 * s, 0, 0, 7); ctx.fill(); ctx.restore(); }
+}
+
+// ---------- the series "cling" pose (SIND-01 revision 1): Sinbad over a floating plank ----------
+// chest and both forearms over the wood, cheek on it, legs trailing below (the caller draws the front water after, which clips them).
+// pl {x, y, rot} the plank (sbPlank origin), wy the water line at him. o: {lid, breath (0..1 phase), slip (0..1: the near hand slides
+// off and re-grips), head (0 cheek on the wood .. 1 head up), gaze, mouth, eyes, wind, hs (hand scale, default 0.8)}. Returns the figure.
+function sbCling(ctx, pl, wy, t, o = {}) {
+  const hd = 1 - K.clamp(o.head ?? 0), br = Math.sin((o.breath ?? t * 0.9) * Math.PI * 2);
+  const Q = sbSwimmer(ctx, pl.x - 34, wy + 10, t, { depth: 108 + 3 * br, dir: 1, tip: 0.5 + 0.06 * hd, drop: 14 * hd, tilt: 0.3 * hd, lid: o.lid ?? 0.6, gaze: o.gaze || [1, 0.4], mouth: o.mouth || 'closed', wind: o.wind ?? -0.4, sq: 1 + 0.02 * br,
+    handLW: [pl.x - 70, pl.y - 2], handRW: [pl.x + 40, pl.y - 2] });
+  if (o.eyes) Q.eyes = o.eyes;
+  sbPlank(ctx, pl.x, pl.y, { rot: pl.rot, t, wet: true });
+  const ca = Math.cos(pl.rot), sa = Math.sin(pl.rot), E = (lx, dy = 0) => [pl.x + lx * ca - (dy - 4) * sa, pl.y + lx * sa + (dy - 4) * ca], h = sbPt(Q, [0, 0]), hs = o.hs ?? 0.8, sl = K.clamp(o.slip || 0);
+  const far = E(h[0] - pl.x - 64), near = E(h[0] - pl.x + 58 + 30 * sl, 22 * sl);
+  sbGripHand(ctx, h[0] - 16, pl.y - 10 + 2 * br, far[0], far[1], hs, 0.4, { dir: -1 });
+  sbGripHand(ctx, h[0] + 22, pl.y - 6 + 2 * br, near[0], near[1], hs, 0.4 * (1 - sl), { dir: 1 });
+  return Q;
+}

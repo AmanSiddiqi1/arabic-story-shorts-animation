@@ -44,7 +44,7 @@ const h1Pt = (H, p) => ehHorsePt(H, p);
 
 // ---------- the inventor ----------
 const H1_INV_WALK = H1_F([[14.5, 845], [16.3, 1235], [17, 1235]]);
-const H1_INV_S7 = H1_F([[58.94, 1235], [59.9, 1080], [67.3, 1080], [67.6, 1040], [68.3, 1050]]);
+const H1_INV_S7 = H1_F([[49.4, 1235], [50.0, 1235], [50.8, 1230], [70.04, 1230], [70.4, 1250]]);   // v2: stays right of the horse's head (note 1)
 const H1_INV_BOW = [[16.3, 0], [16.9, 0.3], [17.6, 0.3], [21.9, 0.26], [22.9, 0], [24.2, 0], [26.4, -0.02], [27.2, -0.06], [29.6, -0.04], [30.4, 0]];
 function h1InvMounted(t) { return (t >= 36.1 && t < 48.8); }
 function h1InvGround(t) {
@@ -81,13 +81,17 @@ function h1InvGround(t) {
   const knob = h1Pt(h1Horse(t), EH_EBG.knob), ear = h1Pt(h1Horse(t), EH_EBG.lever), fz = h1FiruzGround(t);
   P.tip = flow(tc, [[49.3, 0], [49.6, 0.24], [50.0, 0.24], [50.5, 0]]) + idleSway(tc, sd, 0.015, 3.4); if (t < 50.3) { P.handR = PERSON_HANDS.chest.R; P.handL = [-90, -150]; }
   P.gaze = fz ? lookAt([P.x, 720], ehHeadOf(fz)) : [-1, 0]; P.lid = ehLid(t, sd, [55.9, 66.0], t > 54.06 && t < 56 ? 0.45 : 0.35); P.brow = t > 54 && t < 56 ? 0.45 : 0.3;
+  if (t >= 50.8) P.dir = -1;   // v2: faces the horse and the prince from the right of the head
+  if (t >= 50.8 && t < 58.94) { P.handR = [-4, -118]; P.handL = [26, -112]; P.tip = 0.03 + idleSway(tc, sd, 0.015, 3.4); }   // arms folded, watching with half lids
   if (t >= 58.94 && t < 60.5) { P.handL = [-70, -190]; P.handR = [80, -185]; P.brow = -0.6; P.mouth = 'o'; P.tip = 0.06 * Math.sin(tc * 18) * K.clamp(1 - (tc - 59.6)); }
   if (t >= 60.5 && t < 63.1) { P.handL = [-28, -100]; P.handR = [44, -205 + (t > 61.62 ? 8 * Math.abs(Math.sin(tc * 9)) : 0)]; P.tip = 0.07; P.brow = -0.3; P.mouth = 'closed'; P.talk = ehTalk(t, 61.62, 64.4, 5); }
-  if (t >= 63.1 && t < 63.68) { P.handRW = [knob[0] + 4, knob[1] + 6]; P.handL = [-28, -100]; P.gaze = lookAt([P.x, 720], knob); P.talk = ehTalk(t, 61.62, 64.4, 5); }
-  if (t >= 63.68 && t < 65.6) { P.handRW = [ear[0], ear[1] + 4]; P.handL = [-28, -100]; P.gaze = lookAt([P.x, 720], ear); P.talk = ehTalk(t, 61.62, 64.4, 5); }
-  if (t >= 65.6 && t < 67.38) { P.handR = [90, -170]; P.handL = [-28, -100]; const u = ehE(tc, 66.0, 0.4); P.gaze = [K.lerp(0.6, -0.9, u), 0]; P.dir = u > 0.5 ? -1 : 1; P.brow = -0.4; }
-  if (t >= 67.38 && t < 70.04) { P.dir = -1; P.tip = 0.18 * pulse(tc, 67.38, 1.0) + lagged((v) => 0.18 * pulse(v, 67.38, 1.0), tc, 0.1, 0.4); P.handR = [110, -150]; P.handL = [-40, -120]; P.mouth = 'o'; P.brow = -0.7; P.gaze = [-0.8, -0.5]; }
-  if (t >= 70.04) { P.dir = -1; P.handL = [-60, -240]; P.handR = [60, -246]; P.mouth = 'o'; P.brow = -0.8; P.tip = -0.08 * ehE(tc, 70.04, 0.3) + tremble(tc, 0.01, 6); P.gaze = lookAt([P.x, 700], h1Pt(h1Horse(t), [0, -200])); }
+  if (t >= 63.1 && t < 65.2) { const lean = flow(tc, [[63.1, 0], [63.4, 0.12], [64.9, 0.12], [65.2, 0.04]]); P.tip = lean + lagged((v) => 0.4 * flow(v, [[63.1, 0], [63.4, 0.12], [64.9, 0.12], [65.2, 0.04]]), tc, 0.1, 0.3);
+    P.talk = ehTalk(t, 61.62, 64.4, 5); P.brow = -0.2;
+    if (t < 63.68) { P.handRW = knob; P.handL = [-28, -100]; P.gaze = lookAt([P.x, 720], knob); }
+    else { const u = ehE(tc, 63.68, 0.3); P.handRW = [K.lerp(knob[0], ear[0], u), K.lerp(knob[1], ear[1], u)]; P.handLW = knob; P.gaze = lookAt([P.x, 720], ear); } }
+  if (t >= 65.2 && t < 67.38) { P.handR = [90, -170]; P.handL = [-28, -100]; P.gaze = fz ? lookAt([P.x, 720], ehHeadOf(fz)) : [-1, 0.2]; P.brow = -0.4; }
+  if (t >= 67.38 && t < 70.04) { P.tip = 0.18 * pulse(tc, 67.38, 1.0) + lagged((v) => 0.18 * pulse(v, 67.38, 1.0), tc, 0.1, 0.4); P.handR = [110, -150]; P.handL = [-40, -120]; P.mouth = 'o'; P.brow = -0.7; P.gaze = [-0.8, -0.5]; }
+  if (t >= 70.04) { P.handL = [-90, -170]; P.handR = [95, -176]; P.mouth = 'o'; P.brow = -0.8; P.tip = -0.08 * ehE(tc, 70.04, 0.3) + tremble(tc, 0.01, 6); P.gaze = lookAt([P.x, 700], h1Pt(h1Horse(t), [0, -200])); }
   return P;
 }
 // the inventor riding the demo (36.1 - 48.8): rideOn person fields
@@ -102,35 +106,45 @@ function h1InvRider(t) {
 }
 
 // ---------- Prince Firuz on the ground (until the vault at 66.66) ----------
-const H1_FZ_X = H1_F([[50.1, 1300], [52.3, 1146], [52.5, 1150], [65.12, 1150], [65.4, 1136], [66.4, 990], [66.7, 985]]);
+// v2 (notes 1, 6): one step in front of the right group, then the inspection at the near legs (1045), then round to the saddle (975)
+const H1_FZ_X = H1_F([[50.1, 1320], [51.9, 1050], [52.2, 1045], [58.94, 1045], [59.3, 1036], [60.2, 978], [60.5, 975], [66.7, 975]]);
+const H1_FZ_Y = 945;
 function h1FiruzGround(t) {
   if (t >= 66.66) return null;
   const tc = EH_T2(t), sd = 3, H = h1Horse(t), D = EH_FIRUZ;
-  const P = { x: H1_FZ_X(tc), y: 930, s: D.s, dir: 1, lid: ehLid(t, sd, [4.5, 55.9]), sq: breathe(tc, sd, 0.014), tip: idleSway(tc, sd, 0.025, 2.9), mouth: 'closed' };
+  const P = { x: H1_FZ_X(tc), y: H1_FZ_Y, s: D.s, dir: -1, lid: ehLid(t, sd, [4.5, 55.9]), sq: breathe(tc, sd, 0.014), tip: idleSway(tc, sd, 0.025, 2.9), mouth: 'closed' };
+  if (t < 50.1) P.x = 1310 + 10 * ehE(tc, 6.8, 0.4);
   if (t >= 50.1) Object.assign(P, walk(H1_FZ_X, tc, { stride: 22 }));
-  const head = [P.x, 720], hh = h1Pt(H, [180, -280]), knob = h1Pt(H, EH_EBG.knob);
+  const head = [P.x, 740], hh = h1Pt(H, [180, -280]), knob = h1Pt(H, EH_EBG.knob);
   // S1: bored by the tin bird; the glance to the gate
   if (t < 6.72) { P.gaze = t < 4.4 ? lookAt(head, [1360, 790]) : [-1, 0]; P.lid = Math.max(0.3, P.lid); P.tip += 0.03; P.handL = PERSON_HANDS.hipsHands.L; }
   else P.gaze = lookAt(head, hh);
-  if (t >= 6.72 && t < 7.8) P.x += 10 * ehE(tc, 6.8, 0.4);
-  if (t >= 7.8 && t < 50.1) P.x += 10;
-  if (t >= 19.3 && t < 22.0) { P.handR = PERSON_HANDS.chin.R; P.gaze = lookAt(head, knob); P.tip = 0.05 + idleSway(tc, sd, 0.02, 2.9); }
-  if (t >= 27.9 && t < 29.4) P.gaze = t < 28.9 ? [-0.3, -1] : lookAt(head, knob);
+  // S3 (v2 note 6): turned to the horse, head tilted, not laughing, studying the knob
+  if (t >= 18.12 && t < 29.72) { P.gaze = lookAt(head, knob); P.handR = PERSON_HANDS.chin.R; P.tip = 0.06 + idleSway(tc, sd, 0.02, 2.9); P.mouth = 'closed'; P.brow = 0.2;
+    P.lid = Math.max(P.lid, 0.15, ehBlinkAt(tc, 21.5)); if (t >= 27.9 && t < 28.9) { P.gaze = [-0.3, -1]; P.handR = null; } }
   if (t >= 36.2 && t < 40.76) P.gaze = lookAt(head, knob);
   if (t >= 40.76 && t < 47.0) { const c = h1Pt(H, [0, -180]); P.gaze = lookAt(head, c); P.mouth = 'o'; P.eyes = 'wide'; P.tip = -0.06 + idleSway(tc, sd, 0.02, 2.9); }
   if (t >= 47.0 && t < 49.3) { const k = Math.abs(Math.sin(tc * 11)); P.handL = [-8 - 22 * k, -140]; P.handR = [10 + 22 * k, -140]; P.mouth = 'smile'; }
-  if (t >= 50.1 && t < 52.4) { P.gaze = lookAt(head, hh); P.dir = -1; P.mouth = 'smile'; }
-  if (t >= 52.3) P.dir = -1;
-  if (t >= 52.42 && t < 53.4) { const u = flow(tc, [[52.42, 0], [52.7, 1], [53.0, 0.6], [53.4, 0]]); P.tip = 0.3 * u + lagged((v) => 0.3 * flow(v, [[52.42, 0], [52.7, 1], [53.0, 0.6], [53.4, 0]]), tc, 0.1, 0.4); P.drop = 10 * u;
-    const hoof = h1Pt(H, [90, -20]), chest = h1Pt(H, EH_EBG.chest), neck = h1Pt(H, [100, -250]); P.handRW = tc < 52.75 ? hoof : tc < 53.05 ? chest : neck; P.gaze = lookAt(head, P.handRW); }
-  if (t >= 53.4 && t < 54.06) { const u = ehE(tc, 53.4, 0.6); P.gaze = lookAt(head, h1Pt(H, [K.lerp(220, -170, u), -240])); P.lid = Math.max(P.lid, ehBlinkAt(tc, 53.7)); }
-  if (t >= 54.06 && t < 55.81) { P.gaze = lookAt(head, knob); P.eyes = t < 54.4 ? 'wide' : 'open'; P.mouth = t > 54.5 ? 'smile' : 'o'; P.tip = 0.06;
-    if (t > 55.2) { P.handRW = [knob[0] + 18, knob[1] - 6 + (tc > 55.4 && tc < 55.5 ? 6 : 0)]; P.tip = 0.12; } }
-  if (t >= 55.81) { P.gaze = lookAt(head, [H1_INV_S7(tc), 735]); P.lid = Math.max(P.lid, ehBlinkAt(tc, 55.9)); P.mouth = 'smile';
+  // S6 (v2 note 6): walks in, raps a hoof, palm on the leg, on his toes up the neck, eyes stop on the knob
+  if (t >= 50.1 && t < 52.2) { P.gaze = lookAt(head, hh); P.mouth = 'smile'; }
+  if (t >= 52.2 && t < 58.94) P.dir = 1;
+  if (t >= 52.42 && t < 53.0) { const u = flow(tc, [[52.42, 0], [52.62, 1], [52.9, 1], [53.0, 0.4]]); P.tip = 0.22 * u + lagged((v) => 0.22 * flow(v, [[52.42, 0], [52.62, 1], [52.9, 1], [53.0, 0.4]]), tc, 0.1, 0.4); P.sq *= 1 - 0.1 * u; P.drop = 8 * u;
+    const hoof = h1Pt(H, [92, -16]); P.handRW = [hoof[0], hoof[1] + (tc > 52.66 && tc < 52.76 ? 6 : 0)]; P.gaze = lookAt(head, hoof); }
+  if (t >= 53.0 && t < 53.38) { P.handRW = h1Pt(H, [86, -84]); P.gaze = lookAt(head, h1Pt(H, [86, -140])); P.tip = 0.05; }
+  if (t >= 53.38 && t < 54.06) { const u = ehE(tc, 53.38, 0.3); P.y -= 10 * u; P.sq *= 1 + 0.03 * u; P.handRW = h1Pt(H, [86, -84]); P.handL = [-40, -96];
+    P.gaze = lookAt(head, h1Pt(H, [K.lerp(60, 190, ehE(tc, 53.5, 0.5)), K.lerp(-200, -320, ehE(tc, 53.5, 0.5))])); }
+  if (t >= 54.06 && t < 55.81) { P.y -= 10 * (1 - ehE(tc, 55.3, 0.4)); P.gaze = lookAt(head, knob); P.eyes = t < 54.5 ? 'wide' : 'open'; P.mouth = t > 54.6 ? 'smile' : 'o'; P.tip = 0.08; P.lid = Math.max(P.lid, ehBlinkAt(tc, 54.62));
+    P.handRW = [knob[0] - 6 + 3 * Math.sin(tc * 7), knob[1] + 10]; P.handL = [-40, -96]; }
+  if (t >= 55.81) { P.gaze = lookAt(head, [H1_INV_S7(tc), 740]); P.lid = Math.max(P.lid, ehBlinkAt(tc, 55.9)); P.mouth = 'smile';
     P.sq = (P.sq || 1) * (t > 58.14 && t < 58.9 ? 1 + 0.045 * Math.sin((tc - 58.14) * Math.PI * 2 / 0.38) : 1); }
-  if (t >= 57.16 && t < 58.9) { P.talk = ehTalk(t, 57.16, 58.8, 9); P.handR = t < 58.0 ? PERSON_HANDS.chest.R : null; if (t >= 58.0) P.handLW = h1Pt(H, [-8, -250]); }
-  if (t >= 62.0 && t < 65.12) { const stir = h1Pt(H, [20, -150]); P.gaze = lookAt(head, stir); P.mouth = 'smile'; if (t > 63.68) { P.y = 930; P.tip = 0.08; } }
-  if (t >= 65.12) { const u = flow(tc, [[65.12, 0], [65.5, 1], [66.2, 1], [66.5, 0.3]]); P.drop = 28 * u; P.tip = -0.18 * u; P.mouth = 'smile'; P.gaze = [-1, 0.2]; P.dir = -1; P.handL = [-60, -130]; }
+  if (t >= 57.16 && t < 58.9) { P.talk = ehTalk(t, 57.16, 58.8, 9); P.handR = t < 58.0 ? PERSON_HANDS.chest.R : null; if (t >= 58.0) P.handRW = h1Pt(H, [-60, -84]); }
+  // S7: round to the saddle, cape arriving late; listens to the first control, looks away at the second
+  if (t >= 58.94 && t < 60.5) { P.dir = -1; P.gaze = lookAt(head, [1230, 740]); }
+  if (t >= 60.5 && t < 63.1) { P.dir = 1; P.handLW = h1Pt(H, [-76, -90]); P.gaze = lookAt(head, [1230, 740]); }
+  if (t >= 63.1 && t < 63.68) { P.dir = 1; P.handLW = h1Pt(H, [-76, -90]); P.gaze = lookAt(head, knob); P.tip = 0.04 + 0.05 * pulse(tc, 63.2, 0.4); P.mouth = 'closed'; }
+  if (t >= 63.68 && t < 65.12) { P.dir = 1; P.handRW = h1Pt(H, [-40, -96]); P.handL = [-50, -100]; P.gaze = [-0.4, 1]; P.drop = 8; P.tip = -0.05; P.lid = Math.max(P.lid, ehBlinkAt(tc, 63.7)); P.mouth = 'smile';
+    P.sq *= Math.floor(tc * 6) % 2 ? 1.03 : 0.97; }
+  if (t >= 65.12) { const u = flow(tc, [[65.12, 0], [65.5, 1], [66.2, 1], [66.5, 0.3]]); P.drop = 28 * u; P.tip = 0.18 * u; P.mouth = 'smile'; P.gaze = [1, -0.4]; P.dir = 1; P.handL = [-60, -130]; P.handR = [60, -130]; }
   return P;
 }
 // Firuz in the saddle (67.38 on, garden): vault landing, the hand to the knob, the grin that becomes an 'o'
@@ -143,8 +157,8 @@ function h1FiruzRider(t) {
 }
 // the vault 66.66 - 67.38: anticipation crouch, hop 110 high from the ground into the saddle
 function h1FiruzVault(t) {
-  const tc = EH_T2(t), H = h1Horse(t), seat = mountSeat('horse', H), D = EH_FIRUZ, sx = seat.x + 22 * D.s, sy = seat.y + 52 * D.s, [x, lift] = hop(tc, 66.78, 0.6, 985, sx, 110);
-  return { x, y: K.lerp(930, sy, ehE(tc, 66.78, 0.6)) - lift, s: D.s, dir: 1, sq: tc < 66.78 ? 0.9 : 1.06, tip: -0.1, gaze: [0.6, 0.3], mouth: 'smile', handL: [-60, -230], handR: [70, -220], lift: 930 - (K.lerp(930, sy, ehE(tc, 66.78, 0.6)) - lift) };
+  const tc = EH_T2(t), H = h1Horse(t), seat = mountSeat('horse', H), D = EH_FIRUZ, sx = seat.x + 22 * D.s, sy = seat.y + 52 * D.s, [x, lift] = hop(tc, 66.78, 0.6, 975, sx, 110), y = K.lerp(H1_FZ_Y, sy, ehE(tc, 66.78, 0.6)) - lift;
+  return { x, y, s: D.s, dir: 1, sq: tc < 66.78 ? 0.9 : 1.06, tip: -0.1, gaze: [0.6, 0.3], mouth: 'smile', handL: [-60, -230], handR: [70, -220], lift: H1_FZ_Y - y };
 }
 
 // ---------- the king ----------
@@ -171,14 +185,16 @@ function h1King(t) {
 }
 
 // ---------- the guests and the child ----------
-const H1_G = [ { x: 830, y: 872, dir: 1 }, { x: 742, y: 866, dir: 1 }, { x: 664, y: 878, dir: 1 }, { x: 1252, y: 905, dir: -1 }, { x: 1372, y: 913, dir: -1 }, { x: 1906, y: 840, dir: -1 }, { x: 1474, y: 886, dir: -1 } ];
-const H1_G4_X = H1_F([[19.5, 1372], [20.4, 1232], [29.8, 1232], [30.9, 1372]]);
-const H1_G6_X = H1_F([[2.2, 1060], [4.6, 1474]]);
+// v2 (notes 1, 6): left group no further right than 780, right group from 1395, so the horse's neck and head stay clear
+const H1_G = [ { x: 772, y: 872, dir: 1 }, { x: 690, y: 866, dir: 1 }, { x: 610, y: 878, dir: 1 }, { x: 1398, y: 905, dir: -1 }, { x: 1478, y: 913, dir: -1 }, { x: 1906, y: 840, dir: -1 }, { x: 1556, y: 886, dir: -1 } ];
+const H1_G6_X = H1_F([[2.2, 1060], [4.6, 1556]]);
+// second and third poses while the prince inspects and is warned (47-66): staggered windows, never two changes together
+const H1_GPOSE = { 0: [[50.9, 'whisper'], [56.3, 'point'], [61.1, 'mouth']], 1: [[52.0, 'mouth'], [57.6, 'whisper'], [62.6, 'clap']], 2: [[53.3, 'point'], [59.0, 'step'], [63.9, 'whisper']],
+  3: [[51.5, 'mouth'], [55.4, 'step'], [60.2, 'point']], 4: [[52.8, 'whisper'], [57.0, 'point'], [62.0, 'mouth']], 6: [[54.2, 'step'], [59.6, 'mouth'], [64.6, 'point']] };
 const H1_HAT = [72.68, 74.6];
 function h1Guest(i, t) {
   const tc = EH_T2(t), g = H1_G[i], D = EH_GUESTS[i], sd = 40 + i * 13, st = stagger(i, 0.14);
   const P = { x: g.x, y: g.y, dir: g.dir, s: D.s * (g.y < 880 ? 0.93 : 1), lid: ehLid(t, sd), sq: breathe(tc, sd, 0.014), tip: idleSway(tc, sd, 0.025, 2.6 + i * 0.37), mouth: 'closed' };
-  if (i === 4) { P.x = H1_G4_X(tc); if (t > 19.5 && t < 30.9) Object.assign(P, walk(H1_G4_X, tc, { stride: 22 })); }
   if (i === 6 && t < 4.6) { P.x = H1_G6_X(tc); Object.assign(P, walk(H1_G6_X, tc, { stride: 22 })); P.y = 884; }
   const head = ehHeadOf(P), H = h1Horse(t), hh = h1Pt(H, [180, -280]), inv = h1InvGround(t), invH = inv ? ehHeadOf(inv) : h1Pt(H, [-8, -470]), king = [1730, 640];
   const fz = h1FiruzGround(t), fzH = fz ? ehHeadOf(fz) : h1Pt(H, [-8, -470]);
@@ -189,8 +205,7 @@ function h1Guest(i, t) {
     const r = 8 + i * 1.3, k = Math.abs(Math.sin(tc * r + i)); P.sq *= 1 + 0.045 * k; P.mouth = 'open'; P.eyes = k > 0.7 ? 'shut' : 'open'; P.tip = (i % 2 ? -0.05 : 0.04) * k + idleSway(tc, sd, 0.02, 2);
     if (i === 0) P.handRW = hh; if (i === 1) { P.handL = PERSON_HANDS.mouthCover.L; P.handR = PERSON_HANDS.mouthCover.R; } if (i === 2) { P.handL = [-24, -108]; P.handR = [26, -104]; P.tip = 0.08 * k; }
     if (i === 3) { P.handR = [50, -70 + 30 * k]; } tg = i % 2 ? [g.x - g.dir * 140, head[1]] : hh; }
-  if (i === 4 && t >= 20.5 && t < 21.4) { P.handRW = [hh[0] + 10 + 18 * Math.sin(tc * 20), hh[1] + 10]; P.mouth = 'smile'; tg = hh; }
-  if (i === 4 && t >= 21.0 && t < 21.6) { P.handL = PERSON_HANDS.palmsUp.L; P.handR = PERSON_HANDS.palmsUp.R; P.handRW = null; tg = [1100, head[1]]; }
+  if (i === 4 && t >= 21.7 && t < 23.6) { const top = h1Pt(H, [150, -340]); P.handRW = [top[0], top[1] - 20 + 6 * Math.sin(tc * 14)]; P.handR = null; P.mouth = 'open'; tg = top; }   // points at the dove
   if (i === 2 && t >= 23.2 && t < 23.9) { P.handR = PERSON_HANDS.mouthCover.R; P.sq *= 1 - 0.03 * Math.abs(Math.sin(tc * 20)); P.mouth = 'closed'; }
   if (t >= 22.6 + i * 0.28 && t < 27.9) tg = invH;
   if (t >= 27.9 + st && t < 29.6) { tg = [1300, -300]; P.tip = -0.06; }
@@ -204,6 +219,12 @@ function h1Guest(i, t) {
   if (t >= 49.32 && t < 50.6 && (i === 3 || i === 4)) { P.eyes = 'wide'; tg = [g.x - g.dir * 140, head[1]]; if (i === 4) { const u = ehE(tc, 49.4, 0.9); P.handR = [K.lerp(40, 110, u), -190 + 40 * Math.sin(u * Math.PI)]; } }
   if (t >= 50.1) tg = fzH;
   if (t >= 58.94 && t < 71.65) tg = (i % 2 ? invH : fzH);
+  if (t >= 50.6 && t < 66.3 && H1_GPOSE[i]) for (const [a, kind] of H1_GPOSE[i]) { if (t < a || t >= a + 2.3) continue; const u = flow(tc, [[a, 0], [a + 0.35, 1], [a + 1.9, 1], [a + 2.3, 0]]), nb = g.x + g.dir * 140;
+    if (kind === 'whisper') { P.tip += -0.1 * u * g.dir; P.handR = [K.lerp(20, 30, u), K.lerp(-100, -176, u)]; P.talk = ehTalk(t, a + 0.3, a + 1.9, sd, 0.5); tg = [nb, head[1]]; }
+    if (kind === 'mouth') { P.handL = PERSON_HANDS.mouthCover.L; P.handR = PERSON_HANDS.mouthCover.R; P.eyes = 'wide'; P.sq *= 1 - 0.03 * u; }
+    if (kind === 'point') { P.handRW = [K.lerp(P.x, fzH[0], 0.5 * u), K.lerp(head[1] + 60, fzH[1] - 10, u)]; P.mouth = 'open'; tg = fzH; }
+    if (kind === 'step') { P.x += (g.x < H1_CX ? 1 : -1) * 18 * Math.sin(Math.PI * K.clamp((t - a) / 2.3)); P.tip += 0.05 * u; P.eyes = 'wide'; }
+    if (kind === 'clap') { const k = Math.abs(Math.sin(tc * 10)); P.handL = [-6 - 20 * k, -140]; P.handR = [8 + 20 * k, -140]; P.mouth = 'smile'; } }
   if (t >= 70.04 + st) P.x += (g.x < H1_CX ? -1 : 1) * 30 * ehE(tc, 70.04 + st, 0.4);
   if (t >= 71.65) { tg = h1Pt(H, [0, -180]); P.tip = -0.1 * ehE(tc, 72.68 + st, 0.4); P.mouth = 'o'; P.eyes = 'wide'; P.x += (g.x < H1_CX ? -1 : 1) * 30; }
   // the fan servant on the dais and the tray servant
@@ -213,7 +234,7 @@ function h1Guest(i, t) {
   P.gaze = lookAt(head, tg);
   return P;
 }
-const H1_CHILD_X = H1_F([[11.8, 1190], [12.5, 930], [13.0, 960], [13.6, 990], [14.2, 1000], [19.6, 1000], [20.4, 880], [23.5, 880], [24.2, 940], [39.9, 940], [40.3, 868], [46.5, 868], [47.0, 960]]);
+const H1_CHILD_X = H1_F([[11.8, 1190], [12.5, 930], [13.0, 960], [13.6, 990], [14.2, 1000], [19.6, 1000], [20.4, 880], [23.5, 880], [24.2, 940], [39.9, 940], [40.3, 868], [46.5, 868], [47.6, 800], [48.2, 790]]);   // v2: stays with the left group from 47
 function h1Child(t) {
   const tc = EH_T2(t), sd = 61, D = EH_CHILD, H = h1Horse(t);
   const P = { x: H1_CHILD_X(tc), y: 942, dir: 1, s: 1, lid: ehLid(t, sd), sq: breathe(tc, sd, 0.02), tip: idleSway(tc, sd, 0.03, 2.1), mouth: 'smile' };
@@ -241,9 +262,9 @@ function h1Doves(ctx, t) {
   for (const [k, x0] of [[0, 452], [1, 590]]) { const a = 11.8 + k * 0.12; if (t < a) dove(x0, 848, 0.36, k ? -1 : 1, false, 0, { headRot: Math.sin(tc * 2 + k) * 0.2, lid: ehLid(t, 90 + k) }); else if (t < a + 2.5) { const u = t - a; dove(x0 - 120 * u * (k ? -0.6 : 1), 848 - 260 * u, 0.36 + 0.05 * u, k ? 1 : -1, true, k * 2); } }
   // the dove that perches on the horse's head (21.6 - 27.9), then leaves along the arc of the inventor's sweep
   if (t > 20.9 && t < 29.4) { const H = h1Horse(t), top = h1Pt(H, [150, -340]);
-    if (t < 21.9) { const u = ehE(t, 20.9, 1.0, 'out'); dove(K.lerp(1420, top[0], u), K.lerp(260, top[1], u), 0.36, -1, true, 0); }
-    else if (t < 27.9) dove(top[0], top[1] + 2 * (1 - landSquash(tc, 21.9, 1)), 0.36, -1, false, 0, { headRot: Math.round(Math.sin(tc * 1.3) * 2) * 0.25, sq: landSquash(tc, 21.9, 0.14) });
-    else { const u = t - 27.9; dove(top[0] + 220 * u, top[1] - 380 * u + 60 * u * u, 0.36, 1, true, 1); } }
+    if (t < 21.9) { const u = ehE(t, 20.9, 1.0, 'out'); dove(K.lerp(1420, top[0], u), K.lerp(260, top[1], u), 0.72, -1, true, 0); }   // v2: twice the size
+    else if (t < 27.9) { const fl = t < 22.5; dove(top[0], top[1] + 2 * (1 - landSquash(tc, 21.9, 1)), 0.72, -1, fl, 0, { flap: fl ? 0.6 * Math.sin(tc * 30) * (1 - (t - 21.9) / 0.6) : 0, headRot: Math.round(Math.sin(tc * 1.3) * 2) * 0.25, sq: landSquash(tc, 21.9, 0.14) }); }
+    else { const u = t - 27.9; dove(top[0] + 220 * u, top[1] - 380 * u + 60 * u * u, 0.72, 1, true, 1); } }
   // the gate doves scatter in the demo flight; the dome doves burst at the launch
   if (t > 44.6 && t < 47.5) for (let i = 0; i < 4; i++) { const u = t - 44.6 - i * 0.05; if (u > 0) dove(180 + i * 40 - 120 * u, 630 - 300 * u + i * 10, 0.38, -1, true, i); }
   if (t > 73.5 && t < 76) for (let i = 0; i < 5; i++) { const a = -2.6 + i * 0.5, u = t - 73.5; dove(1350 + Math.cos(a) * 340 * u, 60 + Math.sin(a) * 240 * u, 0.4, Math.cos(a) > 0 ? 1 : -1, true, i); }
@@ -288,7 +309,7 @@ function h1World(ctx, t, cam) {
   for (const [i, P] of G) if (!back(P.y)) rows.push([P.y, () => h1Person(ctx, EH_GUESTS[i], P)]);
   if (child.y >= 895) rows.push([child.y, () => h1Person(ctx, EH_CHILD, child)]);
   if (inv) rows.push([inv.y + (inv.lift || 0), () => h1Person(ctx, EH_INVENTOR, inv, { tail: t > 72.68 ? 1.8 : 1, t })]);
-  if (fz) rows.push([fz.y + (fz.lift || 0), () => { const vx = t >= 50.1 && t < 52.4 ? -180 : t > 65.2 && t < 66.6 ? -300 : 0; h1Person(ctx, EH_FIRUZ, fz, { cape: true, t, vx, swing: swing(tc, 52.4, 0.3) + swing(tc, 66.5, 0.3) }); }]);
+  if (fz) rows.push([fz.y + (fz.lift || 0), () => { const vx = t >= 50.1 && t < 52.0 ? -180 : t > 59.0 && t < 60.4 ? -120 : 0; h1Person(ctx, EH_FIRUZ, fz, { cape: true, t, vx, swing: swing(tc, 52.1, 0.3) + swing(tc, 60.45, 0.35) + 0.6 * swing(tc, 52.62, 0.3) }); }]);
   rows.sort((a, b) => a[0] - b[0]).forEach((r) => r[1]());
   if (t >= H1_HAT[0] && t < H1_HAT[1]) { const u = t - H1_HAT[0]; h1Tray(ctx, 1440 - 60 * u, 760 - 420 * u + 140 * u * u, 0.9, u * 7); }
   ehGardenFront(ctx, t);
@@ -318,8 +339,8 @@ const H1_CAM3 = [
   [18.12, { x: 1040, y: 610, zoom: 1.0 }], [21.0, { x: 1180, y: 610, zoom: 1.05 }], [23.5, { x: 1080, y: 610, zoom: 1.1 }], [27.5, { x: 1080, y: 600, zoom: 1.1 }], [28.2, { x: 1080, y: 540, zoom: 1.08 }], [29.2, { x: 1080, y: 590, zoom: 1.05 }],
   [29.72, { x: 1080, y: 612, zoom: 1.0 }], [30.8, { x: 1560, y: 615, zoom: 1.0 }], [33.8, { x: 1560, y: 615, zoom: 1.0 }], [35.0, { x: 1100, y: 615, zoom: 1.0 }], [36.2, { x: 1090, y: 615, zoom: 1.0 }],
   [37.64, { x: 1080, y: 612, zoom: 1.0 }], [39.5, { x: 1080, y: 600, zoom: 1.0 }], [41.0, { x: 1060, y: 560, zoom: 0.95 }], [43.3, { x: 900, y: 238, zoom: 0.62 }], [46.0, { x: 900, y: 238, zoom: 0.62 }], [46.95, { x: 1050, y: 560, zoom: 0.85 }],
-  [46.99, { x: 1050, y: 560, zoom: 0.85 }], [47.0, { x: 1180, y: 605, zoom: 1.0 }], [50.1, { x: 1180, y: 605, zoom: 1.0 }], [52.4, { x: 1090, y: 600, zoom: 1.15 }], [55.7, { x: 1090, y: 600, zoom: 1.15 }],
-  [55.81, { x: 1100, y: 600, zoom: 1.2 }], [69.08, { x: 1130, y: 600, zoom: 1.2 }], [70.0, { x: 1060, y: 590, zoom: 1.0 }], [71.65, { x: 1040, y: 575, zoom: 0.92 }],
+  [46.99, { x: 1050, y: 560, zoom: 0.85 }], [47.0, { x: 1180, y: 605, zoom: 1.0 }], [50.1, { x: 1180, y: 605, zoom: 1.0 }], [51.9, { x: 1095, y: 677, zoom: 1.25 }],
+  [65.12, { x: 1095, y: 677, zoom: 1.25 }], [66.2, { x: 1075, y: 677, zoom: 1.25 }], [69.08, { x: 1075, y: 677, zoom: 1.25 }],   // v2: one framing for S6-S7, ground near panel y 950 [70.0, { x: 1060, y: 590, zoom: 1.0 }], [71.65, { x: 1040, y: 575, zoom: 0.92 }],
   [72.4, { x: 1030, y: 300, zoom: 0.75 }], [74.2, { x: 1020, y: 120, zoom: 0.7 }], [74.45, { x: 1020, y: 160, zoom: 0.7 }], [75.12, { x: 1150, y: 352, zoom: 0.7 }],
 ];
 function h1CamClamp(c) { const z = c.zoom; return { x: K.clamp(c.x, 500 / z, EH_GARDEN.w - 500 / z), y: K.clamp(c.y, EH_GARDEN.top + 615 / z, 1230 - 615 / z), zoom: z }; }
@@ -332,6 +353,24 @@ function h1CamRaw(t) {
 const h1P = (x, y, c) => [500 + (x - c.x) * c.zoom, 615 + (y - c.y) * c.zoom];
 
 // ---------- lettering over the garden (panel units) ----------
+// v2 (note 5): a speech balloon placed by the scene (centre bx, by; one or more stacked lines), with a short narrow tail toward the
+// speaker (at most 70 long, base 26) instead of the style's wide wedge; kept inside the panel (top >= 80). steps [[t, text | [lines]]].
+function h1Measure(ctx, S, text, size) { ctx.save(); ctx.globalAlpha = 0; const r = S.label(ctx, text, -5000, -5000, 1, { size, balloon: true }); ctx.restore(); return r; }
+function h1Say(ctx, S, steps, t, bx, by, to, o = {}) {
+  if (t < steps[0][0] || (o.gone && t > o.gone + 0.25)) return; let txt = steps[0][1], t0 = steps[0][0];
+  for (const [ts, tx] of steps) if (t >= ts) { txt = tx; t0 = ts; }
+  const lines = Array.isArray(txt) ? txt : [txt], size = o.size || 44, M = lines.map((l) => h1Measure(ctx, S, l, size)), w = Math.max(...M.map((m) => m.w)), lh = M[0].h, step = lh * 0.86, H = lh + step * (lines.length - 1);
+  const x = K.clamp(Math.max(bx, (o.minX ?? -1e4) + w / 2), 30 + w / 2, 970 - w / 2), yTop = Math.max(80, by - H / 2), cy0 = yTop + lh / 2;   // centre of the first pill
+  const p = K.clamp((t - steps[0][0]) / 0.3), pop = 1 + 0.12 * Math.max(0, 1 - (t - t0) / 0.2);
+  ctx.save(); if (o.gone && t > o.gone) ctx.globalAlpha *= 1 - K.clamp((t - o.gone) / 0.25);
+  ctx.translate(x, yTop + H / 2); ctx.scale(pop, pop); ctx.translate(-x, -(yTop + H / 2));
+  if (to && p > 0.12) {   // the tail: from the box edge point nearest the speaker, a narrow wedge capped at 70
+    const ex = K.clamp(to[0], x - w / 2 + lh * 0.5, x + w / 2 - lh * 0.5), ey = K.clamp(to[1], yTop + lh * 0.3, yTop + H - lh * 0.3), dx = to[0] - ex, dy = to[1] - ey, d = Math.hypot(dx, dy) || 1, L = Math.min(70, d), ux = dx / d, uy = dy / d;
+    const bx0 = ex + ux * lh * 0.3, by0 = ey + uy * lh * 0.3, nx = -uy * 13, ny = ux * 13;
+    ctx.save(); ctx.globalAlpha *= K.clamp(p * 3); ctx.fillStyle = 'rgba(14,10,24,0.86)'; ctx.beginPath(); ctx.moveTo(bx0 - ux * 18 + nx, by0 - uy * 18 + ny); ctx.lineTo(ex + ux * (lh * 0.3 + L), ey + uy * (lh * 0.3 + L)); ctx.lineTo(bx0 - ux * 18 - nx, by0 - uy * 18 - ny); ctx.closePath(); ctx.fill(); ctx.restore(); }
+  lines.forEach((l, i) => { const m = M[i], yc = cy0 + i * step; S.label(ctx, l, x, yc + 0.3 * m.h / 1.45, p, { size, balloon: true }); });
+  ctx.restore();
+}
 // a speech balloon just above the speaker's head (short tail), kept inside the panel
 function h1SayAt(ctx, S, steps, t, head, o = {}) { const [hx, hy] = head, w = o.half || 230; ehSay(ctx, S, steps, t, K.clamp(hx + (o.dx || 0), 40 + w, 960 - w), Math.max(110, hy - (o.up || 150)), [hx, hy - 30], o); }
 function h1Over(ctx, t, cam, S) {
@@ -342,17 +381,25 @@ function h1Over(ctx, t, cam, S) {
   if (t >= 12.9 && t < 13.8) { const [x, y] = P(h1Pt(H, [40, -170])[0], 600); ctx.save(); ctx.globalAlpha *= K.clamp((13.8 - t) / 0.2); S.title(ctx, 'TOK TOK', x - 40, y - 60 + 6 * Math.sin(EH_T3(t) * 20), K.clamp((t - 12.9) / 0.3), { size: 46, align: 'center' }); ctx.restore(); }
   if (t >= 18.4 && t < 21.6) { for (const [k, gx] of [[0, 760], [1, 1300]]) { const [x, y] = P(gx, 560); ctx.save(); ctx.globalAlpha *= K.clamp((21.6 - t) / 0.3); S.title(ctx, 'HA HA!', K.clamp(x, 150, 850) + 10 * Math.sin(EH_T3(t) * 15 + k * 2), y - k * 30, K.clamp((t - 18.4 - k * 0.3) / 0.3), { size: 52, align: 'center' }); ctx.restore(); } }
   const inv = h1InvGround(t);
-  if (inv && t >= 24.2 && t < 29.7) { const [mx, my] = P(...ehHeadOf(inv)); h1SayAt(ctx, S, [[24.3, 'THIS IS NO ORNAMENT!']], t, [mx, my], { gone: 26.1, size: 46, half: 380 }); h1SayAt(ctx, S, [[26.4, 'IT FLIES FASTER...'], [27.7, 'IT FLIES FASTER THAN THE WIND!']], t, [mx, my], { gone: 29.5, size: 40, half: 470, up: 190 }); }
+  if (inv && t >= 24.2 && t < 29.7) { const [mx, my] = P(...ehHeadOf(inv)), to = [mx + 14, my - 52];   // v2: beside his head, away from the horse
+    const minX = P(...h1Pt(H, [236, -250]))[0] + 24;
+    h1Say(ctx, S, [[24.3, ['THIS IS', 'NO ORNAMENT!']]], t, mx + 175, my - 150, to, { gone: 26.1, size: 44, minX });
+    h1Say(ctx, S, [[26.4, ['IT FLIES FASTER...']], [27.7, ['IT FLIES FASTER', 'THAN THE WIND!']]], t, mx + 175, my - 150, to, { gone: 29.5, size: 42, minX }); }
   if (t >= 29.12 && t < 29.8) { ctx.save(); ctx.globalAlpha *= pulse(t, 29.12, 0.7); for (const yy of [160, 230]) { ctx.strokeStyle = '#fff6ea'; ctx.lineWidth = 6; ctx.lineCap = 'round'; ctx.beginPath(); const x0 = -200 + (t - 29.12) * 2200; for (let x = 0; x < 600; x += 20) ctx.lineTo(x0 + x, yy + Math.sin((x0 + x) * 0.01) * 20); ctx.stroke(); } ctx.restore(); }
-  if (t >= 32.44 && t < 34.3) { const [mx, my] = P(1735, 620); h1SayAt(ctx, S, [[32.5, 'PROVE IT!']], t, [mx, my], { gone: 34.0, size: 60, half: 150, dx: -120 }); }
+  if (t >= 32.44 && t < 34.3) { const [mx, my] = P(1735, 620); h1Say(ctx, S, [[32.5, 'PROVE IT!']], t, mx - 190, my - 120, [mx - 20, my - 40], { gone: 34.0, size: 60 }); }
   if (t >= 47.5 && t < 49.2) { const [x, y] = P(780, 600); S.title(ctx, 'BRAVO!', K.clamp(x, 160, 840), y + 4 * Math.sin(EH_T3(t) * 17), K.clamp((t - 47.5) / 0.3), { size: 58, align: 'center' }); }
   if (t >= 51.2 && t < 53.6) { const fz = h1FiruzGround(t); if (fz) { const hd = ehHeadOf(fz), [hx, hy] = P(hd[0], hd[1] - 60); ctx.save(); ctx.globalAlpha *= K.clamp((53.6 - t) / 0.3);
     S.label(ctx, 'PRINCE FIRUZ', hx + 130, 140, K.clamp((t - 51.2) / 0.4), { size: 44 }); S.arrow(ctx, [hx + 80, 190], [hx + 10, hy - 10], K.clamp((t - 51.4) / 0.4), { width: 10 }); ctx.restore(); } }
+  if (t >= 52.62 && t < 53.2) { const hf = h1Pt(H, [92, -16]), [x, y] = P(hf[0], hf[1]); ctx.save(); ctx.globalAlpha *= K.clamp((53.2 - t) / 0.2); S.title(ctx, 'TOK', x + 70, y - 30, K.clamp((t - 52.62) / 0.2), { size: 40, align: 'center' }); ctx.restore(); }
   const fz = h1FiruzGround(t);
-  if (fz && t >= 57.16 && t < 59.2) { const [mx, my] = P(...ehHeadOf(fz)); h1SayAt(ctx, S, [[57.2, 'LET ME TRY IT!']], t, [mx, my], { gone: 58.95, size: 52, half: 200, dx: 60 }); }
-  if (inv && t >= 62.36 && t < 64.9) { const [mx, my] = P(...ehHeadOf(inv)); h1SayAt(ctx, S, [[62.4, 'LEARN UP AND DOWN FIRST!']], t, [mx, my], { gone: 64.6, size: 42, half: 440, dx: -60, up: 330 }); }
-  if (t >= 63.1 && t < 64.6) { const k = h1Pt(H, EH_EBG.knob), [x, y] = P(k[0], k[1]); S.arrow(ctx, [x + 100, y + 70], [x + 12, y + 8], K.clamp((t - 63.1) / 0.3), { width: 8 }); S.label(ctx, 'UP', x + 130, y + 96, K.clamp((t - 63.2) / 0.3), { size: 34 }); }
-  if (t >= 63.68 && t < 64.6) { const e = h1Pt(H, EH_EBG.lever), [x, y] = P(e[0], e[1]); S.arrow(ctx, [x + 120, y - 20], [x + 10, y - 8], K.clamp((t - 63.68) / 0.3), { width: 8, color: '#ff7ad9' }); S.label(ctx, 'DOWN', x + 170, y - 20, K.clamp((t - 63.78) / 0.3), { size: 34 }); }
+  if (fz && t >= 57.16 && t < 59.2) { const [mx, my] = P(...ehHeadOf(fz)); h1Say(ctx, S, [[57.2, 'LET ME TRY IT!']], t, mx - 200, my - 120, [mx - 20, my - 40], { gone: 58.95, size: 46 }); }
+  if (inv && t >= 62.36 && t < 64.9) { const [mx, my] = P(...ehHeadOf(inv)); h1Say(ctx, S, [[62.4, ['LEARN UP AND', 'DOWN FIRST!']]], t, mx + 150, my - 140, [mx + 18, my - 58], { gone: 64.9, size: 38, minX: P(...h1Pt(H, [236, -250]))[0] + 24 }); }
+  // v2 (note 1): UP on the knob, DOWN at the ear, each with a glint on its control; held to 64.9
+  if (t >= 63.1 && t < 65.15) { const k = h1Pt(H, EH_EBG.knob), [x, y] = P(k[0], k[1]); ctx.save(); ctx.globalAlpha *= K.clamp((65.15 - t) / 0.25);
+    S.arrow(ctx, [x - 150, y - 120], [x - 22, y - 14], K.clamp((t - 63.1) / 0.3), { width: 9 }); S.label(ctx, 'UP', x - 185, y - 150, K.clamp((t - 63.2) / 0.3), { size: 40 }); ctx.restore(); ehGlint(ctx, x, y, 34, (t - 63.1) / 0.6); }
+  if (t >= 63.68 && t < 65.15) { const e = h1Pt(H, EH_EBG.lever), [x, y] = P(e[0], e[1]); ctx.save(); ctx.globalAlpha *= K.clamp((65.15 - t) / 0.25);
+    S.arrow(ctx, [x - 150, y - 150], [x - 16, y - 12], K.clamp((t - 63.68) / 0.3), { width: 9, color: '#ff7ad9' }); S.label(ctx, 'DOWN', x - 190, y - 182, K.clamp((t - 63.78) / 0.3), { size: 40 }); ctx.restore(); ehGlint(ctx, x, y, 30, (t - 63.68) / 0.6); }
+  if (t >= 21.5 && t < 22.1) { const k = h1Pt(H, EH_EBG.knob), [x, y] = P(k[0], k[1]); ehGlint(ctx, x, y, 26, (t - 21.5) / 0.6); }   // ties Firuz's look to the knob
   if (t >= 71.65 && t < 72.5) { const [x, y] = P(...h1Pt(H, [0, -200])); S.emphasis(ctx, x, y, 220, K.clamp((t - 71.65) / 0.85), { rect: [0, 0, 1000, 1230], word: 'WHOOSH!', wx: 0, wy: 1.2, seed: 7 }); }
   if (t >= 74.36 && t < 75.12) { ctx.save(); ctx.globalAlpha *= 1 - K.clamp((t - 74.5) / 0.6); const [x0, y0] = P(H1_CX, 600), [x1] = P(H1_CX + 80, 0); S.arrow(ctx, [x0, Math.min(1100, y0)], [x1, -40], 1, { width: 14, color: '#7fe3ff', bend: 0.02 }); ctx.restore(); }
 }

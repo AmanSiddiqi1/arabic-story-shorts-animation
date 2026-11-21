@@ -21,7 +21,7 @@ const TS = (() => {
     ],
     win: { x: 1040, y: 430, w: 110, h: 120, cx: 1095, sill: 550 },   // Ali Baba's window (live: shutters, Morgiana)
     wall: { x0: 1180, x1: 1440, top: 600 }, gate: { cx: 1310, x0: 1220, x1: 1400, top: 660 },
-    line: [[800, 420], [1180, 400]],
+    line: [[800, 404], [1180, 384]],
     lanterns: [[110, 590], [292, 640], [845, 640], [1790, 640]],
   };
 })();
@@ -196,11 +196,11 @@ function tsWashing(ctx, t, m, o = {}) {
   const lines = [[TS.line[0], TS.line[1], 22], [[232, 430], [508, 440], 18]];
   lines.forEach(([[x0, y0], [x1, y1], sag], li) => { ctx.strokeStyle = rope; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.quadraticCurveTo((x0 + x1) / 2, (y0 + y1) / 2 + sag * 2, x1, y1); ctx.stroke();
     const at = (u) => [K.lerp(x0, x1, u), K.lerp(y0, y1, u) + sag * 4 * u * (1 - u) * 1];
-    const items = li === 0 ? [[0.2, 'robe'], [0.48, 'sash'], [0.66, 'cloth', '#fff6ea'], [0.84, 'cloth', '#3f7ad0']] : [[0.25, 'cloth', '#ffd36a'], [0.5, 'cloth', '#e8364f'], [0.75, 'cloth', '#2f9a8e']];
+    const items = li === 0 ? [[0.14, 'robe'], [0.34, 'sash'], [0.49, 'cloth', '#fff6ea'], [0.58, 'cloth', '#3f7ad0']] : [[0.25, 'cloth', '#ffd36a'], [0.5, 'cloth', '#e8364f'], [0.75, 'cloth', '#2f9a8e']];
     items.forEach(([u, kind, col], k) => { if (o.empty || (li === 0 ? k >= n : n < 2)) return; const [px, py] = at(u), sw = Math.sin(tc * 2.6 + k * 1.4 + li) * 0.06 + (o.wind || 0) * 0.1;
       ctx.save(); ctx.translate(px, py); ctx.transform(1, 0, sw, 1, 0, 0);
       if (kind === 'robe') { const tk = o.tuck ?? 1, c0 = AB_ALI0.robe; celShade(ctx, [[-34, 0], [34, 0], [44, 110], [30, 118 + 26 * (1 - tk)], [-38, 112]], c0, abDark(c0, 0.3), { light: [1, -0.5], off: 7, lw: 2.5, line: abDark(c0, 0.6) });
-        seg(ctx, -34, 4, -58, 40, 18, c0, 2.5); seg(ctx, 34, 4, 58, 40, 18, c0, 2.5); }
+        seg(ctx, -34, 4, -58, 40, 18, c0, 2.5); seg(ctx, 34, 4, 58 - 18 * (1 - tk), 40 + 236 * (1 - tk), 18, c0, 2.5); }
       else if (kind === 'sash') { celShade(ctx, [[-9, 0], [9, 0], [12, 96], [0, 108], [-12, 96]], AB_ACC, '#b0201a', { light: [1, -0.5], off: 4, lw: 2.5, line: '#7a1010' });
         if (o.flash) { abGlow(ctx, 0, 50, 80, o.flash, '#ff8a6a'); } }
       else celShade(ctx, K.rectPts(-16, 0, 32, 42 + (k % 2) * 10), col, abDark(col, 0.3), { light: [1, -0.5], off: 4, lw: 2 });

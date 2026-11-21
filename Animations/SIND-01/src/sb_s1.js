@@ -28,8 +28,8 @@ function sbS1World(ctx, t, cam) {
   if (t < 14.1) { ctx.save(); ctx.strokeStyle = '#c8a070'; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(bol[0], bol[1]); ctx.quadraticCurveTo((bol[0] + bowW[0]) / 2, Math.max(bol[1], bowW[1]) + 40, bowW[0], bowW[1]); ctx.stroke(); ctx.restore(); }
   else if (t < 14.7) { const u = (t - 14.1) / 0.6; ctx.save(); ctx.strokeStyle = '#c8a070'; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(bowW[0], bowW[1]); ctx.quadraticCurveTo(bowW[0] - 60, bowW[1] - 60 * Math.sin(Math.PI * u), bowW[0] - 140 * u, bowW[1] + 40 * u); ctx.stroke(); ctx.restore(); }
   sbQuayWater(ctx, t, sea, 0, 2300);
-  // the whale's shadow glides right to left under the gangplank (the audience sees it; Sinbad never looks down)
-  if (t > 4.1 && t < 5.9) { const u = (t - 4.1) / 1.8; ctx.save(); ctx.beginPath(); ctx.rect(1112, 958, 1400, 400); ctx.clip(); sbWhale(ctx, K.lerp(2000, 900, u), 990, { s: 0.5, dir: -1, silhouette: 0.32 * Math.sin(Math.PI * u) }); ctx.restore(); }
+  // the whale's shadow glides right to left under the gangplank (the audience sees it; Sinbad never looks down); rev 1: larger, darker
+  if (t > 4.1 && t < 5.9) { const u = (t - 4.1) / 1.8; ctx.save(); ctx.beginPath(); ctx.rect(1112, 958, 1400, 400); ctx.clip(); sbWhale(ctx, K.lerp(2000, 900, u), 1010, { s: 0.7, dir: -1, silhouette: 0.55 * Math.min(1, 1.6 * Math.sin(Math.PI * u)) }); ctx.restore(); }
   for (const [x, t0] of [[1240, 5.0], [1300, 5.35]]) { const u = (t - t0) / 1.6; sbRing(ctx, x, 955, u, 120, { a: 0.7 }); }
   // the gangplank (bends under each footfall), drawn in front of the hull
   const bend = kick(t, SB_FALLS1, 6, 9, 8) + (t > 11.4 && t < 13.2 ? 4 : 0);
@@ -170,7 +170,10 @@ function sbS3World(ctx, t, cam) {
   // gulls arrive (land is near) and circle the mast; one lands on the yard
   if (t > 21.0) { const u = t - 21.0; sbGull(ctx, 430 + 160 * Math.cos(u * 2.2), 170 + 40 * Math.sin(u * 2.2) + Math.max(0, 1.2 - u) * 300, t, { dir: Math.sin(u * 2.2) > 0 ? -1 : 1, s: 0.36, seed: 5 });
     const g2 = K.clamp((t - 21.0) / 0.9); sbGull(ctx, K.lerp(1100, 560, K.ease.out(g2)), K.lerp(220, f.y - 405, K.ease.out(g2)) , t, { dir: -1, s: 0.36, seed: 9, fly: g2 < 1, flap: g2 < 1 ? undefined : 0.1 * osc(tc, 1.1) }); }
-  sbSeaFront(ctx, t, sea, 0, 2000);
+  sbSeaFront(ctx, t, sea, 0, 2000, { mid: (c) => sbReflect(c, 400, f.y, 470, ['#a8643a', '#2ab0b0', '#fbf3df', '#d0285a', '#fbf3df'], t, { rows: 7, gap: 10, a: 0.5 }) });
+  // life: flying fish skip alongside on every day (rev 1: one living thing per sea shot)
+  for (const [t0, xa, xb] of [[15.4, 860, 640], [16.2, 980, 760], [19.6, 900, 700], [20.5, 1000, 820], [21.4, 880, 690]]) sbFlyingFish(ctx, xa, xb, seaY(xa, t, 3, sea) + 10, (t - t0) / 0.8, 80, 0.5);
+  sbSeaNear(ctx, t, sea, cam);
   if (t > 21.0 && t < 21.9) sbGlints(ctx, [0, 640, 1000, 160], t, 10, 4, 22);
 }
 // the deck: Sinbad at the bow (shades his eyes, points at the fish, sleeps by the rope coil, wakes, bounces), the haulers, the mopper,
@@ -234,13 +237,18 @@ function sbS4World(ctx, t, cam) {
   sbDhow(ctx, D);
   // the two skiffs, rowed on twos, the second half a stroke behind
   for (let i = 1; i >= 0; i--) { const xf = SB_SKIFFX[i], x = xf(t), fl = sbFloat(x, t, sea, 2, 90), ph = tc * 7 + i * 1.6, ground = i === 0 && t > 26.62, surge = 6 * Math.max(0, Math.sin(ph));
-    sbSkiff(ctx, { x: x + surge, y: fl.y + (ground ? -6 : 0), s: 0.95, pitch: fl.rot + (ground ? 0.06 * lurch(tc, 26.62) : 0), oar: ph, row: ground ? 0.1 : 1, crew: (c) => sbOnDeck(c, 0.95, (q) => {
+    sbSkiff(ctx, { x: x + surge, y: fl.y + (ground ? -6 : 0), s: 1.25, pitch: fl.rot + (ground ? 0.06 * lurch(tc, 26.62) : 0), oar: ph, row: ground ? 0.1 : 1, crew: (c) => sbOnDeck(c, 1.25, (q) => {
       for (let k = 0; k < 2; k++) { const P = sbAlive(t, 90 + i * 3 + k, { x: (-40 + k * 30) * 0.95, y: -14 * 0.95, s: 0.62, dir: -1, gaze: [-1, 0], tip: -0.12 * Math.sin(ph) }); P.handL = [40, -130]; P.handR = [50, -125]; sbSailor(q, 2 + i + k, P); }
       if (i === 0 && t < 26.7) { const S = sbAlive(t, 11, { x: 60 * 0.95, y: -24, s: 0.62, dir: 1, tip: 0.12, gaze: [1, -0.3], wind: -1, mouth: 'open' }); S.handR = PERSON_HANDS.pointFwd.R; sbSinbad(q, S);
         const M = sbAlive(t, 81, { x: 20 * 0.95, y: -14, s: 0.64, dir: 1, mouth: 'o', eyes: 'wide', tip: 0.05 * Math.sin(ph) }); M.handLW = [-10, -40]; M.handRW = [40, -40]; sbMerchant(q, 0, { ...M, s: 0.64 }); }
       if (i === 1) { const M = sbAlive(t, 85, { x: 40 * 0.95, y: -14, s: 0.6, dir: 1, gaze: [1, -0.2] }); sbMerchant(q, 1, { ...M, s: 0.6 }); } }) });
-    sbWake(ctx, x, fl.y, 0.4, 1, t + i, ground ? 0 : 0.7); }
-  sbSeaFront(ctx, t, sea, 0, 1800);
+    sbWake(ctx, x, fl.y, 0.5, 1, t + i, ground ? 0 : 0.8); }
+  sbSeaFront(ctx, t, sea, 0, 1800, { mid: (c) => { sbReflect(c, 330, sbFloat(330, t, sea, 2, 200).y, 470, ['#a8643a', '#2ab0b0', '#fbf3df'], t, { rows: 6, gap: 9, a: 0.5 });
+    for (let i = 0; i < 2; i++) { const x = SB_SKIFFX[i](t), y = sbFloat(x, t, sea, 2, 90).y, ph = SB_T2(t) * 7 + i * 1.6; sbReflect(c, x, y, 280, ['#a8643a', '#2ab0b0'], t, { rows: 4, gap: 8, a: 0.45, seed: 30 + i });
+      if (!(i === 0 && t > 26.62)) for (const sd of [-1, 1]) sbRing(c, x - 150 + sd * 30, y + 8, ((ph / (2 * Math.PI)) % 1), 50, { lw: 3, a: 0.7 }); } } });
+  // life: a pair of dolphins arcing past the anchored dhow
+  for (const [t0, k] of [[25.3, 0], [25.62, 1]]) sbDolphinLeap(ctx, 760 + k * 50, 520 + k * 50, seaY(640, t, 3, sea) + 8, (t - t0) / 0.9, 120, 0.55);
+  sbSeaNear(ctx, t, sea, cam);
   if (t > 27.6 && t < 27.95) sbSpeed(ctx, [0, 200, 1800, 900], t, { dir: -1, alpha: 0.6, col: '#ffffff' });
 }
 function sbS4Crew(c, t, ds) {

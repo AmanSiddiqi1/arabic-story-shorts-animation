@@ -210,7 +210,7 @@ function h2MaidRoof(t) {
   const head = () => ehHeadOf(P), look = (p) => lookAt(head(), p); let lamp = 'R', lampSwing = 0;
   if (t < H2_ROOF_B) {
     Object.assign(P, walk(H2_MDX, tc, { stride: 20 })); P.y = t < 47.2 ? K.lerp(900, 925, ehE(t, 46.44, 0.7)) : 925; P.handR = [40, -120]; P.handL = [10, -112];
-    const pr = h2PrRoof(t), fzp = h2FzGroundPos(t); P.gaze = look([fzp[0], fzp[1] - 180]);
+    const fzp = h2FzGroundPos(t); P.gaze = look([fzp[0], fzp[1] - 180]);
     if (t < 46.44) { P.eyes = 'wide'; P.tip = 0.08; P.handL = [-50, -160]; P.handR = [20, -112]; }
     else if (t < 49.4) { const u = flow(tc, H2_LAMPUP); P.handR = [K.lerp(40, 36, u), K.lerp(-120, -214, u)]; P.handL = [K.lerp(10, 6, u), K.lerp(-112, -206, u)]; P.tip = -0.04; P.sq *= 0.97; P.drop = -4; lampSwing = swing(tc, 47.7, 0.25); P.eyes = 'wide'; }
     else if (t < 53.38) { P.drop = 18; P.tip = 0.06; P.handR = [36, -170 + tremble(tc, 3, 9)]; P.handL = [-10, -140]; lampSwing = tremble(tc, 0.06, 9); P.eyes = 'wide'; }

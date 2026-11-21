@@ -3,14 +3,14 @@
 // the log ring). New and reusable (SIND-06 can copy this file). World units, ground y 900.
 // woodedIsland strip: x -400..2900. Sea x < 600 (horizon 600), beach 380..820, glade 760..1670 (shade tree 1080), fruit bushes
 // 1300..1450, brook 1560 (stepping stones 1530, 1600), wood 1700..2900, lookout tree from (2050, 900) up to the fork (2400, 470).
-const SB_WOOD = { w: 3300, x0: -400, ground: 900, water: 600, tree: 1080, brook: 1560, stones: [1528, 1598], look: { a: [2050, 900], b: [2400, 470] }, dome: [2820, 330] };
+const SB_WOOD = { w: 3800, x0: -400, ground: 900, water: 600, tree: 1080, brook: 1560, stones: [1528, 1598], look: { a: [2050, 900], b: [2400, 470] }, dome: [2820, 330] };
 const SB_GREENS = { morning: ['#2f8a4a', '#3fae5a', '#5ac86a', '#7fd67a', '#1f6a44', '#9ae08a'], gold: ['#4a8a3a', '#6aae4a', '#8ac85a', '#b0d870', '#3a6a34', '#d0e080'] };
 // a canopy band baked from overlapping circles (cel: flat greens with hard shade), fruit dots; top edge varies around top
 function sbCanopy(c, x0, x1, top, bottom, seed, G, o = {}) {
   const R = K.rng(seed); let x = x0;
-  while (x < x1) { const r = 60 + R() * 70, ty = top + (R() - 0.5) * (o.vary ?? 90), g = G[Math.floor(R() * 4)];
+  while (x < x1) { const r = 60 + R() * 70, tp = o.taper ? Math.max(0, 1 - (x - x0) / o.taper) : 0, ty = top + (R() - 0.5) * (o.vary ?? 90) + tp * (bottom - top - 2 * r) * 0.9, g = G[Math.floor(R() * 4)];
     celShade(c, ell(x, ty + r, r, r * 0.92, 20), g, sbDark(g, 0.28), { light: o.light || [-1, -1], off: r * 0.35, lw: 2.5, line: sbDark(g, 0.55), hi: R() < 0.4 ? sbLight(g, 0.3) : null });
-    c.fillStyle = sbDark(G[0], 0.15); c.fillRect(x - r * 0.9, ty + r * 1.3, r * 1.8, bottom - ty - r);
+    c.fillStyle = sbDark(G[0], 0.15); c.fillRect(x - r * 0.9, ty + r * 1.3, r * 1.8, Math.max(0, bottom - ty - r * 1.3));
     if (o.fruit && R() < 0.5) for (let k = 0; k < 3; k++) { c.fillStyle = R() < 0.5 ? '#e8364f' : '#ffcf3a'; c.beginPath(); c.arc(x + (R() - 0.5) * r, ty + r * (0.6 + R() * 0.6), 6 + R() * 4, 0, 7); c.fill(); c.strokeStyle = '#6a2a2a'; c.lineWidth = 1.5; c.stroke(); }
     x += r * (0.7 + R() * 0.5); }
 }
@@ -20,13 +20,13 @@ function sbMushroom(c, x, y, h, col = '#e8364f') { seg(c, x, y, x, y - h * 0.6, 
 function sbWoodPlate(model) {
   return sbBakeAt('wood:' + model, SB_WOOD.w, 1230, (c) => { c.translate(400, 0); const G = SB_GREENS[model], gold = model === 'gold';
     // far forest wall behind the glade and the wood (three bands, far to near)
-    sbCanopy(c, 640, 2950, 330, 900, 11, G.map((g) => sbMix(g, gold ? '#e8d8a0' : '#bfe0ee', 0.35)), { vary: 120 });
-    for (let x = 700; x < 2900; x += 90 + (x % 70)) sbTrunk(c, x, 900, 560, 30, 0, gold ? '#9a6a4a' : '#7a5a4a');
-    sbCanopy(c, 1640, 2950, 380, 900, 12, G, { fruit: true });
-    for (const [x, w, l] of [[1720, 70, -10], [1880, 60, 14], [2240, 80, -6], [2520, 64, 10], [2700, 90, -14], [2860, 70, 6]]) sbTrunk(c, x, 905, 420, w, l, gold ? '#a8704a' : '#8a5a3a');
-    sbCanopy(c, 760, 1500, 470, 760, 13, G.map((g) => sbMix(g, '#ffffff', 0.08)), { fruit: true, vary: 60 });
+    sbCanopy(c, 700, 3450, 330, 900, 11, G.map((g) => sbMix(g, gold ? '#e8d8a0' : '#bfe0ee', 0.35)), { vary: 120, taper: 260 });
+    for (let x = 900; x < 3400; x += 90 + (x % 70)) sbTrunk(c, x, 900, 600, 26, 0, gold ? '#9a6a4a' : '#7a5a4a');
+    sbCanopy(c, 1640, 3450, 380, 900, 12, G, { fruit: true, taper: 200 });
+    for (const [x, w, l] of [[1720, 70, -10], [1880, 60, 14], [2240, 80, -6], [2520, 64, 10], [2700, 90, -14], [2860, 70, 6], [3080, 76, -8], [3300, 64, 10]]) sbTrunk(c, x, 905, 520, w, l, gold ? '#a8704a' : '#8a5a3a');
+    sbCanopy(c, 880, 1500, 470, 800, 13, G.map((g) => sbMix(g, '#ffffff', 0.08)), { fruit: true, vary: 60, taper: 220 });
     // ground: grass meadow, the beach on the left (the sea is drawn live before this plate)
-    sbGrad(c, 700, 880, 2300, 350, [[0, gold ? '#8ac860' : '#6ac06a'], [1, gold ? '#5a9a44' : '#3f8a4a']]);
+    sbGrad(c, 700, 880, 2800, 350, [[0, gold ? '#8ac860' : '#6ac06a'], [1, gold ? '#5a9a44' : '#3f8a4a']]);
     const B = [[380, 1230], [470, 1060], [560, 970], [660, 922], [760, 905], [900, 902], [900, 1230]];
     c.save(); K.poly(c, B, true); c.clip(); sbGrad(c, 380, 900, 560, 330, [[0, gold ? '#f8d8a0' : '#f4dca8'], [1, gold ? '#e8b070' : '#e0b878']]);
     c.fillStyle = gold ? '#c89a60' : '#c8a070'; c.beginPath(); c.moveTo(380, 1230); c.lineTo(470, 1060); c.lineTo(560, 970); c.lineTo(630, 935); c.lineTo(660, 1230); c.closePath(); c.fill(); c.restore();
@@ -38,9 +38,9 @@ function sbWoodPlate(model) {
     for (const sx of SB_WOOD.stones) sbStone(c, sx, 912, 26, '#c8c0d8', '#8a82a8');
     // undergrowth: ferns, mushrooms, flowers, stones, tufts
     const R = K.rng(gold ? 33 : 32);
-    for (let i = 0; i < 26; i++) { const x = 1650 + R() * 1250, y = 905 + R() * 40; if (Math.abs(x - 2050) < 60) continue; sbFern(c, x, y, 60 + R() * 60, G[Math.floor(R() * 3)]); }
+    for (let i = 0; i < 26; i++) { const x = 1650 + R() * 1700, y = 905 + R() * 40; if (Math.abs(x - 2050) < 60) continue; sbFern(c, x, y, 60 + R() * 60, G[Math.floor(R() * 3)]); }
     for (let i = 0; i < 18; i++) sbMushroom(c, 900 + R() * 2000, 915 + R() * 280, 26 + R() * 26, ['#e8364f', '#ff8a3a', '#c86ad8'][i % 3]);
-    sbDress(c, 880, 2900, 912, 1210, gold ? 45 : 44, { stones: 16, tufts: 26, flowers: 36, skip: [[1500, 1680]], grass: [G[2], G[4]] });
+    sbDress(c, 880, 3400, 912, 1210, gold ? 45 : 44, { stones: 16, tufts: 26, flowers: 36, skip: [[1500, 1680]], grass: [G[2], G[4]] });
     sbDress(c, 480, 760, 930, 1200, 46, { stones: 6, tufts: 0, flowers: 0, shells: 12, stone: ['#d8ccc0', '#9a8a80'] });
     // fruit bushes 1300..1450
     for (const [x, r] of [[1330, 70], [1420, 60]]) { celShade(c, ell(x, 900 - r * 0.7, r, r * 0.75, 20), G[1], G[4], { light: [-1, -1], off: r * 0.3, lw: 2.5 }); for (let k = 0; k < 5; k++) { c.fillStyle = k % 2 ? '#e8364f' : '#ff9a3a'; c.beginPath(); c.arc(x - r * 0.6 + k * r * 0.3, 900 - r * (0.5 + (k % 3) * 0.25), 8, 0, 7); c.fill(); c.strokeStyle = '#6a2a2a'; c.lineWidth = 1.5; c.stroke(); } }
@@ -87,7 +87,7 @@ const sbLookPt = (u) => { const { a, b } = SB_WOOD.look; return [K.lerp(a[0], b[
 
 // ---------- the far island seen from the sea (S2): a green hump of trees with a beach and a white dome, w 1000 at s 1, base y ----------
 function sbFarIslandPlate() { return sbBakeAt('farIsland', 1100, 520, (c) => { c.translate(550, 500); const G = SB_GREENS.morning;
-  c.fillStyle = '#f4dca8'; c.beginPath(); c.moveTo(-540, 0); c.quadraticCurveTo(0, -60, 540, 0); c.closePath(); c.fill(); ink(c, [[-540, 0], [-300, -34], [0, -46], [300, -34], [540, 0]], 3, 1, '#9a7040');
+  c.fillStyle = '#f4dca8'; c.beginPath(); c.moveTo(-540, 10); c.quadraticCurveTo(0, -130, 540, 10); c.closePath(); c.fill(); ink(c, [[-540, 10], [-300, -46], [0, -60], [300, -46], [540, 10]], 3, 1, '#9a7040');
   celShade(c, ell(140, -410, 70, 130, 30).filter((p) => p[1] < -300), '#fffaf0', '#d8c8f0', { light: [-1, -0.5], off: 24, lw: 3, line: '#7a6aa8' });
   const R = K.rng(5); for (let i = 0; i < 26; i++) { const x = -460 + i * 36 + R() * 20, h = 120 + 200 * Math.sin(Math.PI * (i / 25)) + R() * 50, r = 44 + R() * 30, g = G[Math.floor(R() * 4)]; celShade(c, ell(x, -40 - h + r, r, r * 0.9, 16), g, sbDark(g, 0.28), { light: [-1, -1], off: r * 0.35, lw: 2.5, line: sbDark(g, 0.55) }); c.fillStyle = sbDark(G[0], 0.1); c.fillRect(x - r * 0.8, -40 - h + r * 1.6, r * 1.6, h - r); }
   for (const x of [-420, 380, 470]) palmTree(c, x, -20, { s: 0.55, lean: x < 0 ? -14 : 12 }); }); }

@@ -112,7 +112,7 @@ function a3S2World(ctx, t, cam) {
 function a3S2Over(ctx, t, cam, S) {
   if (t < 7.1) abSpeed(ctx, [0, 0, 1000, 1230], t, { dir: 1, alpha: 0.5 * (1 - K.clamp((t - 6.95) / 0.15)), n: 30 });
   const tc = AB_T2(t), sx = A3_S2_X(tc);
-  if (t > 9.3 && t < 10.5) { const [hx, hy] = abP(sx, 690, cam); abSay(ctx, S, [[9.4, 'ALI BABA?']], t, hx + 60, hy - 110, [hx + 10, hy - 20], { size: 52, gone: 10.2 }); }
+  if (t > 9.3 && t < 10.5) { const [hx, hy] = abP(sx, 690, cam); abSay(ctx, S, [[9.4, 'ALI BABA?']], t, Math.max(hx + 60, 190), hy - 110, [hx + 10, hy - 20], { size: 52, gone: 10.2 }); }
   const droop = K.clamp((t - 11.8) / 0.4);
   for (const [wx, a] of [[680, 10.55], [840, 11.08], [920, 11.35]]) { const [x, y] = abP(wx, wx === 920 ? 740 : 610, cam); a3Q(ctx, S, x, y, t, a, 12.2, { droop, size: 50 }); }
   if (t > 13.1 && t < 13.95) { const [x0, y0] = abP(1175, 690, cam), [x1, y1] = abP(sx + 18, 695, cam); ctx.save(); ctx.globalAlpha *= 1 - K.clamp((t - 13.7) / 0.25); S.arrow(ctx, [x0, y0], [x1, y1], K.clamp((t - 13.1) / 0.35), { color: '#ffd36a', bend: 0.3 }); ctx.restore(); }

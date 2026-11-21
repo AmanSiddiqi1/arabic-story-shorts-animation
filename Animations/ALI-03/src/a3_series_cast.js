@@ -131,7 +131,7 @@ function oilMerchant(ctx, t, P, m, o = {}) {
 function a3Neighbour(ctx, t, P, m, o = {}) {
   const Q = { s: 0.88, ...P }; if (o.shadow !== false) a3Shadow(ctx, P.x, P.y, 96, 0, o.shc);
   abPerson(ctx, Q, m, { costume: 'oldWoman', age: 0.8, ...Q, pal: abPal({ robe: '#8a5a8a', dot: '#6a3a6a', sleeve: '#a87aa8', hc: '#5a6a9a', hd: '#3e4a7a' }, m) });
-  if (o.broom != null) { const [hx, hy] = a2Hand(Q, 1, { s: 0.88, age: 0.8 }), bx = hx + (o.broom || 0), by = 902; seg(ctx, hx, hy - 30, bx, by - 26, 6, '#c8a070', 1.5);
+  if (o.broom != null) { const [hx, hy] = a2Hand(Q, 1, { s: 0.88, age: 0.8 }), bx = hx + (o.broom || 0), by = 902 - 120 * (o.lift || 0); seg(ctx, hx, hy - 30, bx, by - 26, 6, '#c8a070', 1.5);
     celShade(ctx, [[bx - 6, by - 30], [bx + 6, by - 30], [bx + 22, by], [bx - 22, by]], '#e8c870', '#b89040', { light: [-1, -1], off: 4, lw: 2 }); }
   return Q;
 }

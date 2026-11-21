@@ -72,7 +72,7 @@ function sbS1Crew(c, t, ds) { const tc = SB_T2(t), dy = -80 * ds;
 }
 function sbS1Over(ctx, t, cam, S) {
   if (t > 0.3 && t < 3.4) { const off = t > 2.95 ? [1, 0, 1, 0, 0, 0][Math.min(5, Math.floor((t - 2.95) * 12))] : 1;
-    if (off) { S.title(ctx, 'THE ROC AND', 500, 170, K.clamp((t - 0.3) / 0.9), { size: 84, align: 'center' }); S.title(ctx, 'THE DIAMOND VALLEY', 500, 262, K.clamp((t - 0.45) / 0.9), { size: 80, align: 'center' });
+    if (off) { S.title(ctx, 'THE ROC AND', 500, 170, K.clamp((t - 0.3) / 0.9), { size: 76, align: 'center' }); S.title(ctx, 'THE DIAMOND VALLEY', 500, 256, K.clamp((t - 0.45) / 0.9), { size: 64, align: 'center' });
       if (t > 0.9) S.title(ctx, 'الرخ ووادي الألماس', 500, 380, K.clamp((t - 0.9) / 0.9), { size: 70, align: 'center', font: 'Lalezar', glow: '#8a5cff' }); } }
 }
 SB_SHOTS.push({ a: 0, b: 5.46, free: true, cam: sbKeys([[0, { x: 1000, y: 355, zoom: 1 }], [1.6, { x: 1000, y: 615, zoom: 1 }], [4.4, { x: 1080, y: 615, zoom: 1 }], [5.46, { x: 1260, y: 615, zoom: 1 }]]), world: sbS1World, over: sbS1Over });
@@ -81,7 +81,7 @@ SB_SHOTS.push({ a: 0, b: 5.46, free: true, cam: sbKeys([[0, { x: 1000, y: 355, z
 const SB2_SEA2 = { hz: 600, y: [612, 680, 820, 900], amp: 6, pal: 'day' };
 const SB2_D2X = (t) => kfn(t, [[5.46, 220], [8.0, 380]], 'out');
 const SB2_SKX = (t) => kfn(t, [[9.92, 470], [11.04, 1040]], 'inOut');
-const SB2_ISL = (t) => { const u = K.ease.inOut(K.clamp((t - 9.6) / 1.5)); return { x: K.lerp(1750, 1520, u), y: K.lerp(640, 880, u), s: K.lerp(0.34, 1.05, u) }; };
+const SB2_ISL = (t) => { const u = K.ease.inOut(K.clamp((t - 9.6) / 1.5)); return { x: K.lerp(1750, 1420, u), y: K.lerp(640, 900, u), s: K.lerp(0.34, 1.3, u) }; };
 function sbS2Dhow(t) { const x = SB2_D2X(t), f = sbFloat(x, t, SB2_SEA2, 2, 200); return { x, y: f.y - 2, s: 1.0, pitch: f.rot * 0.5 + 0.02 * Math.sin(t * 1.85), t, sail: 1, billow: 0.7 + 0.2 * Math.sin(t * 1.3) }; }
 // who is in the skiff (local x on the thwarts) and when they arrive (hop start)
 const SB2_SKC = [{ who: 'm1', at: 8.9, lx: -70 }, { who: 'm2', at: 9.08, lx: -20 }, { who: 'm0', at: 9.26, lx: 30 }, { who: 'sin', at: 9.5, lx: 80 }];
@@ -90,11 +90,11 @@ function sbS2Skiff(t) { const down = K.clamp((t - 8.0) / 0.4), x = t < 9.92 ? 47
 function sbS2World(ctx, t, cam) {
   const tc = SB_T2(t), sea = SB2_SEA2;
   sbSkyTall(ctx, 'day', cam, 600); sbSun(ctx, 1320, 190, 46, '#fffbe0', '#ffe0a0', 0.8); sbSeaBack(ctx, t, sea, -200, 2600);
-  const I = SB2_ISL(t); sbFarIsland(ctx, I.x, I.y, I.s);
+  const I = SB2_ISL(t); if (t < 10.4) sbFarIsland(ctx, I.x, I.y, I.s);
   // parrots rise from the island (red, blue, yellow), staggered
   for (let i = 0; i < 3; i++) { const t0 = 10.26 + stagger(i, 0.22), u = K.clamp((t - t0) / 1.4); if (u <= 0 || u >= 1) continue; bird(ctx, { kind: ['r', 'b', 'y'][i], fly: true, flap: Math.sin(tc * 20 + i * 2), x: I.x - 200 + i * 160 + 160 * u, y: I.y - 300 - 380 * u, s: 0.4, dir: i === 1 ? -1 : 1 }); }
   sbGulls(ctx, t - 7.3, 1700, 300, -260, 2, 9, 0.36);
-  sbSeaLayer(ctx, 2, t, sea, -200, 2600);
+  sbSeaLayer(ctx, 2, t, sea, -200, 2600); if (t >= 10.4) sbFarIsland(ctx, I.x, I.y, I.s);
   const D = sbS2Dhow(t); D.crew = (c) => sbOnDeck(c, D.s, (q) => sbS2Crew(q, t, D)); sbDhow(ctx, D); sbWake(ctx, D.x, D.y, D.s, 1, t, K.clamp(1 - (t - 7.4) / 0.6));
   // flying fish skip out of a crest (staggered)
   for (let i = 0; i < 2; i++) { const u = (t - 7.3 - i * 0.3) / 0.7; sbFishJump(ctx, 760 + i * 90, 900 + i * 90, 836, u, 90, 0.6); if (u > 1 && u < 1.6) sbRing(ctx, 900 + i * 90, 840, (u - 1) / 0.6, 60); }
@@ -114,7 +114,7 @@ function sbS2World(ctx, t, cam) {
 function sbS2Person(c, who, t, P) { const Q = sbLive(t, who === 'sin' ? 11 : 80 + who.charCodeAt(1), P); if (who === 'sin') return sbSin2(c, { ...Q, wind: 0.6 }); return sbMerchant(c, +who[1], Q); }
 function sbS2SkiffCrew(c, t, Sk) { const tc = SB_T2(t);
   for (const k of SB2_SKC) { if (t < k.at + 0.24 || t >= (k.who === 'sin' ? 11.62 : 11.2 + stagger(+k.who[1] || 0, 0.12))) continue;
-    const lurch2 = lurch(t, 11.04, 0.3), P = { x: k.lx, y: -14, dir: 1, sit: k.who === 'sin' ? 0.6 : 0.8, seat: 'bench', tip: lurch2 + (k.who === 'm1' ? -0.05 : 0), sq: landSquash(tc, k.at + 0.24, 0.12), gaze: [1, -0.1], mouth: 'smile' };
+    const lurch2 = lurch(t, 11.04, 0.3), P = { x: k.lx, y: 40, dir: 1, sit: k.who === 'sin' ? 0.6 : 0.8, seat: 'bench', tip: lurch2 + (k.who === 'm1' ? -0.05 : 0), sq: landSquash(tc, k.at + 0.24, 0.12), gaze: [1, -0.1], mouth: 'smile' };
     if (k.who === 'm1') { P.handL = [-30, -120]; P.handR = [30, -130]; P.mouth = 'o'; P.gaze = [0.3, 0.6]; }
     if (k.who === 'sin' && t > 9.92) { const o = Math.sin(tc * 7); P.handL = [60 + 30 * o, -120]; P.handR = [70 + 30 * o, -110]; P.tip += 0.06 * o; }
     if (k.who === 'm0' && t > k.at + 0.24) P.sq *= 1 - 0.05 * pulse(t, k.at + 0.24, 0.35);
@@ -129,9 +129,9 @@ function sbS2Crew(c, t, D) { const tc = SB_T2(t), dy = -80 * D.s;
     if (t > 8.4) { P.gaze = [-0.4, 0.8]; } if (t > 9.3) P.sq *= anticipate(tc, 9.3, 0.2, 0.08); sbSin2(c, P); }
 }
 function sbS2Beach(ctx, t, Sk) { const tc = SB_T2(t);
-  SB2_SKC.forEach((k, i) => { const t0 = k.who === 'sin' ? 11.62 : 11.2 + stagger(+k.who[1], 0.12), [hx, lift] = hop(t, t0, 0.26, Sk.x + k.lx, Sk.x + 150 + i * 90, 40), P = { x: hx, y: 868 - lift, dir: 1, sq: landSquash(tc, t0 + 0.26, 0.14), gaze: [1, 0], mouth: 'smile' };
-    groundShadow(ctx, hx, 870, 70, lift, { flat: true });
-    if (k.who === 'm0' && t > t0 + 0.4) { P.kneel = K.clamp((t - t0 - 0.4) / 0.25); P.tip = 0.35 * P.kneel; P.handLW = [hx + 30, 868]; P.handRW = [hx + 60, 868]; P.lid = 1; P.mouth = 'o'; }
+  SB2_SKC.forEach((k, i) => { const t0 = k.who === 'sin' ? 11.62 : 11.2 + stagger(+k.who[1], 0.12), [hx, lift] = hop(t, t0, 0.26, Sk.x + k.lx, Sk.x + 150 + i * 90, 40), P = { x: hx, y: 884 - lift, dir: 1, sq: landSquash(tc, t0 + 0.26, 0.14), gaze: [1, 0], mouth: 'smile' };
+    groundShadow(ctx, hx, 886, 70, lift, { flat: true });
+    if (k.who === 'm0' && t > t0 + 0.4) { P.kneel = K.clamp((t - t0 - 0.4) / 0.25); P.tip = 0.35 * P.kneel; P.handLW = [hx + 30, 884]; P.handRW = [hx + 60, 884]; P.lid = 1; P.mouth = 'o'; }
     if (k.who === 'm1') { P.gaze = [-1, -0.2]; P.handR = PERSON_HANDS.chest.R; }
     if (k.who === 'sin') { P.gaze = [1, -0.5]; P.handR = PERSON_HANDS.wave.R; }
     sbS2Person(ctx, k.who, t, P); });
@@ -208,7 +208,7 @@ function sbRunSin(ctx, t) { const tc = SB_T2(t), x = SB2_RUN(t), P = sbLive(t, 1
 }
 const SB2_TRX = [(t) => kfn(t, [[12.6, 1250], [14.2, 1560], [16.2, 1560], [16.46, 900], [16.7, 760]]), (t) => kfn(t, [[12.75, 1300], [14.4, 1680], [16.2, 1680], [16.5, 940], [16.7, 800]]), (t) => kfn(t, [[12.9, 1200], [14.6, 1450], [16.2, 1450], [16.52, 850], [16.7, 720]])];
 function sbGladeTraders(ctx, t) { if (t < 12.4 || t > 16.75) return; const tc = SB_T2(t);
-  for (let i = 0; i < 3; i++) { const xf = SB2_TRX[i], v = speed(xf, t), P = sbLive(t, 80 + i, { x: xf(t), y: t > 16.2 ? 880 : 902, dir: v < -1 ? -1 : 1, ...walk(xf, tc, { stride: 24 }), s: t > 16.2 ? 0.8 : 1, mouth: 'smile', gaze: [1, -0.4] });
+  for (let i = 0; i < 3; i++) { const xf = SB2_TRX[i], v = speed(xf, t), P = sbLive(t, 80 + i, { x: xf(t), y: t > 16.2 ? 880 : 888, dir: v < -1 ? -1 : 1, ...walk(xf, tc, { stride: 24 }), s: t > 16.2 ? 0.72 : 0.84, mouth: 'smile', gaze: [1, -0.4] });
     if (t > 14.2 && t < 16.2) { P.handR = [60, -205 + 16 * osc(tc + i, 0.8)]; P.gaze = [0.6, -1]; } if (i === 1 && t < 14.4) P.gaze = osc(tc, 1.1) > 0.3 ? [-1, 0] : [1, 0];
     if (t > 16.2) { P.handL = [-30, -120]; P.handR = [30, -120]; P.gaze = [-1, 0]; }
     sbMerchant(ctx, i, P); }
@@ -228,11 +228,11 @@ function sbGladeOver(ctx, t, cam, S) {
   // the round inset on the deck: the fat merchant counts heads, his finger lands on the sack with the star seal
   sbInset(ctx, t, 23.5, 25.1, 270, 300, 180, (c, w) => { c.save(); c.scale(w / 1000, w / 1000);
     sbGrad(c, 0, 0, 1000, 600, [[0, '#9cc4ee'], [1, '#ffd8a0']]); sbGrad(c, 0, 560, 1000, 200, [[0, '#5aaec8'], [1, '#2f84c0']]); c.fillStyle = '#a8643a'; c.fillRect(0, 760, 1000, 240); c.fillStyle = '#c07a48'; for (let k = 0; k < 6; k++) c.fillRect(0, 780 + k * 36, 1000, 4);
-    const tc = SB_T2(t), cnt = Math.min(3, Math.floor((t - 23.6) / 0.3)), targets = [[300, 520], [520, 560], [740, 600], [820, 700]], tg = targets[Math.max(0, Math.min(3, cnt))];
-    sbSack(c, 800, 650, 1.6, 0.05);
-    sbMerchant(c, 2, sbLive(t, 82, { x: 300, y: 780, s: 1.3, dir: 1, gaze: [1, 0], handR: [60, -150 + 20 * osc(tc, 0.5)], handL: [40, -170] }));
-    const Pz = sbLive(t, 81, { x: 520, y: 780, s: 1.2, dir: 1, sit: 1, seat: 'bench', lid: 1, tilt: 0.25, mouth: 'o' }); sbMerchant(c, 1, Pz);
-    const F = sbLive(t, 80, { x: 160, y: 820, s: 1.5, dir: 1, mouth: sbTalk(t, 23.6, 24.9, 2) > 0.5 ? 'open' : 'smile', gaze: [1, -0.1], handRW: [tg[0] - 20, tg[1] - 40] }); F.tip += 0.04 * pulse(tc, 24.6, 0.4); sbMerchant(c, 0, F);
+    const tc = SB_T2(t), cnt = Math.min(3, Math.floor((t - 23.6) / 0.3)), targets = [[430, 420], [600, 520], [700, 600], [840, 760]], tg = targets[Math.max(0, Math.min(3, cnt))];
+    sbSack(c, 820, 700, 2.6, 0.05);
+    sbMerchant(c, 2, sbLive(t, 82, { x: 430, y: 840, s: 2.2, dir: 1, gaze: [1, 0], handR: [60, -150 + 20 * osc(tc, 0.5)], handL: [40, -170] }));
+    const Pz = sbLive(t, 81, { x: 640, y: 900, s: 2.2, dir: 1, sit: 1, seat: 'bench', lid: 1, tilt: 0.25, mouth: 'o' }); sbMerchant(c, 1, Pz); zzz(c, 700, 380, t);
+    const F = sbLive(t, 80, { x: 190, y: 1000, s: 2.6, dir: 1, mouth: sbTalk(t, 23.6, 24.9, 2) > 0.5 ? 'open' : 'smile', gaze: [1, -0.1], handRW: [tg[0] - 20, tg[1] - 40] }); F.tip += 0.04 * pulse(tc, 24.6, 0.4); sbMerchant(c, 0, F);
     c.restore(); });
 }
 SB_SHOTS.push({ a: 12.0, b: 17.66, free: true, cam: sbKeys([[12.0, { x: 1180, y: 560, zoom: 1.1 }], [17.66, { x: 1240, y: 560, zoom: 1.1 }]]), world: sbGladeWorld, over: sbGladeOver });

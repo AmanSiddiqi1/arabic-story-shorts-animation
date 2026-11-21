@@ -3,8 +3,12 @@
 // whaleIsland world 1600 x 1230: the whale's crown at (800, 880 - rise), s 1, head to the right; water (ship layer) at y 960.
 const SB_ISEA = { hz: 600, y: [615, 700, 960, 1050], amp: 5, pal: 'day' };
 const SB_RISE = [[41.3, 0], [41.6, -6], [41.68, 14], [42.3, 2], [43.18, 0]];
-const SB_SINK = [[45.7, 0], [50.3, -45], [66.08, -45], [66.9, -150], [67.5, -260], [68.3, -380], [68.9, -470]];
-function sbRise(t) { let r = t < 43.18 ? (t > 41.3 ? flow(t, SB_RISE) : 0) : 8 * osc(t - 43.18, 2.6) * K.clamp((t - 43.18) / 0.6) * (t < 60.8 ? 1 : 0.3); return r + (t > 45.7 ? kfn(t, SB_SINK, 'inOut') : 0); }
+// rev 1: the island sinks in three visible steps (12, 28, 45) on "المياه" 45.70, 47.0 and "الجزيرة" 48.28, each with a foam surge
+const SB_SINK = [[45.7, 0], [46.05, -12], [47.0, -12], [47.35, -28], [48.28, -28], [48.63, -45], [66.08, -45], [66.9, -150], [67.5, -260], [68.3, -380], [68.9, -470]];
+const SB_SURGE = [45.7, 47.0, 48.28];
+function sbRise(t) { let r = t < 43.18 ? (t > 41.3 ? flow(t, SB_RISE) : 0) : 8 * osc(t - 43.18, 2.6) * K.clamp((t - 43.18) / 0.6) * (t < 60.8 ? 1 : 0.3);
+  if (t > 50.34 && t < 51.3) r += flow(t, [[50.34, 0], [50.56, 10], [50.9, -14], [51.3, 0]]);   // "مخيف": the ground breathes once
+  return r + (t > 45.7 ? kfn(t, SB_SINK, 'inOut') : 0); }
 function sbTiltI(t) { return (t > 41.6 && t < 43 ? 0.035 * Math.exp(-(t - 41.6) * 3) * Math.cos((t - 41.6) * 9) : 0) + (t > 66.08 ? 0.07 * K.ease.inOut(K.clamp((t - 66.08) / 0.5)) : 0); }
 const sbWY = (t) => 880 - sbRise(t);
 // the grass top at world x (where feet stand)
@@ -18,15 +22,21 @@ function sbIsland(ctx, t, cam, o = {}) {
   sbWhale(ctx, 800, sbWY(t), W);
   // shore foam where the back meets the water (it moves inward as the island sinks)
   const wl = 962, d = (wl - sbWY(t)) / 80; if (d > 0) { const hx = 650 * Math.sqrt(d); for (const sd of [-1, 1]) { const x = 800 + sd * hx; sbFoamLine(ctx, [[x - 60, wl - 2], [x - 20, wl - 6], [x + 20, wl - 6], [x + 60, wl - 2]], t + sd, { w: 12 }); } }
+  // rev 1: at each sinking step a foam surge runs inward over the grass from both shores and drains back
+  if (d > 0) for (const ts of SB_SURGE) { const u = (t - ts) / 0.9; if (u < 0 || u > 1) continue; const hx = 650 * Math.sqrt(d), run = 150 * Math.sin(Math.PI * Math.min(1, u * 1.2));
+    for (const sd of [-1, 1]) { const xs = 800 + sd * hx, xe = xs - sd * run, pts = []; for (let k = 0; k <= 6; k++) { const x = K.lerp(xs + sd * 30, xe, k / 6); pts.push([x, Math.min(wl - 2, sbGround(x, t) + 12)]); }
+      ctx.save(); ctx.globalAlpha = 1 - u * 0.5; sbFoamLine(ctx, pts, t + sd, { w: 16 }); ctx.restore(); } }
   return W;
 }
-function sbIslandFront(ctx, t) { sbSeaFront(ctx, t, SB_ISEA, -200, 1800, { alpha: [0.86, 0.93] }); }
+// rev 1: with the camera, the near water gets its streaks and the foreground crest band (series sea rule)
+function sbIslandFront(ctx, t, cam) { sbSeaFront(ctx, t, SB_ISEA, -200, 1800, { alpha: [0.86, 0.93] }); if (cam) sbSeaNear(ctx, t, SB_ISEA, cam); }
 // the camp: positions (Sinbad 760, fat 960, plum 1040, rust 640), the fire at 880
 const SB_FIRE = 880;
 const SB_FIREON = (t) => t < 37.18 ? 0 : t < 63.86 ? K.clamp((t - 37.18) / 0.7) : 1 - K.clamp((SB_T3(t) - 63.86) / 0.75);
 
 // ---------- S5 (31.72 - 40.2): the camp ----------
-const SB_S5CAM = [[31.72, { x: 880, y: 615, zoom: 1.0 }], [35.6, { x: 880, y: 615, zoom: 1.0 }], [37.2, { x: 860, y: 700, zoom: 1.3 }], [40.2, { x: 860, y: 700, zoom: 1.32 }]];
+// rev 1: one second on the wide, then in to zoom 1.4 with the grass line at ~70% of the panel, panning left to right across the camp
+const SB_S5CAM = [[31.72, { x: 880, y: 615, zoom: 1.0 }], [32.7, { x: 880, y: 615, zoom: 1.0 }], [33.5, { x: 700, y: 694, zoom: 1.4 }], [35.0, { x: 820, y: 694, zoom: 1.4 }], [36.6, { x: 900, y: 694, zoom: 1.38 }], [37.2, { x: 860, y: 700, zoom: 1.32 }], [40.2, { x: 860, y: 700, zoom: 1.32 }]];
 const SB_WALKIN = [(t) => kfn(t, [[31.72, 1300], [32.4, 760]], 'out'), (t) => kfn(t, [[31.72, 1340], [32.9, 960]], 'out'), (t) => kfn(t, [[31.8, 1380], [33.3, 1040]], 'out'), (t) => kfn(t, [[31.9, 1260], [33.0, 640]], 'out')];
 function sbCampPeople(ctx, t, o = {}) {
   const tc = SB_T2(t), still = t > 39.22 && t < 41.6, J = o.jolt || 0;
@@ -85,7 +95,7 @@ function sbS5World(ctx, t, cam) {
   if (t > 39.22) for (let i = 0; i < 5; i++) { const u = t - 39.22 - i * 0.07; if (u < 0) continue; sbGull(ctx, [520, 700, 1180, 700, 520][i] + (i % 2 ? 1 : -1) * 300 * u, sbGround(700, t) - 300 - 260 * u - i * 10, t, { dir: i % 2 ? 1 : -1, s: 0.32, seed: 20 + i }); }
   // light through the fronds slides over Sinbad
   if (t > 32.42 && t < 35.0) sbBands(ctx, [600, 600, 300, 300], t, { cols: ['#fff3b0'], alpha: 0.18, w: 60, speed: 80, n: 3, angle: 0.4 });
-  sbIslandFront(ctx, t);
+  sbIslandFront(ctx, t, cam);
 }
 SB_SHOTS.push({ a: 31.72, b: 40.2, ww: 1600, cam: (t) => K.camAt(SB_S5CAM, t), world: sbS5World });
 // 40.2 - 41.2: the eye opens under the water
@@ -94,7 +104,7 @@ SB_SHOTS.push({ a: 40.2, b: 41.2, panel(ctx, t) {
   sbWhaleEyeCU(ctx, { t, lid, pupil: pup, gaze: gz, brow: 0.3 }); } });
 
 // ---------- S6 (41.2 - 52.21): RUMBLE!, the breathing ground, the water climbs, the spout ----------
-const SB_S6CAM = [[41.2, { x: 860, y: 720, zoom: 1.25 }], [44.5, { x: 860, y: 720, zoom: 1.25 }], [45.6, { x: 800, y: 615, zoom: 1.0 }], [47.2, { x: 800, y: 615, zoom: 1.0 }], [47.6, { x: 520, y: 615, zoom: 1.0 }], [48.0, { x: 1080, y: 615, zoom: 1.0 }], [48.4, { x: 800, y: 615, zoom: 1.0 }], [52.21, { x: 800, y: 615, zoom: 1.02 }]];
+const SB_S6CAM = [[41.2, { x: 860, y: 720, zoom: 1.25 }], [44.5, { x: 860, y: 720, zoom: 1.25 }], [45.4, { x: 800, y: 700, zoom: 1.15 }], [47.24, { x: 800, y: 700, zoom: 1.15 }], [47.7, { x: 560, y: 700, zoom: 1.18 }], [48.2, { x: 1040, y: 700, zoom: 1.18 }], [48.6, { x: 800, y: 700, zoom: 1.15 }], [50.9, { x: 800, y: 700, zoom: 1.15 }], [51.35, { x: 970, y: 700, zoom: 1.15 }], [52.21, { x: 975, y: 700, zoom: 1.16 }]];
 // the knot: they back uphill into a tight group (48.28 - 49.0)
 const SB_KNOT = [[760, 790], [960, 860], [1040, 900], [640, 740]];
 function sbS6World(ctx, t, cam) {
@@ -110,7 +120,7 @@ function sbS6World(ctx, t, cam) {
   // a fish jumps where the grass was a moment ago; the water at the first palm's roots
   sbFishJump(ctx, 330, 470, 962, (t - 49.06) / 0.9, 120, 0.6); if (t > 49.9) sbRing(ctx, 470, 962, (t - 49.9) / 1.2, 90);
   if (t > 51.6) for (let i = 0; i < 6; i++) { const u = ((t - 51.6) * 0.8 + i / 6) % 1; ctx.save(); ctx.globalAlpha = 0.6 * (1 - u); ctx.fillStyle = '#e8fbff'; ctx.fillRect(650 + i * 50 + Math.sin(i * 3) * 20, G(800) - 260 + u * 220, 4, 10); ctx.restore(); }
-  sbIslandFront(ctx, t);
+  sbIslandFront(ctx, t, cam);
   if (t > 50.34 && t < 51.2) sbBands(ctx, [300, 300, 1000, 700], t, { cols: ['#bfe0ff'], alpha: 0.2, n: 1, w: 160, speed: 700, phase: -50.34 * 700 });
 }
 function sbCampPeopleS6(ctx, t) {
@@ -138,6 +148,13 @@ function sbKnot(ctx, t) {
   for (const [i, who] of draw) { const x = K.lerp(SB_KNOT[i][0], SB_KNOT[i][1], K.ease.inOut(back)), P = sbAlive(t, 90 + i, { x, y: G(x), dir: i === 0 || i === 3 ? -1 : 1, mouth: 'o', brow: -0.5 });
     P.x += tremble(tc + i, t > 50.34 ? 1.5 : 0.6); P.gaze = t > 48.28 && t < 51.3 ? [[-1, 0.4], [1, 0.4], [1, 0.6], [-1, 0.6]][(i + Math.floor(tc * 2)) % 4] : [P.dir, 0.5]; P.eyes = t > 50.34 ? 'wide' : 'open';
     if (back > 0 && back < 1) Object.assign(P, { ph: x / 26, amp: 0.6 });
+    // rev 1: "تتصاعد" 46.28 plum points at the water, fat lifts his hem; "حول" 47.24 eyes follow the foam round the rim, a beat apart;
+    // "على نحو" 49.06 feet lift alternately (never mirrored) with rings at the ankles; "مخيف" 50.34 all drop into a wide stance, staggered
+    if (who === 'plum' && t > 46.28 && t < 47.3) { P.handR = PERSON_HANDS.pointDown.R; P.gaze = [P.dir, 0.9]; }
+    if (who === 'fat' && t > 46.4 && t < 48.2) { P.handLW = [x - 16, G(x) - 60]; P.handRW = [x + 14, G(x) - 62]; P.gaze = [1, 0.9]; }
+    if (t > 47.24 + i * 0.1 && t < 48.6) P.gaze = [t < 47.7 + i * 0.1 ? -1 : 1, 0.6];
+    if (t > 49.06 && t < 50.34) { Object.assign(P, { ph: tc * 9 + i * 1.3, amp: 0.35 }); sbRing(ctx, x, G(x) + 4, ((t - 49.06 + i * 0.21) % 0.6) / 0.6, 30, { lw: 2 }); }
+    if (t > 50.34 + i * 0.07) { const w = sbF(t, [[50.34 + i * 0.07, 0], [50.5 + i * 0.07, 1]]); P.aL = [1.5 * w + 0.2, 1.7 * w + 0.2]; P.aR = [1.4 * w + 0.2, 1.8 * w + 0.2]; P.sq *= 1 - 0.06 * w; delete P.handRW; }
     if (turn(i)) { P.gaze = [-1, -0.5]; P.dir = -1; P.lid = sbLid(t, 90 + i, [51.3 + i * 0.12]); }
     if (who === 'sin') { if (t > 48.6) P.handRW = [K.lerp(SB_KNOT[2][0], SB_KNOT[2][1], back) - 10, G(x) - 140]; P.wind = -0.6; sbSinbad(ctx, P); }
     else sbMerchant(ctx, { rust: 2, fat: 0, plum: 1 }[who], P); }
@@ -165,8 +182,9 @@ function sbS7World(ctx, t, cam) {
   sbBubbles(ctx, 600, 1500, t, 57.9, 10, 600, 31, 12);
   sbSchool(ctx, 760, 1200, t, 14, { scatter: K.clamp((t - 59.34) / 0.6), dir: 1 });
   // the whale: the island on its back; awake and groggy at the end (lid, roll up, brow down, tail flex, bubbles)
-  const lid = t < 60.08 ? 1 : 0.5 + 0.5 * pulse(tc, 60.4, 0.3), brow = K.clamp((t - 60.3) / 0.3), gz = [-0.2 - 0.5 * K.clamp((t - 60.2) / 0.3), -0.8 * K.clamp((t - 60.2) / 0.3)];
-  sbWhale(ctx, SB_S7W.x, SB_S7W.y, { s: SB_S7W.s, dress: 1, t, lid, brow, gaze: gz, eyeK: 1.6, tail: 0.08 * pulse(tc, 60.3, 0.5), bubbles: t > 60.4 ? 60.4 : null, breathe: 0.5 + 0.5 * osc(t, 2.6) });
+  // rev 1: on "ضخم" 59.34 the lid opens half way and the pupil rolls up toward the fire; brow down on "نائم" 60.08; one slow blink
+  const lid = t < 59.34 ? 1 : Math.min(1, sbF(t, [[59.34, 1], [59.62, 0.5]]) + 0.5 * sbBlinkAt(t, 60.35)), brow = K.clamp((t - 60.08) / 0.3), gz = [-0.2 - 0.5 * K.clamp((t - 59.5) / 0.4), -0.8 * K.clamp((t - 59.5) / 0.4)];
+  sbWhale(ctx, SB_S7W.x, SB_S7W.y, { s: SB_S7W.s, dress: 1, t, lid, brow, gaze: gz, eyeK: 2.4, tail: 0.08 * pulse(tc, 60.3, 0.5), bubbles: t > 60.4 ? 60.4 : null, breathe: 0.5 + 0.5 * osc(t, 2.6) });
   // the camp fire's glow on its back and the four men, small, in a knot
   const fp = sbWhalePt(SB_S7W.x, SB_S7W.y, SB_S7W, 80, -14); if (t > 60.08) sbGlow(ctx, fp[0], fp[1] - 10, 60, 0.8, '#ffb050'); sbFire(ctx, fp[0], fp[1], t, { s: 0.6, smoke: false });
   for (let i = 0; i < 4; i++) { const lx = -60 + i * 40, p = sbWhalePt(SB_S7W.x, SB_S7W.y, SB_S7W, lx, sbWhaleTop(lx) - 14), turned = t > 57.04 + i * 0.13, P = sbAlive(t, 110 + i, { x: p[0], y: p[1], s: 0.5 * SB_MERCH[Math.min(2, i)].s, dir: turned ? -1 : (i % 2 ? 1 : -1), gaze: turned ? [-1, -0.2] : [0, 0.5], eyes: 'wide', mouth: 'o' });
@@ -175,10 +193,13 @@ function sbS7World(ctx, t, cam) {
   const f = sbFloat(220, t, sea, 2, 200), ds = 0.95; sbDhow(ctx, { x: 220, y: f.y, s: ds, pitch: f.rot, t, sail: 0.15, crew: (c) => sbOnDeck(c, ds, (q) => sbS7Crew(q, t, ds)) });
   // the water surface: opaque near layers fade as the camera sinks below, leaving a bright surface line
   sbSeaFront(ctx, t, sea, -1400, 3600, { alpha: [1 - deep * 0.85, 1 - deep * 0.95] });
+  // rev 1 life: a pair of dolphins flee from the island toward the ship, arcing (they know)
+  if (deep < 1) for (const [t0, k] of [[52.6, 0], [52.9, 1], [55.9, 0]]) sbDolphinLeap(ctx, 860 - k * 60, 560 - k * 60, seaY(700, t, 3, sea) + 10, (t - t0) / 0.85, 110, 0.6);
   if (deep > 0) { ctx.save(); ctx.globalAlpha = deep; ctx.strokeStyle = '#c8f6ff'; ctx.lineWidth = 6; ctx.beginPath(); for (let x = -1400; x < 3600; x += 30) { const y = seaY(x, t, 2, sea); x === -1400 ? ctx.moveTo(x, y) : ctx.lineTo(x, y); } ctx.stroke(); ctx.restore(); }
   // sound arcs travelling from the captain across the water
   if (t > 53.82 && t < 56.1) for (let k = 0; k < 3; k++) { const u = ((t - 53.82) * 0.7 + k / 3) % 1; ctx.save(); ctx.globalAlpha = 1 - u; ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 6; ctx.beginPath(); ctx.arc(320 + u * 520, 560, 30 + u * 30, -0.7, 0.7); ctx.stroke(); ctx.restore(); }
   ctx.restore();
+  if (deep < 1) { sbSeaNear(ctx, t, sea, cam, { a: 0.8 * (1 - deep), fore: { alpha: 1 - deep } }); }
 }
 function sbS7Capt(t, ds) {
   const tc = SB_T2(t), C = sbAlive(t, 51, { x: 140 * ds, y: -80 * ds, dir: 1, gaze: [1, -0.1], brow: 0.8 }), sh = t > 52.9 && t < 57.0;
@@ -254,7 +275,7 @@ function sbS8World(ctx, t, cam) {
     for (let k = 0; k < 3; k++) sbRing(ctx, x, wy + 2, (t - 68.38 - k * 0.15) / 0.6, 140, { rev: true, lw: 5 }); }
   // palms going under leave rings
   SB_WH.palms.forEach((lx, i) => { const t0 = [66.95, 66.7, 66.56][i]; sbRing(ctx, 800 + lx, 962, (t - t0) / 1.2, 100); });
-  sbIslandFront(ctx, t);
+  sbIslandFront(ctx, t, cam);
 }
 function sbS8Over(ctx, t, cam, S) { if (t > 64.0 && t < 65.2) { const [x, y] = sbP(SB_FIRE + 40, 600, cam); ctx.save(); ctx.globalAlpha = K.clamp((65.2 - t) / 0.3); S.title(ctx, 'HISS!', x, y, K.clamp((t - 64.0) / 0.3), { size: 84 }); ctx.restore(); } }
 SB_SHOTS.push({ a: 60.82, b: 69.88, ww: 1600, cam: (t) => K.camAt(SB_S8CAM, t), world: sbS8World, over: sbS8Over });

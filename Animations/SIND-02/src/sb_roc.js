@@ -18,13 +18,13 @@ function sbRoc(ctx, P, part = 'all') {
   const s = P.s || 1, dir = P.dir || 1, t = P.t || 0, sp = K.clamp(P.spread || 0), fl = P.flap ?? 0, flL = P.flapLag ?? fl, cr = K.clamp(P.crouch || 0), sit = K.clamp(P.sit || 0);
   const sil = P.sil, col = (c) => sil || c, lineC = sil || SB_ROCP.line, lw = sil ? 0 : 4 / Math.max(0.4, Math.sqrt(s)), sq = P.sq ?? 1;
   const tf = (lx, ly) => { const a = (P.rot || 0) * dir, c = Math.cos(a), n = Math.sin(a), X = lx * dir * s, Y = ly * s; return [P.x + X * c - Y * n, P.y + X * n + Y * c]; };
-  const drop = 70 * cr + 70 * sit, by = -620 + drop, puff = 1 + 0.1 * sit, shk = P.shake || 0;
+  const drop = 70 * cr + 20 * sit, by = -620 + drop, puff = 1 + 0.1 * sit, shk = P.shake || 0;
   const cs = (pts, f, sh, o = {}) => celShade(ctx, pts, col(f), col(sh), { light: o.light || [0.3, -1], off: o.off ?? 30, lw: o.lw ?? lw, line: o.line || lineC, hi: sil ? null : o.hi });
   ctx.save(); ctx.translate(P.x, P.y); ctx.rotate((P.rot || 0) * dir); ctx.scale(dir * s, s * sq); ctx.lineJoin = 'round';
   const out = {};
   // ---- a leg: hip -> knee (inside the feather trousers) -> ankle -> toes. far legs darker
   const leg = (hip, foot, far) => {
-    const [fx, lift] = foot, A = [fx + 10 * (P.reach || 0), -70 - lift], L1 = 270 - 70 * sit, L2 = 330 - 120 * sit, dx = A[0] - hip[0], dy = A[1] - hip[1], d = Math.min(Math.hypot(dx, dy), L1 + L2 - 1);
+    const [fx, lift] = foot, A = [fx + 10 * (P.reach || 0), -70 - lift], L1 = 200 - 60 * sit, L2 = 300 - 80 * sit, dx = A[0] - hip[0], dy = A[1] - hip[1], d = Math.min(Math.hypot(dx, dy), L1 + L2 - 1);
     const ca = K.clamp((L1 * L1 + d * d - L2 * L2) / (2 * L1 * d), -1, 1), base = Math.atan2(dy, dx), k = base + Math.acos(ca), Kn = [hip[0] + Math.cos(k) * L1, hip[1] + Math.sin(k) * L1];
     const tk = K.clamp(P.tuck || 0), Ae = [K.lerp(A[0], hip[0] - 320, tk), K.lerp(A[1], hip[1] + 120, tk)], Ke = [K.lerp(Kn[0], hip[0] - 80, tk), K.lerp(Kn[1], hip[1] + 90, tk)];
     const lc = far ? sbDark(SB_ROCP.leg, 0.2) : SB_ROCP.leg, ls = far ? sbDark(SB_ROCP.legS, 0.2) : SB_ROCP.legS;
@@ -41,27 +41,32 @@ function sbRoc(ctx, P, part = 'all') {
       if (!sil) { const ca2 = Math.atan2(ey - Ae[1] - 30, ex - Ae[0]); celShade(ctx, [[ex - Math.sin(ca2) * 20, ey + Math.cos(ca2) * 20], [ex + Math.cos(ca2) * 52, ey + Math.sin(ca2) * 52 + 14], [ex + Math.sin(ca2) * 20, ey - Math.cos(ca2) * 20]], SB_ROCP.claw, '#3a2a42', { light: [0, -1], off: 6, lw: 2.5 }); }
     }
     // feather trousers over the hip and knee
-    const tr = []; for (let i = 0; i <= 14; i++) { const a = i / 14 * Math.PI * 2, r = 1 + 0.12 * Math.sin(a * 7); tr.push([(hip[0] + Kn[0]) / 2 + Math.cos(a) * 120 * r, (hip[1] + Kn[1]) / 2 + 40 + Math.sin(a) * 175 * r]); }
-    cs(tr, far ? SB_ROCP.far : SB_ROCP.body, far ? SB_ROCP.farS : SB_ROCP.shade, { off: 40, light: [0.2, -1] });
+    { const cx = (hip[0] + Ke[0]) / 2, cy = (hip[1] + Ke[1]) / 2, fb = far ? SB_ROCP.far : SB_ROCP.body, fs = far ? SB_ROCP.farS : SB_ROCP.shade, lob = [[cx, cy - 40, 95], [cx - 50, cy + 30, 62], [cx + 40, cy + 40, 60], [cx - 10, Ke[1] - 10, 56]];
+      ctx.save(); ctx.strokeStyle = lineC; ctx.lineWidth = 2 * lw; if (lw > 0) for (const [x, y, r] of lob) { ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.stroke(); }
+      for (const [x, y, r] of lob) { ctx.fillStyle = col(fb); ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill(); }
+      if (!sil) for (const [x, y, r] of lob.slice(1)) { ctx.fillStyle = fs; ctx.beginPath(); ctx.arc(x, y + r * 0.3, r * 0.66, 0.15, Math.PI - 0.15); ctx.fill(); } ctx.restore(); }
     return [Ae[0], Ae[1]];
   };
   // ---- a wing (near or far): shoulder, arm and hand angles, scalloped trailing edge of 9 lobes
   const wing = (far) => {
     const Sh = [60 + (far ? -40 : 0), by - 140], ov = far ? P.farA : P.nearA, th = ov ?? (sbRocWingTheta(fl) + (far ? -0.25 : 0)), thL = ov ?? (sbRocWingTheta(flL) + (far ? -0.25 : 0)), fold = -Math.PI + 0.12;
-    const a1 = K.lerp(fold, th, sp), a2 = a1 + K.lerp(-0.05, (thL - th) * 0.9 + 0.12, sp), L1 = K.lerp(430, 620, sp), L2 = K.lerp(440, 880, sp);
-    const Wr = [Sh[0] + Math.cos(a1) * L1, Sh[1] + Math.sin(a1) * L1], Tp = [Wr[0] + Math.cos(a2) * L2, Wr[1] + Math.sin(a2) * L2], LE = [], TE = [], N = 12;
-    for (let i = 0; i <= N; i++) { const u = i / N, onArm = u < 0.42, v = onArm ? u / 0.42 : (u - 0.42) / 0.58, p = onArm ? [K.lerp(Sh[0], Wr[0], v), K.lerp(Sh[1], Wr[1], v)] : [K.lerp(Wr[0], Tp[0], v), K.lerp(Wr[1], Tp[1], v)], a = onArm ? a1 : a2;
+    const a1 = K.lerp(fold, th, sp), a2 = a1 + K.lerp(-0.05, (thL - th) * 0.9 + 0.15, sp), L1 = K.lerp(320, 600, sp), L2 = K.lerp(300, 860, sp);
+    const Wr = [Sh[0] + Math.cos(a1) * L1, Sh[1] + Math.sin(a1) * L1], Tp = [Wr[0] + Math.cos(a2) * L2, Wr[1] + Math.sin(a2) * L2], N = 10, LE = [], TE = [], BZ = K.bezier(Sh, Wr, Wr, Tp, N);
+    for (let i = 0; i <= N; i++) { const u = i / N, p = BZ[Math.min(i, BZ.length - 1)], a = u < 0.45 ? a1 : a2;
       let nx = Math.sin(a) - 2 * Math.max(0, Math.sin(a)), ny = -Math.cos(a); { const l = Math.hypot(nx, ny) || 1; nx /= l; ny /= l; }   // trailing edge toward the tail, continuous
-      const c = K.lerp(K.lerp(330, 430, sp), K.lerp(150, 170, sp), Math.pow(u, 1.3)) * (far ? 0.92 : 1); LE.push(p); TE.push([p[0] + nx * c, p[1] + ny * c, nx, ny]); }
-    const sc = []; for (let i = N; i > 0; i--) { const a = TE[i], b = TE[i - 1], m = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2], r = Math.hypot(a[0] - b[0], a[1] - b[1]) * 0.42; sc.push([a[0], a[1]]); sc.push([m[0] + a[2] * r, m[1] + a[3] * r]); }
-    sc.push([TE[0][0], TE[0][1]]);
-    const pts = [...LE, ...sc], f = far ? SB_ROCP.far : SB_ROCP.wing, sh = far ? SB_ROCP.farS : SB_ROCP.wingS;
-    cs(pts, f, sh, { off: K.lerp(50, 90, sp), light: [0.2, -1] });
-    if (!sil) { // lilac secondary row and sky tips as hard bands inside the wing
-      ctx.save(); K.poly(ctx, pts, true); ctx.clip(); ctx.lineCap = 'round';
-      ctx.strokeStyle = far ? SB_ROCP.farS : '#e8defa'; ctx.lineWidth = 46; ctx.beginPath(); TE.forEach((p, i) => { const q = [K.lerp(LE[i][0], p[0], 0.55), K.lerp(LE[i][1], p[1], 0.55)]; i ? ctx.lineTo(q[0], q[1]) : ctx.moveTo(q[0], q[1]); }); ctx.stroke();
-      ctx.fillStyle = far ? SB_ROCP.tipS : SB_ROCP.tip; for (let i = 9; i <= N; i++) { const a = TE[i]; ctx.beginPath(); ctx.ellipse(a[0] - a[2] * 20, a[1] - a[3] * 20, 70, 70, 0, 0, 7); ctx.fill(); }
-      ctx.restore(); ink(ctx, pts, lw, 3, lineC); }
+      const c = K.lerp(K.lerp(300, 540, sp), K.lerp(150, 240, sp), Math.pow(u, 1.2)) * (far ? 0.92 : 1); LE.push(p); TE.push([p[0] + nx * c, p[1] + ny * c, nx, ny, c]); }
+    // a wing = a smooth main shape + rows of round feather lobes (outlined as one union: strokes first, then fills)
+    const main = [...LE, ...TE.slice().reverse().map((q) => [q[0] - q[2] * q[4] * 0.25, q[1] - q[3] * q[4] * 0.25])], lobes = [];
+    for (let i = 1; i <= N; i++) { const q = TE[i], r = q[4] * 0.36 + 18; lobes.push({ c: [q[0] - q[2] * r * 0.55, q[1] - q[3] * r * 0.55], r, tip: i >= N - 3 }); }
+    for (let i = 1; i < N; i += 1) { const q = TE[i], m = LE[i], r = q[4] * 0.28; lobes.push({ c: [K.lerp(m[0], q[0], 0.5), K.lerp(m[1], q[1], 0.5)], r, row: true }); }
+    const f = far ? SB_ROCP.far : SB_ROCP.wing, sh = far ? SB_ROCP.farS : SB_ROCP.wingS, LW = lw * 1.1;
+    ctx.save(); ctx.lineJoin = 'round'; ctx.strokeStyle = lineC; ctx.lineWidth = 2 * LW; if (LW > 0) { K.poly(ctx, main, true); ctx.stroke(); for (const L of lobes) if (!L.row) { ctx.beginPath(); ctx.arc(L.c[0], L.c[1], L.r, 0, 7); ctx.stroke(); } }
+    ctx.fillStyle = col(f); K.poly(ctx, main, true); ctx.fill(); for (const L of lobes) if (!L.row) { ctx.fillStyle = col(L.tip ? (far ? SB_ROCP.tipS : SB_ROCP.tip) : f); ctx.beginPath(); ctx.arc(L.c[0], L.c[1], L.r, 0, 7); ctx.fill(); }
+    if (!sil) { // hard cel shade: a crescent on each feather lobe away from the light, a lilac row of coverts
+      for (const L of lobes) { if (L.row) { ctx.fillStyle = far ? SB_ROCP.farS : '#eee6fb'; ctx.beginPath(); ctx.arc(L.c[0], L.c[1], L.r, 0, Math.PI); ctx.fill(); continue; }
+        ctx.save(); ctx.beginPath(); ctx.arc(L.c[0], L.c[1], L.r, 0, 7); ctx.clip(); ctx.fillStyle = L.tip ? (far ? sbDark(SB_ROCP.tipS, 0.2) : SB_ROCP.tipS) : sh; ctx.beginPath(); ctx.rect(L.c[0] - L.r - 2, L.c[1] - L.r - 2, 2 * L.r + 4, 2 * L.r + 4); ctx.arc(L.c[0] - L.r * 0.2, L.c[1] - L.r * 0.35, L.r * 0.92, 0, 7, true); ctx.fill('evenodd'); ctx.restore(); }
+      ctx.strokeStyle = sbMix(sh, lineC, 0.25); ctx.lineWidth = Math.max(1.5, LW * 0.7); ctx.beginPath(); LE.forEach((p, i) => { const q = TE[i], x = K.lerp(p[0], q[0], 0.62), y = K.lerp(p[1], q[1], 0.62); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); ctx.stroke(); }
+    ctx.restore();
     return far ? null : Tp;
   };
   const hipN = [P.hipN ?? 60, by + 150], hipF = [P.hipF ?? -70, by + 140], feet = P.feet || {}, fN = feet.n || [60 + 30 * sit, 0], fF = feet.f || [-80, 0];
@@ -70,7 +75,7 @@ function sbRoc(ctx, P, part = 'all') {
     // tail streamers: five ribbons on a travelling sine, arriving late
     for (let i = 0; i < 5; i++) { const a = Math.PI - 0.32 + i * 0.13 + (P.tailUp || 0), ox = -400, oy = by - 70 + i * 18;
       sbRibbon(ctx, ox, oy, a + 0.06 * Math.sin(SB_T2(t) * 2 + i), 500 - i * 30, 70, t, { col: col(SB_ROCP.streak[i]), shade: col(sbDark(SB_ROCP.streak[i], 0.18)), amp: 26 + 20 * (P.wind || 0), freq: 5 + i * 0.4, k: 1.1, ph: i * 0.9, lw: lw * 0.8, line: lineC }); }
-    if (sit < 0.95) out.ankleF = leg(hipF, fF, true);
+    out.ankleF = leg(hipF, fF, true);
   }
   if (part !== 'back') {
     // body: an egg-shaped cloud of feathers, fuller at the chest; shake ripples along it
@@ -78,13 +83,18 @@ function sbRoc(ctx, P, part = 'all') {
       let px = cx * 450 * puff, py = sy * 280 * puff + rip; if (px < 0) py -= (-px / 450) * 60; if (sy > 0 && sit > 0) py += sit * 40 * Math.sin(a * 9) * 0.4; B.push([px, by + py]); }
     cs(B, SB_ROCP.body, SB_ROCP.shade, { off: 70, light: [0.3, -1], hi: '#ffffff' });
     if (!sil) { ctx.save(); ctx.strokeStyle = sbMix(SB_ROCP.shade, '#ffffff', 0.35); ctx.lineWidth = 5; ctx.lineCap = 'round'; for (const [x0, y0] of [[180, -40], [260, 40], [120, 90], [330, -100], [40, 160]]) { ctx.beginPath(); ctx.arc(x0, by + y0, 34, 0.2, Math.PI - 0.2); ctx.stroke(); } ctx.restore(); }
-    // belly fringe: scalloped feathers hanging over the egg when brooding
-    if (sit > 0.02) { const fr = []; for (let i = 0; i <= 16; i++) { const x = K.lerp(-400, 420, i / 16) * puff; fr.push([x, by + 200 * puff]); fr.push([x + 26, by + (230 + 46 * sit + 10 * Math.sin(SB_T2(t) * 1.2 + i)) * puff]); }
-      fr.push([420 * puff, by + 120]); fr.push([-400 * puff, by + 120]); cs(fr, SB_ROCP.body, SB_ROCP.shade, { off: 22, light: [0, -1] }); }
-    if (sit < 0.98) out.ankle = leg(hipN, fN, false); else out.ankle = [fN[0], -70];
+    // belly fringe: a row of round feathers hanging over the egg when brooding (soft scallops, never teeth)
+    if (sit > 0.02) { const lob = []; for (let i = 0; i <= 11; i++) { const x = K.lerp(-380, 400, i / 11) * puff, y = by + (220 + 30 * sit + 6 * Math.sin(SB_T2(t) * 1.2 + i)) * puff - 40 * Math.pow((x / 420), 2); lob.push([x, y, 52 + 8 * (i % 2)]); }
+      ctx.save(); ctx.strokeStyle = lineC; ctx.lineWidth = 2 * lw; for (const [x, y, r] of lob) { ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.stroke(); }
+      for (const [x, y, r] of lob) { ctx.fillStyle = col(SB_ROCP.body); ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill(); if (!sil) { ctx.fillStyle = SB_ROCP.shade; ctx.beginPath(); ctx.arc(x, y + r * 0.35, r * 0.62, 0.1, Math.PI - 0.1); ctx.fill(); } }
+      ctx.fillStyle = col(SB_ROCP.body); ctx.beginPath(); ctx.ellipse(0, by + 150 * puff, 420 * puff, 90, 0, 0, 7); ctx.fill(); ctx.restore(); }
+    out.ankle = leg(hipN, fN, false);
     // neck and head (the head tilts like a hen's about the top of the neck)
     const nl = (P.neck || 0) * 90, H = [400 + 30 * (P.neck || 0), by - 360 - nl + 40 * cr], N0 = [300, by - 140], ht = P.headTurn || 0;
-    cs([[N0[0] - 130, N0[1] + 30], [H[0] - 110, H[1] + 40], [H[0] + 80, H[1] + 60], [N0[0] + 150, N0[1] + 60]], SB_ROCP.body, SB_ROCP.shade, { off: 40, light: [0.3, -1] });
+    { const NP = []; const n0 = [N0[0], N0[1]], c1 = [N0[0] + 60, (N0[1] + H[1]) / 2], n1 = [H[0] - 20, H[1] + 40]; const spine = K.bezier(n0, c1, c1, n1, 8);
+      spine.forEach((p, i) => { const w = K.lerp(150, 105, i / 8); NP.push([p[0] - w, p[1] + 10]); }); spine.slice().reverse().forEach((p, i) => { const w = K.lerp(105, 150, i / 8); NP.push([p[0] + w * 0.9, p[1] + 20]); });
+      cs(NP, SB_ROCP.body, SB_ROCP.shade, { off: 36, light: [0.3, -1] });
+      if (!sil) { ctx.save(); ctx.strokeStyle = sbMix(SB_ROCP.shade, '#ffffff', 0.3); ctx.lineWidth = 5; ctx.lineCap = 'round'; for (let i = 2; i < 8; i += 2) { const p = spine[i]; ctx.beginPath(); ctx.arc(p[0] + 30, p[1] + 20, 30, 0.3, Math.PI - 0.3); ctx.stroke(); } ctx.restore(); } }
     ctx.save(); ctx.translate(H[0], H[1] + 60); ctx.rotate(ht); ctx.translate(-H[0], -H[1] - 60);
     for (let i = 0; i < 3; i++) sbRibbon(ctx, H[0] - 60 - i * 26, H[1] - 110 + i * 22, -Math.PI * 0.82 - i * 0.16, 170 - i * 30, 46, t, { col: col(SB_ROCP.crest[i]), shade: col(sbDark(SB_ROCP.crest[i], 0.2)), amp: 10, freq: 6, ph: i, lw: lw * 0.8, line: lineC });
     cs(ell(H[0], H[1], 150, 140, 30), SB_ROCP.body, SB_ROCP.shade, { off: 40, light: [0.4, -1], hi: '#ffffff' });

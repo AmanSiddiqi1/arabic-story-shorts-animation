@@ -75,6 +75,7 @@ function sbS15World(ctx, t, cam) {
   if (t > 118.3 && t < 135.0) { const u = K.clamp((t - 118.45) / 0.6), end = u < 1 ? [K.lerp(bowW[0], bol[0] + 20, u), K.lerp(bowW[1], bol[1], u) - 140 * Math.sin(Math.PI * u)] : bol;
     ctx.save(); ctx.strokeStyle = '#c8a070'; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(bowW[0], bowW[1]); ctx.quadraticCurveTo((bowW[0] + end[0]) / 2, Math.max(bowW[1], end[1]) + (t > 119.8 ? 10 : 50), end[0], end[1]); ctx.stroke(); ctx.restore(); }
   sbQuayWater(ctx, t, sea, 0, 2600);
+  { const na = K.clamp((cam.x - 1180) / 120); if (na > 0) { ctx.save(); ctx.beginPath(); ctx.rect(SB_QUAY.edge + 8, 0, 4000, 2400); ctx.clip(); sbSeaNear(ctx, t, sea, cam, { a: 0.8 * na, fore: { h: 0.11, alpha: na } }); ctx.restore(); } }   // rev 1: near water in the berth shots
   // the gangplank drops with a bounce
   const gp = SB_GANGP(t); if (gp > 0) { const b = SB_GANG.b, a = SB_GANG.a, drop = (1 - gp) * 120 - rebound(t, 120.25, 10, 0.2), bend = kick(t, SB_FALLSP, 6, 9, 8);
     ctx.save(); ctx.lineCap = 'round'; ctx.strokeStyle = '#3a1e10'; ctx.lineWidth = 20; ctx.beginPath(); ctx.moveTo(a[0] + (1 - gp) * 300, a[1] - drop); ctx.quadraticCurveTo((a[0] + b[0]) / 2, (a[1] + b[1]) / 2 + bend, b[0], b[1]); ctx.stroke(); ctx.strokeStyle = '#c8925a'; ctx.lineWidth = 13; ctx.stroke(); ctx.restore(); }
@@ -154,27 +155,41 @@ SB_SHOTS.push({ a: 136.04, b: 136.8, ww: 1000, cam: () => ({ x: 500, y: 615, zoo
   sbSky(ctx, 'gold', cam); sbSun(ctx, 220, 420, 54, '#fff1c0', '#ffb070', 1); sbSeaBack(ctx, t, SB_GSEA, 0, 1000);
   sbFarBaghdad(ctx, 760, seaY(760, t, 0, SB_GSEA) + 4 - 40 * K.clamp((t - 136.04) / 0.7), 0.42, K.clamp((t - 136.04) / 0.4));
   const f = sbFloat(380, t, SB_GSEA, 2, 200), ds = 0.95; sbDhow(ctx, { x: 380, y: f.y, s: ds, pitch: f.rot, t, sail: 1, patch: true, crew: (c) => sbOnDeck(c, ds, (q) => { const P = sbAlive(t, 11, { x: 205 * ds, y: -80 * ds, dir: 1, gaze: [1, -0.3], mouth: 'smile', wind: -1 }); P.y -= 8 * Math.abs(osc(SB_T2(t), 0.3)); P.handR = PERSON_HANDS.pointFwd.R; sbSinbad(q, P); const C = sbAlive(t, 51, { x: -40 * ds, y: -80 * ds, dir: 1, gaze: [1, 0], handR: PERSON_HANDS.folded.R, handL: PERSON_HANDS.folded.L }); sbCaptain(q, C); }) });
-  sbWake(ctx, 380, f.y, ds, 1, t); sbSeaFront(ctx, t, SB_GSEA, 0, 1000); } });
+  sbWake(ctx, 380, f.y, ds, 1, t); sbSeaFront(ctx, t, SB_GSEA, 0, 1000, { mid: (c) => sbReflect(c, 380, f.y, 470, ['#a8643a', '#2ab0b0', '#fbf3df', '#d0285a'], t, { rows: 6, gap: 10, a: 0.5 }) });
+  sbGulls(ctx, t - 136, 900, 660, -120, 3, 31, 0.36); sbSeaNear(ctx, t, SB_GSEA, cam); } });
 
 // ---------- S18 (136.8 - 149.83): home. The embrace, the story, the look back, the far whale, THE END ----------
 const SB_HSEA = { hz: 620, y: [632, 700, 945, 1030], amp: 5, pal: 'gold' };
-const SB_S18CAM = [[136.8, { x: 880, y: 650, zoom: 1.15 }], [139.1, { x: 860, y: 680, zoom: 1.25 }], [141.9, { x: 860, y: 680, zoom: 1.25 }], [144.0, { x: 1250, y: 615, zoom: 1.0 }], [149.83, { x: 1290, y: 615, zoom: 1.0 }]];
+// rev 1 ending: on "البحر" 143.32 the camera pans right until Sinbad (walked to the quay edge) stands at panel x ~27%, clear water and
+// horizon across the right 60%; the moored dhow sails out of frame unseen (139.3-140) and the captain is out of the picture
+const SB_S18CAM = [[136.8, { x: 880, y: 650, zoom: 1.15 }], [139.1, { x: 860, y: 680, zoom: 1.25 }], [141.9, { x: 860, y: 680, zoom: 1.25 }], [143.32, { x: 900, y: 670, zoom: 1.2 }], [144.4, { x: 1235, y: 615, zoom: 1.0 }], [149.83, { x: 1255, y: 615, zoom: 1.0 }]];
+const SB_EDGE18 = (t) => kfn(t, [[142.62, 880], [143.5, 1000]], 'inOut');        // Sinbad's walk to the quay edge
+const SB_SIS18 = (t) => kfn(t, [[142.7, 760], [143.62, 925]], 'inOut');           // the sister follows, holding his sash
+const SB_WH18 = { x: 1440, s: 0.5 };                                              // the far whale: panel x ~68% after the pan
 const SB_SIN18X = (t) => kfn(t, [[136.85, 1300], [137.3, 1110], [137.9, 860]], 'inOut');
 const SB_FAM18 = { mother: (t) => kfn(t, [[137.6, 640], [138.5, 800], [139.12, 800], [139.6, 690]]), father: (t) => kfn(t, [[137.8, 560], [138.56, 760], [139.12, 760], [139.6, 630]]), sister: (t) => kfn(t, [[137.4, 760], [137.75, 830], [139.12, 830], [139.5, 760]]) };
 function sbS18World(ctx, t, cam) {
   const tc = SB_T2(t), sea = SB_HSEA, ds = SB_QUAY.dhowS;
   sbHarbourQuay(ctx, 'gold', t, cam, sea, { sun: (c) => sbSun(c, 1900, 380, 56, '#fff1c0', '#ffb070', 1), far: (c) => {
-    // the far green hump with one palm on the horizon: it blows a jet of star glints, lifts its tail once like a hand, and sinks
-    if (t > 144.0) { const u = K.clamp((t - 144.0) / 0.6), sink = K.clamp((t - 145.3) / 0.5), x = 1650 + (t - 144) * 12, wl = seaY(x, t, 0, sea);
-      c.save(); c.beginPath(); c.rect(0, 0, 3000, wl + 1); c.clip(); sbWhale(c, x, wl - 24 * u + 30 * sink, { s: 0.3, dress: 1, t, lid: 1, palms: false, spout: t > 144.62 ? K.clamp((t - 144.62) / 0.8) : 0 }); palmTree(c, x - 30, wl - 24 * u + 30 * sink - 6, { s: 0.3, t: tc, sway: 1 }); c.restore();
-      if (t > 144.62) sbGlints(c, [x + 60, wl - 160, 120, 120], t, 6, 3, 14, 2); const tl = sbF(t, [[144.9, 0], [145.2, 1], [145.5, 0.2]]); sbFluke(c, x - 260, wl + 2, 0.22, tl, t);
-      for (let k = 0; k < 2; k++) sbRing(c, x, wl + 2, (t - 145.6 - k * 0.3) / 1.4, 120, { lw: 3 }); }
+    // the far whale (rev 1, three times the v1 size): the hump with its palms rises on "يخفي" 144.02, the tail lifts once like a hand on
+    // "عجائب" 144.62 (up over 5 drawings, hold 3, down), a small spout and rings; it stays, slowly sinking, until 147.5. Gold light under it
+    if (t > 144.02 && t < 148.2) { const x = SB_WH18.x + (t - 144) * 6, wl = seaY(x, t, 0, sea), rise = sbF(t, [[144.02, 0], [144.5, 1]]), sink = K.clamp((t - 146.0) / 1.5), hy = wl + 40 * SB_WH18.s - 62 * rise + 70 * sink;
+      sbLightPath(c, t, x - 10, wl + 2, 760, 70, '#ffe6a0', 0.55 * rise * (1 - sink * 0.6));
+      c.save(); c.beginPath(); c.rect(0, 0, 3000, wl + 1); c.clip(); sbWhale(c, x, hy, { s: SB_WH18.s, dress: 1, t, lid: 1, spout: t > 144.62 ? K.clamp((t - 144.62) / 1.1) : 0 }); c.restore();
+      const tl = sbF(t, [[144.62, 0], [145.04, 1], [145.3, 1], [145.72, 0]]); if (tl > 0) { c.save(); c.beginPath(); c.rect(0, 0, 3000, wl + 1); c.clip(); sbFluke(c, x - 500 * SB_WH18.s, wl + 4, 0.62, tl, t); c.restore(); }
+      sbFoamLine(c, [[x - 200, wl + 1], [x - 60, wl + 3], [x + 90, wl + 3], [x + 210, wl + 1]], t, { w: 5, a: 0.9 * rise * (1 - sink) });
+      for (let k = 0; k < 3; k++) sbRing(c, x - 40, wl + 2, (t - 144.7 - k * 0.45) / 1.6, 220, { lw: 3, a: 0.8 }); }
     sbGulls(c, t, 900, 260, 25, 3, 14, 0.32); } });
   // the dhow moored at the berth again; the captain at the rail
-  const f = sbFloat(1660, t, sea, 2, 200), D = { x: 1660, y: f.y - 2, s: ds, pitch: f.rot * 0.4, t, sail: 0, patch: true, crew: (c) => sbOnDeck(c, ds, (q) => { const C = sbAlive(t, 51, { x: 20 * ds, y: -80 * ds, dir: -1, gaze: [-1, 0.2], mouth: 'smile', handR: PERSON_HANDS.folded.R, handL: PERSON_HANDS.folded.L }); sbCaptain(q, C); }) };
-  sbDhow(ctx, D); sbQuayWater(ctx, t, sea, 0, 2600);
-  ctx.save(); ctx.lineCap = 'round'; ctx.strokeStyle = '#3a1e10'; ctx.lineWidth = 20; ctx.beginPath(); ctx.moveTo(...SB_GANG.a); ctx.lineTo(...SB_GANG.b); ctx.stroke(); ctx.strokeStyle = '#c8925a'; ctx.lineWidth = 13; ctx.stroke(); ctx.restore();
-  if (t > 143.32) sbBands(ctx, [1100, 640, 1600, 400], t, { cols: ['#ffe0a0'], alpha: 0.2, n: 2, w: 160, speed: 160, angle: 0 });
+  const dxh = kfn(t, [[139.9, 1660], [141.0, 2900]], 'in');
+  if (t < 141.0) { const f = sbFloat(dxh, t, sea, 2, 200), D = { x: dxh, y: f.y - 2, s: ds, pitch: f.rot * 0.4, t, sail: 0, patch: true, crew: (c) => sbOnDeck(c, ds, (q) => { const C = sbAlive(t, 51, { x: 20 * ds, y: -80 * ds, dir: -1, gaze: [-1, 0.2], mouth: 'smile', handR: PERSON_HANDS.folded.R, handL: PERSON_HANDS.folded.L }); sbCaptain(q, C); }) };
+    sbDhow(ctx, D); }
+  sbQuayWater(ctx, t, sea, 0, 2600, [2]);
+  // the gangplank is pulled aboard (139.3-139.9), sliding out to the right
+  const gp = kfn(t, [[139.3, 0], [139.9, 1]], 'in'); if (gp < 1) { const dx = gp * 600; ctx.save(); ctx.lineCap = 'round'; ctx.strokeStyle = '#3a1e10'; ctx.lineWidth = 20; ctx.beginPath(); ctx.moveTo(SB_GANG.a[0] + dx, SB_GANG.a[1] - dx * 0.23); ctx.lineTo(SB_GANG.b[0] + dx, SB_GANG.b[1] - dx * 0.23); ctx.stroke(); ctx.strokeStyle = '#c8925a'; ctx.lineWidth = 13; ctx.stroke(); ctx.restore(); }
+  sbQuayWater(ctx, t, sea, 0, 2600, [3]);
+  // the open water beyond the quay: a gull pair low over it, the near crest band (from the pan on)
+  if (t > 143.0) { sbGulls(ctx, t - 143, 1900, 520, -40, 2, 21, 0.34); ctx.save(); ctx.beginPath(); ctx.rect(SB_QUAY.edge + 8, 0, 4000, 2400); ctx.clip(); sbSeaStreaks(ctx, t, sea, 1100, 1900, 760, 930, { n: 6, a: 0.5, li: 1 }); sbSeaFore(ctx, t, sea, cam, { h: 0.1, alpha: K.clamp((t - 143.0) / 0.6) }); ctx.restore(); }
   // his sealed chest (he sits on it to tell the story) and the crate for his sister
   sbChest(ctx, 880, 900, { s: 0.8, band: SB_ACC, seal: 'star' }); celShade(ctx, K.rectPts(728, 852, 64, 48), '#c08a52', '#8a5a30', { light: [-1, -1], off: 8, lw: 3 });
   // the family
@@ -191,7 +206,11 @@ function sbS18World(ctx, t, cam) {
     else if (t < 137.6) { Object.assign(P, walk(xf, tc, { stride: 16 })); P.y -= Math.abs(Math.sin(P.ph || 0)) * 10 * (P.amp || 0); }
     else if (t < 139.12) { P.handLW = [SB_SIN18X(t) - 10, 800]; P.gaze = [1, -1]; P.mouth = 'smile'; }
     if (sit && t > 139.5) { P.x = 760; P.sit = 1; P.seat = 'bench'; P.mouth = 'smile'; if (t > 140.58 && t < 141.18) { P.kneel = 0; P.sit = 0.4; P.handR = PERSON_HANDS.pointUp.R; P.mouth = 'open'; } if (t > 141.18 && t < 141.94) { const c = Math.abs(osc(tc, 0.25)); P.handLW = [775 + 10 * c, 760]; P.handRW = [790 - 10 * c, 760]; P.mouth = 'open'; } }
-    if (t > 145.0) { P.aR = [2.5 + 0.3 * osc(tc, 0.5), 2.8]; P.gaze = [1, -0.2]; }
+    // she gets up with him and follows holding his sash, looking up at him; only she sees the whale too, and claps
+    if (t > 141.94) { P.gaze = [1, -0.9]; P.mouth = 'smile'; const up = K.clamp((t - 142.5) / 0.25); P.sit = 1 - up; P.x = SB_SIS18(t); if (t > 142.7 && t < 143.62) Object.assign(P, walk(SB_SIS18, tc, { stride: 14 }));
+      const sx = SB_EDGE18(t); if (t > 142.55 && t < 145.2) P.handRW = [sx - 26, 820 + 4 * osc(tc, 0.7)];
+      if (t > 144.4) P.gaze = [1, -0.3]; if (t > 145.2) { const c = Math.abs(osc(tc, 0.42)); P.handLW = [P.x + 22 + 9 * c, 812]; P.handRW = [P.x + 38 - 9 * c, 812]; P.mouth = 'open'; P.y = 900 - 6 * c; }
+      if (t > 147.6) { delete P.handLW; P.handRW = [sx - 26, 822]; P.mouth = 'smile'; P.y = 900; P.gaze = [1, -0.9]; } }
     sbFamily(ctx, 'sister', P); }
   // Sinbad: jumps off the plank, runs, catches his sister and swings her; the embrace; tells the story on his chest; the look back
   const x = SB_SIN18X(t), P = sbAlive(t, 11, { x, y: 900, dir: -1, mouth: 'smile', wind: -0.3, gaze: [-1, 0] });
@@ -201,8 +220,13 @@ function sbS18World(ctx, t, cam) {
   else if (t < 139.12) { P.handL = [-50, -150]; P.handR = [50, -150]; P.lid = 0.7; P.mouth = 'smile'; }
   if (t > 139.12) { P.x = 880 + 22 * 0.95 * 0; P.sit = K.clamp((t - 139.12) / 0.3); P.seat = 'bench'; P.y = 900 - 64 * 0.8 * P.sit + 48 * P.sit; P.dir = -1; P.gaze = [-1, -0.2];
     if (story) { const a = sbF(t, [[139.3, 0], [139.8, 1], [140.4, 0.6], [140.9, 1], [141.94, 0.8]]), lag = a + lagged((u) => flow(u, [[139.3, 0], [139.8, 1], [140.4, 0.6], [140.9, 1]]), tc, 0.17, 0.6); P.aL = [0.3 + 2.5 * a, 0.3 + 2.1 * lag]; P.aR = [0.3 + 2.5 * a, 0.3 + 2.1 * lag]; P.talk = sbTalk(t, 139.3, 141.9, 2); P.mouth = 'smile'; }
-    if (t > 141.94) { P.dir = 1; P.gaze = [1, -0.1]; P.lid = Math.max(0.25, sbLid(t, 11, [141.98])); P.mouth = 'smile'; P.sq *= 1 + 0.015 * Math.sin((t - 142) * 2); }
-    if (t > 144.7) { P.handR = [50, -190 + 6 * osc(tc, 0.6)]; } }
+    // "وعرف" 141.94: he turns from the family to the water: eyes first, then the head with a blink, then the body; stands, walks to the edge
+    if (t > 141.94) { P.gaze = [1, -0.1]; P.mouth = 'smile'; P.lid = Math.max(0.25, sbLid(t, 11, [142.08, 146.5])); if (t > 142.2) P.dir = 1;
+      const up = K.clamp((t - 142.4) / 0.25); if (up > 0) { P.sit *= 1 - up; P.y = 900 - 16 * P.sit; } if (up > 0) P.y -= 10 * Math.sin(Math.PI * up);
+      if (t > 142.62) { P.x = SB_EDGE18(t); P.sit = 0; P.y = 900; if (t < 143.5) Object.assign(P, walk(SB_EDGE18, tc, { stride: 24 })); }
+      P.sq *= 1 + 0.018 * Math.sin((t - 142) * 2.1); P.wind = -0.3 - 0.6 * sbF(t, [[143.9, 0], [144.7, 1], [147, 0.7]]); P.tailA = 0.15 * osc(tc, 2.3);
+      if (t > 144.02) P.gaze = [1, -0.05]; if (t > 144.62 && t < 145.2) { P.eyes = 'wide'; P.drop = -4 * pulse(tc, 144.7, 0.4); }
+      if (t > 145.3) { const h = sbF(t, [[145.3, 0], [145.6, 1], [147.4, 1], [147.9, 0.2]]); if (h > 0.05) P.handR = [K.lerp(10, 48, h), K.lerp(-110, -178, h) + 5 * osc(tc, 0.9) * h]; } } }
   sbSinbad(ctx, P);
   if (t > 138.56 && t < 139.6) teardrops(ctx, t, 138.6, 139.4, () => [SB_FAM18.mother(t) - 10, 700], { groundY: 900, rate: 2 });
 }
