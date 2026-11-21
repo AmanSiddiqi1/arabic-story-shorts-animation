@@ -95,13 +95,13 @@ const A2_S14_CAM = (t) => { if (t < 136.86) return K.camAt([[125.27, { x: 1650, 
   const u = K.ease.inOut(beatIn(t, 136.86, 137.7)); if (t < 137.7) return { x: K.lerp(1640, 820, u), y: K.lerp(640, 600, u), zoom: K.lerp(1.1, 1.0, u) }; return { x: 820 - 12 * (t - 137.7), y: 600, zoom: 1.0 }; };
 // v2 (note 8): the leader walks along the prints on «وقف» and stops on «الصخرة»; crouches to them on «يفكر» (note 10)
 const A2_LPX = (t) => kfn(t, [[125.27, 1790], [127.38, 1640]], 'inOut');
-const A2_TOWN = { x: 470, base: 862, s: 0.62 }, A2_DOME = [470 + 0.62 * 700, 700];   // the dome is measured on the still (notes.md)
+const A2_TOWN = { x: 470, base: 862, s: 0.62 }, A2_DOME = [975, 690];   // the dome is measured on the still (notes.md)
 const A2_S14_MEN = [{ i: 0, x0: 1300, x1: 1500, y: 884, s: 0.88 }, { i: 1, x0: 1380, x1: 1550, y: 878, s: 0.86 }, { i: 2, x0: 1450, x1: 1595, y: 872, s: 0.84 }, { i: 3, x0: 2040, x1: 1705, y: 880, s: 0.86 }, { i: 4, x0: 2120, x1: 1765, y: 874, s: 0.84 }];
 const A2_RIDE = [[-1, 2], [0, 4], [1, 3], [2, 0], [3, 5], [4, 1]];
-const A2_RIDX = (t, k) => K.lerp(1380 + 64 * k, 900 + 64 * k, K.clamp((t - 137.9) / 3.6));
+const A2_RIDX = (t, k) => K.lerp(1400 + 92 * k, 860 + 70 * k, K.clamp((t - 137.9) / 3.6));
 function a2TownRiders(ctx, t) { const tc = AB_T2(t);
   abDust(ctx, A2_RIDX(t, 5) + 110, 900, 360, 70, t, 0.55 * (1 - K.clamp((t - 141.6) / 1.1)), '#e8a88a');
-  for (let k = 5; k >= 0; k--) { const [i, pal] = A2_RIDE[k], xf = (u) => A2_RIDX(u, k), x = xf(tc), u = K.clamp((t - 137.9) / 3.6), s = K.lerp(0.15, 0.1, u), y = K.lerp(888, 874, u);
+  for (let k = 5; k >= 0; k--) { const [i, pal] = A2_RIDE[k], xf = (u) => A2_RIDX(u, k), x = xf(tc), u = K.clamp((t - 137.9) / 3.6), s = K.lerp(0.24, 0.15, u), y = K.lerp(892, 876, u);
     const a = 1 - K.clamp((t - 141.1 - 0.08 * k) / 0.4); if (a <= 0.02) continue;
     const H = { x, y, s, dir: -1, pal, ...walk(xf, tc, { stride: GAIT.horse * s * 1.6 }), tailSwish: 0.6 }; H.gallop = 1; H.amp = 1;
     ctx.save(); ctx.globalAlpha *= a; abRider(ctx, i, H, { gaze: [1, 0], mouth: 'closed' }, 'dusk', { cloak: 0.9, t, hang: 0, ph: k * 0.4 }); ctx.restore(); } }
@@ -135,8 +135,8 @@ function a2S14World(ctx, t, cam) {
   const P = { x: A2_LPX(tc), y: 902, dir: -1, ...walk(A2_LPX, tc, { stride: 26 }), gaze: [1, 0.3], lid: abLid(t, 150, [126.4, 130.3]), brow: 0.8, tip: idleSway(tc, 151, 0.015, 3.2), sq: breathe(tc, 152), handL: [-34, -100], handR: [40, -110], mouth: 'closed' };
   if (tc < 127.38) { P.gaze = [1, 0.85]; P.tip = 0.08; P.lid = 0.3; }
   if (tc >= 127.38 && tc < 128.1) { P.gaze = gazePlan(tc, [[127.38, [1, 0.8]], [127.7, [0.2, -0.6]]]); P.handL = PERSON_HANDS.hipsHands.L; P.handR = PERSON_HANDS.hipsHands.R; }
-  if (tc >= 128.1 && tc < 129.4) { const cr = K.ease.inOut(beatIn(tc, 128.1, 128.4)) * (1 - K.ease.inOut(beatIn(tc, 129.14, 129.4))); P.kneel = 0.6 * cr; P.sq *= landSquash(tc, 128.4, 0.08); P.handRW = cr > 0.5 ? [1592, 928] : null; P.handL = [-20, -120];
-    P.gaze = gazePlan(tc, [[128.1, [1, 0.9]], [128.6, [1, 0.6]], [128.9, [1, 0.3]]]); P.tip = 0.12 * cr; }
+  if (tc >= 128.1 && tc < 129.4) { const cr = K.ease.inOut(beatIn(tc, 128.1, 128.4)) * (1 - K.ease.inOut(beatIn(tc, 129.14, 129.4))); P.kneel = 0.6 * cr; P.sq *= landSquash(tc, 128.4, 0.08); P.handRW = cr > 0.5 ? [1575, 925] : null; P.handL = [-20, -120];
+    P.gaze = gazePlan(tc, [[128.1, [1, 0.9]], [128.6, [1, 0.6]], [128.9, [1, 0.3]]]); P.tip = 0.26 * cr; }
   if (tc >= 129.4 && tc < 130.22) { P.gaze = gazePlan(tc, [[129.4, [1, 0.3]], [130.0, [1, -0.1]]]); P.handR = [16, -164 + 4 * osc(tc, 0.5)]; }
   if (tc >= 130.22 && tc < 132.62) { P.dir = 1; P.gaze = gazePlan(tc, [[130.22, [1, 0]], [131.0, [-1, 0]], [131.6, [1, 0]]]); P.handL = PERSON_HANDS.hipsHands.L; P.handR = PERSON_HANDS.hipsHands.R; }
   if (tc >= 132.62 && tc < 133.6) { P.dir = 1; P.handR = tc < 133.2 ? [30, -205 + 8 * Math.abs(Math.sin((tc - 132.62) * 10))] : [50, -230]; P.brow = 1; P.talk = abTalk(t, 133.05, 133.6, 31); P.mouth = P.talk ? 'open' : 'closed'; }

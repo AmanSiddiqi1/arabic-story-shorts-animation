@@ -222,7 +222,7 @@ function a2CaveWorld(ctx, t, cam, o = {}) {
   abCaveLive(ctx, o.liveT ?? t);
   // v2 (review 1 note 4): the cold cave is a repaint of the set (walls and heaps pushed to dusty blue-violet), never a tint over the
   // cast: figures are drawn after this pass. The gold survives only as a rim glow on the mound.
-  if (cool > 0.01) { ctx.save(); ctx.globalCompositeOperation = 'multiply'; ctx.globalAlpha = 0.62 * cool; ctx.fillStyle = '#7480c8'; ctx.fillRect(-800, -200, 3200, 1630); ctx.restore();
+  if (cool > 0.01) { ctx.save(); ctx.globalCompositeOperation = 'multiply'; ctx.globalAlpha = 0.78 * cool; ctx.fillStyle = '#6a78c8'; ctx.fillRect(-800, -200, 3200, 1630); ctx.restore();
     ctx.save(); ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = 0.14 * cool; ctx.fillStyle = '#9aa8e8'; ctx.fillRect(-800, -200, 3200, 1630); ctx.restore();
     abGlow(ctx, 640, 770, 170, 0.35 * cool, '#ffc84a'); }
   abGlow(ctx, 770, 800, 260, (0.6 + 0.1 * Math.sin(t * 3)) * g, '#ffc84a');
@@ -341,7 +341,7 @@ function a2BackCel(ctx, P, pal, o = {}, k = 1) {
   const pts = ell(hx, hy - 4 * s, 43 * s, 46 * s, 22);
   celShade(ctx, pts, pal.hc, abDark(pal.hc, 0.3), { light: [d, -1], off: 10 * s, lw: 3.5, line: abDark(pal.hc, 0.6) });
   celShade(ctx, [[hx - 34 * s, hy + 20 * s], [hx + 34 * s, hy + 20 * s], [hx + 44 * s, hy + 62 * s], [hx - 44 * s, hy + 62 * s]], pal.hc, abDark(pal.hc, 0.3), { light: [d, -1], off: 8 * s, lw: 3, line: abDark(pal.hc, 0.6) });
-  ctx.save(); ctx.lineWidth = 6 * s; ctx.strokeStyle = '#1a1020'; for (const j of [0, 1]) { ctx.beginPath(); ctx.ellipse(hx, hy - 26 * s - j * 9 * s, 40 * s, 10 * s, 0, 0, Math.PI * 2); ctx.stroke(); } ctx.restore();
+  ctx.save(); ctx.lineWidth = 6 * s; ctx.strokeStyle = '#1a1020'; ctx.lineCap = 'round'; for (const j of [0, 1]) { ctx.beginPath(); ctx.ellipse(hx, hy - 24 * s - j * 9 * s, 43 * s, 11 * s, 0, 0.15, Math.PI - 0.15); ctx.stroke(); } ctx.restore();
   ctx.restore();
 }
 

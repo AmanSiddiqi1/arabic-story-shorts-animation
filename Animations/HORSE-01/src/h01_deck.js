@@ -13,6 +13,11 @@ const H1_DK = {
 };
 const H1_DW = 2000;
 // draw fn at x and x +/- 2000 so the strip tiles sideways
+// bake cost: puffs are drawn sharp (h1Puff, ehCloud without its per-shape blur filter) into a scratch layer and softened in ONE blur pass (h1Soft)
+function h1Puff(ctx, x, y, w, h, body, under, seed = 1) { const R = K.rng(seed); ctx.fillStyle = under; ctx.beginPath(); ctx.ellipse(x, y + h * 0.22, w * 0.5, h * 0.24, 0, 0, 7); ctx.fill();
+  ctx.fillStyle = body; for (let i = 0; i < 6; i++) { const u = (i - 2.5) / 2.5; ctx.beginPath(); ctx.ellipse(x + u * w * 0.36, y - (1 - Math.abs(u)) * h * 0.28 - R() * h * 0.12, w * (0.2 + R() * 0.08), h * (0.36 + R() * 0.12), 0, 0, 7); ctx.fill(); } }
+function h1Soft(c, px, draw, op) { const L = K.layer(c.canvas.width, c.canvas.height), l = L.getContext('2d'); l.setTransform(c.getTransform()); draw(l);
+  c.save(); c.setTransform(1, 0, 0, 1, 0, 0); if (op) c.globalCompositeOperation = op; c.filter = `blur(${px}px)`; c.drawImage(L, 0, 0); c.restore(); }
 const h1Wrap = (f, x, ...a) => { for (const o of [-H1_DW, 0, H1_DW]) f(x + o, ...a); };
 
 // far: horizon at strip y 720 (towers, peaks, haze); the strip is 760 high
@@ -21,9 +26,9 @@ function h1DeckFar(pal) {
     const peak = (x, h, w) => { celShade(c, [[x - w, 540], [x - w * 0.35, 520 - h * 0.62], [x, 520 - h], [x + w * 0.3, 520 - h * 0.7], [x + w, 540]], P.mtn, P.mtnS, { light: [-1, -1], off: w * 0.3, lw: 3, line: ehDark(P.mtnS, 0.3) });
       celShade(c, [[x - w * 0.3, 520 - h * 0.66], [x, 520 - h], [x + w * 0.26, 520 - h * 0.72], [x + w * 0.08, 520 - h * 0.62], [x - w * 0.1, 520 - h * 0.7]], P.snow, ehMix(P.snow, P.mtnS, 0.3), { light: [-1, -1], off: w * 0.08, lw: 2.5, line: ehDark(P.mtnS, 0.3) }); };
     h1Wrap(peak, 360, 300, 230); h1Wrap(peak, 560, 210, 170); h1Wrap(peak, 1420, 260, 210);
-    const tower = (x, h, w, sd) => { for (let k = 0; k < 5; k++) { const u = k / 4; ehCloud(c, x + Math.sin(sd + k) * w * 0.12, 520 - u * h, w * (1 - 0.45 * u), h * 0.32, k > 2 ? P.top : P.far, P.farU, 6, sd * 10 + k); } };
-    for (const [x, h, w] of [[90, 380, 300], [860, 470, 360], [1150, 300, 260], [1760, 420, 320]]) h1Wrap(tower, x, h, w, x);
-    for (let i = 0; i < 18; i++) { const x = R() * H1_DW; h1Wrap((xx) => ehCloud(c, xx, 520 - R() * 30, 260 + R() * 200, 90, P.far, P.farU, 5, i + 40), x); }
+    const tower = (c, x, h, w, sd) => { for (let k = 0; k < 5; k++) { const u = k / 4; h1Puff(c, x + Math.sin(sd + k) * w * 0.12, 520 - u * h, w * (1 - 0.45 * u), h * 0.32, k > 2 ? P.top : P.far, P.farU, sd * 10 + k); } };
+    h1Soft(c, 3, (l) => { for (const [x, h, w] of [[90, 380, 300], [860, 470, 360], [1150, 300, 260], [1760, 420, 320]]) h1Wrap((xx) => tower(l, xx, h, w, x), x);
+      for (let i = 0; i < 18; i++) { const x = R() * H1_DW, yy = 520 - R() * 30, ww = 260 + R() * 200; h1Wrap((xx) => h1Puff(l, xx, yy, ww, 90, P.far, P.farU, i + 40), x); } });
     ehGrad(c, 0, 400, H1_DW, 160, [[0, K.rgba(P.haze, 0)], [0.7, K.rgba(P.haze, 0.75)], [1, P.haze]]); }, 0.8);
 }
 // mid: the deck from above, top edge at strip y 40, holes showing the land
@@ -44,20 +49,19 @@ function h1DeckMid(pal) {
     for (const [hx, hy, rx, ry] of H1_HOLES) h1Wrap((x) => { c.save(); c.beginPath(); c.ellipse(x, hy, rx * 1.1, ry * 1.2, 0, 0, 7); c.clip(); land.setTransform(new DOMMatrix().translate(x * 0.3, hy).scale(0.35 + ry / 200, 0.25 + ry / 300)); c.fillStyle = land; c.fillRect(x - rx * 1.2, hy - ry * 1.3, rx * 2.4, ry * 2.6);
       c.fillStyle = K.rgba(P.haze, 0.22); c.fillRect(x - rx * 1.2, hy - ry * 1.3, rx * 2.4, ry * 2.6); c.restore(); }, hx);
     // the cloud mass on its own layer, holes punched out softly
-    const A = K.layer(H1_DW, 880), a = A.getContext('2d'), R = K.rng(17);
+    const A = K.layer(c.canvas.width, c.canvas.height), a = A.getContext('2d'), R = K.rng(17); a.setTransform(c.getTransform());
     ehGrad(a, 0, 120, H1_DW, 760, [[0, ehMix(P.body, P.under, 0.25)], [1, ehMix(P.body, P.under, 0.45)]]);
-    for (let i = 0; i < 22; i++) { const w = 160 + R() * 160; h1Wrap((x) => ehCloud(a, x, 120 + R() * 20, w, w * 0.55, P.top, P.under, 3, i + 3), i * 92 + R() * 40); }
-    for (const [row, n, sz] of [[200, 15, 0.55], [330, 12, 0.78], [490, 9, 1.05], [680, 7, 1.4], [850, 6, 1.7]]) for (let i = 0; i < n; i++) { const x = (i + R() * 0.7) * H1_DW / n, w = 300 * sz * (0.7 + R() * 0.6); h1Wrap((xx) => ehCloud(a, xx, row + R() * 40, w, w * 0.42, R() < 0.5 ? P.top : P.body, P.under, 3, i + row), x); }
-    a.save(); a.globalCompositeOperation = 'destination-out'; a.filter = 'blur(7px)'; a.fillStyle = '#000';
-    for (const [hx, hy, rx, ry] of H1_HOLES) h1Wrap((x) => { a.beginPath(); a.ellipse(x, hy, rx, ry, 0, 0, 7); a.fill(); }, hx); a.restore();
+    h1Soft(a, 2, (l) => { for (let i = 0; i < 22; i++) { const w = 160 + R() * 160, yy = 120 + R() * 20; h1Wrap((x) => h1Puff(l, x, yy, w, w * 0.55, P.top, P.under, i + 3), i * 92 + R() * 40); }
+    for (const [row, n, sz] of [[200, 15, 0.55], [330, 12, 0.78], [490, 9, 1.05], [680, 7, 1.4], [850, 6, 1.7]]) for (let i = 0; i < n; i++) { const x = (i + R() * 0.7) * H1_DW / n, w = 300 * sz * (0.7 + R() * 0.6), yy = row + R() * 40, col = R() < 0.5 ? P.top : P.body; h1Wrap((xx) => h1Puff(l, xx, yy, w, w * 0.42, col, P.under, i + row), x); } });
+    h1Soft(a, 5, (l) => { l.fillStyle = '#000'; for (const [hx, hy, rx, ry] of H1_HOLES) h1Wrap((x) => { l.beginPath(); l.ellipse(x, hy, rx, ry, 0, 0, 7); l.fill(); }, hx); }, 'destination-out');
     // the inner rim of each hole: the tinted underside showing on the far edge
     a.save(); a.globalCompositeOperation = 'source-atop'; for (const [hx, hy, rx, ry] of H1_HOLES) h1Wrap((x) => { const g = a.createLinearGradient(0, hy - ry, 0, hy); g.addColorStop(0, K.rgba(P.under, 0.9)); g.addColorStop(1, K.rgba(P.under, 0)); a.fillStyle = g; a.beginPath(); a.ellipse(x, hy - ry * 0.25, rx * 1.05, ry * 0.95, 0, 0, 7); a.fill(); }, hx); a.restore();
-    c.drawImage(A, 0, 0); }, 0.7);
+    c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.drawImage(A, 0, 0); c.restore(); }, 0.7);
 }
 // near: big soft puffs (strip 420 high, puff tops near y 120)
 function h1DeckNear(pal) {
   return ehBakeAt('h1near:' + pal, H1_DW, 420, (c) => { const P = H1_DK[pal];
-    for (const [x, y, w, h] of [[150, 220, 700, 240], [760, 280, 560, 200], [1260, 210, 760, 260], [1780, 270, 520, 200]]) h1Wrap((xx) => ehCloud(c, xx, y, w, h, P.top, P.under, 12, Math.round(x)), x); }, 0.5);
+    h1Soft(c, 6, (l) => { for (const [x, y, w, h] of [[150, 220, 700, 240], [760, 280, 560, 200], [1260, 210, 760, 260], [1780, 270, 520, 200]]) h1Wrap((xx) => h1Puff(l, xx, y, w, h, P.top, P.under, Math.round(x)), x); }); }, 0.5);
 }
 // the sky camera (96.6 - 132.14): zoom z about (500, 300) and the horizon hy at z = 1; cuts at 97.18 and 108.69
 const H1_SKYCAM = [
@@ -115,7 +119,7 @@ function h1Country(ctx, t, y) { ctx.drawImage(h1CountryPlate(), 0, y - 60, 1000,
 // ---------- S15: the sunset wide (132.14 - end) ----------
 const H1_SUNSET_SKY = [[0, '#3a3a9a'], [0.22, '#6a5ac8'], [0.42, '#c070b8'], [0.55, '#ff8a8a'], [0.64, '#ffa870'], [0.7, '#ffd27a'], [1, '#ffd8a0']];
 function h1SunsetBack(ctx, t) {
-  const sink = 60 * ehE(t, 132.14, 5.9, 'inOut'), sun = [600, 770 + sink, 150];
+  const sink = 60 * ehE(t, 132.14, 5.9, 'inOut'), sun = [600, 700 + sink, 150];
   ehGrad(ctx, 0, 0, 1000, 1230, H1_SUNSET_SKY);
   // the first star and a thin moon high up at 135
   const st = K.clamp((t - 135) / 0.8); if (st > 0) { ctx.save(); ctx.globalAlpha *= st; ehGlint(ctx, 150, 300, 22, 0.5); ehGlow(ctx, 150, 300, 40, 0.6, '#fff6ea');

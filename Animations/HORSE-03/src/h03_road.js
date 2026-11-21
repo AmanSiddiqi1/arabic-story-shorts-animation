@@ -13,7 +13,7 @@ function h3RoadWorld(ctx, t, cam) {
   ehGrad(ctx, -200, -400, 2800, 1300, [[0, '#3a8ef0'], [0.6, '#8ac8ff'], [1, '#e8f6ff']]);
   const [sx, sy] = H3_DR.sun; ehGlow(ctx, sx + cx * 0.85, sy + 40 * K.clamp((t - 45.5) / 3), 300, 0.7, '#fff2c0'); celShade(ctx, ell(sx + cx * 0.85, sy + 40 * K.clamp((t - 45.5) / 3), 60, 60, 30), '#fff6d0', '#ffe2a0', { off: 6, lw: 0 });
   for (let i = 0; i < 4; i++) { const x = ((i * 700 + t * 8) % 2800) - 200 + cx * 0.8; ctx.drawImage(ehCloudSprite(i % 3, 'day'), x, 120 + i * 60, 420, 126); }
-  const rise = ehE(t, 46.66, 1.0, 'out'); if (rise > 0) { ctx.save(); ctx.translate(cx * 0.6, 0); princessPalace(ctx, 1560, K.lerp(780, 640, rise), 0.7, {}); ehRiverTowers(ctx, 1380, 1760, K.lerp(780, 650, rise), 200, 44, EH_RC_DUSK, {}); ctx.restore(); }
+  const rise = ehE(t, 46.66, 1.0, 'out'); if (rise > 0) { ctx.save(); ctx.translate(cx * 0.6, 0); h3Palace(ctx, 1560, K.lerp(780, 640, rise), 0.7, false); ehRiverTowers(ctx, 1380, 1760, K.lerp(780, 650, rise), 200, 44, EH_RC_DUSK, {}); ctx.restore(); }
   desertRoad(ctx, { ...H3_DR, sky: false, camX: cx, t });
   // the gate guard counting bales
   const gx = 2070 - 130, G = { x: gx, y: 905, s: 0.95, dir: -1, lid: ehLid(t, 81), sq: breathe(tc, 81, 0.012), tip: idleSway(tc, 81, 0.02, 3), mouth: 'closed', gaze: [-1, 0.3], handL: [-20, -100], handR: t > 47.78 ? [70 + 10 * Math.sin(tc * 8), -150] : [30, -100] };
@@ -67,6 +67,6 @@ function h3CloudEaves(c, t) {
   const tc = EH_T2(t); c.drawImage(ehGardenSkyPlate(), 0, -820, 2000, 2050); c.drawImage(ehPalacePlate(), 640, -240); c.drawImage(ehGardenGroundPlate(), 0, 380);
   const I = { x: 676, y: 878, s: EH_INVENTOR.s, dir: 1, lid: 0.4, mouth: 'smirk', brow: 0.4, gaze: [1, 0], handR: PERSON_HANDS.cupEar.R, handL: [-20, -100], tip: 0.06 }; person(c, ehDressP(EH_INVENTOR, I)); h3CypressFront(c);
   const F = { x: 1250, y: 822, s: EH_FIRUZ.s, dir: -1, lid: 0, mouth: 'open', talk: ehTalk(t, 42.8, 46, 3, 0.8), gaze: [-1, -0.3], handL: [-60, -200], handR: [60, -150] }; person(c, ehDressP(EH_FIRUZ, F));
-  if (t >= 43.68) { const k = ehE(tc, 43.68, 0.6, 'out'); c.save(); c.globalAlpha = k; ehGrad(c, 1250, 120, 640, 560, [[0, '#8ad0ff'], [1, '#e8f6ff']]); princessPalace(c, 1640, 640, 0.95 * k, {}); ehRiverTowers(c, 1310, 1820, 640, 260, 52, EH_RC_DUSK, {}); c.fillStyle = '#4ab0e0'; c.fillRect(1250, 640, 640, 40);
+  if (t >= 43.68) { const k = ehE(tc, 43.68, 0.6, 'out'); c.save(); c.globalAlpha = k; ehGrad(c, 1250, 120, 640, 560, [[0, '#8ad0ff'], [1, '#e8f6ff']]); h3Palace(c, 1640, 640, 0.95 * k, false); ehRiverTowers(c, 1310, 1820, 640, 260, 52, EH_RC_DUSK, {}); c.fillStyle = '#4ab0e0'; c.fillRect(1250, 640, 640, 40);
     c.restore(); for (const [x, y, d] of [[1640 - 285, 400, 0], [1310, 400, 0.15], [1820, 400, 0.3], [1500, 660, 0.45]]) { const u = (t - 44.0 - d) / 0.5; if (u > 0 && u < 1) ehGlint(c, x, y, 50, u); } }
 }

@@ -67,7 +67,7 @@ function h3PlanInside(c, t) {
   if (t < 55.7) coverCloth(c, ehClothDraped(H, t), {});
   else if (t < 56.4) { const u = ehE(tc, 55.7, 0.7, 'out'); coverCloth(c, ehClothSpread(K.lerp(H.x + 40, H.x + 520, u), K.lerp(H.y - 200, H.y - 420, u), 380, 200, -0.6 * u, t, 1), { alpha: 1 - u }); }
   // the plan figures on the ground (the princess until she mounts, the inventor until his leap)
-  if (!mounted) { groundShadow(c, pr.x, 902, 80, 0, { flat: true, color: '#7a6a9a', alpha: 0.2 }); let PP = pr; if (t >= 67.67) { const [x, l] = hop(tc, 67.67, 0.63, H3_PL.stool, H.x - 30, 110); PP = { ...pr, x, y: 900 - l, amp: 0, handL: [-40, -170], handR: [40, -170] }; } person(c, ehDressP(EH_PRINCESS, PP)); ehVeilRibbon(c, PP, tc, {}); }
+  if (!mounted) { groundShadow(c, pr.x, 902, 80, 0, { flat: true, color: '#7a6a9a', alpha: 0.2 }); let PP = pr; if (t >= 67.67) { const [x, l] = hop(tc, 67.67, 0.63, H3_PL.stool, H.x - 30, 110); PP = { ...pr, x, y: 900 - l, amp: 0, handL: [-40, -170], handR: [40, -170] }; } ehVeilRibbon(c, PP, tc, {}); person(c, ehDressP(EH_PRINCESS, PP)); }
   if (!invM) { let I = inv; if (t >= 70.46) { const u = K.clamp((tc - 70.46) / 0.84), [x, l] = hop(tc, 70.46, 0.84, 1210, H.x - 60, 150); I = { ...inv, x, y: 900 - l, amp: 0, dir: Math.floor(u * 4) % 2 ? -1 : 1, handL: [-60, -200], handR: [60, -200], sq: 1.05 }; }
     groundShadow(c, I.x, 902, 90, 900 - I.y, { flat: true, color: '#7a6a9a', alpha: 0.2 }); ehInvTail(c, I, tc, { vx: I.amp > 0.2 ? -200 : 0 }); person(c, ehDressP(EH_INVENTOR, I)); }
 }

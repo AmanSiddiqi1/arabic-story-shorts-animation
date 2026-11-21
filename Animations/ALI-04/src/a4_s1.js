@@ -63,9 +63,9 @@ function a4S1Over(ctx, t, cam, S) {
     if (off) { S.title(ctx, 'THE MERCHANT OF OIL', 500, 190, K.clamp((t - 0.3) / 1.0), { size: 76, align: 'center' });
       if (t > 0.8) S.title(ctx, 'تاجر الزيت الغريب', 500, 315, K.clamp((t - 0.8) / 1.0), { size: 70, align: 'center', font: 'Lalezar', glow: '#8a5cff' }); } }
   const [hx, hy] = abP(800, 690, cam);
-  if (t > 2.6 && t < 4.4) abSay(ctx, S, [[2.66, 'I AM AN OIL MERCHANT.']], t, K.clamp(hx + 40, 300, 700), hy - 180, [hx + 10, hy - 30], { size: 50, gone: 4.1 });
-  if (t > 5.0 && t < 6.9) abSay(ctx, S, [[5.04, 'A SAFE YARD FOR MY JARS?']], t, K.clamp(hx + 60, 330, 680), hy - 190, [hx + 10, hy - 30], { size: 50, gone: 6.55 });
-  if (t > 8.95 && t < 10.3) { const [ax, ay] = abP(935, 690, cam); abSay(ctx, S, [[8.98, 'WELCOME!']], t, K.clamp(ax + 60, 330, 690), ay - 230, [ax, ay - 50], { size: 56, gone: 9.95 }); }
+  if (t > 2.6 && t < 4.4) a4Say(ctx, S, [[2.66, 'I AM AN OIL MERCHANT.']], t, K.clamp(hx + 40, 300, 700), hy - 180, [hx + 10, hy - 30], { size: 50, gone: 4.1 });
+  if (t > 5.0 && t < 6.9) a4Say(ctx, S, [[5.04, 'A SAFE YARD FOR MY JARS?']], t, K.clamp(hx + 60, 330, 680), hy - 190, [hx + 10, hy - 30], { size: 50, gone: 6.55 });
+  if (t > 8.95 && t < 10.3) { const [ax, ay] = abP(935, 690, cam); a4Say(ctx, S, [[8.98, 'WELCOME!']], t, K.clamp(ax + 60, 330, 690), ay - 230, [ax, ay - 50], { size: 56, gone: 9.95 }); }
 }
 AB_SHOTS.push({ a: 0, b: 8.9, ww: 2000, cam: a3Cam(A4_S1_CAM), world: a4S1World, over: a4S1Over });
 // ---------- S2 8.9-12.3: WELCOME!, the handclasp and the ring, Morgiana leaves the window, the gate opens ----------

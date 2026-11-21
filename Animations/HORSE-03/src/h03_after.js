@@ -69,18 +69,19 @@ const H3_ACAM = [[120.58, { x: 1012, y: 540, zoom: 0.85 }], [121.2, { x: 1012, y
 function h3AfterCam(t) { const c = t >= 126.76 && t < 126.77 ? H3_ACAM[6][1] : K.camAt(H3_ACAM, t); return h3GClamp(c); }
 // the thought cloud: a turban with a notch missing from its tail, the scrap flies in and fits, the face fills in; then the two riders arc away
 function h3CloudClue(c, t) {
-  const tc = EH_T2(t); ehGrad(c, 0, 0, 1000, 1230, [[0, '#ffe8c8'], [1, '#ffd8a8']]);
-  if (t < 132.96) { const face = ehE(tc, 130.82, 0.4), I = { x: 500, y: 1180, s: 2.6, dir: 1, lid: 0.45, brow: 0.4, mouth: 'smirk', gaze: [0.3, 0.2], handL: [-20, -60], handR: [20, -60] };
-    c.save(); c.globalAlpha = face; person(c, ehDressP(EH_INVENTOR, I)); c.restore();
-    if (face < 1) { c.save(); c.globalAlpha = 1 - face; ehBlob(c, 500, 1180 - 195 * 2.6 - 120, 150, 210, EH_SAFFRON, '#c07a10', { lw: 4 }); c.restore(); }
-    const [hx, hy] = ehHeadOf(I), tx = hx - 70, ty = hy - 80; ehRibbon(c, tx, ty, Math.PI / 2 + 0.4, 330, 46, tc, EH_SAFFRON, { wave: 6, tip: 0.7, shade: '#c07a10' });
-    const fit = ehE(tc, 130.3, 0.5), nx = tx - Math.sin(0.4) * -0 + Math.cos(Math.PI / 2 + 0.4) * 180, ny = ty + Math.sin(Math.PI / 2 + 0.4) * 180;
-    if (fit < 1) { c.save(); c.fillStyle = '#ffe8c8'; c.beginPath(); c.ellipse(nx, ny, 34, 26, 0.4, 0, 7); c.fill(); c.setLineDash([10, 8]); c.strokeStyle = '#7a4a10'; c.lineWidth = 4; c.stroke(); c.restore(); }
-    turbanScrap(c, K.lerp(nx + 380, nx, fit), K.lerp(ny + 120, ny, fit), 2.2, 0.4 + (1 - fit) * 2);
-    if (fit >= 1 && t < 130.9) ehGlint(c, nx, ny, 70, (t - 130.8) / 0.1 % 1); }
-  else { const u = ehE(tc, 132.96, 0.9); c.drawImage(ehPGSkyPlate('golden'), -200, -300, 1600, 1100); h3DashArc(c, [180, 980], [900, 160], -0.4, u, '#ffd36a', 12);
-    const pts = K.trim(K.arcPts([180, 980], [900, 160], -0.4, 40), Math.max(0.02, u)), e = pts[pts.length - 1], H = ehRigP(e[0], e[1], 0.7 * (1 - 0.5 * u), 1, 0.5);
-    twoRiders(c, H, { who: 'princess', D: EH_PRINCESS, P: { s: 0.72 * (1 - 0.5 * u), lid: 0, mouth: 'open', gaze: [-1, 0], handL: [60, -110], handR: [-60, -150] } }, { who: 'inventor', D: EH_INVENTOR, P: { s: 0.79 * (1 - 0.5 * u), lid: 0.4, mouth: 'smirk', handL: [60, -110], handR: [70, -104] } }, t, { tc, tail: { stream: 1, torn: true, ang: Math.PI * 0.8 }, veil: { stream: 1 } }); }
+  const tc = EH_T2(t); ehGrad(c, -1200, -800, 3400, 2800, [[0, '#ffe8c8'], [1, '#ffd8a8']]);
+  if (t < 132.96) { const s = 3.6, I = { x: 470, y: 690 + 195 * s, s, dir: 1, lid: 0.45, brow: 0.4, mouth: 'smirk', gaze: [0.3, 0.2], handL: [-20, -60], handR: [20, -60] };
+    const [hx, hy] = ehHeadOf(I), tx = hx - 44 * s, ty = hy - 34 * s, ang = Math.PI / 2 + 0.75, L = 420, R = ehRibbonEnd(tx, ty, ang, L * 0.7, tc, { wave: 6, hz: 1.3 });
+    person(c, ehDressP(EH_INVENTOR, I)); ehRibbon(c, tx, ty, ang, L * 0.7, 64, tc, EH_SAFFRON, { wave: 6, hz: 1.3, tip: 0.95, shade: '#c07a10' });
+    const face = ehE(tc, 130.82, 0.4); if (face < 1) { c.save(); c.globalAlpha = 1 - face; shape(c, ell(hx, hy + 4 * s, 34 * s, 40 * s, 30), '#f7c6a3', { lw: 4, line: '#8a5a4a' }); c.restore(); }
+    // the notch where the scrap was torn out of the tail, and the scrap that flies in and fits
+    const nx = R[0] + Math.cos(ang) * 46, ny = R[1] + Math.sin(ang) * 46, fit = ehE(tc, 130.3, 0.5);
+    if (fit < 1) { c.save(); c.setLineDash([12, 9]); c.strokeStyle = '#7a4a10'; c.lineWidth = 5; c.beginPath(); c.ellipse(nx, ny, 70, 40, ang, 0, 7); c.stroke(); c.restore(); }
+    turbanScrap(c, K.lerp(nx + 700, nx, fit), K.lerp(ny + 200, ny, fit), 3.2, ang - Math.PI / 2 + (1 - fit) * 2.5);
+    if (t > 130.8 && t < 131.3) ehGlint(c, nx, ny, 90, (t - 130.8) / 0.5); }
+  else { const u = ehE(tc, 132.96, 0.9); c.drawImage(ehPGSkyPlate('golden'), -400, -300, 1800, 1300); h3DashArc(c, [180, 980], [900, 160], -0.4, u, '#ffd36a', 12);
+    const pts = K.trim(K.arcPts([180, 980], [900, 160], -0.4, 40), Math.max(0.02, u)), e = pts[pts.length - 1], k = 1 - 0.5 * u, H = ehRigP(e[0], e[1], 0.9 * k, 1, 0.5);
+    twoRiders(c, H, { who: 'princess', D: EH_PRINCESS, P: { s: 0.93 * k, lid: 0, mouth: 'open', gaze: [-1, 0], handL: [60, -110], handR: [-60, -150] } }, { who: 'inventor', D: EH_INVENTOR, P: { s: 1.02 * k, lid: 0.4, mouth: 'smirk', handL: [60, -110], handR: [70, -104], lurch: -0.1 } }, t, { tc, tail: { stream: 1, torn: true, ang: Math.PI * 0.8 }, veil: { stream: 1 } }); }
 }
 function h3AfterOver(ctx, t, cam, S) {
   const P = (x, y) => h3P(x, y, cam), [fz] = h3FzA(t), hd = P(...ehHeadOf(fz));

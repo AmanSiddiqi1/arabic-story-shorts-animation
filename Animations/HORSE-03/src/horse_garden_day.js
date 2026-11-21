@@ -8,7 +8,7 @@
 const EH_PG3 = { hide: 1210, bower: [1050, 1370], branch: [1085, 905], peek: [1040, 720], sundial: 700, stool: 1190, gate: [1380, 1500], hinge: 1500, path: 820 };
 const EH_GDAY = {
   day: { sky: [[0, '#3a8ef0'], [0.5, '#6ab0f8'], [0.82, '#a8dcff'], [1, '#cfeeff']], cloud: ['#ffffff', '#cfe0f6'], hills: '#8ac8a0', water: [['#3a9ae8', '#6ac0f8', '#2a80d8']], bank: ['#5ab07a', '#4a9a6a'], sun: [-120, -520] },
-  golden: { sky: [[0, '#5a8ae0'], [0.45, '#90a8e8'], [0.75, '#ffd8a8'], [1, '#ffe2a0']], cloud: ['#fff6ea', '#ffc890'], hills: '#b8b090', water: [['#5a9ae0', '#ffd890', '#4a80c8']], bank: ['#6ab070', '#5a9a62'], sun: [1700, 300] },
+  golden: { sky: [[0, '#5a8ae0'], [0.45, '#90a8e8'], [0.75, '#ffd8a8'], [1, '#ffe2a0']], cloud: ['#fff6ea', '#ffc890'], hills: '#b8b090', water: [['#5a9ae0', '#ffd890', '#4a80c8']], bank: ['#6ab070', '#5a9a62'], sun: [1330, 400] },
 };
 function ehPGSkyPlate(pl) {   // world x -500..2100, y -760..900 (parallax 0.15)
   return ehBakeAt('pg3sky:' + pl, 2600, 1660, (c, w, h) => { const P = EH_GDAY[pl]; c.translate(500, 760); ehGrad(c, -500, -760, w, h, P.sky);

@@ -51,7 +51,7 @@ const A2_SENT = [{ i: 3, x0: 1980, xa: 2150, y: 900, s: 0.92, go: 88.4, x1: 2290
 const A2_BACK_T = 88.3;
 // Cassim: kneeling in the doorway; slips behind the left jamb (91.0-91.5); peeks round it (turban, feather, one eye) from «انشغل»
 // 91.66; two tiptoe steps out on «قاسم» 95.1; the one-foot freeze on «ينتظر»; the grab; the sprint
-const A2_PEEK_X = (t) => kfn(t, [[91.0, 1850], [91.5, 1692], [95.1, 1692], [95.35, 1775]], 'inOut');
+const A2_PEEK_X = (t) => kfn(t, [[91.0, 1850], [91.5, 1652], [95.1, 1652], [95.35, 1775]], 'inOut');
 const A2_CAS_X = (t) => kfn(t, [[95.35, 1775], [95.9, 1690], [100.4, 1690], [101.3, 980], [101.5, 760]], 'inOut');
 const A2_ALI_X = (t) => kfn(t, [[101.04, 845], [101.3, 960], [101.5, 690]], 'inOut');
 function a2AliG(t) {   // Ali Baba at the thicket: y 980 = hidden; 880 = head and arm above the leaves
@@ -75,7 +75,7 @@ function a2CasG(t, cam) {   // Cassim: kneeling inside the doorway; his head lif
   const tc = AB_T2(t), x = tc < 95.35 ? A2_PEEK_X(tc) : A2_CAS_X(tc), P = { x, y: 902, dir: -1, kneel: 1, gaze: [1, -0.3], lid: abLid(t, 101), mouth: 'o', brow: -0.8, tip: 0.2 + idleSway(tc, 102, 0.02, 2.2), sq: breathe(tc, 103), wet: true }, o = { fa: 1.1 };
   if (tc >= 90.05 && tc < 91.0) { const up = K.ease.out(beatIn(tc, 90.05, 90.4)); P.tip = 0.2 * (1 - up); P.dir = 1; P.gaze = [1, -0.2]; P.lid = abBlinkAt(AB_T3(t), 90.5); o.fa = 1.1 - 0.6 * beatIn(tc - 0.15, 90.05, 90.5); }
   if (tc >= 91.0 && tc < 95.35) { P.x = A2_PEEK_X(tc); P.kneel = 1 - beatIn(tc, 91.0, 91.25); Object.assign(P, walk(A2_PEEK_X, tc, { stride: 16 })); P.dir = tc < 91.5 ? -1 : 1; P.mouth = 'closed'; P.gaze = [1, -0.1]; o.fa = 0.4; P.handL = [-30, -120]; P.handR = [40, -130]; P.tip = 0.04;
-    if (tc >= 91.5) { const lean = K.ease.out(beatIn(tc, 91.5, 91.72)) * (1 - K.ease.inOut(beatIn(tc, 95.05, 95.2))); P.tip = 0.4 * lean + idleSway(tc, 102, 0.02, 2.2); P.gaze = gazePlan(tc, [[91.6, [1, 0]], [92.6, [1, 0.2]], [93.6, [-0.6, -0.1]], [94.1, [1, 0.1]]]); P.lid = abLid(t, 104, [92.9, 94.3]);
+    if (tc >= 91.5) { const lean = K.ease.out(beatIn(tc, 91.5, 91.72)) * (1 - K.ease.inOut(beatIn(tc, 95.05, 95.2))); P.tip = 0.5 * lean + idleSway(tc, 102, 0.02, 2.2); P.gaze = gazePlan(tc, [[91.6, [1, 0]], [92.6, [1, 0.2]], [93.6, [-0.6, -0.1]], [94.1, [1, 0.1]]]); P.lid = abLid(t, 104, [92.9, 94.3]);
       o.fa = 0.4 + lagged((u) => 0.5 * beatIn(u, 91.5, 91.72), tc, 0.12, 1) + (tc > 94.82 && tc < 95.1 ? 0.3 * Math.sin(tc * 50) : 0); if (tc > 94.82) { P.eyes = 'wide'; P.gaze = [-1, 0]; } }
     return { P, o, peek: true }; }
   if (tc >= 95.35 && tc < 95.9) { Object.assign(P, walk(A2_CAS_X, tc, { stride: 26 })); P.kneel = 0; P.amp = 0.6; P.y = 894; P.dir = -1; P.tip = 0.1; P.gaze = [-1, -0.1]; P.eyes = 'wide'; P.mouth = 'closed'; P.handL = [-50, -150]; P.handR = [60, -156]; o.fa = 0.4 + lagged((u) => 0.3 * Math.sin(u * 20), tc, 0.1, 1); }
@@ -127,7 +127,7 @@ function a2OutWorld(ctx, t, cam, o = {}) {
   abRock(ctx, 1820, 900, { model: m, open: 1, crack: 1, glow: 1, t, inside: (c) => { c.save(); c.translate(-1820, -900);
     const L = a2LeadG(t); a2DoorFig(c, t, L.P.x, 902, (cc, xx, yy, k) => a2Lead(cc, t, { ...L.P, x: xx, y: yy, s: 1.08 * k }, m, { shadow: false }), 'in', { stateX: L.sx });
     const C2 = a2CasG(t);
-    if (C2.peek) { const st = C2.P.x >= AB_DIN ? abDoorState(C2.P.x) : { sink: 0, k: 1 }; c.save(); c.beginPath(); c.rect(1718, 0, 400, 1230); c.clip();   // behind the left jamb: only what leans past it shows
+    if (C2.peek) { const st = C2.P.x >= AB_DIN ? abDoorState(C2.P.x) : { sink: 0, k: 1 }; c.save(); c.beginPath(); c.rect(1736, 0, 400, 1230); c.clip();   // behind the left jamb: only what leans past it shows
       a2Cas(c, { ...C2.P, y: 902 + st.sink, s: 1.1 * st.k, fin: { rim: '#ffd76a', light: [1, -0.3], rimW: 3 } }, m, { ...C2.o, shadow: false }); c.restore(); }
     else a2DoorFig(c, t, C2.P.x, 902, (cc, xx, yy, k) => a2Cas(cc, { ...C2.P, x: xx, y: yy, s: 1.1 * k }, m, { ...C2.o, shadow: false }), 'in', { maxDark: 0.3, rim: '#ffd76a' });
     for (let j = 0; j < 3; j++) { const R = a2MenOutP(t, j); const sx = R ? R.sx : 1860 + 20 * j; if (sx < AB_DIN) continue; a2DoorFig(c, t, R ? R.P.x : 1860 + 20 * j, 902, (cc, xx, yy, k) => abMan(cc, A2_MEN_OUT[j].i, { ...(R ? R.P : { dir: 1, tip: idleSway(tc, 180 + j, 0.02, 2) }), x: xx, y: yy, s: 0.95 * k }, m), 'in', { stateX: sx }); }
@@ -139,7 +139,7 @@ function a2OutWorld(ctx, t, cam, o = {}) {
   // the mule and cart: the mule looks left (92.2); its ears turn back (98.22); it looks at the sacks, then goes home (104.9)
   // v2 (note 7): the mule has turned round while the brothers ran (the shot after the run opens on it facing home); it looks at the
   // sacks on «أكياس», then trots off on «الذهب» with dust at the wheels
-  const turned = tc >= 101.5, mdir = turned ? -1 : 1, cxf = (u) => (!turned ? A2_CARTX : kfn(u, [[104.9, A2_CARTX + 290], [106.45, A2_CARTX - 520]], 'in'));
+  const turned = tc >= 101.5, mdir = turned ? -1 : 1, cxf = (u) => (!turned ? A2_CARTX : kfn(u, [[104.9, A2_CARTX + 120], [106.45, A2_CARTX - 640]], 'in'));
   if (tc > 104.9) for (const f of [0, 1]) dustBurst(ctx, cxf(tc) + 40, 904, ((t * 3 + f * 0.5) % 1) * 0.5, 4, 4, 9, 26, 0.5, 23 + f + Math.floor(t * 3));
   a2MuleCart(ctx, t, A2_CARTX, m, { xf: cxf, dir: mdir, moving: tc > 104.9, shc: A2_GSH, load: true, P: { headTurn: (tc > 92.2 && tc < 93.4) || (tc > 104.26 && tc < 104.9) ? 0.7 : 0, earL: tc > 98.22 && !turned ? -0.4 : 0.5 + idleSway(tc, 61, 0.3, 1.3), earR: tc > 98.22 && !turned ? -0.5 : 0.3 + idleSway(tc, 62, 0.35, 1.7), headDown: tc > 104.26 && tc < 104.9 ? 0.3 : 0 } });
   // Ali Baba behind the thicket (thicket front pass over him) unless he is out
@@ -181,7 +181,7 @@ AB_SHOTS.push({ a: 78.0, b: 80.3, ww: 2400, cam: a2Cam([[78.0, { x: 900, y: 760,
   over: (ctx, t, cam, S) => { if (t > 79.56) S.arrow(ctx, abP(1660, 500, cam), abP(1790, 640, cam), K.clamp((t - 79.56) / 0.4), { color: '#7fe3ff' }); } });
 AB_SHOTS.push({ a: 80.3, b: 81.28, ww: 2400, cam: () => ({ x: 930, y: 740, zoom: 1.5 }), under: a2GladeUnder(A2_G), world: a2Out({}) });
 AB_SHOTS.push({ a: 81.28, b: 82.02, ww: 2400, cam: a2PebCam, under: a2GladeUnder(A2_G), world: a2Out({}), over: (ctx, t) => abSpeed(ctx, [0, 0, 1000, 1230], t, { dir: -1, n: 22, alpha: 0.45 * Math.sin(Math.PI * beatIn(t, 81.28, 82.02)) }) });
-AB_SHOTS.push({ a: 82.02, b: 84.1, ww: 2400, cam: (t) => ({ x: 2200, y: 700, zoom: 1.6 - 0.05 * beatIn(t, 82.02, 84.1) }), under: a2GladeUnder(A2_G), world: a2Out({}), over: a2Clatter });
+AB_SHOTS.push({ a: 82.02, b: 84.1, ww: 2400, cam: (t) => ({ x: 2200, y: 690, zoom: 1.32 - 0.04 * beatIn(t, 82.02, 84.1) }), under: a2GladeUnder(A2_G), world: a2Out({}), over: a2Clatter });
 AB_SHOTS.push({ a: 84.1, b: 90.9, ww: 2400, cam: () => ({ x: 1900, y: 615, zoom: 1.0 }), under: a2GladeUnder(A2_G), world: a2Out({}),
   over: (ctx, t, cam, S) => { const L = a2LeadG(t).P, [lx, ly] = abP(L.x, 900 - 260, cam);
     abSay(ctx, S, [[85.4, 'GUARDS?!']], t, K.clamp(lx + 60, 220, 780), 330, [lx, ly], { size: 56, gone: 86.5 });

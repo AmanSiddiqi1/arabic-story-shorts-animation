@@ -95,7 +95,7 @@ function h3Child(t) {
   return P;
 }
 // the inventor behind the cypress at 720 (the plant): slides into view at 9.0, cups an ear at 15.6, eyes on the blue dome at 17.0
-const H3_INVX = H3_F([[8.9, 742], [9.3, 676], [15.4, 676], [15.6, 668], [17.2, 668], [17.6, 742]]);
+const H3_INVX = H3_F([[8.9, 742], [9.3, 694], [15.4, 694], [15.6, 686], [17.2, 686], [17.6, 742]]);
 function h3InvCypress(t) {
   if (t < 8.9) return null; const tc = EH_T2(t), sd = 41, P = { x: H3_INVX(t), y: 878, s: EH_INVENTOR.s, dir: 1, lid: Math.max(0.4, ehLid(t, sd)), sq: breathe(tc, sd, 0.014), tip: idleSway(tc, sd, 0.02, 3.0), mouth: 'closed', brow: 0.4, gaze: [1, 0], handL: [-20, -100], handR: [40, -150] };
   P.gaze = gazePlan(tc, [[8.9, [1, 0]], [9.5, [1, 0.1]], [10.8, [0.6, -0.8]], [12.4, [1, 0.1]], [13.4, [0.6, -0.9]]], 0.07);
@@ -160,7 +160,7 @@ function h3CloudFar(c, t) {   // 13.24 - 17.72: the dashed arc over the clouds, 
   const tc = EH_T2(t); c.drawImage(ehSkyPlate('low'), 0, 0, 1000, 1230); ehTile(c, ehCloudTile('far', 'day'), -t * 30, 0, 0.9); ehDeck(c, 860, -t * 40, t, 'day');
   const a = [80, 760], b = [820, 560], p = K.clamp((tc - 13.3) / 1.5); h3DashArc(c, a, b, 0.5, p, '#ff7ad9', 14);
   const pts = K.trim(K.arcPts(a, b, 0.5, 40), Math.max(0.02, p)), e = pts[pts.length - 1];
-  const rise = ehE(tc, 14.82, 0.6, 'out'); if (rise > 0) { c.save(); c.globalAlpha = rise; princessPalace(c, 820, 900 - 200 * rise, 0.9, {}); ehRiverTowers(c, 630, 980, 900 - 200 * rise, 260, 50, EH_RC_DUSK, {}); c.restore(); if (t > 17.0 && t < 17.6) ehGlint(c, 820 - 270, 900 - 200 - 300, 60, (t - 17.0) / 0.6); }
+  const rise = ehE(tc, 14.82, 0.6, 'out'); if (rise > 0) { c.save(); c.globalAlpha = rise; h3Palace(c, 820, 900 - 200 * rise, 0.9, false); ehRiverTowers(c, 630, 980, 900 - 200 * rise, 260, 50, EH_RC_DUSK, {}); c.restore(); if (t > 17.0 && t < 17.6) ehGlint(c, 820 - 270, 900 - 200 - 300, 60, (t - 17.0) / 0.6); }
   ehRide(c, ehRigP(e[0], e[1] - 60, 0.45, 1, 0.1), 'firuz', { s: EH_FIRUZ.s * 0.45 / H3_HS, lid: 0, mouth: 'smile', handL: [70, -110], handR: [76, -100] }, t, { tc, stream: 1 });
 }
 function h3HomeOver(ctx, t, cam, S) {

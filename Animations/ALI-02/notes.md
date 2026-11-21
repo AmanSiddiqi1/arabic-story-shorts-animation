@@ -22,3 +22,9 @@ Plan checked against the inputs: MP3 and `.words.json` SHA-256 match `planning/p
 - No foreground trunk layer in the forest run (S12): it risked crossing the runners at the word cues.
 - The turban that falls off at 67.05 is a separate saffron cel on the floor; it is put back with the head tilted (crooked), not as a separately rotated turban.
 - No separate toe-scuff animation in the shame beat (a small sway of the standing figure instead).
+
+## v2 (revision 1) decisions
+- Band at the scree: men 2112/2165/2214, leader 2262, scouts 2150/2236 then up the slope; drawn after the scree front boulders. Cassim's stand point stays 1690, so the open ground between him and the nearest thief is about 420 units; the door's right edge (1930) to the nearest thief is about 180 (the rock and scree leave no more room in a frame that also holds Cassim).
+- The peek: Cassim's feet at x 1652 inside the arch, lean 0.5, clipped at x 1736 (the arch's left jamb is 1710).
+- The town in the last shot: abVillage repainted (a2DuskTown) at x 470, base 862, scale 0.62; the dome measured on the still at world (975, 690).
+- Mule cart turned during the forest run (cart bed 1260, mule 970 facing home).

@@ -22,7 +22,7 @@ function a4JarSt(i, t) {
     const g = 94.82 + 0.08 * i, o2 = a4Step(t, g, 0.12, 2) * (1 - a4Step(t, 95.36, 0.12, 2)); if (o2 > 0) st.cut = { open: o2 * 0.9, draw: (c) => jarMan(c, t, i, { pose: i === 1 ? 'scratch' : A4_PR[i] }) };
     const gh = 48.8 + 0.3 * i; if (tc >= gh && tc < gh + 0.17) st.ghost = 1; }
   if (i === 5) st.oil = a4Step(t, 29.98, 0.2, 3) * (1 - a4Step(t, 30.8, 0.2, 2));
-  if (i === 0 && tc > 28.4 && tc < 28.95) st.wob += 0.02;   // the crooked lid he presses flat
+  if (i === 2 && tc > 28.4 && tc < 28.95) st.wob += 0.02;   // the crooked lid he presses flat
   for (const [j, up, down, lift, gp, close] of A4_PEEKS) if (j === i && tc >= up && tc < down + 0.3) {
     const l = lift * a4Step(tc, up, 0.25, 3) * (1 - a4Step(tc, down, 0.2, 2)); st.peek = { lift: l, eyes: 1, gaze: gazePlan(t3, gp, 0.15), close, blink: j === 0 && up < 50 ? abBlinkAt(t3, 44.9) : abBlinkAt(t3, up + 0.6) }; }
   if (t >= 108.42 && t < A4_HEADS_T && i < 5) { const b = i === 1 ? Math.max(pulse(tc, 109.16, 0.18), pulse(tc, 109.42, 0.18)) : 0; st.lid = Math.max(0.25 * a4Step(tc, 108.42 + 0.07 * i, 0.2, 2), 0.5 * b); }
@@ -62,3 +62,6 @@ function a4Streak(ctx, S, from, to, t, a, b) { if (t < a || t > b + 0.3) return;
 // whisper lines leaking from a lid gap (world): three small wavy strokes drifting up
 function a4Whisper(ctx, x, y, t, a, b) { if (t < a || t > b) return; const u = (t - a) / (b - a); ctx.save(); ctx.strokeStyle = '#e8f4ff'; ctx.lineWidth = 3; ctx.lineCap = 'round';
   for (let k = 0; k < 3; k++) { const ph = (u * 2 + k / 3) % 1; ctx.globalAlpha = 0.55 * Math.sin(Math.PI * ph); ctx.beginPath(); for (let j = 0; j <= 6; j++) ctx.lineTo(x - 30 + k * 30 + 6 * Math.sin(j * 1.4 + t * 9), y - ph * 70 - j * 5); ctx.stroke(); } ctx.restore(); }
+// a speech balloon kept fully inside the panel (width estimated from the text): abSay with x clamped by half the balloon width
+function a4Say(ctx, S, steps, t, x, y, to, o = {}) { const size = o.size || 50, len = Math.max(...steps.map((s) => s[1].length)), hw = (size * 0.5 * len + size * 0.9) / 2 + 24;
+  abSay(ctx, S, steps, t, K.clamp(x, hw + 30, 970 - hw), K.clamp(y, 120, 1100), to, o); }

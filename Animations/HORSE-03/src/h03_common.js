@@ -24,3 +24,6 @@ function h3Person(ctx, D, P, t, o = {}) {
   const draw = (c) => { if (o.cape) ehCapeStand(c, P, tc, { vx: o.vx || 0, swing: o.swing || 0 }); if (o.tail) ehInvTail(c, P, tc, { torn: o.torn, vx: o.vx || 0, swing: o.swing || 0 }); if (o.veil) ehVeilRibbon(c, P, tc, { vx: o.vx || 0, swing: o.swing || 0 }); person(c, ehDressP(D, { ...P, y: P.y - (P.lift || 0) })); };
   if (o.rim) castFinish(ctx, P.x, P.y + 10, 320, 340, draw, o.rim); else draw(ctx);
 }
+// the rose palace (and optionally the two river towers) baked once at s 1; drawn at (x, y) (palace centre bottom) and scale k
+function h3PalaceSprite(towers) { return ehBakeAt('h3pal:' + (towers ? 1 : 0), 1500, 700, (c) => { c.translate(760, 640); if (towers) ehRiverTowers(c, -620, 620, 0, 420, 76, EH_RC_DUSK, {}); princessPalace(c, 0, 0, 1, {}); }, 0.6); }
+function h3Palace(ctx, x, y, k, towers = false) { ctx.drawImage(h3PalaceSprite(towers), x - 760 * k, y - 640 * k, 1500 * k, 700 * k); }

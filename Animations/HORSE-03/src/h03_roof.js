@@ -99,13 +99,13 @@ function h3RoofWorld(ctx, t, cam) {
   for (const [D, P] of GU) rows.push([P.y, () => h3Guard(ctx, D, P, t)]);
   rows.push([900, () => { h3Shadow(ctx, H.x + 10, 902, 300 * H3_HS, H.lift, { alpha: 0.34, fall: 420 });
     if (t < 19.4) { const PP = { s: EH_FIRUZ.s, lid: ehLid(t, 3), mouth: 'smile', gaze: [1, 0.1], handL: [70, -110], handR: [76, -100], sq: landSquash(tc, 18.94, 0.12), lurch: 0.1 }; castFinish(ctx, H.x, H.y + 20, 700, 900, (c) => ehRide(c, H, 'firuz', PP, t, { tc, stream: 0.2, ang: Math.PI / 2 + 0.4 }), rim); }
-    else castFinish(ctx, H.x, H.y + 20, 700, 900, (c) => ebonyHorse(c, H), { rim: '#ffd27a', light: [1, -0.6], rimW: 3 });
+    else ebonyHorse(ctx, H);
     if (t > 18.94 && t < 19.8) dustBurst(ctx, H.x, 902, t - 18.94, 12, 8, 18, 150, 0.8, 7);
     // counters over the two seats, then the trunk that slides off the polished rump
     if (t >= 31.08 && t < 33.6) { const A = ehHorsePt(H, [EH_EBG.seat[0] + EH_SEAT2.front, -300]), B = ehHorsePt(H, [EH_EBG.seat[0] + EH_SEAT2.rear, -300]); ctx.save(); ctx.globalAlpha *= K.clamp((33.6 - t) / 0.3); S0.counter(ctx, 1, A[0] + 20, A[1], K.clamp((t - 31.08) / 0.3), { size: 90 }); if (t >= 31.36) S0.counter(ctx, 2, B[0] - 20, B[1], K.clamp((t - 31.36) / 0.3), { size: 90 }); ctx.restore(); } }]);
   if (fz) rows.push([fz.y, () => h3Person(ctx, EH_FIRUZ, fz, t, { cape: true, swing: swing(tc, 19.78, 0.3) + swing(tc, 25.9, 0.25), rim })]);
   if (pr) rows.push([pr.y + 1, () => h3Person(ctx, EH_PRINCESS, pr, t, { veil: true, vx: t < 19.6 ? -300 : 0, rim })]);
-  for (const [D, P] of PA) rows.push([P.y, () => h3Person(ctx, D, P, t, { rim })]);
+  for (const [D, P] of PA) rows.push([P.y, () => h3Person(ctx, D, P, t, {})]);
   if (md) rows.push([md.y - 1, () => { h3Person(ctx, EH_MAID, md, t); const top = md.y - 210 * md.s, n = t < 31.98 ? 3 : 2; packLoad(ctx, Array.from({ length: n }, (_, i) => ({ kind: 'chest', col: ['#3f7ad0', '#e8604a', '#3fae6a'][i] })), md.x - 6, top + 6, 0.62); }]);
   const tk = h3TrunkTop(t); if (tk) rows.push([925, () => { ctx.save(); ctx.translate(tk[0], tk[1]); ctx.rotate(tk[2]); packLoad(ctx, [{ kind: 'chest', col: '#3fae6a' }], 0, 0, 0.85); ctx.restore(); if (t > 32.3 && t < 32.8) dustBurst(ctx, 450, 926, t - 32.3, 7, 5, 10, 70, 0.5, 9); if (ct.y >= 850) { h3Shadow(ctx, ct.x, Math.min(ct.y, 905), 80 * ct.s); cat(ctx, ct); } }]);
   else if (ct.y >= 850) rows.push([905, () => { h3Shadow(ctx, ct.x, ct.y, 80 * ct.s); cat(ctx, ct); }]);
@@ -121,9 +121,9 @@ function h3CloudLand(c, t) {
   const k = ((t - 26.32) / 0.64) % 1; if (t >= 26.32 && t < 27.6) { const a = Math.PI * (1 - k); (Math.floor((t - 26.32) / 0.64) % 2 ? ehMoon : (cc, x, y, r) => { ehGlow(cc, x, y, r * 3, 0.6, '#fff2c0'); celShade(cc, ell(x, y, r, r, 30), '#fff6d0', '#ffe2a0', { off: 6, lw: 0 }); })(c, 800 + Math.cos(a) * 600, 420 - Math.sin(a) * 300, 50, t); }
   c.fillStyle = '#e8c890'; c.fillRect(0, 640, 1600, 400); c.fillStyle = '#7ac85a'; c.fillRect(1100, 600, 500, 400); c.fillRect(0, 610, 420, 400);
   c.drawImage(ehPalacePlate(), 1060, 160, 560, 420); for (const bx of [1150, 1520]) { seg(c, bx, 600, bx, 420, 6, '#8a5a3a', 2); ehRibbon(c, bx, 430, 0.1, 120, 40, tc, EH_EMERALD, { wave: 8, hz: 1.2, tip: 0.7, shade: '#126e4a' }); }
-  if (t >= 27.14) { const u = ehE(tc, 27.14, 0.4, 'out'); c.save(); c.globalAlpha = u; princessPalace(c, 230, 640, 0.9, {}); c.restore(); h3DashArc(c, [360, 700], [1180, 660], -0.18, K.clamp((t - 27.2) / 0.8), '#e8604a', 14); }
+  if (t >= 27.14) { const u = ehE(tc, 27.14, 0.4, 'out'); c.save(); c.globalAlpha = u; h3Palace(c, 230, 640, 0.9); c.restore(); h3DashArc(c, [360, 700], [1180, 660], -0.18, K.clamp((t - 27.2) / 0.8), '#e8604a', 14); }
   if (t >= 27.62) { const u = (t - 27.62) * 120, road = (x) => 700 - (x - 360) / 820 * 40 - 50 * Math.sin((x - 360) / 820 * Math.PI) * 0.6;
-    const fx = 380 + u; camel(c, { ...walk((tt) => 380 + (tt - 27.62) * 120, tc, { stride: GAIT.camel * 0.4 }), y: road(fx) + 6, s: 0.4, pal: 0, dir: 1, saddle: true, load: [{ kind: 'rug', col: '#e8364f' }] });
+    const fx = 380 + u; camel(c, { ...walk((tt) => 380 + (tt - 27.62) * 120, tc, { stride: GAIT.camel * 0.4 }), y: road(fx) + 6, s: 0.4, pal: 0, dir: 1, saddle: true });
     [[-80, EH_GUARD_A], [-130, EH_GUARD_B], [-180, EH_MAID]].forEach(([dx, D], i) => { const x = fx + dx; person(c, ehDressP(D, { ...walk((tt) => 380 + dx + (tt - 27.62) * 120, tc, { stride: 20 }), y: road(x) + 4, s: 0.42, dir: 1, mouth: 'smile', lid: 0, handL: [-20, -96], handR: [30, -150] })); }); }
 }
 function h3RoofOver(ctx, t, cam, S) {

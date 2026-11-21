@@ -140,7 +140,7 @@ function h3InvG(t) {
     if (t >= 98.42 && t < 99.3) { P.dir = -1; P.handR = [100, -230]; P.handL = [-24, -112]; P.talk = ehTalk(t, 98.42, 99.2, 41, 0.6); P.gaze = [-0.8, -0.6]; }
     if (t >= 99.3 && t < 99.94) { P.dir = 1; P.handRW = [kn[0] - 24, kn[1] + 14 - 6 * Math.abs(Math.sin(tc * 24))]; mask(false); P.gaze = [0, 0]; P.lid = 0.45; P.mouth = 'smirk'; P.brow = 0.5; }
     if (t >= 99.94) { mask(true); P.dir = -1; P.gaze = look(prH); } }
-  if (t >= 100.5 && t < 101.43) { P.dir = -1; const st = h3StoolPos(t); P.handRW = [st[0] + 10, st[1] - 60]; P.handLW = [st[0] - 30, st[1] - 56]; P.gaze = look([st[0], st[1] - 30]); if (t > 101.2) { P.handR = [100, -200]; P.handRW = null; P.handLW = null; P.dir = 1; P.drop = 6; } }
+  if (t >= 100.5 && t < 101.43) { P.dir = -1; const st = h3StoolPos(Math.max(t, 100.6)); P.handRW = [st[0] + 10, st[1] - 60]; P.handLW = [st[0] - 30, st[1] - 56]; P.gaze = look([st[0], st[1] - 30]); if (t > 101.2) { P.handR = [100, -200]; P.handRW = null; P.handLW = null; P.dir = 1; P.drop = 6; } }
   if (t >= 101.43 && t < 105.0) { P.dir = 1; P.gaze = look(prH); P.handL = [-24, -112];
     if (t >= 104.38) { const a = (tc - 104.38) * 6; P.handR = [70 + 14 * Math.cos(a), -170 + 14 * Math.sin(a)]; P.drop = 6 * Math.abs(Math.sin(tc * 5)); P.talk = ehTalk(t, 104.38, 105.0, 41, 0.5); } }
   if (t >= 105.0 && t < 105.36) { mask(false); P.gaze = gazePlan(tc, [[105.0, [-1, 0]], [105.1, [1, 0]], [105.22, [1, -0.2]]], 0.05); P.sq *= 0.95; P.drop = 8; P.lid = Math.max(P.lid, ehBlinkAt(tc, 105.1)); }
@@ -211,7 +211,7 @@ function h3GardenWorld(ctx, t, cam) {
   if (fz && fz.y >= 880) rows.push([fz.y, () => h3Person(ctx, EH_FIRUZ, fz, t, { cape: true, vx: t > 39.3 && t < 39.9 ? 300 : t > 38.08 && t < 38.6 ? -200 : 0, swing: swing(tc, 35.55, 0.3) + swing(tc, 39.9, 0.35) })]);
   if (pr) rows.push([pr.y + (pr.sit ? 0 : 1), () => { h3Person(ctx, EH_PRINCESS, pr, t, { veil: true, vx: t > 90.9 && t < 91.4 ? 200 : 0 }); h3Book(ctx, pr, t); }]);
   if (inv && t >= 82.9) rows.push([inv.y + 2, () => { h3Person(ctx, EH_INVENTOR, inv, t, { tail: true, vx: inv.amp > 0.2 ? -120 : 0 }); }]);
-  rows.push([ct.y < 880 ? 853 : ct.y + 0.5, () => { if (ct.y > 880) h3Shadow(ctx, ct.x, 906, 80 * ct.s, Math.max(0, 905 - ct.y)); cat(ctx, ct); if (ct.scrap) turbanScrap(ctx, ct.x + 58 * ct.s, ct.y - 92 * ct.s, 0.8, 0.3); }]);
+  rows.push([t >= 109.62 && t < 111.3 ? 950 : ct.y < 880 ? 853 : ct.y + 0.5, () => { if (ct.y > 880) h3Shadow(ctx, ct.x, 906, 80 * ct.s, Math.max(0, 905 - ct.y)); cat(ctx, ct); if (ct.scrap) turbanScrap(ctx, ct.x + 58 * ct.s, ct.y - 92 * ct.s, 0.8, 0.3); }]);
   rows.sort((a, b) => a[0] - b[0]).forEach((r) => r[1]());
   if (cloth && t >= 111.56) coverCloth(ctx, cloth, { ang: 0.6 });
   if (t >= 114.0 && t < 120) turbanScrap(ctx, 1186, 900, 1, 0.4);
