@@ -101,7 +101,7 @@ function ehFarLandPlate() {
     c.fillStyle = c.createPattern(ehFieldTile('far'), 'repeat'); c.fillRect(0, 0, w, h); c.restore();
     // dunes: crescents with violet shadows (long, low sun from the right)
     for (let i = 0; i < 34; i++) { const x = R() * 840, y = 30 + R() * (h - 60), s = 0.5 + 0.9 * (y / h), dw = (70 + R() * 90) * s, dh = (16 + R() * 18) * s;
-      c.fillStyle = '#b07ab8'; c.beginPath(); c.ellipse(x - dw * 0.25, y + dh * 0.25, dw * 0.7, dh * 0.55, 0, 0, 7); c.fill();
+      c.fillStyle = '#d89aa8'; c.beginPath(); c.ellipse(x - dw * 0.16, y + dh * 0.12, dw * 0.64, dh * 0.5, 0, Math.PI, 0); c.lineTo(x + dw * 0.48, y + dh * 0.12); c.fill();
       c.fillStyle = ['#f6cf8e', '#f2c27a', '#fad8a0'][i % 3]; c.beginPath(); c.ellipse(x, y, dw * 0.62, dh * 0.5, 0, Math.PI, 0); c.lineTo(x + dw * 0.62, y + 2); c.fill(); }
     // the oasis
     c.fillStyle = '#5ab0d8'; c.beginPath(); c.ellipse(600, 470, 46, 14, 0, 0, 7); c.fill(); c.fillStyle = '#5aa84a'; c.beginPath(); c.ellipse(600, 476, 80, 26, 0, 0, 7); c.globalAlpha = 0.6; c.fill(); c.globalAlpha = 1;
@@ -148,7 +148,7 @@ function ehFarLand(ctx, px, y, t, o = {}) {
 // ---------- riverCity: exterior wide of the princess's city at dusk (plate 1400 x 1640, world y -100..1540) ----------
 const EH_CITY = { w: 1400, top: -100, h: 1640, palace: [940, 820], dome: [640, 560], towers: [360, 470, 760], moon: [1150, 420],
   river: [[110, 1540], [250, 1250], [412, 960], [414, 790], [600, 700], [900, 664], [1260, 640]], horizon: 640 };
-const EH_CITY_HOUSES = ehHouses(51, 46, 20, 1380, 690, 1320, [[180, 520, 760, 1540], [500, 1180, 380, 840], [330, 500, 400, 800], [60, 300, 1200, 1540]]);
+const EH_CITY_HOUSES = ehHouses(51, 84, 10, 1390, 700, 1500, [[170, 520, 760, 1540], [520, 1170, 380, 850], [320, 500, 400, 800], [40, 330, 1180, 1540]]).map((H) => ({ ...H, w: H.w * 1.55, h: H.h * 1.45 }));
 function ehCityPlate() {
   return ehBakeAt('rivercity', EH_CITY.w, EH_CITY.h, (c, w, h) => { c.translate(0, -EH_CITY.top); const P = EH_RC_DUSK;
     ehGrad(c, 0, EH_CITY.top, w, 800, EH_SKY.dusk.map(([o, col]) => [o, col]));
@@ -199,7 +199,7 @@ function ehMoon(ctx, x, y, r, t, k = 1) { ehGlow(ctx, x, y, r * 3.4, 0.55 * k, '
   celShade(ctx, ell(x, y, r, r, 40), '#ffeab8', '#f2cf98', { light: [-1, -1], off: r * 0.16, lw: 0 }); ctx.save(); ctx.globalAlpha = 0.25; ctx.fillStyle = '#e8c890'; for (const [dx, dy, rr] of [[-0.3, -0.2, 0.18], [0.25, 0.15, 0.22], [0.05, -0.4, 0.1]]) { ctx.beginPath(); ctx.arc(x + dx * r, y + dy * r, rr * r, 0, 7); ctx.fill(); } ctx.restore(); }
 
 // ---------- palaceRoof: the roof terrace (strip 1600 wide, floor y 900, parapet top 790, sky to y -700) ----------
-const EH_ROOF = { w: 1600, top: -700, star: 640, post: 800, ring: [800, 852], jar: 1060, hook: [1096, 800], catSpot: [880, 790], parapet: 790, back: 850,
+const EH_ROOF = { w: 1600, top: -700, star: 640, post: 800, ring: [800, 852], jar: 1060, hook: [1096, 800], catSpot: [880, 784], parapet: 790, back: 850,
   door: { x0: 1330, x1: 1450, top: 660, bottom: 882 }, win: [1345, 546, 80, 80], pav: [1250, 1520, 520, 882], dome: [330, 760, 240], towers: [1000, 1120, 760], moon: [880, 200, 110],
   river: [[880, 742], [1000, 738], [1120, 736], [1300, 734], [1500, 732]], lanterns: [[560, 724], [1238, 700]], carpets: [150, 380, 640], trees: [300, 1180], tray: 455 };
 // floor perspective: back edge y 850, vanishing point (800, 300)
@@ -236,6 +236,15 @@ function ehRoofTerracePlate(night) {   // world x 0..1600, y 420..1230 (moves wi
     // the eight-point star tile (the horse's spot), flattened
     c.save(); c.translate(EH_ROOF.star, 902); c.scale(1, 0.32); const st = []; for (let i = 0; i < 16; i++) { const a = i * Math.PI / 8, rr = i % 2 ? 70 : 120; st.push([Math.cos(a) * rr, Math.sin(a) * rr]); }
     celShade(c, st, P.gold, P.goldS, { off: 14, lw: 3, line: P.line }); celShade(c, ell(0, 0, 44, 44, 16), P.dome, P.domeS, { off: 8, lw: 2.5, line: P.line }); c.restore();
+    // a big rug in front of the star, a brass tray with cups and a floor lamp, cushions (the lower picture is never empty)
+    const rug = (y0, y1, x0, x1) => [[ehFloorX(x0, y0), y0], [ehFloorX(x1, y0), y0], [ehFloorX(x1, y1), y1], [ehFloorX(x0, y1), y1]];
+    celShade(c, rug(985, 1135, 470, 1010), '#c8344a', '#9a2238', { off: 10, lw: 3, line: '#5a1a2a' }); celShade(c, rug(1000, 1120, 500, 980), '#2a5ad0', '#1a3a90', { off: 6, lw: 2, line: '#14246a' });
+    celShade(c, rug(1012, 1108, 530, 950), '#e8364f', '#b8203a', { off: 6, lw: 2, line: '#5a1a2a' }); c.save(); c.translate(ehFloorX(740, 1060), 1060); c.scale(1, 0.34);
+    const md = []; for (let i = 0; i < 16; i++) { const a = i * Math.PI / 8, rr = i % 2 ? 70 : 130; md.push([Math.cos(a) * rr, Math.sin(a) * rr]); } celShade(c, md, '#f2c040', '#c8961a', { off: 10, lw: 2.5, line: '#6a4a10' }); celShade(c, ell(0, 0, 46, 46, 16), '#2fb8b0', '#14908a', { off: 6, lw: 2, line: '#0a5a54' }); c.restore();
+    for (let k = 0; k < 14; k++) { const x0 = ehFloorX(470 + k * 40, 1135); seg(c, x0, 1137, x0 - 2, 1150, 3, '#fff0d8', 0); }
+    for (const [x, y, col] of [[230, 1060, '#f2a71b'], [300, 1090, '#3fae6a'], [1260, 1080, '#7a4ad0'], [1330, 1050, '#e8364f']]) ehBlob(c, x, y, 46, 18, col, ehDark(col, 0.3), { lw: 2.5 });
+    celShade(c, ell(1160, 1010, 70, 16, 24), P.gold, P.goldS, { off: 6, hi: '#fff1b0', lw: 2.5, line: '#6a4a10' }); for (const dx of [-30, 0, 30]) { celShade(c, K.rectPts(1160 + dx - 9, 984, 18, 18), '#e0b038', '#a87a1c', { off: 3, lw: 1.5, line: '#6a4a10' }); }
+    ehBlob(c, 1196, 990, 12, 8, '#ff9a2a', '#d0661a', { lw: 1.5 });
     // pavilion (door and window are live), its small dome, a lantern bracket
     const [p0, p1, pt, pb] = EH_ROOF.pav; celShade(c, K.rectPts(p0, pt, p1 - p0, pb - pt), P.rose, P.roseS, { light: [-1, -1], off: 26, hi: P.roseL, lw: 3.5, line: P.line });
     celShade(c, K.rectPts(p0 - 8, pt - 10, p1 - p0 + 16, 16), P.trim, P.trimS, { off: 4, lw: 2.5, line: P.line }); ehCrenels(c, p0 - 6, p1 + 6, pt - 10, 18, 40, 22, P);
@@ -294,8 +303,15 @@ function palaceRoof(ctx, t, cam, o = {}) {
 // the front pass: the door leaf over anyone in the doorway, two near pots in the lower corners
 function palaceRoofFront(ctx, t, o = {}) {
   const D = EH_ROOF.door; if ((o.door || 0) > 0) townDoor(ctx, D.x0, D.x1, D.top, D.bottom, o.door, { arch: 'pointed', hinge: 'right', leafOnly: true, paint: '#a8552a' });
-  ctx.drawImage(ehRoofPotSprite(), -60, 1000, 300, 300); ctx.drawImage(ehRoofPotSprite(), 1400, 1010, 300, 300);
+  ctx.drawImage(ehRoofNearSprite(o.night > 0.5), -200, 1120, 2000, 130);
 }
+// the near balustrade along the front edge of the terrace (y 1124..1250), with small flower pots on the rail
+function ehRoofNearSprite(night) { return ehBakeAt('roofnear:' + (night ? 'n' : 'd'), 2000, 130, (c) => { const P = ehRCP(night);
+  for (let x = 10; x < 2000; x += 34) celShade(c, [[x - 8, 34], [x + 8, 34], [x + 12, 60], [x + 6, 84], [x + 12, 110], [x - 12, 110], [x - 6, 84], [x - 12, 60]], P.trim, P.trimS, { off: 5, lw: 2, line: P.line });
+  celShade(c, K.rectPts(-10, 106, 2020, 30), P.rose, P.roseS, { off: 8, lw: 2.5, line: P.line }); celShade(c, K.rectPts(-10, 14, 2020, 24), P.rose, P.roseS, { off: 6, hi: P.roseL, lw: 3, line: P.line });
+  celShade(c, K.rectPts(-10, 8, 2020, 10), P.trim, P.trimS, { off: 3, lw: 2, line: P.line });
+  for (let i = 0; i < 7; i++) { const x = 130 + i * 290; for (let k = 0; k < 5; k++) ehBlob(c, x - 30 + k * 15, -14 - (k % 2) * 8, 14, 11, k % 2 ? '#3fae6a' : '#5ac07a', '#23704a', { lw: 1.5 }); for (let k = 0; k < 3; k++) ehBlob(c, x - 18 + k * 18, -24 - (k % 2) * 6, 6, 6, ['#ff6a8a', '#ffd36a', '#fff6ea'][(i + k) % 3], '#c84a6a', { lw: 1 });
+    celShade(c, [[x - 32, -6], [x + 32, -6], [x + 24, 12], [x - 24, 12]], '#d8845a', '#a85a3a', { off: 5, lw: 2, line: '#5a2a1a' }); } }, 0.8); }
 function ehRoofPotSprite() { return ehBakeAt('roofpot', 300, 300, (c) => { for (let i = 0; i < 8; i++) { const a = -Math.PI + i * 0.42; ehBlob(c, 150 + Math.cos(a) * 90, 150 + Math.sin(a) * 60, 50, 36, i % 2 ? '#3fae6a' : '#5ac07a', '#23704a', { lw: 2.5 }); }
   for (let i = 0; i < 6; i++) ehFlower(c, 70 + i * 32, 170 - (i % 2) * 30, 36, ['#ff6a8a', '#fff6ea', '#ffd36a'][i % 3]); celShade(c, [[60, 190], [240, 190], [220, 300], [80, 300]], '#d8845a', '#a85a3a', { off: 18, lw: 3.5, line: '#5a2a1a' }); }, 0.8); }
 function ehLantern(ctx, x, y, t3, lit = 1) {
@@ -308,16 +324,16 @@ function ehLantern(ctx, x, y, t3, lit = 1) {
 
 // ---------- princessGarden: the moonlit garden (strip 1600 wide, ground y 900, sky to y -700) ----------
 const EH_PGARDEN = { w: 1600, top: -700, arch: [60, 220, 620], wallTop: 380, horseX: 300, dome: [330, 330, 150], fountain: [620, 862], bench: { x: 900, seatY: 852, w: 260 },
-  poles: [560, 1060], hook: [580, 700], hedgeY: 740, gate: [1380, 1500, 620], towers: [1150, 1290, 760], moon: [1000, 150, 95], trees: [770, 1200], jasmine: 470,
-  river: [[860, 742], [1000, 738], [1150, 735], [1290, 733], [1500, 730]] };
+  poles: [560, 1060], hook: [580, 700], hedgeY: 740, gate: [1380, 1500, 620], towers: [1150, 1290, 728], moon: [1000, 150, 95], trees: [770, 1200], jasmine: 470,
+  river: [[860, 702], [1000, 700], [1150, 698], [1290, 697], [1500, 695]] };
 function ehGardenFarP(night = true) {   // world x -300..1900, y 300..820: river, bridge, towers, far city, hills (parallax 0.5)
   return ehBakeAt('pgfar', 2200, 520, (c) => { c.translate(300, -300); const P = EH_RC_NIGHT;
-    ehSoftHills(c, 1900, 690, 30, '#8a86d0', 12, 2, 760);
-    const HS = ehHouses(71, 30, -280, 1880, 660, 705, [[1100, 1340]]); HS.forEach((H) => ehHouse(c, { ...H, w: H.w * 0.6, h: H.h * 0.6 }, P, 1));
-    ehGrad(c, -300, 705, 2200, 60, [[0, '#6a7ad8'], [0.5, '#8a96e8'], [1, '#5a6ac8']]);
-    c.strokeStyle = '#b8c8f8'; c.lineWidth = 2; for (let i = 0; i < 30; i++) { const x = -300 + i * 75, y = 714 + (i % 4) * 12; c.beginPath(); c.moveTo(x, y); c.lineTo(x + 26, y); c.stroke(); }
-    ehRiverTowers(c, EH_PGARDEN.towers[0], EH_PGARDEN.towers[1], EH_PGARDEN.towers[2], 300, 64, P, { lamps: true });
-    ehGrad(c, -300, 765, 2200, 60, [[0, '#4a7a8a'], [1, '#3a6a6a']]); }, 0.7);
+    ehSoftHills(c, 1900, 650, 30, '#8a86d0', 12, 2, 760);
+    const HS = ehHouses(71, 30, -280, 1880, 625, 668, [[1100, 1340]]); HS.forEach((H) => ehHouse(c, { ...H, w: H.w * 0.6, h: H.h * 0.6 }, P, 1));
+    ehGrad(c, -300, 668, 2200, 62, [[0, '#6a7ad8'], [0.5, '#8a96e8'], [1, '#5a6ac8']]);
+    c.strokeStyle = '#b8c8f8'; c.lineWidth = 2; for (let i = 0; i < 30; i++) { const x = -300 + i * 75, y = 676 + (i % 4) * 12; c.beginPath(); c.moveTo(x, y); c.lineTo(x + 26, y); c.stroke(); }
+    ehRiverTowers(c, EH_PGARDEN.towers[0], EH_PGARDEN.towers[1], EH_PGARDEN.towers[2], 290, 64, P, { lamps: true });
+    ehGrad(c, -300, 728, 2200, 100, [[0, '#4a7a8a'], [1, '#3a6a6a']]); }, 0.7);
 }
 function ehGardenGroundP() {   // world x 0..1600, y 120..1230: dome behind the wall, palace wall with the stair arch, hedge with the gate, lawn
   return ehBakeAt('pgground', 1600, 1110, (c) => { c.translate(0, -120); const P = EH_RC_NIGHT, G = EH_PGARDEN;
@@ -331,9 +347,10 @@ function ehGardenGroundP() {   // world x 0..1600, y 120..1230: dome behind the 
     for (let i = 0; i < 14; i++) { const p = tp[1 + Math.floor(i / 14 * (tp.length - 2))]; ehBlob(c, p[0], p[1], 9, 7, '#4aa86a', '#23704a', { lw: 1.5 }); if (i % 2) ehBlob(c, p[0] + 5, p[1] - 4, 4, 4, '#fff6ea', '#d8d0e0', { lw: 1 }); }
     // lawn and path (perspective-ish), flower beds, stones
     ehGrad(c, 440, hy + 80, 1160, 1230 - hy - 80, [[0, '#4a9a6a'], [1, '#5ab07a']]); ehGrad(c, 0, 820, 440, 410, [[0, '#4a9a6a'], [1, '#5ab07a']]);
-    c.fillStyle = '#e8d8e8'; c.beginPath(); c.moveTo(150, 905); c.lineTo(1440, 830); c.lineTo(1460, 850); c.lineTo(300, 1230); c.lineTo(80, 1230); c.closePath(); c.fill();
-    c.strokeStyle = '#c8b0d0'; c.lineWidth = 2; for (let i = 0; i < 16; i++) { const u = i / 16; c.beginPath(); c.moveTo(K.lerp(150, 1440, u), K.lerp(905, 830, u)); c.lineTo(K.lerp(80, 300, u * 0.3), 1230); c.stroke(); }
-    ehDress(c, 450, 1580, 860, 1220, 23, { stones: 8, tufts: 16, flowers: 26, cols: ['#ff6a8a', '#fff6ea', '#ffd36a', '#c8a0ff', '#ff9a5a'], skip: [[540, 700, 820, 900], [760, 1040, 830, 910], [120, 340, 880, 1230]] });
+    c.fillStyle = '#e8d8ec'; c.fillRect(0, 884, 1600, 64); c.fillStyle = '#c8b0d0'; c.fillRect(0, 946, 1600, 6); c.strokeStyle = '#c8b0d0'; c.lineWidth = 2; for (let x = 0; x < 1600; x += 46) { c.beginPath(); c.moveTo(x, 884); c.lineTo(x - 8, 948); c.stroke(); } c.beginPath(); c.moveTo(0, 916); c.lineTo(1600, 916); c.stroke();
+    c.fillStyle = '#e8d8ec'; c.beginPath(); c.moveTo(1380, 884); c.lineTo(1500, 884); c.lineTo(1490, 820); c.lineTo(1390, 820); c.closePath(); c.fill();
+    ehDress(c, 0, 1600, 960, 1110, 23, { stones: 10, tufts: 18, flowers: 30, cols: ['#ff6a8a', '#fff6ea', '#ffd36a', '#c8a0ff', '#ff9a5a'] });
+    for (let i = 0; i < 26; i++) { const R = K.rng(700 + i), x = i * 64 + R() * 30, y = 1150 + R() * 40; for (let k = 0; k < 3; k++) ehBlob(c, x + k * 22 - 22, y - k % 2 * 14, 36, 28, k % 2 ? '#3a9a5a' : '#4ab06a', '#1f6a40', { lw: 2 }); for (let k = 0; k < 3; k++) ehBlob(c, x - 16 + k * 18, y - 30 - (k % 2) * 8, 9, 9, ['#ff5a7a', '#fff6ea', '#ffd36a', '#c8a0ff'][(i + k) % 4], '#c84a6a', { lw: 1.2 }); }
     // the palace wall with the stair arch, wall top parapet (the roof edge)
     celShade(c, K.rectPts(-10, G.wallTop, 450, 920 - G.wallTop), P.rose, P.roseS, { light: [-1, -1], off: 24, hi: P.roseL, lw: 3.5, line: P.line });
     celShade(c, K.rectPts(-10, G.wallTop - 8, 460, 14), P.trim, P.trimS, { off: 4, lw: 2.5, line: P.line }); ehCrenels(c, 0, 450, G.wallTop - 8, 24, 60, 30, P);
@@ -368,7 +385,7 @@ function princessGarden(ctx, t, cam, o = {}) {
   const cu = ((t * 6) % 1600) - 300; ctx.save(); ctx.globalAlpha = 0.5; ctx.drawImage(ehCloudSprite(3, 'high'), cu + dx(0.15), my - 30, 420, 120); ctx.restore();   // a cloud crossing the moon
   ctx.fillStyle = '#7a78c8'; ctx.fillRect(-600, 760, 2800, 600);
   ehImg(ctx, ehGardenFarP(), -300 + dx(0.5), 300, 2200, 520);
-  ctx.save(); ctx.translate(dx(0.5), 0); moonPath(ctx, G.river, t, o.path || 0, { seed: 5, scatter: 110, w: 3, w1: 10 }); for (let i = 0; i < 3; i++) { const bx = ((200 + i * 600 + t * 14) % 2000) - 200; ctx.fillStyle = '#4a2a3a'; ctx.fillRect(bx - 18, 748, 36, 6); ehGlow(ctx, bx, 742, 30, 0.6); } ctx.restore();
+  ctx.save(); ctx.translate(dx(0.5), 0); moonPath(ctx, G.river, t, o.path || 0, { seed: 5, scatter: 110, w: 3, w1: 10 }); for (let i = 0; i < 3; i++) { const bx = ((200 + i * 600 + t * 14) % 2000) - 200; ctx.fillStyle = '#4a2a3a'; ctx.fillRect(bx - 18, 712, 36, 6); ehGlow(ctx, bx, 706, 30, 0.6); } ctx.restore();
   if (o.guards) o.guards(ctx);
   ctx.drawImage(ehGardenGroundP(), 0, 120, 1600, 1110);
   // the ebony horse standing small on the roof against the dome (never moves)

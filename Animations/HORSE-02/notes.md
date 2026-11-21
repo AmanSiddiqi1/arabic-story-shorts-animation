@@ -1,0 +1,26 @@
+# HORSE-02 implementation notes (v1, code only)
+
+Source files (story.json "scenes", load order): `horse_kit.js`, `horse_cast.js`, `horse_sets.js` (HORSE-01 series files, copied unchanged), `horse_city.js` and `horse_props.js` (new series files for the river city; episodes 3-5 copy them unchanged), `h02_sky.js` (S1-S4 and the lever insert), `h02_roof.js` (roof terrace S5-S12, S16-S18), `h02_garden.js` (S13-S15), `h02_main.js` (shots, overlays, knob insert, eye close-up, sound). Film 151.49 s (147.49 + end hold 4.0). Story names are prefixed `h2`/`H2_`; series names `eh`/`EH_`.
+
+## Decisions the plan left open or approximate
+- **Continuity:** S1 starts on HORSE-01's last frame: same rig (centre 560, 520, s 0.408), sunset plate, sun at (620, 740), deck at 760, the reaching hand, and the cloud scroll offsets of episode 1 (recomputed from its velocity keys), then pushes in to s 0.5 by 1.9.
+- **Title:** chrome LOST ABOVE / THE CLOUDS on two lines with the Arabic title تائه فوق الغيوم in Lalezar (as HORSE-01).
+- **Dusk and night plates:** `EH_SKY.dusk`, `EH_SKY.warmNight` and `EH_CLOUDC.dusk/night` are added to the skyFlight tables by `horse_city.js` (the copied `horse_sets.js` is unchanged). The roof cross-fades its dusk plates into the lighter warmNight repaint over 28.2-31.0; no tint over the cast. Rim light only: warm `#ffd27a` on the lamp side, pale blue `#bfd8ff` on the moon side (castFinish).
+- **Roof layout (measured on the drawing):** floor y 900 (back edge 850), parapet top 790 with merlons to 752, star tile 640, post 800 (ring 800, 852), jar stand 1060 with the dipper hook at (1096, 800), pavilion 1250..1520 (door 1330..1450, window 1345..1425 / 546..626), moon (880, 200) r 110 (r 126 in S16-S18), towers 1000 / 1120 on the far layer (parallax 0.45). A rug, tray, cushions and a near balustrade fill the lower picture.
+- **Positions moved from the plan so reaches work:** Firuz caught at 1185 steps back to 1140 to hang the cup (the hook is at 1096); in S9 he backs toward the horse (1140 to 840, 63.3-64.8) so the slap on the wooden chest at 67.24 is a real touch; he gives way to 930 as she passes (72.0); the princess raps the neck from 800. Maid crosses behind the princess to pat the hoof (93.2-94.7).
+- **Hover readability:** a stronger contact shadow (alpha 0.34) that shrinks with the lift, plus a pale light under the hooves; the dark horse always carries a pale moon rim.
+- **Take-off direction:** the plan says up-left across the moon, but the moon and the two towers are to the right of the horse on this set; the horse climbs up-RIGHT, crosses the moon disc at 144.2 and shrinks to a dot over the river beyond the towers (146.4), so the landmarks stay in the final frame as the plan intends.
+- **Garden:** walkway band at y 884..948 (people at y 900, bench seat 852), hedge top 740 with the gate 1380..1500, river raised to y 668..730 so the moon path shows above the hedge. The guards walk RIGHT behind the hedge toward the gate (helmets, spear tip and torch above the hedge, half a step out of phase) and step through at 125.6; password frame zoom 0.7.
+- **Balloons:** placed about 150 above the speaker's head with short tails; long lines are split into two rows (THE STRANGEST HORSE / IN THE WORLD!, THE MOON KNOWS / THE RIVER'S PATH, the last one in gold).
+- **Picture clouds:** S9 pulls back from the king and Firuz at home to the toy palace and the far land (the dashed flight, the lost dashed line and a red question mark); S13 his home (sun, turquoise domes, emerald banners) and her city (the riverCity plate); S14 the king on the steps at sunset, then a tiny horse lands and he smiles; S18 the horse flying back along the gold path with a question mark.
+- **Sound:** the plan's 8 effects in the narration gaps (20.6, 39.5, 60.3, 79.05, 98.35, 114.3, 132.35, 147.25) plus the style's tape bed; the hover and take-off are silent.
+
+## Skipped or changed (and why)
+- **Firuz's two wind-blown hair strokes:** skipped (the Library head with the crown has no hair field; drawing over it fought the crown).
+- **Frog on the fountain rim, the drop off the chin while drinking:** skipped (too small to read at the plan's wide framings).
+- **Torch dots in the garden seen from the roof (S16):** the parapet hides the garden; the threat is carried instead by the maid at the door (132.05) and the torchlight and helmet shadows growing in the pavilion doorway (141.2 on).
+- **One-eye opening of the cat:** the Library cat has one lid for both eyes; it half-opens both (28.6).
+- **Frozen on one leg after the CLACK:** the Library person's legs swing straight (no knee lift), so he freezes mid-stride with the cup raised, then lowers the stride slowly.
+
+## Checks done
+Stills and contact sheets at the key beats of every scene (stills/a1, r1-r3, g1, e1, m1-m4 in the media Working files), one 3 s test clip (84-87 s, about 0.4 s per frame with 2 workers; audio AAC 48 kHz present). Alive checklist: idleSway/breathe/blinks on every character, blinks on head turns, cape and veil ribbons trail by delay, the horse never moves a leg (only light acts on it), shadows shrink under the hover, the vaults and the take-off; landings squash (dismounts, vaults, the maid's hop, the cat's jump).

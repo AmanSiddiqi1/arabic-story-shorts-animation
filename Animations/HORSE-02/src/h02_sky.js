@@ -61,6 +61,7 @@ function h2SkyPanel(ctx, t, S) {
   else { ehGlow(ctx, 880, 180, 120, 0.4, '#ffe6b8'); celShade(ctx, ell(880, 180, 26, 26, 24), '#ffeab8', '#f2cf98', { off: 5, lw: 0 }); }
   // the land below (dusk): rises into view after the deck, then the S3 pan
   if (t >= 9.3) ehFarLand(ctx, H2_PAN(t), H2_LANDTOP(t), t, { caravan: K.clamp((t - 14.3) / 0.8), lit: [K.clamp((t - 17.34) / 0.5), K.clamp((t - 17.7) / 0.5), K.clamp((t - 18.1) / 0.6)], glintDome: t > 20.5 && t < 21.3 ? (t - 20.5) / 0.8 : 0 });
+  if (t >= 9.3) { const ly = H2_LANDTOP(t); ehGrad(ctx, 0, ly - 90, 1000, 150, [[0, 'rgba(255,190,170,0)'], [0.6, 'rgba(255,196,170,0.85)'], [1, 'rgba(255,200,170,0)']]); }
   const pal = t < 9.0 ? 'sunset' : 'dusk';
   ehTile(ctx, ehCloudTile('far', pal), sx * 0.2, sy * 0.2, t >= 9.3 ? 0.45 : 0.8); ehTile(ctx, ehCloudTile('mid', pal), sx * 0.5 + 300, sy * 0.5 + 500, t >= 9.3 ? 0.55 : 0.9);
   const deck = h2Deck(t), deckFront = t >= 8.66 && t < 9.4;
