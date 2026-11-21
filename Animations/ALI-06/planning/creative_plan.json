@@ -6,7 +6,7 @@
  "end_hold": 5.0,
  "logline": "Morgiana unmasks the thieves' leader by the ring on his hand, holds him in the locked courtyard with nothing but her wits until the guards come, and when the treasure has gone back to its owners she chooses her own reward: an honest shop of her own.",
  "moral": "Wisdom and honesty are worth more than gold, and a clear head can stop a danger without a single blow.",
- "tone": "Finale: a tight, witty stand-off in the warm evening courtyard (suspense played through eyes, a key and two name tags, never through weapons), then bright daylight for justice done, a tender lantern-lit thank-you, and a golden, generous ending in the market. Family-friendly throughout.",
+ "tone": "Finale: a tight, witty stand-off in the lantern-lit night courtyard (suspense played through eyes, a key and two name tags, never through weapons), then bright daylight for justice done, a tender sunset thank-you, and a golden, generous ending in the market. Family-friendly throughout.",
  "beats": [
   {
    "id": "B1",
@@ -214,15 +214,15 @@
    "library": "person",
    "new": false,
    "base": "ALI-01 abAli: costume villager, s 0.95, age 0.25, pal AB_ALI0",
-   "look": "Olive robe #8f8a40, cream turban, the one accent vermilion #ff3b2f sash and turban band in every lighting set (evening included)."
+   "look": "Olive robe #8f8a40, cream turban, the one accent vermilion #ff3b2f sash and turban band in every lighting set (night included)."
   },
   {
    "id": "guest",
    "name": "the guest (the leader in fine clothes)",
    "library": "person",
-   "new": true,
-   "base": "ALI-05's dinner guest if that episode has drawn him (copy its function and palette, they win over this entry); otherwise new abGuest: the leader's rig (ALI-01 abLeader proportions: s 1.08, age 0.4, brow 0.7, black beard) in costume merchant with pal AB_GUEST0",
-   "look": "Fine clothes: deep wine brocade robe #8a2a50 with a gold hem and gold dots #f2c84a, long bell sleeves a step lighter #b85a7a that hang past the knuckles (they hide the ring until 1.52), ivory turban #f6efe0 with a gold band and a small green jewel, cream sash. Same heavy brows and beard as the leader and the oil merchant; the silver ring with the split blue stone on the right hand. Field sleeveBack 0..1 folds the right cuff to the wrist."
+   "new": false,
+   "base": "ALI-05 abNewMerchant(ctx, P) with fine: 1 (the dinner dress) and its cuff field: the leader's rig (s 1.08, age 0.4, brow 0.7) in costume merchant, pal AB_NEWM0",
+   "look": "Exactly as he left the dinner in episode 5: coral robe #f08a5a with long cream sleeves #f6e2c0 whose cuffs cover the hands (cuff 1), teal-grey sash, plum turban #7a3a8a with a gold band, red jewel and tall white feather, plum cloak with gold trim, short hennaed beard #b8562a under the leader's heavy brows. The silver ring with the split blue stone is on the right hand under the cuff; Morgiana folds the right cuff back (cuff 1 to 0 on that arm) at 1.52 and it stays back. From 58.74 the feather droops."
   },
   {
    "id": "leader",
@@ -236,9 +236,9 @@
    "id": "nephew",
    "name": "Ali Baba's nephew",
    "library": "person",
-   "new": true,
-   "base": "ALI-05's nephew if that episode has drawn him (copy it); otherwise new abNephew: costume villager, age 0.05, s 0.98, no beard (thin moustache), pal AB_NEPH0",
-   "look": "Cassim's son, so he echoes his father's colours in a humble cut: fresh emerald short tunic #3fb88a with lighter sleeves #7ad8b0, saffron sash #f2a71b, cream trousers, small saffron cap. Open, earnest face (brow -0.2), quick to step forward."
+   "new": false,
+   "base": "ALI-05 abNephew: costume servant, s 0.94, age 0.08, no beard, pal AB_NEPH0",
+   "look": "Cassim's son: white shirt with rolled sleeves, emerald waistcoat #1f9a6a, saffron sash #f2a71b, cream trousers, rust skullcap a little crooked. Open, quick, trusting; it was he who invited the guest."
   },
   {
    "id": "wife",
@@ -331,16 +331,16 @@
  ],
  "sets": [
   {
-   "id": "courtyardEvening",
+   "id": "courtyardNight",
    "library": null,
    "new": false,
-   "description": "ALI-04 courtyard strip (2200 x 1230, ground y 900), model evening, copied with its CY anchors: house wing x 0..560 with the house door K cx 170 (x 110..230, top y 650) and the lit kitchen window x 330..470, y 500..640 with the bench under it (x 320..480, seat y 850); lemon tree in a tub at x 600; back wall x 560..1800, top y 560; street gate (double) cx 730 (x 640..820, top y 640, bar brackets y 780); lantern at (840, 610); the six jar spots are empty except one honest oil jar left at cx 1465; small back gate cx 1590 (x 1535..1645, top y 670); crate and trellis x 1670..1750; guest wing from x 1800. Evening sky teal through rose to apricot, low sun behind the wall at x 1150, swallows, the palm at x 1100. Bright and warm: no tint over the cast."
+   "description": "ALI-04 courtyard strip (2200 x 1230, ground y 900), night model exactly as in the last scene of ALI-05 (light and coloured: sky teal-blue #2a4a8a to violet-rose #8a6aa8, moon r 60 at (1000, 170), stars, lilac-rose and blue-grey walls, amber lanterns and windows with halation and warm pools on the paving), copied with its CY anchors: house wing x 0..560 with the house door K cx 170 (x 110..230, top y 650) and the lit kitchen window x 330..470, y 500..640 with the bench under it (x 320..480, seat y 850); lemon tree in a tub at x 600; back wall x 560..1800, top y 560; street gate (double) cx 730 (x 640..820, top y 640, bar brackets y 780); lantern at (840, 610); three oil jars stand as household storage at cx 890, 1005 and 1120 (feet y 884), as in ALI-05; small back gate cx 1590 (x 1535..1645, top y 670); crate and trellis x 1670..1750; guest wing from x 1800. The house door K (the dinner room's door onto the yard) stands open with warm light and the bead of the dinner lamps behind it. Guard helmets wait behind the coping at x 800..960 as in ALI-05's last frame. Nothing darker than #2a4a8a in the sky or #5a5a8a on a wall; no tint or multiply over the cast."
   },
   {
    "id": "courtyardFeast",
    "library": null,
    "new": false,
-   "description": "The same strip later that evening (a third light state painted from the ALI-04 evening and night models, cross-faded 0.55 toward night but warmer): sky violet-rose #8a6aa8 with a first star and the moon r 60 at (1500, 230), walls still peach and lilac, never darker than #6a5a98. Dressed with feastSpread in the middle of the yard where the jars stood: rug x 880..1420 (y 880..960), low table x 1010..1290 (top y 845), cushions at x 920, 990, 1090, 1180, 1300 (the turquoise one at 920 is the place of honour), a string of six paper lanterns from (760, 520) to (1480, 500) with amber halation and light pools. Kitchen door K glows."
+   "description": "The same strip in the ALI-04 evening model (the next evening: sunset sky teal through rose to apricot, low sun behind the wall at x 1150, pink clouds, swallows, the palm at x 1100, lanterns just lit), so the thank-you looks nothing like the night of the stand-off. Dressed with feastSpread in the middle of the yard in front of the three storage jars: rug x 880..1420 (y 880..960), low table x 1010..1290 (top y 845), cushions at x 920, 990, 1090, 1180, 1300 (the turquoise one at 920 is the place of honour), a string of six paper lanterns from (760, 520) to (1480, 500) with amber halation and light pools. Kitchen door K glows."
   },
   {
    "id": "gladeMorning",
@@ -364,7 +364,7 @@
    "id": "marketDay",
    "library": "marketStreet",
    "new": false,
-   "description": "ALI-03 market: Library marketStreet({w: 2000, palace: false, sky: false, palette: 'clear', stalls: fruit 320, cloth 700, EMPTY 1120, seed 1460}) in the cel theme over the painted day sky with clouds, sun and birds, abDress stones, crates, baskets, the lane arch at x 1760..1960. The plot at x 970..1270 is where lampShop is built (S19). Ali Baba's firewood pitch is at x 1540..1700 beside the arch. Ground y 900."
+   "description": "ALI-03 market: Library marketStreet({w: 2000, palace: false, sky: false, palette: 'clear', ...}) as laid out in ALI-05: stalls fruit at x 320 and cloth at x 640, the ALI-05 shopFront at x 960..1260 (counter top y 770, roof line y 480), the storehouse corner at x 1380..1700 and the lane arch at x 1760..1960, over the painted day sky with clouds, sun and birds, abDress stones, baskets. The false merchant's shop stands shut at first (coral awning rolled, counter bare) and becomes lampShop in S19. His crate stacks are gone from the storehouse corner; Ali Baba's firewood pitch is there at x 1440..1700. In S14 the same plate stands for a neighbouring town: shopFront hidden behind a seed stall (kind 'seed') and different awning colours. Ground y 900."
   },
   {
    "id": "marketDusk",
@@ -384,7 +384,7 @@
    "id": "giftBox",
    "library": null,
    "new": true,
-   "description": "The forgotten gift from the end of episode 5: small box 44 x 30 wrapped in saffron cloth with a crimson cord bow (use ALI-05's drawing if it exists)."
+   "description": "The forgotten gift from the end of episode 5: ALI-05 giftBox, 44 x 34, plum cloth #7a3a8a with a gold ribbon cross and bow."
   },
   {
    "id": "gateKey",
@@ -462,7 +462,7 @@
    "id": "lampShop",
    "library": null,
    "new": true,
-   "description": "Morgiana's shop on the market plot x 970..1270: counter 300 x 70 (top y 800), two posts to y 520, awning in turquoise #14c2c8 and cream stripes (field unroll 0..1), a hanging sign board 220 x 70 lettered MORGIANA'S with a small lamp pictogram (field drop 0..1, swing), a back shelf with eight brass lamps and four small oil jars, a balance scale on the counter, lamps lit 0..8."
+   "description": "The ALI-05 shopFront (x 960..1260, counter top y 770, roof line y 480, fields open, sign, pal, goods) made honest: awning pal turquoise #14c2c8 and cream, its little lamp-pictogram sign kept, plus a new name board 220 x 70 above the awning lettered MORGIANA'S (field drop 0..1, swing), back shelves with eight brass lamps and four small oil jars, a balance scale on the counter, new field lit 0..8."
   },
   {
    "id": "balanceScale",
@@ -491,7 +491,7 @@
    "paragraphs": [
     1
    ],
-   "set": "courtyardEvening",
+   "set": "courtyardNight",
    "cast": [
     "morgiana",
     "guest",
@@ -499,24 +499,24 @@
     "nephew",
     "cat"
    ],
-   "summary": "The film opens on the last picture of episode 5: the guest stopped in the yard, turned toward Morgiana with the forgotten gift. She gives him the box and in the same move folds back his long cuff: the silver ring with the split blue stone.",
+   "summary": "The film opens on the last picture of episode 5: night, Morgiana in the lit doorway holding up the gift, the guest stopped at the barred gate with his smile rebuilt. He comes back for the box; she puts it in his hand and in the same move folds back his long cuff: the silver ring with the split blue stone.",
    "camera": {
     "shot": "wide",
     "move": "push-in",
-    "notes": "0-3.4 wide of the house end of the yard {x 500, y 615, zoom 1.0} (door K, bench, lemon tree, street gate all in frame), drifting 30 right. 3.5 cut to the ring insert (the first of two close-ups in the film): the hand fills a 700 wide area, slow push 1.0 to 1.08 until 7.6."
+    "notes": "0-3.4 the ALI-05 end framing, wide of the house end of the yard {x 560, y 615, zoom 1.0} (door K, bench, lemon tree, barred street gate, moon), easing to {x 500}. 3.5 cut to the ring insert (the first of two close framings in the film): the hand fills a 700 wide area, slow push 1.0 to 1.08 until 7.6."
    },
-   "composition": "Morgiana walks from x 300 to x 440; the guest stands at x 560 facing left, half turned to the street gate (cx 730) behind him; Ali Baba in the house door K (cx 170) and the nephew at x 250; the cat on the wall top (y 560) at x 900. Title in the sky band y 120..300, off by 3.0. Insert: hand centred at panel (540, 600), ring stone 90 px.",
+   "composition": "Frame 0 = ALI-05's last frame: Morgiana in door K at x 170 with the box raised, the guest at x 620 by the gate bar (y 780), helmets behind the coping at x 800..960, cat on the wall at x 900. By 1.5 they meet between the bench and the lemon tree: Morgiana at x 440, the guest at x 560 facing her; Ali Baba appears in door K (cx 170) and the nephew at x 250 behind her. Title in the sky band y 120..300, off by 3.0. Insert: hand centred at panel (540, 600), ring stone 90 px.",
    "actions": [
     {
      "t": 0.0,
-     "end": 0.7,
+     "end": 1.4,
      "cue": {
       "word": "كشفت",
       "t": 0.0
      },
      "who": "morgiana",
-     "action": "Walks to the guest holding the gift box out in both hands, smiling the polite smile of episode 5",
-     "acting": "walk on twos with footfalls, scarf tail two drawings late; gaze on his right sleeve, not his face",
+     "action": "Morgiana steps down from the doorway and walks out to meet him (x 170 to 440), the gift box held out in both hands, wearing the polite smile of episode 5",
+     "acting": "brisk walk on twos with footfalls, scarf tail two drawings late; her gaze is on his right sleeve, not his face; behind the wall the helmets sink out of sight on the captain's signal",
      "library": "abMorgiana, walk, footfalls, lagged, handLW/handRW on giftBox"
     },
     {
@@ -535,9 +535,9 @@
       "t": 0.7
      },
      "who": "guest",
-     "action": "Half turned to leave, he reaches back for the box with his right arm, the long cuff hanging over his hand",
-     "acting": "impatient: tip toward the gate, eyes flick to the gate and back (saccade), false smile (lid 0.3)",
-     "library": "abGuest, gazePlan, flow on handR"
+     "action": "Playing the grateful guest, he walks back three steps from the gate (x 620 to 560) and reaches for the box with his right arm, the long cream cuff hanging over his hand",
+     "acting": "impatient under the smile (lid 0.3): body still tipped toward the gate, eyes flick to the bar and back (saccade); cloak and feather late",
+     "library": "abNewMerchant {fine: 1, cuff: 1}, walk, footfalls, gazePlan, lagged"
     },
     {
      "t": 1.52,
@@ -549,7 +549,7 @@
      "who": "morgiana",
      "action": "As his hand closes on the box her free hand flips his cuff back to the wrist in one quick fold",
      "acting": "anticipation: her eyes snap to the sleeve one drawing before the hand moves; the box dips with the weight change",
-     "library": "abGuest {sleeveBack 0..1 over three drawings}, anticipate, handRW"
+     "library": "abNewMerchant right cuff 1 to 0 over three drawings, anticipate, handRW"
     },
     {
      "t": 2.06,
@@ -571,7 +571,7 @@
       "t": 2.78
      },
      "who": "silverRing",
-     "action": "The ring is out in the evening light: a glint travels across the stone",
+     "action": "The ring is out in the lantern light: a glint travels across the stone",
      "acting": "one star glint, on ones",
      "library": "silverRing, abGlint"
     },
@@ -583,7 +583,7 @@
       "t": 3.8
      },
      "who": "camera",
-     "action": "Cut to the INSERT: his hand on the saffron box, the silver ring large; her fingers still holding the folded cuff at the left edge",
+     "action": "Cut to the INSERT: his hand on the plum gift box, the silver ring large; her fingers still holding the folded cuff at the left edge",
      "acting": "hand trembles one unit on twos; a light band sweeps the cel",
      "library": "abHand, silverRing s 7.5, abBands"
     },
@@ -643,7 +643,7 @@
    "paragraphs": [
     1
    ],
-   "set": "courtyardEvening",
+   "set": "courtyardNight",
    "cast": [
     "morgiana",
     "guest",
@@ -745,7 +745,7 @@
    "paragraphs": [
     1
    ],
-   "set": "courtyardEvening",
+   "set": "courtyardNight",
    "cast": [
     "morgiana",
     "guest",
@@ -756,7 +756,7 @@
     "kid",
     "cat"
    ],
-   "summary": "Morgiana names the proof. A band of evening light crosses the guest and inside it he is the leader of the forty thieves. The household gasps in the doorway.",
+   "summary": "Morgiana names the proof. A band of lantern light crosses the guest and inside it he is the leader of the forty thieves. The household gasps in the doorway.",
    "camera": {
     "shot": "wide",
     "move": "static",
@@ -810,7 +810,7 @@
      "who": "fx",
      "action": "IMPACT FRAME, then the ALI-04 light band sweeps across him: inside the band he is the leader in indigo with the crimson cape, in the same pose",
      "acting": "speed lines and a two-frame inverted flash; band 150 wide on ones, figures on twos; chrome words THE LEADER!",
-     "library": "S.emphasis {rect: AB_PANEL}, disguiseWipe(abGuest, abLeader)"
+     "library": "S.emphasis {rect: AB_PANEL}, disguiseWipe(abNewMerchant, abLeader)"
     },
     {
      "t": 14.5,
@@ -873,7 +873,7 @@
    "paragraphs": [
     2
    ],
-   "set": "courtyardEvening",
+   "set": "courtyardNight",
    "cast": [
     "guest",
     "morgiana",
@@ -1005,7 +1005,7 @@
    "paragraphs": [
     2
    ],
-   "set": "courtyardEvening",
+   "set": "courtyardNight",
    "cast": [
     "morgiana",
     "ali",
@@ -1189,7 +1189,7 @@
    "paragraphs": [
     3
    ],
-   "set": "courtyardEvening",
+   "set": "courtyardNight",
    "cast": [
     "guest",
     "morgiana",
@@ -1213,7 +1213,7 @@
       "t": 35.58
      },
      "who": "guest",
-     "action": "He straightens the turban, smooths the brocade and puts the smile back on, piece by piece",
+     "action": "He straightens the turban, smooths the coral robe and puts the smile back on, piece by piece",
      "acting": "mask on: brow 0.7 to 0.2, lid 0.3, mouth smile, each one drawing apart",
      "library": "flow keys on brow, lid; PERSON_HANDS.chest"
     },
@@ -1349,7 +1349,7 @@
    "paragraphs": [
     3
    ],
-   "set": "courtyardEvening",
+   "set": "courtyardNight",
    "cast": [
     "nephew",
     "guest",
@@ -1387,7 +1387,7 @@
       "t": 46.24
      },
      "who": "lettering",
-     "action": "Balloon from the nephew: WHAT NAME IS ON YOUR SHOP?",
+     "action": "Balloon from the nephew: WHAT IS YOUR SHOP CALLED?",
      "acting": "lip flaps on threes; held to 48.3",
      "library": "abSay"
     },
@@ -1411,9 +1411,9 @@
       "t": 47.76
      },
      "who": "thoughtPictures",
-     "action": "A small picture pops beside the nephew: the shop front he helped carry boxes into (episode 5), its sign board turned away",
+     "action": "A small picture pops beside the nephew: the coral-awned shop he helped carry crates into in episode 5, whose sign is only a lamp picture, no name",
      "acting": "pop on twos; gone by 48.6",
-     "library": "a2Inset 200 x 150 with the ALI-05 shop front or lampShop base without sign"
+     "library": "a2Inset 200 x 150 with ALI-05 shopFront at s 0.4"
     },
     {
      "t": 48.46,
@@ -1511,7 +1511,7 @@
    "lettering": [
     {
      "t": 46.24,
-     "text": "WHAT NAME IS ON YOUR SHOP?"
+     "text": "WHAT IS YOUR SHOP CALLED?"
     },
     {
      "t": 48.46,
@@ -1536,7 +1536,7 @@
    "paragraphs": [
     4
    ],
-   "set": "courtyardEvening",
+   "set": "courtyardNight",
    "cast": [
     "captain",
     "guards",
@@ -1561,7 +1561,7 @@
       "t": 54.21
      },
      "who": "set",
-     "action": "The back gate swings inward; evening light and the captain's lantern glow through it",
+     "action": "The back gate swings inward; the captain's lantern glows through it",
      "acting": "door on twos over 0.5 s; a wedge of amber on the paving",
      "library": "townDoor {open 0..1}, abGlow"
     },
@@ -1664,7 +1664,7 @@
    "paragraphs": [
     4
    ],
-   "set": "courtyardEvening",
+   "set": "courtyardNight",
    "cast": [
     "morgiana",
     "captain",
@@ -1797,7 +1797,7 @@
    "paragraphs": [
     4
    ],
-   "set": "courtyardEvening",
+   "set": "courtyardNight",
    "cast": [
     "morgiana",
     "captain",
@@ -2284,7 +2284,7 @@
     "morgiana",
     "cat"
    ],
-   "summary": "That evening the yard is strung with lanterns and a low table stands where the jars stood. Morgiana comes out with one more dish and finds the whole household on its feet, thanking her.",
+   "summary": "The next evening, at sunset, the yard is strung with lanterns and a low table stands where the thieves' jars once stood. Morgiana comes out with one more dish and finds the whole household on its feet, thanking her.",
    "camera": {
     "shot": "establishing",
     "move": "pan",
@@ -2300,7 +2300,7 @@
       "t": 89.02
      },
      "who": "set",
-     "action": "The courtyard at lantern light: the string of six paper lanterns sways, the table is spread, steam rises from the teapot",
+     "action": "The courtyard at sunset, lanterns just lit: the string of six paper lanterns sways, the table is spread, steam rises from the teapot",
      "acting": "lantern flicker at 12 fps, each on its own seed; steam on threes",
      "library": "feastSpread, hangingLamp or abGlow, idleSway"
     },
@@ -2794,13 +2794,13 @@
     "youth",
     "cat"
    ],
-   "summary": "The family builds the shop in the market: posts, awning, shelves, sign. Then it is open: brass lamps and oil, a level scale, and a queue of neighbours who trust it.",
+   "summary": "The family refits the false merchant's empty shop: the coral awning comes down, a turquoise one goes up, shelves, a name board. Then it is open: brass lamps and oil, a level scale, and a queue of neighbours who trust it.",
    "camera": {
     "shot": "wide",
     "move": "pan",
     "notes": "116.2 wide on the plot {x 1120, y 615, zoom 1.0}; 118.7 a 0.3 s light sweep (abBands) hides the jump from building to finished; 120.5-122.8 slow pan left 120 along the queue and back to the counter."
    },
-   "composition": "Shop plot x 970..1270, counter top y 800, awning y 520..600, sign at y 470. Building: Ali Baba on a crate at x 990 hammering the post, nephew carrying boxes from x 700 to x 1100, wife hanging the stripe cloth at x 1250, kid painting the sign on the ground at x 880. Open: Morgiana behind the counter at x 1120; old neighbour at x 1000, baker x 900, apprentice x 820 in the queue; cat on the counter end x 1240.",
+   "composition": "Shop x 960..1260, counter top y 770, awning under the roof line y 480, name board at y 430. Refitting the false merchant's empty shop: the old coral awning lies rolled on the ground at x 900; Ali Baba on a crate at x 980 hammering the bracket for the name board, nephew carrying boxes from x 700 to x 1100, wife hanging the stripe cloth at x 1250, kid painting the sign on the ground at x 880. Open: Morgiana behind the counter at x 1120; old neighbour at x 1000, baker x 900, apprentice x 820 in the queue; cat on the counter end x 1240.",
    "actions": [
     {
      "t": 116.2,
@@ -2810,7 +2810,7 @@
       "t": 116.2
      },
      "who": "ali",
-     "action": "Ali Baba on a crate hammers a peg into the awning post: three strokes",
+     "action": "Ali Baba on a crate hammers the bracket for the new name board onto the shop post: three strokes",
      "acting": "strikeCycle: lift, whip down, rebound; the post shivers on each",
      "library": "strike cycle (Fox branchTipY pattern), abAxe handle as mallet"
     },
@@ -2834,7 +2834,7 @@
       "t": 118.12
      },
      "who": "wife",
-     "action": "The wife throws the striped awning cloth over the pole; the kid on the ground paints the last letter on the sign board with a big brush and paint on his nose",
+     "action": "The wife throws the new turquoise striped awning cloth over the pole where the coral one hung; the kid on the ground paints the last letter on the sign board with a big brush and paint on his nose",
      "acting": "cloth as a ribbon on a travelling sine; kid's tongue out",
      "library": "ribbon, abKid, flow"
     },
@@ -2957,7 +2957,7 @@
     "move": "pan",
     "notes": "124.48 pan right from the shop {x 1120} to Ali Baba's pitch {x 1560, zoom 1.05} by 126.4; hold; 129.6 ease up 50 to make room for the thought cloud."
    },
-   "composition": "Ali Baba at x 1560 beside a stack of firewood bundles (x 1630..1700, three high), the donkey at x 1450 facing right, the lane arch x 1760..1960 behind. Customer (the potter) arrives from the right to x 1680. Thought cloud 420 x 300 at (1540, 330): the rock at 0.3 scale, door shut, ivy across the seam, a bird's nest on a ledge.",
+   "composition": "Ali Baba at x 1560 beside a stack of firewood bundles (x 1630..1700, three high), the donkey at x 1470 facing right, in the storehouse corner where the false merchant's crates stood, the lane arch x 1760..1960 behind. Customer (the potter) arrives from the right to x 1680. Thought cloud 420 x 300 at (1540, 330): the rock at 0.3 scale, door shut, ivy across the seam, a bird's nest on a ledge.",
    "actions": [
     {
      "t": 124.48,
@@ -3114,7 +3114,7 @@
     "move": "crane",
     "notes": "132.52 wide on the storyteller's group {x 1500, y 615, zoom 1.0}; 137.4 pan left with the pointing arms to {x 1180} so the shop is centre left and the group at the right edge; 141.0 slow rise of 40 and drift for the end title; hold with moving life to the end."
    },
-   "composition": "Storyteller seated on the low wall at x 1640 (sit bench, seat y 850) with the kid, the girl and the apprentice on the ground in front (x 1500..1600); baker and old neighbour standing behind at x 1420, 1470; Ali Baba and the donkey at x 1380. Picture balloon 360 x 220 above the storyteller at (1640, 380). Shop at x 970..1270 with Morgiana at x 1120. Big balloon above the group at (1300..1700, 300..420). THE END in the sky band y 130..300; nothing over faces.",
+   "composition": "Storyteller seated on the low wall at x 1640 (sit bench, seat y 850) with the kid, the girl and the apprentice on the ground in front (x 1500..1600); baker and old neighbour standing behind at x 1420, 1470; Ali Baba and the donkey at x 1380. Picture balloon 360 x 220 above the storyteller at (1640, 380). Shop at x 960..1260 with Morgiana at x 1110. Big balloon above the group at (1300..1700, 300..420). THE END in the sky band y 130..300; nothing over faces.",
    "actions": [
     {
      "t": 132.52,
@@ -3339,27 +3339,27 @@
  ],
  "new_assets": [
   {
-   "type": "character",
-   "name": "guest (fine clothes) and nephew",
+   "type": "pose",
+   "name": "cuff fold-back (abNewMerchant cuff per arm)",
    "reusable": true,
    "effort": "S",
-   "description": "Only if ALI-05 has not drawn them (its drawings win). guest: the leader's rig in the merchant preset with pal AB_GUEST0 (wine brocade #8a2a50, gold hem and dots, lighter bell sleeves #b85a7a, ivory turban with gold band and green jewel) and a new field sleeveBack 0..1 on the right cuff. nephew: villager preset, age 0.05, s 0.98, emerald tunic #3fb88a, saffron sash and cap. Reusable as richMan / young townsman.",
-   "implementation": "pal overrides on the Library costume layer. Bell cuff: after the figure, draw a 5-point celShade trapezoid from the forearm end past the hand point (P.hands[1]) 26 long, hem as a ribbon with lagged sway; sleeveBack scales its length to 0 and draws a 3-point fold at the wrist, then silverRing at the hand point. Gold dots: 10 seeded r 3 discs clipped to the robe box. Keep AB_MODEL k = 0."
+   "description": "ALI-05's abNewMerchant has one cuff field for both sleeves; this film needs the right cuff folded back to the wrist while the left still hangs (cuffR, cuffL 0..1), a folded-cuff drawing at the wrist, and a feather droop field for the surrender.",
+   "implementation": "Split cuff into cuffL and cuffR (cuff sets both, so ALI-05 poses are unchanged). The cuff is drawn after the figure as a 5-point celShade trapezoid from the forearm end past the hand point (P.hands[i]) with a ribbon hem on lagged sway; at cuffR 0 its length scales to 0 and a 3-point fold band is drawn at the wrist, then silverRing at the hand point. Feather: the existing ribbon with its rest angle keyed from upright to 70 degrees."
   },
   {
    "type": "prop",
-   "name": "lampShop (with balanceScale)",
+   "name": "lampShop (shopFront variant, with balanceScale)",
    "reusable": true,
    "effort": "M",
-   "description": "Morgiana's market shop 300 wide on the marketDay plot x 970..1270: counter, two posts, striped awning with unroll, hanging sign with drop and swing, shelf of eight brass lamps and four small oil jars, lit 0..8, and the planned balanceScale on the counter. Reusable as shopFront for any small shop (stripe colours, sign text and goods as options). If ALI-05 builds the leader's shop as a shopFront, use the same function on the same plot with a new awning and sign: the false shop becomes the honest one.",
-   "implementation": "Back pass (before the cast): shelf rect and posts as celShade quads, lamps = the ALI-04 oilLamp at s 0.8 in a row, jars = oilJar at s 0.5. Front pass (after Morgiana): counter celShade rect 300 x 70 with a plank line, awning = 7 alternating quads from y 520 clipped to height 80 * unroll with a scalloped hem ribbon on a travelling sine, sign = rounded rect 220 x 70 on two cords, y from kfn drop, rotation from swing(t, tDrop, 0.12), text MORGIANA'S in the label font at 40 plus a lamp pictogram. Lit lamps: flame teardrop + abGlow r 60 each, 12 fps flicker, per-lamp seed. balanceScale: post, beam rotated by tilt * 0.2 rad, pans hung from the beam ends with seg chains; tilt = kfn target + swing."
+   "description": "Morgiana's shop is the ALI-05 shopFront on the same plot (x 960..1260) with pal turquoise and cream, goods lamps and oil, a new name board with drop and swing, a lit 0..8 field for the lamps, and the planned balanceScale on the counter: the false shop becomes the honest one.",
+   "implementation": "Call shopFront with {pal, goods, open}; goods callback draws the ALI-04 oilLamp at s 0.8 in a row of eight on the shelves and oilJar at s 0.5 x4. Keep the two-pass order (shelves before Morgiana, counter and awning after). Old awning on the ground = a 200 x 30 coral and cream roll. Name board = rounded rect 220 x 70 on two cords above the awning, y from kfn drop, rotation from swing(t, tDrop, 0.12), text MORGIANA'S in the label font at 40 plus a lamp pictogram. Lit lamps: flame teardrop + abGlow r 60 each, 12 fps flicker, per-lamp seed. balanceScale: post, beam rotated by tilt * 0.2 rad, pans hung from the beam ends with seg chains; tilt = kfn target + swing."
   },
   {
    "type": "prop",
    "name": "feastSpread",
    "reusable": true,
    "effort": "S",
-   "description": "Evening feast dressing for the courtyard: rug, low table with dishes and a steaming teapot, five cushions, string of six paper lanterns. Reusable for any family meal or celebration (same idea as the planned foodTray and floorCushion).",
+   "description": "Evening feast dressing for the courtyard: rug, low table, five cushions, string of six paper lanterns; the dishes, teapot and cushions are the ALI-05 dinnerFood cels and dinnerRoom cushions carried outside. Reusable for any family meal or celebration.",
    "implementation": "Rug: celShade quad with two border bands. Table: rounded rect 280 x 55 with a cloth hem. Dishes: ell and half-ell shapes with one highlight each. Cushions: rounded rects 70 x 26 with a seam, colours from a list. Lanterns: a catenary of 6 points between the two anchors, each lantern a 30 x 40 rounded rect swung by idleSway(seed) with abGlow r 80 and a light pool ellipse on the paving."
   },
   {
@@ -3380,11 +3380,11 @@
   },
   {
    "type": "set",
-   "name": "courtyardFeast light state and marketDusk model",
+   "name": "marketDusk model",
    "reusable": true,
    "effort": "S",
-   "description": "Two colour states of existing plates: the ALI-04 courtyard between its evening and night models (warm, lantern lit), and the ALI-03 market in golden late afternoon. No new geometry.",
-   "implementation": "courtyardFeast: draw the evening and night plates with the night one at alpha 0.55 (dayToNight), then a warm abGlaze under the lantern string; moon live. marketDusk: Library marketStreet over a baked apricot to teal abGrad sky with pink abCloud undersides, plus a soft warm abGlaze from the left; no multiply over the cast."
+   "description": "A golden late-afternoon colour model of the series market for the last scene. No new geometry. (The feast uses the existing ALI-04 evening courtyard.)",
+   "implementation": "marketDusk: Library marketStreet over a baked apricot to teal abGrad sky with pink abCloud undersides, plus a soft warm abGlaze from the left; no multiply over the cast."
   },
   {
    "type": "motion",
@@ -3396,21 +3396,21 @@
   }
  ],
  "owner_questions": [
-  "ALI-05 was not yet planned when this plan was written, so the guest's fine clothes (wine brocade with long bell sleeves and an ivory turban), the nephew (emerald tunic, saffron cap) and the forgotten gift box are designed here; default: if ALI-05 draws them differently, its drawings are copied and only the sleeveBack cuff is added.",
-  "The script says he forgot his false name and gave a different one without naming either; the balloons use HASAN and then KARIM'S as invented names; default: kept, and changed to match if ALI-05 gives him a name on screen.",
+  "The film opens on the last picture of ALI-05 (night courtyard, Morgiana in the doorway with the gift, the guest at the barred gate) and uses that plan's guest, nephew, gift box, barred gate and shop front; the guest walks back for his gift, which lets her fold back the long cuff that hid the ring; default: as described.",
+  "The script says he forgot his false name and gave a different one without naming either; the balloons use HASAN and then KARIM'S as invented names; default: kept (ALI-05 gives him no name on screen and his shop sign is only a lamp picture).",
   "Family-friendly capture: the guards hold their spears upright, nobody touches him, he raises empty hands and is walked out with a loose rope at his wrists; default: as described.",
-  "The locked gate is explained by an addition: Morgiana barred and padlocked it herself and shows the key; default: included.",
-  "Before the guards enter, spear tips and a plume are seen bobbing along the wall top, and the old neighbour of episodes 3 and 4 comes in with them; default: included.",
+  "The locked gate: ALI-05 has Morgiana lower the bar; this film adds a padlock on it and the key on a turquoise ribbon at her sash; default: included.",
+  "Before the guards enter, the helmets seen behind the wall at the end of ALI-05 move along the wall top (spear tips and a plume bobbing) to the back gate, and the old neighbour of episodes 3 and 4 comes in with them; default: included.",
   "At the rock Ali Baba says OPEN SESAME! one last time as a callback to episode 1 (the script only says he showed the guards the rock); default: included.",
   "The return of the stolen goods is shown as three small hand-overs (a weaver's carpet, a potter's pot of savings, a girl's brass horse); default: these three.",
   "Ali Baba's line about gold is acted with a single gold coin that he drops on the table, and the reward is a small casket with a purse, shown with three possible futures in a thought cloud (a shop, a road, a house); default: included.",
-  "Morgiana's shop sells brass lamps and oil (her lamp and the oil jars of episode 4) under a turquoise striped awning with the sign MORGIANA'S; if ALI-05 draws the leader's shop, hers is the same shop front made honest; default: lamps and oil, same plot if available.",
+  "Morgiana's shop sells brass lamps and oil (her lamp and the oil jars of episode 4) under a turquoise striped awning with the name board MORGIANA'S, and it is the false merchant's empty shop of ALI-05 refitted by the family (the script only says she opened a shop); default: the same shop made honest.",
   "Ali Baba's honest trade is firewood with the grey donkey of episode 1, and the cave appears once in a thought cloud, shut and overgrown; default: included.",
   "The last paragraph is staged with an old storyteller and children, and the townspeople's line as one shared balloon; after the last word the family gathers at the shop under the lamps for the 5 s THE END hold; default: included.",
-  "Invented English balloon and tag lines: THIS PROVES WHO YOU ARE., THE LEADER!, LOCKED!, NOBODY LEAVES BEFORE THE GUARDS ARRIVE., I AM ONLY A TRAVELING MERCHANT!, MY NAME IS... ER... HASAN!, WHAT NAME IS ON YOUR SHOP?, KARIM'S!, MAP TO THE CAVE, TO THE JUDGE!, OPEN SESAME!, THANK YOU, MORGIANA!, GOLD DID NOT SAVE US., YOUR WISDOM DID., I WILL OPEN A SHOP IN THE MARKET!, REMEMBER CLEVER MORGIANA!; default: kept as written."
+  "Invented English balloon and tag lines: THIS PROVES WHO YOU ARE., THE LEADER!, LOCKED!, NOBODY LEAVES BEFORE THE GUARDS ARRIVE., I AM ONLY A TRAVELING MERCHANT!, MY NAME IS... ER... HASAN!, WHAT IS YOUR SHOP CALLED?, KARIM'S!, MAP TO THE CAVE, TO THE JUDGE!, OPEN SESAME!, THANK YOU, MORGIANA!, GOLD DID NOT SAVE US., YOUR WISDOM DID., I WILL OPEN A SHOP IN THE MARKET!, REMEMBER CLEVER MORGIANA!; default: kept as written."
  ],
  "implementation_notes": [
-  "Copy ab_kit.js, ab_cast.js, ab_sets.js and the reusable parts of ab_main.js from Animations/ALI-01-ANIME/src/, ALI-02's a2_base.js (abSay, a2Inset, abTracking, abCamClamp, a2MuleCart, a2FarTown, tiptoeFreeze, strainLift), ALI-03's additions (abMorgiana, townStreet, market, oilJar, silverRing, sneakChain, dayToNight), ALI-04's (courtyard plates with CY anchors, guard preset with captain, gateBar, oilLamp, disguiseWipe, baker, apprentice) and ALI-05's (guest, nephew, gift, shop front, if built) into Animations/ALI-06/src/ under the same names and extend there. No palette of an existing character changes. If an earlier episode's drawing is not finished when this film is built, build it here from that episode's plan with the same names and numbers.",
+  "Copy ab_kit.js, ab_cast.js, ab_sets.js and the reusable parts of ab_main.js from Animations/ALI-01-ANIME/src/, ALI-02's a2_base.js (abSay, a2Inset, abTracking, abCamClamp, a2MuleCart, a2FarTown, tiptoeFreeze, strainLift), ALI-03's additions (abMorgiana, townStreet, market, oilJar, silverRing, sneakChain, dayToNight), ALI-04's (courtyard plates with CY anchors, guard preset with captain, gateBar, oilLamp, disguiseWipe, baker, apprentice) and ALI-05's (abNewMerchant with fine and cuff, abNephew, giftBox, shopFront, memoryPanel, dinnerFood, the market layout) into Animations/ALI-06/src/ under the same names and extend there. No palette of an existing character changes. If an earlier episode's drawing is not finished when this film is built, build it here from that episode's plan with the same names and numbers.",
   "Frame order: S.background, S.box panel, plate (and cross-fade), live set parts (doors, gate leaves, bar, lanterns, moon, trees, shop back pass), cels with groundShadow {flat: true}, front passes (table front, counter, awning), light (abGlow, abBands, rims), insets and cards, lettering, transition, subtitle, S.finish last.",
   "Pose every character at tc = celStep(t, THEME.celFps) (12 fps); blinks and lip flaps at celStep(t, 8). Camera, cross-fades, glows, glints, the counter, the light band, the map's dotted line and the tape transition run on every frame.",
   "Word cues with w(p, n) from timing.json; every cue time in this plan is a word start from inputs/timeline.md. Subtitle chunks are those of chunks_ar.txt and chunks_en.txt, already timed in timing.json; use it unchanged.",
@@ -3419,17 +3419,17 @@
   "One impact frame: S.emphasis {rect: AB_PANEL} at 14.26 with THE LEADER!, no sound on it because the narrator is speaking (the stamp is in the pause at 15.8). One tape transition: S.transition {rect, caption: 'NEXT MORNING...'} 70.35-71.1 with the set change at 70.72. The evening change at 89.02 is a plate cross-fade (0.5 s) and the market change at 116.2 a match cut on the awning.",
   "Balloons with abSay at size 50 to 52 (the last one 56), tail on the speaker's head, removed about 0.4 s after the line, never over a face. Tags (LOCKED!, MAP TO THE CAVE) are plain labels at 40 or more. Question marks, the not-equal sign, the check and the padlock are drawn shapes. The sign MORGIANA'S is part of lampShop. Titles: S.title MORGIANA'S CLEVER PLAN 0.3-3.0 with title_ar from story/script.json in Lalezar under it; S.title THE END from 142.3 to 147.13.",
   "Sound (9, master 0.6, only in the listed pauses): chime 11.2, stamp 15.8, blip 34.95, pop 53.7, glitch 70.7, chime 88.55, chime 109.55, blip 124.05, chime 142.0 (after the last word ends at 141.56); tape bed under everything.",
-  "Colour: evening and feast plates are warm and light (nothing darker than #6a5a98 on a wall), AB_MODEL k = 0 everywhere, a thin warm rim castFinish {rim: '#ffcf7a', light: [1, -1]} under the lanterns and at the shop in S21. Vermilion (Ali Baba) and turquoise (Morgiana, her awning, her cushion) stay the two brightest notes; the guest's wine is darker than vermilion and his sleeves are lighter than the robe so the arms read.",
+  "Colour: the night plate of S1 to S10 is the light, coloured ALI-04 night model (nothing darker than #2a4a8a in the sky or #5a5a8a on a wall), the feast is the apricot evening model, AB_MODEL k = 0 everywhere (no tint over the cast). Thin cool rim castFinish {rim: '#bfe0ff', light: [1, -1]} against the night sky, warm rim '#ffcf7a' near lanterns, at the feast and at the shop in S21. Vermilion (Ali Baba) and turquoise (Morgiana, her awning, her cushion) stay the two brightest notes; the guest's coral must stay clearly paler than Ali Baba's vermilion, and his cream sleeves keep the arms readable.",
   "Groups never in sync: stagger(i) and a seed per member for the household, the four guards, the queue and the storyteller's listeners. At most nine figures on screen (S21); bake plates and cull by camera x.",
   "Moving holds in every pause: idleSway on tip and head, breathe on sq, scarf tail, cuffs, plume, neck cloths, cat tail, lemon leaves, lantern string, awning hem, lamp flames. Every hand-over uses the handOver helper (dip and settle, eyes on the object then on each other).",
   "Check with contact sheets (every 4th frame): the cuff 1.3-2.9, the box drop and light band 13.1-15.2, the dash and gate 18.3-21.9, the stop 24.5-28.6, the name tags 48.4-50.5, the guards' entry 54.2-58.3, the surrender 58.7-59.5, the map 64.6-67.0, the rock 74.9-76.3, the rise at the feast 92.0-93.4, the coin 101.1-101.8, the casket 105.0-106.9, the shop sweep 118.5-119.6, the scale 121.4-122.8, the pointing wave 137.3-139.2, the lamps 141.6-143.2. Then run the frozen-hold scan across the end hold."
  ],
  "warnings": [
-  "ALI-05 (which this film continues directly) had no plan when this one was written: the guest's costume, the nephew, the gift and the leader's shop must be reconciled with ALI-05 before animation; ALI-05 wins wherever it differs, and the opening picture must match its last frame (guest stopped in the yard, turned to Morgiana).",
+  "Continuity with ALI-05 (planned at the same time, read in its plan form only): the opening frame must match its last frame (night yard, Morgiana in door K at x 170 with the gift held up, the guest at x 620 by the barred gate, helmets behind the wall at x 800..960); if its animation moves anything, follow the film, not this plan.",
   "Depends on drawings planned in ALI-03 and ALI-04 (Morgiana, courtyard, guards, gate bar, disguiseWipe) that may not be built yet.",
   "Seven places in 147 s (yard, glade, cave, road, market, feast, market at dusk): all but the feast dressing and the shop are existing plates, but check the render budget and bake every plate.",
   "The Library person is front facing: the look back in the gateway (69.48), the back against the gate (21.9) and the pointing arms (138) are staged three-quarter with gaze and arm angles, never as a back view.",
-  "Long bell sleeves must not hide the hands or merge with the robe: lighter sleeve colour, hem line, and stills at 1.0, 20.0, 37.0 and 59.0 at phone size.",
+  "The long cuffs must not hide the acting: the right cuff stays folded back from 1.52, the left hand shows whenever it gestures; check stills at 1.0, 20.0, 37.0 and 59.0 at phone size. About 70 s in the night courtyard: keep it light and coloured and reframe often.",
   "19 lettering items including the titles and the shop sign, close to the limit; balloons at 38.5, 42.48, 46.24 and 48.46 come quickly and must each clear before the next.",
   "The English and Arabic scripts match; no SCRIPT question."
  ]

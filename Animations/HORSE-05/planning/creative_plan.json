@@ -1,0 +1,3511 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "HORSE-05",
+ "title": "The Rescue in the Sky",
+ "duration": 144.51,
+ "end_hold": 4.0,
+ "logline": "In the morning square the disguised Firuz and the princess tell the far king the whole truth; the inventor is held for the judge, the two fly her home along the river she knows, and days later she travels to his palace and becomes the second pilot of the ebony horse.",
+ "moral": "The whole truth, told calmly, opens the gate that tricks could not; a promise kept brings everyone home.",
+ "tone": "Bright finale: light suspense and comedy in the square, one clean reveal, then open sky, homecoming warmth and a laughing last line. Echoes episode 1 in its closing.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.0,
+   "kind": "setup",
+   "cue": {
+    "word": "وقف",
+    "t": 0.0
+   },
+   "summary": "The square of episode 4: the disguised Firuz beside the horse offers to test it and names the princess as the one who knows its story."
+  },
+  {
+   "id": "B2",
+   "t": 13.72,
+   "kind": "comic",
+   "cue": {
+    "word": "تخفي",
+    "t": 13.72
+   },
+   "summary": "She walks to the horse hiding her delight; it escapes for two drawings."
+  },
+  {
+   "id": "B3",
+   "t": 18.64,
+   "kind": "suspense",
+   "cue": {
+    "word": "لكن",
+    "t": 18.64
+   },
+   "summary": "The inventor reaches for the knob; two spears cross in front of his nose."
+  },
+  {
+   "id": "B4",
+   "t": 34.02,
+   "kind": "turn",
+   "cue": {
+    "word": "وأخبر",
+    "t": 34.02
+   },
+   "summary": "Her condition: tell the king the whole truth."
+  },
+  {
+   "id": "B5",
+   "t": 37.32,
+   "kind": "reveal",
+   "cue": {
+    "word": "فكشف",
+    "t": 37.32
+   },
+   "summary": "Cloak and cap fly off: he is Prince Firuz, and the saffron scrap fits the torn turban."
+  },
+  {
+   "id": "B6",
+   "t": 50.44,
+   "kind": "resolution",
+   "cue": {
+    "word": "فأمر",
+    "t": 50.44
+   },
+   "summary": "After her testimony the king has the inventor held for the judge."
+  },
+  {
+   "id": "B7",
+   "t": 58.06,
+   "kind": "emotion",
+   "cue": {
+    "word": "أذن",
+    "t": 58.06
+   },
+   "summary": "The king lets them go home; her joy finally shows."
+  },
+  {
+   "id": "B8",
+   "t": 65.4,
+   "kind": "comic",
+   "cue": {
+    "word": "المحاكمة.",
+    "t": 65.4
+   },
+   "summary": "The inventor's eyes at the grille, from the inside this time."
+  },
+  {
+   "id": "B9",
+   "t": 77.18,
+   "kind": "climax",
+   "cue": {
+    "word": "فارتفع",
+    "t": 77.18
+   },
+   "summary": "The horse rises before the amazed court and circles the great dome."
+  },
+  {
+   "id": "B10",
+   "t": 93.32,
+   "kind": "surprise",
+   "cue": {
+    "word": "خفضت",
+    "t": 93.32
+   },
+   "summary": "She lowers the horse herself; Firuz rides with his hands in the air."
+  },
+  {
+   "id": "B11",
+   "t": 102.48,
+   "kind": "emotion",
+   "cue": {
+    "word": "تعرفه",
+    "t": 102.48
+   },
+   "summary": "The river she knows: the gold path between the two towers."
+  },
+  {
+   "id": "B12",
+   "t": 108.46,
+   "kind": "emotion",
+   "cue": {
+    "word": "أهلها",
+    "t": 108.46
+   },
+   "summary": "Home: the embrace with her mother."
+  },
+  {
+   "id": "B13",
+   "t": 116.84,
+   "kind": "resolution",
+   "cue": {
+    "word": "ووعد",
+    "t": 116.84
+   },
+   "summary": "Firuz thanks her and promises her father to bring her to his country with her attendants."
+  },
+  {
+   "id": "B14",
+   "t": 127.04,
+   "kind": "rising",
+   "cue": {
+    "word": "سافرت",
+    "t": 127.04
+   },
+   "summary": "Days later the escort travels by land to his city, the wooden horse on a cart."
+  },
+  {
+   "id": "B15",
+   "t": 138.26,
+   "kind": "comic",
+   "cue": {
+    "word": "قيادة",
+    "t": 138.26
+   },
+   "summary": "Her first wobbling solo flight in the garden of episode 1."
+  },
+  {
+   "id": "B16",
+   "t": 143.08,
+   "kind": "moral",
+   "cue": {
+    "word": "طياران!»",
+    "t": 143.08
+   },
+   "summary": "Two pilots in the sunset sky of episode 1. THE END."
+  }
+ ],
+ "cast": [
+  {
+   "id": "firuz",
+   "name": "Prince Firuz",
+   "library": "person",
+   "base": "person costume:'prince' with the HORSE-01 pal, s 0.95, age 0 (copy horse_cast.js)",
+   "look": "Series hero from 37.9 on: cream tunic #f6efe0 with gold trim #f2c040, teal trousers #2a8f9a, brown boots, black hair, small gold crown; ACCENT crimson #e8264f sash and ribbon cape firuzCape. The saffron scrap leaves his sash at 40.06 and goes to the captain.",
+   "new": false
+  },
+  {
+   "id": "craftsman",
+   "name": "Firuz disguised as a craftsman",
+   "library": "person",
+   "base": "HORSE-04 craftsman: person costume:'carpenter' with pal overrides + craftsmanDisguise overlay",
+   "look": "0 to 37.32 only: brown cloak #8a5a34 with lighter sleeves #b88a5a, leather apron, soft cap #d8c8a0, pencil behind the ear, a corner of crimson sash and the saffron knot at the left hip. Same body and face as firuz (one pose function; the costume switches at 37.32 to 37.9).",
+   "new": false
+  },
+  {
+   "id": "princess",
+   "name": "the princess of the river city",
+   "library": "person",
+   "base": "person costume:'lady' with the HORSE-02 pal, s 0.93",
+   "look": "Unchanged and unnamed: turquoise robe #1fb8b0 with gold trim, lighter sleeves #6fded6, white veil with gold band and veil ribbon, rose sash #ff7aa8 with a long free end. Calm and economical until 60.62; from the flight on she is openly happy and the better pilot.",
+   "new": false
+  },
+  {
+   "id": "inventor",
+   "name": "the inventor",
+   "library": "person",
+   "base": "person costume:'vizier' with the HORSE-01 pal, age 0.7, s 1.02, tailTorn (HORSE-03)",
+   "look": "Violet robe #5a3a8a, lilac sleeves #8a6ac8, plum cape, green sash, pointed grey beard, tall saffron #f2a71b turban with the short ragged tail. Mask on when watched, off when not; from 40.32 the mask is gone. Last seen as eyes and turban at the grille (84.72).",
+   "new": false
+  },
+  {
+   "id": "farKing",
+   "name": "the king of the far palace",
+   "library": "person",
+   "base": "HORSE-04 farKing: person costume:'caliph' with pal overrides, age 0.35, s 1.04",
+   "look": "Ivory robe with tangerine #ff8a2a trim, cape and sash, tall white turban with a tangerine band and peacock-green jewel, short black curled beard, round cheeks. Curious child in a big body, then a fair judge.",
+   "new": false
+  },
+  {
+   "id": "captain",
+   "name": "the captain of the guard",
+   "library": "person",
+   "base": "HORSE-04 captain: guard preset, s 1.05, moustache, spear with tangerine pennant, keyRing",
+   "look": "White tunic, tangerine sash, brass helmet with plume, cobalt neck cloth.",
+   "new": false
+  },
+  {
+   "id": "farGuards",
+   "name": "the far king's guards (6 drawn)",
+   "library": "person",
+   "base": "HORSE-04 farGuards: guard preset with pal overrides, s 0.9 to 1.04, own seeds",
+   "look": "White tunics, tangerine sashes, brass helmets, cobalt neck cloths, spears. A tall, B short and round, C moustache, D young and sleepy, plus two more in the line. Never in step.",
+   "new": false
+  },
+  {
+   "id": "peacock",
+   "name": "the palace peacocks (2)",
+   "library": null,
+   "base": "HORSE-04 / AN-046 peacock at s 0.5",
+   "look": "Blue body, green train with gold and blue eyes; fields ph/amp, fan, headTilt.",
+   "new": false
+  },
+  {
+   "id": "ebonyHorse",
+   "name": "the ebony horse",
+   "library": null,
+   "base": "ebonyHorse from HORSE-01 horse_kit.js with the HORSE-04 rosettes option (rosettes: 5, missing: 3)",
+   "look": "Series bible: ebony #3a3448, brass #e0b038, straight carousel legs, block mane, blank brass eye, crimson and gold saddle cloth for two; UP knob at the base of the neck, DOWN lever under the first mane block. Never moves a leg, blinks or breathes.",
+   "new": false
+  },
+  {
+   "id": "doves",
+   "name": "doves",
+   "library": "bird",
+   "base": "bird kind:'dove' pal 0",
+   "look": "White doves on the dome, the blue dome and in the home garden.",
+   "new": false
+  },
+  {
+   "id": "swallows",
+   "name": "three swallows",
+   "library": "bird",
+   "base": "bird kind:'sparrow' pal 1 flying, s 0.5",
+   "look": "Small life beside the horse in S11 and S19.",
+   "new": false
+  },
+  {
+   "id": "boatman",
+   "name": "the fisherman in the boat (and the boy on the bridge)",
+   "library": "person",
+   "base": "person costume:'villager' pal blue-grey, straw hat drawn by the scene; the boy: costume:'servant', child:true",
+   "look": "Seen at about 60 px high; a hull shape hides the legs.",
+   "new": false
+  },
+  {
+   "id": "queen",
+   "name": "the princess's mother",
+   "library": "person",
+   "base": "HORSE-03 queen: person costume:'lady' pal overrides, age 0.45, s 0.95",
+   "look": "Lilac-pink robe #d88ad0 with silver trim, cream veil, blue sash; warm and quick.",
+   "new": false
+  },
+  {
+   "id": "foreignKing",
+   "name": "the princess's father, king of the river city",
+   "library": "person",
+   "base": "HORSE-03 foreignKing: person costume:'caliph' pal overrides, age 0.65, s 1.03",
+   "look": "Royal blue robe #2a5ad0 with silver trim, pale silver-grey cape, white turban with a blue jewel and silver crown, trimmed dark-grey beard. Stern first, then melted.",
+   "new": false
+  },
+  {
+   "id": "maid",
+   "name": "the maid",
+   "library": "person",
+   "base": "HORSE-02 maid: person costume:'maiden' pal overrides, s 0.88",
+   "look": "Lavender dress, cream apron, apricot headscarf; petals, then three trunks.",
+   "new": false
+  },
+  {
+   "id": "blueGuards",
+   "name": "the two guards of the river city",
+   "library": "person",
+   "base": "HORSE-02 guards: guard preset, royal blue with silver helmets",
+   "look": "The tall one with the moustache and the short one with the spear; her escort on the road.",
+   "new": false
+  },
+  {
+   "id": "cat",
+   "name": "the roof cat",
+   "library": "cat",
+   "base": "cat pal 2 (orange), s 0.7",
+   "look": "The witness of episodes 2 and 3; welcomes them, then rides on the wooden horse.",
+   "new": false
+  },
+  {
+   "id": "king",
+   "name": "the king, Firuz's father",
+   "library": "person",
+   "base": "person costume:'caliph' with the HORSE-01 pal, age 0.6",
+   "look": "Emerald #1f9a6a robe, gold cape, white crown turban, grey beard, round belly.",
+   "new": false
+  },
+  {
+   "id": "household",
+   "name": "the household of Firuz's father (5 drawn)",
+   "library": "person",
+   "base": "five of the HORSE-01 festival guests (orange merchant, sky-blue lady, rose maiden, two servants)",
+   "look": "Bright varied colours, none in the leads' accents; own seeds.",
+   "new": false
+  },
+  {
+   "id": "child",
+   "name": "the palace child",
+   "library": "person",
+   "base": "person costume:'servant', child:true, yellow tunic (HORSE-01)",
+   "look": "The boy who knocked on the horse in episode 1 knocks on it again.",
+   "new": false
+  },
+  {
+   "id": "bayHorse",
+   "name": "Firuz's travelling horse",
+   "library": "horse",
+   "base": "horse pal 1 (bay), plain saddle, rideOn",
+   "look": "The living horse of episode 4.",
+   "new": false
+  },
+  {
+   "id": "whiteHorse",
+   "name": "the princess's travelling horse",
+   "library": "horse",
+   "base": "horse pal 0 (white) with the cloth recoloured turquoise and gold, rideOn",
+   "look": "A second coat for variety.",
+   "new": false
+  },
+  {
+   "id": "donkey",
+   "name": "the maid's donkey",
+   "library": "donkey",
+   "base": "donkey pal 0 with load: two chests",
+   "look": "Grey donkey with the trunks.",
+   "new": false
+  },
+  {
+   "id": "camel",
+   "name": "the cart camel",
+   "library": "camel",
+   "base": "camel pal 0 with a saddle rug, harnessed to platformCart by two rope lines",
+   "look": "Pulls the wooden horse; chews.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "farPalace",
+   "library": null,
+   "description": "HORSE-04 farPalace (copy, unchanged), morning model for S1 to S10: strip 2600 x 2050 (world y -620..1430), ground y 900. Used here: the SQUARE x 1560..2300 with the eight-point star at 1900, the arcade x 1560..2060 (second arch at 1680), the royal pavilion x 2080..2300 (dais top y 850, bench seat y 802, steps x 2040..2080), the COURT WALL x 2300..2600 with the double court gate x 2400..2540 (top y 600); white palace behind with domes at x 1150, 1600 (r 160, top y 150) and 2050, towers at 980 and 2220, snow mountains. Two additions for this episode: (1) a FRONT PASS of the great dome (farPalace(ctx, {front: 'dome'})) so the horse can fly behind it in S10; (2) the court gate leaves carry the lockedCourt grille (y 600..720) and the gateBar brackets on the square side. All values are HORSE-04 design values: measure on the drawing.",
+   "new": false
+  },
+  {
+   "id": "skyFlight",
+   "library": null,
+   "description": "The series flight world (HORSE-01 horse_sets.js). Plates used: day azure with the NEW land plate kingdomBelow variant 'fields' and the homeland mountains layer (S11), day with the HORSE-02 variant 'far' showing the river city miniature (S12), and the sunset plate of episode 1's closing with kingdomBelow home, palaceToy and a tiny princessPalace on the horizon (S19).",
+   "new": false
+  },
+  {
+   "id": "riverRun",
+   "library": null,
+   "description": "NEW plate for the low flight along her river (side view, day): strip 2600 x 1230. Sky y 0..700 (azure to pale, two cumulus). Far bank y 700..760 on two parallax layers (0.5 and 0.8): about 20 flat-roofed houses in cream, peach, pink and pale blue, palms, washing lines, a minaret, three washerwomen dots. River from y 760 to the bottom: bright blue #3a9af0 with paler bands and white glints, two boats (x 700 and 1250), reeds on the near edge as a front strip. The TWO TOWERS (rose stone, 54 wide, blue cone caps, tops y 330) at x 1900 and 2020 with the three-arch lamp bridge between them (deck y 640); the nearer tower is a front pass. Beyond at x 2300: the rose palace and blue dome (princessPalace at s 0.6) and the garden hedge. Generic: any river journey.",
+   "new": true
+  },
+  {
+   "id": "princessGarden",
+   "library": null,
+   "description": "The princess's garden (HORSE-02 geometry, HORSE-03 'day' and 'golden' plates; copy, unchanged): strip 1600, ground y 900; palace wall x 0..440 with the stair arch x 60..220 (top y 620) and the blue dome behind; jasmine arch 470; fountain 620; lantern poles 480 and 1060; bench at 900 (seat top y 852, 260 wide); orange trees 760 and 1180; hedge top y 760 with the gate x 1380..1500; river band y 690..760 with the two towers at 1150 and 1290. Landing lawn for this episode: x 1040 in the front lane (y 915); the rose bower branch stays aside. Two floor cushions at 700 and 780 for S16.",
+   "new": false
+  },
+  {
+   "id": "desertRoad",
+   "library": "desertRoad",
+   "description": "Library set, w 2400, ground y 900, day preset, city: 'right' (wall and gate at the right end, about x 2250: measure on the set). Story dressing: the far city replaced by the HORSE-01 palaceToy (cream, turquoise domes, minarets) at s 0.4 behind the wall, two emerald banners with a gold sun on the gate, palms at x 300, 1100 and 1900.",
+   "new": false
+  },
+  {
+   "id": "palaceGarden",
+   "library": null,
+   "description": "The king's palace garden court from HORSE-01 (copy, unchanged) with a golden-hour sky plate (HORSE-03 used day; add 'golden' the same way: sky blue above to cream gold at the horizon, long soft shadows): strip 2000, ground y 900; cypresses 330 and 720, fountain 520, star tile centred x 1020, dais x 1540..1940 with the throne at 1760 (seat y 792), cream palace with turquoise domes, emerald banners.",
+   "new": false
+  }
+ ],
+ "props": [
+  {
+   "id": "knob",
+   "library": null,
+   "description": "UP knob of ebonyHorse (brass disc r 14, engraved arrow) and its handInsert close view (HORSE-01).",
+   "new": false
+  },
+  {
+   "id": "lever",
+   "library": null,
+   "description": "DOWN lever under the first mane block (38 long, ball tip) with reveal, and its handInsert close view; here the hand has a turquoise cuff and a thin gold bangle.",
+   "new": false
+  },
+  {
+   "id": "scrap",
+   "library": null,
+   "description": "turbanScrap (HORSE-03): the saffron scrap, about 46 x 18, ragged edge, fluttering; matched against tailTorn with a dotted line.",
+   "new": false
+  },
+  {
+   "id": "iconBalloon",
+   "library": null,
+   "description": "Planned picture balloon (round-cornered, 150 x 110, tail to the speaker) holding a small drawing: princessPalace toy, palaceToy, a pair of balance scales (new icon: post 60 high, beam 70 wide, two pan arcs), palaceToy with a dotted road.",
+   "new": false
+  },
+  {
+   "id": "cards",
+   "library": null,
+   "description": "memoryCard (HORSE-04): rounded card 250 x 170 with a cream border 6 wide and a clipped scene inside; also the round variant r 150 (the HORSE-04 callout inset) for the farewell picture. Five rectangular cards and one round one in this film.",
+   "new": false
+  },
+  {
+   "id": "gateBar",
+   "library": null,
+   "description": "HORSE-04 gateBar: oak bar 260 x 26 with two iron brackets, drops with fallY and one rebound.",
+   "new": false
+  },
+  {
+   "id": "tick",
+   "library": null,
+   "description": "HORSE-04 green tick, 40 wide, two strokes drawn in order.",
+   "new": false
+  },
+  {
+   "id": "saddleRope",
+   "library": null,
+   "description": "NEW small prop: crimson cord 6 wide from the saddle horn round both riders' waists with a knot at each; sag 0..1 and taut with a short vibration (tetherRope code from HORSE-02).",
+   "new": true
+  },
+  {
+   "id": "toolbox",
+   "library": null,
+   "description": "HORSE-04 toolbox with hammer and magnifier; the crown comes out of it at 37.9.",
+   "new": false
+  },
+  {
+   "id": "footstool",
+   "library": "seatStool",
+   "description": "Library stool set down by guard B at x 1870 for mounting.",
+   "new": false
+  },
+  {
+   "id": "planCloud",
+   "library": "thoughtCloud",
+   "description": "Library thoughtCloud 520 x 300 above the bench with farPalaceToy and the ebony horse at s 0.3 (the story being told).",
+   "new": false
+  },
+  {
+   "id": "trunks",
+   "library": "packLoad",
+   "description": "Three chests (packLoad 'chest' in three colours) stacked in the maid's arms, then as the donkey's load.",
+   "new": false
+  },
+  {
+   "id": "coverCloth",
+   "library": null,
+   "description": "HORSE-03 coverCloth (striped carpet cloth) over the ebony horse on the HORSE-01 platformCart, hooves and muzzle showing.",
+   "new": false
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 10.17,
+   "paragraphs": [
+    1
+   ],
+   "set": "farPalace",
+   "cast": [
+    "craftsman",
+    "ebonyHorse",
+    "farKing",
+    "inventor",
+    "farGuards",
+    "captain",
+    "princess",
+    "peacock",
+    "doves"
+   ],
+   "summary": "The morning square exactly as episode 4 ended. The craftsman stands beside the horse and tells the king he can test it, but the princess knows its story.",
+   "camera": {
+    "shot": "establishing",
+    "move": "push-in",
+    "notes": "Opens on HORSE-04's last wide: zoom 0.66, centre (1900, 440): whole square, white palace, tangerine domes, snow mountains. Eases to zoom 0.9 at (1960, 540) by 4.0 (ground at panel y 939). From 6.7 slides left to (1830, 540) so the arcade arch at x 1680 comes into frame with the horse."
+   },
+   "composition": "farPalace morning model. Horse on the star (1900) facing right. Craftsman at 1990 (knob side). King on the pavilion bench (2190, seat y 802). Inventor at 2060 between guard C (2025) and guard D (2100). Guards A, B and two more in a loose line 1600..1780, captain by the pavilion steps (2060, behind). Princess in the second arcade arch (1680). Peacock at 1560. Title in the sky band above the domes. Positions continue HORSE-04 S17 (approximate, match its last frame).",
+   "actions": [
+    {
+     "t": 0.0,
+     "cue": {
+      "word": "وقف",
+      "t": 0.0
+     },
+     "who": "set",
+     "action": "the square as episode 4 left it: the craftsman's hand a finger's width from the UP knob, the inventor staring at the crimson corner at his hip; pennants, doves, dew glints, long morning shadows",
+     "acting": "everything alive on twos; nobody in sync",
+     "library": "farPalace(ctx, {model:'morning'}) + idleSway, breathe, stagger"
+    },
+    {
+     "t": 0.3,
+     "who": "lettering",
+     "action": "chrome title THE RESCUE / IN THE SKY flickers on in the sky band with the Arabic line (title_ar) in Lalezar under it; off by 2.9",
+     "acting": "title only, no other Arabic lettering",
+     "library": "S.title + ctx text {font:'Lalezar'}"
+    },
+    {
+     "t": 0.58,
+     "cue": {
+      "word": "فيروز",
+      "t": 0.58
+     },
+     "who": "craftsman",
+     "action": "takes the hovering hand away from the knob and lays it flat on the saddle instead; breathes out",
+     "acting": "squint lid 0.3, rounded shoulders tip 0.07, eyes flick once to the inventor",
+     "library": "person carpenter + craftsmanDisguise, handRW to the saddle, flow"
+    },
+    {
+     "t": 1.3,
+     "cue": {
+      "word": "بجانب",
+      "t": 1.3
+     },
+     "who": "inventor",
+     "action": "opens his mouth to shout what he has seen; guard C's spear butt taps the ground in front of his toes and the mouth shuts",
+     "acting": "eyes wide then mask on (lid 0.15, smile); torn turban tail a drawing late",
+     "library": "lagged on the tail, mouth 'o' for 3 drawings"
+    },
+    {
+     "t": 1.94,
+     "cue": {
+      "word": "الحصان",
+      "t": 1.94
+     },
+     "who": "ebonyHorse",
+     "action": "a light band slides across the brass chest plate and joints",
+     "acting": "the horse never moves; only light acts on it",
+     "library": "celShade highlight band on t"
+    },
+    {
+     "t": 2.66,
+     "cue": {
+      "word": "وقال",
+      "t": 2.66
+     },
+     "who": "craftsman",
+     "action": "turns to the pavilion with a blink and gives the clumsy bow of episode 4",
+     "acting": "bow by flow on tip (0.07 to 0.3 and back), cap nearly slips, one hand catches it",
+     "library": "flow, blink on the turn"
+    },
+    {
+     "t": 3.42,
+     "cue": {
+      "word": "للملك:",
+      "t": 3.42
+     },
+     "who": "farKing",
+     "action": "chin leaves his fist, he leans forward on the bench, eyebrows up",
+     "acting": "eyes lead the head by three drawings; belly forward",
+     "library": "person caliph sit:1 seat:'bench', gazePlan"
+    },
+    {
+     "t": 4.1,
+     "cue": {
+      "word": "«أستطيع",
+      "t": 4.1
+     },
+     "who": "craftsman",
+     "action": "raps the wooden neck twice with a knuckle while he speaks: I CAN TEST IT.",
+     "acting": "talk on threes, chin up a little too proudly for a craftsman",
+     "library": "S.label balloon to his head; handRW taps"
+    },
+    {
+     "t": 5.2,
+     "cue": {
+      "word": "اختباره،",
+      "t": 5.2
+     },
+     "who": "farGuards",
+     "action": "he pats the knob; four helmets lean toward it one after another and straighten",
+     "acting": "ripple by stagger(i), the sleepy guard last",
+     "library": "stagger, idleSway"
+    },
+    {
+     "t": 6.1,
+     "cue": {
+      "word": "لكن",
+      "t": 6.1
+     },
+     "who": "craftsman",
+     "action": "one finger up, a held beat; his eyes travel to the arcade",
+     "acting": "gaze arrives before the head; blink on the turn",
+     "library": "gazePlan, PERSON_HANDS point up"
+    },
+    {
+     "t": 6.72,
+     "cue": {
+      "word": "الأميرة",
+      "t": 6.72
+     },
+     "who": "craftsman",
+     "action": "open palm toward the arcade: SHE KNOWS ITS STORY.; the camera eases left",
+     "acting": "arm arrives in three drawings and holds; cloak lags one drawing",
+     "library": "S.label balloon, lagged cloak"
+    },
+    {
+     "t": 7.44,
+     "cue": {
+      "word": "تعرف",
+      "t": 7.44
+     },
+     "who": "farGuards",
+     "action": "every head turns to the arcade one after another: guards, captain, king, the peacock last",
+     "acting": "each with its own delay and blink",
+     "library": "stagger, lookAt"
+    },
+    {
+     "t": 8.24,
+     "cue": {
+      "word": "قصته».",
+      "t": 8.24
+     },
+     "who": "princess",
+     "action": "in the arch her ribbon finger stops winding; the king beckons her with two fingers",
+     "acting": "upright, lid 0.2, breath held (sq 1.02 for six drawings)",
+     "library": "person lady, breathe"
+    },
+    {
+     "t": 9.2,
+     "who": "inventor",
+     "action": "dabs his forehead with the torn turban tail and tries a smile at the nearest guard, who does not smile back",
+     "acting": "mask slipping: lid 0.15 to 0.4 and back",
+     "library": "tailTorn, tremble 1"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.3,
+     "text": "THE RESCUE IN THE SKY"
+    },
+    {
+     "t": 4.1,
+     "text": "I CAN TEST IT."
+    },
+    {
+     "t": 6.72,
+     "text": "SHE KNOWS ITS STORY."
+    }
+   ],
+   "sfx": [
+    {
+     "t": 9.55,
+     "kind": "blip"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 10.17
+   }
+  },
+  {
+   "id": "S2",
+   "start": 10.17,
+   "end": 15.24,
+   "paragraphs": [
+    2
+   ],
+   "set": "farPalace",
+   "cast": [
+    "princess",
+    "craftsman",
+    "ebonyHorse",
+    "farGuards",
+    "inventor",
+    "farKing",
+    "peacock"
+   ],
+   "summary": "The princess agrees and walks to the horse, hiding her delight (badly, for two drawings).",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Zoom 0.9. Pans with her from (1760, 540) to (1900, 540) between 11.76 and 14.3; ground at panel y 939."
+   },
+   "composition": "She walks from the arch (1680) through the guards' line to 1850, left of the horse's shoulder; the craftsman stays at 1990 on the other side of the neck. The inventor and his two guards at the right frame edge.",
+   "actions": [
+    {
+     "t": 10.17,
+     "cue": {
+      "word": "وافقت",
+      "t": 10.168
+     },
+     "who": "princess",
+     "action": "one slow nod to the king, hand flat on her chest",
+     "acting": "the still centre: lid 0.2, one blink, no smile",
+     "library": "PERSON_HANDS heart, flow"
+    },
+    {
+     "t": 10.98,
+     "cue": {
+      "word": "الأميرة",
+      "t": 10.98
+     },
+     "who": "princess",
+     "action": "steps out of the arch shadow into the sun; the veil ribbon follows a drawing late",
+     "acting": "chin level, eyes on the king, not on Firuz",
+     "library": "veil ribbon (firuzCape code, white) with lagged"
+    },
+    {
+     "t": 11.76,
+     "cue": {
+      "word": "واقتربت،",
+      "t": 11.76
+     },
+     "who": "princess",
+     "action": "walks 1680 to 1850; the guards' line opens for her in a ripple, the sleepy guard is pulled aside by his neighbour",
+     "acting": "even steps, never hurrying, though the ribbon swings faster than the walk asks",
+     "library": "walk + footfalls; guards stagger"
+    },
+    {
+     "t": 12.6,
+     "who": "craftsman",
+     "action": "looks hard at a brass hoof on purpose; his fingers drum on the saddle",
+     "acting": "squint, mouth pressed; drumming on threes",
+     "library": "celStep(t, 8) finger drum"
+    },
+    {
+     "t": 13.06,
+     "cue": {
+      "word": "وهي",
+      "t": 13.06
+     },
+     "who": "inventor",
+     "action": "she passes him without a glance; he leans after her and guard D's spear shaft tips him upright again",
+     "acting": "lean by tip 0.15, rebound; mask on for the king",
+     "library": "rebound, lagged turban tail"
+    },
+    {
+     "t": 13.72,
+     "cue": {
+      "word": "تخفي",
+      "t": 13.72
+     },
+     "who": "princess",
+     "action": "lips pressed, chin up, but behind her back both hands wind the rose ribbon round and round",
+     "acting": "front calm, hands busy: the joy is in the ribbon",
+     "library": "handL/handR behind, ribbon on a fast travelling sine"
+    },
+    {
+     "t": 14.3,
+     "cue": {
+      "word": "فرحتها.",
+      "t": 14.3
+     },
+     "who": "princess",
+     "action": "stops by the horse; a smile escapes for two drawings and her heels lift, then she is composed again; the craftsman's mouth twitches too and both look away in opposite directions",
+     "acting": "sq 1.04 for two drawings, mouth 'smile' then closed; gaze left / gaze right",
+     "library": "hop (8 units), landSquash small"
+    },
+    {
+     "t": 14.8,
+     "who": "farKing",
+     "action": "looks from one to the other and tilts his head, puzzled; the peacock tilts the same way",
+     "acting": "eyes lead; a comic mirror, peacock two drawings late",
+     "library": "gazePlan, peacock headTilt"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 15.24
+   }
+  },
+  {
+   "id": "S3",
+   "start": 15.24,
+   "end": 24.88,
+   "paragraphs": [
+    2
+   ],
+   "set": "farPalace",
+   "cast": [
+    "inventor",
+    "farGuards",
+    "captain",
+    "craftsman",
+    "princess",
+    "ebonyHorse",
+    "farKing"
+   ],
+   "summary": "The inventor tries to get to the horse; two spears cross and the captain tells him to wait until the inspection is over.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Zoom 0.95. Slides right to (2010, 545) for the inventor (15.24 to 16.6), returns to (1930, 545) at 21.72 for the inspection."
+   },
+   "composition": "Inventor starts at 2060, tiptoes to 2010, is walked back to 2075. Guards C (2025) and D (2100) in front of him, captain arrives from the pavilion to 2040. Horse neck and craftsman at the left of the frame so the stretching hand reads against the knob.",
+   "actions": [
+    {
+     "t": 15.24,
+     "cue": {
+      "word": "حاول",
+      "t": 15.24
+     },
+     "who": "inventor",
+     "action": "leans out past guard C's shoulder with his kindest smile",
+     "acting": "mask on: lid 0.15, brow -0.2; eyes only on the knob",
+     "library": "person vizier age 0.7, tip 0.12"
+    },
+    {
+     "t": 16.0,
+     "who": "inventor",
+     "action": "rubs his hands and offers a small helpful bow to nobody",
+     "acting": "bow shallow (old back), turban tail late",
+     "library": "flow, lagged"
+    },
+    {
+     "t": 16.88,
+     "cue": {
+      "word": "المخترع",
+      "t": 16.88
+     },
+     "who": "inventor",
+     "action": "slips one foot between the two guards and tiptoes 2060 to 2010",
+     "acting": "tiptoe: short high steps, shoulders up, eyes sideways",
+     "library": "walk + footfalls with short stride, sq 1.03"
+    },
+    {
+     "t": 17.64,
+     "cue": {
+      "word": "التقدم،",
+      "t": 17.64
+     },
+     "who": "inventor",
+     "action": "his arm stretches toward the knob, fingers wriggling",
+     "acting": "hand leads, body follows; mask off for two drawings (lid 0.45)",
+     "library": "handRW toward the knob, lagged body"
+    },
+    {
+     "t": 18.64,
+     "cue": {
+      "word": "لكن",
+      "t": 18.64
+     },
+     "who": "farGuards",
+     "action": "two spears cross in an X in front of his nose; he stops dead and the turban tail swings past his face",
+     "acting": "walk dies in two drawings; swing on the tail",
+     "library": "swing(t, 18.7, 0.4), spear lines"
+    },
+    {
+     "t": 19.14,
+     "cue": {
+      "word": "الحراس",
+      "t": 19.14
+     },
+     "who": "farGuards",
+     "action": "guards C and D close shoulder to shoulder, not together; the captain strides in from the pavilion",
+     "acting": "C firm, D still half asleep and a drawing late",
+     "library": "stagger, walk + footfalls for the captain"
+    },
+    {
+     "t": 19.92,
+     "cue": {
+      "word": "طلبوا",
+      "t": 19.92
+     },
+     "who": "captain",
+     "action": "flat palm out: WAIT!",
+     "acting": "arm arrives in three drawings and holds; moustache bristles",
+     "library": "S.label balloon, PERSON_HANDS stop"
+    },
+    {
+     "t": 20.58,
+     "cue": {
+      "word": "منه",
+      "t": 20.58
+     },
+     "who": "inventor",
+     "action": "points at himself with both hands: who, me?",
+     "acting": "mask on again, eyebrows high, head shaking",
+     "library": "PERSON_HANDS self, tremble 0.5"
+    },
+    {
+     "t": 20.92,
+     "cue": {
+      "word": "الانتظار",
+      "t": 20.92
+     },
+     "who": "inventor",
+     "action": "is walked two steps backwards to 2075 behind the crossed spears",
+     "acting": "feet shuffle, eyes never leave the horse",
+     "library": "walk + footfalls backwards (dir kept)"
+    },
+    {
+     "t": 21.72,
+     "cue": {
+      "word": "حتى",
+      "t": 21.72
+     },
+     "who": "craftsman",
+     "action": "camera back to the horse: he opens the toolbox and taps a brass hoof with the little hammer; the guards' helmets follow the taps",
+     "acting": "taps on threes; helmets lag one drawing each",
+     "library": "toolbox open, hammer, stagger"
+    },
+    {
+     "t": 22.44,
+     "cue": {
+      "word": "ينتهي",
+      "t": 22.44
+     },
+     "who": "princess",
+     "action": "holds the magnifier out for him; their hands nearly touch and both freeze for one drawing, then carry on very busily",
+     "acting": "eyes meet for two drawings only",
+     "library": "magnifier, handLW / handRW, flow"
+    },
+    {
+     "t": 23.12,
+     "cue": {
+      "word": "الفحص.",
+      "t": 23.12
+     },
+     "who": "inventor",
+     "action": "hops on tiptoe behind the spears to see over them, then chews the torn turban tail",
+     "acting": "hop with landSquash; mask off (lid 0.45, brow 0.4)",
+     "library": "hop, landSquash, tailTorn"
+    },
+    {
+     "t": 24.2,
+     "who": "craftsman",
+     "action": "one last tap on a brass joint: a clean glint",
+     "acting": "satisfied half nod",
+     "library": "glint star on celStep(t, 8)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 19.92,
+     "text": "WAIT!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 24.3,
+     "kind": "blip"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 24.88
+   }
+  },
+  {
+   "id": "S4",
+   "start": 24.88,
+   "end": 37.32,
+   "paragraphs": [
+    3
+   ],
+   "set": "farPalace",
+   "cast": [
+    "craftsman",
+    "princess",
+    "ebonyHorse",
+    "farGuards",
+    "farKing"
+   ],
+   "summary": "Bent over a hoof, Firuz whispers the plan: her family first, then his palace. She answers: yes, and tell the king the whole truth.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "Zoom 1.15, centre drifting (1915, 600) to (1935, 600); ground at panel y 960, both figures full length, the horse's chest and neck above them, guards and the king small behind. The closest ordinary shot of the film."
+   },
+   "composition": "Front lane (feet y 915): craftsman kneeling at the near fore hoof (1960), princess bending beside him (1890) with the magnifier. Picture balloons rise into the space left of the horse's neck (panel y 150..330). Behind: two guards craning, the king on his bench at the right edge.",
+   "actions": [
+    {
+     "t": 24.88,
+     "cue": {
+      "word": "همس",
+      "t": 24.877
+     },
+     "who": "craftsman",
+     "action": "kneels at the near fore hoof and shields his mouth with the hammer hand",
+     "acting": "kneel 0.6 by flow; eyes up at her, lid open (the prince's eyes)",
+     "library": "person kneel, flow, handRW"
+    },
+    {
+     "t": 25.54,
+     "cue": {
+      "word": "فيروز:",
+      "t": 25.54
+     },
+     "who": "farGuards",
+     "action": "two guards behind crane their necks; the tall one cups his ear, the short one polishes his helmet and pretends not to listen",
+     "acting": "out of step; heard nothing",
+     "library": "stagger, idleSway"
+    },
+    {
+     "t": 26.48,
+     "cue": {
+      "word": "«فلنعد",
+      "t": 26.48
+     },
+     "who": "iconBalloon",
+     "action": "a small picture balloon from his head: the rose palace with the blue dome and two towers",
+     "acting": "pops in three drawings",
+     "library": "iconBalloon with princessPalace at s 0.22"
+    },
+    {
+     "t": 27.42,
+     "cue": {
+      "word": "أولًا",
+      "t": 27.42
+     },
+     "who": "craftsman",
+     "action": "one finger up: first",
+     "acting": "tiny gesture kept below the horse's belly line",
+     "library": "PERSON_HANDS point"
+    },
+    {
+     "t": 28.42,
+     "cue": {
+      "word": "أهلك،",
+      "t": 28.42
+     },
+     "who": "princess",
+     "action": "her eyes shine for half a second and the ribbon stops",
+     "acting": "wet 0.5 s, lid 0.1, breath in (sq 1.02)",
+     "library": "wet, breathe"
+    },
+    {
+     "t": 29.02,
+     "cue": {
+      "word": "ثم",
+      "t": 29.02
+     },
+     "who": "iconBalloon",
+     "action": "the picture slides over to a second one: the cream palace with turquoise domes; two fingers",
+     "acting": "slide in four drawings",
+     "library": "iconBalloon with palaceToy"
+    },
+    {
+     "t": 30.22,
+     "cue": {
+      "word": "قصري",
+      "t": 30.22
+     },
+     "who": "craftsman",
+     "action": "taps his own chest: mine",
+     "acting": "small proud smile he forgets to hide",
+     "library": "PERSON_HANDS heart"
+    },
+    {
+     "t": 31.24,
+     "cue": {
+      "word": "اتفقنا».",
+      "t": 31.24
+     },
+     "who": "princess",
+     "action": "both lay a hand on the heart for a moment: the promise from her roof",
+     "acting": "same gesture, a drawing apart",
+     "library": "PERSON_HANDS heart, stagger"
+    },
+    {
+     "t": 31.92,
+     "cue": {
+      "word": "قالت:",
+      "t": 31.92
+     },
+     "who": "princess",
+     "action": "glances over her shoulder at the king: eyes, then head, with a blink",
+     "acting": "wary lid 0.25",
+     "library": "gazePlan, blink on the turn"
+    },
+    {
+     "t": 33.12,
+     "cue": {
+      "word": "«نعم،",
+      "t": 33.12
+     },
+     "who": "princess",
+     "action": "nods: yes",
+     "acting": "one complete nod",
+     "library": "flow on tip"
+    },
+    {
+     "t": 34.02,
+     "cue": {
+      "word": "وأخبر",
+      "t": 34.02
+     },
+     "who": "princess",
+     "action": "TELL THE KING THE WHOLE TRUTH. Her finger points at the pavilion, kept low by her hip",
+     "acting": "brow 0.3, voice level; the picture balloon pops away",
+     "library": "S.label balloon to her head"
+    },
+    {
+     "t": 35.08,
+     "cue": {
+      "word": "الملك",
+      "t": 35.08
+     },
+     "who": "farKing",
+     "action": "behind them the king leans sideways to hear and nearly slides off the bench",
+     "acting": "rebound, hand grabs the pavilion pole",
+     "library": "rebound, sit"
+    },
+    {
+     "t": 35.6,
+     "cue": {
+      "word": "بالحقيقة",
+      "t": 35.6
+     },
+     "who": "craftsman",
+     "action": "looks down at his brown cloak and cap; his thumb finds the crimson corner; he swallows",
+     "acting": "sq dip 0.97, eyes down then up to her",
+     "library": "flow, gaze"
+    },
+    {
+     "t": 36.6,
+     "cue": {
+      "word": "كاملة».",
+      "t": 36.6
+     },
+     "who": "craftsman",
+     "action": "nods once, jaw set, and rises from the kneel into a small crouch of anticipation",
+     "acting": "brow 0.4, no frown; anticipate before the throw",
+     "library": "flow from kneel, anticipate(t, 37.0, 0.3)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 34.02,
+     "text": "TELL THE KING THE WHOLE TRUTH."
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 37.32
+   }
+  },
+  {
+   "id": "S5",
+   "start": 37.32,
+   "end": 46.51,
+   "paragraphs": [
+    3
+   ],
+   "set": "farPalace",
+   "cast": [
+    "craftsman",
+    "firuz",
+    "princess",
+    "inventor",
+    "farKing",
+    "farGuards",
+    "captain",
+    "ebonyHorse",
+    "peacock",
+    "doves"
+   ],
+   "summary": "The reveal, the first peak: cap and cloak fly off, the crown comes out of the toolbox, he names himself and points at the inventor. The princess looks to the king for permission.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Cut out to zoom 0.85, centre (1960, 500). A 2-frame impact flash at 37.4. Pans right to (2030, 500) for the accusation (39.1 to 40.3), then to (2090, 500) to hold the king on his steps with the three in front of him (43.2). No close-up: the whole court reacting is the picture."
+   },
+   "composition": "Firuz at 1990, princess at 1890 moving to 2020, inventor at 2075 behind crossed spears, king at the pavilion (2190), guard B at 1780 gets the cloak. PRINCE FIRUZ balloon in the sky band above him.",
+   "actions": [
+    {
+     "t": 37.32,
+     "cue": {
+      "word": "فكشف",
+      "t": 37.32
+     },
+     "who": "craftsman",
+     "action": "sweeps the cap off and throws the cloak away in one arc; the cloak flies left as a flat brown panel and lands over guard B's helmet",
+     "acting": "stretch sq 1.06 on the throw; impact frame for two frames",
+     "library": "disguiseOff (new): cloak panel on a parabola, S.emphasis {rect} with no word"
+    },
+    {
+     "t": 37.9,
+     "who": "firuz",
+     "action": "takes the gold crown from the toolbox and sets it on his head; the crimson ribbon cape unrolls behind him",
+     "acting": "straight back, shoulders open: tip 0, the craftsman's stoop gone in three drawings",
+     "library": "person prince, firuzCape with swing"
+    },
+    {
+     "t": 38.54,
+     "cue": {
+      "word": "اسمه",
+      "t": 38.54
+     },
+     "who": "firuz",
+     "action": "fist on his chest: I AM PRINCE FIRUZ!",
+     "acting": "eyes open, lid 0, voice clear; cape lifting on the wind",
+     "library": "S.label balloon; castFinish rim light [1,-1] for 1 s"
+    },
+    {
+     "t": 38.9,
+     "who": "farGuards",
+     "action": "the court reacts in a ripple: helmets jump, the king half rises, the peacock fans, guard B claws the cloak off his head",
+     "acting": "each a drawing after the last; nobody in sync",
+     "library": "stagger, hop 6 units, peacock fan"
+    },
+    {
+     "t": 39.12,
+     "cue": {
+      "word": "وأشار",
+      "t": 39.12
+     },
+     "who": "firuz",
+     "action": "a level arm points at the inventor and holds; a light streak runs along the arm to him",
+     "acting": "arm arrives in three drawings, complete",
+     "library": "S.arrow from his hand to the inventor"
+    },
+    {
+     "t": 40.06,
+     "cue": {
+      "word": "إلى",
+      "t": 40.06
+     },
+     "who": "scrap",
+     "action": "with the other hand he pulls the saffron scrap from his sash and holds it up",
+     "acting": "held high, fluttering on a travelling sine",
+     "library": "turbanScrap, handLW"
+    },
+    {
+     "t": 40.32,
+     "cue": {
+      "word": "المخترع،",
+      "t": 40.32
+     },
+     "who": "inventor",
+     "action": "his hand flies to the torn turban tail: scrap and ragged end match, joined by a dotted line; he shrinks behind the spears",
+     "acting": "eyes wide, mask gone for good; sq 0.92, tremble",
+     "library": "tailTorn, tremble 2, dotted line by dash offset"
+    },
+    {
+     "t": 41.1,
+     "cue": {
+      "word": "ونظرت",
+      "t": 41.1
+     },
+     "who": "princess",
+     "action": "turns from the inventor to the king: eyes, then head, blink",
+     "acting": "calm again; lid 0.2",
+     "library": "gazePlan"
+    },
+    {
+     "t": 42.16,
+     "cue": {
+      "word": "الأميرة",
+      "t": 42.16
+     },
+     "who": "princess",
+     "action": "walks to stand by Firuz before the pavilion (1890 to 2020), hands clasped at her waist",
+     "acting": "three steps, ribbon settling after her",
+     "library": "walk + footfalls, swing on the ribbon"
+    },
+    {
+     "t": 43.24,
+     "cue": {
+      "word": "الملك",
+      "t": 43.24
+     },
+     "who": "farKing",
+     "action": "the king stands fully, belly first, and comes down one step; he looks at each of the three in turn",
+     "acting": "eyes lead the head; a slow judge, not an angry one",
+     "library": "gazePlan with three targets, walk one step"
+    },
+    {
+     "t": 43.8,
+     "cue": {
+      "word": "منتظرة",
+      "t": 43.8
+     },
+     "who": "farGuards",
+     "action": "everyone waits: guards' eyes swing between king and prince like spectators at a match, out of step",
+     "acting": "moving hold: breathing, pennants, ribbons, the scrap",
+     "library": "idleSway, breathe, gazePlan per guard seed"
+    },
+    {
+     "t": 44.9,
+     "cue": {
+      "word": "الإذن.",
+      "t": 44.9
+     },
+     "who": "farKing",
+     "action": "strokes his black beard and lifts his two scale hands, weighing",
+     "acting": "the scale gesture of episode 4; peacock tilts its head",
+     "library": "flow on aL / aR"
+    },
+    {
+     "t": 45.8,
+     "who": "farKing",
+     "action": "the scale hands stop level; one finger turns to the princess: speak",
+     "acting": "small nod",
+     "library": "PERSON_HANDS point"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 38.54,
+     "text": "I AM PRINCE FIRUZ!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 46.0,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 46.51
+   }
+  },
+  {
+   "id": "S6",
+   "start": 46.51,
+   "end": 56.74,
+   "paragraphs": [
+    4
+   ],
+   "set": "farPalace",
+   "cast": [
+    "princess",
+    "firuz",
+    "inventor",
+    "farKing",
+    "farGuards",
+    "captain",
+    "ebonyHorse"
+   ],
+   "summary": "She tells what happened since she was carried off (three picture cards). The king orders the inventor held until the judge hears him.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Zoom 0.85, centre (2000, 470): the sky band above the arcade is kept free for the three cards (panel y 110..330). From 55.3 pans right with the inventor toward the court gate, to (2200, 480)."
+   },
+   "composition": "Princess on the paving at 2020 facing the pavilion, Firuz a step behind at 1950, king on the lowest pavilion step (2110). Inventor at 2075 with guards C and D. Cards at panel x 190, 500, 810, each 250 x 170.",
+   "actions": [
+    {
+     "t": 46.51,
+     "cue": {
+      "word": "شهدت",
+      "t": 46.513
+     },
+     "who": "princess",
+     "action": "steps forward, hand on her heart, and speaks plainly",
+     "acting": "few gestures, each complete; talk on threes",
+     "library": "PERSON_HANDS heart, talk"
+    },
+    {
+     "t": 47.36,
+     "cue": {
+      "word": "الأميرة",
+      "t": 47.36
+     },
+     "who": "farKing",
+     "action": "sits down on the step edge to listen, chin on fist",
+     "acting": "leaning in, eyes on her",
+     "library": "sit 0.6 by flow"
+    },
+    {
+     "t": 48.0,
+     "cue": {
+      "word": "بما",
+      "t": 48.0
+     },
+     "who": "cards",
+     "action": "card 1 pops into the sky band: her garden, the inventor bowing beside the horse",
+     "acting": "three-drawing scale-in",
+     "library": "memoryCard with princessGarden day + figures at s 0.3"
+    },
+    {
+     "t": 48.6,
+     "cue": {
+      "word": "جرى",
+      "t": 48.6
+     },
+     "who": "cards",
+     "action": "card 2: the horse high over snow mountains, her arm pointing back the way they came",
+     "acting": "pop",
+     "library": "memoryCard with skyFlight mountains + twoRiders"
+    },
+    {
+     "t": 49.1,
+     "cue": {
+      "word": "منذ",
+      "t": 49.1
+     },
+     "who": "cards",
+     "action": "card 3: the closed court gate with its bar, a saffron turban at the grille",
+     "acting": "pop",
+     "library": "memoryCard with lockedCourt gate"
+    },
+    {
+     "t": 49.5,
+     "cue": {
+      "word": "اختطافها،",
+      "t": 49.5
+     },
+     "who": "princess",
+     "action": "her level arm points at the inventor and holds; the three cards tilt toward him",
+     "acting": "arm arrives in three drawings; brow 0.3",
+     "library": "flow, card rot 0.08"
+    },
+    {
+     "t": 50.0,
+     "who": "inventor",
+     "action": "his smile flickers on and off; he edges backward on tiptoe into the captain's chest",
+     "acting": "bump and rebound; turban tail swings",
+     "library": "rebound, swing"
+    },
+    {
+     "t": 50.44,
+     "cue": {
+      "word": "فأمر",
+      "t": 50.44
+     },
+     "who": "farKing",
+     "action": "rises with one slow raised palm, then points",
+     "acting": "real authority: the slowest gesture of the film",
+     "library": "flow on aR"
+    },
+    {
+     "t": 51.6,
+     "cue": {
+      "word": "الملك",
+      "t": 51.6
+     },
+     "who": "cards",
+     "action": "the three cards drop out of the sky band one after another",
+     "acting": "fall with a small tilt",
+     "library": "fallY, stagger"
+    },
+    {
+     "t": 52.42,
+     "cue": {
+      "word": "يوقفوا",
+      "t": 52.42
+     },
+     "who": "farGuards",
+     "action": "guards C and D take station on each side of him, spears crossed in front and behind: HOLD HIM FOR THE JUDGE.",
+     "acting": "firm, not rough: nobody touches him",
+     "library": "S.label balloon to the king, spear lines"
+    },
+    {
+     "t": 53.04,
+     "cue": {
+      "word": "المخترع",
+      "t": 53.04
+     },
+     "who": "inventor",
+     "action": "sags: pulls the turban down over his brow with both hands, knees dipping, then pleading hands",
+     "acting": "kneel 0.4, tip 0.1, eyes up from under the turban",
+     "library": "kneel, PERSON_HANDS reachBoth"
+    },
+    {
+     "t": 53.86,
+     "cue": {
+      "word": "حتى",
+      "t": 53.86
+     },
+     "who": "firuz",
+     "action": "hands the saffron scrap to the captain as evidence; the captain tucks it into his belt by the key ring",
+     "acting": "polite half bow between them",
+     "library": "turbanScrap, handRW, keyRing"
+    },
+    {
+     "t": 54.66,
+     "cue": {
+      "word": "يسمع",
+      "t": 54.66
+     },
+     "who": "iconBalloon",
+     "action": "a picture balloon above the king: a pair of balance scales",
+     "acting": "pops, pans level",
+     "library": "iconBalloon 'scales' (two pans, beam, post)"
+    },
+    {
+     "t": 55.3,
+     "cue": {
+      "word": "القاضي",
+      "t": 55.3
+     },
+     "who": "inventor",
+     "action": "glances up at the scales and gulps",
+     "acting": "sq dip, lid 0.4",
+     "library": "gaze, sq"
+    },
+    {
+     "t": 55.98,
+     "cue": {
+      "word": "أقواله.",
+      "t": 55.98
+     },
+     "who": "inventor",
+     "action": "is walked off right toward the court gate between the two guards, three different gaits; he looks back at the horse",
+     "acting": "torn tail drags a drawing late; head turned back, blink",
+     "library": "walk + footfalls x3, lagged"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 52.42,
+     "text": "HOLD HIM FOR THE JUDGE."
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 56.74
+   }
+  },
+  {
+   "id": "S7",
+   "start": 56.74,
+   "end": 67.42,
+   "paragraphs": [
+    4
+   ],
+   "set": "farPalace",
+   "cast": [
+    "farKing",
+    "firuz",
+    "princess",
+    "inventor",
+    "farGuards",
+    "captain",
+    "ebonyHorse",
+    "peacock"
+   ],
+   "summary": "The king lets the pair test the horse and go home to her family. The inventor is kept in the closed court until the hearing: his eyes at the grille, from the inside this time.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Zoom 0.9, centre (2040, 520) on king and pair. From 62.82 pans right to (2400, 520): the court wall and gate (x 2400..2540) with the pavilion edge at the left of the frame."
+   },
+   "composition": "King at the foot of the pavilion steps (2100), Firuz 1990, princess 2040 in front of the horse's head, horse on the star (1900). Then: court gate, guards A and B on the leaves, captain with the key, peacock crossing at 2320.",
+   "actions": [
+    {
+     "t": 56.74,
+     "cue": {
+      "word": "ثم",
+      "t": 56.74
+     },
+     "who": "farKing",
+     "action": "turns to the pair; the judge's face opens into a smile",
+     "acting": "brow -0.2, lid 0.1",
+     "library": "flow"
+    },
+    {
+     "t": 57.4,
+     "who": "farKing",
+     "action": "comes down the last step, belly first",
+     "acting": "footfalls, a small bounce",
+     "library": "walk + footfalls"
+    },
+    {
+     "t": 58.06,
+     "cue": {
+      "word": "أذن",
+      "t": 58.06
+     },
+     "who": "farKing",
+     "action": "an open hand sweeps from them to the horse to the sky: GO. TAKE HER HOME.",
+     "acting": "whole arm arc, ending high",
+     "library": "S.label balloon, flow on aR"
+    },
+    {
+     "t": 58.5,
+     "cue": {
+      "word": "لهما",
+      "t": 58.5
+     },
+     "who": "firuz",
+     "action": "Firuz and the princess look at each other, the first open look of the film",
+     "acting": "blink a drawing apart; both breathe out",
+     "library": "lookAt each other"
+    },
+    {
+     "t": 59.02,
+     "cue": {
+      "word": "باختبار",
+      "t": 59.02
+     },
+     "who": "firuz",
+     "action": "bows: the graceful bow he had to spoil in episode 4, now whole",
+     "acting": "flow down and up, cape following (lagged)",
+     "library": "flow, lagged cape"
+    },
+    {
+     "t": 59.84,
+     "cue": {
+      "word": "الحصان",
+      "t": 59.84
+     },
+     "who": "farKing",
+     "action": "cannot resist: raps the horse's neck with a knuckle once more and hides the hand behind his back",
+     "acting": "eyes sideways, innocent",
+     "library": "handRW, flow"
+    },
+    {
+     "t": 60.62,
+     "cue": {
+      "word": "والعودة",
+      "t": 60.62
+     },
+     "who": "princess",
+     "action": "her delight comes out at last: hands together, heels off the ground, veil ribbon up",
+     "acting": "hop 14 units with landSquash, mouth 'smile'",
+     "library": "hop, landSquash"
+    },
+    {
+     "t": 61.96,
+     "cue": {
+      "word": "أهلها،",
+      "t": 61.96
+     },
+     "who": "iconBalloon",
+     "action": "picture balloon above her: the rose palace with the blue dome; her eyes shine",
+     "acting": "wet 0.5 s, chin up",
+     "library": "iconBalloon with princessPalace"
+    },
+    {
+     "t": 62.82,
+     "cue": {
+      "word": "وحفظه",
+      "t": 62.82
+     },
+     "who": "camera",
+     "action": "pan right to the court gate: guards A and B swing the leaves open as the inventor arrives between C and D",
+     "acting": "the pair stay visible at the left edge until 63.6",
+     "library": "townDoor x2 open 0..1"
+    },
+    {
+     "t": 63.76,
+     "cue": {
+      "word": "في",
+      "t": 63.76
+     },
+     "who": "inventor",
+     "action": "holds the gate post and looks back at his horse; a guard taps his shoulder with one finger",
+     "acting": "long look, lid 0.4; then goes in",
+     "library": "gaze, lagged tail"
+    },
+    {
+     "t": 63.98,
+     "cue": {
+      "word": "الساحة",
+      "t": 63.98
+     },
+     "who": "set",
+     "action": "he steps through; the two leaves swing shut",
+     "acting": "leaves a drawing apart",
+     "library": "townDoor leaves, walk"
+    },
+    {
+     "t": 64.66,
+     "cue": {
+      "word": "حتى",
+      "t": 64.66
+     },
+     "who": "captain",
+     "action": "turns the key from his ring and hangs the saffron scrap on the gate nail",
+     "acting": "tidy, pleased with himself; moustache twitch",
+     "library": "keyRing, turbanScrap"
+    },
+    {
+     "t": 65.4,
+     "cue": {
+      "word": "المحاكمة.",
+      "t": 65.4
+     },
+     "who": "inventor",
+     "action": "two eyes and a saffron turban rise in the gate grille from the INSIDE: the mirror of episode 4; the peacock stops and fans its tail at him",
+     "acting": "eyes left, right, down",
+     "library": "grille bars over a bust, gazePlan, peacock fan 1"
+    },
+    {
+     "t": 66.45,
+     "who": "gateBar",
+     "action": "in the pause the bar drops into its brackets and bounces once: CLANK!; the turban ducks",
+     "acting": "bar with weight, turban down in two drawings",
+     "library": "gateBar with fallY + rebound"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 58.06,
+     "text": "GO. TAKE HER HOME."
+    },
+    {
+     "t": 66.45,
+     "text": "CLANK!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 66.6,
+     "kind": "stamp"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 67.42
+   }
+  },
+  {
+   "id": "S8",
+   "start": 67.42,
+   "end": 74.32,
+   "paragraphs": [
+    5
+   ],
+   "set": "farPalace",
+   "cast": [
+    "firuz",
+    "princess",
+    "ebonyHorse",
+    "farKing",
+    "farGuards",
+    "captain",
+    "peacock"
+   ],
+   "summary": "They mount together, she in front, and check the knob, the lever and the safety rope like two pilots.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Zoom 0.95, centre (1900, 520), with a slow 12-unit drift so the frame is never dead; horse full length with sky above for the lift-off."
+   },
+   "composition": "Horse on the star (1900) facing right. Princess on the FRONT seat (nearest the neck and the hidden lever), Firuz on the REAR seat reaching past her to the knob (twoRiders). Footstool at 1870. King back on the bench at the right edge, guards forming a wide ring.",
+   "actions": [
+    {
+     "t": 67.42,
+     "cue": {
+      "word": "ركب",
+      "t": 67.42
+     },
+     "who": "firuz",
+     "action": "vaults up onto the rear seat: the vault of episode 1",
+     "acting": "anticipate crouch, hop, settle with a bump; cape swings past and back",
+     "library": "anticipate, hop, landSquash, swing"
+    },
+    {
+     "t": 68.12,
+     "cue": {
+      "word": "فيروز",
+      "t": 68.12
+     },
+     "who": "firuz",
+     "action": "settles and offers his hand down",
+     "acting": "smile, open palm",
+     "library": "handRW"
+    },
+    {
+     "t": 68.88,
+     "cue": {
+      "word": "والأميرة",
+      "t": 68.88
+     },
+     "who": "princess",
+     "action": "steps on the footstool guard B has set down and up to the front seat with his hand; the veil ribbon follows",
+     "acting": "two steps, light; no help needed really",
+     "library": "seatStool, twoRiders mount (HORSE-03), lagged ribbon"
+    },
+    {
+     "t": 69.66,
+     "cue": {
+      "word": "معًا،",
+      "t": 69.66
+     },
+     "who": "princess",
+     "action": "both settle; a look, a quick nod",
+     "acting": "riders sq 0.95 to 1; the horse does not give at all",
+     "library": "twoRiders, landSquash on riders only"
+    },
+    {
+     "t": 70.46,
+     "cue": {
+      "word": "وتحققا",
+      "t": 70.46
+     },
+     "who": "princess",
+     "action": "the checklist: she points, he answers",
+     "acting": "businesslike, enjoying it",
+     "library": "PERSON_HANDS point"
+    },
+    {
+     "t": 71.2,
+     "cue": {
+      "word": "من",
+      "t": 71.64
+     },
+     "who": "tick",
+     "action": "she taps the UP knob: a brass glint and a green tick",
+     "acting": "tap on threes",
+     "library": "tick (HORSE-04), glint"
+    },
+    {
+     "t": 71.86,
+     "cue": {
+      "word": "المقابض",
+      "t": 71.86
+     },
+     "who": "tick",
+     "action": "she lifts the first mane block: the DOWN lever glints, second tick; two guards who learned the secret in episode 4 nod wisely and their helmets knock",
+     "acting": "helmet knock, both rub their heads",
+     "library": "ebonyHorse reveal, tick, stagger"
+    },
+    {
+     "t": 72.72,
+     "cue": {
+      "word": "والحبال.",
+      "t": 72.72
+     },
+     "who": "saddleRope",
+     "action": "the rope: a crimson cord from the saddle horn round both waists; she tugs twice, it snaps taut; he tugs his end and gives a thumbs up",
+     "acting": "taut line with a short vibration",
+     "library": "saddleRope (new, tetherRope code): sag 0..1, taut"
+    },
+    {
+     "t": 73.6,
+     "who": "farGuards",
+     "action": "the guards step back into a wide ring, one by one; the king sits forward on the very edge of his bench",
+     "acting": "stagger; king's feet off the ground, swinging",
+     "library": "walk + footfalls backwards, stagger"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 73.95,
+     "kind": "blip"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 74.32
+   }
+  },
+  {
+   "id": "S9",
+   "start": 74.32,
+   "end": 81.78,
+   "paragraphs": [
+    5
+   ],
+   "set": "farPalace",
+   "cast": [
+    "firuz",
+    "princess",
+    "ebonyHorse",
+    "farKing",
+    "farGuards",
+    "captain",
+    "peacock",
+    "doves"
+   ],
+   "summary": "Firuz turns the ascent knob and the horse rises before the amazed king and guards.",
+   "camera": {
+    "shot": "insert",
+    "move": "crane",
+    "notes": "74.32 to 76.3: INSERT of the knob (handInsert on a soft morning-sky plate). 76.36: cut to the wide, zoom 0.85 at (1900, 500); from 77.18 the camera cranes up with the horse to (1900, 330), zoom 0.72, keeping the square and the upturned faces in the lower third."
+   },
+   "composition": "Insert: knob r 14 drawn at scale 9 in panel centre, Firuz's fingers (cream cuff, crimson edge) from the left, a turquoise sleeve edge at the top. Wide: horse rises from y 900 to lift 330 above the star; shadow on the star shrinking; king right, ring of guards left and right.",
+   "actions": [
+    {
+     "t": 74.32,
+     "cue": {
+      "word": "أدار",
+      "t": 74.32
+     },
+     "who": "knob",
+     "action": "INSERT: Firuz's fingers close on the brass UP knob, past the edge of her turquoise sleeve",
+     "acting": "a breath before the turn (fingers flex)",
+     "library": "handInsert (HORSE-01), cuff cream with crimson edge"
+    },
+    {
+     "t": 75.16,
+     "cue": {
+      "word": "الأمير",
+      "t": 75.16
+     },
+     "who": "knob",
+     "action": "a quarter turn in three drawings; the engraved arrow swings to point up",
+     "acting": "held after the turn",
+     "library": "handInsert turn 0..0.25"
+    },
+    {
+     "t": 75.74,
+     "cue": {
+      "word": "مقبض",
+      "t": 75.74
+     },
+     "who": "lettering",
+     "action": "tag UP with a neon streak",
+     "acting": "label, not speech",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 76.36,
+     "cue": {
+      "word": "الصعود",
+      "t": 76.36
+     },
+     "who": "ebonyHorse",
+     "action": "wide again: the brass lights in order, neck, chest, joints, hooves",
+     "acting": "the only way the horse acts",
+     "library": "ebonyHorse powerOn 0..1"
+    },
+    {
+     "t": 77.18,
+     "cue": {
+      "word": "فارتفع",
+      "t": 77.18
+     },
+     "who": "ebonyHorse",
+     "action": "rises straight off the star, rigid; a dust ring spreads, the shadow shrinks, pennants and peacock tails blow outward",
+     "acting": "no squash, no leg moves",
+     "library": "flyRig, kfn y, groundShadow(ctx, 1900, 900, 260, lift), dustBurst"
+    },
+    {
+     "t": 78.14,
+     "cue": {
+      "word": "الحصان",
+      "t": 78.14
+     },
+     "who": "princess",
+     "action": "her veil ribbon and his cape stream downward; she grips the rope, eyes wide, then grins",
+     "acting": "eyes 'wide' for four drawings, then mouth 'smile'",
+     "library": "twoRiders in flyRig, ribbons opposite to travel"
+    },
+    {
+     "t": 78.84,
+     "cue": {
+      "word": "أمام",
+      "t": 78.84
+     },
+     "who": "ebonyHorse",
+     "action": "level with the arcade roof, still rising",
+     "acting": "6 px bob begins",
+     "library": "flyRig bob"
+    },
+    {
+     "t": 79.4,
+     "cue": {
+      "word": "الملك",
+      "t": 79.4
+     },
+     "who": "farKing",
+     "action": "the king springs off his bench, both hands on his turban, mouth round",
+     "acting": "hop with landSquash, eyes 'wide'",
+     "library": "hop, landSquash"
+    },
+    {
+     "t": 79.94,
+     "cue": {
+      "word": "والحراس",
+      "t": 79.94
+     },
+     "who": "farGuards",
+     "action": "helmets tip back in a ripple; the sleepy guard tips too far and sits down on the paving, spear clattering",
+     "acting": "bump (sq 0.85) and a slow blink",
+     "library": "stagger, impactSquash"
+    },
+    {
+     "t": 80.84,
+     "cue": {
+      "word": "بدهشة،",
+      "t": 80.84
+     },
+     "who": "lettering",
+     "action": "OOOH! over the crowd; the gardener's boy runs in pointing; both peacocks in full fan",
+     "acting": "lettering in the wall band, not over a face",
+     "library": "S.label, walk + footfalls"
+    },
+    {
+     "t": 81.3,
+     "who": "ebonyHorse",
+     "action": "at lift 330 the horse turns to face the great dome",
+     "acting": "a turn is 4 drawings",
+     "library": "flyRig turn"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 75.74,
+     "text": "UP"
+    },
+    {
+     "t": 80.84,
+     "text": "OOOH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 81.78
+   }
+  },
+  {
+   "id": "S10",
+   "start": 81.78,
+   "end": 86.88,
+   "paragraphs": [
+    5
+   ],
+   "set": "farPalace",
+   "cast": [
+    "ebonyHorse",
+    "firuz",
+    "princess",
+    "farKing",
+    "farGuards",
+    "inventor",
+    "doves"
+   ],
+   "summary": "One short circle above the palace: the horse flies round the great tangerine dome and away toward the mountains.",
+   "camera": {
+    "shot": "establishing",
+    "move": "tilt",
+    "notes": "The widest view: zoom 0.62, centre (1700, 330) tilting up to (1700, 250): whole palace, three domes, both towers, mountains, the square small at the bottom (ground at panel y 968)."
+   },
+   "composition": "Rig at s 0.5. Path: from above the star (1900, 520) left and up, BEHIND the great dome (centre x 1600, r 160, top y 150) at y 300, out at its left side (1400, 260), turn, back across the FRONT of the dome at y 210, then up and right toward the mountains. The dome is redrawn as a front pass while the horse is behind it.",
+   "actions": [
+    {
+     "t": 81.78,
+     "cue": {
+      "word": "ثم",
+      "t": 81.78
+     },
+     "who": "camera",
+     "action": "the whole palace under the morning sky; the horse small in the upper third, gliding left",
+     "acting": "gold wind ribbons from the rear hooves",
+     "library": "flyRig s 0.5, ribbons"
+    },
+    {
+     "t": 82.34,
+     "cue": {
+      "word": "دار",
+      "t": 82.34
+     },
+     "who": "ebonyHorse",
+     "action": "banks and slides behind the great dome",
+     "acting": "nose up 8 degrees; hidden by the dome front pass",
+     "library": "farPalace({front:'dome'}) after the rig"
+    },
+    {
+     "t": 82.76,
+     "cue": {
+      "word": "بهما",
+      "t": 82.76
+     },
+     "who": "doves",
+     "action": "a flock of doves lifts off the dome, each on its own beat",
+     "acting": "seeded flaps, never together",
+     "library": "bird dove fly, stagger"
+    },
+    {
+     "t": 83.3,
+     "cue": {
+      "word": "دورة",
+      "t": 83.3
+     },
+     "who": "ebonyHorse",
+     "action": "comes out on the left of the dome, turns, and crosses in front of it",
+     "acting": "turn in 4 drawings; riders' ribbons flip side",
+     "library": "flyRig turn"
+    },
+    {
+     "t": 83.94,
+     "cue": {
+      "word": "قصيرة",
+      "t": 83.94
+     },
+     "who": "fx",
+     "action": "the two gold ribbons close into a ring round the dome that hangs and fades; the horse's shadow slides over the white facade",
+     "acting": "ring alpha 1 to 0 over 2 s",
+     "library": "ribbon polyline history, groundShadow on the facade {flat:true}"
+    },
+    {
+     "t": 84.72,
+     "cue": {
+      "word": "فوق",
+      "t": 84.72
+     },
+     "who": "farKing",
+     "action": "far below the king waves both arms and the guards wave their spears; at the court gate grille two eyes follow the ring round",
+     "acting": "tiny figures, each moving differently",
+     "library": "persons at camera scale, gazePlan on the grille eyes"
+    },
+    {
+     "t": 85.42,
+     "cue": {
+      "word": "القصر.",
+      "t": 85.42
+     },
+     "who": "firuz",
+     "action": "the riders wave down; nose up 20 degrees, the horse heads for the snow mountains and shrinks",
+     "acting": "climbing grammar: nose up, ribbons back",
+     "library": "flyRig pitch 20, s 0.5 to 0.3"
+    },
+    {
+     "t": 86.2,
+     "who": "fx",
+     "action": "the last of the ring fades; a cloud slides across the frame for the cut",
+     "acting": "cloud covers the frame at 86.88",
+     "library": "cloudFlat wipe"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 86.45,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "match-cut",
+    "t": 86.88
+   }
+  },
+  {
+   "id": "S11",
+   "start": 86.88,
+   "end": 93.32,
+   "paragraphs": [
+    6
+   ],
+   "set": "skyFlight",
+   "cast": [
+    "ebonyHorse",
+    "firuz",
+    "princess",
+    "swallows"
+   ],
+   "summary": "They fly over fields and rivers until the mountains of her homeland appear.",
+   "camera": {
+    "shot": "wide",
+    "move": "drift",
+    "notes": "Flight framing from the bible: horse in the upper third at panel (430, 330), s 0.8, flying right; land plate scrolling left below; a slow drift down of 30 units as the mountains rise."
+   },
+   "composition": "Day azure plate. Land plate kingdomBelow variant 'fields' (new) fills panel y 700..1250. Horizon at panel y 700; the rose-violet mountains rise there from 90.9. Horse shadow on the land.",
+   "actions": [
+    {
+     "t": 86.88,
+     "cue": {
+      "word": "طارا",
+      "t": 86.88
+     },
+     "who": "ebonyHorse",
+     "action": "the cloud clears: cruising level with a 6 px bob, clouds sliding left",
+     "acting": "cape and veil ribbon stream back",
+     "library": "skyFlight day, flyRig, twoRiders"
+    },
+    {
+     "t": 87.76,
+     "cue": {
+      "word": "فوق",
+      "t": 87.76
+     },
+     "who": "set",
+     "action": "the land plate scrolls underneath, the horse's small shadow running over it",
+     "acting": "shadow {flat:true}",
+     "library": "kingdomBelow variant 'fields', groundShadow"
+    },
+    {
+     "t": 88.32,
+     "cue": {
+      "word": "الحقول",
+      "t": 88.32
+     },
+     "who": "set",
+     "action": "a patchwork of fields: green, gold, a red poppy field; a farmer with two oxen, a windmill, sheep dots",
+     "acting": "the farmer looks up and his straw hat tips back",
+     "library": "plate + three live dots"
+    },
+    {
+     "t": 89.0,
+     "cue": {
+      "word": "والأنهار",
+      "t": 89.0
+     },
+     "who": "set",
+     "action": "three silver rivers braid together; boats, a waterwheel, glints",
+     "acting": "glints on threes",
+     "library": "plate, glints celStep(t, 8)"
+    },
+    {
+     "t": 89.6,
+     "who": "swallows",
+     "action": "three swallows fall in beside the horse; the princess holds out a hand to them and Firuz laughs",
+     "acting": "birds each on its own flap; her eyes follow them",
+     "library": "bird sparrow pal 1 fly, lookAt"
+    },
+    {
+     "t": 90.04,
+     "cue": {
+      "word": "حتى",
+      "t": 90.04
+     },
+     "who": "princess",
+     "action": "leans forward over the wooden neck, shading her eyes",
+     "acting": "tip 0.1, hand to brow",
+     "library": "handLW, flow"
+    },
+    {
+     "t": 90.9,
+     "cue": {
+      "word": "ظهرت",
+      "t": 90.9
+     },
+     "who": "set",
+     "action": "on the horizon rose-violet mountains rise out of the haze",
+     "acting": "parallax layer slides up 60 units",
+     "library": "mountain layer kfn"
+    },
+    {
+     "t": 91.52,
+     "cue": {
+      "word": "جبال",
+      "t": 91.52
+     },
+     "who": "set",
+     "action": "a river gap opens between two peaks, bright with light",
+     "acting": "light band across the peaks",
+     "library": "celShade highlight band"
+    },
+    {
+     "t": 92.1,
+     "cue": {
+      "word": "وطن",
+      "t": 92.1
+     },
+     "who": "princess",
+     "action": "points and bounces in the saddle: HOME!",
+     "acting": "sq jitter on twos, mouth 'smile', eyes wide",
+     "library": "S.label balloon"
+    },
+    {
+     "t": 92.64,
+     "cue": {
+      "word": "الأميرة.",
+      "t": 92.64
+     },
+     "who": "firuz",
+     "action": "leans to look over her shoulder; his cape whips; her eyes are wet for a moment",
+     "acting": "wet 0.5 s; both look the same way",
+     "library": "lookAt, firuzCape"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 92.1,
+     "text": "HOME!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 93.32
+   }
+  },
+  {
+   "id": "S12",
+   "start": 93.32,
+   "end": 100.32,
+   "paragraphs": [
+    6
+   ],
+   "set": "skyFlight",
+   "cast": [
+    "ebonyHorse",
+    "firuz",
+    "princess",
+    "doves"
+   ],
+   "summary": "She lowers the horse herself when her family's palace comes into view below.",
+   "camera": {
+    "shot": "wide",
+    "move": "tilt",
+    "notes": "Wide flight framing; INSERT of the lever 94.9 to 96.4 (the film's second and last insert); then the descent: nose down 12 degrees, clouds scrolling up, the camera tilting down so the river city grows in the lower half."
+   },
+   "composition": "Insert: the first mane block lifted, lever 38 long with ball tip at scale 8, her hand (turquoise sleeve, gold bangle) from the right. Wide: horse at panel (470, 300); riverCity miniature (princessPalace: rose stone, blue dome, two towers) grows from s 0.3 to 0.6 at panel (560, 980).",
+   "actions": [
+    {
+     "t": 93.32,
+     "cue": {
+      "word": "خفضت",
+      "t": 93.32
+     },
+     "who": "princess",
+     "action": "looks back at him: may I? He lifts both hands off the controls: all yours",
+     "acting": "her brow up, his palms out",
+     "library": "twoRiders, PERSON_HANDS"
+    },
+    {
+     "t": 94.2,
+     "who": "princess",
+     "action": "reaches forward under the first mane block",
+     "acting": "hand leads, shoulder follows",
+     "library": "handLW to the lever point (h1Loc)"
+    },
+    {
+     "t": 95.06,
+     "cue": {
+      "word": "الحصان",
+      "t": 95.06
+     },
+     "who": "lever",
+     "action": "INSERT: her fingers ease the hidden lever a little; tag DOWN",
+     "acting": "gentle: she remembers what too much does",
+     "library": "handInsert with turquoise cuff and bangle, S.label"
+    },
+    {
+     "t": 95.7,
+     "cue": {
+      "word": "بنفسها",
+      "t": 95.7
+     },
+     "who": "firuz",
+     "action": "wide: Firuz sits with both hands in the air, impressed, while she flies",
+     "acting": "comic 'no hands'; brows up, grin",
+     "library": "PERSON_HANDS armsOut, idleSway"
+    },
+    {
+     "t": 96.56,
+     "cue": {
+      "word": "حين",
+      "t": 96.56
+     },
+     "who": "ebonyHorse",
+     "action": "nose down 12 degrees; clouds scroll up, cape and veil stream upward",
+     "acting": "descending grammar from the bible",
+     "library": "flyRig pitch -12"
+    },
+    {
+     "t": 97.3,
+     "cue": {
+      "word": "رأت",
+      "t": 97.3
+     },
+     "who": "fx",
+     "action": "through a thin cloud deck: wisps whip past",
+     "acting": "three drawings of white",
+     "library": "cloud wisps"
+    },
+    {
+     "t": 97.74,
+     "cue": {
+      "word": "قصر",
+      "t": 97.74
+     },
+     "who": "set",
+     "action": "below: the river city, the rose palace with its blue dome and the two towers",
+     "acting": "miniature at s 0.3",
+     "library": "kingdomBelow far + princessPalace toy"
+    },
+    {
+     "t": 98.26,
+     "cue": {
+      "word": "أهلها",
+      "t": 98.26
+     },
+     "who": "princess",
+     "action": "her free hand goes to her heart as it grows",
+     "acting": "wet 0.4 s, then a firm nod",
+     "library": "PERSON_HANDS heart"
+    },
+    {
+     "t": 98.86,
+     "cue": {
+      "word": "قريبًا",
+      "t": 98.86
+     },
+     "who": "set",
+     "action": "roofs, washing lines, palms; people as dots stop and point up",
+     "acting": "dots pop up one by one",
+     "library": "seeded dots, stagger"
+    },
+    {
+     "t": 99.58,
+     "cue": {
+      "word": "تحتها،",
+      "t": 99.58
+     },
+     "who": "doves",
+     "action": "the horse's shadow crosses the blue dome and doves burst up from it",
+     "acting": "each on its own flap",
+     "library": "bird dove fly, groundShadow {flat:true}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 95.06,
+     "text": "DOWN"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 100.32
+   }
+  },
+  {
+   "id": "S13",
+   "start": 100.32,
+   "end": 104.87,
+   "paragraphs": [
+    6
+   ],
+   "set": "riverRun",
+   "cast": [
+    "ebonyHorse",
+    "firuz",
+    "princess",
+    "boatman"
+   ],
+   "summary": "Low over the water they follow the river she knows well, between the two towers.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Side tracking shot, zoom 0.85: the rig stays near panel (420, 420) while the riverRun strip scrolls from x 0 to 1500; water in the lower third."
+   },
+   "composition": "riverRun (new plate, 2600 wide): river band y 760..1230 in the foreground, far bank y 700..760 with palms, houses and washing; the TWO TOWERS with their lamp bridge at x 1900 and 2020 (tops y 330), the rose palace and blue dome beyond at x 2300. Horse at lift 170 over the water with a broken reflection under it.",
+   "actions": [
+    {
+     "t": 100.32,
+     "cue": {
+      "word": "وتبعا",
+      "t": 100.32
+     },
+     "who": "ebonyHorse",
+     "action": "levels out low over the river; its reflection wobbles in the water",
+     "acting": "reflection: the rig flipped at alpha 0.35 in 6 sliced bands",
+     "library": "flyRig level, reflection slices"
+    },
+    {
+     "t": 101.0,
+     "who": "set",
+     "action": "the bank slides by: palms, flat roofs, washerwomen who look up and wave",
+     "acting": "two parallax layers",
+     "library": "riverRun camX"
+    },
+    {
+     "t": 101.5,
+     "cue": {
+      "word": "مجرى",
+      "t": 101.5
+     },
+     "who": "princess",
+     "action": "the river bends; she banks the horse with two light touches of the lever and Firuz holds only the rope",
+     "acting": "rig tilt 8 degrees and back",
+     "library": "flyRig roll, handLW"
+    },
+    {
+     "t": 102.1,
+     "cue": {
+      "word": "نهر",
+      "t": 102.1
+     },
+     "who": "boatman",
+     "action": "a fisherman in a boat looks up and his hat sails off into the water",
+     "acting": "eyes follow the horse; the hat floats behind",
+     "library": "person fisherman-coloured villager in a boat shape, fallY"
+    },
+    {
+     "t": 102.48,
+     "cue": {
+      "word": "تعرفه",
+      "t": 102.48
+     },
+     "who": "fx",
+     "action": "the sun glints on the water line up into one gold path that leads to the towers; she points along it",
+     "acting": "the password of episode 2 by daylight",
+     "library": "moonPath (HORSE-02) with day palette, k 0 to 1"
+    },
+    {
+     "t": 103.38,
+     "cue": {
+      "word": "جيدًا.",
+      "t": 103.38
+     },
+     "who": "ebonyHorse",
+     "action": "glides between the two towers over the lamp bridge; a boy on the bridge ducks, then waves",
+     "acting": "the towers pass as a front layer",
+     "library": "riverRun front pass, hop for the boy"
+    },
+    {
+     "t": 104.1,
+     "who": "set",
+     "action": "the palace hedge and garden ahead; the gold path fades",
+     "acting": "nose down 6 degrees",
+     "library": "kfn"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 104.45,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 104.87
+   }
+  },
+  {
+   "id": "S14",
+   "start": 104.87,
+   "end": 110.84,
+   "paragraphs": [
+    7
+   ],
+   "set": "princessGarden",
+   "cast": [
+    "ebonyHorse",
+    "firuz",
+    "princess",
+    "queen",
+    "foreignKing",
+    "maid",
+    "blueGuards",
+    "cat",
+    "doves"
+   ],
+   "summary": "They land safely in her family's garden and her family runs out to welcome them.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Zoom 0.8, centre (900, 480) for the landing, then pans left to (620, 500) as the family comes out of the stair arch and the princess runs to meet them."
+   },
+   "composition": "princessGarden day plate (HORSE-03). Landing spot on the lawn at x 1040, front lane (y 915), horse facing left toward the palace. Stair arch x 60..220. The meeting happens at x 520 by the fountain (620). Cat from the bench (900).",
+   "actions": [
+    {
+     "t": 104.87,
+     "cue": {
+      "word": "هبطا",
+      "t": 104.871
+     },
+     "who": "ebonyHorse",
+     "action": "a slow level descent to the lawn; the shadow grows under it",
+     "acting": "landing grammar: level, slow",
+     "library": "flyRig, groundShadow(ctx, 1040, 915, 260, lift)"
+    },
+    {
+     "t": 105.5,
+     "who": "ebonyHorse",
+     "action": "touchdown: a dust ring, the wood does not give, the riders bump and settle",
+     "acting": "riders sq 0.93 then 1",
+     "library": "dustBurst, landSquash on riders"
+    },
+    {
+     "t": 106.08,
+     "cue": {
+      "word": "بسلام،",
+      "t": 106.08
+     },
+     "who": "cat",
+     "action": "both breathe out; the orange cat trots over from the bench, tail straight up",
+     "acting": "cat walk, tail tip flicking",
+     "library": "cat pal 2, walk + footfalls"
+    },
+    {
+     "t": 106.84,
+     "cue": {
+      "word": "واستقبلهما",
+      "t": 106.84
+     },
+     "who": "queen",
+     "action": "out of the stair arch: the queen first with her skirts in her hands, the king behind holding his crown turban on, the maid, the two guards last and never in step",
+     "acting": "five different runs",
+     "library": "walk + footfalls x5, stagger"
+    },
+    {
+     "t": 107.6,
+     "who": "princess",
+     "action": "slides down and runs to them",
+     "acting": "hop down with landSquash, then a run; veil ribbon straight back",
+     "library": "hop, landSquash, walk"
+    },
+    {
+     "t": 108.46,
+     "cue": {
+      "word": "أهلها",
+      "t": 108.46
+     },
+     "who": "princess",
+     "action": "mother and daughter meet in an embrace; the veil ribbons swing past and settle; the father's arms go round both",
+     "acting": "eyes shut, wet; stop with follow-through",
+     "library": "embrace (new): handLW / handRW to the other's shoulders, swing"
+    },
+    {
+     "t": 109.22,
+     "cue": {
+      "word": "بفرح",
+      "t": 109.22
+     },
+     "who": "maid",
+     "action": "the maid throws two handfuls of rose petals: WELCOME HOME!; the guards thump their spear butts, one late",
+     "acting": "petals drift on seeded paths",
+     "library": "petals (seeded), S.label balloon, stagger"
+    },
+    {
+     "t": 110.04,
+     "cue": {
+      "word": "كبير.",
+      "t": 110.04
+     },
+     "who": "foreignKing",
+     "action": "the father wipes one eye with his sleeve, then takes Firuz's hand in both of his and pumps it; Firuz's crown slips; the cat rubs against his boot",
+     "acting": "stern face melted; crown gag from episode 3",
+     "library": "handLW / handRW, cat rub"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 109.22,
+     "text": "WELCOME HOME!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 110.84
+   }
+  },
+  {
+   "id": "S15",
+   "start": 110.84,
+   "end": 121.68,
+   "paragraphs": [
+    7
+   ],
+   "set": "princessGarden",
+   "cast": [
+    "firuz",
+    "princess",
+    "queen",
+    "foreignKing",
+    "maid",
+    "blueGuards",
+    "cat",
+    "ebonyHorse"
+   ],
+   "summary": "Firuz thanks her for her courage and good sense, and promises her father to bring her to his country with her attendants.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pan",
+    "notes": "Zoom 1.0, centre (640, 560): Firuz and the princess full length by the fountain with her parents beside them; sky band free for two cards. From 116.84 slides left to (560, 560) to include the father and the maid."
+   },
+   "composition": "Left to right: maid 330, queen 430, father 520, princess 640, Firuz 760; fountain behind at 620 (jet alive), cat at Firuz's boot, horse on the lawn at the right edge (1040). Cards at panel x 250 and 740, y 110..300.",
+   "actions": [
+    {
+     "t": 110.84,
+     "cue": {
+      "word": "شكر",
+      "t": 110.84
+     },
+     "who": "firuz",
+     "action": "turns to her, hand on his heart",
+     "acting": "eyes on her; blink on the turn",
+     "library": "PERSON_HANDS heart"
+    },
+    {
+     "t": 111.6,
+     "who": "firuz",
+     "action": "bows his head to her, the crown held on with one finger",
+     "acting": "flow nod; cape settles",
+     "library": "flow, lagged"
+    },
+    {
+     "t": 112.3,
+     "cue": {
+      "word": "فيروز",
+      "t": 112.3
+     },
+     "who": "firuz",
+     "action": "straightens and speaks",
+     "acting": "talk on threes, open hands",
+     "library": "talk"
+    },
+    {
+     "t": 112.96,
+     "cue": {
+      "word": "الأميرة",
+      "t": 112.96
+     },
+     "who": "princess",
+     "action": "waves it away; eyes down, then up at him",
+     "acting": "lid 0.3 then 0.1, a small smile",
+     "library": "gaze, flow"
+    },
+    {
+     "t": 114.06,
+     "cue": {
+      "word": "شجاعتها",
+      "t": 114.06
+     },
+     "who": "cards",
+     "action": "YOU WERE BRAVE AND CLEVER. Card 1: she stands straight before the far king, pointing at the inventor",
+     "acting": "pop in three drawings",
+     "library": "S.label balloon; memoryCard with farPalace figures"
+    },
+    {
+     "t": 115.22,
+     "cue": {
+      "word": "وحسن",
+      "t": 115.22
+     },
+     "who": "queen",
+     "action": "the queen's hand goes to her cheek, proud",
+     "acting": "idleSway, wet 0.4 s",
+     "library": "PERSON_HANDS cheek"
+    },
+    {
+     "t": 115.98,
+     "cue": {
+      "word": "تدبيرها،",
+      "t": 115.98
+     },
+     "who": "cards",
+     "action": "card 2: her hands behind her back, the hidden lever glowing in its round inset, the barred gate",
+     "acting": "pop; the father taps his temple, approving",
+     "library": "memoryCard with callout inset (HORSE-04)"
+    },
+    {
+     "t": 116.84,
+     "cue": {
+      "word": "ووعد",
+      "t": 116.84
+     },
+     "who": "firuz",
+     "action": "turns to her father and raises his right hand: a promise",
+     "acting": "straight, formal; the cards slide away",
+     "library": "flow on aR"
+    },
+    {
+     "t": 118.12,
+     "cue": {
+      "word": "يعود",
+      "t": 118.12
+     },
+     "who": "iconBalloon",
+     "action": "picture balloon: the cream palace with turquoise domes, a dotted road leading to it from a small rose palace",
+     "acting": "dots draw on",
+     "library": "iconBalloon with palaceToy + routeMap dots"
+    },
+    {
+     "t": 118.64,
+     "cue": {
+      "word": "بها",
+      "t": 118.64
+     },
+     "who": "foreignKing",
+     "action": "the father looks at his daughter; she nods firmly",
+     "acting": "eyes first, then head",
+     "library": "gazePlan"
+    },
+    {
+     "t": 119.36,
+     "cue": {
+      "word": "بلاده",
+      "t": 119.36
+     },
+     "who": "foreignKing",
+     "action": "the stern look gives way; he nods and lays a hand on Firuz's shoulder",
+     "acting": "slow, complete",
+     "library": "handRW"
+    },
+    {
+     "t": 120.16,
+     "cue": {
+      "word": "مع",
+      "t": 120.16
+     },
+     "who": "maid",
+     "action": "the maid pops in between them with three trunks stacked in her arms, nodding hard",
+     "acting": "the trunk gag from episode 3; trunks a drawing behind her",
+     "library": "trunks (packLoad chests), lagged"
+    },
+    {
+     "t": 120.58,
+     "cue": {
+      "word": "حاشيتها،",
+      "t": 120.58
+     },
+     "who": "blueGuards",
+     "action": "the two guards salute, one after the other; the top trunk slides and Firuz catches it",
+     "acting": "lurch and catch",
+     "library": "stagger, handLW"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 114.06,
+     "text": "YOU WERE BRAVE AND CLEVER."
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 121.68
+   }
+  },
+  {
+   "id": "S16",
+   "start": 121.68,
+   "end": 125.24,
+   "paragraphs": [
+    7
+   ],
+   "set": "princessGarden",
+   "cast": [
+    "firuz",
+    "princess",
+    "queen",
+    "foreignKing",
+    "maid",
+    "blueGuards",
+    "cat",
+    "ebonyHorse"
+   ],
+   "summary": "They sit together and tell what happened, as the afternoon turns gold. Days later...",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Pulls out from zoom 1.0 to 0.82, centre (800, 470), so the story cloud has room above the bench and the dome and river show."
+   },
+   "composition": "Pair on the bench (x 900, seat top y 852), cat between them; parents on cushions at 700 and 780; maid on a trunk at 1040; guards standing behind at 1120 and 1180. Story cloud centred panel (500, 260). The plate cross-fades from the day to the golden painting between 123.0 and 124.3.",
+   "actions": [
+    {
+     "t": 121.68,
+     "cue": {
+      "word": "وجلسا",
+      "t": 121.68
+     },
+     "who": "firuz",
+     "action": "everyone sits: the pair on the bench, the parents on cushions, the maid on a trunk; the cat jumps up between the two",
+     "acting": "five sits, each at its own moment",
+     "library": "sit 0..1 seat:'bench' / 'floor', stagger, cat hop"
+    },
+    {
+     "t": 122.78,
+     "cue": {
+      "word": "يرويان",
+      "t": 122.78
+     },
+     "who": "planCloud",
+     "action": "Firuz draws a circle in the air with his whole arm; a story cloud opens above them: the little horse circling a tangerine dome",
+     "acting": "whole-arm arc on flow",
+     "library": "thoughtCloud with farPalaceToy + ebonyHorse at s 0.3"
+    },
+    {
+     "t": 123.2,
+     "who": "princess",
+     "action": "she takes over, miming a careful pull of the lever; in the cloud the horse tips its nose down",
+     "acting": "precise hands; he watches her tell it",
+     "library": "flow on handL"
+    },
+    {
+     "t": 123.74,
+     "cue": {
+      "word": "ما",
+      "t": 123.74
+     },
+     "who": "queen",
+     "action": "the listeners: the queen's hand flies to her mouth, the father slaps his knee, the guards lean in, the cat's head follows the cloud horse",
+     "acting": "four reactions on four beats",
+     "library": "stagger, lookAt for the cat"
+    },
+    {
+     "t": 123.96,
+     "cue": {
+      "word": "حدث.",
+      "t": 123.96
+     },
+     "who": "set",
+     "action": "the light turns gold: the golden plate comes up, the two lanterns light",
+     "acting": "plate swap, never a tint",
+     "library": "princessGarden golden plate cross-fade, lampGlow"
+    },
+    {
+     "t": 124.5,
+     "who": "fx",
+     "action": "tape flash with the caption DAYS LATER... (124.4 to 125.6); the set changes under the flash at 125.0",
+     "acting": "the one later transition",
+     "library": "S.transition({rect: panel, caption})"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 124.5,
+     "text": "DAYS LATER..."
+    }
+   ],
+   "sfx": [
+    {
+     "t": 124.8,
+     "kind": "glitch"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 124.5,
+    "label": "DAYS LATER..."
+   }
+  },
+  {
+   "id": "S17",
+   "start": 125.24,
+   "end": 136.48,
+   "paragraphs": [
+    8
+   ],
+   "set": "desertRoad",
+   "cast": [
+    "firuz",
+    "princess",
+    "maid",
+    "blueGuards",
+    "bayHorse",
+    "whiteHorse",
+    "donkey",
+    "camel",
+    "ebonyHorse",
+    "cat",
+    "king",
+    "household",
+    "child",
+    "queen",
+    "foreignKing"
+   ],
+   "summary": "The princess travels by land with Firuz and her escort to his palace, as he promised; a round picture shows the happy farewell to her family.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Zoom 0.8. Tracks right with the leaders from (700, 500); at 129.96 lets the train overtake the camera so the escort passes through frame (camera to (520, 500)), then catches up to (1750, 480) by 131.4 for the city gate."
+   },
+   "composition": "desertRoad day, city: 'right' dressed as Firuz's city (palaceToy with turquoise domes behind the wall, emerald banners). Order of march, left to right: camel pulling the cart with the ebony horse; guards on foot; maid on the donkey; princess on the white horse; Firuz on the bay. Gate at about x 2250 (measure on the set). Round inset r 150 at panel (220, 250).",
+   "actions": [
+    {
+     "t": 125.24,
+     "cue": {
+      "word": "وبعد",
+      "t": 125.237
+     },
+     "who": "set",
+     "action": "the flash clears on a bright desert road: dunes, palms, milestones, a hawk circling",
+     "acting": "bright day, own sun",
+     "library": "desertRoad({w: 2400, city: 'right'})"
+    },
+    {
+     "t": 126.38,
+     "cue": {
+      "word": "أيام،",
+      "t": 126.38
+     },
+     "who": "bayHorse",
+     "action": "the head of the caravan comes into frame at a walk",
+     "acting": "horses' heads nod out of phase",
+     "library": "horse pal 1 and pal 0, walk + GAIT.horse"
+    },
+    {
+     "t": 127.04,
+     "cue": {
+      "word": "سافرت",
+      "t": 127.04
+     },
+     "who": "princess",
+     "action": "the princess rides the white horse, upright, veil ribbon streaming",
+     "acting": "easy seat, looking around at a new country",
+     "library": "rideOn horse pal 0"
+    },
+    {
+     "t": 128.14,
+     "cue": {
+      "word": "الأميرة",
+      "t": 128.14
+     },
+     "who": "princess",
+     "action": "she shades her eyes toward the horizon",
+     "acting": "gaze far right",
+     "library": "handLW, lookAt"
+    },
+    {
+     "t": 129.18,
+     "cue": {
+      "word": "فيروز",
+      "t": 129.18
+     },
+     "who": "firuz",
+     "action": "Firuz on the bay beside her points out a landmark; his cape lifts",
+     "acting": "talking with one arm, eyes on her",
+     "library": "rideOn horse pal 1, firuzCape"
+    },
+    {
+     "t": 129.96,
+     "cue": {
+      "word": "وحاشيتها",
+      "t": 129.96
+     },
+     "who": "maid",
+     "action": "the escort passes: the maid on the donkey between two trunks, humming; the two guards on foot, out of step",
+     "acting": "donkey ears flick; guards stagger",
+     "library": "rideOn donkey, load chests, walk + footfalls"
+    },
+    {
+     "t": 130.5,
+     "who": "ebonyHorse",
+     "action": "last, a camel pulls the flat cart with the ebony horse under a striped cloth, brass hooves showing; the orange cat rides on its saddle",
+     "acting": "the camel chews; the cat sits like a king",
+     "library": "camel walk, platformCart, coverCloth, cat sit"
+    },
+    {
+     "t": 131.1,
+     "cue": {
+      "word": "إلى",
+      "t": 131.1
+     },
+     "who": "camera",
+     "action": "the camera catches up with the leaders: the city gate ahead, cream walls, turquoise domes, emerald banners",
+     "acting": "banners on a travelling sine",
+     "library": "desertRoad city gate + palaceToy"
+    },
+    {
+     "t": 131.42,
+     "cue": {
+      "word": "قصره",
+      "t": 131.42
+     },
+     "who": "firuz",
+     "action": "Firuz's arm opens wide: there",
+     "acting": "proud, a little shy",
+     "library": "flow on aR"
+    },
+    {
+     "t": 132.12,
+     "cue": {
+      "word": "كما",
+      "t": 132.12
+     },
+     "who": "king",
+     "action": "at the gate the emerald king waits with open arms, the household behind him, the palace child already running out",
+     "acting": "belly-first hurry; five household members on their own seeds",
+     "library": "person caliph, walk + footfalls, stagger"
+    },
+    {
+     "t": 132.74,
+     "cue": {
+      "word": "وعدها،",
+      "t": 132.74
+     },
+     "who": "firuz",
+     "action": "hand on his heart to her: as promised; her hand answers",
+     "acting": "the heart gesture, a drawing apart",
+     "library": "PERSON_HANDS heart"
+    },
+    {
+     "t": 133.44,
+     "cue": {
+      "word": "بعد",
+      "t": 133.44
+     },
+     "who": "cards",
+     "action": "a round picture pops in at the upper left: her garden gate at home",
+     "acting": "three-drawing scale-in",
+     "library": "memoryCard round (callout inset) with princessGarden"
+    },
+    {
+     "t": 134.5,
+     "cue": {
+      "word": "ودعت",
+      "t": 134.5
+     },
+     "who": "queen",
+     "action": "inside it her mother and father wave, the queen with a handkerchief, both laughing",
+     "acting": "two waves at different speeds",
+     "library": "persons at s 0.4, flow"
+    },
+    {
+     "t": 135.12,
+     "cue": {
+      "word": "أهلها",
+      "t": 135.12
+     },
+     "who": "princess",
+     "action": "on the road she looks back over her shoulder and waves once",
+     "acting": "head turn with a blink; smile",
+     "library": "gazePlan, flow on aL"
+    },
+    {
+     "t": 135.8,
+     "cue": {
+      "word": "بفرح.",
+      "t": 135.8
+     },
+     "who": "child",
+     "action": "the picture closes; the child reaches the cart and knocks on the wooden horse under its cloth, as in episode 1",
+     "acting": "knock on threes, ear to the wood",
+     "library": "person child, handRW"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "whip",
+    "t": 136.48
+   }
+  },
+  {
+   "id": "S18",
+   "start": 136.48,
+   "end": 142.06,
+   "paragraphs": [
+    8
+   ],
+   "set": "palaceGarden",
+   "cast": [
+    "princess",
+    "firuz",
+    "ebonyHorse",
+    "king",
+    "household",
+    "child",
+    "doves"
+   ],
+   "summary": "In the garden where it all began she learns to fly the horse; then he jumps on behind and they laugh.",
+   "camera": {
+    "shot": "wide",
+    "move": "crane",
+    "notes": "Zoom 0.8, centre (1080, 480), the framing of episode 1's demonstration; cranes up to (1080, 380) as the horse rises."
+   },
+   "composition": "palaceGarden (HORSE-01) with a golden-hour plate. Horse on the star tile (1020) facing right, princess alone on the front seat. Firuz on the ground at 1150 by the neck, where the inventor stood in episode 1. King on the dais throne (1760), household of five at 1250..1450, child at 1190.",
+   "actions": [
+    {
+     "t": 136.48,
+     "cue": {
+      "word": "تعلمت",
+      "t": 136.48
+     },
+     "who": "princess",
+     "action": "alone in the saddle on the star tile; Firuz stands by the neck as teacher and points at the knob",
+     "acting": "she listens with a raised brow: she knows",
+     "library": "ebonyHorse + single front rider, PERSON_HANDS point"
+    },
+    {
+     "t": 137.3,
+     "who": "princess",
+     "action": "she gives the knob a quarter turn; the brass lights in order",
+     "acting": "anticipation breath, then the turn",
+     "library": "handLW, ebonyHorse powerOn"
+    },
+    {
+     "t": 138.26,
+     "cue": {
+      "word": "قيادة",
+      "t": 138.26
+     },
+     "who": "ebonyHorse",
+     "action": "the horse rises with a beginner's wobble; Firuz runs underneath with his arms out; the household ducks in a ripple and the king covers his eyes, then peeks",
+     "acting": "bob 14 px, roll 6 degrees; shadow shrinking",
+     "library": "flyRig, groundShadow, walk + footfalls, stagger"
+    },
+    {
+     "t": 138.9,
+     "cue": {
+      "word": "الحصان،",
+      "t": 138.9
+     },
+     "who": "ebonyHorse",
+     "action": "she finds the level, glides out over the fountain, turns and comes back; the child runs below with arms out like wings",
+     "acting": "wobble gone: bob 6 px; turn in 4 drawings",
+     "library": "flyRig turn, walk for the child"
+    },
+    {
+     "t": 139.68,
+     "cue": {
+      "word": "ثم",
+      "t": 139.68
+     },
+     "who": "firuz",
+     "action": "she dips to hover at knee height beside him and he vaults up behind her",
+     "acting": "anticipate, hop, bump on landing; cape swing",
+     "library": "anticipate, hop, landSquash, twoRiders"
+    },
+    {
+     "t": 140.38,
+     "cue": {
+      "word": "ضحكا:",
+      "t": 140.38
+     },
+     "who": "firuz",
+     "action": "both laugh, heads back: HA HA!",
+     "acting": "sq jitter on twos, eyes 'shut'",
+     "library": "S.label lettering"
+    },
+    {
+     "t": 140.92,
+     "cue": {
+      "word": "«صار",
+      "t": 140.92
+     },
+     "who": "princess",
+     "action": "they rise together: NOW WE HAVE TWO PILOTS!",
+     "acting": "balloon with two tails, one to each head",
+     "library": "S.label balloon x2 tails"
+    },
+    {
+     "t": 141.5,
+     "who": "king",
+     "action": "below, the king laughs with both hands on his belly, the household waves, doves go up",
+     "acting": "everything on its own beat",
+     "library": "stagger, bird dove fly"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 140.38,
+     "text": "HA HA!"
+    },
+    {
+     "t": 140.92,
+     "text": "NOW WE HAVE TWO PILOTS!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "match-cut",
+    "t": 142.06
+   }
+  },
+  {
+   "id": "S19",
+   "start": 142.06,
+   "end": 148.51,
+   "paragraphs": [
+    8
+   ],
+   "set": "skyFlight",
+   "cast": [
+    "ebonyHorse",
+    "firuz",
+    "princess",
+    "swallows"
+   ],
+   "summary": "The closing wide of episode 1 again, at sunset, now with two riders: two pilots. THE END.",
+   "camera": {
+    "shot": "establishing",
+    "move": "pull-out",
+    "notes": "Episode 1's closing frame: sunset plate, horse in the upper third at s 0.7; a slow pull-out from zoom 1.0 to 0.85 over the hold."
+   },
+   "composition": "Sunset plate (blue-violet above, coral and gold below). kingdomBelow home with the palaceToy at lower left; far right on the horizon a tiny rose palace with a blue dome; the river between them catching the light. Counters over the riders; THE END in the sky band at panel y 150..300.",
+   "actions": [
+    {
+     "t": 142.06,
+     "cue": {
+      "word": "في",
+      "t": 142.06
+     },
+     "who": "ebonyHorse",
+     "action": "cut on the rise to the sunset sky: the horse level in the upper third, two riders, gold ribbons trailing",
+     "acting": "cruising grammar; cape and veil streaming",
+     "library": "skyFlight sunset, flyRig, twoRiders"
+    },
+    {
+     "t": 142.3,
+     "cue": {
+      "word": "بلادنا",
+      "t": 142.3
+     },
+     "who": "set",
+     "action": "below: his cream palace at the left, her rose palace small on the far horizon, the river shining between the two",
+     "acting": "glints along the river on threes",
+     "library": "kingdomBelow home + palaceToy + princessPalace toy"
+    },
+    {
+     "t": 143.08,
+     "cue": {
+      "word": "طياران!»",
+      "t": 143.08
+     },
+     "who": "fx",
+     "action": "chrome numbers 1 and 2 pop over the two riders",
+     "acting": "the two-seat counters of episode 3, now as pilots",
+     "library": "S.counter x2"
+    },
+    {
+     "t": 143.6,
+     "who": "princess",
+     "action": "she lifts both hands off the controls; he grabs for the knob in mock alarm; she laughs",
+     "acting": "the 'no hands' joke turned round",
+     "library": "PERSON_HANDS armsOut, flow"
+    },
+    {
+     "t": 144.3,
+     "who": "lettering",
+     "action": "chrome THE END flickers on with a star glint and holds",
+     "acting": "THE END, not TO BE CONTINUED: the series closes",
+     "library": "S.title"
+    },
+    {
+     "t": 145.2,
+     "who": "ebonyHorse",
+     "action": "the horse begins one slow circle; the gold ribbons draw a ring in the sky as over the far palace",
+     "acting": "turns of 4 drawings",
+     "library": "flyRig turn, ribbon history"
+    },
+    {
+     "t": 146.4,
+     "who": "swallows",
+     "action": "three swallows cross; the first star comes out; lights come on in both palaces",
+     "acting": "moving hold",
+     "library": "bird fly, star glint"
+    },
+    {
+     "t": 147.4,
+     "who": "firuz",
+     "action": "both riders wave toward the viewer; hold to 148.51 with ribbons, river glints and clouds alive",
+     "acting": "nothing frozen",
+     "library": "flow on aR, idleSway"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 144.3,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 144.4,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 148.51
+   }
+  }
+ ],
+ "ending": {
+  "t": 144.3,
+  "description": "After the last word (143.91) the horse flies level in episode 1's sunset sky with two riders, the counters 1 and 2 above them, his palace below at the left and hers small on the far horizon. Chrome THE END from 144.3, held to 148.51 while the horse draws one slow gold ring, swallows cross, the first star comes out and both riders wave."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "وقف فيروز بجانب الحصان وقال للملك: «أستطيع اختباره،|لكن الأميرة تعرف قصته».",
+   "en": "Firuz stood beside the horse and told the king, “I can test it,|but the princess knows its story.”"
+  },
+  {
+   "p": 2,
+   "ar": "وافقت الأميرة واقتربت، وهي تخفي فرحتها.|حاول المخترع التقدم،|لكن الحراس طلبوا منه الانتظار حتى ينتهي الفحص.",
+   "en": "The princess agreed and approached, hiding her delight.|The inventor tried to move closer,|but the guards told him to wait until the inspection was over."
+  },
+  {
+   "p": 3,
+   "ar": "همس فيروز: «فلنعد أولًا إلى أهلك، ثم نزور قصري كما اتفقنا».|قالت: «نعم، وأخبر الملك بالحقيقة كاملة».|فكشف اسمه وأشار إلى المخترع، ونظرت الأميرة إلى الملك منتظرة الإذن.",
+   "en": "Firuz whispered, “Let us return to your family first, then visit my palace as planned.”|She said, “Yes, but tell the king the whole truth.”|He revealed his name and pointed to the inventor; the princess looked to the king for permission."
+  },
+  {
+   "p": 4,
+   "ar": "شهدت الأميرة بما جرى منذ اختطافها،|فأمر الملك أن يوقفوا المخترع حتى يسمع القاضي أقواله.|ثم أذن لهما باختبار الحصان والعودة إلى أهلها، وحفظه في الساحة حتى المحاكمة.",
+   "en": "The princess explained what had happened since her abduction.|The king ordered the inventor detained for the judge|and allowed the pair to test the horse and return to her family, keeping it secured until the hearing."
+  },
+  {
+   "p": 5,
+   "ar": "ركب فيروز والأميرة معًا، وتحققا من المقابض والحبال.|أدار الأمير مقبض الصعود فارتفع الحصان أمام الملك والحراس بدهشة، ثم دار بهما دورة قصيرة فوق القصر.",
+   "en": "Firuz and the princess mounted together and checked the controls and ropes.|He turned the ascent knob, and the horse rose before the amazed king and guards, circling once above the palace."
+  },
+  {
+   "p": 6,
+   "ar": "طارا فوق الحقول والأنهار حتى ظهرت جبال وطن الأميرة.|خفضت الحصان بنفسها حين رأت قصر أهلها قريبًا تحتها،|وتبعا مجرى نهر تعرفه جيدًا.",
+   "en": "They flew over fields and rivers until the mountains of the princess’s homeland appeared.|She lowered the horse when her family’s palace came into view,|following a river she knew well."
+  },
+  {
+   "p": 7,
+   "ar": "هبطا بسلام، واستقبلهما أهلها بفرح كبير.|شكر فيروز الأميرة على شجاعتها وحسن تدبيرها، ووعد أن يعود بها إلى بلاده مع حاشيتها،|وجلسا يرويان ما حدث.",
+   "en": "They landed safely, and her family welcomed them joyfully.|Firuz thanked her for her courage and resourcefulness and promised to take her to his country with her attendants.|They sat together and told what had happened."
+  },
+  {
+   "p": 8,
+   "ar": "وبعد أيام، سافرت الأميرة مع فيروز وحاشيتها إلى قصره كما وعدها،|بعد أن ودعت أهلها بفرح. تعلمت قيادة الحصان، ثم ضحكا:|«صار في بلادنا طياران!»",
+   "en": "Days later, the princess traveled with Firuz and her escort to his palace, as promised,|after a joyful farewell to her family. She learned to fly the horse, and they laughed,|“Now our kingdoms have two pilots!”"
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "riverRun",
+   "description": "Side-view river plate 2600 x 1230 for the low flight: far bank with houses on two parallax layers, bright river with boats and reeds, the two towers with the lamp bridge (one tower as a front pass), the rose palace beyond. Generic river-journey strip.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "paintPlate('riverRun', 2600, 1230, draw) as the other series plates: sky gradient, far bank from seeded house rects with townArchPts windows and palmTree, river as three flat bands plus glint dashes on celStep(t, 8); towers and bridge from the HORSE-02 riverCity code at s 1; reflection of the rig = the rig drawn flipped about y 800 at alpha 0.35 through 6 horizontal clip bands offset by osc. sunPath = moonPath with a white-gold palette."
+  },
+  {
+   "type": "set",
+   "name": "kingdomBelow variant 'fields' with homeland mountains",
+   "description": "A new land plate for skyFlight, 2400 wide: patchwork fields (green, gold, poppy red, ploughed violet-brown) with hedges, a windmill, a farmer with oxen, then three braided rivers with boats and a waterwheel; a separate horizon layer of rose-violet mountains with a bright river gap that can slide up into view.",
+   "reusable": true,
+   "effort": "M",
+   "implementation": "Same baking code as kingdomBelow home / far (HORSE-01, HORSE-02): seeded quads for fields in a perspective grid (row scale 1 to 0.5), rivers as tapering polylines with glints, three live dots (farmer, sheep, boat). Mountains: two celShade polygons with a lit side, drawn on their own layer with y from kfn."
+  },
+  {
+   "type": "motion",
+   "name": "disguiseOff",
+   "description": "The reveal at 37.32: cap swept off, cloak thrown as one flat panel that flies 210 units left on a parabola and lands draped over a guard's helmet; the same body switches from craftsmanDisguise to the prince costume, crown from the toolbox, firuzCape unrolling.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "One pose function for the body. craftsmanDisguise overlay drawn while t < 37.32; from then a separate cloak quad (four points, brown with the lighter sleeve strip) on hop()-style x/y keys with rot, ending as a draped polygon on the helmet anchor until guard B pulls it off at 39.2. Costume 'carpenter' to 'prince' at 37.4 under the 2-frame S.emphasis flash; crown drawn in the hand (handRW) from the toolbox to the head 37.9 to 38.4."
+  },
+  {
+   "type": "pose",
+   "name": "twoRiders options (princess front, solo front rider, embrace)",
+   "description": "twoRiders (HORSE-03) with the princess on the front seat and Firuz behind reaching past her to the knob; the same rig with only the front rider (S18); and a standing embrace of two persons (S14).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "twoRiders(ctx, horseP, frontP, rearP): pass rearP null for the solo rider. Embrace: two persons 70 apart facing each other in the front-facing figure, each with handLW / handRW set to the other's shoulder points and tip 0.06 toward each other; arms of the nearer figure drawn last."
+  },
+  {
+   "type": "prop",
+   "name": "saddleRope, scales icon, round memoryCard",
+   "description": "Three small pieces: the crimson safety cord of the checklist, a balance-scales drawing for iconBalloon, and the round variant of memoryCard.",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "saddleRope: quadratic curve between the horn and two waist points with sag, lineWidth 6, crimson with a darker outline. Scales: post, beam rotated by idleSway, two arcs. Round card: circle clip r 150 with cream border, three-drawing scale-in."
+  },
+  {
+   "type": "effect",
+   "name": "farPalace dome front pass and ribbon ring",
+   "description": "The great dome redrawn over the rig so the horse can pass behind it, and the gold wind ribbons kept as a fading ring round the dome (also used in the sky at the end).",
+   "reusable": true,
+   "effort": "S",
+   "implementation": "farPalace(ctx, {front: 'dome'}) draws only the centre dome and finial again. Ring: sample the rig path at 24 past times (pure function of t), stroke as two thin gold polylines with alpha falling with age."
+  }
+ ],
+ "owner_questions": [
+  "SCRIPT: in P4 the Arabic 'وحفظه في الساحة حتى المحاكمة' and the English 'keeping it secured until the hearing' can be read as the horse being kept in the square, yet the pair fly home on the horse in P5; default: the one kept until the hearing is the inventor, shown being led into the closed court of episode 4 with his eyes at the grille, and no lettering says who 'it' is.",
+  "SCRIPT: the English of P4 shortens the Arabic ('until the judge hears his statement' becomes 'for the judge', 'in the square' is dropped) and the English of P7 says 'resourcefulness' for 'good planning'; both languages are kept verbatim.",
+  "The film opens on the last frame of HORSE-04 (the craftsman's hand at the knob, the inventor staring at the crimson sash corner) and the inventor is stopped by a guard before he can speak; default: keep this bridge.",
+  "The reveal of Firuz's name is staged as throwing off the cap and cloak, taking his crown from the toolbox and showing that the saffron scrap fits the inventor's torn turban; the scrap then goes to the captain as evidence. Default: keep.",
+  "The arrest is softened: nobody touches the inventor; two guards walk beside him with crossed spears and a gate is barred. Default: keep it light.",
+  "Seating on the horse: the princess rides in front (nearest the hidden DOWN lever she uses in P6) and Firuz behind, reaching past her to the UP knob in P5. Default: keep.",
+  "The 'ropes' of P5 are drawn as one crimson safety cord round both riders, checked with a tug, plus green ticks for the two controls. Default: keep.",
+  "The 'short circle above the palace' is flown round the great tangerine dome, leaving a ring of gold ribbon, with the inventor's eyes watching from the grille. Default: keep.",
+  "The river she knows is flown low between the two towers of episode 2, and the sun's glints line up into the gold path of the password. Default: keep the callback.",
+  "The family is her father (royal blue and silver), her mother, the maid, the two guards and the roof cat from episodes 2 and 3; mother and daughter embrace. Default: keep.",
+  "P8: the escort travels BY LAND (as she chose in episode 3): the princess on a white horse, Firuz on the bay, the maid on a donkey, two guards on foot, and the ebony horse on a cart pulled by a camel with the cat on its saddle; Firuz's father meets them at the gate. The farewell to her family, told afterwards by the narration, is a small round picture. Default: keep.",
+  "The flying lesson is set in the garden of episode 1 with Firuz standing where the inventor stood, and the film closes on episode 1's sunset sky with the counters 1 and 2 over the riders and THE END (not TO BE CONTINUED). Default: keep.",
+  "Invented English lettering (19 items with the title, the caption and THE END): I CAN TEST IT. / SHE KNOWS ITS STORY. / WAIT! / TELL THE KING THE WHOLE TRUTH. / I AM PRINCE FIRUZ! / HOLD HIM FOR THE JUDGE. / GO. TAKE HER HOME. / CLANK! / UP / OOOH! / HOME! / DOWN / WELCOME HOME! / YOU WERE BRAVE AND CLEVER. / DAYS LATER... / HA HA! / NOW WE HAVE TWO PILOTS! Default: as listed.",
+  "Time of day: the far palace in fresh morning, the flight in bright day, the garden in day turning to gold, the road in bright day, the lesson at golden hour, the last sky at sunset; no night scene. Default: as listed."
+ ],
+ "implementation_notes": [
+  "Style cel-anime-80s: follow the owner direction in Library/styles/cel-anime-80s/look.md (ALI-01-ANIME v4 is the reference): wide views and pans, full sets, bright varied colour with no tint over the cast, English balloons, readable limbs, moving holds on twos. Only two inserts (knob 74.32 to 76.3, lever 94.9 to 96.4); no face close-up in this episode.",
+  "Copy the series files unchanged (horse_kit.js, horse_cast.js, horse_sets.js from HORSE-01 as extended by HORSE-02, 03 and 04): ebonyHorse (knob, lever, reveal, powerOn, rosettes), flyRig, firuzCape, handInsert, skyFlight, kingdomBelow, palaceToy, palaceGarden, platformCart; princessPalace, princessGarden, moonPath, lampGlow, guard preset; twoRiders, tailTorn, turbanScrap, coverCloth, queen and foreignKing pals; farPalace, farPalaceToy, farKing, farGuards, captain, craftsmanDisguise, peacock, toolbox, gateBar, memoryCard, callout inset, tick, iconBalloon. If an earlier episode has not built one of them yet, build it to that episode's plan under the same name. New code for this episode goes in the same series files.",
+  "Order per frame: plate, background light, cels, front passes (dome, tower, hedge), rim light (castFinish with { rim, light } only at 38.54), lettering, S.finish last. LIFE.t = celStep(t, 8) for blinks.",
+  "Pose time tc = celStep(t, THEME.celFps) for every character and for the rig's turns; blinks, lip flaps, glints, taps celStep(t, 8); camera, plates, clouds, pennants, ribbons, light bands on t.",
+  "Title 0.3 to 2.9: S.title('THE RESCUE', 'IN THE SKY') in the sky band (panel y 110..300) with title_ar from story/script.json (النجاة في السماء) in Lalezar under it.",
+  "Walk keys (all walk + footfalls): princess 1680 to 1850 (11.76 to 14.3) and 1890 to 2020 (42.16 to 43.2); inventor 2060 to 2010 (16.88 to 18.6), back to 2075 (20.92 to 21.7), 2075 to 2470 with guards C and D at -45 and +45 (55.98 to 63.98); captain 2120 to 2040 (19.14 to 19.9) and to 2440 by 64.6; king 2190 down the steps to 2100 (43.24 and 57.4); family from the arch 140 to 430..520 (106.84 to 108.4); princess 1040 to 640 (107.6 to 108.46); caravan x by one kfn with per-member offsets (camel -620, guards -430 and -360, donkey -230, white horse -90, bay 0), leaders from 300 to 2050 over 125.24 to 136.48.",
+  "Costume switch: one function firuzP(t); draw craftsmanDisguise while t < 37.32, the flying cloak 37.32 to 39.2, the prince costume with crown and firuzCape from 37.4 (crown on the head from 38.4). In S1 to S4 keep the crimson corner visible in every frame.",
+  "Lift-off (S9): rig y = 900 - lift, lift by kfn [[77.18, 0], [78.84, 190], [81.3, 330]] eased; groundShadow(ctx, 1900, 900, 260, lift); dustBurst ring at 77.18; pennants and peacock tails get a 1.2 s outward pulse. The horse is rigid: no sq, no leg motion.",
+  "Dome circle (S10): rig path by flow through (1900, 520), (1760, 330), (1600, 300) behind, (1400, 260), turn, (1600, 210) in front, (1900, 180), then up right to (2500, 40) with s 0.5 to 0.3; draw farPalace front 'dome' after the rig between 82.34 and 83.3.",
+  "Sky scenes follow the bible: cruising level with a 6 px bob and clouds sliding opposite to travel; descending nose down 12 degrees with clouds scrolling up; riders' cape and veil ribbon stream opposite to travel; shadow on any land within reach.",
+  "S13: rig fixed near panel (420, 420); riverRun camX from 0 to 1500 by kfn (100.32 to 104.87) with ease-out at the end; towers front pass when camX puts the nearer tower over the rig (about 103.4 to 103.9).",
+  "Landing (S14): y by kfn in three steps ending 105.5 at (1040, 915); groundShadow grows; dustBurst ring; landSquash on the riders only.",
+  "S16 plate change: draw the day plate, then the golden plate with globalAlpha from 0 to 1 over 123.0 to 124.3 (two paintings, never a colour wash over the cast).",
+  "Transitions: S.transition({ rect: panel, caption: 'DAYS LATER...' }) 124.4 to 125.6 with the set swap at 125.0 (the one later transition); cloud wipe at 86.88; whip pan at 136.48; cuts elsewhere on phrase boundaries. One S.emphasis impact flash without a word at 37.4.",
+  "Balloons: S.label(ctx, text, x, y, p, { balloon: true, to }) in the sky or wall band with the tail to the speaker's head, never over a face; long lines on two rows (TELL THE KING / THE WHOLE TRUTH. ; YOU WERE BRAVE / AND CLEVER. ; NOW WE HAVE / TWO PILOTS!).",
+  "Sound (9, master 0.6, only in pauses): blip 9.55, blip 24.3, chime 46.0, stamp 66.6, blip 73.95, whoosh 86.45, chime 104.45, glitch 124.8, chime 144.4; the style's tape bed underneath.",
+  "DUR = 148.51 (144.51 + 4.0). THE END from 144.3. Subtitles: chunks_ar.txt and chunks_en.txt as they are (copied into this file).",
+  "Alive checklist on contact sheets for 24.88 to 37.32 (the whisper), 43.8 to 46.5 (the wait) and 144.3 to 148.5 (the end hold): something must change every 1 to 2 s and no character may freeze."
+ ],
+ "warnings": [
+  "Depends on drawings from four earlier episodes (HORSE-01 built; 02 in production; 03 and 04 planned). plancheck lists them as 'no library function and not marked new': they are series drawings to copy, not new work for this film.",
+  "Six sets in 148 s (farPalace, skyFlight, riverRun, princessGarden, desertRoad, palaceGarden) but only riverRun and one land plate are new; keep the last two scenes short and simple.",
+  "The P4 pronoun (owner question 1) decides S7: if the owner reads it as the horse, replace the gate business by guards roping off the star and move the inventor's exit to 55.98 only.",
+  "The front-facing person cannot hug in profile: test the embrace on a still at 108.6; fall back to clasped hands if it reads badly.",
+  "The cloak throw at 37.32 and the two-rider reach to the knob are the hardest drawings: check stills at 37.4, 37.7, 38.6 and 74.5.",
+  "S17 holds 13 named figures and 4 animals: give each its own seed and gait; check that the caravan never walks in step.",
+  "The narration has no pause at the lift-off (77.18): it stays silent; effects sit only in the eight listed pauses and after the last word."
+ ]
+}
