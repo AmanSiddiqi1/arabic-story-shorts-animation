@@ -8,6 +8,7 @@ One automatic retry, only for transient failures that happen in the first 20 min
 import argparse, hashlib, json, os, pathlib, re, shutil, subprocess, sys, time
 sys.path.insert(0, str(pathlib.Path(__file__).parent)); sys.path.insert(0, str(pathlib.Path(__file__).parents[1] / 'production'))
 import common
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / 'Library')); import media   # media folder resolver (Library/media.py)
 REPO = common.REPO
 TRANSIENT = re.compile(r'ECONNRESET|ETIMEDOUT|EAI_AGAIN|ENOTFOUND|Target (page, context or browser )?(has been )?closed|Browser has been closed|Protocol error|'
                        r'browserType\.launch|socket hang up|rate limit|HTTP 5\d\d|Connection (reset|timed out)|Could not resolve host|Killed', re.I)
@@ -26,7 +27,7 @@ def sha256(p):
     return h.hexdigest()
 
 def attempt(sid, version, fp, out, log, T):
-    s = common.stories()[sid]; mp3 = REPO / 'Audio Files' / 'Final Done' / s['mp3_file']
+    s = common.stories()[sid]; mp3 = media.resolve(REPO / 'Audio Files' / 'Final Done' / s['mp3_file'])
     t = time.time()
     # 1. narration (Release asset, never in Git); checksum must equal the one recorded in production/state.json
     if not mp3.exists():

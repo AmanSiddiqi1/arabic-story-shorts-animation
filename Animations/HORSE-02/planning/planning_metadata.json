@@ -1,0 +1,95 @@
+{
+ "story_id": "HORSE-02",
+ "title": "Lost Above the Clouds",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-21T15:55:51",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a741c5fa0af3a4663.jsonl",
+ "agent_id": "a741c5fa0af3a4663",
+ "model_messages": {
+  "claude-fable-5-2": 21
+ },
+ "script": {
+  "source": "Spreadsheets/Script_Updated.xlsx",
+  "sha256": "98d5327e685769c7fe0fb0cae5d60e1024e0bbefa8aae8ebe04c3bb0ddc0b524",
+  "paragraphs": 8,
+  "segments": [
+   "HORSE-02-P01-S01",
+   "HORSE-02-P01-S02",
+   "HORSE-02-P01-S03",
+   "HORSE-02-P01-S04",
+   "HORSE-02-P01-S05",
+   "HORSE-02-P01-S06",
+   "HORSE-02-P01-S07",
+   "HORSE-02-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/HORSE-02_Lost_Above_the_Clouds_slowed.mp3",
+  "sha256": "7bbb873440a0342abb0fa74e52630a61cd23ee24119fa952aa3ec5d6b5716faa",
+  "duration": 147.494
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/HORSE-02_Lost_Above_the_Clouds_slowed.mp3.words.json",
+  "sha256": "7a025586b9d956e7c28aa0b0240afadec64013ace9338a118727dddb6fe36f79",
+  "manifest_status": "supplied",
+  "script_match": 1.0
+ },
+ "library_rev": "70d18d3",
+ "scenes": 18,
+ "actions": 170,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "palaceRoof",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "riverCity",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "palaceGarden (variant princess)",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "moonPath",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "mapSketch (scroll)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "tetherRope, oilLamp (lantern, lampGlow), waterJar",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "person costume preset 'guard'",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "style variant of HORSE-02 (cel-anime-80s); script from Google Sheet \"Sinbad Arabian Nights and Ebony Horse\" (Drive: ChatGPT Projects/Arabic Stories), tab All Scripts, rows 82-89, read 2026-11-21",
+ "validation_warnings": [
+  "cast ebonyHorse: no library function and not marked new",
+  "sets skyFlight: no library function and not marked new",
+  "props lever: no library function and not marked new",
+  "props knob: no library function and not marked new"
+ ],
+ "plan_warnings": [
+  "This episode depends on HORSE-01 drawings (ebonyHorse, flyRig, firuzCape, handInsert, skyFlight, palaceToy, cast settings). If HORSE-01 src is not split into horse_kit.js / horse_sets.js / horse_cast.js yet, copy the functions from its scene file and keep their names.",
+  "Night scenes are 100 of the 151 seconds. They must stay light, warm and multi-coloured (owner direction): rose walls, blue dome, turquoise princess, crimson cape and lavender maid all keep their own colours; check stills at 50, 85, 105 and 145 s for any monochrome or purple cast.",
+  "The ebony horse against the night sky and the blue dome can lose its legs: keep the lifted ebony #3a3448 with the #6a6288 highlight edge and the brass joints, and place it against the lighter horizon band or the lamp pool, never against the darkest sky.",
+  "The person figure is front-facing: 'seen from behind at the parapet' (S16, S18) is staged as three-quarter figures beside the parapet with gaze and a raised arm toward the skyline, not a true back view.",
+  "The planned 'guard' costume preset may not exist in the Library yet; build it in the story if needed.",
+  "Three new sets is the heavy part of this episode; palaceRoof carries 100 seconds and deserves the most care. riverCity and princessGarden share princessPalace, the towers and the river code.",
+  "Only seven pauses of 0.6 s or more: 8 effects, none during speech."
+ ]
+}

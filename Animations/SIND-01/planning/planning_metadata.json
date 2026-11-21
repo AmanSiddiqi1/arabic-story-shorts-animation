@@ -1,0 +1,90 @@
+{
+ "story_id": "SIND-01",
+ "title": "The Island That Moved",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-21T15:48:13",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-ac3dd4106c866cc25.jsonl",
+ "agent_id": "ac3dd4106c866cc25",
+ "model_messages": {
+  "claude-fable-5-2": 27
+ },
+ "script": {
+  "source": "Spreadsheets/Script_Updated.xlsx",
+  "sha256": "7b5a1f5e7ac3c900d634afbdd8e7cbda03ad64547288dc0d07336effcf49be81",
+  "paragraphs": 8,
+  "segments": [
+   "SIND-01-P01-S01",
+   "SIND-01-P01-S02",
+   "SIND-01-P01-S03",
+   "SIND-01-P01-S04",
+   "SIND-01-P01-S05",
+   "SIND-01-P01-S06",
+   "SIND-01-P01-S07",
+   "SIND-01-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/SIND-01_The_Island_That_Moved_slowed.mp3",
+  "sha256": "ecab035381908244a6997ec49120d672cdd719e9c0f6826dc8a49639cf45dac8",
+  "duration": 145.827
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/SIND-01_The_Island_That_Moved_slowed.mp3.words.json",
+  "sha256": "6ad47099b71bbe9226aa8306ff8ec45e49d5ecb3601e31b6a4bfc8bd1edef5b2",
+  "manifest_status": "supplied",
+  "script_match": 1.0
+ },
+ "library_rev": "70d18d3",
+ "scenes": 18,
+ "actions": 178,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "whale",
+   "effort": "L"
+  },
+  {
+   "type": "prop",
+   "name": "dhow",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "openSea",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "harbourQuay",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "islandShore",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "swim and cling (person in water)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "small props (chest with band and seal, campfire with cookPot, plank, spyglass, waterskin, foodTray)",
+   "effort": "M"
+  }
+ ],
+ "input_notes": "style variant of SIND-01 (cel-anime-80s); script from Google Sheet \"Sinbad Arabian Nights and Ebony Horse\" (Drive: ChatGPT Projects/Arabic Stories), tab All Scripts, rows 2-9, read 2026-11-21",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The film is mostly water: the sea kit (openSea, seaY, seaClip) is the biggest piece of work and should be built and checked on stills before any acting.",
+  "The whale reveal must read at phone size: at scale 0.55 the eye is only about 30 px across, so the grumpy look at 60.08 needs the eye drawn 1.6x oversize in that wide (or a 0.6 s inset).",
+  "Swimming uses the front facing Library person clipped at the water line; check that the crawl arms read and that the tangerine turban stays visible against the blue in every swell.",
+  "Pauses are short (0.8 to 1.2 s) and only seven: keep every effect under 0.5 s; the transition at 114.82 is silent.",
+  "Wides at zoom 1.0 make faces small (head about 60 px on the 1080 canvas); the acting in wides must be carried by whole body poses, and the three close-ups (40.2 eye, 82.06 grip, 121.52 eyes) carry the faces.",
+  "Three new sets plus the sea is above the usual four new assets; they are shared by SIND-02 and SIND-06 (ship, sea, quay, shore), which is why they are specified here.",
+  "The English and Arabic scripts match in content (the Arabic adds 'to the port' and 'in the water'); no SCRIPT question."
+ ]
+}

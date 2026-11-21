@@ -1,0 +1,91 @@
+{
+ "story_id": "ALI-03",
+ "title": "The Marked Door",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-21T16:00:33",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-aec98430e0c3c0f33.jsonl",
+ "agent_id": "aec98430e0c3c0f33",
+ "model_messages": {
+  "claude-fable-5-2": 24
+ },
+ "script": {
+  "source": "Spreadsheets/Script_Updated.xlsx",
+  "sha256": "938cfcaf94da94c89c7b6f56e68e43149733b73ed79820f02a50e5d7830b6b5a",
+  "paragraphs": 8,
+  "segments": [
+   "ALI-03-P01-S01",
+   "ALI-03-P01-S02",
+   "ALI-03-P01-S03",
+   "ALI-03-P01-S04",
+   "ALI-03-P01-S05",
+   "ALI-03-P01-S06",
+   "ALI-03-P01-S07",
+   "ALI-03-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/ALI-03_The_Marked_Door_slowed.mp3",
+  "sha256": "34b85649f2b88b8b9bfaeb1a673c5e1699cb52129a7e404bdbaece23a836760b",
+  "duration": 143.481
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/ALI-03_The_Marked_Door_slowed.mp3.words.json",
+  "sha256": "bff59f5da6f7e92e47ed8223c5fbd0415def946e428c143069f495c01b925872",
+  "manifest_status": "supplied",
+  "script_match": 1.0
+ },
+ "library_rev": "70d18d3",
+ "scenes": 17,
+ "actions": 184,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "morgiana",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "townStreet (models day, night, evening)",
+   "effort": "L"
+  },
+  {
+   "type": "prop",
+   "name": "doorMark (chalk cross and red dot) with chalk and paintPot",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "oilJar with jarPannier (and the silverRing hand insert)",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "spyDisguise and oilMerchant (palette and overlay variants)",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "sneakChain",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "dayToNight time-lapse",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "style variant of ALI-03 (cel-anime-80s); script from Google Sheet \"Sinbad Arabian Nights and Ebony Horse\" (Drive: ChatGPT Projects/Arabic Stories), tab All Scripts, rows 42-49, read 2026-11-21",
+ "validation_warnings": [
+  "sets gladeMorning: no library function and not marked new"
+ ],
+ "plan_warnings": [
+  "Most of the film is one street: the shots must differ by time of day (day, night 1, day, night 2, afternoon, evening), by end of the street and by framing. Keep the three colour models clearly apart.",
+  "The marks are small (36 px cross, 28 px dot): they depend on the glow, ring pulses, inserts and counters to read on a phone; verify at 1080 x 1920.",
+  "Up to six figures in single file at night (S8, S14) plus live doors, lanterns and marks: bake the plate per model and skip anything off screen.",
+  "Library marketStreet in the cel theme has not been used in this style before; if it looks flatter than the painted plates, add the painted sky, abDress and a soft shadow pass, or repaint the house wall band.",
+  "gladeMorning and farTown come from ALI-02, which is still being animated; fall back to ALI-01's afternoon model if needed.",
+  "English and Arabic scripts match paragraph for paragraph; the Arabic of P3 says 'who helps the household' (present) and the English 'helped': no content difference."
+ ]
+}

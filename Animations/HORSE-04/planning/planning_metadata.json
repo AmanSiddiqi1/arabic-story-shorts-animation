@@ -1,0 +1,96 @@
+{
+ "story_id": "HORSE-04",
+ "title": "The Stolen Horse",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-21T16:19:58",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a79bc778d6362e1d8.jsonl",
+ "agent_id": "a79bc778d6362e1d8",
+ "model_messages": {
+  "claude-fable-5-2": 25
+ },
+ "script": {
+  "source": "Spreadsheets/Script_Updated.xlsx",
+  "sha256": "d30394b26fe0423d54e68405a433496ad6460e3ed570785dcf1d278636e5bdda",
+  "paragraphs": 8,
+  "segments": [
+   "HORSE-04-P01-S01",
+   "HORSE-04-P01-S02",
+   "HORSE-04-P01-S03",
+   "HORSE-04-P01-S04",
+   "HORSE-04-P01-S05",
+   "HORSE-04-P01-S06",
+   "HORSE-04-P01-S07",
+   "HORSE-04-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/HORSE-04_The_Stolen_Horse_slowed.mp3",
+  "sha256": "addaccbbe24f45090fecdcaaf63a16d47349d7bf71ecb24a6918c395b2e34eeb",
+  "duration": 141.515
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/HORSE-04_The_Stolen_Horse_slowed.mp3.words.json",
+  "sha256": "8792972a169f599516266c0e7fecb14bfe4d767fcb2fbeba2dc20df948fbb788",
+  "manifest_status": "supplied",
+  "script_match": 1.0
+ },
+ "library_rev": "70d18d3",
+ "scenes": 17,
+ "actions": 210,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "farPalace",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "lockedCourt (with latticeScreen and gateBar)",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "farKing, farGuards (pal variants) and craftsmanDisguise",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "toolbox (with hammer, oilCan, magnifier) and saddleOrnament (ebonyHorse rosettes)",
+   "effort": "S"
+  },
+  {
+   "type": "character",
+   "name": "peacock",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "memoryCard, routeMap, tick, callout inset (small reuses)",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "style variant of HORSE-04 (cel-anime-80s); script from Google Sheet \"Sinbad Arabian Nights and Ebony Horse\" (Drive: ChatGPT Projects/Arabic Stories), tab All Scripts, rows 98-105, read 2026-11-21",
+ "validation_warnings": [
+  "cast ebonyHorse: no library function and not marked new",
+  "sets skyFlight: no library function and not marked new",
+  "props knob: no library function and not marked new",
+  "props lever: no library function and not marked new",
+  "props cart: no library function and not marked new",
+  "props scrap: no library function and not marked new",
+  "props iconBalloon: no library function and not marked new",
+  "props memoryCard: no library function and not marked new",
+  "props routeMap: no library function and not marked new"
+ ],
+ "plan_warnings": [
+  "Depends on drawings of HORSE-01 (in production) and HORSE-02, HORSE-03 (planned): copy them under the same names when they exist; if twoRiders or moonPath are not built yet, build them here to the HORSE-02 and HORSE-03 specifications.",
+  "Two new sets with five colour models in total are the main cost; paint the farPalace facade once as a function and reuse it for the toy, the horizon and the picture cards.",
+  "The king must not be mistaken for either father: check a still at 31.5 s beside the kings of episodes 1 and 3.",
+  "The lattice must read at phone size: test stills at 114.0 (wide: coloured chips and two eyes) and 120.6 (close: eyes in star openings) before building the rest of S14 to S16.",
+  "The brown cloak must not merge arms into the body: lighter sleeves, and the crimson corner must stay visible in every craftsman shot.",
+  "The person figure is front-facing: looking up at the screen, down from it and along the road is done with gaze, tip and arm angles.",
+  "All set coordinates are design values for new drawings (approximate; measure anchors on the drawing).",
+  "Narration has few pauses: only 8 sound effects, none inside a word."
+ ]
+}

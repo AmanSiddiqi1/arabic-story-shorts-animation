@@ -299,7 +299,8 @@ def story_stage(c, sid):
         return 'Implementation complete - Awaiting render', 're-render: English subtitles corrected'
     if R and R['status'] == 'PASS': return 'Rendered - Awaiting creative review', R['version']
     if R: return 'Blocked or interrupted', f"render {R['version']} QC {R['status']}: technical correction required"
-    if any((REPO / 'Animations' / sid / 'renders').glob('*.mp4')): return 'Rendered - Awaiting technical QC', ''
+    sys.path.insert(0, str(REPO / 'Library')); import media
+    if any(media.resolve(REPO / 'Animations' / sid / 'renders').glob('*.mp4')): return 'Rendered - Awaiting technical QC', ''
     rq = T.get('render')
     if rq and rq['status'] in ('failed', 'interrupted'): return 'Blocked or interrupted', f"render {rq['status']} (correction required): {(rq['notes'] or '')[:40]}"
     w = T.get('implement') or T.get('animate')
@@ -363,8 +364,9 @@ def cmd_finalize(c, a):
     if s['completed_before']: sys.exit('approved earlier film; never finalised again')
     r = c.execute("SELECT * FROM renders WHERE story_id=? AND status='PASS' ORDER BY version DESC", (sid,)).fetchone()
     if not r: sys.exit('no passing render')
-    src = REPO / r['path']; sys.path.insert(0, str(REPO / 'Library')); import style   # the story's style profile names the file
-    dst = REPO / 'MP4s' / (style.story_film_name(REPO / 'Animations' / sid, title=s['title_en']) + '.mp4')
+    sys.path.insert(0, str(REPO / 'Library')); import style, media   # the story's style profile names the file; media folder
+    src = media.resolve(REPO / r['path'])
+    dst = media.final_dir() / (style.story_film_name(REPO / 'Animations' / sid, title=s['title_en']) + '.mp4')
     if dst.exists(): sys.exit(f'refusing to overwrite {dst.name}')
     shutil.copy2(src, dst)
     c.execute("UPDATE stories SET approval='pending', updated=? WHERE id=?", (db.now(), sid)); c.commit()

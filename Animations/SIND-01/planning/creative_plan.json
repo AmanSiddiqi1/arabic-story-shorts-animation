@@ -1,0 +1,3240 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "SIND-01",
+ "title": "The Island That Moved",
+ "duration": 145.83,
+ "end_hold": 4.0,
+ "logline": "Young Sinbad sails from Baghdad, lands on a green island that turns out to be a sleeping whale, is left adrift on a plank, and finds his way home with his goods and a story.",
+ "moral": "The sea hides wonders, and dangers the young do not yet know.",
+ "tone": "Bright 80s adventure anime: sunny and funny, one real scare, one lonely stretch, a warm homecoming.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 1.96,
+   "kind": "setup",
+   "cue": {
+    "word": "يحب",
+    "t": 1.96
+   },
+   "summary": "Sinbad loves the sea and does not see what moves under it."
+  },
+  {
+   "id": "B2",
+   "t": 7.28,
+   "kind": "setup",
+   "cue": {
+    "word": "بضاعته",
+    "t": 7.28
+   },
+   "summary": "Three chests sealed with his tangerine band and star: the object that will prove who he is."
+  },
+  {
+   "id": "B3",
+   "t": 23.34,
+   "kind": "inciting",
+   "cue": {
+    "word": "جزيرة",
+    "t": 23.34
+   },
+   "summary": "A green island on a calm sunny morning."
+  },
+  {
+   "id": "B4",
+   "t": 30.04,
+   "kind": "suspense",
+   "cue": {
+    "word": "البحر",
+    "t": 30.04
+   },
+   "summary": "The captain's spyglass: barnacles, and a shore that breathes."
+  },
+  {
+   "id": "B5",
+   "t": 39.22,
+   "kind": "suspense",
+   "cue": {
+    "word": "فجأة",
+    "t": 39.22
+   },
+   "summary": "Everything stops; under the water an eye opens."
+  },
+  {
+   "id": "B6",
+   "t": 41.6,
+   "kind": "turn",
+   "cue": {
+    "word": "اهتزت",
+    "t": 41.6
+   },
+   "summary": "The ground shakes and the water rises."
+  },
+  {
+   "id": "B7",
+   "t": 58.92,
+   "kind": "reveal",
+   "cue": {
+    "word": "حوت",
+    "t": 58.92
+   },
+   "summary": "The island is a whale."
+  },
+  {
+   "id": "B8",
+   "t": 66.56,
+   "kind": "rising",
+   "cue": {
+    "word": "ظهر",
+    "t": 66.56
+   },
+   "summary": "The back sinks, the fire dies, Sinbad is left behind."
+  },
+  {
+   "id": "B9",
+   "t": 74.02,
+   "kind": "climax",
+   "cue": {
+    "word": "يصل",
+    "t": 74.02
+   },
+   "summary": "He cannot reach the boat."
+  },
+  {
+   "id": "B10",
+   "t": 82.06,
+   "kind": "emotion",
+   "cue": {
+    "word": "بكل",
+    "t": 82.06
+   },
+   "summary": "He holds the plank with all his strength; the ship vanishes."
+  },
+  {
+   "id": "B11",
+   "t": 98.34,
+   "kind": "comic",
+   "cue": {
+    "word": "حقيقي",
+    "t": 98.34
+   },
+   "summary": "Real land: he knocks on it to be sure."
+  },
+  {
+   "id": "B12",
+   "t": 113.92,
+   "kind": "comic",
+   "cue": {
+    "word": "بدهشة",
+    "t": 113.92
+   },
+   "summary": "The king's crown jumps at the story."
+  },
+  {
+   "id": "B13",
+   "t": 125.22,
+   "kind": "surprise",
+   "cue": {
+    "word": "الصناديق",
+    "t": 125.22
+   },
+   "summary": "His own chests on the deck of the arriving ship."
+  },
+  {
+   "id": "B14",
+   "t": 138.56,
+   "kind": "resolution",
+   "cue": {
+    "word": "أهله",
+    "t": 138.56
+   },
+   "summary": "Home in his family's arms."
+  },
+  {
+   "id": "B15",
+   "t": 144.62,
+   "kind": "moral",
+   "cue": {
+    "word": "عجائب",
+    "t": 144.62
+   },
+   "summary": "The sea hides wonders: far out, the island waves goodbye."
+  }
+ ],
+ "cast": [
+  {
+   "id": "sinbad",
+   "name": "Sinbad",
+   "library": "person",
+   "base": "person costume:'villager' with pal overrides (beard:'none', tache:false, head:'smallTurban', sleeveLen:'short')",
+   "look": "Series hero. Age 0, s 0.95. Tangerine #ff7a1a turban and sash (the one accent, never tinted, shade #c8520e) with a 60 unit turban tail ribbon; warm white knee tunic #f7f0e0 (shade #cfc4b0) with short sleeves so both forearms read; plum trousers #7b4bb0; brown shoes, bare feet from S9 to S14. No beard.",
+   "new": false
+  },
+  {
+   "id": "captain",
+   "name": "the captain",
+   "library": "person",
+   "base": "person costume:'merchant' recoloured, belly 0.4",
+   "look": "s 1.08, age 0.6 (grey full beard). Sea blue robe #1f5f8a with lighter sleeves #4a90c0, gold sash #f2b01e, big white turban with a red jewel. Carries a brass spyglass on a cord. Calm, heavy, watchful.",
+   "new": false
+  },
+  {
+   "id": "sailors",
+   "name": "the crew (5)",
+   "library": "person",
+   "base": "person costume:'servant' recoloured, shoes 'bare'",
+   "look": "Short tunics in teal #2aa39a, mustard #e0a82a, rose #d85a7a, leaf #5aa84a, sky #5a9ae0, caps in a contrasting colour each, cream trousers. One lookout, two rope haulers, rowers.",
+   "new": false
+  },
+  {
+   "id": "merchants",
+   "name": "Sinbad's three companions",
+   "library": "person",
+   "base": "person costume:'merchant' and 'villager' recoloured",
+   "look": "Fat merchant: emerald #1f9a6a robe, saffron yellow big turban, belly 1, age 0.4. Plum merchant: plum #8a4a9a robe with lilac sleeves, white turban, thin. Rust merchant: villager preset in rust #c8602a, cream turban, age 0.3.",
+   "new": false
+  },
+  {
+   "id": "family",
+   "name": "Sinbad's mother, father and little sister",
+   "library": "person",
+   "base": "villageWoman (age 0.5), physician (age 0.7), maiden child:true, all recoloured",
+   "look": "Mother: lavender #a88ad8 dress, cream scarf. Father: olive #8f8a40 long robe, white small turban, white beard, slight stoop. Sister: mint #6fd0a8 dress, hair buns with a tangerine ribbon (the family colour link).",
+   "new": false
+  },
+  {
+   "id": "whale",
+   "name": "the whale (the island)",
+   "library": null,
+   "base": "new character",
+   "look": "1500 long x 520 deep at s 1. Slate blue back #5a6a9a (shade #3f4c7a), pale grooved belly #c8d4e8, barnacle clusters, small wise eye with a heavy lid, wide fluke. On its back the island dressing: sand rim, green cap, three palms, bushes, flowers, a grey 'rock' that is the blowhole mound.",
+   "new": true
+  },
+  {
+   "id": "king",
+   "name": "the island king",
+   "library": "person",
+   "base": "person costume:'caliph' recoloured",
+   "look": "Round, warm, s 1.05, age 0.5. Emerald #1f9a6a robe with gold trim, violet cape #7a4ab8, white crown turban with a gold crown and a blue jewel. (Not the Baghdad caliph: SIND-06's king takes another palette.)",
+   "new": false
+  },
+  {
+   "id": "court",
+   "name": "vizier and two guards",
+   "library": "person",
+   "base": "vizier preset; servant preset recoloured with a spear",
+   "look": "Vizier in navy and red as the preset; guards in turquoise tunics with yellow sashes and a spear (a 300 unit line with a leaf blade drawn by the scene).",
+   "new": false
+  },
+  {
+   "id": "grooms",
+   "name": "the king's two horse keepers",
+   "library": "person",
+   "base": "person costume:'servant' recoloured",
+   "look": "Royal blue #2f63d6 short tunics with a small gold crown mark, straw yellow caps, bare feet; groom A young, groom B age 0.5 with a moustache.",
+   "new": false
+  },
+  {
+   "id": "horses",
+   "name": "the king's three horses",
+   "library": "horse",
+   "base": "Library horse, pal 0 / 1 / 2 with the story's own coat table for the black (lifted to #4a4658, pale hooves)",
+   "look": "White, bay and black, each with a royal blue cloth, gold trim and a gold crown mark; no riders.",
+   "new": false
+  },
+  {
+   "id": "gulls",
+   "name": "gulls and shore birds",
+   "library": "bird",
+   "base": "bird kind:'dove' pal 0 (white) with grey wing tips as gulls",
+   "look": "White with grey wing tips and a yellow beak; 2 to 5 at a time, each on its own seed.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "baghdadQuay",
+   "library": null,
+   "new": true,
+   "description": "harbourQuay (planned name), variant 'baghdad', 2200 x 1230, ground y 900. Painted plate: morning sky, tall clouds, a skyline of two domes (gold dome at x 520, top y 300), a minaret at x 760 (top y 220), flat roofs with washing lines, palms. Cel layer: warehouse wall x 0..420 (top y 380) with an arched door, awning stall at x 300 (Library marketStall), crates and barrels x 80..300, a bench at x 620..700, bollards at x 1000 and 1080, stone quay edge at x 1100, paving to y 1230. Right of x 1100 open water (water line y 930 at the wall, horizon y 640). Dhow berth x 1380..1900, deck y 800, gangplank (1100, 900) to (1400, 805). Repaint 'gold' for S18 (warm afternoon, long shadows to the left)."
+  },
+  {
+   "id": "openSea",
+   "library": null,
+   "new": true,
+   "description": "openSea (planned name). Looping 2400 x 1230 sea: sky plate (presets day, sunset, night, dawn, gold; cross-faded by a mix value), horizon y 600, four water layers: far y 600..700 (parallax 0.2), mid y 700..800 (0.45), ship line y 820 (1.0), front y 880..1230 (1.3, drawn over hulls and swimmers). One wave function seaY(x, t, layer, mood) gives the surface line for every floating thing. Moods: glass (amp 3), calm (6), swell (22), storm swell (60, with single big swells up to 180). Tall cumulus clouds on the horizon in every day sky (the series signature)."
+  },
+  {
+   "id": "whaleIsland",
+   "library": null,
+   "new": true,
+   "description": "The top of the whale as a place, 1600 x 1230, built from the whale character's island dressing plus openSea layers: crown at (800, 880), shore at the water line y 960 at x 150 and x 1450 (island 1300 wide), sand rim 60 wide, grass, flowers, shells and stones along the rim, palms at x 520, 700, 1180 (Library palmTree h 300 to 360), bushes, the grey blowhole mound at x 230..330 (40 high, with barnacles). Far dhow on the horizon at x 260. The whole island takes rise (y offset), tilt and breathe from the whale's fields."
+  },
+  {
+   "id": "underSea",
+   "library": null,
+   "new": true,
+   "description": "Cross-section view for the reveal (part of the openSea module): above the water line the normal sea and sky; below it a painted teal to deep blue gradient with slanting light shafts, drifting bubbles, a school of 14 small fish, sea grass at the very bottom. Used at scene scale 1.0 to 0.55 with the water line at world y 520 in the wide."
+  },
+  {
+   "id": "islandShore",
+   "library": null,
+   "new": true,
+   "description": "islandShore (planned name), 2000 x 1230, ground y 900. Sea x 0..820 (openSea layers), wet sand to x 900, cream beach to x 1500 with a tide line of shells, stones and seaweed, palms at x 1050, 1300, 1620, two grey rocks at x 1150 and x 1440, meadow beyond x 1500 with flowers, green hills, and a far palace with a gold dome at (1750, 380). Bright morning."
+  },
+  {
+   "id": "palaceHall",
+   "library": "palaceHall",
+   "new": false,
+   "description": "Library palaceHall, variant 'palace', wall 'paper' with warm trim; outside(ctx) draws the sea, a palm and a strip of sky in the door arch. Dressing added by the scene: two banners in emerald and gold, a bowl of fruit on a low table, floor cushions. Use the set's own anchors (dais, throne.sitY, door)."
+  },
+  {
+   "id": "islandPort",
+   "library": null,
+   "new": true,
+   "description": "harbourQuay (planned name), variant 'island': the same geometry as baghdadQuay (edge x 1100, berth x 1380..1900) with a different painted plate and dressing: white walls with a blue door, green hill with the gold domed palace at (420, 330), six palms, fishing nets on poles, baskets of fish, a small skiff tied at x 1150, bright tropical morning."
+  }
+ ],
+ "props": [
+  {
+   "id": "dhow",
+   "library": null,
+   "new": true,
+   "description": "dhow (planned name): the series merchant ship. Hull 520 x 120 (teak #a8643a, shade #7a4426, a turquoise band #2ab0b0 under the gunwale, cream top strake), raised prow and a stern cabin 110 high; deck 80 above the water line; mast 440 with a lateen yard; cream sail #fbf3df with two crimson #d0285a stripes; cobalt pennant. Fields: x, y, s, pitch, bob, sail 0..1, billow, gang 0..1, moor, cargo, patch."
+  },
+  {
+   "id": "skiff",
+   "library": null,
+   "new": true,
+   "description": "Rowing boat 230 x 52, same teak and turquoise band, two oars with a phase field, seats 3 (people drawn clipped at the gunwale); part of the dhow module."
+  },
+  {
+   "id": "chests",
+   "library": null,
+   "new": true,
+   "description": "chest (planned treasureHoard chest): 110 x 80 wooden chest with brass corners, lid open 0..1; Sinbad's three carry a tangerine band and a white star seal (band, seal options)."
+  },
+  {
+   "id": "campfire",
+   "library": null,
+   "new": true,
+   "description": "campfire: 5 crossed sticks, flame 0..1 (4 drawing cycle, 90 high at 1), embers, smoke ribbon, steam 0..1 when doused; with the planned cookPot on a 3 stick tripod (pot top 70 above the ground)."
+  },
+  {
+   "id": "plank",
+   "library": null,
+   "new": true,
+   "description": "Ship's plank 240 x 34, 12 thick edge, two nail heads, a frayed rope tail 70 long; floats on seaY with rot from the wave slope."
+  },
+  {
+   "id": "spyglass",
+   "library": null,
+   "new": true,
+   "description": "Brass spyglass 86 long in 3 telescoping tubes, lens glint, on a neck cord; plus a round inset view (clip circle r 190) used once."
+  },
+  {
+   "id": "waterskin",
+   "library": null,
+   "new": true,
+   "description": "waterskin (planned name): goatskin bag 90 x 50 with tilt and squeeze."
+  },
+  {
+   "id": "foodTray",
+   "library": null,
+   "new": true,
+   "description": "foodTray (planned name): brass tray 120 wide with bread and dates."
+  },
+  {
+   "id": "storyBalloon",
+   "library": "thoughtCloud",
+   "new": false,
+   "description": "Library thoughtCloud used as a storyteller's picture balloon (360 x 240): inside, the whale at s 0.3 with dress 1, rising on cue."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 5.84,
+   "paragraphs": [
+    1
+   ],
+   "set": "baghdadQuay",
+   "cast": [
+    "sinbad",
+    "gulls",
+    "whale"
+   ],
+   "summary": "Morning on the Baghdad quay. Chrome title. Sinbad sits on a crate at the water's edge, in love with the sea, and never sees the huge dark shape that glides under the gangplank.",
+   "camera": {
+    "shot": "establishing",
+    "move": "crane",
+    "notes": "Camera on ones. 0.0 {x 1150, y 615, zoom 1.0} high on the painted sky (clamped to the top of the world), eases down by 1.6 to {x 1130, y 640, zoom 1.1}; holds with a 20 unit drift right to 5.84. Never tighter than 1.1: the skyline, the quay, the water and the moored dhow all stay in the picture."
+   },
+   "composition": "Quay floor y 900, quay edge x 1100. Sinbad on a crate at x 1020 facing right (water). Open water x 1100..1380 under the gangplank, dhow hull from x 1380 on the right edge of frame. Skyline domes and minaret fill y 250..640 on the left; gulls in the sky at y 200..420. Title sits at panel y 150..330, above every head.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 1.6,
+     "cue": {
+      "word": "كان",
+      "t": 0.0
+     },
+     "who": "camera",
+     "action": "Crane down the painted morning sky past three gulls to the quay",
+     "acting": "soft peach to blue gradient plate, tall white summer clouds with lilac undersides slide at 0.3 parallax; gulls flap out of sync (seeds 1, 2, 3)",
+     "library": "openSea sky plate (new) + bird({kind:'dove', pal:0, fly:true, flap}) as gulls + kfn camera"
+    },
+    {
+     "t": 0.3,
+     "end": 3.0,
+     "cue": {
+      "word": "السندباد",
+      "t": 0.32
+     },
+     "who": "lettering",
+     "action": "Chrome title THE ISLAND THAT MOVED flickers on with a star glint; under it the Arabic line (the script word for Sinbad) in Lalezar; both gone by 3.0",
+     "acting": "title on 12 fps flicker, glint sweeps left to right once",
+     "library": "S.title(...) and S.title(..., {font:'Lalezar'}) for the Arabic line only"
+    },
+    {
+     "t": 1.18,
+     "end": 1.9,
+     "cue": {
+      "word": "شابًا",
+      "t": 1.18
+     },
+     "who": "sinbad",
+     "action": "Sits on a crate, chin on his fist, one heel swinging; lifts his head toward the open water",
+     "acting": "young, bright: lid 0.2 dreamy, smile, gaze [1,-0.1] at the horizon; heel swing = idle loop period 1.1 s; turban tail ribbon on a travelling sine",
+     "library": "person {costume:'villager', pal: SINBAD, age:0, sit:1, seat:'bench', handR: PERSON_HANDS.chin.R} + idleSway + blink"
+    },
+    {
+     "t": 1.96,
+     "end": 2.9,
+     "cue": {
+      "word": "يحب",
+      "t": 1.96
+     },
+     "who": "sinbad",
+     "action": "Breathes the sea air in: chest up, both arms open wide, leans toward the water",
+     "acting": "anticipation dip (sq 0.96) then stretch 1.04; arms via flow keys, hands arrive 2 drawings late (lagged); eyes shut on the breath, open wet and happy",
+     "library": "anticipate + flow(tc, ARMS) + lagged; aL/aR about [2.1, 2.5]"
+    },
+    {
+     "t": 2.48,
+     "end": 3.6,
+     "cue": {
+      "word": "البحر",
+      "t": 2.48
+     },
+     "who": "gulls",
+     "action": "A gull crosses low over the water; far out a lateen sail slides along the horizon",
+     "acting": "his pupils and then his head follow the gull (gazePlan, blink on the turn)",
+     "library": "look()/gazePlan; far sail = dhow at s 0.12 as a flat cel on the horizon y 640"
+    },
+    {
+     "t": 3.1,
+     "end": 4.1,
+     "cue": {
+      "word": "لكنه",
+      "t": 3.1
+     },
+     "who": "sinbad",
+     "action": "Flicks a crumb up; the gull snatches it in the air",
+     "acting": "quick wrist flick, eyes up [0.5,-0.9], laugh (mouth 'open' 4 drawings)",
+     "library": "handR flow; crumb on a parabola (kfn x, fallY y); bird beak 1"
+    },
+    {
+     "t": 4.22,
+     "end": 5.6,
+     "cue": {
+      "word": "يجهل",
+      "t": 4.22
+     },
+     "who": "whale",
+     "action": "A dark shape as long as the dhow glides right to left under the water below the gangplank; the surface bulges and the reflections bend",
+     "acting": "Sinbad keeps looking UP at the gulls: the audience sees it, he does not (dramatic irony)",
+     "library": "whale({silhouette:true, s:0.5}) drawn under the water layer at alpha 0.35 + seaBulge on the surface line"
+    },
+    {
+     "t": 5.02,
+     "end": 5.84,
+     "cue": {
+      "word": "أخطاره",
+      "t": 5.02
+     },
+     "who": "gulls",
+     "action": "The nearest gull squawks and lifts off as the shadow passes; two slow ripple rings spread; Sinbad glances at the gull, shrugs, never looks down",
+     "acting": "gull puff and flap burst; Sinbad brow -0.3, palms up shrug for 6 drawings, back to the horizon",
+     "library": "bird flap; ripple(ctx, 1240, 940, 5.0, t, 1.6); PERSON_HANDS.palmsUp"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.3,
+     "text": "THE ISLAND THAT MOVED"
+    },
+    {
+     "t": 1.2,
+     "text": "SINBAD"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 5.84
+   }
+  },
+  {
+   "id": "S2",
+   "start": 5.84,
+   "end": 15.06,
+   "paragraphs": [
+    1
+   ],
+   "set": "baghdadQuay",
+   "cast": [
+    "sinbad",
+    "family",
+    "sailors",
+    "captain"
+   ],
+   "summary": "He stacks his three sealed chests, says goodbye to his family and walks up the gangplank; the sail drops and the dhow leaves.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "5.84 pan left to {x 880, y 650, zoom 1.15} (chests and family); 7.2 to 7.9 a short push to zoom 1.45 on the seal, back to 1.15 by 8.2; 10.8 to 12.4 pan right to {x 1380, y 640, zoom 1.0} so the whole dhow is in frame; holds, then drifts right 40 units as the ship eases away."
+   },
+   "composition": "Chest stack at x 860 (three chests, top at y 705). Family enters from the left edge and stops at x 640..760. Gangplank from (1100, 900) to (1400, 805). Captain at the rail x 1500, deck y 800. Faces between y 600 and 760.",
+   "actions": [
+    {
+     "t": 5.84,
+     "end": 6.6,
+     "cue": {
+      "word": "جمع",
+      "t": 5.84
+     },
+     "who": "sinbad",
+     "action": "Hops off the crate, claps the dust off his hands, lifts the first chest and sets it down",
+     "acting": "weight: knees bend, back leans (tip 0.1), chest lands with a 2 drawing squash of the chest and a 6 unit dip of his arms",
+     "library": "hop + landSquash; handLW/handRW on the chest handles; chest (new prop)"
+    },
+    {
+     "t": 6.6,
+     "end": 7.25,
+     "who": "chests",
+     "action": "Second chest on top; the stack squashes and settles",
+     "acting": "he blows a breath, wipes brow with the back of his hand (turban tail lags)",
+     "library": "impactSquash on the stack; PERSON_HANDS.headHold.R for the wipe"
+    },
+    {
+     "t": 7.28,
+     "end": 8.2,
+     "cue": {
+      "word": "بضاعته",
+      "t": 7.28
+     },
+     "who": "chests",
+     "action": "Third chest; he ties a tangerine band round it and slaps a white star seal on the front. A glint runs over the seal",
+     "acting": "proud half smile, nod on the slap; camera pushes to 1.45 for the seal, the one thing the audience must remember",
+     "library": "chest {band: ACCENT, seal:'star'}; abGlint style star; anticipate before the slap"
+    },
+    {
+     "t": 8.26,
+     "end": 9.2,
+     "cue": {
+      "word": "وودع",
+      "t": 8.26
+     },
+     "who": "family",
+     "action": "Mother, father and little sister come in from the left, already walking; Sinbad turns to them with a blink",
+     "acting": "three different walks (mother quick short steps, father slow with a stoop, sister skipping: hop cycle); never in step (stagger)",
+     "library": "walk(xf, tc) + footfalls; person {costume:'villageWoman'} / {costume:'physician', age:0.7} / {costume:'maiden', child:true}"
+    },
+    {
+     "t": 9.22,
+     "end": 10.1,
+     "cue": {
+      "word": "أهله",
+      "t": 9.22
+     },
+     "who": "family",
+     "action": "Mother hugs him; the sister tugs his sash tail",
+     "acting": "mother wet eyes, lid 0.5, head on his shoulder; he pats her back twice; sister looks up at him gaze [0.3,-1], pulls and the sash tail goes taut",
+     "library": "handLW/handRW to his shoulders; wet:true; sash ribbon end pinned to her hand"
+    },
+    {
+     "t": 10.12,
+     "end": 10.85,
+     "cue": {
+      "word": "بغداد",
+      "t": 10.12
+     },
+     "who": "family",
+     "action": "Father puts a hand on his shoulder and lifts the other palm to the sky; behind them the gold dome glints",
+     "acting": "father nod on twos, slow blink; Sinbad lowers his head a little (drop 4), hand to chest",
+     "library": "PERSON_HANDS.palmsUp / chest; abGlint on the dome at (520, 300)"
+    },
+    {
+     "t": 10.86,
+     "end": 11.5,
+     "cue": {
+      "word": "ثم",
+      "t": 10.86
+     },
+     "who": "sinbad",
+     "action": "Steps back waving; behind him two sailors carry the chests up the gangplank",
+     "acting": "walks backwards three steps (feet planted by walk), wave with the hand arriving late; sailors bent under the weight, out of step",
+     "library": "walk + PERSON_HANDS.wave; sailors person {costume:'servant', pal: SAILOR[i]} carrying chest at handLW/handRW"
+    },
+    {
+     "t": 11.56,
+     "end": 12.8,
+     "cue": {
+      "word": "ركب",
+      "t": 11.56
+     },
+     "who": "sinbad",
+     "action": "Turns and walks up the gangplank; the plank dips at each footfall",
+     "acting": "light quick steps, one glance back over the shoulder with a blink at 12.3",
+     "library": "walk(xf, tc) on the plank line; footfalls drive plank bend 6 units (kick)"
+    },
+    {
+     "t": 12.04,
+     "end": 12.85,
+     "cue": {
+      "word": "سفينة",
+      "t": 12.04
+     },
+     "who": "captain",
+     "action": "The captain at the rail greets him, hand on chest, then points him to the bow; the pan shows the whole ship",
+     "acting": "captain is calm and heavy: slow nod, beard and turban jewel catch a light band",
+     "library": "person {costume:'merchant', pal: CAPTAIN, age:0.6}; PERSON_HANDS.chest then pointFwd"
+    },
+    {
+     "t": 12.86,
+     "end": 13.9,
+     "cue": {
+      "word": "تجارية",
+      "t": 12.86
+     },
+     "who": "sinbad",
+     "action": "Hops onto the deck (landing squash) and turns to wave; the family waves back, each on a different beat; the sister runs along the quay edge",
+     "acting": "sq 0.88 on landing then rebound; mother's wave small and close to her face, father's hand just raised, sister both arms",
+     "library": "hop + landSquash + groundShadow on the deck; stagger(i) for the waves"
+    },
+    {
+     "t": 13.95,
+     "end": 15.06,
+     "who": "dhow",
+     "action": "Pause: the sail drops and fills, the mooring rope is thrown off, the dhow eases away from the quay",
+     "acting": "sail unrolls in 5 drawings and billows; pennant ribbon; the family gets smaller as the camera drifts with the ship",
+     "library": "dhow {sail: 0 to 1, billow, moor: 1 to 0} (new prop); x by kfn ease-in"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 14.4,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 15.06
+   }
+  },
+  {
+   "id": "S3",
+   "start": 15.06,
+   "end": 24.9,
+   "paragraphs": [
+    2
+   ],
+   "set": "openSea",
+   "cast": [
+    "sinbad",
+    "sailors",
+    "captain",
+    "gulls",
+    "whale"
+   ],
+   "summary": "Days of calm sailing (the sky is repainted three times), then a sunny morning: the lookout sights a green island.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Side tracking wide at zoom 1.0 with four parallax wave layers; the dhow sits left of centre (ship centre at panel x 400). 23.3 to 24.9 the camera pans right 420 units along the lookout's arm to bring the island to panel x 700, still zoom 1.0."
+   },
+   "composition": "Horizon y 600. Dhow waterline y 820, deck y 740, masthead y 360. Sun and moon travel an arc above the horizon at y 150..560. Day counter at panel top left. Island on the horizon at world x 1750, 320 wide, 80 high when first seen.",
+   "actions": [
+    {
+     "t": 15.06,
+     "end": 15.7,
+     "cue": {
+      "word": "سارت",
+      "t": 15.06
+     },
+     "who": "dhow",
+     "action": "The dhow sails left to right over a bright calm sea, pitching gently; a bow wave curls and a wake trails",
+     "acting": "pitch = osc 3.4 s, 1.5 degrees; sail billow on a second period; everything on deck inherits the pitch",
+     "library": "dhow {pitch, bob, sail:1, billow} + openSea {mood:'calm', camX}"
+    },
+    {
+     "t": 15.76,
+     "end": 16.5,
+     "cue": {
+      "word": "السفينة",
+      "t": 15.76
+     },
+     "who": "sailors",
+     "action": "Two sailors haul a rope hand over hand, one mops the deck; Sinbad stands in the bow shading his eyes, turban tail streaming",
+     "acting": "the haulers alternate (never together); the mopper stops to wipe his brow; Sinbad up on his toes",
+     "library": "person servant presets with flow arm keys; PERSON_HANDS.cupEar.R raised to the brow for the shade"
+    },
+    {
+     "t": 16.56,
+     "end": 19.0,
+     "cue": {
+      "word": "أيامًا",
+      "t": 16.56
+     },
+     "who": "set",
+     "action": "The days pass: the sky plate is repainted day, warm sunset, soft lilac night with a moon, and morning again while the ship keeps sailing; a chrome DAY counter steps 1, 2, 3",
+     "acting": "repaints cross-fade 0.5 s each (sun sinks, moon rises on the arc); the cast keeps its own colours in every sky, only a warm or cool rim light changes",
+     "library": "openSea {sky: mix of presets by kfn}; S.counter; castFinish rim on the ship"
+    },
+    {
+     "t": 17.86,
+     "end": 18.4,
+     "cue": {
+      "word": "بحر",
+      "t": 17.86
+     },
+     "who": "fx",
+     "action": "Three flying fish skip out of the water beside the bow, one after another; Sinbad points at them",
+     "acting": "delight: mouth open smile, bounce on the heels; the fish are small silver cels with a drop trail",
+     "library": "small new fish cel on hop arcs (stagger 0.25 s); drops(); PERSON_HANDS.pointFwd"
+    },
+    {
+     "t": 18.4,
+     "end": 19.05,
+     "cue": {
+      "word": "هادئ",
+      "t": 18.4
+     },
+     "who": "sailors",
+     "action": "Glass calm: the sail's reflection lies whole on the water; a sailor dozes against the mast, cap over his eyes",
+     "acting": "wave amplitude down to 3 units; the dozer's head nods and jerks up once",
+     "library": "openSea {mood:'glass'}; lid 1 + drop flow"
+    },
+    {
+     "t": 19.1,
+     "end": 20.4,
+     "cue": {
+      "word": "وفي",
+      "t": 19.1
+     },
+     "who": "set",
+     "action": "Sunrise: the sun disc lifts off the horizon with a soft halo and a band of light sweeps up the sail",
+     "acting": "light moves, drawings hold: one diagonal warm band across sail and hull",
+     "library": "abSun style disc + glow; lightBands over the dhow (source-atop)"
+    },
+    {
+     "t": 20.46,
+     "end": 21.0,
+     "cue": {
+      "word": "صباح",
+      "t": 20.46
+     },
+     "who": "sinbad",
+     "action": "Asleep against a rope coil, he wakes, stretches both arms and yawns",
+     "acting": "one eye then the other, long stretch with fists arriving late, shake of the head with a blink",
+     "library": "lid ramp, wink:'L' first; flow arms + lagged"
+    },
+    {
+     "t": 21.0,
+     "end": 21.75,
+     "cue": {
+      "word": "مشمس",
+      "t": 21.0
+     },
+     "who": "fx",
+     "action": "Sun glints scatter over the water and two gulls arrive from the right and circle the mast (land is near)",
+     "acting": "glints as 4 point stars on threes; gulls flap out of sync, one lands on the yard",
+     "library": "abGlints pattern over the sea rect; bird fly"
+    },
+    {
+     "t": 21.8,
+     "end": 22.5,
+     "cue": {
+      "word": "رأى",
+      "t": 21.8
+     },
+     "who": "sailors",
+     "action": "The lookout at the masthead stiffens, shades his eyes and leans far out",
+     "acting": "anticipation: he pulls back first (2 drawings), then cranes forward, cap ribbon lagging",
+     "library": "person {costume:'servant', pal: SAILOR[0]} at the masthead anchor; tip 0.2; settleTo"
+    },
+    {
+     "t": 22.54,
+     "end": 23.3,
+     "cue": {
+      "word": "البحارة",
+      "t": 22.54
+     },
+     "who": "sailors",
+     "action": "He throws his arm out to the right: speech bubble LAND! The deck crew run to the rail one after another",
+     "acting": "big readable arm angle (aR about [1.2, 1.3]); deck sailors stagger 3 drawings apart, the dozer last and stumbling",
+     "library": "S.label('LAND!', ..., {balloon:true, to: lookout head}); stagger(i); walk"
+    },
+    {
+     "t": 23.34,
+     "end": 24.0,
+     "cue": {
+      "word": "جزيرة",
+      "t": 23.34
+     },
+     "who": "camera",
+     "action": "Pan right along his arm: far out, a low green island",
+     "acting": "the island is a small soft shape first (painted, hazy), sharpening into a cel as it nears",
+     "library": "camera kfn; whale {dress:1, s:0.35} drawn as the island with only the back above water"
+    },
+    {
+     "t": 24.06,
+     "end": 24.9,
+     "cue": {
+      "word": "خضراء",
+      "t": 24.06
+     },
+     "who": "whale",
+     "action": "The island grows as the ship closes in: a round green hill, three palms, flowers, a grey rock at one end",
+     "acting": "Sinbad bounces on his toes at the bow, both fists up; the captain alone does not smile",
+     "library": "whale s from 0.35 to 0.6 by kfn; hop cycle small on Sinbad; captain brow 0.4"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 16.6,
+     "text": "DAY 1 / 2 / 3"
+    },
+    {
+     "t": 22.6,
+     "text": "LAND!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 24.9
+   }
+  },
+  {
+   "id": "S4",
+   "start": 24.9,
+   "end": 31.72,
+   "paragraphs": [
+    2
+   ],
+   "set": "openSea",
+   "cast": [
+    "sinbad",
+    "merchants",
+    "sailors",
+    "captain",
+    "whale"
+   ],
+   "summary": "Two skiffs row some of the men to the island to rest. The captain stays aboard and watches the sea through his spyglass; something is not right.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "24.9 wide zoom 1.0: ship at the left third, island at the right third, skiffs between. 27.6 whip pan left (0.3 s) to the ship at {zoom 1.3} with the captain at panel x 520; 30.0 to 30.6 a round spyglass inset (r 190 panel units) opens at upper right showing the island's rock end."
+   },
+   "composition": "Skiffs travel from x 760 to x 1500 at the waterline y 830. Island shore at x 1520. Captain at the rail, head at y 650. The inset never covers his face.",
+   "actions": [
+    {
+     "t": 24.9,
+     "end": 25.9,
+     "cue": {
+      "word": "فنزل",
+      "t": 24.9
+     },
+     "who": "skiff",
+     "action": "Two skiffs pull away from the dhow toward the island, oars dipping on twos, the second boat half a stroke behind",
+     "acting": "rowers lean back on each pull (tip -0.15) and the boat surges a little each stroke; oar drops trail",
+     "library": "skiff {oar phase, n:3} (new prop, with the dhow) x2; swimPhase idea for surge; drops()"
+    },
+    {
+     "t": 25.96,
+     "end": 26.6,
+     "cue": {
+      "word": "بعضهم",
+      "t": 25.96
+     },
+     "who": "sinbad",
+     "action": "Sinbad stands in the bow of the first skiff, one foot on the gunwale, pointing at the palms; the fat merchant behind him grips both sides",
+     "acting": "Sinbad leans into the wind, turban tail straight back; fat merchant wide eyes, cheeks puffed, sways against the boat's rock",
+     "library": "person tip 0.12; merchant {costume:'merchant', pal: MERCH[0]} mouth 'o', PERSON_HANDS.grip"
+    },
+    {
+     "t": 26.62,
+     "end": 27.55,
+     "cue": {
+      "word": "ليستريح",
+      "t": 26.62
+     },
+     "who": "merchants",
+     "action": "The skiff grounds with a bump; they hop out one by one, stretch, and the fat merchant flops on the grass with his arms out",
+     "acting": "lurch forward on the bump; each landing squashes (landSquash) with a contact shadow; the flop is a 3 drawing fall and a belly bounce",
+     "library": "lurch(t, 26.62); hop + landSquash + groundShadow; person lie:1"
+    },
+    {
+     "t": 27.6,
+     "end": 28.4,
+     "cue": {
+      "word": "وبقي",
+      "t": 27.6
+     },
+     "who": "camera",
+     "action": "Whip pan back across the water to the ship",
+     "acting": "speed lines for 0.3 s, then the dhow settles into frame, pitching slowly",
+     "library": "camera kfn + speed lines effect (as ALI-01 abSpeed)"
+    },
+    {
+     "t": 28.46,
+     "end": 29.2,
+     "cue": {
+      "word": "القبطان",
+      "t": 28.46
+     },
+     "who": "captain",
+     "action": "The captain stands alone at the rail and raises a brass spyglass to his eye",
+     "acting": "elbow leads, the glass arrives last and settles (settleTo); other eye shut (wink); a light glint on the lens",
+     "library": "person {wink:'L'}; spyglass (new small prop) at handRW; castFinish rim from the sun side"
+    },
+    {
+     "t": 29.28,
+     "end": 30.0,
+     "cue": {
+      "word": "يراقب",
+      "t": 29.28
+     },
+     "who": "captain",
+     "action": "He sweeps the glass slowly from the horizon to the island",
+     "acting": "only the glass and his head move; weight shifts to the forward foot; beard ribbon lags",
+     "library": "flow on head tilt and glass angle, sampled on twos"
+    },
+    {
+     "t": 30.04,
+     "end": 30.64,
+     "cue": {
+      "word": "البحر",
+      "t": 30.04
+     },
+     "who": "captain",
+     "action": "Spyglass inset: the grey rock at the island's end has barnacles, and the whole shore line rises and falls very slowly. He lowers the glass an inch and frowns",
+     "acting": "brow 0.6, mouth 'frown', a long blink, then the glass snaps back up",
+     "library": "round inset = clip circle + whale drawn at s 1.2 with rise = 4 * osc(t, 3.2); barnacle dots"
+    },
+    {
+     "t": 30.75,
+     "end": 31.72,
+     "who": "fx",
+     "action": "Pause: two fat bubbles rise beside the island and pop; on the island nobody notices",
+     "acting": "bubbles wobble up 60 units and burst into 5 droplets",
+     "library": "bubble circles with celShade + drops()"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 31.1,
+     "kind": "blip"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 31.72
+   }
+  },
+  {
+   "id": "S5",
+   "start": 31.72,
+   "end": 41.2,
+   "paragraphs": [
+    3
+   ],
+   "set": "whaleIsland",
+   "cast": [
+    "sinbad",
+    "merchants",
+    "whale",
+    "gulls"
+   ],
+   "summary": "On the island Sinbad and three companions settle by the palms and light a cooking fire. Suddenly everything goes still, and under the water a giant eye opens.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "31.72 wide {x 900, y 640, zoom 1.0} of the whole camp with sea and the far ship; 35.6 to 37.2 slow pan and ease to {x 880, y 700, zoom 1.3} round the fire (ground stays at panel y 860, not lower); 40.2 cut to the underwater insert: full panel eye close-up (a real peak) until 41.2."
+   },
+   "composition": "World 1600 wide. Island top y 880 at x 800, falling to the waterline y 960 at x 150 and x 1450. Palms at x 520, 700, 1180. Fire at (880, 884). Sinbad sits at x 760, companions at x 960, 1040 and 640. Skiffs beached at x 1380. Far dhow on the horizon y 640 at x 260.",
+   "actions": [
+    {
+     "t": 31.72,
+     "end": 32.4,
+     "cue": {
+      "word": "جلس",
+      "t": 31.72
+     },
+     "who": "merchants",
+     "action": "Wide: the men walk up from the skiffs across grass and flowers; Sinbad drops down cross-legged by the palms",
+     "acting": "four different walks; Sinbad sits with a small bounce and leans back on his hands",
+     "library": "walk + footfalls; person sit:1, seat:'floor'"
+    },
+    {
+     "t": 32.42,
+     "end": 33.3,
+     "cue": {
+      "word": "السندباد",
+      "t": 32.42
+     },
+     "who": "sinbad",
+     "action": "He tips his head back to look up through the palm fronds, eyes half shut in the sun",
+     "acting": "gaze [0.1,-1], lid 0.45, slow breathing; frond shadows slide over him as a light band",
+     "library": "breathe on sq; lightBands in leaf shapes"
+    },
+    {
+     "t": 33.58,
+     "end": 34.4,
+     "cue": {
+      "word": "رفاقه",
+      "t": 33.58
+     },
+     "who": "merchants",
+     "action": "The companions settle, each his own way: the fat one on one elbow fanning himself with his turban tail, the plum one unwrapping a bundle, the rust one pulling off a shoe and shaking out sand",
+     "acting": "three idle loops with different periods (1.3, 1.9, 2.6 s) so nothing syncs",
+     "library": "person lie 0.6 / kneel:1 / sit floor; idleSway seeds 21, 22, 23"
+    },
+    {
+     "t": 35.04,
+     "end": 35.8,
+     "cue": {
+      "word": "الأشجار",
+      "t": 35.04
+     },
+     "who": "set",
+     "action": "The palms sway; one coconut drops beside the fat merchant and bounces twice; he flinches",
+     "acting": "comic: nut falls with fallY, squash on each bounce; he pulls his knees in a beat late",
+     "library": "palmTree {t, sway}; fallY + rebound; groundShadow under the nut"
+    },
+    {
+     "t": 35.86,
+     "end": 37.1,
+     "cue": {
+      "word": "وأشعلوا",
+      "t": 35.86
+     },
+     "who": "merchants",
+     "action": "The rust merchant piles driftwood and strikes flint: three sparks",
+     "acting": "each strike = wind up, snap, hold; sparks are 4 point stars for 2 drawings",
+     "library": "flow on aR; star glints; campfire (new prop) sticks only"
+    },
+    {
+     "t": 37.18,
+     "end": 37.9,
+     "cue": {
+      "word": "نارًا",
+      "t": 37.18
+     },
+     "who": "campfire",
+     "action": "The fire catches and grows; a warm glow lights their fronts; a ribbon of smoke climbs",
+     "acting": "flame = 4 drawing cycle on threes, growing 0 to 1 over 0.7 s; glow is light (additive disc and a warm rim), never a tint over the cels",
+     "library": "campfire {fire: 0 to 1}; abGlow style disc; castFinish {rim:'#ffb060', light toward the fire}"
+    },
+    {
+     "t": 37.96,
+     "end": 38.55,
+     "cue": {
+      "word": "ليعدوا",
+      "t": 37.96
+     },
+     "who": "merchants",
+     "action": "A pot goes on a three stick tripod; the plum merchant stirs, Sinbad feeds a stick into the fire",
+     "acting": "stir = wrist circle on twos; Sinbad leans in, pulls his hand back from the heat with a shake",
+     "library": "cookPot (planned name) on the tripod; handRW circle; flow"
+    },
+    {
+     "t": 38.6,
+     "end": 39.2,
+     "cue": {
+      "word": "الطعام",
+      "t": 38.6
+     },
+     "who": "sinbad",
+     "action": "Steam rises; Sinbad sniffs with his eyes shut and smiles; the fat merchant already holds out his bowl",
+     "acting": "nose up (tilt), lid 1, then a happy sigh; fat merchant licks his lips",
+     "library": "steam(ctx, x, y, t); smallBowl (planned name)"
+    },
+    {
+     "t": 39.22,
+     "end": 40.2,
+     "cue": {
+      "word": "فجأة",
+      "t": 39.22
+     },
+     "who": "fx",
+     "action": "Suddenly: rings spread in the soup, the pot lid rattles, the flame leans flat to one side, every bird bursts out of the palms. The men stop mid move, only their eyes go left, right",
+     "acting": "suspense by stillness: bodies hold (with breathing), pupils snap in 2 drawing saccades, each man a few drawings after the last; Sinbad's spoon hand hangs in the air",
+     "library": "gazePlan(t, plan, 0.07) saccades; stagger(i); bird fly burst (5 birds, seeds)"
+    },
+    {
+     "t": 40.2,
+     "end": 41.2,
+     "cue": {
+      "word": "فجأة",
+      "t": 39.22
+     },
+     "who": "whale",
+     "action": "Cut under the water, extreme close: a huge wrinkled eyelid slides open. The pupil shrinks in the light and rolls upward toward the island above",
+     "acting": "lid 1 to 0.15 over 5 drawings, a slow blink, pupil contraction; bubbles drift past; teal light shafts",
+     "library": "whale eye function (part of whale): lid, gaze, pupil; underSea plate"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 41.2
+   }
+  },
+  {
+   "id": "S6",
+   "start": 41.2,
+   "end": 52.21,
+   "paragraphs": [
+    3
+   ],
+   "set": "whaleIsland",
+   "cast": [
+    "sinbad",
+    "merchants",
+    "whale"
+   ],
+   "summary": "The ground shakes under their feet and the water climbs the shore all round the island.",
+   "camera": {
+    "shot": "wide",
+    "move": "shake",
+    "notes": "41.2 back on the camp at zoom 1.25; panel only shake 41.6 to 42.6 (4 units, fading). 44.5 to 45.6 pull out to the full island wide {x 800, y 640, zoom 1.0}; 47.2 to 48.2 a slow pan from the left shore to the right shore and back to centre. No close-ups: the place is the subject."
+   },
+   "composition": "Same world. The water edge starts at x 150 and x 1450 and ends at x 330 and x 1270 (the shore foam line moves 180 units inward, the visible island shrinks from 1300 to 940 wide). Group retreats to x 700..900 on the crown.",
+   "actions": [
+    {
+     "t": 41.3,
+     "end": 41.6,
+     "cue": {
+      "word": "اهتزت",
+      "t": 41.6
+     },
+     "who": "set",
+     "action": "The ground dips a few units under them (the breath before the shake)",
+     "acting": "everyone's knees give a little; Sinbad's eyes go down",
+     "library": "island rise -6 by flow; sq 0.97"
+    },
+    {
+     "t": 41.6,
+     "end": 42.6,
+     "cue": {
+      "word": "اهتزت",
+      "t": 41.6
+     },
+     "who": "fx",
+     "action": "The ground JOLTS: an impact frame with the chrome word RUMBLE!, the island jumps 14 units and tilts 2 degrees; everyone squashes and throws out their arms",
+     "acting": "impact frame 2 drawings, then panel only shake; each man staggers on a different beat; turbans and tails arrive late",
+     "library": "S.emphasis('RUMBLE!', {rect: panel}); impactSquash; lagged; PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 42.68,
+     "end": 43.15,
+     "cue": {
+      "word": "الأرض",
+      "t": 42.68
+     },
+     "who": "campfire",
+     "action": "The pot swings off its tripod and spills, the coconut rolls downhill, sparks jump from the fire",
+     "acting": "props react to the tilt with swing(t, 41.6, amp); the fat merchant grabs for the pot and misses",
+     "library": "swing; kfn roll with rot from distance"
+    },
+    {
+     "t": 43.18,
+     "end": 44.4,
+     "cue": {
+      "word": "تحت",
+      "t": 43.18
+     },
+     "who": "sinbad",
+     "action": "Sinbad looks down at his own feet, lifts one, then the other, then lays his palm flat on the grass: the ground swells and sinks under his hand, slowly, like breathing",
+     "acting": "eyes down [0,1], brow -0.6 (worried); kneel 0.6; his hand rides the 8 unit rise and fall",
+     "library": "island rise = 8 * osc(t, 2.6); person kneel + handRW on the ground"
+    },
+    {
+     "t": 43.62,
+     "end": 44.5,
+     "cue": {
+      "word": "أقدامهم",
+      "t": 43.62
+     },
+     "who": "merchants",
+     "action": "The fat merchant sits down hard and hugs a palm trunk; the plum one points at the ground with a shaking hand",
+     "acting": "tremble 2 units on both; mouths 'o'; the pointer looks from the ground to Sinbad and back",
+     "library": "tremble(tc, 2); PERSON_HANDS.pointDown; gazePlan"
+    },
+    {
+     "t": 44.56,
+     "end": 45.6,
+     "cue": {
+      "word": "وبدأت",
+      "t": 44.56
+     },
+     "who": "camera",
+     "action": "Pull out to the whole island: a round green hill in a wide sea, the men small on its crown, the ship far off",
+     "acting": "small flat heroes in a huge painted world; cloud shadows slide over the water",
+     "library": "camera kfn; openSea layers behind and in front of the island"
+    },
+    {
+     "t": 45.7,
+     "end": 46.25,
+     "cue": {
+      "word": "المياه",
+      "t": 45.7
+     },
+     "who": "set",
+     "action": "The water climbs: the foam line creeps up both shores, covering shore stones, shells and the lowest flowers; a neon arrow points up at each end",
+     "acting": "foam edge advances in steps on threes (cel water), 180 units by 50.3",
+     "library": "whale rise by kfn (the island sinks 45 units in this scene) + shore foam band; S.arrow x2"
+    },
+    {
+     "t": 46.28,
+     "end": 47.2,
+     "cue": {
+      "word": "تتصاعد",
+      "t": 46.28
+     },
+     "who": "skiff",
+     "action": "The beached skiffs lift off the sand, swing round and knock together",
+     "acting": "bob begins as they float; a loose oar slides overboard",
+     "library": "skiff y following the water line; swing"
+    },
+    {
+     "t": 47.24,
+     "end": 48.2,
+     "cue": {
+      "word": "حول",
+      "t": 47.24
+     },
+     "who": "camera",
+     "action": "Pan along the rim: water closing in from every side, a ring of foam",
+     "acting": "the pan shows the left shore, the crown with the group, the right shore",
+     "library": "camera pan; foam ring = two shore bands and front wave layer"
+    },
+    {
+     "t": 48.28,
+     "end": 49.0,
+     "cue": {
+      "word": "الجزيرة",
+      "t": 48.28
+     },
+     "who": "merchants",
+     "action": "The four back uphill into a tight knot, back to back, each watching a different shore",
+     "acting": "out of step retreat (walk backwards); Sinbad's gaze darts left, right, down; he puts an arm across the plum merchant",
+     "library": "walk(xf, tc) with dir kept; gazePlan saccades; PERSON_HANDS.shield"
+    },
+    {
+     "t": 49.06,
+     "end": 50.3,
+     "cue": {
+      "word": "على",
+      "t": 49.06
+     },
+     "who": "fx",
+     "action": "The water reaches the roots of the first palm; a fish jumps where the grass was a moment ago",
+     "acting": "silver fish arc, splash rings",
+     "library": "fish cel on hop arc; ripple"
+    },
+    {
+     "t": 50.34,
+     "end": 51.1,
+     "cue": {
+      "word": "مخيف",
+      "t": 50.34
+     },
+     "who": "sinbad",
+     "action": "Held fear: wide eyes, small trembles, a cold light band sweeping over the group",
+     "acting": "moving hold on twos: breathing, tremble, turban tails in the wind; nobody is frozen",
+     "library": "tremble + breathe + lightBands"
+    },
+    {
+     "t": 51.2,
+     "end": 52.21,
+     "who": "whale",
+     "action": "Pause: with a hiss the grey rock at the end of the island blows a jet of spray 220 units high; mist rains down on the men, who all turn to look",
+     "acting": "heads turn with blinks, one after another; turbans drip",
+     "library": "whale {spout: pulse(t, 51.2, 0.9)}; drops()"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 41.6,
+     "text": "RUMBLE!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 51.5,
+     "kind": "riser"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 52.21
+   }
+  },
+  {
+   "id": "S7",
+   "start": 52.21,
+   "end": 60.82,
+   "paragraphs": [
+    4
+   ],
+   "set": "underSea",
+   "cast": [
+    "captain",
+    "sailors",
+    "whale",
+    "sinbad",
+    "merchants"
+   ],
+   "summary": "The captain shouts from the ship: come back, that is no island. The camera sinks under the water and shows what it is: a huge sleeping whale, now awake and annoyed.",
+   "camera": {
+    "shot": "wide",
+    "move": "crane",
+    "notes": "52.21 the ship rail at zoom 1.3 (captain at panel x 380, island visible beyond at the right). 53.8 ease out to the wide zoom 1.0: ship left, island right. 57.7 to 58.9 the camera cranes DOWN: the waterline climbs from panel y 800 to y 330. 58.92 impact frame, then the scene group scales from 1.0 to 0.55 about the island so the whole whale fits (58.92 to 59.9)."
+   },
+   "composition": "Above water: dhow at x 80..560, island cap at x 760..1500. Below water (scale 0.55 view): waterline at world y 520; the whale 1500 x 520 units at scale 0.55 = 825 x 286 on screen, head to the right, eye at about panel (800, 640), tail at the left under the ship. Balloons sit in the sky band and point at the captain.",
+   "actions": [
+    {
+     "t": 52.21,
+     "end": 52.85,
+     "cue": {
+      "word": "صاح",
+      "t": 52.21
+     },
+     "who": "captain",
+     "action": "The spyglass drops on its cord; the captain fills his chest and cups both hands round his mouth",
+     "acting": "anticipation: shoulders up, lean back (tip -0.1) for 4 drawings before the shout",
+     "library": "anticipate; PERSON_HANDS.cupMouth both hands; swing for the glass"
+    },
+    {
+     "t": 52.9,
+     "end": 53.8,
+     "cue": {
+      "word": "القبطان",
+      "t": 52.9
+     },
+     "who": "captain",
+     "action": "He leans far over the rail and shouts; the sailors behind him turn their heads one after another",
+     "acting": "talk on threes, brow 0.8, turban tail and beard lag the lunge",
+     "library": "talk = lip flap on celStep(t, 8); lagged; stagger"
+    },
+    {
+     "t": 53.82,
+     "end": 54.5,
+     "cue": {
+      "word": "السفينة",
+      "t": 53.82
+     },
+     "who": "camera",
+     "action": "Wide: ship on the left, the shrinking island on the right, sound arcs travelling from the captain across the water",
+     "acting": "the island men are small cels in a knot; water between them and the ship glitters",
+     "library": "soundArcs(ctx, x, y, 1, t); camera kfn"
+    },
+    {
+     "t": 54.58,
+     "end": 55.4,
+     "cue": {
+      "word": "«عودوا",
+      "t": 54.58
+     },
+     "who": "captain",
+     "action": "Speech bubble COME BACK! He beckons with a full arm sweep, twice",
+     "acting": "arm sweep = big arc from pointing to his own chest; second sweep faster",
+     "library": "S.label('COME BACK!', ..., {balloon:true, to: captain head}); flow aR"
+    },
+    {
+     "t": 55.44,
+     "end": 56.05,
+     "cue": {
+      "word": "بسرعة!",
+      "t": 55.44
+     },
+     "who": "captain",
+     "action": "The bubble grows to COME BACK! QUICK! He stamps; two sailors run to ready a rope",
+     "acting": "stamp with a deck thump squash; sailors start on different drawings",
+     "library": "balloon text step; impactSquash small; walk"
+    },
+    {
+     "t": 56.1,
+     "end": 57.0,
+     "cue": {
+      "word": "هذه",
+      "t": 56.1
+     },
+     "who": "captain",
+     "action": "He stabs a finger at the island and shakes his head hard",
+     "acting": "pointFwd held, head shake 3 swings with a blink, jewel flashing",
+     "library": "PERSON_HANDS.pointFwd; tilt flow"
+    },
+    {
+     "t": 57.04,
+     "end": 57.65,
+     "cue": {
+      "word": "ليست",
+      "t": 57.04
+     },
+     "who": "lettering",
+     "action": "New bubble: THAT IS NO ISLAND... On the island the small figures stop and turn toward the ship",
+     "acting": "the knot of men turns head first, then bodies (staggered)",
+     "library": "S.label balloon; stagger"
+    },
+    {
+     "t": 57.68,
+     "end": 58.3,
+     "cue": {
+      "word": "جزيرة،",
+      "t": 57.68
+     },
+     "who": "camera",
+     "action": "The camera begins to sink: the waterline rises through the frame, the island's shore passes, grey skin with barnacles appears where rock should be",
+     "acting": "slow and smooth (camera on ones); the beat of quiet before the reveal",
+     "library": "scene group translate by kfn; underSea plate slides in"
+    },
+    {
+     "t": 58.34,
+     "end": 58.9,
+     "cue": {
+      "word": "بل",
+      "t": 58.34
+     },
+     "who": "camera",
+     "action": "Below the surface: teal light shafts, a school of small fish, and a vast curved wall going down out of frame",
+     "acting": "fish school turns together but with per fish phase",
+     "library": "underSea plate + fish school (seeded)"
+    },
+    {
+     "t": 58.92,
+     "end": 59.3,
+     "cue": {
+      "word": "حوت",
+      "t": 58.92
+     },
+     "who": "whale",
+     "action": "IMPACT FRAME, then the reveal: the island is the top of the back of an enormous whale. Bubble at the surface: IT IS A WHALE!",
+     "acting": "2 drawing inverted flash with radial lines; then the held wide",
+     "library": "S.emphasis({rect: panel}); whale full body (new); S.label balloon to the captain"
+    },
+    {
+     "t": 59.34,
+     "end": 60.0,
+     "cue": {
+      "word": "ضخم",
+      "t": 59.34
+     },
+     "who": "camera",
+     "action": "Pull out until the whole animal fits: the island is a small green cap on its back, the dhow a toy above its tail; the fish school scatters",
+     "acting": "scale 1.0 to 0.55; fish scatter radially in 6 drawings",
+     "library": "scene scale by kfn about (1130, 820); fish stagger"
+    },
+    {
+     "t": 60.08,
+     "end": 60.82,
+     "cue": {
+      "word": "نائم!»",
+      "t": 60.08
+     },
+     "who": "whale",
+     "action": "The whale is awake and groggy: heavy lid, a slow blink, then the eye rolls up toward the small orange glow on its back (the fire). Its brow lowers. The tail flexes once and a string of bubbles leaves its mouth",
+     "acting": "comic: annoyed sleeper. Lid 0.5, brow down, gaze up and back; tail flow, flukes lag",
+     "library": "whale {lid, gaze, brow, tail, bubbles}; small glow disc at the fire"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 54.6,
+     "text": "COME BACK! QUICK!"
+    },
+    {
+     "t": 57.05,
+     "text": "THAT IS NO ISLAND..."
+    },
+    {
+     "t": 58.95,
+     "text": "IT IS A WHALE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 60.82
+   }
+  },
+  {
+   "id": "S8",
+   "start": 60.82,
+   "end": 69.88,
+   "paragraphs": [
+    4
+   ],
+   "set": "whaleIsland",
+   "cast": [
+    "sinbad",
+    "merchants",
+    "sailors",
+    "whale"
+   ],
+   "summary": "The merchants run for the boats, the water puts the fire out and the whale's back sinks. Sinbad, farthest from the boats, is left on the last hump.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "60.82 wide zoom 1.1 tracking the runners left to right (x 800 to 1250). 63.86 to 65.4 a medium on the fire {x 880, y 720, zoom 1.5} (the wave, the steam). 66.0 pull to the full wide zoom 1.0 for the sinking and hold on Sinbad small at the centre."
+   },
+   "composition": "Runners go from the crown (x 800) to the skiffs, now floating at x 1300. Sinbad starts at the far palm x 520 with an armful of wood. Water is ankle deep at x > 1100 from 61.5. The tail rises at x 100..330 from 66.98.",
+   "actions": [
+    {
+     "t": 60.82,
+     "end": 61.9,
+     "cue": {
+      "word": "ركض",
+      "t": 60.82
+     },
+     "who": "merchants",
+     "action": "The three merchants run for the skiffs, starting on different beats; water splashes at their ankles",
+     "acting": "fast run cycle (amp high, tip 0.18), robes hitched; small splashes on every footfall",
+     "library": "walk(xf, tc) fast + footfalls driving drops()/ripple; stagger(i)"
+    },
+    {
+     "t": 61.98,
+     "end": 62.6,
+     "cue": {
+      "word": "التجار",
+      "t": 61.98
+     },
+     "who": "merchants",
+     "action": "The fat merchant runs with the cooking pot on his head like a helmet; the plum one loses his turban, snatches it out of the air and keeps going",
+     "acting": "comic secondary action; the turban unrolls into a ribbon that follows him",
+     "library": "prop pinned to head anchor; ribbon on lagged"
+    },
+    {
+     "t": 62.3,
+     "end": 63.0,
+     "who": "sinbad",
+     "action": "At the far palm Sinbad, arms full of firewood, sees them go; he drops the wood and runs after them, a long way behind",
+     "acting": "double take with a blink, sticks fall (fallY, staggered), run starts with an anticipation step back",
+     "library": "anticipate; walk; sticks as small cels"
+    },
+    {
+     "t": 63.08,
+     "end": 63.8,
+     "cue": {
+      "word": "القوارب،",
+      "t": 63.08
+     },
+     "who": "skiff",
+     "action": "The merchants tumble into the skiffs; the boats rock hard; the sailors at the oars pull at once",
+     "acting": "each body landing dips the boat (spring), last man hauled in by his sash",
+     "library": "skiff bob spring per landing; PERSON_HANDS.reach"
+    },
+    {
+     "t": 63.86,
+     "end": 64.95,
+     "cue": {
+      "word": "وانطفأت",
+      "t": 63.86
+     },
+     "who": "campfire",
+     "action": "A wave lip slides over the grass and into the fire: HISS! A column of steam, the flame shrinks to nothing",
+     "acting": "flame 1 to 0 in 6 drawings; steam ribbon widens; the warm rim light on nearby things goes out",
+     "library": "campfire {fire: 1 to 0, steam: 1}; steam()"
+    },
+    {
+     "t": 65.02,
+     "end": 65.5,
+     "cue": {
+      "word": "النار",
+      "t": 65.02
+     },
+     "who": "campfire",
+     "action": "The black sticks float apart on the water; one ember blinks out",
+     "acting": "small and quiet; Sinbad runs past behind it, splashing knee deep",
+     "library": "sticks drifting on the wave line; glint fade"
+    },
+    {
+     "t": 66.08,
+     "end": 66.5,
+     "cue": {
+      "word": "بدأ",
+      "t": 66.08
+     },
+     "who": "whale",
+     "action": "The whole island tilts and starts down; the camera pulls out",
+     "acting": "tilt 4 degrees toward the head end; everything on it inherits the tilt",
+     "library": "whale {rise by kfn to -150, tilt}"
+    },
+    {
+     "t": 66.56,
+     "end": 66.95,
+     "cue": {
+      "word": "ظهر",
+      "t": 66.56
+     },
+     "who": "set",
+     "action": "Wide: the green hill sinks. The palms go under one by one, crowns last, like the masts of a sinking ship",
+     "acting": "each palm leaves a ring of foam; fronds float for a moment",
+     "library": "palm clip at the water line; ripple per palm (stagger)"
+    },
+    {
+     "t": 66.98,
+     "end": 67.5,
+     "cue": {
+      "word": "الحوت",
+      "t": 66.98
+     },
+     "who": "whale",
+     "action": "At the far end a tail fluke as tall as the dhow's mast rises out of the sea, water sheeting off it",
+     "acting": "slow, heavy rise (flow), fluke tips lag; the skiffs are already 300 units away",
+     "library": "whale {tail: 0 to 1}; drops in sheets (rect strips)"
+    },
+    {
+     "t": 67.52,
+     "end": 68.3,
+     "cue": {
+      "word": "يغوص",
+      "t": 67.52
+     },
+     "who": "sinbad",
+     "action": "Sinbad alone on the last hump of grass: water at his ankles, knees, waist. Arms out for balance, he looks at the skiffs, at the ship, at the water",
+     "acting": "wobble (tip osc), gaze plan skiff, ship, down; mouth set, not screaming",
+     "library": "seaClip at the water line; gazePlan; idle wobble"
+    },
+    {
+     "t": 68.38,
+     "end": 68.9,
+     "cue": {
+      "word": "الماء.",
+      "t": 68.38
+     },
+     "who": "fx",
+     "action": "Foam rings close round him as the last grass disappears",
+     "acting": "rings contract instead of expanding (reverse ripple)",
+     "library": "ripple with reversed u"
+    },
+    {
+     "t": 69.1,
+     "end": 69.88,
+     "who": "whale",
+     "action": "Pause: the fluke slaps down far behind him; a wall of spray",
+     "acting": "spray column, then drops; Sinbad's head turns to it with a blink",
+     "library": "whale tail 1 to 0; splash (new effect in the sea kit)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 64.2,
+     "text": "HISS!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 69.3,
+     "kind": "thud"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 69.88
+   }
+  },
+  {
+   "id": "S9",
+   "start": 69.88,
+   "end": 80.48,
+   "paragraphs": [
+    5
+   ],
+   "set": "openSea",
+   "cast": [
+    "sinbad",
+    "sailors",
+    "merchants"
+   ],
+   "summary": "Sinbad jumps and swims for the boat but cannot reach it. Half drowned, he sees a wooden plank floating near him.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "69.88 wide zoom 1.1 on the jump, the water line at panel y 800. 72.3 tracking right with the swimmer at zoom 1.2 (skiff ahead at the right third). 75.5 to 77.0 hold on Sinbad alone, then pan left to meet the plank entering from the left edge. Water fills the lower picture, so it is never empty."
+   },
+   "composition": "Swell mood: wave layers amplitude 22. Swimmer's head at y 790..830 riding the wave line. Skiff starts 260 units ahead and gains. The plank (240 x 34) enters from x -150 on the same wave line.",
+   "actions": [
+    {
+     "t": 69.9,
+     "end": 70.65,
+     "cue": {
+      "word": "قفز",
+      "t": 69.88
+     },
+     "who": "sinbad",
+     "action": "He crouches on the vanishing hump and LEAPS toward the skiffs",
+     "acting": "anticipation crouch 5 drawings (sq 0.82), stretch 1.12 on take off, arms thrown forward",
+     "library": "anticipate + hop(t, ...); sq"
+    },
+    {
+     "t": 70.7,
+     "end": 71.6,
+     "cue": {
+      "word": "السندباد",
+      "t": 70.7
+     },
+     "who": "sinbad",
+     "action": "In the air: body stretched, turban tail trailing, a shadow racing over the water under him",
+     "acting": "hanging feet, the shadow shrinks at the top of the arc",
+     "library": "groundShadow(ctx, x, waterY, w, lift, {flat:true})"
+    },
+    {
+     "t": 71.72,
+     "end": 72.25,
+     "cue": {
+      "word": "البحر،",
+      "t": 71.72
+     },
+     "who": "fx",
+     "action": "SPLASH! A crown of water, rings, drops; he is gone for four drawings",
+     "acting": "splash crown on threes; chrome word SPLASH! above the crown, not over him",
+     "library": "splash effect (new, sea kit) + ripple + drops; S.label('SPLASH!')"
+    },
+    {
+     "t": 72.32,
+     "end": 73.4,
+     "cue": {
+      "word": "لكنه",
+      "t": 72.32
+     },
+     "who": "sinbad",
+     "action": "He comes up, shakes the water off and swims hard after the skiff",
+     "acting": "head shake with a blink; crawl strokes alternate on twos, head tipped forward, the body clipped at the wave line",
+     "library": "swim pose (new): person clipped by seaClip, aL/aR crawl cycle 0.8 s, tip 0.25; drops()"
+    },
+    {
+     "t": 73.46,
+     "end": 74.0,
+     "cue": {
+      "word": "لم",
+      "t": 73.46
+     },
+     "who": "sailors",
+     "action": "The skiff is being dragged away by the whale's swirl; a sailor in the stern stretches an oar back toward him",
+     "acting": "sailor leans out so far the others hold his sash; all four in the boat look back at Sinbad",
+     "library": "skiff x by kfn (gains 200 units); PERSON_HANDS.reach; lookAt"
+    },
+    {
+     "t": 74.02,
+     "end": 74.8,
+     "cue": {
+      "word": "يصل",
+      "t": 74.02
+     },
+     "who": "sinbad",
+     "action": "Sinbad's hand reaches for the oar blade and closes on water, a hand's width short; a neon arrow marks the gap, then the gap doubles",
+     "acting": "reach with fingers arriving late; wet eyes; the miss is held 4 drawings",
+     "library": "handRW toward the oar tip; S.arrow between hand and oar"
+    },
+    {
+     "t": 74.84,
+     "end": 75.5,
+     "cue": {
+      "word": "القارب.",
+      "t": 74.84
+     },
+     "who": "skiff",
+     "action": "A swell lifts the skiff, tips it over the crest and it slides down the far side: only the oar tips show, then nothing",
+     "acting": "the swell is a front wave layer rising 120 units across the frame",
+     "library": "openSea {swell at x(t)}; skiff clipped by the front layer"
+    },
+    {
+     "t": 75.56,
+     "end": 76.4,
+     "cue": {
+      "word": "وجد",
+      "t": 75.56
+     },
+     "who": "sinbad",
+     "action": "A wave breaks over him. Only bubbles for six drawings. He comes up coughing, eyes shut",
+     "acting": "head back, mouth open, arms slapping; the low point of the film",
+     "library": "seaClip; bubbles; mouth 'open', lid 1"
+    },
+    {
+     "t": 76.4,
+     "end": 77.1,
+     "who": "plank",
+     "action": "From the left edge a wooden plank rides in on a swell, already moving, turning slowly",
+     "acting": "the prop enters moving; it rides the same wave line as he does",
+     "library": "plank (new prop) at seaY(x, t) with rot from the wave slope"
+    },
+    {
+     "t": 77.14,
+     "end": 77.65,
+     "cue": {
+      "word": "لوحًا",
+      "t": 77.14
+     },
+     "who": "sinbad",
+     "action": "His eyes open, dart twice and lock on the plank; brows go up",
+     "acting": "saccades (2 drawing snaps), then a held stare; blink",
+     "library": "gazePlan(t, plan, 0.07); brow -0.7"
+    },
+    {
+     "t": 77.7,
+     "end": 78.55,
+     "cue": {
+      "word": "خشبيًا",
+      "t": 77.7
+     },
+     "who": "plank",
+     "action": "The plank passes close to camera: wood grain, two nail heads, a frayed rope end trailing",
+     "acting": "light glints along its wet top edge",
+     "library": "plank {rope: ribbon}; highlight strip"
+    },
+    {
+     "t": 78.6,
+     "end": 79.4,
+     "cue": {
+      "word": "يطفو",
+      "t": 78.6
+     },
+     "who": "plank",
+     "action": "It floats just out of reach, bobbing, drifting a little farther with each wave",
+     "acting": "tantalising: two waves, two small retreats",
+     "library": "kfn x with wave steps"
+    },
+    {
+     "t": 79.42,
+     "end": 80.48,
+     "cue": {
+      "word": "بالقرب",
+      "t": 79.42
+     },
+     "who": "sinbad",
+     "action": "Three last strokes, each shorter and slower than the one before",
+     "acting": "tired: stroke period stretches 0.8, 1.0, 1.3 s; head lower each time",
+     "library": "crawl cycle with a slowing phase function"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 71.8,
+     "text": "SPLASH!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 80.48
+   }
+  },
+  {
+   "id": "S10",
+   "start": 80.48,
+   "end": 89.17,
+   "paragraphs": [
+    5
+   ],
+   "set": "openSea",
+   "cast": [
+    "sinbad",
+    "sailors"
+   ],
+   "summary": "He clings to the plank with all his strength and watches the ship disappear behind tall waves.",
+   "camera": {
+    "shot": "wide",
+    "move": "push-in",
+    "notes": "80.48 medium wide zoom 1.3 on Sinbad and the plank. 82.0 to 82.7 push to a close-up zoom 2.3 on his face and hands (a real peak: 1.6 s only), back out by 83.6 to an over the shoulder wide zoom 1.0: Sinbad small at lower left (panel x 250, y 850), the ship on the horizon at upper right."
+   },
+   "composition": "Late afternoon sky repaint: gold and peach with blue above, the sea still blue green with gold crests (not monochrome). Ship on the horizon at panel (720, 610), 90 wide. Foreground swells rise to panel y 520 to hide it.",
+   "actions": [
+    {
+     "t": 80.48,
+     "end": 81.6,
+     "cue": {
+      "word": "فتعلق",
+      "t": 80.48
+     },
+     "who": "sinbad",
+     "action": "He lunges and throws both arms over the plank; it dips under his weight and springs back",
+     "acting": "the plank sinks 20 units and rebounds (spring); his chin hits the wood",
+     "library": "handLW/handRW on the plank; rebound; seaClip"
+    },
+    {
+     "t": 81.72,
+     "end": 82.0,
+     "cue": {
+      "word": "به",
+      "t": 81.72
+     },
+     "who": "sinbad",
+     "action": "He drags his chest onto it and lays his cheek on the wet wood, panting",
+     "acting": "breathing fast (breathe amp 0.04), lid 0.7, turban tail floating beside him",
+     "library": "person tip 0.5 over the plank; breathe"
+    },
+    {
+     "t": 82.06,
+     "end": 82.75,
+     "cue": {
+      "word": "بكل",
+      "t": 82.06
+     },
+     "who": "camera",
+     "action": "Close-up: fingers locked over the plank's edge, teeth set, eyes wet and fierce",
+     "acting": "the hands are the subject: knuckles as hard highlight shapes; two light bands sweep the held drawing",
+     "library": "close-up of the Library head and hands at zoom 2.3; wet:true; brow 0.7; lightBands"
+    },
+    {
+     "t": 82.78,
+     "end": 83.55,
+     "cue": {
+      "word": "قوته،",
+      "t": 82.78
+     },
+     "who": "fx",
+     "action": "A wave washes right over plank and man. When it clears he is still there, blinking the water off",
+     "acting": "front wave layer wipes the frame in 5 drawings; drops off his chin",
+     "library": "openSea front layer swell; drops; blink"
+    },
+    {
+     "t": 83.62,
+     "end": 84.6,
+     "cue": {
+      "word": "وشاهد",
+      "t": 83.62
+     },
+     "who": "sinbad",
+     "action": "He lifts his head and looks to the horizon",
+     "acting": "head up with a blink, gaze far right; the camera pulls out with his look",
+     "library": "lookAt horizon; camera kfn"
+    },
+    {
+     "t": 84.66,
+     "end": 85.4,
+     "cue": {
+      "word": "السفينة",
+      "t": 84.66
+     },
+     "who": "dhow",
+     "action": "Far off, the dhow in the gold light, sail full, the skiffs being hauled up its side",
+     "acting": "tiny cels: two dots climbing a rope ladder; the captain's turban a white dot at the stern, facing back",
+     "library": "dhow at s 0.18 on the far wave layer"
+    },
+    {
+     "t": 85.44,
+     "end": 86.2,
+     "cue": {
+      "word": "تبتعد",
+      "t": 85.44
+     },
+     "who": "sinbad",
+     "action": "The ship gets smaller in three held steps. Sinbad raises one arm and waves, mouth open in a shout nobody hears",
+     "acting": "the wave is wide at first, then slower; no balloon",
+     "library": "dhow s 0.18, 0.13, 0.09 on held steps; PERSON_HANDS.wave with aR flow"
+    },
+    {
+     "t": 86.24,
+     "end": 86.8,
+     "cue": {
+      "word": "وراء",
+      "t": 86.24
+     },
+     "who": "set",
+     "action": "A tall swell rises across the foreground and hides the ship",
+     "acting": "the swell lifts Sinbad 60 units as it passes under him",
+     "library": "openSea swell(x, t) amplitude 180 on the front layers"
+    },
+    {
+     "t": 86.86,
+     "end": 87.5,
+     "cue": {
+      "word": "الأمواج",
+      "t": 86.86
+     },
+     "who": "set",
+     "action": "The swell passes: the ship is smaller. A second, taller swell rises",
+     "acting": "his waving arm is lower now",
+     "library": "second swell; flow on aR"
+    },
+    {
+     "t": 87.58,
+     "end": 88.26,
+     "cue": {
+      "word": "العالية.",
+      "t": 87.58
+     },
+     "who": "set",
+     "action": "The second swell passes: the horizon is empty. His arm comes down slowly, the hand last",
+     "acting": "follow through by delay on the hand; head drops onto the plank",
+     "library": "lagged; drop"
+    },
+    {
+     "t": 88.3,
+     "end": 89.17,
+     "who": "sinbad",
+     "action": "Pause: one small figure on a plank in a very large sea; a band of sunset light moves across the water",
+     "acting": "moving hold: bob, breathing, turban tail",
+     "library": "lightBands on the sea; idleSway"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 88.6,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 89.17
+   }
+  },
+  {
+   "id": "S11",
+   "start": 89.17,
+   "end": 95.66,
+   "paragraphs": [
+    6
+   ],
+   "set": "openSea",
+   "cast": [
+    "sinbad",
+    "gulls"
+   ],
+   "summary": "Night on the plank until the wind drops; then the sky turns to morning.",
+   "camera": {
+    "shot": "wide",
+    "move": "drift",
+    "notes": "Wide zoom 1.05, slow drift right 60 units over the scene. The plank rides at panel x 420..520, y 800. The night is repainted light and warm: lilac blue sky, big cream moon, peach glow on the horizon, blue green water with a cream moon path."
+   },
+   "composition": "Moon at panel (720, 260), r 70. Moon path a column of broken cream dashes from the horizon to the plank. Windy first half: whitecaps and spray streaks from the left. 93.98 to 95.6 the sky cross-fades to dawn and bright morning; the sun rises at panel (760, 560).",
+   "actions": [
+    {
+     "t": 89.17,
+     "end": 89.9,
+     "cue": {
+      "word": "ظل",
+      "t": 89.17
+     },
+     "who": "set",
+     "action": "Night: the sea under a big moon; wind streaks and whitecaps; the plank climbs and drops over long swells",
+     "acting": "colour stays varied: skin, tangerine turban and white tunic keep their own colours, with only a cool rim light",
+     "library": "openSea {sky:'night', mood:'swell'}; castFinish {rim:'#bfd8ff'}"
+    },
+    {
+     "t": 89.96,
+     "end": 90.7,
+     "cue": {
+      "word": "السندباد",
+      "t": 89.96
+     },
+     "who": "sinbad",
+     "action": "Sinbad lies along the plank on his front, one arm round it, the other trailing in the water",
+     "acting": "lid 0.8, slow heavy breathing; the trailing hand drags a small wake",
+     "library": "person lie:1 on the plank (rot with the wave slope); breathe"
+    },
+    {
+     "t": 90.74,
+     "end": 91.15,
+     "cue": {
+      "word": "فوق",
+      "t": 90.74
+     },
+     "who": "set",
+     "action": "A gust: spray streaks cross the frame, the plank tops a crest",
+     "acting": "plank bob amplitude 60; his turban tail whips",
+     "library": "speed line streaks in white; ribbon"
+    },
+    {
+     "t": 91.2,
+     "end": 91.8,
+     "cue": {
+      "word": "اللوح",
+      "t": 91.2
+     },
+     "who": "sinbad",
+     "action": "He starts to slide off on the far side of the crest, wakes with a jolt and grips again",
+     "acting": "eyes snap open, grab with both arms, a blink, then the lids sink again",
+     "library": "lid flow; handLW/handRW"
+    },
+    {
+     "t": 91.82,
+     "end": 92.7,
+     "cue": {
+      "word": "حتى",
+      "t": 91.82
+     },
+     "who": "fx",
+     "action": "The streaks thin out; the clouds slide off the moon",
+     "acting": "wind streak count 12 to 0; cloud plates part",
+     "library": "kfn on streak count; cloud parallax"
+    },
+    {
+     "t": 92.74,
+     "end": 93.4,
+     "cue": {
+      "word": "هدأت",
+      "t": 92.74
+     },
+     "who": "set",
+     "action": "The wind drops: the swells flatten, the whitecaps go, and the broken moon path joins into one clean column of light",
+     "acting": "wave amplitude 60 to 8 over 1.2 s; the plank's bob eases with it",
+     "library": "openSea mood blend swell to calm; moonReflection (planned name)"
+    },
+    {
+     "t": 93.42,
+     "end": 93.95,
+     "cue": {
+      "word": "الريح.",
+      "t": 93.42
+     },
+     "who": "sinbad",
+     "action": "He lets out a long breath and his eyes close; a sea turtle surfaces beside the plank, looks at him and goes under again",
+     "acting": "one visible exhale (sq 1.03 to 0.97); the turtle is a 1 s cameo",
+     "library": "turtle (Library) {ph, ext}; ripple"
+    },
+    {
+     "t": 93.98,
+     "end": 94.9,
+     "cue": {
+      "word": "وفي",
+      "t": 93.98
+     },
+     "who": "set",
+     "action": "The sky pales: lilac to peach to bright blue; the stars go out, the sun's edge lifts at the horizon",
+     "acting": "a 1.6 s repaint cross-fade on the plates only",
+     "library": "openSea sky mix night to dawn to day"
+    },
+    {
+     "t": 94.98,
+     "end": 95.66,
+     "cue": {
+      "word": "الصباح",
+      "t": 94.98
+     },
+     "who": "gulls",
+     "action": "Morning. A gull lands on the end of the plank and pecks at it: land is near",
+     "acting": "the plank tips a little under the gull; Sinbad does not wake",
+     "library": "bird {kind:'dove'} landing (hop + landSquash); plank rot"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "dissolve",
+    "t": 95.66
+   }
+  },
+  {
+   "id": "S12",
+   "start": 95.66,
+   "end": 101.2,
+   "paragraphs": [
+    6
+   ],
+   "set": "islandShore",
+   "cast": [
+    "sinbad",
+    "gulls",
+    "horses"
+   ],
+   "summary": "The waves carry him onto a real shore. He checks that it is real land, and falls asleep.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "95.66 tracking right with the plank at zoom 1.1 from open water (x 300) to the beach (x 900). 97.7 hold a wide {x 980, y 660, zoom 1.15}. 100.5 slow drift up and right to show the meadow, three grazing horses and a palace on the hill."
+   },
+   "composition": "World 2000 wide: sea x 0..820, wet sand to x 900, beach to x 1500, meadow beyond; palms at x 1050, 1300, 1620; rocks and shells along the tide line; far palace with a gold dome at x 1750, y 380. Sinbad comes to rest at x 960, y 900.",
+   "actions": [
+    {
+     "t": 95.66,
+     "end": 96.6,
+     "cue": {
+      "word": "حملته",
+      "t": 95.66
+     },
+     "who": "set",
+     "action": "The waves carry the plank toward a wide beach: palms, rocks, green hills",
+     "acting": "the gull rides the plank like a figurehead, then flies ahead",
+     "library": "openSea layers + islandShore plate, camera track"
+    },
+    {
+     "t": 96.62,
+     "end": 97.6,
+     "cue": {
+      "word": "الأمواج",
+      "t": 96.62
+     },
+     "who": "set",
+     "action": "One long wave lifts him and surfs the plank forward",
+     "acting": "the plank tilts nose down; his arms tighten",
+     "library": "swell(x, t) carrying the plank; rot"
+    },
+    {
+     "t": 97.68,
+     "end": 98.3,
+     "cue": {
+      "word": "شاطئ",
+      "t": 97.68
+     },
+     "who": "sinbad",
+     "action": "The surf sets him down on the sand; the water slides back and leaves him and the plank behind a line of foam",
+     "acting": "foam line advances 120 units and retreats on threes; wet sand darkens and dries",
+     "library": "shore foam band; person lie:1 face down pose (lie with head toward the land)"
+    },
+    {
+     "t": 98.34,
+     "end": 99.15,
+     "cue": {
+      "word": "حقيقي،",
+      "t": 98.34
+     },
+     "who": "sinbad",
+     "action": "He lifts his head, pats the sand, then knocks on it twice with his knuckles and puts an ear to the ground. Nothing moves. Tag: REAL LAND",
+     "acting": "comic callback to the whale: suspicious squint, knock knock, listening pause, then relief",
+     "library": "kneel 0.5; handRW knock (2 quick dips); PERSON_HANDS.cupEar; S.label + S.arrow at the sand"
+    },
+    {
+     "t": 99.2,
+     "end": 100.2,
+     "cue": {
+      "word": "فنام",
+      "t": 99.2
+     },
+     "who": "sinbad",
+     "action": "A huge smile, and his arms give way: he drops flat and is asleep before he lands",
+     "acting": "collapse in 4 drawings with a small bounce; lid 1",
+     "library": "lie:1; impactSquash small"
+    },
+    {
+     "t": 100.28,
+     "end": 100.5,
+     "cue": {
+      "word": "من",
+      "t": 100.28
+     },
+     "who": "fx",
+     "action": "Z Z Z drifts up; his back rises and falls; the surf tickles his feet and his toes twitch; a gull stands on his back",
+     "acting": "breathing is big and slow; nothing else is still either: palms, foam, clouds",
+     "library": "zzz(); breathe; bird idle"
+    },
+    {
+     "t": 100.54,
+     "end": 101.2,
+     "cue": {
+      "word": "التعب.",
+      "t": 100.54
+     },
+     "who": "camera",
+     "action": "The camera drifts up from the sleeper: a meadow, three fine horses grazing, and a palace with a gold dome on the hill",
+     "acting": "horses in three coats graze out of sync (headDown, chew, tail swish)",
+     "library": "horse {headDown:1, chew, saddle:false, pal} x3 with the story's coat table"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 98.4,
+     "text": "REAL LAND"
+    },
+    {
+     "t": 100.3,
+     "text": "Z Z Z"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 101.2
+   }
+  },
+  {
+   "id": "S13",
+   "start": 101.2,
+   "end": 109.08,
+   "paragraphs": [
+    6
+   ],
+   "set": "islandShore",
+   "cast": [
+    "sinbad",
+    "grooms",
+    "horses"
+   ],
+   "summary": "The king's horse keepers find him and give him water and food.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "pan",
+    "notes": "101.2 wide zoom 1.05 as the grooms and horses come down the beach from the right; 102.7 ease to {x 1040, y 680, zoom 1.3}: Sinbad, the kneeling groom and the lead horse's head; 104.2 pan right 200 units to take in all three horses and the second groom, back by 105.5. Ground at panel y 880."
+   },
+   "composition": "Sinbad at x 960. Groom A kneels at x 1060; lead horse (white, royal blue cloth with a gold crown mark) at x 1220 facing left; groom B with the bay and the black at x 1400..1560.",
+   "actions": [
+    {
+     "t": 101.2,
+     "end": 102.0,
+     "cue": {
+      "word": "ثم",
+      "t": 101.2
+     },
+     "who": "grooms",
+     "action": "Two grooms come along the beach leading three horses, already walking",
+     "acting": "horses walk with heads nodding out of step; groom B whistles (no sound), groom A swings a waterskin",
+     "library": "walk + GAIT.horse; horse pal table (white, bay, black lifted); person {costume:'servant', pal: GROOM[i]}"
+    },
+    {
+     "t": 102.08,
+     "end": 102.7,
+     "cue": {
+      "word": "وجده",
+      "t": 102.08
+     },
+     "who": "horses",
+     "action": "The white horse stops, ears forward, lowers its head and sniffs the sleeper's turban; its snort blows the turban tail",
+     "acting": "ears first, then the head (ears lead the look); the gull on Sinbad's back flies off",
+     "library": "horse {earL, earR, headDown flow, snort}; ribbon kick"
+    },
+    {
+     "t": 102.74,
+     "end": 103.3,
+     "cue": {
+      "word": "رجال",
+      "t": 102.74
+     },
+     "who": "grooms",
+     "action": "Groom A starts, runs the last steps and drops to his knees beside Sinbad; groom B holds the other horses back",
+     "acting": "startle (sq 0.9, brows up) then quick walk; kneel with a hand on Sinbad's shoulder",
+     "library": "anticipate; walk; kneel:1; handRW"
+    },
+    {
+     "t": 103.38,
+     "end": 104.2,
+     "cue": {
+      "word": "يعتنون",
+      "t": 103.38
+     },
+     "who": "grooms",
+     "action": "Groom B calms the bay with a hand on its neck and a brush along its flank; tails swish",
+     "acting": "the men who look after horses, shown by their hands",
+     "library": "handRW along the flank (flow); horse tailSwish"
+    },
+    {
+     "t": 104.24,
+     "end": 104.95,
+     "cue": {
+      "word": "بخيول",
+      "t": 104.24
+     },
+     "who": "horses",
+     "action": "Pan over the three horses: each wears a royal blue cloth with a gold crown mark. Tag: THE KING'S HORSES. The white one tosses its head",
+     "acting": "label sits above the horses' backs, clear of every face",
+     "library": "horse {cloth, trim}; S.label; crown mark as a small celShade shape on the cloth"
+    },
+    {
+     "t": 104.98,
+     "end": 105.5,
+     "cue": {
+      "word": "الملك،",
+      "t": 104.98
+     },
+     "who": "grooms",
+     "action": "Groom A nods toward the palace on the hill; its gold dome glints",
+     "acting": "a head tilt and a thumb over the shoulder",
+     "library": "glint at the dome; PERSON_HANDS.pointUp variant"
+    },
+    {
+     "t": 105.54,
+     "end": 106.6,
+     "cue": {
+      "word": "وأعطوه",
+      "t": 105.54
+     },
+     "who": "grooms",
+     "action": "He lifts Sinbad to sitting, an arm behind his back; Sinbad's eyes open a crack",
+     "acting": "weight: Sinbad's head lolls and comes up late (lagged); lid 0.8 to 0.4",
+     "library": "person lie 1 to sit 1 blend; lagged head"
+    },
+    {
+     "t": 106.64,
+     "end": 107.05,
+     "cue": {
+      "word": "ماء",
+      "t": 106.64
+     },
+     "who": "sinbad",
+     "action": "The waterskin is at his lips: three big gulps, a drop running down his chin, his eyes opening wider with each",
+     "acting": "gulp = small head tip back and throat bob on threes",
+     "library": "waterskin (planned name) {tilt, squeeze}; drops"
+    },
+    {
+     "t": 107.1,
+     "end": 108.26,
+     "cue": {
+      "word": "وطعامًا.",
+      "t": 107.1
+     },
+     "who": "sinbad",
+     "action": "Bread and dates on a tray: he bites, cheeks full, hand to chest in thanks. The white horse leans over his shoulder and takes a date",
+     "acting": "chew cheek puffs alternate; he and the horse look at each other, a beat, and he gives it another",
+     "library": "foodTray (planned name); horse {chew}; lookAt both ways"
+    },
+    {
+     "t": 108.3,
+     "end": 109.08,
+     "who": "horses",
+     "action": "Pause: the horse chews with its lip curling; groom A laughs with his head back",
+     "acting": "three different laughs and chews on different periods",
+     "library": "horse chew; person mouth 'open' + sq pulse"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 104.3,
+     "text": "THE KING'S HORSES"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 108.6,
+     "kind": "blip"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 109.08
+   }
+  },
+  {
+   "id": "S14",
+   "start": 109.08,
+   "end": 114.82,
+   "paragraphs": [
+    7
+   ],
+   "set": "palaceHall",
+   "cast": [
+    "sinbad",
+    "king",
+    "court"
+   ],
+   "summary": "The king welcomes the strange guest and listens to his story in amazement.",
+   "camera": {
+    "shot": "wide",
+    "move": "drift",
+    "notes": "Wide of the whole hall {x 500, y 640, zoom 1.0} with a slow drift toward the dais; 112.0 ease to zoom 1.2 centred between Sinbad and the king so both faces and the story balloon fit. No close-up."
+   },
+   "composition": "Library palaceHall (variant 'palace'): door arch at the left showing the sea and a palm, throne on the dais at the right (anchors from the set). King at the throne then at x 600; Sinbad at x 380 facing right; vizier at x 760, two guards at x 880 and x 150. Story balloon at panel (400, 300), 360 x 240.",
+   "actions": [
+    {
+     "t": 109.08,
+     "end": 110.05,
+     "cue": {
+      "word": "رحب",
+      "t": 109.08
+     },
+     "who": "king",
+     "action": "The hall, bright and rich. The king rises from his throne and opens his arms",
+     "acting": "king is round and warm: sit 1 to 0 with a little bounce, arms wide, big smile",
+     "library": "palaceHall(ctx, {variant:'palace', outside}) ; person {costume:'caliph', pal: KING}; sit blend"
+    },
+    {
+     "t": 110.12,
+     "end": 110.6,
+     "cue": {
+      "word": "الملك",
+      "t": 110.12
+     },
+     "who": "king",
+     "action": "He comes down the dais steps and lays a hand on Sinbad's shoulder; Sinbad bows",
+     "acting": "king's walk is slow and rolling; Sinbad bows from the waist and comes up with a blink",
+     "library": "walk; handRW; lean + drop for the bow"
+    },
+    {
+     "t": 110.64,
+     "end": 111.25,
+     "cue": {
+      "word": "بالضيف",
+      "t": 110.64
+     },
+     "who": "sinbad",
+     "action": "Sinbad, barefoot and sea worn but with his tangerine turban retied, puts a hand on his chest",
+     "acting": "shy smile, eyes up at the king",
+     "library": "PERSON_HANDS.chest; pal shoes 'bare'"
+    },
+    {
+     "t": 111.3,
+     "end": 112.0,
+     "cue": {
+      "word": "الغريب،",
+      "t": 111.3
+     },
+     "who": "court",
+     "action": "The vizier strokes his beard and looks him up and down; a guard peeks round his spear",
+     "acting": "doubt: one brow up, slow blink; the guards never move together",
+     "library": "person {costume:'vizier'} PERSON_HANDS.chin; guards = servant preset recoloured with a spear line"
+    },
+    {
+     "t": 112.06,
+     "end": 113.05,
+     "cue": {
+      "word": "وسمع",
+      "t": 112.06
+     },
+     "who": "sinbad",
+     "action": "He tells the story: his arms draw a big round hill in the air and a picture balloon pops above him with the green island and its palms. The king sits down on the dais step, chin on his fist",
+     "acting": "storyteller's arms (flow, hands late); the king leans in",
+     "library": "thoughtCloud used as a story balloon {inside: whale {dress:1, s:0.3}}; PERSON_HANDS.chin"
+    },
+    {
+     "t": 113.1,
+     "end": 113.9,
+     "cue": {
+      "word": "قصته",
+      "t": 113.1
+     },
+     "who": "storyBalloon",
+     "action": "In the balloon the island lifts: under it, the whale with one open eye. Sinbad mimes swimming",
+     "acting": "the balloon picture bobs on its own wave line; his crawl mime is fast and funny",
+     "library": "whale {rise, lid} inside the balloon; aL/aR crawl cycle"
+    },
+    {
+     "t": 113.92,
+     "end": 114.82,
+     "cue": {
+      "word": "بدهشة.",
+      "t": 113.92
+     },
+     "who": "king",
+     "action": "The king's eyes go round, both hands fly to his cheeks and his crown hops off his turban and lands crooked; the vizier's jaw drops a beat later; a guard's spear tips over",
+     "acting": "staggered amazement: king first, vizier 3 drawings later, guards after; crown on a hop arc with lagged settle",
+     "library": "eyes 'wide'; PERSON_HANDS.cheeks; hop for the crown; stagger(i)"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "later",
+    "t": 114.82,
+    "label": "DAYS LATER..."
+   }
+  },
+  {
+   "id": "S15",
+   "start": 114.82,
+   "end": 120.5,
+   "paragraphs": [
+    7
+   ],
+   "set": "islandPort",
+   "cast": [
+    "sinbad",
+    "sailors",
+    "captain",
+    "gulls"
+   ],
+   "summary": "Days later a merchant ship arrives in the king's harbour.",
+   "camera": {
+    "shot": "establishing",
+    "move": "pan",
+    "notes": "The tape transition covers 114.5 to 115.6 (plate swap at its midpoint). 115.6 wide of the port {x 700, y 640, zoom 1.0}; 116.7 slow pan right 380 units to meet the ship gliding in; ends {x 1150, y 640, zoom 1.05} with Sinbad at the left third and the moored dhow filling the right half."
+   },
+   "composition": "harbourQuay in its island variant, 2200 wide: white walls and a blue door on the left, the palace dome on a green hill behind, palms, nets, baskets, a fishing skiff; quay edge x 1100, sea beyond with the horizon at y 640. Sinbad stands at x 980. The dhow berths at x 1380..1900, deck y 800.",
+   "actions": [
+    {
+     "t": 114.82,
+     "end": 115.6,
+     "cue": {
+      "word": "وبعد",
+      "t": 114.82
+     },
+     "who": "fx",
+     "action": "Tape transition with the caption DAYS LATER... (white flash, tracking noise)",
+     "acting": "under the flash the hall becomes the harbour",
+     "library": "S.transition(..., {rect: panel, caption:'DAYS LATER...'}); set swap at p 0.5"
+    },
+    {
+     "t": 115.98,
+     "end": 116.65,
+     "cue": {
+      "word": "أيام",
+      "t": 115.98
+     },
+     "who": "sinbad",
+     "action": "A bright morning in the king's harbour. Sinbad, rested, stands at the quay's edge watching the horizon, as he did in Baghdad; a porter passes with a basket, a boy mends a net",
+     "acting": "same dreamy look as S1 (setup echo) but he now glances down at the water first; background figures on their own loops",
+     "library": "person; porter and boy = servant presets on walk / idle loops"
+    },
+    {
+     "t": 116.7,
+     "end": 117.55,
+     "cue": {
+      "word": "وصلت",
+      "t": 116.7
+     },
+     "who": "dhow",
+     "action": "The tip of a striped sail slides into frame from the right, gulls ahead of it",
+     "acting": "the prop enters moving; Sinbad's eyes find it and follow",
+     "library": "dhow x by kfn ease-out; bird fly; look()"
+    },
+    {
+     "t": 117.62,
+     "end": 118.25,
+     "cue": {
+      "word": "سفينة",
+      "t": 117.62
+     },
+     "who": "dhow",
+     "action": "The whole ship glides in: cream sail with two crimson stripes, cobalt pennant, the turquoise band along its side",
+     "acting": "it is the ship from S2, a little weathered (one patch on the sail)",
+     "library": "dhow {sail:1, patch:true}"
+    },
+    {
+     "t": 118.3,
+     "end": 119.7,
+     "cue": {
+      "word": "تجارية",
+      "t": 118.3
+     },
+     "who": "sailors",
+     "action": "A sailor throws the mooring rope; it arcs across the gap and the net boy drops it over a bollard",
+     "acting": "throw with wind up and follow through; rope as a ribbon on a parabola, then slack, then taut",
+     "library": "flow aR; rope polyline; kick on the bollard"
+    },
+    {
+     "t": 119.78,
+     "end": 120.5,
+     "cue": {
+      "word": "الميناء،",
+      "t": 119.78
+     },
+     "who": "dhow",
+     "action": "The hull bumps the quay and settles; the sail is furled in 5 drawings; the gangplank drops with a bounce",
+     "acting": "ship bob damps out (swing); plank lands, rebounds once",
+     "library": "dhow {sail: 1 to 0, gang: 0 to 1}; rebound"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 114.85,
+     "text": "DAYS LATER..."
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 120.5
+   }
+  },
+  {
+   "id": "S16",
+   "start": 120.5,
+   "end": 129.43,
+   "paragraphs": [
+    7
+   ],
+   "set": "islandPort",
+   "cast": [
+    "sinbad",
+    "captain",
+    "sailors"
+   ],
+   "summary": "Sinbad recognises the captain, and on the deck the three sealed chests he left behind.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "120.5 medium wide zoom 1.2 on Sinbad with the ship behind. 121.5 to 122.3 an eye close-up (peak, 0.8 s): the striped sail reflected in both irises. 122.34 the captain at the rail, zoom 1.3. 124.5 pan along the deck to the chests, zoom 1.4; 127.5 back out to zoom 1.05 for the run up the gangplank and the meeting."
+   },
+   "composition": "Captain at the rail x 1500, in the same pose and screen position as S4. Chests roped by the mast at x 1700, deck y 800 (top of the stack y 660). Gangplank (1100, 900) to (1400, 805).",
+   "actions": [
+    {
+     "t": 120.5,
+     "end": 121.45,
+     "cue": {
+      "word": "فعرف",
+      "t": 120.5
+     },
+     "who": "sinbad",
+     "action": "A double take: his head snaps to the ship, away, and back, and he leans forward",
+     "acting": "blink on each turn; hands half raised",
+     "library": "tilt flow with blinks (abBlinkAt style timed blinks); tip 0.1"
+    },
+    {
+     "t": 121.52,
+     "end": 122.3,
+     "cue": {
+      "word": "السندباد",
+      "t": 121.52
+     },
+     "who": "camera",
+     "action": "Eye close-up: his pupils widen and the striped sail is reflected in both irises",
+     "acting": "lids open over 3 drawings, the reflection slides in; one light band",
+     "library": "eye close-up function (as ALI-01 abFace eyes) with a small dhow cel clipped in each iris"
+    },
+    {
+     "t": 122.34,
+     "end": 123.2,
+     "cue": {
+      "word": "قبطانها،",
+      "t": 122.34
+     },
+     "who": "captain",
+     "action": "The captain at the rail with his brass spyglass, exactly as he stood off the island. Tag: THE CAPTAIN!",
+     "acting": "a match to S4: same pose, same framing; his beard is a shade greyer",
+     "library": "person captain + spyglass; S.label above him"
+    },
+    {
+     "t": 123.26,
+     "end": 124.5,
+     "cue": {
+      "word": "ورأى",
+      "t": 123.26
+     },
+     "who": "sinbad",
+     "action": "Sinbad's eyes travel from the captain along the deck",
+     "acting": "pupils lead, head follows late",
+     "library": "gazePlan"
+    },
+    {
+     "t": 124.56,
+     "end": 125.2,
+     "cue": {
+      "word": "ظهرها",
+      "t": 124.56
+     },
+     "who": "camera",
+     "action": "Pan along the deck past coils of rope, jars and bales",
+     "acting": "the pan is the search; sailors work in the background",
+     "library": "camera kfn; deck props"
+    },
+    {
+     "t": 125.22,
+     "end": 126.35,
+     "cue": {
+      "word": "الصناديق",
+      "t": 125.22
+     },
+     "who": "chests",
+     "action": "By the mast, roped together: three chests with tangerine bands and white star seals. A glint runs over each seal in turn; a neon arrow and the tag HIS CHESTS",
+     "acting": "the accent colour does the recognising: nothing else on the ship is tangerine",
+     "library": "chest x3 {band, seal}; glints staggered 0.2 s; S.arrow + S.label"
+    },
+    {
+     "t": 126.72,
+     "end": 127.5,
+     "cue": {
+      "word": "تركها",
+      "t": 126.72
+     },
+     "who": "fx",
+     "action": "A one second tape memory: the Baghdad quay, his hand slapping the star seal onto the top chest",
+     "acting": "washed pale with tracking noise, then back",
+     "library": "replay of the S2 pose at 7.6 inside a transition style flash (no caption)"
+    },
+    {
+     "t": 127.56,
+     "end": 127.9,
+     "cue": {
+      "word": "عند",
+      "t": 127.56
+     },
+     "who": "sinbad",
+     "action": "He jabs both thumbs at his own chest and runs up the gangplank, the plank bouncing",
+     "acting": "run with arms pumping, turban tail straight out",
+     "library": "walk fast on the plank line; footfalls bend the plank"
+    },
+    {
+     "t": 127.96,
+     "end": 128.5,
+     "cue": {
+      "word": "الرحيل.",
+      "t": 127.94
+     },
+     "who": "captain",
+     "action": "The captain squints at the stranger, raises the spyglass at him from one pace away, lowers it; his mouth falls open",
+     "acting": "comic: the glass at point blank range, then the long stare, then the eyebrows",
+     "library": "wink + spyglass; mouth 'o'; brow -0.8"
+    },
+    {
+     "t": 128.55,
+     "end": 129.43,
+     "who": "lettering",
+     "action": "Pause: the captain's speech bubble SINBAD?! ALIVE?! Three sailors' heads pop up behind the rail, one after another",
+     "acting": "bubble points at the captain, clear of both faces",
+     "library": "S.label(..., {balloon:true, to}); stagger(i)"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 122.4,
+     "text": "THE CAPTAIN!"
+    },
+    {
+     "t": 125.3,
+     "text": "HIS CHESTS"
+    },
+    {
+     "t": 128.55,
+     "text": "SINBAD?! ALIVE?!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 128.9,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 129.43
+   }
+  },
+  {
+   "id": "S17",
+   "start": 129.43,
+   "end": 136.8,
+   "paragraphs": [
+    8
+   ],
+   "set": "islandPort",
+   "cast": [
+    "sinbad",
+    "captain",
+    "sailors",
+    "king",
+    "grooms",
+    "horses"
+   ],
+   "summary": "The captain returns Sinbad's goods and the king helps him sail home to Baghdad.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "129.43 two-shot on the deck zoom 1.25; 131.2 pull to the quay wide zoom 1.0 as the chests come down; 132.8 the king's party enters from the left; 135.0 pan right with the leaving ship, then the open sea with Baghdad rising on the horizon."
+   },
+   "composition": "Chests set down on the quay at x 900..1000. King arrives at x 700 with groom A leading the white horse at x 520. Departure: the dhow leaves to the right; at 136.0 the horizon shows Baghdad's gold dome and minaret at panel x 700, y 560..600.",
+   "actions": [
+    {
+     "t": 129.43,
+     "end": 130.4,
+     "cue": {
+      "word": "أعاد",
+      "t": 129.43
+     },
+     "who": "captain",
+     "action": "The captain throws his arms round him and thumps his back twice",
+     "acting": "heavy man, big hug: Sinbad squashes at each thump (sq 0.93) and laughs",
+     "library": "handLW/handRW; impactSquash on the thumps"
+    },
+    {
+     "t": 130.48,
+     "end": 131.2,
+     "cue": {
+      "word": "القبطان",
+      "t": 130.48
+     },
+     "who": "captain",
+     "action": "He holds him at arm's length, then sweeps an arm toward the chests and bows with a hand on his chest",
+     "acting": "wet eyes on the old man; the bow is slow",
+     "library": "wet:true; PERSON_HANDS.chest; lean flow"
+    },
+    {
+     "t": 131.22,
+     "end": 131.9,
+     "cue": {
+      "word": "بضاعة",
+      "t": 131.22
+     },
+     "who": "sailors",
+     "action": "Three sailors carry the three chests down the gangplank, one behind another, and set them at Sinbad's feet",
+     "acting": "each chest lands with a squash; the carriers out of step, the last one puffing",
+     "library": "walk on the plank; chest impactSquash; stagger"
+    },
+    {
+     "t": 131.92,
+     "end": 132.8,
+     "cue": {
+      "word": "السندباد،",
+      "t": 131.92
+     },
+     "who": "sinbad",
+     "action": "He kneels and lifts the lid of the top chest: bolts of cloth and jars, untouched, lit from inside by a soft glow. He pats the lid shut",
+     "acting": "relief more than greed: a breath out, a pat like greeting an old friend",
+     "library": "chest {open: 0 to 0.8 to 0}; kneel; abGlow style glow"
+    },
+    {
+     "t": 132.84,
+     "end": 134.05,
+     "cue": {
+      "word": "وساعده",
+      "t": 132.84
+     },
+     "who": "king",
+     "action": "The king arrives on the quay with groom A and the white horse",
+     "acting": "rolling walk, crown now firmly on; the horse recognises Sinbad and nods",
+     "library": "walk; horse headDown pulse"
+    },
+    {
+     "t": 134.12,
+     "end": 134.95,
+     "cue": {
+      "word": "الملك",
+      "t": 134.12
+     },
+     "who": "king",
+     "action": "He gives Sinbad a small gift chest with a crown seal and points to the ship, ready to sail; Sinbad bows deeply",
+     "acting": "handover: the chest's weight dips Sinbad's arms; the captain salutes the king",
+     "library": "giftChest (planned name) with handLW/handRW pass; lean bow"
+    },
+    {
+     "t": 135.0,
+     "end": 136.0,
+     "cue": {
+      "word": "العودة",
+      "t": 135.0
+     },
+     "who": "dhow",
+     "action": "The sail fills. Sinbad waves from the stern; the king, the groom and the horse answer from the quay, none of them in time with the others",
+     "acting": "king waves with his whole arm, groom with his cap, the horse tosses its head; the quay slides away left",
+     "library": "dhow {sail:1}; PERSON_HANDS.wave; stagger"
+    },
+    {
+     "t": 136.04,
+     "end": 136.8,
+     "cue": {
+      "word": "بغداد.",
+      "t": 136.04
+     },
+     "who": "set",
+     "action": "Open sea, afternoon gold: on the horizon ahead the gold dome and the minaret of Baghdad rise out of the haze",
+     "acting": "the skyline is a soft painted shape that sharpens; Sinbad at the bow on his toes",
+     "library": "openSea + far skyline plate rising 40 units by kfn"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 136.8
+   }
+  },
+  {
+   "id": "S18",
+   "start": 136.8,
+   "end": 149.83,
+   "paragraphs": [
+    8
+   ],
+   "set": "baghdadQuay",
+   "cast": [
+    "sinbad",
+    "family",
+    "whale",
+    "gulls",
+    "captain"
+   ],
+   "summary": "Home. He embraces his family, tells them the story of the island, and looks back at the sea, which keeps its wonders. THE END.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "136.8 the S2 framing {x 880, y 650, zoom 1.15} repainted in golden afternoon. 139.1 ease to zoom 1.25 for the storytelling group with the balloon above. 141.9 to 144.0 pan right and widen to {x 1250, y 620, zoom 1.0}: the family small at the left, the wide water and sky filling the rest. Holds with a slow drift to the end."
+   },
+   "composition": "Family waits at x 640..760. Sinbad lands at x 1090 and meets them at x 800. He tells the story sitting on his own chest at x 860; sister on a crate at x 760, parents on a bench at x 620..700. Balloon at panel (420, 260). Final wide: whale's hump on the horizon at world x 1650, y 640; THE END at panel y 300, clear of everyone.",
+   "actions": [
+    {
+     "t": 136.8,
+     "end": 137.55,
+     "cue": {
+      "word": "احتضن",
+      "t": 136.8
+     },
+     "who": "sinbad",
+     "action": "The Baghdad quay in gold light. Sinbad jumps from the gangplank before it is steady, lands and runs",
+     "acting": "hop with landing squash and a contact shadow; run with arms already opening",
+     "library": "hop + landSquash + groundShadow; walk fast"
+    },
+    {
+     "t": 137.6,
+     "end": 138.5,
+     "who": "family",
+     "action": "His sister reaches him first and jumps; he catches her and swings her round once; the mother comes with both arms out",
+     "acting": "sister's legs fly out on the spin; mother's eyes are wet before she arrives",
+     "library": "hop into handLW/handRW; rot on the child; wet:true"
+    },
+    {
+     "t": 138.56,
+     "end": 139.1,
+     "cue": {
+      "word": "أهله،",
+      "t": 138.56
+     },
+     "who": "family",
+     "action": "All four in one embrace: the father's hand on his son's turban, pushing it crooked; one tear on the mother's cheek",
+     "acting": "a breathing group pose, heads at different heights, each with its own small sway",
+     "library": "teardrops; idleSway seeds 31..34; lagged turban"
+    },
+    {
+     "t": 139.12,
+     "end": 140.5,
+     "cue": {
+      "word": "وحكى",
+      "t": 139.12
+     },
+     "who": "sinbad",
+     "action": "He sits on his sealed chest and begins the story, hands already drawing the hill in the air; the family settles round him",
+     "acting": "the same storyteller's arms as before the king, bigger now",
+     "library": "sit:1, seat:'bench' on the chest; flow arms"
+    },
+    {
+     "t": 140.58,
+     "end": 141.15,
+     "cue": {
+      "word": "قصة",
+      "t": 140.58
+     },
+     "who": "storyBalloon",
+     "action": "The picture balloon again: the green island with its three palms. The sister points at it",
+     "acting": "sister up on her knees on the crate, mouth open",
+     "library": "thoughtCloud {inside: whale {dress:1}}; PERSON_HANDS.pointUp"
+    },
+    {
+     "t": 141.18,
+     "end": 141.9,
+     "cue": {
+      "word": "الجزيرة،",
+      "t": 141.18
+     },
+     "who": "storyBalloon",
+     "action": "The island rises: the whale and its one open eye. The mother's hands go to her cheeks, the father's turban hops, the sister claps",
+     "acting": "three reactions, three beats apart; the sister is the only one delighted",
+     "library": "whale {rise, lid}; PERSON_HANDS.cheeks; hop; stagger(i)"
+    },
+    {
+     "t": 141.94,
+     "end": 143.3,
+     "cue": {
+      "word": "وعرف",
+      "t": 141.94
+     },
+     "who": "sinbad",
+     "action": "The balloon fades. Sinbad turns his head to the water, with a blink, and smiles a quieter smile than the boy in the first shot",
+     "acting": "he knows more now: lid 0.25, small smile, a slow breath",
+     "library": "tilt flow + timed blink; mouth 'smile'"
+    },
+    {
+     "t": 143.32,
+     "end": 144.0,
+     "cue": {
+      "word": "البحر",
+      "t": 143.32
+     },
+     "who": "camera",
+     "action": "The camera follows his look out over the wide water: gold light, tall clouds, the moored dhow, gulls",
+     "acting": "the family turns to look too, one by one",
+     "library": "camera pan; lightBands on the water; stagger"
+    },
+    {
+     "t": 144.02,
+     "end": 144.6,
+     "cue": {
+      "word": "يخفي",
+      "t": 144.02
+     },
+     "who": "whale",
+     "action": "Far out a low green hump with one palm slides along the horizon",
+     "acting": "small and unhurried; a gull lands on the palm",
+     "library": "whale {dress:1, s:0.22} on the far wave layer"
+    },
+    {
+     "t": 144.62,
+     "end": 145.5,
+     "cue": {
+      "word": "عجائب.",
+      "t": 144.62
+     },
+     "who": "whale",
+     "action": "It blows a tall jet that breaks into star glints, lifts its tail once like a wave of the hand, and sinks. Sinbad raises a hand to it",
+     "acting": "the glints twinkle on threes; his wave is small and private",
+     "library": "whale {spout, tail}; abGlints; PERSON_HANDS.wave"
+    },
+    {
+     "t": 145.6,
+     "end": 149.83,
+     "who": "lettering",
+     "action": "THE END in chrome over the sea, held to 149.83 while the water, clouds, gulls, the sister's wave and the turban tail keep moving",
+     "acting": "a moving hold: nothing frozen under the card",
+     "library": "S.title('THE END'); idle loops"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 145.6,
+     "text": "THE END"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 145.7,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 149.83
+   }
+  }
+ ],
+ "ending": {
+  "t": 145.6,
+  "description": "After the last word (145.30) the chrome THE END appears over the wide gold sea at 145.6 and holds to 149.83. Under it the far whale has just sunk, leaving rings; gulls, waves, clouds, the sister's wave and Sinbad's turban tail keep moving (a moving hold on twos)."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "كان السندباد شابًا يحب البحر، لكنه يجهل أخطاره. جمع بضاعته، | وودع أهله في بغداد، ثم ركب سفينة تجارية.",
+   "en": "Sinbad loved the sea but knew little of its dangers. He gathered his goods, | said goodbye to his family in Baghdad, and boarded a merchant ship."
+  },
+  {
+   "p": 2,
+   "ar": "سارت السفينة أيامًا في بحر هادئ. | وفي صباح مشمس، رأى البحارة جزيرة خضراء، فنزل بعضهم ليستريح وبقي القبطان يراقب البحر.",
+   "en": "The ship sailed for days on a calm sea. | One sunny morning, the sailors saw a green island. Some went ashore to rest while the captain watched the sea."
+  },
+  {
+   "p": 3,
+   "ar": "جلس السندباد مع رفاقه قرب الأشجار، | وأشعلوا نارًا ليعدوا الطعام. فجأة اهتزت الأرض تحت أقدامهم، | وبدأت المياه تتصاعد حول أطراف الجزيرة على نحو مخيف.",
+   "en": "Sinbad sat with his companions near the trees, | and they lit a fire to cook. Suddenly the ground shook beneath them, | and water began rising frighteningly around the edges of the island."
+  },
+  {
+   "p": 4,
+   "ar": "صاح القبطان من السفينة: «عودوا بسرعة! | هذه ليست جزيرة، بل حوت ضخم نائم!» | ركض التجار نحو القوارب، وانطفأت النار حين بدأ ظهر الحوت يغوص في الماء.",
+   "en": "The captain shouted from the ship, “Come back quickly! | That is not an island, but a huge sleeping whale!” | The merchants ran toward the boats, and the fire went out as the whale’s back began to sink."
+  },
+  {
+   "p": 5,
+   "ar": "قفز السندباد في البحر، لكنه لم يصل إلى القارب. | وجد لوحًا خشبيًا يطفو بالقرب منه، فتعلق به بكل قوته، | وشاهد السفينة تبتعد وراء الأمواج العالية.",
+   "en": "Sinbad jumped into the sea but could not reach a boat. | He found a wooden plank floating nearby, clung to it with all his strength, | and watched the ship disappear behind tall waves."
+  },
+  {
+   "p": 6,
+   "ar": "ظل السندباد فوق اللوح حتى هدأت الريح. | وفي الصباح حملته الأمواج إلى شاطئ حقيقي، فنام من التعب. | ثم وجده رجال يعتنون بخيول الملك، وأعطوه ماء وطعامًا.",
+   "en": "Sinbad stayed on the plank until the wind calmed. | In the morning, the waves carried him to a real shore, where he fell asleep from exhaustion. | The king’s horse keepers found him and gave him food and water."
+  },
+  {
+   "p": 7,
+   "ar": "رحب الملك بالضيف الغريب، وسمع قصته بدهشة. وبعد أيام وصلت سفينة تجارية إلى الميناء، | فعرف السندباد قبطانها، ورأى على ظهرها الصناديق التي تركها عند الرحيل.",
+   "en": "The king welcomed the strange guest and listened to his story in amazement. Days later, | a merchant ship arrived. Sinbad recognized its captain and saw the chests he had left aboard."
+  },
+  {
+   "p": 8,
+   "ar": "أعاد القبطان بضاعة السندباد، وساعده الملك على العودة إلى بغداد. احتضن أهله، | وحكى لهم قصة الجزيرة، وعرف أن البحر يخفي عجائب.",
+   "en": "The captain returned Sinbad’s goods, and the king helped him reach Baghdad. Sinbad embraced his family, | told them about the island, and learned that the sea held many wonders."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "whale",
+   "reusable": true,
+   "effort": "L",
+   "description": "Giant whale that passes for an island. 1500 x 520 at s 1, origin at the top of the back. Fields: s, rise (y offset of the whole animal against the water line), tilt, breathe, lid 0..1, gaze, brow, tail 0..1 (fluke lifted out of the water), spout 0..1, bubbles, dress 0..1 (island dressing: sand rim, grass cap, 3 palms, bushes, flowers, blowhole mound), silhouette. Reusable for any sea monster, great fish or Jonah story; the series' closing image.",
+   "implementation": "Body outline as one closed polygon of about 40 points (rounded head to the right, belly curve, tail stock, two fluke lobes) filled with celShade (slate fill, darker shade crescent from below, light top highlight); belly as a second pale polygon with 7 groove lines; pectoral fin 260 x 90 on a flow driven angle; eye = circle r 26 with a heavy upper lid polygon (lid field), pupil by gaze; barnacles as seeded small celShade circles. Island dressing drawn on the back curve between x -650 and x 650: sand band, grass polygon, Library palmTree and bush, seeded flowers and stones (bake the static dressing once). Everything above the back inherits rise and tilt through one ctx transform. Water in front is the openSea front layer, so sinking needs no clip."
+  },
+  {
+   "type": "prop",
+   "name": "dhow",
+   "reusable": true,
+   "effort": "M",
+   "description": "The series merchant ship with its skiff (planned names dhow; skiff is new). Dimensions in props. Deck anchors returned: bow, mid, stern, rail(x), masthead, gangplank ends.",
+   "implementation": "Hull = polygon with a curved keel line (celShade, teak), turquoise band and cream strake as inner strips; stern cabin box with a small arched window; mast and yard as seg lines; sail = triangle whose trailing edge is a quadratic bulge driven by billow, stripes clipped to the sail; furled state = the same polygon scaled toward the yard by sail. Pitch and bob through one transform about the water line; people on deck are drawn inside that transform and clipped at the rail line. Skiff = small hull polygon, oars as two segs rotating on phase with a blade ellipse."
+  },
+  {
+   "type": "set",
+   "name": "openSea",
+   "reusable": true,
+   "effort": "L",
+   "description": "The sea grammar for the whole series (planned name openSea, with the underSea cross-section, the shore foam band and the sea kit helpers seaY, seaClip, splash, swell). See sets for layers and moods.",
+   "implementation": "Sky plates baked per preset with soft gradients and blurred cumulus (as ALI-01 abGrad / abCloud); cross-fade two plates by alpha. Each water layer is a polygon under the line seaY(x, t, layer, mood) = base + amp * (sin(k1 x + w1 t) + 0.5 sin(k2 x - w2 t)), filled flat (far turquoise #7fd6d8 to near cobalt #1f5fc0) with a hard lighter crest strip 10 units under the line and seeded white foam dashes that step on threes. swell(x, t) adds a travelling raised cosine bump. seaClip(ctx, layer, t) clips to above the line so swimmers and sinking things need no masks. splash = 7 tapered drops on parabolas plus a crown polygon for 6 drawings. Layers slide with camX for parallax; the pattern period is 600 so the strip loops."
+  },
+  {
+   "type": "set",
+   "name": "harbourQuay",
+   "reusable": true,
+   "effort": "M",
+   "description": "Planned name. One quay geometry with two plates: 'baghdad' (S1, S2, S18, and every later Sinbad departure and return) and 'island' (S15 to S17). Dimensions in sets.",
+   "implementation": "Painted skyline plate baked once per variant (domes as ellipses and arcs, minaret as stacked rects, palms from Library palmTree, soft blur 1 to 2 px); quay wall, paving joints, bollards and dressing as flat cels (Library marketStall and townProp for the stall, crates, barrels and baskets); water from openSea clipped to x > 1100."
+  },
+  {
+   "type": "set",
+   "name": "islandShore",
+   "reusable": true,
+   "effort": "M",
+   "description": "Planned name. Beach strip with sea, palms, rocks, meadow and a far palace; reusable for SIND-02's wooded island and SIND-06's narrow beach with other dressing.",
+   "implementation": "Sand as a polygon with a soft gradient plate under it, tide line props seeded (shells = small celShade fans, stones as ALI-01 abStone), Library palmTree, hill bands, palace as a small flat cel group; shore foam band = openSea helper moving along the beach slope on threes."
+  },
+  {
+   "type": "pose",
+   "name": "swim and cling (person in water)",
+   "reusable": true,
+   "effort": "S",
+   "description": "A person in the sea: upright body clipped at the wave line (seaClip), crawl arm cycle on aL/aR with a period field, head tipped forward; cling = chest over the plank with both hands on world targets; lie along the plank uses the Library lie pose rotated to the wave slope.",
+   "implementation": "No new drawing: person(ctx, P) inside seaClip, P.y = seaY(x, t) + 120 * s so the water sits at chest height, aL/aR from a two key cycle sampled on twos, drops() at each hand entry."
+  },
+  {
+   "type": "prop",
+   "name": "small props (chest with band and seal, campfire with cookPot, plank, spyglass, waterskin, foodTray)",
+   "reusable": true,
+   "effort": "M",
+   "description": "Six small flat props; chest, cookPot, waterskin, foodTray and giftChest reuse planned names. Sizes in props.",
+   "implementation": "Each is one function of 5 to 12 celShade shapes with coloured outlines; fire flame = 4 polygon drawings picked by Math.floor(celStep(t, 8) * 8) % 4 scaled by fire; smoke and steam as ribbons on a travelling sine."
+  }
+ ],
+ "owner_questions": [
+  "The film ends on THE END although the series continues; default THE END (alternative: a NEXT VOYAGE... card).",
+  "The opening title shows the English title in chrome with one Arabic line, the script's own word for Sinbad, in Lalezar; no Arabic episode title was supplied, so none is invented (default).",
+  "Added foreshadowing not in the script: a whale shaped shadow passes under the quay in S1, and a small green hump waves its tail on the horizon in the last shot (default: keep both).",
+  "Added family members for the two family scenes: a mother, a father and a little sister (the script says only 'his family'); default as described.",
+  "The whale wakes because of the cooking fire (the traditional reason, not stated in this script) and is played as a grumpy sleeper, not a monster; default: keep, with no one harmed on screen.",
+  "English speech bubbles for the captain's line are shortened: COME BACK! QUICK! / THAT IS NO ISLAND... / IT IS A WHALE!; plus the invented reaction SINBAD?! ALIVE?! at 128.55 (default: keep).",
+  "Comic additions: Sinbad knocks on the real shore to check it (98.34), a horse steals a date (107.1), the king's crown hops (113.92); default: keep.",
+  "Series look set here for SIND-02 and SIND-06: Sinbad in a white tunic, plum trousers and a tangerine turban and sash (his single accent colour); default as in the Series bible."
+ ],
+ "implementation_notes": [
+  "Style cel-anime-80s: frame with S.background(ctx, W, H, t, THEME.page) and S.box(ctx, 54, 54, 972, 1196, 1, THEME.panel); order per frame: sky plate, far sea, cels, front sea, light (glows, lightBands, castFinish rim), lettering, S.finish last.",
+  "Characters on twos: tc = celStep(t, THEME.celFps); blinks and lip flaps on celStep(t, 8). Camera, sea layer slides, light bands, glows and the CRT pass use t. Cel water (foam dashes, shore foam, fire, splash) steps on threes.",
+  "No colour model tint over the cast (owner direction): every time of day is a repainted plate; the cast keeps its colours and gets at most a rim light via castFinish. Night (S11) and gold afternoon (S10, S17, S18) must stay multi coloured.",
+  "Sinbad's palette constant SINBAD = {robe:'#f7f0e0', dot:'#cfc4b0', sleeve:'#f7f0e0', sleeveLen:'short', sash:'#ff7a1a', hc:'#ff7a1a', hd:'#c8520e', band:'#ffffff', pants:'#7b4bb0', head:'smallTurban', beard:'none', tache:false}. PEOPLE.dress spreads pal into the costume record, so head, beard, tache and sleeveLen can be overridden through pal; check a still first. If a field does not take, fall back to costume 'servant' with the same colours and draw the turban in the scene.",
+  "Every floating thing (dhow, skiff, plank, swimmer, sticks, gull on the plank) takes its y and tilt from the one function seaY(x, t, layer, mood); never animate a second bob by hand.",
+  "People on the dhow and in the skiffs are drawn inside the vessel's transform (pitch, bob) and clipped at the rail or gunwale; walking on the gangplank uses walk(xf, tc) along the plank line with footfalls bending the plank.",
+  "The reveal (57.68 to 60.82): draw sea and whale in one group transform G = translate + scale about (1130, 820); 57.68 to 58.9 translate up 470 units, 58.92 impact frame (S.emphasis with {rect: panel}, no word), 58.92 to 59.9 scale 1.0 to 0.55. Balloons are drawn outside G in panel space.",
+  "Whale island states: rise 0 (S3 to S5), breathing 8 units from 43.18, -45 by 50.3, -150 and tilt 4 degrees from 66.08, gone by 68.9. The shore foam line is where the back curve meets seaY, so the rising water needs no separate animation.",
+  "Speech is English balloons with S.label(ctx, text, x, y, p, {balloon:true, to:[x, y]}) pointing at the speaker, never over a face: LAND! 22.6; COME BACK! 54.58 growing to COME BACK! QUICK! 55.44; THAT IS NO ISLAND... 57.04; IT IS A WHALE! 58.92; SINBAD?! ALIVE?! 128.55. Tags (SINBAD, REAL LAND, THE KING'S HORSES, THE CAPTAIN!, HIS CHESTS) are plain S.label boxes with S.arrow where noted. Lettering total 18.",
+  "Transition: one tape transition S.transition(..., {rect: panel, caption:'DAYS LATER...'}) covering 114.5 to 115.6, silent (there is no pause there), set swap at its midpoint. Night to morning at 93.98 is a plate cross-fade, not a transition card.",
+  "Sound (8 effects, master 0.6, all in listed pauses or after the last word): whoosh 14.4 (sail), blip 31.1 (bubbles), riser 51.5 (spout into the shout), thud 69.3 (tail slap), whoosh 88.6 (swell), blip 108.6 (horse), chime 128.9 (recognition), chime 145.7 (the wonder). The tape bed as the style provides.",
+  "Moving holds everywhere (Guide section 15): idleSway on tip and head, breathe on sq, turban tail and sash as ribbons with lagged, groups with stagger(i) and per member seeds, groundShadow under every hop, landing and the jump at 69.9 ({flat:true} on water).",
+  "Run the alive checklist on contact sheets of: the goodbye (8.2 to 13.9), the camp (31.7 to 39.2), the run to the boats (60.8 to 63.8), the swim (72.3 to 80.5), the grooms (101.2 to 108.3) and the homecoming (136.8 to 141.9).",
+  "Subtitles: use the existing chunks_ar.txt / chunks_en.txt and timing.json unchanged; the plan's subtitles field is a verbatim copy."
+ ],
+ "warnings": [
+  "The film is mostly water: the sea kit (openSea, seaY, seaClip) is the biggest piece of work and should be built and checked on stills before any acting.",
+  "The whale reveal must read at phone size: at scale 0.55 the eye is only about 30 px across, so the grumpy look at 60.08 needs the eye drawn 1.6x oversize in that wide (or a 0.6 s inset).",
+  "Swimming uses the front facing Library person clipped at the water line; check that the crawl arms read and that the tangerine turban stays visible against the blue in every swell.",
+  "Pauses are short (0.8 to 1.2 s) and only seven: keep every effect under 0.5 s; the transition at 114.82 is silent.",
+  "Wides at zoom 1.0 make faces small (head about 60 px on the 1080 canvas); the acting in wides must be carried by whole body poses, and the three close-ups (40.2 eye, 82.06 grip, 121.52 eyes) carry the faces.",
+  "Three new sets plus the sea is above the usual four new assets; they are shared by SIND-02 and SIND-06 (ship, sea, quay, shore), which is why they are specified here.",
+  "The English and Arabic scripts match in content (the Arabic adds 'to the port' and 'in the water'); no SCRIPT question."
+ ]
+}

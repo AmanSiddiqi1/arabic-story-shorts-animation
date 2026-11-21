@@ -38,6 +38,17 @@ Excluded by `.gitignore`: all audio/video and `.zip`, `MP4s/`, `Originals/`, bui
 
 ## 2. Media: local mode (default) and shared mode
 
+**Current setup on the main Mac (since 2026-11-21): shared mode with a sibling media folder.** `.media-root` contains `../Arabic Story Media`, and `tools/media/move_to_media_root.py --move` moved every Git-ignored media file there (13,984 files, 53 GB, no conflicts; log `checksums/media_move_20261121_121010.tsv`):
+```
+Arabic Story Media/
+  Audio/Final/              narration MP3s the films use (+ the five older films' narration.mp3, the Thief's)
+  Audio/Earlier versions/   all other audio versions and the supplied story recordings (deletable later)
+  Renders/<ID>/             every rendered version per film; Originals (pre-upgrade)/; _approved_before_subtitle_refresh/
+  Final MP4s/               the current finished films only
+  Working files/<ID>/       players (.html), stills, contact sheets, review packs, frames (rebuildable)
+```
+The map in `media.config.json` (with `*` for one folder level, e.g. `Animations/*/renders/` -> `Renders/*/`) turns the repository-style paths the code uses into these folders; `media.resolve` reads, `media.out` writes, `media.logical` gives the repository-style path for records (production.db keeps paths like `Animations/<ID>/renders/<ID>_v1.mp4`). `scratch/` stays in the repository. The paragraphs below describe the original local mode and the 2026-11-16 shared layout (superseded by this one).
+
 **One setting.** The media root is `$ARABIC_STORY_MEDIA`, else the one-line file `.media-root` at the repository root (untracked, per machine), else `defaultRoot` in `media.config.json`, which is `"."`.
 
 - **Local mode (default, used on `<user>`).** The root is the repository folder itself, and `Library/media.py` / `Library/media.mjs` use every path exactly as written. Narration is `Animations/<story>/narration.mp3` (the Thief: `thief-and-the-moonbeam/Audio/Combined_and slowed.mp3`, from its `story.json`), and `render.mjs` writes finished films to `MP4s/` (and refuses to overwrite one). The prefix map is not used. `tools/media/sync_media.py` refuses to run in this mode.

@@ -5,12 +5,13 @@ import { createRequire } from 'module'; import { pathToFileURL, fileURLToPath } 
 const findLib = (d) => { if (process.env.LIB) return process.env.LIB; for (let x = d; ; x = path.dirname(x)) { const c = path.join(x, 'lemo-opuscar'); if (fs.existsSync(path.join(c, 'core/render/page.mjs'))) return c; if (path.dirname(x) === x) throw new Error('lemo-opuscar library not found: set LIB=/path/to/lemo-opuscar'); } };
 const LIB = findLib(path.dirname(fileURLToPath(import.meta.url))), req = createRequire(path.join(LIB, 'package.json'));
 const { chromium } = req('playwright-core'); const { ARGS, EXE } = await import(pathToFileURL(path.join(LIB, 'core/render/browser.mjs')).href);
-const here = path.dirname(fileURLToPath(import.meta.url)), TAG = (process.argv.indexOf('--tag') > 0 ? process.argv[process.argv.indexOf('--tag') + 1] : 'Noto Naskh Arabic'), file = path.join(here, `The Lark and the Elephant - Halftone Pop 9x16 - ${TAG}.html`);
+const M = await import(pathToFileURL(path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'Library', 'media.mjs')).href);   // media folder
+const here = path.dirname(fileURLToPath(import.meta.url)), TAG = (process.argv.indexOf('--tag') > 0 ? process.argv[process.argv.indexOf('--tag') + 1] : 'Noto Naskh Arabic'), file = M.resolve(path.join(here, `The Lark and the Elephant - Halftone Pop 9x16 - ${TAG}.html`));
 const a = process.argv.slice(2), opt = (k, d) => { const i = a.indexOf('--' + k); return i < 0 ? d : a[i + 1]; };
 const FPS = +opt('fps', 30), N = +opt('workers', 3), outFile = opt('out', path.join(here, '..', '..', 'MP4s', `The Lark and the Elephant - Halftone Pop 9x16 - ${TAG}.mp4`));
 // finished films live in Kalila wa Dimna/MP4s: never overwrite one by accident
 if (fs.existsSync(outFile) && !process.argv.includes('--force')) { console.log('refusing to overwrite ' + outFile + ' (use --out for a test, or --force after a backup)'); process.exit(1); }
-const dir = opt('frames', path.join(here, 'frames')); fs.mkdirSync(dir, { recursive: true });
+const dir = opt('frames', path.dirname(M.out(path.join(here, 'frames', 'x')))); fs.mkdirSync(dir, { recursive: true });
 const b = await chromium.launch({ executablePath: EXE, args: ARGS });
 const open = async () => { const p = await b.newPage({ viewport: { width: 540, height: 960 } }); p.on('pageerror', (e) => console.log('PAGEERR', e.message)); await p.goto(pathToFileURL(file).href); await p.waitForFunction('window.__ready', null, { timeout: 120000 }); return p; };
 const pages = []; for (let i = 0; i < N; i++) pages.push(await open());
@@ -26,7 +27,7 @@ let done = 0, t0 = Date.now();
 await Promise.all(pages.map(async (p, w) => { for (let i = f0 + w; i < f1; i += N) { const d = await p.evaluate((t) => { window.seek(t); return document.getElementById('c').toDataURL('image/jpeg', 0.93); }, i / FPS); fs.writeFileSync(path.join(dir, `f${String(i).padStart(5, '0')}.jpg`), Buffer.from(d.split(',')[1], 'base64')); if (++done % 100 === 0) console.log(done + '/' + total, Math.round((Date.now() - t0) / 1000) + 's'); } }));
 await b.close();
 // 3. mux: narration + effects, mastered gently
-const ff = ['-y', '-v', 'error', '-framerate', String(FPS), '-start_number', String(f0), '-i', path.join(dir, 'f%05d.jpg'), '-ss', String(f0 / FPS), '-i', path.join(here, 'narration.mp3'), '-f', 'f32le', '-ar', '48000', '-ac', '2', '-ss', String(f0 / FPS), '-i', sfxFile,
+const ff = ['-y', '-v', 'error', '-framerate', String(FPS), '-start_number', String(f0), '-i', path.join(dir, 'f%05d.jpg'), '-ss', String(f0 / FPS), '-i', M.resolve(path.join(here, 'narration.mp3')), '-f', 'f32le', '-ar', '48000', '-ac', '2', '-ss', String(f0 / FPS), '-i', sfxFile,
   '-filter_complex', `[1:a]aresample=48000,aformat=channel_layouts=stereo,apad[n];[2:a]aformat=channel_layouts=stereo[s];[n][s]amix=inputs=2:duration=longest:normalize=0,loudnorm=I=-15:TP=-1.5:LRA=11,aresample=48000[a]`,
   '-map', '0:v', '-map', '[a]', '-c:v', 'libx264', '-preset', 'slow', '-crf', opt('crf', '20'), '-vf', 'scale=in_range=full:out_range=tv:out_color_matrix=bt709,format=yuv420p', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-colorspace', 'bt709', '-color_range', 'tv',
   '-c:a', 'aac', '-b:a', '192k', '-t', String(total / FPS), '-movflags', '+faststart', outFile];

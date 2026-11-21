@@ -30,9 +30,10 @@ def run(sid, stills=False):
         if not (d / 'src' / f).exists(): E.append(f'scene file missing: src/{f}')
     if not cfg.get('scenes'): E.append('story.json has no scenes')
     if cfg.get('arabicFont', 'naskh') != 'naskh': E.append(f"arabicFont is {cfg.get('arabicFont')}, series default is naskh")
-    nar = (d / cfg.get('narration', 'narration.mp3')).resolve()
+    sys.path.insert(0, str(REPO / 'Library')); import media   # narration may live in the media folder (Audio/Final)
+    nar = media.resolve((d / cfg.get('narration', 'narration.mp3')).resolve())
     if not nar.exists(): E.append(f'narration not found: {nar}'); dur = None
-    else: dur = mp3_duration(nar); R['mp3'] = str(nar.relative_to(REPO)); R['mp3_duration'] = dur
+    else: dur = mp3_duration(nar); R['mp3'] = media.logical(nar); R['mp3_duration'] = dur
     c = db.connect(); s = c.execute('SELECT mp3_file FROM stories WHERE id=?', (sid,)).fetchone()
     if s and nar.name != s['mp3_file']: E.append(f"narration {nar.name} is not the final MP3 {s['mp3_file']}")
     tj = d / 'timing.json'
@@ -58,11 +59,12 @@ def run(sid, stills=False):
     b = subprocess.run([sys.executable, 'build.py'], cwd=d, capture_output=True, text=True)
     if b.returncode: E.append('build.py failed: ' + (b.stderr or b.stdout)[-400:]); html = None
     else:
-        html = d / (style.film_name(cfg) + '.html')
+        sys.path.insert(0, str(REPO / 'Library')); import media
+        html = media.resolve(d / (style.film_name(cfg) + '.html'))   # the player may be in the media folder's Working files
         if not html.exists(): E.append(f'player not found after build: {html.name}'); html = None
     if html:
         args = ['node', str(REPO / 'tools' / 'production' / 'smoke.mjs'), str(html), '--n', '48']
-        if stills: args += ['--stills', str(d / 'stills' / 'smoke')]
+        if stills: args += ['--stills', str(media.out(d / 'stills' / 'smoke' / 'x').parent)]
         o = subprocess.run(args, capture_output=True, text=True, timeout=900)
         try: S = json.loads(o.stdout.strip().splitlines()[-1])
         except Exception: S = {'errors': ['smoke test produced no result: ' + (o.stderr or o.stdout)[-300:]]}

@@ -1,0 +1,92 @@
+{
+ "story_id": "HORSE-03",
+ "title": "The Promise and the Theft",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-21T16:08:18",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a639aaf7b1442745c.jsonl",
+ "agent_id": "a639aaf7b1442745c",
+ "model_messages": {
+  "claude-fable-5-2": 30
+ },
+ "script": {
+  "source": "Spreadsheets/Script_Updated.xlsx",
+  "sha256": "1d01c34f2de58a94e1d316bd3e10999cdc3f575ed4a4b467d33f11ecc4cd19bc",
+  "paragraphs": 8,
+  "segments": [
+   "HORSE-03-P01-S01",
+   "HORSE-03-P01-S02",
+   "HORSE-03-P01-S03",
+   "HORSE-03-P01-S04",
+   "HORSE-03-P01-S05",
+   "HORSE-03-P01-S06",
+   "HORSE-03-P01-S07",
+   "HORSE-03-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/HORSE-03_The_Promise_and_the_Theft_slowed.mp3",
+  "sha256": "28bf7fccf1d4849316dcef612109deee1d72ec5e48c2b0fa9b69f0e248f2e16d",
+  "duration": 140.445
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/HORSE-03_The_Promise_and_the_Theft_slowed.mp3.words.json",
+  "sha256": "643b809ccadbec129235d670a44144bd113bc6e1fa84ec2a25f7291000dc9f8b",
+  "manifest_status": "supplied",
+  "script_match": 1.0
+ },
+ "library_rev": "70d18d3",
+ "scenes": 20,
+ "actions": 213,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "palaceGarden (variant princess): day and golden plates, rose bower",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "twoRiders",
+   "effort": "M"
+  },
+  {
+   "type": "effect",
+   "name": "planGarden and cardboardPrince (inside thoughtCloud)",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "turbanScrap (with inventor tailTorn) and coverCloth",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "ghostOutline",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "inventor travelCloak, plugEar; pal variants foreignKing and queen",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "style variant of HORSE-03 (cel-anime-80s); script from Google Sheet \"Sinbad Arabian Nights and Ebony Horse\" (Drive: ChatGPT Projects/Arabic Stories), tab All Scripts, rows 90-97, read 2026-11-21",
+ "validation_warnings": [
+  "cast ebonyHorse: no library function and not marked new",
+  "sets skyFlight: no library function and not marked new",
+  "sets palaceGarden: no library function and not marked new",
+  "sets palaceRoof: no library function and not marked new",
+  "props knob: no library function and not marked new",
+  "props lever: no library function and not marked new"
+ ],
+ "plan_warnings": [
+  "Depends on HORSE-01 and HORSE-02 drawings that are not finished yet (HORSE-02 has no source besides scene.js at planning time); if a drawing is missing, build it from that episode's plan under the same name.",
+  "The script repeats the trick (P4-P5 and P6-P7). The plan-then-reality staging is an interpretation; if the owner prefers a cut of the narration the film must be re-timed.",
+  "Two riders on the horse are new for the series; test the seat positions, the draw order and the rear rider's reach to the knob on stills at 107.2, 109.7 and 116.7 before animating. The insert at 107.94 carries the turn if the wide reach is short.",
+  "31 seconds under one thought cloud: it must never become a frozen hold. Something changes every 1 to 2 s inside the cloud and the real garden below keeps its own small actions.",
+  "The person figure is front-facing: riders looking back, the princess looking over the hedge and Firuz looking at the sky are done with gaze, arm angles and a small tip, not a profile.",
+  "All set coordinates come from the HORSE-01 and HORSE-02 plans (design values); measure anchors on the drawings (seat, knob, lever, hedge top, bench).",
+  "Only eight pauses in the narration: nine quiet effects, none during the launch."
+ ]
+}

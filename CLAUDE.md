@@ -9,11 +9,17 @@ These rules apply **only to this series** (this repository: Arabic Story Shorts,
 
 ## Folders
 - **Not in Git:** spreadsheets (`Spreadsheets/`, incl. `Script_Updated.xlsx`, read by `tools/production/importer.py`), narration-production logs and transcripts in `Audio Files/` (only `Audio Files/Final Done/` word timings and the timing manifest are tracked).
-- **Git vs media.** Git holds code, scripts, timings and docs. Audio, video, built players and `.zip` files never go into Git (`.gitignore`, `tools/git/check_staged.py`); they stay in this folder's **local media folders** (`MP4s/`, `Originals/`, `Audio Files/`, `Animations/<story>/`, `<story>/`): `media.config.json` default root `"."` (local mode, since 2026-11-16). A shared media folder (for example `/Users/Shared/ArabicStoryShorts`) is used only when `$ARABIC_STORY_MEDIA` or `.media-root` is set, for a future second account. Code reaches media only through `Library/media.py` / `Library/media.mjs`, never through an account-specific path.
+- **Git vs media (since 2026-11-21).** Git holds code, scripts, timings and docs. All media live **outside the repository** in the sibling folder **`../Arabic Story Media/`** (this Mac: `.media-root`, untracked), never in Git:
+  - `Audio/Final/` the narration MP3s the films use (`Audio Files/Final Done/*.mp3`, the five older films' `narration.mp3`, the Thief's narration); their `.words.json` timings stay tracked in `Audio Files/Final Done/`
+  - `Audio/Earlier versions/` every other audio version (original clips, slowed, candidates, pilots, rejects, the supplied story recordings): safe to delete later
+  - `Renders/<ID>/` every rendered version of each film (v1, v2... and `_superseded/`), plus `Originals (pre-upgrade)/` and `_approved_before_subtitle_refresh/`: safe to thin out later
+  - `Final MP4s/` only the current finished films
+  - `Working files/<ID>/` built HTML players, stills and contact sheets, review packs, frames (rebuildable)
+  Code keeps using the old repository-style paths (`Audio Files/Final Done/x.mp3`, `Animations/<ID>/renders/x.mp4`, `MP4s/x.mp4`) as logical names, and reaches files only through `Library/media.py` / `Library/media.mjs` (`resolve` to read, `out` to write, `logical` for records; map in `media.config.json`, `*` = one folder level). The cloud runner and a fresh clone have no `.media-root` and use the repository folders as they are (local mode). `tools/media/move_to_media_root.py` moved the media (log in `checksums/media_move_*.tsv`). Never write media into the repository folders by hand.
 - `<story>/` (for example `lion-and-the-hare/`): the supplied material only (scripts, narration recordings), kept as it was, recordings included (not in Git).
 - `Animations/<story>/`: the animation project for that story. It holds `build.py`, `render.mjs`, `src/`, `timing.json`, the HTML player and stills. Animation folders made for a story always go here (an experiment gets its own folder, for example `Animations/lark-and-the-elephant-fable-experiment/`).
-- Final MP4s: `MP4s/` (not in Git). Renders write there by default and refuse to overwrite an existing file. Test renders go elsewhere with `--out` (for example `scratch/<user>/`, or a temporary folder).
-- `Originals/`: the pre-upgrade films; read-only (not in Git).
+- Final MP4s: logical `MP4s/` = `../Arabic Story Media/Final MP4s/` (not in Git). Renders write there by default and refuse to overwrite an existing file. Test renders go elsewhere with `--out` (for example `scratch/<user>/`, or a temporary folder).
+- `Originals/` (now `../Arabic Story Media/Renders/Originals (pre-upgrade)/`): the pre-upgrade films; read-only (not in Git).
 - `Library/`: the shared cast and set library, engine, new-story template and catalogue (see [Library/README.md](Library/README.md)).
 
 ## Look: style profiles (default "Halftone Pop Panel")

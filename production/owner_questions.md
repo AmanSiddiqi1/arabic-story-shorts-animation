@@ -25,6 +25,43 @@ Each plan proceeds with its stated default unless you say otherwise. Answer by s
 - The film ends on THE END with a paper question mark over the shut rock, not TO BE CONTINUED, although this is story ALI-01 (default: THE END).
 - Ali Baba closing the door at 102.1 is shown without a speech bubble because the narration does not quote him there (default: no bubble).
 
+## ALI-02 The Forgotten Password
+
+- The English speech balloons are invented short lines (OPEN SESAME!, OPEN WHEAT!, OPEN BARLEY!, WHO ARE YOU?, HOW DID YOU GET IN?, NEVER AGAIN! I PROMISE!, GUARDS?!, YOUR GREED PUT US IN DANGER!, THANK YOU, BROTHER!, TWO KNOW OUR SECRET!, SEARCH THE TOWN!); default: kept as written.
+- For "tried again and again" Cassim also shouts OPEN RICE? LENTILS? BEANS? and grain icons circle his head, with a tiny sesame seed drifting unnoticed; default: included.
+- The thieves' threat is softened: no weapons are drawn, the leader looms, shouts and lets his shadow fall over Cassim, and gives no answer to the plea; default: this version.
+- Ali Baba hides in the same thicket as in episode 1 and throws the pebbles over the thieves' heads onto a new scree slope to the right of the rock, so the two men walk away from him; default: this staging.
+- Cassim carries one sack home ("most" of the gold is left) and Ali Baba ends up with it at the cottage; default: one sack comes home.
+- Cassim's mule and empty cart trot home after the brothers on their own (added so that the cart is not left as a loose end at the rock); default: included.
+- The leader reads two lines of footprints as his clue and the last picture is the far town; the film ends on THE END rather than TO BE CONTINUED; default: footprints, far town, THE END.
+- Time of day is not in the script after "before sunrise": the cave scenes run from dawn to bright morning, the homecoming is in full morning and the last scene at sunset; default: this order.
+- The opening title card shows THE FORGOTTEN PASSWORD with the Arabic title line from script.json under it for the first 3 seconds, over the narration; default: shown.
+
+## ALI-03 The Marked Door
+
+- The film ends on TO BE CONTINUED... instead of THE END because the script stops as the oil merchant knocks; default: TO BE CONTINUED... (episode 2 used THE END).
+- The clue the script leaves open is staged as a market seller showing off a gold coin and pointing at the lane, and the spy recognises the house by Ali Baba's olive robe and vermilion sash on the washing line and his donkey at the gate; default: kept.
+- The chalk mark is a small white cross (X) and the second mark a round red dot on the door itself; Morgiana's red is henna from a kitchen bowl; default: kept.
+- Invented English balloon lines: FIND HIS HOUSE!, ALI BABA?, THAT WAY!, I'LL BE BACK TONIGHT!, WHY ONLY OUR DOOR?, THERE IS A SECRET!, THIS ONE! NO... THIS ONE?, WHICH DOOR?!, UH..., HEE HEE, SOMEONE ON THIS STREET IS CLEVERER THAN US!, I WILL COME MYSELF., BEWARE OF STRANGERS!, A BED FOR THE NIGHT?; default: kept as written.
+- Morgiana's design: cream dress, violet waistcoat, turquoise headscarf and sash as her one accent colour for episodes 3 to 6; default: turquoise #14c2c8.
+- The oil merchant is drawn with the leader's build and beard and a thin crimson cloak lining, but is not named or unmasked here (episode 4 narrates it); default: a hint only.
+- Additions that set up later episodes: the silver ring with the split blue stone on the knocking hand, one jar lid that lifts slightly by itself (no eyes shown), and Morgiana watching unseen from the window during both night visits; default: all three included.
+- Comic additions beyond the script: the first spy dreaming of a reward, the practice red dot on his turban, a third volunteer with blue paint pushed back by the face, the old neighbour let into the joke; default: included.
+- The day to night changes at 64.9 and 134.9 are shown as in-shot time-lapses, and only the next-day change at 86.3 uses the tape transition with the caption NEXT DAY...; default: as described.
+
+## ALI-04 The Merchant of Oil
+
+- The film ends on TO BE CONTINUED... instead of THE END because the leader escapes and plans his return (series decision for episodes that end mid-story); default: TO BE CONTINUED....
+- The number of jars is six (five with men, one with oil), matching the three mules with two jars each drawn in episode 3, instead of the forty of the traditional tale; default: six.
+- Family-friendly staging: no boiling oil and no harm; the hidden men are kept in by neighbours sitting on or pressing the lids, helped out gently, roped loosely and walked to the judge; default: as described.
+- The leader's signal, which the script does not describe, is staged as small pebbles tossed from the guest room shutter onto the jar lids; default: pebbles.
+- Invented English balloon and label lines: I AM AN OIL MERCHANT., A SAFE YARD FOR MY JARS?, WELCOME!, THE LEADER OF THE THIEVES!, WAIT FOR MY SIGNAL., MEN 5 OIL 1, IS IT TIME?, NOT YET., FETCH THE GUARDS!, SHHH!, GATE 1, GATE 2, TIK! TIK!, CAUGHT!, UH OH., TO THE JUDGE!, I WILL RETURN.; default: kept as written.
+- Morgiana answers NOT YET while comically imitating the leader (scarf pulled across her chin like a beard, gruff stance); default: included.
+- When the leader climbs the wall the captain is left holding his brown cloak and white turban, so he escapes in his own indigo and crimson; default: included (it makes the unmasking visible).
+- Additions beyond the script: Ali Baba appearing sleepy in a nightshirt at the reveal, the baker's stopped sneeze, the cat as a witness, Morgiana finally filling her lamp from the one real oil jar, and the leader watching from a roof above the arch as his men are led away; default: all included.
+- New recurring neighbours: a big gentle baker and his young apprentice (door 1) beside the old neighbour from episode 3 (door 2); guards in sky blue and brass with a white-caped captain; default: these designs.
+- The reveal of the disguise in paragraph 2 is shown as a band of moonlight inside which the merchant is drawn as the leader, and the men in the jars as a cutaway view; default: as described.
+
 ## AN-001 The Bull and the Ass
 
 - The merchant is shown listening at the stable window during the plan (56.7-67.1 s), before the narration reveals at 82.8-89.9 s that he had heard it; default: shown, quietly, and replayed in an inset at 87.6 s.
@@ -752,6 +789,59 @@ Each plan proceeds with its stated default unless you say otherwise. Answer by s
 - Invented lettering: MATCH!, QUICK WIT!, 3 FOR 3!, NO MONEY, VALUABLE!, SOLD!, THANK YOU!, PRIVATE ROOM, SLAM!, THANKS, FRIEND!, TRICKED!, HIS HOUSE, HIS KERCHIEF, HIS MONEY, HA HA! and the card MEANWHILE... (default: keep; 19 items with the two name labels, BAGHDAD and THE END).
 - Names on screen are spelled DIIBIL and MUSLIM as in the English script (default: keep those spellings).
 
+## HORSE-01 The Flying Wooden Horse
+
+- The film ends on the chrome title TO BE CONTINUED... instead of THE END, because this is episode 1 of 5 and the script stops on a cliffhanger (default: TO BE CONTINUED...).
+- The script does not say whether anyone rides during the first demonstration; the inventor sits on the horse for it, so that the prince can see which knob he turns and the horse has a reason to come back (default: inventor rides).
+- The inventor arrives pushing a low cart with the horse standing on it (the Arabic has both the cart and the pushing); default: horse on the cart, inventor walking behind.
+- Speech bubbles are English versions of the quoted lines; the inventor's reported warning is shown as an invented bubble LEARN UP AND DOWN FIRST! and Firuz calls HELLOOO! from the sky (default: keep both).
+- Added business that is not in the script: a child knocking on the horse and pulling its tail, a dove perching on the motionless horse, a hawk passing in the sky, comic failed searches (saddle pommel, knocking on the head). Default: keep, all short.
+- A tape transition HOURS LATER... at 107.9 moves the sky from day to late afternoon so that the sunset in the last paragraph is earned (default: keep).
+- Series colours set here for all five episodes: Firuz cream tunic with a crimson cape and sash, the inventor violet robe with a saffron turban (its cloth is the clue in episode 3), the king emerald; the princess is reserved turquoise with a rose sash (default: as listed in the series bible).
+- The title card is English only (THE FLYING WOODEN HORSE) because no Arabic title was supplied; an Arabic title line in Lalezar can be added if the owner provides the wording.
+
+## HORSE-02 Lost Above the Clouds
+
+- The film ends on TO BE CONTINUED... as decided for the series; the title card shows LOST ABOVE THE CLOUDS with the Arabic title line in Lalezar (default: as described).
+- The princess is not named in the script, so no name label is shown; she wears the turquoise, white veil and rose sash reserved in the series bible (default: unnamed).
+- Her palace is drawn as rose stone with one blue dome and two towers by a river, deliberately unlike Firuz's home palace, and the same drawing serves as the landmark he must find again (default: keep).
+- English balloons are short versions of the quoted lines: WHO ARE YOU? / HOW DID YOU GET HERE? / THE STRANGEST HORSE IN THE WORLD! / IF YOU RETURN, SAY: / THE MOON KNOWS THE RIVER'S PATH / THEN I WILL KNOW YOU; plus one invented balloon YOU ARE JOKING! for her reported thought (default: keep all).
+- Added business not in the script: a roof cat, a loose tile that goes CLACK! (the footsteps she hears), Firuz caught holding the water cup, the maid hiding behind the lamp, and the two guards arriving on the roof just too late and shrugging (default: keep, all short).
+- Firuz's reported explanations (P4, P6) are shown as picture clouds with his father the king and the toy palace from episode 1, without text (default: pictures only).
+- The moon reflection on the river turns into a straight gold path when the password is spoken, and the two towers and the dome get the labels TWO TOWERS and BLUE DOME (default: keep, they set up the return in a later episode).
+- The garden conversation ends on the roof: after the password the three run up the stairs, so that the landmarks are pointed out from above and the horse is at hand (the script does not say where she describes them; default: roof).
+- There is one face close-up in the film: the princess eyes at 88.3 to 90.6 with the horse reflected in them (default: keep as the single peak close-up).
+- SCRIPT: the English of P4 adds "far from home" and drops the Arabic "she looked at the strange machine" and "at first"; the English of P6 adds "to reassure them" and "again". Both languages are kept verbatim.
+
+## HORSE-03 The Promise and the Theft
+
+- SCRIPT: paragraphs 6 and 7 tell the same events as paragraphs 4 and 5 a second time (in both languages); default: P4 and P5 are staged as the inventor's imagined PLAN in a large thought cloud while he hides behind the hedge, and P6 and P7 as the real event, with the narration unchanged (alternative: cut P4 and P5, or P6 and P7, from the narration).
+- SCRIPT: small differences between the languages are kept verbatim: English P3 moves "secretly" onto the journey (Arabic: "and arrived secretly"), English P6 adds "he claimed", English P7 omits "quickly" and "to listen to her", English P2 says "carried only two" where the Arabic says "two riders".
+- The inventor is shown eavesdropping from behind a cypress while Firuz tells his story at 9.0 to 17.7 (the script only says he learned the destination from Firuz's talk); default: keep the plant.
+- P2 is staged on the palace roof at golden dusk: Firuz gives the episode 2 password THE MOON KNOWS THE RIVER'S PATH, and her father (royal blue and silver, as planned for episode 4), her mother, the two guards and the maid appear; default: keep.
+- The two-seat line is shown with counters 1 and 2 over the saddle and the maid's trunk sliding off the horse (ONLY TWO SEATS!); default: keep this small joke.
+- Firuz hides the horse under a striped carpet cloth in a rose bower; the princess mounts from a small footstool that the inventor provides; default: keep both.
+- The script does not say how the piece of turban came to lie on the ground: default is that the roof cat from episode 2 claws the turban tail at take-off (RIP!) and later shows the scrap to Firuz.
+- The abduction is softened: the inventor never touches the princess, she is angry and active (TAKE ME BACK!, looking for the lever), and his refusal is NO! with a finger in his ear; default: keep it light.
+- Invented English balloons and tags: MY SON!, I WILL COME BY LAND, ONLY TWO SEATS!, THE INVENTOR, THE PLAN, FIRUZ SENT ME!, HEH HEH!, FIRUZ SENT ME TO TEACH YOU!, UP, DOWN, THE PRINCE WAITS NEARBY!, RIP!, TAKE ME BACK!, NO!, I WILL BRING THEM BACK SAFELY! (short versions of the quoted lines where the script quotes); default: keep all 18 items including the two titles.
+- In the imagined plan the "prince waiting nearby" is drawn as a cardboard cut-out of Firuz on a stick, to show that it is a lie; default: keep.
+- At the end Firuz ties the saffron scrap into his crimson sash, to be carried into episodes 4 and 5; the film ends on TO BE CONTINUED... with the Arabic title line shown only on the opening title; default: keep.
+- Time of day: home palace in the morning, the roof at golden dusk after DAYS LATER..., the garden scenes on a bright morning and the ending at golden hour the same day (no night scenes in this episode); default: as described.
+
+## HORSE-04 The Stolen Horse
+
+- The king of this episode is drawn as a THIRD king (ivory and tangerine, black beard, white palace with tangerine domes under snow mountains), because the script says neither rider knows him; the series notes had reserved royal blue and silver for 'the foreign king of episode 4', but HORSE-03 uses that look for the princess's father. Default: third king as described, her father keeps royal blue.
+- Time of day: the landing and the king's ruling at golden late afternoon, Firuz's search and arrival in bright day, the inspection toward evening, the password scene at a light warm dusk with a rising moon, the gathering on a fresh morning. Default: as described.
+- The script says 'an ornament fallen from the saddle': it is drawn as a brass sun rosette with a crimson tassel, one of five on the edge of the ebony horse's saddle cloth (a small opt-in detail that episodes 1 to 3 do not show). Default: keep; the earlier episodes stay unchanged.
+- Firuz changes into the craftsman on screen (crown into the toolbox, a walk behind a palm trunk), keeps a corner of his crimson sash and the saffron scrap visible as his accent, and the toolbox pops open once to show the crown. Default: keep these additions.
+- Firuz travels on an ordinary bay horse and asks two caravans and an old man at a well; the route is shown as a small dotted strip. Default: keep.
+- The 'screen' is a lattice window bay (mashrabiya) overlooking the closed courtyard, and the password is spoken aloud as if to the moon while the moon's reflection in a water rill lines up into a path (the moon path of episode 2). Default: keep.
+- The script does not say what the signal is: he taps the brass knob twice with his hammer and holds up two fingers, she answers by flicking the end of her rose sash twice through the lattice, and a small picture shows the plan (two riders rising at sunrise). Default: keep.
+- Added comic business: the king's curious finger near the knob makes the princess and the inventor jump together; guards freeze with one foot in the air; two helmets knock; the inventor watches through the gate grille and has a shutter closed on him. Default: keep.
+- The last image adds a cliffhanger not in the script: the inventor notices the crimson and saffron at the craftsman's hip just as Firuz's hand hovers over the knob. Default: keep; the film ends on TO BE CONTINUED...
+- Invented English lettering (19 items with the title and the two captions): A GIFT FOR YOU, GREAT KING!, SHE CHOSE TO COME!, THIS MAN DECEIVED ME., I WISH TO GO HOME., WAIT. FIRST THE TRUTH., LOCK IT IN A CLOSED COURT!, CLANK!, DOWN, MEANWHILE..., IT FLEW THAT WAY!, FIRUZ, IN DISGUISE, I KNOW WOOD AND BRASS., UNDER GUARD!, BOTH WORK!, TOMORROW, IN THE OPEN SQUARE., THE MOON KNOWS THE RIVER'S PATH, NEXT MORNING..., TO BE CONTINUED... Default: keep all.
+- SCRIPT: the English of P2 shortens the Arabic ('The king looked at the horse in amazement' becomes 'Amazed by the horse', 'the whole truth' becomes 'the truth'), P3 says 'while he was nearby' for the Arabic 'as long as he is near', and P8 omits 'in the courtyard' (Arabic: gathered in the courtyard); both languages are kept verbatim.
+
 ## KD-013 The Ascetic and the Thieves
 
 - The thieves put comic disguises (turban, false beard, cloak) over their striped outfits and masks when they meet the ascetic; the script does not mention disguises. Default: keep them, because they are funny and explain why he does not suspect.
@@ -841,4 +931,39 @@ Each plan proceeds with its stated default unless you say otherwise. Answer by s
 - At the end two real hoopoes fly over the man and land near him while he remembers them (the script says only that he remembers the two birds); default: keep the fly-over, he waves.
 - The second hoopoe (the smaller, quieter one) speaks the moral, while the first proposes the reward; the script says only "one of them"; default: as described.
 - The hunter bites a coin and the man holds up two fingers at the open jar (small comic touches); default: keep both.
+
+## SIND-01 The Island That Moved
+
+- The film ends on THE END although the series continues; default THE END (alternative: a NEXT VOYAGE... card).
+- The opening title shows the English title in chrome with one Arabic line, the script's own word for Sinbad, in Lalezar; no Arabic episode title was supplied, so none is invented (default).
+- Added foreshadowing not in the script: a whale shaped shadow passes under the quay in S1, and a small green hump waves its tail on the horizon in the last shot (default: keep both).
+- Added family members for the two family scenes: a mother, a father and a little sister (the script says only 'his family'); default as described.
+- The whale wakes because of the cooking fire (the traditional reason, not stated in this script) and is played as a grumpy sleeper, not a monster; default: keep, with no one harmed on screen.
+- English speech bubbles for the captain's line are shortened: COME BACK! QUICK! / THAT IS NO ISLAND... / IT IS A WHALE!; plus the invented reaction SINBAD?! ALIVE?! at 128.55 (default: keep).
+- Comic additions: Sinbad knocks on the real shore to check it (98.34), a horse steals a date (107.1), the king's crown hops (113.92); default: keep.
+- Series look set here for SIND-02 and SIND-06: Sinbad in a white tunic, plum trousers and a tangerine turban and sash (his single accent colour); default as in the Series bible.
+
+## SIND-02 The Roc and the Diamond Valley
+
+- The ending adds a picture the script does not narrate: a far roc crosses the sun and one giant feather falls to Sinbad on the homeward deck under THE END (default: keep it, as the echo of the far whale that closes SIND-01).
+- The roc is drawn as a calm white mother bird with cloud wings, a crimson crest and blunt claws, and it never notices Sinbad; no attack, no chase (default: keep this gentle reading).
+- The snakes are huge but sleepy: they look, yawn and flick their tongues and never strike or chase (default: keep; the danger is told by Sinbad tiptoeing).
+- The meat is a friendly cartoon joint with a bone, with no blood or detail, and the traders are seen throwing it from the rim before the narration explains them in the last paragraph (default: keep both).
+- Sinbad uses his own turban cloth as the rope in paragraph 7 and wears it as a sling in between, so he is bare headed with black hair from 57.3 to 138.4 and rewinds the turban on the way home (default: yes; the tangerine sash keeps his accent on him).
+- Invented English lettering: HELLO?..., THE SHIP!, A WHITE DOME?, TOK TOK, AN EGG!, THE ROC, WHUMP!, WINGS LIKE CLOUDS, EASY, BIG BIRD..., SINBAD, DIAMONDS!, SSSS..., THUD!, STICKY!, AHA!, TIP... TOE..., FROM THE VALLEY?! (default: keep all 17 plus the title, LATER... and THE END).
+- Small additions for life and humour: the cat taking his cushion in Baghdad, the monkey stealing his fruit, the merchant who counts a sack as Sinbad, the melon sized diamond he puts back, the eaglet that notices him (default: keep).
+- The ship that leaves him is the series dhow with the SIND-01 captain at the helm (the miscount is shown as the merchants' mistake), and the ship home is the same drawing with emerald stripes (default: as described).
+- The sky darkening at 46.3 is shown as a wing shaped shadow with a repainted cooler plate inside it and the sun covered by the wing, not as night and not as a tint over the characters (default: as described, following the owner direction for this style).
+
+## SIND-06 The River Beneath the Mountain
+
+- Everyone survives the wreck on screen (the script says Sinbad and some sailors reached the beach): the captain and all four sailors shown aboard reach the sand and a counter confirms ALL SAFE; default is to keep this softened reading.
+- A ship lantern saved from the wreck, given by the captain, lights the tunnel (not in the script) so the dark cave stays readable and coloured as the style direction asks; default is to keep it, with the glowing pebbles as the second light.
+- The lantern burns down to an ember but never goes out, and a point of daylight appears before he sleeps; default is this hopeful version rather than total darkness.
+- The line 'they thanked the farmers before they all left' comes after 'returned to Baghdad' in the narration, so the thanks are shown as a story balloon picture while Sinbad tells his family on the Baghdad quay; default is the balloon rather than cutting back to the village.
+- Added picture ending: Sinbad gives the last shining pebble to his sister and the cat chases its light spot under THE END; default is to keep it.
+- Added foreshadowing and motives not in the script: the captain asks SEND HELP, SINBAD. at the parting and the sailors scratch a tally of days on the cliff; default is to keep both because they set up the rescue.
+- Invented English lettering and balloons (20 items with the title and THE END): THE CURRENT, HARD TO PORT!, CRASH!, ALL SAFE, NO WAY OUT, GEMS?!, COME WITH ME!, WAITING FOR RESCUE, SEND HELP, SINBAD., LOW ROOF!, SPLASH... splash..., HOURS PASS..., WE ARE FARMERS., THE RIVER'S END, MY FRIENDS ARE STILL WAITING!, SEND MY SHIP!, A SAIL!, DAYS LATER...; default is to use them as written.
+- The king honours Sinbad with a cream and gold robe, and the king's ship is the series dhow with gold stripes; the farmers bring Sinbad to the king themselves; default is to keep these staging choices.
+- Comic and animal additions: the crab under the barrel, the frog, three sleepy bats, the child upside down in the waking view, the donkey ride, the SIND-02 cat on the quay; default is to keep them, all gentle.
 

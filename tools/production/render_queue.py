@@ -16,6 +16,7 @@ stories are skipped, an incomplete MP4 is moved aside to renders/_partial/ and r
 import json, pathlib, shutil, subprocess, sys, time
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 import db, prod
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / 'Library')); import media   # media folder resolver (Library/media.py)
 
 REPO = db.REPO
 
@@ -36,10 +37,10 @@ def one(c, sid, workers):
     if not ic.exists() or json.loads(ic.read_text())['status'] != 'PASS': return 'skip', 'no passing implcheck (run tools/production/implcheck.py)'
     if c.execute("SELECT 1 FROM tasks WHERE story_id=? AND stage IN ('implement','animate') AND status='running'", (sid,)).fetchone(): return 'skip', 'an agent is still working on it'
     work = REPO / 'scratch' / 'render-queue' / sid; work.mkdir(parents=True, exist_ok=True)
-    out = d / 'renders' / f'{sid}_v1.mp4'; log = work / 'render.log'; frames = work / 'frames'
+    out = media.out(d / 'renders' / f'{sid}_v1.mp4'); log = work / 'render.log'; frames = work / 'frames'
     if out.exists():   # an MP4 without a passing record: superseded (old subtitles), unfinished or unchecked; keep it aside and render again
         sup = c.execute("SELECT 1 FROM renders WHERE story_id=? AND version='v1' AND status='SUPERSEDED'", (sid,)).fetchone()
-        p = d / 'renders' / ('_superseded' if sup else '_partial'); p.mkdir(exist_ok=True); shutil.move(str(out), str(p / f'{sid}_v1.{int(time.time())}.mp4'))
+        p = out.parent / ('_superseded' if sup else '_partial'); p.mkdir(exist_ok=True); shutil.move(str(out), str(p / f'{sid}_v1.{int(time.time())}.mp4'))
     tid = task(c, sid, 'running')
     try:
         b = subprocess.run([sys.executable, 'build.py'], cwd=d, capture_output=True, text=True)
@@ -54,7 +55,7 @@ def one(c, sid, workers):
         q = subprocess.run([sys.executable, str(REPO / 'tools' / 'production' / 'qc.py'), sid, str(out), '--record', 'v1'], cwd=REPO, capture_output=True, text=True)
         res = (q.stdout + q.stderr).strip().splitlines()[-1:] or ['']
         if q.returncode: task(c, sid, 'failed', 'QC failed: ' + res[0][:300], tid=tid); return 'failed', 'QC failed: ' + res[0][:120]
-        task(c, sid, 'done', 'v1 rendered, QC PASS', tid=tid); return 'done', str(out.relative_to(REPO))
+        task(c, sid, 'done', 'v1 rendered, QC PASS', tid=tid); return 'done', media.logical(out)
     except KeyboardInterrupt:
         task(c, sid, 'interrupted', 'stopped by the operator', tid=tid); raise
 

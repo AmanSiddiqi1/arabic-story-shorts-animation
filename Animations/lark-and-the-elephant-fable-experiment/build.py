@@ -16,7 +16,8 @@ fonts = f"""
 @font-face{{font-family:'{FAM}';font-weight:200 1000;src:url(data:font/woff2;base64,{b64(H/'fonts'/(FA+'.woff2'))}) format('woff2');unicode-range:{arabic_range};}}
 @font-face{{font-family:'{FAM}';font-weight:200 1000;src:url(data:font/woff2;base64,{b64(H/'fonts'/(FL+'.woff2'))}) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122;}}
 """
-audio = b64(H / 'narration.mp3')
+import media   # Library/media.py (already on sys.path for engine.py): narration and player may live in the media folder
+audio = b64(media.resolve(H / 'narration.mp3'))
 html = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Lark and the Elephant - Fable director experiment (9:16)</title>
 <style>{fonts}
@@ -45,6 +46,6 @@ canvas{{height:100%;max-width:100%;aspect-ratio:9/16;background:#000}}
 {rd('scene_d.js')}</script>
 <script>{rd('player.js')}</script>
 </body></html>"""
-out = H / f'The Lark and the Elephant - Halftone Pop 9x16 - {TAG}.html'
+out = media.out(H / f'The Lark and the Elephant - Halftone Pop 9x16 - {TAG}.html')
 out.write_text(html, encoding='utf8')
 print(out.name, round(len(html) / 1e6, 2), 'MB')

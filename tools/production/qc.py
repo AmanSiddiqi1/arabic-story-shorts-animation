@@ -8,6 +8,7 @@ Visual quality (acting, staging, subtitles legible) is NOT judged here: that is 
 import json, math, pathlib, re, struct, subprocess, sys
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 import db
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / 'Library')); import media   # media folder resolver (Library/media.py)
 
 def probe(f):
     j = json.loads(subprocess.check_output(['ffprobe', '-v', 'error', '-show_entries', 'format=duration:stream=codec_type,codec_name,width,height,r_frame_rate,sample_rate',
@@ -26,7 +27,7 @@ def corr(a, b):
 
 def run(sid, mp4, record=None):
     c = db.connect(); s = c.execute('SELECT * FROM stories WHERE id=?', (sid,)).fetchone()
-    mp3 = db.REPO / 'Audio Files' / 'Final Done' / s['mp3_file']; R = {}; fails = []
+    mp3 = media.resolve(db.REPO / 'Audio Files' / 'Final Done' / s['mp3_file']); R = {}; fails = []
     dur, st = probe(mp4); v = next((x for x in st if x['codec_type'] == 'video'), {}); a = next((x for x in st if x['codec_type'] == 'audio'), {})
     R['format'] = {'video': [v.get('codec_name'), v.get('width'), v.get('height'), v.get('r_frame_rate')], 'audio': [a.get('codec_name'), a.get('sample_rate')], 'duration': round(dur, 3)}
     if [v.get('codec_name'), v.get('width'), v.get('height'), v.get('r_frame_rate')] != ['h264', 1080, 1920, '30/1']: fails.append('video is not H.264 1080x1920 30 fps')
@@ -52,7 +53,7 @@ def run(sid, mp4, record=None):
     R['result'] = 'PASS' if not fails else 'FAIL'; R['fails'] = fails; R['checked'] = db.now()
     out = db.REPO / 'Animations' / sid / 'qc' / (pathlib.Path(mp4).name + '.qc.json'); out.parent.mkdir(parents=True, exist_ok=True); out.write_text(json.dumps(R, indent=1) + '\n', encoding='utf8')
     if record:
-        c.execute('INSERT OR REPLACE INTO renders VALUES (?,?,?,?,?,?,?,?)', (sid, record, str(pathlib.Path(mp4).resolve().relative_to(db.REPO)) if str(pathlib.Path(mp4).resolve()).startswith(str(db.REPO)) else str(mp4),
+        c.execute('INSERT OR REPLACE INTO renders VALUES (?,?,?,?,?,?,?,?)', (sid, record, media.logical(pathlib.Path(mp4).resolve()),
                   None, round(dur, 3), R['result'], json.dumps(R), db.now()))
         c.commit(); db.log(c, sid, 'qc', f'{record}: {R["result"]} {"; ".join(fails)}')
     return R

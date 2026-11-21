@@ -14,11 +14,20 @@ export function root() {
 const real = (p) => { try { return fs.realpathSync(p); } catch { return path.resolve(p); } };
 export const isLocal = () => real(root()) === real(REPO);
 export const rel = (p) => path.relative(REPO, path.resolve(REPO, p)).split(path.sep).join('/');
+// map entries [repository prefix, media prefix]; '*' matches one path segment and carries over (Animations/*/renders/ -> Renders/*/)
+const rx = (pat) => new RegExp('^' + pat.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '([^/]+)'));
+const MAP = CFG.map.map(([a, b]) => ({ a, b, ra: rx(a) })).sort((x, y) => y.a.length - x.a.length);
+const sub = (pat, groups) => { let i = 0; return pat.replace(/\*/g, () => groups[i++]); };
 export function toMedia(p) {
   const r = rel(p);
   if (isLocal()) return path.join(REPO, r);
-  for (const [a, b] of [...CFG.map].sort((x, y) => y[0].length - x[0].length)) if (r.startsWith(a)) return path.join(root(), b + r.slice(a.length));
+  for (const { b, ra } of MAP) { const m = r.match(ra); if (m) return path.join(root(), sub(b, m.slice(1)) + r.slice(m[0].length)); }
   return null;
+}
+// where to WRITE a media file for repository path p (local path in local mode); parent folders are created
+export function out(p) {
+  const t = !isLocal() && fs.existsSync(root()) ? toMedia(p) : null, f = t || path.resolve(REPO, p);
+  fs.mkdirSync(path.dirname(f), { recursive: true }); return f;
 }
 export function resolve(p) {
   if (isLocal()) return path.resolve(REPO, p);

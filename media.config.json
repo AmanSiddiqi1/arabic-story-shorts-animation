@@ -1,21 +1,107 @@
 {
-  "_comment": "Where large media (audio, video, built players) live; they are never in Git. Root: $ARABIC_STORY_MEDIA, else the one-line file .media-root at the repository root (not tracked), else defaultRoot. defaultRoot \".\" = LOCAL mode: the repository's own folders, paths used as they are (narration in Animations/<story>/, finished films in MP4s/). Any other root = SHARED mode: 'map' turns a repository path into a path in that folder (longest prefix wins). sharedRootExample is the layout prepared on 2026-11-16 for a second macOS account. See DEVELOPMENT_SETUP.md.",
+  "_comment": "Where large media (audio, video, built players, stills) live; they are never in Git. Root: $ARABIC_STORY_MEDIA, else the one-line file .media-root at the repository root (not tracked), else defaultRoot. defaultRoot \".\" = LOCAL mode: the repository's own folders, paths used as they are (the cloud runner and a fresh clone). Any other root = SHARED mode: 'map' turns a repository path into a path in that folder (most specific entry wins; '*' = one path segment, carried over). On the main Mac (since 2026-11-21) .media-root points to ../Arabic Story Media: Audio/Final, Audio/Earlier versions, Renders, Final MP4s, Working files. Code reaches media only through Library/media.py / media.mjs (resolve to read, out to write, logical for records).",
   "envVar": "ARABIC_STORY_MEDIA",
   "defaultRoot": ".",
-  "sharedRootExample": "/Users/Shared/ArabicStoryShorts",
+  "sharedRootExample": "../Arabic Story Media",
   "map": [
-    ["MP4s/", "final-mp4s/"],
-    ["Originals/", "originals/"],
-    ["Audio Files/Final Done/", "narration/final-done/"],
-    ["Audio Files/", "audio-archive/"],
-    ["Animations/", "animations/"],
-    ["fox-and-the-drum/", "story-sources/fox-and-the-drum/"],
-    ["lark-and-the-elephant/", "story-sources/lark-and-the-elephant/"],
-    ["lion-and-the-hare/", "story-sources/lion-and-the-hare/"],
-    ["monkey-and-the-turtle/", "story-sources/monkey-and-the-turtle/"],
-    ["thief-and-the-moonbeam/", "story-sources/thief-and-the-moonbeam/"]
+    [
+      "Audio Files/Final Done/",
+      "Audio/Final/"
+    ],
+    [
+      "Audio Files/",
+      "Audio/Earlier versions/"
+    ],
+    [
+      "Animations/*/narration.mp3",
+      "Audio/Final/*/narration.mp3"
+    ],
+    [
+      "Animations/*/narration_prev_audio.mp3",
+      "Audio/Earlier versions/story-narration/*/narration_prev_audio.mp3"
+    ],
+    [
+      "thief-and-the-moonbeam/Audio/Combined_and slowed.mp3",
+      "Audio/Final/thief-and-the-moonbeam/Combined_and slowed.mp3"
+    ],
+    [
+      "fox-and-the-drum/",
+      "Audio/Earlier versions/story-sources/fox-and-the-drum/"
+    ],
+    [
+      "lark-and-the-elephant/",
+      "Audio/Earlier versions/story-sources/lark-and-the-elephant/"
+    ],
+    [
+      "lion-and-the-hare/",
+      "Audio/Earlier versions/story-sources/lion-and-the-hare/"
+    ],
+    [
+      "monkey-and-the-turtle/",
+      "Audio/Earlier versions/story-sources/monkey-and-the-turtle/"
+    ],
+    [
+      "thief-and-the-moonbeam/",
+      "Audio/Earlier versions/story-sources/thief-and-the-moonbeam/"
+    ],
+    [
+      "Animations/*/renders/",
+      "Renders/*/"
+    ],
+    [
+      "Animations/*/_pre_3min/",
+      "Renders/*/_pre_3min/"
+    ],
+    [
+      "Animations/*/compare/",
+      "Renders/*/compare/"
+    ],
+    [
+      "Animations/*/stills/",
+      "Working files/*/stills/"
+    ],
+    [
+      "Animations/*/review/",
+      "Working files/*/review/"
+    ],
+    [
+      "Animations/*/frames/",
+      "Working files/*/frames/"
+    ],
+    [
+      "Animations/*/",
+      "Working files/*/"
+    ],
+    [
+      "MP4s/_approved_before_subtitle_refresh/",
+      "Renders/_approved_before_subtitle_refresh/"
+    ],
+    [
+      "MP4s/",
+      "Final MP4s/"
+    ],
+    [
+      "Originals/",
+      "Renders/Originals (pre-upgrade)/"
+    ]
   ],
-  "mediaExtensions": ["mp3", "wav", "m4a", "aac", "flac", "ogg", "aif", "aiff", "mp4", "mov", "m4v", "mkv", "webm", "avi", "zip"],
-  "playerPattern": " - Halftone Pop 9x16 - ",
+  "mediaExtensions": [
+    "mp3",
+    "wav",
+    "m4a",
+    "aac",
+    "flac",
+    "ogg",
+    "aif",
+    "aiff",
+    "mp4",
+    "mov",
+    "m4v",
+    "mkv",
+    "webm",
+    "avi",
+    "zip"
+  ],
+  "playerPattern": " 9x16 - ",
   "scratch": "scratch/"
 }

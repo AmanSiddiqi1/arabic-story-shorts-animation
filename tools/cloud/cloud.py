@@ -17,6 +17,7 @@ Guards: clean+pushed source, narration uploaded, no run already active, artifact
 import argparse, base64, hashlib, json, pathlib, re, shutil, subprocess, sys, tempfile, time, uuid
 sys.path.insert(0, str(pathlib.Path(__file__).parent)); sys.path.insert(0, str(pathlib.Path(__file__).parents[1] / 'production'))
 import common
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / 'Library')); import media   # media folder resolver (Library/media.py)
 REPO = common.REPO; WF = common.WORKFLOW; INPUTS = common.DEPS['render']['release_tag_inputs']
 SLUG = json.loads((pathlib.Path(__file__).parent / 'target.json').read_text())['render_repo']   # render repository (set in main)
 PUBLIC = True
@@ -43,7 +44,7 @@ def ids_of(xs):
     return list(dict.fromkeys(xs))
 def mp3_of(sid):
     s = common.stories().get(sid) or sys.exit(f'{sid} not in production/state.json')
-    return REPO / 'Audio Files' / 'Final Done' / s['mp3_file'], s
+    return media.resolve(REPO / 'Audio Files' / 'Final Done' / s['mp3_file']), s
 
 def runs(n=20):
     return ghj('run', 'list', '-w', WF, '-L', str(n), '--json', 'databaseId,displayTitle,status,conclusion,createdAt,updatedAt,headSha,url')
@@ -195,13 +196,13 @@ def cmd_fetch(a):
             print(f'\n=== diagnostics {art["name"]} ===\n' + ((d / 'report.md').read_text() if (d / 'report.md').exists() else '(no report)') + f'\n(log: {d / "render.log"})'); continue
         man = json.loads((d / 'manifest.json').read_text()); sid, ver = man['story'], man['version']; mp4 = d / man['mp4']['file']
         if hashlib.sha256(mp4.read_bytes()).hexdigest() != man['mp4']['sha256']: print(f'{sid}: CHECKSUM MISMATCH, not installed'); continue
-        dest = REPO / 'Animations' / sid / 'renders' / mp4.name
-        if dest.exists() and not a.force: print(f'{sid}: {dest.relative_to(REPO)} exists; kept your file. Cloud copy: {mp4} (use --force to replace, old moved to _superseded/)'); continue
+        dest = media.out(REPO / 'Animations' / sid / 'renders' / mp4.name)   # Renders/<ID>/ in the media folder when one is set
+        if dest.exists() and not a.force: print(f'{sid}: {media.logical(dest)} exists; kept your file. Cloud copy: {mp4} (use --force to replace, old moved to _superseded/)'); continue
         if dest.exists(): s = dest.parent / '_superseded'; s.mkdir(exist_ok=True); shutil.move(str(dest), str(s / f'{dest.stem}.{int(time.time())}.mp4'))
         dest.parent.mkdir(parents=True, exist_ok=True); shutil.copy2(mp4, dest)
         q = REPO / 'Animations' / sid / 'qc'; q.mkdir(exist_ok=True); shutil.copy2(d / f'{sid}_{ver}.qc.json', q / (mp4.name + '.qc.json')); shutil.copy2(d / 'manifest.json', q / f'{sid}_{ver}.cloud-manifest.json')
-        record_db(sid, ver, str(dest.relative_to(REPO)), man); got += 1
-        print(f'\n{sid} {ver}: {man["result"]}  -> {dest.relative_to(REPO)}  ({man["mp4"]["bytes"]/MB:.0f} MB, wall {man["timings_s"]["wall"]:.0f} s)\n' + (d / 'report.md').read_text())
+        record_db(sid, ver, media.logical(dest), man); got += 1
+        print(f'\n{sid} {ver}: {man["result"]}  -> {dest}  ({man["mp4"]["bytes"]/MB:.0f} MB, wall {man["timings_s"]["wall"]:.0f} s)\n' + (d / 'report.md').read_text())
         if a.purge: gh('api', '-X', 'DELETE', f'repos/{slug()}/actions/artifacts/{art["id"]}'); print('  artifact purged from GitHub')
         L['fetched'].append({'run': rid, 'id': sid, 'version': ver})
     save(L); print(f'\n{got} film(s) installed.'); 
@@ -222,7 +223,7 @@ def cmd_publish(a):
     if not a.approved: sys.exit('publishing is permanent-ish and needs the owner\'s approval of the film: add --approved once they have said so')
     sid, ver = ids_of([a.id])[0], a.version
     if a.local:   # artifact already purged/expired: upload the fetched local file, verified against the cloud manifest
-        mf = REPO / 'Animations' / sid / 'qc' / f'{sid}_{ver}.cloud-manifest.json'; mp4 = REPO / 'Animations' / sid / 'renders' / f'{sid}_{ver}.mp4'
+        mf = REPO / 'Animations' / sid / 'qc' / f'{sid}_{ver}.cloud-manifest.json'; mp4 = media.resolve(REPO / 'Animations' / sid / 'renders' / f'{sid}_{ver}.mp4')
         man = json.loads(mf.read_text()); assert man['result'] == 'PASS' and not man['qc']['fails'], 'QC did not pass'
         if hashlib.sha256(mp4.read_bytes()).hexdigest() != man['mp4']['sha256']: sys.exit('local MP4 differs from the cloud render (was it modified?)')
         gh('release', 'create', f'{sid}-{ver}', str(mp4), str(REPO / 'Animations' / sid / 'qc' / f'{mp4.name}.qc.json'), '--target', man['commit'], '--title', f'{sid} {ver}',

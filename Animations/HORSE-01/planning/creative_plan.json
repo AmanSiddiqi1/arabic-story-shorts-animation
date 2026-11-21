@@ -1,0 +1,2817 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "HORSE-01",
+ "title": "The Flying Wooden Horse",
+ "duration": 134.154,
+ "end_hold": 4.0,
+ "style": "cel-anime-80s",
+ "logline": "At a king's festival of inventors a stranger's black wooden horse really flies; Prince Firuz jumps on without learning the controls, is carried above the clouds, and at sunset finds a hidden lever that may bring him down.",
+ "moral": "Learn how to come down before you go up: eagerness without patience carries you further than you meant.",
+ "tone": "Bright storybook adventure in 80s cel anime: a sunny, crowded festival with gentle comedy, then a sudden wide, lonely sky; wonder first, then suspense, ending on a warm sunset cliffhanger.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.54,
+   "kind": "setup",
+   "cue": {
+    "word": "ملك",
+    "t": 0.54
+   },
+   "summary": "A king holds a festival for inventors in his palace garden."
+  },
+  {
+   "id": "B2",
+   "t": 10.96,
+   "kind": "inciting",
+   "cue": {
+    "word": "حصانًا",
+    "t": 10.96
+   },
+   "summary": "A stranger wheels in a black wooden horse fitted with brass."
+  },
+  {
+   "id": "B3",
+   "t": 18.12,
+   "kind": "comic",
+   "cue": {
+    "word": "ضحك",
+    "t": 18.119
+   },
+   "summary": "The guests laugh at the horse that does nothing; a dove perches on it."
+  },
+  {
+   "id": "B4",
+   "t": 27.66,
+   "kind": "rising",
+   "cue": {
+    "word": "يطير",
+    "t": 27.66
+   },
+   "summary": "The stranger claims it flies faster than the wind; the king demands proof."
+  },
+  {
+   "id": "B5",
+   "t": 40.76,
+   "kind": "surprise",
+   "cue": {
+    "word": "فارتفع",
+    "t": 40.76
+   },
+   "summary": "One turn of the neck knob and the wood rises and circles the garden."
+  },
+  {
+   "id": "B6",
+   "t": 51.1,
+   "kind": "rising",
+   "cue": {
+    "word": "الأمير",
+    "t": 51.1
+   },
+   "summary": "Prince Firuz comes forward and fixes on the knob."
+  },
+  {
+   "id": "B7",
+   "t": 63.68,
+   "kind": "suspense",
+   "cue": {
+    "word": "والهبوط",
+    "t": 63.68
+   },
+   "summary": "The inventor points to the second control near the ear; the prince is not looking."
+  },
+  {
+   "id": "B8",
+   "t": 71.65,
+   "kind": "turn",
+   "cue": {
+    "word": "اندفع",
+    "t": 71.649
+   },
+   "summary": "The horse shoots up like an arrow; the palace shrinks to a toy."
+  },
+  {
+   "id": "B9",
+   "t": 84.96,
+   "kind": "emotion",
+   "cue": {
+    "word": "يسمع",
+    "t": 84.96
+   },
+   "summary": "He calls and nothing answers: alone in the sky."
+  },
+  {
+   "id": "B10",
+   "t": 94.74,
+   "kind": "surprise",
+   "cue": {
+    "word": "فارتفع",
+    "t": 94.74
+   },
+   "summary": "Turning the knob back only makes the horse climb."
+  },
+  {
+   "id": "B11",
+   "t": 102.08,
+   "kind": "suspense",
+   "cue": {
+    "word": "بالبرد،",
+    "t": 102.08
+   },
+   "summary": "Cold, above the clouds, he searches the horse for a sign."
+  },
+  {
+   "id": "B12",
+   "t": 111.18,
+   "kind": "reveal",
+   "cue": {
+    "word": "أشار",
+    "t": 111.18
+   },
+   "summary": "He remembers the inventor pointing near the ear."
+  },
+  {
+   "id": "B13",
+   "t": 117.68,
+   "kind": "climax",
+   "cue": {
+    "word": "فرأى",
+    "t": 117.68
+   },
+   "summary": "Under the carved mane he finds a small lever."
+  },
+  {
+   "id": "B14",
+   "t": 129.84,
+   "kind": "resolution",
+   "cue": {
+    "word": "مد",
+    "t": 129.84
+   },
+   "summary": "He reaches for it as the sun sets: the cliffhanger."
+  }
+ ],
+ "cast": [
+  {
+   "id": "firuz",
+   "name": "Prince Firuz",
+   "library": "person",
+   "base": "person costume:'prince' with pal overrides, s 0.95, age 0",
+   "new": false,
+   "look": "Series hero. Cream-white knee tunic #f6efe0 (shade #d9cdb4) with gold trim #f2c040, teal trousers #2a8f9a, brown boots #7a4a2a, black hair, small gold crown. ACCENT crimson #e8264f: sash and a short cape. The cape is a story ribbon (firuzCape), not the Library cape: it hangs on the ground and streams in flight. Skin keeps the theme skin colour in every lighting."
+  },
+  {
+   "id": "inventor",
+   "name": "the inventor (the stranger)",
+   "library": "person",
+   "base": "person costume:'vizier' with pal overrides, age 0.7, s 1.02",
+   "new": false,
+   "look": "Tall, thin, old, foreign. Robe deep violet #5a3a8a with lighter lilac sleeves #8a6ac8 (limbs must read), cape plum #3a2458, sash green #3fae6a, pointed grey-white beard. ACCENT saffron #f2a71b tall turban with a long loose tail (the turban cloth is the clue found in episode 3). Half-lidded, a sly half smile, but his warning in this episode is honest."
+  },
+  {
+   "id": "king",
+   "name": "the king, Firuz's father",
+   "library": "person",
+   "base": "person costume:'caliph' with pal overrides, age 0.6",
+   "new": false,
+   "look": "Robe emerald #1f9a6a (shade #126e4a) with gold trim, cape warm gold #f2a71b, white crown turban with a red jewel, full grey beard, round belly. ACCENT emerald (also the palace banners)."
+  },
+  {
+   "id": "guests",
+   "name": "festival guests and servants (7 drawn)",
+   "library": "person",
+   "base": "person costumes merchant, lady, vizier, physician, maiden, servant x2 with pal overrides",
+   "new": false,
+   "look": "Seven figures in clearly different bright colours: orange merchant, sky-blue lady, rose maiden, olive physician (a rival inventor), lilac courtier, two servants in white with blue caps (one with a feather fan, one with a tray). None in crimson, saffron or emerald (reserved for the three leads). Each has its own seed; never in sync."
+  },
+  {
+   "id": "child",
+   "name": "a palace child",
+   "library": "person",
+   "base": "person costume:'servant', child:true, pal yellow tunic",
+   "new": false,
+   "look": "Small boy in a yellow tunic and blue cap who knocks on the horse and pulls its tail."
+  },
+  {
+   "id": "ebonyHorse",
+   "name": "the ebony horse",
+   "library": null,
+   "base": "new rigid cel drawing on the proportions and seat point of the Library horse (EQUINE.horse), usable as the mount function of rideOn",
+   "new": true,
+   "look": "Carved black wooden horse with brass fittings; see new_assets and the series bible. It never moves its legs, never blinks, never breathes."
+  },
+  {
+   "id": "doves",
+   "name": "palace doves",
+   "library": "bird",
+   "base": "bird kind:'dove' pal 0",
+   "new": false,
+   "look": "White doves: flock in S1, fountain pair, the one that perches on the horse."
+  },
+  {
+   "id": "hawk",
+   "name": "a passing hawk",
+   "library": "bird",
+   "base": "bird kind:'hawk' pal 1 (eagle), fly",
+   "new": false,
+   "look": "The only other living thing in the high sky."
+  }
+ ],
+ "sets": [
+  {
+   "id": "palaceGarden",
+   "library": null,
+   "new": true,
+   "description": "The king's palace garden court (planned name palaceGarden, cel plate variant 'kingFestival'). Strip 2000 wide, ground y 900, sky plate from y -820 to 1230 so the camera can go as wide as zoom 0.62. Left to right: garden wall with the gate arch (opening x 60..220, top y 560); lawn with rose hedge along the back (hedge top y 770), two cypresses at x 330 and 720 (tops y 430), fountain at x 520 (basin 200 wide, rim y 860, jet to y 700); paved court x 800..1300 with an eight-point star in the tiles centred x 1020 (the horse's spot); inventors' tables at x 1340..1440 (top y 800: brass mechanical bird, armillary sphere, toy windmill); royal dais x 1540..1940 (top y 840, three steps on its left x 1480..1540), throne at x 1760 (seat y 792, sitY for person sit), striped canopy on four poles (top y 430). Behind, from x 700 to 2000: the palace: cream walls #f6ead0 (shade #d9c3a8), lower arcade of six pointed arches (each 130 wide, base y 760, top y 460) trimmed coral #e8604a, upper storey to y 250 with small windows, central turquoise dome (centre x 1350, base y 250, r 170, gold finial to y 0), two smaller domes (x 1000 and 1700, r 90), two minarets (x 800 and 1900, tops y -120). Far layer: city roofs, palms and soft hills. Live parts: bunting lines from the minarets to the cypresses (emerald, gold, coral, white flags as ribbons), eight lanterns, emerald banners with a gold sun, fountain jet, clouds, two kites, the sun at (300, -200)."
+  },
+  {
+   "id": "skyFlight",
+   "library": null,
+   "new": true,
+   "description": "The flight world for the whole series: a 1000 x 1230 frame with no ground. Painted sky plates by altitude and time (fields alt 0..1, u time of day), three cloud layers (far 0.2, mid 0.5, near 1.0 parallax; near clouds may pass in front of the horse) scrolled by vx and vy, an optional cloud deck (deck: true, tops at y 760..900) that takes the horse's shadow, a sun disc, and the land plate kingdomBelow (patchwork fields, a river, roads, towns; variant 'home' has the palace on its centre line as palaceToy, scaled by k 1.0..0.14 about (500, 1000); variant 'far' is unknown country). Plates used here: day low (azure #3a8ef0 to #bfe6ff, white cumulus), day high (cobalt #2a5ad0 above, pale #d8f0ff horizon, thin cirrus), golden hour (blue #5a8ae0 above, cream-gold horizon #ffe2a0, clouds white with apricot undersides), sunset (blue-violet #5a6ad0 above, pink #ff9ab0, coral #ff8a5a and gold #ffd27a at the horizon, peach cloud undersides, two stars)."
+  }
+ ],
+ "props": [
+  {
+   "id": "cart",
+   "library": null,
+   "new": true,
+   "description": "platformCart (the planned handcart in a 'platform' variant): a low wooden trolley 300 long x 34 thick, top 58 above the ground, four small spoked wheels r 24 (two visible), a T push bar at the rear 150 high, leaf springs under the platform so it sags 6 under the horse and springs back 8 when the horse leaves; painted red-brown #a8552a with brass corner caps."
+  },
+  {
+   "id": "knob",
+   "library": null,
+   "new": true,
+   "description": "The ascent knob (part of ebonyHorse): brass disc r 14 at s 1 with a pointer notch on a round plate r 22 engraved with an up arrow, on the near side at the base of the neck, horse-local about (88, -205). Field knob = angle in radians."
+  },
+  {
+   "id": "lever",
+   "library": null,
+   "new": true,
+   "description": "The descent lever (part of ebonyHorse): brass lever 38 long with a ball tip r 5 on a small plate engraved with a down arrow, hidden under the overhang of the first mane block just behind the ear, horse-local about (126, -292). Hidden in every wide shot (the mane block is drawn over it); field reveal 0..1 lights it; field lever = angle."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 4.8,
+   "paragraphs": [
+    1
+   ],
+   "set": "palaceGarden",
+   "cast": [
+    "king",
+    "guests",
+    "firuz",
+    "doves"
+   ],
+   "summary": "Festival day at the king's palace: the whole place in one wide, then down to the inventors' tables.",
+   "camera": {
+    "shot": "establishing",
+    "move": "crane",
+    "notes": "Keys (x, y, zoom): 0.0 (1000, 238, 0.62) the whole palace under a tall sky; 2.2 (1150, 420, 0.8); 4.4 (1380, 615, 1.0) on the inventors' tables. Smooth on every frame. The sky plate reaches y -820 so zoom 0.62 is legal."
+   },
+   "composition": "Central dome on the panel centre line, minarets left and right, bunting lines leading down to the court. King small on the dais right of centre; guests in two uneven groups. Chrome title in the sky, top third, clear of the dome.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 2.2,
+     "cue": {
+      "word": "أقام",
+      "t": 0.0
+     },
+     "who": "camera",
+     "action": "opens on the whole palace and garden: turquoise domes, cream walls, bunting, sun, clouds, kites",
+     "acting": "slow crane down; nothing frozen: bunting ribbons on a travelling sine, fountain jet, clouds drifting",
+     "library": "palaceGarden plate + live bunting, fountain; K.camAt"
+    },
+    {
+     "t": 0.3,
+     "end": 3.4,
+     "cue": {
+      "word": "أقام",
+      "t": 0.0
+     },
+     "who": "lettering",
+     "action": "chrome title THE FLYING WOODEN HORSE flickers on with a star glint",
+     "acting": "title in the sky, off before the camera reaches the tables",
+     "library": "S.title"
+    },
+    {
+     "t": 0.54,
+     "end": 1.6,
+     "cue": {
+      "word": "ملك",
+      "t": 0.54
+     },
+     "who": "king",
+     "action": "stands at the front of the dais and opens both arms in welcome",
+     "acting": "broad smile, chest out, arms arrive after the body (lagged), slow sway",
+     "library": "person {costume:'caliph', pal: KING, handL/handR: PERSON_HANDS.armsOut} + flow + lagged"
+    },
+    {
+     "t": 1.0,
+     "end": 3.0,
+     "cue": {
+      "word": "احتفالًا",
+      "t": 1.0
+     },
+     "who": "doves",
+     "action": "a flock of six doves crosses in front of the dome; two kites tug on their strings",
+     "acting": "flaps out of phase (stagger), eyes of the nearest guests follow them",
+     "library": "bird {kind:'dove', fly:true, flap} x6 with stagger(i)"
+    },
+    {
+     "t": 2.2,
+     "end": 3.6,
+     "cue": {
+      "word": "قصره",
+      "t": 2.2
+     },
+     "who": "guests",
+     "action": "guests stroll and chat in two groups; a servant carries a tray along the arcade",
+     "acting": "never in sync: each has its own idleSway seed, talk on threes, blinks",
+     "library": "person costumes merchant, lady, vizier, physician, maiden, servant with pal overrides; walk + footfalls for the servant"
+    },
+    {
+     "t": 2.88,
+     "end": 3.7,
+     "cue": {
+      "word": "ودعا",
+      "t": 2.88
+     },
+     "who": "king",
+     "action": "sweeps one arm toward the tables: come and show",
+     "acting": "arm sweep with follow-through of the sleeve, head turn with a blink",
+     "library": "flow on handRW; abBlinkAt-style timed blink"
+    },
+    {
+     "t": 3.7,
+     "end": 4.8,
+     "cue": {
+      "word": "المخترعين.",
+      "t": 3.7
+     },
+     "who": "set",
+     "action": "the inventors' tables: a brass mechanical bird flaps its tin wings, an armillary sphere spins, a small windmill toy turns",
+     "acting": "two guests lean in, one jumps back when the bird flaps (hop 12)",
+     "library": "gadget props in the palaceGarden module (live, on twos)"
+    },
+    {
+     "t": 4.0,
+     "end": 4.8,
+     "cue": {
+      "word": "المخترعين.",
+      "t": 3.7
+     },
+     "who": "firuz",
+     "action": "Prince Firuz, crimson cape, stands at the front of the right group watching the tin bird with a polite, slightly bored face",
+     "acting": "lid 0.3, weight on one leg, glance to the gate just before the cut (gaze [-1, 0])",
+     "library": "person {costume:'prince', pal: FIRUZ} + firuzCape ribbon"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.3,
+     "text": "THE FLYING WOODEN HORSE"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 4.8
+   }
+  },
+  {
+   "id": "S2",
+   "start": 4.8,
+   "end": 18.12,
+   "paragraphs": [
+    1
+   ],
+   "set": "palaceGarden",
+   "cast": [
+    "inventor",
+    "ebonyHorse",
+    "guests",
+    "firuz",
+    "child",
+    "doves",
+    "king"
+   ],
+   "summary": "The stranger comes through the garden gate pushing a black wooden horse on a low cart; the camera travels with him across the garden to the court.",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Zoom 1.0 throughout, y 615. x: 4.8 whip left from 1380 to 500 (0.5 s); then centred 120 ahead of the horse as it rolls, 500 at 5.6 to 1040 at 14.3; holds 1040. No push-in: the brass beat is told by glints and a light band."
+   },
+   "composition": "Horse always in the middle third, the inventor behind it on the left, the gate, fountain, cypresses and rose hedge sliding by; guests come into frame from the right. Ground line at panel y 900.",
+   "actions": [
+    {
+     "t": 4.8,
+     "end": 5.4,
+     "cue": {
+      "word": "جاء",
+      "t": 4.8
+     },
+     "who": "camera",
+     "action": "whip pan left to the garden gate",
+     "acting": "two speed-line frames, then settle",
+     "library": "K.camAt + speedLines"
+    },
+    {
+     "t": 5.0,
+     "end": 14.3,
+     "cue": {
+      "word": "جاء",
+      "t": 4.8
+     },
+     "who": "inventor",
+     "action": "enters through the gate already moving, pushing the cart: xH(t) = kfn [[5.0, 60], [13.6, 1000], [14.3, 1020]], he walks 175 behind the horse with both hands on the push bar",
+     "acting": "leans into the push (tip 0.10), short steps, robe hem and beard trail (lagged), head high",
+     "library": "person {costume:'vizier', pal: INVENTOR, age 0.7, handLW/handRW on the bar} + walk(xI, tc) + footfalls"
+    },
+    {
+     "t": 6.2,
+     "end": 7.2,
+     "cue": {
+      "word": "رجل",
+      "t": 6.2
+     },
+     "who": "guests",
+     "action": "heads turn toward the gate one after another",
+     "acting": "staggered head turns each with a blink, talk stops mid-word",
+     "library": "look(t, from, plan) with stagger(i, 0.18)"
+    },
+    {
+     "t": 6.72,
+     "end": 7.8,
+     "cue": {
+      "word": "غريب",
+      "t": 6.72
+     },
+     "who": "guests",
+     "action": "two guests lean together and whisper behind a hand; Firuz takes half a step forward",
+     "acting": "whisperer hand PERSON_HANDS.cupMouth, eyes sideways; Firuz lid opens from 0.3 to 0",
+     "library": "PERSON_HANDS.cupMouth; flow on firuz x"
+    },
+    {
+     "t": 7.8,
+     "end": 9.2,
+     "cue": {
+      "word": "عربة",
+      "t": 7.8
+     },
+     "who": "cart",
+     "action": "the low cart rolls over the tile seams: wheels turn with distance, the platform ticks 3 px at each seam",
+     "acting": "wheel angle = xH / 24; small kick at each seam (kick)",
+     "library": "platformCart {wheel: xH / 24}; kick(t, SEAMS, 3)"
+    },
+    {
+     "t": 9.26,
+     "end": 10.9,
+     "cue": {
+      "word": "يدفع",
+      "t": 9.26
+     },
+     "who": "inventor",
+     "action": "a harder shove over the path edge: both arms straighten, one foot digs in",
+     "acting": "anticipate squash 0.06 then stretch, turban tail swings (swing)",
+     "library": "anticipate + swing"
+    },
+    {
+     "t": 10.96,
+     "end": 11.8,
+     "cue": {
+      "word": "حصانًا",
+      "t": 10.96
+     },
+     "who": "ebonyHorse",
+     "action": "the horse rides the cart stiff as furniture: legs straight, head fixed, it only rocks with the cart",
+     "acting": "rot +-0.012 from the seam kicks, no blink, no breath: the one thing on screen that is not alive (a light band slides over it instead)",
+     "library": "ebonyHorse {rot} + lightBands"
+    },
+    {
+     "t": 11.8,
+     "end": 12.6,
+     "cue": {
+      "word": "أسود",
+      "t": 11.8
+     },
+     "who": "doves",
+     "action": "passing the fountain: two doves on the rim take off as the dark shape rolls by",
+     "acting": "flap burst, eyes on the horse",
+     "library": "bird {kind:'dove'}"
+    },
+    {
+     "t": 12.64,
+     "end": 13.6,
+     "cue": {
+      "word": "الخشب،",
+      "t": 12.64
+     },
+     "who": "child",
+     "action": "a child trots alongside and raps the flank with his knuckles: wood",
+     "acting": "three quick knocks on twos, then shakes his hand and grins up at the nearest guest",
+     "library": "person {costume:'servant', child:true, handRW on the flank} + walk"
+    },
+    {
+     "t": 13.34,
+     "end": 14.5,
+     "cue": {
+      "word": "تزينه",
+      "t": 13.34
+     },
+     "who": "cart",
+     "action": "the cart stops at the centre of the court (horse at x 1020); the inventor straightens and dusts his palms",
+     "acting": "small lurch of the inventor on the stop, platform settles (settleTo)",
+     "library": "lurch(tc, 14.3, 0.12) + settleTo"
+    },
+    {
+     "t": 14.5,
+     "end": 16.1,
+     "cue": {
+      "word": "نحاسية",
+      "t": 15.12
+     },
+     "who": "ebonyHorse",
+     "action": "the brass catches the sun piece by piece: hooves, joint discs, chest plate, bridle studs, the eye disc",
+     "acting": "one glint per two frames walking up the body; a pale light band sweeps the held cel left to right",
+     "library": "abGlint-style glints + lightBands"
+    },
+    {
+     "t": 16.14,
+     "end": 17.0,
+     "cue": {
+      "word": "لامعة.",
+      "t": 16.14
+     },
+     "who": "ebonyHorse",
+     "action": "a large four-point star glint on the chest plate",
+     "acting": "guests squint, one shades his eyes",
+     "library": "star glint; PERSON_HANDS.shield"
+    },
+    {
+     "t": 16.4,
+     "end": 18.1,
+     "cue": {
+      "word": "لامعة.",
+      "t": 16.14
+     },
+     "who": "inventor",
+     "action": "steps to the horse's head and bows to the king, hand on chest",
+     "acting": "deep bow (tip 0.3) through a flow, head arrives last, eyes up to the dais on the hold",
+     "library": "flow on tip + PERSON_HANDS.chest"
+    },
+    {
+     "t": 17.0,
+     "end": 18.1,
+     "cue": {
+      "word": "لامعة.",
+      "t": 16.14
+     },
+     "who": "king",
+     "action": "leans forward on the throne and strokes his beard",
+     "acting": "brows raised (brow -0.4), slow nod",
+     "library": "person {sit:1, seat:'bench', handR: PERSON_HANDS.chin}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 12.9,
+     "text": "TOK TOK"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 17.3,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 18.12
+   }
+  },
+  {
+   "id": "S3",
+   "start": 18.12,
+   "end": 29.72,
+   "paragraphs": [
+    2
+   ],
+   "set": "palaceGarden",
+   "cast": [
+    "inventor",
+    "ebonyHorse",
+    "guests",
+    "firuz",
+    "child",
+    "doves"
+   ],
+   "summary": "The guests laugh at the horse that does nothing; the stranger answers that it flies faster than the wind.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Zoom 1.0 to 1.1, y 610. x 1040 at 18.1, drifts right to 1180 across the laughing group by 21.0, back to 1060 by 23.5 for the speech; tilts up 60 on the sky gesture at 27.7 (y 550) and returns."
+   },
+   "composition": "Horse centre left facing right, inventor at its head (x 1160) facing the guests on the right (x 1230 to 1420); the left group (x 740 to 900) behind the tail. Bubbles in the sky band above the hedge, tails to the inventor's head, never over a face.",
+   "actions": [
+    {
+     "t": 18.12,
+     "end": 20.0,
+     "cue": {
+      "word": "ضحك",
+      "t": 18.119
+     },
+     "who": "guests",
+     "action": "laughter breaks out: one points, one covers her mouth, one holds his belly, one slaps a knee",
+     "acting": "squash bounces on twos at different rates (stagger), eyes shut on the peaks, heads back",
+     "library": "sq with osc per seed; PERSON_HANDS.mouthCover, pointFwd"
+    },
+    {
+     "t": 19.12,
+     "end": 21.0,
+     "cue": {
+      "word": "الحاضرين",
+      "t": 19.12
+     },
+     "who": "camera",
+     "action": "drifts across the laughing right group",
+     "acting": "smooth pan while the cels stay on twos",
+     "library": "K.camAt"
+    },
+    {
+     "t": 19.3,
+     "end": 22.0,
+     "cue": {
+      "word": "الحاضرين",
+      "t": 19.12
+     },
+     "who": "firuz",
+     "action": "does not laugh: head tilted, he studies the brass knob on the neck",
+     "acting": "gaze fixed on the horse while everyone else looks at each other; hand to chin",
+     "library": "PERSON_HANDS.chin; lookAt(knob)"
+    },
+    {
+     "t": 20.5,
+     "end": 21.4,
+     "cue": {
+      "word": "رأوا",
+      "t": 20.5
+     },
+     "who": "guests",
+     "action": "a guest waves his hand in front of the brass eye: no response",
+     "acting": "wave on twos, then a shrug with palms up toward the others",
+     "library": "PERSON_HANDS.wave then palmsUp"
+    },
+    {
+     "t": 20.96,
+     "end": 21.8,
+     "cue": {
+      "word": "الحصان",
+      "t": 20.96
+     },
+     "who": "child",
+     "action": "tugs the carved tail: it does not give, the child bounces off",
+     "acting": "pull, slip, sits down with a bump (landSquash)",
+     "library": "landSquash"
+    },
+    {
+     "t": 21.6,
+     "end": 23.0,
+     "cue": {
+      "word": "الساكن،",
+      "t": 21.6
+     },
+     "who": "doves",
+     "action": "a dove lands on the horse's head and settles as if on a statue",
+     "acting": "lands with a small squash, folds wings, looks about",
+     "library": "bird {kind:'dove'} + landSquash"
+    },
+    {
+     "t": 22.26,
+     "end": 23.6,
+     "cue": {
+      "word": "لكن",
+      "t": 22.26
+     },
+     "who": "inventor",
+     "action": "rises from the bow and lifts one finger: the laughter dies",
+     "acting": "slow, sure rise (flow), lids half down, the hint of a sly smile",
+     "library": "flow on tip; PERSON_HANDS.pointUp; brow 0.3"
+    },
+    {
+     "t": 22.6,
+     "end": 24.0,
+     "cue": {
+      "word": "لكن",
+      "t": 22.26
+     },
+     "who": "guests",
+     "action": "laughs trail off unevenly, the last one notices late and coughs",
+     "acting": "bounces decay at different times; the late one covers his mouth",
+     "library": "per-seed decay"
+    },
+    {
+     "t": 23.74,
+     "end": 24.3,
+     "cue": {
+      "word": "قال:",
+      "t": 23.74
+     },
+     "who": "inventor",
+     "action": "lays a hand on the horse's neck",
+     "acting": "possessive pat, eyes on the king",
+     "library": "handLW on the neck"
+    },
+    {
+     "t": 24.2,
+     "end": 26.2,
+     "cue": {
+      "word": "«هذا",
+      "t": 24.2
+     },
+     "who": "inventor",
+     "action": "speaks: bubble THIS IS NO ORNAMENT!",
+     "acting": "talk on threes, finger wags twice on 25.56",
+     "library": "S.label balloon to the head; abTalk-style lip flap on celStep(t, 8)"
+    },
+    {
+     "t": 26.28,
+     "end": 29.6,
+     "cue": {
+      "word": "يستطيع",
+      "t": 26.28
+     },
+     "who": "inventor",
+     "action": "second bubble IT FLIES FASTER THAN THE WIND!",
+     "acting": "voice rises: chest out, chin up",
+     "library": "S.label balloon"
+    },
+    {
+     "t": 27.66,
+     "end": 28.8,
+     "cue": {
+      "word": "يطير",
+      "t": 27.66
+     },
+     "who": "inventor",
+     "action": "his arm sweeps from the horse up to the sky",
+     "acting": "wide arc, sleeve follows by 0.12 s, eyes follow his own hand",
+     "library": "flow on handRW + lagged"
+    },
+    {
+     "t": 27.9,
+     "end": 29.4,
+     "cue": {
+      "word": "أسرع",
+      "t": 28.14
+     },
+     "who": "guests",
+     "action": "every gaze follows the hand up into the empty sky; the dove takes off along the same arc",
+     "acting": "heads tip back one after another; Firuz looks up last, then back down to the knob",
+     "library": "look plans with stagger"
+    },
+    {
+     "t": 29.12,
+     "end": 29.72,
+     "cue": {
+      "word": "الريح».",
+      "t": 29.12
+     },
+     "who": "fx",
+     "action": "a ribbon of wind crosses the sky on the word wind: bunting snaps, cypress tips bend, his beard lifts",
+     "acting": "two pale streaks, 0.5 s",
+     "library": "windRibbon (skyFlight module) + lagged on beard"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 18.4,
+     "text": "HA HA!"
+    },
+    {
+     "t": 24.3,
+     "text": "THIS IS NO ORNAMENT!"
+    },
+    {
+     "t": 26.4,
+     "text": "IT FLIES FASTER THAN THE WIND!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 29.72
+   }
+  },
+  {
+   "id": "S4",
+   "start": 29.72,
+   "end": 36.2,
+   "paragraphs": [
+    2
+   ],
+   "set": "palaceGarden",
+   "cast": [
+    "king",
+    "inventor",
+    "ebonyHorse",
+    "guests",
+    "firuz"
+   ],
+   "summary": "The king asks for proof in front of everyone; the stranger climbs into the saddle.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Zoom 1.0. x pans right 1060 to 1560 (dais) by 30.8, holds for the king, pans back to 1080 from 33.8 to 35.0."
+   },
+   "composition": "King on the throne at x 1760 (raised dais, head near panel y 560), a servant with a feather fan behind him, banners above. On the pan back the horse returns to the middle third.",
+   "actions": [
+    {
+     "t": 29.72,
+     "end": 30.8,
+     "cue": {
+      "word": "طلب",
+      "t": 29.72
+     },
+     "who": "camera",
+     "action": "pans to the dais",
+     "acting": "guests in the foreground pass with their heads turned to the king",
+     "library": "K.camAt"
+    },
+    {
+     "t": 31.02,
+     "end": 32.3,
+     "cue": {
+      "word": "الملك",
+      "t": 31.02
+     },
+     "who": "king",
+     "action": "sits back, one brow up, then leans forward with both hands on his knees",
+     "acting": "weight shift on the throne, beard follows the head (lagged)",
+     "library": "flow on tip"
+    },
+    {
+     "t": 32.44,
+     "end": 33.8,
+     "cue": {
+      "word": "يثبت",
+      "t": 32.44
+     },
+     "who": "king",
+     "action": "points at the horse: bubble PROVE IT!",
+     "acting": "firm point, small smile: he is entertained, not angry",
+     "library": "PERSON_HANDS.pointFwd; S.label balloon"
+    },
+    {
+     "t": 33.02,
+     "end": 33.8,
+     "cue": {
+      "word": "كلامه",
+      "t": 33.02
+     },
+     "who": "guests",
+     "action": "the fan servant stops fanning and stares",
+     "acting": "fan held at the top of its swing, slow blink",
+     "library": "person {costume:'servant'} with a fan prop"
+    },
+    {
+     "t": 33.82,
+     "end": 34.4,
+     "cue": {
+      "word": "أمام",
+      "t": 33.82
+     },
+     "who": "king",
+     "action": "opens the pointing hand to take in the whole court",
+     "acting": "arm sweep right to left, eyes over the crowd",
+     "library": "flow on handRW"
+    },
+    {
+     "t": 34.38,
+     "end": 35.2,
+     "cue": {
+      "word": "الجميع.",
+      "t": 34.38
+     },
+     "who": "guests",
+     "action": "all heads turn back to the horse; the camera follows them",
+     "acting": "staggered turns; Firuz is already looking there",
+     "library": "look plans; K.camAt"
+    },
+    {
+     "t": 35.1,
+     "end": 36.2,
+     "cue": {
+      "word": "الجميع.",
+      "t": 34.38
+     },
+     "who": "inventor",
+     "action": "bows, puts a foot on the cart and swings up to sit in the saddle",
+     "acting": "crouch (anticipate), hop 70 high, lands with a small squash; the cart springs dip under him",
+     "library": "hop + landSquash; rideOn(ctx, ebonyHorse, H, personP, {name:'horse', reins:false})"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 32.5,
+     "text": "PROVE IT!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 35.6,
+     "kind": "blip"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 36.2
+   }
+  },
+  {
+   "id": "S5",
+   "start": 36.2,
+   "end": 47.0,
+   "paragraphs": [
+    3
+   ],
+   "set": "palaceGarden",
+   "cast": [
+    "inventor",
+    "ebonyHorse",
+    "guests",
+    "firuz",
+    "king",
+    "doves",
+    "child"
+   ],
+   "summary": "The knob beside the neck is turned; the wooden horse lifts off the cart, glides once over the garden and comes back.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Keys: 36.2 (1080, 615, 1.0); insert 37.64 to 39.4 (a separate close drawing, not a camera move); 39.5 (1080, 600, 1.0); 41.0 to 43.3 pull out to (900, 300, 0.62) so the garden and sky are both in frame; holds wide for the glide; 46.0 to 47.0 back to (1050, 560, 0.85)."
+   },
+   "composition": "Wide: ground at panel y 990, horse path in the upper half between the cypresses and the dome. Flight path (world, horse feet): lift 1020,900 to 1020,560 (40.76 to 43.3); glide to 420,330 over the fountain (44.82); turn; back to 1020,520 (46.0); down onto the cart (46.9).",
+   "actions": [
+    {
+     "t": 36.2,
+     "end": 37.6,
+     "cue": {
+      "word": "أدار",
+      "t": 36.203
+     },
+     "who": "inventor",
+     "action": "seated, he looks round the court, then reaches to the brass knob at the base of the neck",
+     "acting": "slow showman's reach; Firuz's eyes follow the hand to the knob",
+     "library": "handRW to the knob point (ebonyHorse returns knob and lever anchors)"
+    },
+    {
+     "t": 37.64,
+     "end": 39.4,
+     "cue": {
+      "word": "مقبضًا",
+      "t": 37.64
+     },
+     "who": "knob",
+     "action": "INSERT: the knob large in frame (brass disc r 14 at s 1, drawn at s 4) with a pointer notch and an engraved up arrow; a hand turns it a quarter turn clockwise",
+     "acting": "the hand settles, grips, turns in three held drawings; two click rings pulse out",
+     "library": "ebonyHorse at s 4 + handInsert; click rings"
+    },
+    {
+     "t": 38.48,
+     "end": 39.4,
+     "cue": {
+      "word": "صغيرًا",
+      "t": 38.48
+     },
+     "who": "fx",
+     "action": "a neon arrow streak points at the small knob",
+     "acting": "on for 0.9 s",
+     "library": "S.arrow"
+    },
+    {
+     "t": 39.48,
+     "end": 40.7,
+     "cue": {
+      "word": "رقبة",
+      "t": 39.48
+     },
+     "who": "ebonyHorse",
+     "action": "back to the wide: the brass lights in order from the neck: neck plate, chest, joint discs, hooves (the power-on signature)",
+     "acting": "each piece flashes for two frames; a thin ring of dust starts to spin under the cart",
+     "library": "powerOn(t0) glint sequence"
+    },
+    {
+     "t": 40.02,
+     "end": 40.8,
+     "cue": {
+      "word": "الحصان،",
+      "t": 40.02
+     },
+     "who": "guests",
+     "action": "the nearest guests lean back; the child hides behind a robe",
+     "acting": "lean (tip -0.08) one after another",
+     "library": "flow on tip, stagger"
+    },
+    {
+     "t": 40.76,
+     "end": 42.8,
+     "cue": {
+      "word": "فارتفع",
+      "t": 40.76
+     },
+     "who": "ebonyHorse",
+     "action": "rises straight up off the cart, rigid, legs unmoving; the cart platform springs up without the weight",
+     "acting": "starts slow and speeds up (ease in); the ground shadow shrinks and pales; gold wind ribbons curl from the hooves",
+     "library": "flyRig + groundShadow(ctx, x, 900, 260, lift) + windRibbon"
+    },
+    {
+     "t": 41.98,
+     "end": 43.2,
+     "cue": {
+      "word": "الخشب",
+      "t": 41.98
+     },
+     "who": "guests",
+     "action": "mouths fall open one by one; a turban slips; the king stands up from the throne",
+     "acting": "mouth 'o', eyes 'wide', gaze up tracking the horse",
+     "library": "lookAt(horse) per guest"
+    },
+    {
+     "t": 42.86,
+     "end": 43.4,
+     "cue": {
+      "word": "الأرض،",
+      "t": 42.86
+     },
+     "who": "camera",
+     "action": "reaches the full wide as the horse hangs 340 above the court",
+     "acting": "one beat of hover: the horse bobs 6 px, the inventor waves once",
+     "library": "K.camAt; idleSway"
+    },
+    {
+     "t": 43.36,
+     "end": 44.8,
+     "cue": {
+      "word": "وحلق",
+      "t": 43.36
+     },
+     "who": "ebonyHorse",
+     "action": "banks and glides left across the garden, nose slightly up (pitch 8 degrees)",
+     "acting": "the inventor's robe tail and beard stream behind; the shadow races over lawn and hedge",
+     "library": "flyRig {pitch}; lagged ribbons"
+    },
+    {
+     "t": 44.36,
+     "end": 45.0,
+     "cue": {
+      "word": "فوق",
+      "t": 44.36
+     },
+     "who": "set",
+     "action": "over the fountain: the jet bends in the wake, the cypress tips sway, bunting flips",
+     "acting": "secondary motion arrives 0.15 s after the horse passes",
+     "library": "lagged on fountain and tree sway"
+    },
+    {
+     "t": 44.82,
+     "end": 45.6,
+     "cue": {
+      "word": "الحديقة",
+      "t": 44.82
+     },
+     "who": "ebonyHorse",
+     "action": "turns at the far end above the gate (4 drawings: full, narrow, narrow mirrored, full) and the doves scatter",
+     "acting": "turn held on twos; no leg movement at any point",
+     "library": "flyRig turn by x scale steps"
+    },
+    {
+     "t": 45.6,
+     "end": 46.4,
+     "cue": {
+      "word": "قبل",
+      "t": 45.6
+     },
+     "who": "ebonyHorse",
+     "action": "glides back toward the court, descending",
+     "acting": "guests' heads swing back with it; a guest chases his blown turban",
+     "library": "look plans; walk for the chasing guest"
+    },
+    {
+     "t": 46.44,
+     "end": 47.0,
+     "cue": {
+      "word": "يعود.",
+      "t": 46.44
+     },
+     "who": "ebonyHorse",
+     "action": "settles onto the cart platform: the springs sag, a ring of dust puffs out",
+     "acting": "no squash of the horse itself (wood); the rider bumps and settles",
+     "library": "dustBurst; lurch on the rider; cart sag settleTo"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 47.0
+   }
+  },
+  {
+   "id": "S6",
+   "start": 47.0,
+   "end": 55.81,
+   "paragraphs": [
+    3
+   ],
+   "set": "palaceGarden",
+   "cast": [
+    "guests",
+    "king",
+    "inventor",
+    "ebonyHorse",
+    "firuz",
+    "child"
+   ],
+   "summary": "Applause. Prince Firuz walks out of the crowd to examine the horse himself and finds the knob.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Zoom 1.0 to 1.15. 47.0 (1180, 605, 1.0) on the clapping group; follows Firuz left as he walks to the horse, (1090, 610, 1.15) by 52.4; holds."
+   },
+   "composition": "Firuz enters the middle third from the right; the inventor, dismounted, stands at the tail (x 900) with folded arms. Label PRINCE FIRUZ above the hedge with an arrow to his crown.",
+   "actions": [
+    {
+     "t": 47.0,
+     "end": 49.3,
+     "cue": {
+      "word": "صفق",
+      "t": 47.0
+     },
+     "who": "guests",
+     "action": "applause: hands clap at different speeds, one whistles through his fingers, the child jumps",
+     "acting": "claps on twos out of phase, the child hops 30 with landSquash",
+     "library": "handLW/handRW clap cycles with stagger; hop"
+    },
+    {
+     "t": 47.2,
+     "end": 48.6,
+     "cue": {
+      "word": "صفق",
+      "t": 47.0
+     },
+     "who": "king",
+     "action": "claps above his head, laughing",
+     "acting": "belly bounce (sq), crown turban wobble after (lagged)",
+     "library": "sq osc + lagged"
+    },
+    {
+     "t": 48.8,
+     "end": 50.0,
+     "cue": {
+      "word": "الناس",
+      "t": 48.8
+     },
+     "who": "inventor",
+     "action": "slides down from the saddle and takes a bow with a flourish",
+     "acting": "hop down, landSquash, proud chin; the sly half smile again",
+     "library": "hop + landSquash; flow on tip"
+    },
+    {
+     "t": 49.32,
+     "end": 50.1,
+     "cue": {
+      "word": "بدهشة،",
+      "t": 49.32
+     },
+     "who": "guests",
+     "action": "wide eyes, two guests turn to each other and mime the flight with a hand",
+     "acting": "eyes 'wide', a hand glides through the air",
+     "library": "flow on handRW"
+    },
+    {
+     "t": 50.1,
+     "end": 52.4,
+     "cue": {
+      "word": "واقترب",
+      "t": 50.1
+     },
+     "who": "firuz",
+     "action": "walks out of the group to the horse: xF = kfn [[50.1, 1300], [52.3, 1150]]",
+     "acting": "quick eager steps, cape ribbon trails and swings on the stop; he never looks away from the horse",
+     "library": "walk(xF, tc) + footfalls + firuzCape(swing)"
+    },
+    {
+     "t": 51.1,
+     "end": 53.6,
+     "cue": {
+      "word": "الأمير",
+      "t": 51.1
+     },
+     "who": "lettering",
+     "action": "label PRINCE FIRUZ with a neon arrow to him",
+     "acting": "label in the sky band, off at 53.6",
+     "library": "S.label + S.arrow"
+    },
+    {
+     "t": 51.68,
+     "end": 52.4,
+     "cue": {
+      "word": "فيروز",
+      "t": 51.68
+     },
+     "who": "firuz",
+     "action": "his crown catches a glint as he stops beside the chest plate",
+     "acting": "settles with a small overshoot",
+     "library": "settleTo; glint"
+    },
+    {
+     "t": 52.42,
+     "end": 53.4,
+     "cue": {
+      "word": "ليفحص",
+      "t": 52.42
+     },
+     "who": "firuz",
+     "action": "bends to a hoof, raps the chest plate with a knuckle, runs a hand up the neck",
+     "acting": "crouch and rise in one flow, head leads, hand follows",
+     "library": "flow on tip and drop; handRW along the neck"
+    },
+    {
+     "t": 53.38,
+     "end": 54.0,
+     "cue": {
+      "word": "الحصان",
+      "t": 53.38
+     },
+     "who": "firuz",
+     "action": "looks the horse over from nose to carved tail and back",
+     "acting": "gaze sweep with one blink at the turn",
+     "library": "gazePlan"
+    },
+    {
+     "t": 54.06,
+     "end": 55.4,
+     "cue": {
+      "word": "بنفسه.",
+      "t": 54.06
+     },
+     "who": "firuz",
+     "action": "his eyes stop on the neck knob; the knob answers with a glint",
+     "acting": "eyes widen, a slow smile; the inventor's lids narrow as he watches (lid 0.35, brow 0.4)",
+     "library": "lookAt(knob); glint"
+    },
+    {
+     "t": 55.2,
+     "end": 55.81,
+     "cue": {
+      "word": "بنفسه.",
+      "t": 54.06
+     },
+     "who": "firuz",
+     "action": "knocks once on the neck beside the knob",
+     "acting": "one knuckle, ear tilted to listen",
+     "library": "handRW; PERSON_HANDS.cupEar on the other hand"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 47.5,
+     "text": "BRAVO!"
+    },
+    {
+     "t": 51.2,
+     "text": "PRINCE FIRUZ"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 55.3,
+     "kind": "blip"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 55.81
+   }
+  },
+  {
+   "id": "S7",
+   "start": 55.81,
+   "end": 71.65,
+   "paragraphs": [
+    4
+   ],
+   "set": "palaceGarden",
+   "cast": [
+    "firuz",
+    "inventor",
+    "ebonyHorse",
+    "king",
+    "guests"
+   ],
+   "summary": "Let me try it. The inventor warns him to learn both controls and points to the neck and to the ear; the prince is not looking. He jumps on and turns the one knob he saw.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "twoShot of Firuz (1150) and the inventor (stepping to 1240) with the horse between and behind them: about (1110, 600, 1.2), drifting 30 right over the scene; INSERT 69.08 to 70.0 on the knob; back to (1060, 590, 1.0) for the last second."
+   },
+   "composition": "Firuz left of the neck, inventor right, the horse's head above and between them so both controls are in the frame: knob at about (1105, 706), ear and mane at about (1160, 600) (measure on the drawing). King small on the dais at the right edge in the wide.",
+   "actions": [
+    {
+     "t": 55.81,
+     "end": 57.1,
+     "cue": {
+      "word": "قال",
+      "t": 55.808
+     },
+     "who": "firuz",
+     "action": "turns from the horse to the inventor",
+     "acting": "head turn with a blink, bright eyes, on his toes",
+     "library": "timed blink; flow on tip"
+    },
+    {
+     "t": 57.16,
+     "end": 58.9,
+     "cue": {
+      "word": "«دعني",
+      "t": 57.16
+     },
+     "who": "firuz",
+     "action": "bubble LET ME TRY IT!, a hand on his chest then pointing at the saddle",
+     "acting": "talk on threes; the second hand is already resting on the saddle",
+     "library": "S.label balloon; PERSON_HANDS.chest then pointFwd"
+    },
+    {
+     "t": 58.14,
+     "end": 58.9,
+     "cue": {
+      "word": "أجربه».",
+      "t": 58.14
+     },
+     "who": "firuz",
+     "action": "bounces twice on his toes",
+     "acting": "sq 0.95 to 1.04 twice, cape ribbon bounces a beat late",
+     "library": "sq + lagged cape"
+    },
+    {
+     "t": 58.94,
+     "end": 60.4,
+     "cue": {
+      "word": "حذره",
+      "t": 58.94
+     },
+     "who": "inventor",
+     "action": "steps in between prince and saddle with both palms out",
+     "acting": "quick two steps (walk), head shake, brows up in real alarm",
+     "library": "walk + footfalls; PERSON_HANDS.armsOut"
+    },
+    {
+     "t": 60.5,
+     "end": 61.6,
+     "cue": {
+      "word": "المخترع",
+      "t": 60.5
+     },
+     "who": "inventor",
+     "action": "lowers one hand and raises a teaching finger",
+     "acting": "leans toward the prince, eyes on his face",
+     "library": "PERSON_HANDS.pointUp; lookAt(firuz)"
+    },
+    {
+     "t": 61.62,
+     "end": 64.4,
+     "cue": {
+      "word": "مقبضي",
+      "t": 62.36
+     },
+     "who": "inventor",
+     "action": "bubble LEARN UP AND DOWN FIRST!",
+     "acting": "talk on threes, finger beats on each word",
+     "library": "S.label balloon"
+    },
+    {
+     "t": 63.1,
+     "end": 63.7,
+     "cue": {
+      "word": "الصعود",
+      "t": 63.1
+     },
+     "who": "inventor",
+     "action": "points at the knob on the neck; a small neon arrow pointing up appears beside it",
+     "acting": "clear straight arm, held 0.5 s",
+     "library": "handRW to the knob; S.arrow"
+    },
+    {
+     "t": 63.68,
+     "end": 64.4,
+     "cue": {
+      "word": "والهبوط",
+      "t": 63.68
+     },
+     "who": "inventor",
+     "action": "points up to the spot behind the ear under the carved mane; a small arrow pointing down appears there",
+     "acting": "he looks at the ear; THE PRINCE DOES NOT: his eyes are on the stirrup and one foot is already lifting",
+     "library": "handRW to the lever point; firuz gaze [-0.4, 0.8]"
+    },
+    {
+     "t": 64.44,
+     "end": 65.1,
+     "cue": {
+      "word": "أولًا،",
+      "t": 64.44
+     },
+     "who": "king",
+     "action": "on the dais the king half rises and raises a hand to say wait",
+     "acting": "worried brows; the fan servant leans out to see",
+     "library": "flow on sit 1 to 0.5; PERSON_HANDS.wave"
+    },
+    {
+     "t": 65.12,
+     "end": 66.6,
+     "cue": {
+      "word": "لكن",
+      "t": 65.12
+     },
+     "who": "firuz",
+     "action": "grins and ducks under the inventor's outstretched arm",
+     "acting": "dip (drop 30) and a sidestep, cape trailing; the inventor turns late (blink on the turn)",
+     "library": "flow on drop and x; turnFlip for the inventor"
+    },
+    {
+     "t": 66.66,
+     "end": 67.4,
+     "cue": {
+      "word": "جلس",
+      "t": 66.66
+     },
+     "who": "firuz",
+     "action": "vaults into the saddle",
+     "acting": "crouch 0.12 s, hop 110 high, lands seated with a squash; the cart springs dip; the horse does not react at all",
+     "library": "anticipate + hop + landSquash; rideOn(ctx, ebonyHorse, ...)"
+    },
+    {
+     "t": 67.38,
+     "end": 68.1,
+     "cue": {
+      "word": "سريعًا",
+      "t": 67.38
+     },
+     "who": "inventor",
+     "action": "lunges and grabs at air where the prince's sleeve was",
+     "acting": "over-reach, a stumble step, turban tail swinging",
+     "library": "flow on tip 0.25; swing"
+    },
+    {
+     "t": 68.16,
+     "end": 69.0,
+     "cue": {
+      "word": "وأدار",
+      "t": 68.16
+     },
+     "who": "firuz",
+     "action": "his hand goes straight to the neck knob",
+     "acting": "eyes down on it, tongue-in-cheek smile",
+     "library": "handRW to the knob"
+    },
+    {
+     "t": 69.08,
+     "end": 70.0,
+     "cue": {
+      "word": "المقبض",
+      "t": 69.08
+     },
+     "who": "knob",
+     "action": "INSERT: his hand twists the knob hard, far past the notch (a half turn where the inventor gave a quarter)",
+     "acting": "fast twist in two drawings, three click rings, the pointer quivers",
+     "library": "ebonyHorse at s 4 + handInsert"
+    },
+    {
+     "t": 70.04,
+     "end": 71.6,
+     "cue": {
+      "word": "رآه.",
+      "t": 70.04
+     },
+     "who": "ebonyHorse",
+     "action": "wide: the brass lights in order twice as fast and brighter than before; dust spins out in a ring; guests step back, the inventor throws up both hands",
+     "acting": "Firuz's grin becomes an 'o'; hands snap to the neck; one held beat before the launch",
+     "library": "powerOn(t0, fast); dustBurst; PERSON_HANDS.headHold for the inventor"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 57.2,
+     "text": "LET ME TRY IT!"
+    },
+    {
+     "t": 62.4,
+     "text": "LEARN UP AND DOWN FIRST!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 71.2,
+     "kind": "riser"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 71.65
+   }
+  },
+  {
+   "id": "S8",
+   "start": 71.65,
+   "end": 80.44,
+   "paragraphs": [
+    5
+   ],
+   "set": "skyFlight",
+   "cast": [
+    "firuz",
+    "ebonyHorse",
+    "inventor",
+    "king",
+    "guests",
+    "doves"
+   ],
+   "summary": "The horse shoots up like an arrow (first 3.5 s still in palaceGarden, then a cut to skyFlight). From the saddle the palace shrinks below until it is a toy.",
+   "camera": {
+    "shot": "wide",
+    "move": "tilt",
+    "notes": "Part A 71.65 to 75.12 in palaceGarden: (1020, 560, 0.85) tilting up fast with the horse to (1020, -150, 0.7), losing it out of the top of frame by 74.4, then a 0.5 s look back down at the tiny crowd. Part B from 75.12 in skyFlight (cut): static frame, the world scrolls."
+   },
+   "composition": "Part B: horse and rider in the upper middle (rig centre about panel 540, 430), nose up 50 degrees easing to 25; the land plate kingdomBelow fills the lower 45 percent with the palace on the centre line under the hooves, shrinking from 1.0 to 0.14 scale about the point (500, 1000).",
+   "actions": [
+    {
+     "t": 71.65,
+     "end": 72.1,
+     "cue": {
+      "word": "اندفع",
+      "t": 71.649
+     },
+     "who": "fx",
+     "action": "IMPACT FRAME on the launch: radial speed lines, two inverted frames, chrome word WHOOSH!",
+     "acting": "silent (the word is spoken on it)",
+     "library": "S.emphasis(..., {rect: panel})"
+    },
+    {
+     "t": 71.75,
+     "end": 73.6,
+     "cue": {
+      "word": "اندفع",
+      "t": 71.649
+     },
+     "who": "ebonyHorse",
+     "action": "goes straight up, nose up 55 degrees, a dark dart with gold ribbons; the empty cart rocks on its springs",
+     "acting": "the rider is pressed flat to the neck (lurch -0.3, sq 1.1 stretch for 4 frames); cape straight down behind",
+     "library": "flyRig {pitch: 55}; speedLines vertical"
+    },
+    {
+     "t": 72.68,
+     "end": 74.3,
+     "cue": {
+      "word": "الحصان",
+      "t": 72.68
+     },
+     "who": "guests",
+     "action": "hats and a tray fly up in the wake; everyone tips back to watch; the inventor's saffron turban unwinds a long tail",
+     "acting": "staggered recoil then heads up; turban tail as a ribbon on a travelling sine",
+     "library": "tip -0.1 with stagger; ribbon"
+    },
+    {
+     "t": 73.7,
+     "end": 74.3,
+     "cue": {
+      "word": "أعلى",
+      "t": 73.7
+     },
+     "who": "ebonyHorse",
+     "action": "passes the dome finial and the kites; doves burst away",
+     "acting": "already small (s 0.35)",
+     "library": "scale by height"
+    },
+    {
+     "t": 74.36,
+     "end": 75.1,
+     "cue": {
+      "word": "كالسهم،",
+      "t": 74.36
+     },
+     "who": "fx",
+     "action": "a single neon streak marks the path like an arrow shaft; below, the king shades his eyes",
+     "acting": "streak fades in 0.6 s; the king's other hand reaches up after his son",
+     "library": "S.arrow; PERSON_HANDS.shield"
+    },
+    {
+     "t": 75.12,
+     "end": 76.2,
+     "cue": {
+      "word": "وصغر",
+      "t": 75.12
+     },
+     "who": "firuz",
+     "action": "CUT to the sky: he clings to the neck with both arms, eyes screwed shut, cape and hair streaming down",
+     "acting": "lid 1, mouth grit, tremble 2; clouds scroll downward fast (vy 900 per s)",
+     "library": "rideOn + flyRig; skyFlight {alt: 0.15, vy}; PERSON_HANDS.grip"
+    },
+    {
+     "t": 76.22,
+     "end": 76.8,
+     "cue": {
+      "word": "القصر",
+      "t": 76.22
+     },
+     "who": "firuz",
+     "action": "opens one eye and looks down past his knee",
+     "acting": "wink 'L' open first, then both wide; gaze [0.1, 1]",
+     "library": "person wink then eyes 'wide'"
+    },
+    {
+     "t": 76.82,
+     "end": 78.1,
+     "cue": {
+      "word": "تحته",
+      "t": 76.82
+     },
+     "who": "set",
+     "action": "below him the palace and its garden are already half size and still shrinking; the guests are coloured dots, the fountain a white speck",
+     "acting": "scale eased 1.0 to 0.4; a pale haze layer grows over the land",
+     "library": "kingdomBelow {k} with palaceToy"
+    },
+    {
+     "t": 77.46,
+     "end": 78.2,
+     "cue": {
+      "word": "حتى",
+      "t": 77.46
+     },
+     "who": "set",
+     "action": "a thin cloud layer passes downward across the whole frame",
+     "acting": "near cloud in front of the horse for 5 frames",
+     "library": "skyFlight near layer"
+    },
+    {
+     "t": 78.16,
+     "end": 79.0,
+     "cue": {
+      "word": "صار",
+      "t": 78.16
+     },
+     "who": "ebonyHorse",
+     "action": "the climb eases: nose up 25 degrees, scroll slows (vy 300)",
+     "acting": "the rider lifts his chest off the neck, hair settles",
+     "library": "flow on pitch"
+    },
+    {
+     "t": 79.1,
+     "end": 80.4,
+     "cue": {
+      "word": "لعبة",
+      "t": 79.1
+     },
+     "who": "lettering",
+     "action": "the palace is toy size (about 90 wide): a neon arrow and the label LIKE A TOY!",
+     "acting": "a tiny sparkle on the toy dome",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 79.64,
+     "end": 80.44,
+     "cue": {
+      "word": "صغيرة.",
+      "t": 79.64
+     },
+     "who": "firuz",
+     "action": "gulps",
+     "acting": "head dips and rises (sq 0.96), eyes stay wide, one blink",
+     "library": "sq flow; timed blink"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 71.7,
+     "text": "WHOOSH!"
+    },
+    {
+     "t": 79.1,
+     "text": "LIKE A TOY!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 80.44
+   }
+  },
+  {
+   "id": "S9",
+   "start": 80.44,
+   "end": 90.22,
+   "paragraphs": [
+    5
+   ],
+   "set": "skyFlight",
+   "cast": [
+    "firuz",
+    "ebonyHorse",
+    "hawk"
+   ],
+   "summary": "He calls down from the sky. Nothing answers. He does not know how to get back.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "Rig drawn at s 0.9 at 80.44 (medium wide), the frame widens to s 0.5 by 83.4 so the sky is huge around him, comes back to s 0.8 for the listening and the question (86.2)."
+   },
+   "composition": "Horse level, slowly rising, in the upper third; the land a pale band along the bottom with the palace now a dot; two cloud layers drifting sideways at different speeds, a cloud bank at lower left.",
+   "actions": [
+    {
+     "t": 80.44,
+     "end": 82.0,
+     "cue": {
+      "word": "نادى",
+      "t": 80.44
+     },
+     "who": "firuz",
+     "action": "lets go with one hand, cups his mouth and shouts down: bubble HELLOOO!",
+     "acting": "big inhale (anticipate), mouth open wide, the horse wobbles and he re-grips with the other hand",
+     "library": "PERSON_HANDS.cupMouth; S.label balloon; anticipate"
+    },
+    {
+     "t": 81.0,
+     "end": 83.4,
+     "cue": {
+      "word": "نادى",
+      "t": 80.44
+     },
+     "who": "fx",
+     "action": "three sound arcs travel down from him and fade out long before the ground",
+     "acting": "each arc thinner and paler",
+     "library": "arc rings along a line to the palace dot"
+    },
+    {
+     "t": 82.06,
+     "end": 83.5,
+     "cue": {
+      "word": "الأمير",
+      "t": 82.06
+     },
+     "who": "camera",
+     "action": "the frame widens: a very small horse and rider in a very large sky",
+     "acting": "cloud layers keep drifting, cape ribbon keeps moving",
+     "library": "rig scale 0.9 to 0.5"
+    },
+    {
+     "t": 83.6,
+     "end": 84.9,
+     "cue": {
+      "word": "لكنه",
+      "t": 83.6
+     },
+     "who": "firuz",
+     "action": "leans out with a hand behind his ear",
+     "acting": "held listening pose with breathing and a slow blink",
+     "library": "PERSON_HANDS.cupEar; breathe"
+    },
+    {
+     "t": 84.96,
+     "end": 86.1,
+     "cue": {
+      "word": "يسمع",
+      "t": 84.96
+     },
+     "who": "hawk",
+     "action": "the only answer: a hawk glides past at his height, turns its head to look at him, and glides on",
+     "acting": "they hold each other's gaze for 0.6 s; his eyes follow it out",
+     "library": "bird {kind:'hawk', pal: 1, fly: true, flap, headRot}"
+    },
+    {
+     "t": 85.54,
+     "end": 86.2,
+     "cue": {
+      "word": "جوابًا،",
+      "t": 85.54
+     },
+     "who": "firuz",
+     "action": "his shoulders drop",
+     "acting": "sq 0.96, head down a little, cape droops",
+     "library": "flow on sq and drop"
+    },
+    {
+     "t": 86.22,
+     "end": 87.9,
+     "cue": {
+      "word": "ولم",
+      "t": 86.22
+     },
+     "who": "firuz",
+     "action": "looks left, right, behind, down",
+     "acting": "gaze snaps on twos with a blink on each turn; small question mark above his crown at 87.0",
+     "library": "gazePlan; S.label"
+    },
+    {
+     "t": 87.96,
+     "end": 88.7,
+     "cue": {
+      "word": "يعود",
+      "t": 87.96
+     },
+     "who": "set",
+     "action": "a cloud slides over the palace dot and hides it",
+     "acting": "he leans to keep it in sight, then loses it",
+     "library": "skyFlight far layer; lookAt"
+    },
+    {
+     "t": 88.8,
+     "end": 90.22,
+     "cue": {
+      "word": "الأرض.",
+      "t": 88.8
+     },
+     "who": "firuz",
+     "action": "reaches a hand down toward the ground, then pulls it back and holds the neck with both arms",
+     "acting": "reach, falter, clutch; the rig keeps a 6 px bob",
+     "library": "flow on handR; idleSway"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 80.6,
+     "text": "HELLOOO!"
+    },
+    {
+     "t": 87.0,
+     "text": "?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 89.7,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 90.22
+   }
+  },
+  {
+   "id": "S10",
+   "start": 90.22,
+   "end": 97.18,
+   "paragraphs": [
+    6
+   ],
+   "set": "skyFlight",
+   "cast": [
+    "firuz",
+    "ebonyHorse"
+   ],
+   "summary": "He turns the same knob the other way. The horse climbs faster.",
+   "camera": {
+    "shot": "medium",
+    "move": "tilt",
+    "notes": "Rig at s 1.0, centre about panel (520, 500). On 94.74 the rig jumps 60 up in frame and the cloud scroll doubles; the sky plate shifts to the higher band."
+   },
+   "composition": "Knob side toward us; the knob sits near panel (610, 420) so the curved arrow can be read. HIGHER! at the right edge with an up arrow, clear of his face.",
+   "actions": [
+    {
+     "t": 90.22,
+     "end": 91.8,
+     "cue": {
+      "word": "حاول",
+      "t": 90.224
+     },
+     "who": "firuz",
+     "action": "sets his jaw and takes a breath",
+     "acting": "brows down (brow 0.5), chest rise (anticipate 0.05)",
+     "library": "anticipate; brow"
+    },
+    {
+     "t": 91.84,
+     "end": 92.5,
+     "cue": {
+      "word": "إدارة",
+      "t": 91.84
+     },
+     "who": "firuz",
+     "action": "his hand goes back to the neck knob",
+     "acting": "eyes on the knob",
+     "library": "handR to the knob (rig-local target)"
+    },
+    {
+     "t": 92.5,
+     "end": 94.1,
+     "cue": {
+      "word": "المقبض",
+      "t": 92.5
+     },
+     "who": "knob",
+     "action": "he turns it back the other way: a curved neon arrow shows the reverse turn",
+     "acting": "three held drawings of the wrist; pointer swings anticlockwise past the notch",
+     "library": "S.arrow curved; knob angle flow"
+    },
+    {
+     "t": 94.12,
+     "end": 94.7,
+     "cue": {
+      "word": "الآخر،",
+      "t": 94.12
+     },
+     "who": "firuz",
+     "action": "click: he looks down hopefully, a half smile",
+     "acting": "gaze [0, 1], lid 0.2",
+     "library": "gaze"
+    },
+    {
+     "t": 94.74,
+     "end": 95.9,
+     "cue": {
+      "word": "فارتفع",
+      "t": 94.74
+     },
+     "who": "ebonyHorse",
+     "action": "the horse kicks UPWARD harder: nose up 35 degrees, clouds rush down, lettering HIGHER! with an up arrow",
+     "acting": "the rider is thrown back then forward (lurch), cape whips",
+     "library": "flow on pitch; lurch(tc, 94.74, -0.3); skyFlight vy 700"
+    },
+    {
+     "t": 95.94,
+     "end": 96.6,
+     "cue": {
+      "word": "الحصان",
+      "t": 95.94
+     },
+     "who": "ebonyHorse",
+     "action": "the brass lights in order again",
+     "acting": "two-frame flashes",
+     "library": "powerOn"
+    },
+    {
+     "t": 96.6,
+     "end": 97.18,
+     "cue": {
+      "word": "أكثر.",
+      "t": 96.6
+     },
+     "who": "firuz",
+     "action": "the smile collapses; the sky above turns a deeper blue and the air thin and pale at the horizon",
+     "acting": "mouth frown, eyes 'wide'",
+     "library": "skyFlight {alt: 0.7}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 95.0,
+     "text": "HIGHER!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 97.18
+   }
+  },
+  {
+   "id": "S11",
+   "start": 97.18,
+   "end": 108.69,
+   "paragraphs": [
+    6
+   ],
+   "set": "skyFlight",
+   "cast": [
+    "firuz",
+    "ebonyHorse"
+   ],
+   "summary": "Clouds pass under his feet, he is cold, and he searches the whole horse for a sign of how to come down.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Rig at s 0.6 above a full-width cloud deck for 97.18 to 101.0, slow pan right with the drift; rig to s 0.95 for the cold and the search (101.0 on)."
+   },
+   "composition": "Cloud deck tops along panel y 760 to 900 with gaps showing blue land far below; the horse's shadow lies on the deck under him. Sun right of frame, lower than before.",
+   "actions": [
+    {
+     "t": 97.18,
+     "end": 98.5,
+     "cue": {
+      "word": "رأى",
+      "t": 97.18
+     },
+     "who": "firuz",
+     "action": "looks down past his hanging boot",
+     "acting": "gaze [0.2, 1], leaning out a little",
+     "library": "gaze; tip"
+    },
+    {
+     "t": 98.6,
+     "end": 99.7,
+     "cue": {
+      "word": "الغيوم",
+      "t": 98.6
+     },
+     "who": "set",
+     "action": "a sea of cloud slides by beneath the hooves; the horse's shadow ripples over the cloud tops",
+     "acting": "three cloud layers at different speeds, lit white on top with pale blue undersides",
+     "library": "skyFlight {deck: true, vx}; groundShadow on the deck"
+    },
+    {
+     "t": 99.76,
+     "end": 100.2,
+     "cue": {
+      "word": "تحت",
+      "t": 99.76
+     },
+     "who": "firuz",
+     "action": "his dangling toe drags through a cloud top and parts it into two wisps",
+     "acting": "he watches it, almost charmed",
+     "library": "wisp pair as lagged ribbons"
+    },
+    {
+     "t": 100.2,
+     "end": 101.0,
+     "cue": {
+      "word": "قدميه،",
+      "t": 100.2
+     },
+     "who": "firuz",
+     "action": "snatches the foot back up",
+     "acting": "quick tuck, blink",
+     "library": "flow"
+    },
+    {
+     "t": 101.08,
+     "end": 102.0,
+     "cue": {
+      "word": "وشعر",
+      "t": 101.08
+     },
+     "who": "firuz",
+     "action": "first shiver; a puff of breath",
+     "acting": "tremble 1.5 for 0.4 s, breath puff drifts back",
+     "library": "tremble; breath puff cel (3 drawings)"
+    },
+    {
+     "t": 102.08,
+     "end": 102.8,
+     "cue": {
+      "word": "بالبرد،",
+      "t": 102.08
+     },
+     "who": "firuz",
+     "action": "hugs himself, teeth chattering: BRRR!; frost glints on the brass",
+     "acting": "arms folded, mouth 'grit', tremble 2.5, cape pulled round one shoulder",
+     "library": "PERSON_HANDS.folded; tremble"
+    },
+    {
+     "t": 102.82,
+     "end": 103.7,
+     "cue": {
+      "word": "وأخذ",
+      "t": 102.82
+     },
+     "who": "firuz",
+     "action": "rubs his hands, blows on them, and starts to look",
+     "acting": "resolve: brows level, eyes moving",
+     "library": "handL/handR clasp cycle"
+    },
+    {
+     "t": 103.76,
+     "end": 104.5,
+     "cue": {
+      "word": "يبحث",
+      "t": 103.76
+     },
+     "who": "firuz",
+     "action": "pats along the neck plate and lifts the saddle cloth flap to look under it",
+     "acting": "head leads, hand follows",
+     "library": "flow on hand targets"
+    },
+    {
+     "t": 104.54,
+     "end": 105.2,
+     "cue": {
+      "word": "علامة",
+      "t": 104.54
+     },
+     "who": "firuz",
+     "action": "leans out to look at the chest plate, then twists round to look at the carved tail",
+     "acting": "the horse tips with his weight, he grabs the pommel (blink on the turn)",
+     "library": "rig bank +-4 degrees lagged from his lean"
+    },
+    {
+     "t": 105.26,
+     "end": 106.0,
+     "cue": {
+      "word": "تدله",
+      "t": 105.26
+     },
+     "who": "firuz",
+     "action": "tries to twist the saddle pommel: nothing",
+     "acting": "two tries, a look of polite disappointment",
+     "library": "hand cycle"
+    },
+    {
+     "t": 106.04,
+     "end": 107.1,
+     "cue": {
+      "word": "طريقة",
+      "t": 106.46
+     },
+     "who": "firuz",
+     "action": "knocks on the horse's forehead and listens",
+     "acting": "knuckle knock twice, ear tilted; the brass eye stares ahead",
+     "library": "PERSON_HANDS.cupEar"
+    },
+    {
+     "t": 107.16,
+     "end": 107.8,
+     "cue": {
+      "word": "الهبوط.",
+      "t": 107.16
+     },
+     "who": "firuz",
+     "action": "slumps over the neck, chin on his fist; the light is turning gold",
+     "acting": "slow sag (sq 0.95), cape hanging, still breathing",
+     "library": "flow on sq; PERSON_HANDS.chin"
+    },
+    {
+     "t": 107.9,
+     "end": 108.69,
+     "cue": {
+      "word": "الهبوط.",
+      "t": 107.16
+     },
+     "who": "fx",
+     "action": "tape transition with the caption HOURS LATER...; under it the sky plate changes to golden late afternoon",
+     "acting": "white flash with tracking noise over the panel only",
+     "library": "S.transition(..., {rect: panel, caption: 'HOURS LATER...'})"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 102.2,
+     "text": "BRRR!"
+    },
+    {
+     "t": 108.0,
+     "text": "HOURS LATER..."
+    }
+   ],
+   "sfx": [
+    {
+     "t": 108.2,
+     "kind": "glitch"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 108.69,
+    "label": "HOURS LATER..."
+   }
+  },
+  {
+   "id": "S12",
+   "start": 108.69,
+   "end": 114.06,
+   "paragraphs": [
+    7
+   ],
+   "set": "skyFlight",
+   "cast": [
+    "firuz",
+    "ebonyHorse",
+    "inventor"
+   ],
+   "summary": "He remembers the inventor pointing at something near the ear.",
+   "camera": {
+    "shot": "medium",
+    "move": "drift",
+    "notes": "Rig at s 0.9, low right in the frame (centre about panel 600, 620) to leave the upper left for the thought cloud (centre about panel 330, 300, 420 x 330). Slow drift left 20."
+   },
+   "composition": "Golden hour sky: warm clouds, blue still overhead. Inside the cloud: the garden moment from 63.68 replayed centred, inventor and horse head at scale 0.45 (figures about 110 tall on screen).",
+   "actions": [
+    {
+     "t": 108.69,
+     "end": 109.7,
+     "cue": {
+      "word": "تذكر",
+      "t": 108.691
+     },
+     "who": "firuz",
+     "action": "still slumped, then his eyes open wide and his head comes up",
+     "acting": "lid 0.6 to 0, head rise leads the shoulders",
+     "library": "flow on lid, drop"
+    },
+    {
+     "t": 109.2,
+     "end": 110.3,
+     "cue": {
+      "word": "تذكر",
+      "t": 108.691
+     },
+     "who": "fx",
+     "action": "a thought cloud pops open: trail bubbles first, then the cloud",
+     "acting": "pop order as in the Library",
+     "library": "thoughtCloud(ctx, x, y, 420, 330, t, {p, tail, inside, scale: 0.45})"
+    },
+    {
+     "t": 110.34,
+     "end": 111.1,
+     "cue": {
+      "word": "المخترع",
+      "t": 110.34
+     },
+     "who": "inventor",
+     "action": "in the cloud: the inventor beside the horse's head, finger raised",
+     "acting": "same pose and colours as at 61.6",
+     "library": "person inside thoughtCloud"
+    },
+    {
+     "t": 111.18,
+     "end": 112.6,
+     "cue": {
+      "word": "أشار",
+      "t": 111.18
+     },
+     "who": "inventor",
+     "action": "in the cloud: his arm goes up and points behind the ear",
+     "acting": "the point lands and holds; this time nothing blocks the view",
+     "library": "handRW to the lever point"
+    },
+    {
+     "t": 112.72,
+     "end": 113.4,
+     "cue": {
+      "word": "قرب",
+      "t": 112.72
+     },
+     "who": "fx",
+     "action": "in the cloud: a small neon arrow and a glint at the spot under the mane",
+     "acting": "glint twinkles twice",
+     "library": "S.arrow; glint"
+    },
+    {
+     "t": 113.42,
+     "end": 114.06,
+     "cue": {
+      "word": "الأذن.",
+      "t": 113.42
+     },
+     "who": "firuz",
+     "action": "the cloud pops away; his eyes snap to the real ear in front of him",
+     "acting": "gaze snap in one drawing, then a blink; the mane edge by the ear gives one small glint",
+     "library": "lookAt(ear); thoughtCloud p to 0"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 114.06
+   }
+  },
+  {
+   "id": "S13",
+   "start": 114.06,
+   "end": 122.82,
+   "paragraphs": [
+    7
+   ],
+   "set": "skyFlight",
+   "cast": [
+    "firuz",
+    "ebonyHorse"
+   ],
+   "summary": "He leans along the neck, feels along the carved mane to the head, and finds a small lever hidden beneath it.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Rig s 1.0 to 1.15 centred on the neck and head (114.06 to 117.6); INSERT 117.68 to 121.3: the ear, the mane overhang and the lever drawn at s 4.5, slow drift in 4 percent; back to the medium for the last half second."
+   },
+   "composition": "Insert: ear upper right, the stepped mane blocks running down to the left, the lever in the shadow under the first block in the centre of the frame, sunset light from the right. Label A LEVER! upper left with an arrow.",
+   "actions": [
+    {
+     "t": 114.06,
+     "end": 115.6,
+     "cue": {
+      "word": "انحنى",
+      "t": 114.06
+     },
+     "who": "firuz",
+     "action": "leans forward along the neck",
+     "acting": "slow lean (lurch 0 to 0.4 through a flow); the horse's nose dips 4 degrees with his weight, he freezes, it steadies, he goes on",
+     "library": "rideOn personP.lurch; rig pitch lagged"
+    },
+    {
+     "t": 115.68,
+     "end": 116.5,
+     "cue": {
+      "word": "وفحص",
+      "t": 115.68
+     },
+     "who": "firuz",
+     "action": "his hands walk up the carved mane block by block",
+     "acting": "left, right, left on twos, eyes following the leading hand",
+     "library": "handL/handR targets on the mane block anchors"
+    },
+    {
+     "t": 116.54,
+     "end": 116.9,
+     "cue": {
+      "word": "رأس",
+      "t": 116.54
+     },
+     "who": "firuz",
+     "action": "reaches the head: looks at the brass eye, the ear",
+     "acting": "gaze hops, one blink",
+     "library": "gazePlan"
+    },
+    {
+     "t": 116.96,
+     "end": 117.6,
+     "cue": {
+      "word": "الحصان،",
+      "t": 116.96
+     },
+     "who": "firuz",
+     "action": "tilts his head to look under the overhang of the mane beside the ear",
+     "acting": "head tilt (tip 0.12) and a squint (lid 0.4)",
+     "library": "tip; lid"
+    },
+    {
+     "t": 117.68,
+     "end": 118.7,
+     "cue": {
+      "word": "فرأى",
+      "t": 117.68
+     },
+     "who": "lever",
+     "action": "INSERT: in the shadow under the carved mane, a small brass lever (38 long at s 1, ball tip r 5) catches the low sun",
+     "acting": "a light band slides down the mane and the lever lights; star glint on the ball tip",
+     "library": "ebonyHorse at s 4.5 {reveal: 1}; lightBands; glint"
+    },
+    {
+     "t": 118.72,
+     "end": 120.6,
+     "cue": {
+      "word": "ذراعًا",
+      "t": 118.72
+     },
+     "who": "lettering",
+     "action": "neon arrow and label A LEVER!",
+     "acting": "label on for 1.9 s",
+     "library": "S.arrow + S.label"
+    },
+    {
+     "t": 119.26,
+     "end": 119.9,
+     "cue": {
+      "word": "صغيرة",
+      "t": 119.26
+     },
+     "who": "firuz",
+     "action": "his fingertip comes into the insert beside the lever, showing how small it is, and stops short of touching",
+     "acting": "the finger hovers and trembles 1 px",
+     "library": "handInsert {point: true}; tremble"
+    },
+    {
+     "t": 119.92,
+     "end": 120.7,
+     "cue": {
+      "word": "تحت",
+      "t": 119.92
+     },
+     "who": "lever",
+     "action": "the shadow edge of the mane slides back a little: an engraved down arrow on the brass plate under the lever",
+     "acting": "held drawing, moving light only",
+     "library": "lightBands; engraved arrow"
+    },
+    {
+     "t": 120.72,
+     "end": 121.3,
+     "cue": {
+      "word": "عرفه",
+      "t": 120.72
+     },
+     "who": "ebonyHorse",
+     "action": "the carved mane in close: stepped blocks with chisel lines and a brass edge strip",
+     "acting": "glints walk along the edge strip",
+     "library": "glints"
+    },
+    {
+     "t": 121.32,
+     "end": 122.82,
+     "cue": {
+      "word": "الخشبي.",
+      "t": 121.32
+     },
+     "who": "firuz",
+     "action": "back to the medium: his face lit gold, a long breath out, the first small smile since the launch",
+     "acting": "breath puff, shoulders ease, lid 0.2",
+     "library": "flow on sq; breath puff"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 118.8,
+     "text": "A LEVER!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 122.4,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 122.82
+   }
+  },
+  {
+   "id": "S14",
+   "start": 122.82,
+   "end": 129.84,
+   "paragraphs": [
+    8
+   ],
+   "set": "skyFlight",
+   "cast": [
+    "firuz",
+    "ebonyHorse",
+    "doves"
+   ],
+   "summary": "He looks at the earth far below, then at the lever: perhaps this is the way to safety.",
+   "camera": {
+    "shot": "wide",
+    "move": "tilt",
+    "notes": "122.82 rig s 0.9 upper third; 123.9 to 125.4 the frame tilts down to show the land (rig slides up to the top edge, the land plate rises to fill two thirds); 125.4 back up to the rig at s 1.0 for the line."
+   },
+   "composition": "Land far below in low gold light: rivers as bright ribbons, long blue shadows of hills, small towns, no palace in sight (he has drifted far). A line of birds far beneath him. Bubble above and behind him, tail to his head.",
+   "actions": [
+    {
+     "t": 122.82,
+     "end": 123.9,
+     "cue": {
+      "word": "نظر",
+      "t": 122.818
+     },
+     "who": "firuz",
+     "action": "looks down over the horse's shoulder",
+     "acting": "gaze [0.2, 1], hands tight on the neck",
+     "library": "gaze"
+    },
+    {
+     "t": 123.92,
+     "end": 124.9,
+     "cue": {
+      "word": "فيروز",
+      "t": 123.92
+     },
+     "who": "camera",
+     "action": "tilts down with his look",
+     "acting": "cloud layers slide up through frame",
+     "library": "skyFlight camera offset"
+    },
+    {
+     "t": 124.92,
+     "end": 125.4,
+     "cue": {
+      "word": "الأرض",
+      "t": 124.92
+     },
+     "who": "set",
+     "action": "the earth: a wide strange country in gold and blue, a river catching the sun, a string of birds far below",
+     "acting": "river glints travel; birds flap out of phase",
+     "library": "kingdomBelow {variant: 'far', u: 0.45}; bird silhouettes"
+    },
+    {
+     "t": 125.4,
+     "end": 126.2,
+     "cue": {
+      "word": "والذراع،",
+      "t": 125.4
+     },
+     "who": "firuz",
+     "action": "his eyes come back up to the lever; it glints",
+     "acting": "head turn with a blink",
+     "library": "lookAt(lever); glint"
+    },
+    {
+     "t": 126.28,
+     "end": 127.2,
+     "cue": {
+      "word": "وقال:",
+      "t": 126.28
+     },
+     "who": "firuz",
+     "action": "swallows and straightens in the saddle",
+     "acting": "small sq dip, chin up",
+     "library": "flow on sq"
+    },
+    {
+     "t": 127.22,
+     "end": 129.8,
+     "cue": {
+      "word": "«لعلها",
+      "t": 127.22
+     },
+     "who": "firuz",
+     "action": "bubble PERHAPS THIS IS MY WAY TO SAFETY...",
+     "acting": "quiet talk on threes, eyes on the lever",
+     "library": "S.label balloon"
+    },
+    {
+     "t": 128.5,
+     "end": 129.1,
+     "cue": {
+      "word": "طريق",
+      "t": 128.5
+     },
+     "who": "firuz",
+     "action": "glances once more at the ground and back",
+     "acting": "quick down and up, 0.4 s",
+     "library": "gazePlan"
+    },
+    {
+     "t": 129.12,
+     "end": 129.84,
+     "cue": {
+      "word": "النجاة».",
+      "t": 129.12
+     },
+     "who": "firuz",
+     "action": "nods to himself",
+     "acting": "one nod, cape ribbon settles",
+     "library": "flow on drop"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 127.3,
+     "text": "PERHAPS THIS IS MY WAY TO SAFETY..."
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 129.84
+   }
+  },
+  {
+   "id": "S15",
+   "start": 129.84,
+   "end": 138.15,
+   "paragraphs": [
+    8
+   ],
+   "set": "skyFlight",
+   "cast": [
+    "firuz",
+    "ebonyHorse"
+   ],
+   "summary": "His hand goes out to the lever as the sun sets. Held on the reach: to be continued.",
+   "camera": {
+    "shot": "wide",
+    "move": "pull-out",
+    "notes": "129.84 medium on rider and horse head (rig s 1.1); INSERT 130.86 to 132.1 on the hand and lever (s 4.5); 132.14 cut to the widest frame of the film: rig s 0.42 at panel (560, 520) against the setting sun, very slow pull-out 3 percent to the end."
+   },
+   "composition": "Final wide: sun disc r 150 on the horizon at panel (430, 800), half sunk in the cloud sea; sky from coral and gold at the horizon through pink to blue-violet overhead with the first two stars; horse and rider in their own colours with a coral rim light on the sun side. Chrome title in the upper sky.",
+   "actions": [
+    {
+     "t": 129.84,
+     "end": 130.8,
+     "cue": {
+      "word": "مد",
+      "t": 129.84
+     },
+     "who": "firuz",
+     "action": "his right arm starts out toward the ear",
+     "acting": "slow reach through a flow, shoulder first, hand last; fingers not steady",
+     "library": "flow on handR (rig-local) + lagged"
+    },
+    {
+     "t": 130.86,
+     "end": 131.4,
+     "cue": {
+      "word": "يده",
+      "t": 130.86
+     },
+     "who": "firuz",
+     "action": "INSERT: the hand creeps along the mane toward the lever",
+     "acting": "three held drawings, each a little closer",
+     "library": "handInsert + ebonyHorse at s 4.5"
+    },
+    {
+     "t": 131.4,
+     "end": 132.1,
+     "cue": {
+      "word": "إليها",
+      "t": 131.4
+     },
+     "who": "firuz",
+     "action": "INSERT: the fingers stop a finger-width from the brass and hover",
+     "acting": "tremble 1.5; the lever glints once",
+     "library": "tremble; glint"
+    },
+    {
+     "t": 132.14,
+     "end": 133.0,
+     "cue": {
+      "word": "مع",
+      "t": 132.14
+     },
+     "who": "camera",
+     "action": "cut to the great wide: the small horse and rider, arm out, in front of the sinking sun",
+     "acting": "cape ribbon and cloud layers keep moving; the rig bobs 5 px",
+     "library": "skyFlight {u: 0.5, deck: true}; castFinish rim coral"
+    },
+    {
+     "t": 132.48,
+     "end": 133.6,
+     "cue": {
+      "word": "غروب",
+      "t": 132.48
+     },
+     "who": "set",
+     "action": "the sun slides down into the cloud sea; cloud undersides flare peach, long rays fan up",
+     "acting": "sun 40 px lower over 1.5 s; rays as soft bands",
+     "library": "skyFlight sun y flow; lightBands"
+    },
+    {
+     "t": 133.08,
+     "end": 134.1,
+     "cue": {
+      "word": "الشمس.",
+      "t": 133.08
+     },
+     "who": "lever",
+     "action": "one star glint at the lever, the brightest thing in the frame",
+     "acting": "four-point glint, two pulses",
+     "library": "glint"
+    },
+    {
+     "t": 134.3,
+     "end": 138.15,
+     "cue": {
+      "word": "الشمس.",
+      "t": 133.08
+     },
+     "who": "lettering",
+     "action": "chrome title TO BE CONTINUED... flickers on in the upper sky and holds",
+     "acting": "the picture stays alive under it: bob, cape, clouds, first stars twinkling",
+     "library": "S.title"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 134.4,
+     "text": "TO BE CONTINUED..."
+    }
+   ],
+   "sfx": [
+    {
+     "t": 134.0,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 138.15
+   }
+  }
+ ],
+ "ending": {
+  "t": 134.3,
+  "description": "Held wide of the horse and rider against the setting sun, his hand out to the lever; the chrome title TO BE CONTINUED... flickers on at 134.3 and holds to 138.15 while the cape, the clouds and the bob keep moving."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "أقام ملك احتفالًا في قصره ودعا المخترعين.|جاء رجل غريب على عربة صغيرة يدفع أمامه حصانًا أسود من الخشب، تزينه قطع نحاسية لامعة.",
+   "en": "A king held a palace celebration and invited inventors.|A stranger arrived with a small cart, pushing a black wooden horse decorated with shining brass fittings."
+  },
+  {
+   "p": 2,
+   "ar": "ضحك بعض الحاضرين حين رأوا الحصان الساكن، لكن الرجل قال: «هذا ليس للزينة؛|يستطيع أن يطير أسرع من الريح».|طلب الملك منه أن يثبت كلامه أمام الجميع.",
+   "en": "Some guests laughed at the motionless horse, but the man said, “This is no ornament;|it can fly faster than the wind.”|The king asked him to prove his claim before everyone."
+  },
+  {
+   "p": 3,
+   "ar": "أدار المخترع مقبضًا صغيرًا عند رقبة الحصان، فارتفع الخشب عن الأرض،|وحلق فوق الحديقة قبل أن يعود.|صفق الناس بدهشة، واقترب الأمير فيروز ليفحص الحصان بنفسه.",
+   "en": "The inventor turned a small knob beside the horse’s neck. The wooden figure rose from the ground,|flew over the garden, and returned.|The crowd applauded, and Prince Firuz came closer to inspect it."
+  },
+  {
+   "p": 4,
+   "ar": "قال فيروز: «دعني أجربه».|حذره المخترع أن يتعلم مقبضي الصعود والهبوط أولًا،|لكن الأمير جلس سريعًا وأدار المقبض الذي رآه.",
+   "en": "“Let me try it,” said Firuz.|The inventor warned him to learn the ascent and descent controls first,|but the prince quickly mounted and turned the knob he had seen."
+  },
+  {
+   "p": 5,
+   "ar": "اندفع الحصان إلى أعلى كالسهم،|وصغر القصر تحته حتى صار مثل لعبة صغيرة.|نادى الأمير من السماء، لكنه لم يسمع جوابًا، ولم يعرف كيف يعود إلى الأرض.",
+   "en": "The horse shot upward like an arrow,|and the palace shrank beneath him until it looked like a toy.|The prince called from the sky but heard no answer and did not know how to descend."
+  },
+  {
+   "p": 6,
+   "ar": "حاول فيروز إدارة المقبض في الاتجاه الآخر، فارتفع الحصان أكثر.|رأى الغيوم تمر تحت قدميه،|وشعر بالبرد، وأخذ يبحث عن علامة تدله على طريقة الهبوط.",
+   "en": "Firuz tried turning the knob the other way, but the horse rose higher.|He watched clouds pass beneath his feet,|felt the cold, and searched for a sign of how to descend."
+  },
+  {
+   "p": 7,
+   "ar": "تذكر أن المخترع أشار إلى شيء قرب الأذن.|انحنى وفحص رأس الحصان، فرأى ذراعًا صغيرة تحت عرفه الخشبي.",
+   "en": "He remembered the inventor pointing near the ear.|Leaning forward, Firuz inspected the horse’s head and found a small lever beneath its carved mane."
+  },
+  {
+   "p": 8,
+   "ar": "نظر فيروز إلى الأرض والذراع،|وقال: «لعلها طريق النجاة». مد يده إليها مع غروب الشمس.",
+   "en": "Firuz looked at the earth and the lever.|“Perhaps this is my way to safety,” he said, reaching for it as the sun set."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "ebonyHorse",
+   "reusable": true,
+   "effort": "L",
+   "description": "The series' wooden flying horse. Same size and seat as the Library horse (320 wide, back 235, head top 335 at s 1) but plainly carved: body a long barrel 230 x 105 with two plank seams; four straight legs like a carousel horse (slightly splayed, no knees bending) with brass discs r 11 at shoulder, hip and each knee; brass hooves; neck a thick arched block ending in a wedge head with a squared muzzle; a brass disc eye r 7 with no pupil; upright carved ears; mane as seven stepped rectangular blocks (each about 24 x 20, chisel lines, brass edge strip) down the crest; tail a single carved S-curl 120 long that never swings; a built-in saddle 110 long with a low pommel on a painted crimson-and-gold saddle cloth (long enough for two riders in episodes 3 to 5); brass chest plate with a sun boss, brass bridle studs. Colours: ebony #3a3448 (lifted so the legs read), shade #241f30, far legs #2c2738, highlight edge #6a6288, brass #e0b038 (shade #a87a1c, hi #fff1b0), cloth #e8264f with #f2c040 border. Controls: knob and lever (see props).",
+   "implementation": "ebonyHorse(ctx, P) with P {x, y, s, dir, rot, knob, lever, reveal, glow} drawn with celShade polygons and ell() discs in horse-local units (feet at 0, 0; seat at EQUINE.horse.seat [-8, -238] so rideOn(ctx, ebonyHorse, P, personP, {name: 'horse', reins: false}) seats a rider); outlines are dark versions of each fill. Returns anchors {knob, lever, ear, mane[7], chest, seat, hooves[4]} in world units. powerOn(t0, rate) is a list of two-frame brass flashes in the order neck plate, chest, joints, hooves. The same function at s 4 to 4.5 is the close insert, so draw the knob plate, lever plate and mane blocks with their engraved detail."
+  },
+  {
+   "type": "set",
+   "name": "palaceGarden",
+   "reusable": true,
+   "effort": "L",
+   "description": "King's palace garden court strip 2000 wide with gate, fountain, court, inventors' tables, dais and throne, palace facade with turquoise domes and minarets, tall sky (see sets). Returns anchors {gate, fountain, court, tables, dais, throne {x, sitY}, dome}. Used again in episodes 3 and 5.",
+   "implementation": "Baked plates as in ALI-01-ANIME ab_sets.js: sky (gradient, soft clouds), far city (blurred shapes), palace facade (celShade walls, domes with a hard shade crescent and a highlight), garden and court with dressing (stones, flowers, tiles), then live cels on top: bunting and banners as sine ribbons, fountain jet (3 drawings), lanterns, kites, gadgets. A front pass redraws the rose hedge corner and one lantern string for depth."
+  },
+  {
+   "type": "set",
+   "name": "skyFlight",
+   "reusable": true,
+   "effort": "L",
+   "description": "Flight world: altitude and time-of-day sky plates, three scrolling cloud layers, cloud deck with shadow, sun, land plate kingdomBelow with the shrinking palaceToy, wind ribbons and vertical or horizontal speed lines (see sets and the series bible).",
+   "implementation": "skyFlight(ctx, t, {alt, u, vx, vy, deck, sun: [x, y, r], land: {variant, k, y}}) and skyFlightFront(ctx, t, o) for near clouds. Plates are gradients baked per (alt, u) pair and cross-faded; clouds are baked soft sprites (blurred ellipses with a lit top and a tinted underside) tiled by K.rng and wrapped modulo the layer size so any vx, vy is a pure function of t. palaceToy is the facade function at low detail baked once and drawn scaled. windRibbon(ctx, pts, t) is a pair of tapering gold strokes on a travelling sine."
+  },
+  {
+   "type": "motion",
+   "name": "flyRig",
+   "reusable": true,
+   "effort": "M",
+   "description": "Flight carrier for the horse and its rider(s): position, pitch (nose up or down), a small bank, bob, and the 4-drawing turn; plus firuzCape, the crimson ribbon cape.",
+   "implementation": "flyRig(ctx, x, y, {pitch, s, dir, flip}, draw): translate to the horse's body centre (x, y - 150 s), rotate by pitch, scale x by the turn step, then draw the level horse and rider with rideOn inside it, so the seat stays true at any pitch. Because the context is rotated, give the rider body-local hand targets (handL, handR) or rig-local points, not world points. Bob = idleSway(tc, seed, 6, 2.6); pitch through flow keys; the rider's lean answers pitch changes with lagged(). firuzCape(ctx, shoulder, t, {dir, speed, hang}): 5-point ribbon, crimson #e8264f with shade #b0183a, hanging with a slow sway on the ground and streaming opposite to travel in flight (4-drawing cycle, as abCloak in ALI-01-ANIME)."
+  },
+  {
+   "type": "prop",
+   "name": "platformCart",
+   "reusable": true,
+   "effort": "S",
+   "description": "Low four-wheeled trolley with a push bar and leaf springs (variant of the planned handcart).",
+   "implementation": "celShade rectangles for platform and bar, wheels as ell() discs with 6 spokes rotated by x / r, a sag field moving the platform against the axles."
+  },
+  {
+   "type": "pose",
+   "name": "handInsert",
+   "reusable": true,
+   "effort": "S",
+   "description": "A large hand for close inserts (turning the knob, hovering by the lever): palm 60 x 46, thumb capsule, four-finger block with three lines, sleeve cuff in the owner's colour; grip and point states.",
+   "implementation": "handInsert(ctx, x, y, {rot, s, grip, point, sleeve}) from five celShade shapes in the theme skin colour with its shade tone; posed on twos."
+  }
+ ],
+ "owner_questions": [
+  "The film ends on the chrome title TO BE CONTINUED... instead of THE END, because this is episode 1 of 5 and the script stops on a cliffhanger (default: TO BE CONTINUED...).",
+  "The script does not say whether anyone rides during the first demonstration; the inventor sits on the horse for it, so that the prince can see which knob he turns and the horse has a reason to come back (default: inventor rides).",
+  "The inventor arrives pushing a low cart with the horse standing on it (the Arabic has both the cart and the pushing); default: horse on the cart, inventor walking behind.",
+  "Speech bubbles are English versions of the quoted lines; the inventor's reported warning is shown as an invented bubble LEARN UP AND DOWN FIRST! and Firuz calls HELLOOO! from the sky (default: keep both).",
+  "Added business that is not in the script: a child knocking on the horse and pulling its tail, a dove perching on the motionless horse, a hawk passing in the sky, comic failed searches (saddle pommel, knocking on the head). Default: keep, all short.",
+  "A tape transition HOURS LATER... at 107.9 moves the sky from day to late afternoon so that the sunset in the last paragraph is earned (default: keep).",
+  "Series colours set here for all five episodes: Firuz cream tunic with a crimson cape and sash, the inventor violet robe with a saffron turban (its cloth is the clue in episode 3), the king emerald; the princess is reserved turquoise with a rose sash (default: as listed in the series bible).",
+  "The title card is English only (THE FLYING WOODEN HORSE) because no Arabic title was supplied; an Arabic title line in Lalezar can be added if the owner provides the wording."
+ ],
+ "implementation_notes": [
+  "Style cel-anime-80s: read Library/styles/cel-anime-80s/look.md (owner direction section first) and follow ALI-01-ANIME v4 (src/ab_kit.js, ab_sets.js, ab_cast.js, ab_main.js) for baked plates, abSay-style balloons, on-twos helpers and dressing. No colour-model tint on the cast; no dark shade pass; each time of day is a repainted plate.",
+  "Characters on twos: pose every cast channel at tc = celStep(t, THEME.celFps); blinks and lip flaps at celStep(t, 8). Camera, plates, cloud scroll, light bands, glints and the CRT pass use t.",
+  "The ebony horse is the one deliberately lifeless thing on screen: no blink, breath, ear or tail motion, legs never move. Its life is light (glints, bands, powerOn) and the rig (bob, pitch). Everything else on screen keeps a moving hold.",
+  "Riders: rideOn(ctx, ebonyHorse, P, personP, {name: 'horse', reins: false}) inside flyRig. Check on a still that the hips sit on the saddle and that the hand reaches the knob anchor (about horse-local 88, -205) and, with lurch about 0.4, the mane block by the ear; shorten the neck up to 10 percent if needed. All contact positions are approximate: measure on the drawing.",
+  "Inserts (37.64, 69.08, 117.68, 130.86) are separate close drawings of the same ebonyHorse function at s 4 to 4.5 with handInsert, cut in and out; they are the only close-ups in the film (no face close-ups). Everything else stays wide or medium with full sets, per the owner direction.",
+  "The plant at 63.68 must read: both arrows (up at the knob, down at the ear) visible in one frame while Firuz looks at the stirrup. The thought cloud at 111.18 replays exactly that pose.",
+  "Speech: S.label(ctx, text, x, y, p, {balloon: true, to: [headX, headY]}) in the sky band, never over a face; long lines on two rows. Labels and bubbles at least 28 px at 1280 x 720 scale. 20 lettering items in total.",
+  "S.emphasis with {rect: panel} only at 71.65. S.transition with {rect: panel, caption: 'HOURS LATER...'} from 107.9, plate swap at its covered midpoint (about 108.25).",
+  "Sound, 8 effects, master 0.6, each under 0.5 s and inside a listed pause: chime 17.3, blip 35.6, blip 55.3, riser 71.2 (0.4 s, ends before 71.65), whoosh 89.7, glitch 108.2, chime 122.4, chime 134.0; tape bed under everything.",
+  "DUR = 138.15 (134.15 + 4.0 end hold). Subtitle chunks are those of chunks_ar.txt and chunks_en.txt, already timed in timing.json.",
+  "Run the alive checklist on contact sheets of the push-in walk (5.0 to 14.3), the demo flight (40.7 to 47.0), the vault (66.6 to 67.4), and the sky scenes (nothing frozen: cape, clouds, bob, breath)."
+ ],
+ "warnings": [
+  "The Library person is front-facing; a seated rider reaching forward to the horse's ear is at the limit of the arm. Test the reach at 114 to 117 and 129.8 to 131.4 early; the inserts carry the beat if the medium shot cannot.",
+  "The horse must not read as the Library black horse: keep the straight carousel legs, block mane, brass discs and the pupil-less brass eye, and never animate the legs.",
+  "Zoom 0.62 needs the tall sky plate (to y -820); without it the camera clamp will stop at zoom 1.",
+  "Sunset must stay multi-coloured (blue-violet above, coral and gold below) with the cast in their own colours; a rim light only, no tint.",
+  "The narration has only seven short pauses (0.8 to 1.2 s), so effects are few; the launch at 71.65 is silent apart from the riser before it.",
+  "Episodes 2 to 5 depend on ebonyHorse, skyFlight, flyRig and the colours fixed here; keep them in story files named for sharing (horse_kit.js, horse_sets.js, horse_cast.js) so later episodes copy them unchanged."
+ ]
+}

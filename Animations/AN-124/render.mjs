@@ -10,11 +10,11 @@ const here = path.dirname(fileURLToPath(import.meta.url)), CFG = JSON.parse(fs.r
 const M = await import(pathToFileURL(findUp(here, 'Library/media.mjs')).href); // media resolver (media.config.json: local folders by default)
 const ST = await import(pathToFileURL(findUp(here, 'Library/style.mjs')).href); // style profile (story.json "style", default halftone-pop): file names
 const a = process.argv.slice(2), opt = (k, d) => { const i = a.indexOf('--' + k); return i < 0 ? d : a[i + 1]; };
-const TAG = opt('tag', ST.arabicFamily(CFG)), file = path.resolve(opt('html', path.join(here, ST.filmName(CFG, TAG) + '.html')));
+const TAG = opt('tag', ST.arabicFamily(CFG)), file = path.resolve(opt('html', M.resolve(path.join(here, ST.filmName(CFG, TAG) + '.html'))));
 const FPS = +opt('fps', 30), N = +opt('workers', 3), outFile = opt('out', path.join(M.finalDir(), ST.filmName(CFG, TAG) + '.mp4'));
 if (fs.existsSync(outFile) && !a.includes('--force')) { console.log('refusing to overwrite ' + outFile + ' (use --out for a test, or --force)'); process.exit(1); }
 fs.mkdirSync(path.dirname(outFile), { recursive: true });
-const dir = opt('frames', path.join(here, 'frames')); fs.mkdirSync(dir, { recursive: true });
+const dir = opt('frames', path.dirname(M.out(path.join(here, 'frames', 'x')))); fs.mkdirSync(dir, { recursive: true });
 // one heavy render at a time on this machine (production/render.lock holds pid, story and start; stale locks of dead pids are taken over)
 const LOCK = path.join(M.REPO, 'production', 'render.lock'), alive = (pid) => { try { process.kill(pid, 0); return true; } catch { return false; } };
 const short = (+opt('to', 1e9) - +opt('from', 0)) <= 12 || a.includes('--no-lock');   // short test clips and stills do not take the lock

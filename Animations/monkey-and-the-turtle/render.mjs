@@ -9,11 +9,11 @@ const { chromium } = req('playwright-core'); const { ARGS, EXE } = await import(
 const here = path.dirname(fileURLToPath(import.meta.url)), CFG = JSON.parse(fs.readFileSync(path.join(here, 'story.json'), 'utf8'));
 const M = await import(pathToFileURL(findUp(here, 'Library/media.mjs')).href); // media resolver (media.config.json: local folders by default)
 const a = process.argv.slice(2), opt = (k, d) => { const i = a.indexOf('--' + k); return i < 0 ? d : a[i + 1]; };
-const TAG = opt('tag', 'Noto Naskh Arabic'), file = path.resolve(opt('html', path.join(here, `${CFG.title} - Halftone Pop 9x16 - ${TAG}.html`)));
+const TAG = opt('tag', 'Noto Naskh Arabic'), file = path.resolve(opt('html', M.resolve(path.join(here, `${CFG.title} - Halftone Pop 9x16 - ${TAG}.html`))));
 const FPS = +opt('fps', 30), N = +opt('workers', 3), outFile = opt('out', path.join(M.finalDir(), `${CFG.title} - Halftone Pop 9x16 - ${TAG}.mp4`));
 if (fs.existsSync(outFile) && !a.includes('--force')) { console.log('refusing to overwrite ' + outFile + ' (use --out for a test, or --force)'); process.exit(1); }
 fs.mkdirSync(path.dirname(outFile), { recursive: true });
-const dir = opt('frames', path.join(here, 'frames')); fs.mkdirSync(dir, { recursive: true });
+const dir = opt('frames', path.dirname(M.out(path.join(here, 'frames', 'x')))); fs.mkdirSync(dir, { recursive: true });
 const b = await chromium.launch({ executablePath: EXE, args: ARGS });
 const open = async () => { const p = await b.newPage({ viewport: { width: 540, height: 960 } }); p.on('pageerror', (e) => console.log('PAGEERR', e.message)); await p.goto(pathToFileURL(file).href); await p.waitForFunction('window.__ready', null, { timeout: 120000 }); return p; };
 const pages = []; for (let i = 0; i < N; i++) pages.push(await open());

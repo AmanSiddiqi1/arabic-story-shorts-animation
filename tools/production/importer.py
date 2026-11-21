@@ -8,6 +8,7 @@ and Animations/<ID>/planning/inputs/timeline.{json,md} (script words on the MP3 
 import csv, glob, hashlib, json, os, pathlib, re, subprocess, sys
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 import arabic, db, xlsx
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / 'Library')); import media   # media folder resolver (Library/media.py)
 
 REPO = db.REPO
 XLSX = REPO / 'Spreadsheets' / 'Script_Updated.xlsx'   # local only (Spreadsheets/ is not in Git)
@@ -59,9 +60,9 @@ def manifest():
     with open(p, encoding='utf-8-sig') as f: return {r['MP3 filename']: r for r in csv.DictReader(f)}
 
 def find_assembly(mp3name, mp3sha):
-    for p in glob.glob(str(REPO / 'Audio Files' / '**' / (glob.escape(mp3name) + '.assembly.json')), recursive=True):
+    for p in [q for base in dict.fromkeys([REPO / 'Audio Files', media.resolve(REPO / 'Audio Files')]) for q in glob.glob(str(base / '**' / (glob.escape(mp3name) + '.assembly.json')), recursive=True)]:   # repository or media folder
         if mp3sha in pathlib.Path(p).read_text(encoding='utf8', errors='replace'):
-            return os.path.relpath(p, REPO)
+            return media.logical(p)
     return None
 
 def spoken_words(words_json):
@@ -141,14 +142,14 @@ def run(write=True, only=None):
         if sid in cuts: notes.append('paragraph(s) removed from audio by design: ' + ', '.join(cuts[sid]))
         if not s['title_ar']: notes.append('no Arabic title in workbook (metadata only)')
         script_sha = hashlib.sha256(json.dumps(s['paragraphs'], ensure_ascii=False, sort_keys=True).encode()).hexdigest()
-        mp3s = sorted(glob.glob(str(FINAL / (sid + '_*_full_slowed.mp3'))))
+        mp3s = sorted(glob.glob(str(media.resolve(FINAL) / (sid + '_*_full_slowed.mp3'))))   # MP3s: Audio/Final in the media folder
         row = dict(id=sid, title_en=s['title_en'], title_ar=s['title_ar'], collection=s['collection'], n_paragraphs=len(s['paragraphs']),
                    segments=json.dumps([p['segment'] for p in s['paragraphs']]), script_sha=script_sha, eligible=1, completed_before=0,
                    folder=f'Animations/{sid}', updated=db.now())
         if len(mp3s) != 1:
             notes.append(f'{len(mp3s)} final MP3 candidates'); status = 'blocked'
         else:
-            mp3 = pathlib.Path(mp3s[0]); wj = pathlib.Path(str(mp3) + '.words.json')
+            mp3 = pathlib.Path(mp3s[0]); wj = FINAL / (mp3.name + '.words.json')   # word timings are tracked in Git (repository folder)
             row.update(mp3_file=mp3.name, mp3_sha=sha(mp3))
             try: dur = duration(mp3); row['mp3_duration'] = round(dur, 3)
             except Exception as e: notes.append(f'MP3 unreadable: {e}'); status = 'blocked'; dur = None

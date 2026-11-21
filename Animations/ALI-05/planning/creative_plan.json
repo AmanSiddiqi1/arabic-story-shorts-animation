@@ -1,0 +1,3058 @@
+{
+ "schema": "creative_plan/1",
+ "story_id": "ALI-05",
+ "title": "The Unexpected Guest",
+ "duration": 133.82,
+ "end_hold": 4.0,
+ "logline": "The leader of the thieves returns as a smiling new merchant and gets himself invited to dinner at Ali Baba's house; Morgiana knows his ring and his voice, quietly sends for the guards, traps him in his own lies, and stops him at the courtyard gate with one polite sentence.",
+ "moral": "A watchful, calm mind sees through a friendly mask; small details give a liar away.",
+ "tone": "A dinner-table suspense comedy: warm, full, lamp-lit rooms, a too-friendly guest, and a heroine who fights with a smile, a teapot and five clues. Family-friendly, no weapons, no harm; 80s cel anime with wide views, pans across full sets and English speech balloons.",
+ "beats": [
+  {
+   "id": "B1",
+   "t": 0.5,
+   "kind": "setup",
+   "cue": {
+    "word": "قائد",
+    "t": 0.5
+   },
+   "summary": "The leader of the thieves, disguised again, opens a small shop in the market."
+  },
+  {
+   "id": "B2",
+   "t": 11.9,
+   "kind": "suspense",
+   "cue": {
+    "word": "لكنه",
+    "t": 11.9
+   },
+   "summary": "The smile drops when no one looks: he is waiting for a way to Ali Baba's house."
+  },
+  {
+   "id": "B3",
+   "t": 19.92,
+   "kind": "inciting",
+   "cue": {
+    "word": "ابن",
+    "t": 19.92
+   },
+   "summary": "He finds the way: Ali Baba's nephew, who works by the market."
+  },
+  {
+   "id": "B4",
+   "t": 31.38,
+   "kind": "rising",
+   "cue": {
+    "word": "دعاه",
+    "t": 31.38
+   },
+   "summary": "Helped and given a gift, the nephew invites him to dinner with the family."
+  },
+  {
+   "id": "B5",
+   "t": 42.2,
+   "kind": "reveal",
+   "cue": {
+    "word": "خاتمه",
+    "t": 42.2
+   },
+   "summary": "Morgiana sees the silver ring with the split blue stone: the escaped oil merchant's ring."
+  },
+  {
+   "id": "B6",
+   "t": 54.36,
+   "kind": "suspense",
+   "cue": {
+    "word": "صوته",
+    "t": 54.36
+   },
+   "summary": "She hears his voice again; suspicion grows."
+  },
+  {
+   "id": "B7",
+   "t": 61.96,
+   "kind": "suspense",
+   "cue": {
+    "word": "الباب",
+    "t": 61.96
+   },
+   "summary": "He asks to sit by the door and keeps measuring the way out."
+  },
+  {
+   "id": "B8",
+   "t": 76.48,
+   "kind": "turn",
+   "cue": {
+    "word": "الحراس",
+    "t": 76.48
+   },
+   "summary": "Morgiana quietly sends the neighbours for the guards, and returns smiling."
+  },
+  {
+   "id": "B9",
+   "t": 95.68,
+   "kind": "comic",
+   "cue": {
+    "word": "يكذب",
+    "t": 95.68
+   },
+   "summary": "He says he has never been here, then names the old lanes: caught lying."
+  },
+  {
+   "id": "B10",
+   "t": 104.94,
+   "kind": "surprise",
+   "cue": {
+    "word": "يسقط",
+    "t": 104.94
+   },
+   "summary": "Asked about an oil merchant, his voice breaks and he nearly drops his cup."
+  },
+  {
+   "id": "B11",
+   "t": 109.54,
+   "kind": "climax",
+   "cue": {
+    "word": "القائد",
+    "t": 109.54
+   },
+   "summary": "She knows he is the leader, and signals Ali Baba."
+  },
+  {
+   "id": "B12",
+   "t": 116.98,
+   "kind": "turn",
+   "cue": {
+    "word": "لمحهم",
+    "t": 116.98
+   },
+   "summary": "He spots the guards at the window and excuses himself."
+  },
+  {
+   "id": "B13",
+   "t": 130.26,
+   "kind": "suspense",
+   "cue": {
+    "word": "فتوقف",
+    "t": 130.26
+   },
+   "summary": "He runs for the courtyard; her polite call stops him and he turns. To be continued."
+  }
+ ],
+ "cast": [
+  {
+   "id": "merchant",
+   "name": "the new merchant (the leader in his second disguise), later the guest",
+   "library": "person",
+   "base": "the leader's rig (ALI-01 abLeader: s 1.08, age 0.4, brow 0.7) in costume merchant with the new palette AB_NEWM0; function abNewMerchant(ctx, P) with fields fine 0..1 and cuff 0..1",
+   "look": "Coral robe #f08a5a with long cream sleeves #f6e2c0 whose cuffs cover the hands (cuff 1), teal-grey sash #5a8a96, plum turban #7a3a8a with a gold band #f2c84a, beard trimmed short and hennaed red-brown #b8562a (the same heavy brows). fine 1 (dinner): adds a plum cloak #7a3a8a with gold trim, a red jewel and a tall white feather on the turban. The silver ring is on the right hand under the cuff. Clearly a different man from the mustard oil merchant at a glance; the same build, brows and walk on a second look.",
+   "new": true
+  },
+  {
+   "id": "leader",
+   "name": "the leader of the thieves (true self, seen only inside the light band and in the memory panel)",
+   "library": "person",
+   "base": "ALI-01 abLeader: costume bedouin, s 1.08, age 0.4, brow 0.7, pal AB_LEAD0",
+   "look": "Indigo robe #46559a, lighter sleeves #6c80c8, crimson cape #c8203f, black beard.",
+   "new": false
+  },
+  {
+   "id": "oilMerchant",
+   "name": "the oil merchant (memory panel only)",
+   "library": "person",
+   "base": "ALI-03 abOilMerchant, pal AB_OILM0",
+   "look": "Mustard robe #d8a43a, big white turban, brown cloak with a crimson lining, the same ring.",
+   "new": false
+  },
+  {
+   "id": "nephew",
+   "name": "Ali Baba's nephew (Cassim's son)",
+   "library": "person",
+   "base": "new abNephew: costume servant (short tunic over trousers), s 0.94, age 0.08, no beard, pal AB_NEPH0",
+   "look": "White shirt with rolled sleeves, emerald waistcoat #1f9a6a and saffron sash #f2a71b (his father Cassim's two colours, worn plainly), cream trousers, rust skullcap #b8552e a little crooked, short black hair. Open, quick, trusting.",
+   "new": true
+  },
+  {
+   "id": "ali",
+   "name": "Ali Baba",
+   "library": "person",
+   "base": "ALI-01 abAli: costume villager, s 0.95, age 0.25, pal AB_ALI0",
+   "look": "Olive robe #8f8a40, cream turban, the one accent vermilion #ff3b2f sash and turban band (AB_ACC) in every lighting set.",
+   "new": false
+  },
+  {
+   "id": "morgiana",
+   "name": "Morgiana",
+   "library": "person",
+   "base": "ALI-03 abMorgiana: costume villageWoman, s 0.93, age 0.15, pal AB_MORG0, scarf tail ribbon, windowBust, AB_FACE.morgiana",
+   "look": "Cream dress #f4e6c8, violet waistcoat #6a3fa0 with lighter sleeves #8a62c0, her one accent turquoise #14c2c8 headscarf and sash (AB_MORG_ACC), never tinted.",
+   "new": false
+  },
+  {
+   "id": "wife",
+   "name": "Ali Baba's wife",
+   "library": "person",
+   "base": "ALI-01 abWife",
+   "look": "Dusty rose dress and scarf, as in episodes 1 and 2.",
+   "new": false
+  },
+  {
+   "id": "kid",
+   "name": "Ali Baba's child",
+   "library": "person",
+   "base": "ALI-01 abKid (child: true)",
+   "look": "Cream tunic, orange cap. The only one at the table who notices Morgiana watching.",
+   "new": false
+  },
+  {
+   "id": "townsfolk",
+   "name": "market people and customers",
+   "library": "person",
+   "base": "Library presets as in ALI-03 S2: beanSeller (fruit seller), villageWoman with a basket (cloth seller and customer 1), villager age 0.8 with hold stick (customer 2), servant child (customer 3)",
+   "look": "Varied bright costumes, each with its own seed and period; at most five on screen.",
+   "new": false
+  },
+  {
+   "id": "neighbourOld",
+   "name": "the old neighbour",
+   "library": "person",
+   "base": "ALI-03 / ALI-04 neighbour: costume oldWoman, age 0.8, s 0.88, with her broom",
+   "look": "Brown robe, grey hood, warm face. Door 2 (plum).",
+   "new": false
+  },
+  {
+   "id": "baker",
+   "name": "the baker",
+   "library": "person",
+   "base": "ALI-04 baker: costume carpenter recoloured, s 1.1, age 0.45",
+   "look": "Day dress for this film: pale blue shirt #b8d4f0, white floury apron, small white cap, brown moustache, rolling pin. Door 1 (green).",
+   "new": false
+  },
+  {
+   "id": "youth",
+   "name": "the baker's apprentice",
+   "library": "person",
+   "base": "ALI-04 youth: costume servant, age 0.05, s 0.8",
+   "look": "Green tunic #5aa860, cream trousers, yellow cap too big for him; the frying pan.",
+   "new": false
+  },
+  {
+   "id": "guards",
+   "name": "three town guards",
+   "library": "person",
+   "base": "ALI-04 guards: planned person costume preset guard, three builds",
+   "look": "Sky blue tunics #5aa0e0, saffron sash, brass helmets #e8c050 with white neck cloths. Seen only as helmets and shoulders: through the street window and over the courtyard wall.",
+   "new": false
+  },
+  {
+   "id": "captain",
+   "name": "the captain of the guard",
+   "library": "person",
+   "base": "ALI-04 captain: guard preset with white cape, red plume #e8364f, grey moustache, dark lantern",
+   "look": "His red plume is the comic tell at the window and the last thing to rise over the wall.",
+   "new": false
+  },
+  {
+   "id": "cat",
+   "name": "the street cat",
+   "library": "cat",
+   "base": "Library cat pal 2, s 0.55",
+   "look": "Orange striped; the silent witness of episodes 3 and 4. Distrusts the merchant from the first scene.",
+   "new": false
+  },
+  {
+   "id": "donkey",
+   "name": "Ali Baba's donkey",
+   "library": "donkey",
+   "base": "ALI-01 abDonkey pal 0",
+   "look": "Grey; only its head over the courtyard gate in S5, ears flat.",
+   "new": false
+  }
+ ],
+ "sets": [
+  {
+   "id": "market",
+   "library": "marketStreet",
+   "new": false,
+   "description": "ALI-03 market: Library marketStreet({w: 2000, palace: false, sky: false, palette: 'clear'}) in the cel theme over a painted day sky (abGrad, abCloud x3, abSun, abFlock x2), ground y 900, with the laneArch at x 1760..1960. Changes for this film: stalls fruit at x 320 and cloth at x 640 only; the NEW shopFront at x 960..1260 where the jar stall stood; a storehouse corner at x 1380..1700 (one house door near x 1560, measure on the set) with crate stacks at x 1420..1520, the ALI-01 handcart at x 1620, sacks and a barrel. Bright morning, no tint on the cast."
+  },
+  {
+   "id": "townStreetEvening",
+   "library": null,
+   "new": false,
+   "description": "ALI-03 townStreet strip (2000 x 1230, ground y 900), model evening: market arch x 0..220 (opening x 50..190), doors 120 x 250 with top y 650: D1 cx 370 green (baker), D2 cx 660 plum (old neighbour), D3 cx 930 wood (Ali Baba); Ali Baba's window x 1040..1150, y 430..550 with the geranium box; courtyard wall x 1180..1440 (top y 600) with the gate cx 1310. S5 and S6: apricot sunset, lanterns just lit. S9 (late dusk): the same plate cross-faded 40 % toward the night model, all lanterns lit with halation, one star; still warm and coloured. Copy abStreetPlate and the TS anchors from Animations/ALI-03/src/."
+  },
+  {
+   "id": "dinnerRoom",
+   "library": null,
+   "new": true,
+   "description": "NEW interior strip 1600 x 1230, floor y 900 (rugs and tiles to y 1230), warm lamp light. Back wall apricot #f2c48a above a teal tile dado #3a9aa0 (dado top y 720, a white zigzag line). Left wall x 0..100 in slight perspective with the street window x 120..320, y 420..620 (pointed arch, open lattice shutters, sill 24 deep) showing the townStreet night plate at 0.5 scale. Shelf niche x 400..600 with two shelves at y 400 and y 520: brass plates, an ewer, books, a blue vase. Three hanging brass lamps on chains at x 380, 800 and 1220, lamp bodies at y 300, each with a halation disc r 150. Kitchen arch in the back wall x 1040..1170, top y 640, with a bead curtain (12 strings). Courtyard door in the back wall x 1340..1480, top y 620, leaf open against the wall, a thin curtain; the opening shows the courtyard night plate at 0.5 scale (gate, lantern, lemon tree, three jars). Carved chest x 1500..1590, top y 790. Low round table x 560..1040, top y 820 (brass tray on a 80 high stand) carrying: rice mountain platter, roast platter, bread stack, fruit bowl with oranges and dates, tall ewer, six glass cups, two small bowls, steam ribbons. Cushions (about 110 x 50 each): rose at x 480 (Ali Baba), rose with gold at x 600 (place of honour, stays empty), blue at x 640, yellow at x 780, green at x 930 (these three behind the table at y 880), teal at x 1220 (by the door). Big patterned rug x 380..1300, y 905..1110 in red, cream and blue with a border; a small runner at the door x 1320..1500. A wall plate and a small framed tile panel fill the wall between the arch and the door. Reusable as any family dining or sitting room."
+  },
+  {
+   "id": "courtyardNight",
+   "library": null,
+   "new": false,
+   "description": "ALI-04 courtyard strip (2200 x 1230, ground y 900), night model, light and coloured: house wing x 0..560 with the house door K cx 170 (x 110..230, top y 650; in this film it is the door of the dinner room onto the yard), kitchen window x 330..470 amber lit, lantern at (270, 610); back wall x 560..1800, top y 560 with a 16 thick coping; street gate cx 730 (x 640..820, top y 640, bar brackets at y 780); lantern at (840, 610); lemon tree at x 600; three of the six oil jars left at cx 890, 1005 and 1120 as household storage; moon r 60 at (1000, 170). Only x 0..1120 is used. Copy abCourtPlate and the CY anchors from Animations/ALI-04/src/."
+  }
+ ],
+ "props": [
+  {
+   "id": "silverRing",
+   "library": null,
+   "new": false,
+   "description": "ALI-03 silverRing: silver band, oval blue stone #3a8ae8 with a dark diagonal crack; 12 px on the figure (right hand), 90 px in the hand insert (ALI-01 abHandCel). New field glow 0..1 for the stone."
+  },
+  {
+   "id": "giftBox",
+   "library": null,
+   "new": true,
+   "description": "Small gift 44 x 34: a box wrapped in plum cloth #7a3a8a with a gold ribbon cross and bow #f2c84a. Given in S4, set on the chest in S7, held up by Morgiana in S16. Never opened in this episode."
+  },
+  {
+   "id": "crates",
+   "library": null,
+   "new": true,
+   "description": "Wooden crates 70 x 56 (two plank lines, corner nails), in stacks at the storehouse and carried one to three at a time; with the ALI-01 handcart (bed 260 x 60, wheels r 62)."
+  },
+  {
+   "id": "shopSign",
+   "library": null,
+   "new": true,
+   "description": "Part of shopFront: a board 90 x 70 on two short chains with a brass lamp pictogram (no words), swinging on a hook under the awning."
+  },
+  {
+   "id": "cup",
+   "library": null,
+   "new": true,
+   "description": "Tea glass 18 x 26 in a brass holder with a small handle, amber tea level field 0..1; six on the table, one in the guest's hand. cupFumble animates it (see new_assets)."
+  },
+  {
+   "id": "dinnerFood",
+   "library": null,
+   "new": true,
+   "description": "The table dressing of dinnerRoom as separate cels so hands can reach them: rice platter 150 x 70, roast platter 130 x 60, bread stack, fruit bowl, ewer 40 x 110, small tray 120 x 16 with cups, and the plain clay bowl 60 x 30 of lentils with one flat bread."
+  },
+  {
+   "id": "gateBar",
+   "library": null,
+   "new": false,
+   "description": "ALI-04 gateBar: wooden bar 200 x 22 across the street gate in two iron brackets at y 780; field down 0..1. Lowered by Morgiana at 79.36 and down for the rest of the film."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "S1",
+   "start": 0.0,
+   "end": 8.5,
+   "paragraphs": [
+    1
+   ],
+   "set": "market",
+   "cast": [
+    "merchant",
+    "leader",
+    "townsfolk",
+    "cat"
+   ],
+   "summary": "Bright morning in the town market. A big smiling stranger opens a small brass shop where the jar seller used to be; a band of light shows the audience that he is the leader of the thieves. He introduces himself to the market as a new merchant.",
+   "camera": {
+    "shot": "establishing",
+    "move": "crane",
+    "notes": "Crane down from the sky (sun, three clouds, a flock) to the market wide at zoom 1.0, camX 610 so the shop (x 960..1260) sits centre right; ease to rest by 1.6, then a slow drift left to camX 560 by 8.5. Ground at y 900 stays in the lower part of the picture."
+   },
+   "composition": "Shop front centred at x 1110, awning poles at x 970 and 1250; the merchant stands at x 1110 then steps out to x 1060, y 910. Fruit stall and cloth stall left of him fill the left third; domes and palms above. Title in the sky band y 120..300, balloon above his turban at y 330.",
+   "actions": [
+    {
+     "t": 0.0,
+     "end": 1.6,
+     "cue": {
+      "word": "فتح",
+      "t": 0.0
+     },
+     "who": "camera",
+     "action": "Crane down from the painted sky to the busy market; awnings sway, a flock crosses, sellers arrange goods",
+     "acting": "everything already alive on arrival: awnings on a slow sine, flock on its own period, nobody in sync",
+     "library": "marketStreet {w:2000, sky:false, palette:clear, stalls fruit 320, cloth 640} + abSun, abCloud, abFlock, abCamClamp"
+    },
+    {
+     "t": 0.0,
+     "end": 1.7,
+     "cue": {
+      "word": "فتح",
+      "t": 0.0
+     },
+     "who": "merchant",
+     "action": "Throws the rolled striped awning of the new shop up onto its two poles with both arms; it unrolls and bounces",
+     "acting": "anticipation crouch already under way at frame 0 (sq 0.94), stretch on the push (sq 1.06), arms overshoot and settle; big showman grin",
+     "library": "abNewMerchant (leader rig, costume merchant, pal AB_NEWM0) + handLW/handRW on the awning roll, flow keys, landSquash"
+    },
+    {
+     "t": 0.3,
+     "end": 3.0,
+     "who": "lettering",
+     "action": "Chrome title THE UNEXPECTED GUEST flickers on in the sky band with the Arabic title line in Lalezar under it",
+     "acting": "on at 0.3, glint at 0.9, off by 3.0",
+     "library": "S.title + Arabic title_ar line {font: 'Lalezar'}"
+    },
+    {
+     "t": 0.5,
+     "end": 1.7,
+     "cue": {
+      "word": "قائد",
+      "t": 0.5
+     },
+     "who": "leader",
+     "action": "A tilted band of light sweeps across him: inside the band he is the leader in indigo with the crimson cape, same pose; outside it the smiling merchant",
+     "acting": "inside the band the face is the leader cold one (brow 0.7, lid 0.3, mouth closed); the band passes in 1.2 s",
+     "library": "ALI-04 disguiseWipe (clip band, abLeader with the same pose object) + abBands"
+    },
+    {
+     "t": 1.7,
+     "end": 2.5,
+     "cue": {
+      "word": "متجرًا",
+      "t": 1.76
+     },
+     "who": "shopSign",
+     "action": "He hangs the sign board (a brass lamp pictogram, no words) on its hook; it swings and settles",
+     "acting": "stretches on tiptoe to the hook, pats the board, steps back to admire with fists on hips",
+     "library": "shopFront {sign: swing(t, 1.9, 0.3)} + PERSON_HANDS, swing"
+    },
+    {
+     "t": 2.5,
+     "end": 3.4,
+     "cue": {
+      "word": "صغيرًا",
+      "t": 2.58
+     },
+     "who": "merchant",
+     "action": "Polishes one brass lamp on his sleeve; the shop is tiny between the two big stalls (a neon bracket measures its width)",
+     "acting": "breath on the lamp, quick rub on twos, holds it up; brass glints",
+     "library": "abGlint on the lamp, S.arrow as a width bracket"
+    },
+    {
+     "t": 3.4,
+     "end": 4.5,
+     "cue": {
+      "word": "سوق",
+      "t": 3.46
+     },
+     "who": "townsfolk",
+     "action": "Market people notice the new shop: the fruit seller looks over his apples, the cloth seller stops unrolling, a woman with a basket slows",
+     "acting": "heads turn on staggered beats, each with a blink on the turn; nobody moves together",
+     "library": "person {costume beanSeller / villageWoman / oldWoman / villager} + stagger(i), lookAt, blink"
+    },
+    {
+     "t": 4.5,
+     "end": 5.6,
+     "cue": {
+      "word": "وقدم",
+      "t": 4.6
+     },
+     "who": "merchant",
+     "action": "Steps out in front of his counter (x 1110 to 1060) and bows with a hand on his chest",
+     "acting": "two planted steps, bow from the hips (tip 0.14), turban feather arrives late",
+     "library": "abNewMerchant (leader rig, costume merchant, pal AB_NEWM0) + walk, footfalls, lagged feather"
+    },
+    {
+     "t": 5.6,
+     "end": 6.8,
+     "cue": {
+      "word": "نفسه",
+      "t": 5.56
+     },
+     "who": "merchant",
+     "action": "Straightens and opens both arms to the market",
+     "acting": "chest out, gaze sweeping left to right across the listeners, lid 0.2 (smooth)",
+     "library": "PERSON_HANDS open, gazePlan"
+    },
+    {
+     "t": 6.2,
+     "end": 8.0,
+     "cue": {
+      "word": "باسم",
+      "t": 6.2
+     },
+     "who": "lettering",
+     "action": "Speech balloon over him: I AM A NEW MERCHANT!",
+     "acting": "tail to his turban, never over a face; removed 0.4 s after the last cue",
+     "library": "abSay / S.label {balloon: true, to}"
+    },
+    {
+     "t": 6.8,
+     "end": 7.4,
+     "cue": {
+      "word": "تاجر",
+      "t": 6.8
+     },
+     "who": "merchant",
+     "action": "Hands a brass lamp to the cloth seller to admire; she weighs it and nods",
+     "acting": "his eyes follow the lamp, her eyes follow it too; small approving nod",
+     "library": "handRW to her hands, prop passes with a 2 drawing overlap"
+    },
+    {
+     "t": 7.4,
+     "end": 8.5,
+     "cue": {
+      "word": "جديد",
+      "t": 7.42
+     },
+     "who": "cat",
+     "action": "The street cat on the awning pole arches its back and hisses at him; he does not notice. The sign finishes its swing",
+     "acting": "cat back up, tail fat, ears flat; townsfolk wave welcome on staggered beats",
+     "library": "cat {pal 2, s 0.55, arch} + idleSway, swing"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 0.3,
+     "text": "THE UNEXPECTED GUEST"
+    },
+    {
+     "t": 6.2,
+     "text": "I AM A NEW MERCHANT!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 8.45,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 8.5
+   }
+  },
+  {
+   "id": "S2",
+   "start": 8.5,
+   "end": 17.7,
+   "paragraphs": [
+    1
+   ],
+   "set": "market",
+   "cast": [
+    "merchant",
+    "townsfolk",
+    "ali"
+   ],
+   "summary": "He smiles at every customer with the same switch-on smile, and the moment their backs turn the smile drops and his eyes go to the arch that leads to Ali Baba's street. A thought cloud shows what he is waiting for.",
+   "camera": {
+    "shot": "medium",
+    "move": "pan",
+    "notes": "Medium wide at zoom 1.15 on the shop (camX 640) for the three smiles; from 13.78 pan right along the stalls to camX 960 so the lane arch (x 1760..1960) enters at the right; ground visible throughout."
+   },
+   "composition": "Merchant behind his counter at x 1110, customers arrive from the left at x 980. Thought cloud 420 x 300 centred at (1480, 380) between the shop and the arch, trail to his head. His drumming hand on the counter at (1160, 760).",
+   "actions": [
+    {
+     "t": 8.6,
+     "end": 9.4,
+     "cue": {
+      "word": "كان",
+      "t": 8.78
+     },
+     "who": "townsfolk",
+     "action": "Customer 1 (the woman with the basket) walks up to the counter from the left",
+     "acting": "steady walk, eyes on the lamps",
+     "library": "person villageWoman + walk, footfalls"
+    },
+    {
+     "t": 9.3,
+     "end": 10.1,
+     "cue": {
+      "word": "يبتسم",
+      "t": 9.4
+     },
+     "who": "merchant",
+     "action": "The smile switches on: wide, teeth sparkle, a small bow, a lamp offered",
+     "acting": "smile grows over three held drawings, lid 0.6 crescents, tip 0.08; one glint on the teeth",
+     "library": "abNewMerchant (leader rig, costume merchant, pal AB_NEWM0) {mouth: smile} + abGlint"
+    },
+    {
+     "t": 10.1,
+     "end": 10.7,
+     "cue": {
+      "word": "للناس",
+      "t": 10.14
+     },
+     "who": "merchant",
+     "action": "Customer 2 (an old man with a stick) passes: exactly the same smile, the same bow",
+     "acting": "the repeat is mechanical on purpose: same keys, same glint",
+     "library": "reuse the SMILE flow keys shifted in time"
+    },
+    {
+     "t": 10.7,
+     "end": 11.5,
+     "cue": {
+      "word": "كثيرًا",
+      "t": 10.76
+     },
+     "who": "merchant",
+     "action": "Customer 3 (a child with a coin): the same smile a third time and a pat on the head",
+     "acting": "third glint; the child looks up, unsure, and skips off",
+     "library": "person {costume servant, child: true} + hop"
+    },
+    {
+     "t": 11.6,
+     "end": 12.6,
+     "cue": {
+      "word": "لكنه",
+      "t": 11.9
+     },
+     "who": "merchant",
+     "action": "The backs turn and the smile drops in one drawing; the face goes cold",
+     "acting": "mouth closed, brow 0.6, lid 0.35; shoulders settle; only the eyes move",
+     "library": "flow on mouth and brow, blink on the change"
+    },
+    {
+     "t": 12.6,
+     "end": 13.7,
+     "cue": {
+      "word": "ينتظر",
+      "t": 13.04
+     },
+     "who": "merchant",
+     "action": "Leans an elbow on the counter and drums his fingers, eyes sliding right toward the arch",
+     "acting": "fingers drum on twos (4 beats), gaze [0.9, 0], head still",
+     "library": "handRW on the counter with a 12 fps finger jitter, gazePlan"
+    },
+    {
+     "t": 13.2,
+     "end": 13.9,
+     "cue": {
+      "word": "ينتظر",
+      "t": 13.04
+     },
+     "who": "silverRing",
+     "action": "The silver ring glints on the drumming hand; he tugs his long cuff down over it",
+     "acting": "one sharp glint, then the cuff covers it: he hides his hands all film",
+     "library": "silverRing 12 px + abGlint; sleeve cuff field cuff 0..1"
+    },
+    {
+     "t": 13.8,
+     "end": 15.4,
+     "cue": {
+      "word": "فرصة",
+      "t": 13.78
+     },
+     "who": "camera",
+     "action": "Pan right along his eyeline, past crates and the handcart, to the arch of the narrow street",
+     "acting": "camera on ones, stalls slide with parallax",
+     "library": "kfn camX 640 to 960"
+    },
+    {
+     "t": 14.5,
+     "end": 15.7,
+     "cue": {
+      "word": "للاقتراب",
+      "t": 14.5
+     },
+     "who": "fx",
+     "action": "A thought cloud pops over the stalls: trail bubbles first, then the cloud",
+     "acting": "trail from his head, cloud breathes",
+     "library": "thoughtCloud(ctx, 1480, 380, 420, 300, t, {tail, inside})"
+    },
+    {
+     "t": 15.7,
+     "end": 16.2,
+     "cue": {
+      "word": "بيت",
+      "t": 15.76
+     },
+     "who": "fx",
+     "action": "Inside the cloud: Ali Baba's house front in miniature, the wood door and the window with the vermilion geraniums",
+     "acting": "house drawn at 0.3 scale from the townStreet plate",
+     "library": "thoughtCloud inside: abStreetPlate day clipped at x 800..1180"
+    },
+    {
+     "t": 16.2,
+     "end": 17.2,
+     "cue": {
+      "word": "علي",
+      "t": 16.18
+     },
+     "who": "ali",
+     "action": "In the cloud a tiny Ali Baba with his vermilion sash steps out of the door; the merchant's drumming hand slowly closes into a fist",
+     "acting": "fist closes over three drawings; one slow blink",
+     "library": "abAli at 0.3 scale inside the cloud; PERSON_HANDS fist"
+    },
+    {
+     "t": 17.0,
+     "end": 17.7,
+     "who": "merchant",
+     "action": "A new customer steps up: the cloud pops and the smile switches back on",
+     "acting": "same SMILE keys a fourth time, glint",
+     "library": "thoughtCloud p to 0, SMILE keys"
+    }
+   ],
+   "lettering": [],
+   "sfx": [
+    {
+     "t": 17.7,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "whip",
+    "t": 17.7
+   }
+  },
+  {
+   "id": "S3",
+   "start": 17.7,
+   "end": 24.0,
+   "paragraphs": [
+    2
+   ],
+   "set": "market",
+   "cast": [
+    "merchant",
+    "nephew",
+    "ali",
+    "townsfolk"
+   ],
+   "summary": "The right end of the market by the lane arch. A young man loads crates onto a handcart outside a storehouse door. Ali Baba passes and they wave: the merchant, watching from the corner of his shop, sees the family tie.",
+   "camera": {
+    "shot": "wide",
+    "move": "whip",
+    "notes": "Whip pan lands at camX 1000 (showing x 1000..2000) at zoom 1.0 and holds with a slow drift right to camX 1040; the arch is at the right, the corner post of the shop at the left edge."
+   },
+   "composition": "Storehouse door (a marketStreet house door near x 1560, measure on the set) with crate stacks at x 1420..1520, handcart at x 1620. Nephew works between x 1450 and 1620 at y 905. Merchant at the left edge x 1270. Ali Baba in the arch opening x 1810..1930.",
+   "actions": [
+    {
+     "t": 17.7,
+     "end": 18.3,
+     "who": "camera",
+     "action": "Whip pan lands on the storehouse corner: crates, handcart, the arch",
+     "acting": "speed lines for 4 frames, then alive: a hen pecks, an awning sways",
+     "library": "abSpeed, marketStreet props crate, sacks, barrel + handcart"
+    },
+    {
+     "t": 18.3,
+     "end": 18.9,
+     "cue": {
+      "word": "تعرف",
+      "t": 18.316
+     },
+     "who": "merchant",
+     "action": "Peeks round the corner post of his shop at the left edge, eyes on the young man",
+     "acting": "only head and one hand on the post; eyes first, then the head",
+     "library": "abNewMerchant (leader rig, costume merchant, pal AB_NEWM0) clipped by the post front pass"
+    },
+    {
+     "t": 18.9,
+     "end": 19.9,
+     "cue": {
+      "word": "التاجر",
+      "t": 18.9
+     },
+     "who": "merchant",
+     "action": "Steps out, straightens his turban and puts the smile on",
+     "acting": "the SMILE keys again; brushes his robe",
+     "library": "SMILE keys, PERSON_HANDS"
+    },
+    {
+     "t": 19.9,
+     "end": 21.0,
+     "cue": {
+      "word": "ابن",
+      "t": 19.92
+     },
+     "who": "nephew",
+     "action": "The young man carries a crate from the stack to the cart; tag THE NEPHEW with a short neon arrow",
+     "acting": "cheerful, quick, bends his knees to lift; cap a little crooked",
+     "library": "abNephew + handLW/handRW on the crate, walk, footfalls; S.label + S.arrow"
+    },
+    {
+     "t": 20.6,
+     "end": 21.7,
+     "cue": {
+      "word": "علي",
+      "t": 20.66
+     },
+     "who": "ali",
+     "action": "Ali Baba comes through the arch with a market basket and waves; the nephew waves back and nearly drops the crate",
+     "acting": "Ali Baba easy and warm, sash tail swinging; the nephew grins, the crate slips and is hugged back",
+     "library": "abAli + walk; PERSON_HANDS wave; crate slip with rebound"
+    },
+    {
+     "t": 21.3,
+     "end": 22.2,
+     "cue": {
+      "word": "الذي",
+      "t": 21.74
+     },
+     "who": "merchant",
+     "action": "His eyes go nephew, Ali Baba, nephew; the brows lift: a way in",
+     "acting": "three saccades held 0.4 s with the head still; a slow nod",
+     "library": "gazePlan"
+    },
+    {
+     "t": 22.2,
+     "end": 23.0,
+     "cue": {
+      "word": "يعمل",
+      "t": 22.28
+     },
+     "who": "nephew",
+     "action": "Works: second and third crates lifted, walked and set on the cart in rhythm; wipes his brow",
+     "acting": "carry cycle on twos, cart bounces a little at each crate",
+     "library": "crate carry: hands as world targets, landSquash on the cart (bounce field)"
+    },
+    {
+     "t": 22.9,
+     "end": 23.5,
+     "cue": {
+      "word": "قرب",
+      "t": 22.98
+     },
+     "who": "ali",
+     "action": "Ali Baba walks on out through the arch toward home",
+     "acting": "unhurried walk, one look back at the nephew with a smile",
+     "library": "abAli + walk, footfalls"
+    },
+    {
+     "t": 23.4,
+     "end": 24.0,
+     "cue": {
+      "word": "السوق",
+      "t": 23.42
+     },
+     "who": "nephew",
+     "action": "Stacks three crates in his arms at once: the tower is taller than his head and starts to wobble",
+     "acting": "eyes hidden behind the crates, knees bending, tower sways on a growing sine",
+     "library": "crates stacked with per-crate lagged offset"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 19.92,
+     "text": "THE NEPHEW"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 24.0
+   }
+  },
+  {
+   "id": "S4",
+   "start": 24.0,
+   "end": 35.0,
+   "paragraphs": [
+    2
+   ],
+   "set": "market",
+   "cast": [
+    "merchant",
+    "nephew"
+   ],
+   "summary": "The merchant catches the falling crates, helps carry them, and gives the young man a small wrapped gift. The grateful nephew invites him to dinner with the family. The merchant bows, and only the audience sees his real smile.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "drift",
+    "notes": "Two-shot at zoom 1.2 centred x 1540 (camX about 1120), full figures with the ground in frame; slow drift right as they walk to the cart; holds for the gift and the invitation."
+   },
+   "composition": "Nephew left of centre (x 1480), merchant enters from the left (x 1300 to 1420), cart at x 1620. Gift at chest height y 700 between them. Balloons above heads at y 330..420; picture balloon at (1700, 380).",
+   "actions": [
+    {
+     "t": 24.0,
+     "end": 25.0,
+     "cue": {
+      "word": "ساعده",
+      "t": 24.04
+     },
+     "who": "merchant",
+     "action": "The crate tower tips; he strides in with heavy steps and catches the top crate one handed",
+     "acting": "three long planted steps, cloak hem three drawings late, catch with a small squash",
+     "library": "abNewMerchant (leader rig, costume merchant, pal AB_NEWM0) + walk, footfalls, lagged, handRW on the crate"
+    },
+    {
+     "t": 25.0,
+     "end": 26.0,
+     "who": "merchant",
+     "action": "Takes two crates onto one shoulder far too easily, then remembers to act the shopkeeper and fakes the strain",
+     "acting": "a beat of effortless strength (the leader), then knees bend, a puff of the cheeks, a wink of effort",
+     "library": "ALI-02 strainLift keys played small; flow"
+    },
+    {
+     "t": 26.0,
+     "end": 26.9,
+     "cue": {
+      "word": "حمل",
+      "t": 26.1
+     },
+     "who": "nephew",
+     "action": "They carry the crates to the cart side by side, out of step",
+     "acting": "nephew quick short steps, merchant slow long ones; never in sync",
+     "library": "walk x2 with different stride and stagger"
+    },
+    {
+     "t": 26.9,
+     "end": 27.8,
+     "cue": {
+      "word": "الصناديق",
+      "t": 26.92
+     },
+     "who": "crates",
+     "action": "The crates land on the cart: the cart bounces, a little dust, the stack settles",
+     "acting": "both figures settle with a breath; nephew claps dust off his hands",
+     "library": "handcart {bounce}, abDust, landSquash"
+    },
+    {
+     "t": 27.8,
+     "end": 28.9,
+     "cue": {
+      "word": "وقدم",
+      "t": 27.82
+     },
+     "who": "merchant",
+     "action": "Reaches into his wide sleeve with a conjurer's flourish",
+     "acting": "other hand raised palm out (wait), brows up, eyes on the nephew",
+     "library": "PERSON_HANDS, flow on the arm, anticipate"
+    },
+    {
+     "t": 28.9,
+     "end": 29.7,
+     "cue": {
+      "word": "هدية",
+      "t": 29.02
+     },
+     "who": "giftBox",
+     "action": "A small box wrapped in plum cloth with a gold ribbon appears on his palm; it glints",
+     "acting": "presented on the flat palm at chest height; nephew's eyes go wide (lid 0)",
+     "library": "giftBox 44 x 34 + abGlint"
+    },
+    {
+     "t": 29.7,
+     "end": 30.5,
+     "cue": {
+      "word": "صغيرة",
+      "t": 29.72
+     },
+     "who": "nephew",
+     "action": "Takes it in both hands, bows and gives a little hop of joy",
+     "acting": "blush, hop with a shrinking shadow and a landing squash",
+     "library": "ALI-02 blush, hop, landSquash, groundShadow {flat: true}"
+    },
+    {
+     "t": 30.5,
+     "end": 31.3,
+     "cue": {
+      "word": "حتى",
+      "t": 30.5
+     },
+     "who": "nephew",
+     "action": "Scratches his head under the cap: how to repay such kindness? An idea",
+     "acting": "eyes up and left, then snap forward; finger raised",
+     "library": "PERSON_HANDS, gazePlan"
+    },
+    {
+     "t": 31.3,
+     "end": 32.7,
+     "cue": {
+      "word": "دعاه",
+      "t": 31.38
+     },
+     "who": "nephew",
+     "action": "Points through the arch toward home; balloon COME TO DINNER!",
+     "acting": "whole arm points, weight on the front foot, big open smile",
+     "library": "abSay; arm flow with follow-through"
+    },
+    {
+     "t": 32.7,
+     "end": 33.4,
+     "cue": {
+      "word": "العشاء",
+      "t": 32.74
+     },
+     "who": "fx",
+     "action": "Picture balloon beside him: a steaming dish",
+     "acting": "steam curls on twos",
+     "library": "S.label balloon frame with drawn dish pictogram (shapes, not lettering)"
+    },
+    {
+     "t": 33.4,
+     "end": 34.2,
+     "cue": {
+      "word": "أسرته",
+      "t": 33.72
+     },
+     "who": "merchant",
+     "action": "The picture adds three small family heads round the dish, one in a cream turban with a vermilion band; the merchant bows very low",
+     "acting": "bowed head turned to the viewer shows the true grin: one sided, lid 0.3, brow 0.7",
+     "library": "abNewMerchant (leader rig, costume merchant, pal AB_NEWM0) {tip 0.2, mouth: smirk}"
+    },
+    {
+     "t": 34.2,
+     "end": 34.7,
+     "who": "nephew",
+     "action": "The nephew runs off through the arch waving the box; the merchant straightens and the ring glints once more",
+     "acting": "run on twos with dust puffs; cuff tugged down again",
+     "library": "walk fast, abDust, abGlint"
+    },
+    {
+     "t": 34.6,
+     "end": 35.4,
+     "who": "fx",
+     "action": "Tape transition with tracking noise and the caption THAT EVENING...",
+     "acting": "white flash, plate swap at 35.0",
+     "library": "S.transition {rect: AB_PANEL, caption: 'THAT EVENING...'}"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 31.4,
+     "text": "COME TO DINNER!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 35.0,
+     "kind": "glitch"
+    }
+   ],
+   "transition_out": {
+    "type": "later",
+    "t": 35.0,
+    "label": "THAT EVENING..."
+   }
+  },
+  {
+   "id": "S5",
+   "start": 35.0,
+   "end": 41.0,
+   "paragraphs": [
+    3
+   ],
+   "set": "townStreetEvening",
+   "cast": [
+    "merchant",
+    "nephew",
+    "ali",
+    "morgiana",
+    "cat",
+    "donkey"
+   ],
+   "summary": "Evening in the narrow street. The guest arrives in fine clothes; the nephew and Ali Baba welcome him at the door. From the window above, Morgiana glances down.",
+   "camera": {
+    "shot": "wide",
+    "move": "tilt",
+    "notes": "Wide at zoom 1.0, camX 430 (x 430..1430): houses 2 and 3, the courtyard wall and gate. From 39.4 a small tilt up (40 units) so the window (y 430..550) and the guest share the frame."
+   },
+   "composition": "Guest walks x 480 to 830 at y 910 with a long shadow to the right; nephew at the door D3 (cx 930); Ali Baba in the doorway; Morgiana as a bust in the window x 1040..1150; cat on the courtyard wall at x 1250, y 600; donkey head over the gate at x 1310.",
+   "actions": [
+    {
+     "t": 35.0,
+     "end": 35.6,
+     "who": "camera",
+     "action": "The apricot evening street: lanterns just lit, swallows, pink clouds, a lit window in house 2",
+     "acting": "lantern flicker at 12 fps, swallows on their own period",
+     "library": "ALI-03 abStreetPlate evening + abGlow, abFlock"
+    },
+    {
+     "t": 35.6,
+     "end": 36.8,
+     "cue": {
+      "word": "وصل",
+      "t": 35.587
+     },
+     "who": "merchant",
+     "action": "The guest walks down the street from the market arch, slow and stately",
+     "acting": "the leader's heavy footfalls under a merchant's smile; chin high",
+     "library": "abNewMerchant {fine: 1} + walk, footfalls, groundShadow {flat: true}"
+    },
+    {
+     "t": 36.2,
+     "end": 36.8,
+     "cue": {
+      "word": "الضيف",
+      "t": 36.24
+     },
+     "who": "nephew",
+     "action": "The nephew at the door waves both arms and hops",
+     "acting": "eager, bounces on his toes",
+     "library": "abNephew + hop"
+    },
+    {
+     "t": 36.8,
+     "end": 37.6,
+     "cue": {
+      "word": "بثياب",
+      "t": 36.8
+     },
+     "who": "merchant",
+     "action": "The fine clothes: a plum cloak with gold trim sweeps behind him, a jewel and a tall feather on the turban",
+     "acting": "cloak and feather three drawings late",
+     "library": "lagged cloak ribbon and feather"
+    },
+    {
+     "t": 37.6,
+     "end": 38.4,
+     "cue": {
+      "word": "فاخرة",
+      "t": 37.66
+     },
+     "who": "fx",
+     "action": "Three glints travel along the gold trim and a light band sweeps him; the cat on the wall arches, the donkey's ears go flat",
+     "acting": "the animals know him; nobody else does",
+     "library": "abGlint x3, abBands; cat {arch}, abDonkey {ears: -1}"
+    },
+    {
+     "t": 38.0,
+     "end": 38.6,
+     "who": "ali",
+     "action": "Ali Baba opens his door wide with both arms open; warm light spills onto the paving",
+     "acting": "open, kind, unsuspecting",
+     "library": "townDoor open 0 to 1, abGlow; abAli PERSON_HANDS open"
+    },
+    {
+     "t": 38.5,
+     "end": 39.6,
+     "cue": {
+      "word": "لمحته",
+      "t": 38.54
+     },
+     "who": "morgiana",
+     "action": "In the window above, Morgiana is watering the geraniums; her eyes drop to the guest, then her head follows",
+     "acting": "eyes first, head one drawing later, scarf tail swings and settles",
+     "library": "abMorgiana windowBust + lagged scarf, swing"
+    },
+    {
+     "t": 39.4,
+     "end": 40.3,
+     "who": "camera",
+     "action": "Small tilt up so the window and the doorway are one picture: she above, he below",
+     "acting": "vertical staging as in episode 3",
+     "library": "kfn camY"
+    },
+    {
+     "t": 40.3,
+     "end": 41.0,
+     "cue": {
+      "word": "مرجانة",
+      "t": 40.3
+     },
+     "who": "morgiana",
+     "action": "The watering can stops mid pour; one last drip falls",
+     "acting": "still head, eyes following him to the door",
+     "library": "small can prop, drip on a fallY"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 41.0
+   }
+  },
+  {
+   "id": "S6",
+   "start": 41.0,
+   "end": 51.0,
+   "paragraphs": [
+    3
+   ],
+   "set": "townStreetEvening",
+   "cast": [
+    "merchant",
+    "morgiana",
+    "ali",
+    "oilMerchant",
+    "leader"
+   ],
+   "summary": "He salutes his host, the long sleeve slides back, and Morgiana sees the ring: silver, with a split blue stone. A memory panel shows the same ring on the oil merchant who escaped.",
+   "camera": {
+    "shot": "insert",
+    "move": "push-in",
+    "notes": "Wide for the salute (41.0-42.2), then the hand insert as a full-panel close-up 42.2-46.9 with a slow push 1.0 to 1.12 (a real peak: the clue of the series). 47.1-50.0 split panel, memory on the left half. Back to the wide for the last second."
+   },
+   "composition": "Insert: the hand fills the panel centre (ring about 90 px at (520, 600)). Split: memory panel x 60..490 with a rounded cream border, present hand x 510..940; label across the top at y 200. Wide: as S5.",
+   "actions": [
+    {
+     "t": 41.0,
+     "end": 41.8,
+     "cue": {
+      "word": "فعرفت",
+      "t": 41.14
+     },
+     "who": "merchant",
+     "action": "Salutes Ali Baba: right hand to the chest, then up to the brow; the long sleeve slides back",
+     "acting": "grand, slow salute; the cuff drops to the elbow",
+     "library": "abNewMerchant {cuff: 1 to 0} + flow on handR"
+    },
+    {
+     "t": 41.8,
+     "end": 42.2,
+     "who": "morgiana",
+     "action": "A flash on his finger; her eyes snap to it and the body stops one drawing later",
+     "acting": "lid 0, pupils small; scarf tail arrives late",
+     "library": "abGlint; windowBust gaze"
+    },
+    {
+     "t": 42.2,
+     "end": 43.0,
+     "cue": {
+      "word": "خاتمه",
+      "t": 42.2
+     },
+     "who": "silverRing",
+     "action": "Close-up of the saluting hand: the ring",
+     "acting": "hand cel rock steady, a tiny moving hold (1 unit sway)",
+     "library": "ALI-01 abHandCel + ALI-03 silverRing 90 px"
+    },
+    {
+     "t": 43.0,
+     "end": 43.7,
+     "cue": {
+      "word": "الفضي",
+      "t": 43.0
+     },
+     "who": "silverRing",
+     "action": "A silver glint sweeps round the band",
+     "acting": "light band crosses the metal",
+     "library": "abBands clipped to the band, abGlint"
+    },
+    {
+     "t": 43.7,
+     "end": 45.0,
+     "cue": {
+      "word": "المميز",
+      "t": 43.74
+     },
+     "who": "camera",
+     "action": "Slow push on the insert; fine engraved lines on the band",
+     "acting": "camera on ones",
+     "library": "kfn zoom 1.0 to 1.12"
+    },
+    {
+     "t": 45.1,
+     "end": 45.6,
+     "cue": {
+      "word": "الحجر",
+      "t": 45.1
+     },
+     "who": "silverRing",
+     "action": "The oval stone lights up",
+     "acting": "stone fill brightens over two drawings",
+     "library": "silverRing {glow}"
+    },
+    {
+     "t": 45.6,
+     "end": 46.3,
+     "cue": {
+      "word": "الأزرق",
+      "t": 45.64
+     },
+     "who": "fx",
+     "action": "Blue glow with halation round the stone",
+     "acting": "backlit glow, pulsing gently",
+     "library": "abGlow #3a8ae8"
+    },
+    {
+     "t": 46.3,
+     "end": 47.1,
+     "cue": {
+      "word": "المشقوق",
+      "t": 46.32
+     },
+     "who": "silverRing",
+     "action": "A bright line traces the diagonal crack across the stone, ending in a small glint",
+     "acting": "the trace runs 0.5 s",
+     "library": "kfn on a line draw-on + abGlint"
+    },
+    {
+     "t": 47.1,
+     "end": 47.9,
+     "cue": {
+      "word": "مثل",
+      "t": 47.16
+     },
+     "who": "oilMerchant",
+     "action": "Split panel: on the left a memory of the fist knocking at this same door in a mustard sleeve, with the same ring; label THE SAME RING!",
+     "acting": "memory panel in a cream rounded border, slightly paler plate, no tint on the hand",
+     "library": "clip rect + abHandCel in AB_OILM0 sleeve colour + silverRing; S.label"
+    },
+    {
+     "t": 47.9,
+     "end": 48.4,
+     "cue": {
+      "word": "خاتم",
+      "t": 47.92
+     },
+     "who": "fx",
+     "action": "Both rings pulse together and a neon streak links them",
+     "acting": "two ring pulses in sync, one arrow",
+     "library": "ALI-03 ring pulse helper, S.arrow"
+    },
+    {
+     "t": 48.4,
+     "end": 49.5,
+     "cue": {
+      "word": "تاجر",
+      "t": 48.46
+     },
+     "who": "oilMerchant",
+     "action": "The memory widens: the oil merchant in his mustard robe and white turban beside his jars",
+     "acting": "held drawing with breathing; the beard and brows are the same",
+     "library": "ALI-03 abOilMerchant + oilJar"
+    },
+    {
+     "t": 49.5,
+     "end": 50.2,
+     "cue": {
+      "word": "الهارب",
+      "t": 49.52
+     },
+     "who": "leader",
+     "action": "The memory changes: the same man in indigo and crimson vanishing over the courtyard wall, a brown cloak left behind",
+     "acting": "one quick move up and over, cape late",
+     "library": "abLeader at the courtyard wall top (ALI-04 S16 pose)"
+    },
+    {
+     "t": 50.1,
+     "end": 51.0,
+     "who": "morgiana",
+     "action": "Back to the street: she draws back from the window and half closes the shutter; a chrome counter CLUES 1 appears in the top corner; the guest tugs his cuff down and goes in",
+     "acting": "she thinks with her eyes; door closes on the light",
+     "library": "townWindow shutters, S.counter with the label CLUES, townDoor"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 47.16,
+     "text": "THE SAME RING!"
+    },
+    {
+     "t": 50.2,
+     "text": "CLUES"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 50.7,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 51.0
+   }
+  },
+  {
+   "id": "S7",
+   "start": 51.0,
+   "end": 58.0,
+   "paragraphs": [
+    4
+   ],
+   "set": "dinnerRoom",
+   "cast": [
+    "ali",
+    "wife",
+    "kid",
+    "nephew",
+    "merchant",
+    "morgiana"
+   ],
+   "summary": "Ali Baba's dinner room, full and warm: lamps, rugs, cushions, a low table loaded with food, the family seated. The guest praises the house, and Morgiana, passing behind him with a tray, hears the voice she heard at the door and from the jars.",
+   "camera": {
+    "shot": "establishing",
+    "move": "pan",
+    "notes": "Establishing wide at zoom 1.0 from camX 0 (street window at the left) panning right to camX 420 by 54.0 so the whole table and the kitchen arch are in view; hold with a slow drift."
+   },
+   "composition": "Room strip 1600 wide, floor y 900. Table x 560..1040 (top y 820). Seats: Ali Baba x 480, wife x 640, kid x 780, nephew x 930 (behind the table at y 880), guest standing at x 1120. Morgiana walks behind the diners from the kitchen arch (x 1040..1170) at y 870. Counter top right at (900, 150) in panel coordinates.",
+   "actions": [
+    {
+     "t": 51.0,
+     "end": 54.0,
+     "who": "camera",
+     "action": "Pan across the room: the street window, shelf niche with brass, three hanging lamps with halation, patterned rugs, cushions in six colours, the steaming table",
+     "acting": "lamps flicker at 12 fps, steam rises, curtain beads sway",
+     "library": "abDinnerPlate + hangingLamp, abGlow, kfn camX 0 to 420"
+    },
+    {
+     "t": 51.2,
+     "end": 52.0,
+     "cue": {
+      "word": "قرب",
+      "t": 51.217
+     },
+     "who": "ali",
+     "action": "The family at the table: Ali Baba passes the bread basket to his wife, she ladles, the child reaches for a date",
+     "acting": "each on its own beat; the child's hand is gently tapped away and he grins",
+     "library": "abAli, abWife, abKid {sit: 1, seat: 'floor'} + stagger, handLW/handRW"
+    },
+    {
+     "t": 51.8,
+     "end": 52.6,
+     "cue": {
+      "word": "المائدة",
+      "t": 51.82
+     },
+     "who": "nephew",
+     "action": "The nephew shows the family the little gift box and sets it on the chest by the door",
+     "acting": "proud; the box gets a small glint as it is set down",
+     "library": "giftBox at (1545, 790) + abGlint"
+    },
+    {
+     "t": 52.6,
+     "end": 53.5,
+     "cue": {
+      "word": "سمعت",
+      "t": 52.58
+     },
+     "who": "morgiana",
+     "action": "Morgiana comes through the bead curtain of the kitchen arch with a tray of cups",
+     "acting": "level tray, small quick steps, scarf tail behind",
+     "library": "abMorgiana + walk, footfalls, tray at hand world targets"
+    },
+    {
+     "t": 53.5,
+     "end": 54.3,
+     "cue": {
+      "word": "مرجانة",
+      "t": 53.52
+     },
+     "who": "merchant",
+     "action": "The guest stands by the table facing the family, looking round the room with open arms; she passes behind him, unseen",
+     "acting": "he never sees her: his gaze is on the lamps and the host",
+     "library": "abNewMerchant {fine: 1}, gazePlan"
+    },
+    {
+     "t": 54.3,
+     "end": 55.0,
+     "cue": {
+      "word": "صوته",
+      "t": 54.36
+     },
+     "who": "merchant",
+     "action": "He speaks: balloon WHAT A FINE HOME! and a coral ribbon of sound leaves his mouth",
+     "acting": "lip flaps on threes; the ribbon is his voice drawn as a wave",
+     "library": "abSay + voiceWave(ctx, x, y, {shape: LEADER_WAVE, col: coral})"
+    },
+    {
+     "t": 55.0,
+     "end": 56.2,
+     "cue": {
+      "word": "مرة",
+      "t": 55.0
+     },
+     "who": "morgiana",
+     "action": "She stops mid step; over her head a second ribbon in mustard (the oil merchant's voice, remembered) slides onto the coral one: the same shape. They click together with a glint",
+     "acting": "eyes snap first, one foot held off the ground, tray level",
+     "library": "ALI-02 tiptoeFreeze + voiceWave x2 with the same shape keys, abGlint"
+    },
+    {
+     "t": 56.2,
+     "end": 57.3,
+     "cue": {
+      "word": "فزادت",
+      "t": 56.26
+     },
+     "who": "morgiana",
+     "action": "The cups on her tray rattle; she steadies them with her free hand",
+     "acting": "a 2 unit tremble on the tray only, then control: a breath out",
+     "library": "tremble on the tray, breathe on sq"
+    },
+    {
+     "t": 57.3,
+     "end": 58.0,
+     "cue": {
+      "word": "شكوكها",
+      "t": 57.38
+     },
+     "who": "morgiana",
+     "action": "The counter ticks to CLUES 2; her brows come down and her eyes stay on the back of his turban; the child notices her look",
+     "acting": "child looks from her to the guest and back (lookAt), the only one who sees",
+     "library": "S.counter, brow 0.4, abKid lookAt"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 54.36,
+     "text": "WHAT A FINE HOME!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 58.0
+   }
+  },
+  {
+   "id": "S8",
+   "start": 58.0,
+   "end": 69.0,
+   "paragraphs": [
+    4
+   ],
+   "set": "dinnerRoom",
+   "cast": [
+    "ali",
+    "wife",
+    "kid",
+    "nephew",
+    "merchant",
+    "morgiana"
+   ],
+   "summary": "Offered the place of honour beside his host, the guest asks for the cushion by the door instead. He keeps smiling at the family while his eyes go to the open door and the courtyard beyond; a dotted line shows the escape route he is measuring.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Wide at zoom 1.0: camX 420 for the offer, panning right with him to camX 600 by 61.5 so the door (x 1340..1480) and the chest are in frame with the table; small drift right at 64.1 toward the doorway view."
+   },
+   "composition": "Guest sits at x 1220, y 900 on a teal cushion; door opening x 1340..1480 shows the courtyard (gate, lantern, lemon tree) at 0.5 scale; Ali Baba at x 480 leaning toward him; Morgiana at the back between wife and kid, x 700, y 870. Route dots run from (1250, 880) through the door to the gate inside the view.",
+   "actions": [
+    {
+     "t": 58.1,
+     "end": 59.0,
+     "cue": {
+      "word": "طلب",
+      "t": 58.24
+     },
+     "who": "ali",
+     "action": "Ali Baba pats the rose cushion of honour beside him",
+     "acting": "warm host, two pats, eyebrows up in invitation",
+     "library": "abAli {sit: 1} + flow on handR"
+    },
+    {
+     "t": 58.6,
+     "end": 59.7,
+     "cue": {
+      "word": "طلب",
+      "t": 58.24
+     },
+     "who": "merchant",
+     "action": "The guest raises a polite palm and points with his other hand at the cushion by the door; balloon MAY I SIT BY THE DOOR?",
+     "acting": "apologetic head tilt, smile wider than needed",
+     "library": "abSay; PERSON_HANDS palm and point"
+    },
+    {
+     "t": 59.7,
+     "end": 60.4,
+     "cue": {
+      "word": "الضيف",
+      "t": 59.68
+     },
+     "who": "camera",
+     "action": "Pan right with him as he crosses behind the table end",
+     "acting": "camera on ones, figure on twos",
+     "library": "kfn camX 420 to 600; walk, footfalls"
+    },
+    {
+     "t": 60.4,
+     "end": 61.0,
+     "cue": {
+      "word": "يجلس",
+      "t": 60.46
+     },
+     "who": "merchant",
+     "action": "Sits down cross legged on the teal cushion; the cloak settles after him",
+     "acting": "sit 0 to 1 with a landing squash, cushion squashes too, cloak two drawings late",
+     "library": "person {sit, seat: 'floor'} + landSquash, lagged"
+    },
+    {
+     "t": 61.0,
+     "end": 62.5,
+     "cue": {
+      "word": "قريبًا",
+      "t": 61.02
+     },
+     "who": "fx",
+     "action": "A neon arrow measures the short distance from his cushion to the door frame; the door stands open and its curtain stirs",
+     "acting": "arrow draws on over 0.5 s and holds",
+     "library": "S.arrow from (1250, 800) to (1340, 760); curtain ribbon"
+    },
+    {
+     "t": 62.5,
+     "end": 63.5,
+     "cue": {
+      "word": "وبقي",
+      "t": 62.52
+     },
+     "who": "nephew",
+     "action": "The nephew passes him bread; he takes it with a smile, head turned to the family",
+     "acting": "head toward the host; hands accept",
+     "library": "handRW, prop pass"
+    },
+    {
+     "t": 63.5,
+     "end": 64.1,
+     "cue": {
+      "word": "ينظر",
+      "t": 63.5
+     },
+     "who": "merchant",
+     "action": "His eyes flick to the door and back while the head stays with the family: first glance",
+     "acting": "saccade held 0.4 s, smile unchanged",
+     "library": "gazePlan"
+    },
+    {
+     "t": 64.1,
+     "end": 65.2,
+     "cue": {
+      "word": "الفناء",
+      "t": 64.56
+     },
+     "who": "set",
+     "action": "Through the doorway: the courtyard in lantern light, the street gate, the lemon tree, three oil jars left from the other night; second glance",
+     "acting": "camera drifts 40 units right; lantern flicker",
+     "library": "door view: clip + ALI-04 abCourtPlate night at 0.5 scale + oilJar x3"
+    },
+    {
+     "t": 65.2,
+     "end": 66.2,
+     "cue": {
+      "word": "كأنه",
+      "t": 65.2
+     },
+     "who": "morgiana",
+     "action": "Morgiana, pouring for the wife at the back, follows his eye line to the door; third glance from him",
+     "acting": "her gaze traces the same path half a second after his",
+     "library": "lookAt, lagged gaze"
+    },
+    {
+     "t": 66.2,
+     "end": 67.0,
+     "cue": {
+      "word": "يبحث",
+      "t": 66.2
+     },
+     "who": "fx",
+     "action": "A dotted neon line starts from his cushion and creeps to the door, dash by dash",
+     "acting": "one dash per two frames",
+     "library": "dotted S.arrow drawn by progress"
+    },
+    {
+     "t": 67.0,
+     "end": 67.6,
+     "cue": {
+      "word": "طريق",
+      "t": 67.08
+     },
+     "who": "fx",
+     "action": "The dotted route goes on through the doorway and across the courtyard view to the gate",
+     "acting": "continues inside the clipped view",
+     "library": "same route, second segment"
+    },
+    {
+     "t": 67.6,
+     "end": 68.5,
+     "cue": {
+      "word": "للهروب",
+      "t": 67.66
+     },
+     "who": "merchant",
+     "action": "The arrow tip pulses at the gate; under his cloak one slipper already points at the door and taps. Counter CLUES 3",
+     "acting": "toe tap on twos, face all smiles",
+     "library": "S.counter; foot offset on a 12 fps tap"
+    },
+    {
+     "t": 68.5,
+     "end": 69.0,
+     "who": "morgiana",
+     "action": "She sets down the ewer, picks up an empty water jug and slips out through the kitchen curtain",
+     "acting": "unhurried on purpose; one look back from the arch",
+     "library": "walk, bead curtain swing"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 58.6,
+     "text": "MAY I SIT BY THE DOOR?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 69.0,
+     "kind": "blip"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 69.0
+   }
+  },
+  {
+   "id": "S9",
+   "start": 69.0,
+   "end": 78.3,
+   "paragraphs": [
+    5
+   ],
+   "set": "townStreetEvening",
+   "cast": [
+    "morgiana",
+    "neighbourOld",
+    "baker",
+    "youth",
+    "cat"
+   ],
+   "summary": "Morgiana slips out to the neighbours who helped on the night of the jars: the old woman, the baker and his apprentice. In a whisper she asks them to fetch the guards quietly; the boy runs off on tiptoe.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Wide at zoom 1.0: camX 430 as she leaves door D3, panning left with her to camX 150 by 71.6 (doors D1 cx 370 and D2 cx 660 in frame); holds; at 77.9 starts back right."
+   },
+   "composition": "Late dusk: the evening plate with every lantern lit and a first star. Morgiana x 930 to 720; old neighbour in D2; baker and youth in D1; the youth exits through the arch (x 50..190). Whisper balloon above the group at y 360; picture balloon at (520, 300).",
+   "actions": [
+    {
+     "t": 69.0,
+     "end": 69.5,
+     "who": "camera",
+     "action": "The street after sunset, lanterns glowing; door D3 opens a hand's width",
+     "acting": "quiet: only lantern flicker and the cat's tail",
+     "library": "abStreetPlate evening + abGlow"
+    },
+    {
+     "t": 69.5,
+     "end": 70.3,
+     "cue": {
+      "word": "ذهبت",
+      "t": 69.502
+     },
+     "who": "morgiana",
+     "action": "Morgiana comes out with the jug, closes the door without a sound and looks both ways",
+     "acting": "hush finger to the cat; eyes left, right",
+     "library": "abMorgiana + townDoor, gazePlan"
+    },
+    {
+     "t": 70.3,
+     "end": 71.2,
+     "cue": {
+      "word": "مرجانة",
+      "t": 70.34
+     },
+     "who": "morgiana",
+     "action": "Tiptoe run left along the wall (x 930 to 720), scarf tail streaming",
+     "acting": "short quick steps on twos, body low, jug hugged",
+     "library": "walk (short stride, fast), footfalls, lagged scarf"
+    },
+    {
+     "t": 71.2,
+     "end": 72.4,
+     "cue": {
+      "word": "الجيران",
+      "t": 71.62
+     },
+     "who": "morgiana",
+     "action": "Skids at the plum door, three soft knocks, and beckons at the green door",
+     "acting": "landing squash on the skid; knocks with one knuckle",
+     "library": "landSquash, handRW on the door"
+    },
+    {
+     "t": 72.4,
+     "end": 73.0,
+     "cue": {
+      "word": "الذين",
+      "t": 72.42
+     },
+     "who": "neighbourOld",
+     "action": "The plum door opens: the old neighbour with her broom. The green door opens: the baker, with his apprentice ducking under his arm",
+     "acting": "three heads appear on staggered beats",
+     "library": "townDoor x2; ALI-04 neighbourOld, baker, youth + stagger"
+    },
+    {
+     "t": 73.0,
+     "end": 74.6,
+     "cue": {
+      "word": "ساعدوها",
+      "t": 73.04
+     },
+     "who": "baker",
+     "action": "They know her at once: the baker pats his rolling pin into his palm, the old woman lifts her broom like a salute, the boy holds up the frying pan",
+     "acting": "the household arms of the night of the jars; proud, ready, comic",
+     "library": "ALI-04 householdArms; flow per figure with different periods"
+    },
+    {
+     "t": 74.6,
+     "end": 75.8,
+     "cue": {
+      "word": "وطلبت",
+      "t": 74.68
+     },
+     "who": "morgiana",
+     "action": "She whispers behind her hand: small balloon TELL THE GUARDS. QUIETLY!",
+     "acting": "whisper balloon with a thin outline at size 46; the three lean in",
+     "library": "abSay whisper; tip toward her"
+    },
+    {
+     "t": 75.8,
+     "end": 76.4,
+     "cue": {
+      "word": "إبلاغ",
+      "t": 75.88
+     },
+     "who": "fx",
+     "action": "Picture balloon: a brass helmet and a small ring with a blue stone",
+     "acting": "two pictograms pop in turn",
+     "library": "drawn pictograms in a balloon frame"
+    },
+    {
+     "t": 76.4,
+     "end": 77.2,
+     "cue": {
+      "word": "الحراس",
+      "t": 76.48
+     },
+     "who": "youth",
+     "action": "The boy nods fast, hands the pan to the baker and sprints on tiptoe out through the market arch",
+     "acting": "high knees, tiny dust puffs, cap bouncing late",
+     "library": "walk fast, abDust, lagged cap"
+    },
+    {
+     "t": 77.2,
+     "end": 77.9,
+     "cue": {
+      "word": "بهدوء",
+      "t": 77.26
+     },
+     "who": "neighbourOld",
+     "action": "Three hush fingers one after another: Morgiana, the old woman, the baker. The cat licks a paw across its mouth",
+     "acting": "staggered by 0.15 s each",
+     "library": "PERSON_HANDS hush + stagger"
+    },
+    {
+     "t": 77.9,
+     "end": 78.3,
+     "who": "morgiana",
+     "action": "She turns and tiptoes back toward the courtyard gate",
+     "acting": "weight shift, blink on the turn",
+     "library": "walk"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 74.7,
+     "text": "TELL THE GUARDS. QUIETLY!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 78.3
+   }
+  },
+  {
+   "id": "S10",
+   "start": 78.3,
+   "end": 80.6,
+   "paragraphs": [
+    5
+   ],
+   "set": "courtyardNight",
+   "cast": [
+    "morgiana",
+    "cat"
+   ],
+   "summary": "Inside the courtyard. She comes in by the street gate, lowers the bar behind her without a sound, and at the house door she puts on her smile before going in.",
+   "camera": {
+    "shot": "wide",
+    "move": "static",
+    "notes": "Wide at zoom 1.0, camX 0 (x 0..1000): house wing with its door and lit window on the left, lemon tree, the street gate (cx 730), lantern; a slow 20 unit drift so nothing is frozen."
+   },
+   "composition": "Morgiana from the gate (x 730) to the house door K (cx 170) at y 910. Gate bar brackets at y 780. Warm light from the kitchen window (x 330..470) and door.",
+   "actions": [
+    {
+     "t": 78.3,
+     "end": 79.3,
+     "cue": {
+      "word": "ثم",
+      "t": 78.04
+     },
+     "who": "morgiana",
+     "action": "The gate leaf opens a crack and she slips in with the jug",
+     "acting": "sideways through the gap, eyes on the house",
+     "library": "ALI-04 abCourtPlate night; gate leaf open 0.25"
+    },
+    {
+     "t": 79.3,
+     "end": 79.9,
+     "cue": {
+      "word": "عادت",
+      "t": 79.36
+     },
+     "who": "gateBar",
+     "action": "She lowers the wooden bar into its two brackets without a sound and pats it",
+     "acting": "both hands as world targets on the bar; a tiny settle as it seats",
+     "library": "ALI-04 gateBar {down: 0 to 1}, handLW/handRW"
+    },
+    {
+     "t": 79.9,
+     "end": 80.4,
+     "cue": {
+      "word": "بابتسامة",
+      "t": 79.92
+     },
+     "who": "morgiana",
+     "action": "At the house door she stops, breathes out, and puts her smile on: plain face to a sweet smile over three drawings",
+     "acting": "the mirror of his switch-on smile in S2; shoulders drop",
+     "library": "flow on mouth, breathe on sq"
+    },
+    {
+     "t": 80.3,
+     "end": 80.6,
+     "who": "morgiana",
+     "action": "Goes in; the door light spills and narrows",
+     "acting": "cat on the wall watches the barred gate",
+     "library": "townDoor, abGlow, cat idle"
+    }
+   ],
+   "lettering": [],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 80.6
+   }
+  },
+  {
+   "id": "S11",
+   "start": 80.6,
+   "end": 88.6,
+   "paragraphs": [
+    5
+   ],
+   "set": "dinnerRoom",
+   "cast": [
+    "morgiana",
+    "merchant",
+    "ali",
+    "wife",
+    "kid",
+    "nephew"
+   ],
+   "summary": "She serves the guest a plain bowl among all the rich dishes, pours his tea, and begins to ask, sweetly, about his travels and his friends. A thought he did not want pops up over his head.",
+   "camera": {
+    "shot": "medium",
+    "move": "drift",
+    "notes": "Medium wide at zoom 1.1, camX 560 (the right half of the table, the guest, the door and chest); slow drift left 30 units. Full seated figures and the rug in frame."
+   },
+   "composition": "Guest seated x 1220; Morgiana kneels at x 1090 between him and the table end; nephew x 930 behind the table; Ali Baba visible at the left edge. Thought bubbles above the guest at y 300..420, each about 110 px.",
+   "actions": [
+    {
+     "t": 80.6,
+     "end": 82.0,
+     "cue": {
+      "word": "وقدمت",
+      "t": 80.9
+     },
+     "who": "morgiana",
+     "action": "Crosses from the kitchen arch with a small tray and kneels beside the guest",
+     "acting": "smile in place, eyes lowered; kneel 0 to 1 with a soft settle",
+     "library": "abMorgiana {kneel} + walk, landSquash"
+    },
+    {
+     "t": 82.0,
+     "end": 82.6,
+     "cue": {
+      "word": "للضيف",
+      "t": 82.04
+     },
+     "who": "morgiana",
+     "action": "Sets a clay bowl in front of him with both hands",
+     "acting": "careful, graceful; he watches her hands, not her face",
+     "library": "handLW/handRW, bowl prop"
+    },
+    {
+     "t": 82.6,
+     "end": 83.3,
+     "cue": {
+      "word": "طعامًا",
+      "t": 82.6
+     },
+     "who": "dinnerFood",
+     "action": "The bowl: plain lentils and one flat bread, a single curl of steam",
+     "acting": "steam on twos",
+     "library": "bowl 60 x 30 + steam ribbon"
+    },
+    {
+     "t": 83.3,
+     "end": 84.1,
+     "cue": {
+      "word": "بسيطًا",
+      "t": 83.38
+     },
+     "who": "merchant",
+     "action": "He looks at the bowl, at the roast and the rice mountain on the table, at the bowl again, and keeps smiling; the child giggles",
+     "acting": "three eye moves with the head still; smile twitches",
+     "library": "gazePlan; abKid laugh"
+    },
+    {
+     "t": 84.1,
+     "end": 85.2,
+     "cue": {
+      "word": "وبدأت",
+      "t": 84.16
+     },
+     "who": "morgiana",
+     "action": "Pours tea into his glass cup from the tall ewer: a thin amber stream",
+     "acting": "stream drawn on twos, ewer tilts with follow-through",
+     "library": "ewer + cup props, stream as a 3 point ribbon"
+    },
+    {
+     "t": 85.2,
+     "end": 86.1,
+     "cue": {
+      "word": "تسأله",
+      "t": 85.22
+     },
+     "who": "morgiana",
+     "action": "Asks, head tilted: balloon WHERE HAVE YOU TRAVELLED?",
+     "acting": "sweet mouth, sharp eyes (lid 0.15)",
+     "library": "abSay"
+    },
+    {
+     "t": 86.1,
+     "end": 87.0,
+     "cue": {
+      "word": "رحلاته",
+      "t": 86.16
+     },
+     "who": "merchant",
+     "action": "He waves a grand hand and three picture bubbles pop above him: a camel, a ship, a dune",
+     "acting": "rehearsed answers; each bubble pops with a bounce",
+     "library": "thought bubbles r 55 with drawn pictograms"
+    },
+    {
+     "t": 87.0,
+     "end": 87.8,
+     "cue": {
+      "word": "وأصدقائه",
+      "t": 87.04
+     },
+     "who": "merchant",
+     "action": "A fourth bubble pops unbidden: five little turbaned heads in indigo, plum, rust, green and saffron. He swats it away like a fly and coughs",
+     "acting": "eyes dart up, quick swat, cough into the cuff",
+     "library": "bubble with five head discs in the thieves colours; flow on handL"
+    },
+    {
+     "t": 87.8,
+     "end": 88.6,
+     "who": "ali",
+     "action": "Ali Baba laughs politely, noticing nothing; the wife refills a dish; Morgiana lowers her eyes and smiles",
+     "acting": "listeners on staggered beats",
+     "library": "stagger, idleSway"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 85.22,
+     "text": "WHERE HAVE YOU TRAVELLED?"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 88.6,
+     "kind": "pop"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 88.6
+   }
+  },
+  {
+   "id": "S12",
+   "start": 88.6,
+   "end": 98.7,
+   "paragraphs": [
+    6
+   ],
+   "set": "dinnerRoom",
+   "cast": [
+    "merchant",
+    "morgiana",
+    "nephew",
+    "ali",
+    "kid"
+   ],
+   "summary": "He says he has never been in the town before, then chats on about its old lanes by name. His own balloon is struck out as Morgiana catches the lie.",
+   "camera": {
+    "shot": "two-shot",
+    "move": "static",
+    "notes": "Two-shot at zoom 1.25 on Morgiana and the guest (centre x 1150), the nephew between them at the back, the rug and cushions still in the lower frame; a slow 25 unit drift right."
+   },
+   "composition": "Guest right (x 1220), Morgiana left (x 1090), nephew behind (x 930). First balloon top right at y 250 stays hanging; mini map balloon top left at (980, 300), 260 x 180; second balloon under it.",
+   "actions": [
+    {
+     "t": 88.6,
+     "end": 89.0,
+     "who": "camera",
+     "action": "Cut closer to the two of them over the corner of the table",
+     "acting": "cups steam, lamp light moves on the brass",
+     "library": "zoom 1.25"
+    },
+    {
+     "t": 89.0,
+     "end": 90.4,
+     "cue": {
+      "word": "قال",
+      "t": 89.059
+     },
+     "who": "merchant",
+     "action": "Opens his arms: balloon MY FIRST TIME IN THIS TOWN!",
+     "acting": "broad, generous, a little too loud",
+     "library": "abSay; PERSON_HANDS open"
+    },
+    {
+     "t": 90.4,
+     "end": 91.2,
+     "cue": {
+      "word": "لم",
+      "t": 90.4
+     },
+     "who": "merchant",
+     "action": "Shakes his head with his eyes shut and a hand on his heart",
+     "acting": "three shakes on twos, feather follows late",
+     "library": "flow, lagged feather"
+    },
+    {
+     "t": 91.2,
+     "end": 92.5,
+     "cue": {
+      "word": "البلدة",
+      "t": 91.2
+     },
+     "who": "nephew",
+     "action": "The nephew nods, trusting; Ali Baba raises his cup in welcome",
+     "acting": "two different rhythms",
+     "library": "stagger"
+    },
+    {
+     "t": 92.5,
+     "end": 93.4,
+     "cue": {
+      "word": "لكن",
+      "t": 92.54
+     },
+     "who": "merchant",
+     "action": "He goes on chatting with his mouth full, waving his bread toward the street window",
+     "acting": "lip flaps on threes, relaxed, careless",
+     "library": "talk, flow on handR"
+    },
+    {
+     "t": 93.4,
+     "end": 94.3,
+     "cue": {
+      "word": "مرجانة",
+      "t": 93.46
+     },
+     "who": "morgiana",
+     "action": "Her pouring hand stops; her eyes slide to him without the head moving",
+     "acting": "eyes only; scarf tail still swinging",
+     "library": "gaze, swing"
+    },
+    {
+     "t": 94.3,
+     "end": 95.6,
+     "cue": {
+      "word": "عرفت",
+      "t": 94.32
+     },
+     "who": "fx",
+     "action": "A picture balloon grows from his chatter: a little plan of the town lanes drawing itself line by line",
+     "acting": "lines draw on in order: the market, the arch, three crooked lanes, a well",
+     "library": "mapBalloon: 8 polylines with draw-on progress"
+    },
+    {
+     "t": 95.6,
+     "end": 96.9,
+     "cue": {
+      "word": "يكذب",
+      "t": 95.68
+     },
+     "who": "fx",
+     "action": "The first balloon, still hanging, is struck through with one red stroke and tilts",
+     "acting": "stroke draws in 4 frames; her brow lifts a little",
+     "library": "line over the balloon + rotate 4 degrees"
+    },
+    {
+     "t": 96.9,
+     "end": 97.5,
+     "cue": {
+      "word": "سمّى",
+      "t": 96.96
+     },
+     "who": "merchant",
+     "action": "Second balloon: ...BY OLD WELL LANE, OF COURSE!",
+     "acting": "pleased with himself",
+     "library": "abSay"
+    },
+    {
+     "t": 97.5,
+     "end": 98.0,
+     "cue": {
+      "word": "الأزقة",
+      "t": 97.52
+     },
+     "who": "fx",
+     "action": "On the little map three lanes light up one after another",
+     "acting": "each lane glows for 0.2 s",
+     "library": "map lanes with abGlow"
+    },
+    {
+     "t": 98.0,
+     "end": 98.7,
+     "cue": {
+      "word": "القديمة",
+      "t": 98.08
+     },
+     "who": "nephew",
+     "action": "The nephew tilts his head, puzzled; the guest hears himself and stuffs the bread in his mouth. Counter CLUES 4",
+     "acting": "a drawn question mark glyph over the nephew; guest eyes wide over the bread",
+     "library": "S.counter; drawn glyph"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 89.06,
+     "text": "MY FIRST TIME IN THIS TOWN!"
+    },
+    {
+     "t": 96.96,
+     "text": "...BY OLD WELL LANE, OF COURSE!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 98.7
+   }
+  },
+  {
+   "id": "S13",
+   "start": 98.7,
+   "end": 106.6,
+   "paragraphs": [
+    6
+   ],
+   "set": "dinnerRoom",
+   "cast": [
+    "morgiana",
+    "merchant",
+    "ali",
+    "wife",
+    "kid",
+    "nephew"
+   ],
+   "summary": "She fills his cup to the brim and asks, lightly, whether he ever met an oil merchant. His voice breaks, and the cup jumps out of his fingers; he juggles it and saves it, and the ring is bare again.",
+   "camera": {
+    "shot": "medium",
+    "move": "push-in",
+    "notes": "Medium at zoom 1.25, easing to 1.35 on the guest between 101.6 and 103.0 (the floor and his cushion stay in frame); pulls back to 1.15 at 105.9 for the family reaction."
+   },
+   "composition": "Guest x 1220 with the cup at chest height (1190, 720); Morgiana x 1090 with the ewer. Balloons top left; his N-NO! balloon small and wobbly at the top right. Cup path: up to y 560, across to x 1260, down to his chest.",
+   "actions": [
+    {
+     "t": 98.9,
+     "end": 100.6,
+     "cue": {
+      "word": "سألته",
+      "t": 98.98
+     },
+     "who": "morgiana",
+     "action": "Tops up his cup to the very brim and asks: balloon EVER MET AN OIL MERCHANT?",
+     "acting": "the lightest voice of the evening; eyes on his hands",
+     "library": "abSay; ewer pour"
+    },
+    {
+     "t": 100.6,
+     "end": 101.6,
+     "cue": {
+      "word": "تاجر",
+      "t": 101.06
+     },
+     "who": "fx",
+     "action": "A small oil jar pictogram bobs beside her balloon",
+     "acting": "bobs twice",
+     "library": "ALI-03 oilJar at 0.3 scale"
+    },
+    {
+     "t": 101.6,
+     "end": 102.1,
+     "cue": {
+      "word": "الزيت",
+      "t": 101.62
+     },
+     "who": "camera",
+     "action": "Ease in on the guest",
+     "acting": "camera on ones",
+     "library": "kfn zoom 1.25 to 1.35"
+    },
+    {
+     "t": 102.1,
+     "end": 102.6,
+     "cue": {
+      "word": "فتغير",
+      "t": 102.14
+     },
+     "who": "merchant",
+     "action": "He freezes mid sip: eyes wide, the smile still on his mouth",
+     "acting": "lid 0, pupils small, a held drawing with only the feather quivering",
+     "library": "tremble on the feather"
+    },
+    {
+     "t": 102.6,
+     "end": 103.2,
+     "who": "merchant",
+     "action": "A small wobbly balloon: N-NO!",
+     "acting": "balloon outline jitters at 12 fps",
+     "library": "abSay with a jitter offset"
+    },
+    {
+     "t": 103.2,
+     "end": 104.0,
+     "cue": {
+      "word": "صوته",
+      "t": 103.28
+     },
+     "who": "fx",
+     "action": "His coral voice ribbon comes out jagged, all spikes, and breaks in the middle",
+     "acting": "the smooth wave of S7 turned to teeth",
+     "library": "voiceWave {jag: 1}"
+    },
+    {
+     "t": 104.0,
+     "end": 104.9,
+     "cue": {
+      "word": "وكاد",
+      "t": 104.04
+     },
+     "who": "cup",
+     "action": "The cup slips out of his fingers",
+     "acting": "fingers open one by one; eyes follow the cup",
+     "library": "cupFumble phase 1: fallY"
+    },
+    {
+     "t": 104.9,
+     "end": 105.5,
+     "cue": {
+      "word": "يسقط",
+      "t": 104.94
+     },
+     "who": "cup",
+     "action": "He bats it up with the left hand, then the right; tea flies in an arc",
+     "acting": "two frantic saves, body lurching after his hands",
+     "library": "cupFumble phase 2: two parabolas, tea drops on fallY, handLW/handRW tracking the cup"
+    },
+    {
+     "t": 105.5,
+     "end": 106.0,
+     "cue": {
+      "word": "كوبه",
+      "t": 105.56
+     },
+     "who": "merchant",
+     "action": "Catches it against his chest with both hands, sleeve at his elbow: the ring bare, glinting. Three drops land on the rug",
+     "acting": "landing squash while seated, a huge false laugh",
+     "library": "landSquash, abGlint on silverRing"
+    },
+    {
+     "t": 105.9,
+     "end": 106.6,
+     "who": "kid",
+     "action": "The child giggles behind his hand, the wife offers a napkin, Ali Baba chuckles; Morgiana looks only at the ring. Counter CLUES 5",
+     "acting": "four reactions on four beats",
+     "library": "stagger; S.counter"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 99.0,
+     "text": "EVER MET AN OIL MERCHANT?"
+    },
+    {
+     "t": 102.6,
+     "text": "N-NO!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 106.6,
+     "kind": "riser"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 106.6
+   }
+  },
+  {
+   "id": "S14",
+   "start": 106.6,
+   "end": 113.0,
+   "paragraphs": [
+    7
+   ],
+   "set": "dinnerRoom",
+   "cast": [
+    "morgiana",
+    "merchant",
+    "leader",
+    "ali",
+    "kid",
+    "wife"
+   ],
+   "summary": "Morgiana is sure. An eye close-up, then the one impact frame of the film: a band of light shows the leader under the fine clothes. Behind his back she signals Ali Baba, who understands.",
+   "camera": {
+    "shot": "close",
+    "move": "whip",
+    "notes": "Close-up of Morgiana's eyes 106.8-108.8 (a real peak). Cut to the medium on the guest at zoom 1.2 for the reveal at 109.54. At 111.5 a short whip left along the table to Ali Baba (camX 300)."
+   },
+   "composition": "Eyes fill the panel width at y 480..640, scarf edge at the top. Reveal: guest centred, label under the impact word at y 250. Signal: Morgiana stands behind and left of the guest (x 1090, y 870); Ali Baba at x 480.",
+   "actions": [
+    {
+     "t": 106.8,
+     "end": 108.0,
+     "cue": {
+      "word": "عرفت",
+      "t": 107.032
+     },
+     "who": "morgiana",
+     "action": "Close on her eyes: the lamp reflected in them, pupils narrowing, then steady",
+     "acting": "no blink for a full second; the turquoise scarf edge frames the top",
+     "library": "ALI-01 abFace with AB_FACE.morgiana"
+    },
+    {
+     "t": 108.0,
+     "end": 108.8,
+     "cue": {
+      "word": "مرجانة",
+      "t": 108.06
+     },
+     "who": "morgiana",
+     "action": "One slow blink; the brows set",
+     "acting": "blink on threes: close, hold, open",
+     "library": "lid keyed with kfn"
+    },
+    {
+     "t": 108.8,
+     "end": 109.5,
+     "cue": {
+      "word": "أنه",
+      "t": 108.9
+     },
+     "who": "merchant",
+     "action": "Back to the guest, dabbing his beard; a tilted band of light starts across him",
+     "acting": "he is busy with his napkin, unaware",
+     "library": "abBands; ALI-04 disguiseWipe starting"
+    },
+    {
+     "t": 109.5,
+     "end": 110.3,
+     "cue": {
+      "word": "القائد",
+      "t": 109.54
+     },
+     "who": "leader",
+     "action": "Impact frame: inside the light band he sits in indigo and crimson, the leader of the thieves, in the same pose; label THE LEADER!",
+     "acting": "two frame inverted flash with radial speed lines, then the band passes and he is the guest again",
+     "library": "S.emphasis {rect: AB_PANEL}; disguiseWipe with abLeader {sit: 1}; S.label"
+    },
+    {
+     "t": 110.3,
+     "end": 111.0,
+     "cue": {
+      "word": "وأشارت",
+      "t": 110.3
+     },
+     "who": "morgiana",
+     "action": "Behind his back she catches Ali Baba's eye and taps her own ring finger twice",
+     "acting": "small and exact; her face keeps the serving smile",
+     "library": "PERSON_HANDS; flow on handR"
+    },
+    {
+     "t": 111.0,
+     "end": 111.5,
+     "who": "morgiana",
+     "action": "A tiny tilt of the head at the guest, then a finger to her lips",
+     "acting": "hush held two drawings only",
+     "library": "PERSON_HANDS hush"
+    },
+    {
+     "t": 111.5,
+     "end": 112.2,
+     "cue": {
+      "word": "علي",
+      "t": 111.88
+     },
+     "who": "ali",
+     "action": "Whip along the table to Ali Baba: a piece of bread stops halfway to his mouth; eyes first, then the head",
+     "acting": "double take as in episodes 1 to 3: eyes, head, body",
+     "library": "abSpeed whip; abAli gaze then tip"
+    },
+    {
+     "t": 112.2,
+     "end": 113.0,
+     "cue": {
+      "word": "بابا",
+      "t": 112.26
+     },
+     "who": "ali",
+     "action": "He lowers the bread, puts a hand on his chest and draws the child close with the other arm; the wife sees and goes still",
+     "acting": "the worry gesture of episode 2; the child looks up at him",
+     "library": "abAli handL on chest, handRW round abKid; stagger"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 109.54,
+     "text": "THE LEADER!"
+    }
+   ],
+   "sfx": [],
+   "transition_out": {
+    "type": "cut",
+    "t": 113.0
+   }
+  },
+  {
+   "id": "S15",
+   "start": 113.0,
+   "end": 122.6,
+   "paragraphs": [
+    7,
+    8
+   ],
+   "set": "dinnerRoom",
+   "cast": [
+    "guards",
+    "captain",
+    "youth",
+    "merchant",
+    "ali",
+    "morgiana",
+    "nephew"
+   ],
+   "summary": "Through the street window the guards tiptoe past behind the baker's boy. The guest catches the glint of a helmet, jumps up, excuses himself with three bows and bolts for the courtyard door.",
+   "camera": {
+    "shot": "wide",
+    "move": "pan",
+    "notes": "Pan left to the street window (camX 0) by 114.0; whip right to the guest (camX 600) at 115.56; one quick look back at the window at 117.8 (whip left and right again, 0.5 s each way); wide on the door for the exit."
+   },
+   "composition": "Window x 120..320, y 420..620 in the left wall, showing the night street at 0.5 scale: helmets pass at sill height. Guest at x 1220, door x 1340..1480. Balloon over the guest at y 300.",
+   "actions": [
+    {
+     "t": 113.0,
+     "end": 114.0,
+     "cue": {
+      "word": "كان",
+      "t": 112.82
+     },
+     "who": "camera",
+     "action": "Pan left down the table to the street window",
+     "acting": "lamps and steam keep moving",
+     "library": "kfn camX 300 to 0"
+    },
+    {
+     "t": 114.0,
+     "end": 114.7,
+     "cue": {
+      "word": "الحراس",
+      "t": 114.0
+     },
+     "who": "guards",
+     "action": "Outside the window brass helmets bob past in single file on tiptoe, the baker's boy leading with a finger to his lips, the captain's lantern a thin slit of light",
+     "acting": "each helmet on its own phase; neck cloths trail",
+     "library": "windowView: clip + abStreetPlate night at 0.5 scale + ALI-03 sneakChain of guard busts"
+    },
+    {
+     "t": 114.7,
+     "end": 115.5,
+     "cue": {
+      "word": "في",
+      "t": 114.7
+     },
+     "who": "guards",
+     "action": "The boy stops; the file bumps up like an accordion and a spear tip wobbles above the sill",
+     "acting": "bump travels down the line with per member delay",
+     "library": "sneakChain accordion bump, swing on the spear"
+    },
+    {
+     "t": 115.5,
+     "end": 116.3,
+     "cue": {
+      "word": "لكن",
+      "t": 115.56
+     },
+     "who": "camera",
+     "action": "Whip right to the guest on his cushion",
+     "acting": "speed lines 4 frames",
+     "library": "abSpeed, camX 0 to 600"
+    },
+    {
+     "t": 116.3,
+     "end": 116.9,
+     "cue": {
+      "word": "الضيف",
+      "t": 116.32
+     },
+     "who": "merchant",
+     "action": "He is laughing at something the nephew said; his eyes drift past the host toward the window",
+     "acting": "laugh shoulders on twos; gaze slides left",
+     "library": "gazePlan"
+    },
+    {
+     "t": 116.9,
+     "end": 117.8,
+     "cue": {
+      "word": "لمحهم",
+      "t": 116.98
+     },
+     "who": "merchant",
+     "action": "His eyes snap: two tiny helmet glints sit in his pupils and the laugh freezes on his mouth",
+     "acting": "lid 0, a held drawing, feather still moving",
+     "library": "abGlint x2 at the eye points"
+    },
+    {
+     "t": 117.8,
+     "end": 118.9,
+     "cue": {
+      "word": "النافذة",
+      "t": 118.14
+     },
+     "who": "guards",
+     "action": "At the window the helmets drop below the sill in a ragged wave; the captain's red plume stays up one beat and is pulled down by a hand",
+     "acting": "staggered ducks; the plume springs",
+     "library": "windowView; stagger; swing on the plume"
+    },
+    {
+     "t": 118.6,
+     "end": 119.9,
+     "cue": {
+      "word": "واعتذر",
+      "t": 118.98
+     },
+     "who": "merchant",
+     "action": "He springs to his feet, cloak late: balloon I MUST GO!",
+     "acting": "anticipation crouch from 118.6, stretch up, settle; hand on his stomach as if unwell",
+     "library": "anticipate, sit 1 to 0, lagged cloak; abSay"
+    },
+    {
+     "t": 119.9,
+     "end": 120.7,
+     "cue": {
+      "word": "العشاء",
+      "t": 120.2
+     },
+     "who": "merchant",
+     "action": "Three quick bows while backing toward the door; he knocks a cushion over",
+     "acting": "bows get shorter each time; eyes on the door, not on the family",
+     "library": "flow on tip; walk backward (xf decreasing toward the door), footfalls"
+    },
+    {
+     "t": 120.7,
+     "end": 121.5,
+     "who": "ali",
+     "action": "Ali Baba half rises with an open hand: so soon? The nephew stares; Morgiana's eyes go to the gift box on the chest",
+     "acting": "host manners covering alarm; her glance is the plan forming",
+     "library": "sit 1 to 0.5; lookAt giftBox"
+    },
+    {
+     "t": 121.5,
+     "end": 122.6,
+     "cue": {
+      "word": "اندفع",
+      "t": 121.581
+     },
+     "who": "merchant",
+     "action": "He whirls and bolts through the door: speed lines, the curtain blows out, the cushion spins, his cup rocks on the rug",
+     "acting": "stretch into the run, cloak streaming three drawings late",
+     "library": "walk fast, abSpeed, swing on curtain and cup"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 119.0,
+     "text": "I MUST GO!"
+    }
+   ],
+   "sfx": [
+    {
+     "t": 121.1,
+     "kind": "whoosh"
+    }
+   ],
+   "transition_out": {
+    "type": "cut",
+    "t": 122.6
+   }
+  },
+  {
+   "id": "S16",
+   "start": 122.6,
+   "end": 137.82,
+   "paragraphs": [
+    8
+   ],
+   "set": "courtyardNight",
+   "cast": [
+    "merchant",
+    "morgiana",
+    "ali",
+    "nephew",
+    "guards",
+    "captain",
+    "cat"
+   ],
+   "summary": "The lantern-lit courtyard. He runs for the street gate. Morgiana steps into the lit doorway holding up the little gift box and calls him, politely. He stops with his hand a palm from the barred gate, and turns. TO BE CONTINUED...",
+   "camera": {
+    "shot": "wide",
+    "move": "track",
+    "notes": "Wide at zoom 1.0: camX 0 as he bursts out, tracking right to camX 120 by 124.2 and holding so the doorway (cx 170) and the gate (cx 730) frame the two of them; slow 30 unit drift left during the end hold."
+   },
+   "composition": "Morgiana in the house doorway at x 170, y 905, warm light behind her; he stops at x 620, y 910, the gate bar at y 780 to his right; lemon tree at x 600 behind him; cat on the wall at x 900; helmets rise behind the coping (y 560) at x 800..960. Balloons above her at y 330..420; end title in the sky band y 120..300.",
+   "actions": [
+    {
+     "t": 122.6,
+     "end": 122.9,
+     "who": "camera",
+     "action": "Cut outside: the moonlit, lantern-lit courtyard, light and coloured; the house door flies open",
+     "acting": "lantern flicker, lemon leaves, moon at (1000, 170)",
+     "library": "ALI-04 abCourtPlate night + abGlow; townDoor"
+    },
+    {
+     "t": 122.9,
+     "end": 123.4,
+     "cue": {
+      "word": "الرجل",
+      "t": 122.86
+     },
+     "who": "merchant",
+     "action": "He bursts out and runs along the house wall (x 200 to 420)",
+     "acting": "long running strides on twos, body tipped forward (tip 0.14), cloak streaming, shadow under him",
+     "library": "walk fast, footfalls, lagged cloak, groundShadow {flat: true}"
+    },
+    {
+     "t": 123.4,
+     "end": 124.0,
+     "cue": {
+      "word": "نحو",
+      "t": 123.46
+     },
+     "who": "camera",
+     "action": "Track right with him: the barred street gate ahead, its lantern, the three oil jars by the wall",
+     "acting": "camera on ones",
+     "library": "kfn camX 0 to 120; oilJar x3"
+    },
+    {
+     "t": 124.0,
+     "end": 124.6,
+     "cue": {
+      "word": "الفناء",
+      "t": 123.98
+     },
+     "who": "merchant",
+     "action": "Still running (x 420 to 560), one arm already reaching for the gate bar",
+     "acting": "hand leads, eyes on the bar",
+     "library": "handRW toward (700, 780)"
+    },
+    {
+     "t": 124.6,
+     "end": 126.0,
+     "cue": {
+      "word": "قالت",
+      "t": 124.66
+     },
+     "who": "morgiana",
+     "action": "Morgiana appears in the doorway behind him, lit warm from the room, the gift box in her raised hand",
+     "acting": "unhurried; warm rim light; scarf tail settling",
+     "library": "castFinish {rim: '#ffcf7a', light: [-1, -1]}; giftBox at her handRW"
+    },
+    {
+     "t": 126.0,
+     "end": 126.7,
+     "cue": {
+      "word": "مرجانة",
+      "t": 126.04
+     },
+     "who": "morgiana",
+     "action": "She steps onto the threshold and stands quite still",
+     "acting": "weight on both feet, chin level",
+     "library": "breathe, idleSway"
+    },
+    {
+     "t": 126.7,
+     "end": 127.9,
+     "cue": {
+      "word": "لحظة",
+      "t": 126.76
+     },
+     "who": "morgiana",
+     "action": "She calls: balloon ONE MOMENT, SIR!",
+     "acting": "clear and polite, not loud; lip flaps on threes",
+     "library": "abSay"
+    },
+    {
+     "t": 127.9,
+     "end": 128.5,
+     "cue": {
+      "word": "سيدي",
+      "t": 127.96
+     },
+     "who": "morgiana",
+     "action": "A small courteous dip of the head, eyes never leaving him",
+     "acting": "nod with the scarf tail late",
+     "library": "flow, lagged"
+    },
+    {
+     "t": 128.5,
+     "end": 129.3,
+     "cue": {
+      "word": "نسيت",
+      "t": 128.56
+     },
+     "who": "morgiana",
+     "action": "Second balloon: YOU FORGOT YOUR GIFT!",
+     "acting": "a smile exactly like the one she put on at the door",
+     "library": "abSay"
+    },
+    {
+     "t": 129.3,
+     "end": 130.2,
+     "cue": {
+      "word": "هديتك",
+      "t": 129.34
+     },
+     "who": "giftBox",
+     "action": "She holds the box high; its gold ribbon catches the lantern light",
+     "acting": "arm stretches up, one glint",
+     "library": "abGlint"
+    },
+    {
+     "t": 130.2,
+     "end": 131.0,
+     "cue": {
+      "word": "فتوقف",
+      "t": 130.26
+     },
+     "who": "merchant",
+     "action": "He skids to a stop at x 620, his fingers a palm's width from the bar: dust, a landing squash, the cloak swings past him and falls back",
+     "acting": "the stop goes through the body in order: feet, hips, shoulders, cloak, feather",
+     "library": "landSquash, abDust, swing on cloak, lagged feather"
+    },
+    {
+     "t": 131.0,
+     "end": 131.8,
+     "who": "merchant",
+     "action": "The hand hangs by the bar, the fingers curl back one by one; his shoulders rise and fall once",
+     "acting": "the decision: run or play the guest",
+     "library": "flow on the fingers, breathe"
+    },
+    {
+     "t": 131.8,
+     "end": 132.8,
+     "cue": {
+      "word": "والتفت",
+      "t": 131.82
+     },
+     "who": "merchant",
+     "action": "He turns: the eyes slide left first, a blink, the lean swings from forward to upright, the weight goes to the back foot, and the guest's smile assembles again",
+     "acting": "smile grows over three held drawings, slower than ever",
+     "library": "gaze, lid keyed, flow on tip 0.12 to -0.04, SMILE keys at half speed"
+    },
+    {
+     "t": 132.8,
+     "end": 133.3,
+     "cue": {
+      "word": "إليها",
+      "t": 132.82
+     },
+     "who": "camera",
+     "action": "The two of them across the yard: she in the lit doorway on the left with the box, he by the barred gate on the right, his long shadow lying between them; the ring glints",
+     "acting": "held picture with moving holds",
+     "library": "abGlint on silverRing; groundShadow"
+    },
+    {
+     "t": 133.3,
+     "end": 133.9,
+     "who": "guards",
+     "action": "Behind him three brass helmet tops and a red plume rise silently above the wall coping; Ali Baba and the nephew appear behind Morgiana",
+     "acting": "staggered rises; he does not see them",
+     "library": "guard busts clipped by the wall front pass; stagger"
+    },
+    {
+     "t": 133.5,
+     "end": 134.5,
+     "who": "lettering",
+     "action": "Chrome title TO BE CONTINUED... flickers on in the sky band",
+     "acting": "on at 133.5 with a glint; held to the end",
+     "library": "S.title"
+    },
+    {
+     "t": 134.5,
+     "end": 137.82,
+     "who": "fx",
+     "action": "End hold with everything alive: lantern flicker, scarf tail, cloak hem, feather, cat tail, lemon leaves, one slow blink each, his fingers drumming once on his thigh",
+     "acting": "nobody frozen; camera drifts 30 units left",
+     "library": "idleSway, breathe, blink, swing"
+    }
+   ],
+   "lettering": [
+    {
+     "t": 126.76,
+     "text": "ONE MOMENT, SIR!"
+    },
+    {
+     "t": 128.56,
+     "text": "YOU FORGOT YOUR GIFT!"
+    },
+    {
+     "t": 133.5,
+     "text": "TO BE CONTINUED..."
+    }
+   ],
+   "sfx": [
+    {
+     "t": 133.7,
+     "kind": "chime"
+    }
+   ],
+   "transition_out": {
+    "type": "none",
+    "t": 137.82
+   }
+  }
+ ],
+ "ending": {
+  "t": 133.5,
+  "description": "The courtyard at night, wide: Morgiana in the lit doorway with the gift box held up, the guest stopped at the barred gate and turned toward her with his smile rebuilt, helmets rising behind the wall. Chrome title TO BE CONTINUED... from 133.5, held with moving holds to 137.82 (4.0 s after the audio). Episode 6 opens on this picture."
+ },
+ "subtitles": [
+  {
+   "p": 1,
+   "ar": "فتح قائد اللصوص متجرًا صغيرًا في سوق البلدة، وقدم نفسه باسم تاجر جديد.|كان يبتسم للناس كثيرًا، لكنه كان ينتظر فرصة للاقتراب من بيت علي بابا.",
+   "en": "The thieves’ leader opened a small shop in town and introduced himself as a new merchant.|He smiled often at customers, but waited for a chance to approach Ali Baba’s home."
+  },
+  {
+   "p": 2,
+   "ar": "تعرف التاجر إلى ابن أخي علي بابا الذي يعمل قرب السوق.|ساعده في حمل بعض الصناديق،|وقدم له هدية صغيرة، حتى دعاه الشاب إلى العشاء مع أسرته.",
+   "en": "The merchant got to know Ali Baba’s nephew, who worked near the market.|He helped carry boxes|and offered a small gift, until the young man invited him to dinner with the family."
+  },
+  {
+   "p": 3,
+   "ar": "وصل الضيف بثياب فاخرة.|لمحته مرجانة، فعرفت خاتمه الفضي المميز ذا الحجر الأزرق المشقوق،|مثل خاتم تاجر الزيت الهارب.",
+   "en": "The guest arrived in fine clothes.|Morgiana spotted his distinctive silver ring with the split blue stone,|the same as the escaped oil merchant’s."
+  },
+  {
+   "p": 4,
+   "ar": "قرب المائدة سمعت مرجانة صوته مرة أخرى، فزادت شكوكها.|طلب الضيف أن يجلس قريبًا من الباب، وبقي ينظر نحو الفناء، كأنه يبحث عن طريق للهروب.",
+   "en": "Near the dinner table Morgiana heard his voice again, deepening her suspicion.|The guest asked to sit close to the door and kept glancing toward the courtyard as though looking for an escape route."
+  },
+  {
+   "p": 5,
+   "ar": "ذهبت مرجانة إلى الجيران الذين ساعدوها من قبل، وطلبت إبلاغ الحراس بهدوء.|ثم عادت بابتسامة، وقدمت للضيف طعامًا بسيطًا، وبدأت تسأله عن رحلاته وأصدقائه.",
+   "en": "Morgiana visited the neighbors who had helped her before and asked them to alert the guards quietly.|She returned smiling, served the guest simple food, and began asking about his travels and friends."
+  },
+  {
+   "p": 6,
+   "ar": "قال إنه لم يزر البلدة من قبل، لكن مرجانة عرفت أنه يكذب حين سمّى الأزقة القديمة.|سألته عن تاجر الزيت، فتغير صوته وكاد يسقط كوبه.",
+   "en": "He claimed he had never visited town, but Morgiana knew he was lying when he named the old alleys.|She asked about an oil merchant; his voice changed, and he nearly dropped his cup."
+  },
+  {
+   "p": 7,
+   "ar": "عرفت مرجانة أنه القائد، وأشارت إلى علي بابا.|كان الحراس في الطريق، لكن الضيف لمحهم عند النافذة واعتذر عن العشاء.",
+   "en": "Morgiana recognized the leader and signaled Ali Baba.|Guards were on their way, but the guest spotted them at the window and excused himself."
+  },
+  {
+   "p": 8,
+   "ar": "اندفع الرجل نحو الفناء.|قالت مرجانة: «لحظة يا سيدي، نسيت هديتك!»|فتوقف والتفت إليها.",
+   "en": "The man rushed toward the courtyard.|“One moment, sir; you forgot your gift!” Morgiana called.|He stopped and turned."
+  }
+ ],
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "dinnerRoom",
+   "reusable": true,
+   "effort": "L",
+   "description": "Ali Baba's dinner room, a full warm interior strip 1600 x 1230 for episodes 5 and 6 and any family meal: street window, shelf niche, three hanging lamps, kitchen arch with bead curtain, courtyard door with a view, chest, low round table loaded with food, six cushions, patterned rugs. Exact coordinates in sets.dinnerRoom. Exports anchors DR = {floor, window, niche, lamps, arch, door, chest, table, seats: {ali, honour, wife, kid, nephew, guest}, rug}.",
+   "implementation": "abDinnerPlate() baked once with abBakeAt like abStreetPlate: wall and dado rectangles with abGrad warmth under each lamp, tiles as a row of celShade quads, niche as an inset darker rect with shelf lines, rug as a quad with a border and a repeated diamond row. Live over the plate: hangingLamp x3 with abGlow at a 12 fps flicker, bead curtain as 12 dotted ribbons on swing/idleSway, door curtain ribbon, window and door views = ctx.clip of the opening then drawImage of the street or courtyard night plate at 0.5 scale plus small live parts (helmets, lantern, jars). Table in two passes: stand and tray back edge before the three seated behind it (y 880), tray front edge and dishes after them; the people at the table ends (y 900) are drawn after the table. Dishes are separate cels (dinnerFood) with steam ribbons on a travelling sine."
+  },
+  {
+   "type": "set",
+   "name": "shopFront",
+   "reusable": true,
+   "effort": "M",
+   "description": "A small market shop booth 300 wide x 420 high (x 960..1260, counter top y 770, roof line y 480): two poles, a striped awning (coral and cream here) with field open 0..1 that unrolls and bounces, a counter 280 x 130 with a cloth front, two back shelves with brass lamps, trays and a coffee pot (backlit glow), and the hanging sign board (shopSign) with field swing. Fields: x, open, sign, pal, goods. Reusable for any trader; in episode 6 it becomes Morgiana's shop with a turquoise awning.",
+   "implementation": "Drawn live over the marketStreet strip: poles as seg, awning as a celShade quad whose lower edge is a 7 scallop polyline scaled by open (kfn with one overshoot), counter and shelves as celShade rects, goods as 6 to 8 point brass shapes with abGlint and a soft abGlow behind them. The corner post is redrawn as a front pass for the peek at 18.32."
+  },
+  {
+   "type": "character",
+   "name": "newMerchant and nephew (palette variants)",
+   "reusable": true,
+   "effort": "S",
+   "description": "abNewMerchant: the leader's proportions in the merchant costume with AB_NEWM0 (coral, cream sleeves, plum turban, hennaed short beard), fields fine (cloak, jewel, feather) and cuff (long sleeve end covering the hand and ring). abNephew: servant preset, s 0.94, age 0.08, AB_NEPH0 (white shirt, emerald waistcoat, saffron sash, rust skullcap). Both return in episode 6.",
+   "implementation": "pal overrides {robe, sleeve, sash, hc, band, beard} on person; the short beard = the beard polygon scaled 0.6 in y. cuff: after the person call draw a cream trapezoid 26 x 30 over each hand point from P.hands, alpha = cuff. fine: cloak as a 5 point ribbon from the shoulders with lagged sway and a gold edge line, feather as a 3 point ribbon two drawings late. Waistcoat for the nephew = two celShade panels over the tunic chest."
+  },
+  {
+   "type": "motion",
+   "name": "cupFumble",
+   "reusable": true,
+   "effort": "S",
+   "description": "A small object slips from a hand, is batted up twice and caught: three parabolas (drop 60, bat to +160, bat to +110) with spin, liquid drops on their own falls, and both hands tracking the object as world targets so the body lurches after it. Here the tea glass at 104.04 to 105.56.",
+   "implementation": "A list of arcs [{t0, t1, from, to, apex}] evaluated with hop/fallY style parabolas; cup angle from arc progress; 5 tea drops (ell r 4) launched at the second bat on fallY with seeded offsets; hands = handLW/handRW set to the cup point lagged by one drawing; landSquash on the catch."
+  },
+  {
+   "type": "effect",
+   "name": "voiceWave and clueCounter",
+   "reusable": true,
+   "effort": "S",
+   "description": "voiceWave(ctx, x, y, {shape, col, len, jag, p}): a speaker's voice drawn as a ribbon 220 x 40 with a fixed bump pattern (LEADER_WAVE = 7 bump heights), so two ribbons of different colours can be seen to match; jag 0..1 turns the bumps into spikes and breaks the ribbon. clueCounter: S.counter with the label CLUES in the top right corner of the panel, ticking 1 to 5 at 50.2, 57.4, 67.7, 98.1 and 105.9, each tick with a small pop of the number.",
+   "implementation": "Ribbon = polyline through the 7 bump heights with a travelling phase, stroked twice (dark outline, colour) and drawn on by p; the match at 55.0 slides ribbon B onto ribbon A with kfn and adds abGlint. Counter: S.counter(ctx, n, x, y, p) with S.label CLUES beside it; visible from 50.2 to 113.0 only."
+  },
+  {
+   "type": "effect",
+   "name": "windowView and memoryPanel",
+   "reusable": true,
+   "effort": "S",
+   "description": "windowView: a clipped opening (window or door) showing another set plate at 0.5 scale with a few live parts behind the frame (guard helmets passing, lantern, jars). memoryPanel: a rounded cream-bordered inset or half panel showing a remembered picture from an earlier episode (the knocking fist, the oil merchant, the escape over the wall).",
+   "implementation": "ctx.save, clip the opening rect or arch (townArchPts), translate and scale 0.5, drawImage the baked plate, draw the live parts, restore, then the frame front pass. memoryPanel = clip a rounded rect, fill a paler copy of the plate, draw the cels, stroke a 10 wide cream border; no tint over the cels."
+  }
+ ],
+ "owner_questions": [
+  "The film ends on TO BE CONTINUED... instead of THE END because episode 6 continues from the same moment (series decision); default: TO BE CONTINUED....",
+  "The leader's second disguise is a new design (coral robe, plum turban, short hennaed beard, long cuffs that hide his hands, a plum cloak with gold trim for dinner), clearly different from the oil merchant; default: this design.",
+  "The nephew (Cassim's son) is a new character: a cheerful beardless young man in a white shirt, emerald waistcoat and saffron sash (his father's colours); default: this design.",
+  "The audience is told who the merchant is at once, by a band of light that shows the leader inside it at 0.5 s and again at 109.5 s; default: included.",
+  "The gift of paragraph 2 is a small wrapped box that is never opened; the nephew leaves it on the chest in the dinner room and Morgiana holds that same box up at the end as her pretext (reading \"your gift\" as the gift he brought); default: the same box.",
+  "Addition for episode 6: on her way back from the neighbours Morgiana quietly bars the courtyard gate (79.4 s), so the gate he runs to is already shut; default: included.",
+  "Morgiana counts her evidence with an on-screen CLUES counter 1 to 5 (ring, voice, seat by the door, the lanes, the cup); default: included.",
+  "Invented English balloon and label lines: I AM A NEW MERCHANT!, THE NEPHEW, COME TO DINNER!, THE SAME RING!, WHAT A FINE HOME!, MAY I SIT BY THE DOOR?, TELL THE GUARDS. QUIETLY!, WHERE HAVE YOU TRAVELLED?, MY FIRST TIME IN THIS TOWN!, ...BY OLD WELL LANE, OF COURSE!, EVER MET AN OIL MERCHANT?, N-NO!, THE LEADER!, I MUST GO!, plus the two script lines ONE MOMENT, SIR! and YOU FORGOT YOUR GIFT!; default: kept as written.",
+  "The trusted neighbours are the old woman, the baker and his apprentice from the ALI-04 plan, and the apprentice is the one who runs for the guards; default: as described.",
+  "Comic additions beyond the script: the switch-on smile repeated for three customers, the thought bubble of five little thieves that he swats away, the captain's plume left above the window sill, the cat and donkey distrusting him; default: all included.",
+  "The guards are shown only as helmets (at the window, and rising behind the courtyard wall in the last picture); default: included, with no weapons in use."
+ ],
+ "implementation_notes": [
+  "Copy ab_kit.js, ab_cast.js, ab_sets.js and the reusable parts of ab_main.js from Animations/ALI-01-ANIME/src/, ALI-02's additions (abCamClamp, tiptoeFreeze, strainLift, blush), ALI-03's (abMorgiana with windowBust and AB_FACE.morgiana, abOilMerchant, abStreetPlate with TS anchors and models, oilJar, silverRing, sneakChain, the market call with laneArch) and ALI-04's (abCourtPlate with CY anchors, gateBar, disguiseWipe, guards and captain, baker, youth, householdArms) into Animations/ALI-05/src/ under the same names and extend there. No palette of an existing character changes. If an earlier episode's drawing is not finished when this film is built, build it here from that episode's plan with the same names and numbers.",
+  "Frame order: S.background, S.box panel, plate, window and door views, live set parts (lamps, curtains, doors, shop), back-of-table cels, table, front cels, props, light (abGlow, abBands, rims), lettering and counter, transition, subtitle, S.finish last.",
+  "Pose every character at tc = celStep(t, THEME.celFps) (12 fps); blinks, lip flaps and the balloon jitter at celStep(t, 8). Camera, glows, glints, the counter, the light band, the dotted route and the tape transition run on every frame.",
+  "Word cues with w(p, n) from timing.json; every cue time in this plan is a word start from inputs/timeline.md. Subtitle chunks are those of chunks_ar.txt and chunks_en.txt, already timed in timing.json; use it unchanged.",
+  "SMILE is one flow key list (mouth, lid, tip, glint time) defined once and replayed at 9.40, 10.14, 10.76, 17.0, 18.9 and, at half speed, 131.82; the drop at 11.90 is one drawing. Morgiana gets her own softer list at 79.92 and 128.56. The repetition is the joke and the characterisation.",
+  "The ring is data: RING_SHOWN(t) true at 13.2-13.9, 34.3, 41.8-50.0, 105.5-106.6 and from 130.3; otherwise cuff = 1 covers the hand. Episode 6 opens with Morgiana pulling the sleeve back, so the cuff must be visibly down again at 133.",
+  "Seated people use person {sit: 1, seat: floor} at the cushion anchors; the three behind the table are drawn at y 880 before the table front pass. The guest standing up at 118.6 is sit 1 to 0 with anticipate and a stretch.",
+  "The Library person has no back or profile view. Morgiana passes behind the guest (he faces the viewer, she is upstage), the run in S16 is a frontal figure tipped forward with a fast walk, and the turn at 131.82 is eyes, blink, tip and weight shift, not a body rotation. Check these three on contact sheets.",
+  "Close-ups are only: the ring insert 42.2-46.9 (with the split memory panel to 50.0) and Morgiana's eyes 106.8-108.8. Everything else is wide or medium with the floor in the lower part of the picture; no framing above zoom 1.35 outside those two.",
+  "Balloons with abSay (S.label {balloon: true, to}) at size 50 to 52, the whisper at 46 with a thin outline, tails on the speaker's head, removed 0.4 s after the cue except MY FIRST TIME IN THIS TOWN!, which stays hanging until it is struck out at 95.68 and leaves at 98.5. Tags (THE NEPHEW, THE SAME RING!, THE LEADER!, CLUES) are plain labels at 40 or more. Pictograms (dish, helmet, ring, camel, ship, dune, heads, map, jar, question mark) are drawn shapes, not lettering.",
+  "S.emphasis {rect: AB_PANEL} once, at 109.54, with no sound (the narrator is speaking). S.transition {rect, caption: 'THAT EVENING...'} 34.6-35.4 with the plate swap at 35.0. Titles: S.title THE UNEXPECTED GUEST 0.3-3.0 with title_ar from story/script.json in Lalezar under it; S.title TO BE CONTINUED... from 133.5 to 137.82.",
+  "Sound (9, master 0.6, only in the listed pauses): pop 8.45, whoosh 17.7, glitch 35.0, chime 50.7, blip 69.0, pop 88.6, riser 106.6, whoosh 121.1, chime 133.7; tape bed under everything.",
+  "Evening and night: painted plates only, light and warm (nothing darker than #2a4a8a in a sky or #5a5a8a on a wall), AB_MODEL k = 0 (no tint over the cast). Warm rim castFinish {rim: #ffcf7a} for figures against lamp or door light; thin cool rim #bfe0ff for the guest at the gate. Sleeves stay a step lighter than robes; the guest's plum cloak must not swallow his arms (cream sleeves drawn over it).",
+  "Groups never in sync: stagger(i) and a seed per member for the townsfolk, the family at table (five different idle periods), the three neighbours and the guard helmets (sneakChain with the accordion bump at 114.7).",
+  "Moving holds in every pause: idleSway on tip and head, breathe on sq, scarf tail, cloak hem, feather, bead curtain, lamp flicker, steam, awnings, cat tail. groundShadow {flat: true} under every standing or running figure; cushions squash a little under sitters.",
+  "Check with contact sheets (every 4th frame): awning and light band 0.0-1.8, the three smiles and the drop 9.3-12.2, crate catch 24.0-26.2, the salute and insert 41.0-43.2, the freeze and wave match 54.3-56.3, sitting 60.4-61.2, tiptoe run 70.3-72.4, the gate bar 79.3-80.4, the cup 104.0-106.0, the reveal 109.4-110.4, the window 114.0-115.5 and 117.8-118.9, standing and bolting 118.6-122.6, the skid and turn 130.2-133.0. Then run the frozen-hold scan."
+ ],
+ "warnings": [
+  "About 55 seconds are in one room with seated people: the pans, the two views (window and door), the balloons, the counter and the changing framing must make each scene a new picture; keep the seated figures acting (hands, heads, eyes) so the table never freezes.",
+  "Six people plus a loaded table in the dinner room: bake the plate, draw the table in two passes, and check at phone size that every arm reads against the cushions and the cloak.",
+  "This plan depends on drawings from ALI-03 (Morgiana, townStreet, silverRing, oil merchant, sneakChain) and ALI-04 (courtyard, gateBar, disguiseWipe, guards, baker, youth) that are planned but may not be implemented yet; build them here from those plans under the same names if needed. ALI-04 had no creative_plan.md when this plan was written; its JSON was used.",
+  "The disguise must fool the family but not the audience: if the test stills make him unrecognisable, strengthen the brows and the walk, not the costume; if he looks exactly like the oil merchant, lighten the beard further.",
+  "The Library person has no back or profile view: the run to the gate and the final turn are acted with tip, gaze, a blink and weight shift. Review 122.6-133.0 early.",
+  "Library marketStreet is untested with a custom booth drawn over it in the cel theme; measure the house door near x 1560 on the set before placing the storehouse corner.",
+  "The impact frame at 109.54 and the tape transition at 35.0 are the only full-frame flashes; do not add more.",
+  "plancheck warns that the reused series sets and props (townStreetEvening, courtyardNight, silverRing, gateBar) have no Library function and are not marked new: they are series drawings copied from earlier episodes.",
+  "The English and Arabic scripts match paragraph for paragraph; no SCRIPT question."
+ ]
+}

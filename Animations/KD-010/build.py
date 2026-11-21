@@ -37,5 +37,6 @@ canvas{{height:100%;max-width:100%;aspect-ratio:9/16;background:#000}}
 {scenes}</script>
 <script>{read('core/player.js')}</script>
 </body></html>"""
-out = pathlib.Path(os.environ.get('BUILD_OUT_DIR') or H) / (style.film_name(CFG, FAM) + '.html')
+name = style.film_name(CFG, FAM) + '.html'   # the player: next to this file, or in the media folder's Working files (media.out)
+out = pathlib.Path(os.environ['BUILD_OUT_DIR']) / name if os.environ.get('BUILD_OUT_DIR') else media.out(H / name)
 out.write_text(html, encoding='utf8'); print(out.name, round(len(html) / 1e6, 2), 'MB')

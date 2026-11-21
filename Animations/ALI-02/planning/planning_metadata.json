@@ -1,0 +1,98 @@
+{
+ "story_id": "ALI-02",
+ "title": "The Forgotten Password",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-21T15:47:09",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a38c2286fd3d88dec.jsonl",
+ "agent_id": "a38c2286fd3d88dec",
+ "model_messages": {
+  "claude-fable-5-2": 32
+ },
+ "script": {
+  "source": "Spreadsheets/Script_Updated.xlsx",
+  "sha256": "eec34345deab15ab0fa7e11391e6ec4ad045a5861afc1697556cb06b9b8c03c7",
+  "paragraphs": 8,
+  "segments": [
+   "ALI-02-P01-S01",
+   "ALI-02-P01-S02",
+   "ALI-02-P01-S03",
+   "ALI-02-P01-S04",
+   "ALI-02-P01-S05",
+   "ALI-02-P01-S06",
+   "ALI-02-P01-S07",
+   "ALI-02-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/ALI-02_The_Forgotten_Password_slowed.mp3",
+  "sha256": "f5f6e3ad74a05696e2cc3ef68a69b5f5f72692f2dc79bb1983a48c4780c414ab",
+  "duration": 138.691
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/ALI-02_The_Forgotten_Password_slowed.mp3.words.json",
+  "sha256": "7452b879501295df86d9a9d4051a7ee157b15f296748c0aba716799717727ad8",
+  "manifest_status": "supplied",
+  "script_match": 1.0
+ },
+ "library_rev": "70d18d3",
+ "scenes": 14,
+ "actions": 164,
+ "new_assets": [
+  {
+   "type": "prop",
+   "name": "caveDoorInside",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "gladeModels dawn and morning (with screeSlope)",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "grainIcons (with confusionRing)",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "pebbleThrow and rollDown",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "cartTracks, coinTrail and footprints",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "strainLift and tiptoeFreeze",
+   "effort": "S"
+  },
+  {
+   "type": "expression",
+   "name": "blush",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "style variant of ALI-02 (cel-anime-80s); script from Google Sheet \"Sinbad Arabian Nights and Ebony Horse\" (Drive: ChatGPT Projects/Arabic Stories), tab All Scripts, rows 34-41, read 2026-11-21",
+ "validation_warnings": [
+  "sets gladeSunset: no library function and not marked new",
+  "sets treasureCave: no library function and not marked new",
+  "sets forestMorning: no library function and not marked new",
+  "sets villageYardMorning: no library function and not marked new",
+  "props rock: no library function and not marked new",
+  "props sacks: no library function and not marked new",
+  "props bigSack: no library function and not marked new"
+ ],
+ "plan_warnings": [
+  "The Arabic and English chunk breaks in P1 and P2 fall at different phrases (as supplied in the chunk files: Arabic P1 breaks after the call, English after \"entered\"; Arabic P2 chunk 1 already contains the first wrong call). Copied unchanged; the balloons are cued to the Arabic words, so OPEN WHEAT! appears while the English line still shows \"forgot the magic words\" for about a second.",
+  "The cave holds the first 71 seconds. It must not feel like one shot: use the pan to the gold, the pan back to the door, the tilt up the slab, the jump cuts, the pull-out, the outside cutaway and the daylight blade as distinct pictures, and keep the far zones (silver, cloth) alive with glints and swaying bolts.",
+  "The pebble throw covers 1400 world units; it only reads through the whip pan. Review 80.3-84.0 as a clip early.",
+  "S10 to S12 put up to nine figures and four animals on screen; bake the scree and dressing, and keep horses outside the camera view undrawn.",
+  "New dawn and morning models must stay clearly different from each other and from ALI-01's afternoon; none may tint the cast.",
+  "Pauses are short (0.85 to 1.2 s): every effect under 0.5 s except the riser.",
+  "Cassim's feather is used as an emotional antenna in ten places; if the merchant headwear in the Library preset has no separate feather tip, draw it in the story as a three-point ribbon on the turban (lagged), as ALI-01 did for the turban feather at 127.0."
+ ]
+}

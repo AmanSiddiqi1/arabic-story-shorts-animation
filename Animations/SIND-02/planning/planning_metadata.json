@@ -1,0 +1,90 @@
+{
+ "story_id": "SIND-02",
+ "title": "The Roc and the Diamond Valley",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-21T16:01:14",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a74c872410b05031e.jsonl",
+ "agent_id": "a74c872410b05031e",
+ "model_messages": {
+  "claude-fable-5-2": 30
+ },
+ "script": {
+  "source": "Spreadsheets/Script_Updated.xlsx",
+  "sha256": "1276abfeba711a6ac23f17849bd8e2a370660d433ed26b2111e03091d3e9ba4f",
+  "paragraphs": 8,
+  "segments": [
+   "SIND-02-P01-S01",
+   "SIND-02-P01-S02",
+   "SIND-02-P01-S03",
+   "SIND-02-P01-S04",
+   "SIND-02-P01-S05",
+   "SIND-02-P01-S06",
+   "SIND-02-P01-S07",
+   "SIND-02-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/SIND-02_The_Roc_and_the_Diamond_Valley_slowed.mp3",
+  "sha256": "76672cb6aa9f77e432f40e08b79063c89faf9cf1f0ae62b49dc1cfa121621f61",
+  "duration": 143.818
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/SIND-02_The_Roc_and_the_Diamond_Valley_slowed.mp3.words.json",
+  "sha256": "769af554a1ab125ed3553c55faa45ba721e2dd0088cf459aea10e7ae6288cda8",
+  "manifest_status": "supplied",
+  "script_match": 1.0
+ },
+ "library_rev": "70d18d3",
+ "scenes": 22,
+ "actions": 205,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "roc",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "diamondValley",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "woodedIsland and rocNest",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "snake",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "rocEgg, giantFeather, meatSlab, diamonds, turbanCloth, sashPouch",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "carried and strapped (person hanging from a line, person strapped to a prop)",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "style variant of SIND-02 (cel-anime-80s); script from Google Sheet \"Sinbad Arabian Nights and Ebony Horse\" (Drive: ChatGPT Projects/Arabic Stories), tab All Scripts, rows 10-17, read 2026-11-21",
+ "validation_warnings": [
+  "sets baghdadQuay: no library function and not marked new",
+  "sets openSea: no library function and not marked new",
+  "sets islandPort: no library function and not marked new",
+  "props dhow: no library function and not marked new"
+ ],
+ "plan_warnings": [
+  "The roc is the main risk: build it first and check it on stills at s 1 (legs and belly only), 0.42 and 0.36 before any acting. It must read as huge and kind.",
+  "The vertical valley needs two long camera travels (S16, S18); far layers of Library strips only do horizontal parallax, so the valley is its own module with a vertical translate.",
+  "Sinbad is small in the wides at 0.42 and 0.36 scale; the tangerine cloth and one arrow tag carry him. Check phone legibility on stills.",
+  "Sinbad lying strapped to the slab uses the front facing lie pose rotated with the slab; check the 90 to 0 degree turn at 118.2 on every second frame.",
+  "Only seven pauses: 8 short effects, all under 0.5 s; the LATER transition must fit 16.6 to 17.5.",
+  "This plan assumes the SIND-01 source exists when animation starts; if it does not, build dhow, openSea, harbourQuay and islandShore from the SIND-01 plan first.",
+  "New modules are above the usual four (roc, diamondValley with skyFlight and rim, woodedIsland with rocNest, snake, six props) because the story visits four new places; all are reusable and three reuse planned names."
+ ]
+}

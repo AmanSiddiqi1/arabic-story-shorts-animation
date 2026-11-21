@@ -5,7 +5,7 @@
 # SHARED mode (root is any other folder, e.g. /Users/Shared/ArabicStoryShorts for a second account): a repository path
 # maps to a media path through the prefix table in media.config.json, and resolve() prefers that copy, falling back
 # to the local file.
-import json, os, pathlib
+import json, os, pathlib, re
 REPO = pathlib.Path(__file__).resolve().parent.parent
 CFG = json.loads((REPO / 'media.config.json').read_text(encoding='utf8'))
 
@@ -24,13 +24,40 @@ def rel(p):
     p = pathlib.Path(p); p = p if p.is_absolute() else REPO / p
     return pathlib.Path(os.path.normpath(p)).relative_to(REPO).as_posix()
 
+# map entries [repository prefix, media prefix]; '*' matches one path segment and is carried over to the same '*' on the
+# other side (Animations/*/renders/ -> Renders/*/). The most specific (longest) entry wins.
+def _rx(pat): return re.compile('^' + re.escape(pat).replace(r'\*', '([^/]+)'))
+_MAP = sorted(((a, b, _rx(a), _rx(b)) for a, b in CFG['map']), key=lambda m: -len(m[0]))
+def _sub(pat, groups):
+    g = iter(groups); return re.sub(r'\*', lambda _: next(g), pat)
+
 def to_media(p):
-    """media path for a repository path: the path itself in local mode; else mapped (None when no prefix matches)"""
+    """media path for a repository path: the path itself in local mode; else mapped (None when no entry matches)"""
     r = rel(p)
     if is_local(): return REPO / r
-    for a, b in sorted(CFG['map'], key=lambda m: -len(m[0])):
-        if r.startswith(a): return root() / (b + r[len(a):])
+    for a, b, ra, _ in _MAP:
+        m = ra.match(r)
+        if m: return root() / (_sub(b, m.groups()) + r[m.end():])
     return None
+
+def out(p):
+    """where to WRITE a media file for repository path p: p itself in local mode (or when the shared root is missing),
+    else its media path; parent folders are created"""
+    t = to_media(p) if not is_local() and root().is_dir() else None
+    t = pathlib.Path(t) if t is not None else pathlib.Path(os.path.normpath(p if pathlib.Path(p).is_absolute() else REPO / p))
+    t.parent.mkdir(parents=True, exist_ok=True); return t
+
+def logical(p):
+    """repository-style path (str, POSIX) of a file given by its media path or repository path; used for records"""
+    p = pathlib.Path(os.path.normpath(p if pathlib.Path(p).is_absolute() else REPO / p))
+    try: return p.relative_to(REPO).as_posix()
+    except ValueError: pass
+    try: r = p.relative_to(root()).as_posix()
+    except ValueError: return str(p)
+    for a, b, _, rb in sorted(_MAP, key=lambda m: -len(m[1])):
+        m = rb.match(r)
+        if m: return _sub(a, m.groups()) + r[m.end():]
+    return str(p)
 
 def resolve(p):
     """local mode: the local path; shared mode: the shared copy when it exists, else the local path"""

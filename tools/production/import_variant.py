@@ -17,7 +17,7 @@ sys.path.insert(0, str(db.REPO / 'Library')); import style
 def main(argv):
     dry = '--dry' in argv; argv = [a for a in argv if a != '--dry']
     if len(argv) < 3: sys.exit(__doc__)
-    s = json.loads(pathlib.Path(argv[0]).read_text(encoding='utf8')); mp3 = importer.FINAL / argv[1]; wj = pathlib.Path(str(mp3) + '.words.json')
+    s = json.loads(pathlib.Path(argv[0]).read_text(encoding='utf8')); mp3 = importer.media.resolve(importer.FINAL / argv[1]); wj = importer.FINAL / (argv[1] + '.words.json')   # MP3 in the media folder, timings in Git
     if not mp3.exists() or not wj.exists(): sys.exit(f'{mp3.name} and its .words.json must be in Audio Files/Final Done/')
     variants = [a.split('=', 1) for a in argv[2:]]
     for vid, st in variants:

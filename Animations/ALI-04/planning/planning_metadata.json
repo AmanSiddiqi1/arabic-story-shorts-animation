@@ -1,0 +1,96 @@
+{
+ "story_id": "ALI-04",
+ "title": "The Merchant of Oil",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-21T16:13:36",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-ada673691455c72a9.jsonl",
+ "agent_id": "ada673691455c72a9",
+ "model_messages": {
+  "claude-fable-5-2": 25
+ },
+ "script": {
+  "source": "Spreadsheets/Script_Updated.xlsx",
+  "sha256": "4745ed7c193042e1c8c5f53bb7760f1d69bb14482d4bba837e4d0a224b60cd3a",
+  "paragraphs": 8,
+  "segments": [
+   "ALI-04-P01-S01",
+   "ALI-04-P01-S02",
+   "ALI-04-P01-S03",
+   "ALI-04-P01-S04",
+   "ALI-04-P01-S05",
+   "ALI-04-P01-S06",
+   "ALI-04-P01-S07",
+   "ALI-04-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/ALI-04_The_Merchant_of_Oil_slowed.mp3",
+  "sha256": "d1ee1144d06fb207ff7bf9fbb75131e3443b3e82ab47a2c3179fa1048d18bb0f",
+  "duration": 136.01
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/ALI-04_The_Merchant_of_Oil_slowed.mp3.words.json",
+  "sha256": "7d4af54cb926a7a2eefc6d76aa183c05bb00189a3622f7060e1f6436b87b8afc",
+  "manifest_status": "supplied",
+  "script_match": 1.0
+ },
+ "library_rev": "70d18d3",
+ "scenes": 18,
+ "actions": 182,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "courtyard (models evening, night)",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "kitchen",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "person costume preset 'guard'",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "jarCutaway and jarPeek (oilJar fields)",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "neighbours (baker, apprentice) and night dress",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "disguiseWipe",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "oilLamp, gateBar, darkLantern, householdArms",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "style variant of ALI-04 (cel-anime-80s); script from Google Sheet \"Sinbad Arabian Nights and Ebony Horse\" (Drive: ChatGPT Projects/Arabic Stories), tab All Scripts, rows 50-57, read 2026-11-21",
+ "validation_warnings": [
+  "sets townStreetEvening: no library function and not marked new",
+  "sets townStreetNight: no library function and not marked new",
+  "props oilJars: no library function and not marked new",
+  "props silverRing: no library function and not marked new",
+  "props pebbles: no library function and not marked new"
+ ],
+ "plan_warnings": [
+  "About 85 seconds of the film are in one courtyard at night: the moon position, the lit windows, the end of the yard in view and the framing must make each scene a new picture, and the night plate must stay light and coloured.",
+  "Up to twelve figures are on screen in S15: bake the plate per model, skip off-screen figures by camera x, and keep the jar cutaways to the scenes that call for them.",
+  "This plan depends on ALI-03 drawings (Morgiana, townStreet, oilJar, silverRing, oil merchant, sneakChain) that are planned but not yet implemented; if ALI-04 is built first they must be built here from the ALI-03 plan under the same names.",
+  "A person folded inside a 117 x 250 jar is tight: test the sit floor pose at s 0.62 inside the clip early and adjust the scale (0.55 to 0.65) rather than the jar.",
+  "The Library person has no back view: the leader's climb and the keepers on the lids are staged in front or three-quarter view with hand world targets; check that arms stay readable against the wall.",
+  "The impact frame at 112.46 and the tape transition at 32.9 are the only full-frame flashes; do not add more.",
+  "plancheck warns that the reused ALI-03 sets and props have no Library function and are not marked new: they are series drawings copied from the earlier episodes."
+ ]
+}

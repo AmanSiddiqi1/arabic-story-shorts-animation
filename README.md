@@ -22,7 +22,7 @@ Kalila wa Dimna/
                                        narration.mp3 (the copy the video was built on), timing.json, whisper.json,
                                        the player .html, stills/
   Animations/lark-and-the-elephant-fable-experiment/   Fable 5.2 director experiment (20.2-46.5 s re-staged; see its README)
-  MP4s/, Originals/                  final and pre-upgrade MP4s: local only, not in Git
+  (media)                            since 2026-11-21 in ../Arabic Story Media/ (Audio/Final, Audio/Earlier versions, Renders, Final MP4s, Working files); see CLAUDE.md
   .claude/skills/halftone-pop/        project Halftone Pop skill (/halftone-pop-shorts), authoritative for this project
   media.config.json, tools/media/      the media setting (local by default), shared-folder copy/verify and timing checks
   tools/backup.sh, tools/git/          guarded GitHub backup, staged-file guard and hooks

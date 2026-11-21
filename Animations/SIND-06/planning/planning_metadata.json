@@ -1,0 +1,95 @@
+{
+ "story_id": "SIND-06",
+ "title": "The River Beneath the Mountain",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-21T16:12:33",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-aa5890b99f15e306a.jsonl",
+ "agent_id": "aa5890b99f15e306a",
+ "model_messages": {
+  "claude-fable-5-2": 33
+ },
+ "script": {
+  "source": "Spreadsheets/Script_Updated.xlsx",
+  "sha256": "bfe036efa309f8f997be9656ff62f165ee792fa8c5feecf795b5f55bfa344205",
+  "paragraphs": 8,
+  "segments": [
+   "SIND-06-P01-S01",
+   "SIND-06-P01-S02",
+   "SIND-06-P01-S03",
+   "SIND-06-P01-S04",
+   "SIND-06-P01-S05",
+   "SIND-06-P01-S06",
+   "SIND-06-P01-S07",
+   "SIND-06-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/SIND-06_The_River_Beneath_the_Mountain_slowed.mp3",
+  "sha256": "aab16fb25bea78003e8f2e9d7c9cbdbefba134ca376b165e69376459818fb4d8",
+  "duration": 147.373
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/SIND-06_The_River_Beneath_the_Mountain_slowed.mp3.words.json",
+  "sha256": "40bcbadc5a1222ccb5cc28723a244518ce88e6aa74eb6787f7eb158b03169c78",
+  "manifest_status": "supplied",
+  "script_match": 1.0
+ },
+ "library_rev": "70d18d3",
+ "scenes": 20,
+ "actions": 171,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "mountainCove",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "riverTunnel",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "riverVillage",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "raft",
+   "effort": "M"
+  },
+  {
+   "type": "pose",
+   "name": "duck (person folded flat)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "gemPebbles and oilLamp",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "currentStreaks, dhow wreck states, lid point of view",
+   "effort": "M"
+  }
+ ],
+ "input_notes": "style variant of SIND-06 (cel-anime-80s); script from Google Sheet \"Sinbad Arabian Nights and Ebony Horse\" (Drive: ChatGPT Projects/Arabic Stories), tab All Scripts, rows 18-25, read 2026-11-21",
+ "validation_warnings": [
+  "sets baghdadQuay: no library function and not marked new",
+  "sets openSea: no library function and not marked new",
+  "props dhow: no library function and not marked new"
+ ],
+ "plan_warnings": [
+  "The tunnel (S12 to S14, 27 s) is the main risk: it must be dark in mood but coloured and readable. Build riverTunnel and the lantern mask first and review stills before any acting.",
+  "The duck pose is new and happens fast (85.0 to 86.9); check every second frame.",
+  "The lid point of view is the only first person shot in the series; if it reads badly, fall back to a close shot of his face with the lids opening and the faces reflected in his eyes.",
+  "Six people on the beach plus raft building in S9 and S10: keep the helpers' actions simple and staggered so the main action stays readable.",
+  "The story balloon in S20 carries a narrated event at half scale (figures about 115 px on screen); keep it uncluttered: five figures, a donkey, the ship.",
+  "Seven short pauses only; effects are 8 and brief. No effect on the impact frame.",
+  "Three new sets plus the raft make four major new assets; all four are reusable, and the cove and tunnel reuse SIND-01 and SIND-02 code.",
+  "plancheck notes baghdadQuay, openSea and dhow as neither Library nor new: they are SIND-01 story drawings to be copied."
+ ]
+}

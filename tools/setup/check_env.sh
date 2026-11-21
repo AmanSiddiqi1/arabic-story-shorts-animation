@@ -20,7 +20,7 @@ M="$(python3 Library/media.py)"
 if python3 -c "import sys;sys.path.insert(0,'Library');import media;sys.exit(0 if media.is_local() else 1)"; then ok "media: local folders" "$M"
   [ -d MP4s ] && [ -w MP4s ] && ok "MP4s/ writable" "finished films" || no "MP4s/ writable" "$REPO/MP4s" "mkdir MP4s"
 elif [ -d "$M" ] && [ -r "$M" ]; then ok "shared media folder readable" "$M"
-  t="$M/scratch/.write-test-$USER-$$"; (echo x > "$t" && rm "$t") 2>/dev/null && ok "shared media folder writable" "scratch/" || no "shared media writable" "$M" "ask the owner to grant this account access (DEVELOPMENT_SETUP.md, 'Shared media')"
+  t="$M/.write-test-$USER-$$"; (echo x > "$t" && rm "$t") 2>/dev/null && ok "shared media folder writable" "Renders/, Final MP4s/, Working files/" || no "shared media writable" "$M" "ask the owner to grant this account access (DEVELOPMENT_SETUP.md, 'Shared media')"
 else no "media folder" "$M" "remove .media-root / unset ARABIC_STORY_MEDIA for local mode, or fix the path; see DEVELOPMENT_SETUP.md"; fi
 for s in Animations/*/story.json; do d="$(dirname "$s")"; [ -f "$d/build.py" ] || continue
   n="$(cd "$d" && python3 -c "import json,sys,pathlib;sys.path.insert(0,'../../Library');import media;print(media.resolve(pathlib.Path('.').resolve()/json.load(open('story.json')).get('narration','narration.mp3')))")"

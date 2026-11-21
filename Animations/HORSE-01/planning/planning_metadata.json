@@ -1,0 +1,84 @@
+{
+ "story_id": "HORSE-01",
+ "title": "The Flying Wooden Horse",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-21T15:45:45",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-aeb16b9587b61922d.jsonl",
+ "agent_id": "aeb16b9587b61922d",
+ "model_messages": {
+  "claude-fable-5-2": 26
+ },
+ "script": {
+  "source": "Spreadsheets/Script_Updated.xlsx",
+  "sha256": "3374c7eeac41015114cc3188ef4032e624711fb771fbcb62d1804ae2edb6cf9f",
+  "paragraphs": 8,
+  "segments": [
+   "HORSE-01-P01-S01",
+   "HORSE-01-P01-S02",
+   "HORSE-01-P01-S03",
+   "HORSE-01-P01-S04",
+   "HORSE-01-P01-S05",
+   "HORSE-01-P01-S06",
+   "HORSE-01-P01-S07",
+   "HORSE-01-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/HORSE-01_The_Flying_Wooden_Horse_slowed.mp3",
+  "sha256": "b13d993808ce3aa6ce95fd96d4b8880d8f72d736974b20bd231ca2404045cb1a",
+  "duration": 134.154
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/HORSE-01_The_Flying_Wooden_Horse_slowed.mp3.words.json",
+  "sha256": "49bcdc2b038478216f48c0e3ef9193dca3eed2836fe71cc27401d99c20ee5339",
+  "manifest_status": "supplied",
+  "script_match": 1.0
+ },
+ "library_rev": "70d18d3",
+ "scenes": 15,
+ "actions": 154,
+ "new_assets": [
+  {
+   "type": "character",
+   "name": "ebonyHorse",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "palaceGarden",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "skyFlight",
+   "effort": "L"
+  },
+  {
+   "type": "motion",
+   "name": "flyRig",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "platformCart",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "handInsert",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "style variant of HORSE-01 (cel-anime-80s); script from Google Sheet \"Sinbad Arabian Nights and Ebony Horse\" (Drive: ChatGPT Projects/Arabic Stories), tab All Scripts, rows 74-81, read 2026-11-21",
+ "validation_warnings": [],
+ "plan_warnings": [
+  "The Library person is front-facing; a seated rider reaching forward to the horse's ear is at the limit of the arm. Test the reach at 114 to 117 and 129.8 to 131.4 early; the inserts carry the beat if the medium shot cannot.",
+  "The horse must not read as the Library black horse: keep the straight carousel legs, block mane, brass discs and the pupil-less brass eye, and never animate the legs.",
+  "Zoom 0.62 needs the tall sky plate (to y -820); without it the camera clamp will stop at zoom 1.",
+  "Sunset must stay multi-coloured (blue-violet above, coral and gold below) with the cast in their own colours; a rim light only, no tint.",
+  "The narration has only seven short pauses (0.8 to 1.2 s), so effects are few; the launch at 71.65 is silent apart from the riser before it.",
+  "Episodes 2 to 5 depend on ebonyHorse, skyFlight, flyRig and the colours fixed here; keep them in story files named for sharing (horse_kit.js, horse_sets.js, horse_cast.js) so later episodes copy them unchanged."
+ ]
+}
