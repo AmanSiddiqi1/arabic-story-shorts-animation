@@ -8115,6 +8115,27 @@
 "msg": "fix agent a859132209d477342",
 "story_id": "ALI-01-ANIME",
 "t": "2026-11-21T06:22:15"
+},
+{
+"id": 1151,
+"kind": "cloud-render",
+"msg": "v3: PASS run 44833226584 commit 9b9a35cdce",
+"story_id": "ALI-01-ANIME",
+"t": "2026-11-21T07:33:49"
+},
+{
+"id": 1152,
+"kind": "done",
+"msg": "fix v3 Animations/ALI-01-ANIME/renders/ALI-01-ANIME_v3.mp4 (claude-opus-5-5)",
+"story_id": "ALI-01-ANIME",
+"t": "2026-11-21T07:33:58"
+},
+{
+"id": 1153,
+"kind": "finalized",
+"msg": "v3 -> MP4s/Open Sesame - 80s Cel Anime 9x16 - Cairo.mp4",
+"story_id": "ALI-01-ANIME",
+"t": "2026-11-21T07:34:21"
 }
 ],
 "plans": [
@@ -10631,6 +10652,16 @@
 "status": "PASS",
 "story_id": "ALI-01-POPUP",
 "version": "v2"
+},
+{
+"created": "2026-11-21T07:33:49",
+"duration": 142.933,
+"path": "Animations/ALI-01-ANIME/renders/ALI-01-ANIME_v3.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 142.933}, \"end_hold\": 4.0, \"decode\": \"OK\", \"lufs\": -15.0, \"sync\": {\"lag_ms\": 0, \"corr\": 0.996}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-20T23:09:43\", \"cloud_run\": \"44833226584\", \"cloud_commit\": \"9b9a35cdce8f7bc5fd8c40433117e3326f467c18\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "ALI-01-ANIME",
+"version": "v3"
 }
 ],
 "reviews": [
@@ -14522,7 +14553,7 @@
 "words_status": "supplied"
 },
 {
-"approval": "none",
+"approval": "pending",
 "assembly_file": null,
 "collection": "Ali Baba",
 "completed_before": 0,
@@ -14541,7 +14572,7 @@
 "segments": "[\"ALI-01-P01-S01\", \"ALI-01-P01-S02\", \"ALI-01-P01-S03\", \"ALI-01-P01-S04\", \"ALI-01-P01-S05\", \"ALI-01-P01-S06\", \"ALI-01-P01-S07\", \"ALI-01-P01-S08\"]",
 "title_ar": "افتح يا سمسم",
 "title_en": "Open Sesame",
-"updated": "2026-11-21T02:21:08",
+"updated": "2026-11-21T07:34:21",
 "words_file": "ALI-01_Open_Sesame_slowed.mp3.words.json",
 "words_sha": "049afad2993d1976a175384e3f241825eaef6f44cc2494e8565e10013d4aac3d",
 "words_status": "supplied"
@@ -19059,15 +19090,15 @@
 {
 "agent_id": "a859132209d477342",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-21T07:33:58",
 "id": 323,
 "model": "opus",
-"notes": null,
-"outputs": null,
+"notes": "tokens {\"turns\": 78, \"input_tokens\": 158, \"cache_creation_input_tokens\": 212765, \"cache_read_input_tokens\": 11104826, \"output_tokens\": 63861}",
+"outputs": "v3 Animations/ALI-01-ANIME/renders/ALI-01-ANIME_v3.mp4",
 "pid": null,
 "stage": "fix",
 "started": "2026-11-21T06:22:04",
-"status": "running",
+"status": "done",
 "story_id": "ALI-01-ANIME"
 }
 ],

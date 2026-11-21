@@ -9,11 +9,14 @@ const AB_PANEL = [54, 54, 972, 1196];     // story panel on the 1080 x 1920 canv
 const AB_GR = 900;                        // ground line in every world
 
 // ---------- colour models (色指定): a tint multiplied into the cel colours, per time of day / light ----------
+// v4 (owner restage): no single-hue tint over the cels. Every model keeps its tint name (rims, glows and the doorway silhouette
+// still use them) but k is 0, so characters, horses and props keep their own varied colours in every scene; the time of day is
+// carried by the painted backgrounds and the light (rims, glows), never by a wash over the cast. Only 'sil' (backlit) still darkens.
 const AB_MODEL = {
-  dawn: { tint: '#ffcfb0', k: 0.22 }, morning: { tint: '#fff2cc', k: 0.08 }, afternoon: { tint: '#ffd49a', k: 0.22 },
-  dusk: { tint: '#b48ae0', k: 0.42 }, late: { tint: '#7a6ac8', k: 0.55 }, cave: { tint: '#ffc66a', k: 0.28 },
-  night: { tint: '#6474c8', k: 0.5 }, lamp: { tint: '#ffc890', k: 0.26 }, predawn: { tint: '#9ab8d8', k: 0.4 },
-  gold: { tint: '#ffd27a', k: 0.38 }, sil: { tint: '#2b1a3a', k: 0.9 },
+  dawn: { tint: '#ffcfb0', k: 0 }, morning: { tint: '#fff2cc', k: 0 }, afternoon: { tint: '#ffd49a', k: 0 },
+  dusk: { tint: '#b48ae0', k: 0 }, late: { tint: '#7a6ac8', k: 0 }, cave: { tint: '#ffc66a', k: 0 },
+  night: { tint: '#6474c8', k: 0 }, lamp: { tint: '#ffc890', k: 0 }, predawn: { tint: '#9ab8d8', k: 0 },
+  gold: { tint: '#ffd27a', k: 0 }, sil: { tint: '#2b1a3a', k: 0.9 },
 };
 const abHex = (r, g, b) => '#' + [r, g, b].map((v) => Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, '0')).join('');
 // multiply a colour toward tint*colour by k (k 0 = unchanged)
@@ -70,17 +73,17 @@ function abCel(ctx, bb, draw, o = {}) {
   } finally { AB_DEPTH--; }
 }
 // the cast finish per colour model: light direction, hard shade tone (multiplied), line colour, optional rim
+// v4: the cast finish keeps only the light direction (for rims a scene asks for); the dark multiplied shade pass and the line
+// lightening pass are gone (owner note 5: limbs merged into dark robes and horse legs into dark masses). The Library cast already
+// draws its own flat cel shade tones in this style.
 const AB_FIN = {
-  dawn: { light: [1, -0.5], shade: '#c4a2c8', line: '#5a3448' }, morning: { light: [1, -0.8], shade: '#bcb2de', line: '#47395c' },
-  afternoon: { light: [-1, -0.6], shade: '#caa2bc', line: '#583448' }, dusk: { light: [-1, -0.2], shade: '#a486c8', line: '#3e2858', rim: '#ffa070' },
-  late: { light: [-1, -0.2], shade: '#9a86c8', line: '#342650' }, cave: { light: [1, -0.3], shade: '#b88ac8', line: '#4a2a3a' },
-  lamp: { light: [1, -0.3], shade: '#9c8ad8', line: '#4a2a44', rim: '#ffb860' }, night: { light: [1, -0.3], shade: '#8a7ac8', line: '#30284e' },
-  predawn: { light: [1, -0.4], shade: '#9a9ad0', line: '#2e2e52' }, gold: { light: [1, -0.2], shade: '#c890a8', line: '#5a2a2a' }, sil: {},
+  dawn: { light: [1, -0.5] }, morning: { light: [1, -0.8] }, afternoon: { light: [-1, -0.6] }, dusk: { light: [-1, -0.2] }, late: { light: [-1, -0.2] },
+  cave: { light: [1, -0.3] }, lamp: { light: [1, -0.3] }, night: { light: [1, -0.3] }, predawn: { light: [1, -0.4] }, gold: { light: [1, -0.2] }, sil: {},
 };
 // abCast(ctx, P, w, h, draw, m, o): a person-sized cel through the story finish (the palette already carries the model tint)
 // people only (v3, Fable review 2 note 3): in the night, lamp and cave models the hard shade is a narrow shape (shadeD) so skin keeps
 // its own colour on the lit two thirds of the face; in the cave the shade is warm amber (the violet stays the 4 px rim)
-const AB_PSHADE = { lamp: { shadeD: 6 }, night: { shadeD: 6 }, cave: { shade: '#d8a27c', shadeD: 5 } };
+const AB_PSHADE = {};
 function abCast(ctx, P, w, h, draw, m, o = {}) { const s = P.s || 1, F = AB_FIN[m] || {}; abCel(ctx, [P.x, P.y + 10 * s, w * s, h * s], draw, { k: 0, ...F, ...(AB_PSHADE[m] || {}), rim: null, ...o }); }
 
 // ---------- timing helpers ----------
@@ -140,8 +143,8 @@ const abLight = (c, k = 0.4) => abHex(...K.hex(c).map((v) => v + (255 - v) * k))
 // Closed and uncracked it is ONE painted mass (airbrushed top light, darker base, soft asymmetric weathering, moss patches, a warm
 // sunset rim in the dusk models): no seam line, so the split is a real reveal. Split, the same painting is clipped into two halves.
 const AB_ROCK_COL = {   // fill, shade, top light, contact shadow, rim (dusk side)
-  afternoon: ['#c49a74', '#7e5a6c', '#f6d4a4', '#6a4a5a', null], dusk: ['#8a5a8a', '#46305e', '#e89aa0', '#2a1a40', '#ff9a5a'],
-  late: ['#5a4878', '#2c2148', '#9c7ad8', '#1a1230', '#d87a6a'], predawn: ['#4a4a72', '#24243e', '#9ab4d8', '#141a36', '#ffc8a0'],
+  afternoon: ['#c49a74', '#7e5a6c', '#f6d4a4', '#6a4a5a', null], dusk: ['#b8847e', '#7a5468', '#ffc0a0', '#4a2e48', '#ffb070'],
+  late: ['#7a6488', '#463a5e', '#c89ac0', '#241a36', '#f09070'], predawn: ['#4a4a72', '#24243e', '#9ab4d8', '#141a36', '#ffc8a0'],
   sil: ['#241830', '#160e20', '#3a2a4a', '#0e0814', null],
 };
 const AB_ROCK_L = [[0, -650], [-130, -632], [-230, -560], [-292, -430], [-322, -260], [-330, -110], [-318, 4], [0, 4]];

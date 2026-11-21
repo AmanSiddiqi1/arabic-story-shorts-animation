@@ -34,3 +34,9 @@ Plan checked against inputs: MP3 and words.json SHA-256 match planning_metadata.
 - EMPTY SACKS tag sits under the ribbons (above the road), not above them: above the ribbons is where the word stack sits.
 - Skin: both puppets and close-up heads use the Library skin (C.skin) in every colour model; only the shade crescent takes the model (people in lamp/night use shadeD 6, cave shadeD 5 with a warm amber shade, violet stays the 4 px rim). The close-up heads use the local `abCS` (see library_proposals.md 15).
 - 64.06 call: rideOn's arm length cannot put the hand above the keffiyeh, so the hand is thrown up-forward to brow height clear of the head, with a 7% stretch of the figure into the throw.
+
+## v4 owner restage decisions (see review/revision_3.md)
+- Base v3; colour-model wash off (AB_MODEL k 0 except 'sil'); AB_FIN shade/line passes dropped.
+- Horse coats from the story table AB_HORSE_PAL drawn with `equine(ctx, P, AB_HORSE_B)` (a copy of EQUINE.horse with this palette); riders via `rideOn(c, abHorseDraw, H, PP, { name: 'horse' })`.
+- Speech is English balloons (abSay). The Arabic film title line stays under the chrome title (not speech).
+- The forest wide track has no foreground trunk (S5's trunk is unchanged at its old zoom).

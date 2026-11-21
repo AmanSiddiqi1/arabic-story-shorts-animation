@@ -3,7 +3,9 @@ const AB_SHOTS = [];
 
 // ---------- S1 0-7.78: dawn crane down to the cottage yard; title; family; axe; empty purse ----------
 // painted yard (no Library set): dawn ground plate, a flat-roofed mud-brick cottage as hard cels, a celShade tree with dark-green lines
-const AB_S1_CAM = [[0, { x: 500, y: 300, zoom: 2.0 }], [2.6, { x: 500, y: 300, zoom: 2.0 }], [4.6, { x: 505, y: 718, zoom: 1.9 }], [6.2, { x: 490, y: 722, zoom: 1.95 }], [6.62, { x: 440, y: 770, zoom: 2.4 }], [7.78, { x: 436, y: 772, zoom: 2.45 }]];
+// v4 (owner note 1): a WIDE village at dawn (the whole yard, the cottage, the neighbours' houses, the rising sun), then a short push
+// in for the empty purse only
+const AB_S1_CAM = [[0, { x: 500, y: 330, zoom: 1.45 }], [2.3, { x: 500, y: 330, zoom: 1.45 }], [4.2, { x: 500, y: 690, zoom: 1.18 }], [6.2, { x: 492, y: 700, zoom: 1.22 }], [6.62, { x: 450, y: 740, zoom: 1.75 }], [7.78, { x: 446, y: 742, zoom: 1.8 }]];
 const AB_S1_ALI_TIP = [[3.72, 0], [4.05, -0.05], [4.4, 0.04], [4.72, 0], [4.95, 0.12], [5.25, 0.02], [5.7, -0.04], [6.0, 0]];
 const AB_S1_WIFE = (t) => kfn(t, [[1.94, 830], [3.4, 620]], 'out');
 const AB_S1_KID = (t) => kfn(t, [[2.1, 830], [3.5, 540]], 'out');
@@ -12,10 +14,28 @@ function abYardPlate() {
   return abBakeAt('yard:dawn', 1000, 1230, (c, w) => {
     abGrad(c, 0, 860, w, 370, [[0, '#d89a7a'], [0.25, '#b07a72'], [1, '#5a3e5a']]);
     c.save(); c.filter = 'blur(4px)'; c.fillStyle = 'rgba(255,214,170,0.55)'; c.beginPath(); c.ellipse(520, 935, 470, 40, 0, 0, 7); c.fill(); c.restore();
+    abDress(c, 0, 1000, 920, 1200, 13, { stones: 14, tufts: 16, flowers: 9, skip: [[150, 290], [380, 700]], stone: ['#e0b8a0', '#a8787a'], grass: ['#7ab85a', '#3f7a44'] });
     const R = K.rng(12); c.save(); c.filter = 'blur(1.2px)'; for (let i = 0; i < 90; i++) { c.fillStyle = K.rgba('#5a3e5a', 0.35); c.beginPath(); c.ellipse(R() * w, 900 + R() * 320, 6 + R() * 22, 2 + R() * 5, 0, 0, 7); c.fill(); } c.restore();
     c.save(); c.filter = 'blur(10px)'; c.fillStyle = 'rgba(70,40,80,0.35)'; c.beginPath(); c.ellipse(900, 910, 200, 26, 0, 0, 7); c.fill(); c.beginPath(); c.ellipse(140, 906, 170, 22, 0, 0, 7); c.fill(); c.restore();
   });
 }
+// the neighbours: a row of flat-roofed mud-brick houses in varied washes (blue doors, shutters, a dome, a palm, a lit window),
+// baked once; drawn behind the yard at a slower parallax
+function abVillage() {
+  return abBakeAt('village:dawn', 1400, 1230, (c) => { const R = K.rng(27), walls = ['#f3d2a8', '#e8a888', '#f6e6c8', '#d89a7a', '#f0c27a', '#c8b0d8', '#f2b8a0'];
+    palmTree(c, 1010, 870, { s: 0.6, lean: -16 }); palmTree(c, 150, 872, { s: 0.5, lean: 14 });
+    let x = -40; for (let i = 0; i < 11; i++) { const w = 120 + R() * 90, h = 120 + R() * 110, col = walls[i % walls.length], base = 872, top = base - h;
+      celShade(c, [[x, base], [x, top], [x + w, top], [x + w, base]], col, abMul(col, '#8a6a9a', 0.35), { light: [1, -0.5], off: 18, lw: 3, line: abDark(col, 0.55) });
+      celShade(c, [[x - 6, top + 10], [x - 6, top - 6], [x + w + 6, top - 6], [x + w + 6, top + 10]], abMul(col, '#c88a72', 0.3), abMul(col, '#8a5a62', 0.4), { light: [1, -0.5], off: 5, lw: 2.5, line: abDark(col, 0.55) });
+      if (i === 4) { celShade(c, ell(x + w / 2, top - 4, w * 0.36, w * 0.4, 30).filter((q) => q[1] <= top - 4), '#f6efe0', '#c8b8a8', { light: [1, -0.5], off: 12, lw: 3 }); seg(c, x + w / 2, top - w * 0.4 - 4, x + w / 2, top - w * 0.4 - 34, 4, '#e0b038', 1); }
+      const dx = x + w * (0.2 + R() * 0.4); celShade(c, K.rectPts(dx, base - 64, 34, 64), R() < 0.5 ? '#3a6ad0' : '#2f9a8e', '#24407a', { light: [1, -0.5], off: 6, lw: 2.5 });
+      for (let k = 0; k < 2; k++) { const wx = x + w * (0.55 + k * 0.22) - 10, wy = top + 26 + R() * 20; if (wx + 22 > x + w - 6) continue; const lit = (i + k) % 4 === 1;
+        c.fillStyle = lit ? '#ffd98a' : '#3a2f5a'; c.fillRect(wx, wy, 22, 26); if (lit) abGlaze(c, wx + 11, wy + 13, 40, '#ffcf6a', 0.5); c.strokeStyle = abDark(col, 0.5); c.lineWidth = 2.5; c.strokeRect(wx, wy, 22, 26); }
+      if (R() < 0.4) { seg(c, x + w - 20, top - 6, x + w - 20, top - 40, 6, '#8a5a3a', 1); }
+      x += w + 14 + R() * 40; }
+    for (const [x0, x1, y] of [[260, 470, 760], [820, 990, 744]]) { c.strokeStyle = '#6a4a4a'; c.lineWidth = 2; c.beginPath(); c.moveTo(x0, y); c.quadraticCurveTo((x0 + x1) / 2, y + 26, x1, y); c.stroke();
+      ['#e8364f', '#3f7ad0', '#ffd36a', '#fff6ea', '#2f9a8e'].forEach((col, k) => { const u = (k + 1) / 6, px = K.lerp(x0, x1, u), py = y + 26 * 4 * u * (1 - u) * 0.5 + 4; celShade(c, K.rectPts(px - 12, py, 24, 30 + (k % 2) * 8), col, abDark(col, 0.3), { light: [1, -0.5], off: 5, lw: 2 }); }); }
+  }); }
 function abCottage(ctx, door, t) {
   const L = [1, -0.5], wall = '#e0a888', wallS = '#a8707a', D = AB_DOOR;
   celShade(ctx, [[726, 902], [726, 600], [1060, 600], [1060, 902]], wall, wallS, { light: L, off: 46, lw: 4, line: '#6a3a4a' });
@@ -35,7 +55,11 @@ function abS1World(ctx, t, cam) {
   const tc = AB_T2(t), m = 'dawn';
   // plates with parallax (sky 0.3, far town 0.6, yard 1)
   ctx.save(); ctx.translate((cam.x - 500) * 0.7, (cam.y - 700) * 0.7); ctx.drawImage(abDawnSky(), -100, -150, 1200, 1476); ctx.restore();
+  ctx.save(); ctx.translate((cam.x - 500) * 0.7, (cam.y - 700) * 0.7); abSun(ctx, 640, 600 - 90 * K.ease.out(K.clamp(t / 7.78)), 66, '#ffd25a', '#ff9a6a'); ctx.restore();
   ctx.save(); ctx.translate((cam.x - 500) * 0.4 - 200, (cam.y - 700) * 0.4 - 40); ctx.drawImage(abTownRoofs('dawn'), 0, 0); ctx.restore();
+  ctx.save(); ctx.translate((cam.x - 500) * 0.15 - 200, (cam.y - 700) * 0.1); ctx.drawImage(abVillage(), 0, 0); ctx.restore();
+  if (t > 0.4) abFlock(ctx, t - 0.4, -80, 300, 150, 4, 3, 0.45);
+  if (t > 3.0) abFlock(ctx, t - 3.0, 1080, 420, -120, 3, 8, 0.4);
   ctx.drawImage(abYardPlate(), 0, 0);
   // the tree the donkey is tied to (celShade trunk, leaf clusters with dark-green lines), and the cottage
   celShade(ctx, [[96, 904], [104, 640], [92, 520], [128, 520], [140, 640], [150, 904]], '#8a5a4a', '#5a3440', { light: [1, -0.5], off: 18, lw: 3.5, line: '#3a2030' });
@@ -43,6 +67,9 @@ function abS1World(ctx, t, cam) {
   const door = K.clamp((t - 1.8) / 0.3);
   abCottage(ctx, door, t);
   if (t > 1.9 && t < 2.6) { ctx.save(); ctx.beginPath(); ctx.rect(AB_DOOR.x0, AB_DOOR.top, AB_DOOR.x1 - AB_DOOR.x0, 902 - AB_DOOR.top); ctx.clip(); abWife(ctx, { x: AB_S1_WIFE(t), y: 900, dir: -1, ...walk(AB_S1_WIFE, tc), gaze: [-1, 0] }, m); ctx.restore(); }
+  // yard props: water jars, a firewood pile, a bench, chickens' grain basket
+  for (const [x, h, col] of [[640, 70, '#c8603a'], [676, 52, '#e88a4a']]) celShade(ctx, [[x - 16, 902], [x - 26, 902 - h * 0.55], [x - 12, 902 - h], [x + 12, 902 - h], [x + 26, 902 - h * 0.55], [x + 16, 902]], col, abDark(col, 0.3), { light: [1, -0.5], off: 8, hi: abLight(col, 0.4), lw: 3 });
+  for (let k = 0; k < 5; k++) { const y = 900 - (k < 3 ? 0 : 22) - 2; seg(ctx, 20 + (k % 3) * 34 + (k > 2 ? 17 : 0) - 28, y - 10, 20 + (k % 3) * 34 + (k > 2 ? 17 : 0) + 28, y - 10, 20, k % 2 ? '#a8743e' : '#bd8a4e', 2.5); }
   // the chopping stump and the axe leaning on it (until he takes it)
   celShade(ctx, [[300, 902], [302, 846], [390, 846], [392, 902]], '#9a6a3e', '#6a4024', { light: [1, -1], off: 10, lw: 3.5 }); shape(ctx, ell(346, 846, 46, 10, 18), '#e8c890', { lw: 3 });
   const grab = 5.2, axeOn = t < grab;
@@ -95,7 +122,7 @@ const AB_S2_TUG = (t) => 34 * K.smooth(9.9, 10.15, t) - 34 * K.smooth(10.5, 11.1
 const AB_S2_A = (t) => 360 + 118 * (t - 7.78) - AB_S2_TUG(t);                              // Ali Baba
 const AB_S2_LAG = (t) => 118 * K.clamp(t - 9.38, 0, 1.15) * (1 - K.smooth(10.6, 11.5, t));    // the donkey stops at the fern, then trots to catch up
 const AB_S2_D = (t) => AB_S2_A(t) + AB_S2_TUG(t) - 190 - AB_S2_LAG(t);
-function abS2TrackCam(t) { return { x: AB_S2_A(t) - 60, y: 697, zoom: 1.7 }; }
+function abS2TrackCam(t) { return { x: AB_S2_A(t) + 10, y: 690, zoom: 1.2 }; }   // v4: wide establishing track (owner note 1)
 function abS2Track(ctx, t, cam) {
   const tc = AB_T2(t), m = 'morning';
   const D = { y: 900, s: 0.74, dir: 1, ...walk(AB_S2_D, tc, { stride: GAIT.donkey * 0.74 }), lid: abLid(t, 22), tailSwish: osc(tc, 1.9) };
@@ -110,6 +137,7 @@ function abS2Track(ctx, t, cam) {
   ctx.save(); ctx.strokeStyle = '#c8a070'; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(...ropeB); ctx.quadraticCurveTo((ropeA[0] + ropeB[0]) / 2, Math.max(ropeA[1], ropeB[1]) + 40 * (1 - taut), ...ropeA); ctx.stroke(); ctx.restore();
   abDonkey(ctx, D, m);
   abAli(ctx, AP, m); const h = abHand(AP, 1); abAxe(ctx, h[0], h[1], -2.5);
+  if (t < 11.96) abFlock(ctx, t - 7.78, AB_S2_A(7.78) - 600, 300, 210, 4, 5, 0.42);
   if (t > 10.96 && t < 11.95) bird(ctx, { kind: 'sparrow', x: AB_S2_A(t) + 520 - (t - 10.96) * 900, y: 420 + 40 * Math.sin(t * 6), s: 0.8, dir: -1, fly: true, flap: Math.sin(AB_T2(t) * 30) });
 }
 const AB_S2_BLOWS = [12.3, 12.86, 13.3];
@@ -142,11 +170,11 @@ function abS2Chop(ctx, t, cam) {
   // a leaf falls in the pause
   if (t > 15.2) { const u = (t - 15.2) / 1.25; ctx.save(); ctx.translate(560 + 40 * Math.sin(u * 7), 560 + u * 300); ctx.rotate(Math.sin(u * 9)); abBlob(ctx, 0, 0, 14, 7, '#7ad08a', '#3e9a6a', { lw: 2.5, off: 4 }); ctx.restore(); }
 }
-function abS2Cam(t) { if (t < 11.96) return abS2TrackCam(t); return t < 14.4 ? { x: 540, y: 715, zoom: 1.85 } : K.camAt([[14.4, { x: 540, y: 715, zoom: 1.85 }], [15.2, { x: 480, y: 705, zoom: 1.6 }]], t); }
+function abS2Cam(t) { if (t < 11.96) return abS2TrackCam(t); return t < 14.4 ? { x: 520, y: 700, zoom: 1.45 } : K.camAt([[14.4, { x: 520, y: 700, zoom: 1.45 }], [15.2, { x: 480, y: 690, zoom: 1.3 }]], t); }
 AB_SHOTS.push({ a: 7.78, b: 16.45, ww: 1e5, cam: abS2Cam,
   under: (ctx, t, cam) => abForest(ctx, t < 11.96 ? cam : { ...cam, x: 3200 + (cam.x - 560) }, t, 'morning'),
   world: (ctx, t, cam) => { if (t < 11.96) abS2Track(ctx, t, cam); else abS2Chop(ctx, t, cam); },
-  over: (ctx, t, cam) => { if (t < 11.96) abForestFront(ctx, cam, 'morning', { ph: -374, dir: -1 }); } });
+  over: () => {} });   // v4: no foreground trunk in the wide track (at zoom 1.2 any crossing lands on Ali Baba or the donkey)
 
 // ---------- the glade (S3, S4, S10): back plate + cels ----------
 function abGladeUnder(m) { return (ctx, t, cam) => { ctx.save(); K.camera(ctx, 1000, 1230, cam); ctx.drawImage(abGladePlate(m), 0, 0); ctx.restore(); }; }
@@ -197,7 +225,7 @@ function abS3Riders(ctx, t, cam) {
   const tc = AB_T2(t), m = 'afternoon';
   abSilRow(ctx, 200 + (t - 23.81) * 900, 880, t, 0.42, 1, 0.9);
   abDust(ctx, 300 + (t - 23.81) * 700, 900, 900, 160, t, 0.6);
-  [[0, 520, 0.82, 2], [1, 160, 0.78, 1], [2, -200, 0.84, 2]].forEach(([i, x0, s, pal]) => { const xf = (u) => x0 + (u - 23.81) * 980;
+  [[0, 520, 0.82, 3], [1, 160, 0.78, 0], [2, -200, 0.84, 1]].forEach(([i, x0, s, pal]) => { const xf = (u) => x0 + (u - 23.81) * 980;
     const H = { y: 905, s, dir: 1, pal, ...walk(xf, tc, { stride: GAIT.horse * s }), gallop: 1, earL: -0.3, earR: -0.2, tailUp: 0.6 };
     const bob = 6 * Math.sin((H.ph || 0) * 2 + i); abRider(ctx, i, H, { lurch: 0.15 * Math.sin((H.ph || 0) * 2), gaze: [1, 0], tip: 0.1 }, m, { cloak: 1, t, sacks: true, sackBob: bob, coin: i === 0 }); });
 }
@@ -252,7 +280,7 @@ function abS4World(ctx, t, cam) {
     ctx.globalCompositeOperation = 'multiply'; ctx.fillStyle = 'rgba(40,30,80,0.4)'; ctx.fillRect(gx - gw, gy - gh, gw * 2, gh * 2); ctx.restore(); }
   // the blank rock, first seen at the end of the pan; the riders' dust and a horse's nose at the left edge
   abRock(ctx, 1820, 900, { model: 'afternoon' });
-  if (t > 33.3) { abDust(ctx, 640 + (t - 33.3) * 200, 900, 380, 150, t, K.clamp((t - 33.3) / 0.5)); const H = { x: 560 + (t - 33.4) * 220, y: 905, s: 0.8, dir: 1, pal: 2, ph: AB_T2(t) * 9, amp: 1, gallop: 1, earL: -0.2 }; if (t > 33.4) abHorse(ctx, H, m); }
+  if (t > 33.3) { abDust(ctx, 640 + (t - 33.3) * 200, 900, 380, 150, t, K.clamp((t - 33.3) / 0.5)); const H = { x: 560 + (t - 33.4) * 220, y: 905, s: 0.8, dir: 1, pal: 3, ph: AB_T2(t) * 9, amp: 1, gallop: 1, earL: -0.2 }; if (t > 33.4) abHorse(ctx, H, m); }
 }
 // 30.73-31.25 insert: in the thicket one donkey eye opens in a leaf gap, blinks once, looks the same way; an ear tip twitches above
 function abS4Eye(ctx, t, cam) {

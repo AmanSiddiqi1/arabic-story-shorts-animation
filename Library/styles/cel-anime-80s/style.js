@@ -24,10 +24,12 @@
     fonts: [], palette: { bg: P.screen, ink: P.line, accent: P.pink, cyan: P.cyan, gold: P.gold },
     sfx: { draw: null, land: 'blip', emphasis: 'stamp', transition: 'glitch', bed: 'tape' },
 
-    // the CRT housing around the picture (dark plastic, a faint sheen)
+    // the TV housing around the picture: light cream 80s plastic by default (owner, 2026-11-21); o.dark: the charcoal set
     background(ctx, W, H, t, o = {}) {
-      const bg = K.cached(`cel-house:${W}x${H}`, () => { const c = K.layer(W, H), x = c.getContext('2d'); const g = x.createLinearGradient(0, 0, W, H); g.addColorStop(0, '#2a2133'); g.addColorStop(0.5, P.house); g.addColorStop(1, '#0b080f'); x.fillStyle = g; x.fillRect(0, 0, W, H);
-        const r = K.rng(4); for (let i = 0; i < 1600; i++) { x.fillStyle = `rgba(255,255,255,${r() * 0.025})`; x.fillRect(r() * W, r() * H, 2, 2); } return c; });
+      const bg = K.cached(`cel-house:${W}x${H}:${o.dark ? 1 : 0}`, () => { const c = K.layer(W, H), x = c.getContext('2d'); const g = x.createLinearGradient(0, 0, W, H);
+        if (o.dark) { g.addColorStop(0, '#2a2133'); g.addColorStop(0.5, P.house); g.addColorStop(1, '#0b080f'); } else { g.addColorStop(0, '#f3ead8'); g.addColorStop(0.55, '#e6dbc4'); g.addColorStop(1, '#cfc1a4'); }
+        x.fillStyle = g; x.fillRect(0, 0, W, H);
+        const r = K.rng(4); for (let i = 0; i < 1600; i++) { x.fillStyle = o.dark ? `rgba(255,255,255,${r() * 0.025})` : `rgba(90,70,40,${r() * 0.05})`; x.fillRect(r() * W, r() * H, 2, 2); } return c; });
       ctx.drawImage(bg, 0, 0, W, H);
     },
 
@@ -37,9 +39,9 @@
       const s = sOf(ctx), k = (o.screen || o.tape) ? 1 : K.ease.out(K.clamp(p * 1.5)); if (k <= 0) return;
       ctx.save(); ctx.translate(x + w / 2, y + h / 2); ctx.scale(k, k); ctx.translate(-(x + w / 2), -(y + h / 2));
       if (o.screen || o.tape) {
-        const m = 14 * s; rr(ctx, x - m, y - m, w + 2 * m, h + 2 * m, 34 * s); ctx.fillStyle = '#050307'; ctx.fill();
+        const m = (o.tape ? 10 : 14) * s; rr(ctx, x - m, y - m, w + 2 * m, h + 2 * m, 34 * s); ctx.fillStyle = o.tape ? '#b9a98a' : '#2a2230'; ctx.fill();
         const g = ctx.createLinearGradient(x, y - m, x, y + h + m); g.addColorStop(0, 'rgba(255,255,255,0.10)'); g.addColorStop(0.1, 'rgba(255,255,255,0)'); ctx.strokeStyle = g; ctx.lineWidth = 3 * s; ctx.stroke();
-        rr(ctx, x, y, w, h, 26 * s); ctx.fillStyle = o.tape ? '#0e0b16' : (o.fill || P.screen); ctx.fill();
+        rr(ctx, x, y, w, h, 26 * s); ctx.fillStyle = o.tape ? (o.fill || '#fbf3e2') : (o.fill || P.screen); ctx.fill();
       } else {
         ctx.fillStyle = o.fill || P.cream; ctx.fillRect(x, y, w, h); ctx.strokeStyle = o.line || P.line; ctx.lineWidth = (o.lw ? o.lw * 0.4 : 3) * s; ctx.strokeRect(x, y, w, h);
       }
@@ -53,14 +55,14 @@
       qx.globalCompositeOperation = 'copy'; qx.drawImage(cv, 0, 0, q.width, q.height);
       q2x.globalCompositeOperation = 'copy'; q2x.filter = 'blur(5px)'; q2x.drawImage(q, 0, 0); q2x.filter = 'none';
       q2x.globalCompositeOperation = 'multiply'; q2x.fillStyle = '#ffb08a'; q2x.fillRect(0, 0, q.width, q.height);   // halation is warm
-      ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = 0.28; ctx.drawImage(q2, 0, 0, W, H); ctx.restore();
+      ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = 0.22; ctx.drawImage(q2, 0, 0, W, H); ctx.restore();
       const r = lay('red', W, H), rx = r.getContext('2d');
       rx.globalCompositeOperation = 'copy'; rx.drawImage(cv, 0, 0); rx.globalCompositeOperation = 'multiply'; rx.fillStyle = '#ff1010'; rx.fillRect(0, 0, W, H);
       ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = 0.16; ctx.drawImage(r, 3, 0); ctx.restore();
-      const sl = K.cached(`cel-scan:${W}`, () => { const c = K.layer(8, 4), x = c.getContext('2d'); x.fillStyle = 'rgba(0,0,0,0.20)'; x.fillRect(0, 3, 8, 1); x.fillStyle = 'rgba(0,0,0,0.07)'; x.fillRect(0, 0, 8, 1); return c; });
+      const sl = K.cached(`cel-scan:${W}`, () => { const c = K.layer(8, 4), x = c.getContext('2d'); x.fillStyle = 'rgba(0,0,0,0.11)'; x.fillRect(0, 3, 8, 1); x.fillStyle = 'rgba(0,0,0,0.04)'; x.fillRect(0, 0, 8, 1); return c; });
       ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.fillStyle = ctx.createPattern(sl, 'repeat'); ctx.globalCompositeOperation = 'multiply'; ctx.fillRect(0, 0, W, H); ctx.restore();
-      K.vignette(ctx, W, H, 0.32, '#000000');
-      K.grain(ctx, W, H, t, 0.045, 10, 'overlay');
+      K.vignette(ctx, W, H, 0.12, '#3a2a40');   // light presentation (owner, 2026-11-21): soft corners, no heavy darkening
+      K.grain(ctx, W, H, t, 0.035, 10, 'overlay');
     },
 
     // a backlit chrome title flickering on at 12 fps, a star glint sweeping across (o.font: 'Lalezar' for Arabic)

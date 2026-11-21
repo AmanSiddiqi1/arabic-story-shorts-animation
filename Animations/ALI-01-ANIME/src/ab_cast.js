@@ -6,12 +6,29 @@ const AB_ALI0 = { robe: '#8f8a40', dot: '#64612a', sleeve: '#8f8a40', pants: '#e
 const AB_WIFE0 = { robe: '#c86a7c', dot: '#97485a', sleeve: '#c86a7c', hc: '#f3e2c0', hd: '#d6bf96' };
 const AB_KID0 = { robe: '#f2eadc', dot: '#c6bca8', pants: '#efe2c4', hc: '#e8902a', sash: '#3f7ad0' };
 const AB_CAS0 = { robe: '#1f9a6a', dot: '#126e4a', sleeve: '#1f9a6a', sash: '#f2a71b', trim: '#f2a71b', hc: '#f2a71b', hd: '#c07a10', band: '#c8481a', jewel: '#e8364f', beard: '#2a1612' };
-const AB_LEAD0 = { robe: '#2a2032', dot: '#18121e', sleeve: '#2a2032', cape: '#a8183a', capeDot: '#6a0e22', hc: '#2c2c3c', hd: '#d8a830', beard: '#160c10', pants: '#3a2e40' };
-const AB_RIDER0 = [   // indigo, plum, rust (+ face cloths in different colours)
-  { robe: '#2e3470', dot: '#1e2250', cape: '#3a2a5a', capeDot: '#241a3e', hc: '#c8c0a8', hd: '#7a2a2a', beard: '#1a1210' },
-  { robe: '#5a2a5a', dot: '#3e1a3e', cape: '#2a2032', capeDot: '#1a1220', hc: '#3a5a8a', hd: '#202a4a', beard: '#1a1210' },
-  { robe: '#8a3a1e', dot: '#5e2410', cape: '#3a2a20', capeDot: '#241a12', hc: '#e8d2a0', hd: '#8a6a3a', beard: '#2a1a10' },
+// v4 (owner note 5): the leader and the riders in lighter, varied robes with sleeves a step lighter than the robe, so every arm
+// reads against the body; capes in their own colours (the leader's stays crimson)
+const AB_LEAD0 = { robe: '#46559a', dot: '#33407a', sleeve: '#6c80c8', cape: '#c8203f', capeDot: '#8a1228', hc: '#3a3446', hd: '#e0b038', beard: '#160c10', pants: '#2e3462' };
+const AB_RIDER0 = [   // indigo, plum, rust, green, saffron (+ face cloths in different colours)
+  { robe: '#4f5fb8', dot: '#38449a', sleeve: '#7888dc', cape: '#d8a84a', capeDot: '#a87a2a', hc: '#efe6cc', hd: '#b8343a', beard: '#1a1210' },
+  { robe: '#8e4a8e', dot: '#6a3270', sleeve: '#b46eb4', cape: '#2f9a8e', capeDot: '#1f6e66', hc: '#5a8ad0', hd: '#2a3a6a', beard: '#1a1210' },
+  { robe: '#b85a30', dot: '#8a3e1c', sleeve: '#dc8456', cape: '#6a4aa8', capeDot: '#4a3080', hc: '#f3e2b8', hd: '#8a6a3a', beard: '#2a1a10' },
+  { robe: '#3f8a4e', dot: '#2a6638', sleeve: '#66b474', cape: '#e8c070', capeDot: '#b88a3a', hc: '#fff1d8', hd: '#3a6ad0', beard: '#1a1210' },
+  { robe: '#d8962a', dot: '#a86a18', sleeve: '#f0b85a', cape: '#7a3a6a', capeDot: '#58264a', hc: '#2e4a7a', hd: '#e8d2a0', beard: '#2a1a10' },
 ];
+const AB_RN = AB_RIDER0.length;
+// horse coats (owner note 3): grey, bay, black (the leader's, lifted so the far legs and the outline read), chestnut, white, dun.
+// Drawn with the Library equine rig and this story's palette table (no Library global is changed)
+const AB_HORSE_PAL = [
+  { body: '#b8b4c4', dot: '#8e8aa2', far: '#8a86a0', mane: '#4a4658', hoof: '#3a3a4a', blaze: '#fff6ea' },
+  { body: '#a0581e', dot: '#6e3a12', far: '#6a3812', mane: '#241a1a', hoof: '#2a2a33', blaze: '#fff6ea' },
+  { body: '#4a4658', dot: '#34303e', far: '#27242f', mane: '#14121a', hoof: '#7a7690', blaze: '#fff6ea' },
+  { body: '#c8742e', dot: '#9a521a', far: '#94501c', mane: '#7a3410', hoof: '#3a2a22', blaze: '#fff6ea' },
+  { body: '#f2ece0', dot: '#c8c0b4', far: '#c4bcb0', mane: '#8a8296', hoof: '#4a4658', muzzle: '#d8d0c8' },
+  { body: '#d8b06a', dot: '#a8844a', far: '#a07c44', mane: '#3a2a1a', hoof: '#3a2a22', blaze: '#fff6ea' },
+];
+const AB_HORSE_B = { ...EQUINE.horse, pal: AB_HORSE_PAL };
+const abHorseDraw = (c, P) => equine(c, P, AB_HORSE_B);
 // every person goes through the story's cel finish (abCast: hard shade away from the light, coloured lines, optional rim via P.fin)
 const abPerson = (ctx, P, m, D) => { abCast(ctx, P, 360, 330, (c) => person(c, D), m, P.fin || {}); return P; };
 function abAli(ctx, P, m = 'morning', extra = 1) { const pal = abPal(AB_ALI0, m, extra); pal.sash = AB_ACC; pal.band = AB_ACC; return abPerson(ctx, { s: 0.95, ...P }, m, { costume: 'villager', s: 0.95, age: 0.25, ...P, pal }); }
@@ -19,13 +36,13 @@ function abWife(ctx, P, m = 'morning') { return abPerson(ctx, { s: 0.92, ...P },
 function abKid(ctx, P, m = 'morning') { return abPerson(ctx, { s: 0.75, ...P }, m, { costume: 'servant', child: true, s: 1, ...P, pal: abPal(AB_KID0, m) }); }
 function abCassim(ctx, P, m = 'night') { return abPerson(ctx, { s: 1.1, ...P }, m, { costume: 'merchant', s: 1.1, age: 0.4, ...P, pal: abPal(AB_CAS0, m) }); }
 function abLeader(ctx, P, m = 'afternoon') { return abPerson(ctx, { s: 1.08, ...P }, m, { costume: 'bedouin', s: 1.08, age: 0.4, brow: 0.7, ...P, pal: abPal(AB_LEAD0, m) }); }
-function abMan(ctx, i, P, m = 'afternoon') { return abPerson(ctx, { s: 0.95, ...P }, m, { costume: 'bedouin', s: 0.95, ...P, pal: abPal(AB_RIDER0[i % 3], m) }); }
+function abMan(ctx, i, P, m = 'afternoon') { return abPerson(ctx, { s: 0.95, ...P }, m, { costume: 'bedouin', s: 0.95, ...P, pal: abPal(AB_RIDER0[i % AB_RN], m) }); }
 // world position of a person's hand after drawing (P.hands is figure-local)
 function abHand(P, i = 1) { const h = (P.hands || [[0, -100], [0, -100]])[i], s = P.s || 1, d = Math.sign(P.dir || 1); return [P.x + d * s * h[0], P.y + s * h[1] * (P.sq || 1)]; }
 
 // animals through the tint pass (bb: feet x, y, width, height)
 function abDonkey(ctx, P, m, o = {}) { const s = P.s || 1; abCel(ctx, [P.x, P.y, 380 * s, 380 * s], (c) => donkey(c, P), { m, ...(AB_FIN[m] || {}), shadeD: 18, rim: null, ...o }); }
-function abHorse(ctx, P, m, o = {}) { const s = P.s || 1; abCel(ctx, [P.x, P.y, 440 * s, 400 * s], (c) => horse(c, P), { m, ...(AB_FIN[m] || {}), shadeD: 18, rim: null, ...o }); }
+function abHorse(ctx, P, m, o = {}) { const s = P.s || 1; abCel(ctx, [P.x, P.y, 440 * s, 400 * s], (c) => abHorseDraw(c, P), { m, ...(AB_FIN[m] || {}), shadeD: 18, rim: null, ...o }); }
 // a rider (person on a horse) as one cel, with a cloak ribbon tied to speed (v3, Fable review 2 note 4): hang 0 = streaming back
 // on a travelling sine (4 drawings, galloping); hang 1 = hanging behind the saddle as a tapered ribbon whose tip sways on a calm
 // 6-drawing cycle (standing). ph: the rider's own phase seed.
@@ -39,14 +56,14 @@ function abCloak(ctx, seat, dir, s, t, col, len = 1, hang = 0, ph = 0) {
   celShade(ctx, [...pts, ...pts2.reverse()], col, abDark(col, 0.45), { light: [-d, -1], off: 6 * s, lw: 3 });
 }
 function abRider(ctx, i, H, PP, m, o = {}) {
-  const s = H.s || 1, cape = (i < 0 ? AB_LEAD0 : AB_RIDER0[i % 3]).cape, hang = o.hang ?? 1 - K.clamp((H.amp || 0) * 1.5 + (H.gallop ? 1 : 0));
+  const s = H.s || 1, cape = (i < 0 ? AB_LEAD0 : AB_RIDER0[i % AB_RN]).cape, hang = o.hang ?? 1 - K.clamp((H.amp || 0) * 1.5 + (H.gallop ? 1 : 0));
   const cloak = (c, col) => { const seat = mountSeat('horse', H); abCloak(c, seat, H.dir, s, o.t || 0, col, o.cloak, hang, o.ph ?? i * 0.37); };
   // the leader's cloak keeps its crimson in the saddle: drawn once-tinted outside the cel tint pass (same colour as on foot)
   if (o.cloak && i < 0) cloak(ctx, abMul(cape, AB_MODEL[m].tint, AB_MODEL[m].k));
   abCel(ctx, [H.x, H.y, 460 * s, 640 * s], (c) => {
     if (o.cloak && i >= 0) cloak(c, abMul(cape, AB_MODEL[m].tint, AB_MODEL[m].k));
     if (o.sacks) { const seat = mountSeat('horse', H), d = Math.sign(H.dir || 1), bob = o.sackBob || 0; abSack(c, seat.x - d * 60 * s, seat.y + 40 * s + bob, s * 0.6 * (o.sackS || 1), o.flat ? 0 : 1, { coin: o.coin, sq: 1 - Math.abs(bob) * 0.008 }); }
-    rideOn(c, 'horse', H, { costume: 'bedouin', s: s * (i < 0 ? 1.08 : 0.95), brow: i < 0 ? 0.7 : 0.3, ...PP, pal: abPal(i < 0 ? AB_LEAD0 : AB_RIDER0[i % 3], m) });
+    rideOn(c, abHorseDraw, H, { costume: 'bedouin', s: s * (i < 0 ? 1.08 : 0.95), brow: i < 0 ? 0.7 : 0.3, ...PP, pal: abPal(i < 0 ? AB_LEAD0 : AB_RIDER0[i % AB_RN], m) }, { name: 'horse' });
   }, { m, ...(AB_FIN[m] || {}), shadeD: 18, rim: null, ...o });
 }
 // baked silhouette strip: 11 small riders in one of 4 gallop drawings (cheap crowd: reuse with offsets)

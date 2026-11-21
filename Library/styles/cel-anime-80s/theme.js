@@ -59,8 +59,8 @@ function celShade(ctx, pts, fill, shade, o = {}) {
 // --- style settings the shared code reads ---
 const THEME = {
   id: 'cel-anime-80s',
-  subtitle: { panel: { tape: true, seed: 13 }, ar: '#fff1b8', en: '#7fe3ff', enFont: 'Barlow Semi Condensed', enWeight: 600, enSpacing: '0.5px' },
-  page: {},                                    // S.background: the dark CRT housing
+  subtitle: { panel: { tape: true, seed: 13 }, ar: '#2b1a3a', en: '#2f63d6', enFont: 'Barlow Semi Condensed', enWeight: 600, enSpacing: '0.5px' },   // light caption strip
+  page: {},                                    // S.background: the cream TV housing ({ dark: true }: the charcoal set)
   panel: { screen: true },                     // S.box(ctx, 54, 54, 972, 1196, 1, THEME.panel): the picture tube around the story
   celFps: 12,                                  // characters on twos: pose them with celStep(t, THEME.celFps)
 };

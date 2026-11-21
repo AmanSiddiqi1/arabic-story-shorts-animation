@@ -121,26 +121,46 @@ AB_SHOTS.push({ a: 102.72, b: 105.57, ww: 1e5, cam: (t) => ({ x: AB_RIDE(t) - 50
 // ---------- the room at night (S14-S16): a painted plate (warm pool of lamplight falling off to blue, a window with the deep-blue
 // night and one star, a shelf and a hanging pot as dark shapes), the door and the lamp as cels, the flame on the emissive pass ----------
 const AB_LAMP = [505, 862], AB_COINS = [505, 898], AB_WIN = { x0: 690, y0: 400, x1: 830, y1: 540 }, AB_RDOOR = { x0: 70, x1: 205, top: 590 };
+// v4 (owner notes 2, 3): a warm, lighter room with real things in it: lime-washed ochre walls in lamplight falling off to a soft
+// blue, ceiling beams, a striped rug, a mattress with cushions, shelves of coloured jars, a wall niche with a jug, a hanging pot, a
+// storage chest, a broom, a basket; the window with the night and one star
 function abRoomPlate() {
-  return abBakeAt('nightroom', 1000, 1230, (c, w) => {
-    abGrad(c, 0, 0, w, 1230, [[0, '#141634'], [0.5, '#262a5a'], [0.74, '#30305e'], [1, '#141428']]);
-    abGlaze(c, AB_LAMP[0], AB_LAMP[1] - 120, 620, '#d88a5a', 0.75); abGlaze(c, AB_LAMP[0], AB_LAMP[1] - 60, 300, '#ffc890', 0.55);
-    c.save(); c.filter = 'blur(2px)'; for (const [x0, x1] of [[0, 1000]]) { c.fillStyle = 'rgba(20,16,40,0.35)'; c.fillRect(x0, 200, x1, 18); c.fillRect(x0, 236, x1, 10); } c.restore();   // ceiling beams
+  return abBakeAt('nightroom4', 1000, 1230, (c, w) => {
+    abGrad(c, 0, 0, w, 1230, [[0, '#5a4a7a'], [0.35, '#b8806a'], [0.74, '#d8a074'], [1, '#6a4a5a']]);
+    abGlaze(c, AB_LAMP[0], AB_LAMP[1] - 140, 640, '#ffd2a0', 0.75); abGlaze(c, AB_LAMP[0], AB_LAMP[1] - 60, 320, '#ffe0b0', 0.6);
+    abGlaze(c, 0, 300, 420, '#5a5a9a', 0.35); abGlaze(c, 1000, 300, 380, '#5a5a9a', 0.3);
+    // ceiling beams with round ends
+    for (const y of [150, 210]) { celShade(c, K.rectPts(-10, y, 1020, 24), '#8a5a3a', '#5a3424', { light: [1, -0.5], off: 6, lw: 2.5 }); }
+    for (let x = 60; x < 1000; x += 160) shape(c, ell(x, 238, 14, 14, 14), '#a8703e', { lw: 2.5 });
     // floor
-    abGrad(c, 0, 905, w, 325, [[0, '#5a3a4a'], [0.4, '#3a2640'], [1, '#141020']]); abGlaze(c, AB_LAMP[0], 930, 420, '#e8a070', 0.55);
-    c.save(); c.filter = 'blur(1px)'; c.fillStyle = '#7a4a4a'; c.beginPath(); c.ellipse(500, 918, 330, 26, 0, 0, 7); c.fill(); c.restore();   // the mat
-    // the window: deep-blue night, one star
-    const W = AB_WIN; abGrad(c, W.x0, W.y0, W.x1 - W.x0, W.y1 - W.y0, [[0, '#0c1238'], [1, '#1e2a6a']]); c.fillStyle = '#fff6ea'; c.beginPath(); c.arc(W.x0 + 32, W.y0 + 34, 3, 0, 7); c.fill(); abGlaze(c, W.x0 + 32, W.y0 + 34, 16, '#ffffff', 0.5);
-    // shelf with jars and a hanging pot (dark shapes against the wall)
-    c.fillStyle = '#1a1430'; c.fillRect(230, 560, 210, 12); for (const [x, h, r] of [[260, 46, 18], [306, 64, 22], [352, 40, 16], [400, 54, 20]]) { c.beginPath(); c.ellipse(x, 560 - h / 2, r, h / 2, 0, 0, 7); c.fill(); }
-    c.fillRect(888, 200, 3, 170); c.beginPath(); c.ellipse(890, 400, 46, 34, 0, 0, 7); c.fill(); c.fillRect(860, 366, 60, 8);
+    abGrad(c, 0, 905, w, 325, [[0, '#a86e52'], [0.4, '#7a4a44'], [1, '#3a2634']]); abGlaze(c, AB_LAMP[0], 930, 440, '#ffc890', 0.5);
+    // striped rug under the lamp
+    c.save(); c.beginPath(); c.ellipse(500, 935, 360, 34, 0, 0, 7); c.clip(); ['#c8364a', '#e8a83a', '#2f7a9a', '#e8d2a0', '#c8364a', '#7a4a9a'].forEach((col, i) => { c.fillStyle = col; c.fillRect(140 + i * 120, 890, 120, 90); }); c.restore();
+    c.strokeStyle = '#5a2a2a'; c.lineWidth = 3; c.beginPath(); c.ellipse(500, 935, 360, 34, 0, 0, 7); c.stroke();
+    // the window: deep-blue night, one star (frame drawn live)
+    const W = AB_WIN; abGrad(c, W.x0, W.y0, W.x1 - W.x0, W.y1 - W.y0, [[0, '#14205a'], [1, '#2e48a0']]); c.fillStyle = '#fff6ea'; c.beginPath(); c.arc(W.x0 + 32, W.y0 + 34, 3, 0, 7); c.fill(); abGlaze(c, W.x0 + 32, W.y0 + 34, 16, '#ffffff', 0.5);
+    abGlaze(c, W.x0 + 100, W.y0 + 40, 26, '#fff6d8', 0.9); shape(c, ell(W.x0 + 100, W.y0 + 40, 14, 14, 20), '#fff6d8', { lw: 0 });   // the moon
+    // shelf with coloured jars, a wall niche with a jug
+    celShade(c, K.rectPts(230, 556, 220, 14), '#8a5a3a', '#5a3424', { light: [1, -0.5], off: 4, lw: 2.5 });
+    for (const [x, h, r, col] of [[258, 46, 18, '#3f7ad0'], [304, 64, 22, '#e8742a'], [350, 40, 16, '#2f9a8e'], [398, 54, 20, '#c8364a'], [436, 30, 12, '#ffd36a']])
+      celShade(c, [[x - r * 0.6, 556], [x - r, 556 - h * 0.5], [x - r * 0.5, 556 - h], [x + r * 0.5, 556 - h], [x + r, 556 - h * 0.5], [x + r * 0.6, 556]], col, abDark(col, 0.3), { light: [1, -0.5], off: 6, hi: abLight(col, 0.4), lw: 2.5 });
+    K.poly(c, townArchPts(540, 640, 470, 580, 'round'), true); c.fillStyle = '#7a4a4a'; c.fill(); c.strokeStyle = '#4a2a2a'; c.lineWidth = 3; c.stroke();
+    celShade(c, [[575, 580], [566, 550], [578, 520], [602, 520], [614, 550], [605, 580]], '#d8743a', '#9a4a2a', { light: [1, -0.5], off: 6, lw: 2.5 });
+    // hanging pot on a cord
+    seg(c, 890, 234, 890, 360, 3, '#5a3a2a', 0); celShade(c, ell(890, 396, 46, 34, 24), '#a8603a', '#6a3420', { light: [1, -0.5], off: 10, hi: '#e8a070', lw: 3 }); celShade(c, K.rectPts(858, 360, 64, 10), '#8a4a2a', '#5a2a1a', { light: [1, -0.5], off: 3, lw: 2.5 });
+    // mattress with cushions (left, behind the door swing), a chest, a basket, a broom
+    celShade(c, K.rectPts(230, 860, 170, 44), '#3f7ad0', '#284a8a', { light: [1, -0.5], off: 10, lw: 3 }); for (let x = 240; x < 400; x += 22) seg(c, x, 864, x, 900, 3, '#ffd36a', 0);
+    for (const [x, col] of [[250, '#e8364f'], [380, '#ffd36a']]) celShade(c, ell(x, 846, 26, 18, 18), col, abDark(col, 0.3), { light: [1, -0.5], off: 6, lw: 2.5 });
+    celShade(c, K.rectPts(820, 820, 120, 84), '#8a4a2a', '#5a2a1a', { light: [1, -0.5], off: 12, lw: 3 }); for (const bx of [840, 920]) seg(c, bx, 820, bx, 904, 8, '#e0b038', 1.5);
+    celShade(c, [[700, 904], [690, 864], [750, 864], [740, 904]], '#d9a441', '#9a6a2a', { light: [1, -0.5], off: 6, lw: 2.5 }); for (const [x, col] of [[708, '#e8364f'], [726, '#ff8a3a'], [740, '#e8364f']]) shape(c, ell(x, 860, 10, 10, 12), col, { lw: 2 });
+    seg(c, 960, 904, 940, 700, 6, '#a8743e', 1.5); celShade(c, [[930, 904], [950, 840], [972, 840], [990, 904]], '#e8c27a', '#b08a4a', { light: [1, -0.5], off: 5, lw: 2.5 });
   });
 }
 // the door (0 shut .. 1 open: the night outside shows), the window frame, the lamp (live flame); layer 'back' | 'front'
 function abHutBack(ctx, t, o = {}) {
   ctx.drawImage(abRoomPlate(), 0, 0); const D = AB_RDOOR, op = K.clamp(o.door || 0), W = AB_WIN;
-  abGrad(ctx, D.x0, D.top, D.x1 - D.x0, 905 - D.top, [[0, '#0c1238'], [1, '#2a3a7a']]);
-  const lw = (D.x1 - D.x0) * (1 - 0.88 * op); celShade(ctx, K.rectPts(D.x0, D.top, lw, 905 - D.top), '#5a3a3a', '#3a2228', { light: [1, -0.3], off: 14, lw: 3.5, line: '#24141c' });
+  abGrad(ctx, D.x0, D.top, D.x1 - D.x0, 905 - D.top, [[0, '#18286a'], [1, '#3a50a0']]);
+  const lw = (D.x1 - D.x0) * (1 - 0.88 * op); celShade(ctx, K.rectPts(D.x0, D.top, lw, 905 - D.top), '#8a5a3a', '#5a3424', { light: [1, -0.3], off: 14, lw: 3.5, line: '#3a1e14' });
   ink(ctx, [[D.x0 - 8, 905], [D.x0 - 8, D.top - 8], [D.x1 + 8, D.top - 8], [D.x1 + 8, 905]], 5, 2, '#24141c');
   if (o.inside) o.inside(ctx);
   ink(ctx, K.rectPts(W.x0, W.y0, W.x1 - W.x0, W.y1 - W.y0), 6, 3, '#24141c'); seg(ctx, W.x0 - 14, W.y1 + 6, W.x1 + 14, W.y1 + 6, 10, '#5a3a3a', 2.5);
@@ -150,7 +170,7 @@ function abHutBack(ctx, t, o = {}) {
   ctx.save(); ctx.translate(lx + 38, ly + 2); ctx.scale(1, fl); ctx.fillStyle = '#fff3c0'; ctx.beginPath(); ctx.moveTo(0, -36); ctx.quadraticCurveTo(13, -10, 0, 2); ctx.quadraticCurveTo(-13, -10, 0, -36); ctx.fill(); ctx.fillStyle = '#ffb040'; ctx.beginPath(); ctx.ellipse(0, -6, 5, 8, 0, 0, 7); ctx.fill(); ctx.restore();
   abGlow(ctx, lx + 38, ly - 14, 150 * fl, 0.55, '#ffc070');
 }
-function abHutFront(ctx, t, o = {}) { celShade(ctx, [[960, -20], [1020, -20], [1020, 1250], [970, 1250]], '#141020', '#0a0814', { light: [-1, 0], off: 10, lw: 3 }); }   // a dark post at the right edge (depth)
+function abHutFront(ctx, t, o = {}) { celShade(ctx, [[968, -20], [1020, -20], [1020, 1250], [976, 1250]], '#6a4434', '#4a2c24', { light: [-1, 0], off: 10, lw: 3 }); }   // a dark post at the right edge (depth)
 // coins on the mat (gold light), then the cloth over them with one coin left uncovered at the edge
 function abCoins(ctx, t, o = {}) {
   const pour = K.clamp((t - 106.2) / 0.35); if (pour <= 0) return;
@@ -206,7 +226,7 @@ function abS14World(ctx, t, cam) {
     ctx.beginPath(); ctx.roundRect(390, 400, 230, 170, 30); ctx.fill(); ctx.stroke(); ctx.beginPath(); ctx.roundRect(390, 400, 230, 170, 30); ctx.clip();
     const u = AB_T2(t) - 108.37; abRock(ctx, 505, 560, { s: 0.22, model: 'afternoon', crack: K.clamp(u / 0.3), open: K.clamp((u - 0.35) / 0.5), glow: K.clamp(u / 0.4), t }); ctx.restore(); }
 }
-AB_SHOTS.push({ a: 105.57, b: 113.26, ww: 1000, cam: (t) => K.camAt([[105.57, { x: 420, y: 700, zoom: 1.5 }], [106.3, { x: 515, y: 718, zoom: 1.9 }], [110.97, { x: 515, y: 718, zoom: 1.9 }], [111.6, { x: 510, y: 728, zoom: 2.05 }]], t), world: abS14World,
+AB_SHOTS.push({ a: 105.57, b: 113.26, ww: 1000, cam: (t) => K.camAt([[105.57, { x: 500, y: 680, zoom: 1.1 }], [106.3, { x: 500, y: 690, zoom: 1.25 }], [110.97, { x: 505, y: 690, zoom: 1.4 }], [111.6, { x: 510, y: 720, zoom: 1.8 }]], t), world: abS14World,
   over: (ctx, t, cam, S) => { if (t > 110.97 && t < 112.4) { const [x, y] = abP(390, 650, cam); S.label(ctx, 'SHHH!', x - 120, y - 80, K.clamp((t - 110.97) / 0.3), { size: 46 }); } } });
 
 // ---------- S15 113.26-123.81: Cassim at the window; the coin; coin eyes; in through the door; three questions; the secret ----------
@@ -246,7 +266,7 @@ function abS15Room(ctx, t, cam, o) {
     abRock(ctx, bx, by + 70, { s: 0.2, model: 'afternoon', crack: 1, glow: 0.6, t }); ctx.restore(); }
   return C;
 }
-function abS15Cam(t) { if (t < 117.75) return { x: 450, y: 697, zoom: 1.7 }; if (t < 118.47) return { x: 400, y: 718, zoom: 1.9 }; if (t < 119.05) return { x: 470, y: 708, zoom: 1.8 }; if (t < 119.61) return { x: 440, y: 650, zoom: 2.1 }; if (t < 120.35) return { x: 470, y: 708, zoom: 1.8 }; return { x: 450, y: 718, zoom: 1.9 }; }
+function abS15Cam(t) { if (t < 117.75) return { x: 500, y: 660, zoom: 1.2 }; if (t < 118.47) return { x: 420, y: 700, zoom: 1.6 }; if (t < 119.05) return { x: 480, y: 690, zoom: 1.5 }; if (t < 119.61) return { x: 450, y: 650, zoom: 1.9 }; if (t < 120.35) return { x: 480, y: 690, zoom: 1.5 }; return { x: 470, y: 680, zoom: 1.35 }; }
 const AB_Q = [118.47, 119.05, 119.3];
 AB_SHOTS.push({ a: 113.26, b: 115.35, ww: 1000, cam: () => ({ x: 740, y: 480, zoom: 2.2 }),
   world: (ctx, t) => { const tc = AB_T2(t); abHutBack(ctx, t); abWindowCassim(ctx, t, 1, { gaze: gazePlan(tc, [[113.26, [-1, 0.3]], [113.7, [-0.3, 0.4]], [114.1, [0.4, 0.5]], [114.5, [-0.6, 0.8]]]), brow: -0.5, lid: abLid(t, 51) }); abHutFront(ctx, t); },
@@ -294,13 +314,13 @@ function abS16World(ctx, t, cam) {
   if (tc >= 128.27 && tc < 130.5) { const [x, y, s, r] = AB_CARD(tc); abMapCard(ctx, x, y, tc < 129.51 ? beatIn(tc, 128.27, 129.4) : 1, s, r); }
   abHutFront(ctx, t);
 }
-AB_SHOTS.push({ a: 126.99, b: 131.81, ww: 1000, cam: (t) => K.camAt([[130.77, { x: 500, y: 718, zoom: 1.9 }], [131.4, { x: 450, y: 724, zoom: 2.1 }]], t), world: abS16World,
-  over: (ctx, t, cam, S) => { if (t < 130.77) return; ['افتح', 'يا', 'سمسم'].forEach((w, i) => { const u = K.clamp((t - 130.77 - i * 0.22) / 0.8); if (u <= 0) return;
+AB_SHOTS.push({ a: 126.99, b: 131.81, ww: 1000, cam: (t) => K.camAt([[130.77, { x: 520, y: 680, zoom: 1.35 }], [131.4, { x: 450, y: 724, zoom: 2.0 }]], t), world: abS16World,
+  over: (ctx, t, cam, S) => { if (t < 130.77) return; ['OPEN', 'SESAME', '!'].forEach((w, i) => { const u = K.clamp((t - 130.77 - i * 0.22) / 0.8); if (u <= 0) return;
     // from Ali Baba's mouth to Cassim's ear; the middle word hits the turban and bounces off up and away
     let wx = K.lerp(600, 395, u), wy = 660 - 30 * Math.sin(Math.PI * u) - i * 8, a = 1, sc = 1 - 0.35 * u;
     if (i === 1 && u > 0.7) { const v = (u - 0.7) / 0.3; wx = 395 + 120 * v; wy = 610 - 140 * v + 160 * v * v; sc = 0.85; a = 1 - K.clamp((v - 0.6) / 0.4); }
     else if (u > 0.8) a = 1 - K.clamp((u - 0.8) / 0.2);
-    const [x, y] = abP(wx, wy, cam); ctx.save(); ctx.globalAlpha = a; S.title(ctx, w, x, y, 1, { font: 'Lalezar', size: 56 * sc, glow: '#ffd36a' }); ctx.restore();
+    const [x, y] = abP(wx, wy, cam); ctx.save(); ctx.globalAlpha = a; S.title(ctx, w, x, y, 1, { size: 52 * sc, glow: '#ffd36a', align: 'center' }); ctx.restore();
     if (i === 1 && u > 0.68 && u < 0.78) { const [bx, by] = abP(392, 604, cam); abGlint(ctx, bx, by, 40, (u - 0.68) / 0.1); } }); } });
 
 // ---------- S17 131.81-142.94: pre-dawn road (painted plate, two hill layers, a dark grass strip); the cart with empty sacks streaming
@@ -322,7 +342,8 @@ function abPredawnHills(k) { return abBakeAt('pdhills' + k, 2000, 1230, (c, w) =
 function abPredawnGround() { return abBakeAt('pdground', 2000, 1230, (c, w) => {
   abGrad(c, 0, 880, w, 350, [[0, '#4a4a7a'], [0.3, '#30305a'], [1, '#14142e']]);
   c.save(); c.filter = 'blur(3px)'; c.fillStyle = 'rgba(200,180,200,0.35)'; c.fillRect(0, 896, w, 44); c.restore();
-  const R = K.rng(44); c.save(); c.filter = 'blur(1px)'; for (let i = 0; i < 80; i++) { c.fillStyle = 'rgba(20,20,46,0.5)'; c.beginPath(); c.ellipse(R() * w, 900 + R() * 300, 6 + R() * 20, 2 + R() * 4, 0, 0, 7); c.fill(); } c.restore(); }); }
+  for (const o of [-w, 0, w]) { c.save(); c.translate(o, 0); abDress(c, 0, w, 905, 1030, 91, { stones: 14, tufts: 16, flowers: 8, cols: ['#c8a0d8', '#f0c0a0', '#e8e0f0'], stone: ['#8a8ab0', '#5a5a80'], grass: ['#4a6a7a', '#2a3a5a'] }); c.restore(); }
+    const R = K.rng(44); c.save(); c.filter = 'blur(1px)'; for (let i = 0; i < 80; i++) { c.fillStyle = 'rgba(20,20,46,0.5)'; c.beginPath(); c.ellipse(R() * w, 900 + R() * 300, 6 + R() * 20, 2 + R() * 4, 0, 0, 7); c.fill(); } c.restore(); }); }
 function abGrassStrip() { return abBakeAt('pdgrass', 2000, 1230, (c, w) => { const R = K.rng(8); c.fillStyle = '#0c0e26'; c.fillRect(0, 1040, w, 200);
   for (let x = 0; x < w; x += 9) { const h = 30 + R() * 70, lean = (R() - 0.5) * 24; c.beginPath(); c.moveTo(x - 6, 1046); c.quadraticCurveTo(x + lean * 0.5, 1046 - h * 0.6, x + lean, 1046 - h); c.lineTo(x + 6, 1046); c.closePath(); c.fill(); } }); }
 function abS17Under(ctx, tt, cam) {
@@ -377,9 +398,9 @@ function abS17WordAt(i, t) {   // world x, y (centre), rotation, squash, alpha, 
 }
 function abS17Words(ctx, tt, cam, S) {
   const t = tt; if (t < 133.07) return;   // real time: the last word finishes its fall (lands 137.98) during the pull to the wide
-  ['افتح', 'يا', 'سمسم'].forEach((w, i) => { const W = abS17WordAt(i, t), [px, py] = abP(W.x, W.y, cam), sz = AB_WSIZE * cam.zoom / 1.7;
+  ['OPEN', 'SESAME', '!'].forEach((w, i) => { const W = abS17WordAt(i, t), [px, py] = abP(W.x, W.y, cam), sz = AB_WSIZE * cam.zoom / 1.7;
     ctx.save(); ctx.globalAlpha *= W.a; ctx.translate(px, py); ctx.rotate(W.r); ctx.scale(W.sx, W.sy);
-    S.title(ctx, w, 0, 0, 1, { font: 'Lalezar', size: sz, glow: W.glow ? '#ffd36a' : undefined, align: 'center' }); ctx.restore(); });
+    S.title(ctx, w, 0, 0, 1, { size: sz * 0.9, glow: W.glow ? '#ffd36a' : undefined, align: 'center' }); ctx.restore(); });
 }
 function abS17Cam(tt) { const t = Math.min(tt, AB_FREEZE), track = { x: AB_CX(t) + AB_CAMDX, y: 697, zoom: 1.7 }; if (tt < AB_FREEZE) return track;
   const u = K.ease.inOut(K.clamp((tt - AB_FREEZE) / 0.6)); return { x: K.lerp(track.x, AB_WIDE.x, u), y: K.lerp(track.y, AB_WIDE.y, u), zoom: K.lerp(track.zoom, AB_WIDE.zoom, u) }; }

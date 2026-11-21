@@ -1,8 +1,8 @@
 // ===== ALI-01-ANIME shots S5-S11 (34.5 - 89.48 s): the forty, Open Sesame, inside, MUCH LATER, Close Sesame, the descent, his turn =====
 
 // the horse line at the rock (leader first); i = rider palette index (-1 = the leader). Drawn far (small y) first.
-const AB_HL = [{ x: 1470, y: 902, s: 0.82, pal: 2, i: -1 }, { x: 1330, y: 886, s: 0.74, pal: 1, i: 0 }, { x: 1210, y: 906, s: 0.8, pal: 2, i: 1 },
-  { x: 1090, y: 884, s: 0.72, pal: 1, i: 2 }, { x: 970, y: 904, s: 0.78, pal: 1, i: 3 }, { x: 850, y: 886, s: 0.72, pal: 2, i: 4 }, { x: 730, y: 902, s: 0.76, pal: 1, i: 5 }];
+const AB_HL = [{ x: 1470, y: 902, s: 0.82, pal: 2, i: -1 }, { x: 1330, y: 886, s: 0.74, pal: 3, i: 0 }, { x: 1210, y: 906, s: 0.8, pal: 0, i: 1 },
+  { x: 1090, y: 884, s: 0.72, pal: 5, i: 2 }, { x: 970, y: 904, s: 0.78, pal: 1, i: 3 }, { x: 850, y: 886, s: 0.72, pal: 4, i: 4 }, { x: 730, y: 902, s: 0.76, pal: 3, i: 5 }];
 const abByY = (list) => [...list].sort((a, b) => a.y - b.y);
 // a standing horse in the line with its own idle life (tail, ears, one grazes, one sleeps)
 function abLineHorse(h, k, tc, o = {}) {
@@ -13,7 +13,7 @@ function abGladeWide(m) { return (ctx, t, cam) => { ctx.save(); K.camera(ctx, 10
 
 // ---------- S5 34.5-40.46: the column at full gallop, counter to 40, a sack, a tired horse, the accordion stop at the rock ----------
 const AB_S5_L = (t) => 520 * (t - 34.5);
-const AB_S5_RID = [[0, -230, 925, 0.9, 1], [1, -120, 868, 0.72, 2], [2, -470, 925, 0.9, 2], [3, -350, 868, 0.72, 1], [4, -560, 870, 0.72, 2], [5, -720, 905, 0.8, 1]];
+const AB_S5_RID = [[0, -230, 925, 0.9, 3], [1, -120, 868, 0.72, 0], [2, -470, 925, 0.9, 1], [3, -350, 868, 0.72, 5], [4, -560, 870, 0.72, 4], [5, -720, 905, 0.8, 0]];
 function abS5Track(ctx, t, cam, only) {
   const tc = AB_T2(t), m = 'afternoon', L = AB_S5_L;
   abSilRow(ctx, L(t) - 1900, 850, t, 0.55, 1, 0.75, 1); abSilRow(ctx, L(t) - 2500, 846, t, 0.5, 1, 0.6, 2);
@@ -45,7 +45,7 @@ AB_SHOTS.push({ a: 34.5, b: 36.54, ww: 1e5, cam: abS5Cam,
 function abS5Sack(ctx, t, S) {
   const L = AB_S5_L(t); abForest(ctx, { x: L, y: 700, zoom: 1.6 }, t, 'afternoon', { shaftA: 0.1 });
   const tc = AB_T2(t), ph = tc * 2 * Math.PI * 2.6, bob = 14 * Math.sin(ph), lag = 20 * Math.sin(ph - 1.3) + 3 * Math.sin(tc * 40), m = 'afternoon';
-  const hc = abMul('#8a3a1e', AB_MODEL[m].tint, AB_MODEL[m].k), hs = abDark(hc, 0.4), F = AB_FIN[m];
+  const hc = '#c8742e', hs = abDark(hc, 0.4), F = AB_FIN[m];
   abCel(ctx, [500, 1230, 1100, 900], (c) => {
     c.save(); c.translate(0, bob + 170);
     celShade(c, [[1100, 1300], [1100, 760], [900, 700], [620, 690], [380, 730], [180, 820], [90, 960], [110, 1300]], hc, hs, { light: [-1, -0.8], off: 60, lw: 5, line: abDark(hc, 0.6) });   // the horse's back and rump
@@ -131,7 +131,7 @@ AB_SHOTS.push({ a: 40.46, b: 48.34, ww: 2400, cam: abS6Cam, under: abGladeWide('
     if (t > 41.74 && t < 42.76) { const [x, y] = abP(1625, 640, cam); S.label(ctx, 'LEADER', x - 200, y - 60, K.clamp((t - 41.74) / 0.4), { size: 40 }); }
     if (t >= 42.76 && t < 45.45) {   // a light band sweeps across the held drawing; the words, one per spoken word, stacked above his hand
       abBands(ctx, [0, 0, 1000, 1230], t, { cols: ['#ffd36a', '#ff9ad0'], alpha: 0.16, w: 150, speed: 330, n: 2 });
-      const [hx] = abP(1746, 669, cam); abWords(ctx, S, ['افتح', 'يا', 'سمسم'], [43.09, 43.62, 43.8], hx + 70, 150, t, { size: 96, stack: true, stackX: hx + 70, pop: true, glow: t > 44.86 ? '#ffe28a' : undefined }); }
+      const [mx, my] = abP(1636, 640, cam); abSay(ctx, S, [[43.09, 'OPEN...'], [43.8, 'OPEN SESAME!']], t, 430, 250, [mx, my], { size: 64 }); }
     if (t >= 45.45 && t < 46.1) { const [x, y] = abP(1820, 560, cam); S.emphasis(ctx, x, y, 240, K.clamp((t - 45.45) / 0.65), { rect: [0, 0, 1000, 1230], word: '', seed: 4 }); } } });
 // 48.34-50.32: the eye gap, close: gold reflected in both pupils, the leaves shake; he claps a hand over his mouth
 function abS6Eyes(ctx, t, S) {
@@ -179,7 +179,7 @@ const AB_S7_FIGS = [
 ];
 // a back row of riderless horses (the forty's mounts) beyond the line, dark against the light
 const AB_BACKROW = [[1380, 864, 0.5], [1560, 860, 0.46], [2180, 862, 0.5], [2290, 866, 0.52], [2390, 860, 0.46]];
-function abBackRow(ctx, t, m, k = 0.6) { const tc = AB_T2(t); AB_BACKROW.forEach(([x, y, s], i) => abHorse(ctx, { x, y, s, dir: i % 2 ? -1 : 1, pal: i % 3, tailSwish: osc(tc, 1.6 + i * 0.3, i), earL: 0.3 + idleSway(tc, 300 + i, 0.3, 1.8), headDown: i === 1 ? 0.6 : 0.1 + idleSway(tc, 310 + i, 0.08, 3) }, m, { tint: '#3a2a5a', k, shade: null, line: null })); }
+function abBackRow(ctx, t, m, k = 0.6) { const tc = AB_T2(t); AB_BACKROW.forEach(([x, y, s], i) => abHorse(ctx, { x, y, s, dir: i % 2 ? -1 : 1, pal: [0, 3, 5, 1, 4][i], tailSwish: osc(tc, 1.6 + i * 0.3, i), earL: 0.3 + idleSway(tc, 300 + i, 0.3, 1.8), headDown: i === 1 ? 0.6 : 0.1 + idleSway(tc, 310 + i, 0.08, 3) }, m, { tint: '#7a6a9a', k: k * 0.35, shade: null, line: null })); }
 function abS7World(ctx, t, cam) {
   const tc = AB_T2(t), m = 'afternoon', close = K.clamp((t - 54.0) / 0.75), open = 1 - K.ease.inOut(close);
   abBackRow(ctx, t, m);
@@ -258,7 +258,7 @@ function abS9World(ctx, t, cam) {
 }
 function abS9Cam(t) { if (t < 66.2) return { x: 1650, y: 700, zoom: 1.75 }; return K.camAt([[67.4, { x: 1800, y: 620, zoom: 1.1 }], [69.2, { x: 1720, y: 615, zoom: 1.0 }]], t); }
 AB_SHOTS.push({ a: 62.55, b: 70.48, ww: 2400, cam: abS9Cam, under: abGladeWide('dusk'), world: abS9World,
-  over: (ctx, t, cam, S) => { if (t < 66.2) { const [hx] = abP(1720, 600, cam); abWords(ctx, S, ['أغلق', 'يا', 'سمسم'], [64.28, 64.78, 64.94], hx, 120, t, { size: 84, stack: true, stackX: hx - 70, pop: true, gone: 65.6, glow: '#8a5cff' });
+  over: (ctx, t, cam, S) => { if (t < 66.2) { const [mx, my] = abP(1650, 600, cam); abSay(ctx, S, [[64.28, 'CLOSE...'], [64.94, 'CLOSE SESAME!']], t, 470, 200, [mx, my], { size: 60, gone: 65.6 });
       if (t > 64.0) abBands(ctx, [0, 0, 1000, 1230], t, { cols: ['#c8a0ff', '#ffb070'], alpha: 0.13, w: 150, speed: 300, n: 2 }); }
     else abLeafFrame(ctx, t, { m: 'dusk', gaze: [0.9, 0.35] }); } });
 
@@ -331,7 +331,7 @@ function abMemory(ctx, t, S) {   // a tape memory flash: the leader's thrown arm
 }
 AB_SHOTS.push({ a: 78.0, b: 87.6, ww: 2400, cam: abS11Cam, under: abGladeWide('dusk'), world: abS11World,
   over: (ctx, t, cam, S) => { abMemory(ctx, t, S);
-    if (t > 83.0 && t < 85.74) { const [x, y] = abP(1668, 640, cam); abWords(ctx, S, ['افتح', 'يا', 'سمسم'], [83.19, 83.76, 83.94], x, y - 40, t, { size: 52, gone: 84.9, wobble: 4 }); }
+    if (t > 83.0 && t < 85.74) { const [x, y] = abP(1580, 690, cam); abSay(ctx, S, [[83.19, 'OPEN...'], [83.94, 'OPEN SESAME?']], t, 400, 300, [x, y], { size: 44, gone: 84.9, wobble: 3 }); }
     if (t >= 85.74 && t < 86.4) { const [x, y] = abP(1820, 600, cam); S.emphasis(ctx, x, y, 240, K.clamp((t - 85.74) / 0.65), { rect: [0, 0, 1000, 1230], word: '', seed: 9 }); } } });
 // 87.6-88.33: extreme close-up: the arched door reflected gold in both irises, a highlight sliding across; the eyes open in three drawings
 function abS11Eyes(ctx, t, S) {

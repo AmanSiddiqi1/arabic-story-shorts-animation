@@ -19,6 +19,16 @@ function abWords(ctx, S, words, times, x, y, t, o = {}) {
     S.title(ctx, w, wx, wy + wb, K.clamp((t - times[i]) / 0.5), { font: 'Lalezar', size, align: 'center', glow: o.glow }); ctx.restore(); });
   ctx.restore();
 }
+// v4 (owner note 4): on-screen speech is an ENGLISH speech balloon pointing at the speaker (the narration is Arabic).
+// steps: [[t, text], ...] the text grows word by word on the spoken cues; o: {size, gone (fade out), pop, wobble, col}
+function abSay(ctx, S, steps, t, x, y, to, o = {}) {
+  if (t < steps[0][0] || (o.gone && t > o.gone + 0.25)) return; let txt = steps[0][1], t0 = steps[0][0];
+  for (const [ts, tx] of steps) if (t >= ts) { txt = tx; t0 = ts; }
+  const pop = o.pop === false ? 1 : 1 + 0.12 * Math.max(0, 1 - (t - t0) / 0.2), wb = o.wobble ? Math.sin(AB_T3(t) * 17) * o.wobble : 0;
+  ctx.save(); if (o.gone && t > o.gone) ctx.globalAlpha *= 1 - K.clamp((t - o.gone) / 0.25);
+  ctx.translate(x, y + wb); ctx.scale(pop, pop); ctx.translate(-x, -y - wb);
+  S.label(ctx, txt, x, y + wb, K.clamp((t - steps[0][0]) / 0.3), { size: o.size || 52, balloon: true, to, color: o.col }); ctx.restore();
+}
 // tape tracking noise band (a roll of torn lines), in canvas pixels inside the story panel
 function abTracking(ctx, t, t0, dur = 0.5) {
   const u = (t - t0) / dur; if (u < 0 || u > 1) return; const [x, y, w, h] = AB_PANEL, cv = ctx.canvas, R = K.rng(1 + Math.floor(t * 30)), by = y + h * u;

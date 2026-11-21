@@ -14,35 +14,42 @@ function abSoftTrees(ctx, w, base, h, col, seed, n, blur = 1.5) { const R = K.rn
 function abGlaze(ctx, x, y, r, col, a) { const g = ctx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, K.rgba(col, a)); g.addColorStop(1, K.rgba(col, 0)); ctx.save(); ctx.fillStyle = g; ctx.fillRect(x - r, y - r, r * 2, r * 2); ctx.restore(); }
 
 // ---------- rockGlade: the main strip (2400 x 1230), three colour models ----------
+// v4 (owner note 3): lighter, more varied dusk and late models (a warm sunset with green land, not a purple wash)
 const AB_SKY = {
-  afternoon: [[0, '#4f7fd2'], [0.42, '#93bdf0'], [0.66, '#ffe0b0'], [0.74, '#ffd09a']],
-  dusk: [[0, '#2a2266'], [0.38, '#7a4a9a'], [0.6, '#e8789a'], [0.72, '#ffb070']],
-  late: [[0, '#151440'], [0.4, '#3e2a6a'], [0.62, '#9a4a7a'], [0.72, '#d87a6a']],
+  afternoon: [[0, '#4f8ae0'], [0.42, '#9cc8f6'], [0.66, '#ffe6b8'], [0.74, '#ffd8a0']],
+  dusk: [[0, '#3a4a9a'], [0.36, '#8a6ab8'], [0.56, '#ff8a8a'], [0.7, '#ffc27a']],
+  late: [[0, '#26306e'], [0.4, '#5a4a8a'], [0.62, '#c86a7a'], [0.72, '#f0a070']],
 };
 const AB_LAND = {   // far hills, near hills, tree line, ground top, ground bottom, path
-  afternoon: ['#9aa6d8', '#7f8fc0', '#5a7a6a', '#d8a062', '#a8643a', '#f0c88a'],
-  dusk: ['#6a4a8a', '#523a78', '#3a2a5a', '#9a5a6a', '#5a3050', '#c8807a'],
-  late: ['#3e3266', '#30285a', '#221a44', '#5e3a5e', '#34203e', '#7a5070'],
+  afternoon: ['#9ab0dc', '#7f9cc8', '#4f8a5a', '#e0aa6a', '#b8743e', '#f6d29a'],
+  dusk: ['#9a7ab8', '#7a6aa8', '#3f6a5a', '#d0906a', '#9a5a4e', '#f0b48a'],
+  late: ['#5a5a8e', '#4a4a7e', '#2e4a4e', '#9a6a6a', '#5e3e4e', '#c08a7a'],
 };
 function abGladePlate(m) {
   return abBakeAt('glade:' + m, 2400, 1230, (c, w) => {
     const L = AB_LAND[m]; abGrad(c, 0, 0, w, 1230, AB_SKY[m]);
     if (m !== 'afternoon') { abGlaze(c, 260, 640, 520, '#ffb060', m === 'dusk' ? 0.55 : 0.25); c.save(); c.filter = 'blur(6px)'; c.fillStyle = m === 'dusk' ? '#ffcf7a' : '#e8907a'; c.beginPath(); c.arc(260, 660, 70, 0, 7); c.fill(); c.restore(); }
     else abGlaze(c, 1900, 200, 600, '#fff2c0', 0.35);
-    const cu = m === 'afternoon' ? ['#ffffff', '#ffe7c0'] : m === 'dusk' ? ['#b27ac0', '#ffb28a'] : ['#5a3a7a', '#a8607a'];
+    const cu = m === 'afternoon' ? ['#ffffff', '#ffe7c0'] : m === 'dusk' ? ['#d8a0c8', '#ffd0a0'] : ['#7a5a9a', '#d08a8a'];
     for (const [x, y, s] of [[300, 220, 1], [900, 140, 0.8], [1500, 260, 1.2], [2100, 160, 0.9], [1150, 420, 0.6]]) abCloud(c, x, y, 360 * s, 90 * s, cu[0], cu[1], 9);
     if (m === 'late') { const R = K.rng(8); c.fillStyle = '#fff6ea'; for (let i = 0; i < 70; i++) { c.globalAlpha = 0.3 + R() * 0.6; c.fillRect(R() * w, R() * 420, 2, 2); } c.globalAlpha = 1; }
     abSoftHills(c, w, 720, 90, L[0], 3, 3); abSoftHills(c, w, 800, 60, L[1], 5, 2); abSoftTrees(c, w, 860, 70, L[2], 7, 60, 1.5);
     abGrad(c, 0, 860, w, 370, [[0, L[3]], [1, L[4]]]);
     c.save(); c.filter = 'blur(3px)'; c.fillStyle = L[5]; c.globalAlpha = 0.75; c.beginPath(); c.moveTo(0, 892); c.bezierCurveTo(800, 880, 1600, 904, w, 888); c.lineTo(w, 960); c.bezierCurveTo(1600, 980, 800, 950, 0, 968); c.closePath(); c.fill(); c.restore();
     const R = K.rng(21); c.save(); c.filter = 'blur(1px)'; for (let i = 0; i < 160; i++) { c.fillStyle = K.rgba(L[4], 0.5); c.beginPath(); c.ellipse(R() * w, 880 + R() * 340, 8 + R() * 30, 3 + R() * 6, 0, 0, 7); c.fill(); } c.restore();
+    // v4 dressing: a sun, bushes along the tree line, stones, tufts and flowers over the ground (clear in front of the rock)
+    if (m === 'afternoon') { abGlaze(c, 1980, 210, 260, '#fff6c8', 0.7); celShade(c, ell(1980, 210, 58, 58, 40), '#fff6c8', '#ffe08a', { light: [-1, -1], off: 10, lw: 0 }); }
+    const bushC = m === 'afternoon' ? ['#4f9a5a', '#2f6a44'] : m === 'dusk' ? ['#4a7a5e', '#2e5048'] : ['#2e4a4e', '#1e3238'];
+    const Rb = K.rng(66); for (let i = 0; i < 16; i++) { const x = Rb() * w, r = 40 + Rb() * 40; if (x > 1500 && x < 2140) continue; abBlob(c, x, 872 - r * 0.3, r, r * 0.6, bushC[0], bushC[1], { lw: 2.5, off: r * 0.3, line: abDark(bushC[1], 0.4) }); }
+    const fl = m === 'afternoon' ? undefined : ['#ff9ab0', '#ffd36a', '#fff1d8', '#c8a0ff'];
+    abDress(c, 0, w, 905, 1215, 67, { stones: 26, tufts: 30, flowers: m === 'late' ? 6 : 22, cols: fl, skip: [[1600, 2040]], grass: m === 'afternoon' ? ['#6ab85a', '#2f7a44'] : ['#5a9a6a', '#2f6050'], stone: m === 'afternoon' ? ['#d8c0a8', '#9a8078'] : ['#c09aa8', '#7a5a70'] });
     if (m === 'dusk') { c.save(); c.globalAlpha = 0.25; c.fillStyle = '#2a1a4a'; for (const x of [520, 1820]) { c.beginPath(); c.moveTo(x - 60, 900); c.lineTo(x + 60, 900); c.lineTo(x + 900, 1000); c.lineTo(x + 700, 1040); c.closePath(); c.fill(); } c.restore(); }   // long shadows to the right
   });
 }
 const AB_TREE = { x: 520, top: 330, perch: 400, branchTo: 700, fol: [540, 300, 260], gap: [600, 372, 120, 46] };
 const AB_THICKET = { x: 900, w: 300, top: 710 };
-const AB_LEAF = { afternoon: ['#4a9a5a', '#2a6a4a', '#8ad07a'], dusk: ['#4a4a7a', '#2e2e5a', '#c07aa0'], late: ['#2e2e58', '#1c1c3e', '#6a5a9a'], morning: ['#4fb06a', '#2a7a50', '#a0e08a'] };
-const AB_BARK = { afternoon: ['#8a5a3a', '#5a3424'], dusk: ['#5a3a5a', '#3a2440'], late: ['#3a2a4a', '#24182e'], morning: ['#8a5a3a', '#5a3424'] };
+const AB_LEAF = { afternoon: ['#4a9a5a', '#2a6a4a', '#8ad07a'], dusk: ['#4f8a62', '#2e5a4a', '#ffb08a'], late: ['#2e2e58', '#1c1c3e', '#6a5a9a'], morning: ['#4fb06a', '#2a7a50', '#a0e08a'] };
+const AB_BARK = { afternoon: ['#8a5a3a', '#5a3424'], dusk: ['#8a5a44', '#5a3a34'], late: ['#3a2a4a', '#24182e'], morning: ['#8a5a3a', '#5a3424'] };
 function abLeafBlobs(ctx, cx, cy, r, m, seed, t = 0, rip = 0) {
   const [f, s, h] = AB_LEAF[m], R = K.rng(seed);
   for (let i = 0; i < 9; i++) { const a = R() * Math.PI * 2, d = r * (0.25 + R() * 0.55), rr = r * (0.32 + R() * 0.18), wob = rip * Math.sin(t * 7 + i * 1.3) * 10;
@@ -89,7 +96,7 @@ function abLeafFrame(ctx, t, o = {}) {
 const AB_FOREST = {
   morning: { sky: [[0, '#8fd0e8'], [0.6, '#d8f0d0'], [0.75, '#f4f0c0']], far: '#9ac8c0', mid: ['#5a6aa8', '#3e4a86'], can: ['#7ad8a0', '#3e9a6a'], gnd: ['#c89a52', '#8a5a2a'], path: '#e8c27a', front: '#1e2a3a', shaft: '#fff2b0' },
   afternoon: { sky: [[0, '#7aa8e0'], [0.6, '#f0d8a8'], [0.75, '#ffc890']], far: '#b0a0b8', mid: ['#6a5a8a', '#4a3a6a'], can: ['#8ab86a', '#4a7a4a'], gnd: ['#d8a062', '#a8643a'], path: '#f0c88a', front: '#2a1a2a', shaft: '#ffd890' },
-  dusk: { sky: [[0, '#2a2266'], [0.5, '#8a4a8a'], [0.72, '#ff9a6a']], far: '#5a3a7a', mid: ['#3a2a5a', '#241a40'], can: ['#4a3a6a', '#2a2048'], gnd: ['#6a3a5a', '#3a2040'], path: '#9a6070', front: '#120a1a', shaft: '#ffb07a' },
+  dusk: { sky: [[0, '#34407e'], [0.5, '#a06aa8'], [0.72, '#ffaa78']], far: '#8a6aa0', mid: ['#5a4a7a', '#3e3460'], can: ['#4f8a62', '#2e5a4a'], gnd: ['#a8705a', '#6a4048'], path: '#d8a07a', front: '#1e1a2a', shaft: '#ffc08a' },
 };
 function abForestLayer(name, m) {
   return abBakeAt(`forest:${name}:${m}`, 2000, 1230, (c, w) => {
@@ -101,7 +108,11 @@ function abForestLayer(name, m) {
       wrap(() => { for (const [x, tw, q] of xs) { celShade(c, [[x - tw / 2, 920], [x - tw / 2 + 6, 120], [x + tw / 2 - 6, 120], [x + tw / 2, 920]], P.mid[0], P.mid[1], { light: [-1, 0], off: tw * 0.35, lw: 3, line: abDark(P.mid[1], 0.4) });
         abBlob(c, x, 120 + q * 60, 170, 120, P.can[0], P.can[1], { off: 40, lw: 3, line: abDark(P.can[1], 0.4) }); } }); }
     if (name === 'path') { abGrad(c, 0, 880, w, 350, [[0, P.gnd[0]], [1, P.gnd[1]]]); c.save(); c.filter = 'blur(2px)'; c.fillStyle = P.path; c.fillRect(0, 892, w, 56); c.restore();
-      const xs = Array.from({ length: 16 }, () => [R() * w, 0.6 + R() * 0.8]); wrap(() => { for (const [x, s] of xs) for (let k = -3; k <= 3; k++) { c.save(); c.translate(x, 960); c.rotate(k * 0.32); celShade(c, [[0, 0], [-10 * s, -40 * s], [0, -90 * s], [10 * s, -40 * s]], P.can[0], P.can[1], { off: 5, lw: 2.5 }); c.restore(); } }); }
+      const xs = Array.from({ length: 16 }, () => [R() * w, 0.6 + R() * 0.8]); wrap(() => { for (const [x, s] of xs) for (let k = -3; k <= 3; k++) { c.save(); c.translate(x, 960); c.rotate(k * 0.32); celShade(c, [[0, 0], [-10 * s, -40 * s], [0, -90 * s], [10 * s, -40 * s]], P.can[0], P.can[1], { off: 5, lw: 2.5 }); c.restore(); } });
+      // v4 dressing: stones, tufts, flowers and red-capped mushrooms on both sides of the path
+      wrap(() => { abDress(c, 0, w, 870, 890, 61, { stones: 8, tufts: 10, flowers: 6, grass: P.can, stone: m === 'dusk' ? ['#9a7a9a', '#6a4a6a'] : undefined });
+        abDress(c, 0, w, 975, 1200, 62, { stones: 16, tufts: 18, flowers: 16, grass: P.can, stone: m === 'dusk' ? ['#9a7a9a', '#6a4a6a'] : undefined });
+        const Q = K.rng(63); for (let i = 0; i < 9; i++) { const x = Q() * w, y = 990 + Q() * 200, r = 10 + Q() * 10; seg(c, x, y, x, y - r * 1.4, r * 0.7, '#fff1d8', 1.5); celShade(c, ell(x, y - r * 1.4, r * 1.3, r * 0.8, 16).filter((q) => q[1] <= y - r * 1.4 + 1), '#e8364f', '#a8203a', { light: [-1, -1], off: 3, lw: 2 }); } }); }
     if (name === 'front') wrap(() => { const x = 900, tw = 78; c.fillStyle = P.front; c.beginPath(); c.moveTo(x - tw / 2, -10); c.lineTo(x + tw / 2, -10); c.lineTo(x + tw / 2 + 8, 1250); c.lineTo(x - tw / 2 - 8, 1250); c.closePath(); c.fill();
       c.beginPath(); c.ellipse(x + 30, 1215, 110, 40, 0, 0, 7); c.fill(); });
   });
@@ -164,6 +175,15 @@ function abCaveCels() {
     // cloth zone: 12 bales stacked 3 high
     const cols = ['#c81e3a', '#1f9a6a', '#f2a71b', '#7a4ad0'];
     for (let r = 0; r < 3; r++) for (let i = 0; i < 4 - (r === 2 ? 0 : 0); i++) abBale(c, 1170 + i * 92 + (r % 2) * 40, 902 - r * 100, cols[(i + r) % 4], 0.62 + (r === 0 ? 0.06 : 0));
+    // v4 dressing (owner note 2): the cave floor: pebbles, spilled coins, a goblet on its side, a scimitar, a rolled carpet,
+    // jewels and blue crystals growing from the rock at the foot of the walls
+    abDress(c, 0, 1600, 915, 1215, 71, { stones: 22, tufts: 0, flowers: 0, stone: ['#a8807a', '#6a4a4a'] });
+    const Rc = K.rng(72); for (let i = 0; i < 40; i++) { const x = Rc() * 1600, y = 915 + Rc() * 290, r = 8 + Rc() * 7; abBlob(c, x, y, r, r * 0.5, Rc() < 0.75 ? '#ffcf3a' : '#e6e8f6', Rc() < 0.75 ? '#c07a12' : '#9a9ec0', { lw: 2, off: 2 }); }
+    for (let i = 0; i < 7; i++) { const x = 60 + Rc() * 1500, y = 930 + Rc() * 250, col = ['#e8364f', '#2fd08a', '#3f7ad0', '#c86aff'][i % 4]; celShade(c, [[x, y - 14], [x + 10, y - 4], [x, y + 6], [x - 10, y - 4]], col, abDark(col, 0.35), { light: [-1, -1], off: 4, hi: '#ffffff', lw: 2 }); }
+    for (const [cx, n] of [[30, 4], [1560, 5], [1130, 3]]) for (let k = 0; k < n; k++) { const x = cx + (k - n / 2) * 26, h = 50 + ((k * 37) % 60); celShade(c, [[x - 12, 906], [x - 6, 906 - h], [x, 906 - h - 16], [x + 6, 906 - h], [x + 12, 906]], '#7ad8ff', '#3a8ac8', { light: [-1, -1], off: 5, hi: '#e8faff', lw: 2.5, line: '#1a4a7a' }); }
+    c.save(); c.translate(560, 1080); c.rotate(-0.4); celShade(c, [[-40, -12], [40, -18], [50, 0], [40, 18], [-40, 12]], '#ffcf3a', '#c07a12', { light: [-1, -1], off: 6, hi: '#fff3b0', lw: 3 }); c.restore();
+    c.save(); c.translate(1000, 1120); c.rotate(0.15); seg(c, -90, 0, 70, -20, 10, '#d8dcef', 2); seg(c, -120, 4, -90, 0, 14, '#c07a12', 2); c.restore();
+    celShade(c, K.rectPts(1260, 1010, 240, 46), '#7a4ad0', '#4a2a8a', { light: [-1, -1], off: 10, lw: 3 }); for (let x = 1272; x < 1500; x += 30) seg(c, x, 1012, x, 1054, 4, '#ffd36a', 0); shape(c, ell(1260, 1033, 16, 23, 16), '#5a2a9a', { lw: 3 });
     // row of sacks in three sizes by the gold
     for (const [x, s] of [[300, 0.75], [352, 0.6], [398, 0.45]]) abSack(c, x, 904, s, 1, { coin: true });
   });
@@ -180,3 +200,28 @@ function abStalactites(ctx, cam) { const R = K.rng(15); ctx.save(); const ox = (
   for (let i = 0; i < 9; i++) { const x = 60 + i * 190 + R() * 60 + ox, len = 160 + R() * 200, w = 50 + R() * 50;
     celShade(ctx, [[x - w, -20], [x + w, -20], [x + w * 0.2, 60 + len * 0.5], [x, 60 + len]], '#2a141e', '#160a10', { light: [1, -0.4], off: 14, hi: '#6a3a3a', lw: 3, line: '#0a0408' }); }
   ctx.restore(); }
+
+// ---------- v4 set dressing (owner note 2: more elements in every scene) ----------
+// cel stones, grass tufts, flowers and small plants scattered over a ground band (baked into a plate: static)
+function abStone(c, x, y, r, col = '#b8aec8', sh = '#857aa0') { celShade(c, [[x - r, y], [x - r * 0.8, y - r * 0.55], [x - r * 0.2, y - r * 0.8], [x + r * 0.5, y - r * 0.7], [x + r, y - r * 0.2], [x + r * 0.9, y]], col, sh, { light: [-1, -1], off: r * 0.3, hi: abLight(col, 0.5), lw: 2.5, line: abDark(sh, 0.4) }); }
+function abTuft(c, x, y, h, col = '#5fae5a', sh = '#2f7a44') { for (let k = -2; k <= 2; k++) { c.save(); c.translate(x + k * h * 0.12, y); c.rotate(k * 0.28); celShade(c, [[-h * 0.08, 0], [0, -h * (1 - Math.abs(k) * 0.15)], [h * 0.08, 0]], col, sh, { light: [-1, 0], off: h * 0.05, lw: 2 , line: abDark(sh, 0.4) }); c.restore(); } }
+function abFlower(c, x, y, h, col) { seg(c, x, y, x + 2, y - h, 3, '#3f8a4a', 0); for (let i = 0; i < 5; i++) { const a = i * 1.2566; shape(c, ell(x + 2 + Math.cos(a) * h * 0.14, y - h + Math.sin(a) * h * 0.14, h * 0.11, h * 0.11, 10), col, { lw: 1.5, line: abDark(col, 0.5) }); } shape(c, ell(x + 2, y - h, h * 0.08, h * 0.08, 10), '#ffe27a', { lw: 0 }); }
+// o: {stones, tufts, flowers, cols (flower colours), stone [col, shade], grass [col, shade], skip: [[x0, x1], ...] (keep clear)}
+function abDress(c, x0, x1, y0, y1, seed, o = {}) {
+  const R = K.rng(seed), clear = (x) => (o.skip || []).some(([a, b]) => x > a && x < b), items = [];
+  for (let i = 0; i < (o.stones ?? 10); i++) items.push(['s', x0 + R() * (x1 - x0), y0 + R() * (y1 - y0), R()]);
+  for (let i = 0; i < (o.tufts ?? 14); i++) items.push(['t', x0 + R() * (x1 - x0), y0 + R() * (y1 - y0), R()]);
+  for (let i = 0; i < (o.flowers ?? 10); i++) items.push(['f', x0 + R() * (x1 - x0), y0 + R() * (y1 - y0), R()]);
+  items.sort((a, b) => a[2] - b[2]);
+  const cols = o.cols || ['#ff6a8a', '#ffd36a', '#fff6ea', '#9a7aff', '#ff8a3a'], [sc, ss] = o.stone || ['#c8bcc8', '#8a7e9a'], [gc, gs] = o.grass || ['#6ab85a', '#2f7a44'];
+  for (const [k, x, y, q] of items) { if (clear(x)) continue; const d = 0.6 + 0.8 * (y - y0) / Math.max(1, y1 - y0);
+    if (k === 's') abStone(c, x, y, (10 + q * 22) * d, sc, ss); else if (k === 't') abTuft(c, x, y, (26 + q * 30) * d, gc, gs); else abFlower(c, x, y, (22 + q * 18) * d, cols[Math.floor(q * 97) % cols.length]); }
+}
+// a small flock crossing the sky, wings on twos (Library bird rig, sparrow kind); x moves from x0 at speed v (units/s)
+function abFlock(ctx, t, x0, y0, v, n = 4, seed = 1, s = 0.5) {
+  const R = K.rng(seed), tc = AB_T2(t), dir = v < 0 ? -1 : 1;
+  for (let i = 0; i < n; i++) { const dx = R() * 160 - i * 70, dy = R() * 90 - 45, ph = R() * 6;
+    bird(ctx, { kind: 'sparrow', x: x0 + dx * dir + v * t, y: y0 + dy + 10 * Math.sin(tc * 2 + ph), s: s * (0.8 + R() * 0.4), dir, fly: true, flap: Math.sin(tc * 26 + ph) }); }
+}
+// the rising sun: a disc with a hard highlight and a soft painted halo
+function abSun(ctx, x, y, r, col = '#fff1b0', halo = '#ffc890', k = 1) { abGlow(ctx, x, y, r * 4, 0.55 * k, halo); celShade(ctx, ell(x, y, r, r, 40), col, abMul(col, '#ff9a5a', 0.25), { light: [-1, -1], off: r * 0.18, lw: 0 }); }
