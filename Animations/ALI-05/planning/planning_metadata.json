@@ -1,0 +1,92 @@
+{
+ "story_id": "ALI-05",
+ "title": "The Unexpected Guest",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-21T16:32:29",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a4f3b47573a7901e9.jsonl",
+ "agent_id": "a4f3b47573a7901e9",
+ "model_messages": {
+  "claude-fable-5-2": 29
+ },
+ "script": {
+  "source": "Spreadsheets/Script_Updated.xlsx",
+  "sha256": "eecebffd0fdaeebac44d2a00c0f4e335758729db7b2e64ebae2db1d25559e179",
+  "paragraphs": 8,
+  "segments": [
+   "ALI-05-P01-S01",
+   "ALI-05-P01-S02",
+   "ALI-05-P01-S03",
+   "ALI-05-P01-S04",
+   "ALI-05-P01-S05",
+   "ALI-05-P01-S06",
+   "ALI-05-P01-S07",
+   "ALI-05-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/ALI-05_The_Unexpected_Guest_slowed.mp3",
+  "sha256": "cb34d57f88f94ad467539d8be443702b027f9f5e95debbea50ac62c140c4372d",
+  "duration": 133.818
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/ALI-05_The_Unexpected_Guest_slowed.mp3.words.json",
+  "sha256": "6c138458cc752f256e54821a1cdfa36bdfcbcd7ca507920ab8db049e67eb0074",
+  "manifest_status": "supplied",
+  "script_match": 1.0
+ },
+ "library_rev": "70d18d3",
+ "scenes": 16,
+ "actions": 171,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "dinnerRoom",
+   "effort": "L"
+  },
+  {
+   "type": "set",
+   "name": "shopFront",
+   "effort": "M"
+  },
+  {
+   "type": "character",
+   "name": "newMerchant and nephew (palette variants)",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "cupFumble",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "voiceWave and clueCounter",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "windowView and memoryPanel",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "style variant of ALI-05 (cel-anime-80s); script from Google Sheet \"Sinbad Arabian Nights and Ebony Horse\" (Drive: ChatGPT Projects/Arabic Stories), tab All Scripts, rows 58-65, read 2026-11-21",
+ "validation_warnings": [
+  "sets townStreetEvening: no library function and not marked new",
+  "sets courtyardNight: no library function and not marked new",
+  "props silverRing: no library function and not marked new",
+  "props gateBar: no library function and not marked new"
+ ],
+ "plan_warnings": [
+  "About 55 seconds are in one room with seated people: the pans, the two views (window and door), the balloons, the counter and the changing framing must make each scene a new picture; keep the seated figures acting (hands, heads, eyes) so the table never freezes.",
+  "Six people plus a loaded table in the dinner room: bake the plate, draw the table in two passes, and check at phone size that every arm reads against the cushions and the cloak.",
+  "This plan depends on drawings from ALI-03 (Morgiana, townStreet, silverRing, oil merchant, sneakChain) and ALI-04 (courtyard, gateBar, disguiseWipe, guards, baker, youth) that are planned but may not be implemented yet; build them here from those plans under the same names if needed. ALI-04 had no creative_plan.md when this plan was written; its JSON was used.",
+  "The disguise must fool the family but not the audience: if the test stills make him unrecognisable, strengthen the brows and the walk, not the costume; if he looks exactly like the oil merchant, lighten the beard further.",
+  "The Library person has no back or profile view: the run to the gate and the final turn are acted with tip, gaze, a blink and weight shift. Review 122.6-133.0 early.",
+  "Library marketStreet is untested with a custom booth drawn over it in the cel theme; measure the house door near x 1560 on the set before placing the storehouse corner.",
+  "The impact frame at 109.54 and the tape transition at 35.0 are the only full-frame flashes; do not add more.",
+  "plancheck warns that the reused series sets and props (townStreetEvening, courtyardNight, silverRing, gateBar) have no Library function and are not marked new: they are series drawings copied from earlier episodes.",
+  "The English and Arabic scripts match paragraph for paragraph; no SCRIPT question."
+ ]
+}

@@ -3,7 +3,7 @@
 // ---------- the riders outside (S6 cutaway) and the standing horses at the rock (S10-S12, S14) ----------
 // i: rider palette (-1 the leader), pal: coat, x/y/s: the place it stops (all come in from the right along the trail, dir -1)
 const A2_MOUNTS = [
-  { i: -1, pal: 2, x: 2060, y: 884, s: 0.72, d: 47.0 }, { i: 4, pal: 4, x: 2175, y: 872, s: 0.58, d: 47.12 }, { i: 3, pal: 3, x: 1075, y: 905, s: 0.8, d: 46.7 },
+  { i: -1, pal: 2, x: 2060, y: 884, s: 0.72, d: 47.0 }, { i: 4, pal: 4, x: 2175, y: 872, s: 0.58, d: 47.12 }, { i: 3, pal: 3, x: 1110, y: 905, s: 0.8, d: 46.7 },
   { i: 0, pal: 0, x: 1290, y: 862, s: 0.5, d: 46.9 }, { i: 1, pal: 5, x: 1410, y: 860, s: 0.48, d: 47.05 }];
 const a2Arrive = (h, t) => { const e = K.clamp((t - h.d) / 1.05); return h.x + 900 * Math.pow(1 - e, 2.2); };
 function a2StandHorses(ctx, t, m, o = {}) { const tc = AB_T2(t);

@@ -45,16 +45,16 @@ const A2_LDX = (t) => kfn(t, [[85.18, 1800], [86.2, 1950]], 'inOut'), A2_LDS = (
 const A2_MEN_OUT = [{ i: 0, x: 2000, s: 0.95, y: 908, t0: 86.32 }, { i: 1, x: 2050, s: 0.92, y: 904, t0: 86.52 }, { i: 2, x: 2100, s: 0.9, y: 910, t0: 86.72 }];
 const A2_SENT = [{ i: 3, x0: 1980, y: 896, s: 0.92, go: 88.4, x1: 2236, x2: 2372 }, { i: 4, x0: 2080, y: 898, s: 0.94, go: 88.55, x1: 2296, x2: 2342 }];
 const A2_CAS_X = (t) => kfn(t, [[91.0, 1850], [92.1, 1690], [100.4, 1690], [101.3, 980], [101.5, 760]], 'inOut');
-const A2_ALI_X = (t) => kfn(t, [[101.04, 880], [101.3, 960], [101.5, 690]], 'inOut');
+const A2_ALI_X = (t) => kfn(t, [[101.04, 845], [101.3, 960], [101.5, 690]], 'inOut');
 function a2AliG(t) {   // Ali Baba at the thicket: y 980 = hidden; 880 = head and arm above the leaves
-  const tc = AB_T2(t), P = { x: 880, y: 980, s: 0.95, dir: 1, gaze: [1, -0.1], lid: abLid(t, 91, [93.5, 94.4]), mouth: 'closed', brow: -0.4, tip: idleSway(tc, 92, 0.02, 2.6), sq: breathe(tc, 93) }; let show = false, out = false, k = 0;
+  const tc = AB_T2(t), P = { x: 845, y: 980, s: 0.95, dir: 1, gaze: [1, -0.1], lid: abLid(t, 91, [93.5, 94.4]), mouth: 'closed', brow: -0.4, tip: idleSway(tc, 92, 0.02, 2.6), sq: breathe(tc, 93) }; let show = false, out = false, k = 0;
   if (tc >= 80.3 && tc < 82.3) { show = true; P.y = 850; const pick = beatIn(tc, 80.3, 80.5) * (1 - beatIn(tc, 80.55, 80.7));
     P.tip = 0.3 * pick; P.handR = [60, -40 * pick - 100 * (1 - pick)];
     if (tc >= 80.6) { P.handR = [40, -150 - 10 * Math.abs(osc(tc, 0.2))]; P.gaze = [1, -0.4]; }
     if (tc >= 80.9) { const back = beatIn(tc, 80.9, 81.2), thr = beatIn(tc, 81.2, 81.32), fol = beatIn(tc, 81.32, 81.7); P.tip = -0.15 * back * (1 - thr) + 0.12 * thr * (1 - 0.6 * fol); P.sq = 1 + 0.04 * back;
       P.handR = thr > 0 ? [K.lerp(-60, 100, thr) - 20 * fol, K.lerp(-230, -190, thr) + 80 * fol] : [-30 - 40 * back, -170 - 60 * back]; k = thr; P.gaze = [1, -0.8]; }
     if (tc >= 81.7) { P.gaze = gazePlan(tc, [[81.7, [1, -0.8]], [82.0, [1, -0.3]]]); P.y = K.lerp(850, 960, beatIn(tc, 81.9, 82.3)); } }
-  if (tc >= 93.0 && tc < 101.04) { show = true; P.y = K.lerp(960, 855, K.ease.out(beatIn(tc, 93.0, 93.3))); P.gaze = [1, -0.3]; P.brow = -0.8;
+  if (tc >= 93.0 && tc < 101.04) { show = true; P.y = K.lerp(960, 850, K.ease.out(beatIn(tc, 93.0, 93.3))); P.gaze = [1, -0.3]; P.brow = -0.8;
     if (tc < 93.82) { P.handR = [64 + 10 * osc(tc, 0.35), -200]; }
     else if (tc < 94.3) { P.handR = [92, -196]; P.tilt = 0.06 * Math.sin(tc * 18); }
     else if (tc < 99.06) { P.handR = PERSON_HANDS.hush.R; P.tilt = 0.05 * Math.sin(tc * 14) * (1 - beatIn(tc, 94.3, 94.9)); }
@@ -120,7 +120,7 @@ function a2OutWorld(ctx, t, cam, o = {}) {
   // Ali Baba behind the thicket (thicket front pass over him) unless he is out
   const A = a2AliG(t); if (A && !A.out) { a2Sash(ctx, A.P, t, A.k); a2Ali(ctx, A.P, m, { shadow: false }); }
   abThicketFront(ctx, m, t);
-  if (o.eyeGap) a2EyeGap(ctx, t, 880, 815, o.eyeGap);
+  if (o.eyeGap) a2EyeGap(ctx, t, 860, 815, o.eyeGap);
   // the leader, the men, Cassim outside
   const L = a2LeadG(t); if (L.sx < AB_DIN || L.P.x >= AB_DEND) a2DoorFig(ctx, t, L.P.x, 902, (cc, xx, yy, k) => a2Lead(cc, t, { ...L.P, x: xx, y: yy }, m, { shc: A2_GSH, kick: 0.4 * beatIn(tc, 87.95, 88.2) }), 'out', { stateX: L.sx });
   A2_SENT.forEach((M, j) => { const R = a2SentP(t, j); if (!R) return; ctx.save(); ctx.globalAlpha *= R.fade; a2Man(ctx, M.i, R.P, m, { shc: A2_GSH, t }); ctx.restore(); });
@@ -149,7 +149,7 @@ AB_SHOTS.push({ a: 78.0, b: 80.3, ww: 2400, cam: a2Cam([[78.0, { x: 900, y: 760,
   over: (ctx, t, cam, S) => { if (t > 79.56) S.arrow(ctx, abP(1660, 500, cam), abP(1790, 640, cam), K.clamp((t - 79.56) / 0.4), { color: '#7fe3ff' }); } });
 AB_SHOTS.push({ a: 80.3, b: 81.28, ww: 2400, cam: () => ({ x: 930, y: 740, zoom: 1.5 }), under: a2GladeUnder(A2_G), world: a2Out({}) });
 AB_SHOTS.push({ a: 81.28, b: 82.02, ww: 2400, cam: a2PebCam, under: a2GladeUnder(A2_G), world: a2Out({}), over: (ctx, t) => abSpeed(ctx, [0, 0, 1000, 1230], t, { dir: -1, n: 22, alpha: 0.45 * Math.sin(Math.PI * beatIn(t, 81.28, 82.02)) }) });
-AB_SHOTS.push({ a: 82.02, b: 84.1, ww: 2400, cam: () => ({ x: 2130, y: 640, zoom: 1.25 }), under: a2GladeUnder(A2_G), world: a2Out({}), over: a2Clatter });
+AB_SHOTS.push({ a: 82.02, b: 84.1, ww: 2400, cam: (t) => ({ x: 2200, y: 700, zoom: 1.6 - 0.05 * beatIn(t, 82.02, 84.1) }), under: a2GladeUnder(A2_G), world: a2Out({}), over: a2Clatter });
 AB_SHOTS.push({ a: 84.1, b: 90.9, ww: 2400, cam: () => ({ x: 1900, y: 615, zoom: 1.0 }), under: a2GladeUnder(A2_G), world: a2Out({}),
   over: (ctx, t, cam, S) => { const L = a2LeadG(t).P, [lx, ly] = abP(L.x, 900 - 260, cam);
     abSay(ctx, S, [[85.4, 'GUARDS?!']], t, K.clamp(lx + 60, 220, 780), 330, [lx, ly], { size: 56, gone: 86.5 });
@@ -160,7 +160,7 @@ AB_SHOTS.push({ a: 84.1, b: 90.9, ww: 2400, cam: () => ({ x: 1900, y: 615, zoom:
 // S11
 const A2_S11_CAM = (t) => { if (t < 92.22) return { x: 1900, y: 615, zoom: 1.0 }; if (t < 94.8) return K.camAt([[92.22, { x: 1900, y: 615, zoom: 1.0 }], [93.0, { x: 1000, y: 700, zoom: 1.4 }]], t);
   if (t < 97.1) return K.camAt([[94.8, { x: 1000, y: 700, zoom: 1.4 }], [95.2, { x: 1700, y: 700, zoom: 1.4 }]], t); return K.camAt([[97.1, { x: 1700, y: 700, zoom: 1.4 }], [98.2, { x: 2130, y: 640, zoom: 1.2 }]], t); };
-function a2InsetAli(ctx, t, rect, p, word) { a2Inset(ctx, t, rect, p, (c) => { const [x, y, w, h] = rect; c.save(); c.translate(x + w / 2, y + h / 2); c.scale(w / 1000 * 2.6, w / 1000 * 2.6); c.translate(-900, -690);
+function a2InsetAli(ctx, t, rect, p, word) { a2Inset(ctx, t, rect, p, (c) => { const [x, y, w, h] = rect; c.save(); c.translate(x + w / 2, y + h / 2); c.scale(w / 1000 * 2.6, w / 1000 * 2.6); c.translate(-865, -690);
   c.drawImage(a2GladePlate(A2_G), 0, 0); abGladeBack(c, A2_G, t); const A = a2AliG(t); if (A) { a2Sash(c, A.P, t, 0); a2Ali(c, A.P, A2_G, { shadow: false }); } abThicketFront(c, A2_G, t); c.restore(); });
   if (word && p > 0.5) S0.label(ctx, word, rect[0] + rect[2] / 2, rect[1] + rect[3] + 40, K.clamp((p - 0.5) * 3), { size: 46 }); }
 AB_SHOTS.push({ a: 90.9, b: 99.06, ww: 2400, cam: A2_S11_CAM, under: a2GladeUnder(A2_G), world: a2Out({}),

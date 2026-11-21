@@ -1,0 +1,101 @@
+{
+ "story_id": "HORSE-05",
+ "title": "The Rescue in the Sky",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-21T16:32:30",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-aaf79c1b829c04545.jsonl",
+ "agent_id": "aaf79c1b829c04545",
+ "model_messages": {
+  "claude-fable-5-2": 29
+ },
+ "script": {
+  "source": "Spreadsheets/Script_Updated.xlsx",
+  "sha256": "d2c53c8c9e9a1c71fe5dca5c39936f8cf6eb62135f924ca5df3a8b477a93a462",
+  "paragraphs": 8,
+  "segments": [
+   "HORSE-05-P01-S01",
+   "HORSE-05-P01-S02",
+   "HORSE-05-P01-S03",
+   "HORSE-05-P01-S04",
+   "HORSE-05-P01-S05",
+   "HORSE-05-P01-S06",
+   "HORSE-05-P01-S07",
+   "HORSE-05-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/HORSE-05_The_Rescue_in_the_Sky_slowed.mp3",
+  "sha256": "9d322429007860fecc5f818a7259d03cd79f4ce844f20fe1e3210aa094186416",
+  "duration": 144.508
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/HORSE-05_The_Rescue_in_the_Sky_slowed.mp3.words.json",
+  "sha256": "6cf463fc6a6ab34a19164a97a374336411ecd320ca16d8760960088a1908c484",
+  "manifest_status": "supplied",
+  "script_match": 1.0
+ },
+ "library_rev": "70d18d3",
+ "scenes": 19,
+ "actions": 204,
+ "new_assets": [
+  {
+   "type": "set",
+   "name": "riverRun",
+   "effort": "M"
+  },
+  {
+   "type": "set",
+   "name": "kingdomBelow variant 'fields' with homeland mountains",
+   "effort": "M"
+  },
+  {
+   "type": "motion",
+   "name": "disguiseOff",
+   "effort": "S"
+  },
+  {
+   "type": "pose",
+   "name": "twoRiders options (princess front, solo front rider, embrace)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "saddleRope, scales icon, round memoryCard",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "farPalace dome front pass and ribbon ring",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "style variant of HORSE-05 (cel-anime-80s); script from Google Sheet \"Sinbad Arabian Nights and Ebony Horse\" (Drive: ChatGPT Projects/Arabic Stories), tab All Scripts, rows 106-113, read 2026-11-21",
+ "validation_warnings": [
+  "cast peacock: no library function and not marked new",
+  "cast ebonyHorse: no library function and not marked new",
+  "sets farPalace: no library function and not marked new",
+  "sets skyFlight: no library function and not marked new",
+  "sets princessGarden: no library function and not marked new",
+  "sets palaceGarden: no library function and not marked new",
+  "props knob: no library function and not marked new",
+  "props lever: no library function and not marked new",
+  "props scrap: no library function and not marked new",
+  "props iconBalloon: no library function and not marked new",
+  "props cards: no library function and not marked new",
+  "props gateBar: no library function and not marked new",
+  "props tick: no library function and not marked new",
+  "props toolbox: no library function and not marked new",
+  "props coverCloth: no library function and not marked new"
+ ],
+ "plan_warnings": [
+  "Depends on drawings from four earlier episodes (HORSE-01 built; 02 in production; 03 and 04 planned). plancheck lists them as 'no library function and not marked new': they are series drawings to copy, not new work for this film.",
+  "Six sets in 148 s (farPalace, skyFlight, riverRun, princessGarden, desertRoad, palaceGarden) but only riverRun and one land plate are new; keep the last two scenes short and simple.",
+  "The P4 pronoun (owner question 1) decides S7: if the owner reads it as the horse, replace the gate business by guards roping off the star and move the inventor's exit to 55.98 only.",
+  "The front-facing person cannot hug in profile: test the embrace on a still at 108.6; fall back to clasped hands if it reads badly.",
+  "The cloak throw at 37.32 and the two-rider reach to the knob are the hardest drawings: check stills at 37.4, 37.7, 38.6 and 74.5.",
+  "S17 holds 13 named figures and 4 animals: give each its own seed and gait; check that the caravan never walks in step.",
+  "The narration has no pause at the lift-off (77.18): it stays silent; effects sit only in the eight listed pauses and after the last word."
+ ]
+}

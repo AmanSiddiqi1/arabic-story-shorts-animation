@@ -1,0 +1,103 @@
+{
+ "story_id": "ALI-06",
+ "title": "Morgiana’s Clever Plan",
+ "plan_version": 1,
+ "status": "validated",
+ "planned": "2026-11-21T16:32:30",
+ "model": "claude-fable-5-2",
+ "model_verified_from": "agent-a387c77c992bf3ca7.jsonl",
+ "agent_id": "a387c77c992bf3ca7",
+ "model_messages": {
+  "claude-fable-5-2": 45
+ },
+ "script": {
+  "source": "Spreadsheets/Script_Updated.xlsx",
+  "sha256": "70639d144587e58a77a39542c8c90a06bd2b42a20ca9c3657348fca8ce2b7fb2",
+  "paragraphs": 8,
+  "segments": [
+   "ALI-06-P01-S01",
+   "ALI-06-P01-S02",
+   "ALI-06-P01-S03",
+   "ALI-06-P01-S04",
+   "ALI-06-P01-S05",
+   "ALI-06-P01-S06",
+   "ALI-06-P01-S07",
+   "ALI-06-P01-S08"
+  ]
+ },
+ "mp3": {
+  "file": "Audio Files/Final Done/ALI-06_Morgiana_s_Clever_Plan_slowed.mp3",
+  "sha256": "2e84ad9173bfe502d8abaacd5a06f059c731867c119ad9b800a40671ceaae38d",
+  "duration": 142.128
+ },
+ "timing": {
+  "file": "Audio Files/Final Done/ALI-06_Morgiana_s_Clever_Plan_slowed.mp3.words.json",
+  "sha256": "55e7568ba2219d8a7f5db567aa479313597fe77952c85e54546825a1c38febf3",
+  "manifest_status": "supplied",
+  "script_match": 1.0
+ },
+ "library_rev": "70d18d3",
+ "scenes": 21,
+ "actions": 171,
+ "new_assets": [
+  {
+   "type": "pose",
+   "name": "cuff fold-back (abNewMerchant cuff per arm)",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "lampShop (shopFront variant, with balanceScale)",
+   "effort": "M"
+  },
+  {
+   "type": "prop",
+   "name": "feastSpread",
+   "effort": "S"
+  },
+  {
+   "type": "effect",
+   "name": "nameTags",
+   "effort": "S"
+  },
+  {
+   "type": "prop",
+   "name": "giftBox, gateKey with padlock, rewardBox, listScroll, returnGoods",
+   "effort": "S"
+  },
+  {
+   "type": "set",
+   "name": "marketDusk model",
+   "effort": "S"
+  },
+  {
+   "type": "motion",
+   "name": "handOver (give and take with weight)",
+   "effort": "S"
+  }
+ ],
+ "input_notes": "style variant of ALI-06 (cel-anime-80s); script from Google Sheet \"Sinbad Arabian Nights and Ebony Horse\" (Drive: ChatGPT Projects/Arabic Stories), tab All Scripts, rows 66-73, read 2026-11-21",
+ "validation_warnings": [
+  "sets courtyardNight: no library function and not marked new",
+  "sets courtyardFeast: no library function and not marked new",
+  "sets gladeMorning: no library function and not marked new",
+  "sets treasureCave: no library function and not marked new",
+  "props silverRing: no library function and not marked new",
+  "props gateBar: no library function and not marked new",
+  "props caveMap: no library function and not marked new",
+  "props rope: no library function and not marked new",
+  "props cart: no library function and not marked new",
+  "props treasure: no library function and not marked new",
+  "props goldCoin: no library function and not marked new",
+  "props firewood: no library function and not marked new"
+ ],
+ "plan_warnings": [
+  "Continuity with ALI-05 (planned at the same time, read in its plan form only): the opening frame must match its last frame (night yard, Morgiana in door K at x 170 with the gift held up, the guest at x 620 by the barred gate, helmets behind the wall at x 800..960); if its animation moves anything, follow the film, not this plan.",
+  "Depends on drawings planned in ALI-03 and ALI-04 (Morgiana, courtyard, guards, gate bar, disguiseWipe) that may not be built yet.",
+  "Seven places in 147 s (yard, glade, cave, road, market, feast, market at dusk): all but the feast dressing and the shop are existing plates, but check the render budget and bake every plate.",
+  "The Library person is front facing: the look back in the gateway (69.48), the back against the gate (21.9) and the pointing arms (138) are staged three-quarter with gaze and arm angles, never as a back view.",
+  "The long cuffs must not hide the acting: the right cuff stays folded back from 1.52, the left hand shows whenever it gestures; check stills at 1.0, 20.0, 37.0 and 59.0 at phone size. About 70 s in the night courtyard: keep it light and coloured and reframe often.",
+  "19 lettering items including the titles and the shop sign, close to the limit; balloons at 38.5, 42.48, 46.24 and 48.46 come quickly and must each clear before the next.",
+  "The English and Arabic scripts match; no SCRIPT question."
+ ]
+}

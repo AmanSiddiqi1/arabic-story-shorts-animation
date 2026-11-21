@@ -95,11 +95,13 @@ function a2S2World(ctx, t, cam) {
   a2CaveWorld(ctx, t, cam, { door: {} });
   const tc = AB_T2(t); a2SackRow(ctx, tc);
   const lift = tc >= 11.6 && tc < 13.38 ? flow(tc, A2_LIFT) : 0, fill5 = K.clamp((tc - A2_FILL[4]) / 0.25);
-  if (tc >= A2_FILL[4]) { if (tc < 13.38) abSack(ctx, A2_BIG[0], A2_BIG[1] - lift, 0.62 + 0.43 * fill5, fill5, { coin: fill5 > 0.9, tie: tc > 11.0 ? '#c8481a' : null }); else a2BigSack(ctx, t, { sq: impactSquash(tc, 13.38, 0.7) }); }
+  const bigFront = tc >= 11.6 && tc < 13.38, drawBig = () => { if (tc >= A2_FILL[4]) { if (tc < 13.38) abSack(ctx, A2_BIG[0], A2_BIG[1] - lift, 0.62 + 0.43 * fill5, fill5, { coin: fill5 > 0.9, tie: tc > 11.0 ? '#c8481a' : null }); else a2BigSack(ctx, t, { sq: impactSquash(tc, 13.38, 0.7) }); } };
+  if (!bigFront) drawBig();
   // coins fly from the mound to the sack being filled (on twos), with glints
   for (let i = 0; i < 5; i++) { const t0 = A2_FILL[i]; if (tc < t0 - 0.1 || tc > t0 + 0.3) continue; const tx = i < 4 ? A2_ROW[i] : A2_BIG[0], R = K.rng(90 + i);
     for (let k = 0; k < 6; k++) { const u = K.clamp((tc - t0 + 0.1 - k * 0.05) / 0.3); if (u <= 0 || u >= 1) continue; const x = K.lerp(700 + R() * 40, tx, u), y = K.lerp(820, 870, u) - 140 * Math.sin(Math.PI * u); abBlob(ctx, x, y, 8, 8 * Math.abs(Math.cos(tc * 20 + k)), '#ffcf3a', '#c07a12', { lw: 2, off: 2 }); } }
   const P = a2S2Cassim(ctx, t, 'cave');
+  if (bigFront) drawBig();
   if (tc >= 10.14 && tc < 10.95) { for (let k = 0; k < 8; k++) { const h = a2Hand(P, k % 2, A2_CAS), u = ((t * 2.2 + k / 8) % 1); abBlob(ctx, h[0] + (k % 3 - 1) * 8, h[1] + 10 + u * 110, 7, 7 * Math.abs(Math.cos(t * 17 + k)), '#ffcf3a', '#c07a12', { lw: 2, off: 2 }); }
     abBands(ctx, [P.x - 120, 600, 240, 320], t, { cols: ['#fff3b0'], alpha: 0.3, w: 70, speed: 500 }); }
   if (tc > 13.38 && tc < 14.2) { dustBurst(ctx, A2_BIG[0], 905, t - 13.38, 7, 4, 10, 46, 0.7, 13); for (let k = 0; k < 3; k++) { const [x, l] = hop(t, 13.42 + k * 0.05, 0.4, A2_BIG[0] - 20 + k * 20, A2_BIG[0] - 70 + k * 70, 60 - k * 12); if (t > 13.42) abBlob(ctx, x, 912 - l, 8, 4, '#ffcf3a', '#c07a12', { lw: 2, off: 2 }); } }

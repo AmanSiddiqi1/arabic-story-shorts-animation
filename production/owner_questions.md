@@ -62,6 +62,35 @@ Each plan proceeds with its stated default unless you say otherwise. Answer by s
 - New recurring neighbours: a big gentle baker and his young apprentice (door 1) beside the old neighbour from episode 3 (door 2); guards in sky blue and brass with a white-caped captain; default: these designs.
 - The reveal of the disguise in paragraph 2 is shown as a band of moonlight inside which the merchant is drawn as the leader, and the men in the jars as a cutaway view; default: as described.
 
+## ALI-05 The Unexpected Guest
+
+- The film ends on TO BE CONTINUED... instead of THE END because episode 6 continues from the same moment (series decision); default: TO BE CONTINUED....
+- The leader's second disguise is a new design (coral robe, plum turban, short hennaed beard, long cuffs that hide his hands, a plum cloak with gold trim for dinner), clearly different from the oil merchant; default: this design.
+- The nephew (Cassim's son) is a new character: a cheerful beardless young man in a white shirt, emerald waistcoat and saffron sash (his father's colours); default: this design.
+- The audience is told who the merchant is at once, by a band of light that shows the leader inside it at 0.5 s and again at 109.5 s; default: included.
+- The gift of paragraph 2 is a small wrapped box that is never opened; the nephew leaves it on the chest in the dinner room and Morgiana holds that same box up at the end as her pretext (reading "your gift" as the gift he brought); default: the same box.
+- Addition for episode 6: on her way back from the neighbours Morgiana quietly bars the courtyard gate (79.4 s), so the gate he runs to is already shut; default: included.
+- Morgiana counts her evidence with an on-screen CLUES counter 1 to 5 (ring, voice, seat by the door, the lanes, the cup); default: included.
+- Invented English balloon and label lines: I AM A NEW MERCHANT!, THE NEPHEW, COME TO DINNER!, THE SAME RING!, WHAT A FINE HOME!, MAY I SIT BY THE DOOR?, TELL THE GUARDS. QUIETLY!, WHERE HAVE YOU TRAVELLED?, MY FIRST TIME IN THIS TOWN!, ...BY OLD WELL LANE, OF COURSE!, EVER MET AN OIL MERCHANT?, N-NO!, THE LEADER!, I MUST GO!, plus the two script lines ONE MOMENT, SIR! and YOU FORGOT YOUR GIFT!; default: kept as written.
+- The trusted neighbours are the old woman, the baker and his apprentice from the ALI-04 plan, and the apprentice is the one who runs for the guards; default: as described.
+- Comic additions beyond the script: the switch-on smile repeated for three customers, the thought bubble of five little thieves that he swats away, the captain's plume left above the window sill, the cat and donkey distrusting him; default: all included.
+- The guards are shown only as helmets (at the window, and rising behind the courtyard wall in the last picture); default: included, with no weapons in use.
+
+## ALI-06 Morgiana’s Clever Plan
+
+- The film opens on the last picture of ALI-05 (night courtyard, Morgiana in the doorway with the gift, the guest at the barred gate) and uses that plan's guest, nephew, gift box, barred gate and shop front; the guest walks back for his gift, which lets her fold back the long cuff that hid the ring; default: as described.
+- The script says he forgot his false name and gave a different one without naming either; the balloons use HASAN and then KARIM'S as invented names; default: kept (ALI-05 gives him no name on screen and his shop sign is only a lamp picture).
+- Family-friendly capture: the guards hold their spears upright, nobody touches him, he raises empty hands and is walked out with a loose rope at his wrists; default: as described.
+- The locked gate: ALI-05 has Morgiana lower the bar; this film adds a padlock on it and the key on a turquoise ribbon at her sash; default: included.
+- Before the guards enter, the helmets seen behind the wall at the end of ALI-05 move along the wall top (spear tips and a plume bobbing) to the back gate, and the old neighbour of episodes 3 and 4 comes in with them; default: included.
+- At the rock Ali Baba says OPEN SESAME! one last time as a callback to episode 1 (the script only says he showed the guards the rock); default: included.
+- The return of the stolen goods is shown as three small hand-overs (a weaver's carpet, a potter's pot of savings, a girl's brass horse); default: these three.
+- Ali Baba's line about gold is acted with a single gold coin that he drops on the table, and the reward is a small casket with a purse, shown with three possible futures in a thought cloud (a shop, a road, a house); default: included.
+- Morgiana's shop sells brass lamps and oil (her lamp and the oil jars of episode 4) under a turquoise striped awning with the name board MORGIANA'S, and it is the false merchant's empty shop of ALI-05 refitted by the family (the script only says she opened a shop); default: the same shop made honest.
+- Ali Baba's honest trade is firewood with the grey donkey of episode 1, and the cave appears once in a thought cloud, shut and overgrown; default: included.
+- The last paragraph is staged with an old storyteller and children, and the townspeople's line as one shared balloon; after the last word the family gathers at the shop under the lamps for the 5 s THE END hold; default: included.
+- Invented English balloon and tag lines: THIS PROVES WHO YOU ARE., THE LEADER!, LOCKED!, NOBODY LEAVES BEFORE THE GUARDS ARRIVE., I AM ONLY A TRAVELING MERCHANT!, MY NAME IS... ER... HASAN!, WHAT IS YOUR SHOP CALLED?, KARIM'S!, MAP TO THE CAVE, TO THE JUDGE!, OPEN SESAME!, THANK YOU, MORGIANA!, GOLD DID NOT SAVE US., YOUR WISDOM DID., I WILL OPEN A SHOP IN THE MARKET!, REMEMBER CLEVER MORGIANA!; default: kept as written.
+
 ## AN-001 The Bull and the Ass
 
 - The merchant is shown listening at the stable window during the plan (56.7-67.1 s), before the narration reveals at 82.8-89.9 s that he had heard it; default: shown, quietly, and replayed in an inset at 87.6 s.
@@ -841,6 +870,23 @@ Each plan proceeds with its stated default unless you say otherwise. Answer by s
 - The last image adds a cliffhanger not in the script: the inventor notices the crimson and saffron at the craftsman's hip just as Firuz's hand hovers over the knob. Default: keep; the film ends on TO BE CONTINUED...
 - Invented English lettering (19 items with the title and the two captions): A GIFT FOR YOU, GREAT KING!, SHE CHOSE TO COME!, THIS MAN DECEIVED ME., I WISH TO GO HOME., WAIT. FIRST THE TRUTH., LOCK IT IN A CLOSED COURT!, CLANK!, DOWN, MEANWHILE..., IT FLEW THAT WAY!, FIRUZ, IN DISGUISE, I KNOW WOOD AND BRASS., UNDER GUARD!, BOTH WORK!, TOMORROW, IN THE OPEN SQUARE., THE MOON KNOWS THE RIVER'S PATH, NEXT MORNING..., TO BE CONTINUED... Default: keep all.
 - SCRIPT: the English of P2 shortens the Arabic ('The king looked at the horse in amazement' becomes 'Amazed by the horse', 'the whole truth' becomes 'the truth'), P3 says 'while he was nearby' for the Arabic 'as long as he is near', and P8 omits 'in the courtyard' (Arabic: gathered in the courtyard); both languages are kept verbatim.
+
+## HORSE-05 The Rescue in the Sky
+
+- SCRIPT: in P4 the Arabic 'وحفظه في الساحة حتى المحاكمة' and the English 'keeping it secured until the hearing' can be read as the horse being kept in the square, yet the pair fly home on the horse in P5; default: the one kept until the hearing is the inventor, shown being led into the closed court of episode 4 with his eyes at the grille, and no lettering says who 'it' is.
+- SCRIPT: the English of P4 shortens the Arabic ('until the judge hears his statement' becomes 'for the judge', 'in the square' is dropped) and the English of P7 says 'resourcefulness' for 'good planning'; both languages are kept verbatim.
+- The film opens on the last frame of HORSE-04 (the craftsman's hand at the knob, the inventor staring at the crimson sash corner) and the inventor is stopped by a guard before he can speak; default: keep this bridge.
+- The reveal of Firuz's name is staged as throwing off the cap and cloak, taking his crown from the toolbox and showing that the saffron scrap fits the inventor's torn turban; the scrap then goes to the captain as evidence. Default: keep.
+- The arrest is softened: nobody touches the inventor; two guards walk beside him with crossed spears and a gate is barred. Default: keep it light.
+- Seating on the horse: the princess rides in front (nearest the hidden DOWN lever she uses in P6) and Firuz behind, reaching past her to the UP knob in P5. Default: keep.
+- The 'ropes' of P5 are drawn as one crimson safety cord round both riders, checked with a tug, plus green ticks for the two controls. Default: keep.
+- The 'short circle above the palace' is flown round the great tangerine dome, leaving a ring of gold ribbon, with the inventor's eyes watching from the grille. Default: keep.
+- The river she knows is flown low between the two towers of episode 2, and the sun's glints line up into the gold path of the password. Default: keep the callback.
+- The family is her father (royal blue and silver), her mother, the maid, the two guards and the roof cat from episodes 2 and 3; mother and daughter embrace. Default: keep.
+- P8: the escort travels BY LAND (as she chose in episode 3): the princess on a white horse, Firuz on the bay, the maid on a donkey, two guards on foot, and the ebony horse on a cart pulled by a camel with the cat on its saddle; Firuz's father meets them at the gate. The farewell to her family, told afterwards by the narration, is a small round picture. Default: keep.
+- The flying lesson is set in the garden of episode 1 with Firuz standing where the inventor stood, and the film closes on episode 1's sunset sky with the counters 1 and 2 over the riders and THE END (not TO BE CONTINUED). Default: keep.
+- Invented English lettering (19 items with the title, the caption and THE END): I CAN TEST IT. / SHE KNOWS ITS STORY. / WAIT! / TELL THE KING THE WHOLE TRUTH. / I AM PRINCE FIRUZ! / HOLD HIM FOR THE JUDGE. / GO. TAKE HER HOME. / CLANK! / UP / OOOH! / HOME! / DOWN / WELCOME HOME! / YOU WERE BRAVE AND CLEVER. / DAYS LATER... / HA HA! / NOW WE HAVE TWO PILOTS! Default: as listed.
+- Time of day: the far palace in fresh morning, the flight in bright day, the garden in day turning to gold, the road in bright day, the lesson at golden hour, the last sky at sunset; no night scene. Default: as listed.
 
 ## KD-013 The Ascetic and the Thieves
 

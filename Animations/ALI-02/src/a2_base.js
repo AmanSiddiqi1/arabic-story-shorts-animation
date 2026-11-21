@@ -133,7 +133,8 @@ const A2_LAND = {   // far hills, near hills, tree line, ground top, ground bott
 // boulders of the scree: rows stepping up to the right against the rock's right shoulder (x 2200..2400, top y 600)
 const A2_SCREE = (() => { const R = K.rng(81), out = []; for (let r = 0; r < 5; r++) { const y = 908 - r * 70; for (let x = 2190 + r * 42; x < 2440; x += 62 + R() * 26) out.push({ x: x + R() * 14, y: y + R() * 8, r: 56 + R() * 30 - r * 3, row: r, sd: Math.floor(R() * 1000) }); } return out; })();
 const A2_SCREE_PTS = [[2360, 600], [2330, 668], [2290, 742], [2255, 820], [2230, 896]];
-function a2Boulder(c, b, m) { const [f, sh] = AB_ROCK_COL[m] || AB_ROCK_COL.morning, R = K.rng(b.sd), r = b.r, pts = [];
+const A2_SCREE_COL = { dawn: ['#d8b0a0', '#8a6a78'], morning: ['#dcc4a4', '#8a7078'], dusk: ['#c89a8a', '#7a5468'] };
+function a2Boulder(c, b, m) { const [f, sh] = A2_SCREE_COL[m] || A2_SCREE_COL.morning, R = K.rng(b.sd), r = b.r, pts = [];
   for (let i = 0; i < 9; i++) { const a = Math.PI + i / 8 * Math.PI, rr = r * (0.8 + R() * 0.3); pts.push([b.x + Math.cos(a) * rr * 1.15, b.y + Math.sin(a) * rr * 0.95]); }
   celShade(c, pts, f, sh, { light: [-1, -1], off: r * 0.3, hi: abLight(f, 0.35), lw: 3, line: abDark(sh, 0.45) }); }
 function a2ScreeFront(m) { return abBakeAt('a2screeF:' + m, 500, 420, (c) => { c.translate(-2000, -600); A2_SCREE.filter((b) => b.row === 0).slice(0, 3).forEach((b) => a2Boulder(c, b, m)); }); }

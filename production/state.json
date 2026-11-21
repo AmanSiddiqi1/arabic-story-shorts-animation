@@ -8668,6 +8668,83 @@
 "msg": "implement claimed (opus)",
 "story_id": "HORSE-02",
 "t": "2026-11-21T16:19:34"
+},
+{
+"id": 1230,
+"kind": "agent",
+"msg": "implement agent ab303a1d8647a99c5",
+"story_id": "HORSE-02",
+"t": "2026-11-21T16:19:58"
+},
+{
+"id": 1231,
+"kind": "plan-accepted",
+"msg": "v1 17 scenes 210 actions 9 warnings",
+"story_id": "HORSE-04",
+"t": "2026-11-21T16:19:58"
+},
+{
+"id": 1232,
+"kind": "config",
+"msg": "pause_planning=0",
+"story_id": null,
+"t": "2026-11-21T16:19:59"
+},
+{
+"id": 1233,
+"kind": "claim",
+"msg": "plan claimed (fable)",
+"story_id": "HORSE-05",
+"t": "2026-11-21T16:19:59"
+},
+{
+"id": 1234,
+"kind": "config",
+"msg": "pause_planning=1",
+"story_id": null,
+"t": "2026-11-21T16:19:59"
+},
+{
+"id": 1235,
+"kind": "agent",
+"msg": "plan agent aaf79c1b829c04545",
+"story_id": "HORSE-05",
+"t": "2026-11-21T16:20:12"
+},
+{
+"id": 1236,
+"kind": "plan-accepted",
+"msg": "v1 16 scenes 171 actions 4 warnings",
+"story_id": "ALI-05",
+"t": "2026-11-21T16:32:29"
+},
+{
+"id": 1237,
+"kind": "plan-accepted",
+"msg": "v1 21 scenes 171 actions 12 warnings",
+"story_id": "ALI-06",
+"t": "2026-11-21T16:32:30"
+},
+{
+"id": 1238,
+"kind": "plan-accepted",
+"msg": "v1 19 scenes 204 actions 15 warnings",
+"story_id": "HORSE-05",
+"t": "2026-11-21T16:32:30"
+},
+{
+"id": 1239,
+"kind": "done",
+"msg": "implement Implementation Complete - Awaiting Render (film 149.83 s, est. render 11.6 min) (claude-opus-5-5)",
+"story_id": "SIND-01",
+"t": "2026-11-21T16:32:30"
+},
+{
+"id": 1240,
+"kind": "claim",
+"msg": "implement claimed (opus)",
+"story_id": "SIND-02",
+"t": "2026-11-21T16:32:30"
 }
 ],
 "plans": [
@@ -10344,6 +10421,78 @@
 "version": 1,
 "warnings": "[\"sets townStreetEvening: no library function and not marked new\", \"sets townStreetNight: no library function and not marked new\", \"props oilJars: no library function and not marked new\", \"props silverRing: no library function and not marked new\", \"props pebbles: no library function and not marked new\"]",
 "words_sha": "7d4af54cb926a7a2eefc6d76aa183c05bb00189a3622f7060e1f6436b87b8afc"
+},
+{
+"agent_id": "a79bc778d6362e1d8",
+"created": "2026-11-21T16:19:58",
+"json_path": "Animations/HORSE-04/planning/creative_plan.json",
+"library_rev": "70d18d3",
+"md_path": "Animations/HORSE-04/planning/creative_plan.md",
+"model": "claude-fable-5-2",
+"mp3_sha": "addaccbbe24f45090fecdcaaf63a16d47349d7bf71ecb24a6918c395b2e34eeb",
+"n_actions": 210,
+"n_scenes": 17,
+"new_assets": "[{\"type\": \"set\", \"name\": \"farPalace\", \"effort\": \"L\"}, {\"type\": \"set\", \"name\": \"lockedCourt (with latticeScreen and gateBar)\", \"effort\": \"M\"}, {\"type\": \"character\", \"name\": \"farKing, farGuards (pal variants) and craftsmanDisguise\", \"effort\": \"M\"}, {\"type\": \"prop\", \"name\": \"toolbox (with hammer, oilCan, magnifier) and saddleOrnament (ebonyHorse rosettes)\", \"effort\": \"S\"}, {\"type\": \"character\", \"name\": \"peacock\", \"effort\": \"M\"}, {\"type\": \"effect\", \"name\": \"memoryCard, routeMap, tick, callout inset (small reuses)\", \"effort\": \"S\"}]",
+"script_sha": "d30394b26fe0423d54e68405a433496ad6460e3ed570785dcf1d278636e5bdda",
+"status": "validated",
+"story_id": "HORSE-04",
+"version": 1,
+"warnings": "[\"cast ebonyHorse: no library function and not marked new\", \"sets skyFlight: no library function and not marked new\", \"props knob: no library function and not marked new\", \"props lever: no library function and not marked new\", \"props cart: no library function and not marked new\", \"props scrap: no library function and not marked new\", \"props iconBalloon: no library function and not marked new\", \"props memoryCard: no library function and not marked new\", \"props routeMap: no library function and not marked new\"]",
+"words_sha": "8792972a169f599516266c0e7fecb14bfe4d767fcb2fbeba2dc20df948fbb788"
+},
+{
+"agent_id": "a4f3b47573a7901e9",
+"created": "2026-11-21T16:32:29",
+"json_path": "Animations/ALI-05/planning/creative_plan.json",
+"library_rev": "70d18d3",
+"md_path": "Animations/ALI-05/planning/creative_plan.md",
+"model": "claude-fable-5-2",
+"mp3_sha": "cb34d57f88f94ad467539d8be443702b027f9f5e95debbea50ac62c140c4372d",
+"n_actions": 171,
+"n_scenes": 16,
+"new_assets": "[{\"type\": \"set\", \"name\": \"dinnerRoom\", \"effort\": \"L\"}, {\"type\": \"set\", \"name\": \"shopFront\", \"effort\": \"M\"}, {\"type\": \"character\", \"name\": \"newMerchant and nephew (palette variants)\", \"effort\": \"S\"}, {\"type\": \"motion\", \"name\": \"cupFumble\", \"effort\": \"S\"}, {\"type\": \"effect\", \"name\": \"voiceWave and clueCounter\", \"effort\": \"S\"}, {\"type\": \"effect\", \"name\": \"windowView and memoryPanel\", \"effort\": \"S\"}]",
+"script_sha": "eecebffd0fdaeebac44d2a00c0f4e335758729db7b2e64ebae2db1d25559e179",
+"status": "validated",
+"story_id": "ALI-05",
+"version": 1,
+"warnings": "[\"sets townStreetEvening: no library function and not marked new\", \"sets courtyardNight: no library function and not marked new\", \"props silverRing: no library function and not marked new\", \"props gateBar: no library function and not marked new\"]",
+"words_sha": "6c138458cc752f256e54821a1cdfa36bdfcbcd7ca507920ab8db049e67eb0074"
+},
+{
+"agent_id": "a387c77c992bf3ca7",
+"created": "2026-11-21T16:32:30",
+"json_path": "Animations/ALI-06/planning/creative_plan.json",
+"library_rev": "70d18d3",
+"md_path": "Animations/ALI-06/planning/creative_plan.md",
+"model": "claude-fable-5-2",
+"mp3_sha": "2e84ad9173bfe502d8abaacd5a06f059c731867c119ad9b800a40671ceaae38d",
+"n_actions": 171,
+"n_scenes": 21,
+"new_assets": "[{\"type\": \"pose\", \"name\": \"cuff fold-back (abNewMerchant cuff per arm)\", \"effort\": \"S\"}, {\"type\": \"prop\", \"name\": \"lampShop (shopFront variant, with balanceScale)\", \"effort\": \"M\"}, {\"type\": \"prop\", \"name\": \"feastSpread\", \"effort\": \"S\"}, {\"type\": \"effect\", \"name\": \"nameTags\", \"effort\": \"S\"}, {\"type\": \"prop\", \"name\": \"giftBox, gateKey with padlock, rewardBox, listScroll, returnGoods\", \"effort\": \"S\"}, {\"type\": \"set\", \"name\": \"marketDusk model\", \"effort\": \"S\"}, {\"type\": \"motion\", \"name\": \"handOver (give and take with weight)\", \"effort\": \"S\"}]",
+"script_sha": "70639d144587e58a77a39542c8c90a06bd2b42a20ca9c3657348fca8ce2b7fb2",
+"status": "validated",
+"story_id": "ALI-06",
+"version": 1,
+"warnings": "[\"sets courtyardNight: no library function and not marked new\", \"sets courtyardFeast: no library function and not marked new\", \"sets gladeMorning: no library function and not marked new\", \"sets treasureCave: no library function and not marked new\", \"props silverRing: no library function and not marked new\", \"props gateBar: no library function and not marked new\", \"props caveMap: no library function and not marked new\", \"props rope: no library function and not marked new\", \"props cart: no library function and not marked new\", \"props treasure: no library function and not marked new\", \"props goldCoin: no library function and not marked new\", \"props firewood: no library function and not marked new\"]",
+"words_sha": "55e7568ba2219d8a7f5db567aa479313597fe77952c85e54546825a1c38febf3"
+},
+{
+"agent_id": "aaf79c1b829c04545",
+"created": "2026-11-21T16:32:30",
+"json_path": "Animations/HORSE-05/planning/creative_plan.json",
+"library_rev": "70d18d3",
+"md_path": "Animations/HORSE-05/planning/creative_plan.md",
+"model": "claude-fable-5-2",
+"mp3_sha": "9d322429007860fecc5f818a7259d03cd79f4ce844f20fe1e3210aa094186416",
+"n_actions": 204,
+"n_scenes": 19,
+"new_assets": "[{\"type\": \"set\", \"name\": \"riverRun\", \"effort\": \"M\"}, {\"type\": \"set\", \"name\": \"kingdomBelow variant 'fields' with homeland mountains\", \"effort\": \"M\"}, {\"type\": \"motion\", \"name\": \"disguiseOff\", \"effort\": \"S\"}, {\"type\": \"pose\", \"name\": \"twoRiders options (princess front, solo front rider, embrace)\", \"effort\": \"S\"}, {\"type\": \"prop\", \"name\": \"saddleRope, scales icon, round memoryCard\", \"effort\": \"S\"}, {\"type\": \"effect\", \"name\": \"farPalace dome front pass and ribbon ring\", \"effort\": \"S\"}]",
+"script_sha": "d2c53c8c9e9a1c71fe5dca5c39936f8cf6eb62135f924ca5df3a8b477a93a462",
+"status": "validated",
+"story_id": "HORSE-05",
+"version": 1,
+"warnings": "[\"cast peacock: no library function and not marked new\", \"cast ebonyHorse: no library function and not marked new\", \"sets farPalace: no library function and not marked new\", \"sets skyFlight: no library function and not marked new\", \"sets princessGarden: no library function and not marked new\", \"sets palaceGarden: no library function and not marked new\", \"props knob: no library function and not marked new\", \"props lever: no library function and not marked new\", \"props scrap: no library function and not marked new\", \"props iconBalloon: no library function and not marked new\", \"props cards: no library function and not marked new\", \"props gateBar: no library function and not marked new\", \"props tick: no library function and not marked new\", \"props toolbox: no library function and not marked new\", \"props coverCloth: no library function and not marked new\"]",
+"words_sha": "6cf463fc6a6ab34a19164a97a374336411ecd320ca16d8760960088a1908c484"
 }
 ],
 "renders": [
@@ -20231,15 +20380,15 @@
 {
 "agent_id": "a0906d880517ddc4c",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-21T16:32:30",
 "id": 331,
 "model": "opus",
-"notes": null,
-"outputs": null,
+"notes": "tokens {\"turns\": 85, \"input_tokens\": 178, \"cache_creation_input_tokens\": 427752, \"cache_read_input_tokens\": 21893290, \"output_tokens\": 211750}",
+"outputs": "Implementation Complete - Awaiting Render (film 149.83 s, est. render 11.6 min)",
 "pid": null,
 "stage": "implement",
 "started": "2026-11-21T15:48:18",
-"status": "running",
+"status": "done",
 "story_id": "SIND-01"
 },
 {
@@ -20301,47 +20450,47 @@
 {
 "agent_id": "a79bc778d6362e1d8",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-21T16:19:58",
 "id": 336,
 "model": "fable",
 "notes": null,
-"outputs": null,
+"outputs": "plan v1",
 "pid": null,
 "stage": "plan",
 "started": "2026-11-21T16:08:19",
-"status": "running",
+"status": "done",
 "story_id": "HORSE-04"
 },
 {
 "agent_id": "a4f3b47573a7901e9",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-21T16:32:29",
 "id": 337,
 "model": "fable",
 "notes": null,
-"outputs": null,
+"outputs": "plan v1",
 "pid": null,
 "stage": "plan",
 "started": "2026-11-21T16:12:33",
-"status": "running",
+"status": "done",
 "story_id": "ALI-05"
 },
 {
 "agent_id": "a387c77c992bf3ca7",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-21T16:32:30",
 "id": 338,
 "model": "fable",
 "notes": null,
-"outputs": null,
+"outputs": "plan v1",
 "pid": null,
 "stage": "plan",
 "started": "2026-11-21T16:13:36",
-"status": "running",
+"status": "done",
 "story_id": "ALI-06"
 },
 {
-"agent_id": null,
+"agent_id": "ab303a1d8647a99c5",
 "attempt": 1,
 "finished": null,
 "id": 339,
@@ -20353,6 +20502,34 @@
 "started": "2026-11-21T16:19:34",
 "status": "running",
 "story_id": "HORSE-02"
+},
+{
+"agent_id": "aaf79c1b829c04545",
+"attempt": 1,
+"finished": "2026-11-21T16:32:30",
+"id": 340,
+"model": "fable",
+"notes": null,
+"outputs": "plan v1",
+"pid": null,
+"stage": "plan",
+"started": "2026-11-21T16:19:59",
+"status": "done",
+"story_id": "HORSE-05"
+},
+{
+"agent_id": null,
+"attempt": 1,
+"finished": null,
+"id": 341,
+"model": "opus",
+"notes": null,
+"outputs": null,
+"pid": null,
+"stage": "implement",
+"started": "2026-11-21T16:32:30",
+"status": "running",
+"story_id": "SIND-02"
 }
 ],
 "usage_log": [
