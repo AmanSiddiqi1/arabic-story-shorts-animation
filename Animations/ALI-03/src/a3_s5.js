@@ -42,7 +42,7 @@ function a3S15World(ctx, t, cam) {
   if (slit > 0) abGlint(ctx, TS.win.cx, TS.win.y + 20, 24, ((t - 119.6) / 0.7) % 1, '#bff6f8');
   a3Cat(ctx, t, { x: 1000, y: 242, dir: -1, sit: 1, gaze: tc > 121.55 && tc < 123 ? [0.4, 1] : [-1, 0.6], tailCurl: 0.8 });
   // the men (offended wave at 121.64; the volunteer with blue paint; then they scramble after him)
-  const men = [['spy1', 640], [0, 730], [4, 815], ['spy2', 900]];   // v2: a loose staggered row (two depth rows), each with its own silhouette (note 10)
+  const men = [['spy1', 560], [0, 640], [4, 720], ['spy2', 800]];   // v2: a loose staggered row (two depth rows), each with its own silhouette (note 10)
   men.forEach(([who, x0], k) => { const xf = (u) => u < 127.3 + 0.12 * k ? (who === 4 ? K.lerp(x0, 1000, beatIn(u, 125.2, 125.55)) : x0) : K.lerp(who === 4 ? 1000 : x0, 240, K.ease.in(beatIn(u, 127.3 + 0.12 * k, 128.3 + 0.1 * k)));
     const W = walk(xf, tc, { stride: 20 }), P = { y: who === 4 && tc > 125.2 && tc < 127.3 ? 920 : k % 2 ? 884 : 898, dir: tc > 127.3 ? -1 : 1, ...W, lid: abLid(t, 420 + k), tip: idleSway(tc, 430 + k, 0.025, 2.2), sq: breathe(tc, 440 + k, 0.016), gaze: [1, 0], mouth: 'closed', handL: [-20, -100], handR: [20, -102] };
     // a different silhouette per man in the long hold, never changing on the same drawing
@@ -73,10 +73,10 @@ function a3S15Over(ctx, t, cam, S) {
   if (t > 121.6 && t < 122.0) abSay(ctx, S, [[121.6, '...IS CLEVERER THAN US!']], t, K.clamp(hx, 400, 600), hy - 200, [hx, hy - 30], { size: 48, gone: 121.75, pop: false });
   if (t > 124.3 && t < 125.9) abSay(ctx, S, [[124.42, 'I WILL COME MYSELF.']], t, K.clamp(hx, 400, 600), hy - 200, [hx, hy - 30], { size: 52, gone: 125.6 });
 }
-AB_SHOTS.push({ a: 116.2, b: 120.7, ww: 2000, cam: a3Cam([[116.2, { x: 930, y: 700, zoom: 1.5 }], [120.7, { x: 960, y: 690, zoom: 1.65 }]]), world: a3S15World, over: a3S15Over });
+AB_SHOTS.push({ a: 116.2, b: 120.7, ww: 2000, cam: a3Cam([[116.2, { x: 870, y: 700, zoom: 1.45 }], [120.7, { x: 900, y: 690, zoom: 1.55 }]]), world: a3S15World, over: a3S15Over });
 AB_SHOTS.push({ a: 120.7, b: 121.6, panel: (ctx, t, S) => { const tc = AB_T2(t); a3Eyes(ctx, t, { who: 'leader', gaze: [0.15, 0], lid: [0.2, 0.3, 0.4, 0.5][Math.min(3, Math.floor((tc - 120.7) * 6))], brow: 1, glint: 1 });
   abSay(ctx, S, [[120.7, '...IS CLEVERER THAN US!']], t, 500, 170, [500, 260], { size: 48, pop: false }); } });
-AB_SHOTS.push({ a: 121.6, b: 128.3, ww: 2000, cam: a3Cam([[121.6, { x: 900, y: 690, zoom: 1.5 }], [127.1, { x: 905, y: 690, zoom: 1.5 }], [127.9, { x: 700, y: 615, zoom: 1.0 }], [128.3, { x: 650, y: 615, zoom: 1.0 }]]), world: a3S15World, over: a3S15Over });
+AB_SHOTS.push({ a: 121.6, b: 128.3, ww: 2000, cam: a3Cam([[121.6, { x: 860, y: 690, zoom: 1.5 }], [127.1, { x: 865, y: 690, zoom: 1.5 }], [127.9, { x: 700, y: 615, zoom: 1.0 }], [128.3, { x: 650, y: 615, zoom: 1.0 }]]), world: a3S15World, over: a3S15Over });
 
 // ---------- S16 128.3-134.6: afternoon; Ali Baba comes home; Morgiana shows him the doors; BEWARE OF STRANGERS! ----------
 const A3_ALI_X = a3Pos([[128.3, 1250], [128.95, 1060], [130.95, 1060], [131.15, 1080]]), A3_DK_X = a3Pos([[128.3, 1440], [128.95, 1250]]);

@@ -34,7 +34,7 @@ const TS_MODEL = {
   evening: { sky: [[0, '#2f6f8e'], [0.22, '#6a74b8'], [0.42, '#ff9a9a'], [0.58, '#ffc27a']], wallK: ['#ffb4a0', 0.34], pave: ['#e8a88a', '#b07468'], night: 0.25, glaze: ['#ffb070', 260, 420, 0.6], cloud: ['#d89ac0', '#ffd0a0'], far: '#9a7ab0', farD: '#7a5a98' },
   night: { sky: [[0, '#2a4a8a'], [0.3, '#3e5aa0'], [0.5, '#7a6ab0'], [0.62, '#a47ab4']], wallK: ['#8a84d8', 0.55], pave: ['#9a8ab8', '#6a5a8a'], night: 1, glaze: ['#fff2c8', 1500, 210, 0.35], cloud: ['#6a6aa8', '#c8b8e8'], far: '#4e5a96', farD: '#3e4884' },
   // v2 (review 1 note 4): the second night is its own plate, cool blue-teal under a low amber moon (night 1 stays violet)
-  night2: { sky: [[0, '#0e3452'], [0.3, '#1a5470'], [0.5, '#3a7a86'], [0.62, '#7aa090']], wallK: ['#5ab4c4', 0.5], pave: ['#7aa4b0', '#4a6e80'], night: 1, glaze: ['#ffb860', 700, 430, 0.5], cloud: ['#3e6a84', '#a8d0cc'], far: '#2e5a70', farD: '#244a60' },
+  night2: { sky: [[0, '#0e3452'], [0.3, '#1a5470'], [0.5, '#3a7a86'], [0.62, '#7aa090']], wallK: ['#3aa8c0', 0.62], pave: ['#7aa4b0', '#4a6e80'], night: 1, glaze: ['#ffb860', 700, 430, 0.5], cloud: ['#3e6a84', '#a8d0cc'], far: '#2e5a70', farD: '#244a60' },
 };
 function tsWall(m, col) { const M = TS_MODEL[m]; if (!M.wallK) return col; let c = abMul(col, M.wallK[0], M.wallK[1]); if (M.night) c = abLight(c, 0.1); return c; }
 const tsLine = (col) => abDark(col, 0.6);

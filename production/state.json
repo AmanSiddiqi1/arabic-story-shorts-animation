@@ -9291,6 +9291,62 @@
 "msg": "review2 claimed (fable)",
 "story_id": "HORSE-01",
 "t": "2026-11-23T06:06:07"
+},
+{
+"id": 1319,
+"kind": "agent",
+"msg": "review2 agent a96bf925c0b1a9121",
+"story_id": "HORSE-01",
+"t": "2026-11-23T06:11:43"
+},
+{
+"id": 1320,
+"kind": "agent",
+"msg": "review2 agent aa72d30dceac6b2f4",
+"story_id": "ALI-02",
+"t": "2026-11-23T06:11:43"
+},
+{
+"id": 1321,
+"kind": "done",
+"msg": "review2 review 2: PASS WITH NOTES (claude-fable-5-2)",
+"story_id": "HORSE-01",
+"t": "2026-11-23T06:11:44"
+},
+{
+"id": 1322,
+"kind": "finalized",
+"msg": "v2 -> MP4s/The Flying Wooden Horse - 80s Cel Anime 9x16 - Cairo.mp4",
+"story_id": "HORSE-01",
+"t": "2026-11-23T06:11:44"
+},
+{
+"id": 1323,
+"kind": "done",
+"msg": "review2 review 2: UNKNOWN (claude-fable-5-2)",
+"story_id": "ALI-02",
+"t": "2026-11-23T06:11:44"
+},
+{
+"id": 1324,
+"kind": "finalized",
+"msg": "v2 -> MP4s/The Forgotten Password - 80s Cel Anime 9x16 - Cairo.mp4",
+"story_id": "ALI-02",
+"t": "2026-11-23T06:11:44"
+},
+{
+"id": 1325,
+"kind": "claim",
+"msg": "review claimed (fable)",
+"story_id": "ALI-04",
+"t": "2026-11-23T06:11:50"
+},
+{
+"id": 1326,
+"kind": "claim",
+"msg": "review claimed (fable)",
+"story_id": "HORSE-03",
+"t": "2026-11-23T06:11:50"
 }
 ],
 "plans": [
@@ -13046,6 +13102,24 @@
 "round": 1,
 "story_id": "HORSE-02",
 "verdict": "REVISE"
+},
+{
+"agent_id": "a96bf925c0b1a9121",
+"created": "2026-11-23T06:11:44",
+"model": "claude-fable-5-2",
+"path": "Animations/HORSE-01/review/fable_review_2.md",
+"round": 2,
+"story_id": "HORSE-01",
+"verdict": "PASS WITH NOTES"
+},
+{
+"agent_id": "aa72d30dceac6b2f4",
+"created": "2026-11-23T06:11:44",
+"model": "claude-fable-5-2",
+"path": "Animations/ALI-02/review/fable_review_2.md",
+"round": 2,
+"story_id": "ALI-02",
+"verdict": "UNKNOWN"
 }
 ],
 "stories": [
@@ -16150,7 +16224,7 @@
 "words_status": "supplied"
 },
 {
-"approval": "none",
+"approval": "pending",
 "assembly_file": null,
 "collection": "Ali Baba",
 "completed_before": 0,
@@ -16169,7 +16243,7 @@
 "segments": "[\"ALI-02-P01-S01\", \"ALI-02-P01-S02\", \"ALI-02-P01-S03\", \"ALI-02-P01-S04\", \"ALI-02-P01-S05\", \"ALI-02-P01-S06\", \"ALI-02-P01-S07\", \"ALI-02-P01-S08\"]",
 "title_ar": "الكلمات المنسية",
 "title_en": "The Forgotten Password",
-"updated": "2026-11-21T15:32:04",
+"updated": "2026-11-23T06:11:44",
 "words_file": "ALI-02_The_Forgotten_Password_slowed.mp3.words.json",
 "words_sha": "7452b879501295df86d9a9d4051a7ee157b15f296748c0aba716799717727ad8",
 "words_status": "supplied"
@@ -16275,7 +16349,7 @@
 "words_status": "supplied"
 },
 {
-"approval": "none",
+"approval": "pending",
 "assembly_file": null,
 "collection": "The Ebony Horse",
 "completed_before": 0,
@@ -16294,7 +16368,7 @@
 "segments": "[\"HORSE-01-P01-S01\", \"HORSE-01-P01-S02\", \"HORSE-01-P01-S03\", \"HORSE-01-P01-S04\", \"HORSE-01-P01-S05\", \"HORSE-01-P01-S06\", \"HORSE-01-P01-S07\", \"HORSE-01-P01-S08\"]",
 "title_ar": "الحصان الخشبي الطائر",
 "title_en": "The Flying Wooden Horse",
-"updated": "2026-11-21T15:32:08",
+"updated": "2026-11-23T06:11:44",
 "words_file": "HORSE-01_The_Flying_Wooden_Horse_slowed.mp3.words.json",
 "words_sha": "49bcdc2b038478216f48c0e3ef9193dca3eed2836fe71cc27401d99c20ee5339",
 "words_status": "supplied"
@@ -21517,32 +21591,60 @@
 "story_id": "HORSE-02"
 },
 {
-"agent_id": null,
+"agent_id": "aa72d30dceac6b2f4",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-23T06:11:44",
 "id": 361,
 "model": "fable",
 "notes": null,
-"outputs": null,
+"outputs": "review 2: UNKNOWN",
 "pid": null,
 "stage": "review2",
 "started": "2026-11-23T06:06:07",
-"status": "running",
+"status": "done",
 "story_id": "ALI-02"
+},
+{
+"agent_id": "a96bf925c0b1a9121",
+"attempt": 1,
+"finished": "2026-11-23T06:11:44",
+"id": 362,
+"model": "fable",
+"notes": null,
+"outputs": "review 2: PASS WITH NOTES",
+"pid": null,
+"stage": "review2",
+"started": "2026-11-23T06:06:07",
+"status": "done",
+"story_id": "HORSE-01"
 },
 {
 "agent_id": null,
 "attempt": 1,
 "finished": null,
-"id": 362,
+"id": 363,
 "model": "fable",
 "notes": null,
 "outputs": null,
 "pid": null,
-"stage": "review2",
-"started": "2026-11-23T06:06:07",
+"stage": "review",
+"started": "2026-11-23T06:11:50",
 "status": "running",
-"story_id": "HORSE-01"
+"story_id": "ALI-04"
+},
+{
+"agent_id": null,
+"attempt": 1,
+"finished": null,
+"id": 364,
+"model": "fable",
+"notes": null,
+"outputs": null,
+"pid": null,
+"stage": "review",
+"started": "2026-11-23T06:11:50",
+"status": "running",
+"story_id": "HORSE-03"
 }
 ],
 "usage_log": [

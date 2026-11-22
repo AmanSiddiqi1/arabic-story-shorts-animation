@@ -61,7 +61,7 @@ function h2FzGround(t, H) {
       if (t >= 50.84 && t < 51.46) { P.sq *= 1 + 0.05 * pulse(tc, 50.84, 0.3); P.handR = [56, -150]; o.cup = { hand: 'R', tilt: 0 }; P.handL = [-50 + 14 * Math.sin((tc - 50.9) * 24), -190]; P.brow = 0.6; P.tip = -0.04; o.sweat = true; }
       if (t >= 51.46 && t < 52.2) { P.handL = [-64 + 18 * Math.sin((tc - 51.46) * 26), -196]; if (t < 51.9) { P.handRW = [EH_ROOF.hook[0] + 4, EH_ROOF.hook[1] + 10]; o.cup = { hand: 'R', tilt: 0 }; } P.brow = 0.6; o.sweat = t < 51.9; }
       if (t >= 52.2) { P.handR = [14, -100]; P.handL = [-36, -70]; P.brow = t > 56.2 ? 0.4 : 0.2; P.mouth = t > 54.3 && t < 59.8 ? 'closed' : 'smile'; }
-      if (t >= 59.74) { P.mouth = t < 59.95 ? 'o' : 'closed'; const up = ehE(tc, 59.98, 0.22); if (up > 0) { P.aR = [K.lerp(0.4, Math.PI - 0.1, up), K.lerp(0.2, Math.PI - 0.02, up)]; P.handR = null; } P.gaze = t > 60.1 ? [0.1, -1] : P.gaze; P.lid = Math.max(P.lid, ehBlinkAt(tc, 60.12)); P.tip = -0.03; } }
+      if (t >= 59.74) { P.mouth = t < 59.95 ? 'o' : 'closed'; const up = ehE(tc, 59.98, 0.22); if (up > 0) P.handR = [K.lerp(14, 36, up), K.lerp(-100, -290, up)]; P.gaze = t > 60.1 ? [0.1, -1] : P.gaze; P.lid = Math.max(P.lid, ehBlinkAt(tc, 60.12)); P.tip = -0.03; } }
     // S9: the bow, the explanation (backing toward the horse), the slap, the arc, the shrug
     else if (t < 71.68) { const bow = flow(tc, H2_BOW); P.tip = bow + lagged((u) => flow(u, H2_BOW), tc, 0.1, 0.4) + idleSway(tc, sd, 0.02, 2.9); P.drop = 22 * Math.max(0, bow); P.gaze = Pr ? look(ehHeadOf(Pr)) : [1, 0]; P.mouth = 'smile';
       if (t < 61.64) { P.handR = PERSON_HANDS.chest.R; P.handL = [-40, -90]; P.lid = 0.3; }
@@ -196,7 +196,7 @@ function h2PrRoof(t) {
   else {   // v2 (Fable 1 note 5): alone at the parapet, the wave after him stops halfway, the hand comes to rest on her heart
     const H = h2RoofHorse(t), hp = H.gone ? [1230, 165] : [H.x, H.y - 150 * H.s]; P.dir = 1; P.gaze = look(hp); P.handL = [10, -84]; P.handR = [26, -90]; P.tip = -0.06; P.sq *= breathe(tc, sd, 0.02);
     if (t < 143.9) { P.handR = [60, -150]; P.handL = [-40, -110]; }
-    else if (t < 145.74) { const w = Math.sin((tc - 143.9) * 9); P.aR = [Math.PI - 0.5 + 0.25 * w, Math.PI - 0.2 + 0.35 * w]; P.handR = null; P.brow = 0.3; P.mouth = 'smile'; }
+    else if (t < 145.74) { const w = Math.sin((tc - 143.9) * 9); P.handR = [60 + 22 * w, -250]; P.brow = 0.3; P.mouth = 'smile'; }
     else { const u = flow(tc, [[145.74, 0], [146.1, 0.4], [146.6, 1]]); P.handR = [K.lerp(60, PERSON_HANDS.chest.R[0], u), K.lerp(-170, PERSON_HANDS.chest.R[1], u)]; P.lid = Math.max(ehLid(t, sd, [149.5]), 0.3 * u); P.brow = 0.35;
       P.sq *= 1 - 0.03 * flow(tc, [[146.4, 0], [146.8, 1], [148.0, 0.4]]); P.mouth = 'closed'; if (H.gone) P.gaze = look([1230, 165]); } }
   return P;
@@ -205,7 +205,7 @@ function h2PrRoof(t) {
 function h2FzGroundPos(t) { if (t < H2_ROOF_B) return [t >= 96.9 ? H2_FZX2(t) : H2_FZX(t), H2_GY]; return [H2_FZX3(t), 886]; }
 
 // ---------- the maid ----------
-const H2_MDX = H2_F([[45.56, 1440], [46.44, 1440], [47.2, 1420], [71.9, 1420], [73.5, 1150], [73.6, 1150], [74.4, 880], [74.9, 880], [75.15, 935], [75.6, 935], [76.4, 1100], [93.2, 1100], [94.7, 790], [95.4, 790], [96.3, 985], [97.5, 985], [98.35, 1110]]);
+const H2_MDX = H2_F([[45.56, 1440], [46.44, 1440], [47.2, 1420], [71.9, 1420], [73.5, 1150], [73.6, 1150], [74.4, 880], [74.9, 880], [75.15, 935], [75.6, 935], [76.4, 1160], [93.2, 1160], [94.7, 790], [95.4, 790], [96.3, 985], [97.5, 985], [98.35, 1110]]);
 const H2_MDX3 = H2_F([[126.7, 1400], [139.96, 1400], [140.6, 1072], [141.2, 1072], [142.2, 1290], [145.4, 1290], [145.9, 1190], [152, 1190]]);
 const H2_LAMPUP = [[47.2, 0], [47.7, 1], [48.0, 1]];
 function h2MaidRoof(t) {
@@ -251,13 +251,15 @@ function h2CatRoof(t) {
   if (t < H2_ROOF_B) {
     if (t >= 28.6 && t < 29.3) { P.lid = 0.45; P.tailCurl += 0.3 * Math.sin(tc * 14); }
     if (t >= 35.78 && t < 36.5) P.ears = 0.3 + 0.7 * pulse(tc, 35.85, 0.5);
+    if (t >= 44.3 && t < 84.28) { if (t < 45.1) { Object.assign(P, walk(H2_F([[44.3, 880], [45.1, 1120]]), tc, { stride: GAIT.cat * 0.62 })); P.crouch = 0; P.dir = 1; P.tailUp = 1; } else { P.x = 1120; P.crouch = 0; P.sit = 1; P.lid = ehLid(t, 41) * 0.8; P.dir = 1; P.dir = -1; P.gaze = t >= 60.3 && t < 61.2 ? [0, -1] : [-1, 0.3]; P.lick = t > 66 && t < 67.2 ? Math.abs(Math.sin(tc * 5)) : 0; P.tailCurl = 0.7 + 0.25 * Math.sin(tc * 1.1); } return P; }
     if (t >= 39.25 && t < 61) { P.crouch = 0.5; P.lid = ehLid(t, 41) * 0.8; P.gaze = t >= 59.8 ? [0, -1] : [1, 0.3]; P.dir = t >= 44 ? 1 : 1; P.ears = 0.8; }
     if (t >= 61 && t < 84.28) { P.crouch = 0.8; P.lid = 0.6; P.dir = 1; }
+    if (t >= 84.28 && t < 95.0) P.x = 1120;
     if (t >= 84.28 && t < 87.6) { P.crouch = 0; P.arch = 1; P.puff = 1; P.lid = 0; P.mouth = 'open'; P.ears = -1; P.dir = -1; P.gaze = [-1, -0.3]; }
     if (t >= 87.6 && t < 95.0) { P.crouch = 0; P.sit = 1; P.lid = ehLid(t, 43); P.dir = -1; P.gaze = [-1, 0.2]; P.ears = 0.6; }
     if (t >= 95.0) { P.crouch = 0; P.dir = -1; P.lid = ehLid(t, 43);
-      if (t < 95.4) { const [x, l] = hop(tc, 95.0, 0.4, 880, 850, 40); P.x = x; P.y = K.lerp(EH_ROOF.catSpot[1], 905, ehE(tc, 95.0, 0.4, 'in')) - l; }
-      else if (t < 95.9) { const xf = H2_F([[95.4, 850], [95.9, 765]]); Object.assign(P, walk(xf, tc, { stride: GAIT.cat * 0.62 })); P.y = 905; P.tailUp = 1; }
+      if (t < 95.4) { const [x, l] = hop(tc, 95.0, 0.4, 1120, 1080, 40); P.x = x; P.y = K.lerp(EH_ROOF.catSpot[1], 905, ehE(tc, 95.0, 0.4, 'in')) - l; }
+      else if (t < 95.9) { const xf = H2_F([[95.4, 1080], [95.9, 765]]); Object.assign(P, walk(xf, tc, { stride: GAIT.cat * 0.62 })); P.y = 905; P.tailUp = 1; }
       else if (t < 96.4) { P.x = 765 + 10 * Math.sin((tc - 95.9) * 12); P.y = 905; P.tailUp = 1; P.lid = 0.6; P.dir = -1; }
       else { P.x = 770; P.y = 905; P.sit = 1; P.gaze = [-0.6, -0.8]; } }
     return P;
@@ -294,7 +296,7 @@ function h2RoofOpts(t) {
       for (const [dx, ph] of [[-20, 0], [24, 0.5]]) { const b = 6 * Math.sin((t * 4 + ph) * Math.PI), sc = 0.6 + 0.6 * g; c.beginPath(); c.moveTo(D.x0 + 60 + dx - 26 * sc, 800 + b); c.lineTo(D.x0 + 60 + dx, 700 - 60 * sc + b); c.lineTo(D.x0 + 60 + dx + 26 * sc, 800 + b); c.closePath(); c.fill(); } c.restore(); },
     win: t < 40.0 ? 0 : t < 44.6 ? K.clamp((t - 40.0) / 0.2) : 0.6, winInside: t >= 40.0 && t < 44.6 ? (c) => h2WindowBust(c, t) : null,
     lanterns: t >= H2_ROOF_C ? 1 : K.clamp((t - 28.6) / 0.15), path: t >= H2_ROOF_C ? flow(t, [[126.7, 0.8], [129.3, 1]]) : 0,
-    towerFlash: [pulse(t, 128.48, 0.6), pulse(t, 128.73, 0.6)], domeHi: t > 130.24 && t < 131.4 ? (t - 130.24) / 1.16 : 0, cup: !(t >= 36.98 && t < 51.9), wind: t > 142.74 && t < 144 ? pulse(t, 142.74, 1.2) : 0 };
+    towerFlash: [pulse(t, 128.48, 0.6), pulse(t, 128.73, 0.6)], domeHi: t > 130.24 && t < 131.4 ? (t - 130.24) / 1.16 : 0, cup: !(t >= 36.98 && t < 51.9), carpets: !(t >= 126.7 && t < 132.78), wind: t > 142.74 && t < 144 ? pulse(t, 142.74, 1.2) : 0 };
 }
 // the princess's bust in the lit window (40.22 - 44.6): book, listening, the turn
 function h2WindowBust(c, t) {
@@ -369,7 +371,7 @@ const H2_RCAM = [
   [79.52, 87.9, [[79.52, { x: 760, y: 600, zoom: 0.95 }], [83.52, { x: 760, y: 580, zoom: 0.92 }], [84.8, { x: 760, y: 480, zoom: 0.8 }], [86.6, { x: 770, y: 480, zoom: 0.8 }], [87.9, { x: 780, y: 580, zoom: 0.9 }]]],
   [87.9, 88.3, [[87.9, { x: 820, y: 580, zoom: 0.92 }], [88.3, { x: 840, y: 580, zoom: 0.96 }]]],
   [90.04, 98.35, [[90.04, { x: 820, y: 570, zoom: 0.92 }], [93.2, { x: 840, y: 570, zoom: 0.92 }], [97.28, { x: 880, y: 570, zoom: 0.92 }], [98.35, { x: 920, y: 570, zoom: 0.92 }]]],
-  [126.7, 132.78, [[126.7, { x: 820, y: 410, zoom: 0.75 }], [130.24, { x: 820, y: 410, zoom: 0.75 }], [131.1, { x: 680, y: 410, zoom: 0.75 }], [132.78, { x: 740, y: 410, zoom: 0.75 }]]],
+  [126.7, 132.78, [[126.7, { x: 900, y: 497, zoom: 0.9 }], [130.24, { x: 900, y: 497, zoom: 0.9 }], [131.1, { x: 620, y: 497, zoom: 0.9 }], [132.78, { x: 680, y: 497, zoom: 0.9 }]]],
   [132.78, 140.64, [[132.78, { x: 900, y: 580, zoom: 0.95 }], [140.64, { x: 940, y: 580, zoom: 0.95 }]]],
   [140.64, 160, [[140.64, { x: 800, y: 540, zoom: 0.85 }], [142.7, { x: 780, y: 540, zoom: 0.85 }], [144.2, { x: 800, y: 238, zoom: 0.62 }], [151.5, { x: 830, y: 238, zoom: 0.62 }]]],
 ];

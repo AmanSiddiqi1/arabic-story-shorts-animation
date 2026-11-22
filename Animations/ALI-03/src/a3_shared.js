@@ -9,7 +9,7 @@ const A3_NSH = '#22204a';   // ground shadow colour at night
 // ---------- the street world ----------
 const A3_BODIES = {
   day: (c) => tsSun(c, 1700, 160), afternoon: (c) => tsSun(c, 1760, 330, 1, '#fff0a8'), evening: (c) => tsSun(c, 260, 560, 1, '#ffd890'),
-  night: (c) => tsMoon(c, 1350, 230), night2: (c) => a3AmberMoon(c, 700, 420),
+  night: (c) => tsMoon(c, 1350, 230), night2: (c) => a3AmberMoon(c, 690, 175, 82),
 };
 // o: {m, m2, k (plate cross-fade), bodies(c, t), flock: [x0, y0, v, n, seed, t0], doors: [{i, open, lit, inside}], gate, gateIn, win {...},
 //     washing {...} | null, lan (lantern k), marks {...}}

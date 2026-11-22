@@ -288,9 +288,10 @@ function palaceRoof(ctx, t, cam, o = {}) {
     ehGlint(ctx, cx, base - r * 1.32 - 70, 40, o.domeHi); }
   two(ehRoofTerracePlate, 0, 420, 1600, 810, 1);
   // carpets on the line (ribbons swaying out of step)
+  if (o.carpets !== false) {   // o.carpets false (HORSE-02 v2): the carpets are taken in (keeps the big dome clear)
   const [c0, c1, cy] = EH_ROOF.carpets; ctx.save(); ctx.strokeStyle = '#5a3a4a'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(c0, cy - 10); ctx.quadraticCurveTo((c0 + c1) / 2, cy + 10, c1, cy - 10); ctx.stroke(); ctx.restore();
   [['#f07a2a', '#fff0d8'], ['#3f7ad0', '#ffd36a'], ['#3fae6a', '#e8364f']].forEach(([a, b], i) => { const x = c0 + 30 + i * 66, sw = 6 * Math.sin(tc * 1.7 + i * 1.9) + (o.wind || 0) * 20, pts = [[x, cy], [x + 54, cy + 2], [x + 54 + sw, cy + 160], [x + sw * 0.9, cy + 158]];
-    celShade(ctx, pts, a, ehDark(a, 0.3), { off: 8, lw: 2.5, line: ehDark(a, 0.6) }); for (let k = 1; k < 4; k++) { const v = k / 4; seg(ctx, x + sw * v, cy + 160 * v, x + 54 + sw * v, cy + 2 + 158 * v, 5, b, 0); } });
+    celShade(ctx, pts, a, ehDark(a, 0.3), { off: 8, lw: 2.5, line: ehDark(a, 0.6) }); for (let k = 1; k < 4; k++) { const v = k / 4; seg(ctx, x + sw * v, cy + 160 * v, x + 54 + sw * v, cy + 2 + 158 * v, 5, b, 0); } }); }
   // lanterns (flames on threes) and their glow
   for (const [lx, ly] of EH_ROOF.lanterns) ehLantern(ctx, lx, ly, t3, o.lanterns ?? 1);
   // the pavilion door and window
