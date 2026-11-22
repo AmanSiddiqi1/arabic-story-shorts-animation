@@ -12,7 +12,7 @@ const CY = {
   kwin: { x: 330, y: 500, w: 140, h: 140 }, bwin: { x: 120, y: 340, w: 100, h: 100 }, bench: { x0: 320, x1: 480, y: 850 },
   wall: { x0: 560, x1: 1800, top: 560 }, gate: { cx: 730, x0: 640, x1: 820, top: 640, bar: 780 },
   back: { cx: 1590, x0: 1535, x1: 1645, top: 670 },
-  jars: [890, 1005, 1120, 1235, 1350, 1465], jarY: 884, jarS: 1.67, jarTop: 884 - 150 * 1.67, rimY: 884 - 142 * 1.67,
+  jars: [890, 1005, 1120, 1235, 1350, 1465], jarY: 884, jarS: 1.67, jarTop: 884 - 153 * 1.67, rimY: 884 - 142 * 1.67, jarXs: 0.8,   // v2: the ALI-03 v2 jar body (lid top -153); xs 0.8 leaves ~14 units of wall between jars
   crate: { x0: 1670, x1: 1750, top: 820 }, trellis: { x0: 1680, x1: 1750, top: 560, bot: 820 },
   guest: { x0: 1800, top: 400 }, G: { i: 'G', cx: 1930, x0: 1870, x1: 1990, top: 650, col: '#2a9a8a' }, gwin: { x: 2040, y: 520, w: 100, h: 120 },
   lanterns: [[270, 610], [840, 610], [1840, 600]], lemon: 600, waterJar: 1770, line: [[560, 440], [880, 470]], palm: 1100,
@@ -196,8 +196,8 @@ function courtyard(ctx, t, cam, o = {}) {
 // ---------- the jars on the yard: data + one drawing per jar (the ALI-03 oilJar with the ALI-04 fields) ----------
 const CY_JARS = [{ man: 0 }, { man: 1 }, { man: 2 }, { man: 3 }, { man: 4 }, { oil: true, stain: true }].map((j, i) => ({ ...j, i, x: CY.jars[i] }));
 // cyJar(ctx, t, i, st): st {lid, wob, sq, peek {lift, gaze, eyes, close}, cut {open, draw}, oil (cutaway of oil 0..1), ghost 0..1, noLid, lidOn}
-function cyJar(ctx, t, i, st = {}) { const J = CY_JARS[i]; groundShadow(ctx, J.x, CY.jarY + 2, 130, 0, { flat: true, color: st.shc || '#4a3a6a' });
-  oilJar(ctx, J.x, CY.jarY, CY.jarS, { stain: J.stain, t, ...st }); }
+function cyJar(ctx, t, i, st = {}) { const J = CY_JARS[i]; groundShadow(ctx, J.x, CY.jarY + 2, 108, 0, { flat: true, color: st.shc || '#4a3a6a' });
+  oilJar(ctx, J.x, CY.jarY, CY.jarS, { stain: J.stain, t, xs: CY.jarXs, ...st }); }
 
 // ---------- small props ----------
 // oilLamp: a brass hand lamp (46 x 22 at s 1, spout to +x) with a flame 0..1, smoke 0..1 (a rising wisp), t

@@ -30,10 +30,10 @@ function a4S13Yard(ctx, t, cam) {
   a4Yard(ctx, t, cam, { moon, G: { open: 0, lit: 0 }, gwin: { sh: 0, slit, lit: slit > 0 ? 0.8 : 0, inside: slit > 0 && tc > 103.42 && tc < 103.95 ? (c) => a4SlitEye(c, t, kfn(tc, [[103.42, 0.8], [103.9, -1]])) : null }, kwin: { lit: 0.3 }, lan: [0.9, 0.8, 0.3] });
   if (under > 0) { ctx.save(); ctx.globalAlpha = under; ctx.fillStyle = '#ffd98a'; ctx.fillRect(CY.G.x0 + 6, 894, 108, 6); ctx.restore(); abGlow(ctx, CY.G.cx, 900, 90, 0.5 * under, '#ffcf6a'); }
   // the hiders behind the jars: helmet points, the broom tip, the baker's nightcap (sink as his eye sweeps)
-  const dy = 30 * sink;
+  const dy = 30 * sink; ctx.save(); ctx.beginPath(); ctx.rect(0, 0, 2200, 820); ctx.clip();   // v2 (note 3): only helmet points, broom tip and nightcap show
   guard(ctx, t, 0, { x: 960, y: 878 + dy, dir: -1, lid: 0.3 }, A4_N, { spear: 'up', shadow: false }); guard(ctx, t, 2, { x: 1300, y: 878 + dy, dir: -1, lid: abLid(t, 291), mouth: tc > 101.35 && tc < 101.8 ? 'o' : 'closed', handR: tc > 101.35 && tc < 101.8 ? PERSON_HANDS.mouthCover.R : undefined }, A4_N, { spear: 'up', shadow: false });
   baker(ctx, t, { x: 1180, y: 870 + dy + 40 * (pulse(tc, 101.3, 0.4)), dir: -1, lid: 0.6, tip: 0.1 * pulse(tc, 101.3, 0.4) }, A4_N, { shadow: false });
-  ctx.save(); ctx.translate(0, dy); seg(ctx, 860, 760, 850, 560, 7, '#c8a070', 1.5); celShade(ctx, [[835, 560], [865, 560], [880, 520], [820, 520]], '#e8c870', '#b89040', { off: 4, lw: 2 }); ctx.restore();
+  ctx.save(); ctx.translate(0, dy); seg(ctx, 860, 760, 850, 560, 7, '#c8a070', 1.5); celShade(ctx, [[835, 560], [865, 560], [880, 520], [820, 520]], '#e8c870', '#b89040', { off: 4, lw: 2 }); ctx.restore(); ctx.restore();
   a4Jars(ctx, t, cam, { shc: A4_NSH });
   // jar shadows swing round as the moon moves (long soft shadows on the paving)
   ctx.save(); ctx.globalAlpha = 0.22; ctx.fillStyle = '#3a2a6a'; for (const J of CY_JARS) { ctx.beginPath(); ctx.ellipse(J.x + K.lerp(-60, -110, mu), 900, 90, 12, K.lerp(0.05, 0.12, mu), 0, 7); ctx.fill(); } ctx.restore();
@@ -57,47 +57,53 @@ function a4Keepers(ctx, t, o = {}) {
   const tc = AB_T2(t), strain = t > 108.42 && t < 112.4 ? 1 : 0, up = o.up || 0, bump = Math.max(pulse(tc, 109.16, 0.18), pulse(tc, 109.42, 0.18));
   const L = [];
   // the boy lying across jar 1
-  L.push({ y: 900, f: () => apprentice(ctx, t, { x: 890 + 40 * up, y: CY.jarTop + 4 - 30 * up + 270 * up, lie: 1 - up, dir: -1, lid: abLid(t, 301), mouth: strain ? 'o' : 'smile', gaze: [0, -1], handL: [30, -150], handR: [40, -160] }, A4_N, { noCap: true, pan: true, panHand: 1, panRot: -0.5, shadow: up > 0.5, shc: A4_NSH }) });
+  L.push({ y: 900, f: () => apprentice(ctx, t, { x: 890 + 40 * up, y: CY.jarTop + 4 - 30 * up + 270 * up, lie: 1 - up, dir: -1, lid: abLid(t, 301), mouth: strain && !(tc > 109.78) ? 'o' : 'smile', gaze: tc > 109.78 ? [1, 0.2] : [0, -1], handL: [30, -150], handR: [40, -160] }, A4_N, { noCap: true, pan: true, panHand: 1, panRot: -0.5, shadow: up > 0.5, shc: A4_NSH }) });
   // the baker on jar 2 (hanging feet; bounces on the bumps; waves his pin at the reveal)
   L.push({ y: 905, f: () => { const B = { x: 1005, y: CY.jarTop + 52 - 12 * bump - (o.wave ? 0 : 0), dir: -1, sit: 1, seat: 'bench', lid: abLid(t, 311), sq: (1 + 0.05 * bump) * breathe(tc, 312, 0.015), tip: idleSway(tc, 313, 0.02, 2.4), gaze: [-1, 0.2], mouth: strain ? 'o' : 'closed', handL: [-30, -100], handR: [30, -120] };
-    if (tc > 109.4 && tc < 109.75) { B.handR = PERSON_HANDS.hush.R; B.mouth = 'closed'; B.handLW = [1040, CY.jarTop + 30]; }
+    if (tc > 109.78 && tc < 110.2) { B.handR = PERSON_HANDS.hush.R; B.mouth = 'closed'; B.handLW = [1040, CY.jarTop + 30]; }
     if (o.wave) { B.handR = [40, -200 + 14 * Math.sin(tc * 12)]; B.mouth = 'smile'; B.gaze = [1, 0]; B.dir = 1; }
     baker(ctx, t, B, A4_N, { pin: true, pinRot: o.wave ? -1.2 + 0.4 * Math.sin(tc * 12) : -0.4, shadow: false }); } });
   // the old neighbour pressing jar 3 with her broom
-  L.push({ y: 930, f: () => { const O = { x: 1058, y: 930, dir: 1, lid: abLid(t, 321), tip: 0.06 + idleSway(tc, 322, 0.02, 2.2), gaze: [1, -0.3], brow: 0.8, mouth: strain ? 'frown' : 'closed', handL: [40, -150], handR: [50, -170] };
+  L.push({ y: 902, f: () => { const O = { x: 1062, y: 902, dir: 1, lid: abLid(t, 321), tip: 0.06 + idleSway(tc, 322, 0.02, 2.2), gaze: [1, -0.3], brow: 0.8, mouth: strain ? 'frown' : 'closed', handL: [40, -150], handR: [50, -170] };
     if (o.shoulder) { O.handR = [30, -200]; O.handL = [24, -110]; O.tip = -0.02; O.gaze = [1, 0]; O.mouth = 'smile'; }
     const Q = neighbourNight(ctx, t, O, A4_N, { shc: A4_NSH }); const [hx, hy] = a2Hand(Q, 1, { s: 0.88, age: 0.8 });
     if (!o.shoulder) { seg(ctx, hx, hy, 1118, CY.jarTop - 6 + 8 * (strain ? Math.abs(Math.sin(tc * 9)) : 0), 6, '#c8a070', 1.5); celShade(ctx, [[1100, CY.jarTop - 8], [1136, CY.jarTop - 8], [1146, CY.jarTop + 10], [1090, CY.jarTop + 10]].map(([x, y]) => [x, y - 18]), '#e8c870', '#b89040', { off: 3, lw: 2 }); }
     else { seg(ctx, hx, hy, hx - 40, hy - 150, 6, '#c8a070', 1.5); celShade(ctx, [[hx - 56, hy - 150], [hx - 30, hy - 150], [hx - 30, hy - 190], [hx - 56, hy - 190]], '#e8c870', '#b89040', { off: 3, lw: 2 }); } } });
   // two guards: spear butts on jars 4 and 5
-  [[0, 1190, 3], [4, 1300, 4]].forEach(([k, x, j]) => L.push({ y: 940, f: () => { const P = { x, y: 940, dir: 1, lid: abLid(t, 331 + k), tip: 0.05 + idleSway(tc, 333 + k, 0.02, 2.5), gaze: [1, -0.3], mouth: strain ? 'frown' : 'closed', handL: [40, -160], handR: [50, -150] };
-    const bx = CY_JARS[j].x - 6, by = CY.jarTop - 4 - 6 * (strain ? Math.abs(Math.sin(tc * 8 + k)) : 0), hx = x + 52 * 1.05, hy = 940 - 155 * 1.05;
+  [[0, 1178, 3], [4, 1292, 4]].forEach(([k, x, j]) => L.push({ y: 906, f: () => { const P = { x, y: 906, dir: 1, lid: abLid(t, 331 + k), tip: 0.05 + idleSway(tc, 333 + k, 0.02, 2.5), gaze: [1, -0.3], mouth: strain ? 'frown' : 'closed', handL: [40, -160], handR: [50, -150] };
+    const bx = CY_JARS[j].x - 6, by = CY.jarTop - 4 - 6 * (strain ? Math.abs(Math.sin(tc * 8 + k)) : 0), hx = x + 52 * 1.05, hy = 906 - 155 * 1.05;
     guard(ctx, t, k, P, A4_N, { spear: a4ButtAng(hx, hy, bx, by), spearHand: [hx, hy], shc: A4_NSH }); } }));
   return L;
 }
 
-// ---------- S14 105.6-110.3: TIK! TIK!, the hand at the slit, the captain's catch, the pan along the keepers, the clenched hand ----------
+// ---------- S14 105.6-110.3 (v2, review 1 note 3): one frame holds jars 4-6 and the guest window: the drumming hand flicks a cream
+// pebble on a dotted arc onto lid 5 (it hops, a small italic TIK!), the second is caught by the captain; then the pan along the keepers ----------
+const A4_PEB = [{ t0: 106.08, d: 0.5, to: [1350, CY.jarTop + 4], h: 170 }, { t0: 107.0, d: 0.56, to: [1606, 700], h: 120 }];
+function a4Peb(ctx, t, P) { const from = [CY.gwin.x + 22, CY.gwin.y + 76], u = (t - P.t0) / P.d; if (u < 0 || u > 1.6) return;
+  const at = (v) => [K.lerp(from[0], P.to[0], v), K.lerp(from[1], P.to[1], v) - P.h * Math.sin(Math.PI * v)];
+  ctx.save(); ctx.fillStyle = 'rgba(255,246,220,0.85)'; for (let k = 1; k <= 12; k++) { const v = k / 13; if (v > Math.min(1, u)) break; if (u > 1 && v < (u - 1) * 2) continue; const [x, y] = at(v); ctx.beginPath(); ctx.arc(x, y, 3, 0, 7); ctx.fill(); } ctx.restore();
+  if (u <= 1) { const [x, y] = at(u); celShade(ctx, ell(x, y, 8, 7, 10), '#fff2d0', '#d8c8a0', { off: 2, lw: 2, line: '#4a3a2a' }); } }
 function a4S14World(ctx, t, cam) {
   const tc = AB_T2(t);
   a4Yard(ctx, t, cam, { moon: A4_MOON.watch, G: { open: 0, lit: 0 }, gwin: { sh: 0, slit: 1, lit: 0.8 }, kwin: { lit: 0.3 }, lan: [0.9, 0.8, 0.3] });
-  if (tc < 108.0 || tc > 109.75) a4Cat(ctx, t, { x: 1120, y: 548, dir: 1, sit: 1, gaze: [1, 0.2] });
-  a4Jars(ctx, t, cam, { shc: A4_NSH });
-  const K2 = a4Keepers(ctx, t), C = { x: 1420, y: 955, dir: -1, lid: abLid(t, 341), tip: idleSway(tc, 342, 0.02, 2.4), gaze: [-1, -0.3], mouth: 'closed', brow: 0.8, handL: [30, -130], handR: [20, -120] };
-  if (tc > 107.56 && tc < 108.3) { C.handR = tc < 107.7 ? [70, -220] : [50, -150]; C.eyes = tc < 107.8 ? 'wide' : 'open'; C.gaze = [-1, -0.6]; C.mouth = tc > 107.8 ? 'o' : 'closed'; }
-  K2.push({ y: 955, f: () => guard(ctx, t, 3, C, A4_N, { lantern: { open: 0 }, shc: A4_NSH }) });
+  if (tc < 108.0 || tc > 110.0) a4Cat(ctx, t, { x: 1120, y: 548, dir: 1, sit: 1, gaze: tc > 106.1 && tc < 107.8 ? [1, 0.6] : [1, 0.2], ears: tc > 106.5 && tc < 106.9 ? 1 : undefined });
+  const hop = pulse(tc, 106.58, 0.18); a4Jars(ctx, t, cam, { shc: A4_NSH, st: (i) => (i === 4 && hop > 0 ? { lid: 0.5 * hop } : {}) });
+  const K2 = a4Keepers(ctx, t), C = { x: 1600, y: 945, dir: 1, lid: abLid(t, 341), tip: idleSway(tc, 342, 0.02, 2.4), gaze: [1, -0.4], mouth: 'closed', brow: 0.8, handL: [30, -130], handR: [20, -120] };
+  if (tc > 107.3 && tc < 108.4) { C.handRW = tc < 107.56 ? [K.lerp(1630, 1606, beatIn(tc, 107.3, 107.5)), K.lerp(800, 700, beatIn(tc, 107.3, 107.5))] : [1606, 700 + 20 * beatIn(tc, 107.7, 108.0)]; C.eyes = tc < 107.8 ? 'wide' : 'open'; C.gaze = [1, -0.6]; C.mouth = tc > 107.8 ? 'smile' : 'closed'; C.sq = landSquash(tc, 107.56, 0.06); }
+  K2.push({ y: 945, f: () => guard(ctx, t, 3, C, A4_N, { lantern: { open: 0 }, shc: A4_NSH }) });
   for (const k of abByY(K2)) k.f();
-  if (tc < 107.56) a4Pebbles(ctx, t, [[104.05, 1005, 3], [104.15, 1235, 5]]); else if (tc < 107.6) { const u = beatIn(t, 107.3, 107.56); celShade(ctx, ell(K.lerp(1130, 1370, u), K.lerp(630, 730, u) - 80 * Math.sin(Math.PI * u), 6, 5, 10), '#a8a8b8', '#6a6a7a', { off: 2, lw: 1.5 }); }
-  if (tc > 106.4) a4SlitHand(ctx, t, { drum: tc < 107.2, flick: pulse(tc, 107.2, 0.25), clench: beatIn(tc, 109.95, 110.1), glint: tc > 106.6 && tc < 107.0 ? (t - 106.6) / 0.4 : 0 });
+  for (const P of A4_PEB) a4Peb(ctx, t, P);
+  if (tc > 107.56 && tc < 108.0) { const u = beatIn(t, 107.56, 107.9); ctx.save(); ctx.globalAlpha *= 1 - u; ctx.strokeStyle = '#fff2c0'; ctx.lineWidth = 5; ctx.beginPath(); ctx.arc(1606, 700, 14 + 50 * u, 0, 7); ctx.stroke(); ctx.restore(); abGlint(ctx, 1606, 700, 30, u); }
+  if (tc > 105.4) a4SlitHand(ctx, t, { drum: tc < 105.95 || (tc > 106.4 && tc < 106.85), flick: Math.max(pulse(tc, 105.96, 0.24), pulse(tc, 106.88, 0.24)), clench: beatIn(tc, 110.06, 110.2), glint: tc > 106.0 && tc < 106.5 ? (t - 106.0) / 0.5 : 0 });
   cyFig(ctx, t, A4_N);
 }
 function a4S14Over(ctx, t, cam, S) {
-  if (t > 105.62 && t < 106.6) for (const [jx, d] of [[1005, 0], [1235, 0.12]]) { const [x, y] = abP(jx, 590, cam); a2Tag(ctx, S, 'TIK!', x, y - 30, t, 105.62 + d, 106.3, { size: 46, rot: d ? 0.1 : -0.1 }); }
-  if (t > 109.85 && t < 110.3) { const [x, y] = abP(2090, 470, cam); a4Glyph(ctx, 'q', x, y, 1.3, K.clamp((t - 109.85) / 0.15)); }
+  if (t > 106.58 && t < 107.3) { const u = beatIn(t, 106.58, 107.3), [x, y] = abP(1350, CY.jarTop - 30, cam); ctx.save(); ctx.globalAlpha *= 1 - K.clamp((u - 0.7) / 0.3); ctx.translate(x + 20, y - 50 * u); ctx.rotate(-0.12); ctx.font = "italic 800 44px 'Barlow Semi Condensed'"; ctx.textAlign = 'center'; ctx.lineWidth = 8; ctx.strokeStyle = '#1a1030'; ctx.strokeText('TIK!', 0, 0); ctx.fillStyle = '#fff2c0'; ctx.fillText('TIK!', 0, 0); ctx.restore(); }
+  if (t > 110.06 && t < 110.3) { const [x, y] = abP(2090, 470, cam); a4Glyph(ctx, 'q', x, y, 1.3, K.clamp((t - 110.06) / 0.15)); }
 }
-AB_SHOTS.push({ a: 105.6, b: 106.5, ww: 2200, cam: () => ({ x: 1100, y: 680, zoom: 1.2 }), world: a4S14World, over: a4S14Over });
-AB_SHOTS.push({ a: 106.5, b: 107.5, ww: 2200, cam: a3Cam([[106.5, { x: 2000, y: 640, zoom: 1.3 }], [107.5, { x: 2005, y: 640, zoom: 1.32 }]]), world: a4S14World, over: a4S14Over });
-AB_SHOTS.push({ a: 107.5, b: 109.8, ww: 2200, cam: a3Cam([[107.5, { x: 1400, y: 680, zoom: 1.2 }], [108.4, { x: 1400, y: 680, zoom: 1.2 }], [109.7, { x: 950, y: 680, zoom: 1.2 }], [109.8, { x: 948, y: 680, zoom: 1.2 }]]), world: a4S14World, over: a4S14Over });
-AB_SHOTS.push({ a: 109.8, b: 110.3, ww: 2200, cam: () => ({ x: 2000, y: 640, zoom: 1.3 }), world: a4S14World, over: a4S14Over });
+AB_SHOTS.push({ a: 105.6, b: 108.87, ww: 2200, cam: a3Cam([[105.6, { x: 1700, y: 640, zoom: 1 }], [108.87, { x: 1690, y: 640, zoom: 1 }]]), world: a4S14World, over: a4S14Over });
+AB_SHOTS.push({ a: 108.87, b: 110.05, ww: 2200, cam: a3Cam([[108.87, { x: 1690, y: 640, zoom: 1 }], [109.5, { x: 1010, y: 640, zoom: 1 }], [110.05, { x: 1000, y: 640, zoom: 1 }]]), world: a4S14World, over: a4S14Over });
+AB_SHOTS.push({ a: 110.05, b: 110.3, ww: 2200, cam: () => ({ x: 2000, y: 640, zoom: 1.3 }), world: a4S14World, over: a4S14Over });
 
 // ---------- S15 110.3-117.8: the guest door opens, CAUGHT!, the long pan across everyone, sleepy Ali Baba, the whip back ----------
 const A4_LX15 = (u) => kfn(u, [[110.9, 1930], [111.6, 1900], [111.88, 1900], [112.4, 1780]]);

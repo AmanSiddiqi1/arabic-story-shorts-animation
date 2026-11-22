@@ -3,6 +3,9 @@ const H3_DUR = 144.44;   // narration 140.44 + plan end_hold 4.0
 const H3_F = (keys) => (t) => flow(t, keys);
 const H3_HS = 0.9;       // the ebony horse's scale on the ground (as in episodes 1-2)
 const h3P = (x, y, c) => [500 + (x - c.x) * c.zoom, 615 + (y - c.y) * c.zoom];
+// v2 (Fable note 5/6/12, as HORSE-02's h2Push): push factor F over the base framing, scaled about the floor line, x drawn to X
+function h3Push(c, t, F, X, floorY) { const f = flow(t, F); if (f <= 1.001) return c; const w = K.clamp((f - 1) / 0.25), z = c.zoom * f, ys = 615 + (floorY - c.y) * c.zoom;
+  return { x: K.lerp(c.x, flow(t, X), w), y: floorY - (ys - 615) / z, zoom: z }; }
 function h3Shadow(ctx, x, y, w, lift = 0, o = {}) { groundShadow(ctx, x, y, w, lift, { flat: true, color: '#2b1a3a', alpha: o.alpha ?? 0.2, fall: o.fall ?? 260 }); }
 // rider body-local point for a horse-local point p (rider scale ps on horse H; seat shift d, dy as in twoRiders)
 function h3Loc(H, ps, p, d = 0, dy = 0) { const k = H.s / ps; return [(p[0] - (-8 + d)) * k - 22, (p[1] - (-238 + dy)) * k - 52]; }

@@ -57,9 +57,10 @@ function h3King(t) {
   P.y -= Math.abs(Math.sin(P.ph)) * 6 * P.amp; P.sq *= 1 + 0.04 * Math.sin(P.ph * 2) * P.amp; P.mouth = 'open'; P.eyes = 'wide'; P.brow = 0.5; P.handL = [-80, -160]; P.handR = [80, -170];
   if (t >= 7.6 && t < 8.8) { const lift = 22 * flow(tc, [[7.9, 0], [8.15, 1], [8.45, 1], [8.7, 0]]); P.y -= lift; P.handL = [60, -150]; P.handR = [70, -140]; P.mouth = 'smile'; P.lid = 0.7; P.wet = true; P.sq = 1 - 0.06 * pulse(tc, 7.8, 0.4); P.amp = 0; }
   if (t >= 8.8 && t < 9.6) { P.mouth = 'smile'; P.handL = [-30, -100]; P.handR = [36, -110]; P.wet = t < 9.2; P.dir = -1; }
-  if (t >= 9.6) { P.dir = 1; P.mouth = 'smile'; P.handL = PERSON_HANDS.folded.L; P.handR = PERSON_HANDS.folded.R; P.gaze = [0.8, -0.5]; P.amp = 0;
+  if (t >= 9.6) { P.dir = 1; P.mouth = 'smile'; P.eyes = 'open'; P.brow = 0.3; P.handL = PERSON_HANDS.clasp.L; P.handR = PERSON_HANDS.clasp.R; P.gaze = [0.8, -0.5]; P.amp = 0;   // v2 (note 10): proud, not cross
+    if (t >= 11.84 && t < 12.5) { P.drop = 8 * pulse(tc, 11.84, 0.5); P.tip = 0.06 * pulse(tc, 11.84, 0.5); }
     if (t >= 12.55 && t < 13.24) { P.gaze = [0.6, 0.6]; P.drop = 8 * pulse(tc, 12.55, 0.7); }
-    if (t >= 15.46 && t < 16.4) { P.handR = [40, -194]; P.handL = PERSON_HANDS.folded.L; P.gaze = [1, -0.4]; P.lid = 0.35; P.tip = 0.04; }
+    if (t >= 15.46 && t < 16.4) { P.handR = [40, -194]; P.handL = PERSON_HANDS.clasp.L; P.gaze = [1, -0.4]; P.lid = 0.35; P.tip = 0.04; }
     if (t >= 16.5) { P.gaze = [0.2, -1]; P.lid = Math.max(P.lid, ehBlinkAt(tc, 16.5)); P.mouth = 'o'; } }
   return P;
 }

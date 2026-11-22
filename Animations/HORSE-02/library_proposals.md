@@ -11,3 +11,7 @@ All live in this story's new series files, written so HORSE-03..05 copy them unc
 7. **mapCard** + **ehScroll** (prop, `src/horse_props.js`): the charcoal map (palace, towers and bridge, dome, river, road with arrow, moon) drawing on stroke by stroke inside a ragged callout card, and the scroll in the hands.
 8. **tetherRope** + **ehRopeCoil**, **oilLamp** + **lampGlow**, **ehCup** (props, `src/horse_props.js`).
 9. **guard** costume (pose, `src/horse_props.js`): `EH_GUARD_A` / `EH_GUARD_B` on the servant preset with `ehHelmet`, `ehNeckCloth`, `ehSpear`, `ehTorch`; plus the princess (`EH_PRINCESS`, with `ehVeilRibbon`) and maid (`EH_MAID`) costume settings.
+
+## v2 (Fable review 1)
+- **Rider scale follows the mount**: `rideOn` / series `ehRide` should default the rider's `s` to `mount.s * castRatio` when `PP.s` is not given (HORSE-02 v2 sets it by hand in `h2RoofWorld`).
+- **Zoom about the floor line** (`h2Push` in `src/h02_roof.js`): multiply the zoom, keep the floor line's panel height, pull x toward the actors; a template camera helper.

@@ -64,4 +64,4 @@ function a4Whisper(ctx, x, y, t, a, b) { if (t < a || t > b) return; const u = (
   for (let k = 0; k < 3; k++) { const ph = (u * 2 + k / 3) % 1; ctx.globalAlpha = 0.55 * Math.sin(Math.PI * ph); ctx.beginPath(); for (let j = 0; j <= 6; j++) ctx.lineTo(x - 30 + k * 30 + 6 * Math.sin(j * 1.4 + t * 9), y - ph * 70 - j * 5); ctx.stroke(); } ctx.restore(); }
 // a speech balloon kept fully inside the panel (width estimated from the text): abSay with x clamped by half the balloon width
 function a4Say(ctx, S, steps, t, x, y, to, o = {}) { const size = o.size || 50, len = Math.max(...steps.map((s) => s[1].length)), hw = (size * 0.5 * len + size * 0.9) / 2 + 24;
-  abSay(ctx, S, steps, t, K.clamp(x, hw + 30, 970 - hw), K.clamp(y, 120, 1100), to, o); }
+  abSay(ctx, S, steps, t, K.clamp(x, hw + 30, 970 - hw), K.clamp(y, 120, 1100), to, { thin: true, ...o }); }   // v2: thin tail (ALI-03 abSay)

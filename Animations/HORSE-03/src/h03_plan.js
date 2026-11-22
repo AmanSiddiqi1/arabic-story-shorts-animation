@@ -52,15 +52,15 @@ function h3PlanInside(c, t) {
   const glints = t >= 56.86 && t < 58.0;
   if (H.air) ehWindRibbons(c, H, tc, { ang: H.x > 1160 ? Math.PI : Math.PI / 2, len: 220 });
   if (!mounted) { ebonyHorse(c, { ...H, lit: t >= 61.74 && t < 62.6 ? { chest: 0.6, neck: t > 62.26 ? 0.6 : 0 } : H.lit }); }
-  else { const PF = { s: 0.95, lid: ehLid(t, 151), mouth: 'smile', gaze: [1, 0.2], handL: [60, -110], handR: [70, -104], lurch: 0.08 };
+  else { const rk = H.s / 0.9, PF = { s: 0.95 * rk, lid: ehLid(t, 151), mouth: 'smile', gaze: [1, 0.2], handL: [60, -110], handR: [70, -104], lurch: 0.08 };
     if (t >= 69.4 && t < 71.3) { PF.lurch = 0.3; PF.gaze = [0.6, 0.8]; }
     if (t >= 76.76 && t < 78.1) { PF.gaze = [0.1, 1]; PF.handR = [-60, -90]; PF.lurch = -0.1; }
     if (t >= 78.1) { PF.gaze = [-1, 0]; PF.handR = PERSON_HANDS.pointDown.R.map((v, i) => (i ? v : -v)); PF.mouth = 'o'; }
-    const PR = invM ? { s: 1.04, age: 0.4, lid: 0.12, brow: -0.3, mouth: 'smile', gaze: [1, 0], handL: [60, -110], handR: [70, -104], lurch: 0.1 } : null;
-    if (PR && t >= 72.26) { const kn = h3Loc(H, 1.04, EH_EBG.knob, EH_SEAT2.rear, EH_SEAT2.rearDy); PR.handR = t < 73.02 ? [kn[0] - 30, kn[1] - 20] : kn; PR.lurch = 0.25; }
+    const PR = invM ? { s: 1.04 * rk, age: 0.4, lid: 0.12, brow: -0.3, mouth: 'smile', gaze: [1, 0], handL: [60, -110], handR: [70, -104], lurch: 0.1 } : null;
+    if (PR && t >= 72.26) { const kn = h3Loc(H, PR.s, EH_EBG.knob, EH_SEAT2.rear, EH_SEAT2.rearDy); PR.handR = t < 73.02 ? [kn[0] - 30, kn[1] - 20] : kn; PR.lurch = 0.25; }
     if (PR && t >= 74.76) { PR.handR = [60, -110]; PR.lurch = 0.1; }
-    if (PR && t >= 80.1) { PR.lid = 1; PR.tip = 0.12 * Math.sin((tc - 80.1) * 3.2); PR.gaze = [1, 0]; }
-    if (PR && t >= 81.06) { PR.handL = PERSON_HANDS.folded.L; PR.handR = PERSON_HANDS.folded.R; }
+    if (PR && t >= 80.1) { PR.lid = 1; PR.tip = 0.22 * Math.sin((tc - 80.1) * 9); PR.gaze = [1, 0]; }
+    if (PR && t >= 81.06) { PR.tip = -0.06; PR.handL = PERSON_HANDS.folded.L; PR.handR = PERSON_HANDS.folded.R; }
     twoRiders(c, { ...H, knob: t >= 73.02 ? Math.PI / 2 : 0 }, { who: 'princess', D: EH_PRINCESS, P: PF }, PR ? { who: 'inventor', D: EH_INVENTOR, P: PR } : null, t, { tc, tail: { stream: H.air ? 1 : 0.3 }, veil: { stream: H.air ? 1 : 0 }, armOver: PR && t >= 72.26 && t < 74.76 ? ehHorsePt(H, EH_EBG.knob) : null }); }
   if (glints) { for (const [i, p] of [[0, EH_EBG.knob], [1, EH_EBG.chest], [2, [90, -8]], [3, [-98, -8]], [4, EH_EBG.eye], [5, [80, -84]]]) { const [x, y] = ehHorsePt(H, p); ehGlint(c, x, y, 30, ((t - 56.86) / 0.6 + i * 0.13) % 1); } }
   // the cloth: on the plan horse until 55.7, then one conjurer's sweep off to the right
@@ -72,17 +72,17 @@ function h3PlanInside(c, t) {
     groundShadow(c, I.x, 902, 90, 900 - I.y, { flat: true, color: '#7a6a9a', alpha: 0.2 }); ehInvTail(c, I, tc, { vx: I.amp > 0.2 ? -200 : 0 }); person(c, ehDressP(EH_INVENTOR, I)); }
 }
 // the plan cloud's inside camera: centred on the bench and horse; re-centres on the horse (67.67); follows the flight (74.76)
-function h3PlanAt(t) { return [flow(t, [[67.67, 1040], [68.27, 1100], [75.6, 1100], [81.06, 1700]]), flow(t, [[74.76, 730], [76.1, 410], [81.06, 390]])]; }
+function h3PlanAt(t) { return [t < 75.6 ? flow(t, [[67.67, 1040], [68.27, 1100], [75.6, 1100]]) : h3PlanHorse(t).x - 50, flow(t, [[74.76, 730], [76.1, 170], [81.06, 170]])]; }   // v2: the inside camera keeps the pair centred
 // ---------- overlays over the garden (panel units) ----------
 function h3GardenOver(ctx, t, cam, S) {
   const P = (x, y) => h3P(x, y, cam), ih = h3InvHedge(t), inv = h3InvG(t), pr = h3PrG(t), H = h3GHorse(t);
   // the plan cloud (51.6 - 82.53): three bubbles from the turban, then the big cloud; it bursts top down at 81.9, the bubbles last
   if (ih && t >= 51.6 && t < 82.53) { const hd = P(...ehHeadOf(ih)), op = K.clamp((t - 51.6) / 0.7), cl = t > 81.9 ? K.clamp(1 - (t - 81.9) / 0.4) : 1, hgt = 520 + 80 * ehE(t, 74.76, 1.3) * (t < 81.9 ? 1 : 0);
-    const p = Math.min(op, t > 81.9 ? K.lerp(0.3, 1, cl) : 1), at = h3PlanAt(t);
+    const p = Math.min(op, t > 81.9 ? K.lerp(0.3, 1, cl) : 1), at = h3PlanAt(t), isc = flow(t, [[75.2, 0.7], [76.4, 0.95]]);   // v2 (note 8a): the inside camera closes in for the flight
     if (t > 81.9 && cl <= 0.02) { const k = 1 - K.clamp((t - 82.3) / 0.23); thoughtCloud(ctx, 500, 330, 820, hgt, t, { p: 0.29 * k, tail: [hd[0], hd[1] - 70], seed: 21 }); }
-    else thoughtCloud(ctx, 500, 320 - (hgt - 520) * 0.4, 840, hgt * (t > 81.9 ? 0.6 + 0.4 * cl : 1), t, { p: t > 81.9 ? 0.3 + 0.7 * cl : p, tail: [hd[0], hd[1] - 70], seed: 21, bg: '#f4ecff', scale: 0.7, at, inside: (c) => h3PlanInside(c, t) });
+    else thoughtCloud(ctx, 500, 320 - (hgt - 520) * 0.4, 840, hgt * (t > 81.9 ? 0.6 + 0.4 * cl : 1), t, { p: t > 81.9 ? 0.3 + 0.7 * cl : p, tail: [hd[0], hd[1] - 70], seed: 21, bg: '#f4ecff', scale: isc, at, inside: (c) => h3PlanInside(c, t) });
     if (t >= 51.9 && t < 81.9) { ctx.save(); ctx.globalAlpha *= K.clamp((81.9 - t) / 0.3); S.label(ctx, 'THE PLAN', 230, 110, K.clamp((t - 51.9) / 0.35), { size: 46 }); ctx.restore(); }
-    const pl = (x, y) => [500 + (x - at[0]) * 0.7, 320 - (hgt - 520) * 0.4 + (y - at[1]) * 0.7];
+    const pl = (x, y) => [500 + (x - at[0]) * isc, 320 - (hgt - 520) * 0.4 + (y - at[1]) * isc];
     if (t >= 53.74 && t < 55.4) { const I = h3PlanInvP(t, h3PlanHorse(t)); h3Say(ctx, S, [[53.74, 'FIRUZ SENT ME!']], t, pl(I.x, 900 - 200), { gone: 55.15, size: 34, up: 70, dx: 60 }); }
     if (t >= 54.96 && t < 56.4) { const [x, y] = pl(1010, 640), k = K.ease.back(K.clamp((t - 54.96) / 0.3)); ctx.save(); ctx.globalAlpha *= K.clamp((56.4 - t) / 0.3); ctx.translate(x, y); ctx.scale(k, k);
       ehRibbon(ctx, -6, 10, Math.PI / 2 + 0.3, 46, 16, t, EH_CRIMSON, { wave: 3, tip: 0.6, shade: '#b0183a' }); ehRibbon(ctx, 6, 10, Math.PI / 2 - 0.3, 46, 16, t + 0.3, EH_CRIMSON, { wave: 3, tip: 0.6, shade: '#b0183a' });
@@ -91,14 +91,14 @@ function h3GardenOver(ctx, t, cam, S) {
       if (sz > 0.01) { ctx.save(); ctx.font = '900 ' + Math.round(80 * sz) + 'px "Barlow Semi Condensed"'; ctx.textAlign = 'center'; ctx.lineWidth = 8 * sz; ctx.strokeStyle = '#2b1a3a'; ctx.fillStyle = '#ff7ad9'; ctx.strokeText('?', x, y); ctx.fillText('?', x, y); ctx.restore(); } }
     if (t >= 62.26 && t < 63.3) { const lv = ehHorsePt(h3PlanHorse(t), EH_EBG.lever), [x, y] = pl(lv[0] + 40, lv[1] - 10); ctx.save(); ctx.globalAlpha *= K.clamp((63.3 - t) / 0.3); S.arrow(ctx, [x, y - 30], [x, y + 40], K.clamp((t - 62.26) / 0.3), { width: 7, color: '#ff7ad9' }); ctx.restore(); }
     if (t >= 79.48 && t < 80.6) { const Hh = h3PlanHorse(t), [x, y] = pl(Hh.x + 60, Hh.y - 140), u = K.clamp((t - 79.48) / 0.5); ctx.save(); ctx.globalAlpha *= K.clamp((80.6 - t) / 0.3); S.arrow(ctx, [x, y], [x, y + 50 + 30 * u], u, { width: 7, color: '#ff7ad9' }); ctx.restore(); } }
-  if (ih && t >= 81.72 && t < 82.6) { const hd = P(...ehHeadOf(ih)); h3Word(ctx, S, 'HEH HEH!', hd[0] + 150 + 4 * Math.sin(t * 40), hd[1] - 110, t, 81.72, 82.5, { size: 62 }); }
+  if (ih && t >= 81.1 && t < 82.6) { const hd = P(...ehHeadOf(ih)); h3Word(ctx, S, 'HEH HEH!', K.clamp(hd[0] + 150, 200, 800) + 4 * Math.sin(t * 40), hd[1] - 110, t, 81.1, 82.5, { size: 62 }); }
   // the real trick
   if (inv) { const hd = P(...ehHeadOf(inv));
     if (t >= 86.12 && t < 87.7) h3Say(ctx, S, [[86.12, 'FIRUZ SENT ME\nTO TEACH YOU!']], t, hd, { gone: 87.45, size: 42, up: 170, dx: 40 });
     if (t >= 98.42 && t < 99.9) h3Say(ctx, S, [[98.42, 'THE PRINCE WAITS\nNEARBY!']], t, hd, { gone: 99.65, size: 42, up: 170, dx: -60 }); }
   if (t >= 96.26 && t < 98.3) { const kb = P(...ehHorsePt(H, EH_EBG.knob)), lv = P(...ehHorsePt(H, EH_EBG.lever)); ctx.save(); ctx.globalAlpha *= K.clamp((98.3 - t) / 0.3);
-    S.arrow(ctx, [kb[0] + 170, kb[1] + 150], [kb[0] + 18, kb[1] + 16], K.clamp((t - 96.26) / 0.3), { width: 10 }); S.label(ctx, 'UP', kb[0] + 200, kb[1] + 190, K.clamp((t - 96.26) / 0.3), { size: 50 });
-    if (t >= 96.7) { S.arrow(ctx, [lv[0] + 190, lv[1] - 110], [lv[0] + 16, lv[1] - 8], K.clamp((t - 96.7) / 0.3), { width: 10, color: '#ff7ad9' }); S.label(ctx, 'DOWN', K.clamp(lv[0] + 220, 120, 880), lv[1] - 150, K.clamp((t - 96.7) / 0.3), { size: 50 }); } ctx.restore(); }
+    S.arrow(ctx, [kb[0] - 40, kb[1] + 190], [kb[0] + 4, kb[1] + 22], K.clamp((t - 96.26) / 0.3), { width: 10 }); S.label(ctx, 'UP', K.clamp(kb[0] - 40, 120, 880), kb[1] + 230, K.clamp((t - 96.26) / 0.3), { size: 50 });
+    if (t >= 96.7) { S.arrow(ctx, [lv[0] - 30, lv[1] - 170], [lv[0] + 2, lv[1] - 16], K.clamp((t - 96.7) / 0.3), { width: 10, color: '#ff7ad9' }); S.label(ctx, 'DOWN', K.clamp(lv[0] - 30, 120, 880), lv[1] - 210, K.clamp((t - 96.7) / 0.3), { size: 50 }); } ctx.restore(); }
   if (t >= 110.36 && t < 111.0) S.emphasis(ctx, P(H3_HX0, 700)[0], P(H3_HX0, 700)[1], 300, (t - 110.36) / 0.64, { rect: [0, 0, 1000, 1230], word: '' });
   if (t >= 110.95 && t < 111.9) { const c0 = h3CatG(110.9), [x, y] = P(c0.x, c0.y); h3Word(ctx, S, 'RIP!', K.clamp(x + 90, 140, 860), y - 60, t, 110.95, 111.9, { size: 70 }); }
   // the whip pan into the garden at 48.92

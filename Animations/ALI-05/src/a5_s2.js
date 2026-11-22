@@ -28,7 +28,7 @@ function a5S5World(ctx, t, cam) {
   { const P = { x: 1330, y: 905, s: 0.72, dir: -1, pal: 1, earL: tc > 37.7 ? -0.9 : 0.4 + idleSway(tc, 631, 0.3, 1.6), earR: tc > 37.8 ? -0.9 : 0.3 + idleSway(tc, 632, 0.3, 2.1), tailSwish: osc(tc, 1.5), lid: abLid(t, 633), neck: idleSway(tc, 634, 0.08, 3.1), headDown: 0.3 };
     a3Shadow(ctx, 1330, 905, 200, 0, A5_ESH); abDonkey(ctx, P, A5_EV); }
   // the nephew at the door, waving and hopping
-  if (tc < 41.0) { const h = Math.max(hop(tc, 36.24, 0.3, 0, 0, 22)[1], hop(tc, 36.6, 0.3, 0, 0, 16)[1]), N = { ...a5Base(t, 641), x: 1030, y: 915 - h, dir: -1, mouth: 'grin', gaze: [-1, 0], handL: tc < 37.0 ? [-70, -205 + 12 * Math.sin(tc * 16)] : [-24, -104], handR: tc < 37.0 ? [70, -205 - 12 * Math.sin(tc * 16)] : [24, -106] };
+  if (tc < 41.0) { const h = Math.max(hop(tc, 36.24, 0.3, 0, 0, 22)[1], hop(tc, 36.6, 0.3, 0, 0, 16)[1]), N = { ...a5Base(t, 641), x: kfn(tc, [[37.8, 1030], [38.3, 1120]]), y: 915 - h, dir: -1, mouth: 'grin', gaze: [-1, 0], handL: tc < 37.0 ? [-70, -205 + 12 * Math.sin(tc * 16)] : [-24, -104], handR: tc < 37.0 ? [70, -205 - 12 * Math.sin(tc * 16)] : [24, -106] };
     N.sq *= landSquash(tc, 36.54, 0.1) * landSquash(tc, 36.9, 0.08); abNephew(ctx, t, N, A5_EV, { shc: A5_ESH, lift: h }); }
   // the guest (fine clothes), three glints along the trim and a light band at 37.66
   const G = a5Guest2(t); abNewMerchant(ctx, t, G.P, A5_EV, { ...G.o, shc: A5_ESH });
@@ -37,7 +37,7 @@ function a5S5World(ctx, t, cam) {
   if (tc > 38.0) { ctx.save(); ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = 0.35 * door; ctx.fillStyle = '#ffc070'; ctx.beginPath(); ctx.moveTo(875, 902); ctx.lineTo(985, 902); ctx.lineTo(1060, 1100); ctx.lineTo(760, 1100); ctx.closePath(); ctx.fill(); ctx.restore(); }
 }
 function a5S5Over(ctx, t, cam, S) { if (t > 50.0 && t < 51) { const [mx, my] = abP(1095, 460, cam); a5Glyph(ctx, 'x', mx, my - 60, 0.8, K.clamp((t - 50.1) / 0.3) * (1 - K.clamp((t - 50.8) / 0.2))); } }
-AB_SHOTS.push({ a: 35.0, b: 42.2, ww: 2000, cam: a5Cam([[35.0, a5CX(430)], [39.4, a5CX(430)], [40.3, a5CX(450, 1.12, 560)], [42.2, a5CX(460, 1.12, 560)]]), world: a5S5World, over: a5S5Over });
+AB_SHOTS.push({ a: 35.0, b: 42.2, ww: 2000, cam: a5Cam([[35.0, { x: 840, y: 545, zoom: 1.15 }], [39.4, { x: 880, y: 545, zoom: 1.15 }], [40.3, { x: 900, y: 520, zoom: 1.2 }], [42.2, { x: 905, y: 520, zoom: 1.2 }]]), world: a5S5World, over: a5S5Over });
 
 // ---------- S6 insert 42.2-47.1: the saluting hand and the ring (full panel), slow push; 47.1-50.0 split with the memory ----------
 // the ring's position on the big hand (a3BigHand finger 2 at curl 0: local (14, 90.8) at scale k about (x, y), rot)
@@ -76,4 +76,4 @@ function a5S6Panel(ctx, t, S) {
   }
 }
 AB_SHOTS.push({ a: 42.2, b: 50.0, panel: a5S6Panel, noClues: true });
-AB_SHOTS.push({ a: 50.0, b: 51.0, ww: 2000, cam: a5Cam([[50.0, a5CX(460, 1.12, 560)], [51.0, a5CX(470, 1.12, 560)]]), world: a5S5World, over: a5S5Over });
+AB_SHOTS.push({ a: 50.0, b: 51.0, ww: 2000, cam: a5Cam([[50.0, { x: 905, y: 520, zoom: 1.2 }], [51.0, { x: 915, y: 520, zoom: 1.2 }]]), world: a5S5World, over: a5S5Over });

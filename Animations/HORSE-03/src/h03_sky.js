@@ -11,20 +11,21 @@ function h3S17Panel(ctx, t, S) {
   ehLand(ctx, 610, 0.2, t, { variant: 'far', dx: -260 * u, haze: '#e4f0ff' });
   { const cx = h3S17City(t), k = 0.3 - 0.02 * u; ctx.save(); ctx.globalAlpha = 0.95; ehGrad(ctx, cx - 260 * k / 0.3, 742, 520 * k / 0.3, 26, [[0, '#4ab0e0'], [1, '#3a90d0']]); h3Palace(ctx, cx, 745, k, false); ehRiverTowers(ctx, cx - 200 * k / 0.3, cx + 170 * k / 0.3, 748, 150 * k / 0.3, 26 * k / 0.3, EH_RC_DUSK, {}); ctx.restore(); }
   ehTile(ctx, ehCloudTile('mid', 'high'), -400 * u + 300, 500, 0.55);
+  ehSkyFront(ctx, t, { sx: -600 * u, sy: 0, cloud: 'high', a: 0.5 });   // v2 (note 3): behind the riders, never over them
   // two riders, level, with a 6 px bob; the princess twisted round, the inventor staring ahead with the torn tail
   const PF = { s: EH_PRINCESS.s * H.s / H3_HS, lid: ehLid(t, 11, [118.8]), mouth: 'open', eyes: 'wide', brow: -0.4, gaze: [-1, 0.1], handL: [50, -110], handR: [-60, -150], lurch: 0.06 + idleSway(tc, 31, 0.02, 2.2), talk: ehTalk(t, 114.42, 116.6, 19, 0.8) };
   const ps = PF.s, mane = (j) => h3Loc(H, ps, [EH_EBG.mane[j][0] - 4, EH_EBG.mane[j][1] - 4], EH_SEAT2.front);
   PF.handL = mane(5);
-  if (t >= 115.98 && t < 117.6) { PF.handR = [-90, -70]; PF.gaze = [-0.8, 0.7]; }
+  if (t >= 115.46 && t < 115.98) { PF.mouth = 'open'; PF.brow = -0.7; PF.handR = [-120, -150]; PF.gaze = [-1, 0.2]; }
+  if (t >= 115.98 && t < 117.6) { PF.handR = [-130, -60]; PF.gaze = [-0.8, 0.7]; PF.brow = -0.6; }
   if (t >= 117.6) { PF.handR = [-40, -130]; PF.mouth = 'frown'; PF.talk = 0; }
   if (t >= 118.8) { PF.gaze = lookAt([0, -170], h3Loc(H, ps, EH_EBG.lever, EH_SEAT2.front)); PF.dir = 1; PF.handR = [40, -120]; PF.brow = 0.2; PF.mouth = 'closed'; PF.eyes = 'open'; }
   const PR = { s: EH_INVENTOR.s * H.s / H3_HS, lid: 0.4, mouth: 'closed', brow: 0.4, gaze: [1, -0.1], handL: [60, -110], handR: [70, -104], lurch: -0.1 + idleSway(tc, 37, 0.02, 2.3), tip: -0.04 };
-  if (t >= 117.7 && t < 118.5) { PR.tip = 0.12 * Math.sin((tc - 117.7) * 7); PR.talk = ehTalk(t, 117.7, 118.1, 41, 0.7); PR.lid = 0.6; }
-  if (t >= 118.5) { PR.handR = EH_PLUGEAR.R; PR.gaze = [1, -0.2]; PR.lid = 0.5; PR.mouth = 'smirk'; }
+  if (t >= 117.7 && t < 118.5) { PR.tip = 0.2 * Math.sin((tc - 117.7) * 11.8); PR.talk = ehTalk(t, 117.7, 118.1, 41, 0.7); PR.lid = 0.6; }
+  if (t >= 118.5) { PR.handR = EH_PLUGEAR.R; PR.gaze = [1, -0.2]; PR.lid = 0.5; PR.mouth = 'smirk'; PR.drop = 5 * Math.abs(Math.sin((tc - 118.5) * 6)); }
   if (t >= 118.8) PR.lurch = 0.06;
   castFinish(ctx, H.x, H.y + 60 * H.s, 760 * H.s, 1000 * H.s, (c) => { ehWindRibbons(c, H, tc, { ang: Math.PI + 0.05, len: 260 }); twoRiders(c, H, { who: 'princess', D: EH_PRINCESS, P: PF }, { who: 'inventor', D: EH_INVENTOR, P: PR }, t, { tc, tail: { stream: 1, torn: true, ang: Math.PI * 1.02 }, veil: { stream: 1 } }); }, { rim: '#fff2c0', light: [-1, -1], rimW: 2.5 });
-  if (t >= 118.95 && t < 119.5) { const [x, y] = ehHorsePt(H, EH_EBG.lever); ehGlint(ctx, x, y, 30, (t - 118.95) / 0.55); }
-  ehSkyFront(ctx, t, { sx: -600 * u, sy: 0, cloud: 'high', a: 0.5 });
+  if (t >= 118.95 && t < 119.5) { const [x, y] = ehHorsePt(H, EH_EBG.lever); ehGlint(ctx, x, y, 40, (t - 118.95) / 0.55); }
   // lettering: TAKE ME BACK! (the arrow follows her finger to the dome), NO!
   const sF = ehRiderFrame(H, EH_SEAT2.front, 0, PF.lurch, 0, ps), hF = ehRiderPt(sF, 0, -120), sR = ehRiderFrame(H, EH_SEAT2.rear, EH_SEAT2.rearDy, PR.lurch, 0, PR.s), hR = ehRiderPt(sR, 0, -120);
   if (t >= 115.46 && t < 117.2) h3Say(ctx, S, [[115.46, 'TAKE ME BACK!']], t, hF, { gone: 116.95, size: 50, up: 190, dx: 60 });

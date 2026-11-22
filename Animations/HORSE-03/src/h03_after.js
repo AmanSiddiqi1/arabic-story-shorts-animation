@@ -1,6 +1,6 @@
 // ===== HORSE-03: discovery and vow. S18-S20 in the garden at golden hour (120.58 - 144.44) =====
-const H3_FZA_X = H3_F([[120.58, 1440], [121.0, 1440], [122.5, 1060], [124.22, 1060], [124.65, 1150], [127.6, 1150], [128.3, 1120], [150, 1120]]);
-const H3_SCRAP = [1186, 900];
+const H3_FZA_X = H3_F([[120.58, 1440], [121.0, 1440], [122.5, 1060], [124.22, 1060], [124.65, 1090], [127.6, 1090], [128.3, 1060], [150, 1060]]);   // v2 (note 2): stops at 1090 left of the bower, kneels at 1060
+const H3_SCRAP = [1150, 900];
 function h3FzA(t) {
   const tc = EH_T2(t), sd = 3, P = { ...walk(H3_FZA_X, tc, { stride: 24 }), y: 930, s: EH_FIRUZ.s, dir: -1, lid: ehLid(t, sd, [123.34, 123.6]), sq: breathe(tc, sd, 0.014), tip: idleSway(tc, sd, 0.025, 2.9), mouth: 'smile', gaze: [-1, 0], brow: 0.3, handL: [40, -110], handR: [-10, -100] };
   const o = { vx: speed(H3_FZA_X, tc), rose: { hand: 'L', droop: 0 }, swing: 0 }, look = (p) => lookAt(ehHeadOf(P), p);
@@ -26,12 +26,12 @@ function h3FzA(t) {
   return [P, o];
 }
 function h3CatA(t) {
-  const tc = EH_T2(t), P = { x: 1240, y: 905, s: 0.62, pal: 2, dir: -1, sit: 1, lid: ehLid(t, 45) * 0.8 + 0.1, tailCurl: 0.6 + 0.2 * Math.sin(tc * 1.3), ears: 0.4, gaze: [-1, 0.3] };
+  const tc = EH_T2(t), P = { x: 1300, y: 905, s: 0.62, pal: 2, dir: -1, sit: 1, lid: ehLid(t, 45) * 0.8 + 0.1, tailCurl: 0.6 + 0.2 * Math.sin(tc * 1.3), ears: 0.4, gaze: [-1, 0.3] };
   if (t < 126.76) { const [fz] = h3FzA(t); P.gaze = lookAt([P.x, 860], ehHeadOf(fz)); P.dir = fz.x < P.x ? -1 : 1; }
   if (t >= 126.76 && t < 128.44) { P.sit = 0; P.crouch = 0.6; P.raise = Math.abs(Math.sin((tc - 126.76) * 7)) * (t < 127.5 ? 1 : 0); P.gaze = t < 127.5 ? [-1, 0.6] : [-0.6, -0.8]; }
   if (t >= 128.44 && t < 134.2) { P.gaze = [-0.8, -0.6]; P.lid = 0.3; }
   if (t >= 134.2 && t < 139.38) { P.gaze = [0.5, -0.9]; P.ears = 1; P.lid = 0.1; }
-  if (t >= 139.38) { const u = ehE(tc, 139.38, 0.5); P.x = K.lerp(1240, 1172, u); P.sit = u < 1 ? 0.5 : 1; P.rot = -0.12 * u; P.lid = 0.55; P.gaze = [-1, -0.3]; P.tailCurl = 0.8 + 0.15 * Math.sin(tc * 2); }
+  if (t >= 139.38) { const u = ehE(tc, 139.38, 0.5); P.x = K.lerp(1300, 1130, u); P.sit = u < 1 ? 0.5 : 1; P.rot = -0.12 * u; P.lid = 0.55; P.gaze = [-1, -0.3]; P.tailCurl = 0.8 + 0.15 * Math.sin(tc * 2); }
   return P;
 }
 function h3Rose(ctx, x, y, droop, t) { const a = -1.3 + 2.6 * droop + idleSway(EH_T2(t), 99, 0.05, 2), ex = x + Math.cos(a) * 54, ey = y + Math.sin(a) * 54;
@@ -43,14 +43,17 @@ function h3AfterWorld(ctx, t, cam) {
   // the gold ribbon trail high above (136.46 on), fading
   if (t >= 135.0) { const k = K.clamp((t - 135.0) / 0.8) * (1 - K.clamp((t - 139.5) / 4.5)); ctx.save(); ctx.globalAlpha *= k; for (let i = 0; i < 2; i++) h3DashArc(ctx, [1250 + i * 40, 420 - i * 20], [1700, -600 + i * 30], -0.35, 1, '#ffd36a', 6); ctx.restore(); }
   // what is left: four hoof dents, the fallen stool, the book face down, the scrap, the cloth on the roses
-  for (const fx of [68, -110, 90, -86]) shape(ctx, ell(H3_HX0 + fx * H3_HS, 903, 16, 5, 12), '#3a7a4a', { lw: 0 });
-  coverCloth(ctx, ehClothSpread(1110, 690, 300, 150, -0.25, t, 0.05), { ang: 0.6 });
-  h3Stool(ctx, H3_STOOL[0] + 40, H3_STOOL[1], -Math.PI / 2);
+  // v2 (note 1): the dents read (darker, larger, a lip of turned earth); the cloth stays a heap on the path (960), nothing above the hide spot
+  for (const fx of [68, -110, 90, -86]) { shape(ctx, ell(H3_HX0 + fx * H3_HS, 905, 26, 9, 14), '#7a5a3a', { lw: 0 }); shape(ctx, ell(H3_HX0 + fx * H3_HS, 903, 20, 6, 14), '#1e4428', { lw: 0 }); }
+  h3Stool(ctx, H3_STOOL[0] + 70, H3_STOOL[1], -Math.PI / 2);
+  // petals still drifting down over the empty bower (120.6 - 123.4)
+  if (t < 123.4) for (let i = 0; i < 8; i++) { const R = K.rng(760 + i), u = K.clamp((t - 120.4 - R() * 1.2) / 1.8); if (u > 0 && u < 1) { ctx.save(); ctx.globalAlpha = 1 - u * u; ctx.fillStyle = i % 2 ? '#ff6a8a' : '#e8264f'; ctx.translate(1110 + R() * 220 + 30 * Math.sin(u * 7 + i), 640 + R() * 60 + 260 * u); ctx.rotate(u * 6 + i); ctx.beginPath(); ctx.ellipse(0, 0, 8, 4, 0, 0, 7); ctx.fill(); ctx.restore(); } }
   { const pg = Math.sin(t * 3) * 0.3; celShade(ctx, [[850, 914], [912, 910], [916, 926], [852, 930]], '#e8364f', '#a8183a', { off: 3, lw: 2.5, line: '#5a1a2a' }); shape(ctx, [[880, 912], [880 + 26 * Math.cos(pg), 900 - 10 * Math.abs(Math.sin(pg))], [884, 906]], '#fff6ea', { lw: 1.5, line: '#8a7aa8' }); }
   if (t < 129.12) turbanScrap(ctx, H3_SCRAP[0], H3_SCRAP[1], 1, 0.4);
-  ghostOutline(ctx, ehGhostHorse({ x: H3_HX0, y: 900, s: H3_HS, dir: 1 }), t >= 124.7 && t < 125.7 ? Math.min(1, (t - 124.7) / 0.15) * (1 - K.clamp((t - 125.3) / 0.4)) : 0, t);
+  ghostOutline(ctx, ehGhostHorse({ x: H3_HX0, y: 900, s: H3_HS, dir: 1 }), t >= 124.7 && t < 126.0 ? Math.min(1, (t - 124.7) / 0.15) * (1 - K.clamp((t - 125.7) / 0.3)) : 0, t, { w: 8 });
   ghostOutline(ctx, ehGhostSeated(H3_PRSEAT, 900, EH_PRINCESS.s, 1), t >= 125.44 && t < 126.4 ? Math.min(1, (t - 125.44) / 0.15) * (1 - K.clamp((t - 126.0) / 0.4)) : 0, t);
-  const rows = [];
+  const rows = [[906, () => coverCloth(ctx, ehClothHeap(960, 908), { ang: 0.6 })]];
+  if (h3BranchBack(t)) rows.push([880, () => ehRoseBranch(ctx, t, h3BranchAside(t))]);
   if (fz.y >= 900) rows.push([fz.y, () => { h3Person(ctx, EH_FIRUZ, fz, t, { cape: true, vx: fo.vx || 0, swing: (fo.swing || 0) + (fo.wind ? 0.3 * Math.sin(t * 2.2) : 0) });
     const hl = ehHandW(fz, fz.handL); h3Rose(ctx, hl[0], hl[1], fo.rose.droop, t);
     if (fo.scrap === 'hand') { const h = fz.handRW || ehHandW(fz, fz.handR); turbanScrap(ctx, h[0] + 8, h[1] - 6, 1, 0.2); }
@@ -58,14 +61,14 @@ function h3AfterWorld(ctx, t, cam) {
     if (t > 127.4 && t < 127.9) ehGlint(ctx, H3_SCRAP[0], H3_SCRAP[1] - 6, 22, (t - 127.4) / 0.5); }]);
   rows.push([ct.y + 1, () => { h3Shadow(ctx, ct.x, 906, 80 * ct.s); cat(ctx, ct); }]);
   rows.sort((a, b) => a[0] - b[0]).forEach((r) => r[1]());
-  ehRoseBranch(ctx, t, h3BranchAside(t));
+  if (!h3BranchBack(t)) ehRoseBranch(ctx, t, h3BranchAside(t));
   // the breeze: petals lift (139.38 on); two doves cross the gold sky (141.5)
   if (t > 139.38) for (let i = 0; i < 10; i++) { const R = K.rng(700 + i), u = ((t - 139.38) * 0.4 + R()) % 1; ctx.save(); ctx.globalAlpha = 1 - u; ctx.fillStyle = i % 2 ? '#ff6a8a' : '#fff6ea'; ctx.translate(1000 + R() * 300 + 260 * u, 900 - 300 * u + 30 * Math.sin(u * 9 + i)); ctx.rotate(u * 7 + i); ctx.fillRect(-5, -3, 10, 6); ctx.restore(); }
   if (t > 141.5) for (let i = 0; i < 2; i++) { const u = t - 141.5 - i * 0.2; if (u > 0) bird(ctx, { kind: 'dove', pal: 0, x: 500 + 180 * u + i * 40, y: 120 - 30 * u + i * 30, s: 0.36, dir: 1, fly: true, flap: Math.sin(tc * 26 + i * 2) }); }
   princessGardenDayFront(ctx, t);
 }
 const H3_ACAM = [[120.58, { x: 1012, y: 540, zoom: 0.85 }], [121.2, { x: 1012, y: 540, zoom: 0.85 }], [122.6, { x: 940, y: 540, zoom: 0.85 }], [123.8, { x: 950, y: 540, zoom: 0.85 }], [124.4, { x: 1012, y: 540, zoom: 0.85 }], [126.4, { x: 1012, y: 540, zoom: 0.85 }],
-  [126.76, { x: 1130, y: 580, zoom: 0.95 }], [134.66, { x: 1130, y: 580, zoom: 0.95 }], [135.0, { x: 1120, y: 570, zoom: 0.93 }], [137.4, { x: 1012, y: 330, zoom: 0.62 }], [144.44, { x: 1040, y: 330, zoom: 0.62 }]];
+  [126.76, { x: 1100, y: 655, zoom: 1.4 }], [134.66, { x: 1100, y: 655, zoom: 1.4 }], [135.6, { x: 1110, y: 571, zoom: 1.35 }], [139.38, { x: 1110, y: 571, zoom: 1.35 }], [140.6, { x: 1012, y: 330, zoom: 0.62 }], [144.44, { x: 1040, y: 330, zoom: 0.62 }]];
 function h3AfterCam(t) { const c = t >= 126.76 && t < 126.77 ? H3_ACAM[6][1] : K.camAt(H3_ACAM, t); return h3GClamp(c); }
 // the thought cloud: a turban with a notch missing from its tail, the scrap flies in and fits, the face fills in; then the two riders arc away
 function h3CloudClue(c, t) {

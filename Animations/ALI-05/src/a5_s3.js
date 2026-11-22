@@ -11,8 +11,8 @@ function a5Helmet(ctx, x, y, s = 1, o = {}) { ctx.save(); ctx.translate(x, y); c
 // the file of helmets passing outside the street window (114.0 - 118.6), drawn clipped to the window (room world)
 function a5WindowHelmets(ctx, t) { if (t < 113.9 || t > 118.7) return; const W = DR.win, tc = AB_T2(t), lead = (u) => kfn(u, [[113.9, 360], [114.7, 260], [115.6, 255], [117.8, 205]]);
   ctx.save(); ctx.beginPath(); ctx.rect(W.x, W.y, W.w, W.h); ctx.clip();
-  for (let i = 0; i < 5; i++) { const dl = 0.12 * i, x = lead(tc - dl) + 52 * i, bump = lurch(tc, 114.7 + dl * 0.6, 0.12) * 40, bob = 8 * Math.abs(Math.sin((tc - dl) * 9)), drop = 90 * beatIn(tc, 117.8 + 0.07 * i + (i === 2 ? 0.1 : 0), 118.0 + 0.07 * i);
-    const kid = i === 0, cap = i === 3, y = (kid ? 590 : 560) - bob + drop + (i === 3 ? 0 : 0); a5Helmet(ctx, x + bump * 0.2, y, 0.95, { kid, hush: kid, plume: cap, pl: Math.sin(tc * 6), face: 1 });
+  for (let i = 0; i < 5; i++) { const dl = 0.12 * i, x = lead(tc - dl) + 62 * i, bump = lurch(tc, 114.7 + dl * 0.6, 0.12) * 40, bob = 8 * Math.abs(Math.sin((tc - dl) * 9)), drop = 90 * beatIn(tc, 117.8 + 0.07 * i + (i === 2 ? 0.1 : 0), 118.0 + 0.07 * i);
+    const kid = i === 0, cap = i === 3, y = (kid ? 596 : 566) - bob + drop; a5Helmet(ctx, x + bump * 0.2, y, 1.2, { kid, hush: kid, plume: cap, pl: Math.sin(tc * 6), face: 1 });
     if (cap && tc > 117.95 && tc < 118.3) { celShade(ctx, [[x - 2, 560 - 60], [x + 6, 560 - 62], [x + 30, 560 - 100], [x + 40, 560 - 92], [x + 16, 560 - 70]], '#e8364f', '#a81a2a', { off: 3, lw: 2 }); if (tc > 118.15) abBlob(ctx, x + 30, 470, 12, 10, '#f0b890', '#d09070', { lw: 2 }); }
     if (i === 1 && tc > 114.7 && tc < 115.4) { const w = a5Wob(tc, 114.7, 0.25, 3, 4); ctx.save(); ctx.translate(x + 20, 560); ctx.rotate(w); seg(ctx, 0, 0, 0, -120, 5, '#a8743e', 1); celShade(ctx, [[0, -116], [-7, -126], [0, -150], [7, -126]], '#d8dce8', '#8a90b0', { off: 2, lw: 2 }); ctx.restore(); } }
   ctx.restore(); celShade(ctx, K.rectPts(W.x - 20, W.y + W.h, W.w + 40, 18), '#fbe0b0', '#d8a878', { off: 4, lw: 3, line: '#8a5a3a' }); }
@@ -52,8 +52,8 @@ function a5S8Over(ctx, t, cam, S) {
   if (t > 61.0 && t < 62.7) { const a = abP(1250, 860, cam), b = abP(1345, 780, cam); ctx.save(); ctx.globalAlpha *= 1 - K.clamp((t - 62.4) / 0.3); S.arrow(ctx, a, b, K.clamp((t - 61.0) / 0.5), { color: '#7fe3ff', bend: -0.3 }); ctx.restore(); }
 }
 const A5_RW = (ctx, t, cam) => a5RoomWorld(ctx, t, cam, {});
-AB_SHOTS.push({ a: 51.0, b: 58.0, ww: 1600, cam: a5Cam([[51, a5CX(0)], [54, a5CX(420)], [58, a5CX(450)]]), world: A5_RW, over: a5S7Over });
-AB_SHOTS.push({ a: 58.0, b: 69.0, ww: 1600, cam: a5Cam([[58, a5CX(380, 1.1)], [59.7, a5CX(380, 1.1)], [61.5, a5CX(600, 1.1)], [64.1, a5CX(600, 1.1)], [64.8, a5CX(680, 1.1)], [69, a5CX(690, 1.1)]]), world: A5_RW, over: a5S8Over });
+AB_SHOTS.push({ a: 51.0, b: 58.0, ww: 1600, cam: a5Cam([[51, { x: 400, y: 588, zoom: 1.25 }], [54, { x: 1000, y: 588, zoom: 1.25 }], [58, { x: 1040, y: 588, zoom: 1.25 }]]), world: A5_RW, over: a5S7Over });
+AB_SHOTS.push({ a: 58.0, b: 69.0, ww: 1600, cam: a5Cam([[58, { x: 880, y: 614, zoom: 1.35 }], [59.7, { x: 900, y: 614, zoom: 1.35 }], [61.5, { x: 1130, y: 614, zoom: 1.35 }], [64.1, { x: 1140, y: 614, zoom: 1.35 }], [64.8, { x: 1200, y: 614, zoom: 1.35 }], [69, { x: 1210, y: 614, zoom: 1.35 }]]), world: A5_RW, over: a5S8Over });
 
 // ---------- S11 80.6-88.6: the bowl, the tea, WHERE HAVE YOU TRAVELLED?, camel, ship, dune, five little thieves swatted ----------
 function a5S11Over(ctx, t, cam, S) {
@@ -66,21 +66,21 @@ function a5S11Over(ctx, t, cam, S) {
   if (t > 87.04 && t < 87.6) { const sw = K.clamp((t - 87.3) / 0.3), x = gx + 40 + 300 * sw * sw, y = gy - 180 - 200 * sw; ctx.save(); ctx.translate(x, y); ctx.rotate(sw * 3); a5Bubble(ctx, t, 0, 0, 70, 87.04, 87.55, (c) => A5_PICS.thieves(c, t)); ctx.restore(); if (sw > 0 && sw < 1) a2Tag(ctx, S, 'SWAT!', gx + 120, gy - 140, t, 87.3, 87.6, { size: 36 }); }
   if (t > 87.5 && t < 88.3) a2Tag(ctx, S, 'COUGH!', gx - 90, gy - 120, t, 87.55, 88.1, { size: 34, rot: 0.1 });
 }
-AB_SHOTS.push({ a: 80.6, b: 88.6, ww: 1600, cam: a5Cam([[80.6, a5CX(560, 1.1)], [88.6, a5CX(530, 1.1)]]), world: A5_RW, over: a5S11Over });
+AB_SHOTS.push({ a: 80.6, b: 88.6, ww: 1600, cam: a5Cam([[80.6, { x: 1060, y: 614, zoom: 1.35 }], [88.6, { x: 1030, y: 614, zoom: 1.35 }]]), world: A5_RW, over: a5S11Over });
 
 // ---------- S12 88.6-98.7: MY FIRST TIME IN THIS TOWN! (hangs), the map, the strike, ...BY OLD WELL LANE, OF COURSE!, CLUES 4 ----------
 function a5S12Over(ctx, t, cam, S) {
   const G = a5GuestR(t).P, [gx, gy] = abP(...a2HeadPt(G, 0, 10, A5_NM), cam);
-  if (t > 89.0) { const tilt = t > 95.68 ? 0.08 * K.ease.back(K.clamp((t - 95.68) / 0.3)) : 0, x = 560, y = 150; ctx.save(); ctx.translate(x, y); ctx.rotate(tilt); ctx.translate(-x, -y);
+  if (t > 89.0) { const tilt = t > 95.68 ? 0.08 * K.ease.back(K.clamp((t - 95.68) / 0.3)) : 0, x = 470, y = 250; ctx.save(); ctx.translate(x, y); ctx.rotate(tilt); ctx.translate(-x, -y);
     a5Say(ctx, S, [[89.06, 'MY FIRST TIME IN THIS TOWN!']], t, x, y, [gx - 20, gy - 60], { size: 46, gone: 98.4 });
     if (t > 95.68) { const p = K.clamp((t - 95.68) / 0.14); ctx.save(); ctx.globalAlpha *= 1 - K.clamp((t - 98.4) / 0.25); ctx.strokeStyle = '#e8202a'; ctx.lineWidth = 12; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(150, y + 18); ctx.lineTo(K.lerp(150, 880, p), y + 18 - 30 * p); ctx.stroke(); ctx.restore(); }
     ctx.restore(); }
   if (t > 94.3 && t < 98.7) { const p = K.clamp((t - 94.3) / 1.2), k = K.clamp((t - 94.3) / 0.25) * (1 - K.clamp((t - 98.4) / 0.25)), lit = [0, 1, 2].map((i) => a5Win(t, 97.5 + i * 0.2, 97.7 + i * 0.2 + (i === 2 ? 0.8 : 0), 0.05, 0.1));
     a3PicBalloon(ctx, gx - 250, gy - 260, 260, 200, [gx - 40, gy - 60], k, (c) => a5Map(c, gx - 250, gy - 260, 260, 200, p, lit)); }
-  if (t > 96.9 && t < 98.6) a5Say(ctx, S, [[96.96, '...BY OLD WELL LANE, OF COURSE!']], t, 500, 330, [gx - 10, gy - 50], { size: 42, gone: 98.3 });
+  if (t > 96.9 && t < 98.6) a5Say(ctx, S, [[96.96, '...BY OLD WELL LANE, OF COURSE!']], t, 520, 390, [gx - 10, gy - 50], { size: 42, gone: 98.3 });
   if (t > 98.0) { const N = a5NephR(t).P, [nx, ny] = abP(...a2HeadPt(N, 0, -60, A5_NEPH), cam); a5Glyph(ctx, 'q', nx, ny - 40, 0.9, K.clamp((t - 98.08) / 0.25)); }
 }
-AB_SHOTS.push({ a: 88.6, b: 98.7, ww: 1600, cam: a5Cam([[88.6, { x: 1130, y: 738, zoom: 1.25 }], [98.7, { x: 1155, y: 738, zoom: 1.25 }]]), world: A5_RW, over: a5S12Over });
+AB_SHOTS.push({ a: 88.6, b: 98.7, ww: 1600, cam: a5Cam([[88.6, { x: 1120, y: 663, zoom: 1.55 }], [98.7, { x: 1145, y: 663, zoom: 1.55 }]]), world: A5_RW, over: a5S12Over });
 
 // ---------- S13 98.7-106.6: EVER MET AN OIL MERCHANT?, the freeze, N-NO!, the broken voice, the cup, CLUES 5 ----------
 function a5S13Over(ctx, t, cam, S) {
@@ -88,9 +88,9 @@ function a5S13Over(ctx, t, cam, S) {
   if (t > 98.9 && t < 101.2) a5Say(ctx, S, [[98.98, 'EVER MET AN OIL MERCHANT?']], t, 470, my - 250, [mx, my - 40], { size: 44, gone: 100.9, icon: t > 100.6 ? (c, x, y) => oilJar(c, x, y + 40 + 6 * Math.abs(Math.sin((t - 100.6) * 8)), 0.42, {}) : null });
   if (t > 102.55 && t < 103.9) a5Say(ctx, S, [[102.6, 'N-NO!']], t, gx + 40, gy - 230, [gx, gy - 40], { size: 56, gone: 103.6, wobble: 5 });
   if (t > 103.2 && t < 104.3) voiceWave(ctx, [gx - 20, gy + 20], [gx - 330, gy - 120], t, { col: '#f08a5a', p: K.clamp((t - 103.2) / 0.3), jag: 1, brk: K.clamp((t - 103.6) / 0.3), amp: 26, alpha: 1 - K.clamp((t - 104.0) / 0.3) });
-  if (t > 105.5 && t < 106.6) { const [rx, ry] = abP(...a2Hand(G, 1, A5_NM), cam); tsRing(ctx, rx, ry - 4, K.clamp((t - 105.5) / 1.0), '#7fe3ff', { r: 40 }); }
+  if (t > 105.5 && t < 106.6) { const [rx, ry] = abP(...a2Hand(G, 1, A5_NM), cam); tsRing(ctx, rx, ry - 4, K.clamp((t - 105.5) / 1.0), '#7fe3ff', { r0: 30 }); }
 }
-AB_SHOTS.push({ a: 98.7, b: 106.6, ww: 1600, cam: a5Cam([[98.7, { x: 1120, y: 738, zoom: 1.25 }], [101.6, { x: 1120, y: 738, zoom: 1.25 }], [103.0, { x: 1170, y: 742, zoom: 1.38 }], [105.4, { x: 1170, y: 742, zoom: 1.38 }], [105.9, { x: 1000, y: 700, zoom: 1.15 }], [106.6, { x: 990, y: 700, zoom: 1.15 }]]), world: A5_RW, over: a5S13Over });
+AB_SHOTS.push({ a: 98.7, b: 106.6, ww: 1600, cam: a5Cam([[98.7, { x: 1110, y: 663, zoom: 1.55 }], [101.6, { x: 1110, y: 663, zoom: 1.55 }], [103.0, { x: 1180, y: 689, zoom: 1.75 }], [105.4, { x: 1180, y: 689, zoom: 1.75 }], [105.9, { x: 1000, y: 602, zoom: 1.3 }], [106.6, { x: 990, y: 602, zoom: 1.3 }]]), world: A5_RW, over: a5S13Over });
 
 // ---------- S14 106.6-113: Morgiana's eyes, the band and THE LEADER!, the ring-finger signal, Ali Baba's double take ----------
 function a5S14Eyes(ctx, t, S) { const tc = AB_T3(t);
@@ -98,14 +98,13 @@ function a5S14Eyes(ctx, t, S) { const tc = AB_T3(t);
     reflect: (c, r) => { abBlob(c, r * 0.3, -r * 0.3, r * 0.22, r * 0.16, '#ffd36a', '#c08a1a', { lw: 0 }); abGlow(c, r * 0.3, -r * 0.3, r * 0.6, 0.7, '#ffcf6a'); } }); }
 function a5S14Over(ctx, t, cam, S) {
   const G = a5GuestR(t).P, [gx, gy] = abP(...a2HeadPt(G, 0, 10, A5_NM), cam);
-  if (t > 109.54 && t < 110.4) { a2Tag(ctx, S, 'THE LEADER!', gx, gy - 230, t, 109.6, 110.3, { size: 58 }); }
-  if (t > 110.3 && t < 111.0) { const M = a5MorgR(t).P, [hx, hy] = abP(...a2Hand(M, 1, A3_MORG), cam); for (let k = 0; k < 2; k++) tsRing(ctx, hx, hy, K.clamp((t - 110.3 - k * 0.3) / 0.35), '#7fe3ff', { r: 26 }); }
+  if (t > 110.3 && t < 111.0) { const M = a5MorgR(t).P, [hx, hy] = abP(...a2Hand(M, 1, A3_MORG), cam); for (let k = 0; k < 2; k++) tsRing(ctx, hx, hy, K.clamp((t - 110.3 - k * 0.3) / 0.35), '#7fe3ff', { r0: 16, grow: 20 }); }
   if (t > 111.85 && t < 112.6) { const A = a5AliR(t), [ax, ay] = abP(...a2HeadPt(A, 0, -70, A2_ALI), cam); a5Glyph(ctx, 'x', ax, ay - 40, 0.8, K.clamp((t - 111.88) / 0.2)); }
   if (t > 111.5 && t < 111.65) abSpeed(ctx, [0, 0, 1000, 1230], t, { dir: -1, alpha: 0.6 });
 }
 const A5_RWB = (ctx, t, cam) => a5RoomWorld(ctx, t, cam, { band: t >= 108.8 && t < 110.6 ? { x: kfn(t, [[108.8, 960], [110.4, 1480]], 'lin'), y: 760, w: 170, ang: 0.21, k: 1 } : null });
 AB_SHOTS.push({ a: 106.6, b: 108.8, panel: a5S14Eyes, noClues: true });
-AB_SHOTS.push({ a: 108.8, b: 113.0, ww: 1600, cam: a5Cam([[108.8, { x: 1140, y: 718, zoom: 1.2 }], [111.5, { x: 1150, y: 718, zoom: 1.2 }], [111.62, { x: 720, y: 718, zoom: 1.2 }], [113.0, { x: 700, y: 718, zoom: 1.2 }]], 'out'), world: A5_RWB, over: a5S14Over });
+AB_SHOTS.push({ a: 108.8, b: 113.0, ww: 1600, cam: a5Cam([[108.8, { x: 1140, y: 636, zoom: 1.45 }], [111.5, { x: 1150, y: 636, zoom: 1.45 }], [111.62, { x: 640, y: 636, zoom: 1.45 }], [113.0, { x: 620, y: 636, zoom: 1.45 }]], 'out'), world: A5_RWB, over: a5S14Over });
 
 // ---------- S15 113-122.6: helmets at the window, his eyes, the duck, I MUST GO!, three bows, the bolt ----------
 const A5_RWH = (ctx, t, cam) => { a5RoomWorld(ctx, t, cam, {}); a5WindowHelmets(ctx, t); };
@@ -116,4 +115,4 @@ function a5S15Over(ctx, t, cam, S) {
   for (const [a, d] of [[115.5, 1], [117.8, -1], [118.3, 1]]) if (t > a && t < a + 0.15) abSpeed(ctx, [0, 0, 1000, 1230], t, { dir: d, alpha: 0.6 });
   if (t > 121.58 && t < 122.6) abSpeed(ctx, [0, 300, 1000, 700], t, { dir: 1, alpha: 0.5, n: 14 });
 }
-AB_SHOTS.push({ a: 113.0, b: 122.6, ww: 1600, cam: a5Cam([[113, a5CX(600, 1.1)], [114, a5CX(0, 1.1)], [115.5, a5CX(0, 1.1)], [115.6, a5CX(600, 1.1)], [117.8, a5CX(600, 1.1)], [117.9, a5CX(0, 1.1)], [118.3, a5CX(0, 1.1)], [118.4, a5CX(600, 1.1)], [122.6, a5CX(640, 1.1)]]), world: A5_RWH, over: a5S15Over });
+AB_SHOTS.push({ a: 113.0, b: 122.6, ww: 1600, cam: a5Cam([[113, { x: 620, y: 602, zoom: 1.3 }], [114, { x: 385, y: 602, zoom: 1.3 }], [115.5, { x: 385, y: 602, zoom: 1.3 }], [115.6, { x: 1150, y: 602, zoom: 1.3 }], [117.8, { x: 1150, y: 602, zoom: 1.3 }], [117.9, { x: 385, y: 602, zoom: 1.3 }], [118.3, { x: 385, y: 602, zoom: 1.3 }], [118.4, { x: 1150, y: 602, zoom: 1.3 }], [122.6, { x: 1190, y: 602, zoom: 1.3 }]]), world: A5_RWH, over: a5S15Over });

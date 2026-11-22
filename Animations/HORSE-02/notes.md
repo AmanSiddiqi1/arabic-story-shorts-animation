@@ -24,3 +24,8 @@ Source files (story.json "scenes", load order): `horse_kit.js`, `horse_cast.js`,
 
 ## Checks done
 Stills and contact sheets at the key beats of every scene (stills/a1, r1-r3, g1, e1, m1-m4 in the media Working files), one 3 s test clip (84-87 s, about 0.4 s per frame with 2 workers; audio AAC 48 kHz present). Alive checklist: idleSway/breathe/blinks on every character, blinks on head turns, cape and veil ribbons trail by delay, the horse never moves a leg (only light acts on it), shadows shrink under the hover, the vaults and the take-off; landings squash (dismounts, vaults, the maid's hop, the cat's jump).
+
+## v2 (Fable review 1): see review/revision_1.md
+- Moon path shown as an insert (121.38-124.48, cuts on القمر / عندها) instead of a pan: the garden river is too thin at any framing that keeps the moon.
+- Take-off levels off right of the moon instead of sinking toward the river (the reviewer asked for never descending).
+- Cat sits on the parapet at x 1120 (right of the jar) for 45-95 s, clear of every head.

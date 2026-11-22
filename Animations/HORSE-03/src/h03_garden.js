@@ -21,8 +21,10 @@ function h3Cloth(t, H, inv, fz) {
   if (t < 91.4) { const tug = flow(tc, [[90.8, 0], [90.95, 0.3], [91.05, 0.1], [91.2, 0.45], [91.4, 1]]), hd = inv ? ehHandW(inv, inv.handR) : [1100, 760];
     return ehClothMix(ehClothDraped(H, t), ehClothSpread(hd[0] + 60, hd[1] - 20, 300, 160, 0.4, t, 0.6), tug); }
   if (t < 100.5) { const a = inv ? ehHandW(inv, [-20, -112]) : [1100, 800]; return ehClothSpread(a[0], a[1] + 40, 70, 110, 0.05, t, 0.1); }
-  if (t < 111.56) return ehClothHeap(1040, 908);
-  const u = ehE(t, 111.56, 0.6, 'out'); return ehClothMix(ehClothHeap(1040, 908), ehClothSpread(1110, 690, 300, 150, -0.25, t, 0.3 * (1 - u)), u);
+  if (t < 110.36) return ehClothHeap(1040, 908);
+  // v2 (note 1): the launch draught flips the heap once along the path (1040 -> 960) and it settles as a heap by 111.6; it stays there
+  const x = K.lerp(1040, 960, ehE(t, 110.36, 1.1)), b = Math.sin(Math.PI * K.clamp((t - 110.36) / 1.1));
+  return b > 0.01 ? ehClothMix(ehClothHeap(x, 908), ehClothSpread(x, 880, 120, 60, -0.15 + 0.3 * b, t, 0.5), b) : ehClothHeap(x, 908);
 }
 // ---------- Firuz in S6 ----------
 const H3_FZG_X = H3_F([[35.55, 1060], [36.6, 1060], [36.75, 1000], [37.0, 1000], [37.38, 1000], [37.6, 1110], [38.08, 1110], [38.6, 960], [39.3, 960], [39.9, 1440], [41, 1440]]);
@@ -44,9 +46,11 @@ function h3FzG(t) {
   return P;
 }
 function h3BranchAside(t) { if (t < 36.7) return 1; if (t < 90.52) return 1 - ehE(EH_T2(t), 36.7, 0.3); if (t < 120) return ehE(EH_T2(t), 90.52, 0.3); if (t < 124.22) return 0; return ehE(EH_T2(t), 124.22, 0.3); }
+// v2 (note 2): once pulled aside the branch joins the depth-sorted rows behind the actors; in front only while it hides the horse
+const h3BranchBack = (t) => h3BranchAside(t) > 0.5;
 function ehRoseBranchTip(t, aside) { const [bx, by] = EH_PG3.branch, ang = K.lerp(-0.32, -1.25, aside); return [bx + Math.cos(ang) * 230, by + Math.sin(ang) * 230]; }
 // ---------- the princess (bench, the trick, the mount) ----------
-const H3_PRG_X = H3_F([[84.66, 880], [84.9, 880], [85.1, 830], [90.9, 830], [91.4, 1010], [100.9, 1010], [101.43, H3_STOOL[0]], [110, H3_STOOL[0]]]);
+const H3_PRG_X = H3_F([[84.66, 880], [84.9, 880], [85.25, 840], [85.5, 840], [85.9, 800], [90.9, 800], [91.4, 940], [100.9, 940], [101.43, H3_STOOL[0]], [110, H3_STOOL[0]]]);
 function h3PrG(t) {
   const tc = EH_T2(t), sd = 11; if (t >= 102.58 || t < 34.39) return null;
   const P = { ...walk(H3_PRG_X, tc, { stride: 22 }), y: 905, s: EH_PRINCESS.s, dir: 1, lid: ehLid(t, sd), sq: breathe(tc, sd, 0.014), tip: idleSway(tc, sd, 0.022, 3.1), mouth: 'smile', gaze: [0.3, 0.6], handL: [14, -96], handR: [30, -98] };
@@ -67,7 +71,7 @@ function h3PrG(t) {
     if (t >= 93.94 && t < 94.6) { P.gaze = look([1440, 820]); P.dir = 1; P.lid = Math.max(P.lid, ehBlinkAt(tc, 93.94)); }
     if (t >= 95.7) P.gaze = look(ehHorsePt(h3GHorse(t), EH_EBG.knob)); }
   else if (t < 99.04) { const u = ehE(tc, 96.9, 0.4); P.handL = [K.lerp(22, -24, u), K.lerp(-105, -96, u)]; P.handR = [K.lerp(-18, 30, u), K.lerp(-112, -98, u)]; P.eyes = t < 97.6 ? 'wide' : 'open'; P.brow = K.lerp(0.35, 0.5, u); P.lid = 0.1; P.gaze = look(ehHorsePt(h3GHorse(t), t < 97.18 ? EH_EBG.lever : EH_EBG.knob)); if (t > 98.42) P.gaze = look(inv(t)); }
-  else if (t < 99.94) { const u = ehE(tc, 99.04, 0.25); P.y -= 10 * u; P.sq *= 1 + 0.04 * u; P.gaze = [0.4, -0.7]; P.handL = [-20, -100]; P.handR = [20, -112]; P.tip = 0.04; }
+  else if (t < 99.94) { const u = ehE(tc, 99.04, 0.25); P.y -= 10 * u; P.sq *= 1 + 0.04 * u; P.gaze = look([1500, 700]); P.lid = Math.max(P.lid, ehBlinkAt(tc, 99.06)); P.handL = [-20, -100]; P.handR = [20, -112]; P.tip = 0.04; }
   else if (t < 101.43) { P.sq *= 1 - 0.03 * pulse(tc, 100.0, 0.5); P.drop = 8 * pulse(tc, 100.2, 0.4); P.mouth = 'smile'; P.lid = 0.2; P.handL = [-24, -96]; P.handR = [30, -98];
     if (t > 100.7) P.gaze = look([H3_STOOL[0], 930]); }
   else { const u = ehE(tc, 101.43, 0.3); P.y = K.lerp(905, H3_STOOL[1] - 48, u); P.amp = 0; P.handRW = ehHorsePt(h3GHorse(t), [-8, -238]); P.gaze = look(ehHorsePt(h3GHorse(t), [40, -250])); P.sq *= landSquash(tc, 101.73, 0.08);
@@ -113,11 +117,11 @@ function h3InvHedge(t) {
   if (t >= 68.7 && t < 70.9) { P.gaze = [0.1, -1]; P.handL = [-30, -100]; P.handR = [30, -100]; P.mouth = 'smile'; }
   if (t >= 70.9 && t < 72.0) { const u = flow(tc, [[70.9, 0], [71.2, 1], [71.4, 1], [71.5, 0]]); P.sq *= 1 + 0.06 * u; P.mouth = t < 71.4 ? 'smile' : 'grit'; P.eyes = t > 71.4 ? 'shut' : 'open'; P.tip = t > 71.4 ? 0.1 : 0; P.handR = t > 71.4 ? [-40, -90] : [30, -100]; }
   if (t >= 72.0 && t < 81.3) { P.gaze = [0.1, -1]; P.mouth = 'smirk'; P.lid = 0.3; }
-  if (t >= 81.3 && t < 82.2) { P.handR = PERSON_HANDS.mouthCover.R; P.handL = PERSON_HANDS.mouthCover.L; P.lid = 0.8; P.y += 4 * Math.sin(tc * 30); P.sq *= 1 + 0.02 * Math.sin(tc * 30); }
+  if (t >= 81.1 && t < 82.2) { P.handR = PERSON_HANDS.mouthCover.R; P.handL = PERSON_HANDS.mouthCover.L; P.lid = 0.8; P.y += 4 * Math.sin(tc * 30); P.sq *= 1 + 0.02 * Math.sin(tc * 30); }
   if (t >= 82.2) { P.handL = PERSON_HANDS.headHold.L; P.handR = PERSON_HANDS.headHold.R; P.lid = 0.15; P.brow = -0.25; P.mouth = 'smile'; P.gaze = [-0.4, 0.3]; }
   return P;
 }
-const H3_INVG_X = H3_F([[82.53, 1440], [83.1, 1440], [83.58, 1250], [83.7, 1250], [83.85, 1300], [84.1, 1300], [84.4, 1100], [85.2, 1010], [90.3, 1010], [90.8, 1130], [95.4, 1130], [95.7, 1200], [100.5, 1200], [100.9, 1090], [101.2, 1100], [104.9, 1100], [105.36, 1100], [105.7, H3_STOOL[0]], [120, H3_STOOL[0]]]);
+const H3_INVG_X = H3_F([[82.53, 1440], [83.1, 1440], [83.58, 1250], [83.7, 1250], [83.85, 1300], [84.1, 1300], [84.9, 1120], [85.25, 1090], [90.3, 1090], [90.8, 1150], [95.4, 1150], [95.7, 1210], [100.5, 1210], [100.9, 1090], [101.2, 1060], [104.9, 1060], [105.36, 1060], [105.7, H3_STOOL[0]], [120, H3_STOOL[0]]]);
 const H3_BOW = [[85.3, 0], [85.42, -0.04], [85.75, 0.45], [86.0, 0.42], [86.3, 0]];
 function h3InvG(t) {
   const tc = EH_T2(t), sd = 41; if (t < 82.53 || t >= 106.3) return null;
@@ -128,7 +132,7 @@ function h3InvG(t) {
   if (t >= 83.58 && t < 84.3) { P.eyes = 'wide'; P.mouth = 'o'; P.handL = [-50, -150]; P.handR = [50, -150]; P.dir = -1; P.tip = 0.06 * pulse(tc, 83.7, 0.5); P.gaze = look([H3_CATB[0], 800]); mask(true); P.mouth = 'o'; P.brow = 0.6; }
   if (t >= 85.3 && t < 86.3) { const b = flow(tc, H3_BOW); P.drop = 16 * b; P.tip = 0.45 * b; P.handR = PERSON_HANDS.chest.R; P.handL = b > 0.3 ? PERSON_HANDS.headHold.L : [-30, -100]; }
   if (t >= 86.12 && t < 87.6) P.talk = ehTalk(t, 86.12, 87.5, 41, 0.7);
-  if (t >= 87.6 && t < 88.0) { mask(false); P.gaze = look([1180, 760]); P.lid = Math.max(P.lid, ehBlinkAt(tc, 87.62)); }
+  if (t >= 87.4 && t < 88.1) { mask(false); P.lid = 0.5; P.gaze = look(t < 87.7 || t > 87.9 ? ehHorsePt(H, [60, -200]) : prH); P.lid = Math.max(P.lid, ehBlinkAt(tc, 88.0)); }
   if (t >= 88.0 && t < 90.3) { mask(true); P.talk = ehTalk(t, 88.0, 90.2, 41, 0.6); P.handL = [40, -120]; P.handR = [56, -118]; P.y -= 6 * Math.abs(Math.sin(tc * 7)); }
   if (t >= 90.3 && t < 91.72) { P.dir = 1; P.gaze = look(ehHorsePt(H, [100, -300])); if (t < 90.8) { P.handR = [60, -150]; } else { P.handRW = ehHorsePt(H, [140, -300]); P.handLW = ehHorsePt(H, [60, -240]); P.handRW[0] += t < 91.4 ? -20 * flow(tc, [[90.8, 0], [91.2, 1], [91.4, 1.2]]) : 0; P.tip = 0.06 * Math.sin(tc * 20) * (t < 91.2 ? 1 : 0); P.mouth = t < 91.2 ? 'grit' : 'smile'; } }
   if (t >= 91.72 && t < 92.3) { P.dir = -1; P.handL = [-24, -112]; P.handR = PERSON_HANDS.chest.R; P.drop = 8 * pulse(tc, 91.8, 0.5); P.gaze = [-1, 0.4]; }
@@ -138,7 +142,7 @@ function h3InvG(t) {
     if (t >= 96.7 && t < 97.18) { P.handRW = [lv[0] - 10, lv[1] + 10]; P.tip = 0.06; }
     if (t >= 97.18 && t < 98.42) { P.handR = PERSON_HANDS.chest.R; P.handL = [-50, -230]; P.dir = -1; P.gaze = look(prH); }
     if (t >= 98.42 && t < 99.3) { P.dir = -1; P.handR = [100, -230]; P.handL = [-24, -112]; P.talk = ehTalk(t, 98.42, 99.2, 41, 0.6); P.gaze = [-0.8, -0.6]; }
-    if (t >= 99.3 && t < 99.94) { P.dir = 1; P.handRW = [kn[0] - 24, kn[1] + 14 - 6 * Math.abs(Math.sin(tc * 24))]; mask(false); P.gaze = [0, 0]; P.lid = 0.45; P.mouth = 'smirk'; P.brow = 0.5; }
+    if (t >= 99.1 && t < 99.94) { P.dir = 1; P.handRW = [kn[0] - 24, kn[1] + 14 - 6 * Math.abs(Math.sin(tc * 24))]; mask(false); P.gaze = [0, 0]; P.lid = 0.45; P.mouth = 'smirk'; P.brow = 0.5; }
     if (t >= 99.94) { mask(true); P.dir = -1; P.gaze = look(prH); } }
   if (t >= 100.5 && t < 101.43) { P.dir = -1; const st = h3StoolPos(Math.max(t, 100.6)); P.handRW = [st[0] + 10, st[1] - 60]; P.handLW = [st[0] - 30, st[1] - 56]; P.gaze = look([st[0], st[1] - 30]); if (t > 101.2) { P.handR = [100, -200]; P.handRW = null; P.handLW = null; P.dir = 1; P.drop = 6; } }
   if (t >= 101.43 && t < 105.0) { P.dir = 1; P.gaze = look(prH); P.handL = [-24, -112];
@@ -150,7 +154,7 @@ function h3InvG(t) {
 }
 function h3StoolPos(t) {   // stool: behind the bower until 100.6, in his hands, set at 101.2; kicked over at 105.9
   if (t < 100.6) return null; if (t < 101.2) { const u = ehE(t, 100.6, 0.6); return [K.lerp(1050, H3_STOOL[0], u), K.lerp(860, H3_STOOL[1], u) - 50 * Math.sin(Math.PI * u), 0]; }
-  if (t < 105.9) return [H3_STOOL[0], H3_STOOL[1], 0]; const u = ehE(t, 105.9, 0.35, 'out'); return [H3_STOOL[0] + 40 * u, H3_STOOL[1], -Math.PI / 2 * u + (t > 111.3 && t < 112.2 ? 0.15 * Math.sin((t - 111.3) * 20) * (1 - (t - 111.3) / 0.9) : 0)]; }
+  if (t < 105.9) return [H3_STOOL[0], H3_STOOL[1], 0]; const u = ehE(t, 105.9, 0.35, 'out'); return [H3_STOOL[0] + 70 * u, H3_STOOL[1], -Math.PI / 2 * u + (t > 111.3 && t < 112.2 ? 0.15 * Math.sin((t - 111.3) * 20) * (1 - (t - 111.3) / 0.9) : 0)]; }
 function h3Stool(ctx, x, y, rot) { ctx.save(); ctx.translate(x, y); ctx.rotate(rot); seatStool(ctx, 0, 0, 1); ctx.restore(); }
 // ---------- riders on the horse (102.58 - 114.42) ----------
 function h3RiderPr(t) {
@@ -207,15 +211,15 @@ function h3GardenWorld(ctx, t, cam) {
   }]);
   if (st) rows.push([st[1] - 1, () => h3Stool(ctx, st[0], st[1], st[2])]);
   if (cloth && t >= 91.4 && t < 100.5) rows.push([931, () => coverCloth(ctx, cloth, { ang: 1.2 })]);
-  if (cloth && t >= 100.5 && t < 111.56) rows.push([906, () => coverCloth(ctx, cloth, { ang: 0.6 })]);
+  if (cloth && t >= 100.5) rows.push([906, () => coverCloth(ctx, cloth, { ang: 0.6 })]);
   if (fz && fz.y >= 880) rows.push([fz.y, () => h3Person(ctx, EH_FIRUZ, fz, t, { cape: true, vx: t > 39.3 && t < 39.9 ? 300 : t > 38.08 && t < 38.6 ? -200 : 0, swing: swing(tc, 35.55, 0.3) + swing(tc, 39.9, 0.35) })]);
   if (pr) rows.push([pr.y + (pr.sit ? 0 : 1), () => { h3Person(ctx, EH_PRINCESS, pr, t, { veil: true, vx: t > 90.9 && t < 91.4 ? 200 : 0 }); h3Book(ctx, pr, t); }]);
   if (inv && t >= 82.9) rows.push([inv.y + 2, () => { h3Person(ctx, EH_INVENTOR, inv, t, { tail: true, vx: inv.amp > 0.2 ? -120 : 0 }); }]);
   rows.push([t >= 109.62 && t < 111.3 ? 950 : ct.y < 880 ? 853 : ct.y + 0.5, () => { if (ct.y > 880) h3Shadow(ctx, ct.x, 906, 80 * ct.s, Math.max(0, 905 - ct.y)); cat(ctx, ct); if (ct.scrap) turbanScrap(ctx, ct.x + 58 * ct.s, ct.y - 92 * ct.s, 0.8, 0.3); }]);
+  if ((t < 110.36 || t > 111.4) && h3BranchBack(t)) rows.push([880, () => ehRoseBranch(ctx, t, h3BranchAside(t))]);
   rows.sort((a, b) => a[0] - b[0]).forEach((r) => r[1]());
-  if (cloth && t >= 111.56) coverCloth(ctx, cloth, { ang: 0.6 });
-  if (t >= 114.0 && t < 120) turbanScrap(ctx, 1186, 900, 1, 0.4);
-  if (t < 110.36 || t > 111.4) ehRoseBranch(ctx, t, h3BranchAside(t));
+  if (t >= 114.0 && t < 120) turbanScrap(ctx, H3_SCRAP[0], H3_SCRAP[1], 1, 0.4);
+  if ((t < 110.36 || t > 111.4) && !h3BranchBack(t)) ehRoseBranch(ctx, t, h3BranchAside(t));
   if (t > 83.58 && t < 84.6) { ctx.save(); ctx.globalAlpha = 1 - (t - 83.58) / 1.02; ctx.strokeStyle = '#fff6ea'; ctx.lineWidth = 3; for (let i = 0; i < 4; i++) { const a = -0.6 + i * 0.35; ctx.beginPath(); ctx.moveTo(H3_CATB[0] + 60 + Math.cos(a) * 30, 800 + Math.sin(a) * 30); ctx.lineTo(H3_CATB[0] + 60 + Math.cos(a) * 70, 800 + Math.sin(a) * 70); ctx.stroke(); } ctx.restore(); }
   princessGardenDayFront(ctx, t);
 }
@@ -225,9 +229,12 @@ const H3_GCAM = [
   [48.92, 67.67, [[48.92, { x: 1000, y: 520, zoom: 0.9 }], [58.78, { x: 1000, y: 520, zoom: 0.92 }], [62.5, { x: 1010, y: 490, zoom: 0.92 }], [66.6, { x: 1000, y: 520, zoom: 0.9 }], [67.67, { x: 1000, y: 520, zoom: 0.9 }]]],
   [67.67, 82.53, [[67.67, { x: 1040, y: 560, zoom: 1.0 }], [74.76, { x: 1030, y: 560, zoom: 1.0 }], [76.2, { x: 1030, y: 500, zoom: 1.0 }], [81.2, { x: 1020, y: 500, zoom: 1.0 }], [82.0, { x: 1012, y: 560, zoom: 1.0 }], [82.53, { x: 1012, y: 560, zoom: 1.0 }]]],
   [82.53, 92.3, [[82.53, { x: 1012, y: 540, zoom: 0.85 }], [84.0, { x: 1012, y: 540, zoom: 0.85 }], [85.3, { x: 980, y: 540, zoom: 0.85 }], [90.0, { x: 980, y: 540, zoom: 0.85 }], [90.6, { x: 1012, y: 540, zoom: 0.85 }], [92.3, { x: 1012, y: 540, zoom: 0.85 }]]],
-  [92.3, 101.43, [[92.3, { x: 1012, y: 540, zoom: 0.85 }], [94.0, { x: 1090, y: 560, zoom: 1.0 }], [100.0, { x: 1090, y: 560, zoom: 1.0 }], [100.9, { x: 1080, y: 540, zoom: 0.85 }], [101.43, { x: 1090, y: 530, zoom: 0.88 }]]],
+  [92.3, 101.43, [[92.3, { x: 1012, y: 540, zoom: 0.85 }], [100.9, { x: 1012, y: 540, zoom: 0.85 }], [101.43, { x: 1090, y: 530, zoom: 0.88 }]]],
   [101.43, 110.36, [[101.43, { x: 1100, y: 520, zoom: 0.9 }], [110.36, { x: 1100, y: 515, zoom: 0.9 }]]],
   [110.36, 114.42, [[110.36, { x: 1100, y: 515, zoom: 0.9 }], [110.5, { x: 1100, y: 470, zoom: 0.88 }], [111.4, { x: 1120, y: 250, zoom: 0.78 }], [112.2, { x: 1040, y: 292, zoom: 0.62 }], [114.42, { x: 1060, y: 292, zoom: 0.62 }]]],
 ];
 function h3GClamp(c) { const z = c.zoom; return { x: K.clamp(c.x, 500 / z, EH_PGARDEN.w - 500 / z), y: K.clamp(c.y, EH_PGARDEN.top + 615 / z, 1230 - 615 / z), zoom: z }; }
-function h3GardenCam(t) { for (const [a, b, keys] of H3_GCAM) if (t >= a && t < b) return h3GClamp(K.camAt(keys, t)); return h3GClamp(K.camAt(H3_GCAM[H3_GCAM.length - 1][2], t)); }
+// v2 pushes (notes 5, 9, 12): the hoof that will not hide, the turban rising, the real trick, the mount (scaled about the path line)
+const H3_GPF = [[36.4, 1], [36.9, 1.7], [39.7, 1.7], [40.1, 1], [49.5, 1], [50.0, 1.6], [51.3, 1.6], [51.8, 1], [84.4, 1], [85.6, 1.75], [101.43, 1.75], [101.8, 1.6], [107.6, 1.6], [107.94, 1]];
+const H3_GPX = [[36.4, 1100], [39.7, 1100], [49.5, 1040], [51.8, 1040], [84.4, 960], [90.5, 960], [91.3, 1080], [94.8, 1080], [95.6, 1150], [98.4, 1150], [99.0, 1080], [101.43, 1080], [101.9, 1170], [107.94, 1170]];
+function h3GardenCam(t) { let c = null; for (const [a, b, keys] of H3_GCAM) if (t >= a && t < b) { c = K.camAt(keys, t); break; } if (!c) c = K.camAt(H3_GCAM[H3_GCAM.length - 1][2], t); return h3GClamp(h3Push(c, t, H3_GPF, H3_GPX, 930)); }

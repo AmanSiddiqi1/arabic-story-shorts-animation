@@ -32,8 +32,8 @@ function a5Merchant1(t) {
   // S4: the catch, the effortless lift, the fake strain, the carry, the sleeve, the gift, the low bow and the real grin
   if (tc >= 24.04 && tc < 35) { P.dir = 1; P.gaze = [1, 0]; P.mouth = 'smile'; P.lid = 0.4; P.brow = 0.4;
     if (tc < 25.0) { if (tc > 24.45) { P.handRW = [1530, 650]; crates = 1; } P.sq *= landSquash(tc, 24.6, 0.06); P.mouth = 'o'; }
-    else if (tc < 26.1) { crates = 2; P.handR = [30, -205]; P.handL = [-30, -110]; if (tc > 25.45) { P.sq *= 0.94 + 0.02 * Math.sin(tc * 20); P.mouth = 'grin'; P.lid = 0.8; P.brow = -0.4; P.x += tremble(tc, 1.5); } else { P.lid = 0.3; P.brow = 0.8; P.mouth = 'closed'; } }
-    else if (tc < 26.92) { crates = 2; P.handR = [30, -205]; P.handL = [-30, -110]; P.sq *= 0.95; }
+    else if (tc < 26.1) { crates = 2; P.handR = [72, -186]; P.handL = [-30, -110]; if (tc > 25.45) { P.sq *= 0.94 + 0.02 * Math.sin(tc * 20); P.mouth = 'grin'; P.lid = 0.8; P.brow = -0.4; P.x += tremble(tc, 1.5); } else { P.lid = 0.3; P.brow = 0.8; P.mouth = 'closed'; } }
+    else if (tc < 26.92) { crates = 2; P.handR = [72, -186]; P.handL = [-30, -110]; P.sq *= 0.95; }
     else if (tc < 27.82) { P.handL = [-20, -104]; P.handR = [20, -106]; P.sq *= landSquash(tc, 27.0, 0.05); if (tc > 27.2) P.dir = -1; P.gaze = [1, 0]; if (tc > 27.7) P.dir = 1; }
     else if (tc < 29.02) { const f = flow(tc, [[27.82, 0], [28.2, 1], [28.6, 0.9], [28.9, 1]]); P.handL = [-60, -175]; P.handR = [K.lerp(20, -30, f), K.lerp(-106, -128, f)]; P.brow = -0.6; P.mouth = 'grin'; P.sq *= anticipate(tc, 27.82, 0.3, 0.04); }
     else if (tc < 30.5) { P.handR = [70, -142]; P.handL = [-30, -108]; box = tc < 29.75 ? 'palm' : null; P.mouth = 'grin'; P.lid = 0.5; P.brow = -0.3; }
@@ -61,7 +61,7 @@ function a5Nephew1(t) {
     if (tc >= 29.02 && tc < 29.72) { P.lid = 0; P.mouth = 'o'; P.gaze = [-1, 0.3]; }
     if (tc >= 29.72 && tc < 30.5) { o.box = 1.5; P.handL = [20, -130]; P.handR = [30, -132]; const h = hop(tc, 30.0, 0.34, 0, 0, 24); P.y -= h[1]; o.lift = h[1]; P.sq *= landSquash(tc, 30.34, 0.12); P.tip = tc < 29.95 ? 0.15 : 0; o.blush = K.clamp((tc - 29.8) / 0.3); P.mouth = 'grin'; P.lid = 0.5; }
     if (tc >= 30.5 && tc < 31.38) { o.box = 1.5; o.blush = 0.6; P.handL = [20, -130]; P.handR = tc < 30.95 ? [30, -212] : PERSON_HANDS.pointUp.R; P.gaze = tc < 30.95 ? [-0.7, -0.8] : [-1, 0]; P.mouth = tc < 30.95 ? 'closed' : 'o'; P.tilt = tc < 30.95 ? 0.1 : 0; }
-    if (tc >= 31.38 && tc < 33.72) { o.box = 1.5; P.dir = 1; const f = flow(tc, [[31.38, 0], [31.6, 1.15], [31.8, 1]]); P.handR = [K.lerp(24, 112, f), K.lerp(-110, -170, f)]; P.handL = [-10, -120]; P.tip = 0.06 * f; P.mouth = 'grin'; P.gaze = [1, -0.2]; P.talk = abTalk(t, 31.38, 32.6, 2); if (P.talk) P.mouth = 'open'; if (tc > 32.6) { P.dir = -1; P.gaze = [-1, 0]; P.handR = [24, -112]; } }
+    if (tc >= 31.38 && tc < 33.72) { o.box = 1.5; o.boxL = tc < 32.6 ? 1 : 0; P.dir = 1; const f = flow(tc, [[31.38, 0], [31.6, 1.15], [31.8, 1]]); P.handR = [K.lerp(24, 112, f), K.lerp(-110, -170, f)]; P.handL = [-10, -120]; P.tip = 0.06 * f; P.mouth = 'grin'; P.gaze = [1, -0.2]; P.talk = abTalk(t, 31.38, 32.6, 2); if (P.talk) P.mouth = 'open'; if (tc > 32.6) { P.dir = -1; P.gaze = [-1, 0]; P.handR = [24, -112]; } }
     if (tc >= 33.72) { o.box = 1.5; P.handL = [20, -130]; P.handR = [30, -132]; P.mouth = 'grin'; } }
   if (tc >= 34.2) { o.box = 1.5; P.dir = 1; P.tip = 0.12; P.handR = [40, -200 + 14 * Math.sin(tc * 18)]; P.handL = [-30, -120]; P.gaze = [1, 0]; P.mouth = 'grin'; o.boxHand = 1; }
   return { P, o, carry, wob };
@@ -102,7 +102,7 @@ function a5S1World(ctx, t, cam) {
   if (t < 12.6) a5MarketFolk(ctx, t);
   const M = a5Merchant1(t);
   // the storehouse corner: the crate stack, the handcart and its crates
-  if (cam.x > 1150) { const n = a5StackN(tc); a3Shadow(ctx, 1475, 902, 120); a5CrateStack(ctx, 1475, 902, n, 1); abCart(ctx, 1700, 900, { bounce: 4 * a5Wob(tc, 26.95, 1, 3, 5) }); const cn = a5CartN(tc);
+  if (cam.x > 1150) { const n = a5StackN(tc); a3Shadow(ctx, 1470, 902, 200); a5CrateStack(ctx, 1430, 902, Math.min(3, n), 1); a5CrateStack(ctx, 1520, 902, Math.max(0, n - 3), 1); abCart(ctx, 1700, 900, { bounce: 4 * a5Wob(tc, 26.95, 1, 3, 5) }); const cn = a5CartN(tc);
     for (let i = 0; i < cn; i++) a5Crate(ctx, 1640 + (i % 3) * 56, 900 - 145 - Math.floor(i / 3) * 62, 0.85, 0, ['#ff9a2a', '#e8364f', '#7ae08a'][i % 3]);
     if (t > 26.92 && t < 27.6) abDust(ctx, 1700, 900, 300, 90, t, 0.7 * (1 - (t - 26.92) / 0.7)); }
   // Ali Baba through the lane arch (S3)
@@ -110,9 +110,9 @@ function a5S1World(ctx, t, cam) {
     if (tc > 20.66 && tc < 21.6) { A.handR = [60, -196 + 12 * Math.sin(tc * 18)]; } if (tc > 22.98 && tc < 23.4) A.gaze = [-1, 0]; else if (tc > 22.98) A.gaze = [1, 0];
     a3Basket(ctx, ...a2Hand(A, 0, A2_ALI).map((v, i) => v + (i ? 26 : 0)), 0.85); a2Ali(ctx, A, A5_DAY, { shc: A5_DSH }); }
   const N = a5Nephew1(t);
-  const drawNeph = () => { if (tc < 17.7) return; abNephew(ctx, t, N.P, A5_DAY, { shc: A5_DSH, blush: N.o.blush, box: N.o.box && !N.o.boxHand ? N.o.box : 0, lift: N.o.lift });
+  const drawNeph = () => { if (tc < 17.7) return; abNephew(ctx, t, N.P, A5_DAY, { shc: A5_DSH, blush: N.o.blush, box: N.o.box && !N.o.boxHand && !N.o.boxL ? N.o.box : 0, lift: N.o.lift });
     if (N.carry) { const [ax2, ay2] = a2Hand(N.P, 0, A5_NEPH), [bx2, by2] = a2Hand(N.P, 1, A5_NEPH); a5CrateStack(ctx, (ax2 + bx2) / 2, (ay2 + by2) / 2 + 30, N.carry, 0.85, N.wob); }
-    if (N.o.boxHand) { const [hx, hy] = a2Hand(N.P, 1, A5_NEPH); giftBox(ctx, hx, hy - 4, 1.5); } };
+    if (N.o.boxHand) { const [hx, hy] = a2Hand(N.P, 1, A5_NEPH); giftBox(ctx, hx, hy - 4, 1.5); } if (N.o.boxL) { const [hx, hy] = a2Hand(N.P, 0, A5_NEPH); giftBox(ctx, hx, hy - 2, 1.5); } };
   // the merchant: through the light band in S1 (the leader underneath), behind the post in S3
   const drawM = () => { const band = tc >= 0.5 && tc < 1.75 ? { x: kfn(t, [[0.5, 880], [1.7, 1380]], 'lin'), y: 700, w: 150, ang: 0.21, k: 1 } : null;
     disguiseWipe(ctx, band, (c) => abNewMerchant(c, t, M.P, A5_DAY, { ...M.o, shc: A5_DSH }), (c) => a5LeaderAs(c, t, { ...M.P, mouth: 'closed', brow: 0.9, lid: 0.3 }, A5_DAY), t);
@@ -128,7 +128,7 @@ function a5S1World(ctx, t, cam) {
 }
 function a5S1Over(ctx, t, cam, S) {
   if (t > 0.3 && t < 3.0) { const off = t > 2.7 ? [1, 0, 1, 0, 0, 0][Math.min(5, Math.floor((t - 2.7) * 15))] : 1;
-    if (off) { S.title(ctx, 'THE UNEXPECTED GUEST', 500, 170, K.clamp((t - 0.3) / 0.9), { size: 72, align: 'center' }); if (t > 0.7) S.title(ctx, 'الضيف غير المتوقع', 500, 290, K.clamp((t - 0.7) / 0.9), { size: 70, align: 'center', font: 'Lalezar', glow: '#8a5cff' }); if (t > 0.9 && t < 1.5) abGlint(ctx, 760, 130, 40, (t - 0.9) / 0.6); } }
+    if (off) { S.title(ctx, 'THE UNEXPECTED GUEST', 500, 170, K.clamp((t - 0.3) / 0.9), { size: 58, align: 'center' }); if (t > 0.7) S.title(ctx, 'الضيف غير المتوقع', 500, 290, K.clamp((t - 0.7) / 0.9), { size: 70, align: 'center', font: 'Lalezar', glow: '#8a5cff' }); if (t > 0.9 && t < 1.5) abGlint(ctx, 760, 130, 40, (t - 0.9) / 0.6); } }
   // the neon bracket: the tiny shop between the big stalls (2.58 - 3.4)
   if (t > 2.58 && t < 3.6) { const [ax, ay] = abP(SF.x0, 470, cam), [bx] = abP(SF.x1, 470, cam), mx = (ax + bx) / 2, p = K.clamp((t - 2.58) / 0.3); ctx.save(); ctx.globalAlpha *= 1 - K.clamp((t - 3.3) / 0.3); S.arrow(ctx, [mx, ay], [ax, ay], p, { color: '#7fe3ff' }); S.arrow(ctx, [mx, ay], [bx, ay], p, { color: '#7fe3ff' }); ctx.restore(); }
   if (t > 6.1 && t < 8.3) { const [hx, hy] = abP(1060, 700, cam); a5Say(ctx, S, [[6.2, 'I AM A NEW MERCHANT!']], t, hx - 80, hy - 210, [hx, hy - 30], { size: 52, gone: 8.0 }); }
@@ -147,5 +147,5 @@ function a5S1Over(ctx, t, cam, S) {
 function a4StreakLite(ctx, S, from, to, t, a, b) { if (t < a || t > b + 0.3) return; ctx.save(); ctx.globalAlpha *= 1 - K.clamp((t - b) / 0.3); S.arrow(ctx, from, to, K.clamp((t - a) / 0.35), { color: '#7fe3ff', bend: -0.2 }); ctx.restore(); }
 AB_SHOTS.push({ a: 0, b: 8.5, ww: 2000, cam: a5Cam([[0, { x: 1080, y: 470, zoom: 1.3 }], [1.6, a5CX(610)], [8.5, a5CX(560)]]), world: a5S1World, over: a5S1Over });
 AB_SHOTS.push({ a: 8.5, b: 17.7, ww: 2000, cam: a5Cam([[8.5, a5CX(560, 1.3, 600)], [13.78, a5CX(580, 1.3, 600)], [15.4, a5CX(960, 1.3, 600)], [17.7, a5CX(980, 1.3, 600)]]), world: a5S1World, over: a5S1Over });
-AB_SHOTS.push({ a: 17.7, b: 24.0, ww: 2000, cam: a5Cam([[17.7, a5CX(1000)], [24.0, a5CX(1000)]]), world: a5S1World, over: a5S1Over });
-AB_SHOTS.push({ a: 24.0, b: 35.0, ww: 2000, cam: a5Cam([[24.0, a5CX(1150, 1.2)], [35.0, a5CX(1200, 1.2)]]), world: a5S1World, over: a5S1Over });
+AB_SHOTS.push({ a: 17.7, b: 24.0, ww: 2000, cam: a5Cam([[17.7, a5CX(1060, 1.25, 568)], [24.0, a5CX(1090, 1.25, 568)]]), world: a5S1World, over: a5S1Over });
+AB_SHOTS.push({ a: 24.0, b: 35.0, ww: 2000, cam: a5Cam([[24.0, a5CX(1130, 1.3, 590)], [35.0, a5CX(1190, 1.3, 590)]]), world: a5S1World, over: a5S1Over });

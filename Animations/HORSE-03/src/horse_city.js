@@ -108,8 +108,8 @@ function ehFarLandPlate() {
     for (let i = 0; i < 5; i++) palmTree(c, 556 + i * 22, 470 + (i % 2) * 8, { s: 0.11, lean: -10 + i * 5 });
     // roads
     c.save(); c.setLineDash([10, 8]); c.strokeStyle = '#c8a06a'; c.lineWidth = 4; c.beginPath(); c.moveTo(0, 520); c.bezierCurveTo(500, 560, 900, 460, 1300, 360); c.bezierCurveTo(1500, 320, 1600, 480, 1750, 490); c.bezierCurveTo(1900, 500, 2000, 380, 2150, 380); c.stroke(); c.restore();
-    // braided rivers (silver-pink with a light edge), islands
-    const riv = (pts, w0, w1) => { const p = densify(pts, 10); c.save(); c.lineCap = 'round'; c.lineJoin = 'round'; for (const [col, k] of [['#8a78c0', 1.25], ['#c8b4e0', 1], ['#f4d8e8', 0.45]]) { c.strokeStyle = col; for (let i = 0; i < p.length - 1; i++) { c.lineWidth = K.lerp(w0, w1, i / p.length) * k; c.beginPath(); c.moveTo(p[i][0], p[i][1]); c.lineTo(p[i + 1][0], p[i + 1][1]); c.stroke(); } } c.restore(); };
+    // braided rivers (v2: water blue with a dark bank line; gold glints are live), islands
+    const riv = (pts, w0, w1) => { const p = densify(pts, 10); c.save(); c.lineCap = 'round'; c.lineJoin = 'round'; for (const [col, k] of [['#2e4a8a', 1.3], ['#3a78d0', 1], ['#5a98e8', 0.4]]) { c.strokeStyle = col; for (let i = 0; i < p.length - 1; i++) { c.lineWidth = K.lerp(w0, w1, i / p.length) * k; c.beginPath(); c.moveTo(p[i][0], p[i][1]); c.lineTo(p[i + 1][0], p[i + 1][1]); c.stroke(); } } c.restore(); };
     riv(EH_FAR.river, 70, 18); riv(EH_FAR.river.map(([x, y], i) => [x + 40 + 20 * Math.sin(i * 2), y - 10]), 22, 8); riv(EH_FAR.river.map(([x, y], i) => [x - 36 - 14 * Math.cos(i * 1.7), y + 6]), 18, 6); riv(EH_FAR.river2, 50, 14);
     for (const [x, y] of [[880, 600], [1000, 450], [1140, 290]]) { c.fillStyle = '#8ac070'; c.beginPath(); c.ellipse(x, y, 16, 7, -0.6, 0, 7); c.fill(); }
     // towns: a wall ring, houses, domes; the last is the river city (rose palace, blue dome, two towers by the river)
@@ -157,7 +157,7 @@ function ehCityPlate() {
     ehSoftHills(c, w, 650, 30, '#9a86c8', 4, 3, 760); ehSoftHills(c, w, 690, 22, '#b48ab8', 6, 2, 800);
     ehGrad(c, 0, 700, w, 840, [[0, '#d8a888'], [0.4, '#e0b490'], [1, '#c89a7a']]);   // land
     // the river: tapered with a gradient and a light edge
-    const rp = densify(EH_CITY.river, 8); for (const [col, k] of [['#8a78c0', 1.15], ['#e8b8d8', 1], ['#fff0f4', 0.3]]) { c.save(); c.lineCap = 'round'; c.strokeStyle = col; for (let i = 0; i < rp.length - 1; i++) { c.lineWidth = K.lerp(260, 28, Math.pow(i / rp.length, 0.7)) * k; c.beginPath(); c.moveTo(rp[i][0], rp[i][1]); c.lineTo(rp[i + 1][0], rp[i + 1][1]); c.stroke(); } c.restore(); }
+    const rp = densify(EH_CITY.river, 8); for (const [col, k] of [['#2e4a8a', 1.15], ['#3a78d0', 1], ['#5a98e8', 0.3]]) { c.save(); c.lineCap = 'round'; c.strokeStyle = col; for (let i = 0; i < rp.length - 1; i++) { c.lineWidth = K.lerp(260, 28, Math.pow(i / rp.length, 0.7)) * k; c.beginPath(); c.moveTo(rp[i][0], rp[i][1]); c.lineTo(rp[i + 1][0], rp[i + 1][1]); c.stroke(); } c.restore(); }
     // the rise under the palace, gardens, palms
     c.fillStyle = '#c0907a'; c.beginPath(); c.ellipse(860, 840, 430, 70, 0, Math.PI, 0); c.fill();
     EH_CITY_HOUSES.filter((H) => H.y < 840).forEach((H) => ehHouse(c, H, P, 0));
@@ -210,7 +210,7 @@ function ehRoofFarPlate(night) {   // world x -300..1900, y 420..880 (parallax 0
     const back = ehHouses(61, 34, -280, 1880, 640, 712, [[960, 1160]]); back.forEach((H) => ehHouse(c, { ...H, w: H.w * 0.7, h: H.h * 0.7 }, P, night ? 1 : 0.3));
     for (const mx of [200, 1560]) { celShade(c, K.rectPts(mx - 12, 540, 24, 170), P.trim, P.trimS, { off: 6, lw: 2, line: P.line }); ehBlueDome(c, mx, 540, 16, P, { drum: 3 }); }
     for (let i = 0; i < 8; i++) palmTree(c, -200 + i * 270 + (i % 2) * 60, 715, { s: 0.2, lean: -10 + (i % 3) * 10 });
-    ehGrad(c, -300, 712, 2200, 56, night ? [[0, '#6a7ad8'], [0.5, '#8a96e8'], [1, '#5a6ac8']] : [[0, '#c8a0d8'], [0.5, '#f0c0d8'], [1, '#b890c8']]);   // the river
+    c.fillStyle = '#2a3a7a'; c.fillRect(-300, 709, 2200, 4); ehGrad(c, -300, 712, 2200, 56, night ? [[0, '#3a62c8'], [0.5, '#5a8ae0'], [1, '#2e4aa8']] : [[0, '#3a6ac8'], [0.5, '#5a92e0'], [1, '#3058b0']]);   // the river
     c.strokeStyle = night ? '#b8c8f8' : '#ffe0ec'; c.lineWidth = 2; for (let i = 0; i < 30; i++) { const x = -300 + i * 75, y = 722 + (i % 4) * 11; c.beginPath(); c.moveTo(x, y); c.lineTo(x + 26, y); c.stroke(); }
     ehRiverTowers(c, EH_ROOF.towers[0], EH_ROOF.towers[1], EH_ROOF.towers[2], 220, 46, P, { lamps: night });
     const near = ehHouses(62, 30, -280, 1880, 790, 870, [[900, 1220, 700, 900]]); near.forEach((H) => ehHouse(c, H, P, night ? 1 : 0.4)); }, 0.7);
@@ -288,9 +288,10 @@ function palaceRoof(ctx, t, cam, o = {}) {
     ehGlint(ctx, cx, base - r * 1.32 - 70, 40, o.domeHi); }
   two(ehRoofTerracePlate, 0, 420, 1600, 810, 1);
   // carpets on the line (ribbons swaying out of step)
+  if (o.carpets !== false) {   // o.carpets false (HORSE-02 v2): the carpets are taken in (keeps the big dome clear)
   const [c0, c1, cy] = EH_ROOF.carpets; ctx.save(); ctx.strokeStyle = '#5a3a4a'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(c0, cy - 10); ctx.quadraticCurveTo((c0 + c1) / 2, cy + 10, c1, cy - 10); ctx.stroke(); ctx.restore();
   [['#f07a2a', '#fff0d8'], ['#3f7ad0', '#ffd36a'], ['#3fae6a', '#e8364f']].forEach(([a, b], i) => { const x = c0 + 30 + i * 66, sw = 6 * Math.sin(tc * 1.7 + i * 1.9) + (o.wind || 0) * 20, pts = [[x, cy], [x + 54, cy + 2], [x + 54 + sw, cy + 160], [x + sw * 0.9, cy + 158]];
-    celShade(ctx, pts, a, ehDark(a, 0.3), { off: 8, lw: 2.5, line: ehDark(a, 0.6) }); for (let k = 1; k < 4; k++) { const v = k / 4; seg(ctx, x + sw * v, cy + 160 * v, x + 54 + sw * v, cy + 2 + 158 * v, 5, b, 0); } });
+    celShade(ctx, pts, a, ehDark(a, 0.3), { off: 8, lw: 2.5, line: ehDark(a, 0.6) }); for (let k = 1; k < 4; k++) { const v = k / 4; seg(ctx, x + sw * v, cy + 160 * v, x + 54 + sw * v, cy + 2 + 158 * v, 5, b, 0); } }); }
   // lanterns (flames on threes) and their glow
   for (const [lx, ly] of EH_ROOF.lanterns) ehLantern(ctx, lx, ly, t3, o.lanterns ?? 1);
   // the pavilion door and window
@@ -330,7 +331,7 @@ function ehGardenFarP(night = true) {   // world x -300..1900, y 300..820: river
   return ehBakeAt('pgfar', 2200, 520, (c) => { c.translate(300, -300); const P = EH_RC_NIGHT;
     ehSoftHills(c, 1900, 650, 30, '#8a86d0', 12, 2, 760);
     const HS = ehHouses(71, 30, -280, 1880, 625, 668, [[1100, 1340]]); HS.forEach((H) => ehHouse(c, { ...H, w: H.w * 0.6, h: H.h * 0.6 }, P, 1));
-    ehGrad(c, -300, 668, 2200, 62, [[0, '#6a7ad8'], [0.5, '#8a96e8'], [1, '#5a6ac8']]);
+    c.fillStyle = '#2a3a7a'; c.fillRect(-300, 665, 2200, 4); ehGrad(c, -300, 668, 2200, 62, [[0, '#3a62c8'], [0.5, '#5a8ae0'], [1, '#2e4aa8']]);
     c.strokeStyle = '#b8c8f8'; c.lineWidth = 2; for (let i = 0; i < 30; i++) { const x = -300 + i * 75, y = 676 + (i % 4) * 12; c.beginPath(); c.moveTo(x, y); c.lineTo(x + 26, y); c.stroke(); }
     ehRiverTowers(c, EH_PGARDEN.towers[0], EH_PGARDEN.towers[1], EH_PGARDEN.towers[2], 290, 64, P, { lamps: true });
     ehGrad(c, -300, 728, 2200, 100, [[0, '#4a7a8a'], [1, '#3a6a6a']]); }, 0.7);

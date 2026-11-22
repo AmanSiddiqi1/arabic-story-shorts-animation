@@ -58,7 +58,7 @@ function a5GuestR(t) {
   return { P, o };
 }
 // ---------- Morgiana at dinner ----------
-const A5_MX = (u) => kfn(u, [[52.6, 1105], [54.9, 1290], [58.2, 1290], [59.4, 1000], [68.5, 1000], [69.0, 1105], [80.6, 1105], [81.3, 1110]]);
+const A5_MX = (u) => kfn(u, [[52.6, 1105], [54.9, 1290], [58.2, 1290], [59.4, 1000], [68.5, 1000], [69.0, 1105], [80.6, 1105], [81.3, 1075]]);
 function a5MorgR(t) {
   const tc = AB_T2(t), P = { ...a5Base(t, 521), x: A5_MX(tc), y: tc < 80.6 ? 852 : kfn(tc, [[80.6, 850], [81.3, 918]]), dir: 1, mouth: 'smile', gaze: [1, 0], handL: [-28, -104], handR: [28, -106] }, o = { kick: 0 };
   let tray = null, ewerP = null, vis = tc >= 52.6 && tc < 69.05 || tc >= 80.6 && tc < 122.0, beads = 0;

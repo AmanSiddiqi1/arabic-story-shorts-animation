@@ -69,7 +69,7 @@ function h3GuardsRoof(t) {
 function h3Guard(ctx, D, P, t) { const t3 = EH_T3(t); h3Shadow(ctx, P.x, P.y, 90 * P.s); ehNeckCloth(ctx, P); person(ctx, ehDressP(D, P)); ehHelmet(ctx, { ...P, drop: (P.drop || 0) + (P.helmetDrop || 0) });
   if (P.spear) { const [hx, hy] = ehHandW(P, P.handR); ehSpear(ctx, hx, hy - (P.stamp || 0) * 20, P.s, (P.lean || 0) * (P.dir || 1)); if (P.stamp > 0.5) dustBurst(ctx, hx - 20, P.y, 0.2, 5, 4, 8, 40, 0.4, 5); } }
 // the maid with three trunks (29.76), the top one slides off the rump (31.98) and lands at 32.3
-const H3_MDX = H3_F([[29.76, 1390], [31.5, 560], [40, 560]]);
+const H3_MDX = H3_F([[29.76, 1390], [31.5, 420], [40, 420]]);
 function h3MaidRoof(t) {
   if (t < 29.76) return null; const tc = EH_T2(t), P = { ...walk(H3_MDX, tc, { stride: 20 }), y: K.lerp(886, 900, ehE(tc, 29.76, 0.6)), s: EH_MAID.s, dir: -1, lid: ehLid(t, 17), sq: breathe(tc, 17, 0.016), tip: idleSway(tc, 17, 0.03, 2.4), mouth: 'closed', gaze: [-1, -0.2], handL: [-30, -230], handR: [30, -230] };
   P.y -= Math.abs(Math.sin(P.ph)) * 6 * P.amp;
@@ -114,14 +114,17 @@ function h3RoofWorld(ctx, t, cam) {
   palaceRoofFront(ctx, t, { door: 0, night: 0 });
 }
 const H3_RCAM = [[18.4, { x: 900, y: 480, zoom: 0.75 }], [20.9, { x: 920, y: 480, zoom: 0.75 }], [21.9, { x: 1080, y: 540, zoom: 0.85 }], [29.4, { x: 1060, y: 540, zoom: 0.85 }], [30.8, { x: 860, y: 540, zoom: 0.85 }], [34.4, { x: 840, y: 540, zoom: 0.85 }]];
-function h3RoofCam(t) { const c = K.camAt(H3_RCAM, t), z = c.zoom; return { x: K.clamp(c.x, 500 / z, EH_ROOF.w - 500 / z), y: K.clamp(c.y, EH_ROOF.top + 615 / z, 1230 - 615 / z), zoom: z }; }
+// v2 (note 6): the promise at about 1.4x about the floor line (centred on the two leads, a pan with the parents), then the horse for the trunk gag
+const H3_RPF = [[19.5, 1], [20.3, 1.75], [29.5, 1.75], [30.1, 1.7], [34.39, 1.7]];
+const H3_RPX = [[19.5, 870], [20.9, 880], [21.9, 1000], [22.4, 900], [29.5, 900], [30.3, 620], [34.39, 620]];
+function h3RoofCam(t) { const c = h3Push(K.camAt(H3_RCAM, t), t, H3_RPF, H3_RPX, 930), z = c.zoom; return { x: K.clamp(c.x, 500 / z, EH_ROOF.w - 500 / z), y: K.clamp(c.y, EH_ROOF.top + 615 / z, 1230 - 615 / z), zoom: z }; }
 // the picture balloon of her plan: his palace (right), her dome (left), a dashed land road with the escort; sun and moon pass twice
 function h3CloudLand(c, t) {
-  const tc = EH_T2(t); ehGrad(c, 0, 0, 1600, 900, [[0, '#7ab8f8'], [1, '#d8f0ff']]);
+  const tc = EH_T2(t); ehGrad(c, -400, -300, 2400, 1000, [[0, '#7ab8f8'], [1, '#d8f0ff']]);
   const k = ((t - 26.32) / 0.64) % 1; if (t >= 26.32 && t < 27.6) { const a = Math.PI * (1 - k); (Math.floor((t - 26.32) / 0.64) % 2 ? ehMoon : (cc, x, y, r) => { ehGlow(cc, x, y, r * 3, 0.6, '#fff2c0'); celShade(cc, ell(x, y, r, r, 30), '#fff6d0', '#ffe2a0', { off: 6, lw: 0 }); })(c, 800 + Math.cos(a) * 600, 420 - Math.sin(a) * 300, 50, t); }
-  c.fillStyle = '#e8c890'; c.fillRect(0, 640, 1600, 400); c.fillStyle = '#7ac85a'; c.fillRect(1100, 600, 500, 400); c.fillRect(0, 610, 420, 400);
+  c.fillStyle = '#e8c890'; c.fillRect(-200, 640, 2000, 400); c.fillStyle = '#7ac85a'; for (const [x, w] of [[1360, 380], [200, 340]]) { c.beginPath(); c.ellipse(x, 700, w, 120, 0, 0, 7); c.fill(); }
   c.drawImage(ehPalacePlate(), 1060, 160, 560, 420); for (const bx of [1150, 1520]) { seg(c, bx, 600, bx, 420, 6, '#8a5a3a', 2); ehRibbon(c, bx, 430, 0.1, 120, 40, tc, EH_EMERALD, { wave: 8, hz: 1.2, tip: 0.7, shade: '#126e4a' }); }
-  if (t >= 27.14) { const u = ehE(tc, 27.14, 0.4, 'out'); c.save(); c.globalAlpha = u; h3Palace(c, 230, 640, 0.9); c.restore(); h3DashArc(c, [360, 700], [1180, 660], -0.18, K.clamp((t - 27.2) / 0.8), '#e8604a', 14); }
+  { h3Palace(c, 230, 640, 0.9); h3DashArc(c, [360, 700], [1180, 660], -0.18, K.clamp((t - 27.2) / 0.8), '#e8604a', 14); }
   if (t >= 27.62) { const u = (t - 27.62) * 120, road = (x) => 700 - (x - 360) / 820 * 40 - 50 * Math.sin((x - 360) / 820 * Math.PI) * 0.6;
     const fx = 380 + u; camel(c, { ...walk((tt) => 380 + (tt - 27.62) * 120, tc, { stride: GAIT.camel * 0.4 }), y: road(fx) + 6, s: 0.4, pal: 0, dir: 1, saddle: true });
     [[-80, EH_GUARD_A], [-130, EH_GUARD_B], [-180, EH_MAID]].forEach(([dx, D], i) => { const x = fx + dx; person(c, ehDressP(D, { ...walk((tt) => 380 + dx + (tt - 27.62) * 120, tc, { stride: 20 }), y: road(x) + 4, s: 0.42, dir: 1, mouth: 'smile', lid: 0, handL: [-20, -96], handR: [30, -150] })); }); }

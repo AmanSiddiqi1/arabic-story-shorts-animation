@@ -25,7 +25,7 @@ const SCENE = {
     if (t >= 112.46 && t < 113.25) { const p = K.clamp((t - 112.46) / 0.75); S.emphasis(ctx, 500, 560, 230, p, { rect: [0, 0, 1000, 1230], word: 'CAUGHT!', wx: 0, wy: 1.5 }); }
     ctx.restore();
     if (t >= A4_TAPE[0] && t < A4_TAPE[1]) S.transition(ctx, W, H, K.clamp((t - A4_TAPE[0]) / (A4_TAPE[1] - A4_TAPE[0])), { rect: AB_PANEL, caption: 'LATER THAT NIGHT...' });
-    for (const c of [8.9, 45.5, 65.0, 70.2, 78.4, 96.3, 105.6, 126.4, 129.5]) abTracking(ctx, t, c - 0.02, 0.15);   // a few cuts carry a tape flick
+    for (const c of [8.9, 45.5, 65.0, 70.2, 78.4, 96.3, 105.6, 129.5]) abTracking(ctx, t, c - 0.02, 0.15);   // a few cuts carry a tape flick
     subtitle(ctx, W, H, t, 1);
     S.finish(ctx, W, H, t);   // the CRT pass, always last
   },

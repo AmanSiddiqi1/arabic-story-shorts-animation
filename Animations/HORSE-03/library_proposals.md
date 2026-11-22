@@ -11,3 +11,8 @@ All live in this story's new series files, written so HORSE-04..05 copy them unc
 7. **cardboardPrince** (effect, `src/horse_riders.js`): a flat cut-out of a person on a stick (baked sprite with a card edge and dashed outline) for imagined lies and plans.
 8. **EH_FKING / EH_QUEEN** (costume settings, `src/horse_riders.js`): the princess's father (royal blue and silver caliph) and mother (lilac lady).
 9. Pattern worth a guide entry: **a plan / rehearsal in a thought cloud** (`h03_plan.js`): one held real frame below (the schemer behind a hedge, acting with eyes, hands and turban only), the imagined version inside the cloud with its own inside camera (`at` keys that follow the action) and deliberately smooth plan acting (no anticipation, no overshoot).
+
+## From revision 1 (v2)
+- `h3Push` / `h2Push`: zoom factor over a base framing, scaled about the floor line (template camera helper).
+- Rule for the guide: a movable foreground branch goes in front only while it hides something; pulled aside it joins the depth rows (`h3BranchBack`).
+- Rule for the guide: front cloud layers are never drawn over the cast (S17 `ehSkyFront` before the rig).

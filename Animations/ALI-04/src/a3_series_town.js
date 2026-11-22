@@ -1,4 +1,4 @@
-// ===== ALI-03 series set: townStreet (Ali Baba's narrow street), doorMark, oilJar + jarPannier + silverRing, dayToNight =====
+// ===== ALI-03 series set (ALI-04 copy: oilJar + jarCutaway / jarPeek / xs fields re-applied on the v2 body): townStreet (Ali Baba's narrow street), doorMark, oilJar + jarPannier + silverRing, dayToNight =====
 // Written for episodes 3 to 6 (copy this file into the later episodes' src/ and extend there). Every name is prefixed TS / a3 or is
 // one of the series names the plan gives (townStreet, doorMark, oilJar, jarPannier, silverRing, dayToNight).
 // World: a 2000 x 1230 strip, ground y 900 (AB_GR), paving to y 1230. Colour models: day, afternoon, evening, night, night2.
@@ -7,11 +7,11 @@
 
 // ---------- anchors ----------
 const TS = (() => {
-  const door = (i, cx, col, line) => ({ i, cx, x0: cx - 60, x1: cx + 60, top: 650, col, line, mark: [cx + 90, 770], dot: [cx, 745] });
+  const door = (i, cx, col, line, ms = 1) => ({ i, cx, x0: cx - 60, x1: cx + 60, top: 650, col, line, mark: [cx + 90 * ms, 770], dot: [cx, 745] });   // v2: ms -1 puts the cross left of the door (door 5)
   return {
     w: 2000, gr: 900,
     arch: { x0: 0, x1: 220, o0: 50, o1: 190, top: 560, wallTop: 380 },
-    doors: [door(1, 370, '#3f9a5a', '#1e5a34'), door(2, 660, '#9a4a9a', '#5a2a5a'), door(3, 930, '#8a5a3a', '#4a2a16'), door(4, 1580, '#e0a83a', '#8a5a14'), door(5, 1860, '#2a8a8a', '#14504e')],
+    doors: [door(1, 370, '#3f9a5a', '#1e5a34'), door(2, 660, '#9a4a9a', '#5a2a5a'), door(3, 930, '#8a5a3a', '#4a2a16'), door(4, 1580, '#e0a83a', '#8a5a14'), door(5, 1860, '#2a8a8a', '#14504e', -1)],
     houses: [   // x0, x1, roof y, wall colour, parapet colour, shutter colour
       { x0: 220, x1: 520, top: 330, col: '#f0c27a', par: '#d89a52', sh: '#2f9a8e' },
       { x0: 520, x1: 800, top: 280, col: '#f2a6b4', par: '#d07a8c', sh: '#3f7ad0' },
@@ -33,7 +33,8 @@ const TS_MODEL = {
   afternoon: { sky: [[0, '#4f8ae0'], [0.32, '#9cc4f2'], [0.52, '#ffe4bc'], [0.62, '#ffd49a']], wallK: ['#ffd8a8', 0.22], pave: ['#f0c48a', '#c88e5a'], night: 0, glaze: ['#fff0c8', 1750, 330, 0.6], cloud: ['#fff6ea', '#ffd8b0'], far: '#c0b0d0', farD: '#a894c0' },
   evening: { sky: [[0, '#2f6f8e'], [0.22, '#6a74b8'], [0.42, '#ff9a9a'], [0.58, '#ffc27a']], wallK: ['#ffb4a0', 0.34], pave: ['#e8a88a', '#b07468'], night: 0.25, glaze: ['#ffb070', 260, 420, 0.6], cloud: ['#d89ac0', '#ffd0a0'], far: '#9a7ab0', farD: '#7a5a98' },
   night: { sky: [[0, '#2a4a8a'], [0.3, '#3e5aa0'], [0.5, '#7a6ab0'], [0.62, '#a47ab4']], wallK: ['#8a84d8', 0.55], pave: ['#9a8ab8', '#6a5a8a'], night: 1, glaze: ['#fff2c8', 1500, 210, 0.35], cloud: ['#6a6aa8', '#c8b8e8'], far: '#4e5a96', farD: '#3e4884' },
-  night2: { sky: [[0, '#24447e'], [0.32, '#3a5296'], [0.52, '#7a64a8'], [0.62, '#b07aa8']], wallK: ['#8a84d8', 0.55], pave: ['#9a8ab8', '#6a5a8a'], night: 1, glaze: ['#fff2c8', 700, 260, 0.35], cloud: ['#7a74b8', '#f0d0e0'], far: '#4e5a96', farD: '#3e4884' },
+  // v2 (review 1 note 4): the second night is its own plate, cool blue-teal under a low amber moon (night 1 stays violet)
+  night2: { sky: [[0, '#0e3452'], [0.3, '#1a5470'], [0.5, '#3a7a86'], [0.62, '#7aa090']], wallK: ['#3aa8c0', 0.62], pave: ['#7aa4b0', '#4a6e80'], night: 1, glaze: ['#ffb860', 700, 430, 0.5], cloud: ['#3e6a84', '#a8d0cc'], far: '#2e5a70', farD: '#244a60' },
 };
 function tsWall(m, col) { const M = TS_MODEL[m]; if (!M.wallK) return col; let c = abMul(col, M.wallK[0], M.wallK[1]); if (M.night) c = abLight(c, 0.1); return c; }
 const tsLine = (col) => abDark(col, 0.6);
@@ -210,10 +211,11 @@ function tsWashing(ctx, t, m, o = {}) {
 // ---------- doorMark: the chalk cross and the red dot ----------
 // doorMark(ctx, x, y, {kind: 'x' | 'dot', p 0..1 (draw-on: the cross in two strokes, the dot pops), glow 0..1, s, shine 0..1})
 function doorMark(ctx, x, y, o = {}) {
-  const p = K.clamp(o.p ?? 1), s = o.s || 1; if (p <= 0) return;
+  const p = K.clamp(o.p ?? 1), s = o.s || 1, sx = o.sx ?? 1; if (p <= 0) return;
   if ((o.glow || 0) > 0.01) abGlow(ctx, x, y, (o.kind === 'dot' ? 46 : 52) * s * (1 + 0.6 * (o.flare || 0)), o.glow, o.kind === 'dot' ? '#ff8a7a' : '#ffffff');
-  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
-  if (o.kind === 'dot') { const k = p < 1 ? K.ease.back(p) : 1, sq = 1 + 0.25 * Math.exp(-(o.age || 9) * 14);
+  ctx.save(); ctx.translate(x, y); ctx.scale(s * sx, s);
+  if (o.smudge) { ctx.save(); ctx.globalAlpha *= o.smudge * Math.min(1, p * 2); ctx.fillStyle = 'rgba(70,40,60,0.22)'; ctx.beginPath(); ctx.ellipse(1, 2, 30, 27, 0.3, 0, 7); ctx.fill(); ctx.fillStyle = 'rgba(255,250,240,0.16)'; ctx.beginPath(); ctx.ellipse(-3, -2, 24, 20, -0.4, 0, 7); ctx.fill(); ctx.restore(); }   // v2: a chalk-smudged patch
+  if (o.kind === 'dot') { const k = p < 1 ? K.ease.back(p) : 1, sq = 1 + 0.25 * Math.exp(-Math.max(0, o.age ?? 9) * 14);   // v2: age clamped (no flat pop)
     ctx.scale(k * sq, k / sq); celShade(ctx, ell(0, 0, 14, 14, 20), '#e8202a', '#a01018', { light: [-1, -1], off: 4, hi: '#ff9a8a', lw: 2, line: '#6a0a10' });
     if (o.shine) { ctx.fillStyle = 'rgba(255,255,255,0.9)'; ctx.beginPath(); ctx.ellipse(-4 + 6 * o.shine, -5, 4, 2.5, -0.5, 0, 7); ctx.fill(); }
     if ((o.drip || 0) > 0) { ctx.fillStyle = '#c8101a'; ctx.beginPath(); ctx.ellipse(3, 12 + 10 * o.drip, 3, 5 + 4 * o.drip, 0, 0, 7); ctx.fill(); }
@@ -232,11 +234,16 @@ const TS_MARKS = [
   { door: 3, kind: 'dot', t0: 95.92, d: 0.18 }, { door: 2, kind: 'dot', t0: 107.2, d: 0.16 }, { door: 1, kind: 'dot', t0: 107.74, d: 0.16 }, { door: 4, kind: 'dot', t0: 109.66, d: 0.16 }, { door: 5, kind: 'dot', t0: 110.22, d: 0.16 },
 ];
 // o.glow (base), o.flare(mark) -> 0..1 extra, o.only: list of doors, o.tm: the time used for the marks (default t)
+// v2 (review 1 note 1): marks belong to a surface. A dot sits on its door LEAF: o.open {door: open 0..1} swings it with the leaf
+// (squashed to the leaf width) and hides it once the leaf is narrower than half; crosses are on the wall. Call tsMarks BEFORE the cast.
+// v2 (note 6): crosses drawn at 1.4 (50 world units, strokes 8.4) on a chalk-smudged patch by day (o.night falsy); dots at 1.21 (r 17).
+const TS_MARK_S = { x: 1.4, dot: 1.21 };
 function tsMarks(ctx, t, o = {}) {
   const tm = o.tm ?? t;
-  for (const M of TS_MARKS) { if (tm < M.t0 || (o.only && !o.only.includes(M.door))) continue; const d = tsDoor(M.door), [x, y] = M.kind === 'x' ? d.mark : d.dot, p = (tm - M.t0) / M.d;
+  for (const M of TS_MARKS) { if (tm < M.t0 || (o.only && !o.only.includes(M.door))) continue; const d = tsDoor(M.door), p = (tm - M.t0) / M.d; let [x, y] = M.kind === 'x' ? d.mark : d.dot, sx = 1;
+    if (M.kind === 'dot') { const op = (o.open && o.open[M.door]) || 0, lw = 120 * Math.max(0, 1 - op); if (lw < 60) continue; if (op > 0) { x = d.x0 + lw / 2; sx = lw / 120; } }
     const strokeP = M.kind === 'x' && M.d > 1 ? (p < 0.5 ? K.clamp(p * 2 / 1) * 0.5 : 0.5 + K.clamp((p - 0.51) * 2) * 0.5) : p;   // the spy's cross: two strokes 0.7 s apart
-    const fl = o.flare ? o.flare(M) : 0; doorMark(ctx, x, y, { kind: M.kind, p: strokeP, glow: (o.glow ?? 0.3) + 0.6 * fl, flare: fl, age: tm - M.t0 - M.d, shine: M.kind === 'dot' ? 0.5 + 0.5 * Math.sin(t * 1.3 + M.door) : 0 }); }
+    const fl = o.flare ? o.flare(M) : 0; doorMark(ctx, x, y, { kind: M.kind, p: strokeP, s: TS_MARK_S[M.kind], sx, smudge: M.kind === 'x' && !o.night ? 1 : 0, glow: (o.glow ?? 0.3) + 0.6 * fl, flare: fl, age: tm - M.t0 - M.d, shine: M.kind === 'dot' ? 0.5 + 0.5 * Math.sin(t * 1.3 + M.door) : 0 }); }
 }
 
 // ---------- dayToNight: a time-lapse on a painted set (plates cross-fade; the sun or moon moves live; lanterns light one by one) ----------
@@ -250,34 +257,41 @@ function tsPlates(ctx, cam, m, m2, k, bodies) {
 }
 
 // ---------- oilJar, jarPannier, silverRing ----------
-// oilJar(ctx, x, y, s, {lid 0..1 (lifts a finger's width), stain, rot}): a tall glazed clay jar 70 x 150 at s 1 (feet at x, y)
-// ALI-04 fields (backward compatible, all off by default): wob (radians about the foot), sq (squash, landing), noLid, t;
+// oilJar(ctx, x, y, s, {lid 0..1 (lifts a finger's width), stain, rot, eyes}): a tall glazed clay jar 76 x 153 at s 1 (feet at x, y)
+// ALI-04 fields (backward compatible, all off by default): wob (radians about the foot), sq (squash, landing), noLid, t, xs (width factor, the yard row);
 //   jarCutaway: cut {open 0..1, draw(ctx) the figure inside (jar-local units, feet at y -6)}, oil 0..1 (a cutaway of golden oil to the
 //   shoulder, rocking), ghost 0..1 (a cyan outline of a crouched man over the closed jar);
-//   jarPeek: peek {lift 0..1 (the lid rises up to 16 local = 26 at s 1.67, tilted), eyes 0..1 (two white eyes in the dark gap), gaze [gx, gy], close (eyes closer)}
+//   jarPeek: peek {lift 0..1 (the lid rises up to 16 local, tilted), eyes 0..1 (two white eyes in the dark gap), gaze [gx, gy], close, blink, tiltDir}
 function oilJar(ctx, x, y, s = 1, o = {}) {
-  const sq = o.sq || 1; ctx.save(); ctx.translate(x, y); ctx.rotate((o.rot || 0) + (o.wob || 0)); ctx.scale(s * (2 - sq), s * sq);
-  const J = [[-20, 0], [-30, -20], [-36, -70], [-33, -112], [-22, -136], [-14, -142], [14, -142], [22, -136], [33, -112], [36, -70], [30, -20], [20, 0]];
-  celShade(ctx, J, '#c8743a', '#8a4a2a', { light: [-1, -1], off: 12, hi: '#f0b070', lw: 3, line: '#4a2010' });
-  if (o.stain) { ctx.save(); K.poly(ctx, J, true); ctx.clip(); ctx.fillStyle = 'rgba(70,36,20,0.55)'; ctx.beginPath(); ctx.moveTo(8, -142); ctx.quadraticCurveTo(22, -90, 12, -30); ctx.lineTo(4, -30); ctx.quadraticCurveTo(10, -90, 0, -140); ctx.fill(); ctx.restore(); }
-  ctx.save(); ctx.strokeStyle = '#d8c08a'; ctx.lineWidth = 2.5; for (const yy of [-110, -80, -50]) { ctx.beginPath(); ctx.ellipse(0, yy, 34, 7, 0, 0.1, Math.PI - 0.1); ctx.stroke(); } for (const xx of [-18, 0, 18]) { ctx.beginPath(); ctx.moveTo(xx, -136); ctx.lineTo(xx * 1.3, -40); ctx.stroke(); } ctx.restore();
+  // v2 (ALI-03 review 1 note 5): glazed terracotta with a hard highlight band, a dark neck and a visible flat lid; the rope net is gone
+  const sq = o.sq || 1, xs = o.xs || 1; ctx.save(); ctx.translate(x, y); ctx.rotate((o.rot || 0) + (o.wob || 0)); ctx.scale(s * xs * (2 - sq), s * sq);
+  const J = [[-20, 0], [-30, -20], [-38, -70], [-35, -112], [-24, -132], [-15, -134], [15, -134], [24, -132], [35, -112], [38, -70], [30, -20], [20, 0]];
+  celShade(ctx, J, '#c8603a', '#8a3a22', { light: [-1, -1], off: 13, hi: '#f09a6a', lw: 3.5, line: '#4a1a0c' });
+  ctx.save(); K.poly(ctx, J, true); ctx.clip(); ctx.fillStyle = 'rgba(255,236,210,0.55)'; ctx.beginPath(); ctx.moveTo(-24, -118); ctx.quadraticCurveTo(-30, -70, -22, -26); ctx.lineTo(-14, -26); ctx.quadraticCurveTo(-21, -70, -15, -118); ctx.fill();
+  ctx.fillStyle = 'rgba(255,255,255,0.85)'; ctx.beginPath(); ctx.ellipse(-20, -96, 3.5, 11, 0.1, 0, 7); ctx.fill();
+  if (o.stain) { ctx.fillStyle = 'rgba(70,30,14,0.5)'; ctx.beginPath(); ctx.moveTo(8, -134); ctx.quadraticCurveTo(22, -90, 12, -30); ctx.lineTo(4, -30); ctx.quadraticCurveTo(10, -90, 0, -132); ctx.fill(); }
+  ctx.restore();
+  ctx.save(); ctx.strokeStyle = '#a88a5a'; ctx.lineWidth = 3; for (const [yy, rx] of [[-104, 36], [-38, 31]]) { ctx.beginPath(); ctx.ellipse(0, yy, rx, 6, 0, 0.15, Math.PI - 0.15); ctx.stroke(); }
+  ctx.beginPath(); ctx.moveTo(-26, -104); ctx.quadraticCurveTo(-30, -170, 0, -172); ctx.quadraticCurveTo(30, -170, 26, -104); ctx.stroke(); ctx.restore();
   const cut = o.cut, cop = cut ? K.clamp(cut.open || 0) : 0, oil = K.clamp(o.oil || 0), tt = o.t || 0;
-  if (cop > 0.01 || oil > 0.01) { const k = Math.max(cop, oil); ctx.save(); ctx.globalAlpha *= k; ctx.beginPath(); ctx.ellipse(0, -66, 28, 58, 0, 0, 7); ctx.clip();
-    const g = ctx.createLinearGradient(0, -124, 0, -8); g.addColorStop(0, '#3a2440'); g.addColorStop(1, '#5a3442'); ctx.fillStyle = g; ctx.fillRect(-30, -126, 60, 120);
-    if (cop > 0.01 && cut.draw) cut.draw(ctx);
-    if (oil > 0.01) { ctx.fillStyle = '#f2b83a'; ctx.beginPath(); ctx.moveTo(-30, -6); for (let xx = -30; xx <= 30; xx += 5) ctx.lineTo(xx, -96 + 3 * Math.sin(tt * 4 + xx * 0.12) + xx * 0.04 * Math.sin(tt * 2)); ctx.lineTo(30, -6); ctx.closePath(); ctx.fill();
-      ctx.fillStyle = '#ffe08a'; ctx.fillRect(-30, -98 + 3 * Math.sin(tt * 4), 60, 4); }
-    ctx.restore(); ctx.save(); ctx.globalAlpha *= k; ctx.strokeStyle = '#4a2010'; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.ellipse(0, -66, 28, 58, 0, 0, 7); ctx.stroke(); ctx.restore();
+  if (cop > 0.01 || oil > 0.01) { const k = Math.max(cop, oil); ctx.save(); ctx.globalAlpha *= k; ctx.beginPath(); ctx.ellipse(0, -66, 30, 58, 0, 0, 7); ctx.clip();
+    const g = ctx.createLinearGradient(0, -124, 0, -8); g.addColorStop(0, '#3a2440'); g.addColorStop(1, '#5a3442'); ctx.fillStyle = g; ctx.fillRect(-32, -126, 64, 120);
+    if (cop > 0.01 && cut.draw) { ctx.save(); ctx.scale(1 / xs, 1); cut.draw(ctx); ctx.restore(); }
+    if (oil > 0.01) { ctx.fillStyle = '#f2b83a'; ctx.beginPath(); ctx.moveTo(-32, -6); for (let xx = -32; xx <= 32; xx += 4) ctx.lineTo(xx, -96 + 3 * Math.sin(tt * 4 + xx * 0.12) + xx * 0.04 * Math.sin(tt * 2)); ctx.lineTo(32, -6); ctx.closePath(); ctx.fill();
+      ctx.fillStyle = '#ffe08a'; ctx.fillRect(-32, -98 + 3 * Math.sin(tt * 4), 64, 4); }
+    ctx.restore(); ctx.save(); ctx.globalAlpha *= k; ctx.strokeStyle = '#4a1a0c'; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.ellipse(0, -66, 30, 58, 0, 0, 7); ctx.stroke(); ctx.restore();
     if (oil > 0.3) { abGlint(ctx, -12, -90, 10, ((tt * 0.9) % 1)); abGlint(ctx, 10, -60, 8, ((tt * 0.9 + 0.5) % 1)); } }
   if ((o.ghost || 0) > 0.01) { ctx.save(); ctx.globalAlpha *= o.ghost; ctx.strokeStyle = '#7ae8ff'; ctx.lineWidth = 3; ctx.shadowColor = '#7ae8ff'; ctx.shadowBlur = 10; ctx.lineJoin = 'round';
     ctx.beginPath(); ctx.arc(-2, -106, 11, 0, 7); ctx.moveTo(-14, -94); ctx.bezierCurveTo(-30, -70, -26, -30, -18, -10); ctx.lineTo(20, -10); ctx.bezierCurveTo(26, -40, 24, -70, 10, -94);
     ctx.moveTo(-12, -60); ctx.lineTo(14, -78); ctx.lineTo(16, -50); ctx.stroke(); ctx.restore(); }
+  celShade(ctx, K.rectPts(-15, -146, 30, 14), '#5a2414', '#3a140a', { off: 3, lw: 2.5, line: '#2a0e06' });   // the dark neck
   const pk = o.peek, pl = pk ? K.clamp(pk.lift || 0) * 16 : 0, lid = Math.max((o.lid || 0) * 12, pl);
-  if (lid > 0.5) { ctx.fillStyle = '#1e1224'; ctx.fillRect(-15, -145 - lid, 30, lid + 3);
-    if (pk && (pk.eyes ?? 1) > 0.05 && lid > 5) { const gz = pk.gaze || [0, 0], sp = pk.close ? 5 : 7, ey = -143 - lid * 0.45, eh = Math.min(5, lid * 0.32) * (1 - (pk.blink || 0) * 0.85);
-      for (const sd of [-1, 1]) { ctx.fillStyle = '#fffaf0'; ctx.beginPath(); ctx.ellipse(sd * sp, ey, 5.2, eh, 0, 0, 7); ctx.fill(); if (eh > 1.5) { ctx.fillStyle = '#1a0e14'; ctx.beginPath(); ctx.arc(sd * sp + gz[0] * 2.6, ey + gz[1] * 1.5, 2.1, 0, 7); ctx.fill(); } } } }
-  if (!o.noLid) { ctx.save(); ctx.translate(0, -146 - lid); if (pk && pl > 1) ctx.rotate(0.1 * K.clamp(pk.lift || 0) * (pk.tiltDir || 1)); celShade(ctx, ell(0, 0, 19, 6, 16), '#a8643a', '#6a3a1e', { light: [-1, -1], off: 3, lw: 2.5, line: '#3a1a0c' }); ctx.restore(); }
-  seg(ctx, -16, -140, 16, -140, 3, '#d8c08a', 0);
+  if (lid > 0.5) { ctx.fillStyle = '#140a10'; ctx.fillRect(-17, -148 - lid, 34, lid + 3);
+    if (pk && (pk.eyes ?? 1) > 0.05 && lid > 5) { const gz = pk.gaze || [0, 0], sp = pk.close ? 5 : 7, ey = -146 - lid * 0.5, eh = Math.min(5, lid * 0.32) * (1 - (pk.blink || 0) * 0.85);
+      for (const sd of [-1, 1]) { ctx.fillStyle = '#fffaf0'; ctx.beginPath(); ctx.ellipse(sd * sp, ey, 5.2, eh, 0, 0, 7); ctx.fill(); if (eh > 1.5) { ctx.fillStyle = '#1a0e14'; ctx.beginPath(); ctx.arc(sd * sp + gz[0] * 2.6, ey + gz[1] * 1.5, 2.1, 0, 7); ctx.fill(); } } }
+    else if (o.eyes) { ctx.fillStyle = '#fffaf0'; for (const ex of [-7, 7]) { ctx.beginPath(); ctx.ellipse(ex, -146 - lid / 2, 4, Math.min(3, lid / 3), 0, 0, 7); ctx.fill(); } ctx.fillStyle = '#140a10'; for (const ex of [-6, 8]) { ctx.beginPath(); ctx.arc(ex, -146 - lid / 2, 1.6, 0, 7); ctx.fill(); } } }
+  if (!o.noLid) { ctx.save(); ctx.translate(0, -lid); if (pk && pl > 1) { ctx.translate(0, -149); ctx.rotate(0.1 * K.clamp(pk.lift || 0) * (pk.tiltDir || 1)); ctx.translate(0, 149); }
+    celShade(ctx, K.rectPts(-21, -153, 42, 8), '#a8643a', '#6a3a1e', { light: [-1, -1], off: 3, lw: 2.5, line: '#3a1a0c' }); ctx.restore(); }   // the flat lid
   ctx.restore();
 }
 // jarPannier: a wooden frame over a pack animal's back with a jar hanging on each side (sway in radians, lagged by the scene)
@@ -285,8 +299,8 @@ function jarPannier(ctx, seat, s, dir, o = {}) {
   const d = Math.sign(dir || 1), x = seat.x, y = seat.y + 6 * s;
   seg(ctx, x - 58 * s, y - 4 * s, x + 58 * s, y - 4 * s, 9 * s, '#8a5a32', 2); seg(ctx, x - 40 * s, y - 30 * s, x - 52 * s, y + 30 * s, 7 * s, '#8a5a32', 2); seg(ctx, x + 40 * s, y - 30 * s, x + 52 * s, y + 30 * s, 7 * s, '#8a5a32', 2);
   // the far jar shows above the back, the near jar hangs down the flank
-  oilJar(ctx, x - d * 22 * s, y - 10 * s, 0.62 * s, { rot: (o.sway || 0) * 0.7, lid: o.lidFar || 0 });
-  oilJar(ctx, x + d * 6 * s, y + 92 * s, 0.7 * s, { rot: -(o.sway || 0), lid: o.lid || 0, stain: o.stain });
+  oilJar(ctx, x - d * 22 * s, y - 4 * s, 0.86 * s, { rot: (o.sway || 0) * 0.7, lid: o.lidFar || 0 });   // v2: jars 0.86 / 1.0 (were 0.62 / 0.7)
+  oilJar(ctx, x + d * 6 * s, y + 96 * s, 1.0 * s, { rot: -(o.sway || 0), lid: o.lid || 0, stain: o.stain, eyes: o.eyes });
 }
 // silverRing: a ring with a split blue stone (o.glint 0..1) on a finger at (x, y), r ring radius
 function silverRing(ctx, x, y, r = 14, o = {}) {
