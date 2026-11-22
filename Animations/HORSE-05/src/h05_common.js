@@ -45,7 +45,7 @@ function h5Say(ctx, S, steps, t, head, o = {}) {
   const y0 = K.clamp(head[1] - (o.up || 150) - (rows.length - 1) * size * 2.05, 90, 1080), pop = 1 + 0.12 * Math.max(0, 1 - (t - t0) / 0.2), p = K.clamp((t - steps[0][0]) / 0.3);
   ctx.save(); if (o.gone && t > o.gone) ctx.globalAlpha *= 1 - K.clamp((t - o.gone) / 0.25); ctx.translate(x, y0); ctx.scale(pop, pop); ctx.translate(-x, -y0);
   rows.forEach((r, i) => { const last = i === rows.length - 1 && !o.noTail;
-    if (last && o.tails) o.tails.forEach((tl, k) => S.label(ctx, k ? '' : r, x, y0 + i * size * 2.05, p, { size, balloon: true, to: tl, color: o.col }));
+    if (last && o.tails) o.tails.forEach((tl) => S.label(ctx, r, x, y0 + i * size * 2.05, p, { size, balloon: true, to: tl, color: o.col }));
     else S.label(ctx, r, x, y0 + i * size * 2.05, p, { size, balloon: true, to: last ? [head[0], head[1] - 34] : null, color: o.col }); });
   ctx.restore();
 }

@@ -4,12 +4,13 @@ const H5_H0 = { x: 1900, y: 900, s: H5_HS, dir: 1 };
 const H5_KNOB = ehHorsePt(H5_H0, EH_EBG.knob), H5_LEVER = ehHorsePt(H5_H0, EH_EBG.lever), H5_NECK = ehHorsePt(H5_H0, [126, -250]), H5_HOOF = ehHorsePt(H5_H0, [68, -40]);
 const H5_BENCH = 2230, H5_STOOL = 1870, H5_BOX = [2068, 944];
 // ---------- camera ----------
-const H5_SQCAM = [h5K(0, 1975, 1.1), h5K(0.3, 1975, 1.1), h5K(2.5, 1930, 0.8, 955), h5K(3.5, 1940, 0.82, 955), h5K(4.4, 2010, 1.2), h5K(6.7, 2000, 1.2), h5K(7.7, 1860, 1.05),
-  h5K(10.17, 1840, 1.05), h5K(11.76, 1800, 1.1), h5K(14.3, 1930, 1.12), h5K(15.24, 1940, 1.15), h5K(16.6, 2040, 1.2), h5K(21.2, 2040, 1.2), h5K(21.9, 1980, 1.2),
-  h5K(24.88, 1960, 1.35, 960), h5K(37.0, 1975, 1.4, 960), h5K(37.31, 1975, 1.4, 960), h5K(37.32, 1990, 0.86, 950), h5K(39.1, 1990, 0.86, 950), h5K(40.3, 2040, 0.9, 950), h5K(42.6, 2060, 0.95, 950),
-  h5K(43.6, 2090, 1.05, 950), h5K(46.51, 2080, 1.05, 950), h5K(47.6, 2030, 0.95, 955), h5K(55.3, 2040, 0.95, 955), h5K(56.74, 2140, 1.1), h5K(62.6, 2100, 1.1), h5K(63.6, 2390, 1.05),
-  h5K(67.0, 2400, 1.05), h5K(67.41, 2400, 1.05), h5K(67.42, 1910, 1.12), h5K(74.3, 1925, 1.12), h5K(76.35, 1925, 1.12), h5K(76.36, 1900, 0.85, 960), h5K(77.18, 1900, 0.85, 960), h5K(81.3, 1900, 0.72, 1010), h5K(81.77, 1900, 0.72, 1010), h5K(81.78, 1700, 0.62, 1000),
-  h5K(86.9, 1700, 0.62, 1080)];
+const H5_SQCAM = [h5K(0, 1975, 1.1), h5K(0.3, 1975, 1.1), h5K(2.5, 1960, 0.8, 975), h5K(3.5, 1960, 0.82, 975), h5K(4.4, 2050, 1.7, 1050), h5K(6.7, 2040, 1.7, 1050), h5K(7.7, 1880, 1.3, 1030),
+  h5K(10.17, 1850, 1.3, 1030), h5K(11.76, 1790, 1.45, 1040), h5K(14.3, 1960, 1.55, 1050), h5K(15.24, 1990, 1.55, 1050), h5K(16.6, 2200, 1.55, 1040), h5K(21.2, 2210, 1.55, 1040), h5K(21.9, 2010, 1.7, 1050),
+  h5K(24.6, 2000, 1.7, 1050), h5K(24.88, 1945, 2.0, 1070), h5K(34.8, 1955, 2.0, 1070), h5K(35.3, 2080, 1.5, 1040), h5K(36.4, 1975, 1.9, 1070), h5K(37.31, 1975, 1.9, 1070),
+  h5K(37.32, 2080, 0.9, 990), h5K(39.1, 2090, 0.9, 990), h5K(40.3, 2190, 1.1, 1010), h5K(42.6, 2180, 1.2, 1030), h5K(43.6, 2170, 1.45, 1050), h5K(46.51, 2160, 1.45, 1050),
+  h5K(47.6, 2160, 1.2, 1040), h5K(55.3, 2170, 1.2, 1040), h5K(56.74, 2140, 1.55, 1050), h5K(62.6, 2110, 1.55, 1050), h5K(63.6, 2420, 1.25, 1040), h5K(67.41, 2420, 1.25, 1040),
+  h5K(67.42, 1930, 1.5, 1050), h5K(74.3, 1945, 1.5, 1050), h5K(76.35, 1945, 1.5, 1050), h5K(76.36, 1900, 0.9, 1000), h5K(77.18, 1900, 0.9, 1000), h5K(81.3, 1900, 0.72, 1040), h5K(81.77, 1900, 0.72, 1040),
+  h5K(81.78, 1700, 0.62, 1000), h5K(86.9, 1700, 0.62, 1080)];
 // hard cuts: a key 0.01 s before each cut holds the previous framing
 function h5SqCam(t) { const c = K.camAt(H5_SQCAM, t), z = c.zoom, d = 8 * Math.sin(t * 0.37); return { x: K.clamp(c.x + d, 500 / z, EH_FP.w - 500 / z), y: K.clamp(c.y, -700 + 615 / z, 1430 - 615 / z), zoom: z }; }
 // ---------- the horse (lift-off and the dome circle) ----------
@@ -59,7 +60,7 @@ function h5Fz(t) { const tc = EH_T2(t), sd = 3, craft = t < 37.32;
     if (t < 37.9) { P.sq = 1 + 0.06 * pulse(tc, 37.32, 0.4); P.handR = [60, -230]; P.handL = [-70, -200]; o.cape = { swing: swing(tc, 37.4, 0.5, 1.4, 2) }; o.crown = { on: 0 }; }
     else if (t < 38.54) { const dn = pulse(tc, 37.9, 0.5); P.tip = 0.12 * dn; P.handLW = t < 38.15 ? [H5_BOX[0], H5_BOX[1] - 40] : null; P.handL = [-20, -250]; P.handR = [20, -250]; o.crown = { on: 1, at: t < 38.15 ? [H5_BOX[0], H5_BOX[1] - 52] : null, lift: 30 * (1 - ehE(tc, 38.15, 0.25)) }; if (t >= 38.15 && t < 38.4) o.crown = { on: 1, lift: 40 * (1 - ehE(tc, 38.15, 0.25)) }; }
     else if (t < 39.12) { P.handR = [10, -140]; P.mouth = 'open'; P.talk = ehTalk(t, 38.54, 39.1, 2); P.lid = 0; }
-    else { const u = ehE(tc, 39.12, 0.25); P.handR = [K.lerp(10, 110, u), K.lerp(-140, -150, u)]; P.gaze = look([2100, 720]); P.brow = 0.3; if (t >= 41.1) { P.handR = [30, -100]; P.gaze = look([H5_BENCH, 700]); } }
+    else { const u = ehE(tc, 39.12, 0.25); P.handR = [K.lerp(10, 110, u), K.lerp(-140, -150, u)]; P.gaze = look([2340, 720]); P.brow = 0.3; if (t >= 41.1) { P.handR = [30, -100]; P.gaze = look([H5_BENCH, 700]); } }
     if (t >= 40.06 && t < 46.51) { P.handL = t < 41.1 ? [40, -232 + 6 * Math.sin(tc * 5)] : [-10, -110]; o.scrap = true; }
     if (t >= 43.24) P.gaze = gazePlan(tc, [[43.24, [1, -0.2]], [43.9, [0.6, -0.4]], [44.6, [1, -0.2]], [45.3, [-0.4, 0.1]], [45.9, [1, -0.2]]]); }
   // S6: a step behind her; the scrap to the captain
@@ -105,7 +106,7 @@ function h5Pr(t) { const tc = EH_T2(t), sd = 11, x = H5_PRX(t);
   else if (t < 56.74) { P.gaze = look([2190, 700]); P.talk = ehTalk(t, 46.6, 50.3, 13, 0.6);
     if (t < 48.0) P.handR = [10, -138];
     else if (t < 49.5) P.handR = [70, -120];
-    else if (t < 50.44) { const u = ehE(tc, 49.5, 0.25); P.dir = -1; P.handR = [K.lerp(30, 120, u), -150]; P.brow = 0.3; P.gaze = look([2100, 720]); }
+    else if (t < 50.44) { const u = ehE(tc, 49.5, 0.25); P.dir = 1; P.handR = [K.lerp(30, 120, u), -150]; P.brow = 0.3; P.gaze = look([2340, 720]); }
     if (t >= 50.44) P.handR = [24, -92];
     if (t >= 55.98) P.gaze = look([2300, 720]); }
   else if (t < 67.42) { P.gaze = look([2140, 700]); if (t >= 58.5 && t < 59.0) P.gaze = look([1960, 740]);
@@ -122,7 +123,7 @@ function h5DrawPr(ctx, t) { if (t >= 69.4) return; const [P, o] = h5Pr(t), tc = 
   const [hx, hy] = ehHandW(Q, P.handR), fl = o.ribbon === 'finger' ? Math.sin(tc * 5) : o.ribbon === 'wind' ? Math.sin(tc * 7) : o.ribbon === 'back' ? Math.sin(tc * 9) : 0;
   ehRibbon(ctx, hx, hy, o.ribbon === 'up' ? -Math.PI / 2 - 0.4 : Math.PI / 2 + 0.3 + 0.6 * fl, o.ribbon === 'back' ? 40 : 50, 12, tc, EH_ROSESASH, { wave: 4, hz: 1.5, tip: 0.6, shade: '#d8507a', lw: 2 }); }
 // ---------- the inventor ----------
-const H5_IVX = H5_F([[0, 2100], [16.88, 2100], [18.6, 2058], [20.92, 2058], [21.7, 2110], [55.98, 2110], [63.98, 2470], [64.3, 2470]]);
+const H5_IVX = H5_F([[0, 2375], [16.88, 2375], [18.6, 2305], [20.92, 2305], [21.7, 2370], [55.98, 2370], [57.8, 2440], [62.9, 2440], [63.98, 2470], [64.3, 2470]]);
 function h5Iv(t) { if (t >= 64.25) return null; const tc = EH_T2(t), sd = 7;
   const P = { ...walk(H5_IVX, tc, { stride: t < 21 ? 12 : 22 }), y: t < 55.98 ? 904 : K.lerp(912, 892, ehE(t, 62.6, 1.3)), s: EH_INVENTOR.s, dir: -1, lid: ehLid(t, sd, [7.44, 41.1], 0.15), mouth: 'smile', brow: -0.1, gaze: [-1, 0.3],
     handL: [10, -104], handR: [20, -100], sq: breathe(tc, sd, 0.014), tip: idleSway(tc, sd, 0.03, 2.4) };
@@ -171,8 +172,8 @@ function h5Kg(t) { const tc = EH_T2(t), sd = 13, x = H5_KGX(t), sitting = (t < 4
     if (t >= 45.8) { P.handL = [-50, -130]; P.handR = [80, -140]; P.tip = 0.04 * pulse(tc, 46.0, 0.4); } }
   else if (t < 56.74) { P.gaze = look([2070, 740]); P.brow = 0.3;
     if (t < 50.44) { P.handR = PERSON_HANDS.chin.R; P.handL = [20, -60]; P.tip = 0.14; }
-    else if (t < 52.42) { const u = ehE(tc, 50.44, 0.9); P.handR = [K.lerp(26, 70, u), K.lerp(-96, -200, u)]; if (t >= 51.4) P.handR = [K.lerp(70, 110, ehE(tc, 51.4, 0.3)), K.lerp(-200, -150, ehE(tc, 51.4, 0.3))]; P.gaze = look([2110, 720]); P.talk = ehTalk(t, 52.42, 54.2, 17, 0.6); }
-    else { P.handR = [30, -96]; P.talk = ehTalk(t, 52.42, 54.2, 17, 0.6); P.gaze = look([2110, 760]); } }
+    else if (t < 52.42) { const u = ehE(tc, 50.44, 0.9); P.handR = [K.lerp(26, 70, u), K.lerp(-96, -200, u)]; if (t >= 51.4) { P.dir = 1; P.handR = [K.lerp(70, 110, ehE(tc, 51.4, 0.3)), K.lerp(-200, -150, ehE(tc, 51.4, 0.3))]; } P.gaze = look([2340, 720]); P.talk = ehTalk(t, 52.42, 54.2, 17, 0.6); }
+    else { P.dir = t < 54.6 ? 1 : -1; P.handR = [30, -96]; P.talk = ehTalk(t, 52.42, 54.2, 17, 0.6); P.gaze = look(t < 54.6 ? [2355, 760] : [2050, 740]); } }
   else if (t < 67.42) { P.mouth = 'smile'; P.brow = -0.2; P.lid = Math.max(0.1, P.lid); P.gaze = look([2040, 740]);
     if (t >= 58.06 && t < 59.4) { const u = ehE(tc, 58.06, 1.0); P.handR = [K.lerp(40, 60, u), K.lerp(-110, -230, u)]; P.handL = [-30, -100]; P.talk = ehTalk(t, 58.06, 59.0, 19, 0.6); }
     if (t >= 59.84 && t < 60.2) { P.handRW = [H5_NECK[0] + 14 - 8 * pulse(tc, 59.9, 0.18), H5_NECK[1] + 30]; P.gaze = [1, 0.1]; }
@@ -196,6 +197,7 @@ function h5GuardLine(t, i) { const tc = EH_T2(t), sd = 201 + i * 7, D = [EH_FARG
   if (t >= 7.44 && t < 11.76) P.gaze = look([1680, 760]);
   if (t >= 11.76 && t < 15.24) P.gaze = look([H5_PRX(t), 760]);
   if (t >= 37.32 && t < 46.51) { P.gaze = look([1995, 760]); const j = 38.9 + stagger(i, 0.1); if (t >= j && t < j + 0.3) P.lift = 10 * pulse(tc, j, 0.3); P.eyes = t < 40 ? 'wide' : 'open'; }
+  if (t >= 43.8 && t < 46.51) P.gaze = look(Math.sin(EH_T3(t) * 2.4 + i * 1.7) > 0 ? [2190, 700] : [1995, 740]);
   if (i === 1 && t >= 37.6 && t < 39.3) { P.handL = [-10, -210 + 10 * Math.sin(tc * 20)]; P.handR = [10, -214 - 10 * Math.sin(tc * 20)]; o.spear = null; P.tip = 0.1 * Math.sin(tc * 8); o.cloak = K.clamp(1 - (t - 38.9) / 0.4); }
   if (i === 1 && t >= 67.42 && t < 68.5) { o.spear = null; P.handL = [30, -90]; P.handR = [40, -92]; o.stool = true; }
   if (t >= 76.36) P.gaze = look([1900, 900 - H5_LIFT(t) - 150]);
@@ -203,7 +205,7 @@ function h5GuardLine(t, i) { const tc = EH_T2(t), sd = 201 + i * 7, D = [EH_FARG
   if (t >= 84.72) { o.spear = { lean: 0.3 * Math.sin(tc * 8 + i) }; }
   return [P, o, D]; }
 // C (i 0) and D (i 1) beside the inventor; to the gate with him; back by the ring
-const H5_GCX = [H5_F([[0, 2055], [55.98, 2055], [56.3, 2065], [63.98, 2425], [64.4, 2425], [66.4, 2170], [86, 2170]]), H5_F([[0, 2160], [55.98, 2160], [56.4, 2160], [63.98, 2515], [64.4, 2515], [67.0, 2250], [86, 2250]])];
+const H5_GCX = [H5_F([[0, 2330], [18.3, 2330], [18.64, 2272], [20.92, 2272], [21.7, 2330], [55.98, 2330], [57.8, 2385], [64.4, 2385], [65.0, 2290], [66.8, 2160], [86, 2160]]), H5_F([[0, 2420], [18.3, 2420], [18.64, 2345], [20.92, 2345], [21.7, 2420], [55.98, 2420], [57.9, 2565], [64.4, 2565], [67.2, 2310], [86, 2310]])];
 function h5GuardCD(t, i) { const tc = EH_T2(t), sd = 231 + i * 5, D = EH_FARGUARDS[2 + i], xf = H5_GCX[i];
   const P = { ...walk(xf, tc, { stride: 24 + i * 3 }), y: 898 + i * 6, s: D.s, dir: i ? -1 : 1, lid: ehLid(t, sd, [7.44 + 0.1 * i], i ? 0.35 : 0), mouth: 'closed', gaze: [1, 0.1], handL: [-26, -100], handR: [40, -110], sq: breathe(tc, sd, 0.012), tip: idleSway(tc, sd, 0.022, 2.6 + i * 0.5) };
   const o = { helmet: { tilt: 0 }, neck: true, spear: { lean: 0.02 } }, look = (w) => lookAt(ehHeadOf(P), w), sp = speed(xf, t);
@@ -212,29 +214,30 @@ function h5GuardCD(t, i) { const tc = EH_T2(t), sd = 231 + i * 5, D = EH_FARGUAR
   if (t >= 7.44 && t < 10.17) P.gaze = look([1680, 760]);
   if (i === 1 && t >= 13.06 && t < 13.8) { o.spear = { lean: -0.2 * pulse(tc, 13.06, 0.7) }; }
   if (t >= 18.64 && t < 21.72) { P.dir = i ? -1 : 1; o.spear = { lean: i ? -0.55 : 0.55, hand: i ? [-30, -120] : [30, -120] }; P.mouth = 'grit'; if (i === 1) P.lid = Math.max(P.lid, 0.45); }
+  if (t >= 43.8 && t < 46.51) { P.dir = -1; P.gaze = look(Math.sin(EH_T3(t) * 2.1 + i * 2.3) > 0 ? [2190, 700] : [1995, 740]); }
   if (t >= 52.42 && t < 55.98) { P.dir = i ? -1 : 1; o.spear = { lean: i ? -0.3 : 0.3 }; P.mouth = 'grit'; }
   if (t >= 55.98 && t < 64.0) o.spear = { lean: 0.05 };
-  if (i === 0 && t >= 63.6 && t < 64.0) P.handRW = [2440, 760];
+  if (t >= 62.82 && t < 64.2) { P.dir = i ? -1 : 1; P.handRW = [i ? 2530 : 2410, 780]; }
   if (t >= 71.86 && t < 73.0) { P.dir = i ? -1 : 1; P.tip = 0.14 * pulse(tc, 71.9, 0.5); if (t > 72.1 && t < 72.5) { o.helmet.tilt = (i ? -1 : 1) * 0.2; P.eyes = 'wide'; } if (t > 72.4) { P.handL = [-10, -200]; } }
   if (t >= 76.36) P.gaze = look([1900, 900 - H5_LIFT(t) - 150]);
   if (t >= 79.94) { const j = 79.94 + 0.12 + i * 0.25; o.helmet.tilt = -0.3 * ehE(tc, j, 0.2); P.tip = -0.1 * ehE(tc, j, 0.2);
     if (i === 1) { const k = ehE(tc, 80.2, 0.15); P.sit = k; P.seat = 'floor'; P.sq = impactSquash(tc, 80.35, 0.85); P.lid = 0.3 + 0.6 * pulse(tc, 80.6, 0.6); o.spear = k > 0.5 ? null : o.spear; o.dropSpear = k; } }
   if (t >= 84.72) o.spear = { lean: 0.3 * Math.sin(tc * 7 + i) };
   return [P, o, D]; }
-const H5_CPX = H5_F([[0, 2290], [19.14, 2290], [19.9, 2045], [20.92, 2045], [21.7, 2075], [23.0, 2075], [24.5, 2290], [53.0, 2290], [53.7, 2020], [54.3, 2020], [55.2, 2170], [55.98, 2170], [64.3, 2445], [86, 2445]]);
+const H5_CPX = H5_F([[0, 2282], [19.14, 2282], [19.9, 2262], [23.0, 2262], [24.5, 2282], [52.6, 2282], [53.7, 2030], [54.3, 2030], [55.4, 2282], [56.6, 2282], [58.6, 2450], [65.4, 2450], [66.0, 2325], [86, 2325]]);
 function h5Captain(t) { const tc = EH_T2(t), sd = 17;
-  const P = { ...walk(H5_CPX, tc, { stride: 26 }), y: t < 19.2 || (t > 24.4 && t < 53.0) ? 882 : t < 56 ? 922 : 896, s: EH_CAPTAIN.s, dir: -1, lid: ehLid(t, sd, [7.6]), sq: breathe(tc, sd, 0.012), tip: idleSway(tc, sd, 0.02, 3.4), mouth: 'closed', brow: 0.3, gaze: [-1, 0.1], handL: [-26, -100], handR: [40, -110] };
+  const P = { ...walk(H5_CPX, tc, { stride: 26 }), y: t < 19.2 || (t > 24.4 && t < 53.0) ? 872 : t < 56 ? 924 : 896, s: EH_CAPTAIN.s, dir: -1, lid: ehLid(t, sd, [7.6]), sq: breathe(tc, sd, 0.012), tip: idleSway(tc, sd, 0.02, 3.4), mouth: 'closed', brow: 0.3, gaze: [-1, 0.1], handL: [-26, -100], handR: [40, -110] };
   const o = { helmet: {}, neck: true, spear: { lean: 0.03 }, keys: true }, look = (w) => lookAt(ehHeadOf(P), w), sp = speed(H5_CPX, t);
   if (Math.abs(sp) > 20) P.dir = Math.sign(sp); else P.gaze = look([2000, 740]);
-  if (t >= 19.92 && t < 21.0) { P.dir = 1; const u = ehE(tc, 19.92, 0.25); P.handL = [K.lerp(-26, 90, u), K.lerp(-100, -150, u)]; P.gaze = look([2080, 720]); P.mouth = 'open'; P.talk = ehTalk(t, 19.92, 20.6, 23); }
-  if (t >= 21.0 && t < 23.0) { P.dir = 1; P.gaze = look([2100, 720]); }
+  if (t >= 19.92 && t < 21.0) { P.dir = 1; P.y = 924; const u = ehE(tc, 19.92, 0.25); P.handL = [K.lerp(-26, 90, u), K.lerp(-100, -150, u)]; P.gaze = look([2080, 720]); P.mouth = 'open'; P.talk = ehTalk(t, 19.92, 20.6, 23); }
+  if (t >= 21.0 && t < 23.0) { P.dir = 1; P.gaze = look([2300, 720]); }
   if (t >= 53.7 && t < 54.4) { P.dir = -1; P.handL = [60, -120]; P.tip = 0.08 * pulse(tc, 53.86, 0.5); o.scrap = t >= 53.95; }
   if (t >= 54.4 && t < 64.66) o.scrapBelt = true;
   if (t >= 64.66 && t < 65.6) { P.dir = 1; P.handRW = [2470, 790]; o.spear = { lean: 0.03, hand: [-26, -100] }; P.mouth = 'smile'; o.scrapBelt = t < 65.1; }
   if (t >= 65.6 && t < 67.4) { P.dir = 1; P.gaze = look([2470, 700]); }
   return [P, o]; }
 // ---------- the crowd (from episode 4) ----------
-const H5_CROWD = [[1440, 868, 0], [1500, 872, 3], [2340, 862, 1], [2392, 866, 4], [1395, 874, 2]];
+const H5_CROWD = [[1440, 868, 0], [1495, 872, 3]];
 function h5Crowd(t, items, ctx) { const tc = EH_T2(t);
   H5_CROWD.forEach(([x, y, ci], i) => { const D = EH_GUESTS[ci], sd = 301 + i * 3, P = { x: x + 5 * Math.sin(tc * 0.7 + i), y, s: D.s || 1, dir: x > 1900 ? -1 : 1, lid: ehLid(t, sd, [7.44 + stagger(i, 0.1)]), mouth: 'closed', gaze: [x > 1900 ? -1 : 1, 0.2], handL: [-24, -100], handR: [26, -100], sq: breathe(tc, sd, 0.016), tip: idleSway(tc, sd, 0.025, 2.7 + i * 0.2) };
     const look = (w) => lookAt(ehHeadOf(P), w); P.gaze = look([1990, 740]);
@@ -279,7 +282,7 @@ function h5SqWorld(ctx, t, cam) {
   if (t < 69.4) { const [Pp] = h5Pr(t); items.push([Pp.y, () => h5DrawPr(ctx, t)]); }
   { const r = h5Iv(t); if (r) { const [P, o] = r; items.push([P.y, () => h5Fig(ctx, EH_INVENTOR, P, t, { tail: true, vx: speed(H5_IVX, t), swing: o.swing })]); } }
   { const P = h5Kg(t); items.push([P.y - 2, () => { h5Fig(ctx, EH_FARKING, P, t); }]); }
-  for (let i = 0; i < 4; i++) { const [P, o, D] = h5GuardLine(t, i); items.push([P.y, () => { h5Fig(ctx, D, P, t, o); const [hx, hy] = ehHeadOf({ ...P, y: P.y - (P.lift || 0) });
+  for (let i = 0; i < 2; i++) { const [P, o, D] = h5GuardLine(t, i); items.push([P.y, () => { h5Fig(ctx, D, P, t, o); const [hx, hy] = ehHeadOf({ ...P, y: P.y - (P.lift || 0) });
     if (o.cloak != null) h5CloakOnHead(ctx, hx, hy, P.s, tc, o.cloak);
     if (o.stool) { const [sx, sy] = ehHandW(P, P.handR); seatStool(ctx, sx, sy + 40, 0.8); } }]); }
   for (let i = 0; i < 2; i++) { const [P, o, D] = h5GuardCD(t, i); if (t >= 64.25 && t < 64.4) continue; items.push([P.y, () => { h5Fig(ctx, D, P, t, o); if (o.dropSpear > 0.5) { ehFarSpear(ctx, P.x + 70, P.y - 6, P.s, 1.45, tc); } }]); }
@@ -310,9 +313,10 @@ function h5SqWorld(ctx, t, cam) {
 function h5SqHorseDraw(ctx, t, H) { const tc = EH_T2(t);
   if (t < 67.95) { ebonyHorse(ctx, H); ehRosettes(ctx, H, { missing: 3, t: tc }); return; }
   const PF = t >= 69.4 ? h5SqPF(t, H) : null, PR = h5SqPR(t, H), air = t >= 77.18;
-  castFinish(ctx, H.x, H.y - 200, 600, 700, (c) => { if (air) ehWindRibbons(c, H, tc, { ang: Math.PI / 2, len: 120 + 60 * ehE(t, 77.18, 1) });
+  const rig = (c) => { if (air) ehWindRibbons(c, H, tc, { ang: Math.PI / 2, len: 120 + 60 * ehE(t, 77.18, 1) });
     h5Pair(c, H, PF, PR, t, { veil: { stream: air ? 0.6 : 0, vx: 0 }, cape: { stream: air ? 0.5 : 0, ang: Math.PI * 0.5 }, armOver: t >= 71.0 && t < 71.6 ? null : null });
-    ehRosettes(c, H, { missing: 3, t: tc }); if (t >= 72.72) saddleRope(c, H, t, { taut: ehE(t, 72.9, 0.15), tTaut: 73.05, lf: PF ? PF.lurch : 0, lr: PR.lurch }); }, { rim: '#fff2c0', light: [-1, -1], rimW: 0 });
+    ehRosettes(c, H, { missing: 3, t: tc }); if (t >= 72.72) saddleRope(c, H, t, { taut: ehE(t, 72.9, 0.15), tTaut: 73.05, lf: PF ? PF.lurch : 0, lr: PR.lurch }); };
+  if (air) castFinish(ctx, H.x, H.y + 60 * H.s, 760 * H.s, 1000 * H.s, rig, { rim: '#fff2c0', light: [-1, -1], rimW: 2.5 }); else rig(ctx);
   if (t >= 71.2 && t < 74.0) { const k = ehHorsePt(H, EH_EBG.knob); ehGlint(ctx, k[0], k[1], 20, (t - 71.2) / 0.5); ehTick(ctx, k[0] + 30, k[1] - 40, K.clamp((t - 71.3) / 0.3), 0.9); }
   if (t >= 71.86 && t < 74.0) { const k = ehHorsePt(H, EH_EBG.lever); ehGlint(ctx, k[0], k[1], 20, (t - 71.86) / 0.5); ehTick(ctx, k[0] + 34, k[1] - 46, K.clamp((t - 71.96) / 0.3), 0.9); } }
 function h5SqPF(t, H) { const tc = EH_T2(t), ps = h5PsF(H), P = { lid: ehLid(t, 11, [69.66]), mouth: 'smile', gaze: [1, 0.2], handL: h5Loc(H, ps, EH_EBG.mane[5], EH_SEAT2.front), handR: [40, -112], lurch: idleSway(tc, 31, 0.015, 2.2), sq: landSquash(tc, 69.4, 0.07) };
@@ -340,7 +344,7 @@ function h5DomeCircle(ctx, t) { const tc = EH_T2(t), H = h5SqHorse(t), [dcx, dba
   ringArc(Math.PI, Math.PI * 2);
   const PF = { lid: ehLid(t, 11), mouth: 'smile', gaze: [1, 0.3], handL: [50, -110], handR: [40, -112] }, PR = { lid: ehLid(t, 3), mouth: 'smile', gaze: [1, 0.3], handL: [50, -110], handR: [60, -112] };
   if (t >= 85.42) { const w = Math.sin(tc * 12); PF.handR = [30, -200 + 20 * w]; PR.handL = [30, -210 - 20 * w]; PF.gaze = [0.3, 1]; PR.gaze = [0.3, 1]; }
-  const draw = () => castFinish(ctx, H.x, H.y - 100, 300, 400, (c) => { ehWindRibbons(c, H, tc, { ang: Math.sign(H.dir) > 0 ? Math.PI : 0, len: 260 }); h5Pair(c, H, PF, PR, t, { veil: { stream: 1 }, cape: { stream: 1 } }); }, { rim: '#fff2c0', light: [-1, -1], rimW: 0 });
+  const draw = () => castFinish(ctx, H.x, H.y + 60 * H.s, 760 * H.s, 1000 * H.s, (c) => { ehWindRibbons(c, H, tc, { ang: Math.sign(H.dir) > 0 ? Math.PI : 0, len: 260 }); h5Pair(c, H, PF, PR, t, { veil: { stream: 1 }, cape: { stream: 1 } }); }, { rim: '#fff2c0', light: [-1, -1], rimW: 2 });
   draw();
   if (behind) { // the dome front pass over the rig
     celShade(ctx, K.rectPts(dcx - dr * 0.95, dbase, dr * 1.9, 440 - dbase), EH_FPM.morning.wall, EH_FPM.morning.wallS, { light: [-1, -1], off: dr * 0.25, lw: 3, line: EH_FP_LINE }); ehDome(ctx, dcx, dbase, dr, EH_TANGERINE, '#d8661a'); }
@@ -365,7 +369,7 @@ function h5SqOver(ctx, t, cam, S) {
     iconBalloon(ctx, K.lerp(820, 640, sl), 230, 300, 210, p * sl, [h[0] - 10, h[1] - 60], (c, w, hh) => h5IconCream(c, w, hh)); }
   if (t >= 34.02 && t < 37.32) { const [P] = h5Pr(t); h5Say(ctx, S, [[34.02, 'TELL THE KING\nTHE WHOLE TRUTH.']], t, head(P), { gone: 37.0, size: 44, up: 200, dx: -40 }); }
   // S5: impact flash, PRINCE FIRUZ, the pointing streak, the dotted match line
-  if (t >= 37.32 && t < 37.9) S.emphasis(ctx, ...h5P(1995, 760, cam), 260, K.clamp((t - 37.32) / 0.55), { rect: [0, 0, 1000, 1230], seed: 5 });
+  if (t >= 37.32 && t < 37.9) S.emphasis(ctx, ...h5P(1995, 760, cam), 260, K.clamp((t - 37.32) / 0.55), { rect: [0, 0, 1000, 1230], seed: 5, word: '' });
   if (t >= 38.54 && t < 40.3) h5Say(ctx, S, [[38.54, 'I AM PRINCE FIRUZ!']], t, head(fz), { gone: 40.0, size: 50, up: 170 });
   if (t >= 39.12 && t < 40.9) { const [P] = h5Fz(t), a = h5P(...ehHandW(P, P.handR), cam), iv = h5Iv(t), b = h5Head(iv[0], cam); ctx.save(); ctx.globalAlpha *= K.clamp((40.9 - t) / 0.3); S.arrow(ctx, a, [b[0] - 20, b[1] + 30], K.clamp((t - 39.12) / 0.4), { width: 8, bend: 0.1 }); ctx.restore(); }
   if (t >= 40.32 && t < 43.0) { const [P] = h5Fz(t), a = h5P(...ehHandW(P, P.handL), cam), iv = h5Iv(t)[0], b = h5P(...ehHeadOf(iv), cam); h5DashLine(ctx, a, [b[0] + 30 * cam.zoom, b[1] - 20 * cam.zoom], K.clamp((t - 40.32) / 0.4) * K.clamp((43.0 - t) / 0.3)); }
