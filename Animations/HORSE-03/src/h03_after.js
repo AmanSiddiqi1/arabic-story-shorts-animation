@@ -51,7 +51,7 @@ function h3AfterWorld(ctx, t, cam) {
   ghostOutline(ctx, ehGhostHorse({ x: H3_HX0, y: 900, s: H3_HS, dir: 1 }), t >= 124.7 && t < 125.7 ? Math.min(1, (t - 124.7) / 0.15) * (1 - K.clamp((t - 125.3) / 0.4)) : 0, t);
   ghostOutline(ctx, ehGhostSeated(H3_PRSEAT, 900, EH_PRINCESS.s, 1), t >= 125.44 && t < 126.4 ? Math.min(1, (t - 125.44) / 0.15) * (1 - K.clamp((t - 126.0) / 0.4)) : 0, t);
   const rows = [];
-  if (fz.y >= 900) rows.push([fz.y, () => { h3Person(ctx, EH_FIRUZ, fz, t, { cape: true, vx: fo.vx || 0, swing: (fo.swing || 0) + (fo.wind ? 0.3 * Math.sin(t * 2.2) : 0), rim });
+  if (fz.y >= 900) rows.push([fz.y, () => { h3Person(ctx, EH_FIRUZ, fz, t, { cape: true, vx: fo.vx || 0, swing: (fo.swing || 0) + (fo.wind ? 0.3 * Math.sin(t * 2.2) : 0) });
     const hl = ehHandW(fz, fz.handL); h3Rose(ctx, hl[0], hl[1], fo.rose.droop, t);
     if (fo.scrap === 'hand') { const h = fz.handRW || ehHandW(fz, fz.handR); turbanScrap(ctx, h[0] + 8, h[1] - 6, 1, 0.2); }
     if (fo.scrap === 'sash') { const [sx, sy] = ehHandW(fz, [26, -78 + 12 * (fz.kneel || 0)]); turbanScrap(ctx, sx, sy, 0.7, 0.9); ehRibbon(ctx, sx + 4, sy + 6, Math.PI / 2 - 0.3, 22, 9, tc, EH_SAFFRON, { wave: 3, tip: 0.6, shade: '#c07a10' }); }

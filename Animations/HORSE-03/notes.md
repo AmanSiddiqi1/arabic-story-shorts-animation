@@ -19,3 +19,9 @@ Source files (story.json "scenes", load order): the series files copied unchange
 - **"The trunk on the polished rump" lands then slides:** kept, but the maid stands at the rump and only the top trunk moves.
 - **"He lifts the first mane block with one finger":** beyond arm reach for the front-facing figure; he points at the block while the lever is revealed.
 - **"The crown slips":** headwear cannot come off; Firuz catches his crown with a hand to the head at the bottom of the bow.
+
+## Render cost
+- Rim light (`castFinish` with `rim`) is kept only on the two short flight shots (S1, S17): measured in the page it was the dominant per-frame cost on the roof and garden (two rimmed figures cost more than the whole set), so the long garden and roof sections draw the cast directly. Palace pictures inside clouds and on the road are a baked sprite (`h3Palace`). The garden plates (sky, far land, ground with the bower) are baked once per plate.
+
+## Checks done
+Stills and contact sheets at the key beats of every scene (stills/h1, a1, p1-p5 in the media Working files: homecoming, roof, hiding, caravan, the plan cloud, the trick, the mount, the knob insert, the launch, the sky, golden hour, the clue cloud, the vow). Alive checklist: idleSway / breathe / seeded blinks on every figure, blinks on head turns (`ehBlinkAt`), capes, veils and turban tails on travelling waves with swing on stops, walks with `walk` (no sliding), landings squash (dismounts, the cat), shadows shrink under every lift (horse landings, the launch, the cat's spring), the horse never moves a leg (only the cloth, the light and the rig act). No full render (code-only stage).

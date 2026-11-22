@@ -49,10 +49,6 @@
 "value": ""
 },
 {
-"key": "pause_production",
-"value": "0"
-},
-{
 "key": "max_opus",
 "value": "32"
 },
@@ -63,6 +59,10 @@
 {
 "key": "pause_planning",
 "value": "1"
+},
+{
+"key": "pause_production",
+"value": "0"
 }
 ],
 "events": [
@@ -8990,6 +8990,62 @@
 "msg": "v1: PASS run 44890804582 commit 03dc6c51a5",
 "story_id": "ALI-03",
 "t": "2026-11-21T17:55:23"
+},
+{
+"id": 1276,
+"kind": "config",
+"msg": "pause_production=1",
+"story_id": null,
+"t": "2026-11-21T17:58:11"
+},
+{
+"id": 1277,
+"kind": "config",
+"msg": "pause_planning=1",
+"story_id": null,
+"t": "2026-11-21T17:58:12"
+},
+{
+"id": 1278,
+"kind": "done",
+"msg": "implement Implementation Complete - Awaiting Render (film 140.01 s, est. render 21.8 min) (claude-opus-5-5)",
+"story_id": "ALI-04",
+"t": "2026-11-21T18:03:15"
+},
+{
+"id": 1279,
+"kind": "done",
+"msg": "implement Implementation Complete - Awaiting Render (film 144.44 s, est. render 18.1 min) (claude-opus-5-5)",
+"story_id": "HORSE-03",
+"t": "2026-11-21T18:14:48"
+},
+{
+"id": 1280,
+"kind": "cloud-render",
+"msg": "v2: PASS run 44892489667 commit bf01e490a0",
+"story_id": "SIND-01",
+"t": "2026-11-21T18:16:59"
+},
+{
+"id": 1281,
+"kind": "done",
+"msg": "revise v2 Animations/SIND-01/renders/SIND-01_v2.mp4 (claude-opus-5-5)",
+"story_id": "SIND-01",
+"t": "2026-11-21T18:17:04"
+},
+{
+"id": 1282,
+"kind": "config",
+"msg": "pause_production=0",
+"story_id": null,
+"t": "2026-11-22T18:59:15"
+},
+{
+"id": 1283,
+"kind": "release",
+"msg": "implement",
+"story_id": "SIND-06",
+"t": "2026-11-22T18:59:15"
 }
 ],
 "plans": [
@@ -11810,6 +11866,16 @@
 "status": "PASS",
 "story_id": "ALI-03",
 "version": "v1"
+},
+{
+"created": "2026-11-21T18:16:59",
+"duration": 149.833,
+"path": "Animations/SIND-01/renders/SIND-01_v2.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 149.833}, \"end_hold\": 4.01, \"decode\": \"OK\", \"lufs\": -15.1, \"sync\": {\"lag_ms\": 0, \"corr\": 0.998}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-21T10:14:10\", \"cloud_run\": \"44892489667\", \"cloud_commit\": \"bf01e490a01d423845435fedb79e6b5e6e06c95e\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "SIND-01",
+"version": "v2"
 }
 ],
 "reviews": [
@@ -20912,29 +20978,29 @@
 {
 "agent_id": "a2b9f754e7abbfdb1",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-21T18:17:04",
 "id": 346,
 "model": "opus",
-"notes": null,
-"outputs": null,
+"notes": "tokens {\"turns\": 75, \"input_tokens\": 150, \"cache_creation_input_tokens\": 259590, \"cache_read_input_tokens\": 12838281, \"output_tokens\": 86135}",
+"outputs": "v2 Animations/SIND-01/renders/SIND-01_v2.mp4",
 "pid": null,
 "stage": "revise",
 "started": "2026-11-21T17:01:37",
-"status": "running",
+"status": "done",
 "story_id": "SIND-01"
 },
 {
 "agent_id": "ac574bd7b4d0f6635",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-21T18:14:48",
 "id": 347,
 "model": "opus",
-"notes": null,
-"outputs": null,
+"notes": "tokens {\"turns\": 107, \"input_tokens\": 214, \"cache_creation_input_tokens\": 444540, \"cache_read_input_tokens\": 32310232, \"output_tokens\": 195020}",
+"outputs": "Implementation Complete - Awaiting Render (film 144.44 s, est. render 18.1 min)",
 "pid": null,
 "stage": "implement",
 "started": "2026-11-21T17:07:12",
-"status": "running",
+"status": "done",
 "story_id": "HORSE-03"
 },
 {
@@ -20968,29 +21034,29 @@
 {
 "agent_id": "a4baa0c9603ff99e2",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-21T18:03:15",
 "id": 350,
 "model": "opus",
-"notes": null,
-"outputs": null,
+"notes": "tokens {\"turns\": 74, \"input_tokens\": 156, \"cache_creation_input_tokens\": 377556, \"cache_read_input_tokens\": 17874804, \"output_tokens\": 156701}",
+"outputs": "Implementation Complete - Awaiting Render (film 140.01 s, est. render 21.8 min)",
 "pid": null,
 "stage": "implement",
 "started": "2026-11-21T17:28:17",
-"status": "running",
+"status": "done",
 "story_id": "ALI-04"
 },
 {
 "agent_id": "a9ba432692005440a",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-22T18:59:15",
 "id": 351,
 "model": "opus",
-"notes": null,
+"notes": "released for retry",
 "outputs": null,
 "pid": null,
 "stage": "implement",
 "started": "2026-11-21T17:49:08",
-"status": "running",
+"status": "released",
 "story_id": "SIND-06"
 }
 ],

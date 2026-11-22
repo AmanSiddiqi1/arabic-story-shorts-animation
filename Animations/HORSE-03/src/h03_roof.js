@@ -98,13 +98,13 @@ function h3RoofWorld(ctx, t, cam) {
   const rows = [];
   for (const [D, P] of GU) rows.push([P.y, () => h3Guard(ctx, D, P, t)]);
   rows.push([900, () => { h3Shadow(ctx, H.x + 10, 902, 300 * H3_HS, H.lift, { alpha: 0.34, fall: 420 });
-    if (t < 19.4) { const PP = { s: EH_FIRUZ.s, lid: ehLid(t, 3), mouth: 'smile', gaze: [1, 0.1], handL: [70, -110], handR: [76, -100], sq: landSquash(tc, 18.94, 0.12), lurch: 0.1 }; castFinish(ctx, H.x, H.y + 20, 700, 900, (c) => ehRide(c, H, 'firuz', PP, t, { tc, stream: 0.2, ang: Math.PI / 2 + 0.4 }), rim); }
+    if (t < 19.4) { const PP = { s: EH_FIRUZ.s, lid: ehLid(t, 3), mouth: 'smile', gaze: [1, 0.1], handL: [70, -110], handR: [76, -100], sq: landSquash(tc, 18.94, 0.12), lurch: 0.1 }; ehRide(ctx, H, 'firuz', PP, t, { tc, stream: 0.2, ang: Math.PI / 2 + 0.4 }); }
     else ebonyHorse(ctx, H);
     if (t > 18.94 && t < 19.8) dustBurst(ctx, H.x, 902, t - 18.94, 12, 8, 18, 150, 0.8, 7);
     // counters over the two seats, then the trunk that slides off the polished rump
     if (t >= 31.08 && t < 33.6) { const A = ehHorsePt(H, [EH_EBG.seat[0] + EH_SEAT2.front, -300]), B = ehHorsePt(H, [EH_EBG.seat[0] + EH_SEAT2.rear, -300]); ctx.save(); ctx.globalAlpha *= K.clamp((33.6 - t) / 0.3); S0.counter(ctx, 1, A[0] + 20, A[1], K.clamp((t - 31.08) / 0.3), { size: 90 }); if (t >= 31.36) S0.counter(ctx, 2, B[0] - 20, B[1], K.clamp((t - 31.36) / 0.3), { size: 90 }); ctx.restore(); } }]);
-  if (fz) rows.push([fz.y, () => h3Person(ctx, EH_FIRUZ, fz, t, { cape: true, swing: swing(tc, 19.78, 0.3) + swing(tc, 25.9, 0.25), rim })]);
-  if (pr) rows.push([pr.y + 1, () => h3Person(ctx, EH_PRINCESS, pr, t, { veil: true, vx: t < 19.6 ? -300 : 0, rim })]);
+  if (fz) rows.push([fz.y, () => h3Person(ctx, EH_FIRUZ, fz, t, { cape: true, swing: swing(tc, 19.78, 0.3) + swing(tc, 25.9, 0.25) })]);
+  if (pr) rows.push([pr.y + 1, () => h3Person(ctx, EH_PRINCESS, pr, t, { veil: true, vx: t < 19.6 ? -300 : 0 })]);
   for (const [D, P] of PA) rows.push([P.y, () => h3Person(ctx, D, P, t, {})]);
   if (md) rows.push([md.y - 1, () => { h3Person(ctx, EH_MAID, md, t); const top = md.y - 210 * md.s, n = t < 31.98 ? 3 : 2; packLoad(ctx, Array.from({ length: n }, (_, i) => ({ kind: 'chest', col: ['#3f7ad0', '#e8604a', '#3fae6a'][i] })), md.x - 6, top + 6, 0.62); }]);
   const tk = h3TrunkTop(t); if (tk) rows.push([925, () => { ctx.save(); ctx.translate(tk[0], tk[1]); ctx.rotate(tk[2]); packLoad(ctx, [{ kind: 'chest', col: '#3fae6a' }], 0, 0, 0.85); ctx.restore(); if (t > 32.3 && t < 32.8) dustBurst(ctx, 450, 926, t - 32.3, 7, 5, 10, 70, 0.5, 9); if (ct.y >= 850) { h3Shadow(ctx, ct.x, Math.min(ct.y, 905), 80 * ct.s); cat(ctx, ct); } }]);

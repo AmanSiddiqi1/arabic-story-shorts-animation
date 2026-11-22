@@ -29,7 +29,7 @@ function sbCoveBackPlate() {
     c.save(); c.beginPath(); c.moveTo(120, 1000); for (const p of top) c.lineTo(...p); c.lineTo(2700, 1000); c.closePath(); c.clip();
     for (let k = 0; k < 44; k++) { const y0 = -720 + k * 40; c.fillStyle = SB_STRATA[k % 6]; c.beginPath(); c.moveTo(0, y0); for (let x = 0; x <= 2700; x += 60) c.lineTo(x, y0 + 16 * Math.sin(x * 0.004 + k * 1.3) + 8 * Math.sin(x * 0.013 + k)); c.lineTo(2700, 1100); c.lineTo(0, 1100); c.closePath(); c.fill(); }
     sbGrad(c, 0, 300, 2700, 500, [[0, 'rgba(255,240,220,0)'], [1, 'rgba(120,70,120,0.22)']]);   // the foot of the wall in shade
-    c.fillStyle = 'rgba(80,50,110,0.22)'; for (let x = 700; x < 2600; x += 140 + R() * 120) { const w = 30 + R() * 60, y = sbCoveTop(x) + 30; c.beginPath(); c.moveTo(x, y); c.lineTo(x + w, y + 40); c.lineTo(x + w * 0.6 + 80, 780); c.lineTo(x + 40, 780); c.closePath(); c.fill(); }
+    c.fillStyle = 'rgba(80,50,110,0.1)'; for (let x = 700; x < 2600; x += 140 + R() * 120) { const w = 30 + R() * 60, y = sbCoveTop(x) + 30; c.beginPath(); c.moveTo(x, y); c.lineTo(x + w, y + 40); c.lineTo(x + w * 0.6 + 80, 780); c.lineTo(x + 40, 780); c.closePath(); c.fill(); }
     // ledges (lighter lips with a hard shadow under), cracks, hanging plants, gull nests
     for (let i = 0; i < 26; i++) { const x = 680 + R() * 1880, y = Math.max(sbCoveTop(x) + 60, -600) + R() * 520; if (x > 2140 && x < 2480 && y > 560) continue; const w = 50 + R() * 90;
       c.fillStyle = '#fbe6d0'; c.fillRect(x, y, w, 6); c.fillStyle = 'rgba(90,50,100,0.35)'; c.fillRect(x + 4, y + 6, w - 8, 9);

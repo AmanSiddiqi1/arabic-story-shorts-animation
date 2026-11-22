@@ -20,3 +20,9 @@ Source files (story.json "scenes", load order): `horse_kit.js`, `horse_cast.js`,
 
 ## Checks done
 Stills and contact sheets at every scene's key beats (stills/g1-g4, m1, s1-s3, a1 in the media Working files), two short test clips (106.5-109.5 and 24-27, 3 s each, about 0.2-0.3 s per frame with 2 workers, audio present). Alive checklist: idleSway/breathe on every character, blinks on head turns (ehBlinkAt), cape and turban tail on travelling waves with follow-through (lagged, swing), the horse never moves a leg (only light acts on it), shadows on the court shrink as the horse rises, landings squash (inventor, Firuz, child).
+
+## v2 (Fable review 1) decisions
+- S6/S7 staging: Firuz inspects from x 1045 and his palm goes to the near foreleg (the Library arm, 74 units, cannot reach the chest plate of a horse standing on the cart); the inventor stays at 1230 right of the head; guests left <= 780, right >= 1398. Inventor tip is +0.12 (positive leans toward the facing direction in this engine, the review's -0.12 assumed the other sign).
+- Balloons use `h1Say` (own narrow tail, max 70) instead of the style label's wedge; inventor lines are two-line balloons right of the horse's muzzle (`minX`).
+- Sky 96.6-132.14 and the sunset use `src/h01_deck.js` (three layers, sky camera zoom about (500, 300)). Deck bakes draw puffs sharp and blur once (`h1Soft`): with ehCloud's per-shape blur the first frame of a palette took about 88 s on CPU.
+- See review/revision_1.md for the full change log and the series changes.

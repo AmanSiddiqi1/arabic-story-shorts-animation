@@ -11,7 +11,7 @@ function sbVillageFarPlate() {
     c.fillStyle = '#9ab8e8'; c.beginPath(); c.moveTo(0, 900); for (let x = 0; x <= 3000; x += 100) c.lineTo(x, 640 - 60 * Math.sin(x * 0.003) - 30 * Math.sin(x * 0.011)); c.lineTo(3000, 900); c.closePath(); c.fill();
     const mt = (x) => 150 + 0.0006 * Math.pow(x - 300, 2) + 40 * Math.sin(x * 0.02); c.save(); c.beginPath(); c.moveTo(-100, 900); for (let x = -100; x <= 1500; x += 25) c.lineTo(x, Math.min(860, mt(x))); c.lineTo(1500, 900); c.closePath(); c.clip();
     for (let k = 0; k < 20; k++) { c.fillStyle = SB_STRATA[k % 6]; const y0 = 100 + k * 40; c.beginPath(); c.moveTo(-100, y0); for (let x = -100; x <= 1500; x += 60) c.lineTo(x, y0 + 14 * Math.sin(x * 0.005 + k)); c.lineTo(1500, 900); c.lineTo(-100, 900); c.closePath(); c.fill(); }
-    c.fillStyle = 'rgba(80,50,110,0.25)'; for (let x = 0; x < 1400; x += 160) { c.beginPath(); c.moveTo(x, mt(x)); c.lineTo(x + 120, 900); c.lineTo(x + 200, 900); c.lineTo(x + 60, mt(x + 60)); c.closePath(); c.fill(); }
+    c.fillStyle = 'rgba(80,50,110,0.12)'; for (let x = 0; x < 1400; x += 160) { c.beginPath(); c.moveTo(x, mt(x)); c.lineTo(x + 120, 900); c.lineTo(x + 200, 900); c.lineTo(x + 60, mt(x + 60)); c.closePath(); c.fill(); }
     sbGrad(c, -100, 600, 1600, 300, [[0, 'rgba(210,236,250,0)'], [1, 'rgba(210,236,250,0.55)']]); c.restore();
     c.strokeStyle = '#7a4a7a'; c.lineWidth = 4; c.beginPath(); for (let x = -100; x <= 1500; x += 25) x === -100 ? c.moveTo(x, mt(x)) : c.lineTo(x, Math.min(860, mt(x))); c.stroke();
     // the palace hill

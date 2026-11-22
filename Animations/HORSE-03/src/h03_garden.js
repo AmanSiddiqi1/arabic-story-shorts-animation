@@ -198,7 +198,7 @@ function h3GardenWorld(ctx, t, cam) {
       const knobW = ehHorsePt(H, EH_EBG.knob);
       twoRiders(c, { ...H, reveal: t > 118 ? 0 : 0, knob: t >= 107.94 ? Math.PI : 0 }, { who: 'princess', D: EH_PRINCESS, P: h3RiderPr(t) }, invRiding ? { who: 'inventor', D: EH_INVENTOR, P: h3RiderInv(t) } : null, t,
         { tc, tail: { stream: H.air ? 0.9 : 0, torn: t >= 110.9, ang: H.air ? Math.PI * 0.75 : Math.PI / 2 + 0.5 }, veil: { stream: H.air ? 0.9 : 0 }, armOver: invRiding && t >= 107.18 && t < 110.36 ? [knobW[0] - 4, knobW[1] + 2] : null }); };
-    castFinish(ctx, H.x, H.y + 20, 760, 1000, drawRig, { rim: '#fff2c0', light: [-1, -1], rimW: 2.5 });
+    drawRig(ctx);
     if (cloth && t < 91.4) coverCloth(ctx, cloth, {});
     // the brass hoof that will not stay hidden (37.0 and 50.6), the knob and lever glints
     if ((t > 36.9 && t < 37.6) || (t > 50.4 && t < 51.3)) { const [x, y] = ehHorsePt(H, [90, -8]); ehGlint(ctx, x, y, 24, ((t - 36.9) % 0.7) / 0.7); }

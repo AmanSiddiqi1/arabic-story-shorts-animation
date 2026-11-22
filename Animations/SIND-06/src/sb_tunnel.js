@@ -21,7 +21,7 @@ function sbChapterPlate(i, mode) {
   const ch = SB_CH[i], w = ch.x1 - ch.x0, P = SB_TPAL[mode], sc = 0.75;
   return sbBakeAt('tun' + i + mode, Math.ceil(w * sc), Math.ceil(1230 * sc), (c) => { c.scale(sc, sc); c.translate(-ch.x0, 0); const R = K.rng(700 + i * 31), x0 = ch.x0 - 4, x1 = ch.x1 + 4;
     // far wall: wavy strata bands from the roof to below the water
-    for (let k = 0; k < 26; k++) { const y0 = 120 + k * 42; c.fillStyle = P.bands[(k + i * 2) % 6]; c.beginPath(); c.moveTo(x0, y0); for (let x = x0; x <= x1 + 60; x += 60) c.lineTo(x, y0 + 18 * Math.sin(x * 0.004 + k * 1.7) + 9 * Math.sin(x * 0.011 + k)); c.lineTo(x1 + 60, 1240); c.lineTo(x0, 1240); c.closePath(); c.fill(); }
+    for (let k = 0; k < 26; k++) { const y0 = 120 + k * 42; c.fillStyle = P.bands[k % 6]; c.beginPath(); c.moveTo(x0, y0); for (let x = x0; x <= x1 + 60; x += 60) c.lineTo(x, y0 + 18 * Math.sin(x * 0.004 + k * 1.7) + 9 * Math.sin(x * 0.011 + k)); c.lineTo(x1 + 60, 1240); c.lineTo(x0, 1240); c.closePath(); c.fill(); }
     // soft painted depth: lighter in the middle of the wall, a deeper band under the roof
     sbGrad(c, x0, 250, w + 8, 600, [[0, 'rgba(40,20,70,0.25)'], [0.5, 'rgba(255,255,255,0.06)'], [1, 'rgba(20,30,60,0.18)']]);
     // ochre veins and gem veins (thin polylines with a glaze)
@@ -49,6 +49,7 @@ function sbChapterPlate(i, mode) {
 // cam: the shot camera; lamp: {x, y, flame} (world) or null; o: {day (0..1 the entrance disc), exit (0..1 the far daylight), worms}
 function sbTunnel(ctx, t, cam, lamp, o = {}) {
   const z = cam.zoom || 1, vx0 = cam.x - 520 / z, vx1 = cam.x + 520 / z, vis = SB_CH.map((c, i) => i).filter((i) => SB_CH[i].x1 > vx0 && SB_CH[i].x0 < vx1);
+  ctx.fillStyle = SB_TPAL.dim.roof; ctx.fillRect(vx0 - 50, -600, vx1 - vx0 + 100, 606);
   for (const i of vis) ctx.drawImage(sbChapterPlate(i, 'dim'), SB_CH[i].x0, 0, SB_CH[i].x1 - SB_CH[i].x0, 1230);
   if (o.day > 0) { const r = 40 + 200 * o.day; sbGlow(ctx, o.dayX ?? 150, 640, r * 2.2, 0.9 * o.day, '#fff6d8'); celShade(ctx, ell(o.dayX ?? 150, 640, r, r * 1.1, 32), '#fffbe8', '#ffe6b0', { light: [1, 0], off: r * 0.15, lw: 0 }); }
   if (o.exit > 0) { const r = 10 + 260 * o.exit * o.exit; sbGlow(ctx, SB_TUN.exit, 640, r * 3, Math.min(1, o.exit * 1.4), '#ffe08a'); celShade(ctx, ell(SB_TUN.exit, 640, r, r * 1.2, 32), '#fffbe0', '#ffe0a0', { light: [-1, 0], off: r * 0.12, lw: 0 }); }

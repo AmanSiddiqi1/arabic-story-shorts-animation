@@ -28,4 +28,4 @@ Narration, subtitle chunks, timing and film length (134.15 + 4.0 = 138.15 s) unc
 - Gold cuffs on the rider's wrists: the Library `person` has no cuff colour (forearm = sleeve). Proposal: an optional `pal.cuff` drawing a band at the wrist.
 
 ## Render cost
-Bakes are once per page (deck layers at q 0.5-0.8, 9 strips plus the country plate); per frame only drawImage of three strips. No full render done (per instructions).
+Bakes are once per page (deck layers at q 0.5-0.8, 9 strips plus the country plate; puffs drawn sharp and blurred in one pass, about 7 s per palette on CPU); per frame only drawImage of three strips (steady state about 90-140 ms per frame locally). implcheck PASS, estimate 42.2 min (its 49-frame sample carries the one-off bakes, so the real render should be lower; v1 was about 25). No full render done (per instructions).
