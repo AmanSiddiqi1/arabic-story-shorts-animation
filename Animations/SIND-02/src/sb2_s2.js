@@ -68,7 +68,7 @@ function sbNestSinP(t) { const tc = SB_T2(t), x = SB2_N6X(t), P = sbLive(t, 11, 
   else if (t < 44.06) { if (t < 40.85) { Object.assign(P, walk(SB2_N6X, tc, { stride: 26 })); P.dir = -1; P.gaze = [-0.8, 0.6]; }
     else { P.dir = 1; P.handR = [36, -96 - 20 * sbF(t, [[40.85, 0], [41.1, 1]]) + 30 * sbF(t, [[43.4, 0], [44.0, 1]])]; P.gaze = gazePlan(SB_T3(t), [[40.85, [0, -1]], [41.1, [0.2, 1]], [41.4, [0.4, -1]], [41.75, [-1, 0.4]], [42.1, [0.6, -1]], [42.4, [1, -0.6]]], 0.14); P.brow = -0.3 - 0.2 * (t > 41.75) - 0.2 * (t > 42.1); P.mouth = 'closed';
       if (t > 43.26) { P.sq *= 1 - 0.04 * pulse(tc, 43.3, 0.25); P.brow = -0.8; P.mouth = 'o'; P.gaze = [0.4, -0.8]; } } }
-  else if (t < 48.2) { P.x = 470; P.dir = 1; const blow = K.clamp((t - 44.06) / 0.4); P.wind = K.lerp(-0.2, -1, blow); P.lid = Math.max(P.lid, 0.4 * blow); P.handR = [36, -96]; if (t > 45.62) { P.handR = PERSON_HANDS.headHold.R; P.tip += 0.1; } P.gaze = t > 46.3 ? [0.6, -1] : [1, -0.3]; if (t > 47.0) P.mouth = 'o'; }
+  else if (t < 48.2) { P.x = 470; P.dir = 1; const blow = K.clamp((t - 44.06) / 0.4); P.wind = K.lerp(-0.2, -1, blow); P.lid = Math.max(P.lid, 0.4 * blow); P.handR = [36, -96]; if (t > 45.62) { P.handR = PERSON_HANDS.headHold.R; P.tip += 0.1; } P.gaze = t > 47.0 ? [0.6, -1] : t > 46.5 ? [0.8, 0.6] : [1, -0.3]; if (t > 47.0) P.mouth = 'o'; }   // v2: the ground shadow first, then up
   else { const [hx, l] = hop(t, 48.2, 0.32, 470, 340, 50); P.x = hx; P.y = 900 - l; P.dir = -1; P.tip = 0.4 * K.clamp((t - 48.2) / 0.3); if (t > 48.52) { P.dir = 1; P.kneel = 1; P.tip = 0.05; P.sq *= landSquash(tc, 48.52, 0.18); P.gaze = [1, -0.5]; P.mouth = 'o'; P.brow = -0.7; P.handLW = [370, 820]; P.handRW = [420, 818]; P.wind = -0.8; } }
   return P;
 }
@@ -77,18 +77,19 @@ function sbNestWorld(ctx, t, cam, S) {
   sbNestSky(ctx, cam, t);
   // the sun (covered by a wing at 47.28) and two real birds that flee
   sbSun(ctx, 1250, -60, 70, '#fffbe0', '#ffe0a0', t > 47.2 && t < 47.95 ? 0.25 : 1);
-  if (t > 47.2 && t < 47.95) { const u = (t - 47.2) / 0.75; sbRoc(ctx, { x: K.lerp(2100, 900, u), y: 380, s: 0.6, dir: -1, spread: 1, ...sbRocFlap(t, 0.7), tuck: 1, sil: '#a88ad8', t }); sbGlow(ctx, 1250, -60, 260, 0.6, '#fff0c0'); }
-  for (let i = 0; i < 2; i++) { const u = (t - 47.3 - i * 0.12) / 0.9; if (u > 0 && u < 1) bird(ctx, { kind: 'dove', fly: true, flap: Math.sin(tc * 26 + i), x: 1100 - 900 * u, y: 120 + i * 70 - 60 * u, s: 0.4, dir: -1 }); }
+  if (t > 46.9 && t < 47.95) { const u = (t - 46.9) / 1.05; sbRoc(ctx, { x: K.lerp(2300, 900, u), y: K.lerp(200, 380, u), s: 0.6, dir: -1, spread: 1, ...sbRocFlap(t, 0.7), tuck: 1, sil: '#a88ad8', t }); sbGlow(ctx, 1250, -60, 260, 0.6, '#fff0c0'); }
+  for (let i = 0; i < 4; i++) { const u = (t - 46.6 - i * 0.12) / 0.9; if (u > 0 && u < 1) bird(ctx, { kind: 'dove', fly: true, flap: Math.sin(tc * 26 + i), x: 1300 - 1000 * u, y: 420 + i * 60 - 160 * u, s: 0.4, dir: -1 }); }   // v2: birds scatter left at 46.6
   ctx.drawImage(sbNestPlate(), -500, 360);
   // the wing-shaped shadow plate (46.3 - 50.7): a cooler repaint of the set seen through a moving wing mask (the cast keeps its colours)
-  const shK = K.clamp((t - 46.3) / 0.3) * (1 - K.clamp((t - 50.4) / 0.3)), shX = K.lerp(2600, 600, K.ease.out(K.clamp((t - 46.3) / 1.6)));
-  if (shK > 0) { ctx.save(); ctx.globalAlpha = 0.55 * shK; ctx.globalCompositeOperation = 'multiply'; ctx.fillStyle = '#9a86d8'; ctx.beginPath(); ctx.moveTo(shX - 1500, 1600); ctx.bezierCurveTo(shX - 1300, 700, shX - 600, 500, shX, 560); ctx.bezierCurveTo(shX + 500, 450, shX + 1200, 300, shX + 2400, 600); ctx.lineTo(shX + 2400, 1600); ctx.closePath(); ctx.fill(); ctx.restore(); }
   // the wind: grass and leaves stream across (44.06 - 47.9)
   if (t > 44.06 && t < 49.6) { const k = Math.min(1, (t - 44.06) / 0.4) * (t > 48.94 ? Math.max(0, 1 - (t - 48.94) / 0.6) : 1); ctx.save(); ctx.globalAlpha = 0.9 * k; sbSpeed(ctx, [cam.x - 1300, 300, 2600, 700], t, { dir: 1, speed: 1800, n: 20, alpha: 0.35, col: '#ffffff', col2: '#d8ffd0' });
     const Rl = K.rng(3); for (let i = 0; i < 14; i++) { const ph = Rl(), x = 1800 - (((t * 900 + ph * 2600) % 2600)), y = 500 + Rl() * 450 + 30 * Math.sin(t * 6 + i); ctx.save(); ctx.translate(x, y); ctx.rotate(t * 8 + i); celShade(ctx, [[-12, 0], [0, -6], [12, 0], [0, 6]], ['#5ac86a', '#9ae08a', '#ffcf3a'][i % 3], '#2f7a44', { light: [0, -1], off: 2, lw: 1.5 }); ctx.restore(); } ctx.restore(); }
   sbNestLogs(ctx, 'back');
   if (R) sbRoc(ctx, R, 'back');
-  const E = SB2_EGG(t); sbRocEgg(ctx, SB_NEST.egg, 900, { wobble: E.wobble, glint: (t - 37.9) / 0.8 });
+  const E = SB2_EGG(t); sbRocEgg(ctx, SB_NEST.egg, 900, { seat: 30, wobble: E.wobble, glint: (t - 37.9) / 0.8 });
+  // v2: the wing-shaped shadow now passes over the egg too (drawn after it; the cast keeps its colours)
+  const shK = K.clamp((t - 46.3) / 0.3) * (1 - K.clamp((t - 50.4) / 0.3)), shX = K.lerp(3400, 600, K.clamp((t - 46.3) / 1.4));
+  if (shK > 0) { ctx.save(); ctx.globalAlpha = 0.8 * shK; ctx.globalCompositeOperation = 'multiply'; ctx.fillStyle = '#8a76d0'; ctx.beginPath(); ctx.moveTo(shX - 1500, 1600); ctx.bezierCurveTo(shX - 1300, 700, shX - 600, 500, shX, 560); ctx.bezierCurveTo(shX + 500, 450, shX + 1200, 300, shX + 2400, 600); ctx.lineTo(shX + 2400, 1600); ctx.closePath(); ctx.fill(); ctx.restore(); }
   if (t > 39.54 && t < 40.2) for (let i = 0; i < 5; i++) { const u = (t - 39.54 - i * 0.05) / 0.5; if (u > 0 && u < 1) sbBlob(ctx, 560 + i * 200, 820 + 80 * u * u, 4, 4, '#c8a070', '#8a6a40', { lw: 1, off: 1 }); }
   // the feather: on the ground in the ring (S6), lifted (40.76), lowered (43.3), dropped in the dive (48.2)
   const sinP = t < 54.98 ? sbNestSinP(t) : null;
@@ -136,7 +137,7 @@ function sbS8SinP(t) { const tc = SB_T2(t), x = SB2_S8X(t), P = sbLive(t, 11, { 
 function sbS8World(ctx, t, cam, S) {
   const tc = SB_T2(t), R = sbRocSitP(t);
   sbNestSky(ctx, cam, t); ctx.drawImage(sbNestPlate(), -500, 360); sbNestLogs(ctx, 'back');
-  sbRoc(ctx, R, 'back'); sbRocEgg(ctx, SB_NEST.egg, 900, {});
+  sbRoc(ctx, R, 'back'); sbRocEgg(ctx, SB_NEST.egg, 900, { seat: 30 });
   const P = sbS8SinP(t);
   // the cloth behind the shank (back pass) while it goes round
   if (t > 59.16 && t < 60.0) sbCloth(ctx, [P.handLW, [620, 740], [640, 748]], { w: 13 });
@@ -172,7 +173,7 @@ function sbS9World(ctx, t, cam, S) {
   sbNestSky(ctx, cam, t); ctx.drawImage(sbNestPlate(), -500, 360); sbNestLogs(ctx, 'back');
   const ak = sbRocAnkle({ ...R, feet: R.feet }), ank = [ak[0], ak[1] - 60], L = 420, hang = ak[1] + L < 900;
   groundShadow(ctx, R.x - 200, 905, 900, 900 - R.y, { flat: true, fall: 1600 });
-  sbRoc(ctx, R, 'back'); sbRocEgg(ctx, SB_NEST.egg, 900, {});
+  sbRoc(ctx, R, 'back'); sbRocEgg(ctx, SB_NEST.egg, 900, { seat: 30 });
   sbRoc(ctx, R, 'front');
   if (t > 64.56 && t < 65.2) { dustBurst(ctx, 900, 905, t - 64.56, 10, 16, 46, 420, 0.9, 3); sbRing(ctx, 900, 905, (t - 64.56) / 0.6, 700, { a: 0.6 }); }
   // Sinbad: grips the cloth, feet apart, eyes shut, one eye open; plucked off the ground feet last

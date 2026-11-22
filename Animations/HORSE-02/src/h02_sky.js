@@ -13,8 +13,9 @@ const H2_PAN = H2_F([[12.6, 0], [13.64, 40], [19.6, 1330], [20.2, 1400], [26, 14
 const H2_LANDTOP = H2_F([[9.3, 1090], [10.5, 900], [12.56, 610], [13.6, 520], [26, 520]]);
 // the rig: [t, cx, cy, s, pitch (nose up > 0)]
 const H2_RIG = [
-  [0, 560, 520, 0.408, 0], [1.9, 545, 470, 0.5, 0], [5.6, 540, 445, 0.55, 0], [5.8, 530, 400, 0.6, 0], [7.4, 520, 380, 0.6, 0], [8.0, 520, 385, 0.6, -0.21],
-  [8.66, 520, 420, 0.6, -0.21], [9.3, 520, 470, 0.6, -0.18], [10.1, 500, 430, 0.6, -0.12], [12.56, 400, 330, 0.55, -0.16], [13.6, 330, 300, 0.5, -0.17], [21.34, 360, 300, 0.5, -0.17],
+  // v2 (Fable 1 note 8): starts on HORSE-01 v2's last frame (rig 520, 560, s 0.66 over the half-sunk sun); 1.3x larger in the descent and the pan
+  [0, 520, 560, 0.66, 0], [1.9, 525, 535, 0.7, 0], [5.6, 530, 510, 0.72, 0], [5.8, 530, 470, 0.74, 0], [7.4, 520, 450, 0.74, 0], [8.0, 520, 455, 0.74, -0.21],
+  [8.66, 520, 490, 0.74, -0.21], [9.3, 520, 520, 0.76, -0.18], [10.1, 500, 480, 0.78, -0.12], [12.56, 420, 400, 0.72, -0.16], [13.6, 360, 360, 0.65, -0.17], [21.34, 390, 360, 0.65, -0.17],
 ];
 function h2RigKey(t) { let i = 0; while (i < H2_RIG.length - 2 && t >= H2_RIG[i + 1][0]) i++; const A = H2_RIG[i], B = H2_RIG[i + 1], u = K.ease.inOut(K.clamp((t - A[0]) / (B[0] - A[0])));
   return A.slice(1).map((v, k) => K.lerp(v, B[k + 1], u)); }
@@ -27,16 +28,16 @@ function h2SkyHorse(t) {
 }
 const h2Loc = (lx, ly) => [(lx + 8) * 0.9 / 0.95 - 22, (ly + 238) * 0.9 / 0.95 - 52];
 function h2SkyRider(t, H) {
-  const tc = EH_T2(t), sd = 3, P = { lid: ehLid(t, sd), mouth: 'closed', handL: [70, -110], handR: [76, -100], sq: breathe(tc, sd, 0.016), lurch: 0.06 + idleSway(tc, 31, 0.025, 2.2), gaze: [0.6, 0.4], brow: 0 };
+  const tc = EH_T2(t), sd = 3, P = { lid: ehLid(t, sd), mouth: 'closed', handL: [-48 + 6 * idleSway(tc, 41, 1, 2.3), -96 + 5 * idleSway(tc, 43, 1, 3.1)], handR: [62, -100], sq: breathe(tc, sd, 0.016), lurch: 0.06 + idleSway(tc, 31, 0.025, 2.2), gaze: [0.6, 0.4], brow: 0 };
   const lv = h2Loc(EH_EBG.lever[0] + 10, EH_EBG.lever[1] + 4), mane = (j) => { const [mx, my] = EH_EBG.mane[j]; return h2Loc(mx - 6, my - 6); }, hug = () => { P.handL = mane(4); P.handR = mane(2); };
   if (t < 5.6) { P.handR = [lv[0] + tremble(tc, 1.2, 7), lv[1]]; P.handL = [76, -112]; P.lurch = 0.28; P.gaze = [0.9, 0.1]; P.brow = -0.2; P.lid = Math.max(P.lid, 0.2); }
   else if (t < 5.8) { P.handR = [lv[0] - 14, lv[1] + 12]; P.handL = [76, -112]; P.lurch = 0.22; P.gaze = [0.8, 0.2]; P.eyes = 'wide'; }
-  else if (t < 7.4) { hug(); P.eyes = 'wide'; P.lurch = 0.12 + tremble(tc, 0.006, 5); P.gaze = t < 6.6 ? [0.2, 1] : [0.9, -0.15]; P.lid = Math.max(ehLid(t, sd, [6.62]), 0); P.sq *= 1.01; }
+  else if (t < 7.4) { P.handR = [62, -100]; P.handL = [-30, -120]; P.eyes = t < 6.6 ? 'shut' : 'wide'; P.drop = t < 6.6 ? -8 : 0; P.lurch = 0.12 + tremble(tc, 0.006, 5); P.gaze = t < 6.6 ? [0.2, 1] : [0.9, -0.15]; P.lid = Math.max(ehLid(t, sd, [6.62]), 0); P.sq *= t < 6.6 ? 1.03 : 1.01; }
   else if (t < 8.66) { hug(); const back = flow(tc, [[7.4, 0], [8.0, 1], [8.66, 1]]); P.lurch = 0.12 - 0.22 * back - lagged((u) => 0.22 * flow(u, [[7.4, 0], [8.0, 1], [8.66, 1]]), tc, 0.1, 0.5); P.eyes = 'wide'; P.mouth = t > 8.0 ? 'o' : 'closed'; P.gaze = [0.3, 1]; P.brow = -0.5; }
   else if (t < 10.08) { hug(); P.eyes = t < 9.4 ? 'shut' : 'wide'; P.mouth = 'frown'; P.lurch = -0.06; P.brow = -0.5; P.gaze = [0.2, 1]; }
   else if (t < 11.22) { const ex = flow(tc, [[10.08, 0], [10.5, 1], [11.0, 0.7], [11.22, 0.5]]); P.sq *= 1 - 0.06 * ex; P.drop = 12 * ex + lagged((u) => 12 * flow(u, [[10.08, 0], [10.5, 1], [11.0, 0.7], [11.22, 0.5]]), tc, 0.12, 0.6); P.lid = 0.7 * ex; P.mouth = t < 10.6 ? 'o' : 'smile'; P.lurch = 0.2 * ex; hug(); }
   else if (t < 11.84) { const nk = h2Loc(110, -250); P.handR = [nk[0], nk[1] - 10 * Math.abs(Math.sin((tc - 11.22) * Math.PI / 0.15))]; P.handL = t > 11.5 ? [K.lerp(-34, 24, ehE(tc, 11.5, 0.3)), -212] : [60, -110]; P.mouth = 'smile'; P.lid = 0.3; P.gaze = [0.5, 0.6]; P.drop = 5; }
-  else if (t < 12.56) { P.lurch = 0.02; P.gaze = [0.3, 1]; P.brow = 0.4; P.mouth = 'smile'; P.handL = [70, -110]; P.handR = [76, -100]; P.sq *= 1.02; }
+  else if (t < 12.56) { P.lurch = 0.02; P.gaze = [0.3, 1]; P.brow = 0.4; P.mouth = 'smile'; P.sq *= 1.02; }
   else if (t < 13.6) { P.lurch = 0.16 + idleSway(tc, 31, 0.02, 2.2); P.handR = [30, -214]; P.handL = [70, -108]; P.gaze = [0.4, 1]; P.brow = 0.3; }
   else if (t < 15.14) { P.gaze = [0.25 + 0.15 * Math.sin(tc * 0.8), 1]; P.mouth = 'o'; P.brow = 0.4; }
   else if (t < 16.0) { const ARC = [[15.14, 0], [15.5, 0.5], [16.0, 1]], u = flow(tc, ARC), ang = K.lerp(-0.3, 2.4, u); P.handR = [36 + Math.cos(ang) * 80, -160 - Math.sin(ang) * 60]; const g = flow(tc - 0.12, ARC); P.gaze = [Math.cos(K.lerp(-0.3, 2.4, g)) * 0.9, 0.6]; P.mouth = 'o'; P.brow = 0.5; }
@@ -46,26 +47,38 @@ function h2SkyRider(t, H) {
   else if (t < 20.2) { const sh = flow(tc, [[19.24, 0], [19.5, 1], [19.9, 1], [20.2, 0.3]]); P.handL = [K.lerp(70, -60, sh), K.lerp(-110, -104, sh)]; P.handR = [K.lerp(76, 66, sh), -104]; P.sq *= 1 + 0.03 * sh; P.drop = -6 * sh; P.mouth = 'frown'; P.brow = 0.6 * sh; P.gaze = t > 19.8 ? [0.9, 0.7] : [0.3, 0.8]; }
   else if (t < 21.34) { P.gaze = [0.95, 0.6]; P.tip = 0.06 * ehE(tc, 20.6, 0.4); P.mouth = 'o'; P.eyes = t > 20.6 ? 'wide' : 'open'; P.lid = Math.max(P.lid, ehBlinkAt(tc, 20.66)); }
   else { P.gaze = [0.9, 0.7]; P.mouth = 'smile'; P.brow = 0.3; P.lurch = 0.1 + 0.12 * ehE(tc, 24.96, 0.5); }
+  if (t >= 13.6 && t < 18.68) { const lo = Math.max(pulse(tc, 14.3, 0.9), pulse(tc, 16.04, 0.9), pulse(tc, 17.34, 0.9)); P.lurch += 0.16 * lo; P.tip = (P.tip || 0) + 0.06 * lo; if (lo > 0.3) P.gaze = [0.35, 1]; }
   return P;
 }
 // the sunset / dusk mix of the sky plate (sunset until the deck swallows the frame, then dusk)
 function h2SkyMix(t) { return K.clamp((t - 8.8) / 0.4); }
 function h2Deck(t) { if (t < 8.0) return 760 - 15 * ehE(t, 5.8, 2); return kfn(t, [[8.0, 745], [8.66, 520], [9.3, -560]], 'in'); }
 function h2Underside(t) { return t < 9.3 || t > 10.2 ? null : kfn(t, [[9.3, 1300], [10.2, -420]], 'out'); }
+// HORSE-01 v2's closing wide (h01_deck.js h1SunsetBack) with a lift: the whole deck rises past the horse as it drops (8.0 - 9.3)
+function h2DeckLift(t) { return t < 8.0 ? 0 : kfn(t, [[8.0, 0], [8.66, 220], [9.3, 1500]], 'in'); }
+function h2SunsetBack(ctx, T, lift) {
+  const sink = 60 * ehE(T, 132.14, 5.9, 'inOut'), sun = [600, 700 + sink - lift, 150]; ehGrad(ctx, 0, 0, 1000, 1230, H1_SUNSET_SKY);
+  ctx.save(); ehGlint(ctx, 150, 300 - lift * 0.3, 22, 0.5); ehGlow(ctx, 150, 300 - lift * 0.3, 40, 0.6, '#fff6ea');
+  ctx.drawImage(ehBakeAt('h1moon', 120, 120, (lc) => { lc.fillStyle = '#fff6d8'; lc.beginPath(); lc.arc(60, 60, 34, 0, 7); lc.fill(); lc.globalCompositeOperation = 'destination-out'; lc.beginPath(); lc.arc(74, 50, 32, 0, 7); lc.fill(); }), 820, 240 - lift * 0.3); ctx.restore();
+  h1DeckBack(ctx, T, { pal: 'sunset', cam: { hy: 770, z: 1 }, speed: 0.35, fx0: 1383, lift, under: (c) => { ehGlow(c, sun[0], sun[1], sun[2] * 3.2, 0.8, '#ff9a60'); ehRays(c, sun[0], sun[1] - 20, T, 0.7);
+    celShade(c, ell(sun[0], sun[1], sun[2], sun[2], 48), '#fff2b8', '#ffc060', { light: [-1, -1], off: 26, hi: '#ffffff', lw: 4, line: '#ff8a4a' }); } });
+  ctx.save(); ctx.globalCompositeOperation = 'screen'; ehGlow(ctx, sun[0], 790 - lift, 420, 0.55, '#ff9a5a'); ctx.restore();
+}
 function h2SkyPanel(ctx, t, S) {
   const tc = EH_T2(t), H = h2SkyHorse(t), mix = h2SkyMix(t), sy = H2_SY0 + H2_SY(t), sx = H2_SX0 + H2_SX(t);
   // plates: sunset (episode 1's closing plate) and dusk below the deck
-  if (mix < 1) ctx.drawImage(ehSkyPlate('sunset'), 0, 0, 1000, 1230); if (mix > 0) ehImg(ctx, ehSkyPlate('dusk'), 0, 0, 1000, 1230, mix);
-  if (t < 9.3) { const sun = [620, 740 + 12 * t, 92]; ehGlow(ctx, sun[0], sun[1], sun[2] * 5, 0.7, '#ffc890'); celShade(ctx, ell(sun[0], sun[1], sun[2], sun[2], 40), '#ffd27a', ehMix('#ffd27a', '#ff9a5a', 0.3), { light: [-1, -1], off: 14, lw: 0 }); ehRays(ctx, sun[0], sun[1], t, 1.2);
+  const T1 = 138.0 + t, dl = h2DeckLift(t);
+  if (t < 9.3) h2SunsetBack(ctx, T1, dl); if (mix > 0) ehImg(ctx, ehSkyPlate('dusk'), 0, 0, 1000, 1230, mix);
+  if (false) { const sun = [620, 740 + 12 * t, 92]; ehGlow(ctx, sun[0], sun[1], sun[2] * 5, 0.7, '#ffc890'); celShade(ctx, ell(sun[0], sun[1], sun[2], sun[2], 40), '#ffd27a', ehMix('#ffd27a', '#ff9a5a', 0.3), { light: [-1, -1], off: 14, lw: 0 }); ehRays(ctx, sun[0], sun[1], t, 1.2);
     ctx.save(); ctx.globalCompositeOperation = 'screen'; ehGlow(ctx, 620, 760, 360, 0.5, '#ff9a7a'); ctx.restore(); }
   else { ehGlow(ctx, 880, 180, 120, 0.4, '#ffe6b8'); celShade(ctx, ell(880, 180, 26, 26, 24), '#ffeab8', '#f2cf98', { off: 5, lw: 0 }); }
   // the land below (dusk): rises into view after the deck, then the S3 pan
   if (t >= 9.3) ehFarLand(ctx, H2_PAN(t), H2_LANDTOP(t), t, { caravan: K.clamp((t - 14.3) / 0.8), lit: [K.clamp((t - 17.34) / 0.5), K.clamp((t - 17.7) / 0.5), K.clamp((t - 18.1) / 0.6)], glintDome: t > 20.5 && t < 21.3 ? (t - 20.5) / 0.8 : 0 });
   if (t >= 9.3) { const ly = H2_LANDTOP(t); ehGrad(ctx, 0, ly - 90, 1000, 150, [[0, 'rgba(255,190,170,0)'], [0.6, 'rgba(255,196,170,0.85)'], [1, 'rgba(255,200,170,0)']]); }
   const pal = t < 9.0 ? 'sunset' : 'dusk';
-  ehTile(ctx, ehCloudTile('far', pal), sx * 0.2, sy * 0.2, t >= 9.3 ? 0.45 : 0.8); ehTile(ctx, ehCloudTile('mid', pal), sx * 0.5 + 300, sy * 0.5 + 500, t >= 9.3 ? 0.55 : 0.9);
-  const deck = h2Deck(t), deckFront = t >= 8.66 && t < 9.4;
-  if (!deckFront && t < 8.66) { ehDeck(ctx, deck, sx, t, 'sunset'); const k = K.clamp(1 - (deck - 520) / 300); ctx.save(); ctx.globalAlpha = 0.2; ctx.fillStyle = '#7a4a8a'; ctx.beginPath(); ctx.ellipse(H.x + 40, deck + 30, 230 * H.s * (0.4 + 0.6 * k), 22 * H.s * (0.4 + 0.6 * k), 0, 0, 7); ctx.fill(); ctx.restore(); }
+  if (t >= 9.3) { ehTile(ctx, ehCloudTile('far', pal), sx * 0.2, sy * 0.2, 0.45); ehTile(ctx, ehCloudTile('mid', pal), sx * 0.5 + 300, sy * 0.5 + 500, 0.55); }
+  const deck = h2Deck(t), deckFront = false;
+  if (false) { ehDeck(ctx, deck, sx, t, 'sunset'); const k = K.clamp(1 - (deck - 520) / 300); ctx.save(); ctx.globalAlpha = 0.2; ctx.fillStyle = '#7a4a8a'; ctx.beginPath(); ctx.ellipse(H.x + 40, deck + 30, 230 * H.s * (0.4 + 0.6 * k), 22 * H.s * (0.4 + 0.6 * k), 0, 0, 7); ctx.fill(); ctx.restore(); }
   // the horse's tiny shadow sliding over the land (S3)
   if (t >= 12.0) { const ly = H2_LANDTOP(t) + 260; ctx.save(); ctx.globalAlpha = 0.25; ctx.fillStyle = '#5a3a6a'; ctx.beginPath(); ctx.ellipse(H.x + 60, ly, 34, 6, 0, 0, 7); ctx.fill(); ctx.restore(); }
   // swallows scatter from its path as it drops out of the deck (out of sync)
@@ -76,6 +89,7 @@ function h2SkyPanel(ctx, t, S) {
   const capeAng = flow(t, [[7.4, Math.PI * 0.94], [8.2, Math.PI + 0.45], [12.6, Math.PI + 0.42], [13.6, Math.PI + 0.3]]);
   const draw = (c) => { ehWindRibbons(c, H, tc, { ang: back + (t >= 7.4 ? -0.25 : 0.1), len: 200 }); ehRide(c, H, 'firuz', PP, t, { tc, stream: 1, ang: capeAng }); };
   if (t < 9.0) castFinish(ctx, H.x, H.y + 60 * H.s, 700 * H.s, 900 * H.s, draw, { rim: '#ff9a6a', light: [1, 0.4], rimW: 3 }); else castFinish(ctx, H.x, H.y + 60 * H.s, 700 * H.s, 900 * H.s, draw, { rim: '#ffc8e0', light: [1, -0.6], rimW: 2.5 });
+  if (t < 9.3) h1DeckFront(ctx, T1, { pal: 'sunset', y: 1010 - dl * 1.5, speed: 0.35, a: 0.9 });
   // entering the deck: wisps curl up where it goes in; the deck in front swallows the frame
   if (deckFront) { ehDeck(ctx, deck, sx, t, 'sunset'); if (t < 9.1) for (const sd of [-1, 1]) { const u = (t - 8.7) / 0.4; if (u > 0) { ctx.save(); ctx.globalAlpha = 1 - u; ctx.drawImage(ehCloudSprite(1, 'sunset'), H.x + sd * 90 * H.s - 90, deck - 60 - 60 * u, 180, 60); ctx.restore(); } } }
   const us = h2Underside(t); if (us != null) { const pal2 = EH_CLOUDC.dusk; ctx.fillStyle = ehMix(pal2[1], '#ffffff', 0.3); if (us > 0) ctx.fillRect(0, 0, 1000, us); ctx.save(); ctx.translate(0, us); ctx.scale(1, -1); const img = ehDeckStrip('dusk'); ctx.drawImage(img, -((sx % 1000) + 1000) % 1000, -120, 1000, 520); ctx.drawImage(img, 1000 - ((sx % 1000) + 1000) % 1000, -120, 1000, 520); ctx.restore(); }
@@ -87,10 +101,13 @@ function h2SkyPanel(ctx, t, S) {
   if (t > 5.6 && t < 5.9) { const [x, y] = ehHorsePt(H, EH_EBG.chest); ehGlint(ctx, x, y, 30, (t - 5.6) / 0.3); }
   h2SkyOver(ctx, t, S, H, head);
 }
-function h2SkyOver(ctx, t, S, H, head) {
+function h2Title(ctx, t, S) {   // v2 (note 12): held over the lever insert until 3.4
   if (t < 3.4) { const a = 1 - K.clamp((t - 3.0) / 0.4); ctx.save(); ctx.globalAlpha *= a;
     S.title(ctx, 'LOST ABOVE', 500, 170, K.clamp((t - 0.3) / 0.9), { size: 78, align: 'center' }); S.title(ctx, 'THE CLOUDS', 500, 262, K.clamp((t - 0.45) / 0.9), { size: 78, align: 'center' });
     if (t > 0.8) S.title(ctx, 'تائه فوق الغيوم', 500, 368, K.clamp((t - 0.8) / 0.9), { size: 70, align: 'center', font: 'Lalezar', glow: '#8a5cff' }); ctx.restore(); }
+}
+function h2SkyOver(ctx, t, S, H, head) {
+  h2Title(ctx, t, S);
   if (t >= 10.3 && t < 11.6) { ctx.save(); ctx.globalAlpha *= K.clamp((11.6 - t) / 0.3); S.title(ctx, 'PHEW!', head[0] + 190, head[1] - 90 - 20 * K.clamp((t - 10.3) / 1.2), K.clamp((t - 10.3) / 0.3), { size: 70, align: 'center' }); ctx.restore(); }
   if (t >= 18.68 && t < 20.6) { const pan = H2_PAN(t), ly = H2_LANDTOP(t); EH_FAR.towns.slice(0, 2).forEach(([tx, ty], i) => { const a = 18.68 + i * 0.25; if (t < a) return; const x = tx - pan, y = ly + ty - 110; if (x < -60 || x > 1060) return;
     ctx.save(); ctx.globalAlpha *= K.clamp((20.6 - t) / 0.4); const pop = 1 + 0.15 * Math.max(0, 1 - (t - a) / 0.2); ctx.translate(x, y); ctx.scale(pop, pop); S.label(ctx, '???', 0, 0, K.clamp((t - a) / 0.25), { size: 48 }); ctx.restore(); }); }
@@ -119,7 +136,7 @@ function h2LeverInsert(ctx, t, S) {
   if (t >= 3.64 && t < 3.92) { hx -= 6 * pulse(tc, 3.64, 0.28); grip = 1.1; }
   if (t >= 5.2) { const u = ehE(tc, 5.2, 0.3); hx -= 40 * u; hy += 26 * u; grip = 1 - 0.7 * u; }
   handInsert(ctx, hx + (t > 5.2 ? tremble(t, 1.2, 6) : 0), hy, { s: 0.95, grip, rot, sleeve: '#eadcc0', cuff: '#f2c040' });
-  ctx.restore();
+  ctx.restore(); h2Title(ctx, t, S);
 }
 // ---------- S4: the river city at dusk (plate world), the horse coming in small ----------
 const H2_CITYCAM = [[21.34, { x: 700, y: 730, zoom: 0.8 }], [25.72, { x: 770, y: 720, zoom: 0.84 }]];

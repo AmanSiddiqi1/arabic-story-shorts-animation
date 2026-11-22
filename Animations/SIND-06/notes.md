@@ -33,3 +33,4 @@ from timing.json; chunks files untouched. No "arabicFont" in story.json. Arabic 
 - S19/S20: the royal dhow arrives facing left (it came from the right); the gangplank runs from its forward half to the quay.
 - Speech balloons sit about 230 units above the speaker so the tails stay short.
 - Sound: the 8 plan effects at the plan times; nothing under CRASH!; the DAYS LATER... transition is silent.
+- Balloons: sbSay in this story's sb_kit.js copy clamps the balloon centre so every balloon stays inside the panel (WE STAY. ran off the right edge). Checked on stills 20.6-135.3 s.

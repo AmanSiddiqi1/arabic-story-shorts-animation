@@ -7,11 +7,11 @@ const H2_ROOF_A = 25.72, H2_ROOF_B = 98.35, H2_ROOF_C = 126.7;
 const H2_LAND_X = H2_F([[25.72, 560], [26.8, 640], [30, 640]]);
 const H2_LAND_L = [[25.72, 470], [26.8, 80], [26.82, 80], [26.9, 58], [27.0, 58], [27.08, 38], [27.2, 38], [27.28, 18], [27.4, 18], [27.46, 0]];
 const H2_HOVER = H2_F([[83.52, 0], [84.8, 150], [86.6, 150], [87.24, 0], [88, 0]]);
-const H2_TO = [[142.74, 640, 736, 0.9, 0], [143.4, 700, 590, 0.74, 0.35], [144.2, 880, 205, 0.34, 0.3], [145.3, 1040, 330, 0.15, 0.05], [146.4, 1180, 458, 0.06, 0], [147.3, 1240, 500, 0.03, 0]];
+const H2_TO = [[142.74, 640, 736, 0.9, 0], [143.4, 700, 590, 0.74, 0.35], [144.2, 880, 205, 0.34, 0.3], [145.3, 1050, 170, 0.15, 0.12], [146.4, 1185, 165, 0.05, 0.05], [147.3, 1230, 165, 0.02, 0]];
 function h2RoofHorse(t) {
   const tc = EH_T2(t);
   if (t >= 142.74) { let i = 0; while (i < H2_TO.length - 2 && t >= H2_TO[i + 1][0]) i++; const A = H2_TO[i], B = H2_TO[i + 1], u = K.ease.inOut(K.clamp((t - A[0]) / (B[0] - A[0])));
-    const [cx, cy, s, p] = A.slice(1).map((v, k) => K.lerp(v, B[k + 1], u)); const H = ehRigP(cx, cy + idleSway(tc, 5, 5, 2.6), s, 1, p, { lit: { neck: 0.3, chest: 0.3, joints: 0.3, hooves: 0.3 } }); H.air = true; H.lift = 900 - H.y; H.gone = t > 147.2; return H; }
+    const [cx, cy, s, p] = A.slice(1).map((v, k) => K.lerp(v, B[k + 1], u)); const H = ehRigP(cx, cy + idleSway(tc, 5, 5, 2.6), s, 1, p, { lit: { neck: 0.3, chest: 0.3, joints: 0.3, hooves: 0.3 } }); H.air = true; H.lift = 900 - H.y; H.gone = t > 146.75; return H; }
   let x = 640, lift = 0, lit = {};
   if (t < 27.46) { x = H2_LAND_X(t); lift = kfn(tc, H2_LAND_L, 'lin'); lit = { neck: 0.25, chest: 0.25, joints: 0.25, hooves: 0.25 }; }
   else if (t < 27.9) { const f = Math.floor((t - 27.46) * 12) % 2 ? 0.5 : 0.1; lit = { neck: f, chest: f, joints: f, hooves: f }; }
@@ -23,7 +23,7 @@ function h2RoofHorse(t) {
 const h2HP = (H, p) => ehHorsePt(H, p);
 
 // ---------- Firuz ----------
-const H2_FZX = H2_F([[29.75, 755], [32.6, 755], [33.4, 845], [34.76, 845], [36.9, 1110], [37.48, 1120], [38.42, 1120], [39.2, 1150], [42.24, 1150], [43.0, 1185], [50.84, 1185], [51.3, 1140], [63.3, 1140], [64.8, 840], [72.0, 840], [72.8, 930], [78.75, 930], [79.5, 790], [81.86, 790]]);
+const H2_FZX = H2_F([[29.75, 755], [32.6, 755], [33.4, 845], [34.76, 845], [36.9, 1110], [37.48, 1120], [38.42, 1120], [39.2, 1150], [42.24, 1150], [43.0, 1185], [44.24, 1185], [45.3, 960], [51.3, 960], [51.5, 1030], [51.9, 1030], [52.3, 965], [63.3, 965], [64.8, 840], [72.0, 840], [72.8, 1000], [78.75, 1000], [79.5, 860], [81.86, 860]]);
 const H2_FZX2 = H2_F([[96.9, 765], [97.25, 790], [97.6, 790], [98.35, 900]]);
 const H2_FZX3 = H2_F([[126.7, 1300], [127.6, 900], [140.64, 900], [140.95, 800], [141.0, 795]]);
 const H2_BOW = [[60.83, 0], [60.97, -0.05], [61.3, 0.5], [61.5, 0.48], [61.64, 0.15], [62.0, 0]];
@@ -57,14 +57,14 @@ function h2FzGround(t, H) {
       if (t >= 42.24 && t < 43.06) { Object.assign(P, walk(H2_FZX, tc, { stride: 22 })); P.amp *= 1.3; P.lid = Math.max(P.lid, t % 0.38 < 0.12 ? 0.8 : 0); }
       if (t >= 43.06) { P.ph = Math.PI / 2; P.amp = K.lerp(1.0, 0, ehE(tc, 43.4, 0.8)); P.gaze = look([EH_ROOF.win[0] + 40, EH_ROOF.win[1] + 40]); P.sq *= 1 - 0.03 * pulse(tc, 43.6, 0.3); P.handR = [-26, -96]; o.cup = null; P.mouth = 'closed'; P.eyes = 'open'; } }
     // S7-S8: in the lamp light; caught with the cup; the wave; sets the cup back; the question; points straight up
-    else if (t < 60.83) { P.gaze = Pr ? look(ehHeadOf(Pr)) : [1, 0]; P.handR = [-26, -96]; P.handL = [-40, -100]; P.eyes = t < 50.84 ? 'wide' : 'open'; P.mouth = t < 50.84 ? 'o' : 'smile';
-      if (t >= 50.84 && t < 51.46) { P.sq *= 1 + 0.05 * pulse(tc, 50.84, 0.3); P.handR = [56, -188]; o.cup = { hand: 'R', tilt: 0 }; P.brow = 0.6; P.tip = -0.04; o.sweat = true; }
+    else if (t < 60.83) { P.dir = 1; P.gaze = Pr ? look(ehHeadOf(Pr)) : [1, 0]; P.handR = [-26, -96]; P.handL = [-34, -70]; if (t < 45.3) { P.amp = (P.amp || 0) * 0.7; P.tip = -0.05; } P.eyes = t < 50.84 ? 'wide' : 'open'; P.mouth = t < 50.84 ? 'o' : 'smile';
+      if (t >= 50.84 && t < 51.46) { P.sq *= 1 + 0.05 * pulse(tc, 50.84, 0.3); P.handR = [56, -150]; o.cup = { hand: 'R', tilt: 0 }; P.handL = [-50 + 14 * Math.sin((tc - 50.9) * 24), -190]; P.brow = 0.6; P.tip = -0.04; o.sweat = true; }
       if (t >= 51.46 && t < 52.2) { P.handL = [-64 + 18 * Math.sin((tc - 51.46) * 26), -196]; if (t < 51.9) { P.handRW = [EH_ROOF.hook[0] + 4, EH_ROOF.hook[1] + 10]; o.cup = { hand: 'R', tilt: 0 }; } P.brow = 0.6; o.sweat = t < 51.9; }
-      if (t >= 52.2) { P.handR = [30, -98]; P.handL = [-30, -98]; P.brow = t > 56.2 ? 0.4 : 0.2; P.mouth = t > 54.3 && t < 59.8 ? 'closed' : 'smile'; }
-      if (t >= 59.8) { P.mouth = t < 60.1 ? 'o' : 'closed'; const up = ehE(tc, 60.15, 0.5); P.handR = [K.lerp(30, 44, up), K.lerp(-98, -212, up)]; P.gaze = t > 60.4 ? [0.1, -1] : P.gaze; P.lid = Math.max(P.lid, ehBlinkAt(tc, 60.42)); } }
+      if (t >= 52.2) { P.handR = [14, -100]; P.handL = [-36, -70]; P.brow = t > 56.2 ? 0.4 : 0.2; P.mouth = t > 54.3 && t < 59.8 ? 'closed' : 'smile'; }
+      if (t >= 59.74) { P.mouth = t < 59.95 ? 'o' : 'closed'; const up = ehE(tc, 59.98, 0.22); if (up > 0) { P.aR = [K.lerp(0.4, Math.PI - 0.1, up), K.lerp(0.2, Math.PI - 0.02, up)]; P.handR = null; } P.gaze = t > 60.1 ? [0.1, -1] : P.gaze; P.lid = Math.max(P.lid, ehBlinkAt(tc, 60.12)); P.tip = -0.03; } }
     // S9: the bow, the explanation (backing toward the horse), the slap, the arc, the shrug
     else if (t < 71.68) { const bow = flow(tc, H2_BOW); P.tip = bow + lagged((u) => flow(u, H2_BOW), tc, 0.1, 0.4) + idleSway(tc, sd, 0.02, 2.9); P.drop = 22 * Math.max(0, bow); P.gaze = Pr ? look(ehHeadOf(Pr)) : [1, 0]; P.mouth = 'smile';
-      if (t < 61.64) { P.handR = PERSON_HANDS.chest.R; P.handL = [-8, -232 + 8 * Math.max(0, bow)]; P.lid = 0.3; }
+      if (t < 61.64) { P.handR = PERSON_HANDS.chest.R; P.handL = [-40, -90]; P.lid = 0.3; }
       else if (t < 63.3) { P.handR = [30, -100]; P.handL = [-30, -100]; P.lid = Math.max(P.lid, ehBlinkAt(tc, 61.7)); }
       else { P.talk = ehTalk(t, 63.3, 71.0, 7, 0.7); const g = Math.sin(tc * 5.3); P.handR = [70 + 14 * g, -150 - 10 * g]; P.handL = [-60 - 12 * g, -140];
         if (t < 64.8) { Object.assign(P, walk(H2_FZX, tc, { stride: 22 })); P.dir = 1; P.gaze = [0.9, -0.1]; }
@@ -82,10 +82,10 @@ function h2FzGround(t, H) {
       if (t >= 77.4 && t < 78.7) { P.mouth = 'smile'; P.brow = 0.4; P.lid = 0.15; }
       if (t >= 78.7) { P.handR = t < 79.0 ? PERSON_HANDS.pointUp.R : [40, -110]; P.brow = -0.4; P.mouth = 'closed'; o.swing = 0.3; } }
     // S11: beckons, points at the knob and the lever, unties the rope
-    else { P.x = 790; P.dir = t < 79.9 ? 1 : -1; P.mouth = 'closed'; const kb = h2HP(H, EH_EBG.knob), lv = h2HP(H, EH_EBG.lever);
+    else { P.x = 860; P.dir = t < 79.9 ? 1 : -1; P.mouth = 'closed'; const kb = h2HP(H, EH_EBG.knob), lv = h2HP(H, EH_EBG.lever);
       if (t < 79.9) { P.handR = [40 + 20 * Math.sin((tc - 79.52) * 22), -150]; P.gaze = Pr ? look(ehHeadOf(Pr)) : [1, 0]; P.mouth = 'smile'; }
-      else if (t < 81.3) { P.handRW = [kb[0] + 14, kb[1]]; P.gaze = look(kb); }
-      else if (t < 81.86) { P.handRW = [lv[0] + 30, lv[1] + 40]; P.gaze = look(lv); }
+      else if (t < 81.3) { P.handR = [92, -96]; P.tip = 0.05; P.gaze = look(kb); }   // points down-left at the dial
+      else if (t < 81.86) { P.handR = [70, -196]; P.gaze = look(lv); P.lid = Math.max(P.lid, ehBlinkAt(tc, 81.32)); }   // points up at the lever
       else { P.handRW = EH_ROOF.ring; P.drop = 16; P.gaze = look(EH_ROOF.ring); } }
   } else {
     // S16-S18 at the back parapet
@@ -141,8 +141,8 @@ function h2FzRide(t, H) {
 const Pm = (t) => h2MaidRoof(t);
 
 // ---------- the princess ----------
-const H2_PRX = H2_F([[44.6, 1395], [45.5, 1300], [48.84, 1300], [49.3, 1322], [54.32, 1322], [55.2, 1270], [55.48, 1270], [56.0, 1250], [71.68, 1250], [73.25, 800], [78.9, 800], [79.8, 900], [84.98, 900], [85.6, 800], [86.5, 800], [87.0, 885], [97.6, 885], [98.35, 990]]);
-const H2_PRX3 = H2_F([[126.7, 1340], [127.6, 990], [141.0, 990], [141.4, 1060], [143.46, 1060], [144.3, 985], [152, 985]]);
+const H2_PRX = H2_F([[44.6, 1395], [45.5, 1300], [48.84, 1300], [49.3, 1322], [54.32, 1322], [55.2, 1270], [55.48, 1270], [56.0, 1250], [71.68, 1250], [73.25, 790], [78.9, 790], [79.8, 990], [84.98, 990], [85.6, 820], [86.5, 820], [87.0, 900], [97.6, 900], [98.35, 990]]);
+const H2_PRX3 = H2_F([[126.7, 1340], [127.6, 990], [141.0, 990], [141.4, 1060], [143.46, 1060], [144.2, 960], [152, 960]]);
 const H2_PR_SWEEP = [[57.48, 0], [58.1, 0.5], [58.7, 1], [59.6, 1]];
 function h2PrRoof(t) {
   if (t < 44.6 || (t >= H2_ROOF_B && t < H2_ROOF_C)) return null;
@@ -150,7 +150,7 @@ function h2PrRoof(t) {
   const head = () => ehHeadOf(P), look = (p) => lookAt(head(), p), fz = () => { const s = h2FzState(t); if (s !== 'ground') return null; return h2FzGroundPos(t); }, fzHead = () => { const f = fz(); return f ? [f[0], f[1] - 190] : [700, 560]; };
   if (t < H2_ROOF_B) {
     Object.assign(P, walk(H2_PRX, tc, { stride: 24 })); P.y = t < 45.5 ? K.lerp(905, 935, ehE(t, 44.6, 0.9)) : 935; P.vx = speed(H2_PRX, tc);
-    P.gaze = look(fzHead()); P.handL = [-26, -96]; P.handR = [26, -98];
+    P.gaze = look(fzHead()); P.handL = [10, -84]; P.handR = [26, -90];
     if (t < 45.5) { P.handLW = t < 44.9 ? [EH_ROOF.door.x0 + 6, 760] : null; P.mouth = 'closed'; P.brow = 0.3; P.lid = Math.max(P.lid, 0.15); P.tip = -0.03; }
     else if (t < 48.84) { P.brow = 0.3; P.lid = Math.max(P.lid, 0.1); }
     else if (t < 50.84) { P.eyes = 'wide'; P.mouth = 'o'; P.handR = PERSON_HANDS.chest.R; P.sq *= 1 + 0.04 * pulse(tc, 48.84, 0.35); P.tip = -0.05; P.swing = swing(tc, 48.84, 0.25); }
@@ -165,9 +165,10 @@ function h2PrRoof(t) {
       if (t >= 63.3) P.gaze = t < 70.5 ? look([300, 300]) : look(fzHead()); if (t >= 67.24 && t < 67.6) P.gaze = look([760, 760]); if (t > 69.9) { P.mouth = 'smile'; P.brow = 0.4; } }
     else if (t < 75.66) { P.handL = [-24, -84]; P.handR = [24, -84]; P.gaze = t < 73.22 ? (Math.floor((tc - 71.68) / 0.6) % 2 ? look(fzHead()) : [-1, 0]) : look([760, 700]);
       if (t >= 73.22 && t < 73.88) { P.gaze = gazePlan(tc, [[73.22, [-0.6, -0.8]], [73.5, [-0.4, 0.9]]], 0.1); P.lid = Math.max(P.lid, ehBlinkAt(tc, 73.24), ehBlinkAt(tc, 73.52)); }
-      if (t >= 73.88 && t < 74.9) { const nk = h2HP(h2RoofHorse(t), [112, -246]); P.handRW = [nk[0] + 8 * Math.max(pulse(tc, 74.0, 0.15), pulse(tc, 74.3, 0.15)), nk[1]]; P.gaze = look(nk); P.brow = 0.5 * K.clamp((t - 74.1) / 0.2); }
+      if (t >= 73.88 && t < 74.9) { const nk = h2HP(h2RoofHorse(t), [128, -196]); P.handRW = [nk[0] + 14 * Math.max(pulse(tc, 73.9, 0.12), pulse(tc, 74.1, 0.12), pulse(tc, 74.3, 0.12)), nk[1]]; P.tip = 0.05; P.gaze = look(nk); P.brow = 0.5 * K.clamp((t - 74.1) / 0.2); }
       if (t >= 74.9) { P.gaze = look([800, 650]); P.brow = 0.3; } }
     else if (t < 79.8) { P.dir = t < 79.0 ? 1 : 1; P.handR = PERSON_HANDS.hipsHands.R; P.lid = Math.max(P.lid, 0.35, flow(tc, [[75.9, 0.35], [76.1, 1], [76.3, 0.35]])); P.mouth = 'smile'; P.brow = 0.5; P.tip = 0.04;
+      P.dir = 1; P.gaze = look(fzHead()); P.handL = [10, -84];
       if (t >= 77.4 && t < 78.66) { P.talk = ehTalk(t, 77.4, 78.6, 17, 0.6); P.tip = 0.06 * Math.sin((tc - 77.4) * 14); }
       if (t >= 78.9) { P.handR = [26, -96]; P.lid = ehLid(t, sd); } }
     else if (t < 84.98) { P.dir = -1; P.gaze = t < 80.94 ? look(fzHead()) : t < 81.3 ? look(h2HP(h2RoofHorse(t), EH_EBG.knob)) : look(h2HP(h2RoofHorse(t), EH_EBG.lever)); P.tip = 0.08; P.brow = 0.4; P.lid = Math.max(P.lid, ehBlinkAt(tc, 81.32)); if (t >= 81.86) { P.gaze = look([700, 700]); P.tip = 0.02; P.eyes = t > 83.6 ? 'wide' : 'open'; } }
@@ -192,17 +193,20 @@ function h2PrRoof(t) {
     if (t >= 137.48 && t < 138.3) { P.handRW = [h2FzGroundPos(t)[0] + 44, 800 + 4 * pulse(tc, 137.8, 0.15)]; P.tip = 0.06; }
     if (t >= 139.38 && t < 140.0) { P.mouth = 'smile'; P.lid = 0.2; } if (t >= 139.96) { P.gaze = look([1100, 760]); P.handR = [60, -110]; } }
   else if (t < 143.46) { P.gaze = t < 141.96 ? [-1, 0.2] : look([700, 600]); P.handR = PERSON_HANDS.clasp.R; P.handL = PERSON_HANDS.clasp.L; P.brow = 0.3; if (t > 142.74) { P.swing = 0.5 * K.clamp(1 - (t - 142.74) / 1.2); P.eyes = 'wide'; } }
-  else { const H = h2RoofHorse(t), hp = H.gone ? [1240, 480] : [H.x, H.y - 150 * H.s]; P.gaze = look(hp); P.handL = [-34, -98]; P.handR = [34, -98]; P.tip = -0.05; P.sq *= breathe(tc, sd, 0.02);
-    if (t >= 144.64 && t < 145.74) { const u = flow(tc, [[144.64, 0], [145.1, 1], [145.7, 1]]); P.handR = [K.lerp(34, 56, u), K.lerp(-98, -168, u)]; P.lid = Math.max(P.lid, 0.2); P.brow = 0.3; }
-    if (t >= 145.74) { const u = flow(tc, [[145.74, 0], [146.3, 1]]); P.handR = [K.lerp(56, 6, u), K.lerp(-168, -124, u)]; P.lid = Math.max(ehLid(t, sd, [146.4]), 0.2); P.brow = 0.3; } }
+  else {   // v2 (Fable 1 note 5): alone at the parapet, the wave after him stops halfway, the hand comes to rest on her heart
+    const H = h2RoofHorse(t), hp = H.gone ? [1230, 165] : [H.x, H.y - 150 * H.s]; P.dir = 1; P.gaze = look(hp); P.handL = [10, -84]; P.handR = [26, -90]; P.tip = -0.06; P.sq *= breathe(tc, sd, 0.02);
+    if (t < 143.9) { P.handR = [60, -150]; P.handL = [-40, -110]; }
+    else if (t < 145.74) { const w = Math.sin((tc - 143.9) * 9); P.aR = [Math.PI - 0.5 + 0.25 * w, Math.PI - 0.2 + 0.35 * w]; P.handR = null; P.brow = 0.3; P.mouth = 'smile'; }
+    else { const u = flow(tc, [[145.74, 0], [146.1, 0.4], [146.6, 1]]); P.handR = [K.lerp(60, PERSON_HANDS.chest.R[0], u), K.lerp(-170, PERSON_HANDS.chest.R[1], u)]; P.lid = Math.max(ehLid(t, sd, [149.5]), 0.3 * u); P.brow = 0.35;
+      P.sq *= 1 - 0.03 * flow(tc, [[146.4, 0], [146.8, 1], [148.0, 0.4]]); P.mouth = 'closed'; if (H.gone) P.gaze = look([1230, 165]); } }
   return P;
 }
 // Firuz's ground position without his full pose (for gaze targets)
 function h2FzGroundPos(t) { if (t < H2_ROOF_B) return [t >= 96.9 ? H2_FZX2(t) : H2_FZX(t), H2_GY]; return [H2_FZX3(t), 886]; }
 
 // ---------- the maid ----------
-const H2_MDX = H2_F([[45.56, 1432], [46.44, 1432], [47.2, 1392], [49.4, 1392], [49.8, 1368], [55.68, 1368], [56.2, 1338], [71.9, 1338], [73.5, 1150], [73.6, 1150], [74.4, 885], [74.9, 885], [75.15, 935], [75.6, 935], [76.4, 1050], [93.2, 1050], [94.7, 790], [95.4, 790], [96.3, 985], [97.5, 985], [98.35, 1110]]);
-const H2_MDX3 = H2_F([[126.7, 1400], [139.96, 1400], [140.6, 1072], [141.2, 1072], [141.9, 1030], [152, 1030]]);
+const H2_MDX = H2_F([[45.56, 1440], [46.44, 1440], [47.2, 1420], [71.9, 1420], [73.5, 1150], [73.6, 1150], [74.4, 880], [74.9, 880], [75.15, 935], [75.6, 935], [76.4, 1100], [93.2, 1100], [94.7, 790], [95.4, 790], [96.3, 985], [97.5, 985], [98.35, 1110]]);
+const H2_MDX3 = H2_F([[126.7, 1400], [139.96, 1400], [140.6, 1072], [141.2, 1072], [142.2, 1290], [145.4, 1290], [145.9, 1190], [152, 1190]]);
 const H2_LAMPUP = [[47.2, 0], [47.7, 1], [48.0, 1]];
 function h2MaidRoof(t) {
   if (t < 45.56 || (t >= H2_ROOF_B && t < H2_ROOF_C)) return null;
@@ -216,7 +220,7 @@ function h2MaidRoof(t) {
     else if (t < 53.38) { P.drop = 18; P.tip = 0.06; P.handR = [36, -170 + tremble(tc, 3, 9)]; P.handL = [-10, -140]; lampSwing = tremble(tc, 0.06, 9); P.eyes = 'wide'; }
     else if (t < 54.32) { P.drop = 12; P.handL = [-70 + tremble(tc, 3, 11), -150]; P.handR = [10, -172]; P.talk = ehTalk(t, 53.6, 54.2, 31, 0.4); P.gaze = look([700, 720]); }
     else if (t < 71.9) { P.handR = t < 62.44 ? [38, -200] : [40, -170]; P.handL = [6, -190]; lampSwing = idleSway(tc, 19, 0.04, 1.7);
-      if (t >= 59.8 && t < 61) P.gaze = [0, -1];
+      if (t >= 60.3 && t < 61) { P.gaze = [0, -1]; P.handR = [38, -214]; }
       if (t >= 68.78 && t < 69.9) { const k = flow(tc, [[68.78, 0], [69.2, 1], [69.6, 0.2], [69.9, 0]]); P.tip = -0.14 * k; P.gaze = [-0.4, -1]; P.handL = [-70, -150]; lampSwing = 0.3 * k; } }
     else if (t < 76.4) { P.handR = [40, -150]; P.handL = [10, -120];
       if (t >= 74.3 && t < 75.0) { const eye = h2HP(h2RoofHorse(t), EH_EBG.eye); P.handRW = [eye[0] + 36, eye[1] + 6]; P.handL = [-60 + 20 * Math.sin((tc - 74.5) * 24), -190]; P.gaze = look(eye); P.tip = 0.12; P.eyes = 'wide'; }
@@ -235,8 +239,8 @@ function h2MaidRoof(t) {
   else if (t < 132.78) { P.handL = [-90 + 30 * Math.sin(tc * 24), -210]; P.handR = [36, -214]; lampSwing = 0.25 * Math.sin(tc * 24); P.eyes = 'wide'; P.mouth = 'open'; P.gaze = [-1, -0.1]; }
   else if (t < 139.96) { P.gaze = [-1, 0.2]; P.lid = Math.max(P.lid, 0.2); P.mouth = 'smile'; P.tip = 0.05; P.handL = PERSON_HANDS.clasp.L; }
   else if (t < 141.2) { const pr = h2PrRoof(t); if (pr && t > 140.6) { P.handLW = [pr.x + 26, pr.y - 120]; P.gaze = look(ehHeadOf(pr)); P.talk = ehTalk(t, 140.6, 141.2, 41, 0.5); } P.eyes = 'wide'; }
-  else if (t < 145.2) { P.gaze = t < 141.9 ? [1, -0.1] : [-0.6, -0.8]; P.eyes = 'wide'; P.tip = -0.05; }
-  else { P.dir = 1; P.gaze = [1, 0]; P.mouth = 'smile'; P.drop = 18 * pulse(tc, 145.9, 0.7); P.tip = 0.08 * pulse(tc, 145.9, 0.7); P.lid = Math.max(P.lid, t > 147 ? ehBlinkAt(tc, 147.4) : 0); if (t > 147) { P.dir = -1; P.gaze = [-0.4, -0.8]; } }
+  else if (t < 145.4) { P.dir = t < 142.2 ? 1 : -1; P.gaze = t < 141.9 ? [1, -0.1] : [-0.6, -0.8]; P.eyes = 'wide'; P.tip = -0.05; P.handL = [20, -150]; }
+  else { P.dir = t < 145.9 ? -1 : 1; P.gaze = [1, 0]; P.mouth = 'smile'; P.handL = [20, -150]; P.drop = 18 * pulse(tc, 145.9, 0.7); P.tip = 0.08 * pulse(tc, 145.9, 0.7); P.lid = Math.max(P.lid, t > 147 ? ehBlinkAt(tc, 147.4) : 0); if (t > 147) { P.dir = -1; P.gaze = [-0.4, -0.8]; } }
   return Object.assign(P, { lamp, lampSwing });
 }
 function h2LampPos(M) { const h = M.handRW || M.handR || [40, -150], w = M.handRW ? h : ehHandW(M, h); return [w[0], w[1] - 8]; }
@@ -260,20 +264,21 @@ function h2CatRoof(t) {
   }
   P.x = 560; P.sit = 1; P.crouch = 0; P.lid = ehLid(t, 45); P.dir = 1; P.gaze = [1, 0.2]; P.ears = 0.6;
   if (t > 142.74) { P.gaze = [0.5, -0.9]; P.ears = 1; }
-  if (t >= 148.5 && t < 148.9) { const [x, l] = hop(tc, 148.5, 0.4, 560, 520, 40); P.x = x; P.y = K.lerp(EH_ROOF.catSpot[1], 905, ehE(tc, 148.5, 0.4, 'in')) - l; P.sit = 0; }
-  if (t >= 148.9) { P.x = 520; P.y = 905; P.sit = 1; P.lick = t > 149.4 ? Math.abs(Math.sin(tc * 5)) : 0; P.dir = 1; }
+  if (t >= 148.3 && t < 148.75) { const [x, l] = hop(tc, 148.3, 0.45, 560, 640, 50); P.x = x; P.y = K.lerp(EH_ROOF.catSpot[1], 908, ehE(tc, 148.3, 0.45, 'in')) - l; P.sit = 0; }
+  if (t >= 148.75) { P.x = 640; P.y = 908; P.sit = t > 149.7 ? 1 : 0; P.sq = landSquash(tc, 148.75, 0.1); P.crouch = t < 149.7 ? 0.6 : 0; P.gaze = t < 149.7 ? [0.4, 1] : [0.5, -0.9]; P.ears = t < 149.7 ? 0.3 : 1; P.dir = 1; P.lid = ehLid(t, 45); }
   return P;
 }
 
 // ---------- the guards on the roof (S18) ----------
-function h2GuardsRoof(t) {
-  if (t < 145.2) return []; const tc = EH_T2(t), xa = H2_F([[145.2, 1400], [146.0, 1330]]), xb = H2_F([[145.35, 1420], [146.3, 1250]]);
-  const A = { ...walk(xa, tc, { stride: 22 }), y: 902, s: EH_GUARD_A.s, dir: -1, lid: ehLid(t, 51), sq: breathe(tc, 51, 0.012), tip: idleSway(tc, 51, 0.02, 2.7), gaze: [-1, 0], mouth: 'closed', handR: [60, -150], handL: [-30, -100], torch: true };
+function h2GuardsRoof(t) {   // v2 (Fable 1 note 5): out of the door half a step apart, look left and right, at each other, shrug at 148.0 / 148.3
+  if (t < 145.2) return []; const tc = EH_T2(t), xa = H2_F([[145.2, 1390], [146.1, 1440]]), xb = H2_F([[145.45, 1400], [146.4, 1310]]);
+  const A = { ...walk(xa, tc, { stride: 22 }), y: 902, s: EH_GUARD_A.s, dir: 1, lid: ehLid(t, 51), sq: breathe(tc, 51, 0.012), tip: idleSway(tc, 51, 0.02, 2.7), gaze: [1, 0], mouth: 'closed', handR: [60, -150], handL: [-30, -100], torch: true };
   const B = { ...walk(xb, tc, { stride: 22 }), y: 912, s: EH_GUARD_B.s, dir: -1, lid: ehLid(t, 53), sq: breathe(tc, 53, 0.012), tip: idleSway(tc, 53, 0.02, 3.3), gaze: [-1, 0.1], mouth: 'closed', handR: [50, -140], handL: [-30, -100], spear: true };
-  if (t > 146.0) { A.gaze = [-1, -0.1]; B.dir = 1; B.gaze = [1, 0]; }
-  if (t > 146.3 && t < 147.3) { const u = pulse(tc, 146.4, 0.8); A.handL = [K.lerp(-30, -64, u), K.lerp(-100, -104, u)]; B.handL = [K.lerp(-30, -60, u), -102]; B.drop = -6 * u; A.drop = -6 * pulse(tc, 146.55, 0.8); A.mouth = 'frown'; B.mouth = 'frown'; }
-  if (t > 147.3 && t < 148.3) { A.handL = [-14 + 6 * Math.sin(tc * 30), -226]; }
-  if (t > 148.3) { A.gaze = [-1, 0.3]; B.gaze = [1, 0.2]; }
+  if (t > 146.1) { A.dir = t < 146.9 ? 1 : -1; A.gaze = t < 146.9 ? [1, -0.1] : [-1, 0]; A.lid = Math.max(A.lid, ehBlinkAt(tc, 146.92)); }
+  if (t > 146.4) { B.dir = t < 147.1 ? -1 : 1; B.gaze = t < 147.1 ? [-1, -0.2] : [1, 0]; B.lid = Math.max(B.lid, ehBlinkAt(tc, 147.12)); }
+  if (t > 147.5) { A.dir = -1; B.dir = 1; A.gaze = [-1, 0.1]; B.gaze = [1, 0.1]; A.brow = 0.4; B.brow = 0.4; }
+  const shrug = (P, t0) => { const u = pulse(tc, t0, 0.7); P.handL = [K.lerp(-30, -66, u), K.lerp(-100, -112, u)]; P.drop = -8 * u; P.mouth = u > 0.3 ? 'frown' : 'closed'; };
+  if (t > 147.9) shrug(A, 148.0); if (t > 148.2) shrug(B, 148.3);
   return [[EH_GUARD_A, A], [EH_GUARD_B, B]];
 }
 function h2Guard(ctx, D, P, t) { const t3 = EH_T3(t); h2Shadow(ctx, P.x, P.y, 90 * P.s); ehNeckCloth(ctx, P); person(ctx, ehDressP(D, P)); ehHelmet(ctx, P);
@@ -315,7 +320,7 @@ function h2RoofWorld(ctx, t, cam) {
   if (!H.gone) rows.push([900, () => {
     if (!(t >= 142.74)) h2Shadow(ctx, H.x + 10, 902, 300 * H2_HS, H.lift, { alpha: 0.34, fall: 420 }); else if (H.lift < 300) h2Shadow(ctx, 650, 902, 300 * H2_HS, H.lift, { alpha: 0.34, fall: 420 });
     if (H.lift > 20 && t < 142.74) { ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = 0.35 * K.clamp(H.lift / 120); ehGlow(ctx, H.x, 900 - H.lift * 0.4, 160, 0.7, '#9ac0ff'); ctx.restore(); }
-    const rideNow = st === 'ride', fzR = rideNow ? h2FzRide(t, H) : null;
+    const rideNow = st === 'ride', fzR = rideNow ? h2FzRide(t, H) : null; if (fzR) fzR.s = EH_FIRUZ.s * H.s / H2_HS;   // v2 (Fable 1): the rider scales with the rig
     const drawH = (c) => { if (H.air) ehWindRibbons(c, H, tc, { ang: t > 142.74 ? Math.PI * 1.12 : Math.PI / 2 + 0.2, len: 220 }); if (rideNow) ehRide(c, H, 'firuz', fzR, t, { tc, stream: H.air ? 0.7 : 0, ang: H.air && t > 142.74 ? Math.PI * 1.08 : Math.PI / 2 - 0.4 }); else ebonyHorse(c, H); };
     castFinish(ctx, H.x + 20, H.y + 30, 640, 860, drawH, lampW && Math.abs(lampW[0] - H.x) < 600 ? { rim: '#ffd27a', light: [Math.sign(lampW[0] - H.x), -0.3], rimW: 3 } : { rim: '#bfd8ff', light: [1, -1], rimW: 3 });
     if (t > 27.46 && t < 28.3) dustBurst(ctx, H.x, 902, t - 27.46, 12, 8, 18, 150, 0.8, 7);
@@ -336,7 +341,7 @@ function h2RoofWorld(ctx, t, cam) {
     else if ((t >= 34.3 && t < 81.95) || (t >= 97.0 && t < 140.9)) { b = EH_ROOF.ring; if (t < 34.76) taut = h2FzGround(t, H)[1].taut || 0; }
     if (b) tetherRope(ctx, neck, b, 34, { taut }); else { const c = h2HP(H, [30, -196]); ehRopeCoil(ctx, c[0], c[1], 0.8); } }]);
   // Firuz on the ground (vaults and hops included)
-  let fz = null, fo = {}; if (st === 'ground') [fz, fo] = h2FzGround(t, H); else if (st === 'vault1') fz = h2FzVault(t, H, 81.95, 790); else if (st === 'vault2') fz = h2FzVault(t, H, 141.0, 795); else if (st === 'down1') fz = h2FzDown(t, H, 29.3, 755); else if (st === 'down2') fz = h2FzDown(t, H, 96.46, 765);
+  let fz = null, fo = {}; if (st === 'ground') [fz, fo] = h2FzGround(t, H); else if (st === 'vault1') fz = h2FzVault(t, H, 81.95, 860); else if (st === 'vault2') fz = h2FzVault(t, H, 141.0, 795); else if (st === 'down1') fz = h2FzDown(t, H, 29.3, 755); else if (st === 'down2') fz = h2FzDown(t, H, 96.46, 765);
   if (fz) rows.push([fz.y + (fz.lift || 0), () => { h2Shadow(ctx, fz.x, fz.y + (fz.lift || 0), 90 * fz.s, fz.lift || 0);
     castFinish(ctx, fz.x, fz.y + 10, 300, 320, (c) => { ehCapeStand(c, fz, tc, { vx: fo.vx || 0, swing: (fo.swing || 0) + swing(tc, 29.75, 0.3) + swing(tc, 96.9, 0.3) }); person(c, ehDressP(EH_FIRUZ, fz)); }, rimOf(fz.x));
     if (fo.cup) { const [cx, cy] = fz.handRW || ehHandW(fz, fz.handR); ehCup(ctx, cx, cy - 6, 1, fo.cup.tilt || 0, 1); }
@@ -369,7 +374,14 @@ const H2_RCAM = [
   [140.64, 160, [[140.64, { x: 800, y: 540, zoom: 0.85 }], [142.7, { x: 780, y: 540, zoom: 0.85 }], [144.2, { x: 800, y: 238, zoom: 0.62 }], [151.5, { x: 830, y: 238, zoom: 0.62 }]]],
 ];
 function h2RoofClamp(c) { const z = c.zoom; return { x: K.clamp(c.x, 500 / z, EH_ROOF.w - 500 / z), y: K.clamp(c.y, EH_ROOF.top + 615 / z, 1230 - 615 / z), zoom: z }; }
-function h2RoofCam(t) {
+// v2 (Fable 1 note 2): the camera comes to the actors. f = zoom factor over the present framing, scaled about the floor line
+// (the floor keeps its panel height, the zoom crops sky); x is drawn toward the actors' centre fx as f rises.
+function h2Push(c, t, F, X, floorY) { const f = flow(t, F); if (f <= 1.001) return c; const w = K.clamp((f - 1) / 0.5), z = c.zoom * f, ys = 615 + (floorY - c.y) * c.zoom;
+  return { x: K.lerp(c.x, flow(t, X), w), y: floorY - (ys - 615) / z, zoom: z }; }
+const H2_RPF = [[44.0, 1], [48.84, 1], [49.8, 1.5], [81.75, 1.5], [82.6, 1], [90.03, 1], [90.04, 1.45], [97.9, 1.45], [98.3, 1], [132.7, 1], [133.6, 1.45], [140.6, 1.45], [141.6, 1]];
+const H2_RPX = [[48.84, 1140], [60.83, 1110], [63.3, 1080], [65.0, 1000], [71.68, 990], [73.3, 830], [79.3, 830], [80.0, 840], [81.8, 840], [90.04, 800], [97.9, 860], [132.7, 960], [140.6, 960]];
+function h2RoofCam(t) { return h2RoofClamp(h2Push(h2RoofCam0(t), t, H2_RPF, H2_RPX, 930)); }
+function h2RoofCam0(t) {
   if (t >= 32.4 && t < 40.22) { const x = H2_FZX(Math.max(32.4, t)) + 60, x0 = 820; return h2RoofClamp({ x: t < 33.2 ? K.lerp(x0, x, ehE(t, 32.4, 0.8)) : x, y: 575, zoom: 1.0 }); }
   for (const [a, b, keys] of H2_RCAM) if (t >= a && t < b) return h2RoofClamp(K.camAt(keys, t));
   return h2RoofClamp(K.camAt(H2_RCAM[H2_RCAM.length - 1][2], t));

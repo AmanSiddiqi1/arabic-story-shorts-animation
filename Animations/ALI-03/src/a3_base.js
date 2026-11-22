@@ -13,12 +13,19 @@ function abSay(ctx, S, steps, t, x, y, to, o = {}) {
   const pop = o.pop === false ? 1 : 1 + 0.12 * Math.max(0, 1 - (t - t0) / 0.2), wb = o.wobble ? Math.sin(AB_T3(t) * 17) * o.wobble : 0;
   ctx.save(); if (o.gone && t > o.gone) ctx.globalAlpha *= 1 - K.clamp((t - o.gone) / 0.25);
   ctx.translate(x, y + wb); ctx.scale(pop, pop); ctx.translate(-x, -y - wb);
-  const r = S.label(ctx, txt, x, y + wb, K.clamp((t - steps[0][0]) / 0.3), { size: o.size || 52, balloon: !o.tag, to: o.tag ? null : to, color: o.col });
-  if (o.icon && r && r.w) o.icon(ctx, x - r.w / 2 - 34, y + wb - (o.size || 52) * 0.3);
+  // v2 (review 1 note 9, ALI-02's clamp): the box is clamped inside the panel with a 24 px margin; the tail stays on the speaker
+  let size = o.size || 52, w = a2LabelW(S, txt, size); const room = 1000 - 2 * A2_MARGIN - (o.icon ? 70 : 0); if (w > room) { size *= room / w; w = room; }
+  const lo = A2_MARGIN + w / 2 + (o.icon ? 70 : 0), hi = 1000 - A2_MARGIN - w / 2, dx = K.clamp(x, lo, hi) - x; ctx.translate(dx, 0); if (to) to = [to[0] - dx, to[1]];
+  // o.thin: a thin tail (base 34 units) drawn here instead of the style's wide wedge
+  const a = K.clamp((t - steps[0][0]) / 0.3); if (o.thin && to && !o.tag) { ctx.save(); ctx.globalAlpha *= a; ctx.fillStyle = 'rgba(14,10,24,0.86)'; ctx.beginPath(); ctx.moveTo(x - 17, y + wb + size * 0.4); ctx.lineTo(to[0], to[1]); ctx.lineTo(x + 17, y + wb + size * 0.4); ctx.fill(); ctx.restore(); }
+  const r = S.label(ctx, txt, x, y + wb, a, { size, balloon: !o.tag, to: o.tag || o.thin ? null : to, color: o.col });
+  if (o.icon && r && r.w) o.icon(ctx, x - r.w / 2 - 34, y + wb - size * 0.3);
   ctx.restore();
 }
 // a plain tag (no tail): THUMP THUMP, CLOP CLOP, CLATTER!, WAIT!
-function a2Tag(ctx, S, text, x, y, t, a, b, o = {}) { if (t < a || t > b + 0.25) return; ctx.save(); if (t > b) ctx.globalAlpha *= 1 - K.clamp((t - b) / 0.25); const pop = 1 + 0.15 * Math.max(0, 1 - (t - a) / 0.2); ctx.translate(x, y); ctx.scale(pop, pop); ctx.rotate(o.rot || 0); S.label(ctx, text, 0, 0, K.clamp((t - a) / 0.3), { size: o.size || 46, color: o.col }); ctx.restore(); }
+const A2_MARGIN = 34;   // 24 px inside the panel's 9 px clip, in panel units
+function a2LabelW(S, text, size) { return K.cached('a2lw:' + size + ':' + text, () => { const c = K.layer(1080, 1920), x = c.getContext('2d'); x.globalAlpha = 0; return S.label(x, text, 500, 500, 1, { size }).w || 0; }); }
+function a2Tag(ctx, S, text, x, y, t, a, b, o = {}) { if (t < a || t > b + 0.25) return; { const w = a2LabelW(S, text, o.size || 46) * 1.15; x = K.clamp(x, A2_MARGIN + w / 2, 1000 - A2_MARGIN - w / 2); } ctx.save(); if (t > b) ctx.globalAlpha *= 1 - K.clamp((t - b) / 0.25); const pop = 1 + 0.15 * Math.max(0, 1 - (t - a) / 0.2); ctx.translate(x, y); ctx.scale(pop, pop); ctx.rotate(o.rot || 0); S.label(ctx, text, 0, 0, K.clamp((t - a) / 0.3), { size: o.size || 46, color: o.col }); ctx.restore(); }
 // tape tracking noise band (torn lines) inside the story panel, canvas pixels
 function abTracking(ctx, t, t0, dur = 0.5) {
   const u = (t - t0) / dur; if (u < 0 || u > 1) return; const [x, y, w, h] = AB_PANEL, cv = ctx.canvas, R = K.rng(1 + Math.floor(t * 30)), by = y + h * u;

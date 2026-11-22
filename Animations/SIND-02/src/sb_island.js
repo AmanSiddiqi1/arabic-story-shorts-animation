@@ -117,6 +117,9 @@ function sbNestLogs(ctx, part) {
       c.strokeStyle = sbDark(col, 0.35); c.lineWidth = 2.5; for (let k = 0; k < 3; k++) { c.beginPath(); c.moveTo(-L / 2 + 20 + k * 60, -r * 0.3 + k * 6); c.lineTo(-L / 2 + 70 + k * 60, -r * 0.3 + k * 6); c.stroke(); }
       const ex = R() < 0.5 ? -L / 2 : L / 2; celShade(c, ell(ex, 0, r * 0.45, r, 16), '#e8c890', '#b89060', { light: [-1, -1], off: 6, lw: 3 }); c.strokeStyle = '#a87a4a'; c.lineWidth = 2; c.beginPath(); c.ellipse(ex, 0, r * 0.25, r * 0.55, 0, 0, 7); c.stroke();
       c.restore(); seg(c, x - 40, y - r, x - 70, y - r - 40, 4, '#8a5a3a', 1); seg(c, x + 30, y - r, x + 60, y - r - 30, 3, '#8a5a3a', 1); }
+    // v2: straw and a few big shed feathers along the front ring, so the ring reads as a nest holding the egg
+    if (part === 'front') { c.lineCap = 'round'; for (let i = 0; i < 70; i++) { const x = 420 + R() * 1160, y = 880 + R() * 40, a = -Math.PI / 2 + (R() - 0.5) * 2.2, l = 30 + R() * 40; c.strokeStyle = i % 3 ? '#e8c870' : '#c8a050'; c.lineWidth = 4; c.beginPath(); c.moveTo(x, y); c.lineTo(x + Math.cos(a) * l, y + Math.sin(a) * l); c.stroke(); }
+      for (const [x, y, a] of [[560, 870, -0.9], [1320, 875, 0.8], [1480, 885, 1.1]]) { c.save(); c.translate(x, y); c.rotate(a); celShade(c, ell(0, -60, 22, 70, 18), '#fffaf4', '#d6c6f0', { light: [-1, -1], off: 8, lw: 3, line: '#5a4a8a' }); seg(c, 0, 10, 0, -120, 3, '#b8a2e0', 0); c.restore(); } }
   }), 250, 640);
 }
 // the tall clouds of the nest sky (baked): two cumulus towers at upper right and one at the left, standing behind the forest

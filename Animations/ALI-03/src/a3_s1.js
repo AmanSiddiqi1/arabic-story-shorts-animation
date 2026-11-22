@@ -105,7 +105,7 @@ function a3S2World(ctx, t, cam) {
   if (coinAt) { abBlob(ctx, coinAt[0], coinAt[1] - 12, 13, 13, '#ffcf3a', '#c07a12', { lw: 2.5, hi: '#fff3b0', off: 4 }); if (t > 12.62 && t < 13.5) abGlint(ctx, coinAt[0] + 4, coinAt[1] - 18, 46, ((t - 12.62) / 0.45) % 1); }
   // the spy
   const { P, o, coin } = sp, draw = (c) => { spyDisguise(c, t, 1, P, m, { ...o, shc: A3_SH }); if (coin) for (const sd of [-1, 1]) { const [x, y] = a2HeadPt(P, sd * 13 + (P.look || 0) * 3, -4, { s: 0.98, age: 0.35 }); abBlob(c, x, y, 7, 7, '#ffcf3a', '#c07a12', { lw: 1.5, off: 2, hi: '#fff3b0' }); } };
-  if (P.x > 1790) { const k = K.clamp((P.x - 1790) / 90); abCel(ctx, [P.x, P.y, 320, 330], draw, { tint: '#2a1a2a', k: 0.85 * k, alpha: 1 - K.clamp((P.x - 1850) / 40) }); } else draw(ctx);
+  if (P.x > 1790) { const k = K.clamp((P.x - 1790) / 90); abCel(ctx, [P.x, P.y, 320, 330], draw, { tint: '#2a1a2a', k: 0.3 * k, alpha: 1 - K.clamp((P.x - 1850) / 40) }); } else draw(ctx);
   if (tc > 8.45 && tc < 8.85) { const [hx, hy] = a2Hand(P, 1, { s: 0.98, age: 0.35 }); abBlob(ctx, hx, hy - 10, 11, 11, '#ff9a2a', '#d0661a', { lw: 2, hi: '#ffd08a', off: 3 }); }
   return { P, J };
 }

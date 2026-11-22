@@ -87,12 +87,13 @@ const A3_M13DIR = [[106.2, -1], [107.95, 1], [109.5, -1]];
 const A3_M13DOTS = [[2, 107.2, [720]], [1, 107.74, [430]], [4, 109.66, [1640]], [5, 110.22, [1920]]];
 function a3S13Window(t) {
   const tc = AB_T2(t), P = { x: 1095, gaze: [-0.5, 1], lid: abLid(t, 361, [101.85]), tip: idleSway(tc, 362, 0.02, 2.2), handLW: [1050, 552], handRW: [1135, 552], mouth: 'smile' }; let dy = 0;
-  if (tc > 101.2 && tc < 102.1) { P.handL = [16, -160]; P.handLW = null; P.tilt = 0.06; }
-  if (tc > 102.1 && tc < 102.6) P.gaze = [1, 0.3];
-  if (tc > 102.9 && tc < 104.3) { P.tilt = 0.08; P.gaze = [-0.5, 1]; }
+  // v2 (review 1 note 2): eyes drop to the dot first, the head one drawing later; a look after the spy; back to the dot, brows up, smile grows
+  if (tc > 101.2 && tc < 102.1) { P.gaze = [-0.4, 1]; P.mouth = 'closed'; P.brow = 0.3; if (tc > 101.27) { P.tilt = 0.08; P.drop = 4; } }
+  if (tc > 102.1 && tc < 103.28) { P.gaze = [1, 0.3]; P.look = 0.7 * beatIn(tc, 102.1, 102.5); P.mouth = 'closed'; P.brow = 0; }
+  if (tc > 103.28 && tc < 104.3) { P.tilt = 0.08; P.gaze = [-0.4, 1]; P.brow = -0.6; P.mouth = 'smile'; P.look = -0.2; }
   if (tc > 104.3 && tc < 105.2) { P.handL = [-6, -168]; P.handR = [10, -172]; P.handLW = P.handRW = null; P.eyes = 'shut'; P.sq = 1 + 0.03 * Math.abs(Math.sin(tc * 18)); }
   if (tc > 105.2 && tc < 106.0) { P.handR = [8, -170]; P.handRW = null; P.gaze = [0.6, -1]; P.wink = tc > 105.35 && tc < 105.6 ? 'R' : null; dy = 150 * K.ease.in(beatIn(tc, 105.65, 106.0)); }
-  return { P: { ...P, y: TS.win.sill + 150 + dy }, shake: tc > 104.3 && tc < 105.2 ? 1 : 0 };
+  return { P: { ...P, y: TS.win.sill + 108 + dy }, shake: tc > 104.3 && tc < 105.2 ? 1 : 0 };
 }
 function a3S13World(ctx, t, cam) {
   const tc = AB_T2(t), W = a3S13Window(t);
@@ -118,8 +119,11 @@ function a3S13World(ctx, t, cam) {
   if (tc > 110.4 && tc < 110.8) { const [hx, hy] = a2Hand(P, 1, A3_MORG); a3Puff(ctx, hx + 6, hy - 12, (t - 110.4) / 0.4, 4, 5, '#ffe0e0'); }
 }
 function a3S13Over(ctx, t, cam, S) {
-  if (t > 104.3 && t < 105.5) { const [x, y] = abP(1225, 470, cam); a2Tag(ctx, S, 'HEE HEE', x, y, t, 104.4, 105.2, { size: 44, col: '#bff6f8', rot: -0.08 }); }
+  // v2 (note 2): HEE HEE as small italic lettering rising from her, inside the panel (no boxed tag)
+  if (t > 104.35 && t < 105.4) { const [x, y] = abP(1150, 470, cam); [['HEE', 0, 0], ['HEE', 0.22, 1]].forEach(([w, d, k]) => { const u = K.clamp((t - 104.4 - d) / 0.8); if (u <= 0 || u >= 1) return;
+    ctx.save(); ctx.globalAlpha *= Math.min(1, u * 5, (1 - u) * 4); ctx.translate(K.clamp(x + 40 + k * 60, 80, 920), y - 30 - 90 * u - k * 40); ctx.rotate(-0.12); ctx.font = `italic 800 ${54 - 6 * k}px "${BF}"`; ctx.textAlign = 'center';
+    ctx.lineWidth = 8; ctx.strokeStyle = '#1a0e24'; ctx.strokeText(w, 0, 0); ctx.fillStyle = '#bff6f8'; ctx.fillText(w, 0, 0); ctx.restore(); }); }
   if (t > 108.6 && t < 109.35) abSpeed(ctx, [0, 0, 1000, 1230], t, { dir: -1, alpha: 0.5, n: 26 });
 }
-AB_SHOTS.push({ a: 100.8, b: 106.2, ww: 2000, cam: a3Cam([[100.8, { x: 1040, y: 560, zoom: 1.4 }], [105.6, { x: 1045, y: 565, zoom: 1.4 }], [106.2, { x: 1030, y: 610, zoom: 1.35 }]]), world: a3S13World, over: a3S13Over });
+AB_SHOTS.push({ a: 100.8, b: 106.2, ww: 2000, cam: a3Cam([[100.8, { x: 1040, y: 560, zoom: 1.4 }], [101.2, { x: 1040, y: 565, zoom: 1.45 }], [101.75, { x: 1030, y: 600, zoom: 2.1 }], [105.5, { x: 1034, y: 602, zoom: 2.12 }], [106.2, { x: 1030, y: 610, zoom: 1.35 }]]), world: a3S13World, over: a3S13Over });   // v2: push in on "رأتها" (note 2)
 AB_SHOTS.push({ a: 106.2, b: 111.3, ww: 2000, cam: a3Cam([[106.2, { x: 900, y: 615, zoom: 1.0 }], [107.1, { x: 880, y: 615, zoom: 1.0 }], [108.3, { x: 520, y: 615, zoom: 1.0 }], [108.6, { x: 520, y: 615, zoom: 1.0 }], [109.4, { x: 1500, y: 615, zoom: 1.0 }], [111.3, { x: 1500, y: 615, zoom: 1.0 }]]), world: a3S13World, over: a3S13Over });

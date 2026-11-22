@@ -30,20 +30,32 @@ function sbValleyWallPlate() {
       c.restore(); ink(c, P.slice(0, -2), 4, 1, '#5a2a4a'); }
   });
 }
+// v2: the floor runs down to y 1640 (the 0.62 pull-out never shows its lower edge), brilliant gems in clusters, bones, a dead tree, thorns
+const SB_VGEM = { line: '#3a1a5a', tint: '#3ad0ff', tintB: '#ff7ab8' };
+const SB_GEMCL = [[470, 940, 3], [600, 1080, 5], [1000, 960, 4], [820, 1240, 5], [330, 1300, 4], [1150, 1180, 3], [1500, 1050, 4], [-200, 1150, 4], [700, 1500, 5], [1250, 1450, 4], [100, 1520, 3]];
 function sbValleyFloorPlate() {
-  return sbBakeAt('valFloor', 2500, 520, (c) => { c.translate(600, -810);
-    c.fillStyle = '#f2d8c4'; c.beginPath(); c.moveTo(-600, 860); for (let x = -600; x <= 1900; x += 50) c.lineTo(x, 856 + 16 * Math.sin(x * 0.01)); c.lineTo(1900, 1330); c.lineTo(-600, 1330); c.closePath(); c.fill();
-    sbGrad(c, -600, 860, 2500, 470, [[0, 'rgba(255,240,230,0.0)'], [1, 'rgba(200,140,140,0.35)']]);
-    c.strokeStyle = 'rgba(190,140,130,0.5)'; c.lineWidth = 2; for (let y = 880; y < 1330; y += 22 + (y - 880) * 0.12) { c.beginPath(); for (let x = -600; x <= 1900; x += 60) { const yy = y + 6 * Math.sin(x * 0.02 + y); x === -600 ? c.moveTo(x, yy) : c.lineTo(x, yy); } c.stroke(); }
-    // pebbles and gems: the floor glitters
-    sbDress(c, -500, 1850, 880, 1310, 111, { stones: 26, tufts: 4, flowers: 0, stone: ['#d8b8c8', '#9a7a98'], grass: ['#8ab86a', '#4a7a44'] });
-    sbGemScatter(c, 250, 1000, 880, 1300, 90, 7); sbGemScatter(c, -500, 250, 900, 1300, 25, 8); sbGemScatter(c, 1000, 1850, 900, 1300, 30, 9);
+  return sbBakeAt('valFloor2', 2500, 830, (c) => { c.translate(600, -810);
+    c.fillStyle = '#f2d8c4'; c.beginPath(); c.moveTo(-600, 860); for (let x = -600; x <= 1900; x += 50) c.lineTo(x, 856 + 16 * Math.sin(x * 0.01)); c.lineTo(1900, 1640); c.lineTo(-600, 1640); c.closePath(); c.fill();
+    sbGrad(c, -600, 860, 2500, 780, [[0, 'rgba(255,240,230,0.0)'], [0.6, 'rgba(200,140,140,0.3)'], [1, 'rgba(170,110,140,0.45)']]);
+    // the cool shadow side: the left wall throws a lilac band across the floor
+    c.fillStyle = 'rgba(150,120,200,0.22)'; c.beginPath(); c.moveTo(-600, 860); c.lineTo(420, 860); c.lineTo(80, 1640); c.lineTo(-600, 1640); c.closePath(); c.fill();
+    c.strokeStyle = 'rgba(190,140,130,0.5)'; c.lineWidth = 2; for (let y = 880; y < 1640; y += 22 + (y - 880) * 0.12) { c.beginPath(); for (let x = -600; x <= 1900; x += 60) { const yy = y + 6 * Math.sin(x * 0.02 + y); x === -600 ? c.moveTo(x, yy) : c.lineTo(x, yy); } c.stroke(); }
+    sbDress(c, -500, 1850, 880, 1620, 111, { stones: 40, tufts: 6, flowers: 0, stone: ['#d8b8c8', '#9a7a98'], grass: ['#8ab86a', '#4a7a44'] });
+    // old bones of earlier joints near the wall, a dead tree, thorn bushes
+    const bone = (x, y, l, a) => { c.save(); c.translate(x, y); c.rotate(a); seg(c, -l / 2, 0, l / 2, 0, 12, '#fbf3e4', 2.5); for (const e of [-1, 1]) for (const d of [-1, 1]) { c.fillStyle = '#fbf3e4'; c.strokeStyle = '#7a5a6a'; c.lineWidth = 2.5; c.beginPath(); c.arc(e * l / 2, d * 7, 9, 0, 7); c.fill(); c.stroke(); } c.restore(); };
+    bone(560, 925, 70, 0.3); bone(610, 935, 50, -0.6); bone(1420, 940, 80, -0.2); bone(-120, 960, 60, 0.5);
+    c.save(); c.lineCap = 'round'; for (const [w, col] of [[18, '#4a2a3a'], [12, '#8a6a5a']]) { c.strokeStyle = col; c.lineWidth = w; c.beginPath(); c.moveTo(1640, 930); c.lineTo(1620, 740); c.lineTo(1560, 640); c.moveTo(1620, 760); c.lineTo(1700, 660); c.lineTo(1740, 640); c.moveTo(1585, 680); c.lineTo(1540, 690); c.stroke(); } c.restore();
+    for (const [x, y] of [[-40, 930], [720, 915], [1560, 935]]) { c.save(); c.strokeStyle = '#5a3a3a'; c.lineWidth = 3; const R = K.rng(x + 9); for (let i = 0; i < 12; i++) { const a = -Math.PI * (0.1 + 0.8 * R()), l = 30 + 30 * R(); c.beginPath(); c.moveTo(x, y); c.lineTo(x + Math.cos(a) * l, y + Math.sin(a) * l); c.stroke(); } c.restore(); }
     // boulders: left group round the crevice at 262, right group 1050..1300
     const bo = (x, y, r, col) => { const P = []; const R = K.rng(Math.floor(x * 3 + y)); for (let i = 0; i < 14; i++) { const a = Math.PI + i / 13 * Math.PI, rr = r * (0.85 + R() * 0.25); P.push([x + Math.cos(a) * rr * 1.2, y + Math.sin(a) * rr]); } P.push([x + r * 1.2, y]); celShade(c, P, col, sbDark(col, 0.3), { light: [-1, -1], off: r * 0.35, lw: 4, line: '#5a2a4a', hi: sbLight(col, 0.3) }); };
     bo(150, 905, 120, '#c8a0b8'); bo(380, 910, 110, '#d0a8a8');
     c.fillStyle = '#3a1a3a'; c.beginPath(); c.moveTo(232, 905); c.lineTo(246, 800); c.lineTo(282, 790); c.lineTo(300, 905); c.closePath(); c.fill();   // the crevice
     bo(1110, 905, 90, '#c8a0b8'); bo(1250, 912, 120, '#b898b8'); bo(1380, 910, 70, '#d0a8a8');
     bo(860, 905, 46, '#d8b0b0');   // the sitting rock (60 high)
+    bo(-300, 1400, 150, '#c898b0'); bo(1700, 1450, 170, '#b890b0');   // near boulders frame the lower floor
+    // the glitter: small chips everywhere, clusters of large brilliant stones (white, hard cyan and pink facets, dark outline)
+    sbGemScatter(c, -500, 1850, 900, 1620, 110, 7, 6, 12);
+    const R = K.rng(77); for (const [x, y, n] of SB_GEMCL) { const d = 0.8 + 0.5 * (y - 900) / 700; for (let i = 0; i < n; i++) sbGem(c, x + (R() - 0.5) * 110 * d, y + (R() - 0.5) * 36 * d, (i ? 14 + R() * 14 : 30 + R() * 10) * d, { ...SB_VGEM, rot: (R() - 0.5) * 0.7 }); }
   });
 }
 // valley ledges (live cels so they can sit in front of actors): a lip 40 thick with a hard shade under it
@@ -64,10 +76,12 @@ function sbDiamondValley(ctx, t, cam, o = {}) {
   ctx.drawImage(sbValleyWallPlate(), -600, -1560, 2500, 2480);
   sbValleyLedges(ctx);
   ctx.drawImage(sbValleyFloorPlate(), -600, 810);
-  if (o.glints !== false) sbGlints(ctx, [250, 880, 750, 400], t, o.glints || 14, 31, 18, 1.1);
+  if (o.glints !== false) { sbGlints(ctx, [250, 880, 750, 400], t, o.glints || 14, 31, 18, 1.1); sbGemGlints(ctx, t, 0.7); }
 }
+// v2: star glints with halation on the big gem clusters (on threes)
+function sbGemGlints(ctx, t, k = 1) { const tc = SB_T3(t); SB_GEMCL.forEach(([x, y], i) => { const u = (tc * 0.7 + i * 0.37) % 1; if (u < 0.35) { const p = u / 0.35; sbGlow(ctx, x, y - 10, 90, 0.6 * k * Math.sin(Math.PI * p), '#e8f6ff'); sbGlint(ctx, x, y - 14, 46, p); } }); }
 // light bands sweeping the floor (move light, not drawings)
-function sbFloorBands(ctx, t, a = 0.16) { sbBands(ctx, [-600, 830, 2500, 500], t, { cols: ['#ffffff', '#bfeaff'], alpha: a, speed: 300, w: 90, angle: -0.9 }); }
+function sbFloorBands(ctx, t, a = 0.16) { sbBands(ctx, [-600, 830, 2500, 810], t, { cols: ['#ffffff', '#bfeaff'], alpha: a, speed: 300, w: 90, angle: -0.9 }); }
 
 // ---------- valleyRim: the traders' terrace on top (x 300..2700, ground 900), cliff edge at x 760 with the drop to the left ----------
 function sbRimPlate() {

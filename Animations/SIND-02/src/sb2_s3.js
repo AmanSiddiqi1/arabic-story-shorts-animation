@@ -4,7 +4,7 @@
 const sbSkyFlightPlate = () => sbBakeAt('flightSky', 1000, 1230, (c) => { sbGrad(c, 0, 0, 1000, 1230, [[0, '#3f86e6'], [0.55, '#9ccaf4'], [1, '#e8f6fa']]); sbGlow(c, 160, 170, 260, 0.6, '#fff0c0');
   celShade(c, ell(160, 170, 54, 54, 30), '#fffbe0', '#ffe8a0', { light: [-1, -1], off: 10, lw: 0 }); const R = K.rng(12); for (let i = 0; i < 6; i++) sbCloud(c, R() * 1000, 260 + R() * 420, 260 + R() * 200, 50 + R() * 30, 'rgba(255,255,255,0.75)', 'rgba(200,180,232,0.5)', 10); });
 function sbFlightRoc(t) { const f = sbRocFlap(t, 1.6, 0.25), glide = K.clamp((t - 67.72) / 0.3), ph = ((SB_T2(t) / 1.6 + 0.25) % 1) * Math.PI * 2;
-  return { x: 520, y: 470 - 22 * Math.sin(ph - 0.6) * (1 - glide), s: 0.36, dir: -1, t, spread: 1, flap: K.lerp(f.flap, 0.35, glide), flapLag: K.lerp(f.flapLag, 0.35, glide), tuck: 0.8, rot: -0.21 * K.ease.inOut(glide) * (1 - K.clamp((t - 68.3) / 0.3)), wind: 1, gaze: [-1, 0.2] }; }
+  return { x: 540, y: 700 - 22 * Math.sin(ph - 0.6) * (1 - glide), s: 0.27, dir: -1, t, spread: 1, flap: K.lerp(f.flap, 0.35, glide), flapLag: K.lerp(f.flapLag, 0.35, glide), tuck: 0.8, rot: -0.21 * K.ease.inOut(glide) * (1 - K.clamp((t - 68.3) / 0.3)), wind: 1, gaze: [-1, 0.2] }; }
 function sbS10Panel(ctx, t, S) {
   const tc = SB_T2(t), d = t - 64.98, rise = K.ease.out(K.clamp((t - 65.2) / 1.3));
   ctx.drawImage(sbSkyFlightPlate(), 0, 0);
@@ -13,10 +13,12 @@ function sbS10Panel(ctx, t, S) {
   sbRidge(ctx, 0, 60 * d, 420 * (1 - rise) + 30); sbRidge(ctx, 1, 140 * d, 520 * (1 - rise) + 10); sbRidge(ctx, 2, 320 * d, 600 * (1 - rise));
   for (let i = 0; i < 3; i++) { const x = ((200 * d + i * 380) % 1300) - 150; sbCloud(ctx, x, 860 + i * 60, 260, 46, 'rgba(255,255,255,0.85)', 'rgba(210,190,240,0.6)', 6); }
   // the roc, Sinbad on the tangerine line under its ankle (he swings back a quarter beat late)
-  const R = sbFlightRoc(t), ak = sbRocAnkle(R), sw = 0.18 * Math.sin(((tc - 0.4) / 1.6 + 0.25) * Math.PI * 2) + swing(t, 67.72, 0.45, 0.7, 1.2), L = 150, hx = ak[0] + Math.sin(sw) * L, hy = ak[1] + Math.cos(sw) * L;
+  const R = sbFlightRoc(t), ak = sbRocAnkle(R), sw = 0.18 * Math.sin(((tc - 0.4) / 1.6 + 0.25) * Math.PI * 2) + swing(t, 67.72, 0.45, 0.7, 1.2), L = 110, hx = ak[0] + Math.sin(sw) * L, hy = ak[1] + Math.cos(sw) * L;
+  // v2: the bird's shadow slides over the snow peaks (66.5, 'over') and over the cloud bank (67.7)
+  for (const [t0, yy, w] of [[66.2, 760, 520], [67.5, 900, 460]]) { const u = (t - t0) / 0.9; if (u > 0 && u < 1) { ctx.save(); ctx.globalAlpha = 0.28 * Math.sin(Math.PI * u); ctx.fillStyle = '#4a3a8a'; ctx.beginPath(); ctx.ellipse(1100 - 900 * u, yy, w / 2, 40, -0.08, 0, 7); ctx.fill(); ctx.restore(); } }
   sbRoc(ctx, R);
   sbCloth(ctx, [ak, [(ak[0] + hx) / 2, (ak[1] + hy) / 2], [hx, hy]], { w: 6 }); sbBow(ctx, ak[0], ak[1], 0.4, t, 0.4);
-  const P = sbLive(t, 11, { x: hx, y: hy + 240 * 0.36, s: 0.36, dir: -1, cloth: 'none', wind: 1, tip: -sw * 0.6, ph: 0, amp: 0, mouth: 'o', gaze: [-0.5, 0.6] }); P.handLW = [hx - 3, hy + 6]; P.handRW = [hx + 3, hy]; P.sit = 0.25 + 0.15 * Math.sin(tc * 3);
+  const P = sbLive(t, 11, { x: hx, y: hy + 240 * 0.3, s: 0.3, dir: -1, cloth: 'none', wind: 1, tip: -sw * 0.6, ph: 0, amp: 0, mouth: 'o', gaze: [-0.5, 0.6] }); P.handLW = [hx - 3, hy + 6]; P.handRW = [hx + 3, hy]; P.sit = 0.25 + 0.15 * Math.sin(tc * 3);
   ctx.save(); ctx.translate(P.x, P.y); ctx.rotate(-sw * 0.8); ctx.translate(-P.x, -P.y); sbSin2(ctx, P); ctx.restore();
   if (t > 65.2 && t < 66.8) { sbTag(ctx, S, 'SINBAD', hx - 200, hy + 40, t, 65.2, 66.6, { size: 42 }); S.arrow(ctx, [hx - 140, hy + 60], [hx - 30, hy + 60], K.clamp((t - 65.3) / 0.3), { bend: 0 }); }
   // cut-in medium (67.0 - 67.7): the foot at the top, Sinbad big, one eye, both, a grin; a peak under his feet, knees tucked
@@ -58,7 +60,7 @@ function sbValSinP(t, R) { const tc = SB_T2(t), P = sbLive(t, 11, { x: 380, y: 9
 function sbValWorld(ctx, t, cam, S) {
   const tc = SB_T2(t), R = sbRocValP(t);
   sbDiamondValley(ctx, t, cam, { glints: t > 75.7 ? 14 : 4 });
-  if (t > 77.62 && t < 79.9) { for (let i = 0; i < 12; i++) { const u = (t - 77.62 - i * 0.12) / 0.38; if (u > 0 && u < 1) sbGlint(ctx, 560 + i * 60 + 30 * Math.sin(i * 2.3), 1010 - i * 10 + 40 * Math.cos(i * 1.7), 26, u); } sbFloorBands(ctx, t, 0.2); }
+  if (t > 77.16 && t < 79.9) { const tq = SB_T3(t); for (let i = 0; i < 16; i++) { const u = (tq - 77.16 - i * 0.17) / 0.5; if (u > 0 && u < 1) { const gx = 380 + i * 62 + 30 * Math.sin(i * 2.3), gy = 960 + 260 * ((i * 0.37) % 1); sbGlow(ctx, gx, gy, 110, 0.7 * Math.sin(Math.PI * u), '#e8f6ff'); sbGlint(ctx, gx, gy, 52, u); } } sbFloorBands(ctx, t, 0.2); }
   // the roc's shadow slides up the cliff as it leaves
   if (t > 75.8 && t < 77.0) { const u = (t - 75.8) / 1.2; ctx.save(); ctx.globalAlpha = 0.25 * (1 - u); ctx.fillStyle = '#4a2a6a'; ctx.beginPath(); ctx.ellipse(800, 500 - 1600 * u, 700, 160, 0, 0, 7); ctx.fill(); ctx.restore(); }
   if (t < 69.68) groundShadow(ctx, R.x, 905, 1000, 900 - R.y, { flat: true, fall: 1800 });
@@ -75,15 +77,22 @@ function sbValWorld(ctx, t, cam, S) {
 }
 function sbValOver(ctx, t, cam, S) {
   if (t > 79.1 && t < 79.9) S.title(ctx, 'DIAMONDS!', 500, 360, K.clamp((t - 79.1) / 0.5), { size: 90, align: 'center' });
-  // the insert (78.3 - 79.1): finger and thumb turn a stone against the sun; seven rays slide across his cheek as shapes
-  if (t >= 78.3 && t < 79.1) { const tc = SB_T3(t), k = Math.floor((t - 78.3) / 0.2), rot = [0, 0.4, 0.9, 1.3][Math.min(3, k)];
-    sbGrad(ctx, 0, 0, 1000, 1230, [[0, '#ffd8c8'], [0.6, '#f4c8b8'], [1, '#e8a8a8']]); sbGlow(ctx, 760, 160, 400, 0.8, '#fff0c0');
-    sbFace(ctx, 430, 930, 0.95, { bare: true, gaze: [0.4, -1], iris: 1.1, brow: -0.6, mouth: 'o', reflect: (c, r) => { c.fillStyle = 'rgba(220,245,255,0.8)'; c.beginPath(); c.moveTo(-r * 0.3, -r * 0.2); c.lineTo(0, -r * 0.6); c.lineTo(r * 0.3, -r * 0.2); c.lineTo(0, r * 0.3); c.closePath(); c.fill(); } });
-    sbRays(ctx, 590, 470, 760, 1, 2.0 + rot * 0.2);
-    for (const [x0, y0, x1, y1, w] of [[1000, 760, 640, 520, 58], [1000, 640, 650, 420, 50]]) { ctx.save(); ctx.lineCap = 'round'; ctx.strokeStyle = '#6a3a2a'; ctx.lineWidth = w + 8; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke(); ctx.strokeStyle = C.skin; ctx.lineWidth = w; ctx.stroke(); ctx.restore(); }
-    sbGem(ctx, 590, 470, 80, { rot, glow: 0.8 }); sbGlint(ctx, 550, 420, 70, ((t - 78.3) * 2.5) % 1); }
+  // the insert (78.3 - 79.1), v2: the stone is the subject (centre, 30% of the width) held between thumb and two fingers; prism rays fan
+  // out over the background only; Sinbad on-model (the same figure as the wide, bare-headed), smaller at lower left, mouth 'o'
+  if (t >= 78.3 && t < 79.1) { const tc = SB_T3(t), k = Math.floor((t - 78.3) / 0.2), rot = [0, 0.15, 0.3, 0.45][Math.min(3, k)], gx = 560, gy = 470;
+    sbGrad(ctx, 0, 0, 1000, 1230, [[0, '#ffe8c8'], [0.6, '#f8d0c0'], [1, '#e8b0b8']]); sbGlow(ctx, 860, 120, 420, 0.8, '#fff0c0');
+    sbRays(ctx, gx, gy, 900, 1, -2.6 + rot * 0.3); sbRays(ctx, gx, gy, 800, 0.7, -0.6 + rot * 0.3);
+    const Q = sbLive(t, 11, { x: 240, y: 1500, s: 2.2, dir: 1, t, cloth: 'none', mouth: 'o', gaze: [0.7, -0.8], brow: -0.6, wind: 0 }); Q.handL = [-30, -100]; Q.handR = [30, -100]; Q.lid = 0; sbSin2(ctx, Q);
+    const hd = sbPt(Q, [0, -10]); for (const dx of [-26, 22]) { sbGlint(ctx, hd[0] + dx * 2.3, hd[1] - 40, 22, 0.5); }
+    // the hand from the right: forearm, two fingers over the stone's right side, the thumb under its left
+    const cap = (x0, y0, x1, y1, w) => { ctx.save(); ctx.lineCap = 'round'; ctx.strokeStyle = '#6a3a2a'; ctx.lineWidth = w + 9; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke(); ctx.strokeStyle = C.skin; ctx.lineWidth = w; ctx.stroke(); ctx.strokeStyle = '#d99a80'; ctx.lineWidth = w * 0.3; ctx.beginPath(); ctx.moveTo(x0 + 6, y0 + w * 0.3); ctx.lineTo(x1 + 4, y1 + w * 0.3); ctx.stroke(); ctx.restore(); };
+    sbGlow(ctx, gx, gy, 420, 0.7, '#dff4ff'); cap(1060, 860, 800, 620, 120); cap(780, 640, 690, 560, 104);
+    cap(700, 600, 560, 640, 46);   // thumb, under the stone
+    sbGem(ctx, gx, gy, 150, { rot, line: '#3a1a5a', tint: '#3ad0ff', tintB: '#ff7ab8' });
+    cap(720, 520, 650, 400, 44); cap(745, 560, 690, 470, 42);   // two fingers over its right side
+    sbGlint(ctx, gx - 50, gy - 90, 110, ((t - 78.3) * 2.5) % 1); sbGlint(ctx, gx + 70, gy + 40, 60, ((t - 78.5) * 2.5 + 1) % 1); }
 }
-SB_SHOTS.push({ a: 68.46, b: 79.9, free: true, cam: sbKeys([[68.46, { x: 760, y: -1150, zoom: 0.6 }], [69.7, { x: 680, y: 250, zoom: 0.6 }], [70.6, { x: 600, y: 300, zoom: 0.62 }], [71.92, { x: 500, y: 560, zoom: 0.8 }], [75.7, { x: 520, y: 560, zoom: 0.8 }], [78.3, { x: 820, y: 420, zoom: 0.62 }], [79.9, { x: 830, y: 420, zoom: 0.62 }]]), world: sbValWorld, over: sbValOver });
+SB_SHOTS.push({ a: 68.46, b: 79.9, free: true, cam: sbKeys([[68.46, { x: 760, y: -1150, zoom: 0.6 }], [69.7, { x: 680, y: 250, zoom: 0.6 }], [70.6, { x: 600, y: 300, zoom: 0.62 }], [71.92, { x: 500, y: 560, zoom: 0.8 }], [75.7, { x: 520, y: 560, zoom: 0.8 }], [77.16, { x: 560, y: 780, zoom: 0.8 }], [78.3, { x: 900, y: 800, zoom: 0.8 }], [79.1, { x: 900, y: 760, zoom: 0.8 }], [79.9, { x: 830, y: 420, zoom: 0.62 }]]), world: sbValWorld, over: sbValOver });
 
 // ---------- S13 + S14 (79.9 - 92.48): the walls, the snakes, the five stones, the failed climb, thinking ----------
 const SB2_SNAKE_A = [[250, 860], [262, 845], [300, 880], [380, 905], [460, 915], [540, 905]];   // out of the crevice along the floor
@@ -97,8 +106,8 @@ function sbSnakes(ctx, t) { const tc = SB_T2(t);
   // A: two eyes in the crevice (83.78), pours out (84.96), yawns and rests its chin on a warm rock (85.74), sleeps; one eye opens (90.1)
   if (t > 83.78 && t < 84.96) { const op = K.clamp((t - 83.78) / 0.3); for (const dx of [-12, 12]) { ctx.save(); ctx.fillStyle = '#ffe24a'; ctx.beginPath(); ctx.ellipse(266 + dx, 840, 9, 9 * op * (1 - 0.9 * pulse(t, 84.4, 0.25)), 0, 0, 7); ctx.fill(); ctx.fillStyle = '#1a1a10'; ctx.fillRect(264 + dx, 834, 4, 12 * op); ctx.restore(); } }
   if (t >= 84.96) { const out = K.ease.out(K.clamp((t - 84.96) / 0.8)), yawn = Math.sin(Math.PI * K.clamp((t - 85.74) / 0.7)), rest = K.clamp((t - 86.3) / 0.4);
-    const lid = t > 90.1 && t < 90.6 ? 0.45 : K.lerp(0.4, 0.95, K.clamp((t - 85.9) / 0.6)), path = SB2_SNAKE_A.map(([x, y], i) => [x, y - (i === 5 ? 14 * rest : 0)]);
-    sbSnake(ctx, path, t, { pal: 0, w: 66, wave: 12 * (1 - rest * 0.6), out, lid, mouth: 0.6 * yawn, tongue: t < 85.7 && Math.floor(SB_T3(t) * 8) % 3 === 0 ? 1 : 0, dir: 1, gaze: t > 90.1 ? [1, -0.2] : [1, 0] }); }
+    const lid = t > 90.9 && t < 91.5 ? 0.45 : K.lerp(0.4, 0.95, K.clamp((t - 85.9) / 0.6)), path = SB2_SNAKE_A.map(([x, y], i) => [x, y - (i === 5 ? 14 * rest : 0)]);
+    sbSnake(ctx, path, t, { pal: 0, w: 66, wave: 12 * (1 - rest * 0.6), out, lid, mouth: 0.6 * yawn, tongue: t < 85.7 && Math.floor(SB_T3(t) * 8) % 3 === 0 ? 1 : 0, dir: 1, gaze: t > 90.9 ? [1, -0.2] : [1, 0] }); }
 }
 // a warm flat rock for the snake's chin
 function sbChinRock(ctx) { sbStone(ctx, 560, 912, 40, '#e0b0a8', '#a87a80'); }
@@ -113,9 +122,13 @@ function sbWallSinP(t) { const tc = SB_T2(t), x = SB2_S13X(t), P = sbLive(t, 11,
   else if (t < 88.44) { const lift = Math.sin(Math.PI * K.clamp((t - 88.04) / 0.4)); P.handLW = [x + 34, 860 - 60 * lift]; P.handRW = [x + 76, 860 - 60 * lift]; P.sq *= 1 - 0.05 * lift; P.gaze = t < 88.25 ? [1, 0.3] : [-1, 0.2]; P.mouth = 'o'; }
   else if (t < 89.24) { P.handL = [-22, -90]; P.handR = [20, -88 + (t > 88.9 ? 10 * Math.abs(osc(tc, 0.2)) : 0)]; P.gaze = [0.2, 0.8]; P.tongue = t < 88.9; }
   else if (t < 89.6) { Object.assign(P, walk(SB2_S13X, tc, { stride: 26 })); P.gaze = [1, -0.6]; }
-  else if (t < 90.1) { const cl = sbF(t, [[89.6, 0], [89.8, 1], [89.9, 0.8], [90.1, 0]]); P.handLW = [960, 650 - 30 * cl]; P.handRW = [1000, 620 - 40 * cl]; P.y = 900 - 50 * cl; P.dir = 1; P.gaze = [0.3, -1]; if (t > 89.9) { P.sit = 1; P.seat = 'floor'; P.sq *= landSquash(tc, 90.1, 0.14); } if (t > 89.85 && t < 90.2) dustBurst(ctx0(), 975, 905, t - 89.85, 5, 5, 12, 60, 0.4, 4); }
-  else if (t < 90.92) { P.sit = 1; P.seat = 'floor'; P.dir = 1; P.gaze = t < 90.32 ? [-1, 0] : [0.3, -1]; P.look = P.gaze[0] * 0.8; if (t > 90.32) P.handR = PERSON_HANDS.shield.R; }
-  else { if (t < 91.2) Object.assign(P, walk(SB2_S13X, tc, { stride: 26 })); else { P.sit = 1; P.seat = 'bench'; P.y = 862; P.x = 870; P.handR = PERSON_HANDS.chin.R; P.handL = [-30, -70]; P.gaze = [0.3 + 0.4 * Math.sin(SB_T3(t) * 2), -0.2]; P.wind = 0; P.tip -= 0.02 * Math.abs(osc(tc, 0.5)); } P.dir = -1; if (t > 92.2) P.gaze = [-0.6, 0.6]; }
+  else if (t < 90.95) { // v2: the failed climb: both hands on the rock (90.1), feet scrabble (two drawings), slides down on 'آمن'
+    const up = sbF(t, [[89.6, 0], [90.1, 1], [90.75, 1], [90.95, 0]]), scr = t > 90.1 && t < 90.75 ? Math.floor(SB_T3(t) * 8) % 2 : 0; P.dir = 1; P.x = 975; P.y = 900 - 90 * up;
+    const hd = 90 * (1 - up) * (t > 90.75 ? 1 : 0) + 120 * (1 - K.clamp((t - 89.6) / 0.5)); P.handLW = [952, 528 + hd]; P.handRW = [998, 512 + hd];
+    P.ph = scr ? 1.2 : -1.2; P.amp = t > 90.1 && t < 90.75 ? 1.2 : 0; P.gaze = t < 90.75 ? [0.3, -1] : [0, 1]; P.mouth = t < 90.75 ? 'closed' : 'o'; P.tongue = t > 90.2 && t < 90.75; P.hairK = 1.3; }
+  else { P.x = 975; P.sit = 1; P.seat = 'floor'; P.dir = -1; P.sq *= landSquash(tc, 90.95, 0.16); P.hairK = 1 + 0.35 * pulse(tc, 91.05, 0.3);
+    if (t < 91.4) { P.gaze = [0.4, -1]; P.brow = 0.4; P.mouth = 'frown'; P.handL = [-30, -70]; P.handR = [30, -70]; } else { P.handR = PERSON_HANDS.chin.R; P.handL = [-30, -70]; P.gaze = [0.3 + 0.4 * Math.sin(SB_T3(t) * 2), -0.2]; P.tip -= 0.02 * Math.abs(osc(tc, 0.5)); P.brow = 0.3; }
+    if (t > 92.2) P.gaze = [-0.6, 0.6]; }
   return P; }
 let SB2_CTX = null; const ctx0 = () => SB2_CTX;
 function sbWallWorld(ctx, t, cam, S) {
@@ -129,10 +142,12 @@ function sbWallWorld(ctx, t, cam, S) {
   // the melon-sized stone, the five small ones he takes
   if (t < 88.6) sbGem(ctx, 820, 892, 30, { rot: 0.2, glow: 0.3 + 0.2 * Math.sin(t * 3) });
   if (t > 91.9) { const r = 30 + 300 * K.clamp((t - 91.9) / 0.6); ctx.save(); ctx.globalAlpha = 0.28; ctx.fillStyle = '#3a2a5a'; ctx.beginPath(); ctx.ellipse(700, 915, r, r * 0.3, 0, 0, 7); ctx.fill(); ctx.restore(); }
+  sbStone(ctx, 975, 540, 46, '#d89aa0', '#a86a78');   // v2: the rock knob he tries to climb by
   const P = sbWallSinP(t), Q = sbSin2(ctx, P);
   if (t > 88.04 && t < 88.44) { const h = sbHandW(Q, 1); sbGem(ctx, h[0] - 20, h[1] + 20, 30, { rot: 0.2, glow: 0.4 }); }
   if (t > 88.44) sbPouch(ctx, sbPt(Q, [-26, -86], false)[0], sbPt(Q, [-26, -86], false)[1], 1, t);
   if (t > 85.3 && t < 86.1) sbSweat(ctx, Q, t);
+  if (t > 90.9 && t < 91.5) dustBurst(ctx, 975, 905, t - 90.9, 6, 6, 16, 80, 0.5, 4);
 }
 function sbWallOver(ctx, t, cam, S) {
   if (t > 85.0 && t < 86.4) { const p = sbP(400, 800, cam); sbTag(ctx, S, 'SSSS...', p[0] + 20, p[1] - 160, t, 85.0, 86.2, { size: 44 }); }

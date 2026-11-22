@@ -113,6 +113,7 @@ function sbRibbon(ctx, x, y, ang, len, w, t, o = {}) {
 function sbSay(ctx, S, steps, t, x, y, to, o = {}) {
   if (t < steps[0][0] || (o.gone && t > o.gone + 0.25)) return; let txt = steps[0][1], t0 = steps[0][0];
   for (const [ts, tx] of steps) if (t >= ts) { txt = tx; t0 = ts; }
+  { let hw = 0; for (const [, tx] of steps) hw = Math.max(hw, tx.length * (o.size || 50) * 0.3 + 45); x = K.clamp(x, hw + 25, 1000 - hw - 25); }   // SIND-06: keep the balloon inside the panel
   const pop = o.pop === false ? 1 : 1 + 0.12 * Math.max(0, 1 - (t - t0) / 0.2), wb = o.wobble ? Math.sin(SB_T3(t) * 17) * o.wobble : 0;
   ctx.save(); if (o.gone && t > o.gone) ctx.globalAlpha *= 1 - K.clamp((t - o.gone) / 0.25);
   ctx.translate(x, y + wb); ctx.scale(pop, pop); ctx.translate(-x, -y - wb);

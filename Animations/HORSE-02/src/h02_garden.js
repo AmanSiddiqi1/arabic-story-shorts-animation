@@ -88,4 +88,6 @@ function h2GardenWorld(ctx, t, cam) {
 const H2_GCAM = [[98.35, { x: 760, y: 376, zoom: 0.72 }], [98.84, { x: 760, y: 376, zoom: 0.72 }], [102.2, { x: 860, y: 547, zoom: 0.9 }], [104.86, { x: 870, y: 560, zoom: 0.92 }], [105.6, { x: 900, y: 600, zoom: 1.0 }], [110.9, { x: 900, y: 600, zoom: 1.0 }],
   [111.3, { x: 750, y: 450, zoom: 1.0 }], [112.4, { x: 750, y: 450, zoom: 1.0 }], [113.0, { x: 900, y: 600, zoom: 1.0 }], [114.75, { x: 900, y: 600, zoom: 1.0 }], [115.15, { x: 1044, y: 600, zoom: 0.9 }], [116.4, { x: 1044, y: 600, zoom: 0.9 }],
   [116.8, { x: 900, y: 580, zoom: 0.9 }], [117.1, { x: 880, y: 580, zoom: 0.9 }], [118.6, { x: 556, y: 560, zoom: 0.9 }], [121.0, { x: 556, y: 560, zoom: 0.9 }], [122.4, { x: 770, y: 351, zoom: 0.7 }], [126.7, { x: 770, y: 351, zoom: 0.7 }]];
-function h2GardenCam(t) { const c = K.camAt(H2_GCAM, t), z = c.zoom; return { x: K.clamp(c.x, 500 / z, EH_PGARDEN.w - 500 / z), y: K.clamp(c.y, EH_PGARDEN.top + 615 / z, 1230 - 615 / z), zoom: z }; }
+const H2_GPUF = [[101.5, 1], [102.4, 1.5], [111.0, 1.5], [111.5, 1], [112.6, 1], [113.1, 1.5], [114.7, 1.5], [115.1, 1], [117.4, 1], [118.3, 1.5], [121.38, 1.5], [124.48, 1.5], [125.1, 1.5], [125.8, 1]];
+const H2_GPUX = [[101.5, 905], [114.7, 905], [117.4, 700], [118.3, 330], [126.7, 300]];
+function h2GardenCam(t) { const c = h2Push(K.camAt(H2_GCAM, t), t, H2_GPUF, H2_GPUX, 900), z = c.zoom; return { x: K.clamp(c.x, 500 / z, EH_PGARDEN.w - 500 / z), y: K.clamp(c.y, EH_PGARDEN.top + 615 / z, 1230 - 615 / z), zoom: z }; }

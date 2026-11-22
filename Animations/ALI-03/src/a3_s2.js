@@ -6,7 +6,7 @@ const A3_CR3 = [1020, 770];   // the spy's cross by door 3
 // ---------- the first spy in the street (16.9 - 36) ----------
 const A3_SPY_X = a3Pos([[16.9, 700], [17.85, 966], [18.05, 960], [24.95, 960], [25.4, 930], [33.8, 930], [35.3, 330], [35.95, 40]]);
 const A3_S3_STROKE = (t) => { const u1 = K.clamp((t - 21.9) / 0.68), u2 = K.clamp((t - 22.594) / 0.666), [cx, cy] = A3_CR3;
-  if (t < 22.58) return [cx - 18 + 36 * u1, cy - 18 + 36 * u1]; if (t < 22.594) return [cx + 18, cy - 18]; return [cx + 18 - 36 * u2, cy - 18 + 36 * u2]; };
+  if (t < 22.58) return [cx - 25 + 50 * u1, cy - 25 + 50 * u1]; if (t < 22.594) return [cx + 25, cy - 25]; return [cx + 25 - 50 * u2, cy - 25 + 50 * u2]; };   // v2: the 1.4 cross
 function a3Spy1Day(t) {
   const tc = AB_T2(t), W = walk(A3_SPY_X, tc, { stride: 24 }), P = { y: 905, dir: 1, ...W, mouth: 'closed', lid: abLid(t, 71, [18.15, 20.25, 20.65, 35.45]), tip: idleSway(tc, 72, 0.025, 2.2), sq: breathe(tc, 73, 0.015), gaze: [1, 0] };
   const o = { d: 2, kick: 0.2 * W.amp };
@@ -17,7 +17,8 @@ function a3Spy1Day(t) {
   else if (tc < 23.3) { o.chalk = tc > 21.1 ? 1 : 0; P.wink = tc > 21.4 ? 'L' : null; P.mouth = 'o'; P.gaze = [1, 0.1];
     if (tc < 21.45) { P.handR = [-12, -126]; P.handL = [-20, -100]; P.sq *= anticipate(tc, 21.0, 0.45, 0.04); }
     else if (tc < 21.9) { P.handRW = [K.lerp(980, A3_CR3[0] - 18, beatIn(tc, 21.45, 21.85)), K.lerp(790, A3_CR3[1] - 18, beatIn(tc, 21.45, 21.85))]; P.handL = [-24, -104]; }
-    else { P.handRW = A3_S3_STROKE(tc); P.tip = 0.05 * Math.sin((tc - 21.9) * 7); P.handL = [-24, -104]; o.kick = 0.25 * Math.abs(Math.sin((tc - 21.9) * 5)); if (tc > 22.95) { P.mouth = 'o'; P.wink = null; } } }
+    else { P.handRW = A3_S3_STROKE(tc); P.tip = 0.09 + 0.04 * Math.sin((tc - 21.9) * 7); if (tc > 22.4 && tc < 22.62) { P.gaze = [-1, 0]; P.look = -0.8; }   // v2 (note 11): leaning into the wall, a look over the shoulder between the strokes
+      P.handL = [-24, -104]; o.kick = 0.25 * Math.abs(Math.sin((tc - 21.9) * 5)); if (tc > 22.95) { P.mouth = 'o'; P.wink = null; } } }
   else if (tc < 26.0) { P.handL = [-40, -82]; P.handR = [40, -82]; P.tilt = 0.1; P.mouth = 'smile'; P.gaze = [1, -0.1]; P.lid = Math.max(P.lid, 0.2); }
   else if (tc < 27.8) { const g = beatIn(tc, 26.0, 27.0); P.mouth = g < 0.35 ? 'closed' : g < 0.7 ? 'smile' : 'open'; P.talk = g >= 0.7 ? 0.25 : 0; P.lid = Math.max(P.lid, 0.4); P.gaze = [0.2, 0.1];
     P.handL = [12, -122]; P.handR = [24, -126 + 6 * osc(tc, 0.25)]; if (tc > 27.0) P.sq *= 1 + 0.025 * Math.abs(Math.sin(tc * 14)); }
@@ -33,11 +34,12 @@ function a3Spy1Day(t) {
 }
 
 // ---------- Morgiana in the day street (34.9 - 64.4) ----------
-const A3_MG_X = a3Pos([[34.9, 40], [35.5, 250], [36.6, 450], [37.9, 640], [38.6, 735], [39.4, 830], [39.6, 856], [40.15, 862], [40.65, 1110], [41.1, 1118], [41.3, 1088], [56.15, 1085], [56.45, 935],
-  [57.45, 930], [57.85, 985], [59.55, 985], [59.9, 790], [60.5, 790], [60.95, 510], [61.45, 510], [62.55, 1620], [63.15, 1620], [63.35, 1900]]);
+const A3_MG_X = a3Pos([[34.9, 40], [35.5, 250], [36.6, 450], [37.9, 640], [38.6, 735], [39.4, 830], [39.6, 856], [40.15, 862], [40.65, 1142], [41.1, 1150], [41.3, 1122], [56.15, 1120], [56.45, 935],   // v2 (note 6): off the cross, a hand's width of wall around it
+ 
+  [57.45, 930], [57.85, 985], [59.55, 985], [59.9, 790], [60.5, 790], [60.95, 510], [61.45, 510], [62.55, 1620], [63.15, 1620], [63.35, 1715]]);   // v2: door 5's cross is now left of its door (1770)
 const A3_MG_DIR = [[34.9, 1], [41.05, -1], [57.45, 1], [59.55, -1], [61.45, 1]];
 const A3_MG_MARKS = [[2, 59.9, 0.6], [1, 60.95, 0.55], [4, 62.62, 0.5], [5, 63.36, 0.45]];
-function a3MarkTip(door, t0, d, t) { const [cx, cy] = tsDoor(door).mark, p = K.clamp((t - t0) / d); if (p < 0.5) { const u = p * 2; return [cx - 18 + 36 * u, cy - 18 + 36 * u]; } const u = (p - 0.5) * 2; return [cx + 18 - 36 * u, cy - 18 + 36 * u]; }
+function a3MarkTip(door, t0, d, t) { const [cx, cy] = tsDoor(door).mark, p = K.clamp((t - t0) / d); if (p < 0.5) { const u = p * 2; return [cx - 25 + 50 * u, cy - 25 + 50 * u]; } const u = (p - 0.5) * 2; return [cx + 25 - 50 * u, cy - 25 + 50 * u]; }
 function a3MorgDay(t) {
   const tc = AB_T2(t); let dir = 1; for (const [a, d] of A3_MG_DIR) if (tc >= a) dir = d;
   const W = walk(A3_MG_X, tc, { stride: 22 }), P = { y: 905, dir, ...W, mouth: 'closed', lid: abLid(t, 81, [45.3, 47.9, 52.2]), tip: idleSway(tc, 82, 0.025, 2.4), sq: breathe(tc, 83, 0.014), gaze: [dir, 0] };
@@ -51,18 +53,18 @@ function a3MorgDay(t) {
   else if (tc < 40.2) { const h = Math.sin(Math.PI * beatIn(tc, 39.75, 40.1)); lift = 34 * h; P.sq *= 1.04; P.handR = [10, -205]; P.gaze = [0.2, -1]; P.mouth = 'smile'; o.kick = swing(t, 40.1, 0.4); }
   else if (tc < 41.05) { P.mouth = 'smile'; P.gaze = [1, 0.2]; if (tc > 40.6) { P.handR = [92, -150 + 4 * osc(tc, 0.3)]; } }
   else if (tc < 43.2) { if (tc >= 41.3) { P.ph = Math.PI / 2; P.amp = 0.8; } const frz = tc > 41.38; P.gaze = tc > 41.3 ? [-1, -0.3] : [-1, 0]; P.eyes = tc > 41.3 ? 'wide' : undefined; if (frz) P.tip = 0.02; o.kick = swing(t, 41.4, 0.5); P.handR = [10, -110]; P.mouth = tc > 41.3 ? 'o' : 'smile'; }
-  else if (tc < 45.0) { P.kneel = tc < 43.9 ? 0.45 * Math.sin(Math.PI * beatIn(tc, 43.2, 43.95)) * 1.3 : 0; P.gaze = [-1, -0.3]; P.mouth = 'closed'; o.basket = tc > 43.6 ? [1125, 905] : 'hip';
+  else if (tc < 45.0) { P.kneel = tc < 43.9 ? 0.45 * Math.sin(Math.PI * beatIn(tc, 43.2, 43.95)) * 1.3 : 0; P.gaze = [-1, -0.3]; P.mouth = 'closed'; o.basket = tc > 43.6 ? [1168, 905] : 'hip';
     if (tc > 43.9) { const r = beatIn(tc, 43.9, 44.3); P.handRW = r < 1 ? [K.lerp(1060, A3_CR3[0] + 6, r), K.lerp(800, A3_CR3[1] + 2, r)] : tc < 44.4 ? [A3_CR3[0] + 6, A3_CR3[1] + 2] : null; P.tilt = 0.04;
       if (tc >= 44.4) { P.handR = [26, -150 + 3 * osc(tc, 0.16)]; P.handL = [16, -146 - 3 * osc(tc, 0.16)]; P.gaze = [0.4, 0.5]; } } }
-  else if (tc < 47.5) { o.basket = [1125, 905]; P.gaze = gazePlan(tc, [[45.0, [-0.3, 0]], [45.15, [-1, 0]]]); P.look = tc > 45.3 ? -1 : 0; P.mouth = 'closed'; }
-  else if (tc < 56.0) { o.basket = [1125, 905]; P.handR = [16, -160 - (tc > 49.4 && tc < 52.0 ? 6 * pulse(tc % 0.65, 0, 0.15) : 0)]; P.handL = [22, -112]; P.gaze = [0, -1]; P.tip = 0.03 * osc(tc, 3.1);
+  else if (tc < 47.5) { o.basket = [1168, 905]; P.gaze = gazePlan(tc, [[45.0, [-0.3, 0]], [45.15, [-1, 0]]]); P.look = tc > 45.3 ? -1 : 0; P.mouth = 'closed'; }
+  else if (tc < 56.0) { o.basket = [1168, 905]; P.handR = [16, -160 - (tc > 49.4 && tc < 52.0 ? 6 * pulse(tc % 0.65, 0, 0.15) : 0)]; P.handL = [22, -112]; P.gaze = [0, -1]; P.tip = 0.03 * osc(tc, 3.1);
     if (tc > 52.1 && tc < 53.4) { P.look = Math.sin(AB_T3(t) * Math.PI * 2 / 0.75) > 0 ? 0.8 : -0.8; P.gaze = [0, 0.2]; P.handR = [22, -112]; }
     if (tc > 53.4 && tc < 54.85) { P.gaze = [-1, -0.2]; P.look = -0.6; }
     if (tc > 54.85 && tc < 55.5) { P.handR = [44, -205]; P.gaze = [0, 0]; P.talk = abTalk(t, 54.9, 55.42, 8, 0.4); P.mouth = P.talk ? 'open' : 'closed'; }
     if (tc >= 55.5) { P.handR = tc < 55.62 ? [44, -186] : [40, -170]; P.mouth = 'smile'; P.gaze = [0, 0]; } }
   else {   // S7: in, out with the chalk, the marking run
-    o.basket = tc < 56.05 ? [1125, 905] : tc < 56.6 ? 'hip' : null; o.chalk = tc > 58.2 && tc < 64.15 ? (tc < 58.9 ? 2 : 1) : 0;
-    if (tc < 56.15) { P.kneel = 0.4 * Math.sin(Math.PI * beatIn(tc, 56.0, 56.15)); P.handLW = [1125, 870]; }
+    o.basket = tc < 56.05 ? [1168, 905] : tc < 56.6 ? 'hip' : null; o.chalk = tc > 58.2 && tc < 64.15 ? (tc < 58.9 ? 2 : 1) : 0;
+    if (tc < 56.15) { P.kneel = 0.4 * Math.sin(Math.PI * beatIn(tc, 56.0, 56.15)); P.handLW = [1168, 870]; }
     if (tc >= 57.45 && tc < 57.85) { const u = beatIn(tc, 57.45, 57.85); lift = 50 * Math.sin(Math.PI * u); P.handL = [-50, -170]; P.handR = [50, -176]; P.sq = 1.04; }
     P.sq *= landSquash(tc, 57.85, 0.15) * landSquash(tc, 62.55, 0.12) * landSquash(tc, 63.35, 0.1);
     if (tc >= 58.2 && tc < 58.9) { P.handR = [40, -200]; P.gaze = tc < 58.6 ? [0.4, -1] : [1, 0]; P.mouth = 'smile'; }
@@ -100,7 +102,7 @@ function a3DayWorld(ctx, t, cam) {
   const doorOpen = kfn(tc, [[56.05, 0], [56.3, 0.8], [56.6, 0.8], [56.8, 0.25], [57.3, 0.25], [57.45, 0.8], [58.1, 0.8], [58.6, 0.35]]);
   const tuck = tc < 39.0 ? 1 : tc < 39.6 ? 1 - beatIn(tc, 39.0, 39.55) : tc < 39.95 ? 0 : beatIn(tc, 39.95, 40.15);
   a3Street(ctx, t, cam, { m: A3_DM, flock: [300, 230, 110, 4, 5, 18], washing: { items: 4, tuck, flash: t > 19.7 && t < 20.7 ? 0.8 * Math.sin(Math.PI * beatIn(t, 19.7, 20.7)) : 0 },
-    doors: doorOpen > 0.01 ? [{ i: 3, open: doorOpen, inside: mg && mg.inDoor ? (c) => { const Q = { ...mg.P, x: 930, y: 900, s: 0.88 }; abCel(c, [930, 900, 300, 330], (cc) => morgiana(cc, t, Q, 'morning', { shadow: false, basket: 'hip' }), { tint: '#2a1a2a', k: 0.5 }); } : null }] : [] });
+    doors: doorOpen > 0.01 ? [{ i: 3, open: doorOpen, inside: mg && mg.inDoor ? (c) => { const Q = { ...mg.P, x: 930, y: 900, s: 0.88 }; abCel(c, [930, 900, 300, 330], (cc) => morgiana(cc, t, Q, 'morning', { shadow: false, basket: 'hip' }), { tint: '#2a1a2a', k: 0.2 }); } : null }] : [] });
   // the inside icons (S7: a drawer, rummaging ticks)
   if (t > 56.65 && t < 57.45) { const k = K.ease.back(K.clamp((t - 56.65) / 0.2)); ctx.save(); ctx.translate(930, 610); ctx.scale(k, k); celShade(ctx, K.rectPts(-34, -26, 68, 40), '#c8844a', '#8a5226', { off: 5, lw: 3 }); seg(ctx, -10, -8, 10, -8, 5, '#ffd36a', 1); ctx.restore();
     ctx.save(); ctx.strokeStyle = '#fff6ea'; ctx.lineWidth = 5; ctx.lineCap = 'round'; for (const [dx, a] of [[-70, 56.85], [70, 57.05]]) if (t > a) { ctx.beginPath(); ctx.arc(930 + dx, 600, 22, dx < 0 ? 2.4 : -0.6, dx < 0 ? 3.8 : 0.8); ctx.stroke(); } ctx.restore(); }
@@ -156,14 +158,15 @@ function a3DreamInside(c, t) {
 }
 // WHY ONLY OUR DOOR? (S6): a thought balloon with five door icons; ours carries the cross
 function a3WhyCloud(ctx, t, cam, S) {
-  const [hx, hy] = abP(1085, 700, cam), p = K.clamp((t - 48.4) / 0.5), fade = 1 - K.clamp((t - 52.1) / 0.3);
+  const [hx, hy] = abP(1120, 700, cam), p = K.clamp((t - 48.4) / 0.5), fade = 1 - K.clamp((t - 52.1) / 0.3);
   ctx.save(); ctx.globalAlpha *= fade;
   thoughtCloud(ctx, 440, 330, 700, 420, t, { p, tail: [hx - 10, hy - 30], inside: () => {} });
-  if (p > 0.6) { ctx.save(); ctx.font = `700 46px "${BF}"`; ctx.fillStyle = '#2b1a3a'; ctx.textAlign = 'center'; ctx.globalAlpha *= K.clamp((p - 0.6) / 0.3); ctx.fillText('WHY ONLY OUR DOOR?', 440, 250); ctx.restore(); }
+  if (p > 0.6) { ctx.save(); ctx.font = `700 54px "${BF}"`; ctx.fillStyle = '#2b1a3a'; ctx.textAlign = 'center'; ctx.globalAlpha *= K.clamp((p - 0.6) / 0.3); ctx.fillText('WHY ONLY OUR DOOR?', 440, 240); ctx.restore(); }
   const pops = [49.5, 50.1, 50.86, 51.5, 51.8];
-  TS.doors.forEach((d, i) => { const a = pops[i]; if (t < a) return; const k = K.ease.back(K.clamp((t - a) / 0.2)), x = 440 + (i - 2) * 118, y = 380;
-    ctx.save(); ctx.translate(x, y); ctx.scale(k * 0.85, k * 0.85); a3DoorIcon(ctx, 0, 0, d.col, { cross: i === 2, glow: 0.6 + 0.3 * Math.sin(t * 6), tick: i !== 2 ? K.clamp((t - a - 0.15) / 0.2) : 0 }); ctx.restore();
-    if (i === 2) tsRing(ctx, x + 44, y + 6, ((t - a) / 0.6) % 1, '#ffffff', { r0: 20, grow: 30 }); });
+  // v2 (review 1 note 6): ours half as big again with a bold dark-outlined cross and a pulse on "بابنا" 50.86; the other four plain
+  TS.doors.forEach((d, i) => { const a = pops[i]; if (t < a) return; const big = i === 2, pl = big ? 1 + 0.12 * Math.exp(-Math.max(0, t - 50.86) * 4) * (t > 50.86 ? 1 : 0) : 1, k = K.ease.back(K.clamp((t - a) / 0.2)) * pl, x = 440 + (i - 2) * 124 + (i > 2 ? 22 : i < 2 ? -22 : 0), y = big ? 395 : 410;
+    ctx.save(); ctx.translate(x, y); ctx.scale(k * (big ? 1.3 : 0.75), k * (big ? 1.3 : 0.75)); a3DoorIcon(ctx, 0, 0, d.col, {}); if (big) { ctx.save(); ctx.lineCap = 'round'; for (const [w, c] of [[17, '#2b1a3a'], [9, '#ffffff']]) { ctx.strokeStyle = c; ctx.lineWidth = w; ctx.beginPath(); ctx.moveTo(-16, -16); ctx.lineTo(16, 16); ctx.moveTo(16, -16); ctx.lineTo(-16, 16); ctx.stroke(); } ctx.restore(); } ctx.restore();
+    if (big && t > 50.86) tsRing(ctx, x, y, ((t - 50.86) / 0.6) % 1, '#ff7ad9', { r0: 50, grow: 30, w: 5 }); });
   ctx.restore();
 }
 // the memory inset (S6): the stranger in the arch hides a chalk-white hand in his sleeve (on twos)

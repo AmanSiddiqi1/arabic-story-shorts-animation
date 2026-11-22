@@ -164,7 +164,8 @@ const SB2_S19X = (t) => kfn(t, [[124.0, 1060], [124.3, 1000], [125.46, 1000], [1
 function sbS19World(ctx, t, cam, S) { const tc = SB_T2(t);
   sbDiamondValley(ctx, t, cam);
   sbStickNest(ctx, 'back'); for (let i = 0; i < 2; i++) sbEaglet(ctx, 1200 + i * 60, -1090, { s: 0.8, bob: 8 * Math.abs(Math.sin(tc * (2.6 + i) + i)), beak: (i === 0 && t > 126.0 && t < 126.4) || Math.sin(tc * 5 + i * 2) > 0.7 ? 1 : 0, gaze: i === 0 ? [-1, 0.2] : [0, 1], tilt: i === 0 ? -0.3 : 0 }); sbStickNest(ctx, 'front');
-  const eagleTurn = t > 126.0 && t < 126.45; sbEagleAt(ctx, [1150, -1090], t, { dir: eagleTurn ? -1 : 1, headRot: eagleTurn ? 0 : 0.2 * Math.sin(tc * 2), sq: breathe(tc, 4, 0.02) });
+  const eagleTurn = t > 126.0 && t < 126.45; sbEagleAt(ctx, [1150, -1090], t, { dir: eagleTurn ? -1 : 1, headRot: eagleTurn ? -0.25 * pulse(tc, 126.05, 0.3) : 0.2 * Math.sin(tc * 2), sq: breathe(tc, 4, 0.02) });
+  if (t > 126.0 && t < 126.5) soundArcs(ctx, 1190, -1140, -1, t - 126.0, '#ffffff');   // the eaglet that tells: a cheep
   // the slab stays against the wall; Sinbad unpicks the knot (123.26) and slides out (124.0)
   if (t < 124.0) { sbSlab(ctx, 1060, -1216, { rot: 0, stuck: 4, front: (q) => sbStrapped(q, t, { handL: [-30, -60 + 6 * osc(SB_T3(t), 0.3)], handR: [30, -40 - 6 * osc(SB_T3(t), 0.3)], gaze: [1, -0.3], mouth: 'closed' }, t < 123.7 ? 2 : 1, 0) }); return; }
   sbSlab(ctx, 1060, -1216, { rot: 0, stuck: 4 });
@@ -173,10 +174,16 @@ function sbS19World(ctx, t, cam, S) { const tc = SB_T2(t);
   else if (t < 125.46) { P.dir = 1; const pull = osc(tc, 0.3); P.handLW = [1040 + 20 * pull, -1170]; P.handRW = [1020 - 20 * pull, -1160]; P.gaze = [1, -0.3]; }
   else if (t < 126.0 || (t >= 126.54 && t < 126.95)) { const xf = SB2_S19X; Object.assign(P, walk(xf, tc, { stride: 12 })); P.y = sbShelfY(P.x); P.dir = -1; P.aL = [1.6, 1.7]; P.aR = [1.6, 1.7]; P.sq *= 1.03; P.gaze = [1, -0.2]; }
   else if (t < 126.54) { P.ph = 1.3; P.amp = 1; P.aL = [1.4, 2.4]; P.aR = [1.8, 2.6]; P.tip += 0.05 * Math.sin(SB_T3(t) * 9); P.lid = 0; P.gaze = [1, 0.1]; }
-  else { // hauls himself over the rim, rolls on his back, arms spread, laughing silently
-    const u = K.clamp((t - 126.95) / 0.45); P.x = K.lerp(790, 720, u); P.y = K.lerp(sbShelfY(790), -1404, u) - 30 * Math.sin(Math.PI * u); if (u < 1) { P.handLW = [760, -1404]; P.handRW = [780, -1404]; P.tip = 0.4 * (1 - u); }
-    else { P.lie = 1; P.lid = 1; P.mouth = 'smile'; P.handL = PERSON_HANDS.armsOut.L; P.handR = PERSON_HANDS.armsOut.R; P.sq = 1 + 0.03 * Math.sin(tc * 9); } }
-  sbSin2(ctx, P);
+  else { // v2: hauls himself up, drops to his belly on the rim edge (hands in the grass), slides away behind the lip, feet last
+    P.mouth = 'o'; P.gaze = [1, 0.3];
+    if (t < 127.15) { const u = K.clamp((t - 126.95) / 0.2); P.x = K.lerp(790, 750, u); P.y = K.lerp(sbShelfY(790), -1404, K.ease.out(u)); P.handLW = [720, -1414]; P.handRW = [760, -1414]; P.tip = 0.35; }
+    else { const fl = K.clamp((t - 127.15) / 0.15), sl = K.ease.inOut(K.clamp((t - 127.45) / 0.45)); P.x = 740 - 60 * sl; P.y = -1404 + 300 * sl; P.lie = fl; P.dir = 1; P.rot = -0.15 - 0.6 * sl; P.handL = [-10, -230]; P.handR = [10, -240 + 10 * osc(tc, 0.2)]; P.sq *= landSquash(tc, 127.3, 0.08); P.lid = 0; P.gaze = [-1, -0.2]; } }
+  const rimY = (x) => -1400 + 26 * Math.sin(x * 0.013) + 14 * Math.sin(x * 0.041), over = t > 127.45;
+  if (t > 127.15 && t < 127.95) groundShadow(ctx, P.x - 30, rimY(P.x) + 4, 110 * (1 - K.clamp((t - 127.45) / 0.4)), 0, { flat: true });
+  if (over) { ctx.save(); ctx.beginPath(); ctx.moveTo(300, -3000); for (let x = 300; x <= 1300; x += 20) ctx.lineTo(x, rimY(x) + 6); ctx.lineTo(1300, -3000); ctx.closePath(); ctx.clip(); }
+  if (t < 127.95) sbSin2(ctx, P);
+  if (over) { ctx.restore(); for (let x = 560; x < 900; x += 30) sbTuft(ctx, x, rimY(x) + 6, 26 + 10 * Math.sin(x), '#6ab85a', '#2f7a44'); }
+  if (t > 127.8 && t < 128.07) dustBurst(ctx, 700, rimY(700), t - 127.8, 6, 6, 16, 70, 0.5, 6);
   if (t > 124.86 && t < 125.46) { const h = [1030, -1165], k = (t - 124.86) / 0.6; sbCloth(ctx, sbSag([1060, -1200], h, 30 * (1 - k)), { w: 12, free: 3, t }); }
   if (t > 127.2) { const f = [650, -1420]; sbFlower(ctx, f[0] + 6 * Math.sin(tc * 2), f[1], 40, '#ff6a8a'); }
 }

@@ -6,6 +6,8 @@
 // ---------- costume settings (Library person presets + pal) ----------
 const EH_CRIMSON = '#e8264f', EH_SAFFRON = '#f2a71b', EH_EMERALD = '#1f9a6a';
 const EH_FIRUZ = { costume: 'prince', s: 0.95, age: 0, pal: { robe: '#f6efe0', dot: '#d9cdb4', sleeve: '#eadcc0', trim: '#f2c040', sash: EH_CRIMSON, pants: '#2a8f9a', shoes: '#7a4a2a', hair: '#1a1420' } };
+// Firuz riding (HORSE-01 v2, Fable note 4): short tunic so the whole leg reads teal, sleeves one step darker than the tunic
+const EH_FIRUZ_RIDE = { len: 'short', sleeve: '#e2d2b0' };
 const EH_INVENTOR = { costume: 'vizier', s: 1.02, age: 0.7, pal: { robe: '#5a3a8a', dot: '#43296a', sleeve: '#8a6ac8', cape: '#3a2458', capeDot: '#2a1a40', sash: '#3fae6a', trim: '#c8a0ff', hc: EH_SAFFRON, hd: '#c07a10', jewel: '#3fae6a' } };
 const EH_KING = { costume: 'caliph', s: 1.0, age: 0.6, pal: { robe: EH_EMERALD, dot: '#126e4a', sleeve: '#2fb884', cape: '#f2c040', capeDot: '#c8961a', trim: '#f2c040', sash: '#f2c040', hc: '#fff6ea', hd: '#d8d0c0', jewel: '#e8364f' } };
 // seven guests in bright colours that are none of the leads' accents, plus the palace child
@@ -56,6 +58,7 @@ function ehCapeFly(ctx, x, y, s, t, o = {}) {
 // seat EQUINE.horse.seat), so rideOn(ctx, ebonyHorse, P, personP, { name: 'horse', reins: false }) seats a rider.
 // It never moves a leg, blinks or breathes. Fields: knob (angle of the ascent knob notch, rad), lever (lever angle), reveal 0..1
 // (the descent lever under the first mane block lights; 0 = hidden, as in every wide shot), close (draw the fine engraving),
+// cover 0..1 (close inserts: a carved block lies over the lever slot, 1 = hidden; sliding it to 0 uncovers the lever),
 // lit {neck, chest, joints, hooves, eye} 0..1 (the power-on brass flashes), frost 0..1, alpha.
 const EH_EB = { ebony: '#3a3448', shade: '#241f30', far: '#2c2738', hi: '#6a6288', line: '#181222', brass: '#e0b038', brassS: '#a87a1c', brassH: '#fff1b0', cloth: EH_CRIMSON, clothB: '#f2c040' };
 const EH_EBG = {   // geometry at s 1 (facing +x, feet at y 0)
@@ -106,7 +109,7 @@ function ebonyHorse(ctx, P) {
   for (const [bx, by] of [[176, -286], [192, -266], [206, -250], [160, -262]]) ehBrassDisc(ctx, bx, by, 4, lit.neck || 0, { lw: 1.5 });
   ehBrassDisc(ctx, G.eye[0], G.eye[1], 7, lit.eye || 0, { lw: 2 });   // pupil-less brass disc eye
   // the descent lever under the first mane block (drawn only when revealed or in a close insert)
-  const rv = K.clamp(P.reveal || 0);
+  const rv = K.clamp(P.reveal || 0), cov = K.clamp(P.cover || 0);
   if (rv > 0 || cl) { const [lx, ly] = G.lever, la = (P.lever || 0) + 2.2;
     celShade(ctx, K.rectPts(lx - 13, ly - 10, 26, 22), ehMix(E.shade, E.brass, 0.25 + 0.5 * rv), E.shade, { light: L, off: 4, lw: 2, line: ln });
     if (cl) { ctx.save(); ctx.strokeStyle = ehMix(E.shade, '#ffe9a0', 0.2 + 0.7 * rv); ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(lx, ly - 6); ctx.lineTo(lx, ly + 7); ctx.moveTo(lx - 4, ly + 3); ctx.lineTo(lx, ly + 8); ctx.lineTo(lx + 4, ly + 3); ctx.stroke(); ctx.restore(); }
@@ -118,6 +121,10 @@ function ebonyHorse(ctx, P) {
     seg(ctx, -w / 2 + 2, -h / 2 + 2, w / 2 - 2, -h / 2 + 2, 3.5, ehBrass(lit.neck || 0), 0.8);
     if (cl) { ctx.strokeStyle = ln; ctx.lineWidth = 1.2; for (const q of [-5, 3]) { ctx.beginPath(); ctx.moveTo(-w / 2 + 4, q); ctx.lineTo(w / 2 - 4, q + 1); ctx.stroke(); } }
     ctx.restore(); });
+  // cover (0..1, close inserts): a carved block lying over the lever slot; 1 = the slot hidden, slides up the neck as it opens
+  if (cov > 0) { const [lx, ly] = G.lever, sl = (1 - cov) * 52; ctx.save(); ctx.translate(lx + 2 + sl * 0.35, ly - 2 - sl); ctx.rotate(-0.85);
+    celShade(ctx, K.rectPts(-27, -24, 54, 48), E.ebony, E.shade, { light: L, off: 7, hi: E.hi, lw: 3, line: ln }); seg(ctx, -24, -21, 24, -21, 3.5, ehBrass(lit.neck || 0), 0.8);
+    if (cl) { ctx.strokeStyle = ln; ctx.lineWidth = 1.2; for (const q of [-8, 4]) { ctx.beginPath(); ctx.moveTo(-22, q); ctx.lineTo(22, q + 1); ctx.stroke(); } } ctx.restore(); }
   // brass chest plate with a sun boss
   const [cx, cy] = G.chest; celShade(ctx, [[cx - 4, cy - 26], [cx + 10, cy - 22], [cx + 12, cy + 18], [cx + 2, cy + 30], [cx - 8, cy + 18]], ehBrass(lit.chest || 0), E.brassS, { light: L, off: 6, hi: E.brassH, lw: 2.5, line: '#6a4a10' });
   ehBrassDisc(ctx, cx + 3, cy, 8, lit.chest || 0, { lw: 2 }); if (cl) for (let i = 0; i < 8; i++) { const a = i * Math.PI / 4; seg(ctx, cx + 3 + Math.cos(a) * 10, cy + Math.sin(a) * 10, cx + 3 + Math.cos(a) * 15, cy + Math.sin(a) * 15, 2, '#a87a1c', 0); }
@@ -191,5 +198,6 @@ function ehRide(ctx, H, who, PP, t, o = {}) {
   const rot = seat.rot + (PP.lurch || 0) * sg, nk = [seat.x + Math.sin(rot) * 150 * ps + 24 * sg * ps * Math.cos(rot), seat.y - Math.cos(rot) * 150 * ps];
   if (who === 'firuz' && o.cape !== false) ehCapeFly(ctx, nk[0], nk[1], ps, o.tc ?? t, { stream: o.stream ?? 0, ang: o.ang ?? (sg > 0 ? Math.PI * 0.94 : Math.PI * 0.06), hangSide: -0.25 * sg });
   if (who === 'inventor' && o.tail !== false) ehRibbon(ctx, nk[0] - 14 * sg * ps, nk[1] - 70 * ps, o.tailAng ?? (Math.PI / 2 + 0.5 * sg + (o.stream || 0) * (sg > 0 ? 1.2 : -1.2)), 110 * ps * (o.tailLen || 1), 16 * ps, o.tc ?? t, EH_SAFFRON, { wave: 6 + 10 * (o.stream || 0), hz: 1.3 + 2 * (o.stream || 0), tip: 0.6, shade: '#c07a10' });
-  return rideOn(ctx, ebonyHorse, H, ehDressP(D, { ...PP, s: ps }), { name: 'horse', reins: false });
+  const pp = who === 'firuz' ? { ...PP, s: ps, pal: { ...EH_FIRUZ_RIDE, ...(PP.pal || {}) } } : { ...PP, s: ps };
+  return rideOn(ctx, ebonyHorse, H, ehDressP(D, pp), { name: 'horse', reins: false });
 }

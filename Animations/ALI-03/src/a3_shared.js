@@ -9,7 +9,7 @@ const A3_NSH = '#22204a';   // ground shadow colour at night
 // ---------- the street world ----------
 const A3_BODIES = {
   day: (c) => tsSun(c, 1700, 160), afternoon: (c) => tsSun(c, 1760, 330, 1, '#fff0a8'), evening: (c) => tsSun(c, 260, 560, 1, '#ffd890'),
-  night: (c) => tsMoon(c, 1350, 230), night2: (c) => tsMoon(c, 700, 260, 1, 60),
+  night: (c) => tsMoon(c, 1350, 230), night2: (c) => a3AmberMoon(c, 700, 420),
 };
 // o: {m, m2, k (plate cross-fade), bodies(c, t), flock: [x0, y0, v, n, seed, t0], doors: [{i, open, lit, inside}], gate, gateIn, win {...},
 //     washing {...} | null, lan (lantern k), marks {...}}
@@ -22,9 +22,13 @@ function a3Street(ctx, t, cam, o = {}) {
   if (o.washing) tsWashing(ctx, t, mm, o.washing); else if (o.washing !== null && night) tsWashing(ctx, t, mm, { empty: true });
   if (o.lan) tsLanterns(ctx, t, o.lan);
   if (o.underCast) o.underCast(ctx);
-  tsMarks(ctx, t, { glow: night ? 0.45 : 0.25, ...(o.marks || {}) });
+  const open = {}; for (const d of o.doors || []) open[d.i] = d.open || 0;   // v2: dots ride on the door leaves (note 1)
+  tsMarks(ctx, t, { glow: night ? 0.45 : 0.25, open, night, ...(o.marks || {}) });
 }
 const a3StreetUnder = () => null;
+// v2 (review 1 note 4): the second night's large low amber moon (night 1 keeps the small cream one)
+function a3AmberMoon(c, x, y, r = 96) { abGlow(c, x, y, r * 4.2, 0.6, '#ffb860'); celShade(c, ell(x, y, r, r, 44), '#ffc878', '#e08a40', { light: [-1, -1], off: r * 0.22, lw: 0 });
+  c.save(); c.globalAlpha = 0.35; c.fillStyle = '#d88038'; for (const [dx, dy, rr] of [[-28, -18, 16], [22, 10, 12], [-6, 34, 10]]) { c.beginPath(); c.arc(x + dx, y + dy, rr, 0, 7); c.fill(); } c.restore(); }
 
 // ---------- the cat on the roofs (Library cat pal 2, s 0.55): the silent witness ----------
 // P: {x, y, dir, sit, crouch, gaze, lid ...}; tail and ears always alive
@@ -39,9 +43,10 @@ function a3Puff(ctx, x, y, u, n = 5, r = 9, col = '#fffaf2') { if (u <= 0 || u >
 function a3Q(ctx, S, x, y, t, a, b, o = {}) { if (t < a || t > b + 0.25) return; const dr = o.droop != null ? o.droop : 0; ctx.save(); if (t > b) ctx.globalAlpha *= 1 - K.clamp((t - b) / 0.25);
   const pop = 1 + 0.25 * Math.max(0, 1 - (t - a) / 0.2); ctx.translate(x, y + dr * 14); ctx.rotate(dr * 0.3); ctx.scale(pop, pop); S.label(ctx, '?', 0, 0, K.clamp((t - a) / 0.3), { size: o.size || 46, color: o.col || '#ffd36a' }); ctx.restore(); }
 // a picture balloon (panel units): dark rounded box with the style's cyan rule and a tail to [tx, ty]; draw(ctx) inside (clipped)
-function a3PicBalloon(ctx, x, y, w, h, to, p, draw) { if (p <= 0) return; const k = K.ease.back(K.clamp(p)); ctx.save(); ctx.translate(x, y); ctx.scale(k, k); ctx.translate(-x, -y);
-  ctx.fillStyle = 'rgba(14,10,24,0.9)'; ctx.beginPath(); ctx.moveTo(x - 30, y + h / 2 - 4); ctx.lineTo(to[0], to[1]); ctx.lineTo(x + 30, y + h / 2 - 4); ctx.fill();
-  ctx.beginPath(); ctx.roundRect(x - w / 2, y - h / 2, w, h, 40); ctx.fill(); ctx.strokeStyle = '#7fe3ff'; ctx.lineWidth = 4; ctx.stroke();
+// v2 (review 1 note 9): o.light, a light balloon (cream fill) so the picture inside reads
+function a3PicBalloon(ctx, x, y, w, h, to, p, draw, o = {}) { if (p <= 0) return; const k = K.ease.back(K.clamp(p)); ctx.save(); ctx.translate(x, y); ctx.scale(k, k); ctx.translate(-x, -y);
+  ctx.fillStyle = o.light ? '#fff6e8' : 'rgba(14,10,24,0.9)'; ctx.beginPath(); ctx.moveTo(x - 30, y + h / 2 - 4); ctx.lineTo(to[0], to[1]); ctx.lineTo(x + 30, y + h / 2 - 4); ctx.fill();
+  ctx.beginPath(); ctx.roundRect(x - w / 2, y - h / 2, w, h, 40); ctx.fill(); ctx.strokeStyle = o.light ? '#2b1a3a' : '#7fe3ff'; ctx.lineWidth = 4; ctx.stroke();
   ctx.save(); ctx.beginPath(); ctx.roundRect(x - w / 2 + 8, y - h / 2 + 8, w - 16, h - 16, 34); ctx.clip(); draw(ctx); ctx.restore(); ctx.restore(); }
 // little cel pictograms for picture balloons (panel units): a door icon, a cloaked sneaking figure
 function a3DoorIcon(ctx, x, y, col, o = {}) { const pts = townArchPts(x - 35, x + 35, y - 55, y + 55, 'pointed'); celShade(ctx, pts, col, abDark(col, 0.3), { light: [-1, -1], off: 6, lw: 3, line: abDark(col, 0.6) });
@@ -54,7 +59,7 @@ function a3Sneaker(ctx, x, y, s, ph, o = {}) { ctx.save(); ctx.translate(x, y); 
 
 // ---------- the arch entrance: figures come out of the dark passage (x < 150) ----------
 function a3ArchFig(ctx, x, y, draw, w = 320) { const u = K.clamp((x + 40) / 110); if (u <= 0.02) return; if (u >= 0.99) { draw(ctx); return; }
-  abCel(ctx, [x, y, w, 330], (c) => draw(c), { tint: '#1e1830', k: 0.9 * (1 - u), alpha: K.clamp(u * 2.2) }); }
+  abCel(ctx, [x, y, w, 330], (c) => draw(c), { tint: '#1e1830', k: 0.28 * (1 - u), alpha: K.clamp(u * 2.2) }); }   // v2 (note 8): darkening capped at 28%
 
 // ---------- the big hand for inserts (ALI-01 abHandCel with a sleeve colour): o {sleeve, sleeveD, curl, chalk, white, brush, ring} ----------
 function a3BigHand(ctx, x, y, k, o = {}) {

@@ -6,13 +6,14 @@ function sbGem(ctx, x, y, r, o = {}) {
   ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot || 0);
   if (o.glow) sbGlow(ctx, 0, 0, r * 4, o.glow, '#dff4ff');
   const P = [[-r, -r * 0.35], [-r * 0.55, -r * 0.9], [r * 0.55, -r * 0.9], [r, -r * 0.35], [0, r * 1.05]];
-  shape(ctx, P, SB_GEM.face, { lw: Math.max(1.2, r * 0.12), line: SB_GEM.line });
+  shape(ctx, P, SB_GEM.face, { lw: Math.max(1.2, r * (o.line ? 0.16 : 0.12)), line: o.line || SB_GEM.line });
   ctx.fillStyle = o.tint || SB_GEM.a; ctx.beginPath(); ctx.moveTo(-r, -r * 0.35); ctx.lineTo(-r * 0.3, -r * 0.35); ctx.lineTo(0, r * 1.05); ctx.closePath(); ctx.fill();
-  ctx.fillStyle = SB_GEM.b; ctx.beginPath(); ctx.moveTo(r, -r * 0.35); ctx.lineTo(r * 0.3, -r * 0.35); ctx.lineTo(0, r * 1.05); ctx.closePath(); ctx.fill();
+  ctx.fillStyle = o.tintB || SB_GEM.b; ctx.beginPath(); ctx.moveTo(r, -r * 0.35); ctx.lineTo(r * 0.3, -r * 0.35); ctx.lineTo(0, r * 1.05); ctx.closePath(); ctx.fill();
   ctx.fillStyle = SB_GEM.c; ctx.beginPath(); ctx.moveTo(-r * 0.55, -r * 0.9); ctx.lineTo(-r * 0.2, -r * 0.35); ctx.lineTo(-r, -r * 0.35); ctx.closePath(); ctx.fill();
-  ctx.strokeStyle = SB_GEM.line; ctx.lineWidth = Math.max(1, r * 0.07); ctx.beginPath(); ctx.moveTo(-r, -r * 0.35); ctx.lineTo(r, -r * 0.35); ctx.stroke();
+  ctx.strokeStyle = o.line || SB_GEM.line; ctx.lineWidth = Math.max(1, r * 0.07); ctx.beginPath(); ctx.moveTo(-r, -r * 0.35); ctx.lineTo(r, -r * 0.35); ctx.stroke();
   ctx.restore();
 }
+// o.line / o.tintB (v2, optional): a darker outline and a second hard facet colour so a gem separates from pale sand
 // scatter n gems over a rect (for baked floors); returns the positions
 function sbGemScatter(c, x0, x1, y0, y1, n, seed, r0 = 7, r1 = 15) { const R = K.rng(seed), out = []; for (let i = 0; i < n; i++) { const y = y0 + R() * (y1 - y0), d = 0.6 + 0.8 * (y - y0) / Math.max(1, y1 - y0), x = x0 + R() * (x1 - x0), r = (r0 + R() * (r1 - r0)) * d; sbGem(c, x, y, r, { rot: (R() - 0.5) * 0.8, tint: ['#bfeaff', '#ffd8f0', '#d8ffe8', '#fff2b8'][i % 4] }); out.push([x, y, r]); } return out; }
 // seven thin coloured rays from a gem (the insert)

@@ -198,7 +198,7 @@ function sbGladeSin(ctx, t, S) { const tc = SB_T2(t), sitK = sbF(t, [[13.7, 0], 
   else if (t >= 12.85 && t < 15.4) { const h = sbHandW(Q, 1); sbBlob(ctx, h[0], h[1] - 6, 13, 13, '#e8364f', '#a8203a', { lw: 2.5, off: 4, hi: '#ffa0a8' }); }
   else if (t >= 15.4 && t < 16.0) { const u = K.clamp((t - 15.4) / 0.4); sbBlob(ctx, SB2_SIT.x + 60 + 50 * u, 896 - 10 * Math.sin(Math.PI * u), 13, 13, '#e8364f', '#a8203a', { lw: 2.5, off: 4 }); }
   if (t > 15.92 && t < 16.6) zzz(ctx, Q.x + 30, Q.y - 210, t);
-  if (t > 20.08 && t < 21.3) { const [x, y] = [Q.x - 150, Q.y - 330]; sbSay(ctx, S0, [[20.1, 'HELLO?...']], t, x, y, sbPt(Q, [-30, 10]), { wobble: 4, gone: 21.0, size: 46 }); }
+  SB2_HELLO = sbPt(Q, [-30, 10]);   // v2: the HELLO balloon is drawn over the tree, in the sky (sbGladeOver)
 }
 // running to the beach (21.22), skid at the water (22.7), waves and jumps (24.26), the arms come down (25.18)
 function sbRunSin(ctx, t) { const tc = SB_T2(t), x = SB2_RUN(t), P = sbLive(t, 11, { x, y: sbBeachY(x), dir: -1, mouth: 'open', gaze: [-1, 0], wind: 0.9 }, [22.68, 25.2]);
@@ -228,7 +228,9 @@ function sbButterfly(ctx, t) { if (t < 15.6 || t > 19.6 || (t > 16.6 && t < 17.5
   const head = [SB2_SIT.x + 22, 900 - 240]; if (t < 15.92) { const u = (t - 15.6) / 0.32; x = K.lerp(1300, head[0], u); y = K.lerp(620, head[1], u) + 20 * Math.sin(u * 9); } else if (t < 18.3) { [x, y] = head; sit = true; } else { const u = (t - 18.3) / 1.3; x = head[0] + 300 * u; y = head[1] - 260 * u + 20 * Math.sin(u * 12); }
   const f = sit ? 0.3 + 0.2 * Math.sin(tc * 3) : Math.abs(Math.sin(tc * 14)); ctx.save(); ctx.translate(x, y);
   for (const sd of [-1, 1]) celShade(ctx, [[0, 0], [sd * 22 * f + sd * 4, -20], [sd * 26 * f + sd * 6, 4], [sd * 10 * f, 14]], '#3f7ae8', '#1f4ab8', { light: [-1, -1], off: 4, lw: 2 }); seg(ctx, 0, -8, 0, 10, 3, '#2a1a3a', 0); ctx.restore(); }
+let SB2_HELLO = null;
 function sbGladeOver(ctx, t, cam, S) {
+  if (t > 20.08 && t < 21.3 && SB2_HELLO) { const m = sbP(SB2_HELLO[0], SB2_HELLO[1], cam); sbSay(ctx, S, [[20.1, 'HELLO?...']], t, 330, 400, m, { wobble: 4, gone: 21.0, size: 46 }); }
   if (t > 22.68 && t < 25.9) { const sp = sbP(K.lerp(330, 290, K.clamp((t - 22) / 4)), 590, cam); sbTag(ctx, S, 'THE SHIP!', sp[0] + 140, sp[1] - 170, t, 22.7, 23.5, { size: 46 }); if (t < 23.6) S.arrow(ctx, [sp[0] + 120, sp[1] - 130], [sp[0] + 20, sp[1] - 20], K.clamp((t - 22.8) / 0.4)); }
   if (t > 19.56 && t < 20.6) { const a = sbP(1080, 960, cam), b = sbP(760, 940, cam); S.arrow(ctx, a, b, K.clamp((t - 19.6) / 0.6), { bend: 0.05 }); }
   // the round inset on the deck: the fat merchant counts heads, his finger lands on the sack with the star seal

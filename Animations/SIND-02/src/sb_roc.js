@@ -59,6 +59,9 @@ function sbRoc(ctx, P, part = 'all') {
     const main = [...LE, ...TE.slice().reverse().map((q) => [q[0] - q[2] * q[4] * 0.25, q[1] - q[3] * q[4] * 0.25])], lobes = [];
     for (let i = 1; i <= N; i++) { const q = TE[i], r = q[4] * 0.36 + 18; lobes.push({ c: [q[0] - q[2] * r * 0.55, q[1] - q[3] * r * 0.55], r, tip: i >= N - 3 }); }
     for (let i = 1; i < N; i += 1) { const q = TE[i], m = LE[i], r = q[4] * 0.28; lobes.push({ c: [K.lerp(m[0], q[0], 0.5), K.lerp(m[1], q[1], 0.5)], r, row: true }); }
+    // v2: the leading edge and the shoulder as cumulus lobes (no straight edge longer than a feather), each with the hard shade crescent
+    for (let i = 0; i < N - 1; i++) { const q = TE[i], p = LE[i], r = K.lerp(q[4] * 0.3, q[4] * 0.2, i / N); lobes.push({ c: [p[0] + q[2] * r * 0.45, p[1] + q[3] * r * 0.45], r }); }
+    lobes.push({ c: [K.lerp(LE[0][0], TE[0][0], 0.55), K.lerp(LE[0][1], TE[0][1], 0.55)], r: TE[0][4] * 0.42 });
     const f = far ? SB_ROCP.far : SB_ROCP.wing, sh = far ? SB_ROCP.farS : SB_ROCP.wingS, LW = lw * 1.1;
     ctx.save(); ctx.lineJoin = 'round'; ctx.strokeStyle = lineC; ctx.lineWidth = 2 * LW; if (LW > 0) { K.poly(ctx, main, true); ctx.stroke(); for (const L of lobes) if (!L.row) { ctx.beginPath(); ctx.arc(L.c[0], L.c[1], L.r, 0, 7); ctx.stroke(); } }
     ctx.fillStyle = col(f); K.poly(ctx, main, true); ctx.fill(); for (const L of lobes) if (!L.row) { ctx.fillStyle = col(L.tip ? (far ? SB_ROCP.tipS : SB_ROCP.tip) : f); ctx.beginPath(); ctx.arc(L.c[0], L.c[1], L.r, 0, 7); ctx.fill(); }
@@ -132,7 +135,10 @@ function sbRocFlap(t, period = 1.6, ph = 0, lag = 0.12) { const tc = SB_T2(t); r
 
 // ---------- rocEgg: a half-buried giant egg, 900 wide, 760 above the ground line at gy. o: {wobble (rad about the base), glint 0..1, s} ----------
 function sbRocEgg(ctx, x, gy, o = {}) {
-  const s = o.s || 1; ctx.save(); ctx.translate(x, gy); ctx.rotate(o.wobble || 0); ctx.scale(s, s);
+  const s = o.s || 1; ctx.save(); ctx.translate(x, gy);
+  // o.seat (v2, optional): the egg sits IN a nest: a contact shadow, and the shell is cut o.seat units below the ground line
+  if (o.seat != null) { ctx.fillStyle = 'rgba(70,40,60,0.35)'; ctx.beginPath(); ctx.ellipse(0, 4, 470, 46, 0, 0, 7); ctx.fill(); ctx.beginPath(); ctx.rect(-2000, -3000, 4000, 3000 + o.seat); ctx.clip(); }
+  ctx.rotate(o.wobble || 0); ctx.scale(s, s);
   const E = ell(0, -250, 450, 510, 48);
   celShade(ctx, E, '#fffaf0', '#dccdf2', { light: [-1, -0.8], off: 120, lw: 5, line: '#6a5a96' });
   ctx.save(); K.poly(ctx, E, true); ctx.clip(); const R = K.rng(17); ctx.fillStyle = '#cfe4f6';

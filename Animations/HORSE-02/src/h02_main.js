@@ -3,9 +3,9 @@ const H2_DUR = 151.49;   // narration 147.49 + plan end_hold 4.0
 const H2_SHOTS = [
   { a: 0, b: 1.9, panel: h2SkyPanel }, { a: 1.9, b: 5.6, panel: h2LeverInsert }, { a: 5.6, b: 21.34, panel: h2SkyPanel }, { a: 21.34, b: 25.72, panel: h2CityPanel },
   { a: 25.72, b: 82.84, roof: true }, { a: 82.84, b: 83.5, panel: h2KnobInsert }, { a: 83.5, b: 88.3, roof: true }, { a: 88.3, b: 90.04, panel: h2EyesCU },
-  { a: 90.04, b: 98.35, roof: true }, { a: 98.35, b: 126.7, garden: true }, { a: 126.7, b: 1e9, roof: true },
+  { a: 90.04, b: 98.35, roof: true }, { a: 98.35, b: 121.38, garden: true }, { a: 121.38, b: 124.48, panel: h2MoonInsert }, { a: 124.48, b: 126.7, garden: true }, { a: 126.7, b: 1e9, roof: true },
 ];
-const H2_CUTS = [1.9, 5.6, 21.34, 25.72, 82.84, 83.5, 88.3, 90.04, 126.7];
+const H2_CUTS = [1.9, 5.6, 21.34, 25.72, 82.84, 83.5, 88.3, 90.04, 121.38, 124.48, 126.7];
 function h2Shot(t) { for (const s of H2_SHOTS) if (t >= s.a && t < s.b) return s; return H2_SHOTS[H2_SHOTS.length - 1]; }
 const h2P = (x, y, c) => [500 + (x - c.x) * c.zoom, 615 + (y - c.y) * c.zoom];
 // a balloon in the sky band with its tail to a head (panel units), kept inside the panel
@@ -45,7 +45,7 @@ function ehShadowCloud(c, x, y, w, lift) { groundShadow(c, x, y, w, lift, { flat
 function h2CloudReturn(c, t) {   // S18: the horse flying back along the gold river path, and a question mark
   ehGrad(c, 0, 0, 1000, 1000, EH_SKY.warmNight); ehMoon(c, 760, 230, 70, t); ehGrad(c, 0, 640, 1000, 120, [[0, '#6a7ad8'], [1, '#5a6ac8']]);
   moonPath(c, [[300, 700], [600, 700], [1000, 700]], t, 1, { w: 4, w1: 16 }); ehRiverTowers(c, 380, 520, 720, 200, 40, EH_RC_NIGHT, { lamps: true });
-  const u = K.clamp((t - 144.9) / 1.4), H = ehRigP(K.lerp(1000, 520, u), K.lerp(420, 520, u), 0.35, -1, 0); ehRide(c, H, 'firuz', { lid: 0, mouth: 'smile', handL: [70, -110], handR: [76, -100], gaze: [1, 0], s: 0.35 * 0.95 / 0.9 }, t, { tc: EH_T2(t), stream: 1, ang: 0.15 });
+  const u = K.clamp((t - 144.9) / 1.4), H = ehRigP(K.lerp(1000, 560, u), K.lerp(420, 500, u), 0.7, -1, 0); ehRide(c, H, 'firuz', { lid: 0, mouth: 'smile', handL: [-48, -96], handR: [62, -100], gaze: [1, 0], s: 0.7 * 0.95 / 0.9 }, t, { tc: EH_T2(t), stream: 1, ang: 0.15 });
   if (t > 145.4) { c.save(); c.font = '900 260px "Barlow Semi Condensed"'; c.textAlign = 'center'; c.fillStyle = '#ffe08a'; c.strokeStyle = '#2b1a3a'; c.lineWidth = 12; const k = K.ease.back(K.clamp((t - 145.4) / 0.25)); c.translate(250, 400); c.scale(k, k); c.strokeText('?', 0, 0); c.fillText('?', 0, 0); c.restore(); }
 }
 
@@ -57,19 +57,21 @@ function h2RoofOver(ctx, t, cam, S) {
   if (t >= 56.2 && t < 59.9 && prH) h2SayAt(ctx, S, [[56.2, 'WHO ARE YOU?'], [57.48, 'HOW DID YOU GET HERE?']], t, prH, { gone: 59.7, size: 46, dx: -60 });
   if (t >= 63.3 && t < 71.6 && fzH) { const p = t < 71.02 ? K.clamp((t - 63.3) / 0.7) : 1 - K.clamp((t - 71.02) / 0.4), ph = K.clamp((t - 65.78) / 0.7);
     thoughtCloud(ctx, 330, 270, 500, 340, t, { p, tail: [fzH[0] - 10, fzH[1] - 40], seed: 9, bg: '#bfe6ff', scale: K.lerp(0.26, 0.085, K.ease.inOut(ph)), at: [K.lerp(1270, 2900, K.ease.inOut(ph)), K.lerp(640, 420, K.ease.inOut(ph))], inside: (c) => h2CloudHome(c, t) }); }
-  if (t >= 77.4 && t < 78.9 && prH) h2SayAt(ctx, S, [[77.4, 'YOU ARE JOKING!']], t, prH, { gone: 78.66, size: 50 });
-  if (t >= 80.94 && t < 82.9) { const kb = P(...h2HP(H, EH_EBG.knob)), lv = P(...h2HP(H, EH_EBG.lever)); ctx.save(); ctx.globalAlpha *= K.clamp((82.9 - t) / 0.3);
+  if (t >= 77.4 && t < 78.9 && prH) h2SayAt(ctx, S, [[77.4, 'YOU ARE JOKING!']], t, prH, { gone: 78.66, size: 50, dx: 230, up: 170 });
+  if (t >= 73.88 && t < 74.75) { const c = P(...h2HP(H, [128, -196])); for (const tr of [73.9, 74.1, 74.3]) if (t >= tr && t < tr + 0.07) ehGlint(ctx, c[0] - 10, c[1], 30, 0.5);
+    ctx.save(); ctx.globalAlpha *= K.clamp((74.75 - t) / 0.2); S.title(ctx, t < 74.1 ? 'TOK' : 'TOK TOK', c[0] - 60, c[1] - 170, K.clamp((t - 73.9) / 0.15), { size: 52, align: 'center' }); ctx.restore(); }
+  if (t >= 80.94 && t < 81.85) { const kb = P(...h2HP(H, EH_EBG.knob)), lv = P(...h2HP(H, EH_EBG.lever)); ctx.save(); ctx.globalAlpha *= K.clamp((81.85 - t) / 0.15);
     S.arrow(ctx, [kb[0] - 170, kb[1] + 150], [kb[0] - 14, kb[1] + 14], K.clamp((t - 80.94) / 0.3), { width: 10 }); S.label(ctx, 'UP', kb[0] - 190, kb[1] + 190, K.clamp((t - 80.94) / 0.3), { size: 50 });
     if (t >= 81.3) { S.arrow(ctx, [lv[0] - 200, lv[1] - 110], [lv[0] - 14, lv[1] - 8], K.clamp((t - 81.3) / 0.3), { width: 10, color: '#ff7ad9' }); S.label(ctx, 'DOWN', lv[0] - 230, lv[1] - 150, K.clamp((t - 81.3) / 0.3), { size: 50 }); } ctx.restore(); }
   if (t >= 91.38 && t < 92.7 && prH) { ctx.save(); ctx.globalAlpha *= K.clamp((92.7 - t) / 0.3); S.title(ctx, 'HA HA!', prH[0] + 30 + 4 * Math.sin(t * 40), prH[1] - 130, K.clamp((t - 91.38) / 0.25), { size: 72, align: 'center' }); ctx.restore(); }
-  if (t >= 93.14 && t < 98.0 && prH) h2SayAt(ctx, S, [[93.14, 'THE STRANGEST HORSE\nIN THE WORLD!']], t, prH, { gone: 97.87, size: 44, dx: -40, up: 170 });
+  if (t >= 93.14 && t < 98.0 && prH) h2SayAt(ctx, S, [[93.14, 'THE STRANGEST HORSE\nIN THE WORLD!']], t, prH, { gone: 97.87, size: 44, dx: 200, up: 150 });
   if (t >= 128.48 && t < 130.3) { const tw = P(EH_ROOF.towers[0] + 60 + (cam.x - 800) * 0.55, 560); ctx.save(); ctx.globalAlpha *= K.clamp((130.3 - t) / 0.25); S.arrow(ctx, [tw[0] + 120, tw[1] - 90], [tw[0] + 10, tw[1] - 20], K.clamp((t - 128.48) / 0.3), { width: 10 }); S.label(ctx, 'TWO TOWERS', K.clamp(tw[0] + 150, 200, 690), tw[1] - 120, K.clamp((t - 128.48) / 0.3), { size: 48 }); ctx.restore(); }
   if (t >= 130.24 && t < 132.2) { const dm = P(EH_ROOF.dome[0] + (cam.x - 800) * 0.2, 560); ctx.save(); ctx.globalAlpha *= K.clamp((132.2 - t) / 0.25); S.arrow(ctx, [dm[0] + 200, dm[1] - 150], [dm[0] + 60, dm[1] - 80], K.clamp((t - 130.24) / 0.3), { width: 10 }); S.label(ctx, 'BLUE DOME', K.clamp(dm[0] + 240, 200, 720), dm[1] - 180, K.clamp((t - 130.24) / 0.3), { size: 48 }); ctx.restore(); }
   if (t >= 134.9 && t < 140.5 && fzG) { const sc = P(...ehHandW(fzG, [46, -126])), k = kfn(t, [[135.74, 0], [136.42, 1], [137.44, 2], [138.3, 3], [138.95, 4], [139.38, 5], [139.9, 6]], 'lin');
     const tip = mapCard(ctx, 320, 300, k, t, { s: 0.95, pop: (t - 134.9) / 0.35, fold: (t - 139.96) / 0.4, tail: sc });
     if (tip && t < 139.96) { ctx.save(); ctx.translate(tip[0], tip[1]); ctx.rotate(-0.5); seg(ctx, 0, 0, 40, 40, 6, '#3a2a3a', 1); ctx.restore(); } }
   if (t >= 144.64 && t < 147.4 && prH) { const p = t < 146.9 ? K.clamp((t - 144.64) / 0.6) : 1 - K.clamp((t - 146.9) / 0.4); thoughtCloud(ctx, 300, 330, 400, 300, t, { p, tail: [prH[0] - 20, prH[1] - 40], seed: 4, scale: 0.4, at: [520, 560], bg: '#4a5ac0', inside: (c) => h2CloudReturn(c, t) }); }
-  if (t >= 146.38 && t < 147.2) { const [x, y] = P(1185, 455); ehGlint(ctx, x, y, 34, (t - 146.38) / 0.4 % 1); }
+  if (t >= 146.38 && t < 147.2) { const [x, y] = P(1190, 160); ehGlint(ctx, x, y, 34, (t - 146.38) / 0.4 % 1); }
   if (t >= 147.3) S.title(ctx, 'TO BE CONTINUED...', 500, 210, K.clamp((t - 147.3) / 0.9), { size: 70, align: 'center', glow: '#ff7ad9' });
 }
 // ---------- overlays in the garden ----------
@@ -83,6 +85,33 @@ function h2GardenOver(ctx, t, cam, S) {
   if (t >= 115.86 && t < 117.1) { const gx = P(H2_GUARDX(t), 640); ctx.save(); ctx.globalAlpha *= K.clamp((117.1 - t) / 0.25); S.title(ctx, 'TRAMP TRAMP', K.clamp(gx[0] - 80, 270, 730), Math.max(150, gx[1] - 150) + 6 * Math.abs(Math.sin(t * 9)), K.clamp((t - 115.86) / 0.25), { size: 58, align: 'center' }); ctx.restore(); }
   if (t >= 119.26 && t < 126.6) { const sp = [[119.26, 'IF YOU RETURN, SAY:'], [121.38, "THE MOON KNOWS\nTHE RIVER'S PATH"], [124.48, 'THEN I WILL KNOW YOU']]; let i = 0; while (i < 2 && t >= sp[i + 1][0]) i++;
     const st = sp[i], gone = [121.2, 124.4, 126.3][i]; h2SayAt(ctx, S, [st], t, prH, { gone, size: 44, dx: 160, up: 160, col: i === 1 ? '#ffd36a' : undefined }); }
+}
+
+// ---------- v2 (Fable 1 note 6): the password's picture (121.38 - 124.48): moon over the river, scattered glints lock into one gold path ----------
+function h2MoonBg() { return ehBakeAt('h2moonbg', 1000, 1230, (c) => {
+  ehGrad(c, 0, 0, 1000, 600, [[0, '#2a2a7a'], [0.5, '#4a4aa8'], [1, '#8a7ad0']]);
+  ehSoftHills(c, 1000, 520, 30, '#5a5aa8', 17, 2, 620); ehRiverTowers(c, 820, 930, 560, 260, 48, EH_RC_NIGHT, { lamps: true });
+  const hs = ehHouses(71, 22, -40, 760, 520, 560); hs.forEach((H) => ehHouse(c, { ...H, w: H.w * 0.8, h: H.h * 0.8 }, EH_RC_NIGHT, 1));
+  c.fillStyle = '#3a3a80'; c.fillRect(0, 556, 1000, 10);   // the far bank line
+  ehGrad(c, 0, 566, 1000, 480, [[0, '#2e58b8'], [0.5, '#2a4ea8'], [1, '#22408e']]);   // the water, darker toward us
+  c.strokeStyle = 'rgba(160,200,255,0.35)'; c.lineWidth = 3; const R = K.rng(9); for (let i = 0; i < 26; i++) { const y = 590 + Math.pow(R(), 1.6) * 440, x = R() * 1000, l = 20 + (y - 560) * 0.12; c.beginPath(); c.moveTo(x, y); c.lineTo(x + l, y); c.stroke(); }
+  ehGrad(c, 0, 1040, 1000, 190, [[0, '#4a3a5a'], [1, '#2a1f3a']]); c.fillStyle = '#5a4a6a'; c.fillRect(0, 1040, 1000, 8);   // the near bank
+  for (const x of [80, 260, 900]) { c.fillStyle = '#1f1830'; c.beginPath(); c.ellipse(x, 1060, 50, 14, 0, 0, 7); c.fill(); }
+}, 0.6); }
+function h2MoonInsert(ctx, t, S) {
+  const tc = EH_T2(t), z = 1 + 0.012 * (t - 121.38); ctx.save(); ctx.translate(500, 700); ctx.scale(z, z); ctx.translate(-500, -700);
+  ctx.drawImage(h2MoonBg(), 0, 0, 1000, 1230); ehMoon(ctx, 500, 250, 92, t, 1);
+  for (let i = 0; i < 2; i++) { const bx = ((140 + i * 520 + t * 16) % 1200) - 100; ctx.fillStyle = '#1a1430'; ctx.beginPath(); ctx.moveTo(bx - 40, 700 + i * 120); ctx.lineTo(bx + 40, 700 + i * 120); ctx.lineTo(bx + 26, 714 + i * 120); ctx.lineTo(bx - 26, 714 + i * 120); ctx.closePath(); ctx.fill(); seg(ctx, bx, 700 + i * 120, bx + 6, 660 + i * 120, 3, '#1a1430', 1); }
+  // glints: scattered until 122.58, then they slide together in 8 drawings into one path (far bank under the moon -> near bank, widening)
+  const k = t < 122.58 ? 0 : Math.min(8, Math.floor((t - 122.58) / (1 / 12))) / 8, R = K.rng(41), lock = t >= 123.25, flash = t >= 123.25 && t < 123.35 ? 1 : 0;
+  ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.lineCap = 'round';
+  for (let i = 0; i < 34; i++) { const v = (i + 0.5) / 34, y = K.lerp(572, 1036, v), hw = K.lerp(16, 150, v), cx = 500 + (R() - 0.5) * 2 * hw * 0.85, sx = 500 + (R() - 0.5) * 900, x = K.lerp(sx, cx, k), len = K.lerp(10, 46, v) * (1 + 0.3 * Math.sin(t * 3 + i * 1.7)), sh = 0.6 + 0.4 * Math.sin(t * 4 + i * 2.3);
+    ctx.globalAlpha = 0.85 * sh; ctx.strokeStyle = '#ffe9a8'; ctx.lineWidth = K.lerp(2, 6, v); ctx.beginPath(); ctx.moveTo(x - len / 2, y); ctx.lineTo(x + len / 2, y); ctx.stroke(); }
+  if (lock) { const pts = (sd, wk) => Array.from({ length: 21 }, (_, j) => { const v = j / 20, y = K.lerp(572, 1036, v); return [500 + sd * K.lerp(12, 150, v) * wk * (1 + 0.04 * Math.sin(t * 6 + j)), y]; });
+    for (const [col, wk, a] of [['#ffd27a', 1, 0.55], ['#fff8e0', 0.38, 0.8]]) { ctx.globalAlpha = Math.min(1, a + 0.4 * flash); ctx.fillStyle = col; ctx.shadowColor = '#ffd27a'; ctx.shadowBlur = 18; ctx.beginPath(); K.poly(ctx, [...pts(-1, wk), ...pts(1, wk).reverse()], true); ctx.fill(); } }
+  ctx.restore(); if (flash) { ctx.save(); ctx.globalCompositeOperation = 'lighter'; ehGlow(ctx, 500, 800, 500, 0.5, '#fff2c0'); ctx.restore(); }
+  ctx.restore();
+  if (t >= 121.5) { const a = K.clamp((124.48 - t) / 0.2); ctx.save(); ctx.globalAlpha *= a; S.title(ctx, 'THE MOON KNOWS', 500, 1110, K.clamp((t - 121.5) / 0.4), { size: 58, align: 'center', glow: '#ffd36a' }); S.title(ctx, "THE RIVER'S PATH", 500, 1180, K.clamp((t - 121.7) / 0.4), { size: 58, align: 'center', glow: '#ffd36a' }); ctx.restore(); }
 }
 
 // ---------- the knob insert (82.84 - 83.5): finger and thumb give the knob an eighth turn ----------

@@ -44,7 +44,7 @@ function morgiana(ctx, t, P, m, o = {}) {
 }
 // windowBust: Morgiana in Ali Baba's window, clipped to the recess (feet at sill + 150); arms on the sill by world hand targets
 function morgianaWindow(ctx, t, P, m, o = {}) {
-  const W = TS.win, Q = { y: W.sill + 150, dir: -1, ...P };
+  const W = TS.win, Q = { y: W.sill + 108, dir: -1, ...P };   // v2 (review 1 note 2): bust raised (was sill + 150) so chin and mouth clear the geraniums
   ctx.save(); ctx.beginPath(); ctx.rect(W.x, W.y, W.w, W.h + 2); ctx.clip(); morgScarf(ctx, Q, t, o); abMorgiana(ctx, Q, m); morgVest(ctx, Q); ctx.restore(); return Q;
 }
 
