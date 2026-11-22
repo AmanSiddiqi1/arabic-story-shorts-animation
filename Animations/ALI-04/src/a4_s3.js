@@ -1,5 +1,5 @@
 // ===== ALI-04 shots S6-S8 (33.3 - 65.0 s): Morgiana's lamp dies, IS IT TIME?, the statue, her deduction, NOT YET., the second jar, the run =====
-const A4_MX = (u) => kfn(u, [[33.32, 165], [34.0, 240], [34.88, 240], [35.9, 560], [37.46, 560], [38.4, 805], [43.9, 805], [44.3, 770], [58.42, 770], [59.12, 900], [59.7, 905], [59.78, 1035], [63.84, 1035], [64.82, 172]]);
+const A4_MX = (u) => kfn(u, [[33.32, 165], [34.0, 240], [34.88, 240], [35.9, 560], [37.46, 560], [38.4, 805], [58.42, 805], [59.12, 900], [59.7, 905], [59.78, 1035], [63.84, 1035], [64.82, 172]]);
 const A4_M3 = { s: 0.93, age: 0.15 };
 // Morgiana's pose 33.3-65 (o: extras for the drawing: lamp {flame, smoke, rot, at}, beard, stream, kick)
 function a4Morg(t) {
@@ -11,10 +11,10 @@ function a4Morg(t) {
   else if (tc < 36.76) { const st = Math.min(2, Math.floor((tc - 36.0) / 0.22)); o.lamp.flame = [0.35, 0.1, 0][st]; o.lamp.smoke = beatIn(tc, 36.3, 37.2); P.handL = [30, -130]; P.handR = [12, -118]; P.brow = -0.7; P.gaze = [0.4, 0.8];
     if (tc > 36.45) { o.lamp.rot = Math.PI * 0.9 * beatIn(tc, 36.45, 36.6); P.handL = [36, -150]; } }
   else if (tc < 37.46) { o.lamp.smoke = beatIn(tc, 36.3, 37.2); P.handL = [20, -124]; P.gaze = gazePlan(tc, [[36.76, [-1, -0.3]], [37.0, [0.4, -0.2]], [37.2, [1, 0.2]]]); P.look = tc < 37.0 ? -0.5 : 0.4; P.brow = tc > 37.2 ? 0.2 : -0.4; if (tc > 37.25) P.mouth = 'smile'; }
-  else if (tc < 38.46) { walkArms(); P.handL = [20, -124]; if (tc > 38.0) { P.handR = null; P.handRW = [K.lerp(860, 885, beatIn(tc, 38.0, 38.4)), K.lerp(700, 600, beatIn(tc, 38.0, 38.4))]; } P.gaze = [1, 0.5]; }
-  else if (tc < 40.3) { P.handRW = [885, 600]; P.handL = [20, -124]; P.gaze = tc < 38.55 ? [1, 0.7] : [1, 0.9]; P.eyes = 'wide'; P.tip = tc < 38.55 ? 0.03 : 0.0; o.kick = swing(t, 38.55, 0.8, 1.5, 3); P.sq = 1; }
-  else if (tc < 41.26) { P.tip = 0.1 * beatIn(tc, 40.3, 41.1); P.handR = PERSON_HANDS.cupEar.R; P.handL = [20, -124]; P.gaze = [1, 0.6]; P.lid = 0.3; P.sq = 1; }
-  else if (tc < 43.9) { P.tip = 0.1; P.handR = PERSON_HANDS.cupEar.R; P.handL = [20, -124]; P.gaze = [1, 0.7]; P.eyes = tc > 42.9 ? 'wide' : 'open'; P.sq = 1; P.lid = 0; if (tc > 43.0) P.brow = -0.6; }
+  else if (tc < 38.46) { walkArms(); P.handL = [20, -124]; P.gaze = [1, 0.5]; if (tc < 38.05) { o.lamp.rot = Math.PI * 0.9 + 0.3 * Math.sin(tc * 34); P.handL = [30, -150]; P.gaze = [0.4, -0.6]; P.brow = -0.5; o.drop = beatIn(tc, 37.7, 38.1); } }   // v2 (note 4): she shakes the lamp upside down, one drop
+  else if (tc < 40.3) { P.handL = [20, -124]; P.gaze = [1, 0.9]; P.tip = 0.05; o.kick = 0.2 * osc(tc, 1.5); P.mouth = 'closed'; }
+  else if (tc < 41.26) { P.tip = 0.02; P.handL = [20, -124]; P.gaze = [1, 0.9]; P.eyes = 'wide'; P.brow = -0.5; P.sq = 1.02 - 0.02 * beatIn(tc, 40.3, 40.6); o.kick = swing(t, 40.36, 0.9, 1.5, 3); }
+  else if (tc < 43.9) { P.tip = 0.02; P.handL = [20, -124]; P.gaze = [1, 0.7]; P.eyes = tc > 42.9 ? 'wide' : 'open'; P.sq = 1; P.lid = 0; if (tc > 43.0) P.brow = -0.6; }
   else if (tc < 44.6) { P.tip = 0.04; P.eyes = 'wide'; P.gaze = [1, 0.6]; P.brow = -0.6; const c = beatIn(tc, 44.0, 44.25); P.handL = [K.lerp(20, 4, c), K.lerp(-124, -96, c)]; P.handR = [10, -120]; o.lamp.hand = 0; o.lamp.rot = c < 1 ? 0.5 * Math.sin(c * 9) : 0; P.sq = tc > 44.25 ? 0.95 + 0.05 * beatIn(tc, 44.25, 44.5) : 1; }
   else if (tc < 46.52) { P.eyes = 'wide'; P.gaze = gazePlan(t, [[44.6, [1, 0.6]], [45.6, [1, 0.5]], [46.0, [1, 0.75]]]); P.handL = [4, -110]; P.handR = [10, -120]; P.sq = 1; P.tip = 0.04; P.brow = -0.6; P.ph = 1.3; P.amp = 0.6; P.lid = 0; o.kick = tc > 45.5 ? swing(t, 45.5, 0.5, 1.4, 2.5) : 0; }
   else if (tc < 50.58) { P.gaze = gazePlan(tc, [[47.5, [1, 0.6]], [48.12, [1, 0.4]], [48.5, [1, 0.3]], [49.0, [1, 0.25]], [49.5, [1, 0.2]]]); P.handL = [4, -110]; P.brow = 0.1;
@@ -31,13 +31,15 @@ function a4Morg(t) {
   else if (tc < 63.2) { P.tip = 0.06; P.handL = [4, -110]; P.handR = [20, -120]; P.gaze = gazePlan(tc, [[61.56, [1, 0.6]], [62.6, [1, 0.3]], [62.85, [1, 0.25]], [63.1, [1, 0.2]]]); P.eyes = 'wide'; }
   else if (tc < 63.84) { o.beard = 1; P.brow = 0.85; P.sq *= 1.04; P.handR = [60, -120 + 30 * beatIn(tc, 63.3, 63.6)]; P.handL = PERSON_HANDS.hipsHands.L; P.gaze = [1, 0.4]; P.mouth = (Math.floor(tc * 8) % 2) ? 'open' : 'frown'; P.lid = 0.3; }
   else { P.dir = -1; o.stream = 1; P.tip = -0.1; P.handL = [10, -120]; P.handR = [-20 + 30 * Math.sin(W.ph), -110]; o.lamp.hand = 0; P.gaze = [-1, 0]; P.sq *= tc < 64.0 ? anticipate(tc, 63.84, 0.16, 0.08) : 1; }
+  if (tc >= 39.03 && tc < 47.52) { const r = K.ease.out(beatIn(tc, 39.03, 40.2)); P.handR = null; P.handRW = [K.lerp(826, 864, r) + (tc > 40.3 ? tremble(tc, 0.8, 9) : 0), K.lerp(800, 672, r)]; }   // v2 (note 4): the reach, frozen
   return { P, o, W };
 }
 function a4MorgDraw(ctx, t, P, o, m = A4_N) {
   morgiana(ctx, t, P, m, { stream: o.stream, kick: o.kick, shc: A4_NSH });
   if (o.beard > 0.02) { const d = Math.sign(P.dir || 1), a = a2HeadPt(P, -24, 8, A3_MORG), b = a2HeadPt(P, 24, 8, A3_MORG), c = a2HeadPt(P, 0, 36 * o.beard, A3_MORG);
     celShade(ctx, [a, b, [b[0] + d * 2, b[1] + 14 * o.beard], c, [a[0], a[1] + 14 * o.beard]], AB_MORG_ACC, '#0e8a90', { off: 3, lw: 2, line: '#0a5a60' }); }
-  const [hx, hy] = a2Hand(P, o.lamp.hand || 0, A3_MORG); oilLamp(ctx, hx + 4, hy - 4, 0.95, { flame: o.lamp.flame || 0, smoke: o.lamp.smoke || 0, rot: o.lamp.rot || 0, t, dir: Math.sign(P.dir || 1) });
+  const [hx, hy] = a2Hand(P, o.lamp.hand || 0, A3_MORG); const ls = t > 33.3 && t < 52.3 ? 1.33 : 0.95; oilLamp(ctx, hx + 4, hy - 4, ls, { flame: o.lamp.flame || 0, smoke: o.lamp.smoke || 0, rot: o.lamp.rot || 0, t, dir: Math.sign(P.dir || 1) });   // v2: lamp 1.4x in her errand
+  if (o.drop > 0 && o.drop < 1) a4Glyph(ctx, 'drop', hx + 30, hy + 20 + 70 * o.drop * o.drop, 0.5, 1);
 }
 // fireflies drifting (world), on twos
 function a4Flies(ctx, t, x0, y0, n = 3) { const tc = AB_T2(t), R = K.rng(41); for (let i = 0; i < n; i++) { const x = x0 + R() * 300 + 40 * Math.sin(tc * 0.7 + i), y = y0 + R() * 160 + 30 * Math.sin(tc * 1.1 + i * 2), on = 0.5 + 0.5 * Math.sin(tc * 3 + i * 1.7);
@@ -61,7 +63,7 @@ function a4S6World(ctx, t, cam) {
   // the leaf she does not step on
   celShade(ctx, [[922, 926], [934, 918], [948, 922], [936, 930]], '#d8a04a', '#a8702a', { off: 2, lw: 1.5 });
   const { P, o } = a4Morg(t); if (tc < 64.9) a4MorgDraw(ctx, t, P, o);
-  if (tc > 39.7 && tc < 40.2) a4Whisper(ctx, 890, 640, t, 39.7, 40.2);
+  if (tc > 40.3 && tc < 41.3) a4Whisper(ctx, 890, 620, t, 40.3, 41.3);
   cyFig(ctx, t, A4_N);
 }
 function a4S6Over(ctx, t, cam, S) {
@@ -76,14 +78,14 @@ function a4S6Over(ctx, t, cam, S) {
   // S7: ghost outlines with question -> exclamation glyphs, the drop over jar 6, the memory inset
   if (t > 48.8 && t < 50.7) for (let i = 0; i < 6; i++) { const g = 48.8 + 0.3 * i; if (t < g) continue; const [x, y] = abP(CY_JARS[i].x, 560, cam), k = 1 - K.clamp((t - 50.4) / 0.3);
     ctx.save(); ctx.globalAlpha *= k; a4Glyph(ctx, i === 5 ? 'drop' : tc < g + 0.17 ? 'q' : 'x', x, y, 1.1, K.clamp((t - g) / 0.15)); ctx.restore(); }
-  if (t > 49.8 && t < 50.6) a2Inset(ctx, t, [60, 110, 300, 240], K.clamp((t - 49.8) / 0.2) * (1 - K.clamp((t - 50.45) / 0.15)), (c) => {
-    abGrad(c, 60, 110, 300, 240, [[0, '#c8a0a8'], [1, '#a88aa0']]); c.save(); c.translate(210, 230);
+  if (t > 49.8 && t < 50.6) a2Inset(ctx, t, [40, 90, 360, 290], K.clamp((t - 49.8) / 0.2) * (1 - K.clamp((t - 50.45) / 0.15)), (c) => {   // v2 (note 8): a third of the panel
+    abGrad(c, 40, 90, 360, 290, [[0, '#c8a0a8'], [1, '#a88aa0']]); c.save(); c.translate(220, 235); c.scale(1.25, 1.25);
     a3BigHand(c, 70, 20, 0.42, { sleeve: '#ecc062', sleeveD: '#d8a43a', curl: 0.6, skin: '#e8b08a', rot: -Math.PI / 2 });
     a3BigHand(c, -70, -10, 0.42, { sleeve: '#8f8a40', sleeveD: '#64612a', curl: 0.7, rot: Math.PI / 2 }); silverRing(c, 10, 6, 9, { glint: ((t - 49.8) * 1.5) % 1 }); c.restore(); });
 }
 function a4EyesS7(ctx, t) { const tc = AB_T3(t); a3Eyes(ctx, t, { who: 'morgiana', gaze: gazePlan(tc, [[46.52, [0.9, 0.3]], [46.9, [0.9, 0.3]], [47.1, [1, 0.15]]]), lid: abBlinkAt(tc, 47.15), wide: 0.4, brow: -0.3,
   reflect: (c, r) => { c.fillStyle = '#fff4d0'; c.beginPath(); c.arc(r * 0.35, -r * 0.35, r * 0.13, 0, 7); c.fill(); } }); }
-AB_SHOTS.push({ a: 33.3, b: 45.5, ww: 2200, cam: a3Cam([[33.3, { x: 500, y: 615, zoom: 1 }], [34.9, { x: 500, y: 615, zoom: 1 }], [38.4, { x: 860, y: 615, zoom: 1 }], [40.3, { x: 862, y: 615, zoom: 1 }], [42.2, { x: 880, y: 680, zoom: 1.25 }], [45.5, { x: 884, y: 682, zoom: 1.26 }]]), world: a4S6World, over: a4S6Over });
+AB_SHOTS.push({ a: 33.3, b: 45.5, ww: 2200, cam: a3Cam([[33.3, { x: 500, y: 615, zoom: 1 }], [34.9, { x: 500, y: 615, zoom: 1 }], [38.4, { x: 860, y: 680, zoom: 1.15 }], [40.3, { x: 866, y: 685, zoom: 1.2 }], [42.2, { x: 880, y: 680, zoom: 1.25 }], [45.5, { x: 884, y: 682, zoom: 1.26 }]]), world: a4S6World, over: a4S6Over });
 // ---------- S7 45.5-52.3: the statue, her eyes, the row read jar by jar, the memory, resolve ----------
 AB_SHOTS.push({ a: 45.5, b: 46.52, ww: 2200, cam: a3Cam([[45.5, { x: 880, y: 680, zoom: 1.25 }], [46.52, { x: 876, y: 682, zoom: 1.27 }]]), world: a4S6World, over: a4S6Over });
 AB_SHOTS.push({ a: 46.52, b: 47.52, panel: a4EyesS7 });

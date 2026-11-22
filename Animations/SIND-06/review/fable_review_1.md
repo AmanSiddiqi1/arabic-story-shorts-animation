@@ -1,0 +1,94 @@
+# SIND-06 "The River Beneath the Mountain" (80s Cel Anime): Fable review, round 1 (v1)
+
+Film reviewed: `Animations/SIND-06/renders/SIND-06_v1.mp4` (151.37 s). Sources: all 26 contact strips in `review/v1_pack/strips/` (4 frames per second) and 16 panel stills pulled from the MP4 at 16.5, 25.6, 33.5, 61.6, 70.9, 85.9, 91.7, 91.9, 92.3, 104.9, 105.6, 115.6, 121.6, 143.6, 149.8 and 149.9 s. Times are seconds on the film. Yardstick: the owner direction in `Library/styles/cel-anime-80s/look.md` first, then the SIND-01 lessons, the plan, `notes.md` and the "alive" checklist.
+
+## Verdict: REVISE
+
+One BLOCKER (a hard-edged block in the tunnel water, note 1) and one owner point missed in the film's centrepiece: for the whole 27 s tunnel the bottom 30% of the picture is a flat teal slab and the top 20% a flat plum slab, the exact SIND-01 lesson this episode was given (note 2). Three story payoffs are on screen but too small or too hidden to be felt: the moment he lies down and hopes (note 3), the building of the raft (note 4) and the reunion with the men who waited (note 5). All fixes are inside single shots or the tunnel set; structure, timing, colour and cast are sound.
+
+Story order is correct, every narrated event is on screen, subtitles are sharp in both languages throughout, THE END is present with a 4 s hold. The tunnel is coloured and readable: plum, teal and rose strata, crystals, glow worms, pillars, gold lamp light, and Sinbad keeps his own colours in every tunnel frame.
+
+Not checked: sound was not listened to. Twos and threes cannot be judged from stills. Anything shorter than 0.25 s falls between sampled frames (rose's slip landing at about 34.9, the vizier beats).
+
+## The owner's points, as seen on screen
+
+| Owner point | Met? | Evidence |
+|---|---|---|
+| Wide views, pans, lower picture not empty | **Partly** | Quay, cove pull-out (30.8-37.0), the pan with Sinbad and the leaf to the cave mouth (37.2-46.5), river end, hall are proper wides with things low in frame. Open sea is worked water with foam, streaks and a dolphin (fine). The tunnel (80.9-107.7) and the beach edge (26.5-37.0, 134.5-137.5) have flat water blocks (notes 2, 10). |
+| Full scenes, several layers | **Partly** | Quay, cove (ferns, ledges, nests, waterfall, driftwood, frog, crab), village and hall are full. The tunnel walls are full; its water and upper roof are empty (note 2). |
+| Varied bright colour, no tint | **Yes** | Skin, tangerine turban and the four sailors' colours hold in every plate, the tunnel included. |
+| English speech bubbles | **Yes** | HARD TO PORT!, COME WITH ME!, NO, NO!, WE STAY., SEND HELP, SINBAD., WE ARE FARMERS., MY FRIENDS ARE STILL WAITING!, SEND MY SHIP!, A SAIL! all balloons with the tail on the speaker, inside the panel. |
+| Readable limbs | **Partly** | Single figures read well. Groups are stacked on one spot so bodies hide each other: 60.5-62.5, 113-120, 120-122.7 (notes 4, 7, 9). |
+| Library cast | **Yes** | Library person, donkey, sheep, frog, dove throughout. |
+| Light presentation | **Yes** | Cream housing, light caption strip, restrained CRT pass. |
+| No frozen holds | **Mostly** | Lowest activity: the seated crew under NO WAY OUT 35.5-37.0, Sinbad sitting 93.2-94.7, the end hold 148.0-151.4 (notes 6, 10). |
+
+Worth keeping exactly as they are: the head count and ALL SAFE, the pull-out to the ring of cliffs, the one drop from the waterskin and the crab, WRONG WAY? with the arrow on the stream, the glints spreading along the bank (48.5-51.5), PERFECT FIT! (64.2-65.0), the first tally and its "46 DAYS" payoff, the duck under the rock lip (85.2-86.5, it reads clearly at full size), SPLASH... splash... splash, the lost count (95.0-96.2), the lamp circle shrinking through 97-105, the far light he does not see and the white bloom, the whole eyelid point of view (108.7-112.6), the hall with the ship in the doorway, the gold homecoming.
+
+## Notes (most important first)
+
+### 1. BLOCKER 91.7-92.6 s: a lighter rectangle stands in the tunnel water
+- **What is wrong.** While the splash plays, a pale teal column with two dead-straight vertical edges runs from the waterline to the bottom of the panel (about 280 px wide at full size, under and to the right of the raft at 92.3; it also shows further right at 91.75 and 92.0). It reads as a rendering fault in the middle of the film's centrepiece. It appears with the splash drawing in S13 (`sbSplash(...)` around lines 60-63 of `sb6_s4.js`) or a water tile seam of chapter C.
+- **Also.** The narration is "water striking the walls" (يرتطم 92.32, بالجدران 93.12), but the splash is at the raft.
+- **Fix.** Remove the column (no rectangle fill; if it is a swell, give it the `seaY` crest outline and foam like the other water layers). Move the splash to the far wall at the waterline, ahead of the raft at screen x about 760: a burst against the rock on "يرتطم" 92.32 with drops running down the strata, a second smaller one further right on "بالجدران" 93.12; Sinbad's eyes then head turn to each (blink on the turn). Step every frame 91.5-93.2 on stills before rendering.
+
+### 2. 80.9-107.7 s: the tunnel is half flat colour, and its subject is small
+- **What is wrong.** In every tunnel frame the water below the raft is one flat teal slab (waterline at about 67% of the panel, good, but nothing in the 30% below it except a few dashes and the rock tips on the bottom edge), and above the stalactites the top 18-20% is a flat plum slab. Sinbad is about 11% of the panel height. This is the SIND-01 lesson (no empty flat water in the lower picture) on the longest shot of the film, and the owner's "full scenes" point.
+- **Why it matters.** The current is the antagonist here. Flat water does not move, so 27 s of danger read as a slow glide.
+- **Fix, water.** Keep the waterline at 62-68%. Fill the band below it: (a) a mirrored, 30% alpha, vertically squashed reflection of the wall strata and crystals with a `seaY` wobble; (b) the lamp's reflection as a broad broken gold column (hard-edged dashes, on threes), not the thin ladder there now; (c) current streaks and foam lines that slide left at the strip speed of each chapter (260, 90, 700 units per second), so speed is felt in the water itself; (d) submerged rock silhouettes and two or three gem glints under the surface; (e) one living thing per chapter: pale cave fish under the raft in B, a blind white crayfish on a rock in D, ripples from drips in the still gallery. In the rapid (86.7-88.5) add white water lips at two depths and spray past the bottom edge.
+- **Fix, roof.** Never show more than about 8% flat roof: lower the camera top limit, or fill it with a second tier of strata, long and short stalactites in three depths, roots, and the bats hanging in groups of three to five (they are 10 px specks at 90-96 now; make them 40 px with one eye opening as the light passes).
+- **Fix, scale.** Shoot S12 (81-89.5) at zoom 1.25-1.3 (the plan's limit is 1.2 to 1.3; it is about 1.0 now) with the raft at screen x 430, so the lip and the duck fill the frame; stay wide (0.9) only for the gallery reveal at 89.6-91.3 and the glow worm sky at 98.5-100.5.
+- **Fix, lamp circle.** The lit disc has a drawn rim and reads as a soap bubble. Remove the rim stroke and build the light from two or three concentric hard-edged steps (cel style), flickering on threes, radius still falling with the flame keys.
+
+### 3. 100.1-107.7 s: the emotional peak is unreadable
+- **What is wrong.** (a) The plan's push to his face on "وأغمض" 104.30 is not in the film; he is a 100 px figure in a wide for the whole "closed his eyes, hoping to survive". (b) Lying down, his head hangs off the back of the raft with the turban tail in the water and one forearm sticks straight up (104.9, 105.6). (c) A ZZZ rises at 100.2-101.2 while he still sits upright; the narration is tiredness, then lying down, then hope, never sleep. (d) He smiles all through 102-107.
+- **Why it matters.** This is the low point before the rescue; if he looks comfortable and asleep there is no hope beat and the white bloom has nothing to answer.
+- **Fix.** Delete the ZZZ. 100.14 "شعر": chin sinks to the knees, lids 0.5, mouth flat, two nods (the second deeper) by 101.6. 102.16 "فاستلقى": elbow, then shoulder, landing by 103.3 with the whole body on the deck (move the lie pose about 60 units toward the cargo or lengthen the deck), head on the food sack, turban tail settling late (`lagged`). 104.30 "وأغمض": camera pushes over 0.8 s to zoom 1.7-1.8 on head and chest (waterline at 66%, lamp in frame); lids close on threes by 105.16 "عينيه". 105.86 "وهو": brows lift in the middle, wet lashes (`wet`), the near hand closes round a glowing pebble on his chest (halation, hand at 1.3x), chest rising on `breathe`. Mouth neutral, not a smile. 107.14 "النجاة": pull back over 0.5 s to the wide so the point of daylight grows on the right behind his closed eyes, exactly as now.
+
+### 4. 60.5-68.7 s: the raft is not seen being built
+- **What is wrong.** Five figures stand stacked on one spot at the bank (60.5-62.5; heads and bodies overlap, nobody's arms read), the counter runs 2, 3, 5, 6 with no planks seen arriving, and the raft is a thin brown strip at their feet that merges with the gem pebbles on the bank in front of it. The whip pan to the wreck (62.7-63.0) is too short to register. Nobody visibly lashes, carries or loads. Sinbad looks sad at 61.6.
+- **Why it matters.** "He made a small raft from the wreckage and loaded food and bright pebbles" is the decision made real; only PERFECT FIT! lands.
+- **Fix.** Frame at zoom 1.3 on the launch spot with the waterline at 62-66%. Clear the gem scatter from the 320 units of bank in front of the raft (keep it left and right). Staging in a loose arc, 110+ units apart: mustard enters from the left carrying two planks on his shoulder (already moving at the frame edge, on "ألواح" 62.26), drops them with a small dust burst; each counter step is a plank sliding into place (overshoot and settle). Rose kneels and pulls a lashing tight on "الحطام" 62.86 (two tugs, tongue out on Sinbad at 63.4 as planned). Extend the wreck whip pan to 0.9 s or drop it. After PERFECT FIT!: on "وحمل" 65.36 the captain hangs the lantern (hold 0.5 s on his hand), on "طعامه" 66.38 teal sets down the sack and waterskin, on "وحصى" 67.22 Sinbad pours a double handful of glowing pebbles onto the deck (a chime is already planned). Sinbad eager, not sad.
+
+### 5. 134.5-137.5 s: the reunion is at the frame edge for 0.8 s
+- **What is wrong.** The cove shot holds on the four men and the captain; Sinbad's skiff slides in at the far left edge at 136.7 and the transition starts at 137.4. The dhow is never in the same picture as the waiting men.
+- **Why it matters.** The moral is "do not count yourself saved until your friends are". The payoff of SEND HELP, SINBAD. is this meeting.
+- **Fix.** Keep A SAIL! (134.7-135.6) and the tally label. On "الذين" 135.60 pan left 250 units over 0.6 s so the sea is 40% of the frame: the gold-striped dhow anchored off the rock teeth, the skiff already half way in with Sinbad standing, both arms wide. On "ظلوا" 136.16 rose runs into the shallows (splashes, `footfalls`), mustard throws his cap, the captain laughs shoulders first as planned. On "ينتظرون" 136.74 Sinbad jumps from the skiff into knee-deep water (anticipate, hop, splash, squash) and the captain grips his forearm, mirroring 74.9. Then the tape transition.
+
+### 6. 146.3-151.4 s: the last pebble is a 10 px dot and the hold is nearly still
+- **What is wrong.** The sister holds something tiny by her cheek at 149.8; there is a pink glow on the mother's hem; no cat is visible; ten people stand in a row and barely change from 148.0 to the end.
+- **Fix.** On "جميعًا" 146.32 the story balloon closes and Sinbad kneels to his sister's height (weight first, tail late). 147.2-148.4: he opens his hand, the pebble glows (halo radius 40, four-point glint); slow push to zoom 1.25 on the pair, the rest of the line staying in frame, THE END at the top as now. 149.6: she lifts it to the sun with both hands, eyes following it; a coloured light spot lands on the paving in the open space lower left, and the SIND-02 cat pounces on it at 150.2 and misses, tail flicking to the end. Give the row staggered idle life (father's beard, mother's hand to her heart, rose still catching his breath, captain's slow nod), no two alike.
+
+### 7. 112.7-122.7 s: the finding and the donkey ride are one knot of figures
+- **What is wrong.** At the river end Sinbad, the child, three farmers, the hoe, the basket, the waterwheel and a sheep overlap in a 300 unit clump behind reeds (113-120). In the pan to the village (120.0-122.7) the donkey is hidden behind the farmers; only Sinbad's turban shows, so "they took him to their village" reads as a crowd walking.
+- **Fix.** River end: move the waterwheel 250 units right of the group so it is clear of all heads, thin the reeds in front of the raft, and space the farmers 120+ units apart at slightly different depths (old one nearest Sinbad with hand on chest, tall one behind doing the mime, round one arriving late with the bread). Sinbad sits up on the raft on "وجدوه" 117.51 and takes the water bowl with both hands. Ride: order from the right is the child skipping ahead, then the donkey with Sinbad in clear profile (nobody overlapping the donkey's legs or head; ears before head, legs on `walk`), then the three farmers in a loose file behind. Village women waving from the doors as now.
+
+### 8. 56.8-60.4 s: the thought is too small to read
+- **What is wrong.** The cloud shows a pink triangle; the houses that answer "inhabited land" appear at 59.5 about 6 px tall.
+- **Fix.** Cloud 1.5 times larger (the wall above him is free), picture drawn as a simple diagram: on "النهر" 57.68 a blue line runs into the left foot of the mountain, on "يصل" 58.22 it continues dashed through it, on "أرض" 59.08 it comes out on the right into green, on "مأهولة" 59.54 three houses and a palm pop up one by one (40 px or more, a wisp of smoke), with the planned chime. Sinbad's finger traces the line in the air; eyes on the cloud, then on the cave mouth at 60.0.
+
+### 9. 68.7-71.5 and 75.7-80.7 s: the crew is a police line-up; the five waves are lost
+- **What is wrong.** The four sailors and the captain stand shoulder to shoulder, same height, same stance, arms down (69.0-70.2, 75.7-78.7). At the launch the camera follows the raft and the row slides out of frame left: at 79.5-80.7 only two men are still visible, so the plan's "five different waves, never in time" is not on screen.
+- **Fix.** Break the row: depth offsets of 10-25 units, scale 0.94-1.0, 90+ units apart, fixed tempers visible in the pose (teal arms crossed, rose half behind mustard peeking at the cave, leaf with a hand shading his eyes, mustard hands on hips). The refusals stay staggered: rose shakes his head first (70.6), teal a flat palm (70.9), leaf looks at the sea (71.1), mustard last and biggest (71.3). Launch: hold the camera until "وحمله" 78.49 so all five are in frame behind the raft, then let it lead the raft by only 150 units and widen to 0.9 so the bank stays in picture until 80.2; five waves with different arms, heights and tempos, the captain's a single raised palm that stays up.
+
+### 10. 26.5-37.0 and 134.5-137.5 s: the beach ends in a wall, the sea beside it is a flat block
+- **What is wrong.** The sand stops at a straight vertical edge and the sea left of it is one cobalt rectangle from mid frame to the bottom (33.5). It looks like a quay, not a narrow beach, and it is flat water low in the picture. The green river bank has the same ruled edge against the sand (36-42, 60-70). Under NO WAY OUT (35.5-37.0) the seated crew hardly changes.
+- **Fix.** Shelve the shore: wet sand band, a turquoise shallow strip, a foam line that runs up and back on a 3 s cycle, two plank ends and a floating barrel from the wreck rocking in the shallows. Break the bank edge with tufts, pebbles and a sand to grass fringe. In 35.4-37.0 give each man his own small action (teal wrings his cap, mustard drops his head into his hands, leaf turns to look up the cliff, the captain's slow look round the ring: eyes, then head, a blink on the turn).
+
+### 11. 83.1-86.5 s: the low roof needs to threaten
+- **What is wrong.** The lip is the same flat plum as the slab above it, so until LOW ROOF! appears it is not clear that rock is coming at head height; nothing touches.
+- **Fix.** Give the lip a lighter rim-lit underside (lamp gold, hard edge) and broken teeth so its lower edge is unmistakable; Sinbad's eyes widen at it on "وسقفه" 83.12 (eyes, then head). On "فانحنى" 85.18 the fold as now, and the flag tip or pole top scrapes the rock with three or four sparks (the plan had them) and a few falling chips; the turban tail whips up late and just clears. Hold the fold while `roofY` is below y 700, as specified.
+
+### 12. Polish
+- 15.5-16.2: the mountains fade in over a static frame like a dissolve. Slide them in from the right on a slow parallax, or raise them from the horizon haze, so the ship is carried toward them.
+- 24.2: the lateen sail with two red bands becomes a square sail with four stripes after the impact frame. Keep the same sail on the falling mast.
+- 37.2-48.0: Sinbad is about 12% of the panel height under a wall that fills 55% of it. Zoom 1.15-1.2 with the ground at 68-72% keeps the pan and the set and makes the waterskin, crab and held foot readable. The "foot in the air" at 40.3 does not read as a freeze: add the sound arcs earlier (40.26) and a single sweat bead.
+- Small lettering: GRRR... (40.0) and 46 DAYS (136.2-136.8) look below the 28 px label minimum; enlarge.
+- Contact shadows: figures on sand, grass and the quay have none; add `groundShadow` (flat) under standing groups, and a changing one under rose's slip and the jumps at 25.5-26.2.
+
+## Reusable techniques worth adding to the Library
+- **Lantern mask without a tint:** dim plate, clipped lit plate at the lamp, cast at full normal colour with a gold rim. It kept the tunnel coloured and the hero readable; document it in the Capabilities Guide as the way to do dark places in this style (with the stepped, rimless disc of note 2).
+- **Eyelid point of view** (`sb_wreck.js`): lids as two arcs with lashes, blur steps 14, 8, 3, 0 px for focus, faces entering from the edges, one upside down. Reusable for any waking or fainting beat.
+- **Side cutaway tracking strip** with the subject pinned at one screen x and chapters placed on the subject's own timeline; `roofY(x)` shared by the drawing and the acting cue.
+- **Tally wall set-up and payoff** (first mark, then the wall with a day count) as a compact way to show waiting.
+- **Rule from this review:** in any water shot, strip speed must be visible in the water (sliding streaks and foam), not only in the walls.

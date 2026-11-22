@@ -26,7 +26,7 @@ function a4Sleepers(c) { celShade(c, [[330, 760], [360, 700], [660, 690], [690, 
 function a4S9Over(ctx, t, cam, S) {
   const tc = AB_T2(t), P = { x: A4_K_X(tc), y: 905 }, [mx, my] = abP(P.x, 700, cam);
   if (t > 66.62 && t < 69.4) { const p = K.clamp((t - 66.62) / 0.3) * (1 - K.clamp((t - 69.2) / 0.2)), ph = tc < 67.54 ? 0 : tc < 68.36 ? 1 : 2, [cx, cy] = abP(480, 300, cam);
-    thoughtCloud(ctx, cx, cy, 330, 250, t, { p, tail: [mx, my - 20], scale: 0.32, at: [510, 700], inside: (c) => {
+    thoughtCloud(ctx, K.clamp(cx, 290, 710), Math.max(cy, 260), 520, 400, t, { p, tail: [mx, my - 20], scale: 0.52, at: [575, 730], inside: (c) => {   // v2 (note 10): half the panel width
       if (ph === 0) { a3Shadow(c, 300, 905, 100); abMorgiana(c, { x: 300, y: 905, dir: 1, handR: [60, -170], mouth: 'o', eyes: 'wide' }, 'lamp'); seg(c, 340, 760, 380, 660, 8, '#c8a070', 2);
         for (let i = 0; i < 5; i++) { oilJar(c, 480 + i * 80, 905, 1.0, { peek: { lift: 0.8, eyes: 1, gaze: [-1, 0] } }); }
         if (tc > 67.0) { c.save(); c.strokeStyle = '#e8202a'; c.lineWidth = 26; c.lineCap = 'round'; const u = beatIn(tc, 67.0, 67.2); c.beginPath(); c.moveTo(250, 560); c.lineTo(250 + 640 * u, 560 + 380 * u); c.stroke(); c.restore(); } }
@@ -131,8 +131,8 @@ function a4S11Over(ctx, t, cam, S) {
   const tc = AB_T2(t);
   if (t > 80.25 && t < 81.6) { const [x, y] = abP(680, 690, cam); a4Say(ctx, S, [[80.3, 'SHHH!']], t, x + 80, y - 200, [x + 10, y - 30], { size: 46, gone: 81.3 }); }
   if (t > 82.2 && t < 83.6) { const [x1, y1] = abP(830, 690, cam), [x2, y2] = abP(1520, 680, cam); a4Streak(ctx, S, [x1 + 40, y1 - 200], [x1, y1 - 30], t, 82.2, 83.2); a4Streak(ctx, S, [x2 - 40, y2 - 200], [x2, y2 - 30], t, 82.5, 83.2); }
-  if (t > 86.28 && t < 86.9) a2Inset(ctx, t, [60, 110, 260, 300], K.clamp((t - 86.28) / 0.15) * (1 - K.clamp((t - 86.7) / 0.15)), (c) => { abGrad(c, 60, 110, 260, 300, [[0, '#4a4a7a'], [1, '#6a5a8a']]);
-    oilJar(c, 190, 400, 1.75, { cut: { open: 1, draw: (cc) => jarMan(cc, t, 3, { pose: 'sleep', bubble: true }) }, t }); });
+  if (t > 85.6 && t < 87.6) a2Inset(ctx, t, [40, 90, 340, 400], K.clamp((t - 85.6) / 0.15) * (1 - K.clamp((t - 87.4) / 0.15)), (c) => { abGrad(c, 40, 90, 340, 400, [[0, '#4a4a7a'], [1, '#6a5a8a']]);   // v2 (note 10): a third of the panel, held
+    oilJar(c, 210, 470, 2.3, { cut: { open: 1, draw: (cc) => jarMan(cc, t, 3, { pose: 'sleep', bubble: true }) }, t }); });
 }
 AB_SHOTS.push({ a: 78.4, b: 88.4, ww: 2200, cam: a3Cam([[78.4, { x: 760, y: 615, zoom: 1 }], [81.9, { x: 765, y: 615, zoom: 1 }], [83.2, { x: 1180, y: 615, zoom: 1 }], [84.4, { x: 1185, y: 615, zoom: 1 }], [86.2, { x: 1480, y: 670, zoom: 1.2 }], [86.3, { x: 1180, y: 615, zoom: 1 }], [88.4, { x: 1170, y: 615, zoom: 1 }]]), world: a4S11World, over: a4S11Over });
 

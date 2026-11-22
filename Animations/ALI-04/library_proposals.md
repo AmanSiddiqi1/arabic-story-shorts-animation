@@ -15,3 +15,8 @@ Reusable drawings written in this story's `src/` (not moved into `Library/`; the
 | `disguiseWipe` | `src/a4_series_court.js` | a tilted light band: identity A outside, B inside, same pose object | |
 | `oilLamp`, `gateBar`, `darkLantern`, `rollingPin`, `fryingPan` (householdArms) | `src/a4_series_court.js` | small props | |
 | `a4Glyph` | `src/a4_base.js` | drawn glyphs: question, exclamation, drop, lock | |
+
+## From revision 1
+- `cyFore` (yard foreground dressing pass with parallax) and `cyPools` (lantern light pools): reusable for any courtyard set.
+- `oilJar` `xs` field (narrower jars in a row without changing height).
+- Counter tied to landings (`A4_OUTL` pattern in a4CapOver): number pops on each arrival.

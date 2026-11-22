@@ -118,7 +118,7 @@ function sbCoveBack(ctx, t, cam, o = {}) {
   sbWaterfall(ctx, t);
   ctx.drawImage(sbCoveFrontPlate(), 0, 700);
   sbCoveStream(ctx, t);
-  if (o.lit > 0) { const n = SB_GEMBANK.length, list = SB_GEMBANK.filter((p) => p[0] < 1690 + 520 * o.lit + 30); for (const p of list) sbGlow(ctx, p[0], p[1], p[2] * 2.6, 0.35, SB_GEMC[p[3]][0]); sbPebbles(ctx, list, { t: o.glints === false ? null : t });
+  if (o.lit > 0) { const n = SB_GEMBANK.length, list = SB_GEMBANK.filter((p) => p[0] < 1690 + 520 * o.lit + 30 && !(o.clear && p[0] > o.clear[0] && p[0] < o.clear[1] && p[1] > 930)); for (const p of list) sbGlow(ctx, p[0], p[1], p[2] * 2.6, 0.35, SB_GEMC[p[3]][0]); sbPebbles(ctx, list, { t: o.glints === false ? null : t });
     // coloured reflections wobbling on the water
     ctx.save(); for (const [x, y, r, ci] of list) { if (y > 940) continue; ctx.globalAlpha = 0.4; ctx.fillStyle = SB_GEMC[ci][0]; ctx.fillRect(x - r + 3 * Math.sin(SB_T3(t) * 5 + x), y + 26, r * 1.6, 4); } ctx.restore(); }
   // ferns on the rim of the cave mouth, swaying on twos (the draught lifts them in S6)

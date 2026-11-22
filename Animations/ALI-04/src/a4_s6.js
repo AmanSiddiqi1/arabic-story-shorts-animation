@@ -64,6 +64,7 @@ const A4_DUCK = [125.44, 125.8];                       // man 0 ducks and pulls 
 function a4CapMan(ctx, t, i, phase) {   // phase 'clip' (rising out, clipped to the rim) or 'free' (falling / landed)
   const tc = AB_T2(t), J = CY_JARS[i], L = A4_OUTL[i], tA = L - 0.6, tB = L - 0.3, rim = CY.rimY, d = i < 2 ? -1 : i > 2 ? 1 : (i % 2 ? -1 : 1);
   const P = { x: J.x, s: 0.9, dir: d, lid: abLid(t, 500 + i), gaze: [d * 0.4, 0.2], mouth: 'o', eyes: 'wide', handL: [-40, -220], handR: [40, -224], tip: 0 };
+  if (tc < tA) return;
   if (tc < tB) { if (phase !== 'clip') return; const u = beatIn(tc, tA, tB); P.y = rim + 133 * (1 - u) + 4; P.handL = [-50, -150 + 30 * u]; P.handR = [50, -150 + 30 * u]; P.tip = 0.06 * Math.sin(u * 9);
     ctx.save(); ctx.beginPath(); ctx.rect(J.x - 160, 0, 320, rim + 3); ctx.clip(); abMan(ctx, i, P, A4_N); ctx.restore(); return; }
   if (phase !== 'free') return;
@@ -121,7 +122,7 @@ function a4CapOver(ctx, t, cam, S) {
 AB_SHOTS.push({ a: 122.04, b: 129.5, ww: 2200, cam: a3Cam([[122.04, { x: 1500, y: 600, zoom: 1.05 }], [122.4, { x: 1172, y: 615, zoom: 1 }], [129.5, { x: 1176, y: 615, zoom: 1 }]]), world: a4CapWorld, over: a4CapOver });
 
 // ---------- S18 129.5-140.01: the procession to the judge, the leader on the roof, I WILL RETURN., TO BE CONTINUED... ----------
-const A4_PRO_X = (u) => K.lerp(820, 820 - 65 * (139.9 - 129.5), K.clamp((u - 129.5) / (139.9 - 129.5)));   // the captain's x (v2: slower, still in frame at 139.5)
+const A4_PRO_X = (u) => K.lerp(820, 820 - 76 * (139.9 - 129.5), K.clamp((u - 129.5) / (139.9 - 129.5)));   // the captain's x (v2: slower, still in frame at 139.5)
 const A4_PRO = [['c', 0], [0, 105], [1, 210], [2, 315], [3, 420], [4, 525], ['g0', 630], ['g1', 735]];
 const A4_RX = (u) => kfn(u, [[131.96, 380], [134.88, 380], [135.5, 160]]);
 function a4S18World(ctx, t, cam) {
@@ -146,10 +147,10 @@ function a4S18World(ctx, t, cam) {
   if (tc > 132.6) { const M = { x: 935, y: 912, dir: -1, lid: abLid(t, 551), gaze: tc > 137.2 ? [-1, -0.9] : [-1, 0.1], look: -0.3, mouth: 'closed', handL: [20, -140], handR: [20, -112], tip: idleSway(tc, 552, 0.015, 2.6) }; abGlow(ctx, 935, 800, 160, 0.35, '#ffcf6a'); morgiana(ctx, t, M, A4_N, { kick: 0.3 * osc(tc, 1.5), shc: A4_NSH }); const [hx, hy] = a2Hand(M, 0, A3_MORG); oilLamp(ctx, hx, hy - 4, 1.1, { flame: 1, t, dir: -1 }); abGlow(ctx, hx - 8, hy - 26, 60, 0.5, '#ffcf6a'); }
   a3Cat(ctx, t, { x: 700, y: 272, dir: -1, sit: 1, gaze: tc > 136.8 ? [-1, -0.7] : [-1, 0.6], ears: tc > 136.8 ? 0.9 : 0.4 });
   // the old neighbour sweeping behind them
-  const ox = A4_PRO_X(tc) + 700, O = { x: ox, y: 912, dir: -1, ...walk((u) => A4_PRO_X(u) + 700, tc, { stride: 22 }), lid: abLid(t, 561), gaze: [-1, 0.3], mouth: 'smile', handL: [-40 + 20 * Math.sin(tc * 6), -110], handR: [-20 + 20 * Math.sin(tc * 6), -120] };
+  const ox = A4_PRO_X(tc) + 660, O = { x: ox, y: 912, dir: -1, ...walk((u) => A4_PRO_X(u) + 660, tc, { stride: 22 }), lid: abLid(t, 561), gaze: [-1, 0.3], mouth: 'smile', handL: [-40 + 20 * Math.sin(tc * 6), -110], handR: [-20 + 20 * Math.sin(tc * 6), -120] };
   neighbourNight(ctx, t, O, A4_N, { broom: -40 + 30 * Math.sin(tc * 6), shc: A4_NSH });
   // the procession (sneakChain slowed, heads down, per-man delay; fading into the arch)
-  for (let k = A4_PRO.length - 1; k >= 0; k--) { const [who, gap] = A4_PRO[k], C = sneakChain((u) => A4_PRO_X(u), k, tc, { gap: 85, delay: 0.12, stride: 20, dir: -1 }), P = { y: 912, dir: -1, ...C, lid: abLid(t, 570 + k), gaze: [-1, 0.3], mouth: 'closed', tip: idleSway(tc, 580 + k, 0.03, 1.6), drop: who === 'c' ? 0 : 6 };
+  for (let k = A4_PRO.length - 1; k >= 0; k--) { const [who, gap] = A4_PRO[k], C = sneakChain((u) => A4_PRO_X(u), k, tc, { gap: 80, delay: 0.12, stride: 20, dir: -1 }), P = { y: 912, dir: -1, ...C, lid: abLid(t, 570 + k), gaze: [-1, 0.3], mouth: 'closed', tip: idleSway(tc, 580 + k, 0.03, 1.6), drop: who === 'c' ? 0 : 6 };
     if (P.x > 1500 || P.x < -100) continue;
     if (typeof who === 'number') { P.handL = [10, -110]; P.handR = [16, -108]; if (who === 4 && tc > 130.94 && tc < 131.6) { P.dir = 1; P.gaze = [1, 0]; } a3ArchFig(ctx, P.x, 912, (c) => abMan(c, who, P, A4_N)); }
     else if (who === 'c') { if (tc > 130.94 && tc < 131.9) { P.handR = [100, -170]; } a3ArchFig(ctx, P.x, 912, (c) => guard(c, t, 3, P, A4_N, { lantern: { open: 1 }, shc: A4_NSH })); }

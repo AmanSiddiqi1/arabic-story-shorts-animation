@@ -81,8 +81,8 @@ function a4Keepers(ctx, t, o = {}) {
 const A4_PEB = [{ t0: 106.08, d: 0.5, to: [1350, CY.jarTop + 4], h: 170 }, { t0: 107.0, d: 0.56, to: [1606, 700], h: 120 }];
 function a4Peb(ctx, t, P) { const from = [CY.gwin.x + 22, CY.gwin.y + 76], u = (t - P.t0) / P.d; if (u < 0 || u > 1.6) return;
   const at = (v) => [K.lerp(from[0], P.to[0], v), K.lerp(from[1], P.to[1], v) - P.h * Math.sin(Math.PI * v)];
-  ctx.save(); ctx.fillStyle = 'rgba(255,246,220,0.85)'; for (let k = 1; k <= 12; k++) { const v = k / 13; if (v > Math.min(1, u)) break; if (u > 1 && v < (u - 1) * 2) continue; const [x, y] = at(v); ctx.beginPath(); ctx.arc(x, y, 3, 0, 7); ctx.fill(); } ctx.restore();
-  if (u <= 1) { const [x, y] = at(u); celShade(ctx, ell(x, y, 8, 7, 10), '#fff2d0', '#d8c8a0', { off: 2, lw: 2, line: '#4a3a2a' }); } }
+  ctx.save(); ctx.fillStyle = '#fff6dc'; ctx.strokeStyle = '#2a1a3a'; ctx.lineWidth = 2; for (let k = 1; k <= 12; k++) { const v = k / 13; if (v > Math.min(1, u)) break; if (u > 1 && v < (u - 1) * 2) continue; const [x, y] = at(v); ctx.beginPath(); ctx.arc(x, y, 4.5, 0, 7); ctx.stroke(); ctx.fill(); } ctx.restore();
+  if (u <= 1) { const [x, y] = at(u); abGlow(ctx, x, y, 30, 0.5, '#fff2c0'); celShade(ctx, ell(x, y, 12, 10, 12), '#fff2d0', '#d8c8a0', { off: 3, lw: 3, line: '#2a1a3a' }); } }
 function a4S14World(ctx, t, cam) {
   const tc = AB_T2(t);
   a4Yard(ctx, t, cam, { moon: A4_MOON.watch, G: { open: 0, lit: 0 }, gwin: { sh: 0, slit: 1, lit: 0.8 }, kwin: { lit: 0.3 }, lan: [0.9, 0.8, 0.3] });

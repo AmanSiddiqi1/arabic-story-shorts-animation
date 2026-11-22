@@ -8,25 +8,25 @@ function sbCamp(ctx, t, o = {}) { sbShelter(ctx, SB_COVE.shelter, 902, t);
   const n = o.tally ?? (t > 73.5 ? 1 : 0); if (n > 0) sbTally(ctx, SB_COVE.tally[0], SB_COVE.tally[2], n, { fresh: true, perRow: 20 }); }
 // ---------- S9 (60.46 - 68.72): the raft from the wreck ----------
 const SB6_SX9 = (t) => kfn(t, [[60.46, 1440], [61.8, 1700], [63.3, 1700], [63.45, 1760], [64.15, 1760], [64.3, 1850], [64.9, 1850], [65.1, 1760], [66.95, 1760], [67.1, 1980], [68.72, 1980]], 'inOut');
-const SB6_CAM9 = (t) => { const w = t < 62.5 ? 0 : t < 62.85 ? K.ease.inOut((t - 62.5) / 0.35) : t < 63.05 ? 1 : 1 - K.ease.inOut(K.clamp((t - 63.05) / 0.35)); return { x: K.lerp(1830 + 20 * K.clamp((t - 63.4) / 5.3), 700, w), y: 615, zoom: 1 }; };
+const SB6_CAM9 = (t) => { const w = t < 62.3 ? 0 : t < 62.6 ? K.ease.inOut((t - 62.3) / 0.3) : t < 63.1 ? 1 : 1 - K.ease.inOut(K.clamp((t - 63.1) / 0.3)); return { x: K.lerp(1740 + 70 * K.clamp((t - 63.4) / 5.3), 700, w), y: K.lerp(770, 615, w), zoom: K.lerp(1.3, 1, w) }; };
 function sbS9World(ctx, t, cam) { const tc = SB_T2(t), st = sbRaftState(t), RX = 1850, RY = sbCoveRiverY(RX) + 2 + 2 * Math.sin(tc * 2);
-  sbCoveBack(ctx, t, cam, { lit: 1 });
+  sbCoveBack(ctx, t, cam, { lit: 1, clear: [1690, 2010] });
   for (let i = 0; i < 4; i++) sbDebris(ctx, 'plank', 1550 + (i % 2) * 20, 900 - i * 8, 0.05 * i, 0.9);   // the plank pile
   // teal and leaf pull planks off the wreck (seen on the whip pan) and teal waves one overhead
   if (cam.x < 1500) [[0, 560], [3, 640]].forEach(([i, x]) => { const P = sbLive(t, 60 + i, { x, y: 900, dir: -1, gaze: [-1, -0.2], mouth: 'smile' }); P.handLW = [x - 60, 860 - 20 * osc(tc + i * 0.3, 0.4)]; P.tip = 0.25; if (i === 0) { P.handR = [10, -250]; P.handL = [-10, -240]; P.handLW = null; P.tip = 0; } const Q = sbSailor(ctx, i, P); if (i === 0) { const h = sbHandW(Q, 1); sbDebris(ctx, 'plank', h[0], h[1] - 6, 0.1 * Math.sin(tc * 6), 0.9); } });
   // mustard hands the planks over (61.6 - 62.6), overdoing it
-  const M = sbLive(t, 61, { x: 1640, y: 892, dir: 1, mouth: 'smile', gaze: [1, 0.4] }); if (t > 61.5 && t < 62.7) { const h = osc(tc, 0.33); M.handLW = [1700 + 40 * h, 870]; M.handRW = [1730 + 40 * h, 860]; M.tip = 0.2 + 0.1 * h; } if (t > 64.3 && t < 65.2) { M.mouth = 'open'; M.talk = sbTalk(t, 64.4, 65.0, 7); }
+  const M = sbLive(t, 61, { x: 1625, y: 896, dir: 1, mouth: 'smile', gaze: [1, 0.4] }); if (t > 61.5 && t < 62.7) { const h = osc(tc, 0.33); M.handLW = [1700 + 40 * h, 870]; M.handRW = [1730 + 40 * h, 860]; M.tip = 0.2 + 0.1 * h; } if (t > 64.3 && t < 65.2) { M.mouth = 'open'; M.talk = sbTalk(t, 64.4, 65.0, 7); }
   sbSailor(ctx, 1, M);
   // rose giggles at the measuring (64.2 - 65.2); the captain brings sack, skin and lantern (65.9 - 66.9)
-  const Rr = sbLive(t, 62, { x: 1590, y: 892, dir: 1, gaze: [1, 0.3], mouth: 'smile' }); if (t > 64.3 && t < 65.3) { Rr.handR = PERSON_HANDS.mouthCover.R; Rr.tip = 0.06 * osc(tc, 0.2); Rr.lid = 0.6; } sbSailor(ctx, 2, Rr);
-  const CX = (u) => kfn(u, [[65.3, 1500], [65.95, 1640], [68.72, 1640]], 'inOut'), Cp = sbLive(t, 51, { ...walk(CX, tc, { stride: 22 }), y: 892, dir: 1, gaze: [1, 0.2] });
+  const Rr = sbLive(t, 62, { x: 1530, y: 884, s: 0.88, dir: 1, gaze: [1, 0.3], mouth: 'smile' }); if (t > 64.3 && t < 65.3) { Rr.handR = PERSON_HANDS.mouthCover.R; Rr.tip = 0.06 * osc(tc, 0.2); Rr.lid = 0.6; } sbSailor(ctx, 2, Rr);
+  const CX = (u) => kfn(u, [[65.3, 1440], [65.95, 1660], [68.72, 1660]], 'inOut'), Cp = sbLive(t, 51, { ...walk(CX, tc, { stride: 22 }), y: 892, dir: 1, gaze: [1, 0.2] });
   if (t > 65.95 && t < 66.9) { Cp.handRW = [K.lerp(1700, RX - 112, K.clamp((t - 66.0) / 0.4)), K.lerp(840, RY - 160 + 46, K.clamp((t - 66.0) / 0.4))]; Cp.tip = 0.12; Cp.lid = 0.35; Cp.gaze = [1, 0.1]; }
   const CQ = sbCaptain(ctx, Cp); if (t > 65.2 && t < 66.1) { const h = sbHandW(CQ, 0); sbSack(ctx, h[0] - 20, h[1] - 10, 0.5, 0.1); } if (t > 65.2 && t < 66.4) { const h = sbHandW(CQ, 1); sbLantern(ctx, h[0], h[1] - 8, { flame: 0, t }); }
   // the raft
   sbRaft(ctx, { x: RX, y: RY, rot: 0.01 * Math.sin(tc * 1.7), dip: 4 * pulse(t, 64.25, 0.4) + 3 * pulse(t, 63.95, 0.25), ...st, t, rider: t > 64.2 && t < 64.95 ? (c) => { const P = sbLive(t, 11, { x: 10, y: -12, lie: 1, dir: 1, gaze: [0, -1], mouth: 'smile', handR: [10, -230] }); sbSin6(c, P); } : null });
   // Sinbad: drags planks (60.46 - 61.8), lays and lashes (63.4 - 64.2), measures lying down, the star rag, pats the pole, the pebbles
   if (!(t > 64.2 && t < 64.95)) { const x = SB6_SX9(t), P = sbLive(t, 11, { ...walk(SB6_SX9, tc, { stride: 24 }), y: 892, dir: 1, mouth: 'closed', gaze: [1, 0.2], wind: -0.4 }, [61.9, 66.95]);
-    if (t < 61.8) { P.tip = 0.35; P.handLW = [x - 20, 760]; P.handRW = [x - 6, 770]; P.brow = -0.5; P.mouth = 'frown'; P.gaze = [1, 0]; }
+    if (t < 61.8) { P.tip = 0.35; P.handLW = [x - 20, 760]; P.handRW = [x - 6, 770]; P.brow = 0.4; P.mouth = 'smile'; P.gaze = [1, 0]; }
     else if (t < 63.4) { P.gaze = [0.6, 0.6]; P.handR = PERSON_HANDS.hipsHands.R; P.handL = PERSON_HANDS.hipsHands.L; }
     else if (t < 64.2) { const pull = sbF(t, [[63.4, 0], [63.8, 0.6], [64.0, 1], [64.2, 1]]); P.handLW = [1800 - 30 * pull, 860 - 20 * pull]; P.handRW = [1790 - 30 * pull, 850 - 20 * pull]; P.tip = -0.25 * pull; P.tongue = true; P.gaze = [0.5, 0.8];
       if (t > 64.0) { P.sit = K.clamp((t - 64.0) / 0.12); P.seat = 'floor'; P.sq *= impactSquash(tc, 64.12, 0.88); P.eyes = 'wide'; P.tongue = false; P.mouth = 'o'; } }
@@ -41,7 +41,7 @@ function sbS9World(ctx, t, cam) { const tc = SB_T2(t), st = sbRaftState(t), RX =
 }
 function sbS9Over(ctx, t, cam, S) {
   if (t > 61.6 && t < 63.0) { const n = Math.min(6, Math.floor((t - 61.6) / 0.17) + 1); S.counter(ctx, n, 780, 240, K.clamp((t - 61.6 - (n - 1) * 0.17) / 0.15), { size: 90 }); }
-  if (t > 62.5 && t < 63.4) sbSpeed(ctx, [0, 0, 1000, 1230], t, { dir: -1, alpha: 0.35 * Math.sin(Math.PI * (t - 62.5) / 0.9) });
+  if (t > 62.3 && t < 63.4) sbSpeed(ctx, [0, 0, 1000, 1230], t, { dir: -1, alpha: 0.35 * Math.sin(Math.PI * (t - 62.3) / 1.1) });
   if (t > 64.3 && t < 65.2) { const p = sbP(1860, 720, cam); sbTag(ctx, S, 'PERFECT FIT!', p[0], p[1] - 200, t, 64.4, 65.1, { size: 40 }); }
 }
 SB_SHOTS.push({ a: 60.46, b: 68.72, cam: SB6_CAM9, world: sbS9World, over: sbS9Over });

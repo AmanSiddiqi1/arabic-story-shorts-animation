@@ -5,7 +5,7 @@ const A4_TAPE = [32.5, 33.3];
 const A4_DISSOLVE = [16.3];
 function a4DrawShot(ctx, sc, t, S) {
   if (sc.panel) { sc.panel(ctx, t, S); return; }
-  const cam = abCamClamp(sc.cam(t), sc.ww || 1000); ctx.save(); K.camera(ctx, 1000, 1230, cam); sc.world(ctx, t, cam, S); ctx.restore(); if (sc.over) sc.over(ctx, t, cam, S);
+  const cam = abCamClamp(sc.cam(t), sc.ww || 1000); ctx.save(); K.camera(ctx, 1000, 1230, cam); CY_FG.on = false; sc.world(ctx, t, cam, S); if (CY_FG.on) cyFore(ctx, t, cam, CY_FG.m); ctx.restore(); if (sc.over) sc.over(ctx, t, cam, S);   // v2: cyFore = the yard's foreground pass
 }
 const SCENE = {
   duration: AB_DUR,

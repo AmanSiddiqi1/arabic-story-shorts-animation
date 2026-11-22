@@ -22,7 +22,8 @@ AB_BARK.night = ['#8a6a7a', '#5a4a62'];
 const AB_COURT = {   // sky, kitchen wing, back wall, guest wing, paving top/bottom, stone edge, coping, far roofs, clouds
   evening: { sky: [[0, '#2f6f8e'], [0.2, '#6a74b8'], [0.36, '#ff9a9a'], [0.47, '#ffc27a']], wing: '#e0a888', wall: '#efcaa0', guest: '#f2b4a4', pave: ['#eab08e', '#c08070'], edge: '#ffe0c0', cop: '#c8643a',
     far: '#9a7ab0', farD: '#7a5a98', cloud: ['#d89ac0', '#ffd0a0'], night: 0, leaf: 'dusk', door: '#4a2a3a', win: '#5a3448' },
-  night: { sky: [[0, '#2a4a8a'], [0.22, '#3e5aa0'], [0.36, '#7a6ab0'], [0.46, '#a47ab4']], wing: '#c8a0a8', wall: '#b89ab8', guest: '#8a94c0', pave: ['#8c8cbc', '#7a7aa8'], edge: '#a8b0d8', cop: '#8a7ac0',
+  night: { sky: [[0, '#2a4a8a'], [0.22, '#3e5aa0'], [0.36, '#7a6ab0'], [0.46, '#a47ab4']], wing: '#c8a0a8', wall: '#b89ab8', guest: '#8a94c0', pave: ['#7ea8bc', '#5e84a2'], edge: '#b8d8e8',   // v2 (ALI-04 review 1 note 6): blue-teal paving under the rose wall
+    cop: '#8a7ac0',
     far: '#5a66a4', farD: '#4c5896', cloud: ['#6a6aa8', '#c8b8e8'], night: 1, leaf: 'night', door: '#3a3466', win: '#3a3a6a' },
 };
 const cyLine = (c) => abDark(c, 0.6);
@@ -189,9 +190,42 @@ function courtyard(ctx, t, cam, o = {}) {
   if (o.wash !== false) cyWash(ctx, t, mm);
   cyLemon(ctx, t, mm);
   cyLanterns(ctx, t, o.lan ?? 1);
+  cyPools(ctx, t, o.lan ?? 1, mm);
+  CY_FG.on = true; CY_FG.m = mm;
   if ((K0.lit ?? 0.8) > 0 && (K0.open || 0) > 0.05) { ctx.save(); ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = 0.45 * K0.open; ctx.fillStyle = '#ffc070'; ctx.beginPath(); ctx.moveTo(115, 904); ctx.lineTo(225, 904); ctx.lineTo(330, 1080); ctx.lineTo(40, 1080); ctx.closePath(); ctx.fill(); ctx.restore(); }
   if ((G0.lit || 0) > 0 && (G0.open || 0) > 0.05) { ctx.save(); ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = 0.45 * G0.open * G0.lit; ctx.fillStyle = '#ffc070'; ctx.beginPath(); ctx.moveTo(1875, 904); ctx.lineTo(1985, 904); ctx.lineTo(1940, 1100); ctx.lineTo(1620, 1080); ctx.closePath(); ctx.fill(); ctx.restore(); }
 }
+
+// v2 (ALI-04 review 1 note 6): warm amber pools of lantern light on the paving (night)
+function cyPools(ctx, t, k = 1, m = 'night') { if (!AB_COURT[m].night) return; const tc = AB_T2(t); ctx.save(); ctx.globalCompositeOperation = 'screen';
+  CY.lanterns.forEach(([lx], i) => { const kk = Array.isArray(k) ? k[i] : k; if (kk <= 0.01) return; const f = 0.9 + 0.1 * Math.sin(tc * 7 + i * 2); const g = ctx.createRadialGradient(lx, 935, 10, lx, 935, 230);
+    g.addColorStop(0, K.rgba('#ffb050', 0.42 * kk * f)); g.addColorStop(1, 'rgba(255,176,80,0)'); ctx.fillStyle = g; ctx.beginPath(); ctx.ellipse(lx, 935, 230, 50, 0, 0, 7); ctx.fill(); }); ctx.restore(); }
+// cyFore: a foreground dressing pass on the paving (bottom of the yard, below the figures' feet), different in each zone and sliding
+// 15% faster than the yard: a well and a washing basket by the kitchen wing; potted herbs and the cat's bowl before the jar row; a bench
+// with a rug and fallen lemons by the guest wing. Drawn by the scene dispatch after the world when courtyard() ran this frame (CY_FG.on).
+const CY_FG = { on: false, m: 'night' };
+function cyFore(ctx, t, cam, m = 'night') { const night = AB_COURT[m].night, tn = (c) => (night ? abMul(c, '#8a9ae0', 0.32) : c), L = [-1, -1], par = (x) => x - (cam.x - x) * 0.0 - (cam.x - 1100) * 0.15, half = 520 / (cam.zoom || 1) + 200;
+  const vis = (x) => Math.abs(par(x) - cam.x) < half; ctx.save();
+  // the well (kitchen wing)
+  if (vis(300)) { const x = par(300), y = 1236; celShade(ctx, K.rectPts(x - 90, y - 120, 180, 120), tn('#c8b8a0'), tn('#9a8a72'), { light: L, off: 12, lw: 3.5, line: '#3a2a3a' });
+    for (let r = 0; r < 3; r++) for (let c = 0; c < 4; c++) { ctx.strokeStyle = tn('#8a7a62'); ctx.lineWidth = 2.5; ctx.strokeRect(x - 90 + c * 45 + (r % 2) * 22, y - 120 + r * 40, 45, 40); }
+    celShade(ctx, K.rectPts(x - 100, y - 136, 200, 20), tn('#d8c8b0'), tn('#a89a80'), { light: L, off: 5, lw: 3, line: '#3a2a3a' });
+    seg(ctx, x - 80, y - 136, x - 80, y - 250, 10, tn('#8a5a3a'), 2); seg(ctx, x + 80, y - 136, x + 80, y - 250, 10, tn('#8a5a3a'), 2); seg(ctx, x - 92, y - 250, x + 92, y - 250, 12, tn('#8a5a3a'), 2);
+    const sw = idleSway(AB_T2(t), 861, 4, 3); seg(ctx, x + sw, y - 250, x + sw, y - 180, 2, '#3a2a3a', 0); celShade(ctx, [[x - 18 + sw, y - 180], [x + 18 + sw, y - 180], [x + 14 + sw, y - 150], [x - 14 + sw, y - 150]], tn('#a8743e'), tn('#7a4a2a'), { off: 4, lw: 2.5 }); }
+  // a washing basket
+  if (vis(520)) { const x = par(520), y = 1240; celShade(ctx, [[x - 70, y - 70], [x + 70, y - 70], [x + 58, y], [x - 58, y]], tn('#d8a860'), tn('#a87830'), { light: L, off: 8, lw: 3, line: '#3a2a3a' });
+    ctx.strokeStyle = tn('#a87830'); ctx.lineWidth = 2.5; for (let k = 1; k < 4; k++) { ctx.beginPath(); ctx.moveTo(x - 70 + k * 3, y - 70 + k * 17); ctx.lineTo(x + 70 - k * 3, y - 70 + k * 17); ctx.stroke(); }
+    abBlob(ctx, x - 20, y - 76, 40, 16, tn('#f0f0f8'), tn('#c8c8d8'), { lw: 2.5 }); abBlob(ctx, x + 30, y - 78, 30, 14, tn('#e8a0b0'), tn('#b87080'), { lw: 2.5 }); }
+  // potted herbs before the jar row and the cat's bowl
+  [[800, '#c0603a', 0], [1000, '#d8843a', 1], [1240, '#b86a3a', 2], [1480, '#c8703a', 3], [1620, '#d08a4a', 4]].forEach(([px, pc, k]) => { if (!vis(px)) return; const x = par(px), y = 1238, h = 64 + (k % 2) * 16;
+    celShade(ctx, [[x - 34, y], [x - 44, y - h], [x + 44, y - h], [x + 34, y]], tn(pc), abDark(tn(pc), 0.3), { light: L, off: 8, lw: 3, line: '#3a2a3a' }); celShade(ctx, K.rectPts(x - 48, y - h - 12, 96, 14), abDark(tn(pc), 0.1), abDark(tn(pc), 0.35), { off: 3, lw: 2.5, line: '#3a2a3a' });
+    abLeafBlobs(ctx, x, y - h - 40, 40, AB_COURT[m].leaf, 870 + k, AB_T2(t), 0.4); });
+  if (vis(1120)) { const x = par(1120), y = 1222; celShade(ctx, [[x - 40, y - 22], [x + 40, y - 22], [x + 30, y], [x - 30, y]], tn('#5aa0d0'), tn('#3a7ab0'), { light: L, off: 5, lw: 3, line: '#3a2a3a' }); ctx.fillStyle = tn('#f8f0e0'); ctx.beginPath(); ctx.ellipse(x, y - 22, 34, 6, 0, 0, 7); ctx.fill(); }
+  // the bench with a rug and two fallen lemons (guest wing)
+  if (vis(1960)) { const x = par(1960), y = 1236; celShade(ctx, K.rectPts(x - 150, y - 90, 300, 22), tn('#a8743e'), tn('#7a4a2a'), { light: L, off: 6, lw: 3, line: '#3a2a3a' }); for (const lx of [x - 130, x + 130]) seg(ctx, lx, y - 68, lx, y, 12, tn('#7a4a2a'), 2.5);
+    celShade(ctx, [[x - 110, y - 92], [x + 60, y - 92], [x + 70, y - 30], [x - 100, y - 34]], tn('#c8304a'), tn('#8a1a30'), { light: L, off: 8, lw: 3, line: '#3a2a3a' }); ctx.strokeStyle = tn('#ffd36a'); ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(x - 104, y - 60); ctx.lineTo(x + 64, y - 60); ctx.stroke(); }
+  for (const lx of [1760, 1830]) if (vis(lx)) { const x = par(lx); celShade(ctx, ell(x, 1214, 16, 12, 12), tn('#ffd84a'), tn('#d8a020'), { light: L, off: 4, lw: 2.5, line: '#3a2a3a' }); }
+  ctx.restore(); }
 
 // ---------- the jars on the yard: data + one drawing per jar (the ALI-03 oilJar with the ALI-04 fields) ----------
 const CY_JARS = [{ man: 0 }, { man: 1 }, { man: 2 }, { man: 3 }, { man: 4 }, { oil: true, stain: true }].map((j, i) => ({ ...j, i, x: CY.jars[i] }));

@@ -42,21 +42,22 @@ function a4Ring(ctx, x, y, r, o = {}) {
   ctx.restore(); }
 function a4RingInsert(ctx, t, S) {
   const tc = AB_T2(t); abGrad(ctx, 0, 0, 1000, 1230, [[0, '#2a6a7a'], [0.6, '#1f4f66'], [1, '#2a4a6a']]); abGlow(ctx, 820, 220, 520, 0.45, '#ffb860');
-  const R = K.rng(7); ctx.save(); ctx.globalAlpha = 0.25; for (let i = 0; i < 18; i++) { ctx.fillStyle = '#7ab8d0'; ctx.beginPath(); ctx.arc(R() * 1000, R() * 1230, 3 + R() * 6, 0, 7); ctx.fill(); } ctx.restore();
-  const flex = pulse(tc, 20.95, 0.5), close = beatIn(tc, 24.42, 24.6), k = 3.0 + 0.06 * Math.sin(t * 0.8), hx = 480 + 10 * Math.sin(t * 0.9), hy = 880, rot = Math.PI - 0.08;
+  const R = K.rng(7); ctx.save(); ctx.globalAlpha = 0.3; for (let i = 0; i < 18; i++) { ctx.fillStyle = '#9ad0e0'; const x0 = R() * 1000, y0 = R() * 1230, sp = 10 + R() * 14; ctx.beginPath(); ctx.arc(x0 + 20 * Math.sin(tc * 0.6 + i), ((y0 - sp * (tc - 20.6)) % 1230 + 1230) % 1230, 3 + R() * 6, 0, 7); ctx.fill(); } ctx.restore();   // v2 (note 8): slow dust motes
+  { ctx.save(); ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = 0.12; ctx.fillStyle = '#ffd8a0'; const bx = -300 + 60 * (tc - 20.6); ctx.beginPath(); ctx.moveTo(bx, 0); ctx.lineTo(bx + 260, 0); ctx.lineTo(bx + 760, 1230); ctx.lineTo(bx + 500, 1230); ctx.fill(); ctx.restore(); }
+  const flex = Math.max(pulse(tc, 20.95, 0.3), pulse(tc, 21.25, 0.3)), close = beatIn(tc, 24.85, 25.0), k = 3.0 + 0.06 * Math.sin(t * 0.8), hx = 480 + 10 * Math.sin(t * 0.9), hy = 880, rot = Math.PI - 0.08;
   a3BigHand(ctx, hx, hy, k, { sleeve: '#ecc062', sleeveD: '#d8a43a', curl: 0.25 + 0.45 * flex + 0.6 * close, skin: '#e8b08a', rot });
   const lx = -14 + 0.25 * 8, ly = 60 + 88 * (1 - 0.62 * (0.25 + 0.45 * flex)) * 0.35, c = Math.cos(rot), s = Math.sin(rot), rx = hx + (lx * c - ly * s) * k, ry = hy + (lx * s + ly * c) * k;
   const back = beatIn(t, 22.3, 22.8), blue = beatIn(t, 23.16, 23.4);
   if (blue > 0) { ctx.save(); ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = 0.55 * blue; ctx.fillStyle = '#5ab0ff'; ctx.beginPath(); ctx.moveTo(rx - 30, ry - 10); ctx.lineTo(rx + 30, ry - 10); ctx.lineTo(rx + 190, ry + 330); ctx.lineTo(rx - 150, ry + 360); ctx.closePath(); ctx.fill(); ctx.restore(); }
   a4Ring(ctx, rx, ry, 52, { band: beatIn(t, 21.54, 22.2), back, crack: tc < 23.98 ? 0.0001 : beatIn(tc, 23.98, 24.2), flash: tc > 24.22 && tc < 24.3 });
-  if (tc > 24.0) a4Streak(ctx, S, [820, 260], [rx + 20, ry - 40], t, 24.0, 24.45);
+  if (tc > 24.0) a4Streak(ctx, S, [820, 260], [rx + 20, ry - 40], t, 24.0, 24.9);
+  if (blue > 0 && tc < 23.7) abGlow(ctx, rx, ry - 24, 140 * (1 + 0.3 * pulse(tc, 23.16, 0.4)), 0.6 * pulse(tc, 23.16, 0.5), '#5ab0ff');   // the stone pulses on 'azraq'
 }
 AB_SHOTS.push({ a: 16.3, b: 20.6, ww: 2200, cam: a3Cam([[16.3, { x: 1420, y: 690, zoom: 1.25 }], [19.8, { x: 1415, y: 690, zoom: 1.25 }], [20.6, { x: 1440, y: 620, zoom: 1.8 }]]), world: a4S4World, over: a4S4Over });
-AB_SHOTS.push({ a: 20.6, b: 24.5, panel: a4RingInsert });
-AB_SHOTS.push({ a: 24.5, b: 24.8, ww: 2200, cam: () => ({ x: 1420, y: 690, zoom: 1.25 }), world: a4S4World });
+AB_SHOTS.push({ a: 20.6, b: 25.1, panel: a4RingInsert });   // v2 (note 8): the crack holds to 25.1
 
 // ---------- S5 24.8-33.3: he raps the lids; the cutaway (five men, one jar of oil); WAIT FOR MY SIGNAL.; the guest room door ----------
-const A4_S5_X = (u) => kfn(u, [[24.84, 820], [26.3, 1230], [27.9, 1230], [28.1, 1190], [29.02, 1190], [29.9, 1395], [31.9, 1395], [32.3, 1930]]);
+const A4_S5_X = (u) => kfn(u, [[24.84, 820], [26.3, 1230], [27.9, 1230], [28.1, 1190], [29.02, 1190], [29.9, 1585], [31.9, 1585], [32.3, 1930]]);
 function a4OilM5(t) {
   const tc = AB_T2(t), W = walk(A4_S5_X, tc, { stride: 28 }), P = { y: 918, dir: tc > 31.85 ? 1 : 1, ...W, lid: 0.3, tip: idleSway(tc, 111, 0.015, 3), sq: breathe(tc, 112, 0.012), gaze: [1, 0], mouth: 'smile', brow: 0.6, handL: [-34 + 14 * Math.sin(W.ph), -100], handR: [34 - 14 * Math.sin(W.ph), -102] };
   if (tc < 26.4) { const k = Math.floor((tc - 25.04) / 0.26); if (k >= 0 && k < 5) { const ph = (tc - 25.04 - 0.26 * k) / 0.26, J = CY_JARS[k]; P.handRW = [J.x - 8, 628 - 10 * Math.abs(Math.sin(ph * Math.PI * 2))]; P.gaze = lookAt([P.x, 720], [J.x, 640]); } }
@@ -64,7 +65,7 @@ function a4OilM5(t) {
   else if (tc < 29.02) { const cr = beatIn(tc, 27.9, 28.1); P.sq *= 1 - 0.12 * cr; P.drop = 10 * cr; P.handR = PERSON_HANDS.hush.R; P.gaze = [-1, -0.3]; P.talk = abTalk(t, 27.95, 28.95, 8, 0.35); if (P.talk) P.mouth = 'open'; P.lid = 0.35;
     if (tc > 28.45) { P.handR = null; P.handRW = [CY_JARS[2].x + 6, 634]; P.gaze = [1, -0.3]; } }
   else if (tc < 29.98) { P.handR = tc > 29.5 ? [60, -190] : P.handR; P.mouth = 'smile'; }
-  else if (tc < 31.4) { P.handRW = tc < 30.4 ? [1470, 628] : [1462, 600]; P.gaze = [1, 0.4]; P.lid = 0.2; }
+  else if (tc < 31.4) { P.dir = -1; P.handRW = [1512, 720 - 10 * Math.max(pulse(tc, 30.0, 0.2), pulse(tc, 30.3, 0.2), pulse(tc, 30.6, 0.2))]; P.gaze = [-1, 0.2]; P.lid = 0.2; P.mouth = 'grin'; }   // v2 (note 9): right of jar 6, patting it
   else if (tc < 31.9) { P.handR = [-20, -110 + 10 * Math.sin(tc * 20)]; P.mouth = 'smile'; P.lid = 0.4; P.gaze = [-1, 0]; }
   else { P.gaze = tc > 32.1 && tc < 32.3 ? [-1, 0] : [1, 0]; P.look = tc > 32.1 && tc < 32.3 ? -0.8 : 0; }
   return { P, W };
@@ -85,4 +86,4 @@ function a4S5Over(ctx, t, cam, S) {
     if (t > 30.78) { const [ox, oy] = abP(1465, 390, cam); S.label(ctx, 'OIL 1', Math.min(ox, 880), oy - 20, K.clamp((t - 30.78) / 0.3), { size: 44 }); a4Streak(ctx, S, [Math.min(ox, 880), oy + 20], abP(1465, 620, cam), t, 30.8, 31.6); } ctx.restore(); }
   if (t > 27.9 && t < 29.4) { const [hx, hy] = abP(1190, 700, cam); a4Say(ctx, S, [[27.95, 'WAIT FOR MY SIGNAL.']], t, hx + 60, hy - 210, [hx, hy - 40], { size: 44, gone: 29.0 }); }
 }
-AB_SHOTS.push({ a: 24.8, b: 33.3, ww: 2200, cam: a3Cam([[24.8, { x: 1000, y: 615, zoom: 1 }], [26.4, { x: 1250, y: 615, zoom: 1 }], [29.0, { x: 1250, y: 615, zoom: 1 }], [30.0, { x: 1380, y: 660, zoom: 1.15 }], [31.6, { x: 1385, y: 660, zoom: 1.15 }], [32.4, { x: 1700, y: 615, zoom: 1 }], [33.3, { x: 1700, y: 615, zoom: 1 }]]), world: a4S5World, over: a4S5Over });
+AB_SHOTS.push({ a: 25.1, b: 33.3, ww: 2200, cam: a3Cam([[24.8, { x: 1000, y: 615, zoom: 1 }], [26.4, { x: 1250, y: 615, zoom: 1 }], [29.0, { x: 1250, y: 615, zoom: 1 }], [30.0, { x: 1420, y: 660, zoom: 1.15 }], [31.6, { x: 1425, y: 660, zoom: 1.15 }], [32.4, { x: 1700, y: 615, zoom: 1 }], [33.3, { x: 1700, y: 615, zoom: 1 }]]), world: a4S5World, over: a4S5Over });

@@ -34,3 +34,8 @@ from timing.json; chunks files untouched. No "arabicFont" in story.json. Arabic 
 - Speech balloons sit about 230 units above the speaker so the tails stay short.
 - Sound: the 8 plan effects at the plan times; nothing under CRASH!; the DAYS LATER... transition is silent.
 - Balloons: sbSay in this story's sb_kit.js copy clamps the balloon centre so every balloon stays inside the panel (WE STAY. ran off the right edge). Checked on stills 20.6-135.3 s.
+
+## Revision 1 (Fable review 1)
+- Splash at 92.32/93.12 is staged against the far wall at the waterline (side cutaway: the "wall" is the strata backdrop), screen x 760 and 905 measured on the S13 camera at the hit times.
+- S12 camera zoom 1.28 (plan range 1.2-1.3), cam y 676 for waterline about 66%. S14 push to 1.75 (review asked 1.7-1.8).
+- Reunion: Sinbad lands at skiff x + 160, at the beach edge; the beach plate covers his shins, which reads as standing in the shallows.

@@ -8,7 +8,7 @@ const a4Step = (t, a, d, n = 2) => Math.floor(K.clamp((t - a) / d) * n + 1e-6) /
 
 // ---------- the jar row over the film (continuity cannot slip): lid, peek, cutaway, ghost, wobble ----------
 const A4_PEEKS = [   // [jar, up, down, lift, gazePlan, close]
-  [0, 41.26, 47.52, 0.75, [[41.26, [1, 0]], [43.74, [0.2, 0.2]], [44.1, [-1, 0.2]], [44.6, [-0.2, 0]]]],
+  [0, 41.72, 47.52, 0.75, [[41.72, [-1, 0.3]], [43.74, [0.2, 0.2]], [44.1, [-1, 0.2]], [44.6, [-0.2, 0]]]],
   [0, 54.62, 56.6, 0.75, [[54.62, [0, 0.3]]]],
   [2, 61.56, 63.2, 0.75, [[61.56, [-0.3, 0.3]]], true], [3, 62.81, 63.35, 0.7, [[62.81, [-0.5, 0.2]]]], [4, 63.06, 63.5, 0.7, [[63.06, [-0.6, 0.2]]]],
   [1, 80.72, 81.15, 0.4, [[80.72, [0.4, 0.2]]]],
@@ -21,6 +21,7 @@ function a4JarSt(i, t) {
   if (i < 5) { const o = a4Step(t, 26.42 + 0.2 * i, 0.2, 3) * (1 - a4Step(t, 28.32 + 0.08 * i, 0.25, 3)); if (o > 0) st.cut = { open: o, draw: (c) => jarMan(c, t, i, { pose: A4_PR[i], nod: pulse(tc, 28.4 + [0, 0.15, 0.3, 0.45, 0.85][i], 0.35) }) };
     const g = 94.82 + 0.08 * i, o2 = a4Step(t, g, 0.12, 2) * (1 - a4Step(t, 95.36, 0.12, 2)); if (o2 > 0) st.cut = { open: o2 * 0.9, draw: (c) => jarMan(c, t, i, { pose: i === 1 ? 'scratch' : A4_PR[i] }) };
     const gh = 48.8 + 0.3 * i; if (tc >= gh && tc < gh + 0.17) st.ghost = 1; }
+  if (i === 0 && tc >= 40.3 && tc < 41.72) st.lid = 0.85 * a4Step(tc, 40.3, 0.12, 2);   // v2 (note 4): the lid lifts by itself before she touches it
   if (i === 5) st.oil = a4Step(t, 29.98, 0.2, 3) * (1 - a4Step(t, 30.8, 0.2, 2));
   if (i === 2 && tc > 28.4 && tc < 28.95) st.wob += 0.02;   // the crooked lid he presses flat
   for (const [j, up, down, lift, gp, close] of A4_PEEKS) if (j === i && tc >= up && tc < down + 0.3) {

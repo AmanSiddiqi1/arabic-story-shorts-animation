@@ -31,7 +31,7 @@ function ehCourtMainPlate(model) {
     celShade(c, K.rectPts(-20, 470, 1640, 30), EH_COBALT, '#1a2e90', { off: 6, lw: 2.5, line: '#141a5a' });
     c.save(); c.fillStyle = '#ffd36a'; for (let x = -10; x < 1620; x += 30) { c.beginPath(); c.moveTo(x, 485); c.lineTo(x + 8, 476); c.lineTo(x + 16, 485); c.lineTo(x + 8, 494); c.closePath(); c.fill(); } c.restore();
     // ivy on the wall, the dovecote on the wall top
-    for (let i = 0; i < 40; i++) { const x = 560 + R() * 260, y = 440 + R() * 300; ehBlob(c, x, y, 10, 8, '#4a9a4a', '#2f7a44', { lw: 1.5, off: 3 }); }
+    for (const [vx, vl] of [[700, 170], [742, 120], [786, 150]]) { c.save(); c.strokeStyle = '#3f8a4a'; c.lineWidth = 3; c.beginPath(); c.moveTo(vx, 500); c.quadraticCurveTo(vx + 14, 500 + vl / 2, vx - 4, 500 + vl); c.stroke(); c.restore(); for (let k = 0; k < 6; k++) ehBlob(c, vx + 6 * Math.sin(k * 1.7), 510 + k * vl / 6, 9, 7, '#4a9a4a', '#2f7a44', { lw: 1.5, off: 3 }); }
     celShade(c, K.rectPts(590, 340, 70, 70), M.wall, M.wallS, { off: 10, lw: 3, line: ln }); celShade(c, [[580, 342], [625, 300], [670, 342]], EH_TANGERINE, '#d8661a', { off: 8, lw: 3, line: ln });
     for (const [x, y] of [[606, 366], [636, 366], [620, 392]]) { c.fillStyle = '#3a2a4a'; c.beginPath(); c.arc(x, y, 7, 0, 7); c.fill(); }
     // gateway (dark; leaves are live) with its arch frame
@@ -91,7 +91,7 @@ function latticeScreen(ctx, o = {}) {
   ctx.save(); ctx.beginPath(); ctx.rect(x0, y0, x1 - x0, y1 - y0); ctx.clip();
   ehGrad(ctx, x0, y0, x1 - x0, y1 - y0, [[0, ehMix('#8a5a4a', '#ffcf7a', g)], [1, ehMix('#5a3a3a', '#ff9a5a', g)]]); if (g > 0) ehGlow(ctx, (x0 + x1) / 2, y0 + (y1 - y0) * 0.3, (x1 - x0) * 0.7, 0.7 * g, '#ffe0a0');
   if (o.behind) o.behind(ctx);
-  ctx.beginPath(); ctx.rect(x0, y0, x1 - x0, y1 - y0); for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) { const cx = x0 + cw * (i + 0.5), cy = y0 + rh * (j + 0.5), pts = (i + j) % 2 === 0 ? ehStarPts(cx, cy, r) : ehCrossPts(cx, cy, r * 0.9); K.poly(ctx, pts, true); }
+  ctx.beginPath(); ctx.rect(x0, y0, x1 - x0, y1 - y0); for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) { const cx = x0 + cw * (i + 0.5), cy = y0 + rh * (j + 0.5), forced = (o.stars || []).some(([a, b]) => a === i && b === j), pts = forced ? ehStarPts(cx, cy, r * (o.starBig || 1)) : (i + j) % 2 === 0 ? ehStarPts(cx, cy, r) : ehCrossPts(cx, cy, r * 0.9); ctx.moveTo(pts[0][0], pts[0][1]); for (let q = 1; q < pts.length; q++) ctx.lineTo(pts[q][0], pts[q][1]); ctx.closePath(); }
   ctx.fillStyle = o.col || '#c89a5a'; ctx.fill('evenodd'); ctx.strokeStyle = '#6a4220'; ctx.lineWidth = o.lw || 2.5; ctx.stroke();
   ctx.save(); ctx.globalAlpha = 0.5; ctx.strokeStyle = '#e8c088'; ctx.lineWidth = (o.lw || 2.5) * 0.8; for (let i = 1; i < cols; i++) { ctx.beginPath(); ctx.moveTo(x0 + cw * i, y0); ctx.lineTo(x0 + cw * i, y1); ctx.stroke(); } ctx.restore();
   ctx.restore();

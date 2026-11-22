@@ -6,7 +6,7 @@ function a4Mule(ctx, t, i, xf, o = {}) {
     headDown: 0.2 + 0.1 * Math.sin(W.ph + i) + (o.shake ? 0.25 * Math.sin(tc * 20) * o.shake : 0), earL: 0.2 + idleSway(tc, 600 + i, 0.3, 1.6) + (o.earBack ? -0.9 : 0), earR: 0.1 + idleSway(tc, 610 + i, 0.3, 2.1), tailSwish: osc(tc, 1.5 + i * 0.3, i * 0.2), lid: abLid(t, 620 + i), sag: o.light ? 0 : 0.25 };
   a3Shadow(ctx, P.x, P.y, 230, 0, o.shc || A4_ESH); abDonkey(ctx, P, 'dusk');
   if (!o.light) { const seat = mountSeat('donkey', P), sw = 0.08 * Math.sin(W.ph + 0.8) + lagged((u) => 0.08 * Math.sin(walk(xf, u, { stride: GAIT.donkey * 0.82 }).ph), tc, 0.12, 0.6) + (o.shake ? 0.12 * swing(t, o.shakeT, 1, 1.6, 2.5) : 0);
-    jarPannier(ctx, seat, 0.82, P.dir, { sway: sw, stain: i === 1, lid: o.lid || 0 }); }
+    jarPannier(ctx, seat, 0.82, P.dir, { sway: sw, stain: i === 1, lid: o.lid || 0, eyes: (o.lid || 0) > 0.3 }); }   // v2: eyes in the lifted lid (note 5)
   return P;
 }
 
@@ -21,7 +21,7 @@ function a4OilM1(t) {   // the merchant's pose S1-S2
   else if (tc < 4.0) { const r = beatIn(tc, 3.28, 3.5); P.handL = [K.lerp(-30, -110, r), K.lerp(-100, -150, r)]; P.gaze = [-1, 0]; P.look = -0.6; }
   else if (tc < 5.04) { P.handL = PERSON_HANDS.clasp.L; P.handR = PERSON_HANDS.clasp.R; P.tip = 0.08 * beatIn(tc, 4.0, 4.2); P.brow = -0.5; P.gaze = gazePlan(tc, [[4.0, [1, -0.2]], [4.5, [1, 0]]]); }
   else if (tc < 5.72) { const r = beatIn(tc, 5.04, 5.2); P.handR = [K.lerp(14, 96, r), K.lerp(-98, -176, r)]; P.talk = abTalk(t, 5.04, 5.7, 4, 0.6); if (P.talk) P.mouth = 'open'; P.gaze = [1, -0.3]; }
-  else if (tc < 7.48) { P.gaze = [1, 0]; P.lid = 0.3; }
+  else if (tc < 7.48) { P.gaze = [1, 0]; P.lid = 0.3; if (tc > 6.5) { const r = beatIn(tc, 6.5, 6.75); P.handL = [K.lerp(-30, -120, r), K.lerp(-100, -150, r)]; P.gaze = [-1, 0.1]; P.look = -0.5; P.mouth = 'grin'; } }   // v2 (note 11): a sweep back to the mules on 'lijirari'
   else if (tc < 8.2) { if (tc < 7.8) { P.handR = PERSON_HANDS.pointUp.R; P.gaze = [0.6, -1]; } else { P.handR = PERSON_HANDS.mouthCover.R; P.mouth = 'o'; P.gaze = [1, 0]; P.tip = -0.04; } }
   else if (tc < 8.98) { P.gaze = [1, 0]; }
   else if (tc < 9.98) { P.gaze = [1, 0]; P.lid = 0.3; }

@@ -24,19 +24,29 @@ function sbS18aWorld(ctx, t, cam) { const tc = SB_T2(t), sea = SB6_SEA18, x = SB
 }
 SB_SHOTS.push({ a: 132.9, b: 134.6, cam: sbKeys([[132.9, { x: 520, y: 615, zoom: 1 }], [134.6, { x: 470, y: 615, zoom: 1 }]]), world: sbS18aWorld });
 // ---------- S18b (134.6 - 137.72): the cove: rose on the lookout rock sees the gold striped sail; the tally wall; the captain laughs ----------
-const SB6_SKX = (t) => kfn(t, [[134.6, 380], [137.72, 640]], 'out');
+const SB6_SKX = (t) => kfn(t, [[135.4, 150], [136.74, 540], [137.72, 590]], 'out');
+const SB6_JMP = [136.74, 137.1];   // rev 1: Sinbad jumps from the skiff into the shallows
 function sbS18bWorld(ctx, t, cam) { const tc = SB_T2(t);
-  sbCoveBack(ctx, t, cam, { lit: 1, far: (c) => { if (t < 136.6) sbDhow(c, { x: 330, y: 640, s: 0.3, dir: -1, sail: 1, billow: 0.7, t, stripe: SB6_ROYAL }); },
-    mid: (c) => { if (t > 136.4) { const sx = SB6_SKX(t), f = sbFloat(sx, t, SB_COVE_SEA, 3, 60); sbSkiff(c, { x: sx, y: f.y + 4, s: 0.9, dir: 1, oar: tc * 7, row: 1, pitch: f.rot, crew: (q) => sbSin6(q, sbLive(t, 11, { x: 60, y: -14, dir: 1, sit: 0.6, seat: 'bench', robe: 1, mouth: 'open', handR: PERSON_HANDS.wave.R, gaze: [1, -0.2] })) }); } } });
+  sbCoveBack(ctx, t, cam, { lit: 1, far: (c) => { sbDhow(c, { x: 400 - 10 * K.clamp((t - 134.6) / 3), y: 650, s: 0.42, dir: -1, sail: 1 - 0.6 * K.clamp((t - 135.6) / 1.2), billow: 0.5, t, stripe: SB6_ROYAL }); },
+    mid: (c) => { if (t > 135.4) { const sx = SB6_SKX(t), f = sbFloat(sx, t, SB_COVE_SEA, 3, 60), dip = 6 * pulse(t, SB6_JMP[0], 0.3);
+      sbSkiff(c, { x: sx, y: f.y + 4 + dip, s: 0.9, dir: 1, oar: tc * 7, row: t < 136.4 ? 1 : 0, pitch: f.rot, crew: t > SB6_JMP[0] ? null : (q) => { const P = sbLive(t, 11, { x: 60, y: -14, dir: 1, robe: 1, mouth: 'open', gaze: [1, -0.2] }); if (t > 135.9) { const a = K.clamp((t - 135.9) / 0.25); P.handR = [40 + 40 * a, -150 - 50 * a]; P.handL = [-30 - 40 * a, -150 - 50 * a]; P.mouth = 'smile'; P.brow = 0.6; } if (t > 136.55) { P.sq *= 1 - 0.12 * K.clamp((t - 136.55) / 0.15); } sbSin6(q, P); } });
+      if (t > SB6_JMP[0]) { const sx0 = SB6_SKX(SB6_JMP[0]), a = [sx0 + 54, sbFloat(sx0, SB6_JMP[0], SB_COVE_SEA, 3, 60).y - 10], b = [sx0 + 160, sbFloat(sx0 + 160, t, SB_COVE_SEA, 3, 60).y + 70], u = K.clamp((t - SB6_JMP[0]) / (SB6_JMP[1] - SB6_JMP[0])), wy = sbFloat(b[0], t, SB_COVE_SEA, 3, 60).y + 26;
+        const P = sbLive(t, 11, { x: K.lerp(a[0], b[0], u), y: K.lerp(a[1], b[1], u) - 120 * 4 * u * (1 - u), dir: 1, robe: 1, mouth: 'open', gaze: [1, -0.1], wind: -0.6 });
+        P.handR = [80, -190]; P.handL = [-70, -190]; if (u >= 1) { P.sq *= landSquash(tc, SB6_JMP[1], 0.14); P.mouth = 'smile'; P.handR = [60 + 10 * osc(tc, 0.3), -200]; P.handL = [-60, -195]; }
+        sbSin6(c, P);
+        if (u >= 1) { c.save(); c.fillStyle = '#2f8fd0'; c.beginPath(); c.ellipse(b[0], wy + 30, 90, 40, 0, Math.PI, 0); c.lineTo(b[0] + 90, wy + 80); c.lineTo(b[0] - 90, wy + 80); c.closePath(); c.fill(); c.restore(); sbFoamLine(c, [[b[0] - 70, wy + 4], [b[0] - 30, wy], [b[0], wy - 2], [b[0] + 30, wy], [b[0] + 70, wy + 4]], t, { w: 10 }); }
+        if (t > SB6_JMP[1] - 0.05) sbSplash(c, b[0], wy, (t - SB6_JMP[1] + 0.05) / 0.6, 0.9); } } } });
   sbCamp(ctx, t, { sig: 1, fire: 0.5, tally: 46 });
   sbStone(ctx, 960, 902, 62, '#c8b8d0', '#8a7a9a');
   // rose on the lookout rock: double take, nearly falls off shouting (134.6 - 135.5)
   const R0 = sbLive(t, 62, { x: 960, y: 846, dir: -1, gaze: [-1, -0.1], mouth: 'closed' }); if (t > 134.75) { R0.gaze = gazePlan(SB_T3(t), [[134.75, [-1, 0]], [134.9, [1, 0]], [135.05, [-1, -0.1]]], 0.08); R0.eyes = 'wide'; R0.mouth = 'open'; R0.tip = 0.25 * Math.sin(Math.PI * K.clamp((t - 135.0) / 0.6)) * Math.sin(tc * 9); R0.aL = [2.6, 2.8]; R0.aR = [2.4, 2.6]; }
+  if (t > 136.16) { const xf = (u) => kfn(u, [[136.16, 960], [136.95, 790], [137.72, 770]], 'out'); Object.assign(R0, walk(xf, tc, { stride: 32 })); const hop = K.clamp((t - 136.16) / 0.3); R0.y = K.lerp(846, 904, hop) - 40 * Math.sin(Math.PI * hop); R0.dir = -1; R0.tip = 0.2; R0.aL = [2.6, 2.8]; R0.aR = [2.4, 2.6]; R0.mouth = 'open'; R0.eyes = 'wide'; R0.gaze = [-1, -0.2]; if (hop >= 1) R0.sq *= landSquash(tc, 136.46, 0.12); }
   sbStubble(ctx, sbSailor(ctx, 2, R0));
+  if (t > 136.75 && t < 137.6) for (let k = 0; k < 2; k++) sbSplash(ctx, kfn(t, [[136.16, 960], [136.95, 790], [137.72, 770]], 'out') + (k ? 20 : -20), 906, ((t - 136.75) * 2 + k * 0.5) % 1.2, 0.35);
   // the others get up at different speeds: mustard at once, leaf slowly, teal not believing it (rubs his eyes)
   [[1, 1060, 135.5, 0.2], [3, 1160, 135.7, 0.6], [0, 1260, 136.0, 0.4]].forEach(([i, x, t0, d], k) => { const up = K.clamp((t - t0) / d), P = sbLive(t, 60 + i, { x, y: 902, dir: -1, sit: 1 - up, seat: 'floor', gaze: [-1, -0.1], mouth: up > 0.5 ? 'open' : 'closed' }); P.sq *= 0.97;
     if (i === 0 && t > 136.0 && t < 136.8) { P.handL = PERSON_HANDS.headHold.L; P.handR = [30, -190 + 6 * osc(tc, 0.15)]; P.lid = 0.8; }
-    if (t > 137.1 + stagger(k, 0.1)) { const xf = (u) => kfn(u, [[137.1 + stagger(k, 0.1), x], [137.72, x - 160]], 'in'); Object.assign(P, walk(xf, tc, { stride: 28 })); P.sit = 0; P.handR = PERSON_HANDS.wave.R; }
+    if (t > 136.9 + stagger(k, 0.1)) { const xf = (u) => kfn(u, [[136.9 + stagger(k, 0.1), x], [137.72, x - 200]], 'in'); Object.assign(P, walk(xf, tc, { stride: 28 })); P.sit = 0; P.handR = PERSON_HANDS.wave.R; }
     sbStubble(ctx, sbSailor(ctx, i, P)); });
   // the captain: spyglass, finds a tangerine turban, lowers it and laughs for the first time (136.7 - 137.3)
   const Cp = sbLive(t, 51, { x: 1120, y: 902, dir: -1, gaze: [-1, -0.1], pal: { sleeve: '#4a90c0' } }); let gl = 0;
@@ -46,8 +56,8 @@ function sbS18bWorld(ctx, t, cam) { const tc = SB_T2(t);
   sbCoveFront(ctx, t, cam);
 }
 function sbS18bOver(ctx, t, cam, S) { if (t > 134.75 && t < 135.9) { const p = sbP(960, 650, cam); sbSay(ctx, S, [[134.8, 'A SAIL!']], t, p[0] + 40, p[1] - 220, [p[0], p[1]], { gone: 135.7, wobble: 4, size: 56 }); }
-  if (t > 136.16 && t < 136.9) { const p = sbP(1400, 600, cam); sbTag(ctx, S, '46 DAYS', p[0], p[1] - 90, t, 136.2, 136.8, { size: 40 }); } }
-SB_SHOTS.push({ a: 134.6, b: 137.72, cam: sbKeys([[134.6, { x: 1050, y: 507, zoom: 0.85 }], [135.8, { x: 1120, y: 507, zoom: 0.85 }], [136.5, { x: 1230, y: 507, zoom: 0.85 }], [137.72, { x: 1000, y: 507, zoom: 0.85 }]]), world: sbS18bWorld, over: sbS18bOver });
+  if (t > 136.16 && t < 136.9) { const p = sbP(1400, 600, cam); sbTag(ctx, S, '46 DAYS', Math.min(800, p[0]), p[1] - 90, t, 136.2, 136.8, { size: 54 }); } }
+SB_SHOTS.push({ a: 134.6, b: 137.72, cam: sbKeys([[134.6, { x: 1050, y: 507, zoom: 0.85 }], [135.6, { x: 1100, y: 507, zoom: 0.85 }], [136.2, { x: 850, y: 507, zoom: 0.85 }], [137.72, { x: 820, y: 507, zoom: 0.85 }]]), world: sbS18bWorld, over: sbS18bOver });
 
 // ---------- S19 (137.72 - 142.64): DAYS LATER..., the Baghdad quay in gold: mooring, the plank, the kiss on the stones, the family ----------
 const SB6_QG = { hz: 620, y: [632, 700, 945, 1030], amp: 5, pal: 'gold' };
@@ -111,7 +121,7 @@ function sbS20World(ctx, t, cam) { const tc = SB_T2(t), sea = SB6_QG;
     if (k === 'bench') { P.sit = 1; P.seat = 'bench'; P.y = 880; } if (k === 'knee') { P.kneel = 1; P.handLW = [x - 50, 900]; P.tip = 0.15; P.x = 1040; }
     if (t > 144.5 + q * 0.15 && t < 145.4) { P.drop = 4 * Math.abs(Math.sin(tc * 6 + q)); if (i === 1) { P.handL = [-50, -140]; P.handR = [50, -140]; P.mouth = 'open'; P.talk = sbTalk(t, 144.5, 145.3, 12); } }
     sbSailor(ctx, i, P); });
-  const Cp = sbLive(t, 51, { x: 1250, y: 860, dir: -1, gaze: [-1, -0.1], mouth: 'smile' }); if (t > 147.2) Cp.handR = PERSON_HANDS.chest.R; sbCaptain(ctx, Cp);
+  const Cp = sbLive(t, 51, { x: 1250, y: 860, dir: -1, gaze: [-1, -0.1], mouth: 'smile' }); if (t > 147.2) { Cp.handR = PERSON_HANDS.chest.R; Cp.drop = 6 * Math.max(0, Math.sin((t - 147.2) * 1.6)); Cp.lid = 0.3; } sbCaptain(ctx, Cp);
   // Sinbad: tells it with his hands (the clasp), opens his fist on the last pebble, gives it to his sister; the last look to the sea
   const P = sbLive(t, 11, { x: 900, y: 900, dir: -1, gaze: [-1, -0.2], mouth: 'smile', robe: 1, wind: 0.3 }, [148.2]);
   if (t < 143.6) { P.handL = [50, -130]; P.handR = [56, -126]; P.talk = sbTalk(t, 142.64, 146.2, 1); P.mouth = 'open'; }
@@ -126,7 +136,9 @@ function sbS20World(ctx, t, cam) { const tc = SB_T2(t), sea = SB6_QG;
   if (t > 147.0) { Sg.mouth = 'smile'; Sg.eyes = undefined; }
   if (t > 149.6) { Sg.handLW = null; Sg.handRW = [900, 690]; Sg.gaze = [1, -1]; Sg.dir = 1; }
   const SQ = sbFamily(ctx, 'sister', Sg);
-  if (t > 146.75) { const h = sbHandW(SQ, 1); sbPebble(ctx, h[0], h[1] - 6, 8, 0, { glow: 0.9, glint: ((SB_T3(t) * 0.8) % 1.3) }); }
+  if (t > 146.75) { const h = sbHandW(SQ, 1), px = h[0], py = h[1] - 8, gk = K.clamp((t - 147.2) / 0.6), g = (12 + 14 * gk) * (0.8 + 0.2 * Math.abs(Math.sin(SB_T3(t) * 4)));
+    sbGlow(ctx, px, py, 40 + 50 * gk, 0.6 + 0.3 * gk, '#ff4a6a'); ctx.save(); ctx.globalAlpha = 0.35 * gk; ctx.fillStyle = '#ffb0c4'; ctx.beginPath(); ctx.arc(px, py, 40, 0, 7); ctx.fill(); ctx.restore();
+    sbPebble(ctx, px, py, 11, 0, { glow: 0.9 }); ctx.save(); ctx.fillStyle = '#ffffff'; ctx.beginPath(); ctx.moveTo(px + 4, py - 6 - g); ctx.lineTo(px + 7, py - 9); ctx.lineTo(px + 4 + g, py - 6); ctx.lineTo(px + 7, py - 3); ctx.lineTo(px + 4, py - 6 + g); ctx.lineTo(px + 1, py - 3); ctx.lineTo(px + 4 - g, py - 6); ctx.lineTo(px + 1, py - 9); ctx.closePath(); ctx.fill(); ctx.restore(); }
   if (t > 149.6) { const lx = t < 150.4 ? 700 + 40 * Math.sin(tc * 4) : 760 + 20 * Math.sin(tc * 3), ly = t < 150.2 ? 880 : 896; ctx.save(); ctx.globalCompositeOperation = 'screen'; sbGlow(ctx, lx, ly, 46, 0.95, '#ff4a6a'); ctx.restore(); }
 }
 function sbS20Over(ctx, t, cam, S) {
@@ -149,4 +161,4 @@ function sbFarewell(c, t) { const tc = SB_T2(t), cam = { x: 1000, y: 615, zoom: 
   if (away <= 0) { const P = sbLive(t, 11, { x: 990, y: 925, dir: -1, robe: 1, gaze: [-1, 0], mouth: 'smile' }); if (t < 143.6) { P.handRW = [925, 790]; P.handLW = [930, 796]; } else P.handRW = [945, 860]; sbSin6(c, P); const Cq = sbLive(t, 51, { x: 1080, y: 925, dir: -1, gaze: [-1, 0] }); if (t > 143.6) { Cq.tip = 0.3; Cq.lid = 0.6; } sbCaptain(c, Cq); }
   sbVillageFront(c, t);
 }
-SB_SHOTS.push({ a: 142.64, b: 151.5, cam: sbKeys([[142.64, { x: 910, y: 615, zoom: 1 }], [151.37, { x: 870, y: 615, zoom: 1 }]]), world: sbS20World, over: sbS20Over });
+SB_SHOTS.push({ a: 142.64, b: 151.5, cam: sbKeys([[142.64, { x: 910, y: 615, zoom: 1 }], [147.2, { x: 890, y: 615, zoom: 1 }], [148.6, { x: 870, y: 660, zoom: 1.25 }], [151.37, { x: 860, y: 665, zoom: 1.28 }]]), world: sbS20World, over: sbS20Over });

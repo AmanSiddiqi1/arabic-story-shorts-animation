@@ -3,7 +3,7 @@ const H4_SHOTS = [
   { a: 0, b: 7.96, panel: 'h4S1Panel' }, { a: 7.96, b: 46.6, world: 'golden' }, { a: 46.6, b: 57.0, world: 'court' }, { a: 57.0, b: 65.88, world: 'road' }, { a: 65.88, b: 68.7, panel: 'h4OrnInsert' },
   { a: 68.7, b: 75.64, world: 'road' }, { a: 75.64, b: 94.76, world: 'day' }, { a: 94.76, b: 100.78, world: 'court' }, { a: 100.78, b: 102.3, panel: 'h4KnobInsert' }, { a: 102.3, b: 120.44, world: 'court' },
   { a: 120.44, b: 124.5, panel: 'h4EyesClose' }, { a: 124.5, b: 132.4, world: 'court' }, { a: 132.4, b: 1e9, world: 'morning' }];
-const H4_CUTS = [7.96, 46.6, 65.88, 68.7, 94.76, 100.78, 102.3, 120.44, 124.5];
+const H4_CUTS = [7.96, 46.6, 65.88, 68.7, 69.56, 94.76, 100.78, 102.3, 120.44, 124.5];
 const H4_WORLDS = { golden: ['h4GCam', 'h4GoldenWorld', 'h4GoldenOver'], court: ['h4CCam', 'h4CourtWorld', 'h4CourtOver'], road: ['h4RCam', 'h4RoadWorld', 'h4RoadOver'],
   day: ['h4DCam', 'h4DayWorld', 'h4DayOver'], morning: ['h4MCam', 'h4MornWorld', 'h4MornOver'] };
 const h4Fn = (n) => (typeof window[n] === 'function' ? window[n] : typeof globalThis[n] === 'function' ? globalThis[n] : null);

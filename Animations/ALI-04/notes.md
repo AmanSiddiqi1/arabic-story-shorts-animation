@@ -26,3 +26,11 @@ Plan checked against the inputs: MP3 and `.words.json` SHA-256 match `planning/p
 - No separate wall-shadow animation of the cape beyond a 0.7 s tinted silhouette (17.94-18.6).
 - The kitchen thought cloud shows icons (Morgiana with a broom vs five jars crossed out; three sleepers in a turquoise ring; three doors and a helmet) rather than full scenes.
 - The S18 apricot first-light band is a soft gradient at the horizon; no separate parapet front pass beyond the 30-high parapet over the leader.
+
+## v2 (Fable review 1) decisions
+- Change log and series changes: `review/revision_1.md`.
+- Capture shot (122.04-129.5) stays at zoom 1: the yard plate is 1230 high, so the camera cannot pull wider than the 1000-unit panel; the row (839..1516) plus the side groups fill 670..1670.
+- Release landings 126.4 / 127.0 / 127.5 / 128.0 / 128.5 (`A4_OUTL`); the counter is tied to them.
+- The ducking thief at 125.44 is jar 1's (the baker stands left of jar 1 and can reach only that lid).
+- Procession: speed 76, gap 80, old neighbour 100 behind the last guard; Morgiana's doorway at x 935.
+- Signal: pebble 1 to lid 5 (lands 106.58), pebble 2 caught by the captain at (1606, 700) on 107.56.

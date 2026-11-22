@@ -116,7 +116,7 @@ function h4GCaptain(t) { const tc = EH_T2(t), sd = 17; if (t < 10.46) return nul
   if (t >= 45.5 && t < 45.92) { P.handL = [-90, -150 + 20 * Math.sin(tc * 14)]; P.dir = -1; }
   if (t >= 45.92) { P.dir = -1; o.spear = { lean: -1.35, hand: [70, -120] }; P.gaze = [-1, 0.1]; }
   return [P, o]; }
-const H4_GUARD_SPOT = [1720, 1780, 1840, 1900];
+const H4_GUARD_SPOT = [1770, 1840, 1910, 1980];
 function h4GGuardX(i) { const s = H4_GUARD_SPOT[i], d = stagger(i, 0.12);
   return H4_F([[10.46 + d, 2250 + i * 70], [11.4 + d, s], [32.55 + d, s], [33.1, s - 36], [44.9 + d * 0.5, s - 36], [45.3, i < 2 ? (i ? 1430 : 1210) : s - 36], [45.92, i < 2 ? (i ? 1430 : 1210) : s - 36], [46.6, i < 2 ? (i ? 1830 : 1610) : s + 60]]); }
 const H4_GX = [0, 1, 2, 3].map(h4GGuardX);

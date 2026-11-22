@@ -102,7 +102,7 @@ function sbS6Growl(ctx, x, t) { const u = (t - 40.0) / 0.6; ctx.save(); ctx.glob
 function sbS6Over(ctx, t, cam, S) {
   if (t > 40.2 && t < 41.3) { soundArcs(ctx, 900, 560, -1, t); }
   if (t > 42.3 && t < 43.4) { const a = sbP(1760, 960, cam), b = sbP(1980, 960, cam); S.arrow(ctx, a, b, K.clamp((t - 42.35) / 0.4), { bend: 0 }); sbTag(ctx, S, 'WRONG WAY?', a[0] + 80, a[1] + 110, t, 42.4, 43.3, { size: 38 }); }
-  if (t > 39.55 && t < 40.3) { const p = sbP(1300, 700, cam); sbTag(ctx, S, 'GRRR...', p[0] + 140, p[1] - 80, t, 39.95, 40.3, { size: 38 }); }
+  if (t > 39.55 && t < 40.3) { const p = sbP(1300, 700, cam); sbTag(ctx, S, 'GRRR...', Math.min(820, p[0] + 140), p[1] - 80, t, 39.95, 40.3, { size: 52 }); }
 }
 SB_SHOTS.push({ a: 37.21, b: 48.32, cam: SB6_CAM6, world: sbS6World, over: sbS6Over });
 
