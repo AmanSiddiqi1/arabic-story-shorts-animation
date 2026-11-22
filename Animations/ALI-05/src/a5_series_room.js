@@ -176,13 +176,16 @@ function ewer(ctx, x, y, tilt = 0, s = 1, o = {}) { ctx.save(); ctx.translate(x,
   if ((o.pour || 0) > 0.02 && o.to) { const sx = x + s * (52 * Math.cos(tilt) + 36 * Math.sin(tilt)), sy = y + s * (52 * Math.sin(tilt) - 36 * Math.cos(tilt)), ex = K.lerp(sx, o.to[0], o.pour), ey = K.lerp(sy, o.to[1], o.pour);
     ctx.save(); ctx.strokeStyle = '#e8902a'; ctx.lineWidth = 4 * s; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(sx, sy); ctx.quadraticCurveTo(ex, sy, ex, ey); ctx.stroke(); ctx.restore(); } }
 // lentilBowl: the plain clay bowl of lentils with one flat bread (bottom centre), s
-function lentilBowl(ctx, x, y, s = 1) { ctx.save(); ctx.translate(x, y); ctx.scale(s, s); abBlob(ctx, 34, -6, 30, 9, '#f0c47a', '#c08a4a', { lw: 2.5 });
-  celShade(ctx, [[-30, -22], [30, -22], [20, 0], [-20, 0]], '#c8743a', '#8a4a1e', { light: [-1, -1], off: 5, lw: 2.5, line: '#4a2010' }); abBlob(ctx, 0, -22, 28, 7, '#a86a2a', '#7a4a1a', { lw: 2 }); ctx.restore(); }
+function lentilBowl(ctx, x, y, s = 1, o = {}) { ctx.save(); ctx.translate(x, y); ctx.scale(s, s); if (!o.pale) abBlob(ctx, 34, -6, 30, 9, '#f0c47a', '#c08a4a', { lw: 2.5 });
+  celShade(ctx, [[-30, -22], [30, -22], [20, 0], [-20, 0]], o.pale ? '#e8e0d0' : '#c8743a', o.pale ? '#b8b0a0' : '#8a4a1e', { light: [-1, -1], off: 5, lw: 2.5, line: o.pale ? '#5a5048' : '#4a2010' }); abBlob(ctx, 0, -22, 28, 7, o.pale ? '#a8b88a' : '#a86a2a', o.pale ? '#7a8a5a' : '#7a4a1a', { lw: 2 });
+  if (o.pale && o.t != null) { const tc = AB_T2(o.t); ctx.strokeStyle = 'rgba(255,255,255,0.7)'; ctx.lineWidth = 3; ctx.lineCap = 'round'; ctx.beginPath(); for (let k = 0; k <= 10; k++) { const v = k / 10; ctx.lineTo(6 * Math.sin(v * 6 + tc * 3), -30 - v * 46); } ctx.stroke(); }   // rev 1: pale lentils + one steam curl
+  ctx.restore(); }
 // a stack of tied crates on the cart / ground (n crates, wobble radians at the top)
 function a5CrateStack(ctx, x, y, n, s = 1, wob = 0) { for (let i = 0; i < n; i++) { const u = i / Math.max(1, n - 1); a5Crate(ctx, x + Math.sin(wob) * 64 * s * i, y - 66 * s * i, s, wob * u, ['#ff9a2a', '#e8364f', '#7ae08a'][i % 3]); } }
 
 // ---------- cupFumble: the cup's flight over [t0, t0 + 1.52] relative to the catcher's chest point (x, y): drop, bat up left, bat
 // right, caught against the chest. Returns {dx, dy, rot, spill 0..1 (tea flying), caught}
-const A5_FUMBLE = [[0, [30, -40, 0]], [0.28, [40, 30, 0.6]], [0.5, [-30, -50, -0.8]], [0.86, [50, -70, 1.4]], [1.2, [10, -10, 0.3]], [1.52, [0, 0, 0]]];
+// ALI-05 rev 1: the arc stays outside his head (up screen-left of the face, over the turban, down the other side, caught low at the belt)
+const A5_FUMBLE = [[0, [40, -40, 0]], [0.25, [95, -120, 0.6]], [0.48, [45, -235, -0.8]], [0.7, [-55, -225, 1.0]], [0.95, [-95, -100, 1.4]], [1.2, [-40, 20, 0.3]], [1.52, [0, 45, 0]]];
 function cupFumble(t, t0) { const u = t - t0; if (u <= 0) return { dx: 30, dy: -40, rot: 0, spill: 0, caught: false }; const ks = A5_FUMBLE;
   const v = (j) => flow(u, ks.map(([a, p]) => [a, p[j]])); return { dx: v(0), dy: v(1), rot: v(2), spill: K.clamp((u - 0.4) / 0.6) * (1 - K.clamp((u - 1.1) / 0.3)), caught: u >= 1.4 }; }

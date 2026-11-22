@@ -84,6 +84,7 @@ function h4CGuard(t, i) { const tc = EH_T2(t), sd = 61 + i * 5, D = EH_FARGUARDS
     if (i === 1 && t >= 108.7 && t < 109.3) { o.helmet = { tilt: 0.3 * Math.sin((tc - 108.75) * 16) * Math.exp(-(tc - 108.75) * 4) }; P.eyes = 'wide'; } }
   else { P.dir = i === 3 ? 1 : -1;
     if (i === 3) { const nod = flow(tc, [[112.77, 0], [115.2, 0.15], [115.44, 0.3], [115.56, 0], [117, 0.1], [121, 0.22], [128, 0.18], [131.22, 0.25], [131.4, 0]]); P.drop = 18 * nod; P.tip = 0.08 * nod; P.lid = K.clamp(0.4 + nod * 3); o.spear = { lean: -0.25, hand: [26, -110] }; P.handL = [20, -112];
+      if (t >= 130.2 && t < 130.74) { P.dir = 1; P.lid = 0.55; P.gaze = [1, -0.2]; P.drop = 4; }   // the half turn: both of them freeze
       if (t >= 131.22) { P.lid = 0; P.eyes = 'wide'; P.dir = 1; P.gaze = [1, -0.4]; } }
     if (i === 2) { P.gaze = [-0.6, 0.3]; if (t >= 115.44 && t < 116.8) { P.handL = PERSON_HANDS.mouthCover.R; P.mouth = 'o'; P.lid = 0.6; P.tip = -0.05; }
       if (t >= 126.72 && t < 128.4) { P.gaze = [0.5, -1]; P.tip = -0.05; P.lid = 0; } if (t >= 128.4) P.gaze = [-0.6, 0.4]; } }
@@ -101,7 +102,7 @@ function h4CKing(t) { if (t < 94.76 || t >= 112.8) return null; const tc = EH_T2
   if (t >= 111.04 && t < 112.0) { P.handR = PERSON_HANDS.chin.R; P.tip = 0.05 * Math.max(0, Math.sin((tc - 111.04) * Math.PI / 0.3)); P.mouth = 'smile'; }
   return P; }
 // ---------- the craftsman (S12 - S16) ----------
-const H4_CRX = H4_F([[96.56, 120], [98.3, 860], [99.32, 860], [99.5, 760], [100.2, 760], [100.5, 900], [102.38, 900], [102.6, 860], [105.16, 860], [106.38, 860], [106.6, 760], [107.1, 760], [107.4, 860], [116.06, 860], [116.4, 870], [140, 870]]);
+const H4_CRX = H4_F([[96.56, 120], [98.3, 860], [99.32, 860], [99.5, 760], [100.2, 760], [100.5, 900], [102.38, 900], [102.6, 860], [105.16, 860], [106.38, 860], [106.6, 760], [107.1, 760], [107.4, 860], [116.06, 860], [116.4, 870], [128.0, 870], [128.42, 790], [129.4, 790], [129.8, 870], [140, 870]]);
 function h4CCraft(t) { if (t < 96.4) return null; const tc = EH_T2(t), sd = 3, H = h4CHorse(t);
   const P = { ...walk(H4_CRX, tc, { stride: 20 }), y: 918, s: EH_CRAFT.s, dir: 1, lid: Math.max(0.3, ehLid(t, sd, [97.32, 125.68])), mouth: 'closed', brow: 0.3, gaze: [1, 0.1], handL: [-30, -100], handR: [30, -100], sq: breathe(tc, sd, 0.014), tip: 0.07 + idleSway(tc, sd, 0.02, 2.6) };
   const look = (w) => lookAt(ehHeadOf(P), w), sp = speed(H4_CRX, t); if (Math.abs(sp) > 20) P.dir = Math.sign(sp);
@@ -128,8 +129,8 @@ function h4CCraft(t) { if (t < 96.4) return null; const tc = EH_T2(t), sd = 3, H
     if (t >= 124.5 && t < 125.68) { P.handR = [30, -100]; P.handL = [-20, -100]; P.gaze = look(ehHorsePt(H, EH_EBG.knob)); P.o.tool = 'oil'; }
     if (t >= 125.68 && t < 126.9) { P.tip = -0.07; P.lid = 0; P.brow = -0.2; P.gaze = look([1300, 470]); P.handR = [30, -222]; P.mouth = 'smile'; }
     if (t >= 126.9 && t < 128.5) { P.o.tool = 'oil'; P.handR = [40, -110]; P.handLW = ehHorsePt(H, [60 + 30 * Math.sin(tc * 6), -190]); }
-    if (t >= 128.5 && t < 129.1) { P.o.tool = 'hammer'; const tap = Math.abs(Math.sin((tc - 128.5) * Math.PI / 0.3)); P.handRW = ehHorsePt(H, [EH_EBG.knob[0] - 30, EH_EBG.knob[1] - 20 - 16 * tap]); }
-    if (t >= 129.1 && t < 130.4) { P.handR = [24, -228]; P.gaze = look([1300, 470]); P.lid = 0.15; }
+    if (t >= 128.5 && t < 129.3) { P.o.tool = null; const tap = 1 - pulse(tc, 128.52, 0.16) - pulse(tc, 128.87, 0.16); P.handRW = ehHorsePt(H, [EH_EBG.knob[0] - 4, EH_EBG.knob[1] - 4 - 14 * (1 - tap)]); P.gaze = look(ehHorsePt(H, EH_EBG.knob)); P.tip = 0.12; }
+    if (t >= 129.3 && t < 130.4) { P.handR = [24, -228]; P.gaze = look([1300, 470]); P.lid = 0.15; }
     if (t >= 130.4 && t < 131.22) { P.gaze = look([1300, 470]); P.mouth = 'smile'; }
     if (t >= 131.22) { P.o.tool = 'oil'; P.handR = [40, -110]; P.handL = [-20, -100 + 8 * Math.sin(tc * 14)]; P.mouth = 'o'; P.gaze = [1, 0.5]; } }
   return P; }
@@ -147,9 +148,8 @@ function h4CourtWorld(ctx, t, cam) {
   const tc = EH_T2(t), dk = H4_DUSK(t), H = h4CHorse(t), g = h4CGate(t), lit = [0, 1, 2].map((i) => ehE(t, 112.3 + i * 0.2, 0.15));
   lockedCourt(ctx, t, cam, { dusk: dk, lit, moonRise: ehE(t, 110.28, 3), sun: t >= 105.16 && t < 112.7 ? [1250, K.lerp(330, 470, ehE(t, 109.5, 3.2))] : null });
   // the lattice bay (glow from 112.3), the dove on its cap (127.75)
-  const B = h4CBust(t), rib = t >= 129.74 && t < 131.22 ? ehE(tc, 129.74, 0.25) : t >= 131.22 && t < 131.6 ? 1 - ehE(tc, 131.22, 0.3) : 0;
-  ehCourtScreen(ctx, tc, { glow: ehE(t, 112.3, 0.5), bust: B, ribbon: rib });
-  if (t >= 113.94 && B && t < 127.3) { const [s0, , , sy1] = EH_LC.screen; for (const [fx, fy] of [[1262, sy1 - 30], [1290, sy1 - 34], [1334, sy1 - 32]]) shape(ctx, ell(fx, fy + 4 * Math.sin(tc * 2 + fx), 6, 9, 10), C.skin, { lw: 1.5, line: '#6a3a2a' }); }
+  const rib = t >= 129.74 && t < 131.22 ? ehE(tc, 129.74, 0.25) : t >= 131.22 && t < 131.6 ? 1 - ehE(tc, 131.22, 0.3) : 0;
+  h4Bay(ctx, t, tc, h4Sil(t), rib, ehE(t, 112.3, 0.5));   // review 1 note 1: silhouette, one listening window, dim openings
   if (t >= 127.5) { const u = ehE(tc, 127.5, 0.4), x = K.lerp(1700, 1420, u), y = K.lerp(150, 268, u); bird(ctx, { kind: 'dove', x, y, s: 0.3, dir: -1, fly: u < 1, flap: u < 1 ? Math.sin(tc * 19) : 0, pal: 0 }); }
   if (t < 57) bird(ctx, { kind: 'dove', x: 640, y: 338, s: 0.28, dir: 1, flap: 0, pal: 0, peck: Math.max(0, Math.sin(tc * 2)) });
   // the moon path on the rill (118.62 -)
@@ -164,7 +164,7 @@ function h4CourtWorld(ctx, t, cam) {
   const cap = h4CCaptain(t); if (cap) items.push([cap[0].y, () => { h4Fig(ctx, EH_CAPTAIN, cap[0], t, cap[1]); if (t >= 49.2) h4KeyRing(ctx, cap[0], tc); }]);
   for (let i = 0; i < 4; i++) { const gd = h4CGuard(t, i); if (gd) items.push([gd[0].y, () => h4Fig(ctx, gd[2], gd[0], t, gd[1])]); }
   const kg = h4CKing(t); if (kg) items.push([kg.y + 2, () => h4Fig(ctx, EH_FARKING, kg, t)]);
-  const CR = h4CCraft(t); if (CR) items.push([CR.y, () => { const o = CR.o; if (o.box && o.box.ground) toolbox(ctx, 760, 930, { s: 0.95, open: o.box.open, crown: 0 }); ehCraftsman(ctx, CR, t, { ...o, box: o.box && !o.box.ground ? o.box : null, toolRot: o.tool === 'hammer' ? -0.6 : 0 }); }]);
+  const CR = h4CCraft(t); if (CR) items.push([CR.y, () => { const o = CR.o; if (o.box && o.box.ground) toolbox(ctx, 760, 930, { s: 0.95, open: o.box.open, crown: 0 }); ehCraftsman(ctx, h4W(CR), t, { ...o, box: o.box && !o.box.ground ? o.box : null, toolRot: o.tool === 'hammer' ? -0.6 : 0 }); h4BigCorner(ctx, CR, o.corner ?? 1); }]);
   items.sort((a, b) => a[0] - b[0]); for (const [, f] of items) f();
   // the light band that stops on the crimson corner (125.0)
   if (CR && t >= 125.0 && t < 126.2) { const [x, y] = ehHandW(CR, [-20, -86]); ehBand(ctx, [x - 160, y - 200, 320, 400], K.clamp((t - 125.0) / 1.2) * 0.5 + 0.02, { w: 60, alpha: 0.7, col: '#fff2c0' }); ehGlint(ctx, x, y, 24, (t - 125.3) / 0.6); }
@@ -184,13 +184,99 @@ function h4CourtOver(ctx, t, cam, S) {
     h4Say(ctx, S, [[52.68, 'NOT WHILE\nHE IS NEAR.']], t, ph, { gone: 55.0, size: 42, up: 170, dx: 80 }); }
   if (t >= 98.1 && t < 99.6) { const [x, y] = h4P(860, 560, cam); ehTag(ctx, S, 'UNDER GUARD!', x, Math.max(130, y - 120), t, 98.1, 99.6, { size: 46 }); }
   if (C) { const ch = h4Head(C, cam);
-    h4Say(ctx, S, [[104.24, 'BOTH WORK!']], t, ch, { gone: 105.6, size: 46, up: 170, dx: -40 });
+    h4Say(ctx, S, [[104.24, 'BOTH WORK!']], t, ch, { gone: 105.6, size: 46, up: 330, dx: -120 });
     if (t >= 107.1 && t < 108.7) iconBalloon(ctx, Math.min(760, ch[0] + 140), Math.max(220, ch[1] - 260), 300, 210, K.clamp((t - 107.1) / 0.3) * K.clamp((108.7 - t) / 0.2), [ch[0] + 20, ch[1] - 60], (c, w, h) => {
       ehGrad(c, 0, 0, w, h, [[0, '#a8d0f8'], [1, '#ffe8c0']]); c.fillStyle = '#c8b890'; c.fillRect(0, h - 40, w, 40); h4Shadow(c, w / 2, h - 30, 90, 30); ehHorseSil(c, w / 2 - 20, h - 50 - 8 * Math.sin(t * 6), 0.42, {});
       for (const sx of [-1, 1]) { c.save(); c.strokeStyle = '#e8264f'; c.lineWidth = 5; c.beginPath(); c.moveTo(w / 2 + sx * 90, h - 30); c.lineTo(w / 2 + sx * 90, h - 80); c.lineTo(w / 2 + sx * 90 - 10, h - 68); c.moveTo(w / 2 + sx * 90, h - 80); c.lineTo(w / 2 + sx * 90 + 10, h - 68); c.stroke(); c.restore(); } });
     h4Say(ctx, S, [[108.8, 'TOMORROW,\nIN THE OPEN SQUARE.']], t, ch, { gone: 110.9, size: 42, up: 200, dx: 0 });
-    h4Say(ctx, S, [[117.36, "THE MOON KNOWS\nTHE RIVER'S PATH"]], t, ch, { gone: 120.2, size: 42, up: 220, dx: -60 });
-    if (t >= 130.78 && t < 131.4) { const [x, y] = h4P(1080, 300, cam); iconBalloon(ctx, x, y, 280, 200, K.clamp((t - 130.78) / 0.25) * K.clamp((131.4 - t) / 0.18), [ch[0] + 30, ch[1] - 60], (c, w, h) => {
+    h4Say(ctx, S, [[117.36, "THE MOON KNOWS\nTHE RIVER'S PATH"]], t, ch, { gone: 120.44, size: 42, up: 220, dx: -60 });
+    if (t >= 130.78 && t < 131.58) { const [x, y] = h4P(1080, 300, cam); iconBalloon(ctx, x, y, 280, 200, K.clamp((t - 130.78) / 0.25) * K.clamp((131.58 - t) / 0.12), [ch[0] + 30, ch[1] - 60], (c, w, h) => {
       ehGrad(c, 0, 0, w, h, [[0, '#8ab8f0'], [1, '#ffd6a0']]); ehGlow(c, w / 2, h - 30, 120, 0.8, '#ffd890'); celShade(c, ell(w / 2, h - 20, 46, 46, 24), '#fff2b8', '#ffc060', { off: 6, lw: 2, line: '#ff8a4a' }); ehHorseSil(c, w / 2 - 10, h - 40, 0.32, { riders: 2, rear: 'firuz', rot: -0.25 }); }); } }
+  // review 1 note 1: name her once
+  if (t >= 115.44 && t < 117.0) { const [wx, wy] = h4P(1320, 380, cam), p = K.clamp((t - 115.44) / 0.3); ctx.save(); ctx.globalAlpha *= K.clamp((117.0 - t) / 0.25);
+    S.label(ctx, 'THE PRINCESS', wx - 60, wy - 230, p, { size: 40 }); S.arrow(ctx, [wx - 40, wy - 200], [wx - 4, wy - 26], K.clamp((t - 115.6) / 0.35), { width: 7, bend: -0.2 }); ctx.restore(); }
+  // review 1 note 3: the signal. TAP TAP on the knob (128.5 - 129.6), then the ribbon through the window (129.7 - 130.7)
+  if (t >= 128.5 && t < 129.75) { const tc = EH_T2(t), p = ehE(tc, 128.5, 0.2) * (1 - ehE(tc, 129.45, 0.25)), cx = 230, cy = 290, s = 3;
+    ehCallout(ctx, cx, cy, 150, p, (c) => { ehGrad(c, cx - 160, cy - 160, 320, 320, [[0, '#9a88d8'], [1, '#ffc8a0']]); const Hc = { x: cx - EH_EBG.knob[0] * s - 10, y: cy - EH_EBG.knob[1] * s + 30, s, dir: 1, close: true, lit: { neck: 0.35 * (pulse(tc, 128.6, 0.2) + pulse(tc, 128.95, 0.2)) } };
+      ebonyHorse(c, Hc); const k = ehHorsePt(Hc, EH_EBG.knob), up = 1 - pulse(tc, 128.52, 0.16) - pulse(tc, 128.87, 0.16);
+      handInsert(c, k[0] - 70, k[1] + 30 - 40 * (1 - up), { s: 0.5, point: 1, rot: -0.5, sleeve: '#c89a6a', cuff: '#f6efe0' });
+      h4Ring(c, k[0], k[1], tc, 128.6, 20, 110); h4Ring(c, k[0], k[1], tc, 128.95, 20, 110); });
+    if (t >= 128.6) { ctx.save(); ctx.globalAlpha *= K.clamp((129.75 - t) / 0.25); S.label(ctx, t < 128.95 ? 'TAP' : 'TAP TAP', 470, 175, K.clamp((t - 128.6) / 0.15), { size: 46 }); ctx.restore(); } }
+  if (t >= 129.7 && t < 130.85) { const tc = EH_T2(t), p = ehE(tc, 129.7, 0.2) * (1 - ehE(tc, 130.6, 0.25)), [wx, wy] = h4P(1320, 430, cam), cx = 300, cy = 330, z = 2.6;
+    ctx.save(); ctx.globalAlpha *= p; ctx.setLineDash([10, 10]); ctx.strokeStyle = '#fff6ea'; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(wx - 50, wy); ctx.lineTo(cx + 140, cy + 30); ctx.stroke(); ctx.restore();
+    ehCallout(ctx, cx, cy, 145, p, (c) => { c.fillStyle = '#e8c8b8'; c.fillRect(cx - 160, cy - 160, 320, 320); c.save(); c.translate(cx, cy); c.scale(z, z); c.translate(-1320, -440);
+      h4Bay(c, t, tc, h4Sil(t), t >= 129.74 ? ehE(tc, 129.74, 0.25) : 0, 1); c.restore(); }); }
   if (kg && t >= 95.7 && t < 96.5) { const kh = h4Head(kg, cam); h4Say(ctx, S, [[95.7, 'COME IN.']], t, kh, { gone: 96.4, size: 40, up: 160, dx: 40 }); }
 }
+// ===== review 1 (notes 1-3): the princess behind the lattice as a flat silhouette, one listening window with whole eyes =====
+const H4_SKIN = '#eeae88', H4_SIL = '#8a3a5e';
+// h4Eye(ctx, x, y, w, o): a whole anime eye (centre x, y, width w). o {side 1 | -1 (outer corner), lid 0..1, gaze [x, y] -1..1, pupil scale, wide, shine 0..1, tear 0..1, skin}
+function h4Eye(ctx, x, y, w, o = {}) {
+  const sd = o.side || 1, h = w * 0.6 * (o.wide ? 1.12 : 1), lid = K.clamp(o.lid || 0), g = o.gaze || [0, 0], ps = o.pupil ?? 1;
+  ctx.save(); ctx.translate(x, y); ctx.scale(sd, 1);
+  const alm = () => { ctx.beginPath(); ctx.moveTo(-w / 2, h * 0.08); ctx.bezierCurveTo(-w * 0.32, -h * 0.66, w * 0.34, -h * 0.66, w / 2, -h * 0.1); ctx.bezierCurveTo(w * 0.3, h * 0.6, -w * 0.3, h * 0.6, -w / 2, h * 0.08); ctx.closePath(); };
+  const ly = K.lerp(-h * 0.86, h * 0.5, lid);   // the control point of the lid edge
+  alm(); ctx.fillStyle = '#fffaf4'; ctx.fill();
+  ctx.save(); alm(); ctx.clip();
+  const ix = g[0] * sd * w * 0.16, iy = h * 0.04 + g[1] * h * 0.14, ir = h * 0.5;
+  const gr = ctx.createLinearGradient(0, iy - ir, 0, iy + ir); gr.addColorStop(0, '#2a1440'); gr.addColorStop(0.55, '#6a3aa0'); gr.addColorStop(1, '#c890e0');
+  ctx.fillStyle = gr; ctx.beginPath(); ctx.ellipse(ix, iy, ir * 0.8, ir, 0, 0, 7); ctx.fill(); ctx.strokeStyle = '#1a0a24'; ctx.lineWidth = Math.max(1, w * 0.02); ctx.stroke();
+  ctx.fillStyle = '#120818'; ctx.beginPath(); ctx.ellipse(ix, iy, ir * 0.34 * ps, ir * 0.48 * ps, 0, 0, 7); ctx.fill();
+  ctx.fillStyle = '#ffffff'; ctx.beginPath(); ctx.ellipse(ix - sd * ir * 0.32, iy - ir * 0.42, ir * 0.26, ir * 0.22, -0.4, 0, 7); ctx.fill();
+  ctx.beginPath(); ctx.arc(ix + sd * ir * 0.3, iy + ir * 0.36, ir * 0.11, 0, 7); ctx.fill();
+  if (o.shine > 0) { ctx.globalAlpha = K.clamp(o.shine); ctx.beginPath(); ctx.ellipse(ix, iy + ir * 0.62, ir * 0.62, ir * 0.16, 0, 0, 7); ctx.fillStyle = '#e8f4ff'; ctx.fill(); ctx.globalAlpha = 1; }
+  // the upper lid (skin above the lid edge) and its shadow
+  ctx.fillStyle = o.skin || H4_SKIN; ctx.beginPath(); ctx.moveTo(-w, -h * 2); ctx.lineTo(w, -h * 2); ctx.lineTo(w / 2, -h * 0.1); ctx.quadraticCurveTo(0, ly, -w / 2, h * 0.08); ctx.closePath(); ctx.fill();
+  ctx.restore();
+  // lashes: thick upper line along the lid edge with the outer flick, thin lower line
+  ctx.lineCap = 'round'; ctx.strokeStyle = '#24101e'; ctx.lineWidth = Math.max(1.6, w * 0.075); ctx.beginPath(); ctx.moveTo(-w / 2, h * 0.08); ctx.quadraticCurveTo(0, ly, w / 2, -h * 0.1); ctx.stroke();
+  ctx.fillStyle = '#24101e'; ctx.beginPath(); ctx.moveTo(w * 0.42, -h * 0.2 + lid * h * 0.2); ctx.lineTo(w * 0.62, -h * 0.34 + lid * h * 0.3); ctx.lineTo(w * 0.5, -h * 0.02); ctx.closePath(); ctx.fill();
+  ctx.lineWidth = Math.max(1, w * 0.025); ctx.beginPath(); ctx.moveTo(w * 0.05, h * 0.4); ctx.quadraticCurveTo(w * 0.3, h * 0.36, w * 0.48, h * 0.02); ctx.stroke();
+  if (o.tear > 0) { const k = K.clamp(o.tear), tx = -w * 0.3, ty = h * 0.34 + k * h * 0.1; ctx.fillStyle = 'rgba(200,232,255,0.92)'; ctx.strokeStyle = '#5a8ac8'; ctx.lineWidth = Math.max(1, w * 0.015);
+    ctx.beginPath(); ctx.ellipse(tx, ty, w * 0.07 * k + 0.5, w * 0.09 * k + 0.5, 0, 0, 7); ctx.fill(); ctx.stroke(); ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(tx - w * 0.02 * k, ty - w * 0.03 * k, w * 0.02 * k + 0.3, 0, 7); ctx.fill(); }
+  ctx.restore();
+}
+// the bay in the court: window cells (cols 2-3 of row 1) replaced by one arched listening window
+const H4_WIN = [1266, 1374, 382, 444];   // x0, x1, y0, y1 (world)
+function h4WinPath(c) { const [x0, x1, y0, y1] = H4_WIN, m = (x0 + x1) / 2; c.beginPath(); c.moveTo(x0, y1); c.lineTo(x0, y0 + 22); c.quadraticCurveTo(x0, y0 - 6, m, y0 - 10); c.quadraticCurveTo(x1, y0 - 6, x1, y0 + 22); c.lineTo(x1, y1); c.closePath(); }
+// her state behind the bay (world head centre, eyes, lids)
+function h4Sil(t) { if (t < 113.56) return null; const tc = EH_T2(t), B = { x: 1320, y: 418 + 120 * (1 - ehE(tc, 113.56, 0.4)) - rebound(tc, 113.9, 6, 0.2), tilt: 0, lid: ehLid(t, 11, [119.88]) * 0.9, gaze: [-0.7, 0.6], wide: false, pupil: 1, tear: 0, fingers: t >= 113.94 && t < 119.88 };
+  if (t >= 113.94 && t < 114.66) { B.lid = Math.max(B.lid, 0.25); B.gaze = [-0.2, 0.2]; }
+  if (t >= 114.66 && t < 116.06) { B.tilt = 0.14; B.x = 1326; B.gaze = [-1, 0.1]; B.lid = Math.max(B.lid, 0.45); }
+  if (t >= 116.06 && t < 119.88) { B.gaze = [-0.8, 0.7]; B.lid = Math.max(B.lid, 0.15); }
+  if (t >= 119.88) { B.wide = true; B.lid = t < 120.0 ? 0.6 : 0; B.pupil = 0.7; B.y -= 6; B.gaze = [-0.6, 0.5]; }
+  if (t >= 124.5) { B.wide = false; B.pupil = 1; B.lid = ehLid(t, 11) * 0.9; B.gaze = [-0.7, 0.6]; B.tear = ehE(tc, 124.5, 0.4) * (1 - ehE(tc, 128.0, 0.3)); }
+  if (t >= 126.72 && t < 127.3) { B.lid = 0.35; B.tilt = -0.08; }
+  if (t >= 127.3 && t < 128.4) B.y += 80 * ehE(tc, 127.3, 0.3) * (1 - ehE(tc, 128.0, 0.4));
+  if (t >= 129.1 && t < 131.6) { B.gaze = [-0.8, 0.7]; B.lid = Math.min(B.lid, 0.1); }
+  return B; }
+function h4SilShape(c, B) { const { x, y } = B; c.save(); c.translate(x, y + 60); c.rotate(B.tilt); c.translate(-x, -(y + 60));
+  shape(c, [[x - 120, y + 220], [x - 104, y + 110], [x - 60, y + 78], [x - 24, y + 62], [x + 24, y + 62], [x + 60, y + 78], [x + 104, y + 110], [x + 120, y + 220]], H4_SIL, { lw: 3, line: '#4a1830' });
+  c.fillStyle = H4_SIL; c.strokeStyle = '#4a1830'; c.lineWidth = 3; c.beginPath(); c.moveTo(x - 54, y + 20); c.quadraticCurveTo(x - 60, y - 84, x, y - 82); c.quadraticCurveTo(x + 60, y - 84, x + 54, y + 20); c.lineTo(x + 78, y + 130); c.lineTo(x - 78, y + 130); c.closePath(); c.fill(); c.stroke();
+  c.restore(); }
+function h4SilFace(c, B) { const { x, y } = B; c.save(); c.translate(x, y + 60); c.rotate(B.tilt); c.translate(-x, -(y + 60));
+  shape(c, ell(x, y + 6, 40, 48, 24), H4_SKIN, { lw: 2.5, line: '#8a4a3a' });
+  c.fillStyle = '#fffaf0'; c.strokeStyle = '#8a7aa0'; c.lineWidth = 2; c.beginPath(); c.moveTo(x - 56, y + 20); c.quadraticCurveTo(x - 58, y - 84, x, y - 82); c.quadraticCurveTo(x + 58, y - 84, x + 56, y + 20); c.lineTo(x + 42, y + 12); c.quadraticCurveTo(x + 40, y - 26, x, y - 28); c.quadraticCurveTo(x - 40, y - 26, x - 42, y + 12); c.closePath(); c.fill(); c.stroke();
+  c.fillStyle = '#f2c040'; c.fillRect(x - 40, y - 30, 80, 5);
+  for (const sx of [-1, 1]) { const ex = x + sx * 18; c.strokeStyle = '#2a1420'; c.lineWidth = 2.4; c.beginPath(); c.moveTo(ex - 9, y - 14 - (B.wide ? 4 : 0)); c.quadraticCurveTo(ex, y - 19 - (B.wide ? 4 : 0), ex + 9, y - 14 - (B.wide ? 4 : 0)); c.stroke();
+    h4Eye(c, ex, y, 26 * (B.wide ? 1.08 : 1), { side: sx, lid: B.lid, gaze: B.gaze, wide: B.wide, pupil: B.pupil, tear: sx < 0 ? B.tear : 0 }); }
+  c.restore(); }
+// draw the whole bay at time t (world units); rib = ribbon 0..1 out through the window
+function h4Bay(ctx, t, tc, B, rib, glow) {
+  const [s0, s1, sy0, sy1] = EH_LC.screen;
+  latticeScreen(ctx, { x0: s0, x1: s1, y0: sy0, y1: sy1, glow: glow * 0.5, ribbon: 0, t: tc, behind: (c) => { if (B) h4SilShape(c, B); } });
+  if (glow > 0.05 || B) { ctx.save(); h4WinPath(ctx); ctx.clip(); ehGrad(ctx, H4_WIN[0], H4_WIN[2] - 12, 110, 70, [[0, ehMix('#8a5a4a', '#fff0b0', glow)], [1, ehMix('#5a3a3a', '#ffc070', glow)]]); if (B) h4SilFace(ctx, B); ctx.restore();
+    ctx.save(); h4WinPath(ctx); ctx.lineWidth = 6; ctx.strokeStyle = '#4a2a14'; ctx.stroke(); ctx.lineWidth = 2.5; ctx.strokeStyle = '#e8c088'; ctx.stroke(); ctx.restore(); }
+  if (B && B.fingers) for (const fx of [1296, 1312, 1330, 1346]) shape(ctx, ell(fx, H4_WIN[3] + 2 + 1.5 * Math.sin(tc * 2 + fx), 6.5, 8, 10), H4_SKIN, { lw: 1.8, line: '#8a4a3a' });
+  if (rib > 0) { const fl = 0.75 * (pulse(tc, 129.8, 0.24) - pulse(tc, 130.15, 0.24)) + 0.12 * Math.sin(tc * 5);
+    ehRibbon(ctx, 1300, H4_WIN[3] - 4, Math.PI / 2 + 0.25 + fl, 84 * K.clamp(rib), 11, tc, EH_ROSESASH, { wave: 6, hz: 2.4, tip: 0.6, shade: '#d8507a', lw: 2.5 }); }
+}
+// a ring flash (panel units)
+function h4Ring(ctx, x, y, t, t0, r0 = 20, r1 = 90) { const u = (t - t0) / 0.35; if (u <= 0 || u >= 1) return; ctx.save(); ctx.globalAlpha *= 1 - u; ctx.strokeStyle = '#fff6c8'; ctx.lineWidth = 7; ctx.beginPath(); ctx.arc(x, y, K.lerp(r0, r1, u), 0, 7); ctx.stroke(); ctx.restore(); }
+// the enlarged crimson sash corner with the saffron knot (review 1 note 4), drawn over a craftsman at his left hip (o.corner 0..1)
+function h4BigCorner(ctx, P, k = 1, lit = 0) { if (!P || k <= 0.05) return; const s = P.s || 1, d = Math.sign(P.dir || 1);
+  ctx.save(); ctx.translate(P.x, P.y - (P.lift || 0)); ctx.rotate((P.tip || 0) * d); ctx.scale(d * s, s); ctx.translate(-26, -84); ctx.scale(k * 1.15, k * 1.15);
+  shape(ctx, [[-6, -16], [22, -12], [14, 10], [2, 30], [-10, 6]], EH_CRIMSON, { lw: 2.5, line: '#5a0818' }); shape(ctx, [[2, -6], [14, -2], [4, 20]], '#b0183a', { lw: 0 });
+  shape(ctx, ell(4, -12, 8, 7, 12), EH_SAFFRON, { lw: 2, line: '#8a5a10' }); seg(ctx, 2, -6, -4, 10, 3, EH_SAFFRON, 1); seg(ctx, 6, -6, 10, 12, 3, EH_SAFFRON, 1);
+  if (lit > 0) { ctx.globalAlpha *= lit; shape(ctx, ell(4, 4, 22, 30, 16), 'rgba(255,246,200,0.35)', { lw: 0 }); }
+  ctx.restore(); }

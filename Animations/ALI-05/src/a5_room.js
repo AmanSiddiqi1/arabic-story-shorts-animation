@@ -25,8 +25,8 @@ function a5GuestR(t) {
   if (tc >= 62.5 && tc < 63.5) { P.handLW = [1118, 812 + 6 * beatIn(tc, 62.5, 62.9)]; P.gaze = [-1, 0.1]; }
   if (tc >= 68.6 && tc < 80.6) { P.gaze = [-1, 0]; P.talk = abTalk(t, 69, 79, 5, 0.45) * (osc(tc, 3.1) > 0.2 ? 1 : 0); if (P.talk) P.mouth = 'open'; P.handR = [30 + 20 * osc(tc, 1.4), -140]; }
   // S11: the bowl, the roast, the bowl again; the grand wave and the bubbles; the swat and the cough
-  if (tc >= 80.6 && tc < 88.6) { P.gaze = gazePlan(tc, [[80.6, [-1, 0]], [82.1, [-0.4, 0.8]], [83.3, [-0.5, 0.9]], [83.7, [-1, -0.1]], [84.1, [-0.4, 0.9]], [84.6, [-0.8, 0.2]], [86.1, [-0.3, -0.8]], [87.04, [0.2, -1]], [87.6, [-1, 0]]], 0.08);
-    P.mouth = tc > 83.3 && tc < 84.4 ? (Math.floor(tc * 6) % 2 ? 'smile' : 'grin') : 'smile';
+  if (tc >= 80.6 && tc < 88.6) { P.gaze = gazePlan(tc, [[80.6, [-1, 0]], [82.1, [-0.6, 0.2]], [82.6, [-1, -0.3]], [82.9, [-0.6, 0.25]], [83.15, [-1, -0.3]], [83.38, [-0.5, 0.9]], [83.7, [-1, -0.1]], [84.1, [-0.4, 0.9]], [84.6, [-0.8, 0.2]], [86.1, [-0.3, -0.8]], [87.04, [0.2, -1]], [87.6, [-1, 0]]], 0.08);
+    P.mouth = tc > 83.3 && tc < 84.4 ? (Math.floor(tc * 6) % 2 ? 'smile' : 'grin') : tc >= 82.9 && tc < 83.0 ? 'closed' : 'smile';   // rev 1: the mask twitches down one drawing at the bowl
     if (tc >= 85.2 && tc < 86.1) P.handR = PERSON_HANDS.chin.R;
     if (tc >= 86.1 && tc < 87.04) { const f = flow(tc, [[86.1, 0], [86.35, 1.15], [86.6, 1]]); P.handR = [K.lerp(24, 70, f), K.lerp(-112, -205, f)]; P.talk = abTalk(t, 86.1, 87.0, 6); if (P.talk) P.mouth = 'open'; }
     if (tc >= 87.04 && tc < 87.5) { const f = flow(tc, [[87.04, 0], [87.18, 1.2], [87.3, -0.2], [87.5, 0]]); P.handL = [-40 + 80 * f, -200 + 20 * f]; P.tip = -0.04; }
@@ -42,11 +42,13 @@ function a5GuestR(t) {
   if (tc >= 98.7 && tc < 106.6) { P.gaze = [1, 0.1]; P.look = 0.2;
     if (tc >= 100.6 && tc < 104.04) { P.handR = [30, -168]; }
     if (tc >= 102.14 && tc < 104.04) { P.lid = 0; P.mouth = 'smile'; P.gaze = [1, 0]; P.brow = -0.6; P.tip = 0; if (tc >= 102.6 && tc < 103.6) { P.talk = abTalk(t, 102.6, 103.4, 9, 0.5); if (P.talk) P.mouth = 'o'; } }
-    if (tc >= 104.04 && tc < 105.56) { const cf = cupFumble(tc, 104.04), side = cf.dx < 0; P.lid = 0; P.mouth = 'o'; P.brow = -0.8; P.tip = 0.06 * Math.sign(-cf.dx);
-      const ch = a2BodyPt({ ...P, sit: 1, seat: 'floor' }, 0, -130, A5_NM); if (side) P.handLW = [ch[0] - cf.dx * 0.6, ch[1] + cf.dy * 0.8 + 10]; else P.handRW = [ch[0] - cf.dx * 0.6, ch[1] + cf.dy * 0.8 + 10]; }
-    if (tc >= 105.5) { P.handL = [6, -128]; P.handR = [-4, -126]; P.mouth = 'grin'; P.lid = 0.6; P.brow = -0.5; P.sq *= 1 + 0.03 * Math.abs(Math.sin((tc - 105.5) * 14)) * (tc < 106.4 ? 1 : 0); } }
+    if (tc >= 104.04 && tc < 105.56) { const cf = cupFumble(tc - 0.07, 104.04), ce = cupFumble(Math.floor(tc / 0.07) * 0.07, 104.04), side = cf.dx < 0; P.lid = 0; P.mouth = 'o'; P.brow = -0.8; P.tip = 0.06 * Math.sign(-cf.dx);
+      P.gaze = [K.clamp(-ce.dx / 80, -1, 1), K.clamp((ce.dy + 60) / 120, -1, 1)]; P.look = K.clamp(-ce.dx / 120, -0.6, 0.6);   // eyes follow the cup (saccades), hands a drawing late
+      const ch = a2BodyPt({ ...P, sit: 1, seat: 'floor' }, 0, -130, A5_NM); if (side) P.handLW = [ch[0] - cf.dx * 0.8, ch[1] + cf.dy * 0.85 + 10]; else P.handRW = [ch[0] - cf.dx * 0.8, ch[1] + cf.dy * 0.85 + 10]; }
+    if (tc >= 105.5 && tc < 106.6) { o.ringR = 12; o.ring = tc < 106.0 ? K.clamp((tc - 105.56) / 0.4) : 0; }
+    if (tc >= 105.5) { P.handL = [6, -96]; P.handR = [-4, -94]; P.mouth = 'grin'; P.lid = 0.6; P.brow = -0.5; P.sq *= 1 + 0.03 * Math.abs(Math.sin((tc - 105.5) * 14)) * (tc < 106.4 ? 1 : 0); } }
   // S14: busy with his napkin; S15: laughing, the window, the freeze, I MUST GO!, three bows, the bolt
-  if (tc >= 106.6 && tc < 113) { P.gaze = [0.2, 0.6]; P.handR = [18 + 6 * osc(tc, 0.5), -150]; P.mouth = 'smile'; P.lid = 0.45; }
+  if (tc >= 106.6 && tc < 113) { P.gaze = tc >= 110.3 && tc < 111.6 ? [0, 0.9] : [0.2, 0.6]; P.handR = [18 + 6 * osc(tc, 0.5), -150]; P.mouth = 'smile'; P.lid = tc >= 110.3 && tc < 111.6 ? 0.55 : 0.45; }   // rev 1: eyes down to his cup during the signal
   if (tc >= 113 && tc < 122.6) { P.gaze = [-0.4, 0]; P.look = -0.3;
     if (tc >= 115.5 && tc < 116.98) { P.mouth = 'grin'; P.sq *= 1 + 0.02 * Math.abs(Math.sin(tc * 11)); P.lid = 0.7; P.gaze = gazePlan(tc, [[115.5, [0.4, 0]], [116.3, [-0.6, -0.1]], [116.7, [-1, -0.2]]]); }
     if (tc >= 116.98 && tc < A5_UP_T) { P.lid = 0; P.mouth = 'grin'; P.gaze = [-1, -0.25]; P.brow = -0.7; P.tip = 0; P.sq = 1; }
@@ -72,7 +74,9 @@ function a5MorgR(t) {
   else if (tc < 81.3) { Object.assign(P, walk(A5_MX, tc, { stride: 16 })); P.dir = 1; tray = 2; P.handL = [30, -128]; P.handR = [50, -130]; beads = 1 - K.clamp((tc - 80.6) / 0.5); P.mouth = 'smile'; P.lid = 0.3; }
   else { P.kneel = K.clamp((tc - 81.0) / 0.4); P.sq *= landSquash(tc, 81.4, 0.05); P.dir = 1; P.gaze = [1, 0.2]; P.lid = Math.max(0.15, P.lid); P.handL = [-20, -110]; P.handR = [20, -112]; }
   if (tc >= 81.3 && tc < 122) {
-    if (tc >= 82.04 && tc < 82.8) { P.handRW = [1180, 905]; P.handLW = [1168, 900]; P.tip = 0.12; P.lid = 0.5; }
+    // rev 1: the simple food held up between them at chest height (80.9-83.4), then set on a small brass tray in clear view
+    if (tc >= 81.3 && tc < 83.4) { tray = 3; const up = beatIn(tc, 81.3, 81.6); P.handL = [K.lerp(-20, 46, up), K.lerp(-110, -150, up)]; P.handR = [K.lerp(20, 66, up), K.lerp(-112, -152, up)]; P.gaze = [1, -0.1]; P.lid = 0.3; P.mouth = 'smile'; }
+    if (tc >= 83.4 && tc < 83.9) { P.handRW = [1140, 905]; P.handLW = [1124, 900]; P.tip = 0.12; P.lid = 0.5; }
     if (tc >= 84.1 && tc < 85.1) { ewerP = { tilt: -0.8 * a5Win(tc, 84.1, 84.9), pour: a5Win(tc, 84.25, 84.85, 0.12, 0.12) }; P.handR = [56, -112]; P.gaze = [1, 0.7]; }
     if (tc >= 85.22 && tc < 86.4) { P.tilt = 0.12; P.talk = abTalk(t, 85.22, 86.3, 11, 0.6); P.mouth = P.talk ? 'open' : 'smile'; P.gaze = [1, -0.1]; P.lid = 0.15; }
     if (tc >= 87.8 && tc < 88.6) { P.lid = 0.55; P.gaze = [0.6, 0.8]; }
@@ -80,8 +84,11 @@ function a5MorgR(t) {
     if (tc >= 98.98 && tc < 100.6) { ewerP = { tilt: -0.7, pour: a5Win(tc, 99.1, 100.3, 0.1, 0.1) }; P.handR = [56, -112]; P.talk = abTalk(t, 98.98, 100.4, 12, 0.5); P.mouth = P.talk ? 'open' : 'smile'; P.gaze = [1, 0.3]; }
     if (tc >= 100.6 && tc < 106.6) { P.gaze = tc > 105.5 ? [1, -0.05] : [1, 0]; P.lid = tc > 102.1 ? 0.05 : 0.2; }
     if (tc >= 106.6 && tc < 113) { P.gaze = [-1, -0.1]; P.look = -0.5;
-      if (tc >= 110.3 && tc < 111.0) { P.handL = [-6, -150]; P.handR = [10 + 8 * (Math.floor((tc - 110.3) * 6) % 2), -156]; P.mouth = 'smile'; }
-      if (tc >= 111.0 && tc < 111.5) { P.tilt = 0.12; P.handR = tc > 111.2 && tc < 111.4 ? PERSON_HANDS.hush.R : [20, -112]; } }
+      // revision 1: the signal behind her back, under his nose: eyes to Ali Baba, head a drawing later, left hand up on the far side, two taps on the ring finger
+      if (tc >= 110.3 && tc < 111.2) { P.gaze = [-1, 0]; P.look = tc < 110.42 ? 0 : -0.7; const up = beatIn(tc, 110.36, 110.5); P.handL = [K.lerp(-20, -72, up), K.lerp(-110, -192, up)];
+        const tap = (tc >= 110.5 && tc < 110.62) || (tc >= 110.8 && tc < 110.92); P.handR = [K.lerp(20, -46, up), K.lerp(-112, tap ? -174 : -188, up)]; P.mouth = 'smile'; }
+      if (tc >= 111.2 && tc < 111.56) { P.gaze = [1, 0]; P.look = 0.3; P.tilt = 0.12; P.handR = PERSON_HANDS.hush.R; P.handL = [-60, -170]; P.mouth = 'closed'; }
+      if (tc >= 111.56 && tc < 111.9) { P.gaze = [-1, 0]; P.look = -0.5; P.handL = [-90, -176]; } }
     if (tc >= 113 && tc < 122) { P.gaze = tc > 120.7 ? [1, -0.1] : [1, 0]; P.look = tc > 120.7 ? 0.5 : 0; P.lid = 0.2; }
   }
   return { P, o, tray, ewer: ewerP, vis, beads };
@@ -91,7 +98,7 @@ function a5AliR(t) { const tc = AB_T2(t), P = { ...a5Base(t, 541), x: DR.seats.a
   if (tc >= 51.2 && tc < 52.2) P.handRW = [K.lerp(560, 600, beatIn(tc, 51.2, 51.7)), 812];
   if (tc >= 58.1 && tc < 58.9) { P.handLW = [400, 880 - 14 * Math.abs(Math.sin((tc - 58.1) * Math.PI * 2.6))]; P.gaze = [1, -0.1]; P.brow = -0.5; P.tip = -0.05; }
   if (tc >= 69 && tc < 106) { P.gaze = [1, -0.05]; if (osc(tc, 4.3) > 0.6) { P.mouth = 'grin'; P.sq *= 1 + 0.015 * Math.abs(Math.sin(tc * 10)); } }
-  if (tc >= 91.2 && tc < 92.4) { P.handR = [60, -170]; P.mouth = 'grin'; }
+  if (tc >= 91.8 && tc < 92.5) { P.handR = [60, -170 - 14 * beatIn(tc, 91.8, 92.0)]; P.mouth = 'open'; P.lid = 0.2; P.gaze = [1, -0.1]; P.tip = -0.04; }   // rev 1: the cup raised to the guest (the cutaway)
   if (tc >= 105.9 && tc < 106.8) { P.mouth = 'grin'; P.sq *= 1 + 0.02 * Math.abs(Math.sin(tc * 12)); P.lid = 0.6; }
   if (tc >= 110.8 && tc < 113) { const dt = tc - 111.88; P.handR = dt < 0.35 ? [40, -165] : PERSON_HANDS.chest.R; P.gaze = dt < 0 ? [1, -0.05] : [1, 0.05]; P.look = dt > 0.15 ? 0.5 : 0; P.lid = dt > 0 ? 0 : P.lid; P.mouth = dt > 0 ? 'o' : 'smile';
     P.tip = dt > 0.3 ? -0.06 : 0; P.brow = dt > 0 ? -0.8 : 0; if (dt > 0.32) { P.handL = [70, -120]; } }
@@ -135,7 +142,7 @@ function a5RoomWorld(ctx, t, cam, o = {}) {
   for (const [x, col] of [[640, DR.cush.wife], [780, DR.cush.kid], [930, DR.cush.neph]]) drCushion(ctx, x, DR.backY + 6, col, 0.9);
   const nb = (c) => { abNephew(c, t, N.P, A5_RM, { shc: A5_RSH, box: N.o.boxW ? 1.4 : 0 }); if (N.o.bread) { const [hx, hy] = a2Hand(N.P, 1, A5_NEPH); abBlob(c, hx, hy - 4, 22, 9, '#f0c47a', '#c08a4a', { lw: 2 }); } };
   const mb = (c) => { if (!M.vis) return; const P = M.P; morgiana(c, t, P, A5_RM, { shc: A5_RSH, kick: P.amp ? 0.3 : 0 }); if (M.tray) { const [hx, hy] = a2Hand(P, 1, A3_MORG); const tx = hx - 14; abBlob(c, tx, hy - 4, 46, 9, '#ffcf3a', '#c08a1a', { lw: 2.5 });
-      const rat = t > 56.26 && t < 56.9 ? 2 * Math.sin(t * 60) : 0; if (M.tray === 1) for (const dx of [-26, 0, 26]) teaCup(c, tx + dx + rat, hy - 8, 0.9, { tea: 0 }); else { lentilBowl(c, tx, hy - 8, 0.8); } }
+      const rat = t > 56.26 && t < 56.9 ? 2 * Math.sin(t * 60) : 0; if (M.tray === 1) for (const dx of [-26, 0, 26]) teaCup(c, tx + dx + rat, hy - 8, 0.9, { tea: 0 }); else if (M.tray === 3) { const [lx, ly] = a2Hand(P, 0, A3_MORG); lentilBowl(c, (lx + hx) / 2 + 2, Math.min(ly, hy) + 4, 1.4, { pale: 1, t }); } else { lentilBowl(c, tx, hy - 8, 0.8); } }
     if (M.ewer) { const [hx, hy] = a2Hand(P, 1, A3_MORG); ewer(c, hx, hy, M.ewer.tilt * Math.sign(P.dir || 1), 0.9, { pour: M.ewer.pour, to: t < 70 ? [P.x - 70, 830] : [1170, 925] }); }
     if (t >= 68.6 && t < 69.1) { const [hx, hy] = a2Hand(P, 0, A3_MORG); abBlob(c, hx, hy + 20, 18, 26, '#c8743a', '#8a4a1e', { lw: 2.5 }); } };
   const backList = [...back, { y: DR.backY + 2, d: nb }]; if (M.vis && M.P.y < 870) backList.push({ y: M.P.y - 30, d: mb });
@@ -147,7 +154,7 @@ function a5RoomWorld(ctx, t, cam, o = {}) {
   front.push({ y: G.P.y, d: (c) => { if (o.band) disguiseWipe(c, o.band, (cc) => abNewMerchant(cc, t, G.P, A5_RM, { ...G.o, shc: A5_RSH }), (cc) => a5LeaderAs(cc, t, G.P, A5_RM, {}), t); else abNewMerchant(c, t, G.P, A5_RM, { ...G.o, shc: A5_RSH }); } });
   if (M.vis && M.P.y >= 870) front.push({ y: M.P.y + 1, d: mb });
   // props on the rug by the guest: the lentil bowl (82.04), his tea cup (84.1; in his hand 100.6-104; the fumble; caught)
-  if (t >= 82.3) lentilBowl(ctx, 1180, 935, 1.2);
+  if (t >= 83.8) { abBlob(ctx, 1135, 938, 46, 10, '#ffcf3a', '#c08a1a', { lw: 2.5 }); lentilBowl(ctx, 1135, 932, 1.3, { pale: 1, t }); }
   for (const f of abByY(front)) f.d(ctx);
   a5GuestCup(ctx, t, G.P);
   if (t >= 105.5 && t < 106.6) for (let k = 0; k < 3; k++) { const u = beatIn(t, 105.5 + k * 0.12, 105.75 + k * 0.12); if (u > 0) abBlob(ctx, 1150 + k * 26, K.lerp(860, 945, u), 5, u < 1 ? 7 : 3, '#d8781a', '#a8501a', { lw: 0 }); }

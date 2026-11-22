@@ -17,7 +17,8 @@ function h4GPrincess(t, H) {
   const tc = EH_T2(t), sd = 11, P = { s: EH_PRINCESS.s, lid: ehLid(t, sd, [17.16, 28.56, 39.07]), mouth: 'closed', brow: -0.1, gaze: [1, 0.1], handL: PERSON_HANDS.folded.L, handR: PERSON_HANDS.folded.R, sq: breathe(tc, sd, 0.016), tip: idleSway(tc, sd, 0.02, 3.1) };
   if (t < 19.4) { P.lurch = 0.02 + idleSway(tc, 31, 0.015, 2.4) + (t > 8.9 ? -0.06 * Math.exp(-(t - 8.9) * 8) : 0); P.bob = t > 8.9 && t < 9.2 ? 6 * Math.sin((t - 8.9) * 20) : 0; P.gaze = t < 15.8 ? [1, 0.3] : [1, 0];
     if (t >= 15.8) { P.lurch = -0.04; P.lid = Math.max(P.lid, 0.2); }
-    if (t >= 17.16 && t < 17.7) { P.dir = osc(tc - 17.16, 0.28) > 0 ? 1 : 0.55; P.gaze = [osc(tc - 17.16, 0.28), 0]; }
+    if (t >= 17.16 && t < 17.88) { P.dir = osc(tc - 17.16, 0.24) > 0 ? 1 : 0.55; P.gaze = [osc(tc - 17.16, 0.24), 0]; P.brow = -0.4; }   // three clear drawings of the head shake
+    if (t >= 17.88 && t < 19.4) { P.gaze = [1, -0.15]; P.lid = Math.min(P.lid, 0.1); }   // her eyes go to the king
     return { seat: true, P }; }
   P.x = H4_PRX(t); P.y = 912; Object.assign(P, walk(H4_PRX, tc, { stride: 22 })); P.dir = 1;
   if (t < 19.9) { const st = mountSeat('horse', ehSeatShift(H, EH_SEAT2.front, 0)), u = ehE(tc, 19.4, 0.5); P.x = K.lerp(st.x + 20, 1430, u); P.y = K.lerp(st.y + 70, 912, u) - 30 * Math.sin(Math.PI * u); P.amp = 0; P.handL = [-30, -150]; P.handR = [40, -150]; return { P }; }
@@ -175,8 +176,8 @@ function h4GoldenOver(ctx, t, cam, S) {
   const H = h4GHorse(t), HH = { ...H, y: H.y - H.lift }, iv = h4GInventor(t, HH), pr = h4GPrincess(t, HH), king = h4GKing(t);
   const ih = iv.seat ? h4P(...ehRiderPt(ehRiderFrame(HH, EH_SEAT2.rear, EH_SEAT2.rearDy, 0, 0, iv.P.s), 0, -130), cam) : h4Head(iv.P, cam);
   const ph = pr.seat ? h4P(...ehRiderPt(ehRiderFrame(HH, EH_SEAT2.front, 0, 0, 0, pr.P.s), 0, -130), cam) : h4Head(pr.P, cam), kh = h4Head(king, cam);
-  h4Say(ctx, S, [[13.48, 'A GIFT FOR YOU,\nGREAT KING!']], t, ih, { gone: 15.3, size: 44, up: 190, dx: 140 });
-  h4Say(ctx, S, [[16.48, 'SHE CHOSE TO COME!']], t, ih, { gone: 18.3, size: 44, up: 170, dx: 120 });
+  h4Say(ctx, S, [[13.48, 'A GIFT FOR YOU,\nGREAT KING!']], t, ih, { gone: 15.3, size: 40, up: 420, dx: -40 });   // high over the hedge, clear of her face (review 1 note 5)
+  h4Say(ctx, S, [[16.48, 'SHE CHOSE\nTO COME!']], t, ih, { gone: 18.3, size: 40, up: 420, dx: -40 });
   h4Say(ctx, S, [[24.18, 'THIS MAN DECEIVED ME.']], t, ph, { gone: 25.9, size: 42, up: 200, dx: -40 });
   h4Say(ctx, S, [[26.5, 'I WISH TO GO HOME.']], t, ph, { gone: 28.4, size: 42, up: 200, dx: -60 });
   if (t >= 26.5 && t < 28.6) { const p = K.clamp((t - 26.7) / 0.3) * K.clamp((28.6 - t) / 0.25); iconBalloon(ctx, 760, 260, 330, 230, p, [ph[0] + 60, ph[1] - 70], (c, w, h) => {

@@ -12,15 +12,16 @@ function a5Merchant1(t) {
   else if (tc < 2.5) { P.handLW = [935 + 6 * Math.sin(tc * 9) * (tc < 2.1 ? 1 : 0), 640]; P.sq *= 1.03; P.gaze = [-0.6, -0.8]; if (tc > 2.1) { P.handLW = null; P.handL = PERSON_HANDS.hipsHands.L; P.handR = PERSON_HANDS.hipsHands.R; P.gaze = [-1, -0.6]; P.tip = -0.03; } }
   else if (tc < 3.46) { lamp = 'hand'; P.handL = [40, -136]; P.handR = [52 + 10 * Math.sin(tc * 22), -142]; P.gaze = [-0.2, 0.3]; P.lid = 0.5; }
   else if (tc < 4.6) { P.gaze = gazePlan(tc, [[3.46, [-1, 0]], [3.9, [-1, -0.1]]]); P.handL = PERSON_HANDS.clasp.L; P.handR = PERSON_HANDS.clasp.R; }
-  else if (tc < 5.56) { P.handR = PERSON_HANDS.chest.R; P.tip = 0.14 * Math.sin(Math.PI * beatIn(tc, 4.9, 5.5)); P.brow = -0.2; P.mouth = 'grin'; o.feather = 0; }
+  else if (tc < 5.56) { const lean = Math.sin(Math.PI * beatIn(tc, 4.6, 5.56)); P.handL = [K.lerp(-26, 66, lean), K.lerp(-106, -112, lean)]; P.handR = [K.lerp(24, 84, lean), K.lerp(-110, -108, lean)]; P.tip = 0.22 * lean; P.drop = 8 * lean; P.brow = -0.4; P.lid = 0; P.mouth = 'grin'; o.feather = lagged((u) => -0.4 * Math.sin(Math.PI * beatIn(u, 4.6, 5.56)), tc, 0.15, 1); }   // revision 1: leans out over the counter on both forearms for the bow
   else if (tc < 6.8) { const f = flow(tc, [[5.56, 0], [5.8, 1.1], [6.0, 1]]); P.handL = [K.lerp(-26, -98, f), K.lerp(-106, -158, f)]; P.handR = [K.lerp(24, 98, f), K.lerp(-110, -158, f)]; P.gaze = gazePlan(tc, [[5.56, [-1, 0]], [6.0, [-0.3, 0]], [6.4, [-1, 0]]]); P.lid = 0.2; P.talk = abTalk(t, 6.2, 7.3, 1); if (P.talk) P.mouth = 'open'; P.sq *= 1.02; }
   else if (tc < 7.42) { P.handRW = [945, 800]; lamp = tc < 7.1 ? 'hand' : null; P.gaze = [-1, 0.3]; P.talk = abTalk(t, 6.2, 7.3, 1); if (P.talk) P.mouth = 'open'; }
   else if (tc < 8.78) { P.handL = PERSON_HANDS.clasp.L; P.handR = PERSON_HANDS.clasp.R; P.gaze = [-1, 0]; P.mouth = 'grin'; }
   // S2: the three smiles (the same keys), the drop, the drumming, the ring, the thought
   if (tc >= 8.78 && tc < 17.7) { P.mouth = 'closed'; P.brow = 0.7; P.lid = 0.35; P.gaze = [-1, 0];
-    for (const s0 of A5_SMILE_T) { const S = a5Smile(tc, s0); if (S && tc < s0 + (s0 === 17.0 ? 1.0 : 0.62)) { Object.assign(P, { mouth: S.mouth, lid: S.lid, brow: S.brow, tip: S.tip }); glint = S.glint; P.handR = PERSON_HANDS.chest.R; } }
+    for (const s0 of A5_SMILE_T) { const S = a5Smile(tc, s0); if (S && tc < (s0 === 17.0 ? 18.0 : s0 === 10.76 ? 11.9 : s0 + 0.62)) { Object.assign(P, { mouth: S.mouth, lid: S.lid, brow: S.brow, tip: S.tip }); glint = S.glint; P.handR = PERSON_HANDS.chest.R; } }
     if (tc >= 10.76 && tc < 11.3) { P.handRW = [985, 790]; }
-    if (tc >= 11.9 && tc < 13.04) { P.mouth = 'closed'; P.brow = 0.85; P.lid = 0.38; P.gaze = gazePlan(tc, [[11.9, [-1, 0]], [12.4, [-1, 0.1]]]); P.sq = 1; P.tip = 0; }
+    if (tc >= 11.9 && tc < 13.04) { P.mouth = 'closed'; P.brow = 0.85; P.lid = 0.4; P.drop = 6; P.gaze = gazePlan(tc, [[11.9, [-1, 0]], [12.4, [-1, 0.1]]]); P.sq = 1; P.tip = 0; }
+    if (tc >= 13.04 && tc < 13.7) { o.ring = K.clamp((tc - 13.1) / 0.5); o.ringR = 11; }
     if (tc >= 13.04 && tc < 17.0) { P.dir = 1; P.tip = -0.04; P.handLW = [1050, 772]; P.handRW = [1130 + 3 * (Math.floor(tc * 12) % 2), 772 - 4 * (Math.floor(tc * 6) % 2)]; P.gaze = [0.9, 0]; P.brow = 0.85; P.lid = 0.35; P.mouth = 'closed';
       if (tc >= 13.7) { P.handRW = null; P.handR = [-6, -100]; } if (tc >= 16.2) { P.handR = [10, -112]; P.lid = abBlinkAt(AB_T3(t), 16.6) > 0 ? 1 : 0.35; } } }
   // S3: peeking round the post, the smile put on, watching
@@ -145,7 +146,7 @@ function a5S1Over(ctx, t, cam, S) {
 }
 // a light streak to a point (the style's arrow), panel units
 function a4StreakLite(ctx, S, from, to, t, a, b) { if (t < a || t > b + 0.3) return; ctx.save(); ctx.globalAlpha *= 1 - K.clamp((t - b) / 0.3); S.arrow(ctx, from, to, K.clamp((t - a) / 0.35), { color: '#7fe3ff', bend: -0.2 }); ctx.restore(); }
-AB_SHOTS.push({ a: 0, b: 8.5, ww: 2000, cam: a5Cam([[0, { x: 1080, y: 470, zoom: 1.3 }], [1.6, a5CX(610)], [8.5, a5CX(560)]]), world: a5S1World, over: a5S1Over });
-AB_SHOTS.push({ a: 8.5, b: 17.7, ww: 2000, cam: a5Cam([[8.5, a5CX(560, 1.3, 600)], [13.78, a5CX(580, 1.3, 600)], [15.4, a5CX(960, 1.3, 600)], [17.7, a5CX(980, 1.3, 600)]]), world: a5S1World, over: a5S1Over });
+AB_SHOTS.push({ a: 0, b: 8.5, ww: 2000, cam: a5Cam([[0, { x: 1080, y: 470, zoom: 1.3 }], [1.6, a5CX(610)], [4.0, a5CX(610)], [4.6, a5CX(600, 1.45, 678)], [8.5, a5CX(590, 1.45, 678)]]), world: a5S1World, over: a5S1Over });
+AB_SHOTS.push({ a: 8.5, b: 17.7, ww: 2000, cam: a5Cam([[8.5, a5CX(590, 1.45, 678)], [13.78, a5CX(600, 1.45, 678)], [15.4, a5CX(960, 1.3, 600)], [17.7, a5CX(980, 1.3, 600)]]), world: a5S1World, over: a5S1Over });
 AB_SHOTS.push({ a: 17.7, b: 24.0, ww: 2000, cam: a5Cam([[17.7, a5CX(1060, 1.25, 568)], [24.0, a5CX(1090, 1.25, 568)]]), world: a5S1World, over: a5S1Over });
 AB_SHOTS.push({ a: 24.0, b: 35.0, ww: 2000, cam: a5Cam([[24.0, a5CX(1130, 1.3, 590)], [35.0, a5CX(1190, 1.3, 590)]]), world: a5S1World, over: a5S1Over });

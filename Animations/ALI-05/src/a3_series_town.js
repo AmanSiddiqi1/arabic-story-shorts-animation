@@ -290,6 +290,6 @@ function silverRing(ctx, x, y, r = 14, o = {}) {
   ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot || 0); ctx.strokeStyle = '#d8dce8'; ctx.lineWidth = r * 0.45; ctx.beginPath(); ctx.ellipse(0, 0, r, r * 0.45, 0, 0, 7); ctx.stroke();
   ctx.strokeStyle = '#8a90b0'; ctx.lineWidth = r * 0.12; ctx.beginPath(); ctx.ellipse(0, r * 0.08, r, r * 0.45, 0, 0.2, Math.PI - 0.2); ctx.stroke();
   celShade(ctx, ell(0, -r * 0.55, r * 0.62, r * 0.48, 16), '#3a8ae8', '#1a4aa0', { light: [-1, -1], off: r * 0.18, hi: '#bfe0ff', lw: Math.max(1.5, r * 0.1), line: '#0e2a6a' });
-  ctx.strokeStyle = '#0e1a40'; ctx.lineWidth = Math.max(1.5, r * 0.1); ctx.beginPath(); ctx.moveTo(-r * 0.35, -r * 0.9); ctx.lineTo(r * 0.3, -r * 0.2); ctx.stroke();
+  if (!o.noSplit) { ctx.strokeStyle = '#0e1a40'; ctx.lineWidth = Math.max(1.5, r * 0.1); ctx.beginPath(); ctx.moveTo(-r * 0.35, -r * 0.9); ctx.lineTo(r * 0.3, -r * 0.2); ctx.stroke(); }   // ALI-05 rev 1: o.noSplit (the insert draws the crack itself)
   ctx.restore(); if (o.glint) abGlint(ctx, x - r * 0.2, y - r * 0.8, r * 2.2, o.glint);
 }

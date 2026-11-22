@@ -62,7 +62,7 @@ function h4DayWorld(ctx, t, cam) {
       if (F.o.box) { const [bx, by] = ehHandW(F.P, F.P.handL); toolbox(ctx, bx, by + 60, { s: 0.95, ...F.o.box }); }
       if (t >= 77.04 && t < 77.5) { const [cx, cy] = ehHandW(F.P, F.P.handR); shape(ctx, [[cx - 20, cy], [cx - 16, cy - 16], [cx - 8, cy - 6], [cx, cy - 20], [cx + 8, cy - 6], [cx + 16, cy - 16], [cx + 20, cy]], '#f2c040', { lw: 2, line: '#8a5a10' }); } }
     else { if (F.o.boxAt) toolbox(ctx, F.o.boxAt[0], F.o.boxAt[1], { s: 0.95, open: F.o.boxAt[2], crown: 1 });
-      const P = F.o.capOff ? { ...F.P, pal: { ...EH_CRAFT.pal, head: 'hair' } } : F.P; ehCraftsman(ctx, P, t, { corner: F.o.corner, box: F.o.box, tool: F.o.tool, toolRot: F.o.toolRot || 0 });
+      const P = F.o.capOff ? { ...F.P, pal: { ...EH_CRAFT.pal, head: 'hair' } } : F.P; ehCraftsman(ctx, h4W({ ...P }), t, { corner: F.o.corner, box: F.o.box, tool: F.o.tool, toolRot: F.o.toolRot || 0 }); h4BigCorner(ctx, P, F.o.corner ?? 1);
       if (F.o.capOff) { const [hx, hy] = ehHandW(F.P, F.P.handR); ehBlob(ctx, hx, hy, 26, 12, '#d8c8a0', '#b8a880', { lw: 2.5 }); } } }]);
   for (let i = 0; i < 2; i++) { const g = h4DGuard(t, i); items.push([g[0].y, () => { ctx.save(); if (g[0].alpha != null) ctx.globalAlpha *= g[0].alpha; h4Fig(ctx, g[2], g[0], t, g[1]); ctx.restore(); }]); }
   items.sort((a, b) => a[0] - b[0]); for (const [, f] of items) f();

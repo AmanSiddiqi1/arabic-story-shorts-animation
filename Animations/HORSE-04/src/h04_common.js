@@ -11,7 +11,7 @@ function h4Shadow(ctx, x, y, w, lift = 0, o = {}) { groundShadow(ctx, x, y, w, l
 // a person with its shadow and extras; o {cape, tail (torn), veil, helmet {tilt}, neck, spear {lean, hand}, vx, swing, lift}
 function h4Fig(ctx, D, P, t, o = {}) {
   if (!P) return; const tc = EH_T2(t), lift = P.lift || 0; h4Shadow(ctx, P.x, P.y, 90 * (P.s || 1) * (P.child ? 0.7 : 1), lift);
-  const Q = { ...P, y: P.y - lift };
+  const Q = h4W({ ...P, y: P.y - lift });
   if (o.cape) ehCapeStand(ctx, Q, tc, { vx: o.vx || 0, swing: o.swing || 0 });
   if (o.tail) ehInvTail(ctx, Q, tc, { torn: true, vx: o.vx || 0, swing: o.swing || 0 });
   if (o.veil) ehVeilRibbon(ctx, Q, tc, { vx: o.vx || 0, swing: o.swing || 0 });
@@ -41,3 +41,5 @@ function h4Doves(ctx, t, list, s = 0.32) { const tc = EH_T2(t); for (const [t0, 
 function h4Reach(P, W) { const s = P.s || 1, d = Math.sign(P.dir || 1); return [(W[0] - P.x) / (s * d), (W[1] - P.y) / s]; }
 // rider body-local point for a horse-local point p (rider scale ps on horse H; seat shift d, dy as in twoRiders)
 function h4Loc(H, ps, p, d = 0, dy = 0) { const k = H.s / ps; return [(p[0] - (-8 + d)) * k - 22, (p[1] - (-238 + dy)) * k - 52]; }
+// a world hand target only works when the local one is empty (people.js: handL || toLocal(handLW)); review 1: reaches were lost
+function h4W(P) { if (P && P.handRW) { P.handR = h4Reach(P, P.handRW); P.handRW = null; } if (P && P.handLW) { P.handL = h4Reach(P, P.handLW); P.handLW = null; } return P; }

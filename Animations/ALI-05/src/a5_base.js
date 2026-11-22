@@ -25,8 +25,8 @@ function a5Cat(ctx, t, P, shc = A5_DSH) { const tc = AB_T2(t); a3Shadow(ctx, P.x
 // ---------- the merchant's switch-on smile: the SAME keys every time (mechanical on purpose) ----------
 // returns pose fields for the smile switched on at t0 (three held drawings), a glint life on the teeth
 const A5_SMILE_T = [9.4, 10.14, 10.76, 17.0];
-function a5Smile(tc, t0) { const u = tc - t0; if (u < 0) return null; const st = Math.min(2, Math.floor(u / 0.09));
-  return { mouth: ['closed', 'smile', 'grin'][st], lid: [0.3, 0.45, 0.6][st], brow: [0.6, 0.1, -0.3][st], tip: 0.08 * Math.sin(Math.PI * K.clamp(u / 0.6)), glint: u > 0.25 && u < 0.7 ? (u - 0.25) / 0.45 : 0 }; }
+function a5Smile(tc, t0) { const u = tc - t0; if (u < 0) return null; const st = Math.min(2, Math.floor(u / 0.09));   // revision 1: brows up, eyes open, teeth (a5Grin)
+  return { mouth: ['closed', 'smile', 'grin'][st], lid: [0.2, 0.08, 0][st], brow: [0.3, -0.1, -0.4][st], tip: 0.08 * Math.sin(Math.PI * K.clamp(u / 0.6)), glint: u > 0.25 && u < 0.7 ? (u - 0.25) / 0.45 : 0 }; }
 
 // ---------- the market world (the ALI-03 market plate rebuilt with room for the shop at x 960..1260 and the storehouse corner) ----------
 const A5_MKT = { w: 2000, palace: false, sky: false, palette: 'clear', stalls: [{ x: 320, kind: 'fruit', w: 240 }, { x: 700, kind: 'cloth', w: 240, cols: ['#e8364f', '#ffd36a'] }],

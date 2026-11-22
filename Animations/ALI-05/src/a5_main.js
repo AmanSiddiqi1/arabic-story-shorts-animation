@@ -22,7 +22,7 @@ const SCENE = {
     if (t >= 109.54 && t < 110.3) { const p = K.clamp((t - 109.54) / 0.76); S.emphasis(ctx, 560, 560, 230, p, { rect: [0, 0, 1000, 1230], word: 'THE LEADER!', wx: 0, wy: 1.5 }); }
     ctx.restore();
     if (t >= A5_TAPE[0] && t < A5_TAPE[1]) S.transition(ctx, W, H, K.clamp((t - A5_TAPE[0]) / (A5_TAPE[1] - A5_TAPE[0])), { rect: AB_PANEL, caption: 'THAT EVENING...' });
-    for (const c of [8.5, 17.7, 24.0, 41.0, 42.2, 51.0, 69.0, 78.3, 80.6, 88.6, 106.6, 122.6]) abTracking(ctx, t, c - 0.02, 0.15);   // a few cuts carry a tape flick
+    for (const c of [8.5, 17.7, 24.0, 41.0, 42.2, 51.0, 69.0]) abTracking(ctx, t, c - 0.02, 0.07);   // a few cuts carry a tape flick (rev 1: 2 frames; the dinner and yard cuts are clean)
     subtitle(ctx, W, H, t, 1);
     S.finish(ctx, W, H, t);   // the CRT pass, always last
   },

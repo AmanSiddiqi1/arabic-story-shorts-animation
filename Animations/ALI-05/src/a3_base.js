@@ -15,10 +15,16 @@ function abSay(ctx, S, steps, t, x, y, to, o = {}) {
   ctx.translate(x, y + wb); ctx.scale(pop, pop); ctx.translate(-x, -y - wb);
   let size = o.size || 52, w = a2LabelW(S, txt, size); const room = 1000 - 2 * A2_MARGIN - (o.icon ? 70 : 0); if (w > room) { size *= room / w; w = room; }
   const lo = A2_MARGIN + w / 2 + (o.icon ? 70 : 0), hi = 1000 - A2_MARGIN - w / 2; ctx.translate(K.clamp(x, lo, hi) - x, 0); if (to) to = [to[0] - (K.clamp(x, lo, hi) - x), to[1]];
-  const r = S.label(ctx, txt, x, y + wb, K.clamp((t - steps[0][0]) / 0.3), { size, balloon: !o.tag, to: o.tag ? null : to, color: o.col });
+  if (!o.tag && to) abTail(ctx, x, y + wb, w, size, to, K.clamp(K.clamp((t - steps[0][0]) / 0.3) * 3));   // ALI-05 rev 1: a thin tail (the style's own is a 20%-wide wedge)
+  const r = S.label(ctx, txt, x, y + wb, K.clamp((t - steps[0][0]) / 0.3), { size, balloon: !o.tag, to: null, color: o.col });
   if (o.icon && r && r.w) o.icon(ctx, x - r.w / 2 - 34, y + wb - size * 0.3);
   ctx.restore();
 }
+// abTail: a thin balloon tail (root 24 wide at the balloon edge, in the balloon's fill with the cyan rule), its tip stopping 18 short of 'to'
+function abTail(ctx, x, y, w, size, to, k) { if (k <= 0) return; const h = size * 1.45, cy = y - size * 0.3, below = to[1] > cy, ey = below ? cy + h / 2 - 2 : cy - h / 2 + 2;
+  const bx = K.clamp(to[0], x - w / 2 + h * 0.6, x + w / 2 - h * 0.6), dx = to[0] - bx, dy = to[1] - ey, L = Math.hypot(dx, dy) || 1, tl = Math.max(0, L - 18), tx = bx + dx / L * tl, ty = ey + dy / L * tl;
+  if (tl < 6) return; ctx.save(); ctx.globalAlpha *= k; ctx.beginPath(); ctx.moveTo(bx - 12, ey); ctx.quadraticCurveTo(bx - 6 + dx / L * tl * 0.5, ey + dy / L * tl * 0.5, tx, ty); ctx.quadraticCurveTo(bx + 6 + dx / L * tl * 0.5, ey + dy / L * tl * 0.5, bx + 12, ey); ctx.closePath();
+  ctx.fillStyle = 'rgb(30,22,44)'; ctx.fill(); ctx.strokeStyle = '#7fe3ff'; ctx.lineWidth = 2.4; ctx.lineJoin = 'round'; ctx.stroke(); ctx.restore(); }
 // a plain tag (no tail): THUMP THUMP, CLOP CLOP, CLATTER!, WAIT!
 const A2_MARGIN = 34;   // 24 px inside the panel's 9 px clip, in panel units (ALI-02 revision 1 series change)
 function a2LabelW(S, text, size) { return K.cached('a2lw:' + size + ':' + text, () => { const c = K.layer(1080, 1920), x = c.getContext('2d'); x.globalAlpha = 0; return S.label(x, text, 500, 500, 1, { size }).w || 0; }); }

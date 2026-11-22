@@ -36,19 +36,31 @@ function h4KnobInsert(ctx, t, S) {
   ctx.restore();
 }
 // ---------- her eyes in two star openings; the memory card of her own roof ----------
-function h4EyesClose(ctx, t, S) {
-  const tc = EH_T2(t), z = 1 + 0.08 * ehE(t, 120.44, 3.2), s = 5.2, eyeY = 560, hx = 500, hy = eyeY + 4 * s;
-  ctx.save(); ctx.translate(500, 560); ctx.scale(z, z); ctx.translate(-500, -560);
-  const pitch = 13 * 2 * s, rh = 150, cols = 9, rows = 9, x0 = hx - pitch * 4.5 - pitch * 0.0, y0 = eyeY - rh * 3.5;
-  // eye cells: columns 4 and 5 hold the eyes (centres at hx -/+ 13 s), row 3
-  const P = { x: hx, y: hy + 195 * s, s, dir: 1, lid: ehLid(t, 11, [121.6]), eyes: 'wide', mouth: 'closed', gaze: t < 121.82 ? [0.05, 0.15] : [-0.25, 0.2], handL: [20, -110], handR: [30, -112] };
-  if (t >= 123.6) { P.eyes = 'open'; P.lid = Math.max(P.lid, 0.2); P.mouth = 'smile'; P.wet = true; }
-  latticeScreen(ctx, { x0: hx - pitch * 5, x1: hx + pitch * 4, y0, y1: y0 + rh * rows, cols, rows, hole: 0.5, stars: [[4, 3], [5, 3]], starBig: 1.2, glow: 1, lw: 7, frame: 0, col: '#c89a5a', t: tc, behind: (c) => { person(c, ehDressP(EH_PRINCESS, P));
-    for (const sx of [-1, 1]) { ctx.save(); ctx.globalAlpha = 0.9; ehGlint(c, hx + sx * 13 * s - 14, eyeY - 18, 22, 0.5); ctx.restore(); } } });
+function h4EyesClose(ctx, t, S) {   // review 1 note 2: dark cells, two whole anime eyes in the middle third, light from outside
+  const tc = EH_T2(t), z = 1 + 0.05 * ehE(t, 120.44, 3.6), EY = 540, EX = [372, 628], PX = 256, PY = 240;
+  ctx.save(); ctx.translate(500, EY); ctx.scale(z, z); ctx.translate(-500, -EY);
+  // behind: dark warm interior, her face only a soft skin tone, the veil above the brows
+  ehGrad(ctx, -100, -100, 1200, 1430, [[0, '#3a1a30'], [0.5, '#4a2430'], [1, '#2a1620']]);
+  ctx.save(); ctx.globalAlpha = 0.55; shape(ctx, ell(500, 700, 470, 640, 40), '#b87868', { lw: 0 }); ctx.globalAlpha = 0.6; shape(ctx, [[-100, 300], [200, 330], [500, 320], [800, 330], [1100, 300], [1100, -100], [-100, -100]], '#8a6a90', { lw: 0 }); ctx.restore();
+  const op = (c) => { for (const ex of EX) { c.moveTo(ex + 124, EY); c.ellipse(ex, EY, 124, 98, 0, 0, Math.PI * 2); } };
+  // inside the two eye openings: lit skin, brows, whole eyes
+  const lid = t < 121.82 ? 0.5 + 0.5 * ehLid(t, 11, [121.3]) : t < 121.9 ? 0.6 : t < 123.6 ? 0 : 0.18, wide = t >= 121.82 && t < 123.6, pupil = t >= 121.82 ? (t < 121.96 ? 0.55 : 0.72) : 1;
+  const shine = ehE(tc, 122.54, 0.4), tear = t >= 123.6 ? ehE(tc, 123.6, 0.5) : 0, gaze = t < 121.82 ? [-0.25, 0.25] : [0, 0.05];
+  ctx.save(); ctx.beginPath(); op(ctx); ctx.clip(); ctx.fillStyle = H4_SKIN; ctx.fillRect(0, EY - 130, 1000, 260); ctx.fillStyle = '#e8b090'; ctx.fillRect(0, EY + 70, 1000, 60);
+    EX.forEach((ex, i) => { const sd = i ? 1 : -1, by = EY - 66 - (wide ? 12 : 0) + 4 * Math.sin(tc * 2); ctx.strokeStyle = '#2a1420'; ctx.lineCap = 'round'; ctx.lineWidth = 12; ctx.beginPath(); ctx.moveTo(ex - sd * 70, by + 10); ctx.quadraticCurveTo(ex, by - 14, ex + sd * 80, by + 6); ctx.stroke();
+      h4Eye(ctx, ex + sd * 6, EY + 8, 196 * (wide ? 1.04 : 1), { side: sd, lid, gaze, wide, pupil, shine, tear: sd < 0 ? tear : tear * 0.7 }); });
   ctx.restore();
+  // the lattice runs off the panel on every side; the two eye cells are round openings
+  ctx.beginPath(); ctx.rect(-200, -200, 1400, 1630);
+  for (let j = -3; j <= 3; j++) for (let i = -3; i <= 3; i++) { const cx = EX[0] + i * PX, cy = EY + j * PY; if (j === 0 && (i === 0 || i === 1)) continue; const r = 92, pts = (i + j) % 2 === 0 ? ehStarPts(cx, cy, r) : ehCrossPts(cx, cy, r * 0.9); ctx.moveTo(pts[0][0], pts[0][1]); for (let q = 1; q < pts.length; q++) ctx.lineTo(pts[q][0], pts[q][1]); ctx.closePath(); }
+  op(ctx); ctx.fillStyle = '#b8864a'; ctx.fill('evenodd'); ctx.strokeStyle = '#4a2a14'; ctx.lineWidth = 8; ctx.stroke();
+  ctx.save(); ctx.globalAlpha = 0.4; ctx.strokeStyle = '#e8c088'; ctx.lineWidth = 5; for (let i = -1; i < 5; i++) { const x = EX[0] - PX / 2 + i * PX; ctx.beginPath(); ctx.moveTo(x, -100); ctx.lineTo(x, 1330); ctx.stroke(); } ctx.restore();
+  ctx.restore();
+  // a pale moonlight band crosses the screen (121.82 - 122.6)
+  if (t >= 121.82 && t < 122.6) ehBand(ctx, [0, 0, 1000, 1230], (t - 121.82) / 0.78, { w: 200, alpha: 0.4, col: '#dfe8ff', angle: -0.35 });
   // the memory card: her roof at night, she and Firuz at the parapet, the moon path forming on the river
   const k = ehE(EH_T2(t), 121.82, 0.25) * (1 - ehE(EH_T2(t), 124.05, 0.25));
-  memoryCard(ctx, 290, 250, k, t, { s: 1.1, draw: (c, w, h) => {
+  memoryCard(ctx, 270, 1010, k, t, { s: 1.0, draw: (c, w, h) => {
     ehGrad(c, 0, 0, w, h, [[0, '#4a4aa8'], [0.6, '#8a6ab8'], [1, '#d890a8']]); ehMoon(c, w - 70, 60, 28, t, 1);
     c.fillStyle = '#2e4aa8'; c.fillRect(0, 150, w, 34); moonPath(c, [[w - 70, 152], [w * 0.3, 176]], t, ehE(t, 122.54, 0.8), { w: 2, w1: 6, scatter: 60 });
     c.fillStyle = '#e8c8b8'; c.fillRect(0, 196, w, h - 196); for (let x = 4; x < w; x += 26) c.fillRect(x, 186, 14, 12);

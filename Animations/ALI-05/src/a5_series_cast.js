@@ -25,6 +25,7 @@ function abNewMerchant(ctx, t, P, m, o = {}) {
     else { a2HangCloak(ctx, { ...Q, x: Q.x + d * 6, y: Q.y + 4 }, tc, A5_GOLD, o.kick || 0, 0.45); a2HangCloak(ctx, Q, tc, A5_CLOAK, o.kick || 0, 0.45); }
   }
   abPerson(ctx, Q, m, { costume: 'merchant', ...Q, pal: abPal(AB_NEWM0, m) });
+  if (Q.mouth === 'grin' && !Q.talk) a5Grin(ctx, Q, A5_NM);   // revision 1: the Library person has no 'grin' mouth (it falls back to a flat line)
   if (o.fine) a5Feather(ctx, Q, o.feather || 0);
   // the cuffs: cream sleeve ends over the hands (the hands are hidden all film unless a cuff slides back)
   for (const i of [0, 1]) { const cf = K.clamp(i ? o.cuffR ?? 1 : o.cuffL ?? 1); const [hx, hy] = a2Hand(Q, i, A5_NM);
@@ -32,6 +33,14 @@ function abNewMerchant(ctx, t, P, m, o = {}) {
     if (cf > 0.02) { const sc = Q.s * (Q.sq || 1), r = 15 * sc * cf; celShade(ctx, ell(hx, hy - 4 * sc, r * 1.05, r, 14), '#f6e2c0', '#d8b88a', { light: [-1, -1], off: r * 0.35, lw: 2.5, line: '#8a6a3a' }); } }
   return Q;
 }
+// a5Grin: the merchant's toothy switch-on grin drawn over the face (a white D of teeth under the moustache, cheek creases); B body defaults
+function a5Grin(ctx, Q, B, k = 1) { const pt = (x, y) => a2HeadPt(Q, x, y, B), w = 17 * k;
+  const top = [], bot = []; for (let i = 0; i <= 8; i++) { const u = i / 8, x = K.lerp(-w, w, u); top.push(pt(x, 19 - 3 * Math.sin(Math.PI * u) * 0)); bot.push(pt(x, 21 + 13 * k * Math.sin(Math.PI * u))); }
+  ctx.save(); ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.beginPath(); [...top, ...bot.reverse()].forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.closePath();
+  ctx.fillStyle = '#fffaf0'; ctx.fill(); ctx.strokeStyle = '#2b1a3a'; ctx.lineWidth = 3.2; ctx.stroke();
+  ctx.lineWidth = 2; ctx.beginPath(); const [a, b] = [pt(-w * 0.85, 25), pt(w * 0.85, 25)]; ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); for (const x of [-8, 0, 8]) { const [c, d] = [pt(x * k, 20), pt(x * k, 28 + 3 * k)]; ctx.moveTo(c[0], c[1]); ctx.lineTo(d[0], d[1]); } ctx.stroke();
+  ctx.lineWidth = 2.6; for (const sd of [-1, 1]) { const [c, d] = [pt(sd * (w + 2), 14), pt(sd * (w + 6), 24)]; ctx.beginPath(); ctx.moveTo(c[0], c[1]); ctx.lineTo(d[0], d[1]); ctx.stroke(); }
+  ctx.restore(); }
 // the leader underneath (the light band): the same pose in indigo and crimson (ab_cast abLeader + cloak)
 function a5LeaderAs(ctx, t, P, m, o = {}) { return a2Lead(ctx, t, { ...P }, m, { shc: o.shc, kick: o.kick || 0, shadow: false }); }
 

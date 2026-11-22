@@ -30,10 +30,11 @@ function h4S1Panel(ctx, t, S) {
   if (t >= 3.68 && t < 4.3) { PR.handR = h4Loc(H, ps, [EH_EBG.knob[0] - 6, EH_EBG.knob[1] + 4], EH_SEAT2.rear, EH_SEAT2.rearDy); PR.gaze = [0.8, 0.8]; }
   if (t >= 5.66) { PF.gaze = gazePlan(tc, [[5.66, [-1, 0.6]], [6.0, [1, 0.6]], [6.4, [0.2, -0.3]], [6.9, [0.6, 0.9]]], 0.1); PF.lurch = 0.12; PF.mouth = 'closed'; PF.brow = 0.1; PF.handL = [50, -110]; PF.handR = [40, -112]; }
   if (t >= 6.22) { PR.gaze = [0.6, 0.9]; PR.tip = 0.1 * pulse(tc, 6.6, 0.5); PR.handL = [70, -140 - 30 * pulse(tc, 6.8, 0.5)]; PR.mouth = 'smirk'; PR.lid = 0.3; }
+  // the near cloud layer passes BEHIND the riders (review 1 note 6: no wash over the characters)
+  ehSkyFront(ctx, t, { sx: -600 * t, sy: 0, cloud: g < 0.5 ? 'high' : 'gold', a: 0.45 });
   castFinish(ctx, H.x, H.y + 60 * H.s, 760 * H.s, 1000 * H.s, (c) => { ehWindRibbons(c, H, tc, { ang: Math.PI + 0.05 + 0.2 * ehE(t, 3.68, 0.9), len: 240 });
     twoRiders(c, H, { who: 'princess', D: EH_PRINCESS, P: PF }, { who: 'inventor', D: EH_INVENTOR, P: PR }, t, { tc, tail: { stream: 1, torn: true, ang: Math.PI * 1.02 }, veil: { stream: 1 }, armOver: t < 4.3 ? ehHorsePt(H, EH_EBG.knob) : null }); }, { rim: '#fff2c0', light: g < 0.5 ? [-1, -1] : [1, -1], rimW: 2.5 });
   if (t > 2.0 && t < 2.6) { const [x, y] = ehHorsePt(H, EH_EBG.lever); ehGlint(ctx, x, y, 22, (t - 2.0) / 0.6); }
-  ehSkyFront(ctx, t, { sx: -600 * t, sy: 0, cloud: g < 0.5 ? 'high' : 'gold', a: 0.45 });
   // the cloud deck sweeps over the frame while the sky is repainted (2.84 - 3.5)
   { const k = Math.sin(Math.PI * K.clamp((t - 2.7) / 0.95)); if (k > 0) { ctx.save(); ctx.globalAlpha *= Math.min(1, k * 1.4); const pal = g < 0.5 ? 'high' : 'gold';
     for (let i = 0; i < 4; i++) h1Strip(ctx, h1DeckNear(pal), -700 * t + i * 330, K.lerp(1230, -120 + i * 300, k) - 120, H1_DW, 420); ctx.restore(); } }
