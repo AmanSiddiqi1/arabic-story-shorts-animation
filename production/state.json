@@ -9956,6 +9956,111 @@
 "msg": "revise v2 Animations/HORSE-04/renders/HORSE-04_v2.mp4 (claude-opus-5-5)",
 "story_id": "HORSE-04",
 "t": "2026-11-23T08:09:15"
+},
+{
+"id": 1414,
+"kind": "agent",
+"msg": "review2 agent a218b0f2edae567f9",
+"story_id": "HORSE-04",
+"t": "2026-11-23T08:09:45"
+},
+{
+"id": 1415,
+"kind": "done",
+"msg": "review2 review 2: REVISE (claude-fable-5-2)",
+"story_id": "HORSE-04",
+"t": "2026-11-23T08:13:06"
+},
+{
+"id": 1416,
+"kind": "finalized",
+"msg": "v2 -> MP4s/The Stolen Horse - 80s Cel Anime 9x16 - Cairo.mp4",
+"story_id": "HORSE-04",
+"t": "2026-11-23T08:13:06"
+},
+{
+"id": 1417,
+"kind": "cloud-render",
+"msg": "v2: PASS run 45086793995 commit 1c468b668c",
+"story_id": "ALI-05",
+"t": "2026-11-23T08:22:31"
+},
+{
+"id": 1418,
+"kind": "done",
+"msg": "revise v2 Animations/ALI-05/renders/ALI-05_v2.mp4 (claude-opus-5-5)",
+"story_id": "ALI-05",
+"t": "2026-11-23T08:22:32"
+},
+{
+"id": 1419,
+"kind": "claim",
+"msg": "review2 claimed (fable)",
+"story_id": "ALI-05",
+"t": "2026-11-23T08:22:51"
+},
+{
+"id": 1420,
+"kind": "agent",
+"msg": "review2 agent a78a9594b2c829cbe",
+"story_id": "ALI-05",
+"t": "2026-11-23T08:23:03"
+},
+{
+"id": 1421,
+"kind": "done",
+"msg": "review2 review 2: UNKNOWN (claude-fable-5-2)",
+"story_id": "ALI-05",
+"t": "2026-11-23T08:25:50"
+},
+{
+"id": 1422,
+"kind": "finalized",
+"msg": "v2 -> MP4s/The Unexpected Guest - 80s Cel Anime 9x16 - Cairo.mp4",
+"story_id": "ALI-05",
+"t": "2026-11-23T08:25:50"
+},
+{
+"id": 1423,
+"kind": "cloud-render",
+"msg": "v2: PASS run 45087683377 commit 9ebd6f25cd",
+"story_id": "HORSE-05",
+"t": "2026-11-23T08:37:27"
+},
+{
+"id": 1424,
+"kind": "done",
+"msg": "revise v2 Animations/HORSE-05/renders/HORSE-05_v2.mp4 (claude-opus-5-5)",
+"story_id": "HORSE-05",
+"t": "2026-11-23T08:37:35"
+},
+{
+"id": 1425,
+"kind": "claim",
+"msg": "review2 claimed (fable)",
+"story_id": "HORSE-05",
+"t": "2026-11-23T08:37:53"
+},
+{
+"id": 1426,
+"kind": "agent",
+"msg": "review2 agent aad1e1a8512648099",
+"story_id": "HORSE-05",
+"t": "2026-11-23T08:38:02"
+},
+{
+"id": 1427,
+"kind": "done",
+"msg": "review2 review 2: PASS WITH NOTES (claude-fable-5-2)",
+"story_id": "HORSE-05",
+"t": "2026-11-23T08:39:21"
+},
+{
+"id": 1428,
+"kind": "finalized",
+"msg": "v2 -> MP4s/The Rescue in the Sky - 80s Cel Anime 9x16 - Cairo.mp4",
+"story_id": "HORSE-05",
+"t": "2026-11-23T08:39:21"
 }
 ],
 "plans": [
@@ -12956,6 +13061,26 @@
 "status": "PASS",
 "story_id": "HORSE-04",
 "version": "v2"
+},
+{
+"created": "2026-11-23T08:22:31",
+"duration": 137.833,
+"path": "Animations/ALI-05/renders/ALI-05_v2.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 137.833}, \"end_hold\": 4.02, \"decode\": \"OK\", \"lufs\": -15.0, \"sync\": {\"lag_ms\": 0, \"corr\": 1.0}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-23T00:14:58\", \"cloud_run\": \"45086793995\", \"cloud_commit\": \"1c468b668c7dcdfe0d5a0a12db0fdc84f6738770\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "ALI-05",
+"version": "v2"
+},
+{
+"created": "2026-11-23T08:37:27",
+"duration": 148.5,
+"path": "Animations/HORSE-05/renders/HORSE-05_v2.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 148.5}, \"end_hold\": 3.99, \"decode\": \"OK\", \"lufs\": -14.9, \"sync\": {\"lag_ms\": 0, \"corr\": 0.999}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-23T00:26:55\", \"cloud_run\": \"45087683377\", \"cloud_commit\": \"9ebd6f25cd19a72c0a82837da18be457c1e60c70\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "HORSE-05",
+"version": "v2"
 }
 ],
 "reviews": [
@@ -13966,6 +14091,33 @@
 "round": 1,
 "story_id": "ALI-06",
 "verdict": "REVISE"
+},
+{
+"agent_id": "a218b0f2edae567f9",
+"created": "2026-11-23T08:13:06",
+"model": "claude-fable-5-2",
+"path": "Animations/HORSE-04/review/fable_review_2.md",
+"round": 2,
+"story_id": "HORSE-04",
+"verdict": "REVISE"
+},
+{
+"agent_id": "a78a9594b2c829cbe",
+"created": "2026-11-23T08:25:50",
+"model": "claude-fable-5-2",
+"path": "Animations/ALI-05/review/fable_review_2.md",
+"round": 2,
+"story_id": "ALI-05",
+"verdict": "UNKNOWN"
+},
+{
+"agent_id": "aad1e1a8512648099",
+"created": "2026-11-23T08:39:21",
+"model": "claude-fable-5-2",
+"path": "Animations/HORSE-05/review/fable_review_2.md",
+"round": 2,
+"story_id": "HORSE-05",
+"verdict": "PASS WITH NOTES"
 }
 ],
 "stories": [
@@ -17145,7 +17297,7 @@
 "words_status": "supplied"
 },
 {
-"approval": "none",
+"approval": "pending",
 "assembly_file": null,
 "collection": "Ali Baba",
 "completed_before": 0,
@@ -17164,7 +17316,7 @@
 "segments": "[\"ALI-05-P01-S01\", \"ALI-05-P01-S02\", \"ALI-05-P01-S03\", \"ALI-05-P01-S04\", \"ALI-05-P01-S05\", \"ALI-05-P01-S06\", \"ALI-05-P01-S07\", \"ALI-05-P01-S08\"]",
 "title_ar": "الضيف غير المتوقع",
 "title_en": "The Unexpected Guest",
-"updated": "2026-11-21T15:32:06",
+"updated": "2026-11-23T08:25:50",
 "words_file": "ALI-05_The_Unexpected_Guest_slowed.mp3.words.json",
 "words_sha": "6c138458cc752f256e54821a1cdfa36bdfcbcd7ca507920ab8db049e67eb0074",
 "words_status": "supplied"
@@ -17270,7 +17422,7 @@
 "words_status": "supplied"
 },
 {
-"approval": "none",
+"approval": "pending",
 "assembly_file": null,
 "collection": "The Ebony Horse",
 "completed_before": 0,
@@ -17289,13 +17441,13 @@
 "segments": "[\"HORSE-04-P01-S01\", \"HORSE-04-P01-S02\", \"HORSE-04-P01-S03\", \"HORSE-04-P01-S04\", \"HORSE-04-P01-S05\", \"HORSE-04-P01-S06\", \"HORSE-04-P01-S07\", \"HORSE-04-P01-S08\"]",
 "title_ar": "الحصان المسروق",
 "title_en": "The Stolen Horse",
-"updated": "2026-11-21T15:32:10",
+"updated": "2026-11-23T08:13:06",
 "words_file": "HORSE-04_The_Stolen_Horse_slowed.mp3.words.json",
 "words_sha": "8792972a169f599516266c0e7fecb14bfe4d767fcb2fbeba2dc20df948fbb788",
 "words_status": "supplied"
 },
 {
-"approval": "none",
+"approval": "pending",
 "assembly_file": null,
 "collection": "The Ebony Horse",
 "completed_before": 0,
@@ -17314,7 +17466,7 @@
 "segments": "[\"HORSE-05-P01-S01\", \"HORSE-05-P01-S02\", \"HORSE-05-P01-S03\", \"HORSE-05-P01-S04\", \"HORSE-05-P01-S05\", \"HORSE-05-P01-S06\", \"HORSE-05-P01-S07\", \"HORSE-05-P01-S08\"]",
 "title_ar": "النجاة في السماء",
 "title_en": "The Rescue in the Sky",
-"updated": "2026-11-21T15:32:11",
+"updated": "2026-11-23T08:39:21",
 "words_file": "HORSE-05_The_Rescue_in_the_Sky_slowed.mp3.words.json",
 "words_sha": "6cf463fc6a6ab34a19164a97a374336411ecd320ca16d8760960088a1908c484",
 "words_status": "supplied"
@@ -22663,15 +22815,15 @@
 {
 "agent_id": "afc75d20f1038a88c",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-23T08:22:32",
 "id": 377,
 "model": "opus",
-"notes": null,
-"outputs": null,
+"notes": "tokens {\"turns\": 105, \"input_tokens\": 214, \"cache_creation_input_tokens\": 220871, \"cache_read_input_tokens\": 15622780, \"output_tokens\": 75884}",
+"outputs": "v2 Animations/ALI-05/renders/ALI-05_v2.mp4",
 "pid": null,
 "stage": "revise",
 "started": "2026-11-23T07:33:30",
-"status": "running",
+"status": "done",
 "story_id": "ALI-05"
 },
 {
@@ -22761,15 +22913,15 @@
 {
 "agent_id": "a966424f3c875be9b",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-23T08:37:35",
 "id": 384,
 "model": "opus",
-"notes": null,
-"outputs": null,
+"notes": "tokens {\"turns\": 27, \"input_tokens\": 58, \"cache_creation_input_tokens\": 138625, \"cache_read_input_tokens\": 2784970, \"output_tokens\": 28847}",
+"outputs": "v2 Animations/HORSE-05/renders/HORSE-05_v2.mp4",
 "pid": null,
 "stage": "revise",
 "started": "2026-11-23T07:58:59",
-"status": "running",
+"status": "done",
 "story_id": "HORSE-05"
 },
 {
@@ -22787,18 +22939,46 @@
 "story_id": "ALI-06"
 },
 {
-"agent_id": null,
+"agent_id": "a218b0f2edae567f9",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-23T08:13:06",
 "id": 386,
 "model": "fable",
 "notes": null,
-"outputs": null,
+"outputs": "review 2: REVISE",
 "pid": null,
 "stage": "review2",
 "started": "2026-11-23T08:06:35",
-"status": "running",
+"status": "done",
 "story_id": "HORSE-04"
+},
+{
+"agent_id": "a78a9594b2c829cbe",
+"attempt": 1,
+"finished": "2026-11-23T08:25:50",
+"id": 387,
+"model": "fable",
+"notes": null,
+"outputs": "review 2: UNKNOWN",
+"pid": null,
+"stage": "review2",
+"started": "2026-11-23T08:22:51",
+"status": "done",
+"story_id": "ALI-05"
+},
+{
+"agent_id": "aad1e1a8512648099",
+"attempt": 1,
+"finished": "2026-11-23T08:39:21",
+"id": 388,
+"model": "fable",
+"notes": null,
+"outputs": "review 2: PASS WITH NOTES",
+"pid": null,
+"stage": "review2",
+"started": "2026-11-23T08:37:53",
+"status": "done",
+"story_id": "HORSE-05"
 }
 ],
 "usage_log": [

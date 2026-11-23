@@ -11,17 +11,17 @@ function a6Walk(xf, tc, def = 1, stride = 16) { const W = walk(xf, tc, { stride 
 function a6Drop(ctx, x, y, p) { if (p <= 0 || p >= 1) return; ctx.save(); ctx.translate(x, y + 30 * p); ctx.globalAlpha *= 1 - p * 0.6; shape(ctx, [[0, -14], [7, 0], [0, 7], [-7, 0]], '#9ad8ff', { lw: 2, line: '#2a5a8a' }); ctx.restore(); }
 
 // ---------- positions (x keys) ----------
-const A6_MX = (u) => kfn(u, [[0, 215], [0.15, 215], [1.4, 390], [11.74, 390], [12.1, 372], [23.6, 372], [24.1, 440], [44.78, 440], [45.6, 470], [55.0, 470], [56.0, 600], [59.98, 600], [61.2, 650], [66.9, 650], [67.28, 708], [67.9, 708], [68.6, 620]]);
+const A6_MX = (u) => kfn(u, [[0, 215], [0.15, 215], [1.4, 390], [11.74, 390], [12.1, 372], [23.6, 372], [24.1, 440], [44.78, 440], [45.6, 470], [55.0, 470], [56.0, 600], [59.98, 600], [61.2, 650], [66.9, 650], [67.28, 708], [67.85, 708], [68.35, 590]]);
 const A6_GX = (u) => kfn(u, [[0, 660], [0.25, 660], [1.3, 500], [1.5, 488], [16.45, 488], [17.1, 518], [18.42, 520], [19.2, 690], [36.84, 690], [37.8, 640], [55.0, 640], [57.0, 760], [68.6, 760], [69.4, 748], [69.75, 748], [70.6, 715]]);
-const A6_AX = (u) => kfn(u, [[11.2, 175], [11.3, 175], [11.9, 250], [23.6, 250], [23.75, 250], [24.4, 330], [28.06, 330], [28.6, 300], [54.6, 300], [56.4, 500], [67.6, 500], [68.4, 470]]);
+const A6_AX = (u) => kfn(u, [[11.2, 175], [11.3, 175], [11.9, 250], [23.6, 250], [23.75, 250], [24.4, 305], [28.06, 305], [28.6, 285], [54.6, 285], [56.4, 500], [67.6, 500], [68.4, 470]]);
 const A6_NX = (u) => kfn(u, [[11.2, 172], [27.8, 172], [28.1, 222], [28.4, 205], [44.78, 205], [45.6, 400]]);
 const A6_GUARDX = [ // tall, stout, young, captain: in by the back gate, to the half ring; out with the procession
   // revision 1 (notes 1, 7): a staggered half ring (captain 60 px further right), then the procession in profile with ~110 px gaps:
-  // guest 748, young guard 870, captain 970, tall 1080, stout 1190; nobody crosses the guest; the neighbour stays at the back gate
-  (u) => kfn(u, [[55.2, 1590], [57.08, 1080], [70.0, 1080], [70.6, 1010]]),
-  (u) => kfn(u, [[55.45, 1590], [57.2, 1190], [70.0, 1190], [70.6, 1120]]),
-  (u) => kfn(u, [[55.7, 1590], [57.3, 1300], [62.7, 1300], [63.5, 870], [70.0, 870], [70.6, 800]]),
-  (u) => kfn(u, [[54.96, 1590], [57.0, 970], [70.0, 970], [70.6, 900]]),
+  // guest 748, young guard 895, captain 1030, tall 1160, stout 1290; nobody crosses the guest; the neighbour stays at the back gate
+  (u) => kfn(u, [[55.2, 1590], [57.08, 1160], [70.0, 1160], [70.6, 1090]]),
+  (u) => kfn(u, [[55.45, 1590], [57.2, 1290], [70.0, 1290], [70.6, 1220]]),
+  (u) => kfn(u, [[55.7, 1590], [57.3, 1400], [62.6, 1400], [63.5, 870], [64.64, 870], [65.0, 895], [70.0, 895], [70.6, 825]]),
+  (u) => kfn(u, [[54.96, 1590], [57.0, 1030], [70.0, 1030], [70.6, 960]]),
 ];
 const A6_NEIGHX = (u) => kfn(u, [[56.38, 1590], [57.6, 1530]]);
 
@@ -54,7 +54,7 @@ function a6M(t) { const tc = AB_T2(t), W = a6Walk(A6_MX, tc, 1, 15);
   else { P.mouth = 'closed'; P.brow = 0.15; P.gaze = [1, 0];
     if (tc < 67.6) { P.handRW = [726, 806 + 3 * Math.sin(tc * 30)]; P.handL = [30, -120]; }
     else if (tc < 67.9) { const u = beatIn(tc, 67.6, 67.85); P.handLW = [700, 782 - 56 * u]; P.handRW = [758, 782 - 56 * u]; }
-    else { P.dir = tc < 68.6 ? -1 : 1; P.handL = PERSON_HANDS.clasp.L; P.handR = PERSON_HANDS.clasp.R; if (tc > 69.48) { P.gaze = [1, -0.05]; P.lid = Math.max(P.lid, 0.1); P.brow = 0; } } }
+    else { P.dir = tc < 68.35 ? -1 : 1; P.handL = PERSON_HANDS.clasp.L; P.handR = PERSON_HANDS.clasp.R; if (tc > 69.48) { P.gaze = [1, -0.05]; P.lid = Math.max(P.lid, 0.1); P.brow = 0; } } }
   return { P, o, box, key }; }
 
 // ---------- the guest ----------
@@ -110,7 +110,7 @@ function a6A(t) { const tc = AB_T2(t);
   if (tc < 16.45) { const k = beatIn(tc, 14.6, 14.85); if (tc > 14.5) { P.mouth = 'o'; P.brow = -0.6; P.lid = 0; P.handL = [K.lerp(-26, -60, k), K.lerp(-104, -205, k)]; P.handR = [K.lerp(26, 60, k), K.lerp(-104, -205, k)]; P.sq *= 1 + 0.08 * pulse(tc, 14.6, 0.4); } }
   else if (tc < 23.6) { P.gaze = tc > 18.4 ? [1, -0.05] : [1, 0]; }
   else if (tc < 28.6) { P.brow = 0.55; P.handL = [-30, -130]; P.handR = [36, -132]; P.tip = tc < 24.4 ? 0.08 : 0.02;
-    if (tc >= 24.4 && tc < 28.06) { P.ph = 1.25; P.amp = 1; P.tip = 0.05; P.drop = 2; P.handL = [-40, -150]; P.handR = [52, -150]; P.gaze = gazePlan(tc, [[24.4, [1, 0]], [25.2, [0.7, 0.35]], [26.4, [1, 0]]], 0.1); P.brow = 0.1; P.mouth = 'o'; }   // rev 1 note 3: frozen mid-step, rear foot up
+    if (tc >= 24.4 && tc < 28.06) { P.ph = 1.25; P.amp = 1; P.tip = 0.05; P.drop = 2; P.handL = [-40, -150]; P.handR = [40, -138]; P.gaze = gazePlan(tc, [[24.4, [1, 0]], [25.2, [0.7, 0.35]], [26.4, [1, 0]]], 0.1); P.brow = 0.1; P.mouth = 'o'; }   // rev 1 note 3: frozen mid-step, rear foot up
     if (tc >= 28.06) { P.dir = 1; P.sq *= 1 - 0.04 * pulse(tc, 28.1, 0.4); P.handL = [-92, -140]; P.brow = 0.2; P.mouth = 'closed'; } }
   else if (tc < 54.21) { P.handL = tc < 30 ? [-92, -140] : [-26, -104]; P.gaze = tc > 39.9 && tc < 40.4 ? [-1, 0] : [1, 0]; if (tc > 36.0 && tc < 41.2) P.tip += 0.025 * beatIn(tc, 37.0, 37.4) * (1 - beatIn(tc, 40.8, 41.2));   // rev 1 note 9
     if (tc >= 51.46) { P.handR = PERSON_HANDS.moustache.R; P.handR = [20, -160 + 6 * Math.sin(tc * 8)]; P.tip = 0.06 * beatIn(tc, 51.46, 51.8) * (1 - beatIn(tc, 53.4, 54.0)); P.brow = 0.5; P.lid = Math.max(P.lid, 0.3); } }

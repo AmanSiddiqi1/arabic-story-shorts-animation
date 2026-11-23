@@ -69,7 +69,7 @@ function a6FeastWorld(ctx, t, cam) { const tc = AB_T2(t), late = tc >= 97.44;
   // the table (front pass) and the coin
   // rev 1 note 2: a larger coin (1.5), dropped from his raised hand, spinning, landing flat on the table
   feastTable(ctx, t, {}); const cs = 1.5;
-  if (late && tc >= 101.32 && tc < 103.16) goldCoin(ctx, 1040, FS.top, cs, { spin: beatIn(tc, 101.32, 102.0), flat: tc > 102.0 });
+  if (late && tc >= 101.32 && tc < 103.16) { goldCoin(ctx, 1040, FS.top, cs, { spin: beatIn(tc, 101.32, 102.0), flat: tc > 102.0 }); if (tc < 101.9) abGlint(ctx, 1046, FS.top - 26, 26, (tc - 101.32) / 0.58); }
   if (late && S2.coin === 'hand') { const [hx, hy] = a2Hand(A, 1, { s: 0.95, age: 0.25 }); goldCoin(ctx, hx, hy - 6, cs, { spin: 1, glint: tc > 98.9 && tc < 99.5 ? (tc - 98.9) / 0.6 : 0 }); }
   if (late && tc >= 101.12 && tc < 101.32) { const [hx, hy] = a2Hand(A, 1, { s: 0.95, age: 0.25 }), u = beatIn(tc, 101.12, 101.32); goldCoin(ctx, K.lerp(hx, 1040, u), K.lerp(hy - 6, FS.top, u * u), cs, { spin: 0.15 + 0.1 * u }); }
   if (late && tc > 108.6 && tc < 110.05) { const cx = (u) => kfn(u, [[108.6, 760], [109.6, 870]]), cw = walk(cxF6, tc, { stride: 9 }); a5Cat(ctx, t, { x: cw.x, y: 910, gy: 910, dir: 1, sit: 0, ph: cw.ph, amp: cw.amp, gaze: [1, -0.3] }, A6_ESH); }
