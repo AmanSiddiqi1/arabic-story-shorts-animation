@@ -1,10 +1,10 @@
 // ===== HORSE-05: S17 days later, the road to his city (125.0 - 136.48). World units on the Library desertRoad (w 2400, city right,
 // gate about x 2070), dressed as Firuz's city: the cream palace with turquoise domes behind the wall, emerald banners on the gate.
 const H5_RDW = 2400, H5_RDGATE = 2070;
-const H5_RDCAM = [h5K(125.0, 520, 1.05, 1060), h5K(129.6, 1000, 1.05, 1060), h5K(130.2, 660, 1.05, 1060), h5K(130.9, 720, 1.05, 1060), h5K(131.5, 1600, 1.05, 1060),
+const H5_RDCAM = [h5K(125.0, 520, 1.05, 1060), h5K(129.6, 1000, 1.05, 1060), h5K(130.2, 470, 1.05, 1060), h5K(130.9, 600, 1.05, 1060), h5K(131.5, 1600, 1.05, 1060),
   h5K(134.6, 1800, 1.05, 1060), h5K(136.48, 1810, 1.05, 1060)];
 function h5RdCam(t) { return h5Cam(H5_RDCAM, t, H5_RDW, -800, 1230); }
-const H5_LEAD = H5_F([[125.0, 380], [131.4, 1300], [134.6, 1760], [136.48, 1840]]);
+const H5_LEAD = H5_F([[125.0, 380], [131.4, 1300], [133.44, 1760], [136.48, 1760]]);   // review 1: a real halt by 133.44 (planted hooves)
 // caravan members: [offset, lane y, kind, seed]
 const H5_CARAVAN = [[0, 905, 'firuz', 1], [-150, 935, 'princess', 2], [-330, 925, 'maid', 3], [-450, 912, 'guardA', 4], [-520, 930, 'guardB', 5], [-720, 915, 'camel', 6]];
 function h5RdSky() { return ehBakeAt('h5rdsky', 3000, 1300, (c, w, h) => { ehGrad(c, 0, 0, w, h, [[0, '#2f7fe8'], [0.55, '#8ac8ff'], [1, '#fff0d0']]);

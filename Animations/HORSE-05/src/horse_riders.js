@@ -26,9 +26,11 @@ function twoRiders(ctx, H, front, rear, t, o = {}) {
   ebonyHorse(ctx, H);
   const ride = (R, d, dy) => { const ps = R.P.s ?? R.D.s, F = ehRiderFrame(H, d, dy, R.P.lurch || 0, R.P.bob || 0, ps), Hs = ehSeatShift(H, d, dy);
     if (R.who === 'inventor' && o.tail !== false) { const tl = o.tail || {}, [hx, hy] = ehRiderPt(F, -14, -170); ehInvTailAt(ctx, hx, hy, ps, tc, { ang: tl.ang ?? (Math.PI / 2 + 0.5 * sg + (tl.stream || 0) * (sg > 0 ? 1.2 : -1.2)), stream: tl.stream || 0, torn: tl.torn, len: tl.len }); }
-    if (R.who === 'princess') { const [hx, hy] = ehRiderPt(F, -26, -122); const st = (o.veil && o.veil.stream) || 0; ehRibbon(ctx, hx, hy, Math.PI / 2 + sg * 0.35 + st * (sg > 0 ? 1.1 : -1.1) + idleSway(tc, 83, 0.05, 2.1), 120 * ps, 34 * ps, tc, '#fffaf0', { wave: 4 + 12 * st, hz: 1 + 1.6 * st, tip: 0.5, shade: '#d8d2e8', lw: 2.5, line: '#8a7aa8' }); }
+    if (R.who === 'princess' && !(o.veil && o.veil.behind)) { const [hx, hy] = ehRiderPt(F, -26, -122); const st = (o.veil && o.veil.stream) || 0; ehRibbon(ctx, hx, hy, Math.PI / 2 + sg * 0.35 + st * (sg > 0 ? 1.1 : -1.1) + idleSway(tc, 83, 0.05, 2.1), 120 * ps, 34 * ps, tc, '#fffaf0', { wave: 4 + 12 * st, hz: 1 + 1.6 * st, tip: 0.5, shade: '#d8d2e8', lw: 2.5, line: '#8a7aa8' }); }
     if (R.who === 'firuz' && o.cape !== false) { const cp = o.cape || {}, [nx, ny] = ehRiderPt(F, 0, -86); ehCapeFly(ctx, nx, ny, ps, tc, { stream: cp.stream || 0, ang: cp.ang ?? (sg > 0 ? Math.PI * 0.94 : Math.PI * 0.06), hangSide: -0.25 * sg }); }
     rideOn(ctx, noop, Hs, ehDressP(R.D, { ...R.P, s: ps }), { name: 'horse', reins: false }); return F; };
+  if (front && front.who === 'princess' && o.veil && o.veil.behind) { const ps = front.P.s ?? front.D.s, F = ehRiderFrame(H, EH_SEAT2.front, 0, front.P.lurch || 0, front.P.bob || 0, ps), [hx, hy] = ehRiderPt(F, -26, -122), st = o.veil.stream || 0;   // HORSE-05: veil drawn before the rear rider
+    ehRibbon(ctx, hx, hy, Math.PI / 2 + sg * 0.35 + st * (sg > 0 ? 1.1 : -1.1) + idleSway(tc, 83, 0.05, 2.1), 120 * ps, 34 * ps, tc, '#fffaf0', { wave: 4 + 12 * st, hz: 1 + 1.6 * st, tip: 0.5, shade: '#d8d2e8', lw: 2.5, line: '#8a7aa8' }); }
   if (rear) out.rear = ride(rear, EH_SEAT2.rear, EH_SEAT2.rearDy);
   if (front) out.front = ride(front, EH_SEAT2.front, 0);
   if (rear && o.armOver && out.rear) {   // redraw the rear rider clipped to a band along his reaching arm, over the front rider

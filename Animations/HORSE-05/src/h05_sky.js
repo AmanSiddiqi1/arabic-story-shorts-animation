@@ -39,7 +39,7 @@ function h5FieldsTile() {
       else if (R() < 0.25) { c.fillStyle = 'rgba(255,255,255,0.9)'; for (let k = 0; k < 7; k++) { c.beginPath(); c.ellipse(x + 15 + R() * 70, y + 15 + R() * 70, 4, 3, 0, 0, 7); c.fill(); } }
       else if (R() < 0.2) { c.strokeStyle = 'rgba(90,60,30,0.35)'; c.lineWidth = 1.5; for (let k = 8; k < 100; k += 12) { c.beginPath(); c.moveTo(x + k, y + 4); c.lineTo(x + k, y + 96); c.stroke(); } } }
     // three silver rivers braiding together
-    for (const [ph, amp, wd] of [[0, 60, 14], [1.7, 80, 10], [3.1, 50, 9]]) { c.lineCap = 'round'; c.strokeStyle = '#3a8ae0'; c.lineWidth = wd; c.beginPath(); for (let x = 0; x <= w; x += 10) c.lineTo(x, 250 + Math.sin(x / w * Math.PI * 2 + ph) * amp + Math.sin(x / w * Math.PI * 6) * 10); c.stroke(); c.strokeStyle = '#d8f0ff'; c.lineWidth = wd * 0.3; c.stroke(); }
+    for (const [ph, amp, wd] of [[0, 60, 30], [1.7, 80, 24], [3.1, 50, 20]]) { c.lineCap = 'round'; c.strokeStyle = '#3a8ae0'; c.lineWidth = wd; c.beginPath(); for (let x = 0; x <= w; x += 10) c.lineTo(x, 250 + Math.sin(x / w * Math.PI * 2 + ph) * amp + Math.sin(x / w * Math.PI * 6) * 10); c.stroke(); c.strokeStyle = '#d8f0ff'; c.lineWidth = wd * 0.3; c.stroke(); }
     // windmills, a waterwheel hut and a farm
     for (const [x, y] of [[140, 90], [560, 410], [690, 120]]) { c.fillStyle = '#f6ead0'; c.fillRect(x - 6, y - 16, 12, 18); c.strokeStyle = '#6a4a3a'; c.lineWidth = 3; for (let k = 0; k < 4; k++) { const a = k * Math.PI / 2 + 0.4; c.beginPath(); c.moveTo(x, y - 16); c.lineTo(x + Math.cos(a) * 16, y - 16 + Math.sin(a) * 16); c.stroke(); } }
     for (let i = 0; i < 4; i++) { const vx = R() * w, vy = R() * h; for (let k = 0; k < 6; k++) { c.fillStyle = ['#f6ead0', '#e8b888', '#d88a6a'][k % 3]; c.fillRect(vx + (R() - 0.5) * 36, vy + (R() - 0.5) * 22, 8, 6); } } });
@@ -53,8 +53,8 @@ function h5Land(ctx, y, k, t, o = {}) {   // perspective land from horizon y (as
   ctx.save(); ctx.globalCompositeOperation = 'screen'; ehGlints(ctx, [0, y + 120, 1000, 1230 - y - 120], t, 6, 88, 14); ctx.restore();
   ctx.restore(); }
 // a band of peaks along y (panel), scale k, scrolled by x0
-function h5Range(ctx, y, k, x0, col, sh, snow, seed) { const R = K.rng(seed), w = 2000; ctx.save();
-  for (let i = 0; i < 14; i++) { const bx = ((i * 160 * k + x0) % (w * k) + w * k) % (w * k) - 200, hh = (120 + R() * 140) * k, ww = (150 + R() * 90) * k;
+function h5Range(ctx, y, k, x0, col, sh, snow, seed) { const R = K.rng(seed), w = 2000, span = Math.max(w * k, 1500), n = Math.max(14, Math.ceil(span / (160 * k))); ctx.save();   // review 1: the band always runs past both panel edges
+  for (let i = 0; i < n; i++) { const bx = ((i * 160 * k + x0) % span + span) % span - 250, hh = (120 + R() * 140) * k, ww = (150 + R() * 90) * k;
     celShade(ctx, [[bx - ww, y + 30 * k], [bx, y - hh], [bx + ww, y + 30 * k]], col, sh, { light: [-1, -1], off: ww * 0.3, lw: 2.5, line: ehDark(sh, 0.3) });
     shape(ctx, [[bx - ww * 0.32, y - hh * 0.62], [bx, y - hh], [bx + ww * 0.34, y - hh * 0.6], [bx + ww * 0.1, y - hh * 0.7], [bx - ww * 0.08, y - hh * 0.58]], snow, { lw: 1.5, line: ehDark(sh, 0.2) }); }
   ctx.restore(); }
@@ -63,8 +63,9 @@ function h5Farmer(ctx, x, y, t, look) { const tc = EH_T2(t); for (const dx of [-
   seg(ctx, x - 4, y - 2, x - 4, y - 16, 4, '#4a6ac8', 0); const r = look ? -0.6 : 0; ctx.save(); ctx.translate(x - 4, y - 20); ctx.rotate(r); celShade(ctx, ell(0, 0, 9, 3, 10), '#f2d070', '#c8a040', { off: 1, lw: 1.2, line: '#6a4a10' }); ctx.restore(); }
 // ---------- S11 - S12: the flight home ----------
 function h5FlightHorse(t) { const tc = EH_T2(t), bob = idleSway(tc, 5, 6, 2.2);
-  if (t < 93.32) return ehRigP(430, 330 + bob + 30 * ehE(t, 90.9, 2), 0.8, 1, 0.02 + idleSway(tc, 6, 0.012, 3.0));
-  const dn = t < 96.56 ? 0 : ehE(t, 96.56, 0.5), cx = K.lerp(430, 470, ehE(t, 93.32, 1.5)), cy = 360 + bob + 70 * ehE(t, 96.56, 3.6);
+  if (t < 93.32) { const dr = ehE(t, 86.88, 1.2), dx = 40 * Math.sin((tc - 86.88) * 0.9) * dr, dy = 25 * Math.sin((tc - 86.88) * 1.3 + 0.6) * dr, bank = 0.05 * Math.sin((tc - 86.88) * 0.9 + 0.8) * dr;   // review 1: the rig drifts and banks
+    return ehRigP(430 + dx, 330 + bob + dy + 30 * ehE(t, 90.9, 2), 0.8, 1, 0.02 + bank + idleSway(tc, 6, 0.012, 3.0)); }
+  const dn = t < 96.56 ? 0 : ehE(t, 96.56, 0.5), d0 = 40 * Math.sin((93.32 - 86.88) * 0.9), cx = K.lerp(430 + d0, 470, ehE(t, 93.32, 1.5)), cy = 360 + bob + 70 * ehE(t, 96.56, 3.6);
   return ehRigP(cx, cy, 0.8, 1, 0.02 - 0.21 * dn + idleSway(tc, 6, 0.012, 3.0)); }
 function h5FlightPanel(ctx, t, S) {
   const tc = EH_T2(t), u = t - 86.88, H = h5FlightHorse(t), desc = t >= 96.56 ? ehE(t, 96.56, 1) : 0, hz = t < 96.4 ? 700 : 700 - 260 * ehE(t, 96.56, 3.6, 'inOut');
@@ -98,7 +99,7 @@ function h5FlightPanel(ctx, t, S) {
   const ps = h5PsF(H), PF = { lid: ehLid(t, 11, [92.64]), mouth: 'smile', gaze: [1, 0.3], handL: h5Loc(H, ps, EH_EBG.mane[5], EH_SEAT2.front), handR: [40, -112], lurch: 0.03 + idleSway(tc, 31, 0.02, 2.2) };
   const PR = { lid: ehLid(t, 3, [93.32]), mouth: 'smile', gaze: [1, 0.2], handL: [50, -110], handR: [60, -112], lurch: 0.02 + idleSway(tc, 37, 0.02, 2.3) };
   if (t >= 89.6 && t < 90.04) { PF.handR = [90, -130]; PF.gaze = [1, -0.3]; PR.mouth = 'open'; PR.lid = 0.3; }
-  if (t >= 90.04 && t < 92.1) { PF.lurch = 0.12; PF.handR = [24, -168]; PF.gaze = [1, 0.3]; }
+  if (t >= 90.04 && t < 92.1) { PF.lurch = 0.12; PF.handR = t < 90.9 ? [24, -168] : [120, -150]; PF.gaze = [1, 0.3]; if (t >= 91.06) { PR.lurch = 0.08; PR.gaze = [1, 0.15]; PR.lid = 0; } }   // she points ahead, he leans to look
   if (t >= 92.1 && t < 93.32) { PF.handR = [110, -160]; PF.bob = 6 * Math.abs(Math.sin(tc * 14)); PF.eyes = 'wide'; PF.mouth = 'open'; PF.lid = 0; }
   if (t >= 92.64 && t < 93.32) { PR.lurch = 0.1; PR.gaze = [1, 0.3]; PF.wet = t < 93.14 ? 1 : 0; }
   if (t >= 93.32) { PF.dir = -1; PF.gaze = [-1, -0.1]; PF.brow = 0.5; PF.mouth = 'closed'; PR.handL = [60, -200]; PR.handR = [70, -196]; PR.mouth = 'smile'; PR.brow = 0.4; }
@@ -106,11 +107,11 @@ function h5FlightPanel(ctx, t, S) {
   if (t >= 96.4) { PR.handL = [60, -214 + 6 * Math.sin(tc * 4)]; PR.handR = [70, -206 - 6 * Math.sin(tc * 4)]; PR.lid = 0; PR.mouth = 'open'; }
   if (t >= 98.26 && t < 99.2) { PF.handR = [10, -140]; PF.wet = t < 98.66 ? 1 : 0; PF.gaze = [0.6, 0.8]; PF.handL = h5Loc(H, ps, EH_EBG.mane[5], EH_SEAT2.front); }
   if (t >= 99.2) { PF.handR = h5Loc(H, ps, [EH_EBG.lever[0] - 6, EH_EBG.lever[1] + 10], EH_SEAT2.front); PF.gaze = [0.6, 0.8]; }
+  // through a thin deck: wisps whip past (97.3), drawn behind the rig (review 1: no front cloud over the cast)
+  if (t >= 97.1 && t < 97.9) { ctx.save(); ctx.globalAlpha *= Math.sin(Math.PI * (t - 97.1) / 0.8) * 0.85; for (let i = 0; i < 3; i++) ehCloud(ctx, 500 + (i - 1) * 380, 1300 - 2400 * (t - 97.1) + i * 220, 700, 160, '#ffffff', '#dfeaf8', 6, 61 + i); ctx.restore(); }
   const st = desc > 0 ? K.lerp(1, 0.8, desc) : 1, ang = Math.PI * (1 + 0.15 * desc);
   castFinish(ctx, H.x, H.y + 60 * H.s, 760 * H.s, 1000 * H.s, (c) => { ehWindRibbons(c, H, tc, { ang: Math.PI + 0.05 - 0.3 * desc, len: 260 }); h5Pair(c, H, PF, PR, t, { veil: { stream: st }, cape: { stream: st, ang } }); saddleRope(c, H, t, { lf: PF.lurch, lr: PR.lurch }); }, { rim: '#fff2c0', light: [-1, -1], rimW: 2.5 });
-  // through a thin deck: wisps whip past (97.3); front clouds below the riders only
-  if (t >= 97.1 && t < 97.9) { ctx.save(); ctx.globalAlpha *= Math.sin(Math.PI * (t - 97.1) / 0.8) * 0.85; for (let i = 0; i < 3; i++) ehCloud(ctx, 500 + (i - 1) * 380, 1300 - 2400 * (t - 97.1) + i * 220, 700, 160, '#ffffff', '#dfeaf8', 6, 61 + i); ctx.restore(); }
-  h1DeckFront(ctx, t, { pal: 'high', y: t < 96.56 ? 1030 : 1030 + 400 * desc, a: 0.75 });
+  h1DeckFront(ctx, t, { pal: 'high', y: t < 96.56 ? 1030 : 1030 + 400 * desc, a: 1 });
   const hd = h5RiderHeads(H, PF, PR);
   if (t >= 92.1 && t < 93.4) h5Say(ctx, S, [[92.1, 'HOME!']], t, hd.f, { gone: 93.2, size: 60, up: 150, dx: 80 });
   if (t >= 93.32 && t < 94.9) h5Say(ctx, S, [[93.32, 'MAY I?']], t, hd.f, { gone: 94.7, size: 50, up: 150, dx: 60 });
@@ -154,7 +155,7 @@ function h5RiverPanel(ctx, t, S) {
   if (t >= 102.48 && t < 103.4) { PF.handR = [120, -150]; PF.gaze = [1, 0.1]; }
   if (t >= 103.38) { PF.mouth = 'open'; PR.handL = [60, -200]; }
   const rig = (c) => { ehWindRibbons(c, H, tc, { ang: Math.PI + 0.05, len: 240 }); h5Pair(c, H, PF, PR, t, { veil: { stream: 1 }, cape: { stream: 1 } }); saddleRope(c, H, t, { lf: PF.lurch, lr: PR.lurch }); };
-  const wl = 800; ctx.save(); ctx.globalAlpha *= 0.35; for (let b = 0; b < 6; b++) { const y0 = wl + b * 70; ctx.save(); ctx.beginPath(); ctx.rect(0, y0, 1000, 70); ctx.clip(); ctx.translate(6 * Math.sin(tc * 6 + b), 0); ctx.translate(0, 2 * wl); ctx.scale(1, -1); rig(ctx); ctx.restore(); } ctx.restore();
+  const wl = 740; ctx.save(); ctx.globalAlpha *= 0.35; for (let b = 0; b < 7; b++) { const y0 = 760 + b * 70; ctx.save(); ctx.beginPath(); ctx.rect(0, y0, 1000, 70); ctx.clip(); ctx.translate(6 * Math.sin(tc * 6 + b), 0); ctx.translate(0, 2 * wl); ctx.scale(1, -1); rig(ctx); ctx.restore(); } ctx.restore();
   // the gold path of glints toward the towers (102.48 - 104.1)
   if (t >= 102.48) { const k = K.clamp((t - 102.48) / 0.5) * (1 - K.clamp((t - 104.1) / 0.6)); ctx.save(); ctx.globalCompositeOperation = 'screen'; for (let i = 0; i < 9; i++) { const px = K.lerp(380, (tx1 + tx2) / 2, i / 8), py = K.lerp(1150, 800, i / 8); ehGlint(ctx, px, py, 26 * k, ((t * 1.3 + i * 0.13) % 1)); ehGlow(ctx, px, py, 50, 0.4 * k, '#ffd36a'); } ctx.restore(); }
   castFinish(ctx, H.x, H.y + 60 * H.s, 760 * H.s, 1000 * H.s, rig, { rim: '#fff2c0', light: [-1, -1], rimW: 2.5 });
@@ -186,7 +187,7 @@ function h5SunsetPanel(ctx, t, S) {
   ctx.save(); ctx.lineCap = 'round'; ctx.strokeStyle = '#ffd88a'; ctx.lineWidth = 18; ctx.beginPath(); ctx.moveTo(880, 800); ctx.quadraticCurveTo(620, 900, 520, 1000); ctx.quadraticCurveTo(420, 1100, 160, 1240); ctx.stroke(); ctx.strokeStyle = '#fff4c8'; ctx.lineWidth = 6; ctx.stroke(); ctx.restore();
   ctx.save(); ctx.globalCompositeOperation = 'screen'; for (let i = 0; i < 5; i++) ehGlint(ctx, K.lerp(860, 200, i / 4), K.lerp(810, 1200, i / 4), 18, ((EH_T3(t) * 0.7 + i / 5) % 1)); ctx.restore();
   { const s = 0.3; ctx.fillStyle = '#5aa84a'; ctx.beginPath(); ctx.ellipse(220, 1140, 1050 * s, 160 * s, 0, 0, 7); ctx.fill(); ctx.drawImage(ehPalacePlate(), 220 - 710 * s, 1140 - 1020 * s, 1360 * s, 1020 * s); }
-  princessPalace(ctx, 870, 800, 0.08, {});
+  princessPalace(ctx, 860, 804, 0.15, {});
   const li = K.clamp((t - 146.4) / 0.6); if (li > 0) { ctx.save(); ctx.globalAlpha *= li; for (const [x, y] of [[160, 1080], [230, 1070], [290, 1085], [862, 790], [878, 792]]) ehGlow(ctx, x, y, 14, 0.9, '#ffd27a'); ctx.restore(); }
   // swallows (146.4)
   for (let i = 0; i < 3; i++) { const u = (t - 146.4 - i * 0.3) / 2.2; if (u > 0 && u < 1) bird(ctx, { kind: 'sparrow', x: 900 - 800 * u + i * 30, y: 560 - i * 30 + 12 * Math.sin(u * 9 + i), s: 0.2, dir: -1, fly: true, flap: Math.sin(tc * 22 + i * 1.7), pal: 1 }); }

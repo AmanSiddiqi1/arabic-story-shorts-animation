@@ -24,3 +24,4 @@ Series files copied unchanged from HORSE-04 (`horse_kit`, `horse_cast`, `horse_s
 - No separate artwork in picture balloons beyond the series sprites (princessPalace, palace plate, ehHorseSil, farPalaceToy).
 - The windmill/oxen/sheep in the fields are small marks in the baked tile; the farmer with two oxen is a small separate figure.
 - The cat riding the wooden horse on the cart sits on the cloth (not on a saddle under it).
+- 2026-11-23 revision 1: see review/revision_1.md (h5W world-reach fix, veil behind Firuz, reveal at zoom 1.3, draw-order rule for named characters).

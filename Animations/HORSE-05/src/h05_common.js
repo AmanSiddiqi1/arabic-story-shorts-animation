@@ -14,7 +14,7 @@ function h5Shadow(ctx, x, y, w, lift = 0, o = {}) { groundShadow(ctx, x, y, w, l
 // a person with its shadow and extras; o {cape, tail (torn), veil, helmet {tilt}, neck, spear {lean, hand}, vx, swing, crown {slip, lift}}
 function h5Fig(ctx, D, P, t, o = {}) {
   if (!P) return; const tc = EH_T2(t), lift = P.lift || 0; h5Shadow(ctx, P.x, P.y, 90 * (P.s || 1) * (P.child ? 0.7 : 1), lift);
-  const Q = { ...P, y: P.y - lift }; ctx.save(); if (P.alpha != null) ctx.globalAlpha *= P.alpha;
+  const Q = h5W({ ...P, y: P.y - lift }); ctx.save(); if (P.alpha != null) ctx.globalAlpha *= P.alpha;
   if (o.cape) ehCapeStand(ctx, Q, tc, { vx: o.vx || 0, swing: o.swing || 0 });
   if (o.tail) ehInvTail(ctx, Q, tc, { torn: true, vx: o.vx || 0, swing: o.swing || 0 });
   if (o.veil) ehVeilRibbon(ctx, Q, tc, { vx: o.vx || 0, swing: o.swing || 0 });
@@ -26,6 +26,12 @@ function h5Fig(ctx, D, P, t, o = {}) {
   if (o.after) o.after(ctx, Q);
   ctx.restore();
 }
+// the enlarged crimson corner and saffron knot on the craftsman's hip (as HORSE-04's h4BigCorner)
+function h5BigCorner(ctx, P, k = 1) { if (!P || k <= 0.05) return; const s = P.s || 1, d = Math.sign(P.dir || 1);
+  ctx.save(); ctx.translate(P.x, P.y - (P.lift || 0)); ctx.rotate((P.tip || 0) * d); ctx.scale(d * s, s); ctx.translate(-26, -84); ctx.scale(k * 1.15, k * 1.15);
+  shape(ctx, [[-6, -16], [22, -12], [14, 10], [2, 30], [-10, 6]], EH_CRIMSON, { lw: 2.5, line: '#5a0818' }); shape(ctx, [[2, -6], [14, -2], [4, 20]], '#b0183a', { lw: 0 });
+  shape(ctx, ell(4, -12, 8, 7, 12), EH_SAFFRON, { lw: 2, line: '#8a5a10' }); seg(ctx, 2, -6, -4, 10, 3, EH_SAFFRON, 1); seg(ctx, 6, -6, 10, 12, 3, EH_SAFFRON, 1);
+  ctx.restore(); }
 // Firuz's hair and the gold crown drawn by the story (for the crown out of the toolbox and the slipping crown): c {on 0..1, slip rad, lift, at [x, y]}
 function h5HairCrown(ctx, P, c = {}) {
   const s = P.s || 1, [hx, hy] = ehHeadOf(P), ln = '#3a1a2a';
@@ -56,12 +62,15 @@ function h5Doves(ctx, t, list, s = 0.32) { const tc = EH_T2(t); for (const [t0, 
   bird(ctx, { kind: 'dove', x: x0 + d * sp * u, y: y0 - 30 * Math.sin(u * 0.8) - 40 * u + 8 * Math.sin(tc * 5 + x0), s, dir: d, fly: true, flap: Math.sin(tc * 19 + x0), pal: 0 }); } }
 // person-local hand target that reaches a world point W (for a standing P, ignoring tip)
 function h5Reach(P, W) { const s = P.s || 1, d = Math.sign(P.dir || 1); return [(W[0] - P.x) / (s * d), (W[1] - P.y) / s]; }
+// a world hand target only works when the local one is empty (people.js: handL || toLocal(handLW)); HORSE-04 review 1 fix
+function h5W(P) { if (P && P.handRW) { P.handR = h5Reach(P, P.handRW); P.handRW = null; } if (P && P.handLW) { P.handL = h5Reach(P, P.handLW); P.handLW = null; } return P; }
 // rider body-local point for a horse-local point p (rider scale ps on horse H; seat shift d, dy as in twoRiders)
 function h5Loc(H, ps, p, d = 0, dy = 0) { const k = H.s / ps; return [(p[0] - (-8 + d)) * k - 22, (p[1] - (-238 + dy)) * k - 52]; }
 // rider fields for the pair on the horse H: front = princess, rear = Firuz (scales follow the horse)
 const h5PsF = (H) => EH_PRINCESS.s * H.s / H5_HS, h5PsR = (H) => EH_FIRUZ.s * H.s / H5_HS;
 // draw the pair (or the princess alone: rear null) on H; o passes to twoRiders; returns the frames
 function h5Pair(ctx, H, PF, PR, t, o = {}) {
+  o = { ...o, veil: { ...(o.veil || {}), behind: true } };   // review 1: her veil passes behind Firuz's head
   return twoRiders(ctx, H, PF ? { who: 'princess', D: EH_PRINCESS, P: { s: h5PsF(H), ...PF } } : null, PR ? { who: 'firuz', D: H5_FZR, P: { s: h5PsR(H), ...PR } } : null, t, { tc: EH_T2(t), ...o });
 }
 // rider heads (world) for balloons
