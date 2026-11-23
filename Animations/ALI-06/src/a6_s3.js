@@ -31,10 +31,10 @@ function a6FeastPeople(t) { const tc = AB_T2(t), r = (a) => beatIn(tc, a, a + 0.
 
 function a6S16Pose(t) { const tc = AB_T2(t), A = { ...a5Base(t, 951), x: 1010, y: 902, dir: -1, gaze: [-1, 0.3], mouth: 'smile', brow: 0, handL: [-26, -104], handR: PERSON_HANDS.chest.R };
   const M = { ...a5Base(t, 961), x: A6_SEAT.morg, y: 904, dir: 1, sit: 1, seat: 'floor', gaze: [1, -0.6], mouth: 'smile', handL: [24, -70], handR: [30, -72] }; let coin = null;
-  if (tc >= 98.68 && tc < 101.12) { A.handR = [40, -215]; A.gaze = [0.4, -0.8]; coin = 'hand'; }
+  if (tc >= 98.68 && tc < 101.76) { A.handR = [44, -200]; A.gaze = tc < 99.72 ? [0.4, -0.8] : [-1, 0.3]; coin = tc < 101.12 ? 'hand' : null; }   // rev 1 note 2: at face height; his eyes stay on her
   if (tc >= 99.72 && tc < 101.0) { A.talk = abTalk(t, 99.72, 101.0, 81, 0.6); A.mouth = A.talk ? 'open' : 'closed'; A.gaze = [-1, 0.3]; }
   if (tc >= 101.12) coin = 'fall'; if (tc >= 101.76) { A.handR = [92, -136]; A.gaze = [-1, 0.4]; A.tip = 0.05; }
-  if (tc >= 102.32) { A.talk = abTalk(t, 102.32, 103.1, 82, 0.6); A.mouth = A.talk ? 'open' : 'smile'; M.wet = 0.45; M.lid = Math.max(abBlinkAt(AB_T3(t), 102.9), 0.05); M.mouth = 'smile'; M.gaze = [1, -0.8]; }
+  if (tc >= 102.32) { A.talk = abTalk(t, 102.32, 103.1, 82, 0.6); A.mouth = A.talk ? 'open' : 'smile'; M.wet = 0.45; M.lid = Math.max(0.85 * Math.sin(Math.PI * beatIn(tc, 102.42, 103.0)), 0.05); M.drop = 3 * beatIn(tc, 102.42, 102.8); M.mouth = 'smile'; M.gaze = [1, -0.8]; }   // rev 1: a slow blink, shoulders drop
   // S17: the casket
   if (tc >= 103.16) { A.handR = [40, -120]; A.handL = [36, -124]; A.mouth = 'smile'; A.x = kfn(tc, [[103.16, 1010], [103.6, 1060], [104.2, 1060], [104.9, 985], [108.4, 985], [108.9, 1040]]); Object.assign(A, walk((u) => kfn(u, [[103.16, 1010], [103.6, 1060], [104.2, 1060], [104.9, 985], [108.4, 985], [108.9, 1040]]), tc, { stride: 15 }));
     A.dir = tc < 103.6 ? 1 : tc < 104.2 ? 1 : -1; if (tc > 108.4) { A.handL = PERSON_HANDS.palmsUp.L; A.handR = PERSON_HANDS.palmsUp.R; A.dir = -1; } }
@@ -67,10 +67,11 @@ function a6FeastWorld(ctx, t, cam) { const tc = AB_T2(t), late = tc >= 97.44;
       if (tc < 103.4) { const [nx, ny] = a2Hand(N, 1, A5_NEPH); hx = nx; hy = ny + 20; } rewardBox(ctx, hx - 4, hy, 0.8, { lid, light, glint: tc > 105.1 && tc < 105.5 ? (tc - 105.1) / 0.4 : 0 }); } } });
   for (const q of abByY(L)) q.d();
   // the table (front pass) and the coin
-  let coin = null; if (late && S2.coin === 'fall') { const u = beatIn(tc, 101.12, 101.3); coin = u < 1 ? null : { x: 1040, spin: beatIn(tc, 101.3, 102.0), flat: tc > 102.0 }; }
-  feastTable(ctx, t, { coin });
-  if (late && S2.coin === 'hand') { const [hx, hy] = a2Hand(A, 1, { s: 0.95, age: 0.25 }); goldCoin(ctx, hx, hy - 6, 1.2, { spin: 1, glint: tc > 98.9 && tc < 99.5 ? (tc - 98.9) / 0.6 : 0 }); }
-  if (late && S2.coin === 'fall' && tc < 101.3) { const [hx, hy] = [1046, 690], u = beatIn(tc, 101.12, 101.3); goldCoin(ctx, K.lerp(hx, 1040, u), K.lerp(hy, FS.top, u * u), 1.2, { spin: 0.2 }); }
+  // rev 1 note 2: a larger coin (1.5), dropped from his raised hand, spinning, landing flat on the table
+  feastTable(ctx, t, {}); const cs = 1.5;
+  if (late && tc >= 101.32 && tc < 103.16) goldCoin(ctx, 1040, FS.top, cs, { spin: beatIn(tc, 101.32, 102.0), flat: tc > 102.0 });
+  if (late && S2.coin === 'hand') { const [hx, hy] = a2Hand(A, 1, { s: 0.95, age: 0.25 }); goldCoin(ctx, hx, hy - 6, cs, { spin: 1, glint: tc > 98.9 && tc < 99.5 ? (tc - 98.9) / 0.6 : 0 }); }
+  if (late && tc >= 101.12 && tc < 101.32) { const [hx, hy] = a2Hand(A, 1, { s: 0.95, age: 0.25 }), u = beatIn(tc, 101.12, 101.32); goldCoin(ctx, K.lerp(hx, 1040, u), K.lerp(hy - 6, FS.top, u * u), cs, { spin: 0.15 + 0.1 * u }); }
   if (late && tc > 108.6 && tc < 110.05) { const cx = (u) => kfn(u, [[108.6, 760], [109.6, 870]]), cw = walk(cxF6, tc, { stride: 9 }); a5Cat(ctx, t, { x: cw.x, y: 910, gy: 910, dir: 1, sit: 0, ph: cw.ph, amp: cw.amp, gaze: [1, -0.3] }, A6_ESH); }
   return { A, M, N, Wf, Kd };
 }
@@ -94,9 +95,8 @@ AB_SHOTS.push({ a: 89.02, b: 97.44, ww: 2200, cam: a5Cam([[89.02, { x: 900, y: 6
 // ---------- S16 97.44-103.16: GOLD DID NOT SAVE US. YOUR WISDOM DID. ----------
 function a6S16Over(ctx, t, cam, S) { const P = a6S16Pose(t), [ax, ay] = abP(...a2HeadPt(P.A, 0, 10, { s: 0.95, age: 0.25 }), cam);
   if (t > 99.6 && t < 101.3) a5Say(ctx, S, [[99.72, 'GOLD DID NOT SAVE US.']], t, ax + 40, ay - 260, [ax, ay - 40], { size: 46, gone: 101.0 });
-  if (t > 101.4 && t < 101.95) { const [cx, cy] = abP(1040, FS.top, cam); a2Tag(ctx, S, 'tink', cx - 40, cy + 70, t, 101.42, 101.9, { size: 30 }); }
   if (t > 102.2 && t < 103.16) a5Say(ctx, S, [[102.32, 'YOUR WISDOM DID.']], t, ax + 40, ay - 260, [ax, ay - 40], { size: 50, gone: 103.1 }); }
-AB_SHOTS.push({ a: 97.44, b: 103.16, ww: 2200, cam: a5Cam([[97.44, { x: 960, y: 640, zoom: 1.2 }], [102.2, { x: 960, y: 640, zoom: 1.24 }], [103.16, { x: 960, y: 650, zoom: 1.32 }]]), world: a6FeastWorld, over: a6S16Over });
+AB_SHOTS.push({ a: 97.44, b: 103.16, ww: 2200, cam: a5Cam([[97.44, { x: 960, y: 720, zoom: 1.85 }], [101.0, { x: 962, y: 728, zoom: 1.98 }], [103.16, { x: 962, y: 735, zoom: 2.05 }]]), world: a6FeastWorld, over: a6S16Over });
 
 // ---------- S17 103.16-110.05: the casket and three futures ----------
 function a6S17Over(ctx, t, cam, S) { if (t < 106.04) return; const p = K.clamp((t - 106.04) / 0.35) * (1 - K.clamp((t - 109.4) / 0.4)), P = a6S16Pose(t), [mx, my] = abP(...a2HeadPt(P.M, 0, 10, A3_MORG), cam);
@@ -111,6 +111,6 @@ function a6S18Over(ctx, t, cam, S) { const P = a6S16Pose(t), [mx, my] = abP(...a
     ctx.save(); ctx.globalAlpha *= 1 - slide; a6Future(ctx, t, 1, 600, 330, 170); a6Future(ctx, t, 2, 790, 330, 170); ctx.restore();
     const w = K.lerp(170, 300, slide) + 120 * grow + 900 * push; a6Future(ctx, t, 0, K.lerp(410, 560, slide), K.lerp(330, 615, push), w, { awning: grow, lit: 2 * grow });
     if (push > 0.6) { ctx.save(); ctx.globalAlpha *= (push - 0.6) / 0.4; ctx.fillStyle = '#fff8e8'; ctx.fillRect(0, 0, 1000, 1230); ctx.restore(); } }
-  if (t > 113.8 && t < 115.6) a5Say(ctx, S, [[113.92, 'I WILL OPEN A SHOP'], [114.6, 'I WILL OPEN A SHOP IN THE MARKET!']], t, mx - 60, Math.max(my - 220, 560), [mx, my - 40], { size: 40, gone: 115.5 });
+  if (t > 113.8 && t < 115.6) a6Say2(ctx, S, [[113.92, 'I WILL OPEN A SHOP'], [114.6, 'IN THE MARKET!']], t, mx - 220, Math.max(my - 150, 610), [mx - 30, my - 30], { size: 40, gone: 115.5 });   // rev 1 note 11: two lines, below the cloud
   if (t > 115.0 && t < 115.7) a2Tag(ctx, S, 'HOORAY!', 760, 1000, t, 115.0, 115.55, { size: 44 }); }
 AB_SHOTS.push({ a: 110.05, b: 116.2, ww: 2200, cam: a5Cam([[110.05, { x: 920, y: 640, zoom: 1.3 }], [111.6, { x: 925, y: 640, zoom: 1.32 }], [112.3, { x: 990, y: 600, zoom: 1.05 }], [116.2, { x: 995, y: 600, zoom: 1.05 }]]), world: a6FeastWorld, over: a6S18Over });

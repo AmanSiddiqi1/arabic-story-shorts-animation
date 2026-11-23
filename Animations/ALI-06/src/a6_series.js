@@ -10,11 +10,30 @@
 // shows as a cream roll at the wrist when cuffR < 0.5), foldL (same for the left cuff)
 function a6Guest(ctx, t, P, m, o = {}) {
   const Q = abNewMerchant(ctx, t, P, m, { fine: 1, ...o, feather: (o.feather || 0) + 1.35 * K.clamp(o.droop || 0) }), d = Math.sign(Q.dir || 1), sc = Q.s * (Q.sq || 1);
+  if (Q.mouth === 'grin' && !Q.talk) a6Grin(ctx, Q, A5_NM);   // revision 1 (ALI-05 continuity): the toothy switch-on grin
   for (const i of [0, 1]) { const cf = i ? o.cuffR ?? 1 : o.cuffL ?? 1; if (cf >= 0.5) continue; const [hx, hy] = a2Hand(Q, i, A5_NM), [ex, ey] = a2BodyPt(Q, (i ? 1 : -1) * 30, -150, A5_NM);
     const ux = ex - hx, uy = ey - hy, L = Math.hypot(ux, uy) || 1, wx = hx + ux / L * 18 * sc, wy = hy + uy / L * 18 * sc;
     celShade(ctx, ell(wx, wy, 13 * sc, 9 * sc, 12), '#f6e2c0', '#d8b88a', { light: [-d, -1], off: 4 * sc, lw: 2.5, line: '#8a6a3a' }); seg(ctx, wx - 9 * sc, wy, wx + 9 * sc, wy, 2, '#ffcf3a', 0); }
   return Q;
 }
+// a6Grin: ALI-05's a5Grin (revision 1) copied: the merchant's toothy grin drawn over the face (the Library person has no 'grin' mouth)
+function a6Grin(ctx, Q, B, k = 1) { const pt = (x, y) => a2HeadPt(Q, x, y, B), w = 17 * k;
+  const top = [], bot = []; for (let i = 0; i <= 8; i++) { const u = i / 8, x = K.lerp(-w, w, u); top.push(pt(x, 19)); bot.push(pt(x, 21 + 13 * k * Math.sin(Math.PI * u))); }
+  ctx.save(); ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.beginPath(); [...top, ...bot.reverse()].forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.closePath();
+  ctx.fillStyle = '#fffaf0'; ctx.fill(); ctx.strokeStyle = '#2b1a3a'; ctx.lineWidth = 3.2; ctx.stroke();
+  ctx.lineWidth = 2; ctx.beginPath(); const [a, b] = [pt(-w * 0.85, 25), pt(w * 0.85, 25)]; ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); for (const x of [-8, 0, 8]) { const [c, d] = [pt(x * k, 20), pt(x * k, 28 + 3 * k)]; ctx.moveTo(c[0], c[1]); ctx.lineTo(d[0], d[1]); } ctx.stroke();
+  ctx.lineWidth = 2.6; for (const sd of [-1, 1]) { const [c, d] = [pt(sd * (w + 2), 14), pt(sd * (w + 6), 24)]; ctx.beginPath(); ctx.moveTo(c[0], c[1]); ctx.lineTo(d[0], d[1]); ctx.stroke(); }
+  ctx.restore(); }
+// a6Say2: a two-line speech balloon (review 1: long lines break at about 520 px). steps [[t, line1], [t2, line2]]; one rounded box, a thin
+// tail to `to`, the same lettering as abSay (S.label with a clear box); clamped inside the panel
+function a6Say2(ctx, S, steps, t, x, y, to, o = {}) { if (t < steps[0][0] || (o.gone && t > o.gone + 0.25)) return; const size = o.size || 42;
+  const lines = steps.filter(([ts]) => t >= ts).map(([, tx]) => tx), ws = steps.map(([, tx]) => a2LabelW(S, tx, size)), w = Math.max(...ws) + size * 0.6, lh = size * 1.25, h = lh * steps.length + size * 0.7;
+  const a = K.clamp((t - steps[0][0]) / 0.3) * (o.gone && t > o.gone ? 1 - K.clamp((t - o.gone) / 0.25) : 1), cx = K.clamp(x, A2_MARGIN + w / 2, 1000 - A2_MARGIN - w / 2), y0 = y - h / 2;
+  ctx.save(); ctx.globalAlpha *= a; ctx.fillStyle = 'rgba(14,10,24,0.86)';
+  if (to) { ctx.beginPath(); ctx.moveTo(cx - 17, y0 + h - 4); ctx.lineTo(to[0], to[1]); ctx.lineTo(cx + 17, y0 + h - 4); ctx.fill(); }
+  ctx.beginPath(); ctx.roundRect(cx - w / 2, y0, w, h, Math.min(h / 2, 46)); ctx.fill(); ctx.strokeStyle = '#7fe3ff'; ctx.lineWidth = 2.5; ctx.stroke();
+  lines.forEach((tx, i) => S.label(ctx, tx, cx, y0 + size * 0.35 + lh * (i + 0.5) + size * 0.3, 1, { size, fill: 'rgba(0,0,0,0)', rule: 'rgba(0,0,0,0)' }));
+  ctx.restore(); }
 // a6Helmet: a guard's brass helmet point seen over a wall (ALI-05 a5Helmet); o {face, plume, pl (plume swing), glint, tip (a spear tip beside it)}
 function a6Helmet(ctx, x, y, s = 1, o = {}) { ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
   if (o.tip) { seg(ctx, 40, 30, 40, -70, 6, '#a8743e', 1.5); celShade(ctx, [[40, -66], [32, -76], [40, -102], [48, -76]], '#d8dce8', '#8a90b0', { off: 3, lw: 2, line: '#3a3e5a' }); }

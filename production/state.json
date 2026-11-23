@@ -9935,6 +9935,27 @@
 "msg": "revise agent a24163a9bca9019c3",
 "story_id": "ALI-06",
 "t": "2026-11-23T08:00:39"
+},
+{
+"id": 1411,
+"kind": "claim",
+"msg": "review2 claimed (fable)",
+"story_id": "HORSE-04",
+"t": "2026-11-23T08:06:35"
+},
+{
+"id": 1412,
+"kind": "cloud-render",
+"msg": "v2: PASS run 45085810345 commit 84a82a638c",
+"story_id": "HORSE-04",
+"t": "2026-11-23T08:08:53"
+},
+{
+"id": 1413,
+"kind": "done",
+"msg": "revise v2 Animations/HORSE-04/renders/HORSE-04_v2.mp4 (claude-opus-5-5)",
+"story_id": "HORSE-04",
+"t": "2026-11-23T08:09:15"
 }
 ],
 "plans": [
@@ -12925,6 +12946,16 @@
 "status": "PASS",
 "story_id": "ALI-06",
 "version": "v1"
+},
+{
+"created": "2026-11-23T08:08:53",
+"duration": 145.533,
+"path": "Animations/HORSE-04/renders/HORSE-04_v2.mp4",
+"qc": "{\"format\": {\"video\": [\"h264\", 1080, 1920, \"30/1\"], \"audio\": [\"aac\", \"48000\"], \"duration\": 145.533}, \"end_hold\": 4.02, \"decode\": \"OK\", \"lufs\": -15.1, \"sync\": {\"lag_ms\": 0, \"corr\": 0.998}, \"black\": [], \"frozen_from\": [], \"result\": \"PASS\", \"fails\": [], \"checked\": \"2026-11-23T00:06:08\", \"cloud_run\": \"45085810345\", \"cloud_commit\": \"84a82a638cf6550ce19d6bdabd1c27578f65bb0d\"}",
+"sha": null,
+"status": "PASS",
+"story_id": "HORSE-04",
+"version": "v2"
 }
 ],
 "reviews": [
@@ -22646,15 +22677,15 @@
 {
 "agent_id": "a0e38d0b3a5c007c4",
 "attempt": 1,
-"finished": null,
+"finished": "2026-11-23T08:09:15",
 "id": 378,
 "model": "opus",
-"notes": null,
-"outputs": null,
+"notes": "tokens {\"turns\": 59, \"input_tokens\": 120, \"cache_creation_input_tokens\": 180418, \"cache_read_input_tokens\": 7614435, \"output_tokens\": 63881}",
+"outputs": "v2 Animations/HORSE-04/renders/HORSE-04_v2.mp4",
 "pid": null,
 "stage": "revise",
 "started": "2026-11-23T07:33:48",
-"status": "running",
+"status": "done",
 "story_id": "HORSE-04"
 },
 {
@@ -22754,6 +22785,20 @@
 "started": "2026-11-23T08:00:24",
 "status": "running",
 "story_id": "ALI-06"
+},
+{
+"agent_id": null,
+"attempt": 1,
+"finished": null,
+"id": 386,
+"model": "fable",
+"notes": null,
+"outputs": null,
+"pid": null,
+"stage": "review2",
+"started": "2026-11-23T08:06:35",
+"status": "running",
+"story_id": "HORSE-04"
 }
 ],
 "usage_log": [

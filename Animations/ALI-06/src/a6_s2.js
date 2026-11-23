@@ -81,7 +81,9 @@ const A6_CART13 = (u) => kfn(u, [[80.64, 160], [84.98, 1010]], 'lin');
 function a6CartLoad(c) { abChest(c, -60, -44, 0.45, 0); abBale(c, 40, -44, '#2f9a8e', 0.6); carpetRoll(c, 0, -110, 0.9, { rot: -0.05 }); seg(c, -120, -96, 110, -60, 3, '#c8a070', 0); }
 function a6S13World(ctx, t, cam) { const tc = AB_T2(t), m = 'afternoon';
   ctx.drawImage(a6RoadPlate(), 0, 0); abFlock(ctx, t, 200, 220, 100, 4, 5, 0.45);
-  for (const [i, x] of [[0, 520], [1, 1180], [2, 1820]]) { a2FarTown(ctx, t, x, 720, 0.42, 1); const p = K.clamp((tc - 83.76 - 0.3 * i) / 0.25); if (p > 0) { abGlow(ctx, x, 600, 70, 0.8 * p, '#ffd36a'); abGlint(ctx, x, 600, 30 * p, (tc * 1.2 + i * 0.3) % 1); } }
+  abFlock(ctx, t, 900, 300, 80, 3, 11, 0.4);
+  // rev 1 note 8: three towns on separate hills, larger, all in view at 83.76-84.26, lit one per word
+  for (const [i, x, y, s] of [[0, 820, 700, 0.55], [1, 1120, 660, 0.62], [2, 1420, 710, 0.52]]) { abBlob(ctx, x, y + 40, 200 * s / 0.42 * 0.5, 60, '#8ac08a', '#6aa070', { lw: 2.5 }); a2FarTown(ctx, t, x, y, s, 1); const p = K.clamp((tc - [83.76, 84.0, 84.26][i]) / 0.2); if (p > 0) { abGlow(ctx, x, y - 110, 90, 0.8 * p, '#ffd36a'); abGlint(ctx, x, y - 110, 34 * p, (tc * 1.2 + i * 0.3) % 1); } }
   // the signpost with three arms toward the towns
   seg(ctx, 700, 905, 700, 720, 12, '#8a5a32', 3); for (const [y, a] of [[740, -0.12], [775, 0.02], [810, 0.16]]) { ctx.save(); ctx.translate(700, y); ctx.rotate(a); celShade(ctx, [[0, -14], [110, -14], [130, 0], [110, 14], [0, 14]], '#e8c890', '#b8945a', { light: [-1, -1], off: 4, lw: 2.5, line: '#6a4a24' }); ctx.restore(); }
   const L = [];
@@ -95,8 +97,8 @@ function a6S13World(ctx, t, cam) { const tc = AB_T2(t), m = 'afternoon';
   L.push({ y: 914, d: () => a2Ali(ctx, A, m, { shc: A6_DSH }) });
   for (const q of abByY(L)) q.d();
 }
-function a6S13Over(ctx, t, cam, S) { if (t > 83.7 && t < 85.0) { const [cx, cy] = abP(A6_CART13(t), 760, cam); [520, 1180, 1820].forEach((x, i) => { const [tx, ty] = abP(x, 600, cam); if (tx > 30 && tx < 970) a6Streak(ctx, S, [cx, cy], [tx, ty + 20], t, 83.76 + 0.3 * i, 84.6 + 0.1 * i); }); } }
-AB_SHOTS.push({ a: 80.64, b: 84.98, ww: 2400, cam: a5Cam([[80.64, { x: 620, y: 600, zoom: 1.08 }], [84.98, { x: 1150, y: 600, zoom: 1.08 }]], 'lin'), world: a6S13World, over: a6S13Over });
+function a6S13Over(ctx, t, cam, S) { if (t > 83.7 && t < 85.0) { const [cx, cy] = abP(A6_CART13(t), 760, cam); [[820, 700], [1120, 660], [1420, 710]].forEach(([x, y], i) => { const w = [83.76, 84.0, 84.26][i], [tx, ty] = abP(x, y - 110, cam); if (tx > 30 && tx < 970) { a6Streak(ctx, S, [cx, cy], [tx, ty + 30], t, w, w + 0.6); checkGlyph(ctx, tx, ty - 70, K.clamp((t - w - 0.1) / 0.25), 0.8); } }); } }
+AB_SHOTS.push({ a: 80.64, b: 84.98, ww: 2400, cam: a5Cam([[80.64, { x: 620, y: 660, zoom: 1.25 }], [84.98, { x: 1120, y: 660, zoom: 1.25 }]], 'lin'), world: a6S13World, over: a6S13Over });
 
 // ---------- S14 84.98-89.02: three owners get their things back ----------
 function a6S14World(ctx, t, cam) { const tc = AB_T2(t), m = 'afternoon';

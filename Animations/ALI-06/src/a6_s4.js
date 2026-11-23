@@ -102,35 +102,38 @@ function a6S21World(ctx, t, cam) { const tc = AB_T2(t), m = 'dusk', lit = tc < 1
   ctx.save(); ctx.beginPath(); ctx.rect(SF.x0, 0, SF.x1 - SF.x0, SF.counter + 4); ctx.clip(); a6Morg(ctx, t, M, m, { shadow: false }); const [hx, hy] = a2Hand(M, 1, A3_MORG); seg(ctx, hx, hy, hx - 30, hy - 30, 4, '#e8c870', 0); a6Flame(ctx, hx - 32, hy - 34, 0.7, tc, 9); ctx.restore();
   lampCounter(ctx, t); a5Post(ctx);
   // the low wall by the arch, the storyteller and his listeners
-  celShade(ctx, K.rectPts(1610, 840, 160, 60), '#e8b898', '#b88a6a', { light: [-1, -1], off: 6, lw: 3, line: '#6a4a3a' });
+  celShade(ctx, K.rectPts(1640, 840, 160, 60), '#e8b898', '#b88a6a', { light: [-1, -1], off: 6, lw: 3, line: '#6a4a3a' });
   const pt = (i) => tc >= A6_PT[i] && tc < 142.0, ptK = (i) => beatIn(tc, A6_PT[i], A6_PT[i] + 0.2);
-  const T = { ...a5Base(t, 1211), x: 1690, y: 900, dir: -1, sit: 1, seat: 'bench', gaze: [-1, 0], mouth: 'smile', handL: [-26, -104], handR: [30, -110] };
+  const T = { ...a5Base(t, 1211), x: 1720, y: 900, dir: -1, sit: 1, seat: 'bench', gaze: [-1, 0], mouth: 'smile', handL: [-26, -104], handR: [30, -110] };
   if (tc > 134.2 && tc < 137.4) { T.handR = PERSON_HANDS.pointUp.R; T.talk = abTalk(t, 134.3, 137.2, 111, 0.5); T.mouth = T.talk ? 'open' : 'smile'; T.gaze = [-1, -0.1]; }
   if (tc >= 137.4) { T.handR = [100, -150]; T.dir = -1; T.mouth = 'grin'; }
   L.push({ y: 900, d: () => a6Folk(ctx, 'teller', T, m, { shc: A6_ESH }) });
-  const kids = [['boy', 1560, 1121], ['girl', 1612, 1131]]; kids.forEach(([k, x, sd], i) => { const P = { ...a5Base(t, sd), x, y: 930, dir: 1, sit: tc > 132.52 + 0.3 * i ? 1 : 0, seat: 'floor', gaze: [1, -0.4], mouth: 'o', handL: [-20, -60], handR: [20, -60] };
+  // rev 1 note 10: the crowd spread (>= 60 px apart)
+  const kids = [['boy', 1590, 1121], ['girl', 1650, 1131]]; kids.forEach(([k, x, sd], i) => { const P = { ...a5Base(t, sd), x, y: 930, dir: 1, sit: tc > 132.52 + 0.3 * i ? 1 : 0, seat: 'floor', gaze: [1, -0.4], mouth: 'o', handL: [-20, -60], handR: [20, -60] };
     if (i === 1 && tc > 136.52 && tc < 137.4) { P.x = 1485; P.sit = 0; P.mouth = 'o'; P.gaze = [1, 0]; }
     if (pt(3 + i)) { P.dir = -1; P.handL = [-90, -80 * ptK(3 + i) - 40]; P.handR = [-80, -100]; P.gaze = [-1, 0]; P.mouth = 'grin'; }
     L.push({ y: 930, d: () => a6Folk(ctx, k, P, m, { shc: A6_ESH }) }); });
-  const Y = { ...a5Base(t, 1141), x: 1500, y: 926, dir: 1, sit: 1, seat: 'floor', gaze: [1, -0.4], mouth: 'smile', handL: [-20, -100], handR: [24, -104] }; if (pt(2)) { Y.dir = -1; Y.handR = [100 * ptK(2), -150]; Y.gaze = [-1, 0]; }
+  const Y = { ...a5Base(t, 1141), x: 1530, y: 926, dir: 1, sit: 1, seat: 'floor', gaze: [1, -0.4], mouth: 'smile', handL: [-20, -100], handR: [24, -104] }; if (pt(2)) { Y.dir = -1; Y.handR = [100 * ptK(2), -150]; Y.gaze = [-1, 0]; }
   L.push({ y: 926, d: () => apprentice(ctx, t, Y, m, { shc: A6_ESH }) });
-  const B = { ...a5Base(t, 1151), x: 1440, y: 912, dir: 1, gaze: [1, -0.2], mouth: 'smile', handL: [30, -140], handR: [40, -142] };
+  const B = { ...a5Base(t, 1151), x: 1460, y: 912, dir: 1, gaze: [1, -0.2], mouth: 'smile', handL: [30, -140], handR: [40, -142] };
   if (tc > 137.36 && tc < 138.0) { B.drop = 4 * Math.abs(Math.sin((tc - 137.36) * 10)); B.look = 0.3 * Math.sin((tc - 137.36) * 12); B.mouth = 'grin'; } if (pt(0)) { B.dir = -1; B.handR = [100 * ptK(0), -150]; B.gaze = [-1, 0]; }
   L.push({ y: 912, d: () => baker(ctx, t, B, m, { shc: A6_ESH }) });
-  const Nb = { ...a5Base(t, 1161), x: 1360, y: 906, dir: 1, gaze: [1, -0.2], mouth: 'smile', handL: [-24, -104], handR: [30, -110] }; if (pt(1)) { Nb.dir = -1; Nb.handR = [90, -170]; Nb.gaze = [-1, 0]; }
+  const Nb = { ...a5Base(t, 1161), x: 1385, y: 906, dir: 1, gaze: [1, -0.2], mouth: 'smile', handL: [-24, -104], handR: [30, -110] }; if (pt(1)) { Nb.dir = -1; Nb.handR = [90, -170]; Nb.gaze = [-1, 0]; }
   L.push({ y: 906, d: () => a3Neighbour(ctx, t, Nb, m, { shc: A6_ESH, broom: pt(1) ? 60 * ptK(1) : 20, lift: pt(1) ? 0.9 * ptK(1) : 0 }) });
   // Ali Baba and the donkey: at the woodpile, then (143.3) up to the shop with the kid riding on the firewood
-  const ax = (u) => kfn(u, [[143.3, 1320], [145.6, 1300], [146.2, 1300]]), AW = a6Walk((u) => kfn(u, [[143.3, 1900], [146.0, 1420]]), tc, -1, 16);
+  // rev 1 note 10: Ali Baba comes to the front beside the counter, nearest Morgiana (x 1300), and settles with a hand on his chest
+  const AW = a6Walk((u) => kfn(u, [[143.0, 1900], [145.5, 1300]]), tc, -1, 16);
   const A = { ...a5Base(t, 1171), x: 1900, y: 914, dir: -1, gaze: [-1, -0.1], mouth: 'smile', handL: [-26, -104], handR: [26, -104] };
   if (pt(5)) { A.dir = -1; A.handR = [96 * ptK(5), -150]; A.gaze = [-1, 0]; A.mouth = 'grin'; }
-  if (tc >= 143.3) { Object.assign(A, AW); A.dir = -1; A.handL = [60, -130]; A.gaze = [-1, 0]; if (tc > 144.0 && tc < 145.0) { A.handR = [30, -215]; A.tip = 0.06; } }
-  const dx = tc < 143.3 ? 1940 : kfn(tc, [[143.3, 1940], [146.0, 1460]]);
-  const D = { x: dx + 70, y: 908, s: 0.75, dir: -1, pal: 0, earL: 0.4 + idleSway(tc, 81, 0.3, 1.3), earR: 0.3, tailSwish: osc(tc, 1.7), lid: abLid(t, 83), ...(tc >= 143.3 && tc < 146.0 ? walk((u) => kfn(u, [[143.3, 2010], [146.0, 1530]]), tc, { stride: GAIT.donkey * 0.75 }) : {}) };
+  if (tc >= 143.0) { Object.assign(A, AW); A.dir = -1; A.handL = [60, -130]; A.gaze = [-1, -0.1]; if (tc > 144.0 && tc < 144.9) { A.handR = [30, -215]; A.tip = 0.06; }
+    if (tc >= 145.5) { A.handR = PERSON_HANDS.chest.R; A.handL = [-26, -104]; A.mouth = 'smile'; A.lid = Math.max(A.lid, 0.3); A.tip = 0.05 * beatIn(tc, 145.6, 146.0); A.sq *= landSquash(tc, 145.5, 0.05); } }
+  const dx = tc < 143.3 ? 1940 : kfn(tc, [[143.3, 1940], [146.0, 1700]]);
+  const D = { x: dx + 70, y: 908, s: 0.75, dir: -1, pal: 0, earL: 0.4 + idleSway(tc, 81, 0.3, 1.3), earR: 0.3, tailSwish: osc(tc, 1.7), lid: abLid(t, 83), ...(tc >= 143.3 && tc < 146.0 ? walk((u) => kfn(u, [[143.3, 2010], [146.0, 1770]]), tc, { stride: GAIT.donkey * 0.75 }) : {}) };
   L.push({ y: 908, d: () => { groundShadow(ctx, D.x, 908, 200, 0, { flat: true, color: A6_ESH }); abDonkey(ctx, D, 'afternoon'); a6Wood(ctx, D.x + 10, 770, 0.7); if (tc >= 143.3) { const Kd = { ...a5Base(t, 1181), x: D.x + 6, y: 760, dir: -1, sit: 1, seat: 'bench', gaze: [-1, 0], mouth: 'grin', handL: [-20, -60], handR: [-60, -110 + 8 * Math.sin(tc * 12)] }; abKid(ctx, Kd, 'dusk'); } } });
   L.push({ y: 914, d: () => a2Ali(ctx, A, m, { shc: A6_ESH }) });
   // the nephew and the wife arrive from the left at the end
-  if (tc > 143.3) { const nx = (u) => kfn(u, [[143.3, 680], [145.0, 900]]), N = { ...a5Base(t, 1191), ...a6Walk(nx, tc, 1, 15), y: 916, gaze: [1, 0], mouth: 'grin', handL: [-22, -104], handR: tc > 145.2 ? [60, -200 + 10 * Math.sin(tc * 12)] : [24, -104] };
-    L.push({ y: 916, d: () => abNephew(ctx, t, N, m, { shc: A6_ESH }) }); const wx = (u) => kfn(u, [[143.6, 600], [145.3, 820]]), Wf = { ...a5Base(t, 1195), ...a6Walk(wx, tc, 1, 15), y: 912, gaze: [1, 0], mouth: 'smile', handL: [-24, -104], handR: [26, -104] };
+  if (tc > 143.3) { const nx = (u) => kfn(u, [[143.3, 740], [145.0, 960]]), N = { ...a5Base(t, 1191), ...a6Walk(nx, tc, 1, 15), y: 916, gaze: [1, 0], mouth: 'grin', handL: [-22, -104], handR: tc > 145.2 ? [60, -200 + 10 * Math.sin(tc * 12)] : [24, -104] };
+    L.push({ y: 916, d: () => abNephew(ctx, t, N, m, { shc: A6_ESH }) }); const wx = (u) => kfn(u, [[143.6, 660], [145.3, 880]]), Wf = { ...a5Base(t, 1195), ...a6Walk(wx, tc, 1, 15), y: 912, gaze: [1, 0], mouth: 'smile', handL: [-24, -104], handR: [26, -104] };
     L.push({ y: 912, d: () => { a3Shadow(ctx, Wf.x, Wf.y, 96, 0, A6_ESH); abWife(ctx, Wf, m); } }); }
   for (const q of abByY(L)) q.d();
   if (tc > 142.0) a5Cat(ctx, t, { x: 1230, y: SF.counter, gy: SF.counter, dir: -1, sit: 1, gaze: [-1, 0.2], tailCurl: 0.6 + 0.3 * osc(tc, 2.1) }, 'rgba(43,26,58,0.3)');
@@ -143,4 +146,4 @@ function a6S21Over(ctx, t, cam, S) { const tc = AB_T2(t);
   if (t > 138.9 && t < 141.0) { const [bx, by] = abP(1460, 600, cam); a5Say(ctx, S, [[139.0, 'REMEMBER'], [139.6, 'REMEMBER CLEVER MORGIANA!']], t, Math.min(bx, 720), Math.max(by - 330, 230), [bx, by - 80], { size: 46, gone: 140.9 }); }
   if (t > 142.3) { const off = t < 142.8 ? [1, 0, 1, 1, 0, 1][Math.min(5, Math.floor((t - 142.3) * 12))] : 1; if (off) S.title(ctx, 'THE END', 500, 190, K.clamp((t - 142.3) / 0.8), { size: 86, align: 'center' }); if (t > 142.6 && t < 143.3) abGlint(ctx, 700, 150, 44, (t - 142.6) / 0.7); }
   if (t > 144.5) { const R = K.rng(3); ctx.save(); ctx.fillStyle = '#fff6ea'; for (let i = 0; i < 3; i++) { ctx.globalAlpha = K.clamp((t - 144.5 - i * 0.6) / 0.5) * (0.6 + 0.3 * Math.sin(t * 3 + i)); ctx.beginPath(); ctx.arc(150 + R() * 700, 90 + R() * 120, 3.5, 0, 7); ctx.fill(); } ctx.restore(); } }
-AB_SHOTS.push({ a: 132.52, b: AB_DUR + 1, ww: 2000, cam: a5Cam([[132.52, { x: 1560, y: 630, zoom: 1.2 }], [137.4, { x: 1540, y: 630, zoom: 1.2 }], [141.0, { x: 1200, y: 630, zoom: 1.2 }], [143.0, { x: 1200, y: 610, zoom: 1.2 }], [AB_DUR, { x: 1180, y: 610, zoom: 1.2 }]]), world: a6S21World, over: a6S21Over });
+AB_SHOTS.push({ a: 132.52, b: AB_DUR + 1, ww: 2000, cam: a5Cam([[132.52, { x: 1560, y: 630, zoom: 1.2 }], [137.4, { x: 1540, y: 630, zoom: 1.2 }], [141.0, { x: 1200, y: 630, zoom: 1.2 }], [143.0, { x: 1260, y: 610, zoom: 1.2 }], [AB_DUR, { x: 1250, y: 610, zoom: 1.2 }]]), world: a6S21World, over: a6S21Over });
